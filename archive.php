@@ -4,15 +4,7 @@
 		<div class="row">
 		<?php if(have_posts()) :?>
 			<div class="col-md-12">
-			<h1><?php if ( is_day() ) :
-						printf( __( 'Daily Archives: %s', 'bhumi' ), '<span>' . get_the_date() . '</span>' );
-					elseif ( is_month() ) :
-						printf( __( 'Monthly Archives: %s', 'bhumi' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'bhumi' ) ) . '</span>' );
-					elseif ( is_year() ) :
-						printf( __( 'Yearly Archives: %s', 'bhumi' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'bhumi' ) ) . '</span>' );
-					else :
-						esc_html_e( 'Archives', 'bhumi' );
-					endif; ?>
+			<h1><?php the_archive_title(); ?>
 			</h1></div>
 		<?php endif; ?>
 		</div>

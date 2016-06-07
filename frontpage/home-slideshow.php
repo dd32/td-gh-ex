@@ -1,12 +1,14 @@
 <!-- Carousel ================================================== -->
 	<?php $cpm_theme_options = bhumi_get_options();
+    $slider_category_slug = ($cpm_theme_options['slider_category'] == 'default'?'':$cpm_theme_options['slider_category']);
     $bhumi_slider_arg = array(
     'post_type'      => 'post',
     'posts_per_page' => 3,
     'post_status'    => 'publish',
     'order'          => 'desc',
     'orderby'        => 'date',
-    'category_name' => 'slider-slug',
+    'ignore_sticky_posts' => 1,
+    'category_name' => $slider_category_slug,
     );
     $bhumi_slider_query = new WP_Query($bhumi_slider_arg);
     if($bhumi_slider_query->have_posts()):
@@ -33,8 +35,6 @@
                 $bhumi_slider_query->the_post();
                 $slider_image_id = get_post_thumbnail_id();
                 $slider_image = wp_get_attachment_image_src( $slider_image_id, 'full' );
-                $slider_text = get_post_meta( $post->ID, 'slider_text', true );
-                $slider_link = get_post_meta( $post->ID, 'slider_link', true );
                 ?>
                 <div class="item <?php echo esc_html( $active );?>">
     			     <?php if($slider_image!='') {  ?>
@@ -45,23 +45,20 @@
         					<div class="carousel-text">
         		            <h1 class="animated bounceInRight"><?php the_title(); ?></h1>
         						<ul class="list-unstyled carousel-list">
-        						  <li class="animated bounceInLeft"><?php the_content(); ?></li>
+        						  <li class="animated bounceInLeft"><?php the_excerpt(); ?></li>
         						</ul>
-        					<?php if($slider_text!='') { ?>
-        		       		     <a class="bhumi_blog_read_btn animated bounceInUp" href="<?php if($slider_link!='') { echo esc_url($slider_link); } ?>" target="_blank" role="button"><?php echo esc_attr($slider_text); ?></a>
-        					<?php } ?>
+      		       		     <a class="bhumi_blog_read_btn animated bounceInUp" href="<?php the_permalink() ?>" target="_blank" role="button"><?php the_title(); ?>
+                         </a>
         		            </div>
             			</div>
                       </div>
                 </div>
-                <?php $active = ''; ?>
-        <?php endwhile;
+                <?php $active = '';
+         endwhile;
         wp_reset_postdata(); ?>
-
       </div>
       <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
       <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
 	  <div class="bhumi_slider_shadow"></div>
     </div><!-- /.carousel -->
     <?php endif;
-    wp_reset_query(); ?>

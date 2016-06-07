@@ -1,4 +1,4 @@
-<?php 
+<?php
 function bhumi_page_menu_args( $args ) {
 	if ( ! isset( $args['show_home'] ) )
 		$args['show_home'] = true;
@@ -6,7 +6,7 @@ function bhumi_page_menu_args( $args ) {
 }
 add_filter( 'wp_page_menu_args', 'bhumi_page_menu_args' );
 
- 
+
 function bhumi_fallback_page_menu( $args = array() ) {
 
 	$defaults = array('sort_column' => 'menu_order, post_title', 'menu_class' => 'menu', 'echo' => true, 'link_before' => '', 'link_after' => '');
@@ -80,7 +80,7 @@ class bhumi_walker_page_menu extends Walker_Page{
 
 		$css_class = implode( ' ', apply_filters( 'page_css_class', $css_class, $page, $depth, $args, $current_page ) );
 
-		$output .= $indent . '<li class="' . $css_class . '"><a href="' . get_permalink($page->ID) . '">' . $link_before . apply_filters( 'the_title', $page->post_title, $page->ID ) . $link_after . '</a>';
+		$output .= $indent . '<li class="' . esc_attr($css_class) . '"><a href="' . esc_url(get_permalink($page->ID)) . '">' . $link_before . apply_filters( 'the_title', $page->post_title, $page->ID ) . $link_after . '</a>';
 
 		if ( !empty($show_date) ) {
 			if ( 'modified' == $show_date )

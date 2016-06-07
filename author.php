@@ -4,7 +4,7 @@
 		<div class="row">
 		<?php if(have_posts()) :?>
 			<div class="col-md-12">
-			<h1><?php printf( __( 'Author Archives: %s', 'bhumi' ), '<span class="vcard">'. get_the_author() .'</span>' ) ; ?>
+			<h1><?php the_archive_title(); ?>
 			</h1>
 			</div>
 		<?php endif; ?>

@@ -5,7 +5,7 @@ if($cpm_theme_options['blog_title'] !='') { ?>
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="bhumi_heading_title">
-					<h3><?php echo esc_attr($cpm_theme_options['blog_title']); ?></h3>
+					<h3><?php echo esc_html($cpm_theme_options['blog_title']); ?></h3>
 				</div>
 			</div>
 		</div>
@@ -65,7 +65,7 @@ if($cpm_theme_options['blog_title'] !='') { ?>
 			</div>
 			</div>
 			<?php  endwhile;
-
+			wp_reset_postdata();
 		endif; ?>
 	</div>
 	</div>

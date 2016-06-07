@@ -11,94 +11,53 @@
 	require( BHUMI_TEMPLATE_DIR_CORE . '/menu/bhumi_nav_walker.php' );
 	require( BHUMI_TEMPLATE_DIR_CORE . '/scripts/css_js.php' ); //Enquiring Resources here
 	require( BHUMI_TEMPLATE_DIR_CORE . '/comment-function.php' );
-	require( BHUMI_TEMPLATE_DIR_CORE . '/categories.php' );
 	require( BHUMI_TEMPLATE_DIR_ASSETS . '/inc/customizer.php');
 	require( BHUMI_TEMPLATE_DIR_ASSETS . '/inc/customizer-controls.php' );
 
 	//Sane Defaults
 	function bhumi_default_settings() {
 		$cpm_theme_options=array(
-				'upload_image_logo'=>'',
-				'height'=>'55',
-				'width'=>'150',
-				'custom_css'=>'',
-				'slide_image_1' => '',
-				'slide_title_1' => '',
-				'slide_desc_1' => '',
-				'slide_btn_text_1' => '',
-				'slide_btn_link_1' => '',
-				'slide_image_2' => '',
-				'slide_title_2' => '',
-				'slide_desc_2' => '',
-				'slide_btn_text_2' => '',
-				'slide_btn_link_2' => '',
-				'slide_image_3' => '',
-				'slide_title_3' => '',
-				'slide_desc_3' => '',
-				'slide_btn_text_3' => '',
-				'slide_btn_link_3' => '',
+				'upload_image_logo'                  =>'',
+				'height'                             =>'55',
+				'width'                              =>'150',
+				'custom_css'                         =>'',
+				'slider_category'                    => 'default',
+				'service_category'                   => 'default',
+				'portfolio_category'                 => 'default',
+
 				// Footer Call-Out
-				'fc_home'=>'1',
-				'fc_title' => '',
-				'fc_btn_txt' => '',
-				'fc_btn_link' =>'',
-				'fc_radio'=>'bottom',
+				'fc_home'                            =>'1',
+				'fc_title'                           => '',
+				'fc_btn_txt'                         => '',
+				'fc_btn_link'                        =>'',
+				'fc_radio'                           =>'bottom',
 				//Social media links
-				'header_social_media_in_enabled'=>'1',
-				'footer_section_social_media_enbled'=>'1',
-				'twitter_link' =>"",
-				'fb_link' =>"",
-				'linkedin_link' =>"",
-				'youtube_link' =>"",
-				'instagram' =>"",
-				'gplus' =>"",
+				'header_social_media_in_enabled'     =>'1',
+				'footer_section_social_media_enbled' =>'1',
+				'twitter_link'                       =>"",
+				'fb_link'                            =>"",
+				'linkedin_link'                      =>"",
+				'youtube_link'                       =>"",
+				'instagram'                          =>"",
+				'gplus'                              =>"",
 
-				'email_id' => '',
-				'phone_no' => '',
-				'footer_customizations' => __(' &#169; 2015 Code Themes', 'bhumi' ),
-				'developed_by_text' => __('Theme Developed By', 'bhumi' ),
-				'developed_by_bhumi_text' => __('Code Themes', 'bhumi' ),
-				'developed_by_link' => 'https://codethemes.co/',
+				'email_id'                           => '',
+				'phone_no'                           => '',
+				'footer_customizations'              => __(' &#169; 2015 Code Themes', 'bhumi' ),
+				'developed_by_text'                  => __('Theme Developed By', 'bhumi' ),
+				'developed_by_bhumi_text'            => __('Code Themes', 'bhumi' ),
+				'developed_by_link'                  => 'https://codethemes.co/',
 
-				'home_service_heading' => '',
-				'service_1_title'=> '',
-				'service_1_icons'=> '',
-				'service_1_text'=> '',
-				'service_1_link'=>'',
+				'home_service_heading'               => '',
 
-				'service_2_title'=> '',
-				'service_2_icons'=> '',
-				'service_2_text'=> '',
-				'service_2_link'=> '',
-
-				'service_3_title'=> '',
-				'service_3_icons'=> '',
-				'service_3_text'=> '',
-				'service_3_link'=>"",
-
-				'service_4_title'=> '',
-				'service_4_icons'=> '',
-				'service_4_text'=> '',
-				'service_4_link'=> '',
 
 				//Portfolio Settings:
-				'portfolio_home'=>'1',
-				'port_heading' => '',
-				'port_1_img'=> '',
-				'port_1_title'=> '',
-				'port_1_link'=>'',
-				'port_2_img'=> '',
-				'port_2_title'=> '',
-				'port_2_link'=>'',
-				'port_3_img'=> '',
-				'port_3_title'=> '',
-				'port_3_link'=>'',
-				'port_4_img'=> '',
-				'port_4_title'=> '',
-				'port_4_link'=> '',
+				'portfolio_home'                     =>'1',
+				'port_heading'                       => '',
+
 				//BLOG Settings
-				'show_blog' => '1',
-				'blog_title'=> '',
+				'show_blog'                          => '1',
+				'blog_title'                         => '',
 
 			);
 			return apply_filters( 'bhumi_options', $cpm_theme_options );
@@ -129,7 +88,7 @@
 		add_image_size( 'bhumi_portfolio',524,364,array( 'center', 'center' ) );
 		add_theme_support( 'title-tag' );
 		// Load text domain for translation-ready
-		load_theme_textdomain( 'bhumi' );
+		load_theme_textdomain( 'bhumi' . get_template_directory() . '/core/lang');
 
 		register_nav_menu( 'primary', __( 'Primary Menu', 'bhumi' ) );
 		// theme support
@@ -142,23 +101,18 @@
 			) );
 	}
 
-	function bhumi_support_for_pages() {
-		add_post_type_support( 'bhumi', 'post-formats', array('aside', 'image', 'video', 'quote', 'link', 'gallery', 'status', 'audio', 'chat') );
-	}
-	add_action( 'init', 'bhumi_support_for_pages' );
-
 
 	// Read more tag to formatting in blog page
 	function bhumi_content_more($more)
 	{
-	   return '<div class="blog-post-details-item"><a class="bhumi_blog_read_btn" href="'.get_permalink().'">'.__('Read More', 'bhumi' ).'</a></div>';
+	   return '<div class="blog-post-details-item"><a class="bhumi_blog_read_btn" href="'.esc_url(get_permalink()).'">'.__('Read More', 'bhumi' ).'</a></div>';
 	}
 	add_filter( 'the_content_more_link', 'bhumi_content_more' );
 
 
 	// Replaces the excerpt "more" text by a link
 	function bhumi_excerpt_more($more) {
-	return '...';
+	return esc_html__('&hellip;','bhumi');
 	}
 	add_filter('excerpt_more', 'bhumi_excerpt_more');
 	/*
@@ -197,7 +151,7 @@
 		    echo '<ul class="breadcrumb">';
 		    global $post;
 		    $homeLink = home_url();
-		    echo '<li><a href="' . $homeLink . '">' . $home . '</a></li>' . $delimiter . ' ';
+		    echo '<li><a href="' . esc_url($homeLink) . '">' . $home . '</a></li>' . $delimiter . ' ';
 		    if (is_category()) {
 		        global $wp_query;
 		        $cat_obj = $wp_query->get_queried_object();
@@ -208,24 +162,25 @@
 		            echo(get_category_parents($parentCat, TRUE, ' ' . $delimiter . ' '));
 		        echo $before . ' esc_html__("Archive by category","bhumi") "' . single_cat_title('', false) . '"' . $after;
 		    } elseif (is_day()) {
-		        echo '<li><a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a></li> ' . $delimiter . ' ';
-		        echo '<li><a href="' . get_month_link(get_the_time('Y'), get_the_time('m')) . '">' . get_the_time('F') . '</a></li> ' . $delimiter . ' ';
+		        echo '<li><a href="' . esc_url(get_year_link(get_the_time('Y'))) . '">' . get_the_time('Y') . '</a></li> ' . $delimiter . ' ';
+		        echo '<li><a href="' . esc_url(get_month_link(get_the_time('Y'), get_the_time('m'))) . '">' . get_the_time('F') . '</a></li> ' . $delimiter . ' ';
 		        echo $before . get_the_time('d') . $after;
 		    } elseif (is_month()) {
-		        echo '<li><a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a></li> ' . $delimiter . ' ';
+		        echo '<li><a href="' . esc_url(get_year_link(get_the_time('Y'))) . '">' . get_the_time('Y') . '</a></li> ' . $delimiter . ' ';
 		        echo $before . get_the_time('F') . $after;
 		    } elseif (is_year()) {
 		        echo $before . get_the_time('Y') . $after;
 		    } elseif (is_single() && !is_attachment()) {
 		        if (get_post_type() != 'post') {
 		            $post_type = get_post_type_object(get_post_type());
-		            $slug = $post_type->rewrite;
-		            echo '<li><a href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a></li> ' . $delimiter . ' ';
+		            $bhumi_post_type_archive = get_post_type_archive_link($post_type->labels->name);
+		            if(!empty($bhumi_post_type_archive)):
+		            	echo '<li><a href="' . esc_url($bhumi_post_type_archive). '/">' . $post_type->labels->singular_name . '</a></li> ' . $delimiter . ' ';
+		        	endif;
 		            echo $before . get_the_title() . $after;
 		        } else {
 		            $cat = get_the_category();
 		            $cat = $cat[0];
-		            //echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
 		            echo $before . get_the_title() . $after;
 		        }
 
@@ -237,7 +192,7 @@
 		        $cat = get_the_category($parent->ID);
 		        $cat = $cat[0];
 		        echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
-		        echo '<li><a href="' . get_permalink($parent) . '">' . $parent->post_title . '</a></li> ' . $delimiter . ' ';
+		        echo '<li><a href="' . esc_url(get_permalink($parent)) . '">' . $parent->post_title . '</a></li> ' . $delimiter . ' ';
 		        echo $before . get_the_title() . $after;
 		    } elseif (is_page() && !$post->post_parent) {
 		        echo $before . get_the_title() . $after;
@@ -246,7 +201,7 @@
 		        $breadcrumbs = array();
 		        while ($parent_id) {
 		            $page = get_page($parent_id);
-		            $breadcrumbs[] = '<li><a href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a></li>';
+		            $breadcrumbs[] = '<li><a href="' . esc_url(get_permalink($page->ID)) . '">' . get_the_title($page->ID) . '</a></li>';
 		            $parent_id = $page->post_parent;
 		        }
 		        $breadcrumbs = array_reverse($breadcrumbs);
@@ -269,19 +224,6 @@
 		    echo '</ul>';
 	}
 
-	/*===================================================================================
-	* Add Author Links
-	* =================================================================================*/
-	function bhumi_author_profile( $contactmethods ) {
-
-		$contactmethods['youtube_profile'] = __('Youtube Profile URL','bhumi');
-		$contactmethods['twitter_profile'] = __('Twitter Profile URL','bhumi');
-		$contactmethods['facebook_profile'] = __('Facebook Profile URL','bhumi');
-		$contactmethods['linkedin_profile'] = __('Linkedin Profile URL','bhumi');
-
-		return $contactmethods;
-	}
-	add_filter( 'user_contactmethods', 'bhumi_author_profile', 10, 1);
 	/*===================================================================================
 	* Add Class Gravtar
 	* =================================================================================*/

@@ -1,12 +1,14 @@
 <!-- portfolio section -->
 <?php $cpm_theme_options = bhumi_get_options();
+$portfolio_category_slug = ($cpm_theme_options['portfolio_category'] == 'default'?'':$cpm_theme_options['portfolio_category']);
 $bhumi_portfolio_arg = array(
 	'post_type'      => 'post',
 	'posts_per_page' => 4,
 	'post_status'    => 'publish',
 	'order'          => 'desc',
 	'orderby'        => 'date',
-	'category_name' => 'portfolio-slug',
+	'ignore_sticky_posts' => 1,
+	'category_name' => $portfolio_category_slug,
 	);
 $bhumi_portfolio_query = new WP_Query($bhumi_portfolio_arg);
 if($bhumi_portfolio_query->have_posts()):
@@ -18,7 +20,7 @@ if($bhumi_portfolio_query->have_posts()):
 				<div class="row">
 					<div class="col-sm-12">
 						<div class="bhumi_heading_title">
-							<h3><?php echo esc_attr($cpm_theme_options['port_heading']); ?></h3>
+							<h3><?php echo esc_html($cpm_theme_options['port_heading']); ?></h3>
 						</div>
 					</div>
 				</div>
@@ -62,7 +64,9 @@ if($bhumi_portfolio_query->have_posts()):
 									<div class="bhumi_portfolio_shadow"></div>
 								</div>
 						<?php
-					   endwhile;?>
+					   endwhile;
+					   wp_reset_postdata();
+					   ?>
 				</div>
 
 			</div>
@@ -70,4 +74,4 @@ if($bhumi_portfolio_query->have_posts()):
 
 	</div>
 	<!-- /portfolio section -->
-<?php endif; ?>
+<?php endif;

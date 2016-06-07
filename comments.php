@@ -20,15 +20,12 @@
 				'author' => '<div class="bhumi_form_group"><label for="exampleInputEmail1">'. __( 'Name','bhumi').'<small>*</small></label><input name="author" id="name" type="text" id="exampleInputEmail1" class="bhumi_con_input_control"></div>',
 				'email' => '<div class="bhumi_form_group"><label for="exampleInputPassword1">'. __( 'Email','bhumi').'<small>*</small></label><input  name="email" id="email" type="text" class="bhumi_con_input_control"></div>',
 			);
-			function my_fields($fields) {
-				return $fields;
-			}
-			add_filter('cpm_comment_form_default_fields','my_fields');
+
 				$defaults = array(
 				'fields'=> apply_filters( 'cpm_comment_form_default_fields', $fields ),
 				'comment_field'=> '<div class="bhumi_form_group"><label for="message"> Message *</label>
 				<textarea id="comment" name="comment" class="bhumi_con_textarea_control" rows="5"></textarea></div>',
-				'logged_in_as' => '<p class="logged-in-as">' . __( "Logged in as ",'bhumi' ).'<a href="'. admin_url( 'profile.php' ).'">'.$user_identity.'</a>'. '<a href="'. wp_logout_url( get_permalink() ).'" title="Log out of this account">'.__(" Log out?",'bhumi').'</a>' . '</p>',
+				'logged_in_as' => '<p class="logged-in-as">' . __( "Logged in as ",'bhumi' ).'<a href="'. esc_url(admin_url( 'profile.php' )).'">'.$user_identity.'</a>'. '<a href="'. esc_url(wp_logout_url( get_permalink() )).'" title="Log out of this account">'.__(" Log out?",'bhumi').'</a>' . '</p>',
 				'title_reply_to' => __( 'Leave a Reply to %s','bhumi'),
 				'id_submit' => 'bhumi_send_button',
 				'label_submit'=>__( 'Post Comment','bhumi'),

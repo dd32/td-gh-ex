@@ -4,7 +4,7 @@
 		<div class="row">
 		<?php if(have_posts()) :?>
 				<div class="col-md-12">
-				<h1><?php printf( __( 'Category Archives: %s', 'bhumi' ), '<span>' . single_cat_title( '', false ) . '</span>' ); ?>
+				<h1><?php the_archive_title(); ?>
 				</h1>
 				</div>
 		<?php endif; ?>

@@ -36,23 +36,23 @@
 				<div class="col-md-6 col-sm-12">
 				<?php if($cpm_theme_options['email_id'] || $cpm_theme_options['phone_no'] !='') { ?>
 				<ul class="head-contact-info">
-						<?php if($cpm_theme_options['email_id'] !='') { ?><li><i class="fa fa-envelope"></i><a href="mailto:<?php echo $cpm_theme_options['email_id']; ?>"><?php echo esc_attr($cpm_theme_options['email_id']); ?></a></li><?php } ?>
-						<?php if($cpm_theme_options['phone_no'] !='') { ?><li><i class="fa fa-phone"></i><a href="tel:<?php echo $cpm_theme_options['phone_no']; ?>"><?php echo esc_attr($cpm_theme_options['phone_no']); ?></a></li><?php } ?>
+						<?php if($cpm_theme_options['email_id'] !='') { ?><li><i class="fa fa-envelope"></i><a href="mailto:<?php echo $cpm_theme_options['email_id']; ?>"><?php echo esc_html($cpm_theme_options['email_id']); ?></a></li><?php } ?>
+						<?php if($cpm_theme_options['phone_no'] !='') { ?><li><i class="fa fa-phone"></i><a href="tel:<?php echo $cpm_theme_options['phone_no']; ?>"><?php echo esc_html($cpm_theme_options['phone_no']); ?></a></li><?php } ?>
 				</ul>
 				<?php } ?>
 					<ul class="social">
 					<?php if($cpm_theme_options['fb_link']!='') { ?>
-					   <li class="facebook" data-toggle="tooltip" data-placement="bottom" title="Facebook"><a  href="<?php echo esc_url($cpm_theme_options['fb_link']); ?>"><i class="fa fa-facebook"></i></a></li>
+					   <li class="facebook" data-toggle="tooltip" data-placement="bottom" title="<?php echo esc_html__('Facebook','bhumi'); ?>"><a  href="<?php echo esc_url($cpm_theme_options['fb_link']); ?>"><i class="fa fa-facebook"></i></a></li>
 					<?php } if($cpm_theme_options['twitter_link']!='') { ?>
-						<li class="twitter" data-toggle="tooltip" data-placement="bottom" title="Twiiter"><a href="<?php echo esc_url($cpm_theme_options['twitter_link']); ?>"><i class="fa fa-twitter"></i></a></li>
+						<li class="twitter" data-toggle="tooltip" data-placement="bottom" title="<?php echo esc_html('Twitter','bhumi'); ?>"><a href="<?php echo esc_url($cpm_theme_options['twitter_link']); ?>"><i class="fa fa-twitter"></i></a></li>
 					<?php } if($cpm_theme_options['linkedin_link']!='') { ?>
-						<li class="linkedin" data-toggle="tooltip" data-placement="bottom" title="Linkedin"><a href="<?php echo esc_url($cpm_theme_options['linkedin_link']); ?>"><i class="fa fa-linkedin"></i></a></li>
+						<li class="linkedin" data-toggle="tooltip" data-placement="bottom" title="<?php echo esc_html('LinkedIn','bhumi')?>"><a href="<?php echo esc_url($cpm_theme_options['linkedin_link']); ?>"><i class="fa fa-linkedin"></i></a></li>
 					<?php } if($cpm_theme_options['youtube_link']!='') { ?>
-						<li class="youtube" data-toggle="tooltip" data-placement="bottom" title="Youtube"><a href="<?php echo esc_url($cpm_theme_options['youtube_link']) ; ?>"><i class="fa fa-youtube"></i></a></li>
+						<li class="youtube" data-toggle="tooltip" data-placement="bottom" title="<?php echo esc_html('Youtube','bhumi'); ?>"><a href="<?php echo esc_url($cpm_theme_options['youtube_link']) ; ?>"><i class="fa fa-youtube"></i></a></li>
 	                <?php } if($cpm_theme_options['gplus']!='') { ?>
-						<li class="gplus" data-toggle="tooltip" data-placement="bottom" title="gplus"><a href="<?php echo esc_url($cpm_theme_options['gplus']) ; ?>"><i class="fa fa-google-plus"></i></a></li>
+						<li class="gplus" data-toggle="tooltip" data-placement="bottom" title="<?php echo esc_html('Instagram','bhumi')?>"><a href="<?php echo esc_url($cpm_theme_options['gplus']) ; ?>"><i class="fa fa-google-plus"></i></a></li>
 	                <?php } if($cpm_theme_options['instagram']!='') { ?>
-						<li class="facebook" data-toggle="tooltip" data-placement="bottom" title="instagram"><a href="<?php echo esc_url($cpm_theme_options['instagram']) ; ?>"><i class="fa fa-instagram"></i></a></li>
+						<li class="facebook" data-toggle="tooltip" data-placement="bottom" title="<?php echo esc_html('Instagram','bhumi')?>"><a href="<?php echo esc_url($cpm_theme_options['instagram']) ; ?>"><i class="fa fa-instagram"></i></a></li>
 	                <?php } ?>
 					</ul>
 				</div>
