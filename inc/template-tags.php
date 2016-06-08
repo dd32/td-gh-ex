@@ -55,13 +55,14 @@ $nav_class = ( is_single() ) ? 'post-navigation' : 'paging-navigation';
 }
 endif; // beam_content_nav
 
-if ( ! function_exists( '_s_comment' ) ) :
+
+if ( ! function_exists( 'beam_comment' ) ) :
 /**
 * Template for comments and pingbacks.
 *
 * Used as a callback by wp_list_comments() for displaying the comments.
 */
-function _s_comment( $comment, $args, $depth ) {
+function beam_comment( $comment, $args, $depth ) {
 $GLOBALS['comment'] = $comment;
 
 if ( 'pingback' == $comment->comment_type || 'trackback' == $comment->comment_type ) : ?>
@@ -116,15 +117,16 @@ comment_reply_link( array_merge( $args, array(
 <?php
 endif;
 }
-endif; // ends check for _s_comment()
+endif; // ends check for beam_comment()
 
-if ( ! function_exists( '_s_the_attached_image' ) ) :
+
+if ( ! function_exists( 'beam_the_attached_image' ) ) :
 /**
 * Prints the attached image with a link to the next attached image.
 */
-function _s_the_attached_image() {
+function beam_the_attached_image() {
 $post                = get_post();
-$attachment_size     = apply_filters( '_s_attachment_size', array( 1200, 1200 ) );
+$attachment_size     = apply_filters( 'beam_attachment_size', array( 1200, 1200 ) );
 $next_attachment_url = wp_get_attachment_url();
 
 /**
@@ -201,6 +203,7 @@ esc_html( get_the_author() )
 }
 endif;
 
+
 /**
 * Returns true if a blog has more than 1 category
 */
@@ -226,12 +229,13 @@ return false;
 }
 }
 
+
 /**
 * Flush out the transients used in beam_categorized_blog
 */
-function _s_category_transient_flusher() {
+function beam_category_transient_flusher() {
 // Like, beat it. Dig?
 delete_transient( 'all_the_cool_cats' );
 }
-add_action( 'edit_category', '_s_category_transient_flusher' );
-add_action( 'save_post',     '_s_category_transient_flusher' );
+add_action( 'edit_category', 'beam_category_transient_flusher' );
+add_action( 'save_post',     'beam_category_transient_flusher' );

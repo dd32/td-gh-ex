@@ -8,109 +8,112 @@
 */
 
 get_header(); ?>
-<div id="content" class="site-content">
-<div class="site-content-inner">
 
-<section id="primary" class="content-area">
-<main id="main" class="site-main" role="main">
+	<div id="content" class="site-content">
+		<div class="site-content-inner">
 
-<?php if ( have_posts() ) : ?>
+		<section id="primary" class="content-area">
+			<main id="main" class="site-main" role="main">
 
-<header class="page-header">
-<h1 class="page-title">
-<?php
-if ( is_category() ) :
-single_cat_title();
+			<?php if ( have_posts() ) : ?>
 
-elseif ( is_tag() ) :
-single_tag_title();
+			<header class="page-header">
+				<h1 class="page-title">
+				<?php
+				if ( is_category() ) :
+				single_cat_title();
 
-elseif ( is_author() ) :
-/* Queue the first post, that way we know
- * what author we're dealing with (if that is the case).
-*/
+				elseif ( is_tag() ) :
+				single_tag_title();
 
-the_post();
+				elseif ( is_author() ) :
+				/* Queue the first post, that way we know
+				 * what author we're dealing with (if that is the case).
+				*/
 
-printf( __( 'Author Archive: %s', 'beam' ), '<span class="vcard">' . get_the_author() . '</span>' );
-/* Since we called the_post() above, we need to
- * rewind the loop back to the beginning that way
- * we can run the loop properly, in full.
- */
-rewind_posts();
+				the_post();
 
-elseif ( is_day() ) :
-printf( __( 'Daily Archive: %s', 'beam' ), '<span>' . get_the_date() . '</span>' );
+				printf( __( 'Author Archive: %s', 'beam' ), '<span class="vcard">' . get_the_author() . '</span>' );
+				/* Since we called the_post() above, we need to
+				 * rewind the loop back to the beginning that way
+				 * we can run the loop properly, in full.
+				 */
+				rewind_posts();
 
-elseif ( is_month() ) :
-printf( __( 'Monthly Archive: %s', 'beam' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
+				elseif ( is_day() ) :
+				printf( __( 'Daily Archive: %s', 'beam' ), '<span>' . get_the_date() . '</span>' );
 
-elseif ( is_year() ) :
-printf( __( 'Yearly Archive: %s', 'beam' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
+				elseif ( is_month() ) :
+				printf( __( 'Monthly Archive: %s', 'beam' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
 
-elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-_e( 'Asides', 'beam' );
+				elseif ( is_year() ) :
+				printf( __( 'Yearly Archive: %s', 'beam' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
 
-elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-_e( 'Images', 'beam' );
+				elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
+				_e( 'Asides', 'beam' );
 
-elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-_e( 'Videos', 'beam' );
+				elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
+				_e( 'Images', 'beam' );
 
-elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-_e( 'Quotes', 'beam' );
+				elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
+				_e( 'Videos', 'beam' );
 
-elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-_e( 'Links', 'beam' );
+				elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
+				_e( 'Quotes', 'beam' );
 
-else :
-_e( 'Archives', 'beam' );
+				elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
+				_e( 'Links', 'beam' );
 
-endif;
-?>
-</h1>
-<?php
-// Show an optional term description.
-$term_description = term_description();
-if ( ! empty( $term_description ) ) :
-printf( '<div class="taxonomy-description">%s</div>', $term_description );
-endif;
-?>
-</header><!-- .page-header -->
+				else :
+				_e( 'Archives', 'beam' );
 
-<?php /* Start the Loop */ ?>
-<?php while ( have_posts() ) : the_post(); ?>
-<?php
-// check if the post has a Post Thumbnail assigned to it.
-if ( has_post_thumbnail( 'category-thumb' ) ) {
-?>
-<div class="featured-image">
-<?php
-	the_post_thumbnail( 'category-thumb' );
-?>
-</div>
-<?php
-} 
-/* Include the Post-Format-specific template for the content.
-* If you want to override this in a child theme, then include a file
-* called content-___.php (where ___ is the Post Format name) and that will be used instead.
-*/
-get_template_part( 'content', get_post_format() );
-?>
-<!-- content endwhile -->
+				endif;
+				?>
+				</h1>
 
-<?php endwhile; ?>
+				<?php
+				// Show an optional term description.
+				$term_description = term_description();
+				if ( ! empty( $term_description ) ) :
+				printf( '<div class="taxonomy-description">%s</div>', $term_description );
+				endif;
+				?>
+			</header><!-- .page-header -->
 
-<?php beam_content_nav( 'nav-below' ); ?>
+			<?php /* Start the Loop */ 
+				while ( have_posts() ) : the_post(); 
+			// check if the post has a Post Thumbnail assigned to it.
+					if ( has_post_thumbnail( 'category-thumb' ) ) {
+			?>
+				
+					<div class="featured-image">
+					<?php
+						the_post_thumbnail( 'category-thumb' );
+					?>
+					</div>
+					<?php
+					} 
+					/* Include the Post-Format-specific template for the content.
+					* If you want to override this in a child theme, then include a file
+					* called content-___.php (where ___ is the Post Format name) and that will be used instead.
+					*/
+					get_template_part( 'content', get_post_format() );
 
-<?php else : ?>
+					//content endwhile -->
 
-<?php get_template_part( 'no-results', 'archive' ); ?>
+				endwhile; 
 
-<?php endif; ?>
+			beam_content_nav( 'nav-below' );
 
-</main><!-- #main -->
-</section><!-- #primary -->
+			else : 
+
+			get_template_part( 'template-parts/content', 'none' ); 
+
+			endif; ?>
+
+		</main><!-- #main -->
+	</section><!-- #primary -->
  
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+<?php 
+get_sidebar();
+get_footer(); 

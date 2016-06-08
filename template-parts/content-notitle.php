@@ -14,7 +14,7 @@ get_header(); ?>
 
 <div class="entry-content-only-page">
 
-<?php //load_content_one(); ?>
+
 <?php while ( have_posts() ) : the_post(); ?>
  <?php the_content(); ?> 
 <?php endwhile; // end of the loop. ?>
