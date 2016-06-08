@@ -4,7 +4,7 @@ Theme URI: http://themonic.com/iconic-one/
 Author: Themonic
 Author URI: http://themonic.com
 Description: Iconic One is a premium quality theme with pixel perfect typography and responsiveness and is built for speed with pagespeed score of 95+, Iconic One implements proper SEO so that your content will rank high and is compatible with AIOSEO and Yoast SEO, It makes proper use of Live customizer that allows you to setup the theme in minutes, you can easily upload the logo, modify the background color, footer text, social media urls without touching any line of code. It utilizes latest HTML 5, CSS3 and wordpress native functions for creating the awesomeness that looks good on every browser. Support is free, access the support here http://themonic.com/support/, Report issues and feedback at http://themonic.com/feedback/.
-Version: 1.6
+Version: 1.7.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: Blue, White, Black, one-column, two-columns, right-sidebar, custom-background, fluid-layout, responsive-layout, custom-menu, full-width-template, post-formats, rtl-language-support, theme-options, custom-colors
@@ -1409,7 +1409,6 @@ img#wpstats {
  * ------------------------------------------------------------ */
 /* Minimum width of 768pixels. */
 @media screen and (min-width: 768px) {
-
 	.author-avatar {
 		float: left;
 		margin-top: 8px;
@@ -1423,23 +1422,23 @@ img#wpstats {
 		max-width: 1040px;
 	}
 	.site-content {
-	border-right: 1px solid #F1F1F1;
-    float: left;
-    margin: 0px 1%;
-    padding: 30px 2% 0 1%;
-    width: 63.2%;
+		border-right: 1px solid #F1F1F1;
+		float: left;
+		margin: 0px 1%;
+		padding: 30px 2% 0 1%;
+		width: 63.2%;
 	}
 	body.template-front-page .site-content,
 	body.single-attachment .site-content,
 	body.full-width .site-content {
 		width: 96%;
+		border-right: none;
 	}
-		
 	.widget-area {
-    float: right;
-    margin: 24px 0;
-    padding: 0 2% 0 0;
-    width: 28.7%;
+		float: right;
+		margin: 24px 0;
+		padding: 0 2% 0 0;
+		width: 28.7%;
 	}
 	.site-header h1,
 	.site-header h2 {
@@ -1452,7 +1451,7 @@ img#wpstats {
 	}
 	.themonic-nav ul.nav-menu,
 	.themonic-nav div.nav-menu > ul {
-	background:none repeat scroll 0 0 #F3F3F3;
+		background:none repeat scroll 0 0 #F3F3F3;
 		border-bottom: 5px solid #16A1E7;
 		border-top: 1px solid #ededed;
 		display: inline-block !important;
@@ -1483,7 +1482,6 @@ img#wpstats {
 	.themonic-nav li {
 		position: relative;
 	}
-
 	.themonic-nav li ul {
 		display: none;
 		margin: 0;
@@ -1510,12 +1508,10 @@ img#wpstats {
 		width: 160px;
 		white-space: normal;
 	}
-	
-	.themonic-nav li ul li a:hover {
+		.themonic-nav li ul li a:hover {
 		background: #e9e9e9;
 		color: #444;
 	}
-	
 	.themonic-nav .current-menu-item > a,
 	.themonic-nav .current-menu-ancestor > a,
 	.themonic-nav .current_page_item > a,
@@ -1524,7 +1520,6 @@ img#wpstats {
 			color: #FFFFFF;
 			font-weight: bold;
 	}
-	
 	.entry-header .entry-title {
 		font-size: 28px;
 		margin-bottom: 20px;
@@ -1589,7 +1584,7 @@ img#wpstats {
 	body.custom-background-empty .site,
 	body.custom-background-white .site {
 		padding: 0;
-		margin-top: 10px;
+		margin-top: 24px;
 		margin-bottom: 0;
 		box-shadow: none;
 	}

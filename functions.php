@@ -31,7 +31,10 @@ function themonic_setup() {
 
 	// Adds RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
-
+	
+	// Let WordPress manage the document title starting theme version 1.7.1
+	add_theme_support( 'title-tag' );
+	
 	// Adds support for Navigation menu, Iconic One uses wp_nav_menu() in one location.
 	register_nav_menu( 'primary', __( 'Primary Menu', 'themonic' ) );
 	
@@ -106,32 +109,6 @@ function themonic_scripts_styles() {
 	$wp_styles->add_data( 'themonic-ie', 'conditional', 'lt IE 9' );
 }
 add_action( 'wp_enqueue_scripts', 'themonic_scripts_styles' );
-
-/*
- * WP Title Filter, refer http://codex.wordpress.org/Plugin_API/Filter_Reference/wp_title
- * @since Iconic One 1.0
- */
-function themonic_wp_title( $title, $sep ) {
-	global $paged, $page;
-
-	if ( is_feed() )
-		return $title;
-
-	// Add the site name.
-	$title .= get_bloginfo( 'name' );
-
-	// Add the site description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title = "$title $sep $site_description";
-
-	// Add a page number if necessary.
-	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'themonic' ), max( $paged, $page ) );
-
-	return $title;
-}
-add_filter( 'wp_title', 'themonic_wp_title', 10, 2 );
 
 /*
  * Default Nav Menu fallback to Pages menu, 
