@@ -11,18 +11,15 @@ function becorp_comment( $comment, $args, $depth )
 	$leave_reply = $comment_data['translation_reply_to_coment'] ? $comment_data['translation_reply_to_coment'] : 
 	__('Reply','becorp');?>
 		
-		<div class="comment-box clearfix">
-         <div class="avatar">
+		<div class="comment-box wow fadeInDown animated" data-wow-delay="0.4s">
+          <div class="avatar">
 			   <?php echo get_avatar($comment,$size = '60'); ?>
 
 		</div>
-			<div class="comment-content">
+			<div class="comment-content wow fadeInLeft animated" data-wow-delay=".5s">
 			<div class="comment-meta">
 				<span class="comment-by"><?php the_author();?></span>
-				<span class="comment-date"><?php if ( ('d M  y') == get_option( 'date_format' ) ) :  comment_date('F j, Y');
-				else : 
-				comment_date(); 
-				endif; ?>&nbsp;<?php _e('at','becorp');?>&nbsp;<?php comment_time('g:i a'); ?></span>
+				<span class="comment-date"><?php comment_date('F j, Y');?>&nbsp;<?php _e('at','becorp');?>&nbsp;<?php comment_time('g:i a'); ?></span>
 				<span class="reply-link"><a href="#"><?php comment_reply_link(array_merge( $args, array('reply_text' => $leave_reply,'depth' => $depth, 'max_depth' => $args['max_depth']))) ?></a></span>
 			</div>
 			<p><?php comment_text() ;?></p>
@@ -31,8 +28,8 @@ function becorp_comment( $comment, $args, $depth )
 <?php
 }
 endif;
-add_filter('get_avatar','becorp_comment_add_gravatar_class');
-function becorp_comment_add_gravatar_class($class) {
+add_filter('get_avatar','becorp_add_gravatar_class');
+function becorp_add_gravatar_class($class) {
     $class = str_replace("class='avatar", "class='uthor-image", $class);
     return $class;
 }

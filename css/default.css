@@ -1,0 +1,331 @@
+/*
+Theme Name: becorp-pro
+Theme URI: http://asiathemes.com/page.php
+Author: asiathemes
+Author URI:http://asiathemes.com/
+Created by: Asiathemes
+Description: Becorp is a responsive and fully customizable template for Business and Multipurpose theme.The Theme has You can use it for your business, portfolio, blogging or any type of site.Custom menus to choose the menu in Primary Location that is in Header area of the site. which is ideal for creating a corporate / business website.
+Becorp is Retina ready.We focused on usability across various devices, starting with smartphones.Becorp is a Cross-Browser Compatible theme that works on All leading web browsers.In header area and footer of the theme offers Social Media Links to add your Social Links here.translation ready and many more.
+Version:  1.0
+Tags: black,blue, purple,red,orange, white,green, yellow, two-columns, three-columns, four-columns, custom-menu, right-sidebar, fixed-layout, fluid-layout, custom-background,featured-image-header, sticky-post, theme-options, threaded-comments, featured-images, flexible-header, responsive-layout
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl.html
+Text Domain: becorp
+
+*/
+/*------------------- Becorp General Styles-------------------- */
+.main-wrapper {background-color:#fff;}
+p {color:#818387;}
+.white{color:#fff!important;}
+/*-------Main title------*/
+.main-heading span{color:#0099ff;} 
+a {color: #464646;}
+a:hover {color: #0099ff;}
+.top {background: #0C3951;border-bottom: 1px solid #062A3D;}
+ul.top-contact li {color:#fff;}
+ul.top-contact li i {color: #fff;}
+ul.top-contact li a, ul.top-social li a{color: #fff;}
+ul.top-contact li a:hover {color: #0099ff;}
+ul.top-social li a.icon-twitter:hover { background: #46c0fb; color: #fff;}
+ul.top-social li a.icon-dribbble:hover {background: #ea4c89; color: #fff;}
+ul.top-social li a.icon-facebook:hover { background: #4863ae; color: #fff;}
+ul.top-social li a.icon-google-plus:hover {background: #dd4b39;color: #fff;}
+ul.top-social li a.icon-rss:hover { background: #ff7f25; color: #fff;}
+ul.top-social li a.icon-linkedin:hover {background: #0083a8;color: #fff;}
+/*-----Menu------------ */
+.header {
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 1px 0 0 rgba(0, 0, 0, 0.06);
+}
+/*----Logo----------------*/
+.site-logo a {color: #202020;}
+.site-logo p {color: #404040;}
+.navbar-default .navbar-nav > li > a {color: #202020 !important;}
+.navbar-default .navbar-nav > .active > a {color: #fff !important;background-color: #0099ff !important;}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > .active > a:hover {color: #fff !important;background-color: #0099ff !important;}
+.navbar-default .navbar-toggle {color:#fff !important;}
+.icon-bar span { color:#fff !important;}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+   color: #fff !important;background-color: #0099ff !important;}
+/*---------Dropdown Menus & Sub Menu----------------------------*/
+/*Dropdown Menus */
+.dropdown-menu { min-width: 200px; background: #0C3951!important;}
+.dropdown-menu>li>a {
+	background: #0C3951 !important;
+    color: #fff !important;
+    border-bottom: 1px solid #062A3D;
+}
+.dropdown-menu>li>a:hover {
+	color:#fff !important;
+	background:#0099ff !important;
+}
+/*dropdown-submenu Menus */
+.navbar-nav .open .dropdown-menu > li > a, .navbar-nav .open .dropdown-menu .dropdown-header {
+    color:#0099ff;
+	background-color:#fff;
+}
+.dropdown-menu > li > a:hover {color:#0099ff;background-color:#fff;}
+.dropdown-submenu:hover > .dropdown-menu{color:#0099ff;background-color:#fff;}
+/*------Home Top Callout------*/
+.buy-it-area {background: url(../images/banner-bg.jpg) no-repeat center top fixed;}
+.buy-it-area .solid-bg {background: rgba(0, 153, 255,0.8);color: #fff;}
+.buy-it-area .solid-bg .buy-it-now {color: #fff;border: 2px solid #fff !important;}
+.buy-it-area .solid-bg .buy-it-now:hover {background-color:#fff;color:#333;}
+/*------Services---------*/
+.services i {color: #0099ff;background: #fafafa;border: 1px solid #e4e4e4;}
+.services i:hover {
+	color: #fff;
+	background:#0099ff;
+	transition: all 0.3s ease-in-out 0s;
+	-webkit-animation: spin 2s ease-in-out infinite alternate;
+    -moz-animation: spin 2s ease-in-out infinite alternate;
+} 
+/*-----------Home Blog------------*/
+.post-meta {background: rgba(247, 247, 247, 1);}
+ .post-meta li a {color: #404040;}
+ .post-meta li i {color:#0099ff;}
+ .post-meta li a:hover {color:#0099ff;}
+/*----------main Carousel----------------*/
+/* Direction Nav */
+.carou-direction-nav a {background: rgba(0, 0, 0, 1);color: #ffffff;}
+.carou-direction-nav .carou-prev {color: #ffffff;}
+.carou-direction-nav .carou-next {color: #ffffff;}
+.carou-direction-nav .carou-prev:hover  {background:#0099ff;color:#fff;}
+.carou-direction-nav .carou-next:hover {background:#0099ff;color:#fff;}
+/* Carousel Caption------*/
+.slider-caption h2 span {background: rgba(0, 153, 255,0.8);color:#fff;}
+.slider-caption p span {background: none repeat scroll 0 0 rgba(0, 0, 0, 0.8);color:#fff;}
+.btn-theme {color: #fff;border: 2px solid #fff !important;}
+.btn-theme:hover {
+    color: #fff !important;
+    background-color: #0099ff;
+    border-color: #0099ff !important;
+}
+/*----Testimonial Section---------*/
+.testimonial-section{background: #AFA8A8;}
+.solid-callout{background: rgba(0,0,0,0.7);}
+/* Changes the color of the indicators */
+#quote-carousel .carousel-indicators li {background: #c0c0c0;}
+#quote-carousel .carousel-indicators .active { background: #333333;}
+#quote-carousel p{color:#fff; }
+#quote-carousel small{color:#ccc;}
+/*--------Portfolio Section-----------*/
+.portfolio-section{background:#eee;}
+.portfolio-area {box-shadow: 1px 1px 3px rgba(0,0,0,0.4);}
+.caption {background: rgba(0,0,0, 0.7);color:#fff !important;}
+.caption p{color:#fff;}
+.portfolio-icon a {background-color:#0099ff;}
+.portfolio-icon a > i{color: #FFFFFF;}
+/*Project Pagination Scroll*/
+.project-scroll-btn {
+	margin-bottom: 50px !important;
+    margin-right: 25px !important;
+	overflow: hidden;
+	padding: 0 0 0px;
+	text-align: right;
+}
+.project-scroll-btn li:first-child {
+	margin-left: 0;
+}
+.project-scroll-btn li {border:2px solid #0099ff;}
+.project-scroll-btn li:hover {background: #0099ff;color: #ffffff;}
+.project-scroll-btn li a {color:#101010;}
+.project-scroll-btn li:hover  a.project-prev:before{color: #ffffff;}
+.project-scroll-btn li:hover  a.project-next:before{color: #ffffff;}  
+/*----Client Section--------*/
+.client-section{background:#eee;}
+.footer {background-color: #01131C;color: #eee;}
+.footer p{ color: #eee;}
+.footer h2 {olor: #fff;}
+.footer h2 i {color:#0099ff;}
+.footer a {color: #eee;}
+.footer a:hover {color:#0099ff;}
+.contact_address li{color:#eee;}
+.contact_address li i{color:#0099ff;}
+/*---copyrights------*/
+.copyright_info {
+    color: #eee;
+    background-color: #010F16;
+    border-top: 1px solid #010C12;
+}
+.copyright_info b {color: #eee;}
+.copyright_info a {color:#0099ff;}
+.copyright_info p{color:#eee;}
+.copyright_info a:hover {color:#999;}
+/*----------------About us -------------------------------------*/
+/* Page Title */
+.buy-it-area .page-title {background: rgba(0, 153, 255,0.8);color: #fff;}
+.page-title h6 a{color:#fff;}
+.page-title h6  span{color:#0C3951;}
+.headline {color: #191a1e;}
+.headline span {color: #0099ff;}
+.member-job {color:#0099ff;}
+.list-grey .desc {margin: 0 0 0 74px;}
+.list-grey i {
+	color: #0099ff;
+	border:1px solid #e4e4e4;
+	background: #eeeeee;
+	transition: all 0.3s ease-in-out 0s;
+}
+.list-grey i:hover {
+	color: #fff;
+	background:#0099ff;
+	transition: all 0.3s ease-in-out 0s;
+	-webkit-animation: spin 2s ease-in-out infinite alternate;
+    -moz-animation: spin 2s ease-in-out infinite alternate;
+} 
+/*--------------------Services Page-------------------------------------------------*/
+ul.list-ok li {color: #818387;}
+ul.list-ok li:before {color: #0099ff;}
+.panel-default > .panel-heading {
+	color: #fff !important;
+    background-color: #0099ff !important;
+    border-color: #0099ff !important;
+}
+/*------Portfolio Pages-----------------------------------------------------------*/
+/*Portfolio Tabs*/
+.portfolio-tabs li a {color:#202020;border: 2px solid #0099ff; }
+.portfolio-tabs li.active > a, .portfolio-tabs li > a:hover { color:#fff;background:#0099ff;}
+/*------------------------------------------Blog Page-----------------------------------------------------------*/
+#blog{background:#eee; padding: 60px 0px 50px;}
+.blog-item {
+    background: #fff;
+    border: 1px solid #eee;
+    border-bottom:3px solid #0099ff;
+	box-shadow: 0px 0px 2px rgba(0,0,0,0.2);
+}
+.blog-item span a{color: #666666;}
+.blog-item span a:hover{color: #c0392b;}
+.blog-content h3 a {color:#202020;}
+.blog-content h3 a:hover {color: #0099ff;}
+.blog-content .date {color: #FFFFFF;background: rgba(0, 153, 255,0.8);}
+.blog-content .post-type {color: #FFFFFF;}
+.btn-readmore {color: #0099ff;border: 2px solid #0099ff !important;}
+.btn-readmore:hover, .btn-readmore:focus {
+  border: 2px solid #0099ff !important;
+  background-color:#0099ff;
+  color:#fff !important;
+}
+/*----Blog Pagination---*/
+.blog-pagination a:hover, .blog-pagination a.active {
+    background-color:#0099ff !important;
+    color: #FFFFFF;
+}
+.blog-pagination a { color: #0099ff;border:2px solid #0099ff;}
+.search_box { border: 1px solid #CCCCCC;}
+.search_box:focus{border-color: #7AB700;}
+.btn-search {color: #FFFFFF;border: 1px solid #CCCCCC;background-color:#0099ff;}
+.widget{background: #fff; border: 1px solid #ddd; border-bottom:3px solid #0099ff;}
+.widget h3 {background: #0C3951;color:#fff;}
+.categories p {color: #505050;}
+.blog_category  li{border-bottom: 1px dotted #ddd;}
+.blog_category li a {color: #505050;background-color: #fff !important;}
+.blog_category li a:hover, 
+.blog_category li a:focus { background-color: #fff;color:#0099ff; }
+ .widget-thumb {border: 2px solid #eee;}
+.widget .widget-content a ,.widget .widget-content span{ color: #404040;}	
+.widget-content a{color: #eee;}
+.widget-content span{color: #eee;}
+.carousel-blog-control {color: #fff;background:#0099ff;}
+.carousel-blog-control i {color:#fff;}
+.carousel-blog-control:hover {background-color:#0099ff;color: #fff !important;}
+/*-----------Single-Post Page---------------------------------------*/
+.post-bottom {border-bottom: 1px solid #f6f6f6;}
+.post-tags-list a:hover {color: #fff;}
+.post-share a i {color: #fff;}
+.blog-item .author-info .author-image img {border: 4px solid #eeeeee;}
+.blog-item .author-info h4 {color: #444;}
+#comments .comments-list li .comment-box {
+	border: 1px solid #e8e8e8;
+	box-shadow: 0 0 20px rgba(0,0,0,.04) inset;
+	-o-box-shadow: 0 0 20px rgba(0,0,0,.04) inset;
+	-moz-box-shadow: 0 0 20px rgba(0,0,0,.04) inset;
+  	-webkit-box-shadow: 0 0 20px rgba(0,0,0,.04) inset;
+}
+#comments .avatar img {border: 1px solid #e8e8e8;}
+.comment-content .comment-meta span:after {color: #888;}
+.comment-content .comment-meta .comment-by {color: #444 !important;}
+.comment-content .comment-meta .comment-date {color: #888;}
+label {color: #303030;}
+label .required {color: #ED2C3A;}
+.widget-search input[type="search"],
+#contact-form input[type="text"],
+#contact-form textarea,
+#respond input[type="text"],
+#respond textarea { color: #303030; border: 1px solid #ccc;}
+.widget-search input[type="search"]:focus,
+#contact-form input[type="text"]:focus,
+#contact-form textarea:focus,
+#respond input[type="text"]:focus,
+#respond textarea:focus {
+	border-color: #ddd;
+	box-shadow: 0 0 3px #eee;
+	-o-box-shadow: 0 0 3px #eee;
+	-moz-box-shadow: 0 0 3px #eee;
+  	-webkit-box-shadow: 0 0 3px #eee;
+}
+.mail_response { border-bottom: 1px solid #eee;}
+/*----------------------Contact us Page--------------------------------*/
+.classic-title { color: #444;border-bottom: 1px solid #eee;}
+ul.icons-list li i {color:#0099ff;}
+/**  404 Page css **/
+.page404 .return a:hover {color: #0099ff !important;}
+/* button css */
+.btn {border: 1px solid transparent;}
+/**--404 css--**/
+.page404 .p404 li{background:#0099ff;color:#fff;}
+.page404 .p404 li.zero{
+background:url("../images/404shape.png") no-repeat center 30px #fff;color:rgba(0,0,0,0);}
+.page404 .return a,.page404-content a{color:#008080;}
+.page404v2{background:url(../images/404bg.png) top center #000;}
+.page404v2 p{color:#fff;}
+.page404v2 .title404 h1 sup{color:#fff;}
+.page404v2 .title404 h1 span{color:#fff;}
+.page404v2 .title404 h1 sub{color:#fff;}
+.links{color:#fff;}
+.page404-content h4{color:#0ca2c0;}
+.page404-content .input-group{background:#ffffff;border:1px solid rgba(255,255,255,.1);}
+.page404-content .input-group input[type="submit"]{background:url(../images/rmbg.png) no-repeat;}
+.p404-bottom strong{color:#fff;}
+.p404-bottom .list li{color:#fff;}
+/*--------Scroll Top---------*/
+.hc_scrollup {background-color: #0099ff;}
+.hc_scrollup i { color: #ffffff;}
+/** footer Calendar css **/
+td, th {border: 1px solid #ccc !important;}
+.widget > ul > li {border-bottom: 1px dotted #d1d1d1;} 
+.widget > li { border-bottom: 1px solid #E5E5E5;}
+.widget > a{ color: #595959;background-color: #fff !important;}
+.widget >li > a{ color: #595959 !important;}
+code { color: #0099ff !important; }
+blockquote { border-left :5px solid #0099ff !important ;}
+.qua_blockquote_section blockquote , blockquote {background-color: #F6F5F5;border-left: 5px solid #f8504b;}
+.blog-content   ul  li,.blog-content  ul  li{list-style:disc outside none;list-style-position: inside;}
+/*---WordPress Core-------------------------------------------------------------- */
+.wp-caption {background: #fff;border: 1px solid #f0f0f0;}
+.wp-caption {border: 1px solid #ccc;}
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	color: #21759b;
+}
+/*----Add new-------------------------------*/
+.portfolio-content{background:#fff;border-bottom: 4px solid #0099ff;}
+.portfolio-content h4{color:#202020;}
+.bg-grey{background:#eee;}
+.about-us{background:#eee;}
+.widget .tagcloud a{border:2px solid #0099ff;color:202020;}
+.tagcloud a{border:2px solid #0099ff;color:202020;}
+.tagcloud a:hover{background:#0099ff;border:2px solid #0099ff;color:#fff;}
+.widget .tagcloud a:hover{ background:#0099ff; border:2px solid #0099ff;color:#fff;}
+textarea{height:auto !important;}
+.carousel-indicators li { border:2px solid #fff !important;}
+.carousel-indicators .active { background-color:#0099ff !important;}
+.widget h3 a{color: #fff;}
+td#today{color:#0099ff;}
+#wp-calendar th{background-color:#0099ff;color:#fff;}
+
+
+

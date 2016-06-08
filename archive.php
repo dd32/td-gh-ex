@@ -1,40 +1,40 @@
-<?php get_header(); ?>
-<!-----Page Title----->  
- <div class="buy-it-area">
-  <div class="page-title">
-	<div class="container">
-	  <div class="row">
-		<div class="col-lg-5"><h6><a href="<?php echo esc_html(home_url());?>"><?php _e('Home','becorp');?></a><?php _e('/','becorp'); ?><span><?php the_title();?></span></h6></div>
-		 <div class="col-lg-6">
-		 <h2>
-		<?php if ( is_day() ) : 
-				the_archive_title(); 
-			elseif ( is_month() ) : 
-				the_archive_title(); 
-			elseif ( is_year() ) : 
-				the_archive_title();
-				endif; ?>
-		</h2>
-		</div>
-	 </div>
-	</div>
-  </div>	
-</div>	
+<?php get_header();
+
+asiathemes_breadcrumbs(); ?>
+<!-----Page Title----->  	
  <!-----Blog Section------>
 <section id="blog">
 <div class="container">
 	<div class="row">
-		<div class="col-md-8">
-				<?php
+		<div class="<?php if( is_active_sidebar('sidebar-data')) { echo "col-md-8"; }  else { echo "col-md-12"; } ?>">
+				<?php 
 					if(have_posts()) :
 					while(have_posts()) :
-							the_post();
-					get_template_part('content','post');
-				 endwhile; endif;
-				 becorp_navigation(); ?>
-		</div>
-		<?php get_sidebar();?>	
+							the_post(); 
+				get_template_part('content','post');
+				 endwhile; endif; ?>
+			<!---Blog pagination-->
+				<div class="row">
+					<div class="col-md-12">	
+						<div class="blog-pagination wow fadeInLeft animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">
+						  <?php echo paginate_links( array( 
+							'show_all' => true,
+							'prev_text' => '<<', 
+							'next_text' => '>>',
+							)); ?>
+						</div>
+					</div>
+				</div>
+			
+		</div><!--/.col-sm-8-->
+	
+	<!--------Sidebar-------------->
+		<?php get_sidebar();?>   
+  <!-------/Sidebar--------------->		
 	</div>
 </div>
-</section>
+</section>   
+    
+<!-------------Footer------------>
 <?php get_footer(); ?>
+<!--/copyright-->

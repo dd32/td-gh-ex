@@ -1,6 +1,6 @@
 <?php
 /** nav-menu-walker.php */
-class becorp_nav_walker extends Walker_Nav_Menu {	
+class asiathemes_nav_walker extends Walker_Nav_Menu {	
 	function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat("\t", $depth);
 		$output .= "\n$indent<ul class=\"dropdown-menu\">\n";
@@ -83,11 +83,11 @@ class becorp_nav_walker extends Walker_Nav_Menu {
 		call_user_func_array(array($this, 'end_el'), $cb_args);
 	}
 }
-function becorp_nav_menu_css_class( $classes ) {
+function asiathemes_nav_menu_css_class( $classes ) {
 	if ( in_array('current-menu-item', $classes ) OR in_array( 'current-menu-ancestor', $classes ) )
 		$classes[]	=	'active';
 
 	return $classes;
 }
-add_filter( 'nav_menu_css_class', 'becorp_nav_menu_css_class' );
+add_filter( 'nav_menu_css_class', 'asiathemes_nav_menu_css_class' );
 ?>

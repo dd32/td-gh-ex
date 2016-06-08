@@ -956,11 +956,6 @@ img {
        -o-transition: all .2s ease-in-out;
           transition: all .2s ease-in-out;
 }
-.carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
 .img-circle {
   border-radius: 50%;
 }

@@ -56,14 +56,15 @@ released
 2. Add About theme Feature.
 
 @version 2.3
-
-1.Add Sidebar widget title.
-
-2. Update pot translation file.
+1. Add Front page with default contents.
 
 @version 2.4
+1. Update with removing all default contents.
 
-1. Update pot translation file.
+@version 2.5
+1. Update color scheme with animation effect.
+2. Update index static blog page.
+3. Add blog post slider on front-page.
 
 *****************Licence Copyrights Attribution*******************
 Becorp WordPress Theme, Copyright 2015 asiathemes
@@ -84,6 +85,8 @@ along with this program.  If not, see .
 
 Becorp WordPress Theme bundles the following third-party resources:
 
+/***** BUNDELED JS ***/
+
 Bootstrap -- v3.3.1 --
 Bootstrap jQuery library,Copyright 2011-2014 Twitter, Inc.
 Licensed under MIT https://github.com/twbs/bootstrap/blob/master/LICENSE
@@ -94,13 +97,15 @@ Licensed under MIT license :http://opensource.org/licenses/MIT
 Visible, Sam Sehnert, samatdf, TeamDF, https://github.com/teamdf/jquery-visible/
 Source:https://github.com/joemottershaw/
 
-jQuery JavaScript Library -- v1.11.0 --
+becorp-content jQuery -- v1.11.0 --
 Copyright 2005, 2014 jQuery Foundation, Inc. and other contributors 
 Released under the MIT license : http://jquery.org/license
 Source:http://jquery.com/
 
-lightbox-2.6.min jQuery -- v1.9 --
+jquery.photobox -- v1.9.9 --000 
+Copyright Yair Even 2013 jQuery Foundation, Inc. and other contributors
 Licensed under MIT license :https://jquery.org/license/
+Source:http://jquery.com/
 
 carousel.js jQuery
 Copyright 2015 asiathemes
@@ -128,20 +133,31 @@ Copyright 2011-2014 Twitter, Inc.
 Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 Source:http://getbootstrap.com
 
-Animations CSS -- v1.0 -- 
-Copyright 2015 asiathemes
-Licensed under GPL
+animate CSS -- v3.2.0 -- 
+Copyright 2014, Joe Mottershaw,
+Licensed under MIT (http://opensource.org/licenses/MIT)
+Source:https://github.com/joemottershaw/
 
 Becorp Style CSS -- v1.0 -- 
 Copyright 2015 asiathemes
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
 
-lightbox CSS  -- v1.0 -- 
+photobox CSS  
 Copyright 2015 asiathemes
 Licensed under GPL
 
+default CSS  
+Copyright 2015 asiathemes
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl.html
+
 Customizer CSS  -- v1.0 -- 
+Copyright 2015 asiathemes
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl.html
+
+media-responsive CSS  -- v1.0 -- 
 Copyright 2015 asiathemes
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl.html

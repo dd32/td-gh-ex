@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> >
 <head>
-    <meta charset="utf-8" />
+     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<?php 
 	$becorp_options=becorp_theme_default_data(); 
 	$header_setting = wp_parse_args(  get_option( 'becorp_option', array() ), $becorp_options ); ?>
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>" charset="<?php bloginfo('charset'); ?>" />
-	<?php  wp_head(); ?>
+	<?php wp_head(); ?>
   </head>
-<body <?php body_class(); ?>>
+ <body <?php body_class(); ?> >
+
   
  <div class="main-wrapper">
  
@@ -19,8 +20,12 @@
 	  <div class="row">
 	    <div class="col-md-6">
 		  <ul class="top-contact pull-left">
+			
+	<?php if($header_setting['header_info_phone']!='') { ?>
             <li><i class="fa fa-phone"></i><?php echo $header_setting['header_info_phone']; ?></li>
+			<?php }	if($header_setting['header_info_mail']!='') { ?>
             <li><i class="fa fa-envelope"></i><?php echo $header_setting['header_info_mail']; ?></li>
+			<?php } ?>
 		  </ul>
 	    </div>
 	    <div class="col-md-6">
@@ -60,35 +65,31 @@
   <div class="header sticky-navigation">
     <div class="navbar navbar-default">
       <div class="container">
-        <div class="navbar-header">
+        <div class="col-ms-3 navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-		  
+		  <div class="site-logo">
           <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 		  				  
-					<?php if($header_setting['upload_image_logo']!='') { ?>
-					<img class="logo img-responsive" src="<?php   echo esc_url($header_setting['upload_image_logo']);  ?>"  style="height:<?php if($header_setting['height']!='') { echo esc_html($header_setting['height']); } ?>px; width:<?php if($header_setting['width']!='') { echo esc_html($header_setting['width']); } ?>px;" />
-										
-					
-					
-		  <?php } else
-					{ 
-					echo get_bloginfo('name');
-							
-					 } ?>
+					<?php becorp_the_custom_logo(); ?>
 					
 		  </a>
+		  </div>
+		  <?php $description = get_bloginfo( 'description', 'display' );
+					if ( $description || is_customize_preview() ) : ?>
+						<h1 class="site-description"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php endif; ?>
         </div>
         <div class="collapse navbar-collapse">
-         <?php	wp_nav_menu( array(  
+           <?php	wp_nav_menu( array(  
 									'theme_location' => 'primary',
 									'container'  => 'collapse navbar-collapse',
 									'menu_class' => 'nav navbar-nav navbar-right',
-									'fallback_cb' => 'becorp_fallback_page_menu',
-									'walker' => new becorp_nav_walker()
+									'fallback_cb' => 'asiathemes_fallback_page_menu',
+									'walker' => new asiathemes_nav_walker()
 									)
 								);	?> 
         </div><!--/.nav-collapse -->

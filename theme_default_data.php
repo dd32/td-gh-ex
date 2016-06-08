@@ -21,29 +21,40 @@ function becorp_theme_default_data()
 	'rss_media_enabled' => 0,
 	
 	//header logo setting
+	'home_logo_section' => 1,
 	'upload_image_logo'=>'',
 	'height' => '50',
 	'width' => '250',
 	'becorp_custom_css'=> '',
 	
+	// Blog Post Slider settings
+	'post_slider_enabled' => 1,
+	'home_blog_slider_post_count' => 4,
+	
 	//Slider settings
 	'home_banner_enabled' => 1,
 	'slider_options' => get_theme_mod('slider_options',__('slide','becorp')),
-	'slider_transition_delay' => 2000,
+	'slider_transition_delay' => 4000,
 	'slider_image_one' => get_template_directory_uri().'/images/slider/slide4.jpg',
 	'slider_image_title_one' => get_theme_mod('slider_image_title_one',__('Becorp Responsive','becorp')),
 	'slider_image_description_one' => get_theme_mod('slider_image_description_one',__('Duis autem vel eum iriure dolor in hendrerit in vulputate.','becorp')),
+	'slider_button_one_title' => get_theme_mod('slider_button_one_title',__('More Details!','becorp')),
+	'slider_image_link_one' => '#',
+	'slider_button_tab_one' => 1,
 		
 	'slider_image_two' => get_template_directory_uri().'/images/slider/slide5.jpg',
-	'slider_image_title_two' => get_theme_mod('slider_image_title_two',__('Becorp Responsive','becorp')),
+	'slider_image_title_two' => get_theme_mod('slider_image_title_two',__('Awesome Responsive Layout','becorp')),
 	'slider_image_description_two' => get_theme_mod('slider_image_description_two',__('Duis autem vel eum iriure dolor in hendrerit in vulputate.','becorp')),
+	'slider_button_two_title' => get_theme_mod('slider_button_two_title',__('More Details!','becorp')),
+	'slider_image_link_two' => '#',
+	'slider_button_tab_two' => 1,
 		
 	'slider_image_three' => get_template_directory_uri().'/images/slider/slide6.jpg',
-	'slider_image_title_three' => get_theme_mod('slider_image_title_three',__('Becorp Responsive','becorp')),
+	'slider_image_title_three' => get_theme_mod('slider_image_title_three',__('Business Purpose Theme','becorp')),
 	'slider_image_description_three' => get_theme_mod('slider_image_description_three',__('Duis autem vel eum iriure dolor in hendrerit in vulputate.','becorp')),
-	'slider_button_text' => get_theme_mod('slider_button_text',__('More Details!','becorp')),
-	'slider_image_link' => '#',
-	'slider_button_tab' => 1,
+	'slider_button_three_title' => get_theme_mod('slider_button_three_title',__('More Details!','becorp')),
+	'slider_image_link_three' => '#',
+	'slider_button_tab_three' => 1,
 	
 	//Home callout section
 	'home_call_out_area_enabled' => 1,

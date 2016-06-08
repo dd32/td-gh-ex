@@ -4,39 +4,29 @@
 }	
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-/*----Menu------*/
+/*---slider-caption-----*/
+.slider-caption h2 {font-size:22px !important;margin:10px 0;}
+.slider-caption p {font-size:14px !important;margin:8px 0;}
+.slider-caption p span {padding:5px !important;}
+.btn-theme {font-size:14px !important;}
+.btn-min-block {min-width:100px;}
 .navbar-default .navbar-nav > li > a {
-	line-height:36px;
+    padding:15px 16px !important;
 }
-
 } 
 
 @media only screen and (min-width: 200px) and (max-width: 480px) {
-
 /*----Top social----*/
-ul.top-social {
-	float:left !important;
-}
-/*----Menu------*/
-.navbar-default .navbar-nav > li > a {
-	line-height:36px;
-}
-
-.navbar-brand img {
-	    margin: -25px 0px 17px -33px;
-}
-/*--Home Blog----*/
-.home-blog img {
-	float:none ;
-}
-.home-blog-content {
-	padding:10px 0 !important;
-	
-}
+ul.top-social {float:left !important;}
 /*--Home Single-Post----*/
-#comments .comments-list li ul {
-	padding-left:0px;
-}
-
-
+#comments .comments-list li ul {padding-left:0px;}
+/*---slider-caption-----*/
+.slider-caption h2 {font-size:18px !important;margin:8px 0;}
+.slider-caption p {font-size:12px !important;margin:6px 0;}
+.slider-caption p span {padding:5px !important;}
+.btn-theme {font-size:14px !important;}
+.btn-min-block {min-width:80px;}
+.navbar-default .navbar-nav > li > a {
+    padding:15px 16px !important;
+}	
 }

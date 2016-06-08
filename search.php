@@ -1,10 +1,6 @@
-<?php
-get_header();
- ?>
-  <!-- end header -->
-
-<!-----Page Title----->  
 <?php 
+get_header();
+
 get_template_part('title','strip'); 
 ?>  
  
@@ -15,7 +11,11 @@ get_template_part('title','strip');
 		<div class="col-md-8">				
 			<?php if ( have_posts() ) : ?>
 				<h2><?php printf( __( "Search Results for: %s", 'becorp' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
-			<?php 
+			<?php
+				endif;
+				rewind_posts();?>
+				<?php
+				if(have_posts()) :
 				while(have_posts()) :
 					the_post();
 			?>
@@ -32,9 +32,8 @@ get_template_part('title','strip');
 						<ul class="post-meta">
 							    <li><a href="<?php get_author_posts_url(get_the_author_meta('ID')); ?>"><i class="fa fa-pencil-square-o"><?php echo get_the_author(); ?></i></a></li>
 								<li><a href="#"><i class="fa fa-comments"></i><?php comments_popup_link( '0', '1', '%', '', '-'); ?></a></li>
-								<?php if(get_the_category_list() != '') { ?>
-								<li><a href="#"><i class="fa fa-folder-open"></i><?php the_category(' '); ?></a></li>
-								<?php } ?>
+								<?php $categories_list = get_the_category_list( __( ', ', 'becorp' ) ); ?>
+								<li><a href="<?php  ?>"><i class="fa fa-folder-open"></i><?php echo $categories_list; ?></a></li>
 							</ul>
 						<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 						<p class="post-content"><?php the_content(); ?></p>
@@ -54,7 +53,18 @@ get_template_part('title','strip');
 			<?php endif; ?>
 				<!--/.blog-item-->		
 			<!---Blog pagination-->
-				<?php becorp_navigation(); ?>
+			<br />
+				<div class="row">
+					<div class="col-md-12">	
+						<div class="blog-pagination wow fadeInLeft animated" data-wow-delay=".5s" style="visibility: visible; -webkit-animation-delay: .5s;">
+						  <?php echo wp_link_pages( array( 
+							'show_all' => true,
+							'prev_text' => '<<', 
+							'next_text' => '>>',
+							)); ?>
+						</div>
+					</div>
+				</div>
 			
 		</div><!--/.col-sm-8-->
 	

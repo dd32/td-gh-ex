@@ -1,8 +1,5 @@
-<?php get_header(); ?>
-  <!-- end header -->
-
-<!-----Page Title----->  
-<?php get_template_part('title','strip'); ?>	
+<?php get_header();
+ asiathemes_breadcrumbs(); ?>	
  
  <!-----Blog Section------>
 <section id="blog">
@@ -10,7 +7,7 @@
 	<div class="row">
 		<div class="col-md-8">
 				
-				<div class="row blog-item">	
+				<div class="blog-item">	
 					<div class="blog-content">
 						<div class="featured-image">
 						<?php the_post(); 
@@ -18,40 +15,32 @@
 								if(has_post_thumbnail()) :?>
 							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('',$default_img); ?></a>
 							<?php endif; ?>
-							<span class="date hidden-xs"><?php if ( ('F') == get_option( 'date_format' ) ) : ?>
-						<?php echo get_the_date('F'); ?>
-						<?php else : ?>
-						<?php echo get_the_date('F'); ?>
-						<?php endif; ?><span><?php echo get_the_date('j'); ?></span></span>
+							<span class="date hidden-xs"><?php echo get_the_date('M'); ?><span><?php echo get_the_date('j'); ?></span></span>
 		
 						</div>
 						<ul class="post-meta">
 							    <li><a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><i class="fa fa-pencil-square-o"></i><?php echo get_the_author(); ?></a></li>
 								<li><a href="#"><i class="fa fa-comments"></i><?php comments_popup_link( '0', '1', '%', '', '-'); ?></a></li>
-								<?php if(get_the_category_list() != '') { ?>
-								<li><a href="#"><i class="fa fa-folder-open"></i><?php the_category(' , '); ?></a></li>
-								<?php } ?>
+								<?php $categories_list = get_the_category_list( __( ', ', 'becorp' ) ); ?>
+								<li><a href="<?php  ?>"><i class="fa fa-folder-open"></i><?php echo $categories_list; ?></a></li>
 							</ul>
 						<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-						<p><?php the_content(); ?></p>
-						<?php wp_link_pages( array( 'before' => '<div class="row">'.'<div class="blog-pagination">' . __( 'Pages:', 'becorp' ), 'after' => '</div></div>' ) ); ?>
-					  <div class="post-bottom clearfix">
-							<div class="post-tags-list">			
-								<ul class="tag-cloud">
+						<?php the_content(); ?>
+					   <div class="post-bottom clearfix">
+							<div class="post-tags-list">
 								<?php if(get_the_tag_list() != '') { ?>
-									<li> <?php the_tags( __('Tags : ','becorp'), ' ', '&nbsp;'); ?></li> <br />
+									 <?php the_tags( __('Tags : ','becorp'), ' ', '&nbsp;'); ?> <br />
 									<?php } ?>
-								</ul>
+								
 							</div>
 						</div>
 						<div class="author-info clearfix">
 							<div class="author-image">
-								<?php echo get_avatar( get_the_author_meta( 'user_email' ), 70 ); ?>
+								<a href="#"><?php echo get_avatar( get_the_author_meta( 'user_email' ), 70 ); ?></a>
 							</div>
 							<div class="author-bio">
-								<h4><?php _e('About','becorp');?>&nbsp;<?php the_author_link(); ?></h4>
-								<p><?php echo get_the_author_meta( 'description' );if(!get_the_author_meta('description')) _e('No description.
-															Please update your profile.','becorp'); ?><a class="author-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">&nbsp;<?php _e('-','becorp'); _e('View all posts by','becorp'); get_the_author(); ?> </a></p>
+								<h4><?php _e('About','becorp');?> <a href="<?php bloginfo(); ?>"><?php echo get_the_author(); ?></a></h4>
+								<p><?php echo get_the_author_meta( 'description' ); ?><a class="author-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author"><?php _e('View all posts by','becorp');?> <?php get_the_author(); ?> </a></p>
 							</div>
 						</div>
 						<div class="post-content"></div>

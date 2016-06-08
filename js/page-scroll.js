@@ -1,9 +1,9 @@
 /*
-* Author: Becorp Theme
+* Author: Asiathemes
 * Created by: asiathemes
 * Copyright (c) 2015 Becorp
-* Date: 5 Oct, 2015
-* https://asiathemes.com/
+* Date: 10 Sep, 2015
+* http://www.asiathemes.com/Becorp
 */
 
 /*-- Page Scroll To Top Section ---------------*/

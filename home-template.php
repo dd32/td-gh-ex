@@ -1,12 +1,11 @@
 <?php
 // Template Name: Home-page
 
- get_header(); 
+ get_header();
+ 
  /*==== end header ====*/
   get_template_part('index','slider');
-
- get_template_part('index','collout');	  
-	  	  
+  
 /*==== Services Section ====*/
  get_template_part('index','service'); 
 
@@ -15,7 +14,7 @@
 	 
 /*==== Blog ====*/		
  
-  get_template_part('index','blog');
+ get_template_part('index','blog');
  
 /*==== Footer ====*/
  get_footer();  ?>
