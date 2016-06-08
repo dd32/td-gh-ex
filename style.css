@@ -4,7 +4,7 @@ Theme URI: https://accesspressthemes.com/wordpress-themes/accesspress-root/
 Author: AccessPress Themes
 Author URI: https://accesspressthemes.com/
 Description: AccessPress Root is a simple, clean, beautifully designed responsive WordPress business theme with drag and drop homepage sections. Its minimal but mostly used features will help you setup your website easily and quickly. Full width and boxed layout, featured slider, featured posts, services/features/projects layout, testimonial layout, blog layout, social media integration, call to action and many other page layouts. Fully responsive, WooCommerce compatible, bbPress compatible, translation ready, cross-browser compatible, SEO friendly, RTL support. AccessPress Root is multi-purpose and is suitable for any type of business. Highest level of compatibility with mostly used WP plugins. Great customer support via online chat, email, support forum. Official support forum: https://accesspressthemes.com/support/ View full demo here: http://demo.accesspressthemes.com/accesspress-root/
-Version: 1.23
+Version: 1.24
 License: GNU General Public License, version 3 (GPLv3) or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: accesspress-root
@@ -294,29 +294,29 @@ th {
 /*--------------------------------------------------------------
 4.0 Forms
 --------------------------------------------------------------*/
-button,
-input,
-select,
-textarea {
-	font-size: 100%; /* Corrects font size not being inherited in all browsers */
-	margin: 0; /* Addresses margins set differently in IE6/7, F3/4, S5, Chrome */
-	vertical-align: baseline; /* Improves appearance and consistency in all browsers */
-}
 
 button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-
+    background: #1eb0bc;
+    border: 1px solid #1eb0bc;
+    color: #FFF;
+    padding: 0 30px;
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    font-size: 14px;
+    height: 40px;
+    cursor: pointer;
 }
-
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-
+    background: #111;
+    border: 1px solid #111;
 }
-
 button:focus,
 input[type="button"]:focus,
 input[type="reset"]:focus,
@@ -325,48 +325,78 @@ button:active,
 input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
-
+    outline: 0;
 }
-
-input[type="checkbox"],
-input[type="radio"] {
-	padding: 0; /* Addresses excess padding in IE8/9 */
-}
-
-
 input[type="text"],
 input[type="email"],
 input[type="url"],
 input[type="password"],
 input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
 textarea {
-	color: #666;
-	border: 1px solid #ccc;
-	border-radius: 3px;
+    font-size: 14px;
+    color: #404040;
+    border: 1px solid #CCC;
+    border-radius: 1px;
+    width: 100%;
+    height: 40px;
 }
-
+select {
+    font-size: 14px;
+    border: 1px solid #CCC;
+    border-radius: 1px;
+    color: #404040;
+    height: 40px;
+}
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="url"]:focus,
 input[type="password"]:focus,
 input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
 textarea:focus {
-	color: #111;
+    outline: 0;
 }
-
 input[type="text"],
 input[type="email"],
 input[type="url"],
 input[type="password"],
-input[type="search"] {
-	padding: 3px;
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"] {
+    padding: 6px 10px;
+    height: 40px;
 }
-
 textarea {
-	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
-	padding-left: 3px;
-	vertical-align: top; /* Improves readability and alignment in all browsers */
-	width: 100%;
+    padding: 6px 10px;
+    width: 100%;
+    height: auto;
 }
 
 /*--------------------------------------------------------------
@@ -819,8 +849,12 @@ object {
 	width: 23%
 }
 
+body.boxed{
+	background: #E4E3E3;
+}
+
 body.boxed #page{
-	width: 1170px;
+	width: 1200px;
 	margin: 0 auto;
 	background: #FFF;
 }
@@ -851,10 +885,13 @@ body {
 	Header css
 --------------------------------------------------------------*/
 #masthead{
-	border: 1px dotted #cdcdcd;
+	border: 1px solid #cdcdcd;
 	border-left: none;
 	border-right: none;
 	padding: 18px 0;
+	box-shadow: 0px 0px 13px rgba(0,0,0,0.3);
+	position: relative;
+	z-index: 1;
 }
 
 .blog #masthead{
@@ -1413,9 +1450,9 @@ body {
 	text-align: center;
 	width: 89px;
 	cursor: pointer;
-	-webkit-transition: all 0.3s ease 0s;
-	-moz-transition: all 0.3s ease 0s;
-	transition: all 0.3s ease 0s;
+	-webkit-transition: all 0.05s ease;
+	-moz-transition: all 0.05s ease;
+	transition: all 0.05s ease;
 	overflow: hidden;
 	display: block;
 	padding: 20px;
@@ -1984,11 +2021,14 @@ body {
 /*--------------------------------------------------------------
 	Middle-footer css
 --------------------------------------------------------------*/
+#middle-footer{
+	background: #f2f2f2
+}
 
-#middle-footer {
-  background: #c1c1c1;
-  text-align: center;
-  padding: 10px 0;
+#middle-footer .ak-container{
+	text-align: center;
+	padding: 10px 0;
+	border-top: 1px solid #E9E9E9;
 }
 
 .footer-menu ul {
@@ -2041,7 +2081,7 @@ body {
 
 .copyright a{
 	color: #FFF;
-	text-shadow: 0 0 2px rgba(255,255,255,0.3);
+	text-decoration: underline;
 }
 
 .copyright a:hover{
@@ -2072,8 +2112,8 @@ body {
 
 .page_header_wrap {
 	background: none repeat scroll 0 0 #1eb0bc;
-	margin: 25px 0;
-	padding: 25px 0;
+	margin: 0 0 25px;
+	padding: 30px 0;
 }
 
 .home .page_header_wrap{
@@ -2250,12 +2290,13 @@ widget css
 --------------------------------------------------------------*/
 .widget {
 	box-shadow: 0 0 4px #eeeeee;
-	margin: 0 0 25px;
+	margin: 0 0 30px;
 }
 
 .secondary-left .widget,
 .secondary-right .widget{
 	padding: 10px;
+	border-top: 5px solid #1EB0BC;
 }
 
 .widget-title {
@@ -2896,11 +2937,13 @@ ol.comment-list li.comment ol.children {
 .blog_layout2 .entry-thumbanil {
 	float: left;
 	margin: 10px 20px 0 0 ;
+	width: 48%;
 }
 
 .blog_layout3 .entry-thumbanil {
 	float: left;
 	margin: 10px 20px 0px 0 ;
+	width: 48%;
 }
 
 .blog_layout3.even-post .entry-thumbanil {

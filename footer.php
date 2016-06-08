@@ -41,17 +41,19 @@
 			</div>
 		</div> <!-- top footer end -->
 
+		<?php if(has_nav_menu('footer')){ ?>
 		<div id="middle-footer">
 			<div class="ak-container">
 				<div class="footer-menu">
-					<?php wp_nav_menu( array( 'theme_location' => 'footer', 'depth' => -1 ) ); ?>
+					<?php wp_nav_menu( array( 'theme_location' => 'footer', 'depth' => -1, 'fallback_cb' => false ) ); ?>
 				</div>
 			</div>
 		</div> <!-- middle-footr end -->
+		<?php } ?>
 
 		<div id="bottom-footer" class="clearfix">
 			<div class="ak-container">
-				<div class="copyright"><?php _e('WordPress Theme: ', 'accesspress-root'); ?> <a title="AccessPress Themes" href="<?php echo esc_url('https://accesspressthemes.com','accesspress-root'); ?>">AccessPress Root</a> </div>
+				<div class="copyright"><?php _e('WordPress Theme: ', 'accesspress-root'); ?> <a title="AccessPress Themes" href="<?php echo esc_url('http://accesspressthemes.com/wordpress-themes/accesspress-root'); ?>">AccessPress Root</a>  by AccessPress Themes </div>
 				<ul class="social-icon">
 					<?php do_action('accesspress_social'); ?>
 				</ul>

@@ -375,7 +375,7 @@ function accesspress_header_scripts(){
     <?php    
     endif;
     echo "<style>";
-    echo "html body{";
+    echo "html body, html body.boxed{";
     if($page_background_option == 'image'): 
     $background = of_get_option('page_background_image');
         echo 'background:url('.esc_url($background["image"]).') '.esc_attr($background["repeat"]).' '.esc_attr($background["position"]).' '.esc_attr($background["attachment"]).' '.esc_attr($background["color"]);

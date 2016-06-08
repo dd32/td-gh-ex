@@ -96,6 +96,9 @@ Pattern Images
 
 ---------------------------------------------
 == Changelog ==
+Version 1.24
+ * Minor Changes in CSS
+
 Version 1.23
  * Woocommerce Compatible
 
