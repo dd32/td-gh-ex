@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Benevolent\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: Mon May 30 2016 12:23:33 GMT+0545 (Nepal Standard Time)\n"
-"POT-Revision-Date: Mon May 30 2016 12:23:36 GMT+0545 (Nepal Standard Time)\n"
+"POT-Revision-Date: Wed Jun 08 2016 13:51:16 GMT+0545 (Nepal Standard Time)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -68,6 +68,18 @@ msgstr ""
 msgid "Required fields are marked"
 msgstr ""
 
+#: ../comments.php:79
+msgid "Name*"
+msgstr ""
+
+#: ../comments.php:83
+msgid "Email*"
+msgstr ""
+
+#: ../comments.php:87
+msgid "Website"
+msgstr ""
+
 #: ../comments.php:97
 msgid "Leave a Reply"
 msgstr ""
@@ -87,6 +99,10 @@ msgstr ""
 
 #: ../comments.php:103
 msgctxt "noun"
+msgid "Comment"
+msgstr ""
+
+#: ../comments.php:104
 msgid "Comment"
 msgstr ""
 
@@ -110,23 +126,23 @@ msgstr ""
 msgid "Primary"
 msgstr ""
 
-#: ../functions.php:123
+#: ../functions.php:142
 msgid "Right Sidebar"
 msgstr ""
 
-#: ../functions.php:133
+#: ../functions.php:152
 msgid "Footer One"
 msgstr ""
 
-#: ../functions.php:143
+#: ../functions.php:162
 msgid "Footer Two"
 msgstr ""
 
-#: ../functions.php:153
+#: ../functions.php:172
 msgid "Footer Three"
 msgstr ""
 
-#: ../functions.php:163
+#: ../functions.php:182
 msgid "Footer Four"
 msgstr ""
 
@@ -164,7 +180,7 @@ msgid "Default Settings"
 msgstr ""
 
 #: ../inc/customizer.php:47
-msgid "Default section provided by wordpress customizer."
+msgid "Default section provided by WordPress customizer."
 msgstr ""
 
 #: ../inc/customizer.php:66

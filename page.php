@@ -12,12 +12,7 @@
  * @package Benevolent
  */
 
-global $post;
-if( get_post_meta( $post->ID, 'benevolent_sidebar_layout', true ) ){
-    $sidebar_layout = get_post_meta( $post->ID, 'benevolent_sidebar_layout', true );    
-}else{
-    $sidebar_layout = 'right-sidebar';
-}
+$sidebar_layout = benevolent_sidebar_layout();
 
 get_header(); ?>
 

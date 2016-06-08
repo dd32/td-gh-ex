@@ -37,10 +37,10 @@ class Benevolent_Featured_Post extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
         
-        $read_more      = ! empty( $instance['readmore'] ) ? $instance['readmore'] : __( 'Read More', 'benevolent' );
+        $read_more      = ! empty( $instance['readmore'] ) ? strip_tags( $instance['readmore'] ) : __( 'Read More', 'benevolent' );
 		$excerpt_char   = ! empty( $instance['excerpt_char'] ) ? absint( $instance['excerpt_char'] ) : 200 ;
-        $show_thumbnail = ! empty( $instance['show_thumbnail'] ) ? $instance['show_thumbnail'] : '';
-        $post_id        = ! empty( $instance['post_list'] ) ? $instance['post_list'] : 1 ;
+        $show_thumbnail = ! empty( $instance['show_thumbnail'] ) ? esc_attr( $instance['show_thumbnail'] ) : '';
+        $post_id        = ! empty( $instance['post_list'] ) ? esc_attr( $instance['post_list'] ) : 1 ;
         
         if( get_post_type( $post_id ) == 'post' ){
             $qry = new WP_Query( "p=$post_id" );
@@ -94,10 +94,10 @@ class Benevolent_Featured_Post extends WP_Widget {
     		);
     	}
         
-        $read_more      = ! empty( $instance['readmore'] ) ? $instance['readmore'] : __( 'Read More', 'benevolent' );
+        $read_more      = ! empty( $instance['readmore'] ) ? strip_tags( $instance['readmore'] ) : __( 'Read More', 'benevolent' );
 		$excerpt_char   = ! empty( $instance['excerpt_char'] ) ? absint( $instance['excerpt_char'] ) : 200 ;
-        $show_thumbnail = ! empty( $instance['show_thumbnail'] ) ? $instance['show_thumbnail'] : '';
-        $post_list      = ! empty( $instance['post_list'] ) ? $instance['post_list'] : 1 ;
+        $show_thumbnail = ! empty( $instance['show_thumbnail'] ) ? esc_attr( $instance['show_thumbnail'] ) : '';
+        $post_list      = ! empty( $instance['post_list'] ) ? esc_attr( $instance['post_list'] ) : 1 ;
         
         ?>
 		<p>

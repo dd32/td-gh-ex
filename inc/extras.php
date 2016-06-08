@@ -552,3 +552,16 @@ function benevolent_footer_credit(){
     echo apply_filters( 'benevolent_footer_text', $text );    
 }
 add_action( 'benevolent_footer', 'benevolent_footer_credit' );
+
+/**
+ * Return sidebar layouts for pages
+*/
+function benevolent_sidebar_layout(){
+    global $post;
+    
+    if( get_post_meta( $post->ID, 'benevolent_sidebar_layout', true ) ){
+        return get_post_meta( $post->ID, 'benevolent_sidebar_layout', true );    
+    }else{
+        return 'right-sidebar';
+    }
+}

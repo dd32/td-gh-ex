@@ -76,15 +76,15 @@ if ( post_password_required() ) {
         $fields =  array(
 
           'author' =>
-            '<p class="comment-form-author"><input id="author" name="author" placeholder="Name*" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
+            '<p class="comment-form-author"><input id="author" name="author" placeholder="' . __( 'Name*', 'benevolent' ) . '" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
             '" size="30"' . $aria_req . ' /></p>',
         
           'email' =>
-            '<p class="comment-form-email"><input id="email" name="email" placeholder="Email*" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+            '<p class="comment-form-email"><input id="email" name="email" placeholder="' . __( 'Email*', 'benevolent' ) . '" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
             '" size="30"' . $aria_req . ' /></p>',
         
           'url' =>
-            '<p class="comment-form-url"><input id="url" name="url" placeholder="Website" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
+            '<p class="comment-form-url"><input id="url" name="url" placeholder="' . __( 'Website', 'benevolent' ) . '" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
             '" size="30" /></p>',
         );
         
@@ -101,7 +101,7 @@ if ( post_password_required() ) {
           'format'            => 'xhtml',
         
           'comment_field' =>  '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun', 'benevolent' ) .
-            '</label><textarea id="comment" name="comment" placeholder="Comment" cols="45" rows="8" aria-required="true">' .
+            '</label><textarea id="comment" name="comment" placeholder="' . __( 'Comment', 'benevolent' ) . '" cols="45" rows="8" aria-required="true">' .
             '</textarea></p>',
         
           'must_log_in' => '<p class="must-log-in">' .

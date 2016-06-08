@@ -44,7 +44,7 @@ function benevolent_customize_register( $wp_customize ) {
             'capability' => 'edit_theme_options',
             'theme_supports' => '',
             'title' => __( 'Default Settings', 'benevolent' ),
-            'description' => __( 'Default section provided by wordpress customizer.', 'benevolent' ),
+            'description' => __( 'Default section provided by WordPress customizer.', 'benevolent' ),
         ) 
     );
     

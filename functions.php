@@ -114,6 +114,25 @@ function benevolent_content_width() {
 add_action( 'after_setup_theme', 'benevolent_content_width', 0 );
 
 /**
+* Adjust content_width value according to template.
+*
+* @return void
+*/
+function benevolent_template_redirect_content_width() {
+
+	// Full Width in the absence of sidebar.
+	if( is_page() ){
+	   $sidebar_layout = benevolent_sidebar_layout();
+       if( ( $sidebar_layout == 'no-sidebar' ) || ! ( is_active_sidebar( 'right-sidebar' ) ) ) $GLOBALS['content_width'] = 1200;
+        
+	}elseif ( ! ( is_active_sidebar( 'right-sidebar' ) ) ) {
+		$GLOBALS['content_width'] = 1200;
+	}
+
+}
+add_action( 'template_redirect', 'benevolent_template_redirect_content_width' );
+
+/**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar

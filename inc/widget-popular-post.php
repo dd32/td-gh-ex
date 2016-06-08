@@ -37,10 +37,10 @@ class Benevolent_Popular_Post extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 	   
-        $title      = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Popular Posts', 'benevolent' );
+        $title      = ! empty( $instance['title'] ) ? strip_tags( $instance['title'] ) : __( 'Popular Posts', 'benevolent' );
         $num_post   = ! empty( $instance['num_post'] ) ? absint($instance['num_post']) : 3 ;
-        $show_thumb = ! empty( $instance['show_thumbnail'] ) ? $instance['show_thumbnail'] : '';
-        $show_date  = ! empty( $instance['show_postdate'] ) ? $instance['show_postdate'] : '';
+        $show_thumb = ! empty( $instance['show_thumbnail'] ) ? esc_attr( $instance['show_thumbnail'] ) : '';
+        $show_date  = ! empty( $instance['show_postdate'] ) ? esc_attr( $instance['show_postdate'] ) : '';
         
         $benevolent_qry = new WP_Query( array(
             'post_type'             => 'post',
@@ -96,10 +96,10 @@ class Benevolent_Popular_Post extends WP_Widget {
 	 */
 	public function form( $instance ) {
         
-        $title          = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Popular Posts', 'benevolent' );		
+        $title          = ! empty( $instance['title'] ) ? strip_tags( $instance['title'] ) : __( 'Popular Posts', 'benevolent' );		
         $num_post       = ! empty( $instance['num_post'] ) ? absint($instance['num_post']) : 3 ;
-        $show_thumbnail = ! empty( $instance['show_thumbnail'] ) ? $instance['show_thumbnail'] : '';
-        $show_postdate  = ! empty( $instance['show_postdate'] ) ? $instance['show_postdate'] : '';
+        $show_thumbnail = ! empty( $instance['show_thumbnail'] ) ? esc_attr( $instance['show_thumbnail'] ) : '';
+        $show_postdate  = ! empty( $instance['show_postdate'] ) ? esc_attr( $instance['show_postdate'] ) : '';
         
         ?>
 		

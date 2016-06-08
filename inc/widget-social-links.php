@@ -37,7 +37,7 @@ class Benevolent_Social_Links extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 	   
-        $title      = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Subscribe & Follow', 'benevolent' );		
+        $title      = ! empty( $instance['title'] ) ? strip_tags( $instance['title'] ) : __( 'Subscribe & Follow', 'benevolent' );		
         $facebook   = ! empty( $instance['facebook'] ) ? esc_url( $instance['facebook'] ) : '' ;
         $twitter    = ! empty( $instance['twitter'] ) ? esc_url( $instance['twitter'] ) : '' ;
         $pinterest  = ! empty( $instance['pinterest'] ) ? esc_url( $instance['pinterest'] ) : '' ;
@@ -81,7 +81,7 @@ class Benevolent_Social_Links extends WP_Widget {
 	 */
 	public function form( $instance ) {
         
-        $title      = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Subscribe & Follow', 'benevolent' );		
+        $title      = ! empty( $instance['title'] ) ? strip_tags( $instance['title'] ) : __( 'Subscribe & Follow', 'benevolent' );		
         $facebook   = ! empty( $instance['facebook'] ) ? esc_url( $instance['facebook'] ) : '' ;
         $twitter    = ! empty( $instance['twitter'] ) ? esc_url( $instance['twitter'] ) : '' ;
         $pinterest  = ! empty( $instance['pinterest'] ) ? esc_url( $instance['pinterest'] ) : '' ;
