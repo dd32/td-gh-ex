@@ -9,14 +9,19 @@
 				
 				<div class="blog-item">	
 					<div class="blog-content">
-						<div class="featured-image">
+					<div class="portfolio-area blog-overly">
+						<div class="portfolio-image">
 						<?php the_post(); 
 								$default_img = array('class' => "img-responsive img-blog");
-								if(has_post_thumbnail()) :?>
+								if(has_post_thumbnail()) {?>
 							<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('',$default_img); ?></a>
-							<?php endif; ?>
 							<span class="date hidden-xs"><?php echo get_the_date('M'); ?><span><?php echo get_the_date('j'); ?></span></span>
+							<?php } else { ?>
+							<a href="<?php the_permalink(); ?>"><?php echo '<img alt="" src="'. get_template_directory_uri() . '/images/default.png' .'">';?></a>
+								<span class="date hidden-xs"><?php echo get_the_date('M'); ?><span><?php echo get_the_date('j'); ?></span></span>
+								<?php } ?>
 		
+						</div>
 						</div>
 						<ul class="post-meta">
 							    <li><a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><i class="fa fa-pencil-square-o"></i><?php echo get_the_author(); ?></a></li>

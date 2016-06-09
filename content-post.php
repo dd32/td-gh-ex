@@ -14,7 +14,7 @@
 								<?php } ?>
 							 <div class="caption">
 							   <div class="portfolio-icon">
-								 <a href="#"><i class="fa fa-link"></i></a>
+								 <a href="<?php the_permalink(); ?>"><i class="fa fa-link"></i></a>
 							   </div>
 						     </div>
 	                     </div>

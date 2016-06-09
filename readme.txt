@@ -66,6 +66,10 @@ released
 2. Update index static blog page.
 3. Add blog post slider on front-page.
 
+@version 2.6
+1. Update fonts.
+2. Update blog single link.
+
 *****************Licence Copyrights Attribution*******************
 Becorp WordPress Theme, Copyright 2015 asiathemes
 Becorp is distributed under the terms of the GNU GPL
