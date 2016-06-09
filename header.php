@@ -108,7 +108,7 @@
             <!--/end main-nav-->
 
             <nav class="main-nav-mobile">
-                <a class="pull"><?php _e('Menu', 'ad_mag_lite'); ?><i class="fa fa-caret-down"></i></a>
+                <a class="pull"><?php _e('Menu', 'ad-mag-lite'); ?><i class="fa fa-caret-down"></i></a>
                 <?php 
                 $args = array(
                     'theme_location' => 'main-menu',

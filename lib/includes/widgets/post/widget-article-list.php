@@ -9,9 +9,9 @@ add_action( 'widgets_init', function(){
  */
 class Ad_Mag_Lite_Articles_List extends WP_Widget {
     function __construct() {
-        $widget_ops = array('classname' => 'kp-article-list-widget', 'description' => __('Article list widget', 'ad_mag_lite'));
+        $widget_ops = array('classname' => 'kp-article-list-widget', 'description' => __('Article list widget', 'ad-mag-lite'));
         $control_ops = array('width' => 'auto', 'height' => 'auto');
-        parent::__construct('Ad_Mag_Lite_Articles_List', __('(AdMag) Article List', 'ad_mag_lite'), $widget_ops, $control_ops);
+        parent::__construct('Ad_Mag_Lite_Articles_List', __('(AdMag) Article List', 'ad-mag-lite'), $widget_ops, $control_ops);
     }
 
     function widget($args, $instance) {
@@ -135,7 +135,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                         echo '<li class="text-center">';
 
                         if(!empty($url)){
-                            echo '<a class="more-link" href="'.$url.'">'.__('view more', 'ad_mag_lite').'</a>';
+                            echo '<a class="more-link" href="'.$url.'">'.__('view more', 'ad-mag-lite').'</a>';
                         }
 
                         echo '</li></ul>';
@@ -399,7 +399,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                 </div>
                 <?php if(!empty($url)) : ?>
                     <div class="kopa-view-all">
-                        <a class="more-link" href="<?php echo esc_url($url); ?>"><?php _e('view all', 'ad_mag_lite'); ?></a>
+                        <a class="more-link" href="<?php echo esc_url($url); ?>"><?php _e('view all', 'ad-mag-lite'); ?></a>
                     </div>
                 <?php endif; ?>
             </div>
@@ -668,7 +668,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                        <?php endwhile; endif; ?>
                     </ul>
                     <?php if(!empty($url)) : ?>
-                        <a class="kopa-more-link" href="<?php echo esc_url($url); ?>"><?php _e('more view', 'ad_mag_lite'); ?></a>
+                        <a class="kopa-more-link" href="<?php echo esc_url($url); ?>"><?php _e('more view', 'ad-mag-lite'); ?></a>
                     <?php endif; ?>
                 </div>
             </div>
@@ -1119,13 +1119,13 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
         ?>
 
     <p>
-        <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e('Title:', 'ad_mag_lite'); ?></label>
+        <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e('Title:', 'ad-mag-lite'); ?></label>
         <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
     </p>
     <p>
-        <label for="<?php echo esc_attr($this->get_field_id( 'categories' )); ?>"><?php _e( 'Categories', 'ad_mag_lite' ); ?></label>
+        <label for="<?php echo esc_attr($this->get_field_id( 'categories' )); ?>"><?php _e( 'Categories', 'ad-mag-lite' ); ?></label>
         <select class="widefat" id="<?php echo esc_attr($this->get_field_id( 'categories' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'categories' )) ?>[]" multiple="multiple" size="5">
-            <option value=""><?php _e('--Select--', 'ad_mag_lite'); ?></option>
+            <option value=""><?php _e('--Select--', 'ad-mag-lite'); ?></option>
             <?php
             $categories = get_categories();
             foreach ($categories as $category) :
@@ -1138,16 +1138,16 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
         </select>
     </p>
     <p>
-        <label for="<?php echo esc_attr($this->get_field_id('relation')); ?>"><?php _e('Relation', 'ad_mag_lite'); ?>:</label>
+        <label for="<?php echo esc_attr($this->get_field_id('relation')); ?>"><?php _e('Relation', 'ad-mag-lite'); ?>:</label>
         <select class="widefat" name="<?php echo esc_attr($this->get_field_name('relation')); ?>" id="<?php echo esc_attr($this->get_field_id('relation')); ?>">
-            <option value="OR" <?php selected('OR', $form['relation']); ?>><?php _e('OR', 'ad_mag_lite'); ?></option>
-            <option value="AND" <?php selected('AND', $form['relation']); ?>><?php _e('AND', 'ad_mag_lite'); ?></option>
+            <option value="OR" <?php selected('OR', $form['relation']); ?>><?php _e('OR', 'ad-mag-lite'); ?></option>
+            <option value="AND" <?php selected('AND', $form['relation']); ?>><?php _e('AND', 'ad-mag-lite'); ?></option>
         </select>
     </p>
     <p>
-        <label for="<?php echo esc_attr($this->get_field_id( 'tags' )); ?>"><?php _e( 'Tags', 'ad_mag_lite' ); ?></label>
+        <label for="<?php echo esc_attr($this->get_field_id( 'tags' )); ?>"><?php _e( 'Tags', 'ad-mag-lite' ); ?></label>
         <select class="widefat" id="<?php echo esc_attr($this->get_field_id( 'tags' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'tags' )) ?>[]" multiple="multiple" size="5">
-            <option value=""><?php _e('--Select--', 'ad_mag_lite'); ?></option>
+            <option value=""><?php _e('--Select--', 'ad-mag-lite'); ?></option>
             <?php
             $tags = get_tags();
             foreach ($tags as $category) :
@@ -1161,11 +1161,11 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
     </p>
     
     <p>
-        <label for="<?php echo esc_attr($this->get_field_id( 'order' )); ?>"><?php _e( 'Order', 'ad_mag_lite' ); ?></label>
+        <label for="<?php echo esc_attr($this->get_field_id( 'order' )); ?>"><?php _e( 'Order', 'ad-mag-lite' ); ?></label>
         <select class="widefat" name="<?php echo esc_attr($this->get_field_name( 'order' )); ?>" id="<?php echo esc_attr($this->get_field_id('order' )); ?>">
             <?php $order = array(
-            'ASC'  => __('ASC', 'ad_mag_lite'),
-            'DESC' => __('DESC', 'ad_mag_lite')
+            'ASC'  => __('ASC', 'ad-mag-lite'),
+            'DESC' => __('DESC', 'ad-mag-lite')
         );
 
             foreach ($order as $value => $label) :
@@ -1178,12 +1178,12 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
     </p>
 
     <p>
-        <label for="<?php echo esc_attr($this->get_field_id( 'orderby' )); ?>"><?php _e( 'Orderby', 'ad_mag_lite' ); ?></label>
+        <label for="<?php echo esc_attr($this->get_field_id( 'orderby' )); ?>"><?php _e( 'Orderby', 'ad-mag-lite' ); ?></label>
         <select class="widefat" name="<?php echo esc_attr($this->get_field_name( 'orderby' )); ?>" id="<?php echo esc_attr($this->get_field_id('orderby' )); ?>">
             <?php $orderby = array(
-            'date'          => __('Date', 'ad_mag_lite'),
-            'rand'          => __('Random', 'ad_mag_lite'),
-            'comment_count' => __('Number of comments', 'ad_mag_lite')
+            'date'          => __('Date', 'ad-mag-lite'),
+            'rand'          => __('Random', 'ad-mag-lite'),
+            'comment_count' => __('Number of comments', 'ad-mag-lite')
         );
 
             foreach ($orderby as $value => $label) :
@@ -1196,48 +1196,48 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
     </p>
 
     <p>
-        <label for="<?php echo esc_attr($this->get_field_id('number')); ?>"><?php _e('Number of post:', 'ad_mag_lite'); ?></label>
+        <label for="<?php echo esc_attr($this->get_field_id('number')); ?>"><?php _e('Number of post:', 'ad-mag-lite'); ?></label>
         <input class="widefat" id="<?php echo esc_attr($this->get_field_id('number')); ?>" name="<?php echo esc_attr($this->get_field_name('number')); ?>" type="number" value="<?php echo esc_attr($form['number']); ?>" min="1" />
     </p>
 
     <p>
-        <label for="<?php echo esc_attr($this->get_field_id('posts_per_page')); ?>"><?php _e('Posts per page:', 'ad_mag_lite'); ?></label>
+        <label for="<?php echo esc_attr($this->get_field_id('posts_per_page')); ?>"><?php _e('Posts per page:', 'ad-mag-lite'); ?></label>
         <input class="widefat" id="<?php echo esc_attr($this->get_field_id('posts_per_page')); ?>" name="<?php echo esc_attr($this->get_field_name('posts_per_page')); ?>" value="<?php echo esc_attr($form['posts_per_page']); ?>" type="number" min="1">
     </p>
 
     <p>
-        <label for="<?php echo esc_attr($this->get_field_id('excerpt_length')); ?>"><?php _e('Custom excerpt length:', 'ad_mag_lite'); ?></label>
+        <label for="<?php echo esc_attr($this->get_field_id('excerpt_length')); ?>"><?php _e('Custom excerpt length:', 'ad-mag-lite'); ?></label>
         <input class="widefat" id="<?php echo esc_attr($this->get_field_id('excerpt_length')); ?>" name="<?php echo esc_attr($this->get_field_name('excerpt_length')); ?>" type="number" value="<?php echo esc_attr($form['excerpt_length']); ?>" min="1" />
     </p>
 
     <p>
-        <label for="<?php echo esc_attr($this->get_field_id( 'style' )); ?>"><?php _e( 'Style:', 'ad_mag_lite' ); ?></label>
+        <label for="<?php echo esc_attr($this->get_field_id( 'style' )); ?>"><?php _e( 'Style:', 'ad-mag-lite' ); ?></label>
         <select class="widefat" name="<?php echo esc_attr($this->get_field_name( 'style' )); ?>" id="<?php echo esc_attr($this->get_field_id('style' )); ?>">
         <?php 
         $style = array(
-            'style_1'      => __( 'Style 1', 'ad_mag_lite' ),
-            'style_2'      => __( 'Style 2 Home 1', 'ad_mag_lite' ),
-            'style_3'      => __( 'Style 3 Home 1', 'ad_mag_lite' ),
-            'style_4'      => __( 'Style 4 Home 1', 'ad_mag_lite' ),
-            'style_5'      => __( 'Style 5 Home 1', 'ad_mag_lite' ),
-            'style_6'      => __( 'Style 6 Home 1', 'ad_mag_lite' ),
-            'style_7'      => __( 'Style 7 Home 1 ', 'ad_mag_lite' ),
-            'style_8'      => __( 'Style 8 Home 1', 'ad_mag_lite' ),
-            'style_9'      => __( 'Style 9 Home 1', 'ad_mag_lite' ),
-            'style_10'     => __( 'Style 10 Home 1', 'ad_mag_lite' ),
-            'style_11'     => __( 'Style 11 Home 1', 'ad_mag_lite' ),
-            'style_12'     => __( 'Style 12 Home 1', 'ad_mag_lite' ),
-            'style_13'     => __( 'Style 13 Home 1', 'ad_mag_lite' ),
-            'style_14'     => __( 'Style 14 Home 2', 'ad_mag_lite' ),
-            'style_15'     => __( 'Style 15 Home 2', 'ad_mag_lite' ),
-            'style_16'     => __( 'Style 16 Blog 1', 'ad_mag_lite' ),
-            'style_16_std' => __( 'Style 16 Home 2', 'ad_mag_lite' ),
-            'style_17'     => __( 'Style 17 Home 3', 'ad_mag_lite' ),
-            'style_18'     => __( 'Style 18 Home 4', 'ad_mag_lite' ),
-            'style_19'     => __( 'Style 19 Home 4', 'ad_mag_lite' ),
-            'style_20'     => __( 'Style 20 Home 4', 'ad_mag_lite' ),
-            'style_21'     => __( 'Style 21 Home 4', 'ad_mag_lite' ),
-            'style_22'     => __( 'Style 22 Home 4', 'ad_mag_lite' )
+            'style_1'      => __( 'Style 1', 'ad-mag-lite' ),
+            'style_2'      => __( 'Style 2 Home 1', 'ad-mag-lite' ),
+            'style_3'      => __( 'Style 3 Home 1', 'ad-mag-lite' ),
+            'style_4'      => __( 'Style 4 Home 1', 'ad-mag-lite' ),
+            'style_5'      => __( 'Style 5 Home 1', 'ad-mag-lite' ),
+            'style_6'      => __( 'Style 6 Home 1', 'ad-mag-lite' ),
+            'style_7'      => __( 'Style 7 Home 1 ', 'ad-mag-lite' ),
+            'style_8'      => __( 'Style 8 Home 1', 'ad-mag-lite' ),
+            'style_9'      => __( 'Style 9 Home 1', 'ad-mag-lite' ),
+            'style_10'     => __( 'Style 10 Home 1', 'ad-mag-lite' ),
+            'style_11'     => __( 'Style 11 Home 1', 'ad-mag-lite' ),
+            'style_12'     => __( 'Style 12 Home 1', 'ad-mag-lite' ),
+            'style_13'     => __( 'Style 13 Home 1', 'ad-mag-lite' ),
+            'style_14'     => __( 'Style 14 Home 2', 'ad-mag-lite' ),
+            'style_15'     => __( 'Style 15 Home 2', 'ad-mag-lite' ),
+            'style_16'     => __( 'Style 16 Blog 1', 'ad-mag-lite' ),
+            'style_16_std' => __( 'Style 16 Home 2', 'ad-mag-lite' ),
+            'style_17'     => __( 'Style 17 Home 3', 'ad-mag-lite' ),
+            'style_18'     => __( 'Style 18 Home 4', 'ad-mag-lite' ),
+            'style_19'     => __( 'Style 19 Home 4', 'ad-mag-lite' ),
+            'style_20'     => __( 'Style 20 Home 4', 'ad-mag-lite' ),
+            'style_21'     => __( 'Style 21 Home 4', 'ad-mag-lite' ),
+            'style_22'     => __( 'Style 22 Home 4', 'ad-mag-lite' )
         );
 
             foreach ($style as $value => $label) :
@@ -1250,7 +1250,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
     </p>
 
     <p>
-        <label for="<?php echo esc_attr($this->get_field_id('url')); ?>"><?php _e('View more URL:', 'ad_mag_lite'); ?></label>
+        <label for="<?php echo esc_attr($this->get_field_id('url')); ?>"><?php _e('View more URL:', 'ad-mag-lite'); ?></label>
         <input class="widefat" id="<?php echo esc_attr($this->get_field_id('url')); ?>" name="<?php echo esc_attr($this->get_field_name('url')); ?>" value="<?php echo esc_attr($form['url']); ?>" type="text">
     </p>
 

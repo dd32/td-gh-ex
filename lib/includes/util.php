@@ -200,11 +200,11 @@ function ad_mag_lite_get_the_excerpt_for_widget($excerpt, $content, $length = 0)
  */
 function ad_mag_lite_top_headline(){
     $limit = 5;
-    $title = __( 'Breaking News', 'ad_mag_lite' );
+    $title = __( 'Breaking News', 'ad-mag-lite' );
     // Headline Category
     $terms = get_terms('category');
     $arr_cat = array(
-        '' => __('----SELECT----', 'ad_mag_lite')
+        '' => __('----SELECT----', 'ad-mag-lite')
         );
     foreach($terms as $v) 
         $arr_cat[$v->term_id] = $v->name . '(' . $v->count . ')';
@@ -253,7 +253,7 @@ function ad_mag_lite_get_breadcrumb() {
         $description = '';
         $breadcrumb_before = '<div class="kopa-breadcrumb"><div class="wrapper clearfix">';
         $breadcrumb_after = '</div></div>';
-        $breadcrumb_home = '<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="' . home_url() . '"><span itemprop="title">' . __('Home', 'ad_mag_lite') . '</span></a></span>';
+        $breadcrumb_home = '<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="' . home_url() . '"><span itemprop="title">' . __('Home', 'ad-mag-lite') . '</span></a></span>';
         $breadcrumb = '';
         ?>
 
@@ -263,7 +263,7 @@ function ad_mag_lite_get_breadcrumb() {
             if ( get_option( 'page_for_posts' ) ) {
                 $breadcrumb.= $prefix . sprintf('<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="%1$s">%2$s</span>', $current_class, get_the_title(get_option('page_for_posts')));
             } else {
-                $breadcrumb.= $prefix . sprintf('<span class="%1$s">%2$s</span>', $current_class, __('Blog', 'ad_mag_lite'));                
+                $breadcrumb.= $prefix . sprintf('<span class="%1$s">%2$s</span>', $current_class, __('Blog', 'ad-mag-lite'));                
             }
         } else if (is_post_type_archive('product') && get_option('woocommerce_shop_page_id')) {
             $breadcrumb.= $breadcrumb_home;
@@ -396,16 +396,16 @@ function ad_mag_lite_get_breadcrumb() {
             $s = get_search_query();
             $c = $wp_query->found_posts;
 
-            $description = sprintf(__('<span class="%1$s">Your search for "%2$s"', 'ad_mag_lite'), $current_class, $s);
+            $description = sprintf(__('<span class="%1$s">Your search for "%2$s"', 'ad-mag-lite'), $current_class, $s);
             $breadcrumb .= $prefix . $description;
         } else if (is_author()) {
             $breadcrumb.= $breadcrumb_home;
             $author_id = get_queried_object_id();
-            $breadcrumb.= $prefix . sprintf('<span class="%1$s">%2$s</a>', $current_class, sprintf(__('Posts created by %1$s', 'ad_mag_lite'), get_the_author_meta('display_name', $author_id)));
+            $breadcrumb.= $prefix . sprintf('<span class="%1$s">%2$s</a>', $current_class, sprintf(__('Posts created by %1$s', 'ad-mag-lite'), get_the_author_meta('display_name', $author_id)));
         } else if (is_404()) {
             $breadcrumb.= $breadcrumb_home;
             
-            $breadcrumb.= $prefix . sprintf('<span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="" class="%1$s"><span itemprop="title">%2$s</span></a></span>', $current_class, __('Error 404', 'ad_mag_lite'));
+            $breadcrumb.= $prefix . sprintf('<span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="" class="%1$s"><span itemprop="title">%2$s</span></a></span>', $current_class, __('Error 404', 'ad-mag-lite'));
         }
 
         if ($breadcrumb)

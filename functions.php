@@ -9,7 +9,7 @@ require trailingslashit(get_template_directory()) . '/lib/includes/widget.php';
 
 add_action('after_setup_theme', 'ad_mag_lite_after_setup_theme');
 function ad_mag_lite_after_setup_theme(){
-    load_theme_textdomain( 'ad_mag_lite', get_template_directory() . '/languages' );
+    load_theme_textdomain( 'ad-mag-lite', get_template_directory() . '/languages' );
     add_theme_support('title-tag');
     add_theme_support('post-formats', array('gallery', 'audio', 'video','quote'));
     add_theme_support('post-thumbnails');
@@ -22,9 +22,9 @@ function ad_mag_lite_after_setup_theme(){
     }
 
     register_nav_menus(array(
-        'top-menu'    => __( 'Top Menu', 'ad_mag_lite' ),
-        'main-menu'   => __( 'Main Menu', 'ad_mag_lite' ),
-        'bottom-menu' => __( 'Bottom Menu', 'ad_mag_lite' )
+        'top-menu'    => __( 'Top Menu', 'ad-mag-lite' ),
+        'main-menu'   => __( 'Main Menu', 'ad-mag-lite' ),
+        'bottom-menu' => __( 'Bottom Menu', 'ad-mag-lite' )
     ));
     add_filter('kopa_customization_init_options', 'ad_mag_lite_init_options');
     add_action('widgets_init', 'ad_mag_lite_register_sidebar');
@@ -35,6 +35,8 @@ function ad_mag_lite_after_setup_theme(){
         add_filter('wp_title', 'ad_mag_lite_title', 10, 2);
         add_action('wp_footer', 'ad_mag_lite_footer');
         add_action('wp_head', 'ad_mag_lite_head');
+        add_filter( 'excerpt_length', 'ad_mag_lite_the_excerpt_length' );
+        add_filter( 'excerpt_more', 'ad_mag_lite_custom_excerpt_more' );
 	}
 
 }
@@ -48,18 +50,6 @@ function ad_mag_lite_head() {
             <!--[if IE 9]>
                 <link rel="stylesheet" href="'.$dir .'/css/ie9.css" type="text/css" media="all" />
             <![endif]-->';
-
-    $favicon_url = get_theme_mod('favicon_icon', '');
-    $apple_url = get_theme_mod('apple_icon', '');
-    if ( ! empty($favicon_url) ) {
-        echo sprintf('<link rel="shortcut icon" href="%s">', esc_url($favicon_url));
-    }
-    
-    if ( ! empty($apple_url) ) {
-        foreach (array(60, 76, 120, 152) as $size) {
-            printf('<link rel="apple-touch-icon" sizes="%1$sx%1$s" href="%2$s">', $size, esc_url($apple_url));
-        }
-    }    
 
     /* ==================================================================================================
      * Custom CSS
@@ -90,7 +80,7 @@ function ad_mag_lite_title( $title, $sep ) {
     }
 
     if ( $paged >= 2 || $page >= 2 ) {
-        $title = "$title $sep " . sprintf( __( 'Page %s', 'ad_mag_lite' ), max( $paged, $page ) );
+        $title = "$title $sep " . sprintf( __( 'Page %s', 'ad-mag-lite' ), max( $paged, $page ) );
     }
 
     return $title;
@@ -152,24 +142,24 @@ function ad_mag_lite_custom_front_localization() {
         ),
         'validate' => array(
             'form' => array(
-                'submit'  => __('SEND', 'ad_mag_lite'),
-                'sending' => __('SENDING...', 'ad_mag_lite')
+                'submit'  => __('SEND', 'ad-mag-lite'),
+                'sending' => __('SENDING...', 'ad-mag-lite')
             ),
             'name' => array(
-                'required'  => __('Please enter your name.', 'ad_mag_lite'),
-                'minlength' => __('At least {0} characters required.', 'ad_mag_lite'),
+                'required'  => __('Please enter your name.', 'ad-mag-lite'),
+                'minlength' => __('At least {0} characters required.', 'ad-mag-lite'),
             ),
             'email' => array(
-                'required' => __('Please enter your email.', 'ad_mag_lite'),
-                'email'    => __('Please enter a valid email.', 'ad_mag_lite')
+                'required' => __('Please enter your email.', 'ad-mag-lite'),
+                'email'    => __('Please enter a valid email.', 'ad-mag-lite')
             ),
             'comment' => array(
-                'required'  => __('Please enter a comment.', 'ad_mag_lite'),
-                'minlength' => __('At least {0} characters required.', 'ad_mag_lite'),
+                'required'  => __('Please enter a comment.', 'ad-mag-lite'),
+                'minlength' => __('At least {0} characters required.', 'ad-mag-lite'),
             ),
             'message' => array(
-                'required'  => __('Please enter a message.', 'ad_mag_lite'),
-                'minlength' => __('At least {0} characters required.', 'ad_mag_lite'),
+                'required'  => __('Please enter a message.', 'ad-mag-lite'),
+                'minlength' => __('At least {0} characters required.', 'ad-mag-lite'),
             )
         ),
         'ajax' => array(
@@ -179,4 +169,13 @@ function ad_mag_lite_custom_front_localization() {
     );
 
     return $front_localization;
+}
+
+function ad_mag_lite_the_excerpt_length( $length ) {
+    $length = get_theme_mod( 'blog-excerpt-length', 55 );
+    return $length;
+}
+
+function ad_mag_lite_custom_excerpt_more( $more ) {
+    return '...';
 }

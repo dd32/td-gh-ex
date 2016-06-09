@@ -9,9 +9,9 @@ add_action( 'widgets_init', function(){
  */
 class Ad_Mag_Lite_Quote extends WP_Widget {
     function __construct() {
-        $widget_ops = array('classname' => 'widget_text', 'description' => __('Show quote', 'ad_mag_lite'));
+        $widget_ops = array('classname' => 'widget_text', 'description' => __('Show quote', 'ad-mag-lite'));
         $control_ops = array('width' => 'auto', 'height' => 'auto');
-        parent::__construct('Ad_Mag_Lite_Quote', __('(AdMag) Quote', 'ad_mag_lite'), $widget_ops, $control_ops);
+        parent::__construct('Ad_Mag_Lite_Quote', __('(AdMag) Quote', 'ad-mag-lite'), $widget_ops, $control_ops);
     }
 
     public function widget( $args, $instance ) {
@@ -56,17 +56,17 @@ class Ad_Mag_Lite_Quote extends WP_Widget {
         $form['desc']    = $instance['desc'];
         ?>
     <p>
-        <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e('Title:', 'ad_mag_lite'); ?></label>
+        <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e('Title:', 'ad-mag-lite'); ?></label>
         <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
     </p>
 
     <p>
-        <label for="<?php echo esc_attr($this->get_field_id('content')); ?>"><?php _e('Content:', 'ad_mag_lite'); ?></label>
+        <label for="<?php echo esc_attr($this->get_field_id('content')); ?>"><?php _e('Content:', 'ad-mag-lite'); ?></label>
         <textarea class="widefat" rows="10" cols="20" id="<?php echo wp_kses_post($this->get_field_id('content')); ?>" name="<?php echo wp_kses_post($this->get_field_name('content')); ?>"><?php echo esc_textarea($instance['content']); ?></textarea>
     </p>
 
     <p>
-        <label for="<?php echo esc_attr($this->get_field_id('desc')); ?>"><?php _e('Description:', 'ad_mag_lite'); ?></label>
+        <label for="<?php echo esc_attr($this->get_field_id('desc')); ?>"><?php _e('Description:', 'ad-mag-lite'); ?></label>
         <input class="widefat" id="<?php echo esc_attr($this->get_field_id('desc')); ?>" name="<?php echo esc_attr($this->get_field_name('desc')); ?>" type="text" value="<?php echo esc_attr($form['desc']); ?>" />
     </p>
 

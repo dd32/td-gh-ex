@@ -58,13 +58,13 @@
                     &nbsp;|&nbsp;
                     <span class="entry-date"><i class="fa fa-clock-o"></i><?php echo get_the_date('M j, Y'); ?></span>
                 </div>
-                <?php echo wp_trim_words( get_the_excerpt(), 15, $more = null ); ?>
+                <?php the_excerpt(); ?> <a href="<?php the_permalink(); ?>"><?php esc_html_e( 'Read More', 'ad-mag-lite' ); ?></a>
             </div>
         </div>      
     </article>
 </li>
 <?php endwhile; else : ?>
- <p><?php _e( 'Sorry, no posts matched your criteria.', 'ad_mag_lite' ); ?></p>
+ <p><?php _e( 'Sorry, no posts matched your criteria.', 'ad-mag-lite' ); ?></p>
 <?php endif; ?>
 </ul>
 

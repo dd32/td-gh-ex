@@ -37,8 +37,8 @@ get_header();
                                             'link_before'      => '<span>',
                                             'link_after'       => '</span>',
                                             'next_or_number'   => 'number',
-                                            'nextpagelink'     => __( 'Next page','ad_mag_lite'),
-                                            'previouspagelink' => __( 'Previous page','ad_mag_lite'),
+                                            'nextpagelink'     => __( 'Next page','ad-mag-lite'),
+                                            'previouspagelink' => __( 'Previous page','ad-mag-lite'),
                                             'pagelink'         => '%',
                                             'echo'             => 1
                                         );

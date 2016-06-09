@@ -25,7 +25,7 @@ $next_post = get_next_post();
                         </div>
                     <?php endif; ?>
                     <div class="entry-content">
-                        <a href="<?php echo get_permalink( $prev_post->ID ); ?>" class=""><?php _e('PREVIOUS POST', 'ad_mag_lite'); ?></a>
+                        <a href="<?php echo get_permalink( $prev_post->ID ); ?>" class=""><?php _e('PREVIOUS POST', 'ad-mag-lite'); ?></a>
                         <h4 class="entry-title" itemscope="" itemtype="http://schema.org/Event"><a itemprop="name" href="<?php echo get_permalink( $prev_post->ID ); ?>"><?php echo esc_html($prev_post->post_title); ?></a></h4>
                     </div>
                 </div>
@@ -47,7 +47,7 @@ $next_post = get_next_post();
                         </div>
                     <?php endif; ?>
                     <div class="entry-content">
-                        <a href="<?php echo get_permalink( $next_post->ID ); ?>" class=""><?php _e('NEXT POST', 'ad_mag_lite'); ?></a>
+                        <a href="<?php echo get_permalink( $next_post->ID ); ?>" class=""><?php _e('NEXT POST', 'ad-mag-lite'); ?></a>
                         <h4 class="entry-title" itemscope="" itemtype="http://schema.org/Event"><a itemprop="name" href="<?php echo get_permalink( $next_post->ID ); ?>"><?php echo esc_html($next_post->post_title); ?></a></h4>
                     </div>
                 </div>

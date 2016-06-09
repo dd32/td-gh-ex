@@ -7,9 +7,9 @@ add_action( 'widgets_init', function(){
 class Ad_Mag_Lite_Advertisement extends WP_Widget {
  
 public function __construct() {
-    $widget_ops = array('classname' => 'kopa-ads-widget', 'description' => __('To upload image for advertisement', 'ad_mag_lite'));
+    $widget_ops = array('classname' => 'kopa-ads-widget', 'description' => __('To upload image for advertisement', 'ad-mag-lite'));
     $control_ops = array('width' => 'auto', 'height' => 'auto');
-    parent::__construct('Ad_Mag_Lite_Advertisement', __('(AdMag) Advertisement', 'ad_mag_lite'), $widget_ops, $control_ops);
+    parent::__construct('Ad_Mag_Lite_Advertisement', __('(AdMag) Advertisement', 'ad-mag-lite'), $widget_ops, $control_ops);
   }
  
   public function widget( $args, $instance ) {
@@ -44,11 +44,11 @@ public function __construct() {
     $link      = isset( $instance[ 'link' ] ) ? $instance[ 'link' ] : '#';
     ?>
     <p>
-      <label for="<?php echo wp_kses_post($this->get_field_id('title')); ?>"><?php _e('Title', 'ad_mag_lite'); ?></label><br />
+      <label for="<?php echo wp_kses_post($this->get_field_id('title')); ?>"><?php _e('Title', 'ad-mag-lite'); ?></label><br />
       <input type="text" name="<?php echo wp_kses_post($this->get_field_name('title')); ?>" id="<?php echo wp_kses_post($this->get_field_id('title')); ?>" value="<?php echo wp_kses_post($title); ?>" class="widefat" />
     </p>
     <p>
-      <label for="<?php echo wp_kses_post($this->get_field_id('link')); ?>"><?php _e('Link', 'ad_mag_lite'); ?></label><br />
+      <label for="<?php echo wp_kses_post($this->get_field_id('link')); ?>"><?php _e('Link', 'ad-mag-lite'); ?></label><br />
       <input type="text" name="<?php echo wp_kses_post($this->get_field_name('link')); ?>" id="<?php echo wp_kses_post($this->get_field_id('link')); ?>" value="<?php echo wp_kses_post($link); ?>" class="widefat" />
     </p>
     
@@ -58,7 +58,7 @@ public function __construct() {
         <input type="text" class="widefat custom_media_url" name="<?php echo wp_kses_post($this->get_field_name('image_uri')); ?>" id="<?php echo wp_kses_post($this->get_field_id('image_uri')); ?>" value="<?php echo wp_kses_post($image_uri); ?>">
        </p>
        <p>
-        <input type="button" value="<?php _e( 'Upload Image', 'ad_mag_lite' ); ?>" class="button custom_media_upload" id="custom_image_uploader"/>
+        <input type="button" value="<?php _e( 'Upload Image', 'ad-mag-lite' ); ?>" class="button custom_media_upload" id="custom_image_uploader"/>
     </p>
     <?php 
   }

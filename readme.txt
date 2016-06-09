@@ -7,6 +7,13 @@ Moreover, with sleekly design, responsiove layout, awesome typography and focus 
 --------------------
 Change log
 --------------------
+= 1.0.2 = (9/06/2016)
+	- Fixed display content single post.
+	- Add option excerpt length for blog.
+	- Add readmore link in blog
+	- Remove deprecated tags in style.css
+	- Changed screenshot
+
 = 1.0.1 = (21/01/2016)
 	- Fixed Post Format video does not show video on the single pages. 
 
@@ -121,13 +128,9 @@ License/copyright for images
 * Images are used in the screenshot are under Public Domain CC0 license
 
 http://pixabay.com/en/vw-car-vintage-red-old-car-fusca-386526/
-http://pixabay.com/en/legs-all-star-converse-casual-feet-407196/
-http://pixabay.com/en/scooter-italy-vintage-old-green-593155/
 http://pixabay.com/en/purse-handbag-brown-country-lane-407176/
 http://pixabay.com/en/photography-photo-camera-olympus-407218/
-http://pixabay.com/en/portrait-person-face-cat-eyes-94809/
 http://pixabay.com/en/still-life-cup-mug-cafe-camera-594579/
-http://pixabay.com/en/spring-bloom-nature-leaves-natur-179584/
 
 --------------------
 Other Licenses

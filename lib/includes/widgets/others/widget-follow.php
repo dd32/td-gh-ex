@@ -9,9 +9,9 @@ add_action( 'widgets_init', function(){
  */
 class Ad_Mag_Lite_Follow extends WP_Widget {
     function __construct() {
-        $widget_ops = array('classname' => 'kopa-follow-widget', 'description' => __('Display social link', 'ad_mag_lite'));
+        $widget_ops = array('classname' => 'kopa-follow-widget', 'description' => __('Display social link', 'ad-mag-lite'));
         $control_ops = array('width' => 'auto', 'height' => 'auto');
-        parent::__construct('Ad_Mag_Lite_Follow', __('(AdMag) Follow', 'ad_mag_lite'), $widget_ops, $control_ops);
+        parent::__construct('Ad_Mag_Lite_Follow', __('(AdMag) Follow', 'ad-mag-lite'), $widget_ops, $control_ops);
     }
 
 public function widget( $args, $instance ) {
@@ -127,7 +127,7 @@ public function widget( $args, $instance ) {
         $title    = strip_tags($instance['title']);
         ?>
     <p>
-        <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e('Title:', 'ad_mag_lite'); ?></label>
+        <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e('Title:', 'ad-mag-lite'); ?></label>
         <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
     </p>
     <?php

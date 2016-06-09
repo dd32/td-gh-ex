@@ -9,9 +9,9 @@ add_action( 'widgets_init', function(){
  */
 class Ad_Mag_Lite_Editor extends WP_Widget {
     function __construct() {
-        $widget_ops  = array('classname' => 'kopa-editor-widget', 'description' => __('Show user in role with avatar', 'ad_mag_lite'));
+        $widget_ops  = array('classname' => 'kopa-editor-widget', 'description' => __('Show user in role with avatar', 'ad-mag-lite'));
         $control_ops = array('width' => 'auto', 'height' => 'auto');
-        parent::__construct('Ad_Mag_Lite_Editor', __('(AdMag) Editor', 'ad_mag_lite'), $widget_ops, $control_ops);
+        parent::__construct('Ad_Mag_Lite_Editor', __('(AdMag) Editor', 'ad-mag-lite'), $widget_ops, $control_ops);
     }
 
 public function widget( $args, $instance ) {
@@ -49,7 +49,7 @@ public function widget( $args, $instance ) {
                     }?>
                 </ul>
             <?php else : ?>
-                <p><?php echo __('No user in role', 'ad_mag_lite'); ?></p>
+                <p><?php echo __('No user in role', 'ad-mag-lite'); ?></p>
             <?php endif; ?>
 
         <?php
@@ -69,22 +69,22 @@ public function widget( $args, $instance ) {
         $form['number'] = esc_attr($instance['number']);
         ?>
     <p>
-        <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e('Title:', 'ad_mag_lite'); ?></label>
+        <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e('Title:', 'ad-mag-lite'); ?></label>
         <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
     </p>
 
     <p>
-        <label for="<?php echo esc_attr($this->get_field_id('role')); ?>"><?php _e('Role', 'ad_mag_lite'); ?>:</label>
+        <label for="<?php echo esc_attr($this->get_field_id('role')); ?>"><?php _e('Role', 'ad-mag-lite'); ?>:</label>
         <select class="widefat" name="<?php echo esc_attr($this->get_field_name('role')); ?>" id="<?php echo esc_attr($this->get_field_id('service')); ?>">
-            <option value="editor" <?php selected('editor', $form['role']); ?>><?php _e('Editor', 'ad_mag_lite'); ?></option>
-            <option value="author" <?php selected('author', $form['role']); ?>><?php _e('Author', 'ad_mag_lite'); ?></option>
-            <option value="contributor" <?php selected('contributor', $form['role']); ?>><?php _e('Contributor', 'ad_mag_lite'); ?></option>
-            <option value="subscriber" <?php selected('subscriber', $form['role']); ?>><?php _e('Subscriber', 'ad_mag_lite'); ?></option>
+            <option value="editor" <?php selected('editor', $form['role']); ?>><?php _e('Editor', 'ad-mag-lite'); ?></option>
+            <option value="author" <?php selected('author', $form['role']); ?>><?php _e('Author', 'ad-mag-lite'); ?></option>
+            <option value="contributor" <?php selected('contributor', $form['role']); ?>><?php _e('Contributor', 'ad-mag-lite'); ?></option>
+            <option value="subscriber" <?php selected('subscriber', $form['role']); ?>><?php _e('Subscriber', 'ad-mag-lite'); ?></option>
         </select>
     </p>
 
     <p>
-        <label for="<?php echo esc_attr($this->get_field_id('number')); ?>"><?php _e('Number to show:', 'ad_mag_lite'); ?></label>
+        <label for="<?php echo esc_attr($this->get_field_id('number')); ?>"><?php _e('Number to show:', 'ad-mag-lite'); ?></label>
         <input class="widefat" id="<?php echo esc_attr($this->get_field_id('number')); ?>" name="<?php echo esc_attr($this->get_field_name('number')); ?>" type="number" value="<?php echo esc_attr($form['number']); ?>" />
     </p>
 

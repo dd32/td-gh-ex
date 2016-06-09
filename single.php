@@ -13,7 +13,7 @@
                 echo '<div class="col-md-12 col-sm-12 col-xs-12">';
             }
             ?>
-            <div class="widget">
+            <div class="kopa-bg-content">
                 <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
                 <?php
                 $post_format = get_post_format();
@@ -45,11 +45,11 @@
                 $key = strstr($temp, $close_tags, true).$close_tags;
                 $content = str_replace($key, '', $content);
                 break;
-                case 'gallery':
-                $content = preg_replace('/\[gallery.*](.*\[gallery]){0,1}/', '', $content);
-                $content = apply_filters( 'the_content', $content );
-                $content = str_replace(']]>', ']]&gt;', $content);
-                break;
+                // case 'gallery':
+                // $content = preg_replace('/\[gallery.*](.*\[gallery]){0,1}/', '', $content);
+                // $content = apply_filters( 'the_content', $content );
+                // $content = str_replace(']]>', ']]&gt;', $content);
+                // break;
                 case 'video':
                 $content = preg_replace("/\[youtube.*].*\[\/youtube]/", "", $content);
                 $content = preg_replace('/\[vimeo.*].*\[\/vimeo]/', '', $content);
@@ -64,8 +64,10 @@
                 $content = str_replace(']]>', ']]&gt;', $content);
                 $content = str_replace('<p>&nbsp;</p>', '', $content);
                 break;
+                default:
+                $content = apply_filters( 'the_content', $content );
             }
-            echo sprintf( '%s', $content);
+            echo sprintf( '%s', $content );
             ?>
 
 </article> 

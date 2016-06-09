@@ -83,17 +83,17 @@ if(!is_home()){
                             &nbsp;|&nbsp;
                             <span class="entry-date"><i class="fa fa-clock-o"></i><?php echo get_the_date('M j, Y'); ?></span>
                         </div>
-                        <?php echo wp_trim_words( get_the_excerpt(), 15, $more = null ); ?>
+                        <?php the_excerpt(); ?><a href="<?php the_permalink(); ?>"><?php esc_html_e( 'Read More', 'ad-mag-lite' ); ?></a>
                     </div>
                 </div>       
             </article>
         </li>
     <?php endwhile; else : ?>
-    <p><?php _e( 'Sorry, no posts matched your criteria.', 'ad_mag_lite' ); ?></p>
+    <p><?php _e( 'Sorry, no posts matched your criteria.', 'ad-mag-lite' ); ?></p>
 <?php endif; ?>
 </ul>
 
-<div class="kopa-loadmore" onclick="return ad_mag_lite_load_more_blog_2();"><?php _e('load more', 'ad_mag_lite'); ?></div>
+<div class="kopa-loadmore" onclick="return ad_mag_lite_load_more_blog_2();"><?php _e('load more', 'ad-mag-lite'); ?></div>
 <input type="hidden" id="cat_id" data-index="10" name="cat_id" value="<?php echo get_query_var('cat'); ?>" />
 <input type="hidden" id="total_post" name="total_post" value="<?php echo esc_attr($total_post); ?>" />
 

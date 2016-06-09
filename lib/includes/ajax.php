@@ -6,7 +6,7 @@ if (!function_exists('ad_mag_lite_load_more_blog_3')) {
 
     function ad_mag_lite_load_more_blog_3() {
         if ( ! wp_verify_nonce($_POST['wpnonce'], 'ad_mag_lite_load_more_blog_3')) {
-            throw new Exception( __( 'Sorry an error has occurred.', 'ad_mag_lite' ) );
+            throw new Exception( __( 'Sorry an error has occurred.', 'ad-mag-lite' ) );
             exit();
         }
         global $wp_query;
@@ -66,7 +66,7 @@ if (!function_exists('ad_mag_lite_load_more_blog_2')) {
 
     function ad_mag_lite_load_more_blog_2() {
         if ( ! wp_verify_nonce($_POST['wpnonce'], 'ad_mag_lite_load_more_blog_2')) {
-            throw new Exception( __( 'Sorry an error has occurred.', 'ad_mag_lite' ) );
+            throw new Exception( __( 'Sorry an error has occurred.', 'ad-mag-lite' ) );
             exit();
         }
 

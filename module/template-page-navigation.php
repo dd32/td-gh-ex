@@ -3,15 +3,15 @@
 function ad_mag_lite_page_navigation() {
 
 	$options = array(
-		'pages_text'                   => __( 'Page %CURRENT_PAGE% of %TOTAL_PAGES%', 'ad_mag_lite' ),
+		'pages_text'                   => __( 'Page %CURRENT_PAGE% of %TOTAL_PAGES%', 'ad-mag-lite' ),
 		'current_text'                 => '%PAGE_NUMBER%',
 		'page_text'                    => '%PAGE_NUMBER%',
-		'first_text'                   => __( '&laquo; First', 'ad_mag_lite' ),
-		'last_text'                    => __( 'Last &raquo;', 'ad_mag_lite' ),
-		'prev_text'                    => __( '&laquo; Prev', 'ad_mag_lite' ),
-		'next_text'                    => __( 'Next &raquo;', 'ad_mag_lite' ),
-		'dotleft_text'                 => __( '...', 'ad_mag_lite' ),
-		'dotright_text'                => __( '...', 'ad_mag_lite' ),
+		'first_text'                   => __( '&laquo; First', 'ad-mag-lite' ),
+		'last_text'                    => __( 'Last &raquo;', 'ad-mag-lite' ),
+		'prev_text'                    => __( '&laquo; Prev', 'ad-mag-lite' ),
+		'next_text'                    => __( 'Next &raquo;', 'ad-mag-lite' ),
+		'dotleft_text'                 => __( '...', 'ad-mag-lite' ),
+		'dotright_text'                => __( '...', 'ad-mag-lite' ),
 		'num_pages'                    => 5,
 		'num_larger_page_numbers'      => 3,
 		'larger_page_numbers_multiple' => 10,

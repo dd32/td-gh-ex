@@ -10,25 +10,25 @@ function ad_mag_lite_register_sidebar(){
 
     $sidebars = array(
         array(
-            'name' => __( 'Left Sidebar', 'ad_mag_lite' ),
+            'name' => __( 'Left Sidebar', 'ad-mag-lite' ),
             'id'   => 'left-sidebar'),
         array(
-            'name' => __( 'Center Sidebar', 'ad_mag_lite' ),
+            'name' => __( 'Center Sidebar', 'ad-mag-lite' ),
             'id'   => 'center-sidebar'),
         array(
-            'name' => __( 'Right Sidebar', 'ad_mag_lite' ),
+            'name' => __( 'Right Sidebar', 'ad-mag-lite' ),
             'id'   => 'right-sidebar'),
         array(
-            'name' => __('Footer 1st', 'ad_mag_lite'),
+            'name' => __('Footer 1st', 'ad-mag-lite'),
             'id'   => 'footer-1-sidebar'),     
         array(
-            'name' => __('Footer 2nd', 'ad_mag_lite'),
+            'name' => __('Footer 2nd', 'ad-mag-lite'),
             'id'   => 'footer-2-sidebar'),     
         array(
-            'name' => __('Footer 3rd', 'ad_mag_lite'),
+            'name' => __('Footer 3rd', 'ad-mag-lite'),
             'id'   => 'footer-3-sidebar'),     
         array(
-            'name' => __('Footer 4th', 'ad_mag_lite'),
+            'name' => __('Footer 4th', 'ad-mag-lite'),
             'id'   => 'footer-4-sidebar')        
         );
 
