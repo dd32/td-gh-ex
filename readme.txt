@@ -133,3 +133,8 @@ Version 1.4.0
 * Updated FontAwesome to 4.6.1 version
 * Improved page navigation
 * Minor bug fixes
+
+Version 1.4.1
+* Updated FontAwesome to 4.6.3 version
+* Updated HTML5Shiv to 3.7.3 version
+* Minor bug fixes
