@@ -8,7 +8,7 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package electa
+ * @package Electa
  */
 
 get_header(); ?>
@@ -42,5 +42,6 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
+	<?php get_sidebar(); ?>
+	
 <?php get_footer(); ?>

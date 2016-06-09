@@ -2,7 +2,7 @@
 /**
  * The template used for displaying page content as blocks
  *
- * @package electa
+ * @package Electa
  */
 $has_img = ' post-no-img';
 if ( has_post_thumbnail() ) {

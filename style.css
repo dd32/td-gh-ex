@@ -4,7 +4,7 @@ Theme URI: http://kairaweb.com/theme/electa/
 Author: Kaira
 Author URI: http://www.kairaweb.com/
 Description: A grid-based portfolio theme with multiple column layouts for the featured images, perfect for photoblogging and/or a portfolio site. Electa integrated nicely with some powerful plugins such as WooCommerce, Site Origin's Page Builder and more, making it very simple to build a nice website.
-Version: 1.2.5
+Version: 1.2.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: electa
@@ -596,8 +596,7 @@ a:active {
     font-size: 13px;
 }
 .main-navigation a:hover {
-    background-color: #f6f6f6;
-    color: #111 !important;
+    color: #FFF !important;
 }
 
 .main-navigation ul ul {
@@ -634,10 +633,6 @@ a:active {
 .main-navigation ul ul :hover > a {
 }
 
-.main-navigation ul ul li a:hover {
-    background-color: #f6f6f6;
-}
-
 .main-navigation ul li:hover > ul {
 	left: 100%;
 }
@@ -655,9 +650,26 @@ a:active {
     color: #FFF !important;
 }
 
-/* Small menu */
-.menu-toggle {
-	display: none;
+.header-menu-button,
+.main-menu-close {
+    display: none;
+}
+.menu-dropdown-btn {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #838383;
+    margin: 0;
+    padding: 10px 14px;
+    /* box-shadow: -1px 0 0 rgba(0, 0, 0, 0.08); */
+    height: 35px;
+    line-height: 15px;
+    text-align: center;
+    font-size: 14px;
+    z-index: 9;
+    cursor: pointer;
 }
 
 .site-main .comment-navigation,
@@ -690,6 +702,17 @@ a:active {
     clear: both;
 }
 
+#page {
+    position: relative;
+    right: 0;
+    
+    -webkit-transition: right 0.4s ease 0s;
+     -moz-transition: right 0.4s ease 0s;
+      -ms-transition: right 0.4s ease 0s;
+       -o-transition: right 0.4s ease 0s;
+          transition: right 0.4s ease 0s;
+}
+
 .electa-button,
 #comments .form-submit #submit {
     border: 1px solid rgba(0, 0, 0, 0.3);
@@ -707,22 +730,26 @@ a:active {
 
 /* -------- Header Elements -------- */
 .site-header {
-    height: 100%;
     background-color: #FFFFFF;
     width: 280px;
     position: relative;
     z-index: 20;
     float: left;
+    
+    -webkit-transition: width 0.2s ease 0s;
+     -moz-transition: width 0.2s ease 0s;
+      -ms-transition: width 0.2s ease 0s;
+       -o-transition: width 0.2s ease 0s;
+          transition: width 0.2s ease 0s;
 }
 .site-header-inner {
     box-shadow: -1px 0 8px rgba(0, 0, 0, 0.3);
     background-color: #FFF;
-    width: 280px;
     position: relative;
     padding: 10px 0 50px;
 }
 .site-branding {
-    padding: 0 20px;
+    padding: 0 20px 15px;
     position: relative;
 }
 .site-branding a {
@@ -747,20 +774,17 @@ a:active {
 
 .header-nologo .site-title {
     font-size: 50px;
-    
-    padding: 20px 0 20px;
+    line-height: 1.2em;
+    padding: 20px 0 4px;
 }
 .header-nologo .site-description {
     font-size: 12px;
-    
-    padding: 0 0 20px;
-    position: relative;
-    top: -14px;
+    line-height: 1.2em;
+    padding: 0 0 12px;
 }
 
 .header-social {
     text-align: center;
-    
 }
 .header-social {
     padding: 0 20px 2px;
@@ -894,6 +918,12 @@ header:hover .search-button {
 /* -------- Content Elements -------- */
 .site-content {
     margin-left: 280px;
+    
+    -webkit-transition: margin-left 0.2s ease 0s;
+     -moz-transition: margin-left 0.2s ease 0s;
+      -ms-transition: margin-left 0.2s ease 0s;
+       -o-transition: margin-left 0.2s ease 0s;
+        transition: margin-left 0.2s ease 0s;
 }
 .content-area {
     box-shadow: 1px 0 0 #dfdfdf;
@@ -905,6 +935,9 @@ header:hover .search-button {
 }
 .body-blocks-layout .content-area {
     padding: 0;
+}
+body.page-template-template-full-width.body-blocks-layout .content-area {
+    padding: 20px;
 }
 
 .content-area-full {
@@ -1574,6 +1607,239 @@ object {
     height: auto !important;
 }
 
+@media only screen and (max-width: 980px) {
+    
+    .site-header {
+        width: 220px;
+    }
+    .site-content {
+        margin-left: 220px;
+    }
+    
+}
+
+@media screen and (max-width: 782px) {
+    
+    .main-navigation {
+        margin: 0;
+    }
+    .header-menu-button {
+        display: block;
+        padding: 6px 10px 6px;
+        text-transform: uppercase;
+        cursor: pointer;
+        text-align: center;
+        color: #FFF;
+    }
+    .header-menu-button i {
+        font-size: 18px;
+        vertical-align: middle;
+    }
+    .header-menu-button span {
+        vertical-align: middle;
+        font-size: 18px;
+        margin: 0 0 0 6px;
+    }
+    
+    #main-menu > div,
+    .main-navigation ul {
+        display: block;
+    }
+    
+    .main-navigation #main-menu {
+        color: #FFFFFF;
+        position: fixed;
+        top: 0;
+        right: -260px;
+        width: 260px;
+        max-width: 100%;
+        -ms-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 48px 22px 30px 22px;
+        background: #22211F;
+        z-index: 9999;
+        height: 100%;
+        overflow: auto;
+        -webkit-transition: right 0.4s ease 0s;
+        -moz-transition: right 0.4s ease 0s;
+        -ms-transition: right 0.4s ease 0s;
+        -o-transition: right 0.4s ease 0s;
+        transition: right 0.4s ease 0s;
+    }
+    body.admin-bar .main-navigation #main-menu {
+        padding: 80px 22px 30px 22px;
+    }
+    .main-navigation #main-menu .site-container {
+        padding: 0;
+    }
+    .main-navigation li {
+        display: block;
+        float: none;
+        margin: 0 0 1px;
+    }
+    .main-navigation li a {
+        display: block;
+        float: none;
+        padding: 8px 0;
+        color: #B5B5B5 !important;
+        text-align: left;
+        background: none !important;
+    }
+    .main-navigation li a:hover {
+        color: #FFF !important
+    }
+    .main-navigation ul ul {
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        float: none !important;
+        background-color: rgba(255, 255, 255, 0.14) !important;
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+        display: none !important;
+    }
+    .main-navigation ul ul li:last-child a,
+    .main-navigation ul ul li a {
+        padding: 8px;
+        width: auto;
+    }
+    .main-navigation ul ul li a {
+        background: none !important;
+    }
+    
+    #primary-menu,
+    .menu-dropdown-btn {
+        display: block;
+    }
+    .main-menu-close {
+        display: block;
+        border-radius: 4px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 30px;
+        color: #898989;
+        text-align: center;
+        padding: 0 8px 0 12px;
+        height: 40px;
+        line-height: 38px;
+        cursor: pointer;
+    }
+    .main-menu-close .fa-angle-left {
+        position: relative;
+        left: -4px;
+    }
+    body.admin-bar .main-menu-close {
+        top: 50px;
+    }
+    
+    .open-page-item > ul.children,
+    .open-page-item > ul.sub-menu {
+        display: block !important;
+    }
+
+}
+
+@media only screen and (max-width: 782px) {
+    
+    /* -------- Content Elements -------- */
+    .site-header {
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+        display: block;
+        width: 100%;
+        float: none;
+    }
+    .site-header-inner {
+        padding: 0;
+        box-shadow: none;
+    }
+    .header-nologo .site-title {
+        padding: 10px 0 0;
+    }
+    .header-nologo .site-description {
+        padding: 0 0 8px;
+    }
+    .header-social-links a {
+        margin: 0 4px 0;
+    }
+    .site-branding img {
+        max-height: 130px;
+        width: auto;
+    }
+    .site-description {
+        font-size: 13px;
+        padding: 5px 0 0;
+    }
+    .site-info {
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        font-size: 10px;
+        padding: 5px 0 6px;
+    }
+    .search-button {
+        display: none;
+    }
+    
+    .site-content {
+        display: block;
+        width: 100% !important;
+        padding: 20px;
+        margin-left: 0;
+    }
+    .body-blocks-layout .site-content {
+        padding: 0;
+    }
+    
+    .content-area {
+        box-shadow: none;
+        width: 100%;
+        float: none;
+        box-shadow: 0 1px 0 #dfdfdf;
+        padding: 0;
+    }
+    .widget-area {
+        box-shadow: none;
+        width: 100%;
+        max-width: 100%;
+        float: none;
+        padding: 30px 0 0;
+    }
+    
+    .site-branding {
+        text-align: center;
+    }
+    .site-branding a {
+        display: inline-block;
+    }
+    
+}
+
+@media only screen and (max-width: 620px) {
+    
+    .electa-blocks-post {
+        width: 50% !important;
+    }
+    
+}
+
+@media only screen and (max-width: 560px) {
+    
+    .electa-blocks-post {
+        width: 100% !important;
+    }
+    
+}
+
+body.show-main-menu #main-menu {
+    right: 0px;
+}
+body.show-main-menu #page {
+    right: 260px;
+}
 
 /*--------------------------------------------------------------
 Fallback CSS for Customizer Library Styles
@@ -1611,9 +1877,10 @@ a,
 .main-navigation li.current_page_parent > a,
 .main-navigation li.current-menu-ancestor > a,
 .main-navigation li.current_page_ancestor > a,
-.main-navigation button,
+.main-navigation li a:hover,
+.header-menu-button,
 .wpcf7-submit {
-    background-color: #4965A0 !important;
+    background-color: #4965A0;
 }
 a:hover,
 .pc-text a:hover,
@@ -1626,140 +1893,8 @@ a:hover,
 }
 .pc-bg:hover,
 .electa-button:hover,
-.main-navigation button:hover,
+.header-menu-button:hover,
 #comments .form-submit #submit:hover,
 .wpcf7-submit:hover {
-    background-color: #3e578b !important;
-}
-
-
-/* = Media Query targeting screens less than 960px wide
------------------------------------------------ */
-@media only screen and (max-width: 960px) {
-    
-}
-
-/* = Media Query targeting screens less than 780px wide
------------------------------------------------ */
-@media only screen and (max-width: 780px) {
-    
-    /* -------- Content Elements -------- */
-    .site-header {
-        box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-        display: block;
-        width: 100%;
-        height: auto !important;
-    }
-    .site-header-inner {
-        position: relative;
-        width: 100%;
-        height: auto;
-        top: 0;
-        left: 0;
-        padding: 0;
-        box-shadow: none;
-    }
-    .header-social-links a {
-        margin: 0 4px 0;
-    }
-    .site-branding img {
-        max-height: 130px;
-        width: auto;
-    }
-    .site-description {
-        font-size: 13px;
-        padding: 5px 0 0;
-    }
-    .site-info {
-        position: relative;
-        bottom: 0;
-        width: 100%;
-        font-size: 10px;
-        padding: 0 0 4px;
-    }
-    .search-button {
-        display: none;
-    }
-    
-    .main-navigation {
-        
-    }
-    .main-navigation button {
-        box-shadow: none;
-        border-radius: 0;
-        border: 0;
-        width: 100%;
-        background-color: #F0F0F0;
-        color: #FFF;
-        outline: none;
-    
-        text-shadow: none;
-        font-size: 14px;
-}
-    .main-navigation ul {
-        
-    }
-    .main-navigation ul li {
-        
-    }
-    .main-navigation ul li a {
-        padding: 5px 10px;
-        text-align: center;
-        font-size: 13px;
-    }
-    .main-navigation ul ul {
-        position: relative;
-        left: 0 !important;
-        top: auto;
-        display: block;
-        float: none;
-    }
-    .main-navigation ul ul li a {
-        padding: 5px 10px;
-        text-align: center;
-    }
-    
-    .site-content {
-        display: block;
-        width: 100% !important;
-        padding: 20px;
-        margin-left: 0;
-    }
-    .body-blocks-layout .site-content {
-        padding: 0;
-    }
-    
-    .content-area {
-        box-shadow: none;
-        width: 100%;
-        float: none;
-        box-shadow: 0 1px 0 #dfdfdf;
-        padding: 20px 0;
-    }
-    .widget-area {
-        box-shadow: none;
-        width: 100%;
-        max-width: 100%;
-        float: none;
-        padding: 30px 0 0;
-    }
-    
-    .site-branding {
-        text-align: center;
-    }
-    .site-branding a {
-        display: inline-block;
-    }
-    
-    
-    /* -------- Navigation Elements -------- */
-    .menu-toggle,
-    .main-navigation.toggled .nav-menu {
-        display: block;
-    }
-
-    .main-navigation ul {
-        display: none;
-    }
-    
+    background-color: #3e578b;
 }

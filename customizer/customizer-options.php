@@ -22,24 +22,6 @@ function customizer_library_kaira_options() {
 
 	// Adds the sections to the $options array
 	$options['sections'] = $sections;
-
-	// Logo
-	$section = 'kra-favicon';
-    
-	$sections[] = array(
-		'id' => $section,
-		'title' => __( 'Favicon', 'electa' ),
-		'priority' => '10',
-		'description' => __( 'Add a favicon to your website', 'electa' )
-	);
-    
-	$options['kra-header-favicon'] = array(
-		'id' => 'kra-header-favicon',
-		'label'   => __( 'Favicon', 'electa' ),
-		'section' => $section,
-		'type'    => 'image',
-		'default' => '',
-	);
     
     
     // Header Settings
@@ -57,7 +39,7 @@ function customizer_library_kaira_options() {
         'section' => $section,
         'type'    => 'checkbox',
         'description' => __( 'Enable to a slogan for your site. This uses the Site Tagline', 'electa' ),
-        'default' => 1,
+        'default' => 0,
     );
     $options['kra-header-search'] = array(
         'id' => 'kra-header-search',
@@ -65,14 +47,15 @@ function customizer_library_kaira_options() {
         'section' => $section,
         'type'    => 'checkbox',
         'description' => __( 'Enable to show a search box on the site', 'electa' ),
-        'default' => 1,
+        'default' => 0,
     );
     // Upsell Button One
     $options['kra-upsell-one'] = array(
         'id' => 'kra-upsell-one',
-        'label'   => __( 'Stick Header', 'electa' ),
+        'label'   => __( 'Sticky Header', 'electa' ),
         'section' => $section,
         'type'    => 'upsell',
+        'description' => __( 'Upgrade for only $20 to enable the sticky header option', 'electa' ),
     );
     
     
@@ -103,9 +86,10 @@ function customizer_library_kaira_options() {
     // Upsell Button Two
     $options['kra-upsell-two'] = array(
         'id' => 'kra-upsell-two',
-        'label'   => __( 'Home Blocks Layout', 'electa' ),
+        'label'   => __( 'Home Blocks Columns', 'electa' ),
         'section' => $section,
         'type'    => 'upsell',
+        'description' => __( 'Upgrade for only $20 to change the layout of the block columns', 'electa' ),
     );
 
 
@@ -200,13 +184,6 @@ function customizer_library_kaira_options() {
         'type'    => 'text',
         'description' => __( 'Enter the ID\'s of the post categories you want to EXCLUDE from the blog, with a minus(-) before it.<br />Eg: "-13,-17,-19" (no spaces and only comma\'s and category ID\'s... NOT post ID\'s)', 'electa' )
     );
-    // Upsell Button Three
-    $options['kra-upsell-three'] = array(
-        'id' => 'kra-upsell-three',
-        'label'   => __( 'Blog Blocks Layout', 'electa' ),
-        'section' => $section,
-        'type'    => 'upsell',
-    );
     $options['kra-blog-title'] = array(
         'id' => 'kra-blog-title',
         'label'   => __( 'Blog Page Title', 'electa' ),
@@ -215,11 +192,12 @@ function customizer_library_kaira_options() {
         'default' => 'Blog'
     );
     // Upsell Button Three
-    $options['kra-upsell-three-two'] = array(
-        'id' => 'kra-upsell-three-two',
-        'label'   => __( 'Category/Archive Blogs layout', 'electa' ),
+    $options['kra-upsell-blog'] = array(
+        'id' => 'kra-upsell-blog',
+        'label'   => __( 'Blog Blocks Columns', 'electa' ),
         'section' => $section,
         'type'    => 'upsell',
+        'description' => __( 'Upgrade for only $20<br /><br />This will enable the options to change the layout of the block columns and apply the blocks layout to the category/archive list pages', 'electa' ),
     );
     
     
@@ -238,6 +216,7 @@ function customizer_library_kaira_options() {
         'label'   => __( 'Enable Social Links', 'electa' ),
         'section' => $section,
         'type'    => 'upsell',
+        'description' => __( 'Upgrade for only $20 to add more social profile links', 'electa' ),
     );
     
     
@@ -256,6 +235,7 @@ function customizer_library_kaira_options() {
         'label'   => __( 'Site Copy Text', 'electa' ),
         'section' => $section,
         'type'    => 'upsell',
+        'description' => __( 'Upgrade for only $20 to change the copyright text to your own', 'electa' ),
     );
     $options['kra-website-error-head'] = array(
         'id' => 'kra-website-error-head',

@@ -1,5 +1,5 @@
 /**
- * Conica Theme Custom Home & Blog Functionality
+ * Electa Theme Custom Home & Blog Functionality
  *
  */
 ( function( $ ) {

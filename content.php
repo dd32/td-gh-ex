@@ -1,6 +1,6 @@
 <?php
 /**
- * @package electa
+ * @package Electa
  */
 
 $postclass = '';

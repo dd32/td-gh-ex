@@ -24,8 +24,8 @@ class Customizer_Library_Upsell extends WP_Customize_Control {
 		?>
 		<div class="kaira-upsell">
 			<div class="kaira-upsell-title"><?php echo esc_html( $this->label ); ?></div>
-			<a href="<?php echo esc_url( 'http://sllwi.re/p/Fs' ); ?>" target="_blank" class="kaira-upsell-btn"><?php echo __( 'Buy Electa Premium, only $14', 'electa' ); ?></a>
-            <div class="kaira-upsell-desc"><a href="<?php echo admin_url( 'themes.php?page=premium_upgrade' ); ?>" target="_blank"><?php echo __( 'See the premium features', 'electa' ); ?></a></div>
+			<a href="<?php echo admin_url( 'themes.php?page=premium_upgrade' ); ?>" target="_blank" class="kaira-upsell-btn"><?php echo __( 'Buy Electa Premium', 'electa' ); ?></a>
+            <div class="kaira-upsell-desc"><?php echo wp_kses_post( $this->description ); ?></div>
 		</div>
 		<?php
 	}

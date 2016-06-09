@@ -1,6 +1,6 @@
 <?php
 /**
- * @package electa
+ * @package Electa
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

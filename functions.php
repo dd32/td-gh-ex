@@ -2,10 +2,28 @@
 /**
  * electa functions and definitions
  *
- * @package electa
+ * @package Electa
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.2.5' );
+define( 'KAIRA_THEME_VERSION' , '1.2.6' );
+
+// Is ONLY USED IF the user prompts for the premium update
+define( 'KAIRA_UPDATE_URL', 'https://updates.kairaweb.com/' );
+// Upgrade / Order Premium page
+require get_template_directory() . '/upgrade/upgrade.php';
+require get_template_directory() . '/upgrade/update.php';
+
+// Load WP included scripts
+require get_template_directory() . '/inc/template-tags.php';
+require get_template_directory() . '/inc/extras.php';
+require get_template_directory() . '/inc/jetpack.php';
+require get_template_directory() . '/inc/customizer.php';
+
+// Load Customizer Library scripts
+require get_template_directory() . '/customizer/customizer-options.php';
+require get_template_directory() . '/customizer/customizer-library/customizer-library.php';
+require get_template_directory() . '/customizer/styles.php';
+require get_template_directory() . '/customizer/mods.php';
 
 if ( ! function_exists( 'kaira_setup_theme' ) ) :
 /**
@@ -121,8 +139,6 @@ function kaira_scripts() {
     wp_enqueue_style( 'electa-fontawesome', get_template_directory_uri() . '/includes/font-awesome/css/font-awesome.css', array(), '4.0.3' );
 	wp_enqueue_style( 'electa-style', get_stylesheet_uri(), array(), KAIRA_THEME_VERSION );
 
-	wp_enqueue_script( 'electa-navigation', get_template_directory_uri() . '/js/navigation.js', array(), KAIRA_THEME_VERSION, true );
-    
     if ( ( ( is_front_page() ) && ( ( get_theme_mod( 'kra-home-blocks-layout' ) == 1 ) ) ) || ( is_home() ) && ( get_theme_mod( 'kra-blog-blocks-layout' ) == 1 ) ) {
         wp_enqueue_script( 'jquery-masonry' );
         wp_enqueue_script( 'electa-masonry-custom', get_template_directory_uri() . '/js/layout-blocks.js', array('jquery'), KAIRA_THEME_VERSION, true );
@@ -154,78 +170,16 @@ function kaira_custom_css_styles(){
 add_action( 'wp_head', 'kaira_custom_css_styles', 11 );
 
 /**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/inc/extras.php';
-
-// Helper library for the theme customizer.
-require get_template_directory() . '/customizer/customizer-library/customizer-library.php';
-
-// Define options for the theme customizer.
-require get_template_directory() . '/customizer/customizer-options.php';
-
-// Output inline styles based on theme customizer selections.
-require get_template_directory() . '/customizer/styles.php';
-
-// Additional filters and actions based on theme customizer selections.
-require get_template_directory() . '/customizer/mods.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/jetpack.php';
-
-/**
- * Display the premium admin menu
- *
- * @action admin_menu
- */
-function kaira_premium_admin_menu() {
-    global $kaira_upgrade_page;
-    $kaira_upgrade_page = add_theme_page( 'Electa Premium', 'Electa Premium', 'edit_theme_options', 'premium_upgrade', 'kaira_upgrade_page_render' );
-}
-
-add_action( 'admin_menu', 'kaira_premium_admin_menu' );
-
-/**
- * Render the theme upgrade page
- */
-function kaira_upgrade_page_render() {
-    locate_template( 'upgrade/kaira-upgrade-page.php', true, false );
-}
-
-/**
- * Enqueue electa admin stylesheet only on upgrade page.
- */
-function load_kaira_admin_style($hook) {
-    global $kaira_upgrade_page;
- 
-    if( $hook != $kaira_upgrade_page ) 
-        return;
-    
-    wp_enqueue_style( 'electa-admin-css', get_template_directory_uri() . '/upgrade/css/kaira-admin.css' );
-}    
-add_action( 'admin_enqueue_scripts', 'load_kaira_admin_style' );
-
-/**
- * Enqueue electa custom customizer styling.
+ * Enqueue Electa custom customizer styling.
  */
 function load_kaira_customizer_style() {
     wp_enqueue_style( 'electa-customizer-css', get_template_directory_uri() . '/customizer/customizer-library/css/customizer.css' );
 }    
 add_action( 'customize_controls_enqueue_scripts', 'load_kaira_customizer_style' );
 
-// add category nicenames in body and post class
+/**
+ * Add category nicenames in body and post class
+ */
 function kaira_add_body_home_class( $home_add_class ) {
     if ( ( ( is_front_page() ) && ( get_theme_mod( 'kra-home-blocks-layout' ) == 1 ) ) || ( ( is_home() ) && ( get_theme_mod( 'kra-blog-blocks-layout' ) == 1 ) ) ) {
         $home_add_class[] = ' body-blocks-layout';
@@ -245,6 +199,6 @@ if ( is_plugin_active( 'ml-slider/ml-slider.php' ) ) {
     function metaslider_hoplink( $link ) {
         return "https://getdpd.com/cart/hoplink/15318?referrer=9jtzbgs34v8k4c0gs";
     }
-    add_filter('metaslider_hoplink', 'metaslider_hoplink', 10, 1);
+    add_filter( 'metaslider_hoplink', 'metaslider_hoplink', 10, 1 );
     
 }

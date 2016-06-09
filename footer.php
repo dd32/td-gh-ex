@@ -4,10 +4,11 @@
  *
  * Contains the closing of the #content div and all content after
  *
- * @package electa
+ * @package Electa
  */
 ?>
-</div><!-- #content -->
+</div> <!-- #content -->
+<div> <!-- #page -->
 <?php wp_footer(); ?>
 </body>
 </html>

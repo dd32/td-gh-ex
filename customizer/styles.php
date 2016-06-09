@@ -58,11 +58,15 @@ function customizer_library_kaira_build_styles() {
                 .main-navigation li.current_page_parent > a,
                 .main-navigation li.current-menu-ancestor > a,
                 .main-navigation li.current_page_ancestor > a,
+                .main-navigation a:hover,
+                .main-navigation ul ul li a:hover,
                 .main-navigation button,
+                .header-menu-button,
                 .wpcf7-submit'
             ),
             'declarations' => array(
-                'background-color' => $bgsancolor . ' !important'
+                'background' => 'inherit',
+                'background-color' => $bgsancolor . ''
             )
         ) );
     }
@@ -107,7 +111,7 @@ function customizer_library_kaira_build_styles() {
                 .wpcf7-submit:hover'
             ),
             'declarations' => array(
-                'background-color' => $bgsancolorh . ' !important'
+                'background-color' => $bgsancolorh . ''
             )
         ) );
     }

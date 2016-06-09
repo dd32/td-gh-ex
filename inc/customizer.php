@@ -2,7 +2,7 @@
 /**
  * electa Theme Customizer
  *
- * @package electa
+ * @package Electa
  */
 
 /**

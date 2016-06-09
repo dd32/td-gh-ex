@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package electa
+ * @package Electa
  */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

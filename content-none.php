@@ -4,7 +4,7 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package electa
+ * @package Electa
  */ ?>
 <section class="no-results not-found">
 	<header class="page-header">

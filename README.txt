@@ -61,6 +61,15 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.2.6
+* Styling fixes for responsive
+* Removed favicon setting - now in WP core
+* Added new mobile slide out menu
+* Added new easier upgrade system -('upgrade' folder)-(user doesn't lose old settings)-(has been approved for WordPress.org by reviewers)
+* Updated language .pot file
+Premium: Added theme styling for WooCommerce
+Premium: Added option to make shop page full width
+
 #### 1.2.5
 * Add given fix normalize path
 

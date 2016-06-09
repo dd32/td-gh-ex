@@ -1,6 +1,6 @@
 <?php
 /**
- * @package electa
+ * @package Electa
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -9,14 +9,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<?php if ( get_theme_mod( 'kra-header-favicon', false ) ) :
-    echo '<link rel="icon" href="' . esc_url( get_theme_mod( 'kra-header-favicon' ) ) . '">';
-endif; ?>
 <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(  ); ?>>
-    
+<div id="page">
+
 <header id="masthead" class="site-header<?php echo ( get_header_image() ) ? '' : ' header-nologo'; ?>" role="banner">
     <?php if ( get_theme_mod( 'kra-header-search', false ) ) : ?>
     <div class="search-button">
@@ -42,10 +40,13 @@ endif; ?>
             <?php endif; ?>
     	</div>
         
-    	<nav id="site-navigation" class="main-navigation" role="navigation">
-    		<button class="menu-toggle"><?php _e( 'Menu', 'electa' ); ?></button>
-    		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-    	</nav><!-- #site-navigation -->
+        <nav id="site-navigation" class="main-navigation" role="navigation">
+            <span class="header-menu-button"><i class="fa fa-bars"></i><span><?php _e( 'Menu', 'electa' ); ?></span></span>
+            <div id="main-menu" class="main-menu-container">
+                <span class="main-menu-close"><i class="fa fa-angle-right"></i><i class="fa fa-angle-left"></i></span>
+                <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+            </div>
+        </nav> <!-- #site-navigation -->
         
         <?php if( get_theme_mod( 'kra-header-search', false ) ) : ?>
         <div class="header-social">
@@ -53,7 +54,7 @@ endif; ?>
         </div>
         <?php endif; ?>
         
-        <?php printf( __( '</div><div class="site-info">Theme: %1$s by %2$s', 'electa' ), 'Electa', '<a href="http://www.kairaweb.com/">Kaira</a>' ); ?>
+        <?php printf( __( '</div><div class="site-info">Theme: %1$s by %2$s', 'electa' ), 'Electa', '<a href="https://kairaweb.com/">Kaira</a>' ); ?>
     </div>
 </header><!-- #masthead -->
 

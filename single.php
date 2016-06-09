@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts.
  *
- * @package electa
+ * @package Electa
  */
 
 get_header(); ?>

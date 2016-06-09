@@ -6,7 +6,7 @@
         <?php if ( ( is_home() ) && ( get_theme_mod( 'kra-blog-blocks-layout' ) == 0 ) ) : ?>
             
             <header class="page-header">
-                <h1 class="page-title"><?php echo esc_html( get_theme_mod( 'kra-blog-title', false ) ) ?></h1>
+                <?php echo ( get_theme_mod( 'kra-blog-title' ) ) ? '<h1 class="page-title">' . esc_html( get_theme_mod( 'kra-blog-title', false ) ) . '</h1>' : '<h1 class="page-title">' . __( 'Blog', 'electa' ) . '</h1>'; ?>
                 
                 <?php if ( function_exists( 'bcn_display' ) ) : ?>
                     <div class="cx-breadcrumbs">
