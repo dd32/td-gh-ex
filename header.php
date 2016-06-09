@@ -23,11 +23,35 @@
 				<div class="col-md-6 col-sm-12 cpm_rtl" >
 					<div claSS="logo">
 					<a href="<?php echo esc_url(home_url( '/' )); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-					<?php if($cpm_theme_options['upload_image_logo']){ ?>
-							<img class="img-responsive" src="<?php echo $cpm_theme_options['upload_image_logo']; ?>" style="height:<?php if($cpm_theme_options['height']!='') { echo $cpm_theme_options['height']; }  else { "80"; } ?>px; width:<?php if($cpm_theme_options['width']!='') { echo $cpm_theme_options['width']; }  else { "200"; } ?>px;" />
-						<?php } else {
-							echo get_bloginfo('name');
-						} ?>
+						<?php
+                            $version_wp = get_bloginfo('version');
+                            $theme_option_logo = $cpm_theme_options['upload_image_logo'];
+                            if($version_wp < 4.5){
+                                if(!empty($theme_option_logo)): ?>
+                                    <img class="img-responsive" src="<?php echo $cpm_theme_options['upload_image_logo']; ?>" style="height:<?php if($cpm_theme_options['height']!='') { echo $cpm_theme_options['height']; }  else { "80"; } ?>px; width:<?php if($cpm_theme_options['width']!='') { echo $cpm_theme_options['width']; }  else { "200"; } ?>px;" />
+								<?php
+                                else:
+                                    echo get_bloginfo('name'); ?>
+                                <?php endif;
+                            }
+                            else{
+                                if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
+                                    the_custom_logo();
+                                }
+                                elseif( function_exists('the_custom_logo') && !empty($theme_option_logo)){
+                                    $previous_logo = attachment_url_to_postid($theme_option_logo);
+                                    if ( is_int( $previous_logo ) ) {
+	                                    set_theme_mod( 'custom_logo', $previous_logo );
+	                                    $customizer_values = get_option( 'bhumi_options');
+	                                    unset($customizer_values['upload_image_logo']);
+	                                    update_option( 'bhumi_options', $customizer_values );
+                                     }
+                                }
+                                else{
+                                    echo get_bloginfo('name' );
+                                }
+                            }
+                            ?>
 					</a>
 					<p><?php bloginfo( 'description' ); ?></p>
 					</div>

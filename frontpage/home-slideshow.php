@@ -21,7 +21,7 @@
        while($bhumi_slider_query->have_posts()):
                 $bhumi_slider_query->the_post();
                 $active_check = 'active'; ?>
-                <li data-target="#myCarousel" data-slide-to="<?php echo $count; ?>" class="<?php echo esc_html($active_check); ?>"></li>
+                <li data-target="#myCarousel" data-slide-to="<?php echo $count; ?>" class="<?php echo esc_attr($active_check); ?>"></li>
                 <?php
                  $active_check = '';
                 $count++;

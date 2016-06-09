@@ -99,6 +99,12 @@
 		add_theme_support( 'post-formats', array(
 			'aside', 'image', 'video', 'quote', 'link', 'gallery', 'status', 'audio', 'chat'
 			) );
+		add_theme_support( 'custom-logo', array(
+				'height'      => 80,
+				'width'       => 200,
+				'flex-height' => true,
+				'flex-width'  => true,
+			) );
 	}
 
 
@@ -173,7 +179,7 @@
 		    } elseif (is_single() && !is_attachment()) {
 		        if (get_post_type() != 'post') {
 		            $post_type = get_post_type_object(get_post_type());
-		            $bhumi_post_type_archive = get_post_type_archive_link($post_type->labels->name);
+		            $bhumi_post_type_archive = get_post_type_archive_link($post_type->name);
 		            if(!empty($bhumi_post_type_archive)):
 		            	echo '<li><a href="' . esc_url($bhumi_post_type_archive). '/">' . $post_type->labels->singular_name . '</a></li> ' . $delimiter . ' ';
 		        	endif;

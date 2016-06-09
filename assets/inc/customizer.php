@@ -3,6 +3,7 @@ add_action( 'customize_register', 'bhumi_customizer' );
 
 function bhumi_customizer( $wp_customize ) {
 	wp_enqueue_style('customizer', BHUMI_TEMPLATE_DIR_URI .'/assets/css/customizer.css');
+		$cpm_theme_options = bhumi_get_options();
 	    if(!function_exists('bhumi_get_categories_select')):
 		    function bhumi_get_categories_select() {
 			  $bhumi_cat = get_categories();
@@ -72,63 +73,65 @@ function bhumi_customizer( $wp_customize ) {
 	            'settings'   => 'bhumi_options[slider_category]'
 	        )
 	);
-	$wp_customize->add_section(
-        'general_sec',
-        array(
-            'title' => __( 'General Options','bhumi' ),
-            'description' => __( 'Here you can customize Your theme\'s general Settings' , 'bhumi' ),
-			'panel'=>'bhumi_theme_option',
-			'capability'=>'edit_theme_options',
-            'priority' => 35,
-        )
-    );
-	$cpm_theme_options = bhumi_get_options();
+	$version_wp = get_bloginfo('version');
+    if($version_wp < 4.5){
+		$wp_customize->add_section(
+	        'general_sec',
+	        array(
+	            'title' => __( 'General Options','bhumi' ),
+	            'description' => __( 'Here you can customize Your theme\'s general Settings' , 'bhumi' ),
+				'panel'=>'bhumi_theme_option',
+				'capability'=>'edit_theme_options',
+	            'priority' => 35,
+	        )
+	    );
 
-	$wp_customize->add_setting(
-		'bhumi_options[upload_image_logo]',
-		array(
-			'type'    => 'option',
-			'default'=> '',
-			'sanitize_callback'=>'esc_url_raw',
-			'capability'        => 'edit_theme_options',
-		)
-	);
-	$wp_customize->add_setting(
-		'bhumi_options[height]',
-		array(
-			'type'    => 'option',
-			'default'=>'55',
-			'sanitize_callback'=>'bhumi_sanitize_integer',
-			'capability'        => 'edit_theme_options'
-		)
-	);
-	$wp_customize->add_setting(
-		'bhumi_options[width]',
-		array(
-			'type'    => 'option',
-			'default'=>'150',
-			'sanitize_callback'=>'bhumi_sanitize_integer',
-			'capability'        => 'edit_theme_options',
-		)
-	);
+		$wp_customize->add_setting(
+			'bhumi_options[upload_image_logo]',
+			array(
+				'type'    => 'option',
+				'default'=> '',
+				'sanitize_callback'=>'esc_url_raw',
+				'capability'        => 'edit_theme_options',
+			)
+		);
+		$wp_customize->add_setting(
+			'bhumi_options[height]',
+			array(
+				'type'    => 'option',
+				'default'=>'55',
+				'sanitize_callback'=>'bhumi_sanitize_integer',
+				'capability'        => 'edit_theme_options'
+			)
+		);
+		$wp_customize->add_setting(
+			'bhumi_options[width]',
+			array(
+				'type'    => 'option',
+				'default'=>'150',
+				'sanitize_callback'=>'bhumi_sanitize_integer',
+				'capability'        => 'edit_theme_options',
+			)
+		);
 
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'bhumi_upload_image_logo', array(
-		'label'        => __( 'Website Logo', 'bhumi' ),
-		'section'    => 'general_sec',
-		'settings'   => 'bhumi_options[upload_image_logo]',
-	) ) );
-	$wp_customize->add_control( 'bhumi_logo_height', array(
-		'label'        => __( 'Logo Height', 'bhumi' ),
-		'type'=>'number',
-		'section'    => 'general_sec',
-		'settings'   => 'bhumi_options[height]',
-	) );
-	$wp_customize->add_control( 'bhumi_logo_width', array(
-		'label'        => __( 'Logo Width', 'bhumi' ),
-		'type'=>'number',
-		'section'    => 'general_sec',
-		'settings'   => 'bhumi_options[width]',
-	) );
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'bhumi_upload_image_logo', array(
+			'label'        => __( 'Website Logo', 'bhumi' ),
+			'section'    => 'general_sec',
+			'settings'   => 'bhumi_options[upload_image_logo]',
+		) ) );
+		$wp_customize->add_control( 'bhumi_logo_height', array(
+			'label'        => __( 'Logo Height', 'bhumi' ),
+			'type'=>'number',
+			'section'    => 'general_sec',
+			'settings'   => 'bhumi_options[height]',
+		) );
+		$wp_customize->add_control( 'bhumi_logo_width', array(
+			'label'        => __( 'Logo Width', 'bhumi' ),
+			'type'=>'number',
+			'section'    => 'general_sec',
+			'settings'   => 'bhumi_options[width]',
+		) );
+	}
 
 	/* Service Options */
 	$wp_customize->add_section('service_section',array(
