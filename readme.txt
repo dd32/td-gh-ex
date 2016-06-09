@@ -20,7 +20,7 @@ Yes, go here: http://docs.kadencethemes.com/virtue/
 
 = Is there demo content available? =
 
-Yes, go here: http://www.kadencethemes.com/kadence-themes-demo-content/
+Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
 
 = Is there a free support form for this theme? =
 
@@ -29,6 +29,12 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 == Changelog ==
 
 = Theme Name: Virtue =
+
+= Version 2.7.2 | 9th June 2016 =
+* Update: Docs link for new docs.
+* Update: Theme options.
+* Update: WC 2.5.
+* Update: RTL beta support.
 
 = Version 2.7.1 | 13th May 2016 =
 * Fix: Embed layout issue.

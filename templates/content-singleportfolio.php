@@ -208,7 +208,7 @@
     <footer>
      <?php
       /**
-      * @hooked pinnacle_portfolio_nav - 10
+      * @hooked virtue_portfolio_nav - 10
       */
       do_action( 'kadence_single_portfolio_footer' ); 
       ?>
@@ -216,8 +216,8 @@
   </article>
 <?php
       /**
-      * @hooked pinnacle_portfolio_bottom_carousel - 30
-      * @hooked pinnacle_portfolio_comments - 40
+      * @hooked virtue_portfolio_bottom_carousel - 30
+      * @hooked virtue_portfolio_comments - 40
       */
       do_action( 'kadence_single_portfolio_after' );
 

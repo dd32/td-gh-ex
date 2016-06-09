@@ -213,15 +213,25 @@ jQuery(document).ready(function ($) {
 		$('.init-masonry').each(function(){
 	    	var masonrycontainer = $(this),
 	    	masonry_selector = $(this).data('masonry-selector');
+		    if($('body.rtl').length){
+				var iso_rtl = false;
+			} else {
+				var iso_rtl = true;
+			}
 	    	masonrycontainer.kt_imagesLoaded( function(){
-				masonrycontainer.masonry({itemSelector: masonry_selector});
+				masonrycontainer.masonry({itemSelector: masonry_selector, isOriginLeft: iso_rtl});
 			});
 		});
 		$('.kt-masonry-init').each(function(){
 	    	var masonrycontainer = $(this),
 	    	masonry_selector = $(this).data('masonry-selector');
+	    	if($('body.rtl').length){
+				var iso_rtl = false;
+			} else {
+				var iso_rtl = true;
+			}
 	    	masonrycontainer.kt_imagesLoaded( function(){
-				masonrycontainer.masonry({itemSelector: masonry_selector});
+				masonrycontainer.masonry({itemSelector: masonry_selector, isOriginLeft: iso_rtl});
 			});
 		});
 		//init carousel
@@ -318,6 +328,8 @@ jQuery(document).ready(function ($) {
 	          		initCarouselslider();
 	          	});
 	    });
+	    $('html').removeClass('no-js');
+    	$('html').addClass('js-running');
 });
 if( isMobile.any() ) {
 jQuery(document).ready(function ($) {

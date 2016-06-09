@@ -96,11 +96,15 @@ function kadence_sidebar_on_blog_page() {
 }
 function kadence_sidebar_on_myaccount_page() {
   if(is_account_page()) {
-    $current_user = wp_get_current_user();
-        if ( 0 == $current_user->ID ) {
-            return true;
-        } else { 
-            return false;
+      if(kad_is_wc_version_gte_2_6() == 1) {
+           return true;
+        } else {
+            $current_user = wp_get_current_user();
+              if ( 0 == $current_user->ID ) {
+                  return true;
+              } else { 
+                  return false;
+              }
         }
    }
 }

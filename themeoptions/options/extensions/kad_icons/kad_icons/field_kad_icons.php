@@ -47,7 +47,7 @@ if (!class_exists('ReduxFramework_kad_icons')) {
                     'description' => true,
                     'url' => true,
                 ),
-                'content_title' => __ ( 'Icon', 'pinnacle' )
+                'content_title' => __ ( 'Icon', 'virtue' )
             );
 
              $this->field = wp_parse_args ( $this->field, $defaults );
