@@ -1,25 +1,18 @@
 <?php
 /* 	Easy Theme's Functions
-	Copyright: 2013, D5 Creation, www.d5creation.com
+	Copyright: 2012-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Easy 1.0
 */
    
-  	// 	Tell WordPress for wp_title in order to modify document title content
-	function easy_filter_wp_title( $title ) {
-    $site_name = get_bloginfo( 'name' );
-    $filtered_title = $site_name . $title;
-    return $filtered_title;
-	}
-	add_filter( 'wp_title', 'easy_filter_wp_title' );
-	
- 	// Load the D5 Framework Optios Page and Meta Page
+  	// Load the D5 Framework Optios Page and Meta Page
 
 	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
 	require_once get_template_directory() . '/inc/options-framework.php';
 	function easy_ppp() { return ( 'post_type=post&&posts_per_page=2&&ignore_sticky_posts=1' );} 	
 
 	function easy_setup() {
+	load_theme_textdomain( 'easy', get_template_directory() . '/languages' );
 //	Set the content width based on the theme's design and stylesheet.
 	global $content_width;
 	if ( ! isset( $content_width ) ) $content_width = 650;
@@ -33,6 +26,8 @@
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 150, 150, true ); // default Post Thumbnail dimensions (cropped)
 
+	add_theme_support( "title-tag" );
+	
 	// additional image sizes
 	// delete the next line if you do not need additional image sizes
 	add_image_size( 'category-thumb', 650, 300 ); //300 pixels wide (and unlimited height)

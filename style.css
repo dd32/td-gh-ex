@@ -7,9 +7,9 @@ Author URI: http://d5creation.com/
 
 Description: HTML 5 and CSS3 powered Easy Theme is a simple easy way for your website. Easy is super elegant and Professional Theme which will expand you widely. The Slider will show the featured images and contents of posts automatically.  Front Page, Right and Footer Sidebar will be usable for showing the Widgets and Plugins items. Full Wide page can be used for showing showcase or other pages. 
 
-Version: 1.2
+Version: 1.3
 
-Tags: gray, light, black, yellow, white, two-columns, right-sidebar, fixed-layout, custom-header, custom-menu, threaded-comments, sticky-post, rtl-language-support, front-page-post-form, full-width-template, theme-options  
+Tags: two-columns, right-sidebar, custom-header, custom-menu, threaded-comments, sticky-post, rtl-language-support, front-page-post-form, full-width-template, theme-options  
 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -1578,3 +1578,7 @@ ul, li, a, div, input, button, img.fimage {
 .conwidth  a:after {
 	content:' /';
 }
+
+/* Text meant only for screen readers. */
+.screen-reader-text { clip: rect(1px, 1px, 1px, 1px); position: absolute !important; height: 1px; width: 1px; overflow: hidden; }
+.screen-reader-text:focus { background-color: #f1f1f1; border-radius: 3px; box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6); clip: auto !important; color: #21759b; 	display: block; font-size: 14px; font-size: 0.875rem; font-weight: bold; height: auto; left: 5px; line-height: normal; padding: 15px 23px 14px; 	text-decoration: none; top: 5px; width: auto; z-index: 100000; /* Above WP toolbar. */ }
