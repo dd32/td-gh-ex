@@ -1,6 +1,6 @@
 <?php
 /* 	Selfie Theme's Functions
-	Copyright: 2014, D5 Creation, www.d5creation.com
+	Copyright: 2014-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Selfie 1.0
 */
@@ -8,15 +8,6 @@
 // 	Load the D5 Framework Optios Page
 	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
 	require_once dirname( __FILE__ ) . '/inc/options-framework.php';
-
-// 	Tell WordPress for wp_title in order to modify document title content
-	function selfie_filter_wp_title( $title ) {
-    $site_name = get_bloginfo( 'name' );
-    $filtered_title = $site_name . $title;
-    return $filtered_title;
-	}
-	add_filter( 'wp_title', 'selfie_filter_wp_title' );
-	
 
 	function selfie_setup() {
 //	Theme TextDomain for the Language File
@@ -32,6 +23,7 @@
 
 // 	Tell WordPress for the Feed Link
 	add_theme_support( 'automatic-feed-links' );
+	add_theme_support( "title-tag" );
 	add_editor_style();
 // 	This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images
 	add_theme_support( 'post-thumbnails' );
