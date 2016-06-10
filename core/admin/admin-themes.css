@@ -170,6 +170,12 @@ margin-top:30%;
 .p-box h2{
 margin:0;
 }
+.p-box p strong {
+    font-size: 16px !important;
+}
+.p-box ul li {
+    margin-bottom: 2px !important;
+}
 @media (max-width:768px){
 .p-box h2{
 font-size:24px;

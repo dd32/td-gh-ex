@@ -75,7 +75,7 @@
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
 					 
-					  <span class="sr-only"><?php _e('Toggle navigation','weblizar');?></span>
+					  <span class="sr-only"><?php _e('Toggle navigation','enigma');?></span>
 					  <span class="icon-bar"></span>
 					  <span class="icon-bar"></span>
 					  <span class="icon-bar"></span>

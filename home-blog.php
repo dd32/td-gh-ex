@@ -38,8 +38,8 @@ if($wl_theme_options['blog_title'] !='') { ?>
 				<?php if(get_the_tag_list() != '') { ?>
 				<p class="enigma_tags"><?php the_tags('Tags :&nbsp;', '', '<br />'); ?></p>
 				<?php } ?>
-				<?php the_excerpt( __( 'Read More' , 'weblizar' ) ); ?>
-				<a href="<?php the_permalink(); ?>" class="enigma_blog_read_btn"><i class="fa fa-plus-circle"></i><?php _e('Read More','weblizar'); ?></a>
+				<?php the_excerpt( __( 'Read More' , 'enigma' ) ); ?>
+				<a href="<?php the_permalink(); ?>" class="enigma_blog_read_btn"><i class="fa fa-plus-circle"></i><?php _e('Read More','enigma'); ?></a>
 				<div class="enigma_blog_thumb_footer">
 					<ul class="enigma_blog_thumb_date">
 						<li><i class="fa fa-user"></i><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php echo get_the_author(); ?></a></li>
@@ -69,21 +69,21 @@ if($wl_theme_options['blog_title'] !='') { ?>
 						</div>
 					</div>
 				</div>
-				<h2><a href="#"><?php _e('NO Post','weblizar'); ?></a></h2>
+				<h2><a href="#"><?php _e('NO Post','enigma'); ?></a></h2>
 				
 				<div class="enigma_tags">
-					<?php _e('Tags :&nbsp;','weblizar'); ?>
-					<a href="#"><?php _e('Bootstrap','weblizar'); ?></a>
-					<a href="#"><?php _e('HTML5','weblizar'); ?></a>
+					<?php _e('Tags :&nbsp;','enigma'); ?>
+					<a href="#"><?php _e('Bootstrap','enigma'); ?></a>
+					<a href="#"><?php _e('HTML5','enigma'); ?></a>
 				   
 				</div>
-				<p><?php _e('Add You Post To show post here..','weblizar'); ?></p>
-				<a href="#" class="enigma_blog_read_btn"><i class="fa fa-plus-circle"></i><?php _e('Read More','weblizar'); ?></a>
+				<p><?php _e('Add You Post To show post here..','enigma'); ?></p>
+				<a href="#" class="enigma_blog_read_btn"><i class="fa fa-plus-circle"></i><?php _e('Read More','enigma'); ?></a>
 				<div class="enigma_blog_thumb_footer">
 					<ul class="enigma_blog_thumb_date">
-						<li><i class="fa fa-user"></i><a href="#"><?php _e('By Admin','weblizar'); ?></a></li>
-						<li><i class="fa fa-clock-o"></i><?php _e(' November 9 2013','weblizar'); ?></li>
-						<li><i class="fa fa-comments-o"></i><a href="#"><?php _e('10','weblizar'); ?></a></li>
+						<li><i class="fa fa-user"></i><a href="#"><?php _e('By Admin','enigma'); ?></a></li>
+						<li><i class="fa fa-clock-o"></i><?php _e(' November 9 2013','enigma'); ?></li>
+						<li><i class="fa fa-comments-o"></i><a href="#"><?php _e('10','enigma'); ?></a></li>
 					</ul>
 				</div>
 			</div>

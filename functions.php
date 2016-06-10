@@ -32,24 +32,24 @@
 			'upload_image_favicon'=>'',			
 			'custom_css'=>'',
 			'slide_image_1' => $ImageUrl,
-			'slide_title_1' => __('Slide Title', 'weblizar' ),
-			'slide_desc_1' => __('Lorem Ipsum is simply dummy text of the printing', 'weblizar' ),
-			'slide_btn_text_1' => __('Read More', 'weblizar' ),
+			'slide_title_1' => __('Slide Title', 'enigma' ),
+			'slide_desc_1' => __('Lorem Ipsum is simply dummy text of the printing', 'enigma' ),
+			'slide_btn_text_1' => __('Read More', 'enigma' ),
 			'slide_btn_link_1' => '#',
 			'slide_image_2' => $ImageUrl2,
-			'slide_title_2' => __('variations of passages', 'weblizar' ),
-			'slide_desc_2' => __('Contrary to popular belief, Lorem Ipsum is not simply random text', 'weblizar' ),
-			'slide_btn_text_2' => __('Read More', 'weblizar' ),
+			'slide_title_2' => __('variations of passages', 'enigma' ),
+			'slide_desc_2' => __('Contrary to popular belief, Lorem Ipsum is not simply random text', 'enigma' ),
+			'slide_btn_text_2' => __('Read More', 'enigma' ),
 			'slide_btn_link_2' => '#',
 			'slide_image_3' => $ImageUrl3,
-			'slide_title_3' => __('Contrary to popular ', 'weblizar' ),
-			'slide_desc_3' => __('Aldus PageMaker including versions of Lorem Ipsum, rutrum turpi', 'weblizar' ),
-			'slide_btn_text_3' => __('Read More', 'weblizar' ),
+			'slide_title_3' => __('Contrary to popular ', 'enigma' ),
+			'slide_desc_3' => __('Aldus PageMaker including versions of Lorem Ipsum, rutrum turpi', 'enigma' ),
+			'slide_btn_text_3' => __('Read More', 'enigma' ),
 			'slide_btn_link_3' => '#',			
 			// Footer Call-Out
 			'fc_home'=>'1',			
-			'fc_title' => __('Lorem Ipsum is simply dummy text of the printing and typesetting industry. ', 'weblizar' ),
-			'fc_btn_txt' => __('More Features', 'weblizar' ),
+			'fc_title' => __('Lorem Ipsum is simply dummy text of the printing and typesetting industry. ', 'enigma' ),
+			'fc_btn_txt' => __('More Features', 'enigma' ),
 			'fc_btn_link' =>"#",
 			'fc_icon' => 'fa fa-thumbs-up', 
 			//Social media links
@@ -64,45 +64,45 @@
 			
 			'email_id' => 'example@mymail.com',
 			'phone_no' => '0159753586',
-			'footer_customizations' => __(' &#169; 2016 Enigma Theme', 'weblizar' ),
-			'developed_by_text' => __('Theme Developed By', 'weblizar' ),
-			'developed_by_weblizar_text' => __('Weblizar Themes', 'weblizar' ),
+			'footer_customizations' => __(' &#169; 2016 Enigma Theme', 'enigma' ),
+			'developed_by_text' => __('Theme Developed By', 'enigma' ),
+			'developed_by_weblizar_text' => __('Weblizar Themes', 'enigma' ),
 			'developed_by_link' => 'http://weblizar.com/',
 			'service_home'=>'1',
-			'home_service_heading' => __('Our Services', 'weblizar' ),
-			'service_1_title'=>__("Idea",'weblizar' ),
+			'home_service_heading' => __('Our Services', 'enigma' ),
+			'service_1_title'=>__("Idea",'enigma' ),
 			'service_1_icons'=>"fa fa-google",
-			'service_1_text'=>__("There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in.", 'weblizar' ),
+			'service_1_text'=>__("There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in.", 'enigma' ),
 			'service_1_link'=>"#",
 			
-			'service_2_title'=>__('Records', 'weblizar' ),
+			'service_2_title'=>__('Records', 'enigma' ),
 			'service_2_icons'=>"fa fa-database",
-			'service_2_text'=>__("There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in.", 'weblizar' ),
+			'service_2_text'=>__("There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in.", 'enigma' ),
 			'service_2_link'=>"#",
 			
-			'service_3_title'=>__("WordPress", 'weblizar' ),
+			'service_3_title'=>__("WordPress", 'enigma' ),
 			'service_3_icons'=>"fa fa-wordpress",
-			'service_3_text'=>__("There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in.", 'weblizar' ),
+			'service_3_text'=>__("There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in.", 'enigma' ),
 			'service_3_link'=>"#",			
 
 			//Portfolio Settings:
 			'portfolio_home'=>'1',
-			'port_heading' => __('Recent Works', 'weblizar' ),
+			'port_heading' => __('Recent Works', 'enigma' ),
 			'port_1_img'=> $ImageUrl4,
-			'port_1_title'=>__('Bonorum', 'weblizar' ),
+			'port_1_title'=>__('Bonorum', 'enigma' ),
 			'port_1_link'=>'#',
 			'port_2_img'=> $ImageUrl5,			
-			'port_2_title'=>__('Content', 'weblizar' ),
+			'port_2_title'=>__('Content', 'enigma' ),
 			'port_2_link'=>'#',
 			'port_3_img'=> $ImageUrl6,
-			'port_3_title'=>__('dictionary', 'weblizar' ),
+			'port_3_title'=>__('dictionary', 'enigma' ),
 			'port_3_link'=>'#',
 			'port_4_img'=> $ImageUrl7,
-			'port_4_title'=>__('randomised', 'weblizar' ),
+			'port_4_title'=>__('randomised', 'enigma' ),
 			'port_4_link'=>'#',
 			//BLOG Settings
 			'show_blog' => '1',
-			'blog_title'=>__('Latest Blog', 'weblizar' ),
+			'blog_title'=>__('Latest Blog', 'enigma' ),
 			
 			//Google font style
 			'main_heading_font' => 'Open Sans',
@@ -137,11 +137,11 @@
 		add_image_size('blog_2c_thumb',570,350,true);
 		add_theme_support( 'title-tag' );
 		// Load text domain for translation-ready
-		load_theme_textdomain( 'weblizar', WL_TEMPLATE_DIR_CORE . '/lang' );	
+		load_theme_textdomain( 'enigma', WL_TEMPLATE_DIR_CORE . '/lang' );	
 		
 		add_theme_support( 'post-thumbnails' ); //supports featured image
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menu( 'primary', __( 'Primary Menu', 'weblizar' ) );
+		register_nav_menu( 'primary', __( 'Primary Menu', 'enigma' ) );
 		// theme support 	
 		$args = array('default-color' => '000000',);
 		add_theme_support( 'custom-background', $args); 
@@ -153,7 +153,7 @@
 	// Read more tag to formatting in blog page 
 	function weblizar_content_more($more)
 	{  							
-	   return '<div class="blog-post-details-item"><a class="enigma_blog_read_btn" href="'.get_permalink().'"><i class="fa fa-plus-circle"></i>"'.__('Read More', 'weblizar' ).'"</a></div>';
+	   return '<div class="blog-post-details-item"><a class="enigma_blog_read_btn" href="'.get_permalink().'"><i class="fa fa-plus-circle"></i>"'.__('Read More', 'enigma' ).'"</a></div>';
 	}   
 	add_filter( 'the_content_more_link', 'weblizar_content_more' );
 	
@@ -170,9 +170,9 @@
 	function weblizar_widgets_init() {
 	/*sidebar*/
 	register_sidebar( array(
-			'name' => __( 'Sidebar', 'weblizar' ),
+			'name' => __( 'Sidebar', 'enigma' ),
 			'id' => 'sidebar-primary',
-			'description' => __( 'The primary widget area', 'weblizar' ),
+			'description' => __( 'The primary widget area', 'enigma' ),
 			'before_widget' => '<div class="enigma_sidebar_widget">',
 			'after_widget' => '</div>',
 			'before_title' => '<div class="enigma_sidebar_widget_title"><h2>',
@@ -180,9 +180,9 @@
 		) );
 
 	register_sidebar( array(
-			'name' => __( 'Footer Widget Area', 'weblizar' ),
+			'name' => __( 'Footer Widget Area', 'enigma' ),
 			'id' => 'footer-widget-area',
-			'description' => __( 'footer widget area', 'weblizar' ),
+			'description' => __( 'footer widget area', 'enigma' ),
 			'before_widget' => '<div class="col-md-3 col-sm-6 enigma_footer_widget_column">',
 			'after_widget' => '</div>',
 			'before_title' => '<div class="enigma_footer_widget_title">',
@@ -193,7 +193,7 @@
 	/* Breadcrumbs  */
 	function weblizar_breadcrumbs() {
     $delimiter = '';
-    $home = __('Home', 'weblizar' ); // text for the 'Home' link
+    $home = __('Home', 'enigma' ); // text for the 'Home' link
     $before = '<li>'; // tag before the current crumb
     $after = '</li>'; // tag after the current crumb
     echo '<ul class="breadcrumb">';
@@ -208,7 +208,7 @@
         $parentCat = get_category($thisCat->parent);
         if ($thisCat->parent != 0)
             echo(get_category_parents($parentCat, TRUE, ' ' . $delimiter . ' '));
-        echo $before . ' _e("Archive by category","weblizar") "' . single_cat_title('', false) . '"' . $after;
+        echo $before . ' _e("Archive by category","enigma") "' . single_cat_title('', false) . '"' . $after;
     } elseif (is_day()) {
         echo '<li><a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a></li> ' . $delimiter . ' ';
         echo '<li><a href="' . get_month_link(get_the_time('Y'), get_the_time('m')) . '">' . get_the_time('F') . '</a></li> ' . $delimiter . ' ';
@@ -256,16 +256,16 @@
             echo $crumb . ' ' . $delimiter . ' ';
         echo $before . get_the_title() . $after;
     } elseif (is_search()) {
-        echo $before . _e("Search results for","weblizar")  . get_search_query() . '"' . $after;
+        echo $before . _e("Search results for","enigma")  . get_search_query() . '"' . $after;
 
     } elseif (is_tag()) {        
-		echo $before . _e('Tag','weblizar') . single_tag_title('', false) . $after;
+		echo $before . _e('Tag','enigma') . single_tag_title('', false) . $after;
     } elseif (is_author()) {
         global $author;
         $userdata = get_userdata($author);
-        echo $before . _e("Articles posted by","weblizar") . $userdata->display_name . $after;
+        echo $before . _e("Articles posted by","enigma") . $userdata->display_name . $after;
     } elseif (is_404()) {
-        echo $before . _e("Error 404","weblizar") . $after;
+        echo $before . _e("Error 404","enigma") . $after;
     }
     
     echo '</ul>';
@@ -314,10 +314,10 @@
 	* =================================================================================*/
 	function weblizar_author_profile( $contactmethods ) {	
 	
-	$contactmethods['youtube_profile'] = __('Youtube Profile URL','weblizar');	
-	$contactmethods['twitter_profile'] = __('Twitter Profile URL','weblizar');
-	$contactmethods['facebook_profile'] = __('Facebook Profile URL','weblizar');
-	$contactmethods['linkedin_profile'] = __('Linkedin Profile URL','weblizar');
+	$contactmethods['youtube_profile'] = __('Youtube Profile URL','enigma');	
+	$contactmethods['twitter_profile'] = __('Twitter Profile URL','enigma');
+	$contactmethods['facebook_profile'] = __('Facebook Profile URL','enigma');
+	$contactmethods['linkedin_profile'] = __('Linkedin Profile URL','enigma');
 	
 	return $contactmethods;
 	}
@@ -355,7 +355,6 @@
 <?php 
 	}
 if (is_admin()) {
-	//require_once('core/admin/admin.php');
 	require_once('core/admin/admin-themes.php');
 }	
 ?>
