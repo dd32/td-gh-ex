@@ -4,7 +4,7 @@ Theme URI: http://wptema.se/miranda
 Author: Carolina Nymark
 Author URI: http://wptema.se
 Description: Miranda is an accessible and responsive two column theme with two menus (including a social menu), color options, and a flexible sidebar for your widgets.
-Version: 1.3
+Version: 1.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Copyright: Carolina Nymark 2014-2016
@@ -969,7 +969,7 @@ text-decoration:none;
 
 .entry-title,
 .entry-title a{
-	font-size:5rem;
+	font-size:1.5em;
 	color:#861a50;
 	text-decoration:none;
 	margin-top:0;
@@ -1242,21 +1242,5 @@ object {
 }
 
 @media screen and (max-width: 600px) {
-
-	.site-title a {font-size: 4rem;}
-
-	/*Increase text-size on tiny screens */
-	.more-link,
-	.entry-meta,
-	.entry-footer,
-	.comment-navigation .nav-previous,
-	.paging-navigation .nav-previous,
-	.post-navigation .nav-previous ,
-	.posts-navigation .nav-previous,
-	.comment-navigation .nav-next,
-	.paging-navigation .nav-next,
-	.posts-navigation .nav-next,
-	.post-navigation .nav-next {
-		font-size:1.2rem;
-	}
+	.site-title a {font-size: 1.5em;}
 }

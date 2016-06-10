@@ -19,6 +19,10 @@ Miranda is an accessible and responsive two column theme with two menus (includi
 If you have any questions or suggestions for this theme, please visit http://wordpress.org/support/theme/miranda.
 
 == Change log ==
+Version 1.4 2016/06/10
+Minor changes to text sizes.
+
+
 Version 1.3 2016/06/05
 Added support for custom logo and background color.
 Updated navigation functions.
