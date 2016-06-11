@@ -1,21 +1,17 @@
 /*
 	Theme Name: Awada
-	Description: Awada – Responsive Multi-Purpose Responsive HTML5 / CSS3 Theme for (Desktop, tablet, mobile phone…) – 100% Responsive Multi Purpose and Multi Pages Template. Awada Premium is Created with Twitter Bootstrap 3.3 Framework. Awada Premium is a great design idea for website of Creative Corporate, Corporation, Company Profile, Personal Portfolio, and more … Create Outstanding Website or Blog in Minutes! ... everything is possible with Awada Premium. Awesome Design, Unique Concepts, Scalable Responsive, Amazing flexibility, Dark and Light Scheme, Many Features & More …
-	Theme URI: http://www.demo.webhuntinfotech.com
-	Tags: black,white,dark,light,one-column,left-sidebar,right-sidebar,fixed-layout,flexible-header,responsive-layout,custom-background,custom-header,custom-menu,editor-style,featured-images,front-page-post-form,full-width-template,rtl-language-support,sticky-post,theme-options,threaded-comments,translation-ready
+	Theme URI: http://www.webhuntinfotech.com/awada-premium/
+	Description: Awada – Responsive Multi-Purpose (HTML5 / CSS3) Theme for (Desktop, tablet, mobile phone…) – 100% Multi Pages Template. Awada is Created with Twitter Bootstrap 3.3.2 Framework. Awada is a great design idea for website of Creative Corporate, Corporation, Company Profile, Personal Portfolio, Wedding, Events and more … Create Outstanding Website or Blog in Minutes!. everything is possible with Awada. Awesome Design, Unique Concepts, Scalable Responsive, Amazing flexibility, Dark and Light Scheme. Awada has static and fixed header feature. it’s developed with lots of care and love. theme has two, three, four footer layout feature. We focused on usability across various devices, starting with smart phones.it is compatible with various devices. Awada is a Cross-Browser Compatible theme that works on All leading web browsers. Awada is easy to use and user friendly theme. Awada is Retina-Ready theme. Awada has boxed and full-width layout feature. powerful but simple Awada theme content customized through customizer. It has a typography control feature for change the styling of the theme. to make your site attractive it has two widget sections first for “sidebar widget section” and second for “Footer widget section” where you can show you widgets. To make your website in two column use sidebar widget section. to set custom menu in header set primary location and for the footer section set secondary section. we added social media links to added your social links. It boasts of more than 7-8 beautifully designed page templates , Home, Blog and Default Page Template(page with right sidebar), Page Full-Width, Page Left Sidebar etc. Awada theme has more advanced feature to make your site awesome like: it has header top bar dark & lite color feature. you can also changed header color dark and lite styling. Theme compatible with woo-commerce. Kyam is a fully woo-commerce tested theme you just add woo-commerce plugin and product and its other required contents. Awada is translation ready theme with WPML compatible & Many More…..
+	Tags: one-column, left-sidebar, right-sidebar, flexible-header, custom-background, custom-header, custom-menu, editor-style, featured-images, front-page-post-form, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, grid-layout, footer-widgets, blog, e-commerce, education, entertainment, food-and-drink, holiday, news, photography, portfolio
 	Author: WebHunt Infotech
 	Author URI: http://www.webhuntinfotech.com/
-	Version: 0.1
+	Version: 0.2
 	License: GNU General Public License v3 or later
 	License URI: http://www.gnu.org/licenses/gpl.html
 	Text Domain: awada
-*/ 
+*/
 
-/* ----------------------------------------------------
-SKELETON
-------------------------------------------------------- */
-
-body {
+body{
 	font-family: 'Lato',sans-serif;
 	font-weight: 300;
 	font-size:14px;
@@ -86,7 +82,7 @@ a.readmore {
 }
 a.navbar-brand {
 	background: url(images/logo.png) no-repeat scroll left top rgba(0, 0, 0, 0);
-	color: #222222 !important;
+	color: #222222;
 	font-size: 35px;
 	font-weight: 400;
 	margin-top: 0;
@@ -116,10 +112,14 @@ ul {
 	display:none
 }
 .alignleft{
-	float:left
+	float:left;
+	margin-left:auto;
+	margin-right:auto;
+	display:block;
+	clear:both
 }
 .alignright{
-	float:right
+	float:right;
 }
 .aligncenter{
 	margin-left:auto;
@@ -573,9 +573,6 @@ SIDEBAR & WIDGETS
 .popular_items .meta span i {
 	padding-right:3px;
 }
- .blog-carousel img {
-	width:100%;
- }
 .blog-masonry .blog-carousel {
 	margin:20px 0;
 	overflow:hidden;
@@ -1158,236 +1155,6 @@ div.thumbnails .magnifier .buttons {
 }
 
 /* ----------------------------------------------------
-BUDDYPRESS STYLES
-------------------------------------------------------- */
-
-#content {
-	padding-bottom:60px;
-}
-.tab-pane .buddy_members .item {
-	margin:10px
-}
-.buddy_members .item {
-	float:left;
-	margin:13px;
-	padding:0;
-}
-.buddypress_content {
-	margin:20px 0 40px;
-	overflow:hidden;
-	display:block;
-	position:relative;
-}
-.buddypress-top h3,
-.buddypress-top h2 {
-	margin-top:10px;
-}
-.buddy_desc small {
-	display:block;
-	color:#222;
-	margin:10px 0;
-}
-.buddy_desc h3 {
-	padding:5px 0;
-	text-transform:uppercase;
-	font-weight:bold;
-	margin:0;
-}
-.group_box i {
-	padding-right:5px;
-}
-.group_box a {
-	color:#222;
-}
-.buddy_desc {
-	padding:15px;
-	border:1px solid #d3d3d3;
-}
-.arrow-left {
-	border-bottom: 10px solid rgba(0, 0, 0, 0);
-	border-right: 10px solid #d3d3d3;
-	border-top: 10px solid rgba(0, 0, 0, 0);
-	height: 0;
-	left: -10px;
-	position: absolute;
-	top: 15%;
-	width: 0;
-}
-.group_box {
-	width:100%;
-	border:1px solid #d3d3d3;
-	position:relative;
-	display:block;
-	text-align:center;
-	padding:30px 0 10px;
-	font-size:16px;
-	font-weight:normal;
-	margin:35px 0;
-	-webkit-border-radius:3px;
-	-moz-border-radius:3px;
-	border-radius:3px;
-}
-.group_box:hover .circle {
-	color:#fff;
-}
-.buddypress_tabber_widget .group_img {
-	left: -10px;
-	padding: 10px;
-	position: absolute;
-	text-align: left;
-	top: 0;
-}
-.buddypress_tabber_widget .group_box {
-	border:none;
-	margin:10px 0 25px;
-	padding:10px 0;
-}
-.buddypress_tabber_widget .circle {
-	left: 67px !important;
-	top: 7px !important;
-	right:inherit;
-}
-.buddypress_tabber_widget .group_timer {
-	padding-bottom: 0;
-	padding-left: 110px;
-	margin:0;
-	padding-top: 10px;
-	text-align: left;
-}
-.buddypress_tabber_widget .group_box .title h3 {
-	padding-bottom: 0;
-	padding-left: 110px;
-	margin:0;
-	padding-top: 0;
-	text-align: left;
-}
- .circle {
-	top:-53px;
-	right:-46px;
-	left:0;
-	z-index:10;
-	font-size:12px;
-	width:30px;
-	height:30px;
-	border:1px solid #d3d3d3;
-	margin:auto;
-	line-height:30px;
-	-webkit-border-radius:30px;
-	-moz-border-radius:30px;
-	border-radius:30px;
-	position:absolute;
-	background:#fff;
-}
-.buddy_members .popover.top > .arrow,
-.buddy_carousel .popover.top > .arrow {
-	border-top: 5px solid #fff;
-	border-left: 5px solid rgba(0, 0, 0, 0);
-	border-right: 5px solid rgba(0, 0, 0, 0);
-	bottom: -12px !important;
-	height: 0;
-	left: 0;
-	margin: auto;
-	position: absolute;
-	right: 0;
-	width: 0;	
-}
-.group_box .title h3 {
-	padding-bottom:0;
-	padding-top:10px;
-	font-size:18px;
-	font-weight:bold;
-}
-.group_img {
-	left: 0;
-	margin: 0 auto;
-	padding: 10px;
-	position: absolute;
-	right: 0;
-	top: -55px;
-	text-align: center;
-}
-.buddy_carousel {
-	margin:40px 0 20px;
-}
-.buddy_carousel .owl-controls {
-	padding:20px 0 0;
-}
-.buddy_carousel .owl-controls .owl-page span {
-	width:15px !important;
-	height:15px !important;
-	border:1px solid #ddd;
-}
-.buddy_carousel .item {
-	margin:auto;
-	text-align:center;
-}
-.buddy_carousel .owl-wrapper-outer  {
-	overflow:visible;
-}
-.buddy_members .popover.top,
-.buddy_carousel .popover.top {
-	margin-top: -60px;
-	z-index:9999;
-	overflow:visible;
-	position:absolute;
-}
-.buddy_members .popover,
-.buddy_carousel .popover {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 1010;
-	display: block;
-	overflow:visible;
-	max-width: 276px;
-	padding: 1px;
-	text-align: center;
-	background-color: #ffffff;
-	background-clip: padding-box;
-	border: 1px solid #ededed;
-	border: 1px solid rgba(0, 0, 0, 0.2);
-	border-radius: 3px;
-	box-shadow: none;
-	white-space: normal;
-}
-.buddy_members .popover-title,
-.buddy_carousel .popover-title {
-	margin: 0;
-	padding: 15px 14px 0;
-	font-size: 16px;
-	font-weight: bold;
-	line-height: 18px;
-	text-transform:uppercase;
-	background-color:#fff;
-	border-bottom: 1px solid #fff;
-}
-.buddy_members .popover-content,
-.buddy_carousel .popover-content {
-	width: 200px;
-	padding: 5px 4px 20px;
-}
-.buddypress_tabber_widget_member li {
-	display:block;
-	margin:10px 0 20px;
-	position:relative;
-	overflow:hidden;
-}
-.buddypress_tabber_widget_member li span {
-	padding-left:10px;
-	margin-bottom:0;
-	font-size:16px !important;
-	text-transform:uppercase !important;
-	vertical-align:super;
-	padding-bottom:0;
-}
-.buddypress_tabber_widget_member li .readmore {
-	margin-top: -35px;
-	padding-left: 90px;
-	padding-top: 0;
-	position: absolute;
-}
-
-/* ----------------------------------------------------
 PORTFOLIO STYLES
 ------------------------------------------------------- */
 
@@ -1660,28 +1427,39 @@ PARALLAX & SECTIONS
 .custom-wrapper .testimonial h3 {
 	color:#222 !important;
 }
-#boxed {
+#boxed, .boxed {
   background: url(demos/bg.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
 }
-#boxed #wrapper {
+#boxed #wrapper, .boxed #wrapper {
 	background:#fff; 
-	margin:50px auto;
+	/* margin:50px auto; */
+	padding-left: 0px;
+	padding-right: 0px;
 }
-#boxed .white-wrapper,
-#boxed .grey-wrapper {
+/* #boxed .white-wrapper,
+#boxed .grey-wrapper,
+.boxed .white-wrapper,
+.boxed .grey-wrapper {
 	margin:0 -15px;
-}
+} */
 #boxed #topbar .social-icons span a,
 #boxed #topbar .social-icons span.last a,
 #boxed #topbar .topbar-email, 
 #boxed #topbar .topbar-phone, 
 #boxed #topbar .topbar-login, 
 #boxed #topbar .topbar-cart,
-#boxed #topbar {
+#boxed #topbar,
+.boxed #topbar .social-icons span a,
+.boxed #topbar .social-icons span.last a,
+.boxed #topbar .topbar-email, 
+.boxed #topbar .topbar-phone, 
+.boxed #topbar .topbar-login, 
+.boxed #topbar .topbar-cart,
+.boxed #topbar {
 	border:none;
 }
 .grey-wrapper #accordion-second .accordion-heading .accordion-toggle,
@@ -1994,10 +1772,12 @@ SLIDER STYLES
 	color: #fff;
 }
 .tp-leftarrow:before {
-	content: '\e824';
+	content:"\f053";
+	font-family: fontawesome;
 }
 .tp-rightarrow:before {
-	content: '\e825';
+	content:"\f054";
+	font-family: fontawesome;
 }
 .tparrows.tp-rightarrow:before {
 	margin-left: 1px;
@@ -3433,210 +3213,6 @@ ul.timeline > li > .timeline-panel:after {
 COLOR SCHEMES
 ------------------------------------------------------- */
 
-.arrow-left {
-	border-right-color:#f7c221;
-}
-#bbpress-forums li.bbp-header, #bbpress-forums li.bbp-footer {
-	border-top-color:#f7c221 !important;	
-}
-.buddy_members .popover.top > .arrow:after,
-.buddy_carousel .popover.top > .arrow:after {
-	border-top:10px solid #f7c221 !important;	
-}
-.tp-bullets.simplebullets .bullet:hover,
-.tp-bullets.simplebullets .bullet.selected{
-	border-color:#f7c221 !important;	
-}
-.post-wrapper-top h2,
-.group_box:hover .circle,
-.group_box:hover,
-.buddy_carousel .popover,
-.buddy_members .popover,
-.buddy_desc,
-.cat_widget:hover,
-.social_like .icon-container,
-.pagination > .active > a, 
-.pagination > .active > span, 
-.pagination > .active > a:hover, 
-.pagination > .active > span:hover, 
-.pagination > .active > a:focus, 
-.pagination > li > a:hover,
-.pagination > li > span:hover,
-.pagination > li > a:focus,
-.pagination > li > span:focus,
-.pagination > .active > span:focus,
-.form-control:focus,
-.panel-default > .panel-heading:hover,
-.bggrey,
-.services_vertical .icon-container,
-.item .icon-container,
-#owl-testimonial-widget .img-circle,
-.testimonial-wrap,
-.tparrows:hover,
-.blog_button,
-.magnifier .btn-default:hover,
-blockquote,
-.magnifier .btn-default:focus,
-.magnifier .btn-default:active,
-.service-icon-circle,
-.general-title hr {
-	border-color:#f7c221;
-}
-#header-style-1 .dropdown-menu,
-#header-style-1 .yamm .dropdown.yamm-fw .dropdown-menu {
-	border-top-color: #f7c221 !important;
-}
-#three-parallax .testimonial h3 {
-	color:#f7c221 !important;
-}
-.blog_button,
-.shop_title_slider span,
-.cat_widget h3,
-.rating i,
-.big_title_onepage span,
-.small_thin_grey1 i,
-.popular_items .meta span i,
-.ch-info-front i,
-.service_vertical_box:hover .service-icon i,
-.bgdark span,
-.item .icon-container,
-.slider_title_a,
-.mini_title2 i,
-.team_member span,
-.blog-carousel-meta span i,
-.high_title2,
-.high_title,
-.big_title span,
-.small_title span,
-.mini_title span,
-.check li:before,
-.service-icon-circle i,
-.servicebox:hover .service-icon i,
-.shop-right .title .price,
-.shop_item .price,
-.cart_table .price2,
-.widget h3 span,
-.big_title_slider span,
-a,
-.milestone-counter i,
-a.readmore,
-.tabbed-menu li a:hover,
-.footer-menu li a:hover,
-.mmode .title span,
-.footer-menu li a:focus,
-#header-style-1 .yamm h3 i,
-#header-style-1 .yamm-fw .dropdown-menu li a:before,
-#topbar .topbar-login i,
-.group_box i,
-#topbar .callus i,
-#topbar .topbar-cart i {
-	color:#f7c221;
-}
-.timeline-badge.danger,
-.flex-control-paging li a.flex-active,
-.tparrows:hover {
-	background-color:#f7c221 !important;
-}
-.demo_changer .demo-icon,
-.group_box:hover .circle,
-.buddy_carousel .owl-controls .owl-page.active span, 
-.buddy_carousel .owl-controls.clickable .owl-page:hover span,
-.recent_posts_widget > li img:hover,
-.buddypress_tabber_widget_member li img:hover,
-#tabbed_widget .nav-tabs > li.active > a, 
-#tabbed_widget .nav-tabs > li.active > a:hover,
-#tabbed_widget .nav-tabs > li.active > a:focus,
-#tabbed_widget .nav > li > a:hover, 
-#tabbed_widget .nav > li > a:focus,
-#tabbed_widget-1 .nav-tabs > li.active > a, 
-#tabbed_widget-1 .nav-tabs > li.active > a:hover,
-#tabbed_widget-1 .nav-tabs > li.active > a:focus,
-#tabbed_widget-1 .nav > li > a:hover, 
-#tabbed_widget-1 .nav > li > a:focus,
-#footer-style-1 .social-icons span a:hover,
-#footer-style-2 .social-icons span a:hover,
-#footer-style-3 .social-icons span a:hover,
-.footer_post li img:hover,
-#tabbed_widget .recent_posts_widget img:hover,
-.pricing_detail:hover,
-.pricing_detail:hover .priceamount,
-.banners li:hover .img-thumbnail,
-.ch-info .ch-info-back,
-.service-with-image:hover .service-title,
-.calloutbox-full-mini,
-.services_vertical .icon-container,
-#services .owl-controls .owl-page span,
-.item:hover .icon-container,
-.white-wrapper #owl-testimonial .owl-controls .owl-page.active span,
-.make-bg,
-.buddy_image img:hover,
-.calloutbox,
-#owl-testimonial-widget .owl-controls .owl-prev:hover, 
-#owl-testimonial-widget .owl-controls .owl-next:hover,
-#owl_blog_two_line .owl-controls .owl-prev:hover,
-#owl_blog_two_line .owl-controls .owl-next:hover,
-#owl_blog_three_line .owl-controls .owl-prev:hover,
-#owl_blog_three_line .owl-controls .owl-next:hover,
-#owl_portfolio_two_line .owl-controls .owl-prev:hover,
-#owl_portfolio_two_line .owl-controls .owl-next:hover,
-#owl_shop_carousel .owl-controls .owl-prev:hover, 
-#owl_shop_carousel .owl-controls .owl-next:hover,
-#owl_shop_carousel_1 .owl-controls .owl-prev:hover,
-#owl_shop_carousel_1 .owl-controls .owl-next:hover,
-#owl-blog .owl-controls .owl-prev:hover, 
-#owl-blog .owl-controls .owl-next:hover,
-.overlay #owl-testimonial .owl-controls .owl-page.active span,
-.progress-bar,
-.dmtop,
-h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover,
-.magnifier .btn-default:hover,
-.magnifier .btn-default:focus,
-.magnifier .btn-default:active,
-.rsDefaultInv .rsBullet.rsNavSelected span,
-.service-icon-circle.active,
-.servicebox:hover .service-icon-circle,
-.btn-primary,
-#accordion-first .accordion-heading .accordion-toggle.active em,
-#accordion-second .accordion-heading .accordion-toggle.active em,
-mark,
-.pager li > a, .pager li > span,
-.make-bg-full,
-.pagination > .active > a, 
-.pagination > .active > span, 
-.pagination > .active > a:hover, 
-.pagination > .active > span:hover, 
-.pagination > .active > a:focus, 
-.pagination > li > a:hover,
-.pagination > li > span:hover,
-.pagination > li > a:focus,
-.pagination > li > span:focus,
-.pagination > .active > span:focus,
-#bbpress-forums li.bbp-body ul.forum li.bbp-forum-reply-count:hover,
-#bbpress-forums li.bbp-body ul.forum li.bbp-forum-topic-count:hover,
-.tagcloud a:hover,
-.nav-stacked > li > a:hover,
-.nav-stacked > li > a:focus,
-.nav-tabs > li.active > a:hover,
-.buddy_members img:hover,
-.buddy_carousel img:hover,
-.nav-tabs > li.active > a:focus,
-.nav-tabs > li.active > a, 
-#buddypress_features .nav-tabs > li > a:hover,
-#buddypress_features .nav-tabs > li > a:focus,
-#header-style-1 .navbar-nav > li > a:hover,
-#header-style-1 .navbar-nav > li > a:focus,
-#header-style-1 .navbar-nav > li > a:active,
-#header-style-1 .navbar-default .navbar-nav > .open > a,
-#header-style-1 .navbar-default .navbar-nav > .open > a:hover,
-#header-style-1 .navbar-default .navbar-nav > .open > a:focus,
-#topbar .social-icons span a:hover {
-	background-color:#f7c221;
-}
-.flex-direction-nav a,
-.rsUni .rsThumb.rsNavSelected .thumbIco,
-.custom-overlay {
-	background-color:rgba(247,194,33,0.7);
-}
 #tabbed_widget .nav-tabs > li.active > a, 
 #tabbed_widget .nav-tabs > li.active > a:hover,
 #tabbed_widget .nav-tabs > li.active > a:focus,
@@ -3738,10 +3314,6 @@ mark,
 #maintenance1 .red {
 	color:#f2333a !important;
 }
-#maintenance1 .yellow {
-	color:#F7C221 !important;
-}
-
 #maintenance1 .subscribe .lead,
 #maintenance1 .title .lead {
 	font-size:18px !important;
@@ -3827,47 +3399,259 @@ p.comment-notes {
 }
 .commentlist .bypostauthor {border-top: 10px solid #e18728;}
 .commentlist li ul.children li.bypostauthor {border-top: 10px solid #e18728;}
+/* Image Logo */
+#header-style-1 .yamm img {
+	margin-top: -9px;
+}
+a.navbar-brand {
+	background: none;
+	padding-left: 15px !important;
+}
+/* Pricing Plan */
+.pricing_detail {
+	padding: 30px 20px 90px 20px;
+}
+/* About Us Two Image */
+.aboutslider-shadow .s2 {
+	background:url(images/flexslider_shadow.png) center no-repeat;
+	height:29px;
+	margin:0 auto;
+	bottom:-19.5px;
+	overflow:hidden;
+	width:100%;
+	position:absolute;
+	left:0;
+}
+/* About Us Three Image */
+.aboutslider-shadow .s1 {
+	bottom:-19.5px;
+}
+.slider-shadow {
+    margin: -11px auto;
+}
+.contact_form #message{
+	display: none;
+	padding: 10px;
+}
+.error{
+	color: #E61212;
+}
+/* Shortcodes Button */
+a.btnpadding i:before {
+    padding-right: 8px;
+}
+/* Sidebar Widget */
+#sidebar .widget > div.menu-header-menu-container > ul.menu > li.menu-item > ul.sub-menu > li.menu-item > a:hover, #sidebar .widget > div.menu-header-menu-container ul.sub-menu  li.menu-item > a:hover{
+	background-color: #000 !important;
+	color: #fff;
+}
+#sidebar .widget > ul > li.cat-item > a, #sidebar .widget > ul.cat_list_widget > li > a, #sidebar .widget > ul > li.page_item > a, #sidebar .widget > div.menu-header-menu-container > ul.menu > li.menu-item > a, #sidebar .widget > div.menu-header-menu-container > ul.menu > li.menu-item > ul.sub-menu > li.menu-item > a, #sidebar .widget > div.menu-header-menu-container ul.sub-menu li.menu-item > a {
+    color: #222222;
+	margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+	position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+#sidebar .widget li.cat-item, #sidebar .widget > ul.cat_list_widget > li, #sidebar .widget li.page_item, #sidebar .widget li.menu-item, #sidebar .widget > div.menu-header-menu-container ul.sub-menu  li.menu-item {
+    border-top: 0 solid #efefef !important;
+    border-left: 0 solid #efefef !important;
+    border-bottom: 1px solid #efefef !important;
+    border-right: 0 solid #efefef !important;
+	float: none;
+	position: relative;
+    display: block;
+}
+#sidebar .widget > div.menu-header-menu-container ul.sub-menu  li.menu-item{
+	margin-left: 20px;
+}
+#sidebar .widget li.cat-item:last-child , #sidebar .widget > ul.cat_list_widget > li:last-child, #sidebar .widget li.page_item:last-child, #sidebar .widget li.menu-item:last-child, #sidebar .widget > div.menu-header-menu-container ul.sub-menu  li.menu-item:last-child {
+	border-bottom: 0px solid #fff !important;
+}
+/* Footer Menu */
+.footer-menu li{ 
+	line-height: 25px;
+}
+/* Twitter Feed Slider */
+#twitter-feed.owl-theme .owl-controls .owl-page.active span{
+	background-color: #000 !important;
+}
+/* Header Sticky */
+.affix1{
+	position: static !important;
+}
+/* wocommerce */
+.woocommerce div.product form.cart .button {
+    float: right;
+    padding: 9px;
+}
+.woocommerce div.product .product_title{
+	text-transform: uppercase;
+}
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button{
+	color: #ffffff;
+}
+.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover, .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover{
+	background-color: #222222;
+	color: #ffffff;
+}
+.woocommerce table.cart td.actions .input-text, .woocommerce-page #content table.cart td.actions .input-text, .woocommerce-page table.cart td.actions .input-text {
+    width: 92px;
+}
+/* Breadcrumbs */
+.breadcrumb > li + li:before {
+    background: none;
+    margin: 0px 0px;
+    padding: 0px 0px;
+}
+/* Search Box */
+#two-sidebar .form-control:hover,
+#sidebar .form-control:hover {
+	background-color: #f5f5f5;
+}
+/* Calender Styling */
+#wp-calendar {
+    text-align: center;
+    height: auto;
+    width: 100%;
+}
+#wp-calendar td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid gray;
+}
+#wp-calendar th {
+    text-align: center;
+    padding: 12px;
+}
+#wp-calendar caption {
+    text-align: center;
+    color: #000;
+    font-size: 16px;
+    font-weight: 700;
+    border-bottom: 0px;
+	border-radius: 5px 5px 0px 0px;
+    padding: 10px;
+}
 /* Default Style */
+/* Text meant only for screen readers. */
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+}
+.screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    color: #21759b;
+    display: block;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000; /* Above WP toolbar. */
+}
 .wp-caption {
+    max-width: 100%;
+	font-size:14px;
+	text-align: center;
+}
+.gallery-caption {
+	font-size:14px;
+}
+.alignleft {
+	margin-right: 15px;
+	width: auto !important;
+}
+.alignright {
+    margin-left: 15px;
 }
 .wp-caption-text {
 }
-.gallery-caption {
-}
-.bypostauthor {
-}
-.alignright {
-}
-.alignleft {
-}
-.aligncenter {
-}
 .sticky {
 }
-.screen-reader-text {
-	clip: rect(1px, 1px, 1px, 1px);
-	position: absolute !important;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
+.blog-carousel .alignnone img {
+    width: 100%;
 }
-
-.screen-reader-text:focus {
-	background-color: #f1f1f1;
+img.alignnone {
+    width: 100%;
+}
+address {
+    font-style: italic;
+}
+.blog-masonry .blog-carousel .blog-carousel-desc img {
+	width:100%;
+}
+/* List Styling */
+/* .blog-masonry .blog-carousel .blog-carousel-desc ul li, .comments_wrapper .comment-content ul li {
+    margin-bottom: 20px;
+    padding: 0px 5px;
+    margin-left: 22px;
+} 
+.blog-masonry .blog-carousel .blog-carousel-desc ol li, .comments_wrapper .comment-content ol li{
+    padding: 0 7px;
+    margin-bottom: 20px;
+    text-indent: 1px;
+	margin-left: -22px;
+} */
+/* Table Styling */
+.blog-masonry .blog-carousel .blog-carousel-desc td, .blog-masonry .blog-carousel .blog-carousel-desc th, .comments_wrapper .comment-content td, .comments_wrapper .comment-content th{
+    text-align: center !important;
+    border: 1px solid #ededed;
+	padding: 15px;
+    line-height: 1.42857143;
+    vertical-align: midddle;
+}
+.blog-masonry .blog-carousel .blog-carousel-desc .content table, .comments_wrapper .comment-content table {
+    text-align: center !important;
+    border: 1px solid #000;
+}
+.blog-masonry .blog-carousel .blog-carousel-desc table > tbody > tr.odd > td, .blog-masonry .blog-carousel .blog-carousel-desc table > tbody > tr.odd > th, .comments_wrapper .comment-content table > tbody > tr.odd > td, .comments_wrapper .comment-content table > tbody > tr.odd > th {
+    background-color: #f9f9f9;
+}
+/* Social icon shortcode into tooltip */
+.social_inline{
+	display: inline-block;
+}
+/* Header Menu Left Align */
+@media (min-width: 768px){
+.navbar-right {
+    float: left !important;
+}
+}
+@media (min-width: 992px){
+.navbar-header {
+    margin-right: 50px;
+}
+}
+/* Remove Portfolio Title */ 
+.portfolio-gallery-title{
+	display: none;
+}
+/* Current Menu Color */
+#header-style-1 .navbar-nav > li.current_page_item > a {
+	background-color: #000;
 	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	clip: auto !important;
-	color: #21759b;
-	display: block;
-	font-size: 14px;
-	font-size: 0.875rem;
-	font-weight: bold;
-	height: auto;
-	left: 5px;
-	line-height: normal;
-	padding: 15px 23px 14px;
-	text-decoration: none;
-	top: 5px;
-	width: auto;
-	z-index: 100000; /* Above WP toolbar. */
+	color: #fff;
+}
+/* Menu Margin */
+#header-style-1 .navbar-nav > li > a {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+/* Page Desc Margin */
+.page_desc .blog-carousel-desc {
+    margin-top: 25px;
 }

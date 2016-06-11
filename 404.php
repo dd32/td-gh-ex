@@ -1,12 +1,23 @@
 <?php get_header(); ?>
-<section class="white-wrapper padding-top margin-top">
+<section class="post-wrapper-top jt-shadow clearfix">
+		<div class="container">
+			<div class="col-lg-12">
+				<h2><?php _e('Page Not Found', 'awada'); ?></h2>
+                <ul class="breadcrumb pull-right">
+                    <li><a href="<?php echo esc_url(home_url('/')); ?>"><?php _e('Home', 'awada'); ?></a></li><i class="fa fa-chevron-circle-right breadcrumbs_space"></i>
+                    <li><?php _e('Page Not Found', 'awada'); ?></li>
+                </ul>
+			</div>
+		</div>
+	</section>
+<section class="white-wrapper padding-top">
 	<div class="container">
 		<div class="not_found text-center">
-		<h1>404!</h1>
-		<p class="lead">Look like something went wrong! The page you were looking for is not here. <br> Go <a href="index-2.html"> Home </a> or try a search.</p>
+		<h1><?php _e('404!', 'awada'); ?></h1>
+		<p class="lead"><?php _e('Look like something went wrong! The page you were looking for is not here. <br> Go <a href="<?php echo home_url(); ?>"> Home </a> or try a search.', 'awada'); ?></p>
 			<div class="widget padding-top">
-				<form action="#" class="search_form">
-					<input type="text" class="form-control" placeholder="Enter here what you are looking...">     
+				<form action="<?php echo esc_url(home_url('/')); ?>" class="search_form">
+					<input type="text" class="form-control" placeholder="<?php _e('Enter here what you are looking...', 'awada'); ?>">     
 				</form><!-- end search form -->
 			</div>
 		</div>

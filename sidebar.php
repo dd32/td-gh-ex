@@ -1,11 +1,10 @@
-<?php if (class_exists('WooCommerce') && (is_woocommerce() || is_cart() || is_checkout())) return; ?>
-<div id="sidebar" class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+<div id="sidebar" class="<?php if (class_exists('WooCommerce') && (is_woocommerce() || is_cart() || is_checkout())){ echo 'col-lg-3 col-md-3';}else{ echo 'col-lg-4 col-md-4'; }  ?> col-sm-12 col-xs-12">
 	<?php if (is_active_sidebar('primary-sidebar')) {
         dynamic_sidebar('primary-sidebar');
     } else { ?>
 	<div class="widget">
 		<div class="title">
-			<h2>Whats Hot</h2>
+			<h2>What’s Hot</h2>
 		</div><!-- end title -->
 		<ul class="recent_posts_widget">
 			<li>

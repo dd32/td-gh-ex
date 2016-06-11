@@ -1,11 +1,25 @@
 <?php /* Template Name: Blog */
+$awada_theme_options = awada_theme_options();
 get_header();
 get_template_part('breadcrumbs');
 ?>
 <section class="blog-wrapper">
 	<div class="container">
-		<?php $imageSize = 'awada_blog_sidebar_thumb'; ?>
-		<div id="content" class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+		<?php
+		$blog_layout = $awada_theme_options['blog_layout'];
+		$imageSize = $blog_layout == "fullwidth" ? 'awada_blog_full_thumb' : 'awada_blog_sidebar_thumb';
+		if ($blog_layout == "leftsidebar") {
+			get_sidebar();
+			$float = 8;
+		} elseif ($blog_layout == "fullwidth") {
+			$float = 12;
+		} elseif ($blog_layout == "rightsidebar") {
+			$float = 8;
+		} else {
+			$blog_layout = "rightsidebar";
+			$float = 8;
+		} ?>
+		<div id="content" class="col-lg-<?php echo $float; ?> col-md-<?php echo $float; ?> col-sm-12 col-xs-12">
 			<div class="row">
 			   <div class="blog-masonry">
 					<div class="col-lg-12">
@@ -25,7 +39,9 @@ get_template_part('breadcrumbs');
 				<?php awada_pagination() ; ?>
 			</div><!-- end row --> 
 		</div><!-- end content -->
-		<?php get_sidebar(); ?>
+		<?php if ($blog_layout == "rightsidebar") {
+			get_sidebar();
+		} ?>
 	</div><!-- end container -->
 </section><!--end white-wrapper -->
 <?php get_footer(); ?>

@@ -1,343 +1,133 @@
-<section class="slider-wrapper">
+<?php $awada_theme_options = awada_theme_options();
+if($awada_theme_options['home_slider_enabled']==1){ ?>
+<div id="slider" class="sl-slider-wrapper demo-2">
+	<div class="sl-slider" >
+		<?php if(isset($awada_theme_options['home_slider_posts']) && $awada_theme_options['home_slider_posts'] != "") {
+			$j = 0;
+			foreach ($awada_theme_options['home_slider_posts'] as $post_id) {
+			$slider = get_post($post_id);
+				if ($j % 2 == 0){	$orientation = 'horizontal';	}
+				else{	$orientation = 'vertical';	}
+			?>
+				<div class="sl-slide" data-orientation="<?php echo $orientation; ?>" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+					<div class="sl-slide-inner">
+						<?php echo get_the_post_thumbnail($slider->ID, 'awada_home_slider_bg_image', array('class' => 'img-responsive bg-img')); ?>
+						<h2><?php echo esc_attr($slider->post_title); ?></h2>
+						<blockquote><p><?php echo esc_attr(wp_trim_words($slider->post_content, 8, '...')); ?></p></blockquote>
+					</div>
+				</div>
+		<?php $j++; //endif;
+		} } else {
+			$slider_title = array('Corporate Theme', 'Responsive Theme', 'Business Theme');
+			for($j=1 ; $j<=3 ; $j++){
+			if ($j % 2 == 0){	$orientation = 'horizontal';	}
+				else{	$orientation = 'vertical';	} ?>
+					<div class="sl-slide" data-orientation="<?php echo $orientation; ?>" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+						<div class="sl-slide-inner">
+							<img class="img-responsive bg-img" src="<?php echo get_template_directory_uri(); ?>/images/slider/slider<?php echo $j; ?>.jpg">
+							<h2><?php  echo $slider_title[$j-1]; ?></h2>
+							<blockquote><p><?php _e('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut fringilla nibh.', 'awada'); ?></p></blockquote>
+						</div>
+					</div>
+		<?php } $j=3;
+		} ?>
+	</div><!-- /sl-slider -->
+	<?php if($j>1){ ?>
+	<nav id="nav-arrows" class="nav-arrows">
+		<span class="nav-arrow-prev">Previous</span>
+		<span class="nav-arrow-next">Next</span>
+	</nav>
+				
+	<nav id="nav-dots" class="nav-dots">
+		<?php for($i=1; $i<=$j; $i++) { ?>
+			<span <?php echo $i==1 ? 'class="nav-dot-current"' : ""; ?>></span>
+		<?php } ?>
+	</nav>
+	<?php } ?>
 
-	<div class="tp-banner-container">
-		<div class="tp-banner" >
-			<ul>
-			   <li data-transition="fade" data-slotamount="7" data-masterspeed="1500" >
-					<img src="<?php echo get_template_directory_uri(); ?>/images/slide1.jpg"  alt="slidebg1"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
-					<div class="tp-caption high_title customin customout start"
-						data-x="left" data-hoffset="100"
-						data-y="60"
-						data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-						data-speed="1000"
-						data-start="500"
-						data-easing="Back.easeInOut"
-						data-endspeed="300">OUR
-					</div>
-					<div class="tp-caption mini_title customin customout start"
-						data-x="left" data-hoffset="330"
-						data-y="290"
-						data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-						data-speed="1000"
-						data-start="900"
-						data-easing="Back.easeInOut"
-						data-endspeed="300">PASSION BRINGS <span>WEBHUNT</span>
-					</div>
-					<div class="tp-caption customin customout"
-						data-x="left" data-hoffset="100"
-						data-y="150"
-						data-customin="x:50;y:150;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.5;scaleY:0.5;skewX:0;skewY:0;opacity:0;transformPerspective:0;transformOrigin:50% 50%;"
-						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-						data-speed="800"
-						data-start="700"
-						data-easing="Power4.easeOut"
-						data-endspeed="500"
-						data-endeasing="Power4.easeIn"
-						style="z-index: 3"><img src="<?php echo get_template_directory_uri(); ?>/images/slide2.jpg" alt="">
-					</div>
-					<div class="tp-caption small_title  customin customout start"
-						data-x="center" data-hoffset="0"
-						data-y="330"
-						data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-						data-speed="1600"
-						data-start="1100"
-						data-easing="Back.easeInOut"
-						data-endspeed="300"><a href="#" class="btn btn-primary btn-lg">Buy now</a>
-					</div>
-				</li>
-				<li data-transition="fade" data-slotamount="7" data-masterspeed="1500" >
-					<img src="<?php echo get_template_directory_uri(); ?>/images/slide1.jpg"  alt="slidebg1"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
-					<div class="tp-caption high_title2 customin customout start"
-						data-x="left" data-hoffset="60"
-						data-y="130"
-						data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-						data-speed="1000"
-						data-start="500"
-						data-easing="Back.easeInOut"
-						data-endspeed="300">Powerfully Responsive, With <br>
-						Clean Design
-					</div>
-					<div class="tp-caption light_title customin customout start"
-						data-x="left" data-hoffset="60"
-						data-y="265"
-						data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-						data-speed="1000"
-						data-start="700"
-						data-easing="Back.easeInOut"
-						data-endspeed="300">Your website should look great across all devices, no matter how big <br>
-						or small. Take control of your contents presentation.
-					</div>
-					<div class="tp-caption small_title  customin customout start"
-						data-x="left" data-hoffset="60"
-						data-y="340"
-						data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-						data-speed="1600"
-						data-start="900"
-						data-easing="Back.easeInOut"
-						data-endspeed="300"><a href="#" class="btn btn-primary btn-lg">Buy now</a>
-					</div>
-					<div class="tp-caption customin customout"
-						data-x="right" data-hoffset="-60"
-						data-y="bottom" data-voffset="-20"
-						data-customin="x:50;y:150;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.5;scaleY:0.5;skewX:0;skewY:0;opacity:0;transformPerspective:0;transformOrigin:50% 50%;"
-						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-						data-speed="800"
-						data-start="700"
-						data-easing="Power4.easeOut"
-						data-endspeed="500"
-						data-endeasing="Power4.easeIn"
-						style="z-index: 3"><img src="<?php echo get_template_directory_uri(); ?>/images/slide2.jpg" alt="">
-					</div>
-				</li>
-			   <li data-transition="fade" data-slotamount="7" data-masterspeed="1500" >
-					<img src="<?php echo get_template_directory_uri(); ?>/images/slide1.jpg"  alt="slidebg1"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
-					<div class="tp-caption big_title upper_title customin customout start"
-						data-x="right"
-						data-hoffset="0"
-						data-y="95"
-						data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-						data-speed="1000"
-						data-start="500"
-						data-easing="Back.easeInOut"
-						data-endspeed="300">Everything you needed in <span>webhunt</span>
-					</div>
-					<div class="tp-caption mini_title2 customin customout"
-						data-x="right"
-						data-y="190"
-						data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-						data-speed="1000"
-						data-start="1000"
-						data-easing="Back.easeInOut"
-						data-endspeed="300"><i class="fa fa-star-o"></i> 30 Unique & Trendy Home Page Layouts
-					</div>
-					<div class="tp-caption mini_title2 customin customout"
-						data-x="right"
-						data-y="220"
-						data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-						data-speed="1000"
-						data-start="1500"
-						data-easing="Back.easeInOut"
-						data-endspeed="300"><i class="fa fa-star-o"></i> 120+ Page Templates Layouts
-					</div>
-					<div class="tp-caption mini_title2 customin customout"
-						data-x="right"
-						data-y="250"
-						data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-						data-speed="1000"
-						data-start="2000"
-						data-easing="Back.easeInOut"
-						data-endspeed="300"><i class="fa fa-star-o"></i> Mega Menu Support
-					</div>
-					<div class="tp-caption mini_title2 customin customout"
-						data-x="right"
-						data-y="280"
-						data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-						data-speed="1000"
-						data-start="2500"
-						data-easing="Back.easeInOut"
-						data-endspeed="300"><i class="fa fa-star-o"></i> Revolution Slider
-					</div>
-					<div class="tp-caption mini_title2 customin customout"
-						data-x="right"
-						data-y="310"
-						data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-						data-speed="1000"
-						data-start="3000"
-						data-easing="Back.easeInOut"
-						data-endspeed="300"><i class="fa fa-star-o"></i> Shop Woocommerce Layouts
-					</div>
-					<div class="tp-caption mini_title2 customin customout"
-						data-x="right"
-						data-y="340"
-						data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-						data-speed="1000"
-						data-start="3500"
-						data-easing="Back.easeInOut"
-						data-endspeed="300"><i class="fa fa-star-o"></i> BuddyPress Layous & Endless Possibilities
-					</div>
-					<div class="tp-caption slider_title_a customin customout"
-						data-x="center" data-hoffset="130"
-						data-y="250"
-						data-customin="x:50;y:150;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.5;scaleY:0.5;skewX:0;skewY:0;opacity:0;transformPerspective:0;transformOrigin:50% 50%;"
-						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-						data-speed="1800"
-						data-start="5000"
-						data-easing="Power4.easeOut"
-						data-endspeed="500"
-						data-endeasing="Power4.easeIn"
-						style="z-index: 3"><a href="#" title="">Dont Miss it</a>
-					</div>
-					<div class="tp-caption customin customout"
-						data-x="left" data-hoffset="-70"
-						data-y="20"
-						data-customin="x:50;y:150;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.5;scaleY:0.5;skewX:0;skewY:0;opacity:0;transformPerspective:0;transformOrigin:50% 50%;"
-						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-						data-speed="1800"
-						data-start="1000"
-						data-easing="Power4.easeOut"
-						data-endspeed="500"
-						data-endeasing="Power4.easeIn"
-						style="z-index: 3"><img src="<?php echo get_template_directory_uri(); ?>/images/slide2.jpg" alt="">
-					</div>
-					<div class="tp-caption small_title  customin customout start"
-						data-x="right"
-						data-hoffset="0"
-						data-y="380"
-						data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-						data-speed="1600"
-						data-start="5100"
-						data-easing="Back.easeInOut"
-						data-endspeed="300"><a href="#" class="btn btn-primary btn-lg">Buy Now</a>
-					</div>
-				</li>
-				<li data-transition="fade" data-slotamount="7" data-masterspeed="1500" >
-					<img src="<?php echo get_template_directory_uri(); ?>/images/slide1.jpg"  alt="slidebg1"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
-					<div class="tp-caption big_title_slider customin customout start"
-						data-x="left"
-						data-hoffset="30"
-						data-y="170"
-						data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-						data-speed="1000"
-						data-start="500"
-						data-easing="Back.easeInOut"
-						data-endspeed="300"><span>PERFECT THEME</span> TO GROW YOUR BUSINESS
-					</div>
-					<div class="tp-caption small_title customin customout start"
-						data-x="left"
-						data-hoffset="30"
-						data-y="246"
-						data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-						data-speed="1300"
-						data-start="800"
-						data-easing="Back.easeInOut"
-						data-endspeed="300">Jollyany is a  creative awesome design for super easy to build with<br>
-						our Shortcodes & Page Builder. The one and only HTML template<br>
-						you'll ever have to buy. 
-					</div>
-					<div class="tp-caption small_title customin customout start"
-						data-x="left"
-						data-hoffset="30"
-						data-y="360"
-						data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-						data-speed="1600"
-						data-start="1100"
-						data-easing="Back.easeInOut"
-						data-endspeed="300"><a href="#" class="btn btn-primary btn-lg">Build now</a>
-					</div>
-					<div class="tp-caption customin customout"
-						data-x="right" data-hoffset="-60"
-						data-y="bottom" data-voffset="220"
-						data-customin="x:50;y:150;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.5;scaleY:0.5;skewX:0;skewY:0;opacity:0;transformPerspective:0;transformOrigin:50% 50%;"
-						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-						data-speed="800"
-						data-start="700"
-						data-easing="Power4.easeOut"
-						data-endspeed="500"
-						data-endeasing="Power4.easeIn"
-						style="z-index: 3"><img src="<?php echo get_template_directory_uri(); ?>/images/slide2.jpg" alt="">
-					</div>
-				</li>
-				<li data-transition="fade" data-slotamount="7" data-masterspeed="1500" >
-					<img src="<?php echo get_template_directory_uri(); ?>/images/slide1.jpg"  alt="slidebg1"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
-					<div class="tp-caption big_title  customin customout start"
-						data-x="left"
-						data-hoffset="30"
-						data-y="170"
-						data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-						data-speed="1000"
-						data-start="500"
-						data-easing="Back.easeInOut"
-						data-endspeed="300">Coded with <span>Bootstrap, HTML5 and CSS3</span>
-					</div>
-					<div class="tp-caption small_title2 customin customout start"
-						data-x="left"
-						data-hoffset="30"
-						data-y="236"
-						data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-						data-speed="1300"
-						data-start="800"
-						data-easing="Back.easeInOut"
-						data-endspeed="300">Jollyany is a  creative awesome design for super easy to<br>
-						 build with our Shortcodes and Page Builder.
-					</div>
-					<div class="tp-caption small_title  customin customout start"
-						data-x="left"
-						data-hoffset="30"
-						data-y="320"
-						data-customin="x:0;y:0;z:0;rotationX:90;rotationY:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-						data-speed="1600"
-						data-start="1100"
-						data-easing="Back.easeInOut"
-						data-endspeed="300"><a href="#" class="btn btn-primary btn-lg">Build now</a>
-					</div>
-					<div class="tp-caption customin customout"
-						data-x="right" data-hoffset="120"
-						data-y="bottom" data-voffset="0"
-						data-customin="x:50;y:150;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.5;scaleY:0.5;skewX:0;skewY:0;opacity:0;transformPerspective:0;transformOrigin:50% 50%;"
-						data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-						data-speed="800"
-						data-start="700"
-						data-easing="Power4.easeOut"
-						data-endspeed="500"
-						data-endeasing="Power4.easeIn"
-						style="z-index: 3"><img src="<?php echo get_template_directory_uri(); ?>/images/slide2.jpg" alt="">
-					</div>
-				</li>
-			</ul>
-			<div class="tp-bannertimer"></div>
-		</div>
-	</div>
-	
-</section><!-- end slider-wrapper -->
+</div><!-- /slider-wrapper -->
+<?php } ?>
 
-  <script>
-	jQuery(document).ready(function($) {
-	  var rsi = $('#slider-in-laptop').royalSlider({
-		autoHeight: false,
-		arrowsNav: false,
-		fadeinLoadedSlide: false,
-		controlNavigationSpacing: 0,
-		controlNavigation: 'bullets',
-		imageScaleMode: 'fill',
-		imageAlignCenter: true,
-		loop: false,
-		loopRewind: false,
-		numImagesToPreload: 6,
-		keyboardNavEnabled: true,
-		autoScaleSlider: true,  
-		autoScaleSliderWidth: 486,     
-		autoScaleSliderHeight: 315,
+<script type="text/javascript">	
+jQuery(function() {
+
+	var Page = (function() {
+
+		var $navArrows = jQuery( '#nav-arrows' ),
+			$nav = jQuery( '#nav-dots > span' ),
+			slitslider = jQuery( '#slider' ).slitslider( {
+				onBeforeChange : function( slide, pos ) {
+
+					$nav.removeClass( 'nav-dot-current' );
+					$nav.eq( pos ).addClass( 'nav-dot-current' );
+
+				}
+			} ),
+
+			init = function() {
+
+				initEvents();
+				
+			},
+			initEvents = function() {
+
+				// add navigation events
+				$navArrows.children( ':last' ).on( 'click', function() {
+
+					slitslider.next();
+					return false;
+
+				} );
+
+				$navArrows.children( ':first' ).on( 'click', function() {
+					
+					slitslider.previous();
+					return false;
+
+				} );
+
+				$nav.each( function( i ) {
+				
+					jQuery( this ).on( 'click', function( event ) {
+						
+						var $dot = jQuery( this );
+						
+						if( !slitslider.isActive() ) {
+
+							$nav.removeClass( 'nav-dot-current' );
+							$dot.addClass( 'nav-dot-current' );
+						
+						}
+						
+						slitslider.jump( i + 1 );
+						return false;
+					
+					} );
+					
+				} );
+
+			};
+
+			return { init : init };
+
+	})();
+
+	Page.init();
+
+	/**
+	 * Notes: 
+	 * 
+	 * example how to add items:
+	 */
+
+	/*
 	
-		/* size of all images http://help.dimsemenov.com/kb/royalslider-jquery-plugin-faq/adding-width-and-height-properties-to-images */
-		imgWidth: 792,
-		imgHeight: 479
+	var $items  = $('<div class="sl-slide sl-slide-color-2" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1"><div class="sl-slide-inner bg-1"><div class="sl-deco" data-icon="t"></div><h2>some text</h2><blockquote><p>bla bla</p><cite>Margi Clarke</cite></blockquote></div></div>');
 	
-	  }).data('royalSlider');
-	  $('#slider-next').click(function() {
-		rsi.next();
-	  });
-	  $('#slider-prev').click(function() {
-		rsi.prev();
-	  });
-	});
-  </script>
+	// call the plugin's add method
+	ss.add($items);
+
+	*/
+
+});
+</script>

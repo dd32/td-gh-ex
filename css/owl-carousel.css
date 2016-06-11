@@ -116,42 +116,6 @@
     height: 50px;
 }
 
-#owl-testimonial-widget .blog-carousel,
-.portfolio-carousel,
-#owl_blog_two_line .blog-carousel,
-#owl_blog_three_line .blog-carousel,
-#owl_shop_carousel .shop_carousel,
-#owl_shop_carousel_1 .shop_carousel,
-#owl-blog .blog-carousel {
-	padding:0 10px;
-}
-
-
-#owl-testimonial-widget .owl-controls .owl-prev, 
-#owl-testimonial-widget .owl-controls .owl-next,
-#owl_blog_two_line .owl-controls .owl-prev, 
-#owl_blog_two_line .owl-controls .owl-next,
-#owl_blog_three_line .owl-controls .owl-prev, 
-#owl_blog_three_line .owl-controls .owl-next,
-#owl_portfolio_two_line .owl-controls .owl-prev, 
-#owl_portfolio_two_line .owl-controls .owl-next,
-#owl_shop_carousel .owl-controls .owl-prev, 
-#owl_shop_carousel .owl-controls .owl-next,
-#owl_shop_carousel_1 .owl-controls .owl-prev, 
-#owl_shop_carousel_1 .owl-controls .owl-next,
-#owl-blog .owl-controls .owl-prev, 
-#owl-blog .owl-controls .owl-next {
-    color: #fff;
-    cursor: pointer;
-    font-size: 21px;
-    line-height: 25px;
-    text-align: center;
-    width: 25px;
-    height: 28px;
-    background: #222;
-    border-radius: 3px;
-}
-
 .owl-theme .owl-controls .owl-page{
 	display: inline-block;
 	zoom: 1;

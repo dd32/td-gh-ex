@@ -27,24 +27,7 @@
 								<?php $icon = "";
 								$imageSize = 'awada_blog_grid_thumb';
 								$img_class = array('class' => 'img-responsive');
-								$attachments = rwmb_meta( 'awada_post_gallery', 'type=image&size='.$imageSize,get_the_ID() );
-								if($attachments){ ?>
-								<div class="flexslider">
-									<ul class="slides"><?php
-										foreach ($attachments as $attachment) {
-											$icon = "fa fa-camera";?>
-											<li><img src="<?php echo esc_url($attachment['url']); ?>" class="img-responsive" width="<?php echo $attachment['width'];?>" height="<?php echo $attachment['height']; ?>" alt="<?php echo $attachment['alt'];?>"></li><?php
-										} if (has_post_thumbnail()) {
-										$icon = "fa fa-picture-o";
-										$url = wp_get_attachment_url(get_post_thumbnail_id(get_the_ID())); ?>
-										<li><?php the_post_thumbnail($imageSize, $img_class); ?></li>
-										<div class="post-type">
-											<i class="<?php echo $icon; ?>"></i>
-										</div><!-- end pull-right -->
-										<?php } ?>
-									</ul><!-- end slides -->    
-								</div><!-- end post-slider -->
-								<?php } elseif (has_post_thumbnail()) {
+								if (has_post_thumbnail()) {
 										$icon = "fa fa-picture-o";
 										$url = wp_get_attachment_url(get_post_thumbnail_id(get_the_ID()));
 										the_post_thumbnail($imageSize, $img_class); ?>
@@ -77,7 +60,7 @@
 				</div><!-- end blog-masonry -->
 				<div class="clearfix"></div>
 				<hr>
-				<?php awada_pagination() ; ?>
+				<?php awada_pagination(); ?>
 			</div><!-- end row --> 
 		</div><!-- end content -->
 		<?php get_sidebar(); ?>
