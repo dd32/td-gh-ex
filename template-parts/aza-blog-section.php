@@ -10,6 +10,10 @@ $subheading = get_theme_mod('aza_blog_subheading', 'Keep your users in touch wit
 $separator_top = get_theme_mod('aza_separator_blog_top', '1');
 $separator_bottom = get_theme_mod('aza_separator_blog_bottom', '0');
 
+$args = array (
+	'posts_per_page' => 3,
+);
+
 ?>
 
 
@@ -20,7 +24,7 @@ $separator_bottom = get_theme_mod('aza_separator_blog_bottom', '0');
                              <?php
                     if(!empty($heading)) {
                         echo '<h2>'.$heading.'</h2>';
-                    }?>
+                    }?>s
                      <?php if ($separator_top) { echo "<hr class='separator'/>"; } ?>
                      <?php
                                 if(!empty($subheading)) {
@@ -34,24 +38,19 @@ $separator_bottom = get_theme_mod('aza_separator_blog_bottom', '0');
                 <div class="row row-centered text-center">
 
 
+        <?php $the_query = new WP_Query( $args );
 
-	<?php if ( have_posts() ) : ?>
-    <?php query_posts("showposts=3"); ?>
+        if ( $the_query->have_posts() ) : ?>
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+            <!-- pagination here -->
 
-				<?php
+            <!-- the loop -->
+            <?php while ( $the_query->have_posts() ) : $the_query->the_post();
+                get_template_part( 'template-parts/blog-posts', get_post_format() );
+            endwhile; ?>
+            <!-- end of the loop -->
 
-					/*
-					 * Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'template-parts/blog-posts', get_post_format() );
-				?>
-
-			<?php endwhile; ?>
+            <?php wp_reset_postdata(); ?>
 
 		<?php else : ?>
 

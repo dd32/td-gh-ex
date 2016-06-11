@@ -1,10 +1,9 @@
 /*
 Theme Name: AZA Lite
-Theme URI: https://wordpress.org/themes/aza-lite/
 Author: Andrei Băicuș
 Author URI: https://profiles.wordpress.org/baicusandrei
-Description: AZA Lite is a perfect one-page Wordpress theme for small businesses, freelancers and anyone who wishes to build a responsive, one-page, straightforward website in a matter of minutes. This highly customizable Wordpress theme strives to give the end-user a really cozy feel and a great experience while carefully delivering important content and information. The fully customizable layered Parallax section is just stunning to look at and can be a great hook for anybody landing on your website. Have a great time using something that was carefully engineered for beautiful minds.
-Version: 1.0.3
+Description: AZA Lite is a perfect one-page WordPress theme for small businesses, freelancers and anyone who wishes to build a responsive, one-page, straightforward website in a matter of minutes. This highly customizable WordPress theme strives to give the end-user a really cozy feel and a great experience while carefully delivering important content and information. The fully customizable layered Parallax section is just stunning to look at and can be a great hook for anybody landing on your website. Have a great time using something that was carefully engineered for beautiful minds.
+Version: 1.0.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: aza-lite
@@ -2453,7 +2452,7 @@ section#contact .wpcf7-form input.wpcf7-submit:hover, section#contact .wpcf7-for
   .navbar-inverse .navbar-toggle {
     border: 1px solid rgba(255, 255, 255, 0.5);
     transition: all 0.5s ease;
-    margin: 15px 0 0 0;
+    margin: 5px 0 0 0;
   }
   .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
     background-color: rgba(255, 255, 255, 0.24);
