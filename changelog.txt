@@ -1,4 +1,8 @@
 == CHANGE LOG ==
+= 2.1.0 =
+	- Fix - Deprecated Tag removed
+	- Update - CSS Updated
+
 = 2.0.9 =
 	- New - New logo Options Compatible for Polylang
 	- Fix - WooCommerce Product Category title added

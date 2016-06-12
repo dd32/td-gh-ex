@@ -4,12 +4,12 @@ Theme URI: http://themefreesia.com/themes/arise
 Author: Theme Freesia
 Author URI: http://themefreesia.com
 Description: Arise is a Responsive Multi-Purpose Business WordPress Theme, Designed and Developed by Theme Freesia. This theme supports popular plugins like Breadcrumb NavXT, WP-PageNavi, Contact Form 7, Jetpack by WordPress.com, Polylang, Newsletter, bbPress and wooCommerce. It is also translation ready and currently translated in French language. It is also easily customizable with lots of theme options using Customizer. It consists contact us template, gallery template and many widgets and sidebar. Get free support at http://themefreesia.com/support-forum/ and View demo site at http://demo.themefreesia.com/arise
-Version: 2.0.9
+Version: 2.1.0
 Text Domain: arise
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Tags: black, gray, white, threaded-comments, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, sticky-post, theme-options, translation-ready, post-formats
+Tags: threaded-comments, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, sticky-post, theme-options, translation-ready, post-formats, footer-widgets, blog, e-commerce, education, entertainment, news, portfolio
 
 All files, unless otherwise stated, are released under the GNU General Public License
 version 3.0 (http://www.gnu.org/licenses/gpl-3.0.html)
@@ -20,7 +20,8 @@ version 3.0 (http://www.gnu.org/licenses/gpl-3.0.html)
 ================================================== */
 html {
 	overflow-y: scroll;
-	-webkit-text-size-adjust: none;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
 	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
   	text-rendering: optimizelegibility;
@@ -2390,6 +2391,9 @@ input[type="checkbox"] {
 	background-color: #999;
 	background-position: center center;	
 	background-repeat: no-repeat;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
 	background-size: cover;
 	padding: 60px 0 40px;
 	text-align: center;
@@ -2876,6 +2880,9 @@ input[type="checkbox"] {
 	background-color: #999;
 	background-position: center center;	
 	background-repeat: no-repeat;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
 	background-size: cover;
 	padding: 60px 0 20px;
 	text-align: center;
@@ -3089,6 +3096,9 @@ ul.next-prev li.active, ul.next-prev li:hover {
     background-color: #fff;
     background-position: center center;
     background-repeat: no-repeat;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
     background-size: cover;	
     position: relative;
    	color: #fff;
@@ -3427,14 +3437,24 @@ ul.next-prev li.active, ul.next-prev li:hover {
 .main-slider,
 .main-slider .layer-slider,
 .main-slider .container {
+	height: 100%;
 	position: relative;
+}
+.main-slider .show-display {
+	display: block;
+}
+.main-slider .hide-display {
+	display: none;
 }
 .main-slider .image-slider {
 	background-attachment: fixed;
 	background-position: center center;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
 	background-size: cover;
-    padding: 16% 5% 12%;
-    min-height: 500px;
+	padding: 16% 5% 12%;
+	min-height: 500px;
 }
 .slider-content {
 	margin: 0 auto;
@@ -3466,12 +3486,6 @@ ul.next-prev li.active, ul.next-prev li:hover {
 .slider-content .btn-default {
 	padding: 12px 30px;
 	margin: 10px 10px 0;
-}
-.main-slider .show-display {
-	display: block;
-}
-.main-slider .hide-display {
-	display: none;
 }
 
 /* ----- Slider Buttons ----- */

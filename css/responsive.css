@@ -42,7 +42,7 @@
 	}
 	.main-slider .image-slider,
 	.parallax_content, .parallax_video_content,
-	.page-header {
+	.widget_client .client-content {
 		background-attachment: scroll;
 	}
 	.widget-sub-title {
@@ -277,7 +277,7 @@
 	.menu {
 		display: none;
 	}
-	.widget_nav_menu 	.menu {
+	.widget_nav_menu .menu {
 		display: block;
 	}
 	.toggled-on .menu {

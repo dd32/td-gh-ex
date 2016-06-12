@@ -6,7 +6,7 @@ Contributors: ThemeFreesia Team
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Tags: black, gray, white, threaded-comments, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, sticky-post, theme-options, translation-ready, post-formats
+Tags: threaded-comments, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, sticky-post, theme-options, translation-ready, post-formats, footer-widgets, blog, e-commerce, education, entertainment, news, portfolio
 
 All files, unless otherwise stated, are released under the GNU General Public License
 version 3.0 (http://www.gnu.org/licenses/gpl-3.0.html)
