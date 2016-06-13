@@ -5,7 +5,7 @@
 	Tags: one-column, left-sidebar, right-sidebar, flexible-header, custom-background, custom-header, custom-menu, editor-style, featured-images, front-page-post-form, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, grid-layout, footer-widgets, blog, e-commerce, education, entertainment, food-and-drink, holiday, news, photography, portfolio
 	Author: WebHunt Infotech
 	Author URI: http://www.webhuntinfotech.com/
-	Version: 0.2
+	Version: 0.3
 	License: GNU General Public License v3 or later
 	License URI: http://www.gnu.org/licenses/gpl.html
 	Text Domain: awada
@@ -1435,32 +1435,9 @@ PARALLAX & SECTIONS
   background-size: cover;
 }
 #boxed #wrapper, .boxed #wrapper {
-	background:#fff; 
-	/* margin:50px auto; */
+	background:#fff;
 	padding-left: 0px;
 	padding-right: 0px;
-}
-/* #boxed .white-wrapper,
-#boxed .grey-wrapper,
-.boxed .white-wrapper,
-.boxed .grey-wrapper {
-	margin:0 -15px;
-} */
-#boxed #topbar .social-icons span a,
-#boxed #topbar .social-icons span.last a,
-#boxed #topbar .topbar-email, 
-#boxed #topbar .topbar-phone, 
-#boxed #topbar .topbar-login, 
-#boxed #topbar .topbar-cart,
-#boxed #topbar,
-.boxed #topbar .social-icons span a,
-.boxed #topbar .social-icons span.last a,
-.boxed #topbar .topbar-email, 
-.boxed #topbar .topbar-phone, 
-.boxed #topbar .topbar-login, 
-.boxed #topbar .topbar-cart,
-.boxed #topbar {
-	border:none;
 }
 .grey-wrapper #accordion-second .accordion-heading .accordion-toggle,
 .grey-wrapper #accordion-second .accordion-heading, 
@@ -3654,4 +3631,12 @@ address {
 /* Page Desc Margin */
 .page_desc .blog-carousel-desc {
     margin-top: 25px;
+}
+/* Gallery Plugin */
+#home_portfolio .UGPMenuBackground {
+    display: none;
+}
+/* Text Logo Margin */
+p#logo_text_id {
+    margin: 5px 0px 0px 0px ;
 }

@@ -23,12 +23,12 @@ if (!class_exists('WebHuntNewsflash')) {
             extract($params);
             $this->server_file = $server_file;
             $this->interval = isset($interval) ? $interval : 3;
-            $this->cookie_id = isset($cookie_id) ? $cookie_id : $parent->args['opt_name'] . '_rocks';
+            $this->cookie_id = isset($cookie_id) ? $cookie_id : $parent->args['opt_name'] . '_awada';
 			$upload_dir = wp_upload_dir();
 			$this->_upload_dir = $upload_dir['basedir'] . '/webhunt/';
             // set notice file location
             $notice_dir = Awada_Welcome::$_upload_dir . $dir_name; // 'notice';
-            $this->notice_json = $notice_dir . '/notice.json';
+            $this->notice_json = $notice_dir . '/awada_notice.json';
 
             // verify notice dir exists
             if (!is_dir($notice_dir)) {
@@ -59,7 +59,7 @@ if (!class_exists('WebHuntNewsflash')) {
             $filesystem = $this->parent->filesystem;
 
             // get notice data from server
-            $data = $filesystem->execute('get_contents', $this->server_file); // 'http://www.webhuntinfotech.com/' . 'wp-content/uploads/webhunt/webhunt_notice.json');
+            $data = $filesystem->execute('get_contents', $this->server_file); // 'http://www.webhuntinfotech.com/' . 'wp-content/uploads/webhunt/awada_notice.json');
 
             // if some data exists
             if ($data != '' || !empty($data)) {

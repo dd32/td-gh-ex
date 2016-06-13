@@ -11,25 +11,25 @@ require get_template_directory() . '/functions/custom/recent-posts.php';
 require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 include get_template_directory() . '/inc/welcome-screen/welcome-screen.php';
 require_once dirname(__FILE__) . '/default_options.php';
-if (!class_exists('Kirki')) {
-    include_once dirname(__FILE__) . '/inc/kirki/kirki.php';
-}
+/* if (!class_exists('Kirki')) {
+    include_once +(__FILE__) . '/inc/kirki/kirki.php';
+} */
 function awada_customizer_config()
 {
     $args = array(
-        'url_path'     => get_template_directory_uri() . '/inc/kirki/',
+        //'url_path'     => get_template_directory_uri() . '/inc/kirki/',
         'capability'   => 'edit_theme_options',
         'option_type'  => 'option',
         'option_name'  => 'awada_theme_options',
         'compiler'     => array(),
         'color_accent' => '#27bebe',
-        'width'        => '22%',
+        'width'        => '23%',
         'description'  => __('Visit our site for more great Products.If you like this theme please rate us 5 star', 'awada'),
     );
     return $args;
 }
 
-add_filter('kirki/config', 'awada_customizer_config');
+add_filter('kirki/config', 'awada_customizer_config'); 
 require get_template_directory() . '/customizer.php';
 add_action('after_setup_theme', 'awada_theme_setup');
 $awada_theme_options = awada_theme_options();
@@ -222,12 +222,12 @@ function enqueue_awada_style()
     $awada_theme_options = awada_theme_options();
     wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.css');
 	wp_enqueue_style('awada', get_stylesheet_uri());
-    wp_enqueue_style('color-scheme', get_template_directory_uri() . '/css/yellow.css');
+    wp_enqueue_style('color-scheme', get_template_directory_uri() . '/css/default.css');
     wp_enqueue_style('animate', get_template_directory_uri() . '/css/animate.css');
 	wp_enqueue_style('owl-carousel', get_template_directory_uri() . '/css/owl-carousel.css');
 	wp_enqueue_style('prettyPhoto', get_template_directory_uri() . '/css/prettyPhoto.css');
+	wp_enqueue_style('fontawesome', get_template_directory_uri() . '/css/font-awesome.css');
 	//Slider
-	wp_enqueue_style('demo.css', get_template_directory_uri() . '/css/slider/demo.css');
 	wp_enqueue_style('slider-style', get_template_directory_uri() . '/css/slider/slider-style.css');
 	wp_enqueue_style('custom.css', get_template_directory_uri() . '/css/slider/custom.css');
 	
@@ -237,10 +237,6 @@ function enqueue_awada_style()
 	wp_enqueue_style('PT-Sans', 'http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic');
 	wp_enqueue_style('Lato', 'http://fonts.googleapis.com/css?family=Lato:400,300,400italic,300italic,700,700italic,900');
 	wp_enqueue_style('Exo', 'http://fonts.googleapis.com/css?family=Exo:400,300,600,500,400italic,700italic,800,900');
-    if ($awada_theme_options['portfolio_three_column']) {
-        $custom_css = '@media (min-width: 992px) { .wl-gallery{ width:33.33% !important;} }';
-        wp_add_inline_style('awada', $custom_css);
-    }
 }
 add_action('wp_footer', 'enqueue_in_footer');
 function enqueue_in_footer()
@@ -345,6 +341,11 @@ function awada_register_required_plugins()
     $plugins = array(
         // This is an example of how to include a plugin bundled with a theme.
         array(
+            'name'     => 'Kirki', // The plugin name.
+            'slug'     => 'kirki', // The plugin slug (typically the folder name).
+            'required' => false, // If false, the plugin is only 'recommended' instead of required.
+        ),
+		array(
             'name'     => 'Photo Video Gallery Master', // The plugin name.
             'slug'     => 'photo-video-gallery-master', // The plugin slug (typically the folder name).
             'required' => false, // If false, the plugin is only 'recommended' instead of required.

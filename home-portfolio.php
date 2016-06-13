@@ -2,11 +2,11 @@
 if (!$awada_theme_options['portfolio_home']) return;
 global $post;
 if ($awada_theme_options['portfolio_home'] == 1){ ?>
-<section class="white-wrapper">
+<section id="home_portfolio" class="white-wrapper">
 	<div class="container">
 		<div class="general-title">
 			<?php if ($awada_theme_options['home_portfolio_title'] != ""){ ?>
-			<h2><?php echo esc_attr($awada_theme_options['home_portfolio_title']); ?></h2>
+			<h2 id="portfolio_heading"><?php echo esc_attr($awada_theme_options['home_portfolio_title']); ?></h2>
 			<hr>
 			<?php } ?>
 		</div><!-- end general title -->

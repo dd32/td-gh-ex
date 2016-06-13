@@ -1,19 +1,24 @@
 <?php $awada_theme_options = awada_theme_options();
 if ($awada_theme_options['home_blog'] == 1){ ?>
-<section class="grey-wrapper jt-shadow">
+<section id="home_blog" class="grey-wrapper jt-shadow">
 	<div class="container">
 		<div class="general-title">
 			<?php if ($awada_theme_options['home_blog_title'] != ""){ ?>
-			<h2><?php echo esc_attr($awada_theme_options['home_blog_title']); ?></h2>
+			<h2 id="blog_heading"><?php echo esc_attr($awada_theme_options['home_blog_title']); ?></h2>
 			<hr>
 			<?php } if ($awada_theme_options['home_blog_description'] != ""){ ?>
-			<p class="lead"><?php echo esc_attr($awada_theme_options['home_blog_description']); ?></p>
+			<p id="blog_description" class="lead"><?php echo esc_attr($awada_theme_options['home_blog_description']); ?></p>
 			<?php } ?>
 		</div><!-- end general title -->
 		<?php $imageSize = 'awada_blog_home_thumb'; ?>
 		<div class="blog-masonry masonry2">
 			<?php
-			$args = array('post_type' => 'post', 'posts_per_page' => -1);
+			$count_posts = wp_count_posts();
+			$published_posts = $count_posts->publish;
+			if(isset($awada_theme_options['home_post_cat'])){
+			$cat = $awada_theme_options['home_post_cat'];
+			}
+			$args = array('post_type' => 'post', 'posts_per_page' => -1, 'post__not_in' => get_option( 'sticky_posts' ), 'category__in'=>$cat);
             query_posts($args);
 			if (query_posts($args)) {
 			$i = 1;

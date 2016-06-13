@@ -1,4 +1,37 @@
 <?php
+if(!class_exists('Kirki')){
+	function awada_customize_register( $wp_customize ) {
+	$wp_customize->remove_setting('header_textcolor');
+	wp_enqueue_style('kirki-css', get_template_directory_uri() .'/css/awada-kirki.css');
+	$wp_customize->add_section( 'awada_kirki' , array(
+			'title'      	=> __( 'Download & Install Kirki Plugin', 'awada' ),
+			'priority'   	=> 10,
+		) );
+
+		$wp_customize->add_setting( 'awada_kirki_install', array(
+			'default'    		=> null,
+			'sanitize_callback' => 'sanitize_text_field',
+		) );
+
+		$wp_customize->add_control( new Awada_desc_Control( $wp_customize, 'awada_kirki_install', array(
+			'section'  => 'awada_kirki',
+			'settings' => 'awada_kirki_install',
+			'priority' => 1,
+		) ) );
+	}
+	add_action( 'customize_register', 'awada_customize_register' );
+	
+	if( class_exists( 'WP_Customize_Control' ) ):
+	class Awada_desc_Control extends WP_Customize_Control { 
+		public function render_content() {
+		?>
+		<a style="margin-bottom:20px;margin-left:20px;" title="Click here to install plugin" href="<?php echo admin_url();?>plugin-install.php?tab=search&s=kirki" target="blank" class="awd-btn"><?php _e('Download & Install Kikri Plugin','awada'); ?> </a>
+		<?php
+		}
+	}
+	endif;
+return; }
+
 function awada_customizer_preview_js()
 {
     wp_enqueue_script('custom_css_preview', get_template_directory_uri() . '/js/customize-preview.js', array('customize-preview', 'jquery'));
@@ -17,7 +50,7 @@ Kirki::add_panel('awada_option_panel', array(
     'description' => __('Here you can customize all your site contents', 'awada'),
 ));
 Kirki::add_field('awada_theme', array(
-    'settings'          => 'header_topbar_bg_color;',
+    'settings'          => 'header_topbar_bg_color',
     'label'             => __('Header Top Bar Background Color', 'awada'),
     'description'       => __('Change Top bar Background Color', 'awada'),
     'section'           => 'colors',
@@ -51,7 +84,7 @@ Kirki::add_field('awada_theme', array(
 ));
 
 Kirki::add_field('awada_theme', array(
-    'settings'          => 'header_topbar_color;',
+    'settings'          => 'header_topbar_color',
     'label'             => __('Header Top Bar Text Color', 'awada'),
     'description'       => __('Change Top bar Font/Content Color', 'awada'),
     'section'           => 'colors',
@@ -76,7 +109,7 @@ Kirki::add_field('awada_theme', array(
 ));
 
 Kirki::add_field('awada_theme', array(
-    'settings'          => 'header_background_color;',
+    'settings'          => 'header_background_color',
     'label'             => __('Header Background Color', 'awada'),
     'description'       => __('Change Header Background Color', 'awada'),
     'section'           => 'colors',
@@ -100,7 +133,7 @@ Kirki::add_field('awada_theme', array(
     ),
 ));
 Kirki::add_field('awada_theme', array(
-    'settings'          => 'header_textcolor;',
+    'settings'          => 'header_textcolor',
     'label'             => __('Header Text Color', 'awada'),
     'description'       => __('Change Header Text Color', 'awada'),
     'section'           => 'colors',
@@ -130,27 +163,6 @@ Kirki::add_section('general_sec', array(
     'panel'       => 'awada_option_panel',
     'priority'    => 160,
     'capability'  => 'edit_theme_options',
-));
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'logo_width',
-    'label'             => __('Image Logo Width', 'awada'),
-    'section'           => 'general_sec',
-    'type'              => 'slider',
-    'priority'          => 10,
-    'default'           => $awada_theme_options['logo_width'],
-    'choices'           => array(
-        'max'  => 250,
-        'min'  => 35,
-        'step' => 1,
-    ),
-    'output'            => array(
-        array(
-            'element'  => '#logo img',
-            'property' => 'width',
-            'units'    => 'px',
-        ),
-    ),
-    'sanitize_callback' => 'awada_sanitize_number',
 ));
 
 Kirki::add_field('awada_theme', array(
@@ -243,6 +255,7 @@ Kirki::add_field('awada_theme', array(
     'section'              => 'general_sec',
     'default'              => '',
     'priority'             => 10,
+	'transport'        	   => 'postMessage',
     'sanitize_callback'    => 'wp_filter_nohtml_kses',
     'sanitize_js_callback' => 'wp_filter_nohtml_kses',
 ));
@@ -265,7 +278,6 @@ Kirki::add_field('awada_theme', array(
     'default'     => array(
         'font-style'  => array('bold', 'italic'),
         'font-family' => 'Courgette',
-
     ),
     'priority'    => 10,
     'choices'     => array(
@@ -277,7 +289,7 @@ Kirki::add_field('awada_theme', array(
     ),
     'output'      => array(
         array(
-            'element' => '#logo a h3',
+            'element' => '#header-style-1 .navbar-brand p',
         ),
     ),
 ));
@@ -302,7 +314,7 @@ Kirki::add_field('awada_theme', array(
     ),
     'output'      => array(
         array(
-            'element' => '#navy > li > a > span',
+            'element' => '#header-style-1 .navbar-nav > li > a',
         ),
     ),
 ));
@@ -326,7 +338,7 @@ Kirki::add_field('awada_theme', array(
     ),
     'output'      => array(
         array(
-            'element' => 'body, h1, h2, h3, h4, h5, h6, p, em, blockquote, .main_title h2',
+            'element' => 'body, h1, h2, h3, h4, h5, h6, p, em, blockquote',
         ),
     ),
 ));
@@ -352,7 +364,7 @@ Kirki::add_field('awada_theme', array(
     ),
     'output'      => array(
         array(
-            'element' => '.main_title h2',
+            'element' => '.general-title h2',
         ),
     ),
 ));
@@ -373,6 +385,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'layout_sec',
     'default'           => $awada_theme_options['headersticky'],
     'priority'          => 10,
+	'transport'         => 'postMessage',
     'sanitize_callback' => 'awada_sanitize_checkbox',
 ));
 Kirki::add_field('awada_theme', array(
@@ -382,12 +395,11 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'layout_sec',
     'type'              => 'radio-image',
     'priority'          => 10,
-    'transport'         => 'postMessage',
     'default'           => '',
     'sanitize_callback' => 'awada_sanitize_text',
     'choices'           => array(
-        ''           => get_template_directory_uri() . '/inc/kirki/assets/images/1c.png',
-        'boxed' => get_template_directory_uri() . '/inc/kirki/assets/images/3cm.png',
+        ''           => get_template_directory_uri() . '/images/layout/1c.png',
+        'boxed' => get_template_directory_uri() . '/images/layout/3cm.png',
     ),
 
 ));
@@ -398,12 +410,12 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'layout_sec',
     'type'              => 'radio-image',
     'priority'          => 10,
-    'default'           => $awada_theme_options['footer_layout'],
+    'default'           => 4,
     'transport'         => 'postMessage',
     'choices'           => array(
-        2 => get_template_directory_uri() . '/inc/kirki/assets/images/footer-widgets-2.png',
-        3 => get_template_directory_uri() . '/inc/kirki/assets/images/footer-widgets-3.png',
-        4 => get_template_directory_uri() . '/inc/kirki/assets/images/footer-widgets-4.png',
+        2 => get_template_directory_uri() . '/images/layout/footer-widgets-2.png',
+        3 => get_template_directory_uri() . '/images/layout/footer-widgets-3.png',
+        4 => get_template_directory_uri() . '/images/layout/footer-widgets-4.png',
     ),
     'sanitize_callback' => 'awada_sanitize_number',
 ));
@@ -417,9 +429,9 @@ Kirki::add_field('awada_theme', array(
     'priority'          => 10,
     'default'           => $awada_theme_options['blog_layout'],
     'choices'           => array(
-        'rightsidebar' => get_template_directory_uri() . '/inc/kirki/assets/images/2cr.png',
-        'leftsidebar'  => get_template_directory_uri() . '/inc/kirki/assets/images/2cl.png',
-        'fullwidth'  => get_template_directory_uri() . '/inc/kirki/assets/images/1c.png',
+        'rightsidebar' => get_template_directory_uri() . '/images/layout/2cr.png',
+        'leftsidebar'  => get_template_directory_uri() . '/images/layout/2cl.png',
+        'fullwidth'  => get_template_directory_uri() . '/images/layout/1c.png',
     ),
     'sanitize_callback' => 'awada_sanitize_text',
 
@@ -434,9 +446,9 @@ Kirki::add_field('awada_theme', array(
     'priority'          => 10,
     'default'           => $awada_theme_options['post_layout'],
     'choices'           => array(
-        'leftsidebar' => get_template_directory_uri() . '/inc/kirki/assets/images/2cl.png',
-        'rightsidebar' => get_template_directory_uri() . '/inc/kirki/assets/images/2cr.png',
-        'fullwidth' => get_template_directory_uri() . '/inc/kirki/assets/images/1c.png',
+        'leftsidebar' => get_template_directory_uri() . '/images/layout/2cl.png',
+        'rightsidebar' => get_template_directory_uri() . '/images/layout/2cr.png',
+        'fullwidth' => get_template_directory_uri() . '/images/layout/1c.png',
     ),
     'sanitize_callback' => 'awada_sanitize_text',
 ));
@@ -450,9 +462,9 @@ Kirki::add_field('awada_theme', array(
     'priority'          => 10,
     'default'           => $awada_theme_options['page_layout'],
     'choices'           => array(
-        'leftsidebar' => get_template_directory_uri() . '/inc/kirki/assets/images/2cl.png',
-        'rightsidebar' => get_template_directory_uri() . '/inc/kirki/assets/images/2cr.png',
-        'fullwidth' => get_template_directory_uri() . '/inc/kirki/assets/images/1c.png',
+        'leftsidebar' => get_template_directory_uri() . '/images/layout/2cl.png',
+        'rightsidebar' => get_template_directory_uri() . '/images/layout/2cr.png',
+        'fullwidth' => get_template_directory_uri() . '/images/layout/1c.png',
     ),
     'sanitize_callback' => 'awada_sanitize_text',
 ));
@@ -472,6 +484,7 @@ Kirki::add_field('awada_theme', array(
     'type'              => 'switch',
     'priority'          => 10,
     'default'           => 1,
+	'transport'         => 'postMessage',
     'sanitize_callback' => 'awada_sanitize_checkbox',
 ));
 $args = array(
@@ -515,6 +528,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'service_sec',
     'type'              => 'switch',
     'priority'          => 10,
+	'transport'         => 'postMessage',
     'default'           => $awada_theme_options['home_service_enabled'],
     'sanitize_callback' => 'awada_sanitize_checkbox',
 ));
@@ -544,7 +558,6 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'service_sec',
     'type'              => 'select',
     'priority'          => 10,
-    'transport'         => 'postMessage',
     'default'           => 4,
     'choices'           => array(
         2 => __('Two Column', 'awada'),
@@ -730,6 +743,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'portfolio_sec',
     'type'              => 'switch',
     'priority'          => 10,
+	'transport'         => 'postMessage',
     'default'           => $awada_theme_options['portfolio_home'],
     'sanitize_callback' => 'awada_sanitize_checkbox',
 ));
@@ -742,16 +756,6 @@ Kirki::add_field('awada_theme', array(
     'transport'         => 'postMessage',
     'default'           => $awada_theme_options['home_portfolio_title'],
     'sanitize_callback' => 'awada_sanitize_text',
-));
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'portfolio_three_column',
-    'label'             => __('Show Portfolio in Three Column', 'awada'),
-    'section'           => 'portfolio_sec',
-    'type'              => 'checkbox',
-    'priority'          => 10,
-    'transport'         => 'postMessage',
-    'default'           => 0,
-    'sanitize_callback' => 'awada_sanitize_checkbox',
 ));
 Kirki::add_field('awada_theme', array(
     'settings'          => 'portfolio_shortcode',
@@ -776,6 +780,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'blog_sec',
     'type'              => 'switch',
     'priority'          => 10,
+	'transport'         => 'postMessage',
     'default'           => $awada_theme_options['home_blog'],
     'sanitize_callback' => 'awada_sanitize_checkbox',
 ));
@@ -854,6 +859,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'extra_sec',
     'type'              => 'switch',
     'priority'          => 10,
+	'transport'         => 'postMessage',
     'default'           => $awada_theme_options['home_extra_enabled'],
     'sanitize_callback' => 'awada_sanitize_checkbox',
 ));
@@ -951,7 +957,7 @@ Kirki::add_field('awada_theme', array(
 ));
 /* Social Options */
 Kirki::add_section('social_sec', array(
-    'title'      => __('Social Options', 'awada'),
+    'title'      => __('Contact and Social Options', 'awada'),
     'panel'      => 'awada_option_panel',
     'priority'   => 160,
     'capability' => 'edit_theme_options',
@@ -963,6 +969,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'social_sec',
     'type'              => 'switch',
     'priority'          => 10,
+	'transport'         => 'postMessage',
     'default'           => $awada_theme_options['contact_info_header'],
     'sanitize_callback' => 'awada_sanitize_checkbox',
 ));
@@ -972,6 +979,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'social_sec',
     'type'              => 'text',
     'priority'          => 10,
+	'transport'         => 'postMessage',
     'default'           => $awada_theme_options['contact_email'],
     'sanitize_callback' => 'sanitize_email',
 ));
@@ -981,6 +989,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'social_sec',
     'type'              => 'text',
     'priority'          => 10,
+	'transport'         => 'postMessage',
     'default'           => $awada_theme_options['contact_phone'],
     'sanitize_callback' => 'awada_sanitize_text',
 ));
@@ -991,6 +1000,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'social_sec',
     'type'              => 'switch',
     'priority'          => 10,
+	'transport'         => 'postMessage',
     'default'           => $awada_theme_options['social_media_header'],
     'sanitize_callback' => 'awada_sanitize_checkbox',
 ));
@@ -1000,6 +1010,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'social_sec',
     'type'              => 'url',
     'priority'          => 10,
+	'transport'         => 'postMessage',
     'default'           => $awada_theme_options['social_facebook_link'],
     'sanitize_callback' => 'esc_url',
 ));
@@ -1010,6 +1021,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'social_sec',
     'type'              => 'url',
     'priority'          => 10,
+	'transport'         => 'postMessage',
     'default'           => $awada_theme_options['social_twitter_link'],
     'sanitize_callback' => 'esc_url',
 ));
@@ -1020,6 +1032,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'social_sec',
     'type'              => 'url',
     'priority'          => 10,
+	'transport'         => 'postMessage',
     'default'           => $awada_theme_options['social_google_plus_link'],
     'sanitize_callback' => 'esc_url',
 ));
@@ -1030,6 +1043,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'social_sec',
     'type'              => 'text',
     'priority'          => 10,
+	'transport'         => 'postMessage',
     'default'           => $awada_theme_options['social_skype_link'],
     'sanitize_callback' => 'awada_sanitize_text',
 ));
@@ -1040,6 +1054,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'social_sec',
     'type'              => 'url',
     'priority'          => 10,
+	'transport'         => 'postMessage',
     'default'           => $awada_theme_options['social_youtube_link'],
     'sanitize_callback' => 'esc_url',
 ));
@@ -1050,6 +1065,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'social_sec',
     'type'              => 'url',
     'priority'          => 10,
+	'transport'         => 'postMessage',
     'default'           => $awada_theme_options['social_dribbble_link'],
     'sanitize_callback' => 'esc_url',
 ));
@@ -1059,6 +1075,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'social_sec',
     'type'              => 'url',
     'priority'          => 10,
+	'transport'         => 'postMessage',
     'default'           => $awada_theme_options['social_linkedin_link'],
     'sanitize_callback' => 'esc_url',
 ));
@@ -1070,7 +1087,7 @@ Kirki::add_section('footer_sec', array(
     'capability' => 'edit_theme_options',
 ));
 Kirki::add_field('awada_theme', array(
-    'settings'          => 'footer_background_color;',
+    'settings'          => 'footer_background_color',
     'label'             => __('Footer Background Color', 'awada'),
     'description'       => __('Change Footer Background Color', 'awada'),
     'section'           => 'footer_sec',
@@ -1094,7 +1111,7 @@ Kirki::add_field('awada_theme', array(
     ),
 ));
 Kirki::add_field('awada_theme', array(
-    'settings'          => 'footer_text_color;',
+    'settings'          => 'footer_text_color',
     'label'             => __('Footer Text Color', 'awada'),
     'description'       => __('Change Footer Text Color', 'awada'),
     'section'           => 'footer_sec',
@@ -1118,7 +1135,7 @@ Kirki::add_field('awada_theme', array(
     ),
 ));
 Kirki::add_field('awada_theme', array(
-    'settings'          => 'copyright_section_bg_color;',
+    'settings'          => 'copyright_section_bg_color',
     'label'             => __('Copyright Section Background Color', 'awada'),
     'description'       => __('Change Copyright Section Background Color', 'awada'),
     'section'           => 'footer_sec',
@@ -1142,7 +1159,7 @@ Kirki::add_field('awada_theme', array(
     ),
 ));
 Kirki::add_field('awada_theme', array(
-    'settings'          => 'copyright_section_text_color;',
+    'settings'          => 'copyright_section_text_color',
     'label'             => __('Copyright Section Text Color', 'awada'),
     'description'       => __('Change Copyright Section Text Color', 'awada'),
     'section'           => 'footer_sec',
@@ -1171,6 +1188,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'footer_sec',
     'type'              => 'text',
     'priority'          => 10,
+	'transport'         => 'postMessage',
     'default'           => $awada_theme_options['footer_copyright'],
     'sanitize_callback' => 'awada_sanitize_text',
 ));
@@ -1180,6 +1198,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'footer_sec',
     'type'              => 'text',
     'priority'          => 10,
+	'transport'         => 'postMessage',
     'default'           => $awada_theme_options['developed_by_text'],
     'sanitize_callback' => 'awada_sanitize_text',
 ));
@@ -1189,6 +1208,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'footer_sec',
     'type'              => 'text',
     'priority'          => 10,
+	'transport'         => 'postMessage',
     'default'           => $awada_theme_options['developed_by_link_text'],
     'sanitize_callback' => 'awada_sanitize_text',
 ));
@@ -1198,6 +1218,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'footer_sec',
     'type'              => 'url',
     'priority'          => 10,
+	'transport'         => 'postMessage',
     'default'           => $awada_theme_options['developed_by_link'],
     'sanitize_callback' => 'esc_url',
 ));
@@ -1264,7 +1285,7 @@ function awada_sanitize_textarea($value)
     return wp_kses_post(force_balance_tags($value));
 }
 
-function awada_upgrade_info()
+/* function awada_upgrade_info()
 {
     wp_register_script('awada_customizer_script', get_template_directory_uri() . '/js/awada-customizer.js', array('jquery'), '1.0.0', true);
     wp_enqueue_script('awada_customizer_script');
@@ -1276,10 +1297,10 @@ function awada_upgrade_info()
     ));
 }
 
-add_action('customize_controls_enqueue_scripts', 'awada_upgrade_info');
+add_action('customize_controls_enqueue_scripts', 'awada_upgrade_info'); */
 
-function awada_customize_register($wp_customize)
-{
-    $wp_customize->remove_setting('header_textcolor');
+function awada_customize_register_active( $wp_customize ) {
+	$wp_customize->remove_setting('header_textcolor');
 }
-add_action('customize_register', 'awada_customize_register', 11);
+add_action( 'customize_register', 'awada_customize_register_active' );
+?>

@@ -56,9 +56,9 @@ class Awada_Welcome {
 
 			$params = array(
 				'dir_name' => 'notice',
-				'server_file' => 'http://www.webhuntinfotech.com/wp-content/uploads/webhunt/notice.json',
+				'server_file' => 'http://www.webhuntinfotech.com/wp-content/uploads/webhunt/awada_notice.json',
 				'interval' => 3,
-				'cookie_id' => 'webhunt_rocks',
+				'cookie_id' => 'webhunt_awada',
 			);
 
 			new WebHuntNewsflash($this, $params);
@@ -273,7 +273,7 @@ class Awada_Welcome {
                             if ($pagenow == 'admin.php' || $pagenow == 'themes.php') {
 
                                 // Get the current page.  To avoid errors, we'll set
-                                $pageName = empty($_GET['page']) ? '&amp;page=kyma-welcome' : '&amp;page=' . $_GET['page'];
+                                $pageName = empty($_GET['page']) ? '&amp;page=awada-welcome' : '&amp;page=' . $_GET['page'];
 
                                 // Ditto for the current tab.
                                 $curTab = empty($_GET['tab']) ? '&amp;tab=0' : '&amp;tab=' . $_GET['tab'];

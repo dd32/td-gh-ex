@@ -1,14 +1,14 @@
 <?php $awada_theme_options = awada_theme_options();
 $col = 12 / (int)$awada_theme_options['home_service_column'];
 if ($awada_theme_options['home_service_enabled'] == 1){ ?>
-<section class="grey-wrapper jt-shadow">
+<section class="grey-wrapper jt-shadow" id="home_service">
 	<div class="container">
 		<div class="general-title">
 			<?php if ($awada_theme_options['home_service_title'] != ""){ ?>
-			<h2><?php echo esc_attr($awada_theme_options['home_service_title']); ?></h2>
+			<h2 id="home_service_title"><?php echo esc_attr($awada_theme_options['home_service_title']); ?></h2>
 			<hr>
 			<?php } if ($awada_theme_options['home_service_description'] != ""){ ?>
-			<p class="lead"><?php echo esc_attr($awada_theme_options['home_service_description']); ?></p>
+			<p id="home_service_description"class="lead"><?php echo esc_attr($awada_theme_options['home_service_description']); ?></p>
 			<?php } ?>
 		</div><!-- end general title -->
 		
@@ -41,7 +41,7 @@ if ($awada_theme_options['home_service_enabled'] == 1){ ?>
 					$i = 0;
 				}
 			} ?>
-			<div class="col-lg-<?php echo $col; ?> col-md-<?php echo $col; ?> col-sm-6 col-xs-12 <?php echo $pos; ?>">
+			<div class="service_col col-lg-<?php echo $col; ?> col-md-<?php echo $col; ?> col-sm-6 col-xs-12 <?php echo $pos; ?>">
 				<div class="servicebox">
 					<?php if($awada_theme_options['service_link_' . $j]) {
 						$service_url = $awada_theme_options['service_link_' . $j];
@@ -49,17 +49,17 @@ if ($awada_theme_options['home_service_enabled'] == 1){ ?>
 					if($awada_theme_options['service_icon_' . $j] != ""){ ?>
 					<a href="<?php echo esc_url($service_url); ?>">
 					<div class="service-icon-circle  <?php if($i==2){ echo 'active'; } ?>">
-						<i class="<?php echo esc_attr($awada_theme_options['service_icon_' . $j]); ?>"></i>
+						<i id="service_icon_<?php echo $j; ?>" class="<?php echo esc_attr($awada_theme_options['service_icon_' . $j]); ?>"></i>
 					</div><!-- end service icon -->
 					</a>
 					<?php } ?>
 					<div class="title">
-						<a href="<?php echo esc_url($service_url); ?>"><h3><?php echo esc_attr($awada_theme_options['service_title_' . $j]); ?></h3></a>
+						<a href="<?php echo esc_url($service_url); ?>"><h3 id="service_title_<?php echo $j; ?>"><?php echo esc_attr($awada_theme_options['service_title_' . $j]); ?></h3></a>
 					</div><!-- end title -->
 					<?php if($awada_theme_options['service_text_' . $j] != ""){ ?>
-					<p><?php echo esc_attr($awada_theme_options['service_text_' . $j]); ?></p>
+					<p id="service_description_<?php echo $j; ?>"><?php echo esc_attr($awada_theme_options['service_text_' . $j]); ?></p>
 					<?php } ?>
-					<a class="readmore" href="<?php echo esc_url($service_url); ?>" target="_blank" ><?php _e('Read More', 'awada'); ?></a>
+					<a id="service_link_<?php echo $j; ?>" class="readmore" href="<?php echo esc_url($service_url); ?>" target="_blank" ><?php _e('Read More', 'awada'); ?></a>
 				</div><!-- end servicebox -->
 			</div><!-- end col-lg-3 -->
 			<?php $i++; } ?>

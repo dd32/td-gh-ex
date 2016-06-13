@@ -9,7 +9,7 @@ $col = 12 / (int)$awada_theme_options['footer_layout']; ?>
 		dynamic_sidebar('footer-widget');
 		} else {
 			$args = array(
-				'before_widget' => '<div class="col-lg-' . $col . ' col-md-' . $col . ' col-sm-6 col-xs-12"><div class="widget">',
+				'before_widget' => '<div class="col-lg-' . $col . ' col-md-' . $col . ' col-sm-6 col-xs-12 footer_col"><div class="widget">',
 				'after_widget' => '</div></div>',
 				'before_title' => '<div class="title"><h3>',
 				'after_title' => '</h3></div>',
@@ -25,9 +25,9 @@ $col = 12 / (int)$awada_theme_options['footer_layout']; ?>
 <div id="copyrights" <?php if ($awada_theme_options['site_layout'] == 'boxed') { ?> class="container" <?php } ?>>
 	<div class="container">
 		<?php if ($awada_theme_options['copyright_text_footer']==1) { ?>
-		<div class="col-lg-5 col-md-6 col-sm-12">
+		<div id="copyright_section" class="col-lg-5 col-md-6 col-sm-12">
 			<div class="copyright-text">
-				<p><?php echo esc_attr($awada_theme_options['footer_copyright'] . ' ' . $awada_theme_options['developed_by_text']); ?> <a href="<?php echo esc_url($awada_theme_options['developed_by_link']); ?>"><?php echo esc_attr($awada_theme_options['developed_by_link_text']); ?></a></p>
+				<p><span id="copyright_text"><?php echo esc_attr($awada_theme_options['footer_copyright']); ?> </span><span id="developed_by_text"> <?php echo esc_attr($awada_theme_options['developed_by_text']); ?> </span><a id="copyright_link" href="<?php echo esc_url($awada_theme_options['developed_by_link']); ?>"><span id="copyright_link_text"><?php echo esc_attr($awada_theme_options['developed_by_link_text']); ?></span></a></p>
 			</div><!-- end copyright-text -->
 		</div><!-- end widget -->
 		<?php } ?>
