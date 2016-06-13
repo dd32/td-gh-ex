@@ -64,7 +64,7 @@ if(!is_home()){
                             <?php if(has_post_thumbnail()) : ?>
                             <div class="entry-thumb style1">
                                 <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                    <?php the_post_thumbnail( 'blog-2', array('title' => get_the_title(), 'alt' => 'img-responsive')); ?>
+                                   <?php ad_mag_lite_the_image( get_the_id(), get_the_title(),  375, 190 ); ?>
                                 </a>
                                 <?php ad_mag_lite_the_first_category(get_the_id()); ?>
                                 <a class="thumb-icon style1" href="<?php the_permalink(); ?>"></a>

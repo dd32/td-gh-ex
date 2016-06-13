@@ -20,7 +20,7 @@ $next_post = get_next_post();
                     <?php if(has_post_thumbnail($prev_post->ID)) : ?>
                         <div class="entry-thumb">
                             <a href="<?php echo get_permalink( $prev_post->ID ); ?>" title="<?php echo esc_attr($prev_post->post_title); ?>">
-                                <?php echo get_the_post_thumbnail($prev_post->ID, 'thumbnail', 'single-post'); ?>
+                                <?php ad_mag_lite_the_image( $prev_post->ID, get_the_title(),  75, 75 ); ?>
                             </a>
                         </div>
                     <?php endif; ?>
@@ -42,7 +42,7 @@ $next_post = get_next_post();
                     <?php if(has_post_thumbnail($next_post->ID)) : ?>
                         <div class="entry-thumb">
                             <a href="<?php echo get_permalink( $next_post->ID ); ?>" title="<?php echo esc_attr($next_post->post_title); ?>">
-                                <?php echo get_the_post_thumbnail($next_post->ID, 'thumbnail', 'single-post'); ?>
+                                <?php ad_mag_lite_the_image( $next_post->ID, get_the_title(),  75, 75 ); ?>
                             </a>
                         </div>
                     <?php endif; ?>

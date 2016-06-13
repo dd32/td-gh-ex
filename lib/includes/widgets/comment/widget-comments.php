@@ -45,7 +45,7 @@ public function widget( $args, $instance ) {
                             <li>
                                 <article class="entry-item">
                                     <div class="cmt-content">
-                                        <p><?php echo esc_html($comment->comment_content); ?></p>
+                                        <p><?php echo wp_kses_post($comment->comment_content); ?></p>
                                     </div>
                                     <p>by <a href="<?php echo esc_url($comment->comment_author_url); ?>"><?php echo esc_html($comment->comment_author); ?></a> <?php echo esc_html($comment->post_title); ?></p>
                                 </article>

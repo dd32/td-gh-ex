@@ -1,6 +1,7 @@
 <?php
 
 require_once "lib/kopa-customization.php";
+require_once "lib/aq_resizer.php";
 require trailingslashit(get_template_directory()) . '/lib/includes/ajax.php';
 require trailingslashit(get_template_directory()) . '/lib/includes/util.php';
 require trailingslashit(get_template_directory()) . '/lib/includes/sidebars.php';
@@ -11,7 +12,7 @@ add_action('after_setup_theme', 'ad_mag_lite_after_setup_theme');
 function ad_mag_lite_after_setup_theme(){
     load_theme_textdomain( 'ad-mag-lite', get_template_directory() . '/languages' );
     add_theme_support('title-tag');
-    add_theme_support('post-formats', array('gallery', 'audio', 'video','quote'));
+    add_theme_support( 'custom-logo' );
     add_theme_support('post-thumbnails');
     add_theme_support('loop-pagination');
     add_theme_support('automatic-feed-links');
@@ -178,4 +179,30 @@ function ad_mag_lite_the_excerpt_length( $length ) {
 
 function ad_mag_lite_custom_excerpt_more( $more ) {
     return '...';
+}
+
+function ad_mag_lite_get_image_src( $post_id = 0, $size = 'full' ) {
+    $thumb = get_the_post_thumbnail( $post_id, $size );
+    if (!empty($thumb)) {
+        $_thumb = array();
+        $regex = '#<\s*img [^\>]*src\s*=\s*(["\'])(.*?)\1#im';
+        preg_match($regex, $thumb, $_thumb);
+        $thumb = $_thumb[2];
+    } 
+    return $thumb;
+}
+
+function ad_mag_lite_the_image($post_id = 0, $alt = '', $width = 0, $height = 0, $crop = true, $single = true,  $upscale = true ){
+
+    $img_src = ad_mag_lite_get_image_src($post_id, 'full' );
+    if(!empty($img_src)){
+        // $params = array( 'width' => $width, 'height' => $height, 'crop' => $crop );
+        echo '<img src="' . aq_resize($img_src, $width, $height, $crop, $single, $upscale) . '" alt="' .htmlentities($alt). '" />';
+    }
+}
+
+function ad_mag_lite_the_custom_logo() {
+   if ( function_exists( 'the_custom_logo' ) ) {
+      the_custom_logo();
+   }
 }

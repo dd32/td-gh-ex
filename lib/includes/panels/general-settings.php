@@ -6,15 +6,6 @@ function ad_mag_lite_init_options($options){
         'title' => __('General Settings', 'ad-mag-lite'));
 
     $options['settings'][] = array(
-        'settings'    => 'logo',
-        'label'       => __('Logo', 'ad-mag-lite'),
-        'description' => __('Upload your logo image.', 'ad-mag-lite'),
-        'default'     => '',
-        'type'        => 'image',
-        'section'     => 'ad_mag_opt_general',
-        'transport'   => 'refresh');
-
-    $options['settings'][] = array(
         'settings'    => 'social_facebook',
         'label'       => __('Socials', 'ad-mag-lite'),
         'description' => __('Facebook', 'ad-mag-lite'),

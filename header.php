@@ -61,12 +61,11 @@
     <div class="kopa-header-middle">
 
         <div class="wrapper">
-            <?php 
-            $logo = get_theme_mod('logo');
-            if(!empty($logo)) : 
+            <?php
+            if(has_custom_logo()) : 
                 ?>
             <div class="kopa-logo">
-                <a href="<?php echo esc_url(home_url()); ?>"><img src="<?php echo esc_url($logo); ?>" alt="<?php bloginfo('name'); ?>"></a>
+                <?php ad_mag_lite_the_custom_logo(); ?>
             </div>
             <!-- logo -->
         <?php else: ?>

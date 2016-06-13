@@ -414,36 +414,7 @@ function ad_mag_lite_get_breadcrumb() {
 }
 
 function ad_mag_lite_register_new_image_sizes(){
-    add_image_size('blog-1', 250, 180, true); 
-    add_image_size('blog-2', 375, 190, true);
-    add_image_size('single-post', 75, 75, true);
-    add_image_size('related-post', 172, 115, true); 
-    add_image_size( 'article-list-1', 89, 65, true );
-    add_image_size( 'article-list-2', 261, 178, true );
-    add_image_size( 'article-list-3', 510, 271, true );
-    add_image_size( 'article-list-3-2', 259, 155, true );
-    add_image_size( 'article-list-4', 155, 120, true );
-    add_image_size( 'article-list-5', 373, 215, true );
-    add_image_size( 'article-list-5-2', 176, 120, true );
-    add_image_size( 'article-list-6', 253, 174, true );
-    add_image_size( 'article-list-8', 260, 160, true );
-    add_image_size( 'article-list-9', 250, 180, true );
-    add_image_size( 'article-list-10', 165, 120, true );
-    add_image_size( 'article-list-12', 165, 120, true );
-    add_image_size( 'article-list-13', 260, 175, true );
-    add_image_size( 'article-list-13-2', 85, 75, true );
-    add_image_size( 'article-list-15', 375, 245, true );
-    add_image_size( 'article-list-15-2', 109, 85, true );
-    add_image_size( 'article-list-16', 583, 316, true );
-    add_image_size( 'article-list-17', 140, 110, true );
-    add_image_size( 'article-list-18', 343, 246, true );
-    add_image_size( 'article-list-19', 363, 230, true );
-    add_image_size( 'article-list-20', 171, 121, true );
-    add_image_size( 'article-list-21', 369, 218, true );
-    add_image_size( 'article-list-22-1', 746, 340, true );
-    add_image_size( 'article-list-22-2', 363, 230, true );
-    add_image_size( 'post-thumb', 410, 370, true );                                                                           
-        
+    add_image_size( 'post-thumb', 410, 370, true );                                                                      
 }
 
 /**

@@ -76,7 +76,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                 <?php if(has_post_thumbnail()) : ?>
                                     <div class="entry-thumb">
                                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                            <?php the_post_thumbnail( 'article-list-1', array('title' => get_the_title(), 'alt' => 'img-responsive')); ?>
+                                            <?php ad_mag_lite_the_image( get_the_id(), get_the_title(),  89, 65 ); ?>
                                         </a>
                                     </div>
                                 <?php endif; ?>   
@@ -109,7 +109,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                             <?php if(has_post_thumbnail()) : ?>
                                 <div class="entry-thumb">
                                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                        <?php the_post_thumbnail( 'article-list-2', array('title' => get_the_title(), 'alt' => 'img-responsive')); ?>
+                                        <?php ad_mag_lite_the_image( get_the_id(), get_the_title(),  261, 178 ); ?>
                                     </a>
                                 </div>
                             <?php endif; ?>
@@ -165,7 +165,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                             <?php if(has_post_thumbnail()) : ?>
                                 <div class="entry-thumb style1">
                                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                        <?php the_post_thumbnail( 'article-list-3', array('title' => get_the_title(), 'alt' => 'img-responsive')); ?>
+                                        <?php ad_mag_lite_the_image( get_the_id(), get_the_title(),  510, 271 ); ?>
                                     </a>
                                     <?php ad_mag_lite_the_first_category(get_the_id(),'h5-content'); ?>
                                 </div>
@@ -194,7 +194,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                 <?php if(has_post_thumbnail()) : ?>
                                     <div class="entry-thumb style1">
                                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                            <?php the_post_thumbnail( 'article-list-3-2', array('title' => get_the_title(), 'alt' => 'img-responsive')); ?>
+                                            <?php ad_mag_lite_the_image( get_the_id(), get_the_title(),  259, 155 ); ?>
                                         </a>
                                         <?php ad_mag_lite_the_first_category(get_the_id()); ?>
                                     </div>
@@ -237,7 +237,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                     <?php if(has_post_thumbnail()) : ?>
                                         <div class="entry-thumb style1">
                                             <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                                <?php the_post_thumbnail( 'article-list-4', array('title' => get_the_title(), 'alt' => 'img-responsive')); ?>
+                                                <?php ad_mag_lite_the_image( get_the_id(), get_the_title(),  155, 120 ); ?>
                                             </a>
                                             <?php ad_mag_lite_the_first_category(get_the_id()); ?>
                                         </div>
@@ -275,7 +275,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                             <?php if(has_post_thumbnail()) : ?>
                                 <div class="entry-thumb style1">
                                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                        <?php the_post_thumbnail( 'article-list-5', array('title' => get_the_title(), 'alt' => 'img-responsive')); ?>
+                                        <?php ad_mag_lite_the_image( get_the_id(), get_the_title(),  373, 215 ); ?>
                                     </a>
                                     <?php ad_mag_lite_the_first_category(get_the_id()); ?>
                                 </div>
@@ -304,7 +304,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                 <?php if(has_post_thumbnail()) : ?>
                                     <div class="entry-thumb style1">
                                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                            <?php the_post_thumbnail( 'article-list-5-2', array('title' => get_the_title(), 'alt' => 'img-responsive')); ?>
+                                            <?php ad_mag_lite_the_image( get_the_id(), get_the_title(),  176, 120 ); ?>
                                         </a>
                                         <?php ad_mag_lite_the_first_category(get_the_id()); ?>
                                     </div>
@@ -346,7 +346,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                 <?php if(has_post_thumbnail()) : ?>
                                     <div class="entry-thumb style1">
                                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                            <?php the_post_thumbnail( 'article-list-6', array('title' => get_the_title(), 'alt' => 'img-responsive')); ?>
+                                            <?php ad_mag_lite_the_image( get_the_id(), get_the_title(),  253, 174 ); ?>
                                         </a>
                                         <?php ad_mag_lite_the_first_category(get_the_id()); ?>
                                     </div>
@@ -421,7 +421,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                     <?php if(has_post_thumbnail()) : ?>
                                         <div class="entry-thumb">
                                             <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                                <?php the_post_thumbnail( 'article-list-8', array('title' => get_the_title(), 'alt' => 'img-responsive')); ?>
+                                                <?php ad_mag_lite_the_image( get_the_id(), get_the_title(),  260, 160 ); ?>
                                             </a>
                                         </div>
                                     <?php endif; ?>
@@ -457,7 +457,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                     <?php if(has_post_thumbnail()) : ?>
                                         <div class="entry-thumb style1">
                                             <a href="<?php the_permalink(); ?>" title="<?php the_title();?>">
-                                                <?php the_post_thumbnail( 'article-list-9', array('title' => get_the_title(), 'alt' => 'img-responsive')); ?>
+                                                <?php ad_mag_lite_the_image( get_the_id(), get_the_title(),  250, 180 ); ?>
                                             </a>
                                             <?php ad_mag_lite_the_first_category(get_the_id()); ?>
                                         </div>
@@ -499,7 +499,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                     <?php if(has_post_thumbnail()) : ?>
                                         <div class="entry-thumb style1">
                                             <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                                <?php the_post_thumbnail( 'article-list-10', array('title' => get_the_title(), 'alt' => 'img-responsive')); ?>
+                                                <?php ad_mag_lite_the_image( get_the_id(), get_the_title(),  165, 120 ); ?>
                                             </a>
                                         </div>
                                         <div class="entry-content">
@@ -555,7 +555,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                             <?php if(has_post_thumbnail()) : ?>
                                 <div class="entry-thumb">
                                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                        <?php the_post_thumbnail( 'article-list-12', array('title' => get_the_title(), 'alt' => 'img-responsive')); ?>
+                                        <?php ad_mag_lite_the_image( get_the_id(), get_the_title(),  165, 120 ); ?>
                                     </a>
                                 </div>
                             <?php endif; ?>
@@ -602,7 +602,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                         <?php if(has_post_thumbnail()) : ?>
                             <div class="entry-thumb style1">
                                 <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                    <?php the_post_thumbnail( 'article-list-13', array('title' => get_the_title(), 'alt' => 'img-responsive')); ?>
+                                    <?php ad_mag_lite_the_image( get_the_id(), get_the_title(),  260, 175 ); ?>
                                 </a>
                                 <a  href="<?php the_permalink(); ?>" class="thumb-icon"></a>
                             </div>
@@ -627,7 +627,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                 <?php if(has_post_thumbnail()) : ?>
                                     <div class="entry-thumb">
                                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                            <?php the_post_thumbnail( 'article-list-13-2', array('title' => get_the_title(), 'alt' => 'img-responsive')); ?>
+                                            <?php ad_mag_lite_the_image( get_the_id(), get_the_title(),  85, 75 ); ?>
                                         </a>
                                     </div>
                                 <?php endif; ?>
@@ -690,7 +690,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                 <?php if(has_post_thumbnail()) : ?>
                                     <div class="entry-thumb style2">
                                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                            <?php the_post_thumbnail( 'article-list-15', array('title' => get_the_title(), 'alt' => 'img-responsive')); ?>
+                                            <?php ad_mag_lite_the_image( get_the_id(), get_the_title(),  375, 245 ); ?>
                                         </a>
                                         <a href="<?php the_permalink(); ?>" class="entry-view"><?php echo kopa_get_view_count(get_the_id()); ?></a>
                                     </div>
@@ -711,7 +711,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                     <?php if(has_post_thumbnail()) : ?>
                                         <div class="entry-thumb">
                                             <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                                <?php the_post_thumbnail( 'article-list-15-2', array('title' => get_the_title(), 'alt' => 'img-responsive')); ?>
+                                                <?php ad_mag_lite_the_image( get_the_id(), get_the_title(),  109, 85 ); ?>
                                             </a>
                                         </div>
                                     <?php endif; ?>
@@ -754,7 +754,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                     <?php if(has_post_thumbnail()) : ?>
                                         <div class="entry-thumb style1">
                                             <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                                <?php the_post_thumbnail( 'article-list-16', array('title' => get_the_title(), 'alt' => 'img-responsive')); ?>
+                                                <?php ad_mag_lite_the_image( get_the_id(), get_the_title(),  583, 316 ); ?>
                                             </a>
                                         </div>
                                     <?php endif; ?>
@@ -805,7 +805,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                     <?php if(has_post_thumbnail()) : ?>
                                         <div class="entry-thumb style1">
                                             <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                                <?php the_post_thumbnail( 'article-list-16', array('title' => get_the_title(), 'alt' => 'img-responsive')); ?>
+                                                <?php ad_mag_lite_the_image( get_the_id(), get_the_title(),  583, 316 ); ?>
                                             </a>
                                             <?php ad_mag_lite_the_first_category(get_the_id()); ?>
                                         </div>
@@ -847,7 +847,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                     <?php if(has_post_thumbnail()) : ?>
                                         <div class="entry-thumb">
                                             <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                                <?php the_post_thumbnail( 'article-list-17', array('title' => get_the_title(), 'alt' => 'img-responsive')); ?>
+                                                <?php ad_mag_lite_the_image( get_the_id(), get_the_title(),  140, 110 ); ?>
                                             </a>
                                         </div>
                                     <?php endif; ?>
@@ -887,7 +887,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                         <?php if(has_post_thumbnail()) : ?>
                                             <div class="entry-thumb">
                                                 <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                                    <?php the_post_thumbnail( 'article-list-18', array('title' => get_the_title(), 'alt' => 'img-responsive')); ?>
+                                                    <?php ad_mag_lite_the_image( get_the_id(), get_the_title(),  343, 246 ); ?>
                                                 </a>
                                                 <a class="thumb-icon style1" href="<?php the_permalink(); ?>"></a>
                                             </div>
@@ -925,7 +925,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                         <?php if(has_post_thumbnail()) : ?>
                                             <div class="entry-thumb">
                                                 <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                                    <?php the_post_thumbnail( 'article-list-19', array('title' => get_the_title(), 'alt' => 'img-responsive')); ?>
+                                                    <?php ad_mag_lite_the_image( get_the_id(), get_the_title(),  363, 230 ); ?>
                                                 </a>
                                                 <a class="thumb-icon style1" href="<?php the_permalink(); ?>"></a>
                                                 <?php ad_mag_lite_video_time(get_the_id()); ?>
@@ -959,7 +959,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                         <?php if(has_post_thumbnail()) : ?>
                                             <div class="entry-thumb">
                                                 <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                                    <?php the_post_thumbnail( 'article-list-20', array('title' => get_the_title(), 'alt' => 'img-responsive')); ?>
+                                                    <?php ad_mag_lite_the_image( get_the_id(), get_the_title(),  171, 121 ); ?>
                                                 </a>
                                                 <a class="thumb-icon style1" href="<?php the_permalink(); ?>"></a>
                                                 <?php ad_mag_lite_video_time(get_the_id()); ?>
@@ -991,7 +991,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                 <?php if(has_post_thumbnail()) : ?>
                                     <div class="entry-thumb">
                                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                            <?php the_post_thumbnail( 'article-list-21', array('title' => get_the_title(), 'alt' => 'img-responsive')); ?>
+                                            <?php ad_mag_lite_the_image( get_the_id(), get_the_title(),  369, 218 ); ?>
                                         </a>
                                         <a class="thumb-icon style1" href="<?php the_permalink(); ?>"></a>
                                     </div>
@@ -1024,7 +1024,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                             <?php if(has_post_thumbnail()) : ?>
                                 <div class="entry-thumb">
                                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                        <?php the_post_thumbnail( 'article-list-22', array('title' => get_the_title(), 'alt' => 'img-responsive')); ?>
+                                        <?php ad_mag_lite_the_image( get_the_id(), get_the_title(),  363, 230 ); ?>
                                     </a>
                                     <a class="thumb-icon style1" href="<?php the_permalink(); ?>"></a>
                                 </div>
@@ -1050,7 +1050,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                 <?php if(has_post_thumbnail()) : ?>
                                     <div class="entry-thumb">
                                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                            <?php the_post_thumbnail( 'article-list-22-2', array('title' => get_the_title(), 'alt' => 'img-responsive')); ?>
+                                            <?php ad_mag_lite_the_image( get_the_id(), get_the_title(),  363, 230 ); ?>
                                         </a>
                                         <a class="thumb-icon style1" href="<?php the_permalink(); ?>"></a>
                                         <?php ad_mag_lite_the_first_category(get_the_id(),'h5-content'); ?>

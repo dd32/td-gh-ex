@@ -31,7 +31,7 @@ if (!function_exists('ad_mag_lite_load_more_blog_3')) {
                         <div class="pd-20">
                             <?php if(has_post_thumbnail()) : ?>
                                 <div class="entry-thumb style1">
-                                <?php the_post_thumbnail( 'blog-2', array('title' => get_the_title(), 'alt' => 'img-responsive')); ?>
+                                <?php ad_mag_lite_the_image( get_the_id(), get_the_title(),  375, 190 ); ?>
                                 <?php ad_mag_lite_the_first_category(get_the_id()); ?>
                                     <a class="thumb-icon style1" href="<?php the_permalink(); ?>"></a>
                                 </div>
@@ -101,7 +101,7 @@ if (!function_exists('ad_mag_lite_load_more_blog_2')) {
                         <div class="pd-20">
                             <?php if(has_post_thumbnail()) : ?>
                                 <div class="entry-thumb style1">
-                                    <?php the_post_thumbnail( 'blog-2', array('title' => get_the_title(), 'alt' => 'img-responsive')); ?>
+                                    <?php ad_mag_lite_the_image( get_the_id(), get_the_title(),  375, 190 ); ?>
                                 <?php ad_mag_lite_the_first_category(get_the_id()); ?>
                                     <a class="thumb-icon style1" href="<?php the_permalink(); ?>"></a>
                                 </div>

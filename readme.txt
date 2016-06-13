@@ -7,12 +7,21 @@ Moreover, with sleekly design, responsiove layout, awesome typography and focus 
 --------------------
 Change log
 --------------------
+
+= 1.0.3 = (11/06/2016)
+	- Fixed display content widget "(AdMag) Comments".
+	- Add_theme_support logo.
+	- Used Aqua Resizer create thumbnail.
+	- fixed some css issues.
+	- Remove tag postformat.
+	- Update screenshot.
+
 = 1.0.2 = (9/06/2016)
 	- Fixed display content single post.
 	- Add option excerpt length for blog.
-	- Add readmore link in blog
+	- Add readmore link in blog.
 	- Remove deprecated tags in style.css
-	- Changed screenshot
+	- Changed screenshot.
 
 = 1.0.1 = (21/01/2016)
 	- Fixed Post Format video does not show video on the single pages. 

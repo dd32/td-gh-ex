@@ -5,10 +5,10 @@ Author: Kopatheme
 Author URI: http://kopatheme.com
 Description: Ad Mag-lite is a professional WordPress blog/magazine theme perfect choice for your personal blog, fashion blog, marketing blog, authority blog or any type of creative blog or simple magazine. It is highly customizable so it can match your personal taste and be quickly converted into a multi-purpose theme as well.
 Moreover, with sleekly design, responsiove layout, awesome typography and focus on readability AD.weekly give your users the best user experience possible. Especiallly, Ad Mag-Lite is guaranteed to increase both the average length of time that your users spend on your site and the average number of pages that they view.
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: one-column, two-columns, three-columns, right-sidebar, custom-header, custom-menu, editor-style, featured-images, microformats, sticky-post, translation-ready
+Tags: one-column, two-columns, three-columns, right-sidebar, custom-header, custom-menu, featured-images, microformats, sticky-post, translation-ready
 Text Domain: ad-mag-lite
 /*----------------------------------------------------------------
 
@@ -141,9 +141,6 @@ ol li ul, ol li ol, ul li ul, ul li ol {
 
 p.reset {
   margin: 0; }
-
-i {
-  font-style: normal; }
 
 cite, em, var, address, dfn {
   font-style: italic; }
@@ -3258,6 +3255,7 @@ address {
 
 #main-content .widget {
   background: #fff;
+  /*padding: 20px;*/
   margin-bottom: 20px;
   border-bottom: 2px solid #d1d1d1; }
 #main-content .widget_categories, #main-content .widget_categories .pd-20,
@@ -3271,7 +3269,8 @@ address {
 #main-content .widget_tag_cloud,
 #main-content .widget_calendar,
 #main-content .widget_search,
-#main-content .widget_text {
+#main-content .widget_text,
+#main-content .kopa-follow-widget{
   padding: 20px; }
 
 .kopa-bg-content {
@@ -6236,3 +6235,5 @@ address {
     float: none; }
   .article-list-17 .pd-20 .entry-item .entry-content {
     overflow: visible; } }
+
+
