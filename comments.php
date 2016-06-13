@@ -7,7 +7,7 @@ if ( post_password_required() )
 	<?php if ( have_comments() ) : ?>
 		<h2 class = "comments-title">
 			<?php
-				printf( _n( '1 Comment on "%2$s"', '%1$s Comments on "%2$s"', get_comments_number(), 'silverquantum' ),
+				printf( _n( '1 Comment on "%2$s"', '%1$s Comments on "%2$s"', get_comments_number(), 'silver-quantum' ),
 					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
 			?>
 		</h2>
@@ -17,11 +17,11 @@ if ( post_password_required() )
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 		
 		<nav id="comment-nav-below" class="navigation" role="navigation">
-			<h1 class="assistive-text section-heading"><?php _e( 'Comment navigation', 'silverquantum' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'silverquantum' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'silverquantum' ) ); ?></div>
+			<h1 class="assistive-text section-heading"><?php _e( 'Comment navigation', 'silver-quantum' ); ?></h1>
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'silver-quantum' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'silver-quantum' ) ); ?></div>
 		</nav>
 		<?php endif; ?>
 	<?php endif; ?>
 </div>
-<?php comment_form(); ?>
+<?php comment_form(); 

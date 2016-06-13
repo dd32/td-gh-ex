@@ -9,7 +9,7 @@
 					<?php comments_popup_link('Add Comment','1 Comment','% Comments'); ?>
 				<?php else : ?>
 					<?php if (!comments_open() && get_comments_number() )?>
-						<?php _e('Comments Closed', 'silverquantum'); ?>
+						<?php _e('Comments Closed', 'silver-quantum'); ?>
 				<?php endif; ?> | 
 			<?php edit_post_link(); ?>
 			</small>
@@ -19,6 +19,6 @@
 	</div>
 	
 	<footer class="entry-meta">
-	<?php edit_post_link( __( 'Edit', 'silverquantum' )); ?>
+	<?php edit_post_link( __( 'Edit', 'silver-quantum' )); ?>
 	</footer>
 </article>
