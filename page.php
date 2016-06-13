@@ -52,7 +52,7 @@ raindrops_debug_navitation( __FILE__ );
             <div class="<?php raindrops_dinamic_class( 'yui-u first', true ); ?>" <?php raindrops_doctype_elements( '', 'role="main"' ); ?>>
 				<?php get_template_part( 'widget', 'sticky' ); ?>
                 <?php
-                if ( have_posts() ) {
+		if ( have_posts() ) {
 
                     while ( have_posts() ) {
 
@@ -61,18 +61,18 @@ raindrops_debug_navitation( __FILE__ );
                         printf( '<!--%1$s-->', $raindrops_document_type );
                         ?>
                         <div class="entry page"><?php raindrops_before_article(); ?>
-							<div  id="post-<?php the_ID(); ?>" class="<?php echo raindrops_article_wrapper_class();?>">
-								
+							<div  id="post-<?php the_ID(); ?>"<?php raindrops_the_article_wrapper_class(); ?>>
+
                             <<?php raindrops_doctype_elements( 'div', 'article' ); ?> <?php raindrops_post_class(); ?>>
 
                             <?php
-                            the_post_thumbnail( 'full', 'class=page-featured-image' );							
-							
+                            the_post_thumbnail( 'full', 'class=page-featured-image' );
+
                             raindrops_entry_title();
 
 							if( 'yes' == raindrops_warehouse('raindrops_show_date_author_in_page') ) {
 								raindrops_posted_on();
-							}								
+							}
                             ?>
                             <div class="entry-content">
                                 <?php
@@ -109,7 +109,7 @@ raindrops_debug_navitation( __FILE__ );
 							</div><?php raindrops_after_article(); ?>
                         </div>
                         <?php
-                    } //endwhile 
+                    } //endwhile
 
                     raindrops_next_prev_links( "nav-below" );
                 } //end have post
@@ -150,7 +150,7 @@ if ( $raindrops_current_column !== 1 || false == $raindrops_current_column ) {
     ?>
     <div class="yui-b">
         <?php
-        //lsidebar start 
+        //lsidebar start
         raindrops_prepend_default_sidebar();
 
         get_sidebar( 'default' );
