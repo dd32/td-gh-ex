@@ -109,3 +109,7 @@ Version 1.6.2
 * Improved main menu in mobile version
 * Improved RTL mode
 * Minor bug fixes
+
+Version 1.6.3
+* Update FontAwesome to 4.6.3v
+* Fixed theme tags
