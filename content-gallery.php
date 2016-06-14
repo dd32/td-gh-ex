@@ -53,12 +53,12 @@ $options = $catchflames_options_settings; ?>
 			<?php endif; ?>
 			<?php the_excerpt(); ?>
 		<?php endif; ?>
-		<?php wp_link_pages( array( 
+		<?php wp_link_pages( array(
 			'before'		=> '<div class="page-link"><span class="pages">' . __( 'Pages:', 'catch-flames' ) . '</span>',
 			'after'			=> '</div>',
 			'link_before' 	=> '<span>',
 			'link_after'   	=> '</span>',
-		) ); 
+		) );
 		?>
 	</div><!-- .entry-content -->
 	<?php endif; ?>

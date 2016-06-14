@@ -9,7 +9,7 @@
 ?>
 
 <div id="sidebar-header-right" class="widget-area sidebar-top clearfix">
-	<aside class="widget widget_search">	
+	<aside class="widget widget_search">
         <?php echo get_search_form(); ?>
     </aside>
 
@@ -17,4 +17,3 @@
     	<?php catchflames_social_networks(); ?>
     </aside>
 </div><!-- #sidebar-header-right -->
-	

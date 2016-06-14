@@ -29,12 +29,12 @@ $options = $catchflames_options_settings; ?>
 
 	<div class="entry-content">
 		<?php the_content(); ?>
-		<?php wp_link_pages( array( 
+		<?php wp_link_pages( array(
 			'before'		=> '<div class="page-link"><span class="pages">' . __( 'Pages:', 'catch-flames' ) . '</span>',
 			'after'			=> '</div>',
 			'link_before' 	=> '<span>',
 			'link_after'   	=> '</span>',
-		) ); 
+		) );
 		?>
 	</div><!-- .entry-content -->
 
@@ -65,7 +65,7 @@ $options = $catchflames_options_settings; ?>
 		?>
 		<?php edit_post_link( __( 'Edit', 'catch-flames' ), '<span class="edit-link">', '</span>' ); ?>
 
-		
+
 	</footer><!-- .entry-meta -->
 </article><!-- #post-<?php the_ID(); ?> -->
 
@@ -84,4 +84,4 @@ $options = $catchflames_options_settings; ?>
 				</div><!-- #author-link	-->
 			</div><!-- #author-description -->
 		</div><!-- #entry-author-info -->
-<?php endif; ?>        
+<?php endif;

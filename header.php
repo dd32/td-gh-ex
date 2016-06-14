@@ -37,114 +37,114 @@
 
 <body <?php body_class(); ?>>
 
-<?php 
-/** 
+<?php
+/**
  * catchflames_before hook
  */
 do_action( 'catchflames_before' ); ?>
 
 <div id="page" class="hfeed site">
 
-	<?php 
-    /** 
+	<?php
+    /**
      * catchflames_before_header hook
      */
     do_action( 'catchflames_before_header' ); ?>
-        
+
 	<header id="branding" role="banner">
-    
-    	<?php 
-		/** 
+
+    	<?php
+		/**
 		 * catchflames_before_headercontent hook
 		 *
 		 * @hooked catchflames_header_topsidebar - 15
 		 */
 		do_action( 'catchflames_before_headercontent' ); ?>
-        
+
     	<div id="header-content" class="clearfix">
-        
+
         	<div class="wrapper">
-            
-				<?php 
-                /** 
+
+				<?php
+                /**
                  * catchflames_headercontent hook
                  *
                  * @hooked catchflames_headerdetails - 20
                  * @hooked catchflames_header_rightsidebar - 30
                  */
                 do_action( 'catchflames_headercontent' ); ?>
-                
+
             </div><!-- .wrapper -->
-            
+
       	</div><!-- #header-content -->
-        
-    	<?php 
-		/** 
+
+    	<?php
+		/**
 		 * catchflames_after_headercontent hook
 		 *
          * @hooked catchflames_header_menu - 10
 		 */
-		do_action( 'catchflames_after_headercontent' ); ?>           
-        
+		do_action( 'catchflames_after_headercontent' ); ?>
+
 	</header><!-- #branding -->
-    
-	<?php 
-    /** 
+
+	<?php
+    /**
      * catchflames_after_header hook
      *
      * @hooked catchflames_featured_header - 10
      * @hooked catchflames_header_menu - 15
      */
      do_action( 'catchflames_after_header' ); ?>
-    
+
     <div id="main-wrapper">
-    
-		<?php 
-        /** 
+
+		<?php
+        /**
          * catchflames_before_main hook
 		 *
-		 * @hooked catchflames_slider_display - 10 if full width image slide is selected		 
+		 * @hooked catchflames_slider_display - 10 if full width image slide is selected
          */
         do_action( 'catchflames_before_main' ); ?>
-    
+
 		<div id="main">
-    
-			<?php 
-            /** 
+
+			<?php
+            /**
              * catchflames_before_main_wrapper hook
              */
             do_action( 'catchflames_before_main_wrapper' ); ?>
-        
+
             <div class="wrapper">
-                
-                <?php 
-                /** 
+
+                <?php
+                /**
                  * catchflames_before_contentsidebarwrap hook
                  */
-                do_action( 'catchflames_before_contentsidebarwrap' ); ?> 
-                
+                do_action( 'catchflames_before_contentsidebarwrap' ); ?>
+
                 <div class="content-sidebar-wrap">
 
-					<?php 
-                    /** 
+					<?php
+                    /**
                      * catchflames_before_primary hook
                      */
                     do_action( 'catchflames_before_primary' ); ?>
-                
+
                     <div id="primary">
-            
-						<?php 
-                        /** 
+
+						<?php
+                        /**
                          * catchflames_before_content hook
                          */
                         do_action( 'catchflames_before_content' ); ?>
-                    
+
 						<div id="content" role="main">
-                    
-							<?php 
-                            /** 
+
+							<?php
+                            /**
                              * catchflames_content hook
                              *
                              * @hooked catchflames_slider_display - 10 if full width image slide is not selected
                              */
-                            do_action( 'catchflames_content' ); ?>
+                            do_action( 'catchflames_content' );

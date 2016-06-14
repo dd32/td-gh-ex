@@ -99,4 +99,4 @@ do_action( 'catchflames_before_secondary' );
 /** 
  * catchflames_after_secondary hook
  */
-do_action( 'catchflames_after_secondary' ); ?>
+do_action( 'catchflames_after_secondary' );

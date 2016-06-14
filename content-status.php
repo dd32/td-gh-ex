@@ -34,12 +34,12 @@ $options = $catchflames_options_settings; ?>
 			<div class="avatar"><?php echo get_avatar( get_the_author_meta( 'ID' ), apply_filters( 'catchflames_status_avatar', '65' ) ); ?></div>
 
 			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'catch-flames' ) ); ?>
-			<?php wp_link_pages( array( 
+			<?php wp_link_pages( array(
                 'before'		=> '<div class="page-link"><span class="pages">' . __( 'Pages:', 'catch-flames' ) . '</span>',
                 'after'			=> '</div>',
                 'link_before' 	=> '<span>',
                 'link_after'   	=> '</span>',
-            ) ); 
+            ) );
             ?>
 		</div><!-- .entry-content -->
 		<?php endif; ?>

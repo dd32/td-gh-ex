@@ -5,7 +5,7 @@ if ( ! function_exists( 'catchflames_available_fonts' ) ) :
  *
  * @since Catch Flames 1.0
  */
-function catchflames_available_fonts() {	
+function catchflames_available_fonts() {
 
 	return array(
 		'arial-black'			=> '"Arial Black", Gadget, sans-serif',
@@ -36,7 +36,7 @@ function catchflames_available_fonts() {
 		'nobile'				=> 'Nobile, sans-serif',
 		'open-sans'				=> '"Open Sans", sans-serif',
 		'oswald'				=> '"Oswald", sans-serif',
-		'palatino'				=> 'Palatino, "Palatino Linotype", "Book Antiqua", serif',	
+		'palatino'				=> 'Palatino, "Palatino Linotype", "Book Antiqua", serif',
 		'patua-one'				=> '"Patua One", sans-serif',
 		'playfair-display'		=> '"Playfair Display", sans-serif',
 		'pt-sans'				=> '"PT Sans", sans-serif',
@@ -49,7 +49,7 @@ function catchflames_available_fonts() {
 		'verdana'				=> 'Verdana, Geneva, sans-serif',
 		'yanone-kaffeesatz' 	=> '"Yanone Kaffeesatz", sans-serif'
 	);
-	
+
 }
 endif;
 
@@ -67,7 +67,7 @@ endif;
 global $catchflames_options_defaults;
 $catchflames_options_defaults = array(
 	'favicon'							=> get_template_directory_uri().'/images/favicon.ico',
- 	'remove_favicon'					=> '1',	
+ 	'remove_favicon'					=> '1',
 	'web_clip'							=> get_template_directory_uri().'/images/apple-touch-icon.png',
  	'remove_web_clip'					=> '1',
 	'featured_logo_header'				=> get_template_directory_uri().'/images/logo.png',
@@ -82,6 +82,15 @@ $catchflames_options_defaults = array(
 	'featured_header_image_url'			=> esc_url( home_url( '/' ) ),
 	'reset_header_image'				=> '2',
 	'color_scheme'						=> 'light',
+	//Promotion Headline Options
+	'promotion_headline_option'         => 'disabled',
+	'promotion_headline_left_width'     => '80',
+	'promotion_headline'                => __( 'Catch Flames is a Responsive WordPress Theme', 'catch-flames' ),
+	'promotion_subheadline'             => __( 'This is promotion headline. You can edit this from Appearance -> Customize -> Theme Options -> Promotion Headline Options', 'catch-flames' ),
+	'promotion_headline_button'         => __( 'Learn More', 'catch-flames' ),
+	'promotion_headline_url'            => esc_url( 'https://catchthemes.com/themes/catch-flames/' ),
+	'promotion_headline_target'         => 1,
+
 	'sidebar_layout'					=> 'three-columns',
 	'content_layout'					=> 'excerpt-border',
 	'reset_sidebar_layout'				=> '2',
@@ -95,6 +104,19 @@ $catchflames_options_defaults = array(
  	'transition_effect'					=> 'fade',
  	'transition_delay'					=> 4,
  	'transition_duration'				=> 1,
+ 	'image_loader'                      => 'true',
+
+ 	//Featured Content Options
+	'featured_content_option'           => 'disabled',
+	'featured_content_layout'           => 'layout-four',
+	'featured_content_position'         => 0,
+	'featured_content_headline'         => '',
+	'featured_content_subheadline'      => '',
+	'featured_content_type'             => 'demo-featured-content',
+	'featured_content_number'           => '4',
+	'featured_content_page'             => array(),
+	'featured_content_show'             => 'excerpt',
+
 	'disable_footer_social'				=> 0,
  	'social_facebook'					=> '',
  	'social_twitter'					=> '',
@@ -249,4 +271,79 @@ function catchflames_slider_types() {
 	);
 
 	return apply_filters( 'catchflames_slider_types', $options );
+}
+
+/**
+ * Returns an array of feature content types registered
+ *
+ * @since Catch Flames 3.0
+ */
+function catchflames_featured_content_types() {
+	$options = array(
+		'demo-featured-content'     => __( 'Demo Featured Content', 'catch-flames' ),
+		'featured-page-content'     => __( 'Featured Page Content', 'catch-flames' ),
+	);
+
+	return apply_filters( 'catchflames_featured_content_types', $options );
+}
+
+/**
+ * Returns an array of featured content enable options
+ *
+ * @since Catch Flames 3.0
+ */
+function catchflames_featured_content_options() {
+	$options = array(
+		'homepage'    => esc_html__( 'Homepage / Frontpage', 'catch-flames' ),
+		'entire-site' => esc_html__( 'Entire Site', 'catch-flames' ),
+		'disabled'    => esc_html__( 'Disabled', 'catch-flames' )
+	);
+
+	return apply_filters( 'catchflames_featured_content_options', $options );
+}
+
+/**
+ * Returns an array of featured content show registered
+ *
+ * @since Catch Flames 3.0
+ */
+function catchflames_featured_content_show() {
+	$options = array(
+		'excerpt'      => __( 'Show Excerpt', 'catch-flames' ),
+		'full-content' => __( 'Show Full Content', 'catch-flames' ),
+		'hide-content' => __( 'Hide Content', 'catch-flames' ),
+	);
+
+	return apply_filters( 'catchflames_featured_content_show', $options );
+}
+
+
+/**
+ * Returns an array of featured content options registered
+ *
+ * @since Catch Flames 3.0
+ */
+function catchflames_featured_content_layout_options() {
+	$options = array(
+		'layout-two'   => esc_html__( '2 columns', 'catch-flames' ),
+		'layout-three' => esc_html__( '3 columns', 'catch-flames' ),
+		'layout-four'  => esc_html__( '4 columns', 'catch-flames' ),
+	);
+
+	return apply_filters( 'catchflames_featured_content_layout_options', $options );
+}
+
+/**
+ * Returns an array of slider image loader types
+ *
+ * @since Catch Flames 3.0
+ */
+function catchflames_image_loader_options() {
+	$options = array(
+		'true' => esc_html__( 'True', 'catch-flames' ),
+		'wait' => esc_html__( 'Wait', 'catch-flames' ),
+		'false'=> esc_html__( 'False', 'catch-flames' ),
+	);
+
+	return apply_filters( 'catchflames_image_loader_options', $options );
 }

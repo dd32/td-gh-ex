@@ -18,7 +18,7 @@ add_action( 'admin_menu', 'catchflames_options_menu' );
  */
 function catchflames_admin_scripts() {
 	//jquery-cookie registered in functions.php
-	wp_enqueue_script( 'catchflames_admin', get_template_directory_uri().'/inc/panel/admin.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable' ) );
+	wp_enqueue_script( 'catchflames_admin', get_template_directory_uri().'/inc/panel/admin.min.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-cookie', 'jquery-ui-sortable', 'jquery-ui-draggable' ) );
 
     wp_enqueue_media();
 
@@ -131,6 +131,7 @@ function catchflames_theme_options_do_page() {
                 <ul class="tabNavigation" id="mainNav">
                     <li><a href="#themeoptions"><?php _e( 'Theme Options', 'catch-flames' );?></a></li>
                     <li><a href="#color-options"><?php _e( 'Color Options', 'catch-flames' );?></a></li>
+                    <li><a href="#contentsettings"><?php _e( 'Featured Content', 'catch-flames' );?></a></li>
                     <li><a href="#slidersettings"><?php _e( 'Featured Slider', 'catch-flames' );?></a></li>
                     <li><a href="#sociallinks"><?php _e( 'Social Links', 'catch-flames' );?></a></li>
                 </ul><!-- .tabsNavigation #mainNav -->
@@ -699,6 +700,167 @@ function catchflames_theme_options_do_page() {
                   	</div><!-- #color-scheme -->
                 </div><!-- #color-options -->
 
+                <div id="contentsettings">
+                        <div id="homepage-featured-content" class="option-container">
+                            <h3 class="option-toggle"><a href="#"><?php _e( 'Featured Content Options', 'catch-flames' ); ?></a></h3>
+                            <div class="option-content inside">
+                                <div class="row">
+                                    <div class="col col-header">
+                                        <?php _e( 'Select Content Type', 'catch-flames' ); ?>
+                                    </div>
+                                    <div class="col col-options">
+                                        <?php
+                                        $featured_content_types = array(
+                                                                    'demo-featured-content' => __( 'Demo Content', 'catch-flames' ),
+                                                                    'featured-page-content' => __( 'Featured Page Content', 'catch-flames' )
+                                                                );
+                                        foreach( $featured_content_types as $key => $value ) : ?>
+                                            <label title="<?php echo $value; ?>">
+                                                <input type="radio" name="catchflames_options[featured_content_type]" id="<?php echo $key; ?>" <?php checked($options['featured_content_type'], $key ); ?> value="<?php echo $key; ?>"  />
+                                                <?php echo $value; ?>
+                                            </label>
+                                        <?php endforeach; ?>
+                                    </div>
+                                </div><!-- .row -->
+
+                                <div class="row">
+                                    <div class="col col-header">
+                                        <?php _e( 'Enable Content', 'catch-flames' ); ?>
+                                    </div>
+                                    <div class="col col-options">
+                                        <label title="<?php _e( 'Homepage', 'catch-flames' ); ?>">
+                                            <input type="radio" name="catchflames_options[featured_content_option]" id="homepage" <?php checked($options['featured_content_option'], 'homepage'); ?> value="homepage"  />
+                                            <?php _e( 'Homepage', 'catch-flames' ); ?>
+                                        </label>
+
+                                        <label title="<?php _e( 'Entire Site', 'catch-flames' ); ?>">
+                                            <input type="radio" name="catchflames_options[featured_content_option]" id="entire-site" <?php checked($options['featured_content_option'], 'entire-site'); ?> value="entire-site"  />
+                                            <?php _e( 'Entire Site', 'catch-flames' ); ?>
+                                        </label>
+
+                                        <label title="<?php _e( 'Disable', 'catch-flames' ); ?>">
+                                            <input type="radio" name="catchflames_options[featured_content_option]" id="disabled" <?php checked($options['featured_content_option'], 'disabled'); ?> value="disabled"  />
+                                            <?php _e( 'Disable', 'catch-flames' ); ?>
+                                        </label>
+                                    </div>
+                                </div><!-- .row -->
+
+                                <div class="row">
+                                    <div class="col col-1">
+                                        <?php _e( 'Headline', 'catch-flames' ); ?>
+                                    </div>
+                                    <div class="col col-2">
+                                        <input type="text" size="65" name="catchflames_options[featured_content_headline]" value="<?php echo esc_attr( $options[ 'featured_content_headline' ] ); ?>" /> <?php _e( 'Leave empty if you want to remove headline', 'catch-flames' ); ?>
+                                    </div>
+                                </div><!-- .row -->
+
+                                <div class="row">
+                                    <div class="col col-1">
+                                        <?php _e( 'Sub Headline', 'catch-flames' ); ?>
+                                    </div>
+                                    <div class="col col-2">
+                                        <input type="text" size="65" name="catchflames_options[featured_content_subheadline]" value="<?php echo esc_attr( $options[ 'featured_content_subheadline' ] ); ?>" /> <?php _e( 'Leave empty if you want to remove headline', 'catch-flames' ); ?>
+                                    </div>
+                                </div><!-- .row -->
+
+                                <div class="row">
+                                    <div class="col col-1">
+                                        <?php _e( 'Number of Featured Content', 'catch-flames' ); ?>
+                                    </div>
+                                    <div class="col col-2">
+                                        <input type="text" size="2" name="catchflames_options[featured_content_number]" value="<?php echo intval( $options[ 'featured_content_number' ] ); ?>" size="2" />
+                                    </div>
+                                </div><!-- .row -->
+
+                                <div class="row">
+                                    <div class="col col-header">
+                                        <?php _e( 'Featured Content Layout', 'catch-flames' ); ?>
+                                    </div>
+                                    <div class="col col-options">
+                                        <label title="layout-two" class="box first">
+                                        <input type="radio" name="catchflames_options[featured_content_layout]" id="layout-two" <?php checked($options['featured_content_layout'], 'layout-two'); ?> value="layout-two"  />
+                                        <?php _e( '2 Columns', 'catch-flames' ); ?>
+                                        </label>
+
+                                        <label title="layout-three" class="box">
+                                        <input type="radio" name="catchflames_options[featured_content_layout]" id="layout-three" <?php checked($options['featured_content_layout'], 'layout-three'); ?> value="layout-three"  />
+                                        <?php _e( '3 Columns', 'catch-flames' ); ?>
+                                        </label>
+
+                                        <label title="layout-four" class="box">
+                                        <input type="radio" name="catchflames_options[featured_content_layout]" id="layout-four" <?php checked($options['featured_content_layout'], 'layout-four'); ?> value="layout-four"  />
+                                        <?php _e( '4 Columns', 'catch-flames' ); ?>
+                                        </label>
+
+                                    </div>
+                                </div><!-- .row -->
+
+                                <div class="row">
+                                    <div class="col col-header">
+                                        <?php _e( 'Display Content', 'catch-flames' ); ?>
+                                    </div>
+                                    <div class="col col-options">
+                                        <label title="excerpt" class="box first">
+                                        <input type="radio" name="catchflames_options[featured_content_show]" id="show-excerpt" <?php checked($options['featured_content_show'], 'excerpt'); ?> value="excerpt"  />
+                                        <?php _e( 'Show Excerpt', 'catch-flames' ); ?>
+                                        </label>
+
+                                        <label title="full-content" class="box">
+                                        <input type="radio" name="catchflames_options[featured_content_show]" id="full-content" <?php checked($options['featured_content_show'], 'full-content'); ?> value="full-content"  />
+                                        <?php _e( 'Show Full Content', 'catch-flames' ); ?>
+                                        </label>
+
+                                        <label title="hide-content" class="box">
+                                        <input type="radio" name="catchflames_options[featured_content_show]" id="hide-content" <?php checked($options['featured_content_show'], 'hide-content'); ?> value="hide-content"  />
+                                        <?php _e( 'Hide Content', 'catch-flames' ); ?>
+                                        </label>
+
+                                    </div>
+                                </div><!-- .row -->
+
+                                <div class="row">
+                                    <input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-flames' ); ?>" />
+                                </div><!-- .row -->
+                            </div><!-- .option-content -->
+                        </div><!-- .option-container -->
+
+                        <div class="option-container page-content">
+                            <h3 class="option-toggle"><a href="#"><?php _e( 'Featured Page Content Options', 'catch-flames' ); ?></a></h3>
+                            <div class="option-content inside">
+                               <?php for ( $i = 1; $i <= $options[ 'featured_content_number' ]; $i++ ): ?>
+                                    <div class="row">
+                                            <div class="col col-1">
+                                                <?php printf( esc_attr__( 'Featured Page Content #%s', 'catch-flames' ), $i ); ?>
+                                            </div>
+                                            <div class="col col-2">
+                                                 <?php
+                                                    $catchflames_name = 'catchflames_options[featured_content_page][' . absint( $i ) . ']';
+                                                    $catchflames_args = array(
+                                                                    'depth'             => 0,
+                                                                    'child_of'          => 0,
+                                                                    'selected'          => ( isset( $options[ 'featured_content_page' ][ $i ] ) && $options[ 'featured_content_page' ][ $i ] > 0 ) ? $options[ 'featured_content_page' ][ $i ] : '',
+                                                                    'echo'              => 1,
+                                                                    'name'              => $catchflames_name,
+                                                                    'id'                => $catchflames_name,
+                                                                    'show_option_none' => '--Select One--',
+                                                                );
+                                                   wp_dropdown_pages( $catchflames_args );
+                                                ?>
+                                                <?php if( isset( $options[ 'featured_content_page' ][ $i ] ) && $options[ 'featured_content_page' ][ $i ] > 0 ) : ?>
+                                                    <a href="<?php bloginfo ( 'url' );?>/wp-admin/post.php?post=<?php if( array_key_exists ( 'featured_content_page', $options ) && array_key_exists ( $i, $options[ 'featured_content_page' ] ) ) echo absint( $options[ 'featured_content_page' ][ $i ] ); ?>&action=edit" class="button" title="<?php esc_attr_e( 'Click Here To Edit', 'catch-flames' ); ?>" target="_blank"><?php _e( 'Click Here To Edit', 'catch-flames' ); ?></a>
+                                                <?php endif; ?>
+                                            </div>
+                                        </div><!-- .row -->
+                                <?php endfor; ?>
+
+                                <div class="row">
+                                    <input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-flames' ); ?>" />
+                                </div><!-- .row -->
+                            </div><!-- .option-content -->
+                        </div><!-- .option-container -->
+
+                </div><!-- #contentsettings -->
+
                 <!-- Option for Slider Options -->
                 <div id="slidersettings">
                 	<div class="option-container">
@@ -792,6 +954,22 @@ function catchflames_theme_options_do_page() {
                                         <span class="description"><?php _e( 'second(s)', 'catch-flames' ); ?></span>
                             	</div>
                           	</div><!-- .row -->
+                            <div class="row">
+                                <div class="col col-1">
+                                    <?php _e( 'Image Loader', 'catch-flames' ); ?>
+                                </div>
+                                <div class="col col-2">
+                                    <select id="catchflames_cycle_style" name="catchflames_options[image_loader]">
+
+                                        <?php $image_loader_options = catchflames_image_loader_options();
+
+                                        foreach ( $image_loader_options as $key => $value) {
+                                            echo '<option value="' . $key .'" '. selected( $key, $options['image_loader'] ) . '>' . $value . '</option>';
+                                        }
+                                    ?>
+                                    </select>
+                                </div>
+                            </div><!-- .row -->
 							<div class="row">
         						<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-flames' ); ?>" />
                           	</div><!-- .row -->
@@ -1114,6 +1292,29 @@ function catchflames_theme_options_validate( $options ) {
         $input_validated[ 'search_display_text' ] = sanitize_text_field( $input[ 'search_display_text' ] );
     }
 
+    // Data validation for Promotion Headline
+    if ( isset( $input['promotion_headline_option'] ) ) {
+        $input_validated[ 'promotion_headline_option' ] = $input[ 'promotion_headline_option' ];
+    }
+    if ( isset( $input['promotion_headline_left_width'] ) ) {
+        $input_validated[ 'promotion_headline_left_width' ] = absint ( $input[ 'promotion_headline_left_width' ] );
+    }
+    if ( isset( $input[ 'promotion_headline' ] ) ) {
+        $input_validated[ 'promotion_headline' ] = wp_kses_post ( $input[ 'promotion_headline' ] );
+    }
+    if ( isset( $input['promotion_subheadline'] ) ) {
+        $input_validated[ 'promotion_subheadline' ] = wp_kses_post ( $input[ 'promotion_subheadline' ] );
+    }
+    if ( isset( $input['promotion_headline_button'] ) ) {
+        $input_validated[ 'promotion_headline_button' ] = sanitize_text_field ( $input[ 'promotion_headline_button' ] );
+    }
+    if ( isset( $input['promotion_headline_url'] ) ) {
+        $input_validated[ 'promotion_headline_url' ] = esc_url_raw ( $input[ 'promotion_headline_url' ] );
+    }
+    if ( isset( $input['promotion_headline_target'] ) ) {
+        $input_validated[ 'promotion_headline_target' ] = $input[ 'promotion_headline_target' ];
+    }
+
 	// Data validation for Fixed Header Top Options
 	if ( isset( $input['enable_header_top'] ) ) {
 		// Our checkbox value is either 0 or 1
@@ -1246,6 +1447,10 @@ function catchflames_theme_options_validate( $options ) {
     if ( isset( $input[ 'transition_duration' ] ) && is_numeric( $input[ 'transition_duration' ] ) ) {
         $input_validated[ 'transition_duration' ] = $input[ 'transition_duration' ];
     }
+    // data validation for transition length
+    if ( isset( $input[ 'image_loader' ] ) ) {
+        $input_validated[ 'image_loader' ] = sanitize_key( $input[ 'image_loader' ] );
+    }
 
 	// data validation for Featured Page and Page Slider
 	if ( isset( $input[ 'featured_slider_page' ] ) ) {
@@ -1298,6 +1503,50 @@ function catchflames_theme_options_validate( $options ) {
 	if ( isset( $input['slider_category'] ) ) {
 		$input_validated[ 'slider_category' ] = $input[ 'slider_category' ];
 	}
+
+    // data validation Content Options
+
+    // data validation for Content Type
+    if( isset( $input[ 'featured_content_type' ] ) ) {
+        $input_validated[ 'featured_content_type' ] = $input[ 'featured_content_type' ];
+    }
+    if( isset( $input[ 'featured_content_headline' ] ) ) {
+        $input_validated[ 'featured_content_headline' ] = $input[ 'featured_content_headline' ];
+    }
+    if( isset( $input[ 'featured_content_subheadline' ] ) ) {
+        $input_validated[ 'featured_content_subheadline' ] = $input[ 'featured_content_subheadline' ];
+    }
+    if( isset( $input[ 'featured_content_layout' ] ) ) {
+        $input_validated[ 'featured_content_layout' ] = $input[ 'featured_content_layout' ];
+    }
+    if( isset( $input[ 'featured_content_show' ] ) ) {
+        $input_validated[ 'featured_content_show' ] = $input[ 'featured_content_show' ];
+    }
+    // data validation for Enable Content
+    if( isset( $input[ 'featured_content_option' ] ) ) {
+        $input_validated[ 'featured_content_option' ] = $input[ 'featured_content_option' ];
+    }
+    // data validation for number of content
+    if ( isset( $input[ 'featured_content_number' ] ) ) {
+        $input_validated[ 'featured_content_number' ] = absint( $input[ 'featured_content_number' ] ) ? $input [ 'featured_content_number' ] : 3;
+    }
+
+    // data validation for featured content position
+    if ( isset( $input[ 'featured_content_position' ] ) ) {
+        $input_validated[ 'featured_content_position' ] = $input[ 'featured_content_position' ];
+    }
+
+    // data validation for Featured Post and Page Content
+    if ( isset( $input[ 'featured_content_page' ] ) ) {
+        $input_validated[ 'featured_content_page' ] = array();
+    }
+    if ( isset( $input[ 'featured_content_number' ] ) )  {
+        for ( $i = 1; $i <= $input [ 'featured_content_number' ]; $i++ ) {
+            if ( !empty( $input[ 'featured_content_page' ][ $i ] ) && intval( $input[ 'featured_content_page' ][ $i ] ) ) {
+                $input_validated[ 'featured_content_page' ][ $i ] = absint($input[ 'featured_content_page' ][ $i ] );
+            }
+        }
+    }
 
 	// data validation for Social Icons
 	if ( isset( $input['disable_footer_social'] ) ) {
@@ -1399,6 +1648,8 @@ function catchflames_themeoption_invalidate_caches(){
 	delete_transient( 'catchflames_social_search' );  // Social links with search  on header
 	delete_transient( 'catchflames_footer_content' ); // Footer content
 	delete_transient( 'catchflames_logo'); // Header logo
+    delete_transient( 'catchflames_featured_content'); // Featured Content
+    delete_transient( 'catchflames_promotion_headline'); // Promotion Headline
 }
 
 /*

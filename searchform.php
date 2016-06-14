@@ -6,7 +6,7 @@
  * @subpackage Catch Flames
  * @since Catch Flames 1.0
  */
- 
+
 global $catchflames_options_settings;
 $options = $catchflames_options_settings;
 

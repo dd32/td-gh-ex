@@ -4,11 +4,11 @@ Theme URI: https://catchthemes.com/themes/catch-flames
 Author: Catch Themes
 Author URI: https://catchthemes.com
 Description: Catch Flames is a Simple, Clean, Lightweight, Box Shaped Full-Width responsive WordPress theme that automatically adapts to the screen's size, ensuring that your content is displayed beautifully no matter what device visitors are using. Catch Flames is wider, bigger and looks luxuriously spacious. It uses Three Columns Layout as its default layout and can be changed to Two Columns or One Column as per your need. This theme can be considered as the successor of our popular theme Catch Box, as it has been further carefully crafted keeping in mind the concerns and adaptation possibilities requested by our existing CatchBox users. Catch Flames is based on HTML5, CSS3 and Catch Themes' very own easy to use Theme Options panel, all of which make it highly customizable and flexible. Put together your beautiful, yet professional website in no time. This theme is compatible with popular plugins such as WPML, qTranslate, mqTranslate, Polulang, WooCommerce, Jetpack, WP-PageNavi, Contact Form 7 and so on. This theme is translation ready and is currently translated in Brazilian Portuguese, French, Spanish and Swedish. Check out Theme Instructions at https://catchthemes.com/theme-instructions/catch-flames/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/catch-flames/
-Version: 2.9
+Version: 3.0
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: catch-flames
-Tags: black, gray, tan, white, dark, light, one-column, two-columns, three-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, front-page-post-form, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, front-page-post-form, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog
 */
 
 /* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
@@ -82,6 +82,8 @@ figure  a {
 .site .genericon,
 #slider-nav .slide-previous:before,
 #slider-nav .slide-next:before,
+#main-slider .cycle-prev:before,
+#main-slider .cycle-next:before,
 #searchform .search-label:before {
 	-webkit-box-sizing: content-box; /* Not needed for modern webkit but still used by Blackberry Browser 7.0; see http://caniuse.com/#search=box-sizing */
 	-moz-box-sizing:    content-box; /* Still needed for Firefox 28; see http://caniuse.com/#search=box-sizing */
@@ -97,6 +99,15 @@ a.genericon:active,
 a.genericon:hover {
 	text-decoration: none;
 }
+
+#main-slider .cycle-prev:before {
+    content: "\f430";
+}
+
+#main-slider .cycle-next:before {
+    content: "\f429";
+}
+
 #searchform .search-label:before {
 	content: "\f400";
 }
@@ -110,7 +121,9 @@ a.genericon:hover {
 	content: "\f429";
 }
 #slider-nav .slide-previous:before,
-#slider-nav .slide-next:before {
+#slider-nav .slide-next:before,
+#main-slider .cycle-prev:before,
+#main-slider .cycle-next:before {
 	display: block;
 	font-size: 40px;
 	line-height: 40px;
@@ -150,7 +163,8 @@ a.genericon:hover {
 	float: left;
 	width: 750px;
 }
-#content {
+#content,
+#featured-content {
 	width: 100%;
 }
 #secondary {
@@ -316,7 +330,7 @@ a.genericon:hover {
 #main,
 #footer-sidebar,
 #main-slider.normal-width,
-.no-sidebar.one-column #main-slider{
+.no-sidebar.one-column #main-slider {
     padding: 20px 0 0;
 }
 .hentry,
@@ -367,7 +381,7 @@ body,
 input,
 textarea {
 	color: #444;
-	font-size: 15px;
+	font-size: 16px;
 	font-weight: 300;
 	line-height: 1.62em;
 	font-family: Arial, Helvetica, sans-serif;
@@ -1203,7 +1217,6 @@ a:hover {
 	-webkit-border-radius: 4px 4px 0 0;
 	border-radius: 4px 4px 0 0;
 }
-
 #content .has-post-thumbnail.image-left .featured-image {
     display: inline;
     float: left;
@@ -1229,15 +1242,12 @@ a:hover {
     display: inline;
     float: right;
 }
-
-
 .two-columns #content .has-post-thumbnail.image-left .featured-image {
 	width: 300px;
 }
 .two-columns #content .has-post-thumbnail.image-left .entry-container {
     width: 390px;
 }
-
 #content .has-post-thumbnail.image-tall .featured-image,
 #content .has-post-thumbnail.image-square .featured-image {
     width: 200px;
@@ -1249,6 +1259,10 @@ a:hover {
 .three-columns #content .has-post-thumbnail.image-tall .entry-container,
 .three-columns #content .has-post-thumbnail.image-square .entry-container {
     width: 380px;
+}
+.three-columns.equal #content .has-post-thumbnail.image-tall .entry-container,
+.three-columns.equal #content .has-post-thumbnail.image-square .entry-container {
+    width: 280px;
 }
 .entry-content,
 .entry-summary {
@@ -1296,7 +1310,6 @@ a:hover {
 	font-weight: bold;
 	margin: 0 0 10px;
 }
-
 .entry-content table,
 .comment-content table {
 	border-top: 1px solid #ccc;
@@ -1341,7 +1354,6 @@ dl.gallery-item {
     float: right;
 	margin: 0 0 2em;
 }
-
 .entry-meta .edit-link a,
 .commentlist .edit-link a {
 	background: #eee;
@@ -1636,6 +1648,7 @@ blockquote.pull {
 #main-slider .slider-image {
 	margin: 0;
 	padding: 0;
+	width: 100%;
 }
 #main-slider img {
 	box-shadow: none;
@@ -1659,17 +1672,17 @@ blockquote.pull {
 }
 #main-slider .entry-header .entry-title {
 	color: #fff;
-	font-size: 24px;
-	font-size: 2.4rem;
+	font-size: 32px;
 	font-weight: bold;
+	padding-bottom: 0;
 }
 #main-slider .entry-header .entry-title a {
     color: #fff;
 	cursor: pointer;
 }
 #main-slider .entry-content {
-    font-size: 16px;
-	font-size: 1.6rem;
+    font-size: 20px;
+    padding-top: 10px;
 }
 #main-slider .more-link {
 	display: none;
@@ -1681,9 +1694,10 @@ blockquote.pull {
     right: 0;
     text-align: center;
     width: 100%;
-	z-index: 20;
+	z-index: 999;
 }
-#controllers a {
+#controllers a,
+#controllers span {
 	display: inline-block;
 	width: 12px;
 	height: 12px;
@@ -1700,36 +1714,49 @@ blockquote.pull {
 	overflow: hidden;
 }
 #controllers a:hover,
-#controllers a.active {
+#controllers a.active,
+#controllers span:hover,
+#controllers span.cycle-pager-active {
 	background-color: #000;
 }
 .slide-previous,
-.slide-next {
+.slide-next,
+#main-slider .cycle-prev,
+#main-slider .cycle-next {
 	top: 50%;
     display: block;
 	margin-top: -24px;
 	opacity: 0;
+	filter: alpha(opacity=0);
     position: absolute;
-    z-index: 40;
+    z-index: 999;
 	-moz-transition: all 0.2s ease-in-out;
 	-webkit-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
 }
-.slide-previous {
+.slide-previous,
+#main-slider .cycle-prev {
 	left: -20px;
 }
-.slide-next {
+.slide-next,
+#main-slider .cycle-next {
 	right: -20px;
 }
-#main-slider:hover .slide-previous {
+#main-slider:hover .slide-previous,
+#main-slider:hover .cycle-prev {
 	left: 20px;
-	opacity: 1;
+    opacity: 1;
+    filter: alpha(opacity=100);
 }
-#main-slider:hover .slide-next {
+#main-slider:hover .slide-next,
+#main-slider:hover .cycle-next {
 	right: 20px;
 	opacity: 1;
+    filter: alpha(opacity=100);
 }
-#slider-nav a {
+#slider-nav a,
+#main-slider .cycle-prev,
+#main-slider .cycle-next {
 	background-color: #000;
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
@@ -1740,9 +1767,6 @@ blockquote.pull {
 }
 #slider-nav a:hover {
 	text-decoration: none;
-}
-#slider-nav span {
-	display: none;
 }
 
 
@@ -2204,6 +2228,125 @@ section.recent-posts .other-recent-posts li:after {
 	display: block;
 	height: 0;
 	visibility: hidden;
+}
+
+/* Featured Content Area */
+#featured-content {
+	background-color: #fff;
+	padding-top: 20px;
+	text-align: center;
+}
+
+#featured-content .wrapper {
+
+}
+
+.featured-heading-wrap {
+    padding: 10px 20px 0;
+}
+
+.featured-content-wrap {
+    clear: both;
+    display: block;
+    overflow: hidden;
+}
+
+.featured-content-wrap .entry-container {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.featured-content-wrap .featured-content-image {
+	display: block;
+	line-height: 0;
+}
+
+.featured-content-wrap .hentry {
+	float: left;
+	margin: 0;
+	padding: 10px;
+}
+
+.featured-content-wrap .entry-title {
+    font-size: 22px;
+    font-weight: normal;
+}
+
+#featured-content.layout-four .hentry {
+	width: 25%;
+}
+
+#featured-content.layout-three .hentry {
+	width: 33.33%;
+}
+
+#featured-content.layout-two .hentry {
+	width: 50%;
+}
+
+#featured-content.layout-four .hentry:nth-child(4n+1),
+#featured-content.layout-three .hentry:nth-child(3n+1),
+#featured-content.layout-two .hentry:nth-child(2n+1) {
+	clear: both;
+}
+
+#featured-content figure a {
+    display: block;
+    line-height: 0;
+}
+
+/* Promotion Headline */
+#promotion-message {
+	background-color: #222;
+	color: #eee;
+}
+
+#promotion-message .entry-title {
+	color: #eee;
+}
+
+#promotion-message p {
+    margin-bottom: 5px;
+}
+
+#promotion-message .left-section {
+    float: left;
+    max-width: 80%;
+    padding: 20px;
+}
+
+#promotion-message .right-section {
+    float: right;
+    max-width: 20%;
+    padding: 20px;
+    text-align: center;
+}
+
+#promotion-message .promotion-button {
+    background-color: #fff;
+    border: 2px solid #eee;
+    border-radius: 5px;
+    color: #000;
+    display: inline-block;
+}
+
+#promotion-message .promotion-button {
+    background-color: #fff;
+	border: 2px solid #eee;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	color: #000;
+	display: inline-block;
+	margin-top: 7px;
+	padding: 10px 25px;
+}
+
+#promotion-message .promotion-button:hover {
+	background-color: #5cb85c;
+	border-color: #398439;
+	color: #fff;
+	text-decoration: none;
 }
 
 
@@ -3089,6 +3232,7 @@ a#scrollup:hover {
 		width: 100%;
 	}
 	.entry-title,
+	.featured-content-wrap .entry-title,
 	.no-sidebar .entry-title {
 		font-size: 21pt;
 	}

@@ -7,7 +7,7 @@
  * @subpackage Catch Flames
  * @since Catch Flames 1.0
  */
- 
+
 
 if ( ! function_exists( 'catchflames_menuitem' ) ) :
 /**
@@ -19,10 +19,10 @@ if ( ! function_exists( 'catchflames_menuitem' ) ) :
  * @since Catch Flames 1.0
  */
 function catchflames_menuitem( $menu_item ) {
-	// convert local URLs in custom menu items	
+	// convert local URLs in custom menu items
 	if ( $menu_item->type == 'custom' && stripos($menu_item->url, get_site_url()) !== false) {
 		$menu_item->url = qtrans_convertURL($menu_item->url);
-	}     
+	}
 		return $menu_item;
 } // catchflames_menuitem
 endif;

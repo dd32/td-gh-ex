@@ -70,4 +70,4 @@
                         
         </div><!-- #sidebar-third-column .widget-area -->
     	
-	<?php endif; ?>			
+	<?php endif;			

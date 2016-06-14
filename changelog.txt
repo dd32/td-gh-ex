@@ -1,5 +1,14 @@
 == Change log ==
 
+Version 3.0
+* Added: Promotion Headline Option
+* Added: Featured Content Option
+* Bug Fixed: Removed white space issue
+* Fixed: Adjusted code with theme check update
+* Removed: double css for mobile mobile in responsive.css file
+* Updated: Instagram and YouTube logo
+* Updated: jquery cycle with jquery cycle2
+
 Version 2.9
 * Added Swedish translation sv_SE.po and sv_SE.mo
 * Updated: Content Width Implementation

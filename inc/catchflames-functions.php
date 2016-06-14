@@ -34,13 +34,38 @@ function catchflames_scripts_method() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	// Register JQuery cycle all and JQuery set up as dependent on Jquery-cycle
-	wp_register_script( 'jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
-
 	// Slider JS load loop
 	if ( ( $enableslider == 'enable-slider-allpage' ) || ( ( is_front_page() || ( is_home() && $page_id != $page_for_posts ) ) && $enableslider == 'enable-slider-homepage' ) ) {
-		wp_enqueue_script( 'catchflames-slider', get_template_directory_uri() . '/js/catchflames.slider.js', array( 'jquery-cycle' ), '1.0', true );
+		wp_register_script( 'jquery.cycle2', get_template_directory_uri() . '/js/jquery.cycle/jquery.cycle2.min.js', array( 'jquery' ), '2.1.5', true );
+
+		/**
+		 * Condition checks for additional slider transition plugins
+		 */
+		// Scroll Vertical transition plugin addition
+		if ( 'scrollVert' ==  $options['transition_effect'] ){
+			wp_enqueue_script( 'jquery.cycle2.scrollVert', get_template_directory_uri() . '/js/jquery.cycle/jquery.cycle2.scrollVert.min.js', array( 'jquery.cycle2' ), '20140128', true );
+		}
+		// Flip transition plugin addition
+		else if ( 'flipHorz' ==  $options['transition_effect'] || 'flipVert' ==  $options['transition_effect'] ){
+			wp_enqueue_script( 'jquery.cycle2.flip', get_template_directory_uri() . '/js/jquery.cycle/jquery.cycle2.flip.min.js', array( 'jquery.cycle2' ), '20140128', true );
+		}
+		// Suffle transition plugin addition
+		else if ( 'tileSlide' ==  $options['transition_effect'] || 'tileBlind' ==  $options['transition_effect'] ){
+			wp_enqueue_script( 'jquery.cycle2.tile', get_template_directory_uri() . '/js/jquery.cycle/jquery.cycle2.tile.min.js', array( 'jquery.cycle2' ), '20140128', true );
+		}
+		// Suffle transition plugin addition
+		else if ( 'shuffle' ==  $options['transition_effect'] ){
+			wp_enqueue_script( 'jquery.cycle2.shuffle', get_template_directory_uri() . '/js/jquery.cycle/jquery.cycle2.shuffle.min.js', array( 'jquery.cycle2' ), '20140128 ', true );
+		}
+		else {
+			wp_enqueue_script( 'jquery.cycle2' );
+		}
 	}
+
+	/*// Slider JS load loop
+	if ( ( $enableslider == 'enable-slider-allpage' ) || ( ( is_front_page() || ( is_home() && $page_id != $page_for_posts ) ) && $enableslider == 'enable-slider-homepage' ) ) {
+		wp_enqueue_script( 'catchflames-slider', get_template_directory_uri() . '/js/catchflames.slider.js', array( 'jquery-cycle' ), '1.0', true );
+	}*/
 
 	//Responsive
 	wp_enqueue_script( 'sidr', get_template_directory_uri() . '/js/jquery.sidr.min.js', array('jquery'), '2.2.1.1', false );
@@ -181,7 +206,7 @@ add_action( 'wp_enqueue_scripts', 'catchflames_enqueue_color_scheme' );
  * @since Catch Flames 1.0
  */
 function catchflames_inline_css() {
-	delete_transient( 'catchflames_inline_css' );
+	//delete_transient( 'catchflames_inline_css' );
 
 	global $catchflames_options_settings, $catchflames_options_defaults;
 	$options = $catchflames_options_settings;
@@ -189,18 +214,37 @@ function catchflames_inline_css() {
 
 	$fonts = catchflames_available_fonts();
 
-	if ( ( !$catchflames_inline_css = get_transient( 'catchflames_inline_css' ) ) && !empty( $options[ 'custom_css' ] ) ) {
-		echo '<!-- refreshing cache -->' . "\n";
-
-		$catchflames_inline_css = '<!-- '.get_bloginfo('name').' inline CSS Styles -->' . "\n";
-		$catchflames_inline_css	.= '<style type="text/css" media="screen">' . "\n";
+	if ( ( !$catchflames_inline_css = get_transient( 'catchflames_inline_css' ) ) ) {
+		/*
+		 * Promotion Headline Widget left and right width
+		 */
+		if( $defaults[ 'promotion_headline_left_width' ] != $options[ 'promotion_headline_left_width' ] ) {
+			$catchflames_inline_css	.= "@media screen and (min-width: 481px) {". "\n";
+			if ( 100 == $options[ 'promotion_headline_left_width' ] ) {
+				$catchflames_inline_css	.=  "#promotion-message .left-section, #promotion-message .right-section { max-width: 100%; width: 100%; }". "\n";
+				$catchflames_inline_css	.=  "#promotion-message .promotion-button { margin-top: 0; }". "\n";
+			}
+			else {
+				$catchflames_inline_css	.=  "#promotion-message .left-section { max-width: ". $options[ 'promotion_headline_left_width' ] ."%; }". "\n";
+				$catchflames_inline_css	.=  "#promotion-message .right-section { max-width: ". absint( 100 - $options[ 'promotion_headline_left_width' ] ) ."%; }". "\n";
+			}
+			$catchflames_inline_css	.= "}". "\n";
+		}
 
 		//Custom CSS Option
 		if( !empty( $options[ 'custom_css' ] ) ) {
 			$catchflames_inline_css	.=  $options['custom_css'] . "\n";
 		}
 
-		$catchflames_inline_css	.= '</style>' . "\n";
+		if ( '' != $catchflames_inline_css ){
+			echo '<!-- refreshing custom css cache -->' . "\n";
+
+			$catchflames_inline_css = '
+				<!-- '.get_bloginfo('name').' inline CSS Styles -->' . "\n" . '
+					<style type="text/css" media="screen">' . "\n" .
+						$catchflames_inline_css . '
+					</style>' . "\n";
+		}
 
 		set_transient( 'catchflames_inline_css', $catchflames_inline_css, 86940 );
 	}
@@ -1042,3 +1086,78 @@ function catchflames_scrollup() {
 
 }
 add_action( 'catchflames_after', 'catchflames_scrollup', 10 );
+
+if ( ! function_exists( 'catchflames_promotion_headline' ) ) :
+/**
+ * Template for Promotion Headline
+ *
+ * To override this in a child theme
+ * simply create your own catchflames_promotion_headline(), and that function will be used instead.
+ *
+ * @uses catchflames_before_main action to add it in the header
+ * @since Catch Flames 3.0
+ */
+function catchflames_promotion_headline() {
+	delete_transient( 'catchflames_promotion_headline' );
+
+	global $post, $wp_query, $catchflames_options_settings;
+   	$options = $catchflames_options_settings;
+
+	// Getting data from Theme Options
+	$display_promotion_headline		= $options[ 'promotion_headline_option' ];
+	$promotion_headline 			= $options[ 'promotion_headline' ];
+	$promotion_subheadline 			= $options[ 'promotion_subheadline' ];
+	$promotion_headline_button 		= $options[ 'promotion_headline_button' ];
+	$promotion_headline_target 		= $options[ 'promotion_headline_target' ];
+
+	//support qTranslate plugin
+	if ( function_exists( 'qtrans_convertURL' ) ) {
+		$promotion_headline_url = qtrans_convertURL($options[ 'promotion_headline_url' ]);
+	}
+	else {
+		$promotion_headline_url = $options[ 'promotion_headline_url' ];
+	}
+
+	// Front page displays in Reading Settings
+	$page_on_front = get_option('page_on_front') ;
+	$page_for_posts = get_option('page_for_posts');
+
+	// Get Page ID outside Loop
+	$page_id = $wp_query->get_queried_object_id();
+
+	if ( $display_promotion_headline == 'entire-site' || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && $display_promotion_headline == 'homepage' ) ) {
+			if ( !$catchflames_promotion_headline = get_transient( 'catchflames_promotion_headline' ) ) {
+				echo '<!-- refreshing cache -->';
+
+				$catchflames_promotion_headline = '<div id="promotion-message"><div class="wrapper"><div class="left-section">';
+
+
+				$catchflames_promotion_headline .= '<h2 class="entry-title promotion-title">' . $promotion_headline . '</h2>';
+
+				$catchflames_promotion_headline .= '<p>' . $promotion_subheadline . '</p>';
+
+
+				$catchflames_promotion_headline .= '</div><!-- .left-section -->';
+
+				if ( !empty ( $promotion_headline_url ) ) {
+					if ( !empty ( $promotion_headline_target ) ) {
+						$headlinetarget = '_blank';
+					}
+					else {
+						$headlinetarget = '_self';
+					}
+
+					$catchflames_promotion_headline .= '<div class="right-section"><a class="promotion-button" href="' . $promotion_headline_url . '" target="' . $headlinetarget . '">' . $promotion_headline_button . '</a></div><!-- .right-section -->';
+				}
+
+				$catchflames_promotion_headline .= '</div><!-- .wrapper --></div><!-- #promotion-message -->';
+
+				set_transient( 'catchflames_promotion_headline', $catchflames_promotion_headline, 86940 );
+			}
+
+			echo $catchflames_promotion_headline;
+	}
+}
+endif; // catchflames_promotion_headline
+
+add_action( 'catchflames_before_main', 'catchflames_promotion_headline', 20 );

@@ -60,6 +60,11 @@ function catchflames_customize_register( $wp_customize ) {
 					'title' 		=> __( 'Search Options', 'catch-flames' ),
 					'description' 	=> '',
 				),
+				'promotion_headline' => array(
+					'id' 				=> 'promotion_headline',
+					'title' 			=> esc_html__( 'Promotion Headline Options', 'catch-flames' ),
+					'description' 		=> '',
+				),
 				'layout_options' => array(
 					'id' 			=> 'layout_options',
 					'title' 		=> __( 'Layout Options', 'catch-flames' ),
@@ -165,6 +170,16 @@ function catchflames_customize_register( $wp_customize ) {
 		}
 	}
 
+	//Add Featured Content Options Section Without a panel
+	$wp_customize->add_section(
+		'catchflames_featured_content',
+		array(
+			'description' => __( 'Featured Content Options', 'catch-flames' ),
+			'priority'    => 199,
+			'title'       => __( 'Featured Content', 'catch-flames' ),
+		)
+	);
+
 	//Add Menu Options Section Without a panel
 	$wp_customize->add_section(
 		'catchflames_menu_options',
@@ -187,6 +202,91 @@ function catchflames_customize_register( $wp_customize ) {
 			'section' 			=> 'menu_options',
 			'default' 			=> $defaults['disable_header_menu'],
 		),
+
+		//Promotion Headline Start
+		'promotion_headline_option' => array(
+			'id' 				=> 'promotion_headline_option',
+			'title' 			=> esc_html__( 'Enable Promotion Headline on', 'catch-flames' ),
+			'description'		=> '',
+			'field_type' 		=> 'select',
+			'sanitize' 			=> 'catchflames_sanitize_select',
+			'panel' 			=> 'theme_options',
+			'section' 			=> 'promotion_headline',
+			'choices'			=> catchflames_featured_content_options(),
+			'default' 			=> $defaults['promotion_headline_option'],
+		),
+
+		'promotion_headline' => array(
+			'id' 				=> 'promotion_headline',
+			'title' 			=> esc_html__( 'Promotion Headline Text', 'catch-flames' ),
+			'description'		=> esc_html__( 'Appropriate Words: 10', 'catch-flames' ),
+			'field_type' 		=> 'text',
+			'sanitize' 			=> 'wp_kses_post',
+			'panel' 			=> 'theme_options',
+			'section' 			=> 'promotion_headline',
+			'default' 			=> $defaults['promotion_headline'],
+		),
+
+		'promotion_subheadline' => array(
+			'id' 				=> 'promotion_subheadline',
+			'title' 			=> esc_html__( 'Promotion Subheadline Text', 'catch-flames' ),
+			'description'	=> __( 'Appropriate Words: 15', 'catch-flames' ),
+			'field_type' 		=> 'textarea',
+			'sanitize' 			=> 'wp_kses_post',
+			'panel' 			=> 'theme_options',
+			'section' 			=> 'promotion_headline',
+			'default' 			=> $defaults['promotion_subheadline'],
+		),
+
+		'promotion_headline_button' => array(
+			'id' 				=> 'promotion_headline_button',
+			'title' 			=> esc_html__( 'Appropriate Words: 3', 'catch-flames' ),
+			'description'		=> esc_html__( 'Promotion Headline Button Text', 'catch-flames' ),
+			'field_type' 		=> 'text',
+			'sanitize' 			=> 'sanitize_text_field',
+			'panel' 			=> 'theme_options',
+			'section' 			=> 'promotion_headline',
+			'default' 			=> $defaults['promotion_headline_button'],
+		),
+
+		'promotion_headline_url' => array(
+			'id' 				=> 'promotion_headline_url',
+			'title' 			=> esc_html__( 'Promotion Headline Link', 'catch-flames' ),
+			'description'		=> '',
+			'field_type' 		=> 'text',
+			'sanitize' 			=> 'esc_url_raw',
+			'panel' 			=> 'theme_options',
+			'section' 			=> 'promotion_headline',
+			'default' 			=> $defaults['promotion_headline_url'],
+		),
+
+		'promotion_headline_target' => array(
+			'id' 				=> 'promotion_headline_target',
+			'title' 			=> esc_html__( 'Check to Open Link in New Window/Tab', 'catch-flames' ),
+			'description'		=> '',
+			'field_type' 		=> 'checkbox',
+			'sanitize' 			=> 'catchflames_sanitize_checkbox',
+			'panel' 			=> 'theme_options',
+			'section' 			=> 'promotion_headline',
+			'default' 			=> $defaults['promotion_headline_target'],
+		),
+
+		'promotion_headline_left_width' => array(
+			'id' 				=> 'promotion_headline_left_width',
+			'title' 			=> esc_html__( 'Promotion Headline Left Section Width', 'catch-flames' ),
+			'description'		=> esc_html__( 'This is promotion headline left section width. Once this is adjusted, the width for promotion headline right section is set automatically. in %', 'catch-flames' ),
+			'field_type' 		=> 'number',
+			'sanitize' 			=> 'catchflames_sanitize_number_range',
+			'panel' 			=> 'theme_options',
+			'section' 			=> 'promotion_headline',
+			'default' 			=> $defaults['promotion_headline_left_width'],
+			'input_attrs' => array(
+		        'min'   => 10,
+		        'max'   => 100,
+		        'style' => 'width: 50px;'
+		        )
+		),
+		//Promotion Headline End
 
 		//Fixed Header Top Options
 		'enable_header_top' => array(
@@ -461,6 +561,18 @@ function catchflames_customize_register( $wp_customize ) {
 						            'step'  => 1,
 						        	)
 		),
+		'image_loader' => array(
+			'id' 				=> 'image_loader',
+			'title' 			=> esc_html__( 'Image Loader', 'catch-flames' ),
+			'description'		=> '<a href="' . esc_url( 'http://jquery.malsup.com/cycle2/demo/loader.php' ) . '" target="_blank">' . esc_html__( 'More Info', 'catch-flames' ) . '</a>' ,
+			'field_type' 		=> 'select',
+			'sanitize' 			=> 'catchflames_sanitize_select',
+			'panel' 			=> 'featured_slider',
+			'section' 			=> 'slider_options',
+			'default' 			=> $defaults['image_loader'],
+			'active_callback'	=> 'catchflames_is_slider_active',
+			'choices'			=> catchflames_image_loader_options(),
+		),
 		'slider_qty' => array(
 			'id' 				=> 'slider_qty',
 			'title' 			=> __( 'Number of Slides', 'catch-flames' ),
@@ -720,6 +832,102 @@ function catchflames_customize_register( $wp_customize ) {
 		),
 	);
 
+	//Merge Featured Content Options to settings parameter
+	$featured_content_options = array(
+		'featured_content_option' => array(
+			'id' 			=> 'featured_content_option',
+			'title' 		=> esc_html__( 'Enable Featured Content on', 'catch-flames' ),
+			'description'	=> '',
+			'field_type' 	=> 'select',
+			'sanitize' 		=> 'catchflames_sanitize_select',
+			'section' 		=> 'featured_content',
+			'default' 		=> $defaults['featured_content_option'],
+			'choices'		=> catchflames_featured_content_options(),
+		),
+		'featured_content_layout' => array(
+			'active_callback' => 'catchflames_is_featured_content_active',
+			'id'              => 'featured_content_layout',
+			'title'           => esc_html__( 'Select Featured Content Layout', 'catch-flames' ),
+			'description'     => '',
+			'field_type'      => 'select',
+			'sanitize'        => 'catchflames_sanitize_select',
+			'section'         => 'featured_content',
+			'default'         => $defaults['featured_content_layout'],
+			'choices'         => catchflames_featured_content_layout_options(),
+		),
+		'featured_content_position' => array(
+			'active_callback' => 'catchflames_is_featured_content_active',
+			'id'              => 'featured_content_position',
+			'title'           => esc_html__( 'Check to Move above Footer', 'catch-flames' ),
+			'description'     => '',
+			'field_type'      => 'checkbox',
+			'sanitize'        => 'catchflames_sanitize_checkbox',
+			'section'         => 'featured_content',
+			'default'         => $defaults['featured_content_position'],
+		),
+		'featured_content_type' => array(
+			'active_callback' => 'catchflames_is_featured_content_active',
+			'id'              => 'featured_content_type',
+			'title'           => esc_html__( 'Select Content Type', 'catch-flames' ),
+			'description'     => '',
+			'field_type'      => 'select',
+			'sanitize'        => 'catchflames_sanitize_select',
+			'section'         => 'featured_content',
+			'default'         => $defaults['featured_content_type'],
+			'choices'         => catchflames_featured_content_types(),
+		),
+		'featured_content_headline' => array(
+			'active_callback' => 'catchflames_is_featured_content_active',
+			'id'              => 'featured_content_headline',
+			'title'           => esc_html__( 'Headline', 'catch-flames' ),
+			'description'     => esc_html__( 'Leave field empty if you want to remove Headline', 'catch-flames' ),
+			'field_type'      => 'text',
+			'sanitize'        => 'wp_kses_post',
+			'section'         => 'featured_content',
+			'default'         => $defaults['featured_content_headline'],
+		),
+		'featured_content_subheadline' => array(
+			'active_callback' => 'catchflames_is_featured_content_active',
+			'id'              => 'featured_content_subheadline',
+			'title'           => esc_html__( 'Sub-headline', 'catch-flames' ),
+			'description'     => esc_html__( 'Leave field empty if you want to remove Sub-headline', 'catch-flames' ),
+			'field_type'      => 'text',
+			'sanitize'        => 'wp_kses_post',
+			'section'         => 'featured_content',
+			'default'         => $defaults['featured_content_subheadline'],
+		),
+		'featured_content_number' => array(
+			'active_callback' => 'catchflames_is_demo_featured_content_inactive',
+			'id'              => 'featured_content_number',
+			'title'           => esc_html__( 'No of Featured Content', 'catch-flames' ),
+			'description'     => esc_html__( 'Save and refresh the page if No. of Featured Content is changed (Max no of Featured Content is 20)', 'catch-flames' ),
+			'field_type'      => 'number',
+			'sanitize'        => 'catchflames_sanitize_number_range',
+			'section'         => 'featured_content',
+			'default'         => $defaults['featured_content_number'],
+			'input_attrs'     => array(
+		        'style' => 'width: 45px;',
+		        'min'   => 0,
+		        'max'   => 20,
+		        'step'  => 1,
+	    	),
+		),
+		'featured_content_show' => array(
+			'active_callback' => 'catchflames_is_demo_featured_content_inactive',
+			'id'              => 'featured_content_show',
+			'title'           => esc_html__( 'Display Content', 'catch-flames' ),
+			'description'     => '',
+			'field_type'      => 'select',
+			'sanitize'        => 'catchflames_sanitize_select',
+			'section'         => 'featured_content',
+			'default'         => $defaults['featured_content_show'],
+			'choices'         => catchflames_featured_content_show(),
+		),
+
+	);
+
+	$settings_parameters = array_merge( $settings_parameters, $featured_content_options);
+
 	//@remove Remove if block when WordPress 4.8 is released
 	if( !function_exists( 'has_site_icon' ) ) {
 		$settings_favicon = array(
@@ -961,6 +1169,30 @@ function catchflames_customize_register( $wp_customize ) {
 				'input_attrs' 		=> array(
 	        		'style' => 'width: 100px;'
 	    		),
+			)
+		);
+	}
+
+	//Add featured page elements with respect to no of featured content
+	for ( $i = 1; $i <= $options[ 'featured_content_number' ]; $i++ ) {
+		$wp_customize->add_setting(
+			// $id
+			$theme_slug . 'options[featured_content_page][' . $i . ']',
+			// parameters array
+			array(
+				'type'				=> 'option',
+				'sanitize_callback'	=> 'catchflames_sanitize_post_id'
+			)
+		);
+
+		$wp_customize->add_control(
+			$theme_slug . 'options[featured_content_page][' . $i . ']',
+			array(
+				'label'           => sprintf( __( 'Featured Page Content #%s', 'catch-flames' ), $i ),
+				'section'         => $theme_slug .'featured_content',
+				'settings'        => $theme_slug . 'options[featured_content_page][' . $i . ']',
+				'type'            => 'dropdown-pages',
+				'active_callback' => 'catchflames_is_featured_page_content_active'
 			)
 		);
 	}

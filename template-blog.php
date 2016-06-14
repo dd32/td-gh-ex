@@ -13,10 +13,10 @@ if ( !defined('ABSPATH')) exit;
 
 get_header(); ?>
 
-			<?php 
+			<?php
 			global $more, $wp_query, $post, $paged;
 			$more = 0;
-				
+
 			if ( get_query_var( 'paged' ) ) {
 				$paged = get_query_var( 'paged' );
 			}
@@ -25,9 +25,9 @@ get_header(); ?>
 			}
 			else {
 				$paged = 1;
-				
+
 			}
-			
+
 			$blog_query = new WP_Query( array( 'post_type' => 'post', 'paged' => $paged ) );
 			$temp_query = $wp_query;
 			$wp_query = null;
@@ -50,9 +50,9 @@ get_header(); ?>
 					?>
 
 				<?php endwhile; ?>
-                
+
                 <?php catchflames_content_nav( 'nav-below' ); ?>
-                
+
 			<?php else : ?>
 
 				<article id="post-0" class="post no-results not-found">
@@ -66,9 +66,9 @@ get_header(); ?>
 					</div><!-- .entry-content -->
 				</article><!-- #post-0 -->
 
-			<?php endif; 
+			<?php endif;
 			$wp_query = $temp_query;
-			wp_reset_postdata(); ?>                
+			wp_reset_postdata(); ?>
 
 			</div><!-- #content -->
 		</div><!-- #primary -->

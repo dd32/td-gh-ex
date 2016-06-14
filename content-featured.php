@@ -20,12 +20,12 @@ global $feature_class;
 
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
-		<?php wp_link_pages( array( 
+		<?php wp_link_pages( array(
 			'before'		=> '<div class="page-link"><span class="pages">' . __( 'Pages:', 'catch-flames' ) . '</span>',
 			'after'			=> '</div>',
 			'link_before' 	=> '<span>',
 			'link_after'   	=> '</span>',
-		) ); 
+		) );
 		?>
 	</div><!-- .entry-content -->
 

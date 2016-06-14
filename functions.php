@@ -139,6 +139,9 @@ function catchflames_setup() {
 	// Load up our Catch Flames Menus
 	require( get_template_directory() . '/inc/catchflames-menus.php' );
 
+	// Load up our Catch Flames Menus
+	require( get_template_directory() . '/inc/catchflames-featured-content.php' );
+
 
 	/**
      * This feature enables Jetpack plugin Infinite Scroll
@@ -175,6 +178,8 @@ function catchflames_setup() {
 	add_image_size( 'featured', 750, 470, true ); // 4:3 Used for featured posts if a large-feature doesn't exist
 
 	add_image_size( 'featured-three', 640, 401, true ); // 1.6 Used for featured posts if a large-feature doesn't exist
+
+	add_image_size( 'featured-content', 350, 263, true ); // used in Featured Content Options Ratio 4:3
 
 	if ( function_exists('catchflames_woocommerce' ) ) {
  		catchflames_woocommerce();
