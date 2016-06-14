@@ -36,6 +36,7 @@ require_once locate_template('/lib/widgets.php');         								// Sidebars an
 require_once locate_template('/lib/comments.php');        								// Custom comments modifications
 require_once locate_template('/lib/authorbox.php');         							// Author box
 require_once locate_template('/lib/custom-woocommerce.php'); 							// Woocommerce functions
+require_once locate_template('/lib/woo-account.php'); 									// Woocommerce functions
 require_once locate_template('/lib/template-actions.php');         					    // Template actions
 
 /*

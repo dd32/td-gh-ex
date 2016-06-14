@@ -75,7 +75,7 @@
 					      	<?php echo category_description(); ?> 
 					      	<?php if (!have_posts()) : ?>
 								<div class="alert">
-								    <?php _e('Sorry, no results were found.', 'virtue'); ?>
+								    <?php _e('Sorry, no results were found.', 'pinnacle'); ?>
 								</div>
 		  						<?php get_search_form(); ?>
 							<?php endif; ?>
@@ -109,8 +109,8 @@
 		                            	pinnacle_wp_pagination();
 		                            } else { ?>     
 			                            <nav id="post-nav" class="pager">
-			                                <div class="previous"><?php next_posts_link(__('&larr; Older posts', 'virtue')); ?></div>
-			                                <div class="next"><?php previous_posts_link(__('Newer posts &rarr;', 'virtue')); ?></div>
+			                                <div class="previous"><?php next_posts_link(__('&larr; Older posts', 'pinnacle')); ?></div>
+			                                <div class="next"><?php previous_posts_link(__('Newer posts &rarr;', 'pinnacle')); ?></div>
 			                            </nav>
 		                           	<?php } 
 		                    endif;

@@ -48,8 +48,8 @@ if ( ! class_exists( 'Redux' ) ) {
         'disable_tracking'     => true,
         'customizer_only'      => true,
         'save_defaults'        => false,
-        'intro_text'           => 'Upgrade to <a href="http://www.kadencethemes.com/product/pinnacle-premium-wordpress-theme/" target="_blank" >Pinnacle Premium!</a> More great features! Over 50 more theme options, premium sliders and carousels, breadcrumbs, custom post types and much much more!',           
-        'footer_credit'        => __('Thank you for using the Virtue Theme by <a href="http://kadencethemes.com/" target="_blank">Kadence Themes</a>.', 'pinnacle'),
+        'intro_text'           => 'Upgrade to <a href="https://www.kadencethemes.com/product/pinnacle-premium-wordpress-theme/" target="_blank" >Pinnacle Premium!</a> More great features! Over 50 more theme options, premium sliders and carousels, breadcrumbs, custom post types and much much more!',           
+        'footer_credit'        => __('Thank you for using the Pinnacle Theme by <a href="https://kadencethemes.com/" target="_blank">Kadence Themes</a>.', 'pinnacle'),
         'hints'                => array(
             'icon'          => 'icon-question',
             'icon_position' => 'right',
@@ -105,7 +105,7 @@ if ( ! class_exists( 'Redux' ) ) {
     'id' => 'site_header',
     'header' => '',
     'desc' => "<div class='redux-info-field'><h3>".__('Welcome to Pinnacle Theme Options', 'pinnacle')."</h3>
-            <p>".__('This theme was developed by', 'pinnacle')." <a href=\"http://kadencethemes.com/\" target=\"_blank\">Kadence Themes</a></p>
+            <p>".__('This theme was developed by', 'pinnacle')." <a href=\"https://kadencethemes.com/\" target=\"_blank\">Kadence Themes</a></p>
             <p>".__('For theme documentation visit', 'pinnacle').": <a href=\"http://docs.kadencethemes.com/pinnacle/\" target=\"_blank\">docs.kadencethemes.com/pinnacle/</a>
             <br />
             ".__('For support please visit', 'pinnacle').": <a href=\"https://wordpress.org/support/theme/pinnacle\" target=\"_blank\">https://wordpress.org/support/theme/pinnacle</a></p></div>",
@@ -2033,7 +2033,7 @@ Redux::setSection( $opt_name, array(
       array(
         'id'        => 'menu_background',
         'type'      => 'background',
-        'output'    => array('.navclass'),
+        'output'    => array('.kad-primary-nav > ul'),
         'customizer' => false,
         'title'     => __('Menu Background', 'pinnacle'),
         ),

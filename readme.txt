@@ -32,6 +32,13 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
+= 1.3.8 | 13th June 2016 = 
+* Update: Theme options.
+* Update: WC 2.6
+* Update: Admin CSS
+* Fix: Notification.
+* Fix: Menu background.
+
 = 1.3.7 | 6th April 2016 = 
 * Add: srcset to products, portfolio.
 * Update: Theme Options. Add info for customizer.
