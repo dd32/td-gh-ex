@@ -12,12 +12,15 @@ that make management of banners and ads a lot easier, especially for ad-supporte
 The theme is ideal for use on a blog, a static website or both. It has an intuitively designed 
 options panel to help customize your site. The theme’s development focuses on user customization 
 and minimizing HTTP requests to help conserve server resource. Asteroid supports RTL Languages,
-custom header images, backgrounds, menus, full-width page templates and more.
+custom header images, backgrounds, menus, full-width page templates, basic schema.org markup and more.
 
 == Credits ==
 JSColor - A lightweight Javascript color-picker maintained by Jan Odvárko.
 
 == CHANGELOG ==
+Version 1.2.1
+	* Added schema.org markup.
+
 Version 1.2.0
 	* Moved editor-style.css to theme root.
 	* Added 'title-tag' support.

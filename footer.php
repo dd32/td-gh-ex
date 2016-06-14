@@ -1,7 +1,7 @@
 <?php do_action('ast_hook_after_main'); ?>
 </div> <!-- #Main End -->
 
-<div id="footer" class="cf">
+<div id="footer" class="cf" <?php asteroid_schema( 'footer' ); ?>>
 	<?php do_action('ast_hook_before_footer'); ?>
 	
 	<div id="footer-area" class="cf">

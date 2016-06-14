@@ -1,25 +1,25 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('blog-view'); ?>>
 
 <div class="entry-header">
-	<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+	<h2 class="entry-title" <?php asteroid_schema( 'entry-title' ); ?>><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 </div>
 
 <?php if ( ( asteroid_option('ast_blog_date') == 1 ) && ( get_post_type() == 'post' ) ) : ?>
-	<div class="entry-date"><a href="<?php the_permalink(); ?>" class="updated"><?php the_time(get_option('date_format')); ?></a></div>
+	<div class="entry-date" <?php asteroid_schema( 'entry-date' ); ?>><a href="<?php the_permalink(); ?>" class="updated"><?php the_time(get_option('date_format')); ?></a></div>
 <?php endif; ?>
 
 <div class="entry-meta-top cf">
 	<?php if ( asteroid_option('ast_blog_author') == 1 ) : ?>
-		<span class="entry-author author vcard">
+		<span class="entry-author author vcard" <?php asteroid_schema( 'entry-author' ); ?>>
 			<?php $asteroid_post_author_url = get_the_author_meta('user_url') != '' ? get_the_author_meta('user_url') : get_author_posts_url( get_the_author_meta('ID') ); ?>
-			<?php _e('Posted by', 'asteroid'); ?>&nbsp;<a class="url fn" href="<?php echo esc_url( $asteroid_post_author_url ); ?>"><?php the_author(); ?></a>
+			<?php _e('Posted by', 'asteroid'); ?>&nbsp;<a class="url fn" href="<?php echo esc_url( $asteroid_post_author_url ); ?>" <?php asteroid_schema( 'author-name' ); ?>><?php the_author(); ?></a>
 		</span>
 	<?php endif; ?>
 
 	<span class="entry-categories"><?php the_category(' '); ?></span>
 </div>
 
-<div class="entry-content cf">
+<div class="entry-content cf" <?php asteroid_schema( 'entry-content' ); ?>>
 
 	<?php if ( ( asteroid_option('ast_post_display_type') == 1 ) && ( (get_post_type() == 'post') || (get_post_type() == 'page') ) ) : ?>
 

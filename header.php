@@ -12,10 +12,10 @@
 		<div id="body-widgets-wrap"><?php dynamic_sidebar('widgets_body'); ?></div>
 	<?php endif ; ?>
 
-<div id="container" class="cf">
+<div id="container" class="cf" <?php asteroid_schema( 'container' ); ?>>
 	<?php do_action('ast_hook_before_container'); ?>
 
-	<div id="header" class="cf">
+	<div id="header" class="cf" <?php asteroid_schema( 'header' ); ?>>
 		<?php do_action('ast_hook_before_header'); ?>
 		<div id="header-info-wrap" class="cf">
 			<?php if ( asteroid_option('ast_header_logo') != '' ) : ?>
@@ -41,7 +41,7 @@
 
 	<?php $menu_style = asteroid_option('ast_menu_style', 'stack'); ?>
 
-	<nav id="nav" class="cf <?php echo $menu_style; ?>">
+	<nav id="nav" class="cf <?php echo $menu_style; ?>" <?php asteroid_schema( 'nav-main' ); ?>>
 		<?php do_action('ast_hook_before_nav'); ?>
 
 		<?php if ( $menu_style == 'drop' ) : ?>

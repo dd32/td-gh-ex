@@ -1,10 +1,10 @@
 ﻿/*
 Theme Name: Asteroid
 Theme URI: http://ronangelo.com/asteroid/
-Description: Asteroid is a simple, clean and responsive theme. It incorporates various widget areas that make management of banners and ads a lot easier, especially for ad-supported sites. The theme is ideal for use on a blog, a static website or both. The theme’s development focuses on user customization and minimizing HTTP requests to help conserve server resource. Asteroid supports RTL Language, custom headers, backgrounds, menus, full-width page templates and more.
+Description: Asteroid is a simple, clean and responsive theme. It incorporates various widget areas that make management of banners and ads a lot easier, especially for ad-supported sites. The theme is ideal for use on a blog, a static website or both. The theme’s development focuses on user customization and minimizing HTTP requests to help conserve server resource. Asteroid supports RTL Language, custom headers, backgrounds, menus, full-width page templates, basic schema.org markup and more.
 Author: ronangelo
 Author URI: http://ronangelo.com/
-Version: 1.2.0
+Version: 1.2.1
 Tags: black, white, gray, two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, custom-background, featured-images, custom-menu, custom-colors, theme-options, threaded-comments, sticky-post, editor-style, full-width-template, threaded-comments, microformats, translation-ready, rtl-language-support
 Text Domain: asteroid
 License: GNU General Public License, Version 3 or later
@@ -142,6 +142,7 @@ li {
 
 address {margin-bottom: 10px;}
 
+.cf:before,
 .cf:after {
     clear: both;
     content: "";

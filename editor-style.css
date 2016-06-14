@@ -1,6 +1,6 @@
 html {background: #EEE;}
 
-body.mceContentBody {
+body.mce-content-body {
     background: #fff;
 	padding: 10px !important;
 	margin: 10px auto;

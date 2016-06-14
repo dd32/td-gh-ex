@@ -1,6 +1,6 @@
 <?php get_header();?>
 
-<div id="content" class="cf">
+<div id="content" class="cf" <?php asteroid_schema( 'content' ); ?>>
 	<?php do_action('ast_hook_before_content'); ?>
 
 	<!-- Widgets: Before Content -->
@@ -8,26 +8,17 @@
 		<div id="widgets-wrap-before-content" class="cf"><?php dynamic_sidebar('widgets_before_content'); ?></div>
 	<?php endif; ?>
 
-	<?php if ( is_category() || is_tag() || is_date() || is_search() ) : ?>
+	<?php if ( is_archive() || is_search() ) : ?>
 		<div class="archive-info">
-			<h4 class="archive-title">
 			<?php
-				if ( is_search() )
-					printf(	__('Search Results for &ndash; &quot;<span>%s</span>&quot;', 'asteroid'), get_search_query() );
-				elseif ( is_day() )
-					printf( __('Date &ndash; <span>%s</span>', 'asteroid'), get_the_date() );
-				elseif ( is_month() )
-					printf( __('Month &ndash; <span>%s</span>', 'asteroid'), get_the_date( 'F Y' ) );
-				elseif ( is_year() )
-					printf( __('Year &ndash; <span>%s</span>', 'asteroid'), get_the_date( 'Y' ) );
-				elseif ( is_category() || is_tag() )
-					echo '<span>' . single_cat_title( '', false ) . '</span>';
-			?>			
-			</h4>
-
-			<?php if ( category_description() != '' ) : ?>
-				<div class="archive-description"><?php echo category_description(); ?></div>
-			<?php endif; ?>
+				if ( is_search() ) {
+					echo '<h4 class="archive-title">' . sprintf(	__('Search Results for &ndash; &quot;<span>%s</span>&quot;', 'asteroid'), get_search_query() ) . '</h4>';
+				}
+				else {
+					the_archive_title( '<h4 class="archive-title">', '</h4>' );
+					the_archive_description( '<div class="archive-description">', '</div>' );
+				}
+			?>
 		</div>
 	<?php endif; ?>
 

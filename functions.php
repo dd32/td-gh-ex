@@ -4,7 +4,7 @@
  * @package Asteroid
  *
  */
-$ast_version = "1.2.0";
+$ast_version = "1.2.1";
 /*-------------------------------------
 	Setup Theme Options
 --------------------------------------*/
@@ -16,6 +16,10 @@ require( get_template_directory() . '/includes/theme-options.php' );
 --------------------------------------*/
 function asteroid_enqueue_styles() {
 	global $ast_version;
+	
+	if ( is_child_theme() )
+		wp_enqueue_style( 'asteroid-parent', get_template_directory_uri() . '/style.css' );
+	
 	wp_enqueue_style( 'asteroid-main', get_stylesheet_uri(), array(), $ast_version );
 
 	if ( asteroid_option('ast_responsive_disable', 0) != 1 )
@@ -343,7 +347,7 @@ function asteroid_tinymce_width() {
 ?>
 <script type="text/javascript">
 jQuery( document ).ready( function() {
-	var editor_width = '.mceContentBody {width: <?php echo $content_width; ?>px;}';
+	var editor_width = '.mce-content-body {width: <?php echo $content_width; ?>px;}';
 	var checkInterval = setInterval(
 		function() {
 			if ( 'undefined' !== typeof( tinyMCE ) ) {
@@ -391,4 +395,113 @@ function asteroid_menu_search_form( $items, $args ) {
 		$items = $items . $sf;
 	}
 	return $items;
+}
+
+/*-------------------------------------
+	Schema.org Markup
+--------------------------------------*/
+function asteroid_schema( $name ) {
+	echo apply_filters( 'asteroid_schema', asteroid_get_schema( $name ) );
+}
+
+function asteroid_get_schema( $name ) {
+
+	$output = '';
+	$itemprop = '';
+	$itemscope = false;
+	$itemtype = '';
+
+	switch ( $name ) {
+
+		case 'container' :
+			$itemscope = true;
+
+			switch ( true ) {
+				case ( is_author() ) :
+					$itemtype = 'ProfilePage';
+					break;
+
+				case ( is_search() ) :
+					$itemtype = 'SearchResultsPage';
+					break;
+
+				default:
+					$itemtype = 'WebPage';
+			}
+			break;
+
+		case 'header' :
+			$itemscope = true;
+			$itemtype = 'WPHeader';
+			break;
+
+		case 'nav-main' :
+			$itemscope = true;
+			$itemtype = 'SiteNavigationElement';
+			break;
+
+		case 'content' :
+			if ( !is_single() ) return;
+			$itemscope = true;
+			$itemtype = 'Blog';
+			break;
+
+		case 'sidebar' :
+			$itemscope = true;
+			$itemtype = 'WPSideBar';
+			break;
+
+		case 'footer' :
+			$itemscope = true;
+			$itemtype = 'WPFooter';
+			break;
+
+		case 'article' :
+			if ( !is_single() ) return;
+			$itemprop = 'blogPost';
+			$itemscope = true;
+			$itemtype = 'BlogPosting';
+			break;
+
+		case 'entry-title' :
+			$itemprop = 'headline';
+			break;
+
+		case 'entry-author' :
+			$itemprop = 'author';
+			$itemscope = true;
+			$itemtype = 'Person';
+			break;
+
+		case 'entry-date' :
+			$itemprop = 'datePublished';
+			break;
+
+		case 'entry-content' :
+			$itemprop = 'text';
+			break;
+
+		case 'author-name' :
+			$itemprop = 'name';
+			break;
+
+		case 'entry-updated' :
+			$itemprop = 'dateModified';
+			break;
+	}
+
+
+	if ( $itemprop != '' ) {
+		$output .= 'itemprop="' . $itemprop . '" ';
+	}
+
+	if ( $itemscope == true ) {
+		$output .= 'itemscope ';
+	}
+
+	if ( $itemtype != '' ) {
+		$output .= 'itemtype="http://schema.org/' . $itemtype . '"';
+	}
+
+	return $output;
 }

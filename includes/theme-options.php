@@ -124,7 +124,7 @@ class Asteroid_Theme_Options {
 				<div>&#9679;&nbsp;&nbsp;<a href="' . esc_url( 'http://ronangelo.com/asteroid/' ) . '" target="_blank">Asteroid Theme Page</a></div>
 				<div>&#9679;&nbsp;&nbsp;<a href="' . esc_url( 'http://ronangelo.com/asteroid/theme-documentation/' ) . '" target="_blank">Asteroid Documentation</a></div>
 				<div>&#9679;&nbsp;&nbsp;<a href="' . esc_url( 'http://ronangelo.com/asteroid/theme-changelog/' ) . '" target="_blank">Asteroid Changelog</a></div>
-				<p>Have any questions or suggestions? Post them here on the theme\'s <a href="' . esc_url( 'http://ronangelo.com/theme-forum/' ) . '" target="_blank">support forum</a> or on <a href="' . esc_url( 'http://wordpress.org/support/theme/asteroid/' ) . '" target="_blank">wordpress.org</a></p>
+				<p>Have any questions or suggestions? Post them here on the theme\'s <a href="' . esc_url( 'http://ronangelo.com/forums/' ) . '" target="_blank">support forum</a> or on <a href="' . esc_url( 'http://wordpress.org/support/theme/asteroid/' ) . '" target="_blank">wordpress.org</a></p>
 				<p>Note: Check the theme changelog page linked above before updating to a newer version of the theme.</p>
 			</div>
 		</div>

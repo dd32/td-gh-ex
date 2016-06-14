@@ -1,4 +1,4 @@
-<div id="sidebar" class="cf">
+<div id="sidebar" class="cf" <?php asteroid_schema( 'sidebar' ); ?>>
 	<?php do_action('ast_hook_before_sidebar'); ?>
 	<div id="widgets-wrap-sidebar">
 

@@ -1,7 +1,7 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class('single-view'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class('single-view'); ?> <?php asteroid_schema( 'article' ); ?>>
 
 <div class="entry-header">
-	<h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+	<h1 class="entry-title" <?php asteroid_schema( 'entry-title' ); ?>><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 </div>
 
 <!-- Widgets: Before Post -->
@@ -18,7 +18,7 @@
 		( asteroid_option('ast_single_date') == 3 && is_singular(array( 'post', 'page' )) )
 		) :
 	?>
-		<div class="entry-date"><?php the_date(); ?></div>
+		<div class="entry-date" <?php asteroid_schema( 'entry-date' ); ?>><?php the_date(); ?></div>
 	<?php endif; ?>
 
 	<?php if (
@@ -27,14 +27,14 @@
 		( asteroid_option('ast_single_author') == 3 && is_singular(array( 'post', 'page' )) )
 		) :
 	?>
-		<div class="entry-author author vcard">
+		<div class="entry-author author vcard" <?php asteroid_schema( 'entry-author' ); ?>>
 			<?php $asteroid_post_author_url = get_the_author_meta('user_url') != '' ? get_the_author_meta('user_url') : get_author_posts_url( get_the_author_meta('ID') ); ?>
-			<?php _e('Posted by', 'asteroid'); ?>&nbsp;<a class="url fn" href="<?php echo esc_url( $asteroid_post_author_url ); ?>"><?php the_author(); ?></a>
+			<?php _e('Posted by', 'asteroid'); ?>&nbsp;<a class="url fn" href="<?php echo esc_url( $asteroid_post_author_url ); ?>" <?php asteroid_schema( 'author-name' ); ?>><?php the_author(); ?></a>
 		</div>
 	<?php endif; ?>
 </div>
 
-<div class="entry-content cf">
+<div class="entry-content cf" <?php asteroid_schema( 'entry-content' ); ?>>
 
 	<!-- Widgets: Before Post Content -->
 	<?php if ( ( is_active_sidebar('widgets_before_post_content') ) && is_singular() ) : ?>
@@ -71,7 +71,7 @@
 		( asteroid_option('ast_date_modified') == 3 && is_singular(array( 'post', 'page' )) )
 		) :
 	?>
-		<div class="updated"><?php _e('Updated:', 'asteroid'); ?>&nbsp;<?php the_modified_date(); ?>&nbsp;<?php _e('at', 'asteroid'); ?>&nbsp;<?php the_modified_time(); ?></div>
+		<div class="updated" <?php asteroid_schema( 'entry-updated' ); ?>><?php _e('Updated:', 'asteroid'); ?>&nbsp;<?php the_modified_date(); ?>&nbsp;<?php _e('at', 'asteroid'); ?>&nbsp;<?php the_modified_time(); ?></div>
 	<?php endif; ?>
 
 	<div class="entry-tags"><?php the_tags(); ?></div>
