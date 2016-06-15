@@ -89,6 +89,9 @@ Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.25.9
+* TGMPA Updated with the latest version
+
 Version 1.25.8
 * Logo alignment bug fixed for centered logo in Responsive Layout
 * Responsive bug fixed for the footer
