@@ -104,3 +104,8 @@ Version 1.3.9
 * Updated FontAwesome to 4.6.1v
 * Updated Sticky Sidebar script
 * Minor bug fixes
+
+Version 1.4.0
+* Updated FontAwesome to 4.6.3v
+* Updated Sticky Sidebar script to 1.4.0v
+* Minor bug fixes
