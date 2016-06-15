@@ -33,6 +33,8 @@
 .header-cart a span {
     background-color: #84ad37;
 }
+.woocommerce-account .woocommerce-MyAccount-navigation ul li a:hover,
+.woocommerce-account .woocommerce-MyAccount-navigation ul li.is-active a,
 .star-rating span,
 .woocommerce p.stars,
 .woocommerce p.stars a,
