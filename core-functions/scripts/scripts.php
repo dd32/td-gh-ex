@@ -36,15 +36,4 @@ function becorp_scripts()
 	if ( is_singular() ){ wp_enqueue_script( "comment-reply" );	}
 }
 add_action('wp_enqueue_scripts', 'becorp_scripts');
-add_action('wp_head','head_enqueue_custom_css');
-function head_enqueue_custom_css()
-{
-	$becorp_options=becorp_theme_default_data(); 
-	$custom_css =  get_option( 'becorp_options');
-	if($custom_css['custom_css']!='') {  ?>
-	<style>
-	<?php echo $custom_css['custom_css']; ?>
-	</style>
-	<?php } 
-}
 ?>

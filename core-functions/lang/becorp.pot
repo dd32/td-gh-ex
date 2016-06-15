@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: becorp 1.0\n"
-"POT-Creation-Date: 2016-06-09 00:09+0530\n"
-"PO-Revision-Date: 2016-06-09 00:09+0530\n"
+"POT-Creation-Date: 2016-06-15 13:17+0530\n"
+"PO-Revision-Date: 2016-06-15 13:17+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -53,15 +53,6 @@ msgstr ""
 
 #: asia_breadcrumbs.php:40
 msgid "Archive category"
-msgstr ""
-
-#: category.php:32 content-post.php:25 index-blog.php:62 page.php:26
-#: search.php:35 single.php:24
-msgid ", "
-msgstr ""
-
-#: category.php:37 search.php:40 template-tags.php:224
-msgid "Read More"
 msgstr ""
 
 #: comments.php:11
@@ -120,6 +111,11 @@ msgstr ""
 
 #: comments.php:68
 msgid "Leave a Reply"
+msgstr ""
+
+#: content-post.php:25 index-blog.php:62 page.php:26 search.php:35
+#: single.php:29
+msgid ", "
 msgstr ""
 
 #: core-functions/comment-section/comment-function.php:12
@@ -833,21 +829,25 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: page.php:35 single.php:32
+#: page.php:35 single.php:37
 msgid "Tags : "
 msgstr ""
 
-#: page.php:45 single.php:42
+#: page.php:45 single.php:47
 msgid "About"
 msgstr ""
 
-#: page.php:46 single.php:43
+#: page.php:46 single.php:48
 msgid "View all posts by"
 msgstr ""
 
 #: search.php:13
 #, php-format
 msgid "Search Results for: %s"
+msgstr ""
+
+#: search.php:40 template-tags.php:224
+msgid "Read More"
 msgstr ""
 
 #: search.php:46

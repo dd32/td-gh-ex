@@ -105,11 +105,6 @@ function childcare_header_style() {
 	<?php
 }
 endif;	
-			
-			
-			
-			
-	
 	/*
 	* Add Class Gravtar
 	*/

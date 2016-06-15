@@ -70,6 +70,10 @@ released
 1. Update fonts.
 2. Update blog single link.
 
+@version 2.7
+1. Update index blog slider with default image.
+2. update sidebar.
+
 *****************Licence Copyrights Attribution*******************
 Becorp WordPress Theme, Copyright 2015 asiathemes
 Becorp is distributed under the terms of the GNU GPL

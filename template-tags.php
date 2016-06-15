@@ -249,7 +249,7 @@ function get_service_excerpt(){
 	return $excerpt;
 	}
 	
-	if ( ! function_exists( 'becorp_the_custom_logo' ) ) :
+if ( ! function_exists( 'becorp_the_custom_logo' ) ) :
 
 function becorp_the_custom_logo() {
 	if ( function_exists( 'the_custom_logo' ) ) {
