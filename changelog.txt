@@ -1,5 +1,12 @@
 Changelog
 
+1.39 - 16 June 2016
+Updated FontAwesome Icons Pack to 4.6.3
+Fixed bug with button colors in Firefox
+Fixed bug with some Google Fonts
+Fixed one text-domain in customizer.php
+Added title-tag support and removed wp_title
+
 1.38 - 26 April 2016
 Fixed numeric inputs styling in Customizer.
 

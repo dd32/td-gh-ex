@@ -291,10 +291,13 @@ function moesia_custom_styles($custom) {
 	//Primary
 	$primary_color = esc_html(get_theme_mod( 'primary_color' ));
 	if ( isset($primary_color) && ( $primary_color != '#ff6b53' )) {
-		$custom .= ".post-navigation .nav-previous, .post-navigation .nav-next, .paging-navigation .nav-previous, .paging-navigation .nav-next, .comment-respond input[type=\"submit\"], ::selection { background-color: {$primary_color}; }"."\n";
+		$custom .= ".post-navigation .nav-previous, .post-navigation .nav-next, .paging-navigation .nav-previous, .paging-navigation .nav-next, .comment-respond input[type=\"submit\"] { background-color: {$primary_color}; }"."\n";
 		$custom .= ".main-navigation a:hover, .entry-title a:hover, .entry-meta a:hover, .entry-footer a:hover, .social-widget li a::before, .author-social a, .widget a:hover, blockquote:before { color: {$primary_color}; }"."\n";
-		$custom .= ".panel.widget .widget-title:after, .so-panel.widget .widget-title:after { border-color: {$primary_color}; }"."\n";	
+		$custom .= ".panel.widget .widget-title:after, .so-panel.widget .widget-title:after { border-color: {$primary_color}; }"."\n";
+		$custom .= "::selection { background-color: {$primary_color}; }"."\n";
+		$custom .= "::-moz-selection { background-color: {$primary_color}; }"."\n";
 	}
+	
 	//Site title
 	$site_title = esc_html(get_theme_mod( 'site_title_color' ));
 	if ( isset($site_title) && ( $site_title != '#ffffff' )) {
@@ -348,11 +351,11 @@ function moesia_custom_styles($custom) {
 		
 		if ( $headings_font ) {
 			$font_pieces = explode(":", $headings_font);
-			$custom .= "h1, h2, h3, h4, h5, h6, .main-navigation li, .fact, .all-news, .welcome-button, .call-to-action .employee-position, .post-navigation .nav-previous, .post-navigation .nav-next, .paging-navigation .nav-previous, .paging-navigation .nav-next { font-family: {$font_pieces[0]}; }"."\n";
+			$custom .= "h1, h2, h3, h4, h5, h6, .main-navigation li, .fact, .all-news, .welcome-button, .call-to-action .employee-position, .post-navigation .nav-previous, .post-navigation .nav-next, .paging-navigation .nav-previous, .paging-navigation .nav-next { font-family: ".str_replace('+', ' ', $font_pieces[0]) ."}"."\n";
 		}
 		if ( $body_font ) {
 			$font_pieces = explode(":", $body_font);
-			$custom .= "body { font-family: {$font_pieces[0]}; }"."\n";
+			$custom .= "body { font-family: ".str_replace('+', ' ', $font_pieces[0]) ."}"."\n";
 		}
 	}
 	//H1 size

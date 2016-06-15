@@ -342,7 +342,7 @@ function moesia_customize_register( $wp_customize ) {
         'blog_layout',
         array(
             'type' => 'radio',
-            'label' => __('Layout', 'solon'),
+            'label' => __('Layout', 'moesia'),
             'section' => 'blog_options',
             'choices' => array(
                 'small-images' => 'Small images',
