@@ -76,6 +76,28 @@ if (!function_exists('bazaarlite_customize_panel_function')) {
 			
 			),
 
+			array( 
+
+				"label" => __( "Slideshow height",'bazaar-lite'),
+				"description" => __( "Set the height of slideshow.",'bazaar-lite'),
+				"id" => "wip_slideshow_height",
+				"type" => "text",
+				"section" => "slideshow_settings",
+				"std" => "700px",
+
+			),
+
+			array( 
+
+				"label" => __( "Slideshow mobile height",'bazaar-lite'),
+				"description" => __( "Set the height of slideshow, for mobile devices.",'bazaar-lite'),
+				"id" => "wip_slideshow_mobile_height",
+				"type" => "text",
+				"section" => "slideshow_settings",
+				"std" => "500px",
+
+			),
+
 			/* #1 SLIDE */ 
 
 			array( 

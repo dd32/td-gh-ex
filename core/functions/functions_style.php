@@ -44,6 +44,30 @@ function bazaarlite_css_custom() {
 	
 /* =================== END LOGO STYLE =================== */
 
+/* =================== BEGIN SLIDESHOW =================== */
+
+	/* Desktop height */
+	
+	if ( bazaarlite_setting('wip_slideshow_height')) :
+	
+		echo ".slick-wrapper { max-height:".esc_html(bazaarlite_setting('wip_slideshow_height'))."; } ";  
+		echo ".slick-wrapper .slick-image { height:".esc_html(bazaarlite_setting('wip_slideshow_height'))."; } ";  
+	
+	endif;
+	
+	/* Mobile height */
+	
+	if ( bazaarlite_setting('wip_slideshow_mobile_height')) :
+	
+		echo "@media screen and (min-width : 0px) and (max-width : 992px) {";  
+		echo ".slick-wrapper { max-height:".esc_html(bazaarlite_setting('wip_slideshow_mobile_height'))."; } ";  
+		echo ".slick-wrapper .slick-image { height:".esc_html(bazaarlite_setting('wip_slideshow_mobile_height'))."; } ";  
+		echo "}";  
+	
+	endif;
+	
+/* =================== END SLIDESHOW =================== */
+
 /* =================== BEGIN NAV STYLE =================== */
 	
 	if (bazaarlite_setting('wip_menu_font_size')) :

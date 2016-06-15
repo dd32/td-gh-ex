@@ -1,5 +1,5 @@
 /* ===============================================
-   Woocommerce Header Cart
+   Woocommerce Header cart
    ============================================= */
 
 .header-cart { 
@@ -212,6 +212,72 @@ span.sku_wrapper {
 	border-top:solid 1px #ddd;
 	border-bottom:solid 1px #ddd;
 	padding:15px 0;
+}
+
+/* ===============================================
+   Woocommerce My account page
+   ============================================= */
+
+.woocommerce-account .woocommerce-MyAccount-navigation {
+    float: none;
+    width: 100%;
+	margin-bottom:25px;
+}
+
+.woocommerce-account .woocommerce-MyAccount-navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.woocommerce-account .woocommerce-MyAccount-navigation ul:before {
+    position: absolute;
+    content: " ";
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    border-bottom: 1px solid #d3ced2;
+    z-index: 1;
+}
+
+.woocommerce-account .woocommerce-MyAccount-navigation ul li {
+    border: 1px solid #d3ced2;
+	float:left;
+    position: relative;
+    border-radius: 0;
+    margin: 0 -1px 0 0;
+	padding: 10px;
+	background: #fff;
+    z-index: 2;
+}
+
+.woocommerce-account .woocommerce-MyAccount-navigation ul li.is-active {
+	color: #48c9b0;
+    border-bottom-color: #fff;
+}
+
+.woocommerce-account .woocommerce-MyAccount-navigation ul li a:hover,
+.woocommerce-account .woocommerce-MyAccount-navigation ul li.is-active a {
+	color: #48c9b0;
+}
+
+.woocommerce-account .woocommerce-MyAccount-navigation ul li a {
+	display: inline-block;
+    font-weight: 700;
+    color: #515151;
+    text-decoration: none;
+	cursor:pointer
+}
+
+.woocommerce-account .woocommerce-MyAccount-content {
+    float: none;
+    width: 100%;
+}
+
+.post-article .woocommerce-MyAccount-content header.title {
+	text-align:left
 }
 
 /* ===============================================
@@ -1082,4 +1148,22 @@ body.search .product-content .price,
 	box-shadow: none;
 	-moz-box-shadow: none;
 	-webkit-box-shadow: none;
+}
+
+@media screen and (min-width : 0px) and (max-width : 1024px) {	
+
+	.woocommerce-account .woocommerce-MyAccount-navigation ul:before {
+		border: none;
+	}
+	
+	.woocommerce-account .woocommerce-MyAccount-navigation ul li {
+		float:none;
+		display:block;
+		margin:0 0 5px 0;
+	}
+
+	.woocommerce-account .woocommerce-MyAccount-navigation ul li.is-active {
+		border-bottom-color: #d3ced2;
+	}
+	
 }

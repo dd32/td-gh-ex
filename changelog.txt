@@ -1,5 +1,11 @@
 Bazaar Lite Changelog
 
+- Version 1.2.1 - Released: 15.06.2016
+
+-- Updated : WooCommerce templates.
+-- Added : WooCommerce dashboard layout.
+-- Added : Slideshow height setting.
+
 - Version 1.2.0 - Released: 05.06.2016
 
 -- Fixed : 'More' term between the post thumbnail and the summary.
