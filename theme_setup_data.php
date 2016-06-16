@@ -36,7 +36,7 @@ function theme_setup_data()
 			'home_banner_strip_enabled' => 'on',
 			'home_page_slider_enabled' => 'on',
 			'slider_head_title' =>__('Backend as a Service Plateform for Any App Developer','busi_prof'),//Slide Heading
-			'slider_image'=>  $template_uri .'/Home_Slide.jpg',//Slide Image
+			'slider_image'=>  $template_uri .'home_slide.jpg',//Slide Image
 			'caption_head' =>__('Busiprof With Responsive Design','busi_prof'),//Image Caption Heading
 			'caption_text' =>__('We are a group of passionate designers and developers who really love to create awesome wordPress themes with amazing support and ..','busi_prof'),//Caption detail
 			

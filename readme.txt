@@ -57,6 +57,8 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.7.2
+1. Update Banner Image URL.
 @version 1.7.1
 1. Solved Styling issue.
 @version 1.7

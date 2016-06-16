@@ -57,7 +57,7 @@ function busiprof_sections_settings( $wp_customize ){
 
 		
 		//Slider Setting
-		$wp_customize->add_setting( 'busiprof_theme_options[slider_image]',array('default' => get_template_directory_uri().'/images/default/Home_Slide.jpg','sanitize_callback' => 'esc_url_raw','type' => 'option',
+		$wp_customize->add_setting( 'busiprof_theme_options[slider_image]',array('default' => get_template_directory_uri().'/images/default/home_slide.jpg','sanitize_callback' => 'esc_url_raw','type' => 'option',
 		));
  
 		$wp_customize->add_control(
