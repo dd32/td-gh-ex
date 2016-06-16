@@ -2,7 +2,9 @@ body.rtl {
     direction: rtl;
   unicode-bidi: embed;
 }
-
+body.rtl #kt-skip-link {
+    display: none;
+}
 body.rtl .test-prev {
     left: 10px;
     right: auto;

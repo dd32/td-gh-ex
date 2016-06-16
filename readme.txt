@@ -30,6 +30,9 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 2.7.3 | 16th June 2016 =
+* Update: woo files
+
 = Version 2.7.2 | 9th June 2016 =
 * Update: Docs link for new docs.
 * Update: Theme options.
