@@ -1,5 +1,7 @@
 <div class="bhumi_blog_area ">
 <?php $cpm_theme_options = bhumi_get_options();
+$blog_show_posts         = $cpm_theme_options['blog_show_posts'];
+$blog_category           = ($blog_show_posts == 'catg'?$cpm_theme_options['blog_category']:'');
 if($cpm_theme_options['blog_title'] !='') { ?>
 	<div class="container">
 		<div class="row">
@@ -14,19 +16,21 @@ if($cpm_theme_options['blog_title'] !='') { ?>
 	<div class="container">
 	<div class="row" id="bhumi_blog_section">
 	<?php 	if ( have_posts()) :
+			$tax_query = '';
+		    if (!empty($blog_category) && $blog_category != 'bhumi_default')
+		    {
+		        $tax_query[] =  array(
+		                'taxonomy' => 'category',
+		                'field' => 'slug',
+		                'terms' => $blog_category
+		            );
+		    }
 			$args = array(
 				'post_type' => 'post',
 				'post_status'=>'publish',
 				'posts_per_page' => 6 ,
 				'ignore_sticky_posts' => 1,
-				'tax_query' => array(
-	                  array(
-	                    'taxonomy' => 'category',
-	                    'field'    => 'slug',
-	                    'terms'    => array( 'portfolio-slug','slider-slug','service-slug' ),
-	                    'operator' => 'NOT IN',
-	                  ),
-                ),
+        		'tax_query' => $tax_query,
 				);
 			$post_type_data = new WP_Query( $args );
 			while($post_type_data->have_posts()):

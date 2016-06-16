@@ -43,7 +43,7 @@
 
 				'email_id'                           => '',
 				'phone_no'                           => '',
-				'footer_customizations'              => __(' &#169; 2015 Code Themes', 'bhumi' ),
+				'footer_customizations'              => __(' &#169; 2016 Code Themes', 'bhumi' ),
 				'developed_by_text'                  => __('Theme Developed By', 'bhumi' ),
 				'developed_by_bhumi_text'            => __('Code Themes', 'bhumi' ),
 				'developed_by_link'                  => 'https://codethemes.co/',
@@ -58,6 +58,9 @@
 				//BLOG Settings
 				'show_blog'                          => '1',
 				'blog_title'                         => '',
+				'blog_show_posts'					 => '',
+				'bhumi_latest_show_posts'		     => 'all_posts',
+				'blog_category'						 => '',
 
 			);
 			return apply_filters( 'bhumi_options', $cpm_theme_options );

@@ -24,7 +24,7 @@ class Bhumi_Support_Control extends WP_Customize_Control {
 
               <a class="bhumi_support" target="_blank" href="<?php echo  esc_url('https://codethemes.co/my-tickets/') ?>"><span class="dashicons dashicons-edit"></span><?php echo   __('Create a Ticket', 'bhumi') ?></a>
 
-              <a class="bhumi_support" target="_blank" href="<?php echo  esc_url('https://codethemes.co/product/bhumi/') ?>"><span class="dashicons dashicons-star-filled"></span><?php echo   __('Buy Premium', 'bhumi') ?></a>
+              <a class="bhumi_support" target="_blank" href="<?php echo  esc_url('http://themepalace.com/downloads/bhumi-pro/') ?>"><span class="dashicons dashicons-star-filled"></span><?php echo   __('Buy Premium', 'bhumi') ?></a>
 
               <a class="support-image bhumi_support" target="_blank" href="<?php echo  esc_url('https://codethemes.co/support/#customization_support') ?>"><img src = "<?php echo esc_url(get_template_directory_uri() . '/assets/images/wparmy.png') ?>" /> <?php echo __('Request Customization', 'bhumi'); ?></a>
             </p>

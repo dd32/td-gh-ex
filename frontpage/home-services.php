@@ -1,6 +1,6 @@
 <!-- service section -->
 <?php $cpm_theme_options = bhumi_get_options();
-$service_category_slug = ($cpm_theme_options['service_category'] == 'default'?'':$cpm_theme_options['service_category']);
+$service_category_slug = ($cpm_theme_options['service_category'] == 'bhumi_default'?'':$cpm_theme_options['service_category']);
 
 $bhumi_service_arg = array(
 	'post_type'      => 'post',

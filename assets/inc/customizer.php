@@ -4,20 +4,19 @@ add_action( 'customize_register', 'bhumi_customizer' );
 function bhumi_customizer( $wp_customize ) {
 	wp_enqueue_style('customizer', BHUMI_TEMPLATE_DIR_URI .'/assets/css/customizer.css');
 		$cpm_theme_options = bhumi_get_options();
-	    if(!function_exists('bhumi_get_categories_select')):
-		    function bhumi_get_categories_select() {
-			  $bhumi_cat = get_categories();
-			  $results;
-			  if(!empty($bhumi_cat)):
-				  $count = count($bhumi_cat);
-				  $results['default'] = 'Select Category';
-				  for ($i=0; $i < $count; $i++) {
-				    if (isset($bhumi_cat[$i])){
-				      $results[$bhumi_cat[$i]->slug] = $bhumi_cat[$i]->name;
-				    }
-				  }
-			  endif;
-			  return $results;
+
+		if(!function_exists('bhumi_get_categories_select')):
+			function bhumi_get_categories_select() {
+				$bhumi_cat = get_categories();
+				$results = array();
+
+			if(!empty($bhumi_cat)):
+				$results['bhumi_default'] = 'Select Category';
+				foreach($bhumi_cat as $result){
+					$results[$result->slug] = $result->name;
+				}
+			endif;
+			return $results;
 			}
 		endif;
 
@@ -61,7 +60,7 @@ function bhumi_customizer( $wp_customize ) {
 	        array(
 	            'type' => 'option',
 	            'sanitize_callback' => 'bhumi_sanitize_checkbox',
-	            'default' => 'default',
+	            'default' => 'bhumi_default',
 	        )
 	);
 	$wp_customize->add_control('slider_category',
@@ -164,7 +163,7 @@ function bhumi_customizer( $wp_customize ) {
 	        array(
 	            'type' => 'option',
 	            'sanitize_callback' => 'bhumi_sanitize_checkbox',
-	            'default' => 'default',
+	            'default' => 'bhumi_default',
 	        )
 	);
 	$wp_customize->add_control('service_category',
@@ -223,7 +222,7 @@ function bhumi_customizer( $wp_customize ) {
 	        array(
 	            'type' => 'option',
 	            'sanitize_callback' => 'bhumi_sanitize_checkbox',
-	            'default' => 'default',
+	            'default' => 'bhumi_default',
 	        )
 	);
 	$wp_customize->add_control('portfolio_category',
@@ -258,6 +257,7 @@ function bhumi_customizer( $wp_customize ) {
 		'section'    => 'blog_section',
 		'settings'   => 'bhumi_options[show_blog]'
 	) );
+
 	$wp_customize->add_setting(
 		'bhumi_options[blog_title]',
 		array(
@@ -273,6 +273,44 @@ function bhumi_customizer( $wp_customize ) {
 		'section'    => 'blog_section',
 		'settings'   => 'bhumi_options[blog_title]',
 	) );
+
+	$wp_customize->add_setting(
+		'bhumi_options[blog_show_posts]',
+		array(
+			'type'    => 'option',
+			'default'=>'all_posts',
+			'sanitize_callback'=>'bhumi_sanitize_text',
+			'capability'        => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control( 'bhumi_latest_show_posts', array(
+		'label'        => __( 'Show Blog Section', 'bhumi' ),
+		'type'=>'radio',
+		'section'    => 'blog_section',
+		'settings'   => 'bhumi_options[blog_show_posts]',
+		'choices'	=> array(
+			'all_posts' => esc_html__( 'Show All Posts','bhumi' ),
+			'catg' => esc_html__( 'Show Posts Through Category', 'bhumi' )
+			),
+	) );
+
+	$wp_customize->add_setting('bhumi_options[blog_category]',
+	        array(
+	            'type' => 'option',
+	            'sanitize_callback' => 'bhumi_sanitize_checkbox',
+	            'default' => 'bhumi_default',
+	        )
+	);
+	$wp_customize->add_control('blog_category',
+	        array(
+	            'type'              => 'select',
+	            'section'           => 'blog_section',
+	            'label'             => esc_html__('Select Category','bhumi'),
+	            'choices'           => bhumi_get_categories_select(),
+	            'settings'   => 'bhumi_options[blog_category]',
+	            'active_callback'	=> 'bhumi_blog_category_select'
+	        )
+	);
 
 /* Social options */
 	$wp_customize->add_section('social_section',array(
@@ -485,8 +523,8 @@ function bhumi_customizer( $wp_customize ) {
 		)
 	);
 	$wp_customize->add_control( 'fc_title', array(
-		'label'        => __( 'Footer callout Title', 'bhumi' ),
-		'type'=>'text',
+		'label'        => __( 'Call To Action Description', 'bhumi' ),
+		'type'=>'textarea',
 		'section'    => 'callout_section',
 		'settings'   => 'bhumi_options[fc_title]'
 	) );
@@ -500,7 +538,7 @@ function bhumi_customizer( $wp_customize ) {
 		)
 	);
 	$wp_customize->add_control( 'fc_btn_txt', array(
-		'label'        => __( 'Footer callout Button Text', 'bhumi' ),
+		'label'        => __( 'Call To Action Button Text', 'bhumi' ),
 		'type'=>'text',
 		'section'    => 'callout_section',
 		'settings'   => 'bhumi_options[fc_btn_txt]'
@@ -515,7 +553,7 @@ function bhumi_customizer( $wp_customize ) {
 		)
 	);
 	$wp_customize->add_control( 'fc_btn_link', array(
-		'label'        => __( 'Footer callout Button Link', 'bhumi' ),
+		'label'        => __( 'Call To Action Button Link', 'bhumi' ),
 		'type'=>'text',
 		'section'    => 'callout_section',
 		'settings'   => 'bhumi_options[fc_btn_link]'
@@ -639,4 +677,16 @@ class bhumi_Customize_Misc_Control extends WP_Customize_Control {
         }
     }
 }
+endif;
+
+if(!function_exists('bhumi_blog_category_select')):
+    function bhumi_blog_category_select($control){
+    	$blog_setting = $control->manager->get_setting('bhumi_options[blog_show_posts]')->value();
+        $control_id = $control->id;
+         if ( $control_id == 'blog_category'  && $blog_setting == 'catg' ){
+            return true;
+        }
+
+        return false;
+    }
 endif;

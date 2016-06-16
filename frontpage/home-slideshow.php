@@ -1,6 +1,6 @@
 <!-- Carousel ================================================== -->
 	<?php $cpm_theme_options = bhumi_get_options();
-    $slider_category_slug = ($cpm_theme_options['slider_category'] == 'default'?'':$cpm_theme_options['slider_category']);
+    $slider_category_slug = ($cpm_theme_options['slider_category'] == 'bhumi_default'?'':$cpm_theme_options['slider_category']);
     $bhumi_slider_arg = array(
     'post_type'      => 'post',
     'posts_per_page' => 3,

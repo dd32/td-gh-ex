@@ -1,6 +1,6 @@
 <!-- portfolio section -->
 <?php $cpm_theme_options = bhumi_get_options();
-$portfolio_category_slug = ($cpm_theme_options['portfolio_category'] == 'default'?'':$cpm_theme_options['portfolio_category']);
+$portfolio_category_slug = ($cpm_theme_options['portfolio_category'] == 'bhumi_default'?'':$cpm_theme_options['portfolio_category']);
 $bhumi_portfolio_arg = array(
 	'post_type'      => 'post',
 	'posts_per_page' => 4,
