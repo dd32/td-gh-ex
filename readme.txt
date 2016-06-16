@@ -32,6 +32,10 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
+= 1.3.9 | 16th June 2016 = 
+* Update: Woo template
+* Update: RTL support.
+
 = 1.3.8 | 13th June 2016 = 
 * Update: Theme options.
 * Update: WC 2.6
