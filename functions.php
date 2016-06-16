@@ -27,7 +27,11 @@ function animals_setup() {
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'woocommerce' );
 	add_theme_support( 'title-tag' );
-	add_theme_support( 'custom-logo' );
+	add_theme_support( 'custom-logo', array(
+		'height'      => 150,
+		'width'       => 150,
+		'flex-height' => true,
+	) );
 	add_image_size('animals-homepage-thumb',240,145,true);
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'animals' ),
@@ -110,34 +114,13 @@ function animals_scripts() {
 		wp_enqueue_script( 'animals-nivo-slider', get_template_directory_uri() . '/js/jquery.nivo.slider.js', array('jquery') );
 	}
 	wp_enqueue_script( 'animals-customscripts', get_template_directory_uri() . '/js/custom.js', array('jquery') );
-	wp_enqueue_style( 'animals-font-awesome-style', get_template_directory_uri().'/css/font-awesome.min.css' );
+	wp_enqueue_style( 'animals-font-awesome-style', get_template_directory_uri().'/css/font-awesome.css' );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'animals_scripts' );
 
-
-function animals_pagination() {
-	global $wp_query;
-	$big = 12345678;
-	$page_format = paginate_links( array(
-	    'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-	    'format' => '?paged=%#%',
-	    'current' => max( 1, get_query_var('paged') ),
-	    'total' => $wp_query->max_num_pages,
-	    'type'  => 'array'
-	) );
-	if( is_array($page_format) ) {
-		$paged = ( get_query_var('paged') == 0 ) ? 1 : get_query_var('paged');
-		echo '<div class="pagination"><div><ul>';
-		echo '<li><span>'. $paged . ' of ' . $wp_query->max_num_pages .'</span></li>';
-		foreach ( $page_format as $page ) {
-			echo "<li>$page</li>";
-		}
-		echo '</ul></div></div>';
-	}
-}
 /**
  * Implement the Custom Header feature.
  */
@@ -164,42 +147,8 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 define('animals_pro_theme_url','https://flythemes.net/wordpress-themes/animals-wordpress-theme/');
-define('animals_theme_doc','http://flythemesdemo.net/documentation/animals-doc/');
 define('animals_site_url','https://flythemes.net/');
 
-
-function animals_custom_blogpost_pagination( $wp_query ){
-	$big = 999999999; // need an unlikely integer
-	if ( get_query_var('paged') ) { $pageVar = 'paged'; }
-	elseif ( get_query_var('page') ) { $pageVar = 'page'; }
-	else { $pageVar = 'paged'; }
-	$pagin = paginate_links( array(
-		'base' 			=> str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-		'format' 		=> '?'.$pageVar.'=%#%',
-		'current' 		=> max( 1, get_query_var($pageVar) ),
-		'total' 		=> $wp_query->max_num_pages,
-		'prev_text'		=> '&laquo; Prev',
-		'next_text' 	=> 'Next &raquo;',
-		'type'  => 'array'
-	) ); 
-	if( is_array($pagin) ) {
-		$paged = ( get_query_var('paged') == 0 ) ? 1 : get_query_var('paged');
-		echo '<div class="pagination"><div><ul>';
-		echo '<li><span>'. $paged . ' of ' . $wp_query->max_num_pages .'</span></li>';
-		foreach ( $pagin as $page ) {
-			echo "<li>$page</li>";
-		}
-		echo '</ul></div></div>';
-	} 
-}
-
-// get slug by id
-function animals_get_slug_by_id($id) {
-	$post_data = get_post($id, ARRAY_A);
-	$slug = $post_data['post_name'];
-	return $slug; 
-}
-
 function animals_credit_link(){
-		return __('Animals theme by','animals'). "<a href=".esc_url(animals_site_url)." target='_blank'> Flythemes</a>";
+		return sprintf( esc_html__( 'Animals theme by %1$s.', 'animals' ), '<a href="' .esc_url(animals_site_url) . '" rel="designer">Flythemes</a>' );
 	}

@@ -8,7 +8,7 @@
 <?php if( function_exists('is_woocommerce') && is_woocommerce() ) { ?>
 		</div>
 <?php } ?>
-<div id="sidebar" <?php if( is_page_template('blog-post-left-sidebar.php')){?> style="float:left;"<?php } ?>>
+<div id="sidebar">
     
     <?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
         <aside id="archives" class="widget">

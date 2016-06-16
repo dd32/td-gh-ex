@@ -11,7 +11,7 @@
         <div class="copyright-wrapper">
         	<div class="inner">
             	<div class="copyright">
-                	<p><?php echo esc_attr(get_theme_mod('footer_copy',__('Animals 2016 | All Rights Reserved.','animals'))); ?> <?php echo animals_credit_link(); ?></p>
+                	<p><?php echo bloginfo('name'); ?> <?php echo date('Y'); ?> | <?php _e('All Rights Reserved.','animals' ); ?> <?php echo animals_credit_link(); ?></p>
                 </div><!-- copyright -->
                 <div class="social-content">
                         <div class="social-icons">

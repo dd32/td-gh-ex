@@ -24,18 +24,19 @@
                         	<div class="handler">
                                 <div class="header-inner">
                                     <div class="logo">
-                                        <?php if ( function_exists( 'the_custom_logo' ) ) {
-											the_custom_logo();
-									} else { ?>
-									<a href="<?php echo esc_url(home_url('/')); ?>"><h1><?php esc_attr(bloginfo('name')); ?></h1></a>
-									<p><?php esc_attr(bloginfo('description')); ?></p>
-                                    <?php } ?>
+                                       <?php animals_the_custom_logo(); ?>
+										<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+
+										<?php $description = get_bloginfo( 'description', 'display' );
+										if ( $description || is_customize_preview() ) : ?>
+										<p><?php echo $description; ?></p>
+										<?php endif; ?>
                                     </div><!--logo-->					                  
                                     <div class="toggle">
                                         <a class="toggleMenu" href="#"><?php _e('Menu','animals'); ?></a>
                                     </div> 						
                                     <div class="main-nav">
-                                        <?php wp_nav_menu( array('theme_location'  => 'primary') ); ?>							
+                                        <?php wp_nav_menu( array('theme_location'  => 'primary', 'fallback_cb' => false) ); ?>							
                                     </div>
                                     <div class="clear"></div>			
                                 </div><!--header-inner-->
@@ -44,74 +45,91 @@
 					</div><!--header-->
 		
 		
-<?php if ( is_front_page() ) { ?>
-    <div class="slider-main">
-       <?php
-			$slideimage = '';
-			$slideimage = array(
-					'1'	=>	get_template_directory_uri().'/images/slides/slider1.jpg',
-					'2'	=>  get_template_directory_uri().'/images/slides/slider2.jpg',
-					'3'	=>  get_template_directory_uri().'/images/slides/slider3.jpg',
-			);
-	   
-			$slAr = array();
-			$m = 0;
-			for ($i=1; $i<4; $i++) {
-				if ( get_theme_mod('slide_image'.$i, true) != "" ) {
-					$imgSrc 	= esc_url(get_theme_mod('slide_image'.$i, $slideimage[$i]));
-					$imgTitle	= esc_attr(get_theme_mod('slide_title'.$i, true));
-					$imgDesc	= esc_attr(get_theme_mod('slide_desc'.$i, true));
-					$imglink	= esc_url(get_theme_mod('slide_link'.$i, true));
-					if ( strlen($imgSrc) > 10 ) {
-						$slAr[$m]['image_src'] = esc_url(get_theme_mod('slide_image'.$i, $slideimage[$i]));
-						$slAr[$m]['image_title'] = esc_attr(get_theme_mod('slide_title'.$i, true));
-						$slAr[$m]['image_desc'] = esc_attr(get_theme_mod('slide_desc'.$i, true));
-						$slAr[$m]['image_url'] = esc_url(get_theme_mod('slide_link'.$i, true));
-						$m++;
-					}
-				}
-				
-			}
-			$slideno = array();
-			if( $slAr > 0 ){
-				$n = 0;?>
-                <div id="slider" class="nivoSlider">
-                <?php 
-                foreach( $slAr as $sv ){
-                    $n++; ?><img src="<?php echo esc_url($sv['image_src']); ?>" alt="<?php echo esc_attr($sv['image_title']);?>" title="<?php if ( ($sv['image_title']!='') && ($sv['image_desc']!='')) { echo '#slidecaption'.$n ; } ?>"/><?php
-                    $slideno[] = $n;
+<?php if ( is_front_page() && !is_home() ) { ?>
+	<?php $hideslide = get_theme_mod('hide_slider', '1'); ?>
+		<?php if($hideslide == ''){ ?>
+                <!-- Slider Section -->
+                <?php for($sld=7; $sld<10; $sld++) { ?>
+                	<?php if( get_theme_mod('page-setting'.$sld)) { ?>
+                	<?php $slidequery = new WP_query('page_id='.get_theme_mod('page-setting'.$sld,true)); ?>
+                	<?php while( $slidequery->have_posts() ) : $slidequery->the_post();
+                			$image = wp_get_attachment_url( get_post_thumbnail_id($post->ID));
+                			$img_arr[] = $image;
+               				$id_arr[] = $post->ID;
+                		endwhile;
+                	}
                 }
                 ?>
-                </div><?php
-                foreach( $slideno as $sln ){ ?>
-                    <div id="slidecaption<?php echo $sln; ?>" class="nivo-html-caption">
-                    <div class="top-bar">
-                        <?php if( get_theme_mod('slide_title'.$sln, true) != '' ){ ?>
-                            <h2><?php echo esc_attr(get_theme_mod('slide_title'.$sln, __('Slide Title ','animals').$sln)); ?></h2>
-                        <?php } ?>
-                        <?php if( get_theme_mod('slide_desc'.$sln, true) != '' ){ ?>
-                            <p><?php echo esc_attr(get_theme_mod('slide_desc'.$sln, __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae est at dolor auctor faucibus. Aenean hendrerit lorem eget nisi vulputate, vitae fringilla ligula dignissim. Phasellus feugiat quam efficitur Lorem ipsum dolor sit amet, consectetur adipiscing elit.','animals'))); ?></p>
-                        <?php } ?>
-						<?php if( get_theme_mod('slide_link'.$sln, true) != ''){ ?>
-                        	<a class="read-more" href="<?php echo esc_url(get_theme_mod('slide_link'.$sln,'#')); ?>"><?php _e('Learn More','animals'); ?></a>
-                        <?php } ?>
-                    </div>
-                    </div><?php 
-                } ?>
-                
-                </div>
-                <div class="clear"></div><?php 
-			}
-            ?>
-<?php } ?>
+<?php if(!empty($id_arr)){ ?>
+        <div id="slider" class="nivoSlider">
+            <?php 
+            $i=1;
+            foreach($img_arr as $url){ ?>
+            <?php if(!empty($url)){ ?>
+            <img src="<?php echo $url; ?>" title="#slidecaption<?php echo $i; ?>" />
+            <?php }else{ ?>
+            <img src="<?php echo esc_url( get_template_directory_uri() ) ; ?>/images/slides/default-slide.jpg" title="#slidecaption<?php echo $i; ?>" />
+            <?php } ?>
+            <?php $i++; }  ?>
+        </div>   
+<?php 
+	$i=1;
+		foreach($id_arr as $id){ 
+		$title = get_the_title( $id ); 
+		$post = get_post($id); 
+		$content = apply_filters('the_content', substr(strip_tags($post->post_content), 0, 150)); 
+?>                 
+<div id="slidecaption<?php echo $i; ?>" class="nivo-html-caption">
+    <div class="top-bar">
+    	<h2><?php echo $title; ?></h2>
+    	<?php echo $content; ?>
+    	<a class="read-more" href="<?php the_permalink(); ?>"><?php echo get_theme_mod('slidelink_text',__('Read More','animals')); ?></a>
+    </div>
+</div>      
+    <?php $i++; } ?>       
+     </div>
+<div class="clear"></div>        
+</section>
+<?php } else { ?>
+<div class="slider-wrapper theme-default">
+    <div id="slider" class="nivoSlider">
+    <img src="<?php echo esc_url( get_template_directory_uri() ) ; ?>/images/slides/slider1.jpg" alt="" title="#slidecaption1" />
+    <img src="<?php echo esc_url( get_template_directory_uri() ) ; ?>/images/slides/slider2.jpg" alt="" title="#slidecaption2" />
+    <img src="<?php echo esc_url( get_template_directory_uri() ) ; ?>/images/slides/slider3.jpg" alt="" title="#slidecaption3" />
+    </div>                    
+      <div id="slidecaption1" class="nivo-html-caption">
+        <div class="top-bar">
+                <h2><?php esc_html_e('Welcome to Animals.','animals'); ?></h2>
+                <p><?php esc_html_e('For setup slider go to Appearace >> Customize >> Slider Settings >> Here you can select the pages for slider.','animals'); ?></p>
+        </div>
+        </div>
+        
+        <div id="slidecaption2" class="nivo-html-caption">
+            <div class="top-bar">
+                   <h2><?php esc_html_e('Architecture Animalsy','animals'); ?></h2>
+                <p><?php esc_html_e('For setup slider go to Appearace >> Customize >> Slider Settings >> Here you can select the pages for slider.','animals'); ?></p>
+            </div>
+        </div>
+        
+        <div id="slidecaption3" class="nivo-html-caption">
+            <div class="top-bar">
+                    <h2><?php esc_html_e('Get 24x7 Support.','animals'); ?></h2>
+                <p><?php esc_html_e('For setup slider go to Appearace >> Customize >> Slider Settings >> Here you can select the pages for slider.','animals'); ?></p>
+            </div>
+        </div>
+<div class="clear"></div>
+<!-- Slider Section -->
+<?php } } } ?>
 
 
-		<?php if ( is_front_page() ) { ?>
+		<?php if ( is_front_page() && !is_home() ) { ?>
+        <?php if(get_theme_mod('shpeone_txthd',true) && get_theme_mod('choosetext',true) != '') { ?>
 		<div id="welcome">
         	<div class="wel-shaper"></div>
             	<div class="container">
                     <div class="wel-handler">
                         <div class="welcome-inner">
+                        	<?php if(get_theme_mod('shpeone_txthd',true) != '') { ?>
                             <div class="wel-left">
                             	<?php if( get_theme_mod('shpeone_txthd',true) != ''){ ?>
                             		<h2><?php echo get_theme_mod('shpeone_txthd',__('Welcome to Pets Animals...','animals')); ?></h2>
@@ -120,15 +138,18 @@
                                 <p><?php echo get_theme_mod('shpeone_txt',__('Lorem ipsum dolor sit amo nsec tetuer adipiscing elit','animals')); ?></p>
                                 <?php } ?>
                             </div><!--wel-left-->
-                            
+                            <?php } ?>
+                            <?php if(get_theme_mod('choosetext',true) != '') { ?>
                             <div class="wel-right">
-                            	<?php if( get_theme_mod('shapelink',true) != ''){ echo get_theme_mod('shapelink','<a href="'.esc_url(get_theme_mod('shapelink','#')).'">Choose Pets</a>'); }; ?>
+                            	<a href="<?php echo esc_url(get_theme_mod('shapelink','#')) ;?>"><?php echo esc_attr(get_theme_mod('choosetext','Choose Pets')); ?></a>
                             </div><!--wel-right-->
+                            <?php } ?>
                             <div class="clear"></div>
                         </div><!--welcome-inner-->
                      </div><!--wel-handler-->
                 </div><!--container-->                           
         </div><!--welcome-->
+        <?php } ?>
 		<?php } ?>
 
       <div class="main-container">

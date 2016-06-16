@@ -17,7 +17,7 @@ get_header(); ?>
                 <?php while ( have_posts() ) : the_post(); ?>
                     <?php get_template_part( 'content', 'search' ); ?>
                 <?php endwhile; ?>
-                <?php animals_pagination(); ?>
+                <?php the_posts_pagination(); ?>
             <?php else : ?>
                 <?php get_template_part( 'no-results', 'search' ); ?>
             <?php endif; ?>

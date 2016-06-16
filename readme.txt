@@ -3,11 +3,11 @@
 /*-----------------------------------------------------------------------------------*/
 
 Theme Name      :   Animals
-Theme URI       :   http://www.flythemes.net/wordpress-themes/animals-wordpress-theme/
-Version         :   1.1
+Theme URI       :   https://www.flythemes.net/wordpress-themes/animals-wordpress-theme/
+Version         :   1.2
 Tested up to    :   WP 4.5.2
 Author          :   Flythemes
-Author URI      :   http://www.flythemes.net/
+Author URI      :   https://www.flythemes.net/
 
 license         :   GNU General Public License v3.0
 License URI     :   http://www.gnu.org/licenses/gpl.html
@@ -34,7 +34,19 @@ Theme is Built using the following resource bundles.
 3 - Slider Images
 		https://pixabay.com/en/retriever-canine-pet-animal-white-348572/
 		https://pixabay.com/en/dog-backyard-canine-pet-animal-932447/
-		https://pixabay.com/en/labrador-retriever-dog-head-canine-932738/	
+		https://pixabay.com/en/labrador-retriever-dog-head-canine-932738/
+
+4 - Font Awesome
+		Font:
+		==============
+		License: SIL OFL 1.1
+		URL: http://scripts.sil.org/OFL
+
+		Code:
+		==============
+		License: MIT License
+		URL: http://opensource.org/licenses/mit-license.html
+	
 
 All the slider images taken from pixabay under Creative Commons Deed CC0 - https://pixabay.com/en/service/terms/
 

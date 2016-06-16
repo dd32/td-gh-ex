@@ -1,15 +1,15 @@
 /*
 Theme Name: Animals
-Theme URI: http://flythemes.net/wordpress-themes/animals-wordpress-theme/
+Theme URI: https://flythemes.net/wordpress-themes/animals-free-wordpress-theme/
 Author: Flythemes
-Author URI: http://flythemes.net
+Author URI: https://flythemes.net
 Description: Animals theme is well designed and coded with the WordPress standards and best use for theme is pet shop, pet care and related to all kinds of pet services industries. This theme has a nice layout also useful for the nature, holiday, business, restaurant, corporate, entertainment, consultancy, health and other industries. This theme is compatible with the latest version of WordPress and plugins like woocommerce, jetpack, contact form 7 etc. This theme is fully responsive and working well with all the resolutions.  Check demo at: http://flythemesdemo.net/animals
 
-Version: 1.1
+Version: 1.2
 License: GNU General Public License
 License URI: license.txt
 Text Domain: animals
-Tags: gray, black, dark, one-column, two-columns, right-sidebar, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
+Tags: one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
 
 Animals WordPress Theme has been created by Flythemes(flythemes.net), 2016.
 Animals WordPress Theme is released under the terms of GNU GPL
@@ -137,11 +137,9 @@ strong.doller { font-size:30px;}
 .error_msg{padding:10px; background:#ffd3ce; color:#e00; border:1px #e00 solid; margin:15px 0;}
 .success_msg{padding:10px; background:#dcffc5; color:#070; border:1px #070 solid; margin:15px 0;}
 .spacer20{height:20px; clear:both;}
-.pagination{display:table; clear:both;}
-.pagination ul{list-style:none; margin:20px 0;}
-.pagination ul li{display:inline; float:left; margin-right:5px;}
-.pagination ul li span, .pagination ul li a{background:#191e1e; color:#fff; padding:5px 10px; display:inline-block;}
-.pagination ul li .current, .pagination ul li a:hover{background:#fc9530;}
+.nav-links{display:table; clear:both; margin-top:15px;}
+.nav-links a, .nav-links .page-numbers{background:#2e2e2e; color:#fff; padding:5px 10px; display:inline-block;}
+.nav-links .current, .nav-links a:hover{background:#fc9530;}
 h1.entry-title, h1.page-title{padding-bottom:20px; font-size:30px; /*text-transform:uppercase;*/}
 h2.entry-title { font-size:25px;}
 article.tag-sticky-2{background:#ffffff; padding:10px;}

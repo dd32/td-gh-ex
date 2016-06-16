@@ -12,20 +12,14 @@
  */
 function animals_customize_register( $wp_customize ) {
 
-function animals_format_for_editor( $text, $default_editor = null ) {
-    if ( $text ) {
-        $text = htmlspecialchars( $text, ENT_NOQUOTES, get_option( 'blog_charset' ) );
+function animals_sanitize_checkbox( $input ) {
+    if ( $input == 1 ) {
+        return 1;
+    } else {
+        return '';
     }
- 
-    /**
-     * Filter the text after it is formatted for the editor.
-     *
-     * @since 4.3.0
-     *
-     * @param string $text The formatted text.
-     */
-    return apply_filters( 'animals_format_for_editor', $text, $default_editor );
 }
+
 
 //Add a class for titles
     class Animals_Info extends WP_Customize_Control {
@@ -40,9 +34,7 @@ function animals_format_for_editor( $text, $default_editor = null ) {
 	
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	
-	$wp_customize->remove_control('header_textcolor');
-	
+		
 	$wp_customize->add_setting('color_scheme', array(
 		'default' => '#fc9530',
 		'sanitize_callback'	=> 'sanitize_hex_color',
@@ -156,6 +148,19 @@ function animals_format_for_editor( $text, $default_editor = null ) {
 		)
 	);
 	
+	$wp_customize->add_setting('choosetext',array(
+		'default'	=> 'Choose Pets',
+		'sanitize_callback'	=> 'sanitize_text_field',
+	));
+	
+	$wp_customize->add_control('choosetext',array(
+				'label' => __('Right shape text.','animals'),
+				'section' => 'belowsld_section',
+				'setting'	=> 'choosetext',
+				'type'	=> 'text'
+		)
+	);
+	
 	$wp_customize->add_setting('shapelink',array(
 		'default'	=> '#',
 		'sanitize_callback'	=> 'esc_url_raw',
@@ -169,211 +174,79 @@ function animals_format_for_editor( $text, $default_editor = null ) {
 		)
 	);
 	
-	// Slide Image 1
-	
-	$wp_customize->add_section('slider_section',array(
-		'title'	=> __('Slider Settings','animals'),
-		'description'	=> __('Add slider images here.','animals'),
-		'priority'		=> null
-	));
-	
-	// Slide Image 1
-	$wp_customize->add_setting('slide_image1',array(
-		'default'	=> get_template_directory_uri().'/images/slides/slider1.jpg',
-		'sanitize_callback'	=> 'esc_url_raw',
-	));
-	
-	$wp_customize->add_control(
-    new WP_Customize_Image_Control(
-        $wp_customize,
-        'slide_image1',
+	// Slider Section Start		
+	$wp_customize->add_section(
+        'slider_section',
         array(
-            'label' => __('Slide Image 1 (1440x700)','animals'),
-            'section' => 'slider_section',
-            'settings' => 'slide_image1'
-        )
-    )
-);
-
-	$wp_customize->add_setting('slide_title1',array(
-		'default'	=> __('Responsive Design','animals'),
-		'sanitize_callback'	=> 'sanitize_text_field',
-	));
-	
-	$wp_customize->add_control('slide_title1',array(
-		'label'	=> __('Slide Title 1','animals'),
-		'section'	=> 'slider_section',
-		'type'	=> 'text'
-	));
-	
-	$wp_customize->add_setting('slide_desc1',array(
-		'default'	=> __('This is description for slider one.','animals'),
-		'sanitize_callback'	=> 'animals_format_for_editor',
-	));
-	
-	$wp_customize->add_control('slide_desc1',array(
-				'label' => __('Slide Description 1','animals'),
-				'section' => 'slider_section',
-				'setting'	=> 'slide_desc1',
-				'type'	=> 'textarea'
-		)
-	);
-	
-	$wp_customize->add_setting('slide_link1',array(
-		'default'	=> '#link1',
-		'sanitize_callback'	=> 'esc_url_raw',
-	));
-	
-	$wp_customize->add_control('slide_link1',array(
-		'label'	=> __('Slide Link 1','animals'),
-		'section'	=> 'slider_section',
-		'type'		=> 'text'
-	));
-	
-	// Slide Image 2
-	$wp_customize->add_setting('slide_image2',array(
-		'default'	=> get_template_directory_uri().'/images/slides/slider2.jpg',
-		'sanitize_callback'	=> 'esc_url_raw',
-	));
-	
-	$wp_customize->add_control(
-    new WP_Customize_Image_Control(
-        $wp_customize,
-        'slide_image2',
-        array(
-            'label' => __('Slide Image 2 (1440x700)','animals'),
-            'section' => 'slider_section',
-            'settings' => 'slide_image2'
-        )
-    )
-);
-
-	$wp_customize->add_setting('slide_title2',array(
-		'default'	=> __('Flexible Design','animals'),
-		'sanitize_callback'	=> 'sanitize_text_field',
-	));
-	
-	$wp_customize->add_control('slide_title2',array(
-		'label'	=> __('Slide Title 2','animals'),
-		'section'	=> 'slider_section',
-		'type'	=> 'text'
-	));
-	
-	$wp_customize->add_setting('slide_desc2',array(
-		'default'	=> __('This is description for slide two','animals'),
-		'sanitize_callback'	=> 'animals_format_for_editor',
-	));
-	
-	$wp_customize->add_control('slide_desc2',array(
-				'label' => __('Slide Description 2','animals'),
-				'section' => 'slider_section',
-				'setting'	=> 'slide_desc2',
-				'type'		=> 'textarea'
-		)
-	);
-	
-	$wp_customize->add_setting('slide_link2',array(
-		'default'	=> '#link2',
-		'sanitize_callback'	=> 'esc_url_raw',
-	));
-	
-	$wp_customize->add_control('slide_link2',array(
-		'label'	=> __('Slide Link 2','animals'),
-		'section'	=> 'slider_section',
-		'type'		=> 'text'
-	));
-	
-	// Slide Image 3
-	$wp_customize->add_setting('slide_image3',array(
-		'default'	=> get_template_directory_uri().'/images/slides/slider3.jpg',
-		'sanitize_callback'	=> 'esc_url_raw',
-	));
-	
-	$wp_customize->add_control(
-    new WP_Customize_Image_Control(
-        $wp_customize,
-        'slide_image3',
-        array(
-            'label' => __('Slide Image 3 (1440x700)','animals'),
-            'section' => 'slider_section',
-            'settings' => 'slide_image3'
-        )
-    )
-);
-
-	$wp_customize->add_setting('slide_title3',array(
-		'default'	=> __('Awesome Features','animals'),
-		'sanitize_callback'	=> 'sanitize_text_field',
-	));
-	
-	$wp_customize->add_control('slide_title3',array(
-		'label'	=> __('Slide Title 3','animals'),
-		'section'	=> 'slider_section',
-		'type'	=> 'text'
-	));
-	
-	$wp_customize->add_setting('slide_desc3',array(
-		'default'	=> __('This is description for slide three','animals'),
-		'sanitize_callback'	=> 'animals_format_for_editor',
-	));
-	
-	$wp_customize->add_control('slide_desc3',array(
-				'label' => __('Slide Description 3','animals'),
-				'section' => 'slider_section',
-				'setting'	=> 'slide_desc3',
-				'type'		=> 'textarea'
-		)
-	);
-	
-	$wp_customize->add_setting('slide_link3',array(
-		'default'	=> '#link3',
-		'sanitize_callback'	=> 'esc_url_raw',
-	));
-	
-	$wp_customize->add_control('slide_link3',array(
-		'label'	=> __('Slide Link 3','animals'),
-		'section'	=> 'slider_section',
-		'type'		=> 'text'
-	));
-	
-	
-	$wp_customize->add_section('footer_section',array(
-		'title'	=> __('Footer Text','animals'),
-		'description'	=> __('Add some text for footer like copyright etc.','animals'),
-		'priority'	=> null
-	));
-	
-	$wp_customize->add_setting('footer_copy',array(
-		'default'	=> __('Animals 2016 | All Rights Reserved.','animals'),
-		'sanitize_callback'	=> 'sanitize_text_field',
-	));
-	
-	$wp_customize->add_control('footer_copy',array(
-		'label'	=> __('Copyright Text','animals'),
-		'section'	=> 'footer_section',
-		'type'		=> 'text'
-	));
-	
-    $wp_customize->add_section(
-        'animals_theme_doc',
-        array(
-            'title' => __('Documentation &amp; Support', 'animals'),
+            'title' => __('Slider Settings', 'animals'),
             'priority' => null,
-            'description' => __('For documentation and support check this link :','animals'). '<a href="'.esc_url(animals_theme_doc).'" target="_blank">Animals Documentation</a>',
-        )
-    );  
-    $wp_customize->add_setting('Animals_options[info]', array(
-			'sanitize_callback' => 'sanitize_text_field',
-            'type' => 'info_control',
-            'capability' => 'edit_theme_options',
+			'description'	=> __('Recommended image size (1420x567)','animals'),	
         )
     );
-    $wp_customize->add_control( new Animals_Info( $wp_customize, 'doc_section', array(
-        'section' => 'theme_doc_sec',
-        'settings' => 'Animals_options[info]',
-        'priority' => 10
-        ) )
-    );
+	
+	$wp_customize->add_setting('page-setting7',array(
+			'default' => '0',
+			'capability' => 'edit_theme_options',
+			'sanitize_callback'	=> 'absint'
+	));
+	
+	$wp_customize->add_control('page-setting7',array(
+			'type'	=> 'dropdown-pages',
+			'label'	=> __('Select page for slide one:','animals'),
+			'section'	=> 'slider_section'
+	));	
+	
+	$wp_customize->add_setting('page-setting8',array(
+			'default' => '0',
+			'capability' => 'edit_theme_options',	
+			'sanitize_callback'	=> 'absint'
+	));
+	
+	$wp_customize->add_control('page-setting8',array(
+			'type'	=> 'dropdown-pages',
+			'label'	=> __('Select page for slide two:','animals'),
+			'section'	=> 'slider_section'
+	));	
+	
+	$wp_customize->add_setting('page-setting9',array(
+			'default' => '0',
+			'capability' => 'edit_theme_options',	
+			'sanitize_callback'	=> 'absint'
+	));
+	
+	$wp_customize->add_control('page-setting9',array(
+			'type'	=> 'dropdown-pages',
+			'label'	=> __('Select page for slide three:','animals'),
+			'section'	=> 'slider_section'
+	));	
+	
+	
+	$wp_customize->add_setting('hide_slider',array(
+			'default' => false,
+			'sanitize_callback' => 'animals_sanitize_checkbox',
+			'capability' => 'edit_theme_options',
+	));	 
+
+	$wp_customize->add_control( 'hide_slider', array(
+		   'settings' => 'hide_slider',
+    	   'section'   => 'slider_section',
+    	   'label'     => __('Check this to hide slider','animals'),
+    	   'type'      => 'checkbox'
+     ));
+	 
+	 $wp_customize->add_setting('slidelink_text',array(
+	 		'default'	=> __('Read More','animals'),
+			'sanitize_callback'	=> 'sanitize_text_field'
+	 ));
+	 
+	 $wp_customize->add_control('slidelink_text',array(
+	 		'settings'	=> 'slidelink_text',
+			'section'	=> 'slider_section',
+			'label'		=> __('Add text for slide link button','animals'),
+			'type'		=> 'text'
+	 ));	
+	
+	// Slider Section End
 	
 	
 }
@@ -398,8 +271,8 @@ function animals_css(){
 					color:<?php echo esc_html(get_theme_mod('color_scheme','#fc9530')); ?>;
 				}
 				a.read-more, a.blog-more,
-				.pagination ul li .current, 
-				.pagination ul li a:hover,
+				.nav-links .current, 
+				.nav-links a:hover,
 				#commentform input#submit,
 				input.search-submit,
 				#header .main-nav ul li ul li a:hover,
@@ -413,5 +286,8 @@ add_action('wp_head','animals_css');
 
 function animals_custom_customize_enqueue() {
 	wp_enqueue_script( 'animals-custom-customize', get_template_directory_uri() . '/js/custom.customize.js', array( 'jquery', 'customize-controls' ), false, true );
+	wp_localize_script( 'animals-custom-customize', 'animalsjsvar', array(
+	'upgrade' => __('Upgrade to PRO Version', 'animals')
+	));
 }
 add_action( 'customize_controls_enqueue_scripts', 'animals_custom_customize_enqueue' );
