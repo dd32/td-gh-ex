@@ -1,10 +1,13 @@
 adamos is a responsive, highly customizable theme.
 
 Theme instructions: http://www.templateexpress.com/docs/adamos/
-Theme demo: http://www.templateexpress.com/demos/adamos/
+Theme demo: http://demos.templateexpress.com/adamos/
 
 Changelog
 --------------------------------------------
+Version: 2.9
+* Updated deprecated tags
+
 Version: 2.8
 * Updated url's for new demos and documentation
 
