@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * Wortex Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
+ * Wortex Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
  * Copyright 2014-2016 Mathieu Sarrasin - Iceable Media
  *
@@ -224,7 +224,7 @@ class Wortex_Customizer {
 
 		// Setting and control for Wortex upgrade message
 		$wp_customize->add_setting( 'wortex_upgrade', array(
-			'default'	=> 'http://www.iceablethemes.com/shop/wortex-pro/',
+			'default'	=> 'https://www.iceablethemes.com/shop/wortex-pro/',
 			'sanitize_callback' => 'wortex_sanitize_button',
 		) );
 		$wp_customize->add_control(
@@ -241,7 +241,7 @@ class Wortex_Customizer {
 
 		// Setting and control for Wortex support forums message
 		$wp_customize->add_setting( 'wortex_support', array(
-			'default'	=> 'http://www.iceablethemes.com/forums/forum/free-support-forum/wortex-lite/',
+			'default'	=> 'https://www.iceablethemes.com/forums/forum/free-support-forum/wortex-lite/',
 			'sanitize_callback' => 'wortex_sanitize_button',
 		) );
 		$wp_customize->add_control(
@@ -258,7 +258,7 @@ class Wortex_Customizer {
 
 		// Setting and control for Wortex feedback message
 		$wp_customize->add_setting( 'wortex_feedback', array(
-			'default'	=> 'http://wordpress.org/support/view/theme-reviews/wortex-lite',
+			'default'	=> 'https://wordpress.org/support/view/theme-reviews/wortex-lite',
 			'sanitize_callback' => 'wortex_sanitize_button',
 		) );
 		$wp_customize->add_control(
@@ -345,5 +345,3 @@ function wortex_sanitize_on_off( $input ){
 function wortex_sanitize_button( $input ){
 	return '';
 }
-
-?>

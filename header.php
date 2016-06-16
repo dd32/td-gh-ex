@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * Wortex Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
+ * Wortex Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
  * Copyright 2014-2016 Mathieu Sarrasin - Iceable Media
  *
@@ -83,4 +83,4 @@ $boxed = ('boxed' == get_theme_mod('wortex_layout') ) ? true : false;
 	?></div><?php
 
 			endif;
-		endif; ?>
+		endif;

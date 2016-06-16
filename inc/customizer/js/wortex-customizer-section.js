@@ -1,6 +1,6 @@
 /**
  *
- * Wortex Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
+ * Wortex Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
  * Copyright 2013-2015 Mathieu Sarrasin - Iceable Media
  *
@@ -12,7 +12,7 @@
 
 	// Add Wortex Pro upgrade message
 	upgrade = $('<a class="wortex-customize-pro"></a>')
-	.attr('href', "http://www.iceablethemes.com/shop/wortex-pro/")
+	.attr('href', "https://www.iceablethemes.com/shop/wortex-pro/")
 	.attr('target', '_blank')
 	.text(wortex_customizer_section_l10n.upgrade_pro)
 	;

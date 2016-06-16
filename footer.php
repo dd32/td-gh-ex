@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * Wortex Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
+ * Wortex Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
  * Copyright 2014-2016 Mathieu Sarrasin - Iceable Media
  *
@@ -23,13 +23,13 @@
 	printf( __('Copyright &copy; %s %s.', 'wortex-lite'), date('Y'), get_bloginfo('name') ); 
 	echo ' '; 
 	printf( __('Proudly powered by <a href="%s" title="%s">%s</a>.', 'wortex-lite'), 
-		esc_url( __('http://wordpress.org/', 'wortex-lite') ), 
+		esc_url( __('https://wordpress.org/', 'wortex-lite') ), 
 		esc_attr__( 'Semantic Personal Publishing Platform', 'wortex-lite' ), 
 		__('WordPress', 'wortex-lite') 
 	); 
 	echo ' '; 
 	printf( __('Wortex design by <a href="%s" title="%s">Iceable Themes</a>.', 'wortex-lite'), 
-		esc_url( 'http://www.iceablethemes.com' ), 
+		esc_url( 'https://www.iceablethemes.com' ), 
 		esc_attr( 'Iceablethemes', 'wortex-lite' ) 
 	);
 

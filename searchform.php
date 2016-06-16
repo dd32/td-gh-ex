@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * Wortex Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
+ * Wortex Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
  * Copyright 2014-2016 Mathieu Sarrasin - Iceable Media
  *
@@ -16,5 +16,3 @@
         <input type="submit" id="searchsubmit" value="Search" />
     </div>
 </form>
-
-	

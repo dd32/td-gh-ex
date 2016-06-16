@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * Wortex Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
+ * Wortex Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
  * Copyright 2014-2016 Mathieu Sarrasin - Iceable Media
  *
@@ -45,21 +45,21 @@ while(have_posts()) : the_post();
 
 	// Display comments section only if comments are open or if there are comments already.
 	if ( comments_open() || get_comments_number()!=0 ):
-		?><hr /><div class="comments"><?php 
+		?><hr /><div class="comments"><?php
 		comments_template( '', true );
 		next_comments_link(); previous_comments_link();
 		?></div><?php
 	endif;
-				
+
 endwhile;
-	
+
 else: // Empty loop (this should never happen!)
 
 	?><h2><?php _e('Not Found', 'wortex-lite'); ?></h2>
 	<p><?php _e('What you are looking for isn\'t here...', 'wortex-lite'); ?></p><?php
 
 endif;
-	
+
 ?></div><?php // End page container
 
 ?><div id="sidebar-container"><?php
@@ -68,4 +68,4 @@ endif;
 
 ?></div><?php // End main wrap
 
-get_footer(); ?>
+get_footer();
