@@ -14,7 +14,9 @@
     .site-branding {
         width: 30%;
     }
-  
+    .big_slide{
+        width: 58.1%;
+    }
     .big_slide:after,
     .small_slide:after {
         width: 100%;

@@ -40,11 +40,6 @@
                 $(this).find('.fa').removeClass('fa-angle-down');
                 $(this).find('.fa').addClass('fa-angle-right');
             }                
-		});
-
-        /*Homepage slider option*/
-        /*var imgSelected = $('.of-radio-img-img.slider-grid').attr('class');
-        alert(imgSelected);*/
-                
+		});                
        
 });

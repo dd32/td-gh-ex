@@ -24,7 +24,7 @@ get_header(); ?>
 			<header class="page-header">
 				<?php
 					accesspress_mag_the_archive_title( '<h1 class="page-title"><span>', '</span></h1>' );
-					//the_archive_description( '<div class="taxonomy-description">', '</div>' );
+					the_archive_description( '<div class="taxonomy-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
 

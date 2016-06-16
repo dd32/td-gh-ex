@@ -73,6 +73,11 @@ GPL compatible for own images
 ----------------------------------------------------
 == Changelog ==
 
+Version 2.3.7
+ * Fixed woo-commerce archive page and its single page
+ * Fixed shop page in 3 columns and 12 products
+ * Added more themes section
+ 
 Version 2.3.6
  * Fixed top menu section functionality
  * Fully compatible woocommerce color
