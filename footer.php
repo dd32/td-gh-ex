@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * BoldR Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
+ * BoldR Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
  * Copyright 2013-2016 Mathieu Sarrasin - Iceable Media
  *
@@ -24,13 +24,13 @@
 			printf( __('Copyright &copy; %s %s.', 'boldr-lite'), date('Y'), get_bloginfo('name') );
 			echo ' ';
 			printf( __('Proudly powered by <a href="%s" title="%s">%s</a>.', 'boldr-lite'),
-				esc_url( __('http://wordpress.org/', 'boldr-lite') ),
+				esc_url( __('https://wordpress.org/', 'boldr-lite') ),
 				esc_attr__( 'Semantic Personal Publishing Platform', 'boldr-lite' ),
 				__('WordPress', 'boldr-lite')
 			);
 			echo ' ';
 			printf( __('BoldR design by <a href="%s" title="%s">Iceable Themes</a>.', 'boldr-lite'),
-				esc_url( 'http://www.iceablethemes.com' ),
+				esc_url( 'https://www.iceablethemes.com' ),
 				esc_attr( 'Iceablethemes', 'boldr-lite' )
 			);
 

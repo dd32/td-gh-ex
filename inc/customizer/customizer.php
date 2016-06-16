@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * BoldR Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
+ * BoldR Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
  * Copyright 2013-2016 Mathieu Sarrasin - Iceable Media
  *
@@ -198,7 +198,7 @@ class BoldR_Customizer {
 
 		// Setting and control for BoldR upgrade message
 		$wp_customize->add_setting( 'boldr_upgrade', array(
-			'default'	=> 'http://www.iceablethemes.com/shop/boldr-pro/',
+			'default'	=> 'https://www.iceablethemes.com/shop/boldr-pro/',
 			'sanitize_callback' => 'boldr_sanitize_button',
 		) );
 		$wp_customize->add_control(
@@ -215,7 +215,7 @@ class BoldR_Customizer {
 
 		// Setting and control for BoldR support forums message
 		$wp_customize->add_setting( 'boldr_support', array(
-			'default'	=> 'http://www.iceablethemes.com/forums/forum/free-support-forum/boldr-lite/',
+			'default'	=> 'https://www.iceablethemes.com/forums/forum/free-support-forum/boldr-lite/',
 			'sanitize_callback' => 'boldr_sanitize_button',
 		) );
 		$wp_customize->add_control(
@@ -232,7 +232,7 @@ class BoldR_Customizer {
 
 		// Setting and control for BoldR feedback message
 		$wp_customize->add_setting( 'boldr_feedback', array(
-			'default'	=> 'http://wordpress.org/support/view/theme-reviews/boldr-lite',
+			'default'	=> 'https://wordpress.org/support/view/theme-reviews/boldr-lite',
 			'sanitize_callback' => 'boldr_sanitize_button',
 		) );
 		$wp_customize->add_control(
@@ -310,5 +310,3 @@ function boldr_sanitize_on_off( $input ){
 function boldr_sanitize_button( $input ){
 	return '';
 }
-
-?>

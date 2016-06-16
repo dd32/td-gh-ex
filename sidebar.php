@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * BoldR Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
+ * BoldR Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
  * Copyright 2013-2016 Mathieu Sarrasin - Iceable Media
  *
