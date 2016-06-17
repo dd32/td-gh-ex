@@ -4,12 +4,12 @@
  *
  * Description: A page template build to display your shop on the homepage
  *
- * @since 1.0.0
+ * @package WordPress
+ * @subpackage Abacus
+ * @since Abacus 1.0
  */
 $primary_attr = ( is_active_sidebar( 'shop-grid' ) ) ? bavotasan_primary_attr( false ) : ' class="col-md-12"';
-if ( ! is_front_page() )
-	get_header();
-	?>
+get_header(); ?>
 
 	<div id="primary" class="container">
 
@@ -31,7 +31,7 @@ if ( ! is_front_page() )
 				'limit' 			=> 4,
 				'columns' 			=> 4,
 				'title'				=> __( 'Featured', 'abacus' ),
-				'description'		=> __( 'This is a description', 'abacus' ),
+				'description'		=> wp_kses_post( get_theme_mod( 'featured_title_description', $abc_default_theme_options['featured_title_description'] ) ),
 				)
 			);
 			$featured_products = do_shortcode( '[featured_products per_page="' . intval( $feature_args['limit'] ) . '" columns="' . intval( $feature_args['columns'] ) . '"]' );
@@ -48,13 +48,13 @@ if ( ! is_front_page() )
 			}
 			?>
 
-			<?php if ( is_active_sidebar( 'shop-categories' ) ) { ?>
+			<?php if ( is_active_sidebar( 'shop-categories' ) && function_exists( 'abc_premium_features' ) ) { ?>
 				<div class="shop-categories row">
 					<?php dynamic_sidebar( 'shop-categories' ); ?>
 				</div>
 			<?php } ?>
 
-			<?php if ( is_active_sidebar( 'shop-banner' ) ) { ?>
+			<?php if ( is_active_sidebar( 'shop-banner' ) && function_exists( 'abc_premium_features' ) ) { ?>
 				<div class="shop-banner">
 					<?php dynamic_sidebar( 'shop-banner' ); ?>
 				</div>
@@ -65,7 +65,7 @@ if ( ! is_front_page() )
 				'limit' 			=> 4,
 				'columns' 			=> 4,
 				'title'				=> __( 'Trending', 'abacus' ),
-				'description'		=> __( 'This is a description', 'abacus' ),
+				'description'		=> wp_kses_post( get_theme_mod( 'popular_title_description', $abc_default_theme_options['popular_title_description'] ) ),
 				)
 			);
 			$pop_products = do_shortcode( '[top_rated_products per_page="' . intval( $pop_args['limit'] ) . '" columns="' . intval( $pop_args['columns'] ) . '"]' );
@@ -99,7 +99,7 @@ if ( ! is_front_page() )
 				<div class="row">
 				<?php
 					while ( $testimonials->have_posts() ) : $testimonials->the_post();
-						 get_template_part( 'content', 'testimonial' );
+						 get_template_part( 'template-parts/content', 'testimonial' );
 					endwhile;
 					wp_reset_postdata();
 				?>
@@ -108,6 +108,4 @@ if ( ! is_front_page() )
 		<?php endif; ?>
 	</div>
 
-<?php
-if ( ! is_front_page() )
-	get_footer();
+<?php get_footer(); ?>

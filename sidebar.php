@@ -2,7 +2,9 @@
 /**
  * The offcanvas right sidebar.
  *
- * @since 1.0.0
+ * @package WordPress
+ * @subpackage Abacus
+ * @since Abacus 1.0
  */
 ?>
 	<div id="sidebar" class="cols cols-4" role="complementary">

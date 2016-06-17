@@ -1,4 +1,20 @@
 <?php
+/**
+ * The Customizer.
+ *
+ * @package WordPress
+ * @subpackage Abacus
+ * @since Abacus 1.0
+ */
+function abc_default_theme_options() {
+	//delete_option( 'theme_mods_abacus' );
+	return array(
+		'read_more_text' => 'Continue reading',
+		'featured_title_description' => 'Featured product description text',
+		'popular_title_description' => 'Popular product description text',
+	);
+}
+
 if ( class_exists( 'WP_Customize_Control' ) ) {
 	class ABC_Description_Control extends WP_Customize_Control {
 		public function render_content() {
@@ -57,38 +73,54 @@ class ABC_Customizer {
     }
 
 	public function customize_register( $wp_customize ) {
+		$abc_default_theme_options = abc_default_theme_options();
+
 		$wp_customize->get_setting( 'site_icon' )->transport = 'refresh';
 		$wp_customize->remove_section( 'background_image' );
 
-		## Posts section
-		$wp_customize->add_section( 'abc_posts', array(
-			'title' => __( 'Posts', 'abacus' ),
+		## Layout section
+		$wp_customize->add_section( 'abc_layout', array(
+			'title' => __( 'Layout', 'abacus' ),
 			'priority' => 22,
 		) );
 		// setting
 		$wp_customize->add_setting( 'read_more_text', array(
-			'default' => 'Continue reading',
+			'default' => $abc_default_theme_options['read_more_text'],
 			'sanitize_callback' => 'abc_sanitize_text',
 		) );
 		// control
 		$wp_customize->add_control( 'read_more_text', array(
 			'label'    => __( 'Read More text', 'abacus' ),
-			'section'  => 'abc_posts',
+			'section'  => 'abc_layout',
 			'priority' => 2,
 			'type'     => 'text'
 		) );
 		// setting
-		/*$wp_customize->add_setting( 'posts_default', array(
-			'sanitize_callback' => 'absint',
+		$wp_customize->add_setting( 'featured_title_description', array(
+			'default' => $abc_default_theme_options['featured_title_description'],
+			'sanitize_callback' => 'abc_sanitize_text',
 		) );
 		// control
-		$wp_customize->add_control( new ABC_Description_Control(
-			$wp_customize, 'posts_default', array(
-				'section' => 'abc_posts',
-				'priority' => 3,
-				'description' => apply_filters( 'abc_posts_section_description', sprintf( __( 'Activate the <a target="_blank" href="%s">ABC Post Layouts</a> plugin to add more post options.', 'abacus' ), 'https://alphabetthemes.com/downloads/abc-post-layouts/' ) ),
-			)
-		) );*/
+		$wp_customize->add_control( 'featured_title_description', array(
+			'label'    => __( 'Featured product description', 'abacus' ),
+			'description'    => __( 'Only on shop grid template', 'abacus' ),
+			'section'  => 'abc_layout',
+			'priority' => 3,
+			'type'     => 'text'
+		) );
+		// setting
+		$wp_customize->add_setting( 'popular_title_description', array(
+			'default' => $abc_default_theme_options['popular_title_description'],
+			'sanitize_callback' => 'abc_sanitize_text',
+		) );
+		// control
+		$wp_customize->add_control( 'popular_title_description', array(
+			'label'    => __( 'Popular product description', 'abacus' ),
+			'description'    => __( 'Only on shop grid template', 'abacus' ),
+			'section'  => 'abc_layout',
+			'priority' => 4,
+			'type'     => 'text'
+		) );
 
 		## Reset section
 		$wp_customize->add_section( 'abc_reset', array(
@@ -121,7 +153,7 @@ class ABC_Customizer {
 			$wp_customize, 'colors_default', array(
 				'section' => 'colors',
 				'priority' => 1,
-				'description' => apply_filters( 'abc_colors_section_description', sprintf( __( 'Activate the <a target="_blank" href="%s">ABC Custom Colors</a> plugin to open more color options.', 'abacus' ), 'https://alphabetthemes.com/downloads/abc-custom-colors/' ) ),
+				'description' => apply_filters( 'abc_colors_section_description', sprintf( __( 'Activate the <a target="_blank" href="%s">ABC Premium Features</a> plugin to open more color options.', 'abacus' ), 'https://alphabetthemes.com/downloads/abc-premium-features/' ) ),
 			)
 		) );
 
@@ -139,7 +171,25 @@ class ABC_Customizer {
 			$wp_customize, 'fonts_default', array(
 				'section' => 'abc_fonts',
 				'priority' => 1,
-				'description' => apply_filters( 'abc_fonts_section_description', sprintf( __( 'Activate the <a target="_blank" href="%s">ABC Fonts Manager</a> plugin to open all the font options.', 'abacus' ), 'https://alphabetthemes.com/downloads/abc-fonts-manager/' ) ),
+				'description' => apply_filters( 'abc_fonts_section_description', sprintf( __( 'Activate the <a target="_blank" href="%s">ABC Premium Features</a> plugin to open more fonts options.', 'abacus' ), 'https://alphabetthemes.com/downloads/abc-premium-features/' ) ),
+			)
+		) );
+
+		## Social Icons section
+		$wp_customize->add_section( 'abc_social_icons', array(
+			'title' => __( 'Social Icons', 'abacus' ),
+			'priority' => 40,
+		) );
+		// setting
+		$wp_customize->add_setting( 'social_icons_default', array(
+			'sanitize_callback' => 'absint',
+		) );
+		// control
+		$wp_customize->add_control( new ABC_Description_Control(
+			$wp_customize, 'social_icons_default', array(
+				'section' => 'abc_social_icons',
+				'priority' => 1,
+				'description' => apply_filters( 'abc_social_icons_section_description', sprintf( __( 'Activate the <a target="_blank" href="%s">ABC Premium Features</a> plugin to open the social icon options.', 'abacus' ), 'https://alphabetthemes.com/downloads/abc-premium-features/' ) ),
 			)
 		) );
 
@@ -157,7 +207,7 @@ class ABC_Customizer {
 			$wp_customize, 'footer_default', array(
 				'section' => 'abc_footer',
 				'priority' => 1,
-				'description' => apply_filters( 'abc_footer_section_description', sprintf( __( 'Activate the <a target="_blank" href="%s">ABC Footer</a> plugin to add footer options.', 'abacus' ), 'https://alphabetthemes.com/downloads/abc-footer/' ) ),
+				'description' => apply_filters( 'abc_footer_section_description', sprintf( __( 'Activate the <a target="_blank" href="%s">ABC Premium Features</a> plugin to open the footer options.', 'abacus' ), 'https://alphabetthemes.com/downloads/abc-premium-features/' ) ),
 			)
 		) );
 	}
@@ -178,12 +228,17 @@ class ABC_Customizer {
             'confirmText' => __( 'Are you sure?', 'abacus' ),
         ));
 
+		if ( ! function_exists( 'abc_premium_features' ) ) {
+	   		wp_enqueue_script( 'abc-upgrade', ABC_THEME_URL . '/js/admin/upgrade.js', array( 'jquery' ), '', true );
+   		}
+
 		wp_enqueue_style( 'abc-customizer-styles', ABC_THEME_URL . '/css/admin/customizer.css' );
 
 		$css_selectors = array(
 			apply_filters( 'abc_footer_section_css', '#accordion-section-abc_footer' ),
 			apply_filters( 'abc_colors_section_css', '#accordion-section-colors' ),
 			apply_filters( 'abc_fonts_section_css', '#accordion-section-abc_fonts' ),
+			apply_filters( 'abc_social_icons_section_css', '#accordion-section-abc_social_icons' ),
 			apply_filters( 'abc_posts_section_css', '' ),
 		);
 

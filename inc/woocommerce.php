@@ -2,7 +2,9 @@
 /**
  * Woocommerce compatibility
  *
- * @since 1.0.0
+ * @package WordPress
+ * @subpackage Abacus
+ * @since Abacus 1.0
  */
 remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
@@ -36,6 +38,22 @@ function woocommerce_button_proceed_to_checkout() {
 
 	?>
 	<a href="<?php echo $checkout_url; ?>" class="checkout-button btn btn-danger btn-lg"><?php _e( 'Proceed to Checkout', 'abacus' ); ?></a>
+	<?php
+}
+
+function abc_cart_link() {
+	if ( is_cart() ) {
+		$class = ' current-menu-item';
+	} else {
+		$class = '';
+	}
+	?>
+	<li class="site-header-cart<?php echo esc_attr( $class ); ?>">
+		<a class="cart-contents" href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'abacus' ); ?>">
+			<?php echo wp_kses_data( WC()->cart->get_cart_total() ); ?> <span class="count"><?php echo wp_kses_data( sprintf( _n( '%d Item', '%d Items', WC()->cart->get_cart_contents_count(), 'abacus' ), WC()->cart->get_cart_contents_count() ) );?></span>
+		</a>
+		<ul><li><?php the_widget( 'WC_Widget_Cart', 'title=' ); ?></li></ul>
+	</li>
 	<?php
 }
 
@@ -85,44 +103,4 @@ function abc_woocommerce_template_loop_product_title() {
 add_action( 'woocommerce_after_shop_loop_item', 'abc_woocommerce_template_loop_product_link_close', 99 );
 function abc_woocommerce_template_loop_product_link_close() {
 	echo '</div>';
-}
-
-function abc_search_pagination( $query ) {
-	$max_page = $query->max_num_pages;
-	$paged = ( get_query_var('paged') ) ? get_query_var( 'paged' ) : 1;
-    $type = ( isset( $query->query['post_type'] ) ) ? $query->query['post_type'] : 'post';
-	$prev_search_post_type = ( 2 == $paged ) ? '' : '&#038;search_post_type=' . esc_attr( $type );
-
-	$next_post_link = str_replace( '&#038;search_post_type=' . esc_attr( $type ), '', next_posts( $max_page, false ) );
-	$prev_post_link = str_replace( '&#038;search_post_type=' . esc_attr( $type ), '', previous_posts( false ) );
-	$prev_label = ( 2 == $paged ) ? __( 'All results &rarr;', 'abacus' ) : sprintf( __( 'Next %s results &rarr;', 'abacus' ), ucfirst( $type . 's' ) );
-
-	// Don't print empty markup if there's only one page.
-	if ( $max_page < 2 )
-		return;
-
-	$next_posts_link = ( intval($paged) + 1 <= $max_page ) ? '<a href="' . esc_url( $next_post_link ) . '&#038;search_post_type=' . esc_attr( $type ) . '">' . sprintf( __( '&larr; Previous %s results', 'abacus' ), ucfirst( $type . 's' ) ) . '</a>' : '&nbsp;';
-	$prev_posts_link = ( $paged > 1 ) ? '<a href="' . esc_url( $prev_post_link ) . $prev_search_post_type . '">' . $prev_label . '</a>' : '&nbsp;';
-	?>
-
-	<nav id="posts-pagination" role="navigation">
-		<div class="screen-reader-text"><?php _e( 'Posts navigation', 'abacus' ); ?></div>
-		<?php if ( $next_posts_link ) : ?>
-		<div class="previous"><?php echo $next_posts_link; ?></div>
-		<?php endif; ?>
-
-		<?php if ( $prev_posts_link ) : ?>
-		<div class="next"><?php echo $prev_posts_link; ?></div>
-		<?php endif; ?>
-	</nav><!-- .navigation -->
-	<?php
-	wp_reset_query();
-}
-
-add_filter( 'pre_get_posts', 'abc_search' );
-function abc_search( $query ) {
-	if ( ! is_admin() && $query->is_search && $query->is_main_query() )
-		$query->set( 'post_type', array( 'post' ) );
-
-    return $query;
 }

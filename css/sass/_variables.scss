@@ -1,0 +1,20 @@
+$site_width: 1200px;
+
+$col_text: #393939;
+$col_headers: #333;
+$col_light_text: #afafaf;
+$col_anchor: #0054a6;
+$col_anchor_hover: darken( $col_anchor, 10 );
+$col_background: #2e2e2e;
+$col_sidebar_background: #2E3739;
+$col_border: #d6d6d6;
+
+$font: 'Roboto', sans-serif;
+$headers_font: 'Roboto', sans-serif;
+
+/* =WordPress Core
+-------------------------------------------------------------- */
+$wp_top_margin: 30px;
+$wp_right_margin: 30px;
+$wp_bottom_margin: 30px;
+$wp_left_margin: 30px;

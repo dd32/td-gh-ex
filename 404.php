@@ -2,7 +2,9 @@
 /**
  * The template for displaying 404 pages (Not Found).
  *
- * @since 1.0.0
+ * @package WordPress
+ * @subpackage Abacus
+ * @since Abacus 1.0
  */
 get_header(); ?>
 

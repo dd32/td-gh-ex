@@ -2,7 +2,9 @@
 /**
  * The template for displaying Search Results pages.
  *
- * @since 1.0.0
+ * @package WordPress
+ * @subpackage Abacus
+ * @since Abacus 1.0
  */
 get_header(); ?>
 
@@ -28,7 +30,7 @@ get_header(); ?>
 						<ul class="products">
 							<?php
 							while ( $product_search_query->have_posts() ) : $product_search_query->the_post();
-								wc_get_template_part( 'content', 'product' );
+								wc_get_template_part( 'template-parts/content', 'product' );
 						    endwhile;
 							?>
 						</ul>
@@ -50,12 +52,12 @@ get_header(); ?>
 						</header>
 						<?php
 						while ( have_posts() ) : the_post();
-							get_template_part( 'content', get_post_format() );
+							get_template_part( 'template-parts/content' );
 						endwhile;
 
 						abc_search_pagination( $wp_query );
 					else :
-						get_template_part( 'content', 'none' );
+						get_template_part( 'template-parts/content', 'none' );
 					endif;
 				}
 				?>

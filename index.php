@@ -9,7 +9,9 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @since 1.0.0
+ * @package WordPress
+ * @subpackage Abacus
+ * @since Abacus 1.0
  */
 get_header(); ?>
 
@@ -19,14 +21,12 @@ get_header(); ?>
 				<?php
 				if ( have_posts() ) :
 					while ( have_posts() ) : the_post();
-						get_template_part( 'content', get_post_format() );
+						get_template_part( 'template-parts/content' );
 					endwhile;
 
 					abc_pagination();
-
-					comments_template( '', true );
 				else :
-					get_template_part( 'content', 'none' );
+					get_template_part( 'template-parts/content', 'none' );
 				endif;
 				?>
 			</div><!-- #primary -->

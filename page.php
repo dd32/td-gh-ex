@@ -7,7 +7,9 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @since 1.0.0
+ * @package WordPress
+ * @subpackage Abacus
+ * @since Abacus 1.0
  */
 get_header();
 ?>
@@ -17,7 +19,7 @@ get_header();
 			<div id="primary" class="cols">
 				<?php
 				while ( have_posts() ) : the_post();
-					get_template_part( 'content', 'page' );
+					get_template_part( 'template-parts/content', 'page' );
 
 					comments_template( '', true );
 				endwhile;

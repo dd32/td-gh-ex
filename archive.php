@@ -10,7 +10,9 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @since 1.0.0
+ * @package WordPress
+ * @subpackage Abacus
+ * @since Abacus 1.0
  */
 get_header(); ?>
 
@@ -18,7 +20,6 @@ get_header(); ?>
 		<div class="row">
 			<section id="primary" class="cols">
 				<?php if ( have_posts() ) : ?>
-
 					<header id="archive-header">
 						<?php
 						the_archive_title( '<h1 class="entry-title archive-title">', '</h1>' );
@@ -29,20 +30,19 @@ get_header(); ?>
 					<?php
 					while ( have_posts() ) : the_post();
 
-						/* Include the post format-specific template for the content. If you want to
-						 * this in a child theme then include a file called called content-___.php
-						 * (where ___ is the post format) and that will be used instead.
+						/* Include the template for the content. If you want to change
+						 * this in a child theme then include a file called content-blocks.php
+						 * in the /template-parts folder and that will be used instead.
 						 */
-						get_template_part( 'content', get_post_format() );
+						get_template_part( 'template-parts/content' );
 
 					endwhile;
 					?>
 
 					<?php abc_pagination(); ?>
-
 					<?php
 				else :
-					get_template_part( 'content', 'none' );
+					get_template_part( 'template-parts/content', 'none' );
 				endif;
 				?>
 			</section><!-- #primary -->
