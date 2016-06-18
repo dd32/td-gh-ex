@@ -1,6 +1,11 @@
 *** Baskerville Changelog ***
 
 
+Version 1.19 (2016-06-28)
+-------------------------
+- Added the new theme directory tags
+
+
 Version 1.18 (2016-03-12)
 -------------------------
 - Removed wp_title() from header.php
