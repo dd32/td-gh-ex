@@ -1,6 +1,11 @@
 *** Garfunkel Changelog ***
 
 
+Version 1.10 (2016-06-28)
+-------------------------
+- Added the new theme directory tags
+
+
 Version 1.09 (2016-03-12)
 -------------------------
 - Fixed respond input margins
