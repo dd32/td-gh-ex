@@ -51,31 +51,6 @@ function birdsite_widgets_init() {
 add_action( 'widgets_init', 'birdsite_widgets_init' );
 
 //////////////////////////////////////////////////////
-// Pagenation
-function birdsite_the_pagenation() {
-
-	global $wp_query, $paged;
-	$birdsite_big = 999999999;
-
-	$birdsite_pages = $wp_query -> max_num_pages;
-	if ( empty( $paged ) ) $paged = 1;
-
-	if ( 1 < $birdsite_pages ) {
-		echo '	<div class="tablenav">' ."\n";
-		echo paginate_links( array(
-			'base'		=> str_replace( $birdsite_big, '%#%', get_pagenum_link( $birdsite_big ) ),
-			'format'		=> '?paged=%#%',
-			'current'	=> max( 1, get_query_var( 'paged' ) ),
-			'total'		=> $wp_query -> max_num_pages,
-			'mid_size'	=> 3,
-			'prev_text'	=> __( 'Previous', 'birdsite' ),
-			'next_text'	=> __( 'Next', 'birdsite' )
-			) );
-		echo '</div>' ."\n";;
-	}
-}
-
-//////////////////////////////////////////////////////
 // Copyright Year
 function birdsite_get_copyright_year() {
 
@@ -141,21 +116,20 @@ function birdsite_header_style() {
 	}
 
 	a,
-	#content .tablenav,
-	#content .tablenav a.page-numbers,
-	#content .hentry .page-link,
-	#content .hentry .page-link a span {
+	.pagination,
+	.pagination a.page-numbers,
+	.page-link a span {
 		color: <?php echo $link_color; ?>;
 	}
 
-	#content .tablenav a.page-numbers,
-	#content .tablenav span.current,
-	#content .hentry .page-link span {
+	.pagination a.page-numbers,
+	.pagination span.current,
+	.page-link span {
 		border-color: <?php echo $link_color; ?>;
 	}
 
-	#content .tablenav span.current,
-	#content .hentry .page-link span {
+	.pagination span.current,
+	#content .hentry .page-link > span {
 		background: <?php echo $link_color; ?>;
 	}
 
@@ -216,6 +190,18 @@ function birdsite_setup() {
 
 	// This theme uses post thumbnails
 	add_theme_support( 'post-thumbnails' );
+
+	/*
+	 * Switch default core markup for search form, comment form, and comments
+	 * to output valid HTML5.
+	 */
+	add_theme_support( 'html5', array(
+		'search-form',
+		'comment-form',
+		'comment-list',
+		'gallery',
+		'caption',
+	) );
 
 	/*
 	 * This theme supports all available post formats by default.
@@ -315,11 +301,14 @@ function birdsite_slug_render_title() {
 // Enqueue Acripts
 function birdsite_scripts() {
 
+	wp_enqueue_script( 'birdsite-html5', get_template_directory_uri() . '/js/html5shiv.js', array(), '3.7.2' );
+	wp_script_add_data( 'birdsite-html5', 'conditional', 'lt IE 9' );
+
 	if ( is_singular() && comments_open() && get_option('thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	wp_enqueue_script( 'birdsite', get_template_directory_uri() .'/js/birdsite.js', array( 'jquery' ), '1.09' );
+	wp_enqueue_script( 'birdsite', get_template_directory_uri() .'/js/birdsite.js', array( 'jquery' ), '1.10' );
 	wp_enqueue_style( 'birdsite', get_stylesheet_uri() );
 
 	if ( strtoupper( get_locale() ) == 'JA' ) {
@@ -510,29 +499,34 @@ add_filter( 'use_default_gallery_style', '__return_false' );
 
 //////////////////////////////////////////////////////
 // Display the Featured Image at home
-function birdsite_the_post_thumbnail() {
+function birdsite_post_image_html( $html, $post_id, $post_image_id, $size, $attr ) {
 
-	$birdsite_thumbnail_size = 240;
-	$birdsite_thumbnail_width = $birdsite_thumbnail_size;
-	$birdsite_thumbnail_height = $birdsite_thumbnail_size;
+	if( !( false === strpos( $size, 'birdsite' ) ) ){
 
-	$birdsite_thumbnail_id = get_post_thumbnail_id();
-	$birdsite_thumbnail_attr = wp_get_attachment_metadata( $birdsite_thumbnail_id );
-	if( $birdsite_thumbnail_attr['width'] > $birdsite_thumbnail_attr['height'] ){
-		// Horizontal Thumbnail
-		$birdsite_thumbnail_width = intval( ( $birdsite_thumbnail_attr['width'] / $birdsite_thumbnail_attr['height'] ) * $birdsite_thumbnail_height );
+		$birdsite_thumbnail_size = 240;
+		$birdsite_thumbnail_width = $birdsite_thumbnail_size;
+		$birdsite_thumbnail_height = $birdsite_thumbnail_size;
+
+		$birdsite_thumbnail_attr = wp_get_attachment_metadata( $post_image_id );
+		if( $birdsite_thumbnail_attr['width'] > $birdsite_thumbnail_attr['height'] ){
+			// Horizontal Thumbnail
+			$birdsite_thumbnail_width = intval( ( $birdsite_thumbnail_attr['width'] / $birdsite_thumbnail_attr['height'] ) * $birdsite_thumbnail_height );
+		}
+		else{
+			// Vertical Thumbnail
+			$birdsite_thumbnail_height = intval( ( $birdsite_thumbnail_attr['height'] / $birdsite_thumbnail_attr['width'] ) * $birdsite_thumbnail_width );
+		}
+
+		$birdsite_thumbnail_top = intval( ( $birdsite_thumbnail_size - $birdsite_thumbnail_height ) /2 );
+		$birdsite_thumbnail_left = intval( ( $birdsite_thumbnail_size - $birdsite_thumbnail_width ) /2 );
+
+		$birdsite_thumbnail_style = 'width: ' .$birdsite_thumbnail_width .'px; height: ' .$birdsite_thumbnail_height .'px; left: ' .$birdsite_thumbnail_left .'px; top: ' .$birdsite_thumbnail_top .'px;';
+
+		$html = preg_replace( '/(width|height)="\d*"\s/', '', $html );
+		$html = preg_replace('/<img/', '<img style="'. $birdsite_thumbnail_style .'"', $html );
+		$html = '<div class="thumbnail">' .$html .'<div class="more-link"><a href="' .get_permalink() .'">' .__( 'more', 'birdsite' ) .'</a></div></div>';
 	}
-	else{
-		// Vertical Thumbnail
-		$birdsite_thumbnail_height = intval( ( $birdsite_thumbnail_attr['height'] / $birdsite_thumbnail_attr['width'] ) * $birdsite_thumbnail_width );
-	}
 
-	$birdsite_thumbnail_top = intval( ( $birdsite_thumbnail_size - $birdsite_thumbnail_height ) /2 );
-	$birdsite_thumbnail_left = intval( ( $birdsite_thumbnail_size - $birdsite_thumbnail_width ) /2 );
-
-	$birdsite_attr = array(
-		'style'   => 'width: ' .$birdsite_thumbnail_width .'px; height: ' .$birdsite_thumbnail_height .'px; left: ' .$birdsite_thumbnail_left .'px; top: ' .$birdsite_thumbnail_top .'px;'
-	);
-
-	the_post_thumbnail( 'large', $birdsite_attr );
+	return $html;
 }
+add_filter( 'post_thumbnail_html', 'birdsite_post_image_html', 10, 5 );
