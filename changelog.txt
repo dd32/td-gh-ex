@@ -1,6 +1,11 @@
 *** Rams Changelog ***
 
 
+Version 1.15 (2016-06-18)
+-------------------------
+- Added the new theme directory tags
+
+
 Version 1.14 (2015-12-29)
 -------------------------
 - Removed the <title> tag from header.php (fixing conflict with title_tag())
