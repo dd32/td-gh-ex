@@ -1,6 +1,12 @@
 *** Lovecraft Changelog ***
 
 
+Version 1.17 (2016-06-18)
+-------------------------
+- Added the new theme directory tags
+- Added screen reader text
+
+
 Version 1.16 (2015-08-11)
 ------------------------- 
 - Added clearing divs after the post content on archive pages and single posts/pages
