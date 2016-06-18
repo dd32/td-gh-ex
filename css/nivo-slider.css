@@ -148,8 +148,7 @@ a.nivo-nextNav {
     width: 43px;
 }
 
-.slider-main:hover .nivo-directionNav a {
+.nivo-directionNav a{background:url(../images/slide-nav.png) no-repeat;}
+#slider:hover .nivo-directionNav a {
     opacity: 0.8;
 }
-.nivo-directionNav a{background:url(../images/slide-nav.png) no-repeat scroll 0 0 #373a3f;}
-

@@ -9,3 +9,6 @@ i) Set slider content by pages, remove pagination fuctions, header image enabled
 
 Version 1.2.1
 i) Removed demo content, added translation function and made some changes as per reviewers sugestion.
+
+Version 1.2.2
+i) Screenshot changed.
