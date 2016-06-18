@@ -127,6 +127,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.3.11
+- Updated: Font Awesome library updates to prevent conflicts with latest version.
+
 Version 1.3.10
 - Fixed:   Checkbox field saves as as "off" when unticked.
 - Fixed:   Switch field saves as as "off" when switched off.
