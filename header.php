@@ -83,13 +83,14 @@
     <div class="top-bar">
     	<h2><?php echo $title; ?></h2>
     	<?php echo $content; ?>
-    	<a class="read-more" href="<?php the_permalink(); ?>"><?php echo get_theme_mod('slidelink_text',__('Read More','animals')); ?></a>
+    	<a class="read-more" href="<?php the_permalink(); ?>"><?php echo esc_html(get_theme_mod('slidelink_text',__('Read More','animals'))); ?></a>
     </div>
 </div>      
     <?php $i++; } ?>       
      </div>
 <div class="clear"></div>        
 </section>
+<?php wp_reset_postdata(); ?>
 <?php } else { ?>
 <div class="slider-wrapper theme-default">
     <div id="slider" class="nivoSlider">
@@ -120,37 +121,6 @@
 <div class="clear"></div>
 <!-- Slider Section -->
 <?php } } } ?>
-
-
-		<?php if ( is_front_page() && !is_home() ) { ?>
-        <?php if(get_theme_mod('shpeone_txthd',true) && get_theme_mod('choosetext',true) != '') { ?>
-		<div id="welcome">
-        	<div class="wel-shaper"></div>
-            	<div class="container">
-                    <div class="wel-handler">
-                        <div class="welcome-inner">
-                        	<?php if(get_theme_mod('shpeone_txthd',true) != '') { ?>
-                            <div class="wel-left">
-                            	<?php if( get_theme_mod('shpeone_txthd',true) != ''){ ?>
-                            		<h2><?php echo get_theme_mod('shpeone_txthd',__('Welcome to Pets Animals...','animals')); ?></h2>
-                                <?php } ?>
-                                <?php if( get_theme_mod('shpeone_txt',true) != ''){ ?>
-                                <p><?php echo get_theme_mod('shpeone_txt',__('Lorem ipsum dolor sit amo nsec tetuer adipiscing elit','animals')); ?></p>
-                                <?php } ?>
-                            </div><!--wel-left-->
-                            <?php } ?>
-                            <?php if(get_theme_mod('choosetext',true) != '') { ?>
-                            <div class="wel-right">
-                            	<a href="<?php echo esc_url(get_theme_mod('shapelink','#')) ;?>"><?php echo esc_attr(get_theme_mod('choosetext','Choose Pets')); ?></a>
-                            </div><!--wel-right-->
-                            <?php } ?>
-                            <div class="clear"></div>
-                        </div><!--welcome-inner-->
-                     </div><!--wel-handler-->
-                </div><!--container-->                           
-        </div><!--welcome-->
-        <?php } ?>
-		<?php } ?>
 
       <div class="main-container">
          <?php if( function_exists('is_woocommerce') && is_woocommerce() ) { ?>

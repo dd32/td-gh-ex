@@ -5,7 +5,7 @@ Author: Flythemes
 Author URI: https://flythemes.net
 Description: Animals theme is well designed and coded with the WordPress standards and best use for theme is pet shop, pet care and related to all kinds of pet services industries. This theme has a nice layout also useful for the nature, holiday, business, restaurant, corporate, entertainment, consultancy, health and other industries. This theme is compatible with the latest version of WordPress and plugins like woocommerce, jetpack, contact form 7 etc. This theme is fully responsive and working well with all the resolutions.  Check demo at: http://flythemesdemo.net/animals
 
-Version: 1.2
+Version: 1.2.1
 License: GNU General Public License
 License URI: license.txt
 Text Domain: animals
@@ -79,18 +79,6 @@ a.read-more { padding:10px 20px; margin-top:21px; display:inline-block; font:400
 	#header .main-nav ul li ul li:last-child a{ border-bottom:none;}
 	#header .logo{float:left; }
 }
-
-/*------------------------------------------- WELCOME  -------------------------------------------*/
-#welcome { margin:0 auto; padding:0; background-color:#8e3000; height:60px; max-width:1400px;}
-.wel-shaper { width:50%; height: 0; border-bottom: 100px solid #df6120; border-right: 47px solid transparent; position:relative; z-index:99; top:-40px;}
-.wel-handler { width:1170px; position:relative; top:-85px;}
-.welcome-inner { margin:0; padding:0;}
-.wel-left { float:left; text-align:left; position:relative; z-index:99; top:-38px; }
-.wel-left h2, .wel-right h2 { font:400 30px 'Oswald'; color:#ffffff; padding:0; text-transform:uppercase;}
-.wel-left p { font:300 18px 'arimo'; color:#000000;}
-.wel-right { float:right; text-align:right; position:relative;top:-7px;}
-.wel-right a { background:url(images/choose-arrow.png) no-repeat right; padding-right:45px; font:400 30px 'Oswald'; color:#ffffff; text-transform:uppercase;}
-.wel-right a:hover { color:#ffffff;}
 
 /** post css **
 -----------------------------------------------------------------*/

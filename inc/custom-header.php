@@ -105,7 +105,3 @@ function animals_admin_header_image() {
 <?php
 }
 endif; // animals_admin_header_image 
-
-
-define('THEME_URL','http://flythemes.net');
-define('FLY_THEME_URL','http://flythemes.net/wordpress-themes');

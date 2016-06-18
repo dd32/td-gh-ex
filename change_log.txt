@@ -6,3 +6,6 @@ i) Removed unwanted tags and resolve issues as asked by reviewer.
 
 Version 1.2
 i) Set slider content by pages, remove pagination fuctions, header image enabled, resolve site title and tagline issue, resolve header textcolor issue and made changes in archive file.
+
+Version 1.2.1
+i) Removed demo content, added translation function and made some changes as per reviewers sugestion.

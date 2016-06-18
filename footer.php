@@ -11,9 +11,11 @@
         <div class="copyright-wrapper">
         	<div class="inner">
             	<div class="copyright">
-                	<p><?php echo bloginfo('name'); ?> <?php echo date('Y'); ?> | <?php _e('All Rights Reserved.','animals' ); ?> <?php echo animals_credit_link(); ?></p>
+                	<p><?php printf( __( '%1$s %2$s | All Rights Reserved. %3$s', 'animals' ), get_bloginfo( 'name' ), date_i18n( 'Y' ), animals_credit_link()); ?></p>
                 </div><!-- copyright -->
                 <div class="social-content">
+                <?php $hidesocial = get_theme_mod('hide_social', '1'); ?>
+		<?php if($hidesocial == ''){ ?>
                         <div class="social-icons">
                         	<?php if(get_theme_mod('social_fb',true) != '') { ?>
                         		<a title="facebook" class="fa fa-facebook fa-2x" target="_blank" href="<?php echo esc_url(get_theme_mod('social_fb','#')); ?>"></a>
@@ -28,8 +30,9 @@
                                 <a title="pinterest-p" class="fa fa-pinterest-p fa-2x" target="_blank" href="<?php echo esc_url(get_theme_mod('social_pint','#')); ?>"></a>
                             <?php } ?>
                             <?php if(get_theme_mod('social_ytube',true) != '') { ?>
-                                <a title="skype" class="fa fa-youtube-play fa-2x" target="_blank" href="<?php echo esc_url(get_theme_mod('social_ytube','#')); ?>"></a></div>
+                                <a title="skype" class="fa fa-youtube-play fa-2x" target="_blank" href="<?php echo esc_url(get_theme_mod('social_ytube','#')); ?>"></a>
                             <?php } ?>
+                    </div><!-- social-icons --><?php } ?>
                 </div><!-- social-content -->
                 <div class="clear"></div>         
             </div><!-- inner -->

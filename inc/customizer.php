@@ -115,64 +115,18 @@ function animals_sanitize_checkbox( $input ) {
 		'type'	=> 'text'
 	));
 	
-	
-	$wp_customize->add_section('belowsld_section',array(
-		'title'	=> __('Below Slider Strips','animals'),
-		'description'	=> __('Add below slider strips content here.','animals'),
-		'priority'		=> null
-	));
-	
-	$wp_customize->add_setting('shpeone_txthd',array(
-		'default'	=> 'Welcome to Pets Animals...',
-		'sanitize_callback'	=> 'sanitize_text_field',
-	));
-	
-	$wp_customize->add_control('shpeone_txthd',array(
-				'label' => __('Left shaper title here','animals'),
-				'section' => 'belowsld_section',
-				'setting'	=> 'shpeone_txthd',
-				'type'	=> 'text'
-		)
-	);
-	
-	$wp_customize->add_setting('shpeone_txt',array(
-		'default'	=> 'Lorem ipsum dolor sit amo nsec tetuer adipiscing elit',
-		'sanitize_callback'	=> 'sanitize_text_field',
-	));
-	
-	$wp_customize->add_control('shpeone_txt',array(
-				'label' => __('Left shaper content here','animals'),
-				'section' => 'belowsld_section',
-				'setting'	=> 'shpeone_txt',
-				'type'	=> 'text'
-		)
-	);
-	
-	$wp_customize->add_setting('choosetext',array(
-		'default'	=> 'Choose Pets',
-		'sanitize_callback'	=> 'sanitize_text_field',
-	));
-	
-	$wp_customize->add_control('choosetext',array(
-				'label' => __('Right shape text.','animals'),
-				'section' => 'belowsld_section',
-				'setting'	=> 'choosetext',
-				'type'	=> 'text'
-		)
-	);
-	
-	$wp_customize->add_setting('shapelink',array(
-		'default'	=> '#',
-		'sanitize_callback'	=> 'esc_url_raw',
-	));
-	
-	$wp_customize->add_control('shapelink',array(
-				'label' => __('Right shape link here','animals'),
-				'section' => 'belowsld_section',
-				'setting'	=> 'shapelink',
-				'type'	=> 'text'
-		)
-	);
+	$wp_customize->add_setting('hide_social',array(
+			'default' => false,
+			'sanitize_callback' => 'animals_sanitize_checkbox',
+			'capability' => 'edit_theme_options',
+	));	 
+
+	$wp_customize->add_control( 'hide_social', array(
+		   'settings' => 'hide_social',
+    	   'section'   => 'social_section',
+    	   'label'     => __('Check this to hide social icons','animals'),
+    	   'type'      => 'checkbox'
+     ));
 	
 	// Slider Section Start		
 	$wp_customize->add_section(
@@ -185,7 +139,7 @@ function animals_sanitize_checkbox( $input ) {
     );
 	
 	$wp_customize->add_setting('page-setting7',array(
-			'default' => '0',
+			'default' => __('0','animals'),
 			'capability' => 'edit_theme_options',
 			'sanitize_callback'	=> 'absint'
 	));
@@ -197,7 +151,7 @@ function animals_sanitize_checkbox( $input ) {
 	));	
 	
 	$wp_customize->add_setting('page-setting8',array(
-			'default' => '0',
+			'default' => __('0','animals'),
 			'capability' => 'edit_theme_options',	
 			'sanitize_callback'	=> 'absint'
 	));
@@ -209,7 +163,7 @@ function animals_sanitize_checkbox( $input ) {
 	));	
 	
 	$wp_customize->add_setting('page-setting9',array(
-			'default' => '0',
+			'default' => __('0','animals'),
 			'capability' => 'edit_theme_options',	
 			'sanitize_callback'	=> 'absint'
 	));
