@@ -1,6 +1,11 @@
 *** Hoffman Changelog ***
 
 
+Version 1.17 (2016-06-18)
+-------------------------
+- Added the new theme directory tags
+
+
 Version 1.16 (2016-04-02)
 -------------------------
 - Fixed respond input margins
