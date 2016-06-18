@@ -97,27 +97,8 @@
     <img src="<?php echo esc_url( get_template_directory_uri() ) ; ?>/images/slides/slider1.jpg" alt="" title="#slidecaption1" />
     <img src="<?php echo esc_url( get_template_directory_uri() ) ; ?>/images/slides/slider2.jpg" alt="" title="#slidecaption2" />
     <img src="<?php echo esc_url( get_template_directory_uri() ) ; ?>/images/slides/slider3.jpg" alt="" title="#slidecaption3" />
-    </div>                    
-      <div id="slidecaption1" class="nivo-html-caption">
-        <div class="top-bar">
-                <h2><?php esc_html_e('Welcome to Animals.','animals'); ?></h2>
-                <p><?php esc_html_e('For setup slider go to Appearace >> Customize >> Slider Settings >> Here you can select the pages for slider.','animals'); ?></p>
-        </div>
-        </div>
-        
-        <div id="slidecaption2" class="nivo-html-caption">
-            <div class="top-bar">
-                   <h2><?php esc_html_e('Architecture Animalsy','animals'); ?></h2>
-                <p><?php esc_html_e('For setup slider go to Appearace >> Customize >> Slider Settings >> Here you can select the pages for slider.','animals'); ?></p>
-            </div>
-        </div>
-        
-        <div id="slidecaption3" class="nivo-html-caption">
-            <div class="top-bar">
-                    <h2><?php esc_html_e('Get 24x7 Support.','animals'); ?></h2>
-                <p><?php esc_html_e('For setup slider go to Appearace >> Customize >> Slider Settings >> Here you can select the pages for slider.','animals'); ?></p>
-            </div>
-        </div>
+    </div>            
+       
 <div class="clear"></div>
 <!-- Slider Section -->
 <?php } } } ?>

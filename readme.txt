@@ -4,7 +4,7 @@
 
 Theme Name      :   Animals
 Theme URI       :   https://www.flythemes.net/wordpress-themes/animals-wordpress-theme/
-Version         :   1.2.2
+Version         :   1.2.3
 Tested up to    :   WP 4.5.2
 Author          :   Flythemes
 Author URI      :   https://www.flythemes.net/
@@ -50,6 +50,9 @@ Theme is Built using the following resource bundles.
 	
 
 All the slider images taken from pixabay under Creative Commons Deed CC0 - https://pixabay.com/en/service/terms/
+
+5 - How to setup slider:
+	Go to Appearance >> Customize >> Slider settings >> Here you can select the pages from each dropdown.
 
 Animals Pro version
 ==========================================================
