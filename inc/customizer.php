@@ -1,31 +1,25 @@
 <?php
 function bunny_customizer( $wp_customize ) {
 
-	
 	$wp_customize->remove_section('header_image'); /*We are not actually using a header image, only the text options.*/
 
-
-	$wp_customize->add_section('bunny_section_one',      array(
-        'title' => __( 'Logo Image', 'bunny' ),
-        'priority' => 90
-        )
-    );
 	$wp_customize->add_section('bunny_section_two',        array(
        'title' => __( 'Bunny Meta Settings', 'bunny' ),
        'priority' => 210
         )
     );
+
 	$wp_customize->add_section('bunny_section_three',        array(
        'title' => __( 'Bunny Image Settings', 'bunny' ),
        'priority' => 210
         )
     );
+
 	$wp_customize->add_section('bunny_section_four',        array(
        'title' => __( 'Bunny Animation Settings', 'bunny' ),
        'priority' => 210
         )
     );
-	
 		
 	$wp_customize->add_setting( 'bunny_title_arc_size',		array(
 			'sanitize_callback' => 'bunny_sanitize_arc_value',
@@ -61,9 +55,6 @@ function bunny_customizer( $wp_customize ) {
 		)
 	);
 
-
-
-	
 	$wp_customize->add_setting( 'bunny_easter_eggs',		array(
 			'sanitize_callback' => 'bunny_sanitize_checkbox',
 		)
@@ -95,34 +86,6 @@ function bunny_customizer( $wp_customize ) {
 		)
 	);
 	
-	
-	/** Logo settings */
-	$wp_customize->add_setting( 'bunny_logo' ,		array(
-			'sanitize_callback' => 'esc_url_raw',
-		)
-	);
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'bunny_logo', array(
-		'label'    => __( 'Choose a logo to replace the cloud behind the site title. The recommended height is 140px. Remove the image to show the cloud again.', 'bunny' ),
-		'section' => 'bunny_section_one',
-		'settings' => 'bunny_logo',
-		)
-	)
-	);
-	
-	
-	$wp_customize->add_setting( 'bunny_breadcrumb',		array(
-			'sanitize_callback' => 'bunny_sanitize_checkbox',
-		)
-	);
-	$wp_customize->add_control('bunny_breadcrumb',		array(
-			'type' => 'checkbox',
-			'label' =>  __( 'Check this box to show the breadcrumb navigation.', 'bunny' ),
-			'section' => 'nav',
-		)
-	);
-	
-	
-	
 	$wp_customize->add_setting( 'bunny_animation',		array(
 			'sanitize_callback' => 'bunny_sanitize_checkbox',
 		)
@@ -133,8 +96,6 @@ function bunny_customizer( $wp_customize ) {
 			'section' => 'bunny_section_four',
 		)
 	);
-	
-	
 	
 	$wp_customize->add_setting( 'bunny_meta',		array(
 			'sanitize_callback' => 'bunny_sanitize_checkbox',

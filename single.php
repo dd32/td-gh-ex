@@ -3,9 +3,7 @@
 			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<h1 class="post-title"><?php the_title(); ?></h1>
 				<div class="post-date"><?php echo get_the_date(get_option('date_format'));?></div>
-				<?php 
-				bunny_breadcrumbs();
-				
+				<?php		
 				if ( is_attachment() ) {
 					echo '<div class="fullimg">' . wp_get_attachment_image('','full'). '</div>';
 					if ( ! empty( $post->post_excerpt ) ) :
@@ -25,15 +23,18 @@
 			</div>
 	<?php
 	endwhile;
-	if (! is_attachment() ) {
+	if ( ! is_attachment() ) {
+
 		next_post_link('<div class="newer-posts">%link &rarr;</div>');
 		previous_post_link('<div class="older-posts">&larr; %link </div>');
 	}
+	
 	comments_template( '', true ); 
 	?>
 </div>
-<?php 
-if (is_active_sidebar('sidebar_widget')){
+
+<?php
+if ( is_active_sidebar( 'sidebar_widget' ) ) {
 	get_sidebar(); 
 }
 get_footer(); 

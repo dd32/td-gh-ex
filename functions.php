@@ -18,7 +18,15 @@ if ( ! function_exists( 'bunny_setup' ) ) :
 			'admin-head-callback'    => '',
 			'admin-preview-callback' => '',
 		);
-			
+		
+		add_theme_support( 'custom-logo', array(
+			'height'      => 140,
+			'width'       => 200,
+			'flex-height' => false,
+			'flex-width'  => true,
+		) );
+
+		add_theme_support( 'title-tag' );
 		add_theme_support( 'custom-header', $bunny_ch );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'automatic-feed-links' );
@@ -136,24 +144,24 @@ function bunny_css() {
 		}
 	}
 	
-	if (display_header_text() AND get_bloginfo('name') == ''){
+	if ( display_header_text() AND get_bloginfo('name') == '') {
 		echo '.site-description{margin-top:90px;}';
 	}
 	
-	if (display_header_text() AND get_theme_mod( 'bunny_disable_arc' ) AND get_bloginfo('name') <> ''){
+	if ( display_header_text() AND get_theme_mod( 'bunny_disable_arc' ) AND get_bloginfo('name') <> '') {
 		echo '.site-description{margin-top:-20px;}';
 	}	
 	
-	if (display_header_text() AND get_theme_mod( 'bunny_disable_arc' ) AND get_bloginfo('name') == ''){
+	if ( display_header_text() AND get_theme_mod( 'bunny_disable_arc' ) AND get_bloginfo('name') == '') {
 		echo '.site-description{margin-top:60px;}';
 	}
 	
-	if (!display_header_text()){
+	if ( !display_header_text() ) {
 		echo '.logo{margin-bottom:66px;}';
 	}	
 	echo '</style>';
 }
-add_action( 'wp_head', 'bunny_css');
+add_action( 'wp_head', 'bunny_css' );
 
 
 /* Add title to read more links */
@@ -215,32 +223,6 @@ function bunny_widgets_init() {
 add_action( 'widgets_init', 'bunny_widgets_init' );
 
 
-/**
- * Filters wp_title to print a neat <title> tag based on what is being viewed.
- */
-function bunny_wp_title( $title, $sep ) {
-	global $page, $paged;
-	if ( is_feed() )
-		return $title;
-	// Add the blog name
-	$title .= get_bloginfo( 'name' );
-	// Add the blog description for the home/front page.
-	$site_description = get_bloginfo( 'description', 'display' );
-	if ( $site_description && ( is_home() || is_front_page() ) )
-		$title .= " $sep $site_description";
-	// Add a page number if necessary:
-	if ( $paged >= 2 || $page >= 2 )
-		$title .= " $sep " . sprintf( __( 'Page %s', 'bunny' ), max( $paged, $page ) );
-		
-	if ( is_404() ) {
-        $title .=  " $sep " . sprintf( __( 'Page not found', 'bunny' ) );
-    }
-	return $title;
-}
-add_filter( 'wp_title', 'bunny_wp_title', 11, 2 );
-
-
-
 /* Comments */
 function bunny_comment($comment, $args, $depth) {
 		$GLOBALS['comment'] = $comment;
@@ -254,10 +236,13 @@ function bunny_comment($comment, $args, $depth) {
 			$add_below = 'div-comment';
 		}
 		?>
+
+
 		<<?php echo $tag ?> <?php comment_class(empty( $args['has_children'] ) ? '' : 'parent') ?> id="comment-<?php comment_ID() ?>">
 		<?php if ( 'div' != $args['style'] ) : ?>
 			<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
 		<?php endif; ?>
+
 		<div class="comment-author vcard">
 		<?php 
 		if (get_avatar($comment, $args['avatar_size'] )){
@@ -272,8 +257,7 @@ function bunny_comment($comment, $args, $depth) {
 			<div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
 				<?php
 				/* translators: 1: date, 2: time */
-				printf( __('%1$s at %2$s','bunny'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)', 'bunny'),'  ','' );
-				?>
+				printf( __('%1$s at %2$s','bunny'), get_comment_date(),  get_comment_time()) ?></a>
 			</div>
 		</div>
 		<?php comment_text() ?>
@@ -294,29 +278,6 @@ function bunny_comment($comment, $args, $depth) {
 			echo '</div>';
 		endif; 
 }
-
-
-
-function bunny_breadcrumbs(){
-	if ( get_theme_mod( 'bunny_breadcrumb' ) <> ''){
-		?>
-			<div class="crumbs"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e('Home', 'bunny');?></a>
-			<?php
-				if ( count( get_the_category() ) ) : 
-					$bunny_category = get_the_category(); 
-						if($bunny_category[0]){
-							echo '<i>/</i>  ';
-							echo '<a href="'.get_category_link($bunny_category[0]->term_id ).'">'.$bunny_category[0]->cat_name.'</a>';
-						}
-				endif;
-				echo ' <i>/</i>  ';
-				?>
-				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-			</div>
-		<?php
-	}
-}
-
 
 function bunny_author(){			
 	?>
@@ -418,7 +379,6 @@ function bunny_js(){
 <?php
 }
 add_action('wp_footer', 'bunny_js');
-
 
 //Customizer
 require get_template_directory() . '/inc/customizer.php';

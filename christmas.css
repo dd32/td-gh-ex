@@ -5,7 +5,8 @@ html {
 
 .grass {
 	position: fixed;
-    top:80%;
+     /*top:80%;*/
+    bottom:0;
     left: 0;
     width: 100%;
     min-width: 900px;
@@ -16,7 +17,7 @@ html {
 }
 .kaninf{
 	position: fixed;
-    top:40%;
+    top:44%;
     left: 20px;
     width: 436px;
     height: 443px;

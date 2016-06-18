@@ -7,10 +7,9 @@
 			<?php while ( have_posts() ) : the_post(); ?> 					
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<h1 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-				<div class="post-date"><a href="<?php the_permalink(); ?>"><?php echo get_the_date(get_option('date_format'));?></a></div>
-				<?php bunny_breadcrumbs();?>					
+				<div class="post-date"><a href="<?php the_permalink(); ?>"><?php echo get_the_date(get_option('date_format'));?></a></div>					
 				<?php   if (strpos($post->post_content,'[gallery') === false){
-							if ( has_post_thumbnail()) {
+							if ( has_post_thumbnail() ) {
 								the_post_thumbnail();
 							}
 						}
@@ -26,7 +25,7 @@ previous_posts_link('<div class="older-posts">' . __('&larr; Previous page','bun
 ?>
 </div>
 <?php 
-if (is_active_sidebar('sidebar_widget')){
+if ( is_active_sidebar( 'sidebar_widget') ) {
 	get_sidebar(); 
 }
 get_footer(); 

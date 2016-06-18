@@ -1,15 +1,15 @@
 === Bunny ===
-Contributors: poena
-Tags: white, blue, threaded-comments, custom-menu, sticky-post, translation-ready, one-column, two-columns, editor-style, featured-images, theme-options, responsive-layout, right-sidebar
+Contributors: Carolina NYmark
+Tags: threaded-comments, custom-menu, sticky-post, translation-ready, one-column, two-columns, editor-style, featured-images, theme-options, right-sidebar
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
-Copyright 2014 Carolina Nymark
+Copyright 2014-2016 Carolina Nymark
 
 = Description ==
 Fluffy friendly and cute! 'Bunny' is an animated theme suitable for pet lovers and kids. -Just one click in the theme customizer turns Bunny into the Easter bunny! 
 You can also chose the Christmas design or hide the images. The theme is responsive and translation ready with one custom menu, two optional widget areas, 
-sticky posts and threaded comments. Swedish language files are included.
+sticky posts and threaded comments.
 
 
 The code is sometimes commented in both English and Swedish. -In those cases, the Swedish comment is to the right.
@@ -31,6 +31,15 @@ Set a small number for a high arc, and high number for a low arc.
 
 
 == Changelog ==
+= 1.5 2016-06-18 =
+Updated theme uri and theme tags.
+Added support for title-tag.
+Updated the navigation functions.
+Removed the breadcrumb option.
+Removed the logo option in favor of the new custom logo function.
+	-Choosing a logo will replace the cloud behind the site title. The recommended height is 140px. Remove the image to show the cloud again.
+
+
 = 1.4 =
 Added a Christmas option.
 Added an option to remove all decorative images.

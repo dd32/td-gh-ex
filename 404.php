@@ -5,7 +5,7 @@
 </div>
 </div>
 <?php 
-if (is_active_sidebar('sidebar_widget')){
+if ( is_active_sidebar('sidebar_widget') ) {
 	get_sidebar(); 
 }
 get_footer(); 

@@ -1,23 +1,15 @@
 <?php get_header(); ?>
 <?php if ( have_posts() ) : ?>
 
-	<h1 class="archive-title">
-		<?php 
-		if ( is_day() ) :  printf( __( 'Daily Archives: %s', 'bunny' ), get_the_date(get_option('date_format')) ); 
-		elseif ( is_month() ) : printf( __( 'Monthly Archives: %s', 'bunny' ), get_the_date('F Y') ); 
-		elseif ( is_year() ) : printf( __( 'Yearly Archives: %s', 'bunny' ), get_the_date('Y') ); 
-		elseif ( is_tag() ) : printf( __( 'Tag Archives: %s', 'bunny' ), single_tag_title( '', false ) );
-		elseif ( is_category() ) : printf( __( 'Category Archives: %s', 'bunny' ), single_cat_title( '', false ));
-		else : _e( 'Archive:', 'bunny' ); 
-		endif; 
-		?>
-	</h1>
+	<?php
+		the_archive_title( '<h1 class="archive-title">', '</h1>' );
+		the_archive_description( '<div class="taxonomy-description">', '</div>' );
+	?>
 		
 	<?php while ( have_posts() ) : the_post(); ?> 
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<h1 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
 			<div class="post-date"><a href="<?php the_permalink(); ?>"><?php echo get_the_date(get_option('date_format'));?></a></div>
-			<?php bunny_breadcrumbs();?>
 			<?php
 			if (strpos($post->post_content,'[gallery') === false){
 			   if ( has_post_thumbnail()) {
@@ -38,7 +30,7 @@ endif;
 ?>
 </div>
 <?php 
-if (is_active_sidebar('sidebar_widget')){
+if ( is_active_sidebar('sidebar_widget') ) {
 	get_sidebar(); 
 }
 get_footer(); 

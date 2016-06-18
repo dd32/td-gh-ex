@@ -1,15 +1,15 @@
 /*
 Theme Name: Bunny
-Theme URI:
+Theme URI: http://wptema.se/bunny/
 Author: Carolina Nymark
-Author URI: http://layout.nu/about/
-Description: Fluffy friendly and cute! 'Bunny' is an animated theme suitable for pet lovers and kids. -Just one click in the theme customizer turns Bunny into the Easter bunny! You can also chose the Christmas design or hide the images. The theme is responsive and translation ready with one custom menu, two optional widget areas, sticky posts and threaded comments. Swedish language files are included.
-Version: 1.4
-Tags: white, blue, threaded-comments, custom-menu, sticky-post, translation-ready, one-column, two-columns, editor-style, featured-images, theme-options, responsive-layout, right-sidebar
+Author URI: http://wptema.se/
+Description: Fluffy friendly and cute! 'Bunny' is an animated theme suitable for pet lovers and children. -Just one click in the theme customizer turns Bunny into the Easter bunny! You can also chose the Christmas design or hide the images. The theme is responsive and translation ready with one custom menu, two optional widget areas, sticky posts and threaded comments.
+Version: 1.5
+Tags:threaded-comments, custom-menu, sticky-post, translation-ready, one-column, two-columns, editor-style, featured-images, theme-options, right-sidebar
 Text Domain: bunny
 License: MIT
 License URI: http://opensource.org/licenses/MIT
-Copyright 2014 Carolina Nymark
+Copyright 2014-2016 Carolina Nymark
 */
 
 html {
@@ -84,6 +84,7 @@ th{background:#f5f5f5; padding:8px; font-size:0.8em; border:1px solid #cccccc;}
 	width:70%;
 	z-index:100;
 	position:relative;
+	box-sizing: border-box;
 }
 
 #main{
@@ -144,7 +145,7 @@ th{background:#f5f5f5; padding:8px; font-size:0.8em; border:1px solid #cccccc;}
 		
 .kaninf{
 	position: fixed;
-    top:40%;
+    top:44%;
     left:0;
     width: 436px;
     height: 443px;
@@ -155,7 +156,8 @@ th{background:#f5f5f5; padding:8px; font-size:0.8em; border:1px solid #cccccc;}
 
 .grass {
 	position: fixed;
-    top:80%;
+    /*top:80%;*/
+    bottom:0;
     left: 0;
     width: 100%;
     min-width: 900px;
@@ -188,12 +190,9 @@ th{background:#f5f5f5; padding:8px; font-size:0.8em; border:1px solid #cccccc;}
 	background: #333333;
 }
 
-
 #header-menu ul :focus, .menu ul:focus{
 	background: #000000;
 }
-
-
 
 #header-menu li, .menu li {
 	float: left;
@@ -289,17 +288,6 @@ th{background:#f5f5f5; padding:8px; font-size:0.8em; border:1px solid #cccccc;}
 	font-family: 'Oswald', arial,sans-serif;
 }
 
-.crumbs{
-	font-size:0.8em;
-	clear:both;
-	margin-bottom:1.3em;
-	
-}
-.crumbs i{opacity:0.3;}
-.crumbs a{opacity:1.0;}
-.crumbs a:hover{
-	text-decoration:none;
-}
 .meta {
 	clear: both;
 	margin-top:25px;
@@ -468,6 +456,9 @@ th{background:#f5f5f5; padding:8px; font-size:0.8em; border:1px solid #cccccc;}
 .more-link a:hover{
 	text-decoration:underline;
 }
+
+.nav-next,
+.nav-previous,
 .older-posts,
 .newer-posts{
 	font-family: 'Oswald', arial,sans-serif;
@@ -479,18 +470,15 @@ th{background:#f5f5f5; padding:8px; font-size:0.8em; border:1px solid #cccccc;}
 	color:#6699ff;
 }
 
+.nav-next,
 .newer-posts{
 	float:right;
 	text-align:right;
 }
+
+.nav-previous,
 .older-posts{
 	float:left;
-}
-
-.paged-comments{
-	padding:1em; 
-	min-height:15px;
-	font-family: 'Open Sans', arial,sans-serif;
 }
 
 /* =Images and objects
@@ -633,9 +621,14 @@ blockquote{border-left:3px solid #6699ff; padding:19px; margin-left:5%; backgrou
 	margin-bottom:30px;
 }
 
-#comments .navigation {
-	padding:0 0 18px 0;
+.comment-navigation{
+	padding:0;
+	margin: 0 auto;
+	font-family: 'Open Sans', arial,sans-serif;
+	width:100%;
+	display:inline-block;
 }
+
 h2#comments-title{
 	padding:1em;
 	padding-left:0.6em;
@@ -674,10 +667,12 @@ h2#comments-title{
 .comment-body a{
 	text-decoration:none;
 }
+
 .comment-meta{
-	font-size:0.6em;
+	font-size:0.8em;
 	margin-left:64px;
 }
+
 .comment-author {
 	margin:0;
 	padding:0;
@@ -687,6 +682,7 @@ h2#comments-title{
 	width:100%;
 	margin-bottom:10px;
 }
+
 .comment-author .avatar{
 	padding:7px;
 	border-radius:32px;
@@ -876,8 +872,7 @@ input[type=reset].active {
 
 #sidebar .sidebar_inner{
 	margin:5px;
-	padding-top:1em;
-	padding-left:15px;
+	padding:1em 0 1em 15px;
 }
 
 .widgettitle{
@@ -1035,13 +1030,16 @@ option {
 	display: none;
 }
 
-@media screen and (max-width:1200px){
-	#wrapper{width:57%;}
+@media screen and (max-width:1600px){
+	#wrapper{
+		width:57%;
+	}
 	#footer, #main, #sidebar{width:100%;}
 	#sidebar{margin-left:0; margin-top:40px;}
 }
 
-@media screen and (max-width:840px){
+
+@media screen and (max-width:1200px){
 	#header-menu, .menu{
 		display: none;
 	}
@@ -1053,7 +1051,6 @@ option {
 	.site-description{
 		margin-top:-2.9em;
 	}
-
 		
 	#mobile-menu{
 		 background:url("images/burger.png") no-repeat scroll 0 0 transparent; 
@@ -1099,27 +1096,32 @@ option {
 		margin:0;
 	}
 	
-	#wrapper{margin-left:20px; width:90%;}
+	#wrapper{
+		margin:0 auto;
+		width:90%;
+	}
+
 	#footer {margin-bottom:20px;}
 	.kaninf{visibility:hidden;}
-	.kaninsmall{margin:0 auto; position:relative; left:30%; z-index:99999; visibility:visible; 
-	background: transparent url(images/kanin2.png)no-repeat; width:175px; height:177px;}
+	.kaninsmall{
+		margin:0 auto;
+	 	position:relative; 
+	 	left:30%; 
+	 	z-index:99999; 
+	 	visibility:visible; 
+		background: transparent url(images/kanin2.png)no-repeat; width:175px; height:177px;}
 
 	#footer ul{width:80%;}
 	
 	.author-info .author-description{margin:4px;}
 }
 
-@media screen and (max-width:600px){
-	html{background:url(images/blue.png) repeat;}
-	 #wrapper  {margin-left:1%; width:90%;}
+@media screen and (max-width:600px) {
+	html{
+		background:url(images/blue.png) repeat;
+	}
 	.widget{width:100%;}
-	.kaninf{visibility:hidden;}
-	.kaninsmall{margin:0 auto; position:relative; left:30%; z-index:99999; visibility:visible; 
-	background:transparent url(images/kanin2.png)no-repeat; width:175px; height:177px;}
 	.site-title{clear:both;}
-	.older-posts,.newer-posts{font-size:1em;}
-	body{border:0px solid;}
 }
 
 /*!

@@ -1,24 +1,27 @@
-<div id="comments">
-<?php 
-if ( post_password_required() ) : ?>
-	<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'bunny' ); ?></p>
-	</div>
-	<?php
+<?php
+/*
+ * If the current post is protected by a password and
+ * the visitor has not yet entered the password we will
+ * return early without loading the comments.
+ */
+if ( post_password_required() ) {
 	return;
-endif;
-if ( have_comments() ) : 
+}
 ?>
+
+<div id="comments">
+<?php if ( have_comments() ) : ?>
 	<h2 id="comments-title"><?php comments_number(); ?></h2>
-	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-		<div class="paged-comments"><?php _e( 'Pages: ', 'bunny' ); paginate_comments_links( array('prev_text' => '', 'next_text' => '') ) ?></div>
-	<?php endif;?>
+		<?php the_comments_navigation( array( 'prev_text' => __('&larr; Older Comments','bunny'), 'next_text' => __('Newer Comments &rarr;', 'bunny') ) ); ?>
+
 		<ol class="commentlist">
 			<?php wp_list_comments('callback=bunny_comment'); ?>
 		</ol>
-	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-		<div class="paged-comments"><?php _e( 'Pages: ', 'bunny' ); paginate_comments_links( array('prev_text' => '', 'next_text' => '') ) ?></div>
-	<?php endif;
+
+		<?php the_comments_navigation( array( 'prev_text' => __('&larr; Older Comments','bunny'), 'next_text' => __('Newer Comments &rarr;', 'bunny') ) ); ?>
+<?php
 endif; // end if have_comments() 
+
 comment_form();
 ?>
 </div>

@@ -1,13 +1,12 @@
 
 <?php
-	if (is_active_sidebar('footer_widget')){
+	if ( is_active_sidebar( 'footer_widget') ) {
 		echo '<div id="footer"><ul>';
 			dynamic_sidebar('footer_widget');
 		echo '</ul></div>';
 	}
 ?>
 </div>
-<div class="clear"></div>
 <div id="kaninsmall" class="kaninsmall"></div>
 <?php
 /*Add easter eggs and christmas*/

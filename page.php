@@ -3,7 +3,6 @@
 			<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<h1 class="post-title"><?php the_title(); ?></h1>
 				<?php 
-				bunny_breadcrumbs();
 				if (strpos($post->post_content,'[gallery') === false){
 					if ( has_post_thumbnail()){
 						the_post_thumbnail();
@@ -25,7 +24,7 @@ comments_template( '', true );
 ?>
 </div>
 <?php 
-if (is_active_sidebar('sidebar_widget')){
+if ( is_active_sidebar('sidebar_widget') ) {
 	get_sidebar(); 
 }
 get_footer(); 
