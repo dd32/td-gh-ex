@@ -21,10 +21,6 @@ require( WEBRITI_THEME_FUNCTIONS_PATH . '/widget/sidebars.php');
 require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/banner-settings.php');
 require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/general-settings.php');
 require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/home-page.php');
-require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/post-type-slugs.php');
-require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/template-settings.php');
-require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/layout-manager.php');
-require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/typography-settings.php');
 require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro.php');
 require( WEBRITI_THEME_FUNCTIONS_PATH . '/font/font.php');
 require( WEBRITI_THEME_FUNCTIONS_PATH . '/meta-box/metabox.php');
@@ -39,7 +35,7 @@ function spasalon_setup() {
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 */
-	load_theme_textdomain( 'sis_spa', get_template_directory() . '/lang' );
+	load_theme_textdomain( 'spasalon', get_template_directory() . '/lang' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -54,8 +50,8 @@ function spasalon_setup() {
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'sis_spa' ),
-		'footer'  => __( 'Footer Menu', 'sis_spa' ),
+		'primary' => __( 'Primary Menu', 'spasalon' ),
+		'footer'  => __( 'Footer Menu', 'spasalon' ),
 	) );
 	
 	// Set the content_width with 900

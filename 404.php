@@ -17,11 +17,11 @@ page_banner_strip(); // banner strip
 			<!--Blog Detail-->
 			<div class="col-md-8 col-xs-12">
 				<div class="site-content">
-					<h3 class="entry-title"><?php _e('Oops! Page not found','sis_spa'); ?></h3>
+					<h3 class="entry-title"><?php _e('Oops! Page not found','spasalon'); ?></h3>
 					
-					<h1 class="error_404"><?php _e('4','sis_spa'); ?><i class="fa fa-frown-o"></i><?php _e('4','sis_spa'); ?> </h1>
+					<h1 class="error_404"><?php _e('4','spasalon'); ?><i class="fa fa-frown-o"></i><?php _e('4','spasalon'); ?> </h1>
 					
-					<p><?php _e ('Page doesnt exist or some other error occured. Go to our','sis_spa'); ?> <a href="<?php echo esc_html(site_url());?>"><?php _e('home page','sis_spa'); ?></a></p>	
+					<p><?php _e ('Page doesnt exist or some other error occured. Go to our','spasalon'); ?> <a href="<?php echo esc_html(site_url());?>"><?php _e('home page','spasalon'); ?></a></p>	
 					
 				</div>
 			</div>

@@ -35,8 +35,8 @@ page_banner_strip(); // banner strip
 						<?php						
 						// Previous/next page navigation.
 						the_posts_pagination( array(
-						'prev_text'          => __('Previous','sis_spa'),
-						'next_text'          => __('Next','sis_spa')
+						'prev_text'          => __('Previous','spasalon'),
+						'next_text'          => __('Next','spasalon')
 						) ); ?>
 						</div>
 						

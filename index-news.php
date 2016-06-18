@@ -73,7 +73,7 @@ if( $current_options['enable_news'] == 'yes' ):
 					</div>
 					
 					<div class="entry-content">
-						<?php the_content( __('Read More','sis_spa') ); ?>
+						<?php the_content( __('Read More','spasalon') ); ?>
 					</div>
 					
 				</article>	
@@ -103,8 +103,8 @@ if( $current_options['enable_news'] == 'yes' ):
 				<?php				
 				// Previous/next page navigation.
 				the_posts_pagination( array(
-				'prev_text'          => __('Previous','sis_spa'),
-				'next_text'          => __('Next','sis_spa')
+				'prev_text'          => __('Previous','spasalon'),
+				'next_text'          => __('Next','spasalon')
 				) );
 				
 				?>

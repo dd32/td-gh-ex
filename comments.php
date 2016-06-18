@@ -14,7 +14,7 @@ function webriti_comments( $comment, $args, $depth ){
 	global $comment_data;
 	
 	//translations
-	$leave_reply = $comment_data['translation_reply_to_coment'] ? $comment_data['translation_reply_to_coment'] : __('Reply','sis_spa');
+	$leave_reply = $comment_data['translation_reply_to_coment'] ? $comment_data['translation_reply_to_coment'] : __('Reply','spasalon');
 	?>
 	<div id="comment-<?php comment_ID(); ?>" <?php comment_class('media comments'); ?>>
 	
@@ -29,7 +29,7 @@ function webriti_comments( $comment, $args, $depth ){
 				
 					<a href="#" class="datetime">
 						<time datetime="<?php  echo comment_time('g:i a'); ?>">
-						<?php echo comment_date('M j, Y');?> <?php _e('at','sis_spa') ?> <?php  echo comment_time('g:i a'); ?>
+						<?php echo comment_date('M j, Y');?> <?php _e('at','spasalon') ?> <?php  echo comment_time('g:i a'); ?>
 						</time>
 					</a>
 			
@@ -59,7 +59,7 @@ endif;
 	$comments_number = get_comments_number();
 	
 	if ( 1 === $comments_number ) {
-		printf( _x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'sis_spa' ), get_the_title() );
+		printf( _x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'spasalon' ), get_the_title() );
 	}
 	else{
 		printf(
@@ -68,7 +68,7 @@ endif;
 					'%1$s thoughts on &ldquo;%2$s&rdquo;',
 					$comments_number,
 					'comments title',
-					'sis_spa'
+					'spasalon'
 				),
 				number_format_i18n( $comments_number ),
 				get_the_title()
@@ -80,14 +80,14 @@ endif;
 	<?php wp_list_comments( array( 'callback' => 'webriti_comments' ) ); ?>
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) { ?>
 		<nav id="comment-nav-below">
-			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'sis_spa' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'sis_spa' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'sis_spa' ) ); ?></div>
+			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'spasalon' ); ?></h1>
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'spasalon' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'spasalon' ) ); ?></div>
 		</nav>
 		<?php }  
 		if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-	<p class="no-comments"><?php _e( 'Comments are closed.', 'sis_spa' ); ?></p>
+	<p class="no-comments"><?php _e( 'Comments are closed.', 'spasalon' ); ?></p>
 	<?php endif; ?>
 						
 </div>

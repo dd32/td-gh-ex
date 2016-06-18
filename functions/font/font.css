@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'MarketingScript';
+    src: url('MarketingScript.ttf');
+    src: url('MarketingScript.ttf?#iefix') format('embedded-opentype'),
+         url('MarketingScript.ttf') format('woff'),
+         url('MarketingScript.ttf') format('truetype'),
+         url('MarketingScript.ttf#MarketingScript') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*this is for product title*/

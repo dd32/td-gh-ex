@@ -1,31 +1,6 @@
 <?php 
 function spasalon_general_settings_customizer( $wp_customize ){
 
-// Theme color
-class WP_color_Customize_Control extends WP_Customize_Control {
-public $type = 'new_menu';
-
-       function render_content()
-       
-	   {
-	   echo '<h3>Default Color Skins</h3>';
-		  $name = '_customize-color-radio-' . $this->id; 
-		  foreach($this->choices as $key => $value ) {
-            ?>
-               <label>
-				<input type="radio" value="" data-customize-setting-link="">
-				<img src="<?php echo get_template_directory_uri(); ?>/images/color/<?php echo $value; ?>" alt="<?php echo esc_attr( $value ); ?>" />
-				</label>
-				
-            <?php
-		  }
-		  ?>
-		  <?php
-       }
-
-}
-
-
 // list control categories	
 if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 
@@ -65,66 +40,12 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 	$wp_customize->add_panel( 'general_settings', array(
 		'priority'       => 125,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('General Settings', 'sis_spa'),
+		'title'      => __('General Settings', 'spasalon'),
 	) );
-	
-	
-		/* color scheme section */
-		$wp_customize->add_section( 'color_scheme' , array(
-			'title'      => __('Color Schemes', 'sis_spa'),
-			'panel'  => 'general_settings'
-		) );
-	
-			// color scheme
-			$wp_customize->add_setting( 'spa_theme_options[color_scheme_style]' , array(
-			'default'    => 'default.css',
-			'type'=>'option',
-			'sanitize_callback' => 'sanitize_text_field',
-			));
-
-			$wp_customize->add_control( new WP_color_Customize_Control( $wp_customize , 'spa_theme_options[color_scheme_style]' , array(
-			'label' => __('Color Scheme','sis_spa'),
-			'section' => 'color_scheme',
-			'type'=>'select',
-			'choices'=> array(
-				'default.css'=>'default.png',
-				'aqua.css'=>'aqua.png',
-				'blue.css'=>'blue.png',
-				'fiord.css'=>'fiord.png',
-				'green.css'=>'green.png',
-				'mandy.css'=>'mandy.png',
-				'orange.css'=>'orange.png',
-				'purple.css'=>'purple.png',
-				'sea-green.css'=>'sea-green.png',
-			) ) ) );
-			
-			// custom color enable / disable
-			$wp_customize->add_setting( 'spa_theme_options[custom_color_enable]' , array(
-			'default'    => false,
-			'sanitize_callback' => 'sanitize_text_field',
-			'type'=>'option'
-			));
-			$wp_customize->add_control( 'spa_theme_options[custom_color_enable]' , array(
-			'label' => __('Enable Custom Color','sis_spa'),
-			'section' => 'color_scheme',
-			'type'=>'checkbox'
-			) );
-			
-			// custom color
-			$wp_customize->add_setting( 'spa_theme_options[custom_color]' , array(
-			'default'    => '#f22853',
-			'sanitize_callback' => 'sanitize_text_field',
-			'type'=>'option'
-			));
-			$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize , 'spa_theme_options[custom_color]' , array(
-			'label' => __('Choose Your Color Scheme','sis_spa'),
-			'section' => 'color_scheme',
-			'settings'=>'spa_theme_options[custom_color]'
-			) ) );
-			
+		
 		/* Logo section */
 		$wp_customize->add_section( 'logo_section' , array(
-			'title'      => __('Logo Settings', 'sis_spa'),
+			'title'      => __('Logo Settings', 'spasalon'),
 			'panel'  => 'general_settings'
 		) );
 			
@@ -137,7 +58,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 			) );
 			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize , 'spa_theme_options[upload_image]' ,
 			array(
-			'label'          => __( 'Upload Logo Image  ( 150 x 35 )', 'sis_spa' ),
+			'label'          => __( 'Upload Logo Image  ( 150 x 35 )', 'spasalon' ),
 			'section'        => 'logo_section',
 		    ) )	);
 			
@@ -148,7 +69,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[width]' , array(
-			'label'          => __( 'Width', 'sis_spa' ),
+			'label'          => __( 'Width', 'spasalon' ),
 			'section'        => 'logo_section',
 			'type'           => 'text'
 		    ) );
@@ -160,7 +81,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[height]' , array(
-			'label'          => __( 'Height', 'sis_spa' ),
+			'label'          => __( 'Height', 'spasalon' ),
 			'section'        => 'logo_section',
 			'type'           => 'text'
 		    ) );
@@ -172,14 +93,14 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[enable_logo_text]' , array(
-			'label'          => __( 'Enable Logo Text', 'sis_spa' ),
+			'label'          => __( 'Enable Logo Text', 'spasalon' ),
 			'section'        => 'logo_section',
 			'type'           => 'checkbox'
 		    ) );
-			
+	
 		/* Banner section */
 		$wp_customize->add_section( 'banner_section' , array(
-			'title'      => __('Banner Settings', 'sis_spa'),
+			'title'      => __('Banner Settings', 'spasalon'),
 			'panel'  => 'general_settings'
 		) );
 		
@@ -190,7 +111,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[spa_bannerstrip_enable]' , array(
-			'label'          => __( 'Enable Spa Banner strip in all pages', 'sis_spa' ),
+			'label'          => __( 'Enable Spa Banner strip in all pages', 'spasalon' ),
 			'section'        => 'banner_section',
 			'type'           => 'radio',
 			'choices'        => array(
@@ -205,7 +126,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[call_us]' , array(
-			'label'          => __( 'Call us on', 'sis_spa' ),
+			'label'          => __( 'Call us on', 'spasalon' ),
 			'section'        => 'banner_section',
 			'type'           => 'text'
 			) );
@@ -217,14 +138,14 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[call_us_text]' , array(
-			'label'          => __( 'Call us Text', 'sis_spa' ),
+			'label'          => __( 'Call us Text', 'spasalon' ),
 			'section'        => 'banner_section',
 			'type'           => 'text'
 			) );
 			
 		/* custom css section */
 		$wp_customize->add_section( 'custom_css_section' , array(
-			'title'      => __('Custom CSS', 'sis_spa'),
+			'title'      => __('Custom CSS', 'spasalon'),
 			'panel'  => 'general_settings'
 		) );
 		
@@ -236,14 +157,14 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[spa_custom_css]' , array(
-			'label'          => __( 'Custom CSS', 'sis_spa' ),
+			'label'          => __( 'Custom CSS', 'spasalon' ),
 			'section'        => 'custom_css_section',
 			'type'           => 'textarea'
 			) );
 			
 		/* footer copyright section */
 		$wp_customize->add_section( 'copyright_section' , array(
-			'title'      => __('Footer Copyright', 'sis_spa'),
+			'title'      => __('Footer Copyright', 'spasalon'),
 			'panel'  => 'general_settings'
 		) );
 		
@@ -254,7 +175,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 			'type'=>'option',
 			) );
 			$wp_customize->add_control('spa_theme_options[footer_tagline]' , array(
-			'label'          => __( 'Copyright Text', 'sis_spa' ),
+			'label'          => __( 'Copyright Text', 'spasalon' ),
 			'section'        => 'copyright_section',
 			'type'           => 'textarea'
 			) );

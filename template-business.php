@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Home Page
+ * Template Name: Business Template
  *
  * @package WordPress
  * @subpackage spasalon

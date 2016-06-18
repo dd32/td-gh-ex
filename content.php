@@ -19,7 +19,7 @@
 		</div>
 		
 		<div class="entry-content">
-			<?php the_content( __('Read More','sis_spa') );
+			<?php the_content( __('Read More','spasalon') );
 				  wp_link_pages( );
 			?>
 		</div>

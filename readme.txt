@@ -90,7 +90,7 @@ Project Images : CCO by kerdkanno
 
 
 Font Awesome...
-Font Awesome 4.6.1 by @davegandy - http://fontawesome.io - @fontawesome
+Font Awesome 4.6.3 by @davegandy - http://fontawesome.io - @fontawesome
 License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
 Source: http://fontawesome.io
 
@@ -106,6 +106,13 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@Version 1.6.1
+1. Remove Pro customizer settings.
+2. Remove Front Page.
+3. Remove Demo Content in Banner Setting.
+4. Remove white, responsive-layout, pink, fixed-layout Tag.
+5. Change Text Domain sis_spa to Spasalon.
+6. Update Font Awesome 4.6.1 to 4.6.3
 @Version 1.6.1
 1. Menu Tuggle issue solved.
 @Version 1.6

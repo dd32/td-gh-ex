@@ -32,7 +32,7 @@ $current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), d
 				
 			</a>
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-				<span class="sr-only"><?php _e('Toggle navigation', 'sis_spa'); ?></span>
+				<span class="sr-only"><?php _e('Toggle navigation', 'spasalon'); ?></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
