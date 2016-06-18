@@ -7,19 +7,15 @@
 	define('BECORP_TEMPLATE_DIR_URI',get_template_directory_uri());
 	define('BECORP_TEMPLATE_DIR',get_template_directory());
 	define('BECORP_THEME_FUNCTIONS_PATH',BECORP_TEMPLATE_DIR.'/core-functions');
-	define('BECORP_THEME_OPTIONS_PATH' , BECORP_TEMPLATE_DIR_URI.'/core-functions/option-panel');
 	require( BECORP_THEME_FUNCTIONS_PATH . '/menu/default_menu_walker.php' ); // for Default Menus
 	require( BECORP_THEME_FUNCTIONS_PATH . '/menu/asiathemes_nav_walker.php' ); // for Custom Menus	
 	require( BECORP_THEME_FUNCTIONS_PATH . '/scripts/scripts.php' );
 	require( BECORP_THEME_FUNCTIONS_PATH . '/comment-section/comment-function.php' ); //for comments sections
 	require( BECORP_THEME_FUNCTIONS_PATH . '/widgets/register-sidebar.php' ); //for widget register
-	require( BECORP_THEME_FUNCTIONS_PATH . '/resize-image/image_resize.php' ); //image resize 
-		
+			
 	
 	//Customizer
-	require( BECORP_THEME_FUNCTIONS_PATH . '/customizer/customizer-header.php');
-	require( BECORP_THEME_FUNCTIONS_PATH . '/customizer/customizer-service.php');
-	
+	require( BECORP_THEME_FUNCTIONS_PATH . '/customizer/customizer-header.php' );
 	// Fonts
 	require_once('asia_breadcrumbs.php');
 	require('template-tags.php');
@@ -60,8 +56,7 @@ add_action( 'after_setup_theme', 'becorp_setup' );
 		else
 		{
 			add_option('becorp_options', $becorp_options);
-		}
-		require( BECORP_THEME_FUNCTIONS_PATH . '/option-panel/becorp-option-setting.php' ); // for Option Panel Settings		
+		} // for Option Panel Settings		
 }
 
 	//Excerpt Length function

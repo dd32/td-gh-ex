@@ -28,16 +28,11 @@
 								<li><a href="#"><i class="fa fa-comments"></i><?php comments_popup_link( '0', '1', '%', '', '-'); ?></a></li>
 								<?php $categories_list = get_the_category_list( __( ', ', 'becorp' ) ); ?>
 								<li><a href="<?php  ?>"><i class="fa fa-folder-open"></i><?php echo $categories_list; ?></a></li>
-							</ul>
+						</ul>
 						<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-						<?php the_content(); ?>
+						<?php the_content(); becorp_content_nav('nav-below'); ?>
 					   <div class="post-bottom clearfix">
-							<div class="post-tags-list">
-								<?php if(get_the_tag_list() != '') { ?>
-									 <?php the_tags( __('Tags : ','becorp'), ' ', '&nbsp;'); ?> <br />
-									<?php } ?>
-								
-							</div>
+							
 						</div>
 						<div class="author-info clearfix">
 							<div class="author-image">

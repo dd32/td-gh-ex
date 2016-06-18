@@ -124,11 +124,11 @@ function becorp_wp_footer () { ?>
 } // end of becorp_wp_footer
 // end of becorp_wp_footer
 
-if ( ! function_exists( 'asiathemes_content_nav' ) ) :
+if ( ! function_exists( 'becorp_content_nav' ) ) :
 /**
  * Display navigation to next/previous pages when applicable
  */
-function asiathemes_content_nav( $nav_id ) {
+function becorp_content_nav( $nav_id ) {
 	global $wp_query, $post;
 
 	// Don't print empty markup on single pages if there's nowhere to navigate.

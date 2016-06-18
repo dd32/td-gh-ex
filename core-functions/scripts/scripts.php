@@ -11,7 +11,7 @@ function becorp_scripts()
     
 	 wp_enqueue_style('default', BECORP_TEMPLATE_DIR_URI . '/css/default.css');
 	 wp_enqueue_style('becorp-bootstrap', BECORP_TEMPLATE_DIR_URI . '/css/bootstrap.css');
-	 wp_enqueue_style('becorp-photobox',BECORP_TEMPLATE_DIR_URI . '/css/photobox.css');
+	 //wp_enqueue_style('becorp-photobox',BECORP_TEMPLATE_DIR_URI . '/css/photobox.css');
 	 wp_enqueue_style('becorp-media-responsive', BECORP_TEMPLATE_DIR_URI . '/css/media-responsive.css');
 	 wp_enqueue_style('becorp-font',BECORP_TEMPLATE_DIR_URI . '/css/font/font.css');
 	 wp_enqueue_style('becorp-animations',BECORP_TEMPLATE_DIR_URI.'/css/animate.css');

@@ -19,14 +19,19 @@
     <div class="container">
 	  <div class="row">
 	    <div class="col-md-6">
+		
 		  <ul class="top-contact pull-left">
-			
+		  <?php if($header_setting['header_phone_email_enabled']== 1 ) {
+		
+		  ?>		
 	<?php if($header_setting['header_info_phone']!='') { ?>
             <li><i class="fa fa-phone"></i><?php echo $header_setting['header_info_phone']; ?></li>
 			<?php }	if($header_setting['header_info_mail']!='') { ?>
             <li><i class="fa fa-envelope"></i><?php echo $header_setting['header_info_mail']; ?></li>
 			<?php } ?>
+			  <?php } ?>
 		  </ul>
+		
 	    </div>
 	    <div class="col-md-6">
 			<ul class="top-social pull-right">

@@ -1,6 +1,6 @@
 /*Cutomizer CSS*/
 #accordion-section-becorp_pro h3.accordion-section-title{
-	background: #f24f18 !important;
+	background: #0099ff !important;
 	color:#fff !important;
 	
 }
@@ -15,7 +15,7 @@ margin-left: 20px;
 }
 .pro-btn-success {
   color: #fff;
-  background-color: #f24f18;
+  background-color: #0099ff !important;
   border-color: #4cae4c;
 }
 .pro-btn-success:hover { color: #fff;

@@ -1,12 +1,5 @@
 <?php 
-get_header();
-
-$becorp_options=becorp_theme_default_data(); 
-$slider_setting = wp_parse_args(  get_option( 'becorp_option', array() ), $becorp_options ); 
-if($slider_setting['post_slider_enabled'] == 1 ) {
-
-get_template_part('index','postslider');
-} 
+get_header(); 
 asiathemes_breadcrumbs();
 ?>  
 <!-----Blog Section------>

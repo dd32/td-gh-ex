@@ -74,6 +74,9 @@ released
 1. Update index blog slider with default image.
 2. update sidebar.
 
+@version 2.8
+1. Fixed all issues according new wordpress guideline.
+
 *****************Licence Copyrights Attribution*******************
 Becorp WordPress Theme, Copyright 2015 asiathemes
 Becorp is distributed under the terms of the GNU GPL

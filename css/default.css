@@ -104,7 +104,7 @@ ul.top-social li a.icon-linkedin:hover {background: #0083a8;color: #fff;}
     border-color: #0099ff !important;
 }
 /*----Testimonial Section---------*/
-.testimonial-section{    background: url(../images/slide-bg.jpg) no-repeat center top fixed;}
+.testimonial-section{    background: url(../images/slide-bg.jpg) no-repeat center top fixed !important;}
 .solid-callout{background: rgba(0,0,0,0.7);}
 /* Changes the color of the indicators */
 #quote-carousel .carousel-indicators li {background: #c0c0c0;}
@@ -118,6 +118,7 @@ ul.top-social li a.icon-linkedin:hover {background: #0083a8;color: #fff;}
 .caption p{color:#fff;}
 .portfolio-icon a {background-color:#0099ff;}
 .portfolio-icon a > i{color: #FFFFFF;}
+
 /*Project Pagination Scroll*/
 .project-scroll-btn {
 	margin-bottom: 50px !important;
