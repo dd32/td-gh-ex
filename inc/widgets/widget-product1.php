@@ -109,7 +109,7 @@ public function widget($args, $instance){
     $product_args = array(
       'post_type' => 'product',
       'tax_query' => array(array('taxonomy'  => 'product_cat',
-       'field'     => 'id', 
+       'field'     => 'term_id', 
        'terms'     => $product_category                                                                 
        )),
       'posts_per_page' => $product_number

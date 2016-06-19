@@ -48,6 +48,13 @@ Images
 
 == Changelog ==
 
+= 2.0.8 =
+
+** Compatible with WPML.
+** Fixed missing text-domain issue.
+** Update Overrides WooCommerce template in our theme and make theme compatible with latest version of WooCommerce (5.6.1).
+** Fixed the my account page tabs css issue.
+
 = 2.0.7 =
 
 ** Fixed the box layout spacing issue.

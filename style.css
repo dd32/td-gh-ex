@@ -4,11 +4,11 @@ Theme URI: https://accesspressthemes.com/wordpress-themes/accesspress-store/
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com/
 Description: AccessPress Store is free WordPress theme that work beautifully with WooCommerce. The theme is packed with lots of exciting feature that enhances the ecommerce experience. It features Product slider, advanced whistlist, Featured product show list, call to action and many more. With its advanced customizer options, setting up the ecommerce website has become much more easy. Great customer support via online chat, email, support forum. Official support forum: http://accesspressthemes.com/support/ View full demo here: http://demo.accesspressthemes.com/accesspress-store/
-Version: 2.0.7
+Version: 2.0.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: accesspress-store
-Tags: white, light, custom-menu, one-column, two-columns, three-columns, left-sidebar, right-sidebar, responsive-layout, featured-images, fixed-layout, custom-header, custom-colors, translation-ready, custom-background, threaded-comments, featured-images, custom-header,translation-ready
+Tags: custom-menu, one-column, two-columns, three-columns, left-sidebar, right-sidebar, featured-images, custom-header, custom-colors, translation-ready, custom-background, threaded-comments, featured-images, custom-header,translation-ready
 This theme, like WordPress, is licensed under the GPL.
 
 AccessPress Store is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
@@ -31,19 +31,10 @@ legend,table,caption,tbody,tfoot,thead,tr,th,td {
 }
 html {
     font-size: 62.5%;
-    /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
-    
-    overflow-y: scroll;
-    /* Keeps page centered in all browsers regardless of content height */
-    
-    -webkit-text-size-adjust: 100%;
-    /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
-    
-    -ms-text-size-adjust: 100%;
-    /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
-    
+    overflow-y: scroll;    
+    -webkit-text-size-adjust: 100%;    
+    -ms-text-size-adjust: 100%;  
     box-sizing: border-box;
-    /* Apply a natural box layout model to the document; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
 }
 *,
 *:before,
@@ -6953,4 +6944,41 @@ boxd layout css
 }
 .boxed .new-prod-slide .slick-slide {
     padding: 0 10px 0 0;
+}
+/*
+===============
+account page tabs section
+===============
+*/
+nav.woocommerce-MyAccount-navigation {
+    border-right: 2px solid #e24545;
+}
+nav.woocommerce-MyAccount-navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; 
+}
+nav.woocommerce-MyAccount-navigation ul li {
+    padding: 5px 10px;
+    background: #e24545;
+    margin-bottom: 2px;
+    width: 97%;
+    cursor: pointer;
+}
+nav.woocommerce-MyAccount-navigation ul li:hover,
+nav.woocommerce-MyAccount-navigation ul li.is-active {
+    background: none;
+}
+nav.woocommerce-MyAccount-navigation ul li:hover a,
+nav.woocommerce-MyAccount-navigation ul li.is-active a {
+    color: #e24545;
+}
+nav.woocommerce-MyAccount-navigation ul li a {
+    color: #fff;
+}
+.woocommerce-account .woocommerce-MyAccount-navigation {
+    width: 25%;
+}
+.woocommerce-account .woocommerce-MyAccount-content {
+    width: 73%;
 }

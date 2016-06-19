@@ -12,7 +12,7 @@
  * @see     http://docs.woothemes.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 2.5.2
+ * @version 2.6.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -95,6 +95,3 @@ if (0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'])
         </div>
     </div>
 </li>
-<?php if (0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns']) { ?>
-    <li class='space clearfix'></li>
-<?php } ?>
