@@ -74,3 +74,6 @@
 	</div>
 	<?php } ?>	
 	<?php } ?>
+
+	<div id="main-content-container">
+		<div id="main-content">

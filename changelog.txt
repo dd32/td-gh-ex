@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+MultiColors version 4.2 - june 2016
+- files 404, archive, index, page, page-full, search and single: relocated content wrapper to files header and footer
+
 MultiColors version 4.1 - may 2016
 - added file content-none 
 - files 404, archive, index and search: relocated nothing found to separate file

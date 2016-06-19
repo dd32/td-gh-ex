@@ -5,10 +5,7 @@
 ?>
 
 <?php get_header(); ?>
-<div id="main-content-container">
-<div id="main-content">
 <div id="content">
-
 	<?php while (have_posts()) : the_post(); ?>
 
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
@@ -34,9 +31,6 @@
 	<?php endwhile; ?>
 
 	<?php edit_post_link( __( 'Edit', 'multicolors' ), '<div class="edit-link">', '</div>' ); ?>
-
 </div>
 <?php get_sidebar(); ?>
-</div>
-</div>
 <?php get_footer(); ?>

@@ -4,6 +4,8 @@
  */
 ?>
 
+</div><!-- #main-content -->
+</div><!-- #main-content-container -->
 <div id="footer">
 
 	<?php if ( is_active_sidebar( 'footer-right' ) || is_active_sidebar( 'footer-middle' ) || is_active_sidebar( 'footer-left' ) ) {?>

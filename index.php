@@ -5,8 +5,6 @@
 ?>
 
 <?php get_header(); ?>
-<div id="main-content-container">
-<div id="main-content">
 <div id="content-full">
 	<?php if ( have_posts() ) : ?>
 
@@ -23,7 +21,5 @@
 		<?php get_template_part( 'content-none' ); ?>
 
 	<?php endif; ?>
-</div>
-</div>
 </div>
 <?php get_footer(); ?>

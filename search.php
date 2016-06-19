@@ -5,8 +5,6 @@
 ?>
 
 <?php get_header(); ?>
-<div id="main-content-container">
-<div id="main-content">
 <div id="content">
 	<?php if ( have_posts() ) : ?>
 
@@ -27,6 +25,4 @@
 	<?php endif; ?>
 </div>
 <?php get_sidebar(); ?>
-</div>
-</div>
 <?php get_footer(); ?>
