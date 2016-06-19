@@ -1270,7 +1270,7 @@ body.search .product-content .price,
 	visibility:hidden !important;
 }
 
-@media screen and (min-width : 0px) and (max-width : 1024px) {	
+@media screen and (min-width : 0px) and (max-width : 992px) {	
 
 	.woocommerce-account .woocommerce-MyAccount-navigation ul:before {
 		border: none;
