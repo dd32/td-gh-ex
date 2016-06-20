@@ -26,6 +26,9 @@ JS Files
 
     jQuery Actual: MIT licenses
     https://github.com/dreamerslab/jquery.actual/
+    
+    theis stickey sidebar: MIT license
+    https://github.com/WeCodePixels/theia-sticky-sidebar
 
 
 -------------------------------------------
@@ -62,6 +65,12 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.46.7
+*Update sidebat testimonial title issue
+*Add Sticky sidebar js
+*Minor css Fixed
+*Screenshot change
+
 Version 2.46.6
 *Menu Align Issue solve
 

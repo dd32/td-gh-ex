@@ -106,7 +106,7 @@ if($post_class=='right-sidebar' || $post_class=='both-sidebar' || empty($post_cl
                             <?php }?>
 		        		</div>
                         <?php $home_template = $accesspresslite_settings['accesspresslite_home_template']; 
-                            if($home_template == 'template_two' || $home_template == '') { ?>
+                            if($home_template == 'template_two') { ?>
         					<div class="testimoinal-client-name"><?php the_title(); ?></div>
                             <?php } ?>
 			        	<div class="testimonial-excerpt">
@@ -114,7 +114,7 @@ if($post_class=='right-sidebar' || $post_class=='both-sidebar' || empty($post_cl
 			        	</div>
 			        	<div class="clearfix"></div>
                         <?php 
-                            if(!$home_template == 'template_two' || !$home_template == '') { ?>
+                            if($home_template == 'template_one' || $home_template == '') { ?>
         					<div class="testimoinal-client-name"><?php the_title(); ?></div>
                             <?php } ?>
 					</div>

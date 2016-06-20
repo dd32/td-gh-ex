@@ -500,6 +500,7 @@
 	color:#000000;
 	font-size: 26px;
 	text-transform: capitalize;
+    text-align: center;
 }
 
 .body_template_two #bottom-section .testimonial-slider-wrap, 
@@ -507,7 +508,7 @@
 .body_template_two #bottom-section .text-box {
 	width:32%;
 	margin-right: 2%;
-	border-right:rgba(192, 209, 222, 0.3) solid 1px;
+	border-right:rgba(130, 149, 164, 0.3) solid 1px;
 	position: relative;
 	padding-right:1%;
 	float:left;
@@ -763,7 +764,7 @@
 }
 
 .body_template_two .site-footer #top-footer .footer4.footer ul li i {
-	color:#4c4c4c;
+	color:#bbb9b9;
 	font-size: 26px;
 	margin-right: 10px;
 }

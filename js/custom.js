@@ -1,4 +1,4 @@
-jQuery(function(){
+jQuery(function($){
     
   jQuery(window).resize(function(){
     jQuery('.slider-caption').each(function(){
@@ -31,4 +31,6 @@ jQuery(function(){
          jQuery('.search_one').hide();
          
     });
+    $('#secondary-right, #primary').theiaStickySidebar({additionalMarginTop: 35});
+    $('#secondary-left, #primary').theiaStickySidebar({additionalMarginTop: 35});
  });

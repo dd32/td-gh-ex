@@ -209,10 +209,11 @@ function accesspresslite_scripts() {
         }
     }
 	wp_enqueue_script( 'accesspresslite-bx-slider-js', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array('jquery'), '4.1', true );
+    wp_enqueue_script( 'accesspresslite-stickey-sidebar-js', get_template_directory_uri() . '/js/sticky-sidebar/theia-sticky-sidebar.js');
 	wp_enqueue_script( 'accesspresslite-fancybox-js', get_template_directory_uri() . '/js/nivo-lightbox.min.js', array('jquery'), '2.1', true );
 	wp_enqueue_script( 'accesspresslite-jquery-actual-js', get_template_directory_uri() . '/js/jquery.actual.min.js', array('jquery'), '1.0.16', true );
 	wp_enqueue_script( 'accesspresslite-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-	wp_enqueue_script( 'accesspresslite-custom', get_template_directory_uri() . '/js/custom.js', array('jquery'), '1.1', true );
+	wp_enqueue_script( 'accesspresslite-custom', get_template_directory_uri() . '/js/custom.js', array('jquery','accesspresslite-stickey-sidebar-js'), '1.1', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -665,8 +666,8 @@ function accesspresslite_register_required_plugins() {
             'required'=>false,
         ),
         array(
-            'name' =>'Accesspress Social Login Lite',
-            'slug'=>'accesspress-social-login-lite',
+            'name' =>'WordPress Slider Plugin - WP 1 Slider',
+            'slug'=>'wp-1-slider',
             'required'=>false,
         )
     );
