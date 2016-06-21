@@ -74,9 +74,19 @@ add_action('wp_enqueue_scripts', 'white_spektrum_scripts_setup');
  4.0 - Main Theme Setup
 ================================================================================================
 */
+if (!function_exists('white_spektrum_theme_setup')) {
 function white_spektrum_theme_setup() {
     // Add and Enable Add Theme Support 
     add_theme_support('title-tag');
     add_theme_support('automatic-feed-links');
+    
+    add_theme_support('html5', array('comment-list', 'comment-form', 'search-form', 'gallery', 'caption'));
+    
+    
+    // Enable and Activate Multiple Menus for White Spektrum.
+    register_nav_menus(array(
+        'primary-navigation'    => esc_html__('Primary Navigation', 'white-spektrum'),
+    ));
 }
-add_action('after_theme_setup', 'white_spektrum_theme_setup');
+add_action('after_setup_theme', 'white_spektrum_theme_setup');    
+}

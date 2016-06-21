@@ -6,9 +6,9 @@ Author URI: http://lumiathemes.com
 Description: White Spektum is a Reponsive Theme with some special feature and looks great on tablets and smartphones.
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: white, one-column, responsive-layout, sticky-post, translation-ready, two-columns
+Tags: one-column, responsive-layout, sticky-post, translation-ready, two-columns
 Text Domain: white-spektrum
-Version: 0.1.2
+Version: 0.1.3
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and shared what you have learned with others.
@@ -765,9 +765,8 @@ span.page-numbers {
 ====================================================================================================
 */
 .comments-title {
-    border-bottom: 1px solid #CCCCCC;
-    font-size: 20px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .comment-list {
@@ -781,33 +780,60 @@ span.page-numbers {
     border-bottom: 1px solid #CCCCCC;
 }
 
-.comments-area > ol, li  {
+.comments-area > ol  {
     list-style-type: none;
 }
 
 .comment-author .avatar {
-    float: left;
+    border: 4px solid #cccccc;
+    border-radius: 50%;
+    float: left; 
     display: block;
     margin-right: 10px;
 }
 
 .comment-author .fn {
-    font-size: 16px;
+    font-size: 14px;
     margin: 0;
+    font-weight: bold;
+    font-style: normal;
     padding: 0;
 }
 
 .comment-meta {
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .comments-area p {
+    font-size: 14px;
+    margin-left: 70px;
     margin-top: 20px;
 }
 
+.comments-area .says {
+    display: none;
+}
+
 .reply {
-    font-size: 12px;
-    margin-bottom: 20px;
+	margin-bottom: 1.5em;
+	text-align: right;
+}
+
+.reply a {
+	display: inline-block;
+	padding: .5em 1.4em;
+	font-size: 85%;
+	color: #333;
+	line-height: 1.3em;
+	text-decoration: none;
+	border: 1px solid #c3c3c3;
+}
+
+.reply a:hover,
+.reply a:focus {
+	background: #000;
+	color: #fff;
+	border-color: #000;
 }
 
 .comment-list ol {
@@ -840,7 +866,7 @@ ol.children {
 }
 
 .bypostauthor > .comment-body {
-    background: #F0F0F0;
+    background: #F0F0F0; 
     border-bottom: none;
     padding: 10px;
     position: relative;
@@ -854,12 +880,16 @@ ol.children {
     padding: 0;
     padding-top: 10px;
 }
+
+.comment-form p {
+    margin-left: 0;
+}
 .comment-form label {
     display: block;
 }
 
 .required {
-    color: #ff0000;
+    color: #FF0000;
     font-size: 10px;
 }
 
@@ -871,7 +901,7 @@ ol.children {
 
 .form-allowed-tags {
     font-size: 13px;
-    width: 100%;
+    width: 600px;
 }
 
 .form-submit .submit {
@@ -913,7 +943,7 @@ ol.children {
 
 #respond textarea#comment{
     height: 200px;
-    width: 99.5%;
+    width: 99%;	
 }
 
 .comments-link .screen-reader-text {
