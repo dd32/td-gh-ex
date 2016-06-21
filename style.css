@@ -1,14 +1,14 @@
 /*
 Theme Name: Atlantic
-Theme URI: https://elevate360.com.au/atlantic/
+Theme URI: https://elevate360.com.au/themes/atlantic/
 Author: Elevate
 Author URI: https://elevate360.com.au/
 Description: Atlantic
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: atlantic
-Tags: black, white, light, one-column, fluid-layout, custom-header, custom-menu, editor-style, featured-images, post-formats, rtl-language-support, sticky-post, translation-ready, threaded-comments, theme-options
+Tags: one-column, custom-header, custom-menu, editor-style, featured-images, post-formats, rtl-language-support, sticky-post, translation-ready, threaded-comments, theme-options
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -44,6 +44,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
 html {
 	font-size: 62.5%;
 }
@@ -181,12 +187,6 @@ html {
 	box-sizing: border-box;
 }
 
-*,
-*:before,
-*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-	box-sizing: inherit;
-}
-
 body {
 	background: #fff; /* Fallback for when there is no custom background color defined. */
 }
@@ -313,6 +313,10 @@ textarea {
 	color: #666;
 	border: 1px solid #ccc;
 	border-radius: 3px;
+	max-width: 100%;
+	width: 100%;
+	padding: 6px 10px;
+	margin: 0 0 5px;
 }
 
 select {
@@ -338,27 +342,8 @@ textarea:focus {
 	color: #111;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="color"] {
-	padding: 3px;
-}
-
-textarea {
-	padding-left: 3px;
-	width: 100%;
+.required {
+	color: red;
 }
 
 /*--------------------------------------------------------------
@@ -481,27 +466,17 @@ textarea {
 }
 .site-title {
 	margin: 2rem 0 1.5rem;
-	font-size: 3rem;
+	font-size: 5rem;
 	font-weight: bold;
 }
 .site-title a {
 	text-decoration: none;
 }
-.site-branding.logo .site-title,
-.site-branding.logo .site-description {
-	clip: rect(1px, 1px, 1px, 1px);
-	height: 1px;
-	overflow: hidden;
-	position: absolute !important;
-	width: 1px;
-	/* many screen reader and browser combinations announce broken words as they would appear visually */
-	word-wrap: normal !important;
-}
-.site-branding .logo-img {
+.site-branding .custom-logo-link {
 	display: block;
 	margin: 1.5rem auto;
 }
-.site-branding .logo-img img {
+.site-branding .custom-logo-link img {
 	margin: 0 auto;
 }
 
@@ -696,6 +671,13 @@ textarea {
 	margin: 0.5em auto;
 }
 
+#content div.sharedaddy,
+#main div.sharedaddy,
+div.sharedaddy {
+	text-align: center;
+}
+
+
 /*--------------------------------------------------------------
 ## Asides
 --------------------------------------------------------------*/
@@ -717,6 +699,17 @@ textarea {
 
 .bypostauthor {
 	display: block;
+}
+
+@media (min-width: 800px) {
+	.comment-form-author, .comment-form-email, .comment-form-url {
+    	width: 32%;
+		float: left;
+		margin-right: 2%;
+	}
+	.comment-form-url {
+    	margin-right: 0;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -756,6 +749,9 @@ textarea {
 .site-footer a,
 .site-footer a:visited {
 	color: white;
+}
+.site-footer .site-info {
+	text-align: center;
 }
 
 /*--------------------------------------------------------------

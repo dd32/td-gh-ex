@@ -1,7 +1,7 @@
 <!-- pagination -->
 <div class="pagination">
 	<div class="clear pagination-inner">
-		<?php atlantic_pagination(); ?>
+		<?php the_posts_pagination(); ?>
 	</div>
 </div>
 <!-- /pagination -->

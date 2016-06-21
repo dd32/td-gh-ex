@@ -16,7 +16,7 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="inner site-info">
-			<?php printf( esc_html__( '%1$s by %2$s', 'atlantic' ), 'atlantic', '<a href="https://elevate360.com.au/" rel="designer">elevate360</a>' ); ?>
+			<?php printf( esc_html__( '%1$s by %2$s', 'atlantic' ), 'atlantic', '<a href="https://elevate360.com.au/" rel="designer">elevate</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 

@@ -159,31 +159,6 @@ function atlantic_customize_register( $wp_customize ) {
 		) 
 	));
 
-	// Logo options
-	$wp_customize->add_section( 'atlantic_logo_options',
-		array(
-			'title'       => __( 'Logo', 'atlantic' ),
-			'priority'    => 320,
-			'capability'  => 'edit_theme_options',
-			'description' => __('Change logo here.', 'atlantic'), 
-		) 
-	);
-	$wp_customize->add_setting('atlantic_logo', array(
-	    'default' => '',
-		'transport'  => 'postMessage',
-		'sanitize_callback' => 'esc_url_raw'
-	));
-
-	$wp_customize->add_control( new WP_Customize_Image_Control(
-			$wp_customize,
-			'atlantic_logo_control',
-			array(
-				'label'      => __( 'Upload a logo', 'atlantic' ),
-				'section'    => 'atlantic_logo_options',
-				'settings'   => 'atlantic_logo'
-			)
-		)
-	);
 
 	// Google fonts
 	if (get_transient('atlantic_google_fonts')) :

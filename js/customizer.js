@@ -77,30 +77,6 @@
 		} );
 	} );
 
-	// Logo
-	wp.customize( 'atlantic_logo', function( value ) {
-		value.bind( function( to ) {
-			if ( '' === to ) {
-				$( '.site-branding .logo-img' ).remove();
-				$( '.site-title, .site-description' ).css( {
-					'display': 'block'
-				} );
-			} else {
-				$( '.site-branding' ).append('<a href="/" rel="home" class="logo-img"><img src="' + to + '"></a>');
-				$( '.site-branding .logo-img' ).css( {
-					'display': 'block',
-					'margin': '1.5rem auto'
-				} );
-				$( '.site-branding .logo-img a' ).css( {
-					'margin': '0 auto'
-				} );
-				$( '.site-title, .site-description' ).css( {
-					'display': 'none'
-				} );
-			}
-		} );
-	} );
-
 	// Content font
 	wp.customize( 'atlantic_font', function( value ) {
 		value.bind( function( to ) {

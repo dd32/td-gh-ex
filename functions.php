@@ -70,6 +70,18 @@ function atlantic_setup() {
 		'quote',
 		'status'
 	) );
+
+	/*
+	 * Enable support for custom logo.
+	 *
+	 */
+	add_theme_support( 'custom-logo', array(
+		'height'      => 100,
+		'width'       => 400,
+		'flex-height' => true,
+		'flex-width'  => true,
+		'header-text' => array( 'site-title', 'site-description' ),
+	) );
 }
 endif;
 add_action( 'after_setup_theme', 'atlantic_setup' );
@@ -131,21 +143,6 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
- * Pagination for paged posts, Page 1, Page 2, Page 3, with Next and Previous Links
- */
-function atlantic_pagination()
-{
-    global $wp_query;
-    $big = 999999999;
-    echo paginate_links(array(
-        'base' => str_replace($big, '%#%', get_pagenum_link($big)),
-        'format' => '?paged=%#%',
-        'current' => max(1, get_query_var('paged')),
-        'total' => $wp_query->max_num_pages
-    ));
-}
-
-/**
  * Size of embedded objects
  */
 add_filter( 'embed_defaults', 'atlantic_embed_size' );
@@ -153,3 +150,20 @@ function atlantic_embed_size() {
     // Adjust values
     return array('width' => 1280);
 }
+
+/**
+ * Custom logo
+ */
+if ( ! function_exists( 'atlantic_the_custom_logo' ) ) :
+/**
+ * Displays the optional custom logo.
+ *
+ * Does nothing if the custom logo is not available.
+ *
+ */
+function atlantic_the_custom_logo() {
+	if ( function_exists( 'the_custom_logo' ) ) {
+		the_custom_logo();
+	}
+}
+endif;
