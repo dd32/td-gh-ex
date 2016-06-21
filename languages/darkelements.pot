@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: DarkElements\n"
-"POT-Creation-Date: 2016-05-22 20:24+0200\n"
+"POT-Creation-Date: 2016-06-22 00:06+0200\n"
 "PO-Revision-Date: 2015-11-15 17:03+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -167,9 +167,9 @@ msgstr ""
 #. Description of the plugin/theme
 msgid ""
 "DarkElements is a free, clean, minimalistic, responsive, mobile friendly "
-"WordPress theme. Features: sidebar on left side, navigation on left side, "
-"widget areas in footer, custom header image, custom background, custom logo "
-"to replace blogname and description. Enjoy."
+"WordPress theme. Features: sidebar, sidebar navigation, widget areas in "
+"footer, custom header image, custom background, custom logo to replace "
+"blogname and description. Enjoy."
 msgstr ""
 
 #. Author of the plugin/theme

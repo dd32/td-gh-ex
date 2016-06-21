@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+DarkElements version 4.4 - june 2016
+- files style and custom-editor-style: resized all headings (including line-height)
+- file style: removed line-height from several elements
+
 DarkElements version 4.3 - may 2016
 - added file content-none 
 - files 404, archive, index and search: relocated nothing found to separate file
