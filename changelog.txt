@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+MyKnowledgeBase version 4.0 - june 2016
+- files style and custom-editor-style: resized all headings (including line-height)
+- file style: removed line-height from several elements
+
 MyKnowledgeBase version 3.9 - may 2016
 - added file content-none 
 - files 404, archive, index and search: relocated nothing found to separate file
