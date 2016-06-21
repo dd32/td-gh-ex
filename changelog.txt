@@ -1,7 +1,7 @@
 CHANGELOG
 =========
 
-LeftSide version 3.8 - june 2016
+LeftSide version 3.9 - june 2016
 - files style and custom-editor-style: resized all headings (including line-height)
 - file style: removed line-height from several elements
 
