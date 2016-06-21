@@ -1,18 +1,21 @@
 ﻿=== Bicubic ===
-Contributors: the BestWebSoft team
+Contributors: BestWebLayout, BestWebSoft
+Author URI: http://bestweblayout.com/
 Donate link: https://www.2checkout.com/checkout/purchase?sid=1430388&quantity=10&product_id=13
-Tags: gray, green, right-sidebar, fixed-layout, custom-menu, featured-images, translation-ready, custom-background, custom-header, editor-style
-Requires at least: 3.9
-Tested up to: 4.1.1
-Stable tag: 1.4
-License: GPLv3
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Tags: two-columns, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, sticky-post, threaded-comments, translation-ready
+Requires at least: 4.2
+Tested up to: 4.5.2
+Stable tag: 1.7
+License: GNU General Public License v3
+License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
+Bicubic WordPress Theme, Copyright 2016 BestWebLayout.com
+Theme Bicubic is distributed under the terms of the GNU GPL
 
 Bicubic Wordpress theme is a simple solution to customize your website.
 
 == Description ==
 
-Bicubic is a beautiful theme built for news and blogging. It was created for easy reading. Each post-type is displayed in the way to give maximum attention to your content. With Bicubic Theme scrolling becomes a pleasurable journey. The design is neither overbearing nor busy. Each element of Bicubic has been designed with meticulous detail to provide you with full control over your page. It allows you to present your content in a clear and structured manner. Bicubic is fully compliant with BestWebSoft products, thus, such plugins, as PDF & Print (http://wordpress.org/plugins/pdf-print/) and Gallery (http://wordpress.org/plugins/gallery-plugin/) will suit your website perfectly. That is why, if you install this Theme you will prevent any possible compatibility troubles as well as extend your site's functionality significantly. Check out this theme's demo at http://bestwebsoft.com/wordpress_demo_theme/bicubic/
+Bicubic is a beautiful theme built for news and blogging. It was created for easy reading. Each post-type is displayed in the way to give maximum attention to your content. With Bicubic Theme scrolling becomes a pleasurable journey. The design is neither overbearing nor busy. Each element of Bicubic has been designed with meticulous detail to provide you with full control over your page. It allows you to present your content in a clear and structured manner. Bicubic is fully compliant with BestWebSoft products, thus, such plugins, as PDF & Print (http://wordpress.org/plugins/pdf-print/) and Gallery (http://wordpress.org/plugins/gallery-plugin/) will suit your website perfectly. That is why, if you install this Theme you will prevent any possible compatibility troubles as well as extend your site's functionality significantly. Check out this theme's demo at http://wp-demo-theme.bestweblayout.com/bicubic/
 
 == Installation ==
 
@@ -92,11 +95,7 @@ You just need go to Dashboard and use the select menu Appearance -> Menus. Then 
 
 = How to change language from English to Russian? =
 
-WordPress v4.0 and above:
 Change the language in the admin settings screen. Settings > General > Site Language.
-
-WordPress v3.9.2 and below:
-In the main catalog of your WordPress site, please find wp-config.php file, open it and change define( 'WPLANG', '' ); for define( 'WPLANG', 'ru_RU' ).
 
 = Ask your questions =
 
@@ -105,6 +104,14 @@ In the main catalog of your WordPress site, please find wp-config.php file, open
 1. Theme home page.
 
 == Changelog ==
+
+= v1.7 - 21.06.2016 =
+* Bugfix: Fixed mismatch coding standards.
+* Bugfix: Fixed theme styles.
+* Update: Unnecessary files category.php and tag.php have been removed.
+* Update: Screenshot was updated to size 1200x900.
+* Update: The theme has been tested for the compatibility with WordPress v.4.5.2.
+* Update: Theme was transferred to new WordPress account.
 
 = V1.6 - 16.04.2015 =
 * Update: We updated the theme to WordPress 4.1.1.
@@ -116,12 +123,12 @@ In the main catalog of your WordPress site, please find wp-config.php file, open
 * Bugfix: We fixed bugs in header.php, searchform.php.
 
 = V1.4 - 29.07.2014 = 
-* Update: We updated all functionality for wordpress 3.9.1. 
+* Update: We updated all functionality for WordPress 3.9.1.
 * New: We added bicubic.pot file. 
 * Bugfix: We fixed bugs in script.js.
 
 = V1.3 - 07.05.2014 = 
-* Update: We updated all functionality for wordpress 3.9.
+* Update: We updated all functionality for WordPress 3.9.
 * Update: Removed unnecessary code.
 
 = V1.2 - 14.01.2014 = 
@@ -144,6 +151,9 @@ In the main catalog of your WordPress site, please find wp-config.php file, open
 
 == Upgrade Notice ==
 
+= V1.7 =
+Fixed mismatch coding standards. Fixed theme styles. Unnecessary files category.php and tag.php have been removed. Screenshot was updated to size 1200x900. The theme has been tested for the compatibility with WordPress v.4.5.2. Theme was transferred to new WordPress account.
+
 = V1.6 =
 We updated the theme to WordPress 4.1.1. Theme screenshot was updated. We fixed width of the sidebar. The following files were updated: style.css, header.php, functions.php.
 
@@ -151,10 +161,10 @@ We updated the theme to WordPress 4.1.1. Theme screenshot was updated. We fixed 
 We fixed bugs in header.php, searchform.php.
 
 = V1.4 =
-We updated all functionality for wordpress 3.9.1. We fixed bugs in script.js. We added bicubic.pot file. 
+We updated all functionality for WordPress 3.9.1. We fixed bugs in script.js. We added bicubic.pot file.
 
 = V1.3 =
-We updated all functionality for wordpress 3.9. Removed unnecessary code.
+We updated all functionality for WordPress 3.9. Removed unnecessary code.
 
 = V1.2 = 
 The page/post blank title bug was fixed.
