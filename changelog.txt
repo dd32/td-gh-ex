@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+MultiColors version 4.3 - june 2016
+- files style and custom-editor-style: resized all headings (including line-height)
+- file style: removed line-height from several elements
+
 MultiColors version 4.2 - june 2016
 - files 404, archive, index, page, page-full, search and single: relocated content wrapper to files header and footer
 
