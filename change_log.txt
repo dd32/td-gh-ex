@@ -15,3 +15,6 @@ i) Screenshot changed.
 
 Version 1.2.3
 i) Removed default slider content and added instructions in readme.txt file.
+
+Version 1.2.4
+i) Removed default slider images.

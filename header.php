@@ -91,17 +91,11 @@
 <div class="clear"></div>        
 </section>
 <?php wp_reset_postdata(); ?>
-<?php } else { ?>
-<div class="slider-wrapper theme-default">
-    <div id="slider" class="nivoSlider">
-    <img src="<?php echo esc_url( get_template_directory_uri() ) ; ?>/images/slides/slider1.jpg" alt="" title="#slidecaption1" />
-    <img src="<?php echo esc_url( get_template_directory_uri() ) ; ?>/images/slides/slider2.jpg" alt="" title="#slidecaption2" />
-    <img src="<?php echo esc_url( get_template_directory_uri() ) ; ?>/images/slides/slider3.jpg" alt="" title="#slidecaption3" />
-    </div>            
+<?php } ?>           
        
 <div class="clear"></div>
 <!-- Slider Section -->
-<?php } } } ?>
+<?php } }  ?>
 
       <div class="main-container">
          <?php if( function_exists('is_woocommerce') && is_woocommerce() ) { ?>

@@ -4,7 +4,7 @@
 
 Theme Name      :   Animals
 Theme URI       :   https://www.flythemes.net/wordpress-themes/animals-wordpress-theme/
-Version         :   1.2.3
+Version         :   1.2.4
 Tested up to    :   WP 4.5.2
 Author          :   Flythemes
 Author URI      :   https://www.flythemes.net/
@@ -32,9 +32,6 @@ Theme is Built using the following resource bundles.
 	License: Distributed under the terms of the Apache License, version 2.0 http://www.apache.org/licenses/LICENSE-2.0.html
 
 3 - Slider Images
-		https://pixabay.com/en/retriever-canine-pet-animal-white-348572/
-		https://pixabay.com/en/dog-backyard-canine-pet-animal-932447/
-		https://pixabay.com/en/labrador-retriever-dog-head-canine-932738/
 		https://pixabay.com/en/chihuahua-dog-puppy-cute-pet-624924/
 
 4 - Font Awesome
