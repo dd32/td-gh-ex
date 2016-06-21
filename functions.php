@@ -36,7 +36,6 @@ function ad_mag_lite_after_setup_theme(){
         add_filter('wp_title', 'ad_mag_lite_title', 10, 2);
         add_action('wp_footer', 'ad_mag_lite_footer');
         add_action('wp_head', 'ad_mag_lite_head');
-        add_filter( 'excerpt_length', 'ad_mag_lite_the_excerpt_length' );
         add_filter( 'excerpt_more', 'ad_mag_lite_custom_excerpt_more' );
 	}
 
@@ -166,15 +165,10 @@ function ad_mag_lite_custom_front_localization() {
         'ajax' => array(
             'url' => admin_url('admin-ajax.php'),
         ),
-        'sticky_menu' => 1,
+        'sticky_menu' => get_theme_mod( 'sticky_menu', 1 ),
     );
 
     return $front_localization;
-}
-
-function ad_mag_lite_the_excerpt_length( $length ) {
-    $length = get_theme_mod( 'blog-excerpt-length', 55 );
-    return $length;
 }
 
 function ad_mag_lite_custom_excerpt_more( $more ) {

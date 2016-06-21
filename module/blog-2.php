@@ -24,7 +24,9 @@ if(!is_home()){
             }
             ?>
             <?php if(is_active_sidebar( 'left-sidebar' )) {
+                echo '<div class="ad-mag-left-sb">';
                 dynamic_sidebar( 'left-sidebar' );
+                echo '</div>';
             }
             ?>
 
@@ -105,8 +107,9 @@ if(!is_home()){
 
 <?php if(is_active_sidebar( 'right-sidebar' )) {
     echo '<div class="sidebar">';
+    echo '<div class="ad-mag-right-sb">';
     dynamic_sidebar( 'right-sidebar' );
-    echo '</div>';
+    echo '</div></div>';
 } 
 ?>
 

@@ -8,6 +8,12 @@ Moreover, with sleekly design, responsiove layout, awesome typography and focus 
 Change log
 --------------------
 
+= 1.0.4 = (21/06/2016)
+	- Fixed some css issues.
+	- Add option sticky menu.
+	- Remove file unused.
+	- Remove custom header tag.
+
 = 1.0.3 = (11/06/2016)
 	- Fixed display content widget "(AdMag) Comments".
 	- Add_theme_support logo.

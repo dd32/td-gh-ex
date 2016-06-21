@@ -20,7 +20,9 @@
                 <div class="kopa-col-1<?php echo esc_attr($class); ?>">
 
                     <?php if(is_active_sidebar( 'left-sidebar' )) {
+                        echo '<div class="ad-mag-left-sb">';
                         dynamic_sidebar( 'left-sidebar' );
+                        echo '</div>';
                     } 
                     ?>
 
@@ -89,14 +91,18 @@
 
 <?php if(is_active_sidebar( 'center-sidebar' )) {
    echo '<div class="kopa-col-3">';
+   echo '<div class="ad-mag-center-sb">';
    dynamic_sidebar( 'center-sidebar' );
+   echo '</div>';
    echo '</div>';
 } 
 ?>
 
 <?php if(is_active_sidebar( 'right-sidebar' )) {
    echo '<div class="kopa-col-2">';
+   echo '<div class="ad-mag-right-sb">';
    dynamic_sidebar( 'right-sidebar' );
+   echo '</div>';
    echo '</div>';
 } 
 ?>

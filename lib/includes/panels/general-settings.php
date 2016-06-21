@@ -6,6 +6,15 @@ function ad_mag_lite_init_options($options){
         'title' => __('General Settings', 'ad-mag-lite'));
 
     $options['settings'][] = array(
+        'settings'    => 'sticky_menu',
+        'label'       => __('Sticky Menu', 'ad-mag-lite'),
+        'description' => '',
+        'default'     => '1',
+        'type'        => 'checkbox',
+        'section'     => 'ad_mag_opt_general',
+        'transport'   => 'refresh');
+
+    $options['settings'][] = array(
         'settings'    => 'social_facebook',
         'label'       => __('Socials', 'ad-mag-lite'),
         'description' => __('Facebook', 'ad-mag-lite'),
@@ -90,14 +99,6 @@ function ad_mag_lite_init_options($options){
             ),
         'section'     => 'ad_mag_opt_general',
         'transport'   => 'refresh'); 
-
-    $options['settings'][] = array(
-        'settings'    => 'blog-excerpt-length',
-        'label'       => __('Excerpt length', 'ad-mag-lite'),
-        'default'     => '55',
-        'type'        => 'text',
-        'section'     => 'ad_mag_opt_general',
-        'transport'   => 'refresh');
 
     $options['settings'][] = array(
         'settings'    => 'custom_css',
