@@ -1,5 +1,9 @@
 Bazaar Lite Changelog
 
+- Version 1.2.3 - Released: 23.06.2016
+
+-- Updated : WooCommerce templates.
+
 - Version 1.2.2 - Released: 19.06.2016
 
 -- Fixed : WooCommerce dashboard layout on mobile devices.
