@@ -12,8 +12,8 @@ if (!function_exists('ad_mag_lite_load_more_blog_3')) {
         global $wp_query;
         $offset = 0;
 
-        $offset = $_POST['postoffset'];
-        $cat_id = $_POST['cat_id'];
+        $offset = intval( $_POST['postoffset'] );
+        $cat_id = intval( $_POST['cat_id'] );
         $args = array(
             'offset' => $offset,
             'posts_per_page' => get_option('posts_per_page'),
@@ -72,9 +72,9 @@ if (!function_exists('ad_mag_lite_load_more_blog_2')) {
 
         global $wp_query;
         $offset = 0;
-        $offset = $_POST['postoffset'];
-        $cat_id = $_POST['cat_id'];
-        $index = $_POST['index'];
+        $offset = intval( $_POST['postoffset'] );
+        $cat_id = intval( $_POST['cat_id'] );
+        $index = intval( $_POST['index'] );
 
         $args = array(
             'offset' => $offset,

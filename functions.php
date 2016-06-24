@@ -112,7 +112,6 @@ function ad_mag_lite_enqueue_scripts(){
         wp_enqueue_script('ad-mag-lite-bootstrap', $dir . '/js/bootstrap.min.js', array('jquery'), null, true);
         wp_enqueue_script('ad-mag-lite-custom-js', $dir . '/js/custom.js', array('jquery'), null, true);
         wp_enqueue_script('ad-mag-lite-easypaginate-js', $dir . '/js/easypaginate.js', array('jquery'), null, true);
-        wp_enqueue_script('ad-mag-lite-googlemaps-js', 'http://maps.google.com/maps/api/js?sensor=true', array('jquery'), null, true);
         
         // send localization to frontend
         wp_localize_script('ad-mag-lite-custom-js', 'ad_mag_lite_custom_front_localization', ad_mag_lite_custom_front_localization());

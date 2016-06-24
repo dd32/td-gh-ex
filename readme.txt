@@ -8,6 +8,11 @@ Moreover, with sleekly design, responsiove layout, awesome typography and focus 
 Change log
 --------------------
 
+= 1.0.5 = (24/06/2016)
+	- Removed enqueue email.
+	- Updated js unminified version.
+	- Sanitize untrusted data.
+
 = 1.0.4 = (21/06/2016)
 	- Fixed some css issues.
 	- Add option sticky menu.

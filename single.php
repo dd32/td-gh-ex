@@ -80,7 +80,7 @@
 
 <?php if(has_tag()) : ?>
     <div class="kopa-tag-box">
-        <?php the_tags( '<span>Tags</span> ', ' '); ?>
+        <?php the_tags( '<span>'.esc_html__( 'Tags', 'ad-mag-lite' ).'</span> ', ' '); ?>
     </div>
     <!-- kopa-tag-box --> 
 <?php endif; ?>
