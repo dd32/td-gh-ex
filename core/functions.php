@@ -122,6 +122,21 @@ if (!function_exists('bazaarlite_get_height')) {
 }
 
 /*-----------------------------------------------------------------------------------*/
+/*RESPONSIVE EMBED */
+/*-----------------------------------------------------------------------------------*/ 
+
+if (!function_exists('bazaarlite_embed_html')) {
+	
+	function bazaarlite_embed_html( $html ) {
+		return '<div class="embed-container">' . $html . '</div>';
+	}
+	 
+	add_filter( 'embed_oembed_html', 'bazaarlite_embed_html', 10, 3 );
+	add_filter( 'video_embed_html', 'bazaarlite_embed_html' );
+	
+}
+
+/*-----------------------------------------------------------------------------------*/
 /* THEME SETUP */
 /*-----------------------------------------------------------------------------------*/   
 
@@ -129,13 +144,10 @@ if (!function_exists('bazaarlite_setup')) {
 
 	function bazaarlite_setup() {
 
-		global $nivoitems, $bxitems;
+		global $content_width;
 
 		if ( ! isset( $content_width ) )
-			$content_width = 940;
-
-		$nivoitems = 0;
-		$bxitems = 0;
+			$content_width = bazaarlite_get_width();
 	
 		add_theme_support( 'post-formats', array( 'aside','gallery','quote','video','audio','link','status','chat','image' ) );
 		add_theme_support( 'automatic-feed-links' );

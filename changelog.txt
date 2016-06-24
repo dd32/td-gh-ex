@@ -1,5 +1,9 @@
 Bazaar Lite Changelog
 
+- Version 1.2.4 - Released: 24.06.2016
+
+-- Fixed : Embeded videos.
+
 - Version 1.2.3 - Released: 23.06.2016
 
 -- Updated : WooCommerce templates.
