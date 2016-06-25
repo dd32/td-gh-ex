@@ -1,3 +1,5 @@
+###Version 0.5
+* Unused code removed.
 ###Version 0.4
 * Single posts and pages duplicate content issue fixed.
 * Remove Recommended kirki plugin.

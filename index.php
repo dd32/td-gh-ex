@@ -32,7 +32,7 @@ get_template_part('breadcrumbs'); ?>
 						wp_link_pages(); ?>
 					</div><!-- end col-lg-4 -->
 				</div><!-- end blog-masonry -->
-				<div class="clearfix"></div>					
+				<div class="clearfix"></div>		
 				<hr>
 				<?php awada_pagination() ; ?>
 			</div><!-- end row --> 
