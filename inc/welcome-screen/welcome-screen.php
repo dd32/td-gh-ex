@@ -6,25 +6,11 @@ if (!defined('ABSPATH')) {
     exit;
 }
 if (!class_exists('Awada_Welcome')) {
-require_once(dirname(__FILE__) . '/sections/class.webhunt_filesystem.php');
 class Awada_Welcome {
-	public $filesystem = null;
-	public static $_upload_dir;
-	public $admin_notices = array();
 	/**
 	 * Constructor for the welcome screen
 	 */
 	public function __construct() {
-		$this->filesystem = new webhunt_Filesystem ($this);
-
-		//set webhunt upload folder
-		$this->set_webhunt_content();
-		
-		// Display admin notices
-		add_action('admin_notices', array($this, 'adminNotices'), 99);
-
-		// Check for dismissed admin notices.
-		add_action('admin_init', array($this, 'dismissAdminNotice'), 9);
 		
 		/* create dashbord page */
 		add_action( 'admin_menu', array( $this, 'Awada_lite_welcome_register_menu' ) );
@@ -41,29 +27,11 @@ class Awada_Welcome {
 		/* load welcome screen */
 		add_action( 'Awada_lite_welcome', array( $this, 'Awada_lite_welcome_getting_started' ), 	    10 );
 		
-		add_action( 'Awada_lite_welcome', array( $this, 'Awada_lite_welcome_child_themes' ), 		    30 );
-		
-		add_action( 'Awada_lite_welcome', array( $this, 'Awada_lite_welcome_plugins' ), 40 );
-		
 		add_action( 'Awada_lite_welcome', array( $this, 'Awada_lite_welcome_changelog' ), 				50 );
 
 		/* ajax callback for dismissable required actions */
 		add_action( 'wp_ajax_Awada_lite_dismiss_required_action', array( $this, 'Awada_lite_dismiss_required_action_callback') );
 		add_action( 'wp_ajax_nopriv_Awada_lite_dismiss_required_action', array($this, 'Awada_lite_dismiss_required_action_callback') );
-		
-		if (!isset ($GLOBALS['webhunt_notice_check'])) {
-			include_once 'sections/newsflash.php';
-
-			$params = array(
-				'dir_name' => 'notice',
-				'server_file' => 'http://www.webhuntinfotech.com/wp-content/uploads/webhunt/awada_notice.json',
-				'interval' => 3,
-				'cookie_id' => 'webhunt_awada',
-			);
-
-			new WebHuntNewsflash($this, $params);
-			$GLOBALS['webhunt_notice_check'] = 1;
-		}
 
 	}
 	
@@ -146,8 +114,6 @@ class Awada_Welcome {
 
 		$nr_actions_required = 0;
 
-		
-
 		wp_localize_script( 'awada-lite-welcome-screen-customizer-js', 'awadaLiteWelcomeScreenCustomizerObject', array(
 			'nr_actions_required' => $nr_actions_required,
 			'aboutpage' => esc_url( admin_url( 'themes.php?page=awada-welcome#actions_required' ) ),
@@ -221,8 +187,6 @@ class Awada_Welcome {
 
 		<ul class="awada-lite-nav-tabs" role="tablist">
 			<li role="presentation" class="active"><a href="#getting_started" aria-controls="getting_started" role="tab" data-toggle="tab"><?php esc_html_e( 'Getting started','awada'); ?></a></li>
-			<li role="presentation"><a href="#child_themes" aria-controls="child_themes" role="tab" data-toggle="tab"><?php esc_html_e( 'Premium Themes','awada'); ?></a></li>
-			<li role="presentation"><a href="#pro_plugins" aria-controls="pro_plugins" role="tab" data-toggle="tab"><?php esc_html_e( 'Premium Plugins','awada'); ?></a></li>
 			<li role="presentation"><a href="#changelog" aria-controls="changelog" role="tab" data-toggle="tab"><?php esc_html_e( 'Changelog','awada'); ?></a></li>
 		</ul>
 
@@ -232,8 +196,6 @@ class Awada_Welcome {
 			/**
 			 * @hooked Awada_lite_welcome_getting_started - 10
 			 * @hooked Awada_lite_welcome_actions_required - 20
-			 * @hooked Awada_lite_welcome_child_themes - 30
-			 * @hooked Awada_lite_welcome_plugins - 40
 			 * @hooked Awada_lite_welcome_changelog - 50
 			 */
 			do_action( 'Awada_lite_welcome' ); ?>
@@ -241,84 +203,6 @@ class Awada_Welcome {
 		</div>
 		<?php
 	}
-	
-	public function adminNotices(){
-            global $current_user, $pagenow;
-			$notices = $this->admin_notices;
-            // Check for an active admin notice array
-            if (!empty($notices)) {
-
-                // Enum admin notices
-                foreach ($notices as $notice) {
-                    $add_style = '';
-                    if (strpos($notice['type'], 'webhunt-message') != false) {
-                        $add_style = 'style="border-left: 4px solid ' . $notice['color'] . '!important;"';
-                    }
-
-                    if (true == $notice['dismiss']) {
-
-                        // Get user ID
-                        $userid = $current_user->ID;
-
-                        if (!get_user_meta($userid, 'ignore_' . $notice['id'])) {
-
-                            // Check if we are on admin.php.  If we are, we have
-                            // to get the current page slug and tab, so we can
-                            // feed it back to Wordpress.  Why>  admin.php cannot
-                            // be accessed without the page parameter.  We add the
-                            // tab to return the user to the last panel they were
-                            // on.
-                            $pageName = '';
-                            $curTab = '';
-                            if ($pagenow == 'admin.php' || $pagenow == 'themes.php') {
-
-                                // Get the current page.  To avoid errors, we'll set
-                                $pageName = empty($_GET['page']) ? '&amp;page=awada-welcome' : '&amp;page=' . $_GET['page'];
-
-                                // Ditto for the current tab.
-                                $curTab = empty($_GET['tab']) ? '&amp;tab=0' : '&amp;tab=' . $_GET['tab'];
-                            }
-
-                            // Print the notice with the dismiss link
-                            echo '<div ' . $add_style . ' class="' . $notice['type'] . '"><p>' . $notice['msg'] . '&nbsp;&nbsp;<a href="?dismiss=true&amp;id=' . $notice['id'] . $pageName . $curTab . '">' . __('Dismiss', 'awada') . '</a>.</p></div>';
-                        }
-                    } else {
-
-                        // Standard notice
-                        echo '<div ' . $add_style . ' class="' . $notice['type'] . '"><p>' . $notice['msg'] . '</a>.</p></div>';
-                    }
-                }
-
-                // Clear the admin notice array
-                $this->admin_notices = array();
-            }
-        }
-
-        /**
-         * dismissAdminNotice - Updates user meta to store dismiss notice preference
-         * @access      public
-         * @return      void
-         */
-        public function dismissAdminNotice()
-        {
-            global $current_user;
-
-            // Verify the dismiss and id parameters are present.
-            if (isset($_GET['dismiss']) && isset($_GET['id'])) {
-                if ('true' == $_GET['dismiss'] || 'false' == $_GET['dismiss']) {
-
-                    // Get the user id
-                    $userid = $current_user->ID;
-
-                    // Get the notice id
-                    $id = $_GET['id'];
-                    $val = $_GET['dismiss'];
-
-                    // Add the dismiss request to the user meta.
-                    update_user_meta($userid, 'ignore_' . $id, $val);
-                }
-            }
-        }
 
 	/**
 	 * Getting started
@@ -326,22 +210,6 @@ class Awada_Welcome {
 	 */
 	public function Awada_lite_welcome_getting_started() {
 		require_once( get_template_directory() . '/inc/welcome-screen/sections/getting-started.php' );
-	}
-
-	/**
-	 * Pro themes
-	 * @since 1.8.2.4
-	 */
-	public function Awada_lite_welcome_child_themes() {
-		require_once( get_template_directory() . '/inc/welcome-screen/sections/pro-themes.php' );
-	}
-	
-	/**
-	 * Pro plugins
-	 * @since 1.8.2.4
-	 */
-	public function Awada_lite_welcome_plugins() {
-		require_once( get_template_directory() . '/inc/welcome-screen/sections/pro-plugins.php' );
 	}
 
 	/**

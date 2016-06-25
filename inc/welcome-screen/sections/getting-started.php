@@ -11,7 +11,7 @@ $Awada_lite = wp_get_theme( 'awada' );
 
 	<div class="awada-tab-pane-center">
 		
-		<h1 class="awada-lite-welcome-title"><?php _e('Welcome to Awada!','awada'); if( !empty($Awada_lite['Version']) ): ?> <sup id="awada-lite-theme-version"><?php echo esc_attr( $Awada_lite['Version'] ); ?> </sup><?php endif; ?></h1>
+		<h1 class="awada-lite-welcome-title"><?php _e('Welcome to Awada!', 'awada'); if( !empty($Awada_lite['Version']) ): ?> <sup id="awada-lite-theme-version"><?php echo esc_attr( $Awada_lite['Version'] ); ?> </sup><?php endif; ?></h1>
 	</div>
 
 	<hr />

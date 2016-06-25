@@ -17,7 +17,7 @@ if (have_comments()):
 		</nav><!-- #comment-nav-above --><?php
 	endif; // Check for comment navigation.
 	?>
-	<h3><?php comments_popup_link('No Comments &#187;', 'Comment (1)', 'Comments (%)'); ?></h3>
+	<h3><?php comments_popup_link(__('No Comments &#187;', 'awada'), __('Comment (1)', 'awada'), __('Comments (%)', 'awada')); ?></h3>
 	<div class="comments_wrapper">
 		<ul class="comment-list">
 			<?php wp_list_comments('callback=awada_comments&style=li'); ?>

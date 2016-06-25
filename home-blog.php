@@ -1,5 +1,4 @@
-<?php $awada_theme_options = awada_theme_options();
-if ($awada_theme_options['home_blog'] == 1){ ?>
+<?php $awada_theme_options = awada_theme_options(); ?>
 <section id="home_blog" class="grey-wrapper jt-shadow">
 	<div class="container">
 		<div class="general-title">
@@ -13,12 +12,10 @@ if ($awada_theme_options['home_blog'] == 1){ ?>
 		<?php $imageSize = 'awada_blog_home_thumb'; ?>
 		<div class="blog-masonry masonry2">
 			<?php
-			$count_posts = wp_count_posts();
-			$published_posts = $count_posts->publish;
-			if(isset($awada_theme_options['home_post_cat'])){
-			$cat = $awada_theme_options['home_post_cat'];
-			}
-			$args = array('post_type' => 'post', 'posts_per_page' => -1, 'post__not_in' => get_option( 'sticky_posts' ), 'category__in'=>$cat);
+			$count_posts = wp_count_posts()->publish;
+			$post_id = ($awada_theme_options['portfolio_post'] == ''?'':$awada_theme_options['portfolio_post']);
+			$portfolio_id = intval($post_id);
+			$args = array('post_type' => 'post', 'posts_per_page' => $count_posts, 'post__not_in' => array($portfolio_id) );
             query_posts($args);
 			if (query_posts($args)) {
 			$i = 1;
@@ -76,4 +73,3 @@ if ($awada_theme_options['home_blog'] == 1){ ?>
 		<a class="btn btn-primary btn-lg append-button1" title=""><?php _e('Load More Posts', 'awada'); ?></a>
 	</div>
 </section><!-- end white-wrapper -->
-<?php } ?>

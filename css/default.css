@@ -229,3 +229,12 @@ mark,
 #header-style-1 .navbar-nav > li.current_page_item > a:hover {
     background-color: #DB7093;
 }
+/* Pagination */
+ul.pagination li span.page-numbers.current {
+    background-color: #DB7093;
+	color: #fff;
+}
+
+#home_portfolio .UGPMenuBackground {
+	display: none;
+}

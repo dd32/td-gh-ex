@@ -1,6 +1,5 @@
 <?php $awada_theme_options = awada_theme_options();
-$col = 12 / (int)$awada_theme_options['home_service_column'];
-if ($awada_theme_options['home_service_enabled'] == 1){ ?>
+$col = 12 / (int)$awada_theme_options['home_service_column']; ?>
 <section class="grey-wrapper jt-shadow" id="home_service">
 	<div class="container">
 		<div class="general-title">
@@ -66,4 +65,3 @@ if ($awada_theme_options['home_service_enabled'] == 1){ ?>
 		</div><!-- end services one -->
 	</div><!-- end container -->
 </section><!-- end grey-wrapper -->
-<?php } ?>

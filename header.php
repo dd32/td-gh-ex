@@ -3,10 +3,13 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=<?php bloginfo('charset'); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="">
 <?php wp_head(); ?>
 </head>
 <?php $awada_theme_options = awada_theme_options();
-$class = "";
+$class = "sitebody";
 if ($awada_theme_options['site_layout'] == 'boxed') {
     $class .= ' boxed ';
 } ?>
@@ -52,8 +55,8 @@ if ($awada_theme_options['site_layout'] == 'boxed') {
 	</div><!-- end container -->
 </div><!-- end topbar -->
 <?php } ?>
-<header id="header-style-1" style="<?php if (get_header_image()) : ?> background-image:url('<?php header_image();?>'); <?php endif; ?>" class="<?php echo esc_attr($awada_theme_options['menubarcolor']); ?> <?php if($awada_theme_options['headersticky']=='0'){ echo 'affix1'; } ?>">
-	<div id="header_menu" class="container">
+<header id="header-style-1" style="<?php if (get_header_image()) : ?> background-image:url('<?php header_image();?>'); <?php endif; ?>" class="<?php if($awada_theme_options['headersticky']=='0'){ echo 'affix1'; } ?>">
+	<div class="container">
 		<nav class="navbar yamm navbar-default">
 			<div class="navbar-header">
 				<button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle">
@@ -61,14 +64,14 @@ if ($awada_theme_options['site_layout'] == 'boxed') {
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<?php
-					if (function_exists(the_custom_logo())) {
+					<?php if ( function_exists( 'the_custom_logo' )) {
 						the_custom_logo();
-					}?>
-					<a href="<?php echo esc_url(home_url('/')); ?>" class="navbar-brand"><?php
-					if (display_header_text()) {?>
-						<p id="logo_text_id"><?php echo get_bloginfo('name'); ?> </p><?php
 					} ?>
+					<a id="alogo" href="<?php echo esc_url(home_url('/')); ?>" class="navbar-brand"><?php
+						$header_text = display_header_text();
+						if($header_text){ ?>
+							<p id="logo_text_id"><?php echo get_bloginfo('name'); ?> </p><?php
+						} ?>
 					</a>	
 			</div><!-- end navbar-header -->
 			

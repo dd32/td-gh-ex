@@ -16,9 +16,7 @@
 		<h1><?php _e('404!', 'awada'); ?></h1>
 		<p class="lead"><?php _e('Look like something went wrong! The page you were looking for is not here. <br> Go <a href="<?php echo home_url(); ?>"> Home </a> or try a search.', 'awada'); ?></p>
 			<div class="widget padding-top">
-				<form action="<?php echo esc_url(home_url('/')); ?>" class="search_form">
-					<input type="text" class="form-control" placeholder="<?php _e('Enter here what you are looking...', 'awada'); ?>">     
-				</form><!-- end search form -->
+				<?php get_search_form(); ?>
 			</div>
 		</div>
 	</div>

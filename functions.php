@@ -11,13 +11,15 @@ require get_template_directory() . '/functions/custom/recent-posts.php';
 require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 include get_template_directory() . '/inc/welcome-screen/welcome-screen.php';
 require_once dirname(__FILE__) . '/default_options.php';
-/* if (!class_exists('Kirki')) {
-    include_once +(__FILE__) . '/inc/kirki/kirki.php';
-} */
+
+if (!class_exists('Kirki')) {
+    include_once(dirname(__FILE__) . '/inc/kirki/kirki.php');
+}
+
 function awada_customizer_config()
 {
     $args = array(
-        //'url_path'     => get_template_directory_uri() . '/inc/kirki/',
+        'url_path'     => get_template_directory_uri() . '/inc/kirki/',
         'capability'   => 'edit_theme_options',
         'option_type'  => 'option',
         'option_name'  => 'awada_theme_options',
@@ -28,8 +30,8 @@ function awada_customizer_config()
     );
     return $args;
 }
-
 add_filter('kirki/config', 'awada_customizer_config'); 
+
 require get_template_directory() . '/customizer.php';
 add_action('after_setup_theme', 'awada_theme_setup');
 $awada_theme_options = awada_theme_options();
@@ -45,7 +47,6 @@ function awada_theme_setup()
     register_nav_menu('primary', __('Primary Menu', 'awada'));
     register_nav_menu('secondary', __('Secondary Menu', 'awada'));
     // theme support
-    add_editor_style();
     $args = array('default-color' => '#ffffff',);
     add_theme_support('custom-background', $args);
     add_theme_support('custom-header');
@@ -199,11 +200,33 @@ function awada_breadcrumbs()
     echo '</ul>';
 }
 
-//Blog PAGINATION
-function awada_pagination()
-{
-     posts_nav_link();
+/* Blog Pagination */
+if (!function_exists('awada_pagination')) {
+function awada_pagination() {
+    global $wp_query;
+    $big = 999999999; // need an unlikely integer
+    $pages = paginate_links( array(
+            'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+            'format' => '?paged=%#%',
+            'current' => max( 1, get_query_var('paged') ),
+            'total' => $wp_query->max_num_pages,
+            'prev_next' => false,
+            'type'  => 'array',
+            'prev_next'   => TRUE,
+			'prev_text'    => '&#171;',
+			'next_text'    => '&#187;',
+        ) );
+        if( is_array( $pages ) ) {
+            $paged = ( get_query_var('paged') == 0 ) ? 1 : get_query_var('paged');
+            echo "<div class='pagination_wrapper'><ul class='pagination'>";
+            foreach ( $pages as $page ) {
+                echo "<li>$page</li>";
+            }
+           echo "</ul></div>";
+		}
+	}
 }
+
 /*** Post pagination ***/
 function awada_pagination_link()
 { ?>
@@ -216,8 +239,8 @@ function awada_pagination_link()
 }
 
 // Enqueue Style and Script
-add_action('wp_enqueue_scripts', 'enqueue_awada_style');
-function enqueue_awada_style()
+add_action('wp_enqueue_scripts', 'awada_enqueue_style');
+function awada_enqueue_style()
 {
     $awada_theme_options = awada_theme_options();
     wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.css');
@@ -235,11 +258,9 @@ function enqueue_awada_style()
 	if (is_singular()) wp_enqueue_script("comment-reply");
 	// Google Fonts
 	wp_enqueue_style('PT-Sans', 'http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic');
-	wp_enqueue_style('Lato', 'http://fonts.googleapis.com/css?family=Lato:400,300,400italic,300italic,700,700italic,900');
-	wp_enqueue_style('Exo', 'http://fonts.googleapis.com/css?family=Exo:400,300,600,500,400italic,700italic,800,900');
 }
-add_action('wp_footer', 'enqueue_in_footer');
-function enqueue_in_footer()
+add_action('wp_footer', 'awada_enqueue_in_footer');
+function awada_enqueue_in_footer()
 {	
 	$awada_theme_options = awada_theme_options();
     wp_enqueue_script('bootstrap.min', get_template_directory_uri() . '/js/bootstrap.js');
@@ -304,8 +325,8 @@ function awada_replace_reply_link_class($class){
     return $class;
 }
 
-add_filter('get_avatar','change_avatar_css');
-function change_avatar_css($class) {
+add_filter('get_avatar','awada_change_avatar_css');
+function awada_change_avatar_css($class) {
 $class = str_replace("class='avatar", "class='img-circle alignleft ", $class) ;
 return $class;
 }
@@ -334,17 +355,7 @@ function awada_theme_wrapper_end()
 add_action('tgmpa_register', 'awada_register_required_plugins');
 function awada_register_required_plugins()
 {
-    /*
-     * Array of plugin arrays. Required keys are name and slug.
-     * If the source is NOT from the .org repo, then source is also required.
-     */
     $plugins = array(
-        // This is an example of how to include a plugin bundled with a theme.
-        array(
-            'name'     => 'Kirki', // The plugin name.
-            'slug'     => 'kirki', // The plugin slug (typically the folder name).
-            'required' => false, // If false, the plugin is only 'recommended' instead of required.
-        ),
 		array(
             'name'     => 'Photo Video Gallery Master', // The plugin name.
             'slug'     => 'photo-video-gallery-master', // The plugin slug (typically the folder name).

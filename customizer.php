@@ -1,42 +1,32 @@
 <?php
-if(!class_exists('Kirki')){
-	function awada_customize_register( $wp_customize ) {
-	$wp_customize->remove_setting('header_textcolor');
-	wp_enqueue_style('kirki-css', get_template_directory_uri() .'/css/awada-kirki.css');
-	$wp_customize->add_section( 'awada_kirki' , array(
-			'title'      	=> __( 'Download & Install Kirki Plugin', 'awada' ),
-			'priority'   	=> 10,
-		) );
-
-		$wp_customize->add_setting( 'awada_kirki_install', array(
-			'default'    		=> null,
-			'sanitize_callback' => 'sanitize_text_field',
-		) );
-
-		$wp_customize->add_control( new Awada_desc_Control( $wp_customize, 'awada_kirki_install', array(
-			'section'  => 'awada_kirki',
-			'settings' => 'awada_kirki_install',
-			'priority' => 1,
-		) ) );
-	}
-	add_action( 'customize_register', 'awada_customize_register' );
-	
-	if( class_exists( 'WP_Customize_Control' ) ):
-	class Awada_desc_Control extends WP_Customize_Control { 
-		public function render_content() {
-		?>
-		<a style="margin-bottom:20px;margin-left:20px;" title="Click here to install plugin" href="<?php echo admin_url();?>plugin-install.php?tab=search&s=kirki" target="blank" class="awd-btn"><?php _e('Download & Install Kikri Plugin','awada'); ?> </a>
-		<?php
-		}
-	}
-	endif;
-return; }
-
 function awada_customizer_preview_js()
 {
     wp_enqueue_script('custom_css_preview', get_template_directory_uri() . '/js/customize-preview.js', array('customize-preview', 'jquery'));
 }
 add_action('customize_preview_init', 'awada_customizer_preview_js');
+
+if(!function_exists('awada_get_post_select')):
+            function awada_get_post_select() {
+            $all_posts = wp_count_posts('post')->publish;
+            $latest = new WP_Query( array(
+            'post_type'   => 'post',
+            'post_per_page'=>$all_posts,
+            'post_status' => 'publish',
+            'orderby'     => 'date',
+            'order'       => 'DESC'
+        ));
+              $results;
+              if(!empty($latest)):
+                  $results['default'] = __('Select Post','awada');
+                  while( $latest->have_posts() ) { $latest->the_post();
+                    $results[get_the_id()] = get_the_title();
+                    
+                  }
+              endif;
+              
+              return $results;
+            }
+        endif;
 /* Add Customizer Panel */
 $awada_theme_options = awada_theme_options();
 Kirki::add_config('awada_theme', array(
@@ -68,19 +58,7 @@ Kirki::add_field('awada_theme', array(
             'property' => 'border-bottom',
         ),
     ),
-    'transport'         => 'postMessage',
-    'js_vars'           => array(
-        array(
-            'element'  => '#topbar',
-            'function' => 'css',
-            'property' => 'background',
-        ),
-        array(
-            'element'  => '#topbar',
-            'function' => 'css',
-            'property' => 'border-bottom',
-        ),
-    ),
+    'transport'         => 'auto',
 ));
 
 Kirki::add_field('awada_theme', array(
@@ -98,14 +76,7 @@ Kirki::add_field('awada_theme', array(
             'property' => 'color',
         ),
     ),
-    'transport'         => 'postMessage',
-    'js_vars'           => array(
-        array(
-            'element'  => '#topbar, #topbar a',
-            'function' => 'css',
-            'property' => 'color',
-        ),
-    ),
+    'transport'         => 'auto',
 ));
 
 Kirki::add_field('awada_theme', array(
@@ -123,14 +94,7 @@ Kirki::add_field('awada_theme', array(
             'property' => 'background',
         ),
     ),
-    'transport'         => 'postMessage',
-    'js_vars'           => array(
-        array(
-            'element'  => '#header-style-1, #header-style-1 .navbar',
-            'function' => 'css',
-            'property' => 'background',
-        ),
-    ),
+    'transport'         => 'auto',
 ));
 Kirki::add_field('awada_theme', array(
     'settings'          => 'header_textcolor',
@@ -147,14 +111,7 @@ Kirki::add_field('awada_theme', array(
             'property' => 'color',
         ),
     ),
-    'transport'         => 'postMessage',
-    'js_vars'           => array(
-        array(
-            'element'  => '.navbar-default .navbar-brand, #header-style-1 .navbar-nav > li > a, .dropdown-menu > li > a',
-            'function' => 'css',
-            'property' => 'color',
-        ),
-    ),
+    'transport'         => 'auto',
 ));
 
 Kirki::add_section('general_sec', array(
@@ -177,21 +134,7 @@ Kirki::add_field('awada_theme', array(
         'min'  => -50,
         'step' => 1,
     ),
-    'transport'         => 'postMessage',
-    'js_vars'           => array(
-        array(
-            'element'  => '#header-style-1 .navbar-brand',
-            'property' => 'margin-top',
-            'units'    => 'px',
-            'function' => 'css',
-        ),
-        array(
-            'element'  => '#header-style-1 .yamm img',
-            'property' => 'margin-top',
-            'units'    => 'px',
-            'function' => 'css',
-        ),
-    ),
+    'transport'         => 'auto',
     'output'            => array(
         array(
             'element'  => '#header-style-1 .yamm img',
@@ -218,21 +161,7 @@ Kirki::add_field('awada_theme', array(
         'min'  => -50,
         'step' => 1,
     ),
-    'transport'         => 'postMessage',
-    'js_vars'           => array(
-		array(
-            'element'  => '#header-style-1 .navbar-brand',
-            'property' => 'margin-bottom',
-            'units'    => 'px',
-            'function' => 'css',
-        ),
-        array(
-            'element'  => '#header-style-1 .yamm img',
-            'property' => 'margin-bottom',
-            'units'    => 'px',
-            'function' => 'css',
-        ),
-    ),
+    'transport'         => 'auto',
     'output'            => array(
         array(
             'element'  => '#header-style-1 .yamm img',
@@ -385,7 +314,6 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'layout_sec',
     'default'           => $awada_theme_options['headersticky'],
     'priority'          => 10,
-	'transport'         => 'postMessage',
     'sanitize_callback' => 'awada_sanitize_checkbox',
 ));
 Kirki::add_field('awada_theme', array(
@@ -410,7 +338,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'layout_sec',
     'type'              => 'radio-image',
     'priority'          => 10,
-    'default'           => 4,
+    'default'           => $awada_theme_options['footer_layout'],
     'transport'         => 'postMessage',
     'choices'           => array(
         2 => get_template_directory_uri() . '/images/layout/footer-widgets-2.png',
@@ -427,6 +355,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'layout_sec',
     'type'              => 'radio-image',
     'priority'          => 10,
+	'transport'         => 'postMessage',
     'default'           => $awada_theme_options['blog_layout'],
     'choices'           => array(
         'rightsidebar' => get_template_directory_uri() . '/images/layout/2cr.png',
@@ -434,7 +363,6 @@ Kirki::add_field('awada_theme', array(
         'fullwidth'  => get_template_directory_uri() . '/images/layout/1c.png',
     ),
     'sanitize_callback' => 'awada_sanitize_text',
-
 ));
 Kirki::add_field('awada_theme', array(
     'settings'          => 'post_layout',
@@ -444,6 +372,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'layout_sec',
     'type'              => 'radio-image',
     'priority'          => 10,
+	'transport'         => 'postMessage',
     'default'           => $awada_theme_options['post_layout'],
     'choices'           => array(
         'leftsidebar' => get_template_directory_uri() . '/images/layout/2cl.png',
@@ -460,6 +389,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'layout_sec',
     'type'              => 'radio-image',
     'priority'          => 10,
+	'transport'         => 'postMessage',
     'default'           => $awada_theme_options['page_layout'],
     'choices'           => array(
         'leftsidebar' => get_template_directory_uri() . '/images/layout/2cl.png',
@@ -507,6 +437,7 @@ Kirki::add_field('awada_theme', array(
     'label'             => __('Select Posts to be Shown in Slider', 'awada'),
     'help'              => __('You can also be able to drag-n-drop the selected options and rearrange their order for maximum flexibility', 'awada'),
     'section'           => 'slider_sec',
+	'transport'         => 'postMessage',
     'priority'          => 10,
     'default'           => 0,
     'choices'           => $posts,
@@ -520,17 +451,6 @@ Kirki::add_section('service_sec', array(
     'panel'      => 'awada_option_panel',
     'priority'   => 160,
     'capability' => 'edit_theme_options',
-));
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'home_service_enabled',
-    'label'             => __('Show Service', 'awada'),
-    'description'       => __('Enable/Disable Service on Home', 'awada'),
-    'section'           => 'service_sec',
-    'type'              => 'switch',
-    'priority'          => 10,
-	'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['home_service_enabled'],
-    'sanitize_callback' => 'awada_sanitize_checkbox',
 ));
 Kirki::add_field('awada_theme', array(
     'settings'          => 'home_service_title',
@@ -558,6 +478,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'service_sec',
     'type'              => 'select',
     'priority'          => 10,
+    'transport'         => 'postMessage',
     'default'           => 4,
     'choices'           => array(
         2 => __('Two Column', 'awada'),
@@ -737,34 +658,14 @@ Kirki::add_section('portfolio_sec', array(
     'capability' => 'edit_theme_options',
 ));
 Kirki::add_field('awada_theme', array(
-    'settings'          => 'portfolio_home',
-    'label'             => __('Show Portfolio', 'awada'),
-    'description'       => __('Enable/Disable Portfolio on Home', 'awada'),
+    'settings'          => 'portfolio_post',
+    'label'             => __('Select a post', 'awada'),
+    'description'       => __('Select the post in which you have put shortcode.', 'awada'),
     'section'           => 'portfolio_sec',
-    'type'              => 'switch',
+    'type'              => 'select',
     'priority'          => 10,
-	'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['portfolio_home'],
-    'sanitize_callback' => 'awada_sanitize_checkbox',
-));
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'home_portfolio_title',
-    'label'             => __('Home Portfolio Title', 'awada'),
-    'section'           => 'portfolio_sec',
-    'type'              => 'text',
-    'priority'          => 10,
-    'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['home_portfolio_title'],
-    'sanitize_callback' => 'awada_sanitize_text',
-));
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'portfolio_shortcode',
-    'label'             => __('Put Your Gallery Shortcode here', 'awada'),
-    'section'           => 'portfolio_sec',
-    'type'              => 'text',
-    'priority'          => 10,
-    'default'           => '',
-    'sanitize_callback' => 'awada_sanitize_text',
+    'choices'           => awada_get_post_select(),
+    'sanitize_callback' => 'awada_sanitize_number',
 ));
 /* Blog Options */
 Kirki::add_section('blog_sec', array(
@@ -772,17 +673,6 @@ Kirki::add_section('blog_sec', array(
     'panel'      => 'awada_option_panel',
     'priority'   => 160,
     'capability' => 'edit_theme_options',
-));
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'home_blog',
-    'label'             => __('Show Latest Posts on Home', 'awada'),
-    'description'       => __('Enable/Disable home blog posts', 'awada'),
-    'section'           => 'blog_sec',
-    'type'              => 'switch',
-    'priority'          => 10,
-	'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['home_blog'],
-    'sanitize_callback' => 'awada_sanitize_checkbox',
 ));
 Kirki::add_field('awada_theme', array(
     'settings'          => 'home_blog_title',
@@ -811,7 +701,7 @@ $categories = get_categories( array(
 foreach( $categories as $category ) {
 	$cats[$category->term_id] = $category->name;
 }
-$count_posts     = wp_count_posts();
+$count_posts = wp_count_posts();
 $published_posts = $count_posts->publish;
 Kirki::add_field('awada_theme', array(
     'settings'          => 'blog_post_count',
@@ -821,6 +711,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'blog_sec',
     'type'              => 'select',
     'priority'          => 10,
+	'transport'         => 'postMessage',
     'default'           => 3,
     'choices'           => array(
         3                => 3,
@@ -839,60 +730,12 @@ Kirki::add_field('awada_theme', array(
     'help'              => __('With this option you can show blog posts according your requirement', 'awada'),
     'section'           => 'blog_sec',
     'type'              => 'select',
+	'transport'         => 'postMessage',
     'priority'          => 10,
     'default'           => 0,
 	'multiple'          => 10,
     'choices'           => $cats,
     'sanitize_callback' => 'awada_sanitize_number',
-));
-/* Extra Content */
-Kirki::add_section('extra_sec', array(
-    'title'      => __('Extra Content Options', 'awada'),
-    'panel'      => 'awada_option_panel',
-    'priority'   => 160,
-    'capability' => 'edit_theme_options',
-));
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'home_extra_enabled',
-    'label'             => __('Show Extra Content Section on Home', 'awada'),
-    'description'       => __('Enable/Disable home extra content section', 'awada'),
-    'section'           => 'extra_sec',
-    'type'              => 'switch',
-    'priority'          => 10,
-	'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['home_extra_enabled'],
-    'sanitize_callback' => 'awada_sanitize_checkbox',
-));
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'home_extra_title',
-    'label'             => __('Home Extra Section Title', 'awada'),
-    'section'           => 'extra_sec',
-    'type'              => 'text',
-    'priority'          => 10,
-    'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['home_extra_title'],
-    'sanitize_callback' => 'awada_sanitize_text',
-));
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'home_extra_description',
-    'label'             => __('Home Extra Description', 'awada'),
-    'section'           => 'extra_sec',
-    'type'              => 'textarea',
-    'priority'          => 10,
-    'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['home_extra_description'],
-    'sanitize_callback' => 'awada_sanitize_textarea',
-));
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'extra_content_home',
-    'label'             => __('Put Your Extra Content Here', 'awada'),
-    'description'       => __('This content will be shown on extra content section on Home. In this section you can also put content HTML tags', 'awada'),
-    'section'           => 'extra_sec',
-    'type'              => 'editor',
-    'priority'          => 10,
-    'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['extra_content_home'],
-    //'sanitize_callback' => 'awada_sanitize_textarea',
 ));
 /* Footer Callout */
 Kirki::add_section('callout_sec', array(
@@ -900,17 +743,6 @@ Kirki::add_section('callout_sec', array(
     'panel'      => 'awada_option_panel',
     'priority'   => 160,
     'capability' => 'edit_theme_options',
-));
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'callout_home',
-    'label'             => __('Show Footer Callout', 'awada'),
-    'description'       => __('Enable/Disable Callout section on Home', 'awada'),
-    'section'           => 'callout_sec',
-    'type'              => 'toggle',
-    'priority'          => 10,
-    'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['callout_home'],
-    'sanitize_callback' => 'awada_sanitize_checkbox',
 ));
 
 Kirki::add_field('awada_theme', array(
@@ -1101,14 +933,7 @@ Kirki::add_field('awada_theme', array(
             'property' => 'background',
         ),
     ),
-    'transport'         => 'postMessage',
-    'js_vars'           => array(
-        array(
-            'element'  => '#footer-style-1',
-            'function' => 'css',
-            'property' => 'background',
-        ),
-    ),
+    'transport'         => 'auto',
 ));
 Kirki::add_field('awada_theme', array(
     'settings'          => 'footer_text_color',
@@ -1125,14 +950,7 @@ Kirki::add_field('awada_theme', array(
             'property' => 'color',
         ),
     ),
-    'transport'         => 'postMessage',
-    'js_vars'           => array(
-        array(
-            'element'  => '#footer-style-1 li a, #footer-style-1 a',
-            'function' => 'css',
-            'property' => 'color',
-        ),
-    ),
+    'transport'         => 'auto',
 ));
 Kirki::add_field('awada_theme', array(
     'settings'          => 'copyright_section_bg_color',
@@ -1149,14 +967,7 @@ Kirki::add_field('awada_theme', array(
             'property' => 'background',
         ),
     ),
-    'transport'         => 'postMessage',
-    'js_vars'           => array(
-        array(
-            'element'  => '#copyrights',
-            'function' => 'css',
-            'property' => 'background',
-        ),
-    ),
+    'transport'         => 'auto',
 ));
 Kirki::add_field('awada_theme', array(
     'settings'          => 'copyright_section_text_color',
@@ -1173,14 +984,7 @@ Kirki::add_field('awada_theme', array(
             'property' => 'color',
         ),
     ),
-    'transport'         => 'postMessage',
-    'js_vars'           => array(
-        array(
-            'element'  => '#copyrights, .footer-menu li a',
-            'function' => 'css',
-            'property' => 'color',
-        ),
-    ),
+    'transport'         => 'auto',
 ));
 Kirki::add_field('awada_theme', array(
     'settings'          => 'footer_copyright',
@@ -1223,6 +1027,32 @@ Kirki::add_field('awada_theme', array(
     'sanitize_callback' => 'esc_url',
 ));
 
+/* Home Page Customizer */
+Kirki::add_section('home_customize_section', array(
+    'title'      => __('Home Page Reorder Sections', 'awada'),
+    'panel'      => 'awada_option_panel',
+    'priority'   => 160,
+    'capability' => 'edit_theme_options',
+));
+Kirki::add_field( 'awada_theme', array(
+    'type'        => 'sortable',
+    'settings'    => 'home_sections',
+    'label'       => __( 'Here You can reorder your homepage section', 'awada' ),
+    'section'     => 'home_customize_section',
+    'default'     => array(
+        'service',
+        'portfolio',
+        'blog',
+        'callout'
+    ),
+    'choices'     => array(
+        'service' => esc_attr__( 'Service Section', 'awada' ),
+        'portfolio' => esc_attr__( 'Portfolio Section', 'awada' ),
+        'blog' => esc_attr__( 'Blog Section', 'awada' ),
+        'callout' => esc_attr__( 'Callout Section', 'awada' ),
+    ),
+    'priority'    => 10,
+) );
 function awada_sanitize_text($input)
 {
     return wp_kses_post(force_balance_tags($input));
@@ -1285,22 +1115,8 @@ function awada_sanitize_textarea($value)
     return wp_kses_post(force_balance_tags($value));
 }
 
-/* function awada_upgrade_info()
-{
-    wp_register_script('awada_customizer_script', get_template_directory_uri() . '/js/awada-customizer.js', array('jquery'), '1.0.0', true);
-    wp_enqueue_script('awada_customizer_script');
-    wp_localize_script('awada_customizer_script', 'awada_button', array(
-        'pro'         => __('View Pro Version', 'awada'),
-        'support'     => __('Support Forum', 'awada'),
-        'prefixURL'   => esc_url('http://webhuntinfotech.com/webhunt_theme/awada-advanced/'),
-        'prefixLabel' => __('Upgrade To PRO', 'awada'),
-    ));
-}
-
-add_action('customize_controls_enqueue_scripts', 'awada_upgrade_info'); */
-
 function awada_customize_register_active( $wp_customize ) {
-	$wp_customize->remove_setting('header_textcolor');
+	$wp_customize->remove_control('header_textcolor');
 }
 add_action( 'customize_register', 'awada_customize_register_active' );
 ?>

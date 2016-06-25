@@ -1,5 +1,4 @@
-<?php $awada_theme_options = awada_theme_options();
-if($awada_theme_options['callout_home']==1){ ?>
+<?php $awada_theme_options = awada_theme_options(); ?>
 <section id="home_callout" class="make-bg-full">
 	<div class="calloutbox-full container">
 		<?php if ($awada_theme_options['home_callout_title'] != "") { ?>
@@ -12,4 +11,3 @@ if($awada_theme_options['callout_home']==1){ ?>
 		<?php } ?>
 	</div><!-- end calloutbox -->
 </section><!-- make bg -->
-<?php } ?>

@@ -55,7 +55,7 @@ class awada_footer_contact_widget extends WP_Widget
             <p><?php if ($website_add) { ?> <i class="fa fa-globe"></i>
                 <?php echo esc_attr($website_add);
                 } else { ?> <i class="fa fa-globe"></i>
-                <?php echo esc_attr('http://www.webhuntinfotech.com');
+                <?php echo esc_attr('http://www.example.com');
                 } ?></p>
         </address>
         <?php
@@ -85,7 +85,7 @@ class awada_footer_contact_widget extends WP_Widget
         if (isset($instance['website_add'])) {
             $website_add = $instance['website_add'];
         } else {
-            $website_add = __('http://www.webhuntinfotech.com', 'awada');
+            $website_add = __('http://www.example.com', 'awada');
         }
 
         if (isset($instance['Contact_address'])) {

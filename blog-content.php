@@ -1,4 +1,4 @@
-<?php if(has_post_thumbnail() || the_content() || the_excerpt()){ ?>
+<?php if(has_post_thumbnail() || get_the_content() || get_the_excerpt()){ ?>
 <div id="post-<?php the_ID(); ?>" <?php post_class('blog-carousel'); ?>>
 	<div class="entry">
 		<?php $icon = "";

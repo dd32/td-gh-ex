@@ -16,7 +16,6 @@ function awada_theme_options()
 		//Slider Settings:
         'home_slider_enabled' => 1,
 		// Service
-		'home_service_enabled' => 1,
         'home_service_title' => __('Our Services', 'awada'),
 		'home_service_description' => __('We provide best solution for your business', 'awada'),
         'home_service_column' => 4,
@@ -40,23 +39,13 @@ function awada_theme_options()
         'service_icon_4' => "fa fa-wrench",
         'service_link_4' => "#",
 		//Portfolio Settings:
-        'portfolio_home' => 1,
-        'home_portfolio_title' => __('Our Portfolio', 'awada'),
-        'portfolio_three_column' => 1,
-        'portfolio_shortcode' => '',
+        'portfolio_post' => '',
         /* blog option */
-        'home_blog' => 1,
 		'home_blog_title' => __('Our Recent Posts', 'awada'),
 		'home_blog_description' => __('Etiam sit amet orci eget eros faucibus tincidunt.', 'awada'),
         'blog_post_count' => 3,
 		'home_post_cat' => '',
-		//Extra Settings:
-		'home_extra_enabled' => 0,
-		'home_extra_title' => __('Extra Content', 'awada'),
-		'home_extra_description' => __('Sed ut perspiciatis unde omnis iste natus error sit laudantium.', 'awada'),
-		'extra_content_home' => '',
 		/* footer callout */
-        'callout_home' => 1,
         'home_callout_title' => __('Best Wordpress Resposnive Theme Ever!', 'awada'),
         'home_callout_description' => __('There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour of this randomised words which don\'t look even slightly believable If you are going to use a passage of Lorem Ipsum.', 'awada'),
         'callout_btn_text' => __('Purchase Now', 'awada'),
@@ -80,9 +69,8 @@ function awada_theme_options()
         'developed_by_link_text' => __('Webhunt Infotech', 'awada'),
         'developed_by_link' => 'http://www.webhuntinfotech.com/',
         'footer_layout' => 4,
+		'home_sections' => array('service', 'portfolio', 'blog', 'callout'),
     );
-    //delete_option('awada_theme_options');
     return wp_parse_args(get_option('awada_theme_options', array()), $awada_theme_options);
 }
-
 ?>

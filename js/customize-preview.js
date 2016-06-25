@@ -1,16 +1,7 @@
 (function ($) {
-	wp.customize('awada_theme_options[upload_image_logo]', function (value) {
+   	wp.customize('awada_theme_options[upload_image_logo]', function (value) {
         value.bind(function (to) {
             $('img#logoimg').attr('src', to);
-        });
-    });
-     wp.customize('awada_theme_options[headersticky]', function (value) {
-        value.bind(function (to) {
-			if (to == 0) {
-                $('#header-style-1').addClass('affix1');
-            } else {
-                $('#header-style-1').removeClass('affix1');
-            }
         });
     });
     wp.customize('awada_theme_options[logo_layout]', function (value) {
@@ -18,29 +9,20 @@
             $('#logo').css('float', to);
         });
     });
-    wp.customize('awada_theme_options[topbarcolor]', function (value) {
+    /* layout option */
+    wp.customize('awada_theme_options[site_layout]', function (value) {
         value.bind(function (to) {
-            if (to != '') {
-                $('#topbar').addClass(to);
+            if (to == '') {
+                $('.sitebody').removeClass('boxed');
             } else {
-                $('#topbar').removeClass('topbar_colored');
+                $('.sitebody').addClass('boxed');
             }
         });
     });
-    /* layout option */
-    /* wp.customize('awada_theme_options[site_layout]', function (value) {
+    wp.customize('awada_theme_options[footer_layout]', function (value) {
         value.bind(function (to) {
-            if (to != '') {
-                $('body').addClass('boxed container');
-            } else {
-                $('body').removeClass('boxed container');
-            }
-        });
-    }); */
-	wp.customize('awada_theme_options[footer_layout]', function (value) {
-        value.bind(function (to) {
-			var col = 12 / parseInt(to);
-			$('#footer-style-1 .container').children().attr('class', 'col-lg-' + col +' col-sm-' + col +' col-xs-12 col-md-' + col +' footer_col');
+            var col = 12 / parseInt(to);
+            $('#footer-style-1 > .container').children().attr('class', 'col-md-' + col);
         });
     });
 	/* Slider Options */
@@ -54,15 +36,6 @@
         });
     });
     /* Service Options */
-	wp.customize('awada_theme_options[home_service_enabled]', function (value) {
-        value.bind(function (to) {
-			if (!to) {
-                $('#home_service').hide();
-            } else {
-                $('#home_service').show();
-            }
-        });
-    });
     wp.customize('awada_theme_options[home_service_title]', function (value) {
         value.bind(function (to) {
             $('h2#home_service_title').html('' + to);
@@ -71,6 +44,23 @@
 	wp.customize('awada_theme_options[home_service_description]', function (value) {
         value.bind(function (to) {
             $('p#home_service_description').html('' + to);
+        });
+    });
+    wp.customize('awada_theme_options[home_service_column]', function (value) {
+        value.bind(function (to) {
+            if (2 == to) {
+                $('.service_col').removeClass('col-md-4 col-lg-4');
+                $('.service_col').removeClass('col-md-3 col-lg-3');
+                $('.service_col').addClass('col-md-6 col-lg-6');
+            } else if (3 == to) {
+                $('.service_col').removeClass('col-md-6 col-lg-6');
+                $('.service_col').removeClass('col-md-3 col-lg-3');
+                $('.service_col').addClass('col-md-4 col-lg-4');
+            } else {
+                $('.service_col').removeClass('col-md-4 col-lg-4');
+                $('.service_col').removeClass('col-md-6 col-lg-6');
+                $('.service_col').addClass('col-md-3 col-lg-3');
+            }
         });
     });
     wp.customize('awada_theme_options[service_icon_1]', function (value) {
@@ -154,39 +144,12 @@
         });
     });
     /* Portfolio Options */
-	wp.customize('awada_theme_options[portfolio_home]', function (value) {
-        value.bind(function (to) {
-			if (!to) {
-                $('#home_portfolio').hide();
-            } else {
-                $('#home_portfolio').show();
-            }
-        });
-    });
     wp.customize('awada_theme_options[home_portfolio_title]', function (value) {
         value.bind(function (to) {
             $('#portfolio_heading').html(to);
         });
     });
-    wp.customize('awada_theme_options[portfolio_three_column]', function (value) {
-        value.bind(function (to) {
-            if (to) {
-                $('.wl-gallery').css('width', '33.3%');
-            } else {
-                $('.wl-gallery').css('width', '50%');
-            }
-        });
-    });
     /* Blog Options */
-	wp.customize('awada_theme_options[home_blog]', function (value) {
-        value.bind(function (to) {
-			if (!to) {
-                $('#home_blog').hide();
-            } else {
-                $('#home_blog').show();
-            }
-        });
-    });
     wp.customize('awada_theme_options[home_blog_title]', function (value) {
         value.bind(function (to) {
             $('#blog_heading').html(to);
@@ -197,41 +160,8 @@
             $('#blog_description').html(to);
         });
     });
-	/* Extra Options */
-	wp.customize('awada_theme_options[home_extra_enabled]', function (value) {
-        value.bind(function (to) {
-			if (!to) {
-                $('#home_extra').hide();
-            } else {
-                $('#home_extra').show();
-            }
-        });
-    });
-	wp.customize('awada_theme_options[home_extra_title]', function (value) {
-        value.bind(function (to) {
-            $('#home_extra_title').html(to);
-        });
-    });
-	wp.customize('awada_theme_options[home_extra_description]', function (value) {
-        value.bind(function (to) {
-            $('#home_extra_desc').html(to);
-        });
-    });
-	wp.customize('awada_theme_options[extra_content_home]', function (value) {
-        value.bind(function (to) {
-            $('#home_extra_content').html(to);
-        });
-    });
 	
     /* Footer Callout */
-    wp.customize('awada_theme_options[callout_home]', function (value) {
-        value.bind(function (to) {
-            if (!to)
-                $('#home_callout').hide();
-            else
-                $('#home_callout').show();
-        });
-    });
     wp.customize('awada_theme_options[home_callout_title]', function (value) {
         value.bind(function (to) {
             $('#callout_title').html(to);

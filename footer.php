@@ -9,7 +9,7 @@ $col = 12 / (int)$awada_theme_options['footer_layout']; ?>
 		dynamic_sidebar('footer-widget');
 		} else {
 			$args = array(
-				'before_widget' => '<div class="col-lg-' . $col . ' col-md-' . $col . ' col-sm-6 col-xs-12 footer_col"><div class="widget">',
+				'before_widget' => '<div class="col-lg-' . $col . ' col-md-' . $col . ' col-sm-6 col-xs-12"><div class="widget">',
 				'after_widget' => '</div></div>',
 				'before_title' => '<div class="title"><h3>',
 				'after_title' => '</h3></div>',
@@ -47,7 +47,7 @@ $col = 12 / (int)$awada_theme_options['footer_layout']; ?>
 	<?php echo $awada_theme_options['custom_css']; ?>
 </style>
 <?php } ?>
-<div class="dmtop">Scroll to Top</div>
+<div class="dmtop"><?php _e('Scroll to Top', 'awada'); ?></div>
 <?php wp_footer(); ?>
 </body>
 </html>
