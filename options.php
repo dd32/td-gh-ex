@@ -211,6 +211,18 @@ $options[] = array(
 		'id' => 'gp',
 		'std' => '',
 		'type' => 'text');
+		$options[] = array(
+		'name' => __('RSS', 'promax'),
+		'desc' => __('Enter your RSS Link if you have one.', 'promax'),
+		'id' => 'rss',
+		'std' => '',
+		'type' => 'text');
+		$options[] = array(
+		'name' => __('Instagram', 'promax'),
+		'desc' => __('Enter your Instagram Link if you have one.', 'promax'),
+		'id' => 'instagram',
+		'std' => '',
+		'type' => 'text');
 		
 				
 $options[] = array(

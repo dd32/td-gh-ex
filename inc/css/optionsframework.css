@@ -1,44 +1,45 @@
 /* Options Framework Admin Styles */
 #optionsframework .section{line-height: 1.4;}
-.basicsettings-tab, .basicsettings-tab :hover{
-background-image: url("../images/home.png");
-background-repeat: no-repeat;
-background-position: 3% 10px;
-padding-left: 25px !important;
+.basicsettings-tab::before{
+    content: "\f102";
+    font-family: dashicons;
+    padding: 3px;
+    vertical-align: bottom;
+	color: #339ece;
+}
+.advanceproonly-tab::before{
+	content: "\f111";
+    font-family: dashicons;
+    padding: 3px;
+    vertical-align: bottom;
+	color: #339ece;
+}
+.socialprofiles-tab::before{
+	content: "\f237";
+    font-family: dashicons;
+    padding: 3px;
+    vertical-align: bottom;
+	color: #339ece;
+}
+.customstyling-tab::before{    
+	content: "\f100";
+	font-family: dashicons;
+    padding: 3px;
+    vertical-align: bottom;
+	color: #339ece;
+}
+.adsmanagement-tab::before{
+	content: "\f108";
+	font-family: dashicons;
+    padding: 3px;
+    vertical-align: bottom;
+	color: #339ece;
 }
 .advanceproonly-tab{
 background: #FFC5C5;}
 #options-group-5{
 	opacity: 0.4;
 	cursor: not-allowed;
-}
-
-.slidersettings-tab, .slidersettings-tab :hover{
-background-image: url("../images/wrock.ico");
-background-repeat: no-repeat;
-background-position: 3% 10px;
-padding-left: 25px !important;
-}
-.advanceoptions-tab{
-background-image: url("../images/tools.png");
-background-repeat: no-repeat;
-background-position: 3% 10px;
-padding-left: 25px !important;
-}
-.socialmedia-tab{background-image: url("../images/graph.png");
-background-repeat: no-repeat;
-background-position: 3% 10px;
-padding-left: 25px !important;
-}
-.customstyling-tab{background-image: url("../images/style.png");
-background-repeat: no-repeat;
-background-position: 3% 10px;
-padding-left: 25px !important;
-}
-.adsmanagement-tab{background-image: url("../images/layout.png");
-background-repeat: no-repeat;
-background-position: 3% 10px;
-padding-left: 25px !important;
 }
 
 .tesingh{background: #B76CA9;
@@ -152,6 +153,9 @@ background: #FDF9F1;
 }
 
 .buypred a{color: #FFF;text-decoration: none;}
+.buypre a::before{content: "\f317";    font-family: dashicons;
+    padding: 3px;
+    vertical-align: bottom;}
 .buypred {float: left;background-color: #FFB30D;
 background: -webkit-gradient(linear, left top, left bottom, from(#157BAA), to(#145576));
 background: -webkit-linear-gradient(#157BAA, #145576);
@@ -189,7 +193,6 @@ background: -moz-gradient(center top, #fecb19 0%, #ff9c00 100%);
 border: 1px solid #FF9C00;
 color: #FFF;
 font-family: "Amaranth", Arial, sans-serif;
-font-style: italic;
 font-size: 20px;
 font-weight: normal;
 letter-spacing: 1px;
@@ -222,6 +225,8 @@ width: auto;
 	cursor: default;
 	background-color: #f1f1f1;
 	border-bottom: 1px solid #ddd;
+	padding: 10px;
+    margin-top: 0;	
 }
 #optionsframework p {
 	margin-bottom:0;

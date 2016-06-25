@@ -36,6 +36,11 @@ Custom Css:
 
 == Change log ==
 
+= 1.6.2 =
+* Added instagram
+* Theme option updated
+* Removed old theme tag
+
 = 1.6.1 =
 * Metaformat updated
 
