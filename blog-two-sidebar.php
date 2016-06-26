@@ -5,7 +5,7 @@ get_template_part('breadcrumbs');
 <section class="blog-wrapper">
 	<div class="container">
 		<?php get_sidebar('secondary'); ?>
-		<div id="content" class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+		<div id="content" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 			<div class="row">
 			 <div class="blog-masonry">
 					<div class="col-lg-12">

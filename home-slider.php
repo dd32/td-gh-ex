@@ -18,7 +18,7 @@ if($awada_theme_options['home_slider_enabled']==1){ ?>
 				</div>
 		<?php $j++; //endif;
 		} } else {
-			$slider_title = array('Corporate Theme', 'Responsive Theme', 'Business Theme');
+			$slider_title = array(__('Corporate Theme', 'awada'), __('Responsive Theme', 'awada'), __('Business Theme', 'awada'));
 			for($j=1 ; $j<=3 ; $j++){
 			if ($j % 2 == 0){	$orientation = 'horizontal';	}
 				else{	$orientation = 'vertical';	} ?>

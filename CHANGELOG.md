@@ -1,3 +1,8 @@
+###Version 0.6
+* Make text translatable, and escaped.
+* Welcome screen links issue fixed.
+* Tags issue fixed in style.css.
+* All other required issue fixed.
 ###Version 0.5
 * Unused code removed.
 ###Version 0.4

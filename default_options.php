@@ -49,11 +49,11 @@ function awada_theme_options()
         'home_callout_title' => __('Best Wordpress Resposnive Theme Ever!', 'awada'),
         'home_callout_description' => __('There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour of this randomised words which don\'t look even slightly believable If you are going to use a passage of Lorem Ipsum.', 'awada'),
         'callout_btn_text' => __('Purchase Now', 'awada'),
-        'callout_btn_link' => 'http://www.webhuntinfotech.com',
+        'callout_btn_link' => 'http://www.example.com',
         /* Social media icons */
         'contact_info_header' => 1,
         'social_media_header' => 1,
-        'contact_phone' => '+0744-9999',
+        'contact_phone' => '+9999-9999999',
         'contact_email' => 'example@gmail.com',
         'social_facebook_link' => '#',
         'social_twitter_link' => '#',

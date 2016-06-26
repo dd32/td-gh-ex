@@ -28,9 +28,9 @@ if (have_comments()):
 	<?php if (comments_open()) {		?>	
 	<div class="comments_form"><?php
 			$fields = array(
-				'author' => '<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"><input type="text" aria-required="true" class="form-control" value="" placeholder="' . __('Name (required)', 'awada') . '" name="author" id="author"></div>',
-				'email' => '<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"><input type="text" aria-required="true" class="form-control" value="" placeholder="' . __('Email (required)', 'awada') . '" name="email" id="email"></div>',
-				'website' => '<div class="clearfix"></div><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><input type="text" class="form-control" value="" placeholder="' . __('Website', 'awada') . '" name="url" id="url"></div>',
+				'author' => '<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"><input type="text" aria-required="true" class="form-control" value="" placeholder="' . esc_attr('Name (required)', 'awada') . '" name="author" id="author"></div>',
+				'email' => '<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"><input type="text" aria-required="true" class="form-control" value="" placeholder="' . esc_attr('Email (required)', 'awada') . '" name="email" id="email"></div>',
+				'website' => '<div class="clearfix"></div><div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><input type="text" class="form-control" value="" placeholder="' . esc_attr('Website', 'awada') . '" name="url" id="url"></div>',
 			);
 			function awada_comment_defaullt_fields($fields)
 			{
@@ -44,7 +44,7 @@ if (have_comments()):
 				'title_reply_to' =>  __('Leave a Reply to %s', 'awada'),
 				'title_reply' => __("Leave a reply", 'awada'),
 				 'comment_notes_after' => '', 
-				'comment_field' => '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><textarea aria-required="true" rows="6" class="form-control" name="comment" placeholder="' . __('Comment...', 'awada') . '" id="comment"></textarea></div>',
+				'comment_field' => '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><textarea aria-required="true" rows="6" class="form-control" name="comment" placeholder="' . esc_attr('Comment...', 'awada') . '" id="comment"></textarea></div>',
 				'class_submit' => 'btn btn-primary',
 				'id_form'           => 'comments_form',
 				'class_form'      => 'row',

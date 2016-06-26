@@ -17,7 +17,7 @@
 </section><!-- end post-wrapper-top -->
 <section class="blog-wrapper">
 	<div class="container">
-		<div id="content" class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+		<div id="content" class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
 			<div class="row">
 			   <div class="blog-masonry">
 			   <?php

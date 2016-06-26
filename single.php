@@ -8,14 +8,14 @@ get_template_part('breadcrumbs'); ?>
 		$imageSize = $post_layout == "fullwidth" ? 'awada_blog_full_thumb' : 'awada_blog_sidebar_thumb';
 		if ($post_layout == "leftsidebar") {
 			get_sidebar();
-			$float = 8;
+			$float = 9;
 		} elseif ($post_layout == "fullwidth") {
 			$float = 12;
 		} elseif ($post_layout == "rightsidebar") {
-			$float = 8;
+			$float = 9;
 		} else {
 			$post_layout = "rightsidebar";
-			$float = 8;
+			$float = 9;
 		} ?>
 		<div id="content" class="col-lg-<?php echo $float; ?> col-md-<?php echo $float; ?> col-sm-12 col-xs-12">
 			<div class="row">

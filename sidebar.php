@@ -1,4 +1,4 @@
-<div id="sidebar" class="<?php if (class_exists('WooCommerce') && (is_woocommerce() || is_cart() || is_checkout())){ echo 'col-lg-3 col-md-3';}else{ echo 'col-lg-4 col-md-4'; }  ?> col-sm-12 col-xs-12">
+<div id="sidebar" class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 	<?php if (is_active_sidebar('primary-sidebar')) {
         dynamic_sidebar('primary-sidebar');
     } else {

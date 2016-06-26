@@ -13,7 +13,7 @@ $awada_portfolio_post = get_post($post_id); ?>
 			if($awada_portfolio_post->post_content!=''):
 				echo apply_filters('the_content',$awada_portfolio_post->post_content);
 			else:
-				$port_title = array('PERFECT THEME', 'QUICK SUPPORT', 'RESPONSIVE THEME', 'MULTIPLE COLOR SCHEME', 'RETINA READY', 'AMAZING SHORTCODES');
+				$port_title = array(__('PERFECT THEME', 'awada'), __('QUICK SUPPORT', 'awada'), __('RESPONSIVE THEME', 'awada'), __('MULTIPLE COLOR SCHEME', 'awada'), __('RETINA READY', 'awada'), __('AMAZING SHORTCODES', 'awada'));
 				$j = 0;
 				for($i=1 ; $i<=3 ; $i++){ ?>
 					<div class="col-lg-4 col-sm-4 col-md-4 col-sm-4">

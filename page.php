@@ -8,15 +8,15 @@ the_post(); ?>
 		$imageSize = $page_layout == "fullwidth" ? 'awada_blog_full_thumb' : 'awada_blog_sidebar_thumb';
 		if ($page_layout == "leftsidebar") {
 			get_sidebar();
-			$float = 8;
+			$float = 9;
 		} elseif ((class_exists('WooCommerce') && (is_cart() || is_checkout())) || ($page_layout == "fullwidth")) {
 			$page_layout = "fullwidth";
 			$float = 12;
 		} elseif ($page_layout == "rightsidebar") {
-			$float = 8;
+			$float = 9;
 		} else {
 			$page_layout = "rightsidebar";
-			$float = 8;
+			$float = 9;
 		}
 		?>
 		<div id="content" class="col-lg-<?php echo $float; ?> col-md-<?php echo $float; ?> col-sm-12 col-xs-12">

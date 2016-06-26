@@ -22,7 +22,7 @@ class awada_footer_recent_posts extends WP_Widget
 
     public function widget($args, $instance)
     {
-        $title = !empty($instance['title']) ? apply_filters('widget_title', $instance['title']) : 'Receent Posts';
+        $title = !empty($instance['title']) ? apply_filters('widget_title', $instance['title']) : __('Receent Posts', 'awada');
         $number_of_posts = !empty($instance['number_of_posts']) ? apply_filters('widget_title', $instance['number_of_posts']) : 5;
         $rmp_url = !empty($instance['rmp_url']) ? apply_filters('rmp_url', $instance['rmp_url']) : '#';
 
@@ -61,23 +61,15 @@ class awada_footer_recent_posts extends WP_Widget
         ?>
         <p>
             <label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'awada'); ?></label>
-            <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>"
-                   name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text"
-                   value="<?php echo esc_attr($title); ?>"/>
+            <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($title); ?>"/>
         </p>
         <p>
-            <label
-                for="<?php echo esc_attr($this->get_field_id('number_of_posts')); ?>"><?php _e('Number of pages to show:', 'awada'); ?></label>
-            <input size="3" maxlength="2" id="<?php echo esc_attr($this->get_field_id('number_of_posts')); ?>"
-                   name="<?php echo esc_attr($this->get_field_name('number_of_posts')); ?>" type="text"
-                   value="<?php echo esc_attr($number_of_posts); ?>"/>
+            <label for="<?php echo esc_attr($this->get_field_id('number_of_posts')); ?>"><?php _e('Number of pages to show:', 'awada'); ?></label>
+            <input size="3" maxlength="2" id="<?php echo esc_attr($this->get_field_id('number_of_posts')); ?>" name="<?php echo esc_attr($this->get_field_name('number_of_posts')); ?>" type="text" value="<?php echo esc_attr($number_of_posts); ?>"/>
         </p>
         <p>
-            <label
-                for="<?php echo $this->get_field_id('rmp_url'); ?>"><?php _e('Read More Posts URL:', 'awada'); ?></label>
-            <input class="widefat" id="<?php echo esc_attr($this->get_field_id('rmp_url')); ?>"
-                   name="<?php echo esc_attr($this->get_field_name('rmp_url')); ?>" type="text"
-                   value="<?php echo $rmp_url != "" ? esc_url($rmp_url) : ''; ?>"/>
+            <label for="<?php echo $this->get_field_id('rmp_url'); ?>"><?php _e('Read More Posts URL:', 'awada'); ?></label>
+            <input class="widefat" id="<?php echo esc_attr($this->get_field_id('rmp_url')); ?>" name="<?php echo esc_attr($this->get_field_name('rmp_url')); ?>" type="text" value="<?php echo $rmp_url != "" ? esc_url($rmp_url) : ''; ?>"/>
         </p>
     <?php
     }
@@ -107,12 +99,12 @@ class awadaArchieveWidget extends WP_Widget
     function widget($args, $instance)
     {
         extract($args);
-        $title = !empty($instance['title']) ? apply_filters('widget_title', $instance['title']) : 'Archives';
+        $title = !empty($instance['title']) ? apply_filters('widget_title', $instance['title']) : __('Archives', 'awada');
 
         if ($title != "") {
             echo $before_title . $title . $after_title;
         } else {
-            echo $before_title . 'Archives' . $after_title;
+            echo $before_title . __('Archives', 'awada') . $after_title;
         }
         echo $before_widget; ?>
         <ul class="cat_list_widget"><?php

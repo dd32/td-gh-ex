@@ -9,7 +9,7 @@
 </section><!-- end post-wrapper-top -->
 <section class="blog-wrapper">
 	<div class="container">
-		<div id="content" class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+		<div id="content" class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
 			<div class="authorbox_wrapper clearfix">
 				<?php echo get_avatar(get_the_author_meta('ID'), 100); ?>
 				<h4><?php esc_attr(the_author()); ?></h4>

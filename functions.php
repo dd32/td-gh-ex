@@ -61,8 +61,8 @@ function awada_theme_setup()
 	) );
 	add_image_size('awada_home_slider_bg_image', 1600, 499, true);
 	add_image_size('awada_blog_full_thumb', 1068, 515, true);
-    add_image_size('awada_blog_sidebar_thumb', 688, 350, true);
-	add_image_size('awada_blog_two_sidebar_thumb', 403, 205, true);
+    add_image_size('awada_blog_sidebar_thumb', 783, 350, true);
+	add_image_size('awada_blog_two_sidebar_thumb', 498, 260, true);
 	add_image_size('awada_blog_home_thumb', 308, 157, true);
 	add_image_size('awada_recent_widget_thumb', 120, 77, true);
 }

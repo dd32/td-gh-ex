@@ -4,7 +4,7 @@ $col = 12 / (int)$awada_theme_options['footer_layout']; ?>
 </div><!-- end wrapper -->
 <?php } ?>
 <footer id="footer-style-1" <?php if ($awada_theme_options['site_layout'] == 'boxed') { ?> class="container" <?php } ?>>
-	<div class="container">
+	<div class="container home_footer">
 		<?php if (is_active_sidebar('footer-widget')) {
 		dynamic_sidebar('footer-widget');
 		} else {

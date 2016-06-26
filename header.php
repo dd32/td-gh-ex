@@ -9,7 +9,7 @@
 <?php wp_head(); ?>
 </head>
 <?php $awada_theme_options = awada_theme_options();
-$class = "sitebody";
+$class = "";
 if ($awada_theme_options['site_layout'] == 'boxed') {
     $class .= ' boxed ';
 } ?>

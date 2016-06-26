@@ -6,27 +6,27 @@ function awada_customizer_preview_js()
 add_action('customize_preview_init', 'awada_customizer_preview_js');
 
 if(!function_exists('awada_get_post_select')):
-            function awada_get_post_select() {
-            $all_posts = wp_count_posts('post')->publish;
-            $latest = new WP_Query( array(
-            'post_type'   => 'post',
-            'post_per_page'=>$all_posts,
-            'post_status' => 'publish',
-            'orderby'     => 'date',
-            'order'       => 'DESC'
-        ));
-              $results;
-              if(!empty($latest)):
-                  $results['default'] = __('Select Post','awada');
-                  while( $latest->have_posts() ) { $latest->the_post();
-                    $results[get_the_id()] = get_the_title();
-                    
-                  }
-              endif;
-              
-              return $results;
-            }
-        endif;
+	function awada_get_post_select() {
+	$all_posts = wp_count_posts('post')->publish;
+	$latest = new WP_Query( array(
+	'post_type'   => 'post',
+	'post_per_page'=>$all_posts,
+	'post_status' => 'publish',
+	'orderby'     => 'date',
+	'order'       => 'DESC'
+	));
+	  $results;
+	  if(!empty($latest)):
+		  $results['default'] = __('Select Post','awada');
+		  while( $latest->have_posts() ) { $latest->the_post();
+			$results[get_the_id()] = get_the_title();
+			
+		  }
+	  endif;
+	  
+	  return $results;
+	}
+endif;
 /* Add Customizer Panel */
 $awada_theme_options = awada_theme_options();
 Kirki::add_config('awada_theme', array(
@@ -179,12 +179,11 @@ Kirki::add_field('awada_theme', array(
 Kirki::add_field('awada_theme', array(
     'type'                 => 'textarea',
     'settings'             => 'custom_css',
-    'label'                => __('Custom Css', 'awada'),
+    'label'                => __('Custom CSS', 'awada'),
     'description'          => __('Put your custom css here', 'awada'),
     'section'              => 'general_sec',
     'default'              => '',
     'priority'             => 10,
-	'transport'        	   => 'postMessage',
     'sanitize_callback'    => 'wp_filter_nohtml_kses',
     'sanitize_js_callback' => 'wp_filter_nohtml_kses',
 ));
@@ -355,7 +354,6 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'layout_sec',
     'type'              => 'radio-image',
     'priority'          => 10,
-	'transport'         => 'postMessage',
     'default'           => $awada_theme_options['blog_layout'],
     'choices'           => array(
         'rightsidebar' => get_template_directory_uri() . '/images/layout/2cr.png',
@@ -372,7 +370,6 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'layout_sec',
     'type'              => 'radio-image',
     'priority'          => 10,
-	'transport'         => 'postMessage',
     'default'           => $awada_theme_options['post_layout'],
     'choices'           => array(
         'leftsidebar' => get_template_directory_uri() . '/images/layout/2cl.png',
@@ -389,7 +386,6 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'layout_sec',
     'type'              => 'radio-image',
     'priority'          => 10,
-	'transport'         => 'postMessage',
     'default'           => $awada_theme_options['page_layout'],
     'choices'           => array(
         'leftsidebar' => get_template_directory_uri() . '/images/layout/2cl.png',
@@ -437,7 +433,6 @@ Kirki::add_field('awada_theme', array(
     'label'             => __('Select Posts to be Shown in Slider', 'awada'),
     'help'              => __('You can also be able to drag-n-drop the selected options and rearrange their order for maximum flexibility', 'awada'),
     'section'           => 'slider_sec',
-	'transport'         => 'postMessage',
     'priority'          => 10,
     'default'           => 0,
     'choices'           => $posts,
@@ -478,7 +473,6 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'service_sec',
     'type'              => 'select',
     'priority'          => 10,
-    'transport'         => 'postMessage',
     'default'           => 4,
     'choices'           => array(
         2 => __('Two Column', 'awada'),

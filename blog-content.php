@@ -19,17 +19,19 @@
 			</div><!-- end pull-right -->
 			<?php } ?>
 	</div><!-- end entry -->
-	<?php if(!is_page()){ ?>
+	
 	<?php if (!(class_exists('WooCommerce') && (is_cart() || is_checkout()))) { ?>
 	<div class="blog-carousel-header">
 		<h3><a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+		<?php if(!is_page()){ ?>
 		<div class="blog-carousel-meta">
-			<span><i class="fa fa-calendar"></i><?php echo get_the_date(get_option('date_format'), true); ?></span>
+			<span><i class="fa fa-calendar"></i><a href="<?php echo the_permalink(); ?>"><?php echo get_the_date(get_option('date_format'), true); ?></span>
 			<span><i class="fa fa-comment"></i><?php comments_popup_link(__('No Comments', 'awada'), __('1 Comment', 'awada'), __('% Comments', 'awada')); ?> <?php edit_post_link(__('Edit', 'awada'), ' &#124; ', ''); ?></span>
 			<span><i class="fa fa-user"></i> <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>"><?php esc_attr(the_author()); ?></a></span>
 		</div><!-- end blog-carousel-meta -->
+		<?php } ?>
 	</div><!-- end blog-carousel-header -->
-	<?php } } ?>
+	<?php } ?>
 	<div class="blog-carousel-desc">
 		<?php if(is_page() || is_singular()) { the_content(); } else { the_excerpt(); } ?>
 	</div><!-- end blog-carousel-desc -->

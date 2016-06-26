@@ -38,7 +38,7 @@ $Awada_lite = wp_get_theme( 'awada' );
 
 		<h4><?php esc_html_e( 'Gallery in Blog Posts', 'awada' ); ?></h4>
 		<p><?php esc_html_e( 'If you want to use more than one images in your post or want to make gallery images in your post. This can be accomplished by following the documention below.', 'awada' ); ?></p>
-		<p><a href="http://demo.webhuntinfotech.com/blog/2016/01/11/add-gallery-posts-in-matrix-or-awada-theme/" class="button" target="_blank"><?php esc_html_e( 'View how to do this', 'awada' ); ?></a></p>
+		<p><a href="http://demo.webhuntinfotech.com/blog/2016/01/11/add-gallery-posts-in-matrix-or-kyma-theme/" class="button" target="_blank"><?php esc_html_e( 'View how to do this', 'awada' ); ?></a></p>
 	</div>
 
 	<div class="awada-tab-pane-half">
@@ -51,7 +51,7 @@ $Awada_lite = wp_get_theme( 'awada' );
 
 	<h4><?php esc_html_e( 'How To Setup Home Page', 'awada' ); ?></h4>
 		<p><?php esc_html_e( 'See below document. It will help you to setup Home Page' , 'awada' ); ?></p>
-		<p><a href="http://demo.webhuntinfotech.com/blog/2016/02/02/how-to-setup-home-page-in-matrix-or-awada-lite/" class="button" target="_blank"><?php esc_html_e( 'View how to do this', 'awada' ); ?></a></p>
+		<p><a href="http://demo.webhuntinfotech.com/blog/2016/02/02/how-to-setup-home-page-in-matrix-or-kyma-lite/" class="button" target="_blank"><?php esc_html_e( 'View how to do this', 'awada' ); ?></a></p>
 
 	</div>
 
