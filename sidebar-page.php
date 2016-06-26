@@ -15,5 +15,5 @@ in the widget area in the customizer and widget area.
 */
 ?>
 <div id="main-sidebar" class="widget-area">
-    <?php dynamic_sidebar('primary-sidebar'); ?>
+    <?php dynamic_sidebar('secondary-sidebar'); ?>
 </div>

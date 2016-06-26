@@ -10,10 +10,10 @@ WordPress. Or it can be divided into modular template files, each taking on part
 If you do not provide other template files, WordPress may have default files or functions to 
 perform their jobs.
 
-@package        White Spektrums WordPress Theme
+@package        White Spektrum WordPress Theme
 @copyright      Copyright (C) 2016. Benjamin Lu
 @license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
-@author         Benjamin Lu (http://ninjablume.com/contact/
+@author         Benjamin Lu (http://lumiathemes.com/)
 ================================================================================================
 */
 ?>

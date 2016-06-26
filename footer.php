@@ -10,18 +10,20 @@ section of this theme.
 @package        White Spektrum WordPress Theme
 @copyright      Copyright (C) 2016. Benjamin Lu
 @license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
-@author         Benjamin Lu (http://ninjablume.com/contact/
+@author         Benjamin Lu (http://lumiathemes.com/)
 ================================================================================================
 */
 ?>
-        </div>
+            </div>
+        </section>
+        <footer id="colophon" class="site-footer">
+            <div id="site-info" class="site-info">
+                <?php printf(__('%1$s', 'white-spektrum'), 'Theme By: '); ?><a href="<?php echo esc_url('https://lumiathemes.com'); ?>"><?php printf(__('%1$s', 'white-spektrum'), 'Benjamin Lu'); ?></a><br />
+                <?php printf(__('%1$s', 'white-spektrum'), 'Powered By: '); ?><a href="<?php echo esc_url('https://wordpress.org'); ?>"><?php printf(__('%1$s', 'white-spektrum'), 'WordPress'); ?></a><br />
+            </div>
+        </footer>
     </section>
-    <footer id="main-footer" class="site-footer">
-        <div class="site-info">
-            <?php printf(esc_html__('Theme by %1$s', 'white-spektrum'), 'Benjamin Lu'); ?><br />
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'white-spektrum' ) ); ?>"><?php printf( esc_html__( 'Proudly Powered by %s', 'white-spektrum' ), 'WordPress' ); ?></a>
-        </div>
-    </footer>
     <?php wp_footer(); ?>
 </body>
 </html>
+        

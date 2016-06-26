@@ -6,7 +6,7 @@ White Spektrum - comments.php
 This is the most generic template file in a WordPress theme and is one of the required files to
 display the comments for the theme.
 
-@package        Beyond Expectations WordPress Theme
+@package        White Spektrum WordPress Theme
 @copyright      Copyright (C) 2016. Benjamin Lu
 @license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
 @author         Benjamin Lu (http://luminathemes.com/)
@@ -25,10 +25,10 @@ if ( post_password_required() ) {
 
 <?php if ( have_comments() ) : ?>
     <h2 class="comments-title">
-        <?php
-            printf( _nx( 'One Comment', '%1$s Comments', get_comments_number(), 'comments title', 'white-spektrum' ),
-            number_format_i18n( get_comments_number() ));
-        ?>
+            <?php
+                    printf( _nx( 'One Comment', '%1$s Comments', get_comments_number(), 'comments title', 'white-spektrum' ),
+                            number_format_i18n( get_comments_number() ));
+            ?>
     </h2>
 
     <ol class="comment-list">
