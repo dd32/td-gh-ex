@@ -47,7 +47,7 @@ function attirant_setup() {
 		'primary' => esc_html__( 'Primary', 'attirant' ),
 	) );
 	
-	add_image_size('featured-thumb','400','300', true);
+	add_image_size('attirant-featured-thumb','400','300', true);
 	add_image_size('attirant-blog-thumb','500','300', true);
 	add_image_size('attirant-single', '1440', '400', true);
 

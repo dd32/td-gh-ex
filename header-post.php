@@ -58,7 +58,7 @@
 		if ( has_post_thumbnail() ): ?>
 			<?php echo the_post_thumbnail('attirant-single'); ?>
 		<?php else : ?>
-			<img src="<?php echo esc_url( get_stylesheet_directory_uri()."/images/black.png" ); ?>">			
+			<img src="<?php echo esc_url( get_template_directory_uri()."/images/black.png" ); ?>">			
 		<?php endif;
 			
 		if ( is_single() ) {

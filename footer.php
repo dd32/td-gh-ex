@@ -37,7 +37,7 @@
 		?>	 		
 	</div>
 		<div class="site-info">
-			<?php printf( esc_html__( 'Theme - %1$s by %2$s', 'attirant' ), '<b>Attirant</b>', '<a href="http://underscores.me/" rel="designer">Divjot Singh</a>' ); ?>
+			<?php printf( esc_html__( 'Theme - %1$s by %2$s', 'attirant' ), '<b>Attirant</b>', '<a href="http://divjot.co/" rel="designer">Divjot Singh</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

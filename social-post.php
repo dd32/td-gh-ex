@@ -32,7 +32,7 @@
 	for($u = 0; $u < 7; $u++) {
 		if (get_theme_mod($s[$u])) {
 	?>
-		<a target="_blank" href="<?php echo get_theme_mod($s[$u]); ?>" title="<?php echo $t[$u] ?>"><i class="fa fa-<?php echo $s[$u] ?>"></i></a>
+		<a target="_blank" href="<?php echo esc_url(get_theme_mod($s[$u])); ?>" title="<?php echo esc_attr($t[$u]); ?>"><i class="fa fa-<?php echo $s[$u]; ?>"></i></a>
 	<?php }
 	}
 	?>

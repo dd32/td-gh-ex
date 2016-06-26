@@ -9,11 +9,9 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A starter theme called attirant, or underscores.
-
 == Description ==
 
-Hi. I'm a starter theme called attirant, or underscores, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+Attirant is a an awesome theme with a lot of features for your site. With a very flexible layout and number of featured areas, it is perfect for a high quality Blog. A full screen header also allows it to be an awesome Portfolio theme. It is also equipped with some awesome CSS effects for a premium look. Rest you have to check out for yourself.
 
 == Installation ==
 	
@@ -21,15 +19,10 @@ Hi. I'm a starter theme called attirant, or underscores, if you like. I'm a them
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
-== Frequently Asked Questions ==
-
-= Does this theme support any plugins? =
-
-attirant includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
-= 1.0.1  =
+= 1.0.6  =
 * Initial release
 
 == Resources ==
@@ -39,7 +32,7 @@ Slicknav © 2013 The C-3 Group, MIT
 Bootstrap Framework, MIT
 Google Fonts, SIL Open Font License
 Pixabay Images, Creative Commons CC0
-	- https://pixabay.com/en/ocean-sea-boats-island-blue-sky-926061/
+- https://pixabay.com/en/ocean-sea-boats-island-blue-sky-926061/
 Font Awesome Icons, SIL OFL 1.1
 
 == Credits ==
