@@ -55,10 +55,46 @@
   		register_nav_menu( 'primary', __( 'Primary Menu', 'quality' ) ); //Navigation
   		// theme support 	
   		add_theme_support( 'automatic-feed-links');
+		
+		//Title tag
+		add_theme_support( "title-tag" );
   		
   		require_once('theme_setup_data.php');
   		// setup admin pannel defual data for index page		
-  		$quality_pro_options=theme_data_setup();		
+  		$quality_pro_options=theme_data_setup();
+
+	if ( is_admin() ) {
+
+        global $quality_required_actions;
+
+        /*
+         * id - unique id; required
+         * title
+         * description
+         * check - check for plugins (if installed)
+         * plugin_slug - the plugin's slug (used for installing the plugin)
+         *
+         */
+        $quality_required_actions = array(
+			array(
+                "id" => 'quality-req-ac-frontpage-latest-news',
+                "title" => esc_html__( 'Get the one page template' ,'quality' ),
+            ),
+            array(
+                "id" => 'quality-req-ac-install-pirate-forms',
+                "title" => esc_html__( 'Install Pirate Forms' ,'quality' ),
+                "check" => defined("PIRATE_FORMS_VERSION"),
+                "plugin_slug" => 'pirate-forms'
+            ),
+            array(
+                "id" => 'quality-req-ac-check-pirate-forms',
+                "title" => esc_html__( 'Check the contact form after installing Pirate Forms' ,'quality' ),
+            )
+        );
+		require( QUALITY_THEME_FUNCTIONS_PATH . '/quality-info/welcome-screen.php');
+	}
+
+		
   	}
   	// Read more tag to formatting in blog page 
   	function quality_new_content_more($more)
@@ -73,13 +109,4 @@
 	function quality_add_class_to_excerpt( $excerpt ) {
     return str_replace('<p', '<p class="qua-blog-post-description"', $excerpt);
 	}
-	
-	
-	add_action('admin_menu', 'quality_admin_menu_pannel');  
-	function quality_admin_menu_pannel()
-	{	
-	add_theme_page( __('Option panel','quality'), __('Option panel','quality'), 'edit_theme_options', 'option_panel', 'quality_option_page' );
-	}
-	function quality_option_page ()
-	{require_once('option-panel.php');}
   ?>

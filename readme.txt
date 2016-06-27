@@ -115,8 +115,9 @@ JavaScripts
                    Code and documentation copyright 2011-2014 Twitter, Inc. Code released under the MIT license. Docs released under Creative Commons.
 		
 	Images
-		1. Static Home Feature Image => https://pixabay.com/en/vw-camper-volkswagen-vw-car-336606/
-		2. Product Image
+		1. Screenshot Image => https://pixabay.com/en/office-meeting-business-partners-336368/
+		2. Static Home Feature Image => https://pixabay.com/en/vw-camper-volkswagen-vw-car-336606/
+		3. Product Image
 		   https://pixabay.com/en/sofa-couch-surreal-eyes-dog-art-749629/
 		   https://pixabay.com/en/tablet-living-room-dog-woman-girl-843798/
 		   https://pixabay.com/en/tablet-ipad-read-screen-swipe-1075790/
@@ -125,7 +126,7 @@ JavaScripts
 		images are licensed under GPL.
 		
 Font Awesome...
-Font Awesome 4.6.1 by @davegandy - http://fontawesome.io - @fontawesome
+Font Awesome 4.6.3 by @davegandy - http://fontawesome.io - @fontawesome
 License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
 Source: http://fontawesome.io
 		   
@@ -141,6 +142,14 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog:
+@Version 1.7.3
+1. Update Font Awesome Icon 4.6.1 to 4.6.3
+2. Add blog, portfolio, footer-widgets, right-sidebar Tag.
+3. Add Title Tag.
+4. Add About Quality Theme Setting
+@Version 1.7.2
+1. Remove Parallax Pro demo Link in Customizer.
+2. Solved Styling issue.
 @Version 1.7.1
 1. Changed Theme Description in style.css File.
 @Version 1.7
