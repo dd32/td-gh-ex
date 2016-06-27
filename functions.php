@@ -70,6 +70,10 @@
 		//add_theme_support( 'custom-background', $args ); 
 		add_theme_support( 'automatic-feed-links');
 		
+		//Add Title Tag Support
+		add_theme_support( 'title-tag' );
+
+		
 	} 
 	function add_to_author_profile( $contactmethods ) {
 		$contactmethods['youtube_profile'] = 'Youtube Profile URL';

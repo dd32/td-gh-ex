@@ -7,15 +7,12 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />    
 	<meta name="generator" content="WordPress <?php bloginfo('version'); ?>" />	
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />	
-	
 	<?php $corpbiz_options=theme_data_setup(); 
 		 $current_options = wp_parse_args(  get_option( 'corpbiz_options', array() ), $corpbiz_options ); ?>
 	<?php if($current_options['upload_image_favicon']!=''){ ?>
 	<link rel="shortcut icon" href="<?php  echo $current_options['upload_image_favicon']; ?>" /> 
 	<?php } wp_head(); ?>
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
 </head>
 <body <?php body_class(); ?>>		
 <!--Logo & Menu Section-->

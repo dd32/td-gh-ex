@@ -76,7 +76,7 @@ URL: https://pixabay.com/en/woman-girl-headphones-music-977020/
 Source:http://pixabay.com
 License: CC0 Public Domain
 
-Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
+Font Awesome 4.6.3 by @davegandy - http://fontawesome.io - @fontawesome
 License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
 Source: http://fontawesome.io
 # --- EOF --- #
@@ -85,6 +85,10 @@ Source: http://fontawesome.io
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version 1.6.4
+1. Update Font Awesome Icon. 
+2. Add Title Tag Support.
+3. Add featured-images, blog, portfolio, footer-widgets Tag.
 @Version 1.6.3
 1. Add Contact Form 7 Support.
 2. Add Gallery Css.
