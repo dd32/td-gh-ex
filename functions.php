@@ -71,6 +71,9 @@
    				'primary' => __('Primary Menu', 'rambo' ),
   			)		
   		);
+	
+	//Add Theme Support Title Tag
+	add_theme_support( "title-tag" );	
   	}
 	
   	function rambo_excerpt_more( $more ) {

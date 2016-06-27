@@ -14,7 +14,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=9">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>" charset="<?php bloginfo('charset'); ?>" />
-    <title><?php wp_title( '|', true, 'right' ); ?></title>
     <?php 	
 	$rambo_theme_options = theme_data_setup();
    $rambo_current_options = wp_parse_args(  get_option( 'rambo_theme_options', array() ), $rambo_theme_options );

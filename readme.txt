@@ -136,6 +136,10 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
+@version 1.4.5
+1. Update Font awesome 4.6.1 to 4.6.3
+2. Add Footer widget, right sidebar.
+3. Add Theme Support Title Tag.
 @version 1.4.4
 1. Default slider image issue.
 @version 1.4.3
