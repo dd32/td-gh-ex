@@ -10,8 +10,8 @@
 				<div class="section-title-small">
 					<?php if( $current_options['testimonials_title'] != '' ) { ?>
 					<h3 class="section-heading"><?php echo $current_options['testimonials_title'];?></h3>
-					<?php } if( $current_options['testimonial_tagline'] !='') { ?>
-					<p><?php echo $current_options['testimonial_tagline'];?></p>
+					<?php } if( $current_options['testimonials_text'] !='') { ?>
+					<p><?php echo $current_options['testimonials_text'];?></p>
 					<?php } ?>
 				</div>
 				<!-- /Section Title -->

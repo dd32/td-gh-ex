@@ -57,6 +57,9 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.7.3
+1. Update Font Awesome 4.6.1 to 4.6.3
+2. Add footer-widgets, featured-images, blog Tag, right-sidebar
 @version 1.7.2
 1. Update Banner Image URL.
 @version 1.7.1
