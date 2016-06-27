@@ -58,6 +58,10 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.5
+1. Update Font awesome icon 4.5.0 to 4.6.3
+2. Add Title Tag Support.
+3. Add featured-images, blog, footer-widgets Tag.
 @version 1.4
 1. Update Font awesome icon 4.4.0 to 4.5.0
 2. Remove Unused Image.

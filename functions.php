@@ -65,7 +65,8 @@
 		$args = array('default-color' => '000000',);
 		add_theme_support( 'custom-background', $args  ); 
 		add_theme_support( 'automatic-feed-links');
-		add_theme_support( "title-tag" );
+		//Add Theme Support Title Tag
+		add_theme_support( 'title-tag' );
 		require_once('theme_setup_data.php');
 	}
 	
