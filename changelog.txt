@@ -1,4 +1,10 @@
 == CHANGE LOG ==
+= 2.1.1 =
+	- Tweak - html5 enqueued as twentysixteen
+	- Fix - Unwanted Code removed
+	- Fix - is_product_category undefined issue fixed while using bbpress forum
+	- Update - WooCommerce Account Page css added
+
 = 2.1.0 =
 	- Fix - Deprecated Tag removed
 	- Update - CSS Updated

@@ -209,7 +209,7 @@ function arise_header_title() {
 			$arise_header_title = __( 'links', 'arise' );
 		elseif ( $format =='chat' ) :
 			$arise_header_title = __( 'Chats', 'arise' );
-		elseif ( class_exists('WooCommerce') && is_shop() || is_product_category()) :
+		elseif ( class_exists('WooCommerce') && (is_shop() || is_product_category()) ):
   			$arise_header_title = woocommerce_page_title( false );
   		elseif ( class_exists('bbPress') && is_bbpress()) :
   			$arise_header_title = get_the_title();
