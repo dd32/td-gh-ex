@@ -1,7 +1,7 @@
 === Albar ===
 Contributors: Kaira
 Donate link: 
-Tags: responsive-layout, fluid-layout, custom-menu, featured-images, theme-options, threaded-comments, translation-ready, white, light, one-column, two-columns, full-width-template
+Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce, education, entertainment, food-and-drink, holiday, news
 Tested up to: 3.9
 Stable tag: 3.7
 License: GPLv2 or later
@@ -67,6 +67,10 @@ View the settings under Appearance -> ALBAR Settings.
 3. Featured Images work best at a minimum of 1000 wide and 600 high.
 
 == Changelog ==
+
+#### 1.7.2
+* Styling fixes
+* Updated theme tags
 
 #### 1.7.1
 * WooCommerce style fixes

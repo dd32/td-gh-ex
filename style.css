@@ -4,11 +4,11 @@ Theme URI: http://kairaweb.com/theme/albar/
 Author: Kaira
 Author URI: http://www.kairaweb.com/
 Description: Albar is a responsive multipurpose Wordpress theme. You can use Albar to build a business website, portfolio website, online store or a simple blogging website which adapts nicely to all devices. We've integrated with some powerful plugins like SiteOrigin's Page Builder, WooCommerce, Contact Form 7 and more.
-Version: 1.7.1
+Version: 1.7.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: albar
-Tags: responsive-layout, fluid-layout, custom-menu, featured-images, theme-options, threaded-comments, translation-ready, white, light, one-column, two-columns, full-width-template
+Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce, education, entertainment, food-and-drink, holiday, news
 */
 /* =Reset
 -------------------------------------------------------------- */
@@ -770,12 +770,13 @@ a {
 }
 
 .site-pad {
-	padding: 0 20px;
 }
 .site-container {
 	margin: 0 auto;
 	max-width: 1200px;
 	min-width: 220px;
+	padding: 0 20px;
+	padding: 0 20px;
 }
 .page-header .site-container {
     padding: 0 20px;
@@ -783,11 +784,7 @@ a {
     max-width: 1240px;
 }
 .site-boxed .page-header .site-container {
-    padding: 0 20px;
     box-sizing: border-box;
-}
-.site-boxed .site-body.site-pad {
-    padding: 0;
 }
 
 .scroll-to-top {
@@ -804,7 +801,7 @@ a {
 	right: 20px;
 	text-align: center;
 	width: 40px;
-	z-index: 10;
+	z-index: 100;
 	display: none;
 }
 
@@ -1010,17 +1007,17 @@ a {
 }
 .site-header-one .search-block {
 	background-color: #FFF;
-    border-radius: 0 0 3px 3px;
+	border-radius: 0 0 3px 3px;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    /* display: none; */
-    font-size: 14px;
-    height: 42px;
-    padding: 5px 2px 6px 6px;
-    position: absolute;
-    right: 1px;
-    text-align: center;
+	/* display: none; */
+	font-size: 14px;
+	height: 42px;
+	padding: 5px 2px 6px 6px;
+	position: absolute;
+	right: 22px;
+	text-align: center;
 	bottom: 3px;
-    width: 380px;
+	width: 380px;
 	z-index: 6;
 }
 
@@ -1301,6 +1298,7 @@ body.admin-bar .stuck {
     min-height: 620px;
     box-sizing: border-box;
 }
+
 .content-area-full {
     width: 100%;
     padding: 30px 0;
@@ -1312,7 +1310,7 @@ body.admin-bar .stuck {
     padding: 20px 0;
 }
 .page-template-template-full-width-php .site-boxed .content-area-full {
-    padding: 30px 20px;
+    padding: 30px 0;
 }
 
 .content-area-right {
@@ -1338,7 +1336,7 @@ body.admin-bar .stuck {
 .search .site-boxed .content-area,
 .page-template-template-right-nav-sidebar-php .site-boxed .content-area,
 .page-template-default .site-boxed .content-area {
-    padding: 30px 20px 20px 20px;
+    padding: 30px 20px 30px 0;
 }
 
 .post-type-archive.woocommerce-page .site-boxed .content-area {
@@ -1375,7 +1373,7 @@ body.admin-bar .stuck {
 .search .site-boxed .widget-area .widget,
 .page-template-template-right-nav-sidebar-php .site-boxed .widget-area .widget,
 .page-template-default .site-boxed .widget-area .widget {
-    margin: 25px 20px 0 20px;
+    margin: 25px 0 0 20px;
 }
 
 .page-template-template-left-nav-sidebar-php .content-area,
@@ -1387,7 +1385,7 @@ body.admin-bar .stuck {
 }
 .page-template-template-left-nav-sidebar-php .site-boxed .content-area,
 .page-template-template-left-sidebar-php .site-boxed .content-area {
-    padding: 30px 20px 20px 20px;
+    padding: 30px 0 20px 20px;
 }
 
 .page-template-template-left-nav-sidebar-php .widget-area,
@@ -1403,7 +1401,7 @@ body.admin-bar .stuck {
 }
 .page-template-template-left-nav-sidebar-php .site-boxed .widget-area .widget,
 .page-template-template-left-sidebar-php .site-boxed .widget-area .widget {
-    margin: 25px 20px 0 20px;
+    margin: 25px 20px 0 0;
 }
 .blog-standard-layout .widget-area .widget {
 	margin: 25px 20px 0 20px;
@@ -1426,6 +1424,17 @@ body.admin-bar .stuck {
 .woocommerce .widget-area {
     max-width: 309px;
     margin-left: 1px;
+}
+
+.post-type-archive-product.woocommerce-kra-full-width .content-area {
+	width: 100% !important;
+	float: none !important;
+	box-shadow: none !important;
+	padding-left: 0;
+    padding-right: 0;
+}
+.post-type-archive-product.woocommerce-kra-full-width .widget-area {
+	display: none;
 }
 
 
@@ -2741,7 +2750,7 @@ div.wpcf7 {
 	    padding: 8px 0 8px 15px;
     }
     .site-header.header-nosocial .header-menu-button {
-    	padding: 0 0 0 15px;
+    	padding: 2px 0 0 15px;
     }
     .header-menu-button i {
         font-size: 21px;
@@ -2883,7 +2892,6 @@ div.wpcf7 {
 @media only screen and (max-width: 782px) {
 	
     .site-header {
-        box-shadow: none;
     }
 	/* ---- Header One Styling ---- */
     .site-header-one .site-top-bar-left {
@@ -2911,6 +2919,7 @@ div.wpcf7 {
     }
     .site-header-one .site-title a {
     	padding: 0;
+    	display: inline-block;
     }
     .site-header-one .site-description {
         display: block;
@@ -2927,13 +2936,14 @@ div.wpcf7 {
         padding: 2px 0 6px;
         box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
         font-size: 18px;
-	}
+        text-align: center;
+ }
 	.site-header.header-nosocial .site-social {
 		display: none;
 	}
     .header-menu-button {
     	display: block;
-    	padding: 5px 10px 10px !important;
+    	padding: 7px 10px 7px !important;
     }
 	.site-header-one .site-search {
 		display: none;
