@@ -114,5 +114,4 @@ function bellini_admin_header_image() {
 	</div>
 <?php
 }
-endif; // bellini_admin_header_image
-
+endif;

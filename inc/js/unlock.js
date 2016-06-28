@@ -9,7 +9,6 @@
              .attr('href', belliniL10n.belliniURL)
              .attr('target', '_blank')
              .text(belliniL10n.belliniLabel);
-
         setTimeout(function () {
             $('#accordion-section-themes h3').append(upsell);
         }, 200);
@@ -17,5 +16,5 @@
         $('.prefix-upsell-link').on('click', function (e) {
             e.stopPropagation();
         });
-	 }
+     }
 })(jQuery);

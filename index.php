@@ -11,46 +11,36 @@
  *
  * @package bellini
  */
-
 get_header(); ?>
-
-	<div id="primary" class="content-area <?php bellini_sidebar_content_class(); ?>">
-		<main id="main" class="site-main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
-		<section class="blog container">
-
-
+<div id="primary" class="content-area <?php bellini_blog_sidebar(); ?>">
+<main id="main" class="site-main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
+<section class="bellini__canvas">
 		<?php
 		if ( have_posts() ) :
 			if ( is_home() && ! is_front_page() ) : ?>
 				<header>
 					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
 				</header>
-
 			<?php
 			endif;
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				if ( get_theme_mod('bellini_layout_blog') == 'layout-2' ) {
-					get_template_part( 'template-parts/content-lb-1');
-				}else{
-					get_template_part( 'template-parts/content');
-				}
+				if ( get_option('bellini_layout_blog', 'layout-1') == 'layout-1' ):
+					get_template_part( 'template-parts/content' );
+				endif;
+
+
+				if ( get_option('bellini_layout_blog', 'layout-1') == 'layout-5' ):
+					get_template_part( 'template-parts/content-lb-5');
+				endif;
 			endwhile;
 			bellini_pagination();
 		else :
 			get_template_part( 'template-parts/content', 'none' );
 		endif; ?>
-
-
-    	</section>
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
+</section>
+</main><!-- #main -->
+</div><!-- #primary -->
 <?php
 get_sidebar('blog');
 get_footer();

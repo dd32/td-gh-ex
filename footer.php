@@ -11,8 +11,8 @@
 ?>
 </div><!-- #content -->
 <?php if ( is_active_sidebar( 'sidebar-footer' ) ):?>
-    <div id="secondary" class="widget-area__footer container-fluid" role="complementary">
-    <div class="container">
+    <div id="secondary" class="widget-area__footer" role="complementary">
+    <div class="bellini__canvas">
     <div class="row">
         <?php dynamic_sidebar( 'sidebar-footer' ); ?>
     </div>
@@ -21,18 +21,15 @@
 <?php endif;?>
 
 <footer id="colophon" class="site-footer container-fluid" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+<div class="bellini__canvas">
 <div class="row">
-	<div class="col-md-12 site-info">
-        <?php if(get_theme_mod('bellini_copyright_text', '') !== '') : ?>
-            <?php echo do_shortcode(get_theme_mod( 'bellini_copyright_text')); ?>
-        <?php else: ?>
-    		<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'bellini' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'bellini' ), 'WordPress' ); ?></a>
-    		<span class="sep"> | </span>
-    		<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'bellini' ), 'bellini', '<a href="http://pangolinthemes.com/" rel="author">Pangolin</a>' ); ?>
-	<?php endif; ?>
-    </div><!-- .site-info -->
+
+	<?php bellini_core_footer_layout();?>
+
+</div>
 </div>
 </footer><!-- #colophon -->
+<a href="#0" class="scrollToTop"><i class="fa fa-arrow-circle-up fa-lg"></i></a>
 </div><!-- #page -->
 <?php wp_footer(); ?>
 </body>

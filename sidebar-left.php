@@ -6,12 +6,10 @@
  *
  * @package bellini
  */
-
-if ( ! is_active_sidebar( 'sidebar-left' ) ) {
+if ( ! bellini_sidebar_active_left() ) {
 	return;
 }
 ?>
-
 <aside id="secondary" class="widget-area widget-area--left col-md-3 <?php bellini_sidebar_widget_class(); ?>" role="complementary" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
 	<?php dynamic_sidebar( 'sidebar-left' ); ?>
 </aside><!-- #secondary -->

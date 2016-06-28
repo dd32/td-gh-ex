@@ -5,33 +5,26 @@
  * @package bellini
  */
 
-
-// Header
-// Footer
-// Posts
-//Pages
-// Extras
-
 /**
  * Homepage
- * @see  bellini_static_slider()
- * @see  bellini_woo_product_category()
- * @see  bellini_woo_product_newly_arrived()
- * @see  bellini_woo_product_featured()
- * @see  bellini_front_blog_posts()
+ * @see  bellini_static_slider
+ * @see  bellini_woo_product_category
+ * @see  bellini_woo_product_newly_arrived
+ * @see  bellini_woo_product_featured
+ * @see  bellini_front_blog_posts
  */
 
-add_action( 'homepage', 'bellini_static_slider',		   		10 );
-add_action( 'homepage', 'bellini_feature_blocks',		   		20 );
-add_action( 'homepage', 'bellini_woo_product_category',		30 );
-add_action( 'homepage', 'bellini_woo_product_newly_arrived',	40 );
-add_action( 'homepage', 'bellini_woo_product_featured',		50 );
-add_action( 'homepage', 'bellini_front_blog_posts',		    60 );
+add_action( 'bellini_header', 'bellini_core_header',		   		10 );
+
+add_action( 'homepage', 'bellini_static_slider',		   			10 );
+add_action( 'homepage', 'bellini_feature_blocks',		   			20 );
+add_action( 'homepage', 'bellini_woo_product_category',				30 );
+add_action( 'homepage', 'bellini_woo_product_newly_arrived',		40 );
+add_action( 'homepage', 'bellini_woo_product_featured',				50 );
+add_action( 'homepage', 'bellini_front_blog_posts',		    		60 );
+add_action( 'homepage', 'bellini_frontpage_text_field_shortcode',	70 );
 
 
-add_action( 'bellini_header', 'bellini_header_logo', 			10 );
-add_action( 'bellini_header', 'bellini_header_menu', 			20 );
-add_action( 'bellini_header', 'bellini_top_header', 			30 );
-
-
-
+if(get_option('bellini_show_frontpage_slider_pages', true) == true) : 
+	add_action( 'bellini_before_page_content', 'bellini_static_slider',		   			10 );
+endif;

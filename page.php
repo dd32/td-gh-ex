@@ -11,30 +11,65 @@
  *
  * @package bellini
  */
-
 get_header();?>
-<div class="content-wrapper">
-<div class="row">
-<?php get_sidebar('left');?>
-	<div id="primary" class="content-area single-page__content <?php bellini_sidebar_content_class(); ?>">
-		<main id="main" class="site-main" role="main" itemprop="mainContentOfPage">
 
-			<?php while ( have_posts() ) : the_post(); ?>
+<main id="main" class="site-main" role="main" itemprop="mainContentOfPage">
+<?php do_action( 'bellini_before_page_content' );?>
+<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'template-parts/content', 'page' ); ?>
+<!-- Page header -->
+<header class="col-md-12 page__header entry-header">
+<div class="single page-meta">
 
-				<?php
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
-				?>
+<?php
+	edit_post_link(
+				sprintf(
+					/* translators: %s: Name of current post */
+					esc_html__( 'Edit %s', 'bellini' ),
+					the_title( '<span class="screen-reader-text">"', '"</span>', false )
+				),
+					'<span class="edit-link">',
+					'</span>'
+	);
+?>
+<?php the_title( '<h1 class="entry-title element-title single-page__title" itemprop="headline">', '</h1>' ); ?>
+<?php bellini_breadcrumb_integration(); ?>
 
-			<?php endwhile; // End of the loop. ?>
+</div>	
+</header>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
-	<?php get_sidebar(); ?>
-</div><!-- row -->
+<div class="row bellini__canvas">
+
+<?php get_sidebar('left'); ?>
+
+<div id="primary" class="content-area single-page__content <?php bellini_sidebar_content_class(); ?>">
+<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<div class="container--card-content">
+
+<div class="entry-content" itemprop="text">
+	<?php the_content(); ?>
+	<?php
+		wp_link_pages( array(
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'bellini' ),
+			'after'  => '</div>',
+		) );
+	?>
 </div>
+
+</div>
+</div>
+<?php 
+if(get_option('bellini_show_site_comments', true) == true) : 
+	if ( comments_open() || get_comments_number() ) : 
+		comments_template(); 
+	endif;
+endif; 
+?>
+</div>
+
+<?php get_sidebar();?>
+<?php endwhile; // End of the loop. ?>
+
+</div>
+</main>
 <?php get_footer(); ?>

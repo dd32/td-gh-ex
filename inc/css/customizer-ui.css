@@ -1,23 +1,22 @@
-.accordion-section-content
-{
+.accordion-section-content {
     box-sizing: border-box;
-    padding: 5% !important;
-    background: #fff !important;
+    background: #f6f7f9 !important;
 }
 
+.customize-control select,
 .customize-control input[type=tel],
 .customize-control input[type=url],
 .customize-control input[type=text],
 .customize-control input[type=password],
 .customize-control input[type=email],
 .customize-control input[type=number],
-.customize-control input[type=search]
-{
+.customize-control input[type=search] {
     min-height: 32px;
-    transition: all .2s;
     border: 1px solid #c9c9c9;
+    transition: all .2s;
 }
 
+.customize-control select:focus,
 textarea:focus,
 .customize-control input[type=tel]:focus,
 .customize-control input[type=url]:focus,
@@ -25,52 +24,39 @@ textarea:focus,
 .customize-control input[type=password]:focus,
 .customize-control input[type=email]:focus,
 .customize-control input[type=number]:focus,
-.customize-control input[type=search]:focus
-{
+.customize-control input[type=search]:focus {
     border-color: #a4baca;
-    background: #f5f7f9;
 }
 
-
-.wp-core-ui .button-secondary
-{
-    color: #555;
+.wp-core-ui .button-secondary {
     border-color: #ccc;
+    color: #555;
     background: #d0d4d3;
-    -webkit-box-shadow: 0 1px 0 #ccc;
-            box-shadow: 0 1px 0 #ccc;
-;
+    box-shadow: 0 1px 0 #ccc;
 }
-
 
 .wp-core-ui .button-primary,
-.wp-core-ui .button-secondary
-{
+.wp-core-ui .button-secondary {
     text-transform: capitalize;
 }
 
-
-.wp-core-ui .button-secondary:hover
-{
+.wp-core-ui .button-secondary:hover {
     color: #333;
     background-color: #d3d3d3;
 }
 
-
 .accordion-section-title:hover:after,
 .control-section .accordion-section-title:hover:after,
 .nav-menus-php .item-edit:hover:before,
-.widget-top a.widget-action:hover:after
-{
+.widget-top a.widget-action:hover:after {
     transition: all .3s ease-in-out;
 }
 
-
 .accordion-section-title:hover:after,
 .control-section .accordion-section-title:hover:after,
 .nav-menus-php .item-edit:hover:before,
-.widget-top a.widget-action:hover:after
-{
+.widget-top a.widget-action:hover:after {
+    -webkit-transform: translateX(.2em);
     transform: translateX(.2em);
 }
 
@@ -78,152 +64,146 @@ textarea:focus,
 #accordion-panel-bellini_frontpage_panel h3:before,
 #accordion-section-title_tagline h3:before,
 #accordion-panel-bellini_colors_panel h3:before,
+#accordion-panel-bellini_show_hide_components h3:before,
 #accordion-panel-bellini_placeholder_layout_panel h3:before,
 #accordion-section-homepage_control h3:before,
-#accordion-panel-bellini_placeholder_image_panel h3:before,
+#accordion-panel-bellini_misc_panel h3:before,
 #accordion-panel-nav_menus h3:before,
 #accordion-panel-widgets h3:before,
-#accordion-section-wpseo_breadcrumbs_customizer_section h3:before
-{
-    font: 400 18px/1 dashicons;
+#accordion-section-bellini_social_accounts h3:before,
+#accordion-section-wpseo_breadcrumbs_customizer_section h3:before {
     position: relative;
     padding-right: 2%;
     text-align: center;
-    vertical-align: top;
     text-indent: 0;
+    font: 400 18px/1 dashicons;
+    vertical-align: top;
     opacity: .2;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-#accordion-panel-bellini_frontpage_panel h3:before
-{
+#accordion-panel-bellini_show_hide_components h3:before{
+    content: "\f530";
+}
+
+#accordion-panel-bellini_frontpage_panel h3:before {
     content: '\f102';
 }
-#accordion-section-title_tagline h3:before
-{
+
+#accordion-section-title_tagline h3:before {
     content: '\f488';
 }
-#accordion-panel-bellini_colors_panel h3:before
-{
+
+#accordion-panel-bellini_colors_panel h3:before {
     content: '\f100';
 }
-#accordion-panel-bellini_placeholder_layout_panel h3:before
-{
+
+#accordion-panel-bellini_placeholder_layout_panel h3:before {
     content: '\f108';
 }
-#accordion-panel-bellini_placeholder_image_panel h3:before
-{
+
+#accordion-panel-bellini_misc_panel h3:before {
     content: '\f322';
 }
-#accordion-panel-nav_menus h3:before
-{
+
+#accordion-panel-nav_menus h3:before {
     content: '\f333';
 }
-#accordion-panel-widgets h3:before
-{
+
+#accordion-panel-widgets h3:before {
     content: '\f479';
 }
 
-.accordion-section h3:before
-{
+#accordion-section-bellini_social_accounts h3:before{
+    content: "\f325";
+}
+
+.accordion-section h3:before {
     content: '\f106';
 }
 
-
-#accordion-section-bellini_typography h3:before
-{
+#accordion-section-bellini_typography h3:before {
     content: '\f210';
 }
-#accordion-section-bellini_default_image h3:before
-{
+
+#accordion-section-bellini_default_image h3:before {
     content: '\f161';
 }
-#accordion-section-bellini_default_text h3:before
-{
+
+#accordion-section-bellini_default_text h3:before {
     content: '\f217';
 }
-#accordion-section-static_front_page h3:before
-{
+
+#accordion-section-static_front_page h3:before {
     content: '\f107';
 }
-#accordion-section-bellini_frontpage_section_slider h3:before
-{
+
+#accordion-section-bellini_frontpage_section_slider h3:before {
     content: '\f232';
 }
-#accordion-section-bellini_frontpage_section_category h3:before
-{
+
+#accordion-section-bellini_frontpage_section_category h3:before {
     content: '\f323';
 }
-#accordion-section-bellini_frontpage_section_product h3:before
-{
+
+#accordion-section-bellini_frontpage_section_product h3:before {
     content: '\f174';
 }
-#accordion-section-bellini_frontpage_section_featured h3:before
-{
+
+#accordion-section-bellini_frontpage_section_featured h3:before {
     content: '\f174';
 }
-#accordion-section-bellini_frontpage_section_blog h3:before
-{
+
+#accordion-section-bellini_frontpage_section_blog h3:before {
     content: '\f464';
 }
 
-.customize-section-description-container .customize-section-title h3:before
-{
+.customize-section-description-container .customize-section-title h3:before {
     display: none;
 }
 
-
-.customize-controls-close
-{
-    transition: all .2s;
-    opacity: .3;
-    color: #e91e63 !important;
+.customize-controls-close {
     border: none !important;
-    background-color: #f8bbd0 !important;
+    color: #e91e63 !important;
+    opacity: .3;
+    transition: all .2s;
 }
 
-.customize-controls-close:hover
-{
-    opacity: 1;
+.customize-controls-close:hover {
     color: #fff !important;
+    opacity: 1;
     background-color: #e91e63 !important;
 }
 
 .customize-panel-back,
-.customize-section-back{
+.customize-section-back {
     box-sizing: border-box !important;
-    transition: all .3s;
-    color: #ACE0E6 !important;
     border-color: #E3EDEF;
+    color: #ACE0E6 !important;
     background-color: #E7F7F9 !important;
+    transition: all .3s;
 }
 
 .customize-panel-back:hover,
-.customize-section-back:hover{
+.customize-section-back:hover {
     box-sizing: border-box !important;
-    color: #fff !important;
     border: none;
+    color: #fff !important;
     background-color: #00BCD4 !important;
 }
 
-
-.customize-section-title
-{
+.customize-section-title {
     margin: -14px -15px 0;
 }
 
-#customize-header-actions
-{
+#customize-header-actions {
     background: #fff;
 }
 
-
-#customize-controls .customize-info
-{
+#customize-controls .customize-info {
     border: none !important;
 }
-
 
 /*
 .wp-core-ui .button-primary {
@@ -254,36 +234,90 @@ textarea:focus,
 */
 
 
-.prefix-upsell-link
-{
-    font-size: 9px;
-    line-height: 1.5;
+
+.prefix-upsell-link {
     display: inline-block;
     clear: both;
     margin-top: 6px;
     padding: 3px 5px;
-    transition: all .2s;
-    letter-spacing: 1px;
     text-transform: uppercase;
+    font-size: 9px;
+    line-height: 1.5;
+    letter-spacing: 1px;
     color: #fff;
     background-color: #f44336;
+    transition: all .2s;
 }
 
-.prefix-upsell-link:before
-{
-    font: 400 12px/1 dashicons;
+.prefix-upsell-link:before {
     content: '\f160';
+    font: 400 12px/1 dashicons;
 }
 
-.prefix-upsell-link:hover
-{
+.prefix-upsell-link:hover {
     color: #fff;
     background-color: #e53935;
 }
 
-
-.prefix-upsell-link:hover:before
-{
-    font: 400 12px/1 dashicons;
+.prefix-upsell-link:hover:before {
     content: '\f112';
+    font: 400 12px/1 dashicons;
+}
+
+.bellini-ui__title {
+    color:#2D2C2C;
+    margin-top: .5rem;
+    padding: .8em .8em .8em .5em;
+    text-transform: uppercase;
+    border-bottom: 1px solid #dcdee0;
+}
+
+.customize-control-image .remove-button,
+.customize-control-image .upload-button{
+    width: 100%;
+    margin-bottom: .5em;
+}
+
+li#customize-control-bellini_social_account_icon_one,
+li#customize-control-bellini_social_account_icon_two,
+li#customize-control-bellini_social_account_icon_three,
+li#customize-control-bellini_social_account_icon_four,
+li#customize-control-bellini_social_account_icon_five,
+li#customize-control-bellini_social_account_icon_six {
+    width:30%;
+    float:left;
+    clear:left;
+    height:32px;
+}
+
+
+li#customize-control-bellini_social_account_link_one,
+li#customize-control-bellini_social_account_link_two,
+li#customize-control-bellini_social_account_link_three,
+li#customize-control-bellini_social_account_link_four,
+li#customize-control-bellini_social_account_link_five,
+li#customize-control-bellini_social_account_link_six{
+    width:65%;
+    float:right;
+    clear:right;
+}
+
+/*
+#accordion-panel-bellini_placeholder_layout_panel,
+#accordion-panel-bellini_frontpage_panel {
+    margin-bottom: .7rem;
+}
+*/
+
+#customize-theme-controls .accordion-section-content {
+    color: #262626;
+}
+
+input[type=checkbox]:checked:before {
+    color: #fff;
+}
+
+input[type=checkbox]:checked:before {
+    background-color:#00BCD4;
+    width: auto;
 }
