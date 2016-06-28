@@ -1,7 +1,7 @@
 === Astrid ===
 
 Contributors: athemes
-Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
+Tags: two-columns, right-sidebar, custom-colors, custom-background, custom-header, custom-menu, featured-images, sticky-post, theme-options, threaded-comments, translation-ready
 
 Requires at least: 4.0
 Tested up to: 4.4.2

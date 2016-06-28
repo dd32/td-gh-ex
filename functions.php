@@ -195,7 +195,7 @@ function astrid_scripts() {
 	
 	wp_enqueue_style( 'astrid-headings-fonts', esc_attr($headings_url) ); 	
 
-	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/fonts/font-awesome.min.css' );	
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/fonts/font-awesome.min.css' );	
 
 	wp_enqueue_script( 'astrid-main', get_template_directory_uri() . '/js/main.js', array('jquery'), '', true );
 
@@ -272,7 +272,7 @@ function astrid_has_header() {
 	$front_header = get_theme_mod('front_header_type' ,'image');
 	$site_header = get_theme_mod('site_header_type', 'nothing');
 	global $post;
-	if ( !is_404() ) {
+	if ( !is_404() && !is_search() ) {
 		$single_toggle = get_post_meta( $post->ID, '_astrid_header_key', true );
 	} else {
 		$single_toggle = false;
@@ -396,7 +396,7 @@ function astrid_footer_contact() {
 	if ($footer_contact_email) {
 		echo '<div class="footer-contact-block">';
 		echo 	'<i class="fa fa-envelope"></i>';
-		echo 	'<span><a href="mailto:' . esc_html($footer_contact_email) . '">' . esc_html($footer_contact_email) . '</a></span>';
+		echo 	'<span><a href="mailto:' . esc_attr($footer_contact_email) . '">' . esc_html($footer_contact_email) . '</a></span>';
 		echo '</div>';
 	}
 	if ($footer_contact_phone) {
