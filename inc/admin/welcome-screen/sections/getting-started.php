@@ -67,11 +67,21 @@ $customizer_url = admin_url() . 'customize.php' ;
 </div>
 <div>
 <p>
-<h2 style="text-align: left;"><?php _e('Install recommended plugin : advance widgets','advance'); ?></h2>
-<h3 style="text-align: left;"><?php _e('How to add service Block ?','advance'); ?></h3>
+
+
 
 <ol style="text-align: left;">
+<li>
+<h3><strong><?php _e('How to replace front page latest post area with Advance widgets ','advance'); ?></strong></h3>
+</li>
+</ul>
+<li style="text-align: left;"><?php _e('Go to customize  =&gt; theme option =&gt; Front Page widgets area  =&gt; Add a widgets =&gt; select advance custome widgets ','advance'); ?></li>
+<li style="text-align: left;"><?php _e('Check screenshot','advance'); ?></li>
+<img class="alignnone wp-image-16" src="<?php echo  esc_url(get_template_directory_uri().'/inc/admin/img/fron-widgest.jpg');?>" alt="service" width="824" height="375" />
+
+
  	<li>
+<h3 style="text-align: left;"><?php _e('How to add service Block ?','advance'); ?></h3>
 <h3><strong><?php _e('Service Block','advance'); ?></strong></h3>
 </li>
 </ol>
@@ -82,15 +92,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 </ul>
 <img class="alignnone wp-image-16" src="<?php echo  esc_url(get_template_directory_uri().'/inc/admin/img/service.jpg');?>" alt="service" width="824" height="375" />
 <ul>
- 	<li>
-<h3><strong><?php _e('About us , Our team , Clients, welcome section','advance'); ?></strong></h3>
-</li>
-</ul>
-<?php _e('Those section you can easily add from customize =&gt; theme option','advance'); ?>
-
-</br><?php _e('or','advance'); ?></br>
-
-<?php _e('You can also add from widgets (appear under appearance tab )','advance'); ?>
+ 	
 <ul>
  	<li>
 <h3><strong><?php _e('Menu','advance'); ?></strong></h3>

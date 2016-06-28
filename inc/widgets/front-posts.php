@@ -2,10 +2,6 @@
 /*
  *FRONTPAGE - POSTS SECTION WIDGET
  */
- 
-/**
- * Custom walker to print category checkboxes for widget forms
- */
 
  
 add_action( 'widgets_init', 'advance_register_front_posts' );
@@ -57,30 +53,33 @@ class advance_front_Posts extends WP_Widget {
 		/* Before widget (defined by themes). */
 		echo $before_widget;?>
 		
-	<div class="latest-post-advance" style="<?php if (!empty($instance['content_bg'])): ?> background-color:<?php echo esc_attr($instance['content_bg']); ?> ;<?php endif; ?>  <?php if (!empty($padtopbottom)): ?>padding-top:<?php echo $padtopbottom ;?>%; padding-bottom:<?php echo $padtopbottom ;?>%;  <?php endif; ?>">	
- <div class=" row">
-<?php if (!empty($instance['title']) || !empty($instance['subtitle'])): ?>
- <div class="section-header wow fadeIn animated animated">
+<div class="widgets-post-advance" style=" background-color:<?php echo esc_attr($instance['content_bg']); ?> ;  <?php if (!empty($padtopbottom)): ?>padding-top:<?php echo $padtopbottom ;?>%; padding-bottom:<?php echo $padtopbottom ;?>%;  <?php endif; ?>">	
+ 	
+    	<div class="row">
+			<?php if (!empty($instance['title']) || !empty($instance['subtitle'])): ?>
+ 				<div class="section-header wow fadeIn animated animated">
  
- <?php if (!empty($instance['title'])): ?>
-                            <h2 class="section-title wow fadeIn"  >
-							
-		<?php echo apply_filters('widget_title', $instance['title']); ?>
-  </h2>
-	<?php endif; ?>
-                            <?php if (!empty($instance['subtitle'])): ?>
+ 						<?php if (!empty($instance['title'])): ?>
+                         	<h2 class="section-title wow fadeIn"  >
+								<?php echo apply_filters('widget_title', $instance['title']); ?>
+  						 	</h2>
+						<?php endif; ?>
+                       		
+						<?php if (!empty($instance['subtitle'])): ?>
                             <div class="colored-line" style="background:<?php echo $subtitle_textcolor ;?>;"></div>
-		
-						<div class="section-description"><h4><?php echo  htmlspecialchars_decode(apply_filters('widget_title', $instance['subtitle'])); ?></h4></div>
-                        <div class="colored-line" style="style="background:<?php echo $subtitle_textcolor ;?>;"></div>
-                             <?php endif;?>
-       				 </div><!--section head end-->
+								<div class="section-description">
+                                    <h4><?php echo  htmlspecialchars_decode(apply_filters('widget_title', $instance['subtitle'])); ?></h4>
+                                </div>
+                           <div class="colored-line" style="background:<?php echo $subtitle_textcolor ;?>;"></div>
+                        <?php endif;?>
+       			</div><!--section head end-->
                        
-                        <?php endif; ?>
-  <div class="lay1 wow fadeInup"> 
- <?php   
-  $paged = ( get_query_var('page') ) ? get_query_var('page') : 1;
-      $args = array(
+           <?php endif; ?>
+           
+  				<div class="lay1 wow fadeInup"> 
+ 					<?php   
+  						$paged = ( get_query_var('page') ) ? get_query_var('page') : 1;
+      					$args = array(
 										'posts_per_page'=>$count,
 										'cat' => $category,
 										'orderby' => 'ID',
@@ -88,79 +87,71 @@ class advance_front_Posts extends WP_Widget {
 										'paged' => $paged);
 										
 
-			$wp_query = new WP_Query($args);
-			?>
-            <?php wp_reset_postdata(); ?>		
- <?php  if($wp_query->have_posts()) {?>
-			
-			
-						
-							<?php  while ($wp_query->have_posts()) {								
-									$wp_query->the_post();?>
+					  $wp_query = new WP_Query($args);
+				   ?>
+            		
+ 				<?php  if($wp_query->have_posts()) {?>
+					<?php  while ($wp_query->have_posts()) {								
+							$wp_query->the_post();?>
    
-     
-                    <div class="matchhe post_warp large-3 medium-6 columns  ">
+              					<div class="matchhe post_warp large-4 medium-6 columns  ">
+                   					<div class="single_latest_news">
               
-                  <div class="post_image">
-                          <!--CALL TO POST IMAGE-->
+                  						<div class="latest_news_image">
+                          					<!--CALL TO POST IMAGE-->
                              
-                       <?php  if ( get_the_post_thumbnail() != '' ) {
-						        
-								 echo '<div class=" imgwrap">';
-    
-                                 echo '<a href="';esc_url( the_permalink()); echo '" >';
-                                 the_post_thumbnail();
-                                 echo '</a>';
-                                 echo '</div>';
-                                 } else {
-    
-                                echo '<div class=" imgwrap">';
-                                echo '<a href="'; esc_url( the_permalink()); echo '">';
-     							echo '<img src="';
-     							echo  esc_url (advance_catch_that_image());
-     							echo '" alt="" />';
-     							echo '</a>';
-    							echo '</div>';
-    					};?>
-                     </div><!--end POST IMAGE-->
+                       						<?php  if ( get_the_post_thumbnail() != '' ) {
+						        				echo '<a href="';esc_url( the_permalink()); echo '" >';
+							         			the_post_thumbnail();
+									  			echo '</a>';
+									
+                                 				} else {
+    							 				echo '<a href="';esc_url( the_permalink()); echo '" >';
+                         						echo '<img src="';
+     											echo  esc_url (advance_catch_that_image());
+     											echo '" alt="" />';
+								 				echo '</a>';
+     							
+    							
+    										};?>
+                     		</div><!--end POST IMAGE-->
                   
                   
-                  <div class=" post_content2">
-                 <div class=" post_content3">
-                      
-                      <?php the_title( sprintf( '<h2 class="postitle_lay"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-             </div> 
-                   </div><!-- POST content-->
-                     </div>
+                  				<div class=" latest_news_desc">
+               						<?php the_title( sprintf( '<h2><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+                      				<h4><?php the_author(); ?> | <?php the_time( get_option('date_format') ); ?></h4>
+             						<p><?php the_excerpt(); ?></p> 
+             						<a class="read_more" href="<?php echo esc_url(get_permalink());?>"><?php echo esc_attr__('Read more','advance');?></a>
+                   			  </div><!-- latest_news_desc-->
+                 		</div>
+               		</div>
+            	<?php } ?>
             <?php } ?>
-             <?php } ?>
+            
+             <?php wp_reset_postdata(); ?>
           <!-- pagination -->
           <?php if ($wp_query->max_num_pages > 1) { // check if the max number of pages is greater than 1  ?>
 
-		<?php
-			if(function_exists('wp_pagenavi')) :
-				
-			else :
-		?>
-			<div class="advance_nav">
-			<?php	// Previous/next page navigation.
-			the_posts_pagination(  array('prev_text' => '&laquo;', 'next_text' => '&raquo;') );?> 
-
-			</div>
-		<?php endif; ?>   
+			<?php if(function_exists('wp_pagenavi')) :
+				else :?>
+					<div class="advance_nav">
+						<?php the_posts_pagination(  array('prev_text' => '&laquo;', 'next_text' => '&raquo;') );?> 
+					</div>
+		   <?php endif; ?>   
         <?php } ?>   
 <!-- /pagination -->
-        </div>
-          </div>   
-           </div> <!-- latest POST section-->
+
+       </div>
+   </div>   
+</div> <!-- latest POST section-->
+		
+		
 		<?php
 		/* After widget (defined by themes). */
 		echo $after_widget;
 		
 		
 	}
-
-
 	/* ---------------------------- */
 	/* ------- Update Widget -------- */
 	/* ---------------------------- */

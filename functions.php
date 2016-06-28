@@ -142,18 +142,29 @@ return $advancefirst_img;
 }
 
 
-//Custom Excerpt Length
-function excerpt($limit_advance) {
-  $excerpt = explode(' ', get_the_excerpt(), $limit_advance);
-  if (count($excerpt)>=$limit_advance) {
-    array_pop($excerpt);
-    $excerpt = implode(" ",$excerpt).'...';
-  } else {
-    $excerpt = implode(" ",$excerpt);
-  }	
-  $excerpt = preg_replace('`\[[^\]]*\]`','',$excerpt);
-  return $excerpt;
+
+/**
+ * Filter the except length to 20 characters.
+ *
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
+ */
+function advance_custom_excerpt_length( $length ) {
+    return 40;
 }
+add_filter( 'excerpt_length', 'advance_custom_excerpt_length', 999 ); 
+
+/**
+ * Filter the excerpt "read more" string.
+ *
+ * @param string $more "Read more" excerpt string.
+ * @return string (Maybe) modified "read more" excerpt string.
+ */
+function advance_excerpt_more( $more ) {
+    return '.....';
+}
+add_filter( 'excerpt_more', 'advance_excerpt_more' );
+
  
 
 //Load CSS files
@@ -344,13 +355,13 @@ add_action( 'widgets_init', 'advance_widgets_init' );
 
 
 //load widgets ,kirki ,customizer
-require(get_template_directory() . '/inc/kirki/kirki.php');
-require(get_template_directory() . '/inc/customizer.php');
-require(get_template_directory() . '/inc/widgets.php');
+require_once(get_template_directory() . '/inc/kirki/kirki.php');
+require_once(get_template_directory() . '/inc/customizer.php');
+require_once(get_template_directory() . '/inc/widgets.php');
 require(get_template_directory() . '/inc/upsell.php');
-require(get_template_directory() . '/inc/extra.php');
-require(get_template_directory() . '/inc/about-theme.php');
-require(get_template_directory() . '/inc/widgets/advance_serviceblock.php');
+require_once(get_template_directory() . '/inc/extra.php');
+require_once(get_template_directory() . '/inc/about-theme.php');
+require_once(get_template_directory() . '/inc/widgets/advance_serviceblock.php');
 if ( is_admin() ) {
-require(get_template_directory() . '/inc/admin/welcome-screen/welcome-screen.php');
+require_once(get_template_directory() . '/inc/admin/welcome-screen/welcome-screen.php');
 }

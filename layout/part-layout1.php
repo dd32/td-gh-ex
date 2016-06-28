@@ -51,7 +51,7 @@
                       
     <?php the_title( sprintf( '<h2 class="postitle_lay"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
                        
-                      <p><?php echo excerpt(30); ?></p> 
+                      <p><?php the_excerpt(); ?></p> 
                       
                   </div> <!-- .post_content2 -->
                   	</div><!-- post_content3 -->

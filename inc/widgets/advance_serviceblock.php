@@ -24,7 +24,9 @@ class advance_serviceblock extends WP_Widget {
 			$content_iconcolor=isset( $instance['content_iconcolor'] ) ? $instance['content_iconcolor'] : '';
 			$padtop=isset( $instance['padtop'] ) ? $instance['padtop'] : '';
 			$padbottom=isset( $instance['padbottom'] ) ? $instance['padbottom'] : '';
-
+			$cat1 = isset( $instance['cat_block1'] ) ? $instance['cat_block1'] : '';
+			$cat2 = isset( $instance['cat_block2'] ) ? $instance['cat_block2'] : '';
+			$cat3 = isset( $instance['cat_block3'] ) ? $instance['cat_block3'] : '';
         echo $before_widget;
 
         ?>
@@ -43,184 +45,153 @@ class advance_serviceblock extends WP_Widget {
 
 
 <div class=" style2-service"  style=" <?php if (!empty($instance['content_bg'])): ?> background-color:<?php echo esc_attr($instance['content_bg']); ?> ;<?php endif; ?> <?php if (!empty($instance['padtop']) || !empty($instance['padbottom']) ): ?> padding-bottom: <?php echo esc_attr($instance['padbottom']); ?>%;  padding-top:<?php echo esc_attr($instance['padtop']); ?>%; <?php endif; ?>"  >
-<div class=" row">
-<?php if (!empty($instance['title']) || !empty($instance['sub_title'])): ?>
- <div class="section-header wow fadeIn animated animated">
+	<div class=" row">
+			<?php if (!empty($instance['title']) || !empty($instance['sub_title'])): ?>
+ 					<div class="section-header wow fadeIn animated animated">
  
- <?php if (!empty($instance['title'])): ?>
-                            <h2 class="section-title wow fadeIn"  >
+						 <?php if (!empty($instance['title'])): ?>
+                            	<h2 class="section-title wow fadeIn"  >
 							
-		<?php echo apply_filters('widget_title', $instance['title']); ?>
-  </h2>
-	<?php endif; ?>
-                            <?php if (!empty($instance['sub_title'])): ?>
+									<?php echo apply_filters('widget_title', $instance['title']); ?>
+  								</h2>
+						<?php endif; ?>
+                         <?php if (!empty($instance['sub_title'])): ?>
                             <div class="colored-line"></div>
-		
-						<div class="section-description"><h4><?php echo  htmlspecialchars_decode(apply_filters('widget_title', $instance['sub_title'])); ?></h4></div>
-                        <div class="colored-line"></div>
-                             <?php endif;?>
-       				 </div><!--section head end-->
+								<div class="section-description">
+                                	<h4><?php echo  htmlspecialchars_decode(apply_filters('widget_title', $instance['sub_title'])); ?></h4></div>
+                        		<div class="colored-line"></div>
+                         <?php endif;?>
+       			 </div><!--section head end-->
                        
-                        <?php endif; ?>
+          <?php endif; ?>
 
- <?php
-
-if (!empty($instance['icon1']) || !empty($instance['title1']) || !empty($instance['text1']) || !empty($instance['image_uri1'])): ?>
+ <?php if (!empty($instance['icon1']) || !empty($instance['cat_block1']) || !empty($instance['image_uri1'])): ?>
 
  <!--BLOCK 1 START-->
- <a <?php if (!empty($instance['box_uri1'])): ?> href="<?php echo esc_url($instance['box_uri1']); ?> " <?php endif; ?> >
+ 	<a <?php if (!empty($instance['box_uri1'])): ?> href="<?php echo esc_url($instance['box_uri1']); ?> " <?php endif; ?> >
  
-
-<div class="medium-4 columns ">
-<div class=" style2-content btn-lines matchhe">
+ <?php   
+ 	 $args = array(
+										'post_type' => 'page',
+										'page_id' => $cat1,
+										'posts_per_page'=>1,
+										'order'=>'ASC',);
+			$wp_query_advance = new WP_Query($args);
+			?>
+            
+			<div class="medium-4 columns ">
+				<div class=" style2-content btn-lines matchhe">
 <!--hover effct-->
-<span class="line-top"></span>
-<span class="line-bottom"></span>
-<span class="line-left"></span>
-<span class="line-right"></span>
+					<span class="line-top"></span>
+					<span class="line-bottom"></span>
+					<span class="line-left"></span>
+					<span class="line-right"></span>
 
-   <?php
-	if (!empty($instance['icon1']) || !empty($instance['image_uri1'])): ?>
-      <?php
-		if (!empty($instance['icon1'])): ?>
-         <i class="fa <?php
-			echo esc_attr($instance['icon1']); ?> fa-4x "  ></i>
-           <?php
-		endif; ?>
-             <?php
-		if (!empty($instance['image_uri1'])): ?>
-               <img src="<?php
-			echo esc_url($instance['image_uri1']); ?> "/>
-                  <?php
-		endif; ?>
-    <?php
-	endif; ?>
+   					<?php if (!empty($instance['icon1']) || !empty($instance['image_uri1'])): ?>
+      						<?php if (!empty($instance['icon1'])): ?>
+         						<i class="fa <?php echo esc_attr($instance['icon1']); ?> fa-4x "  ></i>
+           					<?php endif; ?>
+             				<?php if (!empty($instance['image_uri1'])): ?>
+            					<img src="<?php echo esc_url($instance['image_uri1']); ?> "/>
+        					<?php endif; ?>
+   				 <?php endif; ?>
     
- <?php
-	if (!empty($instance['title1'])): ?>
- <h4><?php
-		echo apply_filters('widget_title', $instance['title1']); ?></h4>
- <?php
-	endif; ?>
- <?php
-	if (!empty($instance['text1'])): ?>
- <p> <?php
-		echo htmlspecialchars_decode(apply_filters('widget_title', $instance['text1'])); ?></p>
- 
- <?php
-	endif; ?>
- </div></div>
- </a>
- <?php
-endif; ?>
+ 				<?php  if($wp_query_advance->have_posts()) {?>
+        			<?php  while ($wp_query_advance->have_posts()) {$wp_query_advance->the_post();?>
+        				<h4><?php the_title(); ?></h4>
+ 					<p><?php the_excerpt(); ?> </p>
+ 					<?php } ?>
+				<?php } ?>
+ 				</div>
+			</div>
+		</a>
+ <?php endif; ?>
 
   <!--BLOCK 2 START-->
  
- <?php
+ <?php if (!empty($instance['icon2']) || !empty($instance['cat_block2']) || !empty($instance['image_uri2'])): ?>
 
-if (!empty($instance['icon2']) || !empty($instance['title2']) || !empty($instance['text2']) || !empty($instance['image_uri2'])): ?>
-
- <a <?php if (!empty($instance['box_uri2'])): ?> href="<?php echo esc_url($instance['box_uri2']); ?> " <?php endif; ?> >
+ 	<a <?php if (!empty($instance['box_uri2'])): ?> href="<?php echo esc_url($instance['box_uri2']); ?> " <?php endif; ?> >
  
-<div class="medium-4 columns">
-<div class=" style2-content btn-lines matchhe">
-<!--hover effct-->
-<span class="line-top"></span>
-<span class="line-bottom"></span>
-<span class="line-left"></span>
-<span class="line-right"></span>
-<!--BLOCK 2 START-->
-   <?php
-	if (!empty($instance['icon2']) || !empty($instance['image_uri2'])): ?>
-      <?php
-		if (!empty($instance['icon2'])): ?>
-         <i class="fa <?php
-			echo esc_attr($instance['icon2']); ?> fa-4x "  ></i>
-           <?php
-		endif; ?>
-             <?php
-		if (!empty($instance['image_uri2'])): ?>
-               <img src="<?php
-			echo esc_url($instance['image_uri2']); ?> "/>
-                  <?php
-		endif; ?>
-    <?php
-	endif; ?>
-    
- <?php
-	if (!empty($instance['title2'])): ?>
- <h4><?php
-		echo apply_filters('widget_title', $instance['title2']); ?></h4>
- <?php
-	endif; ?>
- <?php
-	if (!empty($instance['text2'])): ?>
- <p> <?php
-		echo htmlspecialchars_decode(apply_filters('widget_title', $instance['text2'])); ?></p>
  
- <?php
-	endif; ?>
- </div>
-  </div>
- </a>
- <?php
-endif; ?>
+				<div class="medium-4 columns">
+						<div class=" style2-content btn-lines matchhe">
+							<!--hover effct-->
+							<span class="line-top"></span>
+							<span class="line-bottom"></span>
+							<span class="line-left"></span>
+							<span class="line-right"></span>
+							<!--BLOCK 2 START-->
+   						<?php if (!empty($instance['icon2']) || !empty($instance['image_uri2'])): ?>
+      							<?php if (!empty($instance['icon2'])): ?>
+         								<i class="fa <?php echo esc_attr($instance['icon2']); ?> fa-4x "  ></i>
+           						<?php endif; ?>
+             					<?php if (!empty($instance['image_uri2'])): ?>
+              						 <img src="<?php echo esc_url($instance['image_uri2']); ?> "/>
+                  				<?php endif; ?>
+    					<?php endif; ?>
+                <?php   
+ 	 		$args = array(
+										'post_type' => 'page',
+										'page_id' => $cat2,
+										'posts_per_page'=>1,
+										'order'=>'ASC',);
+			$wp_query_advance2 = new WP_Query($args);
+			?>
+ 				<?php  if($wp_query_advance2->have_posts()) {?>
+        			<?php  while ($wp_query_advance2->have_posts()) {$wp_query_advance2->the_post();?>
+        				<h4><?php the_title(); ?></h4>
+ 					<p><?php the_excerpt(); ?> </p>
+ 					<?php } ?>
+				<?php } ?>
+   			</div>
+  		</div>
+	 </a>
+ <?php endif; ?>
 
 <!--BLOCK 3 START-->
-<?php
+<?php if (!empty($instance['icon3']) || !empty($instance['cat_block3']) || !empty($instance['image_uri3'])): ?>
 
-if (!empty($instance['icon3']) || !empty($instance['title3']) || !empty($instance['text3']) || !empty($instance['image_uri3'])): ?>
-
+ 	<a <?php if (!empty($instance['box_uri3'])): ?> href="<?php echo esc_url($instance['box_uri3']); ?> " <?php endif; ?> >
  
-<a <?php if (!empty($instance['box_uri3'])): ?> href="<?php echo esc_url($instance['box_uri3']); ?> " <?php endif; ?> >
-<div class="medium-4 columns ">
-<div class=" style2-content btn-lines matchhe">
-<!--hover effct-->
-<span class="line-top"></span>
-<span class="line-bottom"></span>
-<span class="line-left"></span>
-<span class="line-right"></span>
-<!--hover effct-->
-   <?php
-	if (!empty($instance['icon3']) || !empty($instance['image_uri3'])): ?>
-      <?php
-		if (!empty($instance['icon3'])): ?>
-         <i class="fa <?php
-			echo esc_attr($instance['icon3']); ?> fa-4x "  ></i>
-           <?php
-		endif; ?>
-             <?php
-		if (!empty($instance['image_uri3'])): ?>
-               <img src="<?php
-			echo esc_url($instance['image_uri3']); ?> "/>
-                  <?php
-		endif; ?>
-    <?php
-	endif; ?>
-    
- <?php
-	if (!empty($instance['title3'])): ?>
- <h4><?php
-		echo apply_filters('widget_title', $instance['title3']); ?></h4>
- <?php
-	endif; ?>
- <?php
-	if (!empty($instance['text3'])): ?>
- <p> <?php
-		echo htmlspecialchars_decode(apply_filters('widget_title', $instance['text3'])); ?></p>
  
- <?php
-	endif; ?>
- </div>
-  </div>
- </a>
- <?php
-endif; ?>
- </div>
+				<div class="medium-4 columns">
+						<div class=" style2-content btn-lines matchhe">
+							<!--hover effct-->
+							<span class="line-top"></span>
+							<span class="line-bottom"></span>
+							<span class="line-left"></span>
+							<span class="line-right"></span>
+							
+   						<?php if (!empty($instance['icon3']) || !empty($instance['image_uri3'])): ?>
+      							<?php if (!empty($instance['icon3'])): ?>
+         								<i class="fa <?php echo esc_attr($instance['icon3']); ?> fa-4x "  ></i>
+           						<?php endif; ?>
+             					<?php if (!empty($instance['image_uri3'])): ?>
+              						 <img src="<?php echo esc_url($instance['image_uri3']); ?> "/>
+                  				<?php endif; ?>
+    					<?php endif; ?>
+                <?php   
+ 	 		$args = array(
+										'post_type' => 'page',
+										'page_id' => $cat3,
+										'posts_per_page'=>1,
+										'order'=>'ASC',);
+			$wp_query_advance3 = new WP_Query($args);
+			?>
+ 				<?php  if($wp_query_advance3->have_posts()) {?>
+        			<?php  while ($wp_query_advance3->have_posts()) {$wp_query_advance3->the_post();?>
+        				<h4><?php the_title(); ?></h4>
+ 					<p><?php the_excerpt(); ?> </p>
+ 					<?php } ?>
+				<?php } ?>
+   			</div>
+  		</div>
+	 </a>
+<?php endif; ?>
 
-</div>
-
-
+	</div>
+</div>	<!--BLOCK END-->
 
 		
 <?php
@@ -240,22 +211,19 @@ endif; ?>
 		/*Box 1 */
         $instance['icon1'] = strip_tags( $new_instance['icon1'] );
 		$instance['image_uri1'] = strip_tags( $new_instance['image_uri1'] );
-        $instance['title1'] = strip_tags($new_instance['title1']);
-		$instance['text1'] = stripslashes(wp_filter_post_kses($new_instance['text1']));
+        $instance['cat_block1'] = strip_tags($new_instance['cat_block1']);
 		$instance['box_uri1'] = strip_tags( $new_instance['box_uri1'] );
 		
 		/*Box 2 */
         $instance['icon2'] = strip_tags( $new_instance['icon2'] );
 		$instance['image_uri2'] = strip_tags( $new_instance['image_uri2'] );
-        $instance['title2'] = strip_tags($new_instance['title2']);
-		$instance['text2'] = stripslashes(wp_filter_post_kses($new_instance['text2']));
+        $instance['cat_block2'] = strip_tags($new_instance['cat_block2']);
 		$instance['box_uri2'] = strip_tags( $new_instance['box_uri2'] );
 		        
 		/*Box 3 */
         $instance['icon3'] = strip_tags( $new_instance['icon3'] );
 		$instance['image_uri3'] = strip_tags( $new_instance['image_uri3'] );
-        $instance['title3'] = strip_tags($new_instance['title3']);
-		$instance['text3'] = stripslashes(wp_filter_post_kses($new_instance['text3']));
+       	$instance['cat_block3'] = strip_tags($new_instance['cat_block3']);
 		$instance['box_uri3'] = strip_tags( $new_instance['box_uri3'] );
 		
        $instance['content_iconcolor'] = strip_tags($new_instance['content_iconcolor']);
@@ -273,12 +241,15 @@ endif; ?>
 		
 		/* Set up some default widget settings. */
 		$defaults = array(
+		'cat_block1'=> 'sample-page' ,
+		'cat_block2'=> 'sample-page' ,
+		'cat_block3'=> 'sample-page' ,
 		'content_iconcolor'=>'#1cbac8',
 		'content_bg' => 'rgb(255, 255, 255)',
-	'content_textcolor'=>'#999999',
-	'content_titlecolor'=>'#464545',
-	'padbottom'=>'1',
-	'padtop'=>'1',
+		'content_textcolor'=>'#999999',
+		'content_titlecolor'=>'#464545',
+		'padbottom'=>'1',
+		'padtop'=>'1',
 		);
 		$instance = wp_parse_args( (array) $instance, $defaults ); ?>
 
@@ -318,17 +289,12 @@ endif; ?>
                 <a class="media-picker-button button" onclick="mediaPicker(this.id)" id="<?php echo $this->get_field_id( 'image_uri1' ).'mpick'; ?>"><?php _e('Select Image', 'advance') ?></a>
                 </div>
                 
-                
-             <p>
-            <label for="<?php echo $this->get_field_id('title1'); ?>"><?php _e('Title', 'advance'); ?></label><br/>
-            <input type="text" name="<?php echo $this->get_field_name('title1'); ?>" id="<?php echo $this->get_field_id('title1'); ?>" value="<?php if( !empty($instance['title1']) ): echo $instance['title1']; endif; ?>" class="widefat">
-        </p>
-        
-        
-        <p>
-            <label for="<?php echo $this->get_field_id('text1'); ?>"><?php _e('Text', 'advance'); ?></label><br/>
-            <textarea class="widefat" rows="8" cols="20" name="<?php echo $this->get_field_name('text1'); ?>" id="<?php echo $this->get_field_id('text1'); ?>"><?php if( !empty($instance['text1']) ): echo htmlspecialchars_decode($instance['text1']); endif; ?></textarea>
-        </p>
+          <p>
+					<label>
+						<?php _e( 'Page','advance' ); ?>:
+						<?php wp_dropdown_pages( array(  'name' => $this->get_field_name("cat_block1"), 'selected' => $instance["cat_block1"] ) ); ?>
+					</label>
+				</p>
 
 
          <p>
@@ -361,16 +327,13 @@ endif; ?>
                 </div>
                 
                 
-             <p>
-            <label for="<?php echo $this->get_field_id('title2'); ?>"><?php _e('Title', 'advance'); ?></label><br/>
-            <input type="text" name="<?php echo $this->get_field_name('title2'); ?>" id="<?php echo $this->get_field_id('title2'); ?>" value="<?php if( !empty($instance['title2']) ): echo $instance['title2']; endif; ?>" class="widefat">
-        </p>
-        
-        
-        <p>
-            <label for="<?php echo $this->get_field_id('text2'); ?>"><?php _e('Text', 'advance'); ?></label><br/>
-            <textarea class="widefat" rows="8" cols="20" name="<?php echo $this->get_field_name('text2'); ?>" id="<?php echo $this->get_field_id('text2'); ?>"><?php if( !empty($instance['text2']) ): echo htmlspecialchars_decode($instance['text2']); endif; ?></textarea>
-        </p>
+            <p>
+					<label>
+						<?php _e( 'Page','advance' ); ?>:
+						<?php wp_dropdown_pages( array(  'name' => $this->get_field_name("cat_block2"), 'selected' => $instance["cat_block2"] ) ); ?>
+					</label>
+				</p>
+
 
 
          <p>
@@ -404,16 +367,12 @@ endif; ?>
                 </div>
                 
                 
-             <p>
-            <label for="<?php echo $this->get_field_id('title3'); ?>"><?php _e('Title', 'advance'); ?></label><br/>
-            <input type="text" name="<?php echo $this->get_field_name('title3'); ?>" id="<?php echo $this->get_field_id('title3'); ?>" value="<?php if( !empty($instance['title3']) ): echo $instance['title3']; endif; ?>" class="widefat">
-        </p>
-        
-        
-        <p>
-            <label for="<?php echo $this->get_field_id('text3'); ?>"><?php _e('Text', 'advance'); ?></label><br/>
-            <textarea class="widefat" rows="8" cols="20" name="<?php echo $this->get_field_name('text3'); ?>" id="<?php echo $this->get_field_id('text3'); ?>"><?php if( !empty($instance['text3']) ): echo htmlspecialchars_decode($instance['text3']); endif; ?></textarea>
-        </p>
+           <p>
+					<label>
+						<?php _e( 'Page','advance' ); ?>:
+						<?php wp_dropdown_pages( array(  'name' => $this->get_field_name("cat_block3"), 'selected' => $instance["cat_block3"] ) ); ?>
+					</label>
+				</p>
 
 
          <p>

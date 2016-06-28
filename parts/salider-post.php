@@ -29,7 +29,7 @@ $advance_staticslider_image = esc_url( get_theme_mod('advance_staticslider_image
 					 <div class="masthead-dsc">
            <div class="row warp">
 		<h1><?php the_title(); ?></h1>
-		<p><?php echo excerpt(30); ?> </p>
+		<p><?php the_excerpt(); ?> </p>
 		
         <?php $advance_Static_Sliderbutton = get_theme_mod('advance_Static_Sliderbutton',1);?>
         <?php if( isset($advance_Static_Sliderbutton) && $advance_Static_Sliderbutton == 1 ):?>
