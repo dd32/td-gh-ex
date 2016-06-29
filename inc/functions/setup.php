@@ -81,6 +81,7 @@ if ( ! function_exists( 'actions_setup' ) ) :
 		   'height'      => 150,
 		   'width'       => 250,
 		   'flex-height' => true,
+		   'header-text' => array( 'site-title', 'site-description' ),
 	    ) );		
 
 		// Declare support for title theme feature
