@@ -48,9 +48,10 @@ add_filter( 'pre_set_site_transient_update_themes', 'siteorigin_theme_update_fil
  * @action admin_init
  */
 function siteorigin_theme_update_settings() {
-	siteorigin_settings_add_section('premium', __('Premium', 'puro'));
-	siteorigin_settings_add_field('premium', 'order_number', 'text', __('Order Number', 'puro'), array(
-		'description' => __('Enter the Puro Premium order number sent to you via email.', 'puro')
+	$settings = SiteOrigin_Settings::single();
+	$settings->add_section('premium', __('Premium', 'puro'));
+	$settings->add_field('premium', 'order_number', 'text', __('Order Number', 'puro'), array(
+		'description' => __('Enter the order number we sent you by email', 'puro')
 	));
 }
 add_action( 'siteorigin_settings_init', 'siteorigin_theme_update_settings', 40 );

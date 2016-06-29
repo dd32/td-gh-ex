@@ -1,0 +1,120 @@
+/*--------------------------------------------------------------
+14.0 - Footer
+--------------------------------------------------------------*/
+.site-footer {
+	border-top-style: solid;
+  	border-top-width: 0.0625em;
+  	margin-top: 5.0625em;
+  	padding-top: 3.3125em;	
+	padding-bottom: 3.375em;
+	border-color: $border-color;
+	 
+	.widget:last-of-type {
+		float: right;
+    	margin-right: 0;
+	}
+
+	.widget-count-1 {	
+    	float: left;
+    	margin-right: 0;
+    	margin-left: 0;
+    	width: 100%;
+	}
+
+	.widget-count-2 {
+    	float: left;
+    	margin-right: 1.69492%;
+    	width: 49.15254%;
+	}	
+
+	.widget-count-3 {
+    	float: left;
+    	margin-right: 1.69492%;
+    	width: 32.20339%;
+	}	
+
+	.widget-count-4 {
+    	float: left;
+    	margin-right: 1.69492%;
+    	width: 23.72881%;
+	}	
+	.widget-count-5 {
+    	float: left;
+    	margin-right: 1.69492%;
+    	width: 18.64407%;
+	}	
+
+	.widget-count-6 {
+    	float: left;
+    	margin-right: 1.69492%;
+    	width: 15.25424%;
+	}	
+
+	.widget-count-7 {
+    	float: left;
+    	margin-right: 1.69492%;
+    	width: 12.83305%;
+	}
+
+	.widget-count-8 {
+    	float: left;
+    	margin-right: 1.69492%;
+    	width: 11.01695%;
+	}
+
+	.widget-count-9 {
+    	float: left;
+   		margin-right: 1.69492%;
+    	width: 9.60424%;
+	}
+
+	.widget-count-10 {
+    	float: left;
+    	margin-right: 1.69492%;
+    	width: 8.47458%;
+	}	
+
+	@media (max-width: $small) {
+		.resp & {
+			.widget-count-1, 
+			.widget-count-2, 
+			.widget-count-3, 
+			.widget-count-4, 
+			.widget-count-5, 
+			.widget-count-6, 
+			.widget-count-7, 
+			.widget-count-8, 
+			.widget-count-9, 
+			.widget-count-10 {
+				width: 100%; 
+			}
+		}
+	}
+
+	ul {
+		margin-bottom: -0.3125em;
+	}	
+
+	.site-info, 
+	.theme-attribution {
+		@include font-size(0.8125);
+		color: $text-secondary-color; 
+		float: left;
+		line-height: 2.07692em;
+		margin-top: 1.6875em; 
+		text-align: left;
+		
+		a {
+			color: $text-secondary-color;
+			
+			&:hover {
+				color: $highlight-color;	
+			}
+		}
+	}
+
+	.social-links-menu {
+		float: right;
+		margin-top: 1.6875em; 
+	}
+}

@@ -4,7 +4,7 @@
 
 jQuery( document ).ready( function ($) {
 
-    // Substitute any retina images
+    // Substitute any retina images.
     var pixelRatio = !!window.devicePixelRatio ? window.devicePixelRatio : 1;
     if( pixelRatio > 1 ) {
         $('img[data-retina-image]').each(function(){
@@ -22,10 +22,10 @@ jQuery( document ).ready( function ($) {
         })
     }
 
-    // Setup fitvids for entry content and panels
-    if(typeof $.fn.fitVids != 'undefined') {
-        $('.entry-content, .entry-content .panel' ).fitVids();
-    }       
+    // Setup FitVids for entry content, panels and WooCommerce. Ignore Tableau.
+    if ( typeof $.fn.fitVids !== 'undefined' ) {
+        $( '.entry-content, .entry-content .panel, .woocommerce #main' ).fitVids( { ignore: '.tableauViz' } );
+    };
     
 });
 

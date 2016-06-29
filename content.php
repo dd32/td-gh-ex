@@ -13,7 +13,7 @@
 				<?php the_post_thumbnail(); ?>
 			</a>	
 		</div>	
-	<?php elseif ( is_single() && has_post_thumbnail() && siteorigin_setting('blog_archive_featured_image') ) : ?>
+	<?php elseif ( is_single() && has_post_thumbnail() && siteorigin_setting('blog_post_featured_image') ) : ?>
 		<div class="entry-thumbnail">
 			<?php the_post_thumbnail(); ?>
 		</div>				

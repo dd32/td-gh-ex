@@ -7,8 +7,9 @@
  * @license GPL 2.0
  */
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.0.7.2' );
-define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://updates.purothemes.com' ); 
+define( 'SITEORIGIN_THEME_VERSION' , '1.0.8' );
+define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://updates.purothemes.com' );
+define( 'SITEORIGIN_THEME_JS_PREFIX', '.min' );
 
 if( file_exists( get_template_directory() . '/premium/functions.php' ) ){
 	include get_template_directory() . '/premium/functions.php';
@@ -17,20 +18,23 @@ else {
 	include get_template_directory() . '/upgrade/upgrade.php';
 }
 
-// Include all the SiteOrigin extras
-include get_template_directory() . '/extras/plugin-activation/plugin-activation.php';
+// Load the new settings framework
+include get_template_directory() . '/inc/settings/settings.php';
+include get_template_directory() . '/inc/customizer/customizer.php';
+
+// Include the SiteOrigin extras
 include get_template_directory() . '/extras/premium/premium.php';
-include get_template_directory() . '/extras/settings/settings.php';
 include get_template_directory() . '/extras/update/update.php';
 
 // Load the theme specific files
 include get_template_directory() . '/inc/extras.php';
 include get_template_directory() . '/inc/jetpack.php';
+include get_template_directory() . '/inc/legacy.php';
 include get_template_directory() . '/inc/metaslider.php';
+include get_template_directory() . '/inc/plugin-activation/plugin-activation.php';
 include get_template_directory() . '/inc/settings.php';
 include get_template_directory() . '/inc/template-tags.php';
 include get_template_directory() . '/inc/formats.php';
-include get_template_directory() . '/tour/tour.php';
 
 if ( ! function_exists( 'puro_setup' ) ) :
 /**
@@ -91,13 +95,10 @@ function puro_setup() {
 	// Enable support for Post Formats.
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 
-	/**
-	 * Add theme support for Site Logo.
-	 * See: http://jetpack.me/support/site-logo/
+	/*
+	 * Enable support for the custom logo.
 	 */
-	add_theme_support( 'site-logo', array(
-		'size' => 'full',
-	) );	
+	add_theme_support( 'custom-logo' );
 
 	// Enable support for HTML5 markup.
 	add_theme_support( 'html5', array(
@@ -119,14 +120,11 @@ function puro_setup() {
 		'home-template' => 'page-templates/full-width-unconstrained-content-no-title.php',
 	) );
 
-	// Only include the bundled version of panels if the plugin does not exist.
-	if( !defined( 'SITEORIGIN_PANELS_VERSION') && !siteorigin_plugin_activation_is_activating('siteorigin-panels' ) ) {
-		include get_template_directory().'/extras/panels-lite/panels-lite.php';
-	}	
-
 	add_theme_support( 'siteorigin-premium-teaser', array(
 		'settings' => true,
-	) );	
+	) );
+
+	define( 'SITEORIGIN_THEME_PREMIUM_URL', admin_url( 'themes.php?page=premium_upgrade' ) );
 
 }
 endif; // puro_setup
@@ -164,18 +162,21 @@ add_action( 'widgets_init', 'puro_widgets_init' );
  */
 function puro_scripts() {
 	$in_footer = siteorigin_setting( 'footer_js_enqueue' );
-	$js_suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';	
 
 	wp_enqueue_style( 'puro-style', get_stylesheet_uri(), array(), SITEORIGIN_THEME_VERSION );
 
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/font-awesome/css/font-awesome.min.css', array(), '4.3.0' );
 
-	wp_enqueue_script( 'puro-main' , get_template_directory_uri().'/js/jquery.theme-main' . $js_suffix . '.js', array('jquery'), SITEORIGIN_THEME_VERSION, $in_footer );
+	wp_enqueue_script( 'puro-main' , get_template_directory_uri().'/js/jquery.theme-main' . SITEORIGIN_THEME_JS_PREFIX . '.js', array('jquery'), SITEORIGIN_THEME_VERSION, $in_footer );
 
 	wp_enqueue_script( 'puro-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), SITEORIGIN_THEME_VERSION, $in_footer );
 
+	if ( siteorigin_setting( 'navigation_responsive_menu' ) && siteorigin_setting( 'layout_responsive' ) ) {
+		wp_enqueue_script( 'puro-responsive-menu', get_template_directory_uri() . '/js/responsive-menu' . SITEORIGIN_THEME_JS_PREFIX . '.js', array(), SITEORIGIN_THEME_VERSION, true );
+	}		
+
 	if( siteorigin_setting( 'layout_fitvids' ) ) {
-		wp_enqueue_script( 'jquery-fitvids' , get_template_directory_uri().'/js/jquery.fitvids' . $js_suffix . '.js', array('jquery'), '1.1', $in_footer );
+		wp_enqueue_script( 'jquery-fitvids' , get_template_directory_uri().'/js/jquery.fitvids' . SITEORIGIN_THEME_JS_PREFIX . '.js', array('jquery'), '1.1', $in_footer );
 	}	
 
 	if( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -227,6 +228,16 @@ function puro_custom_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'puro_custom_excerpt_length', 999 );
 
 /**
+ * Add a more link to the excerpt.
+ */
+function puro_excerpt_more( $more ) {
+	if ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' && siteorigin_setting( 'blog_excerpt_more' ) ) {
+		return '<a class="more-link" href="' . get_permalink() . '">' . wp_kses_post( siteorigin_setting( 'blog_read_more' ) ) .'</a>';
+	}
+}
+add_filter( 'excerpt_more', 'puro_excerpt_more' );
+
+/**
  * Count the footer widgets and add the count to the widget class.
  */
 function puro_footer_widgets_params( $params ) {
@@ -275,9 +286,21 @@ function puro_render_slider() {
  * Filter the read more link.
  */
 function puro_read_more_link() {
-	return '<a class="more-link "href="' . get_permalink() . '">' . wp_kses_post( siteorigin_setting('blog_read_more') ) .'</a></span>';
+	return '<a class="more-link"href="' . get_permalink() . '">' . wp_kses_post( siteorigin_setting('blog_read_more') ) .'</a>';
 }
 add_filter( 'the_content_more_link', 'puro_read_more_link' );
+
+if ( ! function_exists( 'puro_premium_responsive_menu' ) ) :
+/**
+ * Add the responsive menu button.
+ */
+function puro_responsive_menu() {
+	if ( siteorigin_setting( 'navigation_responsive_menu' ) && siteorigin_setting( 'layout_responsive' ) ) {
+		echo '<button class="menu-toggle"></button>';
+	}
+}
+add_action( 'puro_before_nav_menu', 'puro_responsive_menu' );
+endif;
 
 /**
  * Add the viewport meta tag.
