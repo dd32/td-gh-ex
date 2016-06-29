@@ -185,15 +185,15 @@ require get_template_directory() . "/inc/framework/widgets/social-widget.php";
 function astrid_scripts() {
 	wp_enqueue_style( 'astrid-style', get_stylesheet_uri() );
 
-	$body_font 		= get_theme_mod('body_font_name', '<link href=\'https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,600,600italic\' rel=\'stylesheet\' type=\'text/css\'>');
-	$headings_font 	= get_theme_mod('headings_font_name', '<link href=\'https://fonts.googleapis.com/css?family=Josefin+Sans:300italic,300\' rel=\'stylesheet\' type=\'text/css\'>');
+	$body_font 		= get_theme_mod('body_font_name', '//fonts.googleapis.com/css?family=Open+Sans:300,300italic,600,600italic');
+	$headings_font 	= get_theme_mod('headings_font_name', '//fonts.googleapis.com/css?family=Josefin+Sans:300italic,300');
 	$remove 		= array("<link href='", "' rel='stylesheet' type='text/css'>", "https:", "http:");
 	$body_url 		= str_replace($remove, '', $body_font);
-	$headings_url 	= str_replace($remove, '', $headings_font);
+	$headings_url 	= str_replace($remove, '', $headings_font);	
 
-	wp_enqueue_style( 'astrid-body-fonts', esc_attr($body_url) ); 
+	wp_enqueue_style( 'astrid-body-fonts', esc_url($body_url) ); 
 	
-	wp_enqueue_style( 'astrid-headings-fonts', esc_attr($headings_url) ); 	
+	wp_enqueue_style( 'astrid-headings-fonts', esc_url($headings_url) ); 	
 
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/fonts/font-awesome.min.css' );	
 
@@ -216,7 +216,7 @@ add_action( 'wp_enqueue_scripts', 'astrid_scripts' );
  * Enqueue Bootstrap
  */
 function astrid_enqueue_bootstrap() {
-	wp_enqueue_style( 'astrid-bootstrap', get_template_directory_uri() . '/css/bootstrap/bootstrap.min.css', array(), true );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap/bootstrap.min.css', array(), true );
 }
 add_action( 'wp_enqueue_scripts', 'astrid_enqueue_bootstrap', 9 );
 
@@ -382,9 +382,9 @@ endif;
  */
 if ( ! function_exists( 'astrid_footer_contact' ) ) :
 function astrid_footer_contact() {
-	$footer_contact_address = get_theme_mod('footer_contact_address', '29 Bedford St, London');
-	$footer_contact_email   = antispambot(get_theme_mod('footer_contact_email', 'office@site.com'));
-	$footer_contact_phone 	= get_theme_mod('footer_contact_phone', '(020) 4513 3568');
+	$footer_contact_address = get_theme_mod('footer_contact_address', __('29 Bedford St, London','astrid'));
+	$footer_contact_email   = antispambot(get_theme_mod('footer_contact_email', __('office@site.com','astrid')));
+	$footer_contact_phone 	= get_theme_mod('footer_contact_phone', __('(020) 4513 3568','astrid'));
 
 	echo '<div class="footer-contact">';
 	if ($footer_contact_address) {
@@ -424,7 +424,7 @@ add_filter( 'post_class', 'astrid_clearfix_posts' );
  */
 function astrid_excerpt_length( $length ) {
   $excerpt = get_theme_mod('exc_length', '40');
-  return $excerpt;
+  return absint($excerpt);
 }
 add_filter( 'excerpt_length', 'astrid_excerpt_length', 99 );
 

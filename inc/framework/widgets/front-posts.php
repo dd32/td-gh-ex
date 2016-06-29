@@ -36,9 +36,9 @@ class Atframework_Posts extends WP_Widget {
 
 	function update($new_instance, $old_instance) {
 		$instance = $old_instance;
-		$instance['title'] 			= strip_tags($new_instance['title']);
-		$instance['category'] 		= strip_tags($new_instance['category']);
-		$instance['see_all_text'] 	= strip_tags($new_instance['see_all_text']);						
+		$instance['title'] 			= sanitize_text_field($new_instance['title']);
+		$instance['category'] 		= sanitize_text_field($new_instance['category']);
+		$instance['see_all_text'] 	= sanitize_text_field($new_instance['see_all_text']);						
 
 		$alloptions = wp_cache_get( 'alloptions', 'options' );
 		if ( isset($alloptions['atframework_posts']) )
@@ -112,7 +112,7 @@ class Atframework_Posts extends WP_Widget {
 		<?php if ($category) : //Link to the category page instead of blog page if a category is selected ?>
 			<a href="<?php echo esc_url(get_category_link(get_cat_ID($cat -> name))); ?>" class="button centered-button"><?php echo $see_all_text; ?></a>
 		<?php else : ?>
-			<a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>" class="button centered-button"><?php echo $see_all_text; ?></a>
+			<a href="<?php echo esc_url(get_permalink( get_option( 'page_for_posts' ) )); ?>" class="button centered-button"><?php echo $see_all_text; ?></a>
 		<?php endif; ?>		
 	<?php
 		echo $args['after_widget'];

@@ -5,8 +5,8 @@
   padding: 0 10px;
   margin-bottom: 15px;
 }
-li[id^="accordion-section-sidebar-widgets-widget-area-"] .at-styling-options,
-div[id^="widget-area-"] .at-styling-options {
+.wp-customizer .at-styling-options,
+.wp-customizer .at-styling-options {
   display: block;
 }
 .at-styling-inner {

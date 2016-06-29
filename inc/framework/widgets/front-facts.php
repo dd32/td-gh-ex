@@ -99,19 +99,19 @@ class Atframework_Facts extends WP_Widget {
 
 	function update($new_instance, $old_instance) {
 		$instance = $old_instance;
-		$instance['title'] 			= strip_tags($new_instance['title']);
-		$instance['fact_one'] 		= strip_tags($new_instance['fact_one']);
-		$instance['fact_one_max'] 	= strip_tags($new_instance['fact_one_max']);
-		$instance['fact_one_icon'] 	= strip_tags($new_instance['fact_one_icon']);
-		$instance['fact_two'] 		= strip_tags($new_instance['fact_two']);
-		$instance['fact_two_max'] 	= strip_tags($new_instance['fact_two_max']);
-		$instance['fact_two_icon'] 	= strip_tags($new_instance['fact_two_icon']);
-		$instance['fact_three'] 	= strip_tags($new_instance['fact_three']);
-		$instance['fact_three_max']	= strip_tags($new_instance['fact_three_max']);
-		$instance['fact_three_icon']= strip_tags($new_instance['fact_three_icon']);
-		$instance['fact_four'] 		= strip_tags($new_instance['fact_four']);
-		$instance['fact_four_max'] 	= strip_tags($new_instance['fact_four_max']);
-		$instance['fact_four_icon'] = strip_tags($new_instance['fact_four_icon']);
+		$instance['title'] 			= sanitize_text_field($new_instance['title']);
+		$instance['fact_one'] 		= sanitize_text_field($new_instance['fact_one']);
+		$instance['fact_one_max'] 	= sanitize_text_field($new_instance['fact_one_max']);
+		$instance['fact_one_icon'] 	= sanitize_text_field($new_instance['fact_one_icon']);
+		$instance['fact_two'] 		= sanitize_text_field($new_instance['fact_two']);
+		$instance['fact_two_max'] 	= sanitize_text_field($new_instance['fact_two_max']);
+		$instance['fact_two_icon'] 	= sanitize_text_field($new_instance['fact_two_icon']);
+		$instance['fact_three'] 	= sanitize_text_field($new_instance['fact_three']);
+		$instance['fact_three_max']	= sanitize_text_field($new_instance['fact_three_max']);
+		$instance['fact_three_icon']= sanitize_text_field($new_instance['fact_three_icon']);
+		$instance['fact_four'] 		= sanitize_text_field($new_instance['fact_four']);
+		$instance['fact_four_max'] 	= sanitize_text_field($new_instance['fact_four_max']);
+		$instance['fact_four_icon'] = sanitize_text_field($new_instance['fact_four_icon']);
 
 		$alloptions = wp_cache_get( 'alloptions', 'options' );
 		if ( isset($alloptions['atframework_facts']) )

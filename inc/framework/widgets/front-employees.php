@@ -18,7 +18,7 @@ class Atframework_Employees extends WP_Widget {
 		$title     		= isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
 		$number    		= isset( $instance['number'] ) ? intval( $instance['number'] ) : -1;
 		$offset    		= isset( $instance['offset'] ) ? intval( $instance['offset'] ) : 0;
-		$see_all   		= isset( $instance['see_all'] ) ? esc_url_raw( $instance['see_all'] ) : '';		
+		$see_all   		= isset( $instance['see_all'] ) ? esc_url( $instance['see_all'] ) : '';		
 		$see_all_text  	= isset( $instance['see_all_text'] ) ? esc_html( $instance['see_all_text'] ) : '';
 		$pageids  		= isset( $instance['pageids'] ) ? esc_html( $instance['pageids'] ) : '';		
 	?>
@@ -44,12 +44,12 @@ class Atframework_Employees extends WP_Widget {
 
 	function update($new_instance, $old_instance) {
 		$instance = $old_instance;
-		$instance['title'] 			= strip_tags($new_instance['title']);
-		$instance['number'] 		= strip_tags($new_instance['number']);
-		$instance['offset'] 		= strip_tags($new_instance['offset']);
+		$instance['title'] 			= sanitize_text_field($new_instance['title']);
+		$instance['number'] 		= sanitize_text_field($new_instance['number']);
+		$instance['offset'] 		= sanitize_text_field($new_instance['offset']);
 		$instance['see_all'] 		= esc_url_raw( $new_instance['see_all'] );	
-		$instance['see_all_text'] 	= strip_tags($new_instance['see_all_text']);		
-		$instance['pageids'] 		= strip_tags($new_instance['pageids']);		
+		$instance['see_all_text'] 	= sanitize_text_field($new_instance['see_all_text']);		
+		$instance['pageids'] 		= sanitize_text_field($new_instance['pageids']);		
 		    			
 		$alloptions = wp_cache_get( 'alloptions', 'options' );
 		if ( isset($alloptions['atframework_employees']) )

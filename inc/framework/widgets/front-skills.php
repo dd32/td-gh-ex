@@ -88,16 +88,16 @@ class Atframework_Skills extends WP_Widget {
 	// update widget
 	function update($new_instance, $old_instance) {
 		$instance = $old_instance;
-		$instance['title'] 				= strip_tags($new_instance['title']);
-		$instance['skill_one'] 			= strip_tags($new_instance['skill_one']);
+		$instance['title'] 				= sanitize_text_field($new_instance['title']);
+		$instance['skill_one'] 			= sanitize_text_field($new_instance['skill_one']);
 		$instance['skill_one_max'] 		= intval($new_instance['skill_one_max']);
-		$instance['skill_two'] 			= strip_tags($new_instance['skill_two']);
+		$instance['skill_two'] 			= sanitize_text_field($new_instance['skill_two']);
 		$instance['skill_two_max'] 		= intval($new_instance['skill_two_max']);
-		$instance['skill_three'] 		= strip_tags($new_instance['skill_three']);
+		$instance['skill_three'] 		= sanitize_text_field($new_instance['skill_three']);
 		$instance['skill_three_max']	= intval($new_instance['skill_three_max']);
-		$instance['skill_four'] 		= strip_tags($new_instance['skill_four']);
+		$instance['skill_four'] 		= sanitize_text_field($new_instance['skill_four']);
 		$instance['skill_four_max'] 	= intval($new_instance['skill_four_max']);
-		$instance['skill_five'] 		= strip_tags($new_instance['skill_five']);
+		$instance['skill_five'] 		= sanitize_text_field($new_instance['skill_five']);
 		$instance['skill_five_max'] 	= intval($new_instance['skill_five_max']);
 
 		$alloptions = wp_cache_get( 'alloptions', 'options' );

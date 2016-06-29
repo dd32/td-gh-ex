@@ -11,8 +11,7 @@ function astrid_customize_register( $wp_customize ) {
     $wp_customize->get_section( 'header_image' )->panel         = 'astrid_header_panel';
     $wp_customize->get_section( 'title_tagline' )->priority     = '9';
     $wp_customize->get_section( 'title_tagline' )->title        = __('Site branding', 'astrid');
-    $wp_customize->remove_control( 'header_textcolor' );
-    $wp_customize->remove_control( 'display_header_text' );
+    //$wp_customize->remove_control( 'header_textcolor' );
 
 
     //Titles
@@ -239,29 +238,6 @@ function astrid_customize_register( $wp_customize ) {
         )
     );
 
-    //Logo Upload
-    $wp_customize->add_setting(
-        'site_logo',
-        array(
-            'default-image' => '',
-            'sanitize_callback' => 'esc_url_raw',
-            'transport'         => 'postMessage'
-        )
-    );
-    $wp_customize->add_control(
-        new WP_Customize_Image_Control(
-            $wp_customize,
-            'site_logo',
-            array(
-               'label'          => __( 'Upload your logo', 'astrid' ),
-               'type'           => 'image',
-               'section'        => 'title_tagline',
-               'priority'       => 12,
-            )
-        )
-    );
-
-
     //___Fonts___//
     $wp_customize->add_section(
         'astrid_fonts',
@@ -276,8 +252,8 @@ function astrid_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'body_font_name',
         array(
-            'default' => '<link href=\'https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,600,600italic\' rel=\'stylesheet\' type=\'text/css\'>',
-            'sanitize_callback' => 'astrid_sanitize_fonts',
+            'default' => '//fonts.googleapis.com/css?family=Open+Sans:300,300italic,600,600italic',
+            'sanitize_callback' => 'esc_url_raw',
         )
     );
     $wp_customize->add_control(
@@ -311,8 +287,8 @@ function astrid_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'headings_font_name',
         array(
-            'default' => '<link href=\'https://fonts.googleapis.com/css?family=Josefin+Sans:300italic,300\' rel=\'stylesheet\' type=\'text/css\'>',
-            'sanitize_callback' => 'astrid_sanitize_fonts',
+            'default' => '//fonts.googleapis.com/css?family=Josefin+Sans:300italic,300',
+            'sanitize_callback' => 'esc_url_raw',
         )
     );
     $wp_customize->add_control(
@@ -924,11 +900,6 @@ function astrid_sanitize_blog( $input ) {
     if ( in_array( $input, array( 'list', 'fullwidth', 'masonry-layout' ), true ) ) {
         return $input;
     }
-}
-//Fonts
-function astrid_sanitize_fonts( $input ) {
-    if ( strpos( $input,'//fonts.googleapis.com/css?family' ) !== false )
-        return $input;
 }
 
 /**

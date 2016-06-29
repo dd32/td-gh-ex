@@ -59,7 +59,7 @@
 	<?php elseif ( astrid_has_header() == 'has-shortcode' ) : ?>
 	<div class="shortcode-area">
 		<?php $shortcode = get_theme_mod('astrid_shortcode'); ?>
-		<?php echo do_shortcode($shortcode); ?>
+		<?php echo do_shortcode(wp_kses_post($shortcode)); ?>
 	</div>
 	<?php else : ?>
 	<div class="header-clone"></div>

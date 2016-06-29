@@ -26,7 +26,7 @@ class Atframework_Video extends WP_Widget {
 
 	public function update($new_instance, $old_instance) {
 		$instance = $old_instance;
-		$instance['title'] = strip_tags($new_instance['title']);
+		$instance['title'] = sanitize_text_field($new_instance['title']);
 		$instance['url'] = esc_url_raw($new_instance['url']);
 
 		$alloptions = wp_cache_get( 'alloptions', 'options' );

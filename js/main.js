@@ -1,4 +1,4 @@
-/* This file is made of jquery.fitvids.js and smoothscroll.js */
+/* This file is made of jquery.fitvids.js, smoothscroll.js and skip-link-focus-fix.js */
 
 /*jshint browser:true */
 /*!
