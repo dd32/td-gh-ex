@@ -73,6 +73,10 @@ GPL compatible for own images
 ----------------------------------------------------
 == Changelog ==
 
+Version 2.3.8
+ * Removed woocommerce template and files
+ * Fixed woocommerce pages by using hook and filter
+ 
 Version 2.3.7
  * Fixed woo-commerce archive page and its single page
  * Fixed shop page in 3 columns and 12 products

@@ -4,7 +4,7 @@ Theme URI:    https://accesspressthemes.com/wordpress-themes/accesspress-mag/
 Author:       AccessPress Theme
 Author URI:   http://accesspressthemes.com/
 Description:  AccessPress Mag is clean & modern WordPress magazine theme. It is ideal for newspaper, editorial, online magazine, blog or personal website. It is a cutting-edge, feature-rich FREE WordPress theme and is fully-responsive. Its feature includes: 2 post layout, news ticker, sticky menu, author block, large featured images for page/post, social media integration for wider social reach. Demo: http://demo.accesspressthemes.com/accesspress-mag/ Support forum: https://accesspressthemes.com/support/ 
-Version:      2.3.7
+Version:      2.3.8
 License:      GNU General Public License v3 or later
 License URI:  http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain:  accesspress-mag
@@ -2473,9 +2473,6 @@ direction: ltr;
 #accesspres-mag-breadcrumbs .ak-container > .current{
     color: #dc3522;
 }
-.woocommerce-breadcrumb {
-    width: 143%;
-}
 
 /*--------------------------------------------------------------
         Single page css 
@@ -2932,4 +2929,38 @@ Woo Commerce compatible
 .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,
 .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover {
     color: #fff;
+}
+
+/* account page tabs section */
+nav.woocommerce-MyAccount-navigation {
+   border-right: 2px solid #e24545;
+}
+nav.woocommerce-MyAccount-navigation ul {
+   list-style: none;
+   padding: 0;
+   margin: 0; 
+}
+nav.woocommerce-MyAccount-navigation ul li {
+   padding: 5px 10px;
+   background: #e24545;
+   margin-bottom: 2px;
+   width: 97%;
+   cursor: pointer;
+}
+nav.woocommerce-MyAccount-navigation ul li:hover,
+nav.woocommerce-MyAccount-navigation ul li.is-active {
+   background: none;
+}
+nav.woocommerce-MyAccount-navigation ul li:hover a,
+nav.woocommerce-MyAccount-navigation ul li.is-active a {
+   color: #e24545;
+}
+nav.woocommerce-MyAccount-navigation ul li a {
+   color: #fff;
+}
+.woocommerce-account .woocommerce-MyAccount-navigation {
+   width: 25%;
+}
+.woocommerce-account .woocommerce-MyAccount-content {
+   width: 73%;
 }

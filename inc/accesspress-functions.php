@@ -52,15 +52,6 @@ function accesspress_mag_customize_enqueue() {
 add_action( 'customize_controls_enqueue_scripts', 'accesspress_mag_customize_enqueue' );
 
 /**
- * Enqueue admin css
- */
- 
-/*function accesspress_mag_admin_css() {
-        
-}
-add_action( 'admin_head', 'accesspress_mag_admin_css' );*/
-
-/**
  * Enqueue custom css
  */
 
@@ -815,9 +806,45 @@ if ( !function_exists( 'accesspress_mag_loop_columns' ) ) {
 }
 
 add_action( 'body_class', 'ap_staple_woo_columns');
-    if (!function_exists('ap_staple_woo_columns')) {
-       function ap_staple_woo_columns( $class ) {
-              $class[] = 'columns-3';
-              return $class;
-       }
-    }
+if (!function_exists('ap_staple_woo_columns')) {
+   function ap_staple_woo_columns( $class ) {
+          $class[] = 'columns-3';
+          return $class;
+   }
+}
+
+add_action( 'woocommerce_before_main_content', 'accesspress_mag_woocommerce_before_main_content', 9 );
+function accesspress_mag_woocommerce_before_main_content() {
+?>
+    <div class="apmag-container">
+        <header id="title_bread_wrap" class="entry-header">
+<?php
+}
+
+add_action( 'woocommerce_before_main_content', 'accesspress_mag_below_woocommerce_before_main_content', 21 );
+function accesspress_mag_below_woocommerce_before_main_content() {
+?>
+    </header>
+        <div id="primary" class="content-area">
+<?php
+}
+
+add_action( 'woocommerce_after_main_content', 'accesspress_mag_woocommerce_after_main_content', 9 );
+function accesspress_mag_woocommerce_after_main_content() {
+?>
+        </div>
+        <div id="secondary-right-sidebar" class="widget-area right-sidebar sidebar">
+            <?php woocommerce_get_sidebar(); ?>
+        </div>
+    </div>
+<?php
+}
+
+remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+
+add_filter( 'woocommerce_output_related_products_args', 'accesspress_mag_related_products_args' );
+  function accesspress_mag_related_products_args( $args ) {
+    $args['posts_per_page'] = 3; // 3 related products
+    $args['columns'] = 3; // arranged in 3 columns
+    return $args;
+}
