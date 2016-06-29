@@ -136,3 +136,8 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load Zenzero Dynamic.
  */
 require get_template_directory() . '/inc/zenzero-dynamic.php';
+
+/* Calling in the admin area for the Welcome Page */
+if ( is_admin() ) {
+	require get_template_directory() . '/inc/admin/zenzero-admin-page.php';
+}

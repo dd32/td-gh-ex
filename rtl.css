@@ -90,8 +90,8 @@ textarea {
 .readMoreLink i.fa-angle-double-right:before {
 	content: "\f100";
 }
-.main-navigation, .main-navigation li {
-	float: right;
+.main-navigation ul ul a {
+	text-align: right;
 }
 @media all and (max-width: 768px) {
 	.menu-toggle, .main-navigation.toggled .nav-menu {

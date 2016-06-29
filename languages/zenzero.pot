@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Zenzero\n"
-"POT-Creation-Date: 2016-04-15 11:21+0100\n"
-"PO-Revision-Date: 2016-04-15 11:21+0100\n"
+"POT-Creation-Date: 2016-06-29 07:28+0100\n"
+"PO-Revision-Date: 2016-06-29 07:29+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -292,6 +292,197 @@ msgstr ""
 msgid "Main Menu"
 msgstr ""
 
+#: inc/admin/zenzero-admin-page.php:36 inc/admin/zenzero-admin-page.php:110
+msgid "About"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:73
+msgid "Action failed. Please refresh the page and retry."
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:77
+msgid "Cheatin&#8217; huh?"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:91
+msgid "Dismiss"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:92
+#, php-format
+msgid ""
+"Welcome! Thank you for choosing Zenzero! To fully take advantage of the best "
+"our theme can offer please make sure you visit our %swelcome page%s."
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:94
+msgid "Get started with Zenzero"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:117
+msgid "Theme Info"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:119
+msgid "View Demo"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:121
+msgid "View PRO version Demo"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:123
+msgid "Rate this theme"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:138
+msgid "Free Vs PRO"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:141
+msgid "Changelog"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:175
+msgid "Theme Customizer"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:176
+msgid "All Theme Options are available via Customize screen."
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:177
+msgid "Customize"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:181
+msgid "Got theme support question?"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:182
+msgid "Please put it in our support forum."
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:183
+msgid "Support"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:187
+msgid "Need more features?"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:188 inc/admin/zenzero-admin-page.php:287
+msgid "Upgrade to PRO version for more exciting features."
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:189
+msgid "Info about PRO version"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:195 inc/admin/zenzero-admin-page.php:203
+msgid "Translate"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:199
+msgid "Click below to translate this theme into your own language."
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:215
+msgid "Return to Updates"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:215
+msgid "Return to Dashboard &rarr; Updates"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:218
+msgid "Go to Dashboard &rarr; Home"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:218
+msgid "Go to Dashboard"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:235
+msgid "View changelog below:"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:292
+msgid "Features"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:293
+msgid "Zenzero"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:294
+msgid "Zenzero PRO"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:299
+msgid "Responsive Design"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:304
+msgid "Change Background"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:309
+msgid "Unlimited Text Color"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:314
+msgid "Choose Social Icons"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:319
+msgid "RTL Support"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:324 inc/zenzero-dynamic.php:216
+msgid "Loading Page"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:329
+msgid "Font switcher"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:334 inc/zenzero-dynamic.php:220
+msgid "Breadcrumb"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:339 inc/zenzero-dynamic.php:219
+msgid "Post views counter"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:344 inc/zenzero-dynamic.php:222
+msgid "7 Shortcodes"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:349 inc/zenzero-dynamic.php:223
+msgid "5 Exclusive Widgets"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:354 inc/zenzero-dynamic.php:224
+msgid "Related Posts Box"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:359 inc/zenzero-dynamic.php:225
+msgid "Information About Author Box"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:364
+msgid "6 Post format"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:372
+msgid "View PRO version demo"
+msgstr ""
+
+#: inc/admin/zenzero-admin-page.php:373
+msgid "More Information"
+msgstr ""
+
 #: inc/customizer.php:38
 msgid "Demo PRO version"
 msgstr ""
@@ -447,10 +638,6 @@ msgstr ""
 msgid "Logo Upload"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:216
-msgid "Loading Page"
-msgstr ""
-
 #: inc/zenzero-dynamic.php:217
 msgid "Font Switcher"
 msgstr ""
@@ -459,32 +646,8 @@ msgstr ""
 msgid "Unlimited Colors and Skin"
 msgstr ""
 
-#: inc/zenzero-dynamic.php:219
-msgid "Post views counter"
-msgstr ""
-
-#: inc/zenzero-dynamic.php:220
-msgid "Breadcrumb"
-msgstr ""
-
 #: inc/zenzero-dynamic.php:221
 msgid "Post format"
-msgstr ""
-
-#: inc/zenzero-dynamic.php:222
-msgid "7 Shortcodes"
-msgstr ""
-
-#: inc/zenzero-dynamic.php:223
-msgid "5 Exclusive Widgets"
-msgstr ""
-
-#: inc/zenzero-dynamic.php:224
-msgid "Related Posts Box"
-msgstr ""
-
-#: inc/zenzero-dynamic.php:225
-msgid "Information About Author Box"
 msgstr ""
 
 #: inc/zenzero-dynamic.php:226

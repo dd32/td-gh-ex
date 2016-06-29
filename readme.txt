@@ -41,18 +41,24 @@ one-column, left-sidebar, responsive-layout, custom-background, custom-menu, cus
 3. Log into your WP admin panel and click on the Design tab. Now click on the Zenzero theme to activate it.
 
 == Changelog ==
-Version 1.3.2
+= Version 1.3.3 =
+* Updated FontAwesome to 4.6.3
+* Added admin panel
+* Improved RTL mode
+* Minor Bug Fixes
+
+= Version 1.3.2 =
 * Updated FontAwesome to 4.6.1
 * Updated SmoothScroll to 1.4.4
 * Improved main menu in mobile version
 * Improved RTL mode
 * Minor Bug Fixes
 
-Version 1.3.1
+= Version 1.3.1 =
 * Improved RTL support
 * Minor Bug Fixes
 
-Version 1.3.0
+= Version 1.3.0 =
 * Updated SmoothScroll Script
 * Improved Disqus compatibility
 * Fixed input CSS
@@ -60,56 +66,56 @@ Version 1.3.0
 * Fixed post title heading
 * Minor Bug Fixes
 
-Version 1.2.9
+= Version 1.2.9 =
 * Fixed IE9 CSS condition
 * Minor Bug Fixes
 
-Version 1.2.8
+= Version 1.2.8 =
 * Updated FontAwesome to 4.5.0
 * Updated comments form for WordPress 4.4
 * Minor bug fixes
 
-Version 1.2.7
+= Version 1.2.7 =
 * Updated FontAwesome to 4.4.0
 * Move the "Theme Options" in "WP Customizer"
 * Minor bug fixes
 
-Version 1.2.4
+= Version 1.2.4 =
 * Added VK social button
 * Minor bug fixes
 
-Version 1.2.3
+= Version 1.2.3 =
 * Fixed previous and next post link translation
 * Fixed font size and line height of some elements (Heading)
 * Minor bug fixes
 
-Version 1.2.2
+= Version 1.2.2 =
 * Update FontAwesome to 4.3.0 version
 * Fixed a bug that enlarged font
 * Minor bug fixes
 
-Version 1.2.1
+= Version 1.2.1 =
 * Added WordPress 4.1 compatibility
 * Updated sticky post style
 * Fixed font size
 * Minor bug fixes
 
-Version 1.2
+= Version 1.2 =
 * Minor bug fixes
 
-Version 1.1.2
+= Version 1.1.2 =
 * Fixed text of the credit link
 * Added CSS for table
 
-Version 1.1.1
+= Version 1.1.1 =
 * Fixed main menu dots animation
 * Fixed social media icons
 
-Version 1.1
+= Version 1.1 =
 * Fixed overlay effect
 * Added rich snippets in page.php
 * Fixed "Go to top" button
 * Minor bug fixes
 
-Version 1.0
+= Version 1.0 =
 * Initial Release
