@@ -2,96 +2,110 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Author 1.19.2\n"
+"Project-Id-Version: Author 1.18\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2016-06-30 12:28:54+00:00\n"
+"POT-Creation-Date: 2016-04-19 13:12+0200\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"X-Generator: grunt-wp-i18n 0.5.3\n"
+"PO-Revision-Date: 2016-04-19 13:55+0200\n"
+"Language-Team: \n"
+"X-Generator: Poedit 1.8.7\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: it_IT\n"
 
 #: 404.php:5
 msgid "404: Page Not Found"
-msgstr ""
+msgstr "404 Pagina non trovata"
 
 #: 404.php:8
 msgid ""
 "Looks like nothing was found on this url.  Double-check that the url is "
 "correct or try the search form below to find what you were looking for."
 msgstr ""
+"Sembra nulla sia stato trovato su questo link. Controlla sia corretto o "
+"prova ad utilizzare la ricerca per trovare cosa stavi cercando."
 
 #: comments.php:21 comments.php:41 comments.php:63
 msgid "Be First to Comment"
-msgstr ""
+msgstr "Sii il primo a commentare"
 
 #: comments.php:21 comments.php:41 comments.php:63
 msgid "One Comment"
-msgstr ""
+msgstr "Un commento"
 
 #: comments.php:21 comments.php:41 comments.php:63
 msgid "% Comments"
-msgstr ""
+msgstr "% Commenti"
 
 #: comments.php:55
 msgid ""
-"Comments are closed, but <a href=\"%s\" title=\"Trackback URL for this "
-"post\">trackbacks</a> and pingbacks are open."
+"Comments are closed, but <a href=\"%s\" title=\"Trackback URL for this post"
+"\">trackbacks</a> and pingbacks are open."
 msgstr ""
+"I commenti sono chiusi, ma i <a href=\"%s\" title=\"Trackback URL per questo "
+"articolo\">trackbacks</a> i pingbacks sono disponibili."
 
 #: comments.php:77 comments.php:84
 msgid "Comments are closed."
-msgstr ""
+msgstr "Commenti chiusi"
 
 #: content/archive-header.php:4 inc/customizer.php:271 inc/customizer.php:328
 msgid "Posts"
-msgstr ""
+msgstr "Articolo"
 
 #: content/post-categories.php:9
 msgid "Published in"
-msgstr ""
+msgstr "Publicato in"
 
 #: content/post-categories.php:12
 msgid "View all posts in %s"
-msgstr ""
+msgstr "Vedi tutti i post in %s"
 
 #: content/post-nav-attachment.php:3
 msgid "Previous Image"
-msgstr ""
+msgstr "Immagine precedente"
 
 #: content/post-nav-attachment.php:6
 msgid "Next Image"
-msgstr ""
-
-#: content/post-nav.php:6
-msgid "Previous Post"
-msgstr ""
+msgstr "Prossima immagine"
 
 #: content/post-nav.php:9
+msgid "Previous Post"
+msgstr "Articolo  precedente"
+
+#: content/post-nav.php:10
+msgid "The Previous Post"
+msgstr "L'articolo precedenti"
+
+#: content/post-nav.php:13
 msgid "No Older Posts"
-msgstr ""
+msgstr "Nessun articolo più vecchio"
 
-#: content/post-nav.php:15 content/post-nav.php:28
+#: content/post-nav.php:14 content/post-nav.php:28
 msgid "Return to Blog"
-msgstr ""
+msgstr "Torna al blog"
 
-#: content/post-nav.php:19
+#: content/post-nav.php:23
 msgid "Next Post"
-msgstr ""
+msgstr "Prossimo articolo"
 
-#: content/post-nav.php:22
+#: content/post-nav.php:24
+msgid "The Next Post"
+msgstr "Il prossimo articolo"
+
+#: content/post-nav.php:27
 msgid "No Newer Posts"
-msgstr ""
+msgstr "Nessun nuovo articolo"
 
 #: content/post-tags.php:8
 msgid "View all posts tagged %s"
-msgstr ""
+msgstr "Vedi tutti i post taggati %s"
 
 #: content-page.php:11 content.php:12
 msgid "Pages:"
-msgstr ""
+msgstr "Pagine:"
 
 #: footer.php:8
 msgid "<a href=\"%s\">Author WordPress Theme</a> by Compete Themes"
@@ -99,35 +113,35 @@ msgstr ""
 
 #: functions.php:38
 msgid "Primary"
-msgstr ""
+msgstr "Primario"
 
 #: functions.php:48
 msgid "Primary Sidebar"
-msgstr ""
+msgstr "Sidebar Primaria"
 
 #: functions.php:50
 msgid "Widgets in this area will be shown in the sidebar"
-msgstr ""
+msgstr "I Widget in questa area saranno visualizzati nella sidebar"
 
 #: functions.php:82
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "Il tuo commento è in attesa di moderazione"
 
 #: functions.php:93
 msgid "Reply"
-msgstr ""
+msgstr "Rispondi"
 
 #: functions.php:97
 msgid "Edit"
-msgstr ""
+msgstr "Modifica"
 
 #: functions.php:110
 msgid "(optional)"
-msgstr ""
+msgstr "(opzionale)"
 
 #: functions.php:115
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 #: functions.php:122
 msgid "Email"
@@ -135,15 +149,15 @@ msgstr ""
 
 #: functions.php:129
 msgid "Website"
-msgstr ""
+msgstr "Sito internet"
 
 #: functions.php:144
 msgid "Comment"
-msgstr ""
+msgstr "Commenta"
 
 #: functions.php:175 functions.php:184 functions.php:201 inc/customizer.php:240
 msgid "Continue reading"
-msgstr ""
+msgstr "Continua la lettura"
 
 #: functions.php:362 functions.php:363
 msgid "email"
@@ -151,15 +165,15 @@ msgstr ""
 
 #: functions.php:543
 msgid "Customizer settings deleted"
-msgstr ""
+msgstr "Impostazioni di customizer eliminate"
 
 #: functions.php:562
 msgid "Featured Post"
-msgstr ""
+msgstr "Articoli in primo piano"
 
 #: header.php:11
 msgid "Skip to content"
-msgstr ""
+msgstr "Salta al contenuto"
 
 #: header.php:24
 msgid "avatar"
@@ -167,11 +181,11 @@ msgstr ""
 
 #: header.php:35 inc/scripts.php:10
 msgid "open primary menu"
-msgstr ""
+msgstr "apri menù primario"
 
 #: inc/customizer.php:14
 msgid "Front Page"
-msgstr ""
+msgstr "Prima Pagina"
 
 #: inc/customizer.php:52
 msgid "Avatar"
@@ -179,11 +193,11 @@ msgstr ""
 
 #: inc/customizer.php:62
 msgid "Avatar image source"
-msgstr ""
+msgstr "Sorgente immagine avatar"
 
 #: inc/customizer.php:66
 msgid "Gravatar uses the admin email address."
-msgstr ""
+msgstr "Gravatar utilizza l'email dell'amministratore"
 
 #: inc/customizer.php:68 inc/customizer.php:342
 msgid "Gravatar"
@@ -191,15 +205,15 @@ msgstr ""
 
 #: inc/customizer.php:69 inc/customizer.php:343
 msgid "Upload an image"
-msgstr ""
+msgstr "Carica un immagine"
 
 #: inc/customizer.php:70 inc/customizer.php:344
 msgid "Do not display avatar"
-msgstr ""
+msgstr "Non mostrare avatar"
 
 #: inc/customizer.php:80
 msgid "Upload your avatar"
-msgstr ""
+msgstr "Carica il tuo avatar"
 
 #: inc/customizer.php:90
 msgid "Logo"
@@ -208,28 +222,30 @@ msgstr ""
 #: inc/customizer.php:92
 msgid "Use this instead of the avatar if you want a non-rounded logo image."
 msgstr ""
+"Utilizza questo invece dell'avatar se vuoi un logo con bordi non arrotondati"
 
 #: inc/customizer.php:101
 msgid "Upload custom logo."
-msgstr ""
+msgstr "Carica logo personalizzato"
 
 #: inc/customizer.php:117
 msgid "Social Media Icons"
-msgstr ""
+msgstr "Icone Social"
 
 #: inc/customizer.php:119
 msgid "Add the URL for each of your social profiles."
-msgstr ""
+msgstr "Aggiungi URL per ognuno dei tuoi profili"
 
 #: inc/customizer.php:132
 msgid "Email Address"
-msgstr ""
+msgstr "Indirizzo Email"
 
 #: inc/customizer.php:181
 msgid ""
-"Accepts Skype link protocol (<a href=\"%s\" target=\"_blank\">learn "
-"more</a>)"
+"Accepts Skype link protocol (<a href=\"%s\" target=\"_blank\">learn more</a>)"
 msgstr ""
+"Accetta link con protocollo Skype (<a href=\"%s\" target=\"_blank\">maggiori "
+"informazioni</a>)"
 
 #: inc/customizer.php:207
 msgid "Blog"
@@ -237,11 +253,11 @@ msgstr ""
 
 #: inc/customizer.php:217
 msgid "Show full posts on blog?"
-msgstr ""
+msgstr "Mostrare post intero sul blog?"
 
 #: inc/customizer.php:222 inc/customizer.php:353
 msgid "Yes"
-msgstr ""
+msgstr "Si"
 
 #: inc/customizer.php:223 inc/customizer.php:354
 msgid "No"
@@ -249,111 +265,114 @@ msgstr ""
 
 #: inc/customizer.php:233
 msgid "Excerpt word count"
-msgstr ""
+msgstr "Parole da estrarre"
 
 #: inc/customizer.php:245
 msgid "Read More link text"
-msgstr ""
+msgstr "Testo di continua lettura"
 
 #: inc/customizer.php:255
 msgid "Comment Display"
-msgstr ""
+msgstr "Mostra commenti"
 
 #: inc/customizer.php:266
 msgid "Show comments on:"
-msgstr ""
+msgstr "Mostra commenti su:"
 
 #: inc/customizer.php:272 inc/customizer.php:329
 msgid "Pages"
-msgstr ""
+msgstr "Pagina"
 
 #: inc/customizer.php:273 inc/customizer.php:330
 msgid "Attachments"
-msgstr ""
+msgstr "Allegati"
 
 #: inc/customizer.php:274 inc/customizer.php:331
 msgid "Do not show"
-msgstr ""
+msgstr "Non mostrare"
 
 #: inc/customizer.php:283
 msgid "Custom CSS"
-msgstr ""
+msgstr "CSS Personalizzato"
 
 #: inc/customizer.php:294
 msgid "Add Custom CSS Here:"
-msgstr ""
+msgstr "Aggiungi CSS Personalizzato qui:"
 
 #: inc/customizer.php:310
 msgid "Show"
-msgstr ""
+msgstr "Mostra"
 
 #: inc/customizer.php:311
 msgid "Hide"
-msgstr ""
+msgstr "Nascondi"
 
 #: inc/customizer.php:377
 msgid "View the Author Pro Plugin"
-msgstr ""
+msgstr "Vedi il plugin Author Pro"
 
 #: inc/scripts.php:11
 msgid "close primary menu"
-msgstr ""
+msgstr "chiudi menu primario"
 
 #: inc/scripts.php:12
 msgid "open child menu"
-msgstr ""
+msgstr "apri menu figlio"
 
 #: inc/scripts.php:13
 msgid "close child menu"
-msgstr ""
+msgstr "chiudi menu figlio"
 
 #: index.php:19
 msgid "Previous"
-msgstr ""
+msgstr "Precedente"
 
 #: index.php:20
 msgid "Next"
-msgstr ""
+msgstr "Prossimo"
 
 #: search.php:10
 msgid "%d search result for \"%s\""
 msgid_plural "%d search results for \"%s\""
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%d risultata di ricerca per \"%s\""
+msgstr[1] "%d risultati di ricerca per \"%s\""
 
 #: search.php:12
 msgid "No search results for \"%s\""
-msgstr ""
+msgstr "Nessun risultato per \"%s\""
 
 #: search.php:37
 msgid "Can't find what you're looking for?  Try refining your search:"
 msgstr ""
+"Non riesci a trovare cosa stavi cercando? prova a migliorare la tua ricerca:"
 
 #: searchform.php:3
 msgid "Search"
-msgstr ""
+msgstr "Cerca"
 
 #: searchform.php:5
 msgid "Search for:"
-msgstr ""
+msgstr "Cerca per:"
 
 #: searchform.php:6
 msgid "Go"
-msgstr ""
+msgstr "Vai"
 
 #: theme-options.php:4 theme-options.php:19
 msgid "Author Dashboard"
-msgstr ""
+msgstr "Pannello Author"
 
 #: theme-options.php:22
 msgid "Customization"
-msgstr ""
+msgstr "Personalizzazioni"
 
 #: theme-options.php:23
 msgid ""
 "Click the \"Customize\" link in your menu, or use the button below to get "
 "started customizing Author"
 msgstr ""
+"Clicca \"Personalizza\" nel tuo menu, o utilizza il pulsante qui sotto per "
+"iniziare a personalizzare Author"
 
 #: theme-options.php:26
 msgid "Use Customizer"
@@ -361,17 +380,19 @@ msgstr ""
 
 #: theme-options.php:30
 msgid "Support"
-msgstr ""
+msgstr "Supporto"
 
 #: theme-options.php:31
 msgid ""
 "You can find the knowledgebase, changelog, support forum, and more in the "
 "Author Support Center"
 msgstr ""
+"Puoi trovare la documentazione, il changelog, il forum di supporto ed altro "
+"nel centro di supporto Author"
 
 #: theme-options.php:34
 msgid "Visit Support Center"
-msgstr ""
+msgstr "Visita il centro di supporto"
 
 #: theme-options.php:38
 msgid "Author Pro Plugin"
@@ -382,42 +403,49 @@ msgid ""
 "Download the Author Pro plugin and unlock custom colors, featured videos, "
 "background images, and more"
 msgstr ""
+"Scarica il plugin Author Pro per sbloccare colori personalizzati, video in "
+"primo piano, immagini di sfondo e altro"
 
 #: theme-options.php:42
 msgid "See Full Feature List"
-msgstr ""
+msgstr "Mostra tutte le caratteristiche"
 
 #: theme-options.php:46
 msgid "WordPress Resources"
-msgstr ""
+msgstr "Risorse WordPress"
 
 #: theme-options.php:47
 msgid ""
 "Save time and money searching for WordPress products by following our "
 "recommendations"
 msgstr ""
+"Risparmia tempo e soldi cercando prodotti per WordPress seguendo le nostre "
+"raccomandazioni"
 
 #: theme-options.php:50
 msgid "View Resources"
-msgstr ""
+msgstr "Vedi risorse"
 
 #: theme-options.php:54 theme-options.php:56
 msgid "Leave a Review"
-msgstr ""
+msgstr "Lascia una recensione"
 
 #: theme-options.php:55
 msgid "Help others find Author by leaving a review on wordpress.org."
 msgstr ""
+"Aiuta gli altri a trovare Author lasciando una recensione su wordpress.org"
 
 #: theme-options.php:59 theme-options.php:67
 msgid "Reset Customizer Settings"
-msgstr ""
+msgstr "Ripristina i settaggi"
 
 #: theme-options.php:61
 msgid ""
-"<strong>Warning:</strong> Clicking this button will erase the Author "
-"theme's current settings in the <a href='%s'>Customizer</a>."
+"<strong>Warning:</strong> Clicking this button will erase the Author theme's "
+"current settings in the <a href='%s'>Customizer</a>."
 msgstr ""
+"<strong>Attenzione</strong> Cliccando questo bottone cancellerai le "
+"impostazioni nel <a href='%s'>Customizer</a>."
 
 #. Description of the plugin/theme
 msgid ""
@@ -431,8 +459,16 @@ msgid ""
 "Author is the theme your content deserves. See our fully setup live demo "
 "here: https://www.competethemes.com/author-live-demo/"
 msgstr ""
+"Author è disegnata per chi vuole lettori. Ecco perché Author è veloce, "
+"responsive, di facile lettura. Tutti gli scripts e stylesheets sono "
+"minimizzati, collegati e caricati su necessità per massimizzare le "
+"prestazioni. L'aspetto si adatta a tutti gli schermi per migliorarne "
+"l'usabilità. Data la facilità di lettura si adatta anche agli utenti con "
+"variè disabilità. Infine basato sui canoni di Van de Graaf è realizzato al "
+"meglio per la lettura. Guarda la demo qui https://www.competethemes.com/"
+"author-live-demo/"
 
 #: content/post-meta.php:6
 msgctxt "This blog post was published by some author on some date"
 msgid "Published by %1$s on %2$s"
-msgstr ""
+msgstr "Pubblicato da %1$s il %2$s"
