@@ -239,6 +239,7 @@ if (!function_exists('bazaarlite_scripts_styles')) {
 		wp_enqueue_script( "jquery-ui-tabs");
 		wp_enqueue_script( "masonry");
 
+
 		wp_enqueue_script( 'jquery-easing', get_template_directory_uri() . '/assets/js/jquery.easing.js' , array('jquery'), FALSE, TRUE ); 
 		wp_enqueue_script( 'jquery-imagesloaded', get_template_directory_uri() . '/assets/js/jquery.imagesloaded.js' , array('jquery'), FALSE, TRUE ); 
 		wp_enqueue_script( 'jquery-infinitescroll', get_template_directory_uri() . '/assets/js/jquery.infinitescroll.js' , array('jquery'), FALSE, TRUE ); 
@@ -250,10 +251,17 @@ if (!function_exists('bazaarlite_scripts_styles')) {
 		wp_enqueue_script( 'jquery-tinynav', get_template_directory_uri() . '/assets/js/jquery.tinynav.js' , array('jquery'), FALSE, TRUE ); 
 		wp_enqueue_script( 'bazaar-lite-jquery.wip', get_template_directory_uri() . '/assets/js/jquery.wip.js' , array('jquery'), FALSE, TRUE ); 
 
-		wp_enqueue_script ( 'bazaar-lite-html5',get_template_directory_uri().'/js/html5.js');
+		$wip_vars = array(
+			'slick_autoplay' => bazaarlite_setting('wip_slick_autoplay', 'false'),
+			'slick_dots' => bazaarlite_setting('wip_slick_dots', 'true'),
+		);
+
+		wp_localize_script( 'bazaar-lite-jquery.wip', 'wip_vars', $wip_vars );
+
+		wp_enqueue_script ( 'bazaar-lite-html5',get_template_directory_uri().'/assets/scripts/html5.js');
 		wp_script_add_data ( 'html5', 'conditional', 'IE 8' );
 		
-		wp_enqueue_script ( 'bazaar-lite-selectivizr',get_template_directory_uri().'/js/selectivizr-min.js');
+		wp_enqueue_script ( 'bazaar-lite-selectivizr',get_template_directory_uri().'/assets/scripts/selectivizr-min.js');
 		wp_script_add_data ( 'selectivizr', 'conditional', 'IE 8' );
 
 	}

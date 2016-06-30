@@ -1,5 +1,11 @@
 Bazaar Lite Changelog
 
+- Version 1.2.5 - Released: 30.06.2016
+
+-- Added : Slideshow autoplay.
+-- Added : Slideshow dots.
+-- Fixed : Javascript errors.
+
 - Version 1.2.4 - Released: 24.06.2016
 
 -- Fixed : Embeded videos.

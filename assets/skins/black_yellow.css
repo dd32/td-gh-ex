@@ -220,7 +220,10 @@ ul.widget-category li:hover,
 .woocommerce nav.woocommerce-pagination ul li a:focus,
 .woocommerce nav.woocommerce-pagination ul li a:hover,
 .woocommerce .widget_price_filter .ui-slider .ui-slider-range, 
-.woocommerce .widget_price_filter .ui-slider .ui-slider-handle {
+.woocommerce .widget_price_filter .ui-slider .ui-slider-handle,
+.slick-dots li.slick-active button,
+.slick-dots li button:hover,
+.slick-dots li button:focus {
     background-color: #f1c40f;
 }
 

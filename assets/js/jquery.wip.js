@@ -4,10 +4,23 @@ jQuery.noConflict()(function($){
    Slick slideshow
    ============================================= */
 
+	var autoplay_option = false;
+	var dots_option = false;
+	
+	if ( wip_vars.slick_autoplay === "true" ) {
+		autoplay_option = true;
+	}
+	
+	if ( wip_vars.slick_dots === "true" ) {
+		dots_option = true;
+	}
+	
 	$('.slick-wrapper').slick({
 		adaptiveHeight: true,
 		fade: true,
 		arrows:false,
+		autoplay:  autoplay_option,
+		dots:  dots_option,
 	});
 
 /* ===============================================

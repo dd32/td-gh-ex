@@ -76,6 +76,38 @@ if (!function_exists('bazaarlite_customize_panel_function')) {
 			
 			),
 
+			array(
+				
+				"label" => __( "Slideshow Autoplay",'bazaar-lite'),
+				"description" => __( "Do you want to enable the slideshow autoplay?",'bazaar-lite'),
+				"id" => "wip_slick_autoplay",
+				"type" => "select",
+				"section" => "slideshow_settings",
+				"options" => array (
+				   "false" => __( "No",'bazaar-lite'),
+				   "true" => __( "Yes",'bazaar-lite'),
+				),
+				
+				"std" => "false",
+			
+			),
+
+			array(
+				
+				"label" => __( "Slideshow Dots",'bazaar-lite'),
+				"description" => __( "Do you want to view a pagination for the slideshow?",'bazaar-lite'),
+				"id" => "wip_slick_dots",
+				"type" => "select",
+				"section" => "slideshow_settings",
+				"options" => array (
+				   "false" => __( "No",'bazaar-lite'),
+				   "true" => __( "Yes",'bazaar-lite'),
+				),
+				
+				"std" => "true",
+			
+			),
+
 			array( 
 
 				"label" => __( "Slideshow height",'bazaar-lite'),
