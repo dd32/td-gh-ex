@@ -217,6 +217,11 @@ require get_template_directory() . '/inc/navwalker.php';
 require get_template_directory() . '/inc/metaboxes.php';
 
 /**
+ * TGMPA
+ */
+require get_template_directory() . '/inc/tgmpa/tgm-plugin-activation.php';
+
+/**
  * Social Nav Menu
  */
 require get_template_directory() . '/inc/socialnav.php';
@@ -231,6 +236,7 @@ $header_show = array(
                         'title-text' => __('Title + Tagline', 'activello')
                       );
 
+if ( ! function_exists( 'activello_get_single_category' ) ) :
 /* Get Single Post Category */
 function activello_get_single_category($post_id){
 
@@ -244,6 +250,7 @@ function activello_get_single_category($post_id){
     }
     return '';
 }
+endif;
 
 if ( ! function_exists( 'activello_woo_setup' ) ) :
 /**

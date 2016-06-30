@@ -1,12 +1,6 @@
 // Bootstrap specific functions and styling
 jQuery(document).ready(function(){
 
-	// here for each comment reply link of WordPress
-	jQuery( '.comment-reply-link' ).addClass( 'btn btn-sm btn-default' );
-
-	// here for the submit button of the comment reply form
-	jQuery( '#submit, button[type=submit], button, html input[type=button], input[type=reset], input[type=submit]' ).addClass( 'btn btn-default' );
-
 	// Now we'll add some classes for the WordPress default widgets - let's go
 	jQuery( '.widget_rss ul' ).addClass( 'media-list' );
 
@@ -16,7 +10,7 @@ jQuery(document).ready(function(){
 	// Add Bootstrap styling for tables
 	jQuery( 'table#wp-calendar' ).addClass( 'table table-striped');
 
-	jQuery( '#submit, .tagcloud, button[type=submit], .comment-reply-link, .widget_rss ul, .postform, table#wp-calendar' ).show( "fast" );
+	jQuery( '.widget_rss ul, .postform, table#wp-calendar' ).show( "fast" );
 
 });
 
@@ -43,21 +37,30 @@ jQuery(document).ready(function(){
 
 // Slider functions
 // Can also be used with $(document).ready()
-jQuery(document).ready(function ($) {
-  $(window).load(function() {
-    $('.flexslider').flexslider({
-      animation: "fade",
-      slideshowSpeed: 7000,
-      smoothHeight: true,
-      touch: true
-    });
-  });
-});
+jQuery(document).ready(function($){$(window).load(function(){if ($('.flexslider').length != 0) { $('.flexslider').flexslider({
+      	animation: "fade",              //String: Select your animation type, "fade" or "slide"
+	    easing: "swing",                //{NEW} String: Determines the easing method used in jQuery transitions. jQuery easing plugin is supported!
+	    direction: "horizontal",        //String: Select the sliding direction, "horizontal" or "vertical"
+	    reverse: false,                 //{NEW} Boolean: Reverse the animation direction
+	    animationLoop: true,            //Boolean: Should the animation loop? If false, directionNav will received "disable" classes at either end
+	    smoothHeight: true,            //{NEW} Boolean: Allow height of the slider to animate smoothly in horizontal mode
+	    startAt: 0,                     //Integer: The slide that the slider should start on. Array notation (0 = first slide)
+	    slideshow: true,                //Boolean: Animate slider automatically
+	    slideshowSpeed: 7000,           //Integer: Set the speed of the slideshow cycling, in milliseconds
+	    animationSpeed: 600,            //Integer: Set the speed of animations, in milliseconds
+	    initDelay: 0,                   //{NEW} Integer: Set an initialization delay, in milliseconds
+	    randomize: false,               //Boolean: Randomize slide order
+	    fadeFirstSlide: true,           //Boolean: Fade in the first slide when animation type is "fade"
 
-jQuery(document).ready(function ($) {
-	$(".site-main").nested({
-		selector: '.post',
-		minWidth: 100,
-		gutter: 10
-	});
-});
+	    // Usability features
+	    pauseOnAction: true,            //Boolean: Pause the slideshow when interacting with control elements, highly recommended.
+	    pauseOnHover: false,            //Boolean: Pause the slideshow when hovering over slider, then resume when no longer hovering
+	    pauseInvisible: true,       		//{NEW} Boolean: Pause the slideshow when tab is invisible, resume when visible. Provides better UX, lower CPU usage.
+	    useCSS: true,                   //{NEW} Boolean: Slider will use CSS3 transitions if available
+	    touch: true,                    //{NEW} Boolean: Allow touch swipe navigation of the slider on touch-enabled devices
+
+	    directionNav: true,             //Boolean: Create navigation for previous/next navigation? (true/false)
+    	prevText: "",           //String: Set the text for the "previous" directionNav item
+    	nextText: ""               //String: Set the text for the "next" directionNav item
+
+})}})});
