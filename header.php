@@ -55,10 +55,13 @@
 	<?php } ?>	
 
 		<?php else : ?>
-		<hgroup>
+		<div class="io-title-description">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-				<br .../> <a class="site-description"><?php bloginfo( 'description' ); ?></a>
-		</hgroup>
+				<br .../> 
+				<?php if ( get_bloginfo( 'description' )  !== '' ) { ?>
+				 <a class="site-description"><?php bloginfo( 'description' ); ?></a>
+				<?php } ?>
+		</div>
 	<?php if( get_theme_mod( 'iconic_one_social_activate' ) == '1') { ?>
 		<div class="socialmedia">
 			<?php if( get_theme_mod( 'twitter_url' ) !== '' ) { ?>
@@ -78,7 +81,7 @@
 		<?php endif; ?>
 
 		<nav id="site-navigation" class="themonic-nav" role="navigation">
-			<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'themonic' ); ?>"><?php _e( 'Skip to content', 'themonic' ); ?></a>
+			<a class="assistive-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'iconic-one' ); ?>"><?php _e( 'Skip to content', 'iconic-one' ); ?></a>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'menu-top', 'menu_class' => 'nav-menu', 'container' => 'ul' ) ); ?>
 		</nav><!-- #site-navigation -->
 		<div class="clear"></div>

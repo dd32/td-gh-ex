@@ -35,22 +35,22 @@ get_header(); ?>
 				// Show a different message to a logged-in user who can add posts.
 			?>
 				<header class="entry-header">
-					<h1 class="entry-title"><?php _e( 'No posts to display', 'themonic' ); ?></h1>
+					<h1 class="entry-title"><?php _e( 'No posts to display', 'iconic-one' ); ?></h1>
 				</header>
 
 				<div class="entry-content">
-					<p><?php printf( __( 'Ready to publish your first post? <a href="%s">Get started here</a>.', 'themonic' ), admin_url( 'post-new.php' ) ); ?></p>
+					<p><?php printf( __( 'Ready to publish your first post? <a href="%s">Get started here</a>.', 'iconic-one' ), admin_url( 'post-new.php' ) ); ?></p>
 				</div><!-- .entry-content -->
 
 			<?php else :
 				// Show the default message to everyone else.
 			?>
 				<header class="entry-header">
-					<h1 class="entry-title"><?php _e( 'Nothing Found', 'themonic' ); ?></h1>
+					<h1 class="entry-title"><?php _e( 'Nothing Found', 'iconic-one' ); ?></h1>
 				</header>
 
 				<div class="entry-content">
-					<p><?php _e( 'Kindly search your topic below or browse the recent posts.', 'themonic' ); ?></p>
+					<p><?php _e( 'Kindly search your topic below or browse the recent posts.', 'iconic-one' ); ?></p>
 					<?php get_search_form(); ?>
 				</div><!-- .entry-content -->
 			<?php endif; // end current_user_can() check ?>

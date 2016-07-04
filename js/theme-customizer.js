@@ -9,7 +9,7 @@
 	// Site title and description.
 	wp.customize( 'blogname', function( value ) {
 		value.bind( function( to ) {
-			$( 'hgroup a' ).html( to );
+			$( '.io-title-description a' ).html( to );
 		} );
 	} );
 	wp.customize( 'blogdescription', function( value ) {

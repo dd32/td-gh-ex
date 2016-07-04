@@ -15,7 +15,7 @@ get_header(); ?>
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'themonic' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'iconic-one' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 			</header>
 
 			<?php themonic_content_nav( 'nav-above' ); ?>
@@ -31,11 +31,11 @@ get_header(); ?>
 
 			<article id="post-0" class="post no-results not-found">
 				<header class="entry-header">
-					<h1 class="entry-title"><?php _e( 'Nothing Found', 'themonic' ); ?></h1>
+					<h1 class="entry-title"><?php _e( 'Nothing Found', 'iconic-one' ); ?></h1>
 				</header>
 
 				<div class="entry-content">
-					<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'themonic' ); ?></p>
+					<p><?php _e( 'Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'iconic-one' ); ?></p>
 					<?php get_search_form(); ?>
 				</div><!-- .entry-content -->
 			</article><!-- #post-0 -->

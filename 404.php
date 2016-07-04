@@ -14,11 +14,11 @@ get_header(); ?>
 
 			<article id="post-0" class="post error404 no-results not-found">
 				<header class="entry-header">
-					<h1 class="entry-title"><?php _e( 'Nothing Here!', 'themonic' ); ?></h1>
+					<h1 class="entry-title"><?php _e( 'Nothing Here!', 'iconic-one' ); ?></h1>
 				</header>
 
 				<div class="entry-content">
-					<p><?php _e( 'Kindly search your topic below or browse the recent posts.', 'themonic' ); ?></p>
+					<p><?php _e( 'Kindly search your topic below or browse the recent posts.', 'iconic-one' ); ?></p>
 					<?php get_search_form(); ?>
 							
 <?php the_widget( 'WP_Widget_Recent_Posts' ); ?>

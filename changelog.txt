@@ -1,5 +1,14 @@
 Changelog for Iconic One WordPress Responsive Theme | Visit http://themonic.com/iconic-one/ for latest version
 
+-------------- July 2016 ----------------
+
+03/07/2016  - Version 1.7.3
+
+- Added Post Setting options for full posts on home and Date Meta bar in Live customizer
+- Added option to hide category and tags on home page
+- Header Description area will hide if empty without leaving empty space
+- Removed outdated hgroup from header when using text heading title
+
 -------------- June 2016 ----------------
 
 09/06/2016

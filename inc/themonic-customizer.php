@@ -37,13 +37,13 @@ function iconic_one_sanitize_checkbox( $input ) {
 //Themonic customizer begins
 function themonic_theme_customizer( $wp_customize ) {
      $wp_customize->add_section( 'themonic_logo_section' , array(
-    'title'       => __( 'Logo', 'themonic' ),
+    'title'       => __( 'Logo', 'iconic-one' ),
     'priority'    => 30,
     'description' => 'Upload a logo to replace the default site name and description in the header',
 ) );
 $wp_customize->add_setting( 'themonic_logo' , array('default' => '', 'sanitize_callback' => 'esc_url_raw',));
 $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'themonicl_logo', array(
-    'label'    => __( 'Logo', 'themonic' ),
+    'label'    => __( 'Logo', 'iconic-one' ),
     'section'  => 'themonic_logo_section',
     'settings' => 'themonic_logo',
 ) ) );
@@ -70,7 +70,7 @@ $wp_customize->add_control(new Themonic_Textarea_Control($wp_customize, 'textare
 	'settings' => 'textarea_copy',
 )));
 $wp_customize->add_section('content' , array(
-	'title' => __('Footer','themonic'),
+	'title' => __('Footer','iconic-one'),
 	'priority'    => 300,
 ));
 $wp_customize->add_setting('custom_text_right', array('default' => 'Custom Text Right', 'sanitize_callback' => 'iconic_one_sanitize_text',));
@@ -92,22 +92,18 @@ class Social_Textarea_Control extends WP_Customize_Control {
 <?php
 	}
 }
-
-$wp_customize->add_setting(
-    'iconic_one_social_activate', array('default' => '', 'sanitize_callback' => 'iconic_one_sanitize_checkbox',
+	$wp_customize->add_setting( 'iconic_one_social_activate', array(
+	'default' => '', 
+	'sanitize_callback' => 'iconic_one_sanitize_checkbox', 
 	));
-	$wp_customize->add_control(
-    'iconic_one_social_activate',
-    array(
-        'type' => 'checkbox',
-        'label' => 'Show social buttons',
-        'section' => 'sl_content',
-    )
-);
-
-$wp_customize->add_section('sl_content' , array(
+	$wp_customize->add_control('iconic_one_social_activate',array(
+	'type' => 'checkbox',
+	'label' => 'Show social buttons',
+	'section' => 'sl_content', 
+	));
+	$wp_customize->add_section('sl_content' , array(
 	'priority'    => 500,
-));
+	));
 $wp_customize->add_setting('twitter_url', array('default' => 'http://twitter.com/', 'sanitize_callback' => 'iconic_one_sanitize_text',));
 $wp_customize->add_control(new Social_Textarea_Control($wp_customize, 'twitter_url', array(
 	'label' => 'Twitter url',
@@ -134,7 +130,7 @@ $wp_customize->add_control(new Social_Textarea_Control($wp_customize, 'plus_url'
 	'settings' => 'plus_url',
 )));
 $wp_customize->add_section('sl_content' , array(
-'title' => __('Social','themonic'),
+'title' => __('Social','iconic-one'),
 	'priority'    => 40,
 ));
 $wp_customize->add_setting('rss_url', array('default' => 'http://wordpress.org/', 'sanitize_callback' => 'iconic_one_sanitize_text',));
@@ -143,5 +139,47 @@ $wp_customize->add_control(new Social_Textarea_Control($wp_customize, 'rss_url',
 	'section' => 'sl_content',
 	'settings' => 'rss_url',
 )));
+
+// Add post settings section 
+	$wp_customize->add_section('io_posts_settings', array(
+	'title'    => __('Post Settings', 'iconic-one'),
+	'priority' => 50,
+	));
+	$wp_customize->add_setting( 'iconic_one_full_post', array(
+	'default' => '0',
+	'sanitize_callback' => 'iconic_one_sanitize_checkbox',
+	));
+	$wp_customize->add_control('iconic_one_full_post',array(
+	'type' => 'checkbox',
+	'label' => 'Show Excerpts on Home Page, remove the check to show full posts on home page. Info: Excerpts prevents duplicate content and helps with SEO.',
+	'section' => 'io_posts_settings',
+	));
+	$wp_customize->add_setting( 'iconic_one_date_home', array(
+	'default' => '',
+	'sanitize_callback' => 'iconic_one_sanitize_checkbox',
+	));
+	$wp_customize->add_control('iconic_one_date_home',array(
+	'type' => 'checkbox',
+	'label' => 'Show Date/Author Bar on Home Page',
+	'section' => 'io_posts_settings',
+	));
+	$wp_customize->add_setting( 'iconic_one_catg_home', array(
+	'default' => '1',
+	'sanitize_callback' => 'iconic_one_sanitize_checkbox',
+	));
+	$wp_customize->add_control('iconic_one_catg_home',array(
+	'type' => 'checkbox',
+	'label' => 'Show Categories on Home Page',
+	'section' => 'io_posts_settings',
+	));
+	$wp_customize->add_setting( 'iconic_one_tag_home', array(
+	'default' => '1',
+	'sanitize_callback' => 'iconic_one_sanitize_checkbox',
+	));
+	$wp_customize->add_control('iconic_one_tag_home',array(
+	'type' => 'checkbox',
+	'label' => 'Show Tags on Home Page',
+	'section' => 'io_posts_settings',
+	));
 }
 add_action('customize_register', 'themonic_theme_customizer');

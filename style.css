@@ -4,11 +4,11 @@ Theme URI: http://themonic.com/iconic-one/
 Author: Themonic
 Author URI: http://themonic.com
 Description: Iconic One is a premium quality theme with pixel perfect typography and responsiveness and is built for speed with pagespeed score of 95+, Iconic One implements proper SEO so that your content will rank high and is compatible with AIOSEO and Yoast SEO, It makes proper use of Live customizer that allows you to setup the theme in minutes, you can easily upload the logo, modify the background color, footer text, social media urls without touching any line of code. It utilizes latest HTML 5, CSS3 and wordpress native functions for creating the awesomeness that looks good on every browser. Support is free, access the support here http://themonic.com/support/, Report issues and feedback at http://themonic.com/feedback/.
-Version: 1.7.1
+Version: 1.7.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: Blue, White, Black, one-column, two-columns, right-sidebar, custom-background, fluid-layout, responsive-layout, custom-menu, full-width-template, post-formats, rtl-language-support, theme-options, custom-colors
-Text Domain: Themonic
+Tags: one-column, two-columns, right-sidebar, custom-background, custom-menu, full-width-template, post-formats, rtl-language-support, theme-options, custom-colors, flexible-header, translation-ready
+Text Domain: iconic-one
 
 Note: Iconic One theme supports child themes and custom.css for extensive customization without breaking the theme.
 It is recommended to use those instead of modifying core files. - http://codex.wordpress.org/Child_Themes
@@ -87,13 +87,13 @@ section {
 	display: block;
 }
 
-hgroup {
+.io-title-description {
     display: inline-block;
     margin: 17px 0;
 	padding: 14px 0;
    	float:none;
 	}
-hgroup a {
+.io-title-description a {
     font-size: 34px;
     font-weight: normal;
     text-decoration: none;
@@ -101,15 +101,15 @@ hgroup a {
 	color:#444444;
 	text-shadow: 0.1px 1px 2px #888888;
 }
-hgroup a:hover{
+.io-title-description a:hover{
 	color:#111111;
 	text-decoration: none;
 }
-hgroup .site-description:hover{
+.io-title-description .site-description:hover{
 	color:#111111;
 	text-decoration: none;
 }
-hgroup .site-description {
+.io-title-description .site-description {
     font-weight: normal;
 	padding-left: 18px;
 	line-height: 2;

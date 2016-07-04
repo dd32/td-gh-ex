@@ -14,8 +14,8 @@ add_action( 'admin_menu', 'iconic_one_options_theme_menu' );
  */ 
 	function iconic_one_customize_button() {
 	    $theme_page = add_theme_page(
-	        __( 'Iconic One' , 'themonic' ),
-	        __( 'Customize Iconic One' , 'themonic' ),  
+	        __( 'Iconic One' , 'iconic-one' ),
+	        __( 'Customize Iconic One' , 'iconic-one' ),  
 	        'edit_theme_options' ,       
 	        'customize.php'            
 	    );

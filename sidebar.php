@@ -17,16 +17,16 @@
 				<?php get_search_form(); ?>
 			</div>
 			<div class="widget widget_recent_entries">
-				<p class="widget-title"><?php _e( 'Recent Posts', 'themonic' ); ?></p>
+				<p class="widget-title"><?php _e( 'Recent Posts', 'iconic-one' ); ?></p>
 				<ul><?php wp_get_archives('type=postbypost&limit=5'); ?></ul>
 			</div>
 			<div class="widget widget_pages">
-			<p class="widget-title"><?php _e( 'Pages', 'themonic' ); ?></p>
+			<p class="widget-title"><?php _e( 'Pages', 'iconic-one' ); ?></p>
           <ul><?php wp_list_pages('title_li='); ?></ul>
       </div>
 	  
 	  <div class="widget widget_tag_cloud">
-       <p class="widget-title"><?php _e( 'Tag Cloud', 'themonic' ); ?></p>
+       <p class="widget-title"><?php _e( 'Tag Cloud', 'iconic-one' ); ?></p>
         <?php wp_tag_cloud('smallest=10&largest=20&number=30&unit=px&format=flat&orderby=name'); ?>
 			</div>
 		</div><!-- #secondary -->

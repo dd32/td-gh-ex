@@ -15,9 +15,9 @@ get_header(); ?>
 
 				<?php get_template_part( 'content', get_post_format() ); ?>
 				<nav class="nav-single">
-					<div class="assistive-text"><?php _e( 'Post navigation', 'themonic' ); ?></div>
-					<span class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'themonic' ) . '</span> %title' ); ?></span>
-					<span class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'themonic' ) . '</span>' ); ?></span>
+					<div class="assistive-text"><?php _e( 'Post navigation', 'iconic-one' ); ?></div>
+					<span class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'iconic-one' ) . '</span> %title' ); ?></span>
+					<span class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'iconic-one' ) . '</span>' ); ?></span>
 				</nav><!-- .nav-single -->
 
 				<?php comments_template( '', true ); ?>
