@@ -1,5 +1,5 @@
-# Translation of Apostrophe in Albanian
-# This file is distributed under the same license as the Apostrophe package.
+# Translation of WordPress.com - Themes - Apostrophe in Albanian
+# This file is distributed under the same license as the WordPress.com - Themes - Apostrophe package.
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2016-03-20 10:34:03+0000\n"
@@ -7,8 +7,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/1.0-alpha-1100\n"
-"Project-Id-Version: Apostrophe\n"
+"X-Generator: GlotPress/2.1.0-alpha\n"
+"Language: sq_AL\n"
+"Project-Id-Version: WordPress.com - Themes - Apostrophe\n"
 
 #: comments.php:26
 msgctxt "comments title"
@@ -146,6 +147,10 @@ msgstr "Autor: %s"
 msgid "Tag: %s"
 msgstr "Etiketë: %s"
 
+#: inc/template-tags.php:185
+msgid "Category: %s"
+msgstr "Kategori: %s"
+
 #: inc/template-tags.php:49
 msgctxt "Previous post link"
 msgid "Previous"
@@ -193,13 +198,13 @@ msgid_plural "%s years ago"
 msgstr[0] "%s vit më parë"
 msgstr[1] "%s vjet më parë"
 
-#: inc/template-tags.php:185
-msgid "Category: %s"
-msgstr "Kategori: %s"
-
 #: inc/template-tags.php:46
 msgid "Post navigation"
 msgstr "Lëvizje te postimet"
+
+#: inc/extras.php:36
+msgid "Page %s"
+msgstr "Faqe %s"
 
 #: inc/customizer.php:32
 msgid "Hide author bio panel on individual post pages."
@@ -208,10 +213,6 @@ msgstr "Fshihe panelin e jetëshkrimit të autorit në faqe individuale postimes
 #: inc/customizer.php:44
 msgid "Enable front end feature-starring for easier tagging of Featured Content."
 msgstr "Aktivizoni shfaqje të zgjedhurash në pjesën e dukshme nga vizitorët, për etiketim më të lehtë të Lëndës së Zgjedhur."
-
-#: inc/extras.php:36
-msgid "Page %s"
-msgstr "Faqe %s"
 
 #: inc/customizer.php:22
 msgid "Theme"
@@ -250,6 +251,14 @@ msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr "on"
 
+#. Translators: If there are characters in your language that are not
+#. * supported by PT Serif, translate this to 'off'. Do not translate
+#. * into your own language.
+#: functions.php:161
+msgctxt "PT Serif font: on or off"
+msgid "on"
+msgstr "on"
+
 #: functions.php:123
 msgid "Secondary"
 msgstr "Dytësore"
@@ -261,14 +270,6 @@ msgstr "Terciare"
 #: functions.php:141
 msgid "Footer Sidebar"
 msgstr "Anështyllë Fundfaqeje"
-
-#. Translators: If there are characters in your language that are not
-#. * supported by PT Serif, translate this to 'off'. Do not translate
-#. * into your own language.
-#: functions.php:161
-msgctxt "PT Serif font: on or off"
-msgid "on"
-msgstr "on"
 
 #: functions.php:114
 msgid "Primary"

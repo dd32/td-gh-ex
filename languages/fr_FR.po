@@ -1,5 +1,5 @@
-# Translation of Apostrophe in French (France)
-# This file is distributed under the same license as the Apostrophe package.
+# Translation of WordPress.com - Themes - Apostrophe in French (France)
+# This file is distributed under the same license as the WordPress.com - Themes - Apostrophe package.
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2015-09-30 09:42:27+0000\n"
@@ -7,8 +7,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: GlotPress/1.0-alpha-1100\n"
-"Project-Id-Version: Apostrophe\n"
+"X-Generator: GlotPress/2.1.0-alpha\n"
+"Language: fr\n"
+"Project-Id-Version: WordPress.com - Themes - Apostrophe\n"
 
 #: comments.php:26
 msgctxt "comments title"
@@ -146,15 +147,20 @@ msgstr "Auteur : %s"
 msgid "Tag: %s"
 msgstr "Tag: %s"
 
-#: inc/template-tags.php:49
-msgctxt "Previous post link"
-msgid "Previous"
-msgstr "Précédent"
-
 #: inc/template-tags.php:52
 msgctxt "Next post link"
 msgid "Next"
 msgstr "Suivant"
+
+#: inc/template-tags.php:107
+msgid "%s hour ago"
+msgid_plural "%s hours ago"
+msgstr[0] "Il y a %s heure"
+msgstr[1] "Il y a %s heures"
+
+#: inc/template-tags.php:185
+msgid "Category: %s"
+msgstr "Cat&eacute;gorie: %s"
 
 #. translators: min=minute
 #: inc/template-tags.php:102
@@ -163,11 +169,10 @@ msgid_plural "%s mins ago"
 msgstr[0] "Il y a %s minute"
 msgstr[1] "Il y a %s minutes"
 
-#: inc/template-tags.php:107
-msgid "%s hour ago"
-msgid_plural "%s hours ago"
-msgstr[0] "Il y a %s heure"
-msgstr[1] "Il y a %s heures"
+#: inc/template-tags.php:49
+msgctxt "Previous post link"
+msgid "Previous"
+msgstr "Précédent"
 
 #: inc/template-tags.php:112
 msgid "%s day ago"
@@ -180,10 +185,6 @@ msgid "%s week ago"
 msgid_plural "%s weeks ago"
 msgstr[0] "la semaine dernière"
 msgstr[1] "Il y a %s semaines"
-
-#: inc/template-tags.php:185
-msgid "Category: %s"
-msgstr "Cat&eacute;gorie: %s"
 
 #: inc/template-tags.php:46
 msgid "Post navigation"

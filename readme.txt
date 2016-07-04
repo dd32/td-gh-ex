@@ -2,7 +2,7 @@
 
 Contributors: automattic
 Tags: black, blue, gray, white, light, two-columns, one-column, right-sidebar, responsive-layout, accessibility-ready, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, infinite-scroll, microformats, post-formats, rtl-language-support, site-logo, sticky-post, theme-options, translation-ready, art, artwork, blog, collaboration, design, fashion, food, magazine, travel, bright, clean, contemporary, light, minimal, modern, professional, simple
-Tested up to: 4.2.3
+Tested up to: 4.5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -132,6 +132,15 @@ https://pixabay.com/en/trousers-underwear-nostalgia-past-362781/
 
 
 == Changelog ==
+
+= 28 June 2016 =
+* Tweaking JS used for menu, to allow dropdowns to work on wider touch devices.
+
+= 22 June 2016 =
+* Un-float the header and footer.
+
+= 12 May 2016 =
+* Add new classic-menu tag.
 
 = 9 May 2016 =
 * Fix incorrect text domain in footer.

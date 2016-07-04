@@ -1,5 +1,5 @@
-# Translation of Apostrophe in Hindi
-# This file is distributed under the same license as the Apostrophe package.
+# Translation of WordPress.com - Themes - Apostrophe in Hindi
+# This file is distributed under the same license as the WordPress.com - Themes - Apostrophe package.
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2016-04-16 12:07:43+0000\n"
@@ -7,8 +7,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/1.0-alpha-1100\n"
-"Project-Id-Version: Apostrophe\n"
+"X-Generator: GlotPress/2.1.0-alpha\n"
+"Language: hi_IN\n"
+"Project-Id-Version: WordPress.com - Themes - Apostrophe\n"
 
 #: comments.php:26
 msgctxt "comments title"
@@ -146,6 +147,10 @@ msgctxt "Next post link"
 msgid "Next"
 msgstr "अगला"
 
+#: inc/template-tags.php:185
+msgid "Category: %s"
+msgstr "श्रेणी: %s"
+
 #. translators: min=minute
 #: inc/template-tags.php:102
 msgid "%s min ago"
@@ -183,10 +188,6 @@ msgid_plural "%s years ago"
 msgstr[0] "%s साल पहले"
 msgstr[1] "%s सालो पहले"
 
-#: inc/template-tags.php:185
-msgid "Category: %s"
-msgstr "श्रेणी: %s"
-
 #: inc/template-tags.php:46
 msgid "Post navigation"
 msgstr "पोस्ट नेविगेशन"
@@ -199,14 +200,14 @@ msgstr "पृष्ठ %s"
 msgid "Theme"
 msgstr "थीम"
 
-#: image.php:57
-msgid "Next Image &raquo;"
-msgstr "अगली छवि &raquo;"
-
 #: image.php:63
 msgctxt "Parent post link"
 msgid "<span class=\"meta-nav\">Published in</span><span class=\"post-title\">%title</span>"
 msgstr "<span class=\"meta-nav\">में प्रकाशित</span><span class=\"post-title\">%title</span>"
+
+#: image.php:57
+msgid "Next Image &raquo;"
+msgstr "अगली छवि &raquo;"
 
 #: image.php:57
 msgid "&laquo; Previous Image"
@@ -232,14 +233,6 @@ msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr "ऑन"
 
-#: functions.php:123
-msgid "Secondary"
-msgstr "माध्यमिक"
-
-#: functions.php:141
-msgid "Footer Sidebar"
-msgstr "फूटर साइडबार"
-
 #. Translators: If there are characters in your language that are not
 #. * supported by PT Serif, translate this to 'off'. Do not translate
 #. * into your own language.
@@ -247,6 +240,14 @@ msgstr "फूटर साइडबार"
 msgctxt "PT Serif font: on or off"
 msgid "on"
 msgstr "on"
+
+#: functions.php:123
+msgid "Secondary"
+msgstr "माध्यमिक"
+
+#: functions.php:141
+msgid "Footer Sidebar"
+msgstr "फूटर साइडबार"
 
 #: functions.php:114
 msgid "Primary"

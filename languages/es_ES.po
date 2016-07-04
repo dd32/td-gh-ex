@@ -1,5 +1,5 @@
-# Translation of Apostrophe in Spanish (Spain)
-# This file is distributed under the same license as the Apostrophe package.
+# Translation of WordPress.com - Themes - Apostrophe in Spanish (Spain)
+# This file is distributed under the same license as the WordPress.com - Themes - Apostrophe package.
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2016-02-10 14:37:51+0000\n"
@@ -7,8 +7,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/1.0-alpha-1100\n"
-"Project-Id-Version: Apostrophe\n"
+"X-Generator: GlotPress/2.1.0-alpha\n"
+"Language: es\n"
+"Project-Id-Version: WordPress.com - Themes - Apostrophe\n"
 
 #. Template Name of the plugin/theme
 #: wp-content/themes/pub/apostrophe/full-width-page.php
@@ -144,15 +145,15 @@ msgctxt "Next post link"
 msgid "Next"
 msgstr "Siguiente"
 
+#: inc/template-tags.php:185
+msgid "Category: %s"
+msgstr "Categoría: %s"
+
 #: inc/template-tags.php:112
 msgid "%s day ago"
 msgid_plural "%s days ago"
 msgstr[0] "Hace %s día"
 msgstr[1] "Hace %s días"
-
-#: inc/template-tags.php:185
-msgid "Category: %s"
-msgstr "Categoría: %s"
 
 #: inc/template-tags.php:46
 msgid "Post navigation"

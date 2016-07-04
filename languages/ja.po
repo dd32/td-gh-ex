@@ -1,5 +1,5 @@
-# Translation of Apostrophe in Japanese
-# This file is distributed under the same license as the Apostrophe package.
+# Translation of WordPress.com - Themes - Apostrophe in Japanese
+# This file is distributed under the same license as the WordPress.com - Themes - Apostrophe package.
 msgid ""
 msgstr ""
 "PO-Revision-Date: 2015-12-22 00:14:31+0000\n"
@@ -7,8 +7,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: GlotPress/1.0-alpha-1100\n"
-"Project-Id-Version: Apostrophe\n"
+"X-Generator: GlotPress/2.1.0-alpha\n"
+"Language: ja_JP\n"
+"Project-Id-Version: WordPress.com - Themes - Apostrophe\n"
 
 #: comments.php:26
 msgctxt "comments title"
@@ -155,12 +156,6 @@ msgctxt "Next post link"
 msgid "Next"
 msgstr "次へ"
 
-#. translators: min=minute
-#: inc/template-tags.php:102
-msgid "%s min ago"
-msgid_plural "%s mins ago"
-msgstr[0] "%s分前"
-
 #: inc/template-tags.php:107
 msgid "%s hour ago"
 msgid_plural "%s hours ago"
@@ -170,6 +165,16 @@ msgstr[0] "%s時間前"
 msgid "%s day ago"
 msgid_plural "%s days ago"
 msgstr[0] "%s日前"
+
+#: inc/template-tags.php:185
+msgid "Category: %s"
+msgstr "カテゴリー: %s"
+
+#. translators: min=minute
+#: inc/template-tags.php:102
+msgid "%s min ago"
+msgid_plural "%s mins ago"
+msgstr[0] "%s分前"
 
 #: inc/template-tags.php:117
 msgid "%s week ago"
@@ -186,13 +191,13 @@ msgid "%s year ago"
 msgid_plural "%s years ago"
 msgstr[0] "%s年前"
 
-#: inc/template-tags.php:185
-msgid "Category: %s"
-msgstr "カテゴリー: %s"
-
 #: inc/template-tags.php:46
 msgid "Post navigation"
 msgstr "投稿ナビゲーション"
+
+#: inc/extras.php:36
+msgid "Page %s"
+msgstr "ページ %s"
 
 #: inc/customizer.php:32
 msgid "Hide author bio panel on individual post pages."
@@ -201,10 +206,6 @@ msgstr "各投稿のページで投稿者プロフィールパネルを非表示
 #: inc/customizer.php:44
 msgid "Enable front end feature-starring for easier tagging of Featured Content."
 msgstr "おすすめコンテンツのタグ付けを簡単にするため、フロントエンド機能スターを有効化する。"
-
-#: inc/extras.php:36
-msgid "Page %s"
-msgstr "ページ %s"
 
 #: inc/customizer.php:22
 msgid "Theme"
@@ -251,10 +252,6 @@ msgstr "セカンダリ"
 msgid "Tertiary"
 msgstr "ターシャリ"
 
-#: functions.php:141
-msgid "Footer Sidebar"
-msgstr "フッターサイドバー"
-
 #. Translators: If there are characters in your language that are not
 #. * supported by PT Serif, translate this to 'off'. Do not translate
 #. * into your own language.
@@ -262,6 +259,10 @@ msgstr "フッターサイドバー"
 msgctxt "PT Serif font: on or off"
 msgid "on"
 msgstr "on"
+
+#: functions.php:141
+msgid "Footer Sidebar"
+msgstr "フッターサイドバー"
 
 #: functions.php:114
 msgid "Primary"
