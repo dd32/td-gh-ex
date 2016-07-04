@@ -100,23 +100,6 @@ function barletta_customizer( $wp_customize ) {
 			'type'      => 'checkbox',
 		) );
 
-	/**
-	 * Section: Site identity (default section)
-	 */
-
-	// custom logo upload
-	$wp_customize->add_setting( 'barletta_logo', array(
-		'default' => 0,
-		'transport'   => 'refresh',
-		'sanitize_callback' => 'esc_url_raw'
-	) );    
-
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'barletta_logo', array(
-		'label'    => __( 'Logo', 'barletta' ),
-		'section'  => 'title_tagline',
-		'settings' => 'barletta_logo',
-	) ) );
-
 }
 
 add_action( 'customize_register', 'barletta_customizer' );

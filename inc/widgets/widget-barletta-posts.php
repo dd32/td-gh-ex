@@ -50,10 +50,10 @@ class barletta_recent_posts extends WP_Widget
 				<div class="widget-post">
 
 					<!-- image -->
-					<div class="post-image <?php echo get_post_format(); ?>">
+					<div class="post-image <?php echo esc_attr(get_post_format()); ?>">
 
-					<a href="<?php echo get_permalink(); ?>">
-					<?php if(get_post_format() != 'quote') { echo get_the_post_thumbnail(get_the_ID() , 'thumbnail'); } ?>
+					<a href="<?php echo esc_url(get_permalink()); ?>">
+						<?php if(get_post_format() != 'quote') { echo get_the_post_thumbnail(get_the_ID() , 'thumbnail'); } ?>
 					</a>
 
 					</div> <!-- end post image -->
@@ -61,8 +61,8 @@ class barletta_recent_posts extends WP_Widget
 					<!-- content -->
 					<div class="post-body">
 
-						<h2><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></h2>
-						<div class="post-meta"><span><?php echo get_the_date('d. M , Y'); ?></span><span><i class="fa fa-comment-o"></i> <?php echo get_comments_number(); ?></span></div>
+						<h2><a href="<?php echo esc_url(get_permalink()); ?>"><?php echo esc_attr(get_the_title()); ?></a></h2>
+						<div class="post-meta"><span><?php echo esc_attr(get_the_date('d. M , Y')); ?></span><span><i class="fa fa-comment-o"></i> <?php echo get_comments_number(); ?></span></div>
 
 					</div><!-- end content -->
 

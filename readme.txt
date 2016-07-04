@@ -10,7 +10,11 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 == COPYRIGHT AND LICENSE == 
 Resources packed within the theme. 
 * FontAwesome.
-  Font Awesome is fully open source and is GPL friendly - http://fortawesome.github.io/Font-Awesome/license/
+  FFontAwesome 4.2.0
+  Copyright 2012 Dave Gandy
+  Font License: SIL OFL 1.1
+  Code License: MIT License
+  http://fontawesome.io/license/
 * Bootstrap and GLYPHICONS Halflings
   licensed under MIT license - https://github.com/twbs/bootstrap/blob/master/LICENSE
 * BXSlider by bxCreative. http://bxslider.com/

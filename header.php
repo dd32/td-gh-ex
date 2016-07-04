@@ -11,25 +11,13 @@
 		<meta charset="<?php bloginfo('charset'); ?>">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-		<meta name="description" content="<?php bloginfo('description'); ?>">
-		<meta name="author" content="">
-		<link rel="icon" href="favicon.ico">
+		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
 
 		<header class="header">
-			<?php if ( get_theme_mod( 'barletta_logo' ) ) : ?>
-				<div class='site-logo'>
-					<a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'><img src='<?php echo esc_url( get_theme_mod( 'barletta_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'></a>
-				</div>
-			<?php else : ?>
-				<hgroup>
-					<h1 class='site-title'><a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'><?php bloginfo( 'name' ); ?></a></h1>
-					<div class="description"><?php bloginfo('description'); ?></div>
-				</hgroup>
-			<?php endif; ?>
+			<?php barletta_the_custom_logo(); ?>
 		</header>
 
 		<!-- Navigation -->
