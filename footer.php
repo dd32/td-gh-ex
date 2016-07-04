@@ -24,7 +24,7 @@
 		<div class="bcorp_base_line bcorp-color-base">
 			<div class="site-content">
 				<div class="bcorp-base-html">
-					Basics Theme by BCorp.com
+					<?php esc_html_e( 'Basics Theme by BCorp.com', 'bcorp-basics' ); ?>
 				</div>
 			</div>
 		</div>

@@ -3,11 +3,12 @@ Theme Name: BCorp Basics
 Author URI: http://www.bcorp.com
 Description: Clean Fast Basic Theme
 Author: Tim Brattberg
-Version: 1.00
+Version: 1.01
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 Theme URI: http://basics.bcorp.com
-Tags: responsive-layout, fluid-layout, featured-images, threaded-comments, one-column, two-columns, full-width-template
+Text Domain: bcorp-basics
+Tags: featured-images, threaded-comments, one-column, two-columns, full-width-template
 */
 
 @import url('//fonts.googleapis.com/css?family=Noto+Serif:regular|Open+Sans:600|Quantico:italic');

@@ -18,7 +18,8 @@ if (!function_exists('bcorp_theme_setup')):
 		add_theme_support('title-tag');
 		add_theme_support('post-thumbnails');
 		add_theme_support('automatic-feed-links');
-
+		global $bcorp_full_width_theme;
+		$bcorp_full_width_theme = true;
 		set_post_thumbnail_size( 840, 560, true );
 		add_image_size('300 x 200 cropped', 300, 200, true);
 		add_image_size('350 x 300 cropped', 350, 300, true);
@@ -466,12 +467,18 @@ if (!function_exists('bcorp_register_required_plugins')):
 				'slug'      => 'bcorp-shortcodes',
 				'required'  => false,
 			),
+			array(
+				'name'      => 'BCorp Visual Editor',
+				'slug'      => 'bcorp-visual-editor',
+				'required'  => false,
+			),
+
 	  );
 	    $config = array(
 	        'default_path' => '',                      // Default absolute path to pre-packaged plugins.
 	        'menu'         => 'tgmpa-install-plugins', // Menu slug.
 	        'has_notices'  => true,                    // Show admin notices or not.
-	        'dismissable'  => false,                    // If false, a user cannot dismiss the nag message.
+	        'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
 	        'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
 	        'is_automatic' => true,                   // Automatically activate plugins after installation or not.
 	        'message'      => '',                      // Message to output right before the plugins table.
