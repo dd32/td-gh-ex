@@ -2,7 +2,6 @@
 /*--------------------------------------------------------------
 ## Block One 
 --------------------------------------------------------------*/
-
 if (get_option('bellini_feature_block_image_one') or get_option('bellini_feature_block_title_one') or get_option('bellini_feature_block_content_one') ): ?>
 <div class="<?php echo esc_attr(get_option('bellini_feature_block_row', 'col-sm-4' ));?>">
 <div class="feature-block__inner text-center">
@@ -11,9 +10,7 @@ if (get_option('bellini_feature_block_image_one') or get_option('bellini_feature
 	if (get_option('bellini_feature_block_image_one') == true): ?>
 		<img src="<?php echo esc_url(get_option('bellini_feature_block_image_one'));?>" >
 	<?php endif; ?>
-
-	<div class="feature-block__content">
-
+	<div class="block-one feature-block__content">
 	<?php 
 	// Block Title
 	if(get_option('bellini_feature_block_title_one') == true):?>
@@ -21,7 +18,6 @@ if (get_option('bellini_feature_block_image_one') or get_option('bellini_feature
 		<?php echo do_shortcode(wp_kses_post(get_option( 'bellini_feature_block_title_one')));?>			
 		</h2>
 	<?php endif;?>
-
 	<?php
 	// Block Content
 	if (get_option('bellini_feature_block_content_one') == true): ?>
@@ -39,18 +35,15 @@ if (get_option('bellini_feature_block_image_one') or get_option('bellini_feature
 /*--------------------------------------------------------------
 ## Block Two
 --------------------------------------------------------------*/ 
-
 if (get_option('bellini_feature_block_image_two') or get_option('bellini_feature_block_title_two') or get_option('bellini_feature_block_content_two') ): ?>
 <div class="<?php echo esc_attr(get_option('bellini_feature_block_row', 'col-sm-4' ));?>">
 <div class="feature-block__inner text-center">
-
 	<?php 
 	// Block Image
 	if (get_option('bellini_feature_block_image_two') == true): ?>
 		<img src="<?php echo esc_url(get_option('bellini_feature_block_image_two'));?>">
 	<?php endif; ?>
-
-	<div class="feature-block__content">
+	<div class="block-two feature-block__content">
 	<?php 
 	// Block Title
 	if(get_option('bellini_feature_block_title_two') == true):?>
@@ -58,7 +51,6 @@ if (get_option('bellini_feature_block_image_two') or get_option('bellini_feature
 			<?php echo do_shortcode(wp_kses_post(get_option( 'bellini_feature_block_title_two')));?>		  		
 		</h2>
 	<?php endif;?>
-
 	<?php 
 	// Block Content
 	if (get_option('bellini_feature_block_content_two' ) == true): ?>
@@ -76,7 +68,6 @@ if (get_option('bellini_feature_block_image_two') or get_option('bellini_feature
 /*--------------------------------------------------------------
 ## Block Three
 --------------------------------------------------------------*/
-
 if (get_option('bellini_feature_block_image_three') or get_option('bellini_feature_block_title_three') or get_option('bellini_feature_block_content_three') ): ?>
 <div class="<?php echo esc_attr(get_option('bellini_feature_block_row', 'col-sm-4' ));?>">
 <div class="feature-block__inner text-center">
@@ -85,9 +76,7 @@ if (get_option('bellini_feature_block_image_three') or get_option('bellini_featu
 	if (get_option('bellini_feature_block_image_three') == true): ?>
 		<img src="<?php echo esc_url(get_option('bellini_feature_block_image_three'));?>">
 	<?php endif; ?>
-
-	<div class="feature-block__content">
-
+	<div class="block-three feature-block__content">
 	<?php 
 	// Block Title
 	if(get_option('bellini_feature_block_title_three') == true):?>
@@ -95,7 +84,6 @@ if (get_option('bellini_feature_block_image_three') or get_option('bellini_featu
 		  	<?php echo do_shortcode(wp_kses_post(get_option( 'bellini_feature_block_title_three')));?>		  		
 		</h2>
 	<?php endif;?>
-
 	<?php 
 	// Block Content
 	if (get_option('bellini_feature_block_content_three') == true): ?>

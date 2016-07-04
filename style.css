@@ -4,7 +4,7 @@ Theme URI: http://www.pangolinthemes.com/bellini-wordpress-theme/
 Author: Pangolin
 Author URI: http://pangolinthemes.com/
 Description: Bellini is the perfect theme for your eCommerce store or shop. Responsive & flexible layout built with Bootstrap & underscores.me. It is built with SEO in mind and have Structured Data (Schema) implemented. If you are looking for beautiful theme with out of the box SEO compatibility, look no further!
-Version: 1.2
+Version: 1.21
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bellini
@@ -681,6 +681,10 @@ a:active {
     text-align: center;
 }
 
+.page-numbers.current {
+    border-radius: 2px;
+}
+
 .bellini__pagination--np__previous,
 .bellini__pagination--np__next {
     background-color: #00BCD4;
@@ -834,7 +838,7 @@ a:hover.page-numbers {
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
-/*
+
 .clear:before,
 .clear:after,
 .entry-content:before,
@@ -861,7 +865,7 @@ a:hover.page-numbers {
     clear: both;
 }
 
-*/
+
 
 /*--------------------------------------------------------------
 # Content
@@ -1069,6 +1073,7 @@ object {
     background-size: cover;
     box-shadow: 0 0 2px rgba(6,8,8,.15);
     -o-background-size: cover;
+    min-height: 60px;
 }
 
 .header__trans {
@@ -1443,6 +1448,7 @@ object {
 .post-meta__category {
     display: inline-block;
     margin-right: 1%;
+    padding: 0;
 }
 
 .post-meta__category a {
@@ -1459,12 +1465,17 @@ object {
 
 .post-meta__author {
     display: inline-block;
-    margin-top: 2%;
 }
 
 .post-meta__author__link {
     text-decoration: none;
     color: inherit;
+}
+
+.post-meta__time {
+    font-size: small;
+    margin-bottom: 1em;
+    display: block;
 }
 
 .single-post__body p {
@@ -1510,17 +1521,28 @@ object {
 }
 
 .single-post__header--l3 {
-    margin-top: 4%;
+    margin-top: 1%;
     margin-bottom: 2%;
+    padding:0;
 }
 
 .s__post--l3 .post-meta__author{
     display: block;
-    margin-top: 2em;
+    padding:0;
 }
 
 .single-post__body--l3 {
     margin-top: 2em;
+    padding: 0;
+}
+
+.single-post__title--l3 {
+    padding: 0;
+    margin-top: .3em;
+}
+
+.single-post__footer--l3{
+    padding: 0;
 }
 
 /* Layout 4 */
@@ -1536,6 +1558,19 @@ object {
     margin: 0 10%;
     margin-top: -100px;
 }
+
+.post-meta__tag__item {
+    margin-top: 1em;
+    display: block;
+}
+
+.post-meta__time,
+.post-meta__author,
+.post-meta__category{
+    font-size: small;
+}
+
+
 
 /*--------------------------------------------------------------
 ## Frontpage Templates
@@ -1718,6 +1753,11 @@ object {
     padding-right:0;
 }
 
+.widget-area__footer .widget-title {
+    border-bottom: 1px solid;
+    padding-bottom: .8em;
+}
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
@@ -1766,10 +1806,18 @@ object {
 }
 
 .comment__body {
-    margin-top: 2%;
+    margin-top: 1em;
     text-align: left;
     font-size: inherit;
     word-break: break-word;
+}
+
+.comment-body{
+    margin-bottom:1em;
+}
+
+.comment-body__left{
+    margin-top:1em;
 }
 
 .comment-edit-link {
@@ -1779,10 +1827,12 @@ object {
     opacity: .6;
 }
 
+.comment__meta,
+.comment__edit,
 .button--reply {
-    float: right;
-    font-size: small;
+    font-size: .8em;
     background-color: inherit;
+    margin-top:.6em;
 }
 
 .comment-reply-link {
@@ -2422,7 +2472,7 @@ Hamburger Menu
 
 .bellini-social__link {
     font-size: 1.8em;
-    padding-top: 1em;
+    padding-top: .5em;
 }
 
 .bellini-social__link a:hover {
@@ -2435,11 +2485,7 @@ Hamburger Menu
 }
 
 .bellini-social__link a span:hover {
-    -moz-transform:scale(1.05);
-    -ms-transform:scale(1.05);
-    -webkit-transform:scale(1.05);
-    -o-transform:scale(1.05);
-    transform:scale(1.05);
+    opacity: .7;
 }
 
 .page__header {
@@ -2721,4 +2767,10 @@ Hamburger Menu
     margin-bottom: 1em;
     float:left;
     width:100%;
+    text-align: center;
+}
+
+.hamburger__menu__middle ul {
+    list-style: none;
+    text-align: center;
 }            

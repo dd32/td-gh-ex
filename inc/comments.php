@@ -16,28 +16,30 @@ function bellini_comment( $comment, $args, $depth ) {
             <article <?php comment_class('comment'); ?>>
             <div class="comment-body row">
 
-                <div class="col-md-2 comment-body__left">
+                <div class="col-md-2 col-xs-4 comment-body__left text-right">
                 <div class="author vcard">
-                    <?php echo get_avatar( $comment, 100 ); ?>
+                    <?php echo get_avatar( $comment, 60 ); ?>
                 </div>
+                <h5 class="comment__author">
+                    <?php comment_author(); ?>                    
+                </h5>
                 </div>
 
-                <div class="col-md-10 comment-body__right">
+                <div class="col-md-10 col-xs-8 comment-body__right text-left">
                 <div class="row">
-                    <h5 class="col-md-10 comment__author"><?php comment_author(); ?></h5>
-                    <span class="col-md-2 text-right"><?php edit_comment_link( esc_html__( 'Edit', 'bellini' ), '  ', '' ); ?></span>
-                    <span class="comment__meta col-md-12">
-                        <a href="<?php echo esc_url( htmlspecialchars( get_comment_link( $comment->comment_ID ) ) );?>" class="comment__meta__info">
-                            <time>
-                                <span class="comment__date"><?php comment_date(); ?></span>
-                                <span class="comment__time"><?php comment_time(); ?></span>
-                            </time>
-                        </a>
-                    </span>
-                    <div class="col-md-12 comment__body" role="button">
+
+                    <div class="col-md-12 comment__body">
                         <?php comment_text(); ?>
                     </div>
-                    <span class="button--reply">
+
+                    <span class="comment__meta col-md-12">
+                        <time>
+                            <span class="comment__date"><?php comment_date(); ?></span>
+                            <span class="comment__time"><?php comment_time(); ?></span>
+                        </time>
+                    </span>                  
+
+                    <span class="col-md-6 button--reply text-left" role="button">
                         <?php
                             comment_reply_link( array_merge( $args, array(
                                 'reply_text' => esc_html__('Reply', 'bellini'),
@@ -45,6 +47,11 @@ function bellini_comment( $comment, $args, $depth ) {
                                 'max_depth' => $args['max_depth']
                         ) ) ); ?>
                     </span>
+
+                     <span class="col-md-6 comment__edit text-right">
+                        <?php edit_comment_link( esc_html__( 'Edit', 'bellini' ), '  ', '' ); ?>                        
+                    </span>                    
+                                       
                 </div>
                 </div>
             </div>

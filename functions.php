@@ -33,6 +33,8 @@ function bellini_setup() {
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'custom-logo');
 	add_theme_support( 'html5', array('search-form','comment-form','comment-list','gallery','caption',) );
+	add_theme_support('widget-customizer');
+	add_theme_support( 'customize-selective-refresh-widgets' );
 	add_theme_support( 'woocommerce' );
 
 	add_theme_support( 'custom-background', apply_filters( 'bellini_custom_background_args', array(
@@ -80,7 +82,7 @@ function bellini_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Widget Area: Blog', 'bellini' ),
 		'id'            => 'sidebar-blog',
-		'description'   => '',
+		'description'   => esc_html__( 'These widgets will be only visible in Blog Page Template, Archive pages','bellini' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="element-title widget-title">',
@@ -90,7 +92,7 @@ function bellini_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Widget Area: Footer', 'bellini' ),
 		'id'            => 'sidebar-footer',
-		'description'   => '',
+		'description'   => esc_html__( 'You can change the Footer Widget Column count from Customize - Layout - Layout Footer','bellini' ),
 		'before_widget' => apply_filters('bellini_widget_footer_column','<section id="%1$s" class="widget__footer col-md-3 %2$s">'),
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="element-title widget-title">',
@@ -100,7 +102,7 @@ function bellini_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'WooCommerce Widgets', 'bellini' ),
 		'id'            => 'sidebar-woo-sidebar',
-		'description'   => '',
+		'description'   => esc_html__( 'These widgets will be only visible in WooCommerce Pages','bellini' ),
 		'before_widget' => '<section id="%1$s" class="widget__after__content col-md-12 %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="element-title widget-title">',
@@ -136,8 +138,8 @@ function bellini_scripts() {
 	// Bellini Stylesheets
 	wp_register_style( 'bootstrap.min', get_template_directory_uri() . '/inc/css/bootstrap.min.css' );
   	wp_enqueue_style( 'bootstrap.min' );
-	wp_enqueue_style('bellini-libraries',get_template_directory_uri(). '/inc/css/libraries.css');
-	wp_enqueue_style( 'bellini-style', get_stylesheet_uri() );
+	wp_enqueue_style('bellini-libraries',get_template_directory_uri(). '/inc/css/libraries.min.css');
+	wp_enqueue_style( 'bellini-style', get_stylesheet_uri(), array(), '20160701', 'all' );
 
 	// Load only if WooCommerce is active
 	if ( is_woocommerce_activated() ) {
@@ -156,14 +158,6 @@ function bellini_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-
-}
-
-add_action( 'admin_enqueue_scripts','bellini_admin_scripts');
-
-function bellini_admin_scripts() {
-	wp_enqueue_script('jquery');
-    wp_enqueue_script( 'bellini-admin-js', get_template_directory_uri() . '/inc/js/bellini-admin.js',  array('jquery'), '20160407', true );
 }
 
 /**

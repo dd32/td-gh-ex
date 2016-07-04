@@ -2,10 +2,9 @@
 
 
 function bellini_header_logo(){ ?>
-
 	<?php
 	// Check if Logo is Active
-		if ( function_exists( 'the_custom_logo' ) && get_theme_mod( 'custom_logo' ) ):
+		if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ):
 			the_custom_logo();
 		else: ?>
 		<!-- Display the Sitename as Logo -->
@@ -15,7 +14,6 @@ function bellini_header_logo(){ ?>
 				</a>
 			</h1>
 	<?php endif;
-	
 		$description = get_bloginfo( 'description', 'display' );
 		if ( $description || is_customize_preview() ) : ?>
 			<p class="site-description" itemprop="description">
@@ -27,18 +25,14 @@ function bellini_header_logo(){ ?>
 
 function bellini_header_menu(){ ?>
 			<?php if ( get_option('bellini_menu_layout') == 'hamburger' ):?>
-
 			<!-- Hamburger Menu -->
 			<div class="hamburger__menu__full">
 			<div class="row hamburger__menu__middle" aria-controls="primary-menu" aria-expanded="true">
-
 			<span class="hamburger__site-title" itemprop="headline">
 				<a itemprop="url" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 				<?php bloginfo( 'name' ); ?>					
 				</a>
 			</span>
-
-
 				<div class="col-md-12 site-header-cart menu">
 				<nav id="site-navigation-ham" aria-label="site links" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'main-nav' ) ); ?>
@@ -46,7 +40,6 @@ function bellini_header_menu(){ ?>
 				</div>
 			</div>
 		</div>
-
 		<!-- Mobile Menu Hamburger Icon -->
 		<button class="hamburger hamburger--spring" type="button" aria-controls="primary-menu" aria-expanded="false">
 		  <span class="hamburger-box">
@@ -139,18 +132,21 @@ if ( ! function_exists( 'bellini_header_cart' ) ) {
 }
 
 
-function bellini_top_header(){?>
-<div class="bellini__cart">
-	<div class="row">
-		<div class="col-md-10 col-xs-10 text-right text-left-xs">
-			<?php bellini_header_cart(); ?>
-		</div>
-		<div class="col-md-2 col-xs-2">
-			<?php bellini_product_search(); ?>
+function bellini_top_header(){
+	if(is_woocommerce_activated()){?>
+	<div class="bellini__cart">
+		<div class="row">
+			<div class="col-md-10 col-xs-10 text-right text-left-xs">
+				<?php bellini_header_cart(); ?>
+			</div>
+			<div class="col-md-2 col-xs-2">
+				<?php bellini_product_search(); ?>
+			</div>
 		</div>
 	</div>
-</div>
-<?php }
+<?php 
+	}
+}
 
 
 function bellini_social_menu(){ ?>
@@ -231,13 +227,13 @@ function bellini_core_header(){
 
 
 	if ( get_option('bellini_header_menu_layout', 1) == 1 ):?>
-		<div class="site-branding col-xs-6"><?php bellini_header_logo();?></div>
-		<div class="col-xs-6 text-right"><?php bellini_header_menu();?></div>
+		<div class="site-branding col-md-6 col-xs-12"><?php bellini_header_logo();?></div>
+		<div class="col-md-6 col-xs-12 text-right"><?php bellini_header_menu();?></div>
 	<?php endif; ?>
 
 	<?php if ( get_option('bellini_header_menu_layout', 1) == 2 ): ?>
-		<div class="col-xs-6 "><?php bellini_header_menu();?></div>
-		<div class="site-branding col-xs-6 text-right"><?php bellini_header_logo();?></div>
+		<div class="col-md-6 col-xs-12 "><?php bellini_header_menu();?></div>
+		<div class="site-branding col-md-6 col-xs-12 text-right"><?php bellini_header_logo();?></div>
 	<?php endif; ?>
 	
 	<?php if ( get_option('bellini_header_menu_layout', 1) == 3 ): ?>

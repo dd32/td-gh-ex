@@ -132,14 +132,15 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 	$wp_customize->add_setting('bellini_copyright_text', array(
 		'type' => 'option',
 		'sanitize_callback' => 'bellini_sanitize_input',
-		'transport' => 'postMessage',
+		'transport' => 'refresh',
 	) );
 
 			$wp_customize->add_control('bellini_copyright_text',array(
-				'type' 		=>'textarea',
-               'label'      => esc_html__( 'Footer Copyright Text', 'bellini' ),
-               'section'    => 'bellini_default_text',
-               'settings'   => 'bellini_copyright_text',
+				'type' 			=>'textarea',
+               'label'      	=> esc_html__( 'Footer Copyright Text', 'bellini' ),
+               'description' 	=> esc_html__( 'Type your own text to replace default footer text.', 'bellini' ),               
+               'section'    	=> 'bellini_default_text',
+               'settings'   	=> 'bellini_copyright_text',
 			));
 
 
@@ -147,7 +148,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 	$wp_customize->add_setting('bellini_hamburger_title', array(
 		'type' => 'option',
 		'sanitize_callback' => 'bellini_sanitize_input',
-		'transport' => 'postMessage',
+		'transport' => 'refresh',
 	) );
 
 			$wp_customize->add_control('bellini_hamburger_title',array(
@@ -162,7 +163,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 	$wp_customize->add_setting('bellini_read_more_title', array(
 		'type' => 'option',
 		'sanitize_callback' => 'bellini_sanitize_input',
-		'transport' => 'postMessage',
+		'transport' => 'refresh',
 	) );
 
 			$wp_customize->add_control('bellini_read_more_title',array(
@@ -464,7 +465,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 			'default' => true,
 			'type' => 'option',
 			'sanitize_callback' => 'sanitize_key',
-			'transport' => 'refresh'
+			'transport' => 'postMessage'
 		)
 	);
 
@@ -483,7 +484,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 		array(
 			'default' => true,
 			'type' => 'option',
-			'transport' => 'refresh',
+			'transport' => 'postMessage',
 			'sanitize_callback' => 'sanitize_key',
 		)
 	);
@@ -503,7 +504,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 		array(
 			'default' => true,
 			'type' => 'option',
-			'transport' => 'refresh',
+			'transport' => 'postMessage',
 			'sanitize_callback' => 'sanitize_key',			
 		)
 	);
@@ -514,7 +515,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 				'settings'   => 'bellini_show_frontpage_woo_category',
 			    'priority'   => 4,
 			    'type'       => 'checkbox',
-			    'active_callback' => 'is_plugin_active_woocommerce',
+			    'active_callback' => 'is_plugin_active_woocommerce_bellini',
 			)
 		);
 
@@ -524,7 +525,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 		array(
 			'default' => true,
 			'type' => 'option',
-			'transport' => 'refresh',
+			'transport' => 'postMessage',
 			'sanitize_callback' => 'sanitize_key',			
 		)
 	);
@@ -535,7 +536,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 				'settings'   => 'bellini_show_frontpage_woo_products',
 			    'priority'   => 5,
 			    'type'       => 'checkbox',
-			    'active_callback' => 'is_plugin_active_woocommerce',
+			    'active_callback' => 'is_plugin_active_woocommerce_bellini',
 			)
 		);
 
@@ -544,7 +545,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 		array(
 			'default' => true,
 			'type' => 'option',
-			'transport' => 'refresh',
+			'transport' => 'postMessage',
 			'sanitize_callback' => 'sanitize_key',			
 		)
 	);
@@ -555,7 +556,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 				'settings'   => 'bellini_show_frontpage_woo_products_featured',
 			    'priority'   => 6,
 			    'type'       => 'checkbox',
-			    'active_callback' => 'is_plugin_active_woocommerce',
+			    'active_callback' => 'is_plugin_active_woocommerce_bellini',
 			)
 		);	
 
@@ -564,7 +565,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 		array(
 			'default' => true,
 			'type' => 'option',
-			'transport' => 'refresh',
+			'transport' => 'postMessage',
 			'sanitize_callback' => 'sanitize_key',			
 		)
 	);
@@ -584,7 +585,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 		array(
 			'default' => true,
 			'type' => 'option',
-			'transport' => 'refresh',
+			'transport' => 'postMessage',
 			'sanitize_callback' => 'sanitize_key',			
 		)
 	);
@@ -731,46 +732,6 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 				'section'    => 'bellini_show_hide_components',
 				'settings'   => 'bellini_show_post_meta',
 			    'priority'   => 21,
-			    'type'       => 'checkbox',
-			)
-		);	
-
-/*--------------------------------------------------------------
-## Comments
---------------------------------------------------------------*/
-
-
-	// Show Hide Post Sections
-	$wp_customize->add_setting( 'bellini_show_hide_comment_sections',
-		array(
-			'type' 				=> 'option',
-			'sanitize_callback' => 'sanitize_key',
-			)
-	);
-
-			$wp_customize->add_control( new Bellini_UI_Helper_Title ( $wp_customize, 'bellini_show_hide_comment_sections', array(
-					'type' => 'info',
-					'label' => esc_html__('Comments','bellini'),
-					'section' => 'bellini_show_hide_components',
-					'settings'    => 'bellini_show_hide_comment_sections',
-					'priority'   => 30,
-			)) );
-
-	// Show Frontpage Slider Section
-	$wp_customize->add_setting( 'bellini_show_site_comments' ,
-		array(
-			'default' => true,
-			'type' => 'option',
-			'transport' => 'refresh',
-			'sanitize_callback' => 'sanitize_key',			
-		)
-	);
-
-		$wp_customize->add_control( 'bellini_show_site_comments',array(
-				'label'      => esc_html__( 'Show Comments', 'bellini' ),
-				'section'    => 'bellini_show_hide_components',
-				'settings'   => 'bellini_show_site_comments',
-			    'priority'   => 31,
 			    'type'       => 'checkbox',
 			)
 		);	

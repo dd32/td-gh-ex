@@ -103,7 +103,7 @@ $wp_customize->add_section('bellini_typography',
 		'type' => 'option',
 		'default' => '16',
 		'sanitize_callback' => 'absint',
-		'transport' => 'refresh',
+		'transport' => 'postMessage',
 	) );
 			$wp_customize->add_control('bellini_body_font_size', array(
 				'type' => 'number',
@@ -119,7 +119,7 @@ $wp_customize->add_section('bellini_typography',
 		'type' => 'option',
 		'default' => '22',
 		'sanitize_callback' => 'absint',
-		'transport' => 'refresh',
+		'transport' => 'postMessage',
 	) );
 			$wp_customize->add_control('bellini_title_font_size', array(
 				'type' => 'number',
@@ -135,7 +135,7 @@ $wp_customize->add_section('bellini_typography',
 		'type' => 'option',
 		'default' => '14',
 		'sanitize_callback' => 'absint',
-		'transport' => 'refresh',
+		'transport' => 'postMessage',
 	) );
 			$wp_customize->add_control('bellini_menu_font_size', array(
 				'type' => 'number',
@@ -171,7 +171,7 @@ $wp_customize->add_section('bellini_typography',
 		array(
 			'default' 			=> 'none',
 			'type' 				=> 'option',
-			'transport' 		=> 'refresh',
+			'transport' 		=> 'postMessage',
 			'sanitize_callback' => 'sanitize_key',			
 		)
 	);
@@ -198,14 +198,14 @@ $wp_customize->add_section('bellini_typography',
 		array(
 			'default' 			=> 'left',
 			'type' 				=> 'option',
-			'transport' 		=> 'refresh',
+			'transport' 		=> 'postMessage',
 			'sanitize_callback' => 'sanitize_key',				
 		)
 	);
 
 		$wp_customize->add_control( 'bellini_widget_title_alignment',
 			array(
-				'label'      	=> esc_html__( 'Widget Title Alignment', 'bellini' ),
+				'label'      	=> esc_html__( 'Title Alignment - Widget', 'bellini' ),
 				'section'    	=> 'bellini_typography',
 				'settings'   	=> 'bellini_widget_title_alignment',
 				'sanitize_callback' => 'esc_attr',

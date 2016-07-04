@@ -23,7 +23,7 @@ if ( post_password_required() ) {
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) : ?>
 	<div class="row">
-		<h2 class="col-md-12 element-title comments-title">
+		<h2 class="col-md-12 comments-title">
 			<?php
 				printf( // WPCS: XSS OK.
 					esc_html( _nx( 'Comment One', 'Comments %1$s', get_comments_number(), 'comments title', 'bellini' ) ),

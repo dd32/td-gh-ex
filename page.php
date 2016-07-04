@@ -59,11 +59,9 @@ get_header();?>
 </div>
 </div>
 <?php 
-if(get_option('bellini_show_site_comments', true) == true) : 
 	if ( comments_open() || get_comments_number() ) : 
 		comments_template(); 
 	endif;
-endif; 
 ?>
 </div>
 

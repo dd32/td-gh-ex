@@ -187,7 +187,7 @@
 		$wp_customize->add_control( 'bellini_other_header_items_selector',
 			array(
 				'label'      	=> esc_html__( 'Other Header Items', 'bellini' ),
-				'description'   => esc_html__( 'Choose your third header item', 'bellini' ),				
+				'description'   => esc_html__( 'Before selecting Cart & Search, make sure you have WooCommerce installed.', 'bellini' ),				
 				'section'    	=> 'bellini_header_section_layout',
 				'settings'   	=> 'bellini_other_header_items_selector',
 			    'priority'   	=> 4,

@@ -404,6 +404,9 @@
 
 /* */
 
+.product-featured__description {
+    margin-top: 1.5em;
+}
 
 .front-new-arrival .products {
     margin: 0;

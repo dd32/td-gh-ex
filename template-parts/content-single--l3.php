@@ -12,7 +12,8 @@
 <div class="container--card-content clearfix">
 <div class="col-xs-12 text-right"><?php bellini_edit_content(); ?></div>
 <header class="single-post__header--l3 col-xs-12">
-	<div class="col-sm-5">
+	<?php bellini_category(); ?>
+	<div class="single-post__title--l3 col-xs-12">
 	<?php the_title( '<h1 class="element-title element-title--post single-post__title--l3" itemprop="name headline">', '</h1>' ); ?>
 
 	<?php if(get_option('bellini_show_post_meta', true) == true):
@@ -40,8 +41,7 @@
 			) );
 		?>
 </div><!-- .entry-content -->
-<footer class="col-xs-12">
-	<?php bellini_category(); ?>
+<footer class="single-post__footer--l3 col-xs-12">
 	<?php bellini_post_tag(); ?>
 </footer><!-- .entry-footer -->
 </div>

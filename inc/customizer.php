@@ -61,7 +61,7 @@ $wp_customize->add_panel( 'bellini_colors_panel', array(
 	'priority'       => 3,
 	'capability'     => 'edit_theme_options',
 	'title'          => esc_html__( 'Colors & Typography','bellini' ),
-	'description'    => 'Kidd Color',
+	'description'    => esc_html__( 'Customize your sites color and font','bellini' ),
 ) );
 
 
@@ -70,7 +70,7 @@ $wp_customize->add_panel( 'bellini_placeholder_layout_panel', array(
 	'priority'       => 4,
 	'capability'     => 'edit_theme_options',
 	'title'          => esc_html__( 'Layout','bellini' ),
-	'description'    => 'Set Layout',
+	'description'    => esc_html__( 'Change layout or shape and postion of components.','bellini' ),
 ) );
 
 
@@ -80,7 +80,7 @@ $wp_customize->add_panel( 'bellini_show_hide_components', array(
 	'priority'       => 5,
 	'capability'     => 'edit_theme_options',
 	'title'          => esc_html__( 'Show / Hide','bellini' ),
-	'description'    => 'Check 3rd Party Software & App Settings',
+	'description'    => esc_html__('Check 3rd Party Software & App Settings','bellini' ),
 ) );
 
 // Default Image & Text Panel
@@ -88,7 +88,7 @@ $wp_customize->add_panel( 'bellini_misc_panel', array(
 	'priority'       => 6,
 	'capability'     => 'edit_theme_options',
 	'title'          => esc_html__( 'Other Options','bellini' ),
-	'description'    => 'Set Default Image',
+	'description'    => esc_html__( 'Set default content link text, image or social icons','bellini' ),
 ) );
 
 // 3rd party Integrations
@@ -96,7 +96,7 @@ $wp_customize->add_panel( 'bellini_third_party_integration', array(
 	'priority'       => 7,
 	'capability'     => 'edit_theme_options',
 	'title'          => esc_html__( 'Integrations','bellini' ),
-	'description'    => 'Check 3rd Party Software & App Settings',
+	'description'    => esc_html__('Check 3rd Party Software & App Settings','bellini' ),
 ) );
 
 
@@ -131,16 +131,18 @@ $wp_customize->add_panel( 'bellini_third_party_integration', array(
 					'settings'    => 'bellini_logo_favicon_helper',
 					'priority'   => 4,
 			)) );
+
+
 /*--------------------------------------------------------------
 ## Settings & Controls
 --------------------------------------------------------------*/
-
+require_once(get_template_directory() . '/inc/customize/settings-bellini-pro.php');      //	Pro Hooks
 require_once(get_template_directory() . '/inc/customize/settings-content.php');          //	Default Image & Content
 require_once(get_template_directory() . '/inc/customize/settings-position.php');         //	Position
 require_once(get_template_directory() . '/inc/customize/settings-typography.php');       //	Typography
 require_once(get_template_directory() . '/inc/customize/settings-color.php');            //	Color
 require_once(get_template_directory() . '/inc/customize/settings-front.php');            //	Front Page Template
-require_once(get_template_directory() . '/inc/customize/settings-integrations.php');     // 	Integrations
+require_once(get_template_directory() . '/inc/customize/settings-integrations.php');     // Integrations
 
 }
 
@@ -200,7 +202,7 @@ $bellini_custom_code_css							= esc_attr(get_option('bellini_custom_css'));
 
 // CSS Classes
 $primary_color_text 			= ".scrollToTop";
-$primary_color_background 		= ".hamburger-inner,.hamburger-inner::before,.hamburger-inner::after,.hamburger__site-title,.main-navigation ul ul,.product-featured__title h1:after,.product-featured__title--l2 h1:after,.product-featured__title--l3 h1:after";
+$primary_color_background 		= ".page-numbers.current,.hamburger-inner,.hamburger-inner::before,.hamburger-inner::after,.hamburger__site-title,.main-navigation ul ul,.product-featured__title h1:after,.product-featured__title--l2 h1:after,.product-featured__title--l3 h1:after";
 
 $bellini_meta_color_text 		= ".breadcrumb_last,.single.post-meta,.single.post-meta a,.post-meta__category a,.comment-reply-link,.comment__author,.blog-post__meta .post-meta__time,.post-meta__author,.comment-edit-link";
 $bellini_meta_color_background 	= ".main-navigation li a:before,.menu-toggle,.post-meta__tag__item a";
@@ -256,6 +258,7 @@ textarea{
 
 <?php echo $primary_color_text;?>{color: <?php echo $bellini_primary_color; ?>;}
 <?php echo $primary_color_background;?>{background-color: <?php echo $bellini_primary_color; ?>;}
+.widget-area__footer .widget-title{border-bottom-color: <?php echo $bellini_primary_color; ?>;}
 <?php echo $bellini_meta_color_text;?>{color: <?php echo $bellini_accent_color; ?>;}
 <?php echo $bellini_meta_color_background;?>{background-color: <?php echo $bellini_accent_color; ?>;}
 
@@ -341,7 +344,8 @@ if ( is_woocommerce_activated() ):
 
 
 	<style type="text/css">
-
+	.product-card__info__product a,
+	.product-featured__title a,
 	.woocommerce ul.products li.product h3 {
     	font-size: <?php echo $woo_shop_product_title_font_size;?>px ;
     	color: <?php echo $product_card_title_color;?> ;
@@ -356,10 +360,9 @@ if ( is_woocommerce_activated() ):
 	}
 
 	<?php echo $woo_class_buttons;?>{
-		color: <?php echo $product_card_button_text_color;?> ;
-    	background-color: <?php echo $product_card_button_color;?> ;
+		color: <?php echo $product_card_button_text_color;?> !important ;
+    	background-color: <?php echo $product_card_button_color;?> !important ;
 	}
-
 
 	</style>
 	<?php }
@@ -373,7 +376,7 @@ endif;
 add_action( 'customize_preview_init', 'bellini_customize_preview_js' );
 
 function bellini_customize_preview_js() {
-	wp_enqueue_script( 'bellini_customizer', get_template_directory_uri() . '/inc/js/customizer.js', array( 'customize-preview' ), '20160120', true );
+	wp_enqueue_script( 'bellini_customizer', get_template_directory_uri() . '/inc/js/customizer.js', array( 'customize-preview' ), '20160709', true );
 }
 
 add_action( 'customize_controls_enqueue_scripts', 'bellini_customizer_style');

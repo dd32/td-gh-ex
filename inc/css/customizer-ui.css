@@ -321,3 +321,14 @@ input[type=checkbox]:checked:before {
     background-color:#00BCD4;
     width: auto;
 }
+
+.bellini_pro_section {
+    background-color: #e7f7f9;
+    padding: 1em;
+    border-radius: 2px;
+}
+
+.bellini__pro__button {
+    display: block;
+    margin-top: 1em;
+}

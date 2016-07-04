@@ -10,7 +10,7 @@
 		'capability'     => 'edit_theme_options',
 		'title'          => esc_html__( 'WooCommerce','bellini' ),
 		'panel'     	 => 'bellini_third_party_integration',
-		'active_callback' 	=> 'is_plugin_active_woocommerce',
+		'active_callback' 	=> 'is_plugin_active_woocommerce_bellini',
 	) );
 
 
@@ -22,7 +22,7 @@
 		array(
 			'type' 				=> 'option',
 			'sanitize_callback' => 'sanitize_key',
-			'active_callback' 	=> 'is_plugin_active_woocommerce',
+			'active_callback' 	=> 'is_plugin_active_woocommerce_bellini',
 			)
 	);
 
@@ -32,7 +32,7 @@
 					'section' => 'bellini_woocommerce_integration',
 					'settings'    => 'bellini_woocommerce_layout_helper',
 					'priority'   => 1,
-					'active_callback' 	=> 'is_plugin_active_woocommerce',
+					'active_callback' 	=> 'is_plugin_active_woocommerce_bellini',
 			)) );	
 
 	// Shop Product layout
@@ -132,7 +132,7 @@
 		array(
 			'type' 				=> 'option',
 			'sanitize_callback' => 'sanitize_key',
-			'active_callback' 	=> 'is_plugin_active_woocommerce',
+			'active_callback' 	=> 'is_plugin_active_woocommerce_bellini',
 			)
 	);
 
@@ -143,7 +143,7 @@
 					'section' => 'bellini_woocommerce_integration',
 					'settings'    => 'bellini_woocommerce_typography_helper',
 					'priority'   => 20,
-					'active_callback' 	=> 'is_plugin_active_woocommerce',
+					'active_callback' 	=> 'is_plugin_active_woocommerce_bellini',
 			)) );
 
 
@@ -216,7 +216,7 @@
 		array(
 			'type' 				=> 'option',
 			'sanitize_callback' => 'sanitize_key',
-			'active_callback' 	=> 'is_plugin_active_woocommerce',
+			'active_callback' 	=> 'is_plugin_active_woocommerce_bellini',
 			)
 	);
 
@@ -226,7 +226,7 @@
 					'section' => 'bellini_woocommerce_integration',
 					'settings'    => 'bellini_woocommerce_color_helper',
 					'priority'   => 30,
-					'active_callback' 	=> 'is_plugin_active_woocommerce',
+					'active_callback' 	=> 'is_plugin_active_woocommerce_bellini',
 			)) );
 
 
@@ -314,7 +314,7 @@
 		array(
 			'type' 				=> 'option',
 			'sanitize_callback' => 'sanitize_key',
-			'active_callback' 	=> 'is_plugin_active_woocommerce',
+			'active_callback' 	=> 'is_plugin_active_woocommerce_bellini',
 			)
 	);
 
@@ -324,7 +324,7 @@
 					'section' => 'bellini_woocommerce_integration',
 					'settings'    => 'bellini_woocommerce_hide_helper',
 					'priority'   => 40,
-					'active_callback' 	=> 'is_plugin_active_woocommerce',
+					'active_callback' 	=> 'is_plugin_active_woocommerce_bellini',
 			)) );
 
 	// Show Sidebar
@@ -355,7 +355,7 @@
 		array(
 			'type' 				=> 'option',
 			'sanitize_callback' => 'sanitize_key',
-			'active_callback' 	=> 'is_plugin_active_woocommerce',
+			'active_callback' 	=> 'is_plugin_active_woocommerce_bellini',
 			)
 	);
 
@@ -365,7 +365,7 @@
 					'section' => 'bellini_woocommerce_integration',
 					'settings'    => 'bellini_woocommerce_position_helper',
 					'priority'   => 50,
-					'active_callback' 	=> 'is_plugin_active_woocommerce',
+					'active_callback' 	=> 'is_plugin_active_woocommerce_bellini',
 			)) );
 
 
