@@ -149,6 +149,15 @@ Affinity also supports the following features:
 
 == Changelog ==
 
+= 27 June 2016 =
+* Add check to make sure screen size is larger than a tablet before adding inline min-height to header.
+
+= 21 June 2016 =
+* Correct annotation's page template setting.
+
+= 14 June 2016 =
+* Change window shorthand to $( window) to avoid conflicts that were causing the Likes/Reblogs buttons not to load on pages where a video was embedded.
+
 = 30 May 2016 =
 * Update version number in prep for WP.org submission
 

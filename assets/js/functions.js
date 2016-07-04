@@ -84,7 +84,7 @@
 
 		form.each( function() {
 
-			var labels, 
+			var labels,
 				inputs,
 				widths,
 				padding;
@@ -131,7 +131,7 @@
 			.on( 'resize post-load', function() {
 				clearTimeout( resizeTimer );
 				resizeTimer = setTimeout( function() {
-					
+
 					if ( true == ltr ) {
 						belowEntryMetaClass( 'img.alignleft, figure.alignleft' );
 						belowEntryMetaClass( 'blockquote.alignleft' );
@@ -147,7 +147,9 @@
 						belowSidebarClass( 'blockquote.alignleft' );
 					}
 
-					headerImg.css( 'min-height', header.outerHeight() + 'px' );
+					if ( $( window ).width() >= 736 ) {
+						headerImg.css( 'min-height', header.outerHeight() + 'px' );
+					}
 				}, 300 );
 			} );
 
@@ -171,7 +173,7 @@
 	//Resize the header to fit its contents
 	function sizeHeader() {
 
-		if ( window.width() < 736 ) {
+		if ( $( window ).width() < 736 ) {
 			return;
 		}
 
@@ -217,7 +219,7 @@
 		}
 
 		var $guestbookContainer = $( '.page-template-guestbook .comments-area .comment-list');
-		
+
 		$guestbookContainer.imagesLoaded( function() {
 			$guestbookContainer.masonry( {
 				itemSelector: '.comment',
