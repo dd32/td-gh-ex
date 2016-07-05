@@ -22,7 +22,7 @@ get_header(); ?>
                         <!-- ---------------Post starts ---------------- -->
                         <div id="post-<?php the_ID(); ?>" class="post">
                             <div class="page-heading">
-                                <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+                                <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
                             </div>
                             
                             <div class="page-content clear">
@@ -42,11 +42,7 @@ get_header(); ?>
                         </p>
                     </div>
                 <?php endif; ?>
-                      
-                        <!----------------------Post Single Ends -------------------------->
-                <!-- ------------------Comment starts ----------------------- -->
-                <?php //comments_template(); ?>
-                <!-- ------------------Comment Ends----------------------- -->
+
                 </div>
                  </div>               
                  </div><!-- #main -->

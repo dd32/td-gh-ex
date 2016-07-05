@@ -8,7 +8,7 @@
         <!----------------- Post starts ------------------>
         <div id="post-<?php the_ID(); ?>" class="post">
             <div class="post-heading">
-                <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+                <h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
             </div>
             <div class="post-meta">
                 <ul>
@@ -24,7 +24,7 @@
                     <?php if( has_tag() ) { ?>
                         <li class="meta-tag"><i class="fa fa-tag"></i> <?php the_tags(''); ?></li>
                     <?php } ?>
-                    <li class="meta-comm"><i class="fa fa-comment"></i> <?php comments_popup_link('0 Comment', '1 Comment', '% Comments'); ?></li>
+                    <li class="meta-comm"><i class="fa fa-comment"></i> <?php comments_popup_link(__( 'Leave a comment', 'bfront' ), __( '1 Comment', 'bfront' ), __( '% Comments', 'bfront' )); ?></li>
                 </ul>
             </div>
             <div class="thumb clear">
@@ -36,7 +36,7 @@
                 ?>	
             </div>
             <div class="post-content clear">
-                <?php echo the_excerpt(); ?>
+                <?php the_excerpt(); ?>
                 <?php wp_link_pages(); ?>
                 <a href="<?php the_permalink() ?>" class="wpanch"><?php echo sprintf(
                     esc_html__( 'Continue reading..%s', 'bfront' ),

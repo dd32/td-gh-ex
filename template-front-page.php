@@ -39,26 +39,35 @@
                     <?php if ( isset($first_slider_title) && $first_slider_title != '') { ?>
                         <h1 class="wow fadeInLeft" data-wow-duration="2s"><?php echo $first_slider_title; ?><div class="heading_border"></div></h1>
                     <?php } else { ?> 
-                        <h1 class="wow fadeInLeft" data-wow-duration="2s">Elegant & Stylish Theme<div class="heading_border"></div></h1>
+                        <h1 class="wow fadeInLeft" data-wow-duration="2s">
+                            <?php _e( 'Elegant & Stylish Theme','bfront'); ?>
+                            <div class="heading_border"></div>
+                        </h1>
                     <?php } ?>
                         
                     <?php if ( isset($first_slider_des) && $first_slider_des != '') { ?>
                         <h3 class="wow fadeInLeft" data-wow-duration="2s"><?php echo $first_slider_des; ?></h3>
                     <?php } else { ?>
-                        <h3 class="wow fadeInLeft" data-wow-duration="2s">Bfront Theme is based on Bootstrap and it is fully functional and Responsive for all screens.</h3>
+                        <h3 class="wow fadeInLeft" data-wow-duration="2s">
+                            <?php _e( 'Bfront Theme is based on Bootstrap and it is fully functional and Responsive for all screens.','bfront'); ?>
+                        </h3>
                     <?php } ?> 
 
                     <p class="slider_buttons">
                         <?php if ( isset($first_slider_first_button_text) && $first_slider_first_button_text != '') { ?>
                             <a href="<?php echo $first_slider_first_button_link; ?>" class="btn btn-sm animated-button victoria-four grey">  <?php echo $first_slider_first_button_text; ?> </a>
                         <?php } else { ?> 
-                            <a href="#" class="btn btn-sm animated-button victoria-four grey">  Demo Here  </a>
+                            <a href="#" class="btn btn-sm animated-button victoria-four grey">
+                                <?php _e( 'Demo Here','bfront'); ?>
+                            </a>
                         <?php } ?>
                             
                         <?php if ( isset($first_slider_first_button_text) && $first_slider_first_button_text != '') { ?>
                             <a href="<?php echo $first_slider_second_button_link; ?>" class="btn btn-sm animated-button victoria-four orange not-first">  <?php echo $first_slider_second_button_text; ?> </a>
                         <?php } else { ?> 
-                            <a href="#" class="btn btn-sm animated-button victoria-four orange not-first"> Download </a>
+                            <a href="#" class="btn btn-sm animated-button victoria-four orange not-first">
+                                <?php _e( 'Download','bfront'); ?> 
+                            </a>
                         <?php } ?>
                     </p>
                     <!-- ***Slide 1 Text end *** -->
@@ -75,11 +84,11 @@
                 $second_slider_second_button_text = esc_attr( get_theme_mod('second_slider_second_button_text') );
                 $second_slider_second_button_link = esc_url( get_theme_mod('second_slider_second_button_link') );
               ?>
+
+            <?php if( $second_slider_image != '' || $second_slider_title != '' || $second_slider_des != '' ){ ?>
                 <li>
                     <?php if ( isset($second_slider_image) && $second_slider_image != '') { ?>
                         <img src="<?php echo esc_url($second_slider_image); ?>" />
-                    <?php } else { ?>
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/parallax.jpg" alt="" title="" />
                     <?php } ?>
                     <div class="awe-overlay"></div>
                     
@@ -88,14 +97,10 @@
                         <!-- ***Slide 2 Text start *** -->
                         <?php if ( isset($second_slider_title) && $second_slider_title != '') { ?>
                             <h1 class="wow fadeInLeft" data-wow-duration="2s"><?php echo $second_slider_title; ?><div class="heading_border"></div></h1>
-                        <?php } else { ?> 
-                            <h1 class="wow fadeInLeft" data-wow-duration="2s">Elegant & Stylish Theme<div class="heading_border"></div></h1>
                         <?php } ?>
                             
                         <?php if ( isset($second_slider_des) && $second_slider_des != '') { ?>
                             <h3 class="wow fadeInLeft" data-wow-duration="2s"><?php echo $second_slider_des; ?></h3>
-                        <?php } else { ?>
-                            <h3 class="wow fadeInLeft" data-wow-duration="2s">Bfront Theme is based on Bootstrap and it is fully functional and Responsive for all screens.</h3>
                         <?php } ?>
                         
                         <p class="slider_buttons">
@@ -113,13 +118,9 @@
                         <!-- ***Slide 2 Text end *** -->
                     </div>
                 </li> 
-
+            <?php } ?>
         </ul>
-    </div>
-    <!--<div class="text-center" style="line-height:1em;">
-        <img src="<?php //echo get_template_directory_uri() ?>/images/shadow.png" class="slidershadow frontpage-shadow" alt="">
-    </div> --> 
-    
+    </div>    
 </div>
 <!-- slider end here --> 
 
@@ -152,7 +153,7 @@
                 <?php if ( isset($service_area_heading) && $service_area_heading != '') { ?>
                     <h2><?php echo $service_area_heading; ?></h2> 
                 <?php } else { ?>
-                    <h2>Service Area</h2>
+                    <h2><?php _e( 'Service Area','bfront'); ?></h2>
                 <?php } ?>
             </div>
         </div>
@@ -169,13 +170,15 @@
                 <?php if ( isset($first_title_serviceArea) && $first_title_serviceArea != '') { ?>
                     <a href="<?php echo $first_link_anchor_serviceArea; ?>"><h3><?php echo $first_title_serviceArea; ?></h3></a>
                 <?php } else { ?>
-                    <a href=""><h3>Fully Responsive</h3></a>
+                    <a href=""><h3><?php _e( 'Fully Responsive','bfront'); ?></h3></a>
                 <?php } ?>
 
                 <?php if ( isset($first_description_serviceArea) && $first_description_serviceArea != '') { ?>
                     <p><?php echo $first_description_serviceArea; ?></p> 
                 <?php } else { ?>
-                    <p>We have used BootStrap technology and our theme is fully responsive. It gives great look in Desktop, Laptop and Mobile. We have used BootStrap technology and our theme is fully responsive. It gives great look in all devices.</p>
+                    <p>
+                    <?php _e( 'We have used BootStrap technology and our theme is fully responsive. It gives great look in Desktop, Laptop and Mobile. We have used BootStrap technology and our theme is fully responsive. It gives great look in all devices.','bfront'); ?>
+                    </p>
                 <?php } ?>
             </div>
         </div>
@@ -191,13 +194,15 @@
                 <?php if ( isset($second_title_serviceArea) && $second_title_serviceArea != '') { ?>
                     <a href="<?php echo $second_link_anchor_serviceArea; ?>"><h3><?php echo $second_title_serviceArea; ?></h3></a>
                 <?php } else { ?>
-                    <a href=""><h3>FontAwesome Icons</h3></a>
+                    <a href=""><h3><?php _e( 'FontAwesome Icons','bfront'); ?></h3></a>
                 <?php } ?>
 
                 <?php if ( isset($second_description_serviceArea) && $second_description_serviceArea != '') { ?>
                     <p><?php echo $second_description_serviceArea; ?></p> 
                 <?php } else { ?>
-                    <p><a href="//fortawesome.github.io/Font-Awesome/icons/" target="_blank">Go to Font Awesome</a> and pick the icon of your choice. Copy the class of icon and past it in Theme Option Panel. <a href="//fortawesome.github.io/Font-Awesome/icons/" target="_blank">Go to Font Awesome</a> and pick the icon of your choice. Copy the class of icon and past it in Theme Option Panel Of Dashboard.</p>
+                    <p>
+                        <?php _e( '<a href="//fortawesome.github.io/Font-Awesome/icons/" target="_blank">Go to Font Awesome</a> and pick the icon of your choice. Copy the class of icon and past it in Theme Option Panel. <a href="//fortawesome.github.io/Font-Awesome/icons/" target="_blank">Go to Font Awesome</a> and pick the icon of your choice. Copy the class of icon and past it in Theme Option Panel Of Dashboard.','bfront'); ?>
+                    </p>
                 <?php } ?>
             </div>
 
@@ -214,13 +219,16 @@
                 <?php if ( isset($third_title_serviceArea) && $third_title_serviceArea != '') { ?>
                     <a href="<?php echo $third_link_anchor_serviceArea; ?>"><h3><?php echo $third_title_serviceArea; ?></h3></a>
                 <?php } else { ?>
-                    <a href=""><h3>Fully Customizable</h3></a>
+                    <a href=""><h3><?php _e( 'Fully Customizable','bfront'); ?></h3></a>
                 <?php } ?>
 
                 <?php if ( isset($third_description_serviceArea) && $third_description_serviceArea != '') { ?>
                     <p><?php echo $third_description_serviceArea; ?></p> 
                 <?php } else { ?>
-                    <p>Our theme is fully customizable you can easily customize it using Theme Options Panel From WordPress Dashboard. Our theme is fully customizable you can easily customize it using Theme Options Panel From WordPress Dashboard.</p>
+                    <p>
+                    <?php _e( 'Our theme is fully customizable you can easily customize it using Theme Options Panel From WordPress Dashboard. Our theme is fully customizable you can easily customize it using Theme Options Panel From WordPress Dashboard.','bfront'); ?>
+                    
+                    </p>
                 <?php } ?>
             </div>
 
@@ -252,13 +260,18 @@
                 <?php if ( isset($parallax_section_title) && $parallax_section_title != '') { ?>
                     <h2 class="wow pulse"><?php echo $parallax_section_title; ?></h2>
                 <?php } else { ?>
-                    <h2 class="wow pulse">Build Your Clean & Optimized Website Within Few Clicks</h2> 
+                    <h2 class="wow pulse">
+                    <?php _e( 'Build Your Clean & Optimized Website Within Few Clicks','bfront'); ?>
+                    </h2> 
                 <?php } ?>
 
                 <?php if ( isset($parallax_section_desc) && $parallax_section_desc != '') { ?>
                     <p class="wow pulse"><?php echo $parallax_section_desc; ?></p>
                 <?php } else { ?>
-                    <p class="wow pulse">Creating your website with bfront is completely easy. You just need to perform few tweaks in the theme option panel and your website will be ready to use. You can showcase all important aspects of your business here on home page.</p> <?php } ?>
+                    <p class="wow pulse">
+                        <?php _e( 'Creating your website with bfront is completely easy. You just need to perform few tweaks in the theme option panel and your website will be ready to use. You can showcase all important aspects of your business here on home page.','bfront'); ?>
+                    </p> 
+                <?php } ?>
             </div>
 
         </div>
@@ -284,11 +297,13 @@
                     <?php if( isset($blog_heading) && $blog_heading != '' ){ ?>
                         <h2><?php echo $blog_heading; ?></h2>
                     <?php }else{ ?>
-                        <h2>Recent Blogs</h2>
+                        <h2><?php _e( 'Recent Blogs','bfront'); ?></h2>
                     <?php } ?>
                 </div>
             </div>
             <!-- Start the Loop. -->
+
+            <div class="blog-outer">
             <?php
               $args = array('showposts' => $no_of_blogs);
               $the_query = new WP_Query( $args ); 
@@ -311,7 +326,7 @@
                                 
                             </div>
                             
-                            <h4><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h4>
+                            <h4><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h4>
                             
                             <div class="post-meta">
                                 <ul>
@@ -322,12 +337,12 @@
                                         ?>
                                     <i class="fa fa-clock-o"></i> <a href="<?php the_permalink() ?>"> <?php echo esc_html( get_the_date('j M Y') ) ?></a></li>
                                     <li class="meta-admin"><i class="fa fa-user"></i> <?php the_author_posts_link(); ?></li>
-                                    <li class="meta-comm"><i class="fa fa-comment"></i> <?php comments_popup_link('0 Comment', '1 Comment', '% Comments'); ?> </li>
+                                    <li class="meta-comm"><i class="fa fa-comment"></i> <?php comments_popup_link(__( 'Leave a comment', 'bfront' ), __( '1 Comment', 'bfront' ), __( '% Comments', 'bfront' )); ?> </li>
                                 </ul>                                
                             </div>
                             
                             <div class="post-content clear">
-                                <?php echo the_excerpt(); ?>
+                                <?php the_excerpt(); ?>
                                 <p class="readmore">
                                     <a href="<?php the_permalink() ?>" class="wpanch">
                                         <?php echo sprintf( esc_html__( 'Read More %s', 'bfront' ), the_title( '<span class="screen-reader-text">', '</span>', false ) ) ; ?>
@@ -342,6 +357,7 @@
             <?php wp_reset_postdata(); ?>
             <?php else: ?>
             <?php endif; ?>
+            </div>
         </div>
     </div>
 </div>
@@ -374,7 +390,9 @@
                             <!-- Carousel indicators -->
                             <ol class="carousel-indicators">
                                 <li data-target="#fade-quote-carousel" data-slide-to="0" class="active"></li>
+                                <?php if ( $second_testimonial_text != '' || $second_testimonial_name != '') { ?>
                                 <li data-target="#fade-quote-carousel" data-slide-to="1"></li>
+                                <?php } ?>
                             </ol>
                             <!-- Carousel items -->
                             <div class="carousel-inner">
@@ -382,32 +400,40 @@
                                 <div class="active item">
                                     <blockquote>
                                         <?php if ( isset($first_testimonial_text) && $first_testimonial_text != '') { ?>
-                                            <p class="testimonial_desc">"<?php echo $first_testimonial_text; ?>"</p> 
+                                            <p class="testimonial_desc">
+                                                <?php _e( '"','bfront'); ?>
+                                                <?php echo $first_testimonial_text; ?>
+                                                <?php _e( '"','bfront'); ?>
+                                            </p> 
                                         <?php } else { ?>
-                                            <p class="testimonial_desc">"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries."</p>
+                                            <p class="testimonial_desc">
+                                                <?php _e( '"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries".','bfront'); ?>
+                                            </p>
                                         <?php } ?>
                                     </blockquote>
                                         <?php if ( isset($first_testimonial_name) && $first_testimonial_name != '') { ?>
-                                            <p class="testimonial_author"><?php echo $first_testimonial_name;  ?></p> 
+                                            <p class="testimonial_author">
+                                                <?php echo $first_testimonial_name; ?>
+                                            </p> 
                                         <?php } else { ?>
-                                            <p class="testimonial_author">Ahmed Shuvo </p>
+                                            <p class="testimonial_author">
+                                                <?php _e( 'John Doe','bfront'); ?>
+                                            </p>
                                         <?php }  ?> 
                                 </div>
 
+                            <?php if ( $second_testimonial_text != '' || $second_testimonial_name != '') { ?>
                                 <div class="item">
                                     <blockquote>
                                         <?php if ( isset($second_testimonial_text) && $second_testimonial_text != '') { ?>
                                             <p class="testimonial_desc">"<?php echo $second_testimonial_text; ?>"</p> 
-                                        <?php } else { ?>
-                                            <p class="testimonial_desc">"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries."</p>
                                         <?php } ?>
                                     </blockquote>
                                         <?php if ( isset($second_testimonial_name) && $second_testimonial_name != '') { ?>
                                             <p class="testimonial_author"><?php echo $second_testimonial_name;  ?></p> 
-                                        <?php } else { ?>
-                                            <p class="testimonial_author">Ahmed Shuvo </p>
                                         <?php }  ?> 
                                 </div>
+                            <?php }  ?>
 
                             </div>
                         </div>

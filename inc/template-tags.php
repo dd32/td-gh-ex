@@ -48,11 +48,6 @@ function bfront_entry_footer() {
 	
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
-		/* translators: used between list items, there is a space after the comma */
-		/* $categories_list = get_the_category_list( __( ', ', 'bfront' ) );
-		if ( $categories_list && bfront_categorized_blog() ) {
-			printf( '<span class="cat-links">' . __( ' %1$s ', 'bfront' ) . '</span>', $categories_list );
-		} */
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', __( ' ', 'bfront' ) );

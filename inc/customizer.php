@@ -6,8 +6,8 @@
 
 
 function bfront_th_customize_control_enqueue_scripts() {
-    wp_enqueue_script( 'th-customize-controls', get_template_directory_uri(). '/js/customize-script.js', array( 'customize-controls' ) );
-    wp_register_style( 'ctypo-customize-controls', get_template_directory_uri(). '/css/customize-control.css');
+    //wp_enqueue_script( 'th-customize-controls', get_template_directory_uri(). '/js/customize-script.js', array( 'customize-controls' ) );
+    //wp_register_style( 'ctypo-customize-controls', get_template_directory_uri(). '/css/customize-control.css');
 }
 add_action( 'customize_controls_enqueue_scripts', 'bfront_th_customize_control_enqueue_scripts');
 
@@ -19,20 +19,7 @@ function bfront_customize_register( $wp_customize ) {
     //  =============================
 
     $wp_customize->get_section('title_tagline')->title = esc_html__('General Settings', 'bfront');
-    $wp_customize->get_section('title_tagline')->priority = 3;
-
-    // Setting : Homepage Sidebar Display Option
-    $wp_customize->add_setting( 'site_title_and_tagline', array( 
-        'default' => true, 
-        'sanitize_callback' => 'bfront_sanitize_checkbox' 
-    ));
-    $wp_customize->add_control( 'site_title_and_tagline', array(
-            'type' => 'checkbox',
-            'label' => __( 'Display Site Title and Tagline', 'bfront' ),
-            'settings' => 'site_title_and_tagline',
-            'section' => 'title_tagline'
-        )
-    );  
+    $wp_customize->get_section('title_tagline')->priority = 3; 
 
     //  =============================
     //  ==== Slider Image Option ====

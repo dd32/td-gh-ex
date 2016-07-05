@@ -1,6 +1,6 @@
 == Theme: Bfront Theme ==
 
-* By bfront, http://www.bfront.com/
+* By bfront, http://www.themesflow.com/
 
 == Theme License & Copyright ==
 Bfront Theme is distributed under the terms of the GNU GPL
@@ -8,10 +8,9 @@ Bfront Theme - Copyright 2014 Bfront Theme, bfront.com
 
 License and resources links for images:
 ---------------------------------------
-All images are created by Bfront and 
-all images licensed under GPL.
+All images used in Bfront are licensed under GPL.
 
-Some images are taken from http://www.pexels.com and some images is taken from my camera when I was in trip. I have included this image with GPL license. 
+All images are taken from http://www.pexels.com and  with GPL license. 
 
 License and resources links for js bundled:
 -------------------------------------------
@@ -48,3 +47,10 @@ License and resources links for js bundled:
 	http://fortawesome.github.io/Font-Awesome/, 
 	License: SIL OFL 1.1
 	URL: http://scripts.sil.org/OFL
+	
+	
+8. wow.js
+    https://wow.js.org/
+    Licence: MIT license
+    URL: https://wow.js.org/
+	

@@ -14,9 +14,15 @@
 <!-- You can start editing here. -->
 <div id="commentsbox" class="post">
     <?php if (have_comments()) : ?>
-        <h3 id="comments">
-            <?php comments_number('No Responses', 'One Response', '% Responses'); ?>
-            so far.</h3>
+        <h3 id="comment" class="comments-title">
+            <?php
+                printf( // WPCS: XSS OK.
+                    esc_html( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'bfront' ) ),
+                    number_format_i18n( get_comments_number() ),
+                    '<span>' . get_the_title() . '</span>'
+                );
+            ?>
+        </h3>
         <ol class="commentlist">
             <?php wp_list_comments(array('avatar_size' => 70)); ?>
         </ol>
@@ -38,7 +44,7 @@
     <?php endif; ?>	
     <?php if (comments_open()) : ?>
         <div class="commentform_wrapper">
-            <div class="post-info">Leave a Comment</div>
+            <div class="post-info"><?php esc_html_e( 'Leave a Comment', 'bfront' ); ?></div>
             <div id="comment-form">
                 <?php comment_form(); ?>
             </div>

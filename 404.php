@@ -21,9 +21,9 @@ get_header();
                     <!-- *** Post1 Starts *** -->
                                        
                     <div class="post-content clear">
-                        <h1 class="embarassing"><?php echo "This is somewhat embarrassing, isn't it?" ?></h1>
+                        <h1 class="embarassing"><?php esc_html_e( 'This is somewhat embarrassing, isn\'t it?', 'bfront' ); ?></h1>
                         <p>
-                            <?php echo "It seems we can't find what you are looking for. Trying one of the links below, can help."; ?>
+                        <?php esc_html_e( 'It seems we can\'t find what you are looking for. Trying one of the links below, can help.', 'bfront' ); ?>
                         </p>
                         <?php the_widget('WP_Widget_Recent_Posts', array('number' => 10), array('widget_id' => '404')); ?>
 
