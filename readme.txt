@@ -67,4 +67,13 @@ Drag and drop these widgets to above two widget areas and arrange them as you li
 
 ==== THEME CHANGELOG ====
 
-coming soon.
+1.0.1 - 04.07.2016
+* Fixed isue 
+* Added licensing information
+
+* Escaped values in all Barletta widgets
+* Removed old tags in style.css
+* Added WordPress core logo upload feature
+
+1.0.2 - 05.07.2016
+* Removed favicon.ico
