@@ -146,7 +146,7 @@ $wp_customize->add_control(new Social_Textarea_Control($wp_customize, 'rss_url',
 	'priority' => 50,
 	));
 	$wp_customize->add_setting( 'iconic_one_full_post', array(
-	'default' => '0',
+	'default' => '1',
 	'sanitize_callback' => 'iconic_one_sanitize_checkbox',
 	));
 	$wp_customize->add_control('iconic_one_full_post',array(

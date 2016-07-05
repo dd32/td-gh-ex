@@ -2,6 +2,11 @@ Changelog for Iconic One WordPress Responsive Theme | Visit http://themonic.com/
 
 -------------- July 2016 ----------------
 
+
+05/07/2016  - Version 1.7.4
+
+- Setting Excerpts to default on home like before in v1.7.3
+
 03/07/2016  - Version 1.7.3
 
 - Added Post Setting options for full posts on home and Date Meta bar in Live customizer
