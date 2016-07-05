@@ -104,8 +104,11 @@ add_action( 'widgets_init', 'annina_widgets_init' );
 function annina_scripts() {
 	wp_enqueue_style( 'annina-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() .'/css/font-awesome.min.css');
-	$protocol = is_ssl() ? 'https' : 'http';
-	wp_enqueue_style( 'annina-googlefonts', $protocol .'://fonts.googleapis.com/css?family=Lato:300,400,700');
+	$query_args = array(
+		'family' => 'Lato:300,400,700'
+	);
+	wp_register_style( 'annina-googlefonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), null );
+	wp_enqueue_style( 'annina-googlefonts' );
 
 	wp_enqueue_script( 'annina-custom', get_template_directory_uri() . '/js/jquery.annina.js', array('jquery', 'jquery-masonry'), '1.0', true );
 	wp_enqueue_script( 'annina-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
@@ -116,9 +119,8 @@ function annina_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 	
-	global $wp_scripts;
 	wp_enqueue_script( 'annina-html5shiv', get_template_directory_uri() . '/js/html5shiv.min.js', array(), '3.7.2', false );
-	$wp_scripts->add_data( 'annina-html5shiv', 'conditional', 'lt IE 9' );
+	wp_script_add_data( 'annina-html5shiv', 'conditional', 'lt IE 9' );
 }
 add_action( 'wp_enqueue_scripts', 'annina_scripts' );
 
@@ -146,3 +148,8 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load Annina Dynamic.
  */
 require get_template_directory() . '/inc/annina-dynamic.php';
+
+/* Calling in the admin area for the Welcome Page */
+if ( is_admin() ) {
+	require get_template_directory() . '/inc/admin/annina-admin-page.php';
+}

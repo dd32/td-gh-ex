@@ -48,24 +48,29 @@ two-columns, right-sidebar, responsive-layout, custom-background, custom-menu, c
 3. Log into your WP admin panel and click on the Design tab. Now click on the Annina theme to activate it.
 
 == Changelog ==
-Version 1.3.7
+= Version 1.3.8 =
+* Updated FontAwesome to 4.6.3
+* Added admin panel
+* Minor bug fixes
+
+= Version 1.3.7 =
 * Updated FontAwesome to 4.6.3 Version
 * Updated HTML Shiv to 3.7.3 version
 * Minor bug fixes
 
-Version 1.3.6
+= Version 1.3.6 =
 * Updated FontAwesome to 4.6.1 Version
 * Updated SmoothScroll to 1.4.4 Version
 * Improved RTL mode
 * Minor bug fixes
 
-Version 1.3.5
+= Version 1.3.5 =
 * Added Disqus compatibility
 * Fixed site title in single post
 * Fixed h1 and h2 post title
 * Minor bug fixes
 
-Version 1.3.4
+= Version 1.3.4 =
 * Fixed IE9 CSS condition
 * Minor Bug Fixes
 
@@ -73,57 +78,57 @@ Version 1.3.3
 * Updated FontAwesome to 4.5.0 Version
 * Minor Bug Fixes
 
-Version 1.3.2
+= Version 1.3.2 =
 * Fixed Email Button
 * Minor bug fixes
 
-Version 1.3.1
+= Version 1.3.1 =
 * Fixed box width with Google Chrome
 * Move the "Theme Options" in "WP Customizer"
 * Minor bug fixes
 
-Version 1.2.9
+= Version 1.2.9 =
 * Updated FontAwesome to 4.4.0 Version
 * Minor Bug Fixes
 
-Version 1.2.8
+= Version 1.2.8 =
 * Minor bug fixes
 
-Version 1.2.6
+= Version 1.2.6 =
 * Fixed Previous and Next Post translation bug
 * Added VK Social Network button
 * Improved masonry structure
 * Minor bug fixes
 
-Version 1.2.5
+= Version 1.2.5 =
 * Fixed problem with email link
 
-Version 1.2.4
+= Version 1.2.4 =
 * Added link to email
 * Minor bug fixes
 
-Version 1.2.3
+= Version 1.2.3 =
 * Minor bug fixes
 
-Version 1.2.2
+= Version 1.2.2 =
 * Minor bug fixes
 
-Version 1.2.1
+= Version 1.2.1 =
 * Minor bug fixes
 * Update FontAwesome to 4.3.0 version
 
-Version 1.2
+= Version 1.2 =
 * Included non minify version of js and css
 * Improved full screen search field
 * Minor bug fixes
 
-Version 1.1.1
+= Version 1.1.1 =
 * Fixed Masonry Script
 * Minor Bug Fixes
 
-Version 1.1
+= Version 1.1 =
 * Google Fonts fixes
 * Minor bug fixes
 
-Version 1.0
+= Version 1.0 =
 * Initial Release
