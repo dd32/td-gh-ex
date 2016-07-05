@@ -504,8 +504,8 @@
 
 			// Ensures ThinkUpThemes custom code is output
 			array(
-				'title'    => __('', 'redux-framework'), 
-				'subtitle' => __('', 'redux-framework'),
+				'title'    => __('Custom Code', 'redux-framework'), 
+				'subtitle' => __('Custom Code', 'redux-framework'),
 				'id'       => 'thinkup_customization',
 				'type'     => 'thinkup_custom_code',
 			),
@@ -724,11 +724,11 @@
 
 
 	// -----------------------------------------------------------------------------------
-	//	2.2.	Home Content				
+	//	2.2.	Homepage (Featured)
 	// -----------------------------------------------------------------------------------
 
 	Redux::setSection( $opt_name, array(
-		'title'      => __('Homepage (Content)', 'redux-framework'),
+		'title'      => __('Homepage (Featured)', 'redux-framework'),
 		'desc'       => __('<span class="redux-title">Display Pre-Designed Homepage Layout</span>', 'redux-framework'),
 		'icon_class' => '',
 		'icon'       => 'el el-pencil',
@@ -909,19 +909,21 @@
 		'fields'     => array(
 				
 			array(
-				'title'   => __('Enable Search', 'redux-framework'), 
-				'desc'    => __('Switch on to enable header search.', 'redux-framework'),
-				'id'      => 'thinkup_header_searchswitch',
-				'type'    => 'switch',
-				'default' => '0',
+				'title'                      => __('Enable Search', 'redux-framework'), 
+				$thinkup_subtitle_panel      => __('Switch on to enable header search.', 'redux-framework'),
+				$thinkup_subtitle_customizer => __('Switch on to enable header search.', 'redux-framework'),
+				'id'                         => 'thinkup_header_searchswitch',
+				'type'                       => 'switch',
+				'default'                    => '0',
 			),
 
 			array(
-				'title'   => __('Enable Social Media Links', 'redux-framework'), 
-				'desc'    => __('Switch on to enable links to social media pages.', 'redux-framework'),
-				'id'      => 'thinkup_header_socialswitch',
-				'type'    => 'switch',
-				'default' => '0',
+				'title'                      => __('Enable Social Media Links', 'redux-framework'), 
+				$thinkup_subtitle_panel      => __('Switch on to enable links to social media pages.', 'redux-framework'),
+				$thinkup_subtitle_customizer => __('Switch on to enable links to social media pages.', 'redux-framework'),
+				'id'                         => 'thinkup_header_socialswitch',
+				'type'                       => 'switch',
+				'default'                    => '0',
 			),
 
             array(

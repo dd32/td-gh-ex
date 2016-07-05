@@ -98,6 +98,62 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.7.10
+- Fixed:   ThinkUpSlider now checks to see if any slide is assigned, rather than just the first slide. Corrects issue where deleting slides resulted in issues.
+
+Version 1.7.9
+- Fixed:   Checkbox field saves as as "off" when unticked.
+- Fixed:   Switch field saves as as "off" when switched off.
+- Fixed:   Full post content on blog archive pages only displayed if explicitly set by user in theme options.
+- Fixed:   Masonry script now output on all archive pages. Fixes issue where masonry layout didn't work on category and tags pages.
+- Updated: Links in breadcrumb function sanitized.
+- Updated: Textdomain added to top of style.css file.
+- Updated: thinkup_input_wptitle() outputs at start of wp_head().
+- Updated: style-shortcodes.css updated to be consistent with all themes.
+- Updated: Link to gmpg.org in header.php now compatible with https sites.
+- Updated: All references to textdomain 'themecheck' changed to 'redux-framework'.
+- Updated: Links to widgets page changed from /wp-admin/widgets.php to esc_url( admin_url( 'widgets.php' ) ).
+- Updated: Homepage (Content) section renamed to Homepage (Featured) to make it clear that the section is intended for minimal content.
+- Updated: Theme tags updated to reflect new tags. Old rags will be removed once WP v4.6 is released and users can no longer filter with old tags.
+- Removed: alert( 'test000' ); removed from jquery.serializeForm.js.
+- Removed: //alert( 'test11-22' ); removed from extension_customizer.min.js.
+- Removed: Deregistered redux scripts removed for compliance with .org requirements 'wpb_ace' and 'jquerySelect2'.
+
+Version 1.7.8
+- Fixed:   Post content displayed on main blog page can be set by user using core WordPress <!--more--> tag.
+- Updated: Logo image width set to "auto".
+
+Version 1.7.7
+- Fixed:   Comments form updated to use custom arguments. PHP notices fixed for comments form - changes made comments.php file.
+- Fixed:   Custom titles now display correctly on mobile layouts. Issue previously caused titles to be squashed on smaller screens.
+- Updated: Description for "thinkup_header_socialswitch" option now displays correctly
+- Updated: Minor css changes made in style.css to header, breadcrumbs and footer links.
+
+Version 1.7.6
+- Updated: Font Awesome library updated to v4.2.0.
+- Updated: Translation .pot file added. Old files .mo and .po removed.
+- Updated: All Font Awesome icon classes now use fa- prefix instead of icon- prefix.
+
+Version 1.7.5
+- Fixed:   Function is_blog() renamed to thinkup_check_isblog() to ensure correct prefixing and reduce change of conflict with 3rd party code.
+- Fixed:   Function add_menuclass() renamed to thinkup_input_menuclass() to ensure correct prefixing and reduce change of conflict with 3rd party code.
+- Fixed:   Function home_page_menu_args() renamed to thinkup_menu_homelink() to ensure correct prefixing and reduce change of conflict with 3rd party code.
+- Fixed:   Function get_comments_popup_link() renamed to get_comments_popup_link() to ensure correct prefixing and reduce change of conflict with 3rd party code.
+- Fixed:   Function get_comments_number_str() renamed to thinkup_comments_returnstring() to ensure correct prefixing and reduce change of conflict with 3rd party code.
+- Updated: Portfolio masonry container checks updated in main-frontend.js.
+- Updated: Function thinkup_input_logoretinaja() renamed to thinkup_input_logoretinaja() to be inline with proper naming convention.
+
+Version 1.7.4
+- Updated: Social media links in pre-header now open in new tab.
+- Updated: Translation .pot file added. Old files .mo and .po removed.
+
+Version 1.7.3
+- Fixed:   Disables sortable slides in Customizer. This prevents issues where phantom slides still appear after deleting slides.
+- Updated: Various minor styling updates for theme options in customizer.
+
+Version 1.7.2
+- Fixed:   "$this->_extension_url" used for redux extensions fixed to ensure custom extensions are loaded correctly on all sites.
+
 Version 1.7.1
 - Fixed:   Floating elements now cleared within template-archive.php using class "clearboth".
 - Fixed:   Floating elements now cleared within template-sitemap.php using class "clearboth".

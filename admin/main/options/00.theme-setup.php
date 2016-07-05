@@ -78,7 +78,7 @@ $thinkup_general_breadcrumbdelimeter = thinkup_var ( 'thinkup_general_breadcrumb
 		echo '<div id="breadcrumbs"><div id="breadcrumbs-core">';
 		global $post, $cat;
 		$homeLink = home_url( '/' );
-		echo '<a href="' . $homeLink . '">' . $main . '</a>' . $delimiter;    
+		echo '<a href="' . esc_url( $homeLink ) . '">' . esc_html( $main ) . '</a>' . $delimiter;    
 
 		// Display breadcrumbs for single post
 		if ( is_single() ) {
@@ -115,7 +115,7 @@ $thinkup_general_breadcrumbdelimeter = thinkup_var ( 'thinkup_general_breadcrumb
 			foreach( $post_array as $key=>$postid ){
 				$post_ids = get_post( $postid );
 				$title = $post_ids->post_title;
-				echo '<a href="' . get_permalink($post_ids) . '">' . $title . '</a>' . $delimiter;
+				echo '<a href="' . esc_url( get_permalink( $post_ids ) ) . '">' . esc_html( $title ) . '</a>' . $delimiter;
 			}
 			the_title();
 		} elseif ( is_author() ) {
@@ -241,19 +241,19 @@ if ( ! function_exists( 'thinkup_input_showimagesizes' ) ) {
 //	ADD HOME: HOME TO CUSTOM MENU PAGE LIST
 //----------------------------------------------------------------------------------
 
-function home_page_menu_args( $args ) {
+function thinkup_menu_homelink( $args ) {
 	$args['show_home'] = true;
 	return $args;
 }
-add_filter( 'wp_page_menu_args', 'home_page_menu_args' );
+add_filter( 'wp_page_menu_args', 'thinkup_menu_homelink' );
 
 
 //----------------------------------------------------------------------------------
-//	ADD CUSTOM 'get_comments_popup_link' FUNCTION - Credit to http://www.thescubageek.com/code/wordpress-code/add-get_comments_popup_link-to-wordpress/
+//	ADD CUSTOM COMMENTS POP UP LINK FUNCTION - Credit to http://www.thescubageek.com/code/wordpress-code/add-get_comments_popup_link-to-wordpress/
 //----------------------------------------------------------------------------------
 
 // Modifies WordPress's built-in comments_popup_link() function to return a string instead of echo comment results
-function get_comments_popup_link( $zero = false, $one = false, $more = false, $css_class = '', $none = false ) {
+function thinkup_input_commentspopuplink( $zero = false, $one = false, $more = false, $css_class = '', $none = false ) {
     global $wpcommentspopupfile, $wpcommentsjavascript;
  
     $id = get_the_ID();
@@ -301,14 +301,14 @@ function get_comments_popup_link( $zero = false, $one = false, $more = false, $c
     $str .= apply_filters( 'comments_popup_link_attributes', '' );
  
     $str .= ' title="' . esc_attr( sprintf( __('Comment on %s','lan-thinkupthemes'), $title ) ) . '">';
-    $str .= get_comments_number_str( $zero, $one, $more );
+    $str .= thinkup_comments_returnstring( $zero, $one, $more );
     $str .= '</a>';
      
     return $str;
 }
  
 // Modifies WordPress's built-in comments_number() function to return string instead of echo
-function get_comments_number_str( $zero = false, $one = false, $more = false, $deprecated = '' ) {
+function thinkup_comments_returnstring( $zero = false, $one = false, $more = false, $deprecated = '' ) {
     if ( !empty( $deprecated ) )
         _deprecated_argument( __FUNCTION__, '1.3' );
  
@@ -329,14 +329,14 @@ function get_comments_number_str( $zero = false, $one = false, $more = false, $d
 //	CHANGE FALLBACK WP_PAGE_MENU CLASSES TO MATCH WP_NAV_MENU CLASSES
 //----------------------------------------------------------------------------------
 
-function add_menuclass( $ulclass ) {
+function thinkup_input_menuclass( $ulclass ) {
 
 	$ulclass = preg_replace( '/<ul>/', '<ul class="menu">', $ulclass, 1 );
 	$ulclass = str_replace( 'children', 'sub-menu', $ulclass );
 
 	return preg_replace('/<div (.*)>(.*)<\/div>/iU', '$2', $ulclass );
 }
-add_filter( 'wp_page_menu', 'add_menuclass' );
+add_filter( 'wp_page_menu', 'thinkup_input_menuclass' );
 
 
 //----------------------------------------------------------------------------------
@@ -344,7 +344,7 @@ add_filter( 'wp_page_menu', 'add_menuclass' );
 //----------------------------------------------------------------------------------
 
 // Credit to: http://www.poseidonwebstudios.com/web-development/wordpress-is_blog-function/
-function is_blog() {
+function thinkup_check_isblog() {
  
     global $post;
  

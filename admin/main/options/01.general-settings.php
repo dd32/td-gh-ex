@@ -32,7 +32,7 @@ global $thinkup_general_sitedescription;
 }
 
 // Output retina js script if retina logo is set
-function thinkup_input_logoretinaja() {
+function thinkup_input_logoretina() {
 global $thinkup_general_logoswitch;
 global $thinkup_general_logolinkretina;
 
@@ -42,7 +42,7 @@ global $thinkup_general_logolinkretina;
 		} 
 	}
 }	
-add_action( 'wp_enqueue_scripts', 'thinkup_input_logoretinaja', 11 );
+add_action( 'wp_enqueue_scripts', 'thinkup_input_logoretina', 11 );
 
 
 //----------------------------------------------------------------------------------
@@ -99,7 +99,7 @@ $_thinkup_meta_layout = get_post_meta( $post->ID, '_thinkup_meta_layout', true )
 		} else if ( $_thinkup_meta_layout == 'option4' ) {
 			wp_enqueue_style ( 'sidebarright' );
 		}
-	} else if ( is_blog() and ! is_post_type_archive( 'portfolio' ) ) {
+	} else if ( thinkup_check_isblog() and ! is_post_type_archive( 'portfolio' ) ) {
 		if ( $thinkup_blog_layout == "option1" or empty( $thinkup_blog_layout ) ) {		
 			echo '';
 		} else if ( $thinkup_blog_layout == "option2" ) {
@@ -211,7 +211,7 @@ do_action('thinkup_sidebar_html');
 		} else if ( $_thinkup_meta_layout == 'option4' ) {
 			echo get_sidebar(); 
 		}
-	} else if ( is_blog() and ! is_post_type_archive( 'portfolio' ) ) {
+	} else if ( thinkup_check_isblog() and ! is_post_type_archive( 'portfolio' ) ) {
 		if ( $thinkup_blog_layout == "option1" or empty( $thinkup_blog_layout ) ) {		
 			echo '';
 		} else if ( $thinkup_blog_layout == "option2" ) {
@@ -316,7 +316,7 @@ $_thinkup_meta_sidebars = get_post_meta( $post->ID, '_thinkup_meta_sidebars', tr
 		} else {
 			$output = $_thinkup_meta_sidebars;
 		}	
-	} else if ( is_blog() and ! is_single() and ! is_post_type_archive( 'portfolio' ) ) {
+	} else if ( thinkup_check_isblog() and ! is_single() and ! is_post_type_archive( 'portfolio' ) ) {
 		$output = $thinkup_blog_sidebars;
 	} else if ( is_post_type_archive( 'portfolio' ) ) {	
 		$output = $thinkup_portfolio_sidebars;
@@ -380,7 +380,7 @@ global $post;
 		printf( __( 'Yearly Archives: %s', 'lan-thinkupthemes' ), get_the_date( 'Y' ) );
 	} elseif ( is_post_type_archive( 'portfolio' ) ) {
 		printf( __( 'Portfolio', 'lan-thinkupthemes' ) );
-	} elseif ( is_blog() ) {
+	} elseif ( thinkup_check_isblog() ) {
 		printf( __( 'Blog', 'lan-thinkupthemes' ) );
 	} else {
 		printf( __( '%s', 'lan-thinkupthemes' ), get_the_title() );

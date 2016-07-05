@@ -1,4 +1,4 @@
-/*  TABLE OF CONTENTS - LAST UPDATED 14/08/2015
+/*  TABLE OF CONTENTS - LAST UPDATED 07/11/2015
 01. ANIMATION
 02. BUTTONS
 03. CAROUSEL
@@ -800,6 +800,7 @@ div.wpcf7-mail-sent-ok {
     display: block;
 }
 .sc-grid .entry-header {
+	overflow: hidden;
 	position: relative;
 }
 .sc-grid .entry-header .image-overlay {
@@ -1225,6 +1226,7 @@ span.bar-per {
 /* ---------------------------------------------------------------------------- */
 
 .sc-knob {
+	position: relative;	
 	text-align: center;
 	pointer-events: none;
 	display: inline-block;
@@ -1233,6 +1235,7 @@ span.bar-per {
 	font-family: inherit !important;
 }
 .sc-knob-title {
+	position: relative;
 	width: 140px;
 	text-align: center;
 }

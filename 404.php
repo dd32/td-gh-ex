@@ -9,7 +9,7 @@ get_header(); ?>
 
 	<div class="entry-content title-404">
 
-		<h2><i class="icon-ban-circle"></i>404</h2>
+		<h2><i class="fa fa-ban"></i>404</h2>
 		<p>
 		<?php _e( 'Sorry, we could not find the page you are looking for.', 'lan-thinkupthemes' ); ?>
 		<br />
