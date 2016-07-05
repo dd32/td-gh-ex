@@ -59,6 +59,7 @@ function academic_setup() {
 		'caption',
 	) );
 
+
 	add_editor_style( 'editor-style.css' );
 
 	// Set up the WordPress core custom background feature.
@@ -104,11 +105,18 @@ add_action( 'widgets_init', 'academic_widgets_init' );
  * Enqueue scripts and styles.
  */
 function academic_scripts() {
+
 	wp_enqueue_style( 'academic-style', get_stylesheet_uri() );
+
+	wp_enqueue_style('fontawesome', get_template_directory_uri() . '/fontawesome/css/font-awesome.min.css', array( 'academic-style' ), '20151215' );
+
+	wp_enqueue_script('jquery');
 
 	wp_enqueue_script( 'academic-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'academic-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+
+	wp_enqueue_script( 'cycle-slider', get_template_directory_uri() . '/js/cycle2.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

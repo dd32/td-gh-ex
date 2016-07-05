@@ -3,7 +3,7 @@ Theme Name: Academic
 Author: Theme Palace
 Author URI: http://themepalace.com/
 Description: A clean educational theme
-Version: 0.1
+Version: 0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: academic
@@ -531,10 +531,10 @@ a:active {
 ## Menus
 --------------------------------------------------------------*/
 .main-navigation {
-	clear: both;
+	/*clear: both;*/
 	display: block;
-	float: left;
-	width: 100%;
+	/*float: left;
+	width: 100%;*/
 }
 
 .main-navigation ul {
@@ -542,18 +542,25 @@ a:active {
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
+	margin-top: 40px;
 }
 
 .main-navigation li {
 	float: left;
 	position: relative;
+	min-height: 66px;
 }
 
 .main-navigation a {
 	display: block;
 	text-decoration: none;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: bold;
 }
-
+.main-navigation li:not(:last-child) {
+    margin-right: 30px;
+}
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 	float: left;
@@ -639,6 +646,12 @@ a:active {
 	float: right;
 	text-align: right;
 	width: 50%;
+}
+#primary-menu {
+    float: right;
+}
+.site-header .current_page_item {
+    border-bottom: 2px solid #FFB700;
 }
 
 /*--------------------------------------------------------------
@@ -908,37 +921,160 @@ object {
 	clear: both;
 	width: 100%;
 }
-#page {
-	width: 1120px;
-	margin: 20px auto;
-}
 #masthead {
 	text-align: center;
 }
 .site-title a {
 	text-decoration: none;
+	color: #fff;
 }
 .banner-image {
 	width: 100%;
-}
-
-#page {
-    margin-top: 0;
 }
 .site-title {
    font-size: 32px;
    font-weight: bold;
    margin-bottom: 0;
+   margin-top: 10px;
 }
 .site-description {
    margin-top: 0;
+   color: #fff;
 }
 .site-header {
    position: absolute;
    right: 34%;
    top: 40%;
-   background-color: #ffffff;
+   background-color: #183851;
   	opacity: 0.6;
   	filter: alpha(opacity=60); /* For IE8 and earlier */
   	width: 30%;
+}
+.site-header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #183851;
+    width: 100%;
+    z-index: 3000;
+}
+.site-branding {
+    float: left;
+}
+.container {
+    margin: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.home #content {
+    margin: 0px 0 50px 0;
+}
+#content {
+    margin: 160px auto 50px auto;
+}
+.blog .site-content {
+	padding-left: 15px;
+	padding-right: 15px;
+	margin: auto;
+}
+
+/*------------------SLIDER------------*/
+section {
+	position: relative;
+}
+.controls {
+   position: absolute;
+   top: 45%;
+   width: 100%;
+   z-index: 300;
+}
+
+.main-slider:hover .cycle-next, .main-slider:hover .cycle-prev {
+   -webkit-transform: translateX(0px);
+   -moz-transform: translateX(0px);
+   -ms-transform: translateX(0px);
+   -o-transform: translateX(0px);
+   transform: translateX(0px);
+}
+
+.cycle-slideshow .cycle-prev {
+   -webkit-transform: translateX(-200px);
+   -moz-transform: translateX(-200px);
+   -ms-transform: translateX(-200px);
+   -o-transform: translateX(-200px);
+   transform: translateX(-200px);
+   -webkit-transition: all 0.5s ease-in-out;
+   -moz-transition: all 0.5s ease-in-out;
+   -ms-transition: all 0.5s ease-in-out;
+   -o-transition: all 0.5s ease-in-out;
+   transition: all 0.5s ease-in-out;
+   z-index: 300;
+   position: relative;
+}
+
+.cycle-prev {
+   float: left;
+   margin-left: 25px;
+}
+
+.controls .fa {
+   font-size: 20px;
+   color: #fff;
+   background: transparent;
+   width: 30px;
+   height: 30px;
+   line-height: 30px;
+   text-align: center;
+   border: 1px solid #fff;
+}
+
+.main-slider:hover .cycle-next, .main-slider:hover .cycle-prev {
+   -webkit-transform: translateX(0px);
+   -moz-transform: translateX(0px);
+   -ms-transform: translateX(0px);
+   -o-transform: translateX(0px);
+   transform: translateX(0px);
+}
+
+.cycle-slideshow .cycle-next {
+   -webkit-transform: translateX(200px);
+   -moz-transform: translateX(200px);
+   -ms-transform: translateX(200px);
+   -o-transform: translateX(200px);
+   transform: translateX(200px);
+   -webkit-transition: all 0.5s ease-in-out;
+   -moz-transition: all 0.5s ease-in-out;
+   -ms-transition: all 0.5s ease-in-out;
+   -o-transition: all 0.5s ease-in-out;
+   transition: all 0.5s ease-in-out;
+   z-index: 300;
+   position: relative;
+}
+
+.cycle-next {
+   float: right;
+   margin-right: 25px;
+}
+
+
+@media screen and (min-width: 768px) {
+	.container,.blog .site-content {
+	    width:750px;
+	}
+}
+@media screen and (min-width: 992px) {
+	.container,.blog .site-content {
+	    width:970px;
+	}
+}
+@media screen and (min-width: 1200px) {
+	.container,.blog .site-content {
+	    width:1170px;
+	}
+}
+@media screen and (max-width: 768px) {
+	.container,.blog .site-content {
+	    width:100%;
+	}
 }
