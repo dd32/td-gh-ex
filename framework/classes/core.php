@@ -23,7 +23,7 @@ if( ! class_exists( 'Agama_Core' ) ) {
 		 * @rewritten
 		 * @since 1.1.5
 		 */
-		static private $version = '1.2.0';
+		static private $version = '1.2.1';
 		
 		/**
 		 * Class Constructor
@@ -131,7 +131,7 @@ if( ! class_exists( 'Agama_Core' ) ) {
 				wp_enqueue_script( 'comment-reply' );
 			
 			// FontAwesome
-			wp_register_style( 'fontawesome', AGAMA_CSS . 'font-awesome.min.css', array(), self::$version );
+			wp_register_style( 'fontawesome', AGAMA_CSS . 'font-awesome.min.css', array(), '4.6.3' );
 			wp_enqueue_style( 'fontawesome' );
 			
 			// Enqueue Agama Woocommerce stylesheet
@@ -174,14 +174,17 @@ if( ! class_exists( 'Agama_Core' ) ) {
 			wp_register_script( 'agama-functions', AGAMA_JS . 'functions.js', array(), self::$version, true );
 			$translation_array = array(
 				'is_admin_bar_showing'	=> esc_attr( is_admin_bar_showing() ),
+				'is_home'				=> is_home(),
+				'is_front_page'			=> is_front_page(),
 				'headerStyle'			=> esc_attr( get_theme_mod( 'agama_header_style', 'transparent' ) ),
 				'headerImage'			=> esc_attr( get_header_image() ),
 				'top_navigation'		=> esc_attr( get_theme_mod( 'agama_top_navigation', true ) ),
 				'background_image'		=> esc_attr( get_header_image() ),
 				'primaryColor' 			=> esc_attr( get_theme_mod( 'agama_primary_color', '#A2C605' ) ),
 				'header_top_margin'		=> esc_attr( get_theme_mod( 'agama_header_top_margin', '0' ) ),
-				'slider_img_1'			=> esc_attr( get_theme_mod( 'agama_slider_image_1', AGAMA_IMG . 'header_img.jpg' ) ),
-				'slider_img_2'			=> esc_attr( get_theme_mod( 'agama_slider_image_2', AGAMA_IMG . 'header_img.jpg' ) )
+				'slider_enable'			=> esc_attr( get_theme_mod( 'agama_slider_enable', true ) ),
+				'slider_height'			=> esc_attr( get_theme_mod( 'agama_slider_height', '0' ) ),
+				'slider_time'			=> esc_attr( get_theme_mod( 'agama_slider_time', '7000' ) )
 			);
 			wp_localize_script( 'agama-functions', 'agama', $translation_array );
 			wp_enqueue_script( 'agama-functions' );

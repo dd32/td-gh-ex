@@ -193,6 +193,60 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'description'	=> __( 'Slider settings.', 'agama' ),
 		'priority'		=> 40,
 	) );
+	Kirki::add_section( 'agama_slider_general_section', array(
+		'title'			=> __( 'General', 'agama' ),
+		'description'	=> __( 'Slider general section.', 'agama' ),
+		'panel'			=> 'agama_slider_panel',
+		'capability'	=> 'edit_theme_options'
+	) );
+	Kirki::add_field( 'agama_slider_enable', array(
+		'label'			=> __( 'Enable', 'agama' ),
+		'description'	=> __( 'Enable slider ?', 'agama' ),
+		'section'		=> 'agama_slider_general_section',
+		'settings'		=> 'agama_slider_enable',
+		'type'			=> 'switch',
+		'default'		=> true
+	) );
+	Kirki::add_field( 'agama_slider_height', array(
+		'label'			=> __( 'Height', 'agama' ),
+		'description'	=> __( 'Set slider height in pixels (px).', 'agama' ),
+		'help'			=> __( 'Set 0 for full-screen slider.', 'agama' ),
+		'section'		=> 'agama_slider_general_section',
+		'settings'		=> 'agama_slider_height',
+		'type'			=> 'number',
+		'choices'		=> array(
+			'min'		=> '0',
+			'max'		=> '1000',
+			'step'		=> '1'
+		),
+		'default'		=> '0'
+	) );
+	Kirki::add_field( 'agama_slider_time', array(
+		'label'			=> __( 'Time', 'agama' ),
+		'description'	=> __( 'Milliseconds between the end of the sliding effect and the start of the nex one.', 'agama' ),
+		'help'			=> __( '1000ms = 1sec.', 'agama' ),
+		'section'		=> 'agama_slider_general_section',
+		'settings'		=> 'agama_slider_time',
+		'type'			=> 'number',
+		'choices'		=> array(
+			'min'		=> '1000',
+			'max'		=> '28000',
+			'step'		=> '1'
+		),
+		'default'		=> '7000'
+	) );
+	Kirki::add_field( 'agama_slider_visibility', array(
+		'label'			=> __( 'Visibility', 'agama' ),
+		'description'	=> __( 'Select where the slider should be visible.', 'agama' ),
+		'section'		=> 'agama_slider_general_section',
+		'settings'		=> 'agama_slider_visibility',
+		'type'			=> 'select',
+		'choices'		=> array(
+			'homepage'	=> __( 'Homepage', 'agama' ),
+			'frontpage'	=> __( 'Front Page', 'agama' )
+		),
+		'default'		=> 'homepage'
+	) );
 	Kirki::add_section( 'agama_slide_1_section', array(
 		'title'			=> __( 'Slide #1', 'agama' ),
 		'description'	=> __( 'Upload slider image.', 'agama' ),
@@ -433,6 +487,26 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'title'			=> __( 'Frontpage Boxes', 'agama' ),
 		'description'	=> __( 'Frontpage boxes section.', 'agama' ),
 		'priority'		=> 60
+	) );
+	Kirki::add_section( 'agama_frontpage_general_section', array(
+		'title'			=> __( 'General', 'agama' ),
+		'description'	=> __( 'Frontpage boxes general section.', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+		'priority'		=> 60,
+		'panel'			=> 'agama_frontpage_boxes_panel'
+	) );
+	Kirki::add_field( 'agama_frontpage_boxes_visibility', array(
+		'label'			=> __( 'Visibility', 'agama' ),
+		'description'	=> __( 'Select where you want frontpage boxes to be visible.', 'agama' ),
+		'section'		=> 'agama_frontpage_general_section',
+		'settings'		=> 'agama_frontpage_boxes_visibility',
+		'type'			=> 'select',
+		'choices'		=> array(
+			'homepage'	=> __( 'Homepage', 'agama' ),
+			'frontpage'	=> __( 'Front Page', 'agama' ),
+			'allpages'	=> __( 'All Pages', 'agama' )
+		),
+		'default'		=> 'homepage'
 	) );
 	Kirki::add_section( 'agama_frontpage_boxes_section_1', array(
 		'title'			=> __( 'Frontpage Box #1', 'agama' ),
@@ -747,7 +821,6 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 			'max'		=> '500'
 		),
 		'default'		=> '70'
-		
 	) );
 	Kirki::add_field( 'agama_blog_readmore_url', array(
 		'label'			=> __( 'Read More', 'agama' ),
@@ -830,6 +903,21 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'description'	=> __( 'Header V1 styling section.', 'agama' ),
 		'capability'	=> 'edit_theme_options',
 		'panel'			=> 'agama_styling_panel'
+	) );
+	Kirki::add_field( 'agama_header_v1_bg_color', array(
+		'label'			=> __( 'Header BG Color', 'agama' ),
+		'description'	=> __( 'Select header background color.', 'agama' ),
+		'section'		=> 'agama_styling_header_v1_section',
+		'settings'		=> 'agama_header_v1_bg_color',
+		'alpha'			=> true,
+		'type'			=> 'color',
+		'output'		=> array(
+			array(
+				'element'	=> '.header_v1 .sticky-header',
+				'property'	=> 'background-color'
+			)
+		),
+		'default'		=> 'rgba( 255, 255, 255, .1 )'
 	) );
 	Kirki::add_field( 'agama_header_v1_logo_color', array( 
 		'label'			=> __( 'Logo Color', 'agama' ),
@@ -1363,9 +1451,10 @@ function agama_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		new Agama_Customize_Agama_Support(
 			$wp_customize,'agama_support', array(
-				'label'		=> __('Agama Upgrade', 'agama'),
-				'section'	=> 'agama_support_section',
-				'settings'	=> 'agama_support',
+				'label'			=> __( 'Agama Upgrade', 'agama' ),
+				'description'	=> __( 'Agama Upgrade', 'agama' ),
+				'section'		=> 'agama_support_section',
+				'settings'		=> 'agama_support',
 			)
 		)
 	);
@@ -1381,9 +1470,10 @@ function agama_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		new Agama_Customize_Agama_Pro(
 			$wp_customize, 'agama_share_icons', array(
-				'label'		=> __( 'Share Box', 'agama' ),
-				'section'	=> 'agama_share_icons_section',
-				'settings'	=> 'agama_share_icons'
+				'label'			=> __( 'Share Box', 'agama' ),
+				'description'	=> __( 'Share Box', 'agama' ),
+				'section'		=> 'agama_share_icons_section',
+				'settings'		=> 'agama_share_icons'
 			)
 		)
 	);
@@ -1400,6 +1490,7 @@ function agama_customize_register( $wp_customize ) {
 		new Agama_Customize_Agama_Pro( 
 			$wp_customize, 'agama_typography', array(
 				'label'			=> __( 'Typography', 'agama' ),
+				'description'	=> __( 'Typography', 'agama' ),
 				'section'		=> 'agama_typography_section',
 				'settings'		=> 'agama_typography',
 			)
@@ -1542,6 +1633,7 @@ function agama_customize_css() { ?>
 	.mobile-menu-toggle { background-color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#A2C605' ) ); ?>;}
 	nav.mobile-menu { background: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#A2C605' ) ); ?>; }
 	
+	<?php if( get_theme_mod( 'agama_slider_enable', true ) ): ?>
 	/* SLIDER
 	 *********************************************************************************/
 	#agama_slider .slide-content.slide-1 {
@@ -1556,6 +1648,7 @@ function agama_customize_css() { ?>
 	#agama_slider .slide-content.slide-2 a.button-3d:hover {
 		background-color: <?php echo esc_attr( get_theme_mod( 'agama_slider_button_bg_color_2', '#A2C605' ) ); ?> !important;
 	}
+	<?php endif; ?>
 	
 	<?php if( ! is_active_sidebar( 'sidebar-1' ) ): ?>
 	#content[role=main] {
@@ -1612,7 +1705,7 @@ function agama_customize_css() { ?>
 	<?php if( get_theme_mod( 'agama_header_style', 'transparent' ) == 'transparent' ): ?>
 	/* HEADER V1
 	 *********************************************************************************/
-	.header_v1 .sticky-header { background-color: transparent; position: fixed; box-shadow: none; -webkit-box-shadow: none; border-bottom: 2px solid rgba(255,255,255, .1); }
+	.header_v1 .sticky-header { position: fixed; box-shadow: none; -webkit-box-shadow: none; border-bottom: 2px solid rgba(255,255,255, .1); }
 	.header_v1 .sticky-header-shrink { background-color: rgba(255, 255, 255, .95); }
 	.header_v1 .site-header .sticky-header-shrink h1 a, .site-header .sticky-header-shrink h2 a { color: #000; }
 	.header_v1 .site-header .sticky-header-shrink nav a { color: #000; }

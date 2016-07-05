@@ -64,12 +64,28 @@ var THEMEVISION = THEMEVISION || {};
 		},
 		
 		slider: function() {
-			if( agama.slider_img_1 !== '' || agama.slider_img_2 !== '' ) {
+			if( agama.slider_enable ) {
 				
-				if( true == agama.is_admin_bar_showing ) {
+				if( agama.headerStyle == 'transparent' && true == agama.is_admin_bar_showing ) {
 					var $height = THEMEVISION.initialize.height() - 32;
-				} else {
+				} else if( agama.headerStyle == 'transparent' && ! agama.is_admin_bar_showing ) {
 					var $height = THEMEVISION.initialize.height();
+				}
+				
+				if( agama.headerStyle == 'default' && true == agama.is_admin_bar_showing ) {
+					var $height = THEMEVISION.initialize.height() - 32 - $header.height();
+				} else if( agama.headerStyle == 'default' && ! agama.is_admin_bar_showing ) {
+					var $height = THEMEVISION.initialize.height() - $header.height();
+				}
+				
+				if( agama.headerStyle == 'sticky' && true == agama.is_admin_bar_showing ) {
+					var $height = THEMEVISION.initialize.height() - 32 - $header.height();
+				} else if( agama.headerStyle == 'sticky' && ! agama.is_admin_bar_showing ) {
+					var $height = THEMEVISION.initialize.height() - $header.height();
+				}
+				
+				if( agama.slider_height > 0 ) {
+					var $height = agama.slider_height;
 				}
 				
 				$slider.camera({
@@ -78,6 +94,7 @@ var THEMEVISION = THEMEVISION || {};
 					loaderColor: agama.primaryColor,
 					overlay: false,
 					fx: 'simpleFade',
+					time: agama.slider_time,
 					pagination: false,
 					thumbnails: false,
 					transPeriod: 1000,
@@ -130,7 +147,7 @@ var THEMEVISION = THEMEVISION || {};
 		
 		header_v1: function() {
 			if( agama.headerStyle == 'transparent' ) {
-				if( ! agama.headerImage && ! agama.slider_img_1 && ! agama.slider_img_2 ) {
+				if( ! agama.headerImage && ! agama.slider_enable || agama.slider_enable && $('#agama_slider').hasClass('camera_wrap') == false ) {
 					$headerV1.css('position', 'relative');
 					$window.on('scroll', function() {
 						if( jQuery(this).scrollTop() > 1 ) {

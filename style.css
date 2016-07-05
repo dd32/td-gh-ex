@@ -4,10 +4,10 @@
  Author: Jaroslav Svetlik
  Author URI: http://theme-vision.com/
  Description: Agama is a free Multi-Purpose WordPress theme. It’s perfect for web agency business, corporate business, personal and parallax business portfolio, photography sites and freelancer. Is built on BootStrap with parallax support, is responsive, clean, modern, flat and minimal. Agama is e-commerce (WooCommerce) Compatible, WPML, RTL, Retina-Ready, SEO Friendly and with parallax. 3 Superb header variations. Check demo: http://demo.theme-vision.com
- Version: 1.2.0
+ Version: 1.2.1
  License: GNU General Public License v2 or later
  License URI: http://www.gnu.org/licenses/gpl-2.0.html
- Tags: light,dark, white, one-column, two-columns, right-sidebar, left-sidebar, fluid-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+ Tags: one-column, two-columns, right-sidebar, left-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, e-commerce, education, entertainment, food-and-drink, news, photography
  Text Domain: agama
 */
 
@@ -3080,13 +3080,6 @@ img#wpstats {
 }
 @viewport {
 	width: device-width;
-}
-
-/* Maximum width of 600px. */
-@media screen and (max-width: 600px) {
-	#wpadminbar {
-		position: fixed;
-	}
 }
 
 /* Maximum width of 767px. */

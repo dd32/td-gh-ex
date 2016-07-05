@@ -74,14 +74,14 @@ if( ! class_exists( 'Agama_About' ) ) {
 				
 				echo '<div class="changelog point-releases">';
 					echo sprintf( '<h3>Changelog Agama v%s</h3>', Agama_Core::version() );
-						echo '<p>ADDED: Transparent header (Header V1) feature.</p>';
-						echo '<p>ADDED: Transparent header (Header V1) styling feature.</p>';
-						echo '<p>ADDED: Slider features.</p>';
-						echo '<p>ADDED: Logo max-height feature.</p>';
-						echo '<p>ADDED: German translation files (Credits: Thomas Moritz).</p>';
-						echo '<p>UPDATED: Rewritten customizer options completely.</p>';
-						echo '<p>UPDATED: Mobile menu completely rewritten.</p>';
-						echo '<p>UPDATED: Language translation files.</p>';
+						echo '<p>* ADDED: Header V1 background color feature.</p>';
+						echo '<p>* ADDED: Slider general section with few features.</p>';
+						echo '<p>* ADDED: Frontpage boxes general section with few features.</p>';
+						echo '<p>* UPDATED: Header image & slider can work on same time now.</p>';
+						echo '<p>* UPDATED: Theme translation files.</p>';
+						echo '<p>* UPDATED: FontAwesome files to latest version.</p>';
+						echo '<p>* FIXED: Header V2 & V3 slider height bug.</p>';
+						echo '<p>* FIXED: Agama slider image caching issue.</p>';
 				echo '</div>';
 				
 			echo '</div>';

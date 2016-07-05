@@ -2,6 +2,16 @@ Agama WordPress Theme, Copyright 2015 Theme-Vision.com
 Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
+= 1.2.1 Jul 05 2016 =
+* ADDED: Header V1 background color feature.
+* ADDED: Slider general section with few features.
+* ADDED: Frontpage boxes general section with few features.
+* UPDATED: Header image & slider can work on same time now.
+* UPDATED: Theme translation files.
+* UPDATED: FontAwesome files to latest version.
+* FIXED: Header V2 & V3 slider height bug.
+* FIXED: Agama slider image caching issue.
+
 = 1.2.0 Mar 3 2016 =
 * ADDED: Transparent header (Header V1) feature.
 * ADDED: Transparent header (Header V1) styling feature.
@@ -154,7 +164,7 @@ Agama is distributed under the terms of the GNU GPL2
  
  Images used in Screenshot are licensed under Creative Commons Zero License:
 
- * John Cobb - https://unsplash.com/johncobb - https://unsplash.com/photos/ssAcdlJRsI4 - CC0 1.0 License
+ * CAIO - https://www.pexels.com/u/caio/ - https://www.pexels.com/photo/books-notebook-macbook-table-56759/ - CC0 1.0 License
  
  Unless otherwise specified, all the theme files, scripts and images
  are licensed under GNU General Public License version 2, see file license.txt.

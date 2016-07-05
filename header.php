@@ -51,12 +51,7 @@
 	#############################################################
 	# SLIDER ACTION
 	#############################################################
-	if( get_theme_mod( 'agama_slider_image_1', AGAMA_IMG . 'header_img.jpg' ) || 
-		get_theme_mod( 'agama_slider_image_2', AGAMA_IMG . 'header_img.jpg' ) ):
-	
-		do_action( 'agama_slider_action' );
-	
-	endif;
+	do_action( 'agama_slider_action' );
 	#############################################################
 	# BREADCRUMB ACTION
 	#############################################################
@@ -78,8 +73,4 @@
 				#############################################################
 				# FRONTPAGE BOXES ACTION
 				#############################################################
-				if( get_theme_mod('agama_frontpage_boxes_everywhere', false) || is_home() || is_front_page() ):
-				
-					do_action( 'agama_frontpage_boxes_action' ); 
-					
-				endif; ?>
+				do_action( 'agama_frontpage_boxes_action' ); ?>
