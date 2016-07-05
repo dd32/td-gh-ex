@@ -93,6 +93,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.2.11
+- Fixed:   ThinkUpSlider now checks to see if any slide is assigned, rather than just the first slide. Corrects issue where deleting slides resulted in issues.
+
 Version 1.2.10
 - Fixed:   Checkbox field saves as as "off" when unticked.
 - Fixed:   Switch field saves as as "off" when switched off.
