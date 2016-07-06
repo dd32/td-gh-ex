@@ -1,15 +1,15 @@
 /*
 Theme Name: Arunachala
-Theme URI: http://cvani.in/themes/arunachala/
+Theme URI: http://cvani.com/themes/arunachala/
 Author: Rajesh Gupta
-Author URI: http://www.cvani.in
-Description: The Arunachala theme is a simple, light, responsive WordPress theme designed to look great on any screen size from mobile devices to large desktops. It's main features are (1) Responsive Slider on homepage to highlight featured contents (2) The three-column grid view on homepage can be customized to show posts from a selected category (3) Full width image & gallery post formats. Other features include - widgets ready sidebar, custom background, custom header image, custom site title color, custom menu, post format support, translation ready and RTL (Right to left) language support. 
-Version: 1.5
+Author URI: http://www.cvani.com
+Description: The Arunachala theme is a simple, light, responsive WordPress theme designed to look great on any screen size from mobile devices to large desktops. It's main features are (1) Responsive Slider on homepage to highlight featured contents (2) The three-column grid view on homepage can be customized to show posts from a selected category (3) Full width image & gallery post formats. Other features include - widgets ready sidebar, custom background, custom header image, custom site title color, custom menu, post format support, translation ready and RTL (Right to left) language support.
+Version: 1.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: arunachala
 Domain Path: /languages/
-Tags: black, blue, white, light, two-columns, right-sidebar, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, translation-ready
+Tags: two-columns, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -45,7 +45,7 @@ and Blueprint http://www.blueprintcss.org/
 11.0 - Infinite scroll
 12.0 - Media
 13.0 - Structure
-	13.1 - Featured Posts Slider 
+	13.1 - Featured Posts Slider
 14.0 - Media Queries
 	14.1 - Tablet
 	14.2 - Desktop
@@ -243,7 +243,7 @@ pre {
 	max-width: 100%;
 	overflow: auto;
 	padding: 1.6em;
-	word-wrap: break-word;	
+	word-wrap: break-word;
 }
 
 code, kbd, tt, var {
@@ -466,6 +466,9 @@ textarea {
 /*--------------------------------------------------------------
 5.0 Navigation
 --------------------------------------------------------------*/
+.pagination {
+	text-align:center;
+}
 /*--------------------------------------------------------------
 5.1 Links
 --------------------------------------------------------------*/
@@ -516,7 +519,7 @@ a:active {
 	font-size: 1.2rem;
 	padding: 7px 0;
 	text-decoration: none;
-	text-transform: uppercase;	
+	text-transform: uppercase;
 	word-wrap: break-word;
 }
 
@@ -549,7 +552,7 @@ a:active {
 	position: absolute;
 	right: 0;
 	text-align: center;
-	top: 0;	
+	top: 0;
 	width: 48px;
 }
 
@@ -663,7 +666,7 @@ a:active {
 	font-size: 1.4rem;
 	line-height: 1.8;
 	margin: 0 0 3em;
-	word-wrap: break-word;	
+	word-wrap: break-word;
 }
 
 .widget-title,
@@ -794,11 +797,11 @@ body.archive .page-title {
 	text-transform: uppercase;
 }
 
-.entry-content h1, 
-.entry-content h2, 
-.entry-content h3, 
-.entry-content h4, 
-.entry-content h5, 
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
 .entry-content h6 {
     margin-bottom: 0.8em;
 }
@@ -837,7 +840,7 @@ body.archive .page-title {
 .entry-content,
 .entry-summary {
 	margin: 1.5em 0;
-	word-wrap: break-word;	
+	word-wrap: break-word;
 }
 
 .page-links {
@@ -964,7 +967,7 @@ li.pingback {
 	font-size: 14px;
 	font-size: 1.4rem;
 	margin: 1em 0 0 3.5em;
-	word-wrap: break-word;	
+	word-wrap: break-word;
 }
 
 .comment .reply {
@@ -994,7 +997,7 @@ li.pingback a {
 --------------------------------------------------------------*/
 .error404 .search-form {
 	margin-bottom: 2em;
-}	
+}
 /*--------------------------------------------------------------
 10.5 Genericons
 --------------------------------------------------------------*/
@@ -1230,7 +1233,7 @@ object {
 	font-size: 20px;
 	font-size: 2rem;
 	text-transform: uppercase;
-	word-wrap: break-word;	
+	word-wrap: break-word;
 }
 
 .site-title a {
@@ -1271,7 +1274,7 @@ object {
 }
 
 /*--------------------------------------------------------------
-13.1 Featured Posts Slider 
+13.1 Featured Posts Slider
 --------------------------------------------------------------*/
 #slider {
 	background: #4169e1;
@@ -1290,7 +1293,7 @@ object {
 .slider-content {
 	background: rgba(0, 0, 0, .5);
 	bottom: 0;
-	color: #fff;	
+	color: #fff;
 	display: block;
 	left: 0;
 	max-width: 500px;
@@ -1316,7 +1319,7 @@ object {
 	display: none;
 }
 
-.tcycle { 
+.tcycle {
 	margin: 0 auto;
 	max-width: 500px;
 	width: 100%;
@@ -1340,7 +1343,7 @@ object {
 		display: block;
 		margin: 0 auto;
 		max-width: 960px;
-	}	
+	}
 
 	.content-area {
 		float: left;
@@ -1415,17 +1418,17 @@ object {
 		display: block;
 	}
 
-	.tcycle { 
-		width: 100%; 
+	.tcycle {
+		width: 100%;
 		max-width: 960px;
-		margin: 0 auto; 
+		margin: 0 auto;
 	}
 
 	.tcycle article {
 		width: 100%;
 	}
-	
-	.tcycle img { 
+
+	.tcycle img {
 		display: block;
 		height: auto;
 		width: 100%;
@@ -1475,10 +1478,10 @@ object {
 		white-space: nowrap;
 	}
 
-	.main-navigation ul ul { 
+	.main-navigation ul ul {
 		background: #333;
 		float: left;
-		left: -999em;		
+		left: -999em;
 		margin: 0;
 		position: absolute;
 		top: 48px;

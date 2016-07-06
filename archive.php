@@ -90,7 +90,11 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php arunachala_paging_nav(); ?>
+			<?php the_posts_pagination(array(
+				'prev_text'          => __( 'Previous page', 'arunachala' ),
+				'next_text'          => __( 'Next page', 'arunachala' ),
+				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'arunachala' ) . ' </span>',
+			)); ?>
 
 		<?php else : ?>
 

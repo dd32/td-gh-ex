@@ -1,11 +1,11 @@
 == Arunachala ==
-Designed and developed by http://cvani.in 
-Demo: http://demo.cvani.in/arunachala/
+Designed and developed by http://cvani.com
+Demo: http://demo.cvani.com/arunachala/
 Contributors: rajeshcvani
-Tags: Tags: black, blue, white, light, two-columns, right-sidebar, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, translation-ready
-Requires at least: 4.0
-Tested up to: 4.2.1
-Stable tag: 1.5
+Tags: Tags: light, two-columns, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, translation-ready
+Requires at least: 4.4
+Tested up to: 4.5.3
+Stable tag: 1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,11 +19,11 @@ Description: The Arunachala theme is a simple, light, responsive WordPress theme
 == Theme Setup ==
 
 == Setting up slider on Front Page or Homepage ==
-All posts marked as 'sticky' go to the homepage slider automatically. 
+All posts marked as 'sticky' go to the homepage slider automatically.
 To make a post sticky follow these steps:
 
     - In the Post editor find the “Publish” section.
-    - Next to“Visibility” click on Edit and then check the “Stick this post to the front page” option there.
+    - Next to “Visibility” click on Edit and then check the “Stick this post to the front page” option there.
     - Click OK and update your post.
 
 
@@ -33,23 +33,22 @@ By default latest posts from all categories are displayed in a grid format on ho
     - From Dashboard, go to Appearance > Customize > Homepage Content Category
     - Select a category for homepage.
 
-For more details, visit http://cvani.in/themes/arunachala/
+For more details, visit http://cvani.com/themes/arunachala/
 
 == Theme Support ==
 For support, please visit: http://wordpress.org/support/theme/arunachala
 
 == Changelog ==
 
-= 1.5 =
-* Aligned image left/right margin bug fix
-* Site content background transparency removed for better legibility
-* Minor fix to support title-tag introduced in WordPress 4.1 
-* Minor fix to replace depreciated functions
+= 1.6 =
+* Theme URI & Author URI updated
+* Deprecated theme tags removed
+* Improved code for post and page navigation
 
 == Upgrade Notice ==
 
-= 1.5 =
-* This version fixes minor bugs and supports new WordPress features.
+= 1.6 =
+* This version supports new WordPress features.
 
 == Resources ==
 
@@ -71,4 +70,3 @@ Slider image : http://pixabay.com/en/yoga-sport-person-amazing-view-20647/
 1st image in content area : http://pixabay.com/en/seagull-birds-beach-183229/
 2nd image in content area : http://pixabay.com/en/photographer-camera-lens-slr-16022/
 3rd image in content area : http://pixabay.com/en/children-diving-krishna-river-200396/
-

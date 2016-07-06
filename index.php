@@ -30,7 +30,11 @@ get_header(); ?>
 				?>
 
 			<?php endwhile; ?>
-			<?php arunachala_paging_nav(); ?>
+			<?php the_posts_pagination(array(
+				'prev_text'          => __( 'Previous page', 'arunachala' ),
+				'next_text'          => __( 'Next page', 'arunachala' ),
+				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'arunachala' ) . ' </span>',
+			)); ?>
 		<?php else : ?>
 
 			<?php get_template_part( 'content', 'none' ); ?>
@@ -40,6 +44,6 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php if ( !is_home () ) 
+<?php if ( !is_home () )
 	get_sidebar(); ?>
 <?php get_footer(); ?>
