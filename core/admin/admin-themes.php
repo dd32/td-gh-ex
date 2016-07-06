@@ -120,8 +120,8 @@ if (!function_exists('enigmadisplay_theme_info_page')) {
 					<span class="price-number">$<span>41</span></span>
 				</div>
 				<div class="btn-group-vertical">
-					<a class="btn btn-primary btn-lg" href="http://demo.weblizar.com/healthcare-premium/">Detail</a>
-					<a class="btn btn-success btn-lg" href="http://demo.weblizar.com/healthcare-premium/">Buy Now</a>
+					<a class="btn btn-primary btn-lg" href="https://weblizar.com/themes/healthcare/">Detail</a>
+					<a class="btn btn-success btn-lg" href="https://weblizar.com/themes/healthcare/">Buy Now</a>
 				</div>				
 			</div>
 		</div>
@@ -408,39 +408,6 @@ if (!function_exists('enigmadisplay_theme_info_page')) {
 				<div class="btn-group-vertical">
 					<a class="btn btn-primary btn-lg" href="http://demo.weblizar.com/gallery-pro-by-weblizar/">Demo</a>
 					<a class="btn btn-success btn-lg" href="https://weblizar.com/plugins/gallery-pro/">Buy Now</a>
-				</div>			
-			</div>
-		</div>
-		<div class="row p_plugin blog_gallery">
-			<div class="col-xs-12 col-sm-4 col-md-5 p_plugin_pic">
-				<div class="img-thumbnail">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/instagram-gallery-pro.jpg" class="img-responsive" alt=""/>
-				</div>
-			</div>
-			<div class="col-xs-12 col-sm-5 col-md-5 p_plugin_desc">
-				<div class="row p-box">
-					<h2><a href="">Instagram Gallery Pro- Display Instagram Images</a></h2>
-						<p><strong>Features: </strong>
-						<ul>
-						<li>Responsive Design<li>
-						<li>Animation Effects</li>
-						<li>Number of LightBox Style</li>
-						<li>Number of Gallery Layout</li>
-						<li>Image Style Layout</li>
-						<li>Profile Backgound Image Option</li>
-						<li>Multiple Instagram Shortcode etc..</li>
-						</ul>
-						</p>
-				</div>
-			</div>
-			<div class="col-xs-12 col-sm-3 col-md-2 p_plugin_pic">
-				<div class="price">
-					<span class="currency">USD</span>
-					<span class="price-number">$<span>15</span></span>
-				</div>
-				<div class="btn-group-vertical">
-					<a class="btn btn-primary btn-lg" href="http://demo.weblizar.com/instagram-gallery-pro-demo/">Demo</a>
-					<a class="btn btn-success btn-lg" href="https://weblizar.com/plugins/instagram-gallery-pro/">Buy Now</a>
 				</div>			
 			</div>
 		</div>

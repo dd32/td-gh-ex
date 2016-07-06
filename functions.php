@@ -145,7 +145,13 @@
 		// theme support 	
 		$args = array('default-color' => '000000',);
 		add_theme_support( 'custom-background', $args); 
-		add_theme_support( 'automatic-feed-links'); 
+		add_theme_support( 'automatic-feed-links');
+		
+		/*
+		 * This theme styles the visual editor to resemble the theme style,
+		 * specifically font, colors, icons, and column width.
+		 */
+		add_editor_style('css/editor-style.css');
 		require( WL_TEMPLATE_DIR . '/options-reset.php'); //Reset Theme Options Here				
 	}
 	
