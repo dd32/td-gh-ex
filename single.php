@@ -45,9 +45,10 @@ get_header(); ?>
                 <div id="primary" class="content-area">
             
             			<?php get_template_part( 'content', 'single' ); ?>
-            
+                        <div class="clearfix">
             			<?php the_post_navigation(); ?>
-            
+                        </div>
+                        
                         <?php if($enable_comments_post == 1) : ?>
             			<?php
             				// If comments are open or we have at least one comment, load up the comment template

@@ -62,6 +62,11 @@ class Accesspress_Basic_Features_Widget extends WP_Widget {
                 'apbasic_widgets_name' => 'feature_post_6',
                 'apbasic_widgets_title' => __('Page','accesspress-basic'),
                 'apbasic_widgets_field_type' => 'selectpage'
+            ),
+            'feature_text_length' => array(
+                'apbasic_widgets_name' => 'feature_text_length',
+                'apbasic_widgets_title' => __('Text Length','accesspress-basic'),
+                'apbasic_widgets_field_type' => 'text'
             )
 		);
 		
@@ -85,6 +90,7 @@ class Accesspress_Basic_Features_Widget extends WP_Widget {
         $features_readmore_text = $apbasic_settings['features_readmore_text'];
 
 		$feature_posts = array_values($instance);
+        $feature_text_length = isset($instance['feature_text_length']) ? $instance['feature_text_length'] : 30;
 
         if(!empty($feature_posts)) :
             
@@ -126,7 +132,7 @@ class Accesspress_Basic_Features_Widget extends WP_Widget {
                         </a>
                         <div class="feature-post-excerpt">
                             <?php $content = trim(strip_tags(strip_shortcodes( get_the_content() ))); ?>
-                            <?php echo wp_trim_words($content,35,'...'); ?>
+                            <?php echo wp_trim_words($content, $feature_text_length,'...'); ?>
                         </div>
                         <a class="feat_readmore-button readmore-button" href="<?php the_permalink(); ?>">
                             <?php if(empty($features_readmore_text)) : ?>

@@ -113,4 +113,9 @@ Version 3.0.2
 Version 3.0.3
 ===============
 * Fixed issue of appearing shortcode tags in feature section in home page.
-* Fixed issue of appearing shortcode tags in service section in home page.
+
+Version 3.0.4
+===============
+* Added the option to set the excerpt length for the featured post section.
+* Fixed formatting of html tags in toggle widget.
+* Fixed navigation text overflow in single post page.

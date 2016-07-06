@@ -46,7 +46,8 @@ class Accesspress_Basic_Toggle_Widget extends WP_Widget {
             'toggle_content' => array(
                 'apbasic_widgets_name' => 'toggle_content',
                 'apbasic_widgets_title' => __('Toggle Content','accesspress-basic'),
-                'apbasic_widgets_field_type' => 'textarea'
+                'apbasic_widgets_field_type' => 'textarea',
+                'apbasic_widgets_allowed_tags' => '<p><i><u><strong><table><tr><td><th>'
             ),
             'toggle_status' => array(
                 'apbasic_widgets_name' => 'toggle_status',
@@ -81,8 +82,9 @@ class Accesspress_Basic_Toggle_Widget extends WP_Widget {
                 <?php if(!empty($toggle_title)) : ?>
                     <div class="ap_toggle_title"><?php echo esc_attr($toggle_title); ?></div>           
                 <?php endif; ?>
-                <?php if(!empty($toggle_content)) : ?>   
-                    <div class="ap_toggle_content"><?php echo esc_textarea($toggle_content); ?></div>
+                <?php if(!empty($toggle_content)) : ?>  
+                	<?php $apbasic_widgets_allowed_tags = '<p><i><u><strong><table><tr><td><th>'; ?> 
+                    <div class="ap_toggle_content"><?php echo strip_tags( $toggle_content, $apbasic_widgets_allowed_tags ); ?></div>
                 <?php endif; ?>
             </div>
         <?php endif; ?>
