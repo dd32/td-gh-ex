@@ -26,6 +26,7 @@ function fkidd_setup() {
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
 		'primary'   => __( 'primary menu', 'fkidd' ),
+		'footer'   => __( 'footer menu', 'fkidd' ),
 	) );
 
 	add_theme_support( 'post-thumbnails' );
