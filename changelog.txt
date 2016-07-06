@@ -2,6 +2,9 @@ Changelog for Iconic One WordPress Responsive Theme | Visit http://themonic.com/
 
 -------------- July 2016 ----------------
 
+06/07/2016  - Version 1.7.5
+
+- Setting Excerpts to default on home like before for existing users. Last commit didn't work as expected.
 
 05/07/2016  - Version 1.7.4
 

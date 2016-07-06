@@ -39,7 +39,7 @@
 			
 		</header><!-- .entry-header -->
 
-		<?php if ( is_home() &&( get_theme_mod( 'iconic_one_full_post' ) == '1' ) ) : // Check Live Customizer for Full/Excerpts Post Settings ?>
+		<?php if ( is_home() && ( get_theme_mod( 'iconic_one_full_post' , '1' ) == '1' ) ) : // Check Live Customizer for Full/Excerpts Post Settings ?>
 			<?php iconic_one_excerpts() ?>	
 				<?php elseif( is_search() || is_category() || is_tag()  ): ?>
 					<?php iconic_one_excerpts() ?>	
