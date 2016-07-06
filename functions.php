@@ -1,5 +1,5 @@
 <?php
-function silver_quantum_setup() {
+function silverquantum_setup() {
 
 // Setup Content Width value based on the theme's design and stylesheet.
 global $content_width;
@@ -7,9 +7,9 @@ if (!isset($content_width))
 	$content_width = 650;
 	
 //Header Menu Section
-register_nav_menu('header-menu', __('Header Menu', 'silver-quantum'));
+register_nav_menu('header-menu', __('Header Menu', 'silverquantum'));
 
-load_theme_textdomain( 'silver-quantum', get_template_directory() . '/languages' );
+load_theme_textdomain( 'silverquantum', get_template_directory() . '/languages' );
 
 // This theme supports a variety of post formats.
 add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote', 'status' ) );
@@ -32,16 +32,16 @@ add_theme_support('custom-background', array(
 add_theme_support('title-tag');
 
 }
-add_action('after_setup_theme', 'silver-quantum_setup');
+add_action('after_setup_theme', 'silverquantum_setup');
 
 // Add Support for Custom Header Image.
 require(get_template_directory() . '/include/custom-header.php');
 
-function silver_quantum_widgets_init() {
+function silverquantum_widgets_init() {
 	register_sidebar( array (
-		'name' 				=> __('Main Sidebar', 'silver-quantum'),
+		'name' 				=> __('Main Sidebar', 'silverquantum'),
 		'id'				=> 'sidebar-1',	
-		'description' 		=>__('Appear on Posts Only', 'silver-quantum'),
+		'description' 		=>__('Appear on Posts Only', 'silverquantum'),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' 		=> '</aside>',
 		'before_title' 		=> '<h2 class="widget-title">',
@@ -49,9 +49,9 @@ function silver_quantum_widgets_init() {
 	));
 	
 	register_sidebar( array (
-		'name' 				=> __('Secondary Sidebar', 'silver-quantum'),
+		'name' 				=> __('Secondary Sidebar', 'silverquantum'),
 		'id'				=> 'sidebar-2',	
-		'description' 		=>__('Appear on Pages Only', 'silver-quantum'),
+		'description' 		=>__('Appear on Pages Only', 'silverquantum'),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' 		=> '</aside>',
 		'before_title' 		=> '<h2 class="widget-title">',
@@ -59,28 +59,28 @@ function silver_quantum_widgets_init() {
 	));
 
 	register_sidebar( array (
-		'name' 				=> __('Custom Sidebar', 'silver-quantum'),
+		'name' 				=> __('Custom Sidebar', 'silverquantum'),
 		'id'				=> 'sidebar-3',	
-		'description' 		=>__('Appear on Custom Pages Only', 'silver-quantum'),
+		'description' 		=>__('Appear on Custom Pages Only', 'silverquantum'),
 		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' 		=> '</aside>',
 		'before_title' 		=> '<h2 class="widget-title">',
 		'after_title' 		=> '</h2>',
 	));
 }
-add_action( 'widgets_init', 'silver_quantum_widgets_init' );
+add_action( 'widgets_init', 'silverquantum_widgets_init' );
 
 // Scripts
-function silver_quantum_scripts_styles() {
+function silverquantum_scripts_styles() {
 	if (is_singular() && comments_open() && get_option( 'thread_comments' ))
 		wp_enqueue_script( 'comment-reply' );
 		
-	wp_enqueue_style('silver-quantum-style', get_stylesheet_uri());
-	wp_enqueue_style('silver-quantum-ubuntu', '//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic');
+	wp_enqueue_style('silverquantum-style', get_stylesheet_uri());
+	wp_enqueue_style('silverquantum-ubuntu', '//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic');
 }
-add_action('wp_enqueue_scripts', 'silver_quantum_scripts_styles');
+add_action('wp_enqueue_scripts', 'silverquantum_scripts_styles');
 
-function silver_zquantum_content_nav() {  
+function silverquantum_content_nav() {  
 global $wp_query;
 
 $big = 999999999; // need an unlikely integer

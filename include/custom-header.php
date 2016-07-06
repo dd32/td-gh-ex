@@ -1,5 +1,5 @@
 <?php
-function silver_quantum_custom_header_setup() {
+function silverquantum_custom_header_setup() {
 	$args = array(
 		// Text color and image (empty to use none).
 		'default-text-color'     => '515151',
@@ -18,15 +18,15 @@ function silver_quantum_custom_header_setup() {
 		'random-default'         => false,
 
 		// Callbacks for styling the header and the admin preview.
-		'wp-head-callback'       => 'silver_quantum_header_style',
-		'admin-head-callback'    => 'silver_quantum_admin_header_style',
-		'admin-preview-callback' => 'silver_quantum_admin_header_image',
+		'wp-head-callback'       => 'silverquantum_header_style',
+		'admin-head-callback'    => 'silverquantum_admin_header_style',
+		'admin-preview-callback' => 'silverquantum_admin_header_image',
 	);
 	add_theme_support( 'custom-header', $args );
 }
-add_action( 'after_setup_theme', 'silver_quantum_custom_header_setup' );
+add_action( 'after_setup_theme', 'silverquantum_custom_header_setup' );
 
-function silver_quantum_header_style() {
+function silverquantum_header_style() {
 	$text_color = get_header_textcolor();
 
 	// If no custom options for text are set, let's bail
@@ -35,7 +35,7 @@ function silver_quantum_header_style() {
 
 	// If we get this far, we have custom styles.
 	?>
-	<style type="text/css" id="silver-quantum-header-css">
+	<style type="text/css" id="silverquantum-header-css">
 	<?php
 		// Has the text been hidden?
 		if ( ! display_header_text() ) :
@@ -58,9 +58,9 @@ function silver_quantum_header_style() {
 	</style>
 	<?php
 }
-function silver_quantum_admin_header_style() {
+function silverquantum_admin_header_style() {
 ?>
-	<style type="text/css" id="silver-quantum-admin-header-css">
+	<style type="text/css" id="silverquantum-admin-header-css">
 	.appearance_page_custom-header #headimg {
 		border: none;
 		font-family: "calibri";
@@ -93,7 +93,7 @@ function silver_quantum_admin_header_style() {
 <?php
 }
 
-function silver_quantum_admin_header_image() {
+function silverquantum_admin_header_image() {
 	?>
 	<div id="headimg">
 		<?php
