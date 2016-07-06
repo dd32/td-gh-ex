@@ -38,7 +38,7 @@ if (weaverx_getopt( 'm_primary_hide') != 'hide'
 
 
 	if ( $use_smart ) {							// ==================  SMART MENUS (make any changes in default menu version, too)
-		$hamburger = weaverx_getopt('m_primary_hamburger');
+		$hamburger = apply_filters('weaverx_mobile_menu_name',weaverx_getopt('m_primary_hamburger'));
 		if ( $hamburger == '' )
 			$hamburger = '<span class="genericon genericon-menu"></span>';
 		$left = '<span href="" class="wvrx-menu-button">' . "{$hamburger}</span>{$left}";

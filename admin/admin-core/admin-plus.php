@@ -65,7 +65,7 @@ Widget, or the [extra_menu] shortcode', 'weaver-xtreme' /*adm*/);?></li>
 to make it even easier to customize your site.', 'weaver-xtreme' /*adm*/); ?>
 </p>
 <p><strong><?php _e('See ', 'weaver-xtreme' /*adm*/); ?><em>
-<?php weaverx_site('/plugins/weaverx-theme-plugins','','Weaver Xtreme Plugins'); ?><?php _e('Weaver Xtreme Plugins', 'weaver-xtreme' /*adm*/); ?></a></em> <?php _e('for complete details.', 'weaver-xtreme' /*adm*/); ?></strong></p>
+<?php weaverx_site('/plugins/weaverx-theme-plugins','','Weaver Theme Plugins'); ?><?php _e('Weaver Theme Plugins', 'weaver-xtreme' /*adm*/); ?></a></em> <?php _e('for complete details.', 'weaver-xtreme' /*adm*/); ?></strong></p>
 <p>
 	<?php _e('Shortcodes and Widgets included:', 'weaver-xtreme' /*adm*/); ?>
 <ul>

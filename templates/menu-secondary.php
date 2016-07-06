@@ -32,7 +32,7 @@ if (weaverx_getopt( 'm_secondary_hide') != 'hide' && has_nav_menu( $menu )  && !
 	$use_smart = weaverx_getopt('use_smartmenus') && function_exists('weaverxplus_plugin_installed');
 
 	if ( $use_smart ) {							// ==================  SMART MENUS
-		$hamburger = weaverx_getopt('m_secondary_hamburger');
+		$hamburger = apply_filters('weaverx_mobile_menu_name',weaverx_getopt('m_secondary_hamburger'));
 		if ( $hamburger == '' )
 			$hamburger = '<span class="genericon genericon-menu"></span>';
 		$left = '<span href="" class="wvrx-menu-button">' . "{$hamburger}</span>{$left}";

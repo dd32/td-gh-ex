@@ -70,7 +70,7 @@ function weaverx_page_menu( $args = array() ) {
 	}
 
 	if ( weaverx_getopt('use_smartmenus')  && function_exists('weaverxplus_plugin_installed')) {
-		$hamburger = weaverx_getopt('m_primary_hamburger');
+		$hamburger = apply_filters('weaverx_mobile_menu_name',weaverx_getopt('m_primary_hamburger'));
 		if ( $hamburger == '' )
 			$hamburger = '<span class="genericon genericon-menu"></span>';
 		$left = '<span href="" class="wvrx-menu-button">' . "{$hamburger}</span>{$left}";

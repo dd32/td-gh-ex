@@ -67,6 +67,17 @@ By default, Weaver Xtreme Plus will create and use the style-weaverxt.css file. 
 				),
 			),
 
+			'_print_show_widgets' => array(
+				'setting' => array(
+					'transport' => 'postMessage'	// no visual effect, so don't refresh
+				),
+				'control' => array(
+					'label' => __( 'Include Widget Areas in Print', 'weaver-xtreme' ),
+					'description' => __('Include all widget areas and full Footer content on browser Print page operation. &diams;', 'weaver-xtreme'),
+					'type'  => 'checkbox',
+				),
+			),
+
 			'_sitemap_exclude_pages' => array(
 				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_head_code', 'transport' => 'refresh',	'default' => ''
 				),

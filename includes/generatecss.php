@@ -856,7 +856,7 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 		'tagline' => '#site-tagline,.site-tagline',
 		'page_title' => '.page-title',
 		'post_title' => '.wrapper .post-title',
-		'archive_title' => '. ',
+		'archive_title' => '.archive-title',
 		'widget_title' => '.widget-title',
 		'm_header_mini' => '#nav-header-mini',
 		'content_h' => '.entry-content h1,.entry-content h2,.entry-content h3,.entry-content h4,.entry-content h5,.entry-content h6',
@@ -942,6 +942,15 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 
 // ================================ END RULES ===================================
 // These rules need to be at the end
+
+	if (weaverx_getopt('_print_show_widgets')) {
+		weaverx_f_write( $sout, "@media print { /* print widget areas */
+.widget-area{border:1px solid black !important;display:block !important; margin:.5em auto .75em auto !important;padding:.5em !important;width:98%!important;}
+#colophon{border:1px solid black !important;display:block !important;margin:1em !important;padding:.5em !important;width:100% !important;}
+.widget{margin-bottom:.75em !important;}
+#primary-widget-area,#secondary-widget-area{float:left !important;width:48% !important;margin-left:2% !important;}
+#footer-widget-area.widget-area{width:100% !important;margin:0 !important;}}\n");
+	}
 
 	if ( weaverx_getopt( 'reset_content_opts' ))
 		weaverx_f_write( $sout, ".has-posts #content {border:none; -moz-box-shadow: none; -webkit-box-shadow:none; box-shadow: none;background:transparent;padding:0;margin-top:0;margin-bottom:0;}\n");

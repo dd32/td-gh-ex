@@ -4235,10 +4235,15 @@ footer.entry-utility a[rel=bookmark]:visited:after{
 .page-link,
 #respond,
 .widget-area,
-#colophon {
+#colophon #foot-widget-area,
+#colophon #footer-html {
 	display:		none    !important;
 	margin:			0       !important;
 	padding:		0       !important;
+}
+
+#colophon {
+	border: 		none 	!important;
 }
 
 

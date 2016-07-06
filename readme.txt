@@ -291,3 +291,8 @@ with testing and feature suggestions.
 * Fix: Save Theme Settings via Customizer saved file incorrectly.
 * Tweak: Removed obsolete theme tags (e.g., black, dark, etc.)
 * Fix: Remove some restrictions of <link> parameters in <head> section.
+
+= Version 2.1.3 =
+* Fix: generated css for archive title had gotten corrupted, fixed
+* Tweak: Print view now shows footer copyright notice
+* New: Option to show widget areas and full colophon on print view
