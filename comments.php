@@ -36,10 +36,9 @@
 <div class="row-fluid comment_section">
   <?php  
     $fields=array(
-       'author' => '<lable>'.__('Name','rambo'),'</lable><span>*<span><br/>
-    			<input class="span9 leave_comment_field" name="author" id="author" value="" type="text"/><br/>',
-       'email'  => '<lable>'.__('Email','rambo'),'</lable><br/><input class="" name="email" id="email" value=""   type="text" ><br/>',
-    'website'=>	'<lable>'.__('Website','rambo'),'</lable><br/><input class="span9 leave_comment_field" name="email" id="email" value=""   type="text" ><br/>',
+         'author' => '<lable>'.__('Name','rambo'),'</lable><span>*<span><br/><input class="span9 leave_comment_field" name="author" id="author" value="" type="text"/><br/>',
+       'email'  => '<lable>'.__('Email','rambo'),'</lable><br/><input class="span9 leave_comment_field" name="email" id="email" value=""   type="text" ><br/>',
+    'website'=>	'<lable>'.__('Website','rambo'),'</lable><br/><input class="span9 leave_comment_field" name="url" id="url" value="" type="text" ><br/>',
     );
     
     function my_fields($fields) {

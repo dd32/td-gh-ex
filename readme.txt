@@ -136,6 +136,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
+@version 1.4.6
+1. Fixed comment issue on post.
 @version 1.4.5
 1. Update Font awesome 4.6.1 to 4.6.3
 2. Add Footer widget, right sidebar.
