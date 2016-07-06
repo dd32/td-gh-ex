@@ -1,5 +1,7 @@
 jQuery( document ).ready(function() {
 
+	jQuery('#header-spacer').height(jQuery('#header-main').height());
+
 	// add submenu icons class in main menu (only for large resolution)
 	if (fkidd_IsLargeResolution()) {
 	
@@ -76,8 +78,10 @@ jQuery(document).ready(function () {
   jQuery(window).scroll(function () {
 	  if (jQuery(this).scrollTop() > 100) {
 		  jQuery('.scrollup').fadeIn();
+		  jQuery('#header-top').hide();
 	  } else {
 		  jQuery('.scrollup').fadeOut();
+		  jQuery('#header-top').show();
 	  }
   });
 
@@ -88,4 +92,23 @@ jQuery(document).ready(function () {
 	  return false;
   });
 
+});
+
+var opacity = 1;
+var lastScrollTop = 0;
+jQuery(window).scroll(function(){
+    var st = jQuery(this).scrollTop();
+    if(st == 0)
+        jQuery('#header-main').css('opacity','1');
+
+    if (opacity > 0.5 && (st > lastScrollTop)){
+       jQuery('#header-main').css('opacity','-=0.01');
+       opacity -= 0.01;
+    }
+    else if(opacity < 1)
+    {
+       jQuery('#header-main').css('opacity','+=0.01');
+        opacity += 0.01;
+    }
+    lastScrollTop = st;
 });

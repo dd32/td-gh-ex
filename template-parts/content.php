@@ -95,7 +95,7 @@
 				
 				<?php if ( has_tag() ) : ?>
 							<span class="tags-icon">
-								<?php echo get_the_tag_list( '', ', ','' ); ?>
+								<?php the_tags(); ?>
 							</span>
 				<?php endif; ?>
 

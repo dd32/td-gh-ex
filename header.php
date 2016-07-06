@@ -11,6 +11,10 @@
 			<header id="header-main">
 				<div id="header-content-wrapper">
 					<div id="header-top">
+						<?php fkidd_show_header_phone(); ?>
+
+						<?php fkidd_show_header_email(); ?>
+
 						<ul class="header-social-widget">
 							<?php fkidd_display_social_sites(); ?>
 						</ul>
@@ -28,4 +32,6 @@
 					</div>
 				</div>
 			</header>
-
+			<div id="header-spacer">
+				&nbsp;
+			</div>

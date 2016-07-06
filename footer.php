@@ -9,6 +9,17 @@
 						</div>
 
 					</div>
+
+					<div class="clear">
+					</div>
+
+					<nav id="footer-menu">
+						<?php wp_nav_menu( array( 'theme_location' => 'footer', ) ); ?>
+					</nav>
+
+					<div class="clear">
+					</div>
+
 					<div id="copyright">
 						<p>
 						 <?php fkidd_show_copyright_text(); ?> <a href="<?php echo esc_url( 'https://tishonator.com/product/fkidd' ); ?>" title="<?php esc_attr_e( 'fkidd Theme', 'fkidd' ); ?>">

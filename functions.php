@@ -38,9 +38,7 @@ function fkidd_setup() {
 
 	// add Custom background				 
 	$args = array(
-		'default-color' 	 => '#555555',
-		'default-image' 	 => '%1$s/images/background.png',
-		'default-repeat' 	 => 'background-repeat',
+		'default-color' 	 => '#ffffff',
 	);
 	add_theme_support( 'custom-background', $args );
 
@@ -67,19 +65,10 @@ function fkidd_setup() {
 	 * to output valid HTML5.
 	 */
 	add_theme_support( 'html5', array(
-		'search-form', 'comment-form', 'comment-list',
+		'comment-form', 'comment-list',
 	) );
 
-	// add support for Post Formats.
-	add_theme_support( 'post-formats', array (
-											'aside',
-											'image',
-											'video',
-											'audio',
-											'quote', 
-											'link',
-											'gallery',
-					) );
+	
 
 	// add the visual editor to resemble the theme style
 	add_editor_style( array( 'css/editor-style.css' ) );
@@ -174,11 +163,49 @@ function fkidd_customize_register( $wp_customize ) {
 	 * Add Footer Section
 	 */
 	$wp_customize->add_section(
-		'fkidd_footer_section',
+		'fkidd_header_and_footer_section',
 		array(
-			'title'       => __( 'Footer', 'fkidd' ),
+			'title'       => __( 'Header and Footer', 'fkidd' ),
 			'capability'  => 'edit_theme_options',
 		)
+	);
+
+	// Add header phone
+	$wp_customize->add_setting(
+		'fkidd_header_phone',
+		array(
+		    'default'           => '1.555.555.555',
+		    'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fkidd_header_phone',
+        array(
+            'label'          => __( 'Your phone to appear in the website header', 'fkidd' ),
+            'section'        => 'fkidd_header_and_footer_section',
+            'settings'       => 'fkidd_header_phone',
+            'type'           => 'text',
+            )
+        )
+	);
+
+	// Add header email
+	$wp_customize->add_setting(
+		'fkidd_header_email',
+		array(
+		    'default'           => 'info@yoursite.com',
+		    'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fkidd_header_email',
+        array(
+            'label'          => __( 'Your e-mail to appear in the website header', 'fkidd' ),
+            'section'        => 'fkidd_header_and_footer_section',
+            'settings'       => 'fkidd_header_email',
+            'type'           => 'text',
+            )
+        )
 	);
 	
 	// Add footer copyright text
@@ -193,7 +220,7 @@ function fkidd_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fkidd_footer_copyright',
         array(
             'label'          => __( 'Copyright Text', 'fkidd' ),
-            'section'        => 'fkidd_footer_section',
+            'section'        => 'fkidd_header_and_footer_section',
             'settings'       => 'fkidd_footer_copyright',
             'type'           => 'text',
             )
@@ -270,7 +297,7 @@ function fkidd_load_scripts() {
 
 	// load main stylesheet.
 	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/font-awesome.min.css', array( ) );
-	wp_enqueue_style( 'fkidd-style', get_stylesheet_uri(), array( ) );
+	wp_enqueue_style( 'fkidd-style', get_stylesheet_uri(), array() );
 	
 	wp_enqueue_style( 'fkidd-fonts', fkidd_fonts_url(), array(), null );
 	
@@ -282,9 +309,9 @@ function fkidd_load_scripts() {
 	// Load Utilities JS Script
 	wp_enqueue_script( 'fkidd-utilities-js', get_template_directory_uri() . '/js/utilities.js', array( 'jquery' ) );
 	
-	wp_enqueue_script( 'fkidd-jquery-mobile-js', get_template_directory_uri() . '/js/jquery.mobile.customized.min.js', array( 'jquery' ) );
-	wp_enqueue_script( 'fkidd-jquery-easing-js', get_template_directory_uri() . '/js/jquery.easing.1.3.js', array( 'jquery' ) );
-	wp_enqueue_script( 'fkidd-camera-js', get_template_directory_uri() . '/js/camera.min.js', array( 'jquery' ) );
+	wp_enqueue_script( 'jquery.mobile.customized', get_template_directory_uri() . '/js/jquery.mobile.customized.min.js', array( 'jquery' ) );
+	wp_enqueue_script( 'jquery.easing.1.3', get_template_directory_uri() . '/js/jquery.easing.1.3.js', array( 'jquery' ) );
+	wp_enqueue_script( 'camera', get_template_directory_uri() . '/js/camera.min.js', array( 'jquery' ) );
 }
 add_action( 'wp_enqueue_scripts', 'fkidd_load_scripts' );
 
@@ -389,6 +416,33 @@ function fkidd_display_social_sites() {
 }
 
 /**
+ *	Displays the header phone.
+ */
+function fkidd_show_header_phone() {
+
+	$phone = get_theme_mod('fkidd_header_phone', '1.555.555.555');
+
+	if ( !empty( $phone ) ) {
+
+		echo '<span id="header-phone">' . esc_html($phone) . '</span>';
+	}
+}
+
+/**
+ *	Displays the header email.
+ */
+function fkidd_show_header_email() {
+
+	$email = get_theme_mod('fkidd_header_email', 'info@yoursite.com');
+
+	if ( !empty( $email ) ) {
+
+		echo '<span id="header-email"><a href="mailto:' . antispambot($email, 1) . '" title="' . esc_attr($email) . '">'
+				. esc_html($email) . '</a></span>';
+	}
+}
+
+/**
  *	Displays the copyright text.
  */
 function fkidd_show_copyright_text() {
@@ -413,7 +467,7 @@ function fkidd_show_website_logo_image_or_title() {
 		
 		echo '<a href="' . esc_url( home_url('/') ) . '" title="' . esc_attr( get_bloginfo('name') ) . '">';
 		
-		echo '<img src="' . esc_attr( $logoImgPath ) . '" alt="' . esc_attr( $siteTitle ) . '" title="' . esc_attr( $siteTitle ) . '" width="' . esc_attr( $imageWidth ) . '" height="' . esc_attr( $imageHeight ) . '" />';
+		echo '<img src="' . esc_url( $logoImgPath ) . '" alt="' . esc_attr( $siteTitle ) . '" title="' . esc_attr( $siteTitle ) . '" width="' . esc_attr( $imageWidth ) . '" height="' . esc_attr( $imageHeight ) . '" />';
 		
 		echo '</a>';
 
@@ -465,12 +519,13 @@ function fkidd_the_content() {
 
 	// Display Thumbnails if thumbnail is set for the post
 	if ( has_post_thumbnail() ) {
-		
-		echo '<a href="'. esc_url( get_permalink() ) .'" title="' . esc_attr( get_the_title() ) . '">';
-		
-		the_post_thumbnail();
-		
-		echo '</a>';
+?>
+
+		<a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>">
+			<?php the_post_thumbnail(); ?>
+		</a>
+								
+<?php
 	}
 	the_content( __( 'Read More', 'fkidd') );
 }

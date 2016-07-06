@@ -1,12 +1,12 @@
 /*
 Theme Name: fKidd
-Description: fKidd is a Free Multi-Purpose WordPress Theme. Features: Fully Responsive, Customizable, Built-in Responsive Slider, Multi-Level Drop-Down Menu, W3C Markup Validated, Customizer Options: Social Sites, Slider, Header Logo, Footer, Search Engine Optimized, Social Sites: Facebook, Google+, Twitter, LinkedIn, Instagram, RSS Feeds, Tumblr, YouTube, Pinterest, VK, Flickr, Vine, Multiple browsers support (IE 9, IE 10, IE 11, Chrome, Firefox, Opera, and Safari), Translation ready and much more.
+Description: fKidd is a Free Multi-Purpose WordPress Theme. Features: Fully Responsive, Customizable, Built-in Responsive Slider, Multi-Level Drop-Down Menu, W3C Markup Validated, Customizer Options: Social Sites, Header Phone and Email, Slider, Header Logo, Footer, Search Engine Optimized, Social Sites: Facebook, Google+, Twitter, LinkedIn, Instagram, RSS Feeds, Tumblr, YouTube, Pinterest, VK, Flickr, Vine, Multiple browsers support (IE 9, IE 10, IE 11, Chrome, Firefox, Opera, and Safari), Header and Footer Menu, Translation ready and much more.
 Theme URI: https://tishonator.com/product/fkidd
 Author: tishonator
 Author URI: https://tishonator.com
-Version: 1.5.0
+Version: 1.6.0
 Text Domain: fkidd
-Tags: blue, pink, white, light, two-columns, right-sidebar, responsive-layout, custom-background, custom-header, custom-menu, featured-images, post-formats, sticky-post, threaded-comments, translation-ready
+Tags: education, blog, two-columns, right-sidebar, custom-background, custom-header, custom-menu, featured-images, post-formats, sticky-post, threaded-comments, translation-ready
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -17,15 +17,9 @@ body {
 	font-size:14px;
 	margin:0;
 	padding:0;
-	background-color:#555555;
+	background-color:#FFFFFF;
 	color:#303132;
 	width:100%;
-}
-
-#body-content-wrapper {
-	background-color:#FFFFFF;
-	position:relative;
-	overflow:hidden;
 }
 
 input, select, textarea, button, #container .button {
@@ -195,8 +189,11 @@ dt.gallery-icon:before {
 	clear:both;
 	background-color:#FDFFFF;
 	margin:0;
+	position:fixed;
 	width:100%;
+	z-index:5000;
 	color:#303132;
+	box-shadow:0 2px 2px -2px #777;
 }
 
 #header-main a {
@@ -235,11 +232,44 @@ dt.gallery-icon:before {
 
 .header-social-widget li {
 	margin-right:0;
-	display:inline;
+    display:inline;
+    margin-left:15px;
+    text-align:center;
+}
+
+.header-social-widget li:first-of-type {
+    margin-left:0;
 }
 
 #header-top {
-	text-align:center;
+    text-align:right;
+    font-size:18px;
+    padding:5px 0;
+}
+
+#header-top #header-phone {
+	float:left;
+	margin-right:20px;
+}
+
+#header-top #header-email {
+	float:left;
+}
+
+#header-top #header-phone:before {
+	content: "\f095";
+}
+
+#header-top #header-email:before {
+	content: "\f003";
+}
+
+#header-top #header-email:before,
+#header-top #header-phone:before {
+	font-family:'FontAwesome';
+	margin-right:5px;
+	color:#ed265a;
+	font-size:15px;
 }
 
 .cart-contents-icon:before {
@@ -346,6 +376,12 @@ dt.gallery-icon:before {
 	padding:5px 0 10px 10px !important;
 }
 
+article,
+aside {
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+}
+
 /* main content */
 #main-content,
 #main-content-full,
@@ -444,6 +480,22 @@ article,
 #footer-main input[type="text"] {
 	width:130px;
 	background-color:#fff;
+}
+
+#footer-menu {
+	text-align:center;
+	margin:15px 0;
+}
+
+#footer-menu ul,
+#footer-menu li {
+	display:inline;
+	padding:0;
+	margin:0;
+}
+
+#footer-menu li {
+	margin-right:20px;
 }
 
 .footer-social-widget a {
@@ -570,7 +622,7 @@ article,
 }
 
 .header-social-widget a:before {
-	font-size: 14px;
+	font-size: 18px;
 }
 
 .header-social-widget a {
@@ -1358,10 +1410,80 @@ img.wp-post-image {
 }
 
 
-/* Responsive Web Design */
+
+
+.gallery {
+	margin: 0 -1.1666667% 1.75em;
+}
+
+.gallery-item {
+	display: inline-block;
+	max-width: 33.33%;
+	padding: 0 1.1400652% 2.2801304%;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+}
+
+.gallery-columns-1 .gallery-item {
+	max-width: 50%;
+}
+
+.gallery-columns-3 .gallery-item {
+	max-width: 25%;
+}
+
+.gallery-columns-4 .gallery-item {
+	max-width: 20%;
+}
+
+.gallery-columns-5 .gallery-item {
+	max-width: 16.66%;
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 14.28%;
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 12.5%;
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 11.11%;
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 10.11%;
+}
+
+.gallery-icon img {
+	margin: 0 auto;
+}
+
+.gallery-caption {
+	color: #686868;
+	display: block;
+	font-size: 13px;
+	font-size: 0.8125rem;
+	font-style: italic;
+	line-height: 1.6153846154;
+	padding-top: 0.5384615385em;
+}
+
+.gallery-columns-6 .gallery-caption,
+.gallery-columns-7 .gallery-caption,
+.gallery-columns-8 .gallery-caption,
+.gallery-columns-9 .gallery-caption {
+	display: none;
+}
 
 /* Large Resolution */
 @media screen and (min-width: 800px) {
+
+	.header-social-widget {
+        margin-right: 10px;
+    }
 	
 	#main-content,
 	#container {
@@ -1378,7 +1500,7 @@ img.wp-post-image {
 	}
 	
 	.header-social-widget li {
-		margin-left:10px;
+		margin-left:15px;
 	}
 	
 	#header-logo {
@@ -1609,6 +1731,12 @@ img.wp-post-image {
 	h1 {
 		font-size:24px;
 	}
+
+	.header-social-widget {
+	    clear:both;
+	    text-align:center;
+	    display:block;
+	}
 	
 	.header-social-widget a {
 		padding-bottom:4px;
@@ -1838,10 +1966,6 @@ img.wp-post-image {
 	body {
 		font-size:13px;
 	}
-
-	.header-social-widget a:before {
-		font-size:13px;
-	}
 	
 	.homepage-icon-link:before {
 		font-size:15px;
@@ -1994,49 +2118,6 @@ img.wp-post-image {
 		padding-left:0;
 		padding-right:0;
 	}
-}
-
-@media screen and (min-width: 860px) {
-
-	#body-content-wrapper{margin-left:30px;margin-right:30px;}
-}
-
-@media screen and (max-width: 799px) {
-
-	#body-content-wrapper{margin-left:20px;margin-right:20px;}
-}
-
-@media screen and (max-width: 360px) {
-
-	#body-content-wrapper{margin-left:10px;margin-right:10px;}
-}
-
-@media screen and (min-width: 1200px) {
-
-	#body-content-wrapper{margin:0 auto;width:1180px;}
-}
-
-#body-content-wrapper{box-shadow: 0 0 10px #000000;}
-
-
-@media screen and (min-width: 800px) {
-
-	#header-main{width:auto;left:0;right:0;margin-left:30px;margin-right:30px;}
-}
-
-@media screen and (max-width: 799px) {
-
-	#header-main{width:auto;left:0;right:0;margin-left:20px;margin-right:20px;}
-}
-
-@media screen and (max-width: 360px) {
-
-	#header-main{width:auto;left:0;right:0;margin-left:10px;margin-right:10px;}
-}
-
-@media screen and (min-width: 1200px) {
-
-	#header-main{margin:0 auto;width:1180px;}
 }
 
 /**
