@@ -1,9 +1,9 @@
 <?php
 /**
- * Magazine Posts Grid Widget
+ * Magazine Posts Sidebar Widget
  *
- * Display the latest posts from a selected category in a grid layout.
- * Intented to be used in the Magazine Homepage widget area to built a magazine layouted page.
+ * Display the latest posts from a selected category.
+ * Intented to be used in one of the sidebar widget areas.
  *
  * @package Admiral
  */
@@ -11,7 +11,8 @@
 /**
  * Magazine Widget Class
  */
-class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
+class Admiral_Magazine_Posts_Sidebar_Widget extends WP_Widget {
+
 	/**
 	 * Widget Constructor
 	 */
@@ -19,11 +20,11 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 
 		// Setup Widget.
 		parent::__construct(
-			'admiral-magazine-posts-grid', // ID.
-			sprintf( esc_html__( 'Magazine Posts: Grid (%s)', 'admiral' ), wp_get_theme()->Name ), // Name.
+			'admiral-magazine-posts-sidebar', // ID.
+			sprintf( esc_html__( 'Magazine Posts: Sidebar (%s)', 'admiral' ), wp_get_theme()->Name ), // Name.
 			array(
-				'classname' => 'admiral-magazine-posts-grid',
-				'description' => esc_html__( 'Displays your posts from a selected category in a grid layout. Please use this widget ONLY in the Magazine Homepage widget area.', 'admiral' ),
+				'classname' => 'admiral_magazine_posts_sidebar',
+				'description' => esc_html__( 'Displays your posts from a selected category. You can use this widget in the Main Sidebar widget area.', 'admiral' ),
 				'customize_selective_refresh' => true,
 			) // Args.
 		);
@@ -44,8 +45,7 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 		$defaults = array(
 			'title'				=> '',
 			'category'			=> 0,
-			'layout'			=> 'three-columns',
-			'number'			=> 6,
+			'number'			=> 4,
 			'excerpt'			=> false,
 			'meta_date'			=> true,
 			'meta_comments'		=> false,
@@ -70,7 +70,7 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 
 		// Get Widget Object Cache.
 		if ( ! $this->is_preview() ) {
-			$cache = wp_cache_get( 'widget_admiral_magazine_posts_grid', 'widget' );
+			$cache = wp_cache_get( 'widget_admiral_magazine_posts_sidebar', 'widget' );
 		}
 		if ( ! is_array( $cache ) ) {
 			$cache = array();
@@ -92,7 +92,7 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 		echo $args['before_widget'];
 		?>
 
-		<div class="widget-magazine-posts-grid widget-magazine-posts clearfix">
+		<div class="widget-magazine-posts-sidebar widget-magazine-posts clearfix">
 
 			<?php // Display Title.
 			$this->widget_title( $args, $settings ); ?>
@@ -111,7 +111,7 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 		// Set Cache.
 		if ( ! $this->is_preview() ) {
 			$cache[ $this->id ] = ob_get_flush();
-			wp_cache_set( 'widget_admiral_magazine_posts_grid', $cache, 'widget' );
+			wp_cache_set( 'widget_admiral_magazine_posts_sidebar', $cache, 'widget' );
 		} else {
 			ob_end_flush();
 		}
@@ -124,184 +124,67 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 	 *
 	 * Switches between two or three column layout style based on widget settings
 	 *
-	 * @uses this->magazine_posts_two_column_grid() or this->magazine_posts_three_column_grid()
+	 * @uses this->magazine_posts_two_column_sidebar() or this->magazine_posts_three_column_sidebar()
 	 * @used-by this->widget()
 	 *
 	 * @param array $settings / Settings for this widget instance.
 	 */
 	function render( $settings ) {
 
-		if ( 'three-columns' === $settings['layout'] ) :
+		// Get latest posts from database.
+		$query_arguments = array(
+			'posts_per_page' => (int) $settings['number'],
+			'ignore_sticky_posts' => true,
+			'cat' => (int) $settings['category'],
+		);
+		$posts_query = new WP_Query( $query_arguments );
+		$i = 0;
 
-			$this->magazine_posts_three_column_grid( $settings );
+		// Check if there are posts.
+		if ( $posts_query->have_posts() ) :
 
-		else :
+			// Limit the number of words for the excerpt.
+			add_filter( 'excerpt_length', 'admiral_magazine_posts_excerpt_length' );
 
-			$this->magazine_posts_two_column_grid( $settings );
+			// Display Posts.
+			while ( $posts_query->have_posts() ) : $posts_query->the_post(); ?>
+
+				<article id="post-<?php the_ID(); ?>" <?php post_class( 'clearfix' ); ?>>
+
+					<header class="entry-header">
+
+						<?php admiral_post_image( 'admiral-thumbnail-large' ); ?>
+
+						<?php $this->entry_meta( $settings ); ?>
+
+						<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+
+					</header><!-- .entry-header -->
+
+					<?php if ( true === $settings['excerpt'] ) : ?>
+
+					<div class="entry-content clearfix">
+
+						<?php the_excerpt(); ?>
+
+					</div><!-- .entry-content -->
+
+					<?php endif; ?>
+
+				</article>
+
+				<?php
+			endwhile;
+
+			// Remove excerpt filter.
+			remove_filter( 'excerpt_length', 'admiral_magazine_posts_excerpt_length' );
 
 		endif;
+
+		// Reset Postdata.
+		wp_reset_postdata();
 
 	} // render()
-
-
-	/**
-	 * Displays category posts in two column grid
-	 *
-	 * @used-by this->render()
-	 *
-	 * @param array $settings / Settings for this widget instance.
-	 */
-	function magazine_posts_two_column_grid( $settings ) {
-
-		// Get latest posts from database.
-		$query_arguments = array(
-			'posts_per_page' => (int) $settings['number'],
-			'ignore_sticky_posts' => true,
-			'cat' => (int) $settings['category'],
-		);
-		$posts_query = new WP_Query( $query_arguments );
-		$i = 0;
-
-		// Check if there are posts.
-		if ( $posts_query->have_posts() ) :
-
-			// Limit the number of words for the excerpt.
-			add_filter( 'excerpt_length', 'admiral_magazine_posts_excerpt_length' );
-
-			// Display Posts.
-			while ( $posts_query->have_posts() ) :
-
-				$posts_query->the_post();
-
-				// Open new Row on the Grid.
-				if ( 0 === $i % 2 ) : $row_open = true; ?>
-					<div class="magazine-posts-grid-row large-post-row clearfix">
-				<?php endif; ?>
-
-						<article id="post-<?php the_ID(); ?>" <?php post_class( 'large-post' ); ?>>
-
-							<header class="entry-header">
-
-								<?php admiral_post_image( 'admiral-thumbnail-large' ); ?>
-
-								<?php $this->entry_meta( $settings ); ?>
-
-								<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-
-							</header><!-- .entry-header -->
-
-						<?php if ( true === $settings['excerpt'] ) : ?>
-
-							<div class="entry-content clearfix">
-								<?php the_excerpt(); ?>
-							</div><!-- .entry-content -->
-
-						<?php endif; ?>
-
-						</article>
-
-				<?php // Close Row on the Grid.
-				if ( 1 === $i % 2 ) : $row_open = false; ?>
-					</div>
-				<?php endif;
-
-				$i++;
-			endwhile;
-
-			// Close Row if still open.
-			if ( true === $row_open ) : ?>
-				</div>
-			<?php endif;
-
-			// Remove excerpt filter.
-			remove_filter( 'excerpt_length', 'admiral_magazine_posts_excerpt_length' );
-
-		endif;
-
-		// Reset Postdata.
-		wp_reset_postdata();
-
-	} // magazine_posts_two_column_grid()
-
-
-	/**
-	 * Displays category posts in three column grid
-	 *
-	 * @used-by this->render()
-	 *
-	 * @param array $settings / Settings for this widget instance.
-	 */
-	function magazine_posts_three_column_grid( $settings ) {
-
-		// Get latest posts from database.
-		$query_arguments = array(
-			'posts_per_page' => (int) $settings['number'],
-			'ignore_sticky_posts' => true,
-			'cat' => (int) $settings['category'],
-		);
-		$posts_query = new WP_Query( $query_arguments );
-		$i = 0;
-
-		// Check if there are posts.
-		if ( $posts_query->have_posts() ) :
-
-			// Limit the number of words for the excerpt.
-			add_filter( 'excerpt_length', 'admiral_magazine_posts_excerpt_length' );
-
-			// Display Posts.
-			while ( $posts_query->have_posts() ) :
-
-				$posts_query->the_post();
-
-				 // Open new Row on the Grid.
-				if ( 0 === $i % 3 ) : $row_open = true; ?>
-					<div class="magazine-posts-grid-row medium-post-row clearfix">
-				<?php endif; ?>
-
-						<article id="post-<?php the_ID(); ?>" <?php post_class( 'medium-post clearfix' ); ?>>
-
-							<header class="entry-header">
-
-								<?php admiral_post_image( 'admiral-thumbnail-medium' ); ?>
-
-								<?php $this->entry_meta( $settings ); ?>
-
-								<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-
-							</header><!-- .entry-header -->
-
-						<?php if ( true === $settings['excerpt'] ) : ?>
-
-							<div class="entry-content clearfix">
-								<?php the_excerpt(); ?>
-							</div><!-- .entry-content -->
-
-						<?php endif; ?>
-
-						</article>
-
-				<?php // Close Row on the Grid.
-				if ( 2 === $i % 3 ) : $row_open = false; ?>
-					</div>
-				<?php endif;
-
-				$i++;
-			endwhile;
-
-			// Close Row if still open.
-			if ( true === $row_open ) : ?>
-				</div>
-			<?php endif;
-
-			// Remove excerpt filter.
-			remove_filter( 'excerpt_length', 'admiral_magazine_posts_excerpt_length' );
-
-		endif;
-
-		// Reset Postdata.
-		wp_reset_postdata();
-
-	} // magazine_posts_three_column_grid()
 
 
 	/**
@@ -383,7 +266,6 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 		$instance = $old_instance;
 		$instance['title'] = sanitize_text_field( $new_instance['title'] );
 		$instance['category'] = (int) $new_instance['category'];
-		$instance['layout'] = esc_attr( $new_instance['layout'] );
 		$instance['number'] = (int) $new_instance['number'];
 		$instance['excerpt'] = ! empty( $new_instance['excerpt'] );
 		$instance['meta_date'] = ! empty( $new_instance['meta_date'] );
@@ -428,14 +310,6 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 		</p>
 
 		<p>
-			<label for="<?php echo $this->get_field_id( 'layout' ); ?>"><?php esc_html_e( 'Grid Layout:', 'admiral' ); ?></label><br/>
-			<select id="<?php echo $this->get_field_id( 'layout' ); ?>" name="<?php echo $this->get_field_name( 'layout' ); ?>">
-				<option <?php selected( $settings['layout'], 'two-columns' ); ?> value="two-columns" ><?php esc_html_e( 'Two Columns Grid', 'admiral' ); ?></option>
-				<option <?php selected( $settings['layout'], 'three-columns' ); ?> value="three-columns" ><?php esc_html_e( 'Three Columns Grid', 'admiral' ); ?></option>
-			</select>
-		</p>
-
-		<p>
 			<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php esc_html_e( 'Number of posts:', 'admiral' ); ?>
 				<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo $settings['number']; ?>" size="3" />
 			</label>
@@ -461,8 +335,7 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 				<?php esc_html_e( 'Display post comments', 'admiral' ); ?>
 			</label>
 		</p>
-
-		<?php
+<?php
 	} // form()
 
 
@@ -471,7 +344,7 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 	 */
 	public function delete_widget_cache() {
 
-		wp_cache_delete( 'widget_admiral_magazine_posts_grid', 'widget' );
+		wp_cache_delete( 'widget_admiral_magazine_posts_sidebar', 'widget' );
 
 	}
 }
@@ -479,9 +352,9 @@ class Admiral_Magazine_Posts_Grid_Widget extends WP_Widget {
 /**
  * Register Widget
  */
-function admiral_register_magazine_posts_grid_widget() {
+function admiral_register_magazine_posts_sidebar_widget() {
 
-	register_widget( 'Admiral_Magazine_Posts_Grid_Widget' );
+	register_widget( 'Admiral_Magazine_Posts_Sidebar_Widget' );
 
 }
-add_action( 'widgets_init', 'admiral_register_magazine_posts_grid_widget' );
+add_action( 'widgets_init', 'admiral_register_magazine_posts_sidebar_widget' );

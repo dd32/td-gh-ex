@@ -6,7 +6,7 @@
  *
  * @package Admiral
  */
- 
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
@@ -22,35 +22,34 @@
 <body <?php body_class(); ?>>
 
 	<div id="page" class="hfeed site">
-		
+
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'admiral' ); ?></a>
-		
-		<div id="header-top" class="header-bar-wrap"><?php do_action( 'admiral_header_bar' ); ?></div>
-		
+
+		<div id="header-top" class="header-bar-wrap">
+
+			<?php get_template_part( 'template-parts/header-bar' ); ?>
+
+		</div>
+
 		<header id="masthead" class="site-header clearfix" role="banner">
-			
+
 			<div class="header-main container clearfix">
-						
+
 				<div id="logo" class="site-branding clearfix">
-				
+
 					<?php admiral_site_logo(); ?>
 					<?php admiral_site_title(); ?>
-				
+
 				</div><!-- .site-branding -->
-				
-				<div class="header-widgets clearfix">
-					
-					<?php // Display Header Widgets
-					if( is_active_sidebar( 'header' ) ) : 
-			
-						dynamic_sidebar( 'header' );
-						
-					endif; ?>
-					
-				</div><!-- .header-widgets -->
-			
+
+				<?php admiral_site_description(); ?>
+
+				<?php do_action( 'admiral_header_widgets' ); ?>
+
 			</div><!-- .header-main -->
-		
+
+			<?php do_action( 'admiral_header_menu' ); ?>
+
 		</header><!-- #masthead -->
-			
+
 		<div id="content" class="site-content container clearfix">
