@@ -1,9 +1,7 @@
 === Argent ===
 
 Contributors: automattic
-Tags: black, gray, white, one-column, custom-background, custom-header, custom-menu, rtl-language-support, translation-ready, dark, featured-images, responsive-layout, threaded-comments
-
-Requires at least: 4.0
+Requires at least: 4.1
 Tested up to: 4.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -62,9 +60,9 @@ The portfolio archive page can be found at http://mygroovysite.wordpress.com/por
 
 == Quick Specs (all measurements in pixels) ==
 
-	1. The main column width is 660, except in single posts, where it’s 490.
-	2. A widget in the Footer Widget Area is 300.
-	3. Featured Images for posts should be at least 660 wide.
+1. The main column width is 660, except in single posts, where it’s 490.
+2. A widget in the Footer Widget Area is 300.
+3. Featured Images for posts should be at least 660 wide.
 
 == Credits ==
 
@@ -72,6 +70,29 @@ The portfolio archive page can be found at http://mygroovysite.wordpress.com/por
 * Screenshot image by Unsplash (http://pixabay.com/en/macbook-notebook-apple-inc-336651/), licensed under CC0 Public Domain (http://creativecommons.org/publicdomain/zero/1.0/deed.en)
 
 == Changelog ==
+
+= 1 July 2016 =
+* Switch top position from ems to %, so it's not affected by Custom Font sizes.
+
+= 29 June 2016 =
+* Update Headstart featured image URLs.
+
+= 22 June 2016 =
+* Fix Home menu position.
+
+= 21 June 2016 =
+* Correct character escaping in Headstart annotation.
+
+= 14 June 2016 =
+* This theme "outdents" aligned images, which leads to overlapping if multiple aligned images are used in succession. Set a zero margin on subsequent aligned left or right images.
+
+= 9 June 2016 =
+* Add missing semicolons
+* Update Portfolio Featured Image function so it has the same style as Portfolio Title and Portfolio Content functions
+* Update Portfolio CPT with new theme option
+
+= 8 June 2016 =
+* Add support for Portfolio CPT new feature
 
 = 23 May 2016 =
 * Update copyright dates

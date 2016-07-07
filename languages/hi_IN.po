@@ -25,15 +25,15 @@ msgstr "मुखपृष्ठ"
 msgid "https://wordpress.com/themes/"
 msgstr "https://wordpress.com/themes/"
 
-#. Theme URI of the plugin/theme
-#: wp-content/themes/pub/argent/style.css
-msgid "https://wordpress.com/themes/argent/"
-msgstr "https://wordpress.com/themes/argent/"
-
 #. Author of the plugin/theme
 #: wp-content/themes/pub/argent/style.css
 msgid "Automattic"
 msgstr "ऑटोमैटिक"
+
+#. Theme URI of the plugin/theme
+#: wp-content/themes/pub/argent/style.css
+msgid "https://wordpress.com/themes/argent/"
+msgstr "https://wordpress.com/themes/argent/"
 
 #: search.php:16
 msgid "Search Results for: %s"
@@ -185,21 +185,21 @@ msgstr "पोस्टस नेविगेशन"
 msgid "Page %s"
 msgstr "पृष्ठ %s"
 
-#: inc/customizer.php:32
-msgid "Show Portfolio Section"
-msgstr "पोर्टफोलियो अनुभाग दिखाएँ"
-
-#: inc/customizer.php:43
-msgid "Portfolio Section Title"
-msgstr "पोर्टफोलियो अनुभाग शीर्षक"
+#: inc/extras.php:36
+msgid "Pages:"
+msgstr "पृष्ठ:"
 
 #: inc/customizer.php:54
 msgid "Number of Projects to display"
 msgstr "परियोजनाओं की संख्या प्रदर्शित करने के लिए"
 
-#: inc/extras.php:36
-msgid "Pages:"
-msgstr "पृष्ठ:"
+#: inc/customizer.php:43
+msgid "Portfolio Section Title"
+msgstr "पोर्टफोलियो अनुभाग शीर्षक"
+
+#: inc/customizer.php:32
+msgid "Show Portfolio Section"
+msgstr "पोर्टफोलियो अनुभाग दिखाएँ"
 
 #: inc/customizer.php:22
 msgid "Theme Options"
@@ -277,13 +277,13 @@ msgstr "क्षमा करें, लेकिन कुछ भी आपक
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr "अपनी पहली पोस्ट को प्रकाशित करने के लिए तैयार हैं? <a href=\"%1$s\">यहाँ से शुरुआत करें</a>।"
 
-#: content-front-portfolio.php:65
-msgid "Ready to publish your first project? <a href=\"%1$s\">Get started here</a>."
-msgstr "अपनी पहली परियोजना प्रकाशित करने के लिए तैयार हैं? <a href=\"%1$s\">यहाँ से शुरुआत करें</a>।"
-
 #: content-none.php:13
 msgid "Nothing Found"
 msgstr "कुछ नहीं मिला"
+
+#: content-front-portfolio.php:65
+msgid "Ready to publish your first project? <a href=\"%1$s\">Get started here</a>."
+msgstr "अपनी पहली परियोजना प्रकाशित करने के लिए तैयार हैं? <a href=\"%1$s\">यहाँ से शुरुआत करें</a>।"
 
 #: content-front-portfolio.php:61
 msgid "No Projects Found"
@@ -305,16 +305,16 @@ msgstr "&laquo; पुराना टिप्पणिया"
 msgid "Comment navigation"
 msgstr "कमेन्ट (टिप्पणी) नेविगेशन"
 
-#: 404.php:34
-msgid "Popular Categories"
-msgstr "लोकप्रिय श्रेणियां"
-
 #: comments.php:29
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] "&ldquo;%2$s&rdquo पर एक विचार;"
 msgstr[1] "%1$s विचार &ldquo;%2$s&rdquo पर;"
+
+#: 404.php:34
+msgid "Popular Categories"
+msgstr "लोकप्रिय श्रेणियां"
 
 #: 404.php:19
 msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
