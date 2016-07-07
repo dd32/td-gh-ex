@@ -7,17 +7,17 @@
 		
 		<aside class="widget widget_categories">
 
-			<h3 class="widget-title"><?php _e( 'Categories', 'mwsmall' ); ?></h3>
+			<h3 class="widget-title"><?php _e( 'Categories', 'mw-small' ); ?></h3>
 				<ul><?php wp_list_categories('title_li='); ?></ul>
 
 		</aside>
 		
 		<aside class="widget widget_recent_entries">
 
-			<h3 class="widget-title"><?php _e( 'Recent Posts', 'mwsmall' ); ?></h3>
+			<h3 class="widget-title"><?php _e( 'Recent Posts', 'mw-small' ); ?></h3>
 				<ul><?php wp_get_archives('type=postbypost&limit=5'); ?></ul>
 
 		</aside>
-	<?php endif; // end sidbar blog-widget ?>
+	<?php endif; // end sidebar blog-widget ?>
 
-</section><!-- #sidebar .widget-area -->
+</section><!-- #secondary .widget-area -->

@@ -21,7 +21,7 @@
 		
 		</main><!-- #main -->
 	
-</section><!--/.primary -->
+</section><!-- #primary -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

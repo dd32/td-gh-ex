@@ -12,20 +12,22 @@
 		<?php endif; ?>
 		
 		<div class="mw_title">
-			<div class="entry-time">				
-				<?php if ( ('j M Y') == get_option( 'date_format' ) ) : ?>
+			<div class="entry-time">
+				<?php 
+					$deftime = get_theme_mod( 'mwsmall_time', '' );
+					if ( $deftime == '' ) : ?>
 					<span class="day"><?php echo get_the_date('j'); ?></span>
 					<span class="month"><?php echo get_the_date('M'); ?></span> /
 					<span class="year"><?php echo get_the_date('Y'); ?></span>
 				<?php else : ?>
 					<span class="mw-date-format"><?php echo get_the_date(); ?></span>
-				<?php endif; ?>		
-			</div>
+				<?php endif; ?>
+			</div><!-- .entry-time -->
 			<h1 class="entry-title col-lg-8 col-sm-6 col-xs-7"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 			<?php mwsmall_post_icon(); ?>
 			<?php if( is_sticky() ) { ?> <span class="sticky-post"><i class="fa fa-star-o fa-2x"></i></span> <?php } ?>
 
-		</div><!-- .entry-title -->
+		</div><!-- .mw_title -->
 
 	</header><!-- .entry-header -->
 	
@@ -35,7 +37,7 @@
 	</div><!-- .entry-summary -->
 	<?php else : ?>
 	<div class="entry-content clearfix">
-		<?php the_content( __( '[...]', 'mwsmall' ) );	?>
+		<?php the_content( __( '[...]', 'mw-small' ) );	?>
 	</div><!-- .entry-content -->
 	<?php endif; ?>
 	
@@ -46,8 +48,8 @@
 		<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
 		<span class="comments-link fa fa-comments"></span><?php comments_popup_link('0', '1', '%', 'comments-link', ''); ?>
 		<?php endif; ?>
-		<a class="more-link" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php _e( 'Read more', 'mwsmall' ); ?><span> &rarr;</span></a>
-	</footer><!-- #entry-meta -->
-	
+		<?php edit_post_link( __( 'Edit', 'mw-small' ), '<span class="edit-link">', '</span>' ); ?>
+		<a class="more-link" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php _e( 'Read more', 'mw-small' ); ?><span> &rarr;</span></a>
+	</footer><!-- .entry-meta -->
 	
 </article><!-- #post-## -->

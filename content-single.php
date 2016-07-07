@@ -29,7 +29,7 @@
 			'order' => 'ASC',
 			'numberposts' => -1, // number of images (slides)
 			'post_mime_type' => 'image',
-			'post_status'    => null,
+			'post_status' => null,
 		);
 
 		if ( $images = get_children( $args ) ) {
@@ -42,7 +42,7 @@
 						echo '</li>';
 					}
 					
-			echo '</ul>'; 
+			echo '</ul>';
 		} ?>
 
 		</div>
@@ -51,32 +51,35 @@
 		<?php endif; ?>
 
 		<div class="mw_title">
-			<div class="entry-time">				
-				<?php if ( ('j M Y') == get_option( 'date_format' ) ) : ?>
+			<div class="entry-time">
+				<?php 
+					$deftime = get_theme_mod( 'mwsmall_time', '' );
+					if ( $deftime == '' ) : ?>
 					<span class="day"><?php echo get_the_date('j'); ?></span>
 					<span class="month"><?php echo get_the_date('M'); ?></span> /
 					<span class="year"><?php echo get_the_date('Y'); ?></span>
 				<?php else : ?>
 					<span class="mw-date-format"><?php echo get_the_date(); ?></span>
 				<?php endif; ?>		
-			</div>
+			</div><!-- .entry-time -->
 			<h1 class="entry-title col-lg-8 col-sm-6 col-xs-7"><?php the_title(); ?></h1>
 			<?php mwsmall_post_icon(); ?>
 
-		</div><!-- .entry-title -->
+		</div><!-- .mw_title -->
 
 	</header><!-- .entry-header -->
 
 	<div class="entry-content clearfix">
 		<?php
-		the_content( __( '[...]', 'mwsmall' ) );
-		wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'mwsmall' ), 'after' => '</div>' ) ); ?>
+		the_content( __( '[...]', 'mw-small' ) );
+		wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'mw-small' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->
 	
 	<footer class="entry-meta">
 		<span class="author-link fa fa-user"></span><?php the_author_posts_link() ?>
 		<span class="cat-link fa  fa-folder-open"></span><?php the_category(', '); ?>
 		<?php the_tags( '<span class="tag-link fa fa-tags"></span>', ', ', '' ); ?>
-	</footer><!-- #entry-meta -->
+		<?php edit_post_link( __( 'Edit', 'mw-small' ), '<span class="edit-link">', '</span>' ); ?>
+	</footer><!-- .entry-meta -->
 
 </article><!-- #post-## -->

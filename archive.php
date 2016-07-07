@@ -19,40 +19,40 @@ get_header(); ?>
 							single_tag_title();
 
 						elseif ( is_author() ) :
-							printf( __( 'Author: %s', 'mwsmall' ), '<span class="vcard">' . get_the_author() . '</span>' );
+							printf( __( 'Author: %s', 'mw-small' ), '<span class="vcard">' . get_the_author() . '</span>' );
 
 						elseif ( is_day() ) :
-							printf( __( 'Day: %s', 'mwsmall' ), '<span>' . get_the_date() . '</span>' );
+							printf( __( 'Day: %s', 'mw-small' ), '<span>' . get_the_date() . '</span>' );
 
 						elseif ( is_month() ) :
-							printf( __( 'Month: %s', 'mwsmall' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'mwsmall' ) ) . '</span>' );
+							printf( __( 'Month: %s', 'mw-small' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'mw-small' ) ) . '</span>' );
 
 						elseif ( is_year() ) :
-							printf( __( 'Year: %s', 'mwsmall' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'mwsmall' ) ) . '</span>' );
+							printf( __( 'Year: %s', 'mw-small' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'mw-small' ) ) . '</span>' );
 
 						elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) :
-							_e( 'Galleries', 'mwsmall');
+							_e( 'Galleries', 'mw-small');
 
 						elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-							_e( 'Images', 'mwsmall');
+							_e( 'Images', 'mw-small');
 
 						elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-							_e( 'Videos', 'mwsmall' );
+							_e( 'Videos', 'mw-small' );
 
 						elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-							_e( 'Quotes', 'mwsmall' );
+							_e( 'Quotes', 'mw-small' );
 
 						elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-							_e( 'Links', 'mwsmall' );
+							_e( 'Links', 'mw-small' );
 
 						elseif ( is_tax( 'post_format', 'post-format-status' ) ) :
-							_e( 'Statuses', 'mwsmall' );
+							_e( 'Statuses', 'mw-small' );
 
 						elseif ( is_tax( 'post_format', 'post-format-audio' ) ) :
-							_e( 'Audios', 'mwsmall' );
+							_e( 'Audios', 'mw-small' );
 
 						else :
-							_e( 'Archives', 'mwsmall' );
+							_e( 'Archives', 'mw-small' );
 
 						endif;
 					?>

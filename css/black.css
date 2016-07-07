@@ -1,0 +1,104 @@
+body {
+	background-color: #f5f5f5;
+}
+.sticky-post,
+.header-top, 
+.entry-header.post-link,
+.widget-area .widget_nav_menu a:before, button, html input[type="button"], input[type="reset"], input[type="submit"], .paging-navigation a, .mw_title .post-icon, .mw_title .entry-time, nav .sf-menu li a:hover, nav  .sf-menu li.sfHover > a, nav  .sf-menu li.current_page_item > a, nav .sf-menu li.current-menu-item > a, .mwpage .dots, .widget-title, #comments .comment-reply-link, .page-header {
+    background-color: #2B2B2B;
+}
+button:hover, html input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover,
+.footer_nav,
+.footer_info,
+.center .header-main .navbar-collapse,
+.widget-area .widget_nav_menu a, .paging-navigation .current, .paging-navigation a:hover, #comments .comment-reply-link:hover {
+	background-color: #000;
+}
+.mw-slider .header-slider, .mw-slider .link-more,
+.navbar-nav li li a,
+.mw-go-top:hover,
+.searchform input,
+#wp-calendar caption,
+.widget-area .widget_nav_menu .menu {
+    background-color: #8F9294;
+}
+.mw-slider .header-slider, .mw-slider .link-more,
+.format-gallery .flexslider,
+.topmenu .button a, .navbar-nav .button a,
+#colophon,
+.mw_top_featured,
+#masthead, header .search-box-wrapper,
+.mw-go-top, .widget-area .widget_nav_menu .current-menu-item > a, .widget-area .widget_nav_menu li a:hover {
+    background-color: #444;
+}
+.widget-title, 
+.header-top .top-icon i, 
+.mw-go-top:hover, 
+.top-icon i:hover {
+    border-color: #000;
+}
+input[type="submit"],
+.searchform input,
+input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, textarea:focus, blockquote, .top-icon i, .tagcloud a, .mw-go-top, .sticky .entry-header, .flex-direction-nav a:hover, .navigation.post-navigation, .paging-navigation a, .paging-navigation span  {
+	border-color: #000;
+}
+.navbar-toggle,
+.navbar-toggle:hover,
+button:hover, html input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover,
+.footer_info .top-icon i:hover,
+.header-main .top-icon i,
+.paging-navigation .current, .paging-navigation a:hover,
+.header-top .mw_widget_social .top-icon i:hover,
+.tagcloud a:hover, .top-icon i:hover {
+    border-color: #8F9294;
+}
+.footer_info .top-icon i, 
+.header-top .mw_widget_social .top-icon i {
+	border-color: #fff;
+}
+.mw_top_featured.style_2 .cat-link i,
+.author-box a,
+.entry-title,
+.mw_top_featured .mw_title a,
+.entry-title a,
+.home_text h2, 
+h1, h2, h3, h4, h5, h6, .flexslider .flex-direction-nav a:hover:before, .widget a, .widget li:before, .widget li a:before, #wp-calendar #today, body .mw-go-top:hover, .mw_widget_social .top-icon i, .entry-meta .fa, .entry-meta a, .post-navigation a, .logged-in-as a, .comment-author .fn, .more-link, .post-title a, .searchform .searchsubmit {
+    color: #000;
+}
+.sf-menu a:hover,
+.footer_info a,
+.site-title a,
+.footer_info .top-icon i,
+.topmenu a,
+.header-top .mw_widget_social .top-icon i {
+    color: #fff;
+}
+.mw-slider .header-slider > time,
+.header-main .top-icon a:hover i,
+.header-main .navbar-toggle:hover,
+a,
+.site-title a:hover,
+.footer_info .top-icon i:hover,
+.author-box a:hover,
+.topmenu a:hover,
+.footer_menu .current_page_item > a, .footer_menu .current-menu-item > a, .footer_menu a:hover,
+.header-top .mw_widget_social .top-icon i:hover,
+.widget li:hover:before, .widget li a:hover:before, .widget a:hover, .post-title a:hover, .entry-meta a:hover, .post-navigation a:hover, .logged-in-as a:hover, .more-link:hover, .navbar-toggle:hover, .mw-go-top:hover, .top-icon a:hover i  {
+	color: #8F9294;
+}
+.mw-slider .entry-slider p,
+a:active, a:hover,
+.entry-title a:hover, .footer_info a:hover,
+.mw_top_featured .mw_title a:hover,
+.searchform .searchsubmit:hover,
+input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
+    color: #444;
+}
+.entry-header.post-quote:hover {
+	background-color: rgba(0,0,0,0.8);
+}
+.mw_top_featured.style_2 .post:hover .mw_title,
+.mw-slider .entry-slider,
+.mw_title {
+    background-color: rgba(255, 255, 255, 0.5);
+}

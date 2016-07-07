@@ -16,7 +16,7 @@ function mwsmall_customize_register($wp_customize){
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 	
     $wp_customize->add_section('mwsmall_logo', array(
-        'title'    => __('Logo', 'mwsmall'),
+        'title'    => __('Logo', 'mw-small'),
         'priority' => 40,
     ));
 	
@@ -28,14 +28,14 @@ function mwsmall_customize_register($wp_customize){
     ));
  
     $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'logo_image', array(
-        'label'    => __('Upload logo', 'mwsmall'),
+        'label'    => __('Upload logo', 'mw-small'),
         'section'  => 'mwsmall_logo',
         'settings' => 'logo_mwsmall',
     )));
 	
 	// page option 
 	$wp_customize->add_section( 'mwsmall_general' , array(
-		'title'       => __( 'Options', 'mwsmall' ),
+		'title'       => __( 'Options', 'mw-small' ),
 		'priority'    => 41,
 		'description' => '',
 	) );
@@ -46,9 +46,22 @@ function mwsmall_customize_register($wp_customize){
 	) );
 
 	$wp_customize->add_control('hide_search', array(
-		'label' => __('Hide top icon search', 'mwsmall'),
+		'label' => __('Hide top icon search', 'mw-small'),
 		'section' => 'mwsmall_general',
 		'settings' => 'mwsmall_head_search',
+		'type' => 'checkbox',
+	));
+	
+	// Date Format
+ 	$wp_customize->add_setting( 'mwsmall_time', array (
+		'default' => '',
+		'sanitize_callback' => 'mwsmall_sanitize_checkbox',
+	) );
+
+	$wp_customize->add_control('mwsmall_time', array(
+		'label' => __( 'Check this box to show WordPress date format', 'mw-small' ),
+		'section' => 'mwsmall_general',
+		'settings' => 'mwsmall_time',
 		'type' => 'checkbox',
 	));
 
@@ -58,7 +71,7 @@ function mwsmall_customize_register($wp_customize){
 	));
 	
 	$wp_customize->add_control('header_position', array(
-		'label'      => __('Header position', 'mwsmall'),
+		'label'      => __('Header position', 'mw-small'),
 		'section'    => 'mwsmall_general',
 		'settings'   => 'mwsmall_header_position',
 		'type'       => 'radio',
@@ -74,7 +87,7 @@ function mwsmall_customize_register($wp_customize){
 	));
 	
 	$wp_customize->add_control('sidebar_position', array(
-		'label'      => __('Sidebar position', 'mwsmall'),
+		'label'      => __('Sidebar position', 'mw-small'),
 		'section'    => 'mwsmall_general',
 		'settings'   => 'mwsmall_sidebar_position',
 		'type'       => 'radio',
@@ -90,19 +103,22 @@ function mwsmall_customize_register($wp_customize){
 	));
 	
 	$wp_customize->add_control('color_theme', array(
-		'label'      => __('Color scheme', 'mwsmall'),
+		'label'      => __('Color scheme', 'mw-small'),
 		'section'    => 'mwsmall_general',
 		'settings'   => 'mwsmall_color_theme',
 		'type'       => 'select',
 		'choices'    => array(
-			'default'  => 'Default',
-			'dark'   => 'Dark',
-			),
+			'default' => __( 'Default', 'mw-small' ),
+			'dark' => __( 'Dark', 'mw-small' ),
+			'orange' => __( 'Orange', 'mw-small' ),
+			'gray' => __( 'Gray', 'mw-small' ),
+			'black' => __( 'Black', 'mw-small' ),
+		),
 	));
 	
 	// Home Box
 	$wp_customize->add_section( 'mwsmall_homepage_settings', array(
-		'title' => __( 'Homepage Settings', 'mwsmall' ),
+		'title' => __( 'Homepage Settings', 'mw-small' ),
 		'priority' => 42
 	));
 	
@@ -111,28 +127,29 @@ function mwsmall_customize_register($wp_customize){
 	));
 	
 	$wp_customize->add_control( 'home_title', array(
-		'label' => __('Title Box Home', 'mwsmall'),
+		'label' => __('Title Box Home', 'mw-small'),
 		'section' => 'mwsmall_homepage_settings',
 		'settings' => 'mwsmall_home_title',
-		'type' => 'text',		
+		'type' => 'text',
 	));
+	
 	$wp_customize->add_setting( 'mwsmall_home_text', array(
 		'sanitize_callback' => 'mwsmall_sanitize_text',
 	));
 	
 	$wp_customize->add_control( 'home_text', array(
-		'label' => __('Text Box Home', 'mwsmall'),
+		'label' => __('Text Box Home', 'mw-small'),
 		'section' => 'mwsmall_homepage_settings',
 		'settings' => 'mwsmall_home_text',
-		'type' => 'textarea',		
+		'type' => 'textarea',
 	));
 	
 	// Blog Options
 	$wp_customize->add_section( 'mwsmall_blog_settings', array(
-		'title' => __( 'Blog Options', 'mwsmall' ),
-		'description' => '<span>' . __( 'Option available in the <a target="_blank" href="http://mwthemes.net/portfolio/mw-small-pro">PRO version.</a>', 'mwsmall' ) . '</span>',
-		'priority' => 42,
-		)	
+		'title' => __( 'Blog Options', 'mw-small' ),
+		'description' => '<span>' . __( 'Option available in the <a target="_blank" href="http://mwthemes.net/portfolio/mw-small-pro">PRO version.</a>', 'mw-small' ) . '</span>',
+		'priority' => 43,
+		)
 	);
 	
 	$wp_customize->add_setting( 'mwsmall_blog_settings_options', array(
@@ -146,10 +163,10 @@ function mwsmall_customize_register($wp_customize){
 	
 	// Featured Posts Area
 	$wp_customize->add_section( 'mwsmall_featured', array(
-		'title' => __( 'Featured Posts Area', 'mwsmall' ),
-		'description' => '<span>' . __( 'Option available in the <a target="_blank" href="http://mwthemes.net/portfolio/mw-small-pro">PRO version.</a>', 'mwsmall' ) . '</span>',
-		'priority' => 42,
-		)	
+		'title' => __( 'Featured Posts Area', 'mw-small' ),
+		'description' => '<span>' . __( 'Option available in the <a target="_blank" href="http://mwthemes.net/portfolio/mw-small-pro">PRO version.</a>', 'mw-small' ) . '</span>',
+		'priority' => 44,
+		)
 	);
 	
 	$wp_customize->add_setting( 'mwsmall_show_post_top_info', array(
@@ -161,10 +178,100 @@ function mwsmall_customize_register($wp_customize){
 		'settings' => 'mwsmall_show_post_top_info'
 	));
 	
+	// Slider Posts
+	$wp_customize->add_section( 'mwsmall_slider', array(
+		'title' => __( 'Slider Posts Area', 'mw-small' ),
+		'priority' => 45,
+		)
+	);
+	
+	$wp_customize->add_setting( 'hide_slider_post', array(
+		'default' => '',
+		'sanitize_callback' => 'mwsmall_sanitize_checkbox',
+	));
+	
+	$wp_customize->add_control( 'hide_slider_post', array(
+		'label' => __( 'Hide slider post.', 'mw-small' ),
+		'section' => 'mwsmall_slider',
+		'settings' => 'hide_slider_post',
+		'type' => 'checkbox'
+	));
+	
+	$wp_customize->add_setting( 'mwsmall_slider_cat', array(
+		'sanitize_callback' => 'mwsmall_sanitize_category'
+	) );
+	
+	$wp_customize->add_control( 
+		new WP_Customize_Category_Control( 
+			$wp_customize,
+			'mwsmall_slider_cat', 
+			array(
+				'label' => __( 'Select the category for slider.', 'mw-small' ),
+				'section' => 'mwsmall_slider',
+				'settings' => 'mwsmall_slider_cat',
+			)
+		) 
+	);
+	
+	$wp_customize->add_setting( 'mwsmall_slider_text', array(
+		'default' => 'center',
+		'sanitize_callback' => 'mwsmall_sanitize_slider_text',
+	));
+	
+	$wp_customize->add_control( 'mwsmall_slider_text', array(
+		'label'      => __( 'Select algin text in slider post area.', 'mw-small' ),
+		'section'    => 'mwsmall_slider',
+		'settings'   => 'mwsmall_slider_text',
+		'type'       => 'select',
+		'choices'    => array(
+			'left' => __( 'Left', 'mw-small' ),
+			'center' => __( 'Center', 'mw-small' ),
+			'right' => __( 'Right', 'mw-small' ),
+		)
+	));
+	
+	$wp_customize->add_setting( 'mwsmall_slider_button_text', array(
+		'default' => __( 'Read More', 'mw-small' ),
+		'sanitize_callback' => 'mwsmall_sanitize_text',
+	));
+
+	$wp_customize->add_control( 'mwsmall_slider_button_text', array(
+		'label' => __( 'Your Button Text.', 'mw-small' ),
+		'section' => 'mwsmall_slider',
+		'settings' => 'mwsmall_slider_button_text',
+	));
+	
+	$wp_customize->add_setting( 'mwsmall_pro_slider', array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	));
+
+	$wp_customize->add_control( new WP_Customize_Notice( $wp_customize, 'mwsmall_pro_slider', array(
+		'section' => 'mwsmall_slider',
+		'description' => __( 'More options available in the <a target="_blank" href="http://mwthemes.net/portfolio/mw-small-pro">PRO version.</a>', 'mw-small' ),
+	)));
+	
+	// Google Fonts 
+	$wp_customize->add_section( 'mwsmall_fonts', array(
+        'title'    => __( 'Google Fonts', 'mw-small' ),
+		'description' => '<span>' . __( 'Option available in the <a target="_blank" href="http://mwthemes.net/portfolio/mw-small-pro">PRO version.</a>', 'mw-small' ) . '</span>',
+		'priority' => 46,
+		)
+	);
+	
+	$wp_customize->add_setting( 'mwsmall_fonts', array(
+		'sanitize_callback' => 'esc_attr',
+	));
+	
+	$wp_customize->add_control('mwsmall_fonts', array(
+		'section' => 'mwsmall_fonts',
+		'settings' => 'mwsmall_fonts'
+	));
+	
 	// Icon
 	$wp_customize->add_section('mwsmall_social', array(
-        'title'    => __('Social Media Links', 'mwsmall'),
-        'priority' => 42,
+        'title'    => __('Social Media Links', 'mw-small'),
+        'priority' => 47,
     ));
 	
     $wp_customize->add_setting('icon_facebook', array(
@@ -173,7 +280,7 @@ function mwsmall_customize_register($wp_customize){
     ));
  
     $wp_customize->add_control('mwsmall_icon_facebook', array(
-        'label'      => __('Facebook', 'mwsmall'),
+        'label'      => __('Facebook', 'mw-small'),
         'section'    => 'mwsmall_social',
         'settings'   => 'icon_facebook',
     ));
@@ -184,7 +291,7 @@ function mwsmall_customize_register($wp_customize){
 	));
 	   
 	$wp_customize->add_control('mwsmall_icon_twitter', array(
-        'label'      => __('Twitter', 'mwsmall'),
+        'label'      => __('Twitter', 'mw-small'),
         'section'    => 'mwsmall_social',
         'settings'   => 'icon_twitter',
     ));	
@@ -195,9 +302,20 @@ function mwsmall_customize_register($wp_customize){
 	));
 	   
 	$wp_customize->add_control('mwsmall_icon_google', array(
-        'label'      => __('Google+', 'mwsmall'),
+        'label'      => __('Google+', 'mw-small'),
         'section'    => 'mwsmall_social',
         'settings'   => 'icon_google',
+    ));
+	
+	$wp_customize->add_setting('icon_youtube', array(
+        'default'        => '',
+		'sanitize_callback' => 'esc_url_raw',
+	));
+	   
+	$wp_customize->add_control('mwsmall_icon_youtube', array(
+        'label'      => __( 'Youtube', 'mw-small' ),
+        'section'    => 'mwsmall_social',
+        'settings'   => 'icon_youtube',
     ));
 	
 	$wp_customize->add_setting('icon_linkedin', array(
@@ -206,7 +324,7 @@ function mwsmall_customize_register($wp_customize){
 	));
 	   
 	$wp_customize->add_control('mwsmall_icon_linkedin', array(
-        'label'      => __('LinkedIn', 'mwsmall'),
+        'label'      => __('LinkedIn', 'mw-small'),
         'section'    => 'mwsmall_social',
         'settings'   => 'icon_linkedin',
     ));
@@ -217,7 +335,7 @@ function mwsmall_customize_register($wp_customize){
 	));
 	   
 	$wp_customize->add_control('mwsmall_icon_instagram', array(
-        'label'      => __('Instagram', 'mwsmall'),
+        'label'      => __('Instagram', 'mw-small'),
         'section'    => 'mwsmall_social',
         'settings'   => 'icon_instagram',
     ));
@@ -228,7 +346,7 @@ function mwsmall_customize_register($wp_customize){
 	));
 	   
 	$wp_customize->add_control('mwsmall_icon_flickr', array(
-        'label'      => __('Flickr', 'mwsmall'),
+        'label'      => __('Flickr', 'mw-small'),
         'section'    => 'mwsmall_social',
         'settings'   => 'icon_flickr',
     ));
@@ -239,7 +357,7 @@ function mwsmall_customize_register($wp_customize){
 	));
 	   
 	$wp_customize->add_control('mwsmall_icon_pinterest', array(
-        'label'      => __('Pinterest', 'mwsmall'),
+        'label'      => __('Pinterest', 'mw-small'),
         'section'    => 'mwsmall_social',
         'settings'   => 'icon_pinterest',
     ));
@@ -250,7 +368,7 @@ function mwsmall_customize_register($wp_customize){
 	));
 	   
 	$wp_customize->add_control('mwsmall_icon_vimeo', array(
-        'label'      => __('Vimeo', 'mwsmall'),
+        'label'      => __('Vimeo', 'mw-small'),
         'section'    => 'mwsmall_social',
         'settings'   => 'icon_vimeo',
     ));
@@ -261,7 +379,7 @@ function mwsmall_customize_register($wp_customize){
 	));
 	   
 	$wp_customize->add_control('mwsmall_icon_tumblr', array(
-        'label'      => __('Tumblr', 'mwsmall'),
+        'label'      => __('Tumblr', 'mw-small'),
         'section'    => 'mwsmall_social',
         'settings'   => 'icon_tumblr',
     ));
@@ -272,7 +390,7 @@ function mwsmall_customize_register($wp_customize){
 	));
 	   
 	$wp_customize->add_control('mwsmall_icon_dribbble', array(
-        'label'      => __('Dribbble', 'mwsmall'),
+        'label'      => __('Dribbble', 'mw-small'),
         'section'    => 'mwsmall_social',
         'settings'   => 'icon_dribbble',
     ));
@@ -283,7 +401,7 @@ function mwsmall_customize_register($wp_customize){
 	));
 	   
 	$wp_customize->add_control('mwsmall_icon_rss', array(
-        'label'      => __('RSS', 'mwsmall'),
+        'label'      => __('RSS', 'mw-small'),
         'section'    => 'mwsmall_social',
         'settings'   => 'icon_rss',
     ));
@@ -296,25 +414,25 @@ function mwsmall_customize_register($wp_customize){
     ));
  
     $wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'header_bg_color', array(
-        'label'    => __('Header Background Color', 'mwsmall'),
+        'label'    => __('Header Background Color', 'mw-small'),
         'section'  => 'colors',
         'settings' => 'header_bg_color',
     )));
 
 	// Info Theme 
 	$wp_customize->add_section('mwsmall_info', array(
-        'title'    => __('Info Theme', 'mwsmall'),
-		'description' => sprintf( __( '<a target="_blank" href="%1$s">%2$s</a><br/><a target="_blank" href="%3$s" class="button-pro mwfb">Facebook</a><br/><a target="_blank" href="%4$s" class="button-pro mwtwitter">Twitter</a><br/><a target="_blank" href="%5$s" class="button-pro paypal">Donate</a><br/><a target="_blank" href="%7$s">%8$s</a><br/><a target="_blank" href="%7$s" class="button-pro mwfb">Upgrade to PRO</a><br/><a target="_blank" href="%6$s" class="button-pro">DEMO PRO</a>', 'mwsmall' ), 
+        'title'    => __('Info Theme', 'mw-small'),
+		'description' => sprintf( __( '<a target="_blank" href="%1$s">%2$s</a><br/><a target="_blank" href="%3$s" class="button-pro mwfb">Facebook</a><br/><a target="_blank" href="%4$s" class="button-pro mwtwitter">Twitter</a><br/><a target="_blank" href="%5$s" class="button-pro paypal">Donate</a><br/><a target="_blank" href="%7$s">%8$s</a><br/><a target="_blank" href="%7$s" class="button-pro mwfb">Upgrade to PRO</a><br/><a target="_blank" href="%6$s" class="button-pro">DEMO PRO</a>', 'mw-small' ), 
 		esc_url( 'http://mwthemes.net' ), 
-		__('If you need assistance, please do not hesitate to contact us.', 'mwsmall'), 
+		__('If you need assistance, please do not hesitate to contact us.', 'mw-small'), 
 		esc_url( 'http://facebook.com/mwthemes' ), 
 		esc_url( 'https://twitter.com/mwthemes' ), 
 		esc_url( 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=UEV9GM57HQUHA' ), 
 		esc_url( 'http://demo.mwthemes.net/mw-small-pro' ),
 		esc_url( 'http://mwthemes.net/portfolio/mw-small-pro' ),
-		__('If you need more useful options, see the MW Small PRO version.', 'mwsmall')
+		__('If you need more useful options, see the MW Small PRO version.', 'mw-small')
 		),
-        'priority' => 110,		
+        'priority' => 110,
     ));
 	
 	$wp_customize->add_setting( 
@@ -330,13 +448,13 @@ function mwsmall_customize_register($wp_customize){
 	
 	// Theme PRO 
 	$wp_customize->add_section('mwsmall_info_up', array(
-        'title'    => __('Upgrade MW Small ', 'mwsmall'),
-		'description' => sprintf( __( '<a target="_blank" href="%1$s">%2$s</a><br><img class="img_promo" src="%3$s">', 'mwsmall' ), 
+        'title'    => __('Upgrade MW Small ', 'mw-small'),
+		'description' => sprintf( __( '<a target="_blank" href="%1$s">%2$s</a><br><img class="img_promo" src="%3$s">', 'mw-small' ), 
 		esc_url( 'http://mwthemes.net/portfolio/mw-small-pro' ),
-		__('If you need more useful options, see the MW Small PRO version.', 'mwsmall'),
+		__('If you need more useful options, see the MW Small PRO version.', 'mw-small'),
 		esc_url( get_template_directory_uri() .'/inc/images/mw-small-pro.jpg' )
 		),
-        'priority' => 10,		
+        'priority' => 10,
     ));
 	
 	$wp_customize->add_setting( 
@@ -350,10 +468,10 @@ function mwsmall_customize_register($wp_customize){
 		'section' => 'mwsmall_info_up'
 	) );
 	
-	// footer
+	// Footer
 	$wp_customize->add_section( 'mwsmall_footer', array(
-        'title'    => __('Footer', 'mwsmall'),
-        'priority' => 43,
+        'title'    => __('Footer', 'mw-small'),
+        'priority' => 49,
     ));
 	
  	$wp_customize->add_setting('mwsmall_text_footer', array(
@@ -361,11 +479,21 @@ function mwsmall_customize_register($wp_customize){
 	));
 
 	$wp_customize->add_control( 'footer_text', array(
-		'label' => __( 'Your text in footer.', 'mwsmall' ),
+		'label' => __( 'Your text in footer.', 'mw-small' ),
 		'section' => 'mwsmall_footer',
 		'settings' => 'mwsmall_text_footer',
 		'priority' => 1
-	)); 
+	));
+
+	$wp_customize->add_setting( 'mwsmall_pro_footer', array(
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
+	));
+
+	$wp_customize->add_control( new WP_Customize_Notice( $wp_customize, 'mwsmall_pro_footer', array(
+		'section' => 'mwsmall_footer',
+		'description' => __( 'More options available in the <a target="_blank" href="http://mwthemes.net/portfolio/mw-small-pro">PRO version.</a>', 'mw-small' ),
+	)));
 }
 
 add_action('customize_register', 'mwsmall_customize_register');
@@ -412,11 +540,83 @@ function mwsmall_sanitize_sidebar_position( $content ) {
 	}
 }
 // Color
-function mwsmall_sanitize_color( $content ) {
-	if ( 'dark' == $content ) {
-		return 'dark';
+function mwsmall_sanitize_color( $input ) {
+	$valid = array(
+		'default'  => __( 'Default', 'mw-small' ),
+		'dark'   => __( 'Dark', 'mw-small' ),
+		'orange'   => __( 'Orange', 'mw-small' ),
+		'gray'   => __( 'Gray', 'mw-small' ),
+		'black'   => __( 'Black', 'mw-small' ),
+	);
+ 
+	if ( array_key_exists( $input, $valid  ) ) {
+		return $input;
 	} else {
 		return 'default';
+	}
+}
+/**
+ * Adds sanitization callback function: Number
+ */
+function mwsmall_sanitize_number( $input ) {
+    if( is_numeric( $input ) ) {
+        return intval( $input );
+    }
+}
+// Category
+function mwsmall_sanitize_category( $input ) {
+	if ( term_exists(get_cat_name( $input ), 'category') )
+		return $input;
+	else 
+		return '';
+}
+if ( class_exists( 'WP_Customize_Control' ) ) {
+    class WP_Customize_Category_Control extends WP_Customize_Control {
+        /**
+         * Render the control's content.
+         */
+        public function render_content() {
+            $dropdown = wp_dropdown_categories(
+                array(
+                    'name'              => '_customize-dropdown-categories-' . $this->id,
+                    'echo'              => 0,
+                    'show_option_none'  => __( '&mdash; Select &mdash;', 'mw-small' ),
+                    'option_none_value' => '0',
+                    'selected'          => $this->value(),
+                )
+            );
+
+            $dropdown = str_replace( '<select', '<select ' . $this->get_link(), $dropdown );
+
+            printf(
+                '<label class="customize-control-select"><span class="customize-control-title">%s</span> %s</label>',
+                $this->label,
+                $dropdown
+            );
+        }
+    }
+}
+// Slider Text Align
+function mwsmall_sanitize_slider_text( $content ) {
+	if ( 'left' == $content ) {
+		return 'left';
+	} else if ( 'right' == $content ) {
+		return 'right';
+	} else {
+		return 'center';
+	}
+}
+// Info
+if( class_exists( 'WP_Customize_Control' ) ) {
+	class WP_Customize_Notice extends WP_Customize_Control {
+		public $type = 'notice';
+
+		public function render_content() {
+			?>
+				<div class="info-pro"><?php echo $this->description; ?></div>
+			<?php
+		}
+
 	}
 }
 /**

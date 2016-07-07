@@ -8,8 +8,14 @@ jQuery(document).ready(function($){
 		dropShadows: false
 	});
 
-	$('.flexslider').flexslider({
+	$('.format-gallery .flexslider').flexslider({
 		animation: "slide",
+	});
+	
+	$('.mw-slider .mw-small-slider-cat.flexslider').flexslider({
+		animation: "slide",
+		slideshowSpeed: 5000,
+		controlNav: false,
 	});
   
 	$('.top-icon .fa-search').click(function() {		

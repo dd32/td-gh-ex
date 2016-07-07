@@ -9,14 +9,14 @@
 	<header class="entry-header post-link">
 		
 		<div class="entry-content post-link clearfix">
-			<?php the_content( __( '[...]', 'mwsmall' ) );	?>
+			<?php the_content( __( '[...]', 'mw-small' ) );	?>
 		</div><!-- .entry-content -->
 		<div class="mw_title">
 
 			<?php mwsmall_post_icon(); ?>
 			<?php if( is_sticky() ) { ?> <span class="sticky-post"><i class="fa fa-star-o fa-2x"></i></span> <?php } ?>
 
-		</div><!-- .entry-title -->
+		</div><!-- .mw_title -->
 
 	</header><!-- .entry-header -->
 	
@@ -25,5 +25,7 @@
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 	<?php endif; ?>
+	
+	<?php edit_post_link( __( 'Edit', 'mw-small' ), '<span class="edit-link">', '</span>' ); ?>
 	
 </article><!-- #post-## -->

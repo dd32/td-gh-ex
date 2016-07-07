@@ -13,8 +13,6 @@ MW Small is a minimalistic responsive and customizable free blogging WordPress t
 
 Demo: http://demo.mwthemes.net/mw-small/
 
-Settings > General > Date Format > Custom: j M Y
-
 Scripts:
 FlexSlider - GPLv2 License: https://github.com/woothemes/flexslider
 
@@ -28,11 +26,23 @@ The Font Awesome font is licensed under the SIL Open Font License - http://forta
 Font Awesome CSS, LESS, and SASS files are licensed under the MIT License - http://fortawesome.github.io/Font-Awesome/#license
 
 Images:
-Screenshot image licensed : Public Domain => CCO http://pixabay.com/en/life-guard-lifeguard-beach-tower-351484/
+Screenshot image licensed : Public Domain => CCO 
+https://pixabay.com/en/mountain-view-panorama-person-984277/
+https://pixabay.com/en/recreation-adventure-outdoors-one-1209450/
+http://pixabay.com/en/life-guard-lifeguard-beach-tower-351484/
 
 /*-----------------------------
 		Changelog 
 -----------------------------*/
+
+### 1.1.0 * 07-07-2016
+* Add posts slider on Home Page
+* Add new color scheme (Black, Gray, Orange)
+* Add social link Youtube
+* Updated Font Awesome
+* Settings post date format in customizer
+* Minor fixes CSS
+* Updated screenshot
 
 ### 1.0.9 * 22-11-2015
 * Add changelog

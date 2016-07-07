@@ -11,13 +11,14 @@ function mwsmall_setup() {
 		$content_width = 870;
 	}
 	
-	load_theme_textdomain( 'mwsmall', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'mw-small', get_template_directory() . '/languages' );
 	
 	add_theme_support( 'automatic-feed-links' );
 	
 	add_theme_support( 'post-thumbnails' );
 	add_image_size( 'blog_img', 870, 400, true );
-	set_post_thumbnail_size( 55, 55, true );
+	
+	add_theme_support( "title-tag" );
 	
 	add_theme_support( 'custom-background', apply_filters( 'mwsmall_custom_background_args', array(
 		'default-color' => 'e5e5e5',
@@ -39,7 +40,7 @@ function mwsmall_setup() {
 	add_theme_support( 'post-formats', array( 'image', 'gallery', 'video', 'quote', 'link', 'audio', 'status' ) );
 	
 	register_nav_menus( array(
-		'primary'		=>	__( 'Main Navigation', 'mwsmall' )
+		'primary'		=>	__( 'Main Navigation', 'mw-small' )
 	) );
 } 
 endif;
@@ -55,8 +56,8 @@ function mwsmall_scripts() {
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 	
 	$color_scheme = get_theme_mod( 'mwsmall_color_theme' );
-	if ( $color_scheme == 'dark' )
-		wp_enqueue_style( 'dark', get_template_directory_uri() . '/css/dark.css', array(), null );
+	if ( $color_scheme != 'default' )
+		wp_enqueue_style( 'mwsmall-color', get_template_directory_uri() . '/css/' . $color_scheme . '.css', array(), null );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -107,7 +108,7 @@ function mwsmall_post_icon() {
 ----------------------------------- */
 function mwsmall_widgets_init() {
 	register_sidebar(array(
-		'name' => __( 'Blog Widget', 'mwsmall' ),
+		'name' => __( 'Blog Widget', 'mw-small' ),
 		'id' => 'blog-widget',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -115,7 +116,7 @@ function mwsmall_widgets_init() {
 		'after_title' => '</h3>',
 	));
 	register_sidebar(array(
-		'name' => __( 'Footer Widget 1', 'mwsmall' ),
+		'name' => __( 'Footer Widget 1', 'mw-small' ),
 		'id' => 'footer1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -123,7 +124,7 @@ function mwsmall_widgets_init() {
 		'after_title' => '</h3>',
 	));
 	register_sidebar(array(
-		'name' => __( 'Footer Widget 2', 'mwsmall' ),
+		'name' => __( 'Footer Widget 2', 'mw-small' ),
 		'id' => 'footer2',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -131,7 +132,7 @@ function mwsmall_widgets_init() {
 		'after_title' => '</h3>',
 	));
 	register_sidebar(array(
-		'name' => __( 'Footer Widget 3', 'mwsmall' ),
+		'name' => __( 'Footer Widget 3', 'mw-small' ),
 		'id' => 'footer3',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
@@ -147,11 +148,11 @@ function mwsmall_pagination_nav(){
 	if ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 	<nav class="navigation paging-navigation" role="navigation">
 		<?php if ( get_next_posts_link() ) : ?>
-		<div class="nav-previous"><?php next_posts_link( __( 'Older posts', 'mwsmall' ) ); ?></div>
+		<div class="nav-previous"><?php next_posts_link( __( 'Older posts', 'mw-small' ) ); ?></div>
 		<?php endif; ?>
 
 		<?php if ( get_previous_posts_link() ) : ?>
-		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts', 'mwsmall' ) ); ?></div>
+		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts', 'mw-small' ) ); ?></div>
 		<?php endif; ?>
 	<?php endif; ?>
 
@@ -177,13 +178,13 @@ function mwsmall_comment($comment, $args, $depth) {
 			
 			<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 				<time datetime="<?php comment_time( 'c' ); ?>">
-					<?php printf( _x( '%1$s', '1: date', 'mwsmall' ), get_comment_date() ); ?>
+					<?php printf( _x( '%1$s', '1: date', 'mw-small' ), get_comment_date() ); ?>
 				</time>
 			</a>
 
 			
 			<?php if($comment->comment_approved == '0') : ?>
-				<div class="comment-awaiting-moderation"><?php _e('Your comment is awaiting approval', 'mwsmall'); ?></div>
+				<div class="comment-awaiting-moderation"><?php _e('Your comment is awaiting approval', 'mw-small'); ?></div>
 			<?php endif; ?>
 		</div>
 		
@@ -232,7 +233,7 @@ function mwsmall_wp_title( $title, $sep ) {
 
 	// Add a page number if necessary.
 	if ( $paged >= 2 || $page >= 2 )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'mwsmall' ), max( $paged, $page ) );
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'mw-small' ), max( $paged, $page ) );
 
 	return $title;
 }
