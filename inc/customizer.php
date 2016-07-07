@@ -16,7 +16,7 @@ add_action( 'customize_register' , 'barletta_theme_options' );
  */
 function barletta_customizer( $wp_customize ) {
 
-	global $site_layout;
+	global $barletta_site_layout;
 
 	/**
 	 * Section: Theme layout options
@@ -42,20 +42,8 @@ function barletta_customizer( $wp_customize ) {
 			'section' => 'barletta_layout_section',
 			'type'    => 'select',
 			'description' => __('Choose between different layout options to be used as default', 'barletta'),
-			'choices'    => $site_layout
+			'choices'    => $barletta_site_layout
 		));	
-
-		$wp_customize->add_setting( 'barletta_page_comments', array(
-			'default' => 1,
-			'sanitize_callback' => 'barletta_sanitize_checkbox',
-		) );
-
-		$wp_customize->add_control( 'barletta_page_comments', array(
-			'priority'  => 2,
-			'label'     => esc_html__( 'Display Comments on Static Pages?', 'barletta' ),
-			'section'   => 'barletta_layout_section',
-			'type'      => 'checkbox',
-		) );
 
 	/**
 	 * Section: Slider settings
@@ -139,12 +127,10 @@ function barletta_sanitize_number($input) {
  * Sanitze blog layout
  */
 function barletta_sanitize_layout( $input ) {
-	global $site_layout;
-	if ( array_key_exists( $input, $site_layout ) ) {
+	global $barletta_site_layout;
+	if ( array_key_exists( $input, $barletta_site_layout ) ) {
 		return $input;
 	} else {
 		return '';
 	}
 }
-
-?>

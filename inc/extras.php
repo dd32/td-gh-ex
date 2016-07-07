@@ -38,7 +38,7 @@ function barletta_slider() {
 				endif;
 
 				echo '<div class="slide-title">';
-				if ( get_the_title() != '' ) echo '<a href="' . get_permalink() . '"><h2 class="entry-title">'. get_the_title().'</h2></a>';
+				if ( get_the_title() != '' ) echo '<a href="' . esc_url(get_permalink()) . '"><h2 class="entry-title">'. get_the_title().'</h2></a>';
 				echo '</div>';
 				echo '</div>'; // .slider-item
 				echo '</li>';
@@ -91,5 +91,3 @@ function barletta_custom_password_form() {
 	return $o;
 
 }
-
-?>

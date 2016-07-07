@@ -43,4 +43,4 @@
 					</div>
 				</div>
 
-			<?php endif; /* if is_sidebar */ ?>
+			<?php endif;

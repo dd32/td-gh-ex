@@ -76,5 +76,3 @@ function barletta_post_nav() {
 }
 
 endif;
-
-?>

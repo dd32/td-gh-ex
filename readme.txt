@@ -77,3 +77,9 @@ Drag and drop these widgets to above two widget areas and arrange them as you li
 
 1.0.2 - 05.07.2016
 * Removed favicon.ico
+
+1.0.3 - 07.07.2016
+* updated constructors in widgets
+* prefixed all variables
+* fixed isues with customizer and comments
+* fixed isue with escape attributes and urls

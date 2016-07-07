@@ -8,7 +8,7 @@
 class barletta_social_widget extends WP_Widget
 {
 
-	function barletta_social_widget(){
+	function __construct(){
 
 	$widget_ops = array('classname' => 'barletta-social','description' => esc_html__( "Barletta Social Widget" ,'barletta') );
 	parent::__construct('barletta-social', esc_html__('Barletta Social Widget','barletta'), $widget_ops);
@@ -136,11 +136,11 @@ class barletta_social_widget extends WP_Widget
 
 				if( isset( $instance[$barletta_widgets_name] ) && 'widget_title' != $barletta_widgets_name ) { 
 
-					$barletta_widgets_field_value = esc_attr( $instance[$barletta_widgets_name] ); 
+					$barletta_widgets_field_value = esc_url( $instance[$barletta_widgets_name] ); 
 
 					if( '' != $barletta_widgets_field_value ) {  ?>
 
-					<a href="<?php echo $barletta_widgets_field_value; ?>" title="<?php echo $barletta_widgets_title; ?>"><i class="fa fa-<?php echo $barletta_widgets_name; ?>"></i></a>
+					<a href="<?php echo $barletta_widgets_field_value; ?>" title="<?php echo esc_attr($barletta_widgets_title); ?>"><i class="fa fa-<?php echo esc_attr($barletta_widgets_name); ?>"></i></a>
 
 				<?php }
 				}
@@ -159,7 +159,7 @@ class barletta_social_widget extends WP_Widget
 	/**
 	* Update values and sanitize widget form values as they are saved.
 	*/
-	public function update( $new_instance, $old_instance ) {
+	function update( $new_instance, $old_instance ) {
 
 		$instance = array();
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? esc_html( $new_instance['title'] ) : '';
@@ -274,4 +274,3 @@ class barletta_social_widget extends WP_Widget
 	}
 
 }
-?>

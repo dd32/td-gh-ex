@@ -4,18 +4,12 @@
  * @package barletta
  */
 
-global $site_layout, $header_show;
-$site_layout = array(
+global $barletta_site_layout;
+$barletta_site_layout = array(
 					'mz-sidebar-left' =>  esc_html__('Left Sidebar','barletta'),
 					'mz-sidebar-right' => esc_html__('Right Sidebar','barletta'),
 					'no-sidebar' => esc_html__('No Sidebar','barletta'),
 					'mz-full-width' => esc_html__('Full Width', 'barletta')
-					);
-$header_show = array(
-					'logo-only' => __('Logo Only', 'barletta'),
-					'logo-text' => __('Logo + Tagline', 'barletta'),
-					'title-only' => __('Title Only', 'barletta'),
-					'title-text' => __('Title + Tagline', 'barletta')
 					);
 
 if ( ! function_exists( 'barletta_setup' ) ) :
@@ -37,12 +31,6 @@ function barletta_setup() {
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
-	// Set the content width based on the theme's design and stylesheet.
-	global $content_width;
-	if ( ! isset( $content_width ) ) {
-		$content_width = 640; /* pixels */
-	} 
-
 	/**
 	* Enable support for Post Thumbnails on posts and pages.
 	*
@@ -58,6 +46,12 @@ function barletta_setup() {
 	register_nav_menus( array(
 		'main-menu' => esc_html__( 'Main Menu', 'barletta' ),
 	) );
+
+	// Set the content width based on the theme's design and stylesheet.
+	global $content_width;
+	if ( ! isset( $content_width ) ) {
+	$content_width = 1140; /* pixels */
+	} 
 
 	/*
 	* Switch default core markup for search form, comment form, and comments
@@ -179,18 +173,18 @@ endif;
 function barletta_scripts() {
 
 	// Add Google Fonts
-	wp_enqueue_style( 'barletta-fonts', '//fonts.googleapis.com/css?family=Raleway:400,600,400italic|Lora:700|Roboto:400|Playfair+Display:700&subset=latin,latin-ext');
+	wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Raleway:400,600,400italic|Lora:700|Roboto:400|Playfair+Display:700&subset=latin,latin-ext');
 
 	// Add Bootstrap default CSS
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css' );
-	wp_enqueue_style( 'barletta-icons', get_template_directory_uri().'/css/font-awesome.min.css' );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/css/font-awesome.min.css' );
 
 	// Add main theme stylesheet
 	wp_enqueue_style( 'barletta-style', get_stylesheet_uri() );
 
 	// Add JS Files
-	wp_enqueue_script( 'bootstrapjs', get_template_directory_uri().'/js/bootstrap.min.js', array('jquery') );
-	wp_enqueue_script( 'barletta-bxslider', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array('jquery') );
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri().'/js/bootstrap.min.js', array('jquery') );
+	wp_enqueue_script( 'bxslider', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array('jquery') );
 	wp_enqueue_script( 'barletta-js', get_template_directory_uri() . '/js/barletta.scripts.js', array('jquery') );
 
 	// Threaded comments
@@ -320,4 +314,3 @@ function barletta_my_search_form($text) {
 	$text = str_replace('value="Search"', 'value=""', $text);
 	return $text;
 }
-?>

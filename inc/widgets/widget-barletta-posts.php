@@ -7,13 +7,13 @@
 
 class barletta_recent_posts extends WP_Widget
 {
-	function barletta_recent_posts(){
+	function __construct(){
 
 		$widget_ops = array('classname' => 'barletta-recent-posts','description' => esc_html__( "Barletta Recent Posts Widget", 'barletta') );
 		parent::__construct('barletta_recent_posts', esc_html__('Barletta Recent Posts Widget','barletta'), $widget_ops);
 		}
 
-		function widget($args , $instance) {
+	function widget($args , $instance) {
 		extract($args);
 			$title = isset($instance['title']) ? esc_html( $instance['title'] ) : esc_html__('Recent Posts', 'barletta');
 			$limit = isset($instance['limit']) ? esc_html( $instance['limit'] ) : 5;
@@ -118,4 +118,3 @@ class barletta_recent_posts extends WP_Widget
 	}
 
 }
-?>
