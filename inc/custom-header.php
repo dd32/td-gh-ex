@@ -23,7 +23,7 @@
 function attirant_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'attirant_custom_header_args', array(
 		'default-image'          => get_template_directory_uri() . '/images/header.jpg',
-		'default-text-color'     => '69cd2c',
+		'default-text-color'     => 'ffffff',
 		'width'                  => 1440,
 		'height'                 => 900,
 		'flex-height'            => true,
