@@ -32,10 +32,10 @@
  *
  * @since Beryl 1.0
  */
-if ( ! isset( $content_width ) ) {
-	$content_width = 800;
+function beryl_set_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'beryl_set_content_width', 800 );
 }
-
+add_action( 'after_setup_theme', 'beryl_set_content_width', 0 );
 /**
  * Beryl 1.0 only works in WordPress 3.6 or later.
  */
@@ -91,11 +91,6 @@ if ( ! function_exists( 'beryl_setup' ) ) :
 			'search-form', 'comment-form', 'comment-list',
 		) );
 
-		// This theme allows users to set a custom background.
-		add_theme_support( 'custom-background', apply_filters( 'beryl_custom_background_args', array(
-			'default-color' => 'fff',
-		) ) );
-
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus( array(
 			'middle'   => __( 'Middle menu', 'beryl' ),
@@ -108,7 +103,7 @@ if ( ! function_exists( 'beryl_setup' ) ) :
 		add_theme_support( 'title-tag' );
 
 		if ( version_compare( $wp_version, '4.5', '>=' ) ) {
-			add_theme_support( 'custom-logo' );
+			add_theme_support( 'custom-logo', array( 'height' => 60, 'width' => 240, 'flex-width' => true ) );
 		} else {
 			add_theme_support( 'custom-header' );
 		}
@@ -131,7 +126,7 @@ function beryl_tag_list( $post_id, $return = false ) {
 		<div class="tag-link">
 			<span class="icon-tags"></span>';
 				foreach( $posttags as $tag ) {
-					$entry_utility .= '<a href="' . get_tag_link($tag->term_id) . '" class="open-tag">' . $tag->name . '</a>, '; 
+					$entry_utility .= '<a href="' . esc_url(get_tag_link($tag->term_id)) . '" class="open-tag">' . $tag->name . '</a>, '; 
 				}
 				$entry_utility = rtrim($entry_utility, ', ');
 			$entry_utility .= '
@@ -521,3 +516,41 @@ function beryl_register_required_plugins() {
 	tgmpa( $plugins, $config );
 }
 add_action( 'tgmpa_register', 'beryl_register_required_plugins' );
+
+function beryl_admin_rating_notice() {
+	$user = wp_get_current_user();
+	?>
+	<div class="beryl-rating-notice">
+		<span class="beryl-notice-left">
+			<img src="<?php echo get_template_directory_uri(); ?>/images/logo-square.png" alt="">
+		</span>
+		<div class="beryl-notice-center">
+			<p>Hi there, <?php echo $user->data->display_name; ?>, we noticed that you've been using Beryl for a while now.</p>
+			<p>We spent many hours developing this free theme for you and we would appriciate if you supported us by rating it!</p>
+		</div>
+		<div class="beryl-notice-right">
+			<a href="https://wordpress.org/support/view/theme-reviews/beryl?rate=5#postform" class="button button-primary button-large beryl-rating-rate">Rate at WordPress</a>
+			<a href="javascript:void(0)" class="button button-large preview beryl-rating-dismiss">No, thanks</a>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<?php
+}
+if ( get_option('beryl_rating_notice') && get_option('beryl_rating_notice') != 'hide' && time() - get_option('beryl_rating_notice') > 432000 ) {
+	add_action( 'admin_notices', 'beryl_admin_rating_notice' );
+}
+
+function beryl_dismiss_rating_notice() {
+	update_option('beryl_rating_notice', 'hide');
+
+	die(0);
+}
+add_action( 'wp_ajax_nopriv_beryl_dismiss_notice', 'beryl_dismiss_rating_notice' );
+add_action( 'wp_ajax_beryl_dismiss_notice', 'beryl_dismiss_rating_notice' );
+
+function beryl_theme_activated() {
+	if ( !get_option('beryl_rating_notice') ) {
+		update_option('beryl_rating_notice', time());
+	}
+}
+add_action('after_switch_theme', 'beryl_theme_activated');
