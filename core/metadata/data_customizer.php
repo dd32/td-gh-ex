@@ -49,6 +49,15 @@ if(!function_exists('cpotheme_metadata_sections')){
 			'priority' => 50);
 		}
 		
+		if(defined('CPOTHEME_USE_TAGLINE') && CPOTHEME_USE_TAGLINE == true){
+			$data['cpotheme_layout_tagline'] = array(
+			'title' => __('Tagline', 'affluent'),
+			'description' => __('Customize the appearance and of the homepage tagline.', 'affluent'),
+			'capability' => 'edit_theme_options',
+			'panel' => 'cpotheme_layout',
+			'priority' => 50);
+		}
+		
 		if(function_exists('ctct_setup') && defined('CPOTHEME_USE_FEATURES') && CPOTHEME_USE_FEATURES == true){
 			$data['cpotheme_layout_features'] = array(
 			'title' => __('Features', 'affluent'),
@@ -131,21 +140,23 @@ if(!function_exists('cpotheme_metadata_customizer')){
 	function cpotheme_metadata_customizer($std = null){
 		$data = array();
 		
-		$data['general_logo'] = array(
-		'label' => __('Custom Logo', 'affluent'),
-		'description' => __('Insert the URL of an image to be used as a custom logo.', 'affluent'),
-		'section' => 'title_tagline',
-		'sanitize' => 'esc_url',
-		'type' => 'image');
+		if(!function_exists('get_custom_logo')){
+			$data['general_logo'] = array(
+			'label' => __('Custom Logo', 'affluent'),
+			'description' => __('Insert the URL of an image to be used as a custom logo.', 'affluent'),
+			'section' => 'title_tagline',
+			'sanitize' => 'esc_url',
+			'type' => 'image');
 		
-		$data['general_logo_width'] = array(
-		'label' => __('Logo Width (px)', 'affluent'),
-		'description' => __('Forces the logo to have a specified width.', 'affluent'),
-		'section' => 'title_tagline',
-		'type' => 'text',
-		'placeholder' => '(none)',
-		'sanitize' => 'absint',
-		'width' => '100px');
+			$data['general_logo_width'] = array(
+			'label' => __('Logo Width (px)', 'affluent'),
+			'description' => __('Forces the logo to have a specified width.', 'affluent'),
+			'section' => 'title_tagline',
+			'type' => 'text',
+			'placeholder' => '(none)',
+			'sanitize' => 'absint',
+			'width' => '100px');
+		}
 		
 		$data['general_texttitle'] = array(
 		'label' => __('Enable Text Title?', 'affluent'),
@@ -163,14 +174,17 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		'sanitize' => 'cpotheme_sanitize_bool',
 		'std' => '1');
 		
-		$data['home_tagline'] = array(
-		'label' => __('Tagline Title', 'affluent'),
-		'section' => 'cpotheme_layout_home',
-		'empty' => true,
-		'multilingual' => true,
-		'default' => __('Add your custom tagline here.', 'affluent'),
-		'sanitize' => 'wp_kses_post',
-		'type' => 'textarea');
+		//Homepage tagline
+		if(defined('CPOTHEME_USE_TAGLINE') && CPOTHEME_USE_TAGLINE == true){
+			$data['home_tagline'] = array(
+			'label' => __('Tagline Title', 'affluent'),
+			'section' => 'cpotheme_layout_tagline',
+			'empty' => true,
+			'multilingual' => true,
+			'default' => __('Add your custom tagline title here.', 'affluent'),
+			'sanitize' => 'wp_kses_post',
+			'type' => 'text');
+		}
 		
 		//Homepage Slider
 		if(function_exists('ctct_setup') && defined('CPOTHEME_USE_SLIDES') && CPOTHEME_USE_SLIDES == true){

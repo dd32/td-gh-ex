@@ -1,7 +1,7 @@
 <?php
 //Theme options setup
+add_action('after_setup_theme', 'cpotheme_setup');
 if(!function_exists('cpotheme_setup')){
-	add_action('after_setup_theme', 'cpotheme_setup');
 	function cpotheme_setup(){
 		//Set core variables
 		define('CPOCORE_STORE', 'http://www.cpothemes.com');
@@ -26,6 +26,7 @@ if(!function_exists('cpotheme_setup')){
 		add_theme_support('automatic-feed-links');
 		add_theme_support('woocommerce');
 		add_theme_support('bbpress');
+		add_theme_support('custom-logo', array('width' => 240, 'flex-width' => true, 'flex-height' => true));
 		
 		//Set content width for embeds
 		global $content_width;
@@ -42,8 +43,8 @@ if(!function_exists('cpotheme_setup')){
 }
 
 //Add Public scripts
+add_action('wp_enqueue_scripts', 'cpotheme_scripts_front');
 if(!function_exists('cpotheme_scripts_front')){
-	add_action('wp_enqueue_scripts', 'cpotheme_scripts_front');
 	function cpotheme_scripts_front( ){
 		$scripts_theme_path = get_template_directory_uri().'/scripts/';
 		$scripts_path = get_template_directory_uri().'/core/scripts/';
@@ -54,30 +55,30 @@ if(!function_exists('cpotheme_scripts_front')){
 		if(is_singular() && get_option('thread_comments')) 
 			wp_enqueue_script('comment-reply');
 		
-		wp_enqueue_script('cpotheme_html5', $scripts_path.'html5-min.js');
+		wp_enqueue_script('cpotheme-html5', $scripts_path.'html5-min.js');
 		//Register custom scripts for later enqueuing
-		wp_enqueue_script('cpotheme_core', $scripts_path.'core.js', array(), false, true);
-		wp_register_script('cpotheme_cycle', $scripts_path.'jquery-cycle2-min.js', array('jquery'), false, true);
+		wp_enqueue_script('cpotheme-core', $scripts_path.'core.js', array(), false, true);
+		wp_register_script('cpotheme-cycle', $scripts_path.'jquery-cycle2-min.js', array('jquery'), false, true);
 		wp_register_script('cpotheme-magnific', $scripts_path.'jquery-magnific-min.js', array('jquery'), false, true);
 	}
 }
 
 //Add Admin scripts
+add_action('admin_enqueue_scripts', 'cpotheme_scripts_back');
 if(!function_exists('cpotheme_scripts_back')){
-	add_action('admin_enqueue_scripts', 'cpotheme_scripts_back');
 	function cpotheme_scripts_back(){
 		$screen = get_current_screen();
 		if($screen->base == 'post'){
 			$scripts_path = get_template_directory_uri().'/core/scripts/';
 			if(defined('CPOTHEME_CORELITE_URL')) $scripts_path = CPOTHEME_CORELITE_URL.'/scripts/';
-			wp_enqueue_script('cpotheme_script_admin', $scripts_path.'admin.js', array('jquery'));
+			wp_enqueue_script('cpotheme-script-admin', $scripts_path.'admin.js', array('jquery'));
 		}
 	}
 }
 
 //Add public stylesheets
+add_action('wp_enqueue_scripts', 'cpotheme_add_styles');
 if(!function_exists('cpotheme_add_styles')){
-	add_action('wp_enqueue_scripts', 'cpotheme_add_styles');
 	function cpotheme_add_styles(){
 		$stylesheets_path = get_template_directory_uri().'/core/css/';
 		if(defined('CPOTHEME_CORELITE_URL')) $stylesheets_path = CPOTHEME_CORELITE_URL.'/css/';
@@ -93,31 +94,31 @@ if(!function_exists('cpotheme_add_styles')){
 }
 
 //Add admin stylesheets
+add_action('admin_print_styles', 'cpotheme_add_admin_styles');
 if(!function_exists('cpotheme_add_admin_styles')){
-	add_action('admin_print_styles', 'cpotheme_add_admin_styles');
 	function cpotheme_add_admin_styles(){
 		$stylesheets_path = get_template_directory_uri().'/core/css/';
 		if(defined('CPOTHEME_CORELITE_URL')) $stylesheets_path = CPOTHEME_CORELITE_URL.'/css/';
 		
-		wp_register_style('cpotheme_admin', $stylesheets_path.'admin.css');
+		wp_register_style('cpotheme-admin', $stylesheets_path.'admin.css');
 		wp_register_style('cpotheme-fontawesome', $stylesheets_path.'icon-fontawesome.css');
 		
 		$screen = get_current_screen();
 		if($screen->base == 'post'){
 			add_editor_style($stylesheets_path.'editor.css');	
-			wp_enqueue_style('cpotheme_admin');
+			wp_enqueue_style('cpotheme-admin');
 			wp_enqueue_style('cpotheme-fontawesome');
 		}
 	}
 }
 
 
+add_action('admin_print_styles-appearance_page_cpotheme-welcome', 'cpotheme_add_admin_styles_welcome');
 if(!function_exists('cpotheme_add_admin_styles_welcome')){
-	add_action('admin_print_styles-appearance_page_cpotheme-welcome', 'cpotheme_add_admin_styles_welcome');
 	function cpotheme_add_admin_styles_welcome(){
 		$stylesheets_path = get_template_directory_uri().'/core/css/';
 		if(defined('CPOTHEME_CORELITE_URL')) $stylesheets_path = CPOTHEME_CORELITE_URL.'/css/';
-		wp_enqueue_style('cpotheme_admin', $stylesheets_path.'welcome.css');
+		wp_enqueue_style('cpotheme-admin', $stylesheets_path.'welcome.css');
 	}
 }
 

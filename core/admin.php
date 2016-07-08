@@ -43,8 +43,8 @@ function cpotheme_admin_welcome_page(){
 
 
 //Notice display and dismissal
+add_action('admin_init', 'cpotheme_admin_notice_control');
 if(!function_exists('cpotheme_admin_notice_control')){
-	add_action('admin_init', 'cpotheme_admin_notice_control');
 	function cpotheme_admin_notice_control(){
 		//Display a notice
 		if(isset($_GET['ctdisplay']) && $_GET['ctdisplay'] != ''){

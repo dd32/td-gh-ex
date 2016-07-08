@@ -56,8 +56,8 @@ function cpotheme_body_class($body_classes = ''){
 
 
 //Display viewport tag
+add_action('wp_head','cpotheme_viewport');
 if(!function_exists('cpotheme_viewport')){
-	add_action('wp_head','cpotheme_viewport');
 	function cpotheme_viewport(){
 		echo '<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>'."\n";
 	}
@@ -65,20 +65,20 @@ if(!function_exists('cpotheme_viewport')){
 
 
 //Print pingback metatag
+add_action('wp_head','cpotheme_pingback');
 if(!function_exists('cpotheme_pingback')){
-	add_action('wp_head','cpotheme_pingback');
 	function cpotheme_pingback(){
 		if(get_option('default_ping_status') == 'open')
-			echo '<link rel="pingback" href="'.get_bloginfo('pingback_url').'"/>'."\n";
+			echo '<link rel="pingback" href="'.esc_url(get_bloginfo('pingback_url')).'"/>'."\n";
 	}
 }
 
 
 //Print charset metatag
+add_action('wp_head','cpotheme_charset');
 if(!function_exists('cpotheme_charset')){
-	add_action('wp_head','cpotheme_charset');
 	function cpotheme_charset(){
-		echo '<meta charset="'.get_bloginfo('charset').'"/>'."\n";
+		echo '<meta charset="'.esc_attr(get_bloginfo('charset')).'"/>'."\n";
 	}
 }
 
@@ -97,28 +97,39 @@ if(!function_exists('cpotheme_logo')){
 	function cpotheme_logo($width = 0, $height = 0){
 		$output = '<div id="logo" class="logo">';
 		if(cpotheme_get_option('general_texttitle') == 0){
-			if(cpotheme_get_option('general_logo') == ''){
+			
+			if(!function_exists('get_custom_logo')){
+				//Old CPOThemes logo
 				if(defined('CPOTHEME_LOGO_WIDTH')) $width = intval(CPOTHEME_LOGO_WIDTH);
-				$output .= '<a class="site-logo" href="'.home_url().'"><img src="'.get_template_directory_uri().'/images/logo.png" alt="'.get_bloginfo('name').'" width="'.esc_attr($width).'" height="'.esc_attr($height).'"/></a>';
+				if(cpotheme_get_option('general_logo') == ''){
+					$output .= '<a class="site-logo" href="'.esc_url(home_url()).'"><img src="'.get_template_directory_uri().'/images/logo.png" alt="'.esc_attr(get_bloginfo('name')).'" width="'.esc_attr($width).'" height="'.esc_attr($height).'"/></a>';
+				}else{
+					$logo_width = cpotheme_get_option('general_logo_width');
+					$logo_url = cpotheme_get_option('general_logo');
+					if($logo_width != '') $logo_width = ' style="width:'.esc_attr($logo_width).'px;"';
+					$output .= '<a class="site-logo" href="'.esc_url(home_url()).'"><img src="'.esc_url($logo_url).'" alt="'.esc_attr(get_bloginfo('name')).'"'.$logo_width.'/></a>';
+				}
 			}else{
-				$logo_width = cpotheme_get_option('general_logo_width');
-				$logo_url = esc_url(cpotheme_get_option('general_logo'));
-				if($logo_width != '') $logo_width = ' style="width:'.esc_attr($logo_width).'px;"';
-				$output .= '<a class="site-logo" href="'.home_url().'"><img src="'.$logo_url.'" alt="'.get_bloginfo('name').'"'.$logo_width.'/></a>';
+				//Native WordPress logo
+				if(!has_custom_logo()){
+					$output .= '<a class="site-logo" href="'.esc_url(home_url()).'"><img src="'.get_template_directory_uri().'/images/logo.png" alt="'.esc_attr(get_bloginfo('name')).'" width="'.esc_attr($width).'" height="'.esc_attr($height).'"/></a>';
+				}else{
+					$output .= get_custom_logo();
+				}
 			}
 		}
 		
 		$classes = '';
 		if(cpotheme_get_option('general_texttitle') == 0) $classes = ' hidden';
 		if(!is_front_page()){
-			$output .= '<span class="title site-title'.esc_attr($classes).'"><a href="'.home_url().'">'.get_bloginfo('name').'</a></span>';
+			$output .= '<span class="title site-title'.esc_attr($classes).'"><a href="'.esc_url(home_url()).'">'.esc_attr(get_bloginfo('name')).'</a></span>';
 		}else{
-			$output .= '<h1 class="title site-title '.esc_attr($classes).'"><a href="'.home_url().'">'.get_bloginfo('name').'</a></h1>';
+			$output .= '<h1 class="title site-title '.esc_attr($classes).'"><a href="'.esc_url(home_url()).'">'.esc_attr(get_bloginfo('name')).'</a></h1>';
 		}
 		
 		$output .= '</div>';
 		echo $output;
-	}
+	}	
 }
 
 
@@ -166,7 +177,7 @@ if(!function_exists('cpotheme_subfooter')){
 if(!function_exists('cpotheme_footer')){
 	function cpotheme_footer(){		
 		echo '<div class="footer-content">';
-		echo '&copy; '.get_bloginfo('name').' '.date("Y").'. '.sprintf(__('<a href="%s">%s</a> theme by CPOThemes.', 'affluent'), esc_url(CPOTHEME_PREMIUM_URL), esc_attr(CPOTHEME_NAME)); 
+		echo '&copy; '.esc_attr(get_bloginfo('name')).' '.date("Y").'. '.sprintf(__('<a href="%s">%s</a> theme by CPOThemes.', 'affluent'), esc_url(CPOTHEME_PREMIUM_URL), esc_attr(CPOTHEME_NAME)); 
 		echo '</div>';
 	}
 }
@@ -320,7 +331,7 @@ if(!function_exists('cpotheme_breadcrumb')){
 						//Add post hierarchy
 						while($post_data->post_parent):
 							$post_data = get_post($post_data->post_parent);
-							$result = "<span class='breadcrumb-separator'></span><a class='breadcrumb-link' href='".get_permalink($post_data->ID)."'>".apply_filters('the_title', $post_data->post_title)."</a>\n".$result;
+							$result = "<span class='breadcrumb-separator'></span><a class='breadcrumb-link' href='".esc_url(get_permalink($post_data->ID))."'>".apply_filters('the_title', $post_data->post_title)."</a>\n".$result;
 						endwhile;
 						
 					elseif(is_tax()):
@@ -391,7 +402,7 @@ if(!function_exists('cpotheme_postpage_image')){
 	function cpotheme_postpage_image(){
 		if(has_post_thumbnail()){
 			if(!is_singular('post')){
-				echo '<a href="'.get_permalink(get_the_ID()).'" title="'.sprintf(esc_attr__('Go to %s', 'affluent'), the_title_attribute('echo=0')).'" rel="bookmark">';
+				echo '<a href="'.esc_url(get_permalink(get_the_ID())).'" title="'.sprintf(esc_attr__('Go to %s', 'affluent'), the_title_attribute('echo=0')).'" rel="bookmark">';
 				the_post_thumbnail('portfolio');
 				echo '</a>';
 			}else{
@@ -407,7 +418,7 @@ if(!function_exists('cpotheme_postpage_title')){
 	function cpotheme_postpage_title(){
 		if(!is_singular('post')){
 			echo '<h2 class="post-title">';
-			echo '<a href="'.get_permalink(get_the_ID()).'" title="'.sprintf(esc_attr__('Go to %s', 'affluent'), the_title_attribute('echo=0')).'" rel="bookmark">';
+			echo '<a href="'.esc_url(get_permalink(get_the_ID())).'" title="'.sprintf(esc_attr__('Go to %s', 'affluent'), the_title_attribute('echo=0')).'" rel="bookmark">';
 			the_title();
 			echo '</a>';
 			echo '</h2>';
@@ -487,7 +498,7 @@ if(!function_exists('cpotheme_postpage_comments')){
 		}
 		
 		$comments = sprintf($text, number_format_i18n($comments_num));
-		echo '<div class="post-comments">'.sprintf('<a href="%1$s">%2$s</a>', get_permalink(get_the_ID()).'#comments', $comments).'</div>';	
+		echo '<div class="post-comments">'.sprintf('<a href="%1$s">%2$s</a>', esc_url(get_permalink(get_the_ID())).'#comments', $comments).'</div>';	
 	}
 }
 
@@ -506,7 +517,7 @@ if(!function_exists('cpotheme_postpage_tags')){
 if(!function_exists('cpotheme_postpage_readmore')){
 	function cpotheme_postpage_readmore($classes = ''){
 		if(!is_singular('post')){
-			echo '<a class="post-readmore '.esc_attr($classes).'" href="'.get_permalink(get_the_ID()).'">';
+			echo '<a class="post-readmore '.esc_attr($classes).'" href="'.esc_url(get_permalink(get_the_ID())).'">';
 			echo apply_filters('cpotheme_readmore', __('Read More', 'affluent'));
 			echo '</a>';
 		}
@@ -669,8 +680,8 @@ if(!function_exists('cpotheme_menu')){
 
 
 //Prints the mobile navigation menu
+add_action('wp_footer', 'cpotheme_mobile_menu');
 if(!function_exists('cpotheme_mobile_menu')){
-	add_action('wp_footer', 'cpotheme_mobile_menu');
 	function cpotheme_mobile_menu($options = null){
 		if(has_nav_menu('main_menu')){
 			echo '<div id="menu-mobile-close" class="menu-mobile-close menu-mobile-toggle"></div>';
@@ -750,7 +761,7 @@ if(!function_exists('cpotheme_default_menu')){
 				$count++;
 				if($current_page->post_parent == 0 && $count < 17){
 					$output .= '<li class="menu-item">';
-					$output .= '<a href="'.get_permalink($current_page->ID).'">';
+					$output .= '<a href="'.esc_url(get_permalink($current_page->ID)).'">';
 					$output .= '<span class="menu-link">';
 					$output .= '<span class="menu-title">'.$current_page->post_title.'</span>';
 					$output .= '</span>';
@@ -851,6 +862,34 @@ if(!function_exists('cpotheme_comments_pagination')){
 			next_comments_link(__('Newer', 'affluent'));
 			echo '</div>';
 			echo '</div>';
+		}
+	}
+}
+
+
+//Print Tagline title
+if(!function_exists('cpotheme_tagline_title')){
+	function cpotheme_tagline_title(){
+		$tagline = cpotheme_get_option('home_tagline');
+		if($tagline != ''){
+			echo '<div class="tagline-title">';
+			echo $tagline;
+			echo '</div>';
+			
+		}
+	}
+}
+
+
+//Print Tagline content
+if(!function_exists('cpotheme_tagline_content')){
+	function cpotheme_tagline_content(){
+		$tagline = cpotheme_get_option('home_tagline_content');
+		if($tagline != ''){
+			echo '<div class="tagline-content">';
+			echo $tagline;
+			echo '</div>';
+			
 		}
 	}
 }

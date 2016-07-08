@@ -14,8 +14,8 @@ add_filter('use_default_gallery_style', '__return_false');
 
 
 //Turn off styles in Recent Comments widget
+add_action('widgets_init', 'cpotheme_remove_recent_comments_style');
 if(!function_exists('cpotheme_remove_recent_comments_style')){
-	add_action('widgets_init', 'cpotheme_remove_recent_comments_style');
 	function cpotheme_remove_recent_comments_style(){
 		add_filter('show_recent_comments_widget_style', '__return_false');
 	}
