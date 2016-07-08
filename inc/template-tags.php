@@ -52,6 +52,33 @@ function beetle_site_title() {
 endif;
 
 
+if ( ! function_exists( 'beetle_site_description' ) ) :
+/**
+ * Displays the site description in the header area
+ */
+function beetle_site_description() {
+
+	// Get theme options from database.
+	$theme_options = beetle_theme_options();
+
+	// Return early if site title is deactivated.
+	if ( false == $theme_options['site_description'] ) {
+		return;
+	}
+
+	$description = get_bloginfo( 'description', 'display' ); /* WPCS: xss ok. */
+
+	if ( $description || is_customize_preview() ) : ?>
+
+		<p class="site-description"><?php echo $description; ?></p>
+
+	<?php
+	endif;
+
+}
+endif;
+
+
 if ( ! function_exists( 'beetle_header_image' ) ) :
 /**
  * Displays the custom header image below the navigation menu
@@ -83,12 +110,12 @@ function beetle_header_image() {
 		if ( '' !== $theme_options['custom_header_link'] ) : ?>
 
 			<a href="<?php echo esc_url( $theme_options['custom_header_link'] ); ?>">
-				<img src="<?php header_image(); ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( get_custom_header()->attachment_id ) ); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+				<img src="<?php header_image(); ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( get_custom_header()->attachment_id, 'full' ) ); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
 			</a>
 
 		<?php else : ?>
 
-			<img src="<?php header_image(); ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( get_custom_header()->attachment_id ) ); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+			<img src="<?php header_image(); ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( get_custom_header()->attachment_id, 'full' ) ); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
 
 		<?php endif; ?>
 
@@ -122,6 +149,28 @@ function beetle_post_content() {
 	}
 
 } // beetle_post_content()
+endif;
+
+
+if ( ! function_exists( 'beetle_post_image' ) ) :
+/**
+ * Displays the featured image on archive posts.
+ *
+ * @param string $size Post thumbnail size.
+ * @param array  $attr Post thumbnail attributes.
+ */
+function beetle_post_image( $size = 'post-thumbnail', $attr = array() ) {
+
+	// Display Post Thumbnail.
+	if ( has_post_thumbnail() ) : ?>
+
+		<a href="<?php the_permalink(); ?>" rel="bookmark">
+			<?php the_post_thumbnail( $size, $attr ); ?>
+		</a>
+
+	<?php endif;
+
+} // beetle_post_image()
 endif;
 
 
@@ -289,7 +338,10 @@ function beetle_post_navigation() {
 
 	if ( true === $theme_options['post_navigation'] ) {
 
-		the_post_navigation( array( 'prev_text' => '&laquo; %title', 'next_text' => '%title &raquo;' ) );
+		the_post_navigation( array(
+			'prev_text' => '<span class="screen-reader-text">' . esc_html_x( 'Previous Post:', 'post navigation', 'beetle' ) . '</span>%title',
+			'next_text' => '<span class="screen-reader-text">' . esc_html_x( 'Next Post:', 'post navigation', 'beetle' ) . '</span>%title',
+		) );
 
 	}
 
@@ -349,8 +401,8 @@ function beetle_pagination() {
 		'format' => '?paged=%#%',
 		'current' => max( 1, get_query_var( 'paged' ) ),
 		'total' => $wp_query->max_num_pages,
-		'next_text' => '&raquo;',
-		'prev_text' => '&laquo',
+		'next_text' => '<span class="screen-reader-text">' . esc_html_x( 'Next Posts', 'pagination', 'beetle' ) . '</span>&raquo;',
+		'prev_text' => '&laquo<span class="screen-reader-text">' . esc_html_x( 'Previous Posts', 'pagination', 'beetle' ) . '</span>',
 		'add_args' => false,
 	) );
 

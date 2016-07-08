@@ -4,7 +4,7 @@ Theme URI: https://themezee.com/themes/beetle/
 Author: ThemeZee
 Author URI: https://themezee.com
 Description: Beetle is a fast & elegant Lifestyle Magazine WordPress theme. It comes with a clean typography, subtle colors and works great with strong pictures. Beetle makes use of the Customizer and a few widget areas which allow you to easily set up your online magazine in just a few minutes.
-Version: 1.0.7
+Version: 1.0.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: beetle
@@ -612,12 +612,18 @@ textarea {
 # 7.0 - Clearings
 --------------------------------------------------------------*/
 .clearfix:before,
-.clearfix:after {
+.clearfix:after,
+.post-navigation .nav-links:before,
+.post-navigation .nav-links:after,
+.comment-navigation:before,
+.comment-navigation:after {
 	content: "";
 	display: table;
 }
 
-.clearfix:after {
+.clearfix:after,
+.post-navigation .nav-links:after,
+.comment-navigation:after {
 	clear: both;
 }
 
@@ -645,8 +651,6 @@ textarea {
 	float: left;
 	width: 72%;
 	padding-right: 2em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -700,9 +704,6 @@ textarea {
 .site-title a:visited {
 	color: #cc77bb;
 	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
@@ -718,6 +719,12 @@ textarea {
 	vertical-align: top;
 	max-width: 100%;
 	height: auto;
+}
+
+.site-description {
+	margin: 0 0.6em 0.8em;
+	font-size: 14px;
+	font-size: 0.875rem;
 }
 
 /* Header Widgets */
@@ -796,9 +803,6 @@ textarea {
 	text-transform: uppercase;
 	text-decoration: none;
 	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
@@ -850,9 +854,6 @@ textarea {
 	font-size: 0.8125rem;
 	border-bottom: 1px solid rgba(255,255,255,0.1);
 	-webkit-transition: none;
-	-moz-transition: none;
-	-ms-transition: none;
-	-o-transition: none;
 	transition: none;
 }
 
@@ -1020,9 +1021,6 @@ textarea {
 .widget-title a:visited  {
 	color: #353535;
 	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
@@ -1059,8 +1057,6 @@ textarea {
 	margin: 0;
 	width: 100%;
 	padding: 0.3em 3em 0.3em 0.6em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 	-webkit-appearance: none;
 }
@@ -1136,8 +1132,6 @@ textarea {
 	display: block;
 	width: 33.33333333%;
 	padding-right: 2em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -1155,8 +1149,6 @@ textarea {
 	float: left;
 	display: block;
 	width: 100%;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -1186,8 +1178,6 @@ textarea {
 	float: left;
 	width: 50%;
 	padding-right: 2em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -1199,8 +1189,6 @@ textarea {
 .widget-magazine-posts-columns .magazine-posts-columns .magazine-posts-columns-content .magazine-posts-columns-post-list {
 	float: left;
 	width: 100%;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -1213,8 +1201,6 @@ textarea {
 	float: left;
 	width: 50%;
 	padding-right: 1em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -1222,8 +1208,6 @@ textarea {
 	margin-left: 50%;
 	width: 50%;
 	padding-left: 1em;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -1260,9 +1244,6 @@ textarea {
 	color: #353535;
 	text-decoration: none;
 	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
@@ -1433,22 +1414,22 @@ textarea {
 	border-bottom: 1px solid #ddd;
 }
 
-.post-navigation .nav-links:before,
-.post-navigation .nav-links:after {
-	content: "";
-	display: table;
-}
-
-.post-navigation .nav-links:after {
-	clear: both;
-}
-
 .post-navigation .nav-links .nav-previous {
 	float: left;
 }
 
 .post-navigation .nav-links .nav-next {
 	float: right;
+}
+
+.post-navigation .nav-links .nav-previous a:before {
+	margin-right: 3px;
+	content: "\00AB";
+}
+
+.post-navigation .nav-links .nav-next a:after {
+	margin-left: 4px;
+	content: "\00BB";
 }
 
 /* Theme Pagination */
@@ -1475,9 +1456,6 @@ textarea {
 .post-pagination a:visited {
 	color: #fff;
 	-webkit-transition: all 0.2s ease;
-	-moz-transition: all 0.2s ease;
-	-ms-transition: all 0.2s ease;
-	-o-transition: all 0.2s ease;
 	transition: all 0.2s ease;
 }
 
@@ -1611,7 +1589,7 @@ textarea {
 .comment {
 	margin: 0 0 1.5em;
 	padding: 0.5em 1em 1.5em;
-	border-bottom: 1px solid #353535;
+	border-bottom: 1px solid #ddd;
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
 }
@@ -1659,7 +1637,7 @@ textarea {
 	margin-top: 1.5em;
 	padding-top: 1em;
 	list-style: none;
-	border-top: 1px solid #353535;
+	border-bottom: 1px solid #ddd;
 }
 
 .comment .comment-respond {
@@ -1682,6 +1660,16 @@ textarea {
 
 .comment-navigation .nav-next {
 	float: right;
+}
+
+.comment-navigation .nav-previous a:before {
+	margin-right: 3px;
+	content: "\00AB";
+}
+
+.comment-navigation .nav-next a:after {
+	margin-left: 4px;
+	content: "\00BB";
 }
 
 /* Comment Form */
@@ -1790,8 +1778,6 @@ object {
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
