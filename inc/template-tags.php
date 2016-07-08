@@ -83,12 +83,12 @@ function zeedynamic_header_image() {
 		if ( '' !== $theme_options['custom_header_link'] ) : ?>
 
 			<a href="<?php echo esc_url( $theme_options['custom_header_link'] ); ?>">
-				<img src="<?php header_image(); ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( get_custom_header()->attachment_id ) ); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+				<img src="<?php header_image(); ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( get_custom_header()->attachment_id, 'full' ) ); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
 			</a>
 
 		<?php else : ?>
 
-			<img src="<?php header_image(); ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( get_custom_header()->attachment_id ) ); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
+			<img src="<?php header_image(); ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( get_custom_header()->attachment_id, 'full' ) ); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
 
 		<?php endif; ?>
 
@@ -122,6 +122,28 @@ function zeedynamic_post_content() {
 	}
 
 } // zeedynamic_post_content()
+endif;
+
+
+if ( ! function_exists( 'zeedynamic_post_image' ) ) :
+/**
+ * Displays the featured image on archive posts.
+ *
+ * @param string $size Post thumbnail size.
+ * @param array  $attr Post thumbnail attributes.
+ */
+function zeedynamic_post_image( $size = 'post-thumbnail', $attr = array() ) {
+
+	// Display Post Thumbnail.
+	if ( has_post_thumbnail() ) : ?>
+
+		<a href="<?php the_permalink(); ?>" rel="bookmark">
+			<?php the_post_thumbnail( $size, $attr ); ?>
+		</a>
+
+	<?php endif;
+
+} // zeedynamic_post_image()
 endif;
 
 
@@ -289,7 +311,10 @@ function zeedynamic_post_navigation() {
 
 	if ( true === $theme_options['post_navigation'] ) {
 
-		the_post_navigation( array( 'prev_text' => '&laquo; %title', 'next_text' => '%title &raquo;' ) );
+		the_post_navigation( array(
+			'prev_text' => '<span class="screen-reader-text">' . esc_html_x( 'Previous Post:', 'post navigation', 'zeedynamic' ) . '</span>%title',
+			'next_text' => '<span class="screen-reader-text">' . esc_html_x( 'Next Post:', 'post navigation', 'zeedynamic' ) . '</span>%title',
+		) );
 
 	}
 
@@ -349,8 +374,8 @@ function zeedynamic_pagination() {
 		'format' => '?paged=%#%',
 		'current' => max( 1, get_query_var( 'paged' ) ),
 		'total' => $wp_query->max_num_pages,
-		'next_text' => '&raquo;',
-		'prev_text' => '&laquo',
+		'next_text' => '<span class="screen-reader-text">' . esc_html_x( 'Next Posts', 'pagination', 'zeedynamic' ) . '</span>&raquo;',
+		'prev_text' => '&laquo<span class="screen-reader-text">' . esc_html_x( 'Previous Posts', 'pagination', 'zeedynamic' ) . '</span>',
 		'add_args' => false,
 	) );
 
