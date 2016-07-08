@@ -48,46 +48,6 @@ function aedificator_customize_register( $wp_customize ) {
 	
     // Add Control General Settings
 	
-	$wp_customize->add_setting('pwt_logo_upload',array(
-			'default'	=> '',
-			'sanitize_callback'	=> 'esc_url_raw'
-	));
-
-	$wp_customize->add_control(
-	   new WP_Customize_Image_Control(
-		   $wp_customize,
-		   'pwt_logo_upload',
-		   array(
-			   'label'      => __( 'Upload Logo', 'aedificator' ),
-			   'section'    => 'general',
-			   'settings'   => 'pwt_logo_upload',
-			   'context'    => 'pwt_logo_upload' 
-		   )
-	   )
-	);		
-		
-	$wp_customize->add_setting('pwt_text_logo_1',array(
-			'default'	=> __('Aedifi','aedificator'),
-			'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	
-	$wp_customize->add_control('pwt_text_logo_1',array(
-			'label'	=> __('Text Logo 1','aedificator'),
-			'section'	=> 'general',
-			'setting'	=> 'pwt_text_logo_1'
-	));	 
-
-	$wp_customize->add_setting('pwt_text_logo_2',array(
-			'default'	=> __('cator','aedificator'),
-			'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	
-	$wp_customize->add_control('pwt_text_logo_2',array(
-			'label'	=> __('Text Logo 2','aedificator'),
-			'section'	=> 'general',
-			'setting'	=> 'pwt_text_logo_2'
-	));	  
-	
 	$wp_customize->add_setting('pwt_header_left_text',array(
 			'default'	=> __('Welcome to Guest!','aedificator'),
 			'sanitize_callback'	=> 'sanitize_text_field'
@@ -145,7 +105,7 @@ function aedificator_customize_register( $wp_customize ) {
 		   $wp_customize,
 		   'pwt_blog_image',
 		   array(
-			   'label'      => __( 'Blog BG Image', 'aedificator' ),
+			   'label'      => __( 'Blog Header Image', 'aedificator' ),
 			   'section'    => 'blogpage',
 			   'settings'   => 'pwt_blog_image',
 			   'context'    => 'pwt_blog_image' 
@@ -392,205 +352,59 @@ function aedificator_customize_register( $wp_customize ) {
 			'setting'	=> 'pwt_slider_bar_below_button_link'
 	));		
 	
-	
-	$wp_customize->add_setting('pwt_who_we_are_image_1',array(
-			'default'	=> esc_url(get_template_directory_uri()).'/assets/images/demo/wwa1.jpg',
-			'sanitize_callback'	=> 'esc_url_raw'
-	));	
-	
-	$wp_customize->add_control(
-	   new WP_Customize_Image_Control(
-		   $wp_customize,
-		   'pwt_who_we_are_image_1',
-		   array(
-			   'label'      => __( 'Who We Are Image 1', 'aedificator' ),
-			   'section'    => 'whoweare',
-			   'settings'   => 'pwt_who_we_are_image_1',
-			   'context'    => 'pwt_who_we_are_image_1' 
-		   )
-	   )
-	);		
 
-	$wp_customize->add_setting('pwt_who_we_are_title_1',array(
-			'default'	=> __('Who we are','aedificator'),
-			'sanitize_callback'	=> 'sanitize_text_field'
+	$wp_customize->add_setting('pwt_who_box1',array(
+			'default'	=> 0,
+			'sanitize_callback'	=> 'aedificator_sanitize_integer'
+			
 	));
 	
-	$wp_customize->add_control('pwt_who_we_are_title_1',array(
-			'label'	=> __('Who We Are Title 1','aedificator'),
+	$wp_customize->add_control('pwt_who_box1',array(
+			'label'	=> __('Who We Are Box 1','aedificator'),
 			'section'	=> 'whoweare',
-			'setting'	=> 'pwt_who_we_are_title_1'
+			'setting'	=> 'pwt_who_box1',
+			'type' => 'dropdown-pages'
+	));	
+
+	$wp_customize->add_setting('pwt_who_box2',array(
+			'default'	=> 0,
+			'sanitize_callback'	=> 'aedificator_sanitize_integer'
+			
+	));
+	
+	$wp_customize->add_control('pwt_who_box2',array(
+			'label'	=> __('Who We Are Box 2','aedificator'),
+			'section'	=> 'whoweare',
+			'setting'	=> 'pwt_who_box2',
+			'type' => 'dropdown-pages'
+	));	
+
+	$wp_customize->add_setting('pwt_who_box3',array(
+			'default'	=> 0,
+			'sanitize_callback'	=> 'aedificator_sanitize_integer'
+			
+	));
+	
+	$wp_customize->add_control('pwt_who_box3',array(
+			'label'	=> __('Who We Are Box 3','aedificator'),
+			'section'	=> 'whoweare',
+			'setting'	=> 'pwt_who_box3',
+			'type' => 'dropdown-pages'
 	));		
 
-	$wp_customize->add_setting('pwt_who_we_are_content_1',array(
-			'default'	=> __('There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some lorem ipsum','aedificator'),
-			'sanitize_callback'	=> 'esc_textarea'
+	
+	$wp_customize->add_setting('pwt_history',array(
+			'default'	=> 0,
+			'sanitize_callback'	=> 'aedificator_sanitize_integer'
+			
 	));
 	
-	$wp_customize->add_control('pwt_who_we_are_content_1',array(
-	        'type' => 'textarea',
-			'label'	=> __('Who We Are Content 1','aedificator'),
-			'section'	=> 'whoweare',
-			'setting'	=> 'pwt_who_we_are_content_1'
-	));		
-	
-	$wp_customize->add_setting('pwt_who_we_are_link_1',array(
-			'default'	=> __('#','aedificator'),
-			'sanitize_callback'	=> 'esc_url_raw'
-	));
-	
-	$wp_customize->add_control('pwt_who_we_are_link_1',array(
-			'label'	=> __('Who We Are Link 1','aedificator'),
-			'section'	=> 'whoweare',
-			'setting'	=> 'pwt_who_we_are_link_1'
-	));	
-
-
-	$wp_customize->add_setting('pwt_who_we_are_image_2',array(
-			'default'	=> esc_url(get_template_directory_uri()).'/assets/images/demo/wwa2.jpg',
-			'sanitize_callback'	=> 'esc_url_raw'
-	));	
-	
-	$wp_customize->add_control(
-	   new WP_Customize_Image_Control(
-		   $wp_customize,
-		   'pwt_who_we_are_image_2',
-		   array(
-			   'label'      => __( 'Who We Are Image 2', 'aedificator' ),
-			   'section'    => 'whoweare',
-			   'settings'   => 'pwt_who_we_are_image_2',
-			   'context'    => 'pwt_who_we_are_image_2' 
-		   )
-	   )
-	);		
-
-	$wp_customize->add_setting('pwt_who_we_are_title_2',array(
-			'default'	=> __('Our Visions','aedificator'),
-			'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	
-	$wp_customize->add_control('pwt_who_we_are_title_2',array(
-			'label'	=> __('Who We Are Title 2','aedificator'),
-			'section'	=> 'whoweare',
-			'setting'	=> 'pwt_who_we_are_title_2'
-	));		
-
-	$wp_customize->add_setting('pwt_who_we_are_content_2',array(
-			'default'	=> __('There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some lorem ipsum','aedificator'),
-			'sanitize_callback'	=> 'esc_textarea'
-	));
-	
-	$wp_customize->add_control('pwt_who_we_are_content_2',array(
-	        'type' => 'textarea',
-			'label'	=> __('Who We Are Content 2','aedificator'),
-			'section'	=> 'whoweare',
-			'setting'	=> 'pwt_who_we_are_content_2'
-	));		
-	
-	$wp_customize->add_setting('pwt_who_we_are_link_2',array(
-			'default'	=> __('#','aedificator'),
-			'sanitize_callback'	=> 'esc_url_raw'
-	));
-	
-	$wp_customize->add_control('pwt_who_we_are_link_2',array(
-			'label'	=> __('Who We Are Link 2','aedificator'),
-			'section'	=> 'whoweare',
-			'setting'	=> 'pwt_who_we_are_link_2'
-	));	
-	
-	$wp_customize->add_setting('pwt_who_we_are_image_3',array(
-			'default'	=> esc_url(get_template_directory_uri()).'/assets/images/demo/wwa3.jpg',
-			'sanitize_callback'	=> 'esc_url_raw'
-	));	
-	
-	$wp_customize->add_control(
-	   new WP_Customize_Image_Control(
-		   $wp_customize,
-		   'pwt_who_we_are_image_3',
-		   array(
-			   'label'      => __( 'Who We Are Image 3', 'aedificator' ),
-			   'section'    => 'whoweare',
-			   'settings'   => 'pwt_who_we_are_image_3',
-			   'context'    => 'pwt_who_we_are_image_3' 
-		   )
-	   )
-	);		
-
-	$wp_customize->add_setting('pwt_who_we_are_title_3',array(
-			'default'	=> __('Our Objectives','aedificator'),
-			'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	
-	$wp_customize->add_control('pwt_who_we_are_title_3',array(
-			'label'	=> __('Who We Are Title 3','aedificator'),
-			'section'	=> 'whoweare',
-			'setting'	=> 'pwt_who_we_are_title_3'
-	));		
-
-	$wp_customize->add_setting('pwt_who_we_are_content_3',array(
-			'default'	=> __('There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some lorem ipsum','aedificator'),
-			'sanitize_callback'	=> 'esc_textarea'
-	));
-	
-	$wp_customize->add_control('pwt_who_we_are_content_3',array(
-	        'type' => 'textarea',
-			'label'	=> __('Who We Are Content 3','aedificator'),
-			'section'	=> 'whoweare',
-			'setting'	=> 'pwt_who_we_are_content_3'
-	));		
-	
-	$wp_customize->add_setting('pwt_who_we_are_link_3',array(
-			'default'	=> __('#','aedificator'),
-			'sanitize_callback'	=> 'esc_url_raw'
-	));
-	
-	$wp_customize->add_control('pwt_who_we_are_link_3',array(
-			'label'	=> __('Who We Are Link 3','aedificator'),
-			'section'	=> 'whoweare',
-			'setting'	=> 'pwt_who_we_are_link_3'
-	));	
-	
-	$wp_customize->add_setting('pwt_history_bg',array(
-			'default'	=> esc_url(get_template_directory_uri()).'/assets/images/demo/bgh.jpg',
-			'sanitize_callback'	=> 'esc_url_raw'
-	));	
-	
-	$wp_customize->add_control(
-	   new WP_Customize_Image_Control(
-		   $wp_customize,
-		   'pwt_history_bg',
-		   array(
-			   'label'      => __( 'Bar History Background', 'aedificator' ),
-			   'section'    => 'history',
-			   'settings'   => 'pwt_history_bg',
-			   'context'    => 'pwt_history_bg' 
-		   )
-	   )
-	);		
-
-	$wp_customize->add_setting('pwt_history_title',array(
-			'default'	=> __('The starting point of all achievement is desire','aedificator'),
-			'sanitize_callback'	=> 'esc_textarea'
-	));
-	
-	$wp_customize->add_control('pwt_history_title',array(
-	        'type' => 'textarea',
-			'label'	=> __('Bar History Title','aedificator'),
+	$wp_customize->add_control('pwt_history',array(
+			'label'	=> __('Bar History','aedificator'),
 			'section'	=> 'history',
-			'setting'	=> 'pwt_history_title'
-	));		
-
-	$wp_customize->add_setting('pwt_history_content',array(
-			'default'	=> __('Lorem Ipsum has been the industry standard dummy text ever since the 1500s','aedificator'),
-			'sanitize_callback'	=> 'esc_textarea'
-	));
-	
-	$wp_customize->add_control('pwt_history_content',array(
-	        'type' => 'textarea',	
-			'label'	=> __('Bar History Content','aedificator'),
-			'section'	=> 'history',
-			'setting'	=> 'pwt_history_content'
-	));		
+			'setting'	=> 'pwt_history',
+			'type' => 'dropdown-pages'
+	));			
 	
 	$wp_customize->add_setting('pwt_history_button_text',array(
 			'default'	=> __('Contact Us','aedificator'),
@@ -617,6 +431,9 @@ function aedificator_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'aedificator_customize_register' );
 
+function aedificator_sanitize_integer( $input ) {
+    if( is_numeric( $input ) ) {  return intval( $input ); }
+}
 
 function aedificator_custom_customize_enqueue() {
 	wp_enqueue_script( 'aedificator-custom-customize', get_template_directory_uri() . '/assets/js/custom-customize.js', array( 'jquery', 'customize-controls' ), false, true );

@@ -27,10 +27,8 @@
 					</article>
 					<?php endwhile; ?>						
 					<p class="pagination">
-					<?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); } else { ?>
-							<span class="left button-gray"><?php next_posts_link(__('Previous Posts', 'aedificator')) ?></span>
-							<span class="right button-gray"><?php previous_posts_link(__('Next posts', 'aedificator')) ?></span>			
-					<?php } ?>
+						<span class="left button-gray"><?php next_posts_link(__('Previous Posts', 'aedificator')) ?></span>
+						<span class="right button-gray"><?php previous_posts_link(__('Next posts', 'aedificator')) ?></span>			
 					</p>
 				</div>
 			</div>	

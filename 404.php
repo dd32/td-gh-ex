@@ -10,6 +10,8 @@
 		<div class="container">
 			<div class="gutter">
 				<h4><?php _e( 'Not found', 'aedificator' ); ?></h4>
+				<br/><br/><p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'aedificator' ); ?></p><br/><br/>
+                <?php get_search_form(); ?>
 			</div>
 		</div> <!--  END container  -->
 	</div> <!--  END section-overlay  -->

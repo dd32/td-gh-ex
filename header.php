@@ -40,13 +40,7 @@
 			<div class="header-block">
 				<div class="container">
 					<div class="gutter clearfix">
-						<?php if ( get_theme_mod('pwt_logo_upload') ) { ?>
-						   <a href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo esc_url(get_theme_mod('pwt_logo_upload')); ?>" /></a>
-						<?php } else if (get_theme_mod('pwt_text_logo_1')){  ?>
-						   <h1 class="logo"><a href="<?php echo esc_url(home_url('/')); ?>"><?php echo esc_html(get_theme_mod('pwt_text_logo_1')); ?><span><?php echo esc_html(get_theme_mod('pwt_text_logo_2')); ?></span></a></h1>
-						<?php } else {  ?>
-						   <h1 class="logo"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
-						<?php } ?>	
+					    <?php aedificator_the_custom_logo(); ?>	
 						<nav class="menu-top-container">
 							<a class="icon-menu" href="#"><?php _e( 'Menu', 'aedificator' ); ?></a>
 							<?php if ( has_nav_menu( 'aedificator-menu' ) ) { ?>
