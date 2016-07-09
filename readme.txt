@@ -1,11 +1,10 @@
 == fCorpo WordPress Theme ==
 
 Contributors: tishonator
-Tags: gray, orange, red, white, light, two-columns, right-sidebar, responsive-layout,
-custom-background, custom-colors, custom-header, custom-menu, featured-images,
-post-formats, sticky-post, threaded-comments, translation-ready
-Requires at least: 4.1.0
-Tested up to: 4.2.1
+Tags: blog, news, two-columns, right-sidebar, custom-background, custom-colors,
+custom-header, custom-menu, featured-images, post-formats, sticky-post, threaded-comments, translation-ready
+Requires at least: 4.4.1
+Tested up to: 4.5.3
 
 == Description ==
 
@@ -56,6 +55,8 @@ The exceptions to this license are as follows:
 * images/slider/3.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/vienna-sunset-skyline-skyscraper-581427/
 *
 * screenshot.png (slider image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/entrepreneur-startup-start-up-man-593352/
+*
+* screenshot.png (page image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/mockup-psd-ipad-iphone-white-654585/
 
 
 == Contacts ==

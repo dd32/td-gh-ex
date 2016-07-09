@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: fCorpo Theme\n"
-"POT-Creation-Date: 2016-04-02 18:21+0200\n"
-"PO-Revision-Date: 2016-04-02 18:21+0200\n"
+"POT-Creation-Date: 2016-07-09 20:50+0200\n"
+"PO-Revision-Date: 2016-07-09 20:50+0200\n"
 "Last-Translator: \n"
 "Language-Team: Tishonator Team <info@tishonator.com>\n"
 "Language: English\n"
@@ -10,11 +10,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
-"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e;esc_html__\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-SearchPath-0: ../"
-"fcorpo\n"
+"X-Poedit-SearchPath-0: ..\n"
 
 #: ../search.php:18
 #, php-format
@@ -47,84 +46,161 @@ msgstr ""
 msgid "primary menu"
 msgstr ""
 
-#: ../functions.php:205
+#: ../functions.php:232
 msgid "Sidebar Widget Area"
 msgstr ""
 
-#: ../functions.php:207
+#: ../functions.php:234
 msgid "The sidebar widget area"
 msgstr ""
 
-#: ../functions.php:226
+#: ../functions.php:253
 msgid ""
 "<h3>Lorem ipsum dolor</h3><p>Lorem ipsum dolor sit amet, consectetur "
 "adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna "
 "aliqua.</p><a class=\"btn\" title=\"Read more\" href=\"#\">Read more</a>"
 msgstr ""
 
-#: ../functions.php:252
+#: ../functions.php:279
 msgid "Follow us on Facebook"
 msgstr ""
 
-#: ../functions.php:258
+#: ../functions.php:285
 msgid "Follow us on Google+"
 msgstr ""
 
-#: ../functions.php:264
+#: ../functions.php:291
+msgid "Follow us on Twitter"
+msgstr ""
+
+#: ../functions.php:297
+msgid "Follow us on LinkedIn"
+msgstr ""
+
+#: ../functions.php:303
+msgid "Follow us on Instagram"
+msgstr ""
+
+#: ../functions.php:309
 msgid "Follow our RSS Feeds"
 msgstr ""
 
-#: ../functions.php:270
+#: ../functions.php:315
+msgid "Follow us on Tumblr"
+msgstr ""
+
+#: ../functions.php:321
 msgid "Follow us on Youtube"
 msgstr ""
 
-#: ../functions.php:287
+#: ../functions.php:327
+msgid "Follow us on Pinterest"
+msgstr ""
+
+#: ../functions.php:333
+msgid "Follow us on VK"
+msgstr ""
+
+#: ../functions.php:339
+msgid "Follow us on Flickr"
+msgstr ""
+
+#: ../functions.php:345
+msgid "Follow us on Vine"
+msgstr ""
+
+#: ../functions.php:362
 msgid "Slider"
 msgstr ""
 
-#: ../functions.php:302
+#: ../functions.php:377
 msgid ""
 "<h2>Lorem ipsum dolor</h2><p>Lorem ipsum dolor sit amet, consectetur "
 "adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna "
 "aliqua.</p><a class=\"btn\" title=\"Read more\" href=\"#\">Read more</a>"
 msgstr ""
 
-#: ../functions.php:309
+#: ../functions.php:384
 #, php-format
 msgid "Slide #%s Content"
 msgstr ""
 
-#: ../functions.php:327
+#: ../functions.php:402
 #, php-format
 msgid "Slide #%s Image"
 msgstr ""
 
-#: ../functions.php:341
-msgid "Footer"
+#: ../functions.php:416
+msgid "Header and Footer"
 msgstr ""
 
-#: ../functions.php:357
+#: ../functions.php:432
+msgid "Your phone to appear in the website header"
+msgstr ""
+
+#: ../functions.php:451
+msgid "Your e-mail to appear in the website header"
+msgstr ""
+
+#: ../functions.php:470
 msgid "Copyright Text"
 msgstr ""
 
-#: ../functions.php:371
+#: ../functions.php:484
 msgid "Social Sites"
 msgstr ""
 
-#: ../functions.php:387
+#: ../functions.php:500
 msgid "Facebook Page URL"
 msgstr ""
 
-#: ../functions.php:406
+#: ../functions.php:519
 msgid "Google+ Page URL"
 msgstr ""
 
-#: ../functions.php:425
+#: ../functions.php:538
+msgid "Twitter URL"
+msgstr ""
+
+#: ../functions.php:557
+#: ../functions.php:576
+msgid "LinkedIn URL"
+msgstr ""
+
+#: ../functions.php:595
 msgid "RSS Feeds URL"
 msgstr ""
 
-#: ../functions.php:444
+#: ../functions.php:614
+msgid "Tumblr URL"
+msgstr ""
+
+#: ../functions.php:633
 msgid "YouTube channel URL"
+msgstr ""
+
+#: ../functions.php:652
+msgid "Pinterest URL"
+msgstr ""
+
+#: ../functions.php:671
+msgid "VK URL"
+msgstr ""
+
+#: ../functions.php:690
+msgid "Flickr URL"
+msgstr ""
+
+#: ../functions.php:709
+msgid "Vine URL"
+msgstr ""
+
+#: ../functions.php:728
+msgid "Demo Premium version"
+msgstr ""
+
+#: ../functions.php:729
+msgid "Get Premium version"
 msgstr ""
 
 #: ../template-parts/content-none.php:14

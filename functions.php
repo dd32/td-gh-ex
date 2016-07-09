@@ -183,6 +183,33 @@ function fcorpo_show_website_logo_image_or_title() {
 }
 
 /**
+ *	Displays the header phone.
+ */
+function fcorpo_show_header_phone() {
+
+	$phone = get_theme_mod('fcorpo_header_phone', '1.555.555.555');
+
+	if ( !empty( $phone ) ) {
+
+		echo '<span id="header-phone">' . esc_html($phone) . '</span>';
+	}
+}
+
+/**
+ *	Displays the header email.
+ */
+function fcorpo_show_header_email() {
+
+	$email = get_theme_mod('fcorpo_header_email', 'info@yoursite.com');
+
+	if ( !empty( $email ) ) {
+
+		echo '<span id="header-email"><a href="mailto:' . antispambot($email, 1) . '" title="' . esc_attr($email) . '">'
+				. esc_html($email) . '</a></span>';
+	}
+}
+
+/**
  *	Displays the copyright text.
  */
 function fcorpo_show_copyright_text() {
@@ -258,16 +285,64 @@ function fcorpo_display_social_sites() {
 		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Google+', 'fcorpo') . '" class="google16"></a>';
 	}
 
+	$socialURL = get_theme_mod('fcorpo_social_twitter', '#');
+	if ( !empty($socialURL) ) {
+
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Twitter', 'fcorpo') . '" class="twitter16"></a>';
+	}
+
+	$socialURL = get_theme_mod('fcorpo_social_linkedin', '#');
+	if ( !empty($socialURL) ) {
+
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on LinkedIn', 'fcorpo') . '" class="linkedin16"></a>';
+	}
+
+	$socialURL = get_theme_mod('fcorpo_social_instagram', '#');
+	if ( !empty($socialURL) ) {
+
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Instagram', 'fcorpo') . '" class="instagram16"></a>';
+	}
+
 	$socialURL = get_theme_mod('fcorpo_social_rss', get_bloginfo( 'rss2_url' ));
 	if ( !empty($socialURL) ) {
 
 		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow our RSS Feeds', 'fcorpo') . '" class="rss16"></a>';
 	}
 
+	$socialURL = get_theme_mod('fcorpo_social_tumblr', '#');
+	if ( !empty($socialURL) ) {
+
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Tumblr', 'fcorpo') . '" class="tumblr16"></a>';
+	}
+
 	$socialURL = get_theme_mod('fcorpo_social_youtube', '#');
 	if ( !empty($socialURL) ) {
 
 		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Youtube', 'fcorpo') . '" class="youtube16"></a>';
+	}
+
+	$socialURL = get_theme_mod('fcorpo_social_pinterest', '#');
+	if ( !empty($socialURL) ) {
+
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Pinterest', 'fcorpo') . '" class="pinterest16"></a>';
+	}
+
+	$socialURL = get_theme_mod('fcorpo_social_vk', '#');
+	if ( !empty($socialURL) ) {
+
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on VK', 'fcorpo') . '" class="vk16"></a>';
+	}
+
+	$socialURL = get_theme_mod('fcorpo_social_flickr', '#');
+	if ( !empty($socialURL) ) {
+
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Flickr', 'fcorpo') . '" class="flickr16"></a>';
+	}
+
+	$socialURL = get_theme_mod('fcorpo_social_vine', '#');
+	if ( !empty($socialURL) ) {
+
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Vine', 'fcorpo') . '" class="vine16"></a>';
 	}
 
 	echo '</ul>';
@@ -336,11 +411,49 @@ function fcorpo_customize_register( $wp_customize ) {
 	 * Add Footer Section
 	 */
 	$wp_customize->add_section(
-		'fcorpo_footer_section',
+		'fcorpo_header_and_footer_section',
 		array(
-			'title'       => __( 'Footer', 'fcorpo' ),
+			'title'       => __( 'Header and Footer', 'fcorpo' ),
 			'capability'  => 'edit_theme_options',
 		)
+	);
+
+	// Add header phone
+	$wp_customize->add_setting(
+		'fcorpo_header_phone',
+		array(
+		    'default'           => '1.555.555.555',
+		    'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fcorpo_header_phone',
+        array(
+            'label'          => __( 'Your phone to appear in the website header', 'fcorpo' ),
+            'section'        => 'fcorpo_header_and_footer_section',
+            'settings'       => 'fcorpo_header_phone',
+            'type'           => 'text',
+            )
+        )
+	);
+
+	// Add header email
+	$wp_customize->add_setting(
+		'fcorpo_header_email',
+		array(
+		    'default'           => 'info@yoursite.com',
+		    'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fcorpo_header_email',
+        array(
+            'label'          => __( 'Your e-mail to appear in the website header', 'fcorpo' ),
+            'section'        => 'fcorpo_header_and_footer_section',
+            'settings'       => 'fcorpo_header_email',
+            'type'           => 'text',
+            )
+        )
 	);
 	
 	// Add footer copyright text
@@ -355,7 +468,7 @@ function fcorpo_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fcorpo_footer_copyright',
         array(
             'label'          => __( 'Copyright Text', 'fcorpo' ),
-            'section'        => 'fcorpo_footer_section',
+            'section'        => 'fcorpo_header_and_footer_section',
             'settings'       => 'fcorpo_footer_copyright',
             'type'           => 'text',
             )
@@ -411,6 +524,63 @@ function fcorpo_customize_register( $wp_customize ) {
         )
 	);
 
+	// Add Twitter url
+	$wp_customize->add_setting(
+		'fcorpo_social_twitter',
+		array(
+		    'default'           => '#',
+		    'sanitize_callback' => 'esc_url_raw',
+		)
+	);
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fcorpo_social_twitter',
+        array(
+            'label'          => __( 'Twitter URL', 'fcorpo' ),
+            'section'        => 'fcorpo_social_section',
+            'settings'       => 'fcorpo_social_twitter',
+            'type'           => 'text',
+            )
+        )
+	);
+
+	// Add LinkedIn url
+	$wp_customize->add_setting(
+		'fcorpo_social_linkedin',
+		array(
+		    'default'           => '#',
+		    'sanitize_callback' => 'esc_url_raw',
+		)
+	);
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fcorpo_social_linkedin',
+        array(
+            'label'          => __( 'LinkedIn URL', 'fcorpo' ),
+            'section'        => 'fcorpo_social_section',
+            'settings'       => 'fcorpo_social_linkedin',
+            'type'           => 'text',
+            )
+        )
+	);
+
+	// Add Instagram url
+	$wp_customize->add_setting(
+		'fcorpo_social_instagram',
+		array(
+		    'default'           => '#',
+		    'sanitize_callback' => 'esc_url_raw',
+		)
+	);
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fcorpo_social_instagram',
+        array(
+            'label'          => __( 'LinkedIn URL', 'fcorpo' ),
+            'section'        => 'fcorpo_social_section',
+            'settings'       => 'fcorpo_social_instagram',
+            'type'           => 'text',
+            )
+        )
+	);
+
 	// Add RSS Feeds url
 	$wp_customize->add_setting(
 		'fcorpo_social_rss',
@@ -430,6 +600,25 @@ function fcorpo_customize_register( $wp_customize ) {
         )
 	);
 
+	// Add Tumblr url
+	$wp_customize->add_setting(
+		'fcorpo_social_tumblr',
+		array(
+		    'default'           => '#',
+		    'sanitize_callback' => 'esc_url_raw',
+		)
+	);
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fcorpo_social_tumblr',
+        array(
+            'label'          => __( 'Tumblr URL', 'fcorpo' ),
+            'section'        => 'fcorpo_social_section',
+            'settings'       => 'fcorpo_social_tumblr',
+            'type'           => 'text',
+            )
+        )
+	);
+
 	// Add YouTube channel url
 	$wp_customize->add_setting(
 		'fcorpo_social_youtube',
@@ -444,6 +633,82 @@ function fcorpo_customize_register( $wp_customize ) {
             'label'          => __( 'YouTube channel URL', 'fcorpo' ),
             'section'        => 'fcorpo_social_section',
             'settings'       => 'fcorpo_social_youtube',
+            'type'           => 'text',
+            )
+        )
+	);
+
+	// Add Pinterest url
+	$wp_customize->add_setting(
+		'fcorpo_social_pinterest',
+		array(
+		    'default'           => '#',
+		    'sanitize_callback' => 'esc_url_raw',
+		)
+	);
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fcorpo_social_pinterest',
+        array(
+            'label'          => __( 'Pinterest URL', 'fcorpo' ),
+            'section'        => 'fcorpo_social_section',
+            'settings'       => 'fcorpo_social_pinterest',
+            'type'           => 'text',
+            )
+        )
+	);
+
+	// Add VK url
+	$wp_customize->add_setting(
+		'fcorpo_social_vk',
+		array(
+		    'default'           => '#',
+		    'sanitize_callback' => 'esc_url_raw',
+		)
+	);
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fcorpo_social_vk',
+        array(
+            'label'          => __( 'VK URL', 'fcorpo' ),
+            'section'        => 'fcorpo_social_section',
+            'settings'       => 'fcorpo_social_vk',
+            'type'           => 'text',
+            )
+        )
+	);
+
+	// Add Flickr url
+	$wp_customize->add_setting(
+		'fcorpo_social_flickr',
+		array(
+		    'default'           => '#',
+		    'sanitize_callback' => 'esc_url_raw',
+		)
+	);
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fcorpo_social_flickr',
+        array(
+            'label'          => __( 'Flickr URL', 'fcorpo' ),
+            'section'        => 'fcorpo_social_section',
+            'settings'       => 'fcorpo_social_flickr',
+            'type'           => 'text',
+            )
+        )
+	);
+
+	// Add Vine url
+	$wp_customize->add_setting(
+		'fcorpo_social_vine',
+		array(
+		    'default'           => '#',
+		    'sanitize_callback' => 'esc_url_raw',
+		)
+	);
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fcorpo_social_vine',
+        array(
+            'label'          => __( 'Vine URL', 'fcorpo' ),
+            'section'        => 'fcorpo_social_section',
+            'settings'       => 'fcorpo_social_vine',
             'type'           => 'text',
             )
         )

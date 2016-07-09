@@ -25,7 +25,14 @@
 				<div id="header-content-wrapper">
 
 					<div id="header-top">
+						<?php fcorpo_show_header_phone(); ?>
+
+						<?php fcorpo_show_header_email(); ?>
+
 						<?php fcorpo_display_social_sites(); ?>
+					</div>
+
+					<div class="clear">
 					</div>
 
 					<div id="header-logo">

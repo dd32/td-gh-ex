@@ -74,8 +74,10 @@ jQuery(document).ready(function () {
   jQuery(window).scroll(function () {
 	  if (jQuery(this).scrollTop() > 100) {
 		  jQuery('.scrollup').fadeIn();
+		  jQuery('#header-top').hide();
 	  } else {
 		  jQuery('.scrollup').fadeOut();
+		  jQuery('#header-top').show();
 	  }
   });
 
