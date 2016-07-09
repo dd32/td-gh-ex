@@ -1,7 +1,7 @@
 <?php
 /*
 ================================================================================================
-Silver Quantum - single.php
+Silver Quantum - archive.php
 ================================================================================================
 This is the most generic template file in a WordPress theme and is one of the two required files 
 for a theme (the other style.css). The index.php template file is flexible. It can be used to 
@@ -20,14 +20,17 @@ perform their jobs.
 <?php get_header(); ?>
     <div id="content-area" class="content-area">
         <?php if (have_posts()) : ?>
+			<h2 class="content-archive">
+                <?php the_archive_title(); ?>
+			</h2>
             <?php while (have_posts()) : the_post(); ?>
-                <?php get_template_part('template-parts/content', 'single'); ?>
+                <?php get_template_part('template-parts/content', 'archive'); ?>
         <?php endwhile; ?>
-                <div class="paging-navigation">
+                  <div class="paging-navigation">
                     <?php the_posts_pagination(); ?>
                 </div>
         <?php else : ?>
-                    <?php get_template_part('template-parts/content', 'none'); ?>
+                <?php get_template_part('template-parts/content', 'none'); ?>
         <?php endif; ?>
     </div>
 <?php get_sidebar(); ?>

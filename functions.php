@@ -1,96 +1,140 @@
 <?php
-function silverquantum_setup() {
+/*
+================================================================================================
+Silver Quantum - functions.php
+================================================================================================
+This is the most generic template file in a WordPress theme and is one of the two required files 
+for a theme (the other being template-tags.php). This file is used to maintain the main 
+functionality and features for this theme. The second file is the template-tags.php that contains 
+the extra functions and features.
 
-// Setup Content Width value based on the theme's design and stylesheet.
-global $content_width;
-if (!isset($content_width))
-	$content_width = 650;
-	
-//Header Menu Section
-register_nav_menu('header-menu', __('Header Menu', 'silverquantum'));
+@package        Silver Quantum WordPress Theme
+@copyright      Copyright (C) 2016. Benjamin Lu
+@license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
+@author         Benjamin Lu (http://lumiathemes.com/)
+================================================================================================
+*/
 
-load_theme_textdomain( 'silverquantum', get_template_directory() . '/languages' );
+/*
+================================================================================================
+Table of Content
+================================================================================================
+ 1.0 - Content Width
+ 2.0 - Enqueue Styles and Scripts
+ 3.0 - Theme Setup
+ 4.0 - Register Sidebars
+ 5.0 - Required Files
+================================================================================================
+*/
 
-// This theme supports a variety of post formats.
-add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote', 'status' ) );
-	
-// This theme styles the visual editor with editor-styles.css to mach the theme style.
-add_editor_style();
-
-// Adds RSS feed links to <head> for post and comments.
-add_theme_support('automatic-feed-links');
-
-// This theme uses a custom image size for featured images, display on a "standard" posts.
-add_theme_support('post-thumbnails');
-set_post_thumbnail_size(624, 9999); 
-
-// This theme does support custom background color.
-add_theme_support('custom-background', array(
-	'default-color'	=> 'cccccc',
-	)); 
-	
-add_theme_support('title-tag');
-
+/*
+================================================================================================
+ 1.0 - Content Width
+================================================================================================
+*/
+function silver_quantum_content_width_setup() {
+    $GLOBALS['content_width'] = apply_filters('silver_quantum_content_width_setup', 850);
 }
-add_action('after_setup_theme', 'silverquantum_setup');
+add_action('after_setup_theme', 'silver_quantum_content_width_setup', 0);
 
-// Add Support for Custom Header Image.
-require(get_template_directory() . '/include/custom-header.php');
-
-function silverquantum_widgets_init() {
-	register_sidebar( array (
-		'name' 				=> __('Main Sidebar', 'silverquantum'),
-		'id'				=> 'sidebar-1',	
-		'description' 		=>__('Appear on Posts Only', 'silverquantum'),
-		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' 		=> '</aside>',
-		'before_title' 		=> '<h2 class="widget-title">',
-		'after_title' 		=> '</h2>',
+/*
+================================================================================================
+ 2.0 - Enqueue Styles and Scripts
+================================================================================================
+*/
+function silver_quantum_enqueue_scripts_setup() {
+    // Enable and Activate the main stylesheet for Silver Quantum.
+    wp_enqueue_style('silver-quantum-style', get_stylesheet_uri());
+    
+    // Enable and Activate Font Awesome for Silver Quantum.
+    wp_enqueue_style('font-awesome', get_template_directory_uri() . '/extras/font-awesome/css/font-awesome.css', '20160601', true);
+    
+    // Enable and activate Google Font (Ubuntu) for Silver Quantum.
+    wp_enqueue_style('silver-quantum-ubuntu', '//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic');
+    
+    // Enable and Activate Navigation JavaScript for Silver Quantum.
+    wp_enqueue_script('silver-quantum-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20160601', true);
+	wp_localize_script('silver-quantum-navigation', 'screenReaderText', array(
+		'expand'   => '<span class="screen-reader-text">' . __('expand child menu', 'silver-quantum') . '</span>',
+		'collapse' => '<span class="screen-reader-text">' . __('collapse child menu', 'silver-quantum') . '</span>',
 	));
-	
-	register_sidebar( array (
-		'name' 				=> __('Secondary Sidebar', 'silverquantum'),
-		'id'				=> 'sidebar-2',	
-		'description' 		=>__('Appear on Pages Only', 'silverquantum'),
-		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' 		=> '</aside>',
-		'before_title' 		=> '<h2 class="widget-title">',
-		'after_title' 		=> '</h2>',
-	));
-
-	register_sidebar( array (
-		'name' 				=> __('Custom Sidebar', 'silverquantum'),
-		'id'				=> 'sidebar-3',	
-		'description' 		=>__('Appear on Custom Pages Only', 'silverquantum'),
-		'before_widget' 	=> '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' 		=> '</aside>',
-		'before_title' 		=> '<h2 class="widget-title">',
-		'after_title' 		=> '</h2>',
-	));
+    
+    if (is_singular() && comments_open() && get_option('thread_comments')) {
+        wp_enqueue_script('comment-reply');
+    }
 }
-add_action( 'widgets_init', 'silverquantum_widgets_init' );
+add_action('wp_enqueue_scripts', 'silver_quantum_enqueue_scripts_setup');
 
-// Scripts
-function silverquantum_scripts_styles() {
-	if (is_singular() && comments_open() && get_option( 'thread_comments' ))
-		wp_enqueue_script( 'comment-reply' );
-		
-	wp_enqueue_style('silverquantum-style', get_stylesheet_uri());
-	wp_enqueue_style('silverquantum-ubuntu', '//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic');
+/*
+================================================================================================
+ 3.0 - Theme Setup
+================================================================================================
+*/
+function silver_quantum_theme_setup() {
+    // Enable and activate add theme support (title tag) for Silver Quantum.
+    add_theme_support('title-tag');
+    
+    // Enable and activate add theme support (automatica feed links) for Silver Quantum.
+    add_theme_support('automatic-feed-links');
+    
+    // Enable and activate add theme support (html5) for Silver Quantum.
+    add_theme_support('html5', array(
+        'comment-list',
+        'comment-form',
+        'search-form', 
+        'caption'
+    ));
+    
+    // Enable and activate add theme support (custom background) for Silver Quantum.
+    add_theme_support('custom-background', array(
+        'default' => 'cccccc',
+    ));
+    
+    register_nav_menus(array(
+        'primary-navigation'    => esc_html__('Primary Navigation', 'silver-quantum'),
+    ));
 }
-add_action('wp_enqueue_scripts', 'silverquantum_scripts_styles');
+add_action('after_setup_theme', 'silver_quantum_theme_setup');
 
-function silverquantum_content_nav() {  
-global $wp_query;
+/*
+================================================================================================
+ 4.0 - Register Sidebars
+================================================================================================
+*/
+function silver_quantum_register_sidebars_setup() {
+    register_sidebar(array(
+        'name'          => __('Primary Sidebar', 'silver-quantum'),
+        'id'            => 'primary',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</aside>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ));    
 
-$big = 999999999; // need an unlikely integer
-
-echo paginate_links( array(
-	'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-	'format' => '?paged=%#%',
-	'current' => max( 1, get_query_var('paged') ),
-	'total' => $wp_query->max_num_pages
-) );
+    register_sidebar(array(
+        'name'          => __('Secondary Sidebar', 'silver-quantum'),
+        'id'            => 'secondary',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</aside>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ));  
+    
+    register_sidebar(array(
+        'name'          => __('Custom Sidebar', 'silver-quantum'),
+        'id'            => 'custom',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</aside>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ));  
 }
-// END pagination
-?>
+add_action('widgets_init', 'silver_quantum_register_sidebars_setup');
+/*
+================================================================================================
+ 5.0 - Required Files
+================================================================================================
+*/
+require_once(get_template_directory() . '/includes/custom-header.php');
+require_once(get_template_directory() . '/includes/customizer.php');
+require_once(get_template_directory() . '/includes/template-tags.php');

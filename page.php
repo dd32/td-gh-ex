@@ -1,31 +1,34 @@
+<?php
+/*
+================================================================================================
+Silver Quantum - single.php
+================================================================================================
+This is the most generic template file in a WordPress theme and is one of the two required files 
+for a theme (the other style.css). The index.php template file is flexible. It can be used to 
+include all references to the header, content, widget, footer and any other pages created in 
+WordPress. Or it can be divided into modular template files, each taking on part of the workload. 
+If you do not provide other template files, WordPress may have default files or functions to 
+perform their jobs.
+
+@package        Silver Quantum WordPress Theme
+@copyright      Copyright (C) 2016. Benjamin Lu
+@license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
+@author         Benjamin Lu (http://lumiathemes.com/)
+================================================================================================
+*/
+?>
 <?php get_header(); ?>
-		<div id = "main-content">
-			<?php if(have_posts()) : ?>
-				<?php while ( have_posts() ) : the_post(); ?>
-					<?php get_template_part('content', 'page'); ?>
-				<?php endwhile; ?>
-				<?php silverquantum_content_nav(); ?>
-			<?php else : ?>
-				<article>
-					<?php if( current_user_can( 'edit_posts' )) : ?>
-						<header class = "entry-header">
-						<h1 class = "entry-title"><?php _e('No Posts to Display','silverquantum'); ?></h1>
-						</header>
-							<div class="entry-content">
-							<p><?php printf( __( 'Ready to publish your first post? <a href="%s">Get started here</a>.', 'silverquantum' ), admin_url( 'post-new.php' ) ); ?></p>
-							</div>
-					<?php else : ?>
-						<header class="entry-header">
-						<h1 class="entry-title"><?php _e( 'Nothing Found', 'silverquantum' ); ?></h1>
-						</header>
-							<div class="entry-content">
-							<p><?php _e( 'Apologies, but no results were found. Perhaps searching will help find a related post.', 'silverquantum' ); ?></p>
-							<?php get_search_form(); ?>
-							</div>
-					<?php endif; ?>
-				</article>
-			<?php endif; ?>
-		</div>
-		<?php get_sidebar('page'); ?>
-	</div>
+    <div id="content-area" class="content-area">
+        <?php if (have_posts()) : ?>
+            <?php while (have_posts()) : the_post(); ?>
+                <?php get_template_part('template-parts/content', 'page'); ?>
+        <?php endwhile; ?>
+                <div class="paging-navigation">
+                    <?php the_posts_pagination(); ?>
+                </div>
+        <?php else : ?>
+                    <?php get_template_part('template-parts/content', 'none'); ?>
+        <?php endif; ?>
+    </div>
+<?php get_sidebar('page'); ?>
 <?php get_footer(); ?>

@@ -1,7 +1,8 @@
 <?php
 /*
 ================================================================================================
-Silver Quantum - single.php
+Silver Quantum - custom-sidebar.php
+Template Name: Custom Sidebar Template
 ================================================================================================
 This is the most generic template file in a WordPress theme and is one of the two required files 
 for a theme (the other style.css). The index.php template file is flexible. It can be used to 
@@ -21,7 +22,7 @@ perform their jobs.
     <div id="content-area" class="content-area">
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
-                <?php get_template_part('template-parts/content', 'single'); ?>
+                <?php get_template_part('template-parts/content', 'custom-sidebar'); ?>
         <?php endwhile; ?>
                 <div class="paging-navigation">
                     <?php the_posts_pagination(); ?>
@@ -30,5 +31,5 @@ perform their jobs.
                     <?php get_template_part('template-parts/content', 'none'); ?>
         <?php endif; ?>
     </div>
-<?php get_sidebar(); ?>
+<?php get_sidebar('custom'); ?>
 <?php get_footer(); ?>

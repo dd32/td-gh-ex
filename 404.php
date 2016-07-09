@@ -1,11 +1,11 @@
 <?php
 /*
 ================================================================================================
-Silver Quantum - sidebar.php
+Silver Quantum - footer.php
 ================================================================================================
-This is the most generic template file in a WordPress theme and is one of the requirements to 
-display widgets on the right side of the page. This is the post content sidebar that is assigned
-in the widget area in the customizer and widget area.
+This is the most generic template file in a WordPress theme and is one of the two required files 
+for a theme (the other header.php). The footer.php template file only displays the footer
+section of this theme.
 
 @package        Silver Quantum WordPress Theme
 @copyright      Copyright (C) 2016. Benjamin Lu
@@ -14,6 +14,6 @@ in the widget area in the customizer and widget area.
 ================================================================================================
 */
 ?>
-<div id="widget-area" class="widget-area">
-    <?php dynamic_sidebar('secondary'); ?>
-</div>
+<?php get_header(); ?>
+    <?php get_template_part('template-parts/content', 'none'); ?>
+<?php get_footer(); ?>
