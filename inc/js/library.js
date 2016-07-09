@@ -2166,7 +2166,7 @@ window.scrollReveal = (function( window ){
   };
 })(jQuery);
 
- 
+
 /*!
 * FitText.js 1.2
 *

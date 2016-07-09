@@ -2,88 +2,88 @@
 
 // Social Media Icon Choices
 function bellini_social_accounts_icons(){
-    
+
     return array(
-    	''							=> esc_html__( 'None', 'bellini'), 
-        'fa fa-500px' 				=> esc_html__( '500PX', 'bellini'), 
-        'fa fa-amazon' 				=> esc_html__( 'Amazon', 'bellini'), 
-        'fa fa-android' 			=> esc_html__( 'Android', 'bellini'), 
+    	''							=> esc_html__( 'None', 'bellini'),
+        'fa fa-500px' 				=> esc_html__( '500PX', 'bellini'),
+        'fa fa-amazon' 				=> esc_html__( 'Amazon', 'bellini'),
+        'fa fa-android' 			=> esc_html__( 'Android', 'bellini'),
         'fa fa-angellist' 			=> esc_html__( 'AngelList', 'bellini'),
-        'fa fa-apple' 				=> esc_html__( 'Apple', 'bellini'), 
-        'fa fa-behance' 			=> esc_html__( 'Behance', 'bellini'), 
-        'fa fa-behance-square' 		=> esc_html__( 'Behance Square', 'bellini'), 
+        'fa fa-apple' 				=> esc_html__( 'Apple', 'bellini'),
+        'fa fa-behance' 			=> esc_html__( 'Behance', 'bellini'),
+        'fa fa-behance-square' 		=> esc_html__( 'Behance Square', 'bellini'),
         'fa fa-bitbucket' 			=> esc_html__( 'Bitbucket', 'bellini'),
-        'fa fa-bitbucket-square'	=> esc_html__( 'Bitbucket Square', 'bellini'), 
-        'fa fa-btc' 				=> esc_html__( 'Bitcoin', 'bellini'), 
-        'fa fa-codepen' 			=> esc_html__( 'Codepen', 'bellini'), 
+        'fa fa-bitbucket-square'	=> esc_html__( 'Bitbucket Square', 'bellini'),
+        'fa fa-btc' 				=> esc_html__( 'Bitcoin', 'bellini'),
+        'fa fa-codepen' 			=> esc_html__( 'Codepen', 'bellini'),
         'fa fa-delicious' 			=> esc_html__( 'Delicious', 'bellini'),
-        'fa fa-deviantart' 			=> esc_html__( 'DeviantArt', 'bellini'), 
-        'fa fa-digg' 				=> esc_html__( 'Digg', 'bellini'), 
-        'fa fa-dribbble' 			=> esc_html__( 'Dribbble', 'bellini'), 
+        'fa fa-deviantart' 			=> esc_html__( 'DeviantArt', 'bellini'),
+        'fa fa-digg' 				=> esc_html__( 'Digg', 'bellini'),
+        'fa fa-dribbble' 			=> esc_html__( 'Dribbble', 'bellini'),
         'fa fa-dropbox' 			=> esc_html__( 'Dropbox', 'bellini'),
         'fa fa-drupal' 				=> esc_html__( 'Drupal', 'bellini'),
-        'fa fa-envelop' 			=> esc_html__( 'Email', 'bellini'), 
+        'fa fa-envelop' 			=> esc_html__( 'Email', 'bellini'),
         'fa fa-envelope-o' 			=> esc_html__( 'Email V2', 'bellini'),
         'fa fa-envelope-square' 	=> esc_html__( 'Email V3', 'bellini'),
-        'fa fa-facebook' 			=> esc_html__( 'Facebook', 'bellini'), 
-        'fa fa-facebook-official' 	=> esc_html__( 'Facebook Official', 'bellini'), 
+        'fa fa-facebook' 			=> esc_html__( 'Facebook', 'bellini'),
+        'fa fa-facebook-official' 	=> esc_html__( 'Facebook Official', 'bellini'),
         'fa fa-facebook-square' 	=> esc_html__( 'Facebook Square', 'bellini'),
-        'fa fa-flickr' 				=> esc_html__( 'Flickr', 'bellini'), 
-        'fa fa-foursquare' 			=> esc_html__( 'Foursquare', 'bellini'), 
-        'fa fa-product-hunt' 		=> esc_html__( 'Product Hunt', 'bellini'), 
+        'fa fa-flickr' 				=> esc_html__( 'Flickr', 'bellini'),
+        'fa fa-foursquare' 			=> esc_html__( 'Foursquare', 'bellini'),
+        'fa fa-product-hunt' 		=> esc_html__( 'Product Hunt', 'bellini'),
         'fa fa-pinterest-square' 	=> esc_html__( 'Pinterest Square', 'bellini'),
-        'fa fa-pinterest-p'			=> esc_html__( 'Pinterest V2', 'bellini'), 
-        'fa fa-pinterest' 			=> esc_html__( 'Pinterest', 'bellini'), 
-        'fa fa-medium' 				=> esc_html__( 'Medium', 'bellini'), 
+        'fa fa-pinterest-p'			=> esc_html__( 'Pinterest V2', 'bellini'),
+        'fa fa-pinterest' 			=> esc_html__( 'Pinterest', 'bellini'),
+        'fa fa-medium' 				=> esc_html__( 'Medium', 'bellini'),
         'fa fa-linkedin-square' 	=> esc_html__( 'LinkedIn Square', 'bellini'),
-        'fa fa-linkedin' 			=> esc_html__( 'LinkedIn', 'bellini'), 
-        'fa fa-lastfm-square' 		=> esc_html__( 'Last.fm Square', 'bellini'), 
-        'fa fa-lastfm' 				=> esc_html__( 'Last.fm', 'bellini'), 
+        'fa fa-linkedin' 			=> esc_html__( 'LinkedIn', 'bellini'),
+        'fa fa-lastfm-square' 		=> esc_html__( 'Last.fm Square', 'bellini'),
+        'fa fa-lastfm' 				=> esc_html__( 'Last.fm', 'bellini'),
         'fa fa-jsfiddle' 			=> esc_html__( 'JSFiddle', 'bellini'),
-        'fa fa-joomla' 				=> esc_html__( 'Joomla', 'bellini'), 
-        'fa fa-instagram' 			=> esc_html__( 'Instagram', 'bellini'), 
-        'fa fa-houzz' 				=> esc_html__( 'Houzz', 'bellini'), 
+        'fa fa-joomla' 				=> esc_html__( 'Joomla', 'bellini'),
+        'fa fa-instagram' 			=> esc_html__( 'Instagram', 'bellini'),
+        'fa fa-houzz' 				=> esc_html__( 'Houzz', 'bellini'),
         'fa fa-hacker-news' 		=> esc_html__( 'Hacker News', 'bellini'),
-        'fa fa-google-plus-square' 	=> esc_html__( 'Google+ Square', 'bellini'), 
-        'fa fa-google-plus' 		=> esc_html__( 'Google+', 'bellini'), 
-        'fa fa-google' 				=> esc_html__( 'Google', 'bellini'), 
+        'fa fa-google-plus-square' 	=> esc_html__( 'Google+ Square', 'bellini'),
+        'fa fa-google-plus' 		=> esc_html__( 'Google+', 'bellini'),
+        'fa fa-google' 				=> esc_html__( 'Google', 'bellini'),
         'fa fa-github-square' 		=> esc_html__( 'GitHub Square', 'bellini'),
-        'fa fa-github-alt'			=> esc_html__( 'GitHub V2', 'bellini'), 
-        'fa fa-github' 				=> esc_html__( 'GitHub', 'bellini'), 
+        'fa fa-github-alt'			=> esc_html__( 'GitHub V2', 'bellini'),
+        'fa fa-github' 				=> esc_html__( 'GitHub', 'bellini'),
         'fa fa-codepen' 			=> esc_html__( 'Codepen', 'bellini'),
-        'fa fa-vk' 					=> esc_html__( 'VKontakte', 'bellini'), 
-        'fa fa-skype' 				=> esc_html__( 'Skype', 'bellini'), 
-        'fa fa-slack' 				=> esc_html__( 'Slack', 'bellini'), 
+        'fa fa-vk' 					=> esc_html__( 'VKontakte', 'bellini'),
+        'fa fa-skype' 				=> esc_html__( 'Skype', 'bellini'),
+        'fa fa-slack' 				=> esc_html__( 'Slack', 'bellini'),
         'fa fa-slideshare' 			=> esc_html__( 'SlideShare', 'bellini'),
-        'fa fa-soundcloud' 			=> esc_html__( 'SoundCloud', 'bellini'), 
-        'fa fa-spotify' 			=> esc_html__( 'Spotify', 'bellini'), 
-        'fa fa-tripadvisor' 		=> esc_html__( 'TripAdvisor', 'bellini'), 
+        'fa fa-soundcloud' 			=> esc_html__( 'SoundCloud', 'bellini'),
+        'fa fa-spotify' 			=> esc_html__( 'Spotify', 'bellini'),
+        'fa fa-tripadvisor' 		=> esc_html__( 'TripAdvisor', 'bellini'),
         'fa fa-twitch' 				=> esc_html__( 'Twitch', 'bellini'),
-        'fa fa-viadeo'				=> esc_html__( 'Viadeo', 'bellini'), 
-        'fa fa-viadeo-square' 		=> esc_html__( 'Viadeo Square', 'bellini'), 
-        'fa fa-vine' 				=> esc_html__( 'Vine', 'bellini'), 
+        'fa fa-viadeo'				=> esc_html__( 'Viadeo', 'bellini'),
+        'fa fa-viadeo-square' 		=> esc_html__( 'Viadeo Square', 'bellini'),
+        'fa fa-vine' 				=> esc_html__( 'Vine', 'bellini'),
         'fa fa-windows' 			=> esc_html__( 'Windows', 'bellini'),
-        'fa fa-wordpress' 			=> esc_html__( 'WordPress', 'bellini'), 
-        'fa fa-xing' 				=> esc_html__( 'Xing', 'bellini'), 
-        'fa fa-xing-square' 		=> esc_html__( 'Xing Square', 'bellini'), 
+        'fa fa-wordpress' 			=> esc_html__( 'WordPress', 'bellini'),
+        'fa fa-xing' 				=> esc_html__( 'Xing', 'bellini'),
+        'fa fa-xing-square' 		=> esc_html__( 'Xing Square', 'bellini'),
         'fa fa-yelp' 				=> esc_html__( 'Yelp', 'bellini'),
-        'fa fa-vimeo' 				=> esc_html__( 'Vimeo', 'bellini'), 
-        'fa fa-youtube-play' 		=> esc_html__( 'YouTube Play', 'bellini'), 
-        'fa fa-youtube-square' 		=> esc_html__( 'YouTube Square', 'bellini'), 
+        'fa fa-vimeo' 				=> esc_html__( 'Vimeo', 'bellini'),
+        'fa fa-youtube-play' 		=> esc_html__( 'YouTube Play', 'bellini'),
+        'fa fa-youtube-square' 		=> esc_html__( 'YouTube Square', 'bellini'),
         'fa fa-youtube' 			=> esc_html__( 'YouTube', 'bellini'),
         'fa fa-reddit' 				=> esc_html__( 'Reddit', 'bellini'),
-        'fa fa-reddit-alien' 		=> esc_html__( 'Reddit V2', 'bellini'), 
-        'fa fa-reddit-square' 		=> esc_html__( 'Reddit Square', 'bellini'), 
-        'fa fa-snapchat' 			=> esc_html__( 'Snapchat', 'bellini'), 
+        'fa fa-reddit-alien' 		=> esc_html__( 'Reddit V2', 'bellini'),
+        'fa fa-reddit-square' 		=> esc_html__( 'Reddit Square', 'bellini'),
+        'fa fa-snapchat' 			=> esc_html__( 'Snapchat', 'bellini'),
         'fa fa-snapchat-ghost' 		=> esc_html__( 'Snapchat V2', 'bellini'),
-        'fa fa-snapchat-square' 	=> esc_html__( 'Snapchat V3', 'bellini'), 
-        'fa fa-tencent-weibo' 		=> esc_html__( 'Weibo', 'bellini'), 
-        'fa fa-tumblr' 				=> esc_html__( 'tumblr', 'bellini'), 
+        'fa fa-snapchat-square' 	=> esc_html__( 'Snapchat V3', 'bellini'),
+        'fa fa-tencent-weibo' 		=> esc_html__( 'Weibo', 'bellini'),
+        'fa fa-tumblr' 				=> esc_html__( 'tumblr', 'bellini'),
         'fa fa-tumblr-square' 		=> esc_html__( 'tumblr V2', 'bellini'),
-        'fa fa-twitter-square'		=> esc_html__( 'Twitter', 'bellini'), 
-        'fa fa-twitter' 			=> esc_html__( 'Twitter V2', 'bellini'), 
-        'fa fa-weibo' 				=> esc_html__( 'Weibo V2', 'bellini'), 
-        'fa fa-weixin' 				=> esc_html__( 'We Chat', 'bellini'),  
+        'fa fa-twitter-square'		=> esc_html__( 'Twitter', 'bellini'),
+        'fa fa-twitter' 			=> esc_html__( 'Twitter V2', 'bellini'),
+        'fa fa-weibo' 				=> esc_html__( 'Weibo V2', 'bellini'),
+        'fa fa-weixin' 				=> esc_html__( 'We Chat', 'bellini'),
     );
 }
 
@@ -208,10 +208,10 @@ function bellini_font_preset(){
         'plalat'					=> 'Playfair Display and Lato',
         'planot'                    => 'Playfair Display and Noto Serif',
         'plaope'					=> 'Playfair Display and Open Sans',
-        'plakru'                    => 'Playfair Display and Sree Krushnadevaraya',        
+        'plakru'                    => 'Playfair Display and Sree Krushnadevaraya',
         'plavol'					=> 'Playfair Display and Vollkorn',
-        'poiope'                    => 'Poiret One and Open Sans',        
-        'poilat'                    => 'Poiret One and Lato',        
+        'poiope'                    => 'Poiret One and Open Sans',
+        'poilat'                    => 'Poiret One and Lato',
         'ptscab'					=> 'PT Sans and Cabin',
         'ptsdid'					=> 'PT Sans and Didact Gothic',
         'ptslat'					=> 'PT Sans and Lato',
@@ -244,7 +244,7 @@ function bellini_font_preset(){
         'rokosw'                    => 'Rokkitt and Oswald',
         'rokrob'					=> 'Rokkitt and Roboto',
         'rokubu'                    => 'Rokkitt and Ubuntu',
-        'rubrob'                    => 'Rubik Mono One and Roboto Condensed',        
+        'rubrob'                    => 'Rubik Mono One and Roboto Condensed',
         'rufsin'                    => 'Rufina and Sintony',
         'sacali'                    => 'Sacramento and Alice',
         'sankam'                    => 'Sansita One and Kameron',
@@ -261,17 +261,17 @@ function bellini_font_preset(){
         'ubusou'                    => 'Ubuntu and Source Sans Pro',
         'ultsla'                    => 'Ultra and Slabo 13px',
         'univol'                    => 'Unica One and Vollkorn',
-        'vidrob'                    => 'Vidaloka and Roboto',        
+        'vidrob'                    => 'Vidaloka and Roboto',
         'volral'                    => 'Vollkorn and Raleway',
         'volexo'					=> 'Vollkorn and Exo 2',
         'walkre'					=> 'Walter Turncoat and Kreon',
         'walmol'					=> 'Walter Turncoat and Molengo',
         'walosw'					=> 'Walter Turncoat and Oswald',
         'walvol'					=> 'Walter Turncoat and Vollkorn',
-        'yanlat'                    => 'Yanone Kaffeesatz and Lato',         
-        'yanope'                    => 'Yanone Kaffeesatz and Open Sans',        
-        'yanosw'                    => 'Yanone Kaffeesatz and Oswald',         
-        'yanrob'                    => 'Yanone Kaffeesatz and Roboto',        
+        'yanlat'                    => 'Yanone Kaffeesatz and Lato',
+        'yanope'                    => 'Yanone Kaffeesatz and Open Sans',
+        'yanosw'                    => 'Yanone Kaffeesatz and Oswald',
+        'yanrob'                    => 'Yanone Kaffeesatz and Roboto',
         'yescri'					=> 'Yeseva One and Crimson Text',
         'yesjos'					=> 'Yeseva One and Josefin Sans',
         'yeslor'					=> 'Yeseva One and Lora',
@@ -406,10 +406,10 @@ function bellini_font_preset_title($font){
 	if($font == 'plalat'){ return "'Playfair Display', serif";}
     if($font == 'planot'){ return "'Playfair Display', serif";}
 	if($font == 'plaope'){ return "'Playfair Display', serif";}
-    if($font == 'plakru'){ return "'Playfair Display', serif";}   
+    if($font == 'plakru'){ return "'Playfair Display', serif";}
 	if($font == 'plavol'){ return "'Playfair Display', serif";}
-    if($font == 'poiope'){ return "'Poiret One', cursive";}     
-    if($font == 'poilat'){ return "'Poiret One', cursive";}    
+    if($font == 'poiope'){ return "'Poiret One', cursive";}
+    if($font == 'poilat'){ return "'Poiret One', cursive";}
 	if($font == 'ptscab'){ return "'PT Sans', sans-serif";}
 	if($font == 'ptsdid'){ return "'PT Sans', sans-serif";}
 	if($font == 'ptslat'){ return "'PT Sans', sans-serif";}
@@ -442,7 +442,7 @@ function bellini_font_preset_title($font){
     if($font == 'rokosw'){ return "'Rokkitt', serif";}
 	if($font == 'rokrob'){ return "'Rokkitt', serif";}
     if($font == 'rokubu'){ return "'Rokkitt', serif";}
-    if($font == 'rubrob'){ return "'Rubik Mono One', sans-serif";}    
+    if($font == 'rubrob'){ return "'Rubik Mono One', sans-serif";}
     if($font == 'rufsin'){ return "'Rufina', serif";}
     if($font == 'sacali'){ return "'Sacramento', cursive";}
     if($font == 'sankam'){ return "'Sansita One', cursive";}
@@ -459,17 +459,17 @@ function bellini_font_preset_title($font){
     if($font == 'ubusou'){ return "'Ubuntu', sans-serif";}
     if($font == 'ultsla'){ return "'Ultra', serif";}
     if($font == 'univol'){ return "'Unica One', cursive";}
-    if($font == 'vidrob'){ return "'Vidaloka', serif";}    
+    if($font == 'vidrob'){ return "'Vidaloka', serif";}
     if($font == 'volral'){ return "'Vollkorn', serif";}
 	if($font == 'volexo'){ return "'Vollkorn', serif";}
 	if($font == 'walkre'){ return "'Walter Turncoat', cursive";}
 	if($font == 'walmol'){ return "'Walter Turncoat', cursive";}
 	if($font == 'walosw'){ return "'Walter Turncoat', cursive";}
 	if($font == 'walvol'){ return "'Walter Turncoat', cursive";}
-    if($font == 'yanlat'){ return "'Yanone Kaffeesatz', sans-serif";}    
-    if($font == 'yanope'){ return "'Yanone Kaffeesatz', sans-serif";}     
-    if($font == 'yanosw'){ return "'Yanone Kaffeesatz', sans-serif";}     
-    if($font == 'yanrob'){ return "'Yanone Kaffeesatz', sans-serif";}    
+    if($font == 'yanlat'){ return "'Yanone Kaffeesatz', sans-serif";}
+    if($font == 'yanope'){ return "'Yanone Kaffeesatz', sans-serif";}
+    if($font == 'yanosw'){ return "'Yanone Kaffeesatz', sans-serif";}
+    if($font == 'yanrob'){ return "'Yanone Kaffeesatz', sans-serif";}
 	if($font == 'yescri'){ return "'Yeseva One', cursive";}
 	if($font == 'yesjos'){ return "'Yeseva One', cursive";}
 	if($font == 'yeslor'){ return "'Yeseva One', cursive";}
@@ -597,10 +597,10 @@ function bellini_font_preset_body($font){
 	if($font == 'plalat'){ return "'Lato', sans-serif";}
     if($font == 'planot'){ return "'Noto Serif', serif";}
 	if($font == 'plaope'){ return "'Open Sans', sans-serif"; }
-    if($font == 'plakru'){ return "'Sree Krushnadevaraya', serif";}     
+    if($font == 'plakru'){ return "'Sree Krushnadevaraya', serif";}
 	if($font == 'plavol'){ return "'Vollkorn', serif";}
-    if($font == 'poiope'){ return "'Open Sans', sans-serif";}    
-    if($font == 'poilat'){ return "'Lato', sans-serif";}    
+    if($font == 'poiope'){ return "'Open Sans', sans-serif";}
+    if($font == 'poilat'){ return "'Lato', sans-serif";}
 	if($font == 'ptscab'){ return "'Cabin', sans-serif";}
 	if($font == 'ptsdid'){ return "'Didact Gothic', sans-serif";}
 	if($font == 'ptslat'){ return "'Lato', sans-serif";}
@@ -633,7 +633,7 @@ function bellini_font_preset_body($font){
     if($font == 'rokosw'){ return "'Oswald', sans-serif";}
 	if($font == 'rokrob'){ return "'Roboto', sans-serif";}
     if($font == 'rokubu'){ return "'Ubuntu', sans-serif";}
-    if($font == 'rubrob'){ return "'Roboto Condensed', sans-serif";}     
+    if($font == 'rubrob'){ return "'Roboto Condensed', sans-serif";}
     if($font == 'rufsin'){ return "'Sintony', sans-serif";}
     if($font == 'sacali'){ return "'Alice', serif";}
     if($font == 'sankam'){ return "'Kameron', serif";}
@@ -650,17 +650,17 @@ function bellini_font_preset_body($font){
     if($font == 'ubusou'){ return "'Source Sans Pro', sans-serif";}
     if($font == 'ultsla'){ return "'Slabo 13px', serif";}
     if($font == 'univol'){ return "'Vollkorn', serif";}
-    if($font == 'vidrob'){ return "'Roboto', sans-serif";}    
+    if($font == 'vidrob'){ return "'Roboto', sans-serif";}
     if($font == 'volral'){ return "'Raleway', sans-serif";}
 	if($font == 'volexo'){ return "'Exo 2', sans-serif";}
 	if($font == 'walkre'){ return "'Kreon', serif"; }
 	if($font == 'walmol'){ return "'Molengo', sans-serif";}
 	if($font == 'walosw'){ return "'Oswald', sans-serif";}
 	if($font == 'walvol'){ return "'Vollkorn', serif";}
-    if($font == 'yanlat'){ return "'Lato', sans-serif";}    
-    if($font == 'yanope'){ return "'Open Sans', sans-serif";}    
-    if($font == 'yanosw'){ return "'Oswald', sans-serif";}    
-    if($font == 'yanrob'){ return "'Roboto', sans-serif";}   
+    if($font == 'yanlat'){ return "'Lato', sans-serif";}
+    if($font == 'yanope'){ return "'Open Sans', sans-serif";}
+    if($font == 'yanosw'){ return "'Oswald', sans-serif";}
+    if($font == 'yanrob'){ return "'Roboto', sans-serif";}
 	if($font == 'yescri'){ return "'Crimson Text', serif";}
 	if($font == 'yesjos'){ return "'Josefin Sans', sans-serif"; }
 	if($font == 'yeslor'){ return "'Lora', serif";}
@@ -1602,7 +1602,7 @@ add_action('wp_enqueue_scripts', 'bellini_font_script');
 
 
 function bellii_logo_fonts(){
-    
+
     $logo_font_array = array(
         'logo-ope'          => 'Open Sans',
         'logo-rob'          => 'Roboto',
@@ -1615,10 +1615,10 @@ function bellii_logo_fonts(){
         'logo-pts'          => 'PT Sans',
         'logo-lor'          => 'Lora',
         'logo-mon'          => 'Montserrat',
-        'logo-ral'          => 'Raleway',                                                                                
+        'logo-ral'          => 'Raleway',
     );
-    
-    
+
+
     return $logo_font_array;
 }
 
@@ -1636,7 +1636,7 @@ function bellini_font_logo($logo_font){
     if($logo_font == 'logo-pts'){ return "'PT Sans', sans-serif";}
     if($logo_font == 'logo-lor'){ return "'Lora', serif";}
     if($logo_font == 'logo-mon'){ return "'Montserrat', sans-serif";}
-    if($logo_font == 'logo-ral'){ return "'Raleway', sans-serif";}                  
+    if($logo_font == 'logo-ral'){ return "'Raleway', sans-serif";}
 }
 
 function bellini_logo_font_script(){

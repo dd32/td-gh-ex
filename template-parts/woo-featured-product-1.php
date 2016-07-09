@@ -48,10 +48,10 @@ $woocommerce_loop['loop']++;
 	</div>
 		<?php
 		$args = array (
-			'post_type' => 'product', 
-			'post_id' => $product->id, 
-			'number' => 1, 
-			'no_found_rows' => true, 
+			'post_type' => 'product',
+			'post_id' => $product->id,
+			'number' => 1,
+			'no_found_rows' => true,
 		);
 		$comments = get_comments($args);
 		foreach($comments as $comment) :?>

@@ -39,7 +39,7 @@ if ( ! function_exists( 'bellini_before_shop_products' ) ):
 			endif;
 		}else{
 			echo '<div class="col-md-12">';
-		}	
+		}
 	}
 endif;
 
@@ -58,7 +58,7 @@ if ( ! function_exists( 'bellini_woocommerce_shop_sidebar' ) ):
 			// Left Sidebar
 			if(esc_attr(get_option('bellini_woocommerce_sidebar_position', 'right')) == 'left'):
 				echo '<div class="woo-sidebar col-md-3 col-md-pull-9">';
-			endif;	
+			endif;
 			dynamic_sidebar( 'sidebar-woo-sidebar' );
 			echo '</div>';
 		}
@@ -81,7 +81,7 @@ function bellini_woo_product_per_page( $count ) {
 --------------------------------------------------------------*/
 
 if ( ! function_exists( 'bellini_woocommerce_template_loop_price' ) ):
-	function bellini_woocommerce_template_loop_price() { 
+	function bellini_woocommerce_template_loop_price() {
 		global $product; ?>
 		<div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="product-card__info__price">
 			<?php if ( $price_html = $product->get_price_html() ) : ?>
@@ -124,8 +124,8 @@ endif;
 if ( ! function_exists( 'bellini_woo_pagination_two_sorting' ) ):
 	function bellini_woo_pagination_two_sorting() { ?>
 		<div class="col-md-12 text-center pagination__sorting--l2">
-			<?php 
-			esc_html_e('Sort by:','bellini'); 
+			<?php
+			esc_html_e('Sort by:','bellini');
 			woocommerce_catalog_ordering();
 			?>
 		</div>
@@ -149,7 +149,7 @@ function bellini_woo__dequeue_styles( $enqueue_styles ) {
 ## Product Items
 --------------------------------------------------------------*/
 
-/* Layout 1 */ 
+/* Layout 1 */
 
 if ( ! function_exists( 'bellini_before_woo_product_archive_item_one' ) ):
 	function bellini_before_woo_product_archive_item_one() {

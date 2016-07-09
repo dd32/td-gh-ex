@@ -170,7 +170,7 @@ $wp_customize->add_section('bellini_link_color_section',array(
 	$wp_customize->add_setting( 'bellini_additional_color_helper',
 		array(
 			'type' => 'option',
-			'sanitize_callback'    => 'sanitize_key',			
+			'sanitize_callback'    => 'sanitize_key',
 			)
 	);
 
@@ -196,7 +196,7 @@ $wp_customize->add_section('bellini_link_color_section',array(
 		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize,'bellini_primary_color',
 			array(
 				'label'      		=> esc_html__( 'Other Colors', 'bellini' ),
-				'description'      	=> esc_html__( 'Applies to header sub menu, Scroll To Top. ', 'bellini' ),				
+				'description'      	=> esc_html__( 'Applies to header sub menu, Scroll To Top. ', 'bellini' ),
 				'section'    		=> 'text_color',
 				'settings'   		=> 'bellini_primary_color',
 			    'priority'   		=> 10,

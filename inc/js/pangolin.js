@@ -36,7 +36,7 @@ jQuery(document).ready(function () {
     jQuery('.hamburger').click(function () {
         jQuery(this).toggleClass('is-active');
         jQuery('.hamburger__menu__full').toggleClass('hamburger__menu--open');
-    });   
+    });
 
     // WooCommerce Product Search at Top Bar
     jQuery('.site-search__icon').click(function () {
@@ -57,11 +57,11 @@ jQuery(document).ready(function () {
     }
 
     // Superfish Menu Enhancement
-    jQuery('ul.nav-menu').superfish({ 
-                delay:       100,                             
-                animation:   {opacity:'show',height:'show'},   
-                speed:       'fast',                          
-                autoArrows:  true,                            
-                dropShadows: false                           
+    jQuery('ul.nav-menu').superfish({
+                delay:       100,
+                animation:   {opacity:'show',height:'show'},
+                speed:       'fast',
+                autoArrows:  true,
+                dropShadows: false
     });
 });

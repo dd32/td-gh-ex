@@ -13,14 +13,14 @@
 		bellini_title_color 			= $('.element-title,.element-title--post,.element-title--main,.single-page__title,.single-post__title'),
 		bellini_menu_color 				= $('.main-navigation a,.main-navigation ul ul a'),
 		bellini_other_color 			= $('.page-numbers.current,.hamburger-inner,.hamburger-inner::before,.hamburger-inner::after,.hamburger__site-title,.main-navigation ul ul,.product-featured__title h1:after,.product-featured__title--l2 h1:after,.product-featured__title--l3 h1:after'),
-		bellini_button_color_background = $('.comment-form input[type=submit],.site-search form input[type=submit],.button--secondary'),		
+		bellini_button_color_background = $('.comment-form input[type=submit],.site-search form input[type=submit],.button--secondary'),
 		bellini_button_color_text 		= $('.button--secondary a,.comment-form input[type=submit]'),
-		woocommerce_product_card 		= $('.front__product-featured__right--2,.front__product-featured__text,.woo__info__sorting,.product-card__inner,.product-card__inner--l3,.product-card__inner--l4,.front__product-featured__right--3'),				
+		woocommerce_product_card 		= $('.front__product-featured__right--2,.front__product-featured__text,.woo__info__sorting,.product-card__inner,.product-card__inner--l3,.product-card__inner--l4,.front__product-featured__right--3'),
 		woocommerce_product_title 		= $('.product-card__info__product a,.product-featured__title a,.woocommerce ul.products li.product h3'),
 		woocommerce_button_class 		= $('.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt,.product-featured__add-cart .add_to_cart_button,.product-featured__add-cart--l2 .add_to_cart_button,.woocommerce #respond input#submit,.woocommerce a.button,.woocommerce button.button,.woocommerce input.button');
 
 
-	
+
 	// Site title
 	wp.customize('blogname', function (value) {
 		value.bind( function (to) {
@@ -37,7 +37,7 @@
 
 /*--------------------------------------------------------------
 ## Color
---------------------------------------------------------------*/	
+--------------------------------------------------------------*/
 
 	// Header text color.
 	wp.customize('header_textcolor', function (value) {
@@ -58,6 +58,14 @@
 			}
 		} );
 	} );
+
+	//Header Background Color
+	wp.customize( 'header_background_color', function( value ) {
+		value.bind( function( newval ) {
+			$('.site-header').css('background-color', newval );
+		} );
+	} );
+
 
 	//Widget Background Color
 	wp.customize( 'widgets_background_color', function( value ) {
@@ -239,7 +247,7 @@
 		value.bind( function( newval ) {
 			woocommerce_button_class.css('background-color', newval );
 		} );
-	} );				
+	} );
 
 
 /*--------------------------------------------------------------
@@ -277,7 +285,7 @@
 		value.bind( function( newval ) {
 			$('.widget-title').css('text-align', newval );
 		} );
-	} );		
+	} );
 
 /*--------------------------------------------------------------
 ## Layout & Positioning
@@ -301,7 +309,7 @@
 		value.bind( function( newval ) {
 			$('.nav-menu').css('text-align', newval );
 		} );
-	} );     
+	} );
 
 
 /*--------------------------------------------------------------
@@ -426,7 +434,7 @@
 		value.bind( function (to) {
 			$('a.button.slider__cta--two').text( to );
 		} );
-	} );		
+	} );
 
 	// Feature Block Section Title
 	wp.customize('bellini_feature_blocks_title', function (value) {
@@ -475,7 +483,7 @@
 		value.bind( function (to) {
 			$('.block-three p').text( to );
 		} );
-	} );			
+	} );
 
 	// WooCommerce Category Section Title
 	wp.customize('bellini_woo_category_title', function (value) {
@@ -489,7 +497,7 @@
 		value.bind( function (to) {
 			$('.front-product-category .element-title--sub').text( to );
 		} );
-	} );	
+	} );
 
 	// WooCommerce Products Section Title
 	wp.customize('bellini_woo_product_title', function (value) {
@@ -510,7 +518,7 @@
 		value.bind( function (to) {
 			$('.front__product__cta .button--cta--center').text( to );
 		} );
-	} );	
+	} );
 
 	// WooCommerce Featured Slider Section Title
 	wp.customize('woo_featured_product_title', function (value) {
@@ -561,7 +569,7 @@
 			$('.footer__copyright').text( to );
 		} );
 	} );
-    
+
 
 
 } )( jQuery );

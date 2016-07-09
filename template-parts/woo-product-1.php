@@ -16,7 +16,7 @@ if ( empty( $product ) || ! $product->is_visible() ) { return; }
 	<div class="product-card__info">
 		<div itemprop="name" class="product-card__info__product">
 			<?php woocommerce_template_loop_product_link_open();?>
-			<?php woocommerce_template_loop_product_title();?>	
+			<?php woocommerce_template_loop_product_title();?>
 			<?php woocommerce_template_loop_product_link_close();?>
 		</div>
 		<div itemprop="offers" itemscope itemtype="http://schema.org/Offer" class="product-card__info__price">

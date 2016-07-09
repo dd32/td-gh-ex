@@ -29,7 +29,7 @@ get_header(); ?>
 		$wp_query = null;
 		$wp_query = new WP_Query();
 		$wp_query->query( $args );
-		
+
 		if ( $wp_query->have_posts() ) {
 			echo '<header class="col-md-12 page__header entry-header">';
 			echo '<div class="single page-meta">';

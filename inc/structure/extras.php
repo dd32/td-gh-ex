@@ -107,7 +107,7 @@ function bellini_published_on() {
     }
     $time_string = sprintf( $time_string,esc_attr( get_the_date( 'c' ) ),esc_html( get_the_date() ),esc_attr( get_the_modified_date( 'c' ) ),esc_html( get_the_modified_date() ));
     $posted_on = sprintf(esc_html_x( '%s', 'post date', 'bellini' ),'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>');
-    
+
     echo '<span class="post-meta__time">' . $posted_on . '</span>';
 }
 
@@ -151,7 +151,7 @@ function bellini_categorized_blog() {
                                         'hide_empty' => 1,
                                         // We only need to know if there is more than one category.
                                         'number'     => 2,
-                                        ) 
+                                        )
     );
     // Count the number of categories that are attached to the posts.
     $all_the_cool_cats = count( $all_the_cool_cats );
@@ -230,7 +230,7 @@ function bellini_pagination() {
         if ( function_exists('wp_pagenavi') ){
             wp_pagenavi();
         }
-    endif;       
+    endif;
 }
 endif;
 
@@ -240,17 +240,17 @@ endif;
 */
 if ( ! function_exists( 'bellini_breadcrumb_integration' ) ) :
 function bellini_breadcrumb_integration() {
-    if(get_option('bellini_show_page_breadcrumb', true) == true) : 
+    if(get_option('bellini_show_page_breadcrumb', true) == true) :
         // Breadcrumb NavXT
         if(get_option('bellini_page_breadcrumb_type', 1) == 1):
             if( function_exists('bcn_display') ) : ?>
                 <div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
                     <?php bcn_display(); ?>
                 </div>
-        <?php 
+        <?php
             endif;
-        endif; 
-        // Yoast Breadcrumb       
+        endif;
+        // Yoast Breadcrumb
         if(get_option('bellini_page_breadcrumb_type', 1) == 2):
             if( function_exists('yoast_breadcrumb') ) :
                 yoast_breadcrumb('<span class="breadcrumbs">','</span>');
@@ -378,7 +378,7 @@ function bellini_section_content_class_switcher($value){
 * Check & Prints out Scroll To Top if activated
 */
 if(get_option('bellini_show_scroll_to_top', true) == true) :
- add_action( 'wp_footer', 'bellini_scroll_to_top' );   
+ add_action( 'wp_footer', 'bellini_scroll_to_top' );
     function bellini_scroll_to_top(){ ?>
         <script>
             // Scroll To Top

@@ -21,15 +21,12 @@ get_header(); ?>
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
-
 				if ( esc_attr(get_option('bellini_layout_blog', 'layout-1')) == 'layout-1' ):
 					get_template_part( 'template-parts/content' );
 				endif;
-
 				if ( esc_attr(get_option('bellini_layout_blog', 'layout-1')) == 'layout-5' ):
 					get_template_part( 'template-parts/content-lb-5');
 				endif;
-				
 			endwhile;
 			bellini_pagination();
 		else :

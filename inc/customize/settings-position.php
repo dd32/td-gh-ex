@@ -41,7 +41,7 @@
 			'priority' => 3,
 			'panel' => 'bellini_placeholder_layout_panel'
 		)
-	);	
+	);
 
 	// Footer Layout
 	$wp_customize->add_section('bellini_layout_settings_footer',array(
@@ -62,7 +62,7 @@
 	);
 /*--------------------------------------------------------------
 ## General Layout
---------------------------------------------------------------*/	
+--------------------------------------------------------------*/
 
 	// Website Width Title
 	$wp_customize->add_setting( 'bellini_website_width_layout_helper',
@@ -99,7 +99,7 @@
 		                'section'        => 'bellini_general_layout',
 		                'settings'       => 'bellini_website_width',
 		                'type'           => 'range',
-               			'priority'   	 => 2,		                
+               			'priority'   	 => 2,
 		                'input_attrs' => array(
 						    'min' => '0',
 						    'max' => '100',
@@ -124,7 +124,7 @@
                'section'    	=> 'bellini_general_layout',
                'settings'   	=> 'bellini_canvas_width',
                'priority'   	=> 3,
-			));	
+			));
 
 
 /*--------------------------------------------------------------
@@ -155,7 +155,7 @@
 			'default' => 1,
 			'type' => 'option',
 			'transport' => 'refresh',
-			'sanitize_callback' => 'absint',			
+			'sanitize_callback' => 'absint',
 		)
 	);
 
@@ -180,14 +180,14 @@
 			'default' 			=> 1,
 			'type' 				=> 'option',
 			'transport' 		=> 'refresh',
-			'sanitize_callback' => 'absint',			
+			'sanitize_callback' => 'absint',
 		)
 	);
 
 		$wp_customize->add_control( 'bellini_other_header_items_selector',
 			array(
 				'label'      	=> esc_html__( 'Other Header Items', 'bellini' ),
-				'description'   => esc_html__( 'Before selecting Cart & Search, make sure you have WooCommerce installed.', 'bellini' ),				
+				'description'   => esc_html__( 'Before selecting Cart & Search, make sure you have WooCommerce installed.', 'bellini' ),
 				'section'    	=> 'bellini_header_section_layout',
 				'settings'   	=> 'bellini_other_header_items_selector',
 			    'priority'   	=> 4,
@@ -205,7 +205,7 @@
 			'default' 			=> 'header__general',
 			'type' 				=> 'option',
 			'transport' 		=> 'refresh',
-			'sanitize_callback' => 'esc_attr',			
+			'sanitize_callback' => 'esc_attr',
 		)
 	);
 
@@ -303,14 +303,14 @@
 		array(
 			'default' => 'layout-1',
 			'type' => 'option',
-			'sanitize_callback' => 'esc_attr',	
+			'sanitize_callback' => 'esc_attr',
 			'transport' => 'refresh'
 		)
 	);
 
 		$wp_customize->add_control( 'bellini_layout_blog',array(
 				'label'      => esc_html__( 'Blog Posts Layout', 'bellini' ),
-				'description' => esc_html__( 'Applies to Index, Blog page template, category and archive post list.', 'bellini' ),				
+				'description' => esc_html__( 'Applies to Index, Blog page template, category and archive post list.', 'bellini' ),
 				'section'    => 'bellini_post_layout_settings',
 				'settings'   => 'bellini_layout_blog',
 			    'priority'   => 1,
@@ -328,7 +328,7 @@
 			'default' => 'layout-3',
 			'type' => 'option',
 			'transport' => 'refresh',
-			'sanitize_callback' => 'esc_attr',				
+			'sanitize_callback' => 'esc_attr',
 		)
 	);
 
@@ -371,9 +371,9 @@
 					'center' => esc_html__( 'Center', 'bellini' ),
 				),
 			)
-		);		
+		);
 
-	
+
 /*--------------------------------------------------------------
 ## Footer Layout
 --------------------------------------------------------------*/
@@ -384,7 +384,7 @@
 			'default' 			=> 2,
 			'type' 				=> 'option',
 			'transport' 		=> 'refresh',
-			'sanitize_callback' => 'absint',				
+			'sanitize_callback' => 'absint',
 		)
 	);
 
@@ -396,7 +396,7 @@
 			    'priority'   	=> 1,
 			    'type'       	=> 'radio',
 					'choices'   => array(
-								2   => esc_html__( 'Layout 2', 'bellini' ),					
+								2   => esc_html__( 'Layout 2', 'bellini' ),
 					),
 			)
 		);
@@ -408,7 +408,7 @@
 			'default' 			=> 3,
 			'type' 				=> 'option',
 			'transport' 		=> 'refresh',
-			'sanitize_callback' => 'absint',				
+			'sanitize_callback' => 'absint',
 		)
 	);
 
@@ -422,8 +422,8 @@
 					'choices'   => array(
 								1   => esc_html__( 'One', 'bellini' ),
 								2  	=> esc_html__( 'Two', 'bellini' ),
-								3  	=> esc_html__( 'Three', 'bellini' ),	
-								4  	=> esc_html__( 'Four', 'bellini' ),													
+								3  	=> esc_html__( 'Three', 'bellini' ),
+								4  	=> esc_html__( 'Four', 'bellini' ),
 					),
 			)
 		);
@@ -444,7 +444,7 @@
 
 		$wp_customize->add_control( 'bellini_blog_pagination_type',array(
 				'label'      => esc_html__( 'Pagination Type', 'bellini' ),
-				'description' => sprintf( __( 'Before selecting WP PageNavi, make sure you have <a target="_blank" href="%s">WP PageNavi</a> installed.', 'bellini' ),esc_url( 'https://wordpress.org/plugins/wp-pagenavi/' )),				
+				'description' => sprintf( __( 'Before selecting WP PageNavi, make sure you have <a target="_blank" href="%s">WP PageNavi</a> installed.', 'bellini' ),esc_url( 'https://wordpress.org/plugins/wp-pagenavi/' )),
 				'section'    => 'bellini_layout_settings_other',
 				'settings'   => 'bellini_blog_pagination_type',
 			    'priority'   => 1,
@@ -469,7 +469,7 @@
 
 		$wp_customize->add_control( 'bellini_page_breadcrumb_type',array(
 				'label'      => esc_html__( 'Breadcrumb Type', 'bellini' ),
-				'description' => sprintf( __( 'Before selecting Breadcrumb NavXT, make sure you have <a target="_blank" href="%s">Breadcrumb NavXT</a> plugin installed.', 'bellini' ),esc_url( 'https://wordpress.org/plugins/breadcrumb-navxt/' )),				
+				'description' => sprintf( __( 'Before selecting Breadcrumb NavXT, make sure you have <a target="_blank" href="%s">Breadcrumb NavXT</a> plugin installed.', 'bellini' ),esc_url( 'https://wordpress.org/plugins/breadcrumb-navxt/' )),
 				'section'    => 'bellini_layout_settings_other',
 				'settings'   => 'bellini_page_breadcrumb_type',
 			    'priority'   => 2,
@@ -480,4 +480,4 @@
 					3   => esc_html__( 'WooCommerce Breadcrumb', 'bellini' ),
 				),
 			)
-		);								
+		);

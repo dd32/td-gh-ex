@@ -35,7 +35,7 @@ get_header();?>
 <?php the_title( '<h1 class="entry-title element-title single-page__title" itemprop="headline">', '</h1>' ); ?>
 <?php bellini_breadcrumb_integration(); ?>
 
-</div>	
+</div>
 </header>
 
 <div class="row bellini__canvas">
@@ -58,9 +58,9 @@ get_header();?>
 
 </div>
 </div>
-<?php 
-	if ( comments_open() || get_comments_number() ) : 
-		comments_template(); 
+<?php
+	if ( comments_open() || get_comments_number() ) :
+		comments_template();
 	endif;
 ?>
 </div>

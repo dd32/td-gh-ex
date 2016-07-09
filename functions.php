@@ -18,7 +18,7 @@ require_once( trailingslashit( get_template_directory() ) . '/inc/customize/cust
 
 if ( is_woocommerce_activated() ) {
 	require_once( trailingslashit( get_template_directory() ) . '/inc/integration/bellini-woocommerce-functions.php');
-	require_once( trailingslashit( get_template_directory() ) . '/inc/integration/bellini-woocommerce-hooks.php');	
+	require_once( trailingslashit( get_template_directory() ) . '/inc/integration/bellini-woocommerce-hooks.php');
 }
 
 if ( ! function_exists( 'bellini_setup' ) ) :
@@ -40,7 +40,7 @@ function bellini_setup() {
 	add_theme_support( 'custom-background', apply_filters( 'bellini_custom_background_args', array(
 		'default-color' => '#eceef1',
 		'default-image' => '',
-	) ) );		
+	) ) );
 
 	register_nav_menus( array(
 		'primary' 	=> esc_html__( 'Primary Menu', 'bellini' ),
@@ -146,10 +146,10 @@ function bellini_scripts() {
 		wp_register_style( 'woostyles', get_template_directory_uri() . '/inc/css/bellini-woocommerce.css' );
 		wp_enqueue_style( 'woostyles', '0.1' );
 	}
-	
+
   	wp_enqueue_script( 'bellini-js-libraries', get_template_directory_uri() . '/inc/js/library.min.js',  array('jquery'), '20160625', true );
   	wp_enqueue_script( 'bellini-pangolin', get_template_directory_uri() . '/inc/js/pangolin.js',  array('jquery'), '20160625', true );
- 
+
   // Load the html5 shiv.
 	wp_enqueue_script( 'bellini-html5', get_template_directory_uri() . '/inc/js/html5.js', array(), '3.7.3' );
 	wp_script_add_data( 'bellini-html5', 'conditional', 'lt IE 9' );

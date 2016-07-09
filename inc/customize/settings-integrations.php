@@ -33,7 +33,7 @@
 					'settings'    => 'bellini_woocommerce_layout_helper',
 					'priority'   => 1,
 					'active_callback' 	=> 'is_plugin_active_woocommerce_bellini',
-			)) );	
+			)) );
 
 	// Shop Product layout
 	$wp_customize->add_setting( 'bellini_woo_shop_product_layout' ,
@@ -71,10 +71,10 @@
 				'label' => esc_html__('Show * Products per page','bellini'),
 				'section' => 'bellini_woocommerce_integration',
 				'settings' => 'bellini_woo_shop_product_per_page',
-				'priority'   => 3,				
-			) );				
+				'priority'   => 3,
+			) );
 
-	// Product Column 
+	// Product Column
 	$wp_customize->add_setting( 'bellini_woo_shop_product_column',
 		array(
 			'default' => 'col-sm-3',
@@ -105,7 +105,7 @@
 		array(
 			'default' => 1,
 			'type' => 'option',
-			'sanitize_callback' => 'absint',			
+			'sanitize_callback' => 'absint',
 			'transport' => 'refresh'
 		)
 	);
@@ -122,7 +122,7 @@
 					2   => esc_html__( 'Layout 2', 'bellini' ),
 				),
 			)
-		);		
+		);
 
 	/*--------------------------------------------------------------
 	## Typography
@@ -139,7 +139,7 @@
 			$wp_customize->add_control( new Bellini_UI_Helper_Title ( $wp_customize, 'bellini_woocommerce_typography_helper', array(
 					'type' => 'info',
 					'label' => esc_html__('Typography','bellini'),
-					'description' => esc_html__('If you want to set your font size to 26px, just write 26','bellini'),					
+					'description' => esc_html__('If you want to set your font size to 26px, just write 26','bellini'),
 					'section' => 'bellini_woocommerce_integration',
 					'settings'    => 'bellini_woocommerce_typography_helper',
 					'priority'   => 20,
@@ -159,7 +159,7 @@
 				'label' => esc_html__('Product Item Title - Shop','bellini'),
 				'section' => 'bellini_woocommerce_integration',
 				'settings' => 'bellini_woocommerce_shop_title_font_size',
-				'priority'   => 21,				
+				'priority'   => 21,
 			) );
 
 	//Shop Product Info Font Size
@@ -174,8 +174,8 @@
 				'label' => esc_html__('Product Price - Shop','bellini'),
 				'section' => 'bellini_woocommerce_integration',
 				'settings' => 'bellini_woocommerce_shop_price_font_size',
-				'priority'   => 22,				
-			) );			
+				'priority'   => 22,
+			) );
 
 
 	//Single Product Title Font Size
@@ -190,7 +190,7 @@
 				'label' => esc_html__('Product Title - Single Product','bellini'),
 				'section' => 'bellini_woocommerce_integration',
 				'settings' => 'bellini_woocommerce_single_title_font_size',
-				'priority'   => 25,				
+				'priority'   => 25,
 			) );
 
 	//Single Product Info Font Size
@@ -205,8 +205,8 @@
 				'label' => esc_html__('Product Info - Single Product','bellini'),
 				'section' => 'bellini_woocommerce_integration',
 				'settings' => 'bellini_woocommerce_single_info_font_size',
-				'priority'   => 26,				
-			) );			
+				'priority'   => 26,
+			) );
 
 	/*--------------------------------------------------------------
 	## Color
@@ -247,7 +247,7 @@
 				'settings'   => 'bellini_woocommerce_product_card_back_color',
 			    'priority'   => 31,
 			)
-		));	
+		));
 
 	// Product Title Color
 	$wp_customize->add_setting( 'bellini_woocommerce_product_title_color' ,
@@ -266,7 +266,7 @@
 				'settings'   => 'bellini_woocommerce_product_title_color',
 			    'priority'   => 32,
 			)
-		));	
+		));
 
 	// Button Text Color
 	$wp_customize->add_setting( 'bellini_woocommerce_product_button_text_color' ,
@@ -285,7 +285,7 @@
 				'settings'   => 'bellini_woocommerce_product_button_text_color',
 			    'priority'   => 33,
 			)
-		));	
+		));
 
 	// Button Color
 	$wp_customize->add_setting( 'bellini_woocommerce_product_button_color' ,
@@ -304,7 +304,7 @@
 				'settings'   => 'bellini_woocommerce_product_button_color',
 			    'priority'   => 34,
 			)
-		));							
+		));
 
 	/*--------------------------------------------------------------
 	## Show/Hide
@@ -332,7 +332,7 @@
 		array(
 			'default' => true,
 			'type' => 'option',
-			'sanitize_callback' => 'sanitize_key',			
+			'sanitize_callback' => 'sanitize_key',
 			'transport' => 'refresh'
 		)
 	);
@@ -344,7 +344,7 @@
 			    'priority'   => 41,
 			    'type'       => 'checkbox',
 			)
-		);			
+		);
 
 
 	/*--------------------------------------------------------------

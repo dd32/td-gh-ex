@@ -20,11 +20,11 @@
 		bellini_post_author();
 		bellini_published_on();
 	endif; ?>
-	
+
 	</div>
     <!-- Featured Image -->
 	<?php bellini_single_post_thumbnail();?>
-	
+
 </header>
 <?php
 	if ( has_excerpt( $post->ID ) ):?>

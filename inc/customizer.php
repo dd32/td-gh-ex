@@ -311,7 +311,7 @@ a:hover,a:focus,a:active{color: <?php echo $link_hover_color; ?>;}
 <?php
     if ( ! empty( $bellini_custom_code_css ) ) {
 		echo $bellini_custom_code_css;
-    }        
+    }
 ?>
 
 </style>

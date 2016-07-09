@@ -14,7 +14,7 @@
 	<div class="col-md-8 layout-golden--one__left">
 		<?php echo bellini_post_thumbnail();?>
     </div> <!-- layout left end -->
-    
+
     <div data-sr="enter right, move 40px" class="col-md-4 layout-golden--one__right">
 	    <div class="blog__post__right">
 	    	<div class="blog-post__meta">
@@ -40,7 +40,7 @@
 				<div class="button button--secondary" role="button">
             		<?php echo do_shortcode(get_option( 'bellini_read_more_title')); ?>
             	</div>
-	        	</a>	
+	        	</a>
 			<?php endif; ?>
 
 	    </div><!-- Blog Post right end -->

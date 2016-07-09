@@ -30,7 +30,7 @@ function bellini_header_menu(){ ?>
 			<div class="row hamburger__menu__middle" aria-controls="primary-menu" aria-expanded="true">
 			<span class="hamburger__site-title" itemprop="headline">
 				<a itemprop="url" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-				<?php bloginfo( 'name' ); ?>					
+				<?php bloginfo( 'name' ); ?>
 				</a>
 			</span>
 				<div class="col-md-12 site-header-cart menu">
@@ -48,7 +48,7 @@ function bellini_header_menu(){ ?>
 		  <?php if(get_option('bellini_hamburger_title') == true){
 		        echo do_shortcode(get_option( 'bellini_hamburger_title'));
 			}?>
-		</button>	
+		</button>
 
 		<?php else:?>
 
@@ -68,8 +68,8 @@ function bellini_header_menu(){ ?>
 				</button>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 			</nav>
-			
-			<?php } 
+
+			<?php }
 			endif;
 }
 
@@ -144,7 +144,7 @@ function bellini_top_header(){
 			</div>
 		</div>
 	</div>
-<?php 
+<?php
 	}
 }
 
@@ -152,11 +152,11 @@ function bellini_top_header(){
 function bellini_social_menu(){ ?>
 
 	<div class="bellini-social__link" itemscope itemtype="http://schema.org/Organization">
-	<link itemprop="url" href="<?php echo esc_url( home_url( '/' ) ); ?>"> 
+	<link itemprop="url" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 
 	<?php
 	// Social Link Field 1
-	if(get_option('bellini_social_account_link_one') == true): 
+	if(get_option('bellini_social_account_link_one') == true):
 		$social_link_one = esc_url(get_option( 'bellini_social_account_link_one')); ?>
 	<a itemprop="sameAs" href="<?php echo $social_link_one;?>">
 	  	<span class="<?php echo esc_attr( get_option( 'bellini_social_account_icon_one' )); ?>"></span>
@@ -165,7 +165,7 @@ function bellini_social_menu(){ ?>
 
 	<?php
 	// Social Link Field 2
-	if(get_option('bellini_social_account_link_two') == true): 
+	if(get_option('bellini_social_account_link_two') == true):
 		$social_link_two = esc_url(get_option( 'bellini_social_account_link_two')); ?>
 	<a itemprop="sameAs" href="<?php echo $social_link_two;?>">
 	  	<span class="<?php echo esc_attr( get_option( 'bellini_social_account_icon_two' )); ?>"></span>
@@ -174,7 +174,7 @@ function bellini_social_menu(){ ?>
 
 	<?php
 	// Social Link Field 3
-	if(get_option('bellini_social_account_link_three') == true): 
+	if(get_option('bellini_social_account_link_three') == true):
 		$social_link_three = esc_url(get_option( 'bellini_social_account_link_three')); ?>
 	<a itemprop="sameAs" href="<?php echo $social_link_three;?>">
 	  	<span class="<?php echo esc_attr( get_option( 'bellini_social_account_icon_three' )); ?>"></span>
@@ -183,7 +183,7 @@ function bellini_social_menu(){ ?>
 
 	<?php
 	// Social Link Field 4
-	if(get_option('bellini_social_account_link_four') == true): 
+	if(get_option('bellini_social_account_link_four') == true):
 		$social_link_four = esc_url(get_option( 'bellini_social_account_link_four')); ?>
 	<a itemprop="sameAs" href="<?php echo $social_link_four;?>">
 	  	<span class="<?php echo esc_attr( get_option( 'bellini_social_account_icon_four' )); ?>"></span>
@@ -192,7 +192,7 @@ function bellini_social_menu(){ ?>
 
 	<?php
 	// Social Link Field 5
-	if(get_option('bellini_social_account_link_five') == true): 
+	if(get_option('bellini_social_account_link_five') == true):
 		$social_link_five = esc_url(get_option( 'bellini_social_account_link_five')); ?>
 	<a itemprop="sameAs" href="<?php echo $social_link_five;?>">
 	  	<span class="<?php echo esc_attr( get_option( 'bellini_social_account_icon_five' )); ?>"></span>
@@ -201,7 +201,7 @@ function bellini_social_menu(){ ?>
 
 	<?php
 	// Social Link Field 6
-	if(get_option('bellini_social_account_link_six') == true): 
+	if(get_option('bellini_social_account_link_six') == true):
 		$social_link_six = esc_url(get_option( 'bellini_social_account_link_six')); ?>
 	<a itemprop="sameAs" href="<?php echo $social_link_six;?>">
 	  	<span class="<?php echo esc_attr( get_option( 'bellini_social_account_icon_six' )); ?>"></span>
@@ -235,7 +235,7 @@ function bellini_core_header(){
 		<div class="col-md-6 col-xs-12 "><?php bellini_header_menu();?></div>
 		<div class="site-branding col-md-6 col-xs-12 text-right"><?php bellini_header_logo();?></div>
 	<?php endif; ?>
-	
+
 	<?php if ( get_option('bellini_header_menu_layout', 1) == 3 ): ?>
 		<div class="site-branding col-md-2"><?php bellini_header_logo();?></div>
 		<div class="col-md-8 text-center"><?php bellini_header_menu();?></div>

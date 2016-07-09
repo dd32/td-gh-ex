@@ -19,13 +19,10 @@
     </div>
     </div><!-- #secondary -->
 <?php endif;?>
-
 <footer id="colophon" class="site-footer container-fluid" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 <div class="bellini__canvas">
 <div class="row">
-
 	<?php bellini_core_footer_layout();?>
-
 </div>
 </div>
 </footer><!-- #colophon -->

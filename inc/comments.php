@@ -21,7 +21,7 @@ function bellini_comment( $comment, $args, $depth ) {
                     <?php echo get_avatar( $comment, 60 ); ?>
                 </div>
                 <h5 class="comment__author">
-                    <?php comment_author(); ?>                    
+                    <?php comment_author(); ?>
                 </h5>
                 </div>
 
@@ -37,7 +37,7 @@ function bellini_comment( $comment, $args, $depth ) {
                             <span class="comment__date"><?php comment_date(); ?></span>
                             <span class="comment__time"><?php comment_time(); ?></span>
                         </time>
-                    </span>                  
+                    </span>
 
                     <span class="col-md-6 button--reply text-left" role="button">
                         <?php
@@ -49,9 +49,9 @@ function bellini_comment( $comment, $args, $depth ) {
                     </span>
 
                      <span class="col-md-6 comment__edit text-right">
-                        <?php edit_comment_link( esc_html__( 'Edit', 'bellini' ), '  ', '' ); ?>                        
-                    </span>                    
-                                       
+                        <?php edit_comment_link( esc_html__( 'Edit', 'bellini' ), '  ', '' ); ?>
+                    </span>
+
                 </div>
                 </div>
             </div>

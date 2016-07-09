@@ -86,7 +86,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 					'section' => 'bellini_default_image',
 					'settings'    => 'bellini_header_background_helper',
 					'priority'   => 3,
-			)) );	
+			)) );
 
 	$wp_customize->get_control( 'header_image' )->priority 	= 4;
 
@@ -119,7 +119,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
                'label'      => esc_html__( 'Default Post Featured Image', 'bellini' ),
                'section'    => 'bellini_default_image',
                'settings'   => 'bellini_post_featured_image',
-				'priority' 	=> 6,               
+				'priority' 	=> 6,
 			   )
 			));
 
@@ -138,7 +138,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 			$wp_customize->add_control('bellini_copyright_text',array(
 				'type' 			=>'textarea',
                'label'      	=> esc_html__( 'Footer Copyright Text', 'bellini' ),
-               'description' 	=> esc_html__( 'Type your own text to replace default footer text.', 'bellini' ),               
+               'description' 	=> esc_html__( 'Type your own text to replace default footer text.', 'bellini' ),
                'section'    	=> 'bellini_default_text',
                'settings'   	=> 'bellini_copyright_text',
 			));
@@ -172,7 +172,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
                'description'      => esc_html__( 'example: Read More' , 'bellini' ),
                'section'    => 'bellini_default_text',
                'settings'   => 'bellini_read_more_title',
-			));			
+			));
 
 
 /*--------------------------------------------------------------
@@ -190,7 +190,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 			$wp_customize->add_control( new Bellini_UI_Helper_Title ( $wp_customize, 'bellini_social_account_choose_helper', array(
 					'type' 			=> 'info',
 					'label' 		=> esc_html__('Set Social Menu','bellini'),
-					'description' 	=> esc_html__('This social menu will appear in header and footer section.','bellini'),					
+					'description' 	=> esc_html__('This social menu will appear in header and footer section.','bellini'),
 					'section' 		=> 'bellini_social_accounts',
 					'settings'    	=> 'bellini_social_account_choose_helper',
 					'priority'   	=> 1,
@@ -505,7 +505,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 			'default' => true,
 			'type' => 'option',
 			'transport' => 'postMessage',
-			'sanitize_callback' => 'sanitize_key',			
+			'sanitize_callback' => 'sanitize_key',
 		)
 	);
 
@@ -526,7 +526,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 			'default' => true,
 			'type' => 'option',
 			'transport' => 'postMessage',
-			'sanitize_callback' => 'sanitize_key',			
+			'sanitize_callback' => 'sanitize_key',
 		)
 	);
 
@@ -546,7 +546,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 			'default' => true,
 			'type' => 'option',
 			'transport' => 'postMessage',
-			'sanitize_callback' => 'sanitize_key',			
+			'sanitize_callback' => 'sanitize_key',
 		)
 	);
 
@@ -558,7 +558,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 			    'type'       => 'checkbox',
 			    'active_callback' => 'is_plugin_active_woocommerce_bellini',
 			)
-		);	
+		);
 
 	// Show Frontpage Blog Posts
 	$wp_customize->add_setting( 'bellini_show_frontpage_blog_posts' ,
@@ -566,7 +566,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 			'default' => true,
 			'type' => 'option',
 			'transport' => 'postMessage',
-			'sanitize_callback' => 'sanitize_key',			
+			'sanitize_callback' => 'sanitize_key',
 		)
 	);
 
@@ -586,7 +586,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 			'default' => true,
 			'type' => 'option',
 			'transport' => 'postMessage',
-			'sanitize_callback' => 'sanitize_key',			
+			'sanitize_callback' => 'sanitize_key',
 		)
 	);
 
@@ -625,7 +625,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 			'default' => true,
 			'type' => 'option',
 			'transport' => 'refresh',
-			'sanitize_callback' => 'sanitize_key',			
+			'sanitize_callback' => 'sanitize_key',
 		)
 	);
 
@@ -636,7 +636,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 			    'priority'   => 11,
 			    'type'       => 'checkbox',
 			)
-		);	
+		);
 
 
 // Footer Logo
@@ -645,7 +645,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 			'default' => true,
 			'type' => 'option',
 			'transport' => 'refresh',
-			'sanitize_callback' => 'sanitize_key',			
+			'sanitize_callback' => 'sanitize_key',
 		)
 	);
 
@@ -665,7 +665,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 			'default' => true,
 			'type' => 'option',
 			'transport' => 'refresh',
-			'sanitize_callback' => 'sanitize_key',			
+			'sanitize_callback' => 'sanitize_key',
 		)
 	);
 
@@ -684,7 +684,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 			'default' => true,
 			'type' => 'option',
 			'transport' => 'refresh',
-			'sanitize_callback' => 'sanitize_key',			
+			'sanitize_callback' => 'sanitize_key',
 		)
 	);
 
@@ -722,7 +722,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 			'default' => true,
 			'type' => 'option',
 			'transport' => 'refresh',
-			'sanitize_callback' => 'sanitize_key',			
+			'sanitize_callback' => 'sanitize_key',
 		)
 	);
 
@@ -734,7 +734,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 			    'priority'   => 21,
 			    'type'       => 'checkbox',
 			)
-		);	
+		);
 
 /*--------------------------------------------------------------
 ## Page
@@ -762,7 +762,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 			'default' => true,
 			'type' => 'option',
 			'transport' => 'refresh',
-			'sanitize_callback' => 'sanitize_key',			
+			'sanitize_callback' => 'sanitize_key',
 		)
 	);
 
@@ -776,4 +776,4 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 			    'priority'   => 41,
 			    'type'       => 'checkbox',
 			)
-		);							
+		);
