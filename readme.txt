@@ -1,10 +1,9 @@
 === fGymm ===
 Contributors: tishonator
-Tags: black, white, green, light, two-columns, right-sidebar,
-responsive-layout, custom-background, custom-header, custom-menu,
-featured-images, post-formats, sticky-post, threaded-comments, translation-ready
-Requires at least: 3.8
-Tested up to: 4.0.0
+Tags: blog, entertainment, two-columns, right-sidebar, custom-background, custom-header,
+custom-menu, featured-images, post-formats, sticky-post, threaded-comments, translation-ready
+Requires at least: 4.4.1
+Tested up to: 4.5.3
 
 == Description ==
 
@@ -30,11 +29,17 @@ Activiation and Use
 
 == License ==
 
+fGymm WordPress Theme, Copyright 2016 Tihomir Ivanov / Tishonator.com
+fGymm is distributed under the terms of the GNU GPL
+
 Unless otherwise specified, all the theme files, scripts and images
 are licensed under GNU General Public License version 2.
 
 The exceptions to this license are as follows:
 
+* Fontawesome is licensed under the terms of The MIT License
+* Source: https://opensource.org/licenses/mit-license.html
+*
 * css/font-awesome.css - The MIT License (MIT), Reference: http://opensource.org/licenses/MIT
 * css/font-awesome.min.css - The MIT License (MIT), Reference: http://opensource.org/licenses/MIT
 * fonts/FontAwesome.otf SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
@@ -42,6 +47,7 @@ The exceptions to this license are as follows:
 * fonts/fontawesome-webfont.svg SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
 * fonts/fontawesome-webfont.ttf SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
 * fonts/fontawesome-webfont.woff SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
+* fonts/fontawesome-webfont.woff2 SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
 *
 * images/slider/1.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: http://pixabay.com/en/active-activity-ball-exercise-19413/
 *

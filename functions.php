@@ -65,19 +65,10 @@ function fgymm_setup() {
 	 * to output valid HTML5.
 	 */
 	add_theme_support( 'html5', array(
-		'search-form', 'comment-form', 'comment-list',
+		'comment-form', 'comment-list',
 	) );
 
-	// add support for Post Formats.
-	add_theme_support( 'post-formats', array (
-											'aside',
-											'image',
-											'video',
-											'audio',
-											'quote', 
-											'link',
-											'gallery',
-					) );
+	
 
 	// add the visual editor to resemble the theme style
 	add_editor_style( array( 'css/editor-style.css' ) );
@@ -93,8 +84,8 @@ add_action( 'after_setup_theme', 'fgymm_setup' );
 function fgymm_load_scripts() {
 
 	// load main stylesheet.
-	wp_enqueue_style( 'fportfolio-fontawesome-style', get_template_directory_uri() . '/css/font-awesome.min.css', array( ) );
-	wp_enqueue_style( 'fgymm-style', get_stylesheet_uri(), array( ) );
+	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/font-awesome.min.css', array( ) );
+	wp_enqueue_style( 'fgymm-style', get_stylesheet_uri(), array() );
 	
 	wp_enqueue_style( 'fgymm-fonts', fgymm_fonts_url(), array(), null );
 	
@@ -106,9 +97,9 @@ function fgymm_load_scripts() {
 	// Load Utilities JS Script
 	wp_enqueue_script( 'fgymm-utilities-js', get_template_directory_uri() . '/js/utilities.js', array( 'jquery' ) );
 	
-	wp_enqueue_script( 'fgymm-jquery-mobile-js', get_template_directory_uri() . '/js/jquery.mobile.customized.min.js', array( 'jquery' ) );
-	wp_enqueue_script( 'fgymm-jquery-easing-js', get_template_directory_uri() . '/js/jquery.easing.1.3.js', array( 'jquery' ) );
-	wp_enqueue_script( 'fgymm-camera-js', get_template_directory_uri() . '/js/camera.min.js', array( 'jquery' ) );
+	wp_enqueue_script( 'jquery.mobile.customized', get_template_directory_uri() . '/js/jquery.mobile.customized.min.js', array( 'jquery' ) );
+	wp_enqueue_script( 'jquery.easing.1.3', get_template_directory_uri() . '/js/jquery.easing.1.3.js', array( 'jquery' ) );
+	wp_enqueue_script( 'camera', get_template_directory_uri() . '/js/camera.min.js', array( 'jquery' ) );
 }
 add_action( 'wp_enqueue_scripts', 'fgymm_load_scripts' );
 
@@ -213,7 +204,7 @@ function fgymm_show_website_logo_image_or_title() {
 		
 		echo '<a href="' . esc_url( home_url('/') ) . '" title="' . esc_attr( get_bloginfo('name') ) . '">';
 		
-		echo '<img src="' . esc_attr( $logoImgPath ) . '" alt="' . esc_attr( $siteTitle ) . '" title="' . esc_attr( $siteTitle ) . '" width="' . esc_attr( $imageWidth ) . '" height="' . esc_attr( $imageHeight ) . '" />';
+		echo '<img src="' . esc_url( $logoImgPath ) . '" alt="' . esc_attr( $siteTitle ) . '" title="' . esc_attr( $siteTitle ) . '" width="' . esc_attr( $imageWidth ) . '" height="' . esc_attr( $imageHeight ) . '" />';
 		
 		echo '</a>';
 
@@ -278,12 +269,13 @@ function fgymm_the_content() {
 
 	// Display Thumbnails if thumbnail is set for the post
 	if ( has_post_thumbnail() ) {
-		
-		echo '<a href="'. esc_url( get_permalink() ) .'" title="' . esc_attr( get_the_title() ) . '">';
-		
-		the_post_thumbnail();
-		
-		echo '</a>';
+?>
+
+		<a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>">
+			<?php the_post_thumbnail(); ?>
+		</a>
+								
+<?php
 	}
 	the_content( __( 'Read More', 'fgymm') );
 }

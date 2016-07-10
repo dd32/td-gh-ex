@@ -1,3 +1,7 @@
+fGymm 1.5.1, 2016-07-10
+------------------------
+- update tags in style.css
+
 fGymm 1.5.0, 2016-01-16
 ------------------------
 - FontAwesome update
