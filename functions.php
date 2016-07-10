@@ -84,15 +84,17 @@ if (!function_exists('white_spektrum_theme_setup')) {
             'comment-list', 
             'comment-form', 
             'search-form', 
-            'gallery', 
             'caption' 
+        ));
+        
+        add_theme_support('custom-background', array(
+            'default'   => 'ffffff',
         ));
         
         // Enable and Activate Register Menus for White Spektrum.
         register_nav_menus(array(
             'primary'   => esc_html__('Primry Navigation', 'white-spektrum')
         ));
-
     }
     add_action('after_setup_theme', 'white_spektrum_theme_setup');
 }
