@@ -1,5 +1,16 @@
 === changelog ===
 
+= (7/10/2016) - 1.3.32 =
+* Enqueue HTML5 shiv and IE8 stylesheet using wp_enqueue_* functions
+* Fix .container class clash with bootstrap
+* Re-organize Layout section in the Customizer
+* Fix cropping issue with the site logo
+* Add Page Header Integration metabox with full width content option
+* Add RTL language support
+* Add selective refresh to widgets
+* Fix footer widget layout issue if heights are different on tablets
+* Add title tag to read more link
+
 = (5/29/2016) - 1.3.31 =
 * Fix issue where images are enlarging in content if Photon is activated
 
