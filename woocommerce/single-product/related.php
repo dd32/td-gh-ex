@@ -43,7 +43,7 @@ if ( $products->have_posts() ) : ?>
 
 	<div class="related products">
 
-		<h2><?php _e( 'Related Products', 'alhenalite' ); ?></h2>
+		<h2><?php _e( 'Related Products', 'alhena-lite' ); ?></h2>
 
 		<?php woocommerce_product_loop_start(); ?>
 

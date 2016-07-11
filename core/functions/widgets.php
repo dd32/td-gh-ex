@@ -8,7 +8,7 @@ if (!function_exists('alhenalite_loadwidgets')) {
 		
 			'name' => 'Side Sidebar',
 			'id'   => 'side_sidebar_area',
-			'description'   => __( "This sidebar will be shown at the side of content","alhenalite"),
+			'description'   => __( "This sidebar will be shown at the side of content","alhena-lite"),
 			'before_widget' => '<div id="%1$s" class="post-article widget-box %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<header class="title"><div class="line"><h3>',
@@ -20,7 +20,7 @@ if (!function_exists('alhenalite_loadwidgets')) {
 		
 			'name' => 'Home Sidebar',
 			'id'   => 'home_sidebar_area',
-			'description'   => __( "This sidebar will be shown for the homepage","alhenalite"),
+			'description'   => __( "This sidebar will be shown for the homepage","alhena-lite"),
 			'before_widget' => '<div id="%1$s" class="post-article widget-box %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<header class="title"><div class="line"><h3>',
@@ -32,7 +32,7 @@ if (!function_exists('alhenalite_loadwidgets')) {
 		
 			'name' => 'Top Sidebar',
 			'id'   => 'top_sidebar_area',
-			'description'   => __( "This sidebar will be shown before the content","alhenalite"),
+			'description'   => __( "This sidebar will be shown before the content","alhena-lite"),
 			'before_widget' => '<div id="%1$s" class="col-md-4"><div class="widget-box %2$s">',
 			'after_widget'  => '</div></div>',
 			'before_title'  => '<header class="title"><div class="line"><h3>',
@@ -44,7 +44,7 @@ if (!function_exists('alhenalite_loadwidgets')) {
 		
 			'name' => 'Category Sidebar',
 			'id'   => 'category_sidebar_area',
-			'description'   => __( "This sidebar will be shown at the side of archive","alhenalite"),
+			'description'   => __( "This sidebar will be shown at the side of archive","alhena-lite"),
 			'before_widget' => '<div id="%1$s" class="post-article widget-box %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<header class="title"><div class="line"><h3>',
@@ -56,7 +56,7 @@ if (!function_exists('alhenalite_loadwidgets')) {
 		
 			'name' => 'Footer Sidebar',
 			'id'   => 'footer_sidebar_area',
-			'description'   => __( "This sidebar will be shown after the content","alhenalite"),
+			'description'   => __( "This sidebar will be shown after the content","alhena-lite"),
 			'before_widget' => '<div id="%1$s" class="post-container col-md-4 %2$s"><article class="post-article">',
 			'after_widget'  => '</article></div>',
 			'before_title'  => '<header class="title"><div class="line"><h4>',

@@ -6,16 +6,18 @@
  *
  * This template can be overridden by copying it to yourtheme/woocommerce/single-product/review.php.
  *
- * HOWEVER, on occasion WooCommerce will need to update template files and you (the theme developer).
- * will need to copy the new files to your theme to maintain compatibility. We try to do this.
- * as little as possible, but it does happen. When this occurs the version of the template file will.
- * be bumped and the readme will list any important changes.
+ * HOWEVER, on occasion WooCommerce will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
  *
- * @see     http://docs.woothemes.com/document/template-structure/
+ * @see     https://docs.woothemes.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 2.5.0
+ * @version 2.6.0
  */
+
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
@@ -38,15 +40,15 @@ $rating = intval( get_comment_meta( $comment->comment_ID, 'rating', true ) );
 
 			<?php if ( $rating && get_option( 'woocommerce_enable_review_rating' ) == 'yes' ) : ?>
 
-				<div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating" class="star-rating" title="<?php echo sprintf( __( 'Rated %d out of 5', 'alhenalite' ), $rating ) ?>">
-					<span style="width:<?php echo ( $rating / 5 ) * 100; ?>%"><strong itemprop="ratingValue"><?php echo $rating; ?></strong> <?php _e( 'out of 5', 'alhenalite' ); ?></span>
+				<div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating" class="star-rating" title="<?php echo sprintf( esc_attr__( 'Rated %d out of 5', 'alhena-lite' ), $rating ) ?>">
+					<span style="width:<?php echo ( $rating / 5 ) * 100; ?>%"><strong itemprop="ratingValue"><?php echo $rating; ?></strong> <?php esc_attr_e( 'out of 5', 'alhena-lite' ); ?></span>
 				</div>
 
 			<?php endif; ?>
 
 			<?php if ( $comment->comment_approved == '0' ) : ?>
 
-				<p class="meta"><em><?php _e( 'Your comment is awaiting approval', 'alhenalite' ); ?></em></p>
+				<p class="meta"><em><?php _e( 'Your comment is awaiting approval', 'alhena-lite' ); ?></em></p>
 
 			<?php else : ?>
 
@@ -54,10 +56,10 @@ $rating = intval( get_comment_meta( $comment->comment_ID, 'rating', true ) );
 					<strong itemprop="author"><?php comment_author(); ?></strong> <?php
 
 						if ( get_option( 'woocommerce_review_rating_verification_label' ) === 'yes' )
-							if ( wc_customer_bought_product( $comment->comment_author_email, $comment->user_id, $comment->comment_post_ID ) )
-								echo '<em class="verified">(' . __( 'verified owner', 'alhenalite' ) . ')</em> ';
+							if ( $verified )
+								echo '<em class="verified">(' . __( 'verified owner', 'alhena-lite' ) . ')</em> ';
 
-					?>&ndash; <time itemprop="datePublished" datetime="<?php echo get_comment_date( 'c' ); ?>"><?php echo get_comment_date( __( '' . get_option( 'date_format' ) . '', 'alhenalite' ) ); ?></time>:
+					?>&ndash; <time itemprop="datePublished" datetime="<?php echo get_comment_date( 'c' ); ?>"><?php echo get_comment_date( wc_date_format() ); ?></time>:
 				</p>
 
 			<?php endif; ?>

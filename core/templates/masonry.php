@@ -38,21 +38,21 @@ if (!function_exists('alhenalite_masonry_function')) {
             
 					<div class="post-article">
             
-						<h1><?php _e( 'Content not found',"alhenalite" ) ?></h1>           
+						<h1><?php _e( 'Content not found',"alhena-lite" ) ?></h1>           
                             
-						<p> <?php _e( 'No article found in this blog.',"alhenalite"); ?> </p>
+						<p> <?php _e( 'No article found in this blog.',"alhena-lite"); ?> </p>
             
-						<h2> <?php _e( 'What can i do?',"alhenalite" ) ?> </h2>           
+						<h2> <?php _e( 'What can i do?',"alhena-lite" ) ?> </h2>           
             
-						<p> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name') ?>"> <?php _e( 'Back to the homepage',"alhenalite"); ?> </a> </p>
+						<p> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name') ?>"> <?php _e( 'Back to the homepage',"alhena-lite"); ?> </a> </p>
                           
-						<p> <?php _e( 'Make a search, from the below form:',"alhenalite"); ?> </p>
+						<p> <?php _e( 'Make a search, from the below form:',"alhena-lite"); ?> </p>
                             
 						<section class="contact-form">
                             
 							<form method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
-							<input type="text" value="<?php _e( 'Search', "alhenalite" ) ?>" name="s" id="s" onblur="if (this.value == '') {this.value = '<?php _e( 'Search', "alhenalite" ) ?>';}" onfocus="if (this.value == '<?php _e( 'Search', "alhenalite" ) ?>') {this.value = '';}" class="input-search"/>
-							<input type="submit" id="searchsubmit" class="button-search" value="<?php _e( 'Search', "alhenalite" ) ?>" />
+							<input type="text" value="<?php _e( 'Search', "alhena-lite" ) ?>" name="s" id="s" onblur="if (this.value == '') {this.value = '<?php _e( 'Search', "alhena-lite" ) ?>';}" onfocus="if (this.value == '<?php _e( 'Search', "alhena-lite" ) ?>') {this.value = '';}" class="input-search"/>
+							<input type="submit" id="searchsubmit" class="button-search" value="<?php _e( 'Search', "alhena-lite" ) ?>" />
 							</form>
                                 
 							<div class="clear"></div>

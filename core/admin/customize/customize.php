@@ -10,7 +10,7 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array(
 			
-				"title" => __( "Get support","alhenalite"),
+				"title" => __( "Get support","alhena-lite"),
 				"id" => "alhenalite-customize-info",
 				"type" => "alhenalite-customize-info",
 				"section" => "alhenalite-customize-info",
@@ -22,14 +22,14 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array(
 				
-				"label" => __( "Full Image Background","alhenalite"),
-				"description" => __( "Do you want to set a full background image? (After the upload, check 'Fixed', from the Background Attachment section)","alhenalite"),
+				"label" => __( "Full Image Background","alhena-lite"),
+				"description" => __( "Do you want to set a full background image? (After the upload, check 'Fixed', from the Background Attachment section)","alhena-lite"),
 				"id" => "wip_full_image_background",
 				"type" => "select",
 				"section" => "background_image",
 				"options" => array (
-				   "off" => __( "No","alhenalite"),
-				   "on" => __( "Yes","alhenalite"),
+				   "off" => __( "No","alhena-lite"),
+				   "on" => __( "Yes","alhena-lite"),
 				),
 				
 				"std" => "off",
@@ -40,8 +40,8 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 				
-				"title" => __( "General","alhenalite"),
-				"description" => __( "General","alhenalite"),
+				"title" => __( "General","alhena-lite"),
+				"description" => __( "General","alhena-lite"),
 				"type" => "panel",
 				"id" => "general_panel",
 				"priority" => "10",
@@ -50,7 +50,7 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"title" => __( "Load system","alhenalite"),
+				"title" => __( "Load system","alhena-lite"),
 				"type" => "section",
 				"id" => "loadsystem_section",
 				"panel" => "general_panel",
@@ -60,14 +60,14 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array(
 				
-				"label" => __( "Choose a load system","alhenalite"),
-				"description" => __( "Select a load system, if you've some problems with the theme (for example a blank page).","alhenalite"),
+				"label" => __( "Choose a load system","alhena-lite"),
+				"description" => __( "Select a load system, if you've some problems with the theme (for example a blank page).","alhena-lite"),
 				"id" => "wip_loadsystem",
 				"type" => "select",
 				"section" => "loadsystem_section",
 				"options" => array (
-				   "mode_a" => __( "Mode a","alhenalite"),
-				   "mode_b" => __( "Mode b","alhenalite"),
+				   "mode_a" => __( "Mode a","alhena-lite"),
+				   "mode_b" => __( "Mode b","alhena-lite"),
 				),
 				
 				"std" => "mode_a",
@@ -78,7 +78,7 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"title" => __( "Color Scheme","alhenalite"),
+				"title" => __( "Color Scheme","alhena-lite"),
 				"type" => "section",
 				"panel" => "general_panel",
 				"priority" => "11",
@@ -88,37 +88,37 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array(
 				
-				"label" => __( "Predefined Color Schemes","alhenalite"),
-				"description" => __( "Choose your Color Scheme","alhenalite"),
+				"label" => __( "Predefined Color Schemes","alhena-lite"),
+				"description" => __( "Choose your Color Scheme","alhena-lite"),
 				"id" => "wip_skin",
 				"type" => "select",
 				"section" => "colorscheme_section",
 				"options" => array (
 
-				   "light_orange" => __( "Light&Orange","alhenalite"),
-				   "light_turquoise" => __( "Light&Turquoise","alhenalite"),
-				   "light_blue" => __( "Light&Blue","alhenalite"),
-				   "light_red" => __( "Light&Red","alhenalite"),
-				   "light_pink" => __( "Light&Pink","alhenalite"),
-				   "light_purple" => __( "Light&Purple","alhenalite"),
-				   "light_yellow" => __( "Light&Yellow","alhenalite"),
-				   "light_green" => __( "Light&Green","alhenalite"),
-				   "orange" => __( "Orange","alhenalite"),
-				   "turquoise" => __( "Turquoise","alhenalite"),
-				   "blue" => __( "Blue","alhenalite"),
-				   "red" => __( "Red","alhenalite"),
-				   "pink" => __( "Pink","alhenalite"),
-				   "purple" => __( "Purple","alhenalite"),
-				   "yellow" => __( "Yellow","alhenalite"),
-				   "green" => __( "Green","alhenalite"),
-				   "dark_orange" => __( "Dark&Orange","alhenalite"),
-				   "dark_turquoise" => __( "Dark&Turquoise","alhenalite"),
-				   "dark_blue" => __( "Dark&Blue","alhenalite"),
-				   "dark_red" => __( "Dark&Red","alhenalite"),
-				   "dark_pink" => __( "Dark&Pink","alhenalite"),
-				   "dark_purple" => __( "Dark&Purple","alhenalite"),
-				   "dark_yellow" => __( "Dark&Yellow","alhenalite"),
-				   "dark_green" => __( "Dark&Green","alhenalite"),
+				   "light_orange" => __( "Light&Orange","alhena-lite"),
+				   "light_turquoise" => __( "Light&Turquoise","alhena-lite"),
+				   "light_blue" => __( "Light&Blue","alhena-lite"),
+				   "light_red" => __( "Light&Red","alhena-lite"),
+				   "light_pink" => __( "Light&Pink","alhena-lite"),
+				   "light_purple" => __( "Light&Purple","alhena-lite"),
+				   "light_yellow" => __( "Light&Yellow","alhena-lite"),
+				   "light_green" => __( "Light&Green","alhena-lite"),
+				   "orange" => __( "Orange","alhena-lite"),
+				   "turquoise" => __( "Turquoise","alhena-lite"),
+				   "blue" => __( "Blue","alhena-lite"),
+				   "red" => __( "Red","alhena-lite"),
+				   "pink" => __( "Pink","alhena-lite"),
+				   "purple" => __( "Purple","alhena-lite"),
+				   "yellow" => __( "Yellow","alhena-lite"),
+				   "green" => __( "Green","alhena-lite"),
+				   "dark_orange" => __( "Dark&Orange","alhena-lite"),
+				   "dark_turquoise" => __( "Dark&Turquoise","alhena-lite"),
+				   "dark_blue" => __( "Dark&Blue","alhena-lite"),
+				   "dark_red" => __( "Dark&Red","alhena-lite"),
+				   "dark_pink" => __( "Dark&Pink","alhena-lite"),
+				   "dark_purple" => __( "Dark&Purple","alhena-lite"),
+				   "dark_yellow" => __( "Dark&Yellow","alhena-lite"),
+				   "dark_green" => __( "Dark&Green","alhena-lite"),
 				
 				),
 				
@@ -130,7 +130,7 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"title" => __( "Page width",'alhenalite'),
+				"title" => __( "Page width",'alhena-lite'),
 				"type" => "section",
 				"id" => "pagewidth_section",
 				"panel" => "general_panel",
@@ -140,8 +140,8 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Screen greater than 768px",'alhenalite'),
-				"description" => __( "Set a width, for a screen greater than 768 pixel (for example 750 and not 750px ) ",'alhenalite'),
+				"label" => __( "Screen greater than 768px",'alhena-lite'),
+				"description" => __( "Set a width, for a screen greater than 768 pixel (for example 750 and not 750px ) ",'alhena-lite'),
 				"id" => "wip_screen1",
 				"type" => "text",
 				"section" => "pagewidth_section",
@@ -151,8 +151,8 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Screen greater than 992px",'alhenalite'),
-				"description" => __( "Set a width, for a screen greater than 992 pixel (for example 940 and not 940px ) ",'alhenalite'),
+				"label" => __( "Screen greater than 992px",'alhena-lite'),
+				"description" => __( "Set a width, for a screen greater than 992 pixel (for example 940 and not 940px ) ",'alhena-lite'),
 				"id" => "wip_screen2",
 				"type" => "text",
 				"section" => "pagewidth_section",
@@ -162,8 +162,8 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Screen greater than 1200px",'alhenalite'),
-				"description" => __( "Set a width, in px, for a screen greater than 1200 pixel (for example 1170 and not 1170px ) ",'alhenalite'),
+				"label" => __( "Screen greater than 1200px",'alhena-lite'),
+				"description" => __( "Set a width, in px, for a screen greater than 1200 pixel (for example 1170 and not 1170px ) ",'alhena-lite'),
 				"id" => "wip_screen3",
 				"type" => "text",
 				"section" => "pagewidth_section",
@@ -175,7 +175,7 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"title" => __( "Settings","alhenalite"),
+				"title" => __( "Settings","alhena-lite"),
 				"type" => "section",
 				"id" => "settings_section",
 				"panel" => "general_panel",
@@ -185,14 +185,14 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array(
 				
-				"label" => __( "Comments","alhenalite"),
-				"description" => __( "Do you want to view the comments after articles?","alhenalite"),
+				"label" => __( "Comments","alhena-lite"),
+				"description" => __( "Do you want to view the comments after articles?","alhena-lite"),
 				"id" => "wip_view_comments",
 				"type" => "select",
 				"section" => "settings_section",
 				"options" => array (
-				   "off" => __( "No","alhenalite"),
-				   "on" => __( "Yes","alhenalite"),
+				   "off" => __( "No","alhena-lite"),
+				   "on" => __( "Yes","alhena-lite"),
 				),
 				
 				"std" => "off",
@@ -201,7 +201,7 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"title" => __( "Styles","alhenalite"),
+				"title" => __( "Styles","alhena-lite"),
 				"type" => "section",
 				"id" => "styles_section",
 				"panel" => "general_panel",
@@ -211,8 +211,8 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Custom css","alhenalite"),
-				"description" => __( "Insert your custom css code.","alhenalite"),
+				"label" => __( "Custom css","alhena-lite"),
+				"description" => __( "Insert your custom css code.","alhena-lite"),
 				"id" => "wip_custom_css_code",
 				"type" => "textarea",
 				"section" => "styles_section",
@@ -224,7 +224,7 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"title" => __( "Layouts","alhenalite"),
+				"title" => __( "Layouts","alhena-lite"),
 				"type" => "section",
 				"id" => "layouts_section",
 				"panel" => "general_panel",
@@ -234,16 +234,16 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array(
 				
-				"label" => __("Home Blog Layout","alhenalite"),
-				"description" => __("If you've set the latest articles, for the homepage, choose a layout.","alhenalite"),
+				"label" => __("Home Blog Layout","alhena-lite"),
+				"description" => __("If you've set the latest articles, for the homepage, choose a layout.","alhena-lite"),
 				"id" => "wip_home",
 				"type" => "select",
 				"section" => "layouts_section",
 				"options" => array (
-				   "full" => __( "Full Width","alhenalite"),
-				   "left-sidebar" => __( "Left Sidebar","alhenalite"),
-				   "right-sidebar" => __( "Right Sidebar","alhenalite"),
-				   "masonry" => __( "Masonry","alhenalite"),
+				   "full" => __( "Full Width","alhena-lite"),
+				   "left-sidebar" => __( "Left Sidebar","alhena-lite"),
+				   "right-sidebar" => __( "Right Sidebar","alhena-lite"),
+				   "masonry" => __( "Masonry","alhena-lite"),
 				),
 				
 				"std" => "right-sidebar",
@@ -252,16 +252,16 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 	
 			array(
 				
-				"label" => __("Category Layout","alhenalite"),
-				"description" => __("Select a layout for category pages.","alhenalite"),
+				"label" => __("Category Layout","alhena-lite"),
+				"description" => __("Select a layout for category pages.","alhena-lite"),
 				"id" => "wip_category_layout",
 				"type" => "select",
 				"section" => "layouts_section",
 				"options" => array (
-				   "full" => __( "Full Width","alhenalite"),
-				   "left-sidebar" => __( "Left Sidebar","alhenalite"),
-				   "right-sidebar" => __( "Right Sidebar","alhenalite"),
-				   "masonry" => __( "Masonry","alhenalite"),
+				   "full" => __( "Full Width","alhena-lite"),
+				   "left-sidebar" => __( "Left Sidebar","alhena-lite"),
+				   "right-sidebar" => __( "Right Sidebar","alhena-lite"),
+				   "masonry" => __( "Masonry","alhena-lite"),
 				),
 				
 				"std" => "right-sidebar",
@@ -270,61 +270,26 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array(
 				
-				"label" => __("WooCommerce Category Layout","alhenalite"),
-				"description" => __("Select a layout for the woocommerce categories.","alhenalite"),
+				"label" => __("WooCommerce Category Layout","alhena-lite"),
+				"description" => __("Select a layout for the woocommerce categories.","alhena-lite"),
 				"id" => "wip_woocommerce_category_layout",
 				"type" => "select",
 				"section" => "layouts_section",
 				"options" => array (
-				   "full" => __( "Full Width","alhenalite"),
-				   "left-sidebar" => __( "Left Sidebar","alhenalite"),
-				   "right-sidebar" => __( "Right Sidebar","alhenalite"),
+				   "full" => __( "Full Width","alhena-lite"),
+				   "left-sidebar" => __( "Left Sidebar","alhena-lite"),
+				   "right-sidebar" => __( "Right Sidebar","alhena-lite"),
 				),
 				
 				"std" => "right-sidebar",
 			
 			),
 			
-			/* LOGIN AREA SECTION */ 
-
-			array( 
-
-				"title" => __( "Login Area",'alhenalite'),
-				"type" => "section",
-				"id" => "login_area_section",
-				"panel" => "general_panel",
-				"priority" => "17",
-
-			),
-
-			array( 
-
-				"label" => __( "Custom Logo",'alhenalite'),
-				"description" => __( "Upload your custom logo, for the admin area.( Max 320px as width )",'alhenalite'),
-				"id" => "wip_login_logo",
-				"type" => "upload",
-				"section" => "login_area_section",
-				"std" => "",
-
-			),
-
-
-			array( 
-
-				"label" => __( "Height",'alhenalite'),
-				"description" => __( "Insert the height of your custom logo, without px (for example 550 and not 550px).",'alhenalite'),
-				"id" => "wip_login_logo_height",
-				"type" => "text",
-				"section" => "login_area_section",
-				"std" => "550",
-
-			),
-
 			/* HEADER AREA SECTION */ 
 
 			array( 
 
-				"title" => __( "Header","alhenalite"),
+				"title" => __( "Header","alhena-lite"),
 				"type" => "section",
 				"id" => "header_section",
 				"panel" => "general_panel",
@@ -334,8 +299,8 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Custom Logo","alhenalite"),
-				"description" => __( "Upload an image as logo","alhenalite"),
+				"label" => __( "Custom Logo","alhena-lite"),
+				"description" => __( "Upload an image as logo","alhena-lite"),
 				"id" => "wip_custom_logo",
 				"type" => "upload",
 				"section" => "header_section",
@@ -347,7 +312,7 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"title" => __( "Footer","alhenalite"),
+				"title" => __( "Footer","alhena-lite"),
 				"type" => "section",
 				"id" => "footer_section",
 				"panel" => "general_panel",
@@ -357,8 +322,8 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Copyright Text","alhenalite"),
-				"description" => __( "Insert your copyright text.","alhenalite"),
+				"label" => __( "Copyright Text","alhena-lite"),
+				"description" => __( "Insert your copyright text.","alhena-lite"),
 				"id" => "wip_copyright_text",
 				"type" => "textarea",
 				"section" => "footer_section",
@@ -368,8 +333,8 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Facebook Url","alhenalite"),
-				"description" => __( "Insert Facebook Url (empty if you want to hide the button)","alhenalite"),
+				"label" => __( "Facebook Url","alhena-lite"),
+				"description" => __( "Insert Facebook Url (empty if you want to hide the button)","alhena-lite"),
 				"id" => "wip_footer_facebook_button",
 				"type" => "url",
 				"section" => "footer_section",
@@ -379,8 +344,8 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Twitter Url","alhenalite"),
-				"description" => __( "Insert Twitter Url (empty if you want to hide the button)","alhenalite"),
+				"label" => __( "Twitter Url","alhena-lite"),
+				"description" => __( "Insert Twitter Url (empty if you want to hide the button)","alhena-lite"),
 				"id" => "wip_footer_twitter_button",
 				"type" => "url",
 				"section" => "footer_section",
@@ -390,8 +355,8 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Flickr Url","alhenalite"),
-				"description" => __( "Insert Flickr Url (empty if you want to hide the button)","alhenalite"),
+				"label" => __( "Flickr Url","alhena-lite"),
+				"description" => __( "Insert Flickr Url (empty if you want to hide the button)","alhena-lite"),
 				"id" => "wip_footer_flickr_button",
 				"type" => "url",
 				"section" => "footer_section",
@@ -401,8 +366,8 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Google Url","alhenalite"),
-				"description" => __( "Insert Google Url (empty if you want to hide the button)","alhenalite"),
+				"label" => __( "Google Url","alhena-lite"),
+				"description" => __( "Insert Google Url (empty if you want to hide the button)","alhena-lite"),
 				"id" => "wip_footer_google_button",
 				"type" => "url",
 				"section" => "footer_section",
@@ -412,8 +377,8 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Linkedin Url","alhenalite"),
-				"description" => __( "Insert Linkedin Url (empty if you want to hide the button)","alhenalite"),
+				"label" => __( "Linkedin Url","alhena-lite"),
+				"description" => __( "Insert Linkedin Url (empty if you want to hide the button)","alhena-lite"),
 				"id" => "wip_footer_linkedin_button",
 				"type" => "url",
 				"section" => "footer_section",
@@ -423,8 +388,8 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Myspace Url","alhenalite"),
-				"description" => __( "Insert Myspace Url (empty if you want to hide the button)","alhenalite"),
+				"label" => __( "Myspace Url","alhena-lite"),
+				"description" => __( "Insert Myspace Url (empty if you want to hide the button)","alhena-lite"),
 				"id" => "wip_footer_myspace_button",
 				"type" => "url",
 				"section" => "footer_section",
@@ -434,8 +399,8 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Pinterest Url","alhenalite"),
-				"description" => __( "Insert Pinterest Url (empty if you want to hide the button)","alhenalite"),
+				"label" => __( "Pinterest Url","alhena-lite"),
+				"description" => __( "Insert Pinterest Url (empty if you want to hide the button)","alhena-lite"),
 				"id" => "wip_footer_pinterest_button",
 				"type" => "url",
 				"section" => "footer_section",
@@ -445,8 +410,8 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Tumblr Url","alhenalite"),
-				"description" => __( "Insert Tumblr Url (empty if you want to hide the button)","alhenalite"),
+				"label" => __( "Tumblr Url","alhena-lite"),
+				"description" => __( "Insert Tumblr Url (empty if you want to hide the button)","alhena-lite"),
 				"id" => "wip_footer_tumblr_button",
 				"type" => "url",
 				"section" => "footer_section",
@@ -456,8 +421,8 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Youtube Url","alhenalite"),
-				"description" => __( "Insert Youtube Url (empty if you want to hide the button)","alhenalite"),
+				"label" => __( "Youtube Url","alhena-lite"),
+				"description" => __( "Insert Youtube Url (empty if you want to hide the button)","alhena-lite"),
 				"id" => "wip_footer_youtube_button",
 				"type" => "url",
 				"section" => "footer_section",
@@ -467,8 +432,8 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Vimeo Url","alhenalite"),
-				"description" => __( "Insert Vimeo Url (empty if you want to hide the button)","alhenalite"),
+				"label" => __( "Vimeo Url","alhena-lite"),
+				"description" => __( "Insert Vimeo Url (empty if you want to hide the button)","alhena-lite"),
 				"id" => "wip_footer_vimeo_button",
 				"type" => "url",
 				"section" => "footer_section",
@@ -478,8 +443,8 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Skype Url","alhenalite"),
-				"description" => __( "Insert Skype ID (empty if you want to hide the button)","alhenalite"),
+				"label" => __( "Skype Url","alhena-lite"),
+				"description" => __( "Insert Skype ID (empty if you want to hide the button)","alhena-lite"),
 				"id" => "wip_footer_skype_button",
 				"type" => "button",
 				"section" => "footer_section",
@@ -489,8 +454,8 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Email Address","alhenalite"),
-				"description" => __( "Insert Email Address (empty if you want to hide the button)","alhenalite"),
+				"label" => __( "Email Address","alhena-lite"),
+				"description" => __( "Insert Email Address (empty if you want to hide the button)","alhena-lite"),
 				"id" => "wip_footer_email_button",
 				"type" => "button",
 				"section" => "footer_section",
@@ -500,14 +465,14 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array(
 				
-				"label" => __( "Feed Rss Button","alhenalite"),
-				"description" => __( "Do you want to display the Feed Rss button?","alhenalite"),
+				"label" => __( "Feed Rss Button","alhena-lite"),
+				"description" => __( "Do you want to display the Feed Rss button?","alhena-lite"),
 				"id" => "wip_footer_rss_button",
 				"type" => "select",
 				"section" => "footer_section",
 				"options" => array (
-				   "off" => __( "No","alhenalite"),
-				   "on" => __( "Yes","alhenalite"),
+				   "off" => __( "No","alhena-lite"),
+				   "on" => __( "Yes","alhena-lite"),
 				),
 				
 				"std" => "off",
@@ -518,8 +483,8 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 				
-				"title" => __( "Typography","alhenalite"),
-				"description" => __( "Typography","alhenalite"),
+				"title" => __( "Typography","alhena-lite"),
+				"description" => __( "Typography","alhena-lite"),
 				"type" => "panel",
 				"id" => "typography_panel",
 				"priority" => "11",
@@ -530,7 +495,7 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"title" => __( "Logo","alhenalite"),
+				"title" => __( "Logo","alhena-lite"),
 				"type" => "section",
 				"id" => "logo_section",
 				"panel" => "typography_panel",
@@ -540,8 +505,8 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Font size","alhenalite"),
-				"description" => __( "Insert a size, for logo font (For example, 60px) ","alhenalite"),
+				"label" => __( "Font size","alhena-lite"),
+				"description" => __( "Insert a size, for logo font (For example, 60px) ","alhena-lite"),
 				"id" => "wip_logo_font_size",
 				"type" => "text",
 				"section" => "logo_section",
@@ -553,7 +518,7 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"title" => __( "Menu","alhenalite"),
+				"title" => __( "Menu","alhena-lite"),
 				"type" => "section",
 				"id" => "menu_section",
 				"panel" => "typography_panel",
@@ -563,8 +528,8 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Font size","alhenalite"),
-				"description" => __( "Insert a size, for menu font (For example, 14px) ","alhenalite"),
+				"label" => __( "Font size","alhena-lite"),
+				"description" => __( "Insert a size, for menu font (For example, 14px) ","alhena-lite"),
 				"id" => "wip_menu_font_size",
 				"type" => "text",
 				"section" => "menu_section",
@@ -576,7 +541,7 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"title" => __( "Content","alhenalite"),
+				"title" => __( "Content","alhena-lite"),
 				"type" => "section",
 				"id" => "content_section",
 				"panel" => "typography_panel",
@@ -586,8 +551,8 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Font size","alhenalite"),
-				"description" => __( "Insert a size, for content font (For example, 14px) ","alhenalite"),
+				"label" => __( "Font size","alhena-lite"),
+				"description" => __( "Insert a size, for content font (For example, 14px) ","alhena-lite"),
 				"id" => "wip_content_font_size",
 				"type" => "text",
 				"section" => "content_section",
@@ -600,7 +565,7 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"title" => __( "Headlines","alhenalite"),
+				"title" => __( "Headlines","alhena-lite"),
 				"type" => "section",
 				"id" => "headlines_section",
 				"panel" => "typography_panel",
@@ -610,8 +575,8 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "H1 headline","alhenalite"),
-				"description" => __( "Insert a size, for for H1 elements (For example, 24px) ","alhenalite"),
+				"label" => __( "H1 headline","alhena-lite"),
+				"description" => __( "Insert a size, for for H1 elements (For example, 24px) ","alhena-lite"),
 				"id" => "wip_h1_font_size",
 				"type" => "text",
 				"section" => "headlines_section",
@@ -621,8 +586,8 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "H2 headline","alhenalite"),
-				"description" => __( "Insert a size, for for H2 elements (For example, 22px) ","alhenalite"),
+				"label" => __( "H2 headline","alhena-lite"),
+				"description" => __( "Insert a size, for for H2 elements (For example, 22px) ","alhena-lite"),
 				"id" => "wip_h2_font_size",
 				"type" => "text",
 				"section" => "headlines_section",
@@ -632,8 +597,8 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "H3 headline","alhenalite"),
-				"description" => __( "Insert a size, for for H3 elements (For example, 20px) ","alhenalite"),
+				"label" => __( "H3 headline","alhena-lite"),
+				"description" => __( "Insert a size, for for H3 elements (For example, 20px) ","alhena-lite"),
 				"id" => "wip_h3_font_size",
 				"type" => "text",
 				"section" => "headlines_section",
@@ -643,8 +608,8 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "H4 headline","alhenalite"),
-				"description" => __( "Insert a size, for for H4 elements (For example, 18px) ","alhenalite"),
+				"label" => __( "H4 headline","alhena-lite"),
+				"description" => __( "Insert a size, for for H4 elements (For example, 18px) ","alhena-lite"),
 				"id" => "wip_h4_font_size",
 				"type" => "text",
 				"section" => "headlines_section",
@@ -654,8 +619,8 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "H5 headline","alhenalite"),
-				"description" => __( "Insert a size, for for H5 elements (For example, 16px) ","alhenalite"),
+				"label" => __( "H5 headline","alhena-lite"),
+				"description" => __( "Insert a size, for for H5 elements (For example, 16px) ","alhena-lite"),
 				"id" => "wip_h5_font_size",
 				"type" => "text",
 				"section" => "headlines_section",
@@ -665,8 +630,8 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "H6 headline","alhenalite"),
-				"description" => __( "Insert a size, for for H6 elements (For example, 14px) ","alhenalite"),
+				"label" => __( "H6 headline","alhena-lite"),
+				"description" => __( "Insert a size, for for H6 elements (For example, 14px) ","alhena-lite"),
 				"id" => "wip_h6_font_size",
 				"type" => "text",
 				"section" => "headlines_section",

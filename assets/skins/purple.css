@@ -69,7 +69,10 @@ ol {
 
 a,
 .works a.link:hover,
-.star-rating span {
+.star-rating span ,
+.woocommerce-account .woocommerce-MyAccount-navigation ul li.is-active,
+.woocommerce-account .woocommerce-MyAccount-navigation ul li a:hover,
+.woocommerce-account .woocommerce-MyAccount-navigation ul li.is-active a {
     color: #9b59b6;
 }
 

@@ -28,7 +28,7 @@ if (!function_exists('alhenalite_excerpt_function')) {
 		
 		endif;
 
-		echo $content. '<a class="read-more" href="'.get_permalink($post->ID).'" title="More"> <span class="button"> ' . __( "Read More","wip") . ' </span> </a>';
+		echo $content. '<a class="read-more" href="'.get_permalink($post->ID).'" title="More"> <span class="button"> ' . __( "Read More","alhena-lite") . ' </span> </a>';
 
 	}
 	

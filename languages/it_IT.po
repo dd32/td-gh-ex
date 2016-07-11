@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-03 20:28+0100\n"
-"PO-Revision-Date: 2015-12-04 15:42+0100\n"
+"POT-Creation-Date: 2016-07-11 22:17+0200\n"
+"PO-Revision-Date: 2016-07-11 22:17+0200\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
 "Language: it_IT\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Generator: Poedit 1.8.6\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: 404.php:12 search.php:42
+#: 404.php:12 search.php:43
 msgid "Not Found"
 msgstr "Non Trovato"
 
@@ -66,11 +66,15 @@ msgstr "&raquo;"
 msgid "Comment"
 msgstr "Commenta"
 
-#: core/admin/customize/customize.php:11
+#: core/admin/customize/customize.php:13 core/classes/customize.php:302
+msgid "Get support"
+msgstr "Ottieni supporto."
+
+#: core/admin/customize/customize.php:25
 msgid "Full Image Background"
 msgstr "Immagine di sfondo, a piena pagina"
 
-#: core/admin/customize/customize.php:12
+#: core/admin/customize/customize.php:26
 msgid ""
 "Do you want to set a full background image? (After the upload, check "
 "'Fixed', from the Background Attachment section)"
@@ -78,29 +82,29 @@ msgstr ""
 "Vuoi impostare uno sfondo a piena pagina? (Dopo l'upload, seleziona \"Fixed"
 "\" dalle impostazioni di attaccamento dell'immagine)"
 
-#: core/admin/customize/customize.php:17 core/admin/customize/customize.php:180
-#: core/admin/customize/customize.php:479
+#: core/admin/customize/customize.php:31 core/admin/customize/customize.php:194
+#: core/admin/customize/customize.php:474
 msgid "No"
 msgstr "No"
 
-#: core/admin/customize/customize.php:18 core/admin/customize/customize.php:181
-#: core/admin/customize/customize.php:480
+#: core/admin/customize/customize.php:32 core/admin/customize/customize.php:195
+#: core/admin/customize/customize.php:475
 msgid "Yes"
 msgstr "Si"
 
-#: core/admin/customize/customize.php:29 core/admin/customize/customize.php:30
+#: core/admin/customize/customize.php:43 core/admin/customize/customize.php:44
 msgid "General"
 msgstr "Generali"
 
-#: core/admin/customize/customize.php:39
+#: core/admin/customize/customize.php:53
 msgid "Load system"
 msgstr "Sistema di caricamento"
 
-#: core/admin/customize/customize.php:49
+#: core/admin/customize/customize.php:63
 msgid "Choose a load system"
 msgstr "Scegli un sistema di caricamento"
 
-#: core/admin/customize/customize.php:50
+#: core/admin/customize/customize.php:64
 msgid ""
 "Select a load system, if you've some problems with the theme (for example a "
 "blank page)."
@@ -108,131 +112,131 @@ msgstr ""
 "Scegli un sistema di caricamento, nel caso tu abbia qualche problema con il "
 "tema (per esempio, pagina bianca)"
 
-#: core/admin/customize/customize.php:55
+#: core/admin/customize/customize.php:69
 msgid "Mode a"
 msgstr "Tipo a"
 
-#: core/admin/customize/customize.php:56
+#: core/admin/customize/customize.php:70
 msgid "Mode b"
 msgstr "Tipo b"
 
-#: core/admin/customize/customize.php:67
+#: core/admin/customize/customize.php:81
 msgid "Color Scheme"
 msgstr "Schema di colori"
 
-#: core/admin/customize/customize.php:77
+#: core/admin/customize/customize.php:91
 msgid "Predefined Color Schemes"
 msgstr "Colore schema predefinito"
 
-#: core/admin/customize/customize.php:78
+#: core/admin/customize/customize.php:92
 msgid "Choose your Color Scheme"
 msgstr "Scegli uno schema di colori"
 
-#: core/admin/customize/customize.php:84
+#: core/admin/customize/customize.php:98
 msgid "Light&Orange"
 msgstr "Chiaro e Arancione"
 
-#: core/admin/customize/customize.php:85
+#: core/admin/customize/customize.php:99
 msgid "Light&Turquoise"
 msgstr "Chiaro e Turchese"
 
-#: core/admin/customize/customize.php:86
+#: core/admin/customize/customize.php:100
 msgid "Light&Blue"
 msgstr "Chiaro e Blu"
 
-#: core/admin/customize/customize.php:87
+#: core/admin/customize/customize.php:101
 msgid "Light&Red"
 msgstr "Chiaro e Rosso"
 
-#: core/admin/customize/customize.php:88
+#: core/admin/customize/customize.php:102
 msgid "Light&Pink"
 msgstr "Chiaro e Rosa"
 
-#: core/admin/customize/customize.php:89
+#: core/admin/customize/customize.php:103
 msgid "Light&Purple"
 msgstr "Chiaro e Viola"
 
-#: core/admin/customize/customize.php:90
+#: core/admin/customize/customize.php:104
 msgid "Light&Yellow"
 msgstr "Chiaro e Giallo"
 
-#: core/admin/customize/customize.php:91
+#: core/admin/customize/customize.php:105
 msgid "Light&Green"
 msgstr "Chiaro e Verde"
 
-#: core/admin/customize/customize.php:92
+#: core/admin/customize/customize.php:106
 msgid "Orange"
 msgstr "Arancione"
 
-#: core/admin/customize/customize.php:93
+#: core/admin/customize/customize.php:107
 msgid "Turquoise"
 msgstr "Turchese"
 
-#: core/admin/customize/customize.php:94
+#: core/admin/customize/customize.php:108
 msgid "Blue"
 msgstr "Blu"
 
-#: core/admin/customize/customize.php:95
+#: core/admin/customize/customize.php:109
 msgid "Red"
 msgstr "Rosso"
 
-#: core/admin/customize/customize.php:96
+#: core/admin/customize/customize.php:110
 msgid "Pink"
 msgstr "Rosa"
 
-#: core/admin/customize/customize.php:97
+#: core/admin/customize/customize.php:111
 msgid "Purple"
 msgstr "Viola"
 
-#: core/admin/customize/customize.php:98
+#: core/admin/customize/customize.php:112
 msgid "Yellow"
 msgstr "Giallo"
 
-#: core/admin/customize/customize.php:99
+#: core/admin/customize/customize.php:113
 msgid "Green"
 msgstr "Verde"
 
-#: core/admin/customize/customize.php:100
+#: core/admin/customize/customize.php:114
 msgid "Dark&Orange"
 msgstr "Scuro e Arancione"
 
-#: core/admin/customize/customize.php:101
+#: core/admin/customize/customize.php:115
 msgid "Dark&Turquoise"
 msgstr "Scuro e Turchese"
 
-#: core/admin/customize/customize.php:102
+#: core/admin/customize/customize.php:116
 msgid "Dark&Blue"
 msgstr "Scuro e Blu"
 
-#: core/admin/customize/customize.php:103
+#: core/admin/customize/customize.php:117
 msgid "Dark&Red"
 msgstr "Scuro e Rosso"
 
-#: core/admin/customize/customize.php:104
+#: core/admin/customize/customize.php:118
 msgid "Dark&Pink"
 msgstr "Scuro e Rosa"
 
-#: core/admin/customize/customize.php:105
+#: core/admin/customize/customize.php:119
 msgid "Dark&Purple"
 msgstr "Scuro e Viola"
 
-#: core/admin/customize/customize.php:106
+#: core/admin/customize/customize.php:120
 msgid "Dark&Yellow"
 msgstr "Scuro e Giallo"
 
-#: core/admin/customize/customize.php:107
+#: core/admin/customize/customize.php:121
 msgid "Dark&Green"
 msgstr "Scuro e Verde"
 
-#: core/admin/customize/customize.php:119
+#: core/admin/customize/customize.php:133
 msgid "Page width"
 msgstr "Larghezza pagina"
 
-#: core/admin/customize/customize.php:129
+#: core/admin/customize/customize.php:143
 msgid "Screen greater than 768px"
 msgstr "Risoluzione superiore a 768px"
 
-#: core/admin/customize/customize.php:130
+#: core/admin/customize/customize.php:144
 msgid ""
 "Set a width, for a screen greater than 768 pixel (for example 750 and not "
 "750px ) "
@@ -240,11 +244,11 @@ msgstr ""
 "Inserisci una larghezza, per risoluzioni superiori a 768 pixel (Ad esempio "
 "750 e non 750px)"
 
-#: core/admin/customize/customize.php:140
+#: core/admin/customize/customize.php:154
 msgid "Screen greater than 992px"
 msgstr "Risoluzione superiore a 992px"
 
-#: core/admin/customize/customize.php:141
+#: core/admin/customize/customize.php:155
 msgid ""
 "Set a width, for a screen greater than 992 pixel (for example 940 and not "
 "940px ) "
@@ -252,11 +256,11 @@ msgstr ""
 "Inserisci una larghezza, per risoluzioni superiori a 992 pixel (Ad esempio "
 "992 e non 992px)"
 
-#: core/admin/customize/customize.php:151
+#: core/admin/customize/customize.php:165
 msgid "Screen greater than 1200px"
 msgstr "Risoluzione superiore a 1200px"
 
-#: core/admin/customize/customize.php:152
+#: core/admin/customize/customize.php:166
 msgid ""
 "Set a width, in px, for a screen greater than 1200 pixel (for example 1170 "
 "and not 1170px ) "
@@ -264,338 +268,603 @@ msgstr ""
 "Inserisci una larghezza, per risoluzioni superiori a 1200 pixel (Ad esempio "
 "1200 e non 1200px)"
 
-#: core/admin/customize/customize.php:164
+#: core/admin/customize/customize.php:178
 msgid "Settings"
 msgstr "Impostazioni"
 
-#: core/admin/customize/customize.php:174
+#: core/admin/customize/customize.php:188
 msgid "Comments"
 msgstr "Commenti"
 
-#: core/admin/customize/customize.php:175
+#: core/admin/customize/customize.php:189
 msgid "Do you want to view the comments after articles?"
 msgstr "Vuoi visualizzare i commenti dopo gli articoli?"
 
-#: core/admin/customize/customize.php:190
+#: core/admin/customize/customize.php:204
 msgid "Styles"
 msgstr "Stili"
 
-#: core/admin/customize/customize.php:200
+#: core/admin/customize/customize.php:214
 msgid "Custom css"
 msgstr "Css personalizzato"
 
-#: core/admin/customize/customize.php:201
+#: core/admin/customize/customize.php:215
 msgid "Insert your custom css code."
 msgstr "Inserisci il tuo codice css personalizzato."
 
-#: core/admin/customize/customize.php:213
+#: core/admin/customize/customize.php:227
 msgid "Layouts"
 msgstr "Layout"
 
-#: core/admin/customize/customize.php:223
+#: core/admin/customize/customize.php:237
 msgid "Home Blog Layout"
 msgstr "Layout per la Homepage"
 
-#: core/admin/customize/customize.php:224
+#: core/admin/customize/customize.php:238
 msgid "If you've set the latest articles, for the homepage, choose a layout."
 msgstr ""
 "Se hai scelto di visualizzare gli ultimi articoli, nella pagina principale, "
 "scegli un layout"
 
-#: core/admin/customize/customize.php:229
-#: core/admin/customize/customize.php:248 core/metaboxes/page.php:38
+#: core/admin/customize/customize.php:243
+#: core/admin/customize/customize.php:261
+#: core/admin/customize/customize.php:279 core/metaboxes/page.php:38
 #: core/metaboxes/post.php:32 core/metaboxes/product.php:38
 msgid "Full Width"
 msgstr "Piena pagina"
 
-#: core/admin/customize/customize.php:230
-#: core/admin/customize/customize.php:249 core/metaboxes/page.php:39
+#: core/admin/customize/customize.php:244
+#: core/admin/customize/customize.php:262
+#: core/admin/customize/customize.php:280 core/metaboxes/page.php:39
 #: core/metaboxes/post.php:33 core/metaboxes/product.php:39
 msgid "Left Sidebar"
 msgstr "Sidebar a sinistra"
 
-#: core/admin/customize/customize.php:231
-#: core/admin/customize/customize.php:250 core/metaboxes/page.php:40
+#: core/admin/customize/customize.php:245
+#: core/admin/customize/customize.php:263
+#: core/admin/customize/customize.php:281 core/metaboxes/page.php:40
 #: core/metaboxes/post.php:34 core/metaboxes/product.php:40
 msgid "Right Sidebar"
 msgstr "Sidebar a destra"
 
-#: core/admin/customize/customize.php:232
-#: core/admin/customize/customize.php:251
+#: core/admin/customize/customize.php:246
+#: core/admin/customize/customize.php:264
 msgid "Masonry"
 msgstr "Muratura"
 
-#: core/admin/customize/customize.php:242
+#: core/admin/customize/customize.php:255
 msgid "Category Layout"
 msgstr "Layout categoria"
 
-#: core/admin/customize/customize.php:243
+#: core/admin/customize/customize.php:256
 msgid "Select a layout for category pages."
 msgstr "Seleziona un layout per le categorie."
 
-#: core/admin/customize/customize.php:262
-msgid "Login Area"
-msgstr "Area Accesso"
-
-#: core/admin/customize/customize.php:272
-#: core/admin/customize/customize.php:307
-msgid "Custom Logo"
-msgstr "Logo personalizzato"
-
 #: core/admin/customize/customize.php:273
-msgid "Upload your custom logo, for the admin area.( Max 320px as width )"
-msgstr "Carica il logo, per l’area admin (Massimo 320px di larghezza)"
+msgid "WooCommerce Category Layout"
+msgstr "Layout categorie WooCommerce"
 
-#: core/admin/customize/customize.php:284
-msgid "Height"
-msgstr "Altezza"
+#: core/admin/customize/customize.php:274
+msgid "Select a layout for the woocommerce categories."
+msgstr "Scegli un layout per le categorie di woocommerce"
 
-#: core/admin/customize/customize.php:285
-msgid ""
-"Insert the height of your custom logo, without px (for example 550 and not "
-"550px)."
-msgstr ""
-"Inserisci l’altezza del tuo logo, senza px (ad esempio 550 e non 550px)"
-
-#: core/admin/customize/customize.php:297
+#: core/admin/customize/customize.php:292
 msgid "Header"
 msgstr "Testata"
 
-#: core/admin/customize/customize.php:308
+#: core/admin/customize/customize.php:302
+msgid "Custom Logo"
+msgstr "Logo personalizzato"
+
+#: core/admin/customize/customize.php:303
 msgid "Upload an image as logo"
 msgstr "Carica un'immagine come logo"
 
-#: core/admin/customize/customize.php:320
+#: core/admin/customize/customize.php:315
 msgid "Footer"
 msgstr "Footer"
 
-#: core/admin/customize/customize.php:330
+#: core/admin/customize/customize.php:325
 msgid "Copyright Text"
 msgstr "Testo del copyright"
 
-#: core/admin/customize/customize.php:331
+#: core/admin/customize/customize.php:326
 msgid "Insert your copyright text."
 msgstr "Inserisci il testo per il copyright"
 
-#: core/admin/customize/customize.php:341
+#: core/admin/customize/customize.php:336
 msgid "Facebook Url"
 msgstr "Url Facebook"
 
-#: core/admin/customize/customize.php:342
+#: core/admin/customize/customize.php:337
 msgid "Insert Facebook Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Facebook, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:352
+#: core/admin/customize/customize.php:347
 msgid "Twitter Url"
 msgstr "Url Twitter"
 
-#: core/admin/customize/customize.php:353
+#: core/admin/customize/customize.php:348
 msgid "Insert Twitter Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Twitter, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:363
+#: core/admin/customize/customize.php:358
 msgid "Flickr Url"
 msgstr "Flickr Url"
 
-#: core/admin/customize/customize.php:364
+#: core/admin/customize/customize.php:359
 msgid "Insert Flickr Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Flickr, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:374
+#: core/admin/customize/customize.php:369
 msgid "Google Url"
 msgstr "Url Google"
 
-#: core/admin/customize/customize.php:375
+#: core/admin/customize/customize.php:370
 msgid "Insert Google Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Google, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:385
+#: core/admin/customize/customize.php:380
 msgid "Linkedin Url"
 msgstr "Url Linkedin"
 
-#: core/admin/customize/customize.php:386
+#: core/admin/customize/customize.php:381
 msgid "Insert Linkedin Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Linkedin, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:396
+#: core/admin/customize/customize.php:391
 msgid "Myspace Url"
 msgstr "Url Myspace"
 
-#: core/admin/customize/customize.php:397
+#: core/admin/customize/customize.php:392
 msgid "Insert Myspace Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Myspace, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:407
+#: core/admin/customize/customize.php:402
 msgid "Pinterest Url"
 msgstr "Url Pinterest"
 
-#: core/admin/customize/customize.php:408
+#: core/admin/customize/customize.php:403
 msgid "Insert Pinterest Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Pinterest, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:418
+#: core/admin/customize/customize.php:413
 msgid "Tumblr Url"
 msgstr "Url Tumblr"
 
-#: core/admin/customize/customize.php:419
+#: core/admin/customize/customize.php:414
 msgid "Insert Tumblr Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Tumblr, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:429
+#: core/admin/customize/customize.php:424
 msgid "Youtube Url"
 msgstr "Url Youtube"
 
-#: core/admin/customize/customize.php:430
+#: core/admin/customize/customize.php:425
 msgid "Insert Youtube Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Youtube, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:440
+#: core/admin/customize/customize.php:435
 msgid "Vimeo Url"
 msgstr "Url Vimeo"
 
-#: core/admin/customize/customize.php:441
+#: core/admin/customize/customize.php:436
 msgid "Insert Vimeo Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Vimeo, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:451
+#: core/admin/customize/customize.php:446
 msgid "Skype Url"
 msgstr "Url Skype"
 
-#: core/admin/customize/customize.php:452
+#: core/admin/customize/customize.php:447
 msgid "Insert Skype ID (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Skype, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:462
+#: core/admin/customize/customize.php:457
 msgid "Email Address"
 msgstr "Indirizzo email"
 
-#: core/admin/customize/customize.php:463
+#: core/admin/customize/customize.php:458
 msgid "Insert Email Address (empty if you want to hide the button)"
 msgstr ""
 "Inserisci la tua email, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:473
+#: core/admin/customize/customize.php:468
 msgid "Feed Rss Button"
 msgstr "Pulsante Feed Rss"
 
-#: core/admin/customize/customize.php:474
+#: core/admin/customize/customize.php:469
 msgid "Do you want to display the Feed Rss button?"
 msgstr "Vuoi visualizzare il pulsante dei Feed Rss?"
 
-#: core/admin/customize/customize.php:491
-#: core/admin/customize/customize.php:492
+#: core/admin/customize/customize.php:486
+#: core/admin/customize/customize.php:487
 msgid "Typography"
 msgstr "Tipografia"
 
-#: core/admin/customize/customize.php:503
+#: core/admin/customize/customize.php:498
 msgid "Logo"
 msgstr "Font per il logo"
 
-#: core/admin/customize/customize.php:513
-#: core/admin/customize/customize.php:536
-#: core/admin/customize/customize.php:559
+#: core/admin/customize/customize.php:508
+#: core/admin/customize/customize.php:531
+#: core/admin/customize/customize.php:554
 msgid "Font size"
 msgstr "Grandezza del font"
 
-#: core/admin/customize/customize.php:514
+#: core/admin/customize/customize.php:509
 msgid "Insert a size, for logo font (For example, 60px) "
 msgstr "Inserisci una grandezza, per il logo ( Per esempio, 60px )"
 
-#: core/admin/customize/customize.php:526
+#: core/admin/customize/customize.php:521
 msgid "Menu"
 msgstr "Font per il menu"
 
-#: core/admin/customize/customize.php:537
+#: core/admin/customize/customize.php:532
 msgid "Insert a size, for menu font (For example, 14px) "
 msgstr "Inserisci una grandezza, per il menu ( Per esempio, 14px )"
 
-#: core/admin/customize/customize.php:549
+#: core/admin/customize/customize.php:544
 msgid "Content"
 msgstr "Contenuto"
 
-#: core/admin/customize/customize.php:560
+#: core/admin/customize/customize.php:555
 msgid "Insert a size, for content font (For example, 14px) "
 msgstr ""
 "Inserisci una grandezza, per il font dei contenuti ( Per esempio, 14px )"
 
-#: core/admin/customize/customize.php:573
+#: core/admin/customize/customize.php:568
 msgid "Headlines"
 msgstr "Titoli"
 
-#: core/admin/customize/customize.php:583
+#: core/admin/customize/customize.php:578
 msgid "H1 headline"
 msgstr "Elementi H1"
 
-#: core/admin/customize/customize.php:584
+#: core/admin/customize/customize.php:579
 msgid "Insert a size, for for H1 elements (For example, 24px) "
 msgstr "Inserisci una grandezza, per i titoli H1 ( Per esempio, 24px )"
 
-#: core/admin/customize/customize.php:594
+#: core/admin/customize/customize.php:589
 msgid "H2 headline"
 msgstr "Elementi H2"
 
-#: core/admin/customize/customize.php:595
+#: core/admin/customize/customize.php:590
 msgid "Insert a size, for for H2 elements (For example, 22px) "
 msgstr "Inserisci una grandezza, per i titoli H2 ( Per esempio, 22px )"
 
-#: core/admin/customize/customize.php:605
+#: core/admin/customize/customize.php:600
 msgid "H3 headline"
 msgstr "Elementi H3"
 
-#: core/admin/customize/customize.php:606
+#: core/admin/customize/customize.php:601
 msgid "Insert a size, for for H3 elements (For example, 20px) "
 msgstr "Inserisci una grandezza, per i titoli H3 ( Per esempio, 20px )"
 
-#: core/admin/customize/customize.php:616
+#: core/admin/customize/customize.php:611
 msgid "H4 headline"
 msgstr "Elementi H4"
 
-#: core/admin/customize/customize.php:617
+#: core/admin/customize/customize.php:612
 msgid "Insert a size, for for H4 elements (For example, 18px) "
 msgstr "Inserisci una grandezza, per i titoli H4 ( Per esempio, 18px )"
 
-#: core/admin/customize/customize.php:627
+#: core/admin/customize/customize.php:622
 msgid "H5 headline"
 msgstr "Elementi H5"
 
-#: core/admin/customize/customize.php:628
+#: core/admin/customize/customize.php:623
 msgid "Insert a size, for for H5 elements (For example, 16px) "
 msgstr "Inserisci una grandezza, per i titoli H5 ( Per esempio, 16px )"
 
-#: core/admin/customize/customize.php:638
+#: core/admin/customize/customize.php:633
 msgid "H6 headline"
 msgstr "Elementi H6"
 
-#: core/admin/customize/customize.php:639
+#: core/admin/customize/customize.php:634
 msgid "Insert a size, for for H6 elements (For example, 14px) "
 msgstr "Inserisci una grandezza, per i titoli H6 ( Per esempio, 14px )"
+
+#: core/classes/class-plugin-activation.php:301
+msgid "Install Required Plugins"
+msgstr "Installa i plugin richiesti"
+
+#: core/classes/class-plugin-activation.php:302
+msgid "Install Plugins"
+msgstr "Installa i plugin"
+
+#: core/classes/class-plugin-activation.php:303
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr "Installing il plugin: %s"
+
+#: core/classes/class-plugin-activation.php:304
+msgid "Something went wrong with the plugin API."
+msgstr "Qualcosa è andata storta con le API plugin"
+
+#: core/classes/class-plugin-activation.php:365
+msgid "Return to Required Plugins Installer"
+msgstr "Ritorna all'installer dei plugin richiesti"
+
+#: core/classes/class-plugin-activation.php:366
+msgid "Return to the dashboard"
+msgstr "Ritorna alla dashboard"
+
+#: core/classes/class-plugin-activation.php:367
+#: core/classes/class-plugin-activation.php:2959
+msgid "Plugin activated successfully."
+msgstr "Plugin attivato con successo."
+
+#: core/classes/class-plugin-activation.php:368
+msgid "The following plugin was activated successfully:"
+msgstr "Il seguente plugin è stato attivato con successo:"
+
+#: core/classes/class-plugin-activation.php:369
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr "Nessuna risposta. Il plugin %1$s era già stato attivato."
+
+#: core/classes/class-plugin-activation.php:370
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+"Plugin non attivato. Una versione più recente di %s è richiesta per questo "
+"tema. Si prega di aggiornare il plugin."
+
+#: core/classes/class-plugin-activation.php:371
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr "Tutti i plugin sono stati installati ed attivati con successo. %1$s"
+
+#: core/classes/class-plugin-activation.php:372
+msgid "Dismiss this notice"
+msgstr "Chiudi questa notifica"
+
+#: core/classes/class-plugin-activation.php:373
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+"Si prega di contattare l’amministratore di questo sito per richiedere "
+"assistenza."
+
+#: core/classes/class-plugin-activation.php:2122
+msgid "Required"
+msgstr "Richiesto"
+
+#: core/classes/class-plugin-activation.php:2125
+msgid "Recommended"
+msgstr "Raccomandato"
+
+#: core/classes/class-plugin-activation.php:2141
+msgid "WordPress Repository"
+msgstr "WordPress Repository"
+
+#: core/classes/class-plugin-activation.php:2144
+msgid "External Source"
+msgstr "Risorse esterne"
+
+#: core/classes/class-plugin-activation.php:2147
+msgid "Pre-Packaged"
+msgstr "Pre-confezionati"
+
+#: core/classes/class-plugin-activation.php:2164
+msgid "Not Installed"
+msgstr "Non installato"
+
+#: core/classes/class-plugin-activation.php:2168
+msgid "Installed But Not Activated"
+msgstr "Installato ma non attivato"
+
+#: core/classes/class-plugin-activation.php:2170
+msgid "Active"
+msgstr "Attivo"
+
+#: core/classes/class-plugin-activation.php:2176
+msgid "Required Update not Available"
+msgstr "L’aggiornamento richiesto non è disponibile."
+
+#: core/classes/class-plugin-activation.php:2179
+msgid "Requires Update"
+msgstr "È richiesto l’aggiornamento."
+
+#: core/classes/class-plugin-activation.php:2182
+msgid "Update recommended"
+msgstr "Aggiornamento raccomandato"
+
+#: core/classes/class-plugin-activation.php:2334
+msgid "Installed version:"
+msgstr "Versione installata:"
+
+#: core/classes/class-plugin-activation.php:2342
+msgid "Minimum required version:"
+msgstr "Versione minima richiesta:"
+
+#: core/classes/class-plugin-activation.php:2354
+msgid "Available version:"
+msgstr "Versione disponibile"
+
+#: core/classes/class-plugin-activation.php:2377
+#, php-format
+msgid ""
+"No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
+"Dashboard</a>"
+msgstr ""
+"Nessun plugin da installare, aggiornare o attivare. <a href=\"%1$s\">Ritorna "
+"alla dashboard</a>"
+
+#: core/classes/class-plugin-activation.php:2391
+msgid "Plugin"
+msgstr "Plugin"
+
+#: core/classes/class-plugin-activation.php:2392
+msgid "Source"
+msgstr "Fonte"
+
+#: core/classes/class-plugin-activation.php:2393
+msgid "Type"
+msgstr "Tipo"
+
+#: core/classes/class-plugin-activation.php:2397
+msgid "Version"
+msgstr "Versione"
+
+#: core/classes/class-plugin-activation.php:2398
+msgid "Status"
+msgstr "Stato"
+
+#: core/classes/class-plugin-activation.php:2558
+msgid "Install"
+msgstr "Installa"
+
+#: core/classes/class-plugin-activation.php:2564
+msgid "Update"
+msgstr "Aggiornamento"
+
+#: core/classes/class-plugin-activation.php:2567
+msgid "Activate"
+msgstr "Attiva"
+
+#: core/classes/class-plugin-activation.php:2598
+msgid "No plugins were selected to be installed. No action taken."
+msgstr "Nessun plugin selezionato per essere installato. Nessuna risposta."
+
+#: core/classes/class-plugin-activation.php:2600
+msgid "No plugins were selected to be updated. No action taken."
+msgstr "Nessun plugin selezionato per essere aggiornato. Nessuna risposta."
+
+#: core/classes/class-plugin-activation.php:2636
+msgid "No plugins are available to be installed at this time."
+msgstr "Nessun plugin è disponibile per essere installato in questo momento."
+
+#: core/classes/class-plugin-activation.php:2638
+msgid "No plugins are available to be updated at this time."
+msgstr "Nessun plugin è disponibile per essere aggiornato in questo momento."
+
+#: core/classes/class-plugin-activation.php:2958
+msgid "Plugin activation failed."
+msgstr "Attivazione plugin fallita."
+
+#: core/classes/class-plugin-activation.php:3288
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr "Aggiornamento plugin %1$s (%2$d/%3$d)"
+
+#: core/classes/class-plugin-activation.php:3290
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+"Si è verificato un errore durante l'installazione %1$s: <strong>%2$s</"
+"strong>."
+
+#: core/classes/class-plugin-activation.php:3291
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr "L'installazione di %1$s è fallita."
+
+#: core/classes/class-plugin-activation.php:3295
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+"Il processo di installazione e attivazione è iniziato. Questo processo può "
+"richiedere un pò di tempo, per favore siate pazienti."
+
+#: core/classes/class-plugin-activation.php:3296
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr "%1$s installato ed attivato con successo."
+
+#: core/classes/class-plugin-activation.php:3297
+msgid "All installations and activations have been completed."
+msgstr "Tutte le installazioni e attivazioni sono state completate."
+
+#: core/classes/class-plugin-activation.php:3298
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr "Installazione e attivazione Plugin %1$s (%2$d/%3$d)"
+
+#: core/classes/class-plugin-activation.php:3301
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+"Il processo d'installazione è avviato. Questo processo può richiedere un pò "
+"di tempo, per favore siate pazienti."
+
+#: core/classes/class-plugin-activation.php:3303
+msgid "All installations have been completed."
+msgstr "Tutte le installazioni sono state completate."
+
+#: core/classes/class-plugin-activation.php:3304
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr "Installazione Plugin %1$s (%2$d/%3$d)"
 
 #: core/classes/customize.php:34
 msgid "Upgrade to Alhena Premium"
 msgstr "Aggiorna a Alhena Pro"
+
+#: core/classes/customize.php:306
+msgid ""
+"If you've opened a new support ticket from <strong>WordPress.org</strong>, "
+"please send a reminder to <strong>support@wpinprogress.com</strong>, to get "
+"a faster reply."
+msgstr ""
+"Se hai aperto un nuovo ticket su <strong>WordPress.org</strong>, per favore "
+"invia un promemoria a <strong>support@wpinprogress.com</strong>, per "
+"ottenere rapidamente una risposta."
+
+#: core/classes/customize.php:310
+msgid "Open a new ticket"
+msgstr "Apri un nuovo ticket."
+
+#: core/classes/customize.php:311
+msgid "Send a reminder"
+msgstr "Invia un promemoria."
+
+#: core/classes/customize.php:316
+msgid ""
+"If you like this theme and support, <strong>I'd appreciate</strong> any of "
+"the following:"
+msgstr ""
+"Se ti piace il tema oppure il servizio di supporto, <strong>è gradita</"
+"strong> una delle seguenti azioni:"
+
+#: core/classes/customize.php:320
+msgid "Rate this Theme"
+msgstr "Valuta questo tema."
+
+#: core/classes/customize.php:321
+msgid "Like on Facebook"
+msgstr "Seguici su Facebook."
+
+#: core/classes/customize.php:322
+msgid "Subscribe our newsletter"
+msgstr "Registrati alla nostra newsletter."
 
 #: core/functions/widgets.php:11
 msgid "This sidebar will be shown at the side of content"
@@ -621,12 +890,12 @@ msgstr "Questa sidebar verrà visualizzata dopo il contenuto della pagina"
 msgid "View your shopping cart"
 msgstr "Visualizza il tuo carrello"
 
-#: core/main.php:284
+#: core/main.php:298
 #, php-format
 msgid "Page %s"
 msgstr "Pagine %s"
 
-#: core/main.php:366
+#: core/main.php:348
 msgid "Article"
 msgstr "Articolo"
 
@@ -674,7 +943,7 @@ msgstr "Torna alla pagina principale"
 msgid "Make a search, from the below form:"
 msgstr "Crea una ricerca, dal seguente modulo:"
 
-#: core/templates/masonry.php:54 core/templates/masonry.php:55 search.php:51
+#: core/templates/masonry.php:54 core/templates/masonry.php:55 search.php:54
 msgid "Search"
 msgstr "Cerca"
 
@@ -707,70 +976,33 @@ msgstr "Calendario"
 msgid "Pages:"
 msgstr "Pagine %s"
 
-#: search.php:8
+#: search.php:11
 msgid "<span>Search </span> results for"
 msgstr "<span>Risultati </span> della ricerca per"
 
-#: search.php:45
+#: search.php:47
 msgid "You can repeat your search with the following form."
 msgstr "Puoi ripetere la tua ricerca tramite il seguente form"
 
-#: search.php:50
+#: search.php:53
 msgid "Search here"
 msgstr "Cerca"
-
-#: woocommerce/cart/cart-shipping.php:20
-#, php-format
-msgid "Shipping #%d"
-msgstr "Spedizione #%d"
-
-#: woocommerce/cart/cart-shipping.php:22 woocommerce/cart/cart-shipping.php:97
-#: woocommerce/cart/cart-totals.php:46
-msgid "Shipping"
-msgstr "Spedizione"
-
-#: woocommerce/cart/cart-shipping.php:59
-msgid "Please use the shipping calculator to see available shipping methods."
-msgstr ""
-"Si prega di utilizzare il calcolatore di spedizione, per vedere se sono "
-"presenti metodi di spedizione disponibili."
-
-#: woocommerce/cart/cart-shipping.php:63
-msgid ""
-"Please continue to the checkout and enter your full address to see if there "
-"are any available shipping methods."
-msgstr ""
-"Per favore continua nel carrello ed inserisci il tuo indirizzo completo per "
-"vedere se sono presenti metodi di spedizione "
-
-#: woocommerce/cart/cart-shipping.php:67
-msgid "Please fill in your details to see available shipping methods."
-msgstr ""
-"Si prega di inserire i dati per vedere metodi di spedizione disponibili."
-
-#: woocommerce/cart/cart-shipping.php:76 woocommerce/cart/cart-shipping.php:82
-msgid ""
-"There are no shipping methods available. Please double check your address, "
-"or contact us if you need any help."
-msgstr ""
-"Non ci sono metodi di spedizione disponibili. Si prega di controllare "
-"l’indirizzo oppure di contattarci, nel caso si necessiti di aiuto "
 
 #: woocommerce/cart/cart-totals.php:19
 msgid "Cart Totals"
 msgstr "Totale carrello"
 
-#: woocommerce/cart/cart-totals.php:24 woocommerce/cart/mini-cart.php:63
-#: woocommerce/checkout/review-order.php:50
+#: woocommerce/cart/cart-totals.php:24 woocommerce/checkout/review-order.php:50
 msgid "Subtotal"
 msgstr "Subtotale"
+
+#: woocommerce/cart/cart-totals.php:46
+msgid "Shipping"
+msgstr "Spedizione"
 
 #: woocommerce/cart/cart-totals.php:78 woocommerce/cart/cart.php:40
 #: woocommerce/checkout/review-order.php:18
 #: woocommerce/checkout/review-order.php:97
-#: woocommerce/myaccount/my-orders.php:35
-#: woocommerce/myaccount/my-orders.php:58
-#: woocommerce/order/order-details.php:22
 msgid "Total"
 msgstr "Totale"
 
@@ -801,7 +1033,6 @@ msgid "Cart"
 msgstr "Carrello"
 
 #: woocommerce/cart/cart.php:37 woocommerce/checkout/review-order.php:17
-#: woocommerce/order/order-details.php:21
 msgid "Product"
 msgstr "Prodotto"
 
@@ -813,7 +1044,7 @@ msgstr "Prezzo"
 msgid "Quantity"
 msgstr "Quantità"
 
-#: woocommerce/cart/cart.php:57 woocommerce/cart/mini-cart.php:36
+#: woocommerce/cart/cart.php:57
 msgid "Remove this item"
 msgstr "Rimuovi questo elemento"
 
@@ -828,18 +1059,6 @@ msgstr "Codice coupon"
 #: woocommerce/cart/cart.php:133
 msgid "Apply"
 msgstr "Applica"
-
-#: woocommerce/cart/mini-cart.php:55
-msgid "No products in the cart."
-msgstr "Nessun prodotto nel carrello"
-
-#: woocommerce/cart/mini-cart.php:68
-msgid "View Cart"
-msgstr "Visualizza carrello"
-
-#: woocommerce/cart/mini-cart.php:69
-msgid "Checkout"
-msgstr "Cassa"
 
 #: woocommerce/checkout/form-checkout.php:20
 msgid "You must be logged in to checkout."
@@ -862,196 +1081,24 @@ msgid "Apply Coupon"
 msgstr "Applica coupon"
 
 #: woocommerce/global/form-login.php:26
-#: woocommerce/myaccount/form-lost-password.php:24
 msgid "Username or email"
 msgstr "Nome utente o e-mail"
 
-#: woocommerce/global/form-login.php:30 woocommerce/myaccount/form-login.php:39
-#: woocommerce/myaccount/form-login.php:89
+#: woocommerce/global/form-login.php:30
 msgid "Password"
 msgstr "Password"
 
-#: woocommerce/global/form-login.php:39 woocommerce/myaccount/form-login.php:28
-#: woocommerce/myaccount/form-login.php:47
+#: woocommerce/global/form-login.php:39
 msgid "Login"
 msgstr "Accedi"
 
-#: woocommerce/global/form-login.php:42 woocommerce/myaccount/form-login.php:49
+#: woocommerce/global/form-login.php:42
 msgid "Remember me"
 msgstr "Ricordami"
 
-#: woocommerce/global/form-login.php:46 woocommerce/myaccount/form-login.php:53
+#: woocommerce/global/form-login.php:46
 msgid "Lost your password?"
 msgstr "Hai perso la tua password?"
-
-#: woocommerce/myaccount/form-add-payment-method.php:41
-msgid ""
-"Sorry, it seems that there are no payment methods which support adding a new "
-"payment method. Please contact us if you require assistance or wish to make "
-"alternate arrangements."
-msgstr ""
-"Spiacente, sembra non siano disponibili metodi di spedizione che supporti "
-"l’aggiunta di un nuovo metodo di spedizione. Si prega di contattarci nel "
-"caso si necessiti di assistenza o desideriate prendere accordi alternativi."
-
-#: woocommerce/myaccount/form-add-payment-method.php:49
-msgid "Add Payment Method"
-msgstr "Aggiungi un metodo di pagamento"
-
-#: woocommerce/myaccount/form-edit-account.php:23
-msgid "First name"
-msgstr "Nome"
-
-#: woocommerce/myaccount/form-edit-account.php:27
-msgid "Last name"
-msgstr "Cognome"
-
-#: woocommerce/myaccount/form-edit-account.php:33
-#: woocommerce/myaccount/form-login.php:82
-msgid "Email address"
-msgstr "Indirizzo email"
-
-#: woocommerce/myaccount/form-edit-account.php:38
-msgid "Password Change"
-msgstr "Cambia password"
-
-#: woocommerce/myaccount/form-edit-account.php:41
-msgid "Current Password (leave blank to leave unchanged)"
-msgstr "Password corrente (lasciare vuoto per non modificarla)"
-
-#: woocommerce/myaccount/form-edit-account.php:45
-msgid "New Password (leave blank to leave unchanged)"
-msgstr "Nuova Password (lascia il campo vuoto per mantenere quella corrente)"
-
-#: woocommerce/myaccount/form-edit-account.php:49
-msgid "Confirm New Password"
-msgstr "Conferma la nuova password"
-
-#: woocommerce/myaccount/form-edit-account.php:59
-msgid "Save changes"
-msgstr "Salva i cambiamenti"
-
-#: woocommerce/myaccount/form-edit-address.php:16
-#: woocommerce/myaccount/my-address.php:19
-#: woocommerce/myaccount/my-address.php:25
-#: woocommerce/order/order-details.php:190
-msgid "Billing Address"
-msgstr "Indirizzo di fatturazione"
-
-#: woocommerce/myaccount/form-edit-address.php:16
-#: woocommerce/myaccount/my-address.php:20
-#: woocommerce/order/order-details.php:207
-msgid "Shipping Address"
-msgstr "Indirizzo di spedizione"
-
-#: woocommerce/myaccount/form-edit-address.php:45
-msgid "Save Address"
-msgstr "Salva indirizzo"
-
-#: woocommerce/myaccount/form-login.php:35
-msgid "Username or email address"
-msgstr "Nome utente o indirizzo e-mail"
-
-#: woocommerce/myaccount/form-login.php:66
-#: woocommerce/myaccount/form-login.php:103
-msgid "Register"
-msgstr "Registrato"
-
-#: woocommerce/myaccount/form-login.php:75
-msgid "Username"
-msgstr "Nome utente"
-
-#: woocommerce/myaccount/form-login.php:96
-msgid "Anti-spam"
-msgstr "Anti-spam"
-
-#: woocommerce/myaccount/form-lost-password.php:22
-msgid ""
-"Lost your password? Please enter your username or email address. You will "
-"receive a link to create a new password via email."
-msgstr ""
-"Hai perso la tua password? Per favore, inserisci il tuo nome utente oppure "
-"la tua e-mail. Riceverai un link per creare una nuova password."
-
-#: woocommerce/myaccount/form-lost-password.php:28
-msgid "Enter a new password below."
-msgstr "Inserisci una nuova password di seguito"
-
-#: woocommerce/myaccount/form-lost-password.php:31
-msgid "New password"
-msgstr "Nuova password"
-
-#: woocommerce/myaccount/form-lost-password.php:35
-msgid "Re-enter new password"
-msgstr "Inserisci nuovamente la password"
-
-#: woocommerce/myaccount/form-lost-password.php:48
-msgid "Reset Password"
-msgstr "Resetta password"
-
-#: woocommerce/myaccount/form-lost-password.php:48
-msgid "Save"
-msgstr "Salva"
-
-#: woocommerce/myaccount/my-address.php:17
-msgid "My Addresses"
-msgstr "I miei indirizzi"
-
-#: woocommerce/myaccount/my-address.php:23
-msgid "My Address"
-msgstr "Il mio indirizzo"
-
-#: woocommerce/myaccount/my-address.php:35
-msgid "The following addresses will be used on the checkout page by default."
-msgstr ""
-"I seguenti indirizzi saranno utilizzati nel carrello, come  impostazione "
-"predefinita."
-
-#: woocommerce/myaccount/my-address.php:45
-msgid "Edit"
-msgstr "Modifica"
-
-#: woocommerce/myaccount/my-address.php:63
-msgid "You have not set up this type of address yet."
-msgstr "Non hai ancora impostato questo tipo di indirizzo ."
-
-#: woocommerce/myaccount/my-downloads.php:20
-msgid "Available downloads"
-msgstr "Download disponibili"
-
-#: woocommerce/myaccount/my-orders.php:26
-msgid "Recent Orders"
-msgstr "Ordini recenti"
-
-#: woocommerce/myaccount/my-orders.php:32
-msgid "Order"
-msgstr "Ordine"
-
-#: woocommerce/myaccount/my-orders.php:33
-#: woocommerce/myaccount/my-orders.php:52
-msgid "Date"
-msgstr "Data"
-
-#: woocommerce/myaccount/my-orders.php:34
-#: woocommerce/myaccount/my-orders.php:55
-msgid "Status"
-msgstr "Stato"
-
-#: woocommerce/myaccount/my-orders.php:47
-msgid "Order Number"
-msgstr "Numero ordine"
-
-#: woocommerce/myaccount/my-orders.php:68
-msgid "Pay"
-msgstr "Paga"
-
-#: woocommerce/myaccount/my-orders.php:75
-msgid "Cancel"
-msgstr "Cancella"
-
-#: woocommerce/myaccount/my-orders.php:81
-msgid "View"
-msgstr "Visualizza"
 
 #: woocommerce/order/form-tracking.php:20
 msgid ""
@@ -1084,56 +1131,6 @@ msgstr "Indirizzo email utilizzato alla cassa"
 msgid "Track"
 msgstr "Traccia"
 
-#: woocommerce/order/order-details.php:17
-msgid "Order Details"
-msgstr "Dettagli ordine"
-
-#: woocommerce/order/order-details.php:60
-#, php-format
-msgid "Download file%s"
-msgstr "Scarica file%s"
-
-#: woocommerce/order/order-details.php:126
-#: woocommerce/order/order-details.php:130
-#, php-format
-msgid "(Includes %s)"
-msgstr ""
-
-#: woocommerce/order/order-details.php:148
-msgid "Refunded:"
-msgstr "Rimborsato:"
-
-#: woocommerce/order/order-details.php:157
-msgid "Note:"
-msgstr "Nota:"
-
-#: woocommerce/order/order-details.php:166
-msgid "Customer details"
-msgstr "Dettagli acquirente"
-
-#: woocommerce/order/order-details.php:170
-msgid "Email:"
-msgstr "Email:"
-
-#: woocommerce/order/order-details.php:170
-#: woocommerce/single-product-reviews.php:68
-msgid "Email"
-msgstr "Email"
-
-#: woocommerce/order/order-details.php:174
-msgid "Telephone:"
-msgstr "Telefono:"
-
-#: woocommerce/order/order-details.php:174
-msgid "Telephone"
-msgstr "Telefono"
-
-#: woocommerce/order/order-details.php:194
-#: woocommerce/order/order-details.php:211
-#: woocommerce/single-product/meta.php:26
-msgid "N/A"
-msgstr "N/A"
-
 #: woocommerce/single-product-reviews.php:26
 msgid "Reviews"
 msgstr "Recensioni"
@@ -1155,6 +1152,10 @@ msgstr "Rispondi a %s"
 msgid "Name"
 msgstr "Nome"
 
+#: woocommerce/single-product-reviews.php:68
+msgid "Email"
+msgstr "Email"
+
 #: woocommerce/single-product-reviews.php:71
 msgid "Submit"
 msgstr "Invia"
@@ -1165,7 +1166,7 @@ msgstr "La tua valutazione"
 
 #: woocommerce/single-product-reviews.php:78
 msgid "Rate&hellip;"
-msgstr ""
+msgstr "Valutazione&hellip;"
 
 #: woocommerce/single-product-reviews.php:79
 msgid "Perfect"
@@ -1200,7 +1201,11 @@ msgstr ""
 
 #: woocommerce/single-product/meta.php:26
 msgid "SKU:"
-msgstr ""
+msgstr "SKU:"
+
+#: woocommerce/single-product/meta.php:26
+msgid "N/A"
+msgstr "N/A"
 
 #: woocommerce/single-product/product-image.php:42
 msgid "Placeholder"
@@ -1210,26 +1215,221 @@ msgstr "Segnaposto"
 msgid "Related Products"
 msgstr "Prodotti correlati"
 
-#: woocommerce/single-product/review.php:33
-#, php-format
-msgid "Rated %d out of 5"
-msgstr "Valutato %d su 5"
-
-#: woocommerce/single-product/review.php:34
-msgid "out of 5"
-msgstr "su 5"
-
-#: woocommerce/single-product/review.php:41
+#: woocommerce/single-product/review.php:51
 msgid "Your comment is awaiting approval"
 msgstr "Il tuo commento è in attesa di approvazione"
 
-#: woocommerce/single-product/review.php:50
+#: woocommerce/single-product/review.php:60
 msgid "verified owner"
 msgstr "Proprietario verificato"
 
 #: woocommerce/single-product/up-sells.php:47
 msgid "You may also like&hellip;"
-msgstr ""
+msgstr "Ti potrebbe anche interessare&hellip;"
+
+#~ msgid "Rated %d out of 5"
+#~ msgstr "Valutato %d su 5"
+
+#~ msgid "out of 5"
+#~ msgstr "su 5"
+
+#~ msgid "Login Area"
+#~ msgstr "Area Accesso"
+
+#~ msgid "Upload your custom logo, for the admin area.( Max 320px as width )"
+#~ msgstr "Carica il logo, per l’area admin (Massimo 320px di larghezza)"
+
+#~ msgid "Height"
+#~ msgstr "Altezza"
+
+#~ msgid ""
+#~ "Insert the height of your custom logo, without px (for example 550 and "
+#~ "not 550px)."
+#~ msgstr ""
+#~ "Inserisci l’altezza del tuo logo, senza px (ad esempio 550 e non 550px)"
+
+#~ msgid "Shipping #%d"
+#~ msgstr "Spedizione #%d"
+
+#~ msgid ""
+#~ "Please use the shipping calculator to see available shipping methods."
+#~ msgstr ""
+#~ "Si prega di utilizzare il calcolatore di spedizione, per vedere se sono "
+#~ "presenti metodi di spedizione disponibili."
+
+#~ msgid ""
+#~ "Please continue to the checkout and enter your full address to see if "
+#~ "there are any available shipping methods."
+#~ msgstr ""
+#~ "Per favore continua nel carrello ed inserisci il tuo indirizzo completo "
+#~ "per vedere se sono presenti metodi di spedizione "
+
+#~ msgid "Please fill in your details to see available shipping methods."
+#~ msgstr ""
+#~ "Si prega di inserire i dati per vedere metodi di spedizione disponibili."
+
+#~ msgid ""
+#~ "There are no shipping methods available. Please double check your "
+#~ "address, or contact us if you need any help."
+#~ msgstr ""
+#~ "Non ci sono metodi di spedizione disponibili. Si prega di controllare "
+#~ "l’indirizzo oppure di contattarci, nel caso si necessiti di aiuto "
+
+#~ msgid "No products in the cart."
+#~ msgstr "Nessun prodotto nel carrello"
+
+#~ msgid "View Cart"
+#~ msgstr "Visualizza carrello"
+
+#~ msgid "Checkout"
+#~ msgstr "Cassa"
+
+#~ msgid ""
+#~ "Sorry, it seems that there are no payment methods which support adding a "
+#~ "new payment method. Please contact us if you require assistance or wish "
+#~ "to make alternate arrangements."
+#~ msgstr ""
+#~ "Spiacente, sembra non siano disponibili metodi di spedizione che supporti "
+#~ "l’aggiunta di un nuovo metodo di spedizione. Si prega di contattarci nel "
+#~ "caso si necessiti di assistenza o desideriate prendere accordi "
+#~ "alternativi."
+
+#~ msgid "Add Payment Method"
+#~ msgstr "Aggiungi un metodo di pagamento"
+
+#~ msgid "First name"
+#~ msgstr "Nome"
+
+#~ msgid "Last name"
+#~ msgstr "Cognome"
+
+#~ msgid "Email address"
+#~ msgstr "Indirizzo email"
+
+#~ msgid "Password Change"
+#~ msgstr "Cambia password"
+
+#~ msgid "Current Password (leave blank to leave unchanged)"
+#~ msgstr "Password corrente (lasciare vuoto per non modificarla)"
+
+#~ msgid "New Password (leave blank to leave unchanged)"
+#~ msgstr ""
+#~ "Nuova Password (lascia il campo vuoto per mantenere quella corrente)"
+
+#~ msgid "Confirm New Password"
+#~ msgstr "Conferma la nuova password"
+
+#~ msgid "Save changes"
+#~ msgstr "Salva i cambiamenti"
+
+#~ msgid "Billing Address"
+#~ msgstr "Indirizzo di fatturazione"
+
+#~ msgid "Shipping Address"
+#~ msgstr "Indirizzo di spedizione"
+
+#~ msgid "Save Address"
+#~ msgstr "Salva indirizzo"
+
+#~ msgid "Username or email address"
+#~ msgstr "Nome utente o indirizzo e-mail"
+
+#~ msgid "Register"
+#~ msgstr "Registrato"
+
+#~ msgid "Username"
+#~ msgstr "Nome utente"
+
+#~ msgid "Anti-spam"
+#~ msgstr "Anti-spam"
+
+#~ msgid ""
+#~ "Lost your password? Please enter your username or email address. You will "
+#~ "receive a link to create a new password via email."
+#~ msgstr ""
+#~ "Hai perso la tua password? Per favore, inserisci il tuo nome utente "
+#~ "oppure la tua e-mail. Riceverai un link per creare una nuova password."
+
+#~ msgid "Enter a new password below."
+#~ msgstr "Inserisci una nuova password di seguito"
+
+#~ msgid "New password"
+#~ msgstr "Nuova password"
+
+#~ msgid "Re-enter new password"
+#~ msgstr "Inserisci nuovamente la password"
+
+#~ msgid "Reset Password"
+#~ msgstr "Resetta password"
+
+#~ msgid "Save"
+#~ msgstr "Salva"
+
+#~ msgid "My Addresses"
+#~ msgstr "I miei indirizzi"
+
+#~ msgid "My Address"
+#~ msgstr "Il mio indirizzo"
+
+#~ msgid ""
+#~ "The following addresses will be used on the checkout page by default."
+#~ msgstr ""
+#~ "I seguenti indirizzi saranno utilizzati nel carrello, come  impostazione "
+#~ "predefinita."
+
+#~ msgid "Edit"
+#~ msgstr "Modifica"
+
+#~ msgid "You have not set up this type of address yet."
+#~ msgstr "Non hai ancora impostato questo tipo di indirizzo ."
+
+#~ msgid "Available downloads"
+#~ msgstr "Download disponibili"
+
+#~ msgid "Recent Orders"
+#~ msgstr "Ordini recenti"
+
+#~ msgid "Order"
+#~ msgstr "Ordine"
+
+#~ msgid "Date"
+#~ msgstr "Data"
+
+#~ msgid "Order Number"
+#~ msgstr "Numero ordine"
+
+#~ msgid "Pay"
+#~ msgstr "Paga"
+
+#~ msgid "Cancel"
+#~ msgstr "Cancella"
+
+#~ msgid "View"
+#~ msgstr "Visualizza"
+
+#~ msgid "Order Details"
+#~ msgstr "Dettagli ordine"
+
+#~ msgid "Download file%s"
+#~ msgstr "Scarica file%s"
+
+#~ msgid "Refunded:"
+#~ msgstr "Rimborsato:"
+
+#~ msgid "Note:"
+#~ msgstr "Nota:"
+
+#~ msgid "Customer details"
+#~ msgstr "Dettagli acquirente"
+
+#~ msgid "Email:"
+#~ msgstr "Email:"
+
+#~ msgid "Telephone:"
+#~ msgstr "Telefono:"
+
+#~ msgid "Telephone"
+#~ msgstr "Telefono"
 
 #~ msgid "Light & Blue"
 #~ msgstr "Chiaro & Blu"
@@ -1853,35 +2053,8 @@ msgstr ""
 #~ msgid "Select a image for footer background."
 #~ msgstr "Carica un'immagine come sfondo del footer."
 
-#~ msgid "Install Required Plugins"
-#~ msgstr "Installa i plugin richiesti"
-
-#~ msgid "Install Plugins"
-#~ msgstr "Installa i plugin"
-
-#~ msgid "Installing Plugin: %s"
-#~ msgstr "Installing il plugin: %s"
-
 #~ msgid "Something went wrong."
 #~ msgstr "Qualcosa è andato storto"
-
-#~ msgid "Return to Required Plugins Installer"
-#~ msgstr "Ritorna all'installer dei plugin richiesti"
-
-#~ msgid "Return to the dashboard"
-#~ msgstr "Ritorna alla dashboard"
-
-#~ msgid "Plugin activated successfully."
-#~ msgstr "Plugin attivato con successo."
-
-#~ msgid "The following plugin was activated successfully:"
-#~ msgstr "Il seguente plugin è stato attivato con successo:"
-
-#~ msgid "All plugins installed and activated successfully. %1$s"
-#~ msgstr "Tutti i plugin sono stati installati ed attivati con successo. %1$s"
-
-#~ msgid "Dismiss this notice"
-#~ msgstr "Chiudi questa notifica"
 
 #~ msgid "External Link"
 #~ msgstr "Link esterno"
@@ -1889,45 +2062,12 @@ msgstr ""
 #~ msgid "Private Repository"
 #~ msgstr "Repository privata"
 
-#~ msgid "Pre-Packaged"
-#~ msgstr "Pre-confezionati"
-
-#~ msgid "WordPress Repository"
-#~ msgstr "WordPress Repository"
-
-#~ msgid "Required"
-#~ msgstr "Richiesto"
-
-#~ msgid "Recommended"
-#~ msgstr "Raccomandato"
-
-#~ msgid "Not Installed"
-#~ msgstr "Non installato"
-
-#~ msgid "Installed But Not Activated"
-#~ msgstr "Installato ma non attivato"
-
 #~ msgid ""
 #~ "No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
 #~ "Dashboard\">Return to the Dashboard</a>"
 #~ msgstr ""
 #~ "Nessun plugin da installare o attivare. <a href=\"%1$s\" title=\"Ritorna "
 #~ "alla dashboard\">Ritorna alla dashboard</a>"
-
-#~ msgid "Plugin"
-#~ msgstr "Plugin"
-
-#~ msgid "Source"
-#~ msgstr "Fonte"
-
-#~ msgid "Type"
-#~ msgstr "Tipo"
-
-#~ msgid "Install"
-#~ msgstr "Installa"
-
-#~ msgid "Activate"
-#~ msgstr "Attiva"
 
 #~ msgid "Install package not available."
 #~ msgstr "Pacchetto di installazione non disponibile"
@@ -1950,60 +2090,17 @@ msgstr ""
 #~ msgid "Plugin installed successfully."
 #~ msgstr "Plugin installato con successo."
 
-#~ msgid "Plugin activation failed."
-#~ msgstr "Attivazione plugin fallita."
-
-#~ msgid ""
-#~ "The installation and activation process is starting. This process may "
-#~ "take a while on some hosts, so please be patient."
-#~ msgstr ""
-#~ "Il processo di installazione e attivazione è iniziato. Questo processo "
-#~ "può richiedere un pò di tempo, per favore siate pazienti."
-
-#~ msgid "%1$s installed and activated successfully."
-#~ msgstr "%1$s installato ed attivato con successo."
-
 #~ msgid "Show Details"
 #~ msgstr "Visualizza dettagli"
 
 #~ msgid "Hide Details"
 #~ msgstr "Nascondi dettagli"
 
-#~ msgid "All installations and activations have been completed."
-#~ msgstr "Tutte le installazioni e attivazioni sono state completate."
-
-#~ msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-#~ msgstr "Installazione e attivazione Plugin %1$s (%2$d/%3$d)"
-
-#~ msgid ""
-#~ "The installation process is starting. This process may take a while on "
-#~ "some hosts, so please be patient."
-#~ msgstr ""
-#~ "Il processo d'installazione è avviato. Questo processo può richiedere un "
-#~ "pò di tempo, per favore siate pazienti."
-
-#~ msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-#~ msgstr ""
-#~ "Si è verificato un errore durante l'installazione %1$s: <strong>%2$s</"
-#~ "strong>."
-
-#~ msgid "The installation of %1$s failed."
-#~ msgstr "L'installazione di %1$s è fallita."
-
 #~ msgid "%1$s installed successfully."
 #~ msgstr "%1$s installato con successo."
 
-#~ msgid "All installations have been completed."
-#~ msgstr "Tutte le installazioni sono state completate."
-
-#~ msgid "Installing Plugin %1$s (%2$d/%3$d)"
-#~ msgstr "Installazione Plugin %1$s (%2$d/%3$d)"
-
 #~ msgid "Return to the Dashboard"
 #~ msgstr "Ritorna alla dashboard."
-
-#~ msgid "Something went wrong with the plugin API."
-#~ msgstr "Qualcosa è andata storta con le API plugin"
 
 #~ msgid "All plugins installed and activated successfully. %s"
 #~ msgstr "Tutti i plugin installati ed attivati con successo. %s"

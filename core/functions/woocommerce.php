@@ -34,10 +34,10 @@ if ( ! function_exists( 'alhenalite_header_cart' ) ) {
 
         <section class="header-cart">
         
-            <a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart','alhenalite' ); ?>">
+            <a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart','alhena-lite' ); ?>">
                 
                 <i class="fa fa-shopping-cart"></i> 
-                <span class="cart-count"><?php echo sprintf ( _n( '%d', '%d', WC()->cart->cart_contents_count, 'alhenalite' ), WC()->cart->cart_contents_count ); ?></span>
+                <span class="cart-count"><?php echo sprintf ( _n( '%d', '%d', WC()->cart->cart_contents_count, 'alhena-lite' ), WC()->cart->cart_contents_count ); ?></span>
     
             </a>
                         
@@ -62,10 +62,10 @@ if ( ! function_exists( 'alhenalite_cart_link_fragment' ) ) {
 		ob_start();
 
 ?>
-		<a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart','alhenalite' ); ?>">
+		<a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart','alhena-lite' ); ?>">
             
 			<i class="fa fa-shopping-cart"></i> 
-			<span class="cart-count"><?php echo sprintf ( _n( '%d', '%d', WC()->cart->cart_contents_count, 'alhenalite' ), WC()->cart->cart_contents_count ); ?></span>
+			<span class="cart-count"><?php echo sprintf ( _n( '%d', '%d', WC()->cart->cart_contents_count, 'alhena-lite' ), WC()->cart->cart_contents_count ); ?></span>
 
 		</a>
         

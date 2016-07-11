@@ -295,7 +295,7 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) {
 			$title = "$title $sep $site_description";
 	
 		if ( $paged >= 2 || $page >= 2 )
-			$title = "$title $sep " . sprintf( __( 'Page %s', "alhenalite" ), max( $paged, $page ) );
+			$title = "$title $sep " . sprintf( __( 'Page %s', "alhena-lite" ), max( $paged, $page ) );
 	
 		return $title;
 		
@@ -314,38 +314,6 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) {
 	}
 
 	add_action( 'wp_head', 'alhenalite_addtitle' );
-
-}
-
-/*-----------------------------------------------------------------------------------*/
-/* LOGIN AREA */
-/*-----------------------------------------------------------------------------------*/ 
-
-if (!function_exists('alhenalite_custom_login_logo')) {
-	
-	function alhenalite_custom_login_logo() { 
-	
-		if ( alhenalite_setting('wip_login_logo') ) : ?>
-	
-			<style type="text/css">
-				
-				body.login div#login h1 a {
-					background-image: url('<?php echo alhenalite_setting('wip_login_logo'); ?>');
-					-webkit-background-size: inherit;
-					background-size: inherit ;
-					width:100%;
-					height:<?php echo alhenalite_setting('wip_login_logo_height'); ?>px;
-				}
-				
-			</style>
-		
-<?php 
-	
-		endif;
-	
-	}
-	
-	add_action( 'login_enqueue_scripts', 'alhenalite_custom_login_logo' );
 
 }
 
@@ -377,7 +345,7 @@ if (!function_exists('alhenalite_posticon')) {
 		
 		} else {
 		
-			$icon = '<span class="entry-standard"><i class="fa fa-pencil-square-o"></i>'.__( "Article","wip").'</span>'; 
+			$icon = '<span class="entry-standard"><i class="fa fa-pencil-square-o"></i>'.__( "Article","alhena-lite").'</span>'; 
 		
 		}
 	
@@ -708,7 +676,7 @@ if (!function_exists('alhenalite_setup')) {
 		
 		register_nav_menu( 'main-menu', 'Main menu' );
 	
-		load_theme_textdomain("alhenalite", get_template_directory() . '/languages');
+		load_theme_textdomain("alhena-lite", get_template_directory() . '/languages');
 		
 		$require_array = array (
 			"/core/classes/",

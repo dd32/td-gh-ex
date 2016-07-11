@@ -9,10 +9,10 @@
 			<div class="post-article">
             
                 <header class="title">
-                	<div class="line"><h1><?php _e( 'Not Found',"alhenalite" ) ?></h1></div>
+                	<div class="line"><h1><?php _e( 'Not Found',"alhena-lite" ) ?></h1></div>
                 </header>
                 
-				<p><?php _e( 'Sorry, no posts matched your criteria',"alhenalite"); ?> </p>
+				<p><?php _e( 'Sorry, no posts matched your criteria',"alhena-lite"); ?> </p>
  
 			</div>
 

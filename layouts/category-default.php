@@ -34,7 +34,7 @@
 
                         <h1>Not found</h1>
 
-                        <p><?php _e( 'Sorry, no posts matched your criteria',"alhenalite" ) ?> </p>
+                        <p><?php _e( 'Sorry, no posts matched your criteria',"alhena-lite" ) ?> </p>
          
                     </div>
         
@@ -80,7 +80,7 @@
                         ));
         
                         the_widget( 'WP_Widget_Calendar',
-                        array("title"=> __('Calendar',"alhenalite")),
+                        array("title"=> __('Calendar',"alhena-lite")),
                         array(	'before_widget' => '<div class="post-article widget-box">',
                                 'after_widget'  => '</div>',
                                 'before_title'  => '<header class="title"><div class="line"><h3>',
