@@ -52,6 +52,8 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version 1.6.4.5
+1.Change blog post meta class and blog post author.
 @Version 1.6.4.4
 1. Update Font Awesome Icon 4.6.1 to 4.6.3
 2. Add Theme Support Title Tag.

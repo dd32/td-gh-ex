@@ -39,8 +39,8 @@
 						<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 						<?php the_content(); ?>		
 						<div class="blog-btn-col"><a href="<?php the_permalink(); ?>" class="blog-btn"><?php _e('Read more', 'wallstreet'); ?></a></div>
-						<div class="blog-post-detail">
-							<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><i class="fa fa-user"></i> <?php the_author(); ?></a>
+						<div class="blog-post-meta">
+							<a id="blog-author" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><i class="fa fa-user"></i> <?php the_author(); ?></a>
 							<?php 	$tag_list = get_the_tag_list();
 							if(!empty($tag_list)) { ?>
 							<div class="blog-tags">
