@@ -5,7 +5,8 @@
  * @rewritten
  * @since 1.1.6
  */
-if( ! function_exists( 'agama_frontpage_boxes' ) ) {
+add_action( 'agama_frontpage_boxes_action', 'agama_frontpage_boxes', 10 );
+if( ! function_exists( 'agama_frontpage_boxes' ) ):
 	function agama_frontpage_boxes() {
 		$visibility = esc_attr( get_theme_mod( 'agama_frontpage_boxes_visibility', 'homepage' ) );
 		
@@ -186,10 +187,4 @@ if( ! function_exists( 'agama_frontpage_boxes' ) ) {
 					
 				</div>
 			
-			<?php endif; ?>
-			
-		<?php } ?>
-		
-	<?php } ?>
-	
-<?php } add_action( 'agama_frontpage_boxes_action', 'agama_frontpage_boxes', 10 ); // Hook ?>
+			<?php endif;  }  } endif; ?>

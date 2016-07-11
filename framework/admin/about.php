@@ -74,14 +74,7 @@ if( ! class_exists( 'Agama_About' ) ) {
 				
 				echo '<div class="changelog point-releases">';
 					echo sprintf( '<h3>Changelog Agama v%s</h3>', Agama_Core::version() );
-						echo '<p>* ADDED: Header V1 background color feature.</p>';
-						echo '<p>* ADDED: Slider general section with few features.</p>';
-						echo '<p>* ADDED: Frontpage boxes general section with few features.</p>';
-						echo '<p>* UPDATED: Header image & slider can work on same time now.</p>';
-						echo '<p>* UPDATED: Theme translation files.</p>';
-						echo '<p>* UPDATED: FontAwesome files to latest version.</p>';
-						echo '<p>* FIXED: Header V2 & V3 slider height bug.</p>';
-						echo '<p>* FIXED: Agama slider image caching issue.</p>';
+						echo '<p>* FIXED: Warning: Cannot modify header information bug.</p>';
 				echo '</div>';
 				
 			echo '</div>';
