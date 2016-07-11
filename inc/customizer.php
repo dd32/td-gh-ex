@@ -33,22 +33,6 @@ function generate_customize_register( $wp_customize ) {
 		$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
 	}
 	
-	if ( isset( $wp_customize->selective_refresh ) ) {
-		$wp_customize->selective_refresh->add_partial( 'blogname', array(
-			'selector' => '.main-title',
-			'render_callback' => function() {
-				bloginfo( 'name', 'display' );
-			},
-		) );
-		
-		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
-			'selector' => '.site-description',
-			'render_callback' => function() {
-				bloginfo( 'description' );
-			},
-		) );
-	}
-	
 	$static_front_page = wp_list_pages( array( 'echo' => false ) );
 	if ( ! empty( $static_front_page ) ) {
 		$wp_customize->get_section('static_front_page')->title = __( 'Set Front Page', 'generatepress' );

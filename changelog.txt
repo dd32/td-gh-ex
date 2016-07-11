@@ -1,5 +1,8 @@
 === changelog ===
 
+= (7/10/2016) - 1.3.33 =
+* Fix error on PHP 5.2 installations
+
 = (7/10/2016) - 1.3.32 =
 * Enqueue HTML5 shiv and IE8 stylesheet using wp_enqueue_* functions
 * Fix .container class clash with bootstrap
