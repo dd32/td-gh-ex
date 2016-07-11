@@ -41,87 +41,87 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-background, 
 3. Log into your WP admin panel and click on the Design tab. Now click on the Blogghiamo theme to activate it.
 
 == Changelog ==
-Version 1.0
+= Version 1.0 =
 * Initial Release
 
-Version 1.0.1
+= Version 1.0.1 =
 * Minor bug fixes
 
-Version 1.1
+= Version 1.1 =
 * Updated overlay images
 * Fixed sub menu effect
 * Minor bug fixes
 
-Version 1.2
+= Version 1.2 =
 * Updated main menu effect
 * Fixed rich snippets
 * Minor bug fixes
 
-Version 1.2.1
+= Version 1.2.1 =
 * Updated Theme Options
 * Update Languages
 * Minor bug fixes
 
-Version 1.2.2
+= Version 1.2.2 =
 * Accessibility update
 * Minor bug fixes
 
-Version 1.2.3
+= Version 1.2.3 =
 * Accessibility update
 * Minor bug fixes
 
-Version 1.2.4
+= Version 1.2.4 =
 * Minor bug fixes
 
-Version 1.2.5
+= Version 1.2.5 =
 * Minor bug fixes
 
-Version 1.2.6
+= Version 1.2.6 =
 * Added compatibility with WordPress 4.1
 * Update FontAwesome to 4.3.0 Version
 * Minor Bug Fixes
 
-Version 1.2.7
+= Version 1.2.7 =
 * Added menu for Theme Options in the admin toolbar
 * Fixed icon position for sticky posts
 * Minor bug fixes
 
-Version 1.2.8
+= Version 1.2.8 =
 * Added link to email
 * Minor bug fixes
 
-Version 1.2.9
+= Version 1.2.9 =
 * Added VK social button
 * Fixed Previous and Next Post translation bug
 * Minor bug fixes
 
-Version 1.3.3
+= Version 1.3.3 =
 * Updated FontAwesome to 4.4.0 Version
 * Move the "Theme Options" in "WP Customizer"
 * Minor bug fixes
 
-Version 1.3.4
+= Version 1.3.4 =
 * Updated Email Button
 * Minor bug fixes
 
-Version 1.3.5
+= Version 1.3.5 =
 * Updated FontAwesome to 4.5.0 Version
 * Minor bug fixes
 
-Version 1.3.6
+= Version 1.3.6 =
 * Added two new social buttons
 * Fixed input type color
 
-Version 1.3.7
+= Version 1.3.7 =
 * Added Disqus Support
 * Minor bug fixes
 
-Version 1.3.8
+= Version 1.3.8 =
 * Updated SmoothScroll to 1.4.0 version
 * Updated H2 post title
 * Minor bug fixes
 
-Version 1.3.9
+= Version 1.3.9 =
 * Fixed site title and site description heading
 * Fixed mobile view
 * Improved mobile menu
@@ -129,12 +129,16 @@ Version 1.3.9
 * Updated SmoothScroll to 1.4.4 version
 * Minor bug fixes
 
-Version 1.4.0
+= Version 1.4.0 =
 * Updated FontAwesome to 4.6.1 version
 * Improved page navigation
 * Minor bug fixes
 
-Version 1.4.1
+= Version 1.4.1 =
 * Updated FontAwesome to 4.6.3 version
 * Updated HTML5Shiv to 3.7.3 version
+* Minor bug fixes
+
+= Version 1.4.2 =
+* Added admin panel
 * Minor bug fixes

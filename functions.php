@@ -102,9 +102,12 @@ add_action( 'widgets_init', 'blogghiamo_widgets_init' );
  */
 function blogghiamo_scripts() {
 	wp_enqueue_style( 'blogghiamo-style', get_stylesheet_uri() );
-	$protocol = is_ssl() ? 'https' : 'http';
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() .'/css/font-awesome.min.css');
-	wp_enqueue_style( 'blogghiamo-googlefonts', $protocol .'://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700');
+	$query_args = array(
+		'family' => 'Roboto+Slab:300,400,700'
+	);
+	wp_register_style( 'blogghiamo-googlefonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), null );
+	wp_enqueue_style( 'blogghiamo-googlefonts' );
 	
 	wp_enqueue_script( 'blogghiamo-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array('jquery'), '1.0', true );
 	wp_enqueue_script( 'blogghiamo-custom', get_template_directory_uri() . '/js/jquery.blogghiamo.js', array('jquery'), '1.0', true );
@@ -115,9 +118,8 @@ function blogghiamo_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 	
-	global $wp_scripts;
 	wp_enqueue_script( 'blogghiamo-html5shiv', get_template_directory_uri() . '/js/html5shiv.min.js', array(), '3.6', false );
-	$wp_scripts->add_data( 'blogghiamo-html5shiv', 'conditional', 'lt IE 9' );
+	wp_script_add_data( 'blogghiamo-html5shiv', 'conditional', 'lt IE 9' );
 }
 add_action( 'wp_enqueue_scripts', 'blogghiamo_scripts' );
 
@@ -145,3 +147,8 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load Blogghiamo Dynamic.
  */
 require get_template_directory() . '/inc/blogghiamo-dynamic.php';
+
+/* Calling in the admin area for the Welcome Page */
+if ( is_admin() ) {
+	require get_template_directory() . '/inc/admin/blogghiamo-admin-page.php';
+}
