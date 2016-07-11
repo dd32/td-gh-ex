@@ -1,6 +1,6 @@
 === Artwork Lite===
 Contributors: MotoPress
-Tags: one-column,two-columns,right-sidebar,custom-colors,custom-menu,featured-images,full-width-template,post-formats,theme-options,translation-ready
+Tags: one-column,two-columns,right-sidebar,responsive-layout,custom-colors,custom-menu,featured-images,full-width-template,post-formats,theme-options,translation-ready
 Requires at least: 4.1
 Tested up to: 4.5
 License: GPLv2 or later
@@ -48,3 +48,5 @@ You can change the colors of your site easily.
 * jQuery Superfish Menu, Dual licensed under the MIT and GPL licenses, https://plugins.jquery.com/superfish/
 * Infinite Scroll, code is licensed under MIT License, http://infinite-scroll.com/
 * labelauty, code is licensed under MIT License, https://github.com/fntneves/jquery-labelauty
+* image on the screenshot is licensed under the Creative Commons Zero (CC0) license https://creativecommons.org/publicdomain/zero/1.0/,
+https://unsplash.com/photos/0WQOCx1g8hw, https://unsplash.com/license

@@ -65,7 +65,7 @@ if (post_password_required())
                 '<input class="form-control" placeholder="' .__('Website', 'artwork-lite') . '" id="url" name="url" type="text" value="' . esc_attr($commenter['comment_author_url']) .
                 '" size="30" /></div>')),
             'comment_notes_after' => '',
-            'comment_field' => '<div class="form-group comment-form-comment"><textarea placeholder="'. __('Comment*', 'artwork-lite') .'" rows="8" class="form-control" id="comment" name="comment" aria-required="true"></textarea></div>'
+            'comment_field' => '<div class="form-group comment-form-comment"><textarea placeholder="'. __('Comment*', 'artwork-lite') .'" rows="2" class="form-control" id="comment" name="comment" aria-required="true"></textarea></div>'
         );
         comment_form($mp_artwork_comment_args);
     }

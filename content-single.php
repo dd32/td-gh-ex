@@ -17,7 +17,11 @@
             <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
                 <header class="entry-header">
                     <?php
-                    the_title('<h2 class="entry-title h4">', '</h2>', true);
+						if ( is_single() ) :
+							the_title( '<h1 class="entry-title">', '</h1>', true );
+						else :
+							the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+						endif;
                     ?> 
                 </header>
                 <div class="entry-content">

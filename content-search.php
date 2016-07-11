@@ -13,15 +13,19 @@ global $mp_artwork_page_template;
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('post-in-blog post'); ?>>
     <?php mp_artwork_post_thumbnail($post, $mp_artwork_page_template); ?>
-    <header class="entry-header">
-        <h2 class="entry-title h4">
-            <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
-        </h2>
-    </header> 
+	<header class="entry-header">
+		<?php
+			if ( is_single() ) :
+				the_title( '<h1 class="entry-title">', '</h1>', true );
+			else :
+				the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+			endif;
+		?> 
+	</header>
     <section class="entry entry-content">
         <p>
             <?php
-            mp_artwork_get_content_theme(198, false);
+            mp_artwork_get_content_theme(200, false);
             ?>
         </p>
     </section>

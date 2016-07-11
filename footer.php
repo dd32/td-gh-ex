@@ -142,7 +142,7 @@
 									   target="_blank"><i class="fa fa-youtube"></i></a>
 								<?php endif; ?>
 								<?php if ( ! empty( $mp_artwork_rss_link ) ): ?>
-									<a href="<?php echo $mp_artwork_rss_link; ?>" class="button-rss" title="<?php _e( 'RSS', 'artwork-lite' ); ?>"
+									<a href="<?php echo $mp_artwork_rss_link; ?>" class="button-rss" title="<?php _e( 'Rss', 'artwork-lite' ); ?>"
 									   target="_blank"><i
 											class="fa fa-rss"></i></a>
 								<?php endif; ?>

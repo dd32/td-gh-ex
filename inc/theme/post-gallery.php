@@ -140,11 +140,11 @@ class MP_Artwork_Gallery {
                     $gallery = get_post_gallery(get_the_ID(), false);
                     if (empty($gallery["ids"])) {
                         $size = sizeof($gallery["src"]);
-                        echo '<div class="gallery-4"><a href="' . get_permalink() . '" rel="bookmark"><img  alt="Slide" src="' . $gallery["src"][0] . '"></a></div>';
+                        echo '<div class="gallery-4"><a href="' . get_permalink() . '" rel="bookmark"><img src="' . $gallery["src"][0] . '"></a></div>';
                         if ($size > 1) {
-                            echo '<div class="gallery-4"><a href="' . get_permalink() . '" rel="bookmark"><img  alt="Slide" src="' . $gallery["src"][1] . '"></a></div>';
+                            echo '<div class="gallery-4"><a href="' . get_permalink() . '" rel="bookmark"><img src="' . $gallery["src"][1] . '"></a></div>';
                             if ($size > 2) {
-                                echo '<div class="gallery-4"><a href="' . get_permalink() . '" rel="bookmark"><img  alt="Slide" src="' . $gallery["src"][2] . '"></a></div>';
+                                echo '<div class="gallery-4"><a href="' . get_permalink() . '" rel="bookmark"><img src="' . $gallery["src"][2] . '"></a></div>';
                             }
                         }
                         echo '</div></div>';

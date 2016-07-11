@@ -22,9 +22,6 @@ class MP_Artwork {
 		add_action( 'wp_print_styles', array( $this, 'load_google_fonts' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'scripts_styles' ) );
 		add_action( 'widgets_init', array( $this, 'widgets_init' ) );
-		if ( ! function_exists( '_wp_render_title_tag' ) ) {
-			add_action( 'wp_head', array( $this, 'slug_render_title' ) );
-		}
 		add_action( 'after_setup_theme', array( $this, 'woocommerce_support' ) );
 	}
 
@@ -271,17 +268,6 @@ class MP_Artwork {
 		) );
 	}
 
-	/**
-	 * Title Tag backwards compatibility for older versions
-	 *
-	 */
-	function slug_render_title() {
-		?>
-		<?php wp_title( '|', true, 'right' ); ?>
-		<?php
-
-	}
-
 	/*
 	 * The experts length
 	 */
@@ -378,7 +364,9 @@ class MP_Artwork {
 			require get_template_directory() . '/inc/mp-timetable/mp-timetable-init.php';
 		}
 
-		require get_template_directory() . '/inc/theme/tgm-init.php';
+		if ( current_user_can( 'install_plugins' ) ) {
+			require get_template_directory() . '/inc/theme/tgm-init.php';
+		}
 		
 	}
 

@@ -71,44 +71,46 @@ class MP_Artwork_Related {
         global $post;
         
         $postTypeSlug = mp_artwork_get_post_type_slug();
-        $tag_ids = $this->related_tag_tax_id($postTypeSlug);
-        $category_ids = $this->related_cat_tax_id($postTypeSlug);
-        $post_ids = array($post->ID);
-        $args = array();
-        if ($tag_ids || $category_ids) {
-            $tax_query = array('relation' => 'OR');
-            if ($tag_ids) {
-                array_push($tax_query, array(
-                    'taxonomy' => 'post_tag_' . $postTypeSlug,
-                    'field' => 'term_id',
-                    'terms' => $tag_ids,
-                ));
-            }
-            if ($category_ids) {
-                array_push($tax_query, array(
-                    'taxonomy' => 'category_' . $postTypeSlug,
-                    'field' => 'term_id',
-                    'terms' => $category_ids,
-                ));
-            }
-            $args = array(
-                'orderby' => 'date',
-                'tax_query' => $tax_query,
-                'post__not_in' => array($post->ID),
-                'posts_per_page' => 6,
-                'post_type' => get_post_type($post)
-            );
-            $works = null;
-            $works = new wp_query($args);
-            if ($works->have_posts()) {
-                $this->related_posts_loop_before();
-                while ($works->have_posts()) {
-                    $this->related_posts_loop($works);
-                }
-                $this->related_posts_loop_after();
-            }
-            wp_reset_query();
-        }
+		if ($postTypeSlug) {
+			$tag_ids = $this->related_tag_tax_id($postTypeSlug);
+			$category_ids = $this->related_cat_tax_id($postTypeSlug);
+			$post_ids = array($post->ID);
+			$args = array();
+			if ($tag_ids || $category_ids) {
+				$tax_query = array('relation' => 'OR');
+				if ($tag_ids) {
+					array_push($tax_query, array(
+						'taxonomy' => 'post_tag_' . $postTypeSlug,
+						'field' => 'term_id',
+						'terms' => $tag_ids,
+					));
+				}
+				if ($category_ids) {
+					array_push($tax_query, array(
+						'taxonomy' => 'category_' . $postTypeSlug,
+						'field' => 'term_id',
+						'terms' => $category_ids,
+					));
+				}
+				$args = array(
+					'orderby' => 'date',
+					'tax_query' => $tax_query,
+					'post__not_in' => array($post->ID),
+					'posts_per_page' => 6,
+					'post_type' => get_post_type($post)
+				);
+				$works = null;
+				$works = new wp_query($args);
+				if ($works->have_posts()) {
+					$this->related_posts_loop_before();
+					while ($works->have_posts()) {
+						$this->related_posts_loop($works);
+					}
+					$this->related_posts_loop_after();
+				}
+				wp_reset_query();
+			}
+		}
     }
 
 
@@ -123,7 +125,7 @@ class MP_Artwork_Related {
                 'orderby' => 'date',
                 'tax_query' => $tax_query,
                 'post__not_in' => array($post->ID),
-                'posts_per_page' => 6,
+                'posts_per_page' => 4,
                 'post_type' => get_post_type($post)
             );
             if ($tag_ids) {
@@ -148,9 +150,6 @@ class MP_Artwork_Related {
     function related_posts_loop_before() {
         ?>
         <div class="posts-related" id="post-<?php the_ID(); ?>">
-            <div class="posts-related-header h2">
-                <span><?php _e('Related Posts', 'artwork-lite'); ?></span>
-            </div>
             <div class="two-col-works">
                 <?php
             }

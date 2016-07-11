@@ -27,7 +27,7 @@ global $mp_artwork_page_template;
             endif;
             ?>
             <div class="row">
-                <div class="col-xs-12 col-sm-8 col-md-8 <?php if (!empty($mp_artwork_img)) { ?> col-lg-6 col-lg-offset-3 <?php } else { ?> col-lg-8 col-lg-offset-2 <?php } ?> col-sm-offset-2 col-md-offset-2 ">  
+                <div class="col-xs-12 col-sm-8 col-md-8 <?php if (has_post_thumbnail()) { ?> col-lg-6 col-lg-offset-3 <?php } else { ?> col-lg-8 col-lg-offset-2 <?php } ?> col-sm-offset-2 col-md-offset-2 ">
                     <?php mp_artwork_post_first_category($post); ?>
                     <div class="entry-wrapper">
                         <header class="entry-header">

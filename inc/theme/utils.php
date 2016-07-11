@@ -137,14 +137,17 @@ function mp_artwork_posted_on( $mp_artwork_post ) {
  */
 
 function mp_artwork_posted_on_meta( $mp_artwork_post ) {
-	?>
+	if ( get_theme_mod( mp_artwork_get_prefix() . 'show_meta', '1' ) === '1' || get_theme_mod( mp_artwork_get_prefix() . 'show_meta' ) ): ?>
+	
 	<div class="entry-meta">
         <span>
     <?php _e( 'Posted on', 'artwork-lite' ); ?>
         </span>
 		<?php mp_artwork_posted_on( $mp_artwork_post ); ?>
 	</div>
+	
 	<?php
+	endif;
 }
 
 /*
@@ -199,10 +202,12 @@ function mp_artwork_post_category( $mp_artwork_post ) {
  */
 
 function mp_artwork_post_first_category( $mp_artwork_post ) {
-	$mp_artwork_category = get_the_category();
-	if ( $mp_artwork_category ) {
-		echo '<a href="' . get_category_link( $mp_artwork_category[0]->term_id ) . '" title="' . sprintf( __( "View all posts in %s", 'artwork-lite' ), $mp_artwork_category[0]->name ) . '" ' . ' class="category-wrapper">' . $mp_artwork_category[0]->name . '</a> ';
-	}
+	if ( get_theme_mod( mp_artwork_get_prefix() . 'show_categories', '1' ) === '1' || get_theme_mod( mp_artwork_get_prefix() . 'show_categories' ) ):
+		$mp_artwork_category = get_the_category();
+		if ( $mp_artwork_category ) {
+			echo '<a href="' . get_category_link( $mp_artwork_category[0]->term_id ) . '" title="' . sprintf( __( "View all posts in %s", 'artwork-lite' ), $mp_artwork_category[0]->name ) . '" ' . ' class="category-wrapper">' . $mp_artwork_category[0]->name . '</a> ';
+		}
+	endif;
 }
 
 /*
@@ -249,7 +254,7 @@ function mp_artwork_post_meta( $mp_artwork_post ) {
 						<a class="blog-icon underline" href="<?php
 						if ( ! is_single() ): the_permalink();
 						endif;
-						?>#comments"><span><?php comments_number( '0', '1', '%' ); ?><?php _e( 'Comments', 'artwork-lite' ); ?></span></a>
+						?>#comments"><span><?php comments_number(__('No Comments', 'artwork-lite'), __('One Comment', 'artwork-lite'), __('% Comments', 'artwork-lite')); ?></span></a>
 						<?php
 					endif;
 					mp_artwork_post_tag( $mp_artwork_post );
