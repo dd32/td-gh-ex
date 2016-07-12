@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Semplicemente\n"
-"POT-Creation-Date: 2016-04-15 10:11+0100\n"
-"PO-Revision-Date: 2016-04-15 10:12+0100\n"
+"POT-Creation-Date: 2016-07-12 10:53+0100\n"
+"PO-Revision-Date: 2016-07-12 10:53+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -304,6 +304,206 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
+#: inc/admin/semplicemente-admin-page.php:36
+#: inc/admin/semplicemente-admin-page.php:110
+msgid "About"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:73
+msgid "Action failed. Please refresh the page and retry."
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:77
+msgid "Cheatin&#8217; huh?"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:91
+msgid "Dismiss"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:92
+#, php-format
+msgid ""
+"Welcome! Thank you for choosing Semplicemente! To fully take advantage of "
+"the best our theme can offer please make sure you visit our %swelcome page%s."
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:94
+msgid "Get started with Semplicemente"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:117
+msgid "Theme Info"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:119
+msgid "View Demo"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:121
+msgid "View PRO version Demo"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:123
+msgid "Rate this theme"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:138
+msgid "Free Vs PRO"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:141
+msgid "Changelog"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:175
+msgid "Theme Customizer"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:176
+msgid "All Theme Options are available via Customize screen."
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:177
+msgid "Customize"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:181
+msgid "Got theme support question?"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:182
+msgid "Please put it in our support forum."
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:183
+msgid "Support"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:187
+msgid "Need more features?"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:188
+#: inc/admin/semplicemente-admin-page.php:287
+msgid "Upgrade to PRO version for more exciting features."
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:189
+msgid "Info about PRO version"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:195
+#: inc/admin/semplicemente-admin-page.php:203
+msgid "Translate"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:199
+msgid "Click below to translate this theme into your own language."
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:215
+msgid "Return to Updates"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:215
+msgid "Return to Dashboard &rarr; Updates"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:218
+msgid "Go to Dashboard &rarr; Home"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:218
+msgid "Go to Dashboard"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:235
+msgid "View changelog below:"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:292
+msgid "Features"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:293
+msgid "Semplicemente"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:294
+msgid "Semplicemente PRO"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:299
+msgid "Responsive Design"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:304
+msgid "Change Background"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:309
+msgid "Unlimited Text Color"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:314
+msgid "Choose Social Incons"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:319
+msgid "RTL Support"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:324
+msgid "Powerful theme options"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:329
+#: inc/semplicemente-dynamic.php:178
+msgid "Loading Page"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:334
+#: inc/semplicemente-dynamic.php:177
+msgid "Font switcher"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:339
+msgid "Breadcrumb"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:344
+#: inc/semplicemente-dynamic.php:180
+msgid "Post views counter"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:349
+#: inc/semplicemente-dynamic.php:182
+msgid "7 Shortcodes"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:354
+msgid "10 Exclusive Widgets"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:359
+#: inc/semplicemente-dynamic.php:184
+msgid "Related Posts Box"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:364
+#: inc/semplicemente-dynamic.php:185
+msgid "Information About Author Box"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:372
+msgid "View PRO version demo"
+msgstr ""
+
+#: inc/admin/semplicemente-admin-page.php:373
+msgid "More Information"
+msgstr ""
+
 #: inc/customizer.php:44
 msgid "Demo PRO version"
 msgstr ""
@@ -397,40 +597,16 @@ msgstr ""
 msgid "Choose sidebar position"
 msgstr ""
 
-#: inc/semplicemente-dynamic.php:177
-msgid "Font switcher"
-msgstr ""
-
-#: inc/semplicemente-dynamic.php:178
-msgid "Loading Page"
-msgstr ""
-
 #: inc/semplicemente-dynamic.php:179
 msgid "Unlimited Colors and Skin"
-msgstr ""
-
-#: inc/semplicemente-dynamic.php:180
-msgid "Post views counter"
 msgstr ""
 
 #: inc/semplicemente-dynamic.php:181
 msgid "Post format"
 msgstr ""
 
-#: inc/semplicemente-dynamic.php:182
-msgid "7 Shortcodes"
-msgstr ""
-
 #: inc/semplicemente-dynamic.php:183
 msgid "12 Exclusive Widgets"
-msgstr ""
-
-#: inc/semplicemente-dynamic.php:184
-msgid "Related Posts Box"
-msgstr ""
-
-#: inc/semplicemente-dynamic.php:185
-msgid "Information About Author Box"
 msgstr ""
 
 #: inc/semplicemente-dynamic.php:186

@@ -95,7 +95,11 @@ add_action( 'widgets_init', 'semplicemente_widgets_init' );
 function semplicemente_scripts() {
 	wp_enqueue_style( 'semplicemente-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() .'/css/font-awesome.min.css');
-	wp_enqueue_style( 'semplicemente-googlefonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700');
+	$query_args = array(
+		'family' => 'Source+Sans+Pro:300,400,700'
+	);
+	wp_register_style( 'semplicemente-googlefonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), null );
+	wp_enqueue_style( 'semplicemente-googlefonts' );
 
 	wp_enqueue_script( 'semplicemente-custom', get_template_directory_uri() . '/js/jquery.semplicemente.js', array('jquery'), '1.0', true );
 	wp_enqueue_script( 'semplicemente-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
@@ -104,9 +108,8 @@ function semplicemente_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 	
-	global $wp_scripts;
-	wp_enqueue_script( 'html5', get_template_directory_uri() . '/js/html5.js', array(), '3.7.2', false );
-	$wp_scripts->add_data( 'html5', 'conditional', 'lt IE 9' );
+	wp_enqueue_script( 'semplicemente-html5', get_template_directory_uri() . '/js/html5.js', array(), '3.7.2', false );
+	wp_script_add_data( 'semplicemente-html5', 'conditional', 'lt IE 9' );
 }
 add_action( 'wp_enqueue_scripts', 'semplicemente_scripts' );
 
@@ -143,3 +146,8 @@ require get_template_directory() . '/inc/jetpack.php';
  * Load Semplicemente Dynamic.
  */
 require get_template_directory() . '/inc/semplicemente-dynamic.php';
+
+/* Calling in the admin area for the Welcome Page */
+if ( is_admin() ) {
+	require get_template_directory() . '/inc/admin/semplicemente-admin-page.php';
+}

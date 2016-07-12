@@ -40,76 +40,80 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, cust
 3. Log into your WP admin panel and click on the Design tab. Now click on the Semplicemente theme to activate it.
 
 == Changelog ==
-Version 1.0
+= Version 1.0 =
 * Initial Release
 
-Version 1.1
+= Version 1.1 =
 * Minor Bug Fixes
 
-Version 1.2
+= Version 1.2 =
 * Minor Bug Fixes
 
-Version 1.3
+= Version 1.3 =
 * Minor Bug Fixes
 
-Version 1.4
+= Version 1.4 =
 * Fixed featured images width;
 * Add sub menu fade effect;
 * Fixed search form;
 * Minor bug fixes;
 
-Version 1.4.1
+= Version 1.4.1 =
 * Fixed little bug
 
-Version 1.5
+= Version 1.5 =
 * Fixed Overlay Featured Images
 * Fixed Main Menu effect
 * Added rich snippets on single pages
 * Minor bug fixes
 
-Version 1.5.1
+= Version 1.5.1 =
 * Update FontAwesome to 4.3.0v
 * Adding theme support title-tag for WP 4.1
 * Minor bug fixes
 
-Version 1.5.2
+= Version 1.5.2 =
 * Fixed some CSS bug
 * Improved viewing in the mobile
 * Add RTL support
 
-Version 1.5.3
+= Version 1.5.3 =
 * Fixed Previous and Next Post translation bug
 * Added VK Social Network button
 * Minor bug fixes
 
-Version 1.5.7
+= Version 1.5.7 =
 * Update FontAwesome to 4.4.0v
 * Move the "Theme Options" in "WP Customizer"
 * Minor bug fixes
 
-Version 1.5.8
+= Version 1.5.8 =
 * Update FontAwesome to 4.5.0v
 * Minor bug fixes
 
-Version 1.5.9
+= Version 1.5.9 =
 * Fixed IE9 CSS condition
 * Minor Bug Fixes
 
-Version 1.6.0
+= Version 1.6.0 =
 * Fixed site title and post title heading
 * Added Disqus style
 * Improved CSS input
 * Minor bug fixes
 
-Version 1.6.1
+= Version 1.6.1 =
 * Minor bug fixes
 
-Version 1.6.2
+= Version 1.6.2 =
 * Update FontAwesome to 4.6.1v
 * Improved main menu in mobile version
 * Improved RTL mode
 * Minor bug fixes
 
-Version 1.6.3
+= Version 1.6.3 =
 * Update FontAwesome to 4.6.3v
 * Fixed theme tags
+
+= Version 1.6.4 =
+* Added admin panel
+* Minor bug fixes

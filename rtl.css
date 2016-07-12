@@ -52,6 +52,7 @@ textarea {
 .main-navigation li a:not(:last-child):after {
     margin: 0 4px 0 0;
     float: left;
+	line-height: inherit;
 }
 .main-navigation ul ul li a:not(:last-child):after {
     content: "\f0d9";
