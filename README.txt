@@ -48,6 +48,11 @@ Images
 
 == Changelog ==
 
+= 2.1.0 =
+
+** Fixed the customizer java script issue.
+** Fixed the copyright link in footer section.s
+
 = 2.0.9 =
 
 ** Change the customizer promo and demo link.

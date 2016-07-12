@@ -243,6 +243,6 @@ function accesspress_ticker_setting($wp_customize){
 add_action( 'customize_register', 'accesspress_ticker_setting' );
 
 function accesspress_store_setting_live_promo() {
-	wp_enqueue_script( 'accessoress-store-promo',	get_template_directory_uri().'/inc/js/accesspress-theme-promo.js', array( 'jquery','customize-preview' ), '', true	);
+	wp_enqueue_script( 'accessoress-store-promo',	get_template_directory_uri().'/inc/js/accesspress-theme-promo.js', array( 'jquery','customize-controls' ), '', true	);
 }
-add_action( 'admin_enqueue_scripts', 'accesspress_store_setting_live_promo' );
+add_action( 'customize_controls_enqueue_scripts', 'accesspress_store_setting_live_promo' );

@@ -7,9 +7,9 @@ add_action( 'admin_enqueue_scripts', 'load_custom1_wp_admin_style' );
 if(class_exists( 'WP_Customize_control')):
 class WP_Customize_Radioimage_Control extends WP_Customize_Control {
 	public $type = 'radioimage';
-	//public function enqueue() {
-//		wp_enqueue_script( 'jquery-ui-button' );
-//	}
+	public function enqueue() {
+		wp_enqueue_script( 'jquery-ui-button' );
+	}
     public function render_content() {
 		$name = '_customize-radio-' . $this->id;
 		?>
