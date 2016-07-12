@@ -105,7 +105,7 @@ endif;
 if ( ! function_exists( 'acmeblog_date_display' ) ) :
 
     function acmeblog_date_display( $format = 'l, F j, Y') {
-        echo esc_html( date( $format ) );
+        echo esc_html( date_i18n( $format, current_time( 'timestamp' ) ) );
     }
 
 endif;
