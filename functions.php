@@ -81,7 +81,7 @@ function bhost_setup() {
 endif; // bhost_setup
 add_action( 'after_setup_theme', 'bhost_setup' );
 
-define('BHOST_PRO_THEME_URL','//devitems.com/items/bhost-pro-responsive-wordpress-theme/','bhost');
+define('BHOST_PRO_THEME_URL','//www.codegrape.com/item/bhost-pro-responsive-wordpress-theme/8758','bhost');
 define('BHOST_LIVE_DEMO','//getmasum.net/bhost/','bhost');
 
 //default menu
