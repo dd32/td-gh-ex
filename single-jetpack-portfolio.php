@@ -17,15 +17,16 @@ get_header(); ?>
 			<?php the_post_navigation(); ?>
 
 			<?php
-				// If comments are open, load up the comment template
-				if ( comments_open()) :
-					comments_template();
-				endif;
+			// If comments are open, load up the comment template.
+			if ( comments_open() ) {
+				comments_template();
+			}
 			?>						
 
-		<?php endwhile; // end of the loop. ?>
+		<?php endwhile; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 	
-<?php get_footer(); ?>
+<?php
+get_footer();

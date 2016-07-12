@@ -11,69 +11,46 @@
  * @package aaron
  */
 
-
-get_header(); 
-	if ( aaron_has_featured_posts( 1 ) ) {
-
-		echo '<section class="featured-wrap">';
-		
-		if( get_theme_mod( 'aaron_featured_headline') <>"" ) {
-		?>
-			<h2 class="featured-headline"><?php echo esc_html( get_theme_mod( 'aaron_featured_headline', __( 'Featured', 'aaron' ) ) ); ?></h2>
-		<?php
-		}else{
-		?>
-			<h2 class="featured-headline"><?php _e( 'Featured', 'aaron' );?></h2>
-		<?php
-		}
-			$featured_posts = aaron_get_featured_posts();
-			foreach ( (array) $featured_posts as $order => $post ) :
-				setup_postdata( $post );
-				echo '<div class="featured-post aaron-border">';
-				if ( has_post_thumbnail())	{
-						the_post_thumbnail( 'aaron-featured-posts-thumb' ); 
-				}
-				
-				the_title( sprintf( '<h2><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); 
-				echo '</div>';
-			endforeach;	 
-			
-			wp_reset_postdata();
-		 	
-			echo '</section>';
-	}
-	?>
-	
+get_header();
+aaron_jetpack_featured_posts();
+?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-
 		<?php
-		/*The front page sections should not display on the blog listing page*/
+		/* The front page sections should not display on the blog listing page. */
 		if ( is_front_page() && is_home() ) {
+			if ( get_theme_mod( 'aaron_top_section1' ) || get_theme_mod( 'aaron_top_section2' ) || get_theme_mod( 'aaron_top_section3' ) ) {
+				$args = array(
+					'post_type' => 'page',
+					'orderby' => 'post__in',
+					'post__in' => array(
+						get_theme_mod( 'aaron_top_section1' ),
+						get_theme_mod( 'aaron_top_section2' ),
+						get_theme_mod( 'aaron_top_section3' ),
+					),
+				);
 
-			if( get_theme_mod('aaron_top_section1') <>"" OR get_theme_mod('aaron_top_section2') <>"" OR get_theme_mod('aaron_top_section3') <>"" ) {
+				$top_section_query = new WP_Query( $args );
 
-					$args = array('post_type' => 'page', 'orderby' => 'post__in', 'post__in' => array(get_theme_mod('aaron_top_section1'), get_theme_mod('aaron_top_section2'), get_theme_mod('aaron_top_section3')));
-
-	     		    query_posts($args);
-					  while ( have_posts() ) : the_post();
-
+		     	if ( $top_section_query->have_posts() ) {
+		     		while ( $top_section_query->have_posts() ) : $top_section_query->the_post();
 						get_template_part( 'content', 'page' );
-
-					  endwhile; 
-				 wp_reset_query();
+					endwhile;
+					wp_reset_postdata();
+				}
 			}
 		}
-		?>
 
-
-		<?php if ( have_posts() ) : ?>
+		/* This is the end of our top page section. Now lets show the latest posts: */
+		if ( have_posts() ) : ?>
 		
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php
-					/* Include the Post-Format-specific template for the content.
+
+					/*
+					 * Include the Post-Format-specific template for the content.
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
@@ -90,28 +67,40 @@ get_header();
 
 		<?php endif; ?>
 
-
 		<?php
-		/*The front page sections should not display on the blog listing page*/
+
+		/*
+		* We have finished printing the latest posts. Check if there are bottom section pages to show:
+		* The front page sections should not display on the blog listing page.
+		*/
 		if ( is_front_page() && is_home() ) {
-			if( get_theme_mod('aaron_bottom_section1') <>"" OR get_theme_mod('aaron_bottom_section2') <>"" OR get_theme_mod('aaron_bottom_section3') <>"") {
+			if ( get_theme_mod( 'aaron_bottom_section1' ) or get_theme_mod( 'aaron_bottom_section2' ) or get_theme_mod( 'aaron_bottom_section3' ) ) {
 
-					$args = array('post_type' => 'page', 'orderby' => 'post__in', 'post__in' => array(get_theme_mod('aaron_bottom_section1'), get_theme_mod('aaron_bottom_section2'), get_theme_mod('aaron_bottom_section3')));
+				$args = array(
+					'post_type' => 'page',
+					'orderby' => 'post__in',
+					'post__in' => array(
+						get_theme_mod( 'aaron_bottom_section1' ),
+						get_theme_mod( 'aaron_bottom_section2' ),
+						get_theme_mod( 'aaron_bottom_section3' ),
+						),
+				);
 
-	     		    query_posts($args);
-					  while ( have_posts() ) : the_post();
+	     		$bottom_section_query = new WP_Query( $args );
 
+	     		if ( $bottom_section_query->have_posts() ) {
+		     		while ( $bottom_section_query->have_posts() ) : $bottom_section_query->the_post();
 						get_template_part( 'content', 'page' );
-
-					  endwhile; 
-				 wp_reset_query();
+					endwhile;
+					wp_reset_postdata();
+				}
 			}
 		}
 		?>
 
-
 		</main><!-- #main -->
 	</div><!-- #primary -->
- 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+
+<?php
+get_sidebar();
+get_footer();

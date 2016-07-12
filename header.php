@@ -6,6 +6,7 @@
  *
  * @package aaron
  */
+
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -17,95 +18,90 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
 <div id="page" class="hfeed site">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'aaron' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'aaron' ); ?></a>
 	<?php
-	 if ( has_nav_menu( 'header' )  ) {
+	if ( has_nav_menu( 'header' )  ) {
 	?>
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><span class="screen-reader-text"><?php _e( 'Main Menu', 'aaron' ); ?></span></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'header', 'fallback_cb' => false, 'depth'=>2 ) );  ?>
+		<nav id="site-navigation" class="main-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+			<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><span class="screen-reader-text"><?php esc_html_e( 'Main Menu', 'aaron' ); ?></span></button>
+			<?php wp_nav_menu( array( 'theme_location' => 'header', 'fallback_cb' => false, 'depth' => 2, 'container' => false ) ); ?>
 		</nav><!-- #site-navigation -->
 	<?php
 	}
 
-	if ( is_home() || is_front_page() || is_singular() && aaron_get_meta( 'aaron_show_header' )) {?>
-		<header id="masthead" class="site-header" role="banner">
+	if ( is_home() || is_front_page() || is_singular() && aaron_get_meta( 'aaron_show_header' ) ) { ?>
+		<header id="masthead" class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
 			<div class="site-branding">	
-				<?php 
-				aaron_the_site_logo();
-			
-				//If we are viewing a post or page, and we want to combine it with the header section.
-				if ( is_singular() && aaron_get_meta( 'aaron_show_header' ) || is_home() && aaron_get_meta( 'aaron_show_header' ) && !is_front_page() ) {
-					//If it is a post or page, and we want to replace the site title, we want it to be a h1.
-					if ( aaron_get_meta( 'aaron_replace_title' ) ){
-						if( is_home() ){
-							echo '<h1 class="site-title">' . get_the_title( get_option('page_for_posts') ) .  '</h1>';
-						}else{
-							the_title( '<h1 class="site-title">', '</h1>' );
+				<?php
+				if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
+					the_custom_logo();
+				}
+				// If we are viewing a post or page, and we want to combine it with the header section.
+				if ( is_singular() && aaron_get_meta( 'aaron_show_header' ) || is_home() && aaron_get_meta( 'aaron_show_header' ) && ! is_front_page() ) {
+					// If it is a post or page, and we want to replace the site title, we want it to be a h1.
+					if ( aaron_get_meta( 'aaron_replace_title' ) ) {
+						if ( is_home() ) {
+							echo '<h1 class="site-title" itemprop="headline">' . get_the_title( get_option( 'page_for_posts' ) ) . '</h1>';
+						} else {
+							the_title( '<h1 class="site-title" itemprop="headline">', '</h1>' );
 						}
-					}else{
-						//But if it is a post or page, and we are keeping the site title, then we want it to be a paragraph. We also want a link back to the home page.
-						if (display_header_text() ) {?>
+					} else {
+						// But if it is a post or page, and we are keeping the site title, then we want it to be a paragraph. We also want a link back to the home page.
+						if ( display_header_text() ) {?>
 							<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 							<?php
 						}
 					}
 
-					if( !aaron_get_meta('aaron_hide_action_meta') ){
+					if ( ! aaron_get_meta( 'aaron_hide_action_meta' ) ) {
 						aaron_action();
 					}
 
-					if( !aaron_get_meta('aaron_hide_highlights_meta') ){
+					if ( ! aaron_get_meta( 'aaron_hide_highlights_meta' ) ) {
 						aaron_highlights();
 					}
 
-
-					if ( is_active_sidebar( 'sidebar-header' )  ) {
+					if ( is_active_sidebar( 'sidebar-header' ) ) {
 					?>
-					<div class="widget-area" role="complementary" aria-label="<?php _e( 'Complementary widget area', 'aaron' );?>">
-						<?php
-						dynamic_sidebar( 'sidebar-header' ); 
-						?>
+					<div class="widget-area" role="complementary" itemscope="itemscope" itemtype="http://schema.org/WPSideBar" aria-label="<?php esc_attr_e( 'Complementary widget area', 'aaron' );?>">
+						<?php dynamic_sidebar( 'sidebar-header' ); ?>
 					</div><!-- #header widget -->
 					<?php
 					}
 
-				if( !aaron_get_meta('aaron_hide_tagline') ){
-						if (display_header_text() && get_bloginfo('description') <> '') {
+					if ( ! aaron_get_meta( 'aaron_hide_tagline' ) ) {
+						if ( display_header_text() && get_bloginfo( 'description' ) ) {
 						?>
-							<div class="site-description"><?php bloginfo( 'description' ); ?></div>
+							<div class="site-description" itemprop="description"><?php bloginfo( 'description' ); ?></div>
 						<?php
 						}
 					}
-
-				}else{
-					//If it's not a post or page combined with a header, show the site title in a h1, without a link.
-					if (display_header_text() ) {	
-						echo '<h1 class="site-title">' . get_bloginfo( 'name' ) . '</h1>';
-					}else{
-						//If there is no visible site title, make sure there is still a h1 for screen reader
-						echo '<h1 class="screen-reader-text">' . get_bloginfo( 'name' ). '</h1>';
+				} else {
+					// If it's not a post or page combined with a header, show the site title in a h1, without a link.
+					if ( display_header_text() ) {
+						echo '<h1 class="site-title" itemprop="headline">' . get_bloginfo( 'name' ) . '</h1>';
+					} else {
+						// If there is no visible site title, make sure there is still a h1 for screen reader.
+						echo '<h1 class="screen-reader-text">' . get_bloginfo( 'name' ) . '</h1>';
 					}
 
-					aaron_action();		
-						
+					aaron_action();
+
 					aaron_highlights();
 
 					if ( is_active_sidebar( 'sidebar-header' )  ) {
 					?>
-					<div class="widget-area" role="complementary">
-						<?php
-						dynamic_sidebar( 'sidebar-header' ); 
-						?>
+					<div class="widget-area" role="complementary" itemscope="itemscope" itemtype="http://schema.org/WPSideBar" aria-label="<?php esc_attr_e( 'Complementary widget area', 'aaron' );?>">
+						<?php dynamic_sidebar( 'sidebar-header' ); ?>
 					</div><!-- #header widget -->
 					<?php
 					}
-				
-					if (display_header_text() && get_bloginfo('description') <> '') {
+
+					if ( display_header_text() && get_bloginfo( 'description' ) ) {
 					?>
-						<div class="site-description"><?php bloginfo( 'description' ); ?></div>
+						<div class="site-description" itemprop="description"><?php bloginfo( 'description' ); ?></div>
 					<?php
 					}
 				}
@@ -114,4 +110,4 @@
 			</header><!-- #masthead -->
 	<?php } ?>
 	
-	<div id="content" class="site-content">
+<div id="content" class="site-content">

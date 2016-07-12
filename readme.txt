@@ -1,6 +1,6 @@
 === Aaron ===
 Contributors: Poena
-Tags: light, white, threaded-comments, custom-menu, sticky-post, translation-ready, editor-style, two-columns, featured-images, responsive-layout, accessibility-ready, custom-header
+Tags: threaded-comments, custom-menu, sticky-post, editor-style, translation-ready, rtl-language-support, two-columns, one-column, right-sidebar, featured-images, featured-image-header, accessibility-ready, custom-header, custom-logo
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -8,18 +8,36 @@ Copyright 2015-2016 Carolina Nymark
 
 = Description ==
 
-Aaron is a responsive, accessibility-ready multi-purpose theme. Features include Call to action and frontpage Highlights that will grab your visitors attention and help you feature different parts of your website. The theme has two optional menus (including a social menu) and two widget areas that will hold any number of widgets. Want to run Aaron on a company website rather than a blog? No problem, just hide the meta, the sidebars, and turn off your comments. We recommend that you install the Jetpack plugin to make full use of supported features like logos, featured content, contact forms, social sharing and favicon. To create a portfolio, install Jetpack and create your projects, all the templates are already shipped with the theme. Aaron also works well with Woocommerce and BBpress.
+Description: Aaron is a responsive, accessibility-ready multi-purpose theme.
+Features include Call to action and front page Highlights that will grab your visitors attention and help you feature different parts of your website. T
+The theme has two optional menus (including a social menu), logo upload, six page templates and three widget areas that will hold any number of widgets. 
+Want to run Aaron on a company website rather than a blog? No problem, just hide the meta, the sidebars, and turn off your comments. 
+I recommend that you install the Jetpack plugin to make full use of supported features like Testimonials and social sharing. 
+To create a portfolio, install Jetpack and create your projects, all the templates are already shipped with the theme.
+Aaron also works well with Woocommerce and bbPress. 
 If you have any questions, accessibility issues or feature requests for this theme, please visit http://wptema.se/Aaron.
-
 
 == Installation ==
 1. Unzip `aaron.zip` to the `/wp-content/themes/` directory
 2. Activate the theme through the 'Appearance' menu in WordPress
 
-
 Please note that changing the colors of the theme can affect accessibility.
 
 == Change log ==
+Version 2.7, 2016-07-12
+Added a page template without a sidebar.
+Moved the Call to action from a customizer panel to a customizer section.
+Updated the documentation.
+Updated the theme tags.
+Updated microdata.
+General code improvements. Replaced query_posts with WP_Query.
+Moved jetpack theme support from functions.php to jetpack.php.
+Removed the language files.
+Added an option where you can limit the visibility of the featured images.
+Added an option to unstick the fixed header menu.
+Added an option to display the post meta below the post content.
+Added support for WordPress custom logo, removed support for the old jetpack site logo.
+
 Version 2.6, 2016-02-07
 Made the image and icons in the Highlights click able if there is a link.
 Added an option to the customizer where you can change the width of the main content. 

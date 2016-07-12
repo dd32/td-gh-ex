@@ -1,23 +1,19 @@
 <?php
 /**
- * aaron Post Meta
+ * Aaron Post Meta
  *
  * @package aaron
  */
 
 /**
  * Allows the user to display the header on individual posts or pages.
- */
-
-/**
  * Thanks to http://jeremyhixon.com/tool/wordpress-meta-box-generator/
  */
-
 function aaron_get_meta( $value ) {
-	if( is_home() ){
+	if ( is_home() ) {
 		$postid = get_option('page_for_posts');
-	}else{
-		$postid =get_the_ID();
+	} else {
+		$postid = get_the_ID();
 	}
 
 	$field = get_post_meta( $postid, $value, true );
@@ -28,14 +24,13 @@ function aaron_get_meta( $value ) {
 	}
 }
 
-
 function aaron_add_meta_boxes() {
 	$screens = array( 'post', 'page' );
 
 	foreach ( $screens as $screen ) {
 		add_meta_box(
 			'header_settings',
-			__( 'Individual Header Settings', 'aaron' ),
+			__( 'Individual header and image settings', 'aaron' ),
 			'aaron_meta_form',
 			$screen
 		);
@@ -43,8 +38,10 @@ function aaron_add_meta_boxes() {
 }
 add_action( 'add_meta_boxes', 'aaron_add_meta_boxes' );
 
-
-function aaron_meta_form( $post) {
+/**
+ * The form in the post meta section.
+*/
+function aaron_meta_form( $post ) {
 	wp_nonce_field( '_header_settings_nonce', 'aaaron_meta_nonce' ); ?>
 	<p>
 		<input type="checkbox" name="aaron_show_header" id="aaron_show_header" value="show-header" <?php echo ( aaron_get_meta( 'aaron_show_header' ) === 'show-header' ) ? 'checked' : ''; ?>>
@@ -70,12 +67,16 @@ function aaron_meta_form( $post) {
 		<input type="checkbox" name="aaron_replace_title" id="aaron_replace_title" value="replace_title" <?php echo ( aaron_get_meta( 'aaron_replace_title' ) === 'replace_title' ) ? 'checked' : ''; ?>>
 		<label for="aaron_replace_title"><?php esc_html_e( 'Replace the site title in the header with your post or page title.', 'aaron' ); ?></label>	
 	</p>
+	<br>
+	<p>
+		<input type="checkbox" name="aaron_hide_image" id="aaron_hide_image" value="hide_image" <?php echo ( aaron_get_meta( 'aaron_hide_image' ) === 'hide_image' ) ? 'checked' : ''; ?>>
+		<label for="aaron_hide_image"><?php esc_html_e( 'Do not show the featured image in single post view, only on the blog listings and archives.', 'aaron' ); ?></label>	
+	</p>
 	<?php
 }
 
 
 function aaron_header_settings_save( $post_id ) {
-
 	// If this is an autosave, our form has not been submitted, so we don't want to do anything.
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
 
@@ -83,7 +84,6 @@ function aaron_header_settings_save( $post_id ) {
 	if ( ! isset( $_POST['aaaron_meta_nonce'] ) || ! wp_verify_nonce( $_POST['aaaron_meta_nonce'], '_header_settings_nonce' ) ) return;
 
 	// Check the user's permissions.
-
 	if ( isset( $_POST['post_type'] ) && 'page' == $_POST['post_type'] ) {
 		if ( ! current_user_can( 'edit_page', $post_id ) ) {
 			return;
@@ -94,42 +94,52 @@ function aaron_header_settings_save( $post_id ) {
 		}
 	}
 
-	/* OK, it's safe for us to save the data now. */
-	//Show header
-	if ( isset( $_POST['aaron_show_header'] ) ) //The box is checked, sanitize it
+	// Show header.
+	if ( isset( $_POST['aaron_show_header'] ) ) {
 		update_post_meta( $post_id, 'aaron_show_header', esc_attr( $_POST['aaron_show_header'] ) );
-	else
+	} else {
 		update_post_meta( $post_id, 'aaron_show_header', null );
-
-	//Use featured Image
-	if ( isset( $_POST['aaron_featured_image_header'] ) ) //The box is checked, sanitize it
+	}
+	// Use featured Image.
+	if ( isset( $_POST['aaron_featured_image_header'] ) ) {
 		update_post_meta( $post_id, 'aaron_featured_image_header', esc_attr( $_POST['aaron_featured_image_header'] ) );
-	else
+	} else {
 		update_post_meta( $post_id, 'aaron_featured_image_header', null );
-
-	//Hide Call to Action
-	if ( isset( $_POST['aaron_hide_action_meta'] ) ) //The box is checked, sanitize it
+	}
+	// Hide Call to Action.
+	if ( isset( $_POST['aaron_hide_action_meta'] ) ) {
 		update_post_meta( $post_id, 'aaron_hide_action_meta', esc_attr( $_POST['aaron_hide_action_meta'] ) );
-	else
+	} else {
 		update_post_meta( $post_id, 'aaron_hide_action_meta', null );
-	
-	//Hide Highlights
-	if ( isset( $_POST['aaron_hide_highlights_meta'] ) ) //The box is checked, sanitize it
+	}
+
+	// Hide Highlights.
+	if ( isset( $_POST['aaron_hide_highlights_meta'] ) ) {
 		update_post_meta( $post_id, 'aaron_hide_highlights_meta', esc_attr( $_POST['aaron_hide_highlights_meta'] ) );
-	else
+	} else {
 		update_post_meta( $post_id, 'aaron_hide_highlights_meta', null );
+	}
 
-	//Hide Tagline
-	if ( isset( $_POST['aaron_hide_tagline'] ) ) //The box is checked, sanitize it
+	// Hide Tagline.
+	if ( isset( $_POST['aaron_hide_tagline'] ) ) {
 		update_post_meta( $post_id, 'aaron_hide_tagline', esc_attr( $_POST['aaron_hide_tagline'] ) );
-	else
+	} else {
 		update_post_meta( $post_id, 'aaron_hide_tagline', null );
+	}
 
-	//Replace Site title
-	if ( isset( $_POST['aaron_replace_title'] ) ) //The box is checked, sanitize it
+	// Replace Site title.
+	if ( isset( $_POST['aaron_replace_title'] ) ) {
 		update_post_meta( $post_id, 'aaron_replace_title', esc_attr( $_POST['aaron_replace_title'] ) );
-	else
+	} else {
 		update_post_meta( $post_id, 'aaron_replace_title', null );
+	}
+
+	// Hide the featured image.
+	if ( isset( $_POST['aaron_hide_image'] ) ) {
+		update_post_meta( $post_id, 'aaron_hide_image', esc_attr( $_POST['aaron_hide_image'] ) );
+	} else {
+		update_post_meta( $post_id, 'aaron_hide_image', null );
+	}
 
 }
 add_action( 'save_post', 'aaron_header_settings_save' );

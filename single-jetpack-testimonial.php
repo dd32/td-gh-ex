@@ -1,6 +1,6 @@
 <?php
 /**
- * The Template for displaying jetpack testimonials
+ * The Template for displaying jetpack testimonials.
  *
  * @package aaron
  */
@@ -14,9 +14,10 @@ get_header(); ?>
 
 			<?php get_template_part( 'content', 'testimonial-single' ); ?>
 
-		<?php endwhile; // end of the loop. ?>
+		<?php endwhile; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 	
-<?php get_footer(); ?>
+<?php
+get_footer();

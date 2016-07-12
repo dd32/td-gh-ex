@@ -4,26 +4,27 @@
  *
  * @package aaron
  */
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php 
-		if ( ! aaron_get_meta( 'aaron_replace_title' ) ){
-			echo '<header class="entry-header">';
-				the_title( '<h2 class="entry-title">', '</h2>' ); 
-			echo '</header><!-- .entry-header -->';
-			}
-		?>
+	<?php
+	if ( ! aaron_get_meta( 'aaron_replace_title' ) ) {
+		echo '<header class="entry-header">';
+			the_title( '<h2 class="entry-title">', '</h2>' );
+		echo '</header><!-- .entry-header -->';
+	}
+	?>
 	<div class="entry-content">
-		<?php 
-		if( !aaron_get_meta( 'aaron_show_header' ) || !aaron_get_meta( 'aaron_featured_image_header' ) ){
-			if ( has_post_thumbnail()){
+		<?php
+		if ( ! aaron_get_meta( 'aaron_show_header' ) || ! aaron_get_meta( 'aaron_featured_image_header' ) ) {
+			if ( has_post_thumbnail() ) {
 				the_post_thumbnail();
 			}
 		}
-			
-		the_content(); 
-		
+
+		the_content();
+
 		wp_link_pages( array(
 			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'aaron' ),
 			'after'  => '</div>',
