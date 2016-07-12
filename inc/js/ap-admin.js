@@ -9,17 +9,6 @@ jQuery(document).ready(function($) {
 	    return false;
   });
 
-
-  /*Sticky user note  */
-     $('#accordion-panel-general_setting').prepend(
-         '<div class="user_sticky_note">'+
-         '<span class="sticky_info_row"><a class="button" href="http://demo.accesspressthemes.com/accesspress-store/" target="_blank">Live Demo</a>'+
-         '<span class="sticky_info_row"><a class="button" href="http://doc.accesspressthemes.com/accespress-store-doc/" target="_blank">Documentation</a></span>'+
-         '<span class="sticky_info_row"><a class="button" href="https://accesspressthemes.com/support/forum/themes/free-themes/theme-accesspress-store/" target="_blnak">Support Forum</a></span>'+
-         '<span class="sticky_info_row"><a class="button" href="support@accesspressthemes.com">support@accesspressthemes.com<a/></span>'+
-         '</div>'
-         );  
-    
     $('.switch_options').each(function() {
         //This object
         var obj = $(this);

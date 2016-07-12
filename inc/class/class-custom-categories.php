@@ -1,5 +1,6 @@
 <?php
 if (class_exists('WP_Customize_Control')) {
+    
     class WP_Category_Checkboxes_Control extends WP_Customize_Control {
 
         public $type = 'category-checkboxes';

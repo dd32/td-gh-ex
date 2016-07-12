@@ -48,6 +48,11 @@ Images
 
 == Changelog ==
 
+= 2.0.9 =
+
+** Change the customizer promo and demo link.
+** Miner design issue fixed.
+
 = 2.0.8 =
 
 ** Compatible with WPML.

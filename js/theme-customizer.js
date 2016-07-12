@@ -1,10 +1,3 @@
-jQuery(window).load(function() {
-
-    var upgrade_notice = '<a class="upgrade-pro" target="_blank" href="https://accesspressthemes.com/wordpress-themes/accesspress-store-pro/">UPGRADE TO ACCESSPRESS STORE PRO</a>';
-    upgrade_notice += '<a class="upgrade-pro" target="_blank" href="http://accesspressthemes.com/theme-demos/?theme=accesspress-store-pro">ACCESSPRESS STORE PRO DEMO</a>';
-    jQuery('#customize-info .preview-notice').append(upgrade_notice);
-});
-
 // Holds the status of whether or not the rest of the code should be run
 var cstmzr_multicat_js_run = true;
  
