@@ -3,8 +3,8 @@ Beyond Expectations WordPress Theme
 Contributor: benlumia007
 Tags: custom-background, custom-header, right-sidebar
 Requres at least: 4.4
-Tested up to: 4.4.4
-Stable tag: 0.0.1
+Tested up to: 4.6
+Stable tag: 0.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,27 +26,24 @@ Customizer
 2. List of different types that you can modify such as
    - Site Title Tagline
       - Hide Display Header Text (this will hide the entire header with header text)
-3. Colors
-   - Header Text Color
-   - Background Color
-   - Link Color
-   - Body Color
+3. Mobile Menu
+   - The Mobile Menu is slightly different from other themes. I have created a mobile menu that is
+     at the bottom left corner that helps users to navigation easier. The reason why is that 90% of
+     users when using their device, their hands are always at the bottom of the screen which kind of
+     makes the mobile menu more sense to have it at the bottom left corner. The Menu itself when is not
+     set, the Site Title and Tagline will move to the center, if set, the Site Title and Tagline will move
+     to the left while the menu is at the right side.
 4. Header Image
    - Add Header Image
    - Remove Header Image (When removing a header image, the default image will display).
-5. Background Image
-   - Add a Background Image.
-6. Widgets
-    - Three different types of widgets for post, content, and custom sidebar.
-7. Static Front Page
+5. Static Front Page
    - Front Page
    - Blog
 
 
 Description
 ================================================================================================
-Beyond Expectations is a responsive WordPress theme with many features such as custom header, custom menu, 
-feature images and many more..
+Beyond Expectations is a responsive WordPress theme.
 
 
 Frequently Asked Questions
@@ -56,6 +53,33 @@ Not Available At the Moment
 
 Changelog
 ================================================================================================
+Version: 0.1.2
+Minor Changes
+
+Version: 0.1.1
+Updated and Fixed issues
+
+Version: 0.1.0
+Minor Changes by Reviewer
+
+Version: 0.0.9
+Minor Changes
+
+Version: 0.0.8
+Forgot to add code 
+
+Version: 0.0.7 
+Minor Changes
+
+Version: 0.0.6
+CSS breaking (fixed)
+
+Version: 0.0.5
+Minor Changes
+
+Version: 0.0.4
+Minor Changes
+
 Version: 0.0.3
 Readjust container width
 Change layout to fit what it was supposed to be. 
@@ -70,7 +94,6 @@ Initial Release
 
 Upgrade Notice
 ================================================================================================
-Not Available At the Moment
 
 
 Resources

@@ -11,7 +11,7 @@ the extra functions and features.
 @package        Beyond Expectations WordPress Theme
 @copyright      Copyright (C) 2016. Benjamin Lu
 @license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
-@author         Benjamin Lu (http://ninjablume.com/contact/
+@author         Benjamin Lu (http://lumiathemes.com/)
 ================================================================================================
 */
 
@@ -19,102 +19,143 @@ the extra functions and features.
 ================================================================================================
 Table of Content
 ================================================================================================
-1.0 - Content Width
-2.0 - Required Files
-3.0 - Enqueue Styles and Scripts
-4.0 - Main Theme Setup
-5.0 - Filters
+ 1.0 - Content Width
+ 2.0 - Enqueue Styles and Scripts
+ 3.0 - Theme Setup
+ 4.0 - Register Sidebars
+ 5.0 - Required Files
 ================================================================================================
 */
 
 /*
 ================================================================================================
-1.0 - Content Width
+ 1.0 - Content Width
 ================================================================================================
 */
-if (!function_exists('beyond_expectations_content_width')) {
-    function beyond_expectations_content_width() {
-        $GLOBALS['content_width'] = apply_filters('beyond_expectations_content_width', 800);
-    }
-    add_action('after_setup_theme', 'beyond_expectations_content_width', 0);
+function beyond_expectations_content_width_setup() {
+    $GLOBALS['content_width'] = apply_filters('beyond_expectations_content_width_setup', 840);
 }
+add_action('after_setup_theme', 'beyond_expectations_content_width_setup', 0);
 
 /*
 ================================================================================================
-2.0 - Required Files
+ 2.0 - Enqueue Styles and Scripts
 ================================================================================================
 */
-require_once(get_template_directory() . '/includes/template-tags.php');
-require_once(get_template_directory() . '/includes/custom-header.php');
-/*
-================================================================================================
-3.0 - Enqueue Styles and Scripts
-================================================================================================
-*/
-if (!function_exists('beyond_expectations_scripts_setup')) {
-    function beyond_expectations_scripts_setup() {
-        wp_enqueue_style('beyond-expectations-style', get_stylesheet_uri());
-        
-        wp_enqueue_style('beyond-expectations-ubuntu-font', '//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic');
-        
-        wp_enqueue_style('beyond-expectations-font-awesome', get_template_directory_uri() . '/extras/font-awesome/css/font-awesome.css', '01012016', true);
-        wp_enqueue_script('beyond-expectations-hide-search', get_template_directory_uri() . '/js/hide-search.js', array('jquery'), '04062015', true);
-        wp_enqueue_script('beyond-expectations-navigation-js', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '04062015', true);
-        
-        if (is_singular() && comments_open() && get_option('thread_comments'))
-                wp_enqueue_script( 'comment-reply' );
-    }
-    add_action('wp_enqueue_scripts', 'beyond_expectations_scripts_setup');
-}
-
-/*
-================================================================================================
-4.0 - Main Theme Setup
-================================================================================================
-*/
-if (!function_exists('beyond_expectations_theme_setup')) {
-    function beyond_expectations_theme_setup() {
-        // Load Text Domain
-        load_theme_textdomain('beyond-expectations');
-        
-        // Enable HTML5 Support for Beyond Expectations
-        add_theme_support('html5', array('search-form', 'caption'));
-        
-        // Enable Title Tag for Beyond Expectations
-        add_theme_support('title-tag');
-        
-        // Enable Automatic Feed Links for Beyond Expectations
-        add_theme_support('automatic-feed-links');
+function beyond_expectations_enqueue_scripts_setup() {
+    // Enable and activate the main stylesheet for Beyond Expectations.
+    wp_enqueue_style('beyond-expectations-style', get_stylesheet_uri());
     
-        // Enable Custom Background and Image
-        $args = array(
-            'default-color' => 'ffffff',
-        );
-        add_theme_support('custom-background', $args);
-        
-        // Enable Featured Image
-        add_theme_support('post-thumbnails');
-        add_image_size('beyond-expectations-small-thumbnail', 180, 120, true);
-        add_image_size('beyond-expectations-large-thumbnail', 800, 200, true);
-        
-        // Enable Primary and Social Navigation for Beyond Expectations
-        register_nav_menus(array(
-            'primary-navigation'    => esc_html__('Primary Navigation', 'beyond-expectations'),
-            'social-navigation'     => esc_html__('Social Navigation', 'beyond-expectations'),
-        ));
+    wp_enqueue_style('google-font', get_template_directory_uri() . '/extras/fonts/custom-fonts.css', '20160601', true);
+    
+    // Enable and Activate Font Awesome for Beyond Expectations.
+    wp_enqueue_style('font-awesome', get_template_directory_uri() . '/extras/font-awesome/css/font-awesome.css', '20160601', true);
+    
+    wp_enqueue_script('beyond-expectations-hide-search', get_template_directory_uri() . '/js/hide-search.js', array('jquery'), '04062015', true);
+    
+   // Enable and Activate Navigation JavaScript for Beyond Expectations.
+    wp_enqueue_script('beyond-expectations-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20160601', true);
+	wp_localize_script('beyond-expectations-navigation', 'screenReaderText', array(
+		'expand'   => '<span class="screen-reader-text">' . __('expand child menu', 'beyond-expectations') . '</span>',
+		'collapse' => '<span class="screen-reader-text">' . __('collapse child menu', 'beyond-expectations') . '</span>',
+	));
+    
+    if (is_singular() && comments_open() && get_option('thread_comments')) {
+        wp_enqueue_script('comment-reply');
     }
-    add_action('after_setup_theme', 'beyond_expectations_theme_setup');
 }
+add_action('wp_enqueue_scripts', 'beyond_expectations_enqueue_scripts_setup');
 
 /*
 ================================================================================================
-5.0 - Filters
+ 3.0 - Theme Setup
 ================================================================================================
 */
-function beyond_expectations_the_title($title) {    
-    if (!$title) {
-        return __('No Title', 'beyond-expectations');
-    }
-    return $title;
+function beyond_expectations_theme_setup() {
+    // Enable and activate add theme support (title tag) for Beyond Expectations.
+    add_theme_support('title-tag');
+    
+    // Enable and activate add theme support (automatica feed links) for Beyond Expectations.
+    add_theme_support('automatic-feed-links');
+    
+    // Enable and activate add theme support (html5) for Beyond Expectations.
+    add_theme_support('html5', array(
+        'comment-list',
+        'comment-form',
+        'search-form', 
+        'caption'
+    ));
+    
+    register_nav_menus(array(
+        'primary-navigation' => esc_html__('Primary Navigation', 'beyond-expectations'),
+        'social-navigation' => esc_html__('Social Navigation', 'beyond-expectations'),
+    ));
 }
-add_filter('the_title', 'beyond_expectations_the_title');
+add_action('after_setup_theme', 'beyond_expectations_theme_setup');
+
+/*
+================================================================================================
+ 4.0 - Register Sidebars
+================================================================================================
+*/
+function beyond_expectations_register_sidebars_setup() {
+    register_sidebar(array(
+        'name'          => __('Primary Sidebar', 'beyond-expectations'),
+        'id'            => 'primary',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</aside>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ));    
+
+    register_sidebar(array(
+        'name'          => __('Secondary Sidebar', 'beyond-expectations'),
+        'id'            => 'secondary',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</aside>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ));  
+    
+    register_sidebar(array(
+        'name'          => __('Custom Sidebar', 'beyond-expectations'),
+        'id'            => 'custom',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</aside>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    )); 
+}
+add_action('widgets_init', 'beyond_expectations_register_sidebars_setup');
+
+/*
+================================================================================================
+ 5.0 - Required Files
+================================================================================================
+*/
+require_once(get_template_directory() . '/includes/custom-header.php');
+require_once(get_template_directory() . '/includes/template-tags.php');
+
+/*
+================================================================================================
+5.0 - Social Navigation
+================================================================================================
+*/
+if (!function_exists('beyond_expectations_social_navigation_setup')) {
+    function beyond_expectations_social_navigation_setup() {
+        if(has_nav_menu('social-navigation')){
+            wp_nav_menu(array(
+                'theme_location'    => 'social-navigation',
+                'container'         => 'div',
+                'container_id'      => 'menu-social',
+                'container_class'   => 'menu-social',
+                'menu_id'           => 'menu-social-items',
+                'menu_class'        => 'menu-items',
+                'depth'             => 1,
+                'link_before'       => '<span class="screen-reader-text">',
+                'link_after'        => '</span>',
+                'fallback_cb'       => '',
+            ));
+        };
+    }
+}

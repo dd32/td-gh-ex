@@ -1,18 +1,15 @@
 <?php
 /*
 ================================================================================================
-Beyond Expectations - content-page.php
+Beyond Expectations - content.php
 ================================================================================================
-This is the most generic template file in a WordPress theme and is one of the two required files 
-for a theme (the other page.php). This file will display the page content that automatically grabs
-from the single.php in a loop and displays the content here. 
- 
+This is the most generic template file in a WordPress theme and is one required files to display
+content. This content.php is the main content that will be displayed.
 
-@package        Beyond Expectations WordPress Theme
-@copyright      Copyright (C) 2015. Benjamin Lu
+@package        Splendid Portfolio WordPress Theme
+@copyright      Copyright (C) 2016. Benjamin Lu
 @license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
-@author         Benjamin Lu (http://ninjablume.com/contact/
-@since          0.0.1
+@author         Benjamin Lu (http://lumiathemes.com/)
 ================================================================================================
 */
 ?>
@@ -20,9 +17,12 @@ from the single.php in a loop and displays the content here.
     <header class="entry-header">
         <?php the_title(sprintf('<h1 class="entry-title"><a href="%s">', esc_url(get_permalink())), '</a></h1>'); ?> 
     </header>
-    <div class="entry-content">
+    <div class="entry-content full-width">
         <?php the_content(); ?>
         <?php wp_link_pages(); ?>
+        <div class="entry-footer">
+            <?php beyond_expectations_entry_taxonomies(); ?>
+        </div>
     </div>
-    <?php comments_template(); ?>
 </article>
+<?php comments_template(); ?>

@@ -1,6 +1,6 @@
 /*
 ================================================================================================
-Beyond Expectations - navigation.js
+Beyond Expectations - hide-search.js
 ================================================================================================
 This is the most generic template file in a WordPress theme and is one of required files to hide
 and show the Search Toggle Navigation.

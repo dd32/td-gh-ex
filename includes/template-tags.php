@@ -20,8 +20,8 @@ and features for this theme.
 ================================================================================================
 Table of Content
 ================================================================================================
-1.0 - Timestamp
-2.0 - Entry Comments and Taxonomies
+1.0 - Entry Posted On
+2.0 - Entry Taxonomies
 3.0 - Custom Widget Sidebars
 4.0 - Pagination Navigation
 5.0 - Social Navigation
@@ -33,18 +33,27 @@ Table of Content
 1.0 - Post Timestamp
 ================================================================================================
 */
-if (!function_exists('beyond_expectations_post_timestamp_author_setup')) {
-    function beyond_expectations_post_timestamp_author_setup() {
-        printf(('%2$s by %3$s'), 'meta-prep meta-prep-author', 
-        sprintf('<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
-            esc_url(get_permalink()),
-            esc_attr(get_the_time()),
-            get_the_date('F d, Y')),
-        sprintf('<a href="%1$s" title="%2$s">%3$s</a>',
-        esc_url(get_author_posts_url(get_the_author_meta('ID'))),
-        esc_attr(sprintf(__('View all posts by $s', 'beyond-expectations'), get_the_author())), 
-        get_the_author()
-        ));
+function beyond_expectations_entry_posted_on() {
+    $author_avatar_size = apply_filters('beyond_expectations_author_avatar_size', 100);
+    printf( '<span class="byline"><span class="author vcard">%1$s</span>',
+        get_avatar( get_the_author_meta( 'user_email' ), $author_avatar_size ) 
+    );
+
+    printf(('<span class="by-author"><b>%3$s</b></span><span class="published"><b>%2$s</b></span>'), 'meta-prep meta-prep-author', 
+    sprintf('<a href="%1$s" title="%2$s" rel="bookmark"><span class="entry-date">%3$s</span></a>',
+        esc_url(get_permalink()),
+        esc_attr(get_the_time()),
+        get_the_date('F d, Y')),
+    sprintf('<a href="%1$s" title="%2$s">%3$s</a>',
+    esc_url(get_author_posts_url(get_the_author_meta('ID'))),
+    esc_attr(sprintf(__('View all posts by %s', 'beyond-expectations'), get_the_author())), 
+    get_the_author()
+    ));
+
+    if ( !is_page() && !post_password_required() && (comments_open() || get_comments_number())) {
+        echo '<span class="comments-link"><b>';
+            comments_popup_link( sprintf( __( 'Leave a Comment', 'beyond-expectations')));
+        echo '</b></span>';
     }
 }
 
@@ -53,73 +62,23 @@ if (!function_exists('beyond_expectations_post_timestamp_author_setup')) {
 2.0 - Entry Comments and Taxonomies
 ================================================================================================
 */
-if (!function_exists('beyond_expectations_entry_meta')) {
-    function beyond_expectations_entry_meta() {   
-        if ( !is_page() && !post_password_required() && (comments_open() || get_comments_number())) {
-            echo '<span class="comments-link">';
-                comments_popup_link( sprintf( __( 'Leave a Comment', 'beyond-expectations')));
-            echo '</span>';
-        }
-    }
-}
+function beyond_expectations_entry_taxonomies() {
+    $cat_list = get_the_category_list(__(' | ', 'beyond-expectations'));
+    $tag_list = get_the_tag_list('', __(' | ', 'beyond-expectations'));
 
-if (!function_exists('beyond_expectations_entry_taxonomies')) {
-    function beyond_expectations_entry_taxonomies() {
-        $cat_list = get_the_category_list(__(' | ', 'beyond-expectations'));
-        $tag_list = get_the_tag_list('', __(' | ', 'beyond-expectations'));
-        
-        if ($cat_list) {
-            printf('<div class="cat-link"> %1$s <span class="cat-list"l>%2$s</span></div>',
-            __('<span class="screen-reader-text"><i class="fa fa-folder-open-o"></i> Posted In</span>', 'beyond-expectations'),  
-            $cat_list
-            );
-        }
-        
-        if ($tag_list) {
-            printf('<div class="tag-link">%1$s <span class="tag-list">%2$s</span></div>',
-            __('<span class="screen-reader-text"><i class="fa fa-tags"></i>Tagged</span>', 'beyond-expectations'),  
-            $tag_list 
-            );
-        }
+    if ($cat_list) {
+        printf('<div class="cat-link"> %1$s <span class="cat-list"l><b><i>%2$s</i></b></span></div>',
+        __('<i class="fa fa-folder-open-o"></i> Posted In', 'beyond-expectations'),  
+        $cat_list
+        );
     }
-}
 
-
-/*
-================================================================================================
-3.0 - Custom Widget Sidebars
-================================================================================================
-*/
-if (!function_exists('beyond_expectations_custom_widgets_init_setup')) {
-    function beyond_expectations_custom_widgets_init_setup() {
-        register_sidebar(array(
-            'name'          => __( 'Primary Sidebar', 'beyond-expectations' ),
-            'id'            => 'primary-sidebar',
-            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</aside>',
-            'before_title'  => '<h2 class="widget-title">',
-            'after_title'   => '</h2>',
-        ));
-        
-        register_sidebar(array(
-            'name'          => __( 'Secondary Sidebar', 'beyond-expectations' ),
-            'id'            => 'secondary-sidebar',
-            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</aside>',
-            'before_title'  => '<h2 class="widget-title">',
-            'after_title'   => '</h2>',
-        ));
-        
-        register_sidebar(array(
-            'name'          => __( 'Custom Sidebar', 'beyond-expectations' ),
-            'id'            => 'custom-sidebar',
-            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</aside>',
-            'before_title'  => '<h2 class="widget-title">',
-            'after_title'   => '</h2>',
-        ));
+    if ($tag_list) {
+        printf('<div class="tag-link">%1$s <span class="tag-list"><b><i>%2$s</i></b></span></div>',
+        __('<i class="fa fa-tags"></i> Tagged', 'beyond-expectations'),  
+        $tag_list 
+        );
     }
-    add_action('widgets_init', 'beyond_expectations_custom_widgets_init_setup');
 }
 
 

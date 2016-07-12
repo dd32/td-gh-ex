@@ -10,11 +10,10 @@ in the widget area in the customizer and widget area.
 @package        Beyond Expectations WordPress Theme
 @copyright      Copyright (C) 2016. Benjamin Lu
 @license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
-@author         Benjamin Lu (http://ninjablume.com/contact/
-@since          0.0.1
+@author         Benjamin Lu (http://lumiathemes.com/)
 ================================================================================================
 */
 ?>
-<div id="main-sidebar" class="widget-area">
-    <?php dynamic_sidebar('secondary-sidebar'); ?>
+<div id="widget-area" class="widget-area">
+    <?php dynamic_sidebar('secondary'); ?>
 </div>

@@ -10,20 +10,18 @@ section of this theme.
 @package        Beyond Expectations WordPress Theme
 @copyright      Copyright (C) 2016. Benjamin Lu
 @license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
-@author         Benjamin Lu (http://ninjablume.com/contact/
-@since          0.0.1
+@author         Benjamin Lu (http://lumiathemes.com/)
 ================================================================================================
 */
 ?>
+    </section>
+    <footer id="site-footer" class="site-footer">
+        <div id="site-info" class="site-info">
+                <div class="info-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
+                <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'beyond-expectations' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'beyond-expectations' ), 'WordPress' ); ?></a>
+                </div>
         </div>
-    </div>
-    <div id="main-footer" class="site-footer cf">
-        <div class="site-info">
-            <?php printf(esc_html__('Theme By: %1$s', 'beyond-expectations' ), 'Benjamin Lu'); ?><br />
-            <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'beyond-expectations' ) ); ?>"><?php printf( esc_html__( 'Proudly Powered By: %s', 'beyond-expectations' ), 'WordPress' ); ?></a>
-        </div>
-    </div>
+    </footer>
     <?php wp_footer(); ?>
 </body>
 </html>
-
