@@ -153,7 +153,7 @@
 			</div>
 			<div class="copyright">
 				<div class="container">
-					<p><span class="copyright-date"><?php _e( '&copy; Copyright', 'artwork-lite' ); ?><?php
+					<p><span class="copyright-date"><?php _e( '&copy; Copyright ', 'artwork-lite' ); ?><?php
 							$mp_artwork_dateObj = new DateTime;
 							$mp_artwork_year    = $mp_artwork_dateObj->format( "Y" );
 							echo $mp_artwork_year;

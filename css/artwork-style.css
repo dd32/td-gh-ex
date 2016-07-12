@@ -432,6 +432,10 @@ input[type="submit"].button-md {
   padding: 0.929em 2.500em;
 }
 
+button.mfp-close, button.mfp-arrow {
+  background: transparent;
+}
+
 blockquote {
   position: relative;
   padding: 2.375em 0 0.938em 3.938em;
@@ -731,6 +735,9 @@ button, input[type="button"], input[type="submit"] {
 .sf-menu ul a:hover {
   background: #2d2d2d;
 }
+.sf-menu ul li:last-child a {
+  border-bottom: medium none;
+}
 
 .sf-menu > li {
   float: left;
@@ -759,6 +766,34 @@ button, input[type="button"], input[type="submit"] {
 .sf-menu ul ul {
   top: 0;
   left: 100%;
+}
+
+.sf-arrows .sf-with-ul:after,
+.sf-arrows .sf-with-ul:before {
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+}
+
+.sf-arrows .sf-with-ul:after {
+  content: "\f107";
+  margin-left: 8px;
+}
+
+.sf-arrows ul .sf-with-ul:after {
+  content: "\f105";
+}
+
+.sf-arrows ul.toleft .sf-with-ul:after {
+  display: none;
+}
+
+.sf-arrows ul.toleft .sf-with-ul:before {
+  content: "\f104";
+  margin-right: 6px;
 }
 
 .mobile-menu {
@@ -823,6 +858,13 @@ button, input[type="button"], input[type="submit"] {
 
   .sf-menu ul a:hover {
     background: transparent;
+  }
+
+  .sf-arrows .sf-with-ul:after,
+  .sf-arrows .sf-with-ul:before,
+  .sf-arrows ul .sf-with-ul:after,
+  .sf-arrows ul.toleft .sf-with-ul:before {
+    content: '';
   }
 }
 @media (max-width: 480px) {
