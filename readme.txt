@@ -1,5 +1,5 @@
 ﻿Theme Name : Awaken
-Version    : 2.0.5
+Version    : 2.0.6
 Theme URL  : http://www.themezhut.com/themes/awaken
 Theme Documentation  : http://www.themezhut.com/awaken-theme-documentation
 License: GNU General Public License v2 or later
@@ -179,3 +179,6 @@ Removed unwanted file_exists check for admin-config.php.
 
 - Version 2.0.5
 Added a method to display sticky posts for the two featured posts that are just next to the slider.
+
+- Version 2.0.6
+Removed old theme filtering tags and added new tags.
