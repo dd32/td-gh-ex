@@ -14,8 +14,11 @@ function woocommerce_support() {
 if (class_exists('woocommerce')) {
 
   add_filter( 'woocommerce_enqueue_styles', '__return_false' );
-  // Disable WooCommerce Lightbox
-  update_option( 'woocommerce_enable_lightbox', false );
+  
+    // Disable WooCommerce Lightbox
+    if (get_option( 'woocommerce_enable_lightbox' ) == true ) {
+        update_option( 'woocommerce_enable_lightbox', false );
+    }
 
   // Makes the product finder plugin work.
   remove_action( 'template_redirect' , array( 'WooCommerce_Product_finder' , 'load_template' ) );
@@ -209,26 +212,28 @@ if ($woocommerce_loop['columns'] == '3'){
            // Get alt and fall back to title if no alt
           $alt_text = get_post_meta($image_id, '_wp_attachment_image_alt', true);
           if(empty($alt_text)) {$alt_text = get_the_title();}
-          ?> 
+            
+            ob_start();  ?> 
                 <img width="<?php echo esc_attr($productimgwidth);?>" height="<?php echo esc_attr($productimgheight);?>" 
                 src="<?php echo esc_url($image_product);?>"
                 <?php echo $img_srcset_output;?>
                 class="attachment-shop_catalog size-<?php echo esc_attr($productimgwidth.'x'.$productimgheight);?> wp-post-image" 
                 alt="<?php echo esc_attr($alt_text); ?>">
-        <?php } elseif ( woocommerce_placeholder_img_src() ) {
+            <?php 
+            echo apply_filters('post_thumbnail_html', ob_get_clean(), $post->ID);
+
+            } elseif ( woocommerce_placeholder_img_src() ) {
                  echo woocommerce_placeholder_img( 'shop_catalog' );
-        }  
-      } else { 
+            }  
+    } else { 
         echo '<div class="kad-woo-image-size">';
-        echo woocommerce_template_loop_product_thumbnail();
+            echo woocommerce_template_loop_product_thumbnail();
         echo '</div>';
-         }
-  }
+    }
+}
 
-  remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
+remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
 remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_product_link_close', 5 );
-
-remove_action( 'woocommerce_before_subcategory_title', 'woocommerce_subcategory_thumbnail', 10 );
 
 remove_action( 'woocommerce_shop_loop_subcategory_title', 'woocommerce_template_loop_category_title', 10 );
 add_action( 'woocommerce_shop_loop_subcategory_title', 'kt_woocommerce_template_loop_category_title', 10 );
@@ -266,3 +271,70 @@ function kt_woocommerce_template_loop_category_link_open( $category ) {
 function kt_woocommerce_template_loop_category_link_close() {
     echo '</a>';
 }
+
+/*
+*
+* WOO ARCHIVE CAT IMAGES
+*
+*/
+function kad_woo_archive_cat_image_output() {
+    remove_action( 'woocommerce_before_subcategory_title', 'woocommerce_subcategory_thumbnail', 10 );
+    add_action( 'woocommerce_before_subcategory_title', 'kad_woocommerce_subcategory_thumbnail', 10 );
+    function kad_woocommerce_subcategory_thumbnail($category) {
+        global $woocommerce_loop, $virtue;
+        
+        if ( empty( $woocommerce_loop['columns'] ) ) {
+            $woocommerce_loop['columns'] = apply_filters( 'loop_shop_columns', 4 );
+        }
+        $product_cat_column = $woocommerce_loop['columns'];
+
+        if ($product_cat_column == '3'){
+            $catimgwidth = 380;
+        } else {
+            $catimgwidth = 270;
+        }
+       if(isset($virtue['product_cat_img_ratio'])) {
+          $img_ratio = $virtue['product_cat_img_ratio'];
+        } else {
+          $img_ratio = 'widelandscape';
+        }
+
+        if($img_ratio == 'portrait') {
+                $tempcatimgheight = $catimgwidth * 1.35;
+                $catimgheight = floor($tempcatimgheight);
+        } else if($img_ratio == 'landscape') {
+                $tempcatimgheight = $catimgwidth / 1.35;
+                $catimgheight = floor($tempcatimgheight);
+        } else if($img_ratio == 'square') {
+                $catimgheight = $catimgwidth;
+        } else {
+                $tempcatimgheight = $catimgwidth / 2;
+                $catimgheight = floor($tempcatimgheight);
+        }
+        // OUTPUT 
+
+        if($img_ratio == 'off') {
+                woocommerce_subcategory_thumbnail($category);
+        } else {
+            $thumbnail_id = get_woocommerce_term_meta( $category->term_id, 'thumbnail_id', true  );
+            if ( $thumbnail_id ) {
+                $image_cat_src = wp_get_attachment_image_src( $thumbnail_id, 'full');
+                $image_cat_url = $image_cat_src[0];
+                $cat_image = aq_resize($image_cat_url, $catimgwidth, $catimgheight, true, false, false, $thumbnail_id);
+                if(empty($cat_image[0])) {$cat_image = array($image_cat_url,$image_cat_src[1],$image_cat_src[2]);} 
+                $img_srcset_output = kt_get_srcset_output( $catimgwidth, $catimgheight, $image_cat_url, $thumbnail_id);
+
+            } else {
+                $cat_image = array(virtue_img_placeholder_cat(),$catimgwidth,$catimgheight); 
+                $img_srcset_output = '';
+            }
+            if ( $cat_image[0] ) {
+                    echo '<div class="kt-cat-intrinsic" style="padding-bottom:'. ($cat_image[2]/$cat_image[1]) * 100 .'%;">';
+                    echo '<img src="' . esc_url($cat_image[0]) . '" width="'.esc_attr($cat_image[1]).'" height="'.esc_attr($cat_image[2]).'" alt="' . esc_attr($category->name) . '" '.$img_srcset_output.' />';
+                    echo '</div>';
+            }
+        }
+
+    }
+}
+add_action( 'init', 'kad_woo_archive_cat_image_output');

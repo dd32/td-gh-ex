@@ -157,9 +157,5 @@ else {
   // return the $classes array
   return $classes;
 }
-/**
- * $content_width is a global variable used by WordPress for max image upload sizes
- * and media embeds (in pixels).
- * Default: 940px is the default Bootstrap container width.
- */
-if (!isset($content_width)) { $content_width = 940; }
+
+if (!isset($content_width)) { $content_width = 1140; }

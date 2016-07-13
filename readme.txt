@@ -30,6 +30,13 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 2.7.4 | 13th July 2016 =
+* Update: Contact form Map API input. 
+* Update: Google plus icon.
+* Update: Content Single template.
+* Update: woo templates.
+* Fix: woo issue with quantity in cart when updated.
+
 = Version 2.7.3 | 16th June 2016 =
 * Update: woo files
 

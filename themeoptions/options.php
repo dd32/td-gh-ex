@@ -4,7 +4,16 @@ define( 'OPTIONS_PATH', get_template_directory_uri() . '/themeoptions/options/' 
 load_theme_textdomain('virtue', get_template_directory() . '/languages');
 $alt_stylesheet_path = apply_filters('kt_skin_style_path', LAYOUT_PATH);
 $alt_stylesheets = array(); 
-if ( is_dir($alt_stylesheet_path) ) {if ($alt_stylesheet_dir = opendir($alt_stylesheet_path) ) {while ( ($alt_stylesheet_file = readdir($alt_stylesheet_dir)) !== false ) {if(stristr($alt_stylesheet_file, ".css") !== false) {$alt_stylesheets[$alt_stylesheet_file] = $alt_stylesheet_file;}}}}
+if ( is_dir($alt_stylesheet_path) ) {
+    if ($alt_stylesheet_dir = opendir($alt_stylesheet_path) ) {
+        while ( ($alt_stylesheet_file = readdir($alt_stylesheet_dir)) !== false ) {
+            if(stristr($alt_stylesheet_file, ".css") !== false) {
+                $alt_stylesheets[$alt_stylesheet_file] = $alt_stylesheet_file;
+            }
+        }
+        closedir($alt_stylesheet_dir);
+    }
+}
 
 
 // BEGIN Config
@@ -1903,6 +1912,19 @@ Redux::setSection( $opt_name, array(
             'title' => __('Turn Off Theme Lightbox?', 'virtue'),
             "default" => 0,
             ),
+        array(
+            'id'=>'info_gmaps',
+            'type' => 'info',
+            'desc' => __('Theme Google Maps', 'virtue'),
+            ),
+        array(
+            'id'=>'google_map_api',
+            'type' => 'text',
+            'title' => __('Google Map API', 'virtue'),
+            'subtitle' => __('For best performance add your own API for google maps.', 'virtue'),
+            'description' =>'<a target="_blank" href="https://developers.google.com/maps/documentation/javascript/get-api-key">Get an API code Here</a>',
+            'default' => ''
+            ),  
         ),
     )
 );

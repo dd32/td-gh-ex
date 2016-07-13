@@ -209,6 +209,34 @@ jQuery(document).ready(function ($) {
 				}
 			});
 	    });
+	    //init Flexslider Thumb
+     	$('.kt-flexslider-thumb').each(function(){
+		 	var flex_speed = $(this).data('flex-speed'),
+			flex_animation = $(this).data('flex-animation'),
+			flex_animation_speed = $(this).data('flex-anim-speed'),
+			flex_auto = $(this).data('flex-auto');
+			$('#thumbnails').flexslider({
+              	animation: "slide",
+                controlNav: false,
+                animationLoop: false,
+                slideshow: false,       
+                itemWidth: 180,
+                itemMargin: 5,
+                asNavFor: '#flex'
+              });
+              $('#flex').flexslider({
+              animation: flex_animation,
+              controlNav: false,
+              animationLoop: false,
+              animationSpeed: flex_animation_speed,
+              slideshow: flex_auto,
+              slideshowSpeed: flex_speed,
+              sync: "#thumbnails",
+              before: function(slider) {
+                      slider.removeClass('loading');
+                    }  
+              });
+	    });
 		//init masonry
 		$('.init-masonry').each(function(){
 	    	var masonrycontainer = $(this),

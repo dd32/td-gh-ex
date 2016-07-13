@@ -19,11 +19,14 @@ function virtue_post_default_placeholder_override() {
   $custom_image = $virtue['post_summery_default_image']['url'];
   return $custom_image;
 }
-
-if (isset($virtue['post_summery_default_image']) && !empty($virtue['post_summery_default_image']['url'])) {
-add_filter('kadence_post_default_placeholder_image', 'virtue_post_default_placeholder_override');
-add_filter('kadence_post_default_widget_placeholder_image', 'virtue_post_default_placeholder_override');
+function virtue_post_default_placeholder_init() {
+  global $virtue;
+  if (isset($virtue['post_summery_default_image']) && !empty($virtue['post_summery_default_image']['url'])) {
+  add_filter('kadence_post_default_placeholder_image', 'virtue_post_default_placeholder_override');
+  add_filter('kadence_post_default_widget_placeholder_image', 'virtue_post_default_placeholder_override');
+  }
 }
+add_action('init', 'virtue_post_default_placeholder_init');
 
 //Page Navigation
 
@@ -90,6 +93,10 @@ if ( is_plugin_active('qtranslate/qtranslate.php') || is_plugin_active('mqtransl
     add_action('product_tag_add_form',   'qtrans_modifyTermFormFor');
     add_action('product_tag_edit_form',  'qtrans_modifyTermFormFor');
     add_filter('woocommerce_cart_item_name', 'qtrans_useCurrentLanguageIfNotFoundUseDefaultLanguage', 0);
+}
+add_filter( 'max_srcset_image_width','kt_srcset_max');
+function kt_srcset_max($string) {
+  return 2000;
 }
 
 function kt_get_srcset($width,$height,$url,$id) {
