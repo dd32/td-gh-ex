@@ -11,6 +11,6 @@
 			<?php endif; ?>
 			<?php cpotheme_edit(); ?>
 		</div>
-		<?php the_post_thumbnail('portfolio', array('title' => '')); ?>
+		<?php the_post_thumbnail('cpotheme-portfolio', array('title' => '')); ?>
 	</a>
 </div>

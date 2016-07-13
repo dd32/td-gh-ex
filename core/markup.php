@@ -403,7 +403,7 @@ if(!function_exists('cpotheme_postpage_image')){
 		if(has_post_thumbnail()){
 			if(!is_singular('post')){
 				echo '<a href="'.esc_url(get_permalink(get_the_ID())).'" title="'.sprintf(esc_attr__('Go to %s', 'affluent'), the_title_attribute('echo=0')).'" rel="bookmark">';
-				the_post_thumbnail('portfolio');
+				the_post_thumbnail('cpotheme-portfolio');
 				echo '</a>';
 			}else{
 				the_post_thumbnail();

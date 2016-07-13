@@ -16,7 +16,7 @@ if(!function_exists('cpotheme_setup')){
 		if(!defined('CPOTHEME_THUMBNAIL_HEIGHT')) define('CPOTHEME_THUMBNAIL_HEIGHT', '400');
 		
 		//Add custom image size
-		add_image_size('portfolio', apply_filters('cpotheme_thumbnail_width', CPOTHEME_THUMBNAIL_WIDTH), apply_filters('cpotheme_thumbnail_height', CPOTHEME_THUMBNAIL_HEIGHT), true);
+		add_image_size('cpotheme-portfolio', apply_filters('cpotheme_thumbnail_width', CPOTHEME_THUMBNAIL_WIDTH), apply_filters('cpotheme_thumbnail_height', CPOTHEME_THUMBNAIL_HEIGHT), true);
 		
 		//Initialize supported theme features
 		add_theme_support('title-tag');

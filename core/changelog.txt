@@ -1,3 +1,9 @@
+Version 4.3.10
+Feature - Added native logo functionality
+Tweaks - Changed slug of portfolio image sizes
+Tweaks - Corrected handles of scripts
+Tweaks - Escaped several functions for better sanitization
+
 Version 4.3.9
 Tweaks - Changed homepage section descriptions to single-line text fields
 Tweaks - Added conditional loading of custom content types
