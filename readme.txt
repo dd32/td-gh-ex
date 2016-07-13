@@ -53,7 +53,13 @@ Not Available At the Moment
 
 Changelog
 ================================================================================================
-Verion: 0.2.9
+Version: 0.3.1
+URL changes to secure connection under style.css
+
+Version: 0.3.0
+Small Changes
+
+Version: 0.2.9
 Added readme.txt
 Added more tags
 
@@ -139,6 +145,10 @@ Resources
 Screenshot
 Copyright and Licensed as CC0 
 By Ryan Schroeder (http://unsplash.com/post/82306482790/download-by-ryan-schroeder)
+
+Google Font
+Ubuntu 
+Dalton Maag (URL doesn't exist)
 
 Font Awesome by Dave Gandy - http://fontawesome.io
 Font Awesome licensed under SIL OFL 1.1 · Code licensed under MIT License
