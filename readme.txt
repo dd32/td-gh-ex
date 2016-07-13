@@ -32,6 +32,11 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
+= 1.4.0 | 13th July 2016 = 
+* Update: Contact form Map API input. 
+* Update: Google plus icon.
+* Fix: woo issue with quantity in cart when updated.
+
 = 1.3.9 | 16th June 2016 = 
 * Update: Woo template
 * Update: RTL support.

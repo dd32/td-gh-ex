@@ -4,7 +4,16 @@ load_theme_textdomain('pinnacle', get_template_directory() . '/languages');
 define( 'OPTIONS_PATH', get_template_directory_uri() . '/themeoptions/options_assets/' );
 $alt_stylesheet_path = LAYOUT_PATH;
 $alt_stylesheets = array(); 
-if ( is_dir($alt_stylesheet_path) ) {if ($alt_stylesheet_dir = opendir($alt_stylesheet_path) ) {while ( ($alt_stylesheet_file = readdir($alt_stylesheet_dir)) !== false ) {if(stristr($alt_stylesheet_file, ".css") !== false) {$alt_stylesheets[$alt_stylesheet_file] = $alt_stylesheet_file;}}}}
+if ( is_dir($alt_stylesheet_path) ) {
+    if ($alt_stylesheet_dir = opendir($alt_stylesheet_path) ) {
+        while ( ($alt_stylesheet_file = readdir($alt_stylesheet_dir)) !== false ) {
+            if(stristr($alt_stylesheet_file, ".css") !== false) {
+                $alt_stylesheets[$alt_stylesheet_file] = $alt_stylesheet_file;
+            }
+        }
+        closedir($alt_stylesheet_dir);
+    }
+}
 
 // BEGIN Config
 
@@ -2474,6 +2483,19 @@ Redux::setSection( $opt_name, array(
             'subtitle' => __('You must have virtue/pinnacle toolkit installed to use.', 'pinnacle'),
             "default" => 1,
             ),
+        array(
+            'id'=>'info_gmaps',
+            'type' => 'info',
+            'desc' => __('Theme Google Maps', 'pinnacle'),
+            ),
+        array(
+            'id'=>'google_map_api',
+            'type' => 'text',
+            'title' => __('Google Map API', 'pinnacle'),
+            'subtitle' => __('For best performance add your own API for google maps.', 'pinnacle'),
+            'description' =>'<a target="_blank" href="https://developers.google.com/maps/documentation/javascript/get-api-key">Get an API code Here</a>',
+            'default' => ''
+            ),  
         ),
     )
     );
