@@ -86,6 +86,14 @@ function beyond_expectations_theme_setup() {
         'caption'
     ));
     
+    // 
+    add_theme_support('custom-background', array(
+        'default'    => 'ffffff',
+    ));
+    
+    add_theme_support('post-thumbnails');
+    add_theme_support('beyond-expectations-banner', 840, 260, true);
+    
     register_nav_menus(array(
         'primary-navigation' => esc_html__('Primary Navigation', 'beyond-expectations'),
         'social-navigation' => esc_html__('Social Navigation', 'beyond-expectations'),
