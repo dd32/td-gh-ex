@@ -43,6 +43,9 @@ http://pixabay.com/static/uploads/photo/2010/12/20/16/02/child-3853_640.jpg
 
 == Change Log ==
 
+v. 1.2.2
+ * Fix search page issue
+
 v. 1.2.1
  * Change Pro theme url
 

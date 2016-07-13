@@ -33,7 +33,8 @@ global $boxy;
 		endif; ?>  
 		
 		<div class="entry-body">
-			<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title( '', '' ); ?></a></h1>
+			<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title( '', '' ); ?></a></h1>			  
+	            <?php do_action('boxy_blog_top_meta'); ?>
 			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'boxy' ) ); ?>
        </div>
 		<?php
@@ -42,7 +43,7 @@ global $boxy;
 				'after'  => '</div>',
 			) );
 		?>
-		<br class="clear" />
+		
 	</div><!-- .entry-content -->
 	<?php endif; ?>
 
