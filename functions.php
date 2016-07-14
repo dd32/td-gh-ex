@@ -218,3 +218,39 @@ require get_template_directory() . '/inc/agleelite-tgm.php';
  * Load Aglee Lite Theme Information
  */
 require get_template_directory() . '/inc/theme-info.php';
+
+
+ /**
+ * 
+ * more then 4 product
+ * 
+ */
+ add_filter('loop_shop_columns', 'loop_columns'); 
+if (!function_exists('loop_columns')) { 
+
+function loop_columns() { 
+    $xr = 4; 
+    return $xr; 
+  }
+}
+
+//Declare Woocommerce support
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+	add_theme_support( 'woocommerce' );
+}
+
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+function aglee_lite_wrapper_start() {
+	echo '<div class="aglee-container right-sidebar"><div id="primary">';
+}
+add_action('woocommerce_before_main_content', 'aglee_lite_wrapper_start', 10);
+
+function new_aglee_lite_wrapper_end() {
+	echo '</div>';
+	do_action( 'woocommerce_sidebar' );
+	echo '</div>';
+}
+add_action('woocommerce_after_main_content','new_aglee_lite_wrapper_end',9);

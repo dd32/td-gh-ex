@@ -33,26 +33,26 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	 */
 function aglee_lite_wp_title( $aglee_lite_title, $aglee_lite_sep ) {
   if ( is_feed() ) {
-     return $aglee_lite_title;
- }
+   return $aglee_lite_title;
+}
 
- global $page, $paged;
+global $page, $paged;
 
 		// Add the blog name.
- $aglee_lite_title .= get_bloginfo( 'name', 'display' );
+$aglee_lite_title .= get_bloginfo( 'name', 'display' );
 
 		// Add the blog description for the home/front page.
- $aglee_lite_site_description = get_bloginfo( 'description', 'display' );
- if ( $aglee_lite_site_description && ( is_home() || is_front_page() ) ) {
-     $aglee_lite_title .= " $aglee_lite_sep $aglee_lite_site_description";
- }
+$aglee_lite_site_description = get_bloginfo( 'description', 'display' );
+if ( $aglee_lite_site_description && ( is_home() || is_front_page() ) ) {
+   $aglee_lite_title .= " $aglee_lite_sep $aglee_lite_site_description";
+}
 
 		// Add a page number if necessary.
- if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-     $aglee_lite_title .= " $aglee_lite_sep " . sprintf( esc_html__( 'Page %s', 'aglee-lite' ), max( $paged, $page ) );
- }
+if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
+   $aglee_lite_title .= " $aglee_lite_sep " . sprintf( esc_html__( 'Page %s', 'aglee-lite' ), max( $paged, $page ) );
+}
 
- return $aglee_lite_title;
+return $aglee_lite_title;
 }
 add_filter( 'wp_title', 'aglee_lite_wp_title', 10, 2 );
 
@@ -110,126 +110,129 @@ add_filter( 'wp_title', 'aglee_lite_wp_title', 10, 2 );
                 ?>
                 <li>
                     <?php if(has_post_thumbnail($aglee_lite_rowslide)){ ?>
-                    <img src="<?php echo esc_url($aglee_lite_image[0]); ?>" />
-                    <?php } 
-                    if(($aglee_lite_show_slider = get_theme_mod('slider_setting_caption','1')) == '1'){
-                        ?>
-
-                        <div class="caption_wrap">
-                            <div class="slider_title"><?php echo $aglee_lite_content_post->post_title; ?></div>
-                            <div class="slider_cont"><?php echo $aglee_lite_content_post->post_excerpt; ?></div>
-                            <?php if(get_theme_mod('readmore_slider_setting') != '1'){ ?>
-                            <a href="<?php echo get_the_permalink($aglee_lite_rowslide); ?>"><?php _e('Read More','aglee-lite'); ?></a>
-                            <?php } ?>
-                        </div>
-                        <?php } ?>
-                    </li>
-                    <?php 
-                }
-                echo '</ul>';
-            }
-
-            if($aglee_lite_slider_select == 'option2'){
-                echo '<ul class="aglee-home-slider">';
-                if(!empty($aglee_lite_slider_cat)){
-                  $aglee_lite_catquery = new WP_Query( 'cat='.$aglee_lite_slider_cat.'&posts_per_page=10' );
-                  while($aglee_lite_catquery->have_posts()){
-                    $aglee_lite_catquery->the_post(); 
-                    $aglee_lite_post_id = get_the_ID();
-                    $aglee_lite_image = wp_get_attachment_image_src( get_post_thumbnail_id( $aglee_lite_post_id ), 'aglee-lite-home-slider', false );
-                    ?>
-                    <li>
-                        <?php if(has_post_thumbnail()){ ?>
                         <img src="<?php echo esc_url($aglee_lite_image[0]); ?>" />
                         <?php } 
                         if(($aglee_lite_show_slider = get_theme_mod('slider_setting_caption','1')) == '1'){
                             ?>
+
                             <div class="caption_wrap">
-                                <div class="slider_title"><?php the_title(); ?></div>
-                                <div class="slider_cont"><?php the_excerpt(); ?></div>
-                                <?php if(get_theme_mod('readmore_slider_setting') != '1'){ ?>
-                                <a href="<?php the_permalink(); ?>"><?php _e('Read More', 'aglee-lite'); ?></a>
-                                <?php } ?>
-                            </div> 
-                            <?php } ?>                                    
-                        </li>
-                        <?php }
-                    }
-                    echo '</ul>';
-                }
-                ?>
-                <script type="text/javascript">
-                    jQuery(document).ready(function ($){
-                        $(".aglee-home-slider").bxSlider({
-                            pager: true,
-                            auto: true,
-                            mode: '<?php echo esc_attr($aglee_lite_mode); ?>'
-                        });
-                    });
-                </script>
-                <?php 
-            }
-            add_action('aglee_lite_slider','aglee_lite_slidercb',10);
-
-            function aglee_lite_testimonial_slider_cb(){
-                $aglee_lite_category_testimonial = get_theme_mod('slider_testimonial_category');
-                if(!empty($aglee_lite_category_testimonial)){
-                    ?>
-                    <script type="text/javascript">
-                        jQuery(document).ready(function ($){
-                            $(".aglee-testimonial-slider").bxSlider({
-                                pager: true,
-                                auto: true,
-                                mode: 'horizontal'
-                            });
-                        });
-                    </script>
-                    <?php
-                    $aglee_lite_args = array(
-                        'posts_per_page' => -1,
-                        'category' => $aglee_lite_category_testimonial,
-                        'post_type' => 'post',
-                        'post_status' => 'publish'
-                        );
-                    $aglee_lite_posts_array = get_posts( $aglee_lite_args );
-                    $aglee_lite_no_of_testimonial = sizeof($aglee_lite_posts_array);
-                    $aglee_lite_loop_no = round($aglee_lite_no_of_testimonial/2);
-                    ?>
-                    <h1><?php _e('What Our Clients Say','aglee-lite'); ?></h1>
-                    <ul class="aglee-testimonial-slider">
-                        <?php
-                        $aglee_lite_offset_element = 0;
-                        for($aglee_lite_i=1; $aglee_lite_i<=$aglee_lite_loop_no; $aglee_lite_i++){  
-                            $aglee_lite_args = array(
-                                'post_type' => 'post',
-                                'cat' => $aglee_lite_category_testimonial,
-                                'posts_per_page' => 2,
-                                'offset' => $aglee_lite_offset_element
-                                );
-                            $aglee_lite_cat_testmonial_query = new WP_Query($aglee_lite_args);
-                            if($aglee_lite_cat_testmonial_query->have_posts()){
-                                echo '<li>';
-                                while($aglee_lite_cat_testmonial_query->have_posts()){
-                                    $aglee_lite_cat_testmonial_query->the_post();
-                                    $aglee_lite_testimonial_image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'aglee-lite-testimonial-img', false );
-                                    ?>
-                                    <div class="testimonial_content">
-                                        <?php if (has_post_thumbnail()){ ?>
-                                        <div class="testimonial_img">
-                                            <img src="<?php echo esc_url($aglee_lite_testimonial_image[0]); ?>" />
-                                        </div>
+                                <div class="slider-caption-wrap">
+                                    <div class="slider_title"><?php echo $aglee_lite_content_post->post_title; ?></div>
+                                    <div class="slider_cont"><?php echo $aglee_lite_content_post->post_excerpt; ?></div>
+                                    <?php if(get_theme_mod('readmore_slider_setting') != '1'){ ?>
+                                        <a href="<?php echo get_the_permalink($aglee_lite_rowslide); ?>"><?php _e('Read More','aglee-lite'); ?></a>
                                         <?php } ?>
+                                    </div>
+                                </div>
+                                <?php } ?>
+                            </li>
+                            <?php 
+                        }
+                        echo '</ul>';
+                    }
 
-                                        <div class="testimonial_designation">
-                                            <?php echo '<p>'.wp_trim_words(get_the_content(),20).'</p>'; ?>
-                                            <div class="testimonial_name"><?php the_title(); ?></div>
-                                            <div class="testimonial_designation"><?php the_excerpt(); ?></div> 
-                                        </div>       
-                                    </div>           
+                    if($aglee_lite_slider_select == 'option2'){
+                        echo '<ul class="aglee-home-slider">';
+                        if(!empty($aglee_lite_slider_cat)){
+                          $aglee_lite_catquery = new WP_Query( 'cat='.$aglee_lite_slider_cat.'&posts_per_page=10' );
+                          while($aglee_lite_catquery->have_posts()){
+                            $aglee_lite_catquery->the_post(); 
+                            $aglee_lite_post_id = get_the_ID();
+                            $aglee_lite_image = wp_get_attachment_image_src( get_post_thumbnail_id( $aglee_lite_post_id ), 'aglee-lite-home-slider', false );
+                            ?>
+                            <li>
+                                <?php if(has_post_thumbnail()){ ?>
+                                    <img src="<?php echo esc_url($aglee_lite_image[0]); ?>" />
                                     <?php } 
-                                    echo '</li>'; 
+                                    if(($aglee_lite_show_slider = get_theme_mod('slider_setting_caption','1')) == '1'){
+                                        ?>
+                                        <div class="caption_wrap">
+                                            <div class="slider-caption-wrap">
+                                                <div class="slider_title"><?php the_title(); ?></div>
+                                                <div class="slider_cont"><?php the_excerpt(); ?></div>
+                                                <?php if(get_theme_mod('readmore_slider_setting') != '1'){ ?>
+                                                    <a href="<?php the_permalink(); ?>"><?php _e('Read More', 'aglee-lite'); ?></a>
+                                                    <?php } ?>
+                                                </div>
+                                            </div> 
+                                            <?php } ?>                                    
+                                        </li>
+                                        <?php }
+                                    }
+                                    echo '</ul>';
                                 }
-                                $aglee_lite_offset_element = $aglee_lite_offset_element+2;
+                                ?>
+                                <script type="text/javascript">
+                                    jQuery(document).ready(function ($){
+                                        $(".aglee-home-slider").bxSlider({
+                                            pager: true,
+                                            auto: true,
+                                            mode: '<?php echo esc_attr($aglee_lite_mode); ?>'
+                                        });
+                                    });
+                                </script>
+                                <?php 
+                            }
+                            add_action('aglee_lite_slider','aglee_lite_slidercb',10);
+
+                            function aglee_lite_testimonial_slider_cb(){
+                                $aglee_lite_category_testimonial = get_theme_mod('slider_testimonial_category');
+                                if(!empty($aglee_lite_category_testimonial)){
+                                    ?>
+                                    <script type="text/javascript">
+                                        jQuery(document).ready(function ($){
+                                            $(".aglee-testimonial-slider").bxSlider({
+                                                pager: true,
+                                                auto: true,
+                                                mode: 'horizontal'
+                                            });
+                                        });
+                                    </script>
+                                    <?php
+                                    $aglee_lite_args = array(
+                                        'posts_per_page' => -1,
+                                        'category' => $aglee_lite_category_testimonial,
+                                        'post_type' => 'post',
+                                        'post_status' => 'publish'
+                                        );
+                                    $aglee_lite_posts_array = get_posts( $aglee_lite_args );
+                                    $aglee_lite_no_of_testimonial = sizeof($aglee_lite_posts_array);
+                                    $aglee_lite_loop_no = round($aglee_lite_no_of_testimonial/2);
+                                    ?>
+                                    <h1><?php _e('What Our Clients Say','aglee-lite'); ?></h1>
+                                    <ul class="aglee-testimonial-slider">
+                                        <?php
+                                        $aglee_lite_offset_element = 0;
+                                        for($aglee_lite_i=1; $aglee_lite_i<=$aglee_lite_loop_no; $aglee_lite_i++){  
+                                            $aglee_lite_args = array(
+                                                'post_type' => 'post',
+                                                'cat' => $aglee_lite_category_testimonial,
+                                                'posts_per_page' => 2,
+                                                'offset' => $aglee_lite_offset_element
+                                                );
+                                            $aglee_lite_cat_testmonial_query = new WP_Query($aglee_lite_args);
+                                            if($aglee_lite_cat_testmonial_query->have_posts()){
+                                                echo '<li>';
+                                                while($aglee_lite_cat_testmonial_query->have_posts()){
+                                                    $aglee_lite_cat_testmonial_query->the_post();
+                                                    $aglee_lite_testimonial_image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'aglee-lite-testimonial-img', false );
+                                                    ?>
+                                                    <div class="testimonial_content">
+                                                        <?php if (has_post_thumbnail()){ ?>
+                                                            <div class="testimonial_img">
+                                                                <img src="<?php echo esc_url($aglee_lite_testimonial_image[0]); ?>" />
+                                                            </div>
+                                                            <?php } ?>
+
+                                                            <div class="testimonial_designation">
+                                                                <?php echo '<p>'.wp_trim_words(get_the_content(),25).'</p>'; ?>
+                                                                <div class="testimonial_name"><?php the_title(); ?></div> 
+                                                            </div>       
+                                                        </div>           
+                                                        <?php } 
+                                                        echo '</li>'; 
+                                                    }
+                                                    $aglee_lite_offset_element = $aglee_lite_offset_element+2;
         } // end of for loop
         ?>
     </ul>

@@ -60,6 +60,11 @@ License: CC0 Public Domain
 License url: https://creativecommons.org/publicdomain/zero/1.0/deed.en
 
 == Changelog ==
+= 1.0.13 - 14th July, 2016 =
+* Minor Design Fixes
+* Added Woocommerce support
+* Woocommerce Wrapper fixes
+
 = 1.0.12 - 5th June, 2016 =
 * Minor Design Fixes
 * Search No/result page fix.

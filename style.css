@@ -4,7 +4,7 @@ Theme URI: http://8degreethemes.com/wordpress-themes/aglee-lite/
 Author: 8Degree Themes
 Author URI: http://8degreethemes.com/
 Description: Aglee Lite is a simple, basic & clean.  It is beautifully designed responsive free WordPress business theme. It has useful features to setup your website fast and make your website operate smoothly. It doesn't have much features which you probably won't use at all! Full width and boxed layout, featured slider, featured posts, services/features/projects layout, testimonial layout, blog layout, social media integration, call to action and many other page layouts. Fully responsive, bbPress compatible, translation ready, cross-browser compatible, SEO friendly, RTL support. Aglee Lite is multi-purpose and is suitable for any type of business. Highest level of compatibility with mostly used WP plugins.  Great customer support via online chat, email. View full demo here: http://8degreethemes.com/demo/aglee-lite/ support: support@8degreethemes.com
-Version: 1.0.12
+Version: 1.0.13
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: aglee-lite
@@ -1392,7 +1392,7 @@ NAV CSS
     font-size: 14px;
     text-transform: uppercase;
     display: block;
-    padding: 0 23px;
+    padding: 10px 23px;
 }
 #site-navigation ul li:last-child a{
     padding-right: 0px;
@@ -1419,7 +1419,7 @@ NAV CSS
     z-index: 99;
     text-align: left;
     background: #fff;
-    border:1px solid #ccc;
+    border:2px solid #ccc;
     padding: 10px 0;
     transition: all ease-in-out 0.3s;
     -webkit-transition: all ease-in-out 0.3s;
@@ -1447,10 +1447,10 @@ NAV CSS
 #site-navigation ul ul.sub-menu::after, #site-navigation ul ul.children::after {
     background: #fff none repeat scroll 0 0;
     content: "";
-    height: 2px;
+    height: 3px;
     left: 31px;
     position: absolute;
-    top: -1px;
+    top: -2px;
     width: 11px;
 }
 #site-navigation ul li ul.sub-menu li, #site-navigation ul li ul.children li{
@@ -1478,24 +1478,24 @@ NAV CSS
     content: "";
     font-family: "FontAwesome";
     font-size: 22px;
-    left: -7px;
+    left: -8px;
     position: absolute;
     top: -1px;
     z-index: 9999;
 }
 #site-navigation ul ul.sub-menu ul.sub-menu::after, #site-navigation ul ul.children ul.children::after {
-    background: #fff none repeat scroll 0 0;
-    content: "";
-    height: 9px;
-    left: -1px;
-    position: absolute;
-    top: 15px;
-    width: 3px;
+ background: #fff none repeat scroll 0 0;
+ content: "";
+ height: 11px;
+ left: -2px;
+ position: absolute;
+ top: 15px;
+ width: 5px;
 }
 #site-navigation ul ul.sub-menu li:hover ul.sub-menu, #site-navigation ul ul.children li:hover ul.children {
     opacity: 1;
     filter: alpha(opacity= 100);
-    left: 208px;
+    left: 206px;
     visibility: visible;
 }
 
@@ -1551,18 +1551,23 @@ NAV CSS
         width: 25%;
     }
 
-    .header-logo-only .site-title{
+    .header-logo-only .site-branding{
         display: inline-block;
-        float: left;
+        /*float: left;*/
         margin-bottom: 0px;
         text-align: left;
         vertical-align: middle;
         width: 25%;
     }
+    .header-logo-only .site-branding h1 {
+        margin-bottom: 0;
+    } 
     .header-logo-only .menu-wrapper {
         text-align: right;
-        width: 100%;
-        margin-top: 5px;
+        width: 74%;
+        /*margin-top: 5px;*/
+        display: inline-block;
+        vertical-align: middle;
     }
     .header-text-logo .site-branding {
         display: inline-block;
@@ -1770,14 +1775,25 @@ NAV CSS
 
 /* MAIN SLIDER CAPTION*/
 .caption_wrap {
-    padding-top:12%; 
+    background: rgba(0, 0, 0, 0.55) none repeat scroll 0 0;
+    bottom: 0;
     color: #fff;
+    display: block;
     left: 0;
+    margin: auto;
     position: absolute;
     right: 0;
     text-align: center;
     top: 0;
-    display: block;
+}
+.caption_wrap .slider-caption-wrap {
+    left: 0;
+    margin: -9% auto 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 50%;
+    width: 1170px;
 }
 .caption_wrap .slider_title{
     font-size: 49px;
@@ -1791,11 +1807,10 @@ NAV CSS
     font-weight: 100;
     color: #fff;
     line-height: 30px;
-    width: 620px;
     margin:0 auto; 
-    padding: 0 0 40px 0;
+    padding: 0 0 10px 0;
 }
-.caption_wrap > a {
+.caption_wrap a {
     background: transparent;
     border: 2px solid #fff;
     color: #fff;
@@ -1806,7 +1821,7 @@ NAV CSS
     -webkit-transition: all ease-in-out 0.3s;
     -moz-transition: all ease-in-out 0.3s;
 }
-.caption_wrap > a:hover {
+.caption_wrap a:hover {
     background: #3b73a7;
     border: 2px solid #3b73a7;
 }
@@ -1828,12 +1843,12 @@ FEATURE CSS
 }
 
 .feature-post-wrap a h2 {
-    font-size: 19px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    text-transform: uppercase;
     color: #000;
-    line-height: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 27px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
     transition: all ease-in-out 0.5s;
     -webkit-transition: all ease-in-out 0.5s;
     -moz-transition: all ease-in-out 0.5s;
@@ -1885,12 +1900,15 @@ FEATURE CSS
 }
 
 .readmore-button:after {
-    content: "\f101";
-    position: absolute;
-    right: -10px;
-    top: 0px;
+    content: "+";
     font-family: "FontAwesome";
+    font-size: 18px;
     line-height: 15px;
+    position: absolute;
+    right: -15px;
+    top: 0;
+    transform-origin: center center;
+    -webkit-transform-origin: center center;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -ms-transition: all 0.5s ease;
@@ -1900,8 +1918,8 @@ FEATURE CSS
     color: #105ea7 !important;
 }
 .readmore-button:hover:after {
-    animation-name: push-right;
-    animation-duration:1s;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
     color: #105ea7;
 }
 
@@ -2036,10 +2054,23 @@ Call To action CSS
     padding: 48px 0;
 }
 aside.widget .cta-wrap {
-    background: none repeat scroll 0 0 #295074;
+    background: url(images/cta-bg.jpg) no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
     padding: 20px;
+    z-index: 1;
 }
-
+aside.widget .cta-wrap:after {
+    content: "";
+    background: rgba(41, 80, 116, 0.85);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
 #cta-container aside.widget .ap-container, #featured-post-container aside.widget .aglee-container, #cta-container aside.widget .ag-container {
     width: 1170px;
     margin: 0 auto;
@@ -2224,8 +2255,8 @@ Icon block CSS
 .feat-page-content {
     color: #626262;
     font-size: 14px;
-    font-weight: 300;
-    line-height: 24px;
+    font-weight: 400;
+    line-height: 25px;
     margin: 0 0 20px;
 }
 .icon-details,
@@ -2253,7 +2284,7 @@ Toggle CSS
     width: 37%;
 }
 #toggle-container > h1, #testimonial-container > h1 {
-    color: #295074;
+    color: #000;
     font-size: 22px;
     font-weight: 600;
     margin-bottom: 40px;
@@ -2602,13 +2633,13 @@ Footer CSS
     font-size: 13px;
 }
 .aptf-tweet-content a{
-    color: #ebebeb !important;
+    color: #777 !important;
 }
 .aptf-tweet-name{
     text-transform: uppercase;
 }
 .aptf-timestamp{
-    color: #797979;
+    color: #777;
 }
 .aptf-tweet-username{
     color: #7797b6;
@@ -2698,11 +2729,11 @@ Footer CSS
 }
 
 .footer-featured-section {
-    background: none repeat scroll 0 0 #444444;
+    background: #f6f6f6;
     padding: 50px 0;
 }
 .footer-featured-section .featured-footer-wrap .textwidget {
-    color: #b5b5b5;
+    color: #777;
     font-size: 13px;
     line-height: 24px;
 }
@@ -2711,7 +2742,7 @@ Footer CSS
     float: left;
     margin-right: 30px;
     width: 22.7%;
-    color: #fff;
+    color: #333;
 }
 .featured-footer a:hover{
     color: #7797b6 !important;
@@ -2725,7 +2756,7 @@ Footer CSS
 }
 
 .featured-footer-wrap .widget-title {
-    color: #fff;
+    color: #444;
     font-size: 19px;
     font-weight: 700;
     margin-bottom: 25px;
@@ -2737,6 +2768,7 @@ Footer CSS
 }
 
 .site-info{
+    background: #444;
     padding: 25px 0;
 }
 
@@ -2750,7 +2782,7 @@ Footer CSS
 
 .footer-socials a,
 .copyright-info a {
-    color: #295074;
+    color: #fff;
 }
 .copyright-info a:hover {
     text-decoration: underline;
@@ -2843,7 +2875,7 @@ Footer CSS
     color: #7797b6;
     display: block;
     height: 45px;
-    margin-top: 30px;
+    margin-top: 0;
     padding: 0 20px;
     text-align: left;
     width: 150px;
@@ -2865,6 +2897,7 @@ Footer CSS
     float: none;
     width: 100%;
     margin-bottom: 0px;
+    margin-top: 20px;
 }
 .subscribe_btn::after {
     bottom: 35px;
@@ -2992,6 +3025,8 @@ Footer CSS
         vertical-align: middle;
         border: 1px solid #ccc;
         z-index: 9999;
+        transition: all ease-in-out 0.3s;
+        -webkit-transition: all ease-in-out 0.3s;
     }
 
     #go-top a {
@@ -3051,7 +3086,7 @@ Footer CSS
     .widget_meta a,
     .widget_recent_comments a,
     .widget_recent_comments li {
-        color: #fff;
+        color: #777;
         font-size: 14px;
         font-weight: 600;
         padding-left: 22px;
@@ -3080,7 +3115,7 @@ Footer CSS
         top: -6px;
         left: 0;
         font-size: 14px;
-        color: #3d3d3d;
+        color: #777;
         font-family: "FontAwesome";
         -webkit-transition: color 0.3s ease 0s;
         -moz-transition: color 0.3s ease 0s;
@@ -3111,7 +3146,7 @@ Footer CSS
     .widget_recent_entries li,
     .widget_meta li,
     .widget_recent_comments li {
-        border-bottom: 1px solid #575757;
+        border-bottom: 1px solid #ddd;
         padding-bottom: 15px;
         margin-bottom: 15px;
     }
@@ -3195,6 +3230,9 @@ Footer CSS
         font-weight: 300;
         line-height: 24px;
         margin: 20px 0;  
+    }
+    .blog-excerpt > a {
+        font-weight: 600;
     }
     .blog-full-content .entry-footer, .blog-image-medium .entry-footer,
     .blog-image-large .entry-footer, .blog-image-alternate-medium .entry-footer{
@@ -3426,12 +3464,12 @@ Footer CSS
     .search-results .entry-title{
         font-weight: 400;
     }
-    .search.search-no-results .search-form > label {
+    .search.search-no-results .no-results .search-form > label {
         float: none;
         display: inline-block;
         width: 90%;
     }
-    .search.search-no-results form .search-field {
+    .search.search-no-results .no-results form .search-field {
         background: #eee none repeat scroll 0 0;
         border: 1px solid #ddd;
         color: #666;
@@ -3439,7 +3477,7 @@ Footer CSS
         height: 60px;
         padding: 5px 15px;
     }
-    .search.search-no-results form .search-submit {
+    .search.search-no-results .no-results form .search-submit {
         font-size: 20px;
         font-weight: normal;
         height: 60px;
@@ -3451,8 +3489,8 @@ Footer CSS
    Error 404 css 
    --------------------------------------------------------------*/
    .error-404 {
-        text-align: center;
-    }
+    text-align: center;
+}
 
 .error-404 .page-content form,
 .error-404 .page-content p {
@@ -3594,8 +3632,8 @@ Footer CSS
 
 /** Footer overrites */
 ​.site-footer .menu-menu-1-container {
-text-align: left;
+    text-align: left;
 }
 ​.site-footer .widget_nav_menu .menu li a {
-color: #fff;
-}​
+    color: #fff;
+    }​

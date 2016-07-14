@@ -65,7 +65,10 @@ if(empty($aglee_lite_blog_cat)){
                         <img src="<?php echo esc_url($aglee_lite_img_src[0]); ?>" />
                     </a>
                     <?php } ?>
-                    <div class="blog-excerpt"><?php the_excerpt(); ?></div>
+                    <div class="blog-excerpt">
+                        <?php the_excerpt(); ?>
+                        <a href="<?php the_permalink(); ?>"><?php echo __('Read More','aglee-lite');?></a>
+                    </div>
                     <div class="blog-bottom-content">
                         <span class="blog_author"><?php echo get_the_author();?></span>
                         <span class="blog_post_date"><?php echo get_the_date(); ?></span>
