@@ -182,10 +182,6 @@
 		
 	}
 	add_action( 'widgets_init', 'smallbusiness_widgets_init' );
-	
-	
-	
-	show_admin_bar(false);
 		
 	// 	When the post has no post title, but is required to link to the single-page post view.
 

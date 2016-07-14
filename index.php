@@ -9,7 +9,7 @@ get_header(); ?>
 <div id="content">
  <?php if (have_posts()) : while (have_posts()) : the_post();?>
 <div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
- <p class="postmetadataw">Posted by: <?php the_author_posts_link() ?> | on <?php the_time('F j, Y'); ?></p>		
+ <p class="postmetadataw"><?php _e('Posted by: ', 'small-business'); ?><?php the_author_posts_link() ?> | <?php _e(' on ', 'small-business'); ?> <?php the_time('F j, Y'); ?></p>		
  <h3 class="subtitle"><?php echo get_post_meta($post->ID, 'sb_subtitle', 'true'); ?></h3>
  <h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
  <div class="content-ver-sep"> </div>
@@ -32,7 +32,7 @@ get_header(); ?>
  
  <?php else: ?>
  
-<h1 class="arc-post-title">Sorry, we couldn't find anything that matched your search.</h1>
+<h1 class="arc-post-title"><?php _e('Sorry, we could not find anything that matched your search', 'small-business'); ?></h1>
 		
 <h1 class="page-title"><?php _e('Not Found', 'small-business'); ?></h1>
 <h3 class="arc-src"><span><?php _e('Apologies, but the page you requested could not be found. Perhaps searching will help', 'small-business'); ?></span></h3>
