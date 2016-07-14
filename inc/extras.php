@@ -40,7 +40,7 @@ function generate_body_classes( $classes )
 	
 	// Full width content
 	$full_width = get_post_meta( get_the_ID(), '_generate-full-width-content', true );
-	$classes[] = ( '' !== $full_width && is_singular() ) ? 'full-width-content' : '';
+	$classes[] = ( '' !== $full_width && false !== $full_width && is_singular() ) ? 'full-width-content' : '';
 	
 	// Let us know if a featured image is being used
 	if ( has_post_thumbnail() ) :
