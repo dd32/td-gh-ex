@@ -1,0 +1,28 @@
+/* 
+Written CSS Editor.style rtl
+*/
+html .mceContentBody {
+    direction: ltr;
+    unicode-bidi: embed;
+}
+
+li {
+    margin: 0 24px 0 0;
+}
+
+dl {
+    margin: 0 24px;
+}
+
+tr th {
+    text-align: left;
+}
+
+td {
+    padding: 6px 0 6px 10px;
+    text-align: left;
+}
+
+.wp-caption {
+    text-align: left;
+}
