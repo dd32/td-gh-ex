@@ -87,12 +87,12 @@ class advance_front_Posts extends WP_Widget {
 										'paged' => $paged);
 										
 
-					  $wp_query = new WP_Query($args);
+					  $wp_query_post_advance = new WP_Query($args);
 				   ?>
             		
- 				<?php  if($wp_query->have_posts()) {?>
-					<?php  while ($wp_query->have_posts()) {								
-							$wp_query->the_post();?>
+ 				<?php  if($wp_query_post_advance->have_posts()) {?>
+					<?php  while ($wp_query_post_advance->have_posts()) {								
+							$wp_query_post_advance->the_post();?>
    
               					<div class="matchhe post_warp large-4 medium-6 columns  ">
                    					<div class="single_latest_news">
@@ -130,7 +130,7 @@ class advance_front_Posts extends WP_Widget {
             
              <?php wp_reset_postdata(); ?>
           <!-- pagination -->
-          <?php if ($wp_query->max_num_pages > 1) { // check if the max number of pages is greater than 1  ?>
+          <?php if ($wp_query_post_advance->max_num_pages > 1) { // check if the max number of pages is greater than 1  ?>
 
 			<?php if(function_exists('wp_pagenavi')) :
 				else :?>
@@ -160,15 +160,15 @@ class advance_front_Posts extends WP_Widget {
 		$instance = $old_instance;
 
 		/* Strip tags for title and name to remove HTML (important for text inputs). */
-		$instance['title'] = strip_tags( $new_instance['title'] );
+		$instance['title'] = wp_kses_post( $new_instance['title'] );
 		
 		/* No need to strip tags */
-		$instance['subtitle'] = strip_tags( $new_instance['subtitle'] );
+		$instance['subtitle'] = wp_kses_post( $new_instance['subtitle'] );
 		$instance['count'] = strip_tags($new_instance['count']);
-		$instance['category'] = $new_instance['category'];
+		$instance['category'] = wp_kses_post($new_instance['category']);
 		
 		/* Color */
-		$instance['content_bg'] = strip_tags($new_instance['content_bg']);
+		$instance['content_bg'] = wp_kses_post($new_instance['content_bg']);
 	   $instance['subtitle_textcolor'] = strip_tags($new_instance['subtitlecolor']);
 	   $instance['padtopbottom'] = strip_tags($new_instance['padtopbottom']);
 

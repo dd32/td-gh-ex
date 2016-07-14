@@ -32,16 +32,7 @@ class advance_serviceblock extends WP_Widget {
         ?>
 
 
-  
 
-<style type="text/css">
-
-.style2-service h4 {color:<?php echo $content_titlecolor ;?> !important;} 
-.style2-service .style2-content p {color:<?php echo $content_textcolor; ?> !important;}
-.style2-service .style2-content i {color:<?php echo $content_iconcolor ; ?> !important; }
- 
-</style>
-		
 
 
 <div class=" style2-service"  style=" <?php if (!empty($instance['content_bg'])): ?> background-color:<?php echo esc_attr($instance['content_bg']); ?> ;<?php endif; ?> <?php if (!empty($instance['padtop']) || !empty($instance['padbottom']) ): ?> padding-bottom: <?php echo esc_attr($instance['padbottom']); ?>%;  padding-top:<?php echo esc_attr($instance['padtop']); ?>%; <?php endif; ?>"  >
@@ -50,7 +41,7 @@ class advance_serviceblock extends WP_Widget {
  					<div class="section-header wow fadeIn animated animated">
  
 						 <?php if (!empty($instance['title'])): ?>
-                            	<h2 class="section-title wow fadeIn"  >
+                            	<h2 class="section-title wow fadeIn" style=" color:<?php echo $content_titlecolor ;?>"  >
 							
 									<?php echo apply_filters('widget_title', $instance['title']); ?>
   								</h2>
@@ -58,7 +49,7 @@ class advance_serviceblock extends WP_Widget {
                          <?php if (!empty($instance['sub_title'])): ?>
                             <div class="colored-line"></div>
 								<div class="section-description">
-                                	<h4><?php echo  htmlspecialchars_decode(apply_filters('widget_title', $instance['sub_title'])); ?></h4></div>
+                                	<h4 style="color:<?php echo $content_textcolor; ?>"><?php echo  htmlspecialchars_decode(apply_filters('widget_title', $instance['sub_title'])); ?></h4></div>
                         		<div class="colored-line"></div>
                          <?php endif;?>
        			 </div><!--section head end-->
@@ -89,7 +80,7 @@ class advance_serviceblock extends WP_Widget {
 
    					<?php if (!empty($instance['icon1']) || !empty($instance['image_uri1'])): ?>
       						<?php if (!empty($instance['icon1'])): ?>
-         						<i class="fa <?php echo esc_attr($instance['icon1']); ?> fa-4x "  ></i>
+         						<i class="fa <?php echo esc_attr($instance['icon1']); ?> fa-4x " style="color:<?php echo $content_iconcolor ; ?>"  ></i>
            					<?php endif; ?>
              				<?php if (!empty($instance['image_uri1'])): ?>
             					<img src="<?php echo esc_url($instance['image_uri1']); ?> "/>
@@ -98,8 +89,8 @@ class advance_serviceblock extends WP_Widget {
     
  				<?php  if($wp_query_advance->have_posts()) {?>
         			<?php  while ($wp_query_advance->have_posts()) {$wp_query_advance->the_post();?>
-        				<h4><?php the_title(); ?></h4>
- 					<p><?php the_excerpt(); ?> </p>
+        				<h4 style="color:<?php echo $content_textcolor ; ?>"><?php the_title(); ?></h4>
+ 					<p style="color:<?php echo $content_textcolor ; ?>"><?php the_excerpt(); ?> </p>
  					<?php } ?>
 				<?php } ?>
  				</div>
@@ -124,7 +115,7 @@ class advance_serviceblock extends WP_Widget {
 							<!--BLOCK 2 START-->
    						<?php if (!empty($instance['icon2']) || !empty($instance['image_uri2'])): ?>
       							<?php if (!empty($instance['icon2'])): ?>
-         								<i class="fa <?php echo esc_attr($instance['icon2']); ?> fa-4x "  ></i>
+         								<i class="fa <?php echo esc_attr($instance['icon2']); ?> fa-4x " style="color:<?php echo $content_iconcolor ; ?>"  ></i>
            						<?php endif; ?>
              					<?php if (!empty($instance['image_uri2'])): ?>
               						 <img src="<?php echo esc_url($instance['image_uri2']); ?> "/>
@@ -140,8 +131,8 @@ class advance_serviceblock extends WP_Widget {
 			?>
  				<?php  if($wp_query_advance2->have_posts()) {?>
         			<?php  while ($wp_query_advance2->have_posts()) {$wp_query_advance2->the_post();?>
-        				<h4><?php the_title(); ?></h4>
- 					<p><?php the_excerpt(); ?> </p>
+        				<h4 style="color:<?php echo $content_textcolor ; ?>"><?php the_title(); ?></h4>
+ 					<p style="color:<?php echo $content_textcolor ; ?>"><?php the_excerpt(); ?> </p>
  					<?php } ?>
 				<?php } ?>
    			</div>
@@ -165,7 +156,7 @@ class advance_serviceblock extends WP_Widget {
 							
    						<?php if (!empty($instance['icon3']) || !empty($instance['image_uri3'])): ?>
       							<?php if (!empty($instance['icon3'])): ?>
-         								<i class="fa <?php echo esc_attr($instance['icon3']); ?> fa-4x "  ></i>
+         								<i class="fa <?php echo esc_attr($instance['icon3']); ?> fa-4x " style="color:<?php echo $content_iconcolor ; ?>"  ></i>
            						<?php endif; ?>
              					<?php if (!empty($instance['image_uri3'])): ?>
               						 <img src="<?php echo esc_url($instance['image_uri3']); ?> "/>
@@ -181,8 +172,8 @@ class advance_serviceblock extends WP_Widget {
 			?>
  				<?php  if($wp_query_advance3->have_posts()) {?>
         			<?php  while ($wp_query_advance3->have_posts()) {$wp_query_advance3->the_post();?>
-        				<h4><?php the_title(); ?></h4>
- 					<p><?php the_excerpt(); ?> </p>
+        				<h4 style="color:<?php echo $content_textcolor ; ?>"><?php the_title(); ?></h4>
+ 					<p style="color:<?php echo $content_textcolor ; ?>"><?php the_excerpt(); ?> </p>
  					<?php } ?>
 				<?php } ?>
    			</div>
