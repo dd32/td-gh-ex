@@ -906,8 +906,11 @@ button, input[type="button"], input[type="submit"] {
   transform: translate(0, 0);
 }
 .top-header .header-logo img {
-  max-height: 5.938em;
+  max-height: 94px;
   width: auto;
+}
+.top-header .header-logo .custom-logo-link {
+  line-height: 94px;
 }
 .top-header .site-logo {
   position: absolute;
@@ -1031,6 +1034,9 @@ button, input[type="button"], input[type="submit"] {
 
   .top-header .top-header-content .top-content {
     padding: 0.938em;
+  }
+  .top-header .top-header-content .top-content.without-logo {
+    padding-top: 7em;
   }
 
   .artwork-custom-home .top-header .top-header-content .top-content {
@@ -1450,7 +1456,7 @@ button, input[type="button"], input[type="submit"] {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 335px;
+  width: 380px;
   max-width: 100%;
   text-align: right;
   padding: 0 3.125em 3.125em;
@@ -1691,9 +1697,9 @@ iframe {
   bottom: 0;
   right: 0.250em;
   left: 0.250em;
-  -moz-box-shadow: 10px 10px 0 rgba(31, 31, 31, 0.4);
-  -webkit-box-shadow: 10px 10px 0 rgba(31, 31, 31, 0.4);
-  box-shadow: 10px 10px 0 rgba(31, 31, 31, 0.4);
+  -moz-box-shadow: 10px 10px 0 rgba(31, 31, 31, 0.2);
+  -webkit-box-shadow: 10px 10px 0 rgba(31, 31, 31, 0.2);
+  box-shadow: 10px 10px 0 rgba(31, 31, 31, 0.2);
 }
 
 .gallery-12,
@@ -1701,7 +1707,7 @@ iframe {
 .gallery-4 {
   display: inline-block;
   vertical-align: middle;
-  max-height: 30vh;
+  max-height: 50vh;
   overflow: hidden;
 }
 .gallery-12 a,
@@ -1786,6 +1792,9 @@ iframe {
 .work-post.format-gallery .entry-thumbnail {
   display: block;
 }
+.work-post.format-link .entry-header {
+  margin-bottom: 0;
+}
 .work-post.format-link .entry-header a {
   font-size: 1.5em;
   margin: 1.417em 0 0.5em;
@@ -1808,10 +1817,13 @@ iframe {
   position: relative;
   z-index: 1;
 }
+.work-post.format-video .category-wrapper {
+  margin: -1em auto 0;
+}
 .work-post.format-video .entry-wrapper {
   position: relative;
   z-index: 2;
-  margin-bottom: -4.429em;
+  margin-bottom: -5.429em;
 }
 .work-post.format-quote blockquote {
   border: 0 solid;
@@ -1896,15 +1908,6 @@ iframe {
   }
 
   .work-blog.home-work-blog .entry-content p {
-    height: 1.429em;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  .work-blog.home-work-blog .entry-title {
     display: none;
   }
 
@@ -1920,9 +1923,21 @@ iframe {
     display: block;
     margin: 0 -0.250em;
   }
+  .gallery-row .gallery-12, .gallery-row .gallery-6, .gallery-row .gallery-4 {
+    max-width: 100%;
+    max-height: none;
+  }
+  .gallery-row .gallery-12 a, .gallery-row .gallery-6 a, .gallery-row .gallery-4 a {
+    padding: 1em 2em;
+  }
 
   .work-post.format-gallery .entry-thumbnail.entry-thumbnail-gallery .gallery-row:before {
     display: none;
+  }
+
+  .gallery-12 + .gallery-6 + .gallery-6 a,
+  .gallery-12 + .gallery-6 a {
+    padding: 1em 2em;
   }
 }
 #infscr-loading {

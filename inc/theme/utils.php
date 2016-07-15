@@ -419,12 +419,12 @@ function mp_artwork_post_thumbnail( $mp_artwork_post, $mp_artwork_page_template 
 	<?php if ( has_post_thumbnail() && ! post_password_required() && ! is_attachment() ) : ?>
 		<div class="entry-thumbnail">
 			<?php if ( $mp_artwork_page_template == 'template-works.php' ): ?>
-				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'thumb-large-blog' ); ?></a>
+				<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( mp_artwork_get_prefix() . 'thumb-large-blog' ); ?></a>
 			<?php else: ?>
 				<?php if ( $mp_artwork_page_template == 'single.php' ): ?>
-					<?php the_post_thumbnail( 'thumb-large-blog' ); ?>
+					<?php the_post_thumbnail( mp_artwork_get_prefix() . 'thumb-large-blog' ); ?>
 				<?php else: ?>
-					<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
+					<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( mp_artwork_get_prefix() . 'thumb-large-blog' ); ?></a>
 				<?php endif; ?>
 			<?php endif; ?>
 		</div>

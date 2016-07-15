@@ -13,11 +13,11 @@
 
 <?php if ( get_page_template_slug() != 'template-landing-page.php' || is_search() ): ?>
 	<?php
-	$mp_artwork_location         = esc_html( get_theme_mod( mp_artwork_get_prefix() . 'location_info' ) );
-	$mp_artwork_hours            = esc_html( get_theme_mod( mp_artwork_get_prefix() . 'hours_info' ) );
-	$mp_artwork_location_label   = esc_html( get_theme_mod( mp_artwork_get_prefix() . 'location_info_label' ) );
-	$mp_artwork_hours_label      = esc_html( get_theme_mod( mp_artwork_get_prefix() . 'hours_info_label' ) );
-	$mp_artwork_facbook_link     = esc_url( get_theme_mod( mp_artwork_get_prefix() . 'facebook_link', '#' ) );
+	$mp_artwork_location         = wp_kses_data( get_theme_mod( mp_artwork_get_prefix() . 'location_info' ) );
+	$mp_artwork_hours            = wp_kses_data( get_theme_mod( mp_artwork_get_prefix() . 'hours_info' ) );
+	$mp_artwork_location_label   = wp_kses_data( get_theme_mod( mp_artwork_get_prefix() . 'location_info_label' ) );
+	$mp_artwork_hours_label      = wp_kses_data( get_theme_mod( mp_artwork_get_prefix() . 'hours_info_label' ) );
+	$mp_artwork_facebook_link     = esc_url( get_theme_mod( mp_artwork_get_prefix() . 'facebook_link', '#' ) );
 	$mp_artwork_twitter_link     = esc_url( get_theme_mod( mp_artwork_get_prefix() . 'twitter_link', '#' ) );
 	$mp_artwork_linkedin_link    = esc_url( get_theme_mod( mp_artwork_get_prefix() . 'linkedin_link', '#' ) );
 	$mp_artwork_google_plus_link = esc_url( get_theme_mod( mp_artwork_get_prefix() . 'google_plus_link', '#' ) );
@@ -27,12 +27,40 @@
 	$mp_artwork_youtube_link     = esc_url( get_theme_mod( mp_artwork_get_prefix() . 'youtube_link', '' ) );
 	$mp_artwork_rss_link         = esc_url( get_theme_mod( mp_artwork_get_prefix() . 'rss_link', '#' ) );
 	$mp_artwork_copyright        = wp_kses_data( get_theme_mod( mp_artwork_get_prefix() . 'copyright' ) );
+	
+	$mp_artwork_is_logo = get_theme_mod( mp_artwork_get_prefix() . 'logo_footer', false ) || (get_header_textcolor() != 'blank');
+	
+	$mp_artwork_is_contact = !empty($mp_artwork_location_label) || !empty($mp_artwork_location) || !empty($mp_artwork_hours_label) || !empty($mp_artwork_hours) || 
+		(get_theme_mod( mp_artwork_get_prefix() . 'location_info_label', false ) === false);
+	
+	$mp_artwork_is_social = !empty($mp_artwork_facebook_link) ||
+		!empty($mp_artwork_twitter_link) ||
+		!empty($mp_artwork_linkedin_link) ||
+		!empty($mp_artwork_google_plus_link) ||
+		!empty($mp_artwork_instagram_link) ||
+		!empty($mp_artwork_pinterest_link) ||
+		!empty($mp_artwork_tumblr_link) ||
+		!empty($mp_artwork_youtube_link) ||
+		!empty($mp_artwork_rss_link);
+	
+	$mp_artwork_is_top_footer = $mp_artwork_is_logo || $mp_artwork_is_contact || $mp_artwork_is_social;
+	
 	?>
 	<footer id="footer" class="site-footer">
 		<div class="footer-inner">
+			
+			<?php if ( $mp_artwork_is_top_footer ) : ?>
+			
 			<div class="container">
 				<div class="row">
-					<div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+					
+					<?php if ( $mp_artwork_is_logo ) : ?>
+						<?php if ($mp_artwork_is_contact || $mp_artwork_is_social) : ?>
+							<div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
+						<?php else: ?>
+							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+						<?php endif; ?>
+					
 						<div class="site-logo">
 							<a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>"
 							   title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
@@ -44,59 +72,86 @@
 										</div>
 									<?php endif; ?>
 									<?php  ?>
+								
+								<?php if (get_header_textcolor() != 'blank') : ?>
 								<div class="site-description">
 									<h2 class="site-title <?php if ( ! get_bloginfo( 'description' ) ) : ?>empty-tagline<?php endif; ?>"><?php bloginfo( 'name' ); ?></h2>
 									<?php if ( get_bloginfo( 'description' ) ) : ?>
 										<p class="site-tagline"><?php bloginfo( 'description' ); ?></p>
 									<?php endif; ?>
 								</div>
+								<?php endif; ?>
 							</a>
 						</div>
 					</div>
+					<?php endif; ?>
+					
+					<?php
+						if ( $mp_artwork_is_contact) :
+					?>
 					<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 						<div class="contact-info footer-widget">
-							<div class="info-list-address">
-								<?php if ( get_theme_mod( mp_artwork_get_prefix() . 'location_info_label', false ) === false ) : ?>
-									<div class="footer-title"><?php _e( 'Address', 'artwork-lite' ); ?></div>
-								<?php else: ?>
-									<div class="footer-title"><?php echo $mp_artwork_location_label; ?></div>
-								<?php endif; ?>
-								<?php if ( get_theme_mod( mp_artwork_get_prefix() . 'location_info', false ) === false ) : ?>
-									<ul class=" info-list">
-										<li><?php echo MP_ARTWORK_DEFAULT_ADDRESS; ?></li>
-									</ul>
-								<?php else: ?>
+							
+							<!-- demo address -->
+							<?php if ( get_theme_mod( mp_artwork_get_prefix() . 'location_info_label', false ) === false ) : ?>
+							
+								<div class="info-list-address">
+										<div class="footer-title"><?php _e( 'Address', 'artwork-lite' ); ?></div>
+										<ul class="info-list">
+											<li><?php echo MP_ARTWORK_DEFAULT_ADDRESS; ?></li>
+										</ul>
+								</div>
+							
+							<?php else: ?>
+							
+								<div class="info-list-address">
+									<?php if ( !empty($mp_artwork_location_label) ) : ?>
+										<div class="footer-title"><?php echo $mp_artwork_location_label; ?></div>
+									<?php endif; ?>
 									<?php if ( ! empty( $mp_artwork_location ) ): ?>
 										<ul class=" info-list">
 											<li><?php echo $mp_artwork_location; ?></li>
 										</ul>
 									<?php endif; ?>
-								<?php endif; ?>
-							</div>
-							<br/>
-							<div class="info-list-hours">
-								<?php if ( get_theme_mod( mp_artwork_get_prefix() . 'hours_info_label', false ) === false ) : ?>
-									<div class="footer-title"><?php _e( 'Opening hours', 'artwork-lite' ); ?></div>
-								<?php else: ?>
-									<div class="footer-title"><?php echo $mp_artwork_hours_label; ?></div>
-								<?php endif; ?>
-								<?php if ( get_theme_mod( mp_artwork_get_prefix() . 'hours_info', false ) === false ) : ?>
-									<ul class="info-list">
-										<li><?php echo MP_ARTWORK_DEFAULT_OPEN_HOURS; ?></li>
-									</ul>
-								<?php else: ?>
+								</div>
+
+							<?php endif; ?>
+
+							<!-- demo hours -->
+							<?php if ( get_theme_mod( mp_artwork_get_prefix() . 'hours_info_label', false ) === false ) : ?>
+
+								<br/>
+								<div class="info-list-hours">
+										<div class="footer-title"><?php _e( 'Opening hours', 'artwork-lite' ); ?></div>
+										<ul class="info-list">
+											<li><?php echo MP_ARTWORK_DEFAULT_OPEN_HOURS; ?></li>
+										</ul>
+								</div>
+
+							<?php else: ?>
+
+								<br/>
+								<div class="info-list-hours">
+									<?php if ( !empty($mp_artwork_hours_label) ) : ?>
+										<div class="footer-title"><?php echo $mp_artwork_hours_label; ?></div>
+									<?php endif; ?>
 									<?php if ( ! empty( $mp_artwork_hours ) ): ?>
 										<ul class="info-list">
 											<li><?php echo $mp_artwork_hours; ?></li>
 										</ul>
 									<?php endif; ?>
-								<?php endif; ?>
+								</div>
 
+							<?php endif; ?>
 
-							</div>
 							<div class="clearfix"></div>
 						</div>
 					</div>
+					<?php endif; ?>
+					
+					<?php
+						if ( $mp_artwork_is_social ) :
+					?>
 					<div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
 						<div class="footer-widget">
 							<div class="footer-title"><?php _e( 'Follow us', 'artwork-lite' ); ?></div>
@@ -149,9 +204,14 @@
 							</div>
 						</div>
 					</div>
+					<?php endif; ?>
+
 				</div>
 			</div>
-			<div class="copyright">
+			
+			<?php endif; ?>
+			
+			<div class="copyright" <?php echo $mp_artwork_is_top_footer ? '' : 'style="margin-top:0;"'; ?>>
 				<div class="container">
 					<p><span class="copyright-date"><?php _e( '&copy; Copyright ', 'artwork-lite' ); ?><?php
 							$mp_artwork_dateObj = new DateTime;

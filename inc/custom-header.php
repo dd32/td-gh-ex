@@ -52,8 +52,8 @@ class MP_Artwork_Custom_Header {
         );
         add_theme_support('custom-background', $args_bg);
         add_theme_support( 'custom-logo', array(
-            'height'      => 160,
-            'width'       => 135,
+            /*'height'      => 160,
+            'width'       => 135,*/
             'flex-height' => true,
             'flex-width'  => true,
             'header-text' => array( 'site-title', 'site-description' ),

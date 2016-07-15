@@ -43,9 +43,11 @@ class MP_Artwork_Customizer {
 		/*
 		 * Enable live preview for WordPress theme features.
 		 */
-		$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+		/*$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 		$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-		$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
+		$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';*/
+		
+		$wp_customize->get_setting( 'custom_logo' )->transport         = 'refresh';
 		$wp_customize->remove_section( "header_image" );
 
 
@@ -138,7 +140,7 @@ class MP_Artwork_Customizer {
 
 		$wp_customize->add_section(
 			$this->get_prefix() . 'logo_section', array(
-				'title'      => __( 'Logo', 'artwork-lite' ),
+				'title'      => __( 'Footer Logo', 'artwork-lite' ),
 				'priority'   => 30,
 				'capability' => 'edit_theme_options'
 			)
@@ -177,13 +179,13 @@ class MP_Artwork_Customizer {
 			)
 		);
 		$wp_customize->add_setting( $this->get_prefix() . 'location_info_label', array(
-			'default'           => __( 'Opening hours', 'artwork-lite' ),
+			'default'           => __( 'Address', 'artwork-lite' ),
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => array( $this, 'sanitize_text' ),
-			'transport'         => 'postMessage'
+			//'transport'         => 'postMessage'
 		) );
 		$wp_customize->add_control( $this->get_prefix() . 'location_info_label', array(
-			'label'    => __( 'Title Contact Information 1', 'artwork-lite' ),
+			'label'    => __( 'Contact Information Title 1', 'artwork-lite' ),
 			'section'  => $this->get_prefix() . 'header_info',
 			'settings' => $this->get_prefix() . 'location_info_label',
 		) );
@@ -200,13 +202,13 @@ class MP_Artwork_Customizer {
 			'type'     => 'textarea'
 		) );
 		$wp_customize->add_setting( $this->get_prefix() . 'hours_info_label', array(
-			'default'           => __( 'Address', 'artwork-lite' ),
+			'default'           => __( 'Opening hours', 'artwork-lite' ),
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => array( $this, 'sanitize_text' ),
-			'transport'         => 'postMessage'
+			//'transport'         => 'postMessage'
 		) );
 		$wp_customize->add_control( $this->get_prefix() . 'hours_info_label', array(
-			'label'    => __( 'Title Contact Information 2', 'artwork-lite' ),
+			'label'    => __( 'Contact Information Title 2', 'artwork-lite' ),
 			'section'  => $this->get_prefix() . 'header_info',
 			'settings' => $this->get_prefix() . 'hours_info_label',
 		) );
@@ -241,7 +243,7 @@ class MP_Artwork_Customizer {
 			$this->get_prefix() . 'facebook_link', array(
 				'default'           => '#',
 				'capability'        => 'edit_theme_options',
-				'transport'         => 'postMessage',
+				//'transport'         => 'postMessage',
 				'sanitize_callback' => array( $this, 'sanitize_text' ),
 			)
 		);
@@ -263,7 +265,7 @@ class MP_Artwork_Customizer {
 			$this->get_prefix() . 'twitter_link', array(
 				'default'           => '#',
 				'capability'        => 'edit_theme_options',
-				'transport'         => 'postMessage',
+				//'transport'         => 'postMessage',
 				'sanitize_callback' => 'esc_url_raw',
 			)
 		);
@@ -286,7 +288,7 @@ class MP_Artwork_Customizer {
 			$this->get_prefix() . 'linkedin_link', array(
 				'default'           => '#',
 				'capability'        => 'edit_theme_options',
-				'transport'         => 'postMessage',
+				//'transport'         => 'postMessage',
 				'sanitize_callback' => 'esc_url_raw',
 			)
 		);
@@ -308,7 +310,7 @@ class MP_Artwork_Customizer {
 			$this->get_prefix() . 'google_plus_link', array(
 				'default'           => '#',
 				'capability'        => 'edit_theme_options',
-				'transport'         => 'postMessage',
+				//'transport'         => 'postMessage',
 				'sanitize_callback' => 'esc_url_raw',
 			)
 		);
@@ -329,7 +331,7 @@ class MP_Artwork_Customizer {
 			$this->get_prefix() . 'instagram_link', array(
 				'sanitize_callback' => 'esc_url_raw',
 				'capability'        => 'edit_theme_options',
-				'transport'         => 'postMessage',
+				//'transport'         => 'postMessage',
 			)
 		);
 
@@ -347,7 +349,7 @@ class MP_Artwork_Customizer {
 			$this->get_prefix() . 'pinterest_link', array(
 				'sanitize_callback' => 'esc_url_raw',
 				'capability'        => 'edit_theme_options',
-				'transport'         => 'postMessage',
+				//'transport'         => 'postMessage',
 			)
 		);
 		/* Add the upload control for the 'pinterest link' setting. */
@@ -363,7 +365,7 @@ class MP_Artwork_Customizer {
 			$this->get_prefix() . 'tumblr_link', array(
 				'sanitize_callback' => 'esc_url_raw',
 				'capability'        => 'edit_theme_options',
-				'transport'         => 'postMessage',
+				//'transport'         => 'postMessage',
 			)
 		);
 		/* Add the upload control for the 'tumblr link' setting. */
@@ -379,7 +381,7 @@ class MP_Artwork_Customizer {
 			$this->get_prefix() . 'youtube_link', array(
 				'sanitize_callback' => 'esc_url_raw',
 				'capability'        => 'edit_theme_options',
-				'transport'         => 'postMessage',
+				//'transport'         => 'postMessage',
 			)
 		);
 		/* Add the upload control for the 'google plus link' setting. */
@@ -397,7 +399,7 @@ class MP_Artwork_Customizer {
 			$this->get_prefix() . 'rss_link', array(
 				'default'           => '#',
 				'capability'        => 'edit_theme_options',
-				'transport'         => 'postMessage',
+				//'transport'         => 'postMessage',
 				'sanitize_callback' => 'esc_url_raw',
 			)
 		);

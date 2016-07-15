@@ -23,7 +23,7 @@ global $mp_artwork_page_template;
         if (has_post_thumbnail() && !post_password_required() && !is_attachment()) : ?>
             <div class="entry-thumbnail">
                 <?php if ($mp_artwork_page_template == 'template-full-width-blog.php'): ?>
-                    <a href = "<?php the_permalink(); ?>" ><?php the_post_thumbnail('thumb-large'); ?></a>
+                    <a href = "<?php the_permalink(); ?>" ><?php the_post_thumbnail( mp_artwork_get_prefix() . 'thumb-large'); ?></a>
                 <?php else: ?>               
                     <a href = "<?php the_permalink(); ?>" ><?php the_post_thumbnail(); ?></a>
                 <?php endif; ?>

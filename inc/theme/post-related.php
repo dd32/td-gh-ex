@@ -198,7 +198,7 @@ class MP_Artwork_Related {
     function related_posts_loop($works) {
         global $post;
         $works->the_post();
-        $mp_artwork_feat_image_url =wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'thumb-large');
+        $mp_artwork_feat_image_url =wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), mp_artwork_get_prefix() . 'thumb-large');
         $mp_artwork_width_img = $mp_artwork_feat_image_url[1];
         $mp_artwork_class_page = '';
         if ($mp_artwork_width_img >= 600) {
