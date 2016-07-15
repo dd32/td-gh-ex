@@ -48,47 +48,6 @@ function avvocato_customize_register( $wp_customize ) {
  	
 	
     // Add Control General Settings
-	
-	$wp_customize->add_setting('pwt_logo_upload',array(
-			'default'	=> '',
-			'sanitize_callback'	=> 'esc_url_raw'
-	));
-
-	$wp_customize->add_control(
-	   new WP_Customize_Image_Control(
-		   $wp_customize,
-		   'pwt_logo_upload',
-		   array(
-			   'label'      => __( 'Upload Logo', 'avvocato' ),
-			   'section'    => 'general',
-			   'settings'   => 'pwt_logo_upload',
-			   'context'    => 'pwt_logo_upload' 
-		   )
-	   )
-	);		
-		
-	$wp_customize->add_setting('pwt_text_logo_1',array(
-			'default'	=> __('Avvocato','avvocato'),
-			'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	
-	$wp_customize->add_control('pwt_text_logo_1',array(
-			'label'	=> __('Text Logo 1','avvocato'),
-			'section'	=> 'general',
-			'setting'	=> 'pwt_text_logo_1'
-	));	 
-
-	$wp_customize->add_setting('pwt_text_logo_2',array(
-			'default'	=> __('Theme','avvocato'),
-			'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	
-	$wp_customize->add_control('pwt_text_logo_2',array(
-			'label'	=> __('Text Logo 2','avvocato'),
-			'section'	=> 'general',
-			'setting'	=> 'pwt_text_logo_2'
-	));	  
-	
 
 	$wp_customize->add_setting('pwt_header_email',array(
 			'default'	=> __('info@example.com','avvocato'),
@@ -169,88 +128,33 @@ function avvocato_customize_register( $wp_customize ) {
 	
     // Add Control Slider
 
-	$wp_customize->add_setting('pwt_slider_image_upload_1',array(
-			'default'	=> esc_url(get_template_directory_uri()).'/assets/images/demo/slider1.jpg',
-			'sanitize_callback'	=> 'esc_url_raw'
-	));	
-	
-	$wp_customize->add_control(
-	   new WP_Customize_Image_Control(
-		   $wp_customize,
-		   'pwt_slider_image_upload_1',
-		   array(
-			   'label'      => __( 'Upload Image Slider', 'avvocato' ),
-			   'section'    => 'slide1',
-			   'settings'   => 'pwt_slider_image_upload_1',
-			   'context'    => 'pwt_slider_image_upload_1' 
-		   )
-	   )
-	);		
-		
-	$wp_customize->add_setting('pwt_slider_title_1',array(
-			'default'	=> __('High Qualified Lawyers here','avvocato'),
-			'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	
-	$wp_customize->add_control('pwt_slider_title_1',array(
-			'label'	=> __('Slider Title','avvocato'),
-			'section'	=> 'slide1',
-			'setting'	=> 'pwt_slider_title_1'
-	));	 
-		
-	$wp_customize->add_setting('pwt_slider_content_1',array(
-			'default'	=> __('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy','avvocato'),
-			'sanitize_callback'	=> 'esc_textarea'
-	));
-	
-	$wp_customize->add_control('pwt_slider_content_1',array(
-	        'type' => 'textarea',
-			'label'	=> __('Slider Content','avvocato'),
-			'section'	=> 'slide1',
-			'setting'	=> 'pwt_slider_content_1'
-	));	 	
-	
-	
-	$wp_customize->add_setting('pwt_slider_image_upload_2',array(
-			'default'	=> esc_url(get_template_directory_uri()).'/assets/images/demo/slider2.jpg',
-			'sanitize_callback'	=> 'esc_url_raw'
-	));	
-	
-	$wp_customize->add_control(
-	   new WP_Customize_Image_Control(
-		   $wp_customize,
-		   'pwt_slider_image_upload_2',
-		   array(
-			   'label'      => __( 'Upload Image Slider', 'avvocato' ),
-			   'section'    => 'slide2',
-			   'settings'   => 'pwt_slider_image_upload_2',
-			   'context'    => 'pwt_slider_image_upload_2' 
-		   )
-	   )
-	);		
-		
-	$wp_customize->add_setting('pwt_slider_title_2',array(
-			'default'	=> __('High Qualified Lawyers here','avvocato'),
-			'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	
-	$wp_customize->add_control('pwt_slider_title_2',array(
-			'label'	=> __('Slider Title','avvocato'),
-			'section'	=> 'slide2',
-			'setting'	=> 'pwt_slider_title_2'
-	));	 
+	$wp_customize->add_setting('pwt_slider_content1',array(
+			'default'	=> __('0','avvocato'),
+			'sanitize_callback'	=> 'avvocato_sanitize_integer'
 			
-	$wp_customize->add_setting('pwt_slider_content_2',array(
-			'default'	=> __('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s,Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy','avvocato'),
-			'sanitize_callback'	=> 'esc_textarea'
 	));
 	
-	$wp_customize->add_control('pwt_slider_content_2',array(
-	        'type' => 'textarea',
-			'label'	=> __('Slider Content','avvocato'),
+	$wp_customize->add_control('pwt_slider_content1',array(
+			'label'	=> __('Slider Content 1','avvocato'),
+			'section'	=> 'slide1',
+			'setting'	=> 'pwt_slider_content1',
+			'type' => 'dropdown-pages'
+	));		
+
+
+	$wp_customize->add_setting('pwt_slider_content2',array(
+			'default'	=> __('0','avvocato'),
+			'sanitize_callback'	=> 'avvocato_sanitize_integer'
+			
+	));
+	
+	$wp_customize->add_control('pwt_slider_content2',array(
+			'label'	=> __('Slider Content 2','avvocato'),
 			'section'	=> 'slide2',
-			'setting'	=> 'pwt_slider_content_2'
-	));	 
+			'setting'	=> 'pwt_slider_content2',
+			'type' => 'dropdown-pages'
+	));		
+	
 	
 
     // Add Control Home Page	
@@ -268,29 +172,19 @@ function avvocato_customize_register( $wp_customize ) {
 			'setting'	=> 'pwt_whyus_icon_1'
 	));			
 			
-	$wp_customize->add_setting('pwt_whyus_title_1',array(
-			'default'	=> __('Lorem ipsum','avvocato'),
-			'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	
-	$wp_customize->add_control('pwt_whyus_title_1',array(
-			'label'	=> __('Title 1','avvocato'),
-			'section'	=> 'whyus',
-			'setting'	=> 'pwt_whyus_title_1'
-	));		
-
 	$wp_customize->add_setting('pwt_whyus_content_1',array(
-			'default'	=> __('It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.','avvocato'),
-			'sanitize_callback'	=> 'esc_textarea'
+			'default'	=> __('0','avvocato'),
+			'sanitize_callback'	=> 'avvocato_sanitize_integer'
+			
 	));
 	
 	$wp_customize->add_control('pwt_whyus_content_1',array(
-	        'type' => 'textarea',
 			'label'	=> __('Content 1','avvocato'),
 			'section'	=> 'whyus',
-			'setting'	=> 'pwt_whyus_content_1'
+			'setting'	=> 'pwt_whyus_content_1',
+			'type' => 'dropdown-pages'
 	));		
-	
+
 
 	$wp_customize->add_setting('pwt_whyus_button_text_1',array(
 			'default'	=> __('Read More','avvocato'),
@@ -302,17 +196,7 @@ function avvocato_customize_register( $wp_customize ) {
 			'section'	=> 'whyus',
 			'setting'	=> 'pwt_whyus_button_text_1'
 	));	
-	
-	$wp_customize->add_setting('pwt_whyus_button_link_1',array(
-			'default'	=> __('#','avvocato'),
-			'sanitize_callback'	=> 'esc_url_raw'
-	));
-	
-	$wp_customize->add_control('pwt_whyus_button_link_1',array(
-			'label'	=> __('Link Button 1','avvocato'),
-			'section'	=> 'whyus',
-			'setting'	=> 'pwt_whyus_button_link_1'
-	));		
+		
 	
 	$wp_customize->add_setting('pwt_whyus_icon_2',array(
 			'default'	=> __('book','avvocato'),
@@ -326,28 +210,18 @@ function avvocato_customize_register( $wp_customize ) {
 			'setting'	=> 'pwt_whyus_icon_2'
 	));			
 			
-	$wp_customize->add_setting('pwt_whyus_title_2',array(
-			'default'	=> __('Lorem ipsum','avvocato'),
-			'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	
-	$wp_customize->add_control('pwt_whyus_title_2',array(
-			'label'	=> __('Title 2','avvocato'),
-			'section'	=> 'whyus',
-			'setting'	=> 'pwt_whyus_title_2'
-	));		
-
 	$wp_customize->add_setting('pwt_whyus_content_2',array(
-			'default'	=> __('It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.','avvocato'),
-			'sanitize_callback'	=> 'esc_textarea'
+			'default'	=> __('0','avvocato'),
+			'sanitize_callback'	=> 'avvocato_sanitize_integer'
+			
 	));
 	
 	$wp_customize->add_control('pwt_whyus_content_2',array(
-	        'type' => 'textarea',
 			'label'	=> __('Content 2','avvocato'),
 			'section'	=> 'whyus',
-			'setting'	=> 'pwt_whyus_content_2'
-	));		
+			'setting'	=> 'pwt_whyus_content_2',
+			'type' => 'dropdown-pages'
+	));	
 	
 
 	$wp_customize->add_setting('pwt_whyus_button_text_2',array(
@@ -361,16 +235,6 @@ function avvocato_customize_register( $wp_customize ) {
 			'setting'	=> 'pwt_whyus_button_text_2'
 	));	
 	
-	$wp_customize->add_setting('pwt_whyus_button_link_2',array(
-			'default'	=> __('#','avvocato'),
-			'sanitize_callback'	=> 'esc_url_raw'
-	));
-	
-	$wp_customize->add_control('pwt_whyus_button_link_2',array(
-			'label'	=> __('Link Button 2','avvocato'),
-			'section'	=> 'whyus',
-			'setting'	=> 'pwt_whyus_button_link_2'
-	));	
 
 	$wp_customize->add_setting('pwt_whyus_icon_3',array(
 			'default'	=> __('briefcase','avvocato'),
@@ -384,27 +248,17 @@ function avvocato_customize_register( $wp_customize ) {
 			'setting'	=> 'pwt_whyus_icon_3'
 	));			
 			
-	$wp_customize->add_setting('pwt_whyus_title_3',array(
-			'default'	=> __('Lorem ipsum','avvocato'),
-			'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	
-	$wp_customize->add_control('pwt_whyus_title_3',array(
-			'label'	=> __('Title 3','avvocato'),
-			'section'	=> 'whyus',
-			'setting'	=> 'pwt_whyus_title_3'
-	));		
-
 	$wp_customize->add_setting('pwt_whyus_content_3',array(
-			'default'	=> __('It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.','avvocato'),
-			'sanitize_callback'	=> 'esc_textarea'
+			'default'	=> __('0','avvocato'),
+			'sanitize_callback'	=> 'avvocato_sanitize_integer'
+			
 	));
 	
 	$wp_customize->add_control('pwt_whyus_content_3',array(
-	        'type' => 'textarea',
 			'label'	=> __('Content 3','avvocato'),
 			'section'	=> 'whyus',
-			'setting'	=> 'pwt_whyus_content_3'
+			'setting'	=> 'pwt_whyus_content_3',
+			'type' => 'dropdown-pages'
 	));		
 	
 
@@ -417,17 +271,6 @@ function avvocato_customize_register( $wp_customize ) {
 			'label'	=> __('Button Text 3','avvocato'),
 			'section'	=> 'whyus',
 			'setting'	=> 'pwt_whyus_button_text_3'
-	));	
-	
-	$wp_customize->add_setting('pwt_whyus_button_link_3',array(
-			'default'	=> __('#','avvocato'),
-			'sanitize_callback'	=> 'esc_url_raw'
-	));
-	
-	$wp_customize->add_control('pwt_whyus_button_link_3',array(
-			'label'	=> __('Link Button 3','avvocato'),
-			'section'	=> 'whyus',
-			'setting'	=> 'pwt_whyus_button_link_3'
 	));	
 
 	$wp_customize->add_setting('pwt_whyus_icon_4',array(
@@ -442,28 +285,18 @@ function avvocato_customize_register( $wp_customize ) {
 			'setting'	=> 'pwt_whyus_icon_4'
 	));			
 			
-	$wp_customize->add_setting('pwt_whyus_title_4',array(
-			'default'	=> __('Lorem ipsum','avvocato'),
-			'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	
-	$wp_customize->add_control('pwt_whyus_title_4',array(
-			'label'	=> __('Title 4','avvocato'),
-			'section'	=> 'whyus',
-			'setting'	=> 'pwt_whyus_title_4'
-	));		
-
 	$wp_customize->add_setting('pwt_whyus_content_4',array(
-			'default'	=> __('It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.','avvocato'),
-			'sanitize_callback'	=> 'esc_textarea'
+			'default'	=> __('0','avvocato'),
+			'sanitize_callback'	=> 'avvocato_sanitize_integer'
+			
 	));
 	
 	$wp_customize->add_control('pwt_whyus_content_4',array(
-	        'type' => 'textarea',
 			'label'	=> __('Content 4','avvocato'),
 			'section'	=> 'whyus',
-			'setting'	=> 'pwt_whyus_content_4'
-	));		
+			'setting'	=> 'pwt_whyus_content_4',
+			'type' => 'dropdown-pages'
+	));			
 	
 
 	$wp_customize->add_setting('pwt_whyus_button_text_4',array(
@@ -476,29 +309,20 @@ function avvocato_customize_register( $wp_customize ) {
 			'section'	=> 'whyus',
 			'setting'	=> 'pwt_whyus_button_text_4'
 	));	
-	
-	$wp_customize->add_setting('pwt_whyus_button_link_4',array(
-			'default'	=> __('#','avvocato'),
-			'sanitize_callback'	=> 'esc_url_raw'
-	));
-	
-	$wp_customize->add_control('pwt_whyus_button_link_4',array(
-			'label'	=> __('Link Button 4','avvocato'),
-			'section'	=> 'whyus',
-			'setting'	=> 'pwt_whyus_button_link_4'
-	));		
-	
+
 	$wp_customize->add_setting('pwt_info_box_text',array(
-			'default'	=> __('It is a long established fact that a reader will be distracted lorem ipsum...','avvocato'),
-			'sanitize_callback'	=> 'esc_textarea'
+			'default'	=> __('0','avvocato'),
+			'sanitize_callback'	=> 'avvocato_sanitize_integer'
+			
 	));
 	
 	$wp_customize->add_control('pwt_info_box_text',array(
-	        'type' => 'textarea',
 			'label'	=> __('Info Box Text','avvocato'),
 			'section'	=> 'infobox',
-			'setting'	=> 'pwt_info_box_text'
+			'setting'	=> 'pwt_info_box_text',
+			'type' => 'dropdown-pages'
 	));		
+		
 
 	$wp_customize->add_setting('pwt_info_box_button_text',array(
 			'default'	=> __('Contact Us','avvocato'),
@@ -510,23 +334,13 @@ function avvocato_customize_register( $wp_customize ) {
 			'section'	=> 'infobox',
 			'setting'	=> 'pwt_info_box_button_text'
 	));		
-	
-	$wp_customize->add_setting('pwt_info_box_button_link',array(
-			'default'	=> __('#','avvocato'),
-			'sanitize_callback'	=> 'esc_url_raw'
-	));
-	
-	$wp_customize->add_control('pwt_info_box_button_link',array(
-			'label'	=> __('Info Box Button Link','avvocato'),
-			'section'	=> 'infobox',
-			'setting'	=> 'pwt_info_box_button_link'
-	));		
+		
 	
     // Social Media	
 	
 
 	$wp_customize->add_setting('pwt_social_media_code1',array(
-			'default'	=> __('facebook','avvocato'),
+			'default'	=> '',
 			'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	
@@ -538,7 +352,7 @@ function avvocato_customize_register( $wp_customize ) {
 	));		
 	
 	$wp_customize->add_setting('pwt_social_media_link1',array(
-			'default'	=> __('#','avvocato'),
+			'default'	=> '',
 			'sanitize_callback'	=> 'esc_url_raw'
 	));
 	
@@ -549,7 +363,7 @@ function avvocato_customize_register( $wp_customize ) {
 	));		
 	
 	$wp_customize->add_setting('pwt_social_media_code2',array(
-			'default'	=> __('twitter','avvocato'),
+			'default'	=> '',
 			'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	
@@ -561,7 +375,7 @@ function avvocato_customize_register( $wp_customize ) {
 	));		
 	
 	$wp_customize->add_setting('pwt_social_media_link2',array(
-			'default'	=> __('#','avvocato'),
+			'default'	=> '',
 			'sanitize_callback'	=> 'esc_url_raw'
 	));
 	
@@ -572,7 +386,7 @@ function avvocato_customize_register( $wp_customize ) {
 	));		
 
 	$wp_customize->add_setting('pwt_social_media_code3',array(
-			'default'	=> __('google-plus','avvocato'),
+			'default'	=> '',
 			'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	
@@ -584,7 +398,7 @@ function avvocato_customize_register( $wp_customize ) {
 	));		
 	
 	$wp_customize->add_setting('pwt_social_media_link3',array(
-			'default'	=> __('#','avvocato'),
+			'default'	=> '',
 			'sanitize_callback'	=> 'esc_url_raw'
 	));
 	
@@ -595,7 +409,7 @@ function avvocato_customize_register( $wp_customize ) {
 	));		
 
 	$wp_customize->add_setting('pwt_social_media_code4',array(
-			'default'	=> __('pinterest','avvocato'),
+			'default'	=> '',
 			'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	
@@ -607,7 +421,7 @@ function avvocato_customize_register( $wp_customize ) {
 	));		
 	
 	$wp_customize->add_setting('pwt_social_media_link4',array(
-			'default'	=> __('#','avvocato'),
+			'default'	=> '',
 			'sanitize_callback'	=> 'esc_url_raw'
 	));
 	
@@ -618,7 +432,7 @@ function avvocato_customize_register( $wp_customize ) {
 	));		
 
 	$wp_customize->add_setting('pwt_social_media_code5',array(
-			'default'	=> __('linkedin','avvocato'),
+			'default'	=> '',
 			'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	
@@ -630,7 +444,7 @@ function avvocato_customize_register( $wp_customize ) {
 	));		
 	
 	$wp_customize->add_setting('pwt_social_media_link5',array(
-			'default'	=> __('#','avvocato'),
+			'default'	=> '',
 			'sanitize_callback'	=> 'esc_url_raw'
 	));
 	
@@ -643,6 +457,9 @@ function avvocato_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'avvocato_customize_register' );
 
+function avvocato_sanitize_integer( $input ) {
+    if( is_numeric( $input ) ) {  return intval( $input ); }
+}
 
 function avvocato_custom_customize_enqueue() {
 	wp_enqueue_script( 'avvocato-custom-customize', get_template_directory_uri() . '/assets/js/custom-customize.js', array( 'jquery', 'customize-controls' ), false, true );

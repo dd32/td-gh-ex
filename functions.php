@@ -10,11 +10,11 @@
  *
  * @see http://developer.wordpress.com/themes/content-width/Enqueue
  */
- 
-if ( ! isset( $content_width ) ) {
-	$content_width = 980; /* pixels */
-}
 
+function avvocato_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'avvocato_content_width', 980 );
+}
+add_action( 'after_setup_theme', 'avvocato_content_width', 0 );
 /**
  * Theme support and thumbnail sizes
 */
@@ -35,7 +35,10 @@ if( ! function_exists( 'avvocato_theme_setup' ) ) {
 		add_theme_support( 'automatic-feed-links' );
 		
 		// Add default title support
-		add_theme_support( 'title-tag' ); 			
+		add_theme_support( 'title-tag' ); 		
+
+		// Add default logo support		
+        add_theme_support( 'custom-logo' );			
 
 		// Custom Backgrounds
 		add_theme_support( 'custom-background', array(
@@ -77,6 +80,19 @@ if( ! function_exists( 'avvocato_theme_setup' ) ) {
 	add_action( 'after_setup_theme', 'avvocato_theme_setup' );
 }
 
+
+if ( ! function_exists( 'avvocato_the_custom_logo' ) ) :
+/**
+ * Displays custom logo.
+ */
+function avvocato_the_custom_logo() {
+	if ( function_exists( 'the_custom_logo' ) ) {
+		the_custom_logo();
+	}
+}
+endif;
+
+
 /**
  * Customizer additions.
  */
@@ -99,16 +115,16 @@ if( ! function_exists( 'avvocato_enqueue_styles' ) ) {
 	function avvocato_enqueue_styles() {
 
 		// OWL Carousel
-		wp_enqueue_style( 'avvocato-owl-carousel', get_template_directory_uri() . '/assets/css/owl.carousel.css', array(), '1.0' );		
+		wp_enqueue_style( 'owl-carousel', get_template_directory_uri() . '/assets/css/owl.carousel.css', array(), '1.0' );		
 		
 		// OWL Theme
-		wp_enqueue_style( 'avvocato-owl-theme', get_template_directory_uri() . '/assets/css/owl.theme.css', array(), '1.0' );
+		wp_enqueue_style( 'owl-theme', get_template_directory_uri() . '/assets/css/owl.theme.css', array(), '1.0' );
 		
 		// OWL Transitions
-		wp_enqueue_style( 'avvocato-owl-transitions', get_template_directory_uri() . '/assets/css/owl.transitions.css', array(), '1.0' );
+		wp_enqueue_style( 'owl-transitions', get_template_directory_uri() . '/assets/css/owl.transitions.css', array(), '1.0' );
 
 		// Font Awesome
-		wp_enqueue_style( 'avvocato-font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.css', array(), '1.0' );
+		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.css', array(), '1.0' );
 
 		// main style
 	    wp_enqueue_style( 'avvocato-style', get_stylesheet_uri() );
@@ -125,7 +141,15 @@ if( ! function_exists( 'avvocato_enqueue_scripts' ) ) {
 	function avvocato_enqueue_scripts() {
 
 		// owl carousel for sliders
-		wp_enqueue_script( 'avvocato-carousel-js', get_template_directory_uri() . '/assets/js/owl.carousel.js', array('jquery'), null );			
+		wp_enqueue_script( 'carousel-js', get_template_directory_uri() . '/assets/js/owl.carousel.js', array('jquery'), null );
+
+		// html5
+		wp_enqueue_script( 'html5', get_template_directory_uri() . '/assets/js/html5.js' ); 
+		wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
+		
+		// mediaqueries
+		wp_enqueue_script( 'mediaqueries', get_template_directory_uri() . '/assets/js/css3-mediaqueries.js' );
+		wp_script_add_data( 'mediaqueries', 'conditional', 'lt IE 9' );			
 
 		// main for script js
 		wp_enqueue_script( 'avvocato-main-js', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), null );		
@@ -138,16 +162,6 @@ if( ! function_exists( 'avvocato_enqueue_scripts' ) ) {
 	add_action( 'wp_enqueue_scripts', 'avvocato_enqueue_scripts' );
 }
 
-// load script for  IE9
-
-function avvocato_ie_support_header() {
-    echo '<!--[if lt IE 9]>'. "\n";
-    echo '<script src="' . esc_url( get_template_directory_uri() . '/assets/js/html5.js' ) . '"></script>'. "\n";
-	echo '<script src="' . esc_url( get_template_directory_uri() . '/assets/js/css3-mediaqueries.js' ) . '"></script>'. "\n";
-    echo '<![endif]-->'. "\n";
-}
-
-add_action( 'wp_head', 'avvocato_ie_support_header', 1 );
 
 /**
  * Register sidebars for Avvocato

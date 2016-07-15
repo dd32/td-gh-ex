@@ -24,35 +24,31 @@
 						<div class="column-8-12 left">
 							<div class="gutter">
 								<ul class="top-bar-contact">
-								    <li><i class="fa fa-phone"></i><a href="phone:<?php echo esc_html(get_theme_mod('pwt_header_phone',__( '+80 12-878-587', 'avvocato' ))); ?>"><?php echo esc_html(get_theme_mod('pwt_header_phone',__( '+80 12-878-587', 'avvocato' ))); ?></a></li>
-									<li><i class="fa fa-envelope"></i><a href="mailto:<?php echo esc_html(get_theme_mod('pwt_header_email',__( 'info@example.com', 'avvocato' ))); ?>"><?php echo esc_html(get_theme_mod('pwt_header_email',__( 'info@example.com', 'avvocato' ))); ?></a></li>
+								    <li><i class="fa fa-phone"></i><a href="phone:<?php echo esc_html(get_theme_mod('pwt_header_phone')); ?>"><?php echo esc_html(get_theme_mod('pwt_header_phone')); ?></a></li>
+									<li><i class="fa fa-envelope"></i><a href="mailto:<?php echo esc_html(get_theme_mod('pwt_header_email')); ?>"><?php echo esc_html(get_theme_mod('pwt_header_email')); ?></a></li>
 								</ul>
 							</div>
 						</div>
+						<?php if(get_theme_mod('pwt_social_media_code1') or get_theme_mod('pwt_social_media_code2') or get_theme_mod('pwt_social_media_code3') or get_theme_mod('pwt_social_media_code4') or get_theme_mod('pwt_social_media_code5')) { ?>
 						<div class="column-4-12 right">
 							<div class="gutter">
 								<ul class="social">
-									<li><a class="fa-<?php echo esc_html(get_theme_mod('pwt_social_media_code1',__( 'facebook', 'avvocato' ))); ?>" href="<?php echo esc_url(get_theme_mod('pwt_social_media_link1',__( '#', 'avvocato' ))); ?>"></a></li>																
-								    <li><a class="fa-<?php echo esc_html(get_theme_mod('pwt_social_media_code2',__( 'twitter', 'avvocato' ))); ?>" href="<?php echo esc_url(get_theme_mod('pwt_social_media_link2',__( '#', 'avvocato' ))); ?>"></a></li>	
-									<li><a class="fa-<?php echo esc_html(get_theme_mod('pwt_social_media_code3',__( 'google-plus', 'avvocato' ))); ?>" href="<?php echo esc_url(get_theme_mod('pwt_social_media_link3',__( '#', 'avvocato' ))); ?>"></a></li>	
-									<li><a class="fa-<?php echo esc_html(get_theme_mod('pwt_social_media_code4',__( 'pinterest', 'avvocato' ))); ?>" href="<?php echo esc_url(get_theme_mod('pwt_social_media_link4',__( '#', 'avvocato' ))); ?>"></a></li>	
-									<li><a class="fa-<?php echo esc_html(get_theme_mod('pwt_social_media_code5',__( 'linkedin', 'avvocato' ))); ?>" href="<?php echo esc_url(get_theme_mod('pwt_social_media_link5',__( '#', 'avvocato' ))); ?>"></a></li>	
+									<?php if(get_theme_mod('pwt_social_media_code1')) { ?><li><a class="fa-<?php echo get_theme_mod('pwt_social_media_code1'); ?>" href="<?php echo esc_url(get_theme_mod('pwt_social_media_link1')); ?>"></a></li><?php } ?>																
+									<?php if(get_theme_mod('pwt_social_media_code2')) { ?><li><a class="fa-<?php echo get_theme_mod('pwt_social_media_code2'); ?>" href="<?php echo esc_url(get_theme_mod('pwt_social_media_link2')); ?>"></a></li><?php } ?>																
+									<?php if(get_theme_mod('pwt_social_media_code3')) { ?><li><a class="fa-<?php echo get_theme_mod('pwt_social_media_code3'); ?>" href="<?php echo esc_url(get_theme_mod('pwt_social_media_link3')); ?>"></a></li><?php } ?>																
+									<?php if(get_theme_mod('pwt_social_media_code4')) { ?><li><a class="fa-<?php echo get_theme_mod('pwt_social_media_code4'); ?>" href="<?php echo esc_url(get_theme_mod('pwt_social_media_link4')); ?>"></a></li><?php } ?>																
+									<?php if(get_theme_mod('pwt_social_media_code5')) { ?><li><a class="fa-<?php echo get_theme_mod('pwt_social_media_code5'); ?>" href="<?php echo esc_url(get_theme_mod('pwt_social_media_link5')); ?>"></a></li><?php } ?>									
 								</ul>
 							</div>
 						</div>
+						<?php } ?>
 					</div>
 				</div> <!--  END container  -->
 			</div> <!--  END top-bar  -->
 			<div class="header-block">
 				<div class="container">
 					<div class="gutter clearfix">
-						<?php if ( get_theme_mod('pwt_logo_upload') ) { ?>
-						   <a href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo esc_url(get_theme_mod('pwt_logo_upload')); ?>" /></a>
-						<?php } else if (get_theme_mod('pwt_text_logo_1')){  ?>
-						   <h1 class="logo"><a href="<?php echo esc_url(home_url('/')); ?>"><?php echo esc_html(get_theme_mod('pwt_text_logo_1')); ?><span> <?php echo esc_html(get_theme_mod('pwt_text_logo_2')); ?></span></a></h1>
-						<?php } else {  ?>
-						   <h1 class="logo"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
-						<?php } ?>
+						<?php avvocato_the_custom_logo(); ?>
 						<nav class="menu-top-container">
 							<?php if ( has_nav_menu( 'avvocato-menu' ) ) { ?>
 							   <?php wp_nav_menu( array('container'=> '', 'theme_location' => 'avvocato-menu', 'items_wrap'  => '<ul class="menu-top">%3$s</ul>'  ) ); ?>
