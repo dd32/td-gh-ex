@@ -22,7 +22,7 @@
 							<article class="single-post">
 								<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
 								<div class="article-image">
-									<?php the_post_thumbnail('featured'); ?>
+									<?php the_post_thumbnail('aedificator-photo-800-500'); ?>
 								</div>						
 								<?php endif; ?>								
 								<div class="article-text">

@@ -47,17 +47,6 @@ function aedificator_customize_register( $wp_customize ) {
  	
 	
     // Add Control General Settings
-	
-	$wp_customize->add_setting('pwt_header_left_text',array(
-			'default'	=> __('Welcome to Guest!','aedificator'),
-			'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	
-	$wp_customize->add_control('pwt_header_left_text',array(
-			'label'	=> __('Header Left Text','aedificator'),
-			'section'	=> 'general',
-			'setting'	=> 'pwt_header_left_text'
-	));	
 
 	$wp_customize->add_setting('pwt_header_email',array(
 			'default'	=> __('info@example.com','aedificator'),
@@ -126,209 +115,70 @@ function aedificator_customize_register( $wp_customize ) {
 	
     // Add Control Slider
 
-	$wp_customize->add_setting('pwt_slider_image_upload_1',array(
-			'default'	=> esc_url(get_template_directory_uri()).'/assets/images/demo/slider1.jpg',
-			'sanitize_callback'	=> 'esc_url_raw'
-	));	
-	
-	$wp_customize->add_control(
-	   new WP_Customize_Image_Control(
-		   $wp_customize,
-		   'pwt_slider_image_upload_1',
-		   array(
-			   'label'      => __( 'Upload Image Slider 1', 'aedificator' ),
-			   'section'    => 'slide1',
-			   'settings'   => 'pwt_slider_image_upload_1',
-			   'context'    => 'pwt_slider_image_upload_1' 
-		   )
-	   )
-	);		
-		
-	$wp_customize->add_setting('pwt_slider_title_1_1',array(
-			'default'	=> __('we','aedificator'),
-			'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	
-	$wp_customize->add_control('pwt_slider_title_1_1',array(
-			'label'	=> __('Slider Title 1','aedificator'),
-			'section'	=> 'slide1',
-			'setting'	=> 'pwt_slider_title_1_1'
-	));	 
-
-	$wp_customize->add_setting('pwt_slider_title_2_1',array(
-			'default'	=> __('make','aedificator'),
-			'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	
-	$wp_customize->add_control('pwt_slider_title_2_1',array(
-			'label'	=> __('Slider Title 2','aedificator'),
-			'section'	=> 'slide1',
-			'setting'	=> 'pwt_slider_title_2_1'
-	));	 	
-	
-	$wp_customize->add_setting('pwt_slider_title_3_1',array(
-			'default'	=> __('future','aedificator'),
-			'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	
-	$wp_customize->add_control('pwt_slider_title_3_1',array(
-			'label'	=> __('Slider Title 3','aedificator'),
-			'section'	=> 'slide1',
-			'setting'	=> 'pwt_slider_title_3_1'
-	));	 	
+	$wp_customize->add_setting('pwt_slider_content1',array(
+			'default'	=> __('0','aedificator'),
+			'sanitize_callback'	=> 'aedificator_sanitize_integer'
 			
-	$wp_customize->add_setting('pwt_slider_content_1',array(
-			'default'	=> __('There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration','aedificator'),
-			'sanitize_callback'	=> 'esc_textarea'
 	));
 	
-	$wp_customize->add_control('pwt_slider_content_1',array(
-	        'type' => 'textarea',
-			'label'	=> __('Slider Content','aedificator'),
+	$wp_customize->add_control('pwt_slider_content1',array(
+			'label'	=> __('Slider Content 1','aedificator'),
 			'section'	=> 'slide1',
-			'setting'	=> 'pwt_slider_content_1'
-	));	 
-	
-	$wp_customize->add_setting('pwt_button_slider_text_1',array(
-			'default'	=> __('Our Services','aedificator'),
+			'setting'	=> 'pwt_slider_content1',
+			'type' => 'dropdown-pages'
+	));		
+
+	$wp_customize->add_setting('pwt_slider_button_text_1',array(
+			'default'	=> __('','aedificator'),
 			'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	
-	$wp_customize->add_control('pwt_button_slider_text_1',array(
+	$wp_customize->add_control('pwt_slider_button_text_1',array(
 			'label'	=> __('Slider Button Text','aedificator'),
 			'section'	=> 'slide1',
-			'setting'	=> 'pwt_button_slider_text_1'
-	));		
+			'setting'	=> 'pwt_slider_button_text_1'
+	));			
 	
-	$wp_customize->add_setting('pwt_button_color_link_1',array(
-			'default'	=> __('#','aedificator'),
-			'sanitize_callback'	=> 'esc_url_raw'
-	));
-	
-	$wp_customize->add_control('pwt_button_color_link_1',array(
-			'label'	=> __('Slider Button Link','aedificator'),
-			'section'	=> 'slide1',
-			'setting'	=> 'pwt_button_color_link_1'
-	));		
-	
-	
-	$wp_customize->add_setting('pwt_slider_image_upload_2',array(
-			'default'	=> esc_url(get_template_directory_uri()).'/assets/images/demo/slider2.jpg',
-			'sanitize_callback'	=> 'esc_url_raw'
-	));	
-	
-	$wp_customize->add_control(
-	   new WP_Customize_Image_Control(
-		   $wp_customize,
-		   'pwt_slider_image_upload_2',
-		   array(
-			   'label'      => __( 'Upload Image Slider 2', 'aedificator' ),
-			   'section'    => 'slide2',
-			   'settings'   => 'pwt_slider_image_upload_2',
-			   'context'    => 'pwt_slider_image_upload_2' 
-		   )
-	   )
-	);		
-		
-	$wp_customize->add_setting('pwt_slider_title_1_2',array(
-			'default'	=> __('we','aedificator'),
-			'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	
-	$wp_customize->add_control('pwt_slider_title_1_2',array(
-			'label'	=> __('Slider Title 2','aedificator'),
-			'section'	=> 'slide2',
-			'setting'	=> 'pwt_slider_title_1_2'
-	));	 
 
-	$wp_customize->add_setting('pwt_slider_title_2_2',array(
-			'default'	=> __('make','aedificator'),
-			'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	
-	$wp_customize->add_control('pwt_slider_title_2_2',array(
-			'label'	=> __('Slider Title 2','aedificator'),
-			'section'	=> 'slide2',
-			'setting'	=> 'pwt_slider_title_2_2'
-	));	 	
-	
-	$wp_customize->add_setting('pwt_slider_title_3_2',array(
-			'default'	=> __('future','aedificator'),
-			'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	
-	$wp_customize->add_control('pwt_slider_title_3_2',array(
-			'label'	=> __('Slider Title 3','aedificator'),
-			'section'	=> 'slide2',
-			'setting'	=> 'pwt_slider_title_3_2'
-	));	 	
+	$wp_customize->add_setting('pwt_slider_content2',array(
+			'default'	=> __('0','aedificator'),
+			'sanitize_callback'	=> 'aedificator_sanitize_integer'
 			
-	$wp_customize->add_setting('pwt_slider_content_2',array(
-			'default'	=> __('There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration','aedificator'),
-			'sanitize_callback'	=> 'esc_textarea'
 	));
 	
-	$wp_customize->add_control('pwt_slider_content_2',array(
-	        'type' => 'textarea',
-			'label'	=> __('Slider Content','aedificator'),
+	$wp_customize->add_control('pwt_slider_content2',array(
+			'label'	=> __('Slider Content 2','aedificator'),
 			'section'	=> 'slide2',
-			'setting'	=> 'pwt_slider_content_2'
-	));	 
-	
-	$wp_customize->add_setting('pwt_button_slider_text_2',array(
-			'default'	=> __('Our Services','aedificator'),
+			'setting'	=> 'pwt_slider_content2',
+			'type' => 'dropdown-pages'
+	));		
+
+	$wp_customize->add_setting('pwt_slider_button_text_2',array(
+			'default'	=> __('','aedificator'),
 			'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	
-	$wp_customize->add_control('pwt_button_slider_text_2',array(
+	$wp_customize->add_control('pwt_slider_button_text_2',array(
 			'label'	=> __('Slider Button Text','aedificator'),
 			'section'	=> 'slide2',
-			'setting'	=> 'pwt_button_slider_text_2'
-	));		
-	
-	$wp_customize->add_setting('pwt_button_color_link_2',array(
-			'default'	=> __('#','aedificator'),
-			'sanitize_callback'	=> 'esc_url_raw'
-	));
-	
-	$wp_customize->add_control('pwt_button_color_link_2',array(
-			'label'	=> __('Slider Button Link','aedificator'),
-			'section'	=> 'slide2',
-			'setting'	=> 'pwt_button_color_link_2'
+			'setting'	=> 'pwt_slider_button_text_2'
 	));		
 	
 
     // Add Control Home Page	
 	
-	$wp_customize->add_setting('pwt_slider_bar_below_bg_images',array(
-			'default'	=> esc_url(get_template_directory_uri()).'/assets/images/demo/bgq.jpg',
-			'sanitize_callback'	=> 'esc_url_raw'
-	));	
-	
-	$wp_customize->add_control(
-	   new WP_Customize_Image_Control(
-		   $wp_customize,
-		   'pwt_slider_bar_below_bg_images',
-		   array(
-			   'label'      => __( 'Slider Bar Below BG Image', 'aedificator' ),
-			   'section'    => 'barbelowslider',
-			   'settings'   => 'pwt_slider_bar_below_bg_images',
-			   'context'    => 'pwt_slider_bar_below_bg_images' 
-		   )
-	   )
-	);		
-
-	$wp_customize->add_setting('pwt_slider_bar_below_text',array(
-			'default'	=> __('We are ready to serve you better than other !! For more info Contact us now','aedificator'),
-			'sanitize_callback'	=> 'esc_textarea'
+	$wp_customize->add_setting('slider_bar_below',array(
+			'default'	=> 0,
+			'sanitize_callback'	=> 'aedificator_sanitize_integer'
+			
 	));
 	
-	$wp_customize->add_control('pwt_slider_bar_below_text',array(
-	        'type' => 'textarea',
-			'label'	=> __('Slider Bar Below Text','aedificator'),
+	$wp_customize->add_control('slider_bar_below',array(
+			'label'	=> __('Slider Bar Below','aedificator'),
 			'section'	=> 'barbelowslider',
-			'setting'	=> 'pwt_slider_bar_below_text'
-	));		
+			'setting'	=> 'slider_bar_below',
+			'type' => 'dropdown-pages'
+	));	
 
 	$wp_customize->add_setting('pwt_slider_bar_below_button_text',array(
 			'default'	=> __('get a quote','aedificator'),

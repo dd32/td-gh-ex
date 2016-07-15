@@ -23,7 +23,7 @@
 					<div class="column-container top-bar-container">
 						<div class="column-6-12 left">
 							<div class="gutter">
-								<p class="wellcome-user"><?php echo esc_html(get_theme_mod('pwt_header_left_text',__( 'Welcome to Guest!', 'aedificator' ))); ?></p>
+								<p class="wellcome-user"><?php bloginfo( 'name' ); ?></p>
 							</div>
 						</div>
 						<div class="column-6-12 right">

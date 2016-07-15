@@ -4,51 +4,68 @@
  * @package Aedificator 
  */
 ?>	
+<?php if( get_theme_mod('pwt_slider_content1') or get_theme_mod('pwt_slider_content2')) { ?>
 <div class="owl-carousel welcome-carousel">
-	<div class="item animate-top-down"  <?php if(get_theme_mod('pwt_slider_image_upload_1')) { ?> style="background-image: url(<?php echo esc_url(get_theme_mod('pwt_slider_image_upload_1')); ?>);"<?php } else { ?> style="background-image: url(<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/demo/slider1.jpg" <?php }?>>
+	<?php 
+	if( get_theme_mod('pwt_slider_content1')) { 
+	$queryslider = new WP_query('page_id='.get_theme_mod('pwt_slider_content1' ,true)); 
+	while( $queryslider->have_posts() ) : $queryslider->the_post();
+	?>
+	<div class="item animate-top-down"  <?php if ( has_post_thumbnail() && ! post_password_required() ) : ?> style="background-image: url('<?php echo esc_url(wp_get_attachment_url( get_post_thumbnail_id($post->ID))); ?>')"  <?php  endif; ?>>
 		<div class="container">
 			<div class="gutter clearfix">
 				<div class="welcome-text column-5-12 center">
 					<h6>
-					<span><?php echo esc_html(get_theme_mod('pwt_slider_title_1_1',__( 'we', 'aedificator' ))); ?></span> 
-					<span class="x-large"><?php echo esc_html(get_theme_mod('pwt_slider_title_2_1',__( 'make', 'aedificator' ))); ?></span> 
-					<span class="xx-large"><?php echo esc_html(get_theme_mod('pwt_slider_title_3_1',__( 'future', 'aedificator' ))); ?></span>
+					<span class="xx-large"><?php the_title(); ?></span>
 					</h6>
-					<p><?php echo esc_html(get_theme_mod('pwt_slider_content_1',__( 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration', 'aedificator' ))); ?></p>
-					<?php if(strlen(get_theme_mod('pwt_button_slider_text_1',__( 'Our Service', 'aedificator' )))>0) { ?><a class="button" href="<?php echo esc_url(get_theme_mod('pwt_button_color_link_1')); ?>"><?php echo esc_html(get_theme_mod('pwt_button_slider_text_1',__( 'Our Service', 'aedificator' ))); ?></a><?php } ?>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="item animate-top-down"  <?php if(get_theme_mod('pwt_slider_image_upload_2')) { ?> style="background-image: url(<?php echo esc_url(get_theme_mod('pwt_slider_image_upload_2')); ?>);"<?php } else { ?> style="background-image: url(<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/demo/slider2.jpg" <?php }?>>
-		<div class="container">
-			<div class="gutter clearfix">
-				<div class="welcome-text column-5-12 center">
-					<h6>
-					<span><?php echo esc_html(get_theme_mod('pwt_slider_title_1_2',__( 'we', 'aedificator' ))); ?></span> 
-					<span class="x-large"><?php echo esc_html(get_theme_mod('pwt_slider_title_2_2',__( 'make', 'aedificator' ))); ?></span> 
-					<span class="xx-large"><?php echo esc_html(get_theme_mod('pwt_slider_title_3_2',__( 'future', 'aedificator' ))); ?></span>
-					</h6>
-					<p><?php echo esc_html(get_theme_mod('pwt_slider_content_2',__( 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration', 'aedificator' ))); ?></p>
-					<?php if(strlen(get_theme_mod('pwt_button_slider_text_2',__( 'Contact Us', 'aedificator' )))>0) { ?><a class="button" href="<?php echo esc_url(get_theme_mod('pwt_button_color_link_2')); ?>"><?php echo esc_html(get_theme_mod('pwt_button_slider_text_2',__( 'Our Service', 'aedificator' ))); ?></a><?php } ?>
+					<p><?php the_excerpt(); ?></p>
+					<?php if(get_theme_mod('pwt_slider_button_text_1')) { ?><a class="button" href="<?php the_permalink(); ?>"><?php echo esc_html(get_theme_mod('pwt_slider_button_text_1')); ?></a><?php } ?>
 				</div>
 			</div>
 		</div>
 	</div>	
+	<?php endwhile; wp_reset_query(); ?>
+	<?php } ?>
+	<?php 
+	if( get_theme_mod('pwt_slider_content2')) { 
+	$queryslider = new WP_query('page_id='.get_theme_mod('pwt_slider_content2' ,true)); 
+	while( $queryslider->have_posts() ) : $queryslider->the_post();
+	?>
+	<div class="item animate-top-down"  <?php if ( has_post_thumbnail() && ! post_password_required() ) : ?> style="background-image: url('<?php echo esc_url(wp_get_attachment_url( get_post_thumbnail_id($post->ID))); ?>')"  <?php  endif; ?>>
+		<div class="container">
+			<div class="gutter clearfix">
+				<div class="welcome-text column-5-12 center">
+					<h6>
+					<span class="xx-large"><?php the_title(); ?></span>
+					</h6>
+					<p><?php the_excerpt(); ?></p>
+					<?php if(get_theme_mod('pwt_slider_button_text_2')) { ?><a class="button" href="<?php the_permalink(); ?>"><?php echo esc_html(get_theme_mod('pwt_slider_button_text_2')); ?></a><?php } ?>
+				</div>
+			</div>
+		</div>
+	</div>	
+	<?php endwhile; wp_reset_query(); ?>
+	<?php } ?>
 </div> <!--  END welcome-carousel  -->
-<?php if(get_theme_mod('pwt_slider_bar_below_text')) { ?>
+<?php }  ?>
+<?php 
+if( get_theme_mod('slider_bar_below')) { 
+$queryslider = new WP_query('page_id='.get_theme_mod('slider_bar_below' ,true)); 
+while( $queryslider->have_posts() ) : $queryslider->the_post();
+?> 		
 <div class="section section-get-quote">
 	<div class="container">
 		<div class="gutter">
-			<div class="get-quote-block" <?php if(get_theme_mod('pwt_slider_bar_below_bg_images')) { ?> style="background-image: url('<?php echo esc_url(get_theme_mod('pwt_slider_bar_below_bg_images')); ?>')"  <?php } ?>>
+			<div class="get-quote-block" <?php if ( has_post_thumbnail() && ! post_password_required() ) : ?> style="background-image: url('<?php echo esc_url(wp_get_attachment_url( get_post_thumbnail_id($post->ID))); ?>')"  <?php  endif; ?>>
 				<div class="section-overlay">
-					<p><?php echo esc_html(get_theme_mod('pwt_slider_bar_below_text',__( 'We are ready to serve you better than other !! For more info Contact us now', 'aedificator' ))); ?></p>
+					<p><?php the_title(); ?></p>
 					<a class="button" href="<?php echo esc_url(get_theme_mod('pwt_slider_bar_below_button_link')); ?>"><?php echo esc_html(get_theme_mod('pwt_slider_bar_below_button_text',__( 'get a quote', 'aedificator' ))); ?></a>
 				</div>
 			</div>
 		</div>
 	</div> <!--  END container  -->
-</div> <!--  END section-get-quote  -->
+</div> <!--  END section-get-quote  -->		
+<?php endwhile; wp_reset_query(); ?>
 <?php } ?>
 <div class="section section-we-are">
 	<div class="container">

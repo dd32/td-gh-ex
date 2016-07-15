@@ -115,16 +115,16 @@ if( ! function_exists( 'aedificator_enqueue_styles' ) ) {
 	function aedificator_enqueue_styles() {
 
 		// OWL Carousel
-		wp_enqueue_style( 'aedificator-owl-carousel', get_template_directory_uri() . '/assets/css/owl.carousel.css', array(), '1.0' );		
+		wp_enqueue_style( 'owl-carousel', get_template_directory_uri() . '/assets/css/owl.carousel.css', array(), '1.0' );		
 		
 		// OWL Theme
-		wp_enqueue_style( 'aedificator-owl-theme', get_template_directory_uri() . '/assets/css/owl.theme.css', array(), '1.0' );
+		wp_enqueue_style( 'owl-theme', get_template_directory_uri() . '/assets/css/owl.theme.css', array(), '1.0' );
 		
 		// OWL Transitions
-		wp_enqueue_style( 'aedificator-owl-transitions', get_template_directory_uri() . '/assets/css/owl.transitions.css', array(), '1.0' );
+		wp_enqueue_style( 'owl-transitions', get_template_directory_uri() . '/assets/css/owl.transitions.css', array(), '1.0' );
 
 		// Font Awesome
-		wp_enqueue_style( 'aedificator-font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.css', array(), '1.0' );
+		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.css', array(), '1.0' );
 
 		// main style
 	    wp_enqueue_style( 'aedificator-style', get_stylesheet_uri() );
@@ -141,15 +141,15 @@ if( ! function_exists( 'aedificator_enqueue_scripts' ) ) {
 	function aedificator_enqueue_scripts() {
 
 		// owl carousel for sliders
-		wp_enqueue_script( 'aedificator-carousel-js', get_template_directory_uri() . '/assets/js/owl.carousel.js', array('jquery'), null );			
+		wp_enqueue_script( 'carousel-js', get_template_directory_uri() . '/assets/js/owl.carousel.js', array('jquery'), null );			
 
 		// html5
-		wp_enqueue_script( 'aedificator-html5', get_template_directory_uri() . '/assets/js/html5.js' ); 
-		wp_script_add_data( 'aedificator-html5', 'conditional', 'lt IE 9' );
+		wp_enqueue_script( 'html5', get_template_directory_uri() . '/assets/js/html5.js' ); 
+		wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
 		
 		// mediaqueries
-		wp_enqueue_script( 'aedificator-mediaqueries', get_template_directory_uri() . '/assets/js/css3-mediaqueries.js' );
-		wp_script_add_data( 'aedificator-mediaqueries', 'conditional', 'lt IE 9' );	
+		wp_enqueue_script( 'mediaqueries', get_template_directory_uri() . '/assets/js/css3-mediaqueries.js' );
+		wp_script_add_data( 'mediaqueries', 'conditional', 'lt IE 9' );	
 
 		// main for script js
 		wp_enqueue_script( 'aedificator-main-js', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), null );	
