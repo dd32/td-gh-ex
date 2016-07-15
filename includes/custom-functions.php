@@ -102,19 +102,6 @@ function acool_widgets_init() {
 add_action( 'widgets_init', 'acool_widgets_init' );
 
 
-
-/**
- * Custom scripts and styles on customize.php for clean_box.
- *
- * @since acool 1.1
- */
-function acool_customize_scripts() {
-
-	wp_enqueue_style( 'acool_customizer_custom_css', get_template_directory_uri() . '/css/customizer.css');
-}
-add_action( 'customize_controls_enqueue_scripts', 'acool_customize_scripts');
-
-
 if ( ! function_exists( 'acool_previous_next' ) ){
 function acool_previous_next($str)
 {
@@ -440,3 +427,28 @@ function acool_show_post_meta()
     </div>
  <?php
 }
+
+
+/**
+ * Custom scripts and styles on customize.php for uploads acool-pro.
+ *
+ * @since acool 1.1
+ */
+function acool_customize_scripts() {
+	wp_enqueue_script( 'acool_customizer_custom', get_template_directory_uri() . '/js/customizer-custom-scripts.js', array( 'customize-controls', 'iris', 'underscore', 'wp-util' ), '20150630', true );
+
+	$clean_box_misc_links = array(
+							'upgrade_link' 				=> esc_url( 'https://www.coothemes.com/themes/acool.php' ),
+							'upgrade_text'	 			=> __( 'Upgrade To Pro &raquo;', 'Acool' ),
+							'WP_version'				=> get_bloginfo( 'version' ),
+							'old_version_message'		=> __( 'Some settings might be missing or disorganized in this version of WordPress. So we suggest you to upgrade to version 4.0 or better.', 'Acool' )
+		);
+	if ( !(defined( 'CT_THEME_PRO_USED' ) && CT_THEME_PRO_USED ))
+	{
+		wp_localize_script( 'acool_customizer_custom', 'clean_box_misc_links', $clean_box_misc_links );
+	}
+	
+
+	wp_enqueue_style( 'acool_customizer_custom_css', get_template_directory_uri() . '/css/customizer.css');
+}
+add_action( 'customize_controls_enqueue_scripts', 'acool_customize_scripts');
