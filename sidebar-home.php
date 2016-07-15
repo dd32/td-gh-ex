@@ -53,7 +53,7 @@ $page_sidebar = get_post_meta( $post->ID, 'accesspress_mag_page_sidebar_layout',
                 echo '<div class="sidebar-posts-wrapper">';
                 $editor_args = array(
                                 'category_name' => $editor_cat,
-                                'post_status' => 'pubish',
+                                'post_status' => 'publish',
                                 'posts_per_page' => $editor_posts_per_page,
                                 'order' => 'DESC'
                                 );

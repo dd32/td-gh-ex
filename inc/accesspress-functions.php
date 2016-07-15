@@ -703,9 +703,9 @@ endif;
  * 
  * Replace function for WooCommerce breadcrumbs
  */
-add_filter( 'woocommerce_breadcrumb_defaults', 'accesspress_mag_woocommerce_breadcrumbs' ); 
+add_filter( 'woocommerce_breadcrumb_defaults', 'accesspress_mag_woocommerce_breadcrumbs' );
 if( ! function_exists( 'accesspress_mag_woocommerce_breadcrumbs' ) ):
-    function accesspress_mag_woocommerce_breadcrumbs() { 
+    function accesspress_mag_woocommerce_breadcrumbs() {
         $seperator = ' <span class="bread_arrow"> > </span> ';  
         $trans_home = esc_attr( of_get_option( 'trans_home', 'Home' ) );
         if( empty( $trans_home ) ){ $trans_home = __( 'Home', 'accesspress-mag' ); }
@@ -720,7 +720,7 @@ if( ! function_exists( 'accesspress_mag_woocommerce_breadcrumbs' ) ):
                 'wrap_before' => '<nav class="woocommerce-breadcrumb" itemprop="breadcrumb"><span class="bread-you">'.$trans_here.'</span><div class="ak-container">', 
                 'wrap_after' => '</div></nav>', 
                 'home' =>  $home_text
-            ); 
+            );
     }
 endif;
 

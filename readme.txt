@@ -6,7 +6,6 @@ AccessPress Mag is distributed under the terms of the GNU GPL v3
 
 Install Steps:
 --------------
-
 1. Activate the theme
 2. Go to the Theme Option page
 3. Setup theme options
@@ -72,6 +71,10 @@ GPL compatible for own images
 
 ----------------------------------------------------
 == Changelog ==
+
+Version 2.3.9
+ * Fixed the bugs on homepage sidebar
+ * Fixed minor css bugs
 
 Version 2.3.8
  * Removed woocommerce template and files
