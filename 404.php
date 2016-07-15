@@ -4,26 +4,18 @@
 
 	<div class="container"><div class="row">
     
- 		<div style="margin-left:15px; padding:0;"><?php if(function_exists('acool_breadcrumbs') && of_get_option("show_breadcrumb") =='yes' ) acool_breadcrumbs();?></div>  
+ 		<?php if(function_exists('acool_breadcrumbs') && acool_get_option( 'ct_acool','show_breadcrumb','1' ) ){ acool_breadcrumbs();} ?>  
     
         <div class="col-md-9 ct_single_content" >     
 
-
             <h1 class="ct_title_h1">404 Page!</h1>
 
-			<?php 
-				$page_404_content = of_get_option('page_404_content');
-				if($page_404_content)
-				{
-					echo $page_404_content;
-				
-				}else{
-			?>		
-				  <div class="text-center">404 Error! Page Not Found!<a href="<?php echo home_url();?>"><i class="fa fa-home"></i> Please, return to homepage!</a></div>	
-			<?php	
-				}
-			?>
- 
+            <div class="text-center">
+            	<img class="img-404" src="<?php echo get_stylesheet_directory_uri();?>/images/404.png" alt="404 not found" />
+                <br/> <br/>
+            	<a href="<?php echo esc_url(home_url());?>"><i class="fa fa-home"></i> Please, return to homepage!</a>
+            </div>
+
 		</div>
         <?php get_sidebar( 'acool' ); ?>
              

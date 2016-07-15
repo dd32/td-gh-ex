@@ -2,11 +2,9 @@
 	if ( ! is_active_sidebar( 'content-header' ) )
 		return;
 ?>
-
 <div class="container">
-	<div id="footer-widgets" class="clearfix" style="margin-top:30px;">
+	<div id="footer-widgets" class="clearfix margin-top-30">
 	<?php
-
 			if ( is_active_sidebar( 'content-header' ) ) :
 				echo '<div class="footer-widget">';
 				dynamic_sidebar( 'content-header' );

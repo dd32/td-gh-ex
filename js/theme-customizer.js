@@ -47,26 +47,6 @@
         } );
     } );
 	
-
-/*
-	wp.customize( 'ct_acool[color_schemes]', function( value ) {
-		value.bind( function( to ) {
-			var $body = $( 'body' ),
-				body_classes = $body.attr( 'class' ),
-				et_customizer_color_scheme_prefix = 'ct_color_scheme_',
-				body_class;
-
-			body_class = body_classes.replace( /ct_color_scheme_[^\s]+/, '' );
-			$body.attr( 'class', $.trim( body_class ) );
-
-			if ( 'none' !== to  )
-			{				
-				$body.addClass( et_customizer_color_scheme_prefix + to );				
-			}
-		} );
-	} );
-*/
-
 	wp.customize( 'ct_acool[show_search_icon]', function( value ) {
 		value.bind( function( to ) {
 			var $search = $('#ct_top_search');
@@ -144,24 +124,6 @@
         } );
     } );	
 
-
-
-	
-	//a:link, a:visited, a:focus,a{color:'.$ct_acool['other_link_color'].';}
-	
-//#ct-top-navigation{ margin:15px 0 0 0;}.ct_logo{ padding-left:20px;}
-
-/*	
-    wp.customize( 'ct_acool[add_custom_css]', function( value ) {		
-        value.bind( function( newval ) {
-					
-		
-		
-        } );
-    } );
-
-	*/
-	
 } )( jQuery );
 
 

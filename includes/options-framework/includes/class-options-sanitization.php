@@ -313,10 +313,10 @@ add_filter( 'of_font_face', 'of_sanitize_font_face' );
  */
 function of_recognized_background_repeat() {
 	$default = array(
-		'no-repeat' => __( 'No Repeat', 'Acool' ),
-		'repeat-x'  => __( 'Repeat Horizontally', 'Acool' ),
-		'repeat-y'  => __( 'Repeat Vertically', 'Acool' ),
-		'repeat'    => __( 'Repeat All', 'Acool' ),
+		'no-repeat' => __( 'No Repeat', 'acool' ),
+		'repeat-x'  => __( 'Repeat Horizontally', 'acool' ),
+		'repeat-y'  => __( 'Repeat Vertically', 'acool' ),
+		'repeat'    => __( 'Repeat All', 'acool' ),
 		);
 	return apply_filters( 'of_recognized_background_repeat', $default );
 }
@@ -328,15 +328,15 @@ function of_recognized_background_repeat() {
  */
 function of_recognized_background_position() {
 	$default = array(
-		'top left'      => __( 'Top Left', 'Acool' ),
-		'top center'    => __( 'Top Center', 'Acool' ),
-		'top right'     => __( 'Top Right', 'Acool' ),
-		'center left'   => __( 'Middle Left', 'Acool' ),
-		'center center' => __( 'Middle Center', 'Acool' ),
-		'center right'  => __( 'Middle Right', 'Acool' ),
-		'bottom left'   => __( 'Bottom Left', 'Acool' ),
-		'bottom center' => __( 'Bottom Center', 'Acool' ),
-		'bottom right'  => __( 'Bottom Right', 'Acool')
+		'top left'      => __( 'Top Left', 'acool' ),
+		'top center'    => __( 'Top Center', 'acool' ),
+		'top right'     => __( 'Top Right', 'acool' ),
+		'center left'   => __( 'Middle Left', 'acool' ),
+		'center center' => __( 'Middle Center', 'acool' ),
+		'center right'  => __( 'Middle Right', 'acool' ),
+		'bottom left'   => __( 'Bottom Left', 'acool' ),
+		'bottom center' => __( 'Bottom Center', 'acool' ),
+		'bottom right'  => __( 'Bottom Right', 'acool')
 		);
 	return apply_filters( 'of_recognized_background_position', $default );
 }
@@ -348,8 +348,8 @@ function of_recognized_background_position() {
  */
 function of_recognized_background_attachment() {
 	$default = array(
-		'scroll' => __( 'Scroll Normally', 'Acool' ),
-		'fixed'  => __( 'Fixed in Place', 'Acool')
+		'scroll' => __( 'Scroll Normally', 'acool' ),
+		'fixed'  => __( 'Fixed in Place', 'acool')
 		);
 	return apply_filters( 'of_recognized_background_attachment', $default );
 }
@@ -421,10 +421,10 @@ function of_recognized_font_faces() {
  */
 function of_recognized_font_styles() {
 	$default = array(
-		'normal'      => __( 'Normal', 'Acool' ),
-		'italic'      => __( 'Italic', 'Acool' ),
-		'bold'        => __( 'Bold', 'Acool' ),
-		'bold italic' => __( 'Bold Italic', 'Acool' )
+		'normal'      => __( 'Normal', 'acool' ),
+		'italic'      => __( 'Italic', 'acool' ),
+		'bold'        => __( 'Bold', 'acool' ),
+		'bold italic' => __( 'Bold Italic', 'acool' )
 		);
 	return apply_filters( 'of_recognized_font_styles', $default );
 }

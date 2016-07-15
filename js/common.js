@@ -108,16 +108,4 @@ jQuery(document).ready(function($){
 
 });
 
-//return top
-window.onscroll=function(){ 
-	if ($(document).scrollTop() > 200) 
-	{ 
-		$(".side").css({display:"block"});
-	}else{ 
-		$(".side").css({display:"none"});	
-	} 
-}
-function goTop(){
-	$('html,body').animate({'scrollTop':0},600);
-}
 //return top end

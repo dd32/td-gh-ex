@@ -1,290 +1,389 @@
 <?php
-/**
- *	Customizer
- */
-if( !function_exists( 'accountant_customizer' ) ) {
-	add_action( 'customize_register', 'accountant_customizer', 50 );
-	function accountant_customizer( $wp_customize ) {
-		$wp_customize->remove_setting( 'lawyeria_lite_header_logo' );
-		$wp_customize->remove_control( 'lawyeria_lite_header_logo' );
-		$wp_customize->remove_setting( 'lawyeria_lite_frontpage_thecontent_image' );
-		$wp_customize->remove_control( 'lawyeria_lite_frontpage_thecontent_image' );
-		$wp_customize->remove_setting( 'lawyeria_lite_frontpage_thecontent_title' );
-		$wp_customize->remove_control( 'lawyeria_lite_frontpage_thecontent_title' );
-		$wp_customize->remove_setting( 'lawyeria_lite_frontpage_thecontent_content' );
-		$wp_customize->remove_control( 'lawyeria_lite_frontpage_thecontent_content' );
-		$wp_customize->remove_setting( 'lawyeria_lite_frontpage_subheader_bg' );
-		$wp_customize->remove_control( 'lawyeria_lite_frontpage_subheader_bg' );
-		$wp_customize->remove_setting( 'lawyeria_lite_frontpage_firstlybox_icon' );
-		$wp_customize->remove_control( 'lawyeria_lite_frontpage_firstlybox_icon' );
-		$wp_customize->remove_setting( 'lawyeria_lite_frontpage_firstlybox_title' );
-		$wp_customize->remove_control( 'lawyeria_lite_frontpage_firstlybox_title' );
-		$wp_customize->remove_setting( 'lawyeria_lite_frontpage_firstlybox_content' );
-		$wp_customize->remove_control( 'lawyeria_lite_frontpage_firstlybox_content' );
-		$wp_customize->remove_setting( 'lawyeria_lite_frontpage_secondlybox_icon' );
-		$wp_customize->remove_control( 'lawyeria_lite_frontpage_secondlybox_icon' );
-		$wp_customize->remove_setting( 'lawyeria_lite_frontpage_secondlybox_title' );
-		$wp_customize->remove_control( 'lawyeria_lite_frontpage_secondlybox_title' );
-		$wp_customize->remove_setting( 'lawyeria_lite_frontpage_secondlybox_content' );
-		$wp_customize->remove_control( 'lawyeria_lite_frontpage_secondlybox_content' );
-		$wp_customize->remove_setting( 'lawyeria_lite_frontpage_thirdlybox_icon' );
-		$wp_customize->remove_control( 'lawyeria_lite_frontpage_thirdlybox_icon' );
-		$wp_customize->remove_setting( 'lawyeria_lite_frontpage_thirdlybox_title' );
-		$wp_customize->remove_control( 'lawyeria_lite_frontpage_thirdlybox_title' );
-		$wp_customize->remove_setting( 'lawyeria_lite_frontpage_thirdlybox_content' );
-		$wp_customize->remove_control( 'lawyeria_lite_frontpage_thirdlybox_content' );
 
-		// Subheader Feat. - Box 1 - Field 1
-		$wp_customize->add_setting( 'lawyeria_lite_subheaderfeatures_box1_field1' ,
-        array('sanitize_callback' => 'lawyeria_lite_sanitize_text', 'default' => __( '1.700+', 'accountant' )));
-		$wp_customize->add_control( 'lawyeria_lite_subheaderfeatures_box1_field1', array(
-		    'label'    => __( 'Subheader Feat. - Box 1 - Field 1:', 'accountant' ),
-		    'section'  => 'lawyeria_lite_frontpage_section',
-		    'settings' => 'lawyeria_lite_subheaderfeatures_box1_field1',
-			'priority' => '6'
+//-------------- Customizer add css ---------------
+function acool_customize_register( $wp_customize ) {
+
+    $wp_customize->add_setting( 'ct_acool[header_bgcolor]', array(//ct_style_options[header_bgcolor]
+        'default'        => '#ffffff',
+        'type'           => 'option',
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'acool_sanitize_callback_re',
+        'transport'      => 'postMessage'
+    ) );  
+ 
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'header_bgcolor_html_id', array(
+        'label'        => __( 'Header Background Color', 'acool' ),
+        'section'    => 'colors',
+        'settings'   => 'ct_acool[header_bgcolor]',
+    ) ) );
+
+
+    $wp_customize->add_setting( 'ct_acool[content_link_color]', array(//ct_style_options[header_bgcolor]
+        'default'        => '#03a325',
+        'type'           => 'option',
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'acool_sanitize_callback_re',
+        'transport'      => 'postMessage'
+    ) );  
+ 
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'content_link_color_id', array(
+        'label'        => __( 'Content links color', 'acool' ),
+        'section'    => 'colors',
+        'settings'   => 'ct_acool[content_link_color]',
+    ) ) );
+
+
+    $wp_customize->add_setting( 'ct_acool[content_link_hover_color]', array(//ct_style_options[header_bgcolor]
+        'default'        => '#0c8432',
+        'type'           => 'option',
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'acool_sanitize_callback_re',
+        'transport'      => 'postMessage'
+    ) );  
+ 
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'content_link_hover_color_id', array(
+        'label'        => __( 'Content links hover color', 'acool' ),
+        'section'    => 'colors',
+        'settings'   => 'ct_acool[content_link_hover_color]',
+    ) ) );
+
+
+    $wp_customize->add_setting( 'ct_acool[other_link_color]', array(//ct_style_options[header_bgcolor]
+        'default'        => '#3a3a3a',
+        'type'           => 'option',
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'acool_sanitize_callback_re',
+        'transport'      => 'postMessage'
+    ) );  
+ 
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'other_link_color_id', array(
+        'label'        => __( 'Other links color', 'acool' ),
+        'section'    => 'colors',
+        'settings'   => 'ct_acool[other_link_color]',
+    ) ) );
+
+
+    $wp_customize->add_setting( 'ct_acool[other_link_hover_color]', array(//ct_style_options[header_bgcolor]
+        'default'        => '#0c8432',
+        'type'           => 'option',
+        'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'acool_sanitize_callback_re',
+        'transport'      => 'postMessage'
+    ) );  
+ 
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'other_link_hover_color_id', array(
+        'label'        => __( 'Other links hover color', 'acool' ),
+        'section'    => 'colors',
+        'settings'   => 'ct_acool[other_link_hover_color]',
+    ) ) );
+
+	//fonts	
+	
+	if ( defined( 'CT_GOOGLE_FONTS_USED' ) && CT_GOOGLE_FONTS_USED )
+	{	
+		$google_fonts = ct_get_google_fonts();
+	
+		$font_choices = array();
+		$font_choices['none'] = 'Default Theme Font';
+		foreach ( $google_fonts as $google_font_name => $google_font_properties ) 
+		{
+			$font_choices[ $google_font_name ] = $google_font_name;
+		}	
+		
+		$wp_customize->add_section( 'ct_google_fonts' , array(
+			'title'		=> __( 'Fonts', 'acool' ),
+			'priority'	=> 50,
 		) );
-
-		// Subheader Feat. - Box 1 - Field 2
-		$wp_customize->add_setting( 'lawyeria_lite_subheaderfeatures_box1_field2' ,
-        array('sanitize_callback' => 'lawyeria_lite_sanitize_text', 'default' => __( 'Trusted clients', 'accountant' )));
-		$wp_customize->add_control( 'lawyeria_lite_subheaderfeatures_box1_field2', array(
-		    'label'    => __( 'Subheader Feat. - Box 1 - Field 2:', 'accountant' ),
-		    'section'  => 'lawyeria_lite_frontpage_section',
-		    'settings' => 'lawyeria_lite_subheaderfeatures_box1_field2',
-			'priority' => '7'
+	
+		$wp_customize->add_setting( 'ct_acool[heading_font]', array(
+			'default'		=> 'Open Sans',
+			'type'			=> 'option',
+			'capability'	=> 'edit_theme_options',
+			'sanitize_callback' => 'acool_sanitize_callback_re',
+			'transport'		=> 'postMessage'
 		) );
-
-		// Subheader Feat. - Box 2 - Field 1
-		$wp_customize->add_setting( 'lawyeria_lite_subheaderfeatures_box2_field1' ,
-        array('sanitize_callback' => 'lawyeria_lite_sanitize_text', 'default' => __( '$180.000.000', 'accountant' )));
-		$wp_customize->add_control( 'lawyeria_lite_subheaderfeatures_box2_field1', array(
-		    'label'    => __( 'Subheader Feat. - Box 2 - Field 1:', 'accountant' ),
-		    'section'  => 'lawyeria_lite_frontpage_section',
-		    'settings' => 'lawyeria_lite_subheaderfeatures_box2_field1',
-			'priority' => '8'
+	
+		$wp_customize->add_control( 'ct_acool[heading_font]', array(
+			'label'		=> __( 'Header Font', 'acool' ),
+			'section'	=> 'ct_google_fonts',
+			'settings'	=> 'ct_acool[heading_font]',
+			'type'		=> 'select',
+			'choices'	=> $font_choices
 		) );
-
-		// Subheader Feat. - Box 2 - Field 2
-		$wp_customize->add_setting( 'lawyeria_lite_subheaderfeatures_box2_field2' ,
-        array('sanitize_callback' => 'lawyeria_lite_sanitize_text', 'default' => __( 'Recovered for your clients', 'accountant' )));
-		$wp_customize->add_control( 'lawyeria_lite_subheaderfeatures_box2_field2', array(
-		    'label'    => __( 'Subheader Feat. - Box 2 - Field 2:', 'accountant' ),
-		    'section'  => 'lawyeria_lite_frontpage_section',
-		    'settings' => 'lawyeria_lite_subheaderfeatures_box2_field2',
-			'priority' => '9'
+	
+	
+		$wp_customize->add_setting( 'ct_acool[menu_font]', array(
+			'default'		=> 'Open Sans',
+			'type'			=> 'option',
+			'capability'	=> 'edit_theme_options',
+			'sanitize_callback' => 'acool_sanitize_callback_re',
+			'transport'		=> 'postMessage'
 		) );
-
-		// Subheader Feat. - Box 3 - Field 1
-		$wp_customize->add_setting( 'lawyeria_lite_subheaderfeatures_box3_field1' ,
-        array('sanitize_callback' => 'lawyeria_lite_sanitize_text', 'default' => __( '98%', 'accountant' )));
-		$wp_customize->add_control( 'lawyeria_lite_subheaderfeatures_box3_field1', array(
-		    'label'    => __( 'Subheader Feat. - Box 3 - Field 1:', 'accountant' ),
-		    'section'  => 'lawyeria_lite_frontpage_section',
-		    'settings' => 'lawyeria_lite_subheaderfeatures_box3_field1',
-			'priority' => '10'
+	
+		$wp_customize->add_control( 'ct_acool[menu_font]', array(
+			'label'		=> __( 'Menu Font', 'acool' ),
+			'section'	=> 'ct_google_fonts',
+			'settings'	=> 'ct_acool[menu_font]',
+			'type'		=> 'select',
+			'choices'	=> $font_choices
 		) );
-
-		// Subheader Feat. - Box 3 - Field 2
-		$wp_customize->add_setting( 'lawyeria_lite_subheaderfeatures_box3_field2' ,
-        array('sanitize_callback' => 'lawyeria_lite_sanitize_text', 'default' => __( 'Succesful cases', 'accountant' )));
-		$wp_customize->add_control( 'lawyeria_lite_subheaderfeatures_box3_field2', array(
-		    'label'    => __( 'Subheader Feat. - Box 3 - Field 2:', 'accountant' ),
-		    'section'  => 'lawyeria_lite_frontpage_section',
-		    'settings' => 'lawyeria_lite_subheaderfeatures_box3_field2',
-			'priority' => '11'
+	
+		$wp_customize->add_setting( 'ct_acool[title_font]', array(
+			'default'		=> 'Open Sans',
+			'type'			=> 'option',
+			'capability'	=> 'edit_theme_options',
+			'sanitize_callback' => 'acool_sanitize_callback_re',
+			'transport'		=> 'postMessage'
 		) );
-
-		// Subheader Feat. - Box 4 - Field 1
-		$wp_customize->add_setting( 'lawyeria_lite_subheaderfeatures_box4_field1' ,
-        array('sanitize_callback' => 'lawyeria_lite_sanitize_text', 'default' => __( '10.600', 'accountant' )));
-		$wp_customize->add_control( 'lawyeria_lite_subheaderfeatures_box4_field1', array(
-		    'label'    => __( 'Subheader Feat. - Box 4 - Field 1:', 'accountant' ),
-		    'section'  => 'lawyeria_lite_frontpage_section',
-		    'settings' => 'lawyeria_lite_subheaderfeatures_box4_field1',
-			'priority' => '12'
+	
+		$wp_customize->add_control( 'ct_acool[title_font]', array(
+			'label'		=> __( 'Title Font', 'acool' ),
+			'section'	=> 'ct_google_fonts',
+			'settings'	=> 'ct_acool[title_font]',
+			'type'		=> 'select',
+			'choices'	=> $font_choices
+		) );	
+		$wp_customize->add_setting( 'ct_acool[body_font]', array(
+			'default'		=> 'Open Sans',
+			'type'			=> 'option',
+			'capability'	=> 'edit_theme_options',
+			'sanitize_callback' => 'acool_sanitize_callback_re',
+			'transport'		=> 'postMessage'
 		) );
-
-		// Subheader Feat. - Box 4 - Field 2
-		$wp_customize->add_setting( 'lawyeria_lite_subheaderfeatures_box4_field2' ,
-        array('sanitize_callback' => 'lawyeria_lite_sanitize_text', 'default' => __( 'Personal injury cases', 'accountant' )));
-		$wp_customize->add_control( 'lawyeria_lite_subheaderfeatures_box4_field2', array(
-		    'label'    => __( 'Subheader Feat. - Box 4 - Field 2:', 'accountant' ),
-		    'section'  => 'lawyeria_lite_frontpage_section',
-		    'settings' => 'lawyeria_lite_subheaderfeatures_box4_field2',
-			'priority' => '13'
+		$wp_customize->add_control( 'ct_acool[body_font]', array(
+			'label'		=> __( 'Body Font', 'acool' ),
+			'section'	=> 'ct_google_fonts',
+			'settings'	=> 'ct_acool[body_font]',
+			'type'		=> 'select',
+			'choices'	=> $font_choices
 		) );
+		
+	}	
+	
 
-		// Testimonials - Title
-		$wp_customize->add_setting( 'lawyeria_lite_testimonials_title' ,
-        array('sanitize_callback' => 'lawyeria_lite_sanitize_text', 'default' => __( 'Happy clients', 'accountant' )));
-		$wp_customize->add_control( 'lawyeria_lite_testimonials_title', array(
-		    'label'    => __( 'Testimonials - Title:', 'accountant' ),
-		    'section'  => 'lawyeria_lite_frontpage_section',
-		    'settings' => 'lawyeria_lite_testimonials_title',
-			'priority' => '14'
-		) );
+	//Theme Settings section
+	$wp_customize->add_section( 'ct_acool_settings' , array(
+		'title'		=> __( 'Theme Settings', 'acool' ),
+		'priority'	=> 40,	
+         'description' => '<p class="documentation-text">' . __('1. Documentation for Acool can be found <a target="_blank" href="https://www.coothemes.com/doc/acool-manual.php">here</a>', 'acool') . '</p><p class="documentation-text">' . __('2. A full theme demo can be found <a target="_blank" href="https://www.coothemes.com/themes/acool.php">here</a>', 'acool') . '</p>',  			
+	) );
+	//Show Search Icon	
+	$wp_customize->add_setting( 'ct_acool[show_search_icon]', array(
+		'default'       => 1,
+		'type'			=> 'option',
+		'capability'	=> 'edit_theme_options',
+		'sanitize_callback' => 'acool_sanitize_callback_re',
+		'transport'		=> 'postMessage',
+	) );
+	$wp_customize->add_control( 'ct_acool[show_search_icon]', array(
+		'label'		=> __( 'Show Search Icon', 'acool' ),
+		'section'	=> 'ct_acool_settings',
+		'type'      => 'checkbox',
+		'priority'  => 50,
+	) );
+	//Box Header Center		
+	$wp_customize->add_setting( 'ct_acool[box_header_center]', array(
+		'default'       => 0,
+		'type'			=> 'option',
+		'capability'	=> 'edit_theme_options',
+		'sanitize_callback' => 'acool_sanitize_callback_re',
+		'transport'		=> 'postMessage',
+	) );
+	$wp_customize->add_control( 'ct_acool[box_header_center]', array(
+		'label'		=> __( 'Box Header Center', 'acool' ),
+		'section'	=> 'ct_acool_settings',
+		'type'      => 'checkbox',
+		'priority'  => 50,
+	) );
 
-		// Testimonials - Subtitle
-		$wp_customize->add_setting( 'lawyeria_lite_testimonials_subtitle' ,
-        array('sanitize_callback' => 'lawyeria_lite_sanitize_text', 'default' => __( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'accountant' )));
-		$wp_customize->add_control( 'lawyeria_lite_testimonials_subtitle', array(
-		    'label'    => __( 'Testimonials - Subtitle:', 'accountant' ),
-		    'section'  => 'lawyeria_lite_frontpage_section',
-		    'settings' => 'lawyeria_lite_testimonials_subtitle',
-			'priority' => '15'
-		) );
 
-		// Testimonials - Box 1 - Image
-		$wp_customize->add_setting( 'lawyeria_lite_testimonials_box1_image' ,
-        array('default' => GET_CHILDTHEME_DIRECTORY_URI . '/images/testimonial-image.png','sanitize_callback' => 'esc_url_raw'));
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'lawyeria_lite_testimonials_box1_image', array(
-		    'label'    => __( 'Testimonials - Box 1 - Image:', 'accountant' ),
-		    'section'  => 'lawyeria_lite_frontpage_section',
-		    'settings' => 'lawyeria_lite_testimonials_box1_image',
-		    'priority' => '16',
-		) ) );
+	
+	//Enable Query Loader
+	$wp_customize->add_setting( 'ct_acool[enable_query_loader]', array(
+		'default'       => 0,
+		'type'			=> 'option',
+		'capability'	=> 'edit_theme_options',
+		'sanitize_callback' => 'acool_sanitize_callback_re',
+		'transport'		=> 'postMessage',
 
-		// Testimonials - Box 1 - Name
-		$wp_customize->add_setting( 'lawyeria_lite_testimonials_box1_name' ,
-        array('sanitize_callback' => 'lawyeria_lite_sanitize_text', 'default' => __( 'John Doe', 'accountant' )));
-		$wp_customize->add_control( 'lawyeria_lite_testimonials_box1_name', array(
-		    'label'    => __( 'Testimonials - Box 1 - Name:', 'accountant' ),
-		    'section'  => 'lawyeria_lite_frontpage_section',
-		    'settings' => 'lawyeria_lite_testimonials_box1_name',
-			'priority' => '17'
-		) );
+	) );
+	$wp_customize->add_control( 'ct_acool[enable_query_loader]', array(
+		'label'		=> __( 'Enable Query Loader', 'acool' ),
+		'section'	=> 'ct_acool_settings',
+		'type'      => 'checkbox',
+		'priority'  => 50,
+		'description' => '<p class="documentation-text">' . __('For the following options you need to save and to refresh the display change!', 'acool') . '</p>', 		
+	) );	
 
-		// Testimonials - Box 1 - Entry
-		$wp_customize->add_setting( 'lawyeria_lite_testimonials_box1_entry' ,
-        array('sanitize_callback' => 'lawyeria_lite_sanitize_text','default' => __( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', 'accountant' )));
-		$wp_customize->add_control( new Example_Customize_Textarea_Control( $wp_customize, 'lawyeria_lite_testimonials_box1_entry', array(
-		            'label' 	=> __( 'Testimonials - Box 1 - Entry:', 'accountant' ),
-		            'section' 	=> 'lawyeria_lite_frontpage_section',
-		            'settings' 	=> 'lawyeria_lite_testimonials_box1_entry',
-		            'priority' 	=> '18'
-		        )
-		    )
-		);
+	//Enable Featured Homepage
+	$wp_customize->add_setting( 'ct_acool[enable_home_page]', array(
+		'default'       => 0,
+		'type'			=> 'option',
+		'capability'	=> 'edit_theme_options',
+		'sanitize_callback' => 'acool_sanitize_callback_re',
+		'transport'		=> 'postMessage',
+	) );
+	$wp_customize->add_control( 'ct_acool[enable_home_page]', array(
+		'label'		=> __( 'Enable Featured Homepage', 'acool' ),
+		'section'	=> 'ct_acool_settings',
+		'type'      => 'checkbox',
+		'priority'  => 50,
+		'description' => sprintf(__('Active featured homepage Layout.  The standardized way of creating Static Front Pages: <a href="%s" target="_blank">Creating a Static Front Page</a>', 'acool'),esc_url('http://codex.wordpress.org/Creating_a_Static_Front_Page')),
+	) );	
 
-		// Testimonials - Box 2 - Image
-		$wp_customize->add_setting( 'lawyeria_lite_testimonials_box2_image' ,
-        array('default' => GET_CHILDTHEME_DIRECTORY_URI . '/images/testimonial-image.png','sanitize_callback' => 'esc_url_raw'));
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'lawyeria_lite_testimonials_box2_image', array(
-		    'label'    => __( 'Testimonials - Box 2 - Image:', 'accountant' ),
-		    'section'  => 'lawyeria_lite_frontpage_section',
-		    'settings' => 'lawyeria_lite_testimonials_box2_image',
-		    'priority' => '19',
-		) ) );
 
-		// Testimonials - Box 2 - Name
-		$wp_customize->add_setting( 'lawyeria_lite_testimonials_box2_name' ,
-        array('sanitize_callback' => 'lawyeria_lite_sanitize_text', 'default' => __( 'John Doe', 'accountant' )));
-		$wp_customize->add_control( 'lawyeria_lite_testimonials_box2_name', array(
-		    'label'    => __( 'Testimonials - Box 2 - Name:', 'accountant' ),
-		    'section'  => 'lawyeria_lite_frontpage_section',
-		    'settings' => 'lawyeria_lite_testimonials_box2_name',
-			'priority' => '20'
-		) );
 
-		// Testimonials - Box 2 - Entry
-		$wp_customize->add_setting( 'lawyeria_lite_testimonials_box2_entry' ,
-        array('sanitize_callback' => 'lawyeria_lite_sanitize_text','default' => __( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', 'accountant' )));
-		$wp_customize->add_control( new Example_Customize_Textarea_Control( $wp_customize, 'lawyeria_lite_testimonials_box2_entry', array(
-		            'label' 	=> __( 'Testimonials - Box 2 - Entry:', 'accountant' ),
-		            'section' 	=> 'lawyeria_lite_frontpage_section',
-		            'settings' 	=> 'lawyeria_lite_testimonials_box2_entry',
-		            'priority' 	=> '21'
-		        )
-		    )
-		);
+	//Fixed Header
+	$wp_customize->add_setting( 'ct_acool[fixed_header]', array(
+		'default'       => 0,
+		'type'			=> 'option',
+		'capability'	=> 'edit_theme_options',
+		'sanitize_callback' => 'acool_sanitize_callback_re',
+		'transport'		=> 'postMessage',
+	) );
+	$wp_customize->add_control( 'ct_acool[fixed_header]', array(
+		'label'		=> __( 'Fixed Header', 'acool' ),
+		'section'	=> 'ct_acool_settings',
+		'type'      => 'checkbox',
+		'priority'  => 50,
+	) );
 
-		// Testimonials - Box 3 - Image
-		$wp_customize->add_setting( 'lawyeria_lite_testimonials_box3_image' ,
-        array('default' => GET_CHILDTHEME_DIRECTORY_URI . '/images/testimonial-image.png','sanitize_callback' => 'esc_url_raw'));
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'lawyeria_lite_testimonials_box3_image', array(
-		    'label'    => __( 'Testimonials - Box 3 - Image:', 'accountant' ),
-		    'section'  => 'lawyeria_lite_frontpage_section',
-		    'settings' => 'lawyeria_lite_testimonials_box3_image',
-		    'priority' => '22',
-		) ) );
 
-		// Testimonials - Box 3 - Name
-		$wp_customize->add_setting( 'lawyeria_lite_testimonials_box3_name' ,
-        array('sanitize_callback' => 'lawyeria_lite_sanitize_text', 'default' => __( 'John Doe', 'accountant' )));
-		$wp_customize->add_control( 'lawyeria_lite_testimonials_box3_name', array(
-		    'label'    => __( 'Testimonials - Box 3 - Name:', 'accountant' ),
-		    'section'  => 'lawyeria_lite_frontpage_section',
-		    'settings' => 'lawyeria_lite_testimonials_box3_name',
-			'priority' => '23'
-		) );
+	//show breadcrumb
+	$wp_customize->add_setting( 'ct_acool[show_breadcrumb]', array(
+		'default'       => 1,
+		'type'			=> 'option',
+		'capability'	=> 'edit_theme_options',
+		'sanitize_callback' => 'acool_sanitize_callback_re',
+		'transport'		=> 'postMessage',
+	) );
+	$wp_customize->add_control( 'ct_acool[show_breadcrumb]', array(
+		'label'		=> __( 'Breadcrumb', 'acool' ),
+		'section'	=> 'ct_acool_settings',
+		'type'      => 'checkbox',
+		'priority'  => 50,
+	) );
 
-		// Testimonials - Box 3 - Entry
-		$wp_customize->add_setting( 'lawyeria_lite_testimonials_box3_entry' ,
-        array('sanitize_callback' => 'lawyeria_lite_sanitize_text','default' => __( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', 'accountant' )));
-		$wp_customize->add_control( new Example_Customize_Textarea_Control( $wp_customize, 'lawyeria_lite_testimonials_box3_entry', array(
-		            'label' 	=> __( 'Testimonials - Box 3 - Entry:', 'accountant' ),
-		            'section' 	=> 'lawyeria_lite_frontpage_section',
-		            'settings' 	=> 'lawyeria_lite_testimonials_box3_entry',
-		            'priority' 	=> '24'
-		        )
-		    )
-		);
 
-		// About Us - Title
-		$wp_customize->add_setting( 'lawyeria_lite_aboutus_title' ,
-        array('sanitize_callback' => 'lawyeria_lite_sanitize_text', 'default' => __( 'Who we are?', 'accountant' )));
-		$wp_customize->add_control( 'lawyeria_lite_aboutus_title', array(
-		    'label'    => __( 'About Us - Title:', 'accountant' ),
-		    'section'  => 'lawyeria_lite_frontpage_section',
-		    'settings' => 'lawyeria_lite_aboutus_title',
-			'priority' => '25'
-		) );
+	
+	//Display Footer Widget Area
+	$wp_customize->add_setting( 'ct_acool[display_footer_widget_area]', array(
+		'default'       => 0,
+		'type'			=> 'option',
+		'capability'	=> 'edit_theme_options',
+		'sanitize_callback' => 'acool_sanitize_callback_re',
+		'transport'		=> 'postMessage',
+	) );
+	$wp_customize->add_control( 'ct_acool[display_footer_widget_area]', array(
+		'label'		=> __( 'Display Footer Widget Area', 'acool' ),
+		'section'	=> 'ct_acool_settings',
+		'type'      => 'checkbox',
+		'priority'  => 50,
+	) );	
 
-		// About Us - Description
-		$wp_customize->add_setting( 'lawyeria_lite_aboutus_description' ,
-        array('sanitize_callback' => 'lawyeria_lite_sanitize_text','default' => __( 'That clients\' success determines our own. So we ensure both by clients\' success determines our collaborating with our clients to achieve their goals.', 'accountant' )));
-		$wp_customize->add_control( new Example_Customize_Textarea_Control( $wp_customize, 'lawyeria_lite_aboutus_description', array(
-		            'label' 	=> __( 'About Us - Description:', 'accountant' ),
-		            'section' 	=> 'lawyeria_lite_frontpage_section',
-		            'settings' 	=> 'lawyeria_lite_aboutus_description',
-		            'priority' 	=> '26'
-		        )
-		    )
-		);
 
-		// About Us - Left Entry
-		$wp_customize->add_setting( 'lawyeria_lite_aboutus_leftentry' ,
-        array('sanitize_callback' => 'lawyeria_lite_sanitize_text','default' => __( 'Apart and limply monstrous far much added you oyster bawled lost in hey due so armadillo tpangolin sexual aboard much alas dragonfly be more some fallacious and barbarous a less much more sat before fishily thus somberly or restful flexed best wherever squinted drew much oh sloth as some when scornfully cut involuntarily at audible goodness Apart and limply omberly or best estful flexed wherever squinted drew much oh sloth as some when scornfully.', 'accountant' )));
-		$wp_customize->add_control( new Example_Customize_Textarea_Control( $wp_customize, 'lawyeria_lite_aboutus_leftentry', array(
-		            'label' 	=> __( 'About Us - Left Entry:', 'accountant' ),
-		            'section' 	=> 'lawyeria_lite_frontpage_section',
-		            'settings' 	=> 'lawyeria_lite_aboutus_leftentry',
-		            'priority' 	=> '27'
-		        )
-		    )
-		);
+	//Hide Post Meta
+	$wp_customize->add_setting( 'ct_acool[hide_post_meta]', array(
+		'default'       => 0,
+		'type'			=> 'option',
+		'capability'	=> 'edit_theme_options',
+		'sanitize_callback' => 'acool_sanitize_callback_re',
+		'transport'		=> 'postMessage',
+	) );
+	$wp_customize->add_control( 'ct_acool[hide_post_meta]', array(
+		'label'		=> __( 'Hide Post Meta', 'acool' ),
+		'section'	=> 'ct_acool_settings',
+		'type'      => 'checkbox',
+		'priority'  => 50,
+		'description'=>__('Hide date, author, category...below blog title.','acool')
+	) );	
 
-		// About Us - Right Entry
-		$wp_customize->add_setting( 'lawyeria_lite_aboutus_rightentry' ,
-        array('sanitize_callback' => 'lawyeria_lite_sanitize_text','default' => __( 'Apart and limply monstrous far much added you oyster bawled lost in hey due so armadillo tpangolin sexual aboard much alas dragonfly be more some fallacious and barbarous a less much more sat before fishily thus somberly or restful flexed best wherever squinted drew much oh sloth as some when scornfully cut involuntarily at audible goodness Apart and limply omberly or best estful flexed wherever squinted drew much oh sloth as some when scornfully.', 'accountant' )));
-		$wp_customize->add_control( new Example_Customize_Textarea_Control( $wp_customize, 'lawyeria_lite_aboutus_rightentry', array(
-		            'label' 	=> __( 'About Us - Right Entry:', 'accountant' ),
-		            'section' 	=> 'lawyeria_lite_frontpage_section',
-		            'settings' 	=> 'lawyeria_lite_aboutus_rightentry',
-		            'priority' 	=> '28'
-		        )
-		    )
-		);
+	//Header Opacity
+	$wp_customize->add_setting( 'ct_acool[header_opacity]', array(
+		'default'       => 0.6,
+		'type'			=> 'option',
+		'capability'	=> 'edit_theme_options',
+		'sanitize_callback' => 'acool_sanitize_callback_re',
+		'transport'		=> 'postMessage',
+	) );
+	$wp_customize->add_control( 'ct_acool[header_opacity]', array(
+		'label'		=> __( 'Header Opacity', 'acool' ),
+		'section'	=> 'ct_acool_settings',
+		'type' => 'select',
+		'choices'  => array('0.1'=> '0.1','0.2'=> '0.2','0.3'=> '0.3','0.4'=> '0.4','0.5'=> '0.5','0.6'=> '0.6','0.7'=> '0.7','0.8'=> '0.8','0.9'=> '0.9','1'=> '1'),
+		'priority'  => 50,
+	) );	
 
-		// About Us - Image
-		$wp_customize->add_setting( 'lawyeria_lite_aboutus_image' ,
-        array('default' => GET_CHILDTHEME_DIRECTORY_URI . '/images/about-us-image.jpg','sanitize_callback' => 'esc_url_raw'));
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'lawyeria_lite_aboutus_image', array(
-		    'label'    => __( 'About Us - Image:', 'accountant' ),
-		    'section'  => 'lawyeria_lite_frontpage_section',
-		    'settings' => 'lawyeria_lite_aboutus_image',
-		    'priority' => '29',
-		) ) );
-	}
+	/*
+	 * HomePage Banner Set
+	*/
+	$wp_customize->add_section('ct_homepage_banner' , array(
+		'title' => __('HomePage Banner', 'acool'),
+		'priority' => 120,
+		'description' => '<p class="documentation-text">' . __('Must enable the Featured Homepage, and set up a Static Front Page, the banner will be displayed!', 'acool') . '</p>', 
+	));
+		
+	//homepage banner images
+	$wp_customize->add_setting( 'ct_acool[homepage_banner_img]', array(
+		'default' => __( get_stylesheet_directory_uri().'/images/banner1.jpg', 'acool' ),
+		'sanitize_callback' => 'acool_sanitize_callback_re',
+		'capability'	=> 'edit_theme_options',
+		'transport'		=> 'postMessage',
+		'type' => 'option'
+	) );
+
+	$wp_customize->add_control( 'ct_acool[homepage_banner_img]', array(
+		'label'		=> __( 'Homepage Banner Images:', 'acool' ),
+		'section'	=> 'ct_homepage_banner',
+		'settings'	=> 'ct_acool[homepage_banner_img]',
+		'type'		=> 'textarea',
+	) );
+
+	//homepage banner text
+	$wp_customize->add_setting( 'ct_acool[homepage_banner_text]', array(
+		
+		'default' => __('<h1>The jQuery slider that just slides.</h1><p class="ct_slider_text">No fancy effects or unnecessary markup.</p><a class="btn" href="#download">Download</a>', 'acool'),
+		'sanitize_callback' => 'acool_sanitize_callback_re',
+		'capability'	=> 'edit_theme_options',
+		'transport'		=> 'postMessage',
+		'type' => 'option'
+	) );
+
+	$wp_customize->add_control( 'ct_acool[homepage_banner_text]', array(
+		'label'		=> __( 'Homepage Banner Text:', 'acool' ),
+		'section'	=> 'ct_homepage_banner',
+		'settings'	=> 'ct_acool[homepage_banner_text]',
+		'type'		=> 'textarea',
+	) );
+
+
+	/*
+	 * footer info add
+	*/
+	$wp_customize->add_section('ct_footer_add_info' , array(
+		'title' => __('Footer text', 'acool'),
+		'priority' => 120,
+	));
+		
+
+	$wp_customize->add_setting( 'ct_acool[footer_info]', array(
+		'default' => __('Copyright 2015', 'acool'),
+		'sanitize_callback' => 'acool_sanitize_callback_re',
+		'capability'	=> 'edit_theme_options',
+		'transport'		=> 'postMessage',
+		'type' => 'option'
+	) );
+
+	$wp_customize->add_control( 'ct_acool[footer_info]', array(
+		'section'	=> 'ct_footer_add_info',
+		'settings'	=> 'ct_acool[footer_info]',
+		'type'		=> 'textarea',
+	) );
+
+	
 }
-?>
+add_action( 'customize_register', 'acool_customize_register' );
+
+function acool_sanitize_callback_re( $str ) {
+	return $str ;
+}

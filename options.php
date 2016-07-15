@@ -122,41 +122,41 @@ function optionsframework_options()
 	 */
 	 
 	$options[] = array(
-		'name' => __('General Options', 'Acool'),
+		'name' => __('General Options', 'acool'),
 		'type' => 'heading');
 
 	$options[] = array(
-			'name' => __('Enable Query Loader', 'Acool'),
-			'desc' => __('Enable page query loader progress bar.', 'Acool'),
+			'name' => __('Enable Query Loader', 'acool'),
+			'desc' => __('Enable page query loader progress bar.', 'acool'),
 			'id' => 'enable_query_loader',
 			'std' => '',
 			'type' => 'checkbox');
 
 	$options[] = array(
-		'name' => __('Upload Logo (recommended use 262px*52px ,png format )', 'Acool'),
+		'name' => __('Upload Logo (recommended use 262px*52px ,png format )', 'acool'),
 		'id' => 'logo',
 		'std' => '',
 		'type' => 'upload');
 		
 	$options[] = array(
-		'name' => __('Favicon', 'Acool'),
-		'desc' => sprintf(__('An icon associated with a URL that is variously displayed, as in a browser\'s address bar or next to the site name in a bookmark list. Learn more about <a href="%s" target="_blank">Favicon</a>', 'Acool'),esc_url("http://en.wikipedia.org/wiki/Favicon")),
+		'name' => __('Favicon', 'acool'),
+		'desc' => sprintf(__('An icon associated with a URL that is variously displayed, as in a browser\'s address bar or next to the site name in a bookmark list. Learn more about <a href="%s" target="_blank">Favicon</a>', 'acool'),esc_url("http://en.wikipedia.org/wiki/Favicon")),
 		'id' => 'favicon',
 		'type' => 'upload');
 
 	$options[] = array(
-		'name' => __('Default featured image for front page ', 'Acool'),
-		'desc' => __('Recommended size: 475*313px;', 'Acool'),
+		'name' => __('Default featured image for front page ', 'acool'),
+		'desc' => __('Recommended size: 475*313px;', 'acool'),
 		'id' => 'default-featured-image',
 		'type' => 'upload');
 		
 	
-	//$options[] = array('name' => __('Link Color', 'Acool'),'id' => 'link_color','std'=>'#03a325' ,'type'=> 'color');	
-	//$options[] = array('name' => __('Link Mouseover Color', 'Acool'),'std'=>'#0c8432','id' => 'link_mouseover_color' ,'type'=> 'color');	
-	//$options[] = array('name' => __('Site Title Color', 'Acool'),'id' => 'site_title_color','std'=>'#2C2C2C' ,'type'=> 'color');	
+	//$options[] = array('name' => __('Link Color', 'acool'),'id' => 'link_color','std'=>'#03a325' ,'type'=> 'color');	
+	//$options[] = array('name' => __('Link Mouseover Color', 'acool'),'std'=>'#0c8432','id' => 'link_mouseover_color' ,'type'=> 'color');	
+	//$options[] = array('name' => __('Site Title Color', 'acool'),'id' => 'site_title_color','std'=>'#2C2C2C' ,'type'=> 'color');	
 	
 	$options[] = array(
-		'name' => __('404 Page Content', 'Acool'),
+		'name' => __('404 Page Content', 'acool'),
 		'id' => 'page_404_content',
 		'std' => '<div class="text-center">
                                     <img class="img-404" src="'.$imagepath .'404.png" alt="404 not found" />
@@ -166,8 +166,8 @@ function optionsframework_options()
 		'type' => 'editor');
 		
 	$options[] = array(
-		'name' => __('Custom CSS', 'Acool'),
-		'desc' => __('The following css code will add to the header before the closing &lt;/head&gt; tag.', 'Acool'),
+		'name' => __('Custom CSS', 'acool'),
+		'desc' => __('The following css code will add to the header before the closing &lt;/head&gt; tag.', 'acool'),
 		'id' => 'custom_css',
 		'std' => 'body{margin:0px;}',
 		'type' => 'textarea');
@@ -175,12 +175,12 @@ function optionsframework_options()
 
 	//Home page
 	 	$options[] = array(
-			'name' => __('Home Page', 'Acool'),
+			'name' => __('Home Page', 'acool'),
 			'type' => 'heading');
 	 
 		  $options[] = array(
-			'name' => __('Enable Featured Homepage', 'Acool'),
-			'desc' => sprintf(__('Active featured homepage Layout.  The standardized way of creating Static Front Pages: <a href="%s" target="_blank">Creating a Static Front Page</a>', 'Acool'),esc_url('http://codex.wordpress.org/Creating_a_Static_Front_Page')),
+			'name' => __('Enable Featured Homepage', 'acool'),
+			'desc' => sprintf(__('Active featured homepage Layout.  The standardized way of creating Static Front Pages: <a href="%s" target="_blank">Creating a Static Front Page</a>', 'acool'),esc_url('http://codex.wordpress.org/Creating_a_Static_Front_Page')),
 			'id' => 'enable_home_page',
 			'std' => '1',
 			'type' => 'checkbox');	
@@ -192,8 +192,8 @@ function optionsframework_options()
 
 		  
 		 $options[] = array(
-			'name' => __('Number of Sections', 'Acool'),
-			'desc' => __('Select number of sections', 'Acool'),
+			'name' => __('Number of Sections', 'acool'),
+			'desc' => __('Select number of sections', 'acool'),
 			'id' => 'section_num',
 			'type' => 'select',
 			'class' => 'mini',
@@ -205,16 +205,16 @@ function optionsframework_options()
 	
 	
 		 //set video main div
-		 $options[] = array(	'desc' =>'<div class="options-section"><h3 class="groupTitle">'.__('Video Background Options', 'Acool').'</h3>',	'class' => 'toggle_option_group group_close','type' => 'info');		 
+		 $options[] = array(	'desc' =>'<div class="options-section"><h3 class="groupTitle">'.__('Video Background Options', 'acool').'</h3>',	'class' => 'toggle_option_group group_close','type' => 'info');		 
 		 //set YouTube Video ID	 
-		 $options[] = array('name' => __('Section Background Video', 'Acool'),'std' => 'e1c-n1dRxwc','desc' => __('YouTube Video ID', 'Acool'),'id' => 'youtube_background_video','type' => 'text');		
-		$options[] = array('name' => __('Display Buttons', 'Acool'), 'desc' => __('Display video control buttons.', 'Acool'),'id' => 'video_controls', 'std' => '1','class' => 'mini', 'options' => array('1'=>'yes','0'=>'no'),'type' => 'select');		
-		$options[] = array('name' => __('Video Loop', 'Acool'), 'desc' => __('Play video loop.', 'Acool'),'id' => 'youtube_video_loop', 'std' => '1','class' => 'mini', 'options' => array('1'=>'yes','0'=>'no'),'type' => 'select');
+		 $options[] = array('name' => __('Section Background Video', 'acool'),'std' => 'e1c-n1dRxwc','desc' => __('YouTube Video ID', 'acool'),'id' => 'youtube_background_video','type' => 'text');		
+		$options[] = array('name' => __('Display Buttons', 'acool'), 'desc' => __('Display video control buttons.', 'acool'),'id' => 'video_controls', 'std' => '1','class' => 'mini', 'options' => array('1'=>'yes','0'=>'no'),'type' => 'select');		
+		$options[] = array('name' => __('Video Loop', 'acool'), 'desc' => __('Play video loop.', 'acool'),'id' => 'youtube_video_loop', 'std' => '1','class' => 'mini', 'options' => array('1'=>'yes','0'=>'no'),'type' => 'select');
 
-		$options[] = array('name' => __('Default Volum', 'Acool'),'desc' => '','id' => 'default_volum','type' => 'select',	'class' => 'mini',	'std' => '10','options' => array_combine(range(0,100,10), range(0,100,10)) );
-		$options[] = array('name' => __('Seeks To', 'Acool'),'std' => '3','desc' => __('Seeks to a specified time in the video ( number of seconds ).', 'Acool'),'id' => 'youtube_seekto','type' => 'text');
+		$options[] = array('name' => __('Default Volum', 'acool'),'desc' => '','id' => 'default_volum','type' => 'select',	'class' => 'mini',	'std' => '10','options' => array_combine(range(0,100,10), range(0,100,10)) );
+		$options[] = array('name' => __('Seeks To', 'acool'),'std' => '3','desc' => __('Seeks to a specified time in the video ( number of seconds ).', 'acool'),'id' => 'youtube_seekto','type' => 'text');
 			
-		$video_background_section = array("0"=>__('No video background', 'Acool'),"1"=>__('Secion 1', 'Acool'));
+		$video_background_section = array("0"=>__('No video background', 'acool'),"1"=>__('Secion 1', 'acool'));
 		/*if( is_numeric( $section_num ) )
 		{
 			for($i=1; $i <= $section_num; $i++)
@@ -224,14 +224,14 @@ function optionsframework_options()
 		}*/
 		
 		
-		$options[]  = array('name' => __('Video Background Section', 'Acool'),'std' => '1','id' => 'video_background_section',
+		$options[]  = array('name' => __('Video Background Section', 'acool'),'std' => '1','id' => 'video_background_section',
 			'type'  => 'select','options'=>$video_background_section);
 			
 		//shut video main div
-		$options[] = array('desc' => __('</div>', 'Acool'),	'class' => 'toggle_title','type' => 'info');
+		$options[] = array('desc' => __('</div>', 'acool'),	'class' => 'toggle_title','type' => 'info');
 		 
 		//slider or content
-		$options[] = array('name' => __('Section 1 Content', 'Acool'),'std' => 'slider','class' => 'mini','id' => 'section_1_content','type' => 'select','options'=>array("content"=>__('Content', 'Acool'),"slider"=>__('Slider', 'Acool')));
+		$options[] = array('name' => __('Section 1 Content', 'acool'),'std' => 'slider','class' => 'mini','id' => 'section_1_content','type' => 'select','options'=>array("content"=>__('Content', 'acool'),"slider"=>__('Slider', 'acool')));
 		//$section_title_border_color = array("","#009dc4","#459a00","#305999","#ff6c00");		
 		$section_title              = array("video"                , "columns"       ,"post_list"        ,"team"        ,"facts"         ,"progress_bar"        ,"price"        );	
 		$section_title_color        = array(""                     , "#00bceb"       ,"#ffffff"          ,"#3b3b3b"     ,"#303030"       ,"#303030"             ,"#303030"      );
@@ -573,7 +573,7 @@ function optionsframework_options()
 						
 			$options[] = array(
 			'name' => '',
-			'desc' => '<div style="overflow:hidden; background-color:#eee;"><a data-section="'.$i.'" class="delete-section button-primary" style="float:right;" title="'.__('Delete', 'Acool').'">'.__('Delete this section', 'Acool').'</a></div>',
+			'desc' => '<div style="overflow:hidden; background-color:#eee;"><a data-section="'.$i.'" class="delete-section button-primary" style="float:right;" title="'.__('Delete', 'acool').'">'.__('Delete this section', 'acool').'</a></div>',
 			'id' => 'delete_section_'.$i,
 			'std' => '',
 			'type' => 'info',
@@ -584,7 +584,7 @@ function optionsframework_options()
 			if($i==0)
 			{					
 				$options[] = array(
-					'name' => __('Select Content Template for this section', 'Acool'),
+					'name' => __('Select Content Template for this section', 'acool'),
 					'std' => ct_std_select($i),
 					'id' => 'ct_select_section_temp_'.$i.'',
 					'type' => 'select',
@@ -600,7 +600,7 @@ function optionsframework_options()
 					);
 			}else{
 				$options[] = array(
-					'name' => __('Select Content Template for this section', 'Acool'),
+					'name' => __('Select Content Template for this section', 'acool'),
 					'std' => ct_std_select($i),
 					'id' => 'ct_select_section_temp_'.$i.'',
 					'type' => 'select',
@@ -616,28 +616,28 @@ function optionsframework_options()
 						)
 					);
 			}
-			//$options[] = array('name' => __('Section Content', 'Acool'),'id' => 'section_content_'.$i,'std' => $section_content[$i],'type' => 'editor');			
-			//$options[] = array('name' => __('Section Title', 'Acool'),'id' => 'section_title_'.$i.'','type' => 'text','std'=>$section_title[$i]);
-			$options[] = array('name' => __('Title Color', 'Acool'),'id' => 'section_title_color_'.$i.'','type' => 'color','std'=>$section_title_color[$i]);
-			//$options[] = array('name' => __('Title Border Color', 'Acool'),'id' => 'section_title_border_color_'.$i.'','type' => 'color','std'=>$section_title_border_color[$i]);
-			$options[] = array('name' => __('Content Color', 'Acool'),'id' => 'section_content_color_'.$i.'','type' => 'color','std'=>$section_content_color[$i]);
-			//$options[] = array('name' => __('Section ID', 'Acool'),'id' => 'section_anchor_'.$i.'','type' => 'text','std'=>$section_anchor[$i],'desc'=>__('Add anchor tag to jump to specific section on one page without having any space or symbol. This section id will be related with the menu link, it should be call on wp appearance menu by using # after site url. It is usually all lowercase and contains only letters, numbers, and hyphens.', 'Acool'));
+			//$options[] = array('name' => __('Section Content', 'acool'),'id' => 'section_content_'.$i,'std' => $section_content[$i],'type' => 'editor');			
+			//$options[] = array('name' => __('Section Title', 'acool'),'id' => 'section_title_'.$i.'','type' => 'text','std'=>$section_title[$i]);
+			$options[] = array('name' => __('Title Color', 'acool'),'id' => 'section_title_color_'.$i.'','type' => 'color','std'=>$section_title_color[$i]);
+			//$options[] = array('name' => __('Title Border Color', 'acool'),'id' => 'section_title_border_color_'.$i.'','type' => 'color','std'=>$section_title_border_color[$i]);
+			$options[] = array('name' => __('Content Color', 'acool'),'id' => 'section_content_color_'.$i.'','type' => 'color','std'=>$section_content_color[$i]);
+			//$options[] = array('name' => __('Section ID', 'acool'),'id' => 'section_anchor_'.$i.'','type' => 'text','std'=>$section_anchor[$i],'desc'=>__('Add anchor tag to jump to specific section on one page without having any space or symbol. This section id will be related with the menu link, it should be call on wp appearance menu by using # after site url. It is usually all lowercase and contains only letters, numbers, and hyphens.', 'acool'));
 			
 			if($section_title[$i] =='post_list' )
 			{
-				//$options[] = array('name' => __('Blog List Link', 'Acool'),'id' => 'section_title_post_list_'.$i,"class" => 'mini','type' => 'text');
-				$options[] = array('name' => __('Blog List Link', 'Acool'),'id' => 'section_post_list_'.$i.'','type' => 'text','std'=>esc_url(home_url('/')).'blog/');
+				//$options[] = array('name' => __('Blog List Link', 'acool'),'id' => 'section_title_post_list_'.$i,"class" => 'mini','type' => 'text');
+				$options[] = array('name' => __('Blog List Link', 'acool'),'id' => 'section_post_list_'.$i.'','type' => 'text','std'=>esc_url(home_url('/')).'blog/');
 			}
 			
-			$options[] = array('name' =>  __('Section Background', 'Acool'),'id' => 'section_background_'.$i.'','std' => $section_background[$i],'type' => 'background' );
+			$options[] = array('name' =>  __('Section Background', 'acool'),'id' => 'section_background_'.$i.'','std' => $section_background[$i],'type' => 'background' );
 			
-			$options[] = array('name' => __('100% Width Background Image', 'Acool'),'std' => $section_background_size[$i],'id' => 'background_size_'.$i.'',
+			$options[] = array('name' => __('100% Width Background Image', 'acool'),'std' => $section_background_size[$i],'id' => 'background_size_'.$i.'',
 			'type' => 'select','class'=>'mini','options'=>array("no"=>"no","yes"=>"yes"));
-			$options[] = array('name' => __('Full Width', 'Acool'),'std' => $section_full_width[$i],'id' => 'full_width_'.$i.'','type' => 'select','class'=>'mini','options'=>array("no"=>"no","yes"=>"yes"));
-			$options[] = array('name' => __('Section Css Class', 'Acool'),'id' => 'section_css_class_'.$i.'','type' => 'text','std'=>$section_css_class[$i]);
-			$options[] = array('name' => __('Section Content', 'Acool'),'id' => 'section_content_'.$i,'std' => $section_content[$i],'type' => 'editor');
+			$options[] = array('name' => __('Full Width', 'acool'),'std' => $section_full_width[$i],'id' => 'full_width_'.$i.'','type' => 'select','class'=>'mini','options'=>array("no"=>"no","yes"=>"yes"));
+			$options[] = array('name' => __('Section Css Class', 'acool'),'id' => 'section_css_class_'.$i.'','type' => 'text','std'=>$section_css_class[$i]);
+			$options[] = array('name' => __('Section Content', 'acool'),'id' => 'section_content_'.$i,'std' => $section_content[$i],'type' => 'editor');
 			
-			$options[] = array('desc' => __('</div>', 'Acool'),'class' => 'toggle_title','type' => 'info');
+			$options[] = array('desc' => __('</div>', 'acool'),'class' => 'toggle_title','type' => 'info');
 			
 		}
 				  
@@ -645,14 +645,14 @@ function optionsframework_options()
 
 					  
 	// HEADER
-	$options[] = array('name' => __('Header', 'Acool'),'type' => 'heading');
+	$options[] = array('name' => __('Header', 'acool'),'type' => 'heading');
 		
-	$options[] = array('name' => __('Header Opacity', 'Acool'),'desc' =>'',	'id' => 'header_opacity',	'type' => 'select',	'class' => 'mini',	'std' => '0.8','options' => array_combine(range(0,1,0.1), range(0,1,0.1)) );	
+	$options[] = array('name' => __('Header Opacity', 'acool'),'desc' =>'',	'id' => 'header_opacity',	'type' => 'select',	'class' => 'mini',	'std' => '0.8','options' => array_combine(range(0,1,0.1), range(0,1,0.1)) );	
 		
-	$options[] = array('name' => __('Fixed Header', 'Acool'),'desc' =>'',	'id' => 'fixed_header',	'type' => 'select',	'class' => 'mini',	'std' => 'yes','options' => array('no'=>'no','yes'=>'yes') );
+	$options[] = array('name' => __('Fixed Header', 'acool'),'desc' =>'',	'id' => 'fixed_header',	'type' => 'select',	'class' => 'mini',	'std' => 'yes','options' => array('no'=>'no','yes'=>'yes') );
 
 	//since 1.0.2
-	$options[] = array('name' => __('Breadcrumb', 'Acool'),'desc' =>__( "Display the breadcrumb in posts lists :post page, blog page, archives, search results..." , "Acool" ),	'id' => 'show_breadcrumb',	'type' => 'select',	'class' => 'mini',	'std' => '1','options' => array('yes'=>'yes','no'=>'no')  );
+	$options[] = array('name' => __('Breadcrumb', 'acool'),'desc' =>__( "Display the breadcrumb in posts lists :post page, blog page, archives, search results..." , "acool" ),	'id' => 'show_breadcrumb',	'type' => 'select',	'class' => 'mini',	'std' => '1','options' => array('yes'=>'yes','no'=>'no')  );
 	//$show_breadcrumb         =  of_get_option("show_breadcrumb");
 	//since 1.0.2 end
 
@@ -671,40 +671,40 @@ function optionsframework_options()
 		
 		);	
 	
-	$options[] = array('name' => __('Footer', 'Acool'),'type' => 'heading');
+	$options[] = array('name' => __('Footer', 'acool'),'type' => 'heading');
 
-	$options[] = array('name' => __('Display Footer Widget Area', 'Acool'), 'desc' =>'','id' => 'display_footer_widget_area', 'std' => '0','class' => 'mini', 'options' => array('0'=>'no','1'=>'yes'),'type' => 'select');
+	$options[] = array('name' => __('Display Footer Widget Area', 'acool'), 'desc' =>'','id' => 'display_footer_widget_area', 'std' => '0','class' => 'mini', 'options' => array('0'=>'no','1'=>'yes'),'type' => 'select');
 
-	$options[] = array('name' =>  __('Footer Widget Area Background', 'Acool'),'id' => 'footer_widget_area_background','std' => $footer_widget_area_background,'type' => 'background' );	  
+	$options[] = array('name' =>  __('Footer Widget Area Background', 'acool'),'id' => 'footer_widget_area_background','std' => $footer_widget_area_background,'type' => 'background' );	  
 			  
-	$options[] = array('name' => __('Social Icon Color', 'Acool'),'std' => '#FFFFFF','id' => 'social_icon_color' ,'type'=> 'color');
-	$options[] = array('name' => __('Social Icon Background Color', 'Acool'),'std' => '#0c8432','id' => 'social_icon_background_color' ,'type'=> 'color');
+	$options[] = array('name' => __('Social Icon Color', 'acool'),'std' => '#FFFFFF','id' => 'social_icon_color' ,'type'=> 'color');
+	$options[] = array('name' => __('Social Icon Background Color', 'acool'),'std' => '#0c8432','id' => 'social_icon_background_color' ,'type'=> 'color');
 		
-	$options[] = array('name' =>  __('Home Page Footer Background', 'Acool'),'id' => 'home_footer_background','std' =>$home_footer_background_defaults,'type' => 'background' );
-	$options[] = array('name' =>  __('Single Page Footer Background', 'Acool'),'id' => 'single_footer_background','std' => $background_defaults,'type' => 'background' );
+	$options[] = array('name' =>  __('Home Page Footer Background', 'acool'),'id' => 'home_footer_background','std' =>$home_footer_background_defaults,'type' => 'background' );
+	$options[] = array('name' =>  __('Single Page Footer Background', 'acool'),'id' => 'single_footer_background','std' => $background_defaults,'type' => 'background' );
 	
 	for($i=0;$i<9;$i++)
 	{
-		$options[] = array("name" => sprintf(__('Social Icon #%s', 'Acool'),($i+1)),	"id" => "social_icon_".$i,"std" => "","class" => 'mini',"type" => "select",	"options" => $social_icons );
-		$options[] = array('name' => sprintf(__('Social Title #%s', 'Acool'),($i+1)),'id' => 'social_title_'.$i,"class" => 'mini','type' => 'text');	
-		$options[] = array('name' => sprintf(__('Social Link #%s', 'Acool'),($i+1)),'id' => 'social_link_'.$i,'type' => 'text');	
+		$options[] = array("name" => sprintf(__('Social Icon #%s', 'acool'),($i+1)),	"id" => "social_icon_".$i,"std" => "","class" => 'mini',"type" => "select",	"options" => $social_icons );
+		$options[] = array('name' => sprintf(__('Social Title #%s', 'acool'),($i+1)),'id' => 'social_title_'.$i,"class" => 'mini','type' => 'text');	
+		$options[] = array('name' => sprintf(__('Social Link #%s', 'acool'),($i+1)),'id' => 'social_link_'.$i,'type' => 'text');	
 	}
 
 
 		// Slider
 
-		$options[] = array(	'name' => __('Homepage Slider', 'Acool'),	'type' => 'heading');
+		$options[] = array(	'name' => __('Homepage Slider', 'acool'),	'type' => 'heading');
 		
 		//HOME PAGE SLIDER
-		$options[] = array('name' => __('Slideshow', 'Acool'),'id' => 'group_title','type' => 'title');
+		$options[] = array('name' => __('Slideshow', 'acool'),'id' => 'group_title','type' => 'title');
 		
-		$options[] = array(	'desc' => __('<div class="options-section"><h3 class="groupTitle">'.__('Slide One','Acool').'</h3>', 'Acool'),	'class' => 'toggle_option_group group_close','type' => 'info');
+		$options[] = array(	'desc' => __('<div class="options-section"><h3 class="groupTitle">'.__('Slide One','acool').'</h3>', 'acool'),	'class' => 'toggle_option_group group_close','type' => 'info');
 		
-		$options[] = array('name' => __('Image', 'Acool'),'id' => 'acool_slide_image_1','type' => 'upload','std'=>$imagepath.'banner1.jpg');
+		$options[] = array('name' => __('Image', 'acool'),'id' => 'acool_slide_image_1','type' => 'upload','std'=>$imagepath.'banner1.jpg');
 		
-		$options[] = array('name' => __('Text', 'Acool'),'id' => 'acool_slide_text_1','type' => 'editor','std'=>'<h1>The jQuery slider that just slides.</h1><p class="ct_slider_text">No fancy effects or unnecessary markup.</p><a class="btn" href="#download">Download</a>');
+		$options[] = array('name' => __('Text', 'acool'),'id' => 'acool_slide_text_1','type' => 'editor','std'=>'<h1>The jQuery slider that just slides.</h1><p class="ct_slider_text">No fancy effects or unnecessary markup.</p><a class="btn" href="#download">Download</a>');
 		
-		$options[] = array(	'desc' => __('</div>', 'Acool'),	'class' => 'toggle_title','type' => 'info');
+		$options[] = array(	'desc' => __('</div>', 'acool'),	'class' => 'toggle_title','type' => 'info');
 
 
 	if ( defined( 'CT_HOMEPAGE_SLIDER_USED' ) && CT_HOMEPAGE_SLIDER_USED )
@@ -712,47 +712,47 @@ function optionsframework_options()
 
 
 		
-		$options[] = array(	'desc' => __('<div class="options-section"><h3 class="groupTitle">'.__('Slide Two','Acool').'</h3>', 'Acool'),	'class' => 'toggle_option_group group_close','type' => 'info');
+		$options[] = array(	'desc' => __('<div class="options-section"><h3 class="groupTitle">'.__('Slide Two','acool').'</h3>', 'acool'),	'class' => 'toggle_option_group group_close','type' => 'info');
 		
-		$options[] = array('name' => __('Image', 'Acool'),'id' => 'acool_slide_image_2','type' => 'upload','std'=>$imagepath.'banner2.jpg');
+		$options[] = array('name' => __('Image', 'acool'),'id' => 'acool_slide_image_2','type' => 'upload','std'=>$imagepath.'banner2.jpg');
 		
-		$options[] = array('name' => __('Text', 'Acool'),'id' => 'acool_slide_text_2','type' => 'editor','std'=>'<h1>Fluid, flexible, fantastically minimal.</h1><p class="ct_slider_text">Use any HTML in your slides, extend with CSS. You have full control.</p><a class="btn" href="#download">Download</a>');
+		$options[] = array('name' => __('Text', 'acool'),'id' => 'acool_slide_text_2','type' => 'editor','std'=>'<h1>Fluid, flexible, fantastically minimal.</h1><p class="ct_slider_text">Use any HTML in your slides, extend with CSS. You have full control.</p><a class="btn" href="#download">Download</a>');
 		
-		$options[] = array(	'desc' => __('</div>', 'Acool'),	'class' => 'toggle_title','type' => 'info');
+		$options[] = array(	'desc' => __('</div>', 'acool'),	'class' => 'toggle_title','type' => 'info');
 		
-		$options[] = array(	'desc' => __('<div class="options-section"><h3 class="groupTitle">'.__('Slide Three','Acool').'</h3>', 'Acool'),	'class' => 'toggle_option_group group_close','type' => 'info');
-		$options[] = array('name' => __('Image', 'Acool'),'id' => 'acool_slide_image_3','type' => 'upload','std'=>$imagepath.'banner3.jpg');
+		$options[] = array(	'desc' => __('<div class="options-section"><h3 class="groupTitle">'.__('Slide Three','acool').'</h3>', 'acool'),	'class' => 'toggle_option_group group_close','type' => 'info');
+		$options[] = array('name' => __('Image', 'acool'),'id' => 'acool_slide_image_3','type' => 'upload','std'=>$imagepath.'banner3.jpg');
 		
-		$options[] = array('name' => __('Text', 'Acool'),'id' => 'acool_slide_text_3','type' => 'editor','std'=>'<h1>Open-source.</h1><p class="ct_slider_text"> Vestibulum auctor nisl vel lectus ullamcorper sed pellentesque dolor eleifend.</p><a class="btn" href="#">Contribute</a>');
+		$options[] = array('name' => __('Text', 'acool'),'id' => 'acool_slide_text_3','type' => 'editor','std'=>'<h1>Open-source.</h1><p class="ct_slider_text"> Vestibulum auctor nisl vel lectus ullamcorper sed pellentesque dolor eleifend.</p><a class="btn" href="#">Contribute</a>');
 		
-		$options[] = array(	'desc' => __('</div>', 'Acool'),	'class' => 'toggle_title','type' => 'info');
+		$options[] = array(	'desc' => __('</div>', 'acool'),	'class' => 'toggle_title','type' => 'info');
 		
-		$options[] = array(	'desc' => __('<div class="options-section"><h3 class="groupTitle">'.__('Slide Four','Acool').'</h3>', 'Acool'),	'class' => 'toggle_option_group group_close','type' => 'info');
-		$options[] = array('name' => __('Image', 'Acool'),'id' => 'acool_slide_image_4','type' => 'upload','std'=>$imagepath.'banner4.jpg');
+		$options[] = array(	'desc' => __('<div class="options-section"><h3 class="groupTitle">'.__('Slide Four','acool').'</h3>', 'acool'),	'class' => 'toggle_option_group group_close','type' => 'info');
+		$options[] = array('name' => __('Image', 'acool'),'id' => 'acool_slide_image_4','type' => 'upload','std'=>$imagepath.'banner4.jpg');
 		
-		$options[] = array('name' => __('Text', 'Acool'),'id' => 'acool_slide_text_4','type' => 'editor','std'=>'<h1>Uh, that\'s about it.</h1><p class="ct_slider_text"> I just wanted to show you another slide.</p><a class="btn" href="#download">Download</a>');
+		$options[] = array('name' => __('Text', 'acool'),'id' => 'acool_slide_text_4','type' => 'editor','std'=>'<h1>Uh, that\'s about it.</h1><p class="ct_slider_text"> I just wanted to show you another slide.</p><a class="btn" href="#download">Download</a>');
 		
-		$options[] = array(	'desc' => __('</div>', 'Acool'),	'class' => 'toggle_title','type' => 'info');
+		$options[] = array(	'desc' => __('</div>', 'acool'),	'class' => 'toggle_title','type' => 'info');
 		
-		$options[] = array(	'desc' => __('<div class="options-section"><h3 class="groupTitle">'.__('Slide Five','Acool').'</h3>', 'Acool'),	'class' => 'toggle_option_group group_close','type' => 'info');
-		$options[] = array('name' => __('Image', 'Acool'),'id' => 'acool_slide_image_5','type' => 'upload');
+		$options[] = array(	'desc' => __('<div class="options-section"><h3 class="groupTitle">'.__('Slide Five','acool').'</h3>', 'acool'),	'class' => 'toggle_option_group group_close','type' => 'info');
+		$options[] = array('name' => __('Image', 'acool'),'id' => 'acool_slide_image_5','type' => 'upload');
 		
-		$options[] = array('name' => __('Text', 'Acool'),'id' => 'acool_slide_text_5','type' => 'editor');
+		$options[] = array('name' => __('Text', 'acool'),'id' => 'acool_slide_text_5','type' => 'editor');
 		
-		$options[] = array(	'desc' => __('</div>', 'Acool'),	'class' => 'toggle_title','type' => 'info');
+		$options[] = array(	'desc' => __('</div>', 'acool'),	'class' => 'toggle_title','type' => 'info');
 		
 	}
 
-		$options[] = array(	'name' => __('Slide Time', 'Acool'),'id' => 'slide_time',	'std' => '5000','desc'=>__('Milliseconds between the end of the sliding effect and the start of the nex one.','Acool'),'type' => 'text');
+		$options[] = array(	'name' => __('Slide Time', 'acool'),'id' => 'slide_time',	'std' => '5000','desc'=>__('Milliseconds between the end of the sliding effect and the start of the nex one.','acool'),'type' => 'text');
 		//END HOME PAGE SLIDER
 
 
 
 	//Blog
-	$options[] = array('name' => __('Blog', 'Acool'),'type' => 'heading');
-	$options[] = array('name' => __('Hide Post Meta', 'Acool'),'std' => 'no','desc'=>__('Hide date, author, category...below blog title.','Acool'),'id' => 'hide_post_meta',
+	$options[] = array('name' => __('Blog', 'acool'),'type' => 'heading');
+	$options[] = array('name' => __('Hide Post Meta', 'acool'),'std' => 'no','desc'=>__('Hide date, author, category...below blog title.','acool'),'id' => 'hide_post_meta',
 	'type' => 'select','class'=>'mini','options'=>array("no"=>"no","yes"=>"yes"));
-	//$options[] = array('name' => __('Blog Title Color', 'Acool'),'id' => 'blog_title_color','std'=>'#4ca702' ,'type'=> 'color');	
+	//$options[] = array('name' => __('Blog Title Color', 'acool'),'id' => 'blog_title_color','std'=>'#4ca702' ,'type'=> 'color');	
 		  
 	return $options;
 }

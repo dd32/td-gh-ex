@@ -11,14 +11,14 @@ function acool_better_comments($comment, $args, $depth)
             </div>
 
             <div class="comment_postinfo">
-                <?php printf(__('<cite class="fn">%s</cite> <span class="says"> on </span>','Acool'), get_comment_author_link()) ?>
-                <span class="comment_date"><?php printf(__('%1$s at %2$s','Acool'), get_comment_date(),  get_comment_time()) ?></span><?php edit_comment_link(__('(Edit)','Acool'),'  ','') ?>
+                <?php printf(__('<cite class="fn">%s</cite> <span class="says"> on </span>','acool'), get_comment_author_link()) ?>
+                <span class="comment_date"><?php printf(__('%1$s at %2$s','acool'), get_comment_date(),  get_comment_time()) ?></span><?php edit_comment_link(__('(Edit)','acool'),'  ','') ?>
             </div> <!-- .comment_postinfo -->
 
             <div class="comment_area">				
                 <div class="comment-content clearfix">
                 	<?php if ($comment->comment_approved == '0') : ?>
-                     	<em><?php _e('Your comment is awaiting moderation.','Acool') ?></em>
+                     	<em><?php _e('Your comment is awaiting moderation.','acool') ?></em>
                      	<br />
                     <?php endif; ?>
                     
@@ -35,30 +35,6 @@ function acool_better_comments($comment, $args, $depth)
         
 <?php
 }
-
-   /**
- * acool favicon
- */
-if ( ! function_exists( 'acool_favicon' ) ){
-function acool_favicon()
-{
-	$url =  of_get_option('favicon');
-	
-	$icon_link = "";
-	if($url)
-	{
-		$type = "image/x-icon";
-		if(strpos($url,'.png' )) $type = "image/png";
-		if(strpos($url,'.gif' )) $type = "image/gif";
-	
-		$icon_link = '<link rel="icon" href="'.esc_url($url).'" type="'.$type.'">';
-	}
-	
-	echo $icon_link;
-}
-}
-add_action( 'wp_head', 'acool_favicon' );
-
 
 
 /*
@@ -127,52 +103,12 @@ add_action( 'widgets_init', 'acool_widgets_init' );
 
 
 
-
-/**
- * Acool admin sidebar
- */
-
-function acool_options_panel_sidebar()
-{
-?>
-	<div id="optionsframework-sidebar">
-		<div class="metabox-holder">
-	    	<div class="postbox">
-	    		<h3><?php _e( 'Quick Links', 'Acool' ); ?></h3>
-      			<div class="inside"> 
-		          <ul>
-                  <li><a href="<?php echo esc_url( 'https://www.coothemes.com/themes/acool.php' ); ?>" target="_blank">Upgrade to Pro</a></li>
-                  <li><a href="<?php echo esc_url( 'https://www.coothemes.com/doc/acool-manual.php' ); ?>" target="_blank">Tutorials</a></li>
-                  </ul>
-      			</div>
-	    	</div>
-	  	</div>
-	</div>
-    <div class="clear"></div>
-<?php
-}
-
-add_action( 'optionsframework_sidebar','acool_options_panel_sidebar' );
-
 /**
  * Custom scripts and styles on customize.php for clean_box.
  *
  * @since acool 1.1
  */
 function acool_customize_scripts() {
-	wp_enqueue_script( 'acool_customizer_custom', get_template_directory_uri() . '/js/customizer-custom-scripts.min.js', array( 'customize-controls', 'iris', 'underscore', 'wp-util' ), '20150630', true );
-
-	$clean_box_misc_links = array(
-							'upgrade_link' 				=> esc_url( 'https://www.coothemes.com/themes/acool.php' ),
-							'upgrade_text'	 			=> __( 'Upgrade To Pro &raquo;', 'Acool' ),
-							'WP_version'				=> get_bloginfo( 'version' ),
-							'old_version_message'		=> __( 'Some settings might be missing or disorganized in this version of WordPress. So we suggest you to upgrade to version 4.0 or better.', 'Acool' )
-		);
-	if ( !(defined( 'CT_THEME_PRO_USED' ) && CT_THEME_PRO_USED ))
-	{
-		wp_localize_script( 'acool_customizer_custom', 'clean_box_misc_links', $clean_box_misc_links );
-	}
-	
 
 	wp_enqueue_style( 'acool_customizer_custom_css', get_template_directory_uri() . '/css/customizer.css');
 }
@@ -190,8 +126,6 @@ function acool_previous_next($str)
 			array_push($categoryIDS, $category->term_id);
 		}
 		$categoryIDS = implode(",", $categoryIDS);
-		
-		
 	
 		if (get_previous_post($categoryIDS)) { previous_post_link('<< %link','%title',true);}	
 		echo '&nbsp;&nbsp;&nbsp;';
@@ -216,18 +150,32 @@ function acool_previous_next($str)
  * If options are stored as separate rows in database, it simply uses get_option() function.
  *
  * @param string $option_name Theme option name.
- * @param string $default_value Default value that should be set if the theme option isn't set.
- * @param string $used_for_object "Object" name that should be translated into corresponding "object" if WPML is activated.
- * @return mixed Theme option value or false if not found.
+ * @param string $default Default value that should be set if the theme option isn't set.
  */
-if ( ! function_exists( 'ct_get_option' ) ){
-	function ct_get_option( $ct_row,$option_name,$default )
-	{				
-		$arr =  get_option($ct_row);
-		@$option_value     = sanitize_text_field($arr[$option_name]);
-		if($option_value !=''){
-			return $option_value;
-		}else{			
+if ( ! function_exists( 'acool_get_option' ) ){
+	function acool_get_option( $ct_row,$option_name,$default )
+	{			
+		$arr =  get_option($ct_row);		
+		if(is_array($arr))
+		{
+			@$option_value     = $arr[$option_name];
+			if($option_value !='')
+			{
+				return $option_value;
+			}
+			else
+			{
+				if(array_key_exists($option_name,$arr) ){
+					return  false;
+				}	
+				else
+				{		
+					return  $default;	
+				}
+			}
+		}
+		else
+		{		
 			return  $default;	
 		}
 	}
@@ -265,13 +213,12 @@ function acool_breadcrumbs() {
  
     } elseif ( is_day() ) {
 		
-      echo '<a href="' . get_year_link( get_the_time( 'Y' ) ) . '" title="' . get_the_time( esc_attr__( 'Y' , 'Acool' ) ) . '">' . get_the_time('Y') . ' ' . $delimiter . '</a>';
-      echo '<a href="' . get_month_link( get_the_time( 'Y' ), get_the_time( 'm' ) ) . '" title="' . get_the_time( esc_attr__( 'F' , 'Acool' ) ) . '">' . get_the_time('F') . '</a>' . $delimiter . ' ';
+      echo '<a href="' . get_year_link( get_the_time( 'Y' ) ) . '" title="' . get_the_time( esc_attr__( 'Y' , 'acool' ) ) . '">' . get_the_time('Y') . ' ' . $delimiter . '</a>';
+      echo '<a href="' . get_month_link( get_the_time( 'Y' ), get_the_time( 'm' ) ) . '" title="' . get_the_time( esc_attr__( 'F' , 'acool' ) ) . '">' . get_the_time('F') . '</a>' . $delimiter . ' ';
       echo $currentBefore . get_the_time('d') . $currentAfter;
  
     } elseif ( is_month() ) {
-      //echo '' . get_the_time('Y') . ' ' . $delimiter . ' ';
-      echo '<a href="' . get_year_link( get_the_time( 'Y' ) ) . '" title="' . get_the_time( esc_attr__( 'Y' , 'Acool' ) ) . '">' . get_the_time('Y') . ' ' . $delimiter . '</a>';	  
+      echo '<a href="' . get_year_link( get_the_time( 'Y' ) ) . '" title="' . get_the_time( esc_attr__( 'Y' , 'acool' ) ) . '">' . get_the_time('Y') . ' ' . $delimiter . '</a>';	  
       echo $currentBefore . get_the_time('F') . $currentAfter;
  
     } elseif ( is_year() ) {
@@ -322,7 +269,7 @@ function acool_breadcrumbs() {
  
     if ( get_query_var('paged') ) {
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
-      echo __('Page', 'Acool') . ' ' . get_query_var('paged');
+      echo __('Page', 'acool') . ' ' . get_query_var('paged');
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
     } 
     echo '</div>';
@@ -359,7 +306,7 @@ function acool_add_mobile_navigation(){
 				<span class="mobile_menu_bar"></span>
 			</a>
 		</div>',
-		esc_html__( 'Select Page', 'Acool' )
+		esc_html__( 'Select Page', 'acool' )
 	);
 }
 add_action( 'ct_header_top', 'acool_add_mobile_navigation' );
@@ -436,43 +383,34 @@ function acool_hex2rgb( $hex )
 
 
 /* this function gets thumbnail from Post Thumbnail or Custom field or First post image */
-if ( ! function_exists( 'ct_get_thumbnail' ) ) {
-	function ct_get_thumbnail($post_id)
+if ( ! function_exists( 'acool_get_thumbnail' ) ) {
+	function acool_get_thumbnail($post_id)
 	{
 		//if ( $post == '' ) global $post;
 		if(has_post_thumbnail())
 		{
+			$dd = get_the_post_thumbnail();
 			
 			$ct_post_thumbnail_fullpath=wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), "Full");
 			$thumb_array['fullpath'] = $ct_post_thumbnail_fullpath[0];
+			if($thumb_array['fullpath']==""){$thumb_array['fullpath'] = $dd;}
 		
 		}else{
 			$post_content = get_post($post_id)->post_content;
-			$thumb_array['fullpath'] = catch_that_image($post_content);
+			$thumb_array['fullpath'] = acool_catch_that_image($post_content);
 		}
-		if($post = 'front-page' && $thumb_array['fullpath']=="" )
-		{
-			
-			$thumb_array['fullpath'] = esc_url(of_get_option('default-featured-image'));
-		
-		}		
 		
 		if($post = 'front-page' && $thumb_array['fullpath']=="" )
-		{
-			
+		{			
 			$thumb_array['fullpath'] = get_template_directory_uri()."/images/default-thumbnail.jpg";
-		
 		}		
-
-		return $thumb_array;
-		
+		return $thumb_array;		
 	}
 }
 
-function catch_that_image($post_content)
+function acool_catch_that_image($post_content)
 {
   global $post, $posts;
-  //$post_content = $post->post_content;
   $first_img = '';
   ob_start();
   ob_end_clean();
@@ -483,16 +421,22 @@ function catch_that_image($post_content)
 }
 
 
-
-
-
-
-function ct_get_title($str,$limit) {
-    //$title = get_the_title($post->ID);
+function acool_get_title($str,$limit) {
     if(strlen($str) > $limit) {
         $str = substr($str, 0, $limit);
     }
- 
     echo $str;
 }
+
+//post_meta
+function acool_show_post_meta()
+{
 ?>
+    <div class="ct_entry_meta">
+        <span><i class="fa fa-clock-o"></i><a href="<?php echo esc_url(get_month_link(get_the_time('Y'), get_the_time('m')));?>"><?php echo esc_html(get_the_date("M d, Y"));?></a></span>
+        <span><i class="fa fa-user"></i><?php echo get_the_author_link(); ?></span> 
+        <span><i class="fa fa-file-o"></i><?php the_category(', '); ?></span>
+        <?php edit_post_link( __('Edit','acool'), '<span><i class="fa fa-pencil"></i>', '</span>', get_the_ID() ); ?>         
+    </div>
+ <?php
+}
