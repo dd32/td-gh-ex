@@ -136,9 +136,6 @@
     width: 10px;
 }
 
-#owl-testimonial .owl-controls .owl-page.active span {
-	background-color:#222222;
-}
 #owl-twitter .owl-controls .owl-page span {
     background-color:#ffffff;
 	border-radius: 0 !important;

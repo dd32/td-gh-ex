@@ -3,7 +3,7 @@ $col = 12 / (int)$awada_theme_options['footer_layout']; ?>
 <?php if ($awada_theme_options['site_layout'] == 'boxed') { ?>
 </div><!-- end wrapper -->
 <?php } ?>
-<footer id="footer-style-1" <?php if ($awada_theme_options['site_layout'] == 'boxed') { ?> class="container" <?php } ?>>
+<footer id="awada_footer_area" class="footer-main <?php if ($awada_theme_options['site_layout'] == 'boxed') { echo 'container'; } ?>">
 	<div class="container home_footer">
 		<?php if (is_active_sidebar('footer-widget')) {
 		dynamic_sidebar('footer-widget');
@@ -20,19 +20,19 @@ $col = 12 / (int)$awada_theme_options['footer_layout']; ?>
             the_widget('WP_Widget_Meta', null, $args);
 		} ?>
 	</div><!-- end container -->
-</footer><!-- end #footer-style-1 -->    
+</footer><!-- end awada_footer_area -->    
 
 <div id="copyrights" <?php if ($awada_theme_options['site_layout'] == 'boxed') { ?> class="container" <?php } ?>>
 	<div class="container">
 		<?php if ($awada_theme_options['copyright_text_footer']==1) { ?>
 		<div id="copyright_section" class="col-lg-5 col-md-6 col-sm-12">
-			<div class="copyright-text">
+			<div class="footer_copy_text">
 				<p><span id="copyright_text"><?php echo esc_attr($awada_theme_options['footer_copyright']); ?> </span><span id="developed_by_text"> <?php echo esc_attr($awada_theme_options['developed_by_text']); ?> </span><a id="copyright_link" href="<?php echo esc_url($awada_theme_options['developed_by_link']); ?>"><span id="copyright_link_text"><?php echo esc_attr($awada_theme_options['developed_by_link_text']); ?></span></a></p>
-			</div><!-- end copyright-text -->
+			</div><!-- end footer copyright text -->
 		</div><!-- end widget -->
 		<?php } ?>
-		<div class="col-lg-7 col-md-6 col-sm-12 clearfix">
-			<div class="footer-menu">
+		<div id="copyright_menu" class="col-lg-7 col-md-6 col-sm-12 clearfix">
+			<div class="footer-area-menu">
 				<?php wp_nav_menu(array(
                         'theme_location' => 'secondary',
                         'container' => false,
@@ -47,7 +47,7 @@ $col = 12 / (int)$awada_theme_options['footer_layout']; ?>
 	<?php echo $awada_theme_options['custom_css']; ?>
 </style>
 <?php } ?>
-<div class="dmtop"><?php _e('Scroll to Top', 'awada'); ?></div>
+<div class="awadatop"><?php _e('Scroll to Top', 'awada'); ?></div>
 <?php wp_footer(); ?>
 </body>
 </html>

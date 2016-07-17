@@ -98,7 +98,7 @@
         $('[data-hover="dropdown"]').dropdownHover();
     });
 	$('.dropdown-toggle').dropdownHover().dropdown();
-		$(document).on('click', '.yamm .dropdown-menu', function(e) {
+		$(document).on('click', '.dropmenu .dropdown-menu', function(e) {
 		e.stopPropagation()
 	})
 })(jQuery, this);

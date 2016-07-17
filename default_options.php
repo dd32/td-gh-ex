@@ -71,6 +71,7 @@ function awada_theme_options()
         'footer_layout' => 4,
 		'home_sections' => array('service', 'portfolio', 'blog', 'callout'),
     );
+	//delete_option('awada_theme_options');
     return wp_parse_args(get_option('awada_theme_options', array()), $awada_theme_options);
 }
 ?>

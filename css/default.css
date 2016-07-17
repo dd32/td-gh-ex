@@ -1,18 +1,5 @@
-.arrow-left {
-	border-right-color:#DB7093;
-}
-#bbpress-forums li.bbp-header, #bbpress-forums li.bbp-footer {
-	border-top-color:#DB7093 !important;	
-}
-.tp-bullets.simplebullets .bullet:hover,
-.tp-bullets.simplebullets .bullet.selected{
-	border-color:#DB7093 !important;	
-}
+
 .post-wrapper-top h2,
-.group_box:hover .circle,
-.group_box:hover,
-.cat_widget:hover,
-.social_like .icon-container,
 .pagination > .active > a, 
 .pagination > .active > span, 
 .pagination > .active > a:hover, 
@@ -24,125 +11,40 @@
 .pagination > li > span:focus,
 .pagination > .active > span:focus,
 .form-control:focus,
-.panel-default > .panel-heading:hover,
-.bggrey,
-.services_vertical .icon-container,
-.item .icon-container,
-#owl-testimonial-widget .img-circle,
-.testimonial-wrap,
-.tparrows:hover,
-.blog_button,
 .magnifier .btn-default:hover,
 blockquote,
 .magnifier .btn-default:focus,
 .magnifier .btn-default:active,
-.service-icon-circle,
-.general-title hr {
-	border-color:#DB7093;
+.service-icon-square,
+.main_title hr {
+	border-color:#f8504b;
 }
-#header-style-1 .dropdown-menu,
-#header-style-1 .yamm .dropdown.yamm-fw .dropdown-menu {
-	border-top-color: #DB7093 !important;
-}
-#three-parallax .testimonial h3 {
-	color:#DB7093 !important;
-}
-.blog_button,
-.shop_title_slider span,
-.cat_widget h3,
-.rating i,
-.big_title_onepage span,
-.small_thin_grey1 i,
-.popular_items .meta span i,
-.ch-info-front i,
-.service_vertical_box:hover .service-icon i,
-.bgdark span,
-.item .icon-container,
-.slider_title_a,
-.mini_title2 i,
-.team_member span,
-.blog-carousel-meta span i,
-.high_title2,
-.high_title,
-.big_title span,
-.small_title span,
-.mini_title span,
-.check li:before,
-.service-icon-circle i,
-.servicebox:hover .service-icon i,
-.shop-right .title .price,
+
+.blog-meta span i,
+.service-icon-square i,
+.servicelayout:hover .service-icon i,
 .shop_item .price,
-.cart_table .price2,
 .widget h3 span,
-.big_title_slider span,
 a,
-.milestone-counter i,
 a.readmore,
-.tabbed-menu li a:hover,
-.footer-menu li a:hover,
-.mmode .title span,
-.footer-menu li a:focus,
-#header-style-1 .yamm h3 i,
-#header-style-1 .yamm-fw .dropdown-menu li a:before,
-#topbar .topbar-login i,
-.group_box i,
-#topbar .callus i,
-#topbar .topbar-cart i {
-	color:#DB7093;
+.footer-area-menu li a:hover,
+.footer-area-menu li a:focus,
+#awada-header .dropmenu h3 i,
+#sitetopbar .sitetopbar-login i {
+	color:#f8504b;
 }
-.timeline-badge.danger,
-.flex-control-paging li a.flex-active,
-.tparrows:hover {
-	background-color:#DB7093 !important;
-}
-.demo_changer .demo-icon,
-.group_box:hover .circle,
+
 .recent_posts_widget > li img:hover,
-.buddypress_tabber_widget_member li img:hover,
-#tabbed_widget .nav-tabs > li.active > a, 
-#tabbed_widget .nav-tabs > li.active > a:hover,
-#tabbed_widget .nav-tabs > li.active > a:focus,
-#tabbed_widget .nav > li > a:hover, 
-#tabbed_widget .nav > li > a:focus,
-#tabbed_widget-1 .nav-tabs > li.active > a, 
-#tabbed_widget-1 .nav-tabs > li.active > a:hover,
-#tabbed_widget-1 .nav-tabs > li.active > a:focus,
-#tabbed_widget-1 .nav > li > a:hover, 
-#tabbed_widget-1 .nav > li > a:focus,
-#footer-style-1 .social-icons span a:hover,
-#footer-style-2 .social-icons span a:hover,
-#footer-style-3 .social-icons span a:hover,
-.footer_post li img:hover,
-#tabbed_widget .recent_posts_widget img:hover,
-.pricing_detail:hover,
-.pricing_detail:hover .priceamount,
-.banners li:hover .img-thumbnail,
-.ch-info .ch-info-back,
-.service-with-image:hover .service-title,
-.calloutbox-full-mini,
-.services_vertical .icon-container,
-#services .owl-controls .owl-page span,
-.item:hover .icon-container,
-.white-wrapper #owl-testimonial .owl-controls .owl-page.active span,
-.make-bg,
-.buddy_image img:hover,
-.calloutbox,
-.overlay #owl-testimonial .owl-controls .owl-page.active span,
-.progress-bar,
-.dmtop,
-h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover,
+#awada_footer_area .topbar-social-links span a:hover,
+.awadatop,
 .magnifier .btn-default:hover,
 .magnifier .btn-default:focus,
 .magnifier .btn-default:active,
-.rsDefaultInv .rsBullet.rsNavSelected span,
-.service-icon-circle.active,
-.servicebox:hover .service-icon-circle,
+.service-icon-square.active,
+.servicelayout:hover .service-icon-square,
 .btn-primary,
-#accordion-first .accordion-heading .accordion-toggle.active em,
-#accordion-second .accordion-heading .accordion-toggle.active em,
-mark,
 .pager li > a, .pager li > span,
-.make-bg-full,
+.full_colored,
 .pagination > .active > a, 
 .pagination > .active > span, 
 .pagination > .active > a:hover, 
@@ -153,88 +55,68 @@ mark,
 .pagination > li > a:focus,
 .pagination > li > span:focus,
 .pagination > .active > span:focus,
-#bbpress-forums li.bbp-body ul.forum li.bbp-forum-reply-count:hover,
-#bbpress-forums li.bbp-body ul.forum li.bbp-forum-topic-count:hover,
 .tagcloud a:hover,
-.nav-stacked > li > a:hover,
-.nav-stacked > li > a:focus,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus,
 .nav-tabs > li.active > a,
-#header-style-1 .navbar-nav > li > a:hover,
-#header-style-1 .navbar-nav > li > a:focus,
-#header-style-1 .navbar-nav > li > a:active,
-#header-style-1 .navbar-default .navbar-nav > .open > a,
-#header-style-1 .navbar-default .navbar-nav > .open > a:hover,
-#header-style-1 .navbar-default .navbar-nav > .open > a:focus,
-#topbar .social-icons span a:hover {
-	background-color:#DB7093;
+#awada-header .navbar-nav > li > a:hover,
+#awada-header .navbar-nav > li > a:focus,
+#awada-header .navbar-nav > li > a:active,
+#awada-header .navbar-default .navbar-nav > .open > a,
+#awada-header .navbar-default .navbar-nav > .open > a:hover,
+#awada-header .navbar-default .navbar-nav > .open > a:focus,
+#sitetopbar .topbar-social-links span a:hover {
+	background-color:#f8504b;
 }
-#maintenance1 .yellow {
-	color:#DB7093 !important;
-}
-.flex-direction-nav a,
-.rsUni .rsThumb.rsNavSelected .thumbIco,
-.custom-overlay {
-	background-color:#DB7093;
-}
+
 /* Sidebar Widget */
 #sidebar .widget > ul > li.cat-item > a:hover, #sidebar .widget > ul.cat_list_widget > li > a:hover, #sidebar .widget > ul > li.page_item > a:hover, #sidebar .widget > div.menu-header-menu-container > ul.menu > li.menu-item > a:hover{
-	background-color: #DB7093 !important;
+	background-color: #f8504b !important;
 }
-/* wocommerce */
-.woocommerce div.product form.cart .button {
-    background: #DB7093;
-}
-.woocommerce .woocommerce-product-rating .star-rating {
-    color: #DB7093;
-}
-.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce span.onsale{
-	background-color: #DB7093;
-}
-.woocommerce div.product p.price, .woocommerce div.product span.price {
-    color: #DB7093;
-}
-.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button{
-	background-color: #DB7093;
-}
-.woocommerce .woocommerce-message {
-    border-top-color: #DB7093;
-}
-.woocommerce .woocommerce-message:before {
-    color: #DB7093;
-}
-.woocommerce .woocommerce-info {
-    border-top-color: #DB7093;
-}
-.woocommerce .woocommerce-info:before {
-    color: #DB7093;
-}
+
 /* Search Box */
 #two-sidebar .form-control:hover,
 #sidebar .form-control:hover {
-	border: 1px solid #DB7093;
+	border: 1px solid #f8504b;
 }
 /* Calender Styling */
 #wp-calendar {
-    border: 2px solid #DB7093;
+    border: 2px solid #f8504b;
 }
 #wp-calendar th {
-    border: 2px solid #DB7093;
+    border: 2px solid #f8504b;
 }
 #wp-calendar caption {
-    background-color: #DB7093;
+    background-color: #f8504b;
 }
 /* Current Menu Color */
-#header-style-1 .navbar-nav > li.current_page_item > a:hover {
-    background-color: #DB7093;
+#awada-header .navbar-nav > li.current_page_item > a:hover {
+    background-color: #f8504b;
 }
 /* Pagination */
 ul.pagination li span.page-numbers.current {
-    background-color: #DB7093;
+    background-color: #f8504b;
 	color: #fff;
 }
-
 #home_portfolio .UGPMenuBackground {
 	display: none;
+}
+
+/* Extra CSS by Hunny */
+#sitetopbar .topbar-social-links span a, #sitetopbar .topbar-social-links span a:hover {
+	border-radius: 50%;
+}
+.blog-masonry .blog-carousel {
+    border-top: 5px solid #f8504b;
+}
+.nav-arrows span:hover {
+	border-color: #f8504b;
+}
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover{
+	color:#f8504b !important;
 }

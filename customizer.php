@@ -46,15 +46,15 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'colors',
     'type'              => 'color',
     'priority'          => 9,
-    'default'           => '#212121',
+    'default'           => '#f8504b',
     'sanitize_callback' => 'awada_sanitize_color',
     'output'            => array(
         array(
-            'element'  => '#topbar',
+            'element'  => '#sitetopbar',
             'property' => 'background',
         ),
         array(
-            'element'  => '#topbar',
+            'element'  => '#sitetopbar',
             'property' => 'border-bottom',
         ),
     ),
@@ -68,11 +68,11 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'colors',
     'type'              => 'color',
     'priority'          => 9,
-    'default'           => '#888888',
+    'default'           => '#fff',
     'sanitize_callback' => 'awada_sanitize_color',
     'output'            => array(
         array(
-            'element'  => '#topbar, #topbar a',
+            'element'  => '#sitetopbar, #sitetopbar a',
             'property' => 'color',
         ),
     ),
@@ -86,12 +86,16 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'colors',
     'type'              => 'color',
     'priority'          => 9,
-    'default'           => '#fff',
+    'default'           => 'solid #fff',
     'sanitize_callback' => 'awada_sanitize_color',
     'output'            => array(
         array(
-            'element'  => '#header-style-1, #header-style-1 .navbar',
+            'element'  => '#awada-header, #awada-header .navbar',
             'property' => 'background',
+        ),
+		array(
+            'element'  => '.arrow-up',
+            'property' => 'border-bottom',
         ),
     ),
     'transport'         => 'auto',
@@ -107,7 +111,7 @@ Kirki::add_field('awada_theme', array(
     'sanitize_callback' => 'awada_sanitize_color',
     'output'            => array(
         array(
-            'element'  => '.navbar-default .navbar-brand, #header-style-1 .navbar-nav > li > a, .dropdown-menu > li > a',
+            'element'  => '.navbar-default .navbar-brand, #awada-header .navbar-nav > li > a, .dropdown-menu > li > a',
             'property' => 'color',
         ),
     ),
@@ -137,12 +141,12 @@ Kirki::add_field('awada_theme', array(
     'transport'         => 'auto',
     'output'            => array(
         array(
-            'element'  => '#header-style-1 .yamm img',
+            'element'  => '#awada-header .dropmenu img',
             'property' => 'margin-top',
             'units'    => 'px',
         ),
 		array(
-            'element'  => '#header-style-1 .navbar-brand',
+            'element'  => '#awada-header .navbar-brand',
             'property' => 'margin-top',
             'units'    => 'px',
         ),
@@ -164,12 +168,12 @@ Kirki::add_field('awada_theme', array(
     'transport'         => 'auto',
     'output'            => array(
         array(
-            'element'  => '#header-style-1 .yamm img',
+            'element'  => '#awada-header .dropmenu img',
             'property' => 'margin-bottom',
             'units'    => 'px',
         ),
 		array(
-            'element'  => '#header-style-1 .navbar-brand',
+            'element'  => '#awada-header .navbar-brand',
             'property' => 'margin-bottom',
             'units'    => 'px',
         ),
@@ -217,7 +221,7 @@ Kirki::add_field('awada_theme', array(
     ),
     'output'      => array(
         array(
-            'element' => '#header-style-1 .navbar-brand p',
+            'element' => '#awada-header .navbar-brand p',
         ),
     ),
 ));
@@ -229,7 +233,7 @@ Kirki::add_field('awada_theme', array(
     'section'     => 'typography_sec',
     'default'     => array(
         'font-style'  => array('bold', 'italic'),
-        'font-family' => "Open Sans",
+        'font-family' => "Merriweather","Georgia", "serif",
 
     ),
     'priority'    => 10,
@@ -242,7 +246,7 @@ Kirki::add_field('awada_theme', array(
     ),
     'output'      => array(
         array(
-            'element' => '#header-style-1 .navbar-nav > li > a',
+            'element' => '#awada-header .navbar-nav > li > a',
         ),
     ),
 ));
@@ -256,8 +260,7 @@ Kirki::add_field('awada_theme', array(
     'section'     => 'typography_sec',
     'default'     => array(
         'font-style'  => array('bold', 'italic'),
-        'font-family' => "Open Sans",
-
+        'font-family' => "Merriweather","Georgia", "serif",
     ),
     'priority'    => 10,
     'choices'     => array(
@@ -279,8 +282,7 @@ Kirki::add_field('awada_theme', array(
     'section'     => 'typography_sec',
     'default'     => array(
         'font-style'  => array('bold', 'italic'),
-        'font-family' => "Open Sans",
-
+        'font-family' => "Merriweather","Georgia", "serif",
     ),
     'priority'    => 10,
     'choices'     => array(
@@ -292,7 +294,7 @@ Kirki::add_field('awada_theme', array(
     ),
     'output'      => array(
         array(
-            'element' => '.general-title h2',
+            'element' => '.main_title h2',
         ),
     ),
 ));
@@ -923,7 +925,7 @@ Kirki::add_field('awada_theme', array(
     'sanitize_callback' => 'awada_sanitize_color',
     'output'            => array(
         array(
-            'element'  => '#footer-style-1',
+            'element'  => '#awada_footer_area',
             'property' => 'background',
         ),
     ),
@@ -936,11 +938,11 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'footer_sec',
     'type'              => 'color',
     'priority'          => 9,
-    'default'           => '#DB7093',
+    'default'           => '#f8504b',
     'sanitize_callback' => 'awada_sanitize_color',
     'output'            => array(
         array(
-            'element'  => '#footer-style-1 li a, #footer-style-1 a',
+            'element'  => '#awada_footer_area li a, #awada_footer_area a',
             'property' => 'color',
         ),
     ),
@@ -953,7 +955,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'footer_sec',
     'type'              => 'color',
     'priority'          => 9,
-    'default'           => '#0c0c0c',
+    'default'           => '#f8504b',
     'sanitize_callback' => 'awada_sanitize_color',
     'output'            => array(
         array(
@@ -970,11 +972,11 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'footer_sec',
     'type'              => 'color',
     'priority'          => 9,
-    'default'           => '#c3c3c3',
+    'default'           => '#fff',
     'sanitize_callback' => 'awada_sanitize_color',
     'output'            => array(
         array(
-            'element'  => '#copyrights, .footer-menu li a',
+            'element'  => '#copyrights, .footer-area-menu li a',
             'property' => 'color',
         ),
     ),

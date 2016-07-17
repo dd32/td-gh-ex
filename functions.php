@@ -321,7 +321,7 @@ function awada_comments($comments, $args, $depth)
 }
 add_filter('comment_reply_link', 'awada_replace_reply_link_class');
 function awada_replace_reply_link_class($class){
-    $class = str_replace("class='comment-reply-link", "class='comment-reply btn btn-sm btn-primary", $class);
+    $class = str_replace("class='comment-reply-link", "class='comment-reply btn btn-sm btn-primary btn-shadow", $class);
     return $class;
 }
 
@@ -364,6 +364,11 @@ function awada_register_required_plugins()
 		array(
             'name'     => 'Ultimate Gallery Master', // The plugin name.
             'slug'     => 'ultimate-gallery-master', // The plugin slug (typically the folder name).
+            'required' => false, // If false, the plugin is only 'recommended' instead of required.
+        ),
+		array(
+            'name'     => 'Social Media Gallery', // The plugin name.
+            'slug'     => 'social-media-gallery', // The plugin slug (typically the folder name).
             'required' => false, // If false, the plugin is only 'recommended' instead of required.
         ),
     );

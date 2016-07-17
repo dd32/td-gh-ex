@@ -28,8 +28,7 @@ get_template_part('breadcrumbs'); ?>
 						endif;
 						wp_link_pages(); ?>
 					</div><!-- end col-lg-12 -->
-				</div><!-- end blog-masonry -->
-				
+				</div><!-- end blog-masonry -->				
 				<div class="clearfix"></div>
 				<?php comments_template('', true); ?>
 				<div class="clearfix"></div>

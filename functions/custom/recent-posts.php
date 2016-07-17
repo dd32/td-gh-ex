@@ -39,7 +39,7 @@ class awada_footer_recent_posts extends WP_Widget
 					<?php esc_attr(the_tags('Tags: ', ', ')); ?>
 				</li>
 				<?php endwhile; ?>
-				<a href="<?php echo esc_url($rmp_url); ?>" class="btn btn-primary btn-lg" title=""><?php _e('Read More Posts', 'awada'); ?></a>
+				<a href="<?php echo esc_url($rmp_url); ?>" class="btn btn-primary btn-lg btn-shadow" title=""><?php _e('Read More Posts', 'awada'); ?></a>
 			</ul>
         <?php endif; ?>
         <?php

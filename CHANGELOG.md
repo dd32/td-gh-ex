@@ -1,3 +1,6 @@
+###Version 0.7
+* Remove unused codes.
+* All other required issue fixed.
 ###Version 0.6
 * Make text translatable, and escaped.
 * Welcome screen links issue fixed.

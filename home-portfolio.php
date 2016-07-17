@@ -3,7 +3,7 @@ $post_id = ($awada_theme_options['portfolio_post'] == ''?'':$awada_theme_options
 $awada_portfolio_post = get_post($post_id); ?>
 <section id="home_portfolio" class="white-wrapper">
 	<div class="container">
-		<div class="general-title">
+		<div class="main_title">
 			<?php if($awada_portfolio_post->post_title!=""){ ?>
 			<h2 id="portfolio_heading"><?php echo esc_attr($awada_portfolio_post->post_title); ?></h2>
 			<hr>
@@ -17,8 +17,8 @@ $awada_portfolio_post = get_post($post_id); ?>
 				$j = 0;
 				for($i=1 ; $i<=3 ; $i++){ ?>
 					<div class="col-lg-4 col-sm-4 col-md-4 col-sm-4">
-						<div class="portfolio_item">
-							<div class="entry">
+						<div class="portfolio_list">
+							<div class="content_entry">
 								<img src="<?php echo get_template_directory_uri(); ?>/images/Portfolio/port1.jpg" alt="" class="img-responsive">
 								<div class="magnifier">
 									<div class="buttons">
@@ -27,8 +27,8 @@ $awada_portfolio_post = get_post($post_id); ?>
 										<h3><?php echo esc_attr($port_title[$j]); ?></h3>
 									</div><!-- end buttons -->
 								</div><!-- end magnifier -->
-							</div><!-- end entry -->
-						</div><!-- end portfolio_item -->
+							</div><!-- end portfoliobox -->
+						</div><!-- end portfolio_list -->
 					</div><!-- end col-lg-4 -->
 				<?php $j++; }
 				endif; ?>	

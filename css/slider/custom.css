@@ -84,10 +84,6 @@
 	transform: rotate(45deg);
 }
 
-.nav-arrows span:hover {
-	border-color: rgb(219, 112, 147);
-}
-
 .nav-arrows span.nav-arrow-prev {
 	left: 5%;
 	border-right: none;

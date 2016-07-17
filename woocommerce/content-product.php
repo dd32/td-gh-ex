@@ -51,14 +51,14 @@ if ( 0 === $woocommerce_loop['loop'] % $woocommerce_loop['columns'] ) {
 ?>
 <div <?php post_class( $classes ); ?> >
     <div class="shop_item">
-        <div class="entry">
+        <div class="content_entry">
             <?php do_action( 'woocommerce_before_shop_loop_item_title' );?>
             <div class="magnifier">
                 <div class="buttons">
                    <?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
                 </div><!-- end buttons -->
             </div><!-- end magnifier -->
-        </div><!-- end entry -->
+        </div><!-- end content_entry -->
         <div class="shop_desc">
             <div class="shop_title pull-left">
                 <a href="<?php echo get_permalink($product->id); ?>"><span><?php echo get_the_title($product->id); ?></span></a>

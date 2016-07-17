@@ -1,13 +1,13 @@
 <?php $awada_theme_options = awada_theme_options();
 $col = 12 / (int)$awada_theme_options['home_service_column']; ?>
-<section class="grey-wrapper jt-shadow" id="home_service">
+<section class="grey-wrapper section-shadow" id="home_service">
 	<div class="container">
-		<div class="general-title">
+		<div class="main_title">
 			<?php if ($awada_theme_options['home_service_title'] != ""){ ?>
 			<h2 id="home_service_title"><?php echo esc_attr($awada_theme_options['home_service_title']); ?></h2>
 			<hr>
 			<?php } if ($awada_theme_options['home_service_description'] != ""){ ?>
-			<p id="home_service_description"class="lead"><?php echo esc_attr($awada_theme_options['home_service_description']); ?></p>
+			<p id="home_service_description" class="lead"><?php echo esc_attr($awada_theme_options['home_service_description']); ?></p>
 			<?php } ?>
 		</div><!-- end general title -->
 		
@@ -41,13 +41,13 @@ $col = 12 / (int)$awada_theme_options['home_service_column']; ?>
 				}
 			} ?>
 			<div class="service_col col-lg-<?php echo $col; ?> col-md-<?php echo $col; ?> col-sm-6 col-xs-12 <?php echo $pos; ?>">
-				<div class="servicebox">
+				<div class="servicelayout">
 					<?php if($awada_theme_options['service_link_' . $j]) {
 						$service_url = $awada_theme_options['service_link_' . $j];
 					}
 					if($awada_theme_options['service_icon_' . $j] != ""){ ?>
 					<a href="<?php echo esc_url($service_url); ?>">
-					<div class="service-icon-circle  <?php if($i==2){ echo 'active'; } ?>">
+					<div class="service-icon-square  <?php if($i==2){ echo 'active'; } ?>">
 						<i id="service_icon_<?php echo $j; ?>" class="<?php echo esc_attr($awada_theme_options['service_icon_' . $j]); ?>"></i>
 					</div><!-- end service icon -->
 					</a>
@@ -59,9 +59,9 @@ $col = 12 / (int)$awada_theme_options['home_service_column']; ?>
 					<p id="service_description_<?php echo $j; ?>"><?php echo esc_attr($awada_theme_options['service_text_' . $j]); ?></p>
 					<?php } ?>
 					<a id="service_link_<?php echo $j; ?>" class="readmore" href="<?php echo esc_url($service_url); ?>" target="_blank" ><?php _e('Read More', 'awada'); ?></a>
-				</div><!-- end servicebox -->
+				</div><!-- end Service Layout -->
 			</div><!-- end col-lg-3 -->
 			<?php $i++; } ?>
-		</div><!-- end services one -->
+		</div><!-- end services -->
 	</div><!-- end container -->
 </section><!-- end grey-wrapper -->

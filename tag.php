@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<section class="post-wrapper-top jt-shadow clearfix">
+<section class="post-wrapper-top section-shadow clearfix">
 	<div class="container">
 		<div class="col-lg-12">
 			<h2><?php $tag = single_tag_title("", false);
@@ -24,7 +24,7 @@
 					} ?>
 					<div class="col-lg-6 <?php echo $pos; ?>">
 						<div class="blog-carousel">
-							<div class="entry">
+							<div class="content_entry">
 								<?php $icon = "";
 								$imageSize = 'awada_blog_grid_thumb';
 								$img_class = array('class' => 'img-responsive');
@@ -42,19 +42,20 @@
 										<i class="<?php echo $icon; ?>"></i>
 									</div><!-- end pull-right -->
 									<?php } ?>
-							</div><!-- end entry -->
-							<div class="blog-carousel-header">
+							</div><!-- end content_entry -->
+							<div class="blog-header">
 								<h3><a title="<?php the_title_attribute(); ?>" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-								<div class="blog-carousel-meta">
+								<div class="blog-meta">
 									<span><i class="fa fa-calendar"></i><?php echo get_the_date(get_option('date_format'), true); ?></span>
 									<span><i class="fa fa-comment"></i><?php comments_popup_link(__('No Comments', 'awada'), __('1 Comment', 'awada'), __('% Comments', 'awada')); ?> <?php edit_post_link(__('Edit', 'awada'), ' &#124; ', ''); ?></span>
 									<span><i class="fa fa-user"></i><a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>"><?php esc_attr(the_author()); ?></a></span>
-								</div><!-- end blog-carousel-meta -->
-							</div><!-- end blog-carousel-header -->
-							<div class="blog-carousel-desc">
+								</div><!-- end blog-meta -->
+							</div><!-- end blog-header -->
+							<div class="blog-desc">
 								<?php the_excerpt(); ?>
-							</div><!-- end blog-carousel-desc -->
+							</div><!-- end blog-desc -->
 						</div><!-- end blog-carousel -->
+						<div class="awada_blog_shadow"></div>
 					</div><!-- end col-lg-4 -->
 					<?php $i++; endwhile;
 					wp_link_pages(); ?>
