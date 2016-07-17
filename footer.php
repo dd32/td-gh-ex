@@ -71,7 +71,7 @@
                         <?php if ( isset($footer_credits) && $footer_credits != '') { ?>
                             <p><?php echo $footer_credits; ?></p>
                         <?php } else { ?>   
-                            <p><?php printf( esc_html__( 'Theme Design and Develop by %s', 'bfront' ), '<a href="wwww.themesflow.com">ThemesFlow</a>' ); ?></p>
+                            <p><?php printf( esc_html__( 'Theme Design and Develop by %s', 'bfront' ), '<a href="http://wwww.themesflow.com">ThemesFlow</a>' ); ?></p>
                         <?php } ?>  
                     </div>
                 </div>

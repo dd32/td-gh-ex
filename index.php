@@ -71,7 +71,18 @@ else:
                 
 
                 <!-- Post loop ends -->
-                </div><?php bfront_numeric_posts_nav() ?>
+                </div>
+
+                <?php 
+
+                // Previous/next page navigation.
+                        the_posts_pagination( array(
+                            'prev_text'          => __( '<i class="fa fa-chevron-left"></i>', 'bfront' ),
+                            'next_text'          => __( '<i class="fa fa-chevron-right"></i>', 'bfront' ),
+                            'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bfront' ) . ' </span>',
+                        ) );
+                        
+                ?>
               
             </div>
             <div class="col-md-4">

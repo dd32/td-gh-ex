@@ -1,5 +1,9 @@
 == Changelog ==
 
+
+= Version: 1.0.6 =
+* some corrections and minor bug fixes and demo content correction
+
 = Version: 1.0.5 =
 * some corrections and minor bug fixes
 
