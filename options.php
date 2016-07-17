@@ -108,7 +108,7 @@ $options[] = array(
 	$options[] = array(
 		'name' => __('Basic Settings', 'promax'),
 		'type' => 'heading');
-		
+	
 	$options[] = array(
 		'name' => __('Custom Favicon URL', 'promax'),
 		'desc' => __('Enter Favicon Image.', 'promax'),
@@ -247,20 +247,17 @@ $options[] = array(
 		'name' => __('Paste Ads code for header.', 'promax'),
 		'desc' => __('Enter your ads code here, preferably units Ex. 728*90 lead-board ads.', 'promax'),
 		'id' => 'banner_top',
-		'type' => 'editor',
-		'settings' => $wp_editor_settings );
+		'type' => 'textarea' );
 	$options[] = array(
 		 'name' => __( 'Ads Code For Single Post', 'promax' ),
             'desc' => __('Paste Ads code for single post it show ads below post title and before content.','promax' ),
             'id' => 'promax_ad2',
-            'type' => 'editor',
-		'settings' => $wp_editor_settings );
+            'type' => 'textarea' );
      $options[] = array(
 		'name' => __( 'Ads Code For Footer', 'promax' ),
             'desc' => __( 'Paste Ads Code for Footer Area', 'promax' ),
             'id' => 'promax_ad1',
-            'type' => 'editor',
-		'settings' => $wp_editor_settings );
+            'type' => 'textarea' );
 		
 $options[] = array(
 		'name' => __('Advance (Pro Only)', 'promax'),

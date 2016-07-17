@@ -5,12 +5,8 @@
     <div id="page-inner" class="clearfix">
 	<div id="content">
 			<?php promax_breadcrumbs(); ?>
-
-			<?php if (have_posts()) : ?>
-			
+		<?php if (have_posts()) : ?>	
 			<?php while(have_posts())  : the_post(); ?>
-						
-
 	<div class="imag"><?php get_template_part('/includes/post'); ?></div>
 			<?php endwhile; ?>
 			<?php else : ?>

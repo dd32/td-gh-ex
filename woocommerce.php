@@ -1,6 +1,5 @@
 <?php get_header(); ?>
-
-	<!-- BEGIN PAGE -->
+<!-- BEGIN PAGE -->
 	<div id="page">
     <div id="page-inner" class="clearfix">
 	<div class="entry woo" class="clearfix">
