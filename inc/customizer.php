@@ -1,6 +1,6 @@
 <?php
 /**
- * Figure/Ground Theme Customizer
+ * Figure/Ground Customizer Options
  *
  * @package Figure/Ground
  */
@@ -8,39 +8,9 @@
 /**
  * Add theme options to the customizer.
  *
- * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+ * @param WP_Customize_Manager $wp_customize Customize manager object.
  */
 function figureground_customize_register( $wp_customize ) {
-	// Define a generic custom control, facillitating easy creation of number & radio controls.
-	// @link https://core.trac.wordpress.org/ticket/28477
-	class FG_Customize_Generic_Control extends WP_Customize_Control {
-		public $input_attrs = array();
-		public $description = '';
-
-	 	/**
-		 * Render the custom attributes for the control's input element.
-		 */
-		public function input_attrs() {
-			$attrs = $this->input_attrs;
-			$allowed_attrs = array( 'class', 'style', 'title', 'spellcheck', 'placeholder', 'required', 'pattern', 'min', 'max', 'step' );
-			foreach( $attrs as $attr => $value ) {
-				if ( in_array( $attr, $allowed_attrs ) ) {
-					echo $attr . '="' . esc_attr( $value ) . '" ';
-				}
-			}
-		}
-
-		public function render_content() {
-			?>
-			<label>
-				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-				<span class="customize-control-description"><?php echo esc_html( $this->description ); ?></span>
-				<input type="<?php echo esc_attr( $this->type ); ?>" <?php $this->input_attrs(); ?> value="<?php echo esc_attr( $this->value() ); ?>" <?php $this->link(); ?> />
-			</label>
-			<?php
-		}
-	}
-
 	// postMessage support for blog name and description.
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
@@ -52,34 +22,39 @@ function figureground_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting( 'copy_name' , array(
-		'default'	=> get_bloginfo( 'name' ),
-		'transport' => 'postMessage',
+		'default'	        => get_bloginfo( 'name' ),
+		'transport'         => 'postMessage',
+		'sanitize_callback' => 'sanitize_text_field',
 	) );
 
 	$wp_customize->add_setting( 'powered_by_wp' , array(
-		'default'	=> true,
+		'default'	        => true,
+		'transport'         => 'postMessage',
+		'sanitize_callback' => 'figreground_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_setting( 'theme_meta' , array(
-		'default'	=> false,
+		'default'	        => false,
+		'transport'         => 'postMessage',
+		'sanitize_callback' => 'figreground_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'copy_name', array(
-		'label'		=> __( 'Copyright Name', 'figureground' ),
-		'section'	=> 'footer',
-		'type'      => 'text',
+		'label'   => __( 'Copyright Name', 'figureground' ),
+		'section' => 'footer',
+		'type'    => 'text',
 	) );
 
 	$wp_customize->add_control( 'powered_by_wp', array(
-		'label'		=> __( 'Proudly Powered By WordPress', 'figureground' ),
-		'section'	=> 'footer',
-		'type'		=> 'checkbox',
+		'label'   => __( 'Proudly Powered By WordPress', 'figureground' ),
+		'section' => 'footer',
+		'type'    => 'checkbox',
 	) );
 
 	$wp_customize->add_control( 'theme_meta', array(
-		'label'		=> __( 'Theme Information', 'figureground' ),
-		'section'	=> 'footer',
-		'type'		=> 'checkbox',
+		'label'   => __( 'Theme Information', 'figureground' ),
+		'section' => 'footer',
+		'type'    => 'checkbox',
 	) );
 
 	// Add the Figure/Ground section.
@@ -123,18 +98,26 @@ function figureground_customize_register( $wp_customize ) {
 	// Add the color settings.
 	$wp_customize->add_setting( 'fg_color_dark' , array(
 		'default'     => '#222222',
+		'transport'         => 'postMessage',
+		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 
 	$wp_customize->add_setting( 'fg_color_light' , array(
 		'default'     => '#f7f7ec',
+		'transport'         => 'postMessage',
+		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 
 	$wp_customize->add_setting( 'accent_color_light' , array(
 		'default'     => '#87f',
+		'transport'         => 'postMessage',
+		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 
 	$wp_customize->add_setting( 'accent_color_dark' , array(
 		'default'     => '#903',
+		'transport'         => 'postMessage',
+		'sanitize_callback' => 'sanitize_hex_color',
 	) );
 
 	// Add the color customization controls.
@@ -169,41 +152,41 @@ function figureground_customize_register( $wp_customize ) {
 		),
 	) );
 
-	$wp_customize->add_control( new FG_Customize_Generic_Control( $wp_customize, 'fg_max_width', array(
+	$wp_customize->add_control( 'fg_max_width', array(
 		'label'		  => __( 'Max Width', 'figureground' ),
 		'section'	  => 'figure_ground',
-		'type'      => 'number',
+		'type'        => 'range',
 		'input_attrs' => array(
 			'min'  => 16,
 			'max'  => 512,
 			'step' => 16,
 		),
-	) ) );
+	) );
 
-	$wp_customize->add_control( new FG_Customize_Generic_Control( $wp_customize, 'fg_max_height', array(
-		'label'		=> __( 'Max Height', 'figureground' ),
-		'section'	=> 'figure_ground',
-		'type'      => 'number',
+	$wp_customize->add_control( 'fg_max_height', array(
+		'label'		  => __( 'Max Height', 'figureground' ),
+		'section'	  => 'figure_ground',
+		'type'        => 'range',
 		'input_attrs' => array(
 			'min'  => 16,
 			'max'  => 512,
 			'step' => 16,
 		),
-	) ) );
+	) );
 
-	$wp_customize->add_control( new FG_Customize_Generic_Control( $wp_customize, 'fg_speed', array(
+	$wp_customize->add_control( 'fg_speed', array(
 		'label'		  => __( 'Speed', 'figureground' ),
 		'description' => __( 'Delay between animations in milliseconds: lower is faster. To turn the animation off, set this to 0.', 'figureground' ),
 		'section'	  => 'figure_ground',
-		'type'      => 'number',
+		'type'      => 'range',
 		'input_attrs' => array(
 			'min'  => 0,
 			'max'  => 16000,
 			'step' => 32,
 		),
-	) ) );
+	) );
 
-	$wp_customize->add_control( new FG_Customize_Generic_Control( $wp_customize, 'fg_initial', array(
+	$wp_customize->add_control( 'fg_initial', array(
 		'label'		=> __( 'Iterations on Page-load', 'figureground' ),
 		'section'	=> 'figure_ground',
 		'type'      => 'range',
@@ -212,10 +195,19 @@ function figureground_customize_register( $wp_customize ) {
 			'max'  => 640,
 			'step' => 32,
 		),
-	) ) );
+	) );
 
 	// This filter allows the colors CSS to be generated from each of the separate settings and updated as needed.
 	add_filter( 'theme_mod_figureground_colors_css', 'figureground_generate_colors_css' );
+
+	// Partial refresh for better user experience (faster loading of changes).
+	// This is a supplement to the initial postMessage setting update that handles PHP 
+	// logic more complex than basic color swaps in the CSS (such as contrast ratios and generated colors).
+	$wp_customize->selective_refresh->add_partial( 'figureground_colors', array(
+		'selector'        => '#figureground-colors',
+		'settings'        => array( 'fg_color_light', 'fg_color_dark', 'accent_color_light', 'accent_color_dark' ),
+		'render_callback' => 'figureground_generate_colors_css',
+	) );
 }
 add_action( 'customize_register', 'figureground_customize_register' );
 
@@ -271,13 +263,54 @@ function figureground_sanitize_type( $type ) {
 	return $type;
 }
 
+/**
+ * Sanitize a checkbox input to 1 or 0.
+ *
+ * @since Figure/Ground 1.1
+ *
+ * @return void
+ */
+function figureground_sanitize_checkbox( $input ) {
+    if ( $input ) {
+        return 1;
+    } else {
+        return '';
+    }
+}
+
+/**
+ * Output the custom colors CSS in the <head>.
+ *
+ * @since Figure/Ground 1.0
+ * @since Figure/Ground 1.1 Added colors as data- attributes in the customizer preview.
+ */
 function figureground_custom_colors_head() {
-	echo '<style type="text/css" id="figureground-colors">' .
+	$data = '';
+	if ( is_customize_preview() ) {
+		$colors = array(
+			'fg_color_light' => '#f7f7ec',
+			'fg_color_dark' => '#222222',
+			'accent_color_light' => '#8877ff',
+			'accent_color_dark' => '#990033',
+		);
+		foreach ( $colors as $color => $default ) {
+			 $data .= ' data-' . $color . '="' . get_theme_mod( $color, $default ) . '"';
+		}
+	}
+	echo '<style type="text/css" id="figureground-colors"' . $data . '>' .
 		get_theme_mod( 'figureground_colors_css', '' ) .
 	'</style>';
 }
 add_action( 'wp_head', 'figureground_custom_colors_head' );
 
+/**
+ * Filter the body classes to add the circular class based on theme option.
+ *
+ * @since Figure/Ground 1.0
+ *
+ * @param array $classes Body classes.
+ * @return array Filtered body classes.
+ */
 function figureground_customizer_body_class( $classes ) {
 	if( 'circular' === get_theme_mod( 'fg_type', 'orthogonal' ) ) {
 		$classes[] = 'circular';

@@ -113,14 +113,33 @@ var fg = {};
 		$( '#figure-ground' ).css( 'margin-left', - Math.floor( left ) );
 	}
 
-	// fg.resizeCanvas and fh.alignToGrid could be called on window.resize, but that requires resetting the animation, which results in an awkward UX.
-
 	// Clear the entire canvas.
 	fg.clearCanvas = function() {
 		fg.resizeCanvas(); // Might as well re-set it now if it changed.
+		fg.alignToGrid();
+		clearInterval( fg.t );
 		fg.ctx.clearRect( 0, 0, fg.iwidth, fg.iheight );
+		fg.ctx.fillStyle = fg.settings.color;
 	}
 
-	$(document).ready( function() { fg.init(); } );
+	$(document).ready( function() {
+		fg.init();
+
+		$( window ).resize( function() {
+			fg.clearCanvas(); // Must be cleared when size is changed, also re-aligns.
+			if ( 'orthogonal' == fg.settings.type ) {
+				fg.initOrthogonal( fg.settings.initial );
+				if ( 0 != fg.settings.delay ) {
+					fg.t = setInterval( fg.rectangle, fg.settings.delay );
+				}
+			}
+			else {
+				fg.initCircular( fg.settings.initial );
+				if ( 0 != fg.settings.delay ) {
+					fg.t = setInterval( fg.circle, fg.settings.delay );
+				}
+			}
+		});
+	} );
 
 } )( jQuery );

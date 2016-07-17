@@ -10,7 +10,7 @@ function figureground_fg_colors_css() {
 	$fg_dark = get_theme_mod( 'fg_color_dark', '#222222' );
 
 	// Defaults for both, so don't need to do anything.
-	if ( 'f7f7ec' === $fg_light && '#222222' === $fg_dark ) {
+	if ( 'f7f7ec' === $fg_light && '#222222' === $fg_dark && ! is_customize_preview() ) {
 		return '';
 	}
 
@@ -69,7 +69,8 @@ function figureground_fg_colors_css() {
 	.comment-list > li:nth-child(even) article.comment-body,
 	.comment-respond,
 	p.no-comments,
-	aside.widget:nth-child(even) {
+	aside.widget:nth-child(even),
+	#menu-social li a {
 		color: ' . $fg_dark . ';
 	}
 
@@ -145,7 +146,8 @@ function figureground_fg_colors_css() {
 	.wp-playlist.wp-playlist-light,
 	.comments-title,
 	p.no-comments,
-	aside.widget:nth-child(even) {
+	aside.widget:nth-child(even),
+	#menu-social li a {
 		background: ' . $fg_light . ';
 	}
 
@@ -246,17 +248,22 @@ function figureground_accent_colors_css() {
 	// Light accent color, which must contrast with the dark figure/ground color.
 	$css .= '
 	.site-header .search-field:focus,
-	.main-navigation.toggled .nav-menu {
+	.main-navigation.toggled .nav-menu,
+	#menu-social ul {
 		border-color: ' . $accent_light . ';
 	}
 	.main-navigation a:hover,
-	article:nth-child(even) .mejs-controls .mejs-time-rail .mejs-time-current {
+	article:nth-child(even) .mejs-controls .mejs-time-rail .mejs-time-current,
+	#menu-social li a:hover,
+	#menu-social li a:focus {
 		background: ' . $accent_light . ';
 	}
 	article:nth-child(even) .mejs-overlay:hover .mejs-overlay-button {
 		background-color: ' . $accent_light . ';
 	}
 	a,
+	.menu-toggle:focus:before,
+	.menu-toggle:hover:before,
 	.main-navigation.toggled .menu-toggle:before,
 	.main-navigation.toggled .nav-menu:before,
 	.main-navigation li.current_page_item a,

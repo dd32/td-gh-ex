@@ -1,16 +1,16 @@
 /*
 Theme Name: Figure/Ground
-Theme URI: http://celloexpressions.com/themes/figureground
-Author: Nick Halsey
-Author URI: http://celloexpressions.com/
-Description: Figure/Ground is a bold blogging theme that transforms your site into a dynamic, visually stimulating canvas of abstract shapes and content. Meticulously designed on a 64-pixel square grid with a 16-pixel sub-grid, Figure/Ground features comprehensive customization options including the ability to customize every color and an alternate "Circular" mode that makes things more curvy. Your content flows down the center of the page, blending into the background animation in an alternating sequence, before coming to the widgetized footer. A fixed header features space for a small site icon, a search bar, and a togglable menu. From its bold design to its out-of-the-box functionality and easy customization, Figure/Ground is sure to make your site memorable!
-Version: 1.0.1
+Theme URI: http://themes.halsey.co/figureground
+Author: Halsey Themes
+Author URI: http://themes.halsey.co/
+Description: Figure/Ground is a bold blogging theme that transforms your site into a dynamic, visually stimulating canvas of abstract shapes and content. Meticulously designed on a 64-pixel square grid with a 16-pixel sub-grid, Figure/Ground features comprehensive customization options including the ability to customize every color and an alternate "Circular" mode that makes things more curvy. Your content flows down the center of the page, blending into the background animation in an alternating sequence, before coming to the widgetized footer. A fixed header features space for a small site icon, a search bar, and a togglable menu and social menu. From its bold design to its out-of-the-box functionality and easy customization, Figure/Ground is sure to make your site memorable!
+Version: 1.1
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: figureground
-Tags: black, blue, red, white, one-column, responsive-layout, custom-colors, custom-header, custom-menu, editor-style, featured-images, post-formats, sticky-post, theme-options, translation-ready
+Tags: one-column, flexible-header, custom-colors, custom-header, custom-menu, editor-style, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog
 
-Figure/Ground WordPress Theme, Copyright 2014 Nick Halsey.
+Figure/Ground WordPress Theme, Copyright 2016 Nick Halsey.
 Figure/Ground is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
 Figure/Ground is distributed under the terms of the GNU GPL.
 
@@ -704,7 +704,7 @@ header#masthead {
 	margin: -8px 16px -8px 0;
 	transition: opacity .18s ease-in-out;
 	max-height: 48px;
-	max-width: 48px;
+	max-width: 96px;
 }
 
 a:hover .site-logo {
@@ -804,19 +804,16 @@ h2.site-description {
 }
 
 .menu-toggle {
-	font-size: 0;
-	width: 0;
-	height: 0;
 	padding: 0;
 	margin: 0;
-	clear: none;
 	position: absolute;
 	z-index: 2;
 	right: 70px;
-	top: 0;
-	cursor: pointer;
+	top: 8px;
 }
 
+.menu-toggle:focus:before,
+.menu-toggle:hover:before,
 .main-navigation.toggled .menu-toggle:before {
 	color: #87f;
 }
@@ -846,11 +843,13 @@ h2.site-description {
 }
 
 .menu-toggle,
-.main-navigation.toggled .nav-menu {
+.main-navigation.toggled .nav-menu,
+.main-navigation.toggled #menu-social {
 	display: block;
 }
 
-.main-navigation .nav-menu {
+.main-navigation .nav-menu,
+#menu-social {
 	display: none;
 }
 
@@ -905,6 +904,112 @@ h2.site-description {
 	color: #222;
 }
 
+
+/* Social Menu */
+#menu-social {
+	position: absolute;
+	top: 48px;
+	left: -10px;
+}
+
+#menu-social li a {
+	padding: 16px;
+	height: 64px;
+	width: 64px;
+	background: #f7f7ec;
+	color: #222;
+}
+
+#menu-social li a:hover,
+#menu-social li a:focus {
+	background: #87f;
+}
+
+#menu-social ul {
+	list-style: none;
+	margin: 0;
+	text-align: center;
+	width: 69px;
+	border-bottom: 5px solid #87f;
+	border-right: 5px solid #87f;
+}
+
+#menu-social ul li {
+	display:  inline-block;
+	position: relative;
+}
+
+#menu-social li a:before {
+	content: '\f408';
+	display: inline-block;
+	padding: 0;
+	font-family: 'Genericons';
+	font-size: 32px;
+	line-height: 1;
+	vertical-align: top;
+	-webkit-font-smoothing: antialiased;
+}
+
+#menu-social li a[href*="wordpress.org"]:before,
+#menu-social li a[href*="wordpress.com"]:before {
+	content: '\f205';
+}
+
+#menu-social li a[href*="facebook.com"]:before {
+	content: '\f203';
+}
+
+#menu-social li a[href*="twitter.com"]:before {
+	content: '\f202';
+}
+
+#menu-social li a[href*="dribbble.com"]:before {
+	content: '\f201';
+}
+
+#menu-social li a[href*="plus.google.com"]:before {
+	content: '\f206';
+}
+
+#menu-social li a[href*="pinterest.com"]:before {
+	content: '\f210';
+}
+
+#menu-social li a[href*="github.com"]:before {
+	content: '\f200';
+}
+
+#menu-social li a[href*="tumblr.com"]:before {
+	content: '\f214';
+}
+
+#menu-social li a[href*="youtube.com"]:before {
+	content: '\f213';
+}
+
+#menu-social li a[href*="flickr.com"]:before {
+	content: '\f211';
+}
+
+#menu-social li a[href*="vimeo.com"]:before {
+	content: '\f212';
+}
+
+#menu-social li a[href*="instagram.com"]:before {
+	content: '\f215';
+}
+
+#menu-social li a[href*="codepen.io"]:before {
+	content: '\f216';
+}
+
+#menu-social li a[href*="linkedin.com"]:before {
+	content: '\f208';
+}
+
+#menu-social li a[href*="mailto:"]:before {
+	content: '\f410';
+}
 
 /* =Content
 ----------------------------------------------- */

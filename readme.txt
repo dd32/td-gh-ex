@@ -1,9 +1,9 @@
 === Figure/Ground ===
 Contributors: celloexpressions
-Tags: black, blue, red, white, one-column, responsive-layout, custom-colors, custom-header, custom-menu, editor-style, featured-images, post-formats, sticky-post, theme-options, translation-ready
-Requires at least: 3.9
-Tested up to: 4.0
-Stable tag: 1.0.1
+Tags: one-column, flexible-header, custom-colors, custom-header, custom-menu, editor-style, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog
+Requires at least: 4.5
+Tested up to: 4.6
+Stable tag: 1.1
 Description: Figure/Ground is a bold blogging theme featuring a dynamic animation and extensive customization options. 
 License: GPLv2
 
@@ -27,7 +27,8 @@ The following options are available for this theme, via the Customizer:
 * Custom copyright name field.
 * Show or hide "Proudly powered by WordPress".
 * Show or hide theme information display.
-* One menu location, which supports items one level deep.
+* One menu, which supports items one level deep.
+* A social menu that displays icons for social sites. The following are supported: CodePen.io, Dribble, Facebook, Flickr, GitHub, Google+, Instagram, LinkedIn, Pinterest, Tumblr, Twitter, WordPress.com, WordPress.org, YouTube.
 * One widget location, in the footer, which displays in one, two, or three columns depending on the screen width.
 
 The following features are also available:
@@ -53,7 +54,7 @@ It is extremely important that your two selected Figure/Ground colors have adequ
 Additionally, contrast between accent colors and their respective figure/ground colors is checked and tweaked as needed.
 
 == Copyrights & License ==
-Figure/Ground WordPress Theme, Copyright 2014 Nick Halsey.
+Figure/Ground WordPress Theme, Copyright 2016 Nick Halsey.
 Figure/Ground is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
 Figure/Ground is distributed under the terms of the GNU GPL.
 
@@ -76,6 +77,14 @@ Genericons are licensed under the terms of the GNU GPL, Version 2 (or later)
 Source: http://genericons.com
 
 == Changelog ==
+= 1.1 =
+* All options in the customizer are now instantly live-previewed with postMessage.
+* Add support for selective refresh in the customizer for widgets, and generated colors.
+* Redraw the background canvas when the page is resized to avoid pixelization.
+* Add a social menu.
+* Improve keyboard navigation (although this still needs additional work).
+* Update Genericons to version 3.4.1.
+
 = 1.0.1 =
 * Minor styling bugfixes
 * Fix link color contrast on sticky posts.
@@ -87,6 +96,9 @@ Source: http://genericons.com
 
 
 == Upgrade Notice ==
+= 1.1 =
+* Faster previews in the customizer, a new social menu, and miscellaneous bugfixes.
+
 = 1.0.1 =
 * Update Genericons, styling bugfixes including image borders and header image size.
 

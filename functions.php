@@ -28,6 +28,14 @@ function figureground_setup() {
 	load_theme_textdomain( 'figureground' );
 
 	/*
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
+	add_theme_support( 'title-tag' );
+
+	/*
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, icons, and column width.
 	 */
@@ -50,6 +58,7 @@ function figureground_setup() {
 	 */
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'figureground' ),
+		'social'  => __( 'Social', 'figureground' ),
 	) );
 
 	/**
@@ -71,11 +80,16 @@ function figureground_setup() {
 		'width'                  => 48,
 		'height'                 => 48,
 		'flex-height'            => false,
-		'flex-width'             => false,
+		'flex-width'             => true,
 		'header-text'            => false,
 		'uploads'                => true,
 	);
 	add_theme_support( 'custom-header', $defaults );
+
+	/*
+	 * Allow widgets to be previewed faster in the customizer with selective refresh.
+	 */
+	add_theme_support( 'customize-selective-refresh-widgets' );
 }
 endif; // figureground_setup
 add_action( 'after_setup_theme', 'figureground_setup' );
@@ -109,7 +123,7 @@ function figureground_scripts() {
 	}
 
 	// Includes misc. theme scripts.
-	wp_enqueue_script( 'figureground-functions', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20120206', true );
+	wp_enqueue_script( 'figureground-functions', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20160717', true );
 
 	// Load Figure/Ground animation.
 	wp_enqueue_script( 'figureground', get_template_directory_uri() . '/js/figure-ground.js', array(), '20140622', false );

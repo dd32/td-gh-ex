@@ -80,12 +80,27 @@
 	/**
 	 * Arranges footer widgets vertically.
 	 */
-	if ( $.isFunction( $.fn.masonry ) ) {
-		$( '#colophon .widget-area' ).masonry( {
++	$( function() {
+		var widgetArea;
+		if ( ! $.isFunction( $.fn.masonry ) ) {
+			return;
+		}
+
+		widgetArea = $( '#colophon .widget-area' );
+		widgetArea.masonry( {
 			itemSelector: '.widget',
 			columnWidth: 384,
 			gutterWidth: 64,
 			isRTL: body.is( '.rtl' )
 		} );
-	}
+
+		if ( 'undefined' !== typeof wp && wp.customize && wp.customize.selectiveRefresh ) {
+		    wp.customize.selectiveRefresh.bind( 'sidebar-updated', function( sidebarPartial ) {
+		        if ( 'main' === sidebarPartial.sidebarId ) {
+		            widgetArea.masonry( 'reloadItems' );
+		            widgetArea.masonry( 'layout' );
+		        }
+		    } );
+		}
+	});
 } )( jQuery );
