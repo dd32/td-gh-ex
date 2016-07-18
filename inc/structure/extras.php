@@ -1,12 +1,15 @@
 <?php
+global $bellini;
+$bellini = bellini_option_defaults();
 
 add_filter( 'body_class', 'bellini_body_classes' );
 
 // Add Class to the body
 function bellini_body_classes( $classes ) {
+    global $bellini;
     if ( is_multi_author() ) { $classes[] = 'group-blog'; }
     if ( ! is_singular() ) { $classes[] = 'hfeed'; }
-    if ( esc_attr(get_option('bellini_layout_single-post', 'layout-3')) == 'layout-3' && is_single() ){ $classes[] = 's__post--l3'; }
+    if ( absint($bellini['bellini_layout_single-post']) === 3 && is_single() ){ $classes[] = 's__post--l3'; }
     return $classes;
 }
 
@@ -184,10 +187,18 @@ function bellini_category_transient_flusher() {
 * If it doesn't have a featured image, set a default image as Post thumbnail
 */
 function bellini_post_thumbnail(){
+    global $bellini;
     if ( has_post_thumbnail() ) {
-        the_post_thumbnail('bellini-thumb', array('class' => 'img-respponsive blog__post__image', 'itemprop' => 'image'));
+        echo '<figure>';
+        the_post_thumbnail('bellini-thumb', array(
+                                    'class'     => 'img-respponsive blog__post__image',
+                                    'itemprop'  => 'image',
+                                    'role'      => 'img',
+                                    )
+        );
+        echo '</figure>';
     }else{?>
-        <img itemprop="image" src="<?php if (get_option( 'bellini_post_featured_image' )) : echo get_option( 'bellini_post_featured_image'); else: echo get_template_directory_uri() . '/images/featured-image.jpg'; endif; ?>" class="img-responsive blog__post__image" alt="<?php the_title(); ?>" />
+        <img itemprop="image" src="<?php if ($bellini['bellini_post_featured_image' ]) : echo $bellini['bellini_post_featured_image']; else: echo get_template_directory_uri() . '/images/featured-image.jpg'; endif; ?>" class="img-responsive blog__post__image" alt="<?php the_title(); ?>" />
     <?php }
 }
 
@@ -212,20 +223,21 @@ function bellini_previous_page_add_class() {
 */
 if ( ! function_exists( 'bellini_pagination' ) ) :
 function bellini_pagination() {
-    if(get_option('bellini_blog_pagination_type', 1) == 1):
+    global $bellini;
+    if($bellini['bellini_blog_pagination_type'] == 1):
         // Next & Previous Page Pagination
         echo '<div class="bellini__pagination--np col-md-12">';
         next_posts_link('Next Page', 0);
         previous_posts_link('Previous Page', 0);
         echo '</div>';
     endif;
-    if(get_option('bellini_blog_pagination_type', 1) == 2):
+    if($bellini['bellini_blog_pagination_type'] == 2):
         // Numeric Pagination
         echo '<div class="col-md-12">';
         the_posts_pagination();
         echo '</div>';
     endif;
-    if(get_option('bellini_blog_pagination_type', 1) == 3):
+    if($bellini['bellini_blog_pagination_type'] == 3):
         // Display Pagination using WP-PageNavi Plugin
         if ( function_exists('wp_pagenavi') ){
             wp_pagenavi();
@@ -240,9 +252,10 @@ endif;
 */
 if ( ! function_exists( 'bellini_breadcrumb_integration' ) ) :
 function bellini_breadcrumb_integration() {
-    if(get_option('bellini_show_page_breadcrumb', true) == true) :
+    global $bellini;
+    if($bellini['bellini_show_page_breadcrumb'] == true) :
         // Breadcrumb NavXT
-        if(get_option('bellini_page_breadcrumb_type', 1) == 1):
+        if($bellini['bellini_page_breadcrumb_type'] === 1):
             if( function_exists('bcn_display') ) : ?>
                 <div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/">
                     <?php bcn_display(); ?>
@@ -251,13 +264,13 @@ function bellini_breadcrumb_integration() {
             endif;
         endif;
         // Yoast Breadcrumb
-        if(get_option('bellini_page_breadcrumb_type', 1) == 2):
+        if($bellini['bellini_page_breadcrumb_type'] === 2):
             if( function_exists('yoast_breadcrumb') ) :
                 yoast_breadcrumb('<span class="breadcrumbs">','</span>');
             endif;
         endif;
         // WooCommerce Breadcrumb
-        if(get_option('bellini_page_breadcrumb_type', 1) == 3):
+        if($bellini['bellini_page_breadcrumb_type'] === 3):
             if( function_exists('woocommerce_breadcrumb') ) :
                 woocommerce_breadcrumb();
             endif;
@@ -292,72 +305,28 @@ function bellini_single_post_thumbnail(){
 * Prints Out Class Whether the box should be wide or narrow
 */
 function canvas_width($canvas){
-	if ($canvas == 1){
+	if ($canvas === 1){
 		return 'bellini__canvas';
 	}else{
 		return 'bellini__canvas--fluid';
 	}
 }
 
-/**
-* Switches Two Column Image Content Width
-*/
- function column_switcher_image($column){
-	if ($column == 25){
-		return 'col-sm-3';
-	}elseif($column == 50){
-		return 'col-sm-6';
-	}elseif($column == 60){
-		return 'col-sm-7';
-	}elseif($column == 75){
-		return 'col-sm-9';
-	}else{
-		return 'col-sm-12';
-	}
-}
-
-/**
-* Switches Two Column Content Width
-*/
- function column_switcher_text($column){
-	if ($column == 25){
-		return 'col-sm-9';
-	}elseif($column == 50){
-		return 'col-sm-6';
-	}elseif($column == 60){
-		return 'col-sm-5';
-	}elseif($column == 75){
-		return 'col-sm-3';
-	}else{
-		return 'col-sm-12';
-	}
-}
-
-/**
-* Switches Two Column Content Width
-*/
- function column_switcher_feature_box($column){
-	if ($column == 1){
-		return 'col-sm-12';
-	}elseif($column == 2){
-		return 'col-sm-6';
-	}elseif($column == 3){
-		return 'col-sm-4';
-	}else{
-		return 'col-sm-3';
-	}
-}
 
 /**
 * Switches Two Column Content Class
 */
 function bellini_section_header_class_switcher($value){
-    if ($value == 1){
-        return 'col-md-12';
-    }elseif($value == 2){
-        return 'col-md-4';
-    }else{
-        return 'col-md-4 col-md-push-8';
+    switch ($value){
+       case 1:
+           return 'col-md-12';
+           break;
+       case 2:
+           return 'col-md-4';
+           break;
+       default:
+           return 'col-md-4 col-md-push-8';
+           break;
     }
 }
 
@@ -365,19 +334,24 @@ function bellini_section_header_class_switcher($value){
 * Switches Two Column Content Class
 */
 function bellini_section_content_class_switcher($value){
-    if ($value == 1){
-        return 'col-md-12';
-    }elseif($value == 2){
-        return 'col-md-8';
-    }else{
-        return 'col-md-8 col-md-pull-4';
+    switch ($value){
+       case 1:
+           return 'col-md-12';
+           break;
+       case 2:
+           return 'col-md-8';
+           break;
+       default:
+           return 'col-md-8 col-md-pull-4';
+           break;
     }
 }
 
 /**
 * Check & Prints out Scroll To Top if activated
 */
-if(get_option('bellini_show_scroll_to_top', true) == true) :
+
+if($bellini['bellini_show_scroll_to_top'] == true) :
  add_action( 'wp_footer', 'bellini_scroll_to_top' );
     function bellini_scroll_to_top(){ ?>
         <script>
@@ -405,19 +379,20 @@ endif;
 add_filter( 'bellini_widget_footer_column', 'bellini_footer_column_function' );
 
 function bellini_footer_column_function( $class ) {
-    if (get_option('bellini_footer_widget_column_selector', 3) == 1):
+    global $bellini;
+    if ($bellini['bellini_footer_widget_column_selector'] === 1):
         $class = '<section id="%1$s" class="widget__after__content col-md-12 %2$s">';
         return $class;
     endif;
-    if (get_option('bellini_footer_widget_column_selector', 3) == 2):
+    if ($bellini['bellini_footer_widget_column_selector'] === 2):
         $class = '<section id="%1$s" class="widget__after__content col-md-6 %2$s">';
         return $class;
     endif;
-    if (get_option('bellini_footer_widget_column_selector', 3) == 3):
+    if ($bellini['bellini_footer_widget_column_selector'] === 3):
         $class = '<section id="%1$s" class="widget__after__content col-md-4 %2$s">';
         return $class;
     endif;
-    if (get_option('bellini_footer_widget_column_selector', 3) == 4):
+    if ($bellini['bellini_footer_widget_column_selector'] === 4):
         $class = '<section id="%1$s" class="widget__after__content col-md-3 %2$s">';
         return $class;
     endif;

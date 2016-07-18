@@ -8,6 +8,7 @@
  *
  * @package bellini
  */
+global $bellini;
 ?>
 </div><!-- #content -->
 <?php if ( is_active_sidebar( 'sidebar-footer' ) ):?>

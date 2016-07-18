@@ -23,8 +23,10 @@ function bellini_header_logo(){ ?>
 <?php }
 
 
-function bellini_header_menu(){ ?>
-			<?php if ( get_option('bellini_menu_layout') == 'hamburger' ):?>
+function bellini_header_menu(){
+	global $bellini;
+?>
+			<?php if ( $bellini['bellini_menu_layout'] == 'hamburger' ):?>
 			<!-- Hamburger Menu -->
 			<div class="hamburger__menu__full">
 			<div class="row hamburger__menu__middle" aria-controls="primary-menu" aria-expanded="true">
@@ -45,8 +47,10 @@ function bellini_header_menu(){ ?>
 		  <span class="hamburger-box">
 		    <span class="hamburger-inner"></span>
 		  </span>
-		  <?php if(get_option('bellini_hamburger_title') == true){
-		        echo do_shortcode(get_option( 'bellini_hamburger_title'));
+		  <?php if($bellini['bellini_hamburger_title'] == true){
+		  		echo '<p>';
+		        echo esc_html($bellini['bellini_hamburger_title']);
+		        echo '</p>';
 			}?>
 		</button>
 
@@ -114,7 +118,7 @@ if ( ! function_exists( 'bellini_header_cart' ) ) {
 				<?php esc_html_e( 'Your Cart ', 'bellini' ); ?>
 				</button>
 					<ul class="col-md-12 site-header-cart menu">
-						<li class="<?php echo esc_attr( $class ); ?>">
+						<li class="<?php echo sanitize_html_class( $class ); ?>">
 							<?php bellini_cart_link(); ?>
 						</li>
 						<li>
@@ -149,62 +153,64 @@ function bellini_top_header(){
 }
 
 
-function bellini_social_menu(){ ?>
+function bellini_social_menu(){
+	global $bellini;
+?>
 
 	<div class="bellini-social__link" itemscope itemtype="http://schema.org/Organization">
 	<link itemprop="url" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 
 	<?php
 	// Social Link Field 1
-	if(get_option('bellini_social_account_link_one') == true):
-		$social_link_one = esc_url(get_option( 'bellini_social_account_link_one')); ?>
+	if($bellini['bellini_social_account_link_one'] == true):
+		$social_link_one = esc_url($bellini['bellini_social_account_link_one']); ?>
 	<a itemprop="sameAs" href="<?php echo $social_link_one;?>">
-	  	<span class="<?php echo esc_attr( get_option( 'bellini_social_account_icon_one' )); ?>"></span>
+	  	<span class="<?php echo esc_attr( $bellini['bellini_social_account_icon_one' ]); ?>"></span>
 	</a>
 	<?php endif; ?>
 
 	<?php
 	// Social Link Field 2
-	if(get_option('bellini_social_account_link_two') == true):
-		$social_link_two = esc_url(get_option( 'bellini_social_account_link_two')); ?>
+	if($bellini['bellini_social_account_link_two'] == true):
+		$social_link_two = esc_url($bellini['bellini_social_account_link_two']); ?>
 	<a itemprop="sameAs" href="<?php echo $social_link_two;?>">
-	  	<span class="<?php echo esc_attr( get_option( 'bellini_social_account_icon_two' )); ?>"></span>
+	  	<span class="<?php echo esc_attr( $bellini['bellini_social_account_icon_two' ]); ?>"></span>
 	</a>
 	<?php endif; ?>
 
 	<?php
 	// Social Link Field 3
-	if(get_option('bellini_social_account_link_three') == true):
-		$social_link_three = esc_url(get_option( 'bellini_social_account_link_three')); ?>
+	if($bellini['bellini_social_account_link_three'] == true):
+		$social_link_three = esc_url($bellini[ 'bellini_social_account_link_three']); ?>
 	<a itemprop="sameAs" href="<?php echo $social_link_three;?>">
-	  	<span class="<?php echo esc_attr( get_option( 'bellini_social_account_icon_three' )); ?>"></span>
+	  	<span class="<?php echo esc_attr( $bellini[ 'bellini_social_account_icon_three' ]); ?>"></span>
 	</a>
 	<?php endif; ?>
 
 	<?php
 	// Social Link Field 4
-	if(get_option('bellini_social_account_link_four') == true):
-		$social_link_four = esc_url(get_option( 'bellini_social_account_link_four')); ?>
+	if($bellini['bellini_social_account_link_four'] == true):
+		$social_link_four = esc_url($bellini[ 'bellini_social_account_link_four']); ?>
 	<a itemprop="sameAs" href="<?php echo $social_link_four;?>">
-	  	<span class="<?php echo esc_attr( get_option( 'bellini_social_account_icon_four' )); ?>"></span>
+	  	<span class="<?php echo esc_attr( $bellini[ 'bellini_social_account_icon_four' ]); ?>"></span>
 	</a>
 	<?php endif; ?>
 
 	<?php
 	// Social Link Field 5
-	if(get_option('bellini_social_account_link_five') == true):
-		$social_link_five = esc_url(get_option( 'bellini_social_account_link_five')); ?>
+	if($bellini['bellini_social_account_link_five'] == true):
+		$social_link_five = esc_url($bellini[ 'bellini_social_account_link_five']); ?>
 	<a itemprop="sameAs" href="<?php echo $social_link_five;?>">
-	  	<span class="<?php echo esc_attr( get_option( 'bellini_social_account_icon_five' )); ?>"></span>
+	  	<span class="<?php echo esc_attr( $bellini[ 'bellini_social_account_icon_five' ]); ?>"></span>
 	</a>
 	<?php endif; ?>
 
 	<?php
 	// Social Link Field 6
-	if(get_option('bellini_social_account_link_six') == true):
-		$social_link_six = esc_url(get_option( 'bellini_social_account_link_six')); ?>
+	if($bellini['bellini_social_account_link_six'] == true):
+		$social_link_six = esc_url($bellini[ 'bellini_social_account_link_six']); ?>
 	<a itemprop="sameAs" href="<?php echo $social_link_six;?>">
-	  	<span class="<?php echo esc_attr( get_option( 'bellini_social_account_icon_six' )); ?>"></span>
+	  	<span class="<?php echo esc_attr( $bellini['bellini_social_account_icon_six' ]); ?>"></span>
 	</a>
 	<?php endif; ?>
 
@@ -213,30 +219,31 @@ function bellini_social_menu(){ ?>
 <?php }
 
 function bellini_other_header_items(){
-	if ( get_option('bellini_other_header_items_selector', 1) == 1 ):
+	global $bellini;
+	if ( $bellini['bellini_other_header_items_selector'] === 1 ):
 		bellini_top_header();
 	endif;
 
-	if ( get_option('bellini_other_header_items_selector', 1) == 2 ):
+	if ( $bellini['bellini_other_header_items_selector'] === 2 ):
 		bellini_social_menu();
 	endif;
 }
 
 
 function bellini_core_header(){
+	global $bellini;
 
-
-	if ( get_option('bellini_header_menu_layout', 1) == 1 ):?>
+	if ( $bellini['bellini_header_menu_layout'] === 1 ):?>
 		<div class="site-branding col-md-6 col-xs-12"><?php bellini_header_logo();?></div>
 		<div class="col-md-6 col-xs-12 text-right"><?php bellini_header_menu();?></div>
 	<?php endif; ?>
 
-	<?php if ( get_option('bellini_header_menu_layout', 1) == 2 ): ?>
+	<?php if ( $bellini['bellini_header_menu_layout'] === 2 ): ?>
 		<div class="col-md-6 col-xs-12 "><?php bellini_header_menu();?></div>
 		<div class="site-branding col-md-6 col-xs-12 text-right"><?php bellini_header_logo();?></div>
 	<?php endif; ?>
 
-	<?php if ( get_option('bellini_header_menu_layout', 1) == 3 ): ?>
+	<?php if ( $bellini['bellini_header_menu_layout'] === 3 ): ?>
 		<div class="site-branding col-md-2"><?php bellini_header_logo();?></div>
 		<div class="col-md-8 text-center"><?php bellini_header_menu();?></div>
 		<div class="col-md-2"><?php bellini_other_header_items();?></div>

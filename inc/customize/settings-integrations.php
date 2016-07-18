@@ -18,7 +18,7 @@
 	## Layout
 	--------------------------------------------------------------*/
 
-	$wp_customize->add_setting( 'bellini_woocommerce_layout_helper',
+	$wp_customize->add_setting( 'bellini[bellini_woocommerce_layout_helper]',
 		array(
 			'type' 				=> 'option',
 			'sanitize_callback' => 'sanitize_key',
@@ -30,13 +30,13 @@
 					'type' => 'info',
 					'label' => esc_html__('Layout','bellini'),
 					'section' => 'bellini_woocommerce_integration',
-					'settings'    => 'bellini_woocommerce_layout_helper',
+					'settings'    => 'bellini[bellini_woocommerce_layout_helper]',
 					'priority'   => 1,
 					'active_callback' 	=> 'is_plugin_active_woocommerce_bellini',
 			)) );
 
 	// Shop Product layout
-	$wp_customize->add_setting( 'bellini_woo_shop_product_layout' ,
+	$wp_customize->add_setting( 'bellini[bellini_woo_shop_product_layout]' ,
 		array(
 			'default' => 1,
 			'type' => 'option',
@@ -49,7 +49,7 @@
 				'label'      => esc_html__( 'Shop - Product Layout', 'bellini' ),
 				'description' => esc_html__('Applies to Shop & Archive pages','bellini'),
 				'section'    => 'bellini_woocommerce_integration',
-				'settings'   => 'bellini_woo_shop_product_layout',
+				'settings'   => 'bellini[bellini_woo_shop_product_layout]',
 			    'priority'   => 2,
 			    'type'       => 'select',
 				'choices'    => array(
@@ -60,7 +60,7 @@
 
 
 	//Show * Products per page
-	$wp_customize->add_setting('bellini_woo_shop_product_per_page', array(
+	$wp_customize->add_setting('bellini[bellini_woo_shop_product_per_page]', array(
 		'type' => 'option',
 		'default' => 12,
 		'sanitize_callback' => 'absint',
@@ -70,16 +70,16 @@
 				'type' => 'number',
 				'label' => esc_html__('Show * Products per page','bellini'),
 				'section' => 'bellini_woocommerce_integration',
-				'settings' => 'bellini_woo_shop_product_per_page',
+				'settings' => 'bellini[bellini_woo_shop_product_per_page]',
 				'priority'   => 3,
 			) );
 
 	// Product Column
-	$wp_customize->add_setting( 'bellini_woo_shop_product_column',
+	$wp_customize->add_setting( 'bellini[bellini_woo_shop_product_column]',
 		array(
 			'default' => 'col-sm-3',
 			'type' => 'option',
-			'sanitize_callback' => 'esc_attr',
+			'sanitize_callback' => 'sanitize_html_class',
 			'transport' => 'postMessage'
 		)
 	);
@@ -88,7 +88,7 @@
 				'label'      => esc_html__( 'Shop - Display * Products in a row ', 'bellini' ),
 				'description' => esc_html__('Product items of Shop & Archive pages','bellini'),
 				'section'    => 'bellini_woocommerce_integration',
-				'settings'   => 'bellini_woo_shop_product_column',
+				'settings'   => 'bellini[bellini_woo_shop_product_column]',
 			    'priority'   => 4,
 			    'type'       => 'select',
 				'choices'    => array(
@@ -101,7 +101,7 @@
 		);
 
 	// Shop Pagination layout
-	$wp_customize->add_setting( 'bellini_woo_shop_product_pagination_layout' ,
+	$wp_customize->add_setting( 'bellini[bellini_woo_shop_product_pagination_layout]' ,
 		array(
 			'default' => 1,
 			'type' => 'option',
@@ -114,7 +114,7 @@
 				'label'      => esc_html__( 'Shop - Product Sorting Layout', 'bellini' ),
 				'description' => esc_html__('Product sorting, pagination layouts','bellini'),
 				'section'    => 'bellini_woocommerce_integration',
-				'settings'   => 'bellini_woo_shop_product_pagination_layout',
+				'settings'   => 'bellini[bellini_woo_shop_product_pagination_layout]',
 			    'priority'   => 5,
 			    'type'       => 'select',
 				'choices'    => array(
@@ -128,7 +128,7 @@
 	## Typography
 	--------------------------------------------------------------*/
 
-	$wp_customize->add_setting( 'bellini_woocommerce_typography_helper',
+	$wp_customize->add_setting( 'bellini[bellini_woocommerce_typography_helper]',
 		array(
 			'type' 				=> 'option',
 			'sanitize_callback' => 'sanitize_key',
@@ -141,14 +141,14 @@
 					'label' => esc_html__('Typography','bellini'),
 					'description' => esc_html__('If you want to set your font size to 26px, just write 26','bellini'),
 					'section' => 'bellini_woocommerce_integration',
-					'settings'    => 'bellini_woocommerce_typography_helper',
+					'settings'    => 'bellini[bellini_woocommerce_typography_helper]',
 					'priority'   => 20,
 					'active_callback' 	=> 'is_plugin_active_woocommerce_bellini',
 			)) );
 
 
 	//Shop Product Title Font Size
-	$wp_customize->add_setting('bellini_woocommerce_shop_title_font_size', array(
+	$wp_customize->add_setting('bellini[bellini_woocommerce_shop_title_font_size]', array(
 		'type' => 'option',
 		'default' => 26,
 		'sanitize_callback' => 'absint',
@@ -158,12 +158,12 @@
 				'type' => 'number',
 				'label' => esc_html__('Product Item Title - Shop','bellini'),
 				'section' => 'bellini_woocommerce_integration',
-				'settings' => 'bellini_woocommerce_shop_title_font_size',
+				'settings' => 'bellini[bellini_woocommerce_shop_title_font_size]',
 				'priority'   => 21,
 			) );
 
 	//Shop Product Info Font Size
-	$wp_customize->add_setting('bellini_woocommerce_shop_price_font_size', array(
+	$wp_customize->add_setting('bellini[bellini_woocommerce_shop_price_font_size]', array(
 		'type' => 'option',
 		'default' => 18,
 		'sanitize_callback' => 'absint',
@@ -173,13 +173,13 @@
 				'type' => 'number',
 				'label' => esc_html__('Product Price - Shop','bellini'),
 				'section' => 'bellini_woocommerce_integration',
-				'settings' => 'bellini_woocommerce_shop_price_font_size',
+				'settings' => 'bellini[bellini_woocommerce_shop_price_font_size]',
 				'priority'   => 22,
 			) );
 
 
 	//Single Product Title Font Size
-	$wp_customize->add_setting('bellini_woocommerce_single_title_font_size', array(
+	$wp_customize->add_setting('bellini[bellini_woocommerce_single_title_font_size]', array(
 		'type' => 'option',
 		'default' => 26,
 		'sanitize_callback' => 'absint',
@@ -189,12 +189,12 @@
 				'type' => 'number',
 				'label' => esc_html__('Product Title - Single Product','bellini'),
 				'section' => 'bellini_woocommerce_integration',
-				'settings' => 'bellini_woocommerce_single_title_font_size',
+				'settings' => 'bellini[bellini_woocommerce_single_title_font_size]',
 				'priority'   => 25,
 			) );
 
 	//Single Product Info Font Size
-	$wp_customize->add_setting('bellini_woocommerce_single_info_font_size', array(
+	$wp_customize->add_setting('bellini[bellini_woocommerce_single_info_font_size]', array(
 		'type' => 'option',
 		'default' => 26,
 		'sanitize_callback' => 'absint',
@@ -204,7 +204,7 @@
 				'type' => 'number',
 				'label' => esc_html__('Product Info - Single Product','bellini'),
 				'section' => 'bellini_woocommerce_integration',
-				'settings' => 'bellini_woocommerce_single_info_font_size',
+				'settings' => 'bellini[bellini_woocommerce_single_info_font_size]',
 				'priority'   => 26,
 			) );
 
@@ -212,7 +212,7 @@
 	## Color
 	--------------------------------------------------------------*/
 
-	$wp_customize->add_setting( 'bellini_woocommerce_color_helper',
+	$wp_customize->add_setting( 'bellini[bellini_woocommerce_color_helper]',
 		array(
 			'type' 				=> 'option',
 			'sanitize_callback' => 'sanitize_key',
@@ -224,14 +224,14 @@
 					'type' => 'info',
 					'label' => esc_html__('Color','bellini'),
 					'section' => 'bellini_woocommerce_integration',
-					'settings'    => 'bellini_woocommerce_color_helper',
+					'settings'    => 'bellini[bellini_woocommerce_color_helper]',
 					'priority'   => 30,
 					'active_callback' 	=> 'is_plugin_active_woocommerce_bellini',
 			)) );
 
 
 	// Product Card Background Color
-	$wp_customize->add_setting( 'bellini_woocommerce_product_card_back_color' ,
+	$wp_customize->add_setting( 'bellini[bellini_woocommerce_product_card_back_color]' ,
 		array(
 	    'default' => '#ffffff',
 	    'type' => 'option',
@@ -244,13 +244,13 @@
 			array(
 				'label'      => esc_html__( 'Product Card Background Color', 'bellini' ),
 				'section'    => 'bellini_woocommerce_integration',
-				'settings'   => 'bellini_woocommerce_product_card_back_color',
+				'settings'   => 'bellini[bellini_woocommerce_product_card_back_color]',
 			    'priority'   => 31,
 			)
 		));
 
 	// Product Title Color
-	$wp_customize->add_setting( 'bellini_woocommerce_product_title_color' ,
+	$wp_customize->add_setting( 'bellini[bellini_woocommerce_product_title_color]' ,
 		array(
 	    'default' => '#eee',
 	    'type' => 'option',
@@ -263,13 +263,13 @@
 			array(
 				'label'      => esc_html__( 'Product Title Color', 'bellini' ),
 				'section'    => 'bellini_woocommerce_integration',
-				'settings'   => 'bellini_woocommerce_product_title_color',
+				'settings'   => 'bellini[bellini_woocommerce_product_title_color]',
 			    'priority'   => 32,
 			)
 		));
 
 	// Button Text Color
-	$wp_customize->add_setting( 'bellini_woocommerce_product_button_text_color' ,
+	$wp_customize->add_setting( 'bellini[bellini_woocommerce_product_button_text_color]' ,
 		array(
 	    'default' => '#ffffff',
 	    'type' => 'option',
@@ -282,13 +282,13 @@
 			array(
 				'label'      => esc_html__( 'Button Text Color', 'bellini' ),
 				'section'    => 'bellini_woocommerce_integration',
-				'settings'   => 'bellini_woocommerce_product_button_text_color',
+				'settings'   => 'bellini[bellini_woocommerce_product_button_text_color]',
 			    'priority'   => 33,
 			)
 		));
 
 	// Button Color
-	$wp_customize->add_setting( 'bellini_woocommerce_product_button_color' ,
+	$wp_customize->add_setting( 'bellini[bellini_woocommerce_product_button_color]' ,
 		array(
 	    'default' => '#000000',
 	    'type' => 'option',
@@ -301,7 +301,7 @@
 			array(
 				'label'      => esc_html__( 'Button Color', 'bellini' ),
 				'section'    => 'bellini_woocommerce_integration',
-				'settings'   => 'bellini_woocommerce_product_button_color',
+				'settings'   => 'bellini[bellini_woocommerce_product_button_color]',
 			    'priority'   => 34,
 			)
 		));
@@ -310,7 +310,7 @@
 	## Show/Hide
 	--------------------------------------------------------------*/
 
-	$wp_customize->add_setting( 'bellini_woocommerce_hide_helper',
+	$wp_customize->add_setting( 'bellini[bellini_woocommerce_hide_helper]',
 		array(
 			'type' 				=> 'option',
 			'sanitize_callback' => 'sanitize_key',
@@ -322,13 +322,13 @@
 					'type' => 'info',
 					'label' => esc_html__('Show / Hide','bellini'),
 					'section' => 'bellini_woocommerce_integration',
-					'settings'    => 'bellini_woocommerce_hide_helper',
+					'settings'    => 'bellini[bellini_woocommerce_hide_helper]',
 					'priority'   => 40,
 					'active_callback' 	=> 'is_plugin_active_woocommerce_bellini',
 			)) );
 
 	// Show Sidebar
-	$wp_customize->add_setting( 'bellini_show_woocommerce_sidebar' ,
+	$wp_customize->add_setting( 'bellini[bellini_show_woocommerce_sidebar]' ,
 		array(
 			'default' => true,
 			'type' => 'option',
@@ -340,7 +340,7 @@
 		$wp_customize->add_control( 'bellini_show_woocommerce_sidebar',array(
 				'label'      => esc_html__( 'Show WooCommerce Sidebar', 'bellini' ),
 				'section'    => 'bellini_woocommerce_integration',
-				'settings'   => 'bellini_show_woocommerce_sidebar',
+				'settings'   => 'bellini[bellini_show_woocommerce_sidebar]',
 			    'priority'   => 41,
 			    'type'       => 'checkbox',
 			)
@@ -351,7 +351,7 @@
 	## Position
 	--------------------------------------------------------------*/
 
-	$wp_customize->add_setting( 'bellini_woocommerce_position_helper',
+	$wp_customize->add_setting( 'bellini[bellini_woocommerce_position_helper]',
 		array(
 			'type' 				=> 'option',
 			'sanitize_callback' => 'sanitize_key',
@@ -363,14 +363,14 @@
 					'type' => 'info',
 					'label' => esc_html__('Position','bellini'),
 					'section' => 'bellini_woocommerce_integration',
-					'settings'    => 'bellini_woocommerce_position_helper',
+					'settings'    => 'bellini[bellini_woocommerce_position_helper]',
 					'priority'   => 50,
 					'active_callback' 	=> 'is_plugin_active_woocommerce_bellini',
 			)) );
 
 
 	// Page Title Position
-	$wp_customize->add_setting( 'bellini_woocommerce_page_title_position' ,
+	$wp_customize->add_setting( 'bellini[bellini_woocommerce_page_title_position]' ,
 		array(
 			'default' => 'right',
 			'type' => 'option',
@@ -382,7 +382,7 @@
 		$wp_customize->add_control( 'bellini_woocommerce_page_title_position',array(
 				'label'      => esc_html__( 'Page Title Position', 'bellini' ),
 				'section'    => 'bellini_woocommerce_integration',
-				'settings'   => 'bellini_woocommerce_page_title_position',
+				'settings'   => 'bellini[bellini_woocommerce_page_title_position]',
 			    'priority'   => 51,
 			    'type'       => 'select',
 				'choices'    => array(
@@ -395,7 +395,7 @@
 
 
 	// Sidebar Position
-	$wp_customize->add_setting( 'bellini_woocommerce_sidebar_position' ,
+	$wp_customize->add_setting( 'bellini[bellini_woocommerce_sidebar_position]' ,
 		array(
 			'default' => 'right',
 			'type' => 'option',
@@ -407,7 +407,7 @@
 		$wp_customize->add_control( 'bellini_woocommerce_sidebar_position',array(
 				'label'      => esc_html__( 'WooCommerce Sidebar Position', 'bellini' ),
 				'section'    => 'bellini_woocommerce_integration',
-				'settings'   => 'bellini_woocommerce_sidebar_position',
+				'settings'   => 'bellini[bellini_woocommerce_sidebar_position]',
 			    'priority'   => 52,
 			    'type'       => 'select',
 				'choices'    => array(

@@ -1,8 +1,10 @@
 <?php
 
+
 // Social Media Icon Choices
 function bellini_social_accounts_icons(){
 
+global $bellini;
     return array(
     	''							=> esc_html__( 'None', 'bellini'),
         'fa fa-500px' 				=> esc_html__( '500PX', 'bellini'),
@@ -670,928 +672,928 @@ function bellini_font_preset_body($font){
 }
 
 function bellini_font_script(){
-
-if ( 'abeubu' == esc_attr(get_option('preset_font', 'planot')) ):
+global $bellini;
+if ( 'abeubu' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-abeubu-title', '//fonts.googleapis.com/css?family=Abel');
 	wp_enqueue_style('bellini-font-abeubu-body', '//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic&subset=latin,greek,greek-ext,cyrillic-ext,latin-ext,cyrillic');
 endif;
 
-if ( 'abrcan' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'abrcan' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-abrdro-title', '//fonts.googleapis.com/css?family=Abril+Fatface&subset=latin,latin-ext');
     wp_enqueue_style('bellini-font-abrdro-body', '//fonts.googleapis.com/css?family=Candal');
 endif;
 
-if ( 'abrope' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'abrope' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-abrdro-title', '//fonts.googleapis.com/css?family=Abril+Fatface&subset=latin,latin-ext');
     wp_enqueue_style('bellini-font-aleope-title', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'abrdro' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'abrdro' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-abrdro-title', '//fonts.googleapis.com/css?family=Abril+Fatface&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-abrdro-body', '//fonts.googleapis.com/css?family=Droid+Sans:400,700');
 endif;
 
-if ( 'abrjos' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'abrjos' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-abrdro-title', '//fonts.googleapis.com/css?family=Abril+Fatface&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-josplay-title', '//fonts.googleapis.com/css?family=Josefin+Sans:400,100,100italic,300italic,300,400italic,600,600italic,700,700italic&subset=latin,latin-ext');
 endif;
 
-if ( 'abrlat' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'abrlat' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-abrdro-title', '//fonts.googleapis.com/css?family=Abril+Fatface&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-latmer-title', '//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,700,400italic,700italic,900,900italic&subset=latin,latin-ext');
 endif;
 
-if ( 'abrvol' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'abrvol' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-abrdro-title', '//fonts.googleapis.com/css?family=Abril+Fatface&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-latmer-title', '//fonts.googleapis.com/css?family=Vollkorn:400,400italic,700,700italic');
 endif;
 
-if ( 'aleope' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'aleope' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-aleope-title', '//fonts.googleapis.com/css?family=Alegreya:400,400italic,700,700italic,900,900italic&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-aleope-title', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'alesou' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'alesou' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-alesou-title', '//fonts.googleapis.com/css?family=Alegreya:400,400italic,700,700italic,900,900italic&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-alesou-body', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,900italic,900,200,200italic,300,300italic,400italic,600,600italic,700italic,700&subset=latin,vietnamese,latin-ext');
 endif;
 
-if ( 'alflor' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'alflor' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-alfgen-title', '//fonts.googleapis.com/css?family=Alfa+Slab+One');
 	wp_enqueue_style('bellini-font-istlor-body', '//fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic&subset=latin,cyrillic,latin-ext');
 endif;
 
-if ( 'alfgen' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'alfgen' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-alfgen-title', '//fonts.googleapis.com/css?family=Alfa+Slab+One');
 	wp_enqueue_style('bellini-font-alfgen-body', '//fonts.googleapis.com/css?family=Gentium+Book+Basic:400,400italic,700,700italic&subset=latin,latin-ext');
 endif;
 
 
-if ( 'amatit' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'amatit' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-amatit-title', '//fonts.googleapis.com/css?family=Amaranth:400,400italic,700,700italic');
 	wp_enqueue_style('bellini-font-amatit-body', '//fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900&subset=latin,latin-ext');
 endif;
 
-if ( 'amaand' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'amaand' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-amaand-title', '//fonts.googleapis.com/css?family=Amatic+SC:400,700&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-amaand-body', '//fonts.googleapis.com/css?family=Andika&subset=latin,vietnamese,cyrillic-ext,latin-ext,cyrillic');
 endif;
 
-if ( 'amajos' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'amajos' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-amaand-title', '//fonts.googleapis.com/css?family=Amatic+SC:400,700&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-josplay-title', '//fonts.googleapis.com/css?family=Josefin+Sans:400,100,100italic,300italic,300,400italic,600,600italic,700,700italic&subset=latin,latin-ext');
 endif;
 
-if ( 'bevpon' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'bevpon' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-amaand-title', '//fonts.googleapis.com/css?family=Bevan');
 	wp_enqueue_style('bellini-font-josplay-title', '//fonts.googleapis.com/css?family=Pontano+Sans&subset=latin,latin-ext');
 endif;
 
-if ( 'bitsou' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'bitsou' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-bitral-title', '//fonts.googleapis.com/css?family=Bitter:400,400italic,700&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-alesou-body', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,900italic,900,200,200italic,300,300italic,400italic,600,600italic,700italic,700&subset=latin,vietnamese,latin-ext');
 endif;
 
-if ( 'bitral' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'bitral' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-bitral-title', '//fonts.googleapis.com/css?family=Bitter:400,400italic,700&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-bitral-title', '//fonts.googleapis.com/css?family=Raleway:400,100,200,100italic,200italic,300,300italic,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&subset=latin,latin-ext');
 endif;
 
-if ( 'breimp' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'breimp' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-bitral-title', '//fonts.googleapis.com/css?family=Bree+Serif&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-canimp-title', '//fonts.googleapis.com/css?family=Imprima&subset=latin,latin-ext');
 endif;
 
-if ( 'brelor' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'brelor' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-bitral-title', '//fonts.googleapis.com/css?family=Bree+Serif&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-istlor-body', '//fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic&subset=latin,cyrillic,latin-ext');
 endif;
 
-if ( 'breope' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'breope' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-bitral-title', '//fonts.googleapis.com/css?family=Bree+Serif&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-aleope-title', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'canimp' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'canimp' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-canimp-title', '//fonts.googleapis.com/css?family=Cantata+One&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-canimp-title', '//fonts.googleapis.com/css?family=Imprima&subset=latin,latin-ext');
 endif;
 
-if ( 'caralm' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'caralm' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-caralm-title', '//fonts.googleapis.com/css?family=Cardo:400,400italic,700&subset=latin,latin-ext,greek-ext,greek');
     wp_enqueue_style('bellini-font-caralm-body', '//fonts.googleapis.com/css?family=Almendra+Display&subset=latin,latin-ext');
 endif;
 
 
-if ( 'carjos' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'carjos' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-carjos-title', '//fonts.googleapis.com/css?family=Cardo:400,400italic,700&subset=latin,latin-ext,greek-ext,greek');
 	wp_enqueue_style('bellini-font-carjos-title', '//fonts.googleapis.com/css?family=Josefin+Sans:400,100,100italic,300italic,300,400italic,600,600italic,700,700italic&subset=latin,latin-ext');
 endif;
 
-if ( 'cliebg' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'cliebg' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-carjos-title', '//fonts.googleapis.com/css?family=Clicker+Script&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-carjos-title', '//fonts.googleapis.com/css?family=EB+Garamond&subset=latin,vietnamese,cyrillic-ext,latin-ext,cyrillic');
 endif;
 
-if ( 'creabe' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'creabe' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-carjos-title', '//fonts.googleapis.com/css?family=Crete+Round:400,400italic&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-carjos-title', '//fonts.googleapis.com/css?family=ABeeZee:400,400italic');
 endif;
 
-if ( 'danebg' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'danebg' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-carjos-title', '//fonts.googleapis.com/css?family=Dancing+Script:400,700');
 	wp_enqueue_style('bellini-font-carjos-title', '//fonts.googleapis.com/css?family=EB+Garamond&subset=latin,vietnamese,cyrillic-ext,latin-ext,cyrillic');
 endif;
 
-if ( 'danled' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'danled' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-danled-title', '//fonts.googleapis.com/css?family=Dancing+Script:400,700');
 	wp_enqueue_style('bellini-font-danled-title', '//fonts.googleapis.com/css?family=Ledger&subset=latin,latin-ext,cyrillic');
 endif;
 
-if ( 'didari' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'didari' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-danled-title', '//fonts.googleapis.com/css?family=Didact+Gothic&subset=latin,greek-ext,greek,cyrillic-ext,latin-ext,cyrillic');
 	wp_enqueue_style('bellini-font-danled-title', '//fonts.googleapis.com/css?family=Arimo:400,400italic,700,700italic&subset=latin,greek-ext,greek,latin-ext,cyrillic,hebrew,vietnamese,cyrillic-ext');
 endif;
 
-if ( 'dosope' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'dosope' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-dosope-title', '//fonts.googleapis.com/css?family=Dosis:200,300,500,400,600,700,800&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-dosope-title', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'drocab' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'drocab' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-drocab-body', '//fonts.googleapis.com/css?family=Droid+Sans:400,700');
 	wp_enqueue_style('bellini-font-drocab-title', '//fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600,600italic,700,700italic');
 endif;
 
-if ( 'drfosw' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'drfosw' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-nunale-title', '//fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700,700italic');
 	wp_enqueue_style('bellini-font-nunale-title', '//fonts.googleapis.com/css?family=Oswald:400,700,300&subset=latin,latin-ext');
 endif;
 
-if ( 'exolat' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'exolat' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-latmer-title', '//fonts.googleapis.com/css?family=Exo+2:400,100,100italic,200,200italic,300,300italic,400italic,500,500italic,600italic,600,700,700italic,800,800italic,900,900italic&subset=latin,latin-ext,cyrillic');
     wp_enqueue_style('bellini-font-latmer-title', '//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,700,400italic,700italic,900,900italic&subset=latin,latin-ext');
 endif;
 
-if ( 'exolor' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'exolor' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-exolor-title', '//fonts.googleapis.com/css?family=Exo+2:400,100,100italic,200,200italic,300,300italic,400italic,500,500italic,600italic,600,700,700italic,800,800italic,900,900italic&subset=latin,latin-ext,cyrillic');
     wp_enqueue_style('bellini-font-exolor-body', '//fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic&subset=latin,cyrillic,latin-ext');
 endif;
 
-if ( 'exoope' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'exoope' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-exoope-title', '//fonts.googleapis.com/css?family=Exo+2:400,100,100italic,200,200italic,300,300italic,400italic,500,500italic,600italic,600,700,700italic,800,800italic,900,900italic&subset=latin,latin-ext,cyrillic');
     wp_enqueue_style('bellini-font-exoope-title', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'exoosw' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'exoosw' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-exoosw-title', '//fonts.googleapis.com/css?family=Exo+2:400,100,100italic,200,200italic,300,300italic,400italic,500,500italic,600italic,600,700,700italic,800,800italic,900,900italic&subset=latin,latin-ext,cyrillic');
     wp_enqueue_style('bellini-font-exoosw-title', '//fonts.googleapis.com/css?family=Oswald:400,700,300&subset=latin,latin-ext');
 endif;
 
-if ( 'exorob' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'exorob' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-exoosw-title', '//fonts.googleapis.com/css?family=Exo+2:400,100,100italic,200,200italic,300,300italic,400italic,500,500italic,600italic,600,700,700italic,800,800italic,900,900italic&subset=latin,latin-ext,cyrillic');
     wp_enqueue_style('bellini-font-latmer-body', '//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,greek,cyrillic,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'exosou' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'exosou' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-exosou-title', '//fonts.googleapis.com/css?family=Exo+2:400,100,100italic,200,200italic,300,300italic,400italic,500,500italic,600italic,600,700,700italic,800,800italic,900,900italic&subset=latin,latin-ext,cyrillic');
     wp_enqueue_style('bellini-font-exosou-body', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,900italic,900,200,200italic,300,300italic,400italic,600,600italic,700italic,700&subset=latin,vietnamese,latin-ext');
 endif;
 
-if ( 'fjaave' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'fjaave' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-fjaave-title', '//fonts.googleapis.com/css?family=Fjalla+One&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-fjaave-body', '//fonts.googleapis.com/css?family=Average&subset=latin,latin-ext');
 endif;
 
-if ( 'fjacan' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'fjacan' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-fjaave-title', '//fonts.googleapis.com/css?family=Fjalla+One&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-fjaave-body', '//fonts.googleapis.com/css?family=Cantarell:400,400italic,700italic,700');
 endif;
 
-if ( 'flaasa' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'flaasa' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-fjaave-title', '//fonts.googleapis.com/css?family=Flamenco:400,300');
 	wp_enqueue_style('bellini-font-fjaave-body', '//fonts.googleapis.com/css?family=Asap:400,700,400italic,700italic&subset=latin,latin-ext');
 endif;
 
-if ( 'fradid' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'fradid' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-fjaave-title', '//fonts.googleapis.com/css?family=Francois+One&subset=latin,latin-ext');
     wp_enqueue_style('bellini-font-danled-title', '//fonts.googleapis.com/css?family=Didact+Gothic&subset=latin,greek-ext,greek,cyrillic-ext,latin-ext,cyrillic');
 endif;
 
-if ( 'fralat' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'fralat' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-fralat-title', '//fonts.googleapis.com/css?family=Francois+One&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-latmer-title', '//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,700,400italic,700italic,900,900italic&subset=latin,latin-ext');
 endif;
 
-if ( 'fraope' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'fraope' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-fraope-title', '//fonts.googleapis.com/css?family=Francois+One&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-fraope-title', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'genope' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'genope' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-aleope-title', '//fonts.googleapis.com/css?family=Gentium+Basic:400,400italic,700,700italic&subset=latin,latin-ext');
     wp_enqueue_style('bellini-font-aleope-title', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
 
-if ( 'hinope' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'hinope' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-fraope-title', '//fonts.googleapis.com/css?family=Hind:400,300,500,700,600&subset=latin,latin-ext,devanagari');
 	wp_enqueue_style('bellini-font-fraope-title', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'indlat' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'indlat' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-indlat-title', '//fonts.googleapis.com/css?family=Indie+Flower');
     wp_enqueue_style('bellini-font-indlat-title', '//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,700,400italic,700italic,900,900italic&subset=latin,latin-ext');
 endif;
 
-if ( 'indosw' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'indosw' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-indlat-title', '//fonts.googleapis.com/css?family=Indie+Flower');
 	wp_enqueue_style('bellini-font-nunale-title', '//fonts.googleapis.com/css?family=Oswald:400,700,300&subset=latin,latin-ext');
 endif;
 
-if ( 'indpop' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'indpop' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-indlat-title', '//fonts.googleapis.com/css?family=Indie+Flower');
 	wp_enqueue_style('bellini-font-nunale-title', '//fonts.googleapis.com/css?family=Poppins:400,300,500,600,700&subset=latin,latin-ext,devanagari');
 endif;
 
-if ( 'josjos' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'josjos' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-josjos-title', '//fonts.googleapis.com/css?family=Josefin+Slab:400,100,100italic,300,300italic,400italic,600,600italic,700,700italic');
     wp_enqueue_style('bellini-font-josjos-title', '//fonts.googleapis.com/css?family=Josefin+Sans:400,100,100italic,300italic,300,400italic,600,600italic,700,700italic&subset=latin,latin-ext');
 endif;
 
-if ( 'josplay' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'josplay' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-josplay-title', '//fonts.googleapis.com/css?family=Josefin+Sans:400,100,100italic,300italic,300,400italic,600,600italic,700,700italic&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-josplay-body', '//fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic,900,900italic&subset=latin,latin-ext,cyrillic');
 endif;
 
-if ( 'jobmav' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'jobmav' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-josjos-title', '//fonts.googleapis.com/css?family=Josefin+Slab:400,100,100italic,300,300italic,400italic,600,600italic,700,700italic');
 	wp_enqueue_style('bellini-font-josplay-body', '//fonts.googleapis.com/css?family=Maven+Pro:400,900,700,500');
 endif;
 
-if ( 'jobosw' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'jobosw' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-josjos-title', '//fonts.googleapis.com/css?family=Josefin+Slab:400,100,100italic,300,300italic,400italic,600,600italic,700,700italic');
 	wp_enqueue_style('bellini-font-nunale-title', '//fonts.googleapis.com/css?family=Oswald:400,700,300&subset=latin,latin-ext');
 endif;
 
-if ( 'cabold' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'cabold' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-cabold-title', '//fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600,600italic,700,700italic');
 	wp_enqueue_style('bellini-font-cabold-body', '//fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic,700');
 endif;
 
-if ( 'kreubu' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'kreubu' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-kreubu-title', '//fonts.googleapis.com/css?family=Kreon:400,300,700');
 	wp_enqueue_style('bellini-font-kreubu-body', '//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,500,400italic,500italic,700,700italic&subset=latin,greek,greek-ext,cyrillic-ext,latin-ext,cyrillic');
 endif;
 
-if ( 'latmer' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'latmer' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-latmer-title', '//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,700,400italic,700italic,900,900italic&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-latmer-body', '//fonts.googleapis.com/css?family=Merriweather:400,300italic,300,400italic,700italic,700,900,900italic&subset=latin,cyrillic-ext,latin-ext,cyrillic');
 endif;
 
-if ( 'libmon' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'libmon' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-latmer-title', '//fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-latmer-body', '//fonts.googleapis.com/css?family=Montserrat:400,700');
 endif;
 
-if ( 'libope' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'libope' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-latmer-title', '//fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-fraope-title', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'libubu' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'libubu' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-latmer-title', '//fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-kreubu-body', '//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,500,400italic,500italic,700,700italic&subset=latin,greek,greek-ext,cyrillic-ext,latin-ext,cyrillic');
 endif;
 
-if ( 'istlor' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'istlor' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-istlor-title', '//fonts.googleapis.com/css?family=Istok+Web:400,400italic,700,700italic&subset=latin,latin-ext,cyrillic-ext,cyrillic');
 	wp_enqueue_style('bellini-font-istlor-body', '//fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic&subset=latin,cyrillic,latin-ext');
 endif;
 
-if ( 'lobari' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'lobari' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-latmer-title', '//fonts.googleapis.com/css?family=Lobster&subset=latin,vietnamese,latin-ext,cyrillic');
     wp_enqueue_style('bellini-font-fraope-title', '//fonts.googleapis.com/css?family=Arimo:400,400italic,700,700italic&subset=latin,greek,latin-ext,cyrillic,greek-ext,hebrew,vietnamese,cyrillic-ext');
 endif;
 
-if ( 'lobcab' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'lobcab' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-lobcab-title', '//fonts.googleapis.com/css?family=Lobster&subset=latin,vietnamese,latin-ext,cyrillic');
     wp_enqueue_style('bellini-font-lobcab-title', '//fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600,600italic,700,700italic');
 endif;
 
-if ( 'lobmul' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'lobmul' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-lobcab-title', '//fonts.googleapis.com/css?family=Lobster&subset=latin,vietnamese,latin-ext,cyrillic');
     wp_enqueue_style('bellini-font-monpla-title', '//fonts.googleapis.com/css?family=Muli:400,300,300italic,400italic');
 endif;
 
-if ( 'lobvol' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'lobvol' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-lobcab-title', '//fonts.googleapis.com/css?family=Lobster&subset=latin,vietnamese,latin-ext,cyrillic');
 	wp_enqueue_style('bellini-font-latmer-title', '//fonts.googleapis.com/css?family=Vollkorn:400,400italic,700,700italic');
 endif;
 
-if ( 'lorope' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'lorope' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-lorope-body', '//fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic&subset=latin,cyrillic,latin-ext');
     wp_enqueue_style('bellini-font-lorope-title', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'lorsou' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'lorsou' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-lorsou-body', '//fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic&subset=latin,cyrillic,latin-ext');
 	wp_enqueue_style('bellini-font-lorsou-body', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,900italic,900,200,200italic,300,300italic,400italic,600,600italic,700italic,700&subset=latin,vietnamese,latin-ext');
 endif;
 
-if ( 'luslat' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'luslat' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-luslat-body', '//fonts.googleapis.com/css?family=Lustria');
     wp_enqueue_style('bellini-font-luslat-title', '//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,700,400italic,700italic,900,900italic&subset=latin,latin-ext');
 endif;
 
-if ( 'medlat' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'medlat' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-medlat-body', '//fonts.googleapis.com/css?family=Medula+One');
     wp_enqueue_style('bellini-font-medlat-title', '//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,700,400italic,700italic,900,900italic&subset=latin,latin-ext');
 endif;
 
-if ( 'merope' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'merope' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-latmer-title', '//fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic&subset=latin,latin-ext,cyrillic-ext,cyrillic');
 	wp_enqueue_style('bellini-font-fraope-title', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'merosw' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'merosw' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-latmer-title', '//fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic&subset=latin,latin-ext,cyrillic-ext,cyrillic');
 	wp_enqueue_style('bellini-font-nunale-title', '//fonts.googleapis.com/css?family=Oswald:400,700,300&subset=latin,latin-ext');
 endif;
 
-if ( 'mersou' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'mersou' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-latmer-title', '//fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic&subset=latin,latin-ext,cyrillic-ext,cyrillic');
 	wp_enqueue_style('bellini-font-lorsou-body', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,900italic,900,200,200italic,300,300italic,400italic,600,600italic,700italic,700&subset=latin,vietnamese,latin-ext');
 endif;
 
-if ( 'moncar' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'moncar' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-moncar-title', '//fonts.googleapis.com/css?family=Montserrat:400,700');
     wp_enqueue_style('bellini-font-moncar-title', '//fonts.googleapis.com/css?family=Cardo:400,400italic,700&subset=latin,latin-ext,greek-ext,greek');
 endif;
 
-if ( 'moncri' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'moncri' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-moncri-title', '//fonts.googleapis.com/css?family=Montserrat:400,700');
     wp_enqueue_style('bellini-font-moncri-title', '//fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic');
 endif;
 
-if ( 'mondom' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'mondom' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-moncri-title', '//fonts.googleapis.com/css?family=Montserrat:400,700');
     wp_enqueue_style('bellini-font-moncri-title', '//fonts.googleapis.com/css?family=Domine:400,700&subset=latin,latin-ext');
 endif;
 
-if ( 'monhin' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'monhin' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-monhin-title', '//fonts.googleapis.com/css?family=Montserrat:400,700');
     wp_enqueue_style('bellini-font-monhin-title', '//fonts.googleapis.com/css?family=Hind:400,300,500,700,600&subset=latin,latin-ext,devanagari');
 endif;
 
-if ( 'monist' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'monist' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-monhin-title', '//fonts.googleapis.com/css?family=Montserrat:400,700');
     wp_enqueue_style('bellini-font-istlor-title', '//fonts.googleapis.com/css?family=Istok+Web:400,400italic,700,700italic&subset=latin,latin-ext,cyrillic-ext,cyrillic');
 endif;
 
-if ( 'monneu' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'monneu' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-monneu-title', '//fonts.googleapis.com/css?family=Montserrat:400,700');
     wp_enqueue_style('bellini-font-monneu-title', '//fonts.googleapis.com/css?family=Neuton:400,300,200,400italic,700,800&subset=latin,latin-ext');
 endif;
 
-if ( 'monpla' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'monpla' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-monpla-title', '//fonts.googleapis.com/css?family=Montserrat:400,700');
 	wp_enqueue_style('bellini-font-monpla-body', '//fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic,900,900italic&subset=latin,latin-ext,cyrillic');
 endif;
 
-if ( 'monpon' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'monpon' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-monpla-title', '//fonts.googleapis.com/css?family=Montserrat:400,700');
 	wp_enqueue_style('bellini-font-josplay-title', '//fonts.googleapis.com/css?family=Pontano+Sans&subset=latin,latin-ext');
 endif;
 
-if ( 'monrob' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'monrob' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-monpla-title', '//fonts.googleapis.com/css?family=Montserrat:400,700');
 	wp_enqueue_style('bellini-font-latmer-body', '//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,greek,cyrillic,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'mulpla' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'mulpla' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-monpla-title', '//fonts.googleapis.com/css?family=Muli:400,300,300italic,400italic');
 	wp_enqueue_style('bellini-font-monpla-body', '//fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic,900,900italic&subset=latin,latin-ext,cyrillic');
 endif;
 
-if ( 'nixled' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'nixled' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-nixled-title', '//fonts.googleapis.com/css?family=Nixie+One');
 	wp_enqueue_style('bellini-font-nixled-title', '//fonts.googleapis.com/css?family=Ledger&subset=latin,latin-ext,cyrillic');
 endif;
 
-if ( 'nixlib' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'nixlib' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-nixlib-title', '//fonts.googleapis.com/css?family=Nixie+One');
     wp_enqueue_style('bellini-font-nixlib-title', '//fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700&subset=latin,latin-ext');
 endif;
 
-if ( 'nunale' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'nunale' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-nunale-title', '//fonts.googleapis.com/css?family=Nunito:400,300,700');
     wp_enqueue_style('bellini-font-nunale-title', '//fonts.googleapis.com/css?family=Alegreya:400,400italic,700,700italic,900,900italic&subset=latin,latin-ext');
 endif;
 
-if ( 'nunlor' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'nunlor' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-nunale-title', '//fonts.googleapis.com/css?family=Nunito:400,300,700');
 	wp_enqueue_style('bellini-font-istlor-body', '//fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic&subset=latin,cyrillic,latin-ext');
 endif;
 
-if ( 'nunope' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'nunope' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-nunale-title', '//fonts.googleapis.com/css?family=Nunito:400,300,700');
 	wp_enqueue_style('bellini-font-fraope-title', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'oldque' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'oldque' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-cabold-body', '//fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic,700');
 	wp_enqueue_style('bellini-font-fraope-title', '//fonts.googleapis.com/css?family=Questrial');
 endif;
 
-if ( 'opegen' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'opegen' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-aleope-title', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 	wp_enqueue_style('bellini-font-aleope-title', '//fonts.googleapis.com/css?family=Gentium+Book+Basic:400,400italic,700,700italic&subset=latin,latin-ext');
 endif;
 
-if ( 'opelib' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'opelib' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-fraope-title', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext');
     wp_enqueue_style('bellini-font-latmer-title', '//fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic,700&subset=latin,latin-ext');
 endif;
 
-if ( 'opelor' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'opelor' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-fraope-title', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 	wp_enqueue_style('bellini-font-istlor-body', '//fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic&subset=latin,cyrillic,latin-ext');
 endif;
 
-if ( 'openun' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'openun' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-fraope-title', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 	wp_enqueue_style('bellini-font-nunale-title', '//fonts.googleapis.com/css?family=Nunito:400,300,700');
 endif;
 
-if ( 'opeosw' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'opeosw' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-fraope-title', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 	wp_enqueue_style('bellini-font-nunale-title', '//fonts.googleapis.com/css?family=Oswald:400,700,300&subset=latin,latin-ext');
 endif;
 
-if ( 'opepla' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'opepla' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-fraope-title', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 	wp_enqueue_style('bellini-font-monpla-body', '//fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic,900,900italic&subset=latin,latin-ext,cyrillic');
 endif;
 
-if ( 'opcosw' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'opcosw' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-nunale-title', '//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700&subset=latin,greek,cyrillic,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 	wp_enqueue_style('bellini-font-nunale-title', '//fonts.googleapis.com/css?family=Oswald:400,700,300&subset=latin,latin-ext');
 endif;
 
-if ( 'opcope' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'opcope' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-nunale-title', '//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700&subset=latin,greek,cyrillic,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 	wp_enqueue_style('bellini-font-fraope-title', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'opcrob' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'opcrob' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-nunale-title', '//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700&subset=latin,greek,cyrillic,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 	wp_enqueue_style('bellini-font-latmer-body', '//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,greek,cyrillic,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'oswdro' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'oswdro' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-nunale-title', '//fonts.googleapis.com/css?family=Oswald:400,700,300&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-nunale-title', '//fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700,700italic');
 endif;
 
-if ( 'oswdom' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'oswdom' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-oswdom-title', '//fonts.googleapis.com/css?family=Oswald:400,700,300&subset=latin,latin-ext');
     wp_enqueue_style('bellini-font-oswdom-body', '//fonts.googleapis.com/css?family=Domine:400,700&subset=latin,latin-ext');
 endif;
 
-if ( 'oswdrod' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'oswdrod' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-oswdrod-title', '//fonts.googleapis.com/css?family=Oswald:400,700,300&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-oswdrod-title', '//fonts.googleapis.com/css?family=Droid+Sans:400,700');
 endif;
 
-if ( 'oswmer' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'oswmer' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-oswdrod-title', '//fonts.googleapis.com/css?family=Oswald:400,700,300&subset=latin,latin-ext');
     wp_enqueue_style('bellini-font-latmer-title', '//fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic&subset=latin,latin-ext,cyrillic-ext,cyrillic');
 endif;
 
-if ( 'oswmul' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'oswmul' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-oswdrod-title', '//fonts.googleapis.com/css?family=Oswald:400,700,300&subset=latin,latin-ext');
     wp_enqueue_style('bellini-font-monpla-title', '//fonts.googleapis.com/css?family=Muli:400,300,300italic,400italic');
 endif;
 
-if ( 'oswold' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'oswold' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-oswold-title', '//fonts.googleapis.com/css?family=Oswald:400,700,300&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-oswold-body', '//fonts.googleapis.com/css?family=Old+Standard+TT:400,400italic,700');
 endif;
 
-if ( 'oswope' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'oswope' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-oswope-title', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 	wp_enqueue_style('bellini-font-oswope-title', '//fonts.googleapis.com/css?family=Oswald:400,700,300&subset=latin,latin-ext');
 endif;
 
-if ( 'oswqua' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'oswqua' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-oswope-title', '//fonts.googleapis.com/css?family=Oswald:400,700,300&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-oswope-title', '//fonts.googleapis.com/css?family=Quattrocento:400,700&subset=latin,latin-ext');
 endif;
 
-if ( 'ovomul' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'ovomul' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-ovomul-title', '//fonts.googleapis.com/css?family=Ovo');
     wp_enqueue_style('bellini-font-ovomul-title', '//fonts.googleapis.com/css?family=Muli:400,300,300italic,400italic');
 endif;
 
-if ( 'oxysou' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'oxysou' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-oxysou-title', '//fonts.googleapis.com/css?family=Oxygen:400,700,300&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-oxysou-body', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,900italic,900,200,200italic,300,300italic,400italic,600,600italic,700italic,700&subset=latin,vietnamese,latin-ext');
 endif;
 
-if ( 'pacari' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'pacari' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-danled-title', '//fonts.googleapis.com/css?family=Pacifico');
 	wp_enqueue_style('bellini-font-danled-title', '//fonts.googleapis.com/css?family=Arimo:400,400italic,700,700italic&subset=latin,greek-ext,greek,latin-ext,cyrillic,hebrew,vietnamese,cyrillic-ext');
 endif;
 
-if ( 'patlor' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'patlor' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-bitral-title', '//fonts.googleapis.com/css?family=Patua+One');
 	wp_enqueue_style('bellini-font-istlor-body', '//fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic&subset=latin,cyrillic,latin-ext');
 endif;
 
-if ( 'patosw' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'patosw' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-patosw-title', '//fonts.googleapis.com/css?family=Patua+One');
 	wp_enqueue_style('bellini-font-patosw-title', '//fonts.googleapis.com/css?family=Oswald:400,700,300&subset=latin,latin-ext');
 endif;
 
-if ( 'paydro' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'paydro' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-drocab-title', '//fonts.googleapis.com/css?family=Paytone+One');
 	wp_enqueue_style('bellini-font-drocab-body', '//fonts.googleapis.com/css?family=Droid+Sans:400,700');
 endif;
 
-if ( 'phimul' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'phimul' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-monpla-title', '//fonts.googleapis.com/css?family=Philosopher:400,400italic,700,700italic&subset=latin,cyrillic');
     wp_enqueue_style('bellini-font-monpla-title', '//fonts.googleapis.com/css?family=Muli:400,300,300italic,400italic');
 endif;
 
-if ( 'plaali' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'plaali' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-josplay-body', '//fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic,900,900italic&subset=latin,latin-ext,cyrillic');
 	wp_enqueue_style('bellini-font-josplay-body', '//fonts.googleapis.com/css?family=Alice');
 endif;
 
-if ( 'plafau' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'plafau' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-josplay-body', '//fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic,900,900italic&subset=latin,latin-ext,cyrillic');
 	wp_enqueue_style('bellini-font-josplay-body', '//fonts.googleapis.com/css?family=Fauna+One&subset=latin,latin-ext');
 endif;
 
-if ( 'plalat' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'plalat' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-plalat-body', '//fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic,900,900italic&subset=latin,latin-ext,cyrillic');
 	wp_enqueue_style('bellini-font-plalat-title', '//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,700,400italic,700italic,900,900italic&subset=latin,latin-ext');
 endif;
 
-if ( 'planot' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'planot' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-planot-body', '//fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic,900,900italic&subset=latin,latin-ext,cyrillic');
     wp_enqueue_style('bellini-font-planot-title', '//fonts.googleapis.com/css?family=Noto+Serif:400,400italic,700,700italic&subset=latin,greek-ext,greek,vietnamese,cyrillic-ext,latin-ext,cyrillic');
 endif;
 
 
-if ( 'plaope' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'plaope' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-josplay-body', '//fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic,900,900italic&subset=latin,latin-ext,cyrillic');
 	wp_enqueue_style('bellini-font-fraope-title', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'plakru' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'plakru' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-josplay-body', '//fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic,900,900italic&subset=latin,latin-ext,cyrillic');
     wp_enqueue_style('bellini-font-latmer-title', '//fonts.googleapis.com/css?family=Sree+Krushnadevaraya&subset=latin,telugu');
 endif;
 
-if ( 'plavol' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'plavol' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-josplay-body', '//fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic,900,900italic&subset=latin,latin-ext,cyrillic');
 	wp_enqueue_style('bellini-font-latmer-title', '//fonts.googleapis.com/css?family=Vollkorn:400,400italic,700,700italic');
 endif;
 
-if ( 'poiope' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'poiope' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-poilat-title', '//fonts.googleapis.com/css?family=Poiret+One&subset=latin,latin-ext,cyrillic');
     wp_enqueue_style('bellini-font-fraope-title', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'poilat' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'poilat' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-poilat-title', '//fonts.googleapis.com/css?family=Poiret+One&subset=latin,latin-ext,cyrillic');
     wp_enqueue_style('bellini-font-poilat-title', '//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,700,400italic,700italic,900,900italic&subset=latin,latin-ext');
 endif;
 
-if ( 'ptscab' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'ptscab' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-drocab-body', '//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700italic,700&subset=latin,cyrillic-ext,latin-ext,cyrillic');
 	wp_enqueue_style('bellini-font-drocab-title', '//fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600,600italic,700,700italic');
 endif;
 
-if ( 'ptsdid' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'ptsdid' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-drocab-body', '//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700italic,700&subset=latin,cyrillic-ext,latin-ext,cyrillic');
     wp_enqueue_style('bellini-font-danled-title', '//fonts.googleapis.com/css?family=Didact+Gothic&subset=latin,greek-ext,greek,cyrillic-ext,latin-ext,cyrillic');
 endif;
 
-if ( 'ptslat' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'ptslat' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-ptslat-body', '//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700italic,700&subset=latin,cyrillic-ext,latin-ext,cyrillic');
 	wp_enqueue_style('bellini-font-ptslat-title', '//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,700,400italic,700italic,900,900italic&subset=latin,latin-ext');
 endif;
 
-if ( 'ptsptr' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'ptsptr' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-drocab-body', '//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700italic,700&subset=latin,cyrillic-ext,latin-ext,cyrillic');
     wp_enqueue_style('bellini-font-danled-title', '//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,latin-ext,cyrillic');
 endif;
 
-if ( 'ptsrob' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'ptsrob' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-ptslat-body', '//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700italic,700&subset=latin,cyrillic-ext,latin-ext,cyrillic');
     wp_enqueue_style('bellini-font-latmer-body', '//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,greek,cyrillic,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'ptrope' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'ptrope' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-danled-title', '//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,latin-ext,cyrillic');
 	wp_enqueue_style('bellini-font-fraope-title', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'ptrpts' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'ptrpts' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-danled-title', '//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic-ext,latin-ext,cyrillic');
 	wp_enqueue_style('bellini-font-drocab-body', '//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700italic,700&subset=latin,cyrillic-ext,latin-ext,cyrillic');
 endif;
 
-if ( 'quajud' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'quajud' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-danled-title', '//fonts.googleapis.com/css?family=Quando&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-drocab-body', '//fonts.googleapis.com/css?family=Judson:400,400italic,700&subset=latin,vietnamese,latin-ext');
 endif;
 
-if ( 'qutfan' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'qutfan' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-oswope-title', '//fonts.googleapis.com/css?family=Quattrocento:400,700&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-oswope-title', '//fonts.googleapis.com/css?family=Fanwood+Text:400,400italic');
 endif;
 
-if ( 'qutqus' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'qutqus' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-oswope-title', '//fonts.googleapis.com/css?family=Quattrocento:400,700&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-oswope-title', '//fonts.googleapis.com/css?family=Quattrocento+Sans:400,400italic,700,700italic&subset=latin,latin-ext');
 endif;
 
-if ( 'quiebg' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'quiebg' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-carjos-title', '//fonts.googleapis.com/css?family=Quicksand:400,300,700');
 	wp_enqueue_style('bellini-font-carjos-title', '//fonts.googleapis.com/css?family=EB+Garamond&subset=latin,vietnamese,cyrillic-ext,latin-ext,cyrillic');
 endif;
 
-if ( 'raldros' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'raldros' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-raldrof-title', '//fonts.googleapis.com/css?family=Raleway:400,100,200,100italic,200italic,300,300italic,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&subset=latin,latin-ext');
     wp_enqueue_style('bellini-font-abrdro-body', '//fonts.googleapis.com/css?family=Droid+Sans:400,700');
 endif;
 
-if ( 'raldrof' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'raldrof' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-raldrof-title', '//fonts.googleapis.com/css?family=Raleway:400,100,200,100italic,200italic,300,300italic,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&subset=latin,latin-ext');
     wp_enqueue_style('bellini-font-raldrof-body', '//fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700,700italic');
 endif;
 
-if ( 'rallat' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'rallat' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-rallat-title', '//fonts.googleapis.com/css?family=Raleway:400,100,200,100italic,200italic,300,300italic,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&subset=latin,latin-ext');
     wp_enqueue_style('bellini-font-rallat-title', '//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,700,400italic,700italic,900,900italic&subset=latin,latin-ext');
 endif;
 
-if ( 'rallob' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'rallob' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-rallob-title', '//fonts.googleapis.com/css?family=Raleway:400,100,200,100italic,200italic,300,300italic,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&subset=latin,latin-ext');
     wp_enqueue_style('bellini-font-rallob-body', '//fonts.googleapis.com/css?family=Lobster&subset=latin,vietnamese,latin-ext,cyrillic');
 endif;
 
-if ( 'ralope' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'ralope' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-bitral-title', '//fonts.googleapis.com/css?family=Raleway:400,100,200,100italic,200italic,300,300italic,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&subset=latin,latin-ext');
     wp_enqueue_style('bellini-font-aleope-title', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'ralosw' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'ralosw' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-bitral-title', '//fonts.googleapis.com/css?family=Raleway:400,100,200,100italic,200italic,300,300italic,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&subset=latin,latin-ext');
     wp_enqueue_style('bellini-font-nunale-title', '//fonts.googleapis.com/css?family=Oswald:400,700,300&subset=latin,latin-ext');
 endif;
 
-if ( 'ralpop' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'ralpop' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-bitral-title', '//fonts.googleapis.com/css?family=Raleway:400,100,200,100italic,200italic,300,300italic,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&subset=latin,latin-ext');
     wp_enqueue_style('bellini-font-nunale-title', '//fonts.googleapis.com/css?family=Poppins:400,300,500,600,700&subset=latin,latin-ext,devanagari');
 endif;
 
-if ( 'ralcab' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'ralcab' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-bitral-title', '//fonts.googleapis.com/css?family=Raleway:400,100,200,100italic,200italic,300,300italic,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-drocab-title', '//fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600,600italic,700,700italic');
 endif;
 
-if ( 'ralmer' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'ralmer' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-bitral-title', '//fonts.googleapis.com/css?family=Raleway:400,100,200,100italic,200italic,300,300italic,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-latmer-body', '//fonts.googleapis.com/css?family=Merriweather:400,300italic,300,400italic,700italic,700,900,900italic&subset=latin,cyrillic-ext,latin-ext,cyrillic');
 endif;
 
-if ( 'ralrob' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'ralrob' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-bitral-title', '//fonts.googleapis.com/css?family=Raleway:400,100,200,100italic,200italic,300,300italic,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&subset=latin,latin-ext');
 	wp_enqueue_style('bellini-font-latmer-body', '//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,greek,cyrillic,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'rangud' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'rangud' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-bitral-title', '//fonts.googleapis.com/css?family=Rancho');
 	wp_enqueue_style('bellini-font-latmer-body', '//fonts.googleapis.com/css?family=Gudea:400,400italic,700&subset=latin,latin-ext');
 endif;
 
-if ( 'roboto' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'roboto' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-latmer-body', '//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,greek,cyrillic,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'robnun' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'robnun' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-latmer-body', '//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,greek,cyrillic,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 	wp_enqueue_style('bellini-font-nunale-title', '//fonts.googleapis.com/css?family=Nunito:400,300,700');
 endif;
 
-if ( 'rosope' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'rosope' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-latmer-title', '//fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700&subset=latin,greek-ext,greek,vietnamese,cyrillic-ext,latin-ext,cyrillic');
 	wp_enqueue_style('bellini-font-fraope-title', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'rosrob' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'rosrob' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-rosrob-title', '//fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700&subset=latin,greek-ext,greek,vietnamese,cyrillic-ext,latin-ext,cyrillic');
 	wp_enqueue_style('bellini-font-rosrob-body', '//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,greek,cyrillic,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'rokdros' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'rokdros' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-rokrob-title', '//fonts.googleapis.com/css?family=Rokkitt:400,700');
     wp_enqueue_style('bellini-font-abrdro-body', '//fonts.googleapis.com/css?family=Droid+Sans:400,700');
 endif;
 
-if ( 'roklat' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'roklat' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-rokrob-title', '//fonts.googleapis.com/css?family=Rokkitt:400,700');
     wp_enqueue_style('bellini-font-latmer-title', '//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,700,400italic,700italic,900,900italic&subset=latin,latin-ext');
 endif;
 
-if ( 'rokope' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'rokope' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-rokrob-title', '//fonts.googleapis.com/css?family=Rokkitt:400,700');
     wp_enqueue_style('bellini-font-sigope-title', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'rokosw' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'rokosw' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-rokrob-title', '//fonts.googleapis.com/css?family=Rokkitt:400,700');
     wp_enqueue_style('bellini-font-nunale-title', '//fonts.googleapis.com/css?family=Oswald:400,700,300&subset=latin,latin-ext');
 endif;
 
-if ( 'rokrob' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'rokrob' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-rokrob-title', '//fonts.googleapis.com/css?family=Rokkitt:400,700');
 	wp_enqueue_style('bellini-font-rokrob-body', '//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,greek,cyrillic,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'rokubu' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'rokubu' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-rokrob-title', '//fonts.googleapis.com/css?family=Rokkitt:400,700');
     wp_enqueue_style('bellini-font-ubulat-body', '//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic&subset=latin,greek,greek-ext,cyrillic-ext,latin-ext,cyrillic');
 endif;
 
-if ( 'rubrob' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'rubrob' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-rufsin-title', '//fonts.googleapis.com/css?family=Rubik+Mono+One&subset=latin,latin-ext,cyrillic');
     wp_enqueue_style('bellini-font-rufsin-body', '//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic&subset=latin,greek-ext,cyrillic,greek,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'rufsin' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'rufsin' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-rufsin-title', '//fonts.googleapis.com/css?family=Rufina:400,700&subset=latin,latin-ext');
     wp_enqueue_style('bellini-font-rufsin-body', '//fonts.googleapis.com/css?family=Sintony:400,700&subset=latin,latin-ext');
 endif;
 
-if ( 'sacali' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'sacali' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-josplay-body', '//fonts.googleapis.com/css?family=Sacramento&subset=latin,latin-ext');
     wp_enqueue_style('bellini-font-josplay-body', '//fonts.googleapis.com/css?family=Alice');
 endif;
 
-if ( 'sankam' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'sankam' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-sankam-title', '//fonts.googleapis.com/css?family=Sansita+One');
     wp_enqueue_style('bellini-font-sankam-body', '//fonts.googleapis.com/css?family=Kameron:400,700');
 endif;
 
 
-if ( 'sharob' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'sharob' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-sharob-title', '//fonts.googleapis.com/css?family=Shadows+Into+Light');
     wp_enqueue_style('bellini-font-sharob-body', '//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,greek,cyrillic,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'sigope' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'sigope' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-sigope-title', '//fonts.googleapis.com/css?family=Signika:400,300,600,700&subset=latin,latin-ext');
     wp_enqueue_style('bellini-font-sigope-title', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'squall' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'squall' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-squall-title', '//fonts.googleapis.com/css?family=Squada+One');
     wp_enqueue_style('bellini-font-squall-title', '//fonts.googleapis.com/css?family=Allerta');
 endif;
 
-if ( 'stipon' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'stipon' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-amaand-title', '//fonts.googleapis.com/css?family=Stint+Ultra+Expanded&subset=latin,latin-ext');
     wp_enqueue_style('bellini-font-josplay-title', '//fonts.googleapis.com/css?family=Pontano+Sans&subset=latin,latin-ext');
 endif;
 
-if ( 'ubucab' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'ubucab' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-ubudid-body', '//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic&subset=latin,greek,greek-ext,cyrillic-ext,latin-ext,cyrillic');
     wp_enqueue_style('bellini-font-drocab-title', '//fonts.googleapis.com/css?family=Cabin:400,400italic,500,500italic,600,600italic,700,700italic');
 endif;
 
-if ( 'ubudid' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'ubudid' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-ubudid-body', '//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic&subset=latin,greek,greek-ext,cyrillic-ext,latin-ext,cyrillic');
     wp_enqueue_style('bellini-font-ubudid-title', '//fonts.googleapis.com/css?family=Didact+Gothic&subset=latin,greek-ext,greek,cyrillic-ext,latin-ext,cyrillic');
 endif;
 
-if ( 'ubuhin' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'ubuhin' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-ubulat-body', '//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic&subset=latin,greek,greek-ext,cyrillic-ext,latin-ext,cyrillic');
     wp_enqueue_style('bellini-font-fraope-title', '//fonts.googleapis.com/css?family=Hind:400,300,500,700,600&subset=latin,latin-ext,devanagari');
 endif;
 
-if ( 'ubulat' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'ubulat' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-ubulat-body', '//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic&subset=latin,greek,greek-ext,cyrillic-ext,latin-ext,cyrillic');
     wp_enqueue_style('bellini-font-ubulat-title', '//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,700,400italic,700italic,900,900italic&subset=latin,latin-ext');
 endif;
 
-if ( 'ubulor' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'ubulor' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-abeubu-body', '//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic&subset=latin,greek,greek-ext,cyrillic-ext,latin-ext,cyrillic');
     wp_enqueue_style('bellini-font-istlor-body', '//fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic&subset=latin,cyrillic,latin-ext');
 endif;
 
-if ( 'uburob' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'uburob' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-abeubu-body', '//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic&subset=latin,greek,greek-ext,cyrillic-ext,latin-ext,cyrillic');
     wp_enqueue_style('bellini-font-latmer-body', '//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,greek,cyrillic,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'ubusou' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'ubusou' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-abeubu-body', '//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic&subset=latin,greek,greek-ext,cyrillic-ext,latin-ext,cyrillic');
     wp_enqueue_style('bellini-font-alesou-body', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,900italic,900,200,200italic,300,300italic,400italic,600,600italic,700italic,700&subset=latin,vietnamese,latin-ext');
 endif;
 
-if ( 'ultsla' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'ultsla' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-ultsla-title', '//fonts.googleapis.com/css?family=Ultra');
     wp_enqueue_style('bellini-font-ultsla-title', '//fonts.googleapis.com/css?family=Slabo+13px&subset=latin,latin-ext');
 endif;
 
-if ( 'univol' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'univol' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-latmer-title', '//fonts.googleapis.com/css?family=Unica+One&subset=latin,latin-ext');
     wp_enqueue_style('bellini-font-latmer-title', '//fonts.googleapis.com/css?family=Vollkorn:400,400italic,700,700italic');
 endif;
 
-if ( 'vidrob' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'vidrob' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-exoosw-title', '//fonts.googleapis.com/css?family=Vidaloka');
     wp_enqueue_style('bellini-font-latmer-body', '//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,greek,cyrillic,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'volral' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'volral' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-latmer-title', '//fonts.googleapis.com/css?family=Vollkorn:400,400italic,700,700italic');
     wp_enqueue_style('bellini-font-bitral-title', '//fonts.googleapis.com/css?family=Raleway:400,100,200,100italic,200italic,300,300italic,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&subset=latin,latin-ext');
 endif;
 
-if ( 'volexo' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'volexo' == esc_attr($bellini['preset_font']) ):
 	wp_enqueue_style('bellini-font-latmer-title', '//fonts.googleapis.com/css?family=Vollkorn:400,400italic,700,700italic');
 	wp_enqueue_style('bellini-font-latmer-title', '//fonts.googleapis.com/css?family=Exo+2:400,100,100italic,200,200italic,300,300italic,400italic,500,500italic,600italic,600,700,700italic,800,800italic,900,900italic&subset=latin,latin-ext,cyrillic');
 endif;
 
-if ( 'walkre' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'walkre' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-abrdro-title', '//fonts.googleapis.com/css?family=Walter+Turncoat');
     wp_enqueue_style('bellini-font-kreubu-title', '//fonts.googleapis.com/css?family=Kreon:400,300,700');
 endif;
 
-if ( 'walmol' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'walmol' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-abrdro-title', '//fonts.googleapis.com/css?family=Walter+Turncoat');
 	wp_enqueue_style('bellini-font-nunale-title', '//fonts.googleapis.com/css?family=Molengo&subset=latin,latin-ext');
 endif;
 
-if ( 'walosw' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'walosw' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-abrdro-title', '//fonts.googleapis.com/css?family=Walter+Turncoat');
 	wp_enqueue_style('bellini-font-nunale-title', '//fonts.googleapis.com/css?family=Oswald:400,700,300&subset=latin,latin-ext');
 endif;
 
-if ( 'walvol' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'walvol' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-abrdro-title', '//fonts.googleapis.com/css?family=Walter+Turncoat');
 	wp_enqueue_style('bellini-font-latmer-title', '//fonts.googleapis.com/css?family=Vollkorn:400,400italic,700,700italic');
 endif;
 
-if ( 'yanlat' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'yanlat' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-yanlat-title', '//fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,200,300,700&subset=latin,latin-ext');
     wp_enqueue_style('bellini-font-yanlat-title', '//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,700,400italic,700italic,900,900italic&subset=latin,latin-ext');
 endif;
 
-if ( 'yanope' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'yanope' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-yanosw-title', '//fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,200,300,700&subset=latin,latin-ext');
     wp_enqueue_style('bellini-font-fraope-title', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'yanosw' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'yanosw' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-yanosw-title', '//fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,200,300,700&subset=latin,latin-ext');
     wp_enqueue_style('bellini-font-yanosw-title', '//fonts.googleapis.com/css?family=Oswald:400,700,300&subset=latin,latin-ext');
 endif;
 
 
-if ( 'yanrob' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'yanrob' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-exoosw-title', '//fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,200,300,700&subset=latin,latin-ext');
     wp_enqueue_style('bellini-font-latmer-body', '//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,greek,cyrillic,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'yescri' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'yescri' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-yescri-title', '//fonts.googleapis.com/css?family=Yeseva+One&subset=latin,latin-ext,cyrillic');
     wp_enqueue_style('bellini-font-yescri-title', '//fonts.googleapis.com/css?family=Crimson+Text:400,400italic,600,600italic,700,700italic');
 endif;
 
-if ( 'yesjos' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'yesjos' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-josplay-title', '//fonts.googleapis.com/css?family=Yeseva+One&subset=latin,latin-ext,cyrillic');
     wp_enqueue_style('bellini-font-josplay-title', '//fonts.googleapis.com/css?family=Josefin+Sans:400,100,100italic,300italic,300,400italic,600,600italic,700,700italic&subset=latin,latin-ext');
 endif;
 
-if ( 'yeslor' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'yeslor' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-josplay-title', '//fonts.googleapis.com/css?family=Yeseva+One&subset=latin,latin-ext,cyrillic');
 	wp_enqueue_style('bellini-font-istlor-body', '//fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic&subset=latin,cyrillic,latin-ext');
 endif;
 
-if ( 'yesope' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'yesope' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-josplay-title', '//fonts.googleapis.com/css?family=Yeseva+One&subset=latin,latin-ext,cyrillic');
 	wp_enqueue_style('bellini-font-fraope-title', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'yesphi' == esc_attr(get_option('preset_font', 'planot')) ):
+if ( 'yesphi' == esc_attr($bellini['preset_font']) ):
     wp_enqueue_style('bellini-font-josplay-title', '//fonts.googleapis.com/css?family=Yeseva+One&subset=latin,latin-ext,cyrillic');
     wp_enqueue_style('bellini-font-monpla-title', '//fonts.googleapis.com/css?family=Philosopher:400,400italic,700,700italic&subset=latin,cyrillic');
 endif;
@@ -1640,52 +1642,52 @@ function bellini_font_logo($logo_font){
 }
 
 function bellini_logo_font_script(){
-
-if ( 'logo-ope' == esc_attr(get_option('bellini_logo_typography_font', 'logo-ope') )):
+global $bellini;
+if ( 'logo-ope' == esc_attr($bellini['bellini_logo_typography_font']) ):
     wp_enqueue_style('bellini_logo_font', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic&subset=latin,cyrillic,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'logo-rob' == esc_attr(get_option('bellini_logo_typography_font', 'logo-ope') )):
+if ( 'logo-rob' == esc_attr($bellini['bellini_logo_typography_font']) ):
     wp_enqueue_style('bellini-font-latmer-body', '//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic&subset=latin,greek,cyrillic,greek-ext,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'logo-lat' == esc_attr(get_option('bellini_logo_typography_font', 'logo-ope') )):
+if ( 'logo-lat' == esc_attr($bellini['bellini_logo_typography_font']) ):
     wp_enqueue_style('bellini-font-latmer-title', '//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,700,400italic,700italic,900,900italic&subset=latin,latin-ext');
 endif;
 
-if ( 'logo-osw' == esc_attr(get_option('bellini_logo_typography_font', 'logo-ope') )):
+if ( 'logo-osw' == esc_attr($bellini['bellini_logo_typography_font']) ):
     wp_enqueue_style('bellini-font-nunale-title', '//fonts.googleapis.com/css?family=Oswald:400,700,300&subset=latin,latin-ext');
 endif;
 
-if ( 'logo-sla' == esc_attr(get_option('bellini_logo_typography_font', 'logo-ope') )):
+if ( 'logo-sla' == esc_attr($bellini['bellini_logo_typography_font']) ):
     wp_enqueue_style('bellini_logo_font', '//fonts.googleapis.com/css?family=Slabo+27px&subset=latin,latin-ext');
 endif;
 
-if ( 'logo-roc' == esc_attr(get_option('bellini_logo_typography_font', 'logo-ope') )):
+if ( 'logo-roc' == esc_attr($bellini['bellini_logo_typography_font']) ):
     wp_enqueue_style('bellini-font-rufsin-body', '//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic&subset=latin,greek-ext,cyrillic,greek,vietnamese,cyrillic-ext,latin-ext');
 endif;
 
-if ( 'logo-drs' == esc_attr(get_option('bellini_logo_typography_font', 'logo-ope') )):
+if ( 'logo-drs' == esc_attr($bellini['bellini_logo_typography_font']) ):
     wp_enqueue_style('bellini-font-abrdro-body', '//fonts.googleapis.com/css?family=Droid+Sans:400,700');
 endif;
 
-if ( 'logo-ssp' == esc_attr(get_option('bellini_logo_typography_font', 'logo-ope') )):
+if ( 'logo-ssp' == esc_attr($bellini['bellini_logo_typography_font']) ):
     wp_enqueue_style('bellini-font-alesou-body', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,900italic,900,200,200italic,300,300italic,400italic,600,600italic,700italic,700&subset=latin,vietnamese,latin-ext');
 endif;
 
-if ( 'logo-pts' == esc_attr(get_option('bellini_logo_typography_font', 'logo-ope') )):
+if ( 'logo-pts' == esc_attr($bellini['bellini_logo_typography_font']) ):
     wp_enqueue_style('bellini-font-drocab-body', '//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700italic,700&subset=latin,cyrillic-ext,latin-ext,cyrillic');
 endif;
 
-if ( 'logo-lor' == esc_attr(get_option('bellini_logo_typography_font', 'logo-ope') )):
+if ( 'logo-lor' == esc_attr($bellini['bellini_logo_typography_font']) ):
     wp_enqueue_style('bellini-font-istlor-body', '//fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic&subset=latin,cyrillic,latin-ext');
 endif;
 
-if ( 'logo-mon' == esc_attr(get_option('bellini_logo_typography_font', 'logo-ope') )):
+if ( 'logo-mon' == esc_attr($bellini['bellini_logo_typography_font']) ):
     wp_enqueue_style('bellini-font-latmer-body', '//fonts.googleapis.com/css?family=Montserrat:400,700');
 endif;
 
-if ( 'logo-ral' == esc_attr(get_option('bellini_logo_typography_font', 'logo-ope') )):
+if ( 'logo-ral' == esc_attr($bellini['bellini_logo_typography_font']) ):
     wp_enqueue_style('bellini-font-bitral-title', '//fonts.googleapis.com/css?family=Raleway:400,100,200,100italic,200italic,300,300italic,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic&subset=latin,latin-ext');
 endif;
 }

@@ -1,3 +1,7 @@
+<?php
+global $bellini;
+$bellini = bellini_option_defaults();
+?>
 <!DOCTYPE html>
 <!-- Microdata markup added by Google Structured Data Markup Helper. -->
 <html <?php language_attributes(); ?>>
@@ -13,7 +17,7 @@
 
 <?php
 	do_action( 'bellini_before_header' );
-	$header_orientation = esc_attr(get_option('bellini_header_orientation', 'header__general')); ?>
+	$header_orientation = sanitize_html_class($bellini['bellini_header_orientation']); ?>
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bellini' ); ?></a>
 	<header id="masthead" class="site-header <?php echo $header_orientation; ?>" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader" <?php if ( get_header_image() != '' ) { echo 'style="background-image: url(' . esc_url( get_header_image() ) . ');"'; } ?>>
 	<div class="header-inner bellini__canvas">

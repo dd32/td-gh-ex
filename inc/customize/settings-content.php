@@ -54,7 +54,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 --------------------------------------------------------------*/
 
 	// Website Background
-	$wp_customize->add_setting( 'bellini_website_background_helper',
+	$wp_customize->add_setting( 'bellini[bellini_website_background_helper]',
 		array(
 			'type' 				=> 'option',
 			'sanitize_callback' => 'sanitize_key',
@@ -65,7 +65,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 					'type' => 'info',
 					'label' => esc_html__('Website Background Image','bellini'),
 					'section' => 'bellini_default_image',
-					'settings'    => 'bellini_website_background_helper',
+					'settings'    => 'bellini[bellini_website_background_helper]',
 					'priority'   => 1,
 			)) );
 
@@ -73,7 +73,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 
 
 	// Header Image
-	$wp_customize->add_setting( 'bellini_header_background_helper',
+	$wp_customize->add_setting( 'bellini[bellini_header_background_helper]',
 		array(
 			'type' 				=> 'option',
 			'sanitize_callback' => 'sanitize_key',
@@ -84,7 +84,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 					'type' => 'info',
 					'label' => esc_html__('Header Image','bellini'),
 					'section' => 'bellini_default_image',
-					'settings'    => 'bellini_header_background_helper',
+					'settings'    => 'bellini[bellini_header_background_helper]',
 					'priority'   => 3,
 			)) );
 
@@ -92,7 +92,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 
 
 	// Featured Image
-	$wp_customize->add_setting( 'bellini_featured_image_helper',
+	$wp_customize->add_setting( 'bellini[bellini_featured_image_helper]',
 		array(
 			'type' 				=> 'option',
 			'sanitize_callback' => 'sanitize_key',
@@ -103,12 +103,12 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 					'type' => 'info',
 					'label' => esc_html__('Featured Image','bellini'),
 					'section' => 'bellini_default_image',
-					'settings'    => 'bellini_featured_image_helper',
+					'settings'    => 'bellini[bellini_featured_image_helper]',
 					'priority'   => 5,
 			)) );
 
 	//Default Post Featured Image
-	$wp_customize->add_setting('bellini_post_featured_image', array(
+	$wp_customize->add_setting('bellini[bellini_post_featured_image]', array(
 		'type' => 'option',
 		'default'         => get_template_directory_uri() . '/images/featured-image.jpg',
 		'sanitize_callback' => 'esc_url_raw',
@@ -118,7 +118,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 			$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize,'bellini_post_featured_image',array(
                'label'      => esc_html__( 'Default Post Featured Image', 'bellini' ),
                'section'    => 'bellini_default_image',
-               'settings'   => 'bellini_post_featured_image',
+               'settings'   => 'bellini[bellini_post_featured_image]',
 				'priority' 	=> 6,
 			   )
 			));
@@ -129,10 +129,10 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 --------------------------------------------------------------*/
 
 	//Copyright Text
-	$wp_customize->add_setting('bellini_copyright_text', array(
+	$wp_customize->add_setting('bellini[bellini_copyright_text]', array(
 		'type' => 'option',
 		'sanitize_callback' => 'bellini_sanitize_input',
-		'transport' => 'refresh',
+		'transport' => 'postMessage',
 	) );
 
 			$wp_customize->add_control('bellini_copyright_text',array(
@@ -140,12 +140,21 @@ $wp_customize->add_section('bellini_custom_css_section',array(
                'label'      	=> esc_html__( 'Footer Copyright Text', 'bellini' ),
                'description' 	=> esc_html__( 'Type your own text to replace default footer text.', 'bellini' ),
                'section'    	=> 'bellini_default_text',
-               'settings'   	=> 'bellini_copyright_text',
+               'settings'   	=> 'bellini[bellini_copyright_text]',
 			));
+
+			$wp_customize->selective_refresh->add_partial( 'bellini_copyright_text', array(
+				'selector'        => '.site-footer.footer__copyright',
+				'settings'        => 'bellini[bellini_copyright_text]',
+				'render_callback' => function() {
+								        return get_option('bellini_copyright_text');
+								      },
+				'fallback_refresh' => false,
+			) );
 
 
 	//Hamburger Menu Text
-	$wp_customize->add_setting('bellini_hamburger_title', array(
+	$wp_customize->add_setting('bellini[bellini_hamburger_title]', array(
 		'type' => 'option',
 		'sanitize_callback' => 'bellini_sanitize_input',
 		'transport' => 'refresh',
@@ -156,11 +165,11 @@ $wp_customize->add_section('bellini_custom_css_section',array(
                'label'      => esc_html__( 'Hamburger Menu Text', 'bellini' ),
                'description'      => esc_html__( 'Leave it empty if you do not want to display anything beside hamburger icon' , 'bellini' ),
                'section'    => 'bellini_default_text',
-               'settings'   => 'bellini_hamburger_title',
+               'settings'   => 'bellini[bellini_hamburger_title]',
 			));
 
 	//Read More  Text
-	$wp_customize->add_setting('bellini_read_more_title', array(
+	$wp_customize->add_setting('bellini[bellini_read_more_title]', array(
 		'type' => 'option',
 		'sanitize_callback' => 'bellini_sanitize_input',
 		'transport' => 'refresh',
@@ -171,7 +180,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
                'label'      => esc_html__( 'Post Button Label', 'bellini' ),
                'description'      => esc_html__( 'example: Read More' , 'bellini' ),
                'section'    => 'bellini_default_text',
-               'settings'   => 'bellini_read_more_title',
+               'settings'   => 'bellini[bellini_read_more_title]',
 			));
 
 
@@ -180,7 +189,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 --------------------------------------------------------------*/
 
 	// Choose Social Menu Icons Heading
-	$wp_customize->add_setting( 'bellini_social_account_choose_helper',
+	$wp_customize->add_setting( 'bellini[bellini_social_account_choose_helper]',
 		array(
 			'type' 					=> 'option',
 			'sanitize_callback' 	=> 'sanitize_key',
@@ -192,14 +201,14 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 					'label' 		=> esc_html__('Set Social Menu','bellini'),
 					'description' 	=> esc_html__('This social menu will appear in header and footer section.','bellini'),
 					'section' 		=> 'bellini_social_accounts',
-					'settings'    	=> 'bellini_social_account_choose_helper',
+					'settings'    	=> 'bellini[bellini_social_account_choose_helper]',
 					'priority'   	=> 1,
 			)) );
 
 ////////////////////// Social Account 1  //////////////////////////////
 
     // Social Accounts Icon One
-    $wp_customize->add_setting('bellini_social_account_icon_one', array(
+    $wp_customize->add_setting('bellini[bellini_social_account_icon_one]', array(
         'sanitize_callback' 	=> 'esc_attr',
         'transport' 			=> 'refresh',
         'type' => 'option',
@@ -210,13 +219,14 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 	        'type' => 'select',
 	        'choices' => bellini_social_accounts_icons(),
 	        'priority'   => 1,
+			'settings'    	=> 'bellini[bellini_social_account_icon_one]',
 	        'input_attrs' => array(
 				'placeholder' => esc_html__( 'www.facebook.com', 'bellini' ),
 			),
 	    ));
 
 	// Social Accounts URL One
-	$wp_customize->add_setting('bellini_social_account_link_one', array(
+	$wp_customize->add_setting('bellini[bellini_social_account_link_one]', array(
 		'type' => 'option',
 		'sanitize_callback' => 'esc_url_raw',
 		'transport' => 'postMessage',
@@ -225,7 +235,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 			$wp_customize->add_control('bellini_social_account_link_one',array(
 				'type' 		=>'url',
                'section'    => 'bellini_social_accounts',
-               'settings'   => 'bellini_social_account_link_one',
+               'settings'   => 'bellini[bellini_social_account_link_one]',
                'priority'   => 2,
                'input_attrs' => array(
 					'placeholder' => esc_html__( 'www.facebook.com', 'bellini' ),
@@ -235,7 +245,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 ////////////////////// Social Account 2  //////////////////////////////
 
     // Social Accounts Icon Two
-    $wp_customize->add_setting('bellini_social_account_icon_two', array(
+    $wp_customize->add_setting('bellini[bellini_social_account_icon_two]', array(
         'sanitize_callback' 	=> 'esc_attr',
         'transport' 			=> 'refresh',
         'type' => 'option',
@@ -246,13 +256,14 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 	        'type' => 'select',
 	        'choices' => bellini_social_accounts_icons(),
 	        'priority'   => 3,
+			'settings'    	=> 'bellini[bellini_social_account_icon_two]',
 	        'input_attrs' => array(
 				'placeholder' => esc_html__( 'www.facebook.com', 'bellini' ),
 			),
 	    ));
 
 	// Social Accounts URL Two
-	$wp_customize->add_setting('bellini_social_account_link_two', array(
+	$wp_customize->add_setting('bellini[bellini_social_account_link_two]', array(
 		'type' => 'option',
 		'sanitize_callback' => 'esc_url_raw',
 		'transport' => 'postMessage',
@@ -261,7 +272,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 			$wp_customize->add_control('bellini_social_account_link_two',array(
 				'type' 		=>'url',
                'section'    => 'bellini_social_accounts',
-               'settings'   => 'bellini_social_account_link_two',
+               'settings'   => 'bellini[bellini_social_account_link_two]',
                'priority'   => 4,
                 'input_attrs' => array(
 					'placeholder' => esc_html__( 'www.facebook.com', 'bellini' ),
@@ -271,7 +282,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 ////////////////////// Social Account 3  //////////////////////////////
 
     // Social Accounts Icon Two
-    $wp_customize->add_setting('bellini_social_account_icon_three', array(
+    $wp_customize->add_setting('bellini[bellini_social_account_icon_three]', array(
         'sanitize_callback' 	=> 'esc_attr',
         'transport' 			=> 'refresh',
         'type' => 'option',
@@ -282,13 +293,14 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 	        'type' => 'select',
 	        'choices' => bellini_social_accounts_icons(),
 	        'priority'   => 5,
+			'settings'    	=> 'bellini[bellini_social_account_icon_three]',
 	        'input_attrs' => array(
 				'placeholder' => esc_html__( 'www.facebook.com', 'bellini' ),
 			),
 	    ));
 
 	// Social Accounts URL Two
-	$wp_customize->add_setting('bellini_social_account_link_three', array(
+	$wp_customize->add_setting('bellini[bellini_social_account_link_three]', array(
 		'type' => 'option',
 		'sanitize_callback' => 'esc_url_raw',
 		'transport' => 'postMessage',
@@ -297,7 +309,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 			$wp_customize->add_control('bellini_social_account_link_three',array(
 				'type' 		=>'url',
                'section'    => 'bellini_social_accounts',
-               'settings'   => 'bellini_social_account_link_three',
+               'settings'   => 'bellini[bellini_social_account_link_three]',
                'priority'   => 6,
                'input_attrs' => array(
 					'placeholder' => esc_html__( 'www.facebook.com', 'bellini' ),
@@ -307,7 +319,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 ////////////////////// Social Account 4  //////////////////////////////
 
     // Social Accounts Icon Four
-    $wp_customize->add_setting('bellini_social_account_icon_four', array(
+    $wp_customize->add_setting('bellini[bellini_social_account_icon_four]', array(
         'sanitize_callback' 	=> 'esc_attr',
         'transport' 			=> 'refresh',
         'type' => 'option',
@@ -316,6 +328,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 	    $wp_customize->add_control('bellini_social_account_icon_four', array(
 	        'section' => 'bellini_social_accounts',
 	        'type' => 'select',
+			'settings'    	=> 'bellini[bellini_social_account_icon_four]',
 	        'choices' => bellini_social_accounts_icons(),
 	        'priority'   => 7,
 	        'input_attrs' => array(
@@ -324,7 +337,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 	    ));
 
 	// Social Accounts URL Two
-	$wp_customize->add_setting('bellini_social_account_link_four', array(
+	$wp_customize->add_setting('bellini[bellini_social_account_link_four]', array(
 		'type' => 'option',
 		'sanitize_callback' => 'esc_url_raw',
 		'transport' => 'postMessage',
@@ -333,7 +346,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 			$wp_customize->add_control('bellini_social_account_link_four',array(
 				'type' 		=>'url',
                'section'    => 'bellini_social_accounts',
-               'settings'   => 'bellini_social_account_link_four',
+               'settings'   => 'bellini[bellini_social_account_link_four]',
                'priority'   => 8,
                'input_attrs' => array(
 				    'placeholder' => esc_html__( 'www.facebook.com', 'bellini' ),
@@ -343,7 +356,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 ////////////////////// Social Account 5  //////////////////////////////
 
     // Social Accounts Icon Five
-    $wp_customize->add_setting('bellini_social_account_icon_five', array(
+    $wp_customize->add_setting('bellini[bellini_social_account_icon_five]', array(
         'sanitize_callback' 	=> 'esc_attr',
         'transport' 			=> 'refresh',
         'type' => 'option',
@@ -352,6 +365,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 	    $wp_customize->add_control('bellini_social_account_icon_five', array(
 	        'section' => 'bellini_social_accounts',
 	        'type' => 'select',
+			'settings'    	=> 'bellini[bellini_social_account_icon_five]',
 	        'choices' => bellini_social_accounts_icons(),
 	        'priority'   => 9,
 	        'input_attrs' => array(
@@ -360,7 +374,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 	    ));
 
 	// Social Accounts URL Two
-	$wp_customize->add_setting('bellini_social_account_link_five', array(
+	$wp_customize->add_setting('bellini[bellini_social_account_link_five]', array(
 		'type' => 'option',
 		'sanitize_callback' => 'esc_url_raw',
 		'transport' => 'postMessage',
@@ -369,7 +383,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 			$wp_customize->add_control('bellini_social_account_link_five',array(
 				'type' 		=>'url',
                'section'    => 'bellini_social_accounts',
-               'settings'   => 'bellini_social_account_link_five',
+               'settings'   => 'bellini[bellini_social_account_link_five]',
                'priority'   => 10,
                'input_attrs' => array(
 				    'placeholder' => esc_html__( 'www.facebook.com', 'bellini' ),
@@ -379,7 +393,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 ////////////////////// Social Account 6  //////////////////////////////
 
     // Social Accounts Icon Six
-    $wp_customize->add_setting('bellini_social_account_icon_six', array(
+    $wp_customize->add_setting('bellini[bellini_social_account_icon_six]', array(
         'sanitize_callback' 	=> 'esc_attr',
         'transport' 			=> 'refresh',
         'type' => 'option',
@@ -388,6 +402,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 	    $wp_customize->add_control('bellini_social_account_icon_six', array(
 	        'section' => 'bellini_social_accounts',
 	        'type' => 'select',
+			'settings'    	=> 'bellini[bellini_social_account_icon_six]',
 	        'choices' => bellini_social_accounts_icons(),
 	        'priority'   => 11,
 	        'input_attrs' => array(
@@ -396,7 +411,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 	    ));
 
 	// Social Accounts URL Two
-	$wp_customize->add_setting('bellini_social_account_link_six', array(
+	$wp_customize->add_setting('bellini[bellini_social_account_link_six]', array(
 		'type' => 'option',
 		'sanitize_callback' => 'esc_url_raw',
 		'transport' => 'postMessage',
@@ -405,7 +420,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 			$wp_customize->add_control('bellini_social_account_link_six',array(
 				'type' 		=>'email',
                'section'    => 'bellini_social_accounts',
-               'settings'   => 'bellini_social_account_link_six',
+               'settings'   => 'bellini[bellini_social_account_link_six]',
                'priority'   => 12,
                'input_attrs' => array(
 				    'placeholder' => esc_html__( 'www.facebook.com', 'bellini' ),
@@ -417,7 +432,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 ## Custom CSS
 --------------------------------------------------------------*/
 
-	$wp_customize->add_setting( 'bellini_custom_css',
+	$wp_customize->add_setting( 'bellini[bellini_custom_css]',
 		array(
 			'default'              => '',
 			'capability'           => 'edit_theme_options',
@@ -430,7 +445,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 		array(
 			'label'    => esc_html__( 'Custom CSS', 'bellini' ),
 			'section'  => 'bellini_custom_css_section',
-			'settings' => 'bellini_custom_css',
+			'settings' => 'bellini[bellini_custom_css]',
 			'type'     => 'textarea'
 		)
 	);
@@ -444,7 +459,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 --------------------------------------------------------------*/
 
 	// Show Hide Frontpage Sections
-	$wp_customize->add_setting( 'bellini_show_hide_frontpage_sections',
+	$wp_customize->add_setting( 'bellini[bellini_show_hide_frontpage_sections]',
 		array(
 			'type' 				=> 'option',
 			'sanitize_callback' => 'sanitize_key',
@@ -455,12 +470,12 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 					'type' => 'info',
 					'label' => esc_html__('Frontpage Sections','bellini'),
 					'section' => 'bellini_show_hide_components',
-					'settings'    => 'bellini_show_hide_frontpage_sections',
+					'settings'    => 'bellini[bellini_show_hide_frontpage_sections]',
 					'priority'   => 1,
 			)) );
 
 	// Show Frontpage Slider Section
-	$wp_customize->add_setting( 'bellini_show_frontpage_slider' ,
+	$wp_customize->add_setting( 'bellini[bellini_show_frontpage_slider]' ,
 		array(
 			'default' => true,
 			'type' => 'option',
@@ -472,7 +487,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 		$wp_customize->add_control( 'bellini_show_frontpage_slider',array(
 				'label'      => esc_html__( 'Show Frontpage Slider', 'bellini' ),
 				'section'    => 'bellini_show_hide_components',
-				'settings'   => 'bellini_show_frontpage_slider',
+				'settings'   => 'bellini[bellini_show_frontpage_slider]',
 			    'priority'   => 2,
 			    'type'       => 'checkbox',
 			)
@@ -480,7 +495,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 
 
 	// Show Frontpage Feature Blocks Section
-	$wp_customize->add_setting( 'bellini_show_frontpage_feature_block' ,
+	$wp_customize->add_setting( 'bellini[bellini_show_frontpage_feature_block]' ,
 		array(
 			'default' => true,
 			'type' => 'option',
@@ -492,7 +507,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 		$wp_customize->add_control( 'bellini_show_frontpage_feature_block',array(
 				'label'      => esc_html__( 'Show Feature Blocks', 'bellini' ),
 				'section'    => 'bellini_show_hide_components',
-				'settings'   => 'bellini_show_frontpage_feature_block',
+				'settings'   => 'bellini[bellini_show_frontpage_feature_block]',
 			    'priority'   => 3,
 			    'type'       => 'checkbox',
 			)
@@ -500,7 +515,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 
 
 	// Show Frontpage WooCommerce Category
-	$wp_customize->add_setting( 'bellini_show_frontpage_woo_category' ,
+	$wp_customize->add_setting( 'bellini[bellini_show_frontpage_woo_category]' ,
 		array(
 			'default' => true,
 			'type' => 'option',
@@ -512,7 +527,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 		$wp_customize->add_control( 'bellini_show_frontpage_woo_category',array(
 				'label'      => esc_html__( 'Show WooCommerce Category', 'bellini' ),
 				'section'    => 'bellini_show_hide_components',
-				'settings'   => 'bellini_show_frontpage_woo_category',
+				'settings'   => 'bellini[bellini_show_frontpage_woo_category]',
 			    'priority'   => 4,
 			    'type'       => 'checkbox',
 			    'active_callback' => 'is_plugin_active_woocommerce_bellini',
@@ -521,7 +536,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 
 
 	// Show Frontpage WooCommerce Products
-	$wp_customize->add_setting( 'bellini_show_frontpage_woo_products' ,
+	$wp_customize->add_setting( 'bellini[bellini_show_frontpage_woo_products]' ,
 		array(
 			'default' => true,
 			'type' => 'option',
@@ -533,7 +548,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 		$wp_customize->add_control( 'bellini_show_frontpage_woo_products',array(
 				'label'      => esc_html__( 'Show WooCommerce Products', 'bellini' ),
 				'section'    => 'bellini_show_hide_components',
-				'settings'   => 'bellini_show_frontpage_woo_products',
+				'settings'   => 'bellini[bellini_show_frontpage_woo_products]',
 			    'priority'   => 5,
 			    'type'       => 'checkbox',
 			    'active_callback' => 'is_plugin_active_woocommerce_bellini',
@@ -541,7 +556,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 		);
 
 	// Show Frontpage WooCommerce Products Featured
-	$wp_customize->add_setting( 'bellini_show_frontpage_woo_products_featured' ,
+	$wp_customize->add_setting( 'bellini[bellini_show_frontpage_woo_products_featured]' ,
 		array(
 			'default' => true,
 			'type' => 'option',
@@ -553,7 +568,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 		$wp_customize->add_control( 'bellini_show_frontpage_woo_products_featured',array(
 				'label'      => esc_html__( 'Show WooCommerce Products Featured', 'bellini' ),
 				'section'    => 'bellini_show_hide_components',
-				'settings'   => 'bellini_show_frontpage_woo_products_featured',
+				'settings'   => 'bellini[bellini_show_frontpage_woo_products_featured]',
 			    'priority'   => 6,
 			    'type'       => 'checkbox',
 			    'active_callback' => 'is_plugin_active_woocommerce_bellini',
@@ -561,7 +576,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 		);
 
 	// Show Frontpage Blog Posts
-	$wp_customize->add_setting( 'bellini_show_frontpage_blog_posts' ,
+	$wp_customize->add_setting( 'bellini[bellini_show_frontpage_blog_posts]' ,
 		array(
 			'default' => true,
 			'type' => 'option',
@@ -573,7 +588,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 		$wp_customize->add_control( 'bellini_show_frontpage_blog_posts',array(
 				'label'      => esc_html__( 'Show Blog Posts', 'bellini' ),
 				'section'    => 'bellini_show_hide_components',
-				'settings'   => 'bellini_show_frontpage_blog_posts',
+				'settings'   => 'bellini[bellini_show_frontpage_blog_posts]',
 			    'priority'   => 7,
 			    'type'       => 'checkbox',
 			)
@@ -581,7 +596,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 
 
 	// Show Frontpage Text Section
-	$wp_customize->add_setting( 'bellini_show_frontpage_text_section' ,
+	$wp_customize->add_setting( 'bellini[bellini_show_frontpage_text_section]' ,
 		array(
 			'default' => true,
 			'type' => 'option',
@@ -593,7 +608,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 		$wp_customize->add_control( 'bellini_show_frontpage_text_section',array(
 				'label'      => esc_html__( 'Show Frontpage Text Section', 'bellini' ),
 				'section'    => 'bellini_show_hide_components',
-				'settings'   => 'bellini_show_frontpage_text_section',
+				'settings'   => 'bellini[bellini_show_frontpage_text_section]',
 			    'priority'   => 8,
 			    'type'       => 'checkbox',
 			)
@@ -604,7 +619,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 --------------------------------------------------------------*/
 
 	// Show Hide Frontpage Sections
-	$wp_customize->add_setting( 'bellini_show_hide_footer_sections',
+	$wp_customize->add_setting( 'bellini[bellini_show_hide_footer_sections]',
 		array(
 			'type' 				=> 'option',
 			'sanitize_callback' => 'sanitize_key',
@@ -615,12 +630,12 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 					'type' => 'info',
 					'label' => esc_html__('Footer Components','bellini'),
 					'section' => 'bellini_show_hide_components',
-					'settings'    => 'bellini_show_hide_footer_sections',
+					'settings'    => 'bellini[bellini_show_hide_footer_sections]',
 					'priority'   => 10,
 			)) );
 
 	// Footer Social Menu
-	$wp_customize->add_setting( 'bellini_show_footer_social_menu' ,
+	$wp_customize->add_setting( 'bellini[bellini_show_footer_social_menu]' ,
 		array(
 			'default' => true,
 			'type' => 'option',
@@ -632,7 +647,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 		$wp_customize->add_control( 'bellini_show_footer_social_menu',array(
 				'label'      => esc_html__( 'Show Footer Social Menu', 'bellini' ),
 				'section'    => 'bellini_show_hide_components',
-				'settings'   => 'bellini_show_footer_social_menu',
+				'settings'   => 'bellini[bellini_show_footer_social_menu]',
 			    'priority'   => 11,
 			    'type'       => 'checkbox',
 			)
@@ -640,7 +655,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 
 
 // Footer Logo
-	$wp_customize->add_setting( 'bellini_show_footer_logo' ,
+	$wp_customize->add_setting( 'bellini[bellini_show_footer_logo]' ,
 		array(
 			'default' => true,
 			'type' => 'option',
@@ -652,7 +667,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 		$wp_customize->add_control( 'bellini_show_footer_logo',array(
 				'label'      => esc_html__( 'Show Footer Logo', 'bellini' ),
 				'section'    => 'bellini_show_hide_components',
-				'settings'   => 'bellini_show_footer_logo',
+				'settings'   => 'bellini[bellini_show_footer_logo]',
 			    'priority'   => 13,
 			    'type'       => 'checkbox',
 			)
@@ -660,7 +675,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 
 
 	// Footer  Menu
-	$wp_customize->add_setting( 'bellini_show_footer_copyright' ,
+	$wp_customize->add_setting( 'bellini[bellini_show_footer_copyright]' ,
 		array(
 			'default' => true,
 			'type' => 'option',
@@ -672,14 +687,14 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 		$wp_customize->add_control( 'bellini_show_footer_copyright',array(
 				'label'      => esc_html__( 'Show Footer Copyright Text', 'bellini' ),
 				'section'    => 'bellini_show_hide_components',
-				'settings'   => 'bellini_show_footer_copyright',
+				'settings'   => 'bellini[bellini_show_footer_copyright]',
 			    'priority'   => 14,
 			    'type'       => 'checkbox',
 			)
 		);
 
 	// Scroll To Top
-	$wp_customize->add_setting( 'bellini_show_scroll_to_top' ,
+	$wp_customize->add_setting( 'bellini[bellini_show_scroll_to_top]' ,
 		array(
 			'default' => true,
 			'type' => 'option',
@@ -691,7 +706,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 		$wp_customize->add_control( 'bellini_show_scroll_to_top',array(
 				'label'      => esc_html__( 'Show Scroll To Top', 'bellini' ),
 				'section'    => 'bellini_show_hide_components',
-				'settings'   => 'bellini_show_scroll_to_top',
+				'settings'   => 'bellini[bellini_show_scroll_to_top]',
 			    'priority'   => 15,
 			    'type'       => 'checkbox',
 			)
@@ -701,7 +716,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 --------------------------------------------------------------*/
 
 	// Show Hide Post Sections
-	$wp_customize->add_setting( 'bellini_show_hide_post_sections',
+	$wp_customize->add_setting( 'bellini[bellini_show_hide_post_sections]',
 		array(
 			'type' 				=> 'option',
 			'sanitize_callback' => 'sanitize_key',
@@ -712,12 +727,12 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 					'type' => 'info',
 					'label' => esc_html__('Single Post Components','bellini'),
 					'section' => 'bellini_show_hide_components',
-					'settings'    => 'bellini_show_hide_post_sections',
+					'settings'    => 'bellini[bellini_show_hide_post_sections]',
 					'priority'   => 20,
 			)) );
 
 	// Show Post Meta
-	$wp_customize->add_setting( 'bellini_show_post_meta' ,
+	$wp_customize->add_setting( 'bellini[bellini_show_post_meta]' ,
 		array(
 			'default' => true,
 			'type' => 'option',
@@ -730,7 +745,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 				'label'      => esc_html__( 'Show Single Post Meta', 'bellini' ),
 				'description'      => esc_html__( 'Author name, Date, Tags and Categories will be visible on single posts.', 'bellini' ),
 				'section'    => 'bellini_show_hide_components',
-				'settings'   => 'bellini_show_post_meta',
+				'settings'   => 'bellini[bellini_show_post_meta]',
 			    'priority'   => 21,
 			    'type'       => 'checkbox',
 			)
@@ -741,7 +756,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 --------------------------------------------------------------*/
 
 	// Show Hide Post Sections
-	$wp_customize->add_setting( 'bellini_show_hide_breadcrumb_sections',
+	$wp_customize->add_setting( 'bellini[bellini_show_hide_breadcrumb_sections]',
 		array(
 			'type' 				=> 'option',
 			'sanitize_callback' => 'sanitize_key',
@@ -752,12 +767,12 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 					'type' => 'info',
 					'label' => esc_html__('Breadcrumbs','bellini'),
 					'section' => 'bellini_show_hide_components',
-					'settings'    => 'bellini_show_hide_breadcrumb_sections',
+					'settings'    => 'bellini[bellini_show_hide_breadcrumb_sections]',
 					'priority'   => 40,
 			)) );
 
 	// Show Frontpage Slider Section
-	$wp_customize->add_setting( 'bellini_show_page_breadcrumb' ,
+	$wp_customize->add_setting( 'bellini[bellini_show_page_breadcrumb]' ,
 		array(
 			'default' => true,
 			'type' => 'option',
@@ -772,7 +787,7 @@ $wp_customize->add_section('bellini_custom_css_section',array(
 				'label'      => esc_html__( 'Show Breadcrumb', 'bellini' ),
 				'description' => $show_page_breadcrumb_description,
 				'section'    => 'bellini_show_hide_components',
-				'settings'   => 'bellini_show_page_breadcrumb',
+				'settings'   => 'bellini[bellini_show_page_breadcrumb]',
 			    'priority'   => 41,
 			    'type'       => 'checkbox',
 			)

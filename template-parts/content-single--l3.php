@@ -6,6 +6,7 @@
  *
  * @package bellini
  */
+global $bellini;
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class();?> itemscope itemtype="http://schema.org/Article">
 <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="<?php echo get_site_url(); ?>"/>
@@ -16,7 +17,7 @@
 	<div class="single-post__title--l3 col-xs-12">
 	<?php the_title( '<h1 class="element-title element-title--post single-post__title--l3" itemprop="name headline">', '</h1>' ); ?>
 
-	<?php if(get_option('bellini_show_post_meta', true) == true):
+	<?php if($bellini['bellini_show_post_meta'] == true):
 		bellini_post_author();
 		bellini_published_on();
 	endif; ?>

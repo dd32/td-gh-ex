@@ -35,18 +35,14 @@ get_header(); ?>
 			echo '<div class="single page-meta">';
 			the_title( '<h1 class="entry-title element-title single-page__title" itemprop="headline">', '</h1>' );
 			bellini_breadcrumb_integration();
-			$header_description = get_post_meta( get_the_ID(),'_bellini_header_description',true);
-			echo '<div class="page__description">';
-			echo $header_description;
-			echo '</div>';
 			echo '</header>';
 			echo '<section class="blog">';
 			echo '<div class="bellini__canvas">';
 			while ( $wp_query->have_posts() ) : $wp_query->the_post();
-				if ( get_option('bellini_layout_blog', 'layout-1') == 'layout-1' ):
+				if ( absint($bellini['bellini_layout_blog']) === 1 ):
 					get_template_part( 'template-parts/content' );
 				endif;
-				if ( get_option('bellini_layout_blog', 'layout-1') == 'layout-5' ):
+				if ( absint($bellini['bellini_layout_blog']) === 5 ):
 					get_template_part( 'template-parts/content-lb-5');
 				endif;
 			endwhile;

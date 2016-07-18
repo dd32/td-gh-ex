@@ -73,12 +73,12 @@ textarea:focus,
 #accordion-section-bellini_social_accounts h3:before,
 #accordion-section-wpseo_breadcrumbs_customizer_section h3:before {
     position: relative;
-    padding-right: 2%;
+    padding-right: 4%;
     text-align: center;
     text-indent: 0;
     font: 400 18px/1 dashicons;
     vertical-align: top;
-    opacity: .2;
+    opacity: .3;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -266,7 +266,7 @@ textarea:focus,
 
 .bellini-ui__title {
     color:#2D2C2C;
-    margin-top: .5rem;
+    margin-top: .7rem;
     padding: .8em .8em .8em .5em;
     text-transform: uppercase;
     border-bottom: 1px solid #dcdee0;
@@ -310,7 +310,7 @@ li#customize-control-bellini_social_account_link_six{
 */
 
 #customize-theme-controls .accordion-section-content {
-    color: #262626;
+    color: #606163;
 }
 
 input[type=checkbox]:checked:before {

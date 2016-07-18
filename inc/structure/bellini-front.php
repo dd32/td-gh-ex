@@ -6,12 +6,12 @@
 --------------------------------------------------------------*/
 
 function bellini_static_slider() {
-
-if(get_option('bellini_show_frontpage_slider', true) == true) :
-if (absint(get_option( 'bellini_front_slider_type', 1)) == 1):
+global $bellini;
+if($bellini['bellini_show_frontpage_slider'] == true) :
+if (absint($bellini['bellini_front_slider_type']) === 1):
 	// Check if hero image is set
-	if (get_option( 'bellini_static_slider_image')){
-		$bellini_static_slider_image 	= esc_url(get_option('bellini_static_slider_image'));
+	if ($bellini['bellini_static_slider_image']){
+		$bellini_static_slider_image 	= esc_url($bellini['bellini_static_slider_image']);
 	}
 	else{
 		// Get the default image
@@ -23,17 +23,16 @@ if (absint(get_option( 'bellini_front_slider_type', 1)) == 1):
     <div class="slider-content">
     	<?php
     	// Hero Image Heading
-    	if(get_option('bellini_static_slider_title') == true):
-    		$bellini_static_slider_title = wp_kses_post(get_option( 'bellini_static_slider_title', __( 'Introducting Summer Collections', 'bellini')));
-    		?>
+    	if($bellini['bellini_static_slider_title']):
+    		$bellini_static_slider_title = wp_kses_post($bellini['bellini_static_slider_title']);?>
     		<h3 class="element-title slider-content__title">
 				<?php echo do_shortcode(wp_kses_post($bellini_static_slider_title) );?>
 			</h3>
 	    <?php endif; ?>
     	<?php
     	// Hero Section Content
-    	if(get_option('bellini_static_slider_content') == true):
-    		$bellini_static_slider_content = wp_kses_post(get_option( 'bellini_static_slider_content', __('You see that bamboo behind me though, you see that bamboo? Bless up.', 'bellini' )));
+    	if($bellini['bellini_static_slider_content']):
+    		$bellini_static_slider_content = wp_kses_post($bellini['bellini_static_slider_content']);
     		echo '<div class="slider-content__text animated fadeIn">';
 			echo do_shortcode(wp_kses_post($bellini_static_slider_content));
 			echo '</div>';
@@ -41,23 +40,23 @@ if (absint(get_option( 'bellini_front_slider_type', 1)) == 1):
 	    ?>
 		<?php
 		// Check if buttons are set
-		if(get_option('bellini_static_slider_button_text-1') == true || get_option('bellini_static_slider_button_text-2') == true):?>
+		if($bellini['bellini_static_slider_button_text-1'] == true || $bellini['bellini_static_slider_button_text-2'] == true):?>
 			<div class="front__slider__cta">
 		<?php
 		// Button 1
-		if(get_option('bellini_static_slider_button_text-1') == true):
-				$bellini_slider_cta_one_text = esc_html(get_option( 'bellini_static_slider_button_text-1'));
+		if($bellini['bellini_static_slider_button_text-1']):
+				$bellini_slider_cta_one_text = esc_html($bellini['bellini_static_slider_button_text-1']);
 			?>
-		    <a class="button slider__cta--one" role="button" href="<?php if(get_option('bellini_static_slider_button_url-1') == true): echo esc_url(get_option( 'bellini_static_slider_button_url-1')); endif;?>">
+		    <a class="button slider__cta--one" role="button" href="<?php if($bellini['bellini_static_slider_button_url-1'] == true): echo esc_url($bellini['bellini_static_slider_button_url-1']); endif;?>">
 				<?php echo $bellini_slider_cta_one_text ;?>
 			</a>
 	    <?php endif;?>
 	    <?php
 	    // Button 2
-		if(get_option('bellini_static_slider_button_text-2') == true):
-			$bellini_slider_cta_two_text = esc_html(get_option( 'bellini_static_slider_button_text-2'));
+		if($bellini['bellini_static_slider_button_text-2']):
+			$bellini_slider_cta_two_text = esc_html($bellini['bellini_static_slider_button_text-2']);
 		?>
-		    <a class="button slider__cta--two" role="button" href="<?php if(get_option('bellini_static_slider_button_url-2') == true): echo esc_url(get_option( 'bellini_static_slider_button_url-2')); endif;?>">
+		    <a class="button slider__cta--two" role="button" href="<?php if($bellini['bellini_static_slider_button_url-2'] == true): echo esc_url($bellini['bellini_static_slider_button_url-2']); endif;?>">
 				<?php echo $bellini_slider_cta_two_text;?>
 			</a>
 	    <?php endif;?>
@@ -67,11 +66,11 @@ if (absint(get_option( 'bellini_front_slider_type', 1)) == 1):
 </section>
 <?php endif;
 
-if (absint(get_option( 'bellini_front_slider_type', 1)) == 2): ?>
+if (absint($bellini['bellini_front_slider_type']) === 2): ?>
 	<section class="front__slider__static">
 		<?php
-			if (get_option( 'bellini_slider_third_party_field')){
-				echo do_shortcode( wp_kses_post(get_option( 'bellini_slider_third_party_field')));
+			if ($bellini['bellini_slider_third_party_field']){
+				echo do_shortcode( wp_kses_post($bellini['bellini_slider_third_party_field']));
 			}else{
 				esc_html_e( 'No Slider Shortcode Found! ', 'bellini' );
 			}
@@ -88,8 +87,9 @@ if (absint(get_option( 'bellini_front_slider_type', 1)) == 2): ?>
 --------------------------------------------------------------*/
 
 function bellini_woo_product_category(){
+	global $bellini;
 
-if(get_option('bellini_show_frontpage_woo_category', true) == true) :
+if($bellini['bellini_show_frontpage_woo_category'] == true) :
 
 	if(is_woocommerce_activated()):?>
 
@@ -97,26 +97,26 @@ if(get_option('bellini_show_frontpage_woo_category', true) == true) :
 	<div class="bellini__canvas">
 	<div class="row">
 	<?php
-		if(get_option('bellini_product_category_des_pos', 1) == true):
-			$column_position = esc_attr(get_option('bellini_product_category_des_pos'));
+		if($bellini['bellini_product_category_des_pos'] == true):
+			$column_position = esc_attr($bellini['bellini_product_category_des_pos']);
 		endif;
 	?>
 	<div class="<?php echo bellini_section_header_class_switcher($column_position);?>">
-	<?php if(get_option('bellini_woo_category_title') == true): ?>
+	<?php if($bellini['bellini_woo_category_title'] == true): ?>
 		<h2 class="col-md-12 element-title element-title--main">
-		<?php echo do_shortcode(wp_kses_post(get_option( 'bellini_woo_category_title')));?>
+		<?php echo do_shortcode(wp_kses_post($bellini['bellini_woo_category_title']));?>
 		</h2>
 	<?php endif;?>
-    <?php if(get_option('bellini_woo_category_description') == true):?>
+    <?php if($bellini['bellini_woo_category_description'] == true):?>
         <h4 class="col-md-12 element-title--sub">
-			<?php echo do_shortcode(wp_kses_post(get_option( 'bellini_woo_category_description')));?>
+			<?php echo do_shortcode(wp_kses_post($bellini['bellini_woo_category_description']));?>
 		</h4>
 	<?php endif;?>
 	</div>
 	<div class="<?php echo bellini_section_content_class_switcher($column_position);?>">
 	<?php
-	if ( esc_attr(get_option('woo_product_category_layout', 'layout-1')) == 'layout-1' ){
-			get_template_part( 'template-parts/woo', 'category-1' );
+	if ( absint($bellini['woo_product_category_layout']) === 1 ){
+		get_template_part( 'template-parts/woo', 'category-1' );
 	}
 	?>
 	</div>
@@ -137,8 +137,8 @@ endif;
 --------------------------------------------------------------*/
 
 function bellini_woo_product_featured(){
-
-if(get_option('bellini_show_frontpage_woo_products_featured', true) == true) :
+	global $bellini;
+if($bellini['bellini_show_frontpage_woo_products_featured'] == true) :
 	// Check if WooCommerce is Activated
 	if(is_woocommerce_activated()):?>
 
@@ -149,11 +149,9 @@ if(get_option('bellini_show_frontpage_woo_products_featured', true) == true) :
 		'post_status' => 'publish',
 		'meta_key' => '_featured',
 		'meta_value' => 'yes',
-		'posts_per_page' => 2,
+		'posts_per_page' => absint($bellini['bellini_featured_slides_no_selector']),
 		'no_found_rows' => true,
 	);
-
-	$args['posts_per_page'] = absint(get_option('bellini_featured_slides_no_selector', 2));
 
 	// Set the Loop Arguments
 	$loop = new WP_Query( $args );
@@ -165,16 +163,16 @@ if(get_option('bellini_show_frontpage_woo_products_featured', true) == true) :
 		<div class="row">
 			<h2 class="col-md-12 element-title element-title--main">
 		    <?php
-		    	if(get_option('woo_featured_product_title') == true):
-					echo do_shortcode(wp_kses_post(get_option( 'woo_featured_product_title')));
+		    	if($bellini['woo_featured_product_title'] == true):
+					echo do_shortcode(wp_kses_post($bellini['woo_featured_product_title']));
 			    endif;
 			?>
     		</h2>
 
 		    <h4 class="col-md-12 element-title--sub">
 		    <?php
-		    	if(get_option('woo_featured_product_description') == true):
-					echo do_shortcode(wp_kses_post(get_option( 'woo_featured_product_description')));
+		    	if($bellini['woo_featured_product_description'] == true):
+					echo do_shortcode(wp_kses_post($bellini['woo_featured_product_description']));
 			    endif;
 			   ?>
 		    </h4>
@@ -184,7 +182,7 @@ if(get_option('bellini_show_frontpage_woo_products_featured', true) == true) :
 				<?php
 				 while ( $loop->have_posts() ) : $loop->the_post();
 
-				 	if ( get_option('woo_featured_product_layout', 'layout-1') == 'layout-1' ) {
+				 	if ( absint($bellini['woo_featured_product_layout']) === 1 ) {
 						get_template_part( 'template-parts/woo', 'featured-product-1' );
 					}
 				endwhile;
@@ -221,8 +219,8 @@ if(get_option('bellini_show_frontpage_woo_products_featured', true) == true) :
 --------------------------------------------------------------*/
 
 function bellini_woo_product_newly_arrived(){
-
-if(get_option('bellini_show_frontpage_woo_products', true) == true) :
+	global $bellini;
+if($bellini['bellini_show_frontpage_woo_products'] == true) :
 
 	if(is_woocommerce_activated()):?>
 
@@ -231,24 +229,24 @@ if(get_option('bellini_show_frontpage_woo_products', true) == true) :
 	<div class="row">
 
 	<?php
-		if(get_option('bellini_product_general_des_pos', 1) == true):
-			$column_position_product = absint(get_option('bellini_product_general_des_pos'));
+		if($bellini['bellini_product_general_des_pos'] == true):
+			$column_position_product = absint($bellini['bellini_product_general_des_pos']);
 		endif;
 	?>
 
 	<div class="<?php echo bellini_section_header_class_switcher($column_position_product);?>">
 	<div class="row">
 	<?php
-	    if(get_option('bellini_woo_product_title') == true):?>
+	    if($bellini['bellini_woo_product_title'] == true):?>
 		    <h2 class="col-md-12 element-title element-title--main">
-				<?php echo do_shortcode(wp_kses_post(get_option( 'bellini_woo_product_title')));?>
+				<?php echo do_shortcode(wp_kses_post($bellini['bellini_woo_product_title']));?>
 			</h2>
 	<?php endif;?>
 
 	<?php
-	    if(get_option('bellini_woo_product_description') == true):?>
+	    if($bellini['bellini_woo_product_description'] == true):?>
 			<h4 class="col-md-12 element-title--sub">
-				<?php echo do_shortcode(wp_kses_post(get_option( 'bellini_woo_product_description')));?>
+				<?php echo do_shortcode(wp_kses_post($bellini['bellini_woo_product_description']));?>
 			</h4>
 	<?php endif;?>
 	</div>
@@ -256,12 +254,15 @@ if(get_option('bellini_show_frontpage_woo_products', true) == true) :
 
 	<?php
 
-		$args = array('post_type' => 'product','no_found_rows' => true,);
+		$args = array(
+			'post_type' => 'product',
+			'no_found_rows' => true,
+			'posts_per_page' => absint($bellini['woo_product_per_page_select']),
+			'orderby' => esc_html( $bellini['woo_product_orderby_select']),
+			'order' => esc_html( $bellini['woo_product_order_select']),
+			'product_cat' => esc_html( $bellini['bellini_woo_category_selector']),
+		);
 
-		$args['posts_per_page'] = absint(get_option('woo_product_per_page_select', 12));
-		$args['orderby'] 		= esc_html( get_option('woo_product_orderby_select', "date"));
-		$args['order'] 			= esc_html( get_option('woo_product_order_select', "DESC"));
-		$args['product_cat'] 	= esc_html( get_option( 'bellini_woo_category_selector', '' )) ;
 
 		$loop = new WP_Query( $args );
 		if ( $loop->have_posts() ) { ?>
@@ -272,7 +273,7 @@ if(get_option('bellini_show_frontpage_woo_products', true) == true) :
 
 			while ( $loop->have_posts() ) : $loop->the_post();
 
-				if ( esc_attr(get_option('woo_product_new_layout', 'layout-1')) == 'layout-1' ){
+				if ( absint($bellini['woo_product_new_layout']) === 1 ){
 					get_template_part( 'template-parts/woo', 'product-1' );
 				}
 
@@ -280,11 +281,11 @@ if(get_option('bellini_show_frontpage_woo_products', true) == true) :
 		</div>
 		</div>
 			 </div>
-			 <?php if(get_option('woo_product_button_text') == true):?>
+			 <?php if($bellini['woo_product_button_text'] == true):?>
 			    <div class="front__product__cta container container--spaced">
-			    <a href="<?php if(get_option('woo_product_button_url') == true): echo esc_url(get_option( 'woo_product_button_url')); endif;?>">
+			    <a href="<?php if($bellini['woo_product_button_url'] == true): echo esc_url($bellini['woo_product_button_url']); endif;?>">
 			       	<button class="button button--cta--center" role="button">
-						<?php echo do_shortcode(wp_kses_post(get_option( 'woo_product_button_text')));?>
+						<?php echo do_shortcode(wp_kses_post($bellini['woo_product_button_text']));?>
 					</button>
 				</a>
 			    </div>
@@ -308,24 +309,24 @@ endif;
 --------------------------------------------------------------*/
 
 function bellini_front_blog_posts(){
-
-if(get_option('bellini_show_frontpage_blog_posts', true) == true) : ?>
+	global $bellini;
+if($bellini['bellini_show_frontpage_blog_posts'] == true) : ?>
 
 <section class="front-blog">
 	<div class="bellini__canvas">
 	<div class="post-grid row">
 
     <?php
-    	if(get_option('bellini_home_blogposts_title') == true):?>
+    	if($bellini['bellini_home_blogposts_title'] == true):?>
 	    	<h2 class="col-md-12 element-title element-title--main">
-				<?php echo do_shortcode(wp_kses_post(get_option( 'bellini_home_blogposts_title')));?>
+				<?php echo do_shortcode(wp_kses_post($bellini['bellini_home_blogposts_title']));?>
 			</h2>
 	<?php endif;?>
 
     <?php
-    	if(get_option('bellini_home_blogposts_description') == true):?>
+    	if($bellini['bellini_home_blogposts_description'] == true):?>
     		<h4 class="col-md-12 element-title--sub">
-				<?php echo do_shortcode(wp_kses_post(get_option( 'bellini_home_blogposts_description')));?>
+				<?php echo do_shortcode(wp_kses_post($bellini['bellini_home_blogposts_description']));?>
 			</h4>
 	<?php endif; ?>
 
@@ -342,19 +343,19 @@ if(get_option('bellini_show_frontpage_blog_posts', true) == true) : ?>
 		$loop = new WP_Query( $args );
 		if ( $loop->have_posts() ) {
 			while ( $loop->have_posts() ) : $loop->the_post();
-				if ( esc_attr(get_option('bellini_home_blogposts_layout', 'layout-1')) == 'layout-1' ) :
+				if ( absint($bellini['bellini_home_blogposts_layout']) === 1 ) :
 					get_template_part( 'template-parts/content' );
 				endif;
-				if ( esc_attr(get_option('bellini_home_blogposts_layout', 'layout-1')) == 'layout-5' ) :
+				if ( absint($bellini['bellini_home_blogposts_layout']) === 5 ) :
 					get_template_part( 'template-parts/content-lb-5');
 				endif;
 			endwhile;
 
-			if(get_option('bellini_home_blogposts_button_text') == true):?>
+			if($bellini['bellini_home_blogposts_button_text'] == true):?>
 		    <div class="front__blog__cta container">
-		    <a href="<?php if(get_option('bellini_home_blogposts_button_url') == true): echo esc_url(get_option( 'bellini_home_blogposts_button_url')); endif;?>">
+		    <a href="<?php if($bellini['bellini_home_blogposts_button_url'] == true): echo esc_url($bellini['bellini_home_blogposts_button_url']); endif;?>">
 		       	<button class="button button--cta--center" role="button">
-					<?php echo do_shortcode(wp_kses_post(get_option( 'bellini_home_blogposts_button_text')));?>
+					<?php echo do_shortcode(wp_kses_post($bellini['bellini_home_blogposts_button_text']));?>
 				</button>
 			</a>
 		    </div>
@@ -378,21 +379,22 @@ endif;
 --------------------------------------------------------------*/
 
 function bellini_feature_blocks(){
-if(get_option('bellini_show_frontpage_feature_block', true) == true) : ?>
+	global $bellini;
+if($bellini['bellini_show_frontpage_feature_block'] == true) : ?>
 <section class="front-feature-blocks">
 <div class="bellini__canvas">
 <div class="row">
     <?php
-    	if(get_option('bellini_feature_blocks_title') == true):?>
+    	if($bellini['bellini_feature_blocks_title'] == true):?>
 	    <h2 class="col-md-12 element-title element-title--main">
-			<?php echo do_shortcode(wp_kses_post(get_option( 'bellini_feature_blocks_title')));?>
+			<?php echo do_shortcode(wp_kses_post($bellini['bellini_feature_blocks_title']));?>
 		</h2>
 	<?php endif;?>
 	<?php
-		if ( esc_attr(get_option('bellini_feature_block_layout', 'layout-1')) == 'layout-1' ){
+		if ( absint($bellini['bellini_feature_block_layout']) === 1 ){
 			get_template_part( 'template-parts/bellini', 'block-1' );
 		}
-		if ( esc_attr(get_option('bellini_feature_block_layout', 'layout-1')) == 'layout-3' ) {
+		if ( absint($bellini['bellini_feature_block_layout']) === 3 ) {
 			get_template_part( 'template-parts/bellini', 'block-3' );
 		}
 	?>
@@ -405,13 +407,14 @@ endif;
 
 
 function bellini_frontpage_text_field_shortcode(){
- if(get_option('bellini_show_frontpage_text_section', true) == true) : ?>
+	global $bellini;
+ if($bellini['bellini_show_frontpage_text_section'] == true) : ?>
 	<section class="front-text-field">
 	<div class="bellini__canvas">
 	<div class="row">
 	<?php
-		if (get_option( 'bellini_frontpage_textarea_section_field') == true):
-			echo do_shortcode( wp_kses_post(get_option( 'bellini_frontpage_textarea_section_field')));
+		if ($bellini['bellini_frontpage_textarea_section_field'] == true):
+			echo do_shortcode( wp_kses_post($bellini['bellini_frontpage_textarea_section_field']));
 		endif;
 	?>
 	</div>

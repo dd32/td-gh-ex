@@ -1,4 +1,5 @@
 <?php
+global $bellini;
 
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
@@ -6,7 +7,7 @@ global $product;
 
 if ( empty( $product ) || ! $product->is_visible() ) { return; }
 ?>
-<div data-sr="enter left, move 40px, wait 0.2s" itemscope itemtype="http://schema.org/Product" class="product <?php echo get_option('woo_product_new_row', 'col-sm-3' );?>">
+<div data-sr="enter left, move 40px, wait 0.2s" itemscope itemtype="http://schema.org/Product" class="product <?php echo $bellini['woo_product_new_row'];?>">
 <div class="product-card__inner">
 	<?php woocommerce_template_loop_product_link_open();?>
 	<?php woocommerce_show_product_loop_sale_flash();?>

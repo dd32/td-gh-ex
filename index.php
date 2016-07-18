@@ -11,6 +11,7 @@
  *
  * @package bellini
  */
+global $bellini;
 get_header(); ?>
 <div id="primary" class="content-area <?php bellini_blog_sidebar(); ?>">
 <main id="main" class="site-main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
@@ -25,12 +26,12 @@ get_header(); ?>
 			endif;
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
-				if ( get_option('bellini_layout_blog', 'layout-1') == 'layout-1' ):
+				if ( absint($bellini['bellini_layout_blog']) === 1 ):
 					get_template_part( 'template-parts/content' );
 				endif;
 
 
-				if ( get_option('bellini_layout_blog', 'layout-1') == 'layout-5' ):
+				if ( absint($bellini['bellini_layout_blog']) === 5 ):
 					get_template_part( 'template-parts/content-lb-5');
 				endif;
 			endwhile;

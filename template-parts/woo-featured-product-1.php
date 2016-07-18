@@ -16,10 +16,7 @@ global $product, $woocommerce_loop;
 if ( empty( $woocommerce_loop['loop'] ) ) {
 	$woocommerce_loop['loop'] = 0;
 }
-// Store column count for displaying the grid
-if ( empty( $woocommerce_loop['columns'] ) ) {
-	$woocommerce_loop['columns'] = apply_filters( 'loop_shop_columns', 4 );
-}
+
 // Ensure visibility
 if ( ! $product || ! $product->is_visible() ) {
 	return;
@@ -52,6 +49,7 @@ $woocommerce_loop['loop']++;
 			'post_id' => $product->id,
 			'number' => 1,
 			'no_found_rows' => true,
+			'status' => 'approve',
 		);
 		$comments = get_comments($args);
 		foreach($comments as $comment) :?>
@@ -69,14 +67,14 @@ $woocommerce_loop['loop']++;
 					<div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
 						<p class="featured__review__content" itemprop="description">
 						<?php echo $comment->comment_content;?></p>
-					</div><!-- reviewRating-->
-				</div><!-- featured__review-cardright-->
-			</div><!-- product-featured__reviewcentered-->
-		</div><!-- product-featured__review-->
+					</div>
+				</div>
+			</div>
+		</div>
 		<?php endforeach;?>
 	<div class="col-sm-12 product-featured__add-cart">
 		<?php woocommerce_template_loop_add_to_cart();?>
 	</div>
-</div><!-- front__product-featured__text -->
 </div>
-</li><!-- #product-<?php the_ID(); ?> -->
+</div>
+</li>

@@ -14,7 +14,7 @@ get_header();?>
 		<main id="main" class="site-main row" role="main" itemscope itemprop="mainEntityOfPage">
 		<?php while ( have_posts() ) : the_post(); ?>
 			<?php
-				if ( get_option('bellini_layout_single-post', 'layout-3') == 'layout-3' ):
+				if ( absint($bellini['bellini_layout_single-post']) === 3 ):
 					get_template_part( 'template-parts/content', 'single--l3' );
 				endif;
 			?>

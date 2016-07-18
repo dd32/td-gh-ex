@@ -6,6 +6,7 @@
  *
  * @package bellini
  */
+global $bellini;
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class();?> itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
 <div class="row">
@@ -35,10 +36,10 @@
 				?>
 		    </div><!-- .blog__post__excerpt -->
 
-	        <?php if(get_option('bellini_read_more_title') == true): ?>
+	        <?php if($bellini['bellini_read_more_title'] == true): ?>
 				<a class="button--secondary--post" href="<?php the_permalink();?>">
 				<div class="button button--secondary" role="button">
-            		<?php echo do_shortcode(get_option( 'bellini_read_more_title')); ?>
+            		<?php echo esc_html($bellini[ 'bellini_read_more_title']); ?>
             	</div>
 	        	</a>
 			<?php endif; ?>

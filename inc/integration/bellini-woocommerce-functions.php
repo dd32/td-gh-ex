@@ -1,5 +1,5 @@
 <?php
-
+$bellini = bellini_option_defaults();
 /*--------------------------------------------------------------
 ## WooCommerce Container Class
 --------------------------------------------------------------*/
@@ -29,12 +29,13 @@ endif;
 
 if ( ! function_exists( 'bellini_before_shop_products' ) ):
 	function bellini_before_shop_products() {
-		if(esc_attr(get_option('bellini_show_woocommerce_sidebar', true) == true) && is_active_sidebar( 'sidebar-woo-sidebar' )){
-			if(esc_attr(get_option('bellini_woocommerce_sidebar_position', 'right')) == 'right'):
+		global $bellini;
+		if(esc_attr($bellini['bellini_show_woocommerce_sidebar']) == true && is_active_sidebar( 'sidebar-woo-sidebar' )){
+			if(esc_attr($bellini['bellini_woocommerce_sidebar_position']) == 'right'):
 				echo '<div class="col-md-9">';
 			endif;
 			// Left Sidebar
-			if(esc_attr(get_option('bellini_woocommerce_sidebar_position', 'right')) == 'left'):
+			if(esc_attr($bellini['bellini_woocommerce_sidebar_position']) == 'left'):
 				echo '<div class="col-md-9 col-md-push-3">';
 			endif;
 		}else{
@@ -49,14 +50,16 @@ endif;
 --------------------------------------------------------------*/
 
 if ( ! function_exists( 'bellini_woocommerce_shop_sidebar' ) ):
-	function bellini_woocommerce_shop_sidebar() { ?>
+	function bellini_woocommerce_shop_sidebar() {
+		global $bellini;
+		?>
 		<?php
-		if(esc_attr(get_option('bellini_show_woocommerce_sidebar', true) == true) && is_active_sidebar( 'sidebar-woo-sidebar' )){
-			if(esc_attr(get_option('bellini_woocommerce_sidebar_position', 'right')) == 'right'):
+		if(esc_attr($bellini['bellini_show_woocommerce_sidebar']) == true && is_active_sidebar( 'sidebar-woo-sidebar' )){
+			if(esc_attr($bellini['bellini_woocommerce_sidebar_position']) == 'right'):
 				echo '<div class="woo-sidebar col-md-3">';
 			endif;
 			// Left Sidebar
-			if(esc_attr(get_option('bellini_woocommerce_sidebar_position', 'right')) == 'left'):
+			if(esc_attr($bellini['bellini_woocommerce_sidebar_position']) == 'left'):
 				echo '<div class="woo-sidebar col-md-3 col-md-pull-9">';
 			endif;
 			dynamic_sidebar( 'sidebar-woo-sidebar' );
@@ -72,7 +75,8 @@ endif;
 
 add_filter( 'loop_shop_per_page', 'bellini_woo_product_per_page', 20 );
 function bellini_woo_product_per_page( $count ) {
-    return absint(get_option('bellini_woo_shop_product_per_page', 12));
+	global $bellini;
+    return absint($bellini['bellini_woo_shop_product_per_page']);
 }
 
 
@@ -153,9 +157,9 @@ function bellini_woo__dequeue_styles( $enqueue_styles ) {
 
 if ( ! function_exists( 'bellini_before_woo_product_archive_item_one' ) ):
 	function bellini_before_woo_product_archive_item_one() {
-	$woo_product_column = esc_attr(get_option('bellini_woo_shop_product_column', 'col-sm-3' ));
-	 ?>
-		<div data-sr="enter left, move 40px, wait 0.2s" itemscope itemtype="http://schema.org/Product" class="<?php echo $woo_product_column; ?>">
+	global $bellini;
+	$woo_product_column = sanitize_html_class($bellini['bellini_woo_shop_product_column']);?>
+		<div class="<?php echo $woo_product_column; ?>" data-sr="enter bottom, move 40px, wait 0.2s, over 0.8s, after 0.3s" itemscope itemtype="http://schema.org/Product">
 		<div class="product-card__inner">
 		<?php
 	}

@@ -64,8 +64,9 @@ if ( ! function_exists( 'is_plugin_active_woocommerce_bellini' ) ) {
  */
 if ( ! function_exists( 'is_active_slider_type_bellini_hero' ) ) {
  function is_active_slider_type_bellini_hero(){
+    global $bellini;
      // Check for the slider plugin class
-     if( absint(get_option('bellini_front_slider_type', 1)) == 1 ){
+     if( absint($bellini['bellini_front_slider_type']) === 1 ){
          return true;
      } else {
          return false;
@@ -78,8 +79,9 @@ if ( ! function_exists( 'is_active_slider_type_bellini_hero' ) ) {
  */
 if ( ! function_exists( 'is_active_slider_type_bellini_third_party' ) ) {
     function is_active_slider_type_bellini_third_party(){
+        global $bellini;
          // Check for the slider plugin class
-         if( absint(get_option('bellini_front_slider_type', 1)) == 2 ){
+         if( absint($bellini['bellini_front_slider_type']) === 2 ){
              return true;
          } else {
              return false;

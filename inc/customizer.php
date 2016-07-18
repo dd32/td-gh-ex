@@ -149,56 +149,60 @@ require_once(get_template_directory() . '/inc/customize/settings-integrations.ph
 add_action( 'customize_register', 'bellini_customize_register' );
 
 function bellini_customizer_head_styles() {
+global $bellini;
 
-$website_width 										= esc_attr(get_option('bellini_website_width', '100'));
-$canvas_width 										= esc_attr(get_option('bellini_canvas_width', '1100px'));
+$website_width 										= esc_attr($bellini['bellini_website_width']);
+$canvas_width 										= esc_attr($bellini['bellini_canvas_width']);
 
-$bellini_menu_position         						= esc_attr(get_option('bellini_menu_position', 'center'));
-$page_title_position								= esc_attr(get_option('page_title_position', 'center'));
+$bellini_menu_position         						= esc_attr($bellini['bellini_menu_position']);
+$page_title_position								= esc_attr($bellini['page_title_position']);
 
-$bellini_body_font_size								= esc_attr(get_option('bellini_body_font_size', '16'));
-$bellini_title_font_size							= esc_attr(get_option('bellini_title_font_size', '29'));
-$bellini_menu_font_size								= esc_attr(get_option('bellini_menu_font_size', '16'));
+$bellini_body_font_size								= absint($bellini['bellini_body_font_size']);
+$bellini_title_font_size							= absint($bellini['bellini_title_font_size']);
+$bellini_menu_font_size								= absint($bellini['bellini_menu_font_size']);
 
-$body_text_color 									= sanitize_hex_color(get_option('body_text_color', '#333333'));
-$bellini_primary_color								= sanitize_hex_color(get_option('bellini_primary_color', '#2196F3'));
-$bellini_accent_color								= sanitize_hex_color(get_option('bellini_accent_color', '#E3F2FD'));
-$title_text_color 									= sanitize_hex_color(get_option('title_text_color', '#000000'));
-$menu_text_color 									= sanitize_hex_color(get_option('menu_text_color', '#000000'));
+$body_text_color 									= sanitize_hex_color($bellini['body_text_color']);
+$bellini_primary_color								= sanitize_hex_color($bellini['bellini_primary_color']);
+$bellini_accent_color								= sanitize_hex_color($bellini['bellini_accent_color']);
+$title_text_color 									= sanitize_hex_color($bellini['title_text_color']);
+$menu_text_color 									= sanitize_hex_color($bellini['menu_text_color']);
 $logo_text_color 									= get_header_textcolor();
-$button_text_color 									= sanitize_hex_color(get_option('button_text_color', '#ffffff'));
-$link_text_color 									= sanitize_hex_color(get_option('link_text_color', '#000000'));
-$link_hover_color 									= sanitize_hex_color(get_option('link_hover_color', '#000000'));
-$widget_background_color 							= sanitize_hex_color(get_option('widgets_background_color', '#ffffff'));
-$header_background_color 							= sanitize_hex_color(get_option('header_background_color', '#ffffff'));
-$footer_background_color 							= sanitize_hex_color(get_option('footer_background_color', '#eceef1'));
-$button_background_color 							= sanitize_hex_color(get_option('button_background_color', '#00B0FF'));
-$bellini_feature_block_background_color 			= sanitize_hex_color(get_option('bellini_feature_block_background_color'));
-$woo_category_background_color 						= sanitize_hex_color(get_option('woo_category_background_color', '#FFEB3B'));
-$woo_product_background_color						= sanitize_hex_color(get_option('woo_product_background_color', '#eceef1'));
-$bellini_static_slider_button_background_one 		= sanitize_hex_color(get_option('bellini_static_slider_button_background_one', '#00B0FF'));
-$bellini_static_slider_button_background_two 		= sanitize_hex_color(get_option('bellini_static_slider_button_background_two', '#00B0FF'));
-$slider_background_color_mobile 					= sanitize_hex_color(get_option('slider_background_color_mobile', '#00B0FF'));
-$slider_text_color_mobile 							= sanitize_hex_color(get_option('slider_text_color_mobile', '#333'));
-$woo_featured_product_background_color				= sanitize_hex_color(get_option('woo_featured_product_background_color', '#eceef1'));
-$bellini_hero_content_color 						= sanitize_hex_color(get_option('bellini_hero_content_color', '#ffffff'));
-$bellini_blogposts_background_color					= sanitize_hex_color(get_option('bellini_blogposts_background_color', '#eceef1'));
-$bellini_frontpage_textarea_section_color			= sanitize_hex_color(get_option('bellini_frontpage_textarea_section_color', '#eceef1'));
+$button_text_color 									= sanitize_hex_color($bellini['button_text_color']);
+$link_text_color 									= sanitize_hex_color($bellini['link_text_color']);
+$link_hover_color 									= sanitize_hex_color($bellini['link_hover_color']);
+$widget_background_color 							= sanitize_hex_color($bellini['widgets_background_color']);
+$header_background_color 							= sanitize_hex_color($bellini['header_background_color']);
+$footer_background_color 							= sanitize_hex_color($bellini['footer_background_color']);
+$button_background_color 							= sanitize_hex_color($bellini['button_background_color']);
 
-$bellini_frontpage_textarea_section_image 			= esc_url(get_option('bellini_frontpage_textarea_section_image'));
+if(is_page_template()):
+$bellini_feature_block_background_color 			= sanitize_hex_color($bellini['bellini_feature_block_background_color']);
+$woo_category_background_color 						= sanitize_hex_color($bellini['woo_category_background_color']);
+$woo_product_background_color						= sanitize_hex_color($bellini['woo_product_background_color']);
+$bellini_static_slider_button_background_one 		= sanitize_hex_color($bellini['bellini_static_slider_button_background_one']);
+$bellini_static_slider_button_background_two 		= sanitize_hex_color($bellini['bellini_static_slider_button_background_two']);
+$slider_background_color_mobile 					= sanitize_hex_color($bellini['slider_background_color_mobile']);
+$slider_text_color_mobile 							= sanitize_hex_color($bellini['slider_text_color_mobile']);
+$woo_featured_product_background_color				= sanitize_hex_color($bellini['woo_featured_product_background_color']);
+$bellini_hero_content_color 						= sanitize_hex_color($bellini['bellini_hero_content_color']);
+$bellini_blogposts_background_color					= sanitize_hex_color($bellini['bellini_blogposts_background_color']);
+$bellini_frontpage_textarea_section_color			= sanitize_hex_color($bellini['bellini_frontpage_textarea_section_color']);
+$bellini_frontpage_textarea_section_image 			= esc_url($bellini['bellini_frontpage_textarea_section_image']);
+endif;
 
-$font_preset   										= esc_attr(get_option('preset_font', 'planot'));
+$font_preset   										= esc_attr($bellini['preset_font']);
 $font_preset_title 									= bellini_font_preset_title($font_preset);
 $font_preset_body 									= bellini_font_preset_body($font_preset);
 
-$logo_font   										= esc_attr(get_option('bellini_logo_typography_font', 'logo-ope'));
+$logo_font   										= esc_attr($bellini['bellini_logo_typography_font']);
 $logo_font_select									= bellini_font_logo($logo_font);
 
-$element_title_capitalization						= esc_attr(get_option('bellini_header_title_capitalization', 'none'));
-$bellini_widget_title_alignment						= esc_attr(get_option('bellini_widget_title_alignment', 'left'));
+$element_title_capitalization						= esc_attr($bellini['bellini_header_title_capitalization']);
+$bellini_widget_title_alignment						= esc_attr($bellini['bellini_widget_title_alignment']);
 
-$bellini_custom_code_css							= esc_attr(get_option('bellini_custom_css'));
-
+if ( ! empty( $bellini_custom_code_css ) ):
+	$bellini_custom_code_css							= esc_attr($bellini['bellini_custom_css']);
+endif;
 
 // CSS Classes
 $primary_color_text 			= ".scrollToTop";
@@ -206,8 +210,8 @@ $primary_color_background 		= ".page-numbers.current,.hamburger-inner,.hamburger
 
 $bellini_meta_color_text 		= ".breadcrumb_last,.single.post-meta,.single.post-meta a,.post-meta__category a,.comment-reply-link,.comment__author,.blog-post__meta .post-meta__time,.post-meta__author,.comment-edit-link";
 $bellini_meta_color_background 	= ".main-navigation li a:before,.menu-toggle,.post-meta__tag__item a";
-$button_color_background 		= ".comment-form input[type=submit],.site-search form input[type=submit],.button--secondary";
-$button_color_text 				= ".button--secondary a,.comment-form input[type=submit]";
+$button_color_background 		= ".comment-form input[type=submit],.button--cta--center,.site-search form input[type=submit],.button--secondary";
+$button_color_text 				= ".button--secondary a,.button--cta--center,.comment-form input[type=submit]";
 
 ?>
 
@@ -288,25 +292,29 @@ a:hover,a:focus,a:active{color: <?php echo $link_hover_color; ?>;}
 
 .main-navigation a,.page-numbers a,.page-numbers span,.cart-toggles{font-size:<?php echo $bellini_menu_font_size; ?>px;}
 
+
+<?php if(is_page_template()):?>
 /* Front Page */
-.slider-content h3,.slider-content{color:<?php echo $bellini_hero_content_color; ?>;}
-.front-feature-blocks{background-color:<?php echo $bellini_feature_block_background_color; ?>;}
-.front-product-category{background-color:<?php echo $woo_category_background_color; ?>;}
-.front-new-arrival{background-color:<?php echo $woo_product_background_color;?>;}
-.front__product-featured{background-color:<?php echo $woo_featured_product_background_color;?>;}
-.front-blog{background-color:<?php echo $bellini_blogposts_background_color;?>;}
-.front-text-field{background-color:<?php echo $bellini_frontpage_textarea_section_color;?>;}
-.front-text-field{background-image: url(<?php echo $bellini_frontpage_textarea_section_image; ?>);}
-.slider__cta--one{background-color: <?php echo $bellini_static_slider_button_background_one; ?>;}
-.slider__cta--two{background-color: <?php echo $bellini_static_slider_button_background_two; ?>;}
+	.slider-content h3,.slider-content{color:<?php echo $bellini_hero_content_color; ?>;}
+	.front-feature-blocks{background-color:<?php echo $bellini_feature_block_background_color; ?>;}
+	.front-product-category{background-color:<?php echo $woo_category_background_color; ?>;}
+	.front-new-arrival{background-color:<?php echo $woo_product_background_color;?>;}
+	.front__product-featured{background-color:<?php echo $woo_featured_product_background_color;?>;}
+	.front-blog{background-color:<?php echo $bellini_blogposts_background_color;?>;}
+	.front-text-field{background-color:<?php echo $bellini_frontpage_textarea_section_color;?>;}
+	.front-text-field{background-image: url(<?php echo $bellini_frontpage_textarea_section_image; ?>);}
+	.slider__cta--one{background-color: <?php echo $bellini_static_slider_button_background_one; ?>;}
+	.slider__cta--two{background-color: <?php echo $bellini_static_slider_button_background_two; ?>;}
 
 
-@media (max-width:640px){
-	.slider-content{
-	background-color:<?php echo $slider_background_color_mobile; ?>;
-	color:<?php echo $slider_text_color_mobile; ?>;
+	@media (max-width:640px){
+		.slider-content{
+		background-color:<?php echo $slider_background_color_mobile; ?>;
+		color:<?php echo $slider_text_color_mobile; ?>;
+		}
 	}
-}
+
+<?php endif;?>
 
 <?php
     if ( ! empty( $bellini_custom_code_css ) ) {
@@ -324,14 +332,15 @@ if ( is_woocommerce_activated() ):
 	add_action( 'wp_head', 'bellini_customizer_woocommerce_head_styles' );
 
 	function bellini_customizer_woocommerce_head_styles() {
+	global $bellini;
 
-		$woo_shop_product_title_font_size 	= esc_attr(get_option('bellini_woocommerce_shop_title_font_size', 26));
-		$woo_shop_product_price_font_size 	= esc_attr(get_option('bellini_woocommerce_shop_price_font_size', 18));
+		$woo_shop_product_title_font_size 	= absint($bellini['bellini_woocommerce_shop_title_font_size']);
+		$woo_shop_product_price_font_size 	= absint($bellini['bellini_woocommerce_shop_price_font_size']);
 
-		$product_card_background_color 		= sanitize_hex_color(get_option('bellini_woocommerce_product_card_back_color', '#ffffff'));
-		$product_card_title_color 			= sanitize_hex_color(get_option('bellini_woocommerce_product_title_color', '#eee'));
-		$product_card_button_text_color 	= sanitize_hex_color(get_option('bellini_woocommerce_product_button_text_color', '#ffffff'));
-		$product_card_button_color 			= sanitize_hex_color(get_option('bellini_woocommerce_product_button_color', '#000000'));
+		$product_card_background_color 		= sanitize_hex_color($bellini['bellini_woocommerce_product_card_back_color']);
+		$product_card_title_color 			= sanitize_hex_color($bellini['bellini_woocommerce_product_title_color']);
+		$product_card_button_text_color 	= sanitize_hex_color($bellini['bellini_woocommerce_product_button_text_color']);
+		$product_card_button_color 			= sanitize_hex_color($bellini['bellini_woocommerce_product_button_color']);
 
 
 		// CSS Classes

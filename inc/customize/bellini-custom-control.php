@@ -46,6 +46,6 @@ class Bellini_Pro_Conversion extends WP_Customize_Control {
 				<?php echo $this->description; ?>
 			</span>
 		<?php endif;
-		echo "</div>";
+		echo '</div>';
 	}
 }

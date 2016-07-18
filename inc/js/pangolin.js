@@ -36,11 +36,12 @@ jQuery(document).ready(function () {
     jQuery('.hamburger').click(function () {
         jQuery(this).toggleClass('is-active');
         jQuery('.hamburger__menu__full').toggleClass('hamburger__menu--open');
+        return false;
     });
 
     // WooCommerce Product Search at Top Bar
     jQuery('.site-search__icon').click(function () {
-        jQuery('.widget_product_search').toggle();
+        jQuery('.widget_product_search').slideToggle(200);
         jQuery(this).toggleClass('active');
         return false;
     });
