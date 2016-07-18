@@ -180,8 +180,8 @@ function bellini_upsell_notice() {
 
 function bellini_option_defaults() {
 	$defaults = array(
-		'header_background_color' 						=> '#222222',
-		'widgets_background_color' 						=> '#222222',
+		'header_background_color' 						=> '#FFEB3B',
+		'widgets_background_color' 						=> '#FFEB3B',
 		'footer_background_color'						=> '#222222',
 		'body_text_color' 								=> '#333333',
 		'title_text_color' 								=> '#000000',
@@ -301,6 +301,8 @@ function bellini_option_defaults() {
 		'bellini_feature_block_image_four' 				=> '',
 		'bellini_blog_pagination_type' 					=> 1,
 		'bellini_show_scroll_to_top'					=> true,
+		'bellini_footer_widget_column_selector'        	=> 3,
+		'bellini_post_featured_image'  					=> get_template_directory_uri() . '/images/featured-image.jpg',
 	);
 
       $options = get_option('bellini',$defaults);
