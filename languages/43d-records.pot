@@ -1,14 +1,14 @@
-# Copyright (C) 2015 Motohiro Sunouchi
-# This file is distributed under the CC-BY.
+# Copyright (C) 2016 Motohiro Sunouchi (43d)
+# This file is distributed under the MIT License.
 msgid ""
 msgstr ""
 "Project-Id-Version: 43d records 0.9\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/43d-records\n"
-"POT-Creation-Date: 2015-11-11 06:56:10+00:00\n"
+"POT-Creation-Date: 2016-07-18 15:42:30+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
@@ -91,34 +91,50 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: functions.php:163
+#: functions.php:180
 msgid "43d Records Editor"
 msgstr ""
 
-#: index.php:175
+#: index.php:226
 msgid "Pages:"
 msgstr ""
 
-#: index.php:180
-msgid "&laquo; Previous Entry &ldquo;%title&rdquo;"
+#: index.php:230
+msgid "Page"
 msgstr ""
 
-#: index.php:181
-msgid "&raquo; Next Entry &ldquo;%title&rdquo;"
+#: index.php:237
+msgid "<span>&laquo; Previous Entry</span> &ldquo;%title&rdquo;"
+msgstr ""
+
+#: index.php:238
+msgid "<span>&raquo; Next Entry</span> &ldquo;%title&rdquo;"
+msgstr ""
+
+#: index.php:295
+msgid "&laquo; recent %d records"
+msgstr ""
+
+#: index.php:300
+msgid "past %d records &raquo;"
 msgstr ""
 
 #. Theme Name of the plugin/theme
 msgid "43d records"
 msgstr ""
 
+#. Theme URI of the plugin/theme
+msgid "https://records.43d.jp/wp-theme/"
+msgstr ""
+
 #. Description of the plugin/theme
 msgid ""
-"43d records is a WordPress theme for publishing sounds and photographs by "
+"43d records is a WordPress theme for publishing sounds and photographs for "
 "field recordings."
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "Motohiro Sunouchi"
+msgid "Motohiro Sunouchi (43d)"
 msgstr ""
 
 #. Author URI of the plugin/theme

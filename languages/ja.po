@@ -107,6 +107,12 @@ msgstr "<span>&laquo; 前の投稿</span> &ldquo;%title&rdquo;"
 msgid "<span>&raquo; Next Entry</span> &ldquo;%title&rdquo;"
 msgstr "<span>&raquo; 次の投稿</span> &ldquo;%title&rdquo;"
 
+msgid "&laquo; recent %d records"
+msgstr "&laquo; 新しい%d投稿"
+
+msgid "past %d records &raquo;"
+msgstr "過去の%d投稿 &raquo;"
+
 #. Theme Name of the plugin/theme
 msgid "43d records"
 msgstr ""

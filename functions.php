@@ -8,9 +8,11 @@
 if (!function_exists('p43d_records_setup')) {
 
   define('P43D_RECORDS_BASE_URL', esc_url(get_template_directory_uri()));
-  define('P43D_RECORDS_WEBSITE', 'https://records.43d.jp/');
+  define('P43D_RECORDS_VERSION', '0.9.1');
+  define('P43D_RECORDS_WEBSITE', 'https://records.43d.jp/'); // for the credit and link
+  define('P43D_RECORDS_LIST_NUM', 5);
 
-  if (! isset($content_width)) {
+  if (!isset($content_width)) {
     $content_width = 640;
   }
 
@@ -21,14 +23,49 @@ if (!function_exists('p43d_records_setup')) {
     add_theme_support('automatic-feed-links');
     add_theme_support('html5');
     add_theme_support('title-tag');
-
-    if (is_singular() && comments_open()) {
-      wp_enqueue_script('comment-reply');
-    }
   }
 
   add_action('after_setup_theme', 'p43d_records_setup');
 
+  function p43d_records_scripts()
+  {
+
+    wp_enqueue_style('43d-records-normalize', get_template_directory_uri() . '/css/normalize.min.css');
+    wp_enqueue_style('43d-records-style', get_template_directory_uri() . '/style.min.css', array(), P43D_RECORDS_VERSION);
+
+    wp_enqueue_script('jquery');
+    if (is_singular() && comments_open()) {
+      wp_enqueue_script('comment-reply');
+    }
+
+    global $p43d_records_recorded_sound_url_mp3,
+           $p43d_records_recorded_sound_url_ogg,
+           $p43d_records_total_length,
+           $p43d_records_cover_image_src_1440,
+           $p43d_records_cover_image_src_2560,
+           $p43d_records_cover_image_src_3200,
+           $p43d_records_cover_image_src_4096,
+           $p43d_records_cover_image_src_5120,
+           $category_name, $tag;
+
+    wp_enqueue_script('43d-records-script-index', get_template_directory_uri() . '/js/index.js', array('jquery'), false, true);
+    $php_vars = array(
+      'recorded_sound_url_mp3' => $p43d_records_recorded_sound_url_mp3,
+      'recorded_sound_url_ogg' => $p43d_records_recorded_sound_url_ogg,
+      'total_length' => $p43d_records_total_length,
+      'cover_image_src_1440' => $p43d_records_cover_image_src_1440[0],
+      'cover_image_src_2560' => $p43d_records_cover_image_src_2560[0],
+      'cover_image_src_3200' => $p43d_records_cover_image_src_3200[0],
+      'cover_image_src_4096' => $p43d_records_cover_image_src_4096[0],
+      'cover_image_src_5120' => $p43d_records_cover_image_src_5120[0],
+      'category_name' => $category_name,
+      'tag' => $tag,
+      'ajaxurl' => admin_url('admin-ajax.php')
+    );
+    wp_localize_script('43d-records-script-index', 'php_vars', $php_vars);
+  }
+
+  add_action('wp_enqueue_scripts', 'p43d_records_scripts');
 
   function p43d_records_add_custom_image_sizes()
   {
@@ -150,37 +187,54 @@ if (!function_exists('p43d_records_setup')) {
     $error_message = '';
     $custom = get_post_custom($post->ID);
 
+    $recorded_sound_id_mp3 = -1;
+    $recorded_sound_specs_mp3 = '';
+    $recorded_sound_url_mp3 = '';
+    $recorded_sound_id_ogg = -1;
+    $recorded_sound_specs_ogg = '';
+    $recorded_sound_url_ogg = '';
+    $have_img = false;
+    $cover_image_id = -1;
+
     if (!empty($custom)) {
       $upload_link = esc_url(get_upload_iframe_src('image', $post->ID));
 
-      $recorded_sound_id_mp3 = intval(@$custom['cf_43d_records_recorded_sound_id_mp3'][0]);
+      if (isset($custom['cf_43d_records_recorded_sound_id_mp3'][0])) {
+        $recorded_sound_id_mp3 = intval($custom['cf_43d_records_recorded_sound_id_mp3'][0]);
+      }
       if ($recorded_sound_id_mp3 > 0) {
         $recorded_sound_specs_mp3 = p43d_records_audio_meta_stringify(wp_get_attachment_metadata($recorded_sound_id_mp3));
-      } else {
-        $recorded_sound_specs_mp3 = '';
       }
-      $recorded_sound_url_mp3 = @$custom['cf_43d_records_recorded_sound_url_mp3'][0];
+      if (isset($custom['cf_43d_records_recorded_sound_url_mp3'][0])) {
+        $recorded_sound_url_mp3 = $custom['cf_43d_records_recorded_sound_url_mp3'][0];
+      }
 
-      $recorded_sound_id_ogg = intval(@$custom['cf_43d_records_recorded_sound_id_ogg'][0]);
+      if (isset($custom['cf_43d_records_recorded_sound_id_ogg'][0])) {
+        $recorded_sound_id_ogg = intval($custom['cf_43d_records_recorded_sound_id_ogg'][0]);
+      }
       if ($recorded_sound_id_ogg > 0) {
         $recorded_sound_specs_ogg = p43d_records_audio_meta_stringify(wp_get_attachment_metadata($recorded_sound_id_ogg));
-      } else {
-        $recorded_sound_specs_ogg = '';
       }
-      $recorded_sound_url_mp3 = @$custom['cf_43d_records_recorded_sound_url_mp3'][0];
-      $recorded_sound_url_ogg = @$custom['cf_43d_records_recorded_sound_url_ogg'][0];
-
-      $cover_image_id = @$custom['cf_43d_records_cover_image_id'][0];
-      $cover_image_src = wp_get_attachment_image_src($cover_image_id, array(640, 640));
+      if (isset($custom['cf_43d_records_recorded_sound_url_ogg'][0])) {
+        $recorded_sound_url_ogg = $custom['cf_43d_records_recorded_sound_url_ogg'][0];
+      }
+      if (isset($custom['cf_43d_records_cover_image_id'][0])) {
+        $cover_image_id = $custom['cf_43d_records_cover_image_id'][0];
+      }
+      if ($cover_image_id > 0) {
+        $cover_image_src = wp_get_attachment_image_src($cover_image_id, array(640, 640));
+      }
       $have_img = is_array($cover_image_src);
 
-      $rec_date = trim(@$custom['cf_43d_records_rec_date'][0]);
-      $rec_time = trim(@$custom['cf_43d_records_rec_time'][0]);
+      $rec_date = isset($custom['cf_43d_records_rec_date'][0]) ? trim($custom['cf_43d_records_rec_date'][0]) : '';
+      $rec_time = isset($custom['cf_43d_records_rec_time'][0]) ? trim($custom['cf_43d_records_rec_time'][0]) : '';
 
-      $equipments = trim(@$custom['cf_43d_records_equipments'][0]);
+      $equipments = isset($custom['cf_43d_records_equipments'][0]) ? trim($custom['cf_43d_records_equipments'][0]) : '';
 
-      $latitude = strlen(trim(@$custom['cf_43d_records_latitude'][0])) > 0 ? floatval($custom['cf_43d_records_latitude'][0]) : '';
-      $longitude = strlen(trim(@$custom['cf_43d_records_longitude'][0])) > 0 ? floatval($custom['cf_43d_records_longitude'][0]) : '';
+      $latitude = isset($custom['cf_43d_records_latitude'][0]) && strlen(trim($custom['cf_43d_records_latitude'][0])) > 0
+        ? floatval($custom['cf_43d_records_latitude'][0]) : '';
+      $longitude = isset($custom['cf_43d_records_longitude'][0]) && strlen(trim($custom['cf_43d_records_longitude'][0])) > 0
+        ? floatval($custom['cf_43d_records_longitude'][0]) : '';
     }
     include_once(get_template_directory() . '/admin_inc/post.php');
   }
@@ -191,7 +245,7 @@ if (!function_exists('p43d_records_setup')) {
   function p43d_records_save_events($post_id)
   {
     global $post;
-    if (!wp_verify_nonce($_POST['e-nonce'], 'e-nonce')) {
+    if (!wp_verify_nonce(isset($_REQUEST['e-nonce']) ? $_REQUEST['e-nonce'] : null, 'e-nonce')) {
       return $post_id;
     }
 
@@ -273,11 +327,75 @@ if (!function_exists('p43d_records_setup')) {
     } else {
       update_post_meta($post->ID, 'cf_43d_records_longitude', '');
     }
-
   }
 
   add_action('save_post', 'p43d_records_save_events');
 
+
+  function post_list($page = 0, $per_page = P43D_RECORDS_LIST_NUM, $echo = true, $category_name = '', $tag = '')
+  {
+
+    if (isset($_REQUEST['page'])) {
+      $page = intval($_REQUEST['page']);
+    }
+    if (isset($_REQUEST['pp'])) {
+      $per_page = intval($_REQUEST['pp']);
+    }
+    if (isset($_REQUEST['category_name'])) {
+      $category_name = trim($_REQUEST['category_name']);
+    }
+    if (isset($_REQUEST['tag'])) {
+      $tag = trim($_REQUEST['tag']);
+    }
+
+    $p43d_records_args = array(
+      'post_type' => 'post',
+      'numberposts' => 10000
+    );
+    if ($category_name != '') {
+      $p43d_records_args['category_name'] = $category_name;
+    }
+    if ($tag != '') {
+      $p43d_records_args['tax_query'] = array(
+        array(
+          'taxonomy' => 'post_tag',
+          'field' => 'slug',
+          'terms' => array($tag),
+          'operator' => 'IN'
+        )
+      );
+    }
+
+    $p43d_records_tmp = get_posts($p43d_records_args);
+    $numposts = count($p43d_records_tmp);
+    $offset = $page * $per_page;
+    $last_index = min($offset + $per_page, $numposts);
+    $html = '';
+
+    if (count($p43d_records_tmp) > 0) {
+      for ($i = $offset; $i < $last_index; $i++) {
+        $p43d_records_rec = $p43d_records_tmp[$i];
+        setup_postdata($p43d_records_rec);
+
+        $html .= '<li><span class="label">Posted On</span><span class="subinfo">'
+          . date('F j, Y H:i', strtotime($p43d_records_rec->post_date))
+          . '</span><span class="title"><a href="' . esc_url(get_permalink($p43d_records_rec->ID)) . '">'
+          . htmlspecialchars($p43d_records_rec->post_title) . '</a></span></li>';
+      }
+    }
+
+    $retval = array($numposts, $page, $per_page, $html);
+
+    if ($echo === true) {
+      echo json_encode($retval);
+      die();
+    }
+
+    return $retval;
+  }
+
+  add_action('wp_ajax_post_list', 'post_list');
+  add_action('wp_ajax_nopriv_post_list', 'post_list');
 
   function p43d_records_filesize_format($b)
   {

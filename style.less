@@ -4,11 +4,11 @@ Theme URI: https://records.43d.jp/wp-theme/
 Author: Motohiro Sunouchi (43d)
 Author URI: http://about.me/snotch
 Description: 43d records is a WordPress theme for publishing sounds and photographs for field recordings.
-Version: 0.9
-License: CC-BY
-License URI: http://creativecommons.org/licenses/by/4.0/
+Version: 0.9.1
+License: MIT License
+License URI: https://opensource.org/licenses/MIT
 Text Domain: 43d-records
-Tags: black, white, gray, fluid-layout, responsive-layout, full-width-template
+Tags: full-width-template
 */
 
 @charset "UTF-8";
@@ -69,7 +69,7 @@ p {
         .opacity(0.5);
         .transition-duration(0.2s);
       }
-      &:hover img {
+      &:hover img, &.active img {
         .opacity(1);
       }
       &::before {
@@ -82,7 +82,7 @@ p {
         .opacity(0.5);
         .transition-duration(0.2s);
       }
-      &:hover::before {
+      &:hover::before, &.active::before {
         .opacity(0.9);
       }
     }
@@ -195,13 +195,14 @@ p {
   #info_content {
     z-index: @z-index_flcontent;
     position: fixed;
-    top: 6rem;
+    top: 3rem;
     bottom: 1.5rem;
-    left: 0;
+    left: 3rem;
     width: 40%;
     min-width: 360px;
     overflow: auto;
-    display: none;
+    display: block;
+    .opacity(0);
 
     .close_btn {
       position: absolute;
@@ -252,6 +253,16 @@ p {
       margin: 0 0 1.8rem;
       padding-right: 2rem;
       font-size: 1rem;
+      line-height: 1.2;
+    }
+    h3, h4 {
+      margin: 0 0 1.4rem;
+      font-size: 0.85rem;
+      line-height: 1.2;
+    }
+    h5, h6 {
+      margin: 0 0 1.2rem;
+      font-size: 0.7rem;
       line-height: 1.2;
     }
 
@@ -330,15 +341,58 @@ p {
 
     div.content {
       margin: 1.6rem 0;
-      p {
+      p, dt, dd, li {
         font-size: 0.6rem;
         font-family: @serif-font;
-        margin: 1.6rem 0;
       }
-      img {
+      p {
+        margin: 1.2rem 0;
+      }
+      .wp-caption p {
+        margin: 0.2rem 0 0;
+      }
+      li {
+        margin: 0.3rem 0;
+      }
+      table, td, th {
+        border: 1px solid #d1d1d1;
+      }
+      table {
+        margin: 1.4rem 0;
+        border-width: 1px 0 0 1px;
+        border-collapse: separate;
+      }
+      th {
+        padding: 0.2rem 0.4rem;
+        font-size: 0.6rem;
+        font-weight: bold;
+        font-family: @sans-serif-font;
+        border-width: 0 1px 1px 0;
+      }
+      td {
+        padding: 0.2rem 0.4rem;
+        font-size: 0.6rem;
+        font-family: @serif-font;
+        border-width: 0 1px 1px 0;
+      }
+      pre {
+        font-size: 0.6rem;
+        font-family: @sans-serif-font;
+      }
+      address {
+        font-size: 0.6rem;
+        font-style: italic;
+        font-family: @sans-serif-font;
+      }
+      img, video, iframe {
         max-width: 100%;
       }
+      img {
+        height: auto;
+      }
+
       div.post_link_container {
+        margin-top: 1rem;
         border-top: 0.3rem solid #AAA;
 
         p.post_link {
@@ -433,9 +487,9 @@ p {
   #menulist {
     z-index: @z-index_flcontent;
     position: fixed;
-    top: 6rem;
+    top: 3rem;
     bottom: 1.5rem;
-    left: 0;
+    left: 3rem;
     width: 40%;
     min-width: 360px;
     overflow: auto;
@@ -542,9 +596,40 @@ p {
       }
     }
 
-    p.post_tags {
+    p#posts_list_navi {
+      border-top: 0.3rem solid #AAA;
+
+      a {
+        display: block;
+        text-decoration: none;
+        font-family: @sans-serif-font;
+        font-size: 0.5rem;
+        font-weight: bold;
+        &:hover {
+          text-decoration: underline;
+        }
+
+        &.recent{
+          float: left;
+        }
+        &.past{
+          float: right;
+        }
+        &.hidden {
+          display: none;
+        }
+      }
+    }
+
+    h3.post_categories, h3.post_tags {
+      padding-top: 0.5rem;
+      border-top: 0.3rem solid #AAA;
+    }
+
+    p.post_categories, p.post_tags {
       margin: 0.4rem 0;
       font-size: 0.7rem;
+
       a {
         color: #000;
         text-decoration: none !important;
@@ -705,13 +790,13 @@ p {
 .alignleft {
   display: inline;
   float: left;
-  margin-right: 1.5em;
+  margin-right: 1.2rem;
 }
 
 .alignright {
   display: inline;
   float: right;
-  margin-left: 1.5em;
+  margin-left: 1.2rem;
 }
 
 .aligncenter {
@@ -723,12 +808,53 @@ p {
 ////
 
 .wp-caption {
-  margin-bottom: 1.6em;
+  margin-bottom: 1rem;
   max-width: 100%;
 }
 
 .wp-caption-text {
   text-align: center;
+}
+
+.page-links {
+  clear: both;
+  font-family: @sans-serif-font;
+  margin: 0 0 1.75rem;
+}
+
+.page-links a,
+.page-links > span {
+  border: 1px solid #d1d1d1;
+  display: inline-block;
+  font-size: 0.7rem;
+  height: 1.85rem;
+  line-height: 1.69rem;
+  margin-right: 0.31rem;
+  text-align: center;
+  padding: 0 0.5rem;
+}
+
+
+.page-links a {
+  background-color: #666;
+  border-color: #666;
+  color: #fff;
+  text-decoration: none;
+}
+
+.page-links a:hover,
+.page-links a:focus {
+  background-color: #222;
+  color: #fff;
+}
+
+.page-links > .page-links-title {
+  border: 0;
+  color: #1a1a1a;
+  height: auto;
+  margin: 0;
+  padding-right: 0.62rem;
+  width: auto;
 }
 
 ////
