@@ -2,14 +2,11 @@
  * Customizer Custom CSS
  */
 .wp-core-ui .btn-upgrade {
-	font-size:1.2em;
 	background: none #5cb85c;
 	border-color: #4cae4c;
 	box-shadow: none;
 	color: #fff;
 	margin-top: 10px;
-	width:80%;
-	text-align:center;
 }
 .wp-core-ui .btn-upgrade:hover,
 .wp-core-ui .btn-upgrade:focus  {

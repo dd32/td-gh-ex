@@ -1,4 +1,4 @@
-            <div id="ct_top_search">
+            
                 <span id="ct_search_icon"></span>
                 <form role="search" method="get" class="ct-search-form ct-hidden" action="<?php echo esc_url( home_url( '/' ) ); ?>">
                 <?php
@@ -9,4 +9,3 @@
                     );
                 ?>
                 </form>
-            </div>

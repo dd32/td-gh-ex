@@ -10,6 +10,15 @@ jQuery(document).ready(function($){
         });
     });
 	
+});
+
+
+
+
+
+jQuery(document).ready(function($){
+
+	
 	//tooltip
 	$(function () { $("[data-toggle='tooltip']").tooltip(); });
 
@@ -104,8 +113,72 @@ jQuery(document).ready(function($){
 		  triggerOnce: true
 		}
 	);	
+
+// adjust hight
+        $('.ct_post_img a').each(function() {
+            var width = $(this).width();   
+            var height = $(this).height();  
+            var needheight = width* 0.66;  
+            $(this).css("height", needheight);  
+            $(this).css("width", width); 
+        });
+
+        $('#features .content .slider div h3 img').each(function() {
+            var width = $(this).width();   
+            var height = $(this).height();  
+            var needheight = width* 0.66;
+            $(this).css("height", needheight);  
+            $(this).css("width", width); 
+        });
+
 	
 
 });
 
+//return top
+window.onscroll=function(){ 
+	if ($(document).scrollTop() > 200) 
+	{ 
+		$(".side").css({display:"block"});
+	}else{ 
+		$(".side").css({display:"none"});	
+	} 
+}
+function goTop(){
+	$('html,body').animate({'scrollTop':0},600);
+}
 //return top end
+
+/*
+$(function(){ 
+	$(".ct_section_columns").hover(function(){ 
+		//$(".clsContent").show(); 
+		//$(".animated1").css("display","none");
+		$(".animated1").addClass("animated bounceLeft");
+		//$(".animated1").css("display","block");
+		//alert('ok');		
+	}) 
+});
+*/
+
+function testAnim() {
+		$('.animated1').removeClass('bounceInLeft' + ' animated').addClass('bounceInLeft' + ' animated');
+		$('.animated2').removeClass('bounceInUp' + ' animated').addClass('bounceInUp' + ' animated');
+		$('.animated3').removeClass('bounceInUp' + ' animated').addClass('bounceInUp' + ' animated');		
+		$('.animated4').removeClass('bounceInRight' + ' animated').addClass('bounceInRight' + ' animated');	
+  };
+
+$(document).ready(function(){
+	var i=1; 	
+	$('.ct_section_columns').hover(function(e){
+		if(i==1)
+		{
+		  e.preventDefault();
+		  //var anim = $('.animated1').val();
+		  testAnim();
+		  i=2;
+		}
+	});	
+
+	
+ });

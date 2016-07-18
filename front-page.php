@@ -4,12 +4,13 @@
 *
 */
 
+
 $enable_home_page = acool_get_option( 'ct_acool','enable_home_page',0);
 
 if ( 'posts' == get_option( 'show_on_front' ) )
 {
 	//echo 'index.php';
-    get_template_part( 'index' );
+	get_template_part('index');
 }
 else
 {
@@ -23,3 +24,4 @@ else
      	get_template_part( 'content','home');
 	}	
 }
+

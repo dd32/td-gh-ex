@@ -1,7 +1,7 @@
 jQuery(document).ready(function($){
 /*fix fixed header padding*/
 
-	$(".ct_header_class").removeClass( 'fixed' );//addClass( 'fixed' );
+	//$(".ct_header_class").removeClass( 'fixed' );//addClass( 'fixed' );
 
 	$(window).scroll(function(){
 		if($(window).scrollTop()<200)

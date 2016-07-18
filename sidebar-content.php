@@ -1,15 +1,13 @@
 <?php
-	if ( ! is_active_sidebar( 'content-header' ) )
+	if ( ! is_active_sidebar( 'sidebar-6' ) )
 		return;
 ?>
-<div class="container">
-	<div id="footer-widgets" class="clearfix margin-top-30">
+	<div id="footer-widgets" class="footer-content">
 	<?php
-			if ( is_active_sidebar( 'content-header' ) ) :
-				echo '<div class="footer-widget">';
-				dynamic_sidebar( 'content-header' );
-				echo '</div> <!-- end .content-header -->';
-			endif;
+		if ( is_active_sidebar( 'sidebar-6' ) ) :
+			echo '<div class="footer-widget">';
+			dynamic_sidebar( 'sidebar-6' );
+			echo '</div> <!-- end .content-header -->';
+		endif;
 	?>
 	</div> <!-- #footer-widgets -->
-</div>	<!-- .container -->

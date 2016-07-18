@@ -37,96 +37,29 @@ function acool_better_comments($comment, $args, $depth)
 }
 
 
-/*
-add widgets to wp-admin
-*/
-function acool_widgets_init() {
-	register_sidebar( array(
-		'name' => 'Sidebar',
-		'id' => 'sidebar-1',
-		'before_widget' => '<div id="%1$s" class="ct_widget %2$s">',
-		'after_widget' => '</div> <!-- end .ct_widget -->',
-		'before_title' => '<h4 class="ct_widget_title"><span>',
-		'after_title' => '</span></h4>',
-	) );
+/**
+ * Custom scripts and styles on customize.php for upgrade acool-pro.
+ *
+ * @since acool 1.1
+ */
+function acool_customize_scripts() {
+	wp_enqueue_script( 'acool_customizer_custom', get_template_directory_uri() . '/js/customizer-custom-scripts.js', array( 'customize-controls', 'iris', 'underscore', 'wp-util' ), '20150630', true );
 
-	register_sidebar( array(
-		'name' => 'Footer Area #1',
-		'id' => 'sidebar-2',
-		'before_widget' => '<div id="footerwidgets" class="col-xs-12 col-sm-6 col-lg-3"><div id="%1$s" class="ioftsc-lt %2$s">',
-		'after_widget' => '</div></div> <!-- end .fwidget -->',
-		'before_title' => '<span class="title">',
-		'after_title' => '</span>',
-	) );
-
-	register_sidebar( array(
-		'name' => 'Footer Area #2',
-		'id' => 'sidebar-3',
-		'before_widget' => '<div id="footerwidgets" class="col-xs-12 col-sm-6 col-lg-3"><div id="%1$s" class="ioftsc-lt %2$s">',
-		'after_widget' => '</div></div> <!-- end .fwidget -->',
-		'before_title' => '<span>',
-		'after_title' => '</span>',
-	) );
-
-	register_sidebar( array(
-		'name' => 'Footer Area #3',
-		'id' => 'sidebar-4',
-		'before_widget' => '<div id="footerwidgets" class="col-xs-12 col-sm-6 col-lg-3"><div id="%1$s" class="ioftsc-lt %2$s">',
-		'after_widget' => '</div></div> <!-- end .fwidget -->',
-		'before_title' => '<span class="title">',
-		'after_title' => '</span>',
-	) );
-
-	register_sidebar( array(
-		'name' => 'Footer Area #4',
-		'id' => 'sidebar-5',
-		'before_widget' => '<div id="footerwidgets" class="col-xs-12 col-sm-6 col-lg-3"><div id="%1$s" class="ioftsc-lt %2$s">',
-		'after_widget' => '</div></div> <!-- end .fwidget -->',
-		'before_title' => '<span class="title">',
-		'after_title' => '</span>',
-	) );
-
-
-	register_sidebar( array(
-		'name' => 'Content Header',
-		'id' => 'content-header',
-		'before_widget' => '<div id="content-header" class="content-header-ad"><div id="%1$s" class="%2$s">',
-		'after_widget' => '</div></div> <!-- end .content-header -->',
-		'before_title' => '<span class="title">',
-		'after_title' => '</span>',
-	) );	
-	
-	
-	
-}
-add_action( 'widgets_init', 'acool_widgets_init' );
-
-
-if ( ! function_exists( 'acool_previous_next' ) ){
-function acool_previous_next($str)
-{
-	if($str == 'cat'){
-		$categories = get_the_category();
-		$categoryIDS = array();
-		foreach ($categories as $category)
-		{
-			array_push($categoryIDS, $category->term_id);
-		}
-		$categoryIDS = implode(",", $categoryIDS);
-	
-		if (get_previous_post($categoryIDS)) { previous_post_link('<< %link','%title',true);}	
-		echo '&nbsp;&nbsp;&nbsp;';
-		if (get_next_post($categoryIDS)) { next_post_link('%link >>','%title',true);}
-	}
-
-	if($str == 'normal'){		
-		previous_post_link('<< %link');
-		echo '&nbsp;&nbsp;&nbsp;';
- 		next_post_link('%link >>');
+	$clean_box_misc_links = array(
+							'upgrade_link' 				=> esc_url( 'https://www.coothemes.com/themes/acool.php' ),
+							'upgrade_text'	 			=> __( 'Upgrade To Pro &raquo;', 'acool' ),
+							'WP_version'				=> get_bloginfo( 'version' ),
+							'old_version_message'		=> __( 'Some settings might be missing or disorganized in this version of WordPress. So we suggest you to upgrade to version 4.0 or better.', 'acool' )
+		);
+	if ( !(defined( 'ACOOL_THEME_PRO_USED' ) && ACOOL_THEME_PRO_USED ))
+	{
+		wp_localize_script( 'acool_customizer_custom', 'clean_box_misc_links', $clean_box_misc_links );
 	}
 	
+
+	wp_enqueue_style( 'acool_customizer_custom_css', get_template_directory_uri() . '/css/customizer.css');
 }
-}
+add_action( 'customize_controls_enqueue_scripts', 'acool_customize_scripts');
 
 
 /**
@@ -167,6 +100,7 @@ if ( ! function_exists( 'acool_get_option' ) ){
 		}
 	}
 }
+
 
 /**
  * WordPress breadcrumbs
@@ -263,6 +197,7 @@ function acool_breadcrumbs() {
   }
 }
 
+//add page number
 function acool_paging_nav(){
 	global $wp_query;
 	$pages = $wp_query->max_num_pages; 
@@ -284,6 +219,7 @@ function acool_paging_nav(){
 		echo '</ul></div>';
 	endif;
 }
+
 //header add mobile_nav
 function acool_add_mobile_navigation(){
 	printf(
@@ -326,7 +262,7 @@ function acool_get_background($args,$opacity=1)
 }
 
 /**
- * Convert Hex Code to RGB
+ * Convert Hex Code to RGB   #FFFFFF -> 255 255 255
  * @param  string $hex Color Hex Code
  * @return array       RGB values
  */
@@ -376,24 +312,28 @@ if ( ! function_exists( 'acool_get_thumbnail' ) ) {
 		//if ( $post == '' ) global $post;
 		if(has_post_thumbnail())
 		{
-			$dd = get_the_post_thumbnail();
-			
 			$ct_post_thumbnail_fullpath=wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), "Full");
-			$thumb_array['fullpath'] = $ct_post_thumbnail_fullpath[0];
-			if($thumb_array['fullpath']==""){$thumb_array['fullpath'] = $dd;}
+			$thumb_array['fullpath'] = esc_url($ct_post_thumbnail_fullpath[0]);
 		
 		}else{
 			$post_content = get_post($post_id)->post_content;
 			$thumb_array['fullpath'] = acool_catch_that_image($post_content);
 		}
+		if($post = 'front-page' && $thumb_array['fullpath']=="" )
+		{			
+			$thumb_array['fullpath'] = esc_url(of_get_option('default-featured-image'));
+		}		
 		
 		if($post = 'front-page' && $thumb_array['fullpath']=="" )
 		{			
-			$thumb_array['fullpath'] = get_template_directory_uri()."/images/default-thumbnail.jpg";
+			$thumb_array['fullpath'] = esc_url(get_template_directory_uri()."/images/default-thumbnail.jpg");
 		}		
+
 		return $thumb_array;		
 	}
 }
+
+
 
 function acool_catch_that_image($post_content)
 {
@@ -407,13 +347,13 @@ function acool_catch_that_image($post_content)
   return $first_img;
 }
 
-
 function acool_get_title($str,$limit) {
     if(strlen($str) > $limit) {
         $str = substr($str, 0, $limit);
     }
     echo $str;
 }
+
 
 //post_meta
 function acool_show_post_meta()
@@ -427,28 +367,3 @@ function acool_show_post_meta()
     </div>
  <?php
 }
-
-
-/**
- * Custom scripts and styles on customize.php for uploads acool-pro.
- *
- * @since acool 1.1
- */
-function acool_customize_scripts() {
-	wp_enqueue_script( 'acool_customizer_custom', get_template_directory_uri() . '/js/customizer-custom-scripts.js', array( 'customize-controls', 'iris', 'underscore', 'wp-util' ), '20150630', true );
-
-	$clean_box_misc_links = array(
-							'upgrade_link' 				=> esc_url( 'https://www.coothemes.com/themes/acool.php' ),
-							'upgrade_text'	 			=> __( 'Upgrade To Pro &raquo;', 'Acool' ),
-							'WP_version'				=> get_bloginfo( 'version' ),
-							'old_version_message'		=> __( 'Some settings might be missing or disorganized in this version of WordPress. So we suggest you to upgrade to version 4.0 or better.', 'Acool' )
-		);
-	if ( !(defined( 'CT_THEME_PRO_USED' ) && CT_THEME_PRO_USED ))
-	{
-		wp_localize_script( 'acool_customizer_custom', 'clean_box_misc_links', $clean_box_misc_links );
-	}
-	
-
-	wp_enqueue_style( 'acool_customizer_custom_css', get_template_directory_uri() . '/css/customizer.css');
-}
-add_action( 'customize_controls_enqueue_scripts', 'acool_customize_scripts');

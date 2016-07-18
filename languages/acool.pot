@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Acool\n"
-"POT-Creation-Date: 2016-07-15 10:20+0800\n"
+"POT-Creation-Date: 2016-07-18 08:50+0800\n"
 "PO-Revision-Date: 2015-12-20 13:17+0800\n"
 "Last-Translator: \n"
 "Language-Team: CooThemes.com <support@coothemes.com>\n"
@@ -17,37 +17,37 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: comments.php:21
+#: comments.php:26
 #, php-format
 msgid "One Comment on \"%2$s\""
 msgid_plural "%1$s Comments on \"%2$s\""
 msgstr[0] ""
 
-#: comments.php:27 comments.php:47
+#: comments.php:32 comments.php:52
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:28 comments.php:48
+#: comments.php:33 comments.php:53
 msgid "<- Older Comments"
 msgstr ""
 
-#: comments.php:29 comments.php:49
+#: comments.php:34 comments.php:54
 msgid "Newer Comments ->"
 msgstr ""
 
-#: comments.php:54
+#: comments.php:59
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:30
+#: footer.php:29
 #, php-format
 msgid ""
 "Powered by <a href=\"%s\">WordPress</a>. Designed by <a href=\"%s"
 "\">CooThemes.com</a>."
 msgstr ""
 
-#: functions.php:102
-msgid "Read More..."
+#: front-page-content.php:70
+msgid "More Article..."
 msgstr ""
 
 #: includes/custom-functions.php:14
@@ -68,92 +68,102 @@ msgstr ""
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: includes/custom-functions.php:272
+#: includes/custom-functions.php:50
+msgid "Upgrade To Pro &raquo;"
+msgstr ""
+
+#: includes/custom-functions.php:52
+msgid ""
+"Some settings might be missing or disorganized in this version of WordPress. "
+"So we suggest you to upgrade to version 4.0 or better."
+msgstr ""
+
+#: includes/custom-functions.php:193
 msgid "Page"
 msgstr ""
 
-#: includes/custom-functions.php:439
+#: includes/custom-functions.php:366
 msgid "Edit"
 msgstr ""
 
-#: includes/customizer.php:15
+#: includes/customize/customize.php:17
 msgid "Header Background Color"
 msgstr ""
 
-#: includes/customizer.php:30
+#: includes/customize/customize.php:32
 msgid "Content links color"
 msgstr ""
 
-#: includes/customizer.php:45
+#: includes/customize/customize.php:47
 msgid "Content links hover color"
 msgstr ""
 
-#: includes/customizer.php:60
+#: includes/customize/customize.php:62
 msgid "Other links color"
 msgstr ""
 
-#: includes/customizer.php:75
+#: includes/customize/customize.php:77
 msgid "Other links hover color"
 msgstr ""
 
-#: includes/customizer.php:94
+#: includes/customize/customize.php:96
 msgid "Fonts"
 msgstr ""
 
-#: includes/customizer.php:107
+#: includes/customize/customize.php:109
 msgid "Header Font"
 msgstr ""
 
-#: includes/customizer.php:124
+#: includes/customize/customize.php:126
 msgid "Menu Font"
 msgstr ""
 
-#: includes/customizer.php:140
+#: includes/customize/customize.php:142
 msgid "Title Font"
 msgstr ""
 
-#: includes/customizer.php:154
+#: includes/customize/customize.php:156
 msgid "Body Font"
 msgstr ""
 
-#: includes/customizer.php:166
+#: includes/customize/customize.php:168
 msgid "Theme Settings"
 msgstr ""
 
-#: includes/customizer.php:168
+#: includes/customize/customize.php:170
 msgid ""
 "1. Documentation for Acool can be found <a target=\"_blank\" href=\"https://"
 "www.coothemes.com/doc/acool-manual.php\">here</a>"
 msgstr ""
 
-#: includes/customizer.php:168
+#: includes/customize/customize.php:170
 msgid ""
 "2. A full theme demo can be found <a target=\"_blank\" href=\"https://www."
 "coothemes.com/themes/acool.php\">here</a>"
 msgstr ""
 
-#: includes/customizer.php:179
+#: includes/customize/customize.php:181
 msgid "Show Search Icon"
 msgstr ""
 
-#: includes/customizer.php:193
+#: includes/customize/customize.php:195
 msgid "Box Header Center"
 msgstr ""
 
-#: includes/customizer.php:211
+#: includes/customize/customize.php:213
 msgid "Enable Query Loader"
 msgstr ""
 
-#: includes/customizer.php:215
+#: includes/customize/customize.php:217
 msgid ""
 "For the following options you need to save and to refresh the display change!"
 msgstr ""
 
-#: includes/customizer.php:227
+#: includes/customize/customize.php:229
 msgid "Enable Featured Homepage"
 msgstr ""
 
-#: includes/customizer.php:231
+#: includes/customize/customize.php:233
 #, php-format
 msgid ""
 "Active featured homepage Layout.  The standardized way of creating Static "
@@ -161,64 +171,64 @@ msgid ""
 "a>"
 msgstr ""
 
-#: includes/customizer.php:245
+#: includes/customize/customize.php:247
 msgid "Fixed Header"
 msgstr ""
 
-#: includes/customizer.php:261
+#: includes/customize/customize.php:263
 msgid "Breadcrumb"
 msgstr ""
 
-#: includes/customizer.php:278
+#: includes/customize/customize.php:280
 msgid "Display Footer Widget Area"
 msgstr ""
 
-#: includes/customizer.php:294
+#: includes/customize/customize.php:296
 msgid "Hide Post Meta"
 msgstr ""
 
-#: includes/customizer.php:298
+#: includes/customize/customize.php:300
 msgid "Hide date, author, category...below blog title."
 msgstr ""
 
-#: includes/customizer.php:310
+#: includes/customize/customize.php:312
 msgid "Header Opacity"
 msgstr ""
 
-#: includes/customizer.php:321
+#: includes/customize/customize.php:323
 msgid "HomePage Banner"
 msgstr ""
 
-#: includes/customizer.php:323
+#: includes/customize/customize.php:325
 msgid ""
 "Must enable the Featured Homepage, and set up a Static Front Page, the "
 "banner will be displayed!"
 msgstr ""
 
-#: includes/customizer.php:328
+#: includes/customize/customize.php:330
 msgid "/images/banner1.jpg"
 msgstr ""
 
-#: includes/customizer.php:336
+#: includes/customize/customize.php:338
 msgid "Homepage Banner Images:"
 msgstr ""
 
-#: includes/customizer.php:345
+#: includes/customize/customize.php:347
 msgid ""
 "<h1>The jQuery slider that just slides.</h1><p class=\"ct_slider_text\">No "
 "fancy effects or unnecessary markup.</p><a class=\"btn\" href=\"#download"
 "\">Download</a>"
 msgstr ""
 
-#: includes/customizer.php:353
+#: includes/customize/customize.php:355
 msgid "Homepage Banner Text:"
 msgstr ""
 
-#: includes/customizer.php:364
+#: includes/customize/customize.php:366
 msgid "Footer text"
 msgstr ""
 
-#: includes/customizer.php:370
+#: includes/customize/customize.php:372
 msgid "Copyright 2015"
 msgstr ""
 
@@ -234,16 +244,12 @@ msgstr ""
 msgid "footer Menu"
 msgstr ""
 
-#: page.php:21 single.php:28
-msgid "Tags: "
-msgstr ""
-
-#: page.php:36
-msgid "Pages:"
-msgstr ""
-
-#: search.php:44
+#: search.php:43
 msgid "No Results"
+msgstr ""
+
+#: single.php:27
+msgid "Tags: "
 msgstr ""
 
 #. Theme Name of the plugin/theme
