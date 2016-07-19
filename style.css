@@ -1,11 +1,11 @@
 /*
 	Theme Name: Awada
 	Theme URI:
-	Description: Awada – Responsive Multi-Purpose (HTML5 / CSS3) Theme for (Desktop, tablet, mobile phone…) – 100% Multi Pages Template. Awada is Created with Twitter Bootstrap 3.3.1 Framework. Awada is a great design idea for website of Creative Corporate, Corporation, Company Profile, Personal Portfolio, Wedding, Events and more … Create Outstanding Website or Blog in Minutes!. Awesome Design, Unique Concepts, Scalable Responsive, Amazing flexibility. Awada has static and fixed header feature. it’s developed with lots of care and love. theme has two, three, four footer layout feature. We focused on usability across various devices, starting with smart phones.it is compatible with various devices. Awada is a Cross-Browser Compatible theme that works on All leading web browsers. Awada is easy to use and user friendly theme. Awada has boxed and full-width layout feature. powerful but simple Awada theme content customized through customizer. It has a typography control feature for change the styling of the theme. to make your site attractive it has two widget sections first for “sidebar widget section” and second for “Footer widget section” where you can show you widgets. To make your website in two column use sidebar widget section. to set custom menu in header set primary location and for the footer section set secondary section. we added social media links to added your social links. It boasts of more than 7-8 beautifully designed page templates , Home, Blog and Default Page Template(page with right sidebar), Page Full-Width, Page Left Sidebar etc. Awada theme has more advanced feature to make your site awesome like: you can change header top bar color. you can also changed header color styling. Theme compatible with woo-commerce. Kyam is a fully woo-commerce tested theme you just add woo-commerce plugin and product and its other required contents. Awada is translation ready theme with WPML compatible & Many More…..
+	Description: Awada – Responsive Multi-Purpose (HTML5 / CSS3) Theme for (Desktop, tablet, mobile phone…) – 100% Multi Pages Template. Awada is Created with Twitter Bootstrap 3.3.1 Framework. Awada is a great design idea for website of Creative Corporate, Corporation, Company Profile, Personal Portfolio, Wedding, Events and more … Create Outstanding Website or Blog in Minutes!. Awesome Design, Unique Concepts, Scalable Responsive, Amazing flexibility. Awada has static and fixed header feature. it’s developed with lots of care and love. theme has two, three, four footer layout feature. We focused on usability across various devices, starting with smart phones.it is compatible with various devices. Awada is a Cross-Browser Compatible theme that works on All leading web browsers. Awada is easy to use and user friendly theme. Awada has boxed and full-width layout feature. powerful but simple Awada theme content customized through customizer. It has a /typography control feature for change the styling of the theme. to make your site attractive it has two widget sections first for “sidebar widget section” and second for “Footer widget section” where you can show you widgets. To make your website in two column use sidebar widget section. to set custom menu in header set primary location and for the footer section set secondary section. we added social media links to added your social links. It boasts of more than 7-8 beautifully designed page templates , Home, Blog and Default Page Template(page with right sidebar), Page Full-Width, Page Left Sidebar etc. Awada theme has more advanced feature to make your site awesome like: you can change header top bar color. you can also changed header color styling. Theme compatible with woo-commerce. Kyam is a fully woo-commerce tested theme you just add woo-commerce plugin and product and its other required contents. Awada is translation ready theme with WPML compatible & Many More…..
 	Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, grid-layout, footer-widgets, blog, e-commerce, news, photography, portfolio
 	Author: WebHunt Infotech
 	Author URI: http://www.webhuntinfotech.com/
-	Version: 0.7
+	Version: 0.8
 	License: GNU General Public License v3 or later
 	License URI: http://www.gnu.org/licenses/gpl.html
 	Text Domain: awada
@@ -369,11 +369,6 @@ SIDEBAR AREA & WIDGETS STYLES
 	letter-spacing:1px;
 	text-transform:uppercase;
 }
-.blog-masonry .blog-carousel {
-	margin:20px 0;
-	overflow:hidden;
-	background:#fff;
-}
 .blog-meta span a {
 	color:#686868;
 }
@@ -597,10 +592,6 @@ SECTIONS STYLES
 .white-wrapper {
 	background-color:#ffffff;
 	padding:60px 0;
-}
-.blog-wrapper {
-	background-color:#ffffff;
-	padding:30px 0;
 }
 #boxed, .boxed {
   background: url(demos/bg.jpg) no-repeat center center fixed; 
@@ -1050,12 +1041,12 @@ a.navbar-brand {
 }
 #wp-calendar td {
     text-align: center;
-    padding: 10px;
+    padding: 8px;
     border: 1px solid gray;
 }
 #wp-calendar th {
     text-align: center;
-    padding: 12px;
+    padding: 8px;
 }
 #wp-calendar caption {
     text-align: center;
@@ -1157,7 +1148,7 @@ address {
 }
 /* Menu Margin */
 #awada-header .navbar-nav > li > a {
-    margin-left: 5px;
+    margin-left: 0px;
     margin-right: 5px;
 }
 /* Page Desc Margin */
@@ -1275,6 +1266,16 @@ p#logo_text_id {
 	margin: -10px 2px 0 2px;
 	text-align: center;
 }
+/* Blog */
+.blog-wrapper {
+    background-color: #ffffff;
+    padding: 50px 0 30px;
+}
+.blog-masonry .blog-carousel {
+	margin: 0px 0 20px;
+	overflow:hidden;
+	background:#fff;
+}
 .awada_blog_shadow {
     background: url('./images/blog-shadow.png') no-repeat top center;
     position: absolute;
@@ -1366,6 +1367,10 @@ p#callout_description {
 .footer_copy_text p{
 	margin: 5px 0px;
 }
+.footer-area-menu li a:hover,
+.footer-area-menu li a:focus {
+	color: #000;
+}
 /* Portfolio */
 .portfolio_list {
     padding: 10px;
@@ -1379,7 +1384,7 @@ p#callout_description {
 /* Sidebar */
 #sidebar .title {
     display: block;
-    background: #D8D8D8 none repeat scroll 0 0;
+    background: #000 none repeat scroll 0 0;
     color: #fff;
     overflow: hidden;
     margin-bottom: 20px;
@@ -1401,13 +1406,29 @@ p#callout_description {
 #sidebar .title h2 {
     text-transform: uppercase;
     background: #f8504b none repeat scroll 0 0;
-    display: inline-block;
+    color: #fff;
+	display: inline-block;
     padding: 0 20px;
     position: relative;
     font-weight: 500;
     line-height: 35px !important;
     font-size: 16px;
     margin: 0 auto;
+}
+#sidebar .widget address{
+    padding: 0px 20px;
+}
+#sidebar .widget .btn-lg {
+    padding: 7px 10px;
+    font-size: 16px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+#two-sidebar .widget .btn-lg {
+    padding: 7px 10px;
+    font-size: 16px;
+    margin-left: 5px;
+    margin-bottom: 20px;
 }
 #s {
     width: 82%;
@@ -1430,6 +1451,12 @@ p#callout_description {
 }
 #sidebar .widget ul li {
     padding: 0px 20px;
+}
+#sidebar .widget > ul > li.cat-item > a:hover, #sidebar .widget > ul.cat_list_widget > li > a:hover {
+	color: #fff;
+}
+#sidebar .tagcloud {
+    padding: 5px 20px;
 }
 /* Shop Items */
 .shop_item {

@@ -1,7 +1,8 @@
 <div id="comments" class="padding-top"><?php 
 if (have_comments()):
 	if (post_password_required(get_the_ID())) { ?>
-		<p class="nocomments"><?php _e('Please enter password to view or post a comments', 'awada'); ?></p><?php
+		<p class="nocomments"><?php _e('Please enter password to view or post a comments', 'awada'); ?></p>
+		</div><?php
 		return;
 	}
 	if (get_comment_pages_count() > 1 && get_option('page_comments')) : ?>

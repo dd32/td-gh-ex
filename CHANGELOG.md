@@ -1,3 +1,8 @@
+###Version 0.8
+* Header background color issue fixed.
+* Backgroung Image flashes issue fixed.
+* Html error fixed on password protected post.
+* Required issue fixed.
 ###Version 0.7
 * Remove unused codes.
 * All other required issue fixed.

@@ -86,7 +86,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'colors',
     'type'              => 'color',
     'priority'          => 9,
-    'default'           => 'solid #fff',
+    'default'           => '#fff',
     'sanitize_callback' => 'awada_sanitize_color',
     'output'            => array(
         array(
@@ -1112,6 +1112,10 @@ function awada_sanitize_textarea($value)
 }
 
 function awada_customize_register_active( $wp_customize ) {
+	$awada_theme_options = awada_theme_options();
+	if ($awada_theme_options['site_layout'] != 'boxed') {
+		$wp_customize->remove_section('background_image');
+	}
 	$wp_customize->remove_control('header_textcolor');
 }
 add_action( 'customize_register', 'awada_customize_register_active' );

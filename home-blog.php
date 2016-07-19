@@ -33,7 +33,7 @@
 				<div id="post-<?php the_ID(); ?>" <?php post_class('blog-carousel'); ?>>
 					<div class="content_entry">
 						<?php $icon = "";
-						global $imageSize;
+						//global $imageSize;
 						$img_class = array('class' => 'img-responsive'); ?>
 						<?php if (has_post_thumbnail()) {
 								$icon = "fa fa-picture-o";

@@ -100,13 +100,13 @@ class awadaArchieveWidget extends WP_Widget
     {
         extract($args);
         $title = !empty($instance['title']) ? apply_filters('widget_title', $instance['title']) : __('Archives', 'awada');
-
+		
+		echo $before_widget;
         if ($title != "") {
             echo $before_title . $title . $after_title;
         } else {
             echo $before_title . __('Archives', 'awada') . $after_title;
-        }
-        echo $before_widget; ?>
+        } ?>
         <ul class="cat_list_widget"><?php
             $html = wp_get_archives(array(
                 'echo' => false,
