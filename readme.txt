@@ -32,6 +32,9 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
+= 1.4.2 | 19th July 2016 = 
+* Update: Woo Files
+
 = 1.4.1 | 18th July 2016 = 
 * Fix: Conflict with Jetpack Photon.
 
