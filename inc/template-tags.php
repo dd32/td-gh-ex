@@ -130,7 +130,7 @@ function landscape_info_pages() {
 	$featured_page_3 = esc_attr( get_theme_mod( 'landscape_featured_page_three_front_page', '0' ) );
 
 	if ( 0 == $featured_page_1 && 0 == $featured_page_2 && 0 == $featured_page_3 ) {
-		return;
+		get_sidebar();
 	}
 ?>
 

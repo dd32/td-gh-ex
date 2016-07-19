@@ -99,6 +99,75 @@ function landscape_widgets_init() {
 add_action( 'widgets_init', 'landscape_widgets_init' );
 
 /**
+ * Register Google font.
+ */
+function landscape_font_url() {
+	$fonts_url = '';
+	 
+	/* Translators: If there are characters in your language that are not
+	* supported by libre, translate this to 'off'. Do not translate
+	* into your own language.
+	*/
+	$libre = _x( 'on', 'libre font: on or off', 'landscape' );
+	 
+	/* Translators: If there are characters in your language that are not
+	* supported by Open Sans, translate this to 'off'. Do not translate
+	* into your own language.
+	*/
+	$open_sans = _x( 'on', 'Open Sans font: on or off', 'landscape' );
+	 
+	if ( 'off' !== $libre || 'off' !== $open_sans ) {
+	$font_families = array();
+	 
+	if ( 'off' !== $libre ) {
+	$font_families[] = 'Libre Baskerville:400,700';
+	}
+	 
+	if ( 'off' !== $open_sans ) {
+	$font_families[] = 'Open Sans:700italic,400,800,600';
+	}
+	 
+	$query_args = array(
+		'family' => urlencode( implode( '|', $font_families ) ),
+		'subset' => urlencode( 'latin,latin-ext' ),
+	);
+	 
+	$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+	}
+	 
+	return esc_url_raw( $fonts_url );
+}
+
+/**
+ * Enqueue scripts and styles.
+ */
+function landscape_scripts() {
+	wp_enqueue_style( 'landscape-style', get_stylesheet_uri() );
+
+	wp_enqueue_style( 'landscape-google-font', landscape_font_url(), array(), null );
+
+	wp_register_style( 'landscape-genericons', get_stylesheet_directory_uri() . '/assets/fonts/genericons/genericons.css', array(), '3.4.1', true );
+
+	wp_enqueue_style( 'landscape-genericons' );
+
+	wp_register_style( 'landscape-social-logos', get_stylesheet_directory_uri() . '/assets/fonts/social-logos/social-logos.css', array() );
+
+	wp_enqueue_style( 'landscape-social-logos' );
+
+	 wp_enqueue_style( 'landscape-dashicons', get_stylesheet_uri(), array( 'dashicons' ), '1.0' );
+
+	wp_enqueue_script( 'landscape-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array( 'jquery' ), '20151215', true );
+
+	wp_enqueue_script( 'landscape-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
+
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'landscape_scripts' );
+
+
+/**
  * Implement the Custom Header feature
  */
 require( get_template_directory() . '/inc/custom-header.php' );
@@ -122,8 +191,3 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
-
-/**
- * Load styles and scripts
- */
-require get_template_directory() . '/inc/scripts.php';

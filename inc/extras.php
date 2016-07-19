@@ -40,6 +40,10 @@ function landscape_body_classes( $classes ) {
 		$classes[] = 'has-header-image';
 	}
 
+	if ( is_page_template( 'template-parts/homepage-template.php' ) ) {
+		$classes[] = 'homepage';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'landscape_body_classes' );

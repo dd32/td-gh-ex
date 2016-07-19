@@ -13,9 +13,10 @@
  */
 function landscape_pro_jetpack_setup() {
 	add_theme_support( 'infinite-scroll', array(
-		'container' => 'main',
-		'render'    => 'landscape_pro_infinite_scroll_render',
-		'footer'    => 'page',
+		'container'      => 'main',
+		'render'         => 'landscape_pro_infinite_scroll_render',
+		'footer'         => 'page',
+		'footer_widgets' => true,
 	) );
 } // end function landscape_pro_jetpack_setup
 add_action( 'after_setup_theme', 'landscape_pro_jetpack_setup' );

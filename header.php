@@ -30,7 +30,6 @@
 	<header id="masthead" class="site-header" role="banner">
 		<nav role="navigation" class="site-navigation main-navigation">
 			<h1 class="assistive-text"><?php _e( 'Menu', 'landscape' ); ?></h1>
-			<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'landscape' ); ?>"><?php _e( 'Skip to Content', 'landscape' ); ?></a></div>
 
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- .site-navigation .main-navigation -->

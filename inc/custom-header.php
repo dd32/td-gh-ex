@@ -16,7 +16,7 @@
  */
 function landscape_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'landscape_custom_header_args', array(
-		'default-image'          => get_template_directory_uri() . '/images/default-header.jpg',
+		'default-image'          => get_template_directory_uri() . '/assets/images/default-header.jpg',
 		'default-text-color'     => 'ffffff',
 		'width'                  => 1600,
 		'height'                 => 650,
