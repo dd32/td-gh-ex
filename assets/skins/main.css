@@ -87,6 +87,12 @@ a:hover {
     text-align: center;
   }
 }
+.head-2 .site-branding a {
+  color: black !important;
+}
+.head-2 .site-description {
+  color: #6fb624;
+}
 .home #content {
   position: relative;
   width: 100%;

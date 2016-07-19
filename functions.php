@@ -194,7 +194,7 @@ add_action( 'widgets_init', 'attirant_widgets_init' );
 function attirant_scripts() {
 	wp_enqueue_style( 'attirant-style', get_stylesheet_uri() );
 	
-	wp_enqueue_style('attirant-bootstrap-style',get_template_directory_uri()."/assets/bootstrap/bootstrap.min.css", array('attirant-style'));
+	wp_enqueue_style('attirant-bootstrap-style',get_template_directory_uri()."/assets/bootstrap/css/bootstrap.min.css", array('attirant-style'));
 	
 	wp_enqueue_style('attirant-main-skin',get_template_directory_uri()."/assets/skins/main.css", array('attirant-bootstrap-style'));
 	
