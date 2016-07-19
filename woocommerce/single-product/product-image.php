@@ -4,7 +4,7 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     2.0.14
+ * @version     2.6.3
  */
 
 
@@ -49,7 +49,7 @@ if(isset($virtue['product_simg_resize']) && $virtue['product_simg_resize'] == 0)
 				$gallery = '';
 			}
 
-			echo apply_filters( 'woocommerce_single_product_image_html', sprintf( '<a href="%s" itemprop="image" class="woocommerce-main-image zoom" title="%s"  data-rel="lightbox' . $gallery . '">%s</a>', $image_link, $image_title, $image ), $post->ID );
+			echo apply_filters( 'woocommerce_single_product_image_html', sprintf( '<a href="%s" itemprop="image" class="woocommerce-main-image zoom" title="%s"  data-rel="lightbox' . $gallery . '">%s</a>', esc_url($image_link), $image_title, $image ), $post->ID );
 
 		} else {
 
