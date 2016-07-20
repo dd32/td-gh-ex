@@ -3,8 +3,8 @@ Theme Name: Benevolent
 Theme URI: http://raratheme.com/wordpress-themes/benevolent/
 Author: Rara Theme
 Author URI: http://raratheme.com/
-Description: Benevolent is a simple, modern and easy to use WordPress theme for non-profit organisations, charity causes, political organisations and foundations. The theme is apt for organisations looking for clean and professional WordPress Theme. The design is responsive and the theme looks great on tablets, laptops and mobile phones. Benevolent comes with several features and it is customisable. The front page has advance slider option, call for donation at several places, project showcase, impact showcase with statistics counter, latest articles and sponsors showcase of the cause. The theme is also SEO friendly which makes it easy to find on search engines like Google. The theme supports all kinds of post formats such as gallery, image, video, etc. It has 4 custom widgets - recent posts, popular posts, social media and about us. The theme is translation ready.
-Version: 1.0.2
+Description: Benevolent is an easy to use, clean modern and  flexible multipurpose theme.   Although the theme was designed with nonprofit organizations in mind , the theme is very versatile and can be used by any business websites, digital agency, consultancy, corporate business, freelancers, and bloggers. The theme is SEO friendly with optimized codes, which  make it easy for your site to rank on Google and other search engines. Benevolent comes with several features to make user-friendly, interactive and visually stunning website. Such features include custom menu with Call to Action Button, advance full width slider,  community section, Stats counter,  Client Section, Banner with Call to Action Button  (CTA),  and social media. It has four footer area and a right sidebar and includes  four custom widgets for the recent posts, popular posts, social media and the featured post. The theme is rigorously tested and optimized for speed and faster page load time and has a secure and clean code. The theme is also translation ready. Designed with visitor engagement in mind, Benevolent helps you to easily and intuitively create professional and appealing websites. You can get free support in http://raratheme.com/support-forum/, Documentation: http://raratheme.com/documentation/benevolent and check the demo at http://raratheme.com/preview/benevolent/
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: benevolent
@@ -531,7 +531,7 @@ textarea {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
-.site-header{padding: 25px 0 10px;}
+/*.site-header{padding: 25px 0 10px;}*/
 .home.blog .site-header{
 	position: relative !important;
 	background: #202020 !important;
@@ -539,16 +539,19 @@ textarea {
 }
 .home .site-header,
 .home.blog.has-slider .site-header{
-	position: absolute !important;
+	position: absolute;
 	left: 0;
 	top: 0;
 	width: 100%;
-	padding: 25px 0 10px;
 	z-index: 3;
 	border-bottom: 0 !important;
-	background: rgba(0, 0, 0, 0.5);
+	/*background: rgba(0, 0, 0, 0.5);*/
 }
-.home.has-slider .site-header{background: rgba(0, 0, 0, 0.5);}
+.home.has-slider .site-header .header-bottom,
+.site-header .header-bottom{
+	background: rgba(0, 0, 0, 0.5);
+	padding: 25px 0 10px;
+}
 .site-header .site-branding{
 	float: left;
 	margin: 4px 0 0;
@@ -556,11 +559,116 @@ textarea {
 .site-header .site-branding .site-title{
 	margin: 0;
 }
+.site-header .site-branding .site-title a{
+    color: #F8B016;
+}
+.site-header .site-branding .site-title a:hover{
+    text-decoration: none;
+}
 .site-header .site-branding .site-description{
 	font: 12px/20px Arial, Helvetica, sans-serif;
 	color: #fff;
 	margin-bottom: 0;
 	/*margin-left: 44px; */
+}
+
+.site-header .header-top{
+	background: #000;
+	color: #fff;
+	padding: 15px 0 0;
+	position: relative;
+	z-index: 1;
+}
+
+.site-header .header-top .secondary-navigation{
+	float: left;
+}
+
+.site-header .header-top .secondary-navigation ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: 13px;
+	line-height: 17px;
+	font-weight: 600;
+}
+
+.site-header .header-top .secondary-navigation ul:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.site-header .header-top .secondary-navigation ul li{
+	float: left;
+	margin-right: 25px;
+	position: relative;
+}
+
+.site-header .header-top .secondary-navigation ul li a{
+	color: #acacac;
+	display: block;
+	padding: 0 0 20px;
+}
+
+.site-header .header-top .secondary-navigation ul li a:hover,
+.site-header .header-top .secondary-navigation ul li a:focus,
+.site-header .header-top .secondary-navigation ul li:hover > a{
+	color: #fff;
+	text-decoration: none;
+}
+
+.site-header .header-top .secondary-navigation ul ul{
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 250px;
+	background: #000;
+	display: none;
+}
+
+.site-header .header-top .secondary-navigation ul li:hover ul,
+.site-header .header-top .secondary-navigation ul li:focus ul{display: block;}
+
+.site-header .header-top .secondary-navigation ul li:hover ul ul{display: none;}
+
+.site-header .header-top .secondary-navigation ul ul li:hover ul{display: block;}
+
+.site-header .header-top .secondary-navigation ul ul li{
+	float: none;
+	display: block;
+	margin: 0;
+}
+
+.site-header .header-top .secondary-navigation ul ul li a{
+	padding: 10px;
+	border-top: 1px solid #282828;
+}
+
+.site-header .header-top .secondary-navigation ul ul ul{
+	left: 100%;
+	top: 0;
+}
+
+.site-header .header-top .social-networks{
+	float: right;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: 13px;
+}
+
+.site-header .header-top .social-networks li{
+	float: right;
+	margin-right: 20px;
+}
+
+.site-header .header-top .social-networks li a{color: #acacac;}
+
+.site-header .header-top .social-networks li a:hover,
+.site-header .header-top .social-networks li a:focus{
+	text-decoration: none;
+	color: #fff;
 }
 
 /*--------------------------------------------------------------
@@ -1580,6 +1688,10 @@ object {
 	background: #202020;
 	border-bottom: 1px solid #e4e4e4;
 }
+.home.has-slider .site-header{
+	background: none;
+	position: absolute;
+}
 #crumbs{
 	margin: 0;
 	padding: 24px 0 0;
@@ -2391,6 +2503,8 @@ object {
 }
 .site-footer .widget.widget_benevolent_recent_post .entry-header .entry-title a{color: #a9a9a9;}
 .site-footer .widget.widget_benevolent_recent_post .entry-header .entry-title a:hover{color: #fcb216;}
+
+#secondary-mobile-header{display: none;}
 /*responsive style*/
 @media only screen and (max-width: 1199px){
 	.container{
@@ -2461,6 +2575,24 @@ object {
 	.site-info{font-size: 16px;}
 	#primary,
 	#secondary{width: 100%;}
+
+	.site-header .header-top .secondary-navigation{display: none;}
+
+	#secondary-mobile-header {
+        display: block;
+        position: absolute;
+        left: 15px;
+        z-index: 3;
+    }
+    #secondary-mobile-header a{
+    	background: url(images/btn-menu.png) no-repeat;
+        width: 32px;
+        height: 32px;
+        text-indent: -9999px;
+        display: block;
+    }
+
+    .site-header .header-top{padding: 15px 0 20px;}
 
 }
 @media only screen and (max-width: 767px){

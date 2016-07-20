@@ -42,5 +42,11 @@ jQuery(document).ready(function($){
       source: '#site-navigation',
       side: 'right'
     });
+
+   $('#responsive-secondary-menu-button').sidr({
+      name: 'sidr-main2',
+      source: '#top-navigation',
+      side: 'left'
+    });
    
 });

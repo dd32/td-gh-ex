@@ -1494,6 +1494,162 @@ function benevolent_customize_register( $wp_customize ) {
     );
     /** BreadCrumb Settings Ends */
     
+    /** Social Settings */
+    $wp_customize->add_section(
+        'benevolent_social_settings',
+        array(
+            'title' => __( 'Social Settings', 'benevolent' ),
+            'description' => __( 'Leave blank if you do not want to show the social link.', 'benevolent' ),
+            'priority' => 50,
+            'capability' => 'edit_theme_options',
+        )
+    );
+    
+    /** Enable/Disable Social Icon in Header */
+    $wp_customize->add_setting(
+        'benevolent_ed_social_header',
+        array(
+            'default' => '',
+            'sanitize_callback' => 'benevolent_sanitize_checkbox',
+        )
+    );
+    
+    $wp_customize->add_control(
+        'benevolent_ed_social_header',
+        array(
+            'label' => __( 'Enable Social Icons in Header', 'benevolent' ),
+            'section' => 'benevolent_social_settings',
+            'type' => 'checkbox',
+        )
+    );
+    
+    /** Facebook */
+    $wp_customize->add_setting(
+        'benevolent_facebook',
+        array(
+            'default' => '',
+            'sanitize_callback' => 'benevolent_sanitize_url',
+        )
+    );
+    
+    $wp_customize->add_control(
+        'benevolent_facebook',
+        array(
+            'label' => __( 'Facebook', 'benevolent' ),
+            'section' => 'benevolent_social_settings',
+            'type' => 'text',
+        )
+    );
+
+    /** Twitter */
+    $wp_customize->add_setting(
+        'benevolent_twitter',
+        array(
+            'default' => '',
+            'sanitize_callback' => 'benevolent_sanitize_url',
+        )
+    );
+    
+    $wp_customize->add_control(
+        'benevolent_twitter',
+        array(
+            'label' => __( 'Twitter', 'benevolent' ),
+            'section' => 'benevolent_social_settings',
+            'type' => 'text',
+        )
+    );
+    
+    /** Pintrest */
+    $wp_customize->add_setting(
+        'benevolent_pinterest',
+        array(
+            'default' => '',
+            'sanitize_callback' => 'benevolent_sanitize_url',
+        )
+    );
+    
+    $wp_customize->add_control(
+        'benevolent_pinterest',
+        array(
+            'label' => __( 'Pintest', 'benevolent' ),
+            'section' => 'benevolent_social_settings',
+            'type' => 'text',
+        )
+    );
+    
+    /** LinkedIn */
+    $wp_customize->add_setting(
+        'benevolent_linkedin',
+        array(
+            'default' => '',
+            'sanitize_callback' => 'benevolent_sanitize_url',
+        )
+    );
+    
+    $wp_customize->add_control(
+        'benevolent_linkedin',
+        array(
+            'label' => __( 'LinkedIn', 'benevolent' ),
+            'section' => 'benevolent_social_settings',
+            'type' => 'text',
+        )
+    );
+    
+    /** Gooble Plus */
+    $wp_customize->add_setting(
+        'benevolent_gplus',
+        array(
+            'default' => '',
+            'sanitize_callback' => 'benevolent_sanitize_url',
+        )
+    );
+    
+    $wp_customize->add_control(
+        'benevolent_gplus',
+        array(
+            'label' => __( 'Google Plus', 'benevolent' ),
+            'section' => 'benevolent_social_settings',
+            'type' => 'text',
+        )
+    );
+    
+    /** Instagram */
+    $wp_customize->add_setting(
+        'benevolent_instagram',
+        array(
+            'default' => '',
+            'sanitize_callback' => 'benevolent_sanitize_url',
+        )
+    );
+    
+    $wp_customize->add_control(
+        'benevolent_instagram',
+        array(
+            'label' => __( 'Instagram', 'benevolent' ),
+            'section' => 'benevolent_social_settings',
+            'type' => 'text',
+        )
+    );
+    
+    /** YouTube */
+    $wp_customize->add_setting(
+        'benevolent_youtube',
+        array(
+            'default' => '',
+            'sanitize_callback' => 'benevolent_sanitize_url',
+        )
+    );
+    
+    $wp_customize->add_control(
+        'benevolent_youtube',
+        array(
+            'label' => __( 'YouTube', 'benevolent' ),
+            'section' => 'benevolent_social_settings',
+            'type' => 'text',
+        )
+    );
+    /** Social Settings Ends */
+    
     /** Custom CSS*/
     $wp_customize->add_section(
         'benevolent_custom_settings',

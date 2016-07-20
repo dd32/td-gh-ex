@@ -44,7 +44,8 @@ function benevolent_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary', 'benevolent' ),
+		'primary'   => esc_html__( 'Primary', 'benevolent' ),
+        'secondary' => esc_html__( 'Secondary', 'benevolent' ),
 	) );
 
 	/*

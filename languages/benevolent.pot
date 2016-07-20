@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Benevolent\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: Mon May 30 2016 12:23:33 GMT+0545 (Nepal Standard Time)\n"
-"POT-Revision-Date: Wed Jun 08 2016 13:51:16 GMT+0545 (Nepal Standard Time)\n"
+"POT-Revision-Date: Wed Jul 20 2016 17:47:18 GMT+0545 (Nepal Standard Time)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -40,7 +40,7 @@ msgstr ""
 msgid "Return to Homepage"
 msgstr ""
 
-#: ../archive.php:40 ../index.php:46 ../search.php:42 ../inc/extras.php:263
+#: ../archive.php:40 ../index.php:46 ../search.php:42 ../inc/extras.php:267
 msgid "Page"
 msgstr ""
 
@@ -126,32 +126,36 @@ msgstr ""
 msgid "Primary"
 msgstr ""
 
-#: ../functions.php:142
+#: ../functions.php:48
+msgid "Secondary"
+msgstr ""
+
+#: ../functions.php:143
 msgid "Right Sidebar"
 msgstr ""
 
-#: ../functions.php:152
+#: ../functions.php:153
 msgid "Footer One"
 msgstr ""
 
-#: ../functions.php:162
+#: ../functions.php:163
 msgid "Footer Two"
 msgstr ""
 
-#: ../functions.php:172
+#: ../functions.php:173
 msgid "Footer Three"
 msgstr ""
 
-#: ../functions.php:182
+#: ../functions.php:183
 msgid "Footer Four"
 msgstr ""
 
-#: ../header.php:44 ../inc/customizer.php:76
-msgid "Donate Now"
+#: ../header.php:32 ../header.php:72
+msgid "Menu"
 msgstr ""
 
-#: ../header.php:54
-msgid "Menu"
+#: ../header.php:62 ../inc/customizer.php:76
+msgid "Donate Now"
 msgstr ""
 
 #: ../search.php:19
@@ -239,7 +243,7 @@ msgstr ""
 msgid "Animation Speed"
 msgstr ""
 
-#: ../inc/customizer.php:271 ../inc/extras.php:385
+#: ../inc/customizer.php:271 ../inc/extras.php:427
 msgid "Learn More"
 msgstr ""
 
@@ -513,7 +517,7 @@ msgstr ""
 msgid "Show current"
 msgstr ""
 
-#: ../inc/customizer.php:1464 ../inc/extras.php:172
+#: ../inc/customizer.php:1464 ../inc/extras.php:176
 msgid "Home"
 msgstr ""
 
@@ -521,7 +525,7 @@ msgstr ""
 msgid "Breadcrumb Home Text"
 msgstr ""
 
-#: ../inc/customizer.php:1482 ../inc/extras.php:171
+#: ../inc/customizer.php:1482 ../inc/extras.php:175
 msgid ">"
 msgstr ""
 
@@ -530,58 +534,108 @@ msgid "Breadcrumb Separator"
 msgstr ""
 
 #: ../inc/customizer.php:1501
+msgid "Social Settings"
+msgstr ""
+
+#: ../inc/customizer.php:1502
+msgid "Leave blank if you do not want to show the social link."
+msgstr ""
+
+#: ../inc/customizer.php:1520
+msgid "Enable Social Icons in Header"
+msgstr ""
+
+#: ../inc/customizer.php:1538 ../inc/extras.php:295 ../inc/widget-social-links.
+#: php:55 ../inc/widget-social-links.php:101
+msgid "Facebook"
+msgstr ""
+
+#: ../inc/customizer.php:1556 ../inc/extras.php:297 ../inc/widget-social-links.
+#: php:57 ../inc/widget-social-links.php:106
+msgid "Twitter"
+msgstr ""
+
+#: ../inc/customizer.php:1574
+msgid "Pintest"
+msgstr ""
+
+#: ../inc/customizer.php:1592 ../inc/extras.php:301 ../inc/widget-social-links.
+#: php:116
+msgid "LinkedIn"
+msgstr ""
+
+#: ../inc/customizer.php:1610 ../inc/widget-social-links.php:63 ../inc/widget-
+#: social-links.php:121
+msgid "Google Plus"
+msgstr ""
+
+#: ../inc/customizer.php:1628 ../inc/extras.php:305 ../inc/widget-social-links.
+#: php:65 ../inc/widget-social-links.php:126
+msgid "Instagram"
+msgstr ""
+
+#: ../inc/customizer.php:1646 ../inc/extras.php:307 ../inc/widget-social-links.
+#: php:67 ../inc/widget-social-links.php:131
+msgid "YouTube"
+msgstr ""
+
+#: ../inc/customizer.php:1657
 msgid "Custom CSS Settings"
 msgstr ""
 
-#: ../inc/customizer.php:1519
+#: ../inc/customizer.php:1675
 msgid "Custom Css"
 msgstr ""
 
-#: ../inc/customizer.php:1521
+#: ../inc/customizer.php:1677
 msgid "Put your custom CSS"
 msgstr ""
 
-#: ../inc/extras.php:194
+#: ../inc/extras.php:198
 msgid "Search Result"
 msgstr ""
 
-#: ../inc/extras.php:312
+#: ../inc/extras.php:299
+msgid "Pinterst"
+msgstr ""
+
+#: ../inc/extras.php:303
+msgid "Gooble Plus"
+msgstr ""
+
+#: ../inc/extras.php:354
 #, php-format
 msgid "<b class=\"fn\">%s</b>"
 msgstr ""
 
-#: ../inc/extras.php:315
+#: ../inc/extras.php:357
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
 #. translators: 1: date, 2: time
-#: ../inc/extras.php:322
+#: ../inc/extras.php:364
 #, php-format
 msgid "%s"
 msgstr ""
 
-#: ../inc/extras.php:322
+#: ../inc/extras.php:364
 msgid "(Edit)"
 msgstr ""
 
-#: ../inc/extras.php:546
+#: ../inc/extras.php:588
 msgid "&copy; "
 msgstr ""
 
-#: ../inc/extras.php:548
-msgid "Theme by "
+#: ../inc/extras.php:591
+msgid "Benevolent by Rara Theme"
 msgstr ""
 
-#: ../inc/extras.php:549
-msgid "Rara Theme"
-msgstr ""
-
-#: ../inc/extras.php:550
+#: ../inc/extras.php:592
 #, php-format
 msgid "Powered by %s"
 msgstr ""
 
-#: ../inc/extras.php:550
+#: ../inc/extras.php:592
 msgid "https://wordpress.org/"
 msgstr ""
 
@@ -740,36 +794,12 @@ msgstr ""
 msgid "Subscribe & Follow"
 msgstr ""
 
-#: ../inc/widget-social-links.php:55 ../inc/widget-social-links.php:101
-msgid "Facebook"
-msgstr ""
-
-#: ../inc/widget-social-links.php:57 ../inc/widget-social-links.php:106
-msgid "Twitter"
-msgstr ""
-
 #: ../inc/widget-social-links.php:59 ../inc/widget-social-links.php:111
 msgid "Pinterest"
 msgstr ""
 
 #: ../inc/widget-social-links.php:61
 msgid "Linkedin"
-msgstr ""
-
-#: ../inc/widget-social-links.php:63 ../inc/widget-social-links.php:121
-msgid "Google Plus"
-msgstr ""
-
-#: ../inc/widget-social-links.php:65 ../inc/widget-social-links.php:126
-msgid "Instagram"
-msgstr ""
-
-#: ../inc/widget-social-links.php:67 ../inc/widget-social-links.php:131
-msgid "YouTube"
-msgstr ""
-
-#: ../inc/widget-social-links.php:116
-msgid "LinkedIn"
 msgstr ""
 
 #: ../template-parts/content-none.php:14
@@ -813,18 +843,28 @@ msgstr ""
 
 #. Description of the theme
 msgid ""
-"Benevolent is a simple, modern and easy to use WordPress theme for non-"
-"profit organisations, charity causes, political organisations and "
-"foundations. The theme is apt for organisations looking for clean and "
-"professional WordPress Theme. The design is responsive and the theme looks "
-"great on tablets, laptops and mobile phones. Benevolent comes with several "
-"features and it is customisable. The front page has advance slider option, "
-"call for donation at several places, project showcase, impact showcase with "
-"statistics counter, latest articles and sponsors showcase of the cause. The "
-"theme is also SEO friendly which makes it easy to find on search engines "
-"like Google. The theme supports all kinds of post formats such as gallery, "
-"image, video, etc. It has 4 custom widgets - recent posts, popular posts, "
-"social media and about us. The theme is translation ready."
+"Benevolent is an easy to use, clean modern and  flexible multipurpose theme. "
+"  Although the theme was designed with nonprofit organizations in mind , the "
+"theme is very versatile and can be used by any business websites, digital "
+"agency, consultancy, corporate business, freelancers, and bloggers. The "
+"theme is SEO friendly with optimized codes, which  make it easy for your "
+"site to rank on Google and other search engines. Benevolent comes with "
+"several features to make user-friendly, interactive and visually stunning "
+"website. Such features include custom menu with Call to Action Button, "
+"advance full width slider,  community section, Stats counter,  Client "
+"Section, Banner with Call to Action Button  (CTA),  and social media. It has "
+"four footer area and a right sidebar and includes  four custom widgets for "
+"the recent posts, popular posts, social media and the featured post. The "
+"theme is rigorously tested and optimized for speed and faster page load time "
+"and has a secure and clean code. The theme is also translation ready. "
+"Designed with visitor engagement in mind, Benevolent helps you to easily and "
+"intuitively create professional and appealing websites. You can get free "
+"support in http://raratheme.com/support-forum/, Documentation: http:"
+"//raratheme.com/documentation/benevolent and check the demo at http:"
+"//raratheme.com/preview/benevolent/"
+msgstr ""
+
+msgid "Rara Theme"
 msgstr ""
 
 #. Author URI of the theme

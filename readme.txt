@@ -4,15 +4,15 @@ Author: Rara Theme (http://raratheme.com)
 Tags: Blog, two-columns, right-sidebar, footer-widgets, education, custom-background, custom-menu, featured-image-header, featured-images, post-formats, threaded-comments, translation-ready, full-width-template, theme-options
 
 Requires at least: 4.4.2
-Tested up to: 4.5.2
-Stable tag: 1.0.2
+Tested up to: 4.5.3
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Description ==
 
-Benevolent is a simple, modern and easy to use WordPress theme for non-profit organisations, charity causes, political organisations and foundations. The theme is apt for organisations looking for clean and professional WordPress Theme. The design is responsive and the theme looks great on tablets, laptops and mobile phones. Benevolent comes with several features and it is customisable. The front page has advance slider option, call for donation at several places, project showcase, impact showcase with statistics counter, latest articles and sponsors showcase of the cause. The theme is also SEO friendly which makes it easy to find on search engines like Google. The theme supports all kinds of post formats such as gallery, image, video, etc. It has 4 custom widgets - recent posts, popular posts, social media and about us. The theme is translation ready.   
+Benevolent is an easy to use, clean modern and  flexible multipurpose theme.   Although the theme was designed with nonprofit organizations in mind , the theme is very versatile and can be used by any business websites, digital agency, consultancy, corporate business, freelancers, and bloggers. The theme is SEO friendly with optimized codes, which  make it easy for your site to rank on Google and other search engines. Benevolent comes with several features to make user-friendly, interactive and visually stunning website. Such features include custom menu with Call to Action Button, advance full width slider,  community section, Stats counter,  Client Section, Banner with Call to Action Button  (CTA),  and social media. It has four footer area and a right sidebar and includes  four custom widgets for the recent posts, popular posts, social media and the featured post. The theme is rigorously tested and optimized for speed and faster page load time and has a secure and clean code. The theme is also translation ready. Designed with visitor engagement in mind, Benevolent helps you to easily and intuitively create professional and appealing websites. You can get free support in http://raratheme.com/support-forum/, Documentation: http://raratheme.com/documentation/benevolent and check the demo at http://raratheme.com/preview/benevolent/
 
 
 == Installation ==
@@ -42,6 +42,7 @@ Benevolent is a simple, modern and easy to use WordPress theme for non-profit or
     * Check Enable Community Section.
     * EnterCommunity Section Title 
     * Select Post One, Post Two,  Post Three and Post Four.  The Feature Image of the selected posts will be displayed under the section on the Homepage.
+    * If the selected post don't have featured image the post will not be displayed in Community section. So, the featured image must be added to the respective posts.
     * Click Save & Publish.
 
 4. Stats Counter Section
@@ -155,6 +156,11 @@ Benevolent WordPress Theme is distributed under the terms of the GPLv2 or later
    
    
 == Changelog ==
+    1.0.3
+    * Added social settting and social icons in header.
+    * Added secondary navigation in the header.
+    * Fix issues mentioned in theme trac.
+    
     1.0.2
     * Made string translatable in placeholder of comments.php
     * Data escaped in all widgets.

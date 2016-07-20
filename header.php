@@ -24,35 +24,55 @@
 <div id="page" class="site">
 	
 	<header id="masthead" class="site-header" role="banner">
-        <div class="container">
-    	
-            <div class="site-branding">
-    			<?php
-                    if( function_exists( 'has_custom_logo' ) && has_custom_logo() ){
-                        the_custom_logo();
-                    } 
+        
+        <div class="header-top">
+            <div class="container">
+                
+                <div id="secondary-mobile-header">
+    			    <a id="responsive-secondary-menu-button" href="#sidr-main2"><?php esc_html_e( 'Menu', 'benevolent' ); ?></a>
+    			</div>
+                
+                <nav id="top-navigation" class="secondary-navigation" role="navigation">
+        			<?php wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_id' => 'secondary-menu', 'fallback_cb' => false ) ); ?>
+        		</nav><!-- #site-navigation -->
+                
+                <?php if( get_theme_mod( 'benevolent_ed_social_header' ) ) do_action( 'benevolent_social_links' ); ?>
+            </div>
+        </div>
+        
+        <div class="header-bottom">
+            
+            <div class="container">
+        	
+                <div class="site-branding">
+        			<?php
+                        if( function_exists( 'has_custom_logo' ) && has_custom_logo() ){
+                            the_custom_logo();
+                        } 
+                    ?>
+       				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+        			<?php
+        			$description = get_bloginfo( 'description', 'display' );
+        			if ( $description || is_customize_preview() ) : ?>
+        				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+        			<?php endif; ?>
+        		</div><!-- .site-branding -->
+                
+                <?php 
+                    $button_text = get_theme_mod( 'benevolent_button_text', __( 'Donate Now', 'benevolent' ) );
+                    $button_url = get_theme_mod( 'benevolent_button_url' );
+                    if( $button_text && $button_url ) echo '<a href="' . esc_url( $button_url ). '" class="btn-donate">' . esc_html( $button_text ) . '</a>';
                 ?>
-   				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-    			<?php
-    			$description = get_bloginfo( 'description', 'display' );
-    			if ( $description || is_customize_preview() ) : ?>
-    				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-    			<?php endif; ?>
-    		</div><!-- .site-branding -->
-            
-            <?php 
-                $button_text = get_theme_mod( 'benevolent_button_text', __( 'Donate Now', 'benevolent' ) );
-                $button_url = get_theme_mod( 'benevolent_button_url' );
-                if( $button_text && $button_url ) echo '<a href="' . esc_url( $button_url ). '" class="btn-donate">' . esc_html( $button_text ) . '</a>';
-            ?>
-            
-    		<nav id="site-navigation" class="main-navigation" role="navigation">
-    			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-    		</nav><!-- #site-navigation -->
-            
-            <div id="mobile-header">
-			    <a id="responsive-menu-button" href="#sidr-main"><?php esc_html_e( 'Menu', 'benevolent' ); ?></a>
-			</div>
+                
+        		<nav id="site-navigation" class="main-navigation" role="navigation">
+        			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+        		</nav><!-- #site-navigation -->
+                
+                <div id="mobile-header">
+    			    <a id="responsive-menu-button" href="#sidr-main"><?php esc_html_e( 'Menu', 'benevolent' ); ?></a>
+    			</div>
+                
+            </div>
             
         </div>
     </header><!-- #masthead -->

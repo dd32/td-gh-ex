@@ -70,7 +70,11 @@ if( ! function_exists( 'benevolent_excerpt' ) ):
  * @link http://alanwhipple.com/2011/05/25/php-truncate-string-preserving-html-tags-words/
  */
 function benevolent_excerpt($text, $length = 100, $ending = '...', $exact = false, $considerHtml = true) {
-	if ($considerHtml) {
+	$text = strip_shortcodes( $text );
+    $text = benevolent_strip_single( 'img', $text );
+    $text = benevolent_strip_single( 'a', $text );
+    
+    if ($considerHtml) {
 		// if the plain text is shorter than the maximum length, return the whole text
 		if (strlen(preg_replace('/<.*?>/', '', $text)) <= $length) {
 			return $text;
@@ -269,6 +273,44 @@ function benevolent_breadcrumbs_cb() {
   }
 } // end benevolent_breadcrumbs()
 add_action( 'benevolent_breadcrumbs', 'benevolent_breadcrumbs_cb' );
+
+/**
+ * Social Links Callback 
+ */
+function benevolent_social_links_cb(){
+    
+    $facebook  = get_theme_mod( 'benevolent_facebook' );
+    $twitter   = get_theme_mod( 'benevolent_twitter' );
+    $pinterest = get_theme_mod( 'benevolent_pinterest' );
+    $linkedin  = get_theme_mod( 'benevolent_linkedin' );
+    $gplus     = get_theme_mod( 'benevolent_gplus' );
+    $instagram = get_theme_mod( 'benevolent_instagram' );
+    $youtube   = get_theme_mod( 'benevolent_youtube' );
+    
+    if( $facebook || $twitter || $pinterest || $linkedin || $gplus || $instagram || $youtube ){
+    
+    ?>
+	<ul class="social-networks">
+		<?php if( $facebook ){ ?>
+        <li><a href="<?php echo esc_url( $facebook ); ?>" class="fa fa-facebook" target="_blank" title="<?php esc_attr_e( 'Facebook', 'benevolent' );?>"></a></li>
+		<?php } if( $twitter ){ ?>
+        <li><a href="<?php echo esc_url( $twitter ); ?>" class="fa fa-twitter" target="_blank" title="<?php esc_attr_e( 'Twitter', 'benevolent' );?>"></a></li>
+        <?php } if( $pinterest ){ ?>
+        <li><a href="<?php echo esc_url( $pinterest ); ?>" class="fa fa-pinterest" target="_blank" title="<?php esc_attr_e( 'Pinterst', 'benevolent' );?>"></a></li>
+		<?php } if( $linkedin ){ ?>
+        <li><a href="<?php echo esc_url( $linkedin ); ?>" class="fa fa-linkedin" target="_blank" title="<?php esc_attr_e( 'LinkedIn', 'benevolent' );?>"></a></li>
+        <?php } if( $gplus ){ ?>
+        <li><a href="<?php echo esc_url( $gplus ); ?>" class="fa fa-google-plus" target="_blank" title="<?php esc_attr_e( 'Gooble Plus', 'benevolent' );?>"></a></li>
+        <?php } if( $instagram ){ ?>
+        <li><a href="<?php echo esc_url( $instagram ); ?>" class="fa fa-instagram" target="_blank" title="<?php esc_attr_e( 'Instagram', 'benevolent' );?>"></a></li>
+		<?php } if( $youtube ){ ?>
+        <li><a href="<?php echo esc_url( $youtube ); ?>" class="fa fa-youtube-play" target="_blank" title="<?php esc_attr_e( 'YouTube', 'benevolent' );?>"></a></li>
+        <?php } ?>
+	</ul>
+    <?php
+    }
+}
+add_action( 'benevolent_social_links' , 'benevolent_social_links_cb' );
 
 /** 
  * Hook to move comment text field to the bottom in WP 4.4 
@@ -545,9 +587,9 @@ function benevolent_footer_credit(){
     $text  = '<div class="site-info"><div class="container"><span class="copyright">';
     $text .=  esc_html__( '&copy; ', 'benevolent' ) . date('Y'); 
     $text .= ' <a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html( get_bloginfo( 'name' ) ) . '</a>.</span>';
-    $text .= '<span class="by">' . esc_html__( 'Theme by ', 'benevolent' );
-    $text .= '<a href="' . esc_url( 'http://raratheme.com/' ) .'" rel="author">' . esc_html__( 'Rara Theme', 'benevolent' ) . '</a>. ';
-    $text .= sprintf( esc_html__( 'Powered by %s', 'benevolent' ), '<a href="'. esc_url( __( 'https://wordpress.org/', 'benevolent' ) ) .'">WordPress</a>.' );
+    $text .= '<span class="by">';
+    $text .= '<a href="' . esc_url( 'http://raratheme.com/wordpress-themes/benevolent/' ) .'" rel="author" target="_blank">' . esc_html__( 'Benevolent by Rara Theme', 'benevolent' ) . '</a>. ';
+    $text .= sprintf( esc_html__( 'Powered by %s', 'benevolent' ), '<a href="'. esc_url( __( 'https://wordpress.org/', 'benevolent' ) ) .'" target="_blank">WordPress</a>.' );
     $text .= '</span></div></div>';
     echo apply_filters( 'benevolent_footer_text', $text );    
 }
@@ -565,3 +607,13 @@ function benevolent_sidebar_layout(){
         return 'right-sidebar';
     }
 }
+
+/**
+ * Strip specific tags from string
+ * @link http://www.altafweb.com/2011/12/remove-specific-tag-from-php-string.html
+*/
+function benevolent_strip_single( $tag, $string ){
+    $string = preg_replace('/<'.$tag.'[^>]*>/i', '', $string);
+    $string = preg_replace('/<\/'.$tag.'>/i', '', $string);
+    return $string;
+} 
