@@ -124,169 +124,43 @@
 </div>
 <!-- slider end here --> 
 
-<!-- three feature box start here --> 
 <?php 
-    $service_area_heading = esc_attr( get_theme_mod('service_area_heading') );
-
-    $first_icon_serviceArea = esc_attr( get_theme_mod('first_icon_serviceArea') );
-    $first_title_serviceArea = esc_attr( get_theme_mod('first_title_serviceArea') );
-    $first_link_anchor_serviceArea = esc_url( get_theme_mod('first_link_anchor_serviceArea') );
-    $first_description_serviceArea = esc_attr( get_theme_mod('first_description_serviceArea') );
-
-    $second_icon_serviceArea = esc_attr( get_theme_mod('second_icon_serviceArea') );
-    $second_title_serviceArea = esc_attr( get_theme_mod('second_title_serviceArea') );
-    $second_link_anchor_serviceArea = esc_url( get_theme_mod('second_link_anchor_serviceArea') );
-    $second_description_serviceArea = esc_attr( get_theme_mod('second_description_serviceArea') );
-
-    $third_icon_serviceArea = esc_attr( get_theme_mod('third_icon_serviceArea') );
-    $third_title_serviceArea = esc_attr( get_theme_mod('third_title_serviceArea') );
-    $third_link_anchor_serviceArea = esc_url( get_theme_mod('third_link_anchor_serviceArea') );
-    $third_description_serviceArea = esc_attr( get_theme_mod('third_description_serviceArea') );
-
-?>
-
-<div class="feature-box-wrapper">
-    <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="team-heading">
-                <?php if ( isset($service_area_heading) && $service_area_heading != '') { ?>
-                    <h2><?php echo $service_area_heading; ?></h2> 
-                <?php } else { ?>
-                    <h2><?php _e( 'Service Area','bfront'); ?></h2>
-                <?php } ?>
-            </div>
-        </div>
-
-        <div class="col-sm-4 col-md-4">
-            <div class="three-column-box wow fadeInUp">
-
-                <?php if ( isset($first_icon_serviceArea) && $first_icon_serviceArea != '') { ?>
-                    <a href="<?php echo $first_link_anchor_serviceArea; ?>"><div class="circle"><i class="fa <?php echo $first_icon_serviceArea; ?> fa-3x"></i></div></a>
-                <?php } else { ?>
-                    <a href=""><div class="circle"><i class="fa fa-laptop fa-3x"></i></div></a>
-                <?php } ?>
-
-                <?php if ( isset($first_title_serviceArea) && $first_title_serviceArea != '') { ?>
-                    <a href="<?php echo $first_link_anchor_serviceArea; ?>"><h3><?php echo $first_title_serviceArea; ?></h3></a>
-                <?php } else { ?>
-                    <a href=""><h3><?php _e( 'Fully Responsive','bfront'); ?></h3></a>
-                <?php } ?>
-
-                <?php if ( isset($first_description_serviceArea) && $first_description_serviceArea != '') { ?>
-                    <p><?php echo $first_description_serviceArea; ?></p> 
-                <?php } else { ?>
-                    <p>
-                    <?php _e( 'We have used BootStrap technology and our theme is fully responsive. It gives great look in Desktop, Laptop and Mobile. We have used BootStrap technology and our theme is fully responsive. It gives great look in all devices.','bfront'); ?>
-                    </p>
-                <?php } ?>
-            </div>
-        </div>
-        <div class="col-sm-4 col-md-4 ">
-            <div class="three-column-box wow fadeInUp">
-
-                <?php if ( isset($second_icon_serviceArea) && $second_icon_serviceArea != '') { ?>
-                    <a href="<?php echo $first_link_anchor_serviceArea; ?>"><div class="circle"><i class="fa <?php echo $second_icon_serviceArea; ?> fa-3x"></i></div></a>
-                <?php } else { ?>
-                    <a href=""><div class="circle"><i class="fa fa-cube fa-3x"></i></div></a>
-                <?php } ?> 
-
-                <?php if ( isset($second_title_serviceArea) && $second_title_serviceArea != '') { ?>
-                    <a href="<?php echo $second_link_anchor_serviceArea; ?>"><h3><?php echo $second_title_serviceArea; ?></h3></a>
-                <?php } else { ?>
-                    <a href=""><h3><?php _e( 'FontAwesome Icons','bfront'); ?></h3></a>
-                <?php } ?>
-
-                <?php if ( isset($second_description_serviceArea) && $second_description_serviceArea != '') { ?>
-                    <p><?php echo $second_description_serviceArea; ?></p> 
-                <?php } else { ?>
-                    <p>
-                        <?php _e( '<a href="//fortawesome.github.io/Font-Awesome/icons/" target="_blank">Go to Font Awesome</a> and pick the icon of your choice. Copy the class of icon and past it in Theme Option Panel. <a href="//fortawesome.github.io/Font-Awesome/icons/" target="_blank">Go to Font Awesome</a> and pick the icon of your choice. Copy the class of icon and past it in Theme Option Panel Of Dashboard.','bfront'); ?>
-                    </p>
-                <?php } ?>
-            </div>
-
-        </div>
-        <div class="col-sm-4 col-md-4">
-            <div class="three-column-box wow fadeInUp">
-
-                <?php if ( isset($third_icon_serviceArea) && $third_icon_serviceArea != '') { ?>
-                    <a href="<?php echo $third_link_anchor_serviceArea; ?>"><div class="circle"><i class="fa <?php echo $third_icon_serviceArea; ?> fa-3x"></i></div></a>
-                <?php } else { ?>
-                    <a href=""><div class="circle"><i class="fa fa-cogs fa-3x"></i></div></a>
-                <?php } ?>
-
-                <?php if ( isset($third_title_serviceArea) && $third_title_serviceArea != '') { ?>
-                    <a href="<?php echo $third_link_anchor_serviceArea; ?>"><h3><?php echo $third_title_serviceArea; ?></h3></a>
-                <?php } else { ?>
-                    <a href=""><h3><?php _e( 'Fully Customizable','bfront'); ?></h3></a>
-                <?php } ?>
-
-                <?php if ( isset($third_description_serviceArea) && $third_description_serviceArea != '') { ?>
-                    <p><?php echo $third_description_serviceArea; ?></p> 
-                <?php } else { ?>
-                    <p>
-                    <?php _e( 'Our theme is fully customizable you can easily customize it using Theme Options Panel From WordPress Dashboard. Our theme is fully customizable you can easily customize it using Theme Options Panel From WordPress Dashboard.','bfront'); ?>
-                    
-                    </p>
-                <?php } ?>
-            </div>
-
-        </div>
-    </div>
-    </div>    
-</div>
-<!-- three feature box end here -->  
-
-
-<?php 
-    $parallax_section_image = esc_url( get_theme_mod('parallax_section_image') );
     $parallax_section_title = esc_attr( get_theme_mod('parallax_section_title') ); 
     $parallax_section_desc = esc_attr( get_theme_mod('parallax_section_desc') );
-
-    if( isset($parallax_section_image) && $parallax_section_image !='' ){
-        $parallax_image = $parallax_section_image;
-    }else{
-        $parallax_image = get_template_directory_uri().'/images/parallax.jpg' ;
-    }
 ?>
 <!-- slider Description start here --> 
-<section id="slidescrip" data-type="background" data-speed="10" style="background: url(<?php echo $parallax_image; ?>) 61% 0 repeat fixed;">
-<div class="slider-description">
+<section id="slidescrip">
     <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class='slider-content'>
-                <?php if ( isset($parallax_section_title) && $parallax_section_title != '') { ?>
-                    <h2 class="wow pulse"><?php echo $parallax_section_title; ?></h2>
-                <?php } else { ?>
-                    <h2 class="wow pulse">
-                    <?php _e( 'Build Your Clean & Optimized Website Within Few Clicks','bfront'); ?>
-                    </h2> 
-                <?php } ?>
+		<div class="row">
+			<div class="col-md-12">
+				<div class='slider-content'>
+					<?php if ( isset($parallax_section_title) && $parallax_section_title != '') { ?>
+						<h2 class="wow pulse"><?php echo $parallax_section_title; ?></h2>
+					<?php } else { ?>
+						<h2 class="wow pulse">
+						<?php _e( 'Build Your Clean & Optimized Website Within Few Clicks','bfront'); ?>
+						</h2> 
+					<?php } ?>
 
-                <?php if ( isset($parallax_section_desc) && $parallax_section_desc != '') { ?>
-                    <p class="wow pulse"><?php echo $parallax_section_desc; ?></p>
-                <?php } else { ?>
-                    <p class="wow pulse">
-                        <?php _e( 'Creating your website with bfront is completely easy. You just need to perform few tweaks in the theme option panel and your website will be ready to use. You can showcase all important aspects of your business here on home page.','bfront'); ?>
-                    </p> 
-                <?php } ?>
-            </div>
+					<?php if ( isset($parallax_section_desc) && $parallax_section_desc != '') { ?>
+						<p class="wow pulse"><?php echo $parallax_section_desc; ?></p>
+					<?php } else { ?>
+						<p class="wow pulse">
+							<?php _e( 'Creating your website with bfront is completely easy. You just need to perform few tweaks in the theme option panel and your website will be ready to use. You can showcase all important aspects of your business here on home page.','bfront'); ?>
+						</p> 
+					<?php } ?>
+				</div>
 
-        </div>
-    </div>
+			</div>
+		</div>
    </div>
-</div>
-     
 </section>
 <!-- slider Description end here --> 
 
 
 <!--latest blog start here -->
 <?php 
-    $blog_heading = esc_attr( get_theme_mod('blog_heading') ); 
-    $no_of_blogs = esc_attr( get_theme_mod('no_of_blogs') );
+    $blog_heading = esc_attr( get_theme_mod('blog_heading') );
 ?> 
 
 <div class="blog-wrapper">
@@ -305,7 +179,7 @@
 
             <div class="blog-outer">
             <?php
-              $args = array('showposts' => $no_of_blogs);
+              $args = array('showposts' => get_option('posts_per_page'));
               $the_query = new WP_Query( $args ); 
               if ( $the_query->have_posts() ) : 
               while ( $the_query->have_posts() ) : $the_query->the_post(); 

@@ -16,7 +16,7 @@
     </head>
     <body <?php body_class(); ?>>
 
-        <div class="header-wrapper-<?php if ( is_page_template( 'template-front-page.php' ) ) { echo 'home'; } else { echo 'not-home'; } ?>">
+        <div class="header-wrapper">
             <div class="container">
                 <div class="row">
                     <div class="header">
@@ -25,7 +25,6 @@
 
                                 <?php if ( function_exists( 'has_custom_logo' ) ): ?>
                                     <?php the_custom_logo(); ?>
-                                <?php else: ?>
                                 <?php endif; ?>
 
                                 <h1><a href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo('name'); ?></a></h1>

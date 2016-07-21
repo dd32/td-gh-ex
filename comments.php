@@ -38,8 +38,8 @@
         <?php if (comments_open()) : ?>
             <!-- If comments are open, but there are no comments. -->
         <?php else : // comments are closed  ?>
-            <!-- If comments are closed.
-            <p class="nocomments">Comments are closed.</p>  -->
+            <!-- If comments are closed.  -->
+            <p class="nocomments"><?php esc_html_e( 'Comments are closed.', 'bfront' ); ?></p> 
         <?php endif; ?>
     <?php endif; ?>	
     <?php if (comments_open()) : ?>

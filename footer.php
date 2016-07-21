@@ -15,7 +15,6 @@
                     <div class="fsidebar wow fadeInLeft" data-wow-offset="10"  >
                         <?php if (is_active_sidebar('first-footer-widget')) : ?>
                             <?php dynamic_sidebar('first-footer-widget'); ?>
-                        <?php else : ?>
                         <?php endif; ?>
                     </div>    
                 </div>
@@ -24,7 +23,6 @@
                     <div class="fsidebar wow fadeInLeft" data-wow-offset="10"  >
                         <?php if (is_active_sidebar('second-footer-widget')) : ?>
                             <?php dynamic_sidebar('second-footer-widget'); ?>
-                        <?php else : ?>
                         <?php endif; ?>
                     </div>    
                 </div>
@@ -33,7 +31,6 @@
                     <div class="fsidebar wow fadeInLeft" data-wow-offset="10"  >
                         <?php if (is_active_sidebar('third-footer-widget')) : ?>
                             <?php dynamic_sidebar('third-footer-widget'); ?>
-                        <?php else : ?>
                         <?php endif; ?>
                     </div>    
                 </div>
@@ -42,7 +39,6 @@
                     <div class="fsidebar wow fadeInLeft" data-wow-offset="10"  >
                         <?php if (is_active_sidebar('fourth-footer-widget')) : ?>
                             <?php dynamic_sidebar('fourth-footer-widget'); ?>
-                        <?php else : ?>
                         <?php endif; ?>
                     </div>    
                 </div>
@@ -71,7 +67,7 @@
                         <?php if ( isset($footer_credits) && $footer_credits != '') { ?>
                             <p><?php echo $footer_credits; ?></p>
                         <?php } else { ?>   
-                            <p><?php printf( esc_html__( 'Theme Design and Develop by %s', 'bfront' ), '<a href="http://wwww.themesflow.com">ThemesFlow</a>' ); ?></p>
+                            <p><?php printf( esc_html__( 'Theme Design and Develop by %s', 'bfront' ), '<a href="wwww.themesflow.com">ThemesFlow</a>' ); ?></p>
                         <?php } ?>  
                     </div>
                 </div>

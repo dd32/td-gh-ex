@@ -14,9 +14,9 @@ add_action( 'customize_controls_enqueue_scripts', 'bfront_th_customize_control_e
 /*theme customizer*/
 function bfront_customize_register( $wp_customize ) {
  
-    //  =============================
-    //  ====== Genral Settings ======
-    //  =============================
+    //  ==============================
+    //  ====== General Settings ======
+    //  ==============================
 
     $wp_customize->get_section('title_tagline')->title = esc_html__('General Settings', 'bfront');
     $wp_customize->get_section('title_tagline')->priority = 3; 
@@ -193,205 +193,21 @@ function bfront_customize_register( $wp_customize ) {
         'type'     => 'text',
     ));
 
-
-    //  ============================================
-    //  === Service Area (Three Column) Settings ===
-    //  ============================================
-    $wp_customize->add_panel( 'service_area', array(
-        'priority'       => 9,
-        'capability'     => 'edit_theme_options',
-        'theme_supports' => '',
-        'title'          => __('Service Area', 'bfront'),
-        'description'    => '',
-    ) );
-
-    /* Service Area Heading */
-    $wp_customize->add_section('service_area_section', array(
-        'title'    => __('Service Area Heading', 'bfront'),
-        'priority' => 12,
-        'panel'  => 'service_area',
-    ));
-
-    $wp_customize->add_setting('service_area_heading', array(
-        'capability'        => 'edit_theme_options',
-        'sanitize_callback' => 'bfront_sanitize_textarea',
-        'default'           =>__('Service Area','bfront')
-    ));
-    $wp_customize->add_control('service_area_heading', array(
-        'label'    => __('Service Area Title', 'bfront'),
-        'settings' => 'service_area_heading',
-        'section'  => 'service_area_section',
-        'type'     => 'text',
-    ));
-
-    /* First Column Settings */
-    $wp_customize->add_section('first_column_section', array(
-        'title'    => __('First Column', 'bfront'),
-        'priority' => 12,
-        'panel'  => 'service_area',
-    ));
-    $wp_customize->add_setting('first_icon_serviceArea', array(
-        'capability'        => 'edit_theme_options',
-        'sanitize_callback' => 'bfront_sanitize_textarea'
-    ));
-    $wp_customize->add_control('first_icon_serviceArea', array(
-        'label'    => __('First Icon', 'bfront'),
-        'settings' => 'first_icon_serviceArea',
-        'section'  => 'first_column_section',
-        'type'     => 'text',
-    ));
-    $wp_customize->add_setting('first_title_serviceArea', array(
-        'capability'        => 'edit_theme_options',
-        'sanitize_callback' => 'bfront_sanitize_textarea'
-    ));
-    $wp_customize->add_control('first_title_serviceArea', array(
-        'label'    => __('First Title', 'bfront'),
-        'settings' => 'first_title_serviceArea',
-        'section'  => 'first_column_section',
-        'type'     => 'text',
-    ));
-    $wp_customize->add_setting('first_link_anchor_serviceArea', array(
-        'capability'        => 'edit_theme_options',
-        'sanitize_callback' => 'esc_url_raw',
-        'default'           => '#',
-    ));
-    $wp_customize->add_control('first_link_anchor_serviceArea', array(
-        'label'    => __('First Title Link URL', 'bfront'),
-        'settings' => 'first_link_anchor_serviceArea',
-        'section'  => 'first_column_section',
-        'type'     => 'text',
-    ));
-    $wp_customize->add_setting('first_description_serviceArea', array(
-        'capability'        => 'edit_theme_options',
-        'sanitize_callback' => 'bfront_sanitize_textarea'
-    ));
-    $wp_customize->add_control('first_description_serviceArea', array(
-        'label'    => __('First Description', 'bfront'),
-        'settings' => 'first_description_serviceArea',
-        'section'  => 'first_column_section',
-        'type'     => 'textarea',
-    ));
-
-    /* Second Column Settings */
-    $wp_customize->add_section('second_column_section', array(
-        'title'    => __('Second Column', 'bfront'),
-        'priority' => 12,
-        'panel'  => 'service_area',
-    ));
-    $wp_customize->add_setting('second_icon_serviceArea', array(
-        'capability'        => 'edit_theme_options',
-        'sanitize_callback' => 'bfront_sanitize_textarea'
-    ));
-    $wp_customize->add_control('second_icon_serviceArea', array(
-        'label'    => __('Second Icon', 'bfront'),
-        'settings' => 'second_icon_serviceArea',
-        'section'  => 'second_column_section',
-        'type'     => 'text',
-    ));
-    $wp_customize->add_setting('second_title_serviceArea', array(
-        'capability'        => 'edit_theme_options',
-        'sanitize_callback' => 'bfront_sanitize_textarea'
-    ));
-    $wp_customize->add_control('second_title_serviceArea', array(
-        'label'    => __('Second Title', 'bfront'),
-        'settings' => 'second_title_serviceArea',
-        'section'  => 'second_column_section',
-        'type'     => 'text',
-    ));
-    $wp_customize->add_setting('second_link_anchor_serviceArea', array(
-        'capability'        => 'edit_theme_options',
-        'sanitize_callback' => 'esc_url_raw',
-        'default'           => '#',
-    ));
-    $wp_customize->add_control('second_link_anchor_serviceArea', array(
-        'label'    => __('Second Title Link URL', 'bfront'),
-        'settings' => 'second_link_anchor_serviceArea',
-        'section'  => 'second_column_section',
-        'type'     => 'text',
-    ));
-    $wp_customize->add_setting('second_description_serviceArea', array(
-        'capability'        => 'edit_theme_options',
-        'sanitize_callback' => 'bfront_sanitize_textarea'
-    ));
-    $wp_customize->add_control('second_description_serviceArea', array(
-        'label'    => __('Second Description', 'bfront'),
-        'settings' => 'second_description_serviceArea',
-        'section'  => 'second_column_section',
-        'type'     => 'textarea',
-    ));
-
-    /* Third Column Settings */
-    $wp_customize->add_section('third_column_section', array(
-        'title'    => __('Third Column', 'bfront'),
-        'priority' => 12,
-        'panel'  => 'service_area',
-    ));
-    $wp_customize->add_setting('third_icon_serviceArea', array(
-        'capability'        => 'edit_theme_options',
-        'sanitize_callback' => 'bfront_sanitize_textarea'
-    ));
-    $wp_customize->add_control('third_icon_serviceArea', array(
-        'label'    => __('Third Icon', 'bfront'),
-        'settings' => 'third_icon_serviceArea',
-        'section'  => 'third_column_section',
-        'type'     => 'text',
-    ));
-    $wp_customize->add_setting('third_title_serviceArea', array(
-        'capability'        => 'edit_theme_options',
-        'sanitize_callback' => 'bfront_sanitize_textarea'
-    ));
-    $wp_customize->add_control('third_title_serviceArea', array(
-        'label'    => __('Third Title', 'bfront'),
-        'settings' => 'third_title_serviceArea',
-        'section'  => 'third_column_section',
-        'type'     => 'text',
-    ));
-    $wp_customize->add_setting('third_link_anchor_serviceArea', array(
-        'capability'        => 'edit_theme_options',
-        'sanitize_callback' => 'esc_url_raw',
-        'default'           => '#',
-    ));
-    $wp_customize->add_control('third_link_anchor_serviceArea', array(
-        'label'    => __('Third Title Link URL', 'bfront'),
-        'settings' => 'third_link_anchor_serviceArea',
-        'section'  => 'third_column_section',
-        'type'     => 'text',
-    ));
-    $wp_customize->add_setting('third_description_serviceArea', array(
-        'capability'        => 'edit_theme_options',
-        'sanitize_callback' => 'bfront_sanitize_textarea'
-    ));
-    $wp_customize->add_control('third_description_serviceArea', array(
-        'label'    => __('Third Description', 'bfront'),
-        'settings' => 'third_description_serviceArea',
-        'section'  => 'third_column_section',
-        'type'     => 'textarea',
-    ));
-
-
-
-    /* Parallax Section Settings */
+	
+    //  ===================================
+    //  ==== About Us Section Settings ====
+    //  ===================================
     $wp_customize->add_section('parallax_section', array(
-        'title'    => __('Parallax Section', 'bfront'),
+        'title'    => __('About Us Section', 'bfront'),
         'priority' => 12,
     ));
-
-    $wp_customize->add_setting('parallax_section_image', array(
-        'capability'        => 'edit_theme_options',
-        'sanitize_callback' => 'bfront_sanitize_upload'
-    ));
-    $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'parallax_section_image', array(
-        'label'    => __('Parallax Section Image', 'bfront'),
-        'section'  => 'parallax_section',
-        'settings' => 'parallax_section_image',
-    )));
 
     $wp_customize->add_setting('parallax_section_title', array(
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'bfront_sanitize_textarea'
     ));
     $wp_customize->add_control('parallax_section_title', array(
-        'label'    => __('Parallax Section Title', 'bfront'),
+        'label'    => __('About Us Title', 'bfront'),
         'settings' => 'parallax_section_title',
         'section'  => 'parallax_section',
         'type'     => 'text',
@@ -401,7 +217,7 @@ function bfront_customize_register( $wp_customize ) {
         'sanitize_callback' => 'bfront_sanitize_textarea'
     ));
     $wp_customize->add_control('parallax_section_desc', array(
-        'label'    => __('Parallax Section Description', 'bfront'),
+        'label'    => __('About Us Description', 'bfront'),
         'settings' => 'parallax_section_desc',
         'section'  => 'parallax_section',
         'type'     => 'textarea',
@@ -427,17 +243,6 @@ function bfront_customize_register( $wp_customize ) {
         'type'     => 'text',
     ));
 
-    $wp_customize->add_setting('no_of_blogs', array(
-        'default'           => '3',
-        'capability'        => 'edit_theme_options',
-        'sanitize_callback' => 'bfront_sanitize_int'
-    ));
-    $wp_customize->add_control('no_of_blogs', array(
-        'label'    => __('Number of Blogs on HomePage', 'bfront'),
-        'section'  => 'blog_area',
-        'settings' => 'no_of_blogs',
-        'type'     => 'text',
-    ));
 
     //  =============================
     //  ==== Footer Text Setting ====

@@ -3,10 +3,10 @@ Theme Name: Bfront
 Theme URI: http://www.themesflow.com/wp-themes/bfront-pro/
 Author: themesflow.com
 Author URI: http://themesflow.com/
-Description: Bfront is a beautiful theme, designed especially for business and portfolio websites. This theme has many customizable features that will help you showcase your company's web presence.
-Theme is easy to use and has great looking interface, all content can be easily changed from customize panel. Bfront theme also offers a great looking minimal blog layout.
+Description: Bfront is a beautiful theme, designed especially for business and portfolio websites and also has a beautiful minimal blog layout. This theme has many customizable features that will help you showcase your company's web presence.
+Theme is easy to use and has great looking interface, all content can be easily changed from customize panel.
 
-Version: 1.0.6
+Version: 1.0.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bfront
@@ -38,21 +38,21 @@ color: #444;
 background: transparent;
 font-family: 'Monda', sans-serif;
 }
-.header-wrapper-home {
-z-index: 3;
-position: absolute;
-display: inline-block;
-width: 100%;
-top: 0;
-background: rgba(22, 24, 29, 0.7);
+.page-template-template-front-page .header-wrapper{
+	z-index: 3;
+	position: absolute;
+	display: inline-block;
+	width: 100%;
+	top: 0;
+	background: rgba(22, 24, 29, 0.7);
 }
-.header-wrapper-not-home {
-z-index: 3;
-position: static;
-display: inline-block;
-width: 100%;
-top: 0;
-background: rgba(22, 24, 29, 0.7);
+.header-wrapper{
+	z-index: 3;
+	position: static;
+	display: inline-block;
+	width: 100%;
+	top: 0;
+	background: rgba(22, 24, 29, 0.7);
 }
 
 .header {
@@ -346,232 +346,21 @@ text-align: center;
 background: rgba(0, 0, 0, 0.6);
 }
 .slider-content {
-padding: 110px 30px;
+padding: 80px 0px;
+text-align: center;
 }
 .slider-content h2 {
 margin-bottom: 40px;
 color: #FF4C65;
-font-size: 34px;
+font-size: 32px;
 font-weight: 700;
 }
 
 .slider-content p {
 font-size: 17px;
-color: #fff;
 font-weight: 500;
 }
 
-/* --------------------------------------- */
-   /* Team Members CSS starts */
-/* --------------------------------------- */
-
-.team-wrapper {
-padding-bottom: 100px;
-}
-
-.team-heading {
-text-align: center;
-overflow: hidden;
-}
-.team-heading h2 {
-display: inline-block;
-padding: 0 10px;
-margin-bottom: 60px;
-color: black;
-text-transform: uppercase;
-position: relative;
-}
-.team-heading h2:before, .team-heading h2:after {
-background-color: #FF4C65;
-content: "";
-position: absolute;
-width: 100px;
-height: 2px;
-top: 0px;
-bottom: 0;
-margin: auto;
-}
-.team-heading h2:before{
-    margin-left: -115px;
-}
-.team-heading h2:after{
-    margin-left: 15px;
-}
-.team-member-box {
-border: 1px solid;
-border-color: #DCDCDC;
-border-bottom: 3px solid #FF4C65;
-text-align: center;
-padding-bottom: 35px;
-}
-
-.member-image {
-position: relative;
-overflow: hidden;
-max-height: 305px;
--webkit-transition: all .3s ease 0s;
--moz-transition: all .3s ease 0s;
--ms-transition: all .3s ease 0s;
--o-transition: all .3s ease 0s;
- transition: all .3s ease 0s;
-}
-.member-image:hover .member-image-hover {
-    top: 0;
--webkit-transition: all .3s ease 0s;
--moz-transition: all .3s ease 0s;
--ms-transition: all .3s ease 0s;
--o-transition: all .3s ease 0s;
- transition: all .3s ease 0s;
-}
-.member-image-hover {
-position: absolute;
-background: rgba(0, 0, 0, 0.6);
-top: -305px;
-left: 0;
-bottom: 0;
-right: 0;
-max-height: 305px;
--webkit-transition: all .3s ease 0s;
--moz-transition: all .3s ease 0s;
--ms-transition: all .3s ease 0s;
--o-transition: all .3s ease 0s;
- transition: all .3s ease 0s;
-}
-.member-image-hover span {
-position: absolute;
-top: 44%;
-left: 46%;
-background: rgb(255, 255, 255);
-font-size: 45px;
-width: 32px;
-height: 32px;
-border-radius: 50%;
-}
-.member-image-hover i {
-position: absolute;
-top: 42%;
-left: 45%;
-color: rgb(255, 76, 101);
-font-size: 45px;
-}
-
-.team-member-box img {
-width: 100%;
-height: auto;
-max-height: 305px;
-}
-
-.team-member-box p, .team-member-box h3, .team-member-box h4 {
-margin: 0 20px;
-}
-.team-member-box h3{
-    color: black;
-    padding-top: 20px;
-}
-.team-member-box h4{
-    color: #FF4C65;
-    font-size: 16px;
-font-style: italic;
-margin-top: 10px;
-}
-.team-member-box p{
-    border-top: 1px solid #e0e0e0;
-color: #8d8d8d;
-font-size: 15px;
-font-weight: 400;
-line-height: 26px;
-margin-top: 20px;
-padding-top: 20px;
-}
-
-
-
-/* --------------------------------------- */
-   /* Testimonial Div CSS starts */
-/* --------------------------------------- */
-
-video#bgvid {
-position: absolute; 
-right: 0; 
-bottom: 0;
-min-width: 100%; 
-min-height: 100%;
-width: auto; 
-height: auto; 
-z-index: -100;
-background: url(polina.jpg) no-repeat;
-background-size: cover;
-}
-
-
-.testimonial-wrapper {
-overflow: hidden;
-position: relative;
-}
-.testimonial-overlay{
-padding: 50px 0;
-background: rgba(0, 0, 0, 0.8);
-}
-.quote {
-color: #FF4C65;
-text-align: center;
-font-size: 55px;
-}
-.carousel-inner blockquote {
-padding: 0;
-margin: 0;
-font-size: inherit;
-border: none;
-}
-.testimonial p.testimonial_desc {
-font-size: 18px;
-font-style: italic;
-text-align: center;
-margin: 30px auto 0 auto;
-line-height: 170%;
-color: #ddd;
-border-bottom: 1px solid #FF4C65;
-padding-bottom: 15px;
-}
-p.testimonial_author {
-color: #FFF;
-font-size: 17px;
-font-weight: bold;
-text-align: center;
-margin: 30px 0 15px 0;
-}
-.carousel-indicators {
-position: absolute;
-bottom: 10px;
-text-align: right;
-list-style: none;
-width: 80%;
-}
-#fade-quote-carousel.carousel .carousel-indicators > li {
-background-color: #fff;
-border: none;
-}
-#fade-quote-carousel.carousel {
-  padding-bottom: 40px;
-}
-#fade-quote-carousel.carousel .carousel-inner .item {
-  opacity: 0;
-  -webkit-transition-property: opacity;
-      -ms-transition-property: opacity;
-          transition-property: opacity;
-}
-#fade-quote-carousel.carousel .carousel-inner .active {
-  opacity: 1;
-  -webkit-transition-property: opacity;
-      -ms-transition-property: opacity;
-          transition-property: opacity;
-}
-#fade-quote-carousel.carousel .carousel-indicators {
-  bottom: 10px;
-}
-#fade-quote-carousel.carousel .carousel-indicators > li.active{
-    background-color: #FF4C65 !important;
-}
 
 
 /* --------------------------------------- */
@@ -580,6 +369,38 @@ border: none;
 
 .blog-wrapper {
 padding: 50px 0;
+background-color: #f7f7f7;
+}
+
+.team-heading{
+	text-align: center;
+	overflow: hidden;
+}
+
+.team-heading h2:before, .team-heading h2:after {
+    background-color: #FF4C65;
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    top: 0px;
+    bottom: 0;
+    margin: auto;
+}
+.team-heading h2:before {
+    margin-left: -115px;
+}
+.team-heading h2:after {
+    margin-left: 15px;
+}
+
+.team-heading h2 {
+    display: inline-block;
+    padding: 0 10px;
+    margin-bottom: 60px;
+    color: black;
+    text-transform: uppercase;
+    position: relative;
 }
 
 .blog-outer .col-md-4.col-sm-4:nth-child(3n+1) {
@@ -607,19 +428,39 @@ position: relative;
 overflow: hidden;
 }
 .blog-wrapper .thumb .member-image-hover {
-position: absolute;
-background: rgba(0, 0, 0, 0.6);
-top: -230px;
-left: 0;
-bottom: 0;
-right: 0;
-max-height: 230px;
--webkit-transition: all .3s ease 0s;
--moz-transition: all .3s ease 0s;
--ms-transition: all .3s ease 0s;
--o-transition: all .3s ease 0s;
-transition: all .3s ease 0s;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    -webkit-transition: all .3s ease 0s;
+    -moz-transition: all .3s ease 0s;
+    -ms-transition: all .3s ease 0s;
+    -o-transition: all .3s ease 0s;
+    transition: all .3s ease 0s;
 }
+.member-image-hover span {
+    position: absolute;
+    top: 44%;
+    left: 46%;
+    background: rgb(255, 255, 255);
+    font-size: 45px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+.member-image-hover i {
+    position: absolute;
+    top: 42%;
+    left: 45%;
+    color: #ff4c65;
+    font-size: 45px;
+}
+.blog-wrapper div.blog_post:hover .member-image-hover{ 
+  opacity: 1;
+ }
 .blog-wrapper .thumb.clear a img, .thumb.clear  img{
 max-width: 100%;
 width: 100%;
@@ -1798,7 +1639,7 @@ height: auto;
 }
 
 @media only screen and (max-width: 640px){
-  .header-wrapper-home {
+  .page-template-template-front-page .header-wrapper{
     position: inherit;
     background: rgba(0, 0, 0, 0.9);
   }

@@ -4,13 +4,13 @@
 
 == Theme License & Copyright ==
 Bfront Theme is distributed under the terms of the GNU GPL
-Bfront Theme - Copyright 2014 Bfront Theme, bfront.com
+Bfront Theme - Copyright 2014 Bfront Theme, http://www.themesflow.com/wp-themes/bfront-pro/
 
 License and resources links for images:
 ---------------------------------------
 All images used in Bfront are licensed under GPL.
 
-All images are taken from http://www.pexels.com and  with GPL license. 
+All images are taken from http://www.pexels.com and  with CC0 licence https://www.pexels.com/photo-license/. 
 
 License and resources links for js bundled:
 -------------------------------------------
