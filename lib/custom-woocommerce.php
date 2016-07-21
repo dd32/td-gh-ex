@@ -325,7 +325,7 @@ function kad_woo_archive_cat_image_output() {
                 $img_srcset_output = kt_get_srcset_output( $catimgwidth, $catimgheight, $image_cat_url, $thumbnail_id);
 
             } else {
-                $cat_image = array(virtue_img_placeholder_cat(),$catimgwidth,$catimgheight); 
+                $cat_image = array(virtue_img_placeholder(),$catimgwidth,$catimgheight); 
                 $img_srcset_output = '';
             }
             if ( $cat_image[0] ) {

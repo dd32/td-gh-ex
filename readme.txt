@@ -30,6 +30,9 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 2.7.6 | 21st July 2016 =
+* Fix: Empty category Image issue.
+
 = Version 2.7.5 | 19th July 2016 =
 * Update: Woo files.
 * Fix: Issue with category images.
