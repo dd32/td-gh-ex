@@ -26,6 +26,9 @@ For more information about Rubine Lite please go to https://themezee.com/themes/
 
 == Changelog ==
 
+= 1.2.9 =
+* fixed styling of main navigation menu with default pages
+
 = 1.2.8 =
 * added readme.txt file
 * improved styling of navigation menus

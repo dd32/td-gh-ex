@@ -8,7 +8,7 @@
 
 // Add Default Menu Fallback Function
 function rubine_default_menu() {
-	echo '<ul id="mainnav-menu" class="menu">'. wp_list_pages('title_li=&echo=0') .'</ul>';
+	echo '<ul id="mainnav-menu" class="main-navigation-menu menu">'. wp_list_pages('title_li=&echo=0') .'</ul>';
 }
 
 
@@ -40,7 +40,7 @@ function rubine_featured_content_excerpt_length($length) {
 // Change Excerpt More
 add_filter('excerpt_more', 'rubine_excerpt_more');
 function rubine_excerpt_more($more) {
-    
+
 	// Get Theme Options from Database
 	$theme_options = rubine_theme_options();
 
