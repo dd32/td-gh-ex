@@ -4,11 +4,11 @@ Theme URI: https://themezee.com/themes/zeedynamic/
 Author: ThemeZee
 Author URI: https://themezee.com
 Description: zeeDynamic is a fully responsive WordPress theme with strong colors and bold fonts. The theme fits perfectly for any news, magazine or blog website. The highlight of zeeDynamic is the flexible magazine homepage template and the stunning featured post slider. Of course the theme supports the newest WordPress core features.
-Version: 1.1.4
+Version: 1.1.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: zeedynamic
-Tags: two-columns, light, purple, custom-background, custom-header, custom-menu, editor-style, blog, entertainment, news, holiday, featured-image-header, featured-images, flexible-header, custom-colors, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, fluid-layout, responsive-layout, one-column, left-sidebar, right-sidebar, three-columns, black, red, blue, silver, white, green, gray
+Tags: two-columns, light, purple, custom-background, custom-header, custom-menu, editor-style, blog, entertainment, news, featured-image-header, featured-images, flexible-header, custom-colors, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, fluid-layout, responsive-layout, one-column, left-sidebar, right-sidebar, three-columns, black, red, blue, silver, white, green, gray
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -758,11 +758,8 @@ textarea {
 /*--------------------------------------------------------------
 ## 10.1 - Main Navigation
 --------------------------------------------------------------*/
-.primary-navigation-wrap {
-	background: #fff;
-}
-
 .primary-navigation {
+	color: #fff;
 	background: #333333;
 }
 
@@ -772,6 +769,7 @@ textarea {
 
 .main-navigation-menu {
 	float: left;
+	width: 100%;
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
@@ -781,7 +779,6 @@ textarea {
 
 .main-navigation-menu li {
 	float: left;
-	position: relative;
 }
 
 .main-navigation-menu a {
@@ -833,15 +830,15 @@ textarea {
 	border-top: 1px solid #fff;
 }
 
-.main-navigation-menu ul li{
-	margin: 0;
+.main-navigation-menu ul li {
+	float: none;
+	position: relative;
 }
 
 .main-navigation-menu ul a {
-	width: 250px;
-	width: 16rem;
+	min-width: 250px;
+	min-width: 16rem;
 	padding: 0.75em 1em;
-	float: left;
 	font-size: 13px;
 	font-size: 0.8125rem;
 	border-bottom: 1px solid rgba(255,255,255,0.1);
@@ -865,33 +862,48 @@ textarea {
 	vertical-align: top;
 	content: '\f431';
 	color: #fff;
-	-webkit-transform:rotate(270deg);
-	-moz-transform:rotate(270deg);
-	-o-transform:rotate(270deg);
-	-ms-transform:rotate(270deg);
+	-webkit-transform: rotate(270deg);
+	-moz-transform: rotate(270deg);
+	-o-transform: rotate(270deg);
+	-ms-transform: rotate(270deg);
 }
 
 .main-navigation-menu li ul ul {
-	margin-left: 250px;
-	margin-left: 16rem;
+	top: 0;
+	left: 100%;
 	border-top: none;
 }
 
-.main-navigation-menu li:hover ul ul,
-.main-navigation-menu li:hover ul ul ul,
-.main-navigation-menu li:hover ul ul ul ul {
-	display: none;
-}
-
-.main-navigation-menu li:hover ul,
-.main-navigation-menu li li:hover ul,
-.main-navigation-menu li li li:hover ul,
-.main-navigation-menu li li li li:hover ul {
+.main-navigation-menu li.menu-item-has-children:hover > ul,
+.main-navigation-menu li.page_item_has_children:hover > ul,
+.main-navigation-menu li.menu-item-has-children[aria-expanded="true"] > ul {
 	display: block;
 }
 
 .main-navigation-menu li.current-menu-item > a {
 	background: #e84747;
+}
+
+/* Mega Menu Styling */
+.mega-menu-content .mega-menu-widget ul li a {
+	display: block;
+	padding: 0.5em 0.75em;
+	border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.mega-menu-content .mega-menu-widget a:link,
+.mega-menu-content .mega-menu-widget a:visited {
+	color: #fff;
+}
+
+.mega-menu-content .mega-menu-widget a:hover,
+.mega-menu-content .mega-menu-widget a:active {
+	color: rgba(255,255,255,0.6);
+}
+
+.mega-menu-content .mega-menu-widget .entry-meta,
+.mega-menu-content .mega-menu-widget .entry-meta span:before {
+	color: #ddd;
 }
 
 /*--------------------------------------------------------------
@@ -1865,15 +1877,18 @@ object {
 	/*** Mobile Main Navigation ***/
 
 	/* Reset */
-	.primary-navigation,
 	.main-navigation-menu li {
 		float: none;
 		position: static;
 	}
 
-	.main-navigation-menu ul {
+	.main-navigation-menu ul,
+	.mega-menu-item .mega-menu-content,
+	.mega-menu-item .mega-menu-content .mega-menu-widget {
 		position: static;
 		display: block;
+		left: auto;
+		top: auto;
 	}
 
 	.main-navigation-menu ul a {
@@ -1882,17 +1897,9 @@ object {
 	}
 
 	.main-navigation-menu li ul ul {
-		margin-left: 0;
-	}
-
-	.main-navigation-menu li:hover ul ul,
-	.main-navigation-menu li:hover ul ul ul,
-	.main-navigation-menu li:hover ul ul ul ul,
-	.main-navigation-menu li:hover ul,
-	.main-navigation-menu li li:hover ul,
-	.main-navigation-menu li li li:hover ul,
-	.main-navigation-menu li li li li:hover ul {
-		display: inline;
+		top: auto;
+		left: auto;
+		margin: 0;
 	}
 
 	.main-navigation-menu > .menu-item-has-children > a:after,
@@ -1950,10 +1957,6 @@ object {
 		border-bottom: 1px solid rgba(255,255,255,0.1);
 	}
 
-	.main-navigation-menu li:last-child a {
-		border-bottom: none;
-	}
-
 	.main-navigation-menu ul {
 		float: none;
 		width: 100%;
@@ -1966,6 +1969,10 @@ object {
 		padding-left: 2em;
 	}
 
+	.main-navigation-menu ul li:last-child > a {
+		border-bottom: none;
+	}
+
 	.main-navigation-menu ul li ul a {
 		padding-left: 4em;
 	}
@@ -1976,10 +1983,6 @@ object {
 
 	.main-navigation-menu ul li ul li ul li ul a {
 		padding-left: 8em;
-	}
-
-	.main-navigation-menu ul li:last-child a {
-		border-bottom: 1px solid rgba(255,255,255,0.1);
 	}
 
 	.main-navigation-menu ul ul {
@@ -2029,6 +2032,22 @@ object {
 
 	.main-navigation-menu ul .submenu-dropdown-toggle:before {
 		font-size: 24px;
+	}
+
+	/* Mega Menu Styling */
+	.mega-menu-item .mega-menu-content {
+		border-bottom: 1px solid rgba(255,255,255,0.1);
+	}
+
+	.mega-menu-item .mega-menu-two-columns > li,
+	.mega-menu-item .mega-menu-three-columns > li,
+	.mega-menu-item .mega-menu-five-columns > li {
+		width: 100%;
+	}
+
+	.mega-menu-item .mega-menu-four-columns > li,
+	.mega-menu-item .mega-menu-six-columns > li {
+		width: 50%;
 	}
 
 }
@@ -2116,6 +2135,12 @@ object {
 
 	.widget-magazine-posts .large-post .entry-content {
 		display: none;
+	}
+
+	/* Mega Menu Styling */
+	.mega-menu-item .mega-menu-four-columns > li,
+	.mega-menu-item .mega-menu-six-columns > li {
+		width: 100%;
 	}
 
 }
