@@ -188,3 +188,6 @@ All Javascript is located in /js/ with license headers where appropriate.
 * Removed the posts slider (now you can use IG Posts Slider plugin).
 * Added a widget area to the header.
 * Removed custom widgets (they will implemented in the next updates).
+
+== 1.36 ==
+* Fixed theme screenshot.
