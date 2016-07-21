@@ -1,8 +1,10 @@
 <?php
 /**
- * Boxed WP functions and definitions
+ * Base WP functions and definitions.
  *
- * @package Base WP
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package base_wp
  */
 
 if ( ! function_exists( 'base_wp_setup' ) ) :
@@ -14,96 +16,220 @@ if ( ! function_exists( 'base_wp_setup' ) ) :
  * as indicating support for post thumbnails.
  */
 function base_wp_setup() {
-
     /*
      * Make theme available for translation.
      * Translations can be filed in the /languages/ directory.
+     * If you're building a theme based on Base WP, use a find and replace
+     * to change 'base-wp' to the name of your theme in all the template files.
      */
     load_theme_textdomain( 'base-wp', get_template_directory() . '/languages' );
 
     // Add default posts and comments RSS feed links to head.
     add_theme_support( 'automatic-feed-links' );
 
-    //Let WordPress manage the document title.
+    /*
+     * Let WordPress manage the document title.
+     * By adding theme support, we declare that this theme does not use a
+     * hard-coded <title> tag in the document head, and expect WordPress to
+     * provide it for us.
+     */
     add_theme_support( 'title-tag' );
 
-    //Enable support for Post Thumbnails on posts and pages.
+    /*
+     * Enable support for Post Thumbnails on posts and pages.
+     *
+     * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+     */
     add_theme_support( 'post-thumbnails' );
 
-    //This theme uses wp_nav_menu() in one location.
+    // This theme uses wp_nav_menu() in one location.
     register_nav_menus( array(
-        'primary' => esc_html__( 'Primary Menu', 'base-wp' ),
+        'primary' => esc_html__( 'Primary', 'base-wp' ),
         'header-menu' => esc_html__( 'Header Menu', 'base-wp' ),
     ) );
 
-    //Switch default core markup for search form, comment form, and comments to output valid HTML5.
+    /*
+     * Switch default core markup for search form, comment form, and comments
+     * to output valid HTML5.
+     */
     add_theme_support( 'html5', array(
-        'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
-    ) );
-
-    //Enable support for Post Formats.
-    add_theme_support( 'post-formats', array(
-        'aside', 'image', 'video', 'quote', 'link',
+        'search-form',
+        'comment-form',
+        'comment-list',
+        'gallery',
+        'caption',
     ) );
 
     // Set up the WordPress core custom background feature.
     add_theme_support( 'custom-background', apply_filters( 'base_wp_custom_background_args', array(
-        'default-color' => 'f9f9f9',
-        //'default-image' =>   get_template_directory_uri() . '',
+        'default-color' => 'ffffff',
+        'default-image' => '',
     ) ) );
+
+    // Custom logo support.
+    add_theme_support( 'custom-logo' );
 }
-endif; // base_wp_setup
+endif;
 add_action( 'after_setup_theme', 'base_wp_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
  */
 function base_wp_content_width() {
-    $GLOBALS['content_width'] = apply_filters( 'base_wp_content_width', 1170 );
+    $GLOBALS['content_width'] = apply_filters( 'base_wp_content_width', 1040 );
 }
 add_action( 'after_setup_theme', 'base_wp_content_width', 0 );
 
 /**
- * Custom image size.
+ * Register widget area.
+ *
+ * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-if ( function_exists( 'add_image_size' ) ) { 
-    // post slider image.
-    add_image_size( 'img-slider', 480, 260, true ); // (cropped)
-    // post image.
-    add_image_size( 'img-post', 1170, 370, false ); // (cropped)
+function base_wp_widgets_init() {
+    register_sidebar( array(
+        'name'          => esc_html__( 'Sidebar', 'base-wp' ),
+        'id'            => 'sidebar-1',
+        'description'   => esc_html__( 'Add widgets here.', 'base-wp' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+    register_sidebar( array(
+        'name'          => esc_html__( 'Header widget area', 'base-wp' ),
+        'id'            => 'header-widget',
+        'description'   => esc_html__( 'Add widgets here.', 'base-wp' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h3 class="widget-title">',
+        'after_title'   => '</h3>',
+    ) );
+    for ( $i = 1; $i <= intval( 4 ); $i++ ) {
+        register_sidebar( array(
+            'name' 				=> sprintf( __( 'Footer %d', 'base-wp' ), $i ),
+            'id' 				=> sprintf( 'footer-%d', $i ),
+            'description' 		=> sprintf( esc_html__( 'Widgetized Footer Region %d.','base-wp' ), $i ),
+            'before_widget'     => '<section id="%1$s" class="widget %2$s">',
+            'after_widget' 		=> '</section>',
+            'before_title' 		=> '<h3 class="widget-title">',
+            'after_title' 		=> '</h3>',
+            )
+        );
+    }
+    if( is_edd_activated() || is_woocommerce_activated() ) {
+        register_sidebar( array(
+            'name'          => esc_html__( 'Shop widget area', 'base-wp' ),
+            'id'            => 'sidebar-shop',
+            'description'   => esc_html__( 'Add widgets here.', 'base-wp' ),
+            'before_widget' => '<section id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</section>',
+            'before_title'  => '<h3 class="widget-title">',
+            'after_title'   => '</h3>',
+        ) );
+    }
+
+}
+add_action( 'widgets_init', 'base_wp_widgets_init' );
+
+
+/**
+ * Enqueue scripts and styles.
+ */
+
+function base_wp_scripts() {
+    wp_enqueue_style( 'base-wp-style', get_stylesheet_uri() );
+
+    wp_enqueue_script( 'base-wp-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+
+    wp_enqueue_script( 'base-wp-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+        wp_enqueue_script( 'comment-reply' );
+    }
+    wp_enqueue_script( 'base-wp-theme', get_template_directory_uri() . '/js/theme.js', array('jquery'), '1.0', true );
+
+    //conditional ie scripts
+    global $wp_scripts;
+    wp_enqueue_script('igthemes-ie9',
+                 get_template_directory_uri() . '/js/ie-fix.js',
+                 array(),
+                 '1.0',
+                 false );
+    wp_enqueue_script('igthemes-ie9');
+    wp_script_add_data('igthemes-ie9', 'conditional', 'lt IE 9');
+}
+add_action( 'wp_enqueue_scripts', 'base_wp_scripts' );
+
+//Gooogle fonts
+function base_wp_google_fonts() {
+        wp_enqueue_style( 'base-wp-fonts', '//fonts.googleapis.com/css?family='. apply_filters( 'igthemes_google_font', 'Open+Sans:300,300i,400,400i,700,700i&subset=latin-ext'));
 }
 
-//Implement the Custom Header feature.
-require get_template_directory() . '/core-framework/custom-header.php';
+add_action( 'wp_enqueue_scripts', 'base_wp_google_fonts' );
 
-//Custom template tags for this theme.
-require get_template_directory() . '/core-framework/template-tags.php';
+/**
+ * Custom template tags for this theme.
+ */
+require get_template_directory() . '/inc/template-tags.php';
 
-//Custom functions that act independently of the theme templates.
-require get_template_directory() . '/core-framework/extras.php';
+/**
+ * Custom functions that act independently of the theme templates.
+ */
+require get_template_directory() . '/inc/extras.php';
 
-//Load Jetpack compatibility file.
-require get_template_directory() . '/core-framework/jetpack.php';
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/inc/options/customizer.php';
+/**
+ * Welcome screen.
+ */
+require get_template_directory() . '/inc/admin/welcome/welcome-screen.php';
 
-//Core Framework.
-require get_template_directory() . '/core-framework/func/function-action.php';
-require get_template_directory() . '/core-framework/func/function-widget.php';
-require get_template_directory() . '/core-framework/func/function-script.php';
-require get_template_directory() . '/core-framework/partials/page-metabox.php';
-if ( is_admin() ) {
-    require get_template_directory() . '/core-framework/welcome/welcome-screen.php';
+/**
+ * Template functions an actionss.
+ */
+
+require get_template_directory() . '/inc/assets/template-functions.php';
+require get_template_directory() . '/inc/assets/template-actions.php';
+require get_template_directory() . '/inc/assets/post-actions.php';
+require get_template_directory() . '/inc/assets/page-actions.php';
+require get_template_directory() . '/inc/assets/jetpack/jetpack-funtions.php';
+require get_template_directory() . '/inc/assets/beaver-builder/beaver-builder.php';
+require get_template_directory() . '/inc/plugins/tgm.php';
+
+/*----------------------------------------------------------------------
+# EDD SUPPORT
+------------------------------------------------------------------------*/
+if ( ! function_exists( 'is_edd_activated' ) ) {
+    function is_edd_activated() {
+        return class_exists( 'Easy_Digital_Downloads' ) ? true : false;
+    }
 }
-//Loads the Options Panel
-require get_template_directory() . '/core-framework/options/options-framework.php';
-// Loads options.php
-require get_template_directory() . '/options.php';
+if (is_edd_activated()) {
+    require get_template_directory() . '/inc/assets/edd/edd-functions.php';
+    require get_template_directory() . '/inc/assets/edd/download-actions.php';
+}
 
-//widgets
-require get_template_directory() . '/core-framework/widgets/social-widget.php';
-require get_template_directory() . '/core-framework/widgets/recent-posts-widget.php';
-require get_template_directory() . '/core-framework/widgets/adsense-widget.php';
+/*----------------------------------------------------------------------
+# DECLARE WOOCOMMERCE SUPPORT
+------------------------------------------------------------------------*/
+add_action( 'after_setup_theme', 'igthemes_woocommerce_support' );
+function igthemes_woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
 
-/*-----------------------------------------------
- * Woocommerce support.
- -----------------------------------------------*/
-add_theme_support( 'woocommerce' );
+// Check if woocommerce is active and prevent fatal error
+if ( ! function_exists( 'is_woocommerce_activated' ) ) {
+    function is_woocommerce_activated() {
+        return class_exists( 'woocommerce' ) ? true : false;
+    }
+}
+
+if (is_woocommerce_activated()) {
+    require get_template_directory() . '/inc/assets/woocommerce/wc-functions.php';
+}

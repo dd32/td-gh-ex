@@ -1,8 +1,10 @@
 <?php
 /**
- * The sidebar containing the shop widget area.
+ * The sidebar containing the main widget area.
  *
- * @package Base WP
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package Base_WP
  */
 
 if ( ! is_active_sidebar( 'sidebar-shop' ) ) {
@@ -10,14 +12,6 @@ if ( ! is_active_sidebar( 'sidebar-shop' ) ) {
 }
 ?>
 
-<?php igthemes_before_sidebar(); ?>
-
-<div id="secondary" class="widget-area" role="complementary">
-
-<?php igthemes_before_sidebar_content(); ?>
+<aside id="secondary" class="widget-area" role="complementary">
     <?php dynamic_sidebar( 'sidebar-shop' ); ?>
-<?php igthemes_after_sidebar_content(); ?>
-
-</div><!-- #secondary -->
-
-<?php igthemes_after_sidebar(); ?>
+</aside><!-- #secondary -->

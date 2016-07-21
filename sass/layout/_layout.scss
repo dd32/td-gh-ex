@@ -1,0 +1,50 @@
+@include media(769px) {
+    #primary-menu,
+    .site-content {
+        @include outer-container;
+        display: block;
+        clear: both;
+        padding-left: $base__spacing;
+        padding-right: $base__spacing;
+    }
+    .content-area {
+        @include span-columns(8);
+    }
+    .widget-area {
+        @include span-columns(4);
+        @include omega();
+        padding: 2em 0;
+    }
+    .sidebar-left {
+        .content-area {
+            @include span-columns(9);
+            @include shift(3);
+        }
+        .widget-area {
+            @include span-columns(3);
+             @include shift(-12);
+        }
+    }
+    .page-template-page-focus {
+            .content-area {
+                @include span-columns(10);
+                @include shift(1);
+            }
+        }
+    .sidebar-left .full-width,
+    .full-width {
+        .content-area {
+            @include span-columns(12 of 12);
+            @include shift(0);
+        }
+    }
+}
+.footer-widget-region,
+#primary-menu,
+.site-content {
+    padding-left: $base__spacing;
+    padding-right: $base__spacing;
+}
+.content-area {
+    padding: 2em 0;
+}

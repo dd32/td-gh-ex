@@ -1,17 +1,22 @@
 <?php
 /**
- * The template for displaying archive pages.
+ * The template for displaying all woocommece pages.
  *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
- * @package Base WP
+ * @package Basic Shop
  */
 
 get_header(); ?>
+
     <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
-            <?php woocommerce_breadcrumb(); ?>
-            <?php woocommerce_content(); ?>
+            <?php
+                  woocommerce_content();
+            ?>
         </main><!-- #main -->
     </div><!-- #primary -->
-<?php get_footer(); ?>
+<?php
+/**
+ * @hooked igthemes_woocommerce_sidebar 10
+ */
+get_sidebar('shop');
+get_footer();

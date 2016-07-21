@@ -4,7 +4,9 @@
  *
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
- * @package Base WP
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package Base_WP
  */
 
 ?><!DOCTYPE html>
@@ -19,18 +21,29 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
-    <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'base-wp' ); ?></a>
+<div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'base-wp' ); ?></a>
 
-<header id="masthead" class="site-header" role="banner">
+    <header id="masthead" class="site-header" role="banner">
 
-<?php igthemes_header(); ?>
+    <?php
+    /**
+     * Functions hooked in to igthemes_before_content
+     */
+    do_action( 'igthemes_header' ); ?>
 
-</header><!-- #masthead -->
+    </header><!-- #masthead -->
 
-<?php igthemes_after_header();?>
+    <?php
+    /**
+     * Functions hooked in to igthemes_before_content
+     */
+    do_action( 'igthemes_before_content' ); ?>
 
-<div class="grid">
-<div class="row">
-<div id="content" class="site-content">
-<?php igthemes_before_site_content();?>
+    <div id="content" class="site-content">
+
+    <?php
+    /**
+     * Functions hooked in to igthemes_content_top
+     */
+    do_action( 'igthemes_content_top' ); ?>

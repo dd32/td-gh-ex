@@ -1,0 +1,39 @@
+.site-header {
+    background: #fff;
+    .site-branding {
+        @include outer-container();
+        display: block;
+        text-align: center;
+        h1.site-title a {
+            margin: 15px 0 10px 0;
+            padding: 0;
+            display: block;
+            font-weight: 400;
+        }
+        .site-description {
+            display: block;
+            font-weight: 300;
+            margin: 0 0 25px 0;
+            padding: 0;
+            font-size: 1.2em;
+        }
+    }
+    //header navigation
+    .header-nav {
+        text-align: center;
+        background: lighten($color__light-gray,20%);
+        border-bottom: 1px solid $color__light-gray;
+        ul {
+            @include outer-container();
+            margin-bottom: 0;
+            display: block;
+            list-style: none;
+            li {
+                display: inline-block;
+                *display: inline;
+                padding:.8em;
+                font-size: .95em;
+            }
+        }
+    }
+}

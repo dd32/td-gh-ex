@@ -1,36 +1,44 @@
-base-wp
-===
-* Contributors: iografica
-* Requires at least: 3.5
-* Tested up to: 4.2
-* License: GPLv2 or later
-* License URI: http://www.gnu.org/licenses/gpl-2.0.html
+=== Base WP ===
 
-Description
--
-Base WP is a basic blog or business, responsive and clean coded, WordPress theme. Base WP is WooCommerce compatible, multilingual ready, SEO friendly and cross-browser compatible. You can customize the theme via Customizer adding a home page recent posts slider, a products slider, your social profiles icons, changing background color and more. The theme also have built in some custom widgets to extend the standard WordPress functionalities.
+Contributors: iografica
+Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, footer-widgets, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
+Requires at least: 4.0
+Tested up to: 4.4.2
+Stable tag: 1.0.0
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Installation
--
-1. Download the theme.
-2. Unzip the folder into the /wp-content/themes/ directory.
-3. Activate the thees through the Themes menu in WordPress.
+Base WP is the perfect theme for your next blog or e-commerce project.
 
-License
--
+== Description ==
+
+Base WP is the perfect theme for your next blog or e-commerce project. There are several layout & color options to personalize your site, multiple widget regions, a responsive design and much more. Base WP is e-commerce (WooCommerce and Easy Digital Downloads) ready and fully integrated with the most popular free plugins for WordPress like Beaver Page Builder, Yoast Seo, JetPack and many more.
+
+== Installation ==
+
+1. In your admin panel, go to Appearance > Themes and click the Add New button.
+2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
+3. Click Activate to use your new theme right away.
+
+== Frequently Asked Questions ==
+
+= Does this theme support any plugins? =
+
+Base WP includes support for Infinite Scroll in Jetpack.
+
+== Credits ==
+
 * This theme, like WordPress, is licensed under the GPL 2.0.
 * This theme was built using _s.(http://underscores.me) that is licensed under GPL license.
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2015 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
-* Nivo Lightbox, copyright 2013 Dev7studios, licensed under MIT license, source: http://dev7studios.com/nivo-lightbox
-* Slick, copyright 2014 Ken Wheeler, licensed under MIT license, source: https://github.com/kenwheeler/slick/
 * HTML5 Shiv, copyright 2014 Alexander Farkas licensed under the MIT/GPL2 License, source: https://github.com/aFarkas/html5shiv/
 * Respond.js, copyright 2014 Scott Jehl licensed under the MIT license, source: http://j.mp/respondjs
 * Screenshot images are licensed under Creative Commons Deed CC0.
 
 All Javascript is located in /js/ with license headers where appropriate.
 
-Changelog
--
+== Changelog ==
+
 == 1.00 ==
 * Initial release.
 
@@ -163,8 +171,20 @@ Changelog
 
 == 1.33 ==
 * Moved css and js files.
-* Fixed facebook url in the IG Social Widget.
+* Fixed Facebook url in the IG Social Widget.
 * Fixed little bug in IG Recent Posts.
 
 == 1.34 ==
 * Fixed content display error.
+
+== 1.35 ==
+* NOTE BEFORE UPDATE: After update your settings should be lost, backup all settings before to make the update.
+* Added support for Easy Digital Downloads plugin.
+* Added support for Beaver Builder plugin.
+* Added support for NavXT Breadcrumb.
+* Added support for WP-PageNavi.
+* Theme framework updated.
+* Added more advanced options for free.
+* Removed the posts slider (now you can use IG Posts Slider plugin).
+* Added a widget area to the header.
+* Removed custom widgets (they will implemented in the next updates).

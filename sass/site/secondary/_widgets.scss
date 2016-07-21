@@ -1,0 +1,157 @@
+h3.widget-title {
+    text-shadow: 1px 1px 0 #fff;
+    background-color: lighten($color__light-gray,20%);
+    margin: -8px -13px 10px;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-bottom: 1px solid $color__gray;
+}
+
+.widget {
+    margin: 0 0 1.5em 0;
+    border: 1px solid $color__gray;
+    padding:8px 13px;
+    background:rgba(255, 255, 255, 0.8);
+    -moz-box-shadow: 0px 2px 2px $color__gray;
+    -webkit-box-shadow: 0px 2px 2px $color__gray;
+    box-shadow: 0px 2px 2px $color__gray;
+
+	/* Make sure select elements fit in widgets. */
+	select {
+		max-width: 100%;
+	}
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        li {
+            border-bottom: 1px solid $color__gray;
+            margin: -8px -12px 8px;
+            padding: 10px;
+            &:last-child {
+                border-bottom: none;
+            }
+            a {
+                display: inline-block;
+            }
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            border: none;
+            li {
+                border-bottom:none;
+                padding:0 12px;
+                margin:0px;
+                a {
+                    padding-left: 20px;
+                }
+
+            }
+        }
+    }
+}
+.header-widget-region {
+    margin: 2em 0 3em 0;
+    display: inline-block;
+    width: 100%;
+    .widget {
+        padding: 0;
+    }
+}
+.footer-widget-region {
+    margin-top: 3em;
+}
+
+//categories and archives
+.widget_archive,
+.widget_categories {
+    ul {
+        li {
+
+        }
+    }
+}
+//recent posts
+.widget_recent_entries {
+    ul {
+        li {
+
+        }
+    }
+}
+//recent comments
+.widget_recent_comments {
+    ul {
+        li {
+        }
+    }
+}
+//calendar 
+.widget_calendar {
+    #wp-calendar {
+        background: rgba(255,255,255,.9);
+    }
+    
+}
+//tag 
+.widget_tag_cloud {
+    a {
+        font-size: 9pt !important;
+        background:$color__light-gray;
+        margin: 2px 0 2px 2px;
+        padding: 4px 8px;
+        display: inline-block;
+    }
+    
+}
+.widget select {
+    max-width: 100%;
+}
+
+//widget icon
+.widget_archive h3.widget-title:before, .widget_calendar h3.widget-title:before,
+.widget_categories h3.widget-title:before, .widget_igthemes_recent_posts_widget h3.widget-title:before,
+.widget_meta h3.widget-title:before, .widget_nav_menu h3.widget-title:before,
+.widget_recent_comments h3.widget-title:before, .widget_recent_entries h3.widget-title:before,
+.widget_search h3.widget-title:before, .widget_tag_cloud h3.widget-title:before,
+.widget_text h3.widget-title:before {
+    font-family: 'simple-line-icons';
+    margin-right: 5px;
+}
+//icons
+.widget_archive h3.widget-title:before {
+    content: "\e03f";
+}
+
+.widget_categories h3.widget-title:before {
+    content: "\e039";
+}
+
+.widget_recent_comments h3.widget-title:before {
+    content: "\e04a";
+}
+
+.widget_recent_entries h3.widget-title:before {
+    content: "\e085";
+}
+
+.widget_calendar h3.widget-title:before {
+    content: "\e075";
+}
+
+.widget_nav_menu h3.widget-title:before {
+    content: "\e08d";
+}
+
+.widget_tag_cloud h3.widget-title:before {
+    content: "\e055";
+}
+
+.widget_search h3.widget-title:before {
+    content: "\e090";
+}
+
+.widget_text h3.widget-title:before {
+    content: "\e060";
+}
