@@ -1,0 +1,50 @@
+.site-footer {
+    background: #ffffff;
+    border-top: 1px solid $color__gray;
+    &:before {
+        width: 100%;
+        display: block;
+        content: "";
+        position: absolute;
+        height: 5px;
+        background: -webkit-radial-gradient(50% -3%, ellipse cover, rgba(0, 0, 0, 0.2), rgba(97, 97, 97, 0) 40%);
+        background: radial-gradient(ellipse at 50% 0%, rgba(0, 0, 0, 0.2), rgba(97, 97, 97, 0) 80%);
+    }
+    .footer-widget-region {
+        clear: both;
+        display: block;
+    }
+    .scroll-top,
+    .social-url {
+        clear: both;
+        display: block;
+        text-align: center;
+    }
+    .site-info {
+        text-align: center;
+        font-size: .9em;
+        padding: $base__spacing 0;
+    }
+    .footer-text {
+        @extend .site-info;
+        border:none;
+        padding-top: 0;
+    }
+    .scroll-top {
+        text-align: center;
+        margin-top: $base__spacing;
+        #scrolltop {
+            font-size: 1.6em;
+            border: 1px solid;
+            @include border-radius(100%);
+            padding: .2em .4em;
+        }
+    }
+    .social-url {
+        a {
+            font-size: 1.1em;
+            margin: 1em .5em;
+            display: inline-block;
+        }
+    }
+}

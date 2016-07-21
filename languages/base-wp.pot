@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Base WP\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-11-24 11:59+0100\n"
-"POT-Revision-Date: Tue Feb 09 2016 13:32:16 GMT+0100 (CET)\n"
+"POT-Revision-Date: Thu Jul 21 2016 15:49:49 GMT+0200 (CEST)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: iografica <grafico.roberto@gmail.com>\n"
 "Language-Team: Iografica Themes <info@iograficathemes.com>\n"
@@ -27,15 +27,21 @@ msgstr ""
 "X-Poedit-SearchPath-0: /Users/Roberto/Library/Containers/com.bitnami."
 "wordpress/Data/app-3_8_1/apps/wordpress/htdocs/wp-content/themes/onepage"
 
-#: ../404.php:15
+#: ../404.php:17
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: ../404.php:19
-msgid "It looks like nothing was found at this location."
+#: ../404.php:21
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
 msgstr ""
 
-#: ../comments.php:31
+#: ../404.php:33
+msgid "Most Used Categories"
+msgstr ""
+
+#: ../comments.php:30
 #, php-format
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
@@ -43,15 +49,15 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../comments.php:40 ../comments.php:61
+#: ../comments.php:39 ../comments.php:60
 msgid "Comment navigation"
 msgstr ""
 
-#: ../comments.php:43 ../comments.php:64
+#: ../comments.php:42 ../comments.php:63
 msgid "Older Comments"
 msgstr ""
 
-#: ../comments.php:44 ../comments.php:65
+#: ../comments.php:43 ../comments.php:64
 msgid "Newer Comments"
 msgstr ""
 
@@ -59,512 +65,553 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: ../functions.php:35
-msgid "Primary Menu"
+#: ../functions.php:47
+msgid "Primary"
 msgstr ""
 
-#: ../functions.php:36 ../options.php:71
+#: ../functions.php:48
 msgid "Header Menu"
 msgstr ""
 
-#: ../header.php:23
+#: ../functions.php:94
+msgid "Sidebar"
+msgstr ""
+
+#: ../functions.php:96 ../functions.php:105 ../functions.php:127
+msgid "Add widgets here."
+msgstr ""
+
+#: ../functions.php:103
+msgid "Header widget area"
+msgstr ""
+
+#: ../functions.php:113
+#, php-format
+msgid "Footer %d"
+msgstr ""
+
+#: ../functions.php:115
+#, php-format
+msgid "Widgetized Footer Region %d."
+msgstr ""
+
+#: ../functions.php:125
+msgid "Shop widget area"
+msgstr ""
+
+#: ../header.php:25
 msgid "Skip to content"
 msgstr ""
 
-#: ../options.php:14
-msgid " - only premium"
+#: ../inc/admin/welcome/sections/getting-started.php:11 ..
+#: /inc/admin/welcome/sections/getting-started.php:25
+#, php-format
+msgid "%s Premium"
 msgstr ""
 
-#: ../options.php:30 ../core-framework/welcome/sections/intro.php:15
-msgid "UPGRADE TO PREMIUM"
+#: ../inc/admin/welcome/sections/getting-started.php:13
+msgid "Remember to activate your license key to get sproduct support and updates."
 msgstr ""
 
-#: ../options.php:35
-msgid "General"
+#: ../inc/admin/welcome/sections/getting-started.php:16
+msgid "view license key"
 msgstr ""
 
-#: ../options.php:40
-msgid "Layout"
+#: ../inc/admin/welcome/sections/getting-started.php:19
+msgid "Having troubles?"
 msgstr ""
 
-#: ../options.php:44 ../options.php:211
-msgid "Main Layout"
-msgstr ""
-
-#: ../options.php:48 ../options.php:271
-msgid "Single Layout"
-msgstr ""
-
-#: ../options.php:52 ../options.php:306
-msgid "Shop Layout"
-msgstr ""
-
-#: ../options.php:58
-msgid "Style"
-msgstr ""
-
-#: ../options.php:62
-msgid "Body"
-msgstr ""
-
-#: ../options.php:66
-msgid "Header"
-msgstr ""
-
-#: ../options.php:76
-msgid "Main Menu"
-msgstr ""
-
-#: ../options.php:81
-msgid "Buttons"
-msgstr ""
-
-#: ../options.php:85 ../options.php:91
-msgid "Footer"
-msgstr ""
-
-#: ../options.php:97
-msgid "Social"
-msgstr ""
-
-#: ../options.php:103
-msgid "Advanced"
-msgstr ""
-
-#: ../options.php:115 ../core-framework/welcome/sections/intro.php:16
+#: ../inc/admin/welcome/sections/getting-started.php:21
+#, php-format
 msgid ""
-"If you like this theme, considering supporting development by purchasing the "
-"premium version."
+"<a href=\"%s\" target=\"_blank\">Ask for support</a> and talk with our support "
+"team, we will glad to help you."
 msgstr ""
 
-#: ../options.php:116
-msgid "Main premium features:"
+#: ../inc/admin/welcome/sections/getting-started.php:27
+#, php-format
+msgid ""
+"%s Premium expands the already powerful free version of this theme and gives "
+"access to our <b>priority support</b> service."
 msgstr ""
 
-#: ../options.php:117
-msgid "- All options enabled"
-msgstr ""
-
-#: ../options.php:118
-msgid "- Premium shortcodes included"
-msgstr ""
-
-#: ../options.php:119
-msgid "- Priority support"
-msgstr ""
-
-#: ../options.php:120
-msgid "- Money back guarantee"
-msgstr ""
-
-#: ../options.php:121
+#: ../inc/admin/welcome/sections/getting-started.php:30
 msgid "upgrade to premium"
 msgstr ""
 
-#: ../options.php:137
-msgid "Site Title"
+#: ../inc/admin/welcome/sections/getting-started.php:32
+msgid "Listed below are only the main extras that the paid version brings"
 msgstr ""
 
-#: ../options.php:149
-msgid "Tagline"
+#: ../inc/admin/welcome/sections/getting-started.php:35
+msgid "Layout Settings"
 msgstr ""
 
-#: ../options.php:160
-msgid "Site Logo"
+#: ../inc/admin/welcome/sections/getting-started.php:38
+msgid "Show posts content as excerpt or full content in index page"
 msgstr ""
 
-# @ onepage
-#: ../options.php:171
-msgid "Lightbox"
-msgstr ""
-
-# @ onepage
-#: ../options.php:172
-msgid "Enable image lightbox"
-msgstr ""
-
-# @ onepage
-#: ../options.php:184
-msgid "Breadcrumb"
-msgstr ""
-
-#: ../options.php:185
-msgid "Enable breadcrumb (it will use WordPress SEO breadcrumb if available)"
-msgstr ""
-
-#: ../options.php:196
-msgid "Shortcodes"
-msgstr ""
-
-#: ../options.php:197
-msgid "Enable theme shortcodes"
-msgstr ""
-
-#: ../options.php:212
-msgid "Select the index page layout"
-msgstr ""
-
-#: ../options.php:223
-msgid "Posts Slide"
-msgstr ""
-
-#: ../options.php:224
-msgid "Show a carousel of the latest posts"
-msgstr ""
-
-#: ../options.php:235
-msgid "Show excerpt"
-msgstr ""
-
-#: ../options.php:236
-msgid "Show posts content as excerpt"
-msgstr ""
-
-#: ../options.php:248
-msgid "Index featured image"
-msgstr ""
-
-#: ../options.php:249
+#: ../inc/admin/welcome/sections/getting-started.php:41
 msgid "Show featured images in index page"
 msgstr ""
 
-#: ../options.php:260
-msgid "Numeric pagination"
+#: ../inc/admin/welcome/sections/getting-started.php:44
+msgid "Shop Layout"
 msgstr ""
 
-#: ../options.php:261
-msgid "Use numeric pagination in index page"
+#: ../inc/admin/welcome/sections/getting-started.php:47
+msgid "Select the shop layout"
 msgstr ""
 
-#: ../options.php:272
-msgid "Select the single post layout"
+#: ../inc/admin/welcome/sections/getting-started.php:50
+msgid "Choose how many products display per page"
 msgstr ""
 
-#: ../options.php:284
-msgid "Post featured image"
+#: ../inc/admin/welcome/sections/getting-started.php:53
+msgid "Header Layout"
 msgstr ""
 
-#: ../options.php:285
-msgid "Show featured image in post page"
+#: ../inc/admin/welcome/sections/getting-started.php:56
+msgid "Change the header layout"
 msgstr ""
 
-#: ../options.php:295
-msgid "Meta Data"
+#: ../inc/admin/welcome/sections/getting-started.php:59
+msgid "Typography Settings"
 msgstr ""
 
-#: ../options.php:296
-msgid "Hide post meta data"
+#: ../inc/admin/welcome/sections/getting-started.php:62
+msgid "Add custom fonts for the headings and for the body text"
 msgstr ""
 
-#: ../options.php:307
-msgid "Select the shop page layout"
+#: ../inc/admin/welcome/sections/getting-started.php:65
+msgid "Change the font size for the body text and for the headings"
 msgstr ""
 
-#: ../options.php:317
-msgid "Products number"
+#: ../inc/admin/welcome/sections/getting-started.php:68
+msgid "Footer Layout"
 msgstr ""
 
-#: ../options.php:318
-msgid "The number of products displayed per page"
+#: ../inc/admin/welcome/sections/getting-started.php:71
+msgid "Remove footer credits"
 msgstr ""
 
-#: ../options.php:329
-msgid "Products Slide"
+#: ../inc/admin/welcome/sections/getting-started.php:74
+msgid "Add custom text"
 msgstr ""
 
-#: ../options.php:330
-msgid "Show a carousel of the latest products"
+#: ../inc/admin/welcome/sections/getting-started.php:77
+msgid "Shop Buttons"
 msgstr ""
 
-#: ../options.php:343
-msgid "Header Style"
+#: ../inc/admin/welcome/sections/getting-started.php:80
+msgid "Change the colors of the shop buttons"
 msgstr ""
 
-#: ../options.php:344
-msgid "Header custom colors"
+#: ../inc/admin/welcome/sections/getting-started.php:83
+msgid "Advanced Settings"
 msgstr ""
 
-#: ../options.php:352
-msgid "Text color"
-msgstr ""
-
-#: ../options.php:360
-msgid "Header Menu Style"
-msgstr ""
-
-#: ../options.php:361
-msgid "Header menu custom colors"
-msgstr ""
-
-#: ../options.php:371
-msgid "Main Menu Style"
-msgstr ""
-
-#: ../options.php:372
-msgid "Main menu custom colors"
-msgstr ""
-
-#: ../options.php:382
-msgid "Text Style"
-msgstr ""
-
-#: ../options.php:383
-msgid "Text custom colors"
-msgstr ""
-
-#: ../options.php:393
-msgid "Links Style"
-msgstr ""
-
-#: ../options.php:394
-msgid "Links custom colors"
-msgstr ""
-
-#: ../options.php:404
-msgid "Buttons Style"
-msgstr ""
-
-#: ../options.php:405
-msgid "Buttons custom colors"
-msgstr ""
-
-#: ../options.php:415
-msgid "Footer Style"
-msgstr ""
-
-#: ../options.php:416
-msgid "Footer custom colors"
-msgstr ""
-
-#: ../options.php:429
-msgid "Footer Text"
-msgstr ""
-
-#: ../options.php:430
-msgid "Footer custom text"
-msgstr ""
-
-#: ../options.php:440
-msgid "Credits Link"
-msgstr ""
-
-#: ../options.php:441
-msgid "Remove author credits"
-msgstr ""
-
-#: ../options.php:457
-msgid "Facebook url"
-msgstr ""
-
-#: ../options.php:468
-msgid "Twitter url"
-msgstr ""
-
-#: ../options.php:479
-msgid "Google plus url"
-msgstr ""
-
-#: ../options.php:490
-msgid "Pinterest url"
-msgstr ""
-
-#: ../options.php:501
-msgid "Tumblr url"
-msgstr ""
-
-#: ../options.php:512
-msgid "Instagram url"
-msgstr ""
-
-#: ../options.php:523
-msgid "Linkedin url"
-msgstr ""
-
-#: ../options.php:534
-msgid "Dribble url"
-msgstr ""
-
-#: ../options.php:545
-msgid "Vimeo url"
-msgstr ""
-
-#: ../options.php:556
-msgid "Youtube url"
-msgstr ""
-
-#: ../options.php:567
-msgid "RSS url"
-msgstr ""
-
-#: ../options.php:581
-msgid "Custom CSS"
-msgstr ""
-
-#: ../options.php:582
+#: ../inc/admin/welcome/sections/getting-started.php:86
 msgid "Add your custom css code"
 msgstr ""
 
-#: ../options.php:592
-msgid "Custom Javascript"
-msgstr ""
-
-#: ../options.php:593
+#: ../inc/admin/welcome/sections/getting-started.php:89
 msgid "Add your custom js code"
 msgstr ""
 
-#. Name of the template
-msgid "Full Width"
+#: ../inc/admin/welcome/sections/getting-started.php:95
+msgid "Theme Documentation"
 msgstr ""
 
-#. Name of the template
-msgid "Sidebar Left"
-msgstr ""
-
-#: ../search.php:18
+#: ../inc/admin/welcome/sections/getting-started.php:96
 #, php-format
-msgid "Search Results for: %s"
+msgid ""
+"Need any help to setup and configure %s? Please have a look at our "
+"documentations instructions."
 msgstr ""
 
-#: ../core-framework/template-tags.php:26
+#: ../inc/admin/welcome/sections/getting-started.php:98
+msgid "View Documentation"
+msgstr ""
+
+#: ../inc/admin/welcome/sections/getting-started.php:100
+msgid "Theme Customizer"
+msgstr ""
+
+#: ../inc/admin/welcome/sections/getting-started.php:101
 #, php-format
-msgctxt "post date"
-msgid "Posted on %s"
+msgid ""
+"%s supports the Theme Customizer for all theme settings. Click \"Customize\" "
+"to start customize your site."
 msgstr ""
 
-#: ../core-framework/template-tags.php:31
+#: ../inc/admin/welcome/sections/getting-started.php:103
+msgid "Start Customize"
+msgstr ""
+
+#: ../inc/admin/welcome/sections/getting-started.php:107
+msgid "Theme Extension"
+msgstr ""
+
+#: ../inc/admin/welcome/sections/getting-started.php:110
+msgid "IG Side Menu"
+msgstr ""
+
+#: ../inc/admin/welcome/sections/getting-started.php:114
+msgid "View More"
+msgstr ""
+
+#: ../inc/admin/welcome/sections/getting-started.php:125
+msgid "Free themes"
+msgstr ""
+
+#: ../inc/admin/welcome/sections/getting-started.php:147 ..
+#: /inc/admin/welcome/sections/getting-started.php:180 ..
+#: /inc/admin/welcome/sections/getting-started.php:209 ..
+#: /inc/admin/welcome/sections/getting-started.php:231
+msgid "An error has occurred"
+msgstr ""
+
+#: ../inc/admin/welcome/sections/getting-started.php:158
+msgid "installed"
+msgstr ""
+
+#: ../inc/admin/welcome/sections/getting-started.php:169
+msgid "Install Now"
+msgstr ""
+
+#: ../inc/admin/welcome/sections/getting-started.php:185
+msgid "Free plugins"
+msgstr ""
+
+#: ../inc/admin/welcome/sections/getting-started.php:221
+msgid "Download Now"
+msgstr ""
+
+#: ../inc/admin/welcome/sections/tabs.php:11
+msgid ""
+"Here you can read the documentation and know how to get the most out of your "
+"new theme."
+msgstr ""
+
+#: ../inc/admin/welcome/sections/tabs.php:13
+msgid "Getting Started"
+msgstr ""
+
+#: ../inc/admin/welcome/sections/tabs.php:14
+msgid "Resources"
+msgstr ""
+
+#: ../inc/admin/welcome/sections/wp-resources.php:16
+msgid "Recommended Resources"
+msgstr ""
+
+#: ../inc/admin/welcome/sections/wp-resources.php:17
 #, php-format
-msgctxt "post author"
-msgid "by %s"
+msgid ""
+"%s works well with the following WordPress free and premium plugins and "
+"services. Feel free to give they a look."
 msgstr ""
 
-#: ../core-framework/template-tags.php:48 ../core-framework/template-tags.php:54
-msgid ", "
+#: ../inc/admin/welcome/sections/wp-resources.php:26
+msgid "Shortpixel"
 msgstr ""
 
-#: ../core-framework/template-tags.php:50 ../core-framework/template-tags.php:56
+#: ../inc/admin/welcome/sections/wp-resources.php:29
+msgid "Speed up your website with beautifully optimized images."
+msgstr ""
+
+#: ../inc/admin/welcome/sections/wp-resources.php:32 ..
+#: /inc/admin/welcome/sections/wp-resources.php:52 ..
+#: /inc/admin/welcome/sections/wp-resources.php:71 ..
+#: /inc/admin/welcome/sections/wp-resources.php:90 ..
+#: /inc/admin/welcome/sections/wp-resources.php:109
+msgid "plugin active"
+msgstr ""
+
+#: ../inc/admin/welcome/sections/wp-resources.php:35 ..
+#: /inc/admin/welcome/sections/wp-resources.php:55 ..
+#: /inc/admin/welcome/sections/wp-resources.php:74 ..
+#: /inc/admin/welcome/sections/wp-resources.php:93 ..
+#: /inc/admin/welcome/sections/wp-resources.php:112
+msgid "view now"
+msgstr ""
+
+#: ../inc/admin/welcome/sections/wp-resources.php:45
+msgid "Yoast SEO"
+msgstr ""
+
+#: ../inc/admin/welcome/sections/wp-resources.php:48
+msgid ""
+"Write better content and have a fully optimized WordPress site using Yoast "
+"SEO plugin\n"
+"."
+msgstr ""
+
+#: ../inc/admin/welcome/sections/wp-resources.php:65
+msgid "WooCommerce"
+msgstr ""
+
+#: ../inc/admin/welcome/sections/wp-resources.php:68
+msgid ""
+"WooCommerce is a powerful, extendable eCommerce plugin that helps you sell "
+"anything."
+msgstr ""
+
+#: ../inc/admin/welcome/sections/wp-resources.php:84
+msgid "Beaver Builder"
+msgstr ""
+
+#: ../inc/admin/welcome/sections/wp-resources.php:87
+msgid ""
+"Easily build beautiful home pages, professional landing pages, and more with "
+"this content builder."
+msgstr ""
+
+#: ../inc/admin/welcome/sections/wp-resources.php:103
+msgid "Easy Digital Downloads"
+msgstr ""
+
+#: ../inc/admin/welcome/sections/wp-resources.php:106
+msgid ""
+"Sell digital downloads through WordPress with this complete digital "
+"downloads management plugin."
+msgstr ""
+
+#: ../inc/admin/welcome/welcome-screen.php:40
+msgid "Thanks for choosing "
+msgstr ""
+
+#: ../inc/admin/welcome/welcome-screen.php:41
 #, php-format
-msgid "%1$s"
+msgid ""
+"! You can read documentation to how get the most out of your new theme on "
+"the %swelcome screen%s."
 msgstr ""
 
-#: ../core-framework/template-tags.php:62
-msgid "Leave a comment"
-msgstr ""
-
-#: ../core-framework/template-tags.php:62
-msgid "1 Comment"
-msgstr ""
-
-#: ../core-framework/template-tags.php:62
+#: ../inc/admin/welcome/welcome-screen.php:45
 #, php-format
-msgid "% Comments"
+msgid "Get started with %s"
+msgstr ""
+
+#: ../inc/assets/edd/download-actions.php:51 ../inc/assets/post-actions.php:65
+#, php-format
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: ../inc/assets/edd/download-actions.php:56 ../inc/assets/page-actions.php:37 ..
+#: /inc/assets/post-actions.php:70
+msgid "Pages:"
 msgstr ""
 
 #. translators: %s: Name of current post
 #. translators: %s: Name of current post
-#: ../core-framework/template-tags.php:69 ../template-parts/content-page.php:36
+#: ../inc/assets/page-actions.php:57 ../inc/template-tags.php:111
 #, php-format
 msgid "Edit %s"
 msgstr ""
 
-#: ../core-framework/template-tags.php:98
-msgid "&#8592;"
-msgstr ""
-
-#: ../core-framework/template-tags.php:99
-msgid "&#8594;"
-msgstr ""
-
-#: ../core-framework/func/function-action.php:134
+#: ../inc/assets/template-actions.php:23
 msgid "Menu"
 msgstr ""
 
-#: ../core-framework/func/function-action.php:162
-msgid "Back to top"
+#: ../inc/assets/template-actions.php:72
+#, php-format
+msgid "%1$s designed by %2$s."
 msgstr ""
 
-#: ../core-framework/func/function-action.php:174
-msgid "Proudly powered by "
+#: ../inc/assets/template-functions.php:55
+msgid "Home"
 msgstr ""
 
-#: ../core-framework/func/function-action.php:174
-msgid "http://wordpress.org/"
-msgstr ""
-
-#: ../core-framework/func/function-action.php:174
+#: ../inc/assets/template-functions.php:97 ../inc/assets/template-functions.php:99
 #, php-format
 msgid "%s"
 msgstr ""
 
-#: ../core-framework/func/function-action.php:176
+#: ../inc/options/inc/customizer-custom-controls.php:71
+msgid ""
+"Base WP Premium expands the already powerful free version of this theme and "
+"gives access to our priority support service."
+msgstr ""
+
+#: ../inc/options/inc/customizer-custom-controls.php:72
+msgid "Read more"
+msgstr ""
+
+#: ../inc/options/inc/customizer-custom-controls.php:75
 #, php-format
-msgid "Theme: %1$s by %2$s."
+msgid "Enjoying %s?"
 msgstr ""
 
-#: ../core-framework/func/function-action.php:210
-msgid "Home"
+#: ../inc/options/inc/customizer-custom-controls.php:78
+#, php-format
+msgid "Why not leave us a review on %sWordPress.org%s?  We'd really appreciate it!"
 msgstr ""
 
-#: ../core-framework/func/function-script.php:14
-msgctxt "Open Sans font: on or off"
-msgid "on"
+#: ../inc/options/inc/customizer-options.php:17
+msgid "Background"
 msgstr ""
 
-#. Translators: To add an additional character subset specific to your language,
-#. translate this to 'greek', 'cyrillic' or 'vietnamese'. Do not translate into your own language.
-#: ../core-framework/func/function-script.php:21
-msgctxt "Add new subset (greek, cyrillic, devanagari)"
-msgid "no-subset"
+#: ../inc/options/inc/customizer-options.php:21
+msgid "General"
 msgstr ""
 
-#: ../core-framework/func/function-widget.php:7
-msgid "Sidebar"
+#: ../inc/options/inc/customizer-options.php:25
+msgid "Header"
 msgstr ""
 
-#: ../core-framework/func/function-widget.php:9
-msgid "The main widget area"
+#: ../inc/options/inc/customizer-options.php:30
+msgid "Footer"
 msgstr ""
 
-#: ../core-framework/func/function-widget.php:18
-msgid "First Footer Widget Area"
+#: ../inc/options/inc/customizer-options.php:35
+msgid "Typography"
 msgstr ""
 
-#: ../core-framework/func/function-widget.php:20
-msgid "The first footer widget area"
+#: ../inc/options/inc/customizer-options.php:40
+msgid "Buttons"
 msgstr ""
 
-#: ../core-framework/func/function-widget.php:29
-msgid "Second Footer Widget Area"
+#: ../inc/options/inc/customizer-options.php:45
+msgid "Layout"
 msgstr ""
 
-#: ../core-framework/func/function-widget.php:31
-msgid "The second footer widget area"
+#: ../inc/options/inc/customizer-options.php:50
+msgid "Social"
 msgstr ""
 
-#: ../core-framework/func/function-widget.php:40
-msgid "Third Footer Widget Area"
+#: ../inc/options/inc/customizer-options.php:61
+msgid "More Options"
 msgstr ""
 
-#: ../core-framework/func/function-widget.php:42
-msgid "The third footer widget area"
+#: ../inc/options/inc/customizer-options.php:71
+msgid "Looking for more options?"
 msgstr ""
 
-#: ../core-framework/func/function-widget.php:51
-msgid "Fourth Footer Widget Area"
+#: ../inc/options/inc/customizer-options.php:90
+msgid "Display breadcrumb"
 msgstr ""
 
-#: ../core-framework/func/function-widget.php:53
-msgid "The fourth footer widget area"
+#: ../inc/options/inc/customizer-options.php:91
+msgid "Yoast Breadcrumb supported<br>NavXT Breadcrumb supported"
 msgstr ""
 
-#: ../core-framework/func/function-widget.php:61
-msgid "Sidebar shop"
+#: ../inc/options/inc/customizer-options.php:107
+msgid "Use numeric pagination"
 msgstr ""
 
-#: ../core-framework/options/includes/customizer-reset.php:31
+#: ../inc/options/inc/customizer-options.php:108
+msgid "WP-PageNavi supported"
+msgstr ""
+
+#: ../inc/options/inc/customizer-options.php:133
+msgid "General Layout"
+msgstr ""
+
+#: ../inc/options/inc/customizer-options.php:134
+msgid "Select the theme layout"
+msgstr ""
+
+#: ../inc/options/inc/customizer-options.php:161 ../inc/options/inc/customizer-
+#: options.php:326
+msgid "Colors"
+msgstr ""
+
+#: ../inc/options/inc/customizer-options.php:162 ../inc/options/inc/customizer-
+#: options.php:327 ../inc/options/inc/customizer-options.php:429
+msgid "Background color"
+msgstr ""
+
+#: ../inc/options/inc/customizer-options.php:182 ../inc/options/inc/customizer-
+#: options.php:347
+msgid "Text color"
+msgstr ""
+
+#: ../inc/options/inc/customizer-options.php:202 ../inc/options/inc/customizer-
+#: options.php:285 ../inc/options/inc/customizer-options.php:304 ..
+#: /inc/options/inc/customizer-options.php:387 ../inc/options/inc/customizer-
+#: options.php:406
+msgid "Link color"
+msgstr ""
+
+#: ../inc/options/inc/customizer-options.php:222
+msgid "Link hover color"
+msgstr ""
+
+#: ../inc/options/inc/customizer-options.php:244
+msgid "Font Style"
+msgstr ""
+
+#: ../inc/options/inc/customizer-options.php:245
+msgid "Body text color"
+msgstr ""
+
+#: ../inc/options/inc/customizer-options.php:265
+msgid "Headings color"
+msgstr ""
+
+#: ../inc/options/inc/customizer-options.php:367
+msgid "Hedings color"
+msgstr ""
+
+#: ../inc/options/inc/customizer-options.php:428
+msgid "Main Buttons"
+msgstr ""
+
+#: ../inc/options/inc/customizer-options.php:448
+msgid "Background hover"
+msgstr ""
+
+#: ../inc/options/inc/customizer-options.php:468
+msgid "Text normal"
+msgstr ""
+
+#: ../inc/options/inc/customizer-options.php:487
+msgid "Text hover"
+msgstr ""
+
+#: ../inc/options/inc/customizer-options.php:504
+msgid "Facebook url"
+msgstr ""
+
+#: ../inc/options/inc/customizer-options.php:516
+msgid "Twitter url"
+msgstr ""
+
+#: ../inc/options/inc/customizer-options.php:528
+msgid "Google plus url"
+msgstr ""
+
+#: ../inc/options/inc/customizer-options.php:539
+msgid "Pinterest url"
+msgstr ""
+
+#: ../inc/options/inc/customizer-options.php:550
+msgid "Tumblr url"
+msgstr ""
+
+#: ../inc/options/inc/customizer-options.php:561
+msgid "Instagram url"
+msgstr ""
+
+#: ../inc/options/inc/customizer-options.php:572
+msgid "Linkedin url"
+msgstr ""
+
+#: ../inc/options/inc/customizer-options.php:583
+msgid "Dribble url"
+msgstr ""
+
+#: ../inc/options/inc/customizer-options.php:594
+msgid "Youtube url"
+msgstr ""
+
+#: ../inc/options/inc/customizer-reset.php:33
 msgid "Reset"
 msgstr ""
 
-#: ../core-framework/options/includes/customizer-reset.php:32
+#: ../inc/options/inc/customizer-reset.php:34
 msgid ""
 "Attention! This will remove all customizations ever made via customizer to "
 "this theme!\n"
@@ -572,355 +619,486 @@ msgid ""
 "This action is irreversible!"
 msgstr ""
 
-#: ../core-framework/partials/page-metabox.php:3
-msgid "Page Settings"
+#: ../inc/plugins/class-tgm-plugin-activation.php:327
+msgid "Install Required Plugins"
 msgstr ""
 
-#: ../core-framework/partials/page-metabox.php:14
-msgid "Page title"
+#: ../inc/plugins/class-tgm-plugin-activation.php:328
+msgid "Install Plugins"
 msgstr ""
 
-#: ../core-framework/partials/page-metabox.php:18
-msgid "Hide page title"
+#. translators: %s: plugin name.
+#: ../inc/plugins/class-tgm-plugin-activation.php:330
+#, php-format
+msgid "Installing Plugin: %s"
 msgstr ""
 
-#: ../core-framework/welcome/welcome-screen.php:42
-msgid "Thanks for choosing "
+#. translators: %s: plugin name.
+#: ../inc/plugins/class-tgm-plugin-activation.php:332
+#, php-format
+msgid "Updating Plugin: %s"
 msgstr ""
 
-#: ../core-framework/welcome/welcome-screen.php:43
+#: ../inc/plugins/class-tgm-plugin-activation.php:333
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: ../inc/plugins/class-tgm-plugin-activation.php:370
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../inc/plugins/class-tgm-plugin-activation.php:375
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../inc/plugins/class-tgm-plugin-activation.php:380
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../inc/plugins/class-tgm-plugin-activation.php:385
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: ../inc/plugins/class-tgm-plugin-activation.php:386 ../inc/plugins/class-tgm-
+#: plugin-activation.php:827 ../inc/plugins/class-tgm-plugin-activation.php:2533 .
+#: ./inc/plugins/class-tgm-plugin-activation.php:3580
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: ../inc/plugins/class-tgm-plugin-activation.php:387 ../inc/plugins/class-tgm-
+#: plugin-activation.php:3159
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: ../inc/plugins/class-tgm-plugin-activation.php:388 ../inc/plugins/class-tgm-
+#: plugin-activation.php:2952
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: plugin name.
+#: ../inc/plugins/class-tgm-plugin-activation.php:390
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: ../inc/plugins/class-tgm-plugin-activation.php:392
 #, php-format
 msgid ""
-"! You can read documentation to how get the most out of your new theme on "
-"the %swelcome screen%s."
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
 msgstr ""
 
-#: ../core-framework/welcome/welcome-screen.php:47
-msgid "Get started"
+#. translators: 1: dashboard link.
+#: ../inc/plugins/class-tgm-plugin-activation.php:394
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
-#: ../core-framework/welcome/sections/free-resources.php:7
-msgid "Free resources"
+#: ../inc/plugins/class-tgm-plugin-activation.php:395
+msgid "Dismiss this notice"
 msgstr ""
 
-#: ../core-framework/welcome/sections/free-resources.php:8
-msgid "Take a look to our free resources of themes and plugins."
-msgstr ""
-
-#: ../core-framework/welcome/sections/free-resources.php:12
-msgid "Free themes"
-msgstr ""
-
-#: ../core-framework/welcome/sections/free-resources.php:34 ../core-
-#: framework/welcome/sections/free-resources.php:72 ../core-
-#: framework/welcome/sections/free-resources.php:105 ../core-
-#: framework/welcome/sections/free-resources.php:132
-msgid "An error has occurred"
-msgstr ""
-
-#: ../core-framework/welcome/sections/free-resources.php:49
-msgid "installed"
-msgstr ""
-
-#: ../core-framework/welcome/sections/free-resources.php:60
-msgid "Install Now"
-msgstr ""
-
-#: ../core-framework/welcome/sections/free-resources.php:81
-msgid "Free plugins"
-msgstr ""
-
-#: ../core-framework/welcome/sections/free-resources.php:117
-msgid "&#8230;"
-msgstr ""
-
-#: ../core-framework/welcome/sections/free-resources.php:121
-msgid "Download Now"
-msgstr ""
-
-#: ../core-framework/welcome/sections/getting-started.php:11
-msgid "Getting started"
-msgstr ""
-
-#: ../core-framework/welcome/sections/getting-started.php:12
-msgid "Start to customize and read more about the theme."
-msgstr ""
-
-#: ../core-framework/welcome/sections/getting-started.php:15
-msgid "Using"
-msgstr ""
-
-#: ../core-framework/welcome/sections/getting-started.php:16
+#: ../inc/plugins/class-tgm-plugin-activation.php:396
 msgid ""
-"You can read detailed information on theme features and how to develop on "
-"top of it in the documentation."
+"There are one or more required or recommended plugins to install, update or "
+"activate."
 msgstr ""
 
-#: ../core-framework/welcome/sections/getting-started.php:17
-msgid "View Documentation"
+#: ../inc/plugins/class-tgm-plugin-activation.php:397
+msgid "Please contact the administrator of this site for help."
 msgstr ""
 
-#: ../core-framework/welcome/sections/getting-started.php:22
-msgid "Customize your theme"
+#: ../inc/plugins/class-tgm-plugin-activation.php:522
+msgid "This plugin needs to be updated to be compatible with your theme."
 msgstr ""
 
-#: ../core-framework/welcome/sections/getting-started.php:23
+#: ../inc/plugins/class-tgm-plugin-activation.php:523
+msgid "Update Required"
+msgstr ""
+
+#: ../inc/plugins/class-tgm-plugin-activation.php:934
 msgid ""
-"Start to customize the theme layout, colors, menu and more with the "
-"WordPress Customizer."
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
 msgstr ""
 
-#: ../core-framework/welcome/sections/getting-started.php:24
-msgid "Open the Customizer"
-msgstr ""
-
-#: ../core-framework/welcome/sections/intro.php:11
-msgid "Thank you to use "
-msgstr ""
-
-#: ../core-framework/welcome/sections/intro.php:12
+#: ../inc/plugins/class-tgm-plugin-activation.php:934 ../inc/plugins/class-tgm-
+#: plugin-activation.php:937
 msgid ""
-"Here you can read the documentation and you can know how to get the most out "
-"of your new theme."
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
 msgstr ""
 
-#: ../core-framework/welcome/sections/intro.php:18
-msgid "More Info"
-msgstr ""
-
-#: ../core-framework/welcome/sections/tabs.php:2
-msgid "Getting Started"
-msgstr ""
-
-#: ../core-framework/welcome/sections/tabs.php:3
-msgid "Free Resources"
-msgstr ""
-
-#: ../core-framework/welcome/sections/welcome-footer.php:8
-msgid "Can i contribute?"
-msgstr ""
-
-#: ../core-framework/welcome/sections/welcome-footer.php:10
+#: ../inc/plugins/class-tgm-plugin-activation.php:937
 msgid ""
-"Send us your language file and it will be included in the next theme release."
-" Read how to "
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
 msgstr ""
 
-#: ../core-framework/welcome/sections/welcome-footer.php:12
-msgid "make a translation"
+#: ../inc/plugins/class-tgm-plugin-activation.php:1121 ../inc/plugins/class-tgm-
+#: plugin-activation.php:2948
+msgctxt "plugin A *and* plugin B"
+msgid "and"
 msgstr ""
 
-#: ../core-framework/welcome/sections/welcome-footer.php:17
-msgid "Can't find a feature?"
+#. translators: %s: version number
+#: ../inc/plugins/class-tgm-plugin-activation.php:1982
+#, php-format
+msgid "TGMPA v%s"
 msgstr ""
 
-#: ../core-framework/welcome/sections/welcome-footer.php:19
-msgid "Please suggest and vote on ideas / feature requests at the "
+#: ../inc/plugins/class-tgm-plugin-activation.php:2273
+msgid "Required"
 msgstr ""
 
-#: ../core-framework/welcome/sections/welcome-footer.php:21
-msgid "feedback forum"
+#: ../inc/plugins/class-tgm-plugin-activation.php:2276
+msgid "Recommended"
 msgstr ""
 
-#: ../core-framework/welcome/sections/welcome-footer.php:26
-msgid "IOGRAFICA THEMES"
+#: ../inc/plugins/class-tgm-plugin-activation.php:2292
+msgid "WordPress Repository"
 msgstr ""
 
-#: ../core-framework/welcome/sections/welcome-footer.php:27
-msgid "Best Free and Premium WordPress Themes and Plugins"
+#: ../inc/plugins/class-tgm-plugin-activation.php:2295
+msgid "External Source"
 msgstr ""
 
-#: ../core-framework/welcome/sections/welcome-footer.php:28
-msgid "Website"
+#: ../inc/plugins/class-tgm-plugin-activation.php:2298
+msgid "Pre-Packaged"
 msgstr ""
 
-#: ../core-framework/welcome/sections/welcome-footer.php:29 ../core-
-#: framework/widgets/social-widget.php:40
-msgid "Facebook"
+#: ../inc/plugins/class-tgm-plugin-activation.php:2315
+msgid "Not Installed"
 msgstr ""
 
-#: ../core-framework/welcome/sections/welcome-footer.php:30 ../core-
-#: framework/widgets/social-widget.php:45
-msgid "Twitter"
+#: ../inc/plugins/class-tgm-plugin-activation.php:2319
+msgid "Installed But Not Activated"
 msgstr ""
 
-#: ../core-framework/welcome/sections/welcome-footer.php:31 ../core-
-#: framework/widgets/social-widget.php:50
-msgid "Google Plus"
+#: ../inc/plugins/class-tgm-plugin-activation.php:2321
+msgid "Active"
 msgstr ""
 
-#. Base ID
-#: ../core-framework/widgets/adsense-widget.php:13
-msgid "IG Google Adsense"
+#: ../inc/plugins/class-tgm-plugin-activation.php:2327
+msgid "Required Update not Available"
 msgstr ""
 
-#: ../core-framework/widgets/adsense-widget.php:14
-msgid "Displays Adsense Ads."
+#: ../inc/plugins/class-tgm-plugin-activation.php:2330
+msgid "Requires Update"
 msgstr ""
 
-#: ../core-framework/widgets/adsense-widget.php:39 ../core-
-#: framework/widgets/recent-posts-widget.php:83 ../core-framework/widgets/social-
-#: widget.php:112
-msgid "Title:"
+#: ../inc/plugins/class-tgm-plugin-activation.php:2333
+msgid "Update recommended"
 msgstr ""
 
-#: ../core-framework/widgets/adsense-widget.php:44
-msgid "Code:"
+#. translators: 1: install status, 2: update status
+#: ../inc/plugins/class-tgm-plugin-activation.php:2342
+#, php-format
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
 msgstr ""
 
-#: ../core-framework/widgets/adsense-widget.php:47
+#. translators: 1: number of plugins.
+#: ../inc/plugins/class-tgm-plugin-activation.php:2388
+#, php-format
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: ../inc/plugins/class-tgm-plugin-activation.php:2392
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: ../inc/plugins/class-tgm-plugin-activation.php:2396
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: 1: number of plugins.
+#: ../inc/plugins/class-tgm-plugin-activation.php:2400
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../inc/plugins/class-tgm-plugin-activation.php:2482
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: ../inc/plugins/class-tgm-plugin-activation.php:2490
+msgid "Installed version:"
+msgstr ""
+
+#: ../inc/plugins/class-tgm-plugin-activation.php:2498
+msgid "Minimum required version:"
+msgstr ""
+
+#: ../inc/plugins/class-tgm-plugin-activation.php:2510
+msgid "Available version:"
+msgstr ""
+
+#: ../inc/plugins/class-tgm-plugin-activation.php:2533
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: ../inc/plugins/class-tgm-plugin-activation.php:2547
+msgid "Plugin"
+msgstr ""
+
+#: ../inc/plugins/class-tgm-plugin-activation.php:2548
+msgid "Source"
+msgstr ""
+
+#: ../inc/plugins/class-tgm-plugin-activation.php:2549
+msgid "Type"
+msgstr ""
+
+#: ../inc/plugins/class-tgm-plugin-activation.php:2553
+msgid "Version"
+msgstr ""
+
+#: ../inc/plugins/class-tgm-plugin-activation.php:2554
+msgid "Status"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: ../inc/plugins/class-tgm-plugin-activation.php:2603
+#, php-format
+msgid "Install %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: ../inc/plugins/class-tgm-plugin-activation.php:2608
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#. translators: %2$s: plugin name in screen reader markup
+#: ../inc/plugins/class-tgm-plugin-activation.php:2614
+#, php-format
+msgid "Activate %2$s"
+msgstr ""
+
+#: ../inc/plugins/class-tgm-plugin-activation.php:2684
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: ../inc/plugins/class-tgm-plugin-activation.php:2717
+msgid "Install"
+msgstr ""
+
+#: ../inc/plugins/class-tgm-plugin-activation.php:2723
+msgid "Update"
+msgstr ""
+
+#: ../inc/plugins/class-tgm-plugin-activation.php:2726
+msgid "Activate"
+msgstr ""
+
+#: ../inc/plugins/class-tgm-plugin-activation.php:2757
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: ../inc/plugins/class-tgm-plugin-activation.php:2759
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: ../inc/plugins/class-tgm-plugin-activation.php:2800
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: ../inc/plugins/class-tgm-plugin-activation.php:2802
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: ../inc/plugins/class-tgm-plugin-activation.php:2908
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: ../inc/plugins/class-tgm-plugin-activation.php:2934
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: ../inc/plugins/class-tgm-plugin-activation.php:3158
+msgid "Plugin activation failed."
+msgstr ""
+
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: ../inc/plugins/class-tgm-plugin-activation.php:3498
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#. translators: 1: plugin name, 2: error message.
+#: ../inc/plugins/class-tgm-plugin-activation.php:3501
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#. translators: 1: plugin name.
+#: ../inc/plugins/class-tgm-plugin-activation.php:3503
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: ../inc/plugins/class-tgm-plugin-activation.php:3507
 msgid ""
-"You can use this widget to add your Google Adsense js code but also for "
-"other service or custom js code."
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
 msgstr ""
 
-#. Base ID
-#: ../core-framework/widgets/recent-posts-widget.php:12
-msgid "IG Recent Posts"
+#. translators: 1: plugin name.
+#: ../inc/plugins/class-tgm-plugin-activation.php:3509
+#, php-format
+msgid "%1$s installed and activated successfully."
 msgstr ""
 
-#: ../core-framework/widgets/recent-posts-widget.php:13
-msgid "An extended version of the recent posts widget."
+#: ../inc/plugins/class-tgm-plugin-activation.php:3509 ../inc/plugins/class-tgm-
+#: plugin-activation.php:3517
+msgid "Show Details"
 msgstr ""
 
-#: ../core-framework/widgets/recent-posts-widget.php:87
-msgid "Post type:"
+#: ../inc/plugins/class-tgm-plugin-activation.php:3509 ../inc/plugins/class-tgm-
+#: plugin-activation.php:3517
+msgid "Hide Details"
 msgstr ""
 
-#: ../core-framework/widgets/recent-posts-widget.php:88
-msgid "Display a custom post type - only premium"
+#: ../inc/plugins/class-tgm-plugin-activation.php:3510
+msgid "All installations and activations have been completed."
 msgstr ""
 
-#: ../core-framework/widgets/recent-posts-widget.php:91
-msgid "Number of posts to show:"
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: ../inc/plugins/class-tgm-plugin-activation.php:3512
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: ../core-framework/widgets/recent-posts-widget.php:97
-msgid "Display post date?"
+#: ../inc/plugins/class-tgm-plugin-activation.php:3515
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
 msgstr ""
 
-#: ../core-framework/widgets/recent-posts-widget.php:102
-msgid "Display post image?"
+#. translators: 1: plugin name.
+#: ../inc/plugins/class-tgm-plugin-activation.php:3517
+#, php-format
+msgid "%1$s installed successfully."
 msgstr ""
 
-#: ../core-framework/widgets/recent-posts-widget.php:107
-msgid "Display post excerpt?"
+#: ../inc/plugins/class-tgm-plugin-activation.php:3518
+msgid "All installations have been completed."
 msgstr ""
 
-#. Base ID
-#: ../core-framework/widgets/social-widget.php:13
-msgid "IG Social"
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: ../inc/plugins/class-tgm-plugin-activation.php:3520
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: ../core-framework/widgets/social-widget.php:14
-msgid "Show your social profiles pages."
+#: ../inc/template-tags.php:33
+msgid "&#8592;"
 msgstr ""
 
-#: ../core-framework/widgets/social-widget.php:55
-msgid "Pinterest"
+#: ../inc/template-tags.php:34
+msgid "&#8594;"
 msgstr ""
 
-#: ../core-framework/widgets/social-widget.php:60
-msgid "Tumblr"
+#: ../inc/template-tags.php:41 ../single.php:22
+msgid "Previous"
 msgstr ""
 
-#: ../core-framework/widgets/social-widget.php:65
-msgid "Instagram"
+#: ../inc/template-tags.php:42 ../single.php:21
+msgid "Next"
 msgstr ""
 
-#: ../core-framework/widgets/social-widget.php:70
-msgid "Linkedin"
+#: ../inc/template-tags.php:55
+#, php-format
+msgctxt "post author"
+msgid "%s"
 msgstr ""
 
-#: ../core-framework/widgets/social-widget.php:75
-msgid "Dribbble"
+#: ../inc/template-tags.php:73
+#, php-format
+msgctxt "post date"
+msgid "%s"
 msgstr ""
 
-#: ../core-framework/widgets/social-widget.php:80
-msgid "Vimeo"
+#: ../inc/template-tags.php:89 ../inc/template-tags.php:95
+msgid ", "
 msgstr ""
 
-#: ../core-framework/widgets/social-widget.php:85
-msgid "Youtube"
+#: ../inc/template-tags.php:91
+#, php-format
+msgid "Posted in: %1$s"
 msgstr ""
 
-#: ../core-framework/widgets/social-widget.php:90
-msgid "RSS"
+#: ../inc/template-tags.php:97
+#, php-format
+msgid "Tagged: %1$s"
 msgstr ""
 
-#: ../core-framework/widgets/social-widget.php:116
-msgid "Facebook url:"
+#. translators: %s: post title
+#: ../inc/template-tags.php:104
+#, php-format
+msgid "Leave a comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
-#: ../core-framework/widgets/social-widget.php:120
-msgid "Twitter url:"
+#. Name of the template
+msgid "Focus page"
 msgstr ""
 
-#: ../core-framework/widgets/social-widget.php:124
-msgid "Google url:"
+#. Name of the template
+msgid "Full width"
 msgstr ""
 
-#: ../core-framework/widgets/social-widget.php:128
-msgid "Pinterest url:"
+#. Name of the template
+msgid "Sidebar left"
 msgstr ""
 
-#: ../core-framework/widgets/social-widget.php:132
-msgid "Tumblr url:"
-msgstr ""
-
-#: ../core-framework/widgets/social-widget.php:136
-msgid "Instagram url:"
-msgstr ""
-
-#: ../core-framework/widgets/social-widget.php:140
-msgid "Linkedin url:"
-msgstr ""
-
-#: ../core-framework/widgets/social-widget.php:144
-msgid "Dribbble url:"
-msgstr ""
-
-#: ../core-framework/widgets/social-widget.php:148
-msgid "Vimeo url:"
-msgstr ""
-
-#: ../core-framework/widgets/social-widget.php:152
-msgid "Youtube url:"
-msgstr ""
-
-#: ../core-framework/widgets/social-widget.php:156
-msgid "RSS url:"
+#: ../search.php:19
+#, php-format
+msgid "Search Results for: %s"
 msgstr ""
 
 #: ../template-parts/content-none.php:14
 msgid "Nothing Found"
 msgstr ""
 
-#: ../template-parts/content-none.php:20
+#: ../template-parts/content-none.php:21
 #, php-format
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: ../template-parts/content-none.php:24
+#: ../template-parts/content-none.php:25
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: ../template-parts/content-none.php:29
+#: ../template-parts/content-none.php:31
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
-msgstr ""
-
-#: ../template-parts/content-page.php:25 ../template-parts/content-single.php:30 .
-#: ./template-parts/content.php:43
-msgid "Pages:"
-msgstr ""
-
-#: ../template-parts/content.php:35
-#, php-format
-msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
 #. Name of the theme
@@ -934,12 +1112,11 @@ msgstr ""
 #. Description of the theme
 msgid ""
 "Base WP is a basic blog or business, responsive and clean coded, WordPress "
-"theme. Base WP is WooCommerce compatible, multilingual ready, SEO friendly "
-"and cross-browser compatible. You can customize the theme via Customizer "
-"adding a home page recent posts slider, a products slider, your social "
-"profiles icons, changing background color and more. The theme also have "
-"built in some custom widgets to extend the standard WordPress "
-"functionalities."
+"theme. Base WP is e-commerce, multilingual ready, SEO friendly and cross-"
+"browser compatible. The theme is fully integrated with the most popular and "
+"free plugins for Wordpress like WooCommerce, Easy Digital Downloads, Yoast "
+"Seo, Beaver Builder, and much more. You can customize the theme via the "
+"Customizer."
 msgstr ""
 
 #. Author of the theme
