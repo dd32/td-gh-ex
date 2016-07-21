@@ -321,6 +321,11 @@ class Zenzero_Admin {
 						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
 					<tr>
+						<td><h3><?php esc_html_e('Powerful theme options', 'zenzero'); ?></h3></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
 						<td><h3><?php esc_html_e('Loading Page', 'zenzero'); ?></h3></td>
 						<td><span class="dashicons dashicons-no"></span></td>
 						<td><span class="dashicons dashicons-yes"></span></td>

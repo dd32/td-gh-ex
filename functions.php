@@ -94,9 +94,12 @@ add_action( 'widgets_init', 'zenzero_widgets_init' );
  */
 function zenzero_scripts() {
 	wp_enqueue_style( 'zenzero-style', get_stylesheet_uri() );
-	$protocol = is_ssl() ? 'https' : 'http';
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() .'/css/font-awesome.min.css');
-	wp_enqueue_style( 'zenzero-googlefonts', $protocol .'://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
+	$query_args = array(
+		'family' => 'Open+Sans:300,400,700'
+	);
+	wp_register_style( 'zenzero-googlefonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), null );
+	wp_enqueue_style( 'zenzero-googlefonts' );
 
 	wp_enqueue_script( 'zenzero-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 	wp_enqueue_script( 'zenzero-custom', get_template_directory_uri() . '/js/jquery.zenzero.js', array('jquery'), '1.0', true );
@@ -106,9 +109,8 @@ function zenzero_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 	
-	global $wp_scripts;
-	wp_enqueue_script( 'zenzero-html5shiv', get_template_directory_uri() . '/js/html5.js', array(), '3.7.2', false );
-	$wp_scripts->add_data( 'zenzero-html5shiv', 'conditional', 'lt IE 9' );
+	wp_enqueue_script( 'zenzero-html5shiv', get_template_directory_uri() . '/js/html5shiv.min.js', array(), '3.7.3', false );
+	wp_script_add_data( 'zenzero-html5shiv', 'conditional', 'lt IE 9' );
 }
 add_action( 'wp_enqueue_scripts', 'zenzero_scripts' );
 
