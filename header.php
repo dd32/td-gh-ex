@@ -19,11 +19,11 @@
 <div id="wrapper" class="hfeed">
 
 	<div id="header-wrap">
-	
+
 		<div id="topheader-wrap">
-			
+
 			<div id="topheader" class="container clearfix">
-			
+
 				<?php // Display Search Form
 				if ( isset($theme_options['header_search']) and $theme_options['header_search'] == true ) : ?>
 
@@ -32,75 +32,77 @@
 					</div>
 
 				<?php endif; ?>
-				
+
 				<?php // Display Top Navigation Menu
 				if ( has_nav_menu( 'secondary' ) ) : ?>
-				
+
 					<nav id="topnav" class="clearfix" role="navigation">
 						<?php // Display Top Navigation
 							wp_nav_menu( array(
-								'theme_location' => 'secondary', 
-								'container' => false, 
-								'menu_id' => 'topnav-menu', 
-								'echo' => true, 
+								'theme_location' => 'secondary',
+								'container' => false,
+								'menu_id' => 'topnav-menu',
+								'menu_class' => 'top-navigation-menu',
+								'echo' => true,
 								'fallback_cb' => '',
 								'depth' => 1)
 							);
 						?>
 					</nav>
-					
+
 				<?php endif; ?>
-				
+
 			</div>
-			
+
 		</div>
-	
+
 		<header id="header" class="container clearfix" role="banner">
 
 			<div id="logo">
-			
+
 				<?php rubine_site_logo(); ?>
 				<?php rubine_site_title(); ?>
-				
+
 				<?php // Display Tagline on header if activated
-				if ( isset($theme_options['header_tagline']) and $theme_options['header_tagline'] == true ) : ?>			
+				if ( isset($theme_options['header_tagline']) and $theme_options['header_tagline'] == true ) : ?>
 					<h2 class="site-description"><?php echo bloginfo('description'); ?></h2>
 				<?php endif; ?>
-			
+
 			</div>
-			
+
 			<div id="header-content" class="clearfix">
-			
+
 			<?php // Display Social Icons
 			if ( isset($theme_options['header_icons']) and $theme_options['header_icons'] == true ) : ?>
 
 				<div id="header-social-icons" class="social-icons-wrap clearfix">
 					<?php rubine_display_social_icons(); ?>
 				</div>
-				
+
 			<?php endif; ?>
-			
+
 			</div>
 
 		</header>
-	
+
 	</div>
-	
+
 	<div id="mainnav-wrap">
-		
+
 		<nav id="mainnav" class="container clearfix" role="navigation">
 			<?php // Display Main Navigation
 				wp_nav_menu( array(
-					'theme_location' => 'primary', 
-					'container' => false, 
-					'menu_id' => 'mainnav-menu', 
-					'echo' => true, 
+					'theme_location' => 'primary',
+					'container' => false,
+					'menu_id' => 'mainnav-menu',
+					'menu_class' => 'main-navigation-menu',
+					'echo' => true,
 					'fallback_cb' => 'rubine_default_menu')
 				);
 			?>
 		</nav>
-		
+
 	</div>
-	
+
 	<?php // Display Custom Header Image
-		rubine_display_custom_header(); ?>	
+		rubine_display_custom_header(); ?>
