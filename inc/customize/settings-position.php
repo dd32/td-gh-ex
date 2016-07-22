@@ -160,7 +160,7 @@
 	);
 
 		$wp_customize->add_control( 'bellini_header_menu_layout',array(
-				'label'      => esc_html__( 'Header Section Layout', 'bellini' ),
+				'label'      => esc_html__( 'Layout - Header Components', 'bellini' ),
 				'section'    => 'bellini_header_section_layout',
 				'settings'   => 'bellini[bellini_header_menu_layout]',
 			    'priority'   => 3,
@@ -211,7 +211,7 @@
 
 		$wp_customize->add_control( 'bellini_header_orientation',
 			array(
-				'label'      	=> esc_html__( 'Header Section Style', 'bellini' ),
+				'label'      	=> esc_html__( 'Type - Header', 'bellini' ),
 				'section'    	=> 'bellini_header_section_layout',
 				'settings'   	=> 'bellini[bellini_header_orientation]',
 			    'priority'   	=> 2,
@@ -237,7 +237,7 @@
 
 			$wp_customize->add_control( new Bellini_UI_Helper_Title ( $wp_customize, 'bellini_header_menu_layout_helper', array(
 					'type' => 'info',
-					'label' => esc_html__('Header Menu Layout','bellini'),
+					'label' => esc_html__('Header Menu','bellini'),
 					'section' => 'bellini_header_section_layout',
 					'settings'    => 'bellini[bellini_header_menu_layout_helper]',
 					'priority'   => 6,
@@ -255,7 +255,7 @@
 	);
 
 		$wp_customize->add_control( 'bellini_menu_layout',array(
-				'label'      => esc_html__( 'Header Menu Type', 'bellini' ),
+				'label'      => esc_html__( 'Type - Header Menu', 'bellini' ),
 				'section'    => 'bellini_header_section_layout',
 				'settings'   => 'bellini[bellini_menu_layout]',
 			    'priority'   => 7,
@@ -279,7 +279,7 @@
 	);
 
 		$wp_customize->add_control( 'bellini_menu_position',array(
-				'label'      => esc_html__( 'Header Menu Items Position', 'bellini' ),
+				'label'      => esc_html__( 'Alignment - Header Menu', 'bellini' ),
 				'section'    => 'bellini_header_section_layout',
 				'settings'   => 'bellini[bellini_menu_position]',
 			    'priority'   => 8,
@@ -360,7 +360,7 @@
 	);
 
 		$wp_customize->add_control( 'page_title_position',array(
-				'label'      => esc_html__( 'Page Title Position', 'bellini' ),
+				'label'      => esc_html__( 'Alignment - Page Title', 'bellini' ),
 				'section'    => 'bellini_page_layout_settings',
 				'settings'   => 'bellini[page_title_position]',
 			    'priority'   => 2,
@@ -414,7 +414,8 @@
 
 		$wp_customize->add_control( 'bellini_footer_widget_column_selector',
 			array(
-				'label'      	=> esc_html__( 'Footer Widget Column', 'bellini' ),
+				'label'      	=> esc_html__( 'Column - Footer Widgets', 'bellini' ),
+				'description'   => esc_html__( 'Display the footer widgets in 1, 2, 3 or 4 columns', 'bellini' ),
 				'section'    	=> 'bellini_layout_settings_footer',
 				'settings'   	=> 'bellini[bellini_footer_widget_column_selector]',
 			    'priority'   	=> 2,

@@ -8,7 +8,7 @@ if(absint($bellini['bellini_footer_layout_type']) === 2) :
 		</div>
 	<?php endif;
 	if($bellini['bellini_show_footer_copyright'] == true) :
-		if($bellini['bellini_copyright_text'] == true) : ?>
+		if(!empty($bellini['bellini_copyright_text'])) : ?>
 			<div class="footer__copyright col-md-12 text-center">
 		    	<?php echo do_shortcode(wp_kses_post($bellini['bellini_copyright_text'])); ?>
 		    </div>

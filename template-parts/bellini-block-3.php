@@ -5,17 +5,17 @@ global $bellini;
 <div class="<?php echo esc_attr($bellini['bellini_feature_block_row']);?>">
 <div class="feature-block__inner row">
 	<div class="feature-block__image--l3 col-sm-4">
-		<?php if ($bellini['bellini_feature_block_image_one'] == true): ?>
+		<?php if (!empty($bellini['bellini_feature_block_image_one'])): ?>
 			<img src="<?php echo esc_url($bellini['bellini_feature_block_image_one']);?>" >
 		<?php endif; ?>
 	</div>
 	<div class="block-one feature-block__content--l3 col-sm-8">
-		<?php if($bellini['bellini_feature_block_title_one'] == true):?>
-		    <h2 class="block-title">
+		<?php if(!empty($bellini['bellini_feature_block_title_one'])):?>
+		    <h3 class="block-title">
 		    <?php echo do_shortcode(wp_kses_post($bellini['bellini_feature_block_title_one']));?>
-		    </h2>
+		    </h3>
 		<?php endif;?>
-		<?php if ($bellini['bellini_feature_block_content_one'] == true): ?>
+		<?php if (!empty($bellini['bellini_feature_block_content_one'])): ?>
 			<p>
 				<?php echo do_shortcode(wp_kses_post($bellini['bellini_feature_block_content_one'])); ?>
 			</p>
@@ -30,17 +30,17 @@ global $bellini;
 <div class="<?php echo esc_attr($bellini['bellini_feature_block_row']);?>">
 <div class="feature-block__inner row">
 	<div class="feature-block__image--l3 col-sm-4">
-		<?php if ($bellini['bellini_feature_block_image_two'] == true): ?>
+		<?php if (!empty($bellini['bellini_feature_block_image_two'])): ?>
 			<img src="<?php echo esc_url($bellini['bellini_feature_block_image_two']);?>" >
 		<?php endif; ?>
 	</div>
 	<div class="block-two feature-block__content--l3 col-sm-8">
-		<?php if($bellini['bellini_feature_block_title_two'] == true):?>
-		    <h2 class="block-title">
+		<?php if(!empty($bellini['bellini_feature_block_title_two'])):?>
+		    <h3 class="block-title">
 		    <?php echo do_shortcode(wp_kses_post($bellini[ 'bellini_feature_block_title_two']));?>
-		    </h2>
+		    </h3>
 		<?php endif;?>
-		<?php if ($bellini['bellini_feature_block_content_two'] == true): ?>
+		<?php if (!empty($bellini['bellini_feature_block_content_two'])): ?>
 			<p>
 				<?php echo do_shortcode(wp_kses_post($bellini['bellini_feature_block_content_two'])); ?>
 			</p>
@@ -55,17 +55,17 @@ global $bellini;
 <div class="<?php echo esc_attr($bellini['bellini_feature_block_row']);?>">
 <div class="feature-block__inner row">
 	<div class="feature-block__image--l3 col-sm-4">
-		<?php if ($bellini['bellini_feature_block_image_three'] == true): ?>
+		<?php if (!empty($bellini['bellini_feature_block_image_three'])): ?>
 			<img src="<?php echo esc_url($bellini['bellini_feature_block_image_three']);?>" >
 		<?php endif; ?>
 	</div>
 	<div class="block-three feature-block__content--l3 col-sm-8">
-		<?php if($bellini['bellini_feature_block_title_three'] == true): ?>
-		    <h2 class="block-title">
+		<?php if(!empty($bellini['bellini_feature_block_title_three'])): ?>
+		    <h3 class="block-title">
 		    	<?php echo do_shortcode(esc_html($bellini['bellini_feature_block_title_three']));?>
-		    </h2>
+		    </h3>
 		<?php endif;?>
-		<?php if ($bellini['bellini_feature_block_content_three'] == true): ?>
+		<?php if (!empty($bellini['bellini_feature_block_content_three'])): ?>
 			<p>
 				<?php echo do_shortcode(esc_html($bellini['bellini_feature_block_content_three'])); ?>
 			</p>

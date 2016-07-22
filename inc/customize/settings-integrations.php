@@ -71,7 +71,7 @@
 				'label' => esc_html__('Show * Products per page','bellini'),
 				'section' => 'bellini_woocommerce_integration',
 				'settings' => 'bellini[bellini_woo_shop_product_per_page]',
-				'priority'   => 3,
+				'priority'   => 6,
 			) );
 
 	// Product Column
@@ -85,7 +85,7 @@
 	);
 
 		$wp_customize->add_control( 'bellini_woo_shop_product_column',array(
-				'label'      => esc_html__( 'Shop - Display * Products in a row ', 'bellini' ),
+				'label'      => esc_html__( 'Shop - Product Columns ', 'bellini' ),
 				'description' => esc_html__('Product items of Shop & Archive pages','bellini'),
 				'section'    => 'bellini_woocommerce_integration',
 				'settings'   => 'bellini[bellini_woo_shop_product_column]',
@@ -115,7 +115,7 @@
 				'description' => esc_html__('Product sorting, pagination layouts','bellini'),
 				'section'    => 'bellini_woocommerce_integration',
 				'settings'   => 'bellini[bellini_woo_shop_product_pagination_layout]',
-			    'priority'   => 5,
+			    'priority'   => 3,
 			    'type'       => 'select',
 				'choices'    => array(
 					1   => esc_html__( 'Layout 1', 'bellini' ),
@@ -242,7 +242,7 @@
 
 		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize,'bellini_woocommerce_product_card_back_color',
 			array(
-				'label'      => esc_html__( 'Product Card Background Color', 'bellini' ),
+				'label'      => esc_html__( 'Product Card - Background Color', 'bellini' ),
 				'section'    => 'bellini_woocommerce_integration',
 				'settings'   => 'bellini[bellini_woocommerce_product_card_back_color]',
 			    'priority'   => 31,
@@ -261,7 +261,7 @@
 
 		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize,'bellini_woocommerce_product_title_color',
 			array(
-				'label'      => esc_html__( 'Product Title Color', 'bellini' ),
+				'label'      => esc_html__( 'Product Title - Color', 'bellini' ),
 				'section'    => 'bellini_woocommerce_integration',
 				'settings'   => 'bellini[bellini_woocommerce_product_title_color]',
 			    'priority'   => 32,
@@ -280,7 +280,7 @@
 
 		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize,'bellini_woocommerce_product_button_text_color',
 			array(
-				'label'      => esc_html__( 'Button Text Color', 'bellini' ),
+				'label'      => esc_html__( 'Button Text - Color', 'bellini' ),
 				'section'    => 'bellini_woocommerce_integration',
 				'settings'   => 'bellini[bellini_woocommerce_product_button_text_color]',
 			    'priority'   => 33,
@@ -299,7 +299,7 @@
 
 		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize,'bellini_woocommerce_product_button_color',
 			array(
-				'label'      => esc_html__( 'Button Color', 'bellini' ),
+				'label'      => esc_html__( 'Button - Color', 'bellini' ),
 				'section'    => 'bellini_woocommerce_integration',
 				'settings'   => 'bellini[bellini_woocommerce_product_button_color]',
 			    'priority'   => 34,
@@ -380,7 +380,7 @@
 	);
 
 		$wp_customize->add_control( 'bellini_woocommerce_page_title_position',array(
-				'label'      => esc_html__( 'Page Title Position', 'bellini' ),
+				'label'      => esc_html__( 'Alignment - Page Title', 'bellini' ),
 				'section'    => 'bellini_woocommerce_integration',
 				'settings'   => 'bellini[bellini_woocommerce_page_title_position]',
 			    'priority'   => 51,
@@ -405,7 +405,7 @@
 	);
 
 		$wp_customize->add_control( 'bellini_woocommerce_sidebar_position',array(
-				'label'      => esc_html__( 'WooCommerce Sidebar Position', 'bellini' ),
+				'label'      => esc_html__( 'Position - WooCommerce Sidebar', 'bellini' ),
 				'section'    => 'bellini_woocommerce_integration',
 				'settings'   => 'bellini[bellini_woocommerce_sidebar_position]',
 			    'priority'   => 52,

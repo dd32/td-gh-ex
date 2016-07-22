@@ -33,7 +33,7 @@ $wp_customize->get_control( 'header_textcolor' )->section 	= 'text_color';
 $wp_customize->get_setting( 'background_color' )->default 	= '#eceef1';
 $wp_customize->get_control( 'background_color' )->section 	= 'section_color';
 $wp_customize->get_control( 'background_color' )->priority 	= 3;
-$wp_customize->get_control( 'background_color' )->label 	= esc_html__('Website Background', 'bellini');
+$wp_customize->get_control( 'background_color' )->label 	= esc_html__('Website - Background Color', 'bellini');
 
 
 
@@ -153,14 +153,11 @@ global $bellini;
 
 $website_width 										= esc_attr($bellini['bellini_website_width']);
 $canvas_width 										= esc_attr($bellini['bellini_canvas_width']);
-
 $bellini_menu_position         						= esc_attr($bellini['bellini_menu_position']);
 $page_title_position								= esc_attr($bellini['page_title_position']);
-
 $bellini_body_font_size								= absint($bellini['bellini_body_font_size']);
 $bellini_title_font_size							= absint($bellini['bellini_title_font_size']);
 $bellini_menu_font_size								= absint($bellini['bellini_menu_font_size']);
-
 $body_text_color 									= sanitize_hex_color($bellini['body_text_color']);
 $bellini_primary_color								= sanitize_hex_color($bellini['bellini_primary_color']);
 $bellini_accent_color								= sanitize_hex_color($bellini['bellini_accent_color']);
@@ -174,21 +171,17 @@ $widget_background_color 							= sanitize_hex_color($bellini['widgets_backgroun
 $header_background_color 							= sanitize_hex_color($bellini['header_background_color']);
 $footer_background_color 							= sanitize_hex_color($bellini['footer_background_color']);
 $button_background_color 							= sanitize_hex_color($bellini['button_background_color']);
-
-if(is_page_template()):
-$bellini_feature_block_background_color 			= sanitize_hex_color($bellini['bellini_feature_block_background_color']);
-$woo_category_background_color 						= sanitize_hex_color($bellini['woo_category_background_color']);
-$woo_product_background_color						= sanitize_hex_color($bellini['woo_product_background_color']);
-$bellini_static_slider_button_background_one 		= sanitize_hex_color($bellini['bellini_static_slider_button_background_one']);
-$bellini_static_slider_button_background_two 		= sanitize_hex_color($bellini['bellini_static_slider_button_background_two']);
 $slider_background_color_mobile 					= sanitize_hex_color($bellini['slider_background_color_mobile']);
 $slider_text_color_mobile 							= sanitize_hex_color($bellini['slider_text_color_mobile']);
-$woo_featured_product_background_color				= sanitize_hex_color($bellini['woo_featured_product_background_color']);
+
+$bellini_feature_block_background_color 			= sanitize_hex_color($bellini['bellini_feature_block_background_color']);
+$bellini_static_slider_button_background_one 		= sanitize_hex_color($bellini['bellini_static_slider_button_background_one']);
+$bellini_static_slider_button_background_two 		= sanitize_hex_color($bellini['bellini_static_slider_button_background_two']);
 $bellini_hero_content_color 						= sanitize_hex_color($bellini['bellini_hero_content_color']);
 $bellini_blogposts_background_color					= sanitize_hex_color($bellini['bellini_blogposts_background_color']);
 $bellini_frontpage_textarea_section_color			= sanitize_hex_color($bellini['bellini_frontpage_textarea_section_color']);
 $bellini_frontpage_textarea_section_image 			= esc_url($bellini['bellini_frontpage_textarea_section_image']);
-endif;
+
 
 $font_preset   										= esc_attr($bellini['preset_font']);
 $font_preset_title 									= bellini_font_preset_title($font_preset);
@@ -212,12 +205,9 @@ $bellini_meta_color_text 		= ".breadcrumb_last,.single.post-meta,.single.post-me
 $bellini_meta_color_background 	= ".main-navigation li a:before,.menu-toggle,.post-meta__tag__item a";
 $button_color_background 		= ".comment-form input[type=submit],.button--cta--center,.site-search form input[type=submit],.button--secondary";
 $button_color_text 				= ".button--secondary a,.button--cta--center,.comment-form input[type=submit]";
-
 ?>
 
-
 <style type="text/css">
-
 body,
 button,
 input,
@@ -254,12 +244,10 @@ textarea{
 
 .widget-title{text-align:<?php echo $bellini_widget_title_alignment; ?>;}
 
-
 .website-width{width:<?php echo $website_width; ?>%;}
 .bellini__canvas{max-width:<?php echo $canvas_width;?>;}
 
 /* Color */
-
 <?php echo $primary_color_text;?>{color: <?php echo $bellini_primary_color; ?>;}
 <?php echo $primary_color_background;?>{background-color: <?php echo $bellini_primary_color; ?>;}
 .widget-area__footer .widget-title{border-bottom-color: <?php echo $bellini_primary_color; ?>;}
@@ -269,8 +257,6 @@ textarea{
 .main-navigation a:hover{
     border-bottom:2px solid <?php echo $bellini_primary_color; ?>;
 }
-
-
 
 a{color: <?php echo $link_text_color; ?>;}
 a:hover,a:focus,a:active{color: <?php echo $link_hover_color; ?>;}
@@ -288,18 +274,13 @@ a:hover,a:focus,a:active{color: <?php echo $link_hover_color; ?>;}
 .single-page__title,
 .woocommerce-breadcrumb,
 .breadcrumbs{text-align:<?php echo $page_title_position; ?>;}
+.main-navigation a,.page-numbers a,.page-numbers span,.cart-toggles{font-size:<?php echo $bellini_menu_font_size;?>px;}
 
 
-.main-navigation a,.page-numbers a,.page-numbers span,.cart-toggles{font-size:<?php echo $bellini_menu_font_size; ?>px;}
 
-
-<?php if(is_page_template()):?>
 /* Front Page */
 	.slider-content h3,.slider-content{color:<?php echo $bellini_hero_content_color; ?>;}
 	.front-feature-blocks{background-color:<?php echo $bellini_feature_block_background_color; ?>;}
-	.front-product-category{background-color:<?php echo $woo_category_background_color; ?>;}
-	.front-new-arrival{background-color:<?php echo $woo_product_background_color;?>;}
-	.front__product-featured{background-color:<?php echo $woo_featured_product_background_color;?>;}
 	.front-blog{background-color:<?php echo $bellini_blogposts_background_color;?>;}
 	.front-text-field{background-color:<?php echo $bellini_frontpage_textarea_section_color;?>;}
 	.front-text-field{background-image: url(<?php echo $bellini_frontpage_textarea_section_image; ?>);}
@@ -313,8 +294,6 @@ a:hover,a:focus,a:active{color: <?php echo $link_hover_color; ?>;}
 		color:<?php echo $slider_text_color_mobile; ?>;
 		}
 	}
-
-<?php endif;?>
 
 <?php
     if ( ! empty( $bellini_custom_code_css ) ) {
@@ -334,13 +313,17 @@ if ( is_woocommerce_activated() ):
 	function bellini_customizer_woocommerce_head_styles() {
 	global $bellini;
 
-		$woo_shop_product_title_font_size 	= absint($bellini['bellini_woocommerce_shop_title_font_size']);
-		$woo_shop_product_price_font_size 	= absint($bellini['bellini_woocommerce_shop_price_font_size']);
+		$woo_category_background_color 			= sanitize_hex_color($bellini['woo_category_background_color']);
+		$woo_product_background_color			= sanitize_hex_color($bellini['woo_product_background_color']);
+		$woo_featured_product_background_color	= sanitize_hex_color($bellini['woo_featured_product_background_color']);
 
-		$product_card_background_color 		= sanitize_hex_color($bellini['bellini_woocommerce_product_card_back_color']);
-		$product_card_title_color 			= sanitize_hex_color($bellini['bellini_woocommerce_product_title_color']);
-		$product_card_button_text_color 	= sanitize_hex_color($bellini['bellini_woocommerce_product_button_text_color']);
-		$product_card_button_color 			= sanitize_hex_color($bellini['bellini_woocommerce_product_button_color']);
+		$woo_shop_product_title_font_size 		= absint($bellini['bellini_woocommerce_shop_title_font_size']);
+		$woo_shop_product_price_font_size 		= absint($bellini['bellini_woocommerce_shop_price_font_size']);
+
+		$product_card_background_color 			= sanitize_hex_color($bellini['bellini_woocommerce_product_card_back_color']);
+		$product_card_title_color 				= sanitize_hex_color($bellini['bellini_woocommerce_product_title_color']);
+		$product_card_button_text_color 		= sanitize_hex_color($bellini['bellini_woocommerce_product_button_text_color']);
+		$product_card_button_color 				= sanitize_hex_color($bellini['bellini_woocommerce_product_button_color']);
 
 
 		// CSS Classes
@@ -359,6 +342,10 @@ if ( is_woocommerce_activated() ):
     	font-size: <?php echo $woo_shop_product_title_font_size;?>px ;
     	color: <?php echo $product_card_title_color;?> ;
 	}
+
+	.front-product-category{background-color:<?php echo $woo_category_background_color; ?>;}
+	.front-new-arrival{background-color:<?php echo $woo_product_background_color;?>;}
+	.front__product-featured{background-color:<?php echo $woo_featured_product_background_color;?>;}
 
 	<?php echo $woo_class_prices;?>{
     	font-size: <?php echo $woo_shop_product_price_font_size;?>px ;

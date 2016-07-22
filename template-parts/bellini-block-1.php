@@ -8,20 +8,20 @@ if ($bellini['bellini_feature_block_image_one'] or $bellini['bellini_feature_blo
 <div class="feature-block__inner text-center">
 	<?php
 	// Block Image
-	if ($bellini['bellini_feature_block_image_one'] == true): ?>
+	if (!empty($bellini['bellini_feature_block_image_one'])): ?>
 		<img src="<?php echo esc_url($bellini['bellini_feature_block_image_one']);?>" >
 	<?php endif; ?>
 	<div class="block-one feature-block__content">
 	<?php
 	// Block Title
-	if($bellini['bellini_feature_block_title_one'] == true):?>
-		<h2 class="block-title">
+	if(!empty($bellini['bellini_feature_block_title_one'])):?>
+		<h3 class="block-title">
 		<?php echo do_shortcode(wp_kses_post($bellini[ 'bellini_feature_block_title_one']));?>
-		</h2>
+		</h3>
 	<?php endif;?>
 	<?php
 	// Block Content
-	if ($bellini['bellini_feature_block_content_one'] == true): ?>
+	if (!empty($bellini['bellini_feature_block_content_one'])): ?>
 		<p>
 			<?php echo do_shortcode(wp_kses_post($bellini['bellini_feature_block_content_one'])); ?>
 		</p>
@@ -41,20 +41,20 @@ if ($bellini['bellini_feature_block_image_two'] or $bellini['bellini_feature_blo
 <div class="feature-block__inner text-center">
 	<?php
 	// Block Image
-	if ($bellini['bellini_feature_block_image_two'] == true): ?>
+	if (!empty($bellini['bellini_feature_block_image_two'])): ?>
 		<img src="<?php echo esc_url($bellini['bellini_feature_block_image_two']);?>">
 	<?php endif; ?>
 	<div class="block-two feature-block__content">
 	<?php
 	// Block Title
-	if($bellini['bellini_feature_block_title_two'] == true):?>
-		<h2 class="block-title">
+	if(!empty($bellini['bellini_feature_block_title_two'])):?>
+		<h3 class="block-title">
 			<?php echo do_shortcode(wp_kses_post($bellini[ 'bellini_feature_block_title_two']));?>
-		</h2>
+		</h3>
 	<?php endif;?>
 	<?php
 	// Block Content
-	if ($bellini['bellini_feature_block_content_two' ] == true): ?>
+	if (!empty($bellini['bellini_feature_block_content_two' ])): ?>
 		<p>
 			<?php echo do_shortcode(wp_kses_post($bellini['bellini_feature_block_content_two'])); ?>
 		</p>
@@ -74,20 +74,20 @@ if ($bellini['bellini_feature_block_image_three'] or $bellini['bellini_feature_b
 <div class="feature-block__inner text-center">
 	<?php
 	// Block Image
-	if ($bellini['bellini_feature_block_image_three'] == true): ?>
+	if (!empty($bellini['bellini_feature_block_image_three'])): ?>
 		<img src="<?php echo esc_url($bellini['bellini_feature_block_image_three']);?>">
 	<?php endif; ?>
 	<div class="block-three feature-block__content">
 	<?php
 	// Block Title
-	if($bellini['bellini_feature_block_title_three'] == true):?>
-		<h2 class="block-title">
+	if(!empty($bellini['bellini_feature_block_title_three'])):?>
+		<h3 class="block-title">
 		  	<?php echo do_shortcode(wp_kses_post($bellini[ 'bellini_feature_block_title_three']));?>
-		</h2>
+		</h3>
 	<?php endif;?>
 	<?php
 	// Block Content
-	if ($bellini['bellini_feature_block_content_three'] == true): ?>
+	if (!empty($bellini['bellini_feature_block_content_three'])): ?>
 		<p>
 			<?php echo do_shortcode(wp_kses_post($bellini['bellini_feature_block_content_three'])); ?>
 		</p>

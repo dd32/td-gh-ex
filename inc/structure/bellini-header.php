@@ -162,7 +162,7 @@ function bellini_social_menu(){
 
 	<?php
 	// Social Link Field 1
-	if($bellini['bellini_social_account_link_one'] == true):
+	if(!empty($bellini['bellini_social_account_link_one'])):
 		$social_link_one = esc_url($bellini['bellini_social_account_link_one']); ?>
 	<a itemprop="sameAs" href="<?php echo $social_link_one;?>">
 	  	<span class="<?php echo esc_attr( $bellini['bellini_social_account_icon_one' ]); ?>"></span>
@@ -171,7 +171,7 @@ function bellini_social_menu(){
 
 	<?php
 	// Social Link Field 2
-	if($bellini['bellini_social_account_link_two'] == true):
+	if(!empty($bellini['bellini_social_account_link_two'])):
 		$social_link_two = esc_url($bellini['bellini_social_account_link_two']); ?>
 	<a itemprop="sameAs" href="<?php echo $social_link_two;?>">
 	  	<span class="<?php echo esc_attr( $bellini['bellini_social_account_icon_two' ]); ?>"></span>
@@ -180,7 +180,7 @@ function bellini_social_menu(){
 
 	<?php
 	// Social Link Field 3
-	if($bellini['bellini_social_account_link_three'] == true):
+	if(!empty($bellini['bellini_social_account_link_three'])):
 		$social_link_three = esc_url($bellini[ 'bellini_social_account_link_three']); ?>
 	<a itemprop="sameAs" href="<?php echo $social_link_three;?>">
 	  	<span class="<?php echo esc_attr( $bellini[ 'bellini_social_account_icon_three' ]); ?>"></span>
@@ -189,7 +189,7 @@ function bellini_social_menu(){
 
 	<?php
 	// Social Link Field 4
-	if($bellini['bellini_social_account_link_four'] == true):
+	if(!empty($bellini['bellini_social_account_link_four'])):
 		$social_link_four = esc_url($bellini[ 'bellini_social_account_link_four']); ?>
 	<a itemprop="sameAs" href="<?php echo $social_link_four;?>">
 	  	<span class="<?php echo esc_attr( $bellini[ 'bellini_social_account_icon_four' ]); ?>"></span>
@@ -198,7 +198,7 @@ function bellini_social_menu(){
 
 	<?php
 	// Social Link Field 5
-	if($bellini['bellini_social_account_link_five'] == true):
+	if(!empty($bellini['bellini_social_account_link_five'])):
 		$social_link_five = esc_url($bellini[ 'bellini_social_account_link_five']); ?>
 	<a itemprop="sameAs" href="<?php echo $social_link_five;?>">
 	  	<span class="<?php echo esc_attr( $bellini[ 'bellini_social_account_icon_five' ]); ?>"></span>
@@ -207,7 +207,7 @@ function bellini_social_menu(){
 
 	<?php
 	// Social Link Field 6
-	if($bellini['bellini_social_account_link_six'] == true):
+	if(!empty($bellini['bellini_social_account_link_six'])):
 		$social_link_six = esc_url($bellini[ 'bellini_social_account_link_six']); ?>
 	<a itemprop="sameAs" href="<?php echo $social_link_six;?>">
 	  	<span class="<?php echo esc_attr( $bellini['bellini_social_account_icon_six' ]); ?>"></span>

@@ -66,12 +66,17 @@ textarea:focus,
 #accordion-panel-bellini_colors_panel h3:before,
 #accordion-panel-bellini_show_hide_components h3:before,
 #accordion-panel-bellini_placeholder_layout_panel h3:before,
-#accordion-section-homepage_control h3:before,
 #accordion-panel-bellini_misc_panel h3:before,
 #accordion-panel-nav_menus h3:before,
 #accordion-panel-widgets h3:before,
 #accordion-section-bellini_social_accounts h3:before,
-#accordion-section-wpseo_breadcrumbs_customizer_section h3:before {
+#accordion-section-wpseo_breadcrumbs_customizer_section h3:before,
+#accordion-section-bellini_frontpage_section_reorder h3:before,
+#accordion-section-bellini_frontpage_section_blocks h3:before,
+#accordion-section-bellini_frontpage_section_text_field h3:before,
+#accordion-section-homepage_control h3:before,
+#accordion-section-bellini_show_hide_components h3:before,
+#accordion-section-bellini_custom_css_section h3:before {
     position: relative;
     padding-right: 4%;
     text-align: center;
@@ -82,6 +87,7 @@ textarea:focus,
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
 
 #accordion-panel-bellini_show_hide_components h3:before{
     content: "\f530";
@@ -100,7 +106,7 @@ textarea:focus,
 }
 
 #accordion-panel-bellini_placeholder_layout_panel h3:before {
-    content: '\f108';
+    content: "\f489";
 }
 
 #accordion-panel-bellini_misc_panel h3:before {
@@ -140,17 +146,11 @@ textarea:focus,
 }
 
 #accordion-section-bellini_frontpage_section_slider h3:before {
-    content: '\f232';
+    content: "\f161";
 }
 
-#accordion-section-bellini_frontpage_section_category h3:before {
-    content: '\f323';
-}
-
-#accordion-section-bellini_frontpage_section_product h3:before {
-    content: '\f174';
-}
-
+#accordion-section-bellini_frontpage_section_category h3:before,
+#accordion-section-bellini_frontpage_section_product h3:before,
 #accordion-section-bellini_frontpage_section_featured h3:before {
     content: '\f174';
 }
@@ -159,6 +159,25 @@ textarea:focus,
     content: '\f464';
 }
 
+#accordion-section-bellini_frontpage_section_reorder h3:before{
+    content: "\f545";
+}
+
+#accordion-section-bellini_frontpage_section_text_field h3:before{
+    content: "\f217";
+}
+
+#accordion-section-bellini_frontpage_section_blocks h3:before{
+    content: "\f509";
+}
+
+#accordion-section-bellini_show_hide_components h3:before{
+    content: "\f530";
+}
+
+#accordion-section-bellini_custom_css_section h3:before{
+    content: "\f475";
+}
 .customize-section-description-container .customize-section-title h3:before {
     display: none;
 }
@@ -266,9 +285,10 @@ textarea:focus,
 
 .bellini-ui__title {
     color:#2D2C2C;
+    font-size:16px;
     margin-top: .7rem;
     padding: .8em .8em .8em .5em;
-    text-transform: uppercase;
+    text-transform: capitalize;
     border-bottom: 1px solid #dcdee0;
 }
 
@@ -301,13 +321,6 @@ li#customize-control-bellini_social_account_link_six{
     float:right;
     clear:right;
 }
-
-/*
-#accordion-panel-bellini_placeholder_layout_panel,
-#accordion-panel-bellini_frontpage_panel {
-    margin-bottom: .7rem;
-}
-*/
 
 #customize-theme-controls .accordion-section-content {
     color: #606163;

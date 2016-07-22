@@ -26,9 +26,9 @@ template-parts/ -blog post, single post templates
 
 == Resources Used In This Theme ==
 
-1. Underscores starter theme - Copyright: Automattic, automattic.com 
+1. Underscores starter theme - Copyright: Automattic, automattic.com
     - URL                   http://underscores.me/
-    - Licence               Licensed under GPLv2 or later    
+    - Licence               Licensed under GPLv2 or later
     - Licence URL           http://www.gnu.org/licenses/gpl.html
 
 2. Font Awesome
@@ -42,7 +42,7 @@ template-parts/ -blog post, single post templates
    	- License				jquery.matchHeight.js is licensed under The MIT License (MIT)
 
 4. Normalize CSS
-   	- Author				Nicolas Gallagher and Jonathan Neal 
+   	- Author				Nicolas Gallagher and Jonathan Neal
    	- License 				The MIT License (MIT)   URL - https://github.com/necolas/normalize.css/blob/master/LICENSE.md
    	- Source 				http://necolas.github.com/normalize.css/
 
