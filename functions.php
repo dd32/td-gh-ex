@@ -29,6 +29,9 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-footer-callout.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-template.php');
 	
+	// Appointment Info Page
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/appointment-info/welcome-screen.php');
+	
 	// Custom Category control 
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/custom-controls/select/category-dropdown-custom-control.php');
 	/* Theme Setup Function */

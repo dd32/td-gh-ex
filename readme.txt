@@ -94,6 +94,8 @@ Source: http://fontawesome.io
 
 # --- EOF --- #
 ============================Change Log================================
+@version 2.5
+1. Added Theme Info Page.
 @version 2.4.9
 1. Update Font Awesome Library 4.6.1 to 4.6.3
 2. Remove White, Orange, Responsive Layout Tag and Add blog, portfolio, footer-widgets, featured-images, featured-image-header, custom-header
