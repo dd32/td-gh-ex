@@ -1,4 +1,11 @@
 == CHANGE LOG ==
+= 2.1.2 =
+	- Update - Compatible with WPML
+	- Fix - $post global value removed
+	- Fix - Used the_title_attribute('echo=0') instead the_title( '', '', false )
+	- Fix - Using the_post_thumbnail as recommended
+	- Fix - Removed theme support html5 from search form
+
 = 2.1.1 =
 	- Tweak - html5 enqueued as twentysixteen
 	- Fix - Unwanted Code removed

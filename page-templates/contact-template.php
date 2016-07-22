@@ -11,7 +11,6 @@
 get_header();
 	global $arise_settings;
 	$arise_settings = wp_parse_args(  get_option( 'arise_theme_options', array() ),  arise_get_option_defaults_values() );
-	global $post;	
 	global $arise_content_layout;
 	if( $post ) {
 		$layout = get_post_meta( $post->ID, 'arise_sidebarlayout', true );
@@ -30,7 +29,7 @@ get_header();
 	<?php }
 	}?>
 	<div id="main">
-	<?php global $post;
+	<?php
 	if( have_posts() ) {
 		while( have_posts() ) {
 			the_post();

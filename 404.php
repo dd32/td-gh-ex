@@ -8,11 +8,7 @@
  */
 get_header();
 $arise_settings = arise_get_theme_options();
-global $post;   
 global $arise_content_layout;
-if( $post ) {
-	$layout = get_post_meta( $post->ID, 'arise_sidebarlayout', true );
-}
 if( empty( $layout ) || is_archive() || is_search() || is_home() ) {
 	$layout = 'default';
 }

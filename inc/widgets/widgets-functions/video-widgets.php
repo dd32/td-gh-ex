@@ -65,7 +65,6 @@ class arise_parallax_video_widget extends WP_Widget {
 	function widget($args, $instance) {
 		extract($args);
 		extract($instance);
-		global $post;
 		$page_array = array();
 		$var     = 'page_id';
 		$page_id = isset($instance[$var])?$instance[$var]:'';

@@ -67,7 +67,6 @@
 		global $arise_settings;
 		extract($args);
 		extract($instance);
-		global $post;
 		$title = isset( $instance[ 'title' ] ) ? $instance[ 'title' ] : '';
 		$description = isset( $instance[ 'description' ] ) ? $instance[ 'description' ] : '';
 		$number = empty( $instance[ 'number' ] ) ? 3 : $instance[ 'number' ];
@@ -109,13 +108,11 @@
 							<article class="format-<?php echo $format; ?>">
 							<?php
 							}
-								if( has_post_thumbnail() ) {
-								$image = '';        			
-								$title_attribute = get_the_title( $post->ID );
-								$image .= '<a class="blog-img" href="' . get_permalink() . '" title="'.the_title( '', '', false ).'">';
-								$image .= get_the_post_thumbnail( $post->ID, 'post-thumbnails', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ) ) ).'<div class="blog-overlay"> &#187; </div>'.'</a>';
-								echo $image;
-								}
+								if( has_post_thumbnail() ) { ?>
+								<a class="blog-img" href="<?php the_permalink();?>" title="<?php echo the_title_attribute('echo=0'); ?>">
+								<?php the_post_thumbnail(); ?>
+								<div class="blog-overlay"> &#187; </div></a>
+								<?php }
 								?>
 								<header class="entry-header">
 									<h3 class="entry-title"><a rel="bookmark" href="<?php the_permalink();?>"><?php the_title(); ?> </a></h3>

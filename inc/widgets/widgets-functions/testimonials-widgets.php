@@ -41,7 +41,6 @@ class arise_widget_testimonial extends WP_Widget {
 		global $arise_settings;
 		extract($args);
 		extract($instance);
-		global $post;
 		$number = empty( $instance[ 'number' ] ) ? 3 : $instance[ 'number' ];
 		$post_type = isset( $instance[ 'post_type' ] ) ? $instance[ 'post_type' ] : 'latest' ;
 		$category = isset( $instance[ 'category' ] ) ? $instance[ 'category' ] : '';
@@ -62,10 +61,7 @@ class arise_widget_testimonial extends WP_Widget {
 						<div class="quotes">
 							<div class="quote">
 								<?php if( has_post_thumbnail() ) {
-									$image = '';        			
-									$title_attribute = get_the_title( $post->ID );
-									$image .= get_the_post_thumbnail( $post->ID, 'post-thumbnails', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ) ) );
-									echo $image;
+									the_post_thumbnail();
 								}
 								the_content(); ?>
 								<cite><?php the_title(); ?></cite>

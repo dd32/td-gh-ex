@@ -84,7 +84,7 @@ function arise_add_custom_box() {
 }
 add_action( 'add_meta_boxes', 'arise_add_custom_box' );
 function arise_layout_options() {
-	global $arise_layout_options, $post;
+	global $arise_layout_options;
 	// Use nonce for verification  
 	wp_nonce_field( basename( __FILE__ ), 'arise_custom_meta_box_nonce' ); // for security purpose ?>
 	<?php
@@ -101,7 +101,7 @@ function arise_layout_options() {
 /******************* Save metabox data **************************************/
 add_action('save_post', 'arise_save_custom_meta');
 function arise_save_custom_meta( $post_id ) { 
-	global $arise_layout_options, $post; 
+	global $arise_layout_options; 
 	// Verify the nonce before proceeding.
 	if ( !isset( $_POST[ 'arise_custom_meta_box_nonce' ] ) || !wp_verify_nonce( $_POST[ 'arise_custom_meta_box_nonce' ], basename( __FILE__ ) ) )
 		return;

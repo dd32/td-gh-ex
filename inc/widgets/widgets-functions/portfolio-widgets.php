@@ -65,7 +65,6 @@ class arise_portfolio_widget extends WP_Widget {
 		extract($args);
 		extract($instance);
 		$number = empty( $instance['number'] ) ? 7 : $instance['number'];
-		global $post;
 		$page_array = array();
 		$title               = isset($instance['title'])?$instance['title']:'';
 		$text                = apply_filters('widget_text', empty($instance['text'])?'':$instance['text'], $instance);

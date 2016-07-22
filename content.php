@@ -6,23 +6,20 @@
  * @subpackage Arise
  * @since Arise 1.0
  */
-$arise_settings = arise_get_theme_options();
-global $post; ?>
+$arise_settings = arise_get_theme_options(); ?>
 <section id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 	$format = get_post_format(); ?>
 	<article class="post-format format-<?php echo $format; ?>">
 	<?php
 		$arise_blog_post_image = $arise_settings['arise_blog_post_image'];
-				if( has_post_thumbnail() && $arise_blog_post_image == 'on') {
-					$image = '';
-					$title_attribute = apply_filters( 'the_title', get_the_title( $post->ID ) );
-					$image .= '<figure class="post-featured-image">';
-					$image .= '<a href="' . get_permalink() . '" title="'.the_title( '', '', false ).'">';
-					$image .= get_the_post_thumbnail( $post->ID, 'post-thumbnails', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ) ) ).'</a>';
-					$image .= '</figure><!-- end.post-featured-image  -->';
-					echo $image;
-				} ?>
+				if( has_post_thumbnail() && $arise_blog_post_image == 'on') { ?>
+					<figure class="post-featured-image">
+						<a href="<?php the_permalink();?>" title="<?php echo the_title_attribute('echo=0'); ?>">
+						<?php the_post_thumbnail(); ?>
+						</a>
+					</figure><!-- end.post-featured-image  -->
+				<?php } ?>
 		<header class="entry-header">
 			<h2 class="entry-title"> <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>"> <?php the_title();?> </a> </h2> <!-- end.entry-title -->
 		<?php 
@@ -75,7 +72,7 @@ global $post; ?>
 			}
 			$arise_tag_text = $arise_settings['arise_tag_text'];
 			if(strlen($excerpt) < strlen($content) && $disable_entry_format !='hide-button'){ ?>
-			<a class="readmore" title="<?php the_title( '', '', false );?>" href="<?php the_permalink();?>">
+			<a class="readmore" title="<?php the_title_attribute('echo=0');?>" href="<?php the_permalink();?>">
 			<?php
 				if($arise_tag_text == 'Read More' || $arise_tag_text == ''):
 					_e('Read More', 'arise');

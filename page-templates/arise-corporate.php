@@ -13,7 +13,6 @@ $arise_settings = arise_get_theme_options();
 	echo '<div id="main">';
 	if($arise_settings['arise_disable_features'] != 1){
 		echo '<!-- Front Page Features ============================================= -->';
-		global $post;
 		$arise_features = '';
 		$arise_total_page_no = 0; 
 		$arise_list_page	= array();

@@ -52,7 +52,6 @@ add_filter('excerpt_more', 'arise_continue_reading');
 function arise_body_class($classes) {
 	global $arise_site_layout, $arise_content_layout;
 	$arise_settings = arise_get_theme_options();
-	global $post;
 	if ($post) {
 		$layout = get_post_meta($post->ID, 'arise_sidebarlayout', true);
 	}
@@ -156,10 +155,10 @@ function arise_breadcrumb() {
 function arise_page_sliders() {
 	$arise_settings = arise_get_theme_options();
 	$excerpt = get_the_excerpt();
+	global $post;
 	$slider_custom_text = $arise_settings['arise_secondary_text'];
 	$slider_custom_url = $arise_settings['arise_secondary_url'];
 	global $arise_excerpt_length;
-	global $post;
 	$arise_page_sliders_display = '';
 	$arise_total_page_no 		= 0; 
 	$arise_list_page				= array();
