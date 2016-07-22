@@ -205,7 +205,7 @@ global $igthemes_option;
                 'settings' => $igthemes_option . '[header_link_normal]',
             )
     ));
-//header link normal
+//header link hover
     $wp_customize->add_setting(
         $igthemes_option . '[header_link_hover]',
         array(
@@ -301,7 +301,7 @@ global $igthemes_option;
         $wp_customize, 'body_link_hover',
             array(
                 'label' => __('', 'base-wp'),
-                'description' => __('Link color', 'base-wp'),
+                'description' => __('Link hover color', 'base-wp'),
                 'type' => 'color',
                 'section' => 'typography-settings',
                 'settings' => $igthemes_option . '[body_link_hover]',
@@ -403,7 +403,7 @@ global $igthemes_option;
         $wp_customize, 'footer_link_hover',
             array(
                 'label' => __('', 'base-wp'),
-                'description' => __('Link color', 'base-wp'),
+                'description' => __('Link hover color', 'base-wp'),
                 'type' => 'color',
                 'section' => 'footer-settings',
                 'settings' => $igthemes_option . '[footer_link_hover]',
