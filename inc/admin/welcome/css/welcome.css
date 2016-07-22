@@ -68,28 +68,19 @@ html {
   font-size: .9em;
 }
 
-.evidence .features li:before {
-  font-family: 'dashicons';
-  content: "\f132";
-  margin-right: 5px;
-  font-size: .9em;
-  color: #fc3;
-}
-
-.evidence .features li.title {
-  font-weight: bold;
-  margin-top: 10px;
+.evidence .features h4 {
   text-transform: uppercase;
+  margin-bottom: 0;
 }
 
-.evidence .features li.title:before {
-  content: none;
-  margin: 0;
+.evidence .features p {
+  margin-top: 5px;
 }
 
 .evidence .dashicons {
   color: #fc3;
   margin-right: 5px;
+  vertical-align: text-bottom;
 }
 
 .evidence .button-upgrade {
@@ -101,10 +92,10 @@ html {
   display: inline-block;
   text-decoration: none;
   font-size: 13px;
-  line-height: 26px;
-  height: 28px;
+  line-height: 30px;
+  height: 32px;
   margin: 0;
-  padding: 0 10px 1px;
+  padding: 0 20px 1px;
   cursor: pointer;
   -webkit-appearance: none;
   -webkit-border-radius: 2px;
