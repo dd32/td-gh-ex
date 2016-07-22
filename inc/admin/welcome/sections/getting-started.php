@@ -12,13 +12,13 @@
            <p>
                <?php esc_html_e( 'Remember to activate your license key to get sproduct support and updates.', 'base-wp'); ?>
            </p>
-           <p><a href="<?php echo esc_url( admin_url() . 'themes.php?page=base-wp-license' ); ?>" class="button-upgrade">
+           <p><a href="<?php echo esc_url( admin_url() . 'themes.php?page=base-wp-premium-license' ); ?>" class="button-upgrade">
                <?php esc_html_e('view license key', 'base-wp'); ?>
           </a></p>
            <p>
-           <strong><?php printf(esc_html__('Having troubles?', 'base-wp'), $theme_data->Name); ?></strong>
+           <strong><?php printf(esc_html__('Having troubles?', 'base-wp'), $theme_data->Name); ?></strong></br>
 
-            <?php printf(__('<a href="%s" target="_blank">Ask for support</a> and talk with our support team, we will glad to help you.', 'base-wp'), esc_url( 'http://www.iograficathemes.com/premium-support/' )); ?>
+            <?php printf(__('<a href="%s" target="_blank">Contact us</a> and talk with our support team, we will glad to help you.', 'base-wp'), esc_url( 'http://www.iograficathemes.com/premium-support/' )); ?>
 
            </p>
         <?php } else { ?>
@@ -29,67 +29,22 @@
         <p>
             <a href="<?php echo esc_url( 'http://www.iograficathemes.com/downloads/base-wp-premium' ); ?>" target="_blank" class="button-upgrade"><?php esc_html_e('upgrade to premium', 'base-wp'); ?></a>
         </p>
-        <p><i><?php esc_html_e( 'Listed below are only the main extras that the paid version brings', 'base-wp'); ?></i></p>
-        <ul class="features">
-            <li class="title">
-                <?php esc_html_e( 'Layout Settings', 'base-wp'); ?>
-            </li>
-            <li>
-                <?php esc_html_e( 'Show posts content as excerpt or full content in index page', 'base-wp'); ?>
-            </li>
-            <li>
-                <?php esc_html_e( 'Show featured images in index page', 'base-wp'); ?>
-            </li>
-            <li class="title">
-                <?php esc_html_e( 'Shop Layout', 'base-wp'); ?>
-            </li>
-            <li>
-                <?php esc_html_e( 'Select the shop layout', 'base-wp'); ?>
-            </li>
-            <li>
-                <?php esc_html_e( 'Choose how many products display per page', 'base-wp'); ?>
-            </li>
-            <li class="title">
-                <?php esc_html_e( 'Header Layout', 'base-wp'); ?>
-            </li>
-            <li>
-                <?php esc_html_e( 'Change the header layout', 'base-wp'); ?>
-            </li>
-            <li class="title">
-                <?php esc_html_e( 'Typography Settings', 'base-wp'); ?>
-            </li>
-            <li>
-                <?php esc_html_e( 'Add custom fonts for the headings and for the body text', 'base-wp'); ?>
-            </li>
-            <li>
-                <?php esc_html_e( 'Change the font size for the body text and for the headings', 'base-wp'); ?>
-            </li>
-            <li class="title">
-                <?php esc_html_e( 'Footer Layout', 'base-wp'); ?>
-            </li>
-            <li>
-                <?php esc_html_e( 'Remove footer credits', 'base-wp'); ?>
-            </li>
-            <li>
-                <?php esc_html_e( 'Add custom text', 'base-wp'); ?>
-            </li>
-            <li class="title">
-                <?php esc_html_e( 'Shop Buttons', 'base-wp'); ?>
-            </li>
-            <li>
-                <?php esc_html_e( 'Change the colors of the shop buttons', 'base-wp'); ?>
-            </li>
-            <li class="title">
-                <?php esc_html_e( 'Advanced Settings', 'base-wp'); ?>
-            </li>
-            <li>
-                <?php esc_html_e( 'Add your custom css code', 'base-wp'); ?>
-            </li>
-            <li>
-                <?php esc_html_e( 'Add your custom js code', 'base-wp'); ?>
-            </li>
-        </ul>
-          <?php } ?>
+        <div class="features">
+        <?php _e('<p><i>Listed below are only the extras that the paid version brings:</i>
+        <h4><span class="dashicons dashicons-layout"></span> Main Layout</h4>
+        <p>Show posts content as excerpt or as full content and show or hide featured images in the archives pages.</p>
+        <h4><span class="dashicons dashicons-cart"></span> Shop Layout</h4>
+        <p>Now you can choose the layout for the shop page and set up how many products display per page.</p>
+        <h4><span class="dashicons dashicons-layout"></span>Header Layout</h4>
+        <p>Change the layout (inline or expanded) of your website’s header with just one click.</p>
+        <h4><span class="dashicons dashicons-cart"></span> Shop Buttons</h4>
+        <p>Do want change the colors of the buttons of your products? Now you can do it.</p>
+        <h4><span class="dashicons dashicons-editor-code"></span> Custom CSS</h4>
+        <p>Add your custom css code thanks to the Customizer Advanced Settings panel.</p>
+        <h4><span class="dashicons dashicons-editor-code"></span> Custom JS</h4>
+        <p>Add your custom javascript code, like Google Analytics code ore something else.</p>','base-wp');?>
+        </div>
+        <?php } ?>
     </div>
     <div class="theme_link">
         <h3><?php esc_html_e( 'Theme Documentation', 'base-wp' ); ?></h3>
