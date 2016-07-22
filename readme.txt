@@ -195,3 +195,7 @@ All Javascript is located in /js/ with license headers where appropriate.
 == 1.37 ==
 * Fixed theme screenshot.
 * Little fix for welcome page.
+
+== 1.38 ==
+* Removed dark line in the screenshot.
+* Fixed label for link colors in the customizer.
