@@ -51,7 +51,7 @@
 						$home_text = pll__($home_text);
 					}
 					?>
-					<li class="current"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#main-slider"><?php echo esc_attr($home_text); ?></a></li>
+					<li class="current"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#main-slider"><?php echo esc_html($home_text); ?></a></li>
 				<?php endif;
 				
 				if(!empty($sections)):
@@ -64,7 +64,7 @@
 							$title = get_the_title($single_sections['page']); 
 						}	
 						?>
-						<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>#section-<?php echo $single_sections['page']; ?>"><?php echo $title; ?></a></li>
+						<li><a href="<?php echo esc_url( home_url( '/' ) ); ?>#section-<?php echo $single_sections['page']; ?>"><?php echo esc_html($title); ?></a></li>
 					<?php 
 					endif;
 				endforeach; 
@@ -95,7 +95,7 @@
 		$content_class = "no-slider";
 	endif;
 	?>
-	<div id="content" class="site-content <?php echo $content_class; ?>">
+	<div id="content" class="site-content <?php echo esc_attr($content_class); ?>">
 	<?php 
 	if(is_home() || is_front_page()) :
 		do_action('accesspress_bxslider'); 

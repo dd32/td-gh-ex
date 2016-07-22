@@ -57,7 +57,7 @@ function accesspress_parallax_setup_author() {
 add_action( 'wp', 'accesspress_parallax_setup_author' );
 
 //bxSlider Callback for do action
-function accesspress_bxslidercb(){
+function accesspress_parallax_bxslidercb(){
 		global $post;
 		$accesspress_parallax = of_get_option('parallax_section');
 		if(!empty($accesspress_parallax)) :
@@ -83,7 +83,7 @@ function accesspress_bxslidercb(){
 		<div class="overlay"></div>
 
 		<?php if(!empty($accesspress_parallax_first_page) && $accesspress_enable_parallax == 1): ?>
-		<div class="next-page"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#section-<?php echo $accesspress_parallax_first_page; ?>"></a></div>
+		<div class="next-page"><a href="<?php echo esc_url( home_url( '/' ) ); ?>#section-<?php echo esc_attr($accesspress_parallax_first_page); ?>"></a></div>
 		<?php endif; ?>
 
  		<script type="text/javascript">
@@ -123,13 +123,13 @@ function accesspress_bxslidercb(){
 					$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full', false ); 
 					$image_url = "";
 					if($accesspress_slider_full_window == "yes") : 
-						$image_url =  "style = 'background-image:url(".$image[0].");'";
+						$image_url =  "style = 'background-image:url(".esc_url($image[0]).");'";
 				    endif;
 					?>
 					<div class="slides" <?php echo $image_url; ?>>
 					
 					<?php if($accesspress_slider_full_window == "no") : ?>		
-						<img src="<?php echo $image[0]; ?>">
+						<img src="<?php echo esc_url($image[0]); ?>">
 					<?php endif; ?>
 								
 						<?php if($accesspress_show_caption == 'yes'): ?>
@@ -181,7 +181,7 @@ function accesspress_bxslidercb(){
 <?php
 }
 
-add_action('accesspress_bxslider','accesspress_bxslidercb', 10);
+add_action('accesspress_bxslider','accesspress_parallax_bxslidercb', 10);
 
 
 //add class for parallax
@@ -204,19 +204,21 @@ function accesspress_header_styles_scripts(){
 	$custom_css = of_get_option('custom_css');
 	$slider_overlay = of_get_option('slider_overlay');
 	$image_url = get_template_directory_uri()."/images/";
-	echo "<link type='image/png' rel='icon' href='".$favicon."'/>\n";
+	$dyamic_style = "";
+	echo "<link type='image/png' rel='icon' href='".esc_url($favicon)."'/>\n";
 	echo "<style type='text/css' media='all'>"; 
 
 	if(!empty($sections)){
 	foreach ($sections as $section) {
-		echo "#section-".$section['page']."{ background:url(".$section['image'].") ".$section['repeat']." ".$section['attachment']." ".$section['position']." ".$section['color']."; background-size:".$section['size']."; color:".$section['font_color']."}\n";
-		echo "#section-".$section['page']." .overlay { background:url(".$image_url.$section['overlay'].".png);}\n";
+		$dyamic_style = "#section-".$section['page']."{ background:url(".$section['image'].") ".$section['repeat']." ".$section['attachment']." ".$section['position']." ".$section['color']."; background-size:".$section['size']."; color:".$section['font_color']."}\n";
+		$dyamic_style .= "#section-".$section['page']." .overlay { background:url(".$image_url.$section['overlay'].".png);}\n";
 	}
 	}
 
 	if($slider_overlay == "yes"){
-		echo "#main-slider .overlay{display:none};";
+		$dyamic_style .= "#main-slider .overlay{display:none};";
 	}
+	echo esc_textarea($dyamic_style);
 	echo esc_textarea($custom_css);
 
 	echo "</style>\n"; 

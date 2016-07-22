@@ -89,6 +89,10 @@ Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.26.0
+* Fixed escaping security error
+* Core WordPress Function used of pagination/navigaion for post and archive page
+
 Version 1.25.9
 * TGMPA Updated with the latest version
 
