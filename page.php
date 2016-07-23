@@ -7,16 +7,16 @@
           <h1 class="title"><?php the_title(); ?></h1>
         </div><!--header-->
         <div class="breadcrumbs">
-         <?php woocommerce_breadcrumb(); ?>
-          
+          <?php abaya_breadcrumbs(); ?><!--crumbs-->
         </div><!--breadcrumbs-->
       </div><!--col-->
     </div><!--row-->
   </div><!--container-->
 </section><!--inner-page-bg-->
+
 <section id="content">
   <section class="container">
-  <?php
+ <?php
        if (have_posts()):
 		// Start the loop.
 		while ( have_posts() ) : the_post();
@@ -34,9 +34,8 @@
 	'link_before' => '<span>',
 	'link_after'  => '</span>',
 	) );
-else: ?>
-     <p><?php _e( 'Sorry, no posts matched your criteria.', 'abaya' ) ?></p>
-      <?php endif; ?>  
-    </section><!--container-->
+else:  get_template_part('content', 'none'); endif; ?>  
+  </section><!--container-->
 </section><!--content-->
+ 
 <?php get_footer(); ?>

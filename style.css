@@ -1,16 +1,17 @@
 /*
 Theme Name: Abaya
-Theme URI: http://www.ydesignservices.com/abaya-free-wordpress-theme/
+Theme URI: http://www.ydesignservices.com/abaya/
 Author: Y Design Services
 Author URI: http://www.ydesignservices.com/
-Description: A free WordPress theme for blogs that are designed to have beautiful typography. It is developed using responsive design, ensuring that your blog will be no less beautiful when viewed on a smartphone or tablet.
-Version: 1.1
+Description: Abaya is a very simple to use and quick to setup responsive multipurpose WordPress theme. Abaya is the perfect theme for your next WordPress / WooCommerce project. 
+Version: 1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: full-width-template, one-column, two-columns, featured-images, translation-ready, right-sidebar, editor-style, custom-header, custom-background, custom-menu, threaded-comments
 Text Domain: abaya
 This theme, like WordPress, is licensed under the GPL.
 */
+
 /* =WordPress Core
 -------------------------------------------------------------- */
 .alignnone{margin:5px 20px 20px 0}
@@ -30,11 +31,16 @@ a img.aligncenter{display:block;margin-left:auto;margin-right:auto}
 .screen-reader-text{clip:rect(1px,1px,1px,1px);position:absolute!important;height:1px;width:1px;overflow:hidden}
 .screen-reader-text:focus{background-color:#f1f1f1;border-radius:3px;box-shadow:0 0 2px 2px rgba(0,0,0,0.6);clip:auto!important;color:#21759b;display:block;font-size:14px;font-size:.875rem;font-weight:700;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}
 .sticky{}.gallery-caption{}.bypostauthor {}
+
 /*
 Defaults
 ---------------------------------------------------------------------------------------------------- */
 /* Typographical Elements
 --------------------------------------------- */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
+@import url(https://fonts.googleapis.com/css?family=Raleway:100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic,100,200,300,400,500,600,700,800,900);
+@import url(https://fonts.googleapis.com/css?family=Lato:100italic,300italic,400italic,700italic,900italic,100,300,400,700,,900);
+
 body,html{ height:100%;}
 body{color:#333;font-family:'Raleway';font-size:13px;line-height:1.625;position:relative;background:#fff;}
 blockquote{font-size:14px;font-style:italic; position:relative;line-height:28px;border:none; color:#6f6f6f; padding:15px 45px; background:#f6f6f6;}
@@ -68,12 +74,13 @@ pre{background-color:#fff;border:#eaeaea solid 1px;color:#8a8a8a;font-size:13px;
 .field{padding-bottom:18px;}
 .form-group{margin-bottom:30px;}
 label{color:#333; font-size:14px; font-weight:normal; display:block;}
-.form-control, .orderby, #s, .woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea{border:#e0e0e0 solid 1px;height:40px;padding:0px 10px;box-sizing:border-box;border-radius:0px;box-shadow: none;color:#7c7c7c;font-size:14px;resize:none;font-family: 'Raleway'; background:#fcfcfc;display:block; width:100%; outline:none;}                        
-.form-control:focus, .orderby:focus, input:focus, textarea:focus, select:focus, .qty:focus{border-color:#c05500; box-shadow:none; outline:none;}
+.form-control, .orderby, #s, .woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea, .search-field, .woocommerce div.product form.cart .variations select{border:#e0e0e0 solid 1px;height:40px;padding:0px 10px;box-sizing:border-box;border-radius:0px;box-shadow: none;color:#7c7c7c;font-size:14px;resize:none;font-family: 'Raleway'; background:#fcfcfc;display:block; width:100%; outline:none;}  
+.woocommerce div.product form.cart .variations select{max-width:75%;}                      
+.form-control:focus, .orderby:focus, input:focus, textarea:focus, select:focus, .qty:focus, .woocommerce div.product form.cart .variations select:focus{border-color:#c05500; box-shadow:none; outline:none;}
 textarea.form-control, .woocommerce form .form-row textarea{height:auto; padding:10px;}
 p{line-height:26px;margin-bottom:25px;color:#333;font-size:14px;}
 .btn,input[type="submit"],.mobile-nav,input[type="button"],.button{border-radius:0;color:#333;font-size:14px;padding:7px 36px;background:none;font-family:'lato';outline:none;border:1px solid #939393;position:relative;box-shadow:none;}
-input.search_btn, #searchsubmit{position:absolute; top:1px; right:0px; width:40px; padding:0; height:38px; background: url(images/search-btn.png) center no-repeat; border:none; box-shadow:none; font-size:0;}
+input.search_btn, #searchsubmit, input.search-submit{position:absolute; top:1px; right:0px; width:40px; padding:0; height:38px; background: url(images/search-btn.png) center no-repeat; border:none; box-shadow:none; font-size:0;}
 .btn:hover,.btn:focus,.btn:active:focus,input[type="submit"]:hover,.mobile-nav:hover,#submit:hover{color:#fff;background-color:#c05500;outline:none; border-color:#c05500; box-shadow:none;}
 .widget_title, .page_title, .page-title{font-weight:700;padding-bottom:12px;margin-bottom:30px; border-bottom:1px solid #d7d7d7;text-transform:uppercase; position:relative; transition:0.2s linear; -webkit-transition: 0.2s linear; -moz-transition: 0.2s linear; -ms-transition:0.2s linear; -o-transition: 0.2s linear;}
 .page-title{font-size:20px;}
@@ -82,6 +89,7 @@ input.search_btn, #searchsubmit{position:absolute; top:1px; right:0px; width:40p
 .overlay{background:rgba(1,1,1,0.6); opacity:0;}
 .overlay-ho:hover .overlay{  opacity:1;} 
 .align{text-align:center;}
+
 /* Headings
 --------------------------------------------- */
 h1,h2,h3,h4,h5,h6{color:#272727;line-height:1.2; margin:0; margin-bottom:18px;padding:0; font-family:'Raleway';font-weight:400;}
@@ -91,11 +99,13 @@ h3{font-size:25px}
 h4{font-size:20px}
 h5{font-size:18px}
 h6{font-size:15px}
+
 /*----------------------------------------------*/
 /* 1.2 General Styles or Base CSS*/ 
 /*----------------------------------------------*/
+
 #wrapper, #content{width:100%;float:left;}
-.header{height:191px; display:block; background:#272727; float:left; width:100%;}
+.header{display:block; background:#272727; float:left; width:100%;}
 .header_top{ display:block; background:#333333; height:35px; border-bottom:#646464 dotted 1px; } 
 .top_nav{float:right; padding:0; margin:0;}
 .top_nav li{list-style:none; float:left; background:url(images/shaprater.jpg)right 13px no-repeat; font-size:11px;  text-transform:uppercase; margin:0 8px 0 0px; line-height:35px;   }
@@ -104,26 +114,30 @@ h6{font-size:15px}
 .top_nav li a:hover{color:#828282;}
 #logo{ float:left;margin:17px 0 17px 0px;}
 #logo a{display:block;}
+#logo .brand-title, .brand-subtitle{color:#fff; margin:0;}
 .t1{float:right;color:#cfcfcf;font-size:16px;text-transform:uppercase;letter-spacing:7px;margin:40px 0 0 0px;}
+
 /* nav
 ============================================= */
 #magic-line {position:absolute; top:0px; left:0; width:100px; height:4px; background:#fff;}
-nav ul > li.open{position:relative}
+.main_nav ul > li.open{position:relative}
 ul.menu{margin:0px; position:relative; padding:0;}
-nav{display:block; position:relative; background:url(images/line.jpg)0 0 repeat-x; height:52px; }
-nav > ul > li{list-style:none; display:inline-block; float:left; margin:0 ; font-size:12px; text-transform:uppercase; line-height:52px; position:relative;}
-nav > ul > li:last-child{  margin:0px;}
-nav > ul > li a{ display:block;  color:#ffffff;  padding:0 22px;   } 
-nav > ul > li > a:hover,nav > ul li.active > a{}
-nav ul ul{position:absolute;z-index:10000;top:50px;left:0px;width:205px;background-color:#fff;margin-top:20px;padding:0; opacity:0; visibility:hidden;}
-nav ul ul li{ line-height:22px; list-style:none; border-bottom:#dcdcdc  solid 1px; float:none; height:auto; position:relative;  font-size:12px; font-weight:normal; text-align:left;}
-nav ul ul li:last-child{ border:none;}
-nav ul ul li a{display:block; padding:5px 10px; color:#737373; margin:0px;}
-nav ul ul li a:hover{color:#c05500;}
-nav li:hover > ul{opacity:1; visibility:visible; margin:0;}
-nav ul ul ul{ position:absolute;  top:0px; left:180px;}
+.main_nav{display:block; position:relative;border-top: 4px double #474747; height:52px;}
+.main_nav > ul > li{list-style:none; display:inline-block; float:left; margin:0;font-size:12px; text-transform:uppercase; line-height:52px; position:relative;}
+.main_nav > ul > li:last-child{  margin:0px;}
+.main_nav > ul > li a{ display:block;  color:#ffffff;  padding:0 22px;} 
+.main_nav > ul > li > a:hover{color:#c05500;}
+.main_nav > ul > li > a:hover, .main_nav > ul li.active > a{}
+.main_nav ul ul{position:absolute;z-index:10000;top:50px;left:0px;width:205px;background-color:#fff;margin-top:20px;padding:0; opacity:0; visibility:hidden;}
+.main_nav ul ul li{ line-height:22px; list-style:none; border-bottom:#dcdcdc  solid 1px; float:none; height:auto; position:relative;  font-size:12px; font-weight:normal; text-align:left;}
+.main_nav ul ul li:last-child{ border:none;}
+.main_nav ul ul li a{display:block; padding:5px 10px; color:#737373; margin:0px;}
+.main_nav ul ul li a:hover{color:#c05500;}
+.main_nav li:hover > ul{opacity:1; visibility:visible; margin:0;}
+.main_nav ul ul ul{ position:absolute;  top:0px; left:180px;}
 .toggle{ background:url(images/toggle.png) right 18px no-repeat  ;  width:100%; float:left;   cursor:pointer; display:none; color:#fff; font-size:19px; font-weight:bold;  text-transform:uppercase; height:48px; line-height:48px; text-align:left; }
 .open-submenu{background: url(images/aero2.png)11px 12px no-repeat;position: absolute;width: 34px;height: 33px; right: 0px; top:0px; z-index:99999; display:none; cursor:pointer;} 
+
 /* Mobile-menu
 ============================================= */
 .toggle-mobile{display:none; position:relative; left:0; top:30px; width:28px; height:35px; overflow:hidden; cursor:pointer; float:right; color:#fff !important; z-index:10; text-align:left; margin-left:50px; transition:opacity .3s ease,height .4s ease; -webkit-transition:opacity .3s ease,height .4s ease;  -o-transition:opacity .3s ease,height .4s ease;}	
@@ -133,9 +147,9 @@ nav ul ul ul{ position:absolute;  top:0px; left:180px;}
 .toggle-mobile span.two{top:16px;}
 .toggle-mobile span.three{top:24px;}
 .mobile-menu.show{left:0px;}
-.mobile-menu{background:#1D1D1D;padding:38px 0px; position:fixed;height:100%;width:100%;z-index:9999;max-width:280px;left:-300px;overflow:auto; webkit-transition: all .3s ease-in-out;-moz-transition: all .3s ease-in-out;-ms-transition: all .3s ease-in-out;-o-transition: all .3s ease-in-out; transition: all .3s ease-in-out;}
+.mobile-menu{background:#1D1D1D;padding:38px 0px; position:fixed;height:100%;width:100%;z-index:9999;max-width:300px;left:-300px;overflow:auto; webkit-transition: all .3s ease-in-out;-moz-transition: all .3s ease-in-out;-ms-transition: all .3s ease-in-out;-o-transition: all .3s ease-in-out; transition: all .3s ease-in-out;}
 .mobile-menu ul{margin:0px; padding:0px;}
-.mobile-menu ul li{list-style:none; font-size:14px; text-align:center;color:#FFF; position:relative; text-transform:uppercase;}
+.mobile-menu ul li{list-style:none; font-size:13px; text-align:center;color:#FFF; position:relative; text-transform:uppercase;}
 .mobile-menu ul li a{color:#fff; padding:13px 0px; display:inline-block;}
 .mobile-menu ul li.active a, .mobile-menu ul li a:hover{color:#c05500;}
 .mobile-menu ul ul{display:none; background:#292929;}	
@@ -147,34 +161,45 @@ nav ul ul ul{ position:absolute;  top:0px; left:180px;}
 .mobile-menu ul ul li ul li{font-size:11px;}
 .site-overlay{background:rgba(0,0,0,0.8); position:fixed; top:0px; left:0px; right:0px; bottom:0px; z-index:-99; opacity:0;}
 .site-overlay.overlay-show{z-index:1000; opacity:1;}
+
 /* slider
 ============================================= */
-.slider{width:100%;}
-.anim-slide h1{color:#fff; font-size:30px;}
-.anim-slide h1:after{content:''; border-bottom:double #7c604a; position:relative; top:13px; display:block;}
-.anim-slide p{color:#f4ccac; font-size:21px; line-height:36px;}
-.anim-slide a{width:125px; height:37px; border:#ffffff solid 1px; text-transform:uppercase; font-size:14px; text-align:center; line-height:37px; display:inline-block; color:#fff;}
-.anim-slide h1#slider_h1{height:52px; margin:0 0 12px 0px;text-transform:uppercase;font-weight:bold;top:30%;right:9%; width:38%;}
-.anim-slide p#slider_p{top:47%; right:9%; width:38%;}
-.anim-slide a#slider_btn{top:70%; right:23%;}
-.anim-slide a:hover{background:#c05500; border-color:#c05500; color:#fff;}
-.anim-slide img#slider_img{left:9%; top:-9%}
+#main-slider{position:relative; height:460px; width:100%; float:left;}
+.slide-image{position:absolute; top:0px; bottom:0px; right:0px; left:0px; background-size:cover;}
+.banner-cnt{position:absolute; width:100%; display:table; box-sizing:border-box; height:100%; left:0; right:0;}
+.banner-slider-content{width:520px; float:right; text-align:center;}
+.banner-insidecnt{display:table-cell; vertical-align:middle; height:100%;}
+.banner-title{color:#fff; text-transform:uppercase; font-weight:700; font-size:30px; margin-bottom:20px;}
+.banner-title:after{content:''; border-bottom:double #7c604a; position:relative; top:13px; display:block;}
+.banner-description{color:#f4ccac; font-size:21px; line-height:36px; margin-bottom:30px;}
+.banner-btn{font-size:14px; border:1px solid #fff; font-style:normal; text-transform:uppercase; color:#fff; padding:7px 24px; display:inline-block;}
+.banner-btn:hover{background:#c05500; border-color:#c05500; color:#fff;}
+.flex-active-slide .banner-title{animation-name: zoomOut;-webkit-animation-duration: 2s;animation-duration: 2s;-webkit-animation-fill-mode: both;animation-fill-mode: both;}
+.flex-active-slide .banner-description {animation-name: zoomOut;-webkit-animation-duration: 2s;animation-duration: 2s;-webkit-animation-fill-mode: both;animation-fill-mode: both; }
+.flex-active-slide .banner-btn {position: relative;top:0;-moz-animation: fadeInUp 0.3s ease-in 1s backwards;-webkit-animation: fadeInUp 0.3s ease-in 1s backwards;animation: fadeInUp 0.3s ease-in 1s backwards;}
+
+
 /* home products
 ============================================= */
-.home-products{padding-bottom:0px;}
+.home #content{padding:0;}
+.home .home-products{padding-bottom:90px;}
+.home .featured{padding-top:65px;}
 .featured{padding-top:0px;}
-.featured .product{margin-bottom:0px; padding:0 3px;}
+.featured .product{margin-bottom:0px;}
 .products{padding:0; margin:0 0 20px 0 list-style:none; width:100%; display:inline-block; clear:both;}
 .products:last-child{margin-bottom:0;}
 .product{margin-bottom:25%; overflow:hidden; position:relative;}
 .product.last{margin-right:0px;}
-.product-name-price{font-family: 'Lato';}
+.product-name-price{font-family: 'Lato'; position:relative; text-align: center;}
 .product .product-wrap{overflow:hidden;}
 .product img{width:100%; height:auto; height:100%; display:block;}
 .product img:hover{}
-.product h6, .woocommerce ul.products li.product h3{color:#333333; padding:15px 0 10px 0px; clear:both; text-align:center; margin:0; font-size:16px; font-family:'Lato';}
+.product h6, .woocommerce ul.products li.product h3{color:#333333; padding:15px 0 10px 0px; clear:both; text-align:center; margin:0; font-size:16px; font-family:'Lato'; text-transform:none;}
 .product h6:hover{color:#c05500;}
 .product .price, .woocommerce ul.products li.product .price{color:#333; font-size:17px; font-weight:bold; display:block; text-align:center; margin-bottom:0px;font-family:'Lato';}
+.add_to_cart_button{display:inline-block; padding:0px 25px; margin-top:20px; line-height:35px; margin-top:10px;}
+.added_to_cart {position: absolute;left:0;  border: 1px solid #c05500; color:#fff !important; right:0; text-transform:none; background:#c05500; display:inline-block; width:100%; margin-top:8px;}
+.add_to_cart_button:hover, .added_to_cart:hover{background:#c05500; border-color:#c05500; color:#fff !important;}
 /* woocommerce
 ============================================= */
 #content{padding:80px 0}
@@ -237,6 +262,7 @@ header.woocommerce-Address-title.title {height:auto; float:none; background:none
 .woocommerce span.onsale{top:0; left:0; background:#c05500;}
 .woocommerce #content table.cart td.actions .input-text, .woocommerce table.cart td.actions .input-text, .woocommerce-page #content table.cart td.actions .input-text, .woocommerce-page table.cart td.actions .input-text{width:120px; padding:8px 10px 9px 10px; box-sizing:border-box;}
 .woocommerce-cart table.cart img{width:50px;}
+
 /* footer
 ============================================= */
 footer{background:#f2f2f2; display:block; padding:35px 0 0 0px; width:100%; float:left;}
@@ -251,6 +277,7 @@ footer .copyright .ftr_nav li:last-child {margin-right: 0;}
 footer .copyright a{color:#828282; }
 footer .copyright a:hover{ color:#fff; }
 footer .copyright p{float:right; color:#828282; line-height:45px; line-height:45px; font-size:11px; text-transform:uppercase; margin:0;}
+
 /* inner page
 ============================================= */
 .page-header{display:inline-block; width:100%; margin:0px 0 50px 0;}
@@ -264,6 +291,8 @@ footer .copyright p{float:right; color:#828282; line-height:45px; line-height:45
 .breadcrumbs ul li a:hover{color:#c05500;}
 .breadcrumbs ul li.current{/*color:#c05500;*/}
 .container{padding:0px;}
+
+
 /* sidebar
 ============================================= */
 .widget img{display:block; -webkit-transition: -moz-transform .3s ease-out;   -moz-transition: -webkit-transform .3s ease-out; -o-transition: -o-transform .3s ease-out; transition: transform .3s ease-out;}
@@ -287,6 +316,7 @@ footer .copyright p{float:right; color:#828282; line-height:45px; line-height:45
 .widget ul.children li.cart_item{margin:0px; border:none; line-height: 22px;}
 .left-sidebar #primary{padding-left:15px;}
 .right-sidebar #primary{padding-right:15px;}
+
 /* product-page
 ============================================= */
 form.shop-ordering{float:right;}
@@ -297,6 +327,7 @@ form.shop-ordering{float:right;}
 .show_style li{border:1px solid #e1e1e1; line-height:26px; text-align:center; background:f7f7f7; width:29px; height:26px; display:inline-block; margin-right:6px;}
 .show_style li i{color:#000;}
 .shop-result-count{color:#c05500; letter-spacing:0.3px; margin:2px 0 0 0; display:inline-block; padding-left:15px;}
+
 /* single product-page
 ============================================= */
 .product_image{margin-bottom:16px; margin-top:3px;}
@@ -363,11 +394,13 @@ form.qt_cart{display:inline-block;}
 .contact_details p{font-size:14px;}
 .map iframe{width:100%; height:356px; border:0;}
 .contact_form span.info {color:#f33;}
+
 /* About
 ============================================= */
 .about{padding:/*100px 0 75px 0*/;}
 .about_imgarea img{margin-top:3px;}
 .about_textarea {float:right; width:48%;}
+
 /* Blog
 ============================================= */
 .blog-content{padding:/*100px 0 0px 0*/;}
@@ -384,6 +417,20 @@ form.qt_cart{display:inline-block;}
 .post .entry-meta ul li {display:inline-block; list-style:none; padding:0; margin:0;}
 .post .entry-meta ul li a{color:#c05500;}
 .post .entry-content {padding-top: 20px;}
+.pagination{width:100%;}
+.pagination li.prev{float:left;}
+.pagination li.next{float:right;}
+.pagination>li>a, .pagination>li>span{ border-radius:0px !important; color:#c05500;}
+.pagination>li>a:focus, .pagination>li>a:hover, .pagination>li>span:focus, .pagination>li>span:hover{color:#fff; background-color:#c05500; border-color: #c05500;}
+.price_slider_amount input{width:75px; padding:3px 6px;     border: 1px solid #ccc;}
+.price_slider_amount input#min_price:focus, .price_slider_amount input#max_price:focus{border-color:#c05500; box-shadow:none; outline:none;}
+input#min_price {float: left;}
+input#max_price {float: right;}
+.woocommerce .woocommerce-breadcrumb a, .woocommerce .woocommerce-breadcrumb{color:#fff; font-size:13px; text-transform:uppercase;}
+.woocommerce .woocommerce-breadcrumb a{margin:0 4px;}
+.woocommerce .woocommerce-breadcrumb a:hover{color:#c05500;}
+/*.price_slider_amount button.button{clear:both;margin:auto; display:block;}*/
+
 /* Blog sidebar
 ============================================= */
 .widget .img-area{overflow:hidden; height:120px; margin-bottom:20px;}
@@ -393,7 +440,7 @@ form.qt_cart{display:inline-block;}
 .widget .pots_title{display:block; font-size:16px; font-weight:600; line-height:1.2; text-transform:initial; color:#333333;}
 .widget .pots_date{color:#aeaeae; font-size:13px;}
 .widget_recent_post ul li, .postclass{margin-bottom:30px;}
-.widget .search_form, .widget .searchform{position:relative;}
+.widget .search_form, .widget .searchform, .search-form{position:relative;}
 .widget .tagcould{margin-left:-4px; margin-right:-4px;}
 .widget .tagcould li{display:inline-block; margin:6px 4px; line-height:normal;}
 .widget .tagcould li a{border:1px solid #333333; font-size:12.9px; display:block; padding:7px 17px;}
@@ -408,6 +455,7 @@ form.qt_cart{display:inline-block;}
 .widget.widget_rssfeed ul li{line-height:26px; margin-bottom:30px; text-transform:inherit;}
 .widget_rssfeed ul li a{color:#c05500;}
 #cancel-comment-reply{margin:-16px 0 19px 0; font-size:25px; font-weight:600;}
+
 /* Single Blog
 ============================================= */
 .single_blog .post{/*margin-bottom:40px;*/}
@@ -446,3 +494,11 @@ textarea#comment{height:180px !important;padding:10px !important;}
 #commentform input[type="submit"]{ width:auto }
 #commentform input:focus, textarea#comment:focus{border-color:#c05500; box-shadow:none; outline:none;}
 .woocommerce .col2-set, .woocommerce-page .col2-set{margin-bottom:35px;}
+.woocommerce .products .star-rating{display:inline-flex;}.woocommerce #respond input#submit.alt.disabled, .woocommerce #respond input#submit.alt.disabled:hover, .woocommerce #respond input#submit.alt:disabled, .woocommerce #respond input#submit.alt:disabled:hover, .woocommerce #respond input#submit.alt:disabled[disabled], .woocommerce #respond input#submit.alt:disabled[disabled]:hover, .woocommerce a.button.alt.disabled, .woocommerce a.button.alt.disabled:hover, .woocommerce a.button.alt:disabled, .woocommerce a.button.alt:disabled:hover, .woocommerce a.button.alt:disabled[disabled], .woocommerce a.button.alt:disabled[disabled]:hover, .woocommerce button.button.alt.disabled, .woocommerce button.button.alt.disabled:hover, .woocommerce button.button.alt:disabled, .woocommerce button.button.alt:disabled:hover, .woocommerce button.button.alt:disabled[disabled], .woocommerce button.button.alt:disabled[disabled]:hover, .woocommerce input.button.alt.disabled, .woocommerce input.button.alt.disabled:hover, .woocommerce input.button.alt:disabled, .woocommerce input.button.alt:disabled:hover, .woocommerce input.button.alt:disabled[disabled], .woocommerce input.button.alt:disabled[disabled]:hover, .woocommerce #respond input#submit.disabled:hover, .woocommerce #respond input#submit:disabled:hover, .woocommerce #respond input#submit:disabled[disabled]:hover, .woocommerce a.button.disabled:hover, .woocommerce a.button:disabled:hover, .woocommerce a.button:disabled[disabled]:hover, .woocommerce button.button.disabled:hover, .woocommerce button.button:disabled:hover, .woocommerce button.button:disabled[disabled]:hover, .woocommerce input.button.disabled:hover, .woocommerce input.button:disabled:hover, .woocommerce input.button:disabled[disabled]:hover{background-color:#c05500; border-color:#c05500;}
+.woocommerce div.product form.cart .variations td.label{display: block; font-size: 100%;    text-align: left;	padding:0;	line-height:40px;}
+.woocommerce div.product form.cart .variations td, .woocommerce div.product form.cart .variations th{padding:0;}
+.woocommerce td.product-name dl.variation dd, .woocommerce td.product-name dl.variation dt{float:none;}
+.product_list_widget li{padding:0;}
+.product_list_widget .product-title {font-size: 13px;    margin: 0;}
+.product_list_widget .star-rating{display:block;}
+.woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current {    background: #c05500;    color: #fff; border-color:#c05500;}

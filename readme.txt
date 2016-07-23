@@ -12,7 +12,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Description
 -------------------
 
-Abaya is a WordPress theme for blogs that are designed to have beautiful typography. It is developed using mobile-first responsive design, ensuring that your blog will be no less beautiful when viewed on a smartphone or tablet.
+Abaya is a very simple to use and quick to setup responsive multipurpose WordPress theme. Abaya is the perfect theme for your next WordPress / WooCommerce project. 
 
 Abaya also supports Customizer, Custom Menu, Custom Header and Custom-background, enabling flexible configuration.
 
