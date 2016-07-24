@@ -74,7 +74,7 @@ if( ! class_exists( 'Agama_About' ) ) {
 				
 				echo '<div class="changelog point-releases">';
 					echo sprintf( '<h3>Changelog Agama v%s</h3>', Agama_Core::version() );
-						echo '<p>* FIXED: Warning: Cannot modify header information bug.</p>';
+						echo '<p>* Minor theme updates.</p>';
 				echo '</div>';
 				
 			echo '</div>';

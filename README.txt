@@ -2,6 +2,9 @@ Agama WordPress Theme, Copyright 2015 Theme-Vision.com
 Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
+= 1.2.3 July 25 2016 =
+* Minor theme updates.
+
 = 1.2.2 Jul 12 2016 =
 * FIXED: Warning: Cannot modify header information bug.
 

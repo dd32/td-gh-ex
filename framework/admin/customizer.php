@@ -419,6 +419,54 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'type'			=> 'color',
 		'default'		=> '#A2C605'
 	) );
+	Kirki::add_section( 'agama_slide_3_section', array(
+		'title'			=> __( 'Slide #3', 'agama' ),
+		'description'	=> __( 'Slide #3 section.', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+		'panel'			=> 'agama_slider_panel'
+	) );
+	Kirki::add_section( 'agama_slide_4_section', array(
+		'title'			=> __( 'Slide #4', 'agama' ),
+		'description'	=> __( 'Slide #4 section.', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+		'panel'			=> 'agama_slider_panel'
+	) );
+	Kirki::add_section( 'agama_slide_5_section', array(
+		'title'			=> __( 'Slide #5', 'agama' ),
+		'description'	=> __( 'Slide #5 section.', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+		'panel'			=> 'agama_slider_panel'
+	) );
+	Kirki::add_section( 'agama_slide_6_section', array(
+		'title'			=> __( 'Slide #6', 'agama' ),
+		'description'	=> __( 'Slide #6 section.', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+		'panel'			=> 'agama_slider_panel'
+	) );
+	Kirki::add_section( 'agama_slide_7_section', array(
+		'title'			=> __( 'Slide #7', 'agama' ),
+		'description'	=> __( 'Slide #7 section.', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+		'panel'			=> 'agama_slider_panel'
+	) );
+	Kirki::add_section( 'agama_slide_8_section', array(
+		'title'			=> __( 'Slide #8', 'agama' ),
+		'description'	=> __( 'Slide #8 section.', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+		'panel'			=> 'agama_slider_panel'
+	) );
+	Kirki::add_section( 'agama_slide_9_section', array(
+		'title'			=> __( 'Slide #9', 'agama' ),
+		'description'	=> __( 'Slide #9 section.', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+		'panel'			=> 'agama_slider_panel'
+	) );
+	Kirki::add_section( 'agama_slide_10_section', array(
+		'title'			=> __( 'Slide #10', 'agama' ),
+		'description'	=> __( 'Slide #10 section.', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+		'panel'			=> 'agama_slider_panel'
+	) );
 ###################################################################################
 # BREADCRUMB
 ###################################################################################
@@ -751,6 +799,34 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'settings'		=> 'agama_frontpage_box_4_text',
 		'type'			=> 'textarea',
 		'default'		=> 'Optimized code that are completely customizable and deliver unmatched fast performance.'
+	) );
+	Kirki::add_section( 'agama_frontpage_boxes_section_5', array(
+		'title'			=> __( 'Frontpage Box #5', 'agama' ),
+		'description'	=> __( 'Frontpage boxes settings section.', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+		'priority'		=> 60,
+		'panel'			=> 'agama_frontpage_boxes_panel'
+	) );
+	Kirki::add_section( 'agama_frontpage_boxes_section_6', array(
+		'title'			=> __( 'Frontpage Box #6', 'agama' ),
+		'description'	=> __( 'Frontpage boxes settings section.', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+		'priority'		=> 60,
+		'panel'			=> 'agama_frontpage_boxes_panel'
+	) );
+	Kirki::add_section( 'agama_frontpage_boxes_section_7', array(
+		'title'			=> __( 'Frontpage Box #7', 'agama' ),
+		'description'	=> __( 'Frontpage boxes settings section.', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+		'priority'		=> 60,
+		'panel'			=> 'agama_frontpage_boxes_panel'
+	) );
+	Kirki::add_section( 'agama_frontpage_boxes_section_8', array(
+		'title'			=> __( 'Frontpage Box #8', 'agama' ),
+		'description'	=> __( 'Frontpage boxes settings section.', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+		'priority'		=> 60,
+		'panel'			=> 'agama_frontpage_boxes_panel'
 	) );
 ###################################################################################
 # BLOG
@@ -1461,6 +1537,222 @@ function agama_customize_register( $wp_customize ) {
 ###################################################################################
 # PRO FEATURE
 ###################################################################################
+	$wp_customize->add_setting( 'agama_frontpage_box_5', array(
+		'default'			=> false,
+		'capability'		=> 'edit_theme_options',
+		'sanitize_callback'	=> 'wp_filter_nohtml_kses',
+	));
+	$wp_customize->add_control(
+		new Agama_Customize_Agama_Pro(
+			$wp_customize,'agama_frontpage_box_5', array(
+				'label'			=> __( 'Frontpage Box #5', 'agama' ),
+				'description'	=> __( 'Frontpage Box #5', 'agama' ),
+				'section'		=> 'agama_frontpage_boxes_section_5',
+				'settings'		=> 'agama_frontpage_box_5',
+			)
+		)
+	);
+###################################################################################
+# PRO FEATURE
+###################################################################################
+	$wp_customize->add_setting( 'agama_frontpage_box_6', array(
+		'default'			=> false,
+		'capability'		=> 'edit_theme_options',
+		'sanitize_callback'	=> 'wp_filter_nohtml_kses',
+	));
+	$wp_customize->add_control(
+		new Agama_Customize_Agama_Pro(
+			$wp_customize,'agama_frontpage_box_6', array(
+				'label'			=> __( 'Frontpage Box #6', 'agama' ),
+				'description'	=> __( 'Frontpage Box #6', 'agama' ),
+				'section'		=> 'agama_frontpage_boxes_section_6',
+				'settings'		=> 'agama_frontpage_box_6',
+			)
+		)
+	);
+###################################################################################
+# PRO FEATURE
+###################################################################################
+	$wp_customize->add_setting( 'agama_frontpage_box_7', array(
+		'default'			=> false,
+		'capability'		=> 'edit_theme_options',
+		'sanitize_callback'	=> 'wp_filter_nohtml_kses',
+	));
+	$wp_customize->add_control(
+		new Agama_Customize_Agama_Pro(
+			$wp_customize,'agama_frontpage_box_7', array(
+				'label'			=> __( 'Frontpage Box #7', 'agama' ),
+				'description'	=> __( 'Frontpage Box #7', 'agama' ),
+				'section'		=> 'agama_frontpage_boxes_section_7',
+				'settings'		=> 'agama_frontpage_box_7',
+			)
+		)
+	);
+###################################################################################
+# PRO FEATURE
+###################################################################################
+	$wp_customize->add_setting( 'agama_frontpage_box_8', array(
+		'default'			=> false,
+		'capability'		=> 'edit_theme_options',
+		'sanitize_callback'	=> 'wp_filter_nohtml_kses',
+	));
+	$wp_customize->add_control(
+		new Agama_Customize_Agama_Pro(
+			$wp_customize,'agama_frontpage_box_8', array(
+				'label'			=> __( 'Frontpage Box #8', 'agama' ),
+				'description'	=> __( 'Frontpage Box #8', 'agama' ),
+				'section'		=> 'agama_frontpage_boxes_section_8',
+				'settings'		=> 'agama_frontpage_box_8',
+			)
+		)
+	);
+###################################################################################
+# PRO FEATURE
+###################################################################################
+	$wp_customize->add_setting( 'agama_slide_3', array(
+		'default'			=> false,
+		'capability'		=> 'edit_theme_options',
+		'sanitize_callback'	=> 'wp_filter_nohtml_kses',
+	));
+	$wp_customize->add_control(
+		new Agama_Customize_Agama_Pro(
+			$wp_customize,'agama_slide_3', array(
+				'label'			=> __( 'Slide #3', 'agama' ),
+				'description'	=> __( 'Slide #3', 'agama' ),
+				'section'		=> 'agama_slide_3_section',
+				'settings'		=> 'agama_slide_3',
+			)
+		)
+	);
+###################################################################################
+# PRO FEATURE
+###################################################################################
+	$wp_customize->add_setting( 'agama_slide_4', array(
+		'default'			=> false,
+		'capability'		=> 'edit_theme_options',
+		'sanitize_callback'	=> 'wp_filter_nohtml_kses',
+	));
+	$wp_customize->add_control(
+		new Agama_Customize_Agama_Pro(
+			$wp_customize,'agama_slide_4', array(
+				'label'			=> __( 'Slide #4', 'agama' ),
+				'description'	=> __( 'Slide #4', 'agama' ),
+				'section'		=> 'agama_slide_4_section',
+				'settings'		=> 'agama_slide_4',
+			)
+		)
+	);
+###################################################################################
+# PRO FEATURE
+###################################################################################
+	$wp_customize->add_setting( 'agama_slide_5', array(
+		'default'			=> false,
+		'capability'		=> 'edit_theme_options',
+		'sanitize_callback'	=> 'wp_filter_nohtml_kses',
+	));
+	$wp_customize->add_control(
+		new Agama_Customize_Agama_Pro(
+			$wp_customize,'agama_slide_5', array(
+				'label'			=> __( 'Slide #5', 'agama' ),
+				'description'	=> __( 'Slide #5', 'agama' ),
+				'section'		=> 'agama_slide_5_section',
+				'settings'		=> 'agama_slide_5',
+			)
+		)
+	);
+###################################################################################
+# PRO FEATURE
+###################################################################################
+	$wp_customize->add_setting( 'agama_slide_6', array(
+		'default'			=> false,
+		'capability'		=> 'edit_theme_options',
+		'sanitize_callback'	=> 'wp_filter_nohtml_kses',
+	));
+	$wp_customize->add_control(
+		new Agama_Customize_Agama_Pro(
+			$wp_customize,'agama_slide_6', array(
+				'label'			=> __( 'Slide #6', 'agama' ),
+				'description'	=> __( 'Slide #6', 'agama' ),
+				'section'		=> 'agama_slide_6_section',
+				'settings'		=> 'agama_slide_6',
+			)
+		)
+	);
+###################################################################################
+# PRO FEATURE
+###################################################################################
+	$wp_customize->add_setting( 'agama_slide_7', array(
+		'default'			=> false,
+		'capability'		=> 'edit_theme_options',
+		'sanitize_callback'	=> 'wp_filter_nohtml_kses',
+	));
+	$wp_customize->add_control(
+		new Agama_Customize_Agama_Pro(
+			$wp_customize,'agama_slide_7', array(
+				'label'			=> __( 'Slide #7', 'agama' ),
+				'description'	=> __( 'Slide #7', 'agama' ),
+				'section'		=> 'agama_slide_7_section',
+				'settings'		=> 'agama_slide_7',
+			)
+		)
+	);
+###################################################################################
+# PRO FEATURE
+###################################################################################
+	$wp_customize->add_setting( 'agama_slide_8', array(
+		'default'			=> false,
+		'capability'		=> 'edit_theme_options',
+		'sanitize_callback'	=> 'wp_filter_nohtml_kses',
+	));
+	$wp_customize->add_control(
+		new Agama_Customize_Agama_Pro(
+			$wp_customize,'agama_slide_8', array(
+				'label'			=> __( 'Slide #8', 'agama' ),
+				'description'	=> __( 'Slide #8', 'agama' ),
+				'section'		=> 'agama_slide_8_section',
+				'settings'		=> 'agama_slide_8',
+			)
+		)
+	);
+###################################################################################
+# PRO FEATURE
+###################################################################################
+	$wp_customize->add_setting( 'agama_slide_9', array(
+		'default'			=> false,
+		'capability'		=> 'edit_theme_options',
+		'sanitize_callback'	=> 'wp_filter_nohtml_kses',
+	));
+	$wp_customize->add_control(
+		new Agama_Customize_Agama_Pro(
+			$wp_customize,'agama_slide_9', array(
+				'label'			=> __( 'Slide #9', 'agama' ),
+				'description'	=> __( 'Slide #9', 'agama' ),
+				'section'		=> 'agama_slide_9_section',
+				'settings'		=> 'agama_slide_9',
+			)
+		)
+	);
+###################################################################################
+# PRO FEATURE
+###################################################################################
+	$wp_customize->add_setting( 'agama_slide_10', array(
+		'default'			=> false,
+		'capability'		=> 'edit_theme_options',
+		'sanitize_callback'	=> 'wp_filter_nohtml_kses',
+	));
+	$wp_customize->add_control(
+		new Agama_Customize_Agama_Pro(
+			$wp_customize,'agama_slide_10', array(
+				'label'			=> __( 'Slide #10', 'agama' ),
+				'description'	=> __( 'Slide #10', 'agama' ),
+				'section'		=> 'agama_slide_10_section',
+				'settings'		=> 'agama_slide_10',
+			)
+		)
+	);
+###################################################################################
+# PRO FEATURE
+###################################################################################
 	$wp_customize->add_setting( 'agama_share_icons', array(
 		'default'			=> '',
 		'capability'		=> 'edit_theme_options',
@@ -1877,6 +2169,18 @@ function customize_styles_agama_support( $input ) { ?>
 		#accordion-section-agama_contact_section .accordion-section-content a:hover {
 			color: #fff;
 		}
+		#accordion-section-agama_frontpage_boxes_section_5 h3:before,
+		#accordion-section-agama_frontpage_boxes_section_6 h3:before,
+		#accordion-section-agama_frontpage_boxes_section_7 h3:before,
+		#accordion-section-agama_frontpage_boxes_section_8 h3:before,
+		#accordion-section-agama_slide_3_section h3:before,
+		#accordion-section-agama_slide_4_section h3:before,
+		#accordion-section-agama_slide_5_section h3:before,
+		#accordion-section-agama_slide_6_section h3:before,
+		#accordion-section-agama_slide_7_section h3:before,
+		#accordion-section-agama_slide_8_section h3:before,
+		#accordion-section-agama_slide_9_section h3:before,
+		#accordion-section-agama_slide_10_section h3:before,
 		#accordion-section-agama_body_background_animated_section h3:before,
 		#accordion-section-agama_typography_section h3:before,
 		#accordion-section-agama_share_icons_section h3:before,
