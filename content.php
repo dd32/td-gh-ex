@@ -23,12 +23,12 @@
 					<?php if ( is_single() || ( get_theme_mod( 'iconic_one_date_home' ) == '1' ) ): //for date on single page ?>	
 		<div class="below-title-meta">
 		<div class="adt">
-			<?php _e('By','iconic-one'); ?>
-        <span class="author">
-			<?php echo the_author_posts_link(); ?>
+		<?php _e('By','themonic'); ?>
+        <span class="vcard author">
+			<span class="fn"><?php echo the_author_posts_link(); ?></span>
         </span>
         <span class="meta-sep">|</span> 
-			<?php echo get_the_date(); ?> 
+			<span class="date updated"><?php echo get_the_date(); ?></span>		 
         </div>
 		<div class="adt-comment">
 		<a class="link-comments" href="<?php  comments_link(); ?>"><?php comments_number(__('0 Comment','iconic-one'),__('1 Comment','iconic-one'),__('% Comments','iconic-one')); ?></a> 
@@ -41,7 +41,7 @@
 
 		<?php if ( is_home() && ( get_theme_mod( 'iconic_one_full_post' , '1' ) == '1' ) ) : // Check Live Customizer for Full/Excerpts Post Settings ?>
 			<?php iconic_one_excerpts() ?>	
-				<?php elseif( is_search() || is_category() || is_tag()  ): ?>
+				<?php elseif( is_search() || is_category() || is_tag() || is_author() || is_archive()  ): ?>
 					<?php iconic_one_excerpts() ?>	
 				<?php else : ?>
 					<div class="entry-content">
