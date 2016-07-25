@@ -26,6 +26,9 @@ For more information about Rubine Lite please go to https://themezee.com/themes/
 
 == Changelog ==
 
+= 1.3.0 =
+* fixed dropdown menus on mobile navigation menus
+
 = 1.2.9 =
 * fixed styling of main navigation menu with default pages
 
