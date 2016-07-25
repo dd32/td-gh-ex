@@ -42,25 +42,3 @@ require get_template_directory() . '/inc/options/inc/customizer-custom-controls.
 require get_template_directory() . '/inc/options/inc/customizer-sanitization.php';
 require get_template_directory() . '/inc/options/inc/customizer-functions.php';
 require get_template_directory() . '/inc/options/inc/customizer-reset.php';
-
-/**
- * Get the optiions
- */
-function igthemes_option_name() {
-    global $igthemes_option;
-    return $igthemes_option;
-}
-function igthemes_option( $name, $default = false ) {
-    $option_name = '';
-    // Gets option name as defined in the theme
-    if ( function_exists( 'igthemes_option_name' ) ) {
-        $option_name = igthemes_option_name();
-    }
-    // Get option settings from database
-    $options = get_option( $option_name );
-    // Return specific option
-    if ( isset( $options[$name] ) ) {
-        return $options[$name];
-    }
-    return $default;
-}

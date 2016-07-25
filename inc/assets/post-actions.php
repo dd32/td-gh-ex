@@ -9,13 +9,13 @@ add_action( 'igthemes_single_post', 'igthemes_post_footer', 30 );
 /*-----------------------------------------------------------------
  * POST HEADER
 -----------------------------------------------------------------*/
-if ( ! function_exists( 'igthemes_loop_content_image' ) ) {
-    function igthemes_loop_content_image($image) {
+if ( ! function_exists( 'igthemes_loop_featured_image' ) ) {
+    function igthemes_loop_featured_image($image) {
         $image = igthemes_post_thumbnail( 'full' );
         return $image;
     }
 }
-add_filter( 'igthemes_loop_content_images', 'igthemes_loop_content_image' );
+add_filter( 'igthemes_main_featured_image', 'igthemes_loop_featured_image', 10 );
 
 if ( ! function_exists( 'igthemes_post_header' ) ) {
 	// start function
@@ -27,7 +27,7 @@ if ( ! function_exists( 'igthemes_post_header' ) ) {
                 igthemes_post_thumbnail( 'full' );
 				the_title( '<h1 class="entry-title">', '</h1>' );
 			} else {
-                apply_filters( 'igthemes_loop_content_images', 'igthemes_loop_content_image' ); 
+                apply_filters('igthemes_main_featured_image', 'igthemes_loop_featured_image' );
 				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			}
 
@@ -44,13 +44,13 @@ if ( ! function_exists( 'igthemes_post_header' ) ) {
 /*-----------------------------------------------------------------
  * POST CONTENT
 -----------------------------------------------------------------*/
-if ( ! function_exists( 'igthemes_loop_content_post' ) ) {
-    function igthemes_loop_content_post($excerpt) {
-        $excerpt = the_excerpt();
-        return $excerpt;
+if ( ! function_exists( 'igthemes_loop_post_content' ) ) {
+    function igthemes_loop_post_content($content) {
+        $content = the_excerpt();
+        return $content ;
     }
 }
-add_filter( 'igthemes_loop_content_posts', 'igthemes_loop_content_post' );
+add_filter( 'igthemes_main_post_content', 'igthemes_loop_post_content', 10 );
 
 if ( ! function_exists( 'igthemes_post_content' ) ) {
 	// start function
@@ -72,7 +72,7 @@ if ( ! function_exists( 'igthemes_post_content' ) ) {
             ) );
 		  }
         else { 
-            apply_filters( 'igthemes_loop_content_posts', 'igthemes_loop_content_post' ); 
+            apply_filters('igthemes_main_post_content', 'igthemes_loop_post_content' );
         } 
         ?>
 		</div><!-- .entry-content -->

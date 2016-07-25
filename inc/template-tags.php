@@ -12,7 +12,7 @@ if ( ! function_exists( 'igthemes_posts_navigation' ) ) :
  * Display numeric pagination.
  */
 function igthemes_posts_navigation() {
-    if (igthemes_option('numeric_pagination')) {
+    if (get_theme_mod('numeric_pagination')) {
         if (function_exists('wp_pagenavi') ) {
             wp_pagenavi();
         } else {

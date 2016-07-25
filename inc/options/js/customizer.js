@@ -38,72 +38,72 @@
     } );
 
     // Header style
-    wp.customize( 'base-wp[header_background_color]', function( value ) {
+    wp.customize( 'header_background_color', function( value ) {
         value.bind( function( to ) {
             $( '.site-header' ).css( 'background-color', to );
         } );
     } );
-    wp.customize( 'base-wp[header_link_hover]', function( value ) {
+    wp.customize( 'header_link_hover', function( value ) {
         value.bind( function( to ) {
             $( '.main-navigation ul ul' ).css( 'background-color', to );
         } );
     } );
-    wp.customize( 'base-wp[header_text_color]', function( value ) {
+    wp.customize( 'header_text_color', function( value ) {
         value.bind( function( to ) {
             $( 'p.site-description' ).css( 'color', to );
         } );
     } );
-    wp.customize( 'base-wp[header_link_normal]', function( value ) {
+    wp.customize( 'header_link_normal', function( value ) {
         value.bind( function( to ) {
             $( '.header-nav a, .site-title a, .main-navigation a' ).css( 'color', to );
         } );
     } );
     // Body style
-    wp.customize( 'base-wp[body_text_color]', function( value ) {
+    wp.customize( 'body_text_color', function( value ) {
         value.bind( function( to ) {
             $( '.site-content p' ).css( 'color', to );
         } );
     } );
-    wp.customize( 'base-wp[body_link_normal]', function( value ) {
+    wp.customize( 'body_link_normal', function( value ) {
         value.bind( function( to ) {
             $( '.site-content a' ).css( 'color', to );
         } );
     } );
-    wp.customize( 'base-wp[body_headings_color]', function( value ) {
+    wp.customize( 'body_headings_color', function( value ) {
         value.bind( function( to ) {
             $( '.site-content h1,.site-content h2,.site-content h3,.site-content h4,.site-content h5,.site-content h6, h2.entry-title a' ).css( 'color', to );
         } );
     } );
     // Footer style
-     wp.customize( 'base-wp[footer_background_color]', function( value ) {
+     wp.customize( 'footer_background_color', function( value ) {
         value.bind( function( to ) {
             $( '.site-footer' ).css( 'background-color', to );
         } );
     } );
-    wp.customize( 'base-wp[footer_text_color]', function( value ) {
+    wp.customize( 'footer_text_color', function( value ) {
         value.bind( function( to ) {
             $( '.site-footer' ).css( 'color', to );
         } );
     } );
-    wp.customize( 'base-wp[footer_link_normal]', function( value ) {
+    wp.customize( 'footer_link_normal', function( value ) {
         value.bind( function( to ) {
             $( '.site-footer a' ).css( 'color', to );
         } );
     } );
-    wp.customize( 'base-wp[footer_headings_color]', function( value ) {
+    wp.customize( 'footer_headings_color', function( value ) {
         value.bind( function( to ) {
             $( '.site-footer h1, .site-footer h2, .site-footer h3, .site-footer h4, .site-footer h5, .site-footer h6' ).css( 'color', to );
         } );
     } );
     //Buttons style
-    wp.customize( 'base-wp[button_background_normal]', function( value ) {
+    wp.customize( 'button_background_normal', function( value ) {
         value.bind( function( to ) {
             $( 'button, input[type="button"], input[type="reset"], input[type="submit"]' ).css( 'background-color', 'border-color', to );
         } );
     } );
-    wp.customize( 'base-wp[button_text_normal]', function( value ) {
+    wp.customize( 'button_text_normal', function( value ) {
         value.bind( function( to ) {
-            $( 'button, input[type="button"], input[type="reset"], input[type="submit"]' ).css( 'color', to );
+            $( 'button, input[type="button", input[type="reset", input[type="submit"' ).css( 'color', to );
         } );
     } );
 //end

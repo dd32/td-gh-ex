@@ -85,7 +85,9 @@
         return this;
     };
     //start
-    $(function () {
+    $(document).ready(function(){
+      if ($('.main-navigation ul ul').length > 0) { // check if element exists.
         $('.main-navigation ul ul').colourBrightness();
+      }
     });
 })(jQuery);

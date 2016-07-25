@@ -40,19 +40,14 @@ function igthemes_sanitize_textarea( $input ) {
 function igthemes_sanitize_css( $input  ) {
 	return wp_strip_all_tags( $input  );
 }
-// Layout sanitization callback
-if ( ! function_exists( 'ightemes_sanitize_layout' ) ) {
-    function ightemes_sanitize_layout( $input ) {
-        $valid = array(
-            'full'  => 'full',
-            'right' => 'right',
-            'left'  => 'left'
-            );
+// Sanitization choices
+function igthemes_sanitize_choices( $input, $setting ) {
+	// Ensure input is a slug.
+	$input = sanitize_key( $input );
 
-        if ( array_key_exists( $input, $valid ) ) {
-            return $input;
-        } else {
-            return '';
-        }
-    }
+	// Get list of choices from the control associated with the setting.
+	$choices = $setting->manager->get_control( $setting->id )->choices;
+
+	// If the input is a valid key, return it; otherwise, return the default.
+	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
 }

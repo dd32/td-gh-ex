@@ -91,40 +91,40 @@ if ( ! function_exists( 'igthemes_social' ) ) {
     function igthemes_social() {
         ?>
 <div class="social-url">
-        <?php if ( igthemes_option('facebook_url') ) {
-              $facebook_url = esc_url(igthemes_option('facebook_url', ''));
+        <?php if ( get_theme_mod('facebook_url') ) {
+              $facebook_url = esc_url(get_theme_mod('facebook_url', ''));
               echo "<a href='$facebook_url' title='Facebook' target='_blank' class='facebook-icon'><span class='icon-social-facebook'></span></a>";
         }?>
-         <?php if ( igthemes_option('twitter_url') ) {
-              $twitter_url = esc_url(igthemes_option('twitter_url', ''));
+         <?php if ( get_theme_mod('twitter_url') ) {
+              $twitter_url = esc_url(get_theme_mod('twitter_url', ''));
               echo "<a href='$twitter_url' title='Twitter' target='_blank' class='twitter-icon'><span class='icon-social-twitter'></span></a>";
         }?>
-         <?php if ( igthemes_option('google_url') ) {
-              $google_url = esc_url(igthemes_option('google_url', ''));
+         <?php if ( get_theme_mod('google_url') ) {
+              $google_url = esc_url(get_theme_mod('google_url', ''));
               echo "<a href='$google_url' title='Google Plus' target='_blank' class='google-icon'><span class='icon-social-google'></span></a>";
         }?>
-        <?php if ( igthemes_option('pinterest_url') ) {
-              $pinterest_url = esc_url(igthemes_option('pinterest_url', ''));
+        <?php if ( get_theme_mod('pinterest_url') ) {
+              $pinterest_url = esc_url(get_theme_mod('pinterest_url', ''));
               echo "<a href='$pinterest_url' title='Pinterest' target='_blank' class='pinterest-icon'><span class='icon-social-pinterest'></span></a>";
         }?>
-        <?php if ( igthemes_option('tumblr_url') ) {
-              $tumblr_url = esc_url(igthemes_option('tumblr_url', ''));
+        <?php if ( get_theme_mod('tumblr_url') ) {
+              $tumblr_url = esc_url(get_theme_mod('tumblr_url', ''));
               echo "<a href='$tumblr_url' title='Tumblr' target='_blank' class='tumblr-icon'><span class='icon-social-tumblr'></span></a>";
         }?>
-        <?php if ( igthemes_option('instagram_url') ) {
-              $instagram_url = esc_url(igthemes_option('instagram_url', ''));
+        <?php if ( get_theme_mod('instagram_url') ) {
+              $instagram_url = esc_url(get_theme_mod('instagram_url', ''));
               echo "<a href='$instagram_url' title='Instagram' target='_blank' class='instagram-icon'><span class='icon-social-instagram'></span></a>";
         }?>
-        <?php if ( igthemes_option('linkedin_url') ) {
-              $linkedin_url = esc_url(igthemes_option('linkedin_url', ''));
+        <?php if ( get_theme_mod('linkedin_url') ) {
+              $linkedin_url = esc_url(get_theme_mod('linkedin_url', ''));
               echo "<a href='$linkedin_url' title='Linkedin' target='_blank' class='linkedin-icon'><span class='icon-social-linkedin'></span></a>";
         }?>
-        <?php if ( igthemes_option('dribbble_url') ) {
-              $dribbble_url = esc_url(igthemes_option('dribbble_url', ''));
+        <?php if ( get_theme_mod('dribbble_url') ) {
+              $dribbble_url = esc_url(get_theme_mod('dribbble_url', ''));
               echo "<a href='$dribbble_url' title='Dribble' target='_blank' class='dribble-icon'><span class='icon-social-dribbble'></span></a>";
         }?>
-        <?php if ( igthemes_option('youtube_url') ) {
-              $youtube_url = esc_url(igthemes_option('youtube_url', ''));
+        <?php if ( get_theme_mod('youtube_url') ) {
+              $youtube_url = esc_url(get_theme_mod('youtube_url', ''));
               echo "<a href='$youtube_url' title='Youtube' target='_blank' class='youtube-icon'><span class='icon-social-youtube'></span></a>";
         }?>
  </div><!-- .social url -->

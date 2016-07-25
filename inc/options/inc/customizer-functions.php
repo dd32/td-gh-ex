@@ -43,26 +43,26 @@ if ( ! function_exists( 'igthemes_customizer_css' ) ) {
     function igthemes_customizer_css() {
         wp_enqueue_style( 'custom-style', get_template_directory_uri() . '/css/custom.css');
 
-        $header_background_color =  igthemes_option( 'header_background_color', '#fff');
-        $header_text_color =  igthemes_option( 'header_text_color', '#666666');
-        $header_link_normal = igthemes_option( 'header_link_normal', '#444444');
-        $header_link_hover = igthemes_option( 'header_link_hover', '#ff9900');
+        $header_background_color =  get_theme_mod('header_background_color', '#fff');
+        $header_text_color =  get_theme_mod('header_text_color', '#666666');
+        $header_link_normal = get_theme_mod('header_link_normal', '#444444');
+        $header_link_hover = get_theme_mod('header_link_hover', '#ff9900');
 
-        $body_text_color =  igthemes_option( 'body_text_color', '#666666');
-        $body_headings_color =  igthemes_option( 'body_headings_color', '#444444');
-        $body_link_normal =  igthemes_option( 'body_link_normal', '#444444');
-        $body_link_hover =  igthemes_option( 'body_link_hover', '#ff9900');
+        $body_text_color =  get_theme_mod('body_text_color', '#666666');
+        $body_headings_color =  get_theme_mod('body_headings_color', '#444444');
+        $body_link_normal =  get_theme_mod('body_link_normal', '#444444');
+        $body_link_hover =  get_theme_mod('body_link_hover', '#ff9900');
 
-        $footer_background_color =  igthemes_option( 'footer_background_color', '#ffffff');
-        $footer_text_color =  igthemes_option( 'footer_text_color', '#666666');
-        $footer_headings_color =  igthemes_option( 'footer_headings_color', '#444444');
-        $footer_link_normal =  igthemes_option( 'footer_link_normal', '#444444');
-        $footer_link_hover =  igthemes_option( 'footer_link_normal', '#ff9900');
+        $footer_background_color =  get_theme_mod('footer_background_color', '#ffffff');
+        $footer_text_color =  get_theme_mod('footer_text_color', '#666666');
+        $footer_headings_color =  get_theme_mod('footer_headings_color', '#444444');
+        $footer_link_normal =  get_theme_mod('footer_link_normal', '#444444');
+        $footer_link_hover =  get_theme_mod('footer_link_normal', '#ff9900');
 
-        $button_background_normal =  igthemes_option( 'button_background_normal', '#444444');
-        $button_background_hover =  igthemes_option( 'button_background_hover', '#ff9900');
-        $button_text_normal =  igthemes_option( 'button_text_normal', '#ffffff');
-        $button_text_hover =  igthemes_option( 'button_text_hover', '#ffffff');
+        $button_background_normal =  get_theme_mod('button_background_normal', '#444444');
+        $button_background_hover =  get_theme_mod('button_background_hover', '#ff9900');
+        $button_text_normal =  get_theme_mod('button_text_normal', '#ffffff');
+        $button_text_hover =  get_theme_mod('button_text_hover', '#ffffff');
 
 
         $style = '
@@ -141,16 +141,24 @@ if ( ! function_exists( 'igthemes_customizer_css' ) ) {
         .archive .entry-title a {
             color: '. $body_headings_color .';
         }
-        .button, input[type="button"],input[type="reset"],input[type="submit"] {
-            border-color: '. $button_background_normal .';
-            background: '. $button_background_normal .';
-            color: '. $button_text_normal .';
+        .button,
+        input[type="button"],
+        input[type="reset"],
+        input[type="submit"] {
+            border-color: '. $button_background_normal .'!important;
+            background-color: '. $button_background_normal .'!important;
+            color: '. $button_text_normal .'!important;
         }
-        .button:hover, input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover,
-        .button:hover, input[type="button"]:focus,input[type="reset"]:focus,input[type="submit"]:focus{
-            border-color: '. $button_background_hover .';
-            background: '. $button_background_hover .';
-            color: '. $button_text_hover .';
+        .button:hover,
+        input[type="button"]:hover,
+        input[type="reset"]:hover,
+        input[type="submit"]:hover,
+        input[type="button"]:focus,
+        input[type="reset"]:focus,
+        input[type="submit"]:focus{
+            border-color: '. $button_background_hover .'!important;
+            background-color: '. $button_background_hover .'!important;
+            color: '. $button_text_hover .'!important;
         }
         ';
         wp_add_inline_style( 'custom-style', $style );

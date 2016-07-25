@@ -4,7 +4,7 @@ Contributors: iografica
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, footer-widgets, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
 Requires at least: 4.0
 Tested up to: 4.4.2
-Stable tag: 1.37
+Stable tag: 1.39
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ Base WP is the perfect theme for your next blog or e-commerce project.
 
 == Description ==
 
-Base WP is the perfect theme for your next blog or e-commerce project. There are several layout & color options to personalize your site, multiple widget regions, a responsive design and much more. Base WP is e-commerce (WooCommerce and Easy Digital Downloads) ready and fully integrated with the most popular free plugins for WordPress like Beaver Page Builder, Yoast Seo, JetPack and many more.
+Base WP is a basic blog or business, responsive and clean coded, WordPress theme. Base WP is e-commerce, multilingual ready, SEO friendly and cross-browser compatible. The theme is fully integrated with the most popular and free plugins for Wordpress like WooCommerce, Easy Digital Downloads, Yoast Seo, Beaver Builder, and much more. You can customize the theme via the Customizer, use this theme as an ecommerce or as a simple blogging platform.
 
 == Installation ==
 
@@ -199,3 +199,9 @@ All Javascript is located in /js/ with license headers where appropriate.
 == 1.38 ==
 * Removed dark line in the screenshot.
 * Fixed label for link colors in the customizer.
+
+== 1.39 ==
+* Fixed theme js issue to detect background color.
+* Add all theme options under new panel.
+* Fixed layout options issue.
+* Theme settings now use theme 'mod' instead of 'option'.

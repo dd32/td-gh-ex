@@ -25,7 +25,7 @@ function igthemes_body_classes( $classes ) {
         $classes[] = 'full-width';
     }
     // sidebar left page tempalte.
-    if ( is_page_template( 'page-sidebarleft.php' ) || igthemes_option('main_sidebar') =='left' && is_post_type_archive('post') ||  igthemes_option('main_sidebar') =='left' && is_home() ||  igthemes_option('main_sidebar') =='left' && is_singular('post') ) {
+    if ( is_page_template( 'page-sidebarleft.php' ) || get_theme_mod('main_sidebar') =='left' && is_post_type_archive('post') ||  get_theme_mod('main_sidebar') =='left' && is_home() ||  get_theme_mod('main_sidebar') =='left' && is_singular('post') ) {
         $classes[] = 'sidebar-left';
     }
     return $classes;
