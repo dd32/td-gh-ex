@@ -7,8 +7,7 @@ function accesspress_blog_setting($wp_customize){
       'title'           =>      __('Blog Settings', 'accesspress-store'),
       'priority'        =>      '41',
       )
-    );
-  
+    );  
   
   $wp_customize->add_setting(
     'blog_post_layout',
@@ -57,28 +56,6 @@ foreach ($categories_obj as $category) {
       'choices' => $categories
       )
     ));
-
-
-
- /* $wp_customize->add_setting(
-        'favorite_fruit',
-        array(
-            'default'           => '',
-            'sanitize_callback' => 'jt_sanitize_favorite_fruit'
-        )
-    );
-
-    $wp_customize->add_control(
-        new JT_Customize_Control_Checkbox_Multiple(
-            $wp_customize,
-            'favorite_fruit',
-            array(
-                'section' => 'blog_setting',
-                'label'   => __( 'Favorite Fruit', 'jt' ),
-                'choices' => $categories
-            )
-        )
-    );*/
-
+  
 }
 add_action('customize_register', 'accesspress_blog_setting');

@@ -55,10 +55,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php 
 				/**
 				 * Detect plugin. For use on Front End only.
-				 */
+				*/
 				include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-
-				// check for plugin using plugin name
 				if ( is_plugin_active( 'accesspress-social-share/accesspress-social-share.php' ) ) {
 					echo do_shortcode("[apss-share share_text='Share this']");
 				}
@@ -77,4 +75,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<meta itemprop="url" content="<?php the_permalink(); ?>" />
 	</div><!-- #product-<?php the_ID(); ?> -->
-<?php do_action( 'woocommerce_after_single_product' ); ?>
+<?php do_action( 'woocommerce_after_single_product' ); 

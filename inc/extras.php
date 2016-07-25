@@ -74,4 +74,5 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 		<?php
 	}
 	add_action( 'wp_head', 'accesspress_store_render_title' );
+	
 endif;

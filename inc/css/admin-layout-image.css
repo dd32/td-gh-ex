@@ -9,7 +9,7 @@
     border: 2px solid #999;
     color: #23282d;
 }
-#customize-control-accesspress_background_image_pattern img {
+#customize-control-accesspress_background_image_pattern img, .customize-control-radioimage img {
     width: 40%;
     padding:10px;
 }

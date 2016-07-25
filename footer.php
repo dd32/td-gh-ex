@@ -15,25 +15,25 @@
     <div id="top-footer" class="clearfix columns-<?php echo accesspress_footer_count(); ?>">
      <div class="ak-container">
          <div class="top-footer-wrap clearfix">
-             <?php if(is_active_sidebar('footer-1')): ?>
+             <?php if( is_active_sidebar('footer-1') ): ?>
                 <div class="top-footer-block">
                    <?php dynamic_sidebar('footer-1') ?>
                </div>
            <?php endif; ?>
 
-           <?php if(is_active_sidebar('footer-2')): ?>
+           <?php if( is_active_sidebar('footer-2') ): ?>
             <div class="top-footer-block">
                <?php dynamic_sidebar('footer-2') ?>
            </div>
        <?php endif; ?>
 
-       <?php if(is_active_sidebar('footer-3')): ?>
+       <?php if( is_active_sidebar('footer-3') ): ?>
         <div class="top-footer-block">
            <?php dynamic_sidebar('footer-3') ?>
        </div>
    <?php endif; ?>
 
-   <?php if(is_active_sidebar('footer-4')): ?>
+   <?php if( is_active_sidebar('footer-4') ): ?>
     <div class="top-footer-block">
        <?php dynamic_sidebar('footer-4') ?>
    </div>
@@ -92,18 +92,14 @@
             else : 
               printf(__('&copy; %1$s %2$s', 'accesspress-store'), get_the_time("Y"), get_bloginfo('name'));
             endif;
-          ?> - <?php  
-              printf( __( 'WordPress Theme : %1$s by %2$s', 'accesspress-store' ), 'AccessPress Store', '<a href="'.esc_url('https://accesspressthemes.com/wordpress-themes/accesspress-store/' ).'">AccessPress Themes</a>'  ); 
-          ?>
+          ?> - <?php printf( __( 'WordPress Theme : %1$s by %2$s', 'accesspress-store' ), 'AccessPress Store', '<a href="'.esc_url('https://accesspressthemes.com/wordpress-themes/accesspress-store/' ).'">AccessPress Themes</a>'  );  ?>
         </div><!-- .site-info -->
     </div>
 </div>
-
 
 </footer><!-- #colophon -->
 </div><!-- #page -->
 <div id="ak-top"><i class="fa fa-reply"></i></div>
 <?php wp_footer(); ?>
-
 </body>
 </html>

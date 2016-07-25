@@ -20,8 +20,7 @@ add_action( 'customize_register', 'accesspress_store_customize_register' );
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
-function accesspress_store_customize_preview_js() {
-    
+function accesspress_store_customize_preview_js() {    
 	wp_enqueue_script( 'accesspress_store_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
 }
 add_action( 'customize_preview_init', 'accesspress_store_customize_preview_js' );

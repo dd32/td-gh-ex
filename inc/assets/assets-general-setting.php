@@ -60,7 +60,7 @@ function accesspress_ticker_setting($wp_customize){
           'sanitize_callback'     =>  'accesspress_store_checkbox_sanitize'
       ));
 
-      $wp_customize->add_control(new WP_Customize_Switch_Control( $wp_customize, 'accesspress_ticker_checkbox', array(
+      $wp_customize->add_control(new AccessPress_Store_WP_Customize_Switch_Control( $wp_customize, 'accesspress_ticker_checkbox', array(
           'section'       =>      'accesspress_ticker',
           'label'         =>      __('Enable Disable Ticker', 'accesspress-store'),
           'type'          =>      'switch',
@@ -160,7 +160,7 @@ function accesspress_ticker_setting($wp_customize){
 
       $imagepath =  get_template_directory_uri() . '/inc/images/';                           
       
-      $wp_customize->add_control( new WP_Customize_Radioimage_Control( $wp_customize, 'accesspress_background_image_pattern', array(
+      $wp_customize->add_control( new AccessPress_Store_WP_Customize_Radioimage_Control( $wp_customize, 'accesspress_background_image_pattern', array(
         'section'       =>      'background_image',
         'label'         =>      __('Background Pattern', 'accesspress-store'),
         'type'          =>      'radioimage',

@@ -9,7 +9,7 @@
 	<div class="entry-content">
 		<?php if(has_post_thumbnail()): ?>
 			<div class="post-thumbnail">
-			<?php the_post_thumbnail('accesspress-blog-big-thumbnail'); ?>
+				<?php the_post_thumbnail('accesspress-blog-big-thumbnail'); ?>
 			</div>
 		<?php endif; ?>
 		<span class="cat-name"><?php $category = get_the_category(); echo $category[0]->cat_name; ?></span>

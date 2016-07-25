@@ -5,8 +5,9 @@ function load_custom_wp_admin_style() {
 add_action( 'admin_enqueue_scripts', 'load_custom_wp_admin_style' );
 
 
-if(class_exists( 'WP_Customize_control')):
-class WP_Customize_Switch_Control extends WP_Customize_Control {
+if( class_exists( 'WP_Customize_control') ){
+    
+    class AccessPress_Store_WP_Customize_Switch_Control extends WP_Customize_Control {
 		public $type = 'switch';
         
 		public function render_content() {
@@ -18,16 +19,15 @@ class WP_Customize_Switch_Control extends WP_Customize_Control {
                   <span class="switch_enable"> <?php _e('Enable', 'accesspress-store'); ?> </span>
                   <span class="switch_disable"> <?php _e('Disable', 'accesspress-store'); ?> </span>  
                   <input type="hidden" id="enable_prev_next" <?php $this->link(); ?> value="<?php echo $this->value(); ?>" />							
-                  <!--<label for="enable_prev_next"><?php _e('Check to Enable', 'accesspress-store'); ?></label>-->
                 </div>
             </label>
 		<?php
        
 		}
 	}
- class WP_Customize_Switch_Control_YesNo extends WP_Customize_Control {
-		public $type = 'switch_yesno';
-        
+    
+    class AccessPress_Store_WP_Customize_Switch_Control_YesNo extends WP_Customize_Control {
+		public $type = 'switch_yesno';        
 		public function render_content() {
 		?>
 			<label>
@@ -43,4 +43,4 @@ class WP_Customize_Switch_Control extends WP_Customize_Control {
        
 		}
 	}
-endif;
+}

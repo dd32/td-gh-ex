@@ -15,7 +15,7 @@ function accesspress_social_setting($wp_customize){
       'sanitize_callback' => 'accesspress_store_integer_sanitize'
       )
     );
-  $wp_customize->add_control(new WP_Customize_Switch_Control_YesNo(
+  $wp_customize->add_control(new AccessPress_Store_WP_Customize_Switch_Control_YesNo(
     $wp_customize,
     'social_icon_info',
     array(

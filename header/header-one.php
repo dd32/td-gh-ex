@@ -2,7 +2,7 @@
     
     <div class="before-top-header">
         <div class="ak-container clearfix">
-            <?php if (as_before_top_header_enabled()): ?>
+            <?php if ( accesspress_store_before_top_header_enabled() ): ?>
                 <?php accesspress_ticker_header_customizer(); ?>            
             <?php endif; ?>
                 <?php
@@ -44,27 +44,23 @@
             <?php
                 if (function_exists('YITH_WCWL')) {
                     $wishlist_url = YITH_WCWL()->get_wishlist_url();
-                    ?>
+            ?>
                     <a class="quick-wishlist" href="<?php echo $wishlist_url; ?>" title="Wishlist">
                         <i class="fa fa-heart"></i>
                         <?php echo "(" . yith_wcwl_count_products() . ")"; ?>
                     </a>
-                    <?php
-                }
-            ?>
+            <?php } ?>
             <div class="login-woocommerce">
                 <?php
-                if (is_user_logged_in()) {
+                    if (is_user_logged_in()) {
                     global $current_user;
                     wp_get_current_user();
                 ?>
                     <a href="<?php echo wp_logout_url( home_url() ); ?>" class="logout">
                         <?php _e(' Logout', 'accesspress-store'); ?>
                     </a>
-                <?php
-                } else {
-                    ?>
-                    <a href="<?php echo get_permalink(get_option('woocommerce_myaccount_page_id')); ?>" class="account">
+                <?php } else { ?>
+                    <a href="<?php echo get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ); ?>" class="account">
                         <?php _e('Login', 'accesspress-store'); ?>
                     </a>
                 <?php } ?>

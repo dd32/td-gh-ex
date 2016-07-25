@@ -12,15 +12,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 global $product, $woocommerce_loop;
-
 $upsells = $product->get_upsells();
-
 if ( sizeof( $upsells ) == 0 ) {
 	return;
 }
-
 $meta_query = WC()->query->get_meta_query();
-
 $args = array(
 	'post_type'           => 'product',
 	'ignore_sticky_posts' => 1,

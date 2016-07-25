@@ -12,19 +12,19 @@
 get_header();
 
 global $post;
-$single_page_layout = get_post_meta($post->ID, 'accesspress_store_sidebar_layout', true);
+$single_page_layout = esc_attr( get_post_meta($post->ID, 'accesspress_store_sidebar_layout', true) );
 if (empty($single_page_layout)) {
-    $single_page_layout = get_theme_mod('single_page_layout','right-sidebar');
+    $single_page_layout = esc_attr( get_theme_mod('single_page_layout','right-sidebar') );
 }
 if (is_page('cart') || is_page('checkout')) {
     $single_page_layout = "no-sidebar";
 }
-$breadcrumb = get_theme_mod('breadcrumb_options_page','1');
-$archive_bread = get_theme_mod('breadcrumb_page_image');
+$breadcrumb = intval( get_theme_mod('breadcrumb_options_page','1') );
+$archive_bread = esc_url( get_theme_mod('breadcrumb_page_image') );
 if($archive_bread){
     $bread_archive = $archive_bread;
 }else{
-  $bread_archive = get_template_directory_uri().'/images/about-us-bg.jpg';
+  $bread_archive = esc_url ( get_template_directory_uri().'/images/about-us-bg.jpg' );
 }
 if($breadcrumb == '1') :
 ?>
@@ -41,11 +41,11 @@ if($breadcrumb == '1') :
     <main id="main" class="site-main clearfix <?php echo $single_page_layout; ?>">
         <?php if ($single_page_layout == 'both-sidebar'): ?>
             <div id="primary-wrap" class="clearfix">
-            <?php endif; ?>
+        <?php endif; ?>
 
             <div id="primary" class="content-area">
 
-                <?php while (have_posts()) : the_post(); ?>
+                <?php while ( have_posts() ) : the_post(); ?>
 
                     <?php get_template_part('content', 'page'); ?>
 
@@ -59,20 +59,20 @@ if($breadcrumb == '1') :
             </div><!-- #primary -->
 
             <?php
-            if ($single_page_layout == 'both-sidebar' || $single_page_layout == 'left-sidebar'):
-                get_sidebar('left');
-            endif;
+                if ($single_page_layout == 'both-sidebar' || $single_page_layout == 'left-sidebar'):
+                    get_sidebar('left');
+                endif;
             ?>
 
-            <?php if ($single_page_layout == 'both-sidebar'): ?>
+        <?php if ($single_page_layout == 'both-sidebar'): ?>
             </div>
         <?php endif; ?>
 
-        <?php
-        if ($single_page_layout == 'both-sidebar' || $single_page_layout == 'right-sidebar'):
-            get_sidebar('right');
-        endif;
-        ?>
+            <?php
+                if ($single_page_layout == 'both-sidebar' || $single_page_layout == 'right-sidebar'):
+                    get_sidebar('right');
+                endif;
+            ?>
     </main>
 </div>
-<?php get_footer(); ?>
+<?php get_footer();

@@ -12,6 +12,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 ?>
 <!-- #secondary -->
-<?php
-dynamic_sidebar( 'shop' );
-?>
+<?php dynamic_sidebar( 'shop' );

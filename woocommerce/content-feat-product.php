@@ -40,17 +40,17 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 <div <?php post_class( $classes ); ?>>
 	<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
 	<div class="item-img">
-	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">  
-		<?php
-			/**
-			 * woocommerce_before_shop_loop_item_title hook
-			 *
-			 * @hooked woocommerce_show_product_loop_sale_flash - 10
-			 * @hooked woocommerce_template_loop_product_thumbnail - 10
-			 */
-			do_action( 'woocommerce_before_shop_loop_item_title' );
-		?>
-	</a>
+		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">  
+			<?php
+				/**
+				 * woocommerce_before_shop_loop_item_title hook
+				 *
+				 * @hooked woocommerce_show_product_loop_sale_flash - 10
+				 * @hooked woocommerce_template_loop_product_thumbnail - 10
+				 */
+				do_action( 'woocommerce_before_shop_loop_item_title' );
+			?>
+		</a>
 	<?php
 		/**
 		 * woocommerce_after_shop_loop_item hook
@@ -62,7 +62,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 	</div>
 	<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">  
 		<h3><?php the_title(); ?></h3>
-		<p class="short_desc"><?php echo accesspress_letter_count(get_the_excerpt(),20); ?></p>
+		<p class="short_desc"><?php echo accesspress_letter_count( get_the_excerpt(),20 ); ?></p>
 	</a>
 	<div class="price-cart">
 		<?php
@@ -78,10 +78,8 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 	</div>
 	<?php 
 		if( function_exists( 'YITH_WCWL' ) ){
-			$url = add_query_arg( 'add_to_wishlist', $product->id );
-			?>
-			<a class="item-wishlist" href="<?php echo $url ?>"><?php _e('Wishlist','accesspress-store'); ?></a>
-			<?php
-		}
+		$url = add_query_arg( 'add_to_wishlist', $product->id );
 	?>
+		<a class="item-wishlist" href="<?php echo $url ?>"><?php _e('Wishlist','accesspress-store'); ?></a>
+	<?php } ?>
 </div>

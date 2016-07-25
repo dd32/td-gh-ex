@@ -20,22 +20,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header('shop');
-$breadcrumb = get_theme_mod('breadcrumb_options_single','1');
-$archive_bread = get_theme_mod('breadcrumb_single_image');
+$breadcrumb = intval( get_theme_mod('breadcrumb_options_single','1') );
+$archive_bread = esc_url( get_theme_mod('breadcrumb_single_image') );
 if($archive_bread){
     $bread_archive = $archive_bread;
 }else{
-  $bread_archive = get_template_directory_uri().'/images/about-us-bg.jpg';
+  $bread_archive = esc_url( get_template_directory_uri().'/images/about-us-bg.jpg' );
 }
 if($breadcrumb == '1') :
 ?>
 <header id="title_bread_wrap" class="entry-header" style="background:url('<?php echo $bread_archive; ?>') no-repeat center; background-size: cover;">
     <div class="ak-container">
-
         <?php if (apply_filters('woocommerce_show_page_title', true)) : ?>
             <h1 class="entry-title ak-container"><?php woocommerce_page_title(); ?></h1>
         <?php endif; ?>
-
         <?php
         /**
          * woocommerce_before_main_content hook
@@ -45,8 +43,6 @@ if($breadcrumb == '1') :
          */
         do_action('woocommerce_before_main_content');
         ?>
-
-
         <?php do_action('woocommerce_archive_description'); ?>
     </div>
 </header>
@@ -85,4 +81,4 @@ if($breadcrumb == '1') :
         </div>
     </div>
 </div>
-<?php get_footer('shop'); ?>
+<?php get_footer('shop');

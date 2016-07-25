@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AccessPress Store\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Wed May 18 2016 11:58:53 GMT+0545 (Nepal Standard Time)\n"
-"POT-Revision-Date: Wed May 18 2016 11:58:56 GMT+0545 (Nepal Standard Time)\n"
+"POT-Creation-Date: Mon Jul 25 2016 11:32:19 GMT+0545 (Nepal Standard Time)\n"
+"POT-Revision-Date: Mon Jul 25 2016 11:32:22 GMT+0545 (Nepal Standard Time)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -24,17 +24,17 @@ msgstr ""
 "esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
 "X-Generator: Loco - https://localise.biz/"
 
-#: ../404.php:15
+#: ../404.php:14
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: ../404.php:19
+#: ../404.php:18
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
 
-#: ../comments.php:28
+#: ../comments.php:27
 #, php-format
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
@@ -42,43 +42,42 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../comments.php:35 ../comments.php:57
+#: ../comments.php:34 ../comments.php:56
 msgid "Comment navigation"
 msgstr ""
 
-#: ../comments.php:38 ../comments.php:60
+#: ../comments.php:37 ../comments.php:59
 msgid "Older Comments"
 msgstr ""
 
-#: ../comments.php:39 ../comments.php:61
+#: ../comments.php:38 ../comments.php:60
 msgid "Newer Comments"
 msgstr ""
 
-#: ../comments.php:73
+#: ../comments.php:72
 msgid "Comments are closed."
 msgstr ""
 
-#: ../content-blog.php:64 ../content-single.php:18 ../content.php:20 ../template-
-#: blog.php:99
+#: ../content-blog.php:61 ../content-single.php:18 ../content.php:20 ../template-
+#: blog.php:104
 msgid "Posted On"
 msgstr ""
 
-#: ../content-blog.php:66 ../content-single.php:20 ../content.php:22 ../template-
-#: blog.php:101
+#: ../content-blog.php:63 ../content-single.php:20 ../content.php:22 ../template-
+#: blog.php:106
 msgid "at"
 msgstr ""
 
-#: ../content-blog.php:68 ../content-single.php:22 ../content.php:24 ../template-
-#: blog.php:103
+#: ../content-blog.php:65 ../content-single.php:22 ../content.php:24 ../template-
+#: blog.php:108
 msgid "by"
 msgstr ""
 
-#: ../content-blog.php:86 ../content.php:38 ../template-blog.php:121
+#: ../content-blog.php:82 ../content.php:35 ../template-blog.php:125
 msgid "Read More"
 msgstr ""
 
-#: ../content-blog.php:91 ../content-page.php:24 ../content-single.php:30 ..
-#: /template-blog.php:126
+#: ../content-blog.php:86 ../content-page.php:23 ../content-single.php:30
 msgid "Pages:"
 msgstr ""
 
@@ -101,10 +100,6 @@ msgstr ""
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
-msgstr ""
-
-#: ../content-page.php:32 ../inc/template-tags.php:126
-msgid "Edit"
 msgstr ""
 
 #: ../footer.php:58
@@ -140,7 +135,7 @@ msgstr ""
 msgid "&copy; %1$s %2$s"
 msgstr ""
 
-#: ../footer.php:96
+#: ../footer.php:95
 #, php-format
 msgid "WordPress Theme : %1$s by %2$s"
 msgstr ""
@@ -182,23 +177,6 @@ msgstr ""
 msgid "Live Preview"
 msgstr ""
 
-#: ../search.php:15
-#, php-format
-msgid "Search Results for: %s"
-msgstr ""
-
-#: ../searchform.php:8
-msgid "Search products"
-msgstr ""
-
-#. Name of the template
-msgid "Blog Page Template"
-msgstr ""
-
-#. Name of the template
-msgid "HomePage"
-msgstr ""
-
 #: ../header/header-one.php:15 ../header/header-two.php:15
 msgid "Welcome"
 msgstr ""
@@ -207,15 +185,15 @@ msgstr ""
 msgid "!"
 msgstr ""
 
-#: ../header/header-one.php:62 ../header/header-two.php:66
+#: ../header/header-one.php:60 ../header/header-two.php:66
 msgid " Logout"
 msgstr ""
 
-#: ../header/header-one.php:68 ../header/header-two.php:72
+#: ../header/header-one.php:64 ../header/header-two.php:72
 msgid "Login"
 msgstr ""
 
-#: ../header/header-one.php:104 ../header/header-two.php:108
+#: ../header/header-one.php:100 ../header/header-two.php:108
 msgid "Menu"
 msgstr ""
 
@@ -231,130 +209,115 @@ msgstr ""
 msgid "Shop Sidebar"
 msgstr ""
 
-#: ../inc/accesspress-function.php:39
+#: ../inc/accesspress-function.php:40
 msgid "Header Call To Box"
 msgstr ""
 
-#: ../inc/accesspress-function.php:49
+#: ../inc/accesspress-function.php:50
 msgid "AP: Promo Widget 1"
 msgstr ""
 
-#: ../inc/accesspress-function.php:59
+#: ../inc/accesspress-function.php:60
 msgid "AP: Product Listing Widget 1"
 msgstr ""
 
-#: ../inc/accesspress-function.php:69
+#: ../inc/accesspress-function.php:70
 msgid "AP: Promo Widget 2"
 msgstr ""
 
-#: ../inc/accesspress-function.php:79
+#: ../inc/accesspress-function.php:80
 msgid "AP: Product Listing Widget 2"
 msgstr ""
 
-#: ../inc/accesspress-function.php:89
+#: ../inc/accesspress-function.php:90
 msgid "AP: Video Call to Action"
 msgstr ""
 
-#: ../inc/accesspress-function.php:99
+#: ../inc/accesspress-function.php:100
 msgid "AP: Product Listing Widget 3"
 msgstr ""
 
-#: ../inc/accesspress-function.php:109
+#: ../inc/accesspress-function.php:110
 msgid "AP: Promo Widget 3"
 msgstr ""
 
-#: ../inc/accesspress-function.php:119
+#: ../inc/accesspress-function.php:120
 msgid "Footer Area 1"
 msgstr ""
 
-#: ../inc/accesspress-function.php:129
+#: ../inc/accesspress-function.php:130
 msgid "Footer Area 2"
 msgstr ""
 
-#: ../inc/accesspress-function.php:139
+#: ../inc/accesspress-function.php:140
 msgid "Footer Area 3"
 msgstr ""
 
-#: ../inc/accesspress-function.php:149
+#: ../inc/accesspress-function.php:150
 msgid "Footer Area 4"
 msgstr ""
 
-#: ../inc/accesspress-function.php:374
-msgid "View your shopping cart"
-msgstr ""
-
-#: ../inc/accesspress-function.php:375
-msgid "Start shopping"
-msgstr ""
-
-#: ../inc/accesspress-function.php:379
-#, php-format
-msgid "%d item"
-msgid_plural "%d items"
-msgstr[0] ""
-msgstr[1] ""
-
-#: ../inc/accesspress-function.php:499
+#: ../inc/accesspress-function.php:456
 msgctxt "breadcrumb"
 msgid "Home"
 msgstr ""
 
-#: ../inc/accesspress-function.php:518
+#: ../inc/accesspress-function.php:472
 msgid "Home"
 msgstr ""
 
-#: ../inc/accesspress-function.php:537
+#: ../inc/accesspress-function.php:491
 msgid "Archive by category"
 msgstr ""
 
-#: ../inc/accesspress-function.php:539
+#: ../inc/accesspress-function.php:493
 msgid "Search results for"
 msgstr ""
 
-#: ../inc/accesspress-function.php:597
+#: ../inc/accesspress-function.php:551
 msgid "Posts tagged"
 msgstr ""
 
-#: ../inc/accesspress-function.php:601
+#: ../inc/accesspress-function.php:555
 msgid "Articles posted by "
 msgstr ""
 
-#: ../inc/accesspress-function.php:609
+#: ../inc/accesspress-function.php:563
 msgid "Page"
 msgstr ""
 
-#: ../inc/accesspress-function.php:800 ../inc/accesspress-plugin-activation.php:333
+#: ../inc/accesspress-function.php:740 ../inc/accesspress-plugin-activation.php:333
 msgid "Install Required Plugins"
 msgstr ""
 
-#: ../inc/accesspress-function.php:801 ../inc/accesspress-plugin-activation.php:334
+#: ../inc/accesspress-function.php:741 ../inc/accesspress-plugin-activation.php:334
 msgid "Install Plugins"
 msgstr ""
 
-#: ../inc/accesspress-function.php:802 ../inc/accesspress-plugin-activation.php:335
+#: ../inc/accesspress-function.php:742 ../inc/accesspress-plugin-activation.php:335
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#: ../inc/accesspress-function.php:803 ../inc/accesspress-plugin-activation.php:336
+#: ../inc/accesspress-function.php:743 ../inc/accesspress-plugin-activation.php:336
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: ../inc/accesspress-function.php:804 ../inc/accesspress-plugin-activation.php:337
+#: ../inc/accesspress-function.php:744 ../inc/accesspress-plugin-activation.php:337
 #, php-format
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:807 ../inc/accesspress-plugin-activation.php:342
+#: ../inc/accesspress-function.php:747 ../inc/accesspress-plugin-activation.php:342
 #, php-format
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:810 ../inc/accesspress-plugin-activation.php:347
+#: ../inc/accesspress-function.php:750 ../inc/accesspress-plugin-activation.php:347
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to install the %1$s "
@@ -365,7 +328,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:813 ../inc/accesspress-plugin-activation.php:352
+#: ../inc/accesspress-function.php:753 ../inc/accesspress-plugin-activation.php:352
 #, php-format
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
@@ -376,14 +339,14 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:816 ../inc/accesspress-plugin-activation.php:357
+#: ../inc/accesspress-function.php:756 ../inc/accesspress-plugin-activation.php:357
 #, php-format
 msgid "There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:819 ../inc/accesspress-plugin-activation.php:362
+#: ../inc/accesspress-function.php:759 ../inc/accesspress-plugin-activation.php:362
 #, php-format
 msgid "Sorry, but you do not have the correct permissions to update the %1$s plugin."
 msgid_plural ""
@@ -392,21 +355,21 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:822 ../inc/accesspress-plugin-activation.php:367
+#: ../inc/accesspress-function.php:762 ../inc/accesspress-plugin-activation.php:367
 #, php-format
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:825 ../inc/accesspress-plugin-activation.php:372
+#: ../inc/accesspress-function.php:765 ../inc/accesspress-plugin-activation.php:372
 #, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:828 ../inc/accesspress-plugin-activation.php:377
+#: ../inc/accesspress-function.php:768 ../inc/accesspress-plugin-activation.php:377
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to activate the %1$s "
@@ -417,58 +380,58 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:831 ../inc/accesspress-plugin-activation.php:382
+#: ../inc/accesspress-function.php:771 ../inc/accesspress-plugin-activation.php:382
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:834 ../inc/accesspress-plugin-activation.php:387
+#: ../inc/accesspress-function.php:774 ../inc/accesspress-plugin-activation.php:387
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:837 ../inc/accesspress-plugin-activation.php:392
+#: ../inc/accesspress-function.php:777 ../inc/accesspress-plugin-activation.php:392
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:840 ../inc/accesspress-plugin-activation.php:397
+#: ../inc/accesspress-function.php:780 ../inc/accesspress-plugin-activation.php:397
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: ../inc/accesspress-function.php:841 ../inc/accesspress-plugin-activation.php:
+#: ../inc/accesspress-function.php:781 ../inc/accesspress-plugin-activation.php:
 #: 399 ../inc/accesspress-plugin-activation.php:3029
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: ../inc/accesspress-function.php:842 ../inc/accesspress-plugin-activation.php:
+#: ../inc/accesspress-function.php:782 ../inc/accesspress-plugin-activation.php:
 #: 400 ../inc/accesspress-plugin-activation.php:2832
 msgid "The following plugin was activated successfully:"
 msgid_plural "The following plugins were activated successfully:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:843 ../inc/accesspress-plugin-activation.php:401
+#: ../inc/accesspress-function.php:783 ../inc/accesspress-plugin-activation.php:401
 #, php-format
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
-#: ../inc/accesspress-function.php:844 ../inc/accesspress-plugin-activation.php:402
+#: ../inc/accesspress-function.php:784 ../inc/accesspress-plugin-activation.php:402
 #, php-format
 msgid ""
 "Plugin not activated. A higher version of %s is needed for this theme. "
 "Please update the plugin."
 msgstr ""
 
-#: ../inc/accesspress-function.php:845 ../inc/accesspress-plugin-activation.php:403
+#: ../inc/accesspress-function.php:785 ../inc/accesspress-plugin-activation.php:403
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
-#: ../inc/accesspress-function.php:846 ../inc/accesspress-plugin-activation.php:405
+#: ../inc/accesspress-function.php:786 ../inc/accesspress-plugin-activation.php:405
 msgid "Please contact the administrator of this site for help."
 msgstr ""
 
@@ -788,19 +751,19 @@ msgstr ""
 msgid "Grid"
 msgstr ""
 
-#: ../inc/accesspress-sanitizer.php:29 ../inc/assets/assets-blog-setting.php:28
+#: ../inc/accesspress-sanitizer.php:29 ../inc/assets/assets-blog-setting.php:27
 msgid "Blog Image Large"
 msgstr ""
 
-#: ../inc/accesspress-sanitizer.php:30 ../inc/assets/assets-blog-setting.php:29
+#: ../inc/accesspress-sanitizer.php:30 ../inc/assets/assets-blog-setting.php:28
 msgid "Blog Image Medium"
 msgstr ""
 
-#: ../inc/accesspress-sanitizer.php:31 ../inc/assets/assets-blog-setting.php:30
+#: ../inc/accesspress-sanitizer.php:31 ../inc/assets/assets-blog-setting.php:29
 msgid "Blog Image Medium Alternate"
 msgstr ""
 
-#: ../inc/accesspress-sanitizer.php:32 ../inc/assets/assets-blog-setting.php:31
+#: ../inc/accesspress-sanitizer.php:32 ../inc/assets/assets-blog-setting.php:30
 msgid "Blog Full Content"
 msgstr ""
 
@@ -840,11 +803,11 @@ msgstr ""
 msgid "Widget Title Style Two"
 msgstr ""
 
-#: ../inc/accesspress-sanitizer.php:124 ../inc/class/class-custom-switch.php:18
+#: ../inc/accesspress-sanitizer.php:124 ../inc/class/class-custom-switch.php:19
 msgid "Enable"
 msgstr ""
 
-#: ../inc/accesspress-sanitizer.php:125 ../inc/class/class-custom-switch.php:19
+#: ../inc/accesspress-sanitizer.php:125 ../inc/class/class-custom-switch.php:20
 msgid "Disable"
 msgstr ""
 
@@ -856,202 +819,11 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: ../inc/custom-metabox.php:17
-msgid "Left sidebar"
-msgstr ""
-
-#: ../inc/custom-metabox.php:22
-msgid "Right sidebar<br/>(default)"
-msgstr ""
-
-#: ../inc/custom-metabox.php:27
-msgid "Both Sidebar"
-msgstr ""
-
-#: ../inc/custom-metabox.php:33
-msgid "No sidebar"
-msgstr ""
-
-#: ../inc/custom-metabox.php:69
-msgid "You can set up the sidebar content"
-msgstr ""
-
-#: ../inc/custom-metabox.php:69
-msgid "here"
-msgstr ""
-
-#: ../inc/extras.php:58
-#, php-format
-msgid "Page %s"
-msgstr ""
-
-#: ../inc/template-tags.php:23
-msgid "Posts navigation"
-msgstr ""
-
-#: ../inc/template-tags.php:27
-msgid "Older posts"
-msgstr ""
-
-#: ../inc/template-tags.php:31
-msgid "Newer posts"
-msgstr ""
-
-#: ../inc/template-tags.php:56
-msgid "Post navigation"
-msgstr ""
-
-#: ../inc/template-tags.php:86
-#, php-format
-msgctxt "accesspress-store"
-msgid "Posted on %s"
-msgstr ""
-
-#: ../inc/template-tags.php:91
-#, php-format
-msgctxt "accesspress-store"
-msgid "by %s"
-msgstr ""
-
-#. translators: used between list items, there is a space after the comma
-#. translators: used between list items, there is a space after the comma
-#: ../inc/template-tags.php:108 ../inc/template-tags.php:114
-msgid ", "
-msgstr ""
-
-#: ../inc/template-tags.php:110
-#, php-format
-msgid "Posted in %1$s"
-msgstr ""
-
-#: ../inc/template-tags.php:116
-#, php-format
-msgid "Tagged %1$s"
-msgstr ""
-
-#: ../inc/template-tags.php:122
-msgid "Leave a comment"
-msgstr ""
-
-#: ../inc/template-tags.php:122
-msgid "1 Comment"
-msgstr ""
-
-#: ../inc/template-tags.php:122
-#, php-format
-msgid "% Comments"
-msgstr ""
-
-#: ../inc/template-tags.php:143
-#, php-format
-msgid "Category: %s"
-msgstr ""
-
-#: ../inc/template-tags.php:145
-#, php-format
-msgid "Tag: %s"
-msgstr ""
-
-#: ../inc/template-tags.php:147
-#, php-format
-msgid "Author: %s"
-msgstr ""
-
-#: ../inc/template-tags.php:149
-#, php-format
-msgid "Year: %s"
-msgstr ""
-
-#: ../inc/template-tags.php:149
-msgctxt "yearly archives date format"
-msgid "Y"
-msgstr ""
-
-#: ../inc/template-tags.php:151
-#, php-format
-msgid "Month: %s"
-msgstr ""
-
-#: ../inc/template-tags.php:151
-msgctxt "monthly archives date format"
-msgid "F Y"
-msgstr ""
-
-#: ../inc/template-tags.php:153
-#, php-format
-msgid "Day: %s"
-msgstr ""
-
-#: ../inc/template-tags.php:153
-msgctxt "daily archives date format"
-msgid "F j, Y"
-msgstr ""
-
-#: ../inc/template-tags.php:156
-msgctxt "post format archive title"
-msgid "Asides"
-msgstr ""
-
-#: ../inc/template-tags.php:158
-msgctxt "post format archive title"
-msgid "Galleries"
-msgstr ""
-
-#: ../inc/template-tags.php:160
-msgctxt "post format archive title"
-msgid "Images"
-msgstr ""
-
-#: ../inc/template-tags.php:162
-msgctxt "post format archive title"
-msgid "Videos"
-msgstr ""
-
-#: ../inc/template-tags.php:164
-msgctxt "post format archive title"
-msgid "Quotes"
-msgstr ""
-
-#: ../inc/template-tags.php:166
-msgctxt "post format archive title"
-msgid "Links"
-msgstr ""
-
-#: ../inc/template-tags.php:168
-msgctxt "post format archive title"
-msgid "Statuses"
-msgstr ""
-
-#: ../inc/template-tags.php:170
-msgctxt "post format archive title"
-msgid "Audio"
-msgstr ""
-
-#: ../inc/template-tags.php:172
-msgctxt "post format archive title"
-msgid "Chats"
-msgstr ""
-
-#: ../inc/template-tags.php:175
-#, php-format
-msgid "Archives: %s"
-msgstr ""
-
-#. translators: 1: Taxonomy singular name, 2: Current taxonomy term
-#: ../inc/template-tags.php:179
-#, php-format
-msgid "%1$s: %2$s"
-msgstr ""
-
-#: ../inc/template-tags.php:181
-msgid "Archives"
-msgstr ""
-
 #: ../inc/assets/assets-blog-setting.php:7
 msgid "Blog Settings"
 msgstr ""
 
-#: ../inc/assets/assets-blog-setting.php:25
+#: ../inc/assets/assets-blog-setting.php:24
 msgid "Blog Layout"
 msgstr ""
 
@@ -1467,111 +1239,111 @@ msgstr ""
 msgid "Slider 5"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:149
+#: ../inc/assets/assets-slider-setting.php:150
 msgid "Select Slider Post"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:161
+#: ../inc/assets/assets-slider-setting.php:162
 msgid "Select Post For Slider One"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:176
+#: ../inc/assets/assets-slider-setting.php:177
 msgid "Slider 1 Button Link"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:188
+#: ../inc/assets/assets-slider-setting.php:189
 msgid "Slider 1 Button Text"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:199
+#: ../inc/assets/assets-slider-setting.php:200
 msgid "Select Post For Slider Two"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:213
+#: ../inc/assets/assets-slider-setting.php:214
 msgid "Slider 2 Button Link"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:225
+#: ../inc/assets/assets-slider-setting.php:226
 msgid "Slider 2 Button Text"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:236
+#: ../inc/assets/assets-slider-setting.php:237
 msgid "Select Post For Slider Three"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:250
+#: ../inc/assets/assets-slider-setting.php:251
 msgid "Slider 3 Button Link"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:262
+#: ../inc/assets/assets-slider-setting.php:263
 msgid "Slider 3 Button Text"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:274
+#: ../inc/assets/assets-slider-setting.php:275
 msgid "Select Post For Slider Four"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:288
+#: ../inc/assets/assets-slider-setting.php:289
 msgid "Slider 4 Button Link"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:300
+#: ../inc/assets/assets-slider-setting.php:301
 msgid "Slider 4 Button Text"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:311
+#: ../inc/assets/assets-slider-setting.php:312
 msgid "Select Post For Slider Five"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:325
+#: ../inc/assets/assets-slider-setting.php:326
 msgid "Slider 5 Button Link"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:337
+#: ../inc/assets/assets-slider-setting.php:338
 msgid "Slider 5 Button Text"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:345
+#: ../inc/assets/assets-slider-setting.php:346
 msgid "Breadcrumb Setting"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:346
+#: ../inc/assets/assets-slider-setting.php:347
 msgid "This allows to upload breadcrumb background image"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:350
+#: ../inc/assets/assets-slider-setting.php:351
 msgid "WooCommerce Archive Page"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:362 ../inc/assets/assets-slider-
-#: setting.php:393 ../inc/assets/assets-slider-setting.php:424 ..
-#: /inc/assets/assets-slider-setting.php:455
+#: ../inc/assets/assets-slider-setting.php:363 ../inc/assets/assets-slider-
+#: setting.php:394 ../inc/assets/assets-slider-setting.php:425 ..
+#: /inc/assets/assets-slider-setting.php:456
 msgid "Enable/Disable Breadcrumb"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:375 ../inc/assets/assets-slider-
-#: setting.php:406 ../inc/assets/assets-slider-setting.php:437 ..
-#: /inc/assets/assets-slider-setting.php:468
+#: ../inc/assets/assets-slider-setting.php:376 ../inc/assets/assets-slider-
+#: setting.php:407 ../inc/assets/assets-slider-setting.php:438 ..
+#: /inc/assets/assets-slider-setting.php:469
 msgid "Upload Background Image"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:377 ../inc/assets/assets-slider-
-#: setting.php:408 ../inc/assets/assets-slider-setting.php:439 ..
-#: /inc/assets/assets-slider-setting.php:470
+#: ../inc/assets/assets-slider-setting.php:378 ../inc/assets/assets-slider-
+#: setting.php:409 ../inc/assets/assets-slider-setting.php:440 ..
+#: /inc/assets/assets-slider-setting.php:471
 msgid ""
 "Uplaod Breadcrumb Background Image, Breadcrumb Background Image Size of 2000 "
 "&times; 156 Pixels."
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:381
+#: ../inc/assets/assets-slider-setting.php:382
 msgid "WooCommerce Single Product Page"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:412
+#: ../inc/assets/assets-slider-setting.php:413
 msgid "Breadcrumb Page Options"
 msgstr ""
 
-#: ../inc/assets/assets-slider-setting.php:443
+#: ../inc/assets/assets-slider-setting.php:444
 msgid "Breadcrumb Post Options"
 msgstr ""
 
@@ -1596,12 +1368,37 @@ msgstr ""
 msgid "Custom Placeholder"
 msgstr ""
 
-#: ../inc/assets/assets-woocommerce-setting.php:66
+#: ../inc/assets/assets-woocommerce-setting.php:50
 msgid "Hide Header Product Search"
 msgstr ""
 
-#: ../inc/class/class-custom-switch.php:21
-msgid "Check to Enable"
+#: ../inc/custom-metabox.php:18
+msgid "Left sidebar"
+msgstr ""
+
+#: ../inc/custom-metabox.php:23
+msgid "Right sidebar<br/>(default)"
+msgstr ""
+
+#: ../inc/custom-metabox.php:28
+msgid "Both Sidebar"
+msgstr ""
+
+#: ../inc/custom-metabox.php:33
+msgid "No sidebar"
+msgstr ""
+
+#: ../inc/custom-metabox.php:64
+msgid "You can set up the sidebar content"
+msgstr ""
+
+#: ../inc/custom-metabox.php:64
+msgid "here"
+msgstr ""
+
+#: ../inc/extras.php:58
+#, php-format
+msgid "Page %s"
 msgstr ""
 
 #: ../inc/option-framework/includes/class-options-framework-admin.php:91 ..
@@ -1740,6 +1537,170 @@ msgstr ""
 msgid "Bold Italic"
 msgstr ""
 
+#: ../inc/template-tags.php:23
+msgid "Posts navigation"
+msgstr ""
+
+#: ../inc/template-tags.php:27
+msgid "Older posts"
+msgstr ""
+
+#: ../inc/template-tags.php:31
+msgid "Newer posts"
+msgstr ""
+
+#: ../inc/template-tags.php:56
+msgid "Post navigation"
+msgstr ""
+
+#: ../inc/template-tags.php:86
+#, php-format
+msgid "Posted on %s"
+msgstr ""
+
+#: ../inc/template-tags.php:91
+#, php-format
+msgid "by %s"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#. translators: used between list items, there is a space after the comma
+#: ../inc/template-tags.php:108 ../inc/template-tags.php:114
+msgid ", "
+msgstr ""
+
+#: ../inc/template-tags.php:110
+#, php-format
+msgid "Posted in %1$s"
+msgstr ""
+
+#: ../inc/template-tags.php:116
+#, php-format
+msgid "Tagged %1$s"
+msgstr ""
+
+#: ../inc/template-tags.php:122
+msgid "Leave a comment"
+msgstr ""
+
+#: ../inc/template-tags.php:122
+msgid "1 Comment"
+msgstr ""
+
+#: ../inc/template-tags.php:122
+#, php-format
+msgid "% Comments"
+msgstr ""
+
+#: ../inc/template-tags.php:126
+msgid "Edit"
+msgstr ""
+
+#: ../inc/template-tags.php:143
+#, php-format
+msgid "Category: %s"
+msgstr ""
+
+#: ../inc/template-tags.php:145
+#, php-format
+msgid "Tag: %s"
+msgstr ""
+
+#: ../inc/template-tags.php:147
+#, php-format
+msgid "Author: %s"
+msgstr ""
+
+#: ../inc/template-tags.php:149
+#, php-format
+msgid "Year: %s"
+msgstr ""
+
+#: ../inc/template-tags.php:149
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: ../inc/template-tags.php:151
+#, php-format
+msgid "Month: %s"
+msgstr ""
+
+#: ../inc/template-tags.php:151
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: ../inc/template-tags.php:153
+#, php-format
+msgid "Day: %s"
+msgstr ""
+
+#: ../inc/template-tags.php:153
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr ""
+
+#: ../inc/template-tags.php:156
+msgctxt "post format archive title"
+msgid "Asides"
+msgstr ""
+
+#: ../inc/template-tags.php:158
+msgctxt "post format archive title"
+msgid "Galleries"
+msgstr ""
+
+#: ../inc/template-tags.php:160
+msgctxt "post format archive title"
+msgid "Images"
+msgstr ""
+
+#: ../inc/template-tags.php:162
+msgctxt "post format archive title"
+msgid "Videos"
+msgstr ""
+
+#: ../inc/template-tags.php:164
+msgctxt "post format archive title"
+msgid "Quotes"
+msgstr ""
+
+#: ../inc/template-tags.php:166
+msgctxt "post format archive title"
+msgid "Links"
+msgstr ""
+
+#: ../inc/template-tags.php:168
+msgctxt "post format archive title"
+msgid "Statuses"
+msgstr ""
+
+#: ../inc/template-tags.php:170
+msgctxt "post format archive title"
+msgid "Audio"
+msgstr ""
+
+#: ../inc/template-tags.php:172
+msgctxt "post format archive title"
+msgid "Chats"
+msgstr ""
+
+#: ../inc/template-tags.php:175
+#, php-format
+msgid "Archives: %s"
+msgstr ""
+
+#. translators: 1: Taxonomy singular name, 2: Current taxonomy term
+#: ../inc/template-tags.php:179
+#, php-format
+msgid "%1$s: %2$s"
+msgstr ""
+
+#: ../inc/template-tags.php:181
+msgid "Archives"
+msgstr ""
+
 #: ../inc/widgets/widget-cta-simple.php:26
 msgid "A widget that shows Simple Call to Action"
 msgstr ""
@@ -1862,7 +1823,7 @@ msgstr ""
 msgid "Select Product Type"
 msgstr ""
 
-#: ../inc/widgets/widget-product1.php:83 ../inc/widgets/widget-product2.php:74
+#: ../inc/widgets/widget-product1.php:83 ../inc/widgets/widget-product2.php:70
 msgid "Select Product Category"
 msgstr ""
 
@@ -1879,21 +1840,21 @@ msgstr ""
 msgid "Wishlist"
 msgstr ""
 
-#: ../inc/widgets/widget-product2.php:24
+#: ../inc/widgets/widget-product2.php:20
 msgid ""
 "This widgets show the Category Image its Description and Product of that "
 "Category"
 msgstr ""
 
-#: ../inc/widgets/widget-product2.php:36
+#: ../inc/widgets/widget-product2.php:31
 msgid "Right Align With Category Image"
 msgstr ""
 
-#: ../inc/widgets/widget-product2.php:37
+#: ../inc/widgets/widget-product2.php:32
 msgid "Left Align With Category Image"
 msgstr ""
 
-#: ../inc/widgets/widget-product2.php:67
+#: ../inc/widgets/widget-product2.php:63
 msgid "Select the Display Style (Image Alignment)"
 msgstr ""
 
@@ -1901,48 +1862,21 @@ msgstr ""
 msgid "A widget that Gives Promo of the object"
 msgstr ""
 
-#: ../woocommerce/cart/cart.php:27
-msgid "Product"
+#: ../search.php:15
+#, php-format
+msgid "Search Results for: %s"
 msgstr ""
 
-#: ../woocommerce/cart/cart.php:28
-msgid "Price"
+#: ../searchform.php:8
+msgid "Search products"
 msgstr ""
 
-#: ../woocommerce/cart/cart.php:29
-msgid "Quantity"
+#. Name of the template
+msgid "Blog Page Template"
 msgstr ""
 
-#: ../woocommerce/cart/cart.php:30
-msgid "Total"
-msgstr ""
-
-#: ../woocommerce/cart/cart.php:47
-msgid "Remove this item"
-msgstr ""
-
-#: ../woocommerce/cart/cart.php:76
-msgid "Available on backorder"
-msgstr ""
-
-#: ../woocommerce/cart/cart.php:122
-msgid "Coupon"
-msgstr ""
-
-#: ../woocommerce/cart/cart.php:122
-msgid "Coupon code"
-msgstr ""
-
-#: ../woocommerce/cart/cart.php:122
-msgid "Apply Coupon"
-msgstr ""
-
-#: ../woocommerce/cart/cart.php:128
-msgid "Update Cart"
-msgstr ""
-
-#: ../woocommerce/cart/cross-sells.php:40
-msgid "You may be interested in&hellip;"
+#. Name of the template
+msgid "HomePage"
 msgstr ""
 
 #: ../woocommerce/loop/result-count.php:30
@@ -1960,34 +1894,21 @@ msgctxt "%1$d = first, %2$d = last, %3$d = total"
 msgid "Showing %1$d&ndash;%2$d of <span class=\"total-products\">%3$d results</span>"
 msgstr ""
 
-#: ../woocommerce/myaccount/my-account.php:19
-#, php-format
-msgid "Hello <strong>%1$s</strong> (not %1$s? <a href=\"%2$s\">Sign out</a>)."
-msgstr ""
-
-#: ../woocommerce/myaccount/my-account.php:24
-#, php-format
-msgid ""
-"From your account dashboard you can view your recent orders, manage your "
-"shipping and billing addresses and <a href=\"%s\">edit your password and "
-"account details</a>."
-msgstr ""
-
-#: ../woocommerce/single-product/meta.php:26
+#: ../woocommerce/single-product/meta.php:23
 msgid "SKU:"
 msgstr ""
 
-#: ../woocommerce/single-product/meta.php:26
+#: ../woocommerce/single-product/meta.php:23
 msgid "N/A"
 msgstr ""
 
-#: ../woocommerce/single-product/meta.php:30
+#: ../woocommerce/single-product/meta.php:25
 msgid "Category:"
 msgid_plural "Categories:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../woocommerce/single-product/meta.php:32
+#: ../woocommerce/single-product/meta.php:26
 msgid "Tag:"
 msgid_plural "Tags:"
 msgstr[0] ""
@@ -1997,11 +1918,11 @@ msgstr[1] ""
 msgid "Placeholder"
 msgstr ""
 
-#: ../woocommerce/single-product/related.php:44
+#: ../woocommerce/single-product/related.php:42
 msgid "Related Products"
 msgstr ""
 
-#: ../woocommerce/single-product/up-sells.php:44
+#: ../woocommerce/single-product/up-sells.php:40
 msgid "You may also like&hellip;"
 msgstr ""
 

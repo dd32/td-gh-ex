@@ -801,7 +801,7 @@ function optionsframework_media_scriptss($hook) {
         'remove' => __('Remove', 'accesspress-store')
     ));
 
-    wp_enqueue_style( 'accesspress-store-font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
+    wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
     wp_enqueue_style( 'ap-admin-css', get_template_directory_uri() . '/inc/css/ap-admin.css' );
     
 }

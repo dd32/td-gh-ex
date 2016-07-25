@@ -48,10 +48,17 @@ Images
 
 == Changelog ==
 
+= 2.1.1 =
+
+** Fixed the all custom class and function prefix.
+** Fixed the header cart section issue.
+** Miner design issue fixed in customzer section.
+
+
 = 2.1.0 =
 
 ** Fixed the customizer java script issue.
-** Fixed the copyright link in footer section.s
+** Fixed the copyright link in footer sections.
 
 = 2.0.9 =
 
@@ -62,7 +69,7 @@ Images
 
 ** Compatible with WPML.
 ** Fixed missing text-domain issue.
-** Update Overrides WooCommerce template in our theme and make theme compatible with latest version of WooCommerce (5.6.1).
+** Update Overrides WooCommerce template in our theme and make theme compatible with latest version of WooCommerce (2.6.1).
 ** Fixed the my account page tabs css issue.
 
 = 2.0.7 =

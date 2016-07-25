@@ -34,23 +34,7 @@ function accesspress_woocommerce_setting($wp_customize){
                                         'description'   => 'Upload a custom placeholder to be displayed when there is no product image.',
                                         )
                                 ));
-    /*$wp_customize->add_setting(
-                                'hide_header_cart_link',
-                                array(
-                                        'default'       =>      '0',
-                                        'sanitize_callback' => 'accesspress_store_integer_sanitize'
-                                      )
-                               );
-    $wp_customize->add_control(new WP_Customize_Switch_Control_YesNo(
-                                $wp_customize,
-                                'hide_header_cart_link',
-                                array(
-                                        'section'       =>      'woocommerce_setting',
-                                        'label'         =>      __('Hide Header Cart Link', 'accesspress-store'),
-                                        'type'          =>      'switch_yesno',
-                                        'output'        =>      array('Yes', 'No')
-                                      ))
-                              );*/
+
     $wp_customize->add_setting(
                                 'hide_header_product_search',
                                 array(
@@ -58,7 +42,7 @@ function accesspress_woocommerce_setting($wp_customize){
                                         'sanitize_callback' => 'accesspress_store_integer_sanitize'
                                       )
                                );
-    $wp_customize->add_control(new WP_Customize_Switch_Control_YesNo(
+    $wp_customize->add_control(new AccessPress_Store_WP_Customize_Switch_Control_YesNo(
                                 $wp_customize,
                                 'hide_header_product_search',
                                 array(
@@ -68,22 +52,5 @@ function accesspress_woocommerce_setting($wp_customize){
                                         'output'        =>      array('Yes', 'No')
                                       ))
                               );
-    /*$wp_customize->add_setting(
-                                'hide_navigation_checkout',
-                                array(
-                                        'default'       =>      '0',
-                                        'sanitize_callback' => 'accesspress_store_integer_sanitize'
-                                      )
-                               );
-    $wp_customize->add_control(new WP_Customize_Switch_Control_YesNo(
-                                $wp_customize,
-                                'hide_navigation_checkout',
-                                array(
-                                        'section'       =>      'woocommerce_setting',
-                                        'label'         =>      __('Hide Navigation on Checkout Page', 'accesspress-store'),
-                                        'type'          =>      'switch_yesno',
-                                        'output'        =>      array('Yes', 'No')
-                                      ))
-                              );*/
 }
 add_action('customize_register', 'accesspress_woocommerce_setting');

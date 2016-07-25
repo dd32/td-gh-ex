@@ -82,8 +82,6 @@ do_action('accesspress_slickslider');
             </div>
         </div>
     </section>
-<?php endif; ?>
+<?php endif; 
 
-<?php
 get_footer();
-?>

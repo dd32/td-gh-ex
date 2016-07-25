@@ -20,7 +20,7 @@ function accesspress_slider_setting($wp_customize){
             'sanitize_callback' => 'accesspress_store_integer_sanitize'
         ));
 
-        $wp_customize->add_control(new WP_Customize_Switch_Control_YesNo( $wp_customize, 'show_slider', array(
+        $wp_customize->add_control(new AccessPress_Store_WP_Customize_Switch_Control_YesNo( $wp_customize, 'show_slider', array(
           'section'       =>      'slider_basic',
           'label'         =>      __('Show Slider', 'accesspress-store'),
           'type'          =>      'switch_yesno',
@@ -32,7 +32,7 @@ function accesspress_slider_setting($wp_customize){
           'sanitize_callback' => 'accesspress_store_integer_sanitize'
         ));
 
-        $wp_customize->add_control(new WP_Customize_Switch_Control_YesNo( $wp_customize, 'show_pager', array(
+        $wp_customize->add_control(new AccessPress_Store_WP_Customize_Switch_Control_YesNo( $wp_customize, 'show_pager', array(
           'section'       =>      'slider_basic',
           'label'         =>      __('Show Pager', 'accesspress-store'),
           'type'          =>      'switch_yesno',
@@ -44,7 +44,7 @@ function accesspress_slider_setting($wp_customize){
           'sanitize_callback' => 'accesspress_store_integer_sanitize'
         ));
 
-        $wp_customize->add_control(new WP_Customize_Switch_Control_YesNo( $wp_customize, 'show_controls', array(
+        $wp_customize->add_control(new AccessPress_Store_WP_Customize_Switch_Control_YesNo( $wp_customize, 'show_controls', array(
           'section'       =>      'slider_basic',
           'label'         =>      __('Show Controls', 'accesspress-store'),
           'type'          =>      'switch_yesno',
@@ -56,7 +56,7 @@ function accesspress_slider_setting($wp_customize){
           'sanitize_callback' => 'accesspress_store_integer_sanitize'
         ));
 
-        $wp_customize->add_control(new WP_Customize_Switch_Control_YesNo( $wp_customize, 'auto_transition', array(
+        $wp_customize->add_control(new AccessPress_Store_WP_Customize_Switch_Control_YesNo( $wp_customize, 'auto_transition', array(
           'section'       =>      'slider_basic',
           'label'         =>      __('Auto Transition', 'accesspress-store'),
           'type'          =>      'switch_yesno',
@@ -106,7 +106,7 @@ function accesspress_slider_setting($wp_customize){
           'sanitize_callback' => 'accesspress_store_integer_sanitize'
         ));
 
-        $wp_customize->add_control(new WP_Customize_Switch_Control_YesNo( $wp_customize, 'show_caption', array(
+        $wp_customize->add_control(new AccessPress_Store_WP_Customize_Switch_Control_YesNo( $wp_customize, 'show_caption', array(
           'section'       =>      'slider_basic',
           'label'         =>      __('Show Caption', 'accesspress-store'),
           'type'          =>      'switch_yesno',
@@ -144,7 +144,8 @@ function accesspress_slider_setting($wp_customize){
         ));
 
     //select Page for Our Services
-    $pages = get_posts();
+    $args = array( 'posts_per_page'   => 10 );
+    $pages = get_posts( $args );
     $fg_pages = array();
     $fg_pages[] = __('Select Slider Post','accesspress-store');
     foreach ( $pages as $page ) {
@@ -357,7 +358,7 @@ function accesspress_slider_setting($wp_customize){
             'sanitize_callback' => 'accesspress_store_integer_sanitize'
         ));
 
-        $wp_customize->add_control(new WP_Customize_Switch_Control( $wp_customize,'breadcrumb_options', array(
+        $wp_customize->add_control(new AccessPress_Store_WP_Customize_Switch_Control( $wp_customize,'breadcrumb_options', array(
             'section' =>      'woo_archive_page',
             'label'   =>      __('Enable/Disable Breadcrumb', 'accesspress-store'),
             'type'    =>      'switch',
@@ -388,7 +389,7 @@ function accesspress_slider_setting($wp_customize){
             'sanitize_callback' => 'accesspress_store_integer_sanitize'
         ));
 
-        $wp_customize->add_control(new WP_Customize_Switch_Control( $wp_customize,'breadcrumb_options_single', array(
+        $wp_customize->add_control(new AccessPress_Store_WP_Customize_Switch_Control( $wp_customize,'breadcrumb_options_single', array(
             'section' =>      'woo_single_page',
             'label'   =>      __('Enable/Disable Breadcrumb', 'accesspress-store'),
             'type'    =>      'switch',
@@ -419,7 +420,7 @@ function accesspress_slider_setting($wp_customize){
             'sanitize_callback' => 'accesspress_store_integer_sanitize'
         ));
 
-        $wp_customize->add_control(new WP_Customize_Switch_Control( $wp_customize,'breadcrumb_options_page', array(
+        $wp_customize->add_control(new AccessPress_Store_WP_Customize_Switch_Control( $wp_customize,'breadcrumb_options_page', array(
             'section' =>      'breadcrumb_page_options',
             'label'   =>      __('Enable/Disable Breadcrumb', 'accesspress-store'),
             'type'    =>      'switch',
@@ -450,7 +451,7 @@ function accesspress_slider_setting($wp_customize){
             'sanitize_callback' => 'accesspress_store_integer_sanitize'
         ));
 
-        $wp_customize->add_control(new WP_Customize_Switch_Control( $wp_customize,'breadcrumb_options_post', array(
+        $wp_customize->add_control(new AccessPress_Store_WP_Customize_Switch_Control( $wp_customize,'breadcrumb_options_post', array(
             'section' =>      'breadcrumb_post_options',
             'label'   =>      __('Enable/Disable Breadcrumb', 'accesspress-store'),
             'type'    =>      'switch',

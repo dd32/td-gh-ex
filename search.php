@@ -8,23 +8,23 @@ get_header();
 ?>
 
 
-    <div class="page_header_wrap clearfix">
-        <div class="ak-container">
-            <?php if (have_posts()) : ?>
-                <header class="page-header">
-                    <h2 class="page-title"><?php printf(__('Search Results for: %s', 'accesspress-store'), '<span>' . get_search_query() . '</span>'); ?></h2>
-                </header><!-- .page-header -->
-            <?php endif; ?>
-
-            <?php accesspress_breadcrumbs() ?>
-        </div>
+<div class="page_header_wrap clearfix">
+    <div class="ak-container">
+        <?php if ( have_posts() ) : ?>
+            <header class="page-header">
+                <h2 class="page-title"><?php printf( __('Search Results for: %s', 'accesspress-store'), '<span>' . get_search_query() . '</span>'); ?></h2>
+            </header><!-- .page-header -->
+        <?php endif; ?>
+        <?php accesspress_breadcrumbs() ?>
     </div>
+</div>
+
 <div class="inner">
-    <main id="main" class="site-main clearfix <?php echo @$single_page_layout; ?>">
+    <main id="main" class="site-main clearfix <?php echo @esc_attr( $single_page_layout ); ?>">
         <div id="primary" class="content-area">
-            <?php if (have_posts()) : ?>
+            <?php if ( have_posts() ) : ?>
                 <?php /* Start the Loop */ ?>
-                <?php while (have_posts()) : the_post(); ?>
+                <?php while ( have_posts() ) : the_post(); ?>
 
                     <?php
                     /**
@@ -50,4 +50,4 @@ get_header();
         <?php get_sidebar('right'); ?>
     </main><!-- #main -->
 </div>
-<?php get_footer(); ?>
+<?php get_footer();

@@ -2,7 +2,7 @@
     
     <div class="before-top-header">
         <div class="ak-container clearfix">
-            <?php if (as_before_top_header_enabled()): ?>
+            <?php if ( accesspress_store_before_top_header_enabled() ): ?>
                 <?php accesspress_ticker_header_customizer(); ?>            
             <?php endif; ?>
                 <?php
@@ -41,9 +41,9 @@
             <div class="headertwo-wrap">
                 <!-- Cart Link -->
                 <?php
-                    if (is_woocommerce_activated()):
+                    if (is_woocommerce_activated()){
                         echo accesspress_wcmenucart();
-                    endif;
+                    }
                 ?>
                 <?php
                     if (function_exists('YITH_WCWL')) {

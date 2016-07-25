@@ -12,12 +12,12 @@ if (!defined('ABSPATH'))
     exit; // Exit if accessed directly
 
 get_header('shop');
-$breadcrumb = get_theme_mod('breadcrumb_options','1');
-$archive_bread = get_theme_mod('breadcrumb_archive_image');
+$breadcrumb = intval( get_theme_mod('breadcrumb_options','1') );
+$archive_bread = esc_url( get_theme_mod('breadcrumb_archive_image') );
 if($archive_bread){
     $bread_archive = $archive_bread;
 }else{
-  $bread_archive = get_template_directory_uri().'/images/about-us-bg.jpg';
+  $bread_archive = esc_url( get_template_directory_uri().'/images/about-us-bg.jpg' );
 }
 if($breadcrumb == '1') :
 ?>
@@ -43,7 +43,7 @@ if($breadcrumb == '1') :
     <div class="ak-container left-sidebar"> 
         <div id="primary" class="content-area clearfix">
             <div class="content-inner">
-                <?php if (have_posts()) : ?>
+                <?php if ( have_posts() ) : ?>
                     <?php
                         /**
                          * woocommerce_before_shop_loop hook
@@ -91,4 +91,4 @@ if($breadcrumb == '1') :
         </div>
     </div>
 </div>
-<?php get_footer('shop'); ?>
+<?php get_footer('shop');

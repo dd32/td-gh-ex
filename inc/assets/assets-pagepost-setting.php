@@ -20,7 +20,7 @@ function accesspress_pagepost_setting($wp_customize){
             )
         );
     $imagepath =  get_template_directory_uri() . '/inc/images/';                           
-    $wp_customize->add_control( new WP_Customize_Radioimage_Control(
+    $wp_customize->add_control( new AccessPress_Store_WP_Customize_Radioimage_Control(
         $wp_customize,
         'single_page_layout',
         array(
@@ -44,7 +44,7 @@ function accesspress_pagepost_setting($wp_customize){
             )
         );
     $imagepath =  get_template_directory_uri() . '/inc/images/';                           
-    $wp_customize->add_control( new WP_Customize_Radioimage_Control(
+    $wp_customize->add_control( new AccessPress_Store_WP_Customize_Radioimage_Control(
         $wp_customize,
         'single_post_layout',
         array(
@@ -68,7 +68,7 @@ function accesspress_pagepost_setting($wp_customize){
             )
         );
     $imagepath =  get_template_directory_uri() . '/inc/images/';                           
-    $wp_customize->add_control( new WP_Customize_Radioimage_Control(
+    $wp_customize->add_control( new AccessPress_Store_WP_Customize_Radioimage_Control(
         $wp_customize,
         'archive_page_layout',
         array(
