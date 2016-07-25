@@ -9,7 +9,7 @@ function acool_customize_register( $wp_customize ) {
         'default'        => '#ffffff',
         'type'           => 'option',
         'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'acool_sanitize_callback_re',
+		'sanitize_callback' => 'acool_sanitize_hex_color',
         'transport'      => 'postMessage'
     ) );  
  
@@ -24,7 +24,7 @@ function acool_customize_register( $wp_customize ) {
         'default'        => '#03a325',
         'type'           => 'option',
         'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'acool_sanitize_callback_re',
+		'sanitize_callback' => 'acool_sanitize_hex_color',
         'transport'      => 'postMessage'
     ) );  
  
@@ -39,7 +39,7 @@ function acool_customize_register( $wp_customize ) {
         'default'        => '#0c8432',
         'type'           => 'option',
         'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'acool_sanitize_callback_re',
+		'sanitize_callback' => 'acool_sanitize_hex_color',
         'transport'      => 'postMessage'
     ) );  
  
@@ -54,7 +54,7 @@ function acool_customize_register( $wp_customize ) {
         'default'        => '#3a3a3a',
         'type'           => 'option',
         'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'acool_sanitize_callback_re',
+		'sanitize_callback' => 'acool_sanitize_hex_color',
         'transport'      => 'postMessage'
     ) );  
  
@@ -69,7 +69,7 @@ function acool_customize_register( $wp_customize ) {
         'default'        => '#0c8432',
         'type'           => 'option',
         'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'acool_sanitize_callback_re',
+		'sanitize_callback' => 'acool_sanitize_hex_color',
         'transport'      => 'postMessage'
     ) );  
  
@@ -78,89 +78,6 @@ function acool_customize_register( $wp_customize ) {
         'section'    => 'colors',
         'settings'   => 'ct_acool[other_link_hover_color]',
     ) ) );
-
-	//fonts	
-	
-	if ( defined( 'ACOOL_THEME_PRO_USED' ) && ACOOL_THEME_PRO_USED )
-	{	
-		$google_fonts = acool_get_google_fonts();
-	
-		$font_choices = array();
-		$font_choices['none'] = 'Default Theme Font';
-		foreach ( $google_fonts as $google_font_name => $google_font_properties ) 
-		{
-			$font_choices[ $google_font_name ] = $google_font_name;
-		}	
-		
-		$wp_customize->add_section( 'ct_google_fonts' , array(
-			'title'		=> __( 'Fonts', 'acool' ),
-			'priority'	=> 50,
-		) );
-	
-		$wp_customize->add_setting( 'ct_acool[heading_font]', array(
-			'default'		=> 'Open Sans',
-			'type'			=> 'option',
-			'capability'	=> 'edit_theme_options',
-			'sanitize_callback' => 'acool_sanitize_callback_re',
-			'transport'		=> 'postMessage'
-		) );
-	
-		$wp_customize->add_control( 'ct_acool[heading_font]', array(
-			'label'		=> __( 'Header Font', 'acool' ),
-			'section'	=> 'ct_google_fonts',
-			'settings'	=> 'ct_acool[heading_font]',
-			'type'		=> 'select',
-			'choices'	=> $font_choices
-		) );
-	
-	
-		$wp_customize->add_setting( 'ct_acool[menu_font]', array(
-			'default'		=> 'Open Sans',
-			'type'			=> 'option',
-			'capability'	=> 'edit_theme_options',
-			'sanitize_callback' => 'acool_sanitize_callback_re',
-			'transport'		=> 'postMessage'
-		) );
-	
-		$wp_customize->add_control( 'ct_acool[menu_font]', array(
-			'label'		=> __( 'Menu Font', 'acool' ),
-			'section'	=> 'ct_google_fonts',
-			'settings'	=> 'ct_acool[menu_font]',
-			'type'		=> 'select',
-			'choices'	=> $font_choices
-		) );
-	
-		$wp_customize->add_setting( 'ct_acool[title_font]', array(
-			'default'		=> 'Open Sans',
-			'type'			=> 'option',
-			'capability'	=> 'edit_theme_options',
-			'sanitize_callback' => 'acool_sanitize_callback_re',
-			'transport'		=> 'postMessage'
-		) );
-	
-		$wp_customize->add_control( 'ct_acool[title_font]', array(
-			'label'		=> __( 'Title Font', 'acool' ),
-			'section'	=> 'ct_google_fonts',
-			'settings'	=> 'ct_acool[title_font]',
-			'type'		=> 'select',
-			'choices'	=> $font_choices
-		) );	
-		$wp_customize->add_setting( 'ct_acool[body_font]', array(
-			'default'		=> 'Open Sans',
-			'type'			=> 'option',
-			'capability'	=> 'edit_theme_options',
-			'sanitize_callback' => 'acool_sanitize_callback_re',
-			'transport'		=> 'postMessage'
-		) );
-		$wp_customize->add_control( 'ct_acool[body_font]', array(
-			'label'		=> __( 'Body Font', 'acool' ),
-			'section'	=> 'ct_google_fonts',
-			'settings'	=> 'ct_acool[body_font]',
-			'type'		=> 'select',
-			'choices'	=> $font_choices
-		) );
-		
-	}	
 	
 
 	//Theme Settings section
@@ -174,7 +91,7 @@ function acool_customize_register( $wp_customize ) {
 		'default'       => 1,
 		'type'			=> 'option',
 		'capability'	=> 'edit_theme_options',
-		'sanitize_callback' => 'acool_sanitize_callback_re',
+		'sanitize_callback' => 'acool_sanitize_num',
 		'transport'		=> 'postMessage',
 	) );
 	$wp_customize->add_control( 'ct_acool[show_search_icon]', array(
@@ -188,7 +105,7 @@ function acool_customize_register( $wp_customize ) {
 		'default'       => 0,
 		'type'			=> 'option',
 		'capability'	=> 'edit_theme_options',
-		'sanitize_callback' => 'acool_sanitize_callback_re',
+		'sanitize_callback' => 'acool_sanitize_num',
 		'transport'		=> 'postMessage',
 	) );
 	$wp_customize->add_control( 'ct_acool[box_header_center]', array(
@@ -205,7 +122,7 @@ function acool_customize_register( $wp_customize ) {
 		'default'       => 0,
 		'type'			=> 'option',
 		'capability'	=> 'edit_theme_options',
-		'sanitize_callback' => 'acool_sanitize_callback_re',
+		'sanitize_callback' => 'acool_sanitize_num',
 		'transport'		=> 'postMessage',
 
 	) );
@@ -215,24 +132,7 @@ function acool_customize_register( $wp_customize ) {
 		'type'      => 'checkbox',
 		'priority'  => 50,
 		'description' => '<p class="documentation-text">' . __('For the following options you need to save and to refresh the display change!', 'acool') . '</p>', 		
-	) );	
-
-	//Enable Featured Homepage
-	$wp_customize->add_setting( 'ct_acool[enable_home_page]', array(
-		'default'       => 0,
-		'type'			=> 'option',
-		'capability'	=> 'edit_theme_options',
-		'sanitize_callback' => 'acool_sanitize_callback_re',
-		'transport'		=> 'postMessage',
 	) );
-	$wp_customize->add_control( 'ct_acool[enable_home_page]', array(
-		'label'		=> __( 'Enable Featured Homepage', 'acool' ),
-		'section'	=> 'ct_acool_settings',
-		'type'      => 'checkbox',
-		'priority'  => 50,
-		'description' => sprintf(__('Active featured homepage Layout.  The standardized way of creating Static Front Pages: <a href="%s" target="_blank">Creating a Static Front Page</a>', 'acool'),esc_url('http://codex.wordpress.org/Creating_a_Static_Front_Page')),
-	) );	
-
 
 
 	//Fixed Header
@@ -240,7 +140,7 @@ function acool_customize_register( $wp_customize ) {
 		'default'       => 1,
 		'type'			=> 'option',
 		'capability'	=> 'edit_theme_options',
-		'sanitize_callback' => 'acool_sanitize_callback_re',
+		'sanitize_callback' => 'acool_sanitize_num',
 		'transport'		=> 'postMessage',
 	) );
 	$wp_customize->add_control( 'ct_acool[fixed_header]', array(
@@ -256,7 +156,7 @@ function acool_customize_register( $wp_customize ) {
 		'default'       => 1,
 		'type'			=> 'option',
 		'capability'	=> 'edit_theme_options',
-		'sanitize_callback' => 'acool_sanitize_callback_re',
+		'sanitize_callback' => 'acool_sanitize_num',
 		'transport'		=> 'postMessage',
 	) );
 	$wp_customize->add_control( 'ct_acool[show_breadcrumb]', array(
@@ -273,7 +173,7 @@ function acool_customize_register( $wp_customize ) {
 		'default'       => 1,
 		'type'			=> 'option',
 		'capability'	=> 'edit_theme_options',
-		'sanitize_callback' => 'acool_sanitize_callback_re',
+		'sanitize_callback' => 'acool_sanitize_num',
 		'transport'		=> 'postMessage',
 	) );
 	$wp_customize->add_control( 'ct_acool[display_footer_widget_area]', array(
@@ -289,7 +189,7 @@ function acool_customize_register( $wp_customize ) {
 		'default'       => 0,
 		'type'			=> 'option',
 		'capability'	=> 'edit_theme_options',
-		'sanitize_callback' => 'acool_sanitize_callback_re',
+		'sanitize_callback' => 'acool_sanitize_num',
 		'transport'		=> 'postMessage',
 	) );
 	$wp_customize->add_control( 'ct_acool[hide_post_meta]', array(
@@ -305,7 +205,7 @@ function acool_customize_register( $wp_customize ) {
 		'default'       => 0.4,
 		'type'			=> 'option',
 		'capability'	=> 'edit_theme_options',
-		'sanitize_callback' => 'acool_sanitize_callback_re',
+		'sanitize_callback' => 'acool_sanitize_num',
 		'transport'		=> 'postMessage',
 	) );
 	$wp_customize->add_control( 'ct_acool[header_opacity]', array(
@@ -322,13 +222,13 @@ function acool_customize_register( $wp_customize ) {
 	$wp_customize->add_section('ct_homepage_banner' , array(
 		'title' => __('HomePage Banner', 'acool'),
 		'priority' => 120,
-		'description' => '<p class="documentation-text">' . __('Must enable the Featured Homepage, and set up a Static Front Page, the banner will be displayed!', 'acool') . '</p>', 
+		'description' => '<p class="documentation-text">' . __('Must set up a Static Front Page, the banner will be displayed!', 'acool') . '</p>', 
 	));
 		
 	//homepage banner images
 	$wp_customize->add_setting( 'ct_acool[homepage_banner_img]', array(
-		'default' => __( get_stylesheet_directory_uri().'/images/banner1.jpg', 'acool' ),
-		'sanitize_callback' => 'acool_sanitize_callback_re',
+		'default' => get_stylesheet_directory_uri().'/images/banner1.jpg',
+		'sanitize_callback' => 'acool_sanitize_url',
 		'capability'	=> 'edit_theme_options',
 		'transport'		=> 'postMessage',
 		'type' => 'option'
@@ -338,14 +238,52 @@ function acool_customize_register( $wp_customize ) {
 		'label'		=> __( 'Homepage Banner Images:', 'acool' ),
 		'section'	=> 'ct_homepage_banner',
 		'settings'	=> 'ct_acool[homepage_banner_img]',
+		'type'		=> 'url',
+	) );
+	
+	
+	//
+	$wp_customize->add_setting( 'ct_acool[homepage_banner_button_url]', array(
+		
+		'default' => __('#', 'acool'),
+		'sanitize_callback' => 'acool_sanitize_url',
+		'capability'	=> 'edit_theme_options',
+		'transport'		=> 'postMessage',
+		'type' => 'option'
+	) );
+
+	$wp_customize->add_control( 'ct_acool[homepage_banner_button_url]', array(
+		'label'		=> __( 'Homepage Banner Button Url:', 'acool' ),
+		'section'	=> 'ct_homepage_banner',
+		'settings'	=> 'ct_acool[homepage_banner_button_url]',
+		'type'		=> 'url',
+	) );	
+	
+
+
+	//homepage banner H1
+	$wp_customize->add_setting( 'ct_acool[homepage_banner_text_h1]', array(
+		
+		'default' => __('The jQuery slider that just slides.', 'acool'),
+		'sanitize_callback' => 'acool_sanitize_textarea',
+		'capability'	=> 'edit_theme_options',
+		'transport'		=> 'postMessage',
+		'type' => 'option'
+	) );
+
+	$wp_customize->add_control( 'ct_acool[homepage_banner_text_h1]', array(
+		'label'		=> __( 'Homepage Banner Text H1:', 'acool' ),
+		'section'	=> 'ct_homepage_banner',
+		'settings'	=> 'ct_acool[homepage_banner_text_h1]',
 		'type'		=> 'textarea',
 	) );
+
 
 	//homepage banner text
 	$wp_customize->add_setting( 'ct_acool[homepage_banner_text]', array(
 		
-		'default' => __('<h1>The jQuery slider that just slides.</h1><p class="ct_slider_text">No fancy effects or unnecessary markup.</p><a class="btn" href="#download">Download</a>', 'acool'),
-		'sanitize_callback' => 'acool_sanitize_callback_re',
+		'default' => __('No fancy effects or unnecessary markup.', 'acool'),
+		'sanitize_callback' => 'acool_sanitize_textarea',
 		'capability'	=> 'edit_theme_options',
 		'transport'		=> 'postMessage',
 		'type' => 'option'
@@ -357,7 +295,24 @@ function acool_customize_register( $wp_customize ) {
 		'settings'	=> 'ct_acool[homepage_banner_text]',
 		'type'		=> 'textarea',
 	) );
+	
+	
+	//homepage banner text
+	$wp_customize->add_setting( 'ct_acool[homepage_banner_button_text]', array(
+		
+		'default' => __('Download', 'acool'),
+		'sanitize_callback' => 'acool_sanitize_textarea',
+		'capability'	=> 'edit_theme_options',
+		'transport'		=> 'postMessage',
+		'type' => 'option'
+	) );
 
+	$wp_customize->add_control( 'ct_acool[homepage_banner_button_text]', array(
+		'label'		=> __( 'Homepage Banner Button Text:', 'acool' ),
+		'section'	=> 'ct_homepage_banner',
+		'settings'	=> 'ct_acool[homepage_banner_button_text]',
+		'type'		=> 'textarea',
+	) );
 
 	/*
 	 * footer info add
@@ -370,7 +325,7 @@ function acool_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'ct_acool[footer_info]', array(
 		'default' => __('Copyright 2015', 'acool'),
-		'sanitize_callback' => 'acool_sanitize_callback_re',
+		'sanitize_callback' => 'acool_sanitize_textarea',
 		'capability'	=> 'edit_theme_options',
 		'transport'		=> 'postMessage',
 		'type' => 'option'
@@ -386,9 +341,33 @@ function acool_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'acool_customize_register' );
 
-function acool_sanitize_callback_re( $str ) {
-	return $str ;
+
+
+function acool_sanitize_textarea( $str ) {
+	return wp_kses_post($str);
 }
+
+
+function acool_sanitize_num( $value) {
+  if ( ! $value || is_null($value) )
+	return $value;
+  $value = esc_attr( $value); // clean input
+  $value = (int) $value; // Force the value into integer type.
+	return ( 0 < $value ) ? $value : null;
+}
+
+function acool_sanitize_hex_color( $color ) {
+	if ( $unhashed = sanitize_hex_color_no_hash( $color ) )
+	  return '#' . $unhashed;
+	
+	return $color;
+}
+
+function acool_sanitize_url( $str ) {
+      $value = esc_url( $value);
+      return $value;
+}
+
 
 //real time show
 function acool_load_scripts(){

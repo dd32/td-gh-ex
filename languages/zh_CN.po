@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Acool\n"
-"POT-Creation-Date: 2016-07-22 15:56+0800\n"
-"PO-Revision-Date: 2016-07-22 15:59+0800\n"
+"POT-Creation-Date: 2016-07-22 22:53+0800\n"
+"PO-Revision-Date: 2016-07-22 23:04+0800\n"
 "Last-Translator: \n"
 "Language-Team: CooThemes.com <support@coothemes.com>\n"
 "Language: zh_CN\n"
@@ -22,23 +22,23 @@ msgstr ""
 #, php-format
 msgid "One Comment on \"%2$s\""
 msgid_plural "%1$s Comments on \"%2$s\""
-msgstr[0] ""
+msgstr[0] "\"%2$s\"有%1$s个评论"
 
 #: comments.php:32 comments.php:52
 msgid "Comment navigation"
-msgstr ""
+msgstr "评论导航"
 
 #: comments.php:33 comments.php:53
 msgid "<- Older Comments"
-msgstr ""
+msgstr "<- 早期评论"
 
 #: comments.php:34 comments.php:54
 msgid "Newer Comments ->"
-msgstr ""
+msgstr "较新的评论 ->"
 
 #: comments.php:59
 msgid "Comments are closed."
-msgstr ""
+msgstr "评论已关闭."
 
 #: footer.php:29
 #, php-format
@@ -46,125 +46,133 @@ msgid ""
 "Powered by <a href=\"%s\">WordPress</a>. Designed by <a href=\"%s"
 "\">CooThemes.com</a>."
 msgstr ""
+"主程序由<a href=\"%s\">WordPress</a>开发。主题由<a href=\"%s\">CooThemes."
+"com</a>设计。"
 
 #: front-page-content.php:65
 msgid "More Article..."
-msgstr ""
+msgstr "更多文章..."
 
 #: includes/custom-functions.php:14
 #, php-format
 msgid "<cite class=\"fn\">%s</cite> <span class=\"says\"> on </span>"
-msgstr ""
+msgstr "<cite class=\"fn\">%s</cite><span class=\"says\">评论：</span>"
 
 #: includes/custom-functions.php:15
 #, php-format
 msgid "%1$s at %2$s"
-msgstr ""
+msgstr "%1$s 在 %2$s"
 
 #: includes/custom-functions.php:15
 msgid "(Edit)"
-msgstr ""
+msgstr "(编辑)"
 
 #: includes/custom-functions.php:21
 msgid "Your comment is awaiting moderation."
-msgstr ""
+msgstr "您的评论正在等待审核。"
 
 #: includes/custom-functions.php:50
 msgid "Upgrade To Pro &raquo;"
-msgstr ""
+msgstr "升级到专业版"
 
 #: includes/custom-functions.php:52
 msgid ""
 "Some settings might be missing or disorganized in this version of WordPress. "
 "So we suggest you to upgrade to version 4.0 or better."
 msgstr ""
+"某些设置可能丢失或在此版本的 WordPress下排列错乱。因此，我们建议您升级到版本 "
+"4.0 或更好。"
 
 #: includes/custom-functions.php:193
 msgid "Page"
-msgstr ""
+msgstr "页面"
 
 #: includes/custom-functions.php:366
 msgid "Edit"
-msgstr ""
+msgstr "编辑"
 
 #: includes/customize/customize.php:17
 msgid "Header Background Color"
-msgstr ""
+msgstr "顶部背景颜色"
 
 #: includes/customize/customize.php:32
 msgid "Content links color"
-msgstr ""
+msgstr "内容链接颜色"
 
 #: includes/customize/customize.php:47
 msgid "Content links hover color"
-msgstr ""
+msgstr "内容链接悬停颜色"
 
 #: includes/customize/customize.php:62
 msgid "Other links color"
-msgstr ""
+msgstr "其它链接颜色"
 
 #: includes/customize/customize.php:77
 msgid "Other links hover color"
-msgstr ""
+msgstr "其他链接悬停颜色"
 
 #: includes/customize/customize.php:96
 msgid "Fonts"
-msgstr ""
+msgstr "字体"
 
 #: includes/customize/customize.php:109
 msgid "Header Font"
-msgstr ""
+msgstr "头部字体"
 
 #: includes/customize/customize.php:126
 msgid "Menu Font"
-msgstr ""
+msgstr "菜单字体"
 
 #: includes/customize/customize.php:142
 msgid "Title Font"
-msgstr ""
+msgstr "网站标题字体"
 
 #: includes/customize/customize.php:156
 msgid "Body Font"
-msgstr ""
+msgstr "正文字体"
 
 #: includes/customize/customize.php:168
 msgid "Theme Settings"
-msgstr ""
+msgstr "主题设置"
 
 #: includes/customize/customize.php:170
 msgid ""
 "1. Documentation for Acool can be found <a target=\"_blank\" href=\"https://"
 "www.coothemes.com/doc/acool-manual.php\">here</a>"
 msgstr ""
+"1. 关于Acool的使用文档看<a target=\"_blank\" href=\"https://www.coothemes."
+"com/doc/acool-manual.php\">这里</a>"
 
 #: includes/customize/customize.php:170
 msgid ""
 "2. A full theme demo can be found <a target=\"_blank\" href=\"https://www."
 "coothemes.com/themes/acool.php\">here</a>"
 msgstr ""
+"2. 可以在<a target=\"_blank\" href=\"https://www.coothemes.com/themes/acool."
+"php\">这里</a>预览主题。"
 
 #: includes/customize/customize.php:181
 msgid "Show Search Icon"
-msgstr ""
+msgstr "显示搜索按钮"
 
 #: includes/customize/customize.php:195
 msgid "Box Header Center"
-msgstr ""
+msgstr "头部显示在固定宽度内"
 
 #: includes/customize/customize.php:213
 #: includes/pro/options-framework/options.php:129
 msgid "Enable Query Loader"
-msgstr ""
+msgstr "启用页面加载"
 
 #: includes/customize/customize.php:217
 msgid ""
 "For the following options you need to save and to refresh the display change!"
-msgstr ""
+msgstr "对于以下选项你需要保存后刷新才能看到改变"
 
 #: includes/customize/customize.php:229
 #: includes/pro/options-framework/options.php:182
 msgid "Enable Featured Homepage"
-msgstr ""
+msgstr "启用特征主页"
 
 #: includes/customize/customize.php:233
 #: includes/pro/options-framework/options.php:183
@@ -174,44 +182,42 @@ msgid ""
 "Front Pages: <a href=\"%s\" target=\"_blank\">Creating a Static Front Page</"
 "a>"
 msgstr ""
+"激活特征主页布局。 创建静态的前台页面的标准化的方式:<a href=\"%s\" target="
+"\"_blank\">创建一个静态的前台页面</a>"
 
 #: includes/customize/customize.php:247
 msgid "Fixed Header"
-msgstr ""
+msgstr "固定头部"
 
 #: includes/customize/customize.php:263
 msgid "Breadcrumb"
-msgstr ""
+msgstr "面包屑导航"
 
 #: includes/customize/customize.php:280
 #: includes/pro/options-framework/options.php:649
 msgid "Display Footer Widget Area"
-msgstr ""
+msgstr "显示页脚小工具区域"
 
 #: includes/customize/customize.php:296
 msgid "Hide Post Meta"
-msgstr ""
+msgstr "隐藏文章mata信息"
 
 #: includes/customize/customize.php:300
 msgid "Hide date, author, category...below blog title."
-msgstr ""
+msgstr "隐藏日期，作者，类别...下面博客标题。"
 
 #: includes/customize/customize.php:312
 msgid "Header Opacity"
-msgstr ""
+msgstr "头部透明度"
 
 #: includes/customize/customize.php:323
 msgid "HomePage Banner"
-msgstr ""
+msgstr "主页条幅"
 
 #: includes/customize/customize.php:325
 msgid ""
 "Must enable the Featured Homepage, and set up a Static Front Page, the "
 "banner will be displayed!"
-msgstr ""
-
-#: includes/customize/customize.php:330
-msgid "/images/banner1.jpg"
 msgstr ""
 
 #: includes/customize/customize.php:338
@@ -227,174 +233,174 @@ msgstr ""
 
 #: includes/customize/customize.php:355
 msgid "Homepage Banner Text:"
-msgstr ""
+msgstr "主页横幅上显示的文字"
 
 #: includes/customize/customize.php:366
 msgid "Footer text"
-msgstr ""
+msgstr "页脚文本"
 
 #: includes/customize/customize.php:372
 msgid "Copyright 2015"
-msgstr ""
+msgstr "版权所有 2015 年"
 
 #: includes/pro/nofollow/nofollow.php:72
 msgid "Save Changes"
-msgstr ""
+msgstr "保存"
 
 #: includes/pro/nofollow/nofollow.php:221
 msgid "Insert/edit link"
-msgstr ""
+msgstr "插入/编辑链接"
 
 #: includes/pro/nofollow/nofollow.php:222
 msgid "Update"
-msgstr ""
+msgstr "更新"
 
 #: includes/pro/nofollow/nofollow.php:223
 msgid "Add Link"
-msgstr ""
+msgstr "增加链接"
 
 #: includes/pro/nofollow/nofollow.php:224
 msgid "(no title)"
-msgstr ""
+msgstr "(没有标题)"
 
 #: includes/pro/nofollow/nofollow.php:225
 msgid "No matches found."
-msgstr ""
+msgstr "没有匹配项"
 
 #: includes/pro/options-framework/includes/class-options-framework-admin.php:91
 #: includes/pro/options-framework/includes/class-options-framework-admin.php:92
 msgid "Theme Options"
-msgstr ""
+msgstr "主题选项"
 
 #: includes/pro/options-framework/includes/class-options-framework-admin.php:204
 msgid "Click OK to reset. Any theme settings will be lost!"
-msgstr ""
+msgstr "单击“确定”重置主题数据。主题设置将丢失！"
 
 #: includes/pro/options-framework/includes/class-options-framework-admin.php:236
 msgid "Default options restored."
-msgstr ""
+msgstr "选项已被初始化"
 
 #: includes/pro/options-framework/includes/class-options-framework-admin.php:290
 msgid "Options saved."
-msgstr ""
+msgstr "选项已保存"
 
 #: includes/pro/options-framework/includes/class-options-media-uploader.php:62
 msgid "No file selected"
-msgstr ""
+msgstr "没有选中文件"
 
 #: includes/pro/options-framework/includes/class-options-media-uploader.php:65
 #: includes/pro/options-framework/includes/class-options-media-uploader.php:118
 msgid "Upload"
-msgstr ""
+msgstr "上传"
 
 #: includes/pro/options-framework/includes/class-options-media-uploader.php:67
 #: includes/pro/options-framework/includes/class-options-media-uploader.php:119
 msgid "Remove"
-msgstr ""
+msgstr "移除"
 
 #: includes/pro/options-framework/includes/class-options-media-uploader.php:70
 msgid "Upgrade your version of WordPress for full media support."
-msgstr ""
+msgstr "升级你的WordPress版本以支持全部媒体。"
 
 #: includes/pro/options-framework/includes/class-options-media-uploader.php:94
 msgid "View File"
-msgstr ""
+msgstr "查看文件"
 
 #: includes/pro/options-framework/includes/class-options-sanitization.php:316
 msgid "No Repeat"
-msgstr ""
+msgstr "不重复"
 
 #: includes/pro/options-framework/includes/class-options-sanitization.php:317
 msgid "Repeat Horizontally"
-msgstr ""
+msgstr "水平平铺"
 
 #: includes/pro/options-framework/includes/class-options-sanitization.php:318
 msgid "Repeat Vertically"
-msgstr ""
+msgstr "垂直平铺"
 
 #: includes/pro/options-framework/includes/class-options-sanitization.php:319
 msgid "Repeat All"
-msgstr ""
+msgstr "平铺所有"
 
 #: includes/pro/options-framework/includes/class-options-sanitization.php:331
 msgid "Top Left"
-msgstr ""
+msgstr "顶部左侧"
 
 #: includes/pro/options-framework/includes/class-options-sanitization.php:332
 msgid "Top Center"
-msgstr ""
+msgstr "顶部居中"
 
 #: includes/pro/options-framework/includes/class-options-sanitization.php:333
 msgid "Top Right"
-msgstr ""
+msgstr "顶部右侧"
 
 #: includes/pro/options-framework/includes/class-options-sanitization.php:334
 msgid "Middle Left"
-msgstr ""
+msgstr "中部左侧"
 
 #: includes/pro/options-framework/includes/class-options-sanitization.php:335
 msgid "Middle Center"
-msgstr ""
+msgstr "中部中间"
 
 #: includes/pro/options-framework/includes/class-options-sanitization.php:336
 msgid "Middle Right"
-msgstr ""
+msgstr "中部右侧"
 
 #: includes/pro/options-framework/includes/class-options-sanitization.php:337
 msgid "Bottom Left"
-msgstr ""
+msgstr "底部左侧"
 
 #: includes/pro/options-framework/includes/class-options-sanitization.php:338
 msgid "Bottom Center"
-msgstr ""
+msgstr "底部中间"
 
 #: includes/pro/options-framework/includes/class-options-sanitization.php:339
 msgid "Bottom Right"
-msgstr ""
+msgstr "底部右侧"
 
 #: includes/pro/options-framework/includes/class-options-sanitization.php:351
 msgid "Scroll Normally"
-msgstr ""
+msgstr "正常滚动"
 
 #: includes/pro/options-framework/includes/class-options-sanitization.php:352
 msgid "Fixed in Place"
-msgstr ""
+msgstr "固定"
 
 #: includes/pro/options-framework/includes/class-options-sanitization.php:424
 msgid "Normal"
-msgstr ""
+msgstr "正常"
 
 #: includes/pro/options-framework/includes/class-options-sanitization.php:425
 msgid "Italic"
-msgstr ""
+msgstr "斜体"
 
 #: includes/pro/options-framework/includes/class-options-sanitization.php:426
 msgid "Bold"
-msgstr ""
+msgstr "粗体"
 
 #: includes/pro/options-framework/includes/class-options-sanitization.php:427
 msgid "Bold Italic"
-msgstr ""
+msgstr "粗体+斜体"
 
 #: includes/pro/options-framework/options.php:125
 msgid "General Options"
-msgstr ""
+msgstr "常规选项"
 
 #: includes/pro/options-framework/options.php:130
 msgid "Enable page query loader progress bar."
-msgstr ""
+msgstr "使页面查询加载显示进度条。"
 
 #: includes/pro/options-framework/options.php:137
 msgid "Default featured image for front page "
-msgstr ""
+msgstr "前台页面文章的默认特征图像"
 
 #: includes/pro/options-framework/options.php:138
 msgid "Recommended size: 475*313px;"
-msgstr ""
+msgstr "推荐尺寸为180x30px。"
 
 #: includes/pro/options-framework/options.php:145
 msgid "Show Previous And Next"
-msgstr ""
+msgstr "显示上一篇下一篇文章"
 
 #: includes/pro/options-framework/options.php:145
 msgid ""
@@ -422,199 +428,189 @@ msgstr ""
 
 #: includes/pro/options-framework/options.php:158
 msgid "404 Page Content"
-msgstr ""
+msgstr "404页面内容"
 
 #: includes/pro/options-framework/options.php:168
 msgid "Custom CSS"
-msgstr ""
+msgstr "自定义CSS"
 
 #: includes/pro/options-framework/options.php:169
 msgid ""
 "The following css code will add to the header before the closing &lt;/"
 "head&gt; tag."
-msgstr ""
+msgstr "下面的CSS代码添加到头部结束&lt;/head&gt;标记之前。"
 
 #: includes/pro/options-framework/options.php:178
 msgid "Home Page"
-msgstr ""
+msgstr "主页"
 
 #: includes/pro/options-framework/options.php:192
 msgid "Number of Sections"
-msgstr ""
+msgstr "版面数量"
 
 #: includes/pro/options-framework/options.php:193
 msgid "Select number of sections"
-msgstr ""
+msgstr "选择版面数"
 
 #: includes/pro/options-framework/options.php:205
 msgid "Video Background Options"
-msgstr ""
+msgstr "视频背景选项"
 
 #: includes/pro/options-framework/options.php:207
 msgid "Section Background Video"
-msgstr ""
+msgstr "视频背景版"
 
 #: includes/pro/options-framework/options.php:207
 msgid "YouTube Video ID"
-msgstr ""
+msgstr "YouTube 视频 ID"
 
 #: includes/pro/options-framework/options.php:208
 msgid "Display Buttons"
-msgstr ""
+msgstr "显示按钮"
 
 #: includes/pro/options-framework/options.php:208
 msgid "Display video control buttons."
-msgstr ""
+msgstr "显示视频控制按钮。"
 
 #: includes/pro/options-framework/options.php:209
 msgid "Video Loop"
-msgstr ""
+msgstr "视频循环"
 
 #: includes/pro/options-framework/options.php:209
 msgid "Play video loop."
-msgstr ""
+msgstr "播放视频"
 
 #: includes/pro/options-framework/options.php:211
 msgid "Default Volum"
-msgstr ""
+msgstr "默认音量"
 
 #: includes/pro/options-framework/options.php:212
 msgid "Seeks To"
-msgstr ""
+msgstr "定位到"
 
 #: includes/pro/options-framework/options.php:212
 msgid "Seeks to a specified time in the video ( number of seconds )."
-msgstr ""
+msgstr "定位到视频的某个时间 (秒数)。"
 
 #: includes/pro/options-framework/options.php:214
 msgid "No video background"
-msgstr ""
+msgstr "没有视频的背景"
 
 #: includes/pro/options-framework/options.php:214
 msgid "Secion 1"
-msgstr ""
+msgstr "第一版"
 
 #: includes/pro/options-framework/options.php:224
 msgid "Video Background Section"
-msgstr ""
-
-#: includes/pro/options-framework/options.php:228
-#: includes/pro/options-framework/options.php:627
-#: includes/pro/options-framework/options.php:679
-#: includes/pro/options-framework/options.php:689
-#: includes/pro/options-framework/options.php:696
-#: includes/pro/options-framework/options.php:703
-#: includes/pro/options-framework/options.php:710
-msgid "</div>"
-msgstr ""
+msgstr "视频背景版"
 
 #: includes/pro/options-framework/options.php:231
 msgid "Section 1 Content"
-msgstr ""
+msgstr "第一版内容"
 
 #: includes/pro/options-framework/options.php:231
 msgid "Video"
-msgstr ""
+msgstr "视频"
 
 #: includes/pro/options-framework/options.php:231
 msgid "Slider"
-msgstr ""
+msgstr "轮播"
 
 #: includes/pro/options-framework/options.php:572
 msgid "Delete"
-msgstr ""
+msgstr "删除"
 
 #: includes/pro/options-framework/options.php:572
 msgid "Delete this section"
-msgstr ""
+msgstr "删除这版"
 
 #: includes/pro/options-framework/options.php:581
 #: includes/pro/options-framework/options.php:593
 msgid "Select Content Template for this section"
-msgstr ""
+msgstr "请选这一版的的内容模板。"
 
 #: includes/pro/options-framework/options.php:610
 msgid "Title Color"
-msgstr ""
+msgstr "标题颜色"
 
 #: includes/pro/options-framework/options.php:612
 msgid "Content Color"
-msgstr ""
+msgstr "内容颜色"
 
 #: includes/pro/options-framework/options.php:616
 msgid "Blog List Link"
-msgstr ""
+msgstr "博客列表链接"
 
 #: includes/pro/options-framework/options.php:619
 msgid "Section Background"
-msgstr ""
+msgstr "版块背景"
 
 #: includes/pro/options-framework/options.php:621
 msgid "100% Width Background Image"
-msgstr ""
+msgstr "100%宽度背景图像"
 
 #: includes/pro/options-framework/options.php:623
 msgid "Full Width"
-msgstr ""
+msgstr "全屏"
 
 #: includes/pro/options-framework/options.php:624
 msgid "Section Css Class"
-msgstr ""
+msgstr "板块的CSS类"
 
 #: includes/pro/options-framework/options.php:625
 msgid "Section Content"
-msgstr ""
+msgstr "版块内容"
 
 #: includes/pro/options-framework/options.php:647
 msgid "Footer"
-msgstr ""
+msgstr "页脚"
 
 #: includes/pro/options-framework/options.php:651
 msgid "Footer Widget Area Background"
-msgstr ""
+msgstr "页脚小工具区域背景"
 
 #: includes/pro/options-framework/options.php:653
 msgid "Social Icon Color"
-msgstr ""
+msgstr "社交图标颜色"
 
 #: includes/pro/options-framework/options.php:654
 msgid "Social Icon Background Color"
-msgstr ""
+msgstr "社交图标背景颜色"
 
 #: includes/pro/options-framework/options.php:656
 msgid "Home Page Footer Background"
-msgstr ""
+msgstr "首页页脚背景"
 
 #: includes/pro/options-framework/options.php:657
 msgid "Single Page Footer Background"
-msgstr ""
+msgstr "单个页面页脚背景"
 
 #: includes/pro/options-framework/options.php:661
 #, php-format
 msgid "Social Icon #%s"
-msgstr ""
+msgstr "社会图标 #%s"
 
 #: includes/pro/options-framework/options.php:662
 #, php-format
 msgid "Social Title #%s"
-msgstr ""
+msgstr "社交标题 #%s"
 
 #: includes/pro/options-framework/options.php:663
 #, php-format
 msgid "Social Link #%s"
-msgstr ""
+msgstr "社会链接 # %s"
 
 #: includes/pro/options-framework/options.php:668
 msgid "Homepage Slider"
-msgstr ""
+msgstr "主页：滚动区"
 
 #: includes/pro/options-framework/options.php:671
 msgid "Slideshow"
-msgstr ""
+msgstr "轮播显示"
 
 #: includes/pro/options-framework/options.php:673
 msgid "Slide One"
-msgstr ""
+msgstr "第一张幻灯片"
 
 #: includes/pro/options-framework/options.php:673
 #: includes/pro/options-framework/options.php:683
@@ -630,7 +626,7 @@ msgstr ""
 #: includes/pro/options-framework/options.php:699
 #: includes/pro/options-framework/options.php:706
 msgid "Image"
-msgstr ""
+msgstr "图像"
 
 #: includes/pro/options-framework/options.php:677
 #: includes/pro/options-framework/options.php:687
@@ -638,205 +634,205 @@ msgstr ""
 #: includes/pro/options-framework/options.php:701
 #: includes/pro/options-framework/options.php:708
 msgid "Text"
-msgstr ""
+msgstr "文本"
 
 #: includes/pro/options-framework/options.php:683
 msgid "Slide Two"
-msgstr ""
+msgstr "第二张幻灯片"
 
 #: includes/pro/options-framework/options.php:691
 msgid "Slide Three"
-msgstr ""
+msgstr "第三张幻灯片"
 
 #: includes/pro/options-framework/options.php:698
 msgid "Slide Four"
-msgstr ""
+msgstr "第四张幻灯片"
 
 #: includes/pro/options-framework/options.php:705
 msgid "Slide Five"
-msgstr ""
+msgstr "第五张幻灯片"
 
 #: includes/pro/options-framework/options.php:712
 msgid "Slide Time"
-msgstr ""
+msgstr "滑动时间"
 
 #: includes/pro/options-framework/options.php:712
 msgid ""
 "Milliseconds between the end of the sliding effect and the start of the nex "
 "one."
-msgstr ""
+msgstr "滑动效果的结束点与下一贞开始之间的毫秒。"
 
 #: includes/pro/shortcodes/shortcodes.php:24
 msgid "Click here to learn more"
-msgstr ""
+msgstr "单击此处了解详情"
 
 #: includes/pro/shortcodes/shortcodes.php:99
 msgid "Add a Tooltip Text"
-msgstr ""
+msgstr "添加工具提示文本"
 
 #: includes/pro/shortcodes/shortcodes.php:188
 msgid "Caption"
-msgstr ""
+msgstr "解说词"
 
 #: includes/pro/shortcodes/shortcodes.php:189
 msgid "Caption goes here"
-msgstr ""
+msgstr "在这里放置说明文字"
 
 #: includes/pro/shortcodes/shortcodes.php:190
 msgid "Caption title goes here"
-msgstr ""
+msgstr "在这里放置说明文字标题"
 
 #: includes/pro/shortcodes/shortcodes.php:194
 msgid "State"
-msgstr ""
+msgstr "状态"
 
 #: includes/pro/shortcodes/shortcodes.php:196
 msgid "Select between expanded and closed state"
-msgstr ""
+msgstr "选择默认展开/关闭状态"
 
 #: includes/pro/shortcodes/shortcodes.php:201
 #: includes/pro/shortcodes/shortcodes.php:217
 #: includes/pro/shortcodes/shortcodes.php:246
 #: includes/pro/shortcodes/shortcodes.php:326
 msgid "Content"
-msgstr ""
+msgstr "内容"
 
 #: includes/pro/shortcodes/shortcodes.php:202
 #: includes/pro/shortcodes/shortcodes.php:218
 #: includes/pro/shortcodes/shortcodes.php:304
 #: includes/pro/shortcodes/shortcodes.php:327
 msgid "Content goes here"
-msgstr ""
+msgstr "在这里填写内容"
 
 #: includes/pro/shortcodes/shortcodes.php:203
 #: includes/pro/shortcodes/shortcodes.php:219
 #: includes/pro/shortcodes/shortcodes.php:248
 msgid "Content text or html"
-msgstr ""
+msgstr "内容文本或 html代码"
 
 #: includes/pro/shortcodes/shortcodes.php:210
 #: includes/pro/shortcodes/shortcodes.php:232
 msgid "Type"
-msgstr ""
+msgstr "类型"
 
 #: includes/pro/shortcodes/shortcodes.php:212
 msgid "Type of the box"
-msgstr ""
+msgstr "框中的类型"
 
 #: includes/pro/shortcodes/shortcodes.php:226
 msgid "Link"
-msgstr ""
+msgstr "链接"
 
 #: includes/pro/shortcodes/shortcodes.php:228
 msgid "URL"
-msgstr ""
+msgstr "网络地址："
 
 #: includes/pro/shortcodes/shortcodes.php:234
 msgid "Choose button type"
-msgstr ""
+msgstr "选择按钮类型"
 
 #: includes/pro/shortcodes/shortcodes.php:239
 msgid "Color"
-msgstr ""
+msgstr "颜色"
 
 #: includes/pro/shortcodes/shortcodes.php:241
 msgid "Choose button color"
-msgstr ""
+msgstr "选择按钮颜色"
 
 #: includes/pro/shortcodes/shortcodes.php:247
 msgid "Link text"
-msgstr ""
+msgstr "链接文本"
 
 #: includes/pro/shortcodes/shortcodes.php:252
 msgid "Icon"
-msgstr ""
+msgstr "图标"
 
 #: includes/pro/shortcodes/shortcodes.php:254
 msgid "Used for icon button type"
-msgstr ""
+msgstr "用于图标按钮类型"
 
 #: includes/pro/shortcodes/shortcodes.php:259
 msgid "Open link in new window"
-msgstr ""
+msgstr "新窗口打开链接"
 
 #: includes/pro/shortcodes/shortcodes.php:261
 msgid "Select yes if the link should be opened in a new window"
-msgstr ""
+msgstr "如果链接在新窗口打开，请选择“是”"
 
 #: includes/pro/shortcodes/shortcodes.php:269
 msgid "Slider Type"
-msgstr ""
+msgstr "轮播类型"
 
 #: includes/pro/shortcodes/shortcodes.php:271
 msgid "Select Slider Type here"
-msgstr ""
+msgstr "选择滑块样式"
 
 #: includes/pro/shortcodes/shortcodes.php:276
 msgid "Effect"
-msgstr ""
+msgstr "效果"
 
 #: includes/pro/shortcodes/shortcodes.php:278
 msgid "Select Animation Effect"
-msgstr ""
+msgstr "选择动画效果"
 
 #: includes/pro/shortcodes/shortcodes.php:283
 msgid "Auto"
-msgstr ""
+msgstr "自动"
 
 #: includes/pro/shortcodes/shortcodes.php:285
 msgid "Choose yes if you want for automatic slider animation"
-msgstr ""
+msgstr "选择是，如果你想自动播放动画"
 
 #: includes/pro/shortcodes/shortcodes.php:290
 msgid "Auto Speed"
-msgstr ""
+msgstr "自动播放速度"
 
 #: includes/pro/shortcodes/shortcodes.php:292
 msgid "Automattic slider speed (works only if Auto is set to yes)"
-msgstr ""
+msgstr "自动切换速度（如启用自动切换）"
 
 #: includes/pro/shortcodes/shortcodes.php:296
 msgid "Tab Text"
-msgstr ""
+msgstr "标签文本:"
 
 #: includes/pro/shortcodes/shortcodes.php:303
 msgid "Tab Content"
-msgstr ""
+msgstr "标签内容"
 
 #: includes/pro/shortcodes/shortcodes.php:305
 msgid "Paste image url here, if you chose \"images\" slider type"
-msgstr ""
+msgstr "粘贴图片的URL在这里，如果你选择“图像”滑块式"
 
 #: includes/pro/shortcodes/shortcodes.php:313
 msgid "Image Url"
-msgstr ""
+msgstr "图片URL"
 
 #: includes/pro/shortcodes/shortcodes.php:315
 msgid "Author Image URL"
-msgstr ""
+msgstr "作者图片URL"
 
 #: includes/pro/shortcodes/shortcodes.php:319
 msgid "Use resizing"
-msgstr ""
+msgstr "使用调整大小"
 
 #: includes/pro/shortcodes/shortcodes.php:398
 msgid "+ Add One More Tab"
-msgstr ""
+msgstr "+ 添加一个选项卡"
 
 #: includes/pro/shortcodes/shortcodes.php:561
 msgid "Image Height"
-msgstr ""
+msgstr "图像高度"
 
 #: includes/pro/shortcodes/shortcodes.php:562
 msgid "Image Width"
-msgstr ""
+msgstr "图像宽度"
 
 #: includes/pro/theme-setup-pro.php:753
 msgid "Quick Links"
-msgstr ""
+msgstr "快速链接"
 
 #: includes/pro/theme-setup-pro.php:1004
-msgid "<div><h3>No Related Articles!</h3></div>"
+msgid "No Related Articles!"
 msgstr ""
 
 #: includes/pro/widgets/ct-recent-posts-widget/posts.php:54
@@ -912,30 +908,116 @@ msgstr ""
 msgid "Displays Advertisements(User Images)"
 msgstr ""
 
-#: includes/pro/widgets/custom-widgets.php:387
+#: includes/pro/widgets/custom-widgets.php:385
 msgid "CT Author Widget"
 msgstr ""
 
-#: includes/pro/widgets/custom-widgets.php:388
+#: includes/pro/widgets/custom-widgets.php:386
 msgid "Displays Author Information(To use only on \"After Content\" )"
+msgstr ""
+
+#: includes/pro/widgets/custom-widgets.php:570
+msgid "CT Visit statistics Code Widget"
+msgstr ""
+
+#: includes/pro/widgets/custom-widgets.php:571
+msgid ""
+"Add third party Visit statistics Code to the end of the page, such as Google "
+"Analytics Code(User Code)"
 msgstr ""
 
 #: includes/theme-setup.php:37
 msgid "Primary Menu"
-msgstr ""
+msgstr "主菜单"
 
 #: includes/theme-setup.php:38
 msgid "Secondary Menu"
-msgstr ""
+msgstr "第二个菜单"
 
 #: includes/theme-setup.php:39
 msgid "footer Menu"
-msgstr ""
+msgstr "页脚菜单"
+
+#: index.php:32
+msgid "Read More..."
+msgstr "阅读全文"
 
 #: search.php:42
 msgid "No Results"
-msgstr ""
+msgstr "没有文章"
 
 #: single.php:27
 msgid "Tags: "
-msgstr ""
+msgstr "标签： "
+
+#~ msgid "<div><h3>No Related Articles!</h3></div>"
+#~ msgstr "<div><h3>没有相关的文章!</h3></div>"
+
+#~ msgid ""
+#~ "1. Documentation for Very Simple Start can be found <a target=\"_blank\" "
+#~ "href=\"https://www.coothemes.com/doc/acool-manual.php\">here</a>"
+#~ msgstr ""
+#~ "1. 可以在<a target=\"_blank\" href=\"https://www.coothemes.com/doc/acool-"
+#~ "manual.php\">这里</a>查看使用文档"
+
+#~ msgid "Upload Logo (recommended use 262px*52px ,png format )"
+#~ msgstr "上传网站的logo。推荐的尺寸:262px*52px ，png格式"
+
+#~ msgid "Favicon"
+#~ msgstr "网站图标"
+
+#~ msgid ""
+#~ "An icon associated with a URL that is variously displayed, as in a "
+#~ "browser's address bar or next to the site name in a bookmark list. Learn "
+#~ "more about <a href=\"%s\" target=\"_blank\">Favicon</a>"
+#~ msgstr ""
+#~ "这里的图标是在浏览器的地址栏或在书签列表中的网站名称旁边显示的。了解更多关"
+#~ "于 <a href=\"%s\" target=\"_blank\">图标</a>的内容"
+
+#~ msgid "Header"
+#~ msgstr "页头"
+
+#~ msgid ""
+#~ "Display the breadcrumb in posts lists :post page, blog page, archives, "
+#~ "search results..."
+#~ msgstr "在文章列表，博客页面，文章归类页面，搜索结果页面中显示面包屑导航"
+
+#~ msgid "Blog"
+#~ msgstr "博客"
+
+#~ msgid "Pages:"
+#~ msgstr "页面："
+
+#~ msgid ""
+#~ "Acool is a responsive wordpress theme which is ideal for creating a "
+#~ "corporate / business website. Great Design - Perfect for every business "
+#~ "on any device. You can see the demo at https://www.coothemes.com/demos/"
+#~ "acool/"
+#~ msgstr ""
+#~ "Acool 是一个响应式的 wordpress 主题，是创建一个公务 / 商务网站的理想选择。"
+#~ "可在几乎所有设备上完美显示。你可以在 https://www.coothemes.com/demos/"
+#~ "acool/ 观看演示。"
+
+#~ msgid "Link Color"
+#~ msgstr "链接颜色"
+
+#~ msgid "Link Mouseover Color"
+#~ msgstr "鼠标悬停时链接颜色"
+
+#~ msgid "Site Title Color"
+#~ msgstr "站点标题颜色："
+
+#~ msgid "1. Documentation for Very Simple Start can be found "
+#~ msgstr "1.很简单开始文档都可以找到"
+
+#~ msgid "← Older Comments"
+#~ msgstr "早期评论"
+
+#~ msgid "Newer Comments →"
+#~ msgstr "较新的评论"
+
+#~ msgid "Custom CSS Section"
+#~ msgstr "自定义CSS代码"
+
+#~ msgid "No file chosen"
+#~ msgstr "没有选中文件"

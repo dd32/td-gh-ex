@@ -1,9 +1,5 @@
 <?php
 
-if ( defined( 'ACOOL_THEME_PRO_USED' ) && ACOOL_THEME_PRO_USED ){
-	get_template_part('/includes/pro/widgets/custom-widgets');		
-}
-
 /*
 add widgets to wp-admin
 */
@@ -53,25 +49,6 @@ function acool_widgets_init() {
 		'after_title' => '</span>',
 	) );
 
-	if( defined( 'ACOOL_THEME_PRO_USED' ) && ACOOL_THEME_PRO_USED ){ 
-		register_sidebar( array(
-			'name' => 'Content Header',
-			'id' => 'sidebar-6',//content-header
-			'before_widget' => '<div id="content-header" class="content-header-ad"><div id="%1$s" class="%2$s">',
-			'after_widget' => '</div></div> <!-- end .content-header -->',
-			'before_title' => '<span class="title">',
-			'after_title' => '</span>',
-		) );
-		
-		register_sidebar( array(
-			'name' => 'After Content',
-			'id' => 'sidebar-7',//after-content
-			'before_widget' => '<div id="after-content" class="after-content-au"><div id="%1$s" class="%2$s">',
-			'after_widget' => '</div></div> <!-- end .after Content -->',
-			'before_title' => '<span class="title">',
-			'after_title' => '</span>',
-		) );	
-	}
 }
 add_action( 'widgets_init', 'acool_widgets_init' );
 

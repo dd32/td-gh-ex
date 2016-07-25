@@ -7,11 +7,11 @@ function acool_better_comments($comment, $args, $depth)
     <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
         <article id="comment-<?php comment_ID(); ?>" class="comment-body">
             <div class="comment_avatar">
-                <?php echo get_avatar($comment, $size = '45', $default = get_stylesheet_directory_uri().'/images/default-avatars.png' ); ?>
+                <?php echo get_avatar($comment, '',''); ?>
             </div>
 
             <div class="comment_postinfo">
-                <?php printf(__('<cite class="fn">%s</cite> <span class="says"> on </span>','acool'), get_comment_author_link()) ?>
+                <?php printf(__('<cite class="fn">%s</cite> <span class="says"> on </span>','acool'), esc_url(get_comment_author_link())) ?>
                 <span class="comment_date"><?php printf(__('%1$s at %2$s','acool'), get_comment_date(),  get_comment_time()) ?></span><?php edit_comment_link(__('(Edit)','acool'),'  ','') ?>
             </div> <!-- .comment_postinfo -->
 
@@ -51,10 +51,9 @@ function acool_customize_scripts() {
 							'WP_version'				=> get_bloginfo( 'version' ),
 							'old_version_message'		=> __( 'Some settings might be missing or disorganized in this version of WordPress. So we suggest you to upgrade to version 4.0 or better.', 'acool' )
 		);
-	if ( !(defined( 'ACOOL_THEME_PRO_USED' ) && ACOOL_THEME_PRO_USED ))
-	{
+
 		wp_localize_script( 'acool_customizer_custom', 'clean_box_misc_links', $clean_box_misc_links );
-	}
+
 	
 
 	wp_enqueue_style( 'acool_customizer_custom_css', get_template_directory_uri() . '/css/customizer.css');
@@ -109,7 +108,7 @@ if ( ! function_exists( 'acool_get_option' ) ){
 function acool_breadcrumbs() {
  
   $delimiter = '&raquo;';
-  $name = 'Home'; //text for the 'Home' link
+  $name = __( 'Home', 'acool' ); //text for the 'Home' link
   $currentBefore = '<span>';
   $currentAfter = '</span>';
  
@@ -118,7 +117,7 @@ function acool_breadcrumbs() {
     echo '<div id="crumbs">';
  
     global $post;
-    $home = home_url();
+    $home = esc_url(home_url());
 	echo ' <a href="' . $home . '">'.$name. '</a> ' . $delimiter . ' ';
  
     if ( is_category() ) {
@@ -129,32 +128,32 @@ function acool_breadcrumbs() {
       $parentCat = get_category($thisCat->parent);
       if ($thisCat->parent != 0) echo(get_category_parents($parentCat, TRUE, ' ' . $delimiter . ' '));
       echo $currentBefore;
-      single_cat_title();
+      esc_html( single_cat_title());
       echo  $currentAfter;
  
     } elseif ( is_day() ) {
 		
-      echo '<a href="' . get_year_link( get_the_time( 'Y' ) ) . '" title="' . get_the_time( esc_attr__( 'Y' , 'acool' ) ) . '">' . get_the_time('Y') . ' ' . $delimiter . '</a>';
-      echo '<a href="' . get_month_link( get_the_time( 'Y' ), get_the_time( 'm' ) ) . '" title="' . get_the_time( esc_attr__( 'F' , 'acool' ) ) . '">' . get_the_time('F') . '</a>' . $delimiter . ' ';
-      echo $currentBefore . get_the_time('d') . $currentAfter;
+      echo '<a href="' . esc_url(get_year_link( get_the_time( 'Y' ) ) ). '" title="' . get_the_time( esc_attr__( 'Y' , 'acool' ) ) . '">' . get_the_time('Y') . ' ' . $delimiter . '</a>';
+      echo '<a href="' . esc_url(get_month_link( get_the_time( 'Y' ), get_the_time( 'm' ) )) . '" title="' . esc_html(get_the_time( esc_attr__( 'F' , 'acool' ) ) ). '">' . esc_html(get_the_time('F')) . '</a>' . $delimiter . ' ';
+      echo $currentBefore . esc_url(get_the_time('d') ). $currentAfter;
  
     } elseif ( is_month() ) {
-      echo '<a href="' . get_year_link( get_the_time( 'Y' ) ) . '" title="' . get_the_time( esc_attr__( 'Y' , 'acool' ) ) . '">' . get_the_time('Y') . ' ' . $delimiter . '</a>';	  
-      echo $currentBefore . get_the_time('F') . $currentAfter;
+      echo '<a href="' . esc_url(get_year_link( get_the_time( 'Y' ) )) . '" title="' . esc_html(get_the_time( esc_attr__( 'Y' , 'acool' ) ) ). '">' . esc_html(get_the_time('Y') ). ' ' . $delimiter . '</a>';	  
+      echo $currentBefore . esc_html(get_the_time('F')) . $currentAfter;
  
     } elseif ( is_year() ) {
-      echo $currentBefore . get_the_time('Y') . $currentAfter;
+      echo $currentBefore . esc_html(get_the_time('Y')) . $currentAfter;
  
     } elseif ( is_single() ) {
       $cat = get_the_category(); $cat = $cat[0];
       echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
       echo $currentBefore;
-      the_title();
+      esc_html( the_title());
       echo $currentAfter;
  
     } elseif ( is_page() && !$post->post_parent ) {
       echo $currentBefore;
-      the_title();
+      esc_html( the_title());
       echo $currentAfter;
  
     } elseif ( is_page() && $post->post_parent ) {
@@ -168,24 +167,24 @@ function acool_breadcrumbs() {
       $breadcrumbs = array_reverse($breadcrumbs);
       foreach ($breadcrumbs as $crumb) echo $crumb . ' ' . $delimiter . ' ';
       echo $currentBefore;
-      the_title();
+      esc_html( the_title());
       echo $currentAfter;
  
     } elseif ( is_search() ) {
-      echo $currentBefore . 'Search results for &#39;' . get_search_query() . '&#39;' . $currentAfter;
+      echo $currentBefore . __('Search results for &#39;','acool') . get_search_query() . '&#39;' . $currentAfter;
  
     } elseif ( is_tag() ) {
-      echo $currentBefore . 'Posts tagged &#39;';
-      single_tag_title();
+      echo $currentBefore . __('Posts tagged &#39;','acool') ;
+      esc_html(single_tag_title());
       echo '&#39;' . $currentAfter;
  
     } elseif ( is_author() ) {
        global $author;
       $userdata = get_userdata($author);
-      echo $currentBefore . 'Articles posted by ' . $userdata->display_name . $currentAfter;
+      echo $currentBefore . __('Articles posted by ','acool') . esc_html($userdata->display_name) . $currentAfter;
  
     } elseif ( is_404() ) {
-      echo $currentBefore . 'Error 404' . $currentAfter;
+      echo $currentBefore . __('Error 404','acool') . $currentAfter;
     }
  
     if ( get_query_var('paged') ) {

@@ -3,8 +3,6 @@
 <div class="ct_single">
 
 	<div class="container"><div class="row">
-    
-    	<?php if( defined( 'ACOOL_THEME_PRO_USED' ) && ACOOL_THEME_PRO_USED ){ get_sidebar( 'content' );} ?>
  
 		<?php if(function_exists('acool_breadcrumbs') && acool_get_option( 'ct_acool','show_breadcrumb',1 ) ){ acool_breadcrumbs();} ?> 
     
@@ -22,41 +20,45 @@
             
                     <?php the_content(); ?>
                 	<p class="ct_clear"></p> 
-                </div>
-            
-
+                </div> 
           
 				<?php if(has_tag()){?>
                     <div class="ct_border">
                         <div id="article-tag">
-                        <?php the_tags('<strong>Tags:</strong> ', ' , ' , ''); ?>
+                        <?php the_tags('<strong>'.__( 'Tags: ', 'acool' ).'</strong> ', ' , ' , ''); ?>
                         </div> 
                     </div>    
                         
                 <?php }?> 
-                
     
-				<?php				
-					if( defined( 'ACOOL_THEME_PRO_USED' ) && ACOOL_THEME_PRO_USED ){ 
-						if ( is_active_sidebar( 'sidebar-7' ) ) :
-							dynamic_sidebar( 'sidebar-7' );
-						endif;
-					}
-                ?><!-- #after content widgets -->
-
+    
+               	<?php
+					$args = array (
+						'before'            => '<div class="page-links-XXX"><span class="page-link-text">' . __( 'More pages: ', 'acool' ) . '</span>',
+						'after'             => '</div>',
+						'link_before'       => '<span class="page-link">',
+						'link_after'        => '</span>',
+						'next_or_number'    => 'number',
+						'separator'         => ' | ',
+						'nextpagelink'      => __( 'Next &raquo', 'acool' ),
+						'previouspagelink'  => __( '&laquo Previous', 'acool' ),
+					);
+					 
+					wp_link_pages( $args );
+				?>    
+                
                 <?php
 					if ( comments_open() ){ 
 						$withcomments = "1";
 						comments_template();
 					}
-                ?> 
-
+                ?>
              
              </div>  
         <?php endwhile;endif; ?> 
         </div>
     
-        <?php get_sidebar( 'acool' ); ?>
+        <?php get_sidebar(); ?>
              
 	</div></div> 		      
 </div>

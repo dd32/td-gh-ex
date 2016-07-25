@@ -1,23 +1,4 @@
 jQuery(document).ready(function($){
-    window.addEventListener('DOMContentLoaded', function() {
-        new QueryLoader2(document.querySelector("body"), {
-            barColor: "#efefef",
-            backgroundColor: "#111",
-            percentage: true,
-            barHeight: 1,
-            minimumTime: 200,
-            fadeOutTime: 1000
-        });
-    });
-	
-});
-
-
-
-
-
-jQuery(document).ready(function($){
-
 	
 	//tooltip
 	$(function () { $("[data-toggle='tooltip']").tooltip(); });
@@ -131,44 +112,15 @@ jQuery(document).ready(function($){
             $(this).css("width", width); 
         });
 
-	
 
-});
 
-//return top
-window.onscroll=function(){ 
-	if ($(document).scrollTop() > 200) 
-	{ 
-		$(".side").css({display:"block"});
-	}else{ 
-		$(".side").css({display:"none"});	
-	} 
-}
-function goTop(){
-	$('html,body').animate({'scrollTop':0},600);
-}
-//return top end
+	function testAnim() {
+			$('.animated1').removeClass('bounceInLeft' + ' animated').addClass('bounceInLeft' + ' animated');
+			$('.animated2').removeClass('bounceInUp' + ' animated').addClass('bounceInUp' + ' animated');
+			$('.animated3').removeClass('bounceInUp' + ' animated').addClass('bounceInUp' + ' animated');		
+			$('.animated4').removeClass('bounceInRight' + ' animated').addClass('bounceInRight' + ' animated');	
+	  };
 
-/*
-$(function(){ 
-	$(".ct_section_columns").hover(function(){ 
-		//$(".clsContent").show(); 
-		//$(".animated1").css("display","none");
-		$(".animated1").addClass("animated bounceLeft");
-		//$(".animated1").css("display","block");
-		//alert('ok');		
-	}) 
-});
-*/
-
-function testAnim() {
-		$('.animated1').removeClass('bounceInLeft' + ' animated').addClass('bounceInLeft' + ' animated');
-		$('.animated2').removeClass('bounceInUp' + ' animated').addClass('bounceInUp' + ' animated');
-		$('.animated3').removeClass('bounceInUp' + ' animated').addClass('bounceInUp' + ' animated');		
-		$('.animated4').removeClass('bounceInRight' + ' animated').addClass('bounceInRight' + ' animated');	
-  };
-
-$(document).ready(function(){
 	var i=1; 	
 	$('.ct_section_columns').hover(function(e){
 		if(i==1)
@@ -179,6 +131,26 @@ $(document).ready(function(){
 		  i=2;
 		}
 	});	
-
 	
- });
+	
+
+
+});	
+
+//return top
+	window.onscroll=function(){ 
+		if ($(document).scrollTop() > 200) 
+		{ 
+			$(".gotopdiv").css({display:"block"});
+		}else{ 
+			$(".gotopdiv").css({display:"none"});	
+		} 
+	}
+	
+	
+	
+	
+	function goTop(){
+		$('html,body').animate({'scrollTop':0},600);
+	}
+	//return top end	

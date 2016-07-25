@@ -1,10 +1,6 @@
-<?php get_header(); ?>   
-
+<?php get_header(); ?>
 <div class="ct_single">
-
 	<div class="container"><div class="row">
-    
-    	<?php if( defined( 'ACOOL_THEME_PRO_USED' ) && ACOOL_THEME_PRO_USED ){ get_sidebar( 'content' );} ?>
     
  		<?php if(function_exists('acool_breadcrumbs') && acool_get_option( 'ct_acool','show_breadcrumb',1) ){ acool_breadcrumbs();} ?>  
     
@@ -20,7 +16,23 @@
 						if(!$hide_post_meta ){ acool_show_post_meta();}
 					?> 
             
-                    <?php the_content(); ?>      
+                    <?php the_content(); ?>    
+
+					<?php
+                        $args = array (
+                            'before'            => '<div class="page-links-XXX"><span class="page-link-text">' . __( 'More pages: ', 'acool' ) . '</span>',
+                            'after'             => '</div>',
+                            'link_before'       => '<span class="page-link">',
+                            'link_after'        => '</span>',
+                            'next_or_number'    => 'number',
+                            'separator'         => ' | ',
+                            'nextpagelink'      => __( 'Next &raquo', 'acool' ),
+                            'previouspagelink'  => __( '&laquo Previous', 'acool' ),
+                        );
+                         
+                        wp_link_pages( $args );
+                    ?>  
+
 
 					<?php if(has_tag()){?>
                         <div id="article-tag">
@@ -31,13 +43,6 @@
                 <p class="ct_clear"></p> 
                 </div>
              
-				<?php
-					if( defined( 'ACOOL_THEME_PRO_USED' ) && ACOOL_THEME_PRO_USED ){ 
-						if ( is_active_sidebar( 'sidebar-7' ) ) :
-							dynamic_sidebar( 'sidebar-7' );
-						endif;
-					}
-                ?><!-- #after content widgets -->
 
                 <?php
 					if ( comments_open() ){ 
@@ -45,21 +50,14 @@
 						comments_template();
 					}
                 ?>  
-            
-                <?php 
-					if ( defined( 'ACOOL_THEME_PRO_USED' ) && ACOOL_THEME_PRO_USED )
-					{
-						acool_previous_next($post->ID);
-					}
-                ?>
 		  
          	</div><!--div id="post-<?php the_ID(); ?>" <?php post_class(); ?>-->   
         <?php endwhile;endif; ?> 
         </div><!--div class="col-md-8 ct_single_content" --> 
     
-        <?php get_sidebar( 'acool' ); ?>
+        <?php get_sidebar(); ?>
              
 	</div></div><!--div class="container"><div class="row"--> 		      
 </div><!--div class="ct_single"-->
-<?php wp_link_pages(); ?>
+
 <?php get_footer(); ?>

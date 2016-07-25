@@ -9,13 +9,11 @@ Tags: two-columns, left-sidebar, custom-background, custom-colors, custom-header
 
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Version:      2.0.8
-Update date: 2016.7.18
+Version:      2.0.9
+Update date: 2016.7.24
 */
 
-
 /*base set*/
-
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
 	border: 0;font-family: inherit;font-size: 100%;font-style: inherit;font-weight: inherit;outline: 0;padding: 0;margin: 0;vertical-align: baseline;
 	font-family: 'Open Sans', Helvetica, Arial, Lucida, sans-serif;
@@ -111,9 +109,10 @@ hr {background-color: rgba(0, 0, 0, 0.1);border: 0;	height: 1px;margin-bottom: 2
 .ct_section {position: relative;clear: both; width: 100%;}
 .ct_section .container {overflow: hidden;}
 .ct_post_thumbnail img{ max-width:100%; margin-bottom:30px; height:auto;}
+.margin-30{ margin:20px;}
 
 
-.ct_post_content a.more-link {display:block;width:140px;text-align:center;margin-top:20px;padding: 10px;border: thin solid #D3D3D3;background: #0c8432;font-size: 16px;color: #fff;text-indent: 0;} 
+.ct_post_content a.more-link {clear:both; float:right; display:block;width:140px;text-align:center;margin:20px 0;padding: 10px;border: thin solid #D3D3D3;background: #0c8432;font-size: 16px;color: #fff;text-indent: 0;} 
 .ct_post_content a:hover.more-link {background: #fff;color: #0c8432;} 
 .ct_entry_meta span i.fa{ margin-right:5px;}
 
@@ -278,7 +277,7 @@ content: ' >\0000a0'; font-size: 9px; position: absolute; right: 0; top: 13px; }
 	.widget_search #s { width: 193px; }
 }
 
-  /*
+/*
  * home page slider
  */
 
@@ -287,6 +286,7 @@ content: ' >\0000a0'; font-size: 9px; position: absolute; right: 0; top: 13px; }
 background: rgba(0,0,0, 0.4);
 filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99ffffff, endColorstr=#99ffffff);	
 }
+
 .carousel-caption a.btn:hover,.ct_setion_text a.btn:hover{	background-color: #0c8432;text-decoration: none;color: #fff;border: 1px solid #0c8432;}
 
 .carousel-caption{top: 10%;right: 0%;left: 3%;color: #fff;z-index: 3;}
@@ -800,12 +800,33 @@ background:rgba(0,0,0,0.6)!important;background:#000;filter:Alpha(opacity=60);}
 a,img{border:0;}
 
 /* gotop */
-.side{position:fixed;width:54px;height:275px;right:20px;bottom:20px;z-index:100; display:none;}
-.side ul li{width:54px;height:54px;float:left;position:relative;border-bottom:1px solid #444;}
-.side ul li .sidebox{position:absolute;width:54px;height:54px;top:0;right:0;transition:all 0.3s;background:#000;opacity:0.8;filter:Alpha(opacity=80);color:#fff;font:14px/54px;overflow:hidden;}
-.side ul li .sidetop{width:54px;height:54px;line-height:54px;display:inline-block;background:#000;opacity:0.8;filter:Alpha(opacity=80);transition:all 0.3s;}
-.side ul li .sidetop:hover{background:#0c8432;opacity:1;filter:Alpha(opacity=100);}
-.side ul li img{float:left;}
+.gotopdiv{position:fixed;width:54px;height:125px;right:20px;bottom:20px;z-index:100; display: none;}
+.gotopdiv ul li{width:54px;height:54px;float:left;position:relative;border-bottom:1px solid #444;}
+.gotopdiv ul li .sidebox{position:absolute;width:54px;height:54px;top:0;right:0;transition:all 0.3s;background:#000;opacity:0.8;filter:Alpha(opacity=80);color:#fff;font:14px/54px;overflow:hidden;}
+.gotopdiv ul li .sidetop{width:54px;height:54px;line-height:54px;display:inline-block;background:#000;opacity:0.8;filter:Alpha(opacity=80);transition:all 0.3s;}
+.gotopdiv ul li .sidetop:hover{background:#0c8432;opacity:1;filter:Alpha(opacity=100);}
+.gotopdiv ul li img{float:left;}
+
+
+   #goToTop {
+      position: fixed;
+      bottom: 20px;
+      right: 10%;
+   }
+  #goToTop a {
+     background: none repeat scroll 0 0 #336699;
+     border: 1px solid #CCCCCC;
+     border-radius: 3px;
+     -webkit-border-radius: 3px;
+     color: #FF9966;
+     font-size: 14px;
+     padding: 5px;
+     text-decoration: none;
+     text-shadow: 0 1px 0 #999;
+     -webkit-text-shadow: 0 1px 0 #999;            
+     }
+
+
 
 /*wooc*/
 .ct_acool #container{  width:61.8%; margin:20px auto; }

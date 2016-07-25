@@ -30,7 +30,7 @@ get_header(); ?>
                         if(!$hide_post_meta ){ acool_show_post_meta();}
                     ?>               
 
-                    <?php the_excerpt(); ?>
+                    <?php the_content(); ?>
                 </div>
 				<p class="ct_clear"></p> 
 			</div><!--div class="ct_border"-->
@@ -49,7 +49,7 @@ get_header(); ?>
         
         </div>
         
-        <?php get_sidebar( 'acool' ); ?>
+        <?php get_sidebar(); ?>
           
     
 	</div></div> 		      

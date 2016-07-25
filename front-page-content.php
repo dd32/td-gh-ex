@@ -1,23 +1,15 @@
 <?php 
 	get_header();
 	 
- 	if( defined( 'ACOOL_THEME_PRO_USED' ) && ACOOL_THEME_PRO_USED ){ 
-		get_template_part('/includes/pro/front-page-part');
- 	}
-	else
-	{		
-		$homepage_banner_img_deault = get_stylesheet_directory_uri().'/images/banner1.jpg';			
-		$homepage_banner_text_deault = '<h1>The jQuery slider that just slides.</h1><p class="ct_slider_text">No fancy effects or unnecessary markup.</p><a class="btn" href="#download">Download</a>';
-
+	$homepage_banner_img_deault = get_stylesheet_directory_uri().'/images/banner1.jpg';
 ?>
-
         <section class="ct_section ct_section_slider">
             <div id="carousel-acool-generic" class="carousel slide" data-ride="carousel" data-interval="5000" >
                 <div class="carousel-inner">
                     <div class="item active">
-                        <a href="#" target="_blank"><img src="<?php echo esc_url(acool_get_option( 'ct_acool','homepage_banner_img',$homepage_banner_img_deault));?> "  width="100%"/></a>
+                        <img src="<?php echo esc_url(acool_get_option( 'ct_acool','homepage_banner_img',$homepage_banner_img_deault));?> "  width="100%"/>
                         <div class="carousel-caption">
-                            <?php echo acool_get_option( 'ct_acool','homepage_banner_text',$homepage_banner_text_deault);?>
+                        <h1><?php echo esc_html(acool_get_option( 'ct_acool','homepage_banner_text_h1',__( 'The jQuery slider that just slides.', 'acool' )) );?></h1><p class="ct_slider_text"><?php echo esc_html(acool_get_option( 'ct_acool','homepage_banner_text',__( 'No fancy effects or unnecessary markup.', 'acool' )) );?></p><a class="btn" href="<?php echo esc_html(acool_get_option( 'ct_acool','homepage_banner_button_url','#') );?>"><?php echo esc_html(acool_get_option( 'ct_acool','homepage_banner_button_text',__( 'Download', 'acool' )) );?></a>                       
                         </div>
                     </div>
                 </div>
@@ -53,7 +45,7 @@
                             if(!$hide_post_meta ){ acool_show_post_meta();}
                         ?>               
 
-                        <?php the_excerpt(); ?>
+                        <?php the_content(); ?>
                     </div>
                     <p class="ct_clear"></p> 
                 </div><!--div class="ct_border"-->
@@ -66,14 +58,11 @@
 
             </div>
             
-            <?php get_sidebar( 'acool' ); ?>
+            <?php get_sidebar(); ?>
               
         
         </div></div> 
 
-<?php
-	}
-?>
     </div><!--div id="ct_content" class="ct_acool_content"-->
 
 <?php get_footer(); ?>

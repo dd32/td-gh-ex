@@ -1,6 +1,5 @@
 <?php 
 //post page
-
 get_header(); ?>  
 
 <div class="ct_single">
@@ -23,15 +22,13 @@ get_header(); ?>
             	
                 <div class="ct_border_text">
             
-                    <h1 class="ct_title_h1"><a href="<?php echo esc_url(get_permalink());?>"><?php esc_html(the_title()); ?></a></h1>
-                    
+                    <h1 class="ct_title_h1"><a href="<?php echo esc_url(get_permalink());?>"><?php esc_html(the_title()); ?></a></h1>                   
                     <?php 
                         $hide_post_meta = acool_get_option( 'ct_acool','hide_post_meta',0 ); 
                         if(!$hide_post_meta ){ acool_show_post_meta();}
-                    ?>               
-    
+                    ?>
               
-                    <?php the_excerpt(); ?>
+                    <?php the_content(); ?>
                 </div>
 				<p class="ct_clear"></p> 
 			</div><!--div class="ct_border"-->  
@@ -42,7 +39,7 @@ get_header(); ?>
         
         </div>
         
-        <?php get_sidebar( 'acool' ); ?>          
+        <?php get_sidebar(); ?>          
     
 	</div></div> 		      
 </div>

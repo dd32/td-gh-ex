@@ -4,7 +4,8 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<?php wp_head(); ?>
+ 
+  	<?php wp_head(); ?>
 </head>
 
 <body  <?php body_class(); ?>>
@@ -18,13 +19,10 @@
 			{
 				the_custom_logo();
 			}else{
-		?>        
-        
+		?>       
             <div class="name-box">
-                <a href="<?php echo esc_url(home_url('/')); ?>"><h1 class="ct_site_name"><?php acool_get_title(get_bloginfo('name'),30);//bloginfo('name'); ?></h1></a>
-                <?php if ( 'blank' != get_header_textcolor() && '' != get_header_textcolor() ){?>
-                <span class="ct_site_tagline"><?php acool_get_title(get_bloginfo('description'),55);?></span>
-                <?php }?>
+                <a href="<?php echo esc_url(home_url('/')); ?>"><h1 class="ct_site_name"><?php echo bloginfo('name');?></h1></a>
+                <span class="ct_site_tagline"><?php echo get_bloginfo('description');?></span>
             </div>
 		<?php }?>
 

@@ -5,7 +5,7 @@ get_header(); ?>
 
 <div class="ct_single">
 	<div class="container"><div class="row">
-
+		<p class="margin-30"></p>
         <div class="col-md-8 ct_single_content ct_post_content">    
         <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
  
@@ -27,19 +27,18 @@ get_header(); ?>
                     <?php 
                         $hide_post_meta = acool_get_option( 'ct_acool','hide_post_meta',0 ); 
                         if(!$hide_post_meta ){ acool_show_post_meta();}
-                    ?>               
-    
-              
-                    <?php the_excerpt(); ?>
+                    ?>
+                          
+                    <?php the_content(); ?>
                 </div>
 				<p class="ct_clear"></p> 
 			</div><!--div class="ct_border"-->
-     
-            
+        
         <?php endwhile;endif; ?> 
-        <?php acool_paging_nav(); ?>        
+        <?php acool_paging_nav(); ?> 
+               
         </div>        
-        <?php get_sidebar( 'acool' ); ?>
+        <?php get_sidebar(); ?>
     
 	</div></div> 		      
 </div>
