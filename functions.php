@@ -202,6 +202,30 @@ require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/template_tags.php';
 
+function barletta_custom_css_output() {
+	echo '<style type="text/css" id="custom-theme-css">' .
+	'a:hover, a:focus, a:active, a.active { color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
+	'.list-post-body h2 a:hover { color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
+	'.widget_categories a:hover { color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
+	'.widget a:hover { color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
+	'.widget-post h2 a:hover { color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
+	'.page-numbers li a:hover { background-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; border-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
+	'.blog-post .entry-tags a:hover { color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
+	'#back-top a:hover { background-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
+	'.navbar .navbar-nav > li > a:hover { background-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
+	'.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover { background-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
+	'.widget_tag_cloud a:hover { background-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; border-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
+	'.blog-post .entry-meta a:hover { color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; border-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
+	'button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover { background-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; border-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
+	'.post-navigation .nav-links .meta-nav span { color: ' . get_theme_mod( 'barletta_accent_color' ) . '; }' .
+	'.footer-bottom a { color: ' . get_theme_mod( 'barletta_accent_color' ) . '; }' .
+	'.comment-reply-link, .comment-reply-login { color: ' . get_theme_mod( 'barletta_accent_color' ) . '; }' .
+	'.comments-title { color: ' . get_theme_mod( 'barletta_accent_color' ) . '; }' .
+	'.page-numbers .current { background-color: ' . get_theme_mod( 'barletta_accent_color' ) . '; border-color: ' . get_theme_mod( 'barletta_accent_color' ) . '; }' .
+	'</style>';
+}
+add_action( 'wp_head', 'barletta_custom_css_output');
+
 /*
  * Register widget areas.
  */

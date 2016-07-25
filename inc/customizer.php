@@ -88,6 +88,36 @@ function barletta_customizer( $wp_customize ) {
 			'type'      => 'checkbox',
 		) );
 
+		/**
+		 * Section: Colors
+		 */
+
+		// Change accent color
+		$wp_customize->add_setting( 'barletta_accent_color', array(
+			'default'        => '#7DC07B',
+			'sanitize_callback' => 'barletta_sanitize_hexcolor',
+			'transport'  =>  'refresh',
+		));
+
+		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'barletta_accent_color', array(
+			'label'     => __('Accent color','barletta'),
+			'section'   => 'colors',
+			'priority'  => 2,
+		)));
+
+		// Change link hover color
+		$wp_customize->add_setting( 'barletta_link_hover_color', array(
+			'default'        => '#7DC07B',
+			'sanitize_callback' => 'barletta_sanitize_hexcolor',
+			'transport'  =>  'refresh',
+		));
+
+		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'barletta_link_hover_color', array(
+			'label'     => __('Links hover color','barletta'),
+			'section'   => 'colors',
+			'priority'  => 2,
+		)));
+
 }
 
 add_action( 'customize_register', 'barletta_customizer' );
@@ -133,4 +163,16 @@ function barletta_sanitize_layout( $input ) {
 	} else {
 		return '';
 	}
+}
+
+/**
+ * Sanitze colors
+ */
+function barletta_sanitize_hexcolor($color)
+{
+	if ($unhashed = sanitize_hex_color_no_hash($color)) {
+		return '#'.$unhashed;
+	}
+
+	return $color;
 }
