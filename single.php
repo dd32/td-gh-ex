@@ -18,8 +18,8 @@ get_header(); ?>
 			$post_pagination = of_get_option('post_pagination');
 			if( $post_pagination == 1 || !isset($post_pagination)) :
 			the_post_navigation( array(
-				'prev_text'                  => __( '<i class="fa fa-hand-o-left"></i> %title' ),
-            	'next_text'                  => __( '%title <i class="fa fa-hand-o-right"></i>' ),
+				'prev_text'                  => '<i class="fa fa-hand-o-left"></i>' . __( '%title', 'accesspress-parallax' ),
+            	'next_text'                  => __( '%title', 'accesspress-parallax' ) . '<i class="fa fa-hand-o-right"></i>',
             	'in_same_term'               => true,
 				));
 			endif;

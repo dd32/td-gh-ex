@@ -89,6 +89,9 @@ Images
 ---------------------------------------------
 
 == Changelog ==
+Version 1.26.1
+* Translation Bug fixed
+
 Version 1.26.0
 * Fixed escaping security error
 * Core WordPress Function used of pagination/navigaion for post and archive page

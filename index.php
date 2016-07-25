@@ -35,12 +35,7 @@ else:
 
 			<?php endwhile; ?>
 
-			<?php
-			the_posts_navigation( array(
-				'prev_text'          => __( '<i class="fa fa-hand-o-left"></i> Older posts' ),
-            	'next_text'          => __( 'Newer posts <i class="fa fa-hand-o-right"></i>' ),
-				));
-			?>
+			<?php the_posts_pagination(); ?>
 
 		<?php else : ?>
 
