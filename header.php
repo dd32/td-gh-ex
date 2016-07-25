@@ -52,7 +52,7 @@ endif;
 			</div>
 			<div class="six columns">
 				<div class="top-right">
-					<?php dynamic_sidebar( 'header-top-right' ); ?>     
+					<?php dynamic_sidebar( 'header-top-right' ); ?>      
 				</div>					
 			</div>
 		</div>
@@ -62,7 +62,7 @@ endif;
 			<div class="container">
 			<?php if ( get_theme_mod ('header_search',true) ){  ?>
 				<div class="twelve columns">
-					<button class="menu-toggle"><?php _e( 'Primary Menu', 'boxy' ); ?></button>
+					<button class="menu-toggle"><?php echo apply_filters('boxy_responsive_menu_text' , __('Primary Menu','boxy') ); ?></button>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'primary-menu' ) ); ?>
 				</div>
 				<div class="four columns">
@@ -70,7 +70,7 @@ endif;
 				</div>
 			<?php } else { ?>
 			     <div class="sixteen columns">
-					<button class="menu-toggle"><?php _e( 'Primary Menu', 'boxy' ); ?></button>
+					<button class="menu-toggle"><?php echo apply_filters('boxy_responsive_menu_text' , __('Primary Menu','boxy') ); ?></button>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'primary-menu' ) ); ?>
 				</div>
 			<?php } ?>

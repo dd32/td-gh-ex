@@ -32,7 +32,7 @@ jQuery( document ).ready( function( $ ){
 		$( mainNavigation ).children( 'ul' ).children( 'li' ).each( function() {
 
 		/* Get top-level link and text */
-		var href = $( this ).children( 'a' ).attr( 'href' );
+		var href = $( this ).children( 'a' ).attr( 'href' ); 
 		var text = $( this ).children( 'a' ).text();
 
 		/* Append this option to our "select" */
