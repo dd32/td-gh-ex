@@ -4,7 +4,7 @@
  *
  * @package Albar
  */
-define( 'KAIRA_THEME_VERSION' , '1.7.2' );
+define( 'KAIRA_THEME_VERSION' , '1.7.3' );
 
 // Is ONLY USED IF the user prompts for the premium update
 define( 'KAIRA_UPDATE_URL', 'https://updates.kairaweb.com/' );
