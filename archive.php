@@ -7,21 +7,11 @@
  */
 get_header();
 ?>
-<section class="section section-page-title" <?php if(get_theme_mod('pwt_blog_image')) { ?> style="background-image: url('<?php echo esc_url(get_theme_mod('pwt_blog_image')); ?>')"  <?php }  ?>>
+<section class="section section-page-title" <?php if(get_theme_mod('avvocato_blog_image')) { ?> style="background-image: url('<?php echo esc_url(get_theme_mod('avvocato_blog_image')); ?>')"  <?php }  ?>>
 	<div class="overlay">
 		<div class="container">
 			<div class="gutter">
-			    <p class="page-title"><?php
-					if ( is_day() ) :
-						printf( __( 'Daily Archives: %s', 'avvocato' ), '<span>' . get_the_date() . '</span>' );
-					elseif ( is_month() ) :
-						printf( __( 'Monthly Archives: %s', 'avvocato' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'avvocato' ) ) . '</span>' );
-					elseif ( is_year() ) :
-						printf( __( 'Yearly Archives: %s', 'avvocato' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'avvocato' ) ) . '</span>' );
-					else :
-						_e( 'Archives', 'avvocato' );
-					endif;
-				?></p>
+			    <p class="page-title"><?php the_archive_title() ?></p>
 			</div>
 		</div> <!--  END container  -->
 	</div> <!--  END overlay  -->

@@ -7,11 +7,11 @@
  */
 get_header();
 ?>
-<section class="section section-page-title" <?php if(get_theme_mod('pwt_blog_image')) { ?> style="background-image: url('<?php echo esc_url(get_theme_mod('pwt_blog_image')); ?>')"  <?php }  ?>>
+<section class="section section-page-title" <?php if(get_theme_mod('avvocato_blog_image')) { ?> style="background-image: url('<?php echo esc_url(get_theme_mod('avvocato_blog_image')); ?>')"  <?php }  ?>>
 	<div class="overlay">
 		<div class="container">
 			<div class="gutter">
-			    <p class="page-title"><?php printf( __( 'Category Archives: %s', 'avvocato' ), '<span>' . single_cat_title( '', false ) . '</span>' ); ?></p>
+			    <p class="page-title"><?php the_archive_title() ?></p>
 			</div>
 		</div> <!--  END container  -->
 	</div> <!--  END overlay  -->
