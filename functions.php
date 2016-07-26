@@ -48,6 +48,7 @@ if ( ! function_exists( 'fcorpo_setup' ) ) {
 
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus( array(
+			'top'   => __( 'top menu', 'fcorpo' ),
 			'primary'   => __( 'primary menu', 'fcorpo' ),
 		) );
 
@@ -133,16 +134,16 @@ function fcorpo_fonts_url() {
     * supported by PT Sans, translate this to 'off'. Do not translate
     * into your own language.
     */
-    $cantarell = _x( 'on', 'PT Sans font: on or off', 'fcorpo' );
+    $cantarell = _x( 'on', 'Dosis font: on or off', 'fcorpo' );
 
     if ( 'off' !== $cantarell ) {
         $font_families = array();
  
-        $font_families[] = 'PT Sans';
+        $font_families[] = 'Dosis::400,300,200,500,700';
  
         $query_args = array(
             'family' => urlencode( implode( '|', $font_families ) ),
-            'subset' => urlencode( 'latin,cyrillic-ext,cyrillic,latin-ext' ),
+            //t 'subset' => urlencode( 'latin,cyrillic-ext,cyrillic,latin-ext' ),
         );
  
         $fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );

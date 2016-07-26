@@ -1,3 +1,8 @@
+fCorpo 1.0.7, 2016-07-26
+------------------------
+- design improvements
+- add header top menu
+
 fCorpo 1.0.7, 2016-07-09
 ------------------------
 - add more social icons in header

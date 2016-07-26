@@ -26,9 +26,6 @@
 	<?php endif; ?>
 
 	<div class="before-content">
-		<span class="author-icon">
-			<?php the_author_posts_link(); ?>
-		</span><!-- .author-icon -->
 		
 		<?php if ( !is_single() && get_the_title() === '' ) : ?>
 
@@ -45,6 +42,10 @@
 				</span><!-- .clock-icon -->
 			
 		<?php endif; ?>
+
+		<span class="author-icon">
+			<?php the_author_posts_link(); ?>
+		</span><!-- .author-icon -->
 		
 		<?php if ( ! post_password_required() ) :
 		
@@ -59,6 +60,22 @@
 				
 			   endif;
 		?>
+
+		<?php if ( ! post_password_required() ) : ?>
+
+					<?php if ( has_category() ) : ?>
+							<span class="category-icon">
+								<?php the_category( ', ' ) ?>
+							</span><!-- .category-icon -->						
+					<?php endif; ?>
+				
+					<?php if ( has_tag() ) : ?>
+							<span class="tags-icon">
+									<?php the_tags( '', ', ','' ); ?>
+								</span><!-- .tags-icon -->						
+					<?php endif; ?>
+
+		<?php endif; // ! post_password_required() ?>
 		
 		<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
 
@@ -109,25 +126,6 @@
 	<?php endif; ?>
 
 	<div class="after-content">
-		
-		<?php if ( ! post_password_required() ) : ?>
-
-					<?php if ( has_category() ) : ?>
-							<span class="category-icon">
-								<?php _e('Categories:', 'fcorpo'); ?>
-								<?php the_category( ', ' ) ?>
-							</span><!-- .category-icon -->						
-					<?php endif; ?>
-				
-					<?php if ( has_tag() ) : ?>
-							<span class="tags-icon">
-									<?php _e('Tags:', 'fcorpo'); ?>
-									<?php the_tags(); ?>
-								</span><!-- .tags-icon -->						
-					<?php endif; ?>
-
-		<?php endif; // ! post_password_required() ?>
-		
 	</div><!-- .after-content -->
 	
 	<?php if ( !is_single() ) : ?>

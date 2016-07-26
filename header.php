@@ -20,17 +20,27 @@
 	<body <?php body_class(); ?>>
 		<div id="body-content-wrapper">
 			
-			<header id="header-main">
+			<header id="header-main-fixed">
 
-				<div id="header-content-wrapper">
+				<div id="header-top">
+					<div id="header-top-content">
+						<nav id="top-menu">
+							<?php wp_nav_menu( array( 'container'      => false,
+													  'theme_location' => 'top',
+													  'depth'		   => 1,
+													  'items_wrap'     => '%3$s',
+								) ); ?>
+						</nav>
 
-					<div id="header-top">
 						<?php fcorpo_show_header_phone(); ?>
 
 						<?php fcorpo_show_header_email(); ?>
 
 						<?php fcorpo_display_social_sites(); ?>
 					</div>
+				</div>
+
+				<div id="header-content-wrapper" class="header-content-spacing">
 
 					<div class="clear">
 					</div>
@@ -52,3 +62,6 @@
 				</div><!-- #header-content-wrapper -->
 
 			</header><!-- #header-main-fixed -->
+			<div id="header-spacer">
+				&nbsp;
+			</div><!-- #header-spacer -->

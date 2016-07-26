@@ -50,6 +50,8 @@ jQuery( document ).ready(function() {
 			time: 4500
 		});
 	});
+
+	jQuery('#header-spacer').height(jQuery('#header-main-fixed').height());
 });
 
 function fcorpo_IsSmallResolution() {
