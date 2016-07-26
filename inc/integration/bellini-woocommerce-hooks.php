@@ -96,3 +96,16 @@ if ( absint($bellini['bellini_woo_shop_product_layout']) === 1 ):
 	add_action( 'woocommerce_before_shop_loop_item_title', 		'bellini_woo_product_info_title_archive_item', 		15 );
 	add_action( 'woocommerce_after_shop_loop_item_title', 		'bellini_woocommerce_template_loop_price', 			10 );
 endif;
+
+
+if ( absint($bellini['bellini_woo_single_product_layout']) === 1 ):
+/* Layout 1 */
+	remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price',     	10 );
+	add_action( 'woocommerce_before_single_product_summary', 'bellini_single_product_one_left', 	5 );
+	add_action( 'woocommerce_before_single_product_summary', 'bellini_woo_close_div', 				25 );
+	add_action( 'woocommerce_single_product_summary', 'bellini_single_product_one_right', 			2 );
+	add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 			25 );
+	add_action( 'woocommerce_single_product_summary', 'bellini_woo_close_div', 						60 );
+	add_action( 'woocommerce_after_single_product_summary', 'bellini_column_twelve', 				5 );
+	add_action( 'woocommerce_after_single_product_summary', 'bellini_woo_close_div', 				25 );
+endif;

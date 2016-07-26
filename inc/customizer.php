@@ -193,9 +193,7 @@ $logo_font_select									= bellini_font_logo($logo_font);
 $element_title_capitalization						= esc_attr($bellini['bellini_header_title_capitalization']);
 $bellini_widget_title_alignment						= esc_attr($bellini['bellini_widget_title_alignment']);
 
-if ( ! empty( $bellini_custom_code_css ) ):
-	$bellini_custom_code_css							= esc_attr($bellini['bellini_custom_css']);
-endif;
+$bellini_custom_code_css							= esc_attr($bellini['bellini_custom_css']);
 
 // CSS Classes
 $primary_color_text 			= ".scrollToTop";
@@ -218,7 +216,7 @@ textarea{
 	color:<?php echo $body_text_color;?>;
 }
 
-.site-branding{
+.site-branding h1{
 	font-family: <?php echo $logo_font_select;?>;
 }
 
@@ -279,7 +277,7 @@ a:hover,a:focus,a:active{color: <?php echo $link_hover_color; ?>;}
 
 
 /* Front Page */
-	.slider-content h3,.slider-content{color:<?php echo $bellini_hero_content_color; ?>;}
+	.slider-content__title, .slider-content{color:<?php echo $bellini_hero_content_color; ?>;}
 	.front-feature-blocks{background-color:<?php echo $bellini_feature_block_background_color; ?>;}
 	.front-blog{background-color:<?php echo $bellini_blogposts_background_color;?>;}
 	.front-text-field{background-color:<?php echo $bellini_frontpage_textarea_section_color;?>;}

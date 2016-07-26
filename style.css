@@ -4,7 +4,7 @@ Theme URI: http://www.pangolinthemes.com/bellini-wordpress-theme/
 Author: Pangolin
 Author URI: http://pangolinthemes.com/
 Description: Bellini is the perfect theme for your eCommerce store or shop. Responsive & flexible layout built with Bootstrap & underscores.me. It is built with SEO in mind and have Structured Data (Schema) implemented. If you are looking for beautiful theme with out of the box SEO compatibility, look no further!
-Version: 1.25
+Version: 1.26
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bellini
@@ -1876,7 +1876,6 @@ object {
 .comment-form label {
     display: block;
     margin-bottom: .5384615385em;
-    text-transform: uppercase;
     line-height: 1.6153846154;
 }
 

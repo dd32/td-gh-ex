@@ -306,6 +306,30 @@
 			)
 		));
 
+	// Single Product layout
+	$wp_customize->add_setting( 'bellini[bellini_woo_single_product_layout]' ,
+		array(
+			'default' => 1,
+			'type' => 'option',
+			'sanitize_callback' => 'absint',
+			'transport' => 'refresh'
+		)
+	);
+
+		$wp_customize->add_control( 'bellini_woo_single_product_layout',array(
+				'label'      => esc_html__( 'Single - Product Layout', 'bellini' ),
+				'description' => esc_html__('Applies to Single Product Page','bellini'),
+				'section'    => 'bellini_woocommerce_integration',
+				'settings'   => 'bellini[bellini_woo_single_product_layout]',
+			    'priority'   => 6,
+			    'type'       => 'select',
+				'choices'    => array(
+					1   => esc_html__( 'Layout 1', 'bellini' ),
+					2   => esc_html__( 'Default', 'bellini' ),
+				),
+			)
+		);
+
 	/*--------------------------------------------------------------
 	## Show/Hide
 	--------------------------------------------------------------*/

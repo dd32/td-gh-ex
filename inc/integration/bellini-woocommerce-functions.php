@@ -196,3 +196,15 @@ if ( ! function_exists( 'bellini_woo_product_info_title_archive_item' ) ):
 		<?php
 	}
 endif;
+
+function bellini_single_product_one_left(){
+	echo '<div class="col-sm-8 product__single--l1">';
+}
+
+function bellini_single_product_one_right(){
+	echo '<div class="col-sm-4 product__single--l1">';
+}
+
+function bellini_column_twelve(){
+	echo '<div class="col-sm-12">';
+}
