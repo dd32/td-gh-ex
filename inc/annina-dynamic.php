@@ -340,13 +340,16 @@ function annina_custom_css_styles() {
 	.paging-navigation .meta-nav,
 	#wp-calendar > caption,
 	.content-annina-title,
-	.tagcloud a {
+	.tagcloud a,
+	.navigation.pagination .nav-links .page-numbers {
 		color: <?php echo esc_attr($box_color_second); ?>;
 	}
 	.post-navigation .meta-nav:hover, 
 	.paging-navigation .meta-nav:hover,
 	.content-annina,
-	#disqus_thread {
+	#disqus_thread,
+	.navigation.pagination .nav-links a.page-numbers:hover,
+	.navigation.pagination .nav-links .page-numbers.current {
 		background: <?php echo esc_attr($box_color_second); ?>;
 	}
 	<?php endif; ?>
@@ -362,7 +365,8 @@ function annina_custom_css_styles() {
 	.paging-navigation .meta-nav,
 	#wp-calendar > caption,
 	.content-annina-title,
-	.tagcloud a {
+	.tagcloud a,
+	.navigation.pagination .nav-links .page-numbers {
 		background: <?php echo esc_attr($special_color_third); ?>;
 	}
 	blockquote::before,
@@ -388,7 +392,9 @@ function annina_custom_css_styles() {
 	.read-more, 
 	.edit-link, 
 	.tags-links,
-	.sticky:before {
+	.sticky:before,
+	.navigation.pagination .nav-links a.page-numbers:hover,
+	.navigation.pagination .nav-links .page-numbers.current {
 		color: <?php echo esc_attr($special_color_third); ?>;
 	}
 	button:hover:not(.menu-toggle),
@@ -398,7 +404,9 @@ function annina_custom_css_styles() {
 	.post-navigation .meta-nav:hover,
 	.paging-navigation .meta-nav:hover,
 	#wp-calendar tbody td#today,
-	.tagcloud a:hover {
+	.tagcloud a:hover,
+	.navigation.pagination .nav-links a.page-numbers:hover,
+	.navigation.pagination .nav-links .page-numbers.current {
 		border: 1px solid <?php echo esc_attr($special_color_third); ?>;
 	}
 	blockquote {

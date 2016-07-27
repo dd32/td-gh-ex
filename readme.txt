@@ -48,6 +48,10 @@ two-columns, right-sidebar, responsive-layout, custom-background, custom-menu, c
 3. Log into your WP admin panel and click on the Design tab. Now click on the Annina theme to activate it.
 
 == Changelog ==
+= Version 1.3.9 =
+* Added paging navigation
+* Minor bug fixes
+
 = Version 1.3.8 =
 * Updated FontAwesome to 4.6.3
 * Added admin panel

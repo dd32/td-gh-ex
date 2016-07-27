@@ -60,3 +60,11 @@ textarea {
 span.read-more i.fa-caret-right:before {
 	content: "\f0d9";
 }
+
+.navigation.pagination .fa-angle-double-right:before {
+	content: "\f100";
+}
+
+.navigation.pagination .fa-angle-double-left:before {
+	content: "\f101";
+}
