@@ -94,7 +94,7 @@ $files = get_children('post_parent='.get_the_ID().'&post_type=attachment
 }
 
 function digital_post_meta_data() {
-	$time_string = '<time class="entry-date published updated" datetime="%1$s"><i class="fa fa-clock-o"></i> %2$s</time>';
+$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string = '<time class="entry-date updated" datetime="%3$s"><i class="fa fa-clock-o"></i>%4$s</time>';
 	}
@@ -108,7 +108,8 @@ function digital_post_meta_data() {
 
 	$posted_on = sprintf(
 		esc_html_x( '%s', 'post date', 'digital' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'.
+		'<meta itemprop="dateModified" content="' . get_the_modified_date( 'c' ) . '" />'
 	);
 
 	$byline = sprintf(
@@ -116,7 +117,7 @@ function digital_post_meta_data() {
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '"><i class="fa fa-user"></i>' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK
+	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 }
 
 /* Enable support for post-thumbnails ********************************************/
