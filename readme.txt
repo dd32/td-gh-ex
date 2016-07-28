@@ -1,10 +1,9 @@
 === Base WP ===
-
 Contributors: iografica
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, footer-widgets, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
 Requires at least: 4.0
 Tested up to: 4.4.2
-Stable tag: 1.39
+Stable tag: 1.40
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -205,3 +204,6 @@ All Javascript is located in /js/ with license headers where appropriate.
 * Add all theme options under new panel.
 * Fixed layout options issue.
 * Theme settings now use theme 'mod' instead of 'option'.
+
+== 1.40 ==
+* Improved theme css.

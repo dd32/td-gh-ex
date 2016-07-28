@@ -42,7 +42,9 @@ add_action( 'wp_enqueue_scripts', 'igthemes_customizer_css' );
 if ( ! function_exists( 'igthemes_customizer_css' ) ) {
     function igthemes_customizer_css() {
         wp_enqueue_style( 'custom-style', get_template_directory_uri() . '/css/custom.css');
-
+        
+        $bg_color =  get_theme_mod('background_color', '#ffffff');
+        
         $header_background_color =  get_theme_mod('header_background_color', '#fff');
         $header_text_color =  get_theme_mod('header_text_color', '#666666');
         $header_link_normal = get_theme_mod('header_link_normal', '#444444');
@@ -66,6 +68,31 @@ if ( ! function_exists( 'igthemes_customizer_css' ) ) {
 
 
         $style = '
+        input[type="text"],
+        input[type="email"],
+        input[type="url"],
+        input[type="password"],
+        input[type="search"],
+        input[type="number"],
+        input[type="tel"],
+        textarea,
+        select  {
+            background:  '. igthemes_adjust_color_brightness($bg_color,5) .';
+            border: 1px solid '. igthemes_adjust_color_brightness($bg_color,-20) .';
+            color:'. $body_text_color .';
+        }
+        table {
+            border:1px solid '. igthemes_adjust_color_brightness($bg_color,-20) .'; 
+            background:'. $bg_color .';
+        }
+        table th {
+            background:'. igthemes_adjust_color_brightness($bg_color,-5) .';
+            border-bottom: 1px solid '. igthemes_adjust_color_brightness($bg_color,-20) .';
+        }
+        table td {
+            background: '. igthemes_adjust_color_brightness($bg_color,5 ).';
+            border: 1px solid '. igthemes_adjust_color_brightness($bg_color,-20) .';
+        }
         .site-header {
             background:'. $header_background_color .'
         }

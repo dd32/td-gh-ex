@@ -18,7 +18,6 @@ textarea {
 	border: 1px solid $color__border-input;
 	@include border-radius(3px);
 	padding: $small__spacing/1.8 $small__spacing;
-	
 	&:focus {
 		color: $color__text-input-focus;
         outline-color: transparent;

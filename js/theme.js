@@ -89,5 +89,8 @@
       if ($('.main-navigation ul ul').length > 0) { // check if element exists.
         $('.main-navigation ul ul').colourBrightness();
       }
+      if ($('.site').length > 0) { // check if element exists.
+        $('.site').colourBrightness();
+      }
     });
 })(jQuery);
