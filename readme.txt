@@ -1,7 +1,7 @@
 ----------------------------------
 Awesome
 ----------------------------------
-Version: 	1.2.1
+Version: 	1.2.3
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
@@ -13,9 +13,9 @@ License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
 
 This Product is provided "as is" with no warranty or liabilities of D5 Creation. All the PHP Code, Images and other particulars included with this product are licensed under the same License (GPL) of the Theme or Compatible  Licenses.
 
-slideback1.jpg:
-CC0 Public Domain by Peggy_Marco  - https://pixabay.com/en/interior-villa-rendering-1026446
-CC0 Public Domain by AllClear55 - https://pixabay.com/en/thought-thoughts-think-idea-dream-1088647
+slideback1.jpg and screenshot.png:
+CC0 Public Domain by freephotocc  - https://pixabay.com/en/pencils-clips-colour-pencils-1280558
+CC0 Public Domain by marusya21111999 - https://pixabay.com/en/girl-ball-beauty-summer-portrait-1327684
 
 
 slideback2.jpg:
@@ -25,10 +25,6 @@ CC0 Public Domain by plimper  -  https://pixabay.com/en/portrait-woman-outdoor-1
 slideback3.jpg:
 CC0 Public Domain by Peggy_Marco  -  https://pixabay.com/en/interior-hotel-rendering-1026456
 CC0 Public Domain by ijiequn  -  https://pixabay.com/en/mannequins-fairy-skirt-woman-young-968123
-
-screenshot.png:
-CC0 Public Domain by diegodiezperez123  - https://pixabay.com/en/livingroom-interior-design-furniture-1032733
-CC0 Public Domain by AllClear55 - https://pixabay.com/en/thought-thoughts-think-idea-dream-1088647
 
 
 jQuery OwlCarousel v1.3.3:  Copyright (c) 2013 Bartosz Wojciechowski, Licensed under MIT, https://github.com/OwlFonk/OwlCarousel
@@ -53,6 +49,11 @@ Instructions:
 
 Changelog
 ============
+
+Version 1.2.3
+______________
+- Image Update
+- RTL Stylesheet Added
 
 Version 1.2.1
 ______________
