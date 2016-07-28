@@ -80,7 +80,7 @@ add_action( 'after_setup_theme', 'base_wp_setup' );
  * @global int $content_width
  */
 function base_wp_content_width() {
-    $GLOBALS['content_width'] = apply_filters( 'base_wp_content_width', 1040 );
+    $GLOBALS['content_width'] = apply_filters( 'base_wp_content_width', 1140 );
 }
 add_action( 'after_setup_theme', 'base_wp_content_width', 0 );
 
@@ -200,7 +200,6 @@ require get_template_directory() . '/inc/assets/post-actions.php';
 require get_template_directory() . '/inc/assets/page-actions.php';
 require get_template_directory() . '/inc/assets/jetpack/jetpack-funtions.php';
 require get_template_directory() . '/inc/assets/beaver-builder/beaver-builder.php';
-require get_template_directory() . '/inc/plugins/tgm.php';
 
 /*----------------------------------------------------------------------
 # EDD SUPPORT

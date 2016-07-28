@@ -4,7 +4,7 @@ Theme URI: http://www.iograficathemes.com/downloads/base-wp/
 Author: iografica
 Author URI: http://www.iograficathemes.com/
 Description: Base WP is a basic blog or business, responsive and clean coded, WordPress theme. Base WP is e-commerce, multilingual ready, SEO friendly and cross-browser compatible. The theme is fully integrated with the most popular and free plugins for Wordpress like WooCommerce, Easy Digital Downloads, Yoast Seo, Beaver Builder, and much more. You can customize the theme via the Customizer, use this theme as an ecommerce or as a simple blogging platform.
-Version: 1.39
+Version: 1.40
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: base-wp
@@ -1453,25 +1453,22 @@ img {
 
 table, .woocommerce table.shop_attributes,
 .woocommerce table.shop_table,
-.woocommerce table.my_account_orders, .edd-checkout #edd_checkout_cart, td {
-  border: 1px solid #e9e9e9;
-  text-align: left;
-}
-
-th {
-  background: rgba(202, 205, 205, 0.1);
-  border-bottom: 1px solid #e9e9e9;
-  text-align: left;
-}
-
-table, .woocommerce table.shop_attributes,
-.woocommerce table.shop_table,
 .woocommerce table.my_account_orders, .edd-checkout #edd_checkout_cart {
   border-collapse: collapse;
   width: 100%;
+  text-align: left;
 }
 
-th, td {
+table th, .woocommerce table.shop_attributes th,
+.woocommerce table.shop_table th,
+.woocommerce table.my_account_orders th, .edd-checkout #edd_checkout_cart th {
+  padding: 15px;
+  text-align: left;
+}
+
+table td, .woocommerce table.shop_attributes td,
+.woocommerce table.shop_table td,
+.woocommerce table.my_account_orders td, .edd-checkout #edd_checkout_cart td {
   padding: 15px;
 }
 
@@ -1659,7 +1656,6 @@ a:hover, a:active {
     display: block;
     float: left;
     width: 100%;
-    background: rgba(255, 255, 255, 0.1);
     border-top: 1px solid rgba(100, 105, 105, 0.1);
     border-bottom: 1px solid rgba(100, 105, 105, 0.1);
     margin-bottom: -1px;
@@ -2617,6 +2613,29 @@ object {
 /*--------------------------------------------------------------
 # WoooCommerce
 --------------------------------------------------------------*/
+.woocommerce .dark .woocommerce-error, .woocommerce .dark .woocommerce-info, .woocommerce .dark .woocommerce-message {
+  background: rgba(0, 0, 0, 0.05);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.woocommerce .dark .woocommerce-checkout #payment,
+.woocommerce .dark #add_payment_method #payment {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.woocommerce .dark .woocommerce-tabs ul.tabs {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.woocommerce .dark .woocommerce-tabs ul.tabs .active {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.woocommerce .dark .woocommerce-tabs .panel {
+  border: 1px solid rgba(100, 105, 105, 0.1);
+  background: rgba(255, 255, 255, 0.1);
+}
+
 .woocommerce #respond input#submit.alt,
 .woocommerce a.button.alt, .woocommerce #respond input.button.alt#submit,
 .woocommerce a.button.alt,
@@ -2832,6 +2851,18 @@ object {
   line-height: 1.7em;
 }
 
+.woocommerce .wc-proceed-to-checkout button,
+.woocommerce .wc-proceed-to-checkout .button.alt.edd-submit, .woocommerce .wc-proceed-to-checkout a.button,
+.woocommerce .wc-proceed-to-checkout input.button,
+.woocommerce .wc-proceed-to-checkout #respond input#submit,
+.woocommerce #respond .wc-proceed-to-checkout input#submit, .woocommerce .wc-proceed-to-checkout .edd-submit, .woocommerce .wc-proceed-to-checkout
+#edd-purchase-button {
+  font-size: 20px;
+  font-size: 1.25rem;
+  padding: .8em 2em;
+  font-weight: normal;
+}
+
 .woocommerce .woocommerce-checkout #place_order,
 .woocommerce #add_payment_method #place_order {
   font-size: 1.25em;
@@ -2840,7 +2871,7 @@ object {
 
 .woocommerce .woocommerce-checkout #payment,
 .woocommerce #add_payment_method #payment {
-  background: #f7f6f7;
+  background: rgba(255, 255, 255, 0.9);
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -2848,12 +2879,12 @@ object {
 
 .woocommerce .woocommerce-checkout #payment ul.payment_methods div.payment_box,
 .woocommerce #add_payment_method #payment ul.payment_methods div.payment_box {
-  background-color: #f0eef0;
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .woocommerce .woocommerce-checkout #payment ul.payment_methods div.payment_box:before,
 .woocommerce #add_payment_method #payment ul.payment_methods div.payment_box:before {
-  border-bottom-color: #f0eef0;
+  border-bottom-color: rgba(0, 0, 0, 0.05);
   /* arrow size / color */
   top: -1em;
 }
