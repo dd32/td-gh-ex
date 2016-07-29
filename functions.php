@@ -164,8 +164,8 @@ function bfront_styles() {
     wp_enqueue_style('bfront-font-Monda', '//fonts.googleapis.com/css?family=Monda:400,700');
     wp_enqueue_style('bfront-Reset-css', get_template_directory_uri() . '/css/reset.css');
     wp_enqueue_style('bfront-flexslider-css', get_template_directory_uri() . '/css/flexslider.css');
-    wp_enqueue_style('bfront-font-awesome-css', get_template_directory_uri() . '/css/font-awesome.css');
-    wp_enqueue_style('bfront-bootstrap-css', get_template_directory_uri() . '/css/bootstrap.css');
+    wp_enqueue_style('bfront-font-awesome-css', get_template_directory_uri() . '/css/font-awesome.min.css');
+    wp_enqueue_style('bfront-bootstrap-css', get_template_directory_uri() . '/css/bootstrap.min.css');
     wp_enqueue_style('bfront-superfish-css', get_template_directory_uri() . '/css/superfish.css');
     wp_enqueue_style('bfront-animate-css', get_template_directory_uri() . '/css/animate.css');
     wp_enqueue_style('bfront-style', get_stylesheet_uri() ); 

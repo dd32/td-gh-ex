@@ -33,8 +33,26 @@ $return = absint($input);
  * validate checkbox option.
  */
 function bfront_sanitize_checkbox( $input ) {
-        if ( $input == 1 ) { return 1; }
-        else { return ''; }
-    }
+	if ( $input == 1 ) { return 1; }
+	else { return ''; }
+}
+	
+	
+function bfront_registers() {
+    wp_enqueue_script( 'bfront_customizer_script', get_template_directory_uri() . '/js/custom-customizer.js', array("jquery"), '', true  );
+
+    wp_localize_script( 'bfront_customizer_script', 'bfrontCustomizerObject', array(    
+        'pro' => __('View PRO version','bfront')
+    ) );
+}
+add_action( 'customize_controls_enqueue_scripts', 'bfront_registers' );
+
+
+function bfront_customizer_styles() {
+
+    wp_enqueue_style('bfront_customizer_styles', get_template_directory_uri() . '/css/customize-control.css');
+
+}
+add_action('customize_controls_print_styles', 'bfront_customizer_styles');
 
 ?>

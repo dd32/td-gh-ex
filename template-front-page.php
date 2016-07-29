@@ -124,12 +124,109 @@
 </div>
 <!-- slider end here --> 
 
+
+<!-- three feature box start here --> 
 <?php 
+    $service_area_heading = esc_attr( get_theme_mod('service_area_heading') );
+
+    $first_icon_serviceArea = esc_attr( get_theme_mod('first_icon_serviceArea') );
+    $first_title_serviceArea = esc_attr( get_theme_mod('first_title_serviceArea') );
+    $first_link_anchor_serviceArea = esc_url( get_theme_mod('first_link_anchor_serviceArea') );
+    $first_description_serviceArea = esc_attr( get_theme_mod('first_description_serviceArea') );
+
+    $second_icon_serviceArea = esc_attr( get_theme_mod('second_icon_serviceArea') );
+    $second_title_serviceArea = esc_attr( get_theme_mod('second_title_serviceArea') );
+    $second_link_anchor_serviceArea = esc_url( get_theme_mod('second_link_anchor_serviceArea') );
+    $second_description_serviceArea = esc_attr( get_theme_mod('second_description_serviceArea') );
+
+    $third_icon_serviceArea = esc_attr( get_theme_mod('third_icon_serviceArea') );
+    $third_title_serviceArea = esc_attr( get_theme_mod('third_title_serviceArea') );
+    $third_link_anchor_serviceArea = esc_url( get_theme_mod('third_link_anchor_serviceArea') );
+    $third_description_serviceArea = esc_attr( get_theme_mod('third_description_serviceArea') );
+
+?>
+
+<div class="feature-box-wrapper">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="team-heading fadeInUp">
+                <?php if ( isset($service_area_heading) && $service_area_heading != '') { ?>
+                    <h2><?php echo $service_area_heading; ?></h2> 
+                <?php } else { ?>
+                    <h2><?php _e('Service Area', 'bfront'); ?></h2>
+                <?php } ?>
+            </div>
+        </div>
+
+        <div class="col-sm-4 col-md-4">
+            <div class="three-column-box wow fadeInUp" data-wow-duration="1s">
+				<?php if ( isset($first_icon_serviceArea) && $first_icon_serviceArea != '') { ?>
+					<a href="<?php echo $first_link_anchor_serviceArea; ?>"><div class="circle"><i class="fa <?php echo $first_icon_serviceArea; ?> fa-3x"></i></div></a>
+				<?php } ?>
+
+                <?php if ( isset($first_title_serviceArea) && $first_title_serviceArea != '') { ?>
+                    <a href="<?php echo $first_link_anchor_serviceArea; ?>"><h3><?php echo $first_title_serviceArea; ?></h3></a>
+                <?php } ?>
+
+                <?php if ( isset($first_description_serviceArea) && $first_description_serviceArea != '') { ?>
+                    <p><?php echo $first_description_serviceArea; ?></p> 
+                <?php } ?>
+            </div>
+        </div>
+		
+        <div class="col-sm-4 col-md-4 ">
+            <div class="three-column-box wow fadeInUp" data-wow-duration="1.5s">
+				<?php if ( isset($second_icon_serviceArea) && $second_icon_serviceArea != '') { ?>
+					<a href="<?php echo $first_link_anchor_serviceArea; ?>"><div class="circle"><i class="fa <?php echo $second_icon_serviceArea; ?> fa-3x"></i></div></a>
+				<?php } ?>
+
+                <?php if ( isset($second_title_serviceArea) && $second_title_serviceArea != '') { ?>
+                    <a href="<?php echo $second_link_anchor_serviceArea; ?>"><h3><?php echo $second_title_serviceArea; ?></h3></a>
+                <?php } ?>
+
+                <?php if ( isset($second_description_serviceArea) && $second_description_serviceArea != '') { ?>
+                    <p><?php echo $second_description_serviceArea; ?></p> 
+                <?php } ?>
+            </div>
+        </div>
+		
+        <div class="col-sm-4 col-md-4">
+            <div class="three-column-box wow fadeInUp" data-wow-duration="2s">
+
+				<?php if ( isset($third_icon_serviceArea) && $third_icon_serviceArea != '') { ?>
+					<a href="<?php echo $third_link_anchor_serviceArea; ?>"><div class="circle"><i class="fa <?php echo $third_icon_serviceArea; ?> fa-3x"></i></div></a>
+				<?php } ?>
+
+                <?php if ( isset($third_title_serviceArea) && $third_title_serviceArea != '') { ?>
+                    <a href="<?php echo $third_link_anchor_serviceArea; ?>"><h3><?php echo $third_title_serviceArea; ?></h3></a>
+                <?php } ?>
+
+                <?php if ( isset($third_description_serviceArea) && $third_description_serviceArea != '') { ?>
+                    <p><?php echo $third_description_serviceArea; ?></p> 
+                <?php } ?>
+            </div>
+
+        </div>
+    </div>
+    </div>    
+</div>
+<!-- three feature box end here --> 
+
+<?php  
+	$parallax_section_image = esc_url( get_theme_mod('parallax_section_image') );
     $parallax_section_title = esc_attr( get_theme_mod('parallax_section_title') ); 
     $parallax_section_desc = esc_attr( get_theme_mod('parallax_section_desc') );
+
+    if( isset($parallax_section_image) && $parallax_section_image !='' ){
+        $parallax_image = $parallax_section_image;
+    }else{
+        $parallax_image = get_template_directory_uri().'/images/parallax.jpg' ;
+    }
 ?>
 <!-- slider Description start here --> 
-<section id="slidescrip">
+<div id="slidescrip" data-type="background" data-speed="10" style="background: url(<?php echo $parallax_image; ?>) 61% 0 repeat fixed;">
+<div class="slider-description">
     <div class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -154,7 +251,8 @@
 			</div>
 		</div>
    </div>
-</section>
+</div>
+</div>
 <!-- slider Description end here --> 
 
 

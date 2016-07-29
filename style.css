@@ -6,7 +6,7 @@ Author URI: http://themesflow.com/
 Description: Bfront is a beautiful theme, designed especially for business and portfolio websites and also has a beautiful minimal blog layout. This theme has many customizable features that will help you showcase your company's web presence.
 Theme is easy to use and has great looking interface, all content can be easily changed from customize panel.
 
-Version: 1.0.7
+Version: 1.0.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bfront
@@ -359,6 +359,7 @@ font-weight: 700;
 .slider-content p {
 font-size: 17px;
 font-weight: 500;
+color: #fff;
 }
 
 
