@@ -6,7 +6,6 @@
 
 <?php get_header(); ?>
 <div id="content">
-
 	<?php while ( have_posts() ) : the_post(); ?>
 
 		<h1 class="page-title"><?php the_title(); ?></h1>
@@ -26,7 +25,5 @@
 	<?php endwhile; ?>
 
 	<?php edit_post_link( __( 'Edit', 'leftside' ), '<div class="edit-link">', '</div>' ); ?>
-
-</div>		
-	
+</div>
 <?php get_footer(); ?>
