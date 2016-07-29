@@ -6,7 +6,6 @@
 
 <?php get_header(); ?>
 <div id="content">
-
 	<?php while (have_posts()) : the_post(); ?>
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
 			<h1 class="post-title-single"><?php the_title(); ?></h1>
@@ -31,7 +30,6 @@
 	<?php endwhile; ?>
 
 	<?php edit_post_link( __( 'Edit', 'gridbulletin' ), '<div class="edit-link">', '</div>' ); ?>
-
 </div>
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
