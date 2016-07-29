@@ -70,20 +70,15 @@
 	add_action( 'after_setup_theme', 'medical_setup' ); 
 
 
-// Add html5 support for IE 8 and older 
-	function medical_html5() { 
-		echo '<!--[if lt IE 9]>'. "\n"; 
-		echo '<script src="' . esc_url( get_template_directory_uri() . '/js/ie.js' ) . '"></script>'. "\n"; 
-		echo '<![endif]-->'. "\n"; 
-	}
-	add_action( 'wp_head', 'medical_html5' ); 
-
-
 // Enqueues scripts and styles for front-end
 	function medical_scripts() {
 		wp_enqueue_style( 'medical-style', get_stylesheet_uri() );
 		wp_enqueue_script( 'medical-nav', get_template_directory_uri() . '/js/nav.js', array( 'jquery' ) );
 		wp_enqueue_style( 'medical-googlefonts', '//fonts.googleapis.com/css?family=Open+Sans' ); 
+
+		// Add html5 support for IE 8 and older 
+		wp_enqueue_script( 'medical_html5', get_template_directory_uri() . '/js/ie.js' );
+		wp_script_add_data( 'medical_html5', 'conditional', 'lt IE 9' );
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
@@ -180,7 +175,7 @@
 
 // Custom excerpt lenght (default length is 55 words)
 	function medical_excerpt_length( $length ) { 
-		return 75; 
+		return 55; 
 	} 
 	add_filter( 'excerpt_length', 'medical_excerpt_length', 999 ); 
 
