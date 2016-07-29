@@ -71,21 +71,16 @@
 	add_action( 'after_setup_theme', 'privatebusiness_setup' ); 
 
 
-// Add html5 support for IE 8 and older 
-	function privatebusiness_html5() { 
-		echo '<!--[if lt IE 9]>'. "\n"; 
-		echo '<script src="' . esc_url( get_template_directory_uri() . '/js/ie.js' ) . '"></script>'. "\n"; 
-		echo '<![endif]-->'. "\n"; 
-	}
-	add_action( 'wp_head', 'privatebusiness_html5' ); 
-
-
 // Enqueues scripts and styles for front-end
 	function privatebusiness_scripts() {
 		wp_enqueue_style( 'privatebusiness-style', get_stylesheet_uri() );
 		wp_enqueue_script( 'privatebusiness-nav-primary', get_template_directory_uri() . '/js/nav-primary.js', array( 'jquery' ) );
 		wp_enqueue_script( 'privatebusiness-nav-secondary', get_template_directory_uri() . '/js/nav-secondary.js', array( 'jquery' ) );
 		wp_enqueue_style( 'privatebusiness-googlefonts', '//fonts.googleapis.com/css?family=Open+Sans' ); 
+
+		// Add html5 support for IE 8 and older 
+		wp_enqueue_script( 'privatebusiness_html5', get_template_directory_uri() . '/js/ie.js' );
+		wp_script_add_data( 'privatebusiness_html5', 'conditional', 'lt IE 9' );
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
@@ -183,7 +178,7 @@
 
 // Custom excerpt lenght (default length is 55 words)
 	function privatebusiness_excerpt_length( $length ) { 
-		return 75; 
+		return 55; 
 	} 
 	add_filter( 'excerpt_length', 'privatebusiness_excerpt_length', 999 ); 
 
