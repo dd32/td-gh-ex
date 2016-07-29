@@ -100,13 +100,12 @@
         display: block;
     }
 }
-@include media(max-width 770px) {
+@include media(max-width 768px) {
     .main-navigation {
         clear: both;
         width: 100%;
         padding: $small__spacing;
         margin: 0;
-        background: rgba(255,255,255,.9);
         border-top: 1px solid $color__gray;
         border-bottom: 1px solid $color__gray;
         #primary-menu {
@@ -124,9 +123,6 @@
             ul {
                 margin: 0;
                 padding: 0;
-                li {
-                    background:$color__light-gray;
-                }
             }
         }
     }

@@ -105,6 +105,9 @@ if ( ! function_exists( 'igthemes_customizer_css' ) ) {
         .header-nav ul li a {
             color:'. $header_link_normal .';
         }
+        .main-navigation {
+            background: '. igthemes_adjust_color_brightness($header_background_color,5) .';        
+        }
         .main-navigation a {
             color: '. $header_link_normal .';
         }
@@ -168,21 +171,21 @@ if ( ! function_exists( 'igthemes_customizer_css' ) ) {
         .archive .entry-title a {
             color: '. $body_headings_color .';
         }
-        .button,
-        input[type="button"],
-        input[type="reset"],
-        input[type="submit"] {
+        .site .button,
+        .site input[type="button"],
+        .site input[type="reset"],
+        .site input[type="submit"] {
             border-color: '. $button_background_normal .'!important;
             background-color: '. $button_background_normal .'!important;
             color: '. $button_text_normal .'!important;
         }
-        .button:hover,
-        input[type="button"]:hover,
-        input[type="reset"]:hover,
-        input[type="submit"]:hover,
-        input[type="button"]:focus,
-        input[type="reset"]:focus,
-        input[type="submit"]:focus{
+        .site .button:hover,
+        .site input[type="button"]:hover,
+        .site input[type="reset"]:hover,
+        .site input[type="submit"]:hover,
+        .site input[type="button"]:focus,
+        .site input[type="reset"]:focus,
+        .site input[type="submit"]:focus{
             border-color: '. $button_background_hover .'!important;
             background-color: '. $button_background_hover .'!important;
             color: '. $button_text_hover .'!important;

@@ -27,12 +27,12 @@
                 $( '.site-title a, .site-description' ).css( {
                     'clip': 'rect(1px, 1px, 1px, 1px)',
                     'position': 'absolute'
-                } );
+                });
             } else {
                 $( '.site-title a, .site-description' ).css( {
                     'clip': 'auto',
                     'position': 'relative'
-                } );
+                });
             }
         } );
     } );
@@ -40,7 +40,7 @@
     // Header style
     wp.customize( 'header_background_color', function( value ) {
         value.bind( function( to ) {
-            $( '.site-header' ).css( 'background-color', to );
+            $( '.site-header, .main-navigation' ).css( 'background-color', to );
         } );
     } );
     wp.customize( 'header_link_hover', function( value ) {
@@ -103,7 +103,7 @@
     } );
     wp.customize( 'button_text_normal', function( value ) {
         value.bind( function( to ) {
-            $( 'button, input[type="button", input[type="reset", input[type="submit"' ).css( 'color', to );
+            $( 'button,  input[type="button"], input[type="reset"], input[type="submit"]' ).css( 'color', to );
         } );
     } );
 //end
