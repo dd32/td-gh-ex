@@ -66,6 +66,12 @@ address {margin:10px 0; font-size:1.2em; line-height:1.5em; font-style:italic;}
 p {margin:0 0 10px;}
 
 
+/* ALIGNMENTS */
+.alignright {float:right;}
+.alignleft {float:left;}
+.aligncenter {display:block; margin-left:auto; margin-right:auto;}
+
+
 /* TABLE AND LISTS */
 table {margin:10px 0; border-collapse:collapse;}
 table, th, td {border: 1px solid #eee; padding:5px 10px;}
@@ -85,9 +91,6 @@ img {max-width:100%; height:auto;}
 img.alignright {float:right; margin:0.4em 0 0.4em 1em;}
 img.alignleft {float:left; margin:0.4em 1em 0.4em 0;}
 img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
-.alignright {float:right; margin:0.4em 0 0.4em 1em;}
-.alignleft {float:left; margin:0.4em 1em 0.4em 0;}
-.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 .wp-caption {max-width:100%;}
 .wp-caption-text {text-align:center;}

@@ -1,7 +1,7 @@
 /*
 Theme Name: MyKnowledgeBase
 Theme URI: http://www.guidovanderleest.nl/myknowledgebase
-Version: 4.0
+Version: 4.1
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: MyKnowledgeBase is a free, clean, minimalistic, responsive, mobile friendly WordPress theme. Create a 3 or 4 column Knowledge Base, Bulletin Board, FAQ, Wiki or Link Portal with a custom page template and using the default categories and posts. Features: sidebar, widget areas on homepage, widget areas in footer, custom header image, custom background, custom logo to replace blogname and description, full width page template, dropdown navigation. Enjoy. 
@@ -104,6 +104,12 @@ address {margin:10px 0; font-size:1.2em; line-height:1.5em; font-style:italic;}
 p {margin:0 0 10px;}
 
 
+/* ALIGNMENTS */
+.alignright {float:right;}
+.alignleft {float:left;}
+.aligncenter {display:block; margin-left:auto; margin-right:auto;}
+
+
 /* TABLE AND HTML TAGS */
 table {margin:10px 0; border-collapse:collapse;}
 table, th, td {border: 1px solid #eee; padding:5px 10px;}
@@ -131,10 +137,10 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 
 /* HEADER FIRST LOGO */
-#header-first .logo {width:35%; float:left;}
-#header-first .logo h1 a:hover {text-decoration:none; color:#333;}
-#header-first .logo h2 {padding:0 0 10px; font-style:italic; font-size:1.25em;}
-#header-first .logo img {padding:0 0 10px;}
+.logo {width:35%; float:left;}
+.logo h1 a:hover {text-decoration:none; color:#333;}
+.logo h2 {padding:0 0 10px; font-style:italic; font-size:1.20em;}
+.logo img {padding:0 0 10px;}
 
 
 /* HEADER FIRST MENU */
@@ -160,12 +166,12 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 
 /* HEADER SECOND HOMEPAGE IMAGE */
-#header-second .image-homepage {width:49%; float:left;}
-#header-second .header-img {width:100%; height:auto;}
+.image-homepage {width:49%; float:left;}
+.header-img {width:100%; height:auto;}
 
 
 /* HEADER SECOND HOMEPAGE SIDEBAR */
-#header-second .sidebar-homepage {width:49%; float:right; background:#08a0ff;}
+.sidebar-homepage {width:49%; float:right; background:#08a0ff;}
 #header-second .widget {margin:15px 0; padding:0 20px; background:none; color:#fff; border:0;}
 #header-second .widget a {color:#fff;}
 
@@ -177,12 +183,12 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 
 /* HEADER THIRD */
-#header-third {width:96%; clear:both; float:left; background:#08a0ff; margin:10px 0; padding:0 2%;}
+#header-third {width:96%; clear:both; float:left; background:#08a0ff; margin:10px 0 0; padding:0 2%;}
 
 
 /* HEADER THIRD SEARCH BAR */
-#header-third .search-form {width:50%; float:right; text-align:right;} 
-#header-third .searchbar-title {width:50%; float:left; color:#fff; margin:8px 0 0;}
+.search-form {width:50%; float:right; text-align:right;} 
+.searchbar-title {width:50%; float:left; color:#fff; margin:8px 0 0;}
 
 
 /* HEADER THIRD SEARCH BAR INPUTS */
@@ -219,7 +225,7 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 .post-title {clear:both;}
 .post-title a:hover {color:#333; text-decoration:none;}
 .post-title-single {clear:both;}
-.sticky-title {clear:both; display:block; text-align:center; margin:10px 0 0; padding:2px 0; border-top:1px solid #eee; border-bottom:1px solid #eee;}
+.sticky-title {clear:both; display:block; text-align:center; margin:10px 0; padding:2px 0; border-top:1px solid #eee; border-bottom:1px solid #eee;}
 .postmetadata {clear:both; display:block; margin:20px 0; padding:5px 10px; background:#f8f8f8; border:1px solid #eee;}
 .more {width:100%; clear:both; display:block; float:left; margin:20px 0; padding:0 0 20px; border-bottom:1px solid #eee;}
 a.readmore {float:right; padding:2px 10px; background:#08a0ff; color:#fff; text-decoration:none;}
@@ -240,7 +246,7 @@ a.readmore:hover {background:#333; text-decoration:none;}
 
 
 /* EDIT LINK */
-.edit-link {clear:both; display:block; text-align:center; margin:10px 0; padding:5px; border:1px solid #eee;}
+.edit-link {width:100%; clear:both; float:left; display:block; text-align:center; margin:10px 0; padding:5px 0; border-top:1px solid #eee; border-bottom:1px solid #eee;}
 
 
 /* IMAGE AND VIDEO */
@@ -250,9 +256,6 @@ img {max-width:100%; height:auto;}
 img.alignright {float:right; margin:0.4em 0 0.4em 1em;}
 img.alignleft {float:left; margin:0.4em 1em 0.4em 0;}
 img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
-.alignright {float:right; margin:0.4em 0 0.4em 1em;}
-.alignleft {float:left; margin:0.4em 1em 0.4em 0;}
-.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 .wp-post-image, .single-image {float:left; margin:0.4em 1em 0.4em 0;}
 
@@ -276,8 +279,8 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 .comment-list ol {list-style:none;}
 .comment-list li {list-style:none; margin:0 0 0 10px;}
 .comment-body {border-left:2px solid #08a0ff; padding:0 0 0 15px; margin:20px 0;}
-.comment-notes, .form-allowed-tags {font-size:0.75em; padding:5px 0;}
-.comments-title, .comment-reply-title, .no-comments {clear:both; font-size:1.5em;} 
+.comment-notes, .form-allowed-tags {font-size:0.80em; padding:5px 0;}
+.comments-title, .comment-reply-title, .no-comments {clear:both; font-size:1.45em;} 
 .comment-author .avatar {margin:0 5px 0 0;}
 .bypostauthor, .comment-awaiting-moderation {font-style:italic;}
 
@@ -302,7 +305,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 /* FOOTER */
 #footer {width:96%; clear:both; float:left; background:#08a0ff; color:#fff; padding:0 2%;}
 #footer a {color:#fff;}
-#footer .site-info {text-align:center; clear:both; padding:15px 0;}
+.site-info {text-align:center; clear:both; padding:15px 0;}
 
 
 /* FOOTER WIDGET AREA */
@@ -332,24 +335,30 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	/* MAIN CONTENT AREA */
 	#content, #content-full {width:100%; padding:10px 0;}
 
-	/* HEADER */
-	#header-first .logo {width:100%; text-align:center;}
-	#header-first .logo h1 {font-size:2em; text-align:center;}
-	#header-first .logo h2 {padding:0; font-size:1.5em; text-align:center;}
-	#header-first .logo img {padding:0;}
-	#header-second .image-homepage {width:100%; margin:0 0 10px;}
-	#header-second .sidebar-homepage {width:100%; float:left;}
-	#header-second .widget {padding:0 3%;}
-	#header-second .widgettitle {padding:0; background:none;}
-	#header-third .search-form {width:100%; float:left; text-align:left;} 
-	#header-third .searchbar-title {width:100%; margin:0;}
+	/* HEADER FIRST LOGO */
+	.logo {width:100%; text-align:center;}
+	.logo h1 {font-size:2.25em;}
+	.logo h2 {padding:0; font-size:1.45em;}
+	.logo img {padding:0;}
 
-	/* MENU */
+	/* HEADER FIRST MENU */
 	.nav-head ul {display:none;} 
 	.nav-head {width:100%; margin:5px 0 0;}
 	.nav-head select {display:block; width:100%; height:35px; margin:0 auto 0; font-size:1em; line-height:1.2em; color:#fff; background:#08a0ff; border:0;} 
 
-	/* CONTENT */ 
+	/* HEADER SECOND HOMEPAGE IMAGE */
+	.image-homepage {width:100%; margin:0 0 10px;}
+
+	/* HEADER SECOND HOMEPAGE SIDEBAR */
+	.sidebar-homepage {width:100%; float:left;}
+	#header-second .widget {padding:0 3%;}
+	#header-second .widgettitle {padding:0; background:none;}
+
+	/* HEADER THIRD SEARCH BAR */
+	.search-form {width:100%; float:left; text-align:left;} 
+	.searchbar-title {width:100%; margin:0;}
+
+	/* KNOWLEDGE BASE TEMPLATE */
 	#categories-three {margin:0;}
 	#categories-three ul:nth-of-type(3n+1) {clear:none;}
 	#categories-three ul:nth-of-type(3n+3) {margin:0 2% 10px 0;}
@@ -363,20 +372,24 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	#categories-four .cat-list {width:47%; margin:0 2% 10px 0; padding:10px 1%;}
 
 	/* HEADINGS */
-	.post-title, .page-title, .post-title-single {font-size:1.75em;}
+	.post-title, .page-title, .post-title-single {font-size:1.80em;}
 	.widgettitle, .searchbar-title, .comments-title, .comment-reply-title, .no-comments {font-size:1.45em;}
+
+	/* POST FORMATS */
+	.format-status .avatar {margin:0.3em 0.5em 0.3em 0;}
 
 	/* IMAGES */
 	.wp-post-image, .single-image {width:50%; margin:0.3em 0.5em 0.3em 0;}
-	.format-status .avatar {margin:0.3em 0.5em 0.3em 0;}
 
-	/* SIDEBAR */
+	/* SIDEBAR AND WIDGETS */
 	#sidebar {width:100%; padding:0 0 10px; float:left;}
 	.widget {margin:10px 0;}
 	.widgettitle {padding:5px 3%; background:#08a0ff; color:#fff;}
 
 	/* FOOTER */
 	#footer {width:94%; padding:10px 3% 0;}
+
+	/* FOOTER WIDGET AREA */
 	#footer .widget {margin:5px 0;}
 	#footer .widgettitle {padding:0; background:none;}
 	.footer-right, .footer-middle, .footer-left {width:100%; margin:0; float:left;} 

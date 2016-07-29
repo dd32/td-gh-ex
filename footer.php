@@ -3,8 +3,8 @@
  * The footer for displaying footer widgets and site-info.
  */
 ?>
-<div id="footer">
 
+<div id="footer">
 	<?php if ( is_active_sidebar( 'footer-right' ) || is_active_sidebar( 'footer-middle' ) || is_active_sidebar( 'footer-left' ) ) {?> 
 	<div id="footer-widgets">
 		<div class="footer-left"> 
@@ -24,11 +24,9 @@
 	<div class="site-info">
 		<?php _e('Copyright', 'myknowledgebase'); ?> <?php echo date('Y'); ?>  <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a> - <?php _e('MyKnowledgeBase WordPress Theme', 'myknowledgebase'); ?>  
 	</div>
-
 </div>
 </div><!-- #container -->
 
 <?php wp_footer(); ?>
-
 </body>
 </html>

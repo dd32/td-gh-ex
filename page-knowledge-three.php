@@ -8,7 +8,6 @@
 <?php get_header(); ?>
 <div id="content">
 <div id="categories-three">
-
 	<?php $myknowledgebase_cat_args = array(
 		'hide_empty' => 0, // 0 means also list empty categories
 		'orderby' => 'name', // sort categories by name
@@ -42,7 +41,6 @@
 		echo '</ul>';
 
 	endforeach; ?>
-
 </div>
 </div>
 <?php get_sidebar(); ?>

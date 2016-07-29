@@ -1,9 +1,9 @@
 === MyKnowledgeBase ===
 Contributors: Guido07111975
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donation%40guidovanderleest%2enl
-Version: 4.0
-Requires at least: 3.7
-Tested up to: 4.5
+Version: 4.1
+Requires at least: 4.2
+Tested up to: 4.6
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, right-sidebar, full-width-template, custom-background, custom-header, custom-menu, featured-images, footer-widgets, post-formats, editor-style, translation-ready
@@ -40,9 +40,9 @@ Theme offers a menu that can contain subpages (2 levels deep).
 You can create and set menu via WordPress Dashboard > Appearance > Menus.
 
 = Create a knowledgebase =
-The Knowledge Base uses the default WordPress categories and posts.
+The knowledgebase uses the default WordPress categories and posts.
 
-Create a new page and select the Knowledge Base template on the right. You can choose between 3 columns (with sidebar) and 4 columns (without sidebar).
+Create a new page and select the knowledgebase page template. You can choose between 3 columns (with sidebar) and 4 columns (without sidebar).
 
 Set amount of posts for each category via WordPress Dashboard > Appearance > Customize. 
 

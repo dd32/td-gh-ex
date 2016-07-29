@@ -70,20 +70,15 @@
 	add_action( 'after_setup_theme', 'myknowledgebase_setup' ); 
 
 
-// Add html5 support for IE 8 and older 
-	function myknowledgebase_html5() { 
-		echo '<!--[if lt IE 9]>'. "\n"; 
-		echo '<script src="' . esc_url( get_template_directory_uri() . '/js/ie.js' ) . '"></script>'. "\n"; 
-		echo '<![endif]-->'. "\n"; 
-	}
-	add_action( 'wp_head', 'myknowledgebase_html5' ); 
-
-
 // Enqueues scripts and styles for front-end
 	function myknowledgebase_scripts() {
 		wp_enqueue_style( 'myknowledgebase-style', get_stylesheet_uri() );
 		wp_enqueue_script( 'myknowledgebase-nav', get_template_directory_uri() . '/js/nav.js', array( 'jquery' ) );
 		wp_enqueue_style( 'myknowledgebase-googlefonts', '//fonts.googleapis.com/css?family=Open+Sans' ); 
+
+		// Add html5 support for IE 8 and older 
+		wp_enqueue_script( 'myknowledgebase_html5', get_template_directory_uri() . '/js/ie.js' );
+		wp_script_add_data( 'myknowledgebase_html5', 'conditional', 'lt IE 9' );
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
@@ -185,7 +180,7 @@
 	add_filter( 'excerpt_length', 'myknowledgebase_excerpt_length', 999 ); 
 
 
-// Theme Customizer (logo and searchbar title and posts per category)
+// Theme Customizer (logo and search bar title and posts per category)
 	function myknowledgebase_theme_customizer( $wp_customize ) { 
 		$wp_customize->add_section( 'myknowledgebase_logo_section' , array( 
 			'title' => __( 'Logo', 'myknowledgebase' ), 

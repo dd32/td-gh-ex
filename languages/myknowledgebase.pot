@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MyKnowledgeBase\n"
-"POT-Creation-Date: 2016-06-22 00:07+0200\n"
+"POT-Creation-Date: 2016-07-26 23:32+0200\n"
 "PO-Revision-Date: 2015-12-22 00:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -19,13 +19,13 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: comments.php:16
+#: comments.php:15
 #, php-format
 msgid "1 comment on %2$s"
 msgid_plural "%1$s comments on %2$s"
 msgstr[0] ""
 
-#: comments.php:35
+#: comments.php:34
 msgid "Comments are closed."
 msgstr ""
 
@@ -172,15 +172,15 @@ msgstr ""
 msgid "This will overwrite the default title."
 msgstr ""
 
-#: header.php:59
+#: header.php:58
 msgid "Search Posts"
 msgstr ""
 
-#: header.php:65
+#: header.php:64
 msgid "Search"
 msgstr ""
 
-#: page-full.php:29 page.php:28 single.php:34
+#: page-full.php:28 page.php:27 single.php:33
 msgid "Edit"
 msgstr ""
 
