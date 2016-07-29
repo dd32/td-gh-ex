@@ -1,7 +1,7 @@
 /*
 Theme Name: DarkElements
 Theme URI: http://www.guidovanderleest.nl/darkelements
-Version: 4.4
+Version: 4.5
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: DarkElements is a free, clean, minimalistic, responsive, mobile friendly WordPress theme. Features: sidebar, sidebar navigation, widget areas in footer, custom header image, custom background, custom logo to replace blogname and description. Enjoy. 
@@ -102,6 +102,12 @@ address {margin:10px 0; font-size:1.2em; line-height:1.5em; font-style:italic;}
 p {margin:0 0 10px;}
 
 
+/* ALIGNMENTS */
+.alignright {float:right;}
+.alignleft {float:left;}
+.aligncenter {display:block; margin-left:auto; margin-right:auto;}
+
+
 /* TABLE AND LISTS */
 table {margin:10px 0; border-collapse:collapse;}
 table, th, td {border:1px solid #444; padding:5px 10px;}
@@ -129,14 +135,14 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 
 /* HEADER LOGO */
-#header .logo {width:100%; text-align:center; padding:0 0 20px;}
-#header .logo h2 {padding:5px 0; font-size:1.25em;}
-#header .logo img {padding:10px 0 0;}
+.logo {width:100%; text-align:center; padding:0 0 20px;}
+.logo h2 {padding:5px 0; font-size:1.20em;}
+.logo img {padding:10px 0 0;}
 
 
 /* HEADER IMAGE */
 #header-image {width:68%; float:right; margin:0 0 20px; padding:20px 2% 15px; background:#333 url('images/back.png'); opacity:0.9; filter:alpha(opacity=90);}
-#header-image .header-img {width:100%; height:auto;}
+.header-img {width:100%; height:auto;}
 
 
 /* HEADER IMAGE MOBILE */
@@ -188,7 +194,7 @@ a.readmore:hover {background:#e77776; color:#ddd; text-decoration:none;}
 
 
 /* EDIT LINK */
-.edit-link {clear:both; display:block; text-align:center; margin:10px 0; padding:2px 5px; border:1px solid #444; border-radius:5px;}
+.edit-link {width:100%; clear:both; float:left; display:block; text-align:center; margin:10px 0; padding:2px 0; border-top:1px solid #444; border-bottom:1px solid #444;}
 .edit-link a {color:#e77776;}
 .edit-link a:hover {color:#ddd;}
 
@@ -200,9 +206,6 @@ img {max-width:100%; height:auto;}
 img.alignright {float:right; margin:0.4em 0 0.4em 1em;}
 img.alignleft {float:left; margin:0.4em 1em 0.4em 0;}
 img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
-.alignright {float:right; margin:0.4em 0 0.4em 1em;}
-.alignleft {float:left; margin:0.4em 1em 0.4em 0;}
-.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 .wp-post-image, .single-image {float:left; margin:0.4em 1em 0.4em 0;}
 
@@ -226,8 +229,8 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 .comment-list ol {list-style:none;}
 .comment-list li {list-style:none; margin:0 0 0 10px;}
 .comment-body {border-left:1px solid #ddd; padding:0 0 0 15px; margin:20px 0;}
-.comment-notes, .form-allowed-tags {font-size:0.75em; padding:5px 0;}
-.comments-title, .comment-reply-title, .no-comments {clear:both; font-size:1.5em;} 
+.comment-notes, .form-allowed-tags {font-size:0.80em; padding:5px 0;}
+.comments-title, .comment-reply-title, .no-comments {clear:both; font-size:1.45em;} 
 .comment-author .avatar {margin:0 5px 0 0;}
 .bypostauthor, .comment-awaiting-moderation {font-style:italic;}
 
@@ -259,7 +262,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 /* FOOTER */
 #footer {width:68%; float:right; padding:0 2%; margin:20px 0 0; background:#333 url('images/back.png'); color:#ddd; opacity:0.9; filter:alpha(opacity=90);}
-#footer .site-info {clear:both; text-align:center; padding:10px 0;}
+.site-info {clear:both; text-align:center; padding:10px 0;}
 
 
 /* FOOTER WIDGET AREA */
@@ -291,35 +294,44 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 	/* HEADER */
 	#header {width:100%; padding:0; background:none;}
-	#header .logo {padding:10px 0;}
-	#header .logo h1 {font-size:2em;}
-	#header .logo h2 {padding:0; font-size:1.5em;}
-	#header-image {display:none;}
-	#header-image-mobile {display:block; width:100%; float:left; background:none;}
-	#header-image-mobile .header-img {width:100%; height:auto;}
 
-	/* MENU */
+	/* HEADER LOGO */
+	.logo {padding:10px 0;}
+	.logo h1 {font-size:2.25em;}
+	.logo h2 {padding:0; font-size:1.45em;}
+
+	/* HEADER IMAGE */
+	#header-image {display:none;}
+
+	/* HEADER IMAGE MOBILE */
+	#header-image-mobile {display:block; width:100%; float:left; background:none;}
+
+	/* HEADER MENU */
 	.nav-head ul {display:none;} 
 	.nav-head {padding:0 0 10px;}
 	.nav-head select {display:block; width:100%; height:35px; margin:0 auto 0; font-size:1em; line-height:1.2em; color:#333; background:#ddd; border:0;}
 
-	/* CONTENT */
+	/* PAGE AND POST */
 	.postmetadata {margin:10px 0;}
 
 	/* HEADINGS */
-	.post-title, .page-title, .post-title-single {font-size:1.75em;}
+	.post-title, .page-title, .post-title-single {font-size:1.80em;}
 	.widgettitle, .comments-title, .comment-reply-title, .no-comments {font-size:1.45em;}
+
+	/* POST FORMATS */
+	.format-status .avatar {margin:0.3em 0.5em 0.3em 0;}
 
 	/* IMAGES */
 	.wp-post-image, .single-image {width:50%; margin:0.3em 0.5em 0.3em 0;}
-	.format-status .avatar {margin:0.3em 0.5em 0.3em 0;}
 
-	/* SIDEBAR */
+	/* SIDEBAR AND WIDGETS */
 	.widget {padding:5px 0; margin:0 0 5px;}
 	.nav-widgettitle {display:none;}
 
 	/* FOOTER */
 	#footer {width:100%; padding:0; margin:0; float:left; background:none;}
+
+	/* FOOTER WIDGET AREA */
 	#footer .widget {padding:5px 0; margin:0 0 5px;}
 	.footer-right, .footer-middle, .footer-left {width:100%; margin:0; float:left;} 
 }

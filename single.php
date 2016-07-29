@@ -6,7 +6,6 @@
 
 <?php get_header(); ?>
 <div id="content">
-
 	<?php while (have_posts()) : the_post(); ?>
 
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
@@ -32,6 +31,5 @@
 	<?php endwhile; ?>
 
 	<?php edit_post_link( __( 'Edit', 'darkelements' ), '<div class="edit-link">', '</div>' ); ?>
-
 </div>
 <?php get_footer(); ?>

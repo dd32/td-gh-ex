@@ -19,7 +19,6 @@
 
 <body <?php body_class(); ?> >
 <div id="container">
-
 	<div id="header">
 		<div class="logo"> 
 			<?php if ( get_theme_mod( 'darkelements_logo' ) ) : ?> 

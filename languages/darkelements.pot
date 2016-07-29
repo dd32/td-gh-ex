@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: DarkElements\n"
-"POT-Creation-Date: 2016-06-22 00:06+0200\n"
+"POT-Creation-Date: 2016-07-26 23:31+0200\n"
 "PO-Revision-Date: 2015-11-15 17:03+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -19,13 +19,13 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: comments.php:16
+#: comments.php:15
 #, php-format
 msgid "1 comment on %2$s"
 msgid_plural "%1$s comments on %2$s"
 msgstr[0] ""
 
-#: comments.php:35
+#: comments.php:34
 msgid "Comments are closed."
 msgstr ""
 
@@ -87,11 +87,11 @@ msgstr ""
 msgid "% comments"
 msgstr ""
 
-#: footer.php:26
+#: footer.php:25
 msgid "Copyright"
 msgstr ""
 
-#: footer.php:26
+#: footer.php:25
 msgid "DarkElements WordPress Theme"
 msgstr ""
 
@@ -103,7 +103,7 @@ msgstr ""
 msgid "Default header"
 msgstr ""
 
-#: functions.php:94 header.php:38
+#: functions.php:94 header.php:37
 msgid "Menu"
 msgstr ""
 
@@ -147,7 +147,7 @@ msgstr ""
 msgid "This will overwrite the default title."
 msgstr ""
 
-#: page.php:28 single.php:34
+#: page.php:27 single.php:33
 msgid "Edit"
 msgstr ""
 

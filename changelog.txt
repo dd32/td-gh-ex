@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+DarkElements version 4.5 - august 2016
+- cleanup: removed unnecessary white space from several files
+- file style: removed unnecessary id tags from several strings
+- file style: updated mobile stylesheet
+- file style and custom-editor-style: several small adjustments
+- file functions: updated feature for html5 support in ie 8 and older
+- new screenshot
+
 DarkElements version 4.4 - june 2016
 - files style and custom-editor-style: resized all headings (including line-height)
 - file style: removed line-height from several elements
