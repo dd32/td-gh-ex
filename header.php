@@ -19,7 +19,6 @@
 
 <body <?php body_class(); ?> >
 <div id="container">
-
 	<?php if ( has_nav_menu( 'primary' ) ) {?> 
 	<div id="header-first">
 		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-head' ) ); ?>
