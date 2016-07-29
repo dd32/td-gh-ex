@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 
 <!-- FEATURED BOXES SECTION -->
-<?php include("includes/front-featured-boxes-section.php"); ?>
+<?php get_template_part('includes/front','featured-boxes-section'); ?>
 
 <!-- AWESOME PARALLAX SECTION -->
-<?php include("includes/front-parallax-section.php"); ?>
+<?php get_template_part('includes/front','parallax-section'); ?>
 
 <?php if ( 'page' == get_option( 'show_on_front' ) ) {  ?>
 <!-- PAGE EDITER CONTENT -->
@@ -60,6 +60,6 @@
 <?php } ?>
 
 <!-- CLIENTS-LOGO SECTION -->
-<?php include("includes/front-client-logo-section.php"); ?>
+<?php get_template_part('includes/front','client-logo-section'); ?>
 
 <?php get_footer(); ?>

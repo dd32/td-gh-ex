@@ -25,8 +25,13 @@
 	<div class="third_wrapper">
 		<div class="container">
 			<div class="row-fluid">
-				<div id="copyright" class="copyright span6 alpha omega"> <?php echo wp_kses_post( get_theme_mod('copyright', __('Proudly Powered by WordPress', 'advertica-lite') ) ); ?></div>
-				<div class="owner span6 alpha omega"><?php _e('Advertica Theme by','advertica-lite'); ?> <a href="<?php echo esc_url('https://sketchthemes.com/'); ?>" ><?php _e('SketchThemes','advertica-lite'); ?></a></div>
+				<div id="copyright" class="copyright span6">
+				<?php echo wp_kses_post(get_theme_mod('copyright', __('Proudly powered by WordPress', 'advertica-lite'))); ?>
+				</div>
+				<div class="owner span6">
+				<?php printf( __( 'Advertica Lite By %s', 'advertica-lite' ), '<a href="'.esc_url('https://sketchthemes.com').'"><strong>SketchThemes</strong></a>'
+					); ?>
+				</div>
 				<div class="clearfix"></div>
 			</div>
 		</div>

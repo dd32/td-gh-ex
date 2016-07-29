@@ -36,9 +36,9 @@ get_header(); ?>
 						<?php } ?>
 
 						<div class="bread-title">
-							<h1 class="title">
+							<h2 class="title">
 								<?php the_title(); ?>
-							</h1>
+							</h2>
 							<div class="clearfix"></div>
 						</div>
 

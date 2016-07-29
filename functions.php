@@ -161,14 +161,4 @@ require_once(get_template_directory() . '/SketchBoard/functions/admin-init.php')
  * Add Sketchthemes page
  */
 require_once(get_template_directory() . '/includes/sketchtheme-upsell.php');
-/**
- * Add Options Migration page
- */
-$advertica_lite_pre_options = ( get_option('advertica_lite') != '' ) ? get_option( 'advertica_lite' ) : false ;
-
-if ( $advertica_lite_pre_options) {
-
-	require_once(get_template_directory() . '/includes/advertica-options-migrate.php');
-
-}
 ?>

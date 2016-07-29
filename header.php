@@ -67,10 +67,10 @@
 			</div>
 			<!-- glow --> 
 		</div>
-<!-- #header -->
+	<!-- #header -->
 		<div class="header-clone"></div>
 		
 <!-- header image section -->
-<?php include("includes/front-header-image-section.php"); ?>
+<?php get_template_part("includes/front","header-image-section"); ?>
 
 <div id="main" class="clearfix">

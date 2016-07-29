@@ -419,7 +419,6 @@ function advertica_lite_customize_register( $wp_customize ) {
 	$wp_customize->add_control('blogpage_heading', array(
 		'label' => __('Posts page Title','advertica-lite'),
 		'section' => 'static_front_page',
-		'active_callback' => 'advertica_lite_active_post_page'
 	));
 
 	// ====================================
@@ -487,7 +486,7 @@ add_action( 'customize_register', 'advertica_lite_customize_register' );
 /**
  * Binds JS handlers to make the Customizer preview reload changes asynchronously.
  *
- * @since Twenty Fifteen 1.0
+ * @since Advertica Lite 1.0
  */
 function advertica_lite_customize_preview_js() {
 	wp_enqueue_script( 'advertica-lite-customizer-js', get_template_directory_uri() . '/js/advertica-lite-customizer.js', array( 'customize-preview' ), '20141216', true );
@@ -523,12 +522,4 @@ function advertica_lite_active_breadcrumb_section( $control ) {
 	}
 }
 
-// active callback post page
-function advertica_lite_active_post_page() {
-	if ( 'page' == get_option( 'show_on_front' ) ) {
-		return true;
-	} else {
-		return false;
-	}
-}
 ?>
