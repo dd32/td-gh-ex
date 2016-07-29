@@ -70,20 +70,15 @@
 	add_action( 'after_setup_theme', 'simplyblack_setup' ); 
 
 
-// Add html5 support for IE 8 an older 
-	function simplyblack_html5() { 
-		echo '<!--[if lt IE 9]>'. "\n"; 
-		echo '<script src="' . esc_url( get_template_directory_uri() . '/js/ie.js' ) . '"></script>'. "\n"; 
-		echo '<![endif]-->'. "\n"; 
-	}
-	add_action( 'wp_head', 'simplyblack_html5' ); 
-
-
 // Enqueues scripts and styles for front-end
 	function simplyblack_scripts() {
 		wp_enqueue_style( 'simplyblack-style', get_stylesheet_uri() );
 		wp_enqueue_script( 'simplyblack-nav', get_template_directory_uri() . '/js/nav.js', array( 'jquery' ) );
 		wp_enqueue_style( 'simplyblack-googlefonts', '//fonts.googleapis.com/css?family=Open+Sans' ); 
+
+		// Add html5 support for IE 8 and older 
+		wp_enqueue_script( 'simplyblack_html5', get_template_directory_uri() . '/js/ie.js' );
+		wp_script_add_data( 'simplyblack_html5', 'conditional', 'lt IE 9' );
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
