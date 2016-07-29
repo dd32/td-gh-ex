@@ -8,8 +8,8 @@
 /**
  * Adds aglee_lite_Preview_Post widget.
  */
-add_action( 'widgets_init', 'register_testimonial_widget' );
-function register_testimonial_widget() {
+add_action( 'widgets_init', 'aglee_lite_register_testimonial_widget' );
+function aglee_lite_register_testimonial_widget() {
     register_widget( 'aglee_lite_testimonial_widget' );
 }
 class Aglee_Lite_Testimonial_Widget extends WP_Widget {

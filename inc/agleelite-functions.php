@@ -66,31 +66,31 @@
             }
             <?php 
             else : ?>
-            body{
-                background: url(<?php echo $aglee_lite_bg_img; ?>);
-            }
-            <?php 
-            endif; ?>                
-        </style>
-        <?php
-        endif;
+                body{
+                    background: url(<?php echo $aglee_lite_bg_img; ?>);
+                }
+                <?php 
+                endif; ?>                
+            </style>
+            <?php
+            endif;
         //Custom CSS CODE
-        $custom_css = get_theme_mod('aglee_lite_custom_css');
-        if(!empty($custom_css)){echo "<style>$custom_css</style>";}
+            $custom_css = get_theme_mod('aglee_lite_custom_css');
+            if(!empty($custom_css)){echo "<style>$custom_css</style>";}
         //custom js
-        $custom_js = get_theme_mod('aglee_lite_custom_js');
-        if(!empty($custom_js)){
-            echo '<script type="text/javascript">'.$custom_js.'</script>';
+            $custom_js = get_theme_mod('aglee_lite_custom_js');
+            if(!empty($custom_js)){
+                echo '<script type="text/javascript">'.$custom_js.'</script>';
+            }
         }
-    }
-    add_action('wp_head','aglee_lite_custom_dynamic_styles');
+        add_action('wp_head','aglee_lite_custom_dynamic_styles');
 
 
     // Filter for excerpt read more
-    function aglee_lite_custom_excerpt_more( $aglee_lite_more ) {
-     return '...';
- }
- add_filter( 'excerpt_more', 'aglee_lite_custom_excerpt_more' );
+        function aglee_lite_custom_excerpt_more( $aglee_lite_more ) {
+           return '...';
+       }
+       add_filter( 'excerpt_more', 'aglee_lite_custom_excerpt_more' );
 
     /**
      * Since I'm already doing a tutorial, I'm not going to include comments to
@@ -247,124 +247,124 @@ add_action( 'tgmpa_register', 'aglee_lite_required_plugins' );
                         foreach ( $themes->themes as $theme ) {
                             if( $active_theme == $theme->name ) {?>
 
-                            <div id="<?php echo $theme->slug; ?>" class="theme-container col-md-6 col-lg-4">
-                                <div class="image-container">
-                                    <img class="theme-screenshot" src="<?php echo $theme->screenshot_url ?>"/>
+                                <div id="<?php echo $theme->slug; ?>" class="theme-container col-md-6 col-lg-4">
+                                    <div class="image-container">
+                                        <img class="theme-screenshot" src="<?php echo $theme->screenshot_url ?>"/>
 
-                                    <div class="theme-description">
-                                        <p><?php echo $theme->description; ?></p>
-                                    </div>
-                                </div>
-                                <div class="theme-details active">
-                                    <span class="theme-name"><?php echo $theme->name . ':' . __( 'Current theme', 'aglee-lite' ); ?></span>
-                                    <a class="button button-secondary customize right" target="_blank" href="<?php echo get_site_url(). '/wp-admin/customize.php' ?>">Customize</a>
-                                </div>
-                            </div>
-
-                            <?php
-                            $counter++;
-                            break;
-                        }
-                    }
-
-                    // For all other themes.
-                    foreach ( $themes->themes as $theme ) {
-                        if( $active_theme != $theme->name ) {
-
-                            // Set the argument array with author name.
-                            $args = array(
-                                'slug' => $theme->slug,
-                                );
-
-                            // Set the $request array.
-                            $request = array(
-                                'body' => array(
-                                    'action'  => 'theme_information',
-                                    'request' => serialize( (object)$args )
-                                    )
-                                );
-
-                            $theme_details = aglee_lite_get_themes( $request );
-                            ?>
-
-                            <div id="<?php echo $theme->slug; ?>" class="theme-container col-md-6 col-lg-4 <?php echo $counter % 3 == 1 ? 'no-left-megin' : ""; ?>">
-                                <div class="image-container">
-                                    <img class="theme-screenshot" src="<?php echo $theme->screenshot_url ?>"/>
-
-                                    <div class="theme-description">
-                                        <p><?php echo $theme->description; ?></p>
-                                    </div>
-                                </div>
-                                <div class="theme-details">
-                                    <span class="theme-name"><?php echo $theme->name; ?></span>
-
-                                    <!-- Check if the theme is installed -->
-                                    <?php if( wp_get_theme( $theme->slug )->exists() ) { ?>
-
-                                    <!-- Show the tick image notifying the theme is already installed. -->
-                                    <img data-toggle="tooltip" title="<?php _e( 'Already installed', 'aglee-lite' ); ?>" data-placement="bottom" class="theme-exists" src="<?php echo $directory_uri ?>/images/8dt-right.png"/>
-
-                                    <!-- Activate Button -->
-                                    <a  class="button button-primary activate right"
-                                    href="<?php echo wp_nonce_url( admin_url( 'themes.php?action=activate&amp;stylesheet=' . urlencode( $theme->slug ) ), 'switch-theme_' . $theme->slug );?>" >Activate</a>
-                                    <?php }
-                                    else {
-
-                                        // Set the install url for the theme.
-                                        $install_url = add_query_arg( array(
-                                            'action' => 'install-theme',
-                                            'theme'  => $theme->slug,
-                                            ), self_admin_url( 'update.php' ) );
-                                            ?>
-                                            <!-- Install Button -->
-                                            <a data-toggle="tooltip" data-placement="bottom" title="<?php echo 'Downloaded ' . number_format( $theme_details->downloaded ) . ' times'; ?>" class="button button-primary install right" href="<?php echo esc_url( wp_nonce_url( $install_url, 'install-theme_' . $theme->slug ) ); ?>" ><?php _e( 'Install Now', 'aglee-lite' ); ?></a>
-                                            <?php } ?>
-
-                                            <!-- Preview button -->
-                                            <a class="button button-secondary preview right" target="_blank" href="<?php echo $theme->preview_url; ?>"><?php _e( 'Live Preview', 'aglee-lite' ); ?></a>
+                                        <div class="theme-description">
+                                            <p><?php echo $theme->description; ?></p>
                                         </div>
                                     </div>
-                                    <?php
-                                    $counter++;
-                                }
-                            }?>
+                                    <div class="theme-details active">
+                                        <span class="theme-name"><?php echo $theme->name . ':' . __( 'Current theme', 'aglee-lite' ); ?></span>
+                                        <a class="button button-secondary customize right" target="_blank" href="<?php echo get_site_url(). '/wp-admin/customize.php' ?>">Customize</a>
+                                    </div>
+                                </div>
+
+                                <?php
+                                $counter++;
+                                break;
+                            }
+                        }
+
+                    // For all other themes.
+                        foreach ( $themes->themes as $theme ) {
+                            if( $active_theme != $theme->name ) {
+
+                            // Set the argument array with author name.
+                                $args = array(
+                                    'slug' => $theme->slug,
+                                    );
+
+                            // Set the $request array.
+                                $request = array(
+                                    'body' => array(
+                                        'action'  => 'theme_information',
+                                        'request' => serialize( (object)$args )
+                                        )
+                                    );
+
+                                $theme_details = aglee_lite_get_themes( $request );
+                                ?>
+
+                                <div id="<?php echo $theme->slug; ?>" class="theme-container col-md-6 col-lg-4 <?php echo $counter % 3 == 1 ? 'no-left-megin' : ""; ?>">
+                                    <div class="image-container">
+                                        <img class="theme-screenshot" src="<?php echo $theme->screenshot_url ?>"/>
+
+                                        <div class="theme-description">
+                                            <p><?php echo $theme->description; ?></p>
+                                        </div>
+                                    </div>
+                                    <div class="theme-details">
+                                        <span class="theme-name"><?php echo $theme->name; ?></span>
+
+                                        <!-- Check if the theme is installed -->
+                                        <?php if( wp_get_theme( $theme->slug )->exists() ) { ?>
+
+                                            <!-- Show the tick image notifying the theme is already installed. -->
+                                            <img data-toggle="tooltip" title="<?php _e( 'Already installed', 'aglee-lite' ); ?>" data-placement="bottom" class="theme-exists" src="<?php echo $directory_uri ?>/images/8dt-right.png"/>
+
+                                            <!-- Activate Button -->
+                                            <a  class="button button-primary activate right"
+                                            href="<?php echo wp_nonce_url( admin_url( 'themes.php?action=activate&amp;stylesheet=' . urlencode( $theme->slug ) ), 'switch-theme_' . $theme->slug );?>" >Activate</a>
+                                            <?php }
+                                            else {
+
+                                        // Set the install url for the theme.
+                                                $install_url = add_query_arg( array(
+                                                    'action' => 'install-theme',
+                                                    'theme'  => $theme->slug,
+                                                    ), self_admin_url( 'update.php' ) );
+                                                ?>
+                                                <!-- Install Button -->
+                                                <a data-toggle="tooltip" data-placement="bottom" title="<?php echo 'Downloaded ' . number_format( $theme_details->downloaded ) . ' times'; ?>" class="button button-primary install right" href="<?php echo esc_url( wp_nonce_url( $install_url, 'install-theme_' . $theme->slug ) ); ?>" ><?php _e( 'Install Now', 'aglee-lite' ); ?></a>
+                                                <?php } ?>
+
+                                                <!-- Preview button -->
+                                                <a class="button button-secondary preview right" target="_blank" href="<?php echo $theme->preview_url; ?>"><?php _e( 'Live Preview', 'aglee-lite' ); ?></a>
+                                            </div>
+                                        </div>
+                                        <?php
+                                        $counter++;
+                                    }
+                                }?>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <?php
-        }
+                <?php
+            }
 
 // Get all 8Degree themes by using API.
-        function aglee_lite_get_themes( $request ) {
+            function aglee_lite_get_themes( $request ) {
 
     // Generate a cache key that would hold the response for this request:
-            $key = 'aglee-lite_' . md5( serialize( $request ) );
+                $key = 'aglee-lite_' . md5( serialize( $request ) );
 
     // Check transient. If it's there - use that, if not re fetch the theme
-            if ( false === ( $themes = get_transient( $key ) ) ) {
+                if ( false === ( $themes = get_transient( $key ) ) ) {
 
         // Transient expired/does not exist. Send request to the API.
-                $response = wp_remote_post( 'http://api.wordpress.org/themes/info/1.0/', $request );
+                    $response = wp_remote_post( 'http://api.wordpress.org/themes/info/1.0/', $request );
 
         // Check for the error.
-                if ( !is_wp_error( $response ) ) {
+                    if ( !is_wp_error( $response ) ) {
 
-                    $themes = unserialize( wp_remote_retrieve_body( $response ) );
+                        $themes = unserialize( wp_remote_retrieve_body( $response ) );
 
-                    if ( !is_object( $themes ) && !is_array( $themes ) ) {
+                        if ( !is_object( $themes ) && !is_array( $themes ) ) {
 
                 // Response body does not contain an object/array
-                        return new WP_Error( 'theme_api_error', 'An unexpected error has occurred' );
-                    }
+                            return new WP_Error( 'theme_api_error', 'An unexpected error has occurred' );
+                        }
 
             // Set transient for next time... keep it for 24 hours should be good
-                    set_transient( $key, $themes, 60 * 60 * 24 );
-                }
-                else {
+                        set_transient( $key, $themes, 60 * 60 * 24 );
+                    }
+                    else {
             // Error object returned
-                    return $response;
+                        return $response;
+                    }
                 }
+                return $themes;
             }
-            return $themes;
-        }

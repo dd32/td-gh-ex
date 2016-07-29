@@ -8,8 +8,8 @@
 /**
  * Adds aglee_lite_Preview_Post widget.
  */
-add_action( 'widgets_init', 'register_features_widget' );
-function register_features_widget() {
+add_action( 'widgets_init', 'aglee_lite_register_features_widget' );
+function aglee_lite_register_features_widget() {
     register_widget( 'aglee_lite_features_widget' );
 }
 class Aglee_Lite_Features_Widget extends WP_Widget {

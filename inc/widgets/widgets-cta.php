@@ -8,8 +8,8 @@
 /**
  * Adds aglee_lite_Preview_Post widget.
  */
-add_action( 'widgets_init', 'register_cta_widget' );
-function register_cta_widget() {
+add_action( 'widgets_init', 'aglee_lite_register_cta_widget' );
+function aglee_lite_register_cta_widget() {
     register_widget( 'aglee_lite_cta_widget' );
 }
 class Aglee_Lite_Cta_Widget extends WP_Widget {

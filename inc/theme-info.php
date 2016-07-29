@@ -24,7 +24,7 @@ function aglee_lite_customizer_themeinfo( $wp_customize ) {
 	$aglee_lite_desc_theme_opt .= "<span>".__('Email us','aglee-lite').' : </span><a target="_blank" href="'.esc_url('mailto:support@8degreethemes.com').'">support@8degreethemes.com</a> <br />';
 	$aglee_lite_desc_theme_opt .= "<span>".__('More Details','aglee-lite').' : </span><a target="_blank" href="'.esc_url('http://8degreethemes.com/').'">'.__('here','aglee-lite').'</a>';
 
-	$wp_customize->add_control( new Theme_Info_Custom_Control( $wp_customize ,'theme_info_theme',array(
+	$wp_customize->add_control( new Aglee_lite_Theme_Info_Custom_Control( $wp_customize ,'theme_info_theme',array(
 		'label' => __( 'About aglee Lite' , 'aglee-lite' ),
 		'section' => 'theme_info',
 		'description' => $aglee_lite_desc_theme_opt
@@ -37,7 +37,7 @@ function aglee_lite_customizer_themeinfo( $wp_customize ) {
 
 	$aglee_lite_desc_theme_opt = '<a class="8dt-view-more-themes" target="_blank" href="'.admin_url().'themes.php?page=aglee-lite-themes">'.__('View','aglee-lite').'</a> <br />';
 	
-	$wp_customize->add_control( new Theme_Info_Custom_Control( $wp_customize ,'theme_info_more_theme',array(
+	$wp_customize->add_control( new Aglee_lite_Theme_Info_Custom_Control( $wp_customize ,'theme_info_more_theme',array(
 		'label' => __( 'More Themes' , 'aglee-lite' ),
 		'section' => 'theme_info',
 		'description' => $aglee_lite_desc_theme_opt
@@ -49,8 +49,12 @@ function aglee_lite_customizer_themeinfo( $wp_customize ) {
 		));
 
 	$aglee_lite_desc_theme_opt = '<a target="_blank" href="http://8degreethemes.com/wordpress-themes/zincy-pro">'.__('Zincy PRO','aglee-lite').'</a> <br />';
+	$wimpie_lite_desc_theme_opt .= '<a target="_blank" href="http://8degreethemes.com/wordpress-themes/wimpie-pro">'.__('Wimpie PRO','aglee-lite').'</a> <br />';
+	$wimpie_lite_desc_theme_opt .= '<a target="_blank" href="http://8degreethemes.com/wordpress-themes/hamza-pro">'.__('Hamza PRO','aglee-lite').'</a> <br />';
+	$wimpie_lite_desc_theme_opt .= '<a target="_blank" href="http://8degreethemes.com/wordpress-themes/aglee-pro">'.__('Aglee PRO','aglee-lite').'</a> <br />';
+	$wimpie_lite_desc_theme_opt .= '<a target="_blank" href="http://8degreethemes.com/wordpress-themes/eightstore-pro">'.__('EightStore PRO','aglee-lite').'</a> <br />';
 
-	$wp_customize->add_control( new Theme_Info_Custom_Control( $wp_customize ,'theme_info_pro_theme',array(
+	$wp_customize->add_control( new Aglee_lite_Theme_Info_Custom_Control( $wp_customize ,'theme_info_pro_theme',array(
 		'label' => __( 'PRO Themes' , 'aglee-lite' ),
 		'section' => 'theme_info',
 		'description' => $aglee_lite_desc_theme_opt
@@ -67,7 +71,7 @@ function aglee_lite_customizer_themeinfo( $wp_customize ) {
 
 	$aglee_lite_desc_theme_opt .= '<a target="_blank" href="'.esc_url('http://8degreethemes.com/wordpress-plugins/8-degree-availability-calendar/').'">'.__('8Degree Availability Calendar','aglee-lite').'</a> <br />';
 
-	$wp_customize->add_control( new Theme_Info_Custom_Control( $wp_customize ,'theme_info_useful_plugins',array(
+	$wp_customize->add_control( new Aglee_lite_Theme_Info_Custom_Control( $wp_customize ,'theme_info_useful_plugins',array(
 		'label' => __( 'Useful Plugins' , 'aglee-lite' ),
 		'section' => 'theme_info',
 		'description' => $aglee_lite_desc_theme_opt
@@ -79,7 +83,7 @@ add_action( 'customize_register', 'aglee_lite_customizer_themeinfo' );
 
 if(class_exists( 'WP_Customize_control')){
 
-	class Theme_Info_Custom_Control extends WP_Customize_Control
+	class Aglee_lite_Theme_Info_Custom_Control extends WP_Customize_Control
 	{
     	/**
        	* Render the content on the theme customizer page
