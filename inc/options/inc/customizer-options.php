@@ -17,7 +17,7 @@ $wp_customize->add_section('layout-settings', array(
  ));
 // Header
 $wp_customize->add_section( 'header-settings' , array(
-  'title' => __( 'Header' ),
+  'title' => __( 'Header', 'base-wp'),
   'panel' => 'igtheme_options',
   'priority' => 20, 
 ) );
@@ -45,7 +45,6 @@ $wp_customize->add_section('social-settings', array(
     'panel' => 'igtheme_options',
     'priority' => 60, 
 ));
-
 // END SECTIONS
 
 //ADD CONTROLS
@@ -53,6 +52,7 @@ $wp_customize->add_section('social-settings', array(
 * PREMIUM
 ******************************************************************/
     if ( apply_filters( 'igthemes_customizer_more', true ) ) {
+        
         $wp_customize->add_section( 'upgrade_premium' , array(
             'title'      		=> __( 'More Options', 'base-wp' ),
             'panel'             => 'igtheme_options',
@@ -70,7 +70,188 @@ $wp_customize->add_section('social-settings', array(
             'settings' 			=> 'upgrade_premium',
             'priority' 			=> 1,
         ) ) );
-    }
+        // SECTIONS
+    $wp_customize->add_section('advanced-settings', array(
+        'title' => esc_html__('Advanced', 'base-wp'),
+        'panel' => 'igtheme_options',
+        'priority' => 80,
+    ));
+    // Shop
+    $wp_customize->add_section('shop-settings', array(
+        'title' => __('Shop', 'base-wp'),
+        'panel' => 'igtheme_options',
+        'priority' => 70, 
+    ));
+    //lightbox
+    $wp_customize->add_setting('lightbox', array(
+        'default'    		=> null,
+        'sanitize_callback' => 'igthemes_sanitize_text',
+    ));
+    $wp_customize->add_control( new IGthemes_Only_Premium( $wp_customize, 'lightbox', array(
+        'label' => esc_html__('', 'base-wp'),
+        'description' => esc_html__('Use the lightbox effect for images and galleries', 'base-wp'),
+        'section' => 'layout-settings',
+        'settings' => 'lightbox',
+        'priority'   => 5
+    ) ) );
+    //main post content
+    $wp_customize->add_setting('main_post_content', array(
+        'default'    		=> null,
+        'sanitize_callback' => 'igthemes_sanitize_text',
+    ));
+    $wp_customize->add_control( new IGthemes_Only_Premium( $wp_customize, 'main_post_content', array(
+        'label' => esc_html__('', 'base-wp'),
+        'description' => esc_html__('Display posts content as excerpt', 'base-wp'),
+        'section' => 'layout-settings',
+        'settings' => 'main_post_content',
+        'priority'   => 6
+    ) ) );
+    //main featured images
+    $wp_customize->add_setting('main_featured_images', array(
+        'default'    		=> null,
+        'sanitize_callback' => 'igthemes_sanitize_text',
+    ));
+    $wp_customize->add_control( new IGthemes_Only_Premium( $wp_customize, 'main_featured_images', array(
+        'label' => esc_html__('', 'base-wp'),
+        'description' => esc_html__('Display featured images on archive', 'base-wp'),
+        'section' => 'layout-settings',
+        'settings' => 'main_featured_images',
+        'priority'   => 7
+    ) ) );
+    //shop_menu_link
+    $wp_customize->add_setting('shop_menu_link', array(
+        'default'    		=> null,
+        'sanitize_callback' => 'igthemes_sanitize_text',
+    ));
+    $wp_customize->add_control( new IGthemes_Only_Premium( $wp_customize, 'shop_menu_link', array(
+        'label' => esc_html__('Display shopping cart link?', 'base-wp'),
+        'description' => esc_html__('Add shopping cart link in the header menu', 'base-wp'),
+        'section' => 'shop-settings',
+        'settings' => 'shop_menu_link',
+    ) ) );
+    //shop_sidebar
+    $wp_customize->add_setting('shop_sidebar', array(
+        'default'    		=> null,
+        'sanitize_callback' => 'igthemes_sanitize_text',
+    ));
+    $wp_customize->add_control( new IGthemes_Only_Premium( $wp_customize, 'shop_sidebar', array(
+        'label' => esc_html__('Shop Layout', 'base-wp'),
+        'description' => esc_html__('Select the shop layout', 'base-wp'),
+        'section' => 'shop-settings',
+        'settings' => 'shop_sidebar',
+    ) ) );
+    //shop_products_number
+    $wp_customize->add_setting('shop_products_number', array(
+        'default'    		=> null,
+        'sanitize_callback' => 'igthemes_sanitize_text',
+    ));
+    $wp_customize->add_control( new IGthemes_Only_Premium( $wp_customize, 'shop_products_number', array(
+        'label' => esc_html__('', 'base-wp'),
+        'description' => esc_html__('How many product display per page?', 'base-wp'),
+        'section' => 'shop-settings',
+        'settings' => 'shop_products_number',
+    ) ) );
+    //shop_button_colors
+    $wp_customize->add_setting('shop_button_colors', array(
+        'default'    		=> null,
+        'sanitize_callback' => 'igthemes_sanitize_text',
+    ));
+    $wp_customize->add_control( new IGthemes_Only_Premium( $wp_customize, 'shop_button_colors', array(
+        'label' => esc_html__('Shop Buttons', 'base-wp'),
+        'description' => esc_html__('Change shop buttons colors', 'base-wp'),
+        'section' => 'shop-settings',
+        'settings' => 'shop_button_colors',
+    ) ) );
+    //header_layout
+    $wp_customize->add_setting('header_layout', array(
+        'default'    		=> null,
+        'sanitize_callback' => 'igthemes_sanitize_text',
+    ));
+    $wp_customize->add_control( new IGthemes_Only_Premium( $wp_customize, 'header_layout', array(
+        'label' => esc_html__('Header Layout', 'base-wp'),
+        'description' => esc_html__('Inline or expanded layout', 'base-wp'),
+        'section' => 'header-settings',
+        'settings' => 'header_layout',
+    ) ) );
+    //header_nav_sticky
+    $wp_customize->add_setting('header_nav_sticky', array(
+        'default'    		=> null,
+        'sanitize_callback' => 'igthemes_sanitize_text',
+    ));
+    $wp_customize->add_control( new IGthemes_Only_Premium( $wp_customize, 'header_nav_sticky', array(
+        'label' => esc_html__('Sticky Menu', 'base-wp'),
+        'description' => esc_html__('Lock the main menu on top of the page when a user scrolls', 'base-wp'),
+        'section' => 'header-settings',
+        'settings' => 'header_nav_sticky',
+    ) ) );
+    //font_google
+    $wp_customize->add_setting('font_google', array(
+        'default'    		=> null,
+        'sanitize_callback' => 'igthemes_sanitize_text',
+    ));
+    $wp_customize->add_control( new IGthemes_Only_Premium( $wp_customize, 'font_google', array(
+        'label' => esc_html__('Google Font', 'base-wp'),
+        'description' => esc_html__('Add your preferred Google Font', 'base-wp'),
+        'section' => 'typography-settings',
+        'settings' => 'font_google',
+    ) ) );
+    //font_family_headings
+    $wp_customize->add_setting('font_family_headings', array(
+        'default'    		=> null,
+        'sanitize_callback' => 'igthemes_sanitize_text',
+    ));
+    $wp_customize->add_control( new IGthemes_Only_Premium( $wp_customize, 'font_family_headings', array(
+        'label' => esc_html__('', 'base-wp'),
+        'description' => esc_html__('Headings font family', 'base-wp'),
+        'section' => 'typography-settings',
+        'settings' => 'font_family_headings',
+    ) ) );
+    //font_family_body
+    $wp_customize->add_setting('font_family_body', array(
+        'default'    		=> null,
+        'sanitize_callback' => 'igthemes_sanitize_text',
+    ));
+    $wp_customize->add_control( new IGthemes_Only_Premium( $wp_customize, 'font_family_body', array(
+        'label' => esc_html__('', 'base-wp'),
+        'description' => esc_html__('Body font family', 'base-wp'),
+        'section' => 'typography-settings',
+        'settings' => 'font_family_body',
+    ) ) );
+    //font_size
+    $wp_customize->add_setting('font_size', array(
+        'default'    		=> null,
+        'sanitize_callback' => 'igthemes_sanitize_text',
+    ));
+    $wp_customize->add_control( new IGthemes_Only_Premium( $wp_customize, 'font_size', array(
+        'label' => esc_html__('Font Size', 'base-wp'),
+        'description' => esc_html__('Change body and headings font size', 'base-wp'),
+        'section' => 'typography-settings',
+        'settings' => 'font_size',
+    ) ) );
+    //custom_css
+    $wp_customize->add_setting('custom_css', array(
+        'default'    		=> null,
+        'sanitize_callback' => 'igthemes_sanitize_text',
+    ));
+    $wp_customize->add_control( new IGthemes_Only_Premium( $wp_customize, 'custom_css', array(
+        'label' => esc_html__('Custom CSS', 'base-wp'),
+        'description' => esc_html__('Add your custom css code', 'base-wp'),
+        'section' => 'advanced-settings',
+        'settings' => 'custom_css',
+    ) ) );
+    //custom_js
+    $wp_customize->add_setting('custom_js', array(
+        'default'    		=> null,
+        'sanitize_callback' => 'igthemes_sanitize_text',
+    ));
+    $wp_customize->add_control( new IGthemes_Only_Premium( $wp_customize, 'custom_js', array(
+        'label' => esc_html__('Custom JS', 'base-wp'),
+        'description' => esc_html__('Add your custom js code', 'base-wp'),
+        'section' => 'advanced-settings',
+        'settings' => 'custom_js',
+    ) ) );
+    //end
+  }
 /*****************************************************************
 * LAYOUT SETTINGS
 ******************************************************************/
@@ -203,7 +384,6 @@ $wp_customize->add_section('social-settings', array(
         
         'sanitize_callback' => 'igthemes_sanitize_hex_color',
         'default'  => '#ff9900',
-        'transport' => 'postMessage'
     ));
     $wp_customize->add_control(
         new WP_Customize_color_Control(

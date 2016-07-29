@@ -82,4 +82,23 @@ class IGthemes_More_Control extends WP_Customize_Control {
         <?php
     }
 }
+/**
+ * The premium
+ */
+class IGthemes_Only_Premium extends WP_Customize_Control {
+
+    public function render_content() {
+        ?>
+            <span class="customize-control-title">
+                <?php echo esc_html( $this->label ); ?>
+            </span>
+            <span class="customize-control-description">
+                <?php echo esc_html( $this->description ); ?>
+                <a href="<?php echo esc_url('http://www.iograficathemes.com/downloads/base-wp-premium/'); ?>">
+                    <?php esc_html_e( ' - only premium', 'base-wp' ); ?>
+                </a>
+            </span>
+        <?php
+    }
+}
 endif;

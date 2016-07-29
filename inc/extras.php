@@ -21,8 +21,12 @@ function igthemes_body_classes( $classes ) {
     }
 
     // If our main sidebar doesn't contain widgets, adjust the layout to be full-width.
-    if ( ! is_active_sidebar( 'sidebar-1' ) || is_page_template( 'page-fullwidth.php' ) ) {
-        $classes[] = 'full-width';
+    if ( ! is_active_sidebar( 'sidebar-1' ) && is_home() 
+        || ! is_active_sidebar( 'sidebar-1' ) && is_category()
+        || ! is_active_sidebar( 'sidebar-1' ) && is_tag() 
+        || ! is_active_sidebar( 'sidebar-1' ) && is_singular('post') 
+        || is_page_template( 'page-fullwidth.php' ) ) {
+            $classes[] = 'full-width';
     }
     // sidebar left page tempalte.
     if ( is_page_template( 'page-sidebarleft.php' ) || get_theme_mod('main_sidebar') =='left' && is_post_type_archive('post') ||  get_theme_mod('main_sidebar') =='left' && is_home() ||  get_theme_mod('main_sidebar') =='left' && is_singular('post') ) {
