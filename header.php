@@ -19,7 +19,6 @@
 
 <body <?php body_class(); ?> >
 <div id="container">
-
 	<div id="header-first">
 		<div class="logo"> 
 			<?php if ( get_theme_mod( 'bluegray_logo' ) ) : ?> 
@@ -45,7 +44,6 @@
 	</div>
 
 	<div id="main-content">
-
 		<?php if( is_front_page() ) {?>
 		<?php if ( is_active_sidebar( 'homepage-right' ) || is_active_sidebar( 'homepage-middle' ) || is_active_sidebar( 'homepage-left' ) ) {?> 
 			<div id="header-widgets">
