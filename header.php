@@ -19,28 +19,27 @@
 
 <body <?php body_class(); ?> >
 <div id="container">
-
 	<div id="header-container">
-	<div id="header">
-		<div class="logo"> 
-			<?php if ( get_theme_mod( 'onecolumn_logo' ) ) : ?> 
-				<a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'><img src='<?php echo esc_url( get_theme_mod( 'onecolumn_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'></a> 
-			<?php else : ?> 
-				<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a></h1>
-				<h2><?php bloginfo('description'); ?></h2> 
+		<div id="header">
+			<div class="logo"> 
+				<?php if ( get_theme_mod( 'onecolumn_logo' ) ) : ?> 
+					<a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'><img src='<?php echo esc_url( get_theme_mod( 'onecolumn_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'></a> 
+				<?php else : ?> 
+					<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name'); ?>"><?php bloginfo('name'); ?></a></h1>
+					<h2><?php bloginfo('description'); ?></h2> 
+				<?php endif; ?>
+			</div>
+
+			<?php if ( has_nav_menu( 'primary' ) ) : ?> 
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-head' ) ); ?>
 			<?php endif; ?>
-		</div>
 
-		<?php if ( has_nav_menu( 'primary' ) ) : ?> 
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-head' ) ); ?>
-		<?php endif; ?>
-
-		<?php if ( is_front_page() ) {?> 
-			<?php if ( get_header_image() ) {?> 
-				<img src="<?php echo get_header_image(); ?>" class="header-img" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+			<?php if ( is_front_page() ) {?> 
+				<?php if ( get_header_image() ) {?> 
+					<img src="<?php echo get_header_image(); ?>" class="header-img" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+				<?php } ?> 
 			<?php } ?> 
-		<?php } ?> 
-	</div>
+		</div>
 	</div>
 
 	<div id="main-content">

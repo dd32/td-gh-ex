@@ -8,7 +8,7 @@
 		// Set max content width for img, video, and more
 			global $content_width; 
 			if ( ! isset( $content_width ) )
-			$content_width = 920;
+			$content_width = 900;
 
 		// Make theme available for translation
 			load_theme_textdomain('onecolumn', get_template_directory() . '/languages');  
@@ -70,20 +70,15 @@
 	add_action( 'after_setup_theme', 'onecolumn_setup' ); 
 
 
-// Add html5 support for IE 8 and older 
-	function onecolumn_html5() { 
-		echo '<!--[if lt IE 9]>'. "\n"; 
-		echo '<script src="' . esc_url( get_template_directory_uri() . '/js/ie.js' ) . '"></script>'. "\n"; 
-		echo '<![endif]-->'. "\n"; 
-	} 
-	add_action( 'wp_head', 'onecolumn_html5' ); 
-
-
 // Enqueues scripts and styles for front-end
 	function onecolumn_scripts() {
 		wp_enqueue_style( 'onecolumn-style', get_stylesheet_uri() );
 		wp_enqueue_script( 'onecolumn-nav', get_template_directory_uri() . '/js/nav.js', array( 'jquery' ) );
 		wp_enqueue_style( 'onecolumn-googlefonts', '//fonts.googleapis.com/css?family=Open+Sans' ); 
+
+		// Add html5 support for IE 8 and older 
+		wp_enqueue_script( 'onecolumn_html5', get_template_directory_uri() . '/js/ie.js' );
+		wp_script_add_data( 'onecolumn_html5', 'conditional', 'lt IE 9' );
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
