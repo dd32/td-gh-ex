@@ -3,7 +3,7 @@
 		<div id="content">	
 			<?php if(have_posts()) : ?>
 			<?php while(have_posts())  : the_post(); ?>
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="itemscope" itemtype="http://schema.org/Article">
+			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="itemscope" itemtype="http://schema.org/Webpage">
 			<h1 class="entry-title" itemprop="name"><a itemprop="url" href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
 			<div class="entry clearfix">
 			<?php if ( of_get_option('optimize_ad2') <> "" ) { echo stripslashes(of_get_option('optimize_ad2')); } ?>

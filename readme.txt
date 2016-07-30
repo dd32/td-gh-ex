@@ -30,6 +30,10 @@ Custom Css:
 
 == Change log ==
 
+= 1.7.5 =
+* Added css for tags
+* Fixed structure data to webpage
+
 = 1.7.1 =
 * Latest post widget fix
 * Customizer links fixed

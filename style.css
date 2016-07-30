@@ -4,7 +4,7 @@ Author: InsertCart
 Author URI: http://www.insertcart.com
 Theme URI: http://www.insertcart.com/product/optimize-wp-theme/
 Description: Optimize as name tells every thing completely optimized for search you will get 90+ page speed H1 and H2 Title Tags on page and posts WooCommerce Supported for eCommerce website. Google Adsense ready template show ads in single post, header or below navigation and widget as well. This is fully optimize style best for any kind of personal blog or business website it comes with Responsive design to increase mobile friendly.Fully featured control panel that support favicon link. Live working Demo http://demo.baztro.com/optimize/
-Version: 1.7.4
+Version: 1.7.5
 Tags: black, white, light, green, custom-menu, custom-header, custom-background, one-column, two-columns, right-sidebar, theme-options, threaded-comments, sticky-post
 Text Domain: optimize
 License: GNU General Public License v2
@@ -699,6 +699,16 @@ tbody{
 	border-top: 1px solid #ccc;
 	border-bottom: 1px solid #ccc;
 }
+.nav-previous a::before {
+	content: "\f060";
+	font-family:FontAwesome;
+	padding:5px;
+}
+.nav-next a::after {
+    content: "\f061";
+	font-family:FontAwesome;
+	padding:5px;
+}
 .nav-previous {
 	float: left;
 	width: 50%;
@@ -747,6 +757,27 @@ border-bottom: 1px dotted;
 	content: "\f044";
 	font: normal normal normal 14px/1 FontAwesome;
 	padding: 3px;
+}
+.tagcloud a:hover{
+      background-color: #008CBA;
+  color: #fff;
+    
+}
+.tagcloud a{
+      font-size: 13px !important;
+  display: inline-block;
+  padding: 0 10px;
+  min-height: 28px;
+  line-height: 28px;
+  border: 1px solid;
+  margin: 2px 0;
+  -webkit-transform: all 0.2s;
+  -moz-transform: all 0.2s;
+  -ms-transform: all 0.2s;
+  -o-transform: all 0.2s;
+  transform: all 0.2s;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s
 }
 
 .tags a::before{
@@ -1288,6 +1319,7 @@ input[type="text"], input[type="password"], input[type="date"], input[type="date
 ol.commentlist {
 	list-style:none;
 	margin:0 0 1em;
+	clear:both;
 	padding:0;
 	text-indent:0;
 }
