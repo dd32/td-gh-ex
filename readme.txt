@@ -32,6 +32,10 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
+
+= 1.4.3 | 30th July 2016 = 
+* Update: Sidebar template
+
 = 1.4.2 | 19th July 2016 = 
 * Update: Woo Files
 
