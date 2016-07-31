@@ -11,7 +11,7 @@
                 <h1 class="ct_title_h1"><?php _e('404 Page!','acool');?></h1>
     
                     <div class="text-center">
-                        <img class="img-404" src="<?php echo esc_url(get_stylesheet_directory_uri());?>/images/404.png" alt="<?php  _e('404 not found','acool')?>" />
+                        <img class="img-404" src="<?php echo esc_url(get_stylesheet_directory_uri());?>/images/404.png" alt="<?php  esc_attr(_e('404 not found','acool'))?>" />
                         <br/> <br/>
                         <a href="<?php echo esc_url(home_url());?>"><i class="fa fa-home"></i> <?php  _e('Please, return to homepage!','acool')?></a>
                     </div>

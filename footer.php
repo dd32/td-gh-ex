@@ -40,7 +40,7 @@
 
 <div class="gotopdiv">
 	<ul>
-		<li id="gotop"><a href="javascript:goTop();" class="sidetop"><img src="<?php echo get_template_directory_uri(); ?>/images/side_icon05.png"></a></li>
+		<li id="gotop"><a href="javascript:scroll(0,0)" class="sidetop"><img src="<?php echo get_template_directory_uri(); ?>/images/side_icon05.png"></a></li>
 	</ul>
 </div>
 

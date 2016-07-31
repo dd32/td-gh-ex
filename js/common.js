@@ -133,11 +133,7 @@ jQuery(document).ready(function($){
 	});	
 	
 	
-
-
-});	
-
-//return top
+	//return top
 	window.onscroll=function(){ 
 		if ($(document).scrollTop() > 200) 
 		{ 
@@ -146,11 +142,8 @@ jQuery(document).ready(function($){
 			$(".gotopdiv").css({display:"none"});	
 		} 
 	}
-	
-	
-	
-	
-	function goTop(){
-		$('html,body').animate({'scrollTop':0},600);
-	}
 	//return top end	
+
+});	
+
+

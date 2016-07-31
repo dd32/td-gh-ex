@@ -364,7 +364,7 @@ function acool_sanitize_hex_color( $color ) {
 }
 
 function acool_sanitize_url( $str ) {
-      $value = esc_url( $value);
+      $value = esc_url_raw( $value);
       return $value;
 }
 

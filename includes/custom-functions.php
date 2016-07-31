@@ -11,7 +11,7 @@ function acool_better_comments($comment, $args, $depth)
             </div>
 
             <div class="comment_postinfo">
-                <?php printf(__('<cite class="fn">%s</cite> <span class="says"> on </span>','acool'), esc_url(get_comment_author_link())) ?>
+                <?php printf(__('<cite class="fn">%s</cite> <span class="says"> on </span>','acool'), get_comment_author_link()) ?>
                 <span class="comment_date"><?php printf(__('%1$s at %2$s','acool'), get_comment_date(),  get_comment_time()) ?></span><?php edit_comment_link(__('(Edit)','acool'),'  ','') ?>
             </div> <!-- .comment_postinfo -->
 
@@ -133,12 +133,12 @@ function acool_breadcrumbs() {
  
     } elseif ( is_day() ) {
 		
-      echo '<a href="' . esc_url(get_year_link( get_the_time( 'Y' ) ) ). '" title="' . get_the_time( esc_attr__( 'Y' , 'acool' ) ) . '">' . get_the_time('Y') . ' ' . $delimiter . '</a>';
-      echo '<a href="' . esc_url(get_month_link( get_the_time( 'Y' ), get_the_time( 'm' ) )) . '" title="' . esc_html(get_the_time( esc_attr__( 'F' , 'acool' ) ) ). '">' . esc_html(get_the_time('F')) . '</a>' . $delimiter . ' ';
-      echo $currentBefore . esc_url(get_the_time('d') ). $currentAfter;
+      echo '<a href="' . esc_url(get_year_link( get_the_time( 'Y' ) ) ). '" ">' . get_the_time('Y') . ' ' . $delimiter . '</a>';
+      echo '<a href="' . esc_url(get_month_link( get_the_time( 'Y' ), get_the_time( 'm' ) )) . ' ">' . esc_html(get_the_time('F')) . '</a>' . $delimiter . ' ';
+      echo $currentBefore . esc_html(get_the_time('d') ). $currentAfter;
  
     } elseif ( is_month() ) {
-      echo '<a href="' . esc_url(get_year_link( get_the_time( 'Y' ) )) . '" title="' . esc_html(get_the_time( esc_attr__( 'Y' , 'acool' ) ) ). '">' . esc_html(get_the_time('Y') ). ' ' . $delimiter . '</a>';	  
+      echo '<a href="' . esc_url(get_year_link( get_the_time( 'Y' ) )) . '">' . esc_html(get_the_time('Y') ). ' ' . $delimiter . '</a>';	  
       echo $currentBefore . esc_html(get_the_time('F')) . $currentAfter;
  
     } elseif ( is_year() ) {

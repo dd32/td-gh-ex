@@ -9,7 +9,7 @@
                     <div class="item active">
                         <img src="<?php echo esc_url(acool_get_option( 'ct_acool','homepage_banner_img',$homepage_banner_img_deault));?> "  width="100%"/>
                         <div class="carousel-caption">
-                        <h1><?php echo esc_html(acool_get_option( 'ct_acool','homepage_banner_text_h1',__( 'The jQuery slider that just slides.', 'acool' )) );?></h1><p class="ct_slider_text"><?php echo esc_html(acool_get_option( 'ct_acool','homepage_banner_text',__( 'No fancy effects or unnecessary markup.', 'acool' )) );?></p><a class="btn" href="<?php echo esc_html(acool_get_option( 'ct_acool','homepage_banner_button_url','#') );?>"><?php echo esc_html(acool_get_option( 'ct_acool','homepage_banner_button_text',__( 'Download', 'acool' )) );?></a>                       
+                        <h1><?php echo esc_html(acool_get_option( 'ct_acool','homepage_banner_text_h1',__( 'The jQuery slider that just slides.', 'acool' )) );?></h1><p class="ct_slider_text"><?php echo esc_html(acool_get_option( 'ct_acool','homepage_banner_text',__( 'No fancy effects or unnecessary markup.', 'acool' )) );?></p><a class="btn" href="<?php echo esc_url(acool_get_option( 'ct_acool','homepage_banner_button_url','#') );?>"><?php echo esc_html(acool_get_option( 'ct_acool','homepage_banner_button_text',__( 'Download', 'acool' )) );?></a>                       
                         </div>
                     </div>
                 </div>
