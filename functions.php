@@ -314,6 +314,7 @@ function get_all_posts(){
                  <div class="post_expert_index">
                  <?php the_excerpt(); ?><br />
                  </div>
+				 <div class="clear"></div>
                  <div class="content-post-content-meta">
                  <div class="dashicons dashicons-admin-comments"></div>
                  <?php $com_num = get_comments_number( ); ?>

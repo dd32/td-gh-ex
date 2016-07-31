@@ -23,6 +23,15 @@
 		$options = get_option('theme_options');
 		$faviconurl = $options['favicon_url']; ?>
 <link rel="shortcut icon" href="<?php echo $faviconurl; ?>" />
+<!---------Mobile Menu-------------------->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $(".menu-toggle").click(function(){
+        $(".nav-menu").slideToggle();
+    });
+});
+</script>
 <?php wp_head(); ?>
 </head>
 
@@ -68,5 +77,7 @@
         </div>
 	</header><!-- site-header -->
     <div class="clear"></div>
+	
 <div class="wrapper">
+
 
