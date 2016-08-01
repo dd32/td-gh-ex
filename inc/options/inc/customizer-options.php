@@ -184,6 +184,17 @@ $wp_customize->add_section('social-settings', array(
         'section' => 'header-settings',
         'settings' => 'header_nav_sticky',
     ) ) );
+     //header_nav_side
+    $wp_customize->add_setting('header_nav_side', array(
+        'default'    		=> null,
+        'sanitize_callback' => 'igthemes_sanitize_text',
+    ));
+    $wp_customize->add_control( new IGthemes_Only_Premium( $wp_customize, 'header_nav_side', array(
+        'label' => esc_html__('Side Menu', 'base-wp'),
+        'description' => esc_html__('Implement mobile side menu', 'base-wp'),
+        'section' => 'header-settings',
+        'settings' => 'header_nav_side',
+    ) ) );
     //font_google
     $wp_customize->add_setting('font_google', array(
         'default'    		=> null,
