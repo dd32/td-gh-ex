@@ -114,6 +114,21 @@ function barletta_customizer( $wp_customize ) {
 
 		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'barletta_link_hover_color', array(
 			'label'     => __('Links hover color','barletta'),
+			'description' => __('Hover color for links in text, headings and menu', 'barletta'),
+			'section'   => 'colors',
+			'priority'  => 2,
+		)));
+
+		// Change titles background
+		$wp_customize->add_setting( 'barletta_titles_color', array(
+			'default'        => '#A9A9B1',
+			'sanitize_callback' => 'barletta_sanitize_hexcolor',
+			'transport'  =>  'refresh',
+		));
+
+		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'barletta_titles_color', array(
+			'label'     => __('Titles background color','barletta'),
+			'description' => __('Titles font color is white, please chose dark color for titles background', 'barletta'),
 			'section'   => 'colors',
 			'priority'  => 2,
 		)));

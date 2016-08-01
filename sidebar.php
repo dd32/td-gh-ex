@@ -17,6 +17,10 @@
 				} elseif( get_theme_mod( 'barletta_sidebar_position' ) == "no-sidebar" ||  get_theme_mod( 'barletta_sidebar_position' ) == "mz-full-width" ) {
 					$show_sidebar = false;
 				}
+				$barletta_sidebar_id = "sidebar-1";
+				if ( is_woocommerce() ) {
+					$barletta_sidebar_id = "WooCommerce Sidebar";
+				}
 				?>
 
 			<?php if( $show_sidebar ): ?>            
@@ -24,7 +28,7 @@
 				<div class="col-md-3">
 					<div id="sidebar" class="sidebar">
 
-						<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
+						<?php if ( ! dynamic_sidebar( $barletta_sidebar_id ) ) : ?>
 							<!-- sidebar-widget -->
 
 							<div id="search" class="widget widget_search">

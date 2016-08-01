@@ -202,36 +202,64 @@ require get_template_directory() . '/inc/extras.php';
 require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/template_tags.php';
 
-function barletta_custom_css_output() {
-	echo '<style type="text/css" id="custom-theme-css">' .
-	'a:hover, a:focus, a:active, a.active { color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
-	'.list-post-body h2 a:hover { color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
-	'.widget_categories a:hover { color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
-	'.widget a:hover { color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
-	'.widget-post h2 a:hover { color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
-	'.page-numbers li a:hover { background-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; border-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
-	'.blog-post .entry-tags a:hover { color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
-	'#back-top a:hover { background-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
-	'.navbar .navbar-nav > li > a:hover { background-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
-	'.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover { background-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
-	'.widget_tag_cloud a:hover { background-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; border-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
-	'.blog-post .entry-meta a:hover { color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; border-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
-	'button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover { background-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; border-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
-	'.post-navigation .nav-links .meta-nav span { color: ' . get_theme_mod( 'barletta_accent_color' ) . '; }' .
-	'.footer-bottom a { color: ' . get_theme_mod( 'barletta_accent_color' ) . '; }' .
-	'.comment-reply-link, .comment-reply-login { color: ' . get_theme_mod( 'barletta_accent_color' ) . '; }' .
-	'.comments-title { color: ' . get_theme_mod( 'barletta_accent_color' ) . '; }' .
-	'.page-numbers .current { background-color: ' . get_theme_mod( 'barletta_accent_color' ) . '; border-color: ' . get_theme_mod( 'barletta_accent_color' ) . '; }' .
-	'</style>';
+
+if ( ! function_exists( 'barletta_woo_setup' ) ) :
+/**
+ * Sets up theme defaults and registers support for various WordPress features.
+ */
+function barletta_woo_setup() {
+	/*
+	 * Enable support for WooCemmerce.
+	*/
+	add_theme_support( 'woocommerce' );
+}
+endif; // barletta_woo_setup
+add_action( 'after_setup_theme', 'barletta_woo_setup' );
+
+/*
+ * Add custom colors css to header
+ */
+if (!function_exists('barletta_custom_css_output'))  {
+	function barletta_custom_css_output() {
+
+		echo '<style type="text/css" id="barletta-custom-theme-css">';
+
+		if ( get_theme_mod('barletta_link_hover_color')) {
+			echo 'a:hover, a:focus, a:active, a.active { color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
+			'.list-post-body h2 a:hover { color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
+			'.widget_categories a:hover { color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
+			'.widget a:hover { color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
+			'.widget-post h2 a:hover { color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
+			'.page-numbers li a:hover { background-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; border-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
+			'.blog-post .entry-tags a:hover { color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
+			'#back-top a:hover { background-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
+			'.navbar .navbar-nav > li > a:hover { background-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
+			'.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover { background-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
+			'.widget_tag_cloud a:hover { background-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; border-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
+			'.blog-post .entry-meta a:hover { color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; border-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
+			'button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover { background-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; border-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }';		}
+		if ( get_theme_mod('barletta_accent_color')) {
+			echo '.post-navigation .nav-links .meta-nav span { color: ' . get_theme_mod( 'barletta_accent_color' ) . '; }' .
+			'.footer-bottom a { color: ' . get_theme_mod( 'barletta_accent_color' ) . '; }' .
+			'.comment-reply-link, .comment-reply-login { color: ' . get_theme_mod( 'barletta_accent_color' ) . '; }' .
+			'.comments-title { color: ' . get_theme_mod( 'barletta_accent_color' ) . '; }' .
+			'blockquote:before { color: ' . get_theme_mod( 'barletta_accent_color' ) . '; }' .
+			'.navbar-nav > .active a { background-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
+			'.page-numbers .current { background-color: ' . get_theme_mod( 'barletta_accent_color' ) . '; border-color: ' . get_theme_mod( 'barletta_accent_color' ) . '; }';
+		}
+		if ( get_theme_mod('barletta_titles_color')) {
+			echo '.widget-title span { background-color: ' . get_theme_mod( 'barletta_titles_color' ) . '; }' .
+			'.widget-title:after { background-color: ' . get_theme_mod( 'barletta_titles_color' ) . '; }';
+		}
+		echo "</style>";
+	}
 }
 add_action( 'wp_head', 'barletta_custom_css_output');
 
 /*
  * Register widget areas.
  */
-
 // if no title then add widget content wrapper to before widget
-add_filter( 'dynamic_sidebar_params', 'barletta_check_sidebar_params' );
 function barletta_check_sidebar_params( $params ) {
 	global $wp_registered_widgets;
 
@@ -244,6 +272,7 @@ function barletta_check_sidebar_params( $params ) {
 
 	return $params;
 }
+add_filter( 'dynamic_sidebar_params', 'barletta_check_sidebar_params' );
 
 function barletta_widgets_init() {
 
@@ -292,6 +321,18 @@ function barletta_widgets_init() {
 		'before_title'  => '<div class="widget-title"><span>',
 		'after_title'   => '</span></div>',
 	) );
+	// WooCommerce Sidebar
+	if( class_exists( 'WooCommerce' ) ) {
+		register_sidebar( array(
+			'name'			=> __( 'WooCommerce Sidebar', 'barletta' ),
+			'id'			=> 'woocommerce-sidebar',
+			'description'	=> __( 'The widgets added in this sidebar will appear in WooCommerce pages.', 'barletta' ),
+			'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
+			'after_widget'	=> '</div>',
+			'before_title'	=> '<div class="widget-title"><span>',
+			'after_title'	=> '</span></div>',
+		) );
+	}
 
 	register_widget( 'barletta_recent_posts' );
 	register_widget( 'barletta_social_widget' );

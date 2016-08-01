@@ -1,5 +1,5 @@
 ﻿Theme Name : Barletta
-Version    : 1.0.4
+Version    : 1.0.5
 Theme URL  : http://moozthemes.com/barletta-wordpress-theme
 Theme Documentation  : http://moozthemes.com/barletta-wordpress-theme-documentation
 
@@ -88,3 +88,7 @@ Drag and drop these widgets to above two widget areas and arrange them as you li
 * added feature to change accent and hover link colors
 * updated archive.php with WordPres core Archive-page functions
 * fixed typo in search form
+
+1.0.5 - 01.08.2016
+* added feature to change title color
+* added WooCommerce support

@@ -6,17 +6,17 @@
  */
 ?>
 
-<article  id="post-<?php the_ID(); ?>" <?php post_class('blog-post'); ?>>
+<article  id="post-<?php the_ID(); ?>">
 	<div class="blog-post-image">
 
 	<?php if ( has_post_thumbnail() ) : ?>
 		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-		<?php echo get_the_post_thumbnail( get_the_ID(), 'barletta-thumbnail' ); ?>
+		<?php echo get_the_post_thumbnail( get_the_ID(), 'barletta-large-thumbnail' ); ?>
 		</a>
 	<?php endif; ?>
 		
 	</div>
-	<div class="blog-post-body">
+	<div class="blog-post">
 	<div class="post-cats"><?php the_category( ' ' ); ?></div>
 	<h1 class="entry-title"><?php the_title(); ?></h1>
 
