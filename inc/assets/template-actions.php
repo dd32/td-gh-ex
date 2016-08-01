@@ -23,7 +23,7 @@ if ( ! function_exists( 'igthemes_main_navigation' ) ) {
         <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
             <?php esc_html_e( 'Menu', 'base-wp' ); ?>
         </button>
-        <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'fallback_cb' => false ) ); ?>
+        <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
     </nav><!-- #site-navigation -->
 <?php  }
 }
