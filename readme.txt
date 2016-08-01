@@ -7,6 +7,10 @@ In this version you will get the theme blue color variant. Couple of templates a
 For any ideas, support and feedback you can access the theme forum.
 
 == Version ==
+= 1.0.4 =
+1. Solved Responsive issue.
+2. Add Title Tag Support.
+3. Added Theme Tag.
 = 1.0.3 =
 1. Changes Theme URI
 = 1.0.2 =
