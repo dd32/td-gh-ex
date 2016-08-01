@@ -48,7 +48,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 					<a href="<?php echo esc_url(__('http://webriti.com/demo/wp/appointment','appointment')); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-desktop info-icon"></div>
 					<p class="info-text"><?php echo __('Pro Demo','appointment'); ?></p></a>
 					
-					<a href="<?php echo esc_url(__('https://wordpress.org/support/theme/appointment','appointment')); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-sos info-icon"></div>
+					<a href="<?php echo esc_url(__('http://webriti.com/help/category/themes/appointment/','appointment')); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-sos info-icon"></div>
 					<p class="info-text"><?php echo __('Premium Theme Support','appointment'); ?></p></a>
 					
 				</div>

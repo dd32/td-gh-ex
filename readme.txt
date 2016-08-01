@@ -86,7 +86,7 @@ URL: http://pixabay.com/en/office-meeting-business-partners-336368/
 Source:http://pixabay.com
 License: CC0 Public Domain
 
-Font Awesome 4.6.1 by @davegandy - http://fontawesome.io - @fontawesome
+Font Awesome 4.6.3 by @davegandy - http://fontawesome.io - @fontawesome
 License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
 Source: http://fontawesome.io
 
@@ -94,6 +94,8 @@ Source: http://fontawesome.io
 
 # --- EOF --- #
 ============================Change Log================================
+@version 2.5.1
+1.Update Pro Theme Support Link.
 @version 2.5
 1. Added Theme Info Page.
 @version 2.4.9
