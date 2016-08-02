@@ -1,5 +1,14 @@
 == Changelog ==
 
+= 1.0.9 - 02 August 2016 =
+* Improved loading of legacy browser support scripts.
+* Removed support for old framework settings teaser.
+* Fixed bug with post excerpt content setting.
+* Added widget area descriptions.
+* Added basic WooCommerce support and stlying.
+* Updated SiteOrigin Settings framework.
+* Premium: Updates Ajax comments module.
+
 = 1.0.8.1 - 06 July 2016 =
 * New version number added due to problem with WordPress.org theme uploader that meant a Trac ticket wasn't created for the previous version.
 

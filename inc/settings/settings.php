@@ -156,7 +156,7 @@ class SiteOrigin_Settings {
 	 * Add all the necessary actions
 	 */
 	function add_actions(){
-		add_action( 'init', array( $this, 'init' ) );
+		add_action( 'after_setup_theme', array( $this, 'init' ), 5 );
 		add_action( 'customize_register', array( $this, 'customize_register' ) );
 
 		add_action( 'customize_preview_init', array( $this, 'enqueue_preview' ) );
@@ -747,6 +747,9 @@ class SiteOrigin_Settings {
 		return $attachment_id;
 	}
 
+	/**
+	* Load all the extra components of the settings framework.
+	*/
 	function load_settings_extras(){
 		if( has_filter( 'siteorigin_page_settings' ) ) {
 			SiteOrigin_Settings_Page_Settings::single();

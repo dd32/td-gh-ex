@@ -7,7 +7,7 @@
  * @license GPL 2.0
  */
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.0.8.1' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.0.9' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://updates.purothemes.com' );
 define( 'SITEORIGIN_THEME_JS_PREFIX', '.min' );
 
@@ -18,15 +18,15 @@ else {
 	include get_template_directory() . '/upgrade/upgrade.php';
 }
 
-// Load the new settings framework
+// Load the new settings framework.
 include get_template_directory() . '/inc/settings/settings.php';
 include get_template_directory() . '/inc/customizer/customizer.php';
 
-// Include the SiteOrigin extras
+// Include the SiteOrigin extras.
 include get_template_directory() . '/extras/premium/premium.php';
 include get_template_directory() . '/extras/update/update.php';
 
-// Load the theme specific files
+// Load the theme specific files.
 include get_template_directory() . '/inc/extras.php';
 include get_template_directory() . '/inc/jetpack.php';
 include get_template_directory() . '/inc/legacy.php';
@@ -35,6 +35,11 @@ include get_template_directory() . '/inc/plugin-activation/plugin-activation.php
 include get_template_directory() . '/inc/settings.php';
 include get_template_directory() . '/inc/template-tags.php';
 include get_template_directory() . '/inc/formats.php';
+
+// Include WooCommerce.
+if ( class_exists( 'woocommerce' ) ) {
+	require get_template_directory() . '/woocommerce/functions.php';
+}
 
 if ( ! function_exists( 'puro_setup' ) ) :
 /**
@@ -120,10 +125,6 @@ function puro_setup() {
 		'home-template' => 'page-templates/full-width-unconstrained-content-no-title.php',
 	) );
 
-	add_theme_support( 'siteorigin-premium-teaser', array(
-		'settings' => true,
-	) );
-
 	define( 'SITEORIGIN_THEME_PREMIUM_URL', admin_url( 'themes.php?page=premium_upgrade' ) );
 
 }
@@ -139,7 +140,7 @@ function puro_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'puro' ),
 		'id'            => 'sidebar-1',
-		'description'   => '',
+		'description'	=> 'Visible on posts and pages that use the default template.',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -148,7 +149,7 @@ function puro_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Footer', 'puro' ),
 		'id'            => 'sidebar-2',
-		'description'   => '',
+		'description'	=> 'A column will be automatically assigned to each widget inserted.',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -163,45 +164,46 @@ add_action( 'widgets_init', 'puro_widgets_init' );
 function puro_scripts() {
 	$in_footer = siteorigin_setting( 'footer_js_enqueue' );
 
+	// Theme stylesheet.
 	wp_enqueue_style( 'puro-style', get_stylesheet_uri(), array(), SITEORIGIN_THEME_VERSION );
 
+	// Font Awesome.
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/font-awesome/css/font-awesome.min.css', array(), '4.3.0' );
 
-	wp_enqueue_script( 'puro-main' , get_template_directory_uri().'/js/jquery.theme-main' . SITEORIGIN_THEME_JS_PREFIX . '.js', array('jquery'), SITEORIGIN_THEME_VERSION, $in_footer );
+	// Theme JavaScript.
+	wp_enqueue_script( 'puro-main' , get_template_directory_uri().'/js/jquery.theme-main' . SITEORIGIN_THEME_JS_PREFIX . '.js', array('jquery'), SITEORIGIN_THEME_VERSION, $in_footer );		
 
+	// Skip link focus fix.
 	wp_enqueue_script( 'puro-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), SITEORIGIN_THEME_VERSION, $in_footer );
 
+	// Responsive menu.
 	if ( siteorigin_setting( 'navigation_responsive_menu' ) && siteorigin_setting( 'layout_responsive' ) ) {
 		wp_enqueue_script( 'puro-responsive-menu', get_template_directory_uri() . '/js/responsive-menu' . SITEORIGIN_THEME_JS_PREFIX . '.js', array(), SITEORIGIN_THEME_VERSION, true );
 	}		
 
+	// FitVids.js.
 	if( siteorigin_setting( 'layout_fitvids' ) ) {
 		wp_enqueue_script( 'jquery-fitvids' , get_template_directory_uri().'/js/jquery.fitvids' . SITEORIGIN_THEME_JS_PREFIX . '.js', array('jquery'), '1.1', $in_footer );
 	}	
 
+	// Comment reply.
 	if( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	// Flexie.
+	wp_enqueue_script( 'puro-flexie', get_template_directory_uri() . '/js/flexie.js', array(), '1.0.3' );
+	wp_script_add_data( 'puro-flexie', 'conditional', 'lt IE 9' );
+
+	// HTML5Shiv.
+	wp_enqueue_script( 'puro-html5', get_template_directory_uri() . '/js/html5shiv-printshiv.js', array(), '3.7.3' );
+	wp_script_add_data( 'puro-html5', 'conditional', 'lt IE 9' );
+
+	// Load Selectivizr.
+	wp_enqueue_script( 'puro-selectivizr', get_template_directory_uri() . '/js/selectivizr' . SITEORIGIN_THEME_JS_PREFIX . '.js', array(), '1.0.2' );
+	wp_script_add_data( 'puro-selectivizr', 'conditional', '(gte IE 6)&(lte IE 8)' );	
 }
 add_action( 'wp_enqueue_scripts', 'puro_scripts' );
-
-if ( ! function_exists( 'puro_browser_compatiblity' ) ):
-/**
- * Improve legacy browser support.
- */
-function puro_browser_compatiblity() {
-	?>
-	<!--[if lte IE 9]> 
-		<script src="<?php echo get_template_directory_uri(); ?>/js/flexie.js" type="text/javascript"></script>
-		<script src="<?php echo get_template_directory_uri(); ?>/js/html5shiv-printshiv.js" type="text/javascript"></script>
-	<![endif]-->
-	<!--[if (gte IE 6)&(lte IE 8)]>
-		<script src="<?php echo get_template_directory_uri(); ?>/js/selectivizr.min.js" type="text/javascript"></script>
-	<![endif]-->
-	<?php
-}
-add_action( 'wp_head', 'puro_browser_compatiblity' );
-endif;
 
 /**
  * Filter the comment form.
