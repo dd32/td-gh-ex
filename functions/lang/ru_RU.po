@@ -1,0 +1,1521 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: rambo\n"
+"POT-Creation-Date: 2016-08-02 13:12+0530\n"
+"PO-Revision-Date: 2016-08-02 19:02+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: C:\\xampp\\htdocs\\wp_details\\wp-content\\themes\\rambo\n"
+"X-Poedit-SearchPath-0: C:\\xampp\\htdocs\\wp_details\\wp-content\\themes"
+"\\rambo\n"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/404.php:8
+msgid "Unfortunately, the page you tried accessing could not be retrieved. "
+msgstr ""
+"К сожалению, страница, которую вы судимый доступа не может быть получен ."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/404.php:10
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Кажется, мы можем & Rsquo ; T найти то, что вы & Rsquo ; ищете . Возможно, "
+"поиск может помочь."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/banner-strip.php:17
+msgid "Daily Archives: "
+msgstr "Ежедневные архивы:"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/banner-strip.php:19
+msgid "Monthly Archives: "
+msgstr "Архивы по месяцам:"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/banner-strip.php:21
+msgid "Yearly Archives: "
+msgstr "Ежегодно Архивы:"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/banner-strip.php:23
+msgid "Category Archives: "
+msgstr "Категория Архивы:"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/banner-strip.php:25
+msgid "Tag Archives: "
+msgstr "Тег Архивы:"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/banner-strip.php:27
+msgid "Author Archives:"
+msgstr "Автор Архивы:"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/banner-strip.php:29
+msgid "Oops Sorry,No Page Found"
+msgstr "К сожалению, К сожалению, нет Страница не найдена"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/banner-strip.php:32
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Результаты поиска для: %s"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/banner-strip.php:36
+msgid "Blog Archives"
+msgstr "Архивы Блога"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:161
+msgid "Install Required Plugins"
+msgstr "Необходима установка дополнительных плагинов"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:162
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions.php:141
+msgid "Install Plugins"
+msgstr "Установка плагинов"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:163
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions.php:142
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr "Установка плагина : %s"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:164
+msgid "Something went wrong."
+msgstr "Что-то пошло не так."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:175
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions.php:154
+msgid "Return to Required Plugins Installer"
+msgstr "Вернуться в требуемые подключаемые модули Installer"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:176
+msgid "Return to the dashboard"
+msgstr "Возврат к приборной панели"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:177
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:1939
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions.php:155
+msgid "Plugin activated successfully."
+msgstr "Плагин успешно активирован."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:178
+msgid "The following plugin was activated successfully:"
+msgstr "Этот плагин был успешно активирован :"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:179
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr "Все плагины установлены и успешно активирован. %1$s"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:180
+msgid "Dismiss this notice"
+msgstr "Закрыть это уведомление"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:531
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:2156
+msgid "Return to the Dashboard"
+msgstr "Вернуться к панели управления"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:1166
+msgid "Private Repository"
+msgstr "Частное хранилище"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:1169
+msgid "Pre-Packaged"
+msgstr "Расфасованные"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:1174
+msgid "WordPress Repository"
+msgstr "WordPress хранилище"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:1177
+msgid "Required"
+msgstr "необходимые"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:1177
+msgid "Recommended"
+msgstr "рекомендуемые"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:1180
+msgid "Not Installed"
+msgstr "Не установлен"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:1182
+msgid "Installed But Not Activated"
+msgstr "Установленные но не активированы"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:1287
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:1395
+msgid "Install"
+msgstr "устанавливать"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:1309
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:1396
+msgid "Activate"
+msgstr "активировать"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:1358
+#, php-format
+msgid ""
+"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
+"Dashboard\">Return to the Dashboard</a>"
+msgstr ""
+"Нет плагинов не установить или активировать. <a href=\"%1$s\" title="
+"\"Вернуться к панели управления\">Вернуться к панели управления</a>"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:1374
+msgid "Plugin"
+msgstr "Плагин"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:1375
+msgid "Source"
+msgstr "Источник"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:1376
+msgid "Type"
+msgstr "Тип"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:1377
+msgid "Status"
+msgstr "Положение дел"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:1922
+msgid "Install package not available."
+msgstr "Установить пакет не доступно."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:1923
+#, php-format
+msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+msgstr ""
+"Скачивание установочного пакета из <span class=\"code\">%s</span>&#8230;"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:1924
+msgid "Unpacking the package&#8230;"
+msgstr "Распаковка пакет &#8230;"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:1925
+msgid "Installing the plugin&#8230;"
+msgstr "Установка плагина &#8230;"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:1926
+msgid "Plugin install failed."
+msgstr "Плагин не удалось инсталляцию ."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:1927
+msgid "Plugin installed successfully."
+msgstr "Плагин успешно установлен ."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:1938
+msgid "Plugin activation failed."
+msgstr "Плагин активации не удалось."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:2052
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+"Процесс установки и активации начинается. Этот процесс может занять "
+"некоторое время на некоторых хостов , поэтому, пожалуйста, будьте терпеливы ."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:2053
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr "%1$s установлен и активирован успешно."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:2053
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:2062
+msgid "Show Details"
+msgstr "Показать детали"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:2053
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:2062
+msgid "Hide Details"
+msgstr "Скрыть детали"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:2054
+msgid "All installations and activations have been completed."
+msgstr "Все установки и активаций были завершены ."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:2055
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr "Установка и активация плагинов %1$s (%2$d/%3$d)"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:2059
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+"Процесс установки начинается. Этот процесс может занять некоторое время на "
+"некоторых хостов , поэтому, пожалуйста, будьте терпеливы ."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:2060
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr "Произошла ошибка при установке %1$s: <strong>%2$s</strong>."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:2061
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr "Установка %1$s не удалось."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:2062
+#, php-format
+msgid "%1$s installed successfully."
+msgstr "%1$s успешно установлен ."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:2063
+msgid "All installations have been completed."
+msgstr "Все установки были завершены ."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/class-tgm-plugin-activation.php:2064
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr "Установка плагина %1$s (%2$d/%3$d)"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/comments.php:11
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+"Эта запись защищена паролем. Введите пароль, чтобы просматривать комментарии."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/comments.php:17
+msgid "Comments"
+msgstr "Комментарии"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/comments.php:21
+msgid "Comment navigation"
+msgstr "Комментарий навигации"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/comments.php:22
+msgid "&larr; Older Comments"
+msgstr "&larr; Старые комментарии"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/comments.php:23
+msgid "Newer Comments &rarr;"
+msgstr "Новые комментарии & rarr ;"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/comments.php:34
+msgid "You must be"
+msgstr "Ты должен быть"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/comments.php:34
+msgid "to post a comment"
+msgstr "опубликовать комментарий"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/comments.php:39
+msgid "Name"
+msgstr "имя"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/comments.php:40
+msgid "Email"
+msgstr "Эл. адрес"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/comments.php:41
+msgid "Website"
+msgstr "Веб-сайт"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/comments.php:54
+msgid "Logged in as "
+msgstr "Вы вошли как"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/comments.php:54
+msgid " Log out?"
+msgstr "Выйти?"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/comments.php:56
+msgid "Post Comment"
+msgstr "Оставить комментарий"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/comments.php:59
+msgid "Leave a Comment"
+msgstr "Оставить комментарий"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/content.php:15
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/fullwidth.php:26
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/page.php:25
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:120
+msgid "Read More"
+msgstr "Прочитайте больше"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/content.php:21
+msgid "Tags:"
+msgstr "Ключевые слова:"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/footer.php:32
+msgid "Powered By "
+msgstr "Питаться от"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/footer.php:32
+msgid "WordPress"
+msgstr "WordPress"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions.php:51
+msgid "Page"
+msgstr "страница"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions.php:71
+msgid "Primary Menu"
+msgstr "основное меню"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions.php:140
+msgid "Install Recommended Plugins"
+msgstr "Установить Рекомендуемые плагины"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions.php:143
+msgid "Something went wrong with the plugin API."
+msgstr "Что-то пошло не так с плагином API ."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions.php:156
+#, php-format
+msgid "All plugins installed and activated successfully. %s"
+msgstr "Все плагины установлены и успешно активирован . % s"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/index-banner.php:20
+msgid "Theme Feature Goes Here !"
+msgstr "Функция Тема здесь идет !"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/index-banner.php:21
+msgid ""
+"This is Dummy Text. This is Dummy Text. This is Dummy Text.  I repeat.. This "
+"is Dummy Text."
+msgstr ""
+"Это фиктивный текст . Это фиктивный текст . Это фиктивный текст . Я "
+"повторяю .. Это фиктивный текст ."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/page.php:26
+msgid "Pages:"
+msgstr "Страницы:"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/search.php:22
+msgid "Nothing Found"
+msgstr "Ничего не найдено"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/search.php:24
+msgid ""
+"Sorry, but nothing matched your search criteria. Please try again with some "
+"different keywords."
+msgstr ""
+"Извините, но ничего не соответствует вашим критериям поиска. Пожалуйста, "
+"попытайтесь снова с другими ключевыми словами."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/template-blog-leftsidebar.php:25
+msgid "Previous"
+msgstr "предыдущий"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/template-blog-leftsidebar.php:26
+msgid "Next"
+msgstr "следующий"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/theme_setup_data.php:33
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:92
+msgid "Theme Feature Goes Here!"
+msgstr "Тема особенность здесь идет !"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/theme_setup_data.php:34
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:106
+msgid ""
+"Rambo makes content easy to view on any device with any resolution. You may "
+"check this with resizing. Fully Responsive Theme Amazing Design."
+msgstr ""
+"Рэмбо делает содержание легко просматривать на любом устройстве с любым "
+"разрешением . Вы можете проверить это с изменением размеров . Полностью "
+"Отзывчивый тема Удивительный дизайн ."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/theme_setup_data.php:35
+msgid "Read more"
+msgstr "Прочитайте больше"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/theme_setup_data.php:42
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:436
+msgid "Service One"
+msgstr "Обслуживание одного"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/theme_setup_data.php:43
+msgid ""
+"This is service one, reliable to user and comfortable to operate. You can "
+"easily manage all sub services using one instance.  "
+msgstr ""
+"Это сервис один , надежный и пользователю удобно работать . Вы можете легко "
+"управлять всеми подуслуги с помощью одного экземпляра ."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/theme_setup_data.php:46
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:487
+msgid "Service Two"
+msgstr "Обслуживание Два"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/theme_setup_data.php:47
+msgid ""
+"This is service two, reliable to user and comfortable to operate. You can "
+"easily manage all sub services using one instance."
+msgstr ""
+"Это сервис два, надежно и удобно пользователю работать . Вы можете легко "
+"управлять всеми подуслуги с помощью одного экземпляра ."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/theme_setup_data.php:50
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:538
+msgid "Service Three"
+msgstr "Услуги Три"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/theme_setup_data.php:51
+msgid ""
+"This is service Three, reliable to user and comfortable to operate. You can "
+"easily manage all sub services using one instance."
+msgstr ""
+"This is service Three, reliable to user and comfortable to operate. You can "
+"easily manage all sub services using one instance."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/theme_setup_data.php:54
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:589
+msgid "Service Four"
+msgstr "Обслуживание Четыре"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/theme_setup_data.php:55
+msgid ""
+"This is service Four, reliable to user and comfortable to operate. You can "
+"easily manage all sub services using one instance."
+msgstr ""
+"Это сервис Four , надежно и удобно пользователю работать . Вы можете легко "
+"управлять всеми подуслуги с помощью одного экземпляра ."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/theme_setup_data.php:59
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1157
+msgid "&copy;2014&nbsp;ALL Rights Reserved"
+msgstr "& Копия ; 2014 & NBSP ; Все права защищены"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/theme_setup_data.php:60
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1172
+msgid "Designed By"
+msgstr "Разработано"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/theme_setup_data.php:61
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1187
+msgid "Webriti"
+msgstr "Webriti"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/theme_setup_data.php:74
+msgid "Featured Portfolio Projects"
+msgstr "Популярные Портфолио Проекты"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/theme_setup_data.php:75
+msgid ""
+"Maecenas sit amet tincidunt elit. Pellentesque habitant morbi tristique "
+"senectus et netus et Nulla facilisi."
+msgstr ""
+"Меценат сидеть Амет tincidunt Элит . Pellentesque обитатель MORBI tristique "
+"senectus и др Netus и др Nulla facilisi ."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/theme_setup_data.php:77
+msgid "Product one"
+msgstr "один продукт"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/theme_setup_data.php:78
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/theme_setup_data.php:82
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/theme_setup_data.php:86
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/theme_setup_data.php:90
+msgid ""
+"A set of pieces of creative work collected to be shown to potential "
+"customers or employers; \"the artist had put together a portfolio of his work"
+"\";"
+msgstr ""
+"Набор деталей творчества собраны для показа потенциальным клиентам или "
+"работодателям \" художник собрал портфель его работы \""
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/theme_setup_data.php:81
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:761
+msgid "Product two"
+msgstr "Продукт два"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/theme_setup_data.php:85
+msgid "Product Three"
+msgstr "Продукт Три"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/theme_setup_data.php:89
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:851
+msgid "Product Four"
+msgstr "Продукт Четыре"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/template-tags.php:9
+msgid "leave a comment"
+msgstr "Оставить комментарий"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/template-tags.php:10
+msgid "By"
+msgstr "От"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/commentbox/comment-function.php:21
+msgid "Reply"
+msgstr "Ответить"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/commentbox/comment-function.php:36
+msgid "Your comment is awaiting moderation."
+msgstr "Ваш комментарий ожидает модерации."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer-pro.php:13
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:633
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:902
+msgid "http://webriti.com/rambo/"
+msgstr "http://webriti.com/rambo/"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer-pro.php:13
+msgid "UPGRADE  TO PRO"
+msgstr "обновление до профи"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer-pro.php:20
+msgid "UPGRADE  TO PRO VERSION"
+msgstr "ОБНОВЛЕНИЕ ДО ВЕРСИИ PRO"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer-pro.php:33
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer-pro.php:62
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer-pro.php:99
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:648
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:917
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_layout.php:78
+msgid "Discover rambo Pro"
+msgstr "Откройте для себя Рэмбо Pro"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer-pro.php:47
+msgid "https://wordpress.org/support/view/theme-reviews/rambo#postform/"
+msgstr "https://wordpress.org/support/view/theme-reviews/rambo#postform/"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer-pro.php:47
+msgid "ADD YOUR REVIEW"
+msgstr "Оставить свой отзыв"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer-pro.php:80
+msgid "http://webriti.com/help/"
+msgstr "http://webriti.com/help/"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer-pro.php:80
+msgid "DOCUMENTATION"
+msgstr "ДОКУМЕНТАЦИЯ"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer-pro.php:84
+msgid ""
+"The Pro Version gives you more opportunities to enhance your site and "
+"business. In order to create effective online presence one have to showcase "
+"their wide range of products, have to use contact us enquiry form, have to "
+"make effective about us page, have to introduce team members, etc etc . The "
+"pro version will give it all. Buy the pro version and give us a chance to "
+"serve you better. "
+msgstr ""
+"Версии Pro дает вам больше возможностей для улучшения вашего сайта и "
+"бизнеса . Для создания эффективного присутствия в Интернете один должны "
+"продемонстрировать свои широкий спектр продуктов , должны использовать "
+"связаться с нами форму запроса , должны сделать эффективной о нас странице , "
+"необходимо ввести членов команды , и т.д. и т.п. . Про версию передаст все "
+"это. Купить про версию и дать нам возможность служить вам лучше "
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_header.php:7
+msgid "Header Settings"
+msgstr "Настройки заголовка"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_header.php:13
+msgid "Front Page Setting"
+msgstr "установка на первой полосе"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_header.php:31
+msgid "Enable Home on front page."
+msgstr "включить Начало на первой странице ."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_header.php:40
+msgid "Site favicon"
+msgstr "Favicon сайта"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_header.php:42
+msgid "Upload a favicon"
+msgstr "Загрузить фавиконки"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_header.php:53
+msgid "Choose your favicon (ideal width and height is 16x16 or 32x32)"
+msgstr ""
+"Выберите Favicon ( идеальная ширина и высота составляет 16х16 или 32х32)"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_header.php:59
+msgid "Header Logo setting"
+msgstr "Настройка логотипа заголовка"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_header.php:77
+msgid "Upload a 150x150 for Logo Image"
+msgstr "Загрузить 150x150 для изображения логотипа"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_header.php:96
+msgid "Enable/Disabe Text Logo"
+msgstr "Включить / Disabe Текст Логотип"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_header.php:117
+msgid "Enter Logo Width"
+msgstr "Введите Ширина логотипа"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_header.php:136
+msgid "Enter Logo Height"
+msgstr "Введите Высота логотипа"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_header.php:144
+msgid "Custom css"
+msgstr "Пользовательские CSS"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_header.php:157
+msgid "Custom css snippet:"
+msgstr "Пользовательские CSS фрагмент кода :"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:6
+msgid "Want to add More Slides and Animation Effect Then"
+msgstr "Хотите добавить слайды и эффект анимации Тогда"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:6
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:13
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:21
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:30
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_layout.php:7
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_post_slug.php:7
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:6
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:14
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:22
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:30
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_theme_color.php:10
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:7
+msgid " Upgrade To Pro"
+msgstr "обновление до профи"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:13
+msgid "Want to Add Site Intro Then"
+msgstr "Хотите , чтобы добавить сайт Введение Тогда"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:21
+msgid "Want to add Latest News Section Then"
+msgstr "Хотите добавить раздел последних новостей Далее"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:30
+msgid "Want to add Footer callout Section Then"
+msgstr "Хотите добавить раздел выноски Footer Тогда"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:39
+msgid "Home Page Settings"
+msgstr "Настройки Главная страница"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:45
+msgid "Slider Setting"
+msgstr "установка ползунка"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:65
+msgid "Enable slider on front page"
+msgstr "Включить ползунок на первой странице"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:80
+msgid "Image Upload"
+msgstr "изображение Загрузить"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:98
+msgid "Banner Title"
+msgstr "Баннер Название"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:112
+msgid "Banner Description"
+msgstr "Баннер Описание"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:130
+msgid "Read More Button text"
+msgstr "Подробнее текст кнопки"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:138
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:361
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1094
+msgid "#"
+msgstr "#"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:147
+msgid "Read More Button Link"
+msgstr "Подробнее Кнопка ссылки"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:164
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:387
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1121
+msgid "Open link new tab/window"
+msgstr "Открыть ссылку новая вкладка окна"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:179
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:311
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:942
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1003
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_layout.php:60
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_post_slug.php:31
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:63
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:356
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:444
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:509
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:35
+msgid "Rambo Upgrade"
+msgstr "Rambo Обновить"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:189
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:203
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:212
+msgid "slide"
+msgstr "горка"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:200
+msgid "Select slider Animation"
+msgstr "Выберите ползунок анимации"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:203
+msgid "fade"
+msgstr "увядать"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:223
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_theme_color.php:106
+msgid "Slide direction"
+msgstr "направление движения"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:226
+msgid "horizontal"
+msgstr "горизонтальный"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:226
+msgid "vertical"
+msgstr "вертикальный"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:232
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:292
+msgid "2000"
+msgstr "2000"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:243
+msgid "Animation speed"
+msgstr "Скорость анимации"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:252
+msgid "2500"
+msgstr "2500"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:263
+msgid "Slideshow speed"
+msgstr "скорость слайд-шоу"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:276
+msgid "Click Here To Add Slider"
+msgstr "Нажмите здесь, чтобы добавить Slider"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:296
+msgid "Site Intro "
+msgstr "Введение сайта"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:321
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1035
+msgid "Rambo is a clean and fully responsive Template."
+msgstr "Rambo  является чистым и в полной мере учитывающими шаблона ."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:330
+msgid "Intro description"
+msgstr "описание Введение"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:341
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1073
+msgid "Purchase Now"
+msgstr "Купить сейчас"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:350
+msgid "Intro button text"
+msgstr "Вводный текст кнопки"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:370
+msgid "Intro button link"
+msgstr "Введение Кнопка ссылки"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:393
+msgid "Service Setting "
+msgstr "Услуги Окружение"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:413
+msgid "Enable Service Section On HOME Page"
+msgstr "Включить службу Раздел Домашняя страница"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:428
+msgid "Service Icon One"
+msgstr "Значок службы один"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:445
+msgid "Service Title One"
+msgstr "Услуги Название Один"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:454
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:505
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:556
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:607
+msgid ""
+"This is service one, reliable to user and comfortable to operate. You can "
+"easily manage all sub services using one instance."
+msgstr ""
+"Это сервис один , надежный и пользователю удобно работать . Вы можете легко "
+"управлять всеми подуслуги с помощью одного экземпляра ."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:463
+msgid "Service Description One"
+msgstr "Описание услуги Один"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:479
+msgid "Service Icon Two"
+msgstr "служба значок два"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:496
+msgid "Service Title Two"
+msgstr "Услуги Название Два"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:514
+msgid "Service Description Two"
+msgstr "Сервис Описание Два"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:530
+msgid "Service Icon Three"
+msgstr "Служба Иконка Три"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:547
+msgid "Service Title Three"
+msgstr "Услуги Название Три"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:565
+msgid "Service Description Three"
+msgstr "Описание услуги Три"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:581
+msgid "Service Icon Four"
+msgstr "Сервис Иконка Четыре"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:598
+msgid "Service Title Four"
+msgstr "Услуги Название Четыре"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:616
+msgid "Service Description Four"
+msgstr "Service Description Four"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:630
+msgid "Want to add more services, than upgrade to pro version"
+msgstr "Хотите добавить больше услуг , чем обновление до про версии"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:633
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:902
+msgid "UPGRADE TO PRO"
+msgstr "обновление до профи"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:658
+msgid "Project Setting"
+msgstr "Окружение проекта"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:678
+msgid "Enable Project Section On HOME Page"
+msgstr "Включить раздел проекта на главной странице"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:688
+msgid "Featured Portfolio Project"
+msgstr "Рекомендуемые Портфель проектов"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:695
+msgid "Project title"
+msgstr "Название Проекта"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:703
+msgid ""
+"Lorem ipsum dolor sit amet, consectetuer adipiscing elit lorem ipsum dolor "
+"sit amet"
+msgstr ""
+"Lorem Ipsum Dolor сидят Амет , consectetuer adipiscing Элит Lorem Ipsum "
+"Dolor сидеть Амет"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:710
+msgid "Project Description"
+msgstr "Описание Проекта"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:723
+msgid "Project One Title"
+msgstr "Проект One Title"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:748
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:791
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:835
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:881
+msgid ""
+"A set of pieces of creative work collected to be shown to potential "
+"customers or employers; \"the artist had put together a portfolio of his work"
+msgstr ""
+"Набор деталей творчества собраны для показа потенциальных клиентов или "
+"работодателей; \" Художник собрал портфель его работы"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:753
+msgid "Project One Description"
+msgstr "Проект One Описание"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:766
+msgid "Project Two Title"
+msgstr "Проект Два Название"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:780
+msgid "Project Two Thumbnail"
+msgstr "Проект Два эскиза"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:796
+msgid "Project Two Description"
+msgstr "Проект Два Описание"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:810
+msgid "Project Three Title"
+msgstr "Проект Три Название"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:824
+msgid "Project Three Thumbnail"
+msgstr "Проект Три эскиза"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:841
+msgid "Project Three Description"
+msgstr "Проект трех Описание"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:856
+msgid "Project Four Title"
+msgstr "Проект четыре Название"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:870
+msgid "Project four Thumbnail"
+msgstr "Проект четыре эскиза"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:886
+msgid "Project Four Description"
+msgstr "Проект четырех Описание"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:899
+msgid "Want to add more Project, than upgrade to pro version"
+msgstr "Хотите добавить больше проект , чем обновление до про версии"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:927
+msgid "Recent News Setting"
+msgstr "Последние новости Окружение"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:960
+msgid "Enable Latest News Section"
+msgstr "Включить раздел последних новостей"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:968
+msgid "Recent News"
+msgstr "Свежие новости"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:976
+msgid "Recent News Section Heading"
+msgstr "Последние новости заголовок раздела"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:986
+msgid "Footer Call Out Area Setting"
+msgstr "сноска вызова из настроек области"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1027
+msgid "Enable Site Intro"
+msgstr "включить сайта Введение"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1045
+msgid "Footer call out title"
+msgstr "сноска взывать название"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1054
+msgid ""
+"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis "
+"praesentium voluptatum deleniti atque corrupti quos excepturi vehicula sem "
+"ut volutpat. Ut non libero magna fusce condimentum eleifend enim a feugiat."
+msgstr ""
+"На Vero ЭОС и др accusamus др iusto Одио dignissimos ducimus Qui blanditiis "
+"praesentium voluptatum deleniti atque corrupti quos excepturi vehicula СЭМ "
+"ут volutpat . Ут не либеро магна fusce condimentum eleifend enimfeugiat ."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1064
+msgid "Footer call out description"
+msgstr "сноска взывать описание"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1083
+msgid "Footer call out button text\t"
+msgstr "сноска крикнуть текст кнопки"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1103
+msgid "Call Out Button Link"
+msgstr "взывать связь кнопки"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1129
+msgid "Footer Copyright Custmization "
+msgstr "сноска авторское право custmization"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1147
+msgid "Enable Footer widgets in all pages."
+msgstr "Включение Footer виджетов на всех страницах ."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1163
+msgid "Copy Rights Text"
+msgstr "Копировать текст права"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1178
+msgid "Designed By Head"
+msgstr "Дизайн руководителя"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1193
+msgid "Designed By Name"
+msgstr "Дизайн Имя"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1202
+msgid "http://www.webriti.com"
+msgstr "http://www.webriti.com"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_home_page.php:1208
+msgid "Designed By Link"
+msgstr "Дизайн Ссылка"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_layout.php:7
+msgid "Want to add Theme layout Feature Then"
+msgstr "Хотите добавить тематический макет Feature Тогда"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_layout.php:24
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_layout.php:96
+msgid "Enable"
+msgstr "включить"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_layout.php:39
+msgid "Slider section always top on the home page"
+msgstr "слайдер раздел всегда вверху на главной странице"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_layout.php:40
+msgid "Note:"
+msgstr "Заметка:"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_layout.php:40
+msgid ""
+"By default all the section are enable on homepage. If you do not want to "
+"display any section just drag that section to the disabled box."
+msgstr ""
+"По умолчанию все секции включить на главной странице . Если вы не хотите , "
+"чтобы отобразить любой раздел просто перетащите этот раздел в окне инвалидов."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_layout.php:46
+msgid "Theme Layout Manager"
+msgstr "менеджер компоновки темы"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_layout.php:114
+msgid "Disable"
+msgstr "запрещать"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_post_slug.php:7
+msgid "Want to add Post Type Slug"
+msgstr "Хотите добавить сообщение Тип Slug"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_post_slug.php:15
+msgid "Post Type Slug Setting"
+msgstr "Сообщение Тип Slug Окружение"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_post_slug.php:42
+msgid "rambo_slider"
+msgstr "rambo_slide"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_post_slug.php:49
+msgid "Slider Slug"
+msgstr "слайдер пробкового"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_post_slug.php:59
+msgid "rambo_service"
+msgstr "rambo_service"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_post_slug.php:64
+msgid "Service Slug"
+msgstr "Услуги пробкового"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_post_slug.php:74
+msgid "rambo_testimonial"
+msgstr "rambo_testimonial"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_post_slug.php:81
+msgid "Testimonial Slug"
+msgstr "Характеризует пробкового"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_post_slug.php:91
+msgid "rambo_project"
+msgstr "rambo_project"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_post_slug.php:98
+msgid "Portfolio/Project Slug"
+msgstr "Портфолио / Project Slug"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_post_slug.php:108
+msgid "rambo_team"
+msgstr "rambo_team"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_post_slug.php:115
+msgid "Our Team Slug"
+msgstr "Наша команда Slug"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_socila_link.php:28
+msgid "Enable Social media icon footer section."
+msgstr "Включение социальных медиа значок колонтитула раздел ."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_socila_link.php:47
+msgid "Twitter Link:"
+msgstr "Twitter Ссылка :"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_socila_link.php:67
+msgid "Linkedin Links:"
+msgstr "Linkedin Ссылки:"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_socila_link.php:86
+msgid "Facebook Links:"
+msgstr "Facebook Ссылки:"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_socila_link.php:105
+msgid "Google Plus Links:"
+msgstr "Google Plus Ссылки:"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:6
+msgid "Want to add About us Template Then"
+msgstr "Хотите добавить О нас Шаблон Тогда"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:14
+msgid "Want to add Service Page Template Then"
+msgstr "Хотите добавить шаблон страницы Service Тогда"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:22
+msgid "Want to add Google maps Then"
+msgstr "Хотите добавить Google Maps Тогда"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:30
+msgid "Want to add Contact Page Template Setting Then"
+msgstr "Хотите добавить Настройка страницу контактов шаблона Далее"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:39
+msgid "Template Settings"
+msgstr "Настройки шаблона"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:47
+msgid "About Page Setting"
+msgstr "О странице Настройка"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:83
+msgid ""
+"Enable About Us content with Featured Image and social media links on About "
+"Us Page"
+msgstr ""
+"Включить О содержании нас с Рекомендуемые изображения и социальные медиа "
+"ссылок на странице О нас"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:92
+msgid "Meet Our"
+msgstr "Познакомьтесь с нашими"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:101
+msgid "About Page Title"
+msgstr "О названии страницы"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:120
+msgid "Enable Our team section"
+msgstr "Встретить команду"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:128
+msgid "Meet the Team"
+msgstr "Встретить команду"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:137
+msgid "Our Team Title"
+msgstr "Наш Название команды"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:151
+msgid "Click Here To Add Team Member"
+msgstr "Нажмите здесь, чтобы добавить член команды"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:182
+msgid "Enable testmonials section on about us page."
+msgstr "Включить testmonials раздел о нас странице ."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:191
+msgid "Testimonials"
+msgstr "Отзывы"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:200
+msgid "Testimonials Title"
+msgstr "Отзывы Название"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:214
+msgid "Click Here To Add Testimonial"
+msgstr "Нажмите здесь, чтобы добавить отзыв"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:246
+msgid "Enable client strip on About us page"
+msgstr "Включение клиента полосы на странице О нас"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:255
+msgid "Our Client"
+msgstr "Наш клиент"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:264
+msgid "Client Strip Heading"
+msgstr "Strip товарную Клиент"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:274
+msgid "5"
+msgstr "5"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:283
+msgid "Number of client display in client strip"
+msgstr "Количество дисплея клиента в клиентской полосе"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:303
+msgid "Client strip slide speed"
+msgstr "Скорость полосы слайд- клиента"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:316
+msgid "Click Here To Add Clients"
+msgstr "Нажмите здесь, чтобы добавить клиентов"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:340
+msgid "Service Page Setting"
+msgstr "Установка Сервис Page"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:375
+msgid "Enable testmonials section on service template."
+msgstr "Включить testmonials раздел шаблона службы ."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:393
+msgid "Enable client strip on Service Page template."
+msgstr "Включение клиента полосы на шаблоне странице сервиса ."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:407
+msgid "Click Here To Add Service"
+msgstr "Нажмите здесь, чтобы добавить службу"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:429
+msgid "Google Maps"
+msgstr "Карты Гугл"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:465
+msgid "Enable Google Map in contact page"
+msgstr "Включить Google Map в странице контактов"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:476
+msgid ""
+"https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;"
+"q=Kota+Industrial+Area,+Kota,+Rajasthan&amp;aq=2&amp;oq=kota+&amp;"
+"sll=25.003049,76.117499&amp;sspn=0.020225,0.042014&amp;t=h&amp;ie=UTF8&amp;"
+"hq=&amp;hnear=Kota+Industrial+Area,+Kota,+Rajasthan&amp;z=13&amp;"
+"ll=25.142832,75.879538"
+msgstr ""
+"https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;"
+"q=Kota+Industrial+Area,+Kota,+Rajasthan&amp;aq=2&amp;oq=kota+&amp;"
+"sll=25.003049,76.117499&amp;sspn=0.020225,0.042014&amp;t=h&amp;ie=UTF8&amp;"
+"hq=&amp;hnear=Kota+Industrial+Area,+Kota,+Rajasthan&amp;z=13&amp;"
+"ll=25.142832,75.879538"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:484
+msgid "Google Map URL:"
+msgstr "URL Google Map :"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:493
+msgid "Contact Page Setting"
+msgstr "Окружение страницу контактов"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:521
+msgid "Contact Form"
+msgstr "Форма обратной связи"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:530
+msgid "Contact Form Heading:"
+msgstr "Контакты Форма Заголовок :"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:548
+msgid "Enable Get in touch in contact page."
+msgstr "позволяют получить в контакт в контактной странице ."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:558
+msgid "Get in Touch"
+msgstr "Связаться"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:567
+msgid "Get in Touch Text:"
+msgstr "Соприкоснуться Текст :"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:577
+msgid ""
+"Lorem ipsum dolor sit amet, usu rebum errem pericula ea, ei alia quaerendum "
+"vix. Ea justo tritani sit, odio ignota quo te. Lorem ipsum dolor sit amet."
+msgstr ""
+"Lorem Ipsum Dolor сидеть Амет , усу rebum errem pericula еа, е частности "
+"quaerendum VIX . Еа Хусто tritani сидеть , Одио ignota кво т.е . Lorem Ipsum "
+"Dolor сидеть Амет ."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:586
+msgid "Get in Touch Description"
+msgstr "Соприкоснуться Описание"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:606
+msgid "Enable our office section in contact page."
+msgstr "Включить наш офис раздел контактной странице ."
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:615
+msgid "Our Office"
+msgstr "Наш офис"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:624
+msgid "Our Office Text:"
+msgstr "Наш офис Текст:"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:634
+msgid "New York City, USA"
+msgstr "Нью-Йорк , США"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:643
+msgid "Contact Address:"
+msgstr "Контактный адрес:"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:654
+msgid "420-300-3850"
+msgstr "420-300-3850"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:663
+msgid "Contact Phone Number:"
+msgstr "Контактный телефон :"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:673
+msgid "themes@webriti.com"
+msgstr "themes@webriti.com"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_template.php:682
+msgid "Contact Email:"
+msgstr "Почта для связи:"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_theme_color.php:10
+msgid "Want To add More Styling and Theme Color Then"
+msgstr "Хотите добавить больше вводить в моду и цвет темы Тогда"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_theme_color.php:28
+msgid "Theme Color Schemes Settings "
+msgstr "Тема цветовых схем Настройки"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_theme_color.php:41
+msgid "Predefined Colors"
+msgstr "Предварительно определенные цвета"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_theme_color.php:67
+msgid "Skin Color Enable"
+msgstr "Skin Color Enable"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_theme_color.php:86
+msgid "Skin Color"
+msgstr "Цвет кожи"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_theme_color.php:95
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_theme_color.php:108
+msgid "wide"
+msgstr "широкий"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_theme_color.php:108
+msgid "boxed"
+msgstr "в штучной упаковке"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:7
+msgid "Want to add Typography Setting Then"
+msgstr "Хотите добавить Typography установки, а затем"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:15
+msgid "Typography Settings"
+msgstr "Настройки Книгопечатания"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:20
+msgid "Typhography Enable / Disable"
+msgstr "Typhography Включить / Выключить"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:51
+msgid "Enable Custom Typography"
+msgstr "Включение пользовательских типографию"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:70
+msgid "General Typography"
+msgstr "Общая типографика"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:84
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:141
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:198
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:254
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:310
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:366
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:423
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:479
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:535
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:591
+msgid "Font Size"
+msgstr "Размер шрифта"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:101
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:158
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:215
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:271
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:327
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:383
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:440
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:496
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:552
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:608
+msgid "Font Family"
+msgstr "Семейство шрифтов"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:117
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:174
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:231
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:287
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:343
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:399
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:456
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:512
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:568
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:624
+msgid "Font Style"
+msgstr "Стиль шрифта"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:127
+msgid "Menus Typography"
+msgstr "меню типографика"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:184
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:240
+msgid "Post / Page Typography"
+msgstr "Сообщение / Страница типографика"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:296
+msgid "Service Title Typography"
+msgstr "Услуги Название типографика"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:352
+msgid "Portfolio Title Typography"
+msgstr "Портфолио Название типографика"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:409
+msgid "Widget Heading Title"
+msgstr "Виджет Заголовок Заголовок"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:465
+msgid "Call Out Area Title"
+msgstr "взывать области заголовка"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:521
+msgid "Call Out Area Description"
+msgstr "взывать описание зоны"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/customizer/customizer_typography.php:577
+msgid "Call Out Area Button"
+msgstr "взывать кнопку области"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/menu/default_menu_walker.php:23
+msgid "Home"
+msgstr "Главная"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/widget/custom-sidebar.php:15
+msgid "Sidebar"
+msgstr "Боковая панель"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/widget/custom-sidebar.php:17
+msgid "The primary widget area"
+msgstr "Область первичного виджета"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/widget/custom-sidebar.php:25
+msgid "Footer Widget Area"
+msgstr "Область виджета сноска"
+
+#: C:\xampp\htdocs\wp_details\wp-content\themes\rambo/functions/widget/custom-sidebar.php:27
+msgid "footer widget area"
+msgstr "Область виджета сноска"
