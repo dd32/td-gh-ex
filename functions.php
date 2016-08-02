@@ -237,6 +237,7 @@ if (!function_exists('barletta_custom_css_output'))  {
 			'.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover { background-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
 			'.widget_tag_cloud a:hover { background-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; border-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
 			'.blog-post .entry-meta a:hover { color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; border-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
+			'.dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus { background-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }' .
 			'button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover { background-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; border-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }';		}
 		if ( get_theme_mod('barletta_accent_color')) {
 			echo '.post-navigation .nav-links .meta-nav span { color: ' . get_theme_mod( 'barletta_accent_color' ) . '; }' .

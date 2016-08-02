@@ -4,7 +4,7 @@ Theme URI: http://moozthemes.com/barletta-wordpress-theme
 Author: MOOZ Themes
 Author URI: http://moozthemes.com
 Description: Barletta is a light, elegant and clean design WordPress blog theme which is mainly designed for lifestyle, travel, fashion, food, personal blog and other publishers. Theme is carefully crafted with attention to details and love. Barletta blog theme is fully responsive and your web site will adapt to display on all types of devices. Theme is based on the versatile Bootstrap framework which is known for being reliable and well made making it friendly for developers. Overall, Barletta is a visually stunning theme with polished typography and simple design, great for bloggers. Now theme is optimized to work with WooCommerce, Contact Form 7 and other popular free and premium plugins. Enjoy writing, enjoy blogging!
-Version: 1.0.5
+Version: 1.0.6
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: barletta
@@ -410,6 +410,10 @@ dd {
 
 .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
 	color: #fff;
+	background-color: #7DC07B;
+}
+
+.dropdown-menu>.active>a, .dropdown-menu>.active>a:hover, .dropdown-menu>.active>a:focus {
 	background-color: #7DC07B;
 }
 

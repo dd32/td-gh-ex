@@ -92,3 +92,7 @@ Drag and drop these widgets to above two widget areas and arrange them as you li
 1.0.5 - 01.08.2016
 * added feature to change title color
 * added WooCommerce support
+
+1.0.6 - 02.08.2016
+* Fixed issue with WooCommerce sidebar
+* Fixed issue with category submenu active color

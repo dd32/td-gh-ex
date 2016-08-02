@@ -18,7 +18,7 @@
 					$show_sidebar = false;
 				}
 				$barletta_sidebar_id = "sidebar-1";
-				if ( is_woocommerce() ) {
+				if(  function_exists ( "is_woocommerce" ) && is_woocommerce()) {
 					$barletta_sidebar_id = "WooCommerce Sidebar";
 				}
 				?>
