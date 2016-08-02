@@ -81,15 +81,8 @@ function bhost_setup() {
 endif; // bhost_setup
 add_action( 'after_setup_theme', 'bhost_setup' );
 
-define('BHOST_PRO_THEME_URL','//codegrape.com/item/bhost-pro-responsive-wordpress-theme/8758','bhost');
+define('BHOST_PRO_THEME_URL','//devitems.com/item/bhost-pro-responsive-wordpress-theme/','bhost');
 define('BHOST_LIVE_DEMO','//getmasum.net/preview/bhost/','bhost');
-
-//default menu
-function bhost_default_menu(){
-	echo '<ul class="nav">';
-	echo '<li class="current-menu-item"><a href="'.esc_url(home_url()).'">'.__('Home' , 'bhost').'</a></li>';
-	echo '</ul>';
-}
 
 
 /**

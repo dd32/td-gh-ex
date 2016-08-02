@@ -31,8 +31,8 @@
 							
 			<div class="mainmenu">
 				<div class="container">
-					<nav>
-						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => 'bhost_default_menu', 'menu_id' => 'nav', ) ); ?>
+					<nav id="nav">
+						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => '', ) ); ?>
 					</nav>
 				</div>
 			</div>										
