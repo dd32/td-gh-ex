@@ -7,17 +7,23 @@ Description: If You are building one page landing/squeeze Page, use this templat
 get_header( 'squeeze' ); ?>
 
 <div id="content" class="site-content full-width-template">
+	
 	<div class="site-content-inner">
 
 		<div id="primary" class="content-area full-width-template">
+			
 				<main id="main" class="site-main">
 				<?php 
 				while ( have_posts() ) : the_post(); 
-				get_template_part( 'template-parts/content', 'page' );
-				endwhile; // end of the loop. 
+					
+					get_template_part( 'content', 'page' );
+					
+				endwhile;
 				?>
 		
 			</main><!-- #main -->
+			
 		</div><!-- #primary -->
 
-<?php get_footer( 'squeeze' ); ?>
+<?php 
+get_footer( 'squeeze' );

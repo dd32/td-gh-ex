@@ -4,7 +4,7 @@ Theme URI: http://www.beamtheme.com
 Author: Emir Muracevic
 Author URI: http://www.beamtheme.com/author/emirowski/
 Description: <code>Beam</code> is a Multi-purpose, Responsive Wordpress Theme.
-Version: 0.8.3
+Version: 0.8.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: beam
@@ -280,17 +280,13 @@ h3, h4, h5, h6 {
 	font-weight: bold;
 }
 
-.entry-content-new h1 {
-	clear: none;
-}
-
+.entry-content-new h1,
 .entry-content-new h2,
 .entry-content-new h3,
 .entry-content-new h4,
 .entry-content-new h5,
 .entry-content-new h6 {
 	clear: none;
-	color: #8EAEB6;
 }
 
 h1.page-title { margin-bottom: 15px; }
@@ -693,9 +689,7 @@ a:active{
 	content: " \f054";
 }
 
-.main-navigation ul a {	
-	padding: 10px; /* Padding around each top level menu option (if needed) */
-}
+.main-navigation ul a {	padding: 10px; /* Padding around each top level menu option (if needed) */ }
 
 .main-small-navigation a, .main-navigation a {	
 	display: block;	
@@ -720,9 +714,7 @@ a:active{
 	font-size: 14px;
 }
 
-.main-navigation ul ul a {
-	padding: 5px 10px; /* Padding around each dropdown menu option */
-}
+.main-navigation ul ul a { padding: 5px 10px; /* Padding around each dropdown menu option */ }
 
 .main-navigation ul li:hover > ul {	display: block;}
 
@@ -870,8 +862,6 @@ a:active{
 .entry-content-sidebar .byline { 
 	clear: both; 
 }
-
-
 
 .page-content,
 .entry-content,
@@ -1146,14 +1136,6 @@ object {
 }
 
 
-/* Make sure embeds and iframes fit their containers */
-embed,
-iframe,
-object {
-	max-width: 100%;
-}
-
-
 /* =Navigation
 ----------------------------------------------- */
 .site-main [class*="navigation"] {
@@ -1309,19 +1291,13 @@ span .author {
 /* =Widgets
 ----------------------------------------------- */
 
-.widget {
-	margin: 15px 10px;
-}
+.widget { margin: 15px 10px; }
 
 /* Make sure select elements fit in widgets */
-.widget select {
-	max-width: 100%;
-}
+.widget select { max-width: 100%; }
 
 /* Search widget */
-.widget_search .search-submit {
-	display: none;
-}
+.widget_search .search-submit { display: none; }
 
 #secondary .widget li,
 #tertiary .widget li,
@@ -1432,37 +1408,24 @@ footer.entry-meta .fa-permalink a { text-decoration: none; margin-right: 15px; p
     margin-left: -90px;
 }
 
-.logo {
-	margin: 10px 15px;
-}
+.logo { margin: 10px 15px; }
 
-.site-info {
+.site-info { 
 	clear: both; 
 	padding: 20px; 
 	text-align: center; 
 	font-size: small;
 }
 
-.site-info a {
-	color: #fafafa;
-}
+.site-info a { color: #fafafa; }
 
-.site-info p {
-	font-weight: 800;
-}
+.site-info p { font-weight: 800; }
 
-.format-gallery #secondary {
-	display: none;
-} 
+.format-gallery #secondary { display: none; } 
 
-.pingback {
-	line-height: 2.2;
-}
+.pingback { line-height: 2.2; }
 
-#breadcrumbs {
-	font-size: 14px;
-}
-
+#breadcrumbs { font-size: 14px; }
 
 .clearfix:after {
 	visibility: hidden;
@@ -1474,12 +1437,13 @@ footer.entry-meta .fa-permalink a { text-decoration: none; margin-right: 15px; p
 	}
 
 
-
 /* Colors */
 
-.site {
+/* Conflicts with Customizer Site Background Color
+site {
     background: #f1f1f1;
 }
+*/
 
 .site-content {
 	border-left: 1px solid #ccc;
@@ -1547,38 +1511,24 @@ a:visited,
 	color: #615A55; 
 }
 
+.comment-reply-title { border-bottom: 2px #258A24 solid; }
 
-.comment-reply-title {
-    border-bottom: 2px #258A24 solid;
-}
-
-.entry-content-new h1 {
-	color: #3c763d;
-}
+.entry-content-new h1 { color: #3c763d; }
 
 
-blockquote {
-    background: rgba(235, 241, 231, 0.8);
-}
-
+blockquote { background: rgba(235, 241, 231, 0.8); }
 
 
 /* =No Sidebar
 ----------------------------------------------- */
-.no-sidebar #secondary {
-	display: none;
-}
+.no-sidebar #secondary { display: none; }
 
-.no-sidebar #primary {
-	width: 100%;
-}
+.no-sidebar #primary { width: 100%; }
 
 
 /* =Left Sidebar
 ----------------------------------------------- */
-.sidebar-left #primary {
-	float: right;
-}
+.sidebar-left #primary { float: right; }
 
 .sidebar-left #secondary {
 	float: left;
@@ -1590,26 +1540,18 @@ blockquote {
 
 /* =Page Templates
 ----------------------------------------------- */
-#primary.no-sidebar-template {
-	width: 100%;
-}
+#primary.no-sidebar-template { width: 100%; }
 
-#content.full-width-template {
+#content.full-width-template { max-width: 100%; }
+
+.full-width-template .site-main { padding: 0; }
+
+.site-content .full-width-template { 
+	width: 100%; 
 	max-width: 100%;
 }
 
-.full-width-template .site-main {
-	padding: 0; 
-}
-
-.site-content .full-width-template {
-	width: 100%;
-	max-width: 100%;
-}
-
-#primary.full-width-template {
-	width: 100%;
-}
+#primary.full-width-template { 	width: 100%; }
 
 
 /* =Media Queries
@@ -1654,8 +1596,7 @@ blockquote {
 	
 	}
 	.site-branding {
-	/*	width:100%;*/
-        margin: 0;
+		margin: 0;
 	}
 }
 
@@ -1689,9 +1630,7 @@ blockquote {
 		width: 240px;
 	}
 	
-	.double-sidebar-narrow #tertiary {
-		margin-right: -260px;
-	}
+	.double-sidebar-narrow #tertiary { margin-right: -260px; }
 	
 	.double-sidebar .site-content-inner {
 		padding-left: 340px;
@@ -1746,9 +1685,7 @@ blockquote {
         position: relative;
     }
     
-	.widget-area-footer {
-		padding: 20px;
-	}
+	.widget-area-footer { padding: 20px; }
 
 	footer aside.widget {
 		width: 94%; !important;
@@ -1763,38 +1700,24 @@ blockquote {
 		padding: 5px;
 	}
 
-	footer aside {
-		padding-left: 15px;
-	}
+	footer aside { padding-left: 15px; }
 
-	.avatar {
-		width: 40px;
-	}
+	.avatar { width: 40px; }
 
-	.site-header {
-		height: auto;
-	}
+	.site-header { height: auto; }
 
-	.widget-area .widget li a:before {
-	    left: 25px;
-	}
+	.widget-area .widget li a:before { left: 25px; }
 
-	.entry-title, .entry-title a {
-		font-size: 32px;	
-	}
+	.entry-title, .entry-title a { font-size: 32px;	}
 
-	input[type="submit"]  {
-		width: 95%;
-	}
+	input[type="submit"]  { width: 95%; }
 	
 	ul, ol {
-    margin: 0 0 1.5em 2em;
-    padding: 0;
+		margin: 0 0 1.5em 2em;
+		padding: 0;
 	}
 	
-	ul {
-    list-style-position: inside;
-	}
+	ul { list-style-position: inside; }
 }
 
 

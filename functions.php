@@ -21,13 +21,11 @@ function beam_setup() {
 	 * Make theme available for translation
 	 * Translations can be filed in the /languages/ directory
 	 */
-
 	load_theme_textdomain( 'beam', get_template_directory() . '/languages' );
 
 	/**
 	 * Add default posts and comments RSS feed links to head
 	 */
-
 	add_theme_support( 'automatic-feed-links' );
 
 	/*
@@ -36,30 +34,26 @@ function beam_setup() {
 	 * hard-coded <title> tag in the document head, and expect WordPress to
 	 * provide it for us.
 	 */
-	
 	add_theme_support( 'title-tag' );
-	
 	
 	
 	/**
 	 * Enable support for Post Thumbnails on posts and pages
 	 *
 	 */
-
 	if ( function_exists( 'add_theme_support' ) ) { 
 		add_theme_support( 'post-thumbnails' );
 		set_post_thumbnail_size( 150, 150, true ); // default Post Thumbnail dimensions, cropped
 		// additional image sizes
-		add_image_size( 'big-thumbnail', 600, 220); //500 pixels wide and unlimited height, cropped
-		add_image_size( 'small-thumbnail', 300, 9999, true); //500 pixels wide and unlimited height, cropped
-		add_image_size( 'thumb-large', 720, 340 ); // Soft proprtional crop to max 720px width, max 340px height
+		add_image_size( 'beam-big-thumbnail', 600, 220); //500 pixels wide and unlimited height, cropped
+		add_image_size( 'beam-small-thumbnail', 300, 9999, true); //500 pixels wide and unlimited height, cropped
+		add_image_size( 'beam-thumb-large', 720, 340 ); // Soft proprtional crop to max 720px width, max 340px height
 	}
 
 
 	/**
 	* This theme uses wp_nav_menu() in two locations.
 	*/
-
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'beam' ),
 		'footer' => __( 'Footer Menu', 'beam' ),
@@ -90,53 +84,33 @@ function beam_setup() {
 		'quote',
 		'link',
 	) );
+	
+	// Enable support for Custom Logo
+    add_theme_support('custom-logo');
+
+	
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( '_s_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'beam_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
 	
-
-
-	/**
-	 * Declare Theme Editor Styling Support
-	 * 
-	 */
-
-	if(!is_admin()){
-		function my_theme_add_editor_styles() {
-			//add_editor_style( 'custom-editor-style.css' );
-			$font_url = str_replace( ',', '%2C', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' );
-			add_editor_style( $font_url );
-		}
-		add_action( 'after_setup_theme', 'beam_setup' );
-	}
-
-	/**
-	* Declare Custom Header Support
-	*/
-
-	$args = array(
-		'width'         => 1312,
-		'height'        => 100,
-		//'default-image' => '' //get_template_directory_uri() . '/inc/images/default-header-bcg.png',
-		'uploads'       => true,
-	);
-
-	add_theme_support( 'custom-header', $args );
-
-	/**
-	 * Set the content width based on the theme's design and stylesheet.
-	 */
-	if ( ! isset( $content_width ) )
-		$content_width = 1170; /* pixels */
-	
 }
-	endif; // beam_setup
-
-
+endif; // beam_setup
 add_action( 'after_setup_theme', 'beam_setup' );
 
+
+/**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+function beam_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'beam_content_width', 1170 );
+}
+add_action( 'after_setup_theme', 'beam_content_width', 0 );
 
 
 /**
@@ -185,35 +159,15 @@ function beam_widgets_init() {
 add_action( 'widgets_init', 'beam_widgets_init' );
 
 
-/**
- * Add Kirki
- */
-
-include_once( dirname( __FILE__ ) . '/inc/adm/kirki/kirki.php' );
-
-/**
- * Change the URL that will be used by Kirki
- * to load its assets in the customizer.
- */
-
-function kirki_update_url( $config ) {
-    $config['url_path'] = get_template_directory_uri() . '/inc/adm/kirki/';
-    return $config;
-	add_action( 'wp_enqueue_scripts', function() {
-		remove_action( 'wp_enqueue_scripts', array( Kirki()->styles['front'], 'enqueue_styles' ) );
-	}, 999 );
-}
-add_filter( 'kirki/config', 'kirki_update_url' );
-
 
 /**
  * Enqueue jquery needed for Mobile Menu
  */
 
-function insert_jquery(){
+function beam_insert_jquery(){
 	wp_enqueue_script('jquery', false, array(), false, false);
 }
-add_filter('wp_enqueue_scripts','insert_jquery',1);
+add_filter('wp_enqueue_scripts','beam_insert_jquery',1);
 
 
 /**
@@ -244,17 +198,6 @@ add_action( 'wp_enqueue_scripts', 'beam_styles' );
 
 
 /**
- * Load content-one content
- * Used in Include One template
- */ 
-
-function load_content_one($path) {
-	  $post = get_page_by_path($path);
-	  $content = apply_filters('the_content', $post->post_content);
-	  echo $content;
-}
-
-/**
  * Custom template tags for this theme.
  */
 
@@ -279,3 +222,37 @@ require get_template_directory() . '/inc/customizer.php';
  */
 
 require get_template_directory() . '/inc/jetpack.php';
+
+
+/**
+ * Add Kirki
+ */
+
+include_once( dirname( __FILE__ ) . '/inc/adm/kirki/kirki.php' );
+
+
+/**
+ * Load content-one content
+ * Used in Include One template
+ */ 
+
+function beam_load_content_one($path) {
+	  $post = get_page_by_path($path);
+	  $content = apply_filters('the_content', $post->post_content);
+	  echo $content;
+}
+
+
+/**
+ * Change the URL that will be used by Kirki
+ * to load its assets in the customizer.
+ */
+
+function beam_kirki_update_url( $config ) {
+    $config['url_path'] = get_template_directory_uri() . '/inc/adm/kirki/';
+    return $config;
+	add_action( 'wp_enqueue_scripts', function() {
+		remove_action( 'wp_enqueue_scripts', array( Kirki()->styles['front'], 'enqueue_styles' ) );
+	}, 999 );
+}
+add_filter( 'kirki/config', 'beam_kirki_update_url' );

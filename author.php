@@ -8,64 +8,61 @@
 
 get_header(); ?>
 
-<div id="content" class="site-content">
-<div class="site-content-inner">
+	<div id="content" class="site-content">
+		<div class="site-content-inner">
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+			<section id="primary" class="content-area">
+				<main id="main" class="site-main" role="main">
 
-		<?php if ( have_posts() ) : ?>
-		<?php
-		the_post();
-		?>
+				<?php if ( have_posts() ) : 
+				the_post();
+				?>
 
-		<header class="page-header">
-			
-			<div id="author-description" class="round-corners">  
+				<header class="page-header">
 
-				<h2><?php printf( __( 'About %s', 'beam' ), get_the_author() ); ?></h2> 
-				<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'beam_author_bio_avatar_size', 60 ) ); ?>
-				<?php the_author_meta( 'description' ); ?><br />
-				<a class="author-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">View all posts by <?php the_author(); ?> <span class="meta-nav">&rarr;</span></a>
+					<div id="author-description" class="round-corners">  
 
-			</div><!-- #author-description -->
+						<h2><?php printf( __( 'About %s', 'beam' ), get_the_author() ); ?></h2> 
+						<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'beam_author_bio_avatar_size', 60 ) ); ?>
+						<?php the_author_meta( 'description' ); ?><br />
+						<a class="author-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">View all posts by <?php the_author(); ?> <span class="meta-nav">&rarr;</span></a>
 
-		</header>
+					</div><!-- #author-description -->
 
-			
-			<?php
-			rewind_posts();
+				</header>
 
-				beam_content_nav( 'nav-above' ); 
 
-				/* Start the Loop */ 
-				while ( have_posts() ) : the_post(); 
+					<?php
+					rewind_posts();
 
-					get_template_part( 'content', get_post_format() );
+						beam_content_nav( 'nav-above' );
 
-				endwhile; 
+						/* Start the Loop */ 
+						while ( have_posts() ) : the_post();
 
-				// toolbox_content_nav( 'nav-below' );
+							get_template_part( 'content', get_post_format() );
 
-				else : 
-			?>
+						endwhile;
 
-			<article id="post-0" class="post no-results not-found">
+						else :
+					?>
 
-				<header class="entry-header">
-					<h1 class="entry-title"><?php _e( 'Nothing Found', 'beam' ); ?></h1>
-				</header><!-- .entry-header -->
+					<article id="post-0" class="post no-results not-found">
 
-				<div class="entry-content">
-					<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'beam' ); ?></p>
-					<?php get_search_form(); ?>
-				</div><!-- .entry-content -->
-			</article><!-- #post-0 -->
+						<header class="entry-header">
+							<h1 class="entry-title"><?php _e( 'Nothing Found', 'beam' ); ?></h1>
+						</header><!-- .entry-header -->
 
-			<?php endif; ?>
+						<div class="entry-content">
+							<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'beam' ); ?></p>
+							<?php get_search_form(); ?>
+						</div><!-- .entry-content -->
+					</article><!-- #post-0 -->
 
-		</main><!-- .site-main -->
-	</section><!-- #primary -->
+					<?php endif; ?>
+
+				</main><!-- .site-main -->
+			</section><!-- #primary -->
  
 <?php
 get_sidebar(); 
