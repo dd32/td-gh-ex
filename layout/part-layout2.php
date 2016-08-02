@@ -4,20 +4,13 @@
 
 <div class="large-9 columns <?php if ( !is_active_sidebar( 'sidebar' ) ){ ?> nosid <?php }?>">
 
-
-
 <!--Content-->
  <?php  
   		
-		if(!empty($advance['blog_cat_id'])){
-			$blogcat = $advance['blog_cat_id'];
-			$blogcats =implode(',', $blogcat);
-			}else{$blogcats = '';}
        $args = array(
                      'post_type' => 'post',
-                     'cat' => ''.$blogcats.'',
-                     'paged' => ( get_query_var('paged') ? get_query_var('paged') : 1),
-                     'posts_per_page' => ''.absint($advance['blog_num_id']).'');
+                    'paged' => ( get_query_var('paged') ? get_query_var('paged') : 1),
+                     );
       $the_query = new WP_Query( $args );
    ?>
                 <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>

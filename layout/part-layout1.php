@@ -29,16 +29,16 @@
 						        
 								 echo '<div class=" imgwrap">';
     
-                                 echo '<a href="';esc_url( the_permalink()); echo '" >';
+                                 echo '<a href="'; the_permalink(); echo '" >';
                                  the_post_thumbnail();
                                  echo '</a>';
                                  echo '</div>';
                                  } else {
     
                                 echo '<div class=" imgwrap">';
-                                echo '<a href="'; esc_url( the_permalink()); echo '">';
+                                echo '<a href="'; the_permalink(); echo '">';
      							echo '<img src="';
-     							echo  advance_catch_that_image();
+     							echo esc_url (advance_catch_that_image());
      							echo '" alt="" />';
      							echo '</a>';
     							echo '</div>';

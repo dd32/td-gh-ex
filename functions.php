@@ -189,8 +189,8 @@ if( isset($advance_body_layout) && $advance_body_layout == 1 ){
 wp_enqueue_style( 'advance_body_check', get_template_directory_uri() . '/css/customcss/body_layout.css' ,'body_layout', true);
 
 }
-$advance_sticky_menu = get_theme_mod('advance_sticky_menu',1);
-if( isset($advance_sticky_menu) && $advance_sticky_menu == 0 ){
+$advance_sticky_menu = get_theme_mod('advance_sticky_menu',0);
+if( isset($advance_sticky_menu) && $advance_sticky_menu == 1 ){
 wp_enqueue_style( 'advance_sticky_check', get_template_directory_uri() . '/css/customcss/sticky_menu.css' ,'sticky_menu', true);
 
 }

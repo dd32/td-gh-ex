@@ -22,7 +22,7 @@ Kirki::add_field( 'advance', array(
     'settings'    => 'advance_sticky_menu',
     'label'       => esc_attr__( 'Disable sticky menu', 'advance' ),
     'section'     => 'layout_front_page',
-    'default'     => '1',
+    'default'     => '0',
     'priority'    => 10,
 ) );
 
