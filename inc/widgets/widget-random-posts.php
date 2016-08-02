@@ -8,9 +8,9 @@
 /**
  * Adds accesspress_mag_random_posts widget.
  */
-add_action('widgets_init', 'register_random_posts_widget');
+add_action('widgets_init', 'accesspress_mag_register_random_posts_widget');
 
-function register_random_posts_widget() {
+function accesspress_mag_register_random_posts_widget() {
     register_widget('accesspress_mag_register_random_posts');
 }
 

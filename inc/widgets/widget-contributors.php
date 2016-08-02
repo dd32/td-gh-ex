@@ -8,9 +8,9 @@
 /**
  * Adds accesspress_mag_contributors widget.
  */
-add_action( 'widgets_init', 'article_contributors_widget' );
+add_action( 'widgets_init', 'accesspress_mag_article_contributors_widget' );
 
-function article_contributors_widget() {
+function accesspress_mag_article_contributors_widget() {
     register_widget( 'accesspress_mag_article_contributors' );
 }
 

@@ -43,7 +43,7 @@
         <div class="top-menu-wrapper <?php echo esc_attr( $top_menu_class ); ?> clearfix">
             <div class="apmag-container">
             <?php if( empty( $apmag_date_option ) && $apmag_date_option != '1' ) { ?>
-            <div class="current-date"><?php echo date('l, F j, Y'); ?></div>
+            <div class="current-date"><?php echo date_i18n( 'l, F j, Y' ); ?></div>
             <?php } ?>
             <?php if ( has_nav_menu( 'top_menu' ) ) { ?>   
                 <nav id="top-navigation" class="top-main-navigation">

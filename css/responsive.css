@@ -129,6 +129,11 @@
     }
 }
 /* Landscape phone to portrait tablet */
+@media(max-width: 768px) {
+    .big_slide{
+        width: 100%;
+    }
+}
 
 @media (max-width: 767px) {
     .site-branding {
