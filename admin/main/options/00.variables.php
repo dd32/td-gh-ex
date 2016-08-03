@@ -106,21 +106,6 @@ function thinkup_reduxvariables() {
 	$GLOBALS['thinkup_post_layout']                         = thinkup_var ( 'thinkup_post_layout' );
 	$GLOBALS['thinkup_post_sidebars']                       = thinkup_var ( 'thinkup_post_sidebars' );
 
-	//  1.6.     Portfolio.
-
-	//  1.7.     Contact Page.
-
-	//  1.8.     Special pages.
-
-	//  1.9.     Notification bar.
-
-	//  1.10.     Search engine optimisation.
-
-	//  1.11.     Typography.
-
-	//  1.12.     Custom styling.
-
-	//  1.13.     Support.
 }
 add_action( 'thinkup_hook_header', 'thinkup_reduxvariables' );
 

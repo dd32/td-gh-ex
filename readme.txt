@@ -127,6 +127,11 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.3.14
+- Updated: Improved validation in a number of files in the main theme folder.
+- Updated: 08.special-pages.php removed and 404 page content added directly to 404.php.
+- Updated: thinkup_Walker_Nav_Menu_Responsive() renamed to thinkup_nav_menu_responsive().
+
 Version 1.3.13
 - Fixed:   Custom Redux extensions now moved to folder main-extensions to ensure compatibility with Redux plugin. Ensures plugin and theme can be used without conflicting.
 - Updated: "ReduxFramework::$_url . 'assets/img/layout" changed to "trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout"
