@@ -3,7 +3,6 @@
     .grid-container {
          @include outer-container;
     }
-
     .col2 {
         @include span-columns(6);
         @include omega(2n);

@@ -63,22 +63,19 @@ class IGthemes_More_Control extends WP_Customize_Control {
      */
     public function render_content() {
         ?>
-        <label style="overflow: hidden; zoom: 1;">
 
             <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-
             <p>
                 <?php esc_html_e( 'Base WP Premium expands the already powerful free version of this theme and gives access to our priority support service.', 'base-wp' ); ?></br>
-                <a href="<?php echo esc_url( admin_url() . 'themes.php?page=igthemes-welcome' ); ?>"><?php esc_html_e( 'Read more', 'base-wp' ); ?></a>
+                <a href="<?php echo esc_url( 'http://www.iograficathemes.com/downloads/base-wp-premium' ); ?>" target="_blank" class="button-upgrade"><?php esc_html_e('upgrade to premium', 'base-wp'); ?></a>
             </p>
 
-            <span class="customize-control-title"><?php printf( esc_html__( 'Enjoying %s?', 'base-wp' ), 'base-wp' ); ?></span>
+            <span class="customize-control-title"><?php esc_html_e( 'Enjoying the theme?', 'base-wp' ); ?></span>
 
             <p>
                 <?php printf( esc_html__( 'Why not leave us a review on %sWordPress.org%s?  We\'d really appreciate it!', 'base-wp' ), '<a href="https://wordpress.org/themes/base-wp">', '</a>' ); ?>
             </p>
 
-        </label>
         <?php
     }
 }

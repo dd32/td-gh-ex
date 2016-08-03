@@ -4,7 +4,7 @@ Theme URI: http://www.iograficathemes.com/downloads/base-wp/
 Author: iografica
 Author URI: http://www.iograficathemes.com/
 Description: Base WP is a basic blog or business, responsive and clean coded, WordPress theme. Base WP is e-commerce, multilingual ready, SEO friendly and cross-browser compatible. The theme is fully integrated with the most popular and free plugins for Wordpress like WooCommerce, Easy Digital Downloads, Yoast Seo, Beaver Builder, and much more. You can customize the theme via the Customizer, use this theme as an ecommerce or as a simple blogging platform.
-Version: 1.42
+Version: 1.43
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: base-wp
@@ -1818,6 +1818,10 @@ a:hover, a:active {
   font-size: .9em;
 }
 
+.pagination {
+  clear: both;
+}
+
 ul.page-numbers {
   list-style: none;
   margin: 0;
@@ -2089,6 +2093,89 @@ h3.widget-title {
   content: "\e060";
 }
 
+.ig-recent-posts-widget .post-image {
+  float: left;
+  margin: 0 10px 5px 0;
+  width: 50px;
+  height: auto;
+}
+
+.ig-recent-posts-widget .post-date,
+.ig-recent-posts-widget .post-excerpt {
+  font-size: .9em;
+}
+
+.ig-recent-posts-widget .post-excerpt {
+  display: block;
+}
+
+.ig-social-widget a {
+  display: block;
+  margin: 5px 0;
+  padding: 8px 10px;
+  color: #fff !important;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+.ig-social-widget a .text {
+  margin-left: 10px;
+}
+
+.ig-social-widget a:hover {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+  -moz-opacity: 0.8;
+  -khtml-opacity: 0.8;
+  opacity: 0.8;
+}
+
+.ig-social-widget .facebook {
+  background: #3b5998;
+  border-color: #344e86;
+}
+
+.ig-social-widget .twitter {
+  background: #55acee;
+  border-color: #3ea1ec;
+}
+
+.ig-social-widget .google {
+  background: #dd4b39;
+  border-color: #d73925;
+}
+
+.ig-social-widget .youtube {
+  background: #cd201f;
+  border-color: #b71d1c;
+}
+
+.ig-social-widget .linkedin {
+  background: #007bb5;
+  border-color: #006a9c;
+}
+
+.ig-social-widget .instagram {
+  background: #e4405f;
+  border-color: #e12a4c;
+}
+
+.ig-social-widget .pinterest {
+  background: #cb2027;
+  border-color: #b51d23;
+}
+
+.ig-social-widget .tumblr {
+  background: #32506d;
+  border-color: #2a435c;
+}
+
+.ig-social-widget .dribbble {
+  background: #ea4c89;
+  border-color: #e7357a;
+}
+
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
@@ -2197,7 +2284,7 @@ h3.widget-title {
 }
 
 .site-footer .scroll-top #scrolltop {
-  font-size: 1.6em;
+  font-size: 1.2em;
   border: 1px solid;
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
@@ -2229,6 +2316,10 @@ article {
 .entry-title {
   margin-bottom: 15px;
   padding-bottom: 0;
+}
+
+.page .entry-meta, .page .entry-footer {
+  display: none;
 }
 
 .entry-meta, .entry-footer {
@@ -2388,7 +2479,7 @@ article {
 }
 
 .hentry {
-  margin: 0 0 1.5em;
+  margin-bottom: 1.5em;
 }
 
 .updated:not(.published) {
@@ -3065,4 +3156,17 @@ input[type="submit"].edd-submit {
 
 .fl-builder.full-width .hentry {
   margin-bottom: 0;
+}
+
+.elementor-page .site-content {
+  content: "";
+  display: table;
+  table-layout: fixed;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  clear: both;
+  padding-left: 0;
+  padding-right: 0;
 }

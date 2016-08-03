@@ -15,6 +15,9 @@ if ( ! function_exists( 'igthemes_page_header' ) ) {
 
     <header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+        <div class="entry-meta">
+			<?php igthemes_posted_on(); ?>
+		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
    <?php }
