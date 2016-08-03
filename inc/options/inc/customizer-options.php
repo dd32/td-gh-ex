@@ -94,30 +94,19 @@ $wp_customize->add_section('social-settings', array(
         'settings' => 'lightbox',
         'priority'   => 5
     ) ) );
-    //main post content
-    $wp_customize->add_setting('main_post_content', array(
+    //main posts columns
+    $wp_customize->add_setting('main_posts_columns', array(
         'default'    		=> null,
         'sanitize_callback' => 'igthemes_sanitize_text',
     ));
-    $wp_customize->add_control( new IGthemes_Only_Premium( $wp_customize, 'main_post_content', array(
+    $wp_customize->add_control( new IGthemes_Only_Premium( $wp_customize, 'main_posts_columns', array(
         'label' => esc_html__('', 'base-wp'),
-        'description' => esc_html__('Display posts content as excerpt', 'base-wp'),
+        'description' => esc_html__('Show posts in two columns on blog?', 'base-wp'),
         'section' => 'layout-settings',
-        'settings' => 'main_post_content',
-        'priority'   => 6
+        'settings' => 'main_posts_columns',
+        'priority'   => 2
     ) ) );
-    //main featured images
-    $wp_customize->add_setting('main_featured_images', array(
-        'default'    		=> null,
-        'sanitize_callback' => 'igthemes_sanitize_text',
-    ));
-    $wp_customize->add_control( new IGthemes_Only_Premium( $wp_customize, 'main_featured_images', array(
-        'label' => esc_html__('', 'base-wp'),
-        'description' => esc_html__('Display featured images on archive', 'base-wp'),
-        'section' => 'layout-settings',
-        'settings' => 'main_featured_images',
-        'priority'   => 7
-    ) ) );
+    
     //shop_menu_link
     $wp_customize->add_setting('shop_menu_link', array(
         'default'    		=> null,
@@ -281,8 +270,8 @@ $wp_customize->add_section('social-settings', array(
             'main_sidebar',
             // $args
             array(
-                'label'			=> __( 'General Layout', 'base-wp' ),
-                'description'	=> __( 'Select the theme layout', 'base-wp' ),
+                'label'			=> __( 'Blog Layout', 'base-wp' ),
+                'description'	=> __( 'Select the blog layout', 'base-wp' ),
                 'priority' =>   1, 
                 'type'          => 'radio-image',
                 'section'		=> 'layout-settings',
@@ -293,6 +282,32 @@ $wp_customize->add_section('social-settings', array(
                 )
             )
     ));
+//main post content
+    $wp_customize->add_setting('main_post_content', array(
+        'sanitize_callback' => 'igthemes_sanitize_checkbox',
+        'default' => 0,
+    ));
+    $wp_customize->add_control('main_post_content', array(
+        'label' => esc_html__('Show full posts on blog?', 'base-wp'),
+        'description' => esc_html__('Display full posts content', 'base-wp'),
+        'type' => 'checkbox',
+        'section' => 'layout-settings',
+        'settings' => 'main_post_content',
+        'priority'   => 3
+    ));
+//main featured images
+    $wp_customize->add_setting('main_featured_images', array(
+        'sanitize_callback' => 'igthemes_sanitize_checkbox',
+        'default' => 1,
+    ));
+    $wp_customize->add_control('main_featured_images', array(
+        'label' => esc_html__('Show featured images on blog?', 'base-wp'),
+        'description' => esc_html__('Display posts featured images', 'base-wp'),
+        'type' => 'checkbox',
+        'section' => 'layout-settings',
+        'settings' => 'main_featured_images',
+        'priority'   => 4
+    ));
 //breadcrumb
     $wp_customize->add_setting(
         'breadcrumb',
@@ -302,9 +317,9 @@ $wp_customize->add_section('social-settings', array(
     $wp_customize->add_control(
         'breadcrumb',
         array(
-            'label'         => esc_html__('Display breadcrumb', 'base-wp'),
+            'label'         => esc_html__('Display breadcrumb?', 'base-wp'),
             'description'   => __( 'Yoast Breadcrumb supported<br>NavXT Breadcrumb supported', 'base-wp'),
-            'priority'      =>  2, 
+            'priority'      =>  5, 
             'type'          => 'checkbox',
             'section'       => 'layout-settings',
             'settings'      => 'breadcrumb',
@@ -318,9 +333,9 @@ $wp_customize->add_section('social-settings', array(
     $wp_customize->add_control(
         'numeric_pagination',
         array(
-            'label' =>esc_html__('Use numeric pagination', 'base-wp'),
+            'label' =>esc_html__('Use numeric pagination ?', 'base-wp'),
             'description' =>   __( 'WP-PageNavi supported', 'base-wp'),
-            'priority' =>       3,
+            'priority' =>       6,
             'type' =>           'checkbox',
             'section' =>        'layout-settings',
             'settings' => 'numeric_pagination',

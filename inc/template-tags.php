@@ -12,6 +12,7 @@ if ( ! function_exists( 'igthemes_posts_navigation' ) ) :
  * Display numeric pagination.
  */
 function igthemes_posts_navigation() {
+    echo '<div class="pagination">';
     if (get_theme_mod('numeric_pagination')) {
         if (function_exists('wp_pagenavi') ) {
             wp_pagenavi();
@@ -42,6 +43,7 @@ function igthemes_posts_navigation() {
             'next_text'          => __( 'Next','base-wp' ),
         ));
     }
+    echo "</div>";
 }
 endif;
 

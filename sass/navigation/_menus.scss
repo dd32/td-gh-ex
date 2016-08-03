@@ -179,6 +179,9 @@
 	}
 }
 //numeric pagination
+.pagination {
+    clear: both;
+}
 ul.page-numbers {
     list-style: none;
     margin: 0;

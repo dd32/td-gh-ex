@@ -24,54 +24,33 @@
         <?php } else { ?>
         <h3><?php printf(esc_html__('%s Premium', 'base-wp'), $theme_data->Name); ?></h3>
         <p class="about">
-            <?php printf(__('%s Premium expands the already powerful free version of this theme and gives access to our <b>priority support</b> service.', 'base-wp'), $theme_data->Name); ?>
-        </p>
-        <p>
+            <?php printf(__('%s Premium expands the already powerful free version of this theme and gives access to our priority support service.', 'base-wp'), $theme_data->Name); ?>
+        </p>    
+        <p> 
             <a href="<?php echo esc_url( 'http://www.iograficathemes.com/downloads/base-wp-premium' ); ?>" target="_blank" class="button-upgrade"><?php esc_html_e('upgrade to premium', 'base-wp'); ?></a>
         </p>
-        <div class="features">
-        <?php _e('<p><i>Listed below are only the extras that the paid version brings:</i>
-        <h4><span class="dashicons dashicons-layout"></span> Main Layout</h4>
-        <p>Show posts content as excerpt or as full content and show or hide featured images in the archives pages.</p>
-        <h4><span class="dashicons dashicons-cart"></span> Shop Layout</h4>
-        <p>Now you can choose the layout for the shop page and set up how many products display per page.</p>
-        <h4><span class="dashicons dashicons-layout"></span>Header Layout</h4>
-        <p>Change the layout (inline or expanded) of your website’s header with just one click.</p>
-        <h4><span class="dashicons dashicons-cart"></span> Shop Buttons</h4>
-        <p>Do want change the colors of the buttons of your products? Now you can do it.</p>
-        <h4><span class="dashicons dashicons-editor-code"></span> Custom CSS</h4>
-        <p>Add your custom css code thanks to the Customizer Advanced Settings panel.</p>
-        <h4><span class="dashicons dashicons-editor-code"></span> Custom JS</h4>
-        <p>Add your custom javascript code, like Google Analytics code ore something else.</p>','base-wp');?>
-        </div>
         <?php } ?>
+    </div>
+     <div class="theme_link">
+        <h3><?php esc_html_e( 'Enjoying the theme?', 'base-wp' ); ?></h3>
+        <p class="about"><?php esc_html_e( 'If you like this theme why not leave us a review on WordPress.org?  We\'d really appreciate it!', 'base-wp' ); ?></p>
+        <p>
+            <a href="<?php echo esc_url( 'https://wordpress.org/themes/base-wp' ); ?>" target="_blank" class="button button-secondary"><?php esc_html_e('Add Your Review', 'base-wp'); ?></a>
+        </p>
     </div>
     <div class="theme_link">
         <h3><?php esc_html_e( 'Theme Documentation', 'base-wp' ); ?></h3>
         <p class="about"><?php printf(esc_html__('Need any help to setup and configure %s? Please have a look at our documentations instructions.', 'base-wp'), $theme_data->Name); ?></p>
         <p>
-            <a href="<?php echo esc_url( 'http://www.iograficathemes.com/documentation/base-wp/' ); ?>" target="_blank" class="button button-secondary"><?php esc_html_e('View Documentation', 'base-wp'); ?></a>
+            <a href="<?php echo esc_url( 'http://www.iograficathemes.com/documentation/base-wp-premium/' ); ?>" target="_blank" class="button button-secondary"><?php esc_html_e('View Documentation', 'base-wp'); ?></a>
         </p>
+    </div>
+    <div class="theme_link">
         <h3><?php esc_html_e( 'Theme Customizer', 'base-wp' ); ?></h3>
         <p class="about"><?php printf(esc_html__('%s supports the Theme Customizer for all theme settings. Click "Customize" to start customize your site.', 'base-wp'), $theme_data->Name); ?></p>
         <p>
             <a href="<?php echo admin_url('customize.php'); ?>" class="button button-secondary"><?php esc_html_e('Start Customize', 'base-wp'); ?></a>
         </p>
-        <ul class="items">
-            <li class="extension">
-            <h3><?php esc_html_e( 'Theme Extension', 'base-wp' ); ?></h3>
-            <div class="product">
-                <span class="name">
-                    <?php esc_html_e( 'IG Side Menu', 'base-wp' ); ?>
-                </span><!-- item-name -->
-                <span class="buttons">
-                    <a class="download" target="_blank" href="http://www.iograficathemes.com/downloads/ig-side-menu/">
-                        <?php esc_html_e( 'View More', 'base-wp' ); ?>
-                    </a>
-                </span><!-- item-buttons -->
-            </div>
-            </li>
-        </ul>
     </div>
 
 

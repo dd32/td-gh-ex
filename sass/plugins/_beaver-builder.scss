@@ -47,3 +47,13 @@
         }
     }
 }
+//elementor
+.elementor-page {
+     .site-content {
+        @include outer-container(100%);
+        display: block;
+        clear: both;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
