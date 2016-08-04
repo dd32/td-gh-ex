@@ -1,6 +1,6 @@
 <?php 
 /* 	GREEN EYE Theme's About Page
-	Copyright: 2012-2015, D5 Creation, www.d5creation.com
+	Copyright: 2012-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since GREEN EYE 3.0
 */
@@ -55,12 +55,12 @@
 				</div>
 			</a>
             
-			<a href="<?php echo esc_url('http://d5creation.com/theme/green-eye/' ) ?>" target="_blank">
+			<a href="<?php echo esc_url('http://d5creation.com/theme/simplify/' ) ?>" target="_blank">
 				<div class="view view-sixth">
 					<img alt="Responsive WordPress Theme" src="<?php echo get_template_directory_uri() . '/inc/images/simplify.png' ?>" />
 					<div class="mask">
-						<h2>green</h2>
-						<p>green was the 5th top most Popular Theme at WordPress.org. This Theme is fully Responsive and Elegant. It can be used for any Websites</p>
+						<h2>SIMPLIFY</h2>
+						<p>SIMPLIFY was the 5th top most Popular Theme at WordPress.org. This Theme is fully Responsive and Elegant. It can be used for any Websites</p>
 						<span class="info">Read More</span>
 					</div>
 				</div>
@@ -75,7 +75,7 @@
 	</div>
     
     <div class="specialmsg">
-    		<div class="specialtext floatlt ">Extend Theme is only $7.5 with DEVELOPER Memnership</div>
+    		<div class="specialtext floatlt ">Extend Theme is only $7.5 with DEVELOPER Membership</div>
         	<a class="specialbutton floatrt" href="<?php echo esc_url('http://d5creation.com/mp/'); ?>">View Pricing and Features</a>
     </div>
 

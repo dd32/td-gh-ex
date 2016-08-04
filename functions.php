@@ -1,6 +1,6 @@
 <?php
 /* 	GREEN EYE Theme's Functions
-	Copyright: 2012-2015, D5 Creation, www.d5creation.com
+	Copyright: 2012-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since GREEN 1.0
 */
@@ -71,6 +71,10 @@
 	
 	wp_enqueue_style('green-gfonts');
 	wp_enqueue_style('green-gfonts1');
+	
+	// Load the html5 shiv.
+	wp_enqueue_script( 'green-html5', get_template_directory_uri() . '/js/html5.js', array() );
+	wp_script_add_data( 'green-html5', 'conditional', 'lt IE 9' );
 		
 	if (is_front_page()):
 	wp_enqueue_script( 'green-menu-style', get_template_directory_uri(). '/js/menu.js' );

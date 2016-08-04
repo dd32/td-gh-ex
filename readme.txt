@@ -1,7 +1,7 @@
 ----------------------------------
 GREEN EYE
 ----------------------------------
-Version: 	1.5.2
+Version: 	1.7
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
@@ -11,7 +11,7 @@ Copyright: 	D5 Creation
 License: 		GNU General Public License v2 or later
 License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
 
-This Product is provided "as is" with no waranty or liabilities of D5 Creation. All the PHP Code, Images, Icons and other particulars included with this product are licensed under the same License of the Theme. All Images, Icons are created by D5 Creation, Copyright: D5 Creation and License: GNU General Public License v2 or later
+This Product is provided "as is" with no warranty or liabilities of D5 Creation. All the PHP Code, Images, Icons and other particulars included with this product are licensed under the same License of the Theme. All Images, Icons are created by D5 Creation, Copyright: D5 Creation and License: GNU General Public License v2 or later
 
 themefeatures.png - FontAwesome Icons' Image, http://fortawesome.github.io/Font-Awesome/
 innovation.png - https://pixabay.com/en/woman-model-ipad-happiness-joy-692799/
@@ -27,6 +27,10 @@ Instructions:
 
 Changelog
 ================
+
+Version 1.7
+=============================
+- Code Cleanup
 
 Version 1.5.2
 =============================

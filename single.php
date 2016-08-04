@@ -1,7 +1,7 @@
 <?php
 
 /* 	GREEN EYE Theme's Single Page to display Single Page or Post
-	Copyright: 2012-2015, D5 Creation, www.d5creation.com
+	Copyright: 2012-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since GREEN 1.0
 */
@@ -37,7 +37,7 @@ get_header(); ?>
           	            
           <!-- End the Loop. -->          
         	
-			<?php if (green_get_option ('cpost', '' ) != '1' ): if (comments_open( $post->ID ) == true ): comments_template('', true); endif; endif;?>
+			<?php if (green_get_option ('cpost', '' ) != '1' ): comments_template('', true); endif;?>
             
 </div></div>			
 <?php get_sidebar(); ?>
