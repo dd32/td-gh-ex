@@ -25,7 +25,7 @@ get_header(); ?>
 						<h2><?php printf( __( 'About %s', 'beam' ), get_the_author() ); ?></h2> 
 						<?php echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'beam_author_bio_avatar_size', 60 ) ); ?>
 						<?php the_author_meta( 'description' ); ?><br />
-						<a class="author-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">View all posts by <?php the_author(); ?> <span class="meta-nav">&rarr;</span></a>
+						<a class="author-link" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author"><?php _e( 'View all posts by', 'beam' ); ?> <?php the_author(); ?> <span class="meta-nav">&rarr;</span></a>
 
 					</div><!-- #author-description -->
 

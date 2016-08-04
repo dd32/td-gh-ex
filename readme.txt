@@ -28,3 +28,6 @@ under the terms of the MIT licence.
 
 Normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 
 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
+
+Images used in Beam Theme are free from all copyright restrictions (CC0).
+Sources may include stocksnap.io, pixabay.com, pexels.com, unsplash.com etc.
