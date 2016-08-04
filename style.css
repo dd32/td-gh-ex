@@ -1,10 +1,10 @@
 /*
  * Theme Name: Basic
- * Description: Basic is fully responsive, clean and minimal WordPress theme. It has various options in WordPress Customizer to change look of the theme - primary design color, background and header, page layout (left or right sidebar, full or centered content). Clean valid code, semantic markup, markup by Schema.org, full adaptation to mobile devices. Basic is ready to use with child themes and gives for developers simple design change with custom hooks and action. Translation Ready (English and Russian integrated).
+ * Description: Basic is fully responsive, clean and minimal WordPress theme. It has various options in WordPress Customizer to change look of the theme - primary design color, background and header, page layout (left or right sidebar, full or centered content). Clean valid code, semantic markup, markup by Schema.org, full adaptation to mobile devices. Basic is ready to use with child themes and gives for developers simple design change with custom hooks and action. Translation Ready (English, Russian, Ukrainian, French are integrated).
  * Theme URI: http://wp-puzzle.com/basic/
  * Author: WP Puzzle
  * Author URI: http://wp-puzzle.com/
- * Version: 1.1.5
+ * Version: 1.1.6
  * License: GNU General Public License v2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Tags: two-columns, one-column, full-width-template, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, sticky-post, threaded-comments, translation-ready, microformats
@@ -200,6 +200,7 @@ input[type=button]:hover,
 	color: #936; text-decoration: none; letter-spacing: -0.02em; }
 #logo:hover { opacity: 0.9; }
 .sitedescription {/*text-align: center;*/padding-top: 10px;}
+body.wp-custom-logo #logo { display: none;}
 
 /* mobile navigation button */
 #mobile-menu { display: block; padding: 15px 0; text-decoration: none; text-transform: uppercase; 
@@ -238,8 +239,8 @@ input[type=button]:hover,
  *		CONTENT
  * ============================================================================ */
 .entry-box { margin: 30px 0 0; }
-/*.anons .entry-box { margin: 30px 0 0; }*/
 .entry-box .entry {	padding-bottom: 30px;}
+/*.page .entry { margin-top: 30px; }*/
 
 .entry ul { margin: 0.5em 0 1em 30px; }
 .entry ol { margin: 0.5em 0 1em 50px; list-style: decimal; }
@@ -247,10 +248,6 @@ input[type=button]:hover,
 .entry li { padding-top: 5px; }
 .entry ul li { padding-left: 20px; position: relative; } 
 .entry ul li:before, .ftrwidget ul li:before { 
-	/*content: '»';*/
-	/*position: absolute;*/
-	/*top: 7px; left: 0;*/
-	/*line-height: 100%;*/
 	content: '»';
 	position: relative;
 	top: -3px;
@@ -298,6 +295,7 @@ input[type=button]:hover,
 /* __________ post __________ */
 .meta { margin: 10px 0 0; font-size: 12px; }
 .meta span { display: inline-block; padding-right: 20px; }
+.meta span.hide { display: none; }
 .meta .fa { padding: 0 5px 0 0; }
 .meta, .meta a { color: #999999; }
 .meta a { text-decoration: none; }

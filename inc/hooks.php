@@ -76,9 +76,10 @@ add_action( 'wp_footer', 'basic_print_footer_js' );
 function basic_social_share_buttons( $content ) {
 
 	$socbtn     = basic_get_theme_option( 'social_share' );
+
 	$link_pages = wp_link_pages();
 
-	if ( ! is_singular() || empty( $socbtn ) || 'hide' == $socbtn ) {
+	if ( ! is_singular() || '' === $socbtn || 'hide' == $socbtn ) {
 		return $content . $link_pages;
 	}
 
@@ -87,7 +88,14 @@ function basic_social_share_buttons( $content ) {
 	$soc_html .= "<p class='socshare-title'>$soc_title</p>";
 
 	switch ( $socbtn ) {
+		case 'yandex':
+			$yandex_social_list = apply_filters( 'basic_yandex_social_list', 'vkontakte,facebook,odnoklassniki,gplus,twitter' );
+			$yandex_show_counter = apply_filters( 'basic_yandex_show_counter', true );
+			$yandex_counter = ( !empty($yandex_show_counter) ) ? ' data-counter="" ' : '';
+			$soc_html .= '<div class="ya-share2" data-services="'. $yandex_social_list .'"'. $yandex_counter .'></div>';
+			break;
 		case 'custom':
+		default:
 			$link  = get_permalink();
 			$title = get_the_title();
 			$soc_html .= '
@@ -97,11 +105,6 @@ function basic_social_share_buttons( $content ) {
 			<a rel="nofollow" class="psb gp" target="_blank" href="https://plus.google.com/share?url=' . $link . '"  title="' . __( 'Share in', 'basic' ) . ' Google+"></a>
 			<a rel="nofollow" class="psb tw" target="_blank" href="http://twitter.com/share?url=' . $link . '&amp;text=' . urlencode( $title ) . '" title="' . __( 'Share in', 'basic' ) . ' Twitter"></a>
 			';
-			break;
-		case 'yandex':
-			$soc_html .= '<div class="ya-share2" data-services="vkontakte,facebook,odnoklassniki,gplus,twitter" data-counter=""></div>';
-			break;
-		default:
 			break;
 	}
 	$soc_html .= "</div>";
