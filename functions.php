@@ -185,7 +185,7 @@
 		$wp_customize->add_section( 'medical_logo_section' , array( 
 			'title' => __( 'Logo', 'medical' ), 
 			'priority' => 30, 
-			'description' => __( 'Upload a logo to replace blogname and description in header.', 'medical' ),
+			'description' => __( 'Set a logo to replace site title and tagline.', 'medical' ),
 		) );
 		$wp_customize->add_setting( 'medical_logo', array( 
 			'capability' => 'edit_theme_options', 
