@@ -165,7 +165,7 @@
 		$wp_customize->add_section( 'shipyard_logo_section' , array( 
 			'title' => __( 'Logo', 'shipyard' ), 
 			'priority' => 30, 
-			'description' => __( 'Upload a logo to replace blogname and description in header.', 'shipyard' ),
+			'description' => __( 'Set a logo to replace site title and tagline.', 'shipyard' ),
 		) );
 		$wp_customize->add_setting( 'shipyard_logo', array( 
 			'capability' => 'edit_theme_options', 
