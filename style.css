@@ -1,0 +1,2499 @@
+/*
+Theme Name: Arouse
+Theme URI: http://themezhut.com/themes/arouse
+Author: ThemezHut
+Author URI: http://themezhut.com
+Description: Elegant blog/magazine wordpress theme.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: arouse
+Tags: grid-layout,right-sidebar,two-columns,custom-logo,custom-background,custom-menu,editor-style,featured-images,footer-widgets,full-width-template,sticky-post,theme-options,threaded-comments,translation-ready,entertainment,news,blog,education,food-and-drink,holiday,photography
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Arouse is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+    ## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+/*$font__main: 'Open sans', sans-serif;
+$font__secondary: 'Roboto Slab', sans-serif;
+$font__trinary: 'Montserrat', sans-serif;*/
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+/* line 1, sass/_normalize.scss */
+html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  font-size: 10px;
+}
+
+/* line 8, sass/_normalize.scss */
+body {
+  margin: 0;
+}
+
+/* line 23, sass/_normalize.scss */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+/* line 30, sass/_normalize.scss */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+/* line 35, sass/_normalize.scss */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/* line 41, sass/_normalize.scss */
+[hidden],
+template {
+  display: none;
+}
+
+/* line 45, sass/_normalize.scss */
+a {
+  background-color: transparent;
+}
+
+/* line 50, sass/_normalize.scss */
+a:active,
+a:hover {
+  outline: 0;
+  text-decoration: none;
+}
+
+/* line 55, sass/_normalize.scss */
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+/* line 60, sass/_normalize.scss */
+b,
+strong {
+  font-weight: bold;
+}
+
+/* line 64, sass/_normalize.scss */
+dfn {
+  font-style: italic;
+}
+
+/* line 68, sass/_normalize.scss */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* line 73, sass/_normalize.scss */
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+/* line 78, sass/_normalize.scss */
+small {
+  font-size: 80%;
+}
+
+/* line 83, sass/_normalize.scss */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+/* line 90, sass/_normalize.scss */
+sup {
+  top: -0.5em;
+}
+
+/* line 94, sass/_normalize.scss */
+sub {
+  bottom: -0.25em;
+}
+
+/* line 98, sass/_normalize.scss */
+img {
+  border: 0;
+}
+
+/* line 102, sass/_normalize.scss */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* line 106, sass/_normalize.scss */
+hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+/* line 111, sass/_normalize.scss */
+pre {
+  overflow: auto;
+}
+
+/* line 118, sass/_normalize.scss */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+/* line 127, sass/_normalize.scss */
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+/* line 133, sass/_normalize.scss */
+button {
+  overflow: visible;
+}
+
+/* line 138, sass/_normalize.scss */
+button,
+select {
+  text-transform: none;
+}
+
+/* line 145, sass/_normalize.scss */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+
+/* line 151, sass/_normalize.scss */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/* line 156, sass/_normalize.scss */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* line 161, sass/_normalize.scss */
+input {
+  line-height: normal;
+}
+
+/* line 166, sass/_normalize.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* line 172, sass/_normalize.scss */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/* line 177, sass/_normalize.scss */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/* line 181, sass/_normalize.scss */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/* line 187, sass/_normalize.scss */
+legend {
+  border: 0;
+  padding: 0;
+}
+
+/* line 192, sass/_normalize.scss */
+textarea {
+  overflow: auto;
+}
+
+/* line 196, sass/_normalize.scss */
+optgroup {
+  font-weight: bold;
+}
+
+/* line 200, sass/_normalize.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 206, sass/_normalize.scss */
+td,
+th {
+  padding: 0;
+}
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+/* line 5, sass/typography/_typography.scss */
+body,
+button,
+input,
+select,
+textarea {
+  color: #404040;
+  font-family: "Open sans", sans-serif;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
+/* line 1, sass/typography/_headings.scss */
+h1, h2, h3, h4, h5, h6 {
+  clear: both;
+  font-family: "Lora", serif;
+  margin: 1em 0;
+}
+
+/* line 7, sass/typography/_headings.scss */
+h1 {
+  font-size: 30px;
+  font-size: 3.0rem;
+}
+
+/* line 12, sass/typography/_headings.scss */
+h2 {
+  font-size: 24px;
+  font-size: 2.4rem;
+}
+
+/* line 17, sass/typography/_headings.scss */
+h3 {
+  font-size: 20px;
+  font-size: 2.0rem;
+}
+
+/* line 22, sass/typography/_headings.scss */
+h4 {
+  font-size: 18px;
+  font-size: 1.8rem;
+}
+
+/* line 27, sass/typography/_headings.scss */
+h5 {
+  font-size: 16px;
+  font-size: 1.6rem;
+}
+
+/* line 32, sass/typography/_headings.scss */
+h6 {
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+
+/* line 1, sass/typography/_copy.scss */
+p {
+  margin-bottom: 1.5em;
+}
+
+/* line 5, sass/typography/_copy.scss */
+dfn, cite, em, i {
+  font-style: italic;
+}
+
+/* line 9, sass/typography/_copy.scss */
+blockquote {
+  margin: 0 1.5em;
+}
+
+/* line 13, sass/typography/_copy.scss */
+address {
+  margin: 0 0 1.5em;
+}
+
+/* line 17, sass/typography/_copy.scss */
+pre {
+  background: #eeeeee;
+  font-family: "Courier 10 Pitch", Courier, monospace;
+  font-size: 14px;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.6em;
+}
+
+/* line 28, sass/typography/_copy.scss */
+code, kbd, tt, var {
+  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+
+/* line 33, sass/typography/_copy.scss */
+abbr, acronym {
+  border-bottom: 1px dotted #666666;
+  cursor: help;
+}
+
+/* line 38, sass/typography/_copy.scss */
+mark, ins {
+  background: #fff9c0;
+  text-decoration: none;
+}
+
+/* line 43, sass/typography/_copy.scss */
+big {
+  font-size: 125%;
+}
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+/* line 1, sass/elements/_elements.scss */
+html {
+  box-sizing: border-box;
+}
+
+/* line 7, sass/elements/_elements.scss */
+*,
+*:before,
+*:after {
+  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+  box-sizing: inherit;
+}
+
+/* line 11, sass/elements/_elements.scss */
+body {
+  background: #dddddd;
+  /* Fallback for when there is no custom background color defined. */
+}
+
+/* line 15, sass/elements/_elements.scss */
+blockquote, q {
+  quotes: "" "";
+}
+/* line 19, sass/elements/_elements.scss */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+}
+
+/* line 24, sass/elements/_elements.scss */
+blockquote {
+  position: relative;
+  margin: 0;
+  padding: 30px 120px;
+  text-align: center;
+  font-size: 18px;
+  border-left: none;
+  font-family: "Lora", serif;
+  font-style: italic;
+}
+
+/* line 34, sass/elements/_elements.scss */
+blockquote:before, blockquote:after {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  font-size: 120px;
+  line-height: 1;
+  color: #ddd;
+}
+
+/* line 42, sass/elements/_elements.scss */
+blockquote:before {
+  top: 0;
+  left: 0;
+  content: "\201C";
+}
+
+/* line 47, sass/elements/_elements.scss */
+blockquote:after {
+  top: 0;
+  right: 10px;
+  content: "\201D";
+}
+
+/* line 53, sass/elements/_elements.scss */
+hr {
+  background-color: #cccccc;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em;
+}
+
+/* line 1, sass/elements/_lists.scss */
+ul, ol {
+  margin: 0 0 1.5em 3em;
+  padding: 0;
+}
+
+/* line 6, sass/elements/_lists.scss */
+ul {
+  list-style: disc;
+}
+
+/* line 10, sass/elements/_lists.scss */
+ol {
+  list-style: decimal;
+}
+
+/* line 15, sass/elements/_lists.scss */
+li > ul,
+li > ol {
+  margin: 0.5em 0 0.5em 2em;
+}
+
+/* line 19, sass/elements/_lists.scss */
+dt {
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+/* line 24, sass/elements/_lists.scss */
+dd {
+  margin: 0 1.5em 1.5em;
+}
+
+/* line 62, sass/elements/_elements.scss */
+img {
+  height: auto;
+  /* Make sure images are scaled correctly. */
+  max-width: 100%;
+  /* Adhere to container width. */
+}
+
+/* line 1, sass/elements/_tables.scss */
+table, th, td {
+  border: 1px solid #eee;
+}
+
+/* line 5, sass/elements/_tables.scss */
+table {
+  border-collapse: collapse;
+  margin: 0 0 1.5em;
+  width: 100%;
+}
+
+/* line 11, sass/elements/_tables.scss */
+th {
+  font-weight: bold;
+  padding: 8px 15px;
+}
+
+/* line 17, sass/elements/_tables.scss */
+td {
+  padding: 5px 15px;
+}
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+/* line 4, sass/forms/_buttons.scss */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  border: none;
+  background: #a58e78;
+  color: #ffffff;
+  font-size: 12px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 1.5;
+  padding: 10px 15px;
+}
+/* line 18, sass/forms/_buttons.scss */
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+  background: #222;
+  color: #ffffff;
+}
+/* line 26, sass/forms/_buttons.scss */
+button:active, button:focus,
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="reset"]:active,
+input[type="reset"]:focus,
+input[type="submit"]:active,
+input[type="submit"]:focus {
+  border-color: #aaaaaa #bbbbbb #bbbbbb;
+  color: #ffffff;
+}
+
+/* line 16, sass/forms/_fields.scss */
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+  color: #666666;
+  border: 1px solid #eeeeee;
+  padding: 10px;
+}
+/* line 21, sass/forms/_fields.scss */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+  color: #111111;
+}
+
+/* line 26, sass/forms/_fields.scss */
+select {
+  border: 1px solid #eeeeee;
+}
+
+/* line 30, sass/forms/_fields.scss */
+textarea {
+  width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+/* line 1, sass/navigation/_links.scss */
+a {
+  color: #55acee;
+}
+/* line 4, sass/navigation/_links.scss */
+a:visited {
+  color: purple;
+}
+/* line 9, sass/navigation/_links.scss */
+a:hover, a:focus, a:active {
+  color: midnightblue;
+}
+/* line 12, sass/navigation/_links.scss */
+a:focus {
+  outline: thin dotted;
+}
+/* line 16, sass/navigation/_links.scss */
+a:hover, a:active {
+  outline: 0;
+}
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+/* line 1, sass/navigation/_menus.scss */
+.main-navigation {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  float: left;
+}
+/* line 9, sass/navigation/_menus.scss */
+.main-navigation ul {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+/* line 15, sass/navigation/_menus.scss */
+.main-navigation ul ul {
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  float: left;
+  position: absolute;
+  top: 45px;
+  left: -999em;
+  z-index: 99999;
+  background: #1d1d1d;
+  padding: 10px;
+}
+/* line 25, sass/navigation/_menus.scss */
+.main-navigation ul ul ul {
+  left: -999em;
+  top: -10px;
+}
+/* line 32, sass/navigation/_menus.scss */
+.main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
+  left: 100%;
+}
+/* line 37, sass/navigation/_menus.scss */
+.main-navigation ul ul a {
+  width: 200px;
+  color: #ddd;
+  padding: 10px 12px;
+  font-size: 12px;
+  font-size: 1.2rem;
+}
+/* line 43, sass/navigation/_menus.scss */
+.main-navigation ul ul a:hover {
+  background: #333;
+}
+/* line 58, sass/navigation/_menus.scss */
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+  left: auto;
+}
+/* line 63, sass/navigation/_menus.scss */
+.main-navigation li {
+  float: left;
+  position: relative;
+}
+/* line 72, sass/navigation/_menus.scss */
+.main-navigation a {
+  display: block;
+  text-decoration: none;
+  padding: 15px 12px;
+  color: #262626;
+}
+
+/* line 87, sass/navigation/_menus.scss */
+.main-navigation .menu-item-has-children > a:after,
+.main-navigation .page_item_has_children > a:after {
+  content: "\f0d7";
+  display: inline-block;
+  float: right;
+  font-family: FontAwesome;
+  font-size: 12px;
+  margin: 2px 0 0 10px;
+}
+
+/* line 98, sass/navigation/_menus.scss */
+.main-navigation .menu-item-has-children .menu-item-has-children > a:after,
+.main-navigation .page_item_has_children .menu-item-has-children > a:after {
+  content: "\f0da";
+  display: inline-block;
+  float: right;
+  font-family: FontAwesome;
+  font-size: 12px;
+  margin: 2px 0 0 10px;
+}
+
+/* Small menu. */
+/* line 109, sass/navigation/_menus.scss */
+.menu-toggle,
+.main-navigation.toggled ul {
+  display: block;
+}
+
+@media screen and (min-width: 992px) {
+  /* line 114, sass/navigation/_menus.scss */
+  .menu-toggle {
+    display: none;
+  }
+
+  /* line 117, sass/navigation/_menus.scss */
+  .main-navigation ul {
+    display: block;
+  }
+}
+/* line 126, sass/navigation/_menus.scss */
+.site-main .comment-navigation, .site-main
+.posts-navigation, .site-main
+.post-navigation {
+  margin: 0 0 1.5em;
+  overflow: hidden;
+}
+/* line 131, sass/navigation/_menus.scss */
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+  float: left;
+  width: 50%;
+}
+/* line 136, sass/navigation/_menus.scss */
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+  float: right;
+  text-align: right;
+  width: 50%;
+}
+
+/* line 143, sass/navigation/_menus.scss */
+.arouse-search-button-icon {
+  cursor: pointer;
+  float: right;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 50px;
+  line-height: 50px;
+  color: #3f3f3f;
+}
+
+/* line 155, sass/navigation/_menus.scss */
+.arouse-search-button-icon:before {
+  content: '\f002';
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'FontAwesome';
+}
+
+/* line 162, sass/navigation/_menus.scss */
+.arouse-search-box-container {
+  display: none;
+}
+
+/* line 166, sass/navigation/_menus.scss */
+.arouse-search-box-container {
+  background: #fff;
+  border: 3px solid #E3E3E3;
+  display: none;
+  padding: 5px;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  width: 328px;
+  z-index: 999;
+}
+
+/* line 178, sass/navigation/_menus.scss */
+#arouse-search-form input[type="submit"] {
+  border-radius: 0;
+  box-shadow: none;
+  background-color: #a58e78;
+  border: none;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  height: 40px;
+  line-height: 40px;
+  padding: 0;
+  text-shadow: none;
+  text-transform: uppercase;
+  width: 92px;
+  -webkit-transition: background 0.2s ease-in-out;
+  -moz-transition: background 0.2s ease-in-out;
+  -ms-transition: background 0.2s ease-in-out;
+  -o-transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out;
+}
+
+/* line 198, sass/navigation/_menus.scss */
+#arouse-search-form input[type="submit"]:hover {
+  background: #333333;
+}
+
+/* line 201, sass/navigation/_menus.scss */
+#arouse-search-form input[type="submit"]:focus {
+  outline: none;
+}
+
+/* line 204, sass/navigation/_menus.scss */
+#arouse-search-form input[type="text"] {
+  background: #f1f1f1;
+  border: none;
+  color: #222;
+  float: left;
+  height: 40px;
+  margin: 0;
+  padding: 0 11px;
+  width: 220px;
+}
+
+/* line 214, sass/navigation/_menus.scss */
+#arouse-search-form input[type="text"]:focus {
+  outline: none;
+}
+
+/* line 218, sass/navigation/_menus.scss */
+#arouse-nav-button {
+  position: absolute;
+  right: 0;
+  background: #222;
+  color: #fff;
+  display: none;
+  line-height: 40px;
+  margin: 20px 0 5px 0;
+  text-align: left;
+  width: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* line 231, sass/navigation/_menus.scss */
+#arouse-nav-button:hover {
+  color: #ccc;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 991px) {
+  /* line 236, sass/navigation/_menus.scss */
+  #arouse-nav-button {
+    display: inline-block;
+  }
+}
+/* line 241, sass/navigation/_menus.scss */
+#arouse-nav-button:before {
+  content: "\f0c9";
+  display: inline-block;
+  font-family: FontAwesome;
+  margin: 0 10px;
+}
+
+/* line 248, sass/navigation/_menus.scss */
+.responsive-mainnav-outer {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+/* line 253, sass/navigation/_menus.scss */
+.arouse-responsive-mainnav {
+  display: none;
+  background: #222;
+  padding: 20px 40px;
+  margin-bottom: 40px;
+}
+
+/* line 259, sass/navigation/_menus.scss */
+.arouse-responsive-mainnav ul {
+  margin: 0;
+  padding: 5px;
+}
+
+/* line 263, sass/navigation/_menus.scss */
+.arouse-responsive-mainnav li {
+  list-style: none;
+}
+
+/* line 266, sass/navigation/_menus.scss */
+.arouse-responsive-mainnav li a {
+  color: #aaaaaa;
+  line-height: 26px;
+  padding: 10px 0;
+  text-decoration: none;
+  display: block;
+}
+
+/* line 273, sass/navigation/_menus.scss */
+.arouse-responsive-mainnav li a:hover {
+  color: white;
+}
+
+/* line 276, sass/navigation/_menus.scss */
+.arouse-responsive-mainnav li ul {
+  margin-left: 2em;
+}
+
+@media screen and (min-width: 991px) {
+  /* line 281, sass/navigation/_menus.scss */
+  .arouse-responsive-mainnav {
+    display: none !important;
+  }
+}
+/* Archive Pagination */
+/* line 288, sass/navigation/_menus.scss */
+.pagination {
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 60px;
+  padding: 1em 0;
+  text-align: center;
+  display: block;
+}
+
+/* line 297, sass/navigation/_menus.scss */
+.nav-links .page-numbers {
+  color: #fff;
+}
+
+/* line 300, sass/navigation/_menus.scss */
+.nav-links .page-numbers:hover {
+  color: #fff;
+}
+
+/* line 304, sass/navigation/_menus.scss */
+.page-numbers {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 15px;
+  font-weight: bold;
+  margin: 0 2px;
+}
+
+/* line 311, sass/navigation/_menus.scss */
+.page-numbers:hover {
+  background: #888;
+}
+
+/* line 315, sass/navigation/_menus.scss */
+.nav-links .current {
+  background: #A58E78;
+  color: #fff;
+  padding: 10px 15px;
+  font-weight: bold;
+  margin: 0 2px;
+}
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+/* line 2, sass/modules/_accessibility.scss */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+/* line 9, sass/modules/_accessibility.scss */
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 8.75px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+/* line 30, sass/modules/_accessibility.scss */
+#content[tabindex="-1"]:focus {
+  outline: 0;
+}
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+/* line 1, sass/modules/_alignments.scss */
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em;
+}
+
+/* line 7, sass/modules/_alignments.scss */
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em;
+}
+
+/* line 13, sass/modules/_alignments.scss */
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+/* line 12, sass/modules/_clearings.scss */
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+  content: "";
+  display: table;
+  table-layout: fixed;
+}
+
+/* line 21, sass/modules/_clearings.scss */
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+  clear: both;
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+/* line 1, sass/site/secondary/_widgets.scss */
+.widget {
+  margin: 0 0 40px;
+  overflow: hidden;
+  clear: both;
+  /* Make sure select elements fit in widgets. */
+}
+/* line 7, sass/site/secondary/_widgets.scss */
+.widget select {
+  max-width: 100%;
+}
+
+/* line 15, sass/site/secondary/_widgets.scss */
+.widget-area ul, .widget-area ol {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+}
+/* line 21, sass/site/secondary/_widgets.scss */
+.widget-area ul li {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+/* line 26, sass/site/secondary/_widgets.scss */
+.widget-area a {
+  color: #3c3c3c;
+}
+
+/* line 31, sass/site/secondary/_widgets.scss */
+.widget-title {
+  color: #1d1d1d;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 10px 0;
+  text-align: center;
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+  border-bottom: 3px double #eeeeee;
+}
+
+/* line 43, sass/site/secondary/_widgets.scss */
+.left-footer, .right-footer, .mid-footer {
+  margin: 40px 0 0;
+}
+
+/* line 48, sass/site/secondary/_widgets.scss */
+.search-form {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+/* line 56, sass/site/secondary/_widgets.scss */
+.search-form .search-field {
+  display: inline-block;
+  margin: 0;
+  width: 100%;
+  height: 45px;
+  padding: 10px 80px 10px 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+/* line 69, sass/site/secondary/_widgets.scss */
+.search-form label {
+  display: block;
+}
+
+/* line 74, sass/site/secondary/_widgets.scss */
+.search-form .search-submit {
+  height: 45px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: bold;
+  background: #a58e78;
+  color: #fff;
+}
+/* line 93, sass/site/secondary/_widgets.scss */
+.search-form .search-submit:hover {
+  background: #3f3f3f;
+}
+
+/* Calendar Widget */
+/* line 100, sass/site/secondary/_widgets.scss */
+.widget_calendar #next {
+  text-align: right;
+}
+/* line 104, sass/site/secondary/_widgets.scss */
+.widget_calendar caption {
+  font-style: italic;
+}
+/* line 108, sass/site/secondary/_widgets.scss */
+.widget_calendar td a {
+  font-weight: bold;
+}
+
+/* Tags cloud widget */
+/* line 116, sass/site/secondary/_widgets.scss */
+.widget_tag_cloud .tagcloud a {
+  display: block;
+  float: left;
+  padding: 0.4em 0.75em;
+  font-weight: 600;
+  background: #a58e78;
+  color: #fff;
+  margin: 0 1px 1px 0;
+}
+/* line 125, sass/site/secondary/_widgets.scss */
+.widget_tag_cloud .tagcloud a:hover {
+  background: #333;
+}
+
+/* Social Links */
+/* line 135, sass/site/secondary/_widgets.scss */
+.arouse-social-links .facebook {
+  background: #3b5999;
+}
+/* line 139, sass/site/secondary/_widgets.scss */
+.arouse-social-links .twitter {
+  background: #55acee;
+}
+/* line 143, sass/site/secondary/_widgets.scss */
+.arouse-social-links .googleplus {
+  background: #dd4b39;
+}
+/* line 147, sass/site/secondary/_widgets.scss */
+.arouse-social-links .pinterest {
+  background: #bd081c;
+}
+/* line 151, sass/site/secondary/_widgets.scss */
+.arouse-social-links .instagram {
+  background: #3f729b;
+}
+/* line 155, sass/site/secondary/_widgets.scss */
+.arouse-social-links .linkedin {
+  background: #0077B5;
+}
+/* line 159, sass/site/secondary/_widgets.scss */
+.arouse-social-links .dribbble {
+  background: #ea4c89;
+}
+/* line 163, sass/site/secondary/_widgets.scss */
+.arouse-social-links .rss {
+  background: #f26522;
+}
+/* line 167, sass/site/secondary/_widgets.scss */
+.arouse-social-links a {
+  color: #fff;
+}
+/* line 171, sass/site/secondary/_widgets.scss */
+.arouse-social-links .social-icon {
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  display: block;
+  float: left;
+  font-size: 16px;
+  margin: 5px;
+  border-radius: 30px;
+}
+/* line 183, sass/site/secondary/_widgets.scss */
+.arouse-social-links .social-icon:hover {
+  background: #333;
+}
+
+/* Arouse Category Posts Widget */
+/* line 192, sass/site/secondary/_widgets.scss */
+.ar-cat-post {
+  display: block;
+  overflow: hidden;
+  clear: both;
+  margin-bottom: 25px;
+}
+/* line 198, sass/site/secondary/_widgets.scss */
+.ar-cat-post:last-child {
+  margin-bottom: 0;
+}
+
+/* line 203, sass/site/secondary/_widgets.scss */
+.ar-cat-thumb {
+  width: 100px;
+  height: 80px;
+  float: left;
+  margin-right: -130px;
+}
+
+/* line 210, sass/site/secondary/_widgets.scss */
+.ar-cat-details {
+  float: left;
+  margin-left: 130px;
+}
+
+/* line 215, sass/site/secondary/_widgets.scss */
+.ar-cat-title {
+  font-size: 14px;
+  font-size: 1.4rem;
+  display: inline-block;
+  margin: 0 0 10px 0;
+  line-height: 1.3;
+}
+/* line 221, sass/site/secondary/_widgets.scss */
+.ar-cat-title a {
+  color: #333333;
+}
+
+/* line 226, sass/site/secondary/_widgets.scss */
+.ar-cat-meta {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-size: 1.2rem;
+  color: #a5a5a5;
+}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Main
+--------------------------------------------------------------*/
+/* line 1, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+.arouse-boxed {
+  margin: 0 auto;
+  padding: 20px 20px 0 20px;
+  background: white;
+}
+
+@media (min-width: 768px) {
+  /* line 8, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+  .arouse-boxed {
+    width: 790px;
+  }
+}
+@media (min-width: 992px) {
+  /* line 13, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+  .arouse-boxed {
+    width: 1000px;
+  }
+}
+@media (min-width: 1200px) {
+  /* line 18, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+  .arouse-boxed {
+    width: 1150px;
+  }
+}
+/* line 23, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+.brand-container {
+  float: left;
+  max-width: 100%;
+  margin: 0 20px 20px 0;
+}
+@media (max-width: 992px) {
+  /* line 23, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+  .brand-container {
+    margin-right: 60px;
+  }
+}
+
+/* line 33, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+.mainnav-container {
+  float: right;
+  margin: 22px 0 15px 0;
+  position: relative;
+  padding-right: 40px;
+}
+
+/* line 40, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+.site-header {
+  min-height: 115px;
+  margin-bottom: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-bottom: 1px solid #eeeeee;
+  position: relative;
+}
+
+/* line 50, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+.slider-active .site-header {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+/* line 56, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+.site-title {
+  font-size: 36px;
+  font-size: 3.6rem;
+  margin: 15px 0 5px 0;
+}
+/* line 61, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+.site-title a {
+  color: #3f3f3f;
+}
+/* line 64, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+.site-title a:hover {
+  color: #a58e78;
+}
+
+/* line 70, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+.site-description {
+  color: #a58e78;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-size: 1.2rem;
+}
+
+/* line 77, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+.site-logo {
+  float: left;
+}
+/* line 80, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+.site-logo img {
+  max-width: 100%;
+  max-height: 135px;
+}
+
+/* line 86, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+.site-title-text {
+  float: left;
+  margin-left: 20px;
+}
+/* line 90, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+.site-title-text .site-title {
+  margin-top: 20px;
+}
+
+/* line 96, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+.site-footer {
+  margin-left: -20px;
+  margin-right: -20px;
+  background: #1d1d1d;
+  color: #aaa;
+}
+/* line 102, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+.site-footer a {
+  color: #aaa;
+}
+/* line 105, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+.site-footer a:hover {
+  color: #fff;
+}
+/* line 110, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+.site-footer .widget-area {
+  font-family: "Open sans", sans-serif;
+}
+/* line 114, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+.site-footer .widget-area ul li {
+  border-bottom: 1px solid #262626;
+}
+
+/* line 119, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+.footer-widget-title {
+  color: #cecece;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  line-height: 40px;
+  padding: 0 10px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* line 129, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+.site-info {
+  padding: 20px 0;
+  background: #111;
+  text-align: center;
+}
+
+/* line 135, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+.arouse-featured-slider {
+  margin: 0 20px;
+}
+/* line 138, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+.arouse-featured-slider .slide-outer {
+  display: table;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+/* line 145, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+.arouse-featured-slider .slide-mid {
+  display: table-cell;
+  vertical-align: middle;
+}
+/* line 150, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+.arouse-featured-slider .slide-inner {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 900px;
+}
+/* line 156, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+.arouse-featured-slider .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20);
+  opacity: 0.15;
+  background: #000;
+}
+
+/*.outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.inner {
+    margin-left: auto;
+    margin-right: auto; 
+}*/
+/* line 187, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+.arouse-slider-container {
+  position: relative;
+}
+@media (min-width: 768px) {
+  /* line 187, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+  .arouse-slider-container {
+    min-height: 330px;
+  }
+}
+@media (min-width: 992px) {
+  /* line 187, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+  .arouse-slider-container {
+    min-height: 430px;
+  }
+}
+@media (min-width: 1200px) {
+  /* line 187, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+  .arouse-slider-container {
+    min-height: 500px;
+  }
+}
+
+/* line 204, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+.arouse-slider-details {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  text-align: center;
+}
+/* line 214, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+.arouse-slider-details a {
+  color: #fff;
+}
+/* line 218, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+.arouse-slider-details .cat-links {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-size: 1.3rem;
+  margin: 0 0 8px;
+  display: block;
+}
+/* line 226, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+.arouse-slider-details .divider {
+  border-top: 2px solid;
+  display: block;
+  max-width: 35px;
+  margin-top: 20px;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;
+}
+
+/* line 238, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+.arouse-slider-title {
+  font-size: 36px;
+  font-size: 3.6rem;
+  margin: 0;
+  line-height: 1.3;
+}
+@media (max-width: 992px) {
+  /* line 238, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+  .arouse-slider-title {
+    font-size: 24px;
+    font-size: 2.4rem;
+  }
+}
+@media (max-width: 480px) {
+  /* line 238, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_main.scss */
+  .arouse-slider-title {
+    font-size: 14px;
+    font-size: 1.4rem;
+  }
+}
+
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+/* line 1, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.sticky {
+  display: block;
+}
+
+/* line 5, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.hentry {
+  margin: 0 0 1.5em;
+}
+
+/* line 10, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.byline,
+.updated:not(.published) {
+  display: none;
+}
+
+/* line 15, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.single .byline,
+.group-blog .byline {
+  display: inline;
+}
+
+/* line 21, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.page-content,
+.entry-content,
+.entry-summary {
+  margin: 1.5em 0 0;
+}
+
+/* line 25, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.page-links {
+  clear: both;
+  margin: 0 0 1.5em;
+}
+
+/* line 30, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-post-sep {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+/* line 35, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.entry-meta {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-size: 1.2rem;
+  color: #a5a5a5;
+}
+/* line 40, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.entry-meta a {
+  color: #a5a5a5;
+}
+/* line 43, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.entry-meta a:hover {
+  color: #222222;
+}
+
+/* line 49, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-entry-category {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-size: 1.2rem;
+}
+/* line 55, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-entry-category a {
+  color: #a58e78;
+}
+/* line 58, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-entry-category a:hover {
+  color: #222222;
+}
+
+/* line 64, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.byline:after {
+  content: ' / ';
+}
+
+/* line 68, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.edit-link:before {
+  content: ' / ';
+}
+
+/* line 72, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.comments-link:before {
+  content: ' / ';
+}
+
+/* line 78, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-post-list .entry-title,
+.arouse-post-grid .entry-title {
+  font-size: 19px;
+  font-size: 1.9rem;
+  margin: 10px 0 17px;
+  line-height: 1.3;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+}
+/* line 85, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-post-list .entry-title a,
+.arouse-post-grid .entry-title a {
+  color: #222222;
+}
+/* line 88, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-post-list .entry-title a:hover,
+.arouse-post-grid .entry-title a:hover {
+  color: #000;
+}
+/* line 94, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-post-list .cat-links a,
+.arouse-post-grid .cat-links a {
+  color: #a58e78;
+}
+/* line 97, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-post-list .cat-links a:hover,
+.arouse-post-grid .cat-links a:hover {
+  color: #262626;
+}
+/* line 102, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-post-list .entry-content,
+.arouse-post-grid .entry-content {
+  margin-top: 0;
+  color: #676767;
+}
+/* line 105, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-post-list .entry-content p,
+.arouse-post-grid .entry-content p {
+  margin-bottom: 15px;
+}
+
+/* line 111, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-post-grid {
+  width: 47.14285714285714%;
+  margin-right: 5%;
+  margin-bottom: 60px;
+  display: inline-block;
+  vertical-align: top;
+  /*@media (min-width: 768px) and (max-width: 992px) {
+  	width: 360px;
+  	margin-right: 40px;
+  }*/
+  /*.byline, .posted-on, .comments-link {
+  	margin-right: 10px;
+  }*/
+}
+@media (max-width: 768px) {
+  /* line 111, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+  .arouse-post-grid {
+    width: 100%;
+    margin-right: 0;
+    display: block;
+  }
+}
+/* line 130, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-post-grid .entry-content {
+  margin-top: 0;
+  color: #676767;
+}
+/* line 133, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-post-grid .entry-content p {
+  margin-bottom: 15px;
+}
+/* line 143, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-post-grid .entry-thumbnail img {
+  margin-bottom: 20px;
+}
+
+/* line 149, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-post-list {
+  margin-bottom: 40px;
+  display: block;
+  clear: both;
+  overflow: hidden;
+}
+/* line 156, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-post-list .post-content-wrapper {
+  float: right;
+  width: 47.14285714285714%;
+}
+@media (max-width: 768px) {
+  /* line 156, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+  .arouse-post-list .post-content-wrapper {
+    float: none;
+    width: 100%;
+  }
+}
+/* line 167, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-post-list .entry-thumbnail {
+  float: left;
+  width: 47.14285714285714%;
+  margin-right: 5.714285714285714%;
+}
+@media (max-width: 768px) {
+  /* line 167, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+  .arouse-post-list .entry-thumbnail {
+    float: none;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+/* line 180, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.entry-thumb-plchldr {
+  margin-bottom: 20px;
+  max-width: 330px;
+  min-height: 240px;
+  background: #f5f5f5;
+}
+
+/* line 187, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-post-grid:nth-child(2n+2) {
+  margin-right: 0;
+}
+
+/* line 191, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.grid-wrapper {
+  display: inline-block;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  vertical-align: top;
+}
+
+/* line 199, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-single-post {
+  margin-bottom: 60px;
+  line-height: 1.7;
+}
+/* line 203, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-single-post .entry-title {
+  font-size: 30px;
+  font-size: 3rem;
+  margin: 5px 0;
+  line-height: 1.3;
+}
+/* line 209, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-single-post .entry-meta {
+  font-size: 13px;
+  font-size: 1.3rem;
+}
+/* line 213, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-single-post .arouse-entry-category {
+  font-size: 14px;
+  font-size: 1.4rem;
+}
+/* line 217, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-single-post .entry-footer {
+  text-align: center;
+  margin: 20px 0;
+}
+/* line 222, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-single-post .tags-links {
+  font-family: "Montserrat", sans-serif;
+}
+/* line 225, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-single-post .tags-links a {
+  padding: 5px 10px;
+  margin-right: 5px;
+  color: #3c3c3c;
+  background: #eaeaea;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-size: 1.2rem;
+}
+/* line 233, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-single-post .tags-links a:hover {
+  background: #3c3c3c;
+  color: #ffffff;
+}
+
+/* line 241, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.article-featured-image {
+  margin: 30px 0;
+}
+
+/* line 245, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.post-navigation {
+  margin: 30px 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 25px 0;
+  font-family: "Lora", serif;
+}
+/* line 253, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.post-navigation a {
+  color: #222;
+}
+/* line 256, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.post-navigation a:hover {
+  color: #000;
+}
+/* line 261, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.post-navigation .meta-nav {
+  font-family: "Montserrat", sans-serif;
+  display: block;
+  color: #aaa;
+  font-size: 13px;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+/* line 272, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.page-header {
+  padding-bottom: 32px;
+  margin: 0 0 40px;
+  border-bottom: 1px solid #eeeeee;
+}
+/* line 277, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.page-header .taxonomy-description {
+  font-style: italic;
+  text-align: center;
+  margin-top: 5px;
+}
+/* line 282, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.page-header .taxonomy-description p {
+  margin-bottom: 0;
+}
+/* line 287, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.page-header .page-title {
+  margin: 0;
+}
+
+/* line 293, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.archive .page-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-size: 1.6rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* line 303, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.page .entry-header {
+  padding-bottom: 30px;
+  margin: 0 0 40px;
+  border-bottom: 1px solid #eeeeee;
+}
+/* line 309, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.page .entry-title {
+  margin: 0;
+  font-size: 30px;
+  font-size: 3rem;
+}
+
+/* line 315, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+article.page {
+  line-height: 1.7;
+}
+
+/* line 323, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-fpage-block {
+  position: relative;
+  margin-bottom: 40px;
+}
+/* line 327, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-fpage-block .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20);
+  opacity: 0.15;
+  background: #000;
+}
+/* line 340, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-fpage-block:hover .overlay {
+  opacity: 0.5;
+}
+
+/* line 346, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-fpage-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  text-align: center;
+}
+/* line 356, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-fpage-title h3 {
+  line-height: 1.4;
+  font-size: 22px;
+  font-size: 2.2rem;
+  color: #fff;
+}
+@media (max-width: 992px) {
+  /* line 356, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+  .arouse-fpage-title h3 {
+    font-size: 16px;
+    font-size: 1.6rem;
+  }
+}
+/* line 367, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-fpage-title a {
+  color: #fff;
+}
+
+/* line 372, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-listing-title {
+  display: block;
+  margin: 0 0 40px 0;
+  text-align: center;
+  border-bottom: 3px double #eeeeee;
+}
+/* line 379, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_posts-and-pages.scss */
+.arouse-listing-title p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  padding: 12px 0;
+  margin: 0;
+  background: #ffffff;
+}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+/* line 1, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comment-content a {
+  word-wrap: break-word;
+}
+
+/* line 4, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.bypostauthor {
+  display: block;
+}
+
+/* line 7, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comments-area {
+  max-width: 747px;
+  margin: 40px 0;
+}
+
+/* line 16, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comments-title,
+.comment-list,
+.comment-reply-title,
+.must-log-in,
+.comment-respond .comment-form,
+.comment-respond iframe {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+/* line 27, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.sidebar .comments-title,
+.sidebar .comment-list,
+.sidebar .must-log-in,
+.sidebar .comment-reply-title,
+.sidebar .comment-navigation,
+.sidebar .comment-respond .comment-form {
+  max-width: 1040px;
+  padding-left: 60px;
+  padding-right: 376px;
+}
+
+/* line 32, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comments-title {
+  margin: 20px 0;
+}
+
+/* line 36, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comment-list,
+.comment-list .children {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* line 41, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comment-list .children {
+  margin: 0 0 0 40px;
+}
+
+/* line 45, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comment-list > li:after,
+.comment-list .children > li:before {
+  background: url(images/dotted-line.png) repeat left top;
+  background-size: 4px 4px;
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+}
+
+/* line 53, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comment-list > li:last-child:after {
+  display: none;
+}
+
+/* line 56, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comment-body {
+  padding: 24px 0;
+  position: relative;
+  clear: both;
+  overflow: hidden;
+  border-bottom: 1px solid #eee;
+}
+
+/* line 65, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comment-author .avatar {
+  display: block;
+  float: left;
+  margin: 0 20px 20px 0;
+}
+
+/* line 70, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comment-author .fn {
+  word-wrap: break-word;
+  line-height: 1.2;
+}
+
+/* line 77, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comment-author .fn,
+.comment-author .url,
+.comment-reply-link,
+.comment-reply-login {
+  color: #a58e78;
+  font-style: normal;
+  font-weight: bold;
+}
+
+/* line 82, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comment-reply-link {
+  font-size: 13px;
+}
+
+/* line 85, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.says {
+  display: none;
+}
+
+/* line 88, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.no-avatars .comment-author {
+  margin: 0 0 5px;
+  max-width: 100%;
+  position: relative;
+}
+
+/* line 95, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.no-avatars .comment-metadata,
+.no-avatars .comment-content,
+.no-avatars .comment-list .reply {
+  width: 100%;
+}
+
+/* line 101, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comment-list .edit-link {
+  margin-left: 20px;
+}
+
+/* line 107, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comment-metadata,
+.comment-awaiting-moderation,
+.comment-content,
+.comment-list .reply {
+  margin: 5px 0;
+}
+
+/* line 111, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comment-meta,
+.comment-meta a {
+  color: #a2a2a2;
+  font-size: 13px;
+  margin-bottom: 30px;
+}
+
+/* line 116, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comment-meta a:hover {
+  color: #555555;
+}
+
+/* line 119, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.ping-meta {
+  color: #a2a2a2;
+  font-size: 13px;
+  line-height: 2;
+}
+
+/* line 124, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comment-awaiting-moderation {
+  color: #a2a2a2;
+}
+
+/* line 127, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comment-awaiting-moderation:before {
+  content: "\f021";
+  margin-right: 10px;
+  display: inline-block;
+  font-family: FontAwesome;
+  font-weight: normal;
+}
+
+/* line 135, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comment-reply-link:before,
+.comment-reply-login:before {
+  content: "\f122";
+  margin-right: 10px;
+  display: inline-block;
+  font-family: FontAwesome;
+  font-weight: normal;
+}
+
+/* Comment form */
+/* line 144, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comment-respond {
+  background-color: #f5f5f5;
+  padding: 40px;
+  margin: 30px 0;
+  max-width: 747px;
+}
+
+/* line 150, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comment .comment-respond {
+  margin-bottom: 20px;
+  padding: 40px;
+}
+
+/* line 157, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comment-reply-title small a {
+  color: #131310;
+  display: inline-block;
+  float: right;
+  height: 20px;
+  overflow: hidden;
+  width: 20px;
+}
+
+/* line 165, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comment-reply-title small a:hover {
+  color: #ed331c;
+  text-decoration: none;
+}
+
+/* line 169, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comment-reply-title small a:before {
+  content: "\f05c";
+  display: inline-block;
+  font-family: FontAwesome;
+  font-size: 20px;
+  font-weight: normal;
+}
+
+/* line 177, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.sidebar .comment-list .comment-reply-title,
+.sidebar .comment-list .comment-respond .comment-form {
+  padding: 0;
+}
+
+/* line 180, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comment-form .comment-notes {
+  margin-bottom: 15px;
+}
+
+/* line 185, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comment-form .comment-form-author,
+.comment-form .comment-form-email,
+.comment-form .comment-form-url {
+  margin-bottom: 30px;
+}
+
+/* line 191, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comment-form [for="author"],
+.comment-form [for="email"],
+.comment-form [for="url"],
+.comment-form [for="comment"] {
+  float: left;
+  padding: 10px 0;
+  width: 100px;
+}
+
+/* line 196, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comment-form .required {
+  color: #FF8778;
+}
+
+/* line 201, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comment-form input[type="text"],
+.comment-form input[type="email"],
+.comment-form input[type="url"] {
+  max-width: 300px;
+  width: 60%;
+}
+
+/* line 205, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comment-form textarea {
+  width: 100%;
+}
+
+/* line 209, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.form-allowed-tags,
+.form-allowed-tags code {
+  color: #686758;
+  font-size: 14px;
+}
+
+/* line 213, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.form-allowed-tags code {
+  font-size: 10px;
+  margin-left: 3px;
+  white-space: pre-wrap;
+}
+
+/* line 219, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comment-list .pingback,
+.comment-list .trackback {
+  padding-top: 24px;
+}
+
+/* line 222, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comment-navigation {
+  border-bottom: 1px solid #E7E7E7;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 300;
+  margin: 0 auto;
+  max-width: 747px;
+  padding: 20px 0;
+  width: 100%;
+}
+
+/* line 232, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.no-comments {
+  background-color: #eeeeee;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 300;
+  margin: 0;
+  padding: 10px 0;
+  text-align: center;
+}
+
+/* line 241, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.sidebar .no-comments {
+  padding-left: 60px;
+  padding-right: 376px;
+}
+
+/* line 245, C:/xampp/htdocs/arouse/wp-content/themes/arouse/sass/site/primary/_comments.scss */
+.comment-reply-title {
+  margin-top: 0;
+}
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+/* line 3, sass/modules/_infinite-scroll.scss */
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+  /* Theme Footer (when set to scrolling) */
+  display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+/* line 8, sass/modules/_infinite-scroll.scss */
+.infinity-end.neverending .site-footer {
+  display: block;
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+/* line 3, sass/media/_media.scss */
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+/* line 13, sass/media/_media.scss */
+embed,
+iframe,
+object {
+  max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+/* line 1, sass/media/_captions.scss */
+.wp-caption {
+  margin-bottom: 1.5em;
+  max-width: 100%;
+}
+/* line 5, sass/media/_captions.scss */
+.wp-caption img[class*="wp-image-"] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 9, sass/media/_captions.scss */
+.wp-caption .wp-caption-text {
+  margin: 0.8075em 0;
+}
+
+/* line 14, sass/media/_captions.scss */
+.wp-caption-text {
+  text-align: center;
+}
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+/* line 1, sass/media/_galleries.scss */
+.gallery {
+  margin-bottom: 1.5em;
+}
+
+/* line 5, sass/media/_galleries.scss */
+.gallery-item {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 100%;
+}
+/* line 11, sass/media/_galleries.scss */
+.gallery-columns-2 .gallery-item {
+  max-width: 50%;
+}
+/* line 15, sass/media/_galleries.scss */
+.gallery-columns-3 .gallery-item {
+  max-width: 33.33%;
+}
+/* line 19, sass/media/_galleries.scss */
+.gallery-columns-4 .gallery-item {
+  max-width: 25%;
+}
+/* line 23, sass/media/_galleries.scss */
+.gallery-columns-5 .gallery-item {
+  max-width: 20%;
+}
+/* line 27, sass/media/_galleries.scss */
+.gallery-columns-6 .gallery-item {
+  max-width: 16.66%;
+}
+/* line 31, sass/media/_galleries.scss */
+.gallery-columns-7 .gallery-item {
+  max-width: 14.28%;
+}
+/* line 35, sass/media/_galleries.scss */
+.gallery-columns-8 .gallery-item {
+  max-width: 12.5%;
+}
+/* line 39, sass/media/_galleries.scss */
+.gallery-columns-9 .gallery-item {
+  max-width: 11.11%;
+}
+
+/* line 44, sass/media/_galleries.scss */
+.gallery-caption {
+  display: block;
+}
