@@ -8,7 +8,7 @@
 		// Set max content width for img, video, and more
 			global $content_width; 
 			if ( ! isset( $content_width ) )
-			$content_width = 750;
+			$content_width = 780;
 
 		// Make theme available for translation
 			load_theme_textdomain('myknowledgebase', get_template_directory() . '/languages');  

@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+MyKnowledgeBase version 4.3 - august 2016
+- file functions: bugfix
+
 MyKnowledgeBase version 4.2 - august 2016
 - customizer: exclude categories
 - updated file functions
