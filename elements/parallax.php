@@ -91,7 +91,7 @@ if ( !class_exists( 'CyberChimpsParallax' ) ) {
 
 			// Slider parallax toggle.
 			$new_field[][2] = array(
-				'name'    => __( 'Parallax', 'cyberchimps_elements' ),
+				'name'    => __( 'Parallax', 'cyberchimps_core' ),
 				'id'      => 'cyberchimps_blog_slider_parallax',
 				'type'    => 'toggle',
 				'std'     => 1,
@@ -101,8 +101,8 @@ if ( !class_exists( 'CyberChimpsParallax' ) ) {
 
 			// Slider parallax image.
 			$new_field[][3] = array(
-				'name'    => __( 'Background image for parallax', 'cyberchimps_elements' ),
-				'desc'    => __( 'Enter URL or upload file', 'cyberchimps_elements' ),
+				'name'    => __( 'Background image for parallax', 'cyberchimps_core' ),
+				'desc'    => __( 'Enter URL or upload file', 'cyberchimps_core' ),
 				'id'      => 'cyberchimps_blog_slider_parallax_image',
 				'class'   => 'cyberchimps_blog_slider_parallax_toggle',
 				'type'    => 'upload',
@@ -113,7 +113,7 @@ if ( !class_exists( 'CyberChimpsParallax' ) ) {
 
 			// Portfolio parallax toggle.
 			$new_field[][2] = array(
-				'name'    => __( 'Parallax', 'cyberchimps_elements' ),
+				'name'    => __( 'Parallax', 'cyberchimps_core' ),
 				'id'      => 'cyberchimps_blog_portfolio_parallax',
 				'type'    => 'toggle',
 				'std'     => 1,
@@ -123,8 +123,8 @@ if ( !class_exists( 'CyberChimpsParallax' ) ) {
 
 			// Portfolio parallax image.
 			$new_field[][3] = array(
-				'name'    => __( 'Background image for parallax', 'cyberchimps_elements' ),
-				'desc'    => __( 'Enter URL or upload file', 'cyberchimps_elements' ),
+				'name'    => __( 'Background image for parallax', 'cyberchimps_core' ),
+				'desc'    => __( 'Enter URL or upload file', 'cyberchimps_core' ),
 				'id'      => 'cyberchimps_blog_portfolio_parallax_image',
 				'class'   => 'cyberchimps_blog_portfolio_parallax_toggle',
 				'type'    => 'upload',
@@ -135,7 +135,7 @@ if ( !class_exists( 'CyberChimpsParallax' ) ) {
 
 			// Boxes parallax toggle.
 			$new_field[][2] = array(
-				'name'    => __( 'Parallax', 'cyberchimps_elements' ),
+				'name'    => __( 'Parallax', 'cyberchimps_core' ),
 				'id'      => 'cyberchimps_blog_boxes_parallax',
 				'type'    => 'toggle',
 				'std'     => 1,
@@ -145,8 +145,8 @@ if ( !class_exists( 'CyberChimpsParallax' ) ) {
 
 			// Boxes parallax image.
 			$new_field[][3] = array(
-				'name'    => __( 'Background image for parallax', 'cyberchimps_elements' ),
-				'desc'    => __( 'Enter URL or upload file', 'cyberchimps_elements' ),
+				'name'    => __( 'Background image for parallax', 'cyberchimps_core' ),
+				'desc'    => __( 'Enter URL or upload file', 'cyberchimps_core' ),
 				'id'      => 'cyberchimps_blog_boxes_parallax_image',
 				'class'   => 'cyberchimps_blog_boxes_parallax_toggle',
 				'type'    => 'upload',
@@ -157,9 +157,9 @@ if ( !class_exists( 'CyberChimpsParallax' ) ) {
 
 			// Body parallax toggle.
 			$new_field[][1] = array(
-				'name'    => __( 'Parallax', 'cyberchimps_elements' ),
+				'name'    => __( 'Parallax', 'cyberchimps_core' ),
 				'id'      => 'cyberchimps_body_parallax',
-				'desc'    => __( 'Set the background image at Appearance > Background to get parallax effect on whole body.', 'cyberchimps_elements' ),
+				'desc'    => __( 'Set the background image at Appearance > Background to get parallax effect on whole body.', 'cyberchimps_core' ),
 				'type'    => 'toggle',
 				'std'     => 1,
 				'section' => 'cyberchimps_custom_layout_section',

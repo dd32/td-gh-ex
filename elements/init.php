@@ -45,10 +45,10 @@ require_once( $directory_path . '/elements/boxes.php' );
 // main blog drag and drop options
 function cyberchimps_selected_elements() {
 	$options = array(
-		'boxes_lite'     => __( 'Boxes Lite', 'cyberchimps_elements' ),
-		"portfolio_lite" => __( 'Portfolio Lite', 'cyberchimps_elements' ),
-		"blog_post_page" => __( 'Post Page', 'cyberchimps_elements' ),
-		"slider_lite"    => __( 'Slider Lite', 'cyberchimps_elements' )
+		'boxes_lite'     => __( 'Boxes Lite', 'cyberchimps_core' ),
+		"portfolio_lite" => __( 'Portfolio Lite', 'cyberchimps_core' ),
+		"blog_post_page" => __( 'Post Page', 'cyberchimps_core' ),
+		"slider_lite"    => __( 'Slider Lite', 'cyberchimps_core' )
 	);
 
 	return $options;
@@ -58,10 +58,10 @@ add_filter( 'cyberchimps_elements_draganddrop_options', 'cyberchimps_selected_el
 
 function cyberchimps_selected_page_elements() {
 	$options = array(
-		'boxes_lite'     => __( 'Boxes Lite', 'cyberchimps_elements' ),
-		"portfolio_lite" => __( 'Portfolio Lite', 'cyberchimps_elements' ),
-		"page_section"   => __( 'Page', 'cyberchimps_elements' ),
-		"slider_lite"    => __( 'Slider Lite', 'cyberchimps_elements' )
+		'boxes_lite'     => __( 'Boxes Lite', 'cyberchimps_core' ),
+		"portfolio_lite" => __( 'Portfolio Lite', 'cyberchimps_core' ),
+		"page_section"   => __( 'Page', 'cyberchimps_core' ),
+		"slider_lite"    => __( 'Slider Lite', 'cyberchimps_core' )
 	);
 
 	return $options;
@@ -127,7 +127,7 @@ function cyberchimps_install_plugins() {
 	}	
 		
 	// Change this to your theme text domain, used for internationalising strings
-	$theme_text_domain = 'cyberchimps_elements';
+	$theme_text_domain = 'cyberchimps_core';
 
 	/**
 	 * Array of configuration settings. Amend each line as needed.

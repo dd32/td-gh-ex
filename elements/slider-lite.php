@@ -37,42 +37,42 @@ function cyberchimps_slider_lite_page_options() {
             'type'	=> 'single_image',
             'id'	=> 'cyberchimps_slider_lite_slide_one_image',
             'class'	=> '',
-            'name'	=> __( 'Slide One Image', 'cyberchimps_elements' ),
+            'name'	=> __( 'Slide One Image', 'cyberchimps_core' ),
             'std'	=> $directory . apply_filters( 'cyberchimps_slider_lite_img1', '/images/branding/slide1.jpg' )
         ),
         array(
             'type'	=> 'text',
             'id'	=> 'cyberchimps_slider_lite_slide_one_url',
             'class'	=> '',
-            'name'	=> __( 'Slide One Link', 'cyberchimps_elements' ),
+            'name'	=> __( 'Slide One Link', 'cyberchimps_core' ),
             'std'	=> esc_url( home_url() )
         ),
         array(
             'type'	=> 'single_image',
             'id'	=> 'cyberchimps_slider_lite_slide_two_image',
             'class'	=> '',
-            'name'	=> __( 'Slide Two Image', 'cyberchimps_elements' ),
+            'name'	=> __( 'Slide Two Image', 'cyberchimps_core' ),
             'std'	=> $directory . apply_filters( 'cyberchimps_slider_lite_img2', '/elements/lib/images/slider/slide1.jpg' )
         ),
         array(
             'type'	=> 'text',
             'id'	=> 'cyberchimps_slider_lite_slide_two_url',
             'class'	=> '',
-            'name'	=> __( 'Slide Two Link', 'cyberchimps_elements' ),
+            'name'	=> __( 'Slide Two Link', 'cyberchimps_core' ),
             'std'	=> esc_url( home_url() )
         ),
 		array(
             'type'	=> 'single_image',
             'id'	=> 'cyberchimps_slider_lite_slide_three_image',
             'class'	=> '',
-            'name'	=> __( 'Slide Three Image', 'cyberchimps_elements' ),
+            'name'	=> __( 'Slide Three Image', 'cyberchimps_core' ),
             'std'	=> $directory . apply_filters( 'cyberchimps_slider_lite_img3', '/elements/lib/images/slider/slide1.jpg' )
         ),
         array(
             'type'	=> 'text',
             'id'	=> 'cyberchimps_slider_lite_slide_three_url',
             'class'	=> '',
-            'name'	=> __( 'Slide Three Link', 'cyberchimps_elements' ),
+            'name'	=> __( 'Slide Three Link', 'cyberchimps_core' ),
             'std'	=> esc_url( home_url() )
         )
 
@@ -82,7 +82,7 @@ function cyberchimps_slider_lite_page_options() {
      */
     $page_config = array(
         'id'				=> 'slider_lite_options', // meta box id, unique per meta box
-        'title'				=> __( 'Slider Lite Options', 'cyberchimps_elements' ), // meta box title
+        'title'				=> __( 'Slider Lite Options', 'cyberchimps_core' ), // meta box title
         'pages'				=> array( 'page' ), // post types, accept custom post types as well, default is array('post'); optional
         'context'			=> 'normal', // where the meta box appear: normal (default), advanced, side; optional
         'priority'			=> 'low', // order of meta box: high (default), low; optional

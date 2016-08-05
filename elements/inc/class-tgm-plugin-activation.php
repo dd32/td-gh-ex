@@ -152,10 +152,10 @@ if( !class_exists( 'TGM_Plugin_Activation' ) ) {
 			self::$instance =& $this;
 
 			$this->strings = array(
-				'page_title'                      => __( 'Install Required Plugins', 'tgmpa' ),
-				'menu_title'                      => __( 'Install Plugins', 'tgmpa' ),
-				'installing'                      => __( 'Installing Plugin: %s', 'tgmpa' ),
-				'oops'                            => __( 'Something went wrong.', 'tgmpa' ),
+				'page_title'                      => __( 'Install Required Plugins', 'cyberchimps_core' ),
+				'menu_title'                      => __( 'Install Plugins', 'cyberchimps_core' ),
+				'installing'                      => __( 'Installing Plugin: %s', 'cyberchimps_core' ),
+				'oops'                            => __( 'Something went wrong.', 'cyberchimps_core' ),
 				'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.' ),
 				'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.' ),
 				'notice_cannot_install'           => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.' ),
@@ -166,12 +166,12 @@ if( !class_exists( 'TGM_Plugin_Activation' ) ) {
 				'notice_cannot_update'            => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.' ),
 				'install_link'                    => _n_noop( 'Begin installing plugin', 'Begin installing plugins' ),
 				'activate_link'                   => _n_noop( 'Activate installed plugin', 'Activate installed plugins' ),
-				'return'                          => __( 'Return to Required Plugins Installer', 'tgmpa' ),
-				'dashboard'                       => __( 'Return to the dashboard', 'tgmpa' ),
-				'plugin_activated'                => __( 'Plugin activated successfully.', 'tgmpa' ),
-				'activated_successfully'          => __( 'The following plugin was activated successfully:', 'tgmpa' ),
-				'complete'                        => __( 'All plugins installed and activated successfully. %1$s', 'tgmpa' ),
-				'dismiss'                         => __( 'Dismiss this notice', 'tgmpa' ),
+				'return'                          => __( 'Return to Required Plugins Installer', 'cyberchimps_core' ),
+				'dashboard'                       => __( 'Return to the dashboard', 'cyberchimps_core' ),
+				'plugin_activated'                => __( 'Plugin activated successfully.', 'cyberchimps_core' ),
+				'activated_successfully'          => __( 'The following plugin was activated successfully:', 'cyberchimps_core' ),
+				'complete'                        => __( 'All plugins installed and activated successfully. %1$s', 'cyberchimps_core' ),
+				'dismiss'                         => __( 'Dismiss this notice', 'cyberchimps_core' ),
 			);
 
 			/** Announce that the class is ready, and pass the object (for advanced use) */
@@ -704,8 +704,8 @@ if( !class_exists( 'TGM_Plugin_Activation' ) ) {
 					}
 
 					/** Setup variables to determine if action links are needed */
-					$show_install_link  = $install_link ? '<a href="' . add_query_arg( 'page', $this->menu, admin_url( $this->parent_url_slug ) ) . '">' . translate_nooped_plural( $this->strings['install_link'], $install_link_count, 'tgmpa' ) . '</a>' : '';
-					$show_activate_link = $activate_link ? '<a href="' . admin_url( 'plugins.php' ) . '">' . translate_nooped_plural( $this->strings['activate_link'], $activate_link_count, 'tgmpa' ) . '</a>' : '';
+					$show_install_link  = $install_link ? '<a href="' . add_query_arg( 'page', $this->menu, admin_url( $this->parent_url_slug ) ) . '">' . translate_nooped_plural( $this->strings['install_link'], $install_link_count, 'cyberchimps_core' ) . '</a>' : '';
+					$show_activate_link = $activate_link ? '<a href="' . admin_url( 'plugins.php' ) . '">' . translate_nooped_plural( $this->strings['activate_link'], $activate_link_count, 'cyberchimps_core' ) . '</a>' : '';
 
 					/** Define all of the action links */
 					$action_links = apply_filters(
@@ -1125,30 +1125,30 @@ if( !class_exists( 'TGMPA_List_Table' ) ) {
 
 				if( isset( $plugin['external_url'] ) ) {
 					/** The plugin is linked to an external source */
-					$table_data[$i]['source'] = __( 'External Link', 'tgmpa' );
+					$table_data[$i]['source'] = __( 'External Link', 'cyberchimps_core' );
 				}
 				elseif( isset( $plugin['source'] ) ) {
 					/** The plugin must be from a private repository */
 					if( preg_match( '|^http(s)?://|', $plugin['source'] ) ) {
-						$table_data[$i]['source'] = __( 'Private Repository', 'tgmpa' );
+						$table_data[$i]['source'] = __( 'Private Repository', 'cyberchimps_core' );
 					}
 					/** The plugin is pre-packaged with the theme */
 					else {
-						$table_data[$i]['source'] = __( 'Pre-Packaged', 'tgmpa' );
+						$table_data[$i]['source'] = __( 'Pre-Packaged', 'cyberchimps_core' );
 					}
 				}
 				/** The plugin is from the WordPress repository */
 				else {
-					$table_data[$i]['source'] = __( 'WordPress Repository', 'tgmpa' );
+					$table_data[$i]['source'] = __( 'WordPress Repository', 'cyberchimps_core' );
 				}
 
-				$table_data[$i]['type'] = $plugin['required'] ? __( 'Required', 'tgmpa' ) : __( 'Recommended', 'tgmpa' );
+				$table_data[$i]['type'] = $plugin['required'] ? __( 'Required', 'cyberchimps_core' ) : __( 'Recommended', 'cyberchimps_core' );
 
 				if( !isset( $installed_plugins[$plugin['file_path']] ) ) {
-					$table_data[$i]['status'] = sprintf( '%1$s', __( 'Not Installed', 'tgmpa' ) );
+					$table_data[$i]['status'] = sprintf( '%1$s', __( 'Not Installed', 'cyberchimps_core' ) );
 				}
 				elseif( is_plugin_inactive( $plugin['file_path'] ) ) {
-					$table_data[$i]['status'] = sprintf( '%1$s', __( 'Installed But Not Activated', 'tgmpa' ) );
+					$table_data[$i]['status'] = sprintf( '%1$s', __( 'Installed But Not Activated', 'cyberchimps_core' ) );
 				}
 
 				$table_data[$i]['file_path'] = $plugin['file_path'];
@@ -1329,7 +1329,7 @@ if( !class_exists( 'TGMPA_List_Table' ) ) {
 		 */
 		public function no_items() {
 
-			printf( __( 'No plugins to install or activate. <a href="%1$s" title="Return to the Dashboard">Return to the Dashboard</a>', 'tgmpa' ), admin_url() );
+			printf( __( 'No plugins to install or activate. <a href="%1$s" title="Return to the Dashboard">Return to the Dashboard</a>', 'cyberchimps_core' ), admin_url() );
 			echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
 
 		}
@@ -1345,10 +1345,10 @@ if( !class_exists( 'TGMPA_List_Table' ) ) {
 
 			$columns = array(
 				'cb'     => '<input type="checkbox" />',
-				'plugin' => __( 'Plugin', 'tgmpa' ),
-				'source' => __( 'Source', 'tgmpa' ),
-				'type'   => __( 'Type', 'tgmpa' ),
-				'status' => __( 'Status', 'tgmpa' )
+				'plugin' => __( 'Plugin', 'cyberchimps_core' ),
+				'source' => __( 'Source', 'cyberchimps_core' ),
+				'type'   => __( 'Type', 'cyberchimps_core' ),
+				'status' => __( 'Status', 'cyberchimps_core' )
 			);
 
 			return $columns;
@@ -1366,8 +1366,8 @@ if( !class_exists( 'TGMPA_List_Table' ) ) {
 		public function get_bulk_actions() {
 
 			$actions = array(
-				'tgmpa-bulk-install'  => __( 'Install', 'tgmpa' ),
-				'tgmpa-bulk-activate' => __( 'Activate', 'tgmpa' ),
+				'tgmpa-bulk-install'  => __( 'Install', 'cyberchimps_core' ),
+				'tgmpa-bulk-activate' => __( 'Activate', 'cyberchimps_core' ),
 			);
 
 			return $actions;
@@ -1611,7 +1611,7 @@ if( !class_exists( 'TGMPA_List_Table' ) ) {
 					echo '<div id="message" class="error"><p>' . $activate->get_error_message() . '</p></div>';
 				}
 				else {
-					printf( '<div id="message" class="updated"><p>%1$s %2$s</p></div>', _n( 'The following plugin was activated successfully:', 'The following plugins were activated successfully:', $count, 'tgmpa' ), $imploded );
+					printf( '<div id="message" class="updated"><p>%1$s %2$s</p></div>', _n( 'The following plugin was activated successfully:', 'The following plugins were activated successfully:', $count, 'cyberchimps_core' ), $imploded );
 				}
 
 				/** Update recently activated plugins option */
@@ -1911,12 +1911,12 @@ if( !class_exists( 'WP_Upgrader' ) && ( isset( $_GET[sanitize_key( 'page' )] ) &
 			 */
 			public function install_strings() {
 
-				$this->strings['no_package']          = __( 'Install package not available.', 'tgmpa' );
-				$this->strings['downloading_package'] = __( 'Downloading install package from <span class="code">%s</span>&#8230;', 'tgmpa' );
-				$this->strings['unpack_package']      = __( 'Unpacking the package&#8230;', 'tgmpa' );
-				$this->strings['installing_package']  = __( 'Installing the plugin&#8230;', 'tgmpa' );
-				$this->strings['process_failed']      = __( 'Plugin install failed.', 'tgmpa' );
-				$this->strings['process_success']     = __( 'Plugin installed successfully.', 'tgmpa' );
+				$this->strings['no_package']          = __( 'Install package not available.', 'cyberchimps_core' );
+				$this->strings['downloading_package'] = __( 'Downloading install package from <span class="code">%s</span>&#8230;', 'cyberchimps_core' );
+				$this->strings['unpack_package']      = __( 'Unpacking the package&#8230;', 'cyberchimps_core' );
+				$this->strings['installing_package']  = __( 'Installing the plugin&#8230;', 'cyberchimps_core' );
+				$this->strings['process_failed']      = __( 'Plugin install failed.', 'cyberchimps_core' );
+				$this->strings['process_success']     = __( 'Plugin installed successfully.', 'cyberchimps_core' );
 
 			}
 
@@ -1927,8 +1927,8 @@ if( !class_exists( 'WP_Upgrader' ) && ( isset( $_GET[sanitize_key( 'page' )] ) &
 			 */
 			public function activate_strings() {
 
-				$this->strings['activation_failed']  = __( 'Plugin activation failed.', 'tgmpa' );
-				$this->strings['activation_success'] = __( 'Plugin activated successfully.', 'tgmpa' );
+				$this->strings['activation_failed']  = __( 'Plugin activation failed.', 'cyberchimps_core' );
+				$this->strings['activation_success'] = __( 'Plugin activated successfully.', 'cyberchimps_core' );
 
 			}
 
@@ -2040,19 +2040,19 @@ if( !class_exists( 'WP_Upgrader' ) && ( isset( $_GET[sanitize_key( 'page' )] ) &
 
 				/** Automatic activation strings */
 				if( TGM_Plugin_Activation::$instance->is_automatic ) {
-					$this->upgrader->strings['skin_upgrade_start']        = __( 'The installation and activation process is starting. This process may take a while on some hosts, so please be patient.', 'tgmpa' );
-					$this->upgrader->strings['skin_update_successful']    = __( '%1$s installed and activated successfully.', 'tgmpa' ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details', 'tgmpa' ) . '</span><span class="hidden">' . __( 'Hide Details', 'tgmpa' ) . '</span>.</a>';
-					$this->upgrader->strings['skin_upgrade_end']          = __( 'All installations and activations have been completed.', 'tgmpa' );
-					$this->upgrader->strings['skin_before_update_header'] = __( 'Installing and Activating Plugin %1$s (%2$d/%3$d)', 'tgmpa' );
+					$this->upgrader->strings['skin_upgrade_start']        = __( 'The installation and activation process is starting. This process may take a while on some hosts, so please be patient.', 'cyberchimps_core' );
+					$this->upgrader->strings['skin_update_successful']    = __( '%1$s installed and activated successfully.', 'cyberchimps_core' ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details', 'cyberchimps_core' ) . '</span><span class="hidden">' . __( 'Hide Details', 'cyberchimps_core' ) . '</span>.</a>';
+					$this->upgrader->strings['skin_upgrade_end']          = __( 'All installations and activations have been completed.', 'cyberchimps_core' );
+					$this->upgrader->strings['skin_before_update_header'] = __( 'Installing and Activating Plugin %1$s (%2$d/%3$d)', 'cyberchimps_core' );
 				}
 				/** Default installation strings */
 				else {
-					$this->upgrader->strings['skin_upgrade_start']        = __( 'The installation process is starting. This process may take a while on some hosts, so please be patient.', 'tgmpa' );
-					$this->upgrader->strings['skin_update_failed_error']  = __( 'An error occurred while installing %1$s: <strong>%2$s</strong>.', 'tgmpa' );
-					$this->upgrader->strings['skin_update_failed']        = __( 'The installation of %1$s failed.', 'tgmpa' );
-					$this->upgrader->strings['skin_update_successful']    = __( '%1$s installed successfully.', 'tgmpa' ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details', 'tgmpa' ) . '</span><span class="hidden">' . __( 'Hide Details', 'tgmpa' ) . '</span>.</a>';
-					$this->upgrader->strings['skin_upgrade_end']          = __( 'All installations have been completed.', 'tgmpa' );
-					$this->upgrader->strings['skin_before_update_header'] = __( 'Installing Plugin %1$s (%2$d/%3$d)', 'tgmpa' );
+					$this->upgrader->strings['skin_upgrade_start']        = __( 'The installation process is starting. This process may take a while on some hosts, so please be patient.', 'cyberchimps_core' );
+					$this->upgrader->strings['skin_update_failed_error']  = __( 'An error occurred while installing %1$s: <strong>%2$s</strong>.', 'cyberchimps_core' );
+					$this->upgrader->strings['skin_update_failed']        = __( 'The installation of %1$s failed.', 'cyberchimps_core' );
+					$this->upgrader->strings['skin_update_successful']    = __( '%1$s installed successfully.', 'cyberchimps_core' ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details', 'cyberchimps_core' ) . '</span><span class="hidden">' . __( 'Hide Details', 'cyberchimps_core' ) . '</span>.</a>';
+					$this->upgrader->strings['skin_upgrade_end']          = __( 'All installations have been completed.', 'cyberchimps_core' );
+					$this->upgrader->strings['skin_before_update_header'] = __( 'Installing Plugin %1$s (%2$d/%3$d)', 'cyberchimps_core' );
 				}
 
 			}
@@ -2145,7 +2145,7 @@ if( !class_exists( 'WP_Upgrader' ) && ( isset( $_GET[sanitize_key( 'page' )] ) &
 
 				/** All plugins are active, so we display the complete string and hide the menu to protect users */
 				if( empty( $complete ) ) {
-					echo '<p>' . sprintf( TGM_Plugin_Activation::$instance->strings['complete'], '<a href="' . admin_url() . '" title="' . __( 'Return to the Dashboard', 'tgmpa' ) . '">' . __( 'Return to the Dashboard', 'tgmpa' ) . '</a>' ) . '</p>';
+					echo '<p>' . sprintf( TGM_Plugin_Activation::$instance->strings['complete'], '<a href="' . admin_url() . '" title="' . __( 'Return to the Dashboard', 'cyberchimps_core' ) . '">' . __( 'Return to the Dashboard', 'cyberchimps_core' ) . '</a>' ) . '</p>';
 					echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
 				}
 
