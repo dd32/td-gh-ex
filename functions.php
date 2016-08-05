@@ -175,7 +175,7 @@
 		$wp_customize->add_section( 'simplyblack_logo_section' , array( 
 			'title' => __( 'Logo', 'simplyblack' ), 
 			'priority' => 30, 
-			'description' => __( 'Upload a logo to replace blogname and description in header.', 'simplyblack' ),
+			'description' => __( 'Set a logo to replace site title and tagline.', 'simplyblack' ),
 		) );
 		$wp_customize->add_setting( 'simplyblack_logo', array( 
 			'capability' => 'edit_theme_options', 

@@ -1,16 +1,16 @@
 === SimplyBlack ===
 Contributors: Guido07111975
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donation%40guidovanderleest%2enl
-Version: 4.6
+Version: 4.7
 Requires at least: 4.2
 Tested up to: 4.6
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: one-column, two-columns, right-sidebar, full-width-template, custom-background, custom-header, custom-menu, featured-images, footer-widgets, post-formats, editor-style, translation-ready
+Tags: one-column, two-columns, right-sidebar, full-width-template, custom-background, custom-header, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, blog, editor-style, translation-ready
 
 
 == Description ==
-SimplyBlack is a free, clean, minimalistic, responsive, mobile friendly WordPress theme. Features: sidebar, widget areas in footer, custom header image, custom background, custom logo to replace blogname and description, full width page template, dropdown navigation. Enjoy. 
+SimplyBlack is a free, clean, minimalistic, responsive, mobile-friendly WordPress theme. Features: sidebar, footer widgets, custom header image, custom background, custom logo to replace site title and tagline, full width page template, dropdown navigation. For more info please check readme file. Enjoy.
 
 
 == Installation ==
@@ -29,7 +29,7 @@ You can change the header image via WordPress Dashboard > Appearance > Customize
 You will find the recommended size there too.
 
 = Logo =
-You can add your own logo in stead of blogname and description via WordPress Dashboard > Appearance > Customize.
+Set a logo to replace site title and tagline via WordPress Dashboard > Appearance > Customize.
 
 = Background =
 You can add your own background(image) via WordPress Dashboard > Appearance > Customize.

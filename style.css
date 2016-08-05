@@ -1,11 +1,11 @@
 /*
 Theme Name: SimplyBlack
 Theme URI: http://www.guidovanderleest.nl/simplyblack
-Version: 4.6
+Version: 4.7
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
-Description: SimplyBlack is a free, clean, minimalistic, responsive, mobile friendly WordPress theme. Features: sidebar, widget areas in footer, custom header image, custom background, custom logo to replace blogname and description, full width page template, dropdown navigation. Enjoy. 
-Tags: one-column, two-columns, right-sidebar, full-width-template, custom-background, custom-header, custom-menu, featured-images, footer-widgets, post-formats, editor-style, translation-ready
+Description: SimplyBlack is a free, clean, minimalistic, responsive, mobile-friendly WordPress theme. Features: sidebar, footer widgets, custom header image, custom background, custom logo to replace site title and tagline, full width page template, dropdown navigation. For more info please check readme file. Enjoy.
+Tags: one-column, two-columns, right-sidebar, full-width-template, custom-background, custom-header, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, blog, editor-style, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: simplyblack
@@ -125,8 +125,8 @@ dd {margin:0 0 0 20px;}
 
 /* INPUTS */
 input, select, textarea {-webkit-appearance:none; -moz-appearance:none; border:1px solid #ccc; padding:2px 5px; background:none; font-size:1em; font-family:'Open Sans', sans-serif;}
-input[type="submit"], input[type="reset"], input[type="button"] {cursor:pointer; border:0; padding:2px 5px; background:#000; color:#fff;}
-input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover {background:#666;}
+input[type="submit"], input[type="reset"], input[type="button"], button {cursor:pointer; border:0; padding:2px 5px; background:#000; color:#fff;}
+input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, button:hover {background:#666;}
 input[type="checkbox"] {-webkit-appearance:checkbox; -moz-appearance:checkbox;}
 input[type="radio"] {-webkit-appearance:radio; -moz-appearance:radio;}
 select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
@@ -190,7 +190,7 @@ a.readmore:hover {background:#666; text-decoration:none;}
 .format-aside .post-title, .format-status .post-title, .format-image .post-title, .format-video .post-title, .format-gallery .post-title, .format-audio .post-title {font-size:1.45em;}
 .format-aside .post-title-single, .format-status .post-title-single, .format-image .post-title-single, .format-video .post-title-single, .format-gallery .post-title-single, .format-audio .post-title-single {font-size:1.45em;}
 .format-image .postmetadata, .format-video .postmetadata, .format-gallery .postmetadata, .format-audio .postmetadata {font-style:italic;}
-.format-status .avatar {width:96px; float:left; margin:0.4em 1em 0.4em 0;}
+.format-status .avatar {width:96px; float:left; margin:0.4em 1em 0.4em 0; border-radius:5px;}
 
 
 /* POST NAV */
@@ -235,8 +235,9 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 .comment-body {border-left:2px solid #ccc; padding:0 0 0 15px; margin:20px 0;}
 .comment-notes, .form-allowed-tags {font-size:0.80em; padding:5px 0;}
 .comments-title, .comment-reply-title, .no-comments {clear:both; font-size:1.45em;} 
-.comment-author .avatar {margin:0 5px 0 0;}
-.bypostauthor, .comment-awaiting-moderation {font-style:italic;}
+.comment-author .avatar {margin:0 5px 0 0; border-radius:5px;}
+.bypostauthor .comment-content {font-style:italic;}
+.comment-awaiting-moderation {font-style:italic;}
 
 #respond {width:100%; clear:both;}
 .comment-form label {padding:0 0 5px; display:block;}
@@ -274,7 +275,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 /* MOBILE */
 @media screen and (max-width:767px) { 
 	/* BODY AND CONTAINER */
-	body {line-height:1.2em;}
+	body {font-size:1em; line-height:1.2em;}
 	body.custom-background {background-image:none !important;}
 	#container {width:98%; margin:0 auto 0; padding:10px 1%; border:0;}
 
