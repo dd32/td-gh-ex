@@ -175,7 +175,7 @@
 		$wp_customize->add_section( 'darkorange_logo_section' , array( 
 			'title' => __( 'Logo', 'darkorange' ), 
 			'priority' => 30, 
-			'description' => __( 'Upload a logo to replace blogname and description in header.', 'darkorange' ),
+			'description' => __( 'Set a logo to replace site title and tagline.', 'darkorange' ),
 		) );
 		$wp_customize->add_setting( 'darkorange_logo', array( 
 			'capability' => 'edit_theme_options', 
