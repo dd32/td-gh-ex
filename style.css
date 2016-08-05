@@ -3,8 +3,8 @@ Theme Name: Barletta
 Theme URI: http://moozthemes.com/barletta-wordpress-theme
 Author: MOOZ Themes
 Author URI: http://moozthemes.com
-Description: Barletta is a light, elegant and clean design WordPress blog theme which is mainly designed for lifestyle, travel, fashion, food, personal blog and other publishers. Theme is carefully crafted with attention to details and love. Barletta blog theme is fully responsive and your web site will adapt to display on all types of devices. Theme is based on the versatile Bootstrap framework which is known for being reliable and well made making it friendly for developers. Overall, Barletta is a visually stunning theme with polished typography and simple design, great for bloggers. Now theme is optimized to work with WooCommerce, Contact Form 7 and other popular free and premium plugins. Enjoy writing, enjoy blogging!
-Version: 1.0.6
+Description: Barletta is a light, elegant and clean design WordPress blog theme which is mainly designed for lifestyle, travel, fashion, food, personal blog and other publishers. Theme is carefully crafted with attention to details and love. Barletta blog theme is fully responsive and your web site will adapt to display on all types of devices. Theme is based on the versatile Bootstrap framework which is known for being reliable and well made making it friendly for developers. Overall, Barletta is a visually stunning theme with polished typography and simple design, great for bloggers. Now theme is optimized to work with JetPack, WooCommerce, Contact Form 7, Mailchimps and other popular free and premium plugins. Enjoy writing, enjoy blogging!
+Version: 1.0.7
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: barletta
@@ -1907,4 +1907,60 @@ and (max-width : 480px) {
 
 .widget.woocommerce li {
 	border-bottom: none;
+}
+
+/*--------------------------------------------------------------
+	Mailchimps
+--------------------------------------------------------------*/
+
+.widget_mc4wp_form_widget {
+	background-color: #ffffff;	
+}
+
+.widget_mc4wp_form_widget .widget-title:after {
+	background-color: rgba(0, 0, 0, 0);	
+}
+
+.mc4wp-form {
+	padding: 0 30px 30px;
+}
+
+.mc4wp-form-fields {
+	overflow: auto;
+}
+.mc4wp-form-fields p {
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 140%;
+	color: #8d8ea2;
+	margin-bottom: 20px;
+}
+
+.mc4wp-form-fields input[type="submit"] {
+	padding: 10px 30px;
+	float: right;
+}
+
+.mc4wp-form-fields input[type="email"] {
+	width: 100%;
+}
+
+.mc4wp-form-fields label {
+	font-family: "Raleway", Sans-serif;
+	color: #373737;
+}
+
+.mc4wp-alert {
+	padding: 20px;
+	background-color: #f5f5f5;
+	margin-top: 20px;
+}
+
+.mc4wp-alert p {
+	line-height: 140%;
+	font-size: 13px;
+}
+
+.mc4wp-alert .mc4wp-success {
+	background-color: #7dc07b;
 }
