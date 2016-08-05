@@ -188,7 +188,7 @@
 		$wp_customize->add_section( 'privatebusiness_logo_section' , array( 
 			'title' => __( 'Logo', 'privatebusiness' ), 
 			'priority' => 30, 
-			'description' => __( 'Upload a logo to replace blogname and description in header.', 'privatebusiness' ),
+			'description' => __( 'Set a logo to replace site title and tagline.', 'privatebusiness' ),
 		) );
 		$wp_customize->add_setting( 'privatebusiness_logo', array( 
 			'capability' => 'edit_theme_options', 

@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+PrivateBusiness version 5.3 - august 2016
+- file content-postmeta-single: display post format too
+- updated text strings
+- several small adjustments
+
 PrivateBusiness version 5.2 - august 2016
 - cleanup: removed unnecessary white space from several files
 - file style: removed unnecessary id tags from several strings
