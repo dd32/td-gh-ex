@@ -2,7 +2,7 @@
 * Theme Name: Spasalon
 * Theme URI: http://webriti.com/spasalon-lite-description/
 * Description: A responsive theme for SPA SALON and BEAUTY SALON type of business that uses multiple nav menus, right-sidebar,Featured Slider and Beautifully designed home page all manage via option panel.It has a pixel-perfect design that is great for any health care ,salons , spas etc related services who wants a new look for their site. Very recently added a support for woocommerce plugin. Now you create an effective online shop presence with the help of this woocommerce support i.e we have styled this theme in such a manner so that the woocommerce pages/templates looks very similar to the theme styles.
-* Version: 1.6.2
+* Version: 1.6.3
 * Author: webriti
 * Author URI: http://www.webriti.com
 * Tags: full-width-template, threaded-comments, right-sidebar, one-column, two-columns, custom-menu, sticky-post, translation-ready, featured-images, blog
@@ -88,20 +88,6 @@ h1, .h1 {
 		.sticky{}
 		.bypostauthor{} 
 		
-		.section-title .section-heading{ 
-			font-family: MarketingScript; 
-			font-size: 42px; 
-			line-height: 45px;
-			font-style: normal;
-		}
-		
-		.section-title p{ 
-			font-family: Droid Serif; 
-			font-size: 16px; 
-			line-height: 25px;
-			font-style: italic;
-		}
-		
 		.navbar-default .navbar-nav > li > a {
 			font-family: Raleway; 
 			font-size: 15px; 
@@ -111,15 +97,15 @@ h1, .h1 {
 		
 		.entry-header .entry-title{
 			font-family: Roboto; 
-			font-size: 18px; 
-			line-height: 24px;
+			font-size: 20px; 
+			line-height: 26px;
 			font-style: normal;
 		}
 		
 		p, .entry-content, .post .entry-content {
 			font-family: Roboto; 
 			font-size: 15px; 
-			line-height: 20px;
+			line-height: 24px;
 			font-style: normal;
 		}
 		
@@ -251,9 +237,30 @@ a.thumb-btn:hover:before, a.thumb-btn:focus:before, a.thumb-btn:active:before {
 }
 
 /* Section Title Css --------------------------------------------------------------------------------------------------------------- */
+
+
+
+
+
 .section-title { margin: 0 0 60px; padding: 0 15px; display: block; text-align: center; }
-.section-title .section-heading { margin: 0 0 18px; }
-.section-title p { color: #959595; font-weight: 400; margin: 0; }
+.section-title .section-heading { font-family: 'MarketingScript'; font-size: 42px; line-height: 45px; margin: 0 0 18px; }
+.section-title p { color: #959595; font-family: "Droid Serif"; font-size: 16px; font-weight: 400; font-style: italic; line-height: 25px; margin: 0; }
+
+
+/* .section-title .section-heading{ 
+			font-family: Marketing Script; 
+			font-size: 42px; 
+			line-height: 45px;
+			font-style: normal;
+		}
+		.section-title p{ 
+			font-family: 'Droid Serif'; 
+			font-size: 16px; 
+			line-height: 25px;
+			font-style: italic;
+		} */
+
+
 
 /* Service Section Css ----------------------------------------------------------------------------------------------------------- */
 #section { margin: 0; padding: 65px 0 25px; }
@@ -416,7 +423,7 @@ a.thumb-btn:hover:before, a.thumb-btn:focus:before, a.thumb-btn:active:before {
 /* Product Page Section Css -------------------------------------------------------------------------------------------------------------------- */
 .product-title { font-weight: 400; margin: 0 0 20px; }
 .col-md-12:first-child .product { margin: 0; }
-.product { margin: 25px 0 0px; overflow: hidden; }
+.product { margin: 0 0 5px; overflow: hidden; }
 .product .item-product:nth-child(5n+1) { border-right: 0 none; }
 .item-product {
     position: relative;
@@ -729,4 +736,41 @@ p { margin: 0 0 25px; }
 bottom: 0em;
 }
 
+}
+
+/* Contact Form 7 Css Here*/
+.wpcf7-form p, .wpcf7-form p input[type="text"] { margin: 0; }
+.wpcf7-form p span { margin: 10px 0 20px; display: block; }
+
+/* Gallery Css Here*/
+.gallery .gallery-icon img { 
+	-moz-box-shadow: 0 0 5px 2px #ccc;
+	-webkit-box-shadow: 0 0 5px 2px #ccc;
+	box-shadow: 0 0 5px 2px #ccc;
+	border: 5px solid #fff !important;
+    display: inline-block;
+}
+.gallery-item .gallery-caption {
+	font-family: 'Roboto';
+    color: #787878;
+    font-weight: 400;
+    display: block;
+	word-wrap: break-word;
+}
+
+select, input[type="password"]{ 
+	border: 1px solid #e0e0e0;
+	box-shadow: 0px 0px 3px #e5e5e5 inset;
+	font-size: 16px;
+	line-height: 20px;
+	color: #626668;
+	height: 50px;
+	border-radius: 3px;
+	padding: 12px 10px;
+	width: 100%; 
+	outline: 0;
+}
+
+li.woocommerce-MyAccount-navigation-link {
+    list-style: none;
 }

@@ -33,10 +33,10 @@ a.thumb-btn:before, .flex-direction-nav a:hover::before,
 .widget table tbody a, 
 .scrollup, 
 ins, 
-input[type="submit"], input[type="reset"], th { 
+input[type="submit"], input[type="reset"]{ 
 	background-color: #f22853; 
 }
-th{color:#fff;}
+th{color:#626668;}
 
 /* Text Color */
 .service .entry-header .entry-title > a:hover, 

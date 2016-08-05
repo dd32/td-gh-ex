@@ -58,17 +58,24 @@ $current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), d
 				
 				<div class="col-md-5">
 					<ul class="footer-links">
-					 <?php
-					wp_nav_menu( array(  
-					'theme_location' => 'footer-menu',
-					'container'  => 'nav-collapse collapse navbar-inverse-collapse',
-					'menu_class' => '',
-					'fallback_cb' => 'webriti_fallback_page_menu',
-					'walker' => new webriti_nav_walker()
-					)
-				);	
-			?>		
+					 <?php  
+						wp_nav_menu( 
+							array(  
+								'menu'           => 'footer-menu',
+								'theme_location' => ( has_nav_menu( 'footer' ) ? 'footer' : 'primary' ),
+								'depth'          => -1,
+								'container'      => false,
+								'menu_class'     => '',
+								'menu_id'        =>'FooterMenu',
+							   'fallback_cb'     => 'wp_page_menu',
+								'walker'         => new webriti_nav_walker()
+							)
+						);
+						?>	
 					</ul>
+					
+					
+					
 				</div>
 				
 			</div>

@@ -9,7 +9,7 @@ function spasalon_fonts_url() {
 		
     $font_families = array();
  
-	$font_families = array('Lato:100,300,400,700,900','Raleway:300,400,600,700,800','italic','Roboto:100,300,400,500,700,900');
+	$font_families = array('Lato:100,300,400,700,900','Raleway:300,400,600,700,800','italic','Roboto:100,300,400,500,700,900', 'Droid Serif:400,700' );
  
         $query_args = array(
             'family' => urlencode( implode( '|', $font_families ) ),

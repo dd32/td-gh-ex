@@ -106,7 +106,9 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
-@Version 1.6.1
+@Version 1.6.3
+1. Solved Styling issue.
+@Version 1.6.2
 1. Remove Pro customizer settings.
 2. Remove Front Page.
 3. Remove Demo Content in Banner Setting.
