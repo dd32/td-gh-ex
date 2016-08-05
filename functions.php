@@ -175,7 +175,7 @@
 		$wp_customize->add_section( 'onecolumn_logo_section' , array( 
 			'title' => __( 'Logo', 'onecolumn' ), 
 			'priority' => 30, 
-			'description' => __( 'Upload a logo to replace blogname and description in header.', 'onecolumn' ),
+			'description' => __( 'Set a logo to replace site title and tagline.', 'onecolumn' ),
 		) );
 		$wp_customize->add_setting( 'onecolumn_logo', array( 
 			'capability' => 'edit_theme_options', 
