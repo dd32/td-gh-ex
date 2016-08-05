@@ -252,7 +252,7 @@ function moesia_scripts() {
 
 	if ( is_home() && get_theme_mod('blog_layout') == 'masonry' ) {
 
-		wp_enqueue_script( 'jquery-masonry');
+		wp_enqueue_script( 'masonry');
 
 		wp_enqueue_script( 'moesia-imagesloaded', get_template_directory_uri() . '/js/imagesloaded.pkgd.min.js', array(), true );
 
