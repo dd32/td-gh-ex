@@ -175,7 +175,7 @@
 		$wp_customize->add_section( 'darkelements_logo_section' , array( 
 			'title' => __( 'Logo', 'darkelements' ), 
 			'priority' => 30, 
-			'description' => __( 'Upload a logo to replace blogname and description in header.', 'darkelements' ),
+			'description' => __( 'Set a logo to replace site title and tagline.', 'darkelements' ),
 		) );
 		$wp_customize->add_setting( 'darkelements_logo', array( 
 			'capability' => 'edit_theme_options', 
@@ -187,7 +187,7 @@
 			'settings' => 'darkelements_logo', 
 		) ) );
 		$wp_customize->add_section( 'darkelements_menu_title_section' , array( 	
-			'title' => __( 'Menu Title', 'darkelements' ), 
+			'title' => __( 'Title', 'darkelements' ), 
 			'priority' => 31, 
 			'description' => __( 'Change title displayed above the menu.', 'darkelements' ),
 		) );

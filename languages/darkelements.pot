@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: DarkElements\n"
-"POT-Creation-Date: 2016-07-26 23:31+0200\n"
+"POT-Creation-Date: 2016-08-05 11:12+0200\n"
 "PO-Revision-Date: 2015-11-15 17:03+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -64,6 +64,11 @@ msgstr ""
 msgid "Tag: %s"
 msgstr ""
 
+#: content-postmeta-single.php:14
+#, php-format
+msgid "Format: %s"
+msgstr ""
+
 #: content-postmeta.php:8
 #, php-format
 msgid "Posted on %s"
@@ -103,47 +108,51 @@ msgstr ""
 msgid "Default header"
 msgstr ""
 
-#: functions.php:94 header.php:37
+#: functions.php:89 header.php:37
 msgid "Menu"
 msgstr ""
 
-#: functions.php:105
+#: functions.php:100
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:107 functions.php:117 functions.php:127 functions.php:137
+#: functions.php:102 functions.php:112 functions.php:122 functions.php:132
 msgid "You can add one or multiple widgets here."
 msgstr ""
 
-#: functions.php:115
+#: functions.php:110
 msgid "Footer Right"
 msgstr ""
 
-#: functions.php:125
+#: functions.php:120
 msgid "Footer Middle"
 msgstr ""
 
-#: functions.php:135
+#: functions.php:130
 msgid "Footer Left"
 msgstr ""
 
-#: functions.php:181 functions.php:190
+#: functions.php:176 functions.php:185
 msgid "Logo"
 msgstr ""
 
-#: functions.php:183
-msgid "Upload a logo to replace blogname and description in header."
+#: functions.php:178
+msgid "Set a logo to replace site title and tagline."
 msgstr ""
 
-#: functions.php:195 functions.php:204
-msgid "Menu Title"
+#: functions.php:190
+msgid "Title"
 msgstr ""
 
-#: functions.php:197
+#: functions.php:192
 msgid "Change title displayed above the menu."
 msgstr ""
 
-#: functions.php:205
+#: functions.php:199
+msgid "Menu Title"
+msgstr ""
+
+#: functions.php:200
 msgid "This will overwrite the default title."
 msgstr ""
 
@@ -166,10 +175,10 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"DarkElements is a free, clean, minimalistic, responsive, mobile friendly "
-"WordPress theme. Features: sidebar, sidebar navigation, widget areas in "
-"footer, custom header image, custom background, custom logo to replace "
-"blogname and description. Enjoy."
+"DarkElements is a free, clean, minimalistic, responsive, mobile-friendly "
+"WordPress theme. Features: sidebar, sidebar navigation, footer widgets, "
+"custom header image, custom background, custom logo to replace site title "
+"and tagline. For more info please check readme file. Enjoy."
 msgstr ""
 
 #. Author of the plugin/theme

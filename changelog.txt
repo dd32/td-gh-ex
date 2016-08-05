@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+DarkElements version 4.6 - august 2016
+- file content-postmeta-single: display post format too
+- updated text strings
+- several small adjustments
+
 DarkElements version 4.5 - august 2016
 - cleanup: removed unnecessary white space from several files
 - file style: removed unnecessary id tags from several strings
