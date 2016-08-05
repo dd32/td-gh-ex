@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+LeftSide version 4.2 - august 2016
+- file functions: translation fix
+
 LeftSide version 4.1 - august 2016
 - file content-postmeta-single: display post format too
 - updated text strings
