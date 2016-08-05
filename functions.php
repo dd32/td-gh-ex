@@ -178,7 +178,7 @@
 		$wp_customize->add_section( 'gridbulletin_logo_section' , array( 
 			'title' => __( 'Logo', 'gridbulletin' ), 
 			'priority' => 30, 
-			'description' => __( 'Upload a logo to replace blogname and description in header.', 'gridbulletin' ),
+			'description' => __( 'Set a logo to replace site title and tagline.', 'gridbulletin' ),
 		) );
 		$wp_customize->add_setting( 'gridbulletin_logo', array( 
 			'capability' => 'edit_theme_options', 
