@@ -205,7 +205,7 @@
 		$wp_customize->add_section( 'bluegray_logo_section' , array( 
 			'title' => __( 'Logo', 'bluegray' ), 
 			'priority' => 30, 
-			'description' => __( 'Upload a logo to replace blogname and description in header.', 'bluegray' ),
+			'description' => __( 'Set a logo to replace site title and tagline.', 'bluegray' ),
 		) );
 		$wp_customize->add_setting( 'bluegray_logo', array( 
 			'capability' => 'edit_theme_options', 
