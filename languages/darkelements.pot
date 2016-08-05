@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: DarkElements\n"
-"POT-Creation-Date: 2016-08-05 11:12+0200\n"
+"POT-Creation-Date: 2016-08-05 13:13+0200\n"
 "PO-Revision-Date: 2015-11-15 17:03+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -141,7 +141,7 @@ msgid "Set a logo to replace site title and tagline."
 msgstr ""
 
 #: functions.php:190
-msgid "Title"
+msgid "Menu Title"
 msgstr ""
 
 #: functions.php:192
@@ -149,7 +149,7 @@ msgid "Change title displayed above the menu."
 msgstr ""
 
 #: functions.php:199
-msgid "Menu Title"
+msgid "Title"
 msgstr ""
 
 #: functions.php:200

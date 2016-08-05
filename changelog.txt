@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+DarkElements version 4.7 - august 2016
+- file functions: translation fix
+
 DarkElements version 4.6 - august 2016
 - file content-postmeta-single: display post format too
 - updated text strings
