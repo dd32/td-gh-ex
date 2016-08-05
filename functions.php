@@ -175,7 +175,7 @@
 		$wp_customize->add_section( 'leftside_logo_section' , array( 
 			'title' => __( 'Logo', 'leftside' ), 
 			'priority' => 30, 
-			'description' => __( 'Upload a logo to replace blogname and description in header.', 'leftside' ),
+			'description' => __( 'Set a logo to replace site title and tagline.', 'leftside' ),
 		) );
 		$wp_customize->add_setting( 'leftside_logo', array( 
 			'capability' => 'edit_theme_options', 
@@ -187,7 +187,7 @@
 			'settings' => 'leftside_logo', 
 		) ) );
 		$wp_customize->add_section( 'leftside_menu_title_section' , array( 	
-			'title' => __( 'Menu Title', 'leftside' ), 
+			'title' => __( 'Title', 'leftside' ), 
 			'priority' => 31, 
 			'description' => __( 'Change title displayed above the menu.', 'leftside' ),
 		) );
