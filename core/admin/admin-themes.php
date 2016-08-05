@@ -69,6 +69,64 @@ if (!function_exists('enigmadisplay_theme_info_page')) {
 					<h1 class="section-title">WordPress Themes</h1>
 				</div>
 			</div>
+			
+		<div class="row p_plugin blog_gallery">
+			<div class="col-xs-12 col-sm-4 col-md-5 p_plugin_pic">
+				<div class="img-thumbnail">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/BeautySpa.jpg" class="img-responsive" alt=""/>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-5 col-md-5 p_plugin_desc">
+				<div class="row p-box">
+					<h2><a href="">BeautySpa- Ultimate Multi-Purpose WordPress Theme</a></h2>
+						<p><strong>Tags: </strong>clean, responsive, portfolio, blog, e-commerce, Business,
+						WordPress, Corporate, dark, real estate, shop, restaurant, ele…</p>
+						<div>
+						<p><strong>Description: </strong>
+						BeautySpa is an multi-purpose responsive theme coded & designed with a lot of care and love. You can use it for your business, portfolio, blogging or any type of site.</p>
+						</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-3 col-md-2 p_plugin_pic">
+				<div class="price">
+					<span class="currency">USD</span>
+					<span class="price-number">$<span>39</span></span>
+				</div>
+				<div class="btn-group-vertical">
+					<a class="btn btn-primary btn-lg" href="http://demo.weblizar.com/beautyspa-premium/">Demo</a>
+					<a class="btn btn-success btn-lg" href="https://weblizar.com/themes/beautyspa-premium/">Buy Now</a>
+				</div>			
+			</div>
+		</div>
+		<div class="row p_plugin blog_gallery">
+			<div class="col-xs-12 col-sm-4 col-md-5 p_plugin_pic">
+				<div class="img-thumbnail">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/Scorline.jpg" class="img-responsive" alt=""/>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-5 col-md-5 p_plugin_desc">
+				<div class="row p-box">
+					<h2><a href="">Scoreline- Ultimate Multi-Purpose WordPress Theme</a></h2>
+						<p><strong>Tags: </strong>clean, responsive, portfolio, blog, e-commerce, Business,
+						WordPress, Corporate, dark, real estate, shop, restaurant, ele…</p>
+						<div>
+						<p><strong>Description: </strong>
+						scoreline is a responsive and fully customizable template for Business and Multi-purpose theme.The Theme has You can use it for your business, portfolio, blogging or any type of site.</p>
+						</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-3 col-md-2 p_plugin_pic">
+				<div class="price">
+					<span class="currency">USD</span>
+					<span class="price-number">$<span>29</span></span>
+				</div>
+				<div class="btn-group-vertical">
+					<a class="btn btn-primary btn-lg" href="http://demo.weblizar.com/scoreline-premium/">Demo</a>
+					<a class="btn btn-success btn-lg" href="https://weblizar.com/themes/scoreline-premium/">Buy Now</a>
+				</div>			
+			</div>
+		</div>
+		
 		<div class="row p_plugin blog_gallery">
 			<div class="col-xs-12 col-sm-4 col-md-5 p_plugin_pic">
 				<div class="img-thumbnail">
@@ -117,7 +175,7 @@ if (!function_exists('enigmadisplay_theme_info_page')) {
 			<div class="col-xs-12 col-sm-3 col-md-2 p_plugin_pic">
 				<div class="price">
 					<span class="currency">USD</span>
-					<span class="price-number">$<span>41</span></span>
+					<span class="price-number">$<span>39</span></span>
 				</div>
 				<div class="btn-group-vertical">
 					<a class="btn btn-primary btn-lg" href="https://weblizar.com/themes/healthcare/">Detail</a>
@@ -146,7 +204,7 @@ if (!function_exists('enigmadisplay_theme_info_page')) {
 			<div class="col-xs-12 col-sm-3 col-md-2 p_plugin_pic">
 				<div class="price">
 					<span class="currency">USD</span>
-					<span class="price-number">$<span>41</span></span>
+					<span class="price-number">$<span>39</span></span>
 				</div>
 				<div class="btn-group-vertical">
 					<a class="btn btn-primary btn-lg" href="https://weblizar.com/themes/creative-premium/">Detail</a>
@@ -213,7 +271,6 @@ if (!function_exists('enigmadisplay_theme_info_page')) {
 				</div>
 			</div>
 		</div>
-	
 	
 		<div class="row p_plugin blog_gallery">
 			<div class="col-xs-12 col-sm-4 col-md-5 p_plugin_pic">
@@ -319,17 +376,17 @@ if (!function_exists('enigmadisplay_theme_info_page')) {
 			</div>
 			<div class="col-xs-12 col-sm-5 col-md-5 p_plugin_desc">
 				<div class="row p-box">
-					<h2><a href="">Responsive Coming Soon Page</a></h2>
+					<h2><a href="">Coming Soon Page & Maintenance Mode Pro </a></h2>
 						<p><strong>Features: </strong>
 						<ul>
-						<li>Bootstrap Based Responsive Plugin Settings Panel</li>
-						<li>Compatible With Most WordPress Theme</li>
-						<li>Image background</li>
-						<li>Color background</li>
-						<li>Multiple Color Skins Selection</li>
+						<li>Coming Soon Mode</li>
+						<li>Under Construction Mode</li>
+						<li>Pro Templates</li>
+						<li>News Letter Subscriptions</li>
+						<li>Automatic Website Launch</li>
 						<li>News Letter Subscriber Forms</li>
-						<li>Subscriber Notification</li>
-						<li>Export & Import Subscribers List</li>
+						<li>Auto & Manual Notification</li>
+						<li>Google Analytic Tracking</li>
 						</ul>
 						</p>
 				</div>
@@ -337,11 +394,11 @@ if (!function_exists('enigmadisplay_theme_info_page')) {
 			<div class="col-xs-12 col-sm-3 col-md-2 p_plugin_pic">
 				<div class="price">
 					<span class="currency">USD</span>
-					<span class="price-number"><span>FREE</span></span>
+					<span class="price-number"><span>$24</span></span>
 				</div>
 				<div class="btn-group-vertical">
-					<a target="_blank" class="btn btn-primary btn-lg" href="https://wordpress.org/plugins/responsive-coming-soon-page/">Download</a>
-					<!-- <a class="btn btn-success btn-lg" href="https://weblizar.com/plugins/about-author-pro/">Buy Now</a> -->
+					<a target="_blank" class="btn btn-primary btn-lg" href="http://demo.weblizar.com/coming-soon-page-pro/">Demo</a>
+					<a class="btn btn-success btn-lg" href="https://weblizar.com/plugins/coming-soon-page-maintenance-mode-pro/">Buy Now</a> 
 				</div>			
 			</div>
 		</div>

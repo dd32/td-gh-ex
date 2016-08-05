@@ -5,11 +5,15 @@ Consider weblizar PRE-Fix for function-name and as a slug of the Theme Enigma.
 Enigma
 
 CHANGE-LOG:
+@Version: 2.5 [05/08/2016]
+1. Updated Pro Themes and Plugins Page with Upcoming Premium Theme Features.
+2. Minor Issue Fixed.
+
+CHANGE-LOG:
 @Version: 2.4.3 [06/07/2016]
 1. Minor issue fixed.
 2. Link updated in Pro themes .
 3. Twitter spelling corretions.
-
 
 @Version: 2.4.2 [10/06/2016]
 1. woocomerce minor fix.
