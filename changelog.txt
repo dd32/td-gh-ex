@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+MultiColors version 4.5 - august 2016
+- file content-postmeta-single: display post format too
+- files header and style: changed image-header and sidebar-header class into image-homepage and sidebar-homepage
+- file style: updated styling of inputs
+- updated text strings
+- several small adjustments
+
 MultiColors version 4.4 - august 2016
 - cleanup: removed unnecessary white space from several files
 - file style: removed unnecessary id tags from several strings

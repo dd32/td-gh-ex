@@ -41,12 +41,12 @@
 	<?php if ( get_header_image() ) {?> 
 	<div id="header-third-container">
 		<div id="header-third">
-			<div class="image-header"> 
+			<div class="image-homepage"> 
 				<img src="<?php echo get_header_image(); ?>" class="header-img" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
 			</div>
 	
 			<?php if ( is_active_sidebar( 'header' ) ) {?> 
-			<div class="sidebar-header"> 
+			<div class="sidebar-homepage"> 
 				<?php dynamic_sidebar( 'header' ); ?>
 			</div>
 			<?php } ?>

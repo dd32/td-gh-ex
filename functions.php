@@ -215,7 +215,7 @@
 		$wp_customize->add_section( 'multicolors_logo_section' , array( 
 			'title' => __( 'Logo', 'multicolors' ), 
 			'priority' => 30, 
-			'description' => __( 'Upload a logo to replace blogname and description in header.', 'multicolors' ),
+			'description' => __( 'Set a logo to replace site title and tagline.', 'multicolors' ),
 		) );
 		$wp_customize->add_setting( 'multicolors_logo', array( 
 			'capability' => 'edit_theme_options', 
