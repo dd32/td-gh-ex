@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MyKnowledgeBase\n"
-"POT-Creation-Date: 2016-07-26 23:32+0200\n"
+"POT-Creation-Date: 2016-08-05 11:13+0200\n"
 "PO-Revision-Date: 2015-12-22 00:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -64,6 +64,11 @@ msgstr ""
 msgid "Tag: %s"
 msgstr ""
 
+#: content-postmeta-single.php:14
+#, php-format
+msgid "Format: %s"
+msgstr ""
+
 #: content-postmeta.php:8
 #, php-format
 msgid "Posted on %s"
@@ -103,72 +108,81 @@ msgstr ""
 msgid "Default header"
 msgstr ""
 
-#: functions.php:94
+#: functions.php:89
 msgid "Menu"
 msgstr ""
 
-#: functions.php:105
+#: functions.php:100
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:107 functions.php:117 functions.php:127 functions.php:137
-#: functions.php:147
+#: functions.php:102 functions.php:112 functions.php:122 functions.php:132
+#: functions.php:142
 msgid "You can add one or multiple widgets here."
 msgstr ""
 
-#: functions.php:115
+#: functions.php:110
 msgid "Homepage Sidebar"
 msgstr ""
 
-#: functions.php:125
+#: functions.php:120
 msgid "Footer Right"
 msgstr ""
 
-#: functions.php:135
+#: functions.php:130
 msgid "Footer Middle"
 msgstr ""
 
-#: functions.php:145
+#: functions.php:140
 msgid "Footer Left"
 msgstr ""
 
-#: functions.php:191 functions.php:200
+#: functions.php:186 functions.php:195
 msgid "Logo"
 msgstr ""
 
-#: functions.php:193
-msgid "Upload a logo to replace blogname and description in header."
+#: functions.php:188
+msgid "Set a logo to replace site title and tagline."
 msgstr ""
 
-#: functions.php:205
+#: functions.php:200
 msgid "Knowledgebase"
 msgstr ""
 
-#: functions.php:207
-msgid "Set amount of posts for each knowledgebase category."
+#: functions.php:202
+msgid "Settings for the knowledgebase page template."
 msgstr ""
 
-#: functions.php:214
+#: functions.php:209
 msgid "Posts per category"
 msgstr ""
 
-#: functions.php:215
+#: functions.php:210
 msgid "Only numeric characters allowed."
 msgstr ""
 
+#: functions.php:220
+msgid "Exclude category"
+msgstr ""
+
 #: functions.php:221
+msgid ""
+"Exclude a category by ID and use a comma in case of multiple categories."
+msgstr ""
+
+#: functions.php:226
 msgid "Search Bar"
 msgstr ""
 
-#: functions.php:223
-msgid "Change title of the knowledgebase search bar."
+#: functions.php:228
+msgid "Settings for the knowledgebase search bar."
 msgstr ""
 
-#: functions.php:230
-msgid "Search Bar Title"
+#: functions.php:235
+msgid "Title"
 msgstr ""
 
-#: functions.php:231
+#: functions.php:236
 msgid "This will overwrite the default title."
 msgstr ""
 
@@ -199,13 +213,13 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"MyKnowledgeBase is a free, clean, minimalistic, responsive, mobile friendly "
+"MyKnowledgeBase is a free, clean, minimalistic, responsive, mobile-friendly "
 "WordPress theme. Create a 3 or 4 column Knowledge Base, Bulletin Board, FAQ, "
 "Wiki or Link Portal with a custom page template and using the default "
-"categories and posts. Features: sidebar, widget areas on homepage, widget "
-"areas in footer, custom header image, custom background, custom logo to "
-"replace blogname and description, full width page template, dropdown "
-"navigation. Enjoy."
+"categories and posts. Features: sidebar, homepage widgets, footer widgets, "
+"custom header image, custom background, custom logo to replace site title "
+"and tagline, full width page template, dropdown navigation. For more info "
+"please check readme file. Enjoy."
 msgstr ""
 
 #. Author of the plugin/theme

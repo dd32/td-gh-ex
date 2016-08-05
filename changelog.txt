@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+MyKnowledgeBase version 4.2 - august 2016
+- customizer: exclude categories
+- updated file functions
+- updated files page-knowledge-three and page-knowledge-four
+- file content-postmeta-single: display post format too
+- updated text strings
+- several small adjustments
+- new screenshot
+
 MyKnowledgeBase version 4.1 - august 2016
 - cleanup: removed unnecessary white space from several files
 - file style: removed unnecessary id tags from several strings

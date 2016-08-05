@@ -8,8 +8,15 @@
 <?php get_header(); ?>
 <div id="content-full">
 <div id="categories-four">
-	<?php $myknowledgebase_cat_args = array(
+	<?php if ( get_theme_mod( 'myknowledgebase_exclude' ) ) :
+		$exclude = esc_attr( get_theme_mod( 'myknowledgebase_exclude' ) ); // customizer get categories to exclude
+	else :
+		$exclude = ''; // means exclude no categories
+	endif;
+
+	$myknowledgebase_cat_args = array(
 		'hide_empty' => 0, // 0 means also list empty categories
+		'exclude' => $exclude, // exclude categories
 		'orderby' => 'name', // sort categories by name
 		'order' => 'asc' // list categories in ascending order
 	);
@@ -20,7 +27,7 @@
 		echo '<ul class="cat-list"><li class="cat-name"><a href="' . get_category_link( $cat->cat_ID ) . '" title="' . $cat->name . '" >' . $cat->name . '</a></li>';
 
 		if ( get_theme_mod( 'myknowledgebase_posts' ) ) :
-			$posts_per_page = esc_attr( get_theme_mod( 'myknowledgebase_posts' ) ); // get number of posts set in customizer
+			$posts_per_page = esc_attr( get_theme_mod( 'myknowledgebase_posts' ) ); // customizer get number of posts
 		else :
 			$posts_per_page = -1; // -1 means list all posts
 		endif;
@@ -39,7 +46,6 @@
 		endforeach;
 	
 		echo '</ul>';
-
 	endforeach; ?>
 </div>	
 </div>	

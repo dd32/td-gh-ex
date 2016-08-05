@@ -1,16 +1,16 @@
 === MyKnowledgeBase ===
 Contributors: Guido07111975
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donation%40guidovanderleest%2enl
-Version: 4.1
+Version: 4.2
 Requires at least: 4.2
 Tested up to: 4.6
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: one-column, two-columns, right-sidebar, full-width-template, custom-background, custom-header, custom-menu, featured-images, footer-widgets, post-formats, editor-style, translation-ready
+Tags: one-column, two-columns, right-sidebar, full-width-template, custom-background, custom-header, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, blog, editor-style, translation-ready
 
 
 == Description ==
-MyKnowledgeBase is a free, clean, minimalistic, responsive, mobile friendly WordPress theme. Create a 3 or 4 column Knowledge Base, Bulletin Board, FAQ, Wiki or Link Portal with a custom page template and using the default categories and posts. Features: sidebar, widget areas on homepage, widget areas in footer, custom header image, custom background, custom logo to replace blogname and description, full width page template, dropdown navigation. Enjoy. 
+MyKnowledgeBase is a free, clean, minimalistic, responsive, mobile-friendly WordPress theme. Create a 3 or 4 column Knowledge Base, Bulletin Board, FAQ, Wiki or Link Portal with a custom page template and using the default categories and posts. Features: sidebar, homepage widgets, footer widgets, custom header image, custom background, custom logo to replace site title and tagline, full width page template, dropdown navigation. For more info please check readme file. Enjoy.
 
 
 == Installation ==
@@ -29,7 +29,7 @@ You can change the header image via WordPress Dashboard > Appearance > Customize
 You will find the recommended size there too.
 
 = Logo =
-You can add your own logo in stead of blogname and description via WordPress Dashboard > Appearance > Customize.
+Set a logo to replace site title and tagline via WordPress Dashboard > Appearance > Customize.
 
 = Background =
 You can add your own background(image) via WordPress Dashboard > Appearance > Customize.
@@ -44,7 +44,7 @@ The knowledgebase uses the default WordPress categories and posts.
 
 Create a new page and select the knowledgebase page template. You can choose between 3 columns (with sidebar) and 4 columns (without sidebar).
 
-Set amount of posts for each category via WordPress Dashboard > Appearance > Customize. 
+Exclude a category and set amount of posts for each category via WordPress Dashboard > Appearance > Customize. 
 
 If you want this page to be homepage go to Settings > Reading and select this page as hompepage.
 

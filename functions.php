@@ -8,7 +8,7 @@
 		// Set max content width for img, video, and more
 			global $content_width; 
 			if ( ! isset( $content_width ) )
-			$content_width = 780;
+			$content_width = 750;
 
 		// Make theme available for translation
 			load_theme_textdomain('myknowledgebase', get_template_directory() . '/languages');  
@@ -185,7 +185,7 @@
 		$wp_customize->add_section( 'myknowledgebase_logo_section' , array( 
 			'title' => __( 'Logo', 'myknowledgebase' ), 
 			'priority' => 30, 
-			'description' => __( 'Upload a logo to replace blogname and description in header.', 'myknowledgebase' ),
+			'description' => __( 'Set a logo to replace site title and tagline.', 'myknowledgebase' ),
 		) );
 		$wp_customize->add_setting( 'myknowledgebase_logo', array( 
 			'capability' => 'edit_theme_options', 
@@ -199,7 +199,7 @@
 		$wp_customize->add_section( 'myknowledgebase_posts_section' , array( 	
 			'title' => __( 'Knowledgebase', 'myknowledgebase' ), 
 			'priority' => 31, 
-			'description' => __( 'Set amount of posts for each knowledgebase category.', 'myknowledgebase' ),
+			'description' => __( 'Settings for the knowledgebase page template.', 'myknowledgebase' ),
 		) );
 		$wp_customize->add_setting( 'myknowledgebase_posts', array( 
 			'capability' => 'edit_theme_options', 
@@ -212,17 +212,27 @@
 			'type' => 'number', 
 			'settings' => 'myknowledgebase_posts', 
 		) ) );
+		$wp_customize->add_setting( 'myknowledgebase_exclude', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control ( $wp_customize, 'myknowledgebase_exclude', array( 
+			'label' => __( 'Exclude category', 'myknowledgebase' ), 
+			'description' => __( 'Exclude a category by ID and use a comma in case of multiple categories.', 'myknowledgebase' ), 
+			'section' => 'myknowledgebase_posts_section', 
+			'settings' => 'myknowledgebase_exclude', 
+		) ) );
 		$wp_customize->add_section( 'myknowledgebase_search_section' , array( 	
 			'title' => __( 'Search Bar', 'myknowledgebase' ), 
 			'priority' => 32, 
-			'description' => __( 'Change title of the knowledgebase search bar.', 'myknowledgebase' ),
+			'description' => __( 'Settings for the knowledgebase search bar.', 'myknowledgebase' ),
 		) );
 		$wp_customize->add_setting( 'myknowledgebase_search', array( 
 			'capability' => 'edit_theme_options', 
 			'sanitize_callback' => 'sanitize_text_field', 
 		) ); 
 		$wp_customize->add_control( new WP_Customize_Control ( $wp_customize, 'myknowledgebase_search', array( 
-			'label' => __( 'Search Bar Title', 'myknowledgebase' ), 
+			'label' => __( 'Title', 'myknowledgebase' ), 
 			'description' => __( 'This will overwrite the default title.', 'myknowledgebase' ), 
 			'section' => 'myknowledgebase_search_section', 
 			'settings' => 'myknowledgebase_search', 

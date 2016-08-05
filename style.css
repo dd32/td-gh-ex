@@ -1,11 +1,11 @@
 /*
 Theme Name: MyKnowledgeBase
 Theme URI: http://www.guidovanderleest.nl/myknowledgebase
-Version: 4.1
+Version: 4.2
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
-Description: MyKnowledgeBase is a free, clean, minimalistic, responsive, mobile friendly WordPress theme. Create a 3 or 4 column Knowledge Base, Bulletin Board, FAQ, Wiki or Link Portal with a custom page template and using the default categories and posts. Features: sidebar, widget areas on homepage, widget areas in footer, custom header image, custom background, custom logo to replace blogname and description, full width page template, dropdown navigation. Enjoy. 
-Tags: one-column, two-columns, right-sidebar, full-width-template, custom-background, custom-header, custom-menu, featured-images, footer-widgets, post-formats, editor-style, translation-ready
+Description: MyKnowledgeBase is a free, clean, minimalistic, responsive, mobile-friendly WordPress theme. Create a 3 or 4 column Knowledge Base, Bulletin Board, FAQ, Wiki or Link Portal with a custom page template and using the default categories and posts. Features: sidebar, homepage widgets, footer widgets, custom header image, custom background, custom logo to replace site title and tagline, full width page template, dropdown navigation. For more info please check readme file. Enjoy.
+Tags: one-column, two-columns, right-sidebar, full-width-template, custom-background, custom-header, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, blog, editor-style, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: myknowledgebase
@@ -68,7 +68,7 @@ table {
 
 /* BODY AND CONTAINER */
 body {background:#fff; font-family:'Open Sans', sans-serif; font-size:0.9em; color:#333; line-height:1.5em; text-align:left; word-wrap:break-word;}
-#container {max-width:1200px; position:relative; margin:0 auto 0; padding:0 1%;}
+#container {max-width:1200px; position:relative; margin:0 auto 0; padding:0 20px;}
 #container:after {content:''; display:block; height:0; clear:both;}
 
 
@@ -125,8 +125,8 @@ dd {margin:0 0 0 20px;}
 
 /* INPUTS */
 input, select, textarea {-webkit-appearance:none; -moz-appearance:none; border:1px solid #eee; padding:2px 5px; background:none; font-size:1em; font-family:'Open Sans', sans-serif;}
-input[type="submit"], input[type="reset"], input[type="button"] {cursor:pointer; border:0; padding:2px 5px; background:#08a0ff; color:#fff;}
-input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover {background:#333;}
+input[type="submit"], input[type="reset"], input[type="button"], button {cursor:pointer; border:0; padding:2px 5px; background:#08a0ff; color:#fff;}
+input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, button:hover {background:#333;}
 input[type="checkbox"] {-webkit-appearance:checkbox; -moz-appearance:checkbox;}
 input[type="radio"] {-webkit-appearance:radio; -moz-appearance:radio;}
 select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
@@ -187,8 +187,8 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 
 /* HEADER THIRD SEARCH BAR */
-.search-form {width:50%; float:right; text-align:right;} 
-.searchbar-title {width:50%; float:left; color:#fff; margin:8px 0 0;}
+#header-third .search-form {width:50%; float:right; text-align:right;} 
+#header-third .searchbar-title {width:50%; float:left; color:#fff; margin:8px 0 0;}
 
 
 /* HEADER THIRD SEARCH BAR INPUTS */
@@ -198,7 +198,7 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 
 /* KNOWLEDGE BASE TEMPLATE */
-#categories-three {clear:both; float:left; width:100%; margin:10px 0 0;}
+#categories-three {clear:both; float:left; width:100%;}
 #categories-four {clear:both; float:left; width:100%;}
 
 #categories-three .cat-list {width:30%; margin:0 2% 20px 0; padding:10px 1%; float:left; background:#f8f8f8;}
@@ -210,7 +210,7 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 #categories-four ul:nth-of-type(4n+4) {margin:0 0 20px 0;}
 
 .cat-name {margin:0 0 5px; list-style:none; font-size:1.2em; line-height:1.2em; font-weight:bold; padding:0 0 10px; border-bottom:2px solid #08a0ff;}
-.cat-name a:hover{text-decoration:none; color:#333;}
+.cat-name a:hover {text-decoration:none; color:#333;}
 .post-name {margin:0 0 0 20px;}
 
 
@@ -236,7 +236,7 @@ a.readmore:hover {background:#333; text-decoration:none;}
 .format-aside .post-title, .format-status .post-title, .format-image .post-title, .format-video .post-title, .format-gallery .post-title, .format-audio .post-title {font-size:1.45em;}
 .format-aside .post-title-single, .format-status .post-title-single, .format-image .post-title-single, .format-video .post-title-single, .format-gallery .post-title-single, .format-audio .post-title-single {font-size:1.45em;}
 .format-image .postmetadata, .format-video .postmetadata, .format-gallery .postmetadata, .format-audio .postmetadata {font-style:italic;}
-.format-status .avatar {width:96px; float:left; margin:0.4em 1em 0.4em 0;}
+.format-status .avatar {width:96px; float:left; margin:0.4em 1em 0.4em 0; border-radius:5px;}
 
 
 /* POST NAV */
@@ -281,8 +281,9 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 .comment-body {border-left:2px solid #08a0ff; padding:0 0 0 15px; margin:20px 0;}
 .comment-notes, .form-allowed-tags {font-size:0.80em; padding:5px 0;}
 .comments-title, .comment-reply-title, .no-comments {clear:both; font-size:1.45em;} 
-.comment-author .avatar {margin:0 5px 0 0;}
-.bypostauthor, .comment-awaiting-moderation {font-style:italic;}
+.comment-author .avatar {margin:0 5px 0 0; border-radius:5px;}
+.bypostauthor .comment-content {font-style:italic;}
+.comment-awaiting-moderation {font-style:italic;}
 
 #respond {width:100%; clear:both;}
 .comment-form label {padding:0 0 5px; display:block;}
@@ -321,8 +322,8 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 /* FOOTER INPUTS */
 #footer input, #footer select, #footer textarea {color:#fff;}
-#footer input[type="submit"], #footer input[type="reset"], #footer input[type="button"] {background:#fff; color:#333;}
-#footer input[type="submit"]:hover, #footer input[type="reset"]:hover, #footer input[type="button"]:hover {background:#333; color:#fff;}
+#footer input[type="submit"], #footer input[type="reset"], #footer input[type="button"], #footer button {background:#fff; color:#333;}
+#footer input[type="submit"]:hover, #footer input[type="reset"]:hover, #footer input[type="button"]:hover, #footer button:hover {background:#333; color:#fff;}
 
 
 /* MOBILE */
@@ -330,7 +331,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	/* BODY AND CONTAINER */
 	body {font-size:1em; line-height:1.2em;}
 	body.custom-background {background-image:none !important;}
-	#container {width:98%;}
+	#container {width:98%; padding:0 1%;}
 
 	/* MAIN CONTENT AREA */
 	#content, #content-full {width:100%; padding:10px 0;}
@@ -354,9 +355,12 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	#header-second .widget {padding:0 3%;}
 	#header-second .widgettitle {padding:0; background:none;}
 
+	/* HEADER THIRD */
+	#header-third {width:94%; padding:0 3%;}
+
 	/* HEADER THIRD SEARCH BAR */
-	.search-form {width:100%; float:left; text-align:left;} 
-	.searchbar-title {width:100%; margin:0;}
+	#header-third .search-form {width:100%; float:left; text-align:left;} 
+	#header-third .searchbar-title {width:100%; margin:0;}
 
 	/* KNOWLEDGE BASE TEMPLATE */
 	#categories-three {margin:0;}
