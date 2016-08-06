@@ -279,7 +279,12 @@ $options[] = array(
 		'id' => 'digital_dribbble',
 		'std' => '',
 		'type' => 'text');
-		
+		$options[] = array(
+		'name' => __('Instagram In URL', 'digital'),
+		'desc' => __('Enter your Instagram URL if you have one', 'digital'),
+		'id' => 'digital_instagram',
+		'std' => '',
+		'type' => 'text');		
 		$options[] = array(
 		'name' => __('Slider Settings', 'digital'),
 		'type' => 'heading');

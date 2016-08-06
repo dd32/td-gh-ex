@@ -6,15 +6,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 function digital_notice() {
 	if ( isset( $_GET['activated'] ) ) {
-		$return = '<div class="updated activation"><p><strong>';
-					$my_theme = wp_get_theme();
-		if ( isset( $_GET['previewed'] ) ) {
-			$return .= sprintf( __( 'Settings saved and %s activated successfully.', 'digital' ), $my_theme->get( 'Name' ) );
-		} else {
-			$return .= sprintf( __( '%s activated successfully.', 'digital' ), $my_theme->get( 'Name' ) );
-		}
-		$return .= '</strong> <a href="' . esc_url(home_url('/')) . '">' . __( 'Visit site', 'digital' ) . '</a></p>';
-		$return .= '<p>';
+		$return = '<div class="updated activation">';				
 		$return .= ' <a class="button button-primary theme-options" href="' . admin_url( 'themes.php?page=options-framework' ) . '">' . __( 'Theme Options', 'digital' ) . '</a>';
 		$return .= ' <a class="button button-primary help" href="http://www.insertcart.com/digital-theme-documentation-setup/">' . __( 'Instruction & Help', 'digital' ) . '</a>';
 		$return .= '</p></div>';

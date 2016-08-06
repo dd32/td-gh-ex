@@ -74,4 +74,10 @@ License: GPL v2 http://www.gnu.org/licenses/gpl-2.0.html
 </a></li>
 <?php else : ?>
 <?php endif; ?>
+<?php if(of_get_option('digital_instagram')) : ?>
+<li class="instagram">
+<a rel="nofollow" href="<?php echo esc_url(of_get_option('digital_instagram'));?>" target="_blank" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i>
+</a></li>
+<?php else : ?>
+<?php endif; ?>
 </ul>
