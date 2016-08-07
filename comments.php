@@ -60,7 +60,7 @@ $aria_req = ( $req ? " aria-required='true'" : '' );
 global $required_text;
 
 $comments_args = array(
-'class_submit' => 'submit',
+'class_submit' => 'submit btn btn-sm',
          'comment_notes_before' => '<p class="comment-notes">' .
     __( 'Your email address will not be published.', 'avata' ) . ( $req ? $required_text : '' ) .
     '</p>',

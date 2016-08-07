@@ -1,6 +1,7 @@
 <?php
 
-  $display_image = avata_option('archive_display_image','1');
+  $display_image = avata_option('archive_display_image');
+  $readmore      = avata_option('display_meta_readmore');
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class("blog-post"); ?> >
    <?php if ( $display_image == '1' && has_post_thumbnail() ): ?>
@@ -15,7 +16,7 @@
   <!-- .entry-meta -->
   <?php endif; ?>
   <div class="entry-summary"><?php echo avata_get_summary();?></div>
-  <a href="<?php the_permalink();?>" class="read-more">
-  <?php _e( 'Read More', 'avata' );?>
-  ...</a> 
+  <?php if ( $readmore == '1' ): ?>
+  <a href="<?php the_permalink();?>" class="read-more"><?php _e( 'Read More', 'avata' );?> ...</a> 
+  <?php endif; ?>
 </article>

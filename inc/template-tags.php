@@ -59,30 +59,25 @@ if ( ! function_exists( 'avata_posted_on' ) ) :
  */
  
 function avata_posted_on($echo = true) {
-
 	$return = '';
-	$display_post_meta = avata_option('display_post_meta','yes');
+	$display_post_meta = avata_option('display_post_meta');
 		
-	if( $display_post_meta == 'yes' ){
+	if( $display_post_meta == '1' ){
 		
-	  $display_meta_author     = avata_option('display_meta_author','yes');
-	  $display_meta_date       = avata_option('display_meta_date','yes');
-	  $display_meta_categories = avata_option('display_meta_categories','yes');
-	  $display_meta_comments   = avata_option('display_meta_comments','yes');
-	  $display_meta_readmore   = avata_option('display_meta_readmore','yes');
-	  $display_meta_tags       = avata_option('display_meta_tags','yes');
-	  $date_format             = avata_option('date_format','M d, Y');
-	  
+	  $display_meta_author     = avata_option('display_meta_author');
+	  $display_meta_date       = avata_option('display_meta_date');
+	  $display_meta_categories = avata_option('display_meta_categories');
+	  $display_meta_comments   = avata_option('display_meta_comments');
 	
 		
 	   $return .=  '<ul class="meta clearfix">';
-	  if( $display_meta_date == 'yes' )
-		$return .=  '<li class="entry-date"><i class="fa fa-calendar"></i> '. get_the_date( $date_format ).'</li>';
-	  if( $display_meta_author == 'yes' )
+	  if( $display_meta_date == '1' )
+		$return .=  '<li class="entry-date"><i class="fa fa-calendar"></i> '. get_the_date().'</li>';
+	  if( $display_meta_author == '1' )
 		$return .=  '<li class="entry-author"><i class="fa fa-user"></i>'.get_the_author_link().'</li>';
-	  if( $display_meta_categories == 'yes' )		
+	  if( $display_meta_categories == '1' )		
 		$return .=  '<li class="entry-catagory"><i class="fa fa-file-o"></i>'.get_the_category_list(', ').'</li>';
-	  if( $display_meta_comments == 'yes' )	
+	  if( $display_meta_comments == '1' )	
 		$return .=  '<li class="entry-comments pull-right">'.avata_get_comments_popup_link('', __( '<i class="fa fa-comment"></i> 1 ', 'avata'), __( '<i class="fa fa-comment"></i> % ', 'avata'), 'read-comments', '').'</li>';
         $return .=  '</ul>';
 	}
@@ -95,38 +90,32 @@ function avata_posted_on($echo = true) {
 }
 endif;
 
-add_filter('widget_text', 'do_shortcode');
+
 if ( ! function_exists( 'avata_entry_footer' ) ) :
 /**
  * Prints HTML with meta information for the categories, tags and comments.
  */
 function avata_entry_footer() {
+	$display_meta_tags   = avata_option('display_meta_tags');
 	if (! apply_filters( 'avata_footer_meta', false ) ){
-		return;
+		//return;
 	}
 	echo '<footer class="entry-footer">';
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( __( ', ', 'avata' ) );
+		/*$categories_list = get_the_category_list( __( ', ', 'avata' ) );
 		if ( $categories_list && avata_categorized_blog() ) {
 			printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'avata' ) . '</span>', $categories_list );
-		}
+		}*/
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', __( ', ', 'avata' ) );
-		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'avata' ) . '</span>', $tags_list );
+		if ( $tags_list && $display_meta_tags=='1' ) {
+			printf( '<span class="tags-links">' . __( 'Tagged : %1$s', 'avata' ) . '</span> ', $tags_list );
 		}
 	}
 
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		comments_popup_link( __( 'Leave a comment', 'avata' ), __( '1 Comment', 'avata' ), __( '% Comments', 'avata' ) );
-		echo '</span>';
-	}
-
-	edit_post_link( __( 'Edit', 'avata' ), '<span class="edit-link">', '</span>' );
 	echo '</footer><!-- .entry-footer -->';
 }
 endif;
@@ -138,6 +127,7 @@ function avata_widgets(){
 	  $avata_sidebars =   array(
             ''  => __( 'No Sidebar', 'avata' ),
 		    'default_sidebar'  => __( 'Default Sidebar', 'avata' ),
+			'sidebar-blog'  => __( 'Blog Sidebar', 'avata' ),
 			'sidebar-1'  => __( 'Sidebar 1', 'avata' ),
 			'sidebar-2'  => __( 'Sidebar 2', 'avata' ),
 			'sidebar-3'  => __( 'Sidebar 3', 'avata' ),
@@ -149,8 +139,7 @@ function avata_widgets(){
 			'footer_widget_2'  => __( 'Footer Widget 2', 'avata' ),
 			'footer_widget_3'  => __( 'Footer Widget 3', 'avata' ),
 			'footer_widget_4'  => __( 'Footer Widget 4', 'avata' ),
-			'left_sidebar_404'  => __( '404 Page Left Sidebar', 'avata' ),
-			'right_sidebar_404'  => __( '404 Page Right Sidebar', 'avata' ),
+	
           );
 	  
 	  foreach( $avata_sidebars as $k => $v ){
@@ -226,3 +215,36 @@ function avata_category_transient_flusher() {
 }
 add_action( 'edit_category', 'avata_category_transient_flusher' );
 add_action( 'save_post',     'avata_category_transient_flusher' );
+
+// Custom comments list
+   
+function avata_comment($comment, $args, $depth) {
+   $GLOBALS['comment'] = $comment; 
+   ?>
+   
+   
+   <li <?php comment_class("comment media-comment"); ?> id="comment-<?php comment_ID() ;?>">
+                                                <div class="media-avatar media-left">
+                                                   <?php echo get_avatar($comment,'70','' ); ?>
+                                                </div>
+                                                <div class="media-body">
+                                                    <div class="media-inner">
+                                                        <h4 class="media-heading clearfix">
+                                                           <?php echo get_comment_author_link();?> - <?php comment_date( ); ?> <?php edit_comment_link(__('(Edit)','avata'),'  ','') ;?>
+                                                           <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ;?>
+                                                        </h4>
+                                                        
+                                                        <?php if ($comment->comment_approved == '0') : ?>
+                                                                 <em><?php _e('Your comment is awaiting moderation.','avata') ;?></em>
+                                                                 <br />
+                                                              <?php endif; ?>
+                                                              
+                                                        <div class="comment-content"><?php comment_text() ;?></div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            
+                                            
+
+<?php
+        }

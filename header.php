@@ -9,37 +9,28 @@
 <?php wp_head(); ?>
 </head>
 <?php
-$logo = avata_option('default_logo','');
-$display_top_bar             = avata_option('display_top_bar');
-$top_bar_left_content        = avata_option('top_bar_left_content');
-$top_bar_right_content       = avata_option('top_bar_right_content');
+global $avata_post_meta;
+$header_overlay = isset($avata_post_meta['header_overlay'])?$avata_post_meta['header_overlay']:'';
+
+$header_class   = '';
+if($header_overlay == '1')
+$header_class   = 'header-overlay';
+
+$logo = avata_option('default_logo');
 $header_image = get_header_image();
 ?>
 <body <?php body_class(); ?> >
 <div class="top-wrap">
-     <?php if( $header_image ):?>
-        <img src="<?php echo esc_url($header_image); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
+ <?php if( $header_image ):?>
+ <img src="<?php echo esc_url($header_image); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
          <?php endif;?>
-<?php if( $display_top_bar == 'yes' ):?>
-<section id="top-line">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-       <?php  avata_get_topbar_content( $top_bar_left_content );?>
-      </div>
-      <div class="col-md-6">
-         <?php  avata_get_topbar_content( $top_bar_right_content );?>
-      </div>
-    </div>
-  </div>
-</section>
-<?php endif;?>
+
 </div>
-<header id="header">
+<header id="header" class="<?php echo $header_class; ?>">
   <div class="container">
-      <div class="logo">
+      <div class="logo-box">
       <?php if( $logo ):?>
-      <a href="<?php echo esc_url(home_url('/')); ?>"><img alt="<?php bloginfo('name'); ?>" src="<?php echo esc_url($logo); ?>" /></a> 
+      <a href="<?php echo esc_url(home_url('/')); ?>"><img class="site-logo normal_logo" alt="<?php bloginfo('name'); ?>" src="<?php echo esc_url($logo); ?>" /></a> 
       <?php endif;?>
       
        <div class="name-box">

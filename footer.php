@@ -1,7 +1,7 @@
  <!--Footer-->
  <?php 
- $display_footer_widgets    = avata_option('display_footer_widgets','no'); 
- $footer_columns            = avata_option('footer_columns','1'); 
+ $display_footer_widgets    = avata_option('display_footer_widgets'); 
+ $footer_columns            = avata_option('footer_columns'); 
 
  ?>
   <?php if( $display_footer_widgets == 'yes' ):?>

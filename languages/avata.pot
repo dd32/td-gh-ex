@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Avata 1.0.0\n"
+"Project-Id-Version: Avata 1.0.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-06 17:33+0800\n"
-"PO-Revision-Date: 2016-03-06 17:34+0800\n"
+"POT-Creation-Date: 2016-08-07 19:15+0800\n"
+"PO-Revision-Date: 2016-08-07 19:15+0800\n"
 "Last-Translator: HooThemes <support@hoosoft.com>\n"
 "Language-Team: HooThemes\n"
 "Language: en_US\n"
@@ -39,6 +39,418 @@ msgstr ""
 #: 404.php:51
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: admin/customizer-library/extensions/fonts.php:18
+msgid "Standard Fonts"
+msgstr ""
+
+#: admin/customizer-library/extensions/fonts.php:20
+msgid "Google Fonts"
+msgstr ""
+
+#: admin/customizer-library/extensions/fonts.php:125
+msgid "All"
+msgstr ""
+
+#: admin/customizer-library/extensions/fonts.php:126
+msgid "Cyrillic"
+msgstr ""
+
+#: admin/customizer-library/extensions/fonts.php:127
+msgid "Cyrillic Extended"
+msgstr ""
+
+#: admin/customizer-library/extensions/fonts.php:128
+msgid "Devanagari"
+msgstr ""
+
+#: admin/customizer-library/extensions/fonts.php:129
+msgid "Greek"
+msgstr ""
+
+#: admin/customizer-library/extensions/fonts.php:130
+msgid "Greek Extended"
+msgstr ""
+
+#: admin/customizer-library/extensions/fonts.php:131
+msgid "Khmer"
+msgstr ""
+
+#: admin/customizer-library/extensions/fonts.php:132
+msgid "Latin"
+msgstr ""
+
+#: admin/customizer-library/extensions/fonts.php:133
+msgid "Latin Extended"
+msgstr ""
+
+#: admin/customizer-library/extensions/fonts.php:134
+msgid "Vietnamese"
+msgstr ""
+
+#: admin/customizer-options.php:42
+msgid "Select a page:"
+msgstr ""
+
+#: admin/customizer-options.php:52 admin/customizer-options.php:59
+#: inc/metabox-options.php:178 inc/metabox-options.php:187
+#: inc/metabox-options.php:207
+msgid "Yes"
+msgstr ""
+
+#: admin/customizer-options.php:53 admin/customizer-options.php:58
+#: inc/metabox-options.php:177 inc/metabox-options.php:186
+#: inc/metabox-options.php:208
+msgid "No"
+msgstr ""
+
+#: admin/customizer-options.php:65
+msgid "Left"
+msgstr ""
+
+#: admin/customizer-options.php:66
+msgid "Right"
+msgstr ""
+
+#: admin/customizer-options.php:67
+msgid "Center"
+msgstr ""
+
+#: admin/customizer-options.php:71
+msgid "repeat"
+msgstr ""
+
+#: admin/customizer-options.php:72
+msgid "repeat-x"
+msgstr ""
+
+#: admin/customizer-options.php:73
+msgid "repeat-y"
+msgstr ""
+
+#: admin/customizer-options.php:74
+msgid "no-repeat"
+msgstr ""
+
+#: admin/customizer-options.php:80
+msgid "Top Left"
+msgstr ""
+
+#: admin/customizer-options.php:81
+msgid "Top Center"
+msgstr ""
+
+#: admin/customizer-options.php:82
+msgid "Top Right"
+msgstr ""
+
+#: admin/customizer-options.php:83
+msgid "Center Left"
+msgstr ""
+
+#: admin/customizer-options.php:84
+msgid "Center Center"
+msgstr ""
+
+#: admin/customizer-options.php:85
+msgid "Center Right"
+msgstr ""
+
+#: admin/customizer-options.php:86
+msgid "Bottom Left"
+msgstr ""
+
+#: admin/customizer-options.php:87
+msgid "Bottom Center"
+msgstr ""
+
+#: admin/customizer-options.php:88
+msgid "Bottom Right"
+msgstr ""
+
+#: admin/customizer-options.php:108
+msgid "Open in new window"
+msgstr ""
+
+#: admin/customizer-options.php:109
+msgid "Open in same window"
+msgstr ""
+
+#: admin/customizer-options.php:128 admin/customizer-options.php:149
+msgid "Section - Hero"
+msgstr ""
+
+#: admin/customizer-options.php:129 admin/customizer-options.php:274
+msgid "Section - Features"
+msgstr ""
+
+#: admin/customizer-options.php:130 admin/customizer-options.php:416
+msgid "Section - ( Content - Image )"
+msgstr ""
+
+#: admin/customizer-options.php:131 admin/customizer-options.php:535
+#: admin/customizer-options.php:655
+msgid "Section - ( Image - Content )"
+msgstr ""
+
+#: admin/customizer-options.php:132
+msgid "Section - Promo"
+msgstr ""
+
+#: admin/customizer-options.php:139
+msgid "Home Page"
+msgstr ""
+
+#: admin/customizer-options.php:156 admin/customizer-options.php:281
+#: admin/customizer-options.php:423 admin/customizer-options.php:542
+#: admin/customizer-options.php:662
+msgid "Enable Section"
+msgstr ""
+
+#: admin/customizer-options.php:165
+msgid "Select Content Mode"
+msgstr ""
+
+#: admin/customizer-options.php:169 inc/metabox-options.php:138
+#: inc/metabox-options.php:154
+msgid "Default"
+msgstr ""
+
+#: admin/customizer-options.php:169
+msgid "Custom"
+msgstr ""
+
+#: admin/customizer-options.php:175 admin/customizer-options.php:289
+#: admin/customizer-options.php:431 admin/customizer-options.php:550
+#: admin/customizer-options.php:670
+msgid "Color"
+msgstr ""
+
+#: admin/customizer-options.php:179 admin/customizer-options.php:293
+#: admin/customizer-options.php:435 admin/customizer-options.php:554
+#: admin/customizer-options.php:674
+msgid "Set color for this section."
+msgstr ""
+
+#: admin/customizer-options.php:184 admin/customizer-options.php:298
+#: admin/customizer-options.php:440 admin/customizer-options.php:559
+#: admin/customizer-options.php:679
+msgid "Background Color"
+msgstr ""
+
+#: admin/customizer-options.php:188 admin/customizer-options.php:302
+#: admin/customizer-options.php:444 admin/customizer-options.php:563
+#: admin/customizer-options.php:683
+msgid "Set background color for this section."
+msgstr ""
+
+#: admin/customizer-options.php:193 admin/customizer-options.php:307
+#: admin/customizer-options.php:449 admin/customizer-options.php:568
+#: admin/customizer-options.php:688
+msgid "Background Image"
+msgstr ""
+
+#: admin/customizer-options.php:197 admin/customizer-options.php:311
+#: admin/customizer-options.php:453 admin/customizer-options.php:572
+#: admin/customizer-options.php:692
+msgid "Upload background image for this section."
+msgstr ""
+
+#: admin/customizer-options.php:202 admin/customizer-options.php:316
+#: admin/customizer-options.php:478 admin/customizer-options.php:597
+#: admin/customizer-options.php:717
+msgid "Section Top Padding"
+msgstr ""
+
+#: admin/customizer-options.php:203 admin/customizer-options.php:212
+#: admin/customizer-options.php:317 admin/customizer-options.php:326
+#: admin/customizer-options.php:479 admin/customizer-options.php:488
+#: admin/customizer-options.php:598 admin/customizer-options.php:607
+#: admin/customizer-options.php:718 admin/customizer-options.php:727
+msgid "In pixels, ex: 10px."
+msgstr ""
+
+#: admin/customizer-options.php:211 admin/customizer-options.php:325
+#: admin/customizer-options.php:487 admin/customizer-options.php:606
+#: admin/customizer-options.php:726
+msgid "Section Bottom Padding"
+msgstr ""
+
+#: admin/customizer-options.php:219 admin/customizer-options.php:333
+#: admin/customizer-options.php:496 admin/customizer-options.php:615
+#: admin/customizer-options.php:735
+msgid "Section Min Height"
+msgstr ""
+
+#: admin/customizer-options.php:220 admin/customizer-options.php:334
+#: admin/customizer-options.php:497 admin/customizer-options.php:616
+#: admin/customizer-options.php:736
+msgid "In pixels, ex: 500px."
+msgstr ""
+
+#: admin/customizer-options.php:228
+msgid "Select Hero Page"
+msgstr ""
+
+#: admin/customizer-options.php:238 admin/customizer-options.php:514
+#: admin/customizer-options.php:633
+msgid "Bottom Image?"
+msgstr ""
+
+#: admin/customizer-options.php:249
+msgid "Custom Content"
+msgstr ""
+
+#: admin/customizer-options.php:260 admin/customizer-options.php:404
+#: admin/customizer-options.php:523 admin/customizer-options.php:642
+#: admin/customizer-options.php:806
+msgid "Section ID"
+msgstr ""
+
+#: admin/customizer-options.php:342
+msgid "Select Features Page"
+msgstr ""
+
+#: admin/customizer-options.php:354
+#, php-format
+msgid "Font Awesome Icon %d"
+msgstr ""
+
+#: admin/customizer-options.php:363
+#, php-format
+msgid "Upload Icon %d"
+msgstr ""
+
+#: admin/customizer-options.php:372
+#, php-format
+msgid "Feature Box Content %d"
+msgstr ""
+
+#: admin/customizer-options.php:373
+msgid "Page excerpt content."
+msgstr ""
+
+#: admin/customizer-options.php:382
+#, php-format
+msgid "Enable Title Link %d"
+msgstr ""
+
+#: admin/customizer-options.php:391
+#, php-format
+msgid "Link Target %d"
+msgstr ""
+
+#: admin/customizer-options.php:458 admin/customizer-options.php:577
+#: admin/customizer-options.php:697
+msgid "Background Repeat"
+msgstr ""
+
+#: admin/customizer-options.php:468 admin/customizer-options.php:587
+#: admin/customizer-options.php:707
+msgid "Background Image 100% Width"
+msgstr ""
+
+#: admin/customizer-options.php:505 admin/customizer-options.php:624
+msgid "Select Page"
+msgstr ""
+
+#: admin/customizer-options.php:625
+msgid "Content Button HTML"
+msgstr ""
+
+#: admin/customizer-options.php:744
+msgid "Description"
+msgstr ""
+
+#: admin/customizer-options.php:754
+msgid "Button Text 1"
+msgstr ""
+
+#: admin/customizer-options.php:762
+msgid "Button Link 1"
+msgstr ""
+
+#: admin/customizer-options.php:770
+msgid "Button Link Target 1"
+msgstr ""
+
+#: admin/customizer-options.php:780
+msgid "Button Text 2"
+msgstr ""
+
+#: admin/customizer-options.php:788
+msgid "Button Link 2"
+msgstr ""
+
+#: admin/customizer-options.php:796
+msgid "Button Link Target 2"
+msgstr ""
+
+#: admin/customizer-options.php:818
+msgid "General"
+msgstr ""
+
+#: admin/customizer-options.php:826
+msgid "Custom CSS"
+msgstr ""
+
+#: admin/customizer-options.php:827
+msgid ""
+"The following css code will add to the header before the closing &lt;/"
+"head&gt; tag."
+msgstr ""
+
+#: admin/customizer-options.php:843
+msgid "Logo"
+msgstr ""
+
+#: admin/customizer-options.php:851
+msgid "Upload Logo"
+msgstr ""
+
+#: admin/customizer-options.php:852
+msgid "Select an image file for your logo."
+msgstr ""
+
+#: admin/customizer-options.php:864
+msgid "Blog"
+msgstr ""
+
+#: admin/customizer-options.php:872
+msgid "Blog Meta Options"
+msgstr ""
+
+#: admin/customizer-options.php:880
+msgid "Display Post Meta"
+msgstr ""
+
+#: admin/customizer-options.php:881
+msgid "Choose to display post meta in blog posts."
+msgstr ""
+
+#: admin/customizer-options.php:890
+msgid "Display Post Meta Author"
+msgstr ""
+
+#: admin/customizer-options.php:900
+msgid "Display Post Meta Date"
+msgstr ""
+
+#: admin/customizer-options.php:910
+msgid "Display Post Meta Categories"
+msgstr ""
+
+#: admin/customizer-options.php:921
+msgid "Display Post Meta Comments"
+msgstr ""
+
+#: admin/customizer-options.php:931
+msgid "Display Post Meta Readmore"
+msgstr ""
+
+#: admin/customizer-options.php:941
+msgid "Display Post Meta Tags"
 msgstr ""
 
 #: comments.php:4
@@ -146,11 +558,11 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#: content-page.php:29 inc/template-tags.php:129
+#: content-page.php:29
 msgid "Edit"
 msgstr ""
 
-#: content.php:19
+#: content.php:20
 msgid "Read More"
 msgstr ""
 
@@ -159,164 +571,200 @@ msgstr ""
 msgid "Designed by <a href=\"%s\">HooThemes</a>."
 msgstr ""
 
-#: functions.php:22
+#: functions.php:34
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:23
+#: functions.php:35
 msgid "Top Bar Menu"
 msgstr ""
 
-#: functions.php:24
+#: functions.php:36
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:25
+#: functions.php:37
 msgid "Custom Menu 1"
 msgstr ""
 
-#: functions.php:26
+#: functions.php:38
 msgid "Custom Menu 2"
 msgstr ""
 
-#: functions.php:27
+#: functions.php:39
 msgid "Custom Menu 3"
 msgstr ""
 
-#: functions.php:28
+#: functions.php:40
 msgid "Custom Menu 4"
 msgstr ""
 
-#: functions.php:29
+#: functions.php:41
 msgid "Custom Menu 5"
 msgstr ""
 
-#: functions.php:30
+#: functions.php:42
 msgid "Custom Menu 6"
 msgstr ""
 
-#: inc/customizer.php:24
-msgid "Set the max width for the site"
-msgstr ""
-
-#: inc/customizer.php:31 inc/customizer.php:64
-msgid "Testimonial"
-msgstr ""
-
-#: inc/customizer.php:42
-msgid "Testimonial Title"
-msgstr ""
-
-#: inc/customizer.php:53
-msgid "Customer name"
-msgstr ""
-
-#: inc/extras.php:51 inc/extras.php:113
+#: inc/extras.php:53 inc/extras.php:115
 msgid "No Comments"
 msgstr ""
 
-#: inc/extras.php:52 inc/extras.php:115 inc/template-tags.php:125
+#: inc/extras.php:54 inc/extras.php:117
 msgid "1 Comment"
 msgstr ""
 
-#: inc/extras.php:53 inc/extras.php:111 inc/template-tags.php:125
+#: inc/extras.php:55 inc/extras.php:113
 msgid "% Comments"
 msgstr ""
 
-#: inc/extras.php:54
+#: inc/extras.php:56
 msgid "Comments Off"
 msgstr ""
 
-#: inc/extras.php:94
+#: inc/extras.php:96
 #, php-format
 msgid "Comment on %s"
+msgstr ""
+
+#: inc/metabox-options.php:35
+msgid "Avata Metabox Options"
+msgstr ""
+
+#: inc/metabox-options.php:174
+msgid "Header Overlay"
+msgstr ""
+
+#: inc/metabox-options.php:183
+msgid "Content Full Width"
+msgstr ""
+
+#: inc/metabox-options.php:192
+msgid "Padding Top"
+msgstr ""
+
+#: inc/metabox-options.php:198
+msgid "Padding Bottom"
+msgstr ""
+
+#: inc/metabox-options.php:204
+msgid "Display Title Bar"
+msgstr ""
+
+#: inc/metabox-options.php:212
+msgid "Select Nav Menu"
+msgstr ""
+
+#: inc/metabox-options.php:221
+msgid "Page Layout"
+msgstr ""
+
+#: inc/metabox-options.php:224 inc/template-tags.php:128
+msgid "No Sidebar"
+msgstr ""
+
+#: inc/metabox-options.php:225
+msgid "Left Sidebar"
+msgstr ""
+
+#: inc/metabox-options.php:226
+msgid "Right Sidebar"
+msgstr ""
+
+#: inc/metabox-options.php:227
+msgid "Both Sidebar"
+msgstr ""
+
+#: inc/metabox-options.php:232
+msgid "Select Left Sidebar"
+msgstr ""
+
+#: inc/metabox-options.php:241
+msgid "Select Right Sidebar"
 msgstr ""
 
 #: inc/template-tags.php:44
 msgid "Post navigation"
 msgstr ""
 
-#: inc/template-tags.php:86
+#: inc/template-tags.php:81
 msgid "<i class=\"fa fa-comment\"></i> 1 "
 msgstr ""
 
-#: inc/template-tags.php:86
+#: inc/template-tags.php:81
 msgid "<i class=\"fa fa-comment\"></i> % "
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:111 inc/template-tags.php:117
+#. $categories_list = get_the_category_list( __( ', ', 'avata' ) );
+#. if ( $categories_list && avata_categorized_blog() ) {
+#. printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'avata' ) . '</span>', $categories_list );
+#. }
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:113
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:113
+#: inc/template-tags.php:115
 #, php-format
-msgid "Posted in %1$s"
+msgid "Tagged : %1$s"
 msgstr ""
 
-#: inc/template-tags.php:119
-#, php-format
-msgid "Tagged %1$s"
-msgstr ""
-
-#: inc/template-tags.php:125
-msgid "Leave a comment"
-msgstr ""
-
-#: inc/template-tags.php:139
-msgid "No Sidebar"
-msgstr ""
-
-#: inc/template-tags.php:140
+#: inc/template-tags.php:129
 msgid "Default Sidebar"
 msgstr ""
 
-#: inc/template-tags.php:141
+#: inc/template-tags.php:130
+msgid "Blog Sidebar"
+msgstr ""
+
+#: inc/template-tags.php:131
 msgid "Sidebar 1"
 msgstr ""
 
-#: inc/template-tags.php:142
+#: inc/template-tags.php:132
 msgid "Sidebar 2"
 msgstr ""
 
-#: inc/template-tags.php:143
+#: inc/template-tags.php:133
 msgid "Sidebar 3"
 msgstr ""
 
-#: inc/template-tags.php:144
+#: inc/template-tags.php:134
 msgid "Sidebar 4"
 msgstr ""
 
-#: inc/template-tags.php:145 inc/template-tags.php:146
+#: inc/template-tags.php:135 inc/template-tags.php:136
 msgid "Sidebar 5"
 msgstr ""
 
-#: inc/template-tags.php:147
+#: inc/template-tags.php:137
 msgid "Sidebar 6"
 msgstr ""
 
-#: inc/template-tags.php:148
+#: inc/template-tags.php:138
 msgid "Footer Widget 1"
 msgstr ""
 
-#: inc/template-tags.php:149
+#: inc/template-tags.php:139
 msgid "Footer Widget 2"
 msgstr ""
 
-#: inc/template-tags.php:150
+#: inc/template-tags.php:140
 msgid "Footer Widget 3"
 msgstr ""
 
-#: inc/template-tags.php:151
+#: inc/template-tags.php:141
 msgid "Footer Widget 4"
 msgstr ""
 
-#: inc/template-tags.php:152
-msgid "404 Page Left Sidebar"
+#: inc/template-tags.php:233
+msgid "(Edit)"
 msgstr ""
 
-#: inc/template-tags.php:153
-msgid "404 Page Right Sidebar"
+#: inc/template-tags.php:238
+msgid "Your comment is awaiting moderation."
 msgstr ""
 
 #: search.php:16

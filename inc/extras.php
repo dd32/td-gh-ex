@@ -1,9 +1,12 @@
 <?php
 // get option
 function avata_option( $name, $default = false ) {
-	   global $avata_options;
+	   global $avata_options,$avata_default_options;
 	   
 	   $name = 'avata_'.$name;
+	   if( $default == false )
+	   $default = isset($avata_default_options[$name])?$avata_default_options[$name]:$default;
+	   
 		if ( isset( $avata_options[$name] ) ) {
 				return apply_filters( "theme_mod_{$name}", $avata_options[$name] );
 		}
@@ -12,7 +15,6 @@ function avata_option( $name, $default = false ) {
 				$default = sprintf( $default, get_template_directory_uri(), get_stylesheet_directory_uri() );
 		return apply_filters( "theme_mod_{$name}", $default );
 }
-
 
 // get top bar content
 
