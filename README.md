@@ -34,3 +34,10 @@ The theme itself is nothing but 100% GPL v2 or later.
      Copyright (C) 1989, 1991 Free Software Foundation, Inc.,
     License -  GNU GENERAL PUBLIC LICENSE Version 2
     http://genericons.com/
+    
+ ==PHP
+
+## Customizer Library
+   @author         Devin Price, The Theme Foundry
+   @license        GPL-2.0+
+    https://github.com/devinsays/customizer-library

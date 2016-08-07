@@ -652,7 +652,7 @@ $options['avata_section_hero_id'] = array(
 	
 	$sections[] = array(
 		'id' => $section,
-		'title' => __( 'Section - ( Image - Content )', 'avata' ),
+		'title' => __( 'Section - Promo', 'avata' ),
 		'priority' => '10',
 		'description' => '',
 		'panel' => $panel

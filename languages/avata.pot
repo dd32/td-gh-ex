@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Avata 1.0.1\n"
+"Project-Id-Version: Avata 1.0.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-07 19:15+0800\n"
-"PO-Revision-Date: 2016-08-07 19:15+0800\n"
+"POT-Creation-Date: 2016-08-08 00:13+0800\n"
+"PO-Revision-Date: 2016-08-08 00:13+0800\n"
 "Last-Translator: HooThemes <support@hoosoft.com>\n"
 "Language-Team: HooThemes\n"
 "Language: en_US\n"
@@ -190,11 +190,10 @@ msgid "Section - ( Content - Image )"
 msgstr ""
 
 #: admin/customizer-options.php:131 admin/customizer-options.php:535
-#: admin/customizer-options.php:655
 msgid "Section - ( Image - Content )"
 msgstr ""
 
-#: admin/customizer-options.php:132
+#: admin/customizer-options.php:132 admin/customizer-options.php:655
 msgid "Section - Promo"
 msgstr ""
 
@@ -576,34 +575,30 @@ msgid "Primary Menu"
 msgstr ""
 
 #: functions.php:35
-msgid "Top Bar Menu"
-msgstr ""
-
-#: functions.php:36
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:37
+#: functions.php:36
 msgid "Custom Menu 1"
 msgstr ""
 
-#: functions.php:38
+#: functions.php:37
 msgid "Custom Menu 2"
 msgstr ""
 
-#: functions.php:39
+#: functions.php:38
 msgid "Custom Menu 3"
 msgstr ""
 
-#: functions.php:40
+#: functions.php:39
 msgid "Custom Menu 4"
 msgstr ""
 
-#: functions.php:41
+#: functions.php:40
 msgid "Custom Menu 5"
 msgstr ""
 
-#: functions.php:42
+#: functions.php:41
 msgid "Custom Menu 6"
 msgstr ""
 
