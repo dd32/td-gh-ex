@@ -12,7 +12,7 @@ get_header(); ?>
     		<div id="ct_border_top" class="ct_border ct_list_img">
 				<?php  if(has_post_thumbnail()){ ?>               
                     <div class="ct_center">
-                    <a href="<?php esc_url(the_permalink()); ?>" class="ct_post_thumbnail">
+                    <a href="<?php the_permalink(); ?>" class="ct_post_thumbnail">
                     <?php 						
                         the_post_thumbnail();
                     ?>
@@ -22,7 +22,7 @@ get_header(); ?>
             	
                 <div class="ct_border_text">
             
-                    <h1 class="ct_title_h1"><a href="<?php echo esc_url(get_permalink());?>"><?php esc_html(the_title()); ?></a></h1>                   
+                    <h1 class="ct_title_h1"><a href="<?php echo esc_url(get_permalink());?>"><?php the_title(); ?></a></h1>                   
                     <?php 
                         $hide_post_meta = acool_get_option( 'ct_acool','hide_post_meta',0 ); 
                         if(!$hide_post_meta ){ acool_show_post_meta();}

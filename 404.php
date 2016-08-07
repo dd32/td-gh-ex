@@ -13,7 +13,7 @@
                     <div class="text-center">
                         <img class="img-404" src="<?php echo esc_url(get_stylesheet_directory_uri());?>/images/404.png" alt="<?php  esc_attr(_e('404 not found','acool'))?>" />
                         <br/> <br/>
-                        <a href="<?php echo esc_url(home_url());?>"><i class="fa fa-home"></i> <?php  _e('Please, return to homepage!','acool')?></a>
+                        <a href="<?php echo esc_url(home_url('/'));?>"><i class="fa fa-home"></i> <?php  _e('Please, return to homepage!','acool')?></a>
                     </div>
 
             </div><!--div class="ct_border"-->

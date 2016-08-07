@@ -12,7 +12,7 @@
         	
         	<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                 <div class="ct_border">
-                    <h1 class="ct_title_h1"><?php esc_html(the_title()); ?></h1>
+                    <h1 class="ct_title_h1"><?php the_title(); ?></h1>
 					<?php 
                         $hide_post_meta = acool_get_option( 'ct_acool','hide_post_meta',0 ); 
                         if(!$hide_post_meta ){ acool_show_post_meta();}

@@ -117,7 +117,7 @@ function acool_breadcrumbs() {
     echo '<div id="crumbs">';
  
     global $post;
-    $home = esc_url(home_url());
+    $home = esc_url(home_url('/'));
 	echo ' <a href="' . $home . '">'.$name. '</a> ' . $delimiter . ' ';
  
     if ( is_category() ) {
@@ -148,12 +148,12 @@ function acool_breadcrumbs() {
       $cat = get_the_category(); $cat = $cat[0];
       echo get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
       echo $currentBefore;
-      esc_html( the_title());
+      the_title();
       echo $currentAfter;
  
     } elseif ( is_page() && !$post->post_parent ) {
       echo $currentBefore;
-      esc_html( the_title());
+      the_title();
       echo $currentAfter;
  
     } elseif ( is_page() && $post->post_parent ) {
@@ -167,7 +167,7 @@ function acool_breadcrumbs() {
       $breadcrumbs = array_reverse($breadcrumbs);
       foreach ($breadcrumbs as $crumb) echo $crumb . ' ' . $delimiter . ' ';
       echo $currentBefore;
-      esc_html( the_title());
+      the_title();
       echo $currentAfter;
  
     } elseif ( is_search() ) {
@@ -175,7 +175,7 @@ function acool_breadcrumbs() {
  
     } elseif ( is_tag() ) {
       echo $currentBefore . __('Posts tagged &#39;','acool') ;
-      esc_html(single_tag_title());
+      single_tag_title();
       echo '&#39;' . $currentAfter;
  
     } elseif ( is_author() ) {
@@ -311,7 +311,7 @@ if ( ! function_exists( 'acool_get_thumbnail' ) ) {
 		//if ( $post == '' ) global $post;
 		if(has_post_thumbnail())
 		{
-			$ct_post_thumbnail_fullpath=wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), "Full");
+			$ct_post_thumbnail_fullpath=wp_get_attachment_image_src( esc_url(get_post_thumbnail_id( $post_id )), "Full");
 			$thumb_array['fullpath'] = esc_url($ct_post_thumbnail_fullpath[0]);
 		
 		}else{

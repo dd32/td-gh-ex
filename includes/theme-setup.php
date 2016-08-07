@@ -50,13 +50,12 @@ function acool_custom_scripts()
 {
 	global $is_IE;
 	$theme_info = wp_get_theme();
-	
+	//css
 	wp_enqueue_style('font-awesome',  get_template_directory_uri() .'/css/font-awesome.min.css', false, '4.5.0', false);
 	wp_enqueue_style('bootstrap',  get_template_directory_uri() .'/css/bootstrap.min.css', false, '3.3.5', false);	
 	wp_enqueue_style('acool-main', get_stylesheet_uri(), array(), $theme_info->get( 'Version' ) );	
 		
 	//js
-	wp_enqueue_script( 'jquery' );
 
 	wp_enqueue_script('bootstrap', get_template_directory_uri().'/js/bootstrap.min.js', array( 'jquery' ), '3.3.5', false );	
 	if(acool_get_option( 'ct_acool','enable_query_loader',0))
