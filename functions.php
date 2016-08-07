@@ -32,7 +32,6 @@ function avata_setup() {
 	
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'avata' ),
-		'top_bar_menu' => __( 'Top Bar Menu', 'avata' ),
 		'footer_menu' => __( 'Footer Menu', 'avata' ),
 		'custom_menu_1' => __( 'Custom Menu 1', 'avata' ),
 		'custom_menu_2' => __( 'Custom Menu 2', 'avata' ),

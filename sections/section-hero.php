@@ -29,6 +29,7 @@
 <?php else:?>
 <div class="container">
       <?php
+	   if( $post_id  > 0 ):
 	  $query = new WP_Query( array( 'page_id' => $post_id ) );
 	  if ( $query->have_posts() ) :
 		  while ( $query->have_posts() ) :
@@ -59,6 +60,7 @@
       <?php
 	  endwhile;
 	   wp_reset_postdata();
+	  endif;
 	  endif;
 	  ?>
       </div>
