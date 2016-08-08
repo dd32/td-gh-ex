@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Benevolent\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: Mon May 30 2016 12:23:33 GMT+0545 (Nepal Standard Time)\n"
-"POT-Revision-Date: Wed Jul 20 2016 17:47:18 GMT+0545 (Nepal Standard Time)\n"
+"POT-Revision-Date: Mon Aug 08 2016 14:45:39 GMT+0545 (Nepal Standard Time)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -40,7 +40,7 @@ msgstr ""
 msgid "Return to Homepage"
 msgstr ""
 
-#: ../archive.php:40 ../index.php:46 ../search.php:42 ../inc/extras.php:267
+#: ../archive.php:40 ../inc/extras.php:267 ../index.php:46 ../search.php:42
 msgid "Page"
 msgstr ""
 
@@ -156,19 +156,6 @@ msgstr ""
 
 #: ../header.php:62 ../inc/customizer.php:76
 msgid "Donate Now"
-msgstr ""
-
-#: ../search.php:19
-msgid "Search Results"
-msgstr ""
-
-#: ../search.php:24
-#, php-format
-msgid "Showing Results for %s"
-msgstr ""
-
-#. Name of the template
-msgid "Home Page"
 msgstr ""
 
 #: ../inc/customizer.php:18
@@ -802,6 +789,19 @@ msgstr ""
 msgid "Linkedin"
 msgstr ""
 
+#: ../search.php:19
+msgid "Search Results"
+msgstr ""
+
+#: ../search.php:24
+#, php-format
+msgid "Showing Results for %s"
+msgstr ""
+
+#. Name of the template
+msgid "Home Page"
+msgstr ""
+
 #: ../template-parts/content-none.php:14
 msgid "Nothing Found"
 msgstr ""
@@ -858,10 +858,10 @@ msgid ""
 "theme is rigorously tested and optimized for speed and faster page load time "
 "and has a secure and clean code. The theme is also translation ready. "
 "Designed with visitor engagement in mind, Benevolent helps you to easily and "
-"intuitively create professional and appealing websites. You can get free "
-"support in http://raratheme.com/support-forum/, Documentation: http:"
-"//raratheme.com/documentation/benevolent and check the demo at http:"
-"//raratheme.com/preview/benevolent/"
+"intuitively create professional and appealing websites. Check the demo at "
+"http://raratheme.com/preview/benevolent/, documentation at http://raratheme."
+"com/documentation/benevolent and get support at http://raratheme.com/support-"
+"forum/."
 msgstr ""
 
 msgid "Rara Theme"

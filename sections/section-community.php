@@ -57,12 +57,20 @@ $community_post_four     = get_theme_mod( 'benevolent_community_post_four' );
                                 if( has_excerpt() ){ 
     				                the_excerpt();
                                 }else{
-                                    echo wpautop( benevolent_excerpt( get_the_content(), 25, '.', false, false ) );    
+                                    echo wpautop( benevolent_excerpt( get_the_content(), 25, '...', false, false ) );    
                                 } ?>
 				                <div class="btn-holder">
                                     <a href="<?php the_permalink(); ?>"><span class="fa fa-angle-right"></span></a>
                                 </div>
-				                <div class="text-content"><?php echo wpautop( benevolent_excerpt( get_the_content(), 150, '.', false, false ) ); ?></div>
+				                <div class="text-content">
+                                <?php 
+                                    if( has_excerpt() ){
+                                        the_excerpt();     
+                                    }else{
+                                        echo wpautop( benevolent_excerpt( get_the_content(), 150, '...', false, false ) );
+                                    }
+                                ?>
+                                </div>
 				            </div>
                         </div>
                     </div>

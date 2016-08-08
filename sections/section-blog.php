@@ -54,7 +54,13 @@ if( $blog_section_title || $blog_section_content ){
                                 <?php } ?>
     						</header>
     						<div class="entry-content">
-    							<?php echo wpautop( benevolent_excerpt( get_the_content(), 100, '.', false, false ) ); ?>
+    							<?php
+                                    if( has_excerpt() ){
+                                        the_excerpt();
+                                    }else{ 
+                                        echo wpautop( benevolent_excerpt( get_the_content(), 100, '...', false, false ) ); 
+                                    }      
+                                ?>                                
     						</div>
     						<a href="<?php the_permalink(); ?>" class="readmore"><?php echo esc_html( $blog_section_readmore ); ?></a>
     					</div>
