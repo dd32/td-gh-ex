@@ -187,3 +187,9 @@ function actions_entry_taxonomies() {
 	}
 }
 }
+
+function actions_excerpt_more($more) {
+    global $post;
+	return '<a class="moretag" href="'. get_permalink($post->ID) . '"> ...Continue Reading</a>';
+}
+add_filter('excerpt_more', 'actions_excerpt_more');

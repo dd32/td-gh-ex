@@ -50,12 +50,16 @@ if ( ! function_exists( 'actions_post_content' ) ) {
 			            </div>
 	            <?php }
 
-		        the_content(
+		        if ( is_search() ) {
+					the_excerpt();
+				} else {
+				the_content(
 			        sprintf(
 				        __( 'Continue reading %s', 'actions' ),
 				        '<span class="screen-reader-text">' . esc_url( get_the_title() ) . '</span>'
 			        )
 		        );
+				}
 		
 		        wp_link_pages( array(
 			        'before' => '<div class="page-links">' . __( 'Pages:', 'actions' ),
