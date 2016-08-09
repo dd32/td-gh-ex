@@ -1,7 +1,7 @@
 /*
 Theme Name: GridBulletin
 Theme URI: http://www.guidovanderleest.nl/gridbulletin
-Version: 4.2
+Version: 4.3
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: GridBulletin is a free, clean, minimalistic, responsive, mobile-friendly WordPress theme. Features: grid layout on blog and archive page, sidebar, footer widgets, custom header image, custom background, custom logo to replace site title and tagline, full width page template, dropdown navigation. For more info please check readme file. Enjoy.
@@ -178,16 +178,18 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 .post-title {clear:both; margin:5px 0 10px; text-align:center; font-weight:bold; font-size:1.0em;}
 .post-title-single {clear:both;}
 .sticky-title {clear:both; display:block; text-align:center; margin:10px 0; padding:2px 0; border-top:1px solid #ccc; border-bottom:1px solid #ccc;}
-.postmetadata {clear:both; display:block; margin:10px 0; padding:3px 10px; background:#0066ff; color:#fff;}
+.postmetadata {width:96%; clear:both; float:left; display:block; margin:10px 0; padding:3px 2%; background:#0066ff; color:#fff;}
 .postmetadata a {color:#fff;}
 
-.post-home {width: 21.5%; float:left; margin:10px 2% 10px 0; padding:1%; border-bottom:2px solid #ec6500; background:#fff; color:#333; border-top-right-radius:10px; border-top-left-radius:10px;}
-.post-home.left {clear:left;}
-.post-home.right {margin: 10px 0 10px;}
+.post-three {width:28%; float:left; margin:10px 2% 10px 0; padding:2%; border-bottom:2px solid #ec6500; background:#fff; color:#333; border-top-right-radius:10px; border-top-left-radius:10px;}
+.post-three.left {clear:left;}
+.post-three.right {margin:10px 0 10px;}
+.post-three .postmetadata {width:92%; padding:3px 4%;}
 
-.post-archive {width:28%; float:left; margin:10px 2% 10px 0; padding:2%; border-bottom:2px solid #ec6500; background:#fff; color:#333; border-top-right-radius:10px; border-top-left-radius:10px;}
-.post-archive.left {clear:left;}
-.post-archive.right {margin:10px 0 10px;}
+.post-four {width: 21.5%; float:left; margin:10px 2% 10px 0; padding:1%; border-bottom:2px solid #ec6500; background:#fff; color:#333; border-top-right-radius:10px; border-top-left-radius:10px;}
+.post-four.left {clear:left;}
+.post-four.right {margin: 10px 0 10px;}
+.post-four .postmetadata {width:92%; padding:3px 4%;}
 
 
 /* POST FORMATS */
@@ -302,8 +304,9 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	.nav-head select {display:block; width:100%; height:35px; margin:0 auto 0; font-size:1em; line-height:1.2em; color:#fff; background:#0066ff; border:0;}
 
 	/* PAGE AND POST */
-	.post-home, .post-home.left, .post-home.right {width:100%; border:0; margin:5px 0 0; padding:0; float:left; background:none;} 
-	.post-archive, .post-archive.left, .post-archive.right {width:100%; border:0; margin:5px 0 0; padding:0; float:left; background:none;} 
+	.post-three, .post-three.left, .post-three.right {width:100%; float:left; border:0; margin:5px 0 0; padding:0; background:none;} 
+	.post-four, .post-four.left, .post-four.right {width:100%; float:left; border:0; margin:5px 0 0; padding:0; background:none;} 
+	.post-three .postmetadata, .post-four .postmetadata {width:96%; padding:3px 2%;}
 
 	/* HEADINGS */
 	.post-title, .page-title, .post-title-single {font-size:1.80em;}

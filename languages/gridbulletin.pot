@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GridBulletin\n"
-"POT-Creation-Date: 2016-08-05 11:12+0200\n"
+"POT-Creation-Date: 2016-08-09 23:31+0200\n"
 "PO-Revision-Date: 2015-11-15 20:45+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -134,6 +134,22 @@ msgstr ""
 
 #: functions.php:181
 msgid "Set a logo to replace site title and tagline."
+msgstr ""
+
+#: functions.php:193
+msgid "Archive Page"
+msgstr ""
+
+#: functions.php:195
+msgid "Settings for the archive page."
+msgstr ""
+
+#: functions.php:202
+msgid "No sidebar"
+msgstr ""
+
+#: functions.php:212
+msgid "No archive title"
 msgstr ""
 
 #: page-full.php:28 page.php:27 single.php:32

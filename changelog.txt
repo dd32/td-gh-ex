@@ -1,6 +1,12 @@
 CHANGELOG
 =========
 
+GridBulletin version 4.3 - august 2016
+- customizer: added settings for the archive page
+- updated file archive
+- files content-list and style: changed post-archive and post-home class into post-three and post-four
+- file style: changed width and padding of postmetadata class
+
 GridBulletin version 4.2 - august 2016
 - file content-postmeta-single: display post format too
 - updated text strings

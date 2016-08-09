@@ -50,7 +50,7 @@
 			set_post_thumbnail_size( 300, 300 ); 
 
 		// Resize post thumbnail in list
-			add_image_size( 'list', 250, 250 ); 
+			add_image_size( 'list', 240, 240 ); 
 
 		// Resize page thumbnail
 			add_image_size( 'single', 300, 300 ); 
@@ -173,7 +173,7 @@
 	add_filter( 'excerpt_length', 'gridbulletin_excerpt_length', 999 ); 
 
 
-// Theme Customizer (logo)
+// Theme Customizer (logo and settings for archive page)
 	function gridbulletin_theme_customizer( $wp_customize ) { 
 		$wp_customize->add_section( 'gridbulletin_logo_section' , array( 
 			'title' => __( 'Logo', 'gridbulletin' ), 
@@ -188,6 +188,31 @@
 			'label' => __( 'Logo', 'gridbulletin' ), 
 			'section' => 'gridbulletin_logo_section', 
 			'settings' => 'gridbulletin_logo', 
+		) ) );
+		$wp_customize->add_section( 'gridbulletin_archive_section' , array( 
+			'title' => __( 'Archive Page', 'gridbulletin' ), 
+			'priority' => 31, 
+			'description' => __( 'Settings for the archive page.', 'gridbulletin' ),
+		) );
+		$wp_customize->add_setting( 'gridbulletin_sidebar', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'gridbulletin_sidebar', array( 
+			'label' => __( 'No sidebar', 'gridbulletin' ), 
+			'section' => 'gridbulletin_archive_section', 
+			'settings' => 'gridbulletin_sidebar', 
+			'type' => 'checkbox', 
+		) ) );
+		$wp_customize->add_setting( 'gridbulletin_archive_title', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'gridbulletin_archive_title', array( 
+			'label' => __( 'No archive title', 'gridbulletin' ), 
+			'section' => 'gridbulletin_archive_section', 
+			'settings' => 'gridbulletin_archive_title', 
+			'type' => 'checkbox', 
 		) ) );
 	} 
 	add_action('customize_register', 'gridbulletin_theme_customizer');

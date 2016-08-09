@@ -4,21 +4,21 @@
  */
 ?>
 
-<?php if( is_home() ) { ?>
+<?php if( is_home() || get_theme_mod('gridbulletin_sidebar') == 1 ) { ?>
 	<?php if( $wp_query->current_post%4 == 0 ) : ?> 
-		<article id="post-<?php the_ID(); ?>" <?php post_class('post-home left'); ?>> 
+		<article id="post-<?php the_ID(); ?>" <?php post_class('post-four left'); ?>> 
 	<?php elseif( $wp_query->current_post%4 == 3 ) : ?> 
-		<article id="post-<?php the_ID(); ?>" <?php post_class('post-home right'); ?>>
+		<article id="post-<?php the_ID(); ?>" <?php post_class('post-four right'); ?>>
 	<?php else : ?> 
-		<article id="post-<?php the_ID(); ?>" <?php post_class('post-home'); ?>> 
+		<article id="post-<?php the_ID(); ?>" <?php post_class('post-four'); ?>> 
 	<?php endif; ?> 
 <?php } else { ?> 
 	<?php if( $wp_query->current_post%3 == 0 ) : ?> 
-		<article id="post-<?php the_ID(); ?>" <?php post_class('post-archive left'); ?>> 
+		<article id="post-<?php the_ID(); ?>" <?php post_class('post-three left'); ?>> 
 	<?php elseif( $wp_query->current_post%3 == 2 ) : ?> 
-		<article id="post-<?php the_ID(); ?>" <?php post_class('post-archive right'); ?>>
+		<article id="post-<?php the_ID(); ?>" <?php post_class('post-three right'); ?>>
 	<?php else : ?> 
-		<article id="post-<?php the_ID(); ?>" <?php post_class('post-archive'); ?>> 
+		<article id="post-<?php the_ID(); ?>" <?php post_class('post-three'); ?>> 
 	<?php endif; ?> 
 <?php } ?>
 	<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
