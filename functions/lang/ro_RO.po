@@ -1,13 +1,13 @@
-# Translation of Rambo in Russian
+# Translation of Rambo in Romanian
 # This file is distributed under the same license as the Rambo package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-08-09 16:25+0530\n"
+"PO-Revision-Date: 2016-08-09 16:14+0530\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
+"20)) ? 1 : 2);\n"
 "X-Generator: Poedit 1.5.5\n"
 "Project-Id-Version: Rambo\n"
 "POT-Creation-Date: \n"
@@ -19,9 +19,9 @@ msgid ""
 "A Business theme which is ideal for creating a corporate / business website. "
 "It boasts of 2 beautifully designed page templates , Home and Blog Page."
 msgstr ""
-"Деловой тема, которая идеально подходит для создания корпоративного / бизнес-"
-"сайт . Он может похвастаться 2 красиво оформленных шаблонов страниц , дома и "
-"дневник Страница ."
+"O temă de afaceri, care este ideală pentru crearea unui sit web al unei "
+"corporații/afaceri. Se mândrește cu 2 șabloane de pagină cu design frumos, "
+"Prima pagină și Pagină blog."
 
 #. Theme Name of the plugin/theme
 msgid "Rambo"
@@ -29,15 +29,15 @@ msgstr "Rambo"
 
 #: functions/customizer/customizer_home_page.php:130
 msgid "Read More Button text"
-msgstr "Подробнее текст Button"
+msgstr "Text buton Citește mai mult"
 
 #: functions/customizer/customizer_home_page.php:147
 msgid "Read More Button Link"
-msgstr "Подробнее Кнопка ссылки"
+msgstr "Legătură buton Citește mai mult"
 
 #: theme_setup_data.php:35
 msgid "Read more"
-msgstr "Читать полностью"
+msgstr "Citește mai mult"
 
 #: functions/customizer/customizer_typography.php:117
 #: functions/customizer/customizer_typography.php:174
@@ -50,43 +50,40 @@ msgstr "Читать полностью"
 #: functions/customizer/customizer_typography.php:568
 #: functions/customizer/customizer_typography.php:624
 msgid "Font Style"
-msgstr ""
-"Стиль\n"
-" \n"
-"шрифта"
+msgstr "Stil font"
 
 #: functions/customizer/customizer_typography.php:127
 msgid "Menus Typography"
-msgstr "меню типографика"
+msgstr "Tipografice meniuri"
 
 #: functions/customizer/customizer_typography.php:184
 #: functions/customizer/customizer_typography.php:240
 msgid "Post / Page Typography"
-msgstr "Сообщение / Страница типографика"
+msgstr "Tipografice articol/pagină"
 
 #: functions/customizer/customizer_typography.php:296
 msgid "Service Title Typography"
-msgstr "Услуги Название типографика"
+msgstr "Tipografice titlu serviciu"
 
 #: functions/customizer/customizer_typography.php:352
 msgid "Portfolio Title Typography"
-msgstr "Портфолио Название типографика"
+msgstr "Tipografice titlu potofoliu"
 
 #: functions/customizer/customizer_typography.php:409
 msgid "Widget Heading Title"
-msgstr "Виджет Заголовок Заголовок"
+msgstr "Titlu subtitlu piesă"
 
 #: functions/customizer/customizer_typography.php:465
 msgid "Call Out Area Title"
-msgstr "Вызов Вне Площадка заглавие"
+msgstr "Titlu zonă chemare"
 
 #: functions/customizer/customizer_typography.php:521
 msgid "Call Out Area Description"
-msgstr "Вызов Вне Площадка Описание"
+msgstr "Descriere zonă chemare"
 
 #: functions/customizer/customizer_typography.php:577
 msgid "Call Out Area Button"
-msgstr "Вызов Вне Кнопка Область"
+msgstr "Buton zonă chemare"
 
 #: functions/customizer/customizer_typography.php:101
 #: functions/customizer/customizer_typography.php:158
@@ -99,56 +96,55 @@ msgstr "Вызов Вне Кнопка Область"
 #: functions/customizer/customizer_typography.php:552
 #: functions/customizer/customizer_typography.php:608
 msgid "Font Family"
-msgstr "Шрифт"
+msgstr "Familie Font"
 
 #: functions/customizer/customizer_template.php:530
 msgid "Contact Form Heading:"
-msgstr "Контакты Форма Заголовок:"
+msgstr "Formular de contact subtitlu:"
 
 #: functions/customizer/customizer_template.php:548
 msgid "Enable Get in touch in contact page."
-msgstr "включить Контактируйте в странице контактов."
+msgstr "Activează Intră în contact în pagina de contact."
 
 #: functions/customizer/customizer_template.php:558
 msgid "Get in Touch"
-msgstr "Контактная информация"
+msgstr "Intră în contact"
 
 #: functions/customizer/customizer_template.php:567
 msgid "Get in Touch Text:"
-msgstr "Соприкоснуться Текст:"
+msgstr "Text Intră în contact:"
 
 #: functions/customizer/customizer_template.php:577
 msgid ""
 "Lorem ipsum dolor sit amet, usu rebum errem pericula ea, ei alia quaerendum "
 "vix. Ea justo tritani sit, odio ignota quo te. Lorem ipsum dolor sit amet."
 msgstr ""
-"Lorem Ipsum Dolor сидеть Амет , усу rebum errem pericula еа, е частности "
-"quaerendum VIX . Еа Хусто tritani сидеть , Одио ignota кво т.е . Lorem Ipsum "
-"Dolor сидеть Амет ."
+"Lorem ipsum dolor sit amet, usu rebum errem pericula ea, ei alia quaerendum "
+"vix. Ea justo tritani sit, odio ignota quo te. Lorem ipsum dolor sit amet."
 
 #: functions/customizer/customizer_template.php:586
 msgid "Get in Touch Description"
-msgstr "Соприкоснуться Описание"
+msgstr "Descriere Intră în contact"
 
 #: functions/customizer/customizer_template.php:606
 msgid "Enable our office section in contact page."
-msgstr "Включить наш офис раздел контактной странице."
+msgstr "Activează secțiunea biroul nostru în pagina de contact."
 
 #: functions/customizer/customizer_template.php:615
 msgid "Our Office"
-msgstr "Наш офис"
+msgstr "Biroul nostru"
 
 #: functions/customizer/customizer_template.php:624
 msgid "Our Office Text:"
-msgstr "Наш офис Текст:"
+msgstr "Text pentru biroul nostru:"
 
 #: functions/customizer/customizer_template.php:634
 msgid "New York City, USA"
-msgstr "Нью-Йорк , США"
+msgstr "Orașul New York, SUA"
 
 #: functions/customizer/customizer_template.php:643
 msgid "Contact Address:"
-msgstr "Контактный адрес:"
+msgstr "Adresă de contact:"
 
 #: functions/customizer/customizer_template.php:654
 msgid "420-300-3850"
@@ -156,7 +152,7 @@ msgstr "420-300-3850"
 
 #: functions/customizer/customizer_template.php:663
 msgid "Contact Phone Number:"
-msgstr "Контактный телефон:"
+msgstr "Număr telefon de contact:"
 
 #: functions/customizer/customizer_template.php:673
 msgid "themes@webriti.com"
@@ -164,56 +160,56 @@ msgstr "themes@webriti.com"
 
 #: functions/customizer/customizer_template.php:682
 msgid "Contact Email:"
-msgstr "Почта для связи:"
+msgstr "Email de contact:"
 
 #: functions/customizer/customizer_theme_color.php:10
 msgid "Want To add More Styling and Theme Color Then"
-msgstr "Хотите добавить больше вводить в моду и цвет темы Тогда"
+msgstr "Vrei să adaugi mai multe stilizări și culoare temei apoi"
 
 #: functions/customizer/customizer_theme_color.php:28
 msgid "Theme Color Schemes Settings "
-msgstr "Тема цветовых схем Настройки"
+msgstr "Setări scheme de culoare temă"
 
 #: functions/customizer/customizer_theme_color.php:41
 msgid "Predefined Colors"
-msgstr "Предварительно определенные цвета"
+msgstr "Culori predefinite"
 
 #: functions/customizer/customizer_theme_color.php:67
 msgid "Skin Color Enable"
-msgstr "Цвет кожи Включить"
+msgstr "Activează culoare înveliș"
 
 #: functions/customizer/customizer_theme_color.php:86
 msgid "Skin Color"
-msgstr "Цвет кожи"
+msgstr "Culoare înveliș"
 
 #: functions/customizer/customizer_theme_color.php:95
 #: functions/customizer/customizer_theme_color.php:108
 msgid "wide"
-msgstr "Макс. ширина"
+msgstr "lat"
 
 #: functions/customizer/customizer_theme_color.php:108
 msgid "boxed"
-msgstr "Фиксированная"
+msgstr "încasetat"
 
 #: functions/customizer/customizer_typography.php:7
 msgid "Want to add Typography Setting Then"
-msgstr "Хотите добавить Typography установки, а затем"
+msgstr "Vrei să adaugi setare tipografice apoi"
 
 #: functions/customizer/customizer_typography.php:15
 msgid "Typography Settings"
-msgstr "Настройки Книгопечатания"
+msgstr "Setări tipografice"
 
 #: functions/customizer/customizer_typography.php:20
 msgid "Typhography Enable / Disable"
-msgstr "Typhography Включить / Выключить"
+msgstr "Activează/dezactivează tipografice"
 
 #: functions/customizer/customizer_typography.php:51
 msgid "Enable Custom Typography"
-msgstr "Включение пользовательских типографию"
+msgstr "Activează tipografice personalizate"
 
 #: functions/customizer/customizer_typography.php:70
 msgid "General Typography"
-msgstr "Общая типографика"
+msgstr "Tipografice generale"
 
 #: functions/customizer/customizer_typography.php:84
 #: functions/customizer/customizer_typography.php:141
@@ -226,30 +222,27 @@ msgstr "Общая типографика"
 #: functions/customizer/customizer_typography.php:535
 #: functions/customizer/customizer_typography.php:591
 msgid "Font Size"
-msgstr ""
-"Размер\n"
-" \n"
-"шрифта"
+msgstr "Dimensiune font"
 
 #: functions/customizer/customizer_template.php:200
 msgid "Testimonials Title"
-msgstr "Отзывы Название"
+msgstr "Titlu testimoniale"
 
 #: functions/customizer/customizer_template.php:214
 msgid "Click Here To Add Testimonial"
-msgstr "Нажмите здесь, чтобы добавить Testimonial"
+msgstr "Dă clic aici pentru a adăuga testimonial"
 
 #: functions/customizer/customizer_template.php:246
 msgid "Enable client strip on About us page"
-msgstr "Включение клиента полосы на странице О нас"
+msgstr "Activează bandă client pe pagina Despre noi"
 
 #: functions/customizer/customizer_template.php:255
 msgid "Our Client"
-msgstr "Наш клиент"
+msgstr "Clientul nostru"
 
 #: functions/customizer/customizer_template.php:264
 msgid "Client Strip Heading"
-msgstr "Strip товарную Клиент"
+msgstr "Subtitlu bandă client"
 
 #: functions/customizer/customizer_template.php:274
 msgid "5"
@@ -257,39 +250,39 @@ msgstr "5"
 
 #: functions/customizer/customizer_template.php:283
 msgid "Number of client display in client strip"
-msgstr "Количество дисплея клиента в клиентской полосе"
+msgstr "Număr de clienți afișat în bandă client"
 
 #: functions/customizer/customizer_template.php:303
 msgid "Client strip slide speed"
-msgstr "Скорость полосы слайд- клиента"
+msgstr "Viteză diapozitiv bandă client"
 
 #: functions/customizer/customizer_template.php:316
 msgid "Click Here To Add Clients"
-msgstr "Нажмите здесь, чтобы добавить клиентов"
+msgstr "Dă clic aici pentru a adăuga clienți"
 
 #: functions/customizer/customizer_template.php:340
 msgid "Service Page Setting"
-msgstr "обслуживание страница настройка"
+msgstr "Setare pagină serviciu"
 
 #: functions/customizer/customizer_template.php:375
 msgid "Enable testmonials section on service template."
-msgstr "Включить testmonials раздел шаблона службы ."
+msgstr "Activează secțiunea testimoniale în șablon serviciu."
 
 #: functions/customizer/customizer_template.php:393
 msgid "Enable client strip on Service Page template."
-msgstr "Включение клиента полосы на шаблоне странице сервиса"
+msgstr "Activează bandă client pe șablonul paginii serviciu."
 
 #: functions/customizer/customizer_template.php:407
 msgid "Click Here To Add Service"
-msgstr "Нажмите здесь, чтобы добавить службу"
+msgstr "Dă clic aici pentru a adăuga serviciu"
 
 #: functions/customizer/customizer_template.php:429
 msgid "Google Maps"
-msgstr "Карты Google"
+msgstr "Google Maps"
 
 #: functions/customizer/customizer_template.php:465
 msgid "Enable Google Map in contact page"
-msgstr "Включить Google Map в странице контактов"
+msgstr "Activează Google Map în pagina de contact"
 
 #: functions/customizer/customizer_template.php:476
 msgid ""
@@ -307,23 +300,23 @@ msgstr ""
 
 #: functions/customizer/customizer_template.php:484
 msgid "Google Map URL:"
-msgstr "URL Google Map :"
+msgstr "URL Google Map:"
 
 #: functions/customizer/customizer_template.php:493
 msgid "Contact Page Setting"
-msgstr "Окружение страницу контактов"
+msgstr "Setare pagină de contact"
 
 #: functions/customizer/customizer_template.php:521
 msgid "Contact Form"
-msgstr "Контактная форма"
+msgstr "Formular de contact"
 
 #: functions/customizer/customizer_post_slug.php:7
 msgid "Want to add Post Type Slug"
-msgstr "Хотите добавить сообщение Тип Slug"
+msgstr "Vrei să adaugi descriptor tip de articol"
 
 #: functions/customizer/customizer_post_slug.php:15
 msgid "Post Type Slug Setting"
-msgstr "Сообщение Тип Slug Окружение"
+msgstr "Setare descriptor tip de articol"
 
 #: functions/customizer/customizer_post_slug.php:42
 msgid "rambo_slider"
@@ -331,7 +324,7 @@ msgstr "rambo_slider"
 
 #: functions/customizer/customizer_post_slug.php:49
 msgid "Slider Slug"
-msgstr "Slider Slug"
+msgstr "Descriptor carusel"
 
 #: functions/customizer/customizer_post_slug.php:59
 msgid "rambo_service"
@@ -339,7 +332,7 @@ msgstr "rambo_service"
 
 #: functions/customizer/customizer_post_slug.php:64
 msgid "Service Slug"
-msgstr "Сервис Slug"
+msgstr "Descriptor serviciu"
 
 #: functions/customizer/customizer_post_slug.php:74
 msgid "rambo_testimonial"
@@ -347,7 +340,7 @@ msgstr "rambo_testimonial"
 
 #: functions/customizer/customizer_post_slug.php:81
 msgid "Testimonial Slug"
-msgstr "Характеризует Slug"
+msgstr "Descriptor testimonial"
 
 #: functions/customizer/customizer_post_slug.php:91
 msgid "rambo_project"
@@ -355,7 +348,7 @@ msgstr "rambo_project"
 
 #: functions/customizer/customizer_post_slug.php:98
 msgid "Portfolio/Project Slug"
-msgstr "Портфолио / Project Slug"
+msgstr "Descriptor portofoliu/proiect"
 
 #: functions/customizer/customizer_post_slug.php:108
 msgid "rambo_team"
@@ -363,124 +356,123 @@ msgstr "rambo_team"
 
 #: functions/customizer/customizer_post_slug.php:115
 msgid "Our Team Slug"
-msgstr "Наша команда Slug"
+msgstr "Descriptor echipa noastră"
 
 #: functions/customizer/customizer_template.php:6
 msgid "Want to add About us Template Then"
-msgstr "Хотите добавить О нас Шаблон Тогда"
+msgstr "Vrei să adaugi șablonul Despre noi apoi"
 
 #: functions/customizer/customizer_template.php:14
 msgid "Want to add Service Page Template Then"
-msgstr "Хотите добавить шаблон страницы Service Тогда"
+msgstr "Vrei să adaugi șablonul pagină serviciu apoi"
 
 #: functions/customizer/customizer_template.php:22
 msgid "Want to add Google maps Then"
-msgstr "Хотите добавить Google Maps Тогда"
+msgstr "Vrei să adaugi Google Maps apoi"
 
 #: functions/customizer/customizer_template.php:30
 msgid "Want to add Contact Page Template Setting Then"
-msgstr "отите добавить Настройка страницу контактов шаблона Далее"
+msgstr "Vrei să adaugi șablonul pagină de contact apoi"
 
 #: functions/customizer/customizer_template.php:39
 msgid "Template Settings"
-msgstr "Настройки шаблона"
+msgstr "Setări șablon"
 
 #: functions/customizer/customizer_template.php:47
 msgid "About Page Setting"
-msgstr "О Page Окружение"
+msgstr "Setare pagină Despre"
 
 #: functions/customizer/customizer_template.php:83
 msgid ""
 "Enable About Us content with Featured Image and social media links on About "
 "Us Page"
 msgstr ""
-"Включить О содержании нас с Рекомендуемые изображения и социальные медиа "
-"ссылок на странице О нас"
+"Activează conținutul Despre noi cu imagine reprezentativă și legături media "
+"sociale pe pagina Despre noi"
 
 #: functions/customizer/customizer_template.php:92
 msgid "Meet Our"
-msgstr "Познакомьтесь с нашими"
+msgstr "Fă cunoștință cu"
 
 #: functions/customizer/customizer_template.php:101
 msgid "About Page Title"
-msgstr "О Page Title"
+msgstr "Titlu pagină Despre"
 
 #: functions/customizer/customizer_template.php:120
 msgid "Enable Our team section"
-msgstr "Включить наш раздел команды"
+msgstr "Activează secțiunea Echipa noastră"
 
 #: functions/customizer/customizer_template.php:128
 msgid "Meet the Team"
-msgstr "Встретить команду"
+msgstr "Fă cunoștință cu echipa"
 
 #: functions/customizer/customizer_template.php:137
 msgid "Our Team Title"
-msgstr "Наш Название команды"
+msgstr "Titlu Echipa noastră"
 
 #: functions/customizer/customizer_template.php:151
 msgid "Click Here To Add Team Member"
-msgstr "Нажмите здесь, чтобы добавить член команды"
+msgstr "Dă clic aici pentru a adăuga membru echipă"
 
 #: functions/customizer/customizer_template.php:182
 msgid "Enable testmonials section on about us page."
-msgstr "Включить testmonials раздел о нас странице ."
+msgstr "Activează secțiunea testimoniale în pagina despre noi."
 
 #: functions/customizer/customizer_template.php:191
 msgid "Testimonials"
-msgstr "Отзывы"
+msgstr "Testimoniale"
 
 #: functions/customizer/customizer_layout.php:40
 msgid ""
 "By default all the section are enable on homepage. If you do not want to "
 "display any section just drag that section to the disabled box."
 msgstr ""
-"По умолчанию все секции включить на главной странице . Если вы не хотите , "
-"чтобы отобразить любой раздел просто перетащите этот раздел в окне "
-"инвалидов ."
+"În mod implicit toate secțiunile sunt activate în prima pagină. Dacă vrei să "
+"afișezi orice secțiune doar trage acea secțiune în caseta dezactivată."
 
 #: functions/customizer/customizer_layout.php:46
 msgid "Theme Layout Manager"
-msgstr "Тема Layout Manager"
+msgstr "Manager aranjament temă"
 
 #: functions/customizer/customizer_layout.php:114
 msgid "Disable"
-msgstr "выкл"
+msgstr "Dezactivează"
 
 #: functions/customizer/customizer_layout.php:39
 msgid "Slider section always top on the home page"
-msgstr "Slider секция всегда вверху на главной странице"
+msgstr "Secțiunea carusel întotdeauna sus în prima pagină"
 
 #: functions/customizer/customizer_layout.php:40
 msgid "Note:"
-msgstr "Внимание:"
+msgstr "Notă:"
 
 #: functions/customizer/customizer_home_page.php:658
 msgid "Project Setting"
-msgstr "Окружение проекта"
+msgstr "Setare proiect"
 
 #: functions/customizer/customizer_home_page.php:678
 msgid "Enable Project Section On HOME Page"
-msgstr "Включить раздел проекта на главной странице"
+msgstr "Activează secțiunea proiect în prima pagină"
 
 #: functions/customizer/customizer_home_page.php:688
 msgid "Featured Portfolio Project"
-msgstr "Рекомендуемые Портфель проектов"
+msgstr "Proiect de portofoliu reprezentativ"
 
 #: functions/customizer/customizer_home_page.php:695
 msgid "Project title"
-msgstr "Название Проекта"
+msgstr "Titlu proiect"
 
 #: functions/customizer/customizer_home_page.php:703
 msgid ""
 "Lorem ipsum dolor sit amet, consectetuer adipiscing elit lorem ipsum dolor "
 "sit amet"
 msgstr ""
-"Lorem Ipsum Dolor сидят Амет , consectetuer adipiscing Элит Lorem Ipsum "
-"Dolor сидеть Амет"
+"Lorem ipsum dolor sit amet, consectetuer adipiscing elit lorem ipsum dolor "
+"sit amet"
 
 #: functions/customizer/customizer_home_page.php:710
 msgid "Project Description"
-msgstr "Описание Проекта"
+msgstr "Descriere proiect"
 
 #: functions/customizer/customizer_home_page.php:748
 #: functions/customizer/customizer_home_page.php:791
@@ -490,40 +482,42 @@ msgid ""
 "A set of pieces of creative work collected to be shown to potential "
 "customers or employers; \"the artist had put together a portfolio of his work"
 msgstr ""
-"Набор деталей творчества собраны для показа потенциальных клиентов или "
-"работодателей; \" Художник собрал портфель его работы"
+"Un set de piese al muncii de creație colectat pentru a fi arătat "
+"potențialilor clienți sau angajați; artistul a pus laolaltă un portofoliu al "
+"muncii sale"
 
 #: functions/customizer/customizer_home_page.php:899
 msgid "Want to add more Project, than upgrade to pro version"
-msgstr "Хотите добавить больше проект , чем обновление до про версии"
+msgstr ""
+"Vrei să adaugi mai multe proiecte, atunci actualizează la versiunea pro"
 
 #: functions/customizer/customizer_home_page.php:927
 msgid "Recent News Setting"
-msgstr "Последние новости Окружение"
+msgstr "Setare știri recente"
 
 #: functions/customizer/customizer_home_page.php:960
 msgid "Enable Latest News Section"
-msgstr "Включить раздел последних новостей"
+msgstr "Activează secțiunea ultimele știri"
 
 #: functions/customizer/customizer_home_page.php:968
 msgid "Recent News"
-msgstr "Последние новости"
+msgstr "Știri recente"
 
 #: functions/customizer/customizer_home_page.php:976
 msgid "Recent News Section Heading"
-msgstr "Последние новости заголовок раздела"
+msgstr "Subtitlu secțiune Știri recente"
 
 #: functions/customizer/customizer_home_page.php:986
 msgid "Footer Call Out Area Setting"
-msgstr "Настройка нижнего колонтитула взывать Площадь"
+msgstr "Setare zonă chemare subsol"
 
 #: functions/customizer/customizer_home_page.php:1027
 msgid "Enable Site Intro"
-msgstr "Включение сайта Введение"
+msgstr "Activează introduce sit"
 
 #: functions/customizer/customizer_home_page.php:1045
 msgid "Footer call out title"
-msgstr "Footer взывать название"
+msgstr "Titlu zonă chemare subsol"
 
 #: functions/customizer/customizer_home_page.php:1054
 msgid ""
@@ -531,47 +525,47 @@ msgid ""
 "praesentium voluptatum deleniti atque corrupti quos excepturi vehicula sem "
 "ut volutpat. Ut non libero magna fusce condimentum eleifend enim a feugiat."
 msgstr ""
-"На Vero ЭОС и др accusamus др iusto Одио dignissimos ducimus Qui blanditiis "
-"praesentium voluptatum deleniti atque corrupti quos excepturi vehicula СЭМ "
-"ут volutpat . Ут не либеро магна fusce condimentum eleifend enimfeugiat ."
+"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis "
+"praesentium voluptatum deleniti atque corrupti quos excepturi vehicula sem "
+"ut volutpat. Ut non libero magna fusce condimentum eleifend enim a feugiat."
 
 #: functions/customizer/customizer_home_page.php:1064
 msgid "Footer call out description"
-msgstr "Footer взывать описание"
+msgstr "Descriere zonă chemare subsol"
 
 #: functions/customizer/customizer_home_page.php:1083
 msgid "Footer call out button text\t"
-msgstr "Footer крикнуть текст кнопки "
+msgstr "Text buton zonă chemare subsol→"
 
 #: functions/customizer/customizer_home_page.php:1103
 msgid "Call Out Button Link"
-msgstr "Call Out Button Link"
+msgstr "Legătură buton zonă chemare subsol"
 
 #: functions/customizer/customizer_home_page.php:1129
 msgid "Footer Copyright Custmization "
-msgstr "Footer Copyright Custmization"
+msgstr "Personalizare Drepturi de autor din subsol"
 
 #: functions/customizer/customizer_layout.php:7
 msgid "Want to add Theme layout Feature Then"
-msgstr "Хотите добавить тематический макет Feature Тогда"
+msgstr "Vrei să adaugi funcționalitate aranjament temă apoi"
 
 #: functions/customizer/customizer_layout.php:24
 #: functions/customizer/customizer_layout.php:96
 msgid "Enable"
-msgstr "вкл"
+msgstr "Activează"
 
 #: functions/customizer/customizer_home_page.php:223
 #: functions/customizer/customizer_theme_color.php:106
 msgid "Slide direction"
-msgstr "Направление воспроизведения"
+msgstr "Direcție carusel"
 
 #: functions/customizer/customizer_home_page.php:226
 msgid "horizontal"
-msgstr "горизонтальный"
+msgstr "orizontal"
 
 #: functions/customizer/customizer_home_page.php:226
 msgid "vertical"
-msgstr "вертикальный"
+msgstr "vertical"
 
 #: functions/customizer/customizer_home_page.php:232
 #: functions/customizer/customizer_template.php:292
@@ -580,7 +574,7 @@ msgstr "2000"
 
 #: functions/customizer/customizer_home_page.php:243
 msgid "Animation speed"
-msgstr "Скорость анимации"
+msgstr "Viteză animație"
 
 #: functions/customizer/customizer_home_page.php:252
 msgid "2500"
@@ -588,33 +582,33 @@ msgstr "2500"
 
 #: functions/customizer/customizer_home_page.php:263
 msgid "Slideshow speed"
-msgstr "скорость слайд-шоу"
+msgstr "Viteză carusel"
 
 #: functions/customizer/customizer_home_page.php:276
 msgid "Click Here To Add Slider"
-msgstr "Нажмите здесь, чтобы добавить Slider"
+msgstr "Dă clic aici pentru a adăuga carusel"
 
 #: functions/customizer/customizer_home_page.php:296
 msgid "Site Intro "
-msgstr "Введение сайта"
+msgstr "Introducere sit"
 
 #: functions/customizer/customizer_home_page.php:321
 #: functions/customizer/customizer_home_page.php:1035
 msgid "Rambo is a clean and fully responsive Template."
-msgstr "Рэмбо является чистым и в полной мере учитывающими шаблона ."
+msgstr "Rambo este un șablon curat și complet responsiv."
 
 #: functions/customizer/customizer_home_page.php:330
 msgid "Intro description"
-msgstr "описание Введение"
+msgstr "Descriere introductivă"
 
 #: functions/customizer/customizer_home_page.php:341
 #: functions/customizer/customizer_home_page.php:1073
 msgid "Purchase Now"
-msgstr "Купить сейчас"
+msgstr "Cumpără acum"
 
 #: functions/customizer/customizer_home_page.php:350
 msgid "Intro button text"
-msgstr "Вводный текст кнопки"
+msgstr "Text buton introducere"
 
 #: functions/customizer/customizer_home_page.php:138
 #: functions/customizer/customizer_home_page.php:361
@@ -624,29 +618,29 @@ msgstr "#"
 
 #: functions/customizer/customizer_home_page.php:370
 msgid "Intro button link"
-msgstr "Введение Кнопка ссылки"
+msgstr "Legătură buton introducere"
 
 #: functions/customizer/customizer_home_page.php:164
 #: functions/customizer/customizer_home_page.php:387
 #: functions/customizer/customizer_home_page.php:1121
 msgid "Open link new tab/window"
-msgstr "Открыть ссылку новая вкладка / окно"
+msgstr "Deschide legătura într-o filă/fereastră nouă"
 
 #: functions/customizer/customizer_home_page.php:393
 msgid "Service Setting "
-msgstr "Услуги Окружение"
+msgstr "Setare serviciu"
 
 #: functions/customizer/customizer_home_page.php:413
 msgid "Enable Service Section On HOME Page"
-msgstr "Включить службу Раздел Домашняя страница"
+msgstr "Activează secțiunea serviciu în prima pagină"
 
 #: functions/customizer/customizer_home_page.php:428
 msgid "Service Icon One"
-msgstr "Сервис Icon One"
+msgstr "Primul icon al serviciului"
 
 #: functions/customizer/customizer_home_page.php:445
 msgid "Service Title One"
-msgstr "Услуги Название Один"
+msgstr "Primul titlu al serviciului"
 
 #: functions/customizer/customizer_home_page.php:454
 #: functions/customizer/customizer_home_page.php:505
@@ -656,102 +650,104 @@ msgid ""
 "This is service one, reliable to user and comfortable to operate. You can "
 "easily manage all sub services using one instance."
 msgstr ""
-"Это сервис один , надежный и пользователю удобно работать . Вы можете легко "
-"управлять всеми подуслуги с помощью одного экземпляра ."
+"Acesta este primul serviciu, de încredere pentru utilizator și confortabil "
+"pentru funcționare. Poți gestiona cu ușurință toate sub-serviciile folosind "
+"un exemplu."
 
 #: functions/customizer/customizer_home_page.php:463
 msgid "Service Description One"
-msgstr "Описание услуги Один"
+msgstr "Prima descriere a serviciului"
 
 #: functions/customizer/customizer_home_page.php:479
 msgid "Service Icon Two"
-msgstr "Сервис Icon Two"
+msgstr "Al doilea icon al serviciului"
 
 #: functions/customizer/customizer_home_page.php:496
 msgid "Service Title Two"
-msgstr "Услуги Название Два"
+msgstr "Al doilea titlu al serviciului"
 
 #: functions/customizer/customizer_home_page.php:514
 msgid "Service Description Two"
-msgstr "Сервис Описание Два"
+msgstr "A doua descriere a serviciului"
 
 #: functions/customizer/customizer_home_page.php:530
 msgid "Service Icon Three"
-msgstr "Служба Иконка Три"
+msgstr "Al treilea icon al serviciului"
 
 #: functions/customizer/customizer_home_page.php:547
 msgid "Service Title Three"
-msgstr "Услуги Название Три"
+msgstr "Al treilea titlu al serviciului"
 
 #: functions/customizer/customizer_home_page.php:565
 msgid "Service Description Three"
-msgstr "Описание услуги Три"
+msgstr "A treia descriere a serviciului"
 
 #: functions/customizer/customizer_home_page.php:581
 msgid "Service Icon Four"
-msgstr "Сервис Иконка Четыре"
+msgstr "Al patrulea icon al serviciului"
 
 #: functions/customizer/customizer_home_page.php:598
 msgid "Service Title Four"
-msgstr "Услуги Название Четыре"
+msgstr "Al patrulea titlu al serviciului"
 
 #: functions/customizer/customizer_home_page.php:616
 msgid "Service Description Four"
-msgstr "Описание услуги Четыре"
+msgstr "A patre descriere a serviciului"
 
 #: functions/customizer/customizer_home_page.php:630
 msgid "Want to add more services, than upgrade to pro version"
-msgstr "Хотите добавить больше услуг , чем обновление до про версии"
+msgstr ""
+"Vrei să adaugi mai multe servicii, atunci actualizează la versiunea pro"
 
 #: functions/customizer/customizer_home_page.php:633
 #: functions/customizer/customizer_home_page.php:902
 msgid "UPGRADE TO PRO"
-msgstr "UPGRADE TO PRO"
+msgstr "ACTUALIZEAZĂ LA PRO"
 
 #: functions/customizer/customizer_header.php:13
 msgid "Front Page Setting"
-msgstr "Настройка Front Page"
+msgstr "Setare pagina din față"
 
 #: functions/customizer/customizer_header.php:40
 msgid "Site favicon"
-msgstr "Иконка сайта"
+msgstr "Favicon sit"
 
 #: functions/customizer/customizer_header.php:42
 msgid "Upload a favicon"
-msgstr "Загрузить фавиконки"
+msgstr "Încarcă un favicon"
 
 #: functions/customizer/customizer_header.php:53
 msgid "Choose your favicon (ideal width and height is 16x16 or 32x32)"
 msgstr ""
-"Выберите Favicon ( идеальная ширина и высота составляет 16х16 или 32х32)"
+"Alege-ți faviconul (lățimea și înălțimea ideală este de 16x16 sau 32x32) "
 
 #: functions/customizer/customizer_header.php:59
 msgid "Header Logo setting"
-msgstr "Настройка логотипа заголовка"
+msgstr "Setare logo antet"
 
 #: functions/customizer/customizer_header.php:77
 msgid "Upload a 150x150 for Logo Image"
-msgstr "Загрузить 150x150 для изображения логотипа"
+msgstr "Încarcă o imagine pentru logo de 150x150"
 
 #: functions/customizer/customizer_header.php:96
 msgid "Enable/Disabe Text Logo"
-msgstr "Включить / Disabe Текст Логотип"
+msgstr "Activează/dezactivează text logo"
 
 #: functions/customizer/customizer_header.php:117
 msgid "Enter Logo Width"
-msgstr "Введите Ширина логотипа"
+msgstr "Introdu lățime logo"
 
 #: functions/customizer/customizer_header.php:136
 msgid "Enter Logo Height"
-msgstr "Введите Высота логотипа"
+msgstr "Introdu înălțime logo"
 
 #: functions/customizer/customizer_header.php:157
 msgid "Custom css snippet:"
-msgstr "Пользовательские CSS фрагмент кода :"
+msgstr "Fragment css personalizat:"
 
 #: functions/customizer/customizer_home_page.php:6
 msgid "Want to add More Slides and Animation Effect Then"
-msgstr "Хотите добавить слайды и эффект анимации Тогда"
+msgstr "Vrei să adaugi mai multe diapozitive și efect de animație apoi"
 
 #: functions/customizer/customizer_home_page.php:6
 #: functions/customizer/customizer_home_page.php:13
@@ -766,31 +762,31 @@ msgstr "Хотите добавить слайды и эффект анимац�
 #: functions/customizer/customizer_theme_color.php:10
 #: functions/customizer/customizer_typography.php:7
 msgid " Upgrade To Pro"
-msgstr "Обновление до Pro"
+msgstr "Actualizează la Pro"
 
 #: functions/customizer/customizer_home_page.php:13
 msgid "Want to Add Site Intro Then"
-msgstr "Хотите , чтобы добавить сайт Введение Тогда"
+msgstr "Vrei să adaugi introducere sit apoi"
 
 #: functions/customizer/customizer_home_page.php:21
 msgid "Want to add Latest News Section Then"
-msgstr "Хотите добавить раздел последних новостей Далее"
+msgstr "Vrei să adaugi secțiunea Ultimele știri apoi"
 
 #: functions/customizer/customizer_home_page.php:30
 msgid "Want to add Footer callout Section Then"
-msgstr "Хотите добавить раздел выноски Footer Тогда"
+msgstr "Vrei să adaugi secțiune chemare în subsol apoi"
 
 #: functions/customizer/customizer_home_page.php:39
 msgid "Home Page Settings"
-msgstr "Настройки главной страницы"
+msgstr "Setari pagina de pornire"
 
 #: functions/customizer/customizer_home_page.php:45
 msgid "Slider Setting"
-msgstr "Slider Настройка"
+msgstr "Setări carusel"
 
 #: functions/customizer/customizer_home_page.php:80
 msgid "Image Upload"
-msgstr "изображение Загрузить"
+msgstr "Încărcare imagine"
 
 #: functions/customizer/customizer_home_page.php:179
 #: functions/customizer/customizer_home_page.php:311
@@ -804,21 +800,21 @@ msgstr "изображение Загрузить"
 #: functions/customizer/customizer_template.php:509
 #: functions/customizer/customizer_typography.php:35
 msgid "Rambo Upgrade"
-msgstr "Рэмбо Реконструкция"
+msgstr "Actualizare Rambo"
 
 #: functions/customizer/customizer_home_page.php:189
 #: functions/customizer/customizer_home_page.php:203
 #: functions/customizer/customizer_home_page.php:212
 msgid "slide"
-msgstr "Слайд"
+msgstr "diapozitiv"
 
 #: functions/customizer/customizer_home_page.php:200
 msgid "Select slider Animation"
-msgstr "Выберите ползунок анимации"
+msgstr "Selectează animație carusel"
 
 #: functions/customizer/customizer_home_page.php:203
 msgid "fade"
-msgstr "плавный переход"
+msgstr "estompare"
 
 #: functions/customizer/customizer-pro.php:80
 msgid "http://webriti.com/help/"
@@ -826,7 +822,7 @@ msgstr "http://webriti.com/help/"
 
 #: functions/customizer/customizer-pro.php:80
 msgid "DOCUMENTATION"
-msgstr "Документация"
+msgstr "DOCUMENTAȚIE"
 
 #: functions/customizer/customizer-pro.php:84
 msgid ""
@@ -837,16 +833,16 @@ msgid ""
 "pro version will give it all. Buy the pro version and give us a chance to "
 "serve you better. "
 msgstr ""
-"Версии Pro дает вам больше возможностей для улучшения вашего сайта и "
-"бизнеса . Для создания эффективного присутствия в Интернете один должны "
-"продемонстрировать свои широкий спектр продуктов , должны использовать "
-"связаться с нами форму запроса , должны сделать эффективной о нас странице , "
-"необходимо ввести членов команды , и т.д. и т.п. . Про версию передаст все "
-"это. Купить про версию и дать нам возможность служить вам лучше "
+"Versiunea Pro îți oferă mai multe oportunități pentru a-ți îmbunătăți situl "
+"și afacerea. În scopul de a crea o prezență online eficientă trebuie să "
+"prezinți o gamă largă de produse, trebuie să folosești formularul de anchetă "
+"contactează-ne, trebuie să faci eficientă pagina despre noi, trebuie să "
+"introduci membrii echipei, etc. Versiunea Pro ți le dă pe toate. Cumpăra "
+"versiunea pro și dă-ne o șansă de a te servi mai bine."
 
 #: functions/customizer/customizer_header.php:7
 msgid "Header Settings"
-msgstr "Настройки заголовка"
+msgstr "Setări antet"
 
 #: functions/customizer/customizer-pro.php:13
 #: functions/customizer/customizer_home_page.php:633
@@ -856,11 +852,11 @@ msgstr "http://webriti.com/rambo/"
 
 #: functions/customizer/customizer-pro.php:13
 msgid "UPGRADE  TO PRO"
-msgstr "UPGRADE TO PRO"
+msgstr "ACTUALIZEAZĂ LA PRO"
 
 #: functions/customizer/customizer-pro.php:20
 msgid "UPGRADE  TO PRO VERSION"
-msgstr "ОБНОВЛЕНИЕ ДО ВЕРСИИ PRO"
+msgstr "ACTUALIZEAZĂ LA VERSIUNEA PRO"
 
 #: functions/customizer/customizer-pro.php:33
 #: functions/customizer/customizer-pro.php:62
@@ -869,7 +865,7 @@ msgstr "ОБНОВЛЕНИЕ ДО ВЕРСИИ PRO"
 #: functions/customizer/customizer_home_page.php:917
 #: functions/customizer/customizer_layout.php:78
 msgid "Discover rambo Pro"
-msgstr "Откройте для себя Рэмбо Pro"
+msgstr "Descoperă Rambo Pro"
 
 #: functions/customizer/customizer-pro.php:47
 msgid "https://wordpress.org/support/view/theme-reviews/rambo#postform/"
@@ -877,15 +873,15 @@ msgstr "https://wordpress.org/support/view/theme-reviews/rambo#postform/"
 
 #: functions/customizer/customizer-pro.php:47
 msgid "ADD YOUR REVIEW"
-msgstr "Добавьте свой отзыв"
+msgstr "Adaugă recenzia ta"
 
 #. Template Name of the plugin/theme
 msgid "Blog-leftsidebar"
-msgstr "Блог - leftsidebar"
+msgstr "Blog-leftsidebar"
 
 #: template-blog-leftsidebar.php:26
 msgid "Next"
-msgstr "Следующая"
+msgstr "Următoare"
 
 #: functions/customizer/customizer_home_page.php:1202
 msgid "http://www.webriti.com"
@@ -893,39 +889,41 @@ msgstr "http://www.webriti.com"
 
 #: template-blog-leftsidebar.php:25
 msgid "Previous"
-msgstr "Предыдущие"
+msgstr "Anterioară"
 
 #. Template Name of the plugin/theme
 msgid "Fullwidth"
-msgstr "По всей ширине"
+msgstr "Lățime completă"
 
 #: theme_setup_data.php:51
 msgid ""
 "This is service Three, reliable to user and comfortable to operate. You can "
 "easily manage all sub services using one instance."
 msgstr ""
-"Это обслуживание Три, надежно и удобно пользователю работать . Вы можете "
-"легко управлять всеми подуслуги с помощью одного экземпляра ."
+"Acesta este al treilea serviciu, de încredere pentru utilizator și "
+"confortabil pentru funcționare. Poți gestiona cu ușurință toate sub-"
+"serviciile folosind un exemplu."
 
 #: functions/customizer/customizer_home_page.php:589 theme_setup_data.php:54
 msgid "Service Four"
-msgstr "Обслуживание Четыре"
+msgstr "Al patrulea serviciu"
 
 #: theme_setup_data.php:55
 msgid ""
 "This is service Four, reliable to user and comfortable to operate. You can "
 "easily manage all sub services using one instance."
 msgstr ""
-"Это сервис Four , надежно и удобно пользователю работать . Вы можете легко "
-"управлять всеми подуслуги с помощью одного экземпляра ."
+"Acesta este al patrulea serviciu, de încredere pentru utilizator și "
+"confortabil pentru funcționare. Poți gestiona cu ușurință toate sub-"
+"serviciile folosind un exemplu."
 
 #: functions/customizer/customizer_home_page.php:1157 theme_setup_data.php:59
 msgid "&copy;2014&nbsp;ALL Rights Reserved"
-msgstr "& Копия ; 2014 & NBSP ; Все права защищены"
+msgstr "&copy;2014&nbsp;Toate drepturile rezervate"
 
 #: functions/customizer/customizer_home_page.php:1172 theme_setup_data.php:60
 msgid "Designed By"
-msgstr "Дизайн"
+msgstr "Creat de"
 
 #. #-#-#-#-#  rambo.pot (Rambo 1.5)  #-#-#-#-#
 #. Author of the plugin/theme
@@ -935,19 +933,19 @@ msgstr "Webriti"
 
 #: theme_setup_data.php:74
 msgid "Featured Portfolio Projects"
-msgstr "Популярные проекты Портфолио"
+msgstr "Proiecte portofoliu reprezentative"
 
 #: theme_setup_data.php:75
 msgid ""
 "Maecenas sit amet tincidunt elit. Pellentesque habitant morbi tristique "
 "senectus et netus et Nulla facilisi."
 msgstr ""
-"Меценат сидеть Амет tincidunt Элит . Pellentesque обитатель MORBI tristique "
-"senectus и др Netus и др Nulla facilisi ."
+"Maecenas sit amet tincidunt elit. Pellentesque habitant morbi tristique "
+"senectus et netus et Nulla facilisi."
 
 #: theme_setup_data.php:77
 msgid "Product one"
-msgstr "один продукт"
+msgstr "Primul produs"
 
 #: theme_setup_data.php:78 theme_setup_data.php:82 theme_setup_data.php:86
 #: theme_setup_data.php:90
@@ -956,249 +954,252 @@ msgid ""
 "customers or employers; \"the artist had put together a portfolio of his work"
 "\";"
 msgstr ""
-"Набор деталей творчества собраны для показа потенциальных клиентов или "
-"работодателей; \" Художник собрал портфель его работы \" ;"
+"Un set de piese al muncii de creație colectat pentru a fi arătat "
+"potențialilor clienți sau angajați; \"artistul a pus laolaltă un portofoliu "
+"al muncii sale\";"
 
 #: functions/customizer/customizer_home_page.php:761 theme_setup_data.php:81
 msgid "Product two"
-msgstr "Продукт двух"
+msgstr "Al doilea produs"
 
 #: theme_setup_data.php:85
 msgid "Product Three"
-msgstr "Продукт три"
+msgstr "Al treilea produs"
 
 #: functions/customizer/customizer_home_page.php:851 theme_setup_data.php:89
 msgid "Product Four"
-msgstr "Четыре продукта"
+msgstr "Al patrulea produs"
 
 #: functions/customizer/customizer_home_page.php:92 theme_setup_data.php:33
 msgid "Theme Feature Goes Here!"
-msgstr "Тема Особенность здесь идет !"
+msgstr "Funcționalitatea temei merge aici!"
 
 #: functions/customizer/customizer_home_page.php:106 theme_setup_data.php:34
 msgid ""
 "Rambo makes content easy to view on any device with any resolution. You may "
 "check this with resizing. Fully Responsive Theme Amazing Design."
 msgstr ""
-"Рэмбо делает содержание легко просматривать на любом устройстве с любым "
-"разрешением . Вы можете проверить это с изменением размеров . Полностью "
-"Отзывчивый тема Удивительный дизайн ."
+"Rambo face conținutul ușor de vizualizat pe orice dispozitiv cu orice "
+"rezoluție. Poți verifica acest lucru prin redimensionare. Temă complet "
+"responsivă cu un design uimitor."
 
 #: functions/customizer/customizer_home_page.php:436 theme_setup_data.php:42
 msgid "Service One"
-msgstr "Обслуживание Один"
+msgstr "Al doilea serviciu"
 
 #: theme_setup_data.php:43
 msgid ""
 "This is service one, reliable to user and comfortable to operate. You can "
 "easily manage all sub services using one instance.  "
 msgstr ""
-"Это сервис один , надежный и пользователю удобно работать . Вы можете легко "
-"управлять всеми подуслуги с помощью одного экземпляра ."
+"Acesta este primul serviciu, de încredere pentru utilizator și confortabil "
+"pentru funcționare. Poți gestiona cu ușurință toate sub-serviciile folosind "
+"un exemplu."
 
 #: functions/customizer/customizer_home_page.php:487 theme_setup_data.php:46
 msgid "Service Two"
-msgstr "Обслуживание Два"
+msgstr "Al doilea serviciu"
 
 #: theme_setup_data.php:47
 msgid ""
 "This is service two, reliable to user and comfortable to operate. You can "
 "easily manage all sub services using one instance."
 msgstr ""
-"Это сервис два, надежно и удобно пользователю работать . Вы можете легко "
-"управлять всеми подуслуги с помощью одного экземпляра ."
+"Acesta este al doilea serviciu, de încredere pentru utilizator și "
+"confortabil pentru funcționare. Poți gestiona cu ușurință toate sub-"
+"serviciile folosind un exemplu."
 
 #: functions/customizer/customizer_home_page.php:538 theme_setup_data.php:50
 msgid "Service Three"
-msgstr "Обслуживание Три"
+msgstr "Al treilea serviciu"
 
 #: search.php:24
 msgid ""
 "Sorry, but nothing matched your search criteria. Please try again with some "
 "different keywords."
 msgstr ""
-"Извините, по вашему запросу ничего не найдено. Попробуйте другие ключевые "
-"слова."
+"Regret, dar nimic nu se potrivește cu criteriul tău de căutare. Te rog "
+"încearcă din nou cu alte cuvinte cheie."
 
 #: search.php:22
 msgid "Nothing Found"
-msgstr "Ничего не найдено"
+msgstr "N-am găsit nimic"
 
 #: index-banner.php:20
 msgid "Theme Feature Goes Here !"
-msgstr "Тема Особенность здесь идет !"
+msgstr "Funcționalitate temă merge aici!"
 
 #: index-banner.php:21
 msgid ""
 "This is Dummy Text. This is Dummy Text. This is Dummy Text.  I repeat.. This "
 "is Dummy Text."
 msgstr ""
-"Это фиктивный текст . Это фиктивный текст . Это фиктивный текст . Я "
-"повторяю .. Это фиктивный текст ."
+"Acesta este text fals. Acesta este text fals. Acesta este text fals. Repet.. "
+"Acesta este text fals."
 
 #: page.php:26
 msgid "Pages:"
-msgstr "Страниц:"
+msgstr "Pagini:"
 
 #: functions.php:156
 msgid "All plugins installed and activated successfully. %s"
-msgstr "Все плагины успешно установлены и активированы. %s"
+msgstr "Toate modulele au fost instalate și activate cu succes. %s"
 
 #: functions.php:140
 msgid "Install Recommended Plugins"
-msgstr "Установить необходимые плагины"
+msgstr "Instalare module recomandate"
 
 #: functions.php:143
 msgid "Something went wrong with the plugin API."
-msgstr "Что-то пошло не так с API плагином."
+msgstr "Ceva nu a mers bine cu API-ul modulului."
 
 #: functions.php:71
 msgid "Primary Menu"
-msgstr "Основное меню"
+msgstr "Meniu principal"
 
 #: functions.php:51
 msgid "Page"
-msgstr "Страница"
+msgstr "Pagină"
 
 #: functions/widget/custom-sidebar.php:27
 msgid "footer widget area"
-msgstr "Область подвала"
+msgstr "Zona asamblabilă subsol"
 
 #: functions/widget/custom-sidebar.php:25
 msgid "Footer Widget Area"
-msgstr "Область подвала"
+msgstr "Zona asamblabilă subsol"
 
 #: functions/widget/custom-sidebar.php:17
 msgid "The primary widget area"
-msgstr "Основная область виджетов"
+msgstr "Zona primară pentru widget-uri"
 
 #: functions/widget/custom-sidebar.php:15
 msgid "Sidebar"
-msgstr "Боковая колонка"
+msgstr "Bară laterală"
 
 #: functions/customizer/customizer_home_page.php:723
 msgid "Project One Title"
-msgstr "Проект Один Название"
+msgstr "Titlu primul proiect"
 
 #: functions/customizer/customizer_home_page.php:753
 msgid "Project One Description"
-msgstr "Проект Один Описание"
+msgstr "Descriere primul proiect"
 
 #: functions/customizer/customizer_home_page.php:766
 msgid "Project Two Title"
-msgstr "Проект Две Название"
+msgstr "Titlu al doilea proiect"
 
 #: functions/customizer/customizer_home_page.php:780
 msgid "Project Two Thumbnail"
-msgstr "Проект двух эскизов"
+msgstr "Miniatură al doilea proiect"
 
 #: functions/customizer/customizer_home_page.php:796
 msgid "Project Two Description"
-msgstr "Проект Два Описание"
+msgstr "Descriere al doilea proiect"
 
 #: functions/customizer/customizer_home_page.php:810
 msgid "Project Three Title"
-msgstr "Проект Три Название"
+msgstr "Titlu al treilea proiect"
 
 #: functions/customizer/customizer_home_page.php:824
 msgid "Project Three Thumbnail"
-msgstr "Проект Три эскиза"
+msgstr "Miniatură al treilea proiect"
 
 #: functions/customizer/customizer_home_page.php:841
 msgid "Project Three Description"
-msgstr "Проект Три Описание"
+msgstr "Descriere al treilea proiect"
 
 #: functions/customizer/customizer_home_page.php:856
 msgid "Project Four Title"
-msgstr "Проект Четыре Название"
+msgstr "Titlu al patrulea proiect"
 
 #: functions/customizer/customizer_home_page.php:870
 msgid "Project four Thumbnail"
-msgstr "Проект Четыре эскиза"
+msgstr "Miniatură al patrulea proiect"
 
 #: functions/customizer/customizer_home_page.php:886
 msgid "Project Four Description"
-msgstr "Проект Четыре Описание"
+msgstr "Descriere al patrulea proiect"
 
 #: functions/customizer/customizer_home_page.php:65
 msgid "Enable slider on front page"
-msgstr "Включить баннер на главной странице."
+msgstr "Activează caruselul în pagina din față"
 
 #: functions/customizer/customizer_home_page.php:98
 msgid "Banner Title"
-msgstr "Баннер Название"
+msgstr "Titlu banner"
 
 #: functions/customizer/customizer_home_page.php:112
 msgid "Banner Description"
-msgstr "Баннер Описание"
+msgstr "Descriere banner"
 
 #: functions/customizer/customizer_header.php:144
 msgid "Custom css"
-msgstr "Произвольный CSS"
+msgstr "CSS personalizat"
 
 #: functions/customizer/customizer_home_page.php:1147
 msgid "Enable Footer widgets in all pages."
-msgstr "Включение Footer виджетов на всех страницах ."
+msgstr "Activează piese subsol în toate paginile."
 
 #: functions/customizer/customizer_home_page.php:1163
 msgid "Copy Rights Text"
-msgstr "Копировать текст правах"
+msgstr "Text Drepturi de autor"
 
 #: functions/customizer/customizer_home_page.php:1178
 msgid "Designed By Head"
-msgstr "Дизайн руководителя"
+msgstr "Proiectat după director"
 
 #: functions/customizer/customizer_home_page.php:1193
 msgid "Designed By Name"
-msgstr "Дизайн Название"
+msgstr "Proiectat după nume"
 
 #: functions/customizer/customizer_home_page.php:1208
 msgid "Designed By Link"
-msgstr "Введите имя для компании / сайта"
+msgstr "Proiectat după legătură"
 
 #: functions/customizer/customizer_socila_link.php:28
 msgid "Enable Social media icon footer section."
-msgstr "Включение социальных медиа значок колонтитула раздел ."
+msgstr "Activează icon social media în secțiunea subsol."
 
 #: functions/customizer/customizer_socila_link.php:47
 msgid "Twitter Link:"
-msgstr "Twitter Ссылка:"
+msgstr "Legătură Twitter:"
 
 #: functions/customizer/customizer_socila_link.php:67
 msgid "Linkedin Links:"
-msgstr "Linkedin Ссылки"
+msgstr "Legături Linkedin:"
 
 #: functions/customizer/customizer_socila_link.php:86
 msgid "Facebook Links:"
-msgstr "Facebook Ссылки"
+msgstr "Legături Facebook:"
 
 #: functions/customizer/customizer_socila_link.php:105
 msgid "Google Plus Links:"
-msgstr "Ссылки Google Plus"
+msgstr "Legături Google Plus:"
 
 #: functions/customizer/customizer_header.php:31
 msgid "Enable Home on front page."
-msgstr "Enable Home на первой странице ."
+msgstr "Activează prima pagină în pagina din față."
 
 #: functions/template-tags.php:10
 msgid "By"
-msgstr "Автор:"
+msgstr "de"
 
 #: functions/template-tags.php:9
 msgid "leave a comment"
-msgstr "Оставить комментарий"
+msgstr "Lasă un comentariu"
 
 #: functions/menu/default_menu_walker.php:23
 msgid "Home"
-msgstr "Главная"
+msgstr "Prima pagină"
 
 #: functions/commentbox/comment-function.php:36
 msgid "Your comment is awaiting moderation."
-msgstr "Ваш комментарий ожидает проверки."
+msgstr "Comentariul tău așteaptă moderare."
 
 #: functions/commentbox/comment-function.php:21
 msgid "Reply"
-msgstr "Ответить"
+msgstr "Răspunde"
 
 #: footer.php:32
 msgid "WordPress"
@@ -1206,261 +1207,263 @@ msgstr "WordPress"
 
 #: footer.php:32
 msgid "Powered By "
-msgstr "создано с помощью"
+msgstr "Propulsat de"
 
 #: content.php:21
 msgid "Tags:"
-msgstr "Теги: "
+msgstr "Etichete:"
 
 #: content.php:15 fullwidth.php:26
 #: functions/customizer/customizer_home_page.php:120 page.php:25
 msgid "Read More"
-msgstr "Читать далее"
+msgstr "Citește mai mult"
 
 #: comments.php:59
 msgid "Leave a Comment"
-msgstr "Оставить комментарий"
+msgstr "Lasă un comentariu"
 
 #: comments.php:54
 msgid "Logged in as "
-msgstr "Вы вошли как "
+msgstr "Autentificat ca"
 
 #: comments.php:54
 msgid " Log out?"
-msgstr " Выйти?"
+msgstr "Dezautentificare?"
 
 #: comments.php:56
 msgid "Post Comment"
-msgstr "Отправить комментарий"
+msgstr "Publică comentariul"
 
 #: comments.php:41
 msgid "Website"
-msgstr "Сайт"
+msgstr "Pagină web"
 
 #: comments.php:40
 msgid "Email"
-msgstr "E-mail"
+msgstr "Email"
 
 #: comments.php:34
 msgid "You must be"
-msgstr "Вы должны "
+msgstr "Trebuie să fii"
 
 #: comments.php:34
 msgid "to post a comment"
-msgstr "добавить комментарий"
+msgstr "pentru a publica un comentariu"
 
 #: comments.php:39
 msgid "Name"
-msgstr "Имя"
+msgstr "Nume"
 
 #: comments.php:23
 msgid "Newer Comments &rarr;"
-msgstr "Следующие комментарии &rarr;"
+msgstr "Comentarii mai noi &rarr;"
 
 #: comments.php:22
 msgid "&larr; Older Comments"
-msgstr "&larr; Предыдущие комментарии"
+msgstr "&larr; comentarii mai vechi"
 
 #: comments.php:21
 msgid "Comment navigation"
-msgstr "Навигация по комментариям"
+msgstr "Navigare în comentariu"
 
 #: comments.php:17
 msgid "Comments"
-msgstr "Комментарии"
+msgstr "Comentarii"
 
 #: comments.php:11
 msgid ""
 "This post is password protected. Enter the password to view any comments."
 msgstr ""
-"Эта запись защищена паролем. Введите пароль, чтобы посмотреть комментарии."
+"Acest articol este protejat cu parolă. Introdu parola pentru a vedea orice "
+"comentarii."
 
 #: class-tgm-plugin-activation.php:2064
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr "Установка плагина %1$s (%2$d/%3$d)"
+msgstr "Se instalează modul %1$s (%2$d/%3$d)"
 
 #: class-tgm-plugin-activation.php:2063
 msgid "All installations have been completed."
-msgstr "Все установки были завершены."
+msgstr "Toate instalările au fost finalizate."
 
 #: class-tgm-plugin-activation.php:2062
 msgid "%1$s installed successfully."
-msgstr "%1$s успешно установлен."
+msgstr "%1$s a fost instalat cu succes."
 
 #: class-tgm-plugin-activation.php:2061
 msgid "The installation of %1$s failed."
-msgstr "Установка %1$s fehlgeschlagen."
+msgstr "Instalarea %1$s a eșuat."
 
 #: class-tgm-plugin-activation.php:2060
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-msgstr "Произошла ошибка при установке %1$s: <strong>%2$s</strong>."
+msgstr "A apărut o eroare în timpul instalării %1$s: <strong>%2$s</strong>."
 
 #: class-tgm-plugin-activation.php:2059
 msgid ""
 "The installation process is starting. This process may take a while on some "
 "hosts, so please be patient."
 msgstr ""
-"Процесс установки и активации начат. Этот процесс может занять некоторое "
-"время, пожалуйста, будьте терпеливы."
+"Procesul de instalare începe. Acest proces poate dura ceva timp pe unele "
+"gazde, așa că te rog să ai răbdare."
 
 #: class-tgm-plugin-activation.php:2055
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-msgstr "Установка и активация плагина %1$s (%2$d/%3$d)"
+msgstr "Se instalează și activează modulul %1$s (%2$d/%3$d)"
 
 #: class-tgm-plugin-activation.php:2054
 msgid "All installations and activations have been completed."
-msgstr "Все установок и активаций были завершены."
+msgstr "Toate instalările și activările au fost finalizate."
 
 #: class-tgm-plugin-activation.php:2053 class-tgm-plugin-activation.php:2062
 msgid "Hide Details"
-msgstr "Скрыть детали"
+msgstr "Ascunde detalii"
 
 #: class-tgm-plugin-activation.php:2053 class-tgm-plugin-activation.php:2062
 msgid "Show Details"
-msgstr "Показать детали"
+msgstr "Afișează detalii"
 
 #: class-tgm-plugin-activation.php:2053
 msgid "%1$s installed and activated successfully."
-msgstr "%1$s установлен и активирован успешно."
+msgstr "%1$s instalat și activat cu succes."
 
 #: class-tgm-plugin-activation.php:2052
 msgid ""
 "The installation and activation process is starting. This process may take a "
 "while on some hosts, so please be patient."
 msgstr ""
-"Процесс установки и активации начат. Этот процесс может занять некоторое "
-"время, пожалуйста, будьте терпеливы."
+"Procesul de instalare și activare începe. Acest proces poate dura ceva timp "
+"pe unele gazde, așa că te rog să ai răbdare."
 
 #: class-tgm-plugin-activation.php:1938
 msgid "Plugin activation failed."
-msgstr "Активация плагина не удалась"
+msgstr "Activarea modulului a eșuat."
 
 #: class-tgm-plugin-activation.php:1927
 msgid "Plugin installed successfully."
-msgstr "Плагин успешно установлен."
+msgstr "Modulul a fost instalat cu succes."
 
 #: class-tgm-plugin-activation.php:1926
 msgid "Plugin install failed."
-msgstr "Установка плагина не удалась."
+msgstr "Instalarea modulului a eșuat."
 
 #: class-tgm-plugin-activation.php:1925
 msgid "Installing the plugin&#8230;"
-msgstr "Установка плагина&#8230;"
+msgstr "Instalez modulul&#8230;"
 
 #: class-tgm-plugin-activation.php:1924
 msgid "Unpacking the package&#8230;"
-msgstr "Извлечение файлов&#8230;"
+msgstr "Despachetez pachetul&#8230;"
 
 #: class-tgm-plugin-activation.php:1923
 msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
-msgstr "Загрузка архива с <span class=\"code\">%s</span>&#8230;"
+msgstr ""
+"Descarc pachet de instalare de la <span class=\"code\">%s</span>&#8230;"
 
 #: class-tgm-plugin-activation.php:1922
 msgid "Install package not available."
-msgstr "Архив недоступен."
+msgstr "Pachet de instalare nedisponibil."
 
 #: class-tgm-plugin-activation.php:1377
 msgid "Status"
-msgstr "Статус"
+msgstr "Stare"
 
 #: class-tgm-plugin-activation.php:1376
 msgid "Type"
-msgstr "Тип"
+msgstr "Tip"
 
 #: class-tgm-plugin-activation.php:1375
 msgid "Source"
-msgstr "Источник"
+msgstr "Sursă"
 
 #: class-tgm-plugin-activation.php:1374
 msgid "Plugin"
-msgstr "Плагин"
+msgstr "Modul"
 
 #: class-tgm-plugin-activation.php:1358
 msgid ""
 "No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
 "Dashboard\">Return to the Dashboard</a>"
 msgstr ""
-"Нет плагинов для установки или активации. <a href=\"%1$s\" title=\"Вернуться "
-"на панель управления\">Вернуться на панель управления</a>"
+"Nu există module de instalat sau de activat. <a href=\"%1$s\" title=\"Return "
+"to the Dashboard\">Întoarce-te la Panou control</a>"
 
 #: class-tgm-plugin-activation.php:1309 class-tgm-plugin-activation.php:1396
 msgid "Activate"
-msgstr "Активировать"
+msgstr "Activează"
 
 #: class-tgm-plugin-activation.php:1287 class-tgm-plugin-activation.php:1395
 msgid "Install"
-msgstr "Установить"
+msgstr "Instalare"
 
 #: class-tgm-plugin-activation.php:1182
 msgid "Installed But Not Activated"
-msgstr "Установлены, но не активированы"
+msgstr "Instalat dar ne-activat"
 
 #: class-tgm-plugin-activation.php:1180
 msgid "Not Installed"
-msgstr "Не установлен"
+msgstr "Nu este instalat"
 
 #: class-tgm-plugin-activation.php:1177
 msgid "Recommended"
-msgstr "РЕКОМЕНДУЕТСЯ"
+msgstr "Recomandat"
 
 #: class-tgm-plugin-activation.php:1177
 msgid "Required"
-msgstr "Обязательно"
+msgstr "Necesar"
 
 #: class-tgm-plugin-activation.php:1174
 msgid "WordPress Repository"
-msgstr "WordPress репозитория"
+msgstr "Depozitar WordPress"
 
 #: class-tgm-plugin-activation.php:1169
 msgid "Pre-Packaged"
-msgstr "Предварительно упакованные"
+msgstr "Preambalat"
 
 #: class-tgm-plugin-activation.php:1166
 msgid "Private Repository"
-msgstr "Личное хранилище"
+msgstr "Depozitar privat"
 
 #: class-tgm-plugin-activation.php:531 class-tgm-plugin-activation.php:2156
 msgid "Return to the Dashboard"
-msgstr "Вернуться на панель управления"
+msgstr "Înapoi la Panou control"
 
 #: class-tgm-plugin-activation.php:180
 msgid "Dismiss this notice"
-msgstr "Игнорировать это уведомление"
+msgstr "Ascunde acest mesaj"
 
 #: class-tgm-plugin-activation.php:179
 msgid "All plugins installed and activated successfully. %1$s"
-msgstr "Всеплагины установлены и активированны успешно. %1$s"
+msgstr "Toate modulele s-au instalat și activat cu succes. %1$s"
 
 #: class-tgm-plugin-activation.php:178 class-tgm-plugin-activation.php:1630
 msgid "The following plugin was activated successfully:"
-msgstr "Этот плагин был успешно активирован:"
+msgstr "Modulul următor a fost activat cu succes:"
 
 #: class-tgm-plugin-activation.php:177 class-tgm-plugin-activation.php:1939
 #: functions.php:155
 msgid "Plugin activated successfully."
-msgstr "Плагин успешно активирован."
+msgstr "Modul activat cu succes."
 
 #: class-tgm-plugin-activation.php:176
 msgid "Return to the dashboard"
-msgstr "Вернуться на панель управления"
+msgstr "Înapoi la panou control"
 
 #: class-tgm-plugin-activation.php:175 functions.php:154
 msgid "Return to Required Plugins Installer"
-msgstr "Вернуться на установку подключаемых модулей."
+msgstr "Înapoi la instalatorul modulelor necesare"
 
 #: class-tgm-plugin-activation.php:174 functions.php:153
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
-msgstr[0] "Начать активировать плагин"
-msgstr[1] "Начинается активация плагинов"
-msgstr[2] ""
+msgstr[0] "Încep activarea modulului"
+msgstr[1] "Încep activarea modulelor"
+msgstr[2] "Încep activarea modulelor"
 
 #: class-tgm-plugin-activation.php:173 functions.php:152
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
-msgstr[0] "Начать установку плагина"
-msgstr[1] "Начать установку плагинов"
-msgstr[2] ""
+msgstr[0] "Încep instalarea modulului"
+msgstr[1] "Încep instalarea modulelor"
+msgstr[2] "Încep instalarea modulelor"
 
 #: class-tgm-plugin-activation.php:172 functions.php:151
 msgid ""
@@ -1472,12 +1475,17 @@ msgid_plural ""
 "Contact the administrator of this site for help on getting the plugins "
 "updated."
 msgstr[0] ""
-"Просим прощения, но у вас нет прав для обновления %s плагина.\n"
-"Свяжитесь с администратором для помощи в установке."
+"Regret dar nu ai permisiile corecte pentru a actualiza modulul %s. "
+"Contactează administratorul acestui sit pentru ajutor în actualizarea "
+"modulului."
 msgstr[1] ""
-"Просим прощения, но у вас нет прав для обновления %s плагинов.\n"
-"Свяжитесь с администратором для помощи в установке."
+"Regret dar nu ai permisiile corecte pentru a actualiza modulele %s. "
+"Contactează administratorul acestui sit pentru ajutor în actualizarea "
+"modulelor."
 msgstr[2] ""
+"Regret dar nu ai permisiile corecte pentru a actualiza modulele %s. "
+"Contactează administratorul acestui sit pentru ajutor în actualizarea "
+"modulelor."
 
 #: class-tgm-plugin-activation.php:171 functions.php:150
 msgid ""
@@ -1487,12 +1495,14 @@ msgid_plural ""
 "The following plugins need to be updated to their latest version to ensure "
 "maximum compatibility with this theme: %1$s."
 msgstr[0] ""
-"Следующие плагин должен быть обновлен до своей последней версии для "
-"обеспечения максимальной совместимости с этой темой: %1$s."
+"Următorul modul trebuie actualizat la ultima versiune pentru a asigura "
+"compatibilitatea maximă cu această temă: %1$s."
 msgstr[1] ""
-"Следующие плагины должны быть обновлены до последней версии их для "
-"обеспечения максимальной совместимости с этой темой: %1$s."
+"Următoarele module trebuie actualizate la ultima versiune pentru a asigura "
+"compatibilitatea maximă cu această temă: %1$s."
 msgstr[2] ""
+"Următoarele module trebuie actualizate la ultima versiune pentru a asigura "
+"compatibilitatea maximă cu această temă: %1$s."
 
 #: class-tgm-plugin-activation.php:170 functions.php:149
 msgid ""
@@ -1504,27 +1514,28 @@ msgid_plural ""
 "plugins. Contact the administrator of this site for help on getting the "
 "plugins activated."
 msgstr[0] ""
-"Просим прощения, но у вас нет прав для активации %s плагина.\n"
-"Свяжитесь с администратором для помощи в установке."
+"Regret dar nu ai permisiile corecte pentru a activa modul %s. Contactează "
+"administratorul acestui sit pentru ajutor în activarea acestui modul."
 msgstr[1] ""
-"Просим прощения, но у вас нет прав для активации %s плагинов.\n"
-"Свяжитесь с администратором для помощи в установке."
+"Regret dar nu ai permisiile corecte pentru a activa modulele %s. Contactează "
+"administratorul acestui sit pentru ajutor în activarea acestor module."
 msgstr[2] ""
+"Regret dar nu ai permisiile corecte pentru a activa modulele %s. Contactează "
+"administratorul acestui sit pentru ajutor în activarea acestor module."
 
 #: class-tgm-plugin-activation.php:169 functions.php:148
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
-msgstr[0] "Следующие рекомендованные плагин в настоящее время неактивен: %1$s."
-msgstr[1] ""
-"Следующие рекомендованные плагины в настоящее время неактивны: %1$s."
-msgstr[2] ""
+msgstr[0] "Următorul modul recomandat este acum inactiv: %1$s."
+msgstr[1] "Următoarele module recomandate sunt acum inactive: %1$s."
+msgstr[2] "Următoarele module recomandate sunt acum inactive: %1$s."
 
 #: class-tgm-plugin-activation.php:168 functions.php:147
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
-msgstr[0] "Ниже требуется плагин в настоящее время неактивен: %1$s."
-msgstr[1] "Следующие необходимые плагины в настоящее время неактивны: %1$s."
-msgstr[2] ""
+msgstr[0] "Următorul modul necesar este acum inactiv: %1$s."
+msgstr[1] "Următoarele module necesare sunt acum inactive: %1$s."
+msgstr[2] "Următoarele module necesare sunt acum inactive: %1$s."
 
 #: class-tgm-plugin-activation.php:167 functions.php:146
 msgid ""
@@ -1536,99 +1547,103 @@ msgid_plural ""
 "plugins. Contact the administrator of this site for help on getting the "
 "plugins installed."
 msgstr[0] ""
-"Просим прощения, но у вас нет прав для установки %s плагина.\n"
-"Свяжитесь с администратором для помощи в установке."
+"Regret, dar nu ai permisiunile necesare pentru a instala modulul %s. "
+"Contactează  administratorul acestui sit pentru a obține ajutor la "
+"instalarea modulului."
 msgstr[1] ""
-"Просим прощения, но у вас нет прав для установки %s плагинов.\n"
-"Свяжитесь с администратором для помощи в установке."
+"Regret, dar nu ai permisiunile necesare pentru a instala modulele %s. "
+"Contactează  administratorul acestui sit pentru a obține ajutor la "
+"instalarea modulelor."
 msgstr[2] ""
+"Regret, dar nu ai permisiunile necesare pentru a instala modulele %s. "
+"Contactează  administratorul acestui sit pentru a obține ajutor la "
+"instalarea modulelor."
 
 #: class-tgm-plugin-activation.php:166 functions.php:145
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
-msgstr[0] "Рекомендуется установка плагина: %1$s."
-msgstr[1] "Рекомендуется установка плагинов: %1$s."
-msgstr[2] ""
+msgstr[0] "Această temă recomandă următorul modul: %1$s."
+msgstr[1] "Această temă recomandă următoarele module: %1$s."
+msgstr[2] "Această temă recomandă următoarele module: %1$s."
 
 #: class-tgm-plugin-activation.php:165 functions.php:144
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
-msgstr[0] "Эта тема требует следующие плагин: %1$s."
-msgstr[1] "Эта тема требует следующие плагины: %1$s."
-msgstr[2] ""
+msgstr[0] "Această temă necesită următorul modul: %1$s."
+msgstr[1] "Această temă necesită următoarele module: %1$s."
+msgstr[2] "Această temă necesită următoarele module: %1$s."
 
 #: class-tgm-plugin-activation.php:164
 msgid "Something went wrong."
-msgstr "Что-то пошло не так."
+msgstr "Ceva a mers prost."
 
 #: class-tgm-plugin-activation.php:163 functions.php:142
 msgid "Installing Plugin: %s"
-msgstr "Установка плагина: %s"
+msgstr "Se instalează modulul: %s"
 
 #: class-tgm-plugin-activation.php:162 functions.php:141
 msgid "Install Plugins"
-msgstr "Установить плагины"
+msgstr "Instalare module"
 
 #: class-tgm-plugin-activation.php:161
 msgid "Install Required Plugins"
-msgstr "Установите требуемые подключаемые модули"
+msgstr "Instalare module necesare"
 
 #: banner-strip.php:44
 msgid "Go"
-msgstr "Фильтровать"
+msgstr "Începe"
 
 #: banner-strip.php:43 searchform.php:12 searchform.php:13
 msgid "Search"
-msgstr "Поиск"
+msgstr "Caută"
 
 #: banner-strip.php:36
 msgid "Blog Archives"
-msgstr "Архив блога"
+msgstr "Arhive blog"
 
 #: banner-strip.php:27
 msgid "Author Archives:"
-msgstr "Автор Архивы:"
+msgstr "Arhive autor:"
 
 #: banner-strip.php:29
 msgid "Oops Sorry,No Page Found"
-msgstr "Нам Извините, страница не найдена"
+msgstr "Hopa regret, n-am găsit nicio pagină"
 
 #: banner-strip.php:32
 msgid "Search Results for: %s"
-msgstr "Результаты поиска: %s"
+msgstr "Rezultatele căutării pentru: %s"
 
 #: banner-strip.php:23
 msgid "Category Archives: "
-msgstr "Архив категорий:"
+msgstr "Arhive categorie:"
 
 #: banner-strip.php:25
 msgid "Tag Archives: "
-msgstr "Архив Тегов:"
+msgstr "Arhive etichetă:"
 
 #: banner-strip.php:19
 msgid "Monthly Archives: "
-msgstr "Архивы за месяц:"
+msgstr "Arhive lunare:"
 
 #: banner-strip.php:21
 msgid "Yearly Archives: "
-msgstr "Архивы за год:"
+msgstr "Arhive anuale:"
 
 #: banner-strip.php:17
 msgid "Daily Archives: "
-msgstr "Архивы за день:"
+msgstr "Arhive zilnice:"
 
 #: 404.php:8
 msgid "Unfortunately, the page you tried accessing could not be retrieved. "
 msgstr ""
-"К сожалению, страница, которую вы судимый доступа не может быть получен ."
+"Din păcate, pagina pe care ai încercat s-o accesezi n-a putut fi restabilită."
 
 #: 404.php:10
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
-"Запрошенную информацию найти не удалось. Возможно, будет полезен поиск по "
-"сайту."
+"Se pare că nu putem găsi ceea ce cauți. Probabil o căutare poate ajuta."
 
 #. Theme URI of the plugin/theme
 msgid "http://webriti.com/rambo-lite-version-details-page/"

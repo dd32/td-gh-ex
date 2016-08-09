@@ -136,6 +136,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
+@version 1.5.1
+1. Added Romanian translated Po and mo Files.
 @version 1.5
 1. Added Russian translated Po and mo Files.
 @version 1.4.6
