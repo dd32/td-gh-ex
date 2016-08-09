@@ -133,7 +133,7 @@
 		<!-- // BreadCrumb Section -->
 	</div>
 
-	<?php include("includes/front-bgimage-section.php"); ?>
+	<?php get_template_part("includes/front-bgimage-section"); ?>
 </div>
 
 <div id="main" class="clearfix">

@@ -289,6 +289,46 @@ function avis_lite_customize_register( $wp_customize ) {
 		'section'  		=> 'footer_section',
 		'label'    		=> __( 'Twitter URL', 'avis-lite' ),
 	) );
+	// Skype
+	$wp_customize->add_setting( 'avis_skype_url', array(
+		'default'           => '#',
+		'sanitize_callback' => 'esc_url_raw',
+	) );
+	$wp_customize->add_control( 'avis_skype_url', array(
+		'type'     		=> 'url',
+		'section'  		=> 'footer_section',
+		'label'    		=> __( 'Skype URL', 'avis-lite' ),
+	) );
+	// instagram
+	$wp_customize->add_setting( 'avis_instagram_url', array(
+		'default'           => '#',
+		'sanitize_callback' => 'esc_url_raw',
+	) );
+	$wp_customize->add_control( 'avis_instagram_url', array(
+		'type'     		=> 'url',
+		'section'  		=> 'footer_section',
+		'label'    		=> __( 'instagram URL', 'avis-lite' ),
+	) );
+	// vk
+	$wp_customize->add_setting( 'avis_vk_url', array(
+		'default'           => '#',
+		'sanitize_callback' => 'esc_url_raw',
+	) );
+	$wp_customize->add_control( 'avis_vk_url', array(
+		'type'     		=> 'url',
+		'section'  		=> 'footer_section',
+		'label'    		=> __( 'vk URL', 'avis-lite'),
+	) );
+	// Whatsapp
+	$wp_customize->add_setting( 'avis_whatsapp_url', array(
+		'default'           => '#',
+		'sanitize_callback' => 'esc_url_raw',
+	) );
+	$wp_customize->add_control( 'avis_whatsapp_url', array(
+		'type'     		=> 'url',
+		'section'  		=> 'footer_section',
+		'label'    		=> __( 'Whatsapp URL', 'avis-lite' ),
+	) );
 
 }
 add_action( 'customize_register', 'avis_lite_customize_register' );

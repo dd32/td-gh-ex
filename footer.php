@@ -10,7 +10,11 @@ $avis_lite_facebook  = esc_url( get_theme_mod('avis_fb_url', '#') );
 $avis_lite_flickr    = esc_url( get_theme_mod('avis_fl_url', '#') );
 $avis_lite_linkedin  = esc_url( get_theme_mod('avis_lin_url', '#') );
 $avis_lite_gpluseone = esc_url( get_theme_mod('avis_gplus_url', '#') );
-$avis_lite_twitter   = esc_url( get_theme_mod('avis_tw_url', '#') );
+$avis_lite_twitter   = esc_url( get_theme_mod('avis_twitter_url', '#') );
+$avis_lite_skype   = esc_url( get_theme_mod('avis_skype_url', '#') );
+$avis_lite_instagram   = esc_url( get_theme_mod('avis_instagram_url', '#') );
+$avis_lite_vk   = esc_url( get_theme_mod('avis_vk_url', '#') );
+$avis_lite_whatsapp   = esc_url( get_theme_mod('avis_whatsapp_url', '#') );
 
 ?>
 	<div class="clearfix"></div>
@@ -83,8 +87,9 @@ $avis_lite_twitter   = esc_url( get_theme_mod('avis_tw_url', '#') );
 	<div class="third_wrapper">
 		<div class="container">
 			<div class="row-fluid">
-				<div class="copyright span6 alpha omega"> <?php echo wp_kses_post(get_theme_mod('avis_copyright', __('Copyright &copy; Powered by WordPress', 'avis-lite') ) ); ?><p><?php _e('Avis Theme By ','avis-lite'); ?><a href="<?php echo esc_url('https://sketchthemes.com/'); ?>" title="SketchThemes">SketchThemes</a></p></div>
-				<div class="owner span6 alpha omega">
+				<div class="copyright span6"> <?php echo wp_kses_post(get_theme_mod('avis_copyright', __('Copyright &copy; Powered by WordPress', 'avis-lite') ) ); ?>
+				<p><?php printf(__('Avis Lite Theme by %s','avis-lite'),'<a href="'.esc_url('https://sketchthemes.com').'"><strong>SketchThemes</strong></a>');?></p></div>
+				<div class="owner span6">
 					<!-- Footer Follow Us Section Start -->
 						<div class="social-icons">
 							<?php if($avis_lite_facebook){?><li class="fb-icon"><a href="<?php echo esc_url($avis_lite_facebook); ?>" target="_blank"><i class="fa fa-facebook"></i></a></li><?php } ?>
@@ -92,6 +97,10 @@ $avis_lite_twitter   = esc_url( get_theme_mod('avis_tw_url', '#') );
 							<?php if($avis_lite_linkedin){?><li class="linkedin-icon"><a href="<?php echo esc_url($avis_lite_linkedin); ?>" target="_blank"><i class="fa fa-linkedin"></i></a></li><?php } ?>
 							<?php if($avis_lite_gpluseone){?><li class="gplus-icon"><a href="<?php echo esc_url($avis_lite_gpluseone); ?>" target="_blank"><i class="fa fa-google-plus"></i></a></li><?php } ?>
 							<?php if($avis_lite_twitter){?><li class="tw-icon"><a href="<?php echo esc_url($avis_lite_twitter); ?>" target="_blank"><i class="fa fa-twitter"></i></a></li><?php } ?>
+							<?php if($avis_lite_skype){?><li class="skype-icon"><a href="<?php echo esc_url($avis_lite_skype); ?>" target="_blank"><i class="fa fa-skype"></i></a></li><?php } ?>
+							<?php if($avis_lite_instagram){?><li class="instagram-icon"><a href="<?php echo esc_url($avis_lite_instagram); ?>" target="_blank"><i class="fa fa-instagram"></i></a></li><?php } ?>
+							<?php if($avis_lite_vk){?><li class="vk-icon"><a href="<?php echo esc_url($avis_lite_vk); ?>" target="_blank"><i class="fa fa-vk"></i></a></li><?php } ?>
+							<?php if($avis_lite_whatsapp){?><li class="whatsapp-icon"><a href="<?php echo esc_url($avis_lite_whatsapp); ?>" target="_blank"><i class="fa fa-whatsapp"></i></a></li><?php } ?>
 						</div>
 					<!-- Footer Follow Us Section End -->
 				</div>
