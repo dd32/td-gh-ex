@@ -562,5 +562,89 @@
 	.demo-2 .sl-slider blockquote {
 		font-size: 16px;
 	}
-
+}
+/* CSS Edit by John */
+@media only screen and (max-width: 992px) and (min-width: 600px){
+	.sl-slider-wrapper {
+		height: 0 !important;
+		padding-bottom: 56%;
+	}
+	.nav-arrows span {
+		top: 56%;
+		width: 35px;
+		height: 35px;
+	}
+	.demo-2 .sl-slider h2 {
+		padding: 20% 30px 10px 30px !important;
+	}
+	.demo-2 .sl-slider blockquote > p {
+		padding: 0px 0px 0px 5px !important;
+	}
+}
+@media only screen and (max-width: 600px) and (min-width: 480px){
+	.sl-slider-wrapper {
+		height: 0 !important;
+		padding-bottom: 56%;
+	}
+	.nav-arrows span {
+		top: 56%;
+		width: 35px;
+		height: 35px;
+	}
+	.demo-2 .sl-slider h2 {
+		padding: 18% 30px 10px 30px !important;
+	}
+	.demo-2 .sl-slider blockquote > p {
+		padding: 0px 0px 0px 5px !important;
+	}
+	.demo-2 .sl-slider blockquote{
+		border-left: none;
+	}
+}
+@media only screen and (max-width: 480px) and (min-width: 220px){
+	.sl-slider-wrapper {
+		height: 0 !important;
+		padding-bottom: 56%;
+	}
+	.nav-arrows span {
+		top: 60%;
+		width: 30px;
+		height: 30px;
+	}
+	.demo-2 .sl-slider h2 {
+		font-size: 25px;
+	}
+	.demo-2 .sl-slider blockquote {
+		font-size: 15px;
+	}
+	.demo-2 .sl-slider h2 {
+		padding: 15% 30px 0px 30px !important;
+	}
+	.demo-2 .sl-slider blockquote > p {
+		padding: 0px 0px 0px 5px !important;
+	}
+	.demo-2 .sl-slider blockquote{
+		border-left: none;
+	}
+}
+@media only screen and (max-width: 320px) and (min-width: 220px){
+	.sl-slider-wrapper {
+		height: 0 !important;
+		padding-bottom: 56%;
+	}
+	.demo-2 .sl-slider h2 {
+		font-size: 18px;
+	}
+	.demo-2 .sl-slider blockquote {
+		font-size: 13px;
+	}
+	.demo-2 .sl-slider h2 {
+		padding: 40px 30px 0px 30px !important;
+	}
+	.demo-2 .sl-slider blockquote > p {
+		padding: 0px 0px 0px 5px !important;
+	}
+	.demo-2 .sl-slider blockquote{
+		border-left: none;
+	}
 }

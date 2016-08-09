@@ -10,12 +10,16 @@
 			<?php } ?>
 		</div><!-- end general title -->
 		<?php $imageSize = 'awada_blog_home_thumb'; ?>
-		<div class="blog-masonry masonry2">
+		<div id="home_blog" class="blog-masonry masonry2">
 			<?php
-			$count_posts = wp_count_posts()->publish;
+			$count_posts = wp_count_posts();
+			$published_posts = $count_posts->publish;
+			if(isset($awada_theme_options['home_post_cat'])){
+			$cat = $awada_theme_options['home_post_cat'];
+			}
 			$post_id = ($awada_theme_options['portfolio_post'] == ''?'':$awada_theme_options['portfolio_post']);
 			$portfolio_id = intval($post_id);
-			$args = array('post_type' => 'post', 'posts_per_page' => $count_posts, 'post__not_in' => array($portfolio_id) );
+			$args = array('post_type' => 'post', 'posts_per_page' => $published_posts, 'post__not_in' => array($portfolio_id), 'category__in'=>$cat );
             query_posts($args);
 			if (query_posts($args)) {
 			$i = 1;

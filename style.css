@@ -1,11 +1,11 @@
 /*
 	Theme Name: Awada
-	Theme URI:
+	Theme URI: http://demo.webhuntinfotech.com/demo?theme=awada
 	Description: Awada – Responsive Multi-Purpose (HTML5 / CSS3) Theme for (Desktop, tablet, mobile phone…) – 100% Multi Pages Template. Awada is Created with Twitter Bootstrap 3.3.1 Framework. Awada is a great design idea for website of Creative Corporate, Corporation, Company Profile, Personal Portfolio, Wedding, Events and more … Create Outstanding Website or Blog in Minutes!. Awesome Design, Unique Concepts, Scalable Responsive, Amazing flexibility. Awada has static and fixed header feature. it’s developed with lots of care and love. theme has two, three, four footer layout feature. We focused on usability across various devices, starting with smart phones.it is compatible with various devices. Awada is a Cross-Browser Compatible theme that works on All leading web browsers. Awada is easy to use and user friendly theme. Awada has boxed and full-width layout feature. powerful but simple Awada theme content customized through customizer. It has a /typography control feature for change the styling of the theme. to make your site attractive it has two widget sections first for “sidebar widget section” and second for “Footer widget section” where you can show you widgets. To make your website in two column use sidebar widget section. to set custom menu in header set primary location and for the footer section set secondary section. we added social media links to added your social links. It boasts of more than 7-8 beautifully designed page templates , Home, Blog and Default Page Template(page with right sidebar), Page Full-Width, Page Left Sidebar etc. Awada theme has more advanced feature to make your site awesome like: you can change header top bar color. you can also changed header color styling. Theme compatible with woo-commerce. Kyam is a fully woo-commerce tested theme you just add woo-commerce plugin and product and its other required contents. Awada is translation ready theme with WPML compatible & Many More…..
 	Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, grid-layout, footer-widgets, blog, e-commerce, news, photography, portfolio
 	Author: WebHunt Infotech
 	Author URI: http://www.webhuntinfotech.com/
-	Version: 0.8
+	Version: 0.9
 	License: GNU General Public License v3 or later
 	License URI: http://www.gnu.org/licenses/gpl.html
 	Text Domain: awada
@@ -52,14 +52,6 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{
 	color:#222222 !important;
 	text-decoration:none !important; 
 }
-/* h1 a:hover,
-h2 a:hover,
-h3 a:hover,
-h4 a:hover,
-h5 a:hover,
-h6 a:hover{
-	color:#fff !important;
-} */
 a { 
 	color:#222222;
 	padding: 0;
@@ -1342,14 +1334,12 @@ p#callout_description {
     background-color: #000;
     display: inline-block;
     color: #fff;
-    box-shadow: 0 0 6px #f8504b;
     border-radius: 5px;
     padding: 5px 10px;
     margin: 0 auto;
 	font-weight: 500;
 }
 .servicelayout a.readmore:hover {
-    background-color: #f8504b;
 	box-shadow: 0 0 6px #000;
 }
 /* Copyright */
@@ -1359,7 +1349,7 @@ p#callout_description {
     font-weight: 600;
 }
 #copyrights, .footer-area-menu li a {
-    font-size: 18px;
+    font-size: 16px;
 	font-weight: 400;
 	padding: 15px 0 15px;
 	line-height: 36px;
@@ -1375,7 +1365,6 @@ p#callout_description {
 .portfolio_list {
     padding: 10px;
     box-shadow: 0 0 6px rgba(0,0,0,.7);
-	border-top: 5px solid #f8504b;
 }
 /* Menu */
 #awada-header .dropdown-menu li a, #awada-header .navbar-nav > li > a  {
@@ -1405,7 +1394,6 @@ p#callout_description {
 }
 #sidebar .title h2 {
     text-transform: uppercase;
-    background: #f8504b none repeat scroll 0 0;
     color: #fff;
 	display: inline-block;
     padding: 0 20px;
@@ -1502,10 +1490,206 @@ p#callout_description {
 	overflow:hidden;
 	position:relative;
 }
-
 .btn-shadow {
 	box-shadow: 0 0 6px black;
 }
 a.readmore{
 	font-weight: 500;
 }
+/* Sidebar version 0.9 date 06/08/2016 */
+#sidebar .title {
+    display: block;
+    background: #000 none repeat scroll 0 0;
+    color: #fff;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+#sidebar .title h2:after {
+    background: inherit;
+    content: "";
+    height: 60px;
+    position: absolute;
+    right: -19px;
+    top: -8px;
+    -webkit-transform: rotate(140deg);
+    -moz-transform: rotate(140deg);
+    -ms-transform: rotate(140deg);
+    -o-transform: rotate(140deg);
+    transform: rotate(140deg);
+    width: 27px;
+}
+#sidebar .title h2 {
+    text-transform: uppercase;
+    color: #fff;
+	display: inline-block;
+    padding: 0 20px;
+    position: relative;
+    font-weight: 500;
+    line-height: 35px !important;
+    font-size: 16px;
+    margin: 0 auto;
+}
+#sidebar .widget address{
+    padding: 0px 20px;
+}
+#sidebar .widget .btn-lg {
+    padding: 7px 10px;
+    font-size: 16px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+#two-sidebar .widget .btn-lg {
+    padding: 7px 10px;
+    font-size: 16px;
+    margin-left: 5px;
+    margin-bottom: 20px;
+}
+#sidebar .widget #s {
+    width: 82%;
+    padding: 19px 10px;
+    margin: 20px 20px 0;
+}
+#sidebar .widget .search_form:after {
+    display: none;
+}
+.search_form:after {
+	color: #d9d9d9;
+	font-size: 12px;
+	height: 40px;
+	line-height: 40px;
+	position: absolute;
+	right: 37px;
+	top:0;
+	font-family: 'FontAwesome';
+	content: "\f002";
+}
+#sidebar .widget {
+    box-shadow: 0 0 6px rgba(0,0,0,.7);
+	padding: 0px 0 20px;
+}
+#sidebar .widget ul li {
+    padding: 0px 20px;
+}
+#sidebar .widget > ul > li.cat-item > a:hover, #sidebar .widget > ul.cat_list_widget > li > a:hover {
+	color: #fff;
+}
+#sidebar .tagcloud {
+    padding: 5px 20px;
+}
+/* Sidebar Multi Widget */
+#sidebar #tabbed_widget .tab-content {
+    padding: 20px 5px 0;
+    border: none;
+}
+#sidebar .widget ul li.multi_tab_widget {
+    padding: 0px;
+}
+#sidebar .nav > li.multi_tab_widget > a {
+    padding: 11px 12px;
+    font-size: 12px;
+}
+/* Sidebar Calender */
+#sidebar #wp-calendar {
+    height: auto;
+    width: 90%;
+    float: none;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+#sidebar #wp-calendar td {
+    padding: 2px;
+}
+#sidebar #wp-calendar th {
+    padding: 2px;
+}
+#sidebar #wp-calendar caption {
+    padding: 5px;
+}
+/* Sidebar Menu */
+#sidebar .widget li.menu-item a{
+    color: #222222;
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+#sidebar .widget ul.children li.menu-item a{
+    color: #222222;
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+#sidebar .widget ul.children li.page_item a{
+    color: #222222;
+    margin-right: 2px;
+    line-height: 1.42857143;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+/* Sidebar Text Widget */
+#sidebar .textwidget{
+	padding: 0 20px;
+}
+
+@media only screen and (min-width: 620px) and (max-width: 767px) {
+	/* #home_portfolio #boxed-portfolio .col-sm-4 {
+		width: 50%;
+	} */
+	.blog-masonry .col-lg-4  {
+		width: 50%;
+		float: left;
+	}
+	.awada_blog_shadow {
+		bottom: 4px;
+	}
+}
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	.services-one .col-sm-6 {
+		width: 50%;
+	}
+	.blog-masonry .col-lg-4  {
+		width: 100%;
+		float: left;
+	}
+	.awada_blog_shadow {
+		bottom: 4px;
+	}
+}
+@media only screen and (min-width: 767px) and (max-width: 992px) {
+	.blog-masonry .col-lg-4  {
+		width: 50%;
+		float: left;
+	}
+	.awada_blog_shadow {
+		bottom: 4px;
+	}
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.blog-masonry .col-lg-4  {
+		width: 50%;
+		float: left;
+	}
+	.awada_blog_shadow {
+		bottom: 4px;
+	}
+}
+/* @media only screen and (max-width: 600px) and (min-width: 220px){
+	.sl-slider-wrapper {
+		height: 0 !important;
+		padding-bottom: 56%;
+	}
+	.demo-2 .sl-slider h2, .demo-2 .sl-slider blockquote {
+		padding: 75px 30px 10px 30px;
+	}
+} */

@@ -1,3 +1,10 @@
+###Version 0.9
+* Widgets styling issue fixed.
+* Theme color scheme changed from #f8504b to #31a3dd.
+* Some other responsive issue fixed.
+* Home page section reorder feature added in customizer.
+* Slider responsive issue fixed on mobile devices.
+* Now "load more posts" button working according to category.
 ###Version 0.8
 * Header background color issue fixed.
 * Backgroung Image flashes issue fixed.

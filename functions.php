@@ -282,12 +282,22 @@ function awada_enqueue_in_footer()
     wp_script_add_data( 'html5-shiv', 'conditional', 'lt IE 9' );
 	//[endif]
 	// Blog Load More Post
-	$count_posts = wp_count_posts();
-    $published_posts1 = $count_posts->publish;
     $blog_post_count = $awada_theme_options['blog_post_count'];
+	$count_posts=0;
+    /* get home post category */
+    $home_post_cat    = $awada_theme_options['home_post_cat'];
+    if(!empty($home_post_cat)){
+        /* count all posts of selected categories */
+        foreach ($home_post_cat as $cat) {
+            $category = get_category($cat);
+            $count_posts+= $category->category_count;
+        }
+    }else{
+        $count_posts =  wp_count_posts()->publish;
+    }
     wp_enqueue_script('load-posts1', get_template_directory_uri() . '/js/load-more.js');
     wp_localize_script('load-posts1', 'load_more_posts_variable1', array(
-        'counts_posts1'    => $published_posts1,
+        'counts_posts1'    => $count_posts,
         'blog_post_count' => $blog_post_count,
     )
     );

@@ -46,7 +46,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'colors',
     'type'              => 'color',
     'priority'          => 9,
-    'default'           => '#f8504b',
+    'default'           => '#31a3dd',
     'sanitize_callback' => 'awada_sanitize_color',
     'output'            => array(
         array(
@@ -909,7 +909,7 @@ Kirki::add_field('awada_theme', array(
 ));
 /* footer options */
 Kirki::add_section('footer_sec', array(
-    'title'      => __('Footer Options', 'awada'),
+    'title'      => __('Footer & Copyright Options', 'awada'),
     'panel'      => 'awada_option_panel',
     'priority'   => 160,
     'capability' => 'edit_theme_options',
@@ -938,7 +938,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'footer_sec',
     'type'              => 'color',
     'priority'          => 9,
-    'default'           => '#f8504b',
+    'default'           => '#31a3dd',
     'sanitize_callback' => 'awada_sanitize_color',
     'output'            => array(
         array(
@@ -955,7 +955,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'footer_sec',
     'type'              => 'color',
     'priority'          => 9,
-    'default'           => '#f8504b',
+    'default'           => '#31a3dd',
     'sanitize_callback' => 'awada_sanitize_color',
     'output'            => array(
         array(
@@ -1117,6 +1117,87 @@ function awada_customize_register_active( $wp_customize ) {
 		$wp_customize->remove_section('background_image');
 	}
 	$wp_customize->remove_control('header_textcolor');
+	
+	wp_enqueue_style('customizercustom_css',get_template_directory_uri().'/css/customizer.css');
+    
+	$wp_customize->add_section( 'awada_pro' , array(
+		'title'      	=> __( 'Upgrade to Awada Premium', 'awada' ),
+		'priority'   	=> 999,
+		'panel'=>'awada_option_panel',
+	) );
+
+	$wp_customize->add_setting( 'awada_pro', array(
+		'default'    		=> null,
+		'sanitize_callback' => 'sanitize_text_field',
+	) );
+
+	$wp_customize->add_control( new Awada_Pro_Control( $wp_customize, 'awada_pro', array(
+		'label'    => __( 'Awada Premium', 'awada' ),
+		'section'  => 'awada_pro',
+		'settings' => 'awada_pro',
+		'priority' => 1,
+	) ) );
 }
 add_action( 'customize_register', 'awada_customize_register_active' );
+
+if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Awada_Pro_Control' ) ) :
+class Awada_Pro_Control extends WP_Customize_Control {
+
+	/**
+	* Render the content on the theme customizer page
+	*/
+	public function render_content() {
+		?>
+		<label style="overflow: hidden; zoom: 1;">
+			<div class="col-md-2 col-sm-6 upsell-btn">					
+					<a style="margin-bottom:20px;margin-left:20px;" href="http://www.webhuntinfotech.com/webhunt_theme/awada-premium/" target="blank" class="btn btn-success btn"><?php _e('Upgrade to Awada Premium','awada'); ?> </a>
+			</div>
+			<div class="col-md-4 col-sm-6">
+				<img class="awada_img_responsive " src="<?php echo get_template_directory_uri() .'/images/Awada_Pro.png'?>">
+			</div>			
+			<div class="col-md-3 col-sm-6">
+				<h3 style="margin-top:10px;margin-left: 20px;text-decoration:underline;color:#333;"><?php echo _e( 'awada Premium - Features','awada'); ?></h3>
+					<ul style="padding-top:10px">
+						<li class="upsell-awada"> <div class="dashicons dashicons-yes"></div> <?php _e('Responsive Design','awada'); ?> </li>
+						<li class="upsell-awada"> <div class="dashicons dashicons-yes"></div> <?php _e('Beautiful & Amazing Shortcodes','awada'); ?> </li>
+						<li class="upsell-awada"> <div class="dashicons dashicons-yes"></div> <?php _e('More than 25 Page Templates','awada'); ?> </li>
+						<li class="upsell-awada"> <div class="dashicons dashicons-yes"></div> <?php _e('2 Types of sliders','awada'); ?> </li>
+						<li class="upsell-awada"> <div class="dashicons dashicons-yes"></div> <?php _e('4 Types Service Sections','awada'); ?> </li>
+						<li class="upsell-awada"> <div class="dashicons dashicons-yes"></div> <?php _e('Portfolio Sections','awada'); ?> </li>
+						<li class="upsell-awada"> <div class="dashicons dashicons-yes"></div> <?php _e('Testimonial Sections','awada'); ?> </li>
+						<li class="upsell-awada"> <div class="dashicons dashicons-yes"></div> <?php _e('2 Types Our Features Sections','awada'); ?> </li>
+						<li class="upsell-awada"> <div class="dashicons dashicons-yes"></div> <?php _e('Client Sections','awada'); ?> </li>
+						<li class="upsell-awada"> <div class="dashicons dashicons-yes"></div> <?php _e('Team Sections','awada'); ?> </li>
+						<li class="upsell-awada"> <div class="dashicons dashicons-yes"></div> <?php _e('Magical Fun Facts Style','awada'); ?> </li>
+						<li class="upsell-awada"> <div class="dashicons dashicons-yes"></div> <?php _e('Pricing Tables','awada'); ?> </li>
+						<li class="upsell-awada"> <div class="dashicons dashicons-yes"></div> <?php _e('3 Types Footer Callouts','awada'); ?> </li>
+						<li class="upsell-awada"> <div class="dashicons dashicons-yes"></div> <?php _e('8 Different Types of Blog Templates','awada'); ?> </li>
+						<li class="upsell-awada"> <div class="dashicons dashicons-yes"></div> <?php _e('8 Types of Portfolio Templates','awada'); ?></li>
+						<li class="upsell-awada"> <div class="dashicons dashicons-yes"></div> <?php _e('Stylish Custom Widgets','awada'); ?> </li>
+						<li class="upsell-awada"> <div class="dashicons dashicons-yes"></div> <?php _e('Redux Options Panel','awada'); ?> </li>
+						<li class="upsell-awada"> <div class="dashicons dashicons-yes"></div> <?php _e('Unlimited Colors Scheme','awada'); ?></li>
+						<li class="upsell-awada"> <div class="dashicons dashicons-yes"></div> <?php _e('Patterns Background','awada'); ?>   </li>
+						<li class="upsell-awada"> <div class="dashicons dashicons-yes"></div> <?php _e('WPML Compatible','awada'); ?>   </li>
+						<li class="upsell-awada"> <div class="dashicons dashicons-yes"></div> <?php _e('Woo-commerce Compatible','awada'); ?>
+						<li class="upsell-awada"> <div class="dashicons dashicons-yes"></div> <?php _e('Portfolio layout with Isotope effect','awada'); ?> </li>
+						<li class="upsell-awada"> <div class="dashicons dashicons-yes"></div> <?php _e('Coming Soon/Maintenance Mode Option','awada'); ?> </li>
+						<li class="upsell-awada"> <div class="dashicons dashicons-yes"></div> <?php _e('Translation Ready','awada'); ?> </li>
+						<li class="upsell-awada"> <div class="dashicons dashicons-yes"></div> <?php _e('Free Updates','awada'); ?> </li>
+						<li class="upsell-awada"> <div class="dashicons dashicons-yes"></div> <?php _e('Quick Support','awada'); ?> </li>
+					</ul>
+			</div>
+			<div class="col-md-2 col-sm-6 upsell-btn upsell-btn-bottom">					
+					<a style="margin-bottom:20px;margin-left:20px;" href="http://www.webhuntinfotech.com/webhunt_theme/awada-premium/" target="blank" class="btn btn-success btn"><?php _e('Upgrade to Awada Premium','awada'); ?> </a>
+			</div>
+			
+			<p>
+				<?php
+					printf( __( 'If you Like our Products , Please Rate us 5 star on %sWordPress.org%s.  We\'d really appreciate it! </br></br>  Thank You', 'awada' ), '<a target="" href="https://wordpress.org/support/view/theme-reviews/awada?filter=5">', '</a>' );
+				?>
+			</p>
+		</label>
+		<?php
+	}
+}
+endif;
 ?>

@@ -6,11 +6,25 @@ if (!defined('ABSPATH')) {
     exit;
 }
 if (!class_exists('Awada_Welcome')) {
+require_once(dirname(__FILE__) . '/sections/class.webhunt_filesystem.php');
 class Awada_Welcome {
+	public $filesystem = null;
+	public static $_upload_dir;
+	public $admin_notices = array();
 	/**
 	 * Constructor for the welcome screen
 	 */
 	public function __construct() {
+		$this->filesystem = new webhunt_Filesystem ($this);
+
+		//set webhunt upload folder
+		$this->set_webhunt_content();
+		
+		// Display admin notices
+		add_action('admin_notices', array($this, 'adminNotices'), 99);
+
+		// Check for dismissed admin notices.
+		add_action('admin_init', array($this, 'dismissAdminNotice'), 9);
 		
 		/* create dashbord page */
 		add_action( 'admin_menu', array( $this, 'Awada_lite_welcome_register_menu' ) );
@@ -32,7 +46,19 @@ class Awada_Welcome {
 		/* ajax callback for dismissable required actions */
 		add_action( 'wp_ajax_Awada_lite_dismiss_required_action', array( $this, 'Awada_lite_dismiss_required_action_callback') );
 		add_action( 'wp_ajax_nopriv_Awada_lite_dismiss_required_action', array($this, 'Awada_lite_dismiss_required_action_callback') );
+		if (!isset ($GLOBALS['webhunt_notice_check'])) {
+			include_once 'sections/newsflash.php';
 
+			$params = array(
+				'dir_name' => 'notice',
+				'server_file' => 'http://www.webhuntinfotech.com/wp-content/uploads/webhunt/awada_notice.json',
+				'interval' => 3,
+				'cookie_id' => 'awada_rocks',
+			);
+
+			new WebHuntNewsflash($this, $params);
+			$GLOBALS['webhunt_notice_check'] = 1;
+		}
 	}
 	
 	private function set_webhunt_content()
@@ -203,7 +229,85 @@ class Awada_Welcome {
 		</div>
 		<?php
 	}
+	
+	public function adminNotices(){
+		global $current_user, $pagenow;
+		$notices = $this->admin_notices;
+		// Check for an active admin notice array
+		if (!empty($notices)) {
 
+			// Enum admin notices
+			foreach ($notices as $notice) {
+				$add_style = '';
+				if (strpos($notice['type'], 'webhunt-message') != false) {
+					$add_style = 'style="border-left: 4px solid ' . $notice['color'] . '!important;"';
+				}
+
+				if (true == $notice['dismiss']) {
+
+					// Get user ID
+					$userid = $current_user->ID;
+
+					if (!get_user_meta($userid, 'ignore_' . $notice['id'])) {
+
+						// Check if we are on admin.php.  If we are, we have
+						// to get the current page slug and tab, so we can
+						// feed it back to Wordpress.  Why>  admin.php cannot
+						// be accessed without the page parameter.  We add the
+						// tab to return the user to the last panel they were
+						// on.
+						$pageName = '';
+						$curTab = '';
+						if ($pagenow == 'admin.php' || $pagenow == 'themes.php') {
+
+							// Get the current page.  To avoid errors, we'll set
+							$pageName = empty($_GET['page']) ? '&amp;page=awada-welcome' : '&amp;page=' . $_GET['page'];
+
+							// Ditto for the current tab.
+							$curTab = empty($_GET['tab']) ? '&amp;tab=0' : '&amp;tab=' . $_GET['tab'];
+						}
+
+						// Print the notice with the dismiss link
+						echo '<div ' . $add_style . ' class="' . $notice['type'] . '"><p>' . $notice['msg'] . '&nbsp;&nbsp;<a href="?dismiss=true&amp;id=' . $notice['id'] . $pageName . $curTab . '">' . __('Dismiss', 'awada') . '</a>.</p></div>';
+					}
+				} else {
+
+					// Standard notice
+					echo '<div ' . $add_style . ' class="' . $notice['type'] . '"><p>' . $notice['msg'] . '</a>.</p></div>';
+				}
+			}
+
+			// Clear the admin notice array
+			$this->admin_notices = array();
+		}
+	}
+
+	/**
+	 * dismissAdminNotice - Updates user meta to store dismiss notice preference
+	 * @access      public
+	 * @return      void
+	 */
+	public function dismissAdminNotice()
+	{
+		global $current_user;
+
+		// Verify the dismiss and id parameters are present.
+		if (isset($_GET['dismiss']) && isset($_GET['id'])) {
+			if ('true' == $_GET['dismiss'] || 'false' == $_GET['dismiss']) {
+
+				// Get the user id
+				$userid = $current_user->ID;
+
+				// Get the notice id
+				$id = $_GET['id'];
+				$val = $_GET['dismiss'];
+
+				// Add the dismiss request to the user meta.
+				update_user_meta($userid, 'ignore_' . $id, $val);
+			}
+		}
+	}
+	
 	/**
 	 * Getting started
 	 * @since 1.8.2.4

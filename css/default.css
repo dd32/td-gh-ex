@@ -1,4 +1,3 @@
-
 .post-wrapper-top h2,
 .pagination > .active > a, 
 .pagination > .active > span, 
@@ -17,7 +16,7 @@ blockquote,
 .magnifier .btn-default:active,
 .service-icon-square,
 .main_title hr {
-	border-color:#f8504b;
+	border-color:#31a3dd;
 }
 
 .blog-meta span i,
@@ -29,7 +28,7 @@ a,
 a.readmore,
 #awada-header .dropmenu h3 i,
 #sitetopbar .sitetopbar-login i {
-	color:#f8504b;
+	color:#31a3dd;
 }
 
 .recent_posts_widget > li img:hover,
@@ -64,36 +63,36 @@ a.readmore,
 #awada-header .navbar-default .navbar-nav > .open > a:hover,
 #awada-header .navbar-default .navbar-nav > .open > a:focus,
 #sitetopbar .topbar-social-links span a:hover {
-	background-color:#f8504b;
+	background-color:#31a3dd;
 }
 
 /* Sidebar Widget */
 #sidebar .widget > ul > li.cat-item > a:hover, #sidebar .widget > ul.cat_list_widget > li > a:hover, #sidebar .widget > ul > li.page_item > a:hover, #sidebar .widget > div.menu-header-menu-container > ul.menu > li.menu-item > a:hover{
-	background-color: #f8504b !important;
+	background-color: #31a3dd !important;
 }
 
 /* Search Box */
 #two-sidebar .form-control:hover,
 #sidebar .form-control:hover {
-	border: 1px solid #f8504b;
+	border: 1px solid #31a3dd;
 }
 /* Calender Styling */
 #wp-calendar {
-    border: 2px solid #f8504b;
+    border: 2px solid #31a3dd;
 }
 #wp-calendar th {
-    border: 2px solid #f8504b;
+    border: 2px solid #31a3dd;
 }
 #wp-calendar caption {
-    background-color: #f8504b;
+    background-color: #31a3dd;
 }
 /* Current Menu Color */
 #awada-header .navbar-nav > li.current_page_item > a:hover {
-    background-color: #f8504b;
+    background-color: #31a3dd;
 }
 /* Pagination */
 ul.pagination li span.page-numbers.current {
-    background-color: #f8504b;
+    background-color: #31a3dd;
 	color: #fff;
 }
 #home_portfolio .UGPMenuBackground {
@@ -101,14 +100,11 @@ ul.pagination li span.page-numbers.current {
 }
 
 /* Extra CSS by Hunny */
-#sitetopbar .topbar-social-links span a, #sitetopbar .topbar-social-links span a:hover {
-	border-radius: 50%;
-}
 .blog-masonry .blog-carousel {
-    border-top: 5px solid #f8504b;
+    border-top: 5px solid #31a3dd;
 }
 .nav-arrows span:hover {
-	border-color: #f8504b;
+	border-color: #31a3dd;
 }
 h1 a:hover,
 h2 a:hover,
@@ -116,5 +112,27 @@ h3 a:hover,
 h4 a:hover,
 h5 a:hover,
 h6 a:hover{
-	color:#f8504b !important;
+	color:#31a3dd !important;
+}
+/* Portfolio */
+.servicelayout a.readmore {
+    box-shadow: 0 0 6px #31a3dd;
+}
+.servicelayout a.readmore:hover {
+    background-color: #31a3dd;
+}
+.portfolio_list {
+	border-top: 5px solid #31a3dd;
+}
+#sidebar .title h2 {
+    background: #31a3dd none repeat scroll 0 0;
+}
+#sidebar .widget li.menu-item a:hover {
+	background-color: #31a3dd;
+}
+#sidebar .widget ul.children li.menu-item a:hover {
+	background-color: #31a3dd;
+}
+#sidebar .widget ul.children li.page_item a:hover {
+	background-color: #31a3dd;
 }
