@@ -1,7 +1,7 @@
 === MyKnowledgeBase ===
 Contributors: Guido07111975
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donation%40guidovanderleest%2enl
-Version: 4.3
+Version: 4.4
 Requires at least: 4.2
 Tested up to: 4.6
 License: GNU General Public License v3 or later
@@ -44,7 +44,7 @@ The knowledgebase uses the default WordPress categories and posts.
 
 Create a new page and select the knowledgebase page template. You can choose between 3 columns (with sidebar) and 4 columns (without sidebar).
 
-Exclude a category and set amount of posts for each category via WordPress Dashboard > Appearance > Customize. 
+Exclude a category, set amount of posts for each category and order posts by date or name via WordPress Dashboard > Appearance > Customize. 
 
 If you want this page to be homepage go to Settings > Reading and select this page as hompepage.
 

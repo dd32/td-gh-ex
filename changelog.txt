@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+MyKnowledgeBase version 4.4 - august 2016
+- customizer: order posts by date or name
+- updated files page-knowledge-three and page-knowledge-four
+
 MyKnowledgeBase version 4.3 - august 2016
 - file functions: bugfix
 

@@ -180,7 +180,7 @@
 	add_filter( 'excerpt_length', 'myknowledgebase_excerpt_length', 999 ); 
 
 
-// Theme Customizer (logo and search bar title and posts per category)
+// Theme Customizer (logo and settings for search bar and knowledgebase)
 	function myknowledgebase_theme_customizer( $wp_customize ) { 
 		$wp_customize->add_section( 'myknowledgebase_logo_section' , array( 
 			'title' => __( 'Logo', 'myknowledgebase' ), 
@@ -218,9 +218,25 @@
 		) ); 
 		$wp_customize->add_control( new WP_Customize_Control ( $wp_customize, 'myknowledgebase_exclude', array( 
 			'label' => __( 'Exclude category', 'myknowledgebase' ), 
-			'description' => __( 'Exclude a category by ID and use a comma in case of multiple categories.', 'myknowledgebase' ), 
+			'description' => __( 'Exclude category by ID. Use a comma in case of multiple categories.', 'myknowledgebase' ), 
 			'section' => 'myknowledgebase_posts_section', 
 			'settings' => 'myknowledgebase_exclude', 
+		) ) );
+		$wp_customize->add_setting( 'myknowledgebase_order', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+			'default' => 'date', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control ( $wp_customize, 'myknowledgebase_order', array( 
+			'label' => __( 'Order', 'myknowledgebase' ), 
+			'description' => __( 'Order posts by date or name.', 'myknowledgebase' ), 
+			'section' => 'myknowledgebase_posts_section',
+			'settings' => 'myknowledgebase_order', 
+			'type' => 'radio', 
+			'choices' => array( 
+				'date' => __('By date', 'myknowledgebase'), 
+				'name' => __('By name', 'myknowledgebase'), 
+			), 
 		) ) );
 		$wp_customize->add_section( 'myknowledgebase_search_section' , array( 	
 			'title' => __( 'Search Bar', 'myknowledgebase' ), 
@@ -237,7 +253,6 @@
 			'section' => 'myknowledgebase_search_section', 
 			'settings' => 'myknowledgebase_search', 
 		) ) );
-
 	} 
 	add_action('customize_register', 'myknowledgebase_theme_customizer');
 
