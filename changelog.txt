@@ -1,5 +1,9 @@
 SuevaFree Changelog
 
+- Version 2.2.1 - Released: 10.08.2016
+
+-- Updated : WooCommerce templates.
+
 - Version 2.2.0 - Released: 08.07.2016
 
 -- Updated : Font Awesome icon pack.
