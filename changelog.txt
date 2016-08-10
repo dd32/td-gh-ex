@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+GridBulletin version 4.4 - august 2016
+- bugfix in file content-list: added conditional tag is_archive()
+
 GridBulletin version 4.3 - august 2016
 - customizer: added settings for the archive page
 - updated file archive

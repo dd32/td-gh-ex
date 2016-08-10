@@ -4,7 +4,7 @@
  */
 ?>
 
-<?php if( is_home() || get_theme_mod('gridbulletin_sidebar') == 1 ) { ?>
+<?php if( is_home() || ( is_archive() && get_theme_mod('gridbulletin_sidebar') == 1 ) ) { ?>
 	<?php if( $wp_query->current_post%4 == 0 ) : ?> 
 		<article id="post-<?php the_ID(); ?>" <?php post_class('post-four left'); ?>> 
 	<?php elseif( $wp_query->current_post%4 == 3 ) : ?> 
