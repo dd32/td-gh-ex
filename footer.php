@@ -45,7 +45,10 @@
 								<li class="gplus" data-toggle="tooltip" data-placement="top" title="<?php echo esc_attr__('Google Plus','bhumi')?>"><a href="<?php echo esc_url($cpm_theme_options['gplus']) ; ?>"><i class="fa fa-google-plus"></i></a></li>
 			                <?php } if($cpm_theme_options['instagram']!='') { ?>
 								<li class="facebook" data-toggle="tooltip" data-placement="top" title="<?php echo esc_attr__('Instagram','bhumi')?>"><a href="<?php echo esc_url($cpm_theme_options['instagram']) ; ?>"><i class="fa fa-instagram"></i></a></li>
-			                <?php } ?>
+			                <?php }
+			                if($cpm_theme_options['skype']!='') { ?>
+		                        <li class="facebook" data-toggle="tooltip" data-placement="bottom" title="<?php echo esc_html('Skype','bhumi')?>"><a href="<?php echo esc_url($cpm_theme_options['skype']) ; ?>"><i class="fa fa-skype"></i></a></li>
+		                    <?php } ?>
 						</ul>
 					</div>
 			<?php } ?>

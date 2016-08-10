@@ -42,15 +42,17 @@
         		      <?php } ?>
             		  <div class="container">
                         <div class="carousel-caption">
-        					<div class="carousel-text">
-        		            <h1 class="animated bounceInRight"><?php the_title(); ?></h1>
-        						<ul class="list-unstyled carousel-list">
-        						  <li class="animated bounceInLeft"><?php the_excerpt(); ?></li>
-        						</ul>
-      		       		     <a class="bhumi_blog_read_btn animated bounceInUp" href="<?php the_permalink() ?>" target="_blank" role="button"><?php the_title(); ?>
-                         </a>
-        		            </div>
-            			</div>
+              					   <div class="carousel-text">
+              		            <h1 class="animated bounceInRight"><?php the_title(); ?></h1>
+                              <?php if(get_the_content()):?>
+                    						<ul class="list-unstyled carousel-list">
+                    						  <li class="animated bounceInLeft"><?php the_excerpt(); ?></li>
+                    						</ul>
+                              <?php endif; ?>
+            		       		     <a class="bhumi_blog_read_btn animated bounceInUp" href="<?php the_permalink() ?>" target="_blank" role="button"><?php the_title(); ?>
+                               </a>
+              		          </div>
+                  			</div>
                       </div>
                 </div>
                 <?php $active = '';

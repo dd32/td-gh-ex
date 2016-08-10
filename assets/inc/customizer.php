@@ -42,6 +42,21 @@ function bhumi_customizer( $wp_customize ) {
 			)
 		);
 
+		$wp_customize->add_setting(
+            'bhumi_options[site_color]',
+             array(
+                'type'          => 'option',
+                'default'          => '#A13F40',
+                'capability'        => 'edit_theme_options',
+                'sanitize_callback' => 'bhumi_sanitize_checkbox',
+            ) );
+        $wp_customize->add_control(new WP_Customize_Color_Control ( $wp_customize, 'site_color', array(
+                'label' => __( 'Theme Color:', 'bhumi' ),
+                'section'     => 'colors',
+                'settings'   => 'bhumi_options[site_color]')
+            ) );
+
+
 	/* Genral section */
 	$wp_customize->add_panel( 'bhumi_theme_option', array(
     'title' => __( 'Theme Options','bhumi' ),
@@ -131,6 +146,36 @@ function bhumi_customizer( $wp_customize ) {
 			'settings'   => 'bhumi_options[width]',
 		) );
 	}
+
+	/*Breadcrumb*/
+	$wp_customize->add_section('breadcrumb_sec',
+		array(
+			'title' => __('Breadcrumb Options','bhumi'),
+			'panel' => 'bhumi_theme_option',
+			'capability' => 'edit_theme_options',
+			'priority' => 35, // Mixed with top-level-section hierarchy.
+			)
+		);
+	$wp_customize->add_setting(
+		'bhumi_options[breadcrumb_show]',
+		array(
+			'type'    => 'option',
+			'default'=>'1',
+			'capability' => 'edit_theme_options',
+			'sanitize_callback'=>'bhumi_sanitize_text',
+		)
+	);
+	$wp_customize->add_control( 'breadcrumb_show', array(
+			'label'    => __( 'Enable/Disable Breadcrumb','bhumi' ),
+			'section'  => 'breadcrumb_sec',
+			'type'     => 'radio',
+			'choices' => array(
+	            '1' => __('Show', 'bhumi'),
+	            '0' =>__('hide', 'bhumi'),
+	        ),
+	        'settings' => 'bhumi_options[breadcrumb_show]'
+		)
+	);
 
 	/* Service Options */
 	$wp_customize->add_section('service_section',array(
@@ -469,6 +514,21 @@ function bhumi_customizer( $wp_customize ) {
 		'type'=>'url',
 		'section'    => 'social_section',
 		'settings'   => 'bhumi_options[instagram]'
+	) );
+	$wp_customize->add_setting(
+	'bhumi_options[skype]',
+		array(
+		'default'=>'',
+		'type'=>'option',
+		'sanitize_callback'=>'esc_url_raw',
+		'capability'=>'edit_theme_options'
+		)
+	);
+		$wp_customize->add_control( 'skype', array(
+		'label'        => __( 'Skype', 'bhumi' ),
+		'type'=>'url',
+		'section'    => 'social_section',
+		'settings'   => 'bhumi_options[skype]'
 	) );
 	/* Footer callout */
 	$wp_customize->add_section('callout_section',array(

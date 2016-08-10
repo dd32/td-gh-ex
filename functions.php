@@ -17,6 +17,8 @@
 	//Sane Defaults
 	function bhumi_default_settings() {
 		$cpm_theme_options=array(
+				'site_color'						 =>'#A13F40',
+				'breadcrumb_show'					 =>'',
 				'upload_image_logo'                  =>'',
 				'height'                             =>'55',
 				'width'                              =>'150',
@@ -40,6 +42,7 @@
 				'youtube_link'                       =>"",
 				'instagram'                          =>"",
 				'gplus'                              =>"",
+				'skype'								 =>"",
 
 				'email_id'                           => '',
 				'phone_no'                           => '',
@@ -96,7 +99,7 @@
 		register_nav_menu( 'primary', __( 'Primary Menu', 'bhumi' ) );
 		// theme support
 		add_theme_support( 'post-thumbnails' ); //supports featured image
-		$args = array('default-color' => '000000',);
+		$args = array('default-color' => '#ffffff',);
 		add_theme_support( 'custom-background', $args);
 		add_theme_support( 'automatic-feed-links');
 		add_theme_support( 'post-formats', array(
