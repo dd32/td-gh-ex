@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: GridBulletin\n"
-"POT-Creation-Date: 2016-08-09 23:31+0200\n"
+"POT-Creation-Date: 2016-08-11 17:51+0200\n"
 "PO-Revision-Date: 2015-11-15 20:45+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -144,12 +144,20 @@ msgstr ""
 msgid "Settings for the archive page."
 msgstr ""
 
-#: functions.php:202
-msgid "No sidebar"
+#: functions.php:203
+msgid "Sidebar"
 msgstr ""
 
-#: functions.php:212
-msgid "No archive title"
+#: functions.php:208 functions.php:223
+msgid "Yes"
+msgstr ""
+
+#: functions.php:209 functions.php:224
+msgid "No"
+msgstr ""
+
+#: functions.php:218
+msgid "Archive title"
 msgstr ""
 
 #: page-full.php:28 page.php:27 single.php:32

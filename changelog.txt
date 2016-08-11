@@ -1,6 +1,10 @@
 CHANGELOG
 =========
 
+GridBulletin version 4.5 - august 2016
+- customizer: replaced checkbox with radio
+- updated file functions
+
 GridBulletin version 4.4 - august 2016
 - bugfix in file content-list: added conditional tag is_archive()
 

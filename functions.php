@@ -197,22 +197,32 @@
 		$wp_customize->add_setting( 'gridbulletin_sidebar', array( 
 			'capability' => 'edit_theme_options', 
 			'sanitize_callback' => 'sanitize_text_field', 
+			'default' => '0', 
 		) ); 
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'gridbulletin_sidebar', array( 
-			'label' => __( 'No sidebar', 'gridbulletin' ), 
+			'label' => __( 'Sidebar', 'gridbulletin' ), 
 			'section' => 'gridbulletin_archive_section', 
 			'settings' => 'gridbulletin_sidebar', 
-			'type' => 'checkbox', 
+			'type' => 'radio', 
+			'choices' => array( 
+				'0' => __('Yes', 'gridbulletin'), 
+				'1' => __('No', 'gridbulletin'), 
+			), 
 		) ) );
 		$wp_customize->add_setting( 'gridbulletin_archive_title', array( 
 			'capability' => 'edit_theme_options', 
-			'sanitize_callback' => 'sanitize_text_field', 
+			'sanitize_callback' => 'sanitize_text_field',
+			'default' => '0', 
 		) ); 
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'gridbulletin_archive_title', array( 
-			'label' => __( 'No archive title', 'gridbulletin' ), 
+			'label' => __( 'Archive title', 'gridbulletin' ), 
 			'section' => 'gridbulletin_archive_section', 
 			'settings' => 'gridbulletin_archive_title', 
-			'type' => 'checkbox', 
+			'type' => 'radio', 
+			'choices' => array( 
+				'0' => __('Yes', 'gridbulletin'), 
+				'1' => __('No', 'gridbulletin'), 
+			), 
 		) ) );
 	} 
 	add_action('customize_register', 'gridbulletin_theme_customizer');
