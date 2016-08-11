@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MyKnowledgeBase\n"
-"POT-Creation-Date: 2016-08-10 21:19+0200\n"
+"POT-Creation-Date: 2016-08-11 18:19+0200\n"
 "PO-Revision-Date: 2015-12-22 00:12+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -162,42 +162,38 @@ msgid "Only numeric characters allowed."
 msgstr ""
 
 #: functions.php:220
-msgid "Exclude category"
+msgid "Exclude category by ID"
 msgstr ""
 
 #: functions.php:221
-msgid "Exclude category by ID. Use a comma in case of multiple categories."
+msgid "Use a comma to separate multiple categories."
 msgstr ""
 
 #: functions.php:231
-msgid "Order"
+msgid "Order posts"
 msgstr ""
 
-#: functions.php:232
-msgid "Order posts by date or name."
-msgstr ""
-
-#: functions.php:237
+#: functions.php:236
 msgid "By date"
 msgstr ""
 
-#: functions.php:238
+#: functions.php:237
 msgid "By name"
 msgstr ""
 
-#: functions.php:242
+#: functions.php:241
 msgid "Search Bar"
 msgstr ""
 
-#: functions.php:244
+#: functions.php:243
 msgid "Settings for the knowledgebase search bar."
 msgstr ""
 
-#: functions.php:251
+#: functions.php:250
 msgid "Title"
 msgstr ""
 
-#: functions.php:252
+#: functions.php:251
 msgid "This will overwrite the default title."
 msgstr ""
 

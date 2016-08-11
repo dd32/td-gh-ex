@@ -217,8 +217,8 @@
 			'sanitize_callback' => 'sanitize_text_field', 
 		) ); 
 		$wp_customize->add_control( new WP_Customize_Control ( $wp_customize, 'myknowledgebase_exclude', array( 
-			'label' => __( 'Exclude category', 'myknowledgebase' ), 
-			'description' => __( 'Exclude category by ID. Use a comma in case of multiple categories.', 'myknowledgebase' ), 
+			'label' => __( 'Exclude category by ID', 'myknowledgebase' ), 
+			'description' => __( 'Use a comma to separate multiple categories.', 'myknowledgebase' ), 
 			'section' => 'myknowledgebase_posts_section', 
 			'settings' => 'myknowledgebase_exclude', 
 		) ) );
@@ -228,8 +228,7 @@
 			'default' => 'date', 
 		) ); 
 		$wp_customize->add_control( new WP_Customize_Control ( $wp_customize, 'myknowledgebase_order', array( 
-			'label' => __( 'Order', 'myknowledgebase' ), 
-			'description' => __( 'Order posts by date or name.', 'myknowledgebase' ), 
+			'label' => __( 'Order posts', 'myknowledgebase' ), 
 			'section' => 'myknowledgebase_posts_section',
 			'settings' => 'myknowledgebase_order', 
 			'type' => 'radio', 
