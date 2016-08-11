@@ -1,3 +1,5 @@
+###Version 1.0
+* Screenshot Changed.
 ###Version 0.9
 * Widgets styling issue fixed.
 * Theme color scheme changed from #f8504b to #31a3dd.
