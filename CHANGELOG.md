@@ -1,3 +1,5 @@
+###Version 1.1
+* Minor bug fixed.
 ###Version 1.0
 * Screenshot Changed.
 ###Version 0.9

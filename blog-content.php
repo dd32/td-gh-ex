@@ -37,5 +37,5 @@
 	</div><!-- end blog-desc -->
 </div><!-- end blog-carousel -->
 <?php if(!is_page()){ ?>
-<div class="awada_blog_shadow"></div>
+<div class="awada_blog_shadow_main"></div>
 <?php } } ?>
