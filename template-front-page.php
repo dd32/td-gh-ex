@@ -256,6 +256,73 @@
 <!-- slider Description end here --> 
 
 
+<!-- Testimonial Start Here-->
+<?php 
+
+    $first_testimonial_text = esc_attr( get_theme_mod('first_testimonial_text') ); 
+    $first_testimonial_name = esc_attr( get_theme_mod('first_testimonial_name') );
+
+    $second_testimonial_text = esc_attr( get_theme_mod('second_testimonial_text') ); 
+    $second_testimonial_name = esc_attr( get_theme_mod('second_testimonial_name') );
+
+?>
+
+<div class="testimonial-wrapper">
+    <div class="testimonial-overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class='testimonial wow fadeInUp'>
+                        <div class="quote"><i class="fa fa-quote-left"></i></div>
+                        <div class="carousel slide" id="fade-quote-carousel" data-ride="carousel" data-interval="3000">
+                            <!-- Carousel indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#fade-quote-carousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#fade-quote-carousel" data-slide-to="1"></li>
+                            </ol>
+                            <!-- Carousel items -->
+                            <div class="carousel-inner">
+
+                                <div class="active item">
+                                    <blockquote>
+                                        <?php if ( isset($first_testimonial_text) && $first_testimonial_text != '') { ?>
+                                            <p class="testimonial_desc">"<?php echo $first_testimonial_text; ?>"</p> 
+                                        <?php } else { ?>
+                                            <p class="testimonial_desc">
+                                                <?php _e( '"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries."','bfront'); ?></p>
+                                        <?php } ?>
+                                    </blockquote>
+                                        <?php if ( isset($first_testimonial_name) && $first_testimonial_name != '') { ?>
+                                            <p class="testimonial_author"><?php echo $first_testimonial_name;  ?></p> 
+                                        <?php } else { ?>
+                                            <p class="testimonial_author"><?php _e( 'John Doe','bfront'); ?></p>
+                                        <?php }  ?> 
+                                </div>
+
+                                <div class="item">
+                                    <blockquote>
+                                        <?php if ( isset($second_testimonial_text) && $second_testimonial_text != '') { ?>
+                                            <p class="testimonial_desc">"<?php echo $second_testimonial_text; ?>"</p> 
+                                        <?php } else { ?>
+                                            <p class="testimonial_desc"><?php _e( '"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries."','bfront'); ?></p>
+                                        <?php } ?>
+                                    </blockquote>
+                                        <?php if ( isset($second_testimonial_name) && $second_testimonial_name != '') { ?>
+                                            <p class="testimonial_author"><?php echo $second_testimonial_name;  ?></p> 
+                                        <?php } else { ?>
+                                            <p class="testimonial_author"><?php _e( 'Lorem Ipsum','bfront'); ?></p>
+                                        <?php }  ?> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Testimonial End Here-->
+
 <!--latest blog start here -->
 <?php 
     $blog_heading = esc_attr( get_theme_mod('blog_heading') );

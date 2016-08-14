@@ -38,7 +38,7 @@
                                     <span></span>
                                     <i class="fa fa-align-justify" id="open-mobile-menu"></i>
                                 </div>
-                                <?php wp_nav_menu( array( 'theme_location' => 'custom_menu', 'menu_class' => 'sf-menu snip1155', 'menu_id' => 'menu' ) ); ?>
+                                <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'sf-menu snip1155', 'menu_id' => 'menu' ) ); ?>
                             </div>
                         </div>
                     </div>

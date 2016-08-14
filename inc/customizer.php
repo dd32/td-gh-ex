@@ -37,12 +37,6 @@ function bfront_customize_register( $wp_customize ) {
         }
     }
 
-    class bfront_Testimonial_Settings extends WP_Customize_Control {
-        public function render_content() {
-            echo __('Check out the <a target="_blank" href="http://www.themesflow.com/wp-themes/bfront-pro/">PRO version</a> for full control over the Testimonial Setting','bfront');
-        }
-    }
-
     class bfront_Portfolio_Settings extends WP_Customize_Control {
         public function render_content() {
             echo __('Check out the <a target="_blank" href="http://www.themesflow.com/wp-themes/bfront-pro/">PRO version</a> for full control over the Portfolio Setting','bfront');
@@ -514,18 +508,70 @@ function bfront_customize_register( $wp_customize ) {
 	//  =============================
     //  ====  Testimonials Area  ====
     //  =============================
-	$wp_customize->add_section('testimonial_section', array(
-        'title'    => __('Testimonial Setting', 'bfront'),
-        'priority' => 15,
+    $wp_customize->add_panel( 'testimonial_panel', array(
+        'priority'       => 15,
+        'capability'     => 'edit_theme_options',
+        'theme_supports' => '',
+        'title'          => __('Testimonial Area', 'bfront'),
+    ) );
+
+
+    /* First Testimonial Settings */
+    $wp_customize->add_section('first_testimonial_section', array(
+        'title'       => __('First Testimonial Options', 'bfront'),
+        'priority'    => 1,
+        'panel'       => 'testimonial_panel',
+        'description' => __('Check out the <a target="_blank" href="http://www.themesflow.com/wp-themes/bfront-pro/">PRO version</a> to add more testimonials and video as background in testimonial section.','bfront'),
     ));
-    $wp_customize->add_setting( 'testimonial_settings', array(
+    $wp_customize->add_setting('first_testimonial_text', array(
         'capability'        => 'edit_theme_options',
         'sanitize_callback' => 'bfront_sanitize_textarea'
     ));
-    
-    $wp_customize->add_control( new bfront_Testimonial_Settings( $wp_customize, 'testimonial_settings', array(
-        'section' => 'testimonial_section',
-    )));
+    $wp_customize->add_control('first_testimonial_text', array(
+        'label'    => __('Testimonial Text', 'bfront'),
+        'settings' => 'first_testimonial_text',
+        'section'  => 'first_testimonial_section',
+        'type'     => 'textarea',
+    ));
+    $wp_customize->add_setting('first_testimonial_name', array(
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'bfront_sanitize_textarea'
+    ));
+    $wp_customize->add_control('first_testimonial_name', array(
+        'label'    => __('Name of Person', 'bfront'),
+        'settings' => 'first_testimonial_name',
+        'section'  => 'first_testimonial_section',
+        'type'     => 'text',
+    ));
+
+    /* Second Testimonial Settings */
+    $wp_customize->add_section('second_testimonial_section', array(
+        'title'       => __('Second Testimonial Options', 'bfront'),
+        'priority'    => 2,
+        'panel'       => 'testimonial_panel',
+        'description' => __('Check out the <a target="_blank" href="http://www.themesflow.com/wp-themes/bfront-pro/">PRO version</a> to add more testimonials and video as background in testimonial section.','bfront'),
+    ));
+    $wp_customize->add_setting('second_testimonial_text', array(
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'bfront_sanitize_textarea'
+    ));
+    $wp_customize->add_control('second_testimonial_text', array(
+        'label'    => __('Testimonial Text', 'bfront'),
+        'settings' => 'second_testimonial_text',
+        'section'  => 'second_testimonial_section',
+        'type'     => 'textarea',
+    ));
+    $wp_customize->add_setting('second_testimonial_name', array(
+        'capability'        => 'edit_theme_options',
+        'sanitize_callback' => 'bfront_sanitize_textarea'
+    ));
+    $wp_customize->add_control('second_testimonial_name', array(
+        'label'    => __('Name of Person', 'bfront'),
+        'settings' => 'second_testimonial_name',
+        'section'  => 'second_testimonial_section',
+        'type'     => 'text',
+    ));
+
 
     //  =============================
     //  ====  Blogs On HomePage  ====
