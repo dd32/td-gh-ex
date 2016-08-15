@@ -246,6 +246,4 @@ function catchbase_reset_all_settings( $input ) {
  */
 function catchbase_sanitize_important_link() {
 	return false;
-} 
-
-
+}

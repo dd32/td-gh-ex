@@ -1,5 +1,11 @@
 == Change log ==
 
+= 2.8.2 =
+* Bug Fixed: White space issues at the end of files
+* Updated: Content Width Implementation Code
+* Updated: Tags in styles.css header
+* Updated: All instances of catchthemes.com converted to https
+
 = 2.8.1 =
 * Updated: Favicon and Web Clip Migration to Site Icon( Core Support )
 * Updated: Logo to Custom Logo( Core Support ) for WP version 4.5

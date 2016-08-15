@@ -223,7 +223,7 @@ function catchbase_customize_scripts() {
 	wp_enqueue_script( 'catchbase_customizer_custom', get_template_directory_uri() . '/js/catchbase-customizer-custom-scripts.min.js', array( 'customize-controls', 'iris', 'underscore', 'wp-util' ), '20150630', true );
 
 	$catchbase_misc_links = array(
-							'upgrade_link' 				=> esc_url( 'http://catchthemes.com/themes/catch-base-pro/' ),
+							'upgrade_link' 				=> esc_url( 'https://catchthemes.com/themes/catch-base-pro/' ),
 							'upgrade_text'	 			=> __( 'Upgrade To Pro &raquo;', 'catch-base' ),
 							'WP_version'				=> get_bloginfo( 'version' ),
 							'old_version_message'		=> __( 'Some settings might be missing or disorganized in this version of WordPress. So we suggest you to upgrade to version 4.0 or better.', 'catch-base' )

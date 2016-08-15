@@ -6,14 +6,14 @@
  *
  * @package Catch Themes
  * @subpackage Catch Base
- * @since Catch Base 1.0 
+ * @since Catch Base 1.0
  */
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="archive-post-wrap">
-		<?php 
-		/** 
+		<?php
+		/**
 		 * catchbase_before_entry_container hook
 		 *
 		 * @hooked catchbase_archive_content_image - 10
@@ -25,20 +25,20 @@
 				<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 
 				<?php if ( 'post' == get_post_type() ) : ?>
-				
+
 					<?php catchbase_entry_meta(); ?>
-				
+
 				<?php endif; ?>
 			</header><!-- .entry-header -->
 
-			<?php 
+			<?php
 			$options = catchbase_get_theme_options();
 
 			if ( is_search() || 'full-content' != $options['content_layout'] ) : // Only display Excerpts for Search and if 'full-content' is not selected ?>
 				<div class="entry-summary">
 					<?php the_excerpt(); ?>
 				</div><!-- .entry-summary -->
-			<?php else : ?>			
+			<?php else : ?>
 				<div class="entry-content">
 					<?php the_content(); ?>
 					<?php

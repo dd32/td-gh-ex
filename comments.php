@@ -4,7 +4,7 @@
  *
  * @package Catch Themes
  * @subpackage Catch Base
- * @since Catch Base 1.0 
+ * @since Catch Base 1.0
  */
 
 /*
@@ -36,7 +36,7 @@ if ( post_password_required() ) {
 			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'catch-base' ) ); ?></div>
 		</nav><!-- #comment-nav-above -->
 		<?php endif; // check for comment navigation ?>
-		
+
 		<ol class="comment-list">
 			<?php
 				/* Loop through and list the comments. Tell wp_list_comments()
@@ -45,14 +45,14 @@ if ( post_password_required() ) {
 				 * define catchbase_comment() and that will be used instead.
 				 * See catchbase_comment() in catchbase/functions.php for more.
 				 */
-				wp_list_comments( array( 
+				wp_list_comments( array(
 					'callback' => 'catchbase_comment',
 					'style' => 'ol',
 					'avatar_size' => 48,
 					'short_ping' => true,
 				) );
 			?>
-		</ol>		
+		</ol>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below" class="comment-navigation" role="navigation">

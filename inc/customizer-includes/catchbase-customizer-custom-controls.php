@@ -4,7 +4,7 @@
  *
  * @package Catch Themes
  * @subpackage Catch Base
- * @since Catch Base 1.0 
+ * @since Catch Base 1.0
  */
 
 if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
@@ -44,44 +44,44 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 
 	//Custom control for dropdown category multiple select
 	class Catchbase_Important_Links extends WP_Customize_Control {
-        public $type = 'important-links'; 
-        
+        public $type = 'important-links';
+
         public function render_content() {
         	//Add Theme instruction, Support Forum, Changelog, Donate link, Review, Facebook, Twitter, Google+, Pinterest links
             $important_links = array(
-							'theme_instructions' => array( 
-								'link'	=> esc_url( 'http://catchthemes.com/theme-instructions/catch-base/' ),
+							'theme_instructions' => array(
+								'link'	=> esc_url( 'https://catchthemes.com/theme-instructions/catch-base/' ),
 								'text' 	=> __( 'Theme Instructions', 'catch-base' ),
 								),
-							'support' => array( 
-								'link'	=> esc_url( 'http://catchthemes.com/support/' ),
+							'support' => array(
+								'link'	=> esc_url( 'https://catchthemes.com/support/' ),
 								'text' 	=> __( 'Support', 'catch-base' ),
 								),
-							'changelog' => array( 
-								'link'	=> esc_url( 'http://catchthemes.com/changelogs/catch-base-theme/' ),
+							'changelog' => array(
+								'link'	=> esc_url( 'https://catchthemes.com/changelogs/catch-base-theme/' ),
 								'text' 	=> __( 'Changelog', 'catch-base' ),
 								),
-							'donate' => array( 
-								'link'	=> esc_url( 'http://catchthemes.com/donate/' ),
+							'donate' => array(
+								'link'	=> esc_url( 'https://catchthemes.com/donate/' ),
 								'text' 	=> __( 'Donate Now', 'catch-base' ),
 								),
-							'review' => array( 
+							'review' => array(
 								'link'	=> esc_url( 'https://wordpress.org/support/view/theme-reviews/catch-base' ),
 								'text' 	=> __( 'Review', 'catch-base' ),
 								),
-							'facebook' => array( 
+							'facebook' => array(
 								'link'	=> esc_url( 'https://www.facebook.com/catchthemes/' ),
 								'text' 	=> __( 'Facebook', 'catch-base' ),
 								),
-							'twitter' => array( 
+							'twitter' => array(
 								'link'	=> esc_url( 'https://twitter.com/catchthemes/' ),
 								'text' 	=> __( 'Twitter', 'catch-base' ),
 								),
-							'gplus' => array( 
+							'gplus' => array(
 								'link'	=> esc_url( 'https://plus.google.com/+Catchthemes/' ),
 								'text' 	=> __( 'Google+', 'catch-base' ),
 								),
-							'pinterest' => array( 
+							'pinterest' => array(
 								'link'	=> esc_url( 'http://www.pinterest.com/catchthemes/' ),
 								'text' 	=> __( 'Pinterest', 'catch-base' ),
 								),

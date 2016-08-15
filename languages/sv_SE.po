@@ -1,10 +1,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Base\n"
-"Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/catch-base-pro-"
+"Report-Msgid-Bugs-To: https://catchthemes.com/support-forum/forum/catch-base-pro-"
 "premium/pro-premium/\n"
-"POT-Creation-Date: 2016-04-11 08:11+0545\n"
-"PO-Revision-Date: 2016-04-11 08:11+0545\n"
+"POT-Creation-Date: 2016-08-16 01:14+0545\n"
+"PO-Revision-Date: 2016-08-16 01:14+0545\n"
 "Last-Translator: Anders <anders@paulcen.se>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: sv\n"
@@ -152,8 +152,8 @@ msgstr "Det verkar som att vi inte kan hitta det du letar efter. Testa att söka
 msgid "Pages:"
 msgstr "Sidor:"
 
-#: ../content-page.php:35 ../inc/catchbase-core.php:648
-#: ../inc/catchbase-core.php:667 ../inc/catchbase-core.php:793
+#: ../content-page.php:35 ../inc/catchbase-core.php:657
+#: ../inc/catchbase-core.php:676 ../inc/catchbase-core.php:802
 msgid "Edit"
 msgstr "Redigera"
 
@@ -190,112 +190,112 @@ msgstr "Fel 404"
 msgid "Page %s"
 msgstr "Sida %s"
 
-#: ../inc/catchbase-core.php:93 ../inc/catchbase-menus.php:27
+#: ../inc/catchbase-core.php:102 ../inc/catchbase-menus.php:27
 msgid "Primary Menu"
 msgstr "Primär meny"
 
-#: ../inc/catchbase-core.php:94 ../inc/catchbase-menus.php:69
+#: ../inc/catchbase-core.php:103 ../inc/catchbase-menus.php:69
 msgid "Secondary Menu"
 msgstr "Sekundär meny"
 
-#: ../inc/catchbase-core.php:614
+#: ../inc/catchbase-core.php:623
 msgid "Post navigation"
 msgstr "Inläggsnavigering"
 
-#: ../inc/catchbase-core.php:623
+#: ../inc/catchbase-core.php:632
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> Äldre inlägg"
 
-#: ../inc/catchbase-core.php:624
+#: ../inc/catchbase-core.php:633
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Nyare inlägg <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../inc/catchbase-core.php:648
+#: ../inc/catchbase-core.php:657
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: ../inc/catchbase-core.php:658
+#: ../inc/catchbase-core.php:667
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"says\">skriver:</span>"
 
-#: ../inc/catchbase-core.php:664
+#: ../inc/catchbase-core.php:673
 #, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr "%1$s kl. %2$s"
 
-#: ../inc/catchbase-core.php:671
+#: ../inc/catchbase-core.php:680
 msgid "Your comment is awaiting moderation."
 msgstr "Din kommentar inväntar granskning."
 
-#: ../inc/catchbase-core.php:774
+#: ../inc/catchbase-core.php:783
 msgctxt "Used before publish date."
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
 msgstr "<span class=\"screen-reader-text\">Postades den</span>"
 
-#: ../inc/catchbase-core.php:781
+#: ../inc/catchbase-core.php:790
 msgctxt "Used before post author name."
 msgid "<span class=\"screen-reader-text\">Author</span>"
 msgstr "<span class=\"screen-reader-text\">Författare</span>"
 
-#: ../inc/catchbase-core.php:789
+#: ../inc/catchbase-core.php:798
 msgid "Leave a comment"
 msgstr "Lämna en kommentar"
 
-#: ../inc/catchbase-core.php:789
+#: ../inc/catchbase-core.php:798
 msgid "1 Comment"
 msgstr "1 Kommentar"
 
-#: ../inc/catchbase-core.php:789
+#: ../inc/catchbase-core.php:798
 msgid "% Comments"
 msgstr "% Kommentarer"
 
-#: ../inc/catchbase-core.php:810 ../inc/catchbase-core.php:818
+#: ../inc/catchbase-core.php:819 ../inc/catchbase-core.php:827
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ", "
 
-#: ../inc/catchbase-core.php:813
+#: ../inc/catchbase-core.php:822
 msgctxt "Used before category names."
 msgid "<span class=\"screen-reader-text\">Categories</span>"
 msgstr "<span class=\"screen-reader-text\">Kategorier</span>"
 
-#: ../inc/catchbase-core.php:821
+#: ../inc/catchbase-core.php:830
 msgctxt "Used before tag names."
 msgid "<span class=\"screen-reader-text\">Tags</span>"
 msgstr "<span class=\"screen-reader-text\">Taggar</span>"
 
-#: ../inc/catchbase-core.php:964
+#: ../inc/catchbase-core.php:973
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: ../inc/catchbase-core.php:1482
+#: ../inc/catchbase-core.php:1491
 msgid "Scroll Up"
 msgstr "Scrolla upp"
 
-#: ../inc/catchbase-core.php:1500
+#: ../inc/catchbase-core.php:1509
 msgid "Posted on"
 msgstr "﻿Publicerat den"
 
-#: ../inc/catchbase-core.php:1501
+#: ../inc/catchbase-core.php:1510
 msgid "By"
 msgstr "Av"
 
-#: ../inc/catchbase-core.php:1542
+#: ../inc/catchbase-core.php:1551
 msgid "Next &rarr;"
 msgstr "Nästa &rarr;"
 
-#: ../inc/catchbase-core.php:1543
+#: ../inc/catchbase-core.php:1552
 msgid "Next post:"
 msgstr "Nästa inlägg:"
 
-#: ../inc/catchbase-core.php:1545
+#: ../inc/catchbase-core.php:1554
 msgid "&larr; Previous"
 msgstr "&larr; Föregående"
 
-#: ../inc/catchbase-core.php:1546
+#: ../inc/catchbase-core.php:1555
 msgid "Previous post:"
 msgstr "Föregående inlägg:"
 
@@ -487,8 +487,8 @@ msgid "Tile Blind"
 msgstr "Dummy bricka"
 
 #: ../inc/catchbase-default-options.php:425
-msgid "Suffle"
-msgstr "SUFFLE"
+msgid "Shuffle"
+msgstr "Shuffle"
 
 #: ../inc/catchbase-default-options.php:442
 msgid "Default(Older Posts/Newer Posts)"

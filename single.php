@@ -4,7 +4,7 @@
  *
  * @package Catch Themes
  * @subpackage Catch Base
- * @since Catch Base 1.0 
+ * @since Catch Base 1.0
  */
 
 get_header(); ?>
@@ -15,24 +15,24 @@ get_header(); ?>
 
 		<?php get_template_part( 'content', 'single' ); ?>
 
-		<?php 
-			/** 
+		<?php
+			/**
 			 * catchbase_after_post hook
 			 *
 			 * @hooked catchbase_post_navigation - 10
 			 */
-			do_action( 'catchbase_after_post' ); 
-			
-			/** 
+			do_action( 'catchbase_after_post' );
+
+			/**
 			 * catchbase_comment_section hook
 			 *
 			 * @hooked catchbase_get_comment_section - 10
 			 */
-			do_action( 'catchbase_comment_section' ); 
+			do_action( 'catchbase_comment_section' );
 		?>
 	<?php endwhile; // end of the loop. ?>
 
 	</main><!-- #main -->
-	
+
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>

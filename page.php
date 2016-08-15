@@ -9,7 +9,7 @@
  *
  * @package Catch Themes
  * @subpackage Catch Base
- * @since Catch Base 1.0 
+ * @since Catch Base 1.0
  */
 
 get_header(); ?>
@@ -20,13 +20,13 @@ get_header(); ?>
 
 			<?php get_template_part( 'content', 'page' ); ?>
 
-			<?php 
-				/** 
+			<?php
+				/**
 				 * catchbase_comment_section hook
 				 *
 				 * @hooked catchbase_get_comment_section - 10
 				 */
-				do_action( 'catchbase_comment_section' ); 
+				do_action( 'catchbase_comment_section' );
 			?>
 
 		<?php endwhile; // end of the loop. ?>

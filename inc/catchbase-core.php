@@ -30,18 +30,27 @@ if ( ! function_exists( 'catchbase_content_width' ) ) :
 	 * @global int $content_width
 	 */
 	function catchbase_content_width() {
-		$layout  = catchbase_get_theme_layout();
-
-		$content_width = 540;
-
-		if ( $layout == 'right-sidebar' || $layout == 'left-sidebar' || $layout == 'no-sidebar' ) {
-			$content_width = 780;
-		}
-
-		$GLOBALS['content_width'] = apply_filters( 'catchbase_content_width', $content_width );
+		$GLOBALS['content_width'] = apply_filters( 'catchbase_content_width', 540 );
 	}
 endif;
 add_action( 'after_setup_theme', 'catchbase_content_width', 0 );
+
+
+if ( ! function_exists( 'catchbase_template_redirect' ) ) :
+	/**
+	 * Set the content width in pixels, based on the theme's design and stylesheet for different value other than the default one
+	 *
+	 * @global int $content_width
+	 */
+	function catchbase_template_redirect() {
+	    $layout = catchbase_get_theme_layout();
+
+		if ( 'right-sidebar' == $layout || 'left-sidebar' == $layout  || 'no-sidebar' == $layout ) {
+			$GLOBALS['content_width'] = 780;
+		}
+	}
+endif;
+add_action( 'template_redirect', 'catchbase_template_redirect' );
 
 
 if ( ! function_exists( 'catchbase_setup' ) ) :
@@ -237,11 +246,11 @@ function catchbase_scripts() {
 		else if ( 'flipHorz' ==  $options['featured_slide_transition_effect'] || 'flipVert' ==  $options['featured_slide_transition_effect'] ){
 			wp_enqueue_script( 'jquery.cycle2.flip', get_template_directory_uri() . '/js/jquery.cycle/jquery.cycle2.flip.min.js', array( 'jquery.cycle2' ), '20140128', true );
 		}
-		// Suffle transition plugin addition
+		// Shuffle transition plugin addition
 		else if ( 'tileSlide' ==  $options['featured_slide_transition_effect'] || 'tileBlind' ==  $options['featured_slide_transition_effect'] ){
 			wp_enqueue_script( 'jquery.cycle2.tile', get_template_directory_uri() . '/js/jquery.cycle/jquery.cycle2.tile.min.js', array( 'jquery.cycle2' ), '20140128', true );
 		}
-		// Suffle transition plugin addition
+		// Shuffle transition plugin addition
 		else if ( 'shuffle' ==  $options['featured_slide_transition_effect'] ){
 			wp_enqueue_script( 'jquery.cycle2.shuffle', get_template_directory_uri() . '/js/jquery.cycle/jquery.cycle2.shuffle.min.js', array( 'jquery.cycle2' ), '20140128 ', true );
 		}

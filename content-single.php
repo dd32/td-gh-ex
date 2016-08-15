@@ -4,13 +4,13 @@
  *
  * @package Catch Themes
  * @subpackage Catch Base
- * @since Catch Base 1.0 
+ * @since Catch Base 1.0
  */
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php 
-	/** 
+	<?php
+	/**
 	 * catchbase_before_post_container hook
 	 *
 	 * @hooked catchbase_single_content_image - 10

@@ -1,10 +1,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Base\n"
-"Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/catch-base-"
+"Report-Msgid-Bugs-To: https://catchthemes.com/support-forum/forum/catch-base-"
 "free/\n"
-"POT-Creation-Date: 2016-04-11 08:11+0545\n"
-"PO-Revision-Date: 2016-04-11 08:11+0545\n"
+"POT-Creation-Date: 2016-08-16 01:14+0545\n"
+"PO-Revision-Date: 2016-08-16 01:14+0545\n"
 "Last-Translator: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language-Team: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language: pt_BR\n"
@@ -157,8 +157,8 @@ msgstr ""
 msgid "Pages:"
 msgstr "Páginas: "
 
-#: ../content-page.php:35 ../inc/catchbase-core.php:648
-#: ../inc/catchbase-core.php:667 ../inc/catchbase-core.php:793
+#: ../content-page.php:35 ../inc/catchbase-core.php:657
+#: ../inc/catchbase-core.php:676 ../inc/catchbase-core.php:802
 msgid "Edit"
 msgstr "Editar"
 
@@ -195,114 +195,114 @@ msgstr "Erro 404 - Página não encontrada."
 msgid "Page %s"
 msgstr "Página %s"
 
-#: ../inc/catchbase-core.php:93 ../inc/catchbase-menus.php:27
+#: ../inc/catchbase-core.php:102 ../inc/catchbase-menus.php:27
 msgid "Primary Menu"
 msgstr "Menu principal"
 
-#: ../inc/catchbase-core.php:94 ../inc/catchbase-menus.php:69
+#: ../inc/catchbase-core.php:103 ../inc/catchbase-menus.php:69
 msgid "Secondary Menu"
 msgstr "Menu secundário"
 
-#: ../inc/catchbase-core.php:614
+#: ../inc/catchbase-core.php:623
 msgid "Post navigation"
 msgstr "Navegação das postagens"
 
-#: ../inc/catchbase-core.php:623
+#: ../inc/catchbase-core.php:632
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> Posts mais antigos"
 
-#: ../inc/catchbase-core.php:624
+#: ../inc/catchbase-core.php:633
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Posts mais recentes <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../inc/catchbase-core.php:648
+#: ../inc/catchbase-core.php:657
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: ../inc/catchbase-core.php:658
+#: ../inc/catchbase-core.php:667
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"says\">diz: </span>"
 
-#: ../inc/catchbase-core.php:664
+#: ../inc/catchbase-core.php:673
 #, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr "%1$s em %2$s"
 
-#: ../inc/catchbase-core.php:671
+#: ../inc/catchbase-core.php:680
 msgid "Your comment is awaiting moderation."
 msgstr ""
 "<strong>Seu comentário está aguardando a nossa moderação; obrigado por comentar!"
 "</strong>"
 
-#: ../inc/catchbase-core.php:774
+#: ../inc/catchbase-core.php:783
 msgctxt "Used before publish date."
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
 msgstr "<span class=\"screen-reader-text\">Publicado em: </span>"
 
-#: ../inc/catchbase-core.php:781
+#: ../inc/catchbase-core.php:790
 msgctxt "Used before post author name."
 msgid "<span class=\"screen-reader-text\">Author</span>"
 msgstr "<span class=\"screen-reader-text\">Autor: </span>"
 
-#: ../inc/catchbase-core.php:789
+#: ../inc/catchbase-core.php:798
 msgid "Leave a comment"
 msgstr "Deixe um Comentário"
 
-#: ../inc/catchbase-core.php:789
+#: ../inc/catchbase-core.php:798
 msgid "1 Comment"
 msgstr "1 Comentário &darr;"
 
-#: ../inc/catchbase-core.php:789
+#: ../inc/catchbase-core.php:798
 msgid "% Comments"
 msgstr "% Comentários &darr;"
 
-#: ../inc/catchbase-core.php:810 ../inc/catchbase-core.php:818
+#: ../inc/catchbase-core.php:819 ../inc/catchbase-core.php:827
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ", "
 
-#: ../inc/catchbase-core.php:813
+#: ../inc/catchbase-core.php:822
 msgctxt "Used before category names."
 msgid "<span class=\"screen-reader-text\">Categories</span>"
 msgstr "<span class=\"screen-reader-text\">Categorias: </span>"
 
-#: ../inc/catchbase-core.php:821
+#: ../inc/catchbase-core.php:830
 msgctxt "Used before tag names."
 msgid "<span class=\"screen-reader-text\">Tags</span>"
 msgstr "<span class=\"screen-reader-text\">Tags: </span>"
 
-#: ../inc/catchbase-core.php:964
+#: ../inc/catchbase-core.php:973
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: ../inc/catchbase-core.php:1482
+#: ../inc/catchbase-core.php:1491
 msgid "Scroll Up"
 msgstr "Rolar para cima"
 
-#: ../inc/catchbase-core.php:1500
+#: ../inc/catchbase-core.php:1509
 msgid "Posted on"
 msgstr "Postada na"
 
-#: ../inc/catchbase-core.php:1501
+#: ../inc/catchbase-core.php:1510
 msgid "By"
 msgstr "Por"
 
-#: ../inc/catchbase-core.php:1542
+#: ../inc/catchbase-core.php:1551
 msgid "Next &rarr;"
 msgstr "Próximo &rarr;"
 
-#: ../inc/catchbase-core.php:1543
+#: ../inc/catchbase-core.php:1552
 msgid "Next post:"
 msgstr "Próximo post: "
 
-#: ../inc/catchbase-core.php:1545
+#: ../inc/catchbase-core.php:1554
 msgid "&larr; Previous"
 msgstr "&larr; Anterior"
 
-#: ../inc/catchbase-core.php:1546
+#: ../inc/catchbase-core.php:1555
 msgid "Previous post:"
 msgstr "Post anterior: "
 
@@ -494,7 +494,7 @@ msgid "Tile Blind"
 msgstr "Deslizar com efeito persiana"
 
 #: ../inc/catchbase-default-options.php:425
-msgid "Suffle"
+msgid "Shuffle"
 msgstr "Passar a imagem da frente para trás"
 
 #: ../inc/catchbase-default-options.php:442
