@@ -5,6 +5,7 @@
  * @package GeneratePress
  */
 
+if ( ! function_exists( 'generate_customize_register' ) ) :
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
  *
@@ -756,7 +757,9 @@ function generate_customize_register( $wp_customize ) {
 		);
 	}
 }
+endif;
 
+if ( ! function_exists( 'generate_customizer_live_preview' ) ) :
 add_action( 'customize_preview_init', 'generate_customizer_live_preview' );
 function generate_customizer_live_preview()
 {
@@ -768,13 +771,14 @@ function generate_customizer_live_preview()
 		  true
 	);
 }
+endif;
 
 /**
  * Heading area
  *
  * Since 0.1
  **/
-if ( class_exists( 'WP_Customize_Control' ) ) {
+if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'GenerateLabelControl' ) ) {
     # Adds textarea support to the theme customizer
     class GenerateLabelControl extends WP_Customize_Control {
         public $type = 'label';
@@ -828,6 +832,7 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Generate_Customi
 	}
 }
 
+if ( ! function_exists( 'generate_customize_preview_css' ) ) :
 add_action('customize_controls_print_styles', 'generate_customize_preview_css');
 function generate_customize_preview_css() {
 	?>
@@ -900,7 +905,9 @@ function generate_customize_preview_css() {
 	</style>
 	<?php
 }
+endif;
 
+if ( ! function_exists( 'generate_customize_preview_js' ) ) :
 add_action('customize_controls_print_footer_scripts', 'generate_customize_preview_js');
 function generate_customize_preview_js()
 {
@@ -909,11 +916,12 @@ function generate_customize_preview_js()
 	?>
 	<script>
 		jQuery( window ).load( function() {
-			jQuery('#customize-info').append('<span class="get-addon" style="display:block;"><a style="display:block;padding-left: 15px;padding-right:0;" href="<?php echo esc_url('https://generatepress.com/add-ons');?>" target="_blank"><?php _e('Add-ons Available! Take a look','generatepress');?> &rarr;</a></span>');
+			jQuery('#accordion-section-themes').append('<span class="get-addon" style="display:block;position:relative;top:-15px;"><a style="display:block;padding-left: 15px;padding-right:0;" href="<?php echo esc_url('https://generatepress.com/add-ons');?>" target="_blank"><?php _e('Add-ons Available! Take a look','generatepress');?> &rarr;</a></span>');
 		});
 	</script>
 	<?php
 }
+endif;
 
 if ( ! function_exists( 'generate_is_posts_page' ) ) :
 function generate_is_posts_page()

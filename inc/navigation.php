@@ -1,4 +1,5 @@
 <?php
+if ( ! function_exists( 'generate_add_navigation_after_header' ) ) :
 /**
  * Generate the navigation based on settings
  * @since 0.1
@@ -16,6 +17,9 @@ function generate_add_navigation_after_header()
 	endif;
 	
 }
+endif;
+
+if ( ! function_exists( 'generate_add_navigation_before_header' ) ) :
 add_action( 'generate_before_header', 'generate_add_navigation_before_header', 5 );
 function generate_add_navigation_before_header()
 {
@@ -29,7 +33,10 @@ function generate_add_navigation_before_header()
 	endif;
 	
 }
-add_action( 'generate_before_header_content', 'generate_add_navigation_float_right', 5 );
+endif;
+
+if ( ! function_exists( 'generate_add_navigation_float_right' ) ) :
+add_action( 'generate_after_header_content', 'generate_add_navigation_float_right', 5 );
 function generate_add_navigation_float_right()
 {
 	$generate_settings = wp_parse_args( 
@@ -42,6 +49,9 @@ function generate_add_navigation_float_right()
 	endif;
 	
 }
+endif;
+
+if ( ! function_exists( 'generate_add_navigation_before_right_sidebar' ) ) :
 add_action( 'generate_before_right_sidebar_content', 'generate_add_navigation_before_right_sidebar', 5 );
 function generate_add_navigation_before_right_sidebar()
 {
@@ -57,6 +67,9 @@ function generate_add_navigation_before_right_sidebar()
 	endif;
 	
 }
+endif;
+
+if ( ! function_exists( 'generate_add_navigation_before_left_sidebar' ) ) :
 add_action( 'generate_before_left_sidebar_content', 'generate_add_navigation_before_left_sidebar', 5 );
 function generate_add_navigation_before_left_sidebar()
 {
@@ -72,6 +85,7 @@ function generate_add_navigation_before_left_sidebar()
 	endif;
 	
 }
+endif;
 
 if ( ! function_exists( 'generate_navigation_position' ) ) :
 /**
@@ -109,6 +123,7 @@ function generate_navigation_position()
 }
 endif;
 
+if ( ! function_exists( 'generate_menu_fallback' ) ) :
 /**
  * Menu fallback. 
  *
@@ -133,13 +148,14 @@ function generate_menu_fallback( $args )
 			);
 			wp_list_pages( $args );
 			if ( 'enable' == $generate_settings['nav_search'] ) :
-				echo '<li class="search-item" title="' . _x( 'Search', 'submit button', 'generatepress' ) . '"><a href="#"><i class="fa fa-fw fa-search"></i></a></li>';
+				echo '<li class="search-item" title="' . _x( 'Search', 'submit button', 'generatepress' ) . '"><a href="#"><i class="fa fa-fw fa-search" aria-hidden="true"></i><span class="screen-reader-text">' . _x( 'Search', 'submit button', 'generatepress' ) . '</span></a></li>';
 			endif;
 			?>
 		</ul>
 	</div><!-- .main-nav -->
 	<?php 
 }
+endif;
 
 if ( ! class_exists( 'Generate_Page_Walker' ) ) :
 /**
@@ -192,6 +208,7 @@ class Generate_Page_Walker extends Walker_page
 }
 endif;
 
+if ( ! function_exists( 'generate_nav_dropdown' ) ) :
 /**
  *
  * Build the dropdown arrow
@@ -214,3 +231,4 @@ function generate_nav_dropdown( $item_output, $item, $depth, $args )
 	// Return the output
 	return $item_output;
 }
+endif;

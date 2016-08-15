@@ -469,14 +469,16 @@ input[type="file"] {
 .dropdown-click .secondary-navigation ul li.sfHover > ul.toggled-on {
 	display: block;
 }
-.nav-float-right .main-navigation {
+.nav-float-right .inside-header .main-navigation {
 	float:right;
+	clear: right;
 }
-.nav-float-left .main-navigation {
+.nav-float-left .inside-header .main-navigation {
 	float: left;
+	clear: left;
 }
-.nav-float-left .site-branding,
-.nav-float-left .site-logo {
+.nav-float-left .inside-header .site-branding,
+.nav-float-left .inside-header .site-logo {
 	float: right;
 	clear: right;
 }
@@ -611,7 +613,7 @@ nav ul ul .menu-item-has-children .dropdown-menu-toggle {
 	float: right;
 }
 
-nav:not(.toggled) ul ul .menu-item-has-children .dropdown-menu-toggle {
+nav:not(.toggled):not(.slideout-navigation) ul ul .menu-item-has-children .dropdown-menu-toggle {
 	padding-right: 15px;
 }
 
@@ -1529,6 +1531,11 @@ footer.entry-meta .byline {
 
 .full-width-content.no-sidebar.separate-containers .site-main {
 	margin: 0;
+}
+
+.full-width-content.separate-containers .inside-article,
+.full-width-content.one-container .site-content {
+	padding: 0;
 }
 
 /* WooCommerce */
