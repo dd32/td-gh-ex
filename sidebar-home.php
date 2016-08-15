@@ -12,7 +12,7 @@ $trans_ads = of_get_option( 'trans_advertisement', 'Advertisement' );
 if( empty( $trans_ads ) ){ $trans_ads = __( 'Advertisement', 'accesspress-mag' ); }
 
 $trans_editor = of_get_option( 'trans_editor_picks' );
-if( empty( $trans_editor ) ){ $trans_editor = __( "Editor Pick's", "accesspress-mag" ); }
+if( empty( $trans_editor ) ){ $trans_editor = __( "Editor's Pick", "accesspress-mag" ); }
 
 $page_sidebar = get_post_meta( $post->ID, 'accesspress_mag_page_sidebar_layout', true);
 ?>

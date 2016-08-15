@@ -72,6 +72,10 @@ GPL compatible for own images
 ----------------------------------------------------
 == Changelog ==
 
+Version 2.4.1
+ * Fixed the Highlighted section slider in responsive
+ * Fixed the minor bugs in homepage sidebar
+  
 Version 2.4.0
  * Fixed the slider bugs in ipad
  * Fixed prefix issue for functions/variable/class name

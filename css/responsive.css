@@ -14,9 +14,9 @@
     .site-branding {
         width: 30%;
     }
-    .big_slide{
+    /*.big_slide{
         width: 58.1%;
-    }
+    }*/
     .big_slide:after,
     .small_slide:after {
         width: 100%;
@@ -60,9 +60,9 @@
     .homepage-middle-ad, .article-ad-section{
         width: 100%;
     }
-    .signle-highlight-post{
+    /*.signle-highlight-post{
         width: 47%;
-    }
+    }*/
 }
 /* Portrait tablet to landscape and desktop */
 
