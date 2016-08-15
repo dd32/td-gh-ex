@@ -1,5 +1,8 @@
 === changelog ===
 
+= (8/14/2016) - 1.3.36 =
+* Fix grid issue if users aren't using mobile-grid-* classes
+
 = (8/14/2016) - 1.3.35 =
 * New hook: generate_before_logo
 * New hook: generate_after_logo
