@@ -33,7 +33,12 @@ Screenshot includes an image by Kathy Priday. Released under GPL.
 Change Log
 -----------------------------------------------
 
-#### 1.7 - 2 June 2016
+#### 1.7.2 - 2 August 2016
+* Updated settings framework.
+* Integrated with SiteOrigin Premium.
+* Fixed default settings.
+
+#### 1.7.1 - 2 June 2016
 * Properly include all minified JS versions.
 
 #### 1.7 - 30 May 2016

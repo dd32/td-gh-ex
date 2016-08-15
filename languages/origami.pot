@@ -21,7 +21,7 @@ msgstr ""
 msgid "Not Found"
 msgstr ""
 
-#: 404.php:7, inc/settings.php:82
+#: 404.php:7, inc/settings.php:90
 msgid "We couldn't find what you were looking for."
 msgstr ""
 
@@ -635,7 +635,7 @@ msgstr ""
 msgid "Page Container"
 msgstr ""
 
-#: inc/customizer.php:175, inc/mobilenav/mobilenav.php:16, inc/mobilenav/mobilenav.php:64
+#: inc/customizer.php:175, inc/mobilenav/mobilenav.php:15, inc/mobilenav/mobilenav.php:63
 msgid "Menu"
 msgstr ""
 
@@ -647,11 +647,11 @@ msgstr ""
 msgid "Theme Specific Customizations For %s."
 msgstr ""
 
-#: inc/customizer/customizer.php:592
+#: inc/customizer/customizer.php:590
 msgid "Are you sure you want to reset your theme customizations?"
 msgstr ""
 
-#: inc/customizer/customizer.php:593
+#: inc/customizer/customizer.php:591
 msgid "Reset Customizations"
 msgstr ""
 
@@ -687,15 +687,15 @@ msgstr ""
 msgid "Navigate to <strong>Appearance > Customize > Theme Settings</strong> to access theme settings."
 msgstr ""
 
-#: inc/mobilenav/mobilenav.php:17, inc/mobilenav/mobilenav.php:65
+#: inc/mobilenav/mobilenav.php:16, inc/mobilenav/mobilenav.php:64
 msgid "Back"
 msgstr ""
 
-#: inc/mobilenav/mobilenav.php:18, inc/mobilenav/mobilenav.php:66, inc/settings.php:16
+#: inc/mobilenav/mobilenav.php:17, inc/mobilenav/mobilenav.php:65, inc/settings.php:16
 msgid "Close"
 msgstr ""
 
-#: inc/mobilenav/mobilenav.php:25
+#: inc/mobilenav/mobilenav.php:24
 msgid "Search"
 msgstr ""
 
@@ -763,7 +763,7 @@ msgstr ""
 msgid "Display your posts in style with a masonry layout."
 msgstr ""
 
-#: inc/recommended.php:41
+#: inc/recommended.php:41, inc/settings.php:75
 msgid "Ajax Comments"
 msgstr ""
 
@@ -832,74 +832,86 @@ msgid "Changes [gallery] shortcode galleries into a fancy slider."
 msgstr ""
 
 #: inc/settings.php:39
-msgid "Display featured Image"
+msgid "Footer Attribution"
 msgstr ""
 
 #: inc/settings.php:40
-msgid "Featured image above posts"
+msgid "Hide/show the link to SiteOrigin in your footer."
 msgstr ""
 
 #: inc/settings.php:43
-msgid "Header Search"
+msgid "Display featured Image"
 msgstr ""
 
 #: inc/settings.php:44
-msgid "Search input in header"
+msgid "Featured image above posts"
 msgstr ""
 
 #: inc/settings.php:47
-msgid "Center Logo"
+msgid "Header Search"
 msgstr ""
 
 #: inc/settings.php:48
-msgid "Center the main logo"
+msgid "Search input in header"
 msgstr ""
 
 #: inc/settings.php:51
-msgid "Post Navigation"
+msgid "Center Logo"
 msgstr ""
 
 #: inc/settings.php:52
+msgid "Center the main logo"
+msgstr ""
+
+#: inc/settings.php:55
+msgid "Post Navigation"
+msgstr ""
+
+#: inc/settings.php:56
 msgid "Next and previous post links on single post pages."
 msgstr ""
 
-#: inc/settings.php:55, inc/settings.php:57
+#: inc/settings.php:59, inc/settings.php:61
 msgid "Responsive"
 msgstr ""
 
-#: inc/settings.php:58
+#: inc/settings.php:62
 msgid "Should Origami use responsive mode."
 msgstr ""
 
-#: inc/settings.php:61
+#: inc/settings.php:65
 msgid "Responsive Navigation"
 msgstr ""
 
-#: inc/settings.php:62
+#: inc/settings.php:66
 msgid "Gorgeous mobile navigation menu for your main menu."
 msgstr ""
 
-#: inc/settings.php:65
+#: inc/settings.php:69
 msgid "Use Fitvids"
 msgstr ""
 
-#: inc/settings.php:66
+#: inc/settings.php:70
 msgid "Enable FitVids to automatically scale your videos."
 msgstr ""
 
-#: inc/settings.php:69
+#: inc/settings.php:73
 msgid "Comments"
 msgstr ""
 
-#: inc/settings.php:81
+#: inc/settings.php:76
+msgid "Use ajax comments system."
+msgstr ""
+
+#: inc/settings.php:89
 msgid "Copyright %s"
 msgstr ""
 
-#: inc/settings.php:83, search.php:14
+#: inc/settings.php:91, search.php:14
 msgid "No results for your query."
 msgstr ""
 
-#: inc/settings.php:110
+#: inc/settings.php:118
 msgid "Origami is one of our most elegant, mature WordPress themes. Find out more about what it has to offer by watching this short video."
 msgstr ""
 

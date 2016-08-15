@@ -1,6 +1,6 @@
 <?php
 
-define('SITEORIGIN_THEME_VERSION', '1.7.1');
+define('SITEORIGIN_THEME_VERSION', '1.7.2');
 define('SITEORIGIN_THEME_JS_PREFIX', '.min');
 
 include get_template_directory() . '/inc/settings/settings.php';
