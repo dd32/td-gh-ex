@@ -39,6 +39,7 @@
 
     this.ARCHIVE_CATEGORY_NAME = php_vars.category_name;
     this.ARCHIVE_TAG = php_vars.tag;
+    this.IS_ARCHIVE = php_vars.is_archive;
 
     this.SOUND_URL = {
       mp3: php_vars.recorded_sound_url_mp3,
@@ -46,6 +47,7 @@
     };
     this.SOUND_LENGTH = php_vars.total_length;
 
+    this.BG_IMAGE_ID = php_vars.cover_image_id;
     this.BG_URL = [
       [php_vars.cover_image_src_1440, 768],
       [php_vars.cover_image_src_2560, 1920],
@@ -63,16 +65,29 @@
     this.FULL_VIEW_TIME = 4000;
     this.FULL_VIEW_TIMER = -1;
 
-    this.$info_content.fadeTo(0, 1).hide();
-    setTimeout(function () {
-      self.$menu_infobox.addClass('active');
-      self.$info_content.animate({width: 'toggle'}, 600, function () {
-        $('.inner_container, .close_btn', self.$info_content).fadeTo(200, 1);
-        self.$menu_infobox_open = true;
-      });
+    if (this.IS_ARCHIVE == 'true') {
+      this.$menulist.fadeTo(0, 1).hide();
+      setTimeout(function () {
+        self.$menu_menulist.addClass('active');
+        self.$menulist.animate({width: 'toggle'}, 600, function () {
+          $('.inner_container, .close_btn', self.$menulist).fadeTo(200, 1);
+          self.$menu_menulist_open = true;
+        });
 
-      self.bgResizeProcess(0);
-    }, 200);
+        self.bgResizeProcess(0);
+      }, 200);
+    } else {
+      this.$info_content.fadeTo(0, 1).hide();
+      setTimeout(function () {
+        self.$menu_infobox.addClass('active');
+        self.$info_content.animate({width: 'toggle'}, 600, function () {
+          $('.inner_container, .close_btn', self.$info_content).fadeTo(200, 1);
+          self.$menu_infobox_open = true;
+        });
+
+        self.bgResizeProcess(0);
+      }, 200);
+    }
 
     //// event handlers
 
@@ -265,6 +280,8 @@
 
   Application.prototype.bgResizeProcess = function (e) {
     var self = APP;
+
+    if (self.BG_IMAGE_ID <= 0) return;
     clearTimeout(self.BG_RESIZE_CHECK_TIMER);
 
     var d_time = (typeof e === 'number') ? e : self.BG_RESIZE_CHECK_TIME;
@@ -283,6 +300,10 @@
   //////////////////
 
   function Soundscape() {
+    if (APP.SOUND_URL['mp3'] == false && APP.SOUND_URL['ogg'] == false) {
+      $('#main_menu li.timeline, #timeline').remove();
+      return;
+    }
     this.init();
   }
 
@@ -480,6 +501,7 @@
 
   Soundscape.prototype.resizeProcess = function () {
     var self = SC;
+    if (self.$horizontal_bar == null) return;
     self.timeline_width = self.$horizontal_bar.width();
   };
 

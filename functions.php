@@ -10,7 +10,7 @@ if (!function_exists('p43d_records_setup')) {
   define('P43D_RECORDS_BASE_URL', esc_url(get_template_directory_uri()));
   define('P43D_RECORDS_VERSION', '0.9.1');
   define('P43D_RECORDS_WEBSITE', 'https://records.43d.jp/'); // for the credit and link
-  define('P43D_RECORDS_LIST_NUM', 5);
+  define('P43D_RECORDS_LIST_NUM', intval(get_option('posts_per_page')));
 
   if (!isset($content_width)) {
     $content_width = 640;
@@ -23,6 +23,15 @@ if (!function_exists('p43d_records_setup')) {
     add_theme_support('automatic-feed-links');
     add_theme_support('html5');
     add_theme_support('title-tag');
+
+    $custom_background_defaults = array(
+      'default-color' => 'cccccc',
+      'default-repeat'     => 'no-repeat',
+      'default-position-x' => 'center',
+      'default-attachment' => 'fixed',
+      'default-image' => esc_url(get_template_directory_uri()) . '/img/default_logo.png',
+    );
+    add_theme_support('custom-background', $custom_background_defaults);
   }
 
   add_action('after_setup_theme', 'p43d_records_setup');
@@ -41,6 +50,7 @@ if (!function_exists('p43d_records_setup')) {
     global $p43d_records_recorded_sound_url_mp3,
            $p43d_records_recorded_sound_url_ogg,
            $p43d_records_total_length,
+           $p43d_records_cover_image_id,
            $p43d_records_cover_image_src_1440,
            $p43d_records_cover_image_src_2560,
            $p43d_records_cover_image_src_3200,
@@ -53,6 +63,7 @@ if (!function_exists('p43d_records_setup')) {
       'recorded_sound_url_mp3' => $p43d_records_recorded_sound_url_mp3,
       'recorded_sound_url_ogg' => $p43d_records_recorded_sound_url_ogg,
       'total_length' => $p43d_records_total_length,
+      'cover_image_id' => $p43d_records_cover_image_id,
       'cover_image_src_1440' => $p43d_records_cover_image_src_1440[0],
       'cover_image_src_2560' => $p43d_records_cover_image_src_2560[0],
       'cover_image_src_3200' => $p43d_records_cover_image_src_3200[0],
@@ -60,12 +71,14 @@ if (!function_exists('p43d_records_setup')) {
       'cover_image_src_5120' => $p43d_records_cover_image_src_5120[0],
       'category_name' => $category_name,
       'tag' => $tag,
-      'ajaxurl' => admin_url('admin-ajax.php')
+      'ajaxurl' => admin_url('admin-ajax.php'),
+      'is_archive' => is_archive() ? 'true' : 'false'
     );
     wp_localize_script('43d-records-script-index', 'php_vars', $php_vars);
   }
 
   add_action('wp_enqueue_scripts', 'p43d_records_scripts');
+
 
   function p43d_records_add_custom_image_sizes()
   {
@@ -377,10 +390,10 @@ if (!function_exists('p43d_records_setup')) {
         $p43d_records_rec = $p43d_records_tmp[$i];
         setup_postdata($p43d_records_rec);
 
-        $html .= '<li><span class="label">Posted On</span><span class="subinfo">'
+        $html .= '<li><span class="label">' . __('Posted On', '43d-records') . '</span><span class="subinfo">'
           . date('F j, Y H:i', strtotime($p43d_records_rec->post_date))
           . '</span><span class="title"><a href="' . esc_url(get_permalink($p43d_records_rec->ID)) . '">'
-          . htmlspecialchars($p43d_records_rec->post_title) . '</a></span></li>';
+          . esc_html($p43d_records_rec->post_title) . '</a></span></li>';
       }
     }
 

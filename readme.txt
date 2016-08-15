@@ -1,4 +1,11 @@
+
 43d records is a WordPress theme for publishing sounds and photographs for field recordings.
+
+== Description ==
+
+If you click the nav menu "M", the menu panel is shown. The lists of posts, static pages, categories, and tags are shown in the menu panel. If the accessed URL is for an archive page, the menu panel is open when the web page is loaded.
+If you click the nav menu "I", the information panel is shown. The contents of posts are shown in the information panel. If the accessed URL is for a post or a static page, the information panel is open when the web page is loaded.
+If you click the nav menu "T", the timeline of the published sound is shown. This menu "T" appears only if the content includes any sound files.
 
 == Copyright ==
 

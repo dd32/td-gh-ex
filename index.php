@@ -104,44 +104,30 @@ while (have_posts()) :
   ?>
 
   <ul id="main_menu">
-    <li class="menulist" title="Menu"><img src="<?php echo P43D_RECORDS_BASE_URL; ?>/img/icon_M.svg"
+    <li class="menulist" title="Menu"><img src="<?php echo esc_url(P43D_RECORDS_BASE_URL); ?>/img/icon_M.svg"
                                            alt="blog menu"/></li>
-    <li class="infobox" title="Information"><img src="<?php echo P43D_RECORDS_BASE_URL; ?>/img/icon_I.svg" alt="info"/>
+    <li class="infobox" title="Information"><img src="<?php echo esc_url(P43D_RECORDS_BASE_URL); ?>/img/icon_I.svg"
+                                                 alt="info"/>
     </li>
-    <li class="timeline" title=""><img src="<?php echo P43D_RECORDS_BASE_URL; ?>/img/icon_T.svg"
+    <li class="timeline" title=""><img src="<?php echo esc_url(P43D_RECORDS_BASE_URL); ?>/img/icon_T.svg"
                                        alt="timeline"/>
     </li>
   </ul>
 
-  <ul id="social">
-    <li><a href="https://www.facebook.com/sharer.php?u=<?php echo $p43d_records_esc_permalink; ?>" target="_blank"><img
-          src="<?php echo P43D_RECORDS_BASE_URL; ?>/img/icon_social_fb.svg" alt="facebook"/></a></li>
-    <li><a href="https://plus.google.com/share?url=<?php echo $p43d_records_esc_permalink; ?>" target="_blank"><img
-          src="<?php echo P43D_RECORDS_BASE_URL; ?>/img/icon_social_gp.svg" alt="google plus"/></a></li>
-    <li><a
-        href="https://www.tumblr.com/share/link?url=<?php echo $p43d_records_esc_permalink; ?>&amp;title=<?php echo esc_url(get_the_title()); ?>"
-        target="_blank"><img src="<?php echo P43D_RECORDS_BASE_URL; ?>/img/icon_social_tm.svg"
-                             alt="tumblr"/></a></li>
-    <li><a
-        href="https://twitter.com/share?url=<?php echo $p43d_records_esc_permalink; ?>&amp;text=<?php echo esc_url(get_the_title()); ?>"
-        target="_blank"><img src="<?php echo P43D_RECORDS_BASE_URL; ?>/img/icon_social_tw.svg"
-                             alt="twitter"/></a></li>
-  </ul>
-
   <ul id="ctrl_btns">
     <li class="play">
-      <img class="default" src="<?php echo P43D_RECORDS_BASE_URL; ?>/img/icon_play.svg"
+      <img class="default" src="<?php echo esc_url(P43D_RECORDS_BASE_URL); ?>/img/icon_play.svg"
            alt="play button"/>
       <img class="over"
-           src="<?php echo P43D_RECORDS_BASE_URL; ?>/img/icon_play_over.svg"
+           src="<?php echo esc_url(P43D_RECORDS_BASE_URL); ?>/img/icon_play_over.svg"
            alt="play button"/>
     </li>
     <li class="pause hidden">
       <img class="default"
-           src="<?php echo P43D_RECORDS_BASE_URL; ?>/img/icon_pause.svg"
+           src="<?php echo esc_url(P43D_RECORDS_BASE_URL); ?>/img/icon_pause.svg"
            alt="pause button"/>
       <img class="over"
-           src="<?php echo P43D_RECORDS_BASE_URL; ?>/img/icon_pause_over.svg"
+           src="<?php echo esc_url(P43D_RECORDS_BASE_URL); ?>/img/icon_pause_over.svg"
            alt="pause button"/>
     </li>
   </ul>
@@ -150,68 +136,76 @@ while (have_posts()) :
 
   <div id="info_content">
 
-    <p class="close_btn"><img src="<?php echo P43D_RECORDS_BASE_URL; ?>/img/icon_close.svg"
+    <p class="close_btn"><img src="<?php echo esc_url(P43D_RECORDS_BASE_URL); ?>/img/icon_close.svg"
                               alt="close button"/></p>
 
     <div class="outer_container">
       <div class="bg"></div>
 
       <div <?php post_class("inner_container"); ?>>
-        <h1><?php bloginfo('name'); ?></h1>
+        <h1><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
 
         <?php the_title('<h2 class="entry-title">', '</h2>'); ?>
 
         <p class="posted_on info"><span
-            class="label">Posted On</span><?php echo date('F j, Y H:i', strtotime($post->post_date)); ?></p>
+            class="label"><?php esc_html_e('Posted On', '43d-records'); ?></span><?php echo date('F j, Y H:i', strtotime($post->post_date)); ?>
+        </p>
         <?php if (strlen($p43d_records_rec_date) > 0) : ?>
           <p class="recorded_on info"><span
-              class="label">Recorded On</span><?php echo $p43d_records_rec_date . ' ' . $p43d_records_rec_time; ?>
+              class="label"><?php esc_html_e('Recorded On', '43d-records'); ?></span><?php echo esc_html($p43d_records_rec_date . ' ' . $p43d_records_rec_time); ?>
           </p>
         <?php endif; ?>
 
         <?php if (strlen($p43d_records_latitude) > 0 && strlen($p43d_records_longitude) > 0) :
           $geo_str = p43d_records_geo_stringify($p43d_records_latitude, $p43d_records_longitude);
           ?>
-          <p class="geo info"><span class="label">Where</span><?php echo $geo_str; ?> <a
+          <p class="geo info"><span
+              class="label"><?php esc_html_e('Location', '43d-records'); ?></span><?php echo esc_html($geo_str); ?>
+            <a
               href="https://maps.google.com/maps?z=12&amp;t=e&amp;ll=<?php echo $p43d_records_latitude . ',' . $p43d_records_longitude; ?>&amp;q=<?php echo $p43d_records_latitude . ',' . $p43d_records_longitude; ?>"
               target="_blank" class="icon_link"><img class="geo_icon"
-                                                     src="<?php echo P43D_RECORDS_BASE_URL; ?>/img/icon_geo.svg"
+                                                     src="<?php echo esc_url(P43D_RECORDS_BASE_URL); ?>/img/icon_geo.svg"
                                                      alt="Google Maps"/></a></p>
         <?php endif; ?>
 
         <?php if ($p43d_records_spec_mp3 !== false) : ?>
           <dl class="specs mp3 hidden">
-            <dt>SPECS</dt>
+            <dt><?php esc_html_e('SPECS', '43d-records'); ?></dt>
             <dd>
               <ul><?php foreach ($p43d_records_spec_mp3 as $spec): ?>
-                  <li><?php echo $spec; ?></li><?php endforeach; ?></ul>
+                  <li><?php echo esc_html($spec); ?></li><?php endforeach; ?></ul>
             </dd>
           </dl>
         <?php endif; ?>
         <?php if ($p43d_records_spec_ogg !== false) : ?>
           <dl class="specs ogg hidden">
-            <dt>SPECS</dt>
+            <dt><?php esc_html_e('SPECS', '43d-records'); ?></dt>
             <dd>
               <ul><?php foreach ($p43d_records_spec_ogg as $spec): ?>
-                  <li><?php echo $spec; ?></li><?php endforeach; ?></ul>
+                  <li><?php echo esc_html($spec); ?></li><?php endforeach; ?></ul>
             </dd>
           </dl>
         <?php endif; ?>
 
         <?php if (strlen($p43d_records_equips) > 0) : ?>
-          <p class="equipments info"><span class="label">Equipments</span><?php echo $p43d_records_equips; ?></p>
+          <p class="equipments info"><span
+              class="label"><?php esc_html_e('Equipments', '43d-records'); ?></span><?php echo esc_html($p43d_records_equips); ?>
+          </p>
           <?php
         endif;
 
         $p43d_records_categ = get_the_category_list(', ', 'multiple', $post->ID);
         if (strlen($p43d_records_categ) > 0) : ?>
-          <p class="tags info"><span class="label">Categories</span><?php echo $p43d_records_categ; ?></p>
+          <p class="tags info"><span
+              class="label"><?php esc_html_e('Categories', '43d-records'); ?></span><?php echo wp_kses_post($p43d_records_categ); ?>
+          </p>
           <?php
         endif;
 
         $p43d_records_tags = wp_get_post_tags($post->ID);
         if (count($p43d_records_tags) > 0) : ?>
-          <p class="tags info"><span class="label">Tags</span><?php the_tags(''); ?></p>
+          <p class="tags info"><span
+              class="label"><?php esc_html_e('Tags', '43d-records'); ?></span><?php the_tags(''); ?></p>
           <?php
         endif;
         ?>
@@ -251,14 +245,14 @@ while (have_posts()) :
   <?php break; endwhile; ?>
 
   <div id="menulist">
-    <p class="close_btn"><img src="<?php echo P43D_RECORDS_BASE_URL; ?>/img/icon_close.svg"
+    <p class="close_btn"><img src="<?php echo esc_url(P43D_RECORDS_BASE_URL); ?>/img/icon_close.svg"
                               alt="close button"/></p>
 
     <div class="outer_container">
       <div class="bg"></div>
 
       <div class="inner_container">
-        <h1><?php bloginfo('name'); ?></h1>
+        <h1><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
         <?php
         $p43d_records_desc = get_bloginfo('description', 'display');
         if (strlen($p43d_records_desc) > 0) :
@@ -266,7 +260,7 @@ while (have_posts()) :
           <p class="description"><?php echo $p43d_records_desc; ?></p>
         <?php endif; ?>
 
-        <h3>records list<?php
+        <h3><?php esc_html_e('Recordings List', '43d-records'); ?><?php
           if (is_archive()) {
             echo ' (';
             the_archive_title();
@@ -288,31 +282,36 @@ while (have_posts()) :
         <p id="posts_list_navi" class="clearfix<?php if ($last_page == 0) {
           echo ' hidden';
         } ?>" data-page="<?php echo $page; ?>" data-last="<?php echo $last_page ?>">
-          <a href="<?php echo admin_url('admin-ajax.php'); ?>?page=<?php if ($prev_page >= 0) {
+          <a href="<?php echo esc_url(admin_url('admin-ajax.php')); ?>?page=<?php if ($prev_page >= 0) {
             echo $prev_page;
           } ?>" class="recent<?php if ($page <= 0) {
             echo ' hidden';
           } ?>"><?php printf(__("&laquo; recent %d records", '43d-records'), $per_page); ?></a>
-          <a href="<?php echo admin_url('admin-ajax.php'); ?>?page=<?php if ($next_page <= $last_page) {
+          <a href="<?php echo esc_url(admin_url('admin-ajax.php')); ?>?page=<?php if ($next_page <= $last_page) {
             echo $next_page;
           } ?>" class="past<?php if ($page >= $last_page) {
             echo ' hidden';
           } ?>"><?php printf(__("past %d records &raquo;", '43d-records'), $per_page); ?></a>
           <?php paginate_links(); ?>
         </p>
+
+        <ul id="static_pages">
+          <?php wp_list_pages('title_li=<h3>' . __('Static Pages', '43d-records') . '</h3>'); ?>
+        </ul>
+
         <?php
         $p43d_records_categories = get_categories();
         if (count($p43d_records_categories) > 0) : ?>
 
-          <h3 class="post_categories">categories</h3>
+          <h3 class="post_categories"><?php esc_html_e('categories', '43d-records'); ?></h3>
           <p class="post_categories">
             <?php
             $p43d_records_categories_html = array();
             foreach ($p43d_records_categories as $p43d_records_category) {
               $p43d_records_category_link = get_category_link($p43d_records_category->term_id);
 
-              $p43d_records_categories_html[] = '<a href="' . $p43d_records_category_link . '" title="' . $p43d_records_category->name
-                . '" class="' . $p43d_records_category->slug . '">' . $p43d_records_category->name . '</a>';
+              $p43d_records_categories_html[] = '<a href="' . esc_url($p43d_records_category_link) . '" title="' . esc_attr($p43d_records_category->name)
+                . '" class="' . esc_attr($p43d_records_category->slug) . '">' . esc_html($p43d_records_category->name) . '</a>';
             }
             echo implode(', ', $p43d_records_categories_html);
             ?>
@@ -323,15 +322,15 @@ while (have_posts()) :
         $p43d_records_tags = get_tags();
         if (count($p43d_records_tags) > 0) : ?>
 
-          <h3 class="post_tags">tags</h3>
+          <h3 class="post_tags"><?php esc_html_e('tags', '43d-records'); ?></h3>
           <p class="post_tags">
             <?php
             $p43d_records_tags_html = array();
             foreach ($p43d_records_tags as $p43d_records_tag) {
               $p43d_records_tag_link = get_tag_link($p43d_records_tag->term_id);
 
-              $p43d_records_tags_html[] = '<a href="' . $p43d_records_tag_link . '" title="' . $p43d_records_tag->name
-                . '" class="' . $p43d_records_tag->slug . '">' . $p43d_records_tag->name . '</a>';
+              $p43d_records_tags_html[] = '<a href="' . esc_url($p43d_records_tag_link) . '" title="' . esc_attr($p43d_records_tag->name)
+                . '" class="' . esc_attr($p43d_records_tag->slug) . '">' . esc_html($p43d_records_tag->name) . '</a>';
             }
             echo implode(', ', $p43d_records_tags_html);
             ?>
@@ -347,9 +346,9 @@ while (have_posts()) :
 
   <div id="timeline">
     <ul class="buttons">
-      <li class="back10s"><img src="<?php echo P43D_RECORDS_BASE_URL; ?>/img/icon_back10s.svg"
+      <li class="back10s"><img src="<?php echo esc_url(P43D_RECORDS_BASE_URL); ?>/img/icon_back10s.svg"
                                alt="10s back button"/></li>
-      <li class="rewind"><img src="<?php echo P43D_RECORDS_BASE_URL; ?>/img/icon_rewind.svg"
+      <li class="rewind"><img src="<?php echo esc_url(P43D_RECORDS_BASE_URL); ?>/img/icon_rewind.svg"
                               alt="rewind button"/></li>
     </ul>
     <div class="if">
@@ -358,7 +357,7 @@ while (have_posts()) :
       <div class="horizontal_bar"></div>
       <p class="current_time">0:00</p>
 
-      <p class="total_time"><?php echo $p43d_records_total_length_formatted; ?></p>
+      <p class="total_time"><?php echo esc_html($p43d_records_total_length_formatted); ?></p>
     </div>
     <div class="bg"></div>
   </div>

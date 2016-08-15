@@ -2,15 +2,23 @@
 # This file is distributed under the MIT License.
 msgid ""
 msgstr ""
-"Project-Id-Version: 43d records 0.9\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/43d-records\n"
-"POT-Creation-Date: 2016-07-18 15:42:30+00:00\n"
+"Project-Id-Version: 43d records 0.9.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/43d-records_dev\n"
+"POT-Creation-Date: 2016-08-15 05:28:52+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: 404.php:10
+msgid "That page can not be found."
+msgstr ""
+
+#: 404.php:14
+msgid "It looks like nothing was found at this location."
+msgstr ""
 
 #: admin_inc/post.php:14
 msgid "Recorded Sound"
@@ -52,11 +60,11 @@ msgstr ""
 msgid "Time (Hours:Minutes)"
 msgstr ""
 
-#: admin_inc/post.php:80
+#: admin_inc/post.php:80 index.php:192
 msgid "Equipments"
 msgstr ""
 
-#: admin_inc/post.php:89
+#: admin_inc/post.php:89 index.php:163
 msgid "Location"
 msgstr ""
 
@@ -91,32 +99,68 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: functions.php:180
+#: functions.php:193
 msgid "43d Records Editor"
 msgstr ""
 
-#: index.php:226
+#: functions.php:393 index.php:151
+msgid "Posted On"
+msgstr ""
+
+#: index.php:155
+msgid "Recorded On"
+msgstr ""
+
+#: index.php:173 index.php:182
+msgid "SPECS"
+msgstr ""
+
+#: index.php:200
+msgid "Categories"
+msgstr ""
+
+#: index.php:208
+msgid "Tags"
+msgstr ""
+
+#: index.php:220
 msgid "Pages:"
 msgstr ""
 
-#: index.php:230
+#: index.php:224
 msgid "Page"
 msgstr ""
 
-#: index.php:237
+#: index.php:231
 msgid "<span>&laquo; Previous Entry</span> &ldquo;%title&rdquo;"
 msgstr ""
 
-#: index.php:238
+#: index.php:232
 msgid "<span>&raquo; Next Entry</span> &ldquo;%title&rdquo;"
 msgstr ""
 
-#: index.php:295
+#: index.php:263
+msgid "Recordings List"
+msgstr ""
+
+#: index.php:289
 msgid "&laquo; recent %d records"
 msgstr ""
 
-#: index.php:300
+#: index.php:294
 msgid "past %d records &raquo;"
+msgstr ""
+
+#: index.php:299
+msgid "Static Pages"
+msgstr ""
+
+#: index.php:306
+msgid "categories"
+msgstr ""
+
+#: index.php:325
+msgid "tags"
 msgstr ""
 
 #. Theme Name of the plugin/theme
