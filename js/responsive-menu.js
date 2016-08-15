@@ -1,60 +1,71 @@
 /**
- * Responsive Menu Javascript
+ * Responsive Menu JavaScript
  *
  * Handles toggling the navigation menu for small screens.
  */
 ( function() {
-	var container, button, menu;
+    var container, button, menu;
 
-	container = document.getElementById( 'site-navigation' );
-	if ( ! container ) {
-		return;
-	}
+    container = document.getElementById( 'site-navigation' );
+    if ( ! container ) {
+        return;
+    }
 
-	button = container.getElementsByTagName( 'button' )[0];
-	if ( 'undefined' === typeof button ) {
-		return;
-	}
+    button = container.getElementsByTagName( 'button' )[0];
+    if ( 'undefined' === typeof button ) {
+        return;
+    }
 
-	menu = container.getElementsByTagName( 'ul' )[0];
+    menu = container.getElementsByTagName( 'ul' )[0];
 
-	// Hide menu toggle button if menu is empty and return early.
-	if ( 'undefined' === typeof menu ) {
-		button.style.display = 'none';
-		return;
-	}
+    // Hide menu toggle button if menu is empty and return early.
+    if ( 'undefined' === typeof menu ) {
+        button.style.display = 'none';
+        return;
+    }
 
-	menu.setAttribute( 'aria-expanded', 'false' );
+    menu.setAttribute( 'aria-expanded', 'false' );
 
-	if ( -1 === menu.className.indexOf( 'nav-menu' ) ) {
-		menu.className += ' nav-menu';
-	}
+    if ( -1 === menu.className.indexOf( 'nav-menu' ) ) {
+        menu.className += ' nav-menu';
+    }
 
-	button.onclick = function() {
-		if ( -1 !== container.className.indexOf( 'toggled' ) ) {
-			container.className = container.className.replace( ' toggled', '' );
-			button.setAttribute( 'aria-expanded', 'false' );
-			menu.setAttribute( 'aria-expanded', 'false' );
-		} else {
-			container.className += ' toggled';
-			button.setAttribute( 'aria-expanded', 'true' );
-			menu.setAttribute( 'aria-expanded', 'true' );
-		}
-	};
+    button.onclick = function() {
+        if ( -1 !== container.className.indexOf( 'toggled' ) ) {
+            container.className = container.className.replace( ' toggled', '' );
+            button.setAttribute( 'aria-expanded', 'false' );
+            menu.setAttribute( 'aria-expanded', 'false' );
+        } else {
+            container.className += ' toggled';
+            button.setAttribute( 'aria-expanded', 'true' );
+            menu.setAttribute( 'aria-expanded', 'true' );
+        }
+    };  
 } )();
 
 ( function( $ ) {
 
-  $(window).resize(function(){
+    $( document ).ready( function() {
+        $( '.menu-item[class*=children]' ).append( '<span></span>' ).click( function( e ) {
+            $( this ).toggleClass( "up" );
+            return false;
+        });
+
+        $( '.menu-item > a' ).click(function() {
+            event.stopPropagation();
+        } );  
+    } );  
+
+  $( window ).resize( function() {
 
     windowWidth = $(window).width();
     navigation  = $('#masthead, #site-navigation');
     isToggled   = navigation.hasClass( 'toggled' );
 
-    if ( windowWidth > 768 && isToggled ) {
+    if ( windowWidth > puro_resp_menu_params.collapse && isToggled ) {
       navigation.removeClass('toggled');
     }
 
-  });
+  } );
 
 } )( jQuery );

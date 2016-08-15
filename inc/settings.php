@@ -25,7 +25,7 @@ function puro_theme_settings(){
 	$settings->add_section( 'social', __('Social', 'puro' ) );	
 	$settings->add_section( 'footer', __('Footer', 'puro' ) );
 
-	// Header
+	// Header.
 	$settings->add_field('header', 'image', 'media', __('Logo Image', 'puro'), array(
 		'choose' => __('Choose Image', 'puro'),
 		'update' => __('Set Logo', 'puro'),
@@ -46,7 +46,7 @@ function puro_theme_settings(){
 		'description' => __('Display the website tagline.', 'puro')
 	) );	
 
-	// Navigation
+	// Navigation.
 	$settings->add_field( 'navigation', 'post_nav', 'checkbox', __('Post Navigation', 'puro'), array(
 		'description' => __('Display next/previous post navigation.', 'puro')
 	) );		
@@ -55,11 +55,15 @@ function puro_theme_settings(){
 		'description' => __('Display the header menu.', 'puro')
 	));	
 
-	$settings->add_field('navigation', 'responsive_menu', 'checkbox', __('Responsive Menu', 'puro'), array(
+	$settings->add_field('navigation', 'responsive_menu', 'checkbox', __('Mobile Menu', 'puro'), array(
 		'description' => __('Use a special responsive menu for small screen devices.', 'puro'),
 	));
 
-	// Layout
+	$settings->add_field('navigation', 'responsive_menu_collapse', 'number', __('Mobile Menu Collapse', 'puro'), array(
+		'description' => __('The pixel resolution when the primary menu changes to a mobile menu.', 'puro')
+	) );	
+
+	// Layout.
 	$settings->add_field( 'layout', 'responsive', 'checkbox', __('Responsive Layout', 'puro'), array(
 		'description' => __('Adapt the site layout for mobile devices.', 'puro')
 	) );	
@@ -68,7 +72,7 @@ function puro_theme_settings(){
 		'description' => __('Include FitVids.js for fluid width video embeds.', 'puro')
 	));			
 
-	// Home
+	// Home.
 	$settings->add_field('home', 'slider', 'select', __('Home Page Slider', 'puro'), array(
 		'options' => siteorigin_metaslider_get_options(true),
 		'description' => sprintf(
@@ -79,13 +83,13 @@ function puro_theme_settings(){
 		)
 	));
 
-	// Pages
+	// Pages.
 	$settings->add_field('pages', 'page_featured_image', 'checkbox', __('Page Featured Image', 'puro'), array(
 		'description' => __('Display the featured image on pages.', 'puro')
 	) );		
 
 
-	// Blog
+	// Blog.
 	$settings->add_field('blog', 'archive_layout', 'select', __('Blog Archive Layout', 'puro'), array(
 		'options' => puro_blog_layout_options(),
 		'description' => __('Choose the layout to be used on blog and archive pages.', 'puro')
@@ -143,7 +147,7 @@ function puro_theme_settings(){
 		'description' => __( 'Display an Edit link below post content. Visible if a user is logged in and allowed to edit the content. Also applies to Pages.', 'puro' )
 	) );	
 
-	// Comments
+	// Comments.
 	$settings->add_field('comments', 'comment_form_tags', 'checkbox', __('Comment Form Allowed Tags', 'puro'), array(
 		'description' => __('Display the explanatory text below the comment form that lets users know which HTML tags may be used.', 'puro')
 	) );				
@@ -152,12 +156,12 @@ function puro_theme_settings(){
 		'description' => __('Allow users to submit comments without a page re-load on submit.', 'puro'),
 	));	 		
 
-	// Social 
-	$settings->add_teaser('social', 'share_post', 'checkbox', __('Post Sharing', 'puro'), array(
+	// Social.
+	$settings->add_teaser('social', 'share_post', 'checkbox', __('Post and Page Sharing', 'puro'), array(
 		'description' => __('Show icons to share your posts on Facebook, Twitter, Google+ and LinkedIn.', 'puro'),
 	));
 
-	// Footer
+	// Footer.
 	$settings->add_field( 'footer', 'copyright_text', 'text', __( 'Footer Copyright Text', 'puro' ), array(
 		'description' => __( '{site-title}, {copyright} and {year} can be used to display your website title, a copyright symbol and the current year.', 'puro' ),
 		'sanitize_callback' => 'wp_kses_post',
@@ -190,6 +194,7 @@ function puro_theme_setting_defaults($defaults){
 	$defaults['navigation_post_nav'] = true;
 	$defaults['navigation_header_menu'] = true;
 	$defaults['navigation_responsive_menu'] = true;
+	$defaults['navigation_responsive_menu_collapse'] = 768;
 
 	$defaults['layout_responsive'] = true;
 	$defaults['layout_fitvids'] = true;
@@ -216,6 +221,7 @@ function puro_theme_setting_defaults($defaults){
 	$defaults['comments_ajax_comments'] = true;	
 
 	$defaults['social_share_post'] = true;
+	$defaults['social_share_page'] = false;
 	$defaults['social_twitter'] = '';
 
 	$defaults['footer_copyright_text'] = __('Copyright {year}', 'puro');

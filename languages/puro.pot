@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Puro\n"
-"POT-Creation-Date: 2016-06-29 11:15+0200\n"
+"POT-Creation-Date: 2016-08-05 13:02+0200\n"
 "PO-Revision-Date: 2015-06-10 19:10+0200\n"
 "Last-Translator: Puro <support@purothemes.com>\n"
 "Language-Team: \n"
@@ -88,7 +88,7 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: ../content-page.php:33 ../content-search.php:24 ../content-single.php:38
+#: ../content-page.php:34 ../content-search.php:24 ../content-single.php:38
 #: ../content-video.php:53 ../content.php:48 ../loops/loop-medium-left.php:61
 #: ../loops/loop-thumbnail-left.php:61
 #: ../page-templates/full-width-no-title.php:35
@@ -97,294 +97,57 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: ../extras/premium/premium.php:12 ../extras/premium/premium.php:179
-#: ../extras/premium/premium.php:279 ../extras/premium/tpl/upgrade-page.php:16
-#: ../extras/premium/tpl/upgrade-page.php:123 ../extras/update/update.php:52
-msgid "Premium"
-msgstr ""
-
-#: ../extras/premium/premium.php:64
-#, php-format
-msgid "Your Order Number is [%s]"
-msgstr ""
-
-#: ../extras/premium/premium.php:68
-msgid "There was a problem contacting our validation servers."
-msgstr ""
-
-#: ../extras/premium/premium.php:69 ../extras/premium/premium.php:95
-msgid ""
-"Please try again later, or upgrade manually using the ZIP file we sent you."
-msgstr ""
-
-#: ../extras/premium/premium.php:73
-msgid "We've validated your order number."
-msgstr ""
-
-#: ../extras/premium/premium.php:76
-#, php-format
-msgid "You can update now, or later on your <a href=\"%s\">Themes page</a>."
-msgstr ""
-
-#: ../extras/premium/premium.php:80
-msgid "This update will add all the premium features."
-msgstr ""
-
-#: ../extras/premium/premium.php:85
-msgid ""
-"Updating this theme will lose any code customizations (CSS, PHP, Javascript, "
-"etc) you have made to the free version. You will not lose your content, "
-"images or settings. 'Cancel' to stop, 'OK' to update."
-msgstr ""
-
-#: ../extras/premium/premium.php:88
-msgid "Update Theme"
-msgstr ""
-
-#: ../extras/premium/premium.php:93
-msgid "We couldn't validate your order number."
-msgstr ""
-
-#: ../extras/premium/premium.php:94
-msgid "There might be a problem with our validation server."
-msgstr ""
-
-#: ../extras/premium/premium.php:141
-msgid "Get Additional Templates"
-msgstr ""
-
-#: ../extras/premium/premium.php:143
-#, php-format
-msgid "%s Premium includes additional templates"
-msgstr ""
-
-#: ../extras/premium/premium.php:179
-#, php-format
-msgid ""
-"Only available in <strong>%s</strong> - <strong class=\"upgrade\">Upgrade "
-"Now</strong>"
-msgstr ""
-
-#: ../extras/premium/premium.php:268
-msgid "Get Additional Customizations"
-msgstr ""
-
-#: ../extras/premium/premium.php:283
-#, php-format
-msgid "A Copy of %s Premium"
-msgstr ""
-
-#: ../extras/premium/premium.php:284
-#, php-format
-msgid ""
-"You get a copy of %s, delivered instantly to your PayPal email address. This "
-"includes the same basic support we offer users of our free themes."
-msgstr ""
-
-#: ../extras/premium/premium.php:289
-msgid "Premium Support"
-msgstr ""
-
-#: ../extras/premium/premium.php:290
-msgid ""
-"This includes Premium email support from our support team for a single site. "
-"We'll help you as quickly as possible with all your setup and configuration "
-"questions."
-msgstr ""
-
-#: ../extras/premium/premium.php:295
-msgid "Advanced Premium Support"
-msgstr ""
-
-#: ../extras/premium/premium.php:296
-#, php-format
-msgid ""
-"We'll go the extra mile and help you with minor CSS customizations, plugin "
-"conflicts and anything else that falls outside standard %s support."
-msgstr ""
-
-#: ../extras/premium/premium.php:301
-msgid "A Special Thank You"
-msgstr ""
-
-#: ../extras/premium/premium.php:302
-#, php-format
-msgid ""
-"Our highest level of support. If you need it, you'll get support directly "
-"from the developer of %s. We'll also include your name on our contributors "
-"list."
-msgstr ""
-
-#: ../extras/premium/tpl/upgrade-page.php:15
-#, php-format
-msgid ""
-"After you pay for %s, we'll email you an order number to your <strong>PayPal "
-"email address</strong>. "
-msgstr ""
-
-#: ../extras/premium/tpl/upgrade-page.php:19
-#, php-format
-msgid ""
-"Use <a href='%s' target='_blank'>this form</a> if you don't receive your "
-"order number in the next 15 minutes. "
-msgstr ""
-
-#: ../extras/premium/tpl/upgrade-page.php:22
-msgid "To be sure, check your spam folder."
-msgstr ""
-
-#: ../extras/premium/tpl/upgrade-page.php:26 ../extras/update/update.php:53
-msgid "Order Number"
-msgstr ""
-
-#: ../extras/premium/tpl/upgrade-page.php:28
-msgid "Enable Upgrade"
-msgstr ""
-
-#: ../extras/premium/tpl/upgrade-page.php:32
-msgid "Already Paid?"
-msgstr ""
-
-#: ../extras/premium/tpl/upgrade-page.php:37
-msgid "Premium Upgrade"
-msgstr ""
-
-#: ../extras/premium/tpl/upgrade-page.php:41
-msgid ""
-"The premium version of this theme is no longer available. If you need any "
-"help, please contact <a href='mailto:support@purothemes.com'>Puro support</"
-"a>."
-msgstr ""
-
-#: ../extras/premium/tpl/upgrade-page.php:81
-msgid "Buy Now"
-msgstr ""
-
-#: ../extras/premium/tpl/upgrade-page.php:87
-msgid ""
-"Although we appreciate and support all our users, we only offer prioritized "
-"support for orders of <strong>$15</strong> or more."
-msgstr ""
-
-#: ../extras/premium/tpl/upgrade-page.php:91
-#, php-format
-msgid "You choose the price, so you can pay what %s is worth to you."
-msgstr ""
-
-#: ../extras/premium/tpl/upgrade-page.php:95
-msgid "Building your site on a budget"
-msgstr ""
-
-#: ../extras/premium/tpl/upgrade-page.php:96
-msgid "A fair price for a powerful theme"
-msgstr ""
-
-#: ../extras/premium/tpl/upgrade-page.php:97
-msgid "Our sincere thanks"
-msgstr ""
-
-#: ../extras/premium/tpl/upgrade-page.php:98
-msgid "We'll go that extra mile for you"
-msgstr ""
-
-#: ../extras/premium/tpl/upgrade-page.php:99
-msgid "A huge contribution to its development"
-msgstr ""
-
-#: ../extras/premium/tpl/upgrade-page.php:100
-msgid "Custom"
-msgstr ""
-
-#: ../extras/premium/tpl/upgrade-page.php:103
-msgid "Please enable Javascript to change pricing"
-msgstr ""
-
-#: ../extras/premium/tpl/upgrade-page.php:107
-#, php-format
-msgid ""
-"Happy customers are our first priority. In the event, however, that you "
-"decide %s isn't quite right for you, we want to make things right. Within 60 "
-"days of purchase, we'll refund the full price you paid upon request."
-msgstr ""
-
-#: ../extras/premium/tpl/upgrade-page.php:118
-msgid "Download"
-msgstr ""
-
-#: ../extras/premium/tpl/upgrade-page.php:123
-#, php-format
-msgid "Sign up to our newsletter and download %s for free."
-msgstr ""
-
-#: ../extras/premium/tpl/upgrade-page.php:132
-#, php-format
-msgid "Your contribution will help fund new features in %s."
-msgstr ""
-
-#: ../extras/premium/tpl/upgrade-page.php:133
-#, php-format
-msgid "Find out more on our <a href=\"%s\" target=\"_blank\">roadmap</a>."
-msgstr ""
-
-#: ../extras/premium/tpl/upgrade-page.php:138
-msgid "Our User Feedback"
-msgstr ""
-
-#: ../extras/update/update.php:54
-msgid "Enter the order number we sent you by email"
-msgstr ""
-
 #: ../footer.php:32
 #, php-format
 msgid ""
 "<a href=\"%s\" title=\"A Free WordPress Theme by Puro\">Theme by Puro</a>"
 msgstr ""
 
-#: ../functions.php:91
+#: ../functions.php:94
 msgid "Primary Menu"
 msgstr ""
 
-#: ../functions.php:92
+#: ../functions.php:95
 msgid "Social Network Icon Menu"
 msgstr ""
 
-#: ../functions.php:140 ../premium/inc/customizer.php:32
+#: ../functions.php:139 ../premium/inc/customizer.php:32
 msgid "Sidebar"
 msgstr ""
 
-#: ../functions.php:149 ../inc/settings.php:26 ../premium/inc/customizer.php:37
+#: ../functions.php:148 ../inc/settings.php:26 ../premium/inc/customizer.php:37
 msgid "Footer"
 msgstr ""
 
-#: ../functions.php:215
+#: ../functions.php:218
 #, php-format
 msgid ""
 "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags "
 "and attributes: %s"
 msgstr ""
 
-#: ../header.php:35
+#: ../header.php:23
 msgid "Skip to content"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:436
+#: ../inc/customizer/customizer.php:431
 msgid "Theme Design"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:437
+#: ../inc/customizer/customizer.php:432
 #, php-format
 msgid "Theme Specific Customizations For %s."
 msgstr ""
 
-#: ../inc/customizer/customizer.php:620
+#: ../inc/customizer/customizer.php:615
 msgid "Are you sure you want to reset your theme customizations?"
 msgstr ""
 
-#: ../inc/customizer/customizer.php:621
+#: ../inc/customizer/customizer.php:616
 msgid "Reset Customizations"
 msgstr ""
 
-#: ../inc/extras.php:80
+#: ../inc/extras.php:83
 #, php-format
 msgid "Page %s"
 msgstr ""
@@ -423,6 +186,239 @@ msgstr ""
 #: ../inc/plugin-activation/plugin-activation.php:79
 #, php-format
 msgid "Installing %s"
+msgstr ""
+
+#: ../inc/premium/premium.php:12 ../inc/premium/premium.php:179
+#: ../inc/premium/premium.php:279 ../inc/premium/tpl/upgrade-page.php:16
+#: ../inc/premium/tpl/upgrade-page.php:123 ../inc/update/update.php:52
+msgid "Premium"
+msgstr ""
+
+#: ../inc/premium/premium.php:64
+#, php-format
+msgid "Your Order Number is [%s]"
+msgstr ""
+
+#: ../inc/premium/premium.php:68
+msgid "There was a problem contacting our validation servers."
+msgstr ""
+
+#: ../inc/premium/premium.php:69 ../inc/premium/premium.php:95
+msgid ""
+"Please try again later, or upgrade manually using the ZIP file we sent you."
+msgstr ""
+
+#: ../inc/premium/premium.php:73
+msgid "We've validated your order number."
+msgstr ""
+
+#: ../inc/premium/premium.php:76
+#, php-format
+msgid "You can update now, or later on your <a href=\"%s\">Themes page</a>."
+msgstr ""
+
+#: ../inc/premium/premium.php:80
+msgid "This update will add all the premium features."
+msgstr ""
+
+#: ../inc/premium/premium.php:85
+msgid ""
+"Updating this theme will lose any code customizations (CSS, PHP, Javascript, "
+"etc) you have made to the free version. You will not lose your content, "
+"images or settings. 'Cancel' to stop, 'OK' to update."
+msgstr ""
+
+#: ../inc/premium/premium.php:88
+msgid "Update Theme"
+msgstr ""
+
+#: ../inc/premium/premium.php:93
+msgid "We couldn't validate your order number."
+msgstr ""
+
+#: ../inc/premium/premium.php:94
+msgid "There might be a problem with our validation server."
+msgstr ""
+
+#: ../inc/premium/premium.php:141
+msgid "Get Additional Templates"
+msgstr ""
+
+#: ../inc/premium/premium.php:143
+#, php-format
+msgid "%s Premium includes additional templates"
+msgstr ""
+
+#: ../inc/premium/premium.php:179
+#, php-format
+msgid ""
+"Only available in <strong>%s</strong> - <strong class=\"upgrade\">Upgrade "
+"Now</strong>"
+msgstr ""
+
+#: ../inc/premium/premium.php:268
+msgid "Get Additional Customizations"
+msgstr ""
+
+#: ../inc/premium/premium.php:283
+#, php-format
+msgid "A Copy of %s Premium"
+msgstr ""
+
+#: ../inc/premium/premium.php:284
+#, php-format
+msgid ""
+"You get a copy of %s, delivered instantly to your PayPal email address. This "
+"includes the same basic support we offer users of our free themes."
+msgstr ""
+
+#: ../inc/premium/premium.php:289
+msgid "Premium Support"
+msgstr ""
+
+#: ../inc/premium/premium.php:290
+msgid ""
+"This includes Premium email support from our support team for a single site. "
+"We'll help you as quickly as possible with all your setup and configuration "
+"questions."
+msgstr ""
+
+#: ../inc/premium/premium.php:295
+msgid "Advanced Premium Support"
+msgstr ""
+
+#: ../inc/premium/premium.php:296
+#, php-format
+msgid ""
+"We'll go the extra mile and help you with minor CSS customizations, plugin "
+"conflicts and anything else that falls outside standard %s support."
+msgstr ""
+
+#: ../inc/premium/premium.php:301
+msgid "A Special Thank You"
+msgstr ""
+
+#: ../inc/premium/premium.php:302
+#, php-format
+msgid ""
+"Our highest level of support. If you need it, you'll get support directly "
+"from the developer of %s. We'll also include your name on our contributors "
+"list."
+msgstr ""
+
+#: ../inc/premium/tpl/upgrade-page.php:15
+#, php-format
+msgid ""
+"After you pay for %s, we'll email you an order number to your <strong>PayPal "
+"email address</strong>. "
+msgstr ""
+
+#: ../inc/premium/tpl/upgrade-page.php:19
+#, php-format
+msgid ""
+"Use <a href='%s' target='_blank'>this form</a> if you don't receive your "
+"order number in the next 15 minutes. "
+msgstr ""
+
+#: ../inc/premium/tpl/upgrade-page.php:22
+msgid "To be sure, check your spam folder."
+msgstr ""
+
+#: ../inc/premium/tpl/upgrade-page.php:26 ../inc/update/update.php:53
+msgid "Order Number"
+msgstr ""
+
+#: ../inc/premium/tpl/upgrade-page.php:28
+msgid "Enable Upgrade"
+msgstr ""
+
+#: ../inc/premium/tpl/upgrade-page.php:32
+msgid "Already Paid?"
+msgstr ""
+
+#: ../inc/premium/tpl/upgrade-page.php:37
+msgid "Premium Upgrade"
+msgstr ""
+
+#: ../inc/premium/tpl/upgrade-page.php:41
+msgid ""
+"The premium version of this theme is no longer available. If you need any "
+"help, please contact <a href='mailto:support@purothemes.com'>Puro support</"
+"a>."
+msgstr ""
+
+#: ../inc/premium/tpl/upgrade-page.php:81
+msgid "Buy Now"
+msgstr ""
+
+#: ../inc/premium/tpl/upgrade-page.php:87
+msgid ""
+"Although we appreciate and support all our users, we only offer prioritized "
+"support for orders of <strong>$15</strong> or more."
+msgstr ""
+
+#: ../inc/premium/tpl/upgrade-page.php:91
+#, php-format
+msgid "You choose the price, so you can pay what %s is worth to you."
+msgstr ""
+
+#: ../inc/premium/tpl/upgrade-page.php:95
+msgid "Building your site on a budget"
+msgstr ""
+
+#: ../inc/premium/tpl/upgrade-page.php:96
+msgid "A fair price for a powerful theme"
+msgstr ""
+
+#: ../inc/premium/tpl/upgrade-page.php:97
+msgid "Our sincere thanks"
+msgstr ""
+
+#: ../inc/premium/tpl/upgrade-page.php:98
+msgid "We'll go that extra mile for you"
+msgstr ""
+
+#: ../inc/premium/tpl/upgrade-page.php:99
+msgid "A huge contribution to its development"
+msgstr ""
+
+#: ../inc/premium/tpl/upgrade-page.php:100
+msgid "Custom"
+msgstr ""
+
+#: ../inc/premium/tpl/upgrade-page.php:103
+msgid "Please enable Javascript to change pricing"
+msgstr ""
+
+#: ../inc/premium/tpl/upgrade-page.php:107
+#, php-format
+msgid ""
+"Happy customers are our first priority. In the event, however, that you "
+"decide %s isn't quite right for you, we want to make things right. Within 60 "
+"days of purchase, we'll refund the full price you paid upon request."
+msgstr ""
+
+#: ../inc/premium/tpl/upgrade-page.php:118
+msgid "Download"
+msgstr ""
+
+#: ../inc/premium/tpl/upgrade-page.php:123
+#, php-format
+msgid "Sign up to our newsletter and download %s for free."
+msgstr ""
+
+#: ../inc/premium/tpl/upgrade-page.php:132
+#, php-format
+msgid "Your contribution will help fund new features in %s."
+msgstr ""
+
+#: ../inc/premium/tpl/upgrade-page.php:133
+#, php-format
+msgid "Find out more on our <a href=\"%s\" target=\"_blank\">roadmap</a>."
+msgstr ""
+
+#: ../inc/premium/tpl/upgrade-page.php:138
+msgid "Our User Feedback"
 msgstr ""
 
 #: ../inc/settings.php:18 ../premium/inc/customizer.php:17
@@ -517,34 +513,42 @@ msgid "Display the header menu."
 msgstr ""
 
 #: ../inc/settings.php:58
-msgid "Responsive Menu"
+msgid "Mobile Menu"
 msgstr ""
 
 #: ../inc/settings.php:59
 msgid "Use a special responsive menu for small screen devices."
 msgstr ""
 
-#: ../inc/settings.php:63
-msgid "Responsive Layout"
+#: ../inc/settings.php:62
+msgid "Mobile Menu Collapse"
 msgstr ""
 
-#: ../inc/settings.php:64
-msgid "Adapt the site layout for mobile devices."
+#: ../inc/settings.php:63
+msgid "The pixel resolution when the primary menu changes to a mobile menu."
 msgstr ""
 
 #: ../inc/settings.php:67
-msgid "Enable FitVids.js"
+msgid "Responsive Layout"
 msgstr ""
 
 #: ../inc/settings.php:68
-msgid "Include FitVids.js for fluid width video embeds."
+msgid "Adapt the site layout for mobile devices."
+msgstr ""
+
+#: ../inc/settings.php:71
+msgid "Enable FitVids.js"
 msgstr ""
 
 #: ../inc/settings.php:72
+msgid "Include FitVids.js for fluid width video embeds."
+msgstr ""
+
+#: ../inc/settings.php:76
 msgid "Home Page Slider"
 msgstr ""
 
-#: ../inc/settings.php:75
+#: ../inc/settings.php:79
 #, php-format
 msgid ""
 "This theme supports <a href=\"%s\" target=\"_blank\">Meta Slider</a>. <a "
@@ -552,198 +556,198 @@ msgid ""
 "sliders - <a href=\"%s\" target=\"_blank\">read more</a>."
 msgstr ""
 
-#: ../inc/settings.php:83
+#: ../inc/settings.php:87
 msgid "Page Featured Image"
 msgstr ""
 
-#: ../inc/settings.php:84
+#: ../inc/settings.php:88
 msgid "Display the featured image on pages."
 msgstr ""
 
-#: ../inc/settings.php:89
+#: ../inc/settings.php:93
 msgid "Blog Archive Layout"
 msgstr ""
 
-#: ../inc/settings.php:91
+#: ../inc/settings.php:95
 msgid "Choose the layout to be used on blog and archive pages."
 msgstr ""
 
-#: ../inc/settings.php:94
+#: ../inc/settings.php:98
 msgid "Archive Featured Image"
 msgstr ""
 
-#: ../inc/settings.php:95
+#: ../inc/settings.php:99
 msgid "Display the featured image on the blog archive pages."
 msgstr ""
 
-#: ../inc/settings.php:98
+#: ../inc/settings.php:102
 msgid "Archive Post Content"
 msgstr ""
 
-#: ../inc/settings.php:100
+#: ../inc/settings.php:104
 msgid "Full Post Content"
 msgstr ""
 
-#: ../inc/settings.php:101
+#: ../inc/settings.php:105
 msgid "Post Excerpt"
 msgstr ""
 
-#: ../inc/settings.php:103
+#: ../inc/settings.php:107
 msgid ""
 "Choose how to display your post content on blog and archive pages. Select "
 "Full Post Content if using the \"more\" quicktag."
 msgstr ""
 
-#: ../inc/settings.php:106
+#: ../inc/settings.php:110
 msgid "Read More Text"
 msgstr ""
 
-#: ../inc/settings.php:107
+#: ../inc/settings.php:111
 msgid ""
 "The link text displayed when posts are split using the \"more\" quicktag."
 msgstr ""
 
-#: ../inc/settings.php:110
+#: ../inc/settings.php:114
 msgid "Post Excerpt Length"
 msgstr ""
 
-#: ../inc/settings.php:111
+#: ../inc/settings.php:115
 msgid ""
 "If no manual post excerpt is added one will be generated. How many words "
 "should it be?"
 msgstr ""
 
-#: ../inc/settings.php:114
+#: ../inc/settings.php:118
 msgid "Post Excerpt Read More Link"
 msgstr ""
 
-#: ../inc/settings.php:115
+#: ../inc/settings.php:119
 msgid ""
 "Display the Read More Text below the post excerpt. Only applicable if Post "
 "Excerpt has been selected from the Archive Post Content setting."
 msgstr ""
 
-#: ../inc/settings.php:118
+#: ../inc/settings.php:122
 msgid "Post Featured Image"
 msgstr ""
 
-#: ../inc/settings.php:119
+#: ../inc/settings.php:123
 msgid "Display the featured image on the single post page."
 msgstr ""
 
-#: ../inc/settings.php:122
+#: ../inc/settings.php:126
 msgid "Post Date"
 msgstr ""
 
-#: ../inc/settings.php:123
+#: ../inc/settings.php:127
 msgid "Display the post date."
 msgstr ""
 
-#: ../inc/settings.php:126
+#: ../inc/settings.php:130
 msgid "Post Author"
 msgstr ""
 
-#: ../inc/settings.php:127
+#: ../inc/settings.php:131
 msgid "Display the post author."
 msgstr ""
 
-#: ../inc/settings.php:130
+#: ../inc/settings.php:134
 msgid "Post Categories"
 msgstr ""
 
-#: ../inc/settings.php:131
+#: ../inc/settings.php:135
 msgid "Display the post categories."
 msgstr ""
 
-#: ../inc/settings.php:134
+#: ../inc/settings.php:138
 msgid "Post Tags"
 msgstr ""
 
-#: ../inc/settings.php:135
+#: ../inc/settings.php:139
 msgid "Display the post tags."
 msgstr ""
 
-#: ../inc/settings.php:138
+#: ../inc/settings.php:142
 msgid "Post Comment Count"
 msgstr ""
 
-#: ../inc/settings.php:139
+#: ../inc/settings.php:143
 msgid "Display the post comment count."
 msgstr ""
 
-#: ../inc/settings.php:142
+#: ../inc/settings.php:146
 msgid "Post Edit Link"
 msgstr ""
 
-#: ../inc/settings.php:143
+#: ../inc/settings.php:147
 msgid ""
 "Display an Edit link below post content. Visible if a user is logged in and "
 "allowed to edit the content. Also applies to Pages."
 msgstr ""
 
-#: ../inc/settings.php:147
+#: ../inc/settings.php:151
 msgid "Comment Form Allowed Tags"
 msgstr ""
 
-#: ../inc/settings.php:148
+#: ../inc/settings.php:152
 msgid ""
 "Display the explanatory text below the comment form that lets users know "
 "which HTML tags may be used."
 msgstr ""
 
-#: ../inc/settings.php:151 ../premium/inc/settings.php:21
+#: ../inc/settings.php:155 ../premium/inc/settings.php:21
 #: ../upgrade/upgrade.php:34
 msgid "AJAX Comments"
 msgstr ""
 
-#: ../inc/settings.php:152 ../premium/inc/settings.php:22
+#: ../inc/settings.php:156 ../premium/inc/settings.php:22
 msgid "Allow users to submit comments without a page re-load on submit."
 msgstr ""
 
-#: ../inc/settings.php:156 ../premium/inc/settings.php:26
+#: ../inc/settings.php:160 ../premium/inc/settings.php:26
 #: ../upgrade/upgrade.php:40
 msgid "Post Sharing"
 msgstr ""
 
-#: ../inc/settings.php:157 ../premium/inc/settings.php:27
+#: ../inc/settings.php:161 ../premium/inc/settings.php:27
 msgid ""
 "Show icons to share your posts on Facebook, Twitter, Google+ and LinkedIn."
 msgstr ""
 
-#: ../inc/settings.php:161
+#: ../inc/settings.php:165
 msgid "Footer Copyright Text"
 msgstr ""
 
-#: ../inc/settings.php:162
+#: ../inc/settings.php:166
 msgid ""
 "{site-title}, {copyright} and {year} can be used to display your website "
 "title, a copyright symbol and the current year."
 msgstr ""
 
-#: ../inc/settings.php:166 ../premium/inc/settings.php:36
+#: ../inc/settings.php:170 ../premium/inc/settings.php:40
 msgid "Footer Attribution Link"
 msgstr ""
 
-#: ../inc/settings.php:167 ../premium/inc/settings.php:37
+#: ../inc/settings.php:171 ../premium/inc/settings.php:41
 msgid ""
 "Remove the theme attribution link from your footer without editing any code."
 msgstr ""
 
-#: ../inc/settings.php:170
+#: ../inc/settings.php:174
 msgid "Enqueue JavaScript in Footer"
 msgstr ""
 
-#: ../inc/settings.php:171
+#: ../inc/settings.php:175
 msgid ""
 "Enqueue theme JavaScript files in the footer. Doing so can improve site load "
 "time."
 msgstr ""
 
-#: ../inc/settings.php:204
+#: ../inc/settings.php:209
 msgid "Continue reading"
 msgstr ""
 
-#: ../inc/settings.php:221
+#: ../inc/settings.php:227
 msgid "Copyright {year}"
 msgstr ""
 
@@ -918,6 +922,10 @@ msgstr ""
 msgid "%s Logo"
 msgstr ""
 
+#: ../inc/update/update.php:54
+msgid "Enter the order number we sent you by email."
+msgstr ""
+
 #: ../premium/extras/share/share.php:15
 msgid "like"
 msgstr ""
@@ -954,13 +962,13 @@ msgstr ""
 msgid "Site Tagline Color"
 msgstr ""
 
-#: ../premium/inc/customizer.php:83 ../premium/inc/customizer.php:361
-#: ../premium/inc/customizer.php:399
+#: ../premium/inc/customizer.php:83 ../premium/inc/customizer.php:358
+#: ../premium/inc/customizer.php:396
 msgid "Heading Color"
 msgstr ""
 
-#: ../premium/inc/customizer.php:91 ../premium/inc/customizer.php:173
-#: ../premium/inc/customizer.php:378 ../premium/inc/customizer.php:416
+#: ../premium/inc/customizer.php:91 ../premium/inc/customizer.php:170
+#: ../premium/inc/customizer.php:375 ../premium/inc/customizer.php:413
 msgid "Text Color"
 msgstr ""
 
@@ -996,111 +1004,120 @@ msgstr ""
 msgid "Header Padding (em)"
 msgstr ""
 
-#: ../premium/inc/customizer.php:181
+#: ../premium/inc/customizer.php:178
 msgid "Text Hover Color"
 msgstr ""
 
-#: ../premium/inc/customizer.php:190
+#: ../premium/inc/customizer.php:187
 msgid "Current Page Color"
 msgstr ""
 
-#: ../premium/inc/customizer.php:198
+#: ../premium/inc/customizer.php:195
 msgid "Drop Down Background"
 msgstr ""
 
-#: ../premium/inc/customizer.php:206
+#: ../premium/inc/customizer.php:203
 msgid "Drop Down Text Color"
 msgstr ""
 
-#: ../premium/inc/customizer.php:214
+#: ../premium/inc/customizer.php:211
 msgid "Drop Down Hover Background"
 msgstr ""
 
-#: ../premium/inc/customizer.php:223
+#: ../premium/inc/customizer.php:220
 msgid "Drop Down Hover Text Color"
 msgstr ""
 
-#: ../premium/inc/customizer.php:232
+#: ../premium/inc/customizer.php:229
 msgid "Font"
 msgstr ""
 
-#: ../premium/inc/customizer.php:239
+#: ../premium/inc/customizer.php:236
 msgid "Font Size (em)"
 msgstr ""
 
-#: ../premium/inc/customizer.php:252
+#: ../premium/inc/customizer.php:249
 msgid "Heading Font"
 msgstr ""
 
-#: ../premium/inc/customizer.php:259
+#: ../premium/inc/customizer.php:256
 msgid "Heading Font Size (em)"
 msgstr ""
 
-#: ../premium/inc/customizer.php:268
+#: ../premium/inc/customizer.php:265
 msgid "Body Font"
 msgstr ""
 
-#: ../premium/inc/customizer.php:275
+#: ../premium/inc/customizer.php:272
 msgid "Body Font Size (em)"
 msgstr ""
 
-#: ../premium/inc/customizer.php:284
+#: ../premium/inc/customizer.php:281
 msgid "Post Meta Font Size (em)"
 msgstr ""
 
-#: ../premium/inc/customizer.php:293
+#: ../premium/inc/customizer.php:290
 msgid "Content H1 Font Size (em)"
 msgstr ""
 
-#: ../premium/inc/customizer.php:302
+#: ../premium/inc/customizer.php:299
 msgid "Content H2 Font Size (em)"
 msgstr ""
 
-#: ../premium/inc/customizer.php:311
+#: ../premium/inc/customizer.php:308
 msgid "Content H3 Font Size (em)"
 msgstr ""
 
-#: ../premium/inc/customizer.php:320
+#: ../premium/inc/customizer.php:317
 msgid "Content H4 Font Size (em)"
 msgstr ""
 
-#: ../premium/inc/customizer.php:329
+#: ../premium/inc/customizer.php:326
 msgid "Content H5 Font Size (em)"
 msgstr ""
 
-#: ../premium/inc/customizer.php:338
+#: ../premium/inc/customizer.php:335
 msgid "Content H6 Font Size (em)"
 msgstr ""
 
-#: ../premium/inc/customizer.php:351
+#: ../premium/inc/customizer.php:348
 msgid "Position"
 msgstr ""
 
-#: ../premium/inc/customizer.php:354
+#: ../premium/inc/customizer.php:351
 msgid "Right"
 msgstr ""
 
-#: ../premium/inc/customizer.php:355
+#: ../premium/inc/customizer.php:352
 msgid "Left"
 msgstr ""
 
-#: ../premium/inc/customizer.php:369 ../premium/inc/customizer.php:407
+#: ../premium/inc/customizer.php:366 ../premium/inc/customizer.php:404
 msgid "Heading Size (em)"
 msgstr ""
 
-#: ../premium/inc/customizer.php:386 ../premium/inc/customizer.php:424
+#: ../premium/inc/customizer.php:383 ../premium/inc/customizer.php:421
 msgid "Text Size (em)"
 msgstr ""
 
-#: ../premium/inc/customizer.php:433
+#: ../premium/inc/customizer.php:430
 msgid "Footer Padding (em)"
 msgstr ""
 
 #: ../premium/inc/settings.php:30
-msgid "Twitter Handle"
+msgid "Page Sharing"
 msgstr ""
 
 #: ../premium/inc/settings.php:31
+msgid ""
+"Show icons to share your pages on Facebook, Twitter, Google+ and LinkedIn."
+msgstr ""
+
+#: ../premium/inc/settings.php:34
+msgid "Twitter Handle"
+msgstr ""
+
+#: ../premium/inc/settings.php:35
 msgid "This handle will be recommended after a user shares one of your posts."
 msgstr ""
 
@@ -1169,7 +1186,7 @@ msgstr ""
 #: ../upgrade/upgrade.php:41
 msgid ""
 "Add sharing icons for Facebook, Twitter, Google Plus and LinkedIn to the "
-"bottom of your posts."
+"bottom of your posts and pages."
 msgstr ""
 
 #: ../upgrade/upgrade.php:46
@@ -1214,11 +1231,4 @@ msgid ""
 "minimalist portfolio-friendly themes with such feature and this is the only "
 "one that I've found so far.</p> <p>Thank you so much for sharing such a "
 "wonderful theme.</p>"
-msgstr ""
-
-#: ../upgrade/upgrade.php:86
-#, php-format
-msgid ""
-"Additional styles are available in <a href=\"%s\" target=\"_blank\">Puro "
-"Premium</a>."
 msgstr ""

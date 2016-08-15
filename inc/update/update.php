@@ -51,7 +51,7 @@ function siteorigin_theme_update_settings() {
 	$settings = SiteOrigin_Settings::single();
 	$settings->add_section('premium', __('Premium', 'puro'));
 	$settings->add_field('premium', 'order_number', 'text', __('Order Number', 'puro'), array(
-		'description' => __('Enter the order number we sent you by email', 'puro')
+		'description' => __('Enter the order number we sent you by email.', 'puro')
 	));
 }
 add_action( 'siteorigin_settings_init', 'siteorigin_theme_update_settings', 40 );

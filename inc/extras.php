@@ -28,6 +28,9 @@ add_filter( 'wp_page_menu_args', 'puro_page_menu_args' );
  * @return array
  */
 function puro_body_classes( $classes ) {
+	// Adds a class which will be removed if a touch device is in use.
+	$classes[] = 'no-touch';
+	
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';

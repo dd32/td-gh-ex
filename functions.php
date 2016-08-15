@@ -7,9 +7,9 @@
  * @license GPL 2.0
  */
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.0.9' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.0.9.1' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://updates.purothemes.com' );
-define( 'SITEORIGIN_THEME_JS_PREFIX', '.min' );
+define( 'SITEORIGIN_THEME_JS_PREFIX', defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min' );
 
 if( file_exists( get_template_directory() . '/premium/functions.php' ) ){
 	include get_template_directory() . '/premium/functions.php';
@@ -19,12 +19,10 @@ else {
 }
 
 // Load the new settings framework.
-include get_template_directory() . '/inc/settings/settings.php';
 include get_template_directory() . '/inc/customizer/customizer.php';
-
-// Include the SiteOrigin extras.
-include get_template_directory() . '/extras/premium/premium.php';
-include get_template_directory() . '/extras/update/update.php';
+include get_template_directory() . '/inc/premium/premium.php';
+include get_template_directory() . '/inc/settings/settings.php';
+include get_template_directory() . '/inc/update/update.php';
 
 // Load the theme specific files.
 include get_template_directory() . '/inc/extras.php';
@@ -179,7 +177,10 @@ function puro_scripts() {
 	// Responsive menu.
 	if ( siteorigin_setting( 'navigation_responsive_menu' ) && siteorigin_setting( 'layout_responsive' ) ) {
 		wp_enqueue_script( 'puro-responsive-menu', get_template_directory_uri() . '/js/responsive-menu' . SITEORIGIN_THEME_JS_PREFIX . '.js', array(), SITEORIGIN_THEME_VERSION, true );
-	}		
+	}
+
+	// Mobile Menu Collapse Localisation.
+	wp_localize_script( 'puro-responsive-menu', 'puro_resp_menu_params', array( 'collapse' => siteorigin_setting( 'navigation_responsive_menu_collapse' ) ) );	
 
 	// FitVids.js.
 	if( siteorigin_setting( 'layout_fitvids' ) ) {
@@ -199,7 +200,7 @@ function puro_scripts() {
 	wp_enqueue_script( 'puro-html5', get_template_directory_uri() . '/js/html5shiv-printshiv.js', array(), '3.7.3' );
 	wp_script_add_data( 'puro-html5', 'conditional', 'lt IE 9' );
 
-	// Load Selectivizr.
+	// Selectivizr.
 	wp_enqueue_script( 'puro-selectivizr', get_template_directory_uri() . '/js/selectivizr' . SITEORIGIN_THEME_JS_PREFIX . '.js', array(), '1.0.2' );
 	wp_script_add_data( 'puro-selectivizr', 'conditional', '(gte IE 6)&(lte IE 8)' );	
 }
@@ -302,6 +303,36 @@ function puro_responsive_menu() {
 	}
 }
 add_action( 'puro_before_nav_menu', 'puro_responsive_menu' );
+endif;
+
+/**
+ * Filter the responsive menu collapse.
+ */
+function puro_filter_responsive_menu_collapse( $collpase ) {
+	return siteorigin_setting( 'navigation_responsive_menu_collapse' );
+}
+add_filter( 'puro_responsive_menu_resolution', 'puro_filter_responsive_menu_collapse' );
+
+if ( ! function_exists( 'puro_responsive_menu_css' ) ):
+/**
+ * Output the responsive menu collpase point.
+ */
+function puro_responsive_menu_css() {
+	if ( ! siteorigin_setting( 'navigation_responsive_menu' ) || ! siteorigin_setting( 'layout_responsive' ) ) return;
+	$mobile_resolution = apply_filters( 'puro_responsive_menu_resolution', 768 );
+	?>
+	<style type="text/css" id="puro-menu-css"> 
+		@media (max-width: <?php echo intval( $mobile_resolution ) ?>px) {
+			.site-branding { float: left }
+			.rtl .site-branding { float: right; padding-right: 0 }
+			.responsive-menu .main-navigation ul { display: none } 
+			.responsive-menu .menu-toggle { display: block }
+			.main-navigation { float: right }
+		}			
+	</style>
+	<?php
+}
+add_action( 'wp_head', 'puro_responsive_menu_css' );
 endif;
 
 /**

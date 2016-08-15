@@ -37,8 +37,8 @@ function puro_premium_upgrade_content($content){
 	);
 
 	$content['features'][] = array(
-		'heading' => __("Post Sharing", 'puro'),
-		'content' => __("Add sharing icons for Facebook, Twitter, Google Plus and LinkedIn to the bottom of your posts.", 'puro'),
+		'heading' => __("Post and Page Sharing", 'puro'),
+		'content' => __("Add sharing icons for Facebook, Twitter, Google Plus and LinkedIn to the bottom of your posts and pages.", 'puro'),
 		'image' => get_template_directory_uri().'/upgrade/teasers/social-sharing.png',
 	);
 
@@ -78,11 +78,3 @@ function puro_premium_upgrade_content($content){
 	return $content;
 }
 add_filter('siteorigin_premium_content', 'puro_premium_upgrade_content');
-
-/**
- * Add a feature notice
- */
-function puro_upgrade_panels_upgrade_note(){
-	?><p><?php printf( __('Additional styles are available in <a href="%s" target="_blank">Puro Premium</a>.', 'puro'), admin_url('themes.php?page=premium_upgrade') ) ?></p><?php
-}
-add_action('siteorigin_panels_widget_after_styles', 'puro_upgrade_panels_upgrade_note');

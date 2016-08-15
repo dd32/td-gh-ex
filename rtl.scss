@@ -15,10 +15,9 @@ Description: Adds support for languages written in a Right To Left (RTL) directi
 7.0 - Alignments
 8.0 - Widgets
 9.0 - Content
-10.0 - Header
-11.0 - Footer
-12.0 - Contact Form 7
-13.0 - Gravity Forms
+10.0 - Footer
+11.0 - Contact Form 7
+12.0 - Gravity Forms
 --------------------------------------------------------------*/
 
 // Dependencies
@@ -96,8 +95,7 @@ input[type="radio"] {
 6.0 - Navigation
 --------------------------------------------------------------*/
 .main-navigation {
-	@include flex(2 0 0);
-	float: left;
+	text-align: left;
 	
 	ul {
 
@@ -112,7 +110,12 @@ input[type="radio"] {
 		ul {
 			left: initial;
 			right: 0;
-			text-align: right;			
+			text-align: right !important;	
+			
+			ul {
+				left: initial;
+				right: 100%; 
+			}						
 		}
 	}
 
@@ -124,9 +127,27 @@ input[type="radio"] {
 		
 		a:before {
 			left: -1.5625em;	
-			padding: 0 0.6em 0 0;	
+			padding: 0 0.6em 0 0;
+			right: initial;
 		}		
 	}		
+}
+
+.responsive-menu {
+        
+    .menu-toggle {
+    	left: 0;
+		right: initial;
+    }
+
+    .main-navigation.toggled ul > li[class*=children] > span {
+    	left: 0;
+		right: initial;
+	}    				     
+
+	ul.nav-menu li a {
+		text-align: right !important;
+	}     
 }
 
 .paging-navigation {
@@ -142,16 +163,6 @@ input[type="radio"] {
 
 .menu-social-container ul li:last-of-type {
 	padding-right: 0.3125rem; 
-}
-
-.menu-toggle {
-	left: 0;
-}
-
-@media screen and (max-width: $medium) { 
-	.main-navigation.toggled .nav-menu li a { 
-    	text-align: right; 
-	} 
 }
 
 /*--------------------------------------------------------------
@@ -381,24 +392,7 @@ img.alignright {
 }
 
 /*--------------------------------------------------------------
-10.0 - Header
---------------------------------------------------------------*/
-.site-header .site-branding {
-	@include flex(1 0 0);
-	float: right;
-	padding-left: 1.6875em;
-	padding-right: 0;
-	text-align: right;	    
-}
-
-@media (max-width: 48rem) {
-	.resp .site-header .site-branding {
-		@include flex(3 0 0);
-	}
-}
-
-/*--------------------------------------------------------------
-11.0 - Footer
+10.0 - Footer
 --------------------------------------------------------------*/
 .site-footer {
 
@@ -413,7 +407,7 @@ img.alignright {
 }
 
 /*--------------------------------------------------------------
-12.0 - Contact Form 7
+11.0 - Contact Form 7
 --------------------------------------------------------------*/
 .wpcf7 {
 
@@ -451,7 +445,7 @@ img.alignright {
 }
 
 /*--------------------------------------------------------------
-13.0 - Gravity Forms
+12.0 - Gravity Forms
 --------------------------------------------------------------*/
 .gform_wrapper .gfield_checkbox li input[type=checkbox],
 .gform_wrapper .gfield_radio li input[type=radio],

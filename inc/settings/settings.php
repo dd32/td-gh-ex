@@ -559,7 +559,8 @@ class SiteOrigin_Settings {
 	 * Display all the generated custom CSS.
 	 */
 	function display_custom_css(){
-		$css = apply_filters('siteorigin_settings_custom_css', '');
+		$settings = $this->get_all();
+		$css = apply_filters( 'siteorigin_settings_custom_css', '', $settings );
 
 		if( !empty($css) ) {
 
@@ -748,14 +749,14 @@ class SiteOrigin_Settings {
 	}
 
 	/**
-	* Load all the extra components of the settings framework.
-	*/
+	 * Load all the extra components of the settings framework.
+	 */
 	function load_settings_extras(){
 		if( has_filter( 'siteorigin_page_settings' ) ) {
 			SiteOrigin_Settings_Page_Settings::single();
 		}
 
-		if( has_filter( 'siteorigin_about_page' ) && apply_filters( 'siteorigin_about_page_show', true ) ) {
+		if( is_admin() && has_filter( 'siteorigin_about_page' ) && apply_filters( 'siteorigin_about_page_show', true ) ) {
 			SiteOrigin_Settings_About_Page::single();
 		}
 	}
