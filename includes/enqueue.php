@@ -26,7 +26,7 @@ function boxy_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	switch ( get_theme_mod('color' ) ) {
+	switch ( get_theme_mod('color' ) ) {   
 			case '1':
 				wp_enqueue_style( 'boxy-style', BOXY_PARENT_URL . '/style.css' );
 				break;
@@ -35,6 +35,9 @@ function boxy_scripts() {
 				break;
 			case '3':
 				wp_enqueue_style( 'boxy-blue', BOXY_PARENT_URL . '/blue.css');
+				break;
+			case '5':
+				wp_enqueue_style( 'boxy-blue', BOXY_PARENT_URL . '/css/skyblue.css');  
 				break;
 			default:
 				wp_enqueue_style( 'boxy-style', get_stylesheet_uri() . '/style.css' );

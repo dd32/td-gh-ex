@@ -35,7 +35,7 @@ $upgrade_to_pro = __( 'Upgrade To Pro', 'boxy' );
           
 $boxy_why_upgrade = <<< FEATURES
 <p class="wrap-header">
-    <a class="view-demo" href="http://demo.webulous.in/boxy/">
+    <a class="view-demo" href="http://boxy.webulous.in/">
         <i class="fa fa-eye"></i> $view_demo</a> 
     <a class="upgrade" href="http://www.webulousthemes.com/theme/boxy-pro/">
         <i class="fa fa-upload"></i> $upgrade_to_pro</a>
@@ -157,6 +157,7 @@ $options = array(
                                 '1' => __('Default', 'boxy'),
                                 '2' => __('Red', 'boxy'), 
                                 '3' => __('Blue', 'boxy'),
+                                '5' => __('SkyBlue', 'boxy'),
                                 '4' => __('More color schemes in Boxy Pro Version.', 'boxy'),      
                             ),
                             'default' => 1,  

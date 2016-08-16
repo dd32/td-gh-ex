@@ -31,9 +31,10 @@ if( get_theme_mod('enable_primary_color',false) ) {
 	add_action( 'wp_head','wbls_customizer_primary_custom_css' );
 
 	function wbls_customizer_primary_custom_css() {
-			$primary_color = get_theme_mod( 'primary_color','#f94242'); ?>
+			$primary_color = get_theme_mod( 'primary_color','#f94242'); 
+			$style2_custom_css = get_theme_mod('color'); ?>
 
-	<style type="text/css">
+	<style type="text/css"> 
 
 a,.cart-subtotal .amount,.comment-navigation .nav-previous a:hover,.site-footer a:hover,.site-footer .widget li a:hover,
 .paging-navigation .nav-previous a:hover,.widget a:hover,.site-footer .textwidget ul.cnt-address li a,.widget caption,.widget_rss ul li .rss-date,
@@ -49,7 +50,7 @@ a,.cart-subtotal .amount,.comment-navigation .nav-previous a:hover,.site-footer 
 .pullleft:before,.page-links a:hover,.order-total .amount,.woocommerce #content table.cart a.remove,
 .woocommerce table.cart a.remove,
 .woocommerce-page #content table.cart a.remove,
-.woocommerce-page table.cart a.remove,
+.woocommerce-page table.cart a.remove,.service a,
 .cart-subtotal .amount,.pullnone:before,.page-navigation ol li a:hover,.page-navigation ol li.bpn-current:hover,a.more-link:hover,.site-main .post-navigation .nav-links a:hover,.widget-title,.widget #wp-calendar tbody td a
 		{
 				color: <?php echo esc_html($primary_color); ?>; 
@@ -101,7 +102,7 @@ input[type="submit"],.flex-container .flex-control-paging li a.flex-active,.site
 .woocommerce-page #respond input#submit:hover,
 .woocommerce-page a.button:hover,
 .woocommerce-page button.button:hover,
-.woocommerce-page input.button:hover {
+.woocommerce-page input.button:hover,.flex-recent-posts ul.slides li a.post-readmore:hover .rp-thumb {
 	background-color: <?php echo esc_html($primary_color); ?>!important; 
 }
 
@@ -130,6 +131,22 @@ ul.filter-options li a.selected,.widget_recent-posts-gallery-widget .recent-post
 
 				
 			</style>
+
+		<?php if( $style2_custom_css == '3' || $style2_custom_css == '5' ) { ?>  
+		<style type="text/css"> 
+		  .flex-container .flex-caption a {
+               background-color: <?php echo esc_html($primary_color);?>;
+		   }
+		</style>
+		<?php } ?> 
+
+		<?php if( $style2_custom_css == '3') { ?>  
+		<style type="text/css"> 
+		   .services .service-title h3,.services .service-title p i {
+               color: <?php echo esc_html($primary_color);?>;
+		   }
+		</style>
+		<?php } ?> 
 <?php
 	}
 }

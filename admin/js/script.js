@@ -6,7 +6,7 @@
 			.text(boxy_upgrade.message) 
 		;
 		demo = $('<a class="boxy-docs"></a>')
-			.attr('href','http://demo.webulous.in/boxy/')   
+			.attr('href','http://boxy.webulous.in/')   
 			.attr('target','_blank')
 			.text(boxy_upgrade.demo);
 		docs = $('<a class="boxy-docs"></a>')

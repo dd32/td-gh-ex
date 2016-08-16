@@ -8,10 +8,8 @@ are licensed under GPLv2
 4. This theme uses { Flexslider } which is licensed under GPLv2
 5. This theme uses { Font Awesome } which is licensed under GPL-compatible SIL Open Font License
 6. {CAR IMAGE} is CC0 Public Domain License. http://pixabay.com/en/car-sports-car-wedding-car-49278/
-7. Sun Rise image is CC0 Public Domain License.
-https://unsplash.imgix.net/photo-1414446483597-8d8f792bfe39?q=75&fm=jpg&s=2756ab87b786786b9e689b6204d99c90
-https://unsplash.com/photos/vD3L-rN_qNw/download
-http://pixabay.com/static/uploads/photo/2010/12/20/16/02/child-3853_640.jpg
+7. Maodel guy image is CC0 Public Domain License.
+https://pixabay.com/en/man-handsome-male-model-guy-885223/
 8. All other images are created by me and is licensed under GPLv2 or later
 
 
@@ -42,6 +40,10 @@ http://pixabay.com/static/uploads/photo/2010/12/20/16/02/child-3853_640.jpg
 16. Other theme options are self explanatory.
 
 == Change Log ==
+v. 1.2.4
+ * Fix Responsive title bug
+ * Change screenshot & Demo link
+ * Style Enhancement & Added one stylesheet
 
 v. 1.2.3
  * Fix Responsive Menu related bug

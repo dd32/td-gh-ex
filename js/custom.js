@@ -36,7 +36,14 @@ jQuery( document ).ready( function( $ ){
 		var text = $( this ).children( 'a' ).text();
 
 		/* Append this option to our "select" */
-		$( selectMenu ).append( '<option value="'+href+'">'+text+'</option>' );
+		var option = '<option value="' + href + '"';
+		if($(this).hasClass('current_page_item')) {
+			option += 'selected="selected">';
+		} else {
+			option += '>'
+		}
+		option += text + '</option>'; 
+		$( selectMenu ).append( option );
 
 			/* Check for "children" and navigate for more options if they exist */
 			if ( $( this ).children( 'ul' ).length > 0) {
@@ -47,7 +54,14 @@ jQuery( document ).ready( function( $ ){
 					var text2 = $( this ).children( 'a' ).text();
 
 					/* Append this option to our "select" */
-					$( selectMenu ).append( '<option value="'+href2+'">--- '+text2+'</option>' );
+					var option2 = '<option value="' + href2 + '"';
+					if($(this).hasClass('current_page_item')) {
+						option2 += 'selected="selected">';
+					} else {
+						option2 += '>'
+					}
+					option2 += text2 + '</option>';
+					$( selectMenu ).append( option2 );
 				});
 			}
 
@@ -56,7 +70,7 @@ jQuery( document ).ready( function( $ ){
 
 	/* When our select menu is changed, change the window location to match the value of the selected option. */
 	$( selectMenu ).change( function() {
-		location = this.options[this.selectedIndex].value;
+		location = this.options[this.selectedIndex].value;   
 	});
 
 });
