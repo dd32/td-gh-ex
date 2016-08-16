@@ -101,7 +101,7 @@ $options[] = array(
             <li>' . esc_attr__( 'Responsive Website Design.', 'digital' ) . '</li>
             <li>' . esc_attr__( 'Different Website Layout to Select.', 'digital' ) . '</li>
             <li>' . esc_attr__( 'Many of Other customize feature for your blog or website.', 'digital' ) . '</li>
-            <p><span class="buypre"><a href="' . esc_url(__('http://www.insertcart.com/product/digital-wp-theme/','digital')) . '" target="_blank">' . esc_attr__( 'Upgrade Now', 'digital' ) . '</a></span><span class="buypred"><a href="' . esc_url(__('http://forum.insertcart.com/','digital')) . '" target="_blank">' . esc_attr__( 'Support Forum !', 'digital' ) . '</a></span></p>',
+            <p><span class="buypre"><a href="' . esc_url(__('http://www.insertcart.com/product/digital-wp-theme/','digital')) . '" target="_blank">' . esc_attr__( 'Upgrade Now', 'digital' ) . '</a></span><span class="buypred"><a href="' . esc_url(__('http://www.insertcart.com/contact-us','digital')) . '" target="_blank">' . esc_attr__( 'Contact us!', 'digital' ) . '</a></span></p>',
             'class' => 'tesingh',
             'type' => 'info');
 	$options[] = array(
@@ -288,7 +288,9 @@ $options[] = array(
 		$options[] = array(
 		'name' => __('Slider Settings', 'digital'),
 		'type' => 'heading');
-
+	$options[] = array(
+		'desc' => '<b>Make Sure Image Dimensions should be Width :1175px and height:450px</b> ', 
+		'type' => 'info');
 	$options[] = array(
 		'name' => __('Enable Slider', 'digital'),
 		'desc' => __('Check this to Enable Slider.', 'digital'),
@@ -383,8 +385,7 @@ $options[] = array(
 		'desc' => __('Quickly add some CSS to your theme by adding it to this block.', 'digital'),
 		'id' => 'digital_customcss',
 		'std' => '',
-		'type' => 'textarea');
-		
+		'type' => 'textarea');	
 
 $options[] = array(
 		'name' => __('Ads Management', 'digital'),
@@ -459,8 +460,8 @@ $options[] = array(
 		'std' => 'on',
 		'type' => 'radio',
 		'options' => array(
-						'on' => 'Show',
-						'off' => 'Hide'
+						'on' => __('Show','digital'),
+						'off' => __('Hide','digital')
 						));
 		
 	$options[] = array(
@@ -470,8 +471,8 @@ $options[] = array(
 		'std' => 'on',
 		'type' => 'radio',
 		'options' => array(
-						'on' => 'Show',
-						'off' => 'Hide'
+						'on' => __('Show','digital'),
+						'off' => __('Hide','digital')
 						));
 
 		$options[] = array(
@@ -481,11 +482,9 @@ $options[] = array(
 		'std' => 'on',
 		'type' => 'radio',
 		'options' => array(
-						'on' => 'Show',
-						'off' => 'Hide'
-						));
-					
-						
+						'on' => __('Show','digital'),
+						'off' => __('Hide','digital')
+						));				
 						
 		$options[] = array(
 		'desc' => '<span class="pre-title">Color Customize</span>', 
@@ -570,8 +569,7 @@ $options[] = array(
 		'desc' => __('Footer Widget background color.', 'digital'),
 		'id' => 'digital_ftwidget',
 		'std' => '#333333',
-		'type' => 'color' );
-	
+		'type' => 'color' );	
 	$options[] = array(	
 		'desc' => __('Text Color.', 'digital'),
 		'id' => 'digital_ftwidgettext',
@@ -585,8 +583,8 @@ $options[] = array(
 		'std' => 'on',
 		'type' => 'radio',
 		'options' => array(
-						'on' => 'Show',
-						'off' => 'Hide'
+						'on' => __('Show','digital'),
+						'off' => __('Hide','digital')
 						));
 		
 		$options[] = array(				
@@ -595,18 +593,14 @@ $options[] = array(
 		'std' => 'on',
 		'type' => 'radio',
 		'options' => array(
-						'on' => 'Show',
-						'off' => 'Hide'
+						'on' => __('Show','digital'),
+						'off' => __('Hide','digital')
 						));
 		$options[] = array(
 		'desc' => __('Categories Background Color Change.', 'digital'),
 		'id' => 'digital_homecatbg',
 		'std' => '#4DD247',
 		'type' => 'color' );		
-	
-		
-		
-		
 		$options[] = array( 'name' => __('Customize Theme Fonts', 'digital'),
 		'desc' => __('Change <b>Body (Theme) Font</b> color and Size.', 'digital'),
 		'id' => "digital_bodyfonts",
@@ -632,9 +626,6 @@ $options[] = array(
 			
 			)
 	);
-		
-		
-		
 		$options[] = array(
 		'desc' => '<span class="pre-titlecus">Customization</span>', 
 		'type' => 'info');
@@ -674,8 +665,8 @@ $options[] = array(
 		'std' => 'on',
 		'type' => 'radio',
 		'options' => array(
-						'on' => 'Show',
-						'off' => 'Hide'
+						'on' => __('Show','digital'),
+						'off' => __('Hide','digital')
 						));
 	$options[] = array(
 		'name' => __('Show or Hide Copy Right Text', 'digital'),
@@ -684,8 +675,8 @@ $options[] = array(
 		'std' => 'on',
 		'type' => 'radio',
 		'options' => array(
-						'on' => 'Show',
-						'off' => 'Hide'
+						'on' => __('Show','digital'),
+						'off' => __('Hide','digital')
 						));
 	$options[] = array(
 		    'desc' => 'Change copyright text.',
@@ -702,7 +693,7 @@ $options[] = array(
 
 	$options[] = array(
 		  'desc' => '<h2>' . esc_attr__( 'Need support about theme go to Support forum', 'digital' ) . '</h2>' . esc_attr__( 'If you have any problem in using options then please read theme documentation first ', 'digital' ) . '<a href="' . esc_url(__('http://www.insertcart.com/digital-theme-documentation-setup/','digital')) . '" target="_blank">' . esc_attr__( 'Theme Documentation', 'digital' ) . '</a>  ' . esc_attr__( 'Before you contact us via directly please use support forum also We recommend you to use some WordPress plugin like "Regenerate Thumbnails" WordPress SEO and W3tc to optimize and get great website experience.', 'digital' ) . '
-            <p><span class="buypre"><a href="' . esc_url(__('http://forum.insertcart.com','digital')) . '" target="_blank">' . esc_attr__( 'Support Forum', 'digital' ) . '</a></span></p></br>
+            <p><span class="buypre"><a href="' . esc_url(__('http://www.insertcart.com/contact-us','digital')) . '" target="_blank">' . esc_attr__( 'Need Support', 'digital' ) . '</a></span></p></br>
 			<ol>
 			<li><a href="' . esc_url(__('http://www.insertcart.com/faq-frequently-asked-question-theme-setup/','digital')) . '" target="_blank">' . esc_attr__( 'FAQ - Frequently Asked Question About Theme Setup', 'digital' ) . '</a></li>
 			<li><a href="' . esc_url(__('http://www.insertcart.com/making-post-by-importing-docx-file-content-into-post-images/','digital')) . '" target="_blank">' . esc_attr__( 'Making Post by Importing Docx File Content into Post Images', 'digital' ) . '</a></li>
