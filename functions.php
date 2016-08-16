@@ -4,7 +4,7 @@
  * @package Asteroid
  *
  */
-$ast_version = "1.2.1";
+$ast_version = "1.2.2";
 /*-------------------------------------
 	Setup Theme Options
 --------------------------------------*/

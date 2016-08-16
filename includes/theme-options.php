@@ -99,37 +99,7 @@ class Asteroid_Theme_Options {
 	--------------------------------------*/
 	public function display_page() {
 
-		echo '<div class="wrap">
-		<div class="theme-meta-wrap">
-		<div id="donate" class="postbox">
-			<h4>Support the Developer</h4>
-			<div class="inside">
-				<p>If you liked this theme, please consider donating a small amount.</p>
-				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-					<input type="hidden" name="cmd" value="_donations">
-					<input type="hidden" name="business" value="U92LEYCWW973S">
-					<input type="hidden" name="lc" value="PH">
-					<input type="hidden" name="item_name" value="Asteroid Theme">
-					<input type="hidden" name="currency_code" value="USD">
-					<input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHosted">
-					<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-					<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-				</form>	
-			</div>
-		</div>
-
-		<div id="theme-info" class="postbox">
-			<h4>About Asteroid Theme</h4>
-			<div class="inside">
-				<div>&#9679;&nbsp;&nbsp;<a href="' . esc_url( 'http://ronangelo.com/asteroid/' ) . '" target="_blank">Asteroid Theme Page</a></div>
-				<div>&#9679;&nbsp;&nbsp;<a href="' . esc_url( 'http://ronangelo.com/asteroid/theme-documentation/' ) . '" target="_blank">Asteroid Documentation</a></div>
-				<div>&#9679;&nbsp;&nbsp;<a href="' . esc_url( 'http://ronangelo.com/asteroid/theme-changelog/' ) . '" target="_blank">Asteroid Changelog</a></div>
-				<p>Have any questions or suggestions? Post them here on the theme\'s <a href="' . esc_url( 'http://ronangelo.com/forums/' ) . '" target="_blank">support forum</a> or on <a href="' . esc_url( 'http://wordpress.org/support/theme/asteroid/' ) . '" target="_blank">wordpress.org</a></p>
-				<p>Note: Check the theme changelog page linked above before updating to a newer version of the theme.</p>
-			</div>
-		</div>
-		</div>
-
+	echo '<div class="wrap">
 	<div class="icon32" id="icon-themes"></div>
 	<h2>' . __( 'Asteroid Options', 'asteroid' ) . '</h2>';
 
@@ -174,12 +144,12 @@ class Asteroid_Theme_Options {
 			foreach ( $this->sections as $section_slug => $section )
 				echo "sections['$section'] = '$section_slug';";
 
-			echo 'var wrapped = $(".wrap h3").wrap("<div class=\"ui-tabs-panel\">");
+			echo 'var wrapped = $(".wrap h2").wrap("<div class=\"ui-tabs-panel\">");
 			wrapped.each(function() {
 				$(this).parent().append($(this).parent().nextUntil("div.ui-tabs-panel"));
 			});
 			$(".ui-tabs-panel").each(function(index) {
-				$(this).attr("id", sections[$(this).children("h3").text()]);
+				$(this).attr("id", sections[$(this).children("h2").text()]);
 				if (index > 0)
 					$(this).addClass("ui-tabs-hide");
 			});
@@ -204,7 +174,7 @@ class Asteroid_Theme_Options {
 				}
 			});
 
-			$(".wrap h3, .wrap table").show();
+			$(".wrap h2, .wrap table").show();
 
 			// This will make the "warning" checkbox class really stand out when checked.
 			// I use it here for the Reset checkbox.
@@ -220,6 +190,37 @@ class Asteroid_Theme_Options {
 			         $("form").attr("autocomplete", "off");
 			});
 		</script>
+
+		<div class="theme-meta-wrap">
+		<div id="donate" class="postbox">
+			<h4>Support the Developer</h4>
+			<div class="inside">
+				<p>If you liked this theme, please consider donating a small amount.</p>
+				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+					<input type="hidden" name="cmd" value="_donations">
+					<input type="hidden" name="business" value="U92LEYCWW973S">
+					<input type="hidden" name="lc" value="PH">
+					<input type="hidden" name="item_name" value="Asteroid Theme">
+					<input type="hidden" name="currency_code" value="USD">
+					<input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHosted">
+					<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+					<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+				</form>	
+			</div>
+		</div>
+
+		<div id="theme-info" class="postbox">
+			<h4>About Asteroid Theme</h4>
+			<div class="inside">
+				<div>&#9679;&nbsp;&nbsp;<a href="' . esc_url( 'http://ronangelo.com/asteroid/' ) . '" target="_blank">Asteroid Theme Page</a></div>
+				<div>&#9679;&nbsp;&nbsp;<a href="' . esc_url( 'http://ronangelo.com/asteroid/theme-documentation/' ) . '" target="_blank">Asteroid Documentation</a></div>
+				<div>&#9679;&nbsp;&nbsp;<a href="' . esc_url( 'http://ronangelo.com/asteroid/theme-changelog/' ) . '" target="_blank">Asteroid Changelog</a></div>
+				<p>Have any questions or suggestions? Post them here on the theme\'s <a href="' . esc_url( 'http://ronangelo.com/forums/' ) . '" target="_blank">support forum</a> or on <a href="' . esc_url( 'http://wordpress.org/support/theme/asteroid/' ) . '" target="_blank">wordpress.org</a></p>
+				<p>Note: Check the theme changelog page linked above before updating to a newer version of the theme.</p>
+			</div>
+		</div>
+		</div>
+
 	</div>';
 
 	}
@@ -282,7 +283,7 @@ class Asteroid_Theme_Options {
 				break;
 
 			case 'textarea':
-				echo '<textarea class="' . $field_class . '" id="' . $id . '" name="asteroid_options[' . $id . ']" placeholder="' . $std . '" rows="8" cols="64" wrap="off">' . wp_htmledit_pre( $options[$id] ) . '</textarea>';
+				echo '<textarea class="' . $field_class . '" id="' . $id . '" name="asteroid_options[' . $id . ']" placeholder="' . $std . '" rows="8" cols="64" wrap="off">' . format_for_editor( $options[$id] ) . '</textarea>';
 				
 				if ( $desc != '' )
 					echo '<br /><span class="description">' . $desc . '</span>';
@@ -290,7 +291,7 @@ class Asteroid_Theme_Options {
 				break;
 
 			case 'textarea-css':
-				echo '<textarea class="' . $field_class . '" id="' . $id . '" name="asteroid_options[' . $id . ']" placeholder="' . $std . '" rows="18" cols="72" wrap="off">' . wp_htmledit_pre( $options[$id] ) . '</textarea>';
+				echo '<textarea class="' . $field_class . '" id="' . $id . '" name="asteroid_options[' . $id . ']" placeholder="' . $std . '" rows="18" cols="72" wrap="off">' . format_for_editor( $options[$id] ) . '</textarea>';
 				
 				if ( $desc != '' )
 					echo '<br /><span class="description">' . $desc . '</span>';
@@ -304,7 +305,6 @@ class Asteroid_Theme_Options {
 				break;
 
 			case 'text':
-			default:
 		 		echo '<input class="regular-text' . $field_class . '" type="text" id="' . $id . '" name="asteroid_options[' . $id . ']" placeholder="' . $std . '" value="' . esc_attr( $options[$id] ) . '" />';
 		 		
 		 		if ( $desc != '' )
@@ -312,7 +312,6 @@ class Asteroid_Theme_Options {
 		 		break;
 
 			case 'text-int':
-			default:
 		 		echo '<input class="text-int' . $field_class . '" type="text" id="' . $id . '" name="asteroid_options[' . $id . ']" placeholder="' . $std . '" value="' . esc_attr( $options[$id] ) . '" />';
 		 		
 		 		if ( $desc != '' )
@@ -320,7 +319,6 @@ class Asteroid_Theme_Options {
 		 		break;
 
 			case 'upload':
-			default:
 				echo '<input id="' . $id . '" class="upload-url' . $field_class . '" type="text" name="asteroid_options[' . $id . ']" value="' . esc_attr( $options[$id] ) . '" />
 					 <input id="st_upload_button" class="st_upload_button" type="button" name="upload_button" value="Upload" />';
 				if ( $desc != '' )
@@ -328,7 +326,6 @@ class Asteroid_Theme_Options {
 				break;
 
 			case 'color':
-			default:
 		 		echo '<input class="color' . $field_class . '" type="text" id="' . $id . '" name="asteroid_options[' . $id . ']" placeholder="' . $std . '" value="' . esc_attr( $options[$id] ) . '" />';
 		 		
 		 		if ( $desc != '' )
