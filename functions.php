@@ -1,5 +1,11 @@
 <?php
-add_theme_support('post-thumbnails');
+	$lang = get_template_directory(). '/languages';
+	load_theme_textdomain('ascreen', $lang);
+	
+	$template_directory = get_template_directory();
+	require_once( $template_directory . '/includes/customize/customize.php' );
+
+	add_theme_support('post-thumbnails');
 	$args = array();
 	$header_args = array( 
 	    'default-image'          => '',
@@ -13,19 +19,27 @@ add_theme_support('post-thumbnails');
 	add_theme_support( 'custom-background', $args );
 	add_theme_support( 'custom-header', $header_args );
 	add_theme_support( 'automatic-feed-links' );//
-	add_theme_support('nav_menus');//
+
+	//register menus
+	register_nav_menus(
+					   array(
+						'header-menu' => __( 'Header Menu', 'ascreen' ) ,
+					   	'footer-menu' => __( 'Footer Menu', 'ascreen' )	
+					   )
+					   );					   
+					   
+	
 	add_theme_support( "title-tag" );//
 	add_editor_style("editor-style.css");
 	if ( !isset( $content_width ) ) $content_width = 1170;	
+	
 function ascreen_custom_scripts()
 {
 	global $is_IE;
 	$theme_info = wp_get_theme();
 		
-	wp_enqueue_style('ascreen-main', get_stylesheet_uri(), array(), $theme_info->get( 'Version' ) );	
-	wp_enqueue_script('ascreen-jquery-js', get_template_directory_uri().'/js/j.1.1.3.js', array( 'jquery' ), '2.1.2', false );	
-	//wp_enqueue_script('ascreen-main-js', get_template_directory_uri().'/js/main.js', array( 'jquery' ), '2.1.2', false );			
-		
+	wp_enqueue_style('ascreen-main', get_stylesheet_uri(), array(), $theme_info->get( 'Version' ) );			
+	wp_enqueue_script('ascreen-main', get_template_directory_uri().'/js/main.js', array( 'jquery' ),$theme_info->get( 'Version' ), false );				
 }
 
 add_action( 'wp_enqueue_scripts', 'ascreen_custom_scripts' );
@@ -82,10 +96,6 @@ function ascreen_widgets_init() {
 		'before_title' => '<dt class="title">',
 		'after_title' => '</dt>',
 	) );
-
-
-	
-	
 }
 add_action( 'widgets_init', 'ascreen_widgets_init' );
 
@@ -147,4 +157,124 @@ function ascreen_better_comments($comment, $args, $depth)
         </article> <!-- .comment-body -->
         
 <?php
+}
+
+function ascreen_get_curPageURL() 
+{
+    $pageURL = 'http';
+
+    if (@$_SERVER["HTTPS"] == "on") 
+    {
+        $pageURL .= "s";
+    }
+    $pageURL .= "://";
+
+    if ($_SERVER["SERVER_PORT"] != "80") 
+    {
+        $pageURL .= $_SERVER["SERVER_NAME"] . ":" . $_SERVER["SERVER_PORT"] . $_SERVER["REQUEST_URI"];
+    } 
+    else 
+    {
+        $pageURL .= $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"];
+    }
+    return $pageURL;
+}
+
+
+function ascreen_get_author_info() 
+{
+	?>
+    <div class="author">
+        <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a> . 
+        <time><?php the_time('M d , Y');?></time> . 
+        <?php
+        $categories = get_the_category();
+        if(! empty( $categories ))
+        {
+            foreach($categories as $category) {
+                $category->cat_ID;
+                $category->cat_name;
+            }
+            $cat_links=get_category_link($category->cat_ID );
+        }
+        ?> 
+        
+        <a href="<?php echo esc_url($cat_links); ?>" title="<?php echo esc_html($category->cat_name); ?>">#<?php echo esc_html($category->cat_name);?></a>                               
+    </div>
+	<?php
+}
+
+function ascreen_get_the_category() 
+{
+	$categories = get_the_category();
+	 
+	if ( ! empty( $categories ) ) {
+		$cat_name = $categories[0]->cat_name;
+		$cat_ID = $categories[0]->cat_ID;
+	}
+	
+	$cat_links=get_category_link($cat_ID);
+	
+	echo "<a href=\"".esc_url($cat_links)."\" class=\"newsflash\">#".esc_html($cat_name)."</a>";
+	
+	
+}
+
+
+/**
+ * Gets option value from the single theme option, stored as an array in the database
+ * if all options stored in one row.
+ * Stores the serialized array with theme options into the global variable on the first function run on the page.
+ *
+ * If options are stored as separate rows in database, it simply uses get_option() function.
+ *
+ * @param string $option_name Theme option name.
+ * @param string $default Default value that should be set if the theme option isn't set.
+ */
+if ( ! function_exists( 'ascreen_get_option' ) ){
+	function ascreen_get_option( $ct_row,$option_name,$default )
+	{			
+		$arr =  get_option($ct_row);		
+		if(is_array($arr))
+		{
+			@$option_value     = $arr[$option_name];
+			if($option_value !='')
+			{
+				return $option_value;
+			}
+			else
+			{
+				if(array_key_exists($option_name,$arr) ){
+					return  false;
+				}	
+				else
+				{		
+					return  $default;	
+				}
+			}
+		}
+		else
+		{		
+			return  $default;	
+		}
+	}
+}
+
+
+
+function ascreen_get_share_url() 
+{
+	?>
+	<div class="share">
+		<?php if( ascreen_get_option( 'ascreen_option','twitter_url','#') != ''){?>
+		<a target="_blank" href="<?php echo esc_url(ascreen_get_option( 'ascreen_option','twitter_url','#'));?>" class="share-twitter cbutton cbutton--effect-jagoda"><i class="icon-twitter"></i></a>
+		<?php }?>
+		<?php if( ascreen_get_option( 'ascreen_option','google_plus_url','#') != ''){?>
+		<a target="_blank" href="<?php echo esc_url(ascreen_get_option( 'ascreen_option','google_plus_url','#'));?>" class="share-google-plus cbutton cbutton--effect-jagoda"><i class="icon-google-plus"></i></a>
+		<?php }?>
+		<?php if( ascreen_get_option( 'ascreen_option','facebook_url','#') != ''){?>                                
+		<a target="_blank" href="<?php echo esc_url(ascreen_get_option( 'ascreen_option','facebook_url','#'));?>" class="share-facebook cbutton cbutton--effect-jagoda"><i class="icon-facebook"></i></a>
+		<?php }?>
+	</div>
+	<?php	
 }
