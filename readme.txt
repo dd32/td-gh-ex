@@ -119,3 +119,8 @@ Version 3.0.4
 * Added the option to set the excerpt length for the featured post section.
 * Fixed formatting of html tags in toggle widget.
 * Fixed navigation text overflow in single post page.
+
+Version 3.0.5
+===============
+* Fixed Sidebar width issues in both sidebar layout
+* Used updated version of tgmpa plugin
