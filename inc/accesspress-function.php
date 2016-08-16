@@ -362,18 +362,29 @@ if ( ! function_exists( 'is_woocommerce_activated' ) ) {
 
 if( is_woocommerce_activated() ){
 
-	if ( ! function_exists( 'accesspress_wcmenucart' ) ) {
-		function accesspress_wcmenucart() { ?>		
-			<div class="view-cart">
-				<a title="View your shopping cart" href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" class="wcmenucart-contents">
-					<i class="fa fa-shopping-cart"></i>
-					[ <?php echo wp_kses_data( sprintf(  WC()->cart->get_cart_contents_count() ) ); ?> / <span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> ]
-				</a>			
-			</div>
-
+	if ( ! function_exists( 'accesspress_store_cart_link' ) ) {
+		function accesspress_store_cart_link() { ?>			
+				<a class="cart-contents wcmenucart-contents" href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'accesspress-store' ); ?>">
+					<i class="fa fa-shopping-cart"></i> [ <?php echo wp_kses_data( sprintf(  WC()->cart->get_cart_contents_count() ) ); ?> / <span class="amount"><?php echo wp_kses_data( WC()->cart->get_cart_subtotal() ); ?></span> ]
+				</a>
 			<?php
 		}
 	}
+
+	if ( ! function_exists( 'accesspress_store_cart_link_fragment' ) ) {
+
+		function accesspress_store_cart_link_fragment( $fragments ) {
+			global $woocommerce;
+
+			ob_start();
+			accesspress_store_cart_link();
+			$fragments['a.cart-contents'] = ob_get_clean();
+
+			return $fragments;
+		}
+	}
+	add_filter( 'add_to_cart_fragments', 'accesspress_store_cart_link_fragment' );
+	
 }
 
 if ( ! function_exists( 'accesspress_footer_count' ) ) {
@@ -394,7 +405,6 @@ if ( ! function_exists( 'accesspress_footer_count' ) ) {
 		return $count;
 	}
 }
-
 
 	function accesspress_count_widgets( $sidebar_id ) {
 		global $_wp_sidebars_widgets;

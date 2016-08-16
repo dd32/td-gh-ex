@@ -4,7 +4,7 @@ Theme URI: https://accesspressthemes.com/wordpress-themes/accesspress-store/
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com/
 Description: AccessPress Store is free WordPress theme that work beautifully with WooCommerce. The theme is packed with lots of exciting feature that enhances the ecommerce experience. It features Product slider, advanced whistlist, Featured product show list, call to action and many more. With its advanced customizer options, setting up the ecommerce website has become much more easy. Great customer support via online chat, email, support forum. Official support forum: http://accesspressthemes.com/support/ View full demo here: http://demo.accesspressthemes.com/accesspress-store/
-Version: 2.1.1
+Version: 2.1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: accesspress-store
@@ -6470,10 +6470,10 @@ ul.products.list li.product hr {
 .style_one .caption {
     display: inline-block;
     left: 100px;
-    margin-top: -130px;
+    margin-top: 50px;
     position: absolute;
     text-align: left;
-    top: 50%;
+    top:0;
     width: 50%;
 }
 .style_one .widget-title {
@@ -6542,16 +6542,17 @@ ul.products.list li.product hr {
     float: right;
 }
 .style_two .caption {
-    width: 50%;
+    width: 49%;
     float: left;
     height: 100%;
     background: #ffffff;
     text-align: left;
     position: relative;
+    margin-left: 10px;
 }
 .style_two .caption .widget-title {
     font-family: 'lato';
-    margin-top: 50px;
+    margin-top: 15px;
     font-size: 20px !important;
     line-height: 150%;
     color: #545454;
@@ -6937,6 +6938,9 @@ AP WIDGET TITLE SECOND AYOUT
 /*
 boxd layout css
 */
+.boxed .inner_home .ak-container {
+    padding-right:0; 
+}
 .boxed .ak-container {
     padding: 0 10px; 
 }

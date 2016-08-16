@@ -42,7 +42,9 @@
                 <!-- Cart Link -->
                 <?php
                     if (is_woocommerce_activated()){
-                        echo accesspress_wcmenucart();
+                        echo '<div class="view-cart">'; 
+                            echo accesspress_store_cart_link();
+                        echo '</div>';
                     }
                 ?>
                 <?php

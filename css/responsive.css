@@ -93,10 +93,10 @@
         padding: 0px;
         margin: 0px;
     }
-    .promo-wrap2 .promo-image .caption {
+    /* .promo-wrap2 .promo-image .caption {
         top: 10px;        
         width: 55%;
-    }
+    } */
 
 }
 @media(max-width: 1089px) {
@@ -109,7 +109,6 @@
 
     .promo-wrap2 .promo-image .caption {
         top: 10px;        
-        width: 60%;
     }
     .promo-wrap2 .promo-image .caption h4 {
         font-size: 31px;
@@ -351,7 +350,7 @@
         margin-top: 0;
     }
     .style_two .caption .promo-desc-title, .style_two .caption .promo-desc{
-        font-size: 32px;
+        font-size: 24px;
         line-height: 32px;
     }
     .ticker-wrapper.has-js{
@@ -628,8 +627,7 @@
     }
 
     .promo-wrap2 .promo-image .caption {
-        top: 10px;        
-        width: 70%;
+        top: 0px; 
     }
     .promo-wrap2 .promo-image .caption h4 {
         font-size: 31px;
@@ -1046,7 +1044,7 @@
         background: rgba(255, 255, 255, 0.21);
     }
     .style_one .promo-image img{
-        height: 200px;
+        width: 100%
     }
 	.widget_accesspress_store_product2 .feature-cat-image.right_align{
 		width:100%;	
@@ -1739,7 +1737,11 @@
 }
 
 @media (max-width: 480px) {
- .prod-title {
+    
+    .style_one .promo-desc{
+        display: none;
+    }
+    .prod-title {
         display:block;  
     }
     .new-prod-slide .slick-prev {

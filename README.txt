@@ -48,6 +48,14 @@ Images
 
 == Changelog ==
 
+= 2.1.2 =
+
+** Fixed the product and shop page product listing issue.
+** Fixed the related product display issue.
+** Fixed the header cart issue.
+** Fixed the full promo widget display info issue.
+** Fixed minor design issue in desktop and responsive version.
+
 = 2.1.1 =
 
 ** Fixed the all custom class and function prefix.

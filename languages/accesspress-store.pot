@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AccessPress Store\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Mon Jul 25 2016 11:32:19 GMT+0545 (Nepal Standard Time)\n"
-"POT-Revision-Date: Mon Jul 25 2016 11:32:22 GMT+0545 (Nepal Standard Time)\n"
+"POT-Creation-Date: Tue Aug 16 2016 13:40:30 GMT+0545 (Nepal Standard Time)\n"
+"POT-Revision-Date: Tue Aug 16 2016 13:40:37 GMT+0545 (Nepal Standard Time)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -185,15 +185,15 @@ msgstr ""
 msgid "!"
 msgstr ""
 
-#: ../header/header-one.php:60 ../header/header-two.php:66
+#: ../header/header-one.php:62 ../header/header-two.php:68
 msgid " Logout"
 msgstr ""
 
-#: ../header/header-one.php:64 ../header/header-two.php:72
+#: ../header/header-one.php:66 ../header/header-two.php:74
 msgid "Login"
 msgstr ""
 
-#: ../header/header-one.php:100 ../header/header-two.php:108
+#: ../header/header-one.php:102 ../header/header-two.php:110
 msgid "Menu"
 msgstr ""
 
@@ -257,67 +257,71 @@ msgstr ""
 msgid "Footer Area 4"
 msgstr ""
 
-#: ../inc/accesspress-function.php:456
+#: ../inc/accesspress-function.php:367
+msgid "View your shopping cart"
+msgstr ""
+
+#: ../inc/accesspress-function.php:466
 msgctxt "breadcrumb"
 msgid "Home"
 msgstr ""
 
-#: ../inc/accesspress-function.php:472
+#: ../inc/accesspress-function.php:482
 msgid "Home"
 msgstr ""
 
-#: ../inc/accesspress-function.php:491
+#: ../inc/accesspress-function.php:501
 msgid "Archive by category"
 msgstr ""
 
-#: ../inc/accesspress-function.php:493
+#: ../inc/accesspress-function.php:503
 msgid "Search results for"
 msgstr ""
 
-#: ../inc/accesspress-function.php:551
+#: ../inc/accesspress-function.php:561
 msgid "Posts tagged"
 msgstr ""
 
-#: ../inc/accesspress-function.php:555
+#: ../inc/accesspress-function.php:565
 msgid "Articles posted by "
 msgstr ""
 
-#: ../inc/accesspress-function.php:563
+#: ../inc/accesspress-function.php:573
 msgid "Page"
 msgstr ""
 
-#: ../inc/accesspress-function.php:740 ../inc/accesspress-plugin-activation.php:333
+#: ../inc/accesspress-function.php:750 ../inc/accesspress-plugin-activation.php:333
 msgid "Install Required Plugins"
 msgstr ""
 
-#: ../inc/accesspress-function.php:741 ../inc/accesspress-plugin-activation.php:334
+#: ../inc/accesspress-function.php:751 ../inc/accesspress-plugin-activation.php:334
 msgid "Install Plugins"
 msgstr ""
 
-#: ../inc/accesspress-function.php:742 ../inc/accesspress-plugin-activation.php:335
+#: ../inc/accesspress-function.php:752 ../inc/accesspress-plugin-activation.php:335
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#: ../inc/accesspress-function.php:743 ../inc/accesspress-plugin-activation.php:336
+#: ../inc/accesspress-function.php:753 ../inc/accesspress-plugin-activation.php:336
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: ../inc/accesspress-function.php:744 ../inc/accesspress-plugin-activation.php:337
+#: ../inc/accesspress-function.php:754 ../inc/accesspress-plugin-activation.php:337
 #, php-format
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:747 ../inc/accesspress-plugin-activation.php:342
+#: ../inc/accesspress-function.php:757 ../inc/accesspress-plugin-activation.php:342
 #, php-format
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:750 ../inc/accesspress-plugin-activation.php:347
+#: ../inc/accesspress-function.php:760 ../inc/accesspress-plugin-activation.php:347
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to install the %1$s "
@@ -328,7 +332,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:753 ../inc/accesspress-plugin-activation.php:352
+#: ../inc/accesspress-function.php:763 ../inc/accesspress-plugin-activation.php:352
 #, php-format
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
@@ -339,14 +343,14 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:756 ../inc/accesspress-plugin-activation.php:357
+#: ../inc/accesspress-function.php:766 ../inc/accesspress-plugin-activation.php:357
 #, php-format
 msgid "There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:759 ../inc/accesspress-plugin-activation.php:362
+#: ../inc/accesspress-function.php:769 ../inc/accesspress-plugin-activation.php:362
 #, php-format
 msgid "Sorry, but you do not have the correct permissions to update the %1$s plugin."
 msgid_plural ""
@@ -355,21 +359,21 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:762 ../inc/accesspress-plugin-activation.php:367
+#: ../inc/accesspress-function.php:772 ../inc/accesspress-plugin-activation.php:367
 #, php-format
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:765 ../inc/accesspress-plugin-activation.php:372
+#: ../inc/accesspress-function.php:775 ../inc/accesspress-plugin-activation.php:372
 #, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:768 ../inc/accesspress-plugin-activation.php:377
+#: ../inc/accesspress-function.php:778 ../inc/accesspress-plugin-activation.php:377
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to activate the %1$s "
@@ -380,58 +384,58 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:771 ../inc/accesspress-plugin-activation.php:382
+#: ../inc/accesspress-function.php:781 ../inc/accesspress-plugin-activation.php:382
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:774 ../inc/accesspress-plugin-activation.php:387
+#: ../inc/accesspress-function.php:784 ../inc/accesspress-plugin-activation.php:387
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:777 ../inc/accesspress-plugin-activation.php:392
+#: ../inc/accesspress-function.php:787 ../inc/accesspress-plugin-activation.php:392
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:780 ../inc/accesspress-plugin-activation.php:397
+#: ../inc/accesspress-function.php:790 ../inc/accesspress-plugin-activation.php:397
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: ../inc/accesspress-function.php:781 ../inc/accesspress-plugin-activation.php:
+#: ../inc/accesspress-function.php:791 ../inc/accesspress-plugin-activation.php:
 #: 399 ../inc/accesspress-plugin-activation.php:3029
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: ../inc/accesspress-function.php:782 ../inc/accesspress-plugin-activation.php:
+#: ../inc/accesspress-function.php:792 ../inc/accesspress-plugin-activation.php:
 #: 400 ../inc/accesspress-plugin-activation.php:2832
 msgid "The following plugin was activated successfully:"
 msgid_plural "The following plugins were activated successfully:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../inc/accesspress-function.php:783 ../inc/accesspress-plugin-activation.php:401
+#: ../inc/accesspress-function.php:793 ../inc/accesspress-plugin-activation.php:401
 #, php-format
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
-#: ../inc/accesspress-function.php:784 ../inc/accesspress-plugin-activation.php:402
+#: ../inc/accesspress-function.php:794 ../inc/accesspress-plugin-activation.php:402
 #, php-format
 msgid ""
 "Plugin not activated. A higher version of %s is needed for this theme. "
 "Please update the plugin."
 msgstr ""
 
-#: ../inc/accesspress-function.php:785 ../inc/accesspress-plugin-activation.php:403
+#: ../inc/accesspress-function.php:795 ../inc/accesspress-plugin-activation.php:403
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
-#: ../inc/accesspress-function.php:786 ../inc/accesspress-plugin-activation.php:405
+#: ../inc/accesspress-function.php:796 ../inc/accesspress-plugin-activation.php:405
 msgid "Please contact the administrator of this site for help."
 msgstr ""
 

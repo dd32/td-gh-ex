@@ -37,9 +37,11 @@
 
             <!-- Cart Link -->
             <?php
-                if (is_woocommerce_activated()):
-                    echo accesspress_wcmenucart();
-                endif;
+                if (is_woocommerce_activated()){
+                    echo '<div class="view-cart">'; 
+                        echo accesspress_store_cart_link();
+                    echo '</div>';
+                }
             ?>
             <?php
                 if (function_exists('YITH_WCWL')) {
