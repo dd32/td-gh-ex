@@ -28,6 +28,7 @@
         <div class="header-top">
             <div class="container">
                 
+                <?php if( has_nav_menu( 'secondary' ) ) { ?>
                 <div id="secondary-mobile-header">
     			    <a id="responsive-secondary-menu-button" href="#sidr-main2"><?php esc_html_e( 'Menu', 'benevolent' ); ?></a>
     			</div>
@@ -35,7 +36,7 @@
                 <nav id="top-navigation" class="secondary-navigation" role="navigation">
         			<?php wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_id' => 'secondary-menu', 'fallback_cb' => false ) ); ?>
         		</nav><!-- #site-navigation -->
-                
+                <?php } ?>
                 <?php if( get_theme_mod( 'benevolent_ed_social_header' ) ) do_action( 'benevolent_social_links' ); ?>
             </div>
         </div>

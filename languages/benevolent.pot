@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Benevolent\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: Mon May 30 2016 12:23:33 GMT+0545 (Nepal Standard Time)\n"
-"POT-Revision-Date: Mon Aug 08 2016 14:45:39 GMT+0545 (Nepal Standard Time)\n"
+"POT-Revision-Date: Tue Aug 16 2016 18:01:20 GMT+0545 (Nepal Standard Time)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -150,11 +150,11 @@ msgstr ""
 msgid "Footer Four"
 msgstr ""
 
-#: ../header.php:32 ../header.php:72
+#: ../header.php:33 ../header.php:73
 msgid "Menu"
 msgstr ""
 
-#: ../header.php:62 ../inc/customizer.php:76
+#: ../header.php:63 ../inc/customizer.php:76
 msgid "Donate Now"
 msgstr ""
 
@@ -542,8 +542,9 @@ msgstr ""
 msgid "Twitter"
 msgstr ""
 
-#: ../inc/customizer.php:1574
-msgid "Pintest"
+#: ../inc/customizer.php:1574 ../inc/extras.php:299 ../inc/widget-social-links.
+#: php:59 ../inc/widget-social-links.php:111
+msgid "Pinterest"
 msgstr ""
 
 #: ../inc/customizer.php:1592 ../inc/extras.php:301 ../inc/widget-social-links.
@@ -551,8 +552,8 @@ msgstr ""
 msgid "LinkedIn"
 msgstr ""
 
-#: ../inc/customizer.php:1610 ../inc/widget-social-links.php:63 ../inc/widget-
-#: social-links.php:121
+#: ../inc/customizer.php:1610 ../inc/extras.php:303 ../inc/widget-social-links.
+#: php:63 ../inc/widget-social-links.php:121
 msgid "Google Plus"
 msgstr ""
 
@@ -580,14 +581,6 @@ msgstr ""
 
 #: ../inc/extras.php:198
 msgid "Search Result"
-msgstr ""
-
-#: ../inc/extras.php:299
-msgid "Pinterst"
-msgstr ""
-
-#: ../inc/extras.php:303
-msgid "Gooble Plus"
 msgstr ""
 
 #: ../inc/extras.php:354
@@ -779,10 +772,6 @@ msgstr ""
 #: ../inc/widget-social-links.php:40 ../inc/widget-social-links.php:84 ..
 #: /inc/widget-social-links.php:151
 msgid "Subscribe & Follow"
-msgstr ""
-
-#: ../inc/widget-social-links.php:59 ../inc/widget-social-links.php:111
-msgid "Pinterest"
 msgstr ""
 
 #: ../inc/widget-social-links.php:61

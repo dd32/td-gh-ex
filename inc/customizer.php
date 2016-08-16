@@ -1559,7 +1559,7 @@ function benevolent_customize_register( $wp_customize ) {
         )
     );
     
-    /** Pintrest */
+    /** Pinterest */
     $wp_customize->add_setting(
         'benevolent_pinterest',
         array(
@@ -1571,7 +1571,7 @@ function benevolent_customize_register( $wp_customize ) {
     $wp_customize->add_control(
         'benevolent_pinterest',
         array(
-            'label' => __( 'Pintest', 'benevolent' ),
+            'label' => __( 'Pinterest', 'benevolent' ),
             'section' => 'benevolent_social_settings',
             'type' => 'text',
         )

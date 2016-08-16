@@ -296,11 +296,11 @@ function benevolent_social_links_cb(){
 		<?php } if( $twitter ){ ?>
         <li><a href="<?php echo esc_url( $twitter ); ?>" class="fa fa-twitter" target="_blank" title="<?php esc_attr_e( 'Twitter', 'benevolent' );?>"></a></li>
         <?php } if( $pinterest ){ ?>
-        <li><a href="<?php echo esc_url( $pinterest ); ?>" class="fa fa-pinterest" target="_blank" title="<?php esc_attr_e( 'Pinterst', 'benevolent' );?>"></a></li>
+        <li><a href="<?php echo esc_url( $pinterest ); ?>" class="fa fa-pinterest" target="_blank" title="<?php esc_attr_e( 'Pinterest', 'benevolent' );?>"></a></li>
 		<?php } if( $linkedin ){ ?>
         <li><a href="<?php echo esc_url( $linkedin ); ?>" class="fa fa-linkedin" target="_blank" title="<?php esc_attr_e( 'LinkedIn', 'benevolent' );?>"></a></li>
         <?php } if( $gplus ){ ?>
-        <li><a href="<?php echo esc_url( $gplus ); ?>" class="fa fa-google-plus" target="_blank" title="<?php esc_attr_e( 'Gooble Plus', 'benevolent' );?>"></a></li>
+        <li><a href="<?php echo esc_url( $gplus ); ?>" class="fa fa-google-plus" target="_blank" title="<?php esc_attr_e( 'Google Plus', 'benevolent' );?>"></a></li>
         <?php } if( $instagram ){ ?>
         <li><a href="<?php echo esc_url( $instagram ); ?>" class="fa fa-instagram" target="_blank" title="<?php esc_attr_e( 'Instagram', 'benevolent' );?>"></a></li>
 		<?php } if( $youtube ){ ?>
