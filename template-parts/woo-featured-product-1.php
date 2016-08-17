@@ -32,12 +32,12 @@ $woocommerce_loop['loop']++;
 </div>
 <div class="col-sm-7 front__product-featured__text">
 <div class="row">
-	<div class="col-sm-7 element-title product-featured__title">
+	<div class="col-sm-9 element-title product-featured__title">
 			<a property="url" href="<?php the_permalink(); ?>">
 			<?php woocommerce_template_single_title();?>
 			</a>
 	</div>
-	<div class="col-sm-5 product-featured__price">
+	<div class="col-sm-3 product-featured__price">
 		<?php woocommerce_template_single_price();?>
 	</div>
 	<div class="col-sm-12 product-featured__description">

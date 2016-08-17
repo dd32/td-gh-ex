@@ -1,18 +1,16 @@
 /*
 Theme Name: Bellini
-Theme URI: http://www.pangolinthemes.com/bellini-wordpress-theme/
+Theme URI: http://atlantisthemes.com/
 Author: Pangolin
-Author URI: http://pangolinthemes.com/
-Description: Bellini is the perfect theme for your eCommerce store or shop. Responsive & flexible layout built with Bootstrap & underscores.me. It is built with SEO in mind and have Structured Data (Schema) implemented. If you are looking for beautiful theme with out of the box SEO compatibility, look no further!
-Version: 1.26
+Description: Bellini is the perfect theme for your eCommerce(WooCommerce) store or shop. Responsive & flexible layout built with Bootstrap. Customize anything like Google Fonts, Color, Layout, logo upload, full-screen slider, header image and much more.Built with SEO in mind and has Structured Data (Schema) implemented. If you are looking for a beautiful theme with out of the box SEO compatibility & responsiveness, look no further! Check out the live demo at http://demo.atlantisthemes.com
+Version: 1.27
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bellini
-Tags:e-commerce, blog, entertainment, footer-widgets, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, featured-images, theme-options, full-width-template, one-column, two-columns, three-columns, flexible-header, threaded-comments, translation-ready, editor-style, featured-image-header, rtl-language-support
+Tags:e-commerce, blog, entertainment, grid-layout, footer-widgets, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, featured-images, theme-options, full-width-template, one-column, two-columns, three-columns, flexible-header, threaded-comments, translation-ready, editor-style, featured-image-header, rtl-language-support
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
-
 */
 
 /*--------------------------------------------------------------
@@ -144,7 +142,7 @@ body {
     overflow-y: scroll;
     font-family: sans-serif;
     line-height: 1.618;
-    word-break: break-word;
+    word-break: normal;
     vertical-align: baseline;
     background: #fff;
     -o-font-feature-settings: 'liga' 1,'kern';
@@ -691,7 +689,6 @@ a:active {
 
 .bellini__pagination--np__previous,
 .bellini__pagination--np__next {
-    background-color: #00BCD4;
     width: 10em;
     display: block;
     margin: .5em auto;
@@ -1050,7 +1047,7 @@ object {
 }
 
 .element-title--main {
-    margin-bottom: 0;
+    margin-bottom: 1em;
     text-align: center;
 }
 
@@ -1248,7 +1245,6 @@ object {
 }
 
 .excerpt--lb-2 .post-meta__time {
-    font-size: .8em;
     margin-bottom: 1em;
     display: block;
 }
@@ -1397,7 +1393,7 @@ object {
 
 .container--card-content {
     position: relative;
-    padding: 2% 8%;
+    padding: 2% 4%;
 }
 
 .single-post__title {
@@ -1415,7 +1411,6 @@ object {
 
 .single.post-meta {
     text-transform: uppercase;
-    font-size: .75em;
 }
 
 .edit-link {
@@ -1477,7 +1472,6 @@ object {
 }
 
 .post-meta__time {
-    font-size: small;
     margin-bottom: 1em;
     display: block;
 }
@@ -1568,13 +1562,6 @@ object {
     display: block;
 }
 
-.post-meta__time,
-.post-meta__author,
-.post-meta__category{
-    font-size: small;
-}
-
-
 
 /*--------------------------------------------------------------
 ## Frontpage Templates
@@ -1609,6 +1596,7 @@ object {
     background-size: cover;
     -o-background-size: cover;
     will-change: transform;
+    background-attachment: fixed;
 }
 
 .front-feature-blocks,
@@ -1618,7 +1606,11 @@ object {
 .front-blog,
 .front-text-field {
     padding-top: 2%;
-    padding-bottom: 6%;
+    padding-bottom: 3%;
+}
+
+.front__product-featured {
+    padding-bottom: 4em;
 }
 
 /* Slider
@@ -1665,7 +1657,6 @@ object {
     margin-top: 4%;
     padding: 1.5% 10%;
     text-transform: uppercase;
-    color: #fff;
     transition: all .3s linear;
     border-radius: 4px;
     margin:0 .6em;
@@ -1673,7 +1664,6 @@ object {
 
 .slider__cta--one:hover,
 .slider__cta--two:hover {
-    color: inherit;
     transform: scale(1.03);
     box-shadow: 0 8px 8px rgba(0,0,0,0.24);
 }
@@ -1682,10 +1672,13 @@ object {
 
 
 .feature-block__content {
-    padding: 1em 1.2em 1em 0;
+    padding: 0 1.2em;
 }
 
-
+.block-title {
+    margin-bottom: 0;
+    margin-top: 0;
+}
 /* Layout 2 */
 
 
@@ -1838,7 +1831,6 @@ object {
 .comment__meta,
 .comment__edit,
 .button--reply {
-    font-size: .8em;
     background-color: inherit;
     margin-top:.6em;
 }
@@ -2456,18 +2448,13 @@ Hamburger Menu
 }
 
 .feature-block__inner {
-    padding-top: 2em;
-    margin-bottom:2em;
-}
-
-.feature-block__inner img{
-    padding-top: 2em;
+    padding-top: 0;
+    margin-bottom:1em;
 }
 
 .image__caption h3 {
     margin-bottom: 1.2em;
     margin-top: 1.2em;
-    font-size: 2em;
 }
 
 .pangolin__cta--inner {
@@ -2475,24 +2462,22 @@ Hamburger Menu
 }
 
 .pangolin_call_to_action .cta__content h3 {
-    font-size: 2.2em;
     margin: auto;
     padding-bottom: 1em;
 }
 
 .cta--button {
-    font-size: 1.3em;
     padding-top: .3em;
-    padding-bottom: .3em;
+    padding-bottom: 0;
     display: block;
 }
 
 .cta--sub {
-    font-size: small;
+    margin-top:0;
 }
 
 .cta__button{
-    padding: .5em 2em;
+    padding: 0 2em;
     margin-bottom: .5em;
     transition: transform .2s;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
@@ -2508,7 +2493,6 @@ Hamburger Menu
 
 .pangolin__headline-desc__headline h3{
     margin:0;
-    font-size:2.7em;
 }
 .pangolin__headline-desc__desc {
     padding:1.5em 3em;
@@ -2550,7 +2534,6 @@ Hamburger Menu
 
 .image__caption--right .element-title,
 .image__caption--left .element-title{
-    font-size:2.1em;
     margin-top: .8em;
     margin-bottom:.6em;
 }
@@ -2571,8 +2554,8 @@ Hamburger Menu
 }
 
 .site-title {
-    line-height: 1em;
     padding: 0;
+    line-height: 1;
 }
 
 .link__more:after {
@@ -2611,7 +2594,6 @@ Hamburger Menu
 
 .bellini-social__link a span {
     transition:.2s ease-in-out;
-    color:inherit;
 }
 
 .bellini-social__link a span:hover {
@@ -2625,6 +2607,12 @@ Hamburger Menu
 
 .single.page-meta {
     padding: 2em 6em;
+}
+
+.front__product__cta a:hover,
+.front__blog__cta a:hover,
+.cta__button a:hover{
+    text-decoration:none;
 }
 
 
@@ -2778,4 +2766,8 @@ Hamburger Menu
     .slider-content {
         top: 0 !important;
     }
+}
+
+a.ham__close {
+    float: right;
 }

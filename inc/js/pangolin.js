@@ -5,10 +5,14 @@ jQuery(document).ready(function () {
     // Scroll Reveal
     new scrollReveal();
 
-    // Featured Product Flexslider
-    jQuery(window).load(function () {
-        jQuery('.fearured-product__slider').flexslider({animation: "slide", touch: true, pauseOnHover: true});
-    });
+    // Featured Product Slick Slider
+    jQuery('.single-item--featured').slick({
+            dots: true,
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows:false,
+        });
 
     // Equal Height
 
@@ -23,7 +27,7 @@ jQuery(document).ready(function () {
     jQuery('.post-item').matchHeight();
     jQuery('.product-card__info').matchHeight();
     jQuery('.product-card__inner').matchHeight();
-
+    jQuery('.type-product').matchHeight();
 
     // Cart Toggle
     jQuery('.cart-toggles').click(function () {
@@ -36,6 +40,13 @@ jQuery(document).ready(function () {
     jQuery('.hamburger').click(function () {
         jQuery(this).toggleClass('is-active');
         jQuery('.hamburger__menu__full').toggleClass('hamburger__menu--open');
+        return false;
+    });
+
+     // Hamburger Close
+    jQuery('.ham__close').click(function () {
+        jQuery('.hamburger__menu__full').removeClass('hamburger__menu--open');
+        jQuery( ".header-inner" ).find( ".hamburger--spring" ).removeClass('is-active');
         return false;
     });
 

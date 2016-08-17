@@ -98,7 +98,7 @@
 		<li>Select your Homepage template assigned page as <b>Front Page</b></li>
 		<li>Click on <b>Save & Publish</b></li>
 		</ol></br>
-		<a target="_blank" href="%s">Check Documentation</a>', 'bellini' ), esc_url( 'http://www.pangolinthemes.com' ));
+		<a target="_blank" href="%s">Check Documentation</a>', 'bellini' ), esc_url( 'http://atlantisthemes.com' ));
 
 	$wp_customize->add_setting( 'bellini[bellini_frontpage_helper_documentation]',
 		array(

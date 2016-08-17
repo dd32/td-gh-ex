@@ -24,18 +24,22 @@ function bellini_header_logo(){ ?>
 
 
 function bellini_header_menu(){
-	global $bellini;
-?>
-			<?php if ( $bellini['bellini_menu_layout'] == 'hamburger' ):?>
+global $bellini;
+
+if ( $bellini['bellini_menu_layout'] == 'hamburger' ):?>
+
 			<!-- Hamburger Menu -->
 			<div class="hamburger__menu__full">
 			<div class="row hamburger__menu__middle" aria-controls="primary-menu" aria-expanded="true">
-			<span class="hamburger__site-title" itemprop="headline">
+
+			<div class="col-xs-12 hamburger__site-title" itemprop="headline">
 				<a itemprop="url" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 				<?php bloginfo( 'name' ); ?>
 				</a>
-			</span>
-				<div class="col-md-12 site-header-cart menu">
+				<a class="ham__close"><?php esc_attr_e( 'Close', 'bellini' ); ?></a>
+			</div>
+
+				<div class="col-md-12 col-xs-12 site-header-cart menu clearfix">
 				<nav id="site-navigation-ham" aria-label="site links" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'main-nav' ) ); ?>
 				</nav>
@@ -233,14 +237,25 @@ function bellini_other_header_items(){
 function bellini_core_header(){
 	global $bellini;
 
-	if ( $bellini['bellini_header_menu_layout'] === 1 ):?>
-		<div class="site-branding col-md-6 col-xs-12"><?php bellini_header_logo();?></div>
-		<div class="col-md-6 col-xs-12 text-right"><?php bellini_header_menu();?></div>
+	if ( $bellini['bellini_header_menu_layout'] === 1 ):
+
+		if ( $bellini['bellini_menu_layout'] == 'hamburger' ):?>
+			<div class="site-branding col-md-6 col-xs-8"><?php bellini_header_logo();?></div>
+			<div class="col-md-6 col-xs-4 text-right"><?php bellini_header_menu();?></div>
+		<?php else:?>
+			<div class="site-branding col-md-6 col-xs-12"><?php bellini_header_logo();?></div>
+			<div class="col-md-6 col-xs-12 text-right"><?php bellini_header_menu();?></div>
+		<?php endif; ?>
 	<?php endif; ?>
 
-	<?php if ( $bellini['bellini_header_menu_layout'] === 2 ): ?>
-		<div class="col-md-6 col-xs-12 "><?php bellini_header_menu();?></div>
-		<div class="site-branding col-md-6 col-xs-12 text-right"><?php bellini_header_logo();?></div>
+	<?php if ( $bellini['bellini_header_menu_layout'] === 2 ):
+			if ( $bellini['bellini_menu_layout'] == 'hamburger' ):?>
+				<div class="col-md-6 col-xs-4"><?php bellini_header_menu();?></div>
+				<div class="site-branding col-md-6 col-xs-8 text-right"><?php bellini_header_logo();?></div>
+			<?php else:?>
+				<div class="col-md-6 col-xs-12 "><?php bellini_header_menu();?></div>
+				<div class="site-branding col-md-6 col-xs-12 text-right"><?php bellini_header_logo();?></div>
+		<?php endif; ?>
 	<?php endif; ?>
 
 	<?php if ( $bellini['bellini_header_menu_layout'] === 3 ): ?>

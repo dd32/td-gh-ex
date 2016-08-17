@@ -172,7 +172,6 @@
     margin-bottom: 4%;
     overflow: hidden;
     height:100% !important;
-    background-color: #fff;
     box-shadow: 0 1px 1.5px rgba(0,0,0,.12) ,0 1px 1px rgba(0,0,0,.24);
     transition: all .3s ease-in-out;
     will-change: transform;
@@ -339,7 +338,9 @@
 /**/
 
 .category_title{
-    text-align:center;
+    text-align: center;
+    margin-top: .4em;
+    margin-bottom: .4em;
 }
 
 .front-product-category__card a {
@@ -864,4 +865,12 @@
 
 .front-product-category__card {
     margin-top: 1em;
+}
+
+.front__product__cta{
+    margin-top: 2em;
+}
+
+.fearured-product__slider .slick-slide .row{
+    margin:0;
 }

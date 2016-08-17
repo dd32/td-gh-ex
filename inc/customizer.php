@@ -196,7 +196,7 @@ $bellini_widget_title_alignment						= esc_attr($bellini['bellini_widget_title_a
 $bellini_custom_code_css							= esc_attr($bellini['bellini_custom_css']);
 
 // CSS Classes
-$primary_color_text 			= ".scrollToTop";
+$primary_color_text 			= ".bellini-social__link a span,.scrollToTop";
 $primary_color_background 		= ".page-numbers.current,.hamburger-inner,.hamburger-inner::before,.hamburger-inner::after,.hamburger__site-title,.main-navigation ul ul,.product-featured__title h1:after,.product-featured__title--l2 h1:after,.product-featured__title--l3 h1:after";
 
 $bellini_meta_color_text 		= ".breadcrumb_last,.single.post-meta,.single.post-meta a,.post-meta__category a,.comment-reply-link,.comment__author,.blog-post__meta .post-meta__time,.post-meta__author,.comment-edit-link";
@@ -328,7 +328,7 @@ if ( is_woocommerce_activated() ):
 		$woo_class_prices 					= ".site-cart__icon,.product-card__info__price,.product-card__info__price,.product-featured__price .amount,.product-featured__price--l2 .amount,.product-card__info__price .amount,.woocommerce div.product span.price,.add_to_cart_button:before";
 		$woo_additional 					= ".product-featured__review--centered,.product .onsale,.product--l2 .onsale,.listed__total,.woocommerce span.onsale, .product-card__inner__hover";
 		$woo_class_buttons 					= ".product-featured__add-cart .add_to_cart_button,.product-featured__add-cart--l2 .add_to_cart_button,.woocommerce #respond input#submit,.woocommerce a.button,.woocommerce button.button,.woocommerce input.button";
-		$woo_product_card_background 		= ".front__product-featured__right--2,.front__product-featured__text,.woo__info__sorting,.product-card__inner,.product-card__inner--l3,.product-card__inner--l4,.front__product-featured__right--3";
+		$woo_product_card_background 		= ".product-card__inner,.front-product-category__card__inner,.front__product-featured__right--2,.front__product-featured__text,.woo__info__sorting,.product-card__inner,.product-card__inner--l3,.product-card__inner--l4,.front__product-featured__right--3";
 
 	?>
 
@@ -336,7 +336,8 @@ if ( is_woocommerce_activated() ):
 	<style type="text/css">
 	.product-card__info__product a,
 	.product-featured__title a,
-	.woocommerce ul.products li.product h3 {
+	.woocommerce ul.products li.product h3,
+	.product-card__info__product h3 {
     	font-size: <?php echo $woo_shop_product_title_font_size;?>px ;
     	color: <?php echo $product_card_title_color;?> ;
 	}
