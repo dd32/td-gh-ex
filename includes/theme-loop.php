@@ -1,10 +1,10 @@
 <?php /*
- * Main loop related functions 
+ * Main loop related functions
  *
  * @package mantra
  * @subpackage Functions
  */
- 
+
 
  /**
  * Sets the post excerpt length to 40 characters.
@@ -101,16 +101,16 @@ $raw_excerpt = $text;
 if ( '' == $text ) {
     //Retrieve the post content.
     $text = get_the_content('');
- 
+
     //Delete all shortcode tags from the content.
     $text = strip_shortcodes( $text );
- 
+
     $text = apply_filters('the_content', $text);
     $text = str_replace(']]>', ']]&gt;', $text);
- 
+
     $allowed_tags = '<a>,<img>,<b>,<strong>,<ul>,<li>,<i>,<h1>,<h2>,<h3>,<h4>,<h5>,<h6>,<pre>,<code>,<em>,<u>,<br>,<p>';
     $text = strip_tags($text, $allowed_tags);
- 
+
     $words = preg_split("/[\n\r\t ]+/", $text, $mantra_excerptwords + 1, PREG_SPLIT_NO_EMPTY);
     if ( count($words) > $mantra_excerptwords ) {
         array_pop($words);
@@ -158,12 +158,12 @@ foreach ($mantra_options as $key => $value) {
      ${"$key"} = $value ;
 }
 
-// If date is hidden don't give it a value
-$date_string='<span class="onDate"> %3$s <span class="bl_sep">|</span> </span>';
-if ($mantra_postdate == "Hide")  $date_string='';
 
-// If author is hidden don't give it a value 
-$author_string = sprintf( '<span class="author vcard" >'.__( 'By ','mantra'). ' <a class="url fn n" href="%1$s" title="%2$s">%3$s</a> <span class="bl_sep">|</span></span>',
+$date_string = '<time class="onDate date published" datetime="' . get_the_time( 'c' ) . '"> %3$s <span class="bl_sep">|</span> </time>';
+$date_string .= '<time class="updated"  datetime="' . get_the_modified_date( 'c' ) . '">' . get_the_modified_date() . '</time>';
+
+// If author is hidden don't give it a value
+$author_string = sprintf( '<span class="author vcard" >'.__( 'By ','mantra'). ' <a class="url fn n" rel="author" href="%1$s" title="%2$s">%3$s</a> <span class="bl_sep">|</span></span>',
 			get_author_posts_url( get_the_author_meta( 'ID' ) ),
 			sprintf( esc_attr__( 'View all posts by %s', 'mantra' ), get_the_author() ),
 			get_the_author()
@@ -185,11 +185,11 @@ if ($mantra_postauthor == "Hide")  $author_string='';
 endif;
 
 // Remove category from rel in categry tags.
-add_filter( 'the_category', 'mantra_remove_category_tag' ); 
-add_filter( 'get_the_category_list', 'mantra_remove_category_tag' ); 
+add_filter( 'the_category', 'mantra_remove_category_tag' );
+add_filter( 'get_the_category_list', 'mantra_remove_category_tag' );
 
-function mantra_remove_category_tag( $text ) { 
-$text = str_replace('rel="category tag"', 'rel="tag"', $text); return $text; 
+function mantra_remove_category_tag( $text ) {
+$text = str_replace('rel="category tag"', 'rel="tag"', $text); return $text;
 }
 
 
@@ -238,13 +238,13 @@ endif; // mantra_content_nav
 
 // Custom image size for use with post thumbnails
 if($mantra_fcrop)
-add_image_size( 'custom', $mantra_fwidth, $mantra_fheight, true ); 
+add_image_size( 'custom', $mantra_fwidth, $mantra_fheight, true );
 else
-add_image_size( 'custom', $mantra_fwidth, $mantra_fheight ); 
+add_image_size( 'custom', $mantra_fwidth, $mantra_fheight );
 
 
 function cryout_echo_first_image ($postID)
-{				
+{
 	$args = array(
 	'numberposts' => 1,
 	'order'=> 'ASC',
@@ -253,16 +253,16 @@ function cryout_echo_first_image ($postID)
 	'post_status' => 'any',
 	'post_type' => 'any'
 	);
-	
+
 	$attachments = get_children( $args );
 	//print_r($attachments);
-	
+
 	if ($attachments) {
 		foreach($attachments as $attachment) {
 			$image_attributes = wp_get_attachment_image_src( $attachment->ID, 'custom' )  ? wp_get_attachment_image_src( $attachment->ID, 'custom' ) : wp_get_attachment_image_src( $attachment->ID, 'custom' );
-				
+
 			return $image_attributes[0];
-			
+
 		}
 	}
 }
@@ -280,27 +280,23 @@ function mantra_set_featured_thumb() {
 global $post;
 $image_src = cryout_echo_first_image($post->ID);
 
-	 if ( function_exists("has_post_thumbnail") && has_post_thumbnail() && $mantra_fpost=='Enable') 
-			the_post_thumbnail( 'custom', array("class" => "align".strtolower($mantra_falign)." post_thumbnail" ) ); 
+	 if ( function_exists("has_post_thumbnail") && has_post_thumbnail() && $mantra_fpost=='Enable')
+			the_post_thumbnail( 'custom', array("class" => "align".strtolower($mantra_falign)." post_thumbnail" ) );
 
-	else if ($mantra_fpost=='Enable' && $mantra_fauto=="Enable" && $image_src && ($mantra_excerptarchive != "Full Post" || $mantra_excerpthome != "Full Post")) 
+	else if ($mantra_fpost=='Enable' && $mantra_fauto=="Enable" && $image_src && ($mantra_excerptarchive != "Full Post" || $mantra_excerpthome != "Full Post"))
 			echo '<a title="'.the_title_attribute('echo=0').'" href="'.get_permalink().'" ><img width="'.$mantra_fwidth.'" title="" alt="" class="align'.strtolower($mantra_falign).' post_thumbnail" src="'.$image_src.'"></a>' ;
-							
+
 	}
 endif; // mantra_set_featured_thumb
 
-
-
-if ($mantra_fpost=='Enable' && $mantra_fpostlink) add_filter( 'post_thumbnail_html', 'mantra_thumbnail_link', 10, 3 );	
+if ($mantra_fpost=='Enable' && $mantra_fpostlink) add_filter( 'post_thumbnail_html', 'mantra_thumbnail_link', 10, 2 );
 
 /**
  * The thumbnail gets a link to the post's page
  */
 
-function mantra_thumbnail_link( $html, $post_id, $post_image_id ) {
-
-  $html = '<a href="' . get_permalink( $post_id ) . '" title="' . esc_attr( get_post_field( 'post_title', $post_id ) ) . '" alt="' . esc_attr( get_post_field( 'post_title', $post_id ) ) . '">' . $html . '</a>';
-  return $html;
-
+function mantra_thumbnail_link( $html, $post_id ) {
+	$html = '<a href="' . get_permalink( $post_id ) . '" title="' . esc_attr( get_post_field( 'post_title', $post_id ) ) . '">' . $html . '</a>';
+	return $html;
 }
 ?>

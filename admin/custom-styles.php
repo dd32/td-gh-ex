@@ -195,7 +195,7 @@ $mantra_googlefonttitle = str_replace('+',' ',preg_replace('/:.*/i','',$mantra_g
 $mantra_googlefontside = str_replace('+',' ',preg_replace('/:.*/i','',$mantra_googlefontside));
 $mantra_googlefontsubheader = str_replace('+',' ',preg_replace('/:.*/i','',$mantra_googlefontsubheader));
 
-?><?php if (stripslashes($mantra_fontfamily) != '"Segoe UI", Arial, sans-serif' || $mantra_googlefont) { ?> * , .widget-title {font-family:<?php if (!$mantra_googlefont) echo $mantra_fontfamily; else echo "\"$mantra_googlefont\"";  ?> ; }<?php }
+?><?php if (stripslashes($mantra_fontfamily) != '"Segoe UI", Arial, sans-serif' || $mantra_googlefont) { ?> body, .widget-title {font-family:<?php if (!$mantra_googlefont) echo $mantra_fontfamily; else echo "\"$mantra_googlefont\"";  ?> ; }<?php }
 ?><?php if ($mantra_fonttitle != "Default" || $mantra_googlefonttitle) { ?> #content h1.entry-title a, #content h2.entry-title a, #content h1.entry-title , #content h2.entry-title {font-family:<?php if (!$mantra_googlefonttitle) echo $mantra_fonttitle; else echo "\"$mantra_googlefonttitle\"";  ?> ; }<?php }
 ?><?php if ($mantra_fontside != "Default" || $mantra_googlefontside) { ?> .widget-area *  {font-family:<?php if (!$mantra_googlefontside) echo $mantra_fontside; else echo "\"$mantra_googlefontside\"";  ?> ; }<?php }
 ?><?php if ($mantra_fontsubheader != "Default"  || $mantra_googlefontsubheader ) { ?> .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4, .entry-content h5, .entry-content h6  {font-family:<?php if (!$mantra_googlefontsubheader) echo $mantra_fontsubheader; else echo "\"$mantra_googlefontsubheader\"";  ?> ; }<?php }
@@ -254,13 +254,13 @@ endswitch;
 ?><?php if ($mantra_pagetitle == "Hide") { ?> .page h1.entry-title, .home .page h2.entry-title { display:none;} <?php }
 ?><?php if ($mantra_categtitle == "Hide") { ?> h1.page-title { display:none;} <?php }
 ?><?php if (($mantra_postdate == "Hide" && $mantra_postcateg == "Hide") || ($mantra_postauthor == "Hide" && $mantra_postcateg == "Hide") ) { ?>.entry-meta .bl_sep {display:none;} <?php }
-?><?php if ($mantra_postdate == "Hide") { ?>.entry-meta span.entry-date,.entry-meta span.onDate {display:none;} <?php }
+?><?php if ($mantra_postdate == "Hide") { ?>.entry-meta time.onDate {display:none;} <?php }
 ?><?php if ($mantra_postcomlink == "Hide") { ?>.entry-meta .comments-link,.entry-meta2 .comments-link{display:none;} <?php }
 ?><?php if ($mantra_postauthor == "Hide") { ?>.entry-meta .author {display:none;} <?php }
 ?><?php if ($mantra_postcateg == "Hide") { ?>.entry-meta span.bl_categ, .entry-meta2 span.bl_categ {display:none;} <?php }
 ?><?php if ($mantra_posttag == "Hide") { ?> .entry-utility span.bl_posted, .entry-meta2 span.bl_tagg,.entry-meta3 span.bl_tagg {display:none;} <?php }
 ?><?php if ($mantra_postbook == "Hide") { ?> .entry-utility span.bl_bookmark {display:none;} <?php }
-?><?php if ($mantra_parmargin) { ?> #content p, .entry-content ul, .entry-summary ul , .entry-content ol, .entry-summary ol { margin-bottom:<?php echo $mantra_parmargin; ?>;} <?php } 
+?><?php if ($mantra_parmargin) { ?> #content p, .entry-content ul, .entry-summary ul , .entry-content ol, .entry-summary ol { margin-bottom:<?php echo $mantra_parmargin; ?>;} <?php }
 ?><?php if ($mantra_parindent != "0px") { ?>  p {text-indent:<?php echo $mantra_parindent;?> ;} <?php }
 ?><?php if ($mantra_posttime == "Hide") { ?> .entry-meta .entry-time {display:none;} <?php }
 ?><?php if ($mantra_postmetas == "Hide") { ?> #content .entry-meta, #content .entry-header div.entry-meta2 > * {display:none;} <?php }

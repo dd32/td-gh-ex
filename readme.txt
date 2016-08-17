@@ -4,11 +4,11 @@ Copyright 2011-16 Cryout Creations
 
 Author: Cryout Creations
 Requires at least: 4.0
-Tested up to: 4.4.2
-Stable tag: 2.5.0
+Tested up to: 4.6
+Stable tag: 2.6.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
-Donate link: http://www.cryoutcreations.eu/donate/
+Donate link: https://www.cryoutcreations.eu/donate/
 
 Mantra is a do-it-yourself WordPress theme, featuring a pack of over 100 customization options and easy to use tweaks capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (1,2 or 3 columns), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 35 font-families plus all Google Fonts), text and header sizes, post metas, post excerpts, post formats, header and background images, custom menus, 27 social media links and icons, pins, bullets and much much more. With a fully responsive layout,a customizable showcase presentation page, animated slider, magazine and blog layouts, 8 widget areas, modern graphics and an easy and intuitive admin section, you can start creating your dream site right now. 
 
@@ -56,7 +56,7 @@ Source: http://css3pie.com/
 All other images bundled with the theme (used in the demo presentation page and admin section, as well as the social icons) are created by Cryout Creations and released with the theme under GPLv3 as well.
 
 
-== Translations ==
+== Original Translations ==
 
 Chinese (Simplified) - Lín Xuan Li
 Czech - Satapouch 
@@ -79,6 +79,19 @@ Turkish - Emre Dalkiliç
 
 
 == Changelog ==
+
+= 2.6.0 =
+* Optimized CSS layout and updated for latest browser versions
+* Removed unused third parameter $post_image_id from nirvana_thumbnail_link()
+* Added author role meta to improve microformats
+* Added time updated and published meta to improve microformats
+* Removed deprecated hgroup HTML tags
+* Fixed WooCommerce rating stars font issue
+* Added new WordPress.org theme tags (and removed deprecated ones)
+* Updated theme URL for new site
+* Updated theme news feed URL for new site structure
+* Removed bundled it_IT, fr_FR, ru_RU, es_ES, de_DE, nl_NL translations in favour of WordPress Translate ones
+* Added text domain to style.css to support Wordpress Translate
 
 = 2.5.0 =
 * REMOVED THE THEME SETTINGS AND ADDED SUPPORT FOR THE SEPARATE THEME SETTINGS PLUGIN

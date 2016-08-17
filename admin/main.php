@@ -1,5 +1,5 @@
 <?php
-// Frontend 
+// Frontend
 require_once(get_template_directory() . "/admin/defaults.php");					// default options
 require_once(get_template_directory() . "/admin/custom-styles.php");			// custom styling
 
@@ -64,13 +64,13 @@ function mantra_admin_scripts() {
     wp_enqueue_script('jquery-ui-accordion');
 	wp_enqueue_script('jquery-ui-slider');
 	wp_enqueue_script('jquery-ui-tooltip');
-	
+
 	// For backwards compatibility where Mantra is installed on older versions of WP where the ui accordion and slider are not included
 	if (!wp_script_is('jquery-ui-accordion',$list='registered')) {
 		wp_register_script('cryout_accordion',get_template_directory_uri() . '/admin/js/accordion-slider.js', array('jquery'), _CRYOUT_THEME_VERSION  );
 		wp_enqueue_script('cryout_accordion');
 		}
-		
+
 	// For the WP uploader
     if(function_exists('wp_enqueue_media')) {
         wp_enqueue_media();
@@ -79,7 +79,7 @@ function mantra_admin_scripts() {
         wp_enqueue_script('thickbox');
         wp_enqueue_style('thickbox');
     }
-	  
+
 	// The JS used in the admin
 	wp_register_script('cryout-admin-js',get_template_directory_uri() . '/admin/js/admin.js', NULL, _CRYOUT_THEME_VERSION  );
 	wp_enqueue_script('cryout-admin-js');
@@ -249,7 +249,7 @@ function mantra_page_fn() {
 <div id="admin_header"><img src="<?php echo get_template_directory_uri() . '/admin/images/mantra-logo.png' ?>" /> </div>
 
 <div id="admin_links">
-	<a target="_blank" href="http://www.cryoutcreations.eu/mantra">Mantra Homepage</a>
+	<a target="_blank" href="http://www.cryoutcreations.eu/wordpress-themes/mantra">Mantra Homepage</a>
 	<a target="_blank" href="http://www.cryoutcreations.eu/forum">Support</a>
 	<a target="_blank" href="http://www.cryoutcreations.eu">Cryout Creations</a>
 </div>
@@ -266,7 +266,7 @@ function mantra_page_fn() {
 The Parabola Settings page cannot function without jQuery. </em></div>
 
 	<div id="main-options">
-		<?php 
+		<?php
 		mantra_theme_settings_placeholder();
 		$mantra_theme_data = get_transient( 'mantra_theme_info');  ?>
 		<span id="version">
@@ -331,7 +331,7 @@ The Parabola Settings page cannot function without jQuery. </em></div>
             </div>
             <div class="panel-wrap inside" style="height:200px;overflow:auto;">
                 <?php
-				$mantra_news = fetch_feed( array( 'http://www.cryoutcreations.eu/cat/mantra/feed') );
+				$mantra_news = fetch_feed( array( 'http://www.cryoutcreations.eu/cat/wordpress-themes/mantra/feed') );
 				$maxitems = 0;
 				if ( ! is_wp_error( $mantra_news ) ) {
 					$maxitems = $mantra_news->get_item_quantity( 10 );
@@ -400,7 +400,7 @@ function vercomp(ver, req) {
     var v = ver.split('.');
     var q = req.split('.');
     for (var i = 0; i < v.length; ++i) {
-        if (q.length == i) { return true; } // v is bigger 
+        if (q.length == i) { return true; } // v is bigger
         if (parseInt(v[i]) == parseInt(q[i])) { continue; } // nothing to do here, move along
         else if (parseInt(v[i]) > parseInt(q[i])) { return true; } // v is bigger
         else { return false; } // q is bigger
@@ -437,7 +437,7 @@ jQuery(document).ready(function(){
 		startfarb("#mantra_footertext","#mantra_footertext2");
 		startfarb("#mantra_footerhover","#mantra_footerhover2");
 		startfarb("#mantra_fpsliderbordercolor","#mantra_fpsliderbordercolor2");
-		startfarb("#mantra_fronttitlecolor","#mantra_fronttitlecolor2");		
+		startfarb("#mantra_fronttitlecolor","#mantra_fronttitlecolor2");
 	} else {
 		jQuery("#mantra_backcolor").addClass('colorthingy');
 		jQuery("#mantra_headercolor").addClass('colorthingy');
