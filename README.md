@@ -40,6 +40,9 @@ https://pixabay.com/en/man-handsome-male-model-guy-885223/
 16. Other theme options are self explanatory.
 
 == Change Log ==
+v. 1.2.5
+ * Fix jigoshop bug
+
 v. 1.2.4
  * Fix Responsive title bug
  * Change screenshot & Demo link

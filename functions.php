@@ -295,7 +295,7 @@ function boxy_client_exists() {
 
 /* Woocommerce support */
 
-add_theme_support('woocommerce');
+add_theme_support('woocommerce');   
 
 remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper');
 add_action('woocommerce_before_main_content', 'boxy_output_content_wrapper');
