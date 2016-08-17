@@ -817,6 +817,34 @@ $wp_customize->add_control(
     );
 
 
+/** accordion toggle panel **/
+$wp_customize->add_section(
+    'aglee_lite_toggle_section',
+    array(
+        'title' => __('Accordion/Toggle Section','aglee-lite'),
+        'description' => __('Add title for toggle section and add other contents from Widget Areas.','aglee-lite'),
+        'priority' => 20,
+        )
+    );
+
+$wp_customize->add_setting(
+    'aglee_lite_toggle_section_title',
+    array(
+        'default' => __('Accordion','aglee-lite'),
+        'sanitize_callback' => 'aglee_lite_sanitize_text'
+        )
+    );
+
+$wp_customize -> add_control(
+    'aglee_lite_toggle_section_title',
+    array(
+        'label' => __('Toggle Section Title','aglee-lite'),
+        'section' => 'aglee_lite_toggle_section',
+        'type' => 'text'
+        )
+    );
+/**  end of accordion toggle panel **/ 
+
 /** Testimonial panel **/
 $wp_customize -> add_panel(
     'testimonial_select_panel',

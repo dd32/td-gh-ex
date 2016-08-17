@@ -49,10 +49,10 @@ function aglee_lite_customizer_themeinfo( $wp_customize ) {
 		));
 
 	$aglee_lite_desc_theme_opt = '<a target="_blank" href="http://8degreethemes.com/wordpress-themes/zincy-pro">'.__('Zincy PRO','aglee-lite').'</a> <br />';
-	$wimpie_lite_desc_theme_opt .= '<a target="_blank" href="http://8degreethemes.com/wordpress-themes/wimpie-pro">'.__('Wimpie PRO','aglee-lite').'</a> <br />';
-	$wimpie_lite_desc_theme_opt .= '<a target="_blank" href="http://8degreethemes.com/wordpress-themes/hamza-pro">'.__('Hamza PRO','aglee-lite').'</a> <br />';
-	$wimpie_lite_desc_theme_opt .= '<a target="_blank" href="http://8degreethemes.com/wordpress-themes/aglee-pro">'.__('Aglee PRO','aglee-lite').'</a> <br />';
-	$wimpie_lite_desc_theme_opt .= '<a target="_blank" href="http://8degreethemes.com/wordpress-themes/eightstore-pro">'.__('EightStore PRO','aglee-lite').'</a> <br />';
+	$aglee_lite_desc_theme_opt .= '<a target="_blank" href="http://8degreethemes.com/wordpress-themes/wimpie-pro">'.__('Wimpie PRO','aglee-lite').'</a> <br />';
+	$aglee_lite_desc_theme_opt .= '<a target="_blank" href="http://8degreethemes.com/wordpress-themes/hamza-pro">'.__('Hamza PRO','aglee-lite').'</a> <br />';
+	$aglee_lite_desc_theme_opt .= '<a target="_blank" href="http://8degreethemes.com/wordpress-themes/aglee-pro">'.__('Aglee PRO','aglee-lite').'</a> <br />';
+	$aglee_lite_desc_theme_opt .= '<a target="_blank" href="http://8degreethemes.com/wordpress-themes/eightstore-pro">'.__('EightStore PRO','aglee-lite').'</a> <br />';
 
 	$wp_customize->add_control( new Aglee_lite_Theme_Info_Custom_Control( $wp_customize ,'theme_info_pro_theme',array(
 		'label' => __( 'PRO Themes' , 'aglee-lite' ),
