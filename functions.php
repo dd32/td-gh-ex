@@ -4,8 +4,11 @@
  *
  * @package GeneratePress
  */
+
+// No direct access, please
+if ( ! defined( 'ABSPATH' ) ) exit;
 	
-define( 'GENERATE_VERSION', '1.3.38');
+define( 'GENERATE_VERSION', '1.3.39');
 define( 'GENERATE_URI', get_template_directory_uri() );
 define( 'GENERATE_DIR', get_template_directory() );
 

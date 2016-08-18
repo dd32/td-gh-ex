@@ -1,4 +1,7 @@
 <?php
+// No direct access, please
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /**
  * Custom functions that act independently of the theme templates
  *
@@ -412,5 +415,22 @@ function generate_main_classes( $classes )
 	$classes[] = 'site-main';
 	return $classes;
 	
+}
+endif;
+
+if ( ! function_exists( 'generate_post_classes' ) ) :
+/**
+ * Adds custom classes to the <article> element
+ * Remove .hentry class from pages to comply with structural data guidelines
+ * @since 1.3.39
+ */
+add_filter( 'post_class','generate_post_classes' );
+function generate_post_classes( $classes )
+{
+	if ( 'page' == get_post_type() ) {
+		$classes = array_diff( $classes, array( 'hentry' ) );
+	}
+	
+	return $classes;
 }
 endif;

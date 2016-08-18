@@ -15,6 +15,9 @@
  * @license  http://www.opensource.org/licenses/gpl-license.php GPL v2.0 (or later)
  * @link     http://www.generatepress.com
  */
+ 
+// No direct access, please
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 if ( !function_exists('generate_spacing_get_defaults') ) :
 	function generate_spacing_get_defaults()
@@ -167,7 +170,7 @@ if ( !function_exists('generate_spacing_css') ) :
 				'margin-bottom' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
 			),
 			
-			'.separate-containers .widget, .separate-containers .hentry, .separate-containers .page-header, .widget-area .main-navigation' => array(
+			'.separate-containers .widget, .separate-containers .post, .separate-containers .page-header, .widget-area .main-navigation' => array(
 				'margin-bottom' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
 			),
 			
