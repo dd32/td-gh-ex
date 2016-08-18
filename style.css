@@ -4,7 +4,7 @@ Theme URI: http://www.iograficathemes.com/downloads/base-wp/
 Author: iografica
 Author URI: http://www.iograficathemes.com/
 Description: Base WP is a basic blog or business, responsive and clean coded, WordPress theme. Base WP is e-commerce, multilingual ready, SEO friendly and cross-browser compatible. The theme is fully integrated with the most popular and free plugins for Wordpress like WooCommerce, Easy Digital Downloads, Yoast Seo, Beaver Builder, and much more. You can customize the theme via the Customizer, use this theme as an ecommerce or as a simple blogging platform.
-Version: 1.43
+Version: 1.44
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: base-wp
@@ -2210,6 +2210,15 @@ h3.widget-title {
   margin: 0 0 25px 0;
   padding: 0;
   font-size: 1.2em;
+}
+
+.site-header .site-branding .custom-logo {
+  margin: 25px 0;
+}
+
+.site-header .header-image {
+  display: block;
+  margin: 0 auto;
 }
 
 .site-header .header-nav {

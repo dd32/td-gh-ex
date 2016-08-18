@@ -10,6 +10,9 @@ if ( ! function_exists( 'igthemes_header_content' ) ) {
     //start function
     function igthemes_header_content() {
         echo '<div class="header-content">';
+        if ( has_header_image() ) {
+            echo '<img class="header-image" src=" '.get_header_image().' ">';
+        }  
         igthemes_header_navigation();
         igthemes_site_branding();
         echo '</div>';
