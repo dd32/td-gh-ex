@@ -28,3 +28,6 @@ i) Added author name function in blog and update translation file.
 
 Version 1.2.7
 i) Remove error from post comments.
+
+Version 1.2.8
+i) Added field for purchase button link.

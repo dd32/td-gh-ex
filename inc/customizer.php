@@ -302,6 +302,17 @@ function awesomeone_sanitize_checkbox( $input ) {
 		'type'		=> 'text'
 	));
 	
+	$wp_customize->add_setting('purchaselink',array(
+		'default'	=> '#purchaselink',
+		'sanitize_callback'	=> 'esc_url_raw',
+	));
+	
+	$wp_customize->add_control('purchaselink',array(
+		'label'	=> __('Add Purchase Button Link.','awesomeone'),
+		'section'	=> 'slider_section',
+		'type'		=> 'text'
+	));
+	
 	$wp_customize->add_section('footer_section',array(
 		'title'	=> __('Footer Text','awesomeone'),
 		'description'	=> __('Add some text for footer like copyright etc.','awesomeone'),

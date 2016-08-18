@@ -3,9 +3,9 @@
 /*-----------------------------------------------------------------------------------*/
 
 Theme Name      :   Awesomeone
-Theme URI       :    http://www.flythemes.net/wordpress-themes/awesomeone-corporate-wordpress-theme/
-Version         :   1.2.7
-Tested up to    :   WP 4.4.2
+Theme URI       :    https://www.flythemes.net/wordpress-themes/awesomeone-corporate-wordpress-theme/
+Version         :   1.2.8
+Tested up to    :   WP 4.6
 Author          :   Flythemes
 Author URI      :   http://www.flythemes.net/
 
