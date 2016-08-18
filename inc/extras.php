@@ -203,7 +203,7 @@ function aglee_lite_slidercb(){
             $aglee_lite_no_of_testimonial = sizeof($aglee_lite_posts_array);
             $aglee_lite_loop_no = round($aglee_lite_no_of_testimonial/2);
             ?>
-            <h1><?php _e('What Our Clients Say','aglee-lite'); ?></h1>
+            <h1><?php echo get_theme_mod('aglee_lite_testimonial_section_title',__('What Our Clients Say','aglee-lite')); ?></h1>
             <ul class="aglee-testimonial-slider">
                 <?php
                 $aglee_lite_offset_element = 0;

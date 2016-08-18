@@ -819,11 +819,28 @@ $wp_customize->add_control(
 
 /** accordion toggle panel **/
 $wp_customize->add_section(
-    'aglee_lite_toggle_section',
+    'aglee_lite_section_titles',
     array(
-        'title' => __('Accordion/Toggle Section','aglee-lite'),
-        'description' => __('Add title for toggle section and add other contents from Widget Areas.','aglee-lite'),
+        'title' => __('Homepage Section Titles','aglee-lite'),
+        'description' => __('Add title for homepage sections and add its contents from Widget Areas.','aglee-lite'),
         'priority' => 20,
+        )
+    );
+
+$wp_customize->add_setting(
+    'aglee_lite_features_section_title',
+    array(
+        'default' => '',
+        'sanitize_callback' => 'aglee_lite_sanitize_text'
+        )
+    );
+
+$wp_customize -> add_control(
+    'aglee_lite_features_section_title',
+    array(
+        'label' => __('Features Section Title','aglee-lite'),
+        'section' => 'aglee_lite_section_titles',
+        'type' => 'text'
         )
     );
 
@@ -838,12 +855,46 @@ $wp_customize->add_setting(
 $wp_customize -> add_control(
     'aglee_lite_toggle_section_title',
     array(
-        'label' => __('Toggle Section Title','aglee-lite'),
-        'section' => 'aglee_lite_toggle_section',
+        'label' => __('Toggle/Accordion Section Title','aglee-lite'),
+        'section' => 'aglee_lite_section_titles',
         'type' => 'text'
         )
     );
-/**  end of accordion toggle panel **/ 
+
+$wp_customize->add_setting(
+    'aglee_lite_testimonial_section_title',
+    array(
+        'default' => __('What Our Clients Say','aglee-lite'),
+        'sanitize_callback' => 'aglee_lite_sanitize_text'
+        )
+    );
+
+$wp_customize -> add_control(
+    'aglee_lite_testimonial_section_title',
+    array(
+        'label' => __('Testimonial Section Title','aglee-lite'),
+        'section' => 'aglee_lite_section_titles',
+        'type' => 'text'
+        )
+    );
+
+$wp_customize->add_setting(
+    'aglee_lite_services_section_title',
+    array(
+        'default' => __('Our services','aglee-lite'),
+        'sanitize_callback' => 'aglee_lite_sanitize_text'
+        )
+    );
+
+$wp_customize -> add_control(
+    'aglee_lite_services_section_title',
+    array(
+        'label' => __('Services Section Title','aglee-lite'),
+        'section' => 'aglee_lite_section_titles',
+        'type' => 'text'
+        )
+    );
+/**  end of titles panel **/ 
 
 /** Testimonial panel **/
 $wp_customize -> add_panel(

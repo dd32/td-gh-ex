@@ -91,7 +91,7 @@ class Aglee_Lite_Services_Widget extends WP_Widget {
             if($feat_query->have_posts()) :
                 ?>
                 <div class="service-post-wrapper-block clearfix">
-                <h1><?php _e('Our services','aglee-lite'); ?></h1>
+                <h1><?php echo get_theme_mod('aglee_lite_services_section_title',__('Our services','aglee-lite')); ?></h1>
                 <?php
                 while($feat_query->have_posts()) : $feat_query->the_post();
                     $img = wp_get_attachment_image_src(get_post_thumbnail_id(),'services-thumb', true);

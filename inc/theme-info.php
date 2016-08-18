@@ -71,6 +71,8 @@ function aglee_lite_customizer_themeinfo( $wp_customize ) {
 
 	$aglee_lite_desc_theme_opt .= '<a target="_blank" href="'.esc_url('http://8degreethemes.com/wordpress-plugins/8-degree-availability-calendar/').'">'.__('8Degree Availability Calendar','aglee-lite').'</a> <br />';
 
+	$aglee_lite_desc_theme_opt .= '<strong class="customize-text_editor">'.__('WordPress Resources','aglee-lite').'</strong><a target="_blank" href="'.esc_url('https://wpall.club/').'">'.__('WordPress Tutorials and Resources','aglee-lite').'</a> <br />';
+
 	$wp_customize->add_control( new Aglee_lite_Theme_Info_Custom_Control( $wp_customize ,'theme_info_useful_plugins',array(
 		'label' => __( 'Useful Plugins' , 'aglee-lite' ),
 		'section' => 'theme_info',

@@ -14,6 +14,4 @@ var upgrade_notice = '<div class="notice-up"><a class="upgrade-pro" target="_bla
 upgrade_notice += '<a class="upgrade-pro-demo" target="_blank" href="http://8degreethemes.com/demos/?theme=aglee-pro">AGLEE PRO DEMO</a></div>';
 jQuery('#customize-info').append(upgrade_notice);
 
-var wp_resource = '<div class="notice-bottom"><a target="_blank" href="https://wpall.club/">WordPress Tutorials and Resources</a>';
-jQuery('#customize-theme-controls').append(wp_resource);
 });

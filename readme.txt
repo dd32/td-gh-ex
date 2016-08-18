@@ -60,6 +60,10 @@ License: CC0 Public Domain
 License url: https://creativecommons.org/publicdomain/zero/1.0/deed.en
 
 == Changelog ==
+= 1.0.16 - 18th August, 2016 =
+* Minor Design Fixes
+* Added option in customizer for Homepage Section Titles
+
 = 1.0.15 - 17th August, 2016 =
 * Minor Design Fixes
 * Added option in customizer for Accordion Section Title
