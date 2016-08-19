@@ -266,6 +266,35 @@ class MP_Artwork {
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
 		) );
+		register_sidebar( array(
+			'name'          => __( 'Footer Left', 'artwork-lite' ),
+			'id'            => 'sidebar-2',
+			'description'   => __( 'Appears in the footer section of the site.', 'artwork-lite' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<div class="footer-title">',
+			'after_title'   => '</div>',
+		) );
+
+		register_sidebar( array(
+			'name'          => __( 'Footer Center', 'artwork-lite' ),
+			'id'            => 'sidebar-3',
+			'description'   => __( 'Appears in the footer section of the site.', 'artwork-lite' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<div class="footer-title">',
+			'after_title'   => '</div>',
+		) );
+
+		register_sidebar( array(
+			'name'          => __( 'Footer Right', 'artwork-lite' ),
+			'id'            => 'sidebar-4',
+			'description'   => __( 'Appears in the footer section of the site.', 'artwork-lite' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<div class="footer-title">',
+			'after_title'   => '</div>',
+		) );
 	}
 
 	/*
@@ -384,7 +413,7 @@ class MP_Artwork {
 	 * @return string
 	 */
 	function get_theme_version() {
-		$theme_info = wp_get_theme();
+		$theme_info = wp_get_theme( get_template() );
 
 		return $theme_info->get( 'Version' );
 	}

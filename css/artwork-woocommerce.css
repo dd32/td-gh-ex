@@ -413,8 +413,8 @@ td.label {
 .woocommerce .woocommerce-ordering {
   margin: 0.375em 0 2.938em;
   float: right;
-  width: 270px;
-  max-width: 100%;
+  /*width: 270px;
+  max-width:100%;*/
 }
 .woocommerce .woocommerce-ordering span.customSelect {
   width: 100%;

@@ -67,7 +67,7 @@
 //
 //    }
     function ifraimeResize() {
-        $('iframe').each(function () {
+        $('.entry-media iframe:visible , .entry-content iframe:visible').each(function () {
             if ($(this).parents('.work-blog').length) {
                 if ($(this).parents('.container').width() < $(this).parents('.work-blog').width()) {
                     var parentWidth = $(this).parents('.container').width();

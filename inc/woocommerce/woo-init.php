@@ -28,6 +28,8 @@ class MP_Artwork_Woocommerce {
 
         add_action('woocommerce_sidebar', array($this, 'woocommerce_sidebar'), 10, 2);
         remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+		
+		add_filter( 'woocommerce_related_products_args', array($this, 'woocommerce_related_products_args') );
     }
 
     /**
@@ -39,6 +41,11 @@ class MP_Artwork_Woocommerce {
     public function get_prefix() {
         return $this->prefix . '_';
     }
+	
+	function woocommerce_related_products_args( $args ) {
+		$args['posts_per_page'] = 3; // 3 related products
+		return $args;
+	}
 
     function woocommerce_breadcrumbs() {
         return array(

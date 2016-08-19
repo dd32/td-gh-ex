@@ -95,7 +95,18 @@ class MP_Artwork_Customizer {
 			'section'  => 'colors',
 			'settings' => $this->get_prefix() . 'color_primary'
 		) ) );
+		$wp_customize->add_setting( $this->get_prefix() . 'section_color_primary', array(
+			'default'           => $color_scheme[6],
+			'type'              => 'option',
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'sanitize_hex_color'
+		) );
 
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $this->get_prefix() . 'section_color_primary', array(
+			'label'    => __( 'First Section Color', 'artwork-lite' ),
+			'section'  => 'colors',
+			'settings' => $this->get_prefix() . 'section_color_primary'
+		) ) );
 		$wp_customize->add_setting( $this->get_prefix() . 'color_second', array(
 			'default'           => $color_scheme[1],
 			'type'              => 'option',
@@ -104,7 +115,7 @@ class MP_Artwork_Customizer {
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $this->get_prefix() . 'color_second', array(
-			'label'    => __( 'Second Accent Color', 'artwork-lite' ),
+			'label'    => __( 'Second Section Color', 'artwork-lite' ),
 			'section'  => 'colors',
 			'settings' => $this->get_prefix() . 'color_second'
 		) ) );
@@ -117,7 +128,7 @@ class MP_Artwork_Customizer {
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $this->get_prefix() . 'color_third', array(
-			'label'    => __( 'Third Accent Color', 'artwork-lite' ),
+			'label'    => __( 'Third Section Color', 'artwork-lite' ),
 			'section'  => 'colors',
 			'settings' => $this->get_prefix() . 'color_third'
 		) ) );
@@ -129,291 +140,11 @@ class MP_Artwork_Customizer {
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $this->get_prefix() . 'color_fourth', array(
-			'label'    => __( 'Fourth Accent Color', 'artwork-lite' ),
+			'label'    => __( 'Fourth Section Color', 'artwork-lite' ),
 			'section'  => 'colors',
 			'settings' => $this->get_prefix() . 'color_fourth'
 		) ) );
 
-		/*
-		 * Add 'logo' section
-		 */
-
-		$wp_customize->add_section(
-			$this->get_prefix() . 'logo_section', array(
-				'title'      => __( 'Footer Logo', 'artwork-lite' ),
-				'priority'   => 30,
-				'capability' => 'edit_theme_options'
-			)
-		);
-		/*
-		* Add the 'logo footer' upload setting.
-		*/
-		$wp_customize->add_setting(
-			$this->get_prefix() . 'logo_footer', array(
-				
-				'capability'        => 'edit_theme_options',
-				'sanitize_callback' => 'esc_url_raw',
-			)
-		);
-
-		/*
-		 * Add the upload control for the $this->get_prefix().'logo_footer' setting.
-		 */
-		$wp_customize->add_control(
-			new WP_Customize_Image_Control(
-				$wp_customize, $this->get_prefix() . 'logo_footer', array(
-					'label'    => esc_html__( 'Footer logo', 'artwork-lite' ),
-					'section'  => $this->get_prefix() . 'logo_section',
-					'settings' => $this->get_prefix() . 'logo_footer',
-				)
-			)
-		);
-		/*
-		 * Add 'header_info' section
-		 */
-		$wp_customize->add_section(
-			$this->get_prefix() . 'header_info', array(
-				'title'      => esc_html__( 'Contact Information', 'artwork-lite' ),
-				'priority'   => 60,
-				'capability' => 'edit_theme_options'
-			)
-		);
-		$wp_customize->add_setting( $this->get_prefix() . 'location_info_label', array(
-			'default'           => __( 'Address', 'artwork-lite' ),
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => array( $this, 'sanitize_text' ),
-			//'transport'         => 'postMessage'
-		) );
-		$wp_customize->add_control( $this->get_prefix() . 'location_info_label', array(
-			'label'    => __( 'Contact Information Title 1', 'artwork-lite' ),
-			'section'  => $this->get_prefix() . 'header_info',
-			'settings' => $this->get_prefix() . 'location_info_label',
-		) );
-		$wp_customize->add_setting( $this->get_prefix() . 'location_info', array(
-			'default'           => MP_ARTWORK_DEFAULT_ADDRESS,
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => array( $this, 'sanitize_text' ),
-			'transport'         => 'postMessage'
-		) );
-		$wp_customize->add_control( $this->get_prefix() . 'location_info', array(
-			'label'    => __( 'Contact Information 1', 'artwork-lite' ),
-			'section'  => $this->get_prefix() . 'header_info',
-			'settings' => $this->get_prefix() . 'location_info',
-			'type'     => 'textarea'
-		) );
-		$wp_customize->add_setting( $this->get_prefix() . 'hours_info_label', array(
-			'default'           => __( 'Opening hours', 'artwork-lite' ),
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => array( $this, 'sanitize_text' ),
-			//'transport'         => 'postMessage'
-		) );
-		$wp_customize->add_control( $this->get_prefix() . 'hours_info_label', array(
-			'label'    => __( 'Contact Information Title 2', 'artwork-lite' ),
-			'section'  => $this->get_prefix() . 'header_info',
-			'settings' => $this->get_prefix() . 'hours_info_label',
-		) );
-		$wp_customize->add_setting( $this->get_prefix() . 'hours_info', array(
-			'default'           => MP_ARTWORK_DEFAULT_OPEN_HOURS,
-			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => array( $this, 'sanitize_text' ),
-			'transport'         => 'postMessage'
-		) );
-		$wp_customize->add_control(  $this->get_prefix() . 'hours_info', array(
-			'label'    => __( 'Contact Information 2', 'artwork-lite' ),
-			'section'  => $this->get_prefix() . 'header_info',
-			'settings' => $this->get_prefix() . 'hours_info',
-			'type'     => 'textarea'
-		)  );
-
-
-		/*
-		 * Add 'header_socials' section
-		 */
-		$wp_customize->add_section(
-			$this->get_prefix() . 'header_socials', array(
-				'title'      => esc_html__( 'Social Links', 'artwork-lite' ),
-				'priority'   => 80,
-				'capability' => 'edit_theme_options'
-			)
-		);
-		/*
-		 *  Add the 'facebook link' setting.
-		 */
-		$wp_customize->add_setting(
-			$this->get_prefix() . 'facebook_link', array(
-				'default'           => '#',
-				'capability'        => 'edit_theme_options',
-				//'transport'         => 'postMessage',
-				'sanitize_callback' => array( $this, 'sanitize_text' ),
-			)
-		);
-
-		/*
-		 * Add the upload control for the 'facebook link' setting.
-		 */
-		$wp_customize->add_control(
-			$this->get_prefix() . 'facebook_link', array(
-				'label'    => esc_html__( 'Facebook link', 'artwork-lite' ),
-				'section'  => $this->get_prefix() . 'header_socials',
-				'settings' => $this->get_prefix() . 'facebook_link',
-			)
-		);
-		/*
-		 * Add the 'twitter link' setting.
-		 */
-		$wp_customize->add_setting(
-			$this->get_prefix() . 'twitter_link', array(
-				'default'           => '#',
-				'capability'        => 'edit_theme_options',
-				//'transport'         => 'postMessage',
-				'sanitize_callback' => 'esc_url_raw',
-			)
-		);
-
-		/*
-		 *  Add the upload control for the 'twitter link' setting.
-		 */
-		$wp_customize->add_control(
-			$this->get_prefix() . 'twitter_link', array(
-				'label'    => esc_html__( 'Twitter link', 'artwork-lite' ),
-				'section'  => $this->get_prefix() . 'header_socials',
-				'settings' => $this->get_prefix() . 'twitter_link',
-			)
-		);
-
-		/*
-		 * Add the 'linkedin link' setting.
-		 */
-		$wp_customize->add_setting(
-			$this->get_prefix() . 'linkedin_link', array(
-				'default'           => '#',
-				'capability'        => 'edit_theme_options',
-				//'transport'         => 'postMessage',
-				'sanitize_callback' => 'esc_url_raw',
-			)
-		);
-
-		/*
-		 * Add the upload control for the 'linkedin link' setting.
-		 */
-		$wp_customize->add_control(
-			$this->get_prefix() . 'linkedin_link', array(
-				'label'    => esc_html__( 'LinkedIn link', 'artwork-lite' ),
-				'section'  => $this->get_prefix() . 'header_socials',
-				'settings' => $this->get_prefix() . 'linkedin_link',
-			)
-		);
-		/*
-		 * Add the 'google plus link' setting.
-		 */
-		$wp_customize->add_setting(
-			$this->get_prefix() . 'google_plus_link', array(
-				'default'           => '#',
-				'capability'        => 'edit_theme_options',
-				//'transport'         => 'postMessage',
-				'sanitize_callback' => 'esc_url_raw',
-			)
-		);
-
-		/*
-		 * Add the upload control for the 'google plus link' setting.
-		 */
-		$wp_customize->add_control(
-			$this->get_prefix() . 'google_plus_link', array(
-				'label'    => esc_html__( 'Google+ link', 'artwork-lite' ),
-				'section'  => $this->get_prefix() . 'header_socials',
-				'settings' => $this->get_prefix() . 'google_plus_link',
-			)
-		);
-
-		/* Add the 'Instagram link' setting. */
-		$wp_customize->add_setting(
-			$this->get_prefix() . 'instagram_link', array(
-				'sanitize_callback' => 'esc_url_raw',
-				'capability'        => 'edit_theme_options',
-				//'transport'         => 'postMessage',
-			)
-		);
-
-		/* Add the upload control for the 'Instagram link' setting. */
-		$wp_customize->add_control(
-			$this->get_prefix() . 'instagram_link', array(
-				'label'    => esc_html__( 'Instagram link', 'artwork-lite' ),
-				'section'  => $this->get_prefix() . 'header_socials',
-				'settings' => $this->get_prefix() . 'instagram_link',
-			)
-		);
-
-		/* Add the 'pinterest link' setting. */
-		$wp_customize->add_setting(
-			$this->get_prefix() . 'pinterest_link', array(
-				'sanitize_callback' => 'esc_url_raw',
-				'capability'        => 'edit_theme_options',
-				//'transport'         => 'postMessage',
-			)
-		);
-		/* Add the upload control for the 'pinterest link' setting. */
-		$wp_customize->add_control(
-			$this->get_prefix() . 'pinterest_link', array(
-				'label'    => esc_html__( 'Pinterest link', 'artwork-lite' ),
-				'section'  => $this->get_prefix() . 'header_socials',
-				'settings' => $this->get_prefix() . 'pinterest_link',
-			)
-		);
-		/* Add the 'tumblrlink' setting. */
-		$wp_customize->add_setting(
-			$this->get_prefix() . 'tumblr_link', array(
-				'sanitize_callback' => 'esc_url_raw',
-				'capability'        => 'edit_theme_options',
-				//'transport'         => 'postMessage',
-			)
-		);
-		/* Add the upload control for the 'tumblr link' setting. */
-		$wp_customize->add_control(
-			$this->get_prefix() . 'tumblr_link', array(
-				'label'    => esc_html__( 'Tumblr link', 'artwork-lite' ),
-				'section'  => $this->get_prefix() . 'header_socials',
-				'settings' => $this->get_prefix() . 'tumblr_link',
-			)
-		);
-		/* Add the 'youtube link' setting. */
-		$wp_customize->add_setting(
-			$this->get_prefix() . 'youtube_link', array(
-				'sanitize_callback' => 'esc_url_raw',
-				'capability'        => 'edit_theme_options',
-				//'transport'         => 'postMessage',
-			)
-		);
-		/* Add the upload control for the 'google plus link' setting. */
-		$wp_customize->add_control(
-			$this->get_prefix() . 'youtube_link', array(
-				'label'    => esc_html__( 'Youtube link', 'artwork-lite' ),
-				'section'  => $this->get_prefix() . 'header_socials',
-				'settings' => $this->get_prefix() . 'youtube_link',
-			)
-		);
-		/*
-		 * Add the 'rss link' setting.
-		 */
-		$wp_customize->add_setting(
-			$this->get_prefix() . 'rss_link', array(
-				'default'           => '#',
-				'capability'        => 'edit_theme_options',
-				//'transport'         => 'postMessage',
-				'sanitize_callback' => 'esc_url_raw',
-			)
-		);
-
-		/*
-		 * Add the upload control for the 'rss link' setting.
-		 */
-		$wp_customize->add_control(
-			$this->get_prefix() . 'rss_link', array(
-				'label'    => esc_html__( 'Rss link', 'artwork-lite' ),
-				'section'  => $this->get_prefix() . 'header_socials',
-				'settings' => $this->get_prefix() . 'rss_link',
-			)
-		);
 		/*
 		 * Add 'header_socials' section
 		 */
@@ -566,6 +297,7 @@ class MP_Artwork_Customizer {
 					MP_ARTWORK_FOURTH_BRAND_COLOR,
 					get_template_directory_uri() . '/images/headers/logo.png',
 					get_template_directory_uri() . '/images/headers/logo2.png',
+					MP_ARTWORK_BRAND_COLOR,
 				),
 			)
 		) );
@@ -631,7 +363,7 @@ class MP_Artwork_Customizer {
 	 * @return string
 	 */
 	function get_theme_version() {
-		$theme_info = wp_get_theme();
+		$theme_info = wp_get_theme( get_template() );
 
 		return $theme_info->get( 'Version' );
 	}
