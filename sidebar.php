@@ -1,5 +1,5 @@
 <aside id="sidebar" class="alignright col-md-3">
-  <?php dynamic_sidebar( 'default_sidebar' ); 
+  <?php
   if (  is_active_sidebar( 'sidebar-blog' ) ){
 	 dynamic_sidebar(  'sidebar-blog'  );
 	 }

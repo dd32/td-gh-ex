@@ -4,14 +4,15 @@ global  $avata_post_meta;
 
 $sidebar       = isset($avata_post_meta['page_layout'])?esc_attr($avata_post_meta['page_layout']):'none';
 $left_sidebar  = isset($avata_post_meta['left_sidebar'])?esc_attr($avata_post_meta['left_sidebar']):''; 
-$right_sidebar = isset($avata_post_meta['right_sidebar'])?esc_attr($avata_post_meta['right_sidebar']):''; 
+$right_sidebar = isset($avata_post_meta['right_sidebar'])?esc_attr($avata_post_meta['right_sidebar']):'';
+
 
 $main_class = 'no-aside';
 if( $sidebar == 'left' )
-$main_class = 'right-aside';
+$main_class = 'left-aside';
 
 if( $sidebar == 'right' )
-$main_class = 'left-aside';
+$main_class = 'right-aside';
 
 if( $sidebar == 'both' )
 $main_class = 'both-aside';

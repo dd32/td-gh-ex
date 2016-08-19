@@ -27,7 +27,6 @@ function avata_setup() {
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'title-tag' );
 	add_editor_style("editor-style.css");
-	add_image_size( 'avata-related-post', 400, 300, true ); //(cropped)
     add_post_type_support( 'page', 'excerpt' );
 	
 	register_nav_menus( array(
@@ -53,7 +52,7 @@ function avata_setup() {
         'height'                 => '120',
         'flex-height'            => true,
         'flex-width'             => true,
-        'default-text-color'     => 'ffffff',
+        'default-text-color'     => 'bbbbbb',
         'header-text'            => true,
         'uploads'                => true,
         'wp-head-callback'       => '',
@@ -66,6 +65,14 @@ function avata_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+	
+	add_theme_support( 'custom-logo', array(
+	'height'      => 50,
+	'width'       => 50,
+	'flex-height' => true,
+	'flex-width'  => true,
+	'header-text' => array( 'site-title', 'site-description' ),
+) );
 	
 	add_editor_style( array( 'assets/css/editor-style.css', 'assets/fonts/genericons/genericons.css' ) );
 
@@ -118,7 +125,12 @@ function avata_scripts() {
 	 $avata_custom_css .= "min-height:".$min_height.";\r\n";
 	 $avata_custom_css .= "}\r\n";
  }
-
+// Header 
+	if(get_header_textcolor()=='blank'){
+		    $avata_custom_css .= ".site-name,.site-tagline{display: none;}";
+		}else{
+			$avata_custom_css .= ".site-name,.site-tagline{color:#".get_header_textcolor().";}";
+			}
  //Page Options
   if( is_singular() ):
   

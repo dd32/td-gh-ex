@@ -1,10 +1,10 @@
 /*
 Theme Name: Avata
-Theme URI: http://demo.hoosoft.com/avata
+Theme URI: https://www.hoothemes.com/themes/avata.html
 Author: HooThemes
 Author URI: http://www.hoothemes.com/
 Description: Based on Bootstrap and coded with HTML5 and CSS3 language, Avata is fully responsive in desktops and mobile devices. With enriched settings , you can easily create a homepage with pre-built layout. background colors, header & footer and logo are also customizable. 
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: avata
@@ -273,7 +273,8 @@ img.aligncenter {
 	}
 #header.header-overlay,
 #header.header-overlay #menu-main > li > a,
-#header.header-overlay h1{
+#header.header-overlay h1,
+#header.header-overlay .site-tagline{
 	color:#fff;
 	}
 
@@ -435,10 +436,8 @@ img.site-logo {
 .container{position: relative;}
 #content{
     border-top: 1px solid #efefef;
-    border-bottom: 1px solid #efefef;
     position: relative;
-    background-color: #fff;
-    margin-bottom: 60px !important; 
+    margin-bottom: 60px; 
 }
 #content .content-area{
 	padding-top: 50px;
@@ -552,6 +551,9 @@ img.site-logo {
 /*
  * Comments
  */
+ .avata-comments-area{
+	 padding:50px 0;
+	 }
 .respondbg{
 	padding-top:50px;
 	}
@@ -825,35 +827,50 @@ input[type="color"]:focus,
 	font-size: 14px;
 	overflow:hidden;
 	}
-#sidebar h4{
+#sidebar h4,
+#footer h4{
   font-size: 15px;
   position: relative;
   display: inline-block;
   background-color: #fff;
   padding-right: 15px;
 }
-#sidebar .seperator {
+#footer h4{
+	color: #e2e2e2;
+	background:none;
+	 font-size: 22px;
+	}
+#footer .seperator,
+#sidebar .seperator{
 	clear:both;
 	}
-#sidebar .widget-box{
+#sidebar .widget-box,
+#sidebar .widget,
+#footer .widget-box,
+#footer .widget{
    margin-bottom: 50px;
 }
-#sidebar .widget-box > ul{
+#sidebar .widget-box > ul,
+#footer .widget-box > ul{
 	padding-left:0;
 	
 	}
-#sidebar ul {
+#sidebar ul,
+#footer ul{
   *zoom: 1;
   list-style:none;
 }
 
 #sidebar ul:before,
-#sidebar ul:after {
+#sidebar ul:after,
+#footer ul:before,
+#footer ul:after{
   display: table;
   content: "";
 }
 
-#sidebar ul:after {
+#sidebar ul:after ,
+#footer ul:after{
   clear: both;
 }
 
@@ -861,6 +878,7 @@ input[type="color"]:focus,
     margin-bottom: 30px;
     position: relative;
 }
+
 
 /*
  * divider
@@ -875,10 +893,22 @@ input[type="color"]:focus,
 	clear: both;
 	border-bottom: 1px solid #ececec;
 }
-#sidebar .title-divider{margin-bottom: 10px !important;}
-#sidebar .divider-arrow{top: 10px !important;}
+#footer .divider-arrow{
+	top:inherit !important;
+	bottom:0;
+	}
 
-#sidebar li{
+#sidebar .title-divider{
+	margin-bottom: 10px ;
+	}
+	
+#sidebar .divider-arrow,
+#footer .divider-arrow{
+	top: 10px ;
+	}
+
+#sidebar li,
+#footer li{
   list-style: none;
   padding-bottom: 13px;
   margin-bottom: 13px;
@@ -886,16 +916,20 @@ input[type="color"]:focus,
 } 
 #sidebar li.page_item_has_children,
 #sidebar li.menu-item-has-children,
-#sidebar li.item-has-children{
+#sidebar li.item-has-children,
+#footer li.page_item_has_children,
+#footer li.menu-item-has-children,
+#footer li.item-has-children{
 	border-bottom:none;
 	margin-bottom: 0;
     padding-bottom: 0;
 	}
-#sidebar section{margin-bottom: 50px;}
-#sidebar section:last-child{margin-bottom:0px;}
+#sidebar section,#footer section{margin-bottom: 50px;}
+#sidebar section:last-child,#footer section:last-child{margin-bottom:0px;}
 
-#sidebar .widget_archive ul{width: 110.9489051094891%;}
-#sidebar .widget_archive ul li{
+#sidebar .widget_archive ul,#footer .widget_archive ul{width: 110.9489051094891%;}
+#sidebar .widget_archive ul li,
+#footer .widget_archive ul li{
   float: left;
   width: 40.13157894736842%;
   margin-right: 09.86842105263158%;
@@ -903,8 +937,8 @@ input[type="color"]:focus,
   margin-bottom: 10px;
   border-bottom: 1px dotted #f2f2f2;
 }
-#sidebar .widget_archive ul a{color: #888;}
-#sidebar .widget_archive ul a:hover{color: #222;}
+#sidebar .widget_archive ul a,#footer .widget_archive ul a{color: #888;}
+#sidebar .widget_archive ul a:hover,#footer .widget_archive ul a:hover{color: #222;}
 
 
 /* Calender */

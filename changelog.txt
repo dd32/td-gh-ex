@@ -1,0 +1,13 @@
+
+Avata Theme Change Log
+
+=================================
+
+= Version 1.0.4  = 08/20/2016
+* Fix - Fixed 404 page and search page style issue
+* Fix - Fixed background Color and background image options issue
+* Fix - Fixed footer widgets issue
+* Fix - Fixed Default Sidebar showing twice on front-end issue
+* Fix - Fixed header text color option issue
+* Add - Added theme support: custom-logo
+

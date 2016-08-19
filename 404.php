@@ -6,11 +6,13 @@
  */
 
 get_header(); ?>
-
-	<div id="primary" class="content-area">
+<section class="page-main" id="content">
+  <div class="container">
+	<div id="primary" class="content-area ">
 		<main id="main" class="site-main" role="main">
-
-			<section class="error-404 not-found">
+            
+			<section class="error-404 not-found row">
+            <div class="col-main col-md-9">
 				<header class="page-header">
 					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'avata' ); ?></h1>
 				</header><!-- .page-header -->
@@ -24,10 +26,22 @@ get_header(); ?>
 							<input type="search" name="s" />
 						</label> 
 						<input type="submit" name="submit" value="<?php _e( 'Search', 'avata' ); ?>" class="search-submit" />
-					</form>
+					</form>				
 
-
-					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
+	
+				</div><!-- .page-content -->
+                </div>
+                
+               <aside id="sidebar" class="col-aside-right col-md-3">
+                
+                <?php
+						/* translators: %1$s: smiley */
+						$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'avata' ), convert_smilies( ':)' ) ) . '</p>';
+						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
+					?>
+                    
+                <?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
+                	<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
 
 					<?php if ( avata_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
 					<div class="widget widget_categories">
@@ -45,19 +59,11 @@ get_header(); ?>
 						</ul>
 					</div><!-- .widget -->
 					<?php endif; ?>
-
-					<?php
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'avata' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-					?>
-
-					<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
-
-				</div><!-- .page-content -->
+                </div>
 			</section><!-- .error-404 -->
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
+</div>
+</section>
 <?php get_footer(); ?>

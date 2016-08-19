@@ -11,12 +11,12 @@
 <?php
 global $avata_post_meta;
 $header_overlay = isset($avata_post_meta['header_overlay'])?$avata_post_meta['header_overlay']:'';
+$theme_location = isset($avata_post_meta['nav_menu'])?$avata_post_meta['nav_menu']:'primary';
 
 $header_class   = '';
 if($header_overlay == '1')
 $header_class   = 'header-overlay';
 
-$logo = avata_option('default_logo');
 $header_image = get_header_image();
 ?>
 <body <?php body_class(); ?> >
@@ -29,7 +29,11 @@ $header_image = get_header_image();
 <header id="header" class="<?php echo $header_class; ?>">
   <div class="container">
       <div class="logo-box">
-      <?php if( $logo ):?>
+      <?php
+	  $custom_logo_id = get_theme_mod( 'custom_logo' );
+      $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+      $logo = $image[0];
+	  if( $logo ):?>
       <a href="<?php echo esc_url(home_url('/')); ?>"><img class="site-logo normal_logo" alt="<?php bloginfo('name'); ?>" src="<?php echo esc_url($logo); ?>" /></a> 
       <?php endif;?>
       
@@ -41,7 +45,7 @@ $header_image = get_header_image();
       </div>
     <nav id="menu" class="site-nav" role="navigation">
        <?php 
-	             $theme_location = 'primary'; 
+	             
 				  wp_nav_menu(array('theme_location'=>$theme_location,'depth'=>0,'fallback_cb' =>false,'container'=>'','container_class'=>'main-menu','menu_id'=>'menu-main','menu_class'=>'main-nav','link_before' => '<span class="menu-item-label">', 'link_after' => '</span>','items_wrap'=> '<ul id="%1$s" class="%2$s">%3$s</ul>'));
 					?>
     </nav>

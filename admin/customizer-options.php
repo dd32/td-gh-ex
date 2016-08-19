@@ -148,13 +148,11 @@ function avata_customizer_options() {
 		'id' => $section,
 		'title' => __( 'Section - Hero', 'avata' ),
 		'priority' => '10',
-		'description' => '',
 		'panel' => $panel
 	);
   $options['avata_section_hero_enable'] = array(
 		'id' => 'avata_section_hero_enable',
 		'label' => __( 'Enable Section', 'avata' ),
-		'description'   => '',
 		'section' => $section,
 		'type'    => 'checkbox',
 		'default' => '1',
@@ -163,7 +161,6 @@ function avata_customizer_options() {
   $options['avata_section_hero_content_mode'] = array(
 		'id' => 'avata_section_hero_content_mode',
 		'label' => __( 'Select Content Mode', 'avata' ),
-		'description'   => '',
 		'section' => $section,
 		'type'    => 'select',
 		'choices' => array('0'=>__( 'Default', 'avata' ),'1'=>__( 'Custom', 'avata' )),
@@ -184,7 +181,6 @@ function avata_customizer_options() {
 		'label'   => __( 'Background Color', 'avata' ),
 		'section' => $section,
 		'type'    => 'color',
-		'default' => '',
 		'description' => __( 'Set background color for this section.', 'avata' )
 	);
 	
@@ -193,7 +189,6 @@ function avata_customizer_options() {
 		'label'   => __( 'Background Image', 'avata' ),
 		'section' => $section,
 		'type'    => 'upload',
-		'default' => '',
 		'description' => __( 'Upload background image for this section.', 'avata' )
 	);
 	
@@ -226,20 +221,16 @@ function avata_customizer_options() {
   $options['avata_section_hero_page'] = array(
 		'id' => 'avata_section_hero_page',
 		'label' => __( 'Select Hero Page', 'avata' ),
-		'description'   => '',
 		'section' => $section,
 		'type'    => 'select',
 		'choices' => $options_pages,
-		'default' => '',
 	);
   
   $options['avata_section_hero_bottom_img'] = array(
 		'id' => 'avata_section_hero_bottom_img',
 		'label' => __( 'Bottom Image?', 'avata' ),
-		'description'   => '',
 		'section' => $section,
 		'type'    => 'checkbox',
-		'choices' => '',
 		'default' => '1',
 	);	
   
@@ -247,18 +238,18 @@ function avata_customizer_options() {
    $options['avata_section_hero_custom'] = array(
 		'id' => 'avata_section_hero_custom',
 		'label' => __( 'Custom Content', 'avata' ),
-		'description'   => '',
+		
 		'section' => $section,
 		'type'    => 'select',
 		'choices' => $options_pages,
-		'default' => '',
+		
 	);
    
   
 $options['avata_section_hero_id'] = array(
 		'id' => 'avata_section_hero_id',
 		'label' => __( 'Section ID', 'avata' ),
-		'description'   => '',
+		
 		'section' => $section,
 		'type'    => 'text',
 		'default' => 'section-hero',
@@ -273,13 +264,13 @@ $options['avata_section_hero_id'] = array(
 		'id' => $section,
 		'title' => __( 'Section - Features', 'avata' ),
 		'priority' => '10',
-		'description' => '',
+		
 		'panel' => $panel
 	);
   $options['avata_section_features_enable'] = array(
 		'id' => 'avata_section_features_enable',
 		'label' => __( 'Enable Section', 'avata' ),
-		'description'   => '',
+		
 		'section' => $section,
 		'type'    => 'checkbox',
 		'default' => '1',
@@ -307,7 +298,7 @@ $options['avata_section_hero_id'] = array(
 		'label'   => __( 'Background Image', 'avata' ),
 		'section' => $section,
 		'type'    => 'upload',
-		'default' => '',
+		
 		'description' => __( 'Upload background image for this section.', 'avata' )
 	);
 	
@@ -340,11 +331,11 @@ $options['avata_section_hero_id'] = array(
   $options['avata_section_features_page'] = array(
 		'id' => 'avata_section_features_page',
 		'label' => __( 'Select Features Page', 'avata' ),
-		'description'   => '',
+		
 		'section' => $section,
 		'type'    => 'select',
 		'choices' => $options_pages,
-		'default' => '',
+		
 	);	
   
   for( $i=0;$i < 6;$i++ ){
@@ -352,19 +343,19 @@ $options['avata_section_hero_id'] = array(
 		$options['avata_section_features_icon_'.$i] = array(
 		'id' => 'avata_section_features_icon_'.$i,
 		'label' => sprintf(__( 'Font Awesome Icon %d', 'avata' ),$j),
-		'description'   => '',
+		
 		'section' => $section,
 		'type'    => 'text',
-		'default' => '',
+		
 	);
 		
 		$options['avata_section_features_image_'.$i] = array(
 		'id' => 'avata_section_features_image_'.$i,
 		'label' => sprintf(__( 'Upload Icon %d', 'avata' ),$j),
-		'description'   => '',
+		
 		'section' => $section,
 		'type'    => 'upload',
-		'default' => '',
+		
 	);
 		
 		$options['avata_section_features_page_'.$i] = array(
@@ -374,22 +365,22 @@ $options['avata_section_hero_id'] = array(
 		'section' => $section,
 		'type'    => 'select',
 		'choices' => $options_pages,
-		'default' => '',
+		
 	);
 		
 	$options['avata_section_features_link_'.$i] = array(
 		'id' => 'avata_section_features_link_'.$i,
 		'label' => sprintf(__( 'Enable Title Link %d', 'avata' ),$j),
-		'description'   => '',
+		
 		'section' => $section,
 		'type'    => 'checkbox',
-		'default' => '',
+		
 	);
 
 	$options['avata_section_features_target_'.$i] = array(
 		'id' => 'avata_section_features_target_'.$i,
 		'label' => sprintf(__( 'Link Target %d', 'avata' ),$j),
-		'description'   => '',
+		
 		'section' => $section,
 		'type'    => 'select',
 		'choices' => $target,
@@ -402,7 +393,7 @@ $options['avata_section_hero_id'] = array(
 	$options['avata_section_features_id'] = array(
 		'id' => 'avata_section_features_id',
 		'label' => __( 'Section ID', 'avata' ),
-		'description'   => '',
+		
 		'section' => $section,
 		'type'    => 'text',
 		'default' => 'section-features',
@@ -415,13 +406,13 @@ $options['avata_section_hero_id'] = array(
 		'id' => $section,
 		'title' => __( 'Section - ( Content - Image )', 'avata' ),
 		'priority' => '10',
-		'description' => '',
+		
 		'panel' => $panel
 	);
   $options['avata_section_content_image_enable'] = array(
 		'id' => 'avata_section_content_image_enable',
 		'label' => __( 'Enable Section', 'avata' ),
-		'description'   => '',
+		
 		'section' => $section,
 		'type'    => 'checkbox',
 		'default' => '1',
@@ -440,7 +431,7 @@ $options['avata_section_hero_id'] = array(
 		'label'   => __( 'Background Color', 'avata' ),
 		'section' => $section,
 		'type'    => 'color',
-		'default' => '',
+		
 		'description' => __( 'Set background color for this section.', 'avata' )
 	);
 	
@@ -449,7 +440,7 @@ $options['avata_section_hero_id'] = array(
 		'label'   => __( 'Background Image', 'avata' ),
 		'section' => $section,
 		'type'    => 'upload',
-		'default' => '',
+		
 		'description' => __( 'Upload background image for this section.', 'avata' )
 	);
 	
@@ -460,7 +451,7 @@ $options['avata_section_hero_id'] = array(
 		'type'    => 'select',
 		'choices' => $repeat,
 		'default' => 'no-repeat',
-		'description' => ''
+		
 	);
 	
 	$options['avata_section_content_image_background_full'] = array(
@@ -468,9 +459,9 @@ $options['avata_section_hero_id'] = array(
 		'label'   => __( 'Background Image 100% Width', 'avata' ),
 		'section' => $section,
 		'type'    => 'checkbox',
-		'choices' =>'' ,
+		
 		'default' => '1',
-		'description' => ''
+		
 	);
 	
 	$options['avata_section_content_image_top_padding'] = array(
@@ -503,16 +494,16 @@ $options['avata_section_hero_id'] = array(
   $options['avata_section_content_image_page'] = array(
 		'id' => 'avata_section_content_image_page',
 		'label' => __( 'Select Page', 'avata' ),
-		'description'   => '',
+		
 		'section' => $section,
 		'type'    => 'select',
 		'choices' => $options_pages,
-		'default' => '',
+		
 	);
   $options['avata_section_content_image_bottom'] = array(
 		'id' => 'avata_section_content_image_bottom',
 		'label' => __( 'Bottom Image?', 'avata' ),
-		'description'   => '',
+		
 		'section' => $section,
 		'type'    => 'checkbox',
 		'choices' => '',
@@ -521,7 +512,7 @@ $options['avata_section_hero_id'] = array(
   $options['avata_section_content_image_id'] = array(
 		'id' => 'avata_section_content_image_id',
 		'label' => __( 'Section ID', 'avata' ),
-		'description'   => '',
+		
 		'section' => $section,
 		'type'    => 'text',
 		'default' => 'section-content-image',
@@ -534,13 +525,13 @@ $options['avata_section_hero_id'] = array(
 		'id' => $section,
 		'title' => __( 'Section - ( Image - Content )', 'avata' ),
 		'priority' => '10',
-		'description' => '',
+		
 		'panel' => $panel
 	);
   $options['avata_section_image_content_enable'] = array(
 		'id' => 'avata_section_image_content_enable',
 		'label' => __( 'Enable Section', 'avata' ),
-		'description'   => '',
+		
 		'section' => $section,
 		'type'    => 'checkbox',
 		'default' => '1',
@@ -559,7 +550,7 @@ $options['avata_section_hero_id'] = array(
 		'label'   => __( 'Background Color', 'avata' ),
 		'section' => $section,
 		'type'    => 'color',
-		'default' => '',
+		
 		'description' => __( 'Set background color for this section.', 'avata' )
 	);
 	
@@ -568,7 +559,7 @@ $options['avata_section_hero_id'] = array(
 		'label'   => __( 'Background Image', 'avata' ),
 		'section' => $section,
 		'type'    => 'upload',
-		'default' => '',
+		
 		'description' => __( 'Upload background image for this section.', 'avata' )
 	);
 	
@@ -579,7 +570,7 @@ $options['avata_section_hero_id'] = array(
 		'type'    => 'select',
 		'choices' => $repeat,
 		'default' => 'no-repeat',
-		'description' => ''
+		
 	);
 	
 	$options['avata_section_image_content_background_full'] = array(
@@ -587,9 +578,9 @@ $options['avata_section_hero_id'] = array(
 		'label'   => __( 'Background Image 100% Width', 'avata' ),
 		'section' => $section,
 		'type'    => 'checkbox',
-		'choices' =>'' ,
+		
 		'default' => '1',
-		'description' => ''
+		
 	);
 	
 	$options['avata_section_image_content_top_padding'] = array(
@@ -626,12 +617,12 @@ $options['avata_section_hero_id'] = array(
 		'section' => $section,
 		'type'    => 'select',
 		'choices' => $options_pages,
-		'default' => '',
+		
 	);
   $options['avata_section_image_content_bottom'] = array(
 		'id' => 'avata_section_image_content_bottom',
 		'label' => __( 'Bottom Image?', 'avata' ),
-		'description'   => '',
+		
 		'section' => $section,
 		'type'    => 'checkbox',
 		'choices' => '',
@@ -640,7 +631,7 @@ $options['avata_section_hero_id'] = array(
   $options['avata_section_image_content_id'] = array(
 		'id' => 'avata_section_image_content_id',
 		'label' => __( 'Section ID', 'avata' ),
-		'description'   => '',
+		
 		'section' => $section,
 		'type'    => 'text',
 		'default' => 'section-content-image',
@@ -654,13 +645,13 @@ $options['avata_section_hero_id'] = array(
 		'id' => $section,
 		'title' => __( 'Section - Promo', 'avata' ),
 		'priority' => '10',
-		'description' => '',
+		
 		'panel' => $panel
 	);
   $options['avata_section_promo_enable'] = array(
 		'id' => 'avata_section_promo_enable',
 		'label' => __( 'Enable Section', 'avata' ),
-		'description'   => '',
+		
 		'section' => $section,
 		'type'    => 'checkbox',
 		'default' => '1',
@@ -688,7 +679,7 @@ $options['avata_section_hero_id'] = array(
 		'label'   => __( 'Background Image', 'avata' ),
 		'section' => $section,
 		'type'    => 'upload',
-		'default' => '',
+		
 		'description' => __( 'Upload background image for this section.', 'avata' )
 	);
 	
@@ -699,7 +690,7 @@ $options['avata_section_hero_id'] = array(
 		'type'    => 'select',
 		'choices' => $repeat,
 		'default' => 'no-repeat',
-		'description' => ''
+		
 	);
 	
 	$options['avata_section_promo_background_full'] = array(
@@ -707,9 +698,9 @@ $options['avata_section_hero_id'] = array(
 		'label'   => __( 'Background Image 100% Width', 'avata' ),
 		'section' => $section,
 		'type'    => 'checkbox',
-		'choices' =>'' ,
+		
 		'default' => '1',
-		'description' => ''
+		
 	);
 	
 	$options['avata_section_promo_top_padding'] = array(
@@ -736,13 +727,13 @@ $options['avata_section_hero_id'] = array(
 		'description' => __( 'In pixels, ex: 500px.', 'avata' ),
 		'section' => $section,
 		'type'    => 'text',
-		'default' => '',
+		
 	);
 	
   $options['avata_section_promo_info'] = array(
 		'id' => 'avata_section_promo_info',
 		'label' => __( 'Description', 'avata' ),
-		'description'   => '',
+		
 		'section' => $section,
 		'type'    => 'text',
 		'choices' => '',
@@ -752,7 +743,7 @@ $options['avata_section_hero_id'] = array(
  $options['avata_section_promo_btn_text_1'] = array(
 		'id' => 'avata_section_promo_btn_text_1',
 		'label' => __( 'Button Text 1', 'avata' ),
-		'description'   => '',
+		
 		'section' => $section,
 		'type'    => 'text',
 		'default' => 'Download it Free',
@@ -760,7 +751,7 @@ $options['avata_section_hero_id'] = array(
 	$options['avata_section_promo_btn_link_1'] = array(
 		'id' => 'avata_section_promo_btn_link_1',
 		'label' => __( 'Button Link 1', 'avata' ),
-		'description'   => '',
+		
 		'section' => $section,
 		'type'    => 'text',
 		'default' => '#',
@@ -768,7 +759,7 @@ $options['avata_section_hero_id'] = array(
 	$options['avata_section_promo_btn_target_1'] = array(
 		'id' => 'avata_section_promo_btn_target_1',
 		'label' => __( 'Button Link Target 1', 'avata' ),
-		'description'   => '',
+		
 		'section' => $section,
 		'type'    => 'select',
 		'choices' => $target,
@@ -778,7 +769,7 @@ $options['avata_section_hero_id'] = array(
 	 $options['avata_section_promo_btn_text_2'] = array(
 		'id' => 'avata_section_promo_btn_text_2',
 		'label' => __( 'Button Text 2', 'avata' ),
-		'description'   => '',
+		
 		'section' => $section,
 		'type'    => 'text',
 		'default' => 'View support forum',
@@ -786,7 +777,7 @@ $options['avata_section_hero_id'] = array(
 	$options['avata_section_promo_btn_link_2'] = array(
 		'id' => 'avata_section_promo_btn_link_2',
 		'label' => __( 'Button Link 2', 'avata' ),
-		'description'   => '',
+		
 		'section' => $section,
 		'type'    => 'text',
 		'default' => '#',
@@ -794,7 +785,7 @@ $options['avata_section_hero_id'] = array(
 	$options['avata_section_promo_btn_target_2'] = array(
 		'id' => 'avata_section_promo_btn_target_2',
 		'label' => __( 'Button Link Target 2', 'avata' ),
-		'description'   => '',
+		
 		'section' => $section,
 		'type'    => 'select',
 		'choices' => $target,
@@ -804,7 +795,7 @@ $options['avata_section_hero_id'] = array(
   $options['avata_section_promo_id'] = array(
 		'id' => 'avata_section_promo_id',
 		'label' => __( 'Section ID', 'avata' ),
-		'description'   => '',
+		
 		'section' => $section,
 		'type'    => 'text',
 		'default' => 'section-promo',
@@ -817,8 +808,7 @@ $options['avata_section_hero_id'] = array(
 		'id' => $section,
 		'title' => __( 'General', 'avata' ),
 		'priority' => '11',
-		'description' => '',
-		'panel' => ''
+		
 	);
 	
 	$options['avata_custom_css'] =  array(
@@ -836,26 +826,6 @@ $options['avata_section_hero_id'] = array(
 		  );
 
 
- // Logo
-	$section = 'avata_logo';
-	$sections[] = array(
-		'id' => $section,
-		'title' => __( 'Logo', 'avata' ),
-		'priority' => '12',
-		'description' => '',
-		'panel' => ''
-	);
-
-	$options['avata_default_logo'] = array(
-			'id'          => 'avata_default_logo',
-			'label'       => __( 'Upload Logo', 'avata' ),
-			'description'        => __( 'Select an image file for your logo.', 'avata' ),
-			'default'         => '',
-			'type'        => 'upload',
-			'section'     => $section,
-			
-		  );
-
   ### Blog ###
     $panel = 'blog';
 
@@ -871,7 +841,7 @@ $options['avata_section_hero_id'] = array(
 		'id' => $section,
 		'title' => __( 'Blog Meta Options', 'avata' ),
 		'priority' => '11',
-		'description' => '',
+		
 		'panel' => $panel
 	);
 
@@ -888,7 +858,6 @@ $options['avata_display_post_meta'] =  array(
 $options['avata_display_meta_author'] =  array(
         'id'          => 'avata_display_meta_author',
         'label'      => __( 'Display Post Meta Author', 'avata' ),
-        'description'        => '',
         'default'         => '1',
         'type'        => 'select',
         'section' => $section,
@@ -898,7 +867,6 @@ $options['avata_display_meta_author'] =  array(
 $options['avata_display_meta_date'] =  array(
         'id'          => 'avata_display_meta_date',
         'label'      => __( 'Display Post Meta Date', 'avata' ),
-        'description'        => '',
         'default'         => '1',
         'type'        => 'select',
         'section' => $section,
@@ -908,7 +876,6 @@ $options['avata_display_meta_date'] =  array(
 $options['avata_display_meta_categories'] =  array(
         'id'          => 'avata_display_meta_categories',
         'label'      => __( 'Display Post Meta Categories', 'avata' ),
-        'description'        => '',
         'default'         => '1',
         'type'        => 'select',
         'section' => $section,
@@ -919,7 +886,6 @@ $options['avata_display_meta_categories'] =  array(
 $options['avata_display_meta_comments'] =  array(
         'id'          => 'avata_display_meta_comments',
         'label'      => __( 'Display Post Meta Comments', 'avata' ),
-        'description'        => '',
         'default'         => '1',
         'type'        => 'select',
         'section' => $section,
@@ -929,7 +895,6 @@ $options['avata_display_meta_comments'] =  array(
 $options['avata_display_meta_readmore'] =  array(
         'id'          => 'avata_display_meta_readmore',
         'label'      => __( 'Display Post Meta Readmore', 'avata' ),
-        'description'        => '',
         'default'         => '1',
         'type'        => 'select',
         'section' => $section,
@@ -939,13 +904,38 @@ $options['avata_display_meta_readmore'] =  array(
 $options['avata_display_meta_tags'] =  array(
         'id'          => 'avata_display_meta_tags',
         'label'      => __( 'Display Post Meta Tags', 'avata' ),
-        'description'        => '',
         'default'         => '1',
         'type'        => 'select',
         'section' => $section,
          'choices'     =>  $choices
 	
       );
+
+  ### Footer ###
+	$section = 'avata_footer';
+	$sections[] = array(
+		'id' => $section,
+		'title' => __( 'Footer', 'avata' ),
+		'priority' => '14',
+		
+	);
+	
+	$options['avata_display_footer_widgets'] =  array(
+			'id'          => 'avata_display_footer_widgets',
+			'label'       => __( 'Display Footer Widgets', 'avata' ),
+			'type'        => 'checkbox',
+			'section'     => $section,
+			'default'     => '1',
+		  );
+   $options['avata_footer_columns'] =  array(
+			'id'          => 'avata_footer_columns',
+			'label'       => __( 'Footer Widgets Columns', 'avata' ),
+			'type'        => 'select',
+			'section'     => $section,
+			'choices'     => array(1=>1,2=>2,3=>3,4=>4),
+			'default'     => '4',
+		  );
+
 
 
     $avata_default_options = array();

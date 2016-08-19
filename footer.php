@@ -2,9 +2,8 @@
  <?php 
  $display_footer_widgets    = avata_option('display_footer_widgets'); 
  $footer_columns            = avata_option('footer_columns'); 
-
  ?>
-  <?php if( $display_footer_widgets == 'yes' ):?>
+  <?php if( $display_footer_widgets == '1' ):?>
 <footer id="footer">
 <div class="container">
     <div class="row">
