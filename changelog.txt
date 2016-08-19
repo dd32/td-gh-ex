@@ -1,5 +1,9 @@
 Bazaar Lite Changelog
 
+- Version 1.2.7 - Released: 19.08.2016
+
+-- Updated : WooCommerce templates.
+
 - Version 1.2.6 - Released: 11.07.2016
 
 -- Added : Slideshow autoplay.
