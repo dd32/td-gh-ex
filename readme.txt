@@ -96,6 +96,11 @@ Pattern Images
 
 ---------------------------------------------
 == Changelog ==
+Version 1.25
+ * Testing on WordPress v4.6
+ * Fixed the text domain on tgmpa file
+ * Updated .pot file
+ 
 Version 1.24
  * Minor Changes in CSS
 
