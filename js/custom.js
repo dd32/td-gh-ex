@@ -166,11 +166,11 @@
     }
     
     function alba_home_slider() {
-        var home_slider_auto = $('#alba-home-slider-wrapper').data('auto');
-        var home_slider_circular = $('#alba-home-slider-wrapper').data('circular');
-        var home_slider_infinite = $('#alba-home-slider-wrapper').data('infinite');
+        var home_slider_auto = $('.alba-home-slider-wrapper').data('auto');
+        var home_slider_circular = $('.alba-home-slider-wrapper').data('circular');
+        var home_slider_infinite = $('.alba-home-slider-wrapper').data('infinite');
         
-        $("#alba-home-slider").carouFredSel({
+        $(".alba-home-slider").carouFredSel({
             responsive: true,
             circular: home_slider_circular,
             infinite: home_slider_infinite,
@@ -182,16 +182,16 @@
                 height: 'variable'
             },
             onCreate: function(items) {
-                $("#alba-home-slider-wrapper").removeClass("alba-home-slider-remove");
+                $(".alba-home-slider-wrapper").removeClass("alba-home-slider-remove");
             },
             scroll: {
                 fx: 'uncover-fade',
                 duration: 450
             },
             auto: home_slider_auto,
-            pagination: '#alba-home-slider-pager',
-            prev: "#alba-home-slider-prev",
-            next: "#alba-home-slider-next"
+            pagination: '.alba-home-slider-pager',
+            prev: ".alba-home-slider-prev",
+            next: ".alba-home-slider-next"
         });
     }
 } )( jQuery );

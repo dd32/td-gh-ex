@@ -238,7 +238,7 @@ class Kaira_theme_settings {
                 break;
                 
             case 'upsell':
-                echo '<a href="' . esc_url( admin_url( 'themes.php?page=premium_upgrade' ) ) . '" class="kaira-upsell-btn">Upgrade to Albar Premium</a>';
+                echo '<a href="' . esc_url( admin_url( 'themes.php?page=theme_info' ) ) . '" class="kaira-upsell-btn">Upgrade to Albar Premium</a>';
                 echo '<br /><span class="kra-click-preview description">' . __( 'View added Premium Features', 'albar' ) . '</span></label>';
                 break;
 						
@@ -308,7 +308,7 @@ class Kaira_theme_settings {
         $this->settings['kra-enable-home-slider'] = array(
             'section' => 'slider',
             'title'   => __( 'Enable Slider', 'albar' ),
-            'desc'    => __( 'Click to enable the default homepage slider<br /><br />See <a href="http://demo.kairaweb.com/albar/installing-premium/albar-default-slider/" target="_blank">instructions here</a> on setting up the default slider', 'albar' ),
+            'desc'    => __( 'Click to enable the default homepage slider<br /><br /><big>See <a href="https://kairaweb.com/documentation/setting-up-the-albar-default-slider/" target="_blank">instructions here</a> on setting up the default slider</big>', 'albar' ),
             'type'    => 'checkbox',
             'std'     => 1 // Set to 1 to be checked by default
         );

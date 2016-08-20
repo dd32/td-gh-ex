@@ -7,15 +7,19 @@ if( $slider_cats ) :
 
     <?php if ( $slider_query->have_posts() ) : ?>
 
-        <div id="alba-home-slider-wrapper" class="alba-slider alba-home-slider-remove"<?php echo ( kaira_theme_option( 'kra-slider-auto-scroll' ) ) ? ' data-auto="4000"' : ' data-auto="false"'; ?><?php echo ( kaira_theme_option( 'kra-circular-slider' ) ) ? ' data-circular="true"' : ' data-circular="false"'; ?><?php echo ( kaira_theme_option( 'kra-infinite-slider' ) ) ? ' data-infinite="true"' : ' data-infinite="false"'; ?>>
-            <div id="alba-home-slider-prev"><i class="fa fa-angle-left"></i></div>
-            <div id="alba-home-slider-next"><i class="fa fa-angle-right"></i></div>
+        <div class="alba-home-slider-wrapper alba-home-slider-remove"<?php echo ( kaira_theme_option( 'kra-slider-auto-scroll' ) ) ? ' data-auto="4000"' : ' data-auto="false"'; ?><?php echo ( kaira_theme_option( 'kra-circular-slider' ) ) ? ' data-circular="true"' : ' data-circular="false"'; ?><?php echo ( kaira_theme_option( 'kra-infinite-slider' ) ) ? ' data-infinite="true"' : ' data-infinite="false"'; ?>>
+            <div class="alba-home-slider-prev"><i class="fa fa-angle-left"></i></div>
+            <div class="alba-home-slider-next"><i class="fa fa-angle-right"></i></div>
             
-            <div id="alba-home-slider">
+            <div class="alba-home-slider">
                 
                 <?php while ( $slider_query->have_posts() ) : $slider_query->the_post(); ?>
                 
-                    <div>
+                    <?php if ( kaira_theme_option( 'kra-slider-links' ) ) : ?>
+                        <a href="<?php the_permalink(); ?>" class="alba-home-slider-block">
+                    <?php else: ?>
+                        <div class="alba-home-slider-block">
+                    <?php endif; ?>
                         
                         <?php if ( has_post_thumbnail() ) : ?>
                         
@@ -24,20 +28,21 @@ if( $slider_cats ) :
                         <?php endif; ?>
                         
                         <h3>
-                            <?php if ( kaira_theme_option( 'kra-slider-links' ) ) : ?>
-                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                            <?php else: ?>
-                                <?php the_title(); ?>
-                            <?php endif; ?>
+                            <?php the_title(); ?>
                         </h3>
                         
-                    </div>
+                    <?php if ( kaira_theme_option( 'kra-slider-links' ) ) : ?>
+                        </a>
+                    <?php else: ?>
+                        </div>
+                    <?php endif; ?>
                 
                 <?php endwhile; ?>
                 
             </div>
+            
             <?php if ( kaira_theme_option( 'kra-enable-slider-pagination' ) ) : ?>
-            <div id="alba-home-slider-pager"></div>
+            <div class="alba-home-slider-pager"></div>
             <?php endif; ?>
         </div>
         
@@ -45,13 +50,13 @@ if( $slider_cats ) :
 
 <?php else: ?>
     
-    <div id="alba-home-slider-wrapper" class="alba-slider alba-home-slider-remove" data-auto="4000" data-circular="true" data-infinite="true">
-        <div id="alba-home-slider-prev"><i class="fa fa-angle-left"></i></div>
-        <div id="alba-home-slider-next"><i class="fa fa-angle-right"></i></div>
+    <div class="alba-home-slider-wrapper alba-home-slider-remove" data-auto="4000" data-circular="true" data-infinite="true">
+        <div class="alba-home-slider-prev"><i class="fa fa-angle-left"></i></div>
+        <div class="alba-home-slider-next"><i class="fa fa-angle-right"></i></div>
         
-        <div id="alba-home-slider">
+        <div class="alba-home-slider">
                 
-                <div>
+                <div class="alba-home-slider-block">
                     
                     <img src="<?php echo get_template_directory_uri() ?>/images/demo/dummy_img_01.jpg" alt="<?php esc_attr_e('Demo Slide One', 'albar') ?>" />
                     
@@ -61,7 +66,7 @@ if( $slider_cats ) :
                     
                 </div>
                 
-                <div>
+                <div class="alba-home-slider-block">
                     
                     <img src="<?php echo get_template_directory_uri() ?>/images/demo/dummy_img_02.jpg" alt="<?php esc_attr_e('Demo Slide Two', 'albar') ?>" />
                     
@@ -72,7 +77,7 @@ if( $slider_cats ) :
                 </div>
             
         </div>
-        <div id="alba-home-slider-pager"></div>
+        <div class="alba-home-slider-pager"></div>
     </div>
 
 <?php endif; ?>

@@ -68,6 +68,10 @@ View the settings under Appearance -> ALBAR Settings.
 
 == Changelog ==
 
+#### 1.7.4
+* Styling layout fixes/tweaks
+* Change default slider link to whole slide
+
 #### 1.7.3
 * Removed un-needed tags from stylesheet
 

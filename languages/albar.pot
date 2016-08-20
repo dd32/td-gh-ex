@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Albar\n"
-"POT-Creation-Date: 2016-05-31 09:33+0200\n"
-"PO-Revision-Date: 2016-05-31 09:33+0200\n"
-"Last-Translator: Kaira <zack@kairaweb.com>\n"
+"POT-Creation-Date: 2016-08-20 13:25+0200\n"
+"PO-Revision-Date: 2016-08-20 13:25+0200\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7\n"
+"X-Generator: Poedit 1.8.8\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_n:1,2;__ngettext:1,2;"
@@ -157,34 +157,34 @@ msgid ""
 "angle-up\"></i></div><div class=\"footer-left\">Theme: %1$s by %2$s"
 msgstr ""
 
-#: functions.php:61
+#: functions.php:60
 msgid "Main Menu"
 msgstr ""
 
-#: functions.php:99
+#: functions.php:98
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:107
+#: functions.php:106
 msgid "Alba Footer"
 msgstr ""
 
-#: functions.php:320
+#: functions.php:319
 #, php-format
 msgid ""
 "<p>Install the plugins we at <a href=\"http://www.kairaweb.com/\" target="
 "\"_blank\">Kaira</a> recommended | <a href=\"%1$s\">Hide Notice</a></p>"
 msgstr ""
 
-#: functions.php:321
+#: functions.php:320
 msgid "SiteOrigin's Page Builder"
 msgstr ""
 
-#: functions.php:322
+#: functions.php:321
 msgid "Contact Form 7"
 msgstr ""
 
-#: functions.php:323
+#: functions.php:322
 msgid "Breadcrumb NavXT"
 msgstr ""
 
@@ -263,19 +263,19 @@ msgstr[1] ""
 msgid "Menu"
 msgstr ""
 
-#: includes/headers/homepage-slider.php:56
+#: includes/headers/homepage-slider.php:61
 msgid "Demo Slide One"
 msgstr ""
 
-#: includes/headers/homepage-slider.php:59
+#: includes/headers/homepage-slider.php:64
 msgid "Beautifully Simple"
 msgstr ""
 
-#: includes/headers/homepage-slider.php:66
+#: includes/headers/homepage-slider.php:71
 msgid "Demo Slide Two"
 msgstr ""
 
-#: includes/headers/homepage-slider.php:69
+#: includes/headers/homepage-slider.php:74
 msgid "Build Easily"
 msgstr ""
 
@@ -748,9 +748,10 @@ msgstr ""
 
 #: settings/class.kaira-theme-settings.php:311
 msgid ""
-"Click to enable the default homepage slider<br /><br />See <a href=\"http://"
-"demo.kairaweb.com/albar/installing-premium/albar-default-slider/\" target="
-"\"_blank\">instructions here</a> on setting up the default slider"
+"Click to enable the default homepage slider<br /><br /><big>See <a href="
+"\"https://kairaweb.com/documentation/setting-up-the-albar-default-slider/\" "
+"target=\"_blank\">instructions here</a> on setting up the default slider</"
+"big>"
 msgstr ""
 
 #: settings/class.kaira-theme-settings.php:324
@@ -1056,58 +1057,41 @@ msgstr ""
 msgid "Meta"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:4
-msgid "Premium Upgrade"
+#: upgrade/tpl/upgrade-page.php:4 upgrade/upgrade.php:13
+msgid "About Albar"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:12
-#, php-format
+#: upgrade/tpl/upgrade-page.php:13
+msgid "<em>Support</em><span>Albar Documentation </span>"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:18
 msgid ""
-"Sometimes emails take a while... Please <a href='%s' target='_blank'>Read "
-"here</a> for an easy upgrade."
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:17
-msgid "<span>Purchase Now </span><em>$20</em>"
+"We support all our themes, offering one on one email support to help you "
+"beild the website you want"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:19
-msgid "Already have one?"
+msgid ""
+"While we do support our both free and premium themes... <strong>Premium "
+"themes get prioritized support</strong>"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:23
-msgid "Enter your Order Number"
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:26
-msgid "After purchase you should receive an email with your order number."
+#: upgrade/tpl/upgrade-page.php:24
+msgid "<span>Albar Premium </span><em>$20</em>"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:29
-msgid "Please be patient as this email can take a few minutes to come through."
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:36
-msgid "Get Upgrade"
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:42
-#, php-format
 msgid ""
-"If you need to look up your order number, please <a href='%s' "
-"target='_blank'>search here</a> using your <strong>PayPal email address</"
-"strong>.<br />"
+"<a href=\"https://kairaweb.com/support/install-the-premium-theme/\" target="
+"\"_blank\">Get help here</a> on purchasing and installing Albar Premium"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:43
-msgid "Also, be sure to check your spam folder if you can't find it."
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:53 upgrade/tpl/upgrade-page.php:59
+#: upgrade/tpl/upgrade-page.php:37 upgrade/tpl/upgrade-page.php:43
 msgid "Upgrade to Premium"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:56
+#: upgrade/tpl/upgrade-page.php:40
 msgid ""
 "If you've enjoyed using our Albar theme to build your website, then you "
 "should love the premium version which comes with a bunch of extra features "
@@ -1116,22 +1100,22 @@ msgid ""
 "the website you want."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:64 upgrade/tpl/upgrade-page.php:70
+#: upgrade/tpl/upgrade-page.php:48 upgrade/tpl/upgrade-page.php:54
 msgid "Continued Updates"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:67
+#: upgrade/tpl/upgrade-page.php:51
 msgid ""
 "Once you upgrade to Albar Premium, you'll then support and move over to our "
 "premium updates system which will ensure Albar works with all future "
 "versions of WordPress that are released."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:75 upgrade/tpl/upgrade-page.php:81
+#: upgrade/tpl/upgrade-page.php:59 upgrade/tpl/upgrade-page.php:65
 msgid "Get Premium Support"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:78
+#: upgrade/tpl/upgrade-page.php:62
 msgid ""
 "Upgrading to albar Premium will also give you prioritized support, ensuring "
 "we get to your queries first.<br /><br />We have a growing <a href='https://"
@@ -1140,123 +1124,54 @@ msgid ""
 "target='_blank'>email support</a> to sort out any queries you may have."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:92
+#: upgrade/tpl/upgrade-page.php:76
 msgid ""
 "We aim to keep our prices low, all our themes are under <strong>$30</"
 "strong>, while still offering you great WordPress themes."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:94
+#: upgrade/tpl/upgrade-page.php:78
 msgid ""
 "Upgrading will support us and enable us to keep building WordPress themes."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:96
+#: upgrade/tpl/upgrade-page.php:80
 #, php-format
 msgid ""
 "If you like our themes and/or found our support helpful, please let us know "
 "by <a href='%s' target='_blank'>giving us a review</a>."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:100
+#: upgrade/tpl/upgrade-page.php:84
 msgid "Theme Ratings"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:112
+#: upgrade/tpl/upgrade-page.php:96
 msgid "SpySunny"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:115
+#: upgrade/tpl/upgrade-page.php:99
 msgid "Very user-friendly theme with excellent support."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:121
+#: upgrade/tpl/upgrade-page.php:105
 msgid "Fitoni"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:124
+#: upgrade/tpl/upgrade-page.php:108
 msgid ""
 "What a great theme!! been using it for a long time, very clean code, easy to "
 "use, easy to customize, really cant say any wrong about it!!!<br /><br /"
 ">Give it a try and you will not be dissapointed! this theme is THE BEST!!"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:130
+#: upgrade/tpl/upgrade-page.php:114
 msgid "NayWordPress"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:133
+#: upgrade/tpl/upgrade-page.php:117
 msgid ""
 "I've purchased the Premium Theme for my Online Store. Very awesome! Support "
 "assistance 100&#37; available, easy to customize. I recommend it to everyone "
 "who want to build a Store Online. Really practicable for E-commerce."
-msgstr ""
-
-#: upgrade/update.php:93
-msgid ""
-"An Unexpected HTTP Error occurred during the API request.</p> <p><a href=\"?"
-"\" onclick=\"document.location.reload(); return false;\">Try again</a>"
-msgstr ""
-
-#: upgrade/update.php:98
-msgid "An unknown error occurred"
-msgstr ""
-
-#: upgrade/upgrade.php:13
-msgid "Premium"
-msgstr ""
-
-#: upgrade/upgrade.php:76
-msgid "Order Number"
-msgstr ""
-
-#: upgrade/upgrade.php:83
-msgid "Order Number: "
-msgstr ""
-
-#: upgrade/upgrade.php:88
-msgid "There was a problem contacting our validation servers."
-msgstr ""
-
-#: upgrade/upgrade.php:89 upgrade/upgrade.php:126
-msgid ""
-"Please try again later, or upgrade manually using the ZIP file we sent you."
-msgstr ""
-
-#: upgrade/upgrade.php:93 upgrade/upgrade.php:130
-msgid "Back"
-msgstr ""
-
-#: upgrade/upgrade.php:102
-msgid "We've validated your order number, and it works!"
-msgstr ""
-
-#: upgrade/upgrade.php:106
-#, php-format
-msgid ""
-"You can now update your theme on the <a href=\"%s\">Themes page</a>,<br /"
-">but <strong>please note</strong> this can take a few minutes to show up so "
-"please be patient :)"
-msgstr ""
-
-#: upgrade/upgrade.php:110
-msgid "This update will add all the premium features."
-msgstr ""
-
-#: upgrade/upgrade.php:115
-msgid ""
-"Updating may lose the theme settings you've made to the free version. Click "
-"'OK' to update."
-msgstr ""
-
-#: upgrade/upgrade.php:117
-msgid "Update Theme Now"
-msgstr ""
-
-#: upgrade/upgrade.php:124
-msgid "We couldn't validate your order number."
-msgstr ""
-
-#: upgrade/upgrade.php:125
-msgid "There might be a problem with our validation server."
 msgstr ""

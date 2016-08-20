@@ -13,7 +13,7 @@
         <?php
         printf(
             __( '<a href="%s">Upgrade to Albar Premium</a> to get all the features for the Albar theme.', 'albar' ),
-            admin_url( 'themes.php?page=premium_upgrade' )
+            admin_url( 'themes.php?page=theme_info' )
         ); ?>
     </h4>
     

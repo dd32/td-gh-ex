@@ -4,13 +4,12 @@
  *
  * @package Albar
  */
-define( 'KAIRA_THEME_VERSION' , '1.7.3' );
+define( 'KAIRA_THEME_VERSION' , '1.7.4' );
 
 // Is ONLY USED IF the user prompts for the premium update
 define( 'KAIRA_UPDATE_URL', 'https://updates.kairaweb.com/' );
 // Upgrade / Order Premium page
 require get_template_directory() . '/upgrade/upgrade.php';
-require get_template_directory() . '/upgrade/update.php';
 
 if ( file_exists( get_stylesheet_directory() . '/settings/class.kaira-theme-settings.php' ) ) {
     require_once( get_stylesheet_directory() . '/settings/class.kaira-theme-settings.php' );
@@ -172,8 +171,8 @@ function kaira_print_styles(){
         .post .alba-blog-permalink-btn,
         .search article.page .alba-blog-permalink-btn,
         .wpcf7-submit,
-        #alba-home-slider-prev,
-        #alba-home-slider-next,
+        .alba-home-slider-prev,
+        .alba-home-slider-next,
         .alba-carousel-arrow-prev,
         .alba-carousel-arrow-next {
             background-color: <?php echo $primary_color; ?>;
@@ -209,8 +208,8 @@ function kaira_print_styles(){
         .post .alba-blog-permalink-btn:hover,
         .search article.page .alba-blog-permalink-btn:hover,
         
-        #alba-home-slider-prev:hover,
-        #alba-home-slider-next:hover,
+        .alba-home-slider-prev:hover,
+        .alba-home-slider-next:hover,
         .alba-carousel-arrow-prev:hover,
         .alba-carousel-arrow-next:hover {
             background-color: <?php echo $primary_color_hover; ?>;

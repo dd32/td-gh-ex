@@ -1,48 +1,32 @@
 <div class="wrap upgrade-page-wrap">
     
     <h2 class="upgrade-page-title">
-        <?php _e( 'Premium Upgrade', 'albar' ); ?>
+        <?php _e( 'About Albar', 'albar' ); ?>
     </h2>
     
     <div class="upgrade-page-inner-wrap">
         
         <div class="upgrade-page-top">
             
-            <p class="upgrade-page-top-note">
-                <?php printf( __( "Sometimes emails take a while... Please <a href='%s' target='_blank'>Read here</a> for an easy upgrade.", 'albar' ) , 'https://kairaweb.com/support/purchasing-a-theme/' ); ?>
-            </p>
-            
             <div class="upgrade-order-number-info-btns">
-                <a href="http://kaira.fetchapp.com/sell/09345e1f" id="upgrade-purchase-link" target="_blank">
-                    <?php printf( __( "<span>Purchase Now </span><em>$20</em>", 'albar' ) ); ?>
+                <a href="https://kairaweb.com/docs/albar/" class="upgrade-page-link" target="_blank">
+                    <?php printf( __( '<em>Support</em><span>Albar Documentation </span>', 'albar' ) ); ?>
                 </a>
-                <a href="#" id="upgrade-has-order-number"><?php _e( 'Already have one?', 'albar' ) ?></a>
             </div>
             
-            <div class="upgrade-order-number-info-form">
-                <h3 class="upgrade-page-sub-title"><?php _e( 'Enter your Order Number', 'albar' ); ?></h3>
-                
-                <p>
-                    <?php printf( __( "After purchase you should receive an email with your order number.", 'albar' ) ); ?>
-                </p>
-                <p>
-                    <?php printf( __( "Please be patient as this email can take a few minutes to come through.", 'albar' ) ); ?>
-                </p>
-                
-                <form action="<?php echo esc_url( add_query_arg( 'action', 'order-entered' ) ) ?>" method="post" id="upgrade-order-number-info">
-                    
-                    <input type="text" class="upgrade-text" name="user_order_number">
-                    
-                    <input type="submit" class="upgrade-submit" value="<?php esc_attr_e( 'Get Upgrade', 'albar' ) ?>" />
-                    <?php wp_nonce_field( 'save_order_number', '_upgrade_nonce' ) ?>
-                    
-                </form>
-                
-                <p>
-                    <?php printf( __( "If you need to look up your order number, please <a href='%s' target='_blank'>search here</a> using your <strong>PayPal email address</strong>.<br />", 'albar' ) , 'https://kairaweb.com/orders/' ); ?>
-                    <?php _e( 'Also, be sure to check your spam folder if you can\'t find it.', 'albar' ); ?>
-                </p>
-                
+            <div class="upgrade-help">
+                <p><?php printf( __( 'We support all our themes, offering one on one email support to help you beild the website you want', 'albar' ) ); ?></p>
+                <p><?php printf( __( 'While we do support our both free and premium themes... <strong>Premium themes get prioritized support</strong>', 'albar' ) ); ?></p>
+            </div>
+            
+            <div class="upgrade-order-number-info-btns-link">
+                <a href="https://kairaweb.com/theme/albar/#purchase-premium" class="upgrade-page-link" id="upgrade-purchase-link" target="_blank">
+                    <?php printf( __( '<span>Albar Premium </span><em>$20</em>', 'albar' ) ); ?>
+                </a>
+            </div>
+            
+            <div class="upgrade-help">
+                <p><?php printf( __( '<a href="https://kairaweb.com/support/install-the-premium-theme/" target="_blank">Get help here</a> on purchasing and installing Albar Premium', 'albar' ) ); ?></p>
             </div>
             
         </div>
