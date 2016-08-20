@@ -158,7 +158,7 @@ $aza_buttons_type = get_theme_mod ('aza_header_buttons_type','normal_buttons');
 
 								echo '<div class="header-logo-wrap text-header">';
 
-									echo '<h1 id="site-title" class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
+									echo '<h1 id="site-title" class="site-title"><a href="'.esc_url( home_url( '/' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a></h1>';
 
 									echo '<p id="site-description" class="site-description">'.get_bloginfo( 'description' ).'</p>';
 

@@ -3,11 +3,11 @@ Theme Name: AZA Lite
 Author: Andrei Băicuș
 Author URI: https://profiles.wordpress.org/baicusandrei
 Description: AZA Lite is a perfect one-page WordPress theme for small businesses, freelancers and anyone who wishes to build a responsive, one-page, straightforward website in a matter of minutes. This highly customizable WordPress theme strives to give the end-user a really cozy feel and a great experience while carefully delivering important content and information. The fully customizable layered Parallax section is just stunning to look at and can be a great hook for anybody landing on your website. Have a great time using something that was carefully engineered for beautiful minds.
-Version: 1.0.6
+Version: 1.0.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: aza-lite
-Tags: one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, front-page-post-form, full-width-template, rtl-language-support, threaded-comments, translation-ready, accessibility-ready
+Tags: one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, front-page-post-form, full-width-template, rtl-language-support, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 
@@ -900,6 +900,18 @@ header .navbar-brand {
   z-index: -1;
   line-height: 28px;
 }
+
+button.dropdown-toggle.toggled-on:hover,
+button.dropdown-toggle.toggled-on:focus,
+button.dropdown-toggle.toggled-on,
+button.dropdown-toggle:hover,
+button.dropdown-toggle:focus,
+button.dropdown-toggle {
+  color: #fff;
+  background: none;
+  border: none;
+}
+
 .sticky-navigation-open .sticky-navigation {
   top: 0px;
   opacity: 1;

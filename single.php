@@ -1,4 +1,3 @@
-<div class="blog-content-wrapper">
 <?php
 /**
  * The template for displaying all single posts.
@@ -10,6 +9,7 @@
 
 get_header(); ?>
 
+<div class="blog-content-wrapper">
     <div class="container blog-content">
         <div class="row">
             <div class="col-md-9">
@@ -37,5 +37,6 @@ get_header(); ?>
             </div>
         </div>
     </div>
-    </div>
-    <?php get_footer(); ?>
+</div>
+
+<?php get_footer(); ?>
