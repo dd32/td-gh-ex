@@ -722,7 +722,7 @@ if ( ! function_exists( 'gridalicious_entry_meta' ) ) :
 		);
 
 		printf( '<span class="posted-on">%1$s<a href="%2$s" rel="bookmark">%3$s</a></span>',
-			sprintf( _x( '<span class="screen-reader-text">Posted on</span>', 'Used before publish date.', 'gridalicious' ) ),
+			sprintf( __( '<span class="screen-reader-text">Posted on</span>', 'gridalicious' ) ),
 			esc_url( get_permalink() ),
 			$time_string
 		);

@@ -1,5 +1,11 @@
 == Change log ==
 
+= 1.6 =
+* Added German translation de_DE.po and de_DE.mo
+* Bug Fixed: White space issue
+* Updated: All instances of http://catchthemes.com changed to https://catchthemes.com
+* Bug Fixed: `sprintf() too few arguments` issue on other languages
+
 = 1.5 =
 * Added: Disable scrollup option.
 * Added: Social Icons for Phone, Handset, Cart, Cloud, Link( Custom Link )

@@ -1,6 +1,6 @@
 === Gridalicious ===
 
-Gridalicious is a Simple, Clean, Grid Base Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and WordPress Theme Customizer for real time customization. This theme is translation ready and also currently translated in French language. Check out Theme Instructions at https://catchthemes.com/theme-instructions/gridalicious/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/gridalicious/
+Gridalicious is a Simple, Clean, Grid Base Responsive WordPress Theme which automatically adapts to the screen's size, ensuring that your content is always displayed beautifully no matter what device visitors are using. It is based in HTML5, CSS3 and WordPress Theme Customizer for real time customization. This theme is translation ready and also currently translated in French and German language. Check out Theme Instructions at https://catchthemes.com/theme-instructions/gridalicious/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/gridalicious/
 
 
 == Support ==
@@ -13,6 +13,7 @@ Support Forum: https://catchthemes.com/support-forum/forum/gridalicious-free/
 
 Gridalicious theme is translation ready.
 Added Translation for French by Laurent Duretz ( Email: laurent@duretz.net )
+Added Translation for German by Jürgen Zapp ( Email: j_m_z@hotmail.com ) and Micky261 ( Email: karlo261@hotmail.de )
 
 
 == License ==

@@ -77,5 +77,4 @@
      *  @hooked gridalicious_content_sidebar_wrap_start - 40
      *
      */
-	do_action( 'gridalicious_content' );
-		
+	do_action( 'gridalicious_content' );	

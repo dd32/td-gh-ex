@@ -246,6 +246,4 @@ function gridalicious_reset_all_settings( $input ) {
  */
 function gridalicious_sanitize_important_link() {
 	return false;
-} 
-
-
+}

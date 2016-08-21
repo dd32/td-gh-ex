@@ -3,10 +3,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Gridalicious\n"
-"Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/gridalicious-"
+"Report-Msgid-Bugs-To: https://catchthemes.com/support-forum/forum/gridalicious-"
 "free/\n"
-"POT-Creation-Date: 2016-04-11 23:38+0545\n"
-"PO-Revision-Date: 2016-04-11 23:38+0545\n"
+"POT-Creation-Date: 2016-08-22 00:41+0545\n"
+"PO-Revision-Date: 2016-08-22 00:41+0545\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: en\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Generator: Poedit 1.7.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__;"
-"_nx:1,2,4c;esc_html__\n"
+"_nx:1,2,4c;esc_html__;esc_html_e;esc_attr_x:1,2c\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
@@ -656,7 +656,6 @@ msgid "Your comment is awaiting moderation."
 msgstr ""
 
 #: ../inc/gridalicious-core.php:725
-msgctxt "Used before publish date."
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
 msgstr ""
 
@@ -1110,6 +1109,11 @@ msgstr ""
 #: ../searchform.php:14 ../searchform.php:15
 msgctxt "label"
 msgid "Search for:"
+msgstr ""
+
+#: ../searchform.php:17
+msgctxt "submit button"
+msgid "Search"
 msgstr ""
 
 #: ../sidebar.php:80

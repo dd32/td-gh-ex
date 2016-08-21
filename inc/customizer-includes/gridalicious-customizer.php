@@ -210,7 +210,7 @@ function gridalicious_customize_scripts() {
 	wp_enqueue_script( 'gridalicious_customizer_custom', get_template_directory_uri() . '/js/gridalicious-customizer-custom-scripts.min.js', array( 'jquery' ), '20131028', true );
 
 	$gridalicious_misc_links = array(
-							'upgrade_link'	=> esc_url( 'http://catchthemes.com/themes/gridalicious-pro/' ),
+							'upgrade_link'	=> esc_url( 'https://catchthemes.com/themes/gridalicious-pro/' ),
 							'upgrade_text'	=> __( 'Upgrade To Pro &raquo;', 'gridalicious' ),
 						);
 
