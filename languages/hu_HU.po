@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Catch Base\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/support-forum/forum/catch-base-"
 "free/\n"
-"POT-Creation-Date: 2016-08-16 01:13+0545\n"
-"PO-Revision-Date: 2016-08-16 01:13+0545\n"
+"POT-Creation-Date: 2016-08-21 19:02+0545\n"
+"PO-Revision-Date: 2016-08-21 19:02+0545\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: hu_HU\n"
@@ -232,7 +232,6 @@ msgid "Your comment is awaiting moderation."
 msgstr "A hozzászólása moderálásra vár."
 
 #: ../inc/catchbase-core.php:783
-msgctxt "Used before publish date."
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
 msgstr "<span class=\"screen-reader-text\">Közzétéve</span>"
 
@@ -637,27 +636,27 @@ msgstr "Twitch"
 
 #: ../inc/catchbase-default-options.php:611
 msgid "Website"
-msgstr ""
+msgstr "Website"
 
 #: ../inc/catchbase-default-options.php:615
 msgid "Phone"
-msgstr ""
+msgstr "Phone"
 
 #: ../inc/catchbase-default-options.php:619
 msgid "Handset"
-msgstr ""
+msgstr "Handset"
 
 #: ../inc/catchbase-default-options.php:623
 msgid "Cart"
-msgstr ""
+msgstr "Cart"
 
 #: ../inc/catchbase-default-options.php:627
 msgid "Cloud"
-msgstr ""
+msgstr "Cloud"
 
 #: ../inc/catchbase-default-options.php:631
 msgid "Link"
-msgstr ""
+msgstr "Link"
 
 #: ../inc/catchbase-default-options.php:649
 #: ../inc/catchbase-default-options.php:685
@@ -1292,6 +1291,10 @@ msgid ""
 "site layout option."
 msgstr ""
 "Ez az elsődleges oldalsáv, ha a két vagy három oszlopos elrendezést használja."
+
+#~ msgctxt "Used before publish date."
+#~ msgid "<span class=\"screen-reader-text\">Posted on</span>"
+#~ msgstr "<span class=\"screen-reader-text\">Közzétéve</span>"
 
 #~ msgid "StumbleUpon"
 #~ msgstr "StumbleUpon"

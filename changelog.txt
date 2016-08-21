@@ -1,5 +1,10 @@
 == Change log ==
 
+= 2.8.3 =
+* Bug Fixed: `sprintf() too few arguments` issue on other languages
+* Updated: Danish translation da_DK.po and da_DK.mo
+* Updated: German translation de_DE.po and de_DE.mo
+
 = 2.8.2 =
 * Bug Fixed: White space issues at the end of files
 * Updated: Content Width Implementation Code

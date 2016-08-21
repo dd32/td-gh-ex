@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Catch Base\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/support-forum/forum/catch-"
 "responsive-free/\n"
-"POT-Creation-Date: 2016-08-16 01:13+0545\n"
-"PO-Revision-Date: 2016-08-16 01:13+0545\n"
+"POT-Creation-Date: 2016-08-21 19:19+0545\n"
+"PO-Revision-Date: 2016-08-21 19:19+0545\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: lt\n"
@@ -109,9 +109,9 @@ msgstr "Archyvai"
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] ""
-msgstr[1] "%1$s mintys apie &ldquo;%2$s&rdquo;"
-msgstr[2] "%1$s minčių apie &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s komentaras<!--%2$s-->"
+msgstr[1] "%1$s komentarai<!--%2$s-->"
+msgstr[2] "%1$s komentarų<!--%2$s-->"
 
 #: ../comments.php:34 ../comments.php:59
 msgid "Comment navigation"
@@ -175,7 +175,7 @@ msgstr ""
 #: ../inc/catchbase-breadcrumb.php:59
 #, php-format
 msgid "%1$sSearch results for: %2$s"
-msgstr ""
+msgstr "%1$sPaieškos rezultatai: %2$s"
 
 #: ../inc/catchbase-breadcrumb.php:60
 #, php-format
@@ -185,7 +185,7 @@ msgstr ""
 #: ../inc/catchbase-breadcrumb.php:61
 #, php-format
 msgid "%1$sView all posts by %2$s"
-msgstr ""
+msgstr "%1$sPeržiūrėti visus %2$s"
 
 #: ../inc/catchbase-breadcrumb.php:62
 msgid "Error 404"
@@ -236,7 +236,6 @@ msgid "Your comment is awaiting moderation."
 msgstr "Jūsų komentaras laukia patvirtinimo."
 
 #: ../inc/catchbase-core.php:783
-msgctxt "Used before publish date."
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
 msgstr "<span class=\"screen-reader-text\">Paskelbta</span>"
 
@@ -291,19 +290,19 @@ msgstr "pagal"
 
 #: ../inc/catchbase-core.php:1551
 msgid "Next &rarr;"
-msgstr ""
+msgstr "Kitas &rarr;"
 
 #: ../inc/catchbase-core.php:1552
 msgid "Next post:"
-msgstr ""
+msgstr "Paskesnis įrašas:"
 
 #: ../inc/catchbase-core.php:1554
 msgid "&larr; Previous"
-msgstr ""
+msgstr "&larr; Ankstesnis"
 
 #: ../inc/catchbase-core.php:1555
 msgid "Previous post:"
-msgstr ""
+msgstr "Ankstesnis įrašas:"
 
 #: ../inc/catchbase-default-options.php:56
 msgid "Read More ..."
@@ -442,7 +441,7 @@ msgstr "4 stulpeliai"
 
 #: ../inc/catchbase-default-options.php:348
 msgid "Show Full Content"
-msgstr ""
+msgstr "Rodyti visą turinį"
 
 #: ../inc/catchbase-default-options.php:352
 msgid "Hide Content"
@@ -514,15 +513,15 @@ msgstr "Begalinis slinkimas (slinkimas)"
 
 #: ../inc/catchbase-default-options.php:471
 msgid "Large"
-msgstr ""
+msgstr "Didelis"
 
 #: ../inc/catchbase-default-options.php:475
 msgid "Medium"
-msgstr ""
+msgstr "Vidutinis"
 
 #: ../inc/catchbase-default-options.php:479
 msgid "Full size"
-msgstr ""
+msgstr "Pilnas"
 
 #: ../inc/catchbase-default-options.php:483
 msgid "Slider Image Size"
@@ -641,11 +640,11 @@ msgstr "Twitch"
 
 #: ../inc/catchbase-default-options.php:611
 msgid "Website"
-msgstr ""
+msgstr "Interneto svetainėje"
 
 #: ../inc/catchbase-default-options.php:615
 msgid "Phone"
-msgstr ""
+msgstr "Telefono Nr."
 
 #: ../inc/catchbase-default-options.php:619
 msgid "Handset"
@@ -653,7 +652,7 @@ msgstr ""
 
 #: ../inc/catchbase-default-options.php:623
 msgid "Cart"
-msgstr ""
+msgstr "Krepšelis"
 
 #: ../inc/catchbase-default-options.php:627
 msgid "Cloud"
@@ -661,7 +660,7 @@ msgstr ""
 
 #: ../inc/catchbase-default-options.php:631
 msgid "Link"
-msgstr ""
+msgstr "Nuoroda"
 
 #: ../inc/catchbase-default-options.php:649
 #: ../inc/catchbase-default-options.php:685
@@ -749,7 +748,7 @@ msgstr "Atskiro puslapio/įrašo paveikslėlio padėtis"
 
 #: ../inc/catchbase-metabox.php:220
 msgid "Catchbase Options"
-msgstr ""
+msgstr "Catchbase nuostatos"
 
 #: ../inc/catchbase-widgets.php:30
 msgid "Primary Sidebar"
@@ -1296,6 +1295,10 @@ msgid ""
 msgstr ""
 "Tai yra pagrindinės šoninės juostos valdiklių sritis, jei naudojate dviejų ar "
 "trijų stulpelių svetainės išdėstymo variantą."
+
+#~ msgctxt "Used before publish date."
+#~ msgid "<span class=\"screen-reader-text\">Posted on</span>"
+#~ msgstr "<span class=\"screen-reader-text\">Paskelbta</span>"
 
 #~ msgid "StumbleUpon"
 #~ msgstr "StumbleUpon"

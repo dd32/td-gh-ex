@@ -780,7 +780,7 @@ if ( ! function_exists( 'catchbase_entry_meta' ) ) :
 		);
 
 		printf( '<span class="posted-on">%1$s<a href="%2$s" rel="bookmark">%3$s</a></span>',
-			sprintf( _x( '<span class="screen-reader-text">Posted on</span>', 'Used before publish date.', 'catch-base' ) ),
+			sprintf( __( '<span class="screen-reader-text">Posted on</span>', 'catch-base' ) ),
 			esc_url( get_permalink() ),
 			$time_string
 		);

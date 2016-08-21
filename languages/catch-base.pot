@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Catch Base\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/support-forum/forum/catch-base-"
 "free/\n"
-"POT-Creation-Date: 2016-08-16 01:13+0545\n"
-"PO-Revision-Date: 2016-08-16 01:13+0545\n"
+"POT-Creation-Date: 2016-08-21 17:47+0545\n"
+"PO-Revision-Date: 2016-08-21 17:47+0545\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: en\n"
@@ -228,7 +228,6 @@ msgid "Your comment is awaiting moderation."
 msgstr ""
 
 #: ../inc/catchbase-core.php:783
-msgctxt "Used before publish date."
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
 msgstr ""
 

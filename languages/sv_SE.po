@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Catch Base\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/support-forum/forum/catch-base-pro-"
 "premium/pro-premium/\n"
-"POT-Creation-Date: 2016-08-16 01:14+0545\n"
-"PO-Revision-Date: 2016-08-16 01:14+0545\n"
+"POT-Creation-Date: 2016-08-21 19:35+0545\n"
+"PO-Revision-Date: 2016-08-21 19:35+0545\n"
 "Last-Translator: Anders <anders@paulcen.se>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: sv\n"
@@ -164,7 +164,7 @@ msgstr "Hem"
 #: ../inc/catchbase-breadcrumb.php:58
 #, php-format
 msgid "%1$s Archive for %2$s"
-msgstr ""
+msgstr "%1$s Arkiv för %2$s"
 
 #: ../inc/catchbase-breadcrumb.php:59
 #, php-format
@@ -174,12 +174,12 @@ msgstr "%1$sSökresultat förr: %2$s"
 #: ../inc/catchbase-breadcrumb.php:60
 #, php-format
 msgid "%1$sPosts tagged %2$s"
-msgstr ""
+msgstr "%1$sInlägg taggade %2$s"
 
 #: ../inc/catchbase-breadcrumb.php:61
 #, php-format
 msgid "%1$sView all posts by %2$s"
-msgstr ""
+msgstr "%1$sVisa alla inlägg av %2$s"
 
 #: ../inc/catchbase-breadcrumb.php:62
 msgid "Error 404"
@@ -230,7 +230,6 @@ msgid "Your comment is awaiting moderation."
 msgstr "Din kommentar inväntar granskning."
 
 #: ../inc/catchbase-core.php:783
-msgctxt "Used before publish date."
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
 msgstr "<span class=\"screen-reader-text\">Postades den</span>"
 
@@ -277,7 +276,7 @@ msgstr "Scrolla upp"
 
 #: ../inc/catchbase-core.php:1509
 msgid "Posted on"
-msgstr "﻿Publicerat den"
+msgstr "Publicerat den"
 
 #: ../inc/catchbase-core.php:1510
 msgid "By"
@@ -436,7 +435,7 @@ msgstr "4 kolumner"
 
 #: ../inc/catchbase-default-options.php:348
 msgid "Show Full Content"
-msgstr ""
+msgstr "Visa hela inl&auml;gg"
 
 #: ../inc/catchbase-default-options.php:352
 msgid "Hide Content"
@@ -635,19 +634,19 @@ msgstr "Twitch"
 
 #: ../inc/catchbase-default-options.php:611
 msgid "Website"
-msgstr ""
+msgstr "Webbsida"
 
 #: ../inc/catchbase-default-options.php:615
 msgid "Phone"
-msgstr ""
+msgstr "Tel"
 
 #: ../inc/catchbase-default-options.php:619
 msgid "Handset"
-msgstr ""
+msgstr "Handset"
 
 #: ../inc/catchbase-default-options.php:623
 msgid "Cart"
-msgstr ""
+msgstr "Kundvagn"
 
 #: ../inc/catchbase-default-options.php:627
 msgid "Cloud"
@@ -970,6 +969,8 @@ msgid ""
 "Skype link can be of formats:<br>callto://+{number}<br> skype:{username}?"
 "{action}. More Information in readme file"
 msgstr ""
+"Skype link can be of formats:<br>callto://+{number}<br> skype:{username}?"
+"{action}. More Information in readme file"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:20
 msgid "Basic theme Options"
@@ -1279,6 +1280,10 @@ msgid ""
 msgstr ""
 "Detta är den primära sidopanelen om du använder en två eller tre kolumn "
 "webbplats layoutalternativ."
+
+#~ msgctxt "Used before publish date."
+#~ msgid "<span class=\"screen-reader-text\">Posted on</span>"
+#~ msgstr "<span class=\"screen-reader-text\">Postades den</span>"
 
 #~ msgid "StumbleUpon"
 #~ msgstr "StumbleUpon"

@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Catch Base\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/support-forum/forum/catch-base-"
 "free/\n"
-"POT-Creation-Date: 2016-08-16 01:14+0545\n"
-"PO-Revision-Date: 2016-08-16 01:14+0545\n"
+"POT-Creation-Date: 2016-08-21 19:25+0545\n"
+"PO-Revision-Date: 2016-08-21 19:25+0545\n"
 "Last-Translator: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language-Team: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language: pt_BR\n"
@@ -237,9 +237,8 @@ msgstr ""
 "</strong>"
 
 #: ../inc/catchbase-core.php:783
-msgctxt "Used before publish date."
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
-msgstr "<span class=\"screen-reader-text\">Publicado em: </span>"
+msgstr "<span class=\"screen-reader-text\">Publicado em</span>"
 
 #: ../inc/catchbase-core.php:790
 msgctxt "Used before post author name."
@@ -642,19 +641,19 @@ msgstr "Twitch"
 
 #: ../inc/catchbase-default-options.php:611
 msgid "Website"
-msgstr ""
+msgstr "Website"
 
 #: ../inc/catchbase-default-options.php:615
 msgid "Phone"
-msgstr ""
+msgstr "Fone"
 
 #: ../inc/catchbase-default-options.php:619
 msgid "Handset"
-msgstr ""
+msgstr "Handset"
 
 #: ../inc/catchbase-default-options.php:623
 msgid "Cart"
-msgstr ""
+msgstr "Carrinho"
 
 #: ../inc/catchbase-default-options.php:627
 msgid "Cloud"
@@ -662,7 +661,7 @@ msgstr ""
 
 #: ../inc/catchbase-default-options.php:631
 msgid "Link"
-msgstr ""
+msgstr "Ligação"
 
 #: ../inc/catchbase-default-options.php:649
 #: ../inc/catchbase-default-options.php:685
@@ -1337,6 +1336,10 @@ msgid ""
 msgstr ""
 "Esta é a barra lateral principal se você estiver usando uma opção de layout para "
 "o site de duas ou três colunas."
+
+#~ msgctxt "Used before publish date."
+#~ msgid "<span class=\"screen-reader-text\">Posted on</span>"
+#~ msgstr "<span class=\"screen-reader-text\">Publicado em: </span>"
 
 #~ msgid "StumbleUpon"
 #~ msgstr "Stumbleupon"

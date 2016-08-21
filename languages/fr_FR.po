@@ -1,16 +1,18 @@
+# Translation of Catch Base in French (France)
+# This file is distributed under the same license as the Catch Base package.
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Base\n"
-"POT-Creation-Date: 2016-08-16 01:13+0545\n"
-"PO-Revision-Date: \n"
+"POT-Creation-Date: 2016-08-21 18:59+0545\n"
+"PO-Revision-Date: 2016-08-21 18:59+0545\n"
 "Last-Translator: \n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
-"Language: fr\n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Poedit 1.7.1\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__;"
 "_nx:1,2,4c;esc_html__;esc_attr_x:1,2c\n"
@@ -19,49 +21,49 @@ msgstr ""
 
 #: ../404.php:18
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "Oops cette page n'a pas été trouvé. "
+msgstr "Oups&nbsp;! Cette page est introuvable."
 
 #: ../404.php:22
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
-"Il ressemble à rien n'a été trouvé à cet endroit. Peut-être essayer un des liens "
-"ci-dessous ou une recherche?"
+"Contenu Introuvable. L'outil de Recherche ou les Liens ci-dessous vous "
+"remettront peut-être sur la voie&hellip;"
 
 #: ../archive.php:30
 #, php-format
 msgid "Author: %s"
-msgstr "Auteur: %s"
+msgstr "Auteur : %s"
 
 #: ../archive.php:33
 #, php-format
 msgid "Day: %s"
-msgstr "Jour: %s"
+msgstr "Jour : %s"
 
 #: ../archive.php:36
 #, php-format
 msgid "Month: %s"
-msgstr "Mois: %s"
+msgstr "Mois : %s"
 
 #: ../archive.php:36
 msgctxt "monthly archives date format"
 msgid "F Y"
-msgstr "M A"
+msgstr "F Y"
 
 #: ../archive.php:39
 #, php-format
 msgid "Year: %s"
-msgstr "Année: %s"
+msgstr "Année : %s"
 
 #: ../archive.php:39
 msgctxt "yearly archives date format"
 msgid "Y"
-msgstr "A"
+msgstr "Y"
 
 #: ../archive.php:42
 msgid "Asides"
-msgstr "De coté"
+msgstr "En passant"
 
 #: ../archive.php:45
 msgid "Galleries"
@@ -77,7 +79,7 @@ msgstr "Vidéos"
 
 #: ../archive.php:54
 msgid "Quotes"
-msgstr "Citattions"
+msgstr "Citations"
 
 #: ../archive.php:57
 msgid "Links"
@@ -85,15 +87,15 @@ msgstr "Liens"
 
 #: ../archive.php:60
 msgid "Statuses"
-msgstr "Status"
+msgstr "Statuts"
 
 #: ../archive.php:63
 msgid "Audios"
-msgstr "Audios"
+msgstr "Audio"
 
 #: ../archive.php:66
 msgid "Chats"
-msgstr "Discutions"
+msgstr "Chat"
 
 #: ../archive.php:69 ../sidebar-secondary.php:45 ../sidebar.php:54
 msgid "Archives"
@@ -104,58 +106,60 @@ msgstr "Archives"
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "Un commentaire à propos de &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s commentaires à propos de &ldquo;%2$s&rdquo;"
+msgstr[0] "Une réflexion au sujet de &laquo;&nbsp;%2$s&nbsp;&raquo;"
+msgstr[1] "%1$s réflexions au sujet de &laquo;&nbsp;%2$s&nbsp;&raquo;"
 
 #: ../comments.php:34 ../comments.php:59
 msgid "Comment navigation"
-msgstr "Commentaire navigation "
+msgstr "Navigation des commentaires"
 
 #: ../comments.php:35 ../comments.php:60
 msgid "&larr; Older Comments"
-msgstr "& Larr; Commentaires plus anciens"
+msgstr "&larr; Commentaire plus ancien"
 
 #: ../comments.php:36 ../comments.php:61
 msgid "Newer Comments &rarr;"
-msgstr "commentaire récent &rarr;"
+msgstr "Commentaires plus récents &rarr;"
 
 #: ../comments.php:71
 msgid "Comments are closed."
-msgstr "Commentaire fermé"
+msgstr "Les commentaires sont fermés."
 
 #: ../content-none.php:15
 msgid "Nothing Found"
-msgstr "Rien n'a été trouvé "
+msgstr "Rien de trouvé"
 
 #: ../content-none.php:21 ../no-results.php:20
 #, php-format
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr "Prêt à publier votre premier article?<a href=\"%1$s\">Commencer ici</a>. "
+msgstr ""
+"Prêt à publier votre premier article&nbsp;? <a href=\"%1$s\">Lancez-vous</"
+"a>&nbsp;!"
 
 #: ../content-none.php:25 ../no-results.php:24
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
-"Désolé, mais votre recherche n'a pas été touver. Merci d’essayer avec d' autre "
-"mots de recherche "
+"Désolé, mais rien ne correspond à votre recherche. Veuillez réessayer avec des "
+"mots différents."
 
 #: ../content-none.php:30 ../no-results.php:29
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching "
 "can help."
 msgstr ""
-"Il me semble que vous ne trouvez pas ce que vous cherchez. Peut être que nous "
-"pouvons vous aider."
+"Il semblerait que nous ne soyons pas en mesure de trouver votre contenu. Essayez "
+"en lançant une recherche."
 
 #: ../content-page.php:28 ../content-single.php:31 ../content.php:46
 msgid "Pages:"
-msgstr "Pages"
+msgstr "Pages&nbsp;:"
 
 #: ../content-page.php:35 ../inc/catchbase-core.php:657
 #: ../inc/catchbase-core.php:676 ../inc/catchbase-core.php:802
 msgid "Edit"
-msgstr "Editer"
+msgstr "Modifier"
 
 #: ../inc/catchbase-breadcrumb.php:57
 msgid "Home"
@@ -164,7 +168,7 @@ msgstr "Accueil"
 #: ../inc/catchbase-breadcrumb.php:58
 #, php-format
 msgid "%1$s Archive for %2$s"
-msgstr ""
+msgstr "%1$s Archive pour %2$s"
 
 #: ../inc/catchbase-breadcrumb.php:59
 #, php-format
@@ -174,16 +178,16 @@ msgstr "%1$sRésultats de recherche pour: %2$s"
 #: ../inc/catchbase-breadcrumb.php:60
 #, php-format
 msgid "%1$sPosts tagged %2$s"
-msgstr ""
+msgstr "%1$sArticles marqués %2$s"
 
 #: ../inc/catchbase-breadcrumb.php:61
 #, php-format
 msgid "%1$sView all posts by %2$s"
-msgstr ""
+msgstr "%1$sVoir tous les articles par %2$s"
 
 #: ../inc/catchbase-breadcrumb.php:62
 msgid "Error 404"
-msgstr "Erreur 404"
+msgstr "erreur 404"
 
 #: ../inc/catchbase-breadcrumb.php:223
 #, php-format
@@ -192,47 +196,46 @@ msgstr "Page %s"
 
 #: ../inc/catchbase-core.php:102 ../inc/catchbase-menus.php:27
 msgid "Primary Menu"
-msgstr "Premier menu"
+msgstr "Menu principal"
 
 #: ../inc/catchbase-core.php:103 ../inc/catchbase-menus.php:69
 msgid "Secondary Menu"
-msgstr "Deuxième menu"
+msgstr "Menu secondaire"
 
 #: ../inc/catchbase-core.php:623
 msgid "Post navigation"
-msgstr "Navigation article"
+msgstr "Navigation des articles"
 
 #: ../inc/catchbase-core.php:632
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "<span class=\"meta-nav\">&larr;</span> Anciens articles"
+msgstr "<span class=\"meta-nav\">&larr;</span> Articles plus anciens"
 
 #: ../inc/catchbase-core.php:633
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Récents articles <span class=\"meta-nav\">&rarr;</span> "
+msgstr "Articles plus récents <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../inc/catchbase-core.php:657
 msgid "Pingback:"
-msgstr "Pingback: "
+msgstr "Ping&nbsp;:"
 
 #: ../inc/catchbase-core.php:667
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
-msgstr "%s <span class=\"citations dites\">citations dites:</span>"
+msgstr "%s <span class=\"says\">dit&nbsp;:</span>"
 
 #: ../inc/catchbase-core.php:673
 #, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
-msgstr "%1$s à %2$s "
+msgstr "%1$s à %2$s"
 
 #: ../inc/catchbase-core.php:680
 msgid "Your comment is awaiting moderation."
-msgstr "Votre commentaire est en attente de modération. "
+msgstr "Votre commentaire est en attente de validation."
 
 #: ../inc/catchbase-core.php:783
-msgctxt "Used before publish date."
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
-msgstr "<span class = \"lecteur d'écran-text\"> Posté le </ span>"
+msgstr "<span class=\"screen-reader-text\">Posté le</span>"
 
 #: ../inc/catchbase-core.php:790
 msgctxt "Used before post author name."
@@ -245,16 +248,16 @@ msgstr "Laisser un commentaire"
 
 #: ../inc/catchbase-core.php:798
 msgid "1 Comment"
-msgstr "1 commentaire"
+msgstr "Un commentaire"
 
 #: ../inc/catchbase-core.php:798
 msgid "% Comments"
-msgstr "% Commentaires"
+msgstr "% commentaires"
 
 #: ../inc/catchbase-core.php:819 ../inc/catchbase-core.php:827
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
-msgstr ", ␣"
+msgstr ", "
 
 #: ../inc/catchbase-core.php:822
 msgctxt "Used before category names."
@@ -281,7 +284,7 @@ msgstr "Posté le"
 
 #: ../inc/catchbase-core.php:1510
 msgid "By"
-msgstr "par"
+msgstr "de"
 
 #: ../inc/catchbase-core.php:1551
 msgid "Next &rarr;"
@@ -289,7 +292,7 @@ msgstr "Suivant &rarr;"
 
 #: ../inc/catchbase-core.php:1552
 msgid "Next post:"
-msgstr "Article suivant:"
+msgstr "Article suivant&nbsp;:"
 
 #: ../inc/catchbase-core.php:1554
 msgid "&larr; Previous"
@@ -297,7 +300,7 @@ msgstr "&larr; Précédent"
 
 #: ../inc/catchbase-core.php:1555
 msgid "Previous post:"
-msgstr "Article précédent:"
+msgstr "Article précédent&nbsp;:"
 
 #: ../inc/catchbase-default-options.php:56
 msgid "Read More ..."
@@ -321,23 +324,23 @@ msgstr "Avis"
 
 #: ../inc/catchbase-default-options.php:73
 msgid "Search..."
-msgstr "Recherche"
+msgstr "Recherche ..."
 
 #: ../inc/catchbase-default-options.php:118
 msgid "True"
-msgstr ""
+msgstr "true"
 
 #: ../inc/catchbase-default-options.php:122
 msgid "Wait"
-msgstr ""
+msgstr "Attendez"
 
 #: ../inc/catchbase-default-options.php:126
 msgid "False"
-msgstr ""
+msgstr "false"
 
 #: ../inc/catchbase-default-options.php:142
 msgid "Light"
-msgstr "Lumière"
+msgstr "Clair"
 
 #: ../inc/catchbase-default-options.php:146
 msgid "Dark"
@@ -436,11 +439,11 @@ msgstr "4 colonnes "
 
 #: ../inc/catchbase-default-options.php:348
 msgid "Show Full Content"
-msgstr ""
+msgstr "Montrer tout le contenu"
 
 #: ../inc/catchbase-default-options.php:352
 msgid "Hide Content"
-msgstr ""
+msgstr "Cacher le contenu"
 
 #: ../inc/catchbase-default-options.php:368
 msgid "Demo Featured Slider"
@@ -460,7 +463,7 @@ msgstr "Disparaître "
 
 #: ../inc/catchbase-default-options.php:397
 msgid "None"
-msgstr "Aucun "
+msgstr "Aucun"
 
 #: ../inc/catchbase-default-options.php:401
 msgid "Scroll Horizontal"
@@ -488,7 +491,7 @@ msgstr "Titre aveugle"
 
 #: ../inc/catchbase-default-options.php:425
 msgid "Shuffle"
-msgstr "Shuffle "
+msgstr "Aléatoir"
 
 #: ../inc/catchbase-default-options.php:442
 msgid "Default(Older Posts/Newer Posts)"
@@ -512,11 +515,11 @@ msgstr "Large"
 
 #: ../inc/catchbase-default-options.php:475
 msgid "Medium"
-msgstr "Medium"
+msgstr "Moyenne"
 
 #: ../inc/catchbase-default-options.php:479
 msgid "Full size"
-msgstr "Full size"
+msgstr "Taille originale"
 
 #: ../inc/catchbase-default-options.php:483
 msgid "Slider Image Size"
@@ -538,7 +541,7 @@ msgstr "Googleplus"
 
 #: ../inc/catchbase-default-options.php:515 ../inc/catchbase-social-icons.php:37
 msgid "Email"
-msgstr "Email"
+msgstr "Adresse de contact"
 
 #: ../inc/catchbase-default-options.php:519
 msgid "Feed"
@@ -546,7 +549,7 @@ msgstr "Feed"
 
 #: ../inc/catchbase-default-options.php:523
 msgid "WordPress"
-msgstr "Wordpress"
+msgstr "WordPress"
 
 #: ../inc/catchbase-default-options.php:527
 msgid "GitHub"
@@ -554,7 +557,7 @@ msgstr "GitHub"
 
 #: ../inc/catchbase-default-options.php:531
 msgid "LinkedIn"
-msgstr "Linkedln"
+msgstr "Linkedin"
 
 #: ../inc/catchbase-default-options.php:535
 #: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:86
@@ -571,7 +574,7 @@ msgstr "Vimeo"
 
 #: ../inc/catchbase-default-options.php:547
 msgid "YouTube"
-msgstr "Youtube"
+msgstr "YouTube"
 
 #: ../inc/catchbase-default-options.php:551
 msgid "Tumblr"
@@ -591,11 +594,11 @@ msgstr "CodePen "
 
 #: ../inc/catchbase-default-options.php:567
 msgid "Path"
-msgstr "Path "
+msgstr "Chemin "
 
 #: ../inc/catchbase-default-options.php:571
 msgid "Dribbble"
-msgstr "Dribbble "
+msgstr "Dribbble"
 
 #: ../inc/catchbase-default-options.php:575
 msgid "Skype"
@@ -635,37 +638,37 @@ msgstr "Twitch "
 
 #: ../inc/catchbase-default-options.php:611
 msgid "Website"
-msgstr ""
+msgstr "Site web"
 
 #: ../inc/catchbase-default-options.php:615
 msgid "Phone"
-msgstr ""
+msgstr "Tél"
 
 #: ../inc/catchbase-default-options.php:619
 msgid "Handset"
-msgstr ""
+msgstr "Handset"
 
 #: ../inc/catchbase-default-options.php:623
 msgid "Cart"
-msgstr ""
+msgstr "Panier"
 
 #: ../inc/catchbase-default-options.php:627
 msgid "Cloud"
-msgstr ""
+msgstr "Cloud"
 
 #: ../inc/catchbase-default-options.php:631
 msgid "Link"
-msgstr ""
+msgstr "Lien de désabonnement"
 
 #: ../inc/catchbase-default-options.php:649
 #: ../inc/catchbase-default-options.php:685
 #: ../inc/catchbase-default-options.php:712
 msgid "Default"
-msgstr "Par défaut"
+msgstr "Valeur par défaut"
 
 #: ../inc/catchbase-default-options.php:690
 msgid "Enable"
-msgstr "Permettre"
+msgstr "Activer"
 
 #: ../inc/catchbase-default-options.php:695
 msgid "Disable"
@@ -673,7 +676,7 @@ msgstr "Désactiver"
 
 #: ../inc/catchbase-default-options.php:717
 msgid "Featured Image"
-msgstr "Image séléctionnée"
+msgstr "Image à la Une"
 
 #: ../inc/catchbase-default-options.php:732
 msgid "Disable Image"
@@ -687,13 +690,13 @@ msgstr "Copyright &copy; %1$s %2$s. Tous Les Droits Sont Réservés."
 
 #: ../inc/catchbase-default-options.php:749
 msgid "by"
-msgstr "par"
+msgstr "de"
 
 #: ../inc/catchbase-featured-content.php:56
 #: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:21
 #: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:34
 msgid "Featured Content"
-msgstr "Contenu en vedette"
+msgstr "Contenu mis en avant"
 
 #: ../inc/catchbase-featured-content.php:57
 msgid ""
@@ -713,7 +716,7 @@ msgstr ""
 #: ../inc/catchbase-featured-slider.php:206
 #: ../inc/catchbase-featured-slider.php:216
 msgid "Permalink to:"
-msgstr "Permalien à:"
+msgstr "Permalien vers:"
 
 #: ../inc/catchbase-menus.php:28 ../inc/catchbase-menus.php:70
 msgid "Skip to content"
@@ -747,7 +750,7 @@ msgstr "Options de Catchbase"
 
 #: ../inc/catchbase-widgets.php:30
 msgid "Primary Sidebar"
-msgstr "Première sidebar"
+msgstr "Barre latérale principale"
 
 #: ../inc/catchbase-widgets.php:36
 msgid ""
@@ -759,12 +762,13 @@ msgstr ""
 
 #: ../inc/catchbase-widgets.php:41
 msgid "Secondary Sidebar"
-msgstr "Secondaire sidebar"
+msgstr "Barre latérale secondaire"
 
 #: ../inc/catchbase-widgets.php:47
 msgid ""
 "This is the secondary sidebar if you are using a three column site layout option."
 msgstr ""
+"This is the secondary sidebar if you are using a three column site layout option."
 
 #: ../inc/catchbase-widgets.php:54
 #, php-format
@@ -778,7 +782,7 @@ msgstr "Pied de page% d zone de widget. "
 
 #: ../inc/catchbase-widgets.php:80
 msgid "CT: Social Icons"
-msgstr ""
+msgstr "CT: Icônes Social"
 
 #: ../inc/catchbase-widgets.php:81
 msgid "Use this widget to add Social Icons as a widget. "
@@ -801,7 +805,7 @@ msgstr " Instructions de thème"
 
 #: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:58
 msgid "Support"
-msgstr "Soutien "
+msgstr "Support"
 
 #: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:62
 msgid "Changelog"
@@ -813,11 +817,11 @@ msgstr "Faire un don maintenant "
 
 #: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:70
 msgid "Review"
-msgstr "Examen "
+msgstr "Ce qu'on en dit"
 
 #: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:82
 msgid "Google+"
-msgstr "Google+ "
+msgstr "Google+"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:19
 msgid "Options for Featured Content"
@@ -873,7 +877,7 @@ msgstr "Pas de contenu vedette"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:192
 msgid "Display Content"
-msgstr ""
+msgstr "Afficher le contenu"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-content-setting.php:208
 #: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:196
@@ -888,7 +892,7 @@ msgstr "Options du curseur sélectionné"
 #: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:21
 #: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:33
 msgid "Featured Slider"
-msgstr ""
+msgstr "Featured Slider"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:51
 msgid "Enable Slider on"
@@ -921,7 +925,7 @@ msgstr ""
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:135
 msgid "Image Loader"
-msgstr ""
+msgstr "Chargeur d'image"
 
 #: ../inc/customizer-includes/catchbase-customizer-featured-slider.php:157
 msgid "Select Slider Type"
@@ -966,7 +970,7 @@ msgstr "Remarque: entrez l'URL du site correspondant au réseau social "
 #: ../inc/customizer-includes/catchbase-customizer-social-icons.php:21
 #: ../inc/customizer-includes/catchbase-customizer-social-icons.php:27
 msgid "Social Links"
-msgstr "Liens sociaux "
+msgstr "Liens sociaux"
 
 #: ../inc/customizer-includes/catchbase-customizer-social-icons.php:40
 msgid ""
@@ -982,7 +986,7 @@ msgstr "Options thème de base "
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:23
 msgid "Theme Options"
-msgstr "Options du thème "
+msgstr "Options du thème"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:28
 msgid ""
@@ -1036,7 +1040,7 @@ msgstr "Extrait Longueur (mots) "
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:137
 msgid "Read More Text"
-msgstr "En lire plus"
+msgstr "lire le reste du texte"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:146
 msgid ""
@@ -1081,7 +1085,7 @@ msgstr "Sélectionner / Ajouter Web clip "
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:225
 msgid "Default Layout"
-msgstr "Mise en page par défaut "
+msgstr "Mise en page par défaut"
 
 #: ../inc/customizer-includes/catchbase-customizer-theme-options.php:245
 msgid "Archive Content Layout"
@@ -1201,7 +1205,7 @@ msgstr "Vérifiez déplacer site Titre et Slogan avant logo "
 
 #: ../inc/customizer-includes/catchbase-customizer.php:126
 msgid "Color Scheme"
-msgstr "Couleur programme"
+msgstr "Jeu de couleurs"
 
 #: ../inc/customizer-includes/catchbase-customizer.php:151
 msgid ""
@@ -1213,7 +1217,7 @@ msgstr ""
 
 #: ../inc/customizer-includes/catchbase-customizer.php:153
 msgid "Reset all settings"
-msgstr "Réinitialiser tous les réglages "
+msgstr "Réinitialiser tous les réglages"
 
 #: ../inc/customizer-includes/catchbase-customizer.php:164
 msgid "Check to reset all settings to default"
@@ -1244,27 +1248,29 @@ msgstr "Erreur 404-Page pas trouvée"
 #: ../search.php:19
 #, php-format
 msgid "Search Results for: %s"
-msgstr "Résultat de recherche pour: %s"
+msgstr "Résultats de recherche pour %s"
 
 #: ../searchform.php:14 ../searchform.php:15
 msgctxt "label"
 msgid "Search for:"
-msgstr "Recherche pour:"
+msgstr "Rechercher&nbsp;:"
 
 #: ../searchform.php:17
 msgctxt "submit button"
 msgid "Search"
-msgstr "Recherche"
+msgstr "Rechercher"
 
 #: ../sidebar-secondary.php:28
 msgid "Secondary Sidebar Widget Area"
-msgstr ""
+msgstr "Secondary Sidebar Widget Area"
 
 #: ../sidebar-secondary.php:31
 msgid ""
 "This is the Secondary Sidebar Widget Area if you are using a three column site "
 "layout option."
 msgstr ""
+"This is the Secondary Sidebar Widget Area if you are using a three column site "
+"layout option."
 
 #: ../sidebar-secondary.php:32 ../sidebar.php:41
 #, php-format
@@ -1289,58 +1295,9 @@ msgstr ""
 "C'est la première barre latérale de zone de widgets  si vous utilisez l'option "
 "deux ou trois colonnes: réaménagement du site."
 
-#~ msgid "StumbleUpon"
-#~ msgstr "StumbleUpon "
+#~ msgctxt "Used before publish date."
+#~ msgid "<span class=\"screen-reader-text\">Posted on</span>"
+#~ msgstr "<span class = \"lecteur d'écran-text\"> Posté le </ span>"
 
-#~ msgid "Featured Content Settings"
-#~ msgstr " Paramètres de contenu vedette"
-
-#~ msgid "Featured Content Type"
-#~ msgstr "Type de contenu vedette"
-
-#~ msgid "Featured Slider Settings"
-#~ msgstr "Réglages du curseur seléctionné"
-
-#~ msgid "Featured Slider Type"
-#~ msgstr "Sélection  type de curseur"
-
-#~ msgid "Archive for %s"
-#~ msgstr "Archives pour %s"
-
-#~ msgid "Search results for: %s"
-#~ msgstr "Résultat pour votre recherche: %s"
-
-#~ msgid "Posts tagged %s"
-#~ msgstr "Articles étiquetés %s"
-
-#~ msgid "View all posts by %s"
-#~ msgstr "Voir tout les articles de %s"
-
-#~ msgctxt "Open Sans font: on or off"
-#~ msgid "on"
-#~ msgstr "ouvert"
-
-#~ msgctxt "Droid Sans font: on or off"
-#~ msgid "on"
-#~ msgstr "ouvert"
-
-#~ msgid "Catch Responsive is a Premium Responsive WordPress Theme"
-#~ msgstr "Catch Responsive Premier Responsive WordPress Thème"
-
-#~ msgid "Here you can showcase the x number of Featured Content."
-#~ msgstr "Ici vous can mettre en valeur le contenu de x nombre vedette"
-
-#~ msgid "Featured"
-#~ msgstr "Sélectioné"
-
-#~ msgid "Full Size"
-#~ msgstr "Pleine taille"
-
-#~ msgid "Catchresponsive Options"
-#~ msgstr "Options de Catchresponsive "
-
-#~ msgid "Excerpt length. Default is 55 words"
-#~ msgstr "Extrait  longueur. Par défaut est 55 mots"
-
-#~ msgid "En lire plus"
-#~ msgstr "Lire en plus les"
+#~ msgid "Catch Themes"
+#~ msgstr "Thèmes Catch"

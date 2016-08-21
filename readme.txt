@@ -17,7 +17,7 @@ Added Translation for Brazilian Portuguese by Valdir Trombini ( Email: valdir.tr
 Added Translation for German by Jürgen Zapp ( Email: j_m_z@hotmail.com ) and Micky261 ( Email: karlo261@hotmail.de )
 Added Translation for Hungarian by Kürti Gábor ( Email: gabor.kurti@gmail.com )
 Added Translation for Lithuanian
-Added Translation for Danish
+Added Translation for Danish by Pernille Kvamsdal (pkvamsdal@outlook.com)
 
 
 == License ==
