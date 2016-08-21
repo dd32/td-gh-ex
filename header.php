@@ -73,5 +73,4 @@
      *  @hooked fullframe_content_start - 10
      *
      */
-	do_action( 'fullframe_content' );
-		
+	do_action( 'fullframe_content' );	

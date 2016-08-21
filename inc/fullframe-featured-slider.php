@@ -4,7 +4,7 @@
  *
  * @package Catch Themes
  * @subpackage Full Frame
- * @since Full Frame 1.0 
+ * @since Full Frame 1.0
  */
 
 if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
@@ -36,27 +36,27 @@ function fullframe_featured_slider() {
 
 	// Front page displays in Reading Settings
 	$page_on_front = get_option('page_on_front') ;
-	$page_for_posts = get_option('page_for_posts'); 
- 
+	$page_for_posts = get_option('page_for_posts');
+
 	if ( $enableslider == 'entire-site' || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && $enableslider == 'homepage' ) ) {
 		if( ( !$fullframe_featured_slider = get_transient( 'fullframe_featured_slider' ) ) ) {
 			echo '<!-- refreshing cache -->';
-		
+
 			$fullframe_featured_slider = '
 				<section id="feature-slider">
 					<div class="wrapper">
-						<div class="cycle-slideshow" 
+						<div class="cycle-slideshow"
 						    data-cycle-log="false"
 						    data-cycle-pause-on-hover="true"
 						    data-cycle-swipe="true"
 						    data-cycle-auto-height=container
-						    data-cycle-fx="'. $options['featured_slide_transition_effect'] .'"
-							data-cycle-speed="'. $options['featured_slide_transition_length'] * 1000 .'"
-							data-cycle-timeout="'. $options['featured_slide_transition_delay'] * 1000 .'"
-							data-cycle-loader="'. $imageloader .'"
+						     data-cycle-fx="'. esc_attr( $options['featured_slide_transition_effect'] ) .'"
+							data-cycle-speed="'. esc_attr( $options['featured_slide_transition_length'] ) * 1000 .'"
+							data-cycle-timeout="'. esc_attr( $options['featured_slide_transition_delay'] ) * 1000 .'"
+							data-cycle-loader="'. esc_attr( $imageloader ) .'"
 							data-cycle-slides="> article"
 							>
-						    
+
 						    <!-- prev/next links -->
 						    <div class="cycle-prev"></div>
 						    <div class="cycle-next"></div>
@@ -71,12 +71,12 @@ function fullframe_featured_slider() {
 							elseif ( $sliderselect == 'featured-page-slider' && function_exists( 'fullframe_page_slider' ) ) {
 								$fullframe_featured_slider .=  fullframe_page_slider( $options );
 							}
-			
+
 			$fullframe_featured_slider .= '
 						</div><!-- .cycle-slideshow -->
 					</div><!-- .wrapper -->
 				</section><!-- #feature-slider -->';
-			
+
 			set_transient( 'fullframe_featured_slider', $fullframe_featured_slider, 86940 );
 		}
 		echo $fullframe_featured_slider;
@@ -111,10 +111,10 @@ function fullframe_demo_slider( $options ) {
 											</header>
 										<div class="entry-content">
 											<p>Slider Image 1 Content</p>
-										</div>   
-									</div>             
-								</article><!-- .slides --> 	
-								
+										</div>
+									</div>
+								</article><!-- .slides -->
+
 								<article class="post hentry slides demo-image displaynone">
 									<figure class="Slider Image 2">
 										<a title="Slider Image 2" href="'. esc_url( home_url( '/' ) ) .'">
@@ -129,8 +129,8 @@ function fullframe_demo_slider( $options ) {
 											</header>
 										<div class="entry-content">
 											<p>Slider Image 2 Content</p>
-										</div>   
-									</div>             
+										</div>
+									</div>
 								</article><!-- .slides --> ';
 	return $fullframe_demo_slider;
 }
@@ -172,7 +172,7 @@ function fullframe_page_slider( $options ) {
 			'post__in'			=> $page_list,
 			'orderby' 			=> 'post__in'
 		));
-		$i=0; 
+		$i=0;
 
 		while ( $get_featured_posts->have_posts()) : $get_featured_posts->the_post(); $i++;
 			$title_attribute = apply_filters( 'the_title', get_the_title( $post->ID ) );
@@ -182,14 +182,14 @@ function fullframe_page_slider( $options ) {
 			<article class="'.$classes.'">
 				<figure class="slider-image">';
 				if ( has_post_thumbnail() ) {
-					$fullframe_page_slider .= '<a title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'full-frame' ), 'echo' => false ) ) . '" href="' . get_permalink() . '">
+					$fullframe_page_slider .= '<a title="' . the_title_attribute( array( 'before' => esc_html__( 'Permalink to:', 'full-frame' ), 'echo' => false ) ) . '" href="' . get_permalink() . '">
 						'. get_the_post_thumbnail( $post->ID, 'fullframe_slider', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class'	=> 'pngfix' ) ).'
 					</a>';
 				}
 				else {
 					//Default value if there is no first image
 					$fullframe_image = '<img class="pngfix wp-post-image" src="'.get_template_directory_uri().'/images/gallery/no-featured-image-1680x720.jpg" >';
-					
+
 					//Get the first image in page, returns false if there is no image
 					$fullframe_first_image = fullframe_get_first_image( $post->ID, 'fullframe-slider', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class' => 'pngfix' ) );
 
@@ -198,17 +198,17 @@ function fullframe_page_slider( $options ) {
 						$fullframe_image =	$fullframe_first_image;
 					}
 
-					$fullframe_page_slider .= '<a title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'full-frame' ), 'echo' => false ) ) . '" href="' . get_permalink() . '">
+					$fullframe_page_slider .= '<a title="' . the_title_attribute( array( 'before' => esc_html__( 'Permalink to:', 'full-frame' ), 'echo' => false ) ) . '" href="' . get_permalink() . '">
 						'. $fullframe_image .'
 					</a>';
 				}
-				
+
 				$fullframe_page_slider .= '
 				</figure><!-- .slider-image -->
 				<div class="entry-container">
 					<header class="entry-header">
 						<h1 class="entry-title">
-							<a title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'full-frame' ), 'echo' => false ) ) . '" href="' . get_permalink() . '">'.the_title( '<span>','</span>', false ).'</a>
+							<a title="' . the_title_attribute( array( 'before' => esc_html__( 'Permalink to:', 'full-frame' ), 'echo' => false ) ) . '" href="' . get_permalink() . '">'.the_title( '<span>','</span>', false ).'</a>
 						</h1>
 						<div class="assistive-text">'.fullframe_page_post_meta().'</div>
 					</header>';
@@ -218,7 +218,7 @@ function fullframe_page_slider( $options ) {
 					$fullframe_page_slider .= '
 				</div><!-- .entry-container -->
 			</article><!-- .slides -->';
-		endwhile; 
+		endwhile;
 
 		wp_reset_query();
   	}

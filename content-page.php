@@ -4,13 +4,13 @@
  *
  * @package Catch Themes
  * @subpackage Full Frame
- * @since Full Frame 1.0 
+ * @since Full Frame 1.0
  */
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php 
-	/** 
+	<?php
+	/**
 	 * fullframe_before_page_container hook
 	 *
 	 * @hooked fullframe_single_content_image - 10
@@ -25,13 +25,13 @@
 			<?php the_content(); ?>
 			<?php
 				wp_link_pages( array(
-					'before' => '<div class="page-links"><span class="pages">' . __( 'Pages:', 'full-frame' ) . '</span>',
+					'before' => '<div class="page-links"><span class="pages">' . esc_html__( 'Pages:', 'full-frame' ) . '</span>',
 					'after'  => '</div>',
 					'link_before' 	=> '<span>',
                     'link_after'   	=> '</span>',
 				) );
 			?>
 		</div><!-- .entry-content -->
-		<?php edit_post_link( __( 'Edit', 'full-frame' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer>' ); ?>
+		<?php edit_post_link( esc_html__( 'Edit', 'full-frame' ), '<footer class="entry-footer"><span class="edit-link">', '</span></footer>' ); ?>
 	</div><!-- .entry-container -->
 </article><!-- #post-## -->

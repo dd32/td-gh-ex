@@ -3,10 +3,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Full Frame\n"
-"Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/catch-"
+"Report-Msgid-Bugs-To: https://catchthemes.com/support-forum/forum/catch-"
 "responsive-free/\n"
-"POT-Creation-Date: 2016-05-03 21:57+0545\n"
-"PO-Revision-Date: 2016-05-03 21:57+0545\n"
+"POT-Creation-Date: 2016-08-21 21:42+0545\n"
+"PO-Revision-Date: 2016-08-21 21:42+0545\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: lt\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Generator: Poedit 1.7.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__;"
-"_nx:1,2,4c;esc_html__;esc_attr_x:1,2c\n"
+"_nx:1,2,4c;esc_html__;esc_attr_x:1,2c;esc_html_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
@@ -109,9 +109,9 @@ msgstr "Archyvai"
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] ""
-msgstr[1] "%1$s mintys apie &ldquo;%2$s&rdquo;"
-msgstr[2] "%1$s minčių apie &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s komentaras<!--%2$s-->"
+msgstr[1] "%1$s komentarai<!--%2$s-->"
+msgstr[2] "%1$s komentarų<!--%2$s-->"
 
 #: ../comments.php:34 ../comments.php:59
 msgid "Comment navigation"
@@ -158,8 +158,8 @@ msgstr ""
 msgid "Pages:"
 msgstr "Puslapiai:"
 
-#: ../content-page.php:35 ../inc/fullframe-core.php:634
-#: ../inc/fullframe-core.php:653 ../inc/fullframe-core.php:779
+#: ../content-page.php:35 ../inc/fullframe-core.php:632
+#: ../inc/fullframe-core.php:651 ../inc/fullframe-core.php:777
 msgid "Edit"
 msgstr "Redaguoti"
 
@@ -651,7 +651,7 @@ msgstr ""
 #: ../inc/fullframe-breadcrumb.php:59
 #, php-format
 msgid "%1$sSearch results for: %2$s"
-msgstr ""
+msgstr "%1$sPaieškos rezultatai: %2$s"
 
 #: ../inc/fullframe-breadcrumb.php:60
 #, php-format
@@ -661,7 +661,7 @@ msgstr ""
 #: ../inc/fullframe-breadcrumb.php:61
 #, php-format
 msgid "%1$sView all posts by %2$s"
-msgstr ""
+msgstr "%1$sPeržiūrėti visus %2$s"
 
 #: ../inc/fullframe-breadcrumb.php:62
 msgid "Error 404"
@@ -672,110 +672,101 @@ msgstr "Klaida 404"
 msgid "Page %s"
 msgstr "Puslapis %s"
 
-#: ../inc/fullframe-core.php:88 ../inc/fullframe-menus.php:26
+#: ../inc/fullframe-core.php:86 ../inc/fullframe-menus.php:26
 msgid "Primary Menu"
 msgstr "Pagrindinis meniu"
 
-#: ../inc/fullframe-core.php:600
+#: ../inc/fullframe-core.php:598
 msgid "Post navigation"
 msgstr "Įrašo meniu"
 
-#: ../inc/fullframe-core.php:609
-msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "<span class=\"meta-nav\">&larr;</span> Senesni pranešimai"
-
-#: ../inc/fullframe-core.php:610
-msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Naujausi pranešimai <span class=\"meta-nav\">&rarr;</span>"
-
-#: ../inc/fullframe-core.php:634
+#: ../inc/fullframe-core.php:632
 msgid "Pingback:"
 msgstr "Žingsniu atgal:"
 
-#: ../inc/fullframe-core.php:644
+#: ../inc/fullframe-core.php:642
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"says\">sako:</span>"
 
-#: ../inc/fullframe-core.php:650
+#: ../inc/fullframe-core.php:648
 #, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr "%1$s %2$s"
 
-#: ../inc/fullframe-core.php:657
+#: ../inc/fullframe-core.php:655
 msgid "Your comment is awaiting moderation."
 msgstr "Jūsų komentaras laukia patvirtinimo."
 
-#: ../inc/fullframe-core.php:760
-msgctxt "Used before publish date."
+#: ../inc/fullframe-core.php:758
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
 msgstr "<span class=\"screen-reader-text\">Paskelbta</span>"
 
-#: ../inc/fullframe-core.php:767
+#: ../inc/fullframe-core.php:765
 msgctxt "Used before post author name."
 msgid "<span class=\"screen-reader-text\">Author</span>"
 msgstr "<span class=\"screen-reader-text\">Autorius</span>"
 
-#: ../inc/fullframe-core.php:775
+#: ../inc/fullframe-core.php:773
 msgid "Leave a comment"
 msgstr "Parašykite komentarą"
 
-#: ../inc/fullframe-core.php:775
+#: ../inc/fullframe-core.php:773
 msgid "1 Comment"
 msgstr "1 komentaras"
 
-#: ../inc/fullframe-core.php:775
+#: ../inc/fullframe-core.php:773
 msgid "% Comments"
 msgstr "% komentarai"
 
-#: ../inc/fullframe-core.php:796 ../inc/fullframe-core.php:804
+#: ../inc/fullframe-core.php:794 ../inc/fullframe-core.php:802
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ", "
 
-#: ../inc/fullframe-core.php:799
+#: ../inc/fullframe-core.php:797
 msgctxt "Used before category names."
 msgid "<span class=\"screen-reader-text\">Categories</span>"
 msgstr "<span class=\"screen-reader-text\">Kategorijos</span>"
 
-#: ../inc/fullframe-core.php:807
+#: ../inc/fullframe-core.php:805
 msgctxt "Used before tag names."
 msgid "<span class=\"screen-reader-text\">Tags</span>"
 msgstr "<span class=\"screen-reader-text\">Žymės</span>"
 
-#: ../inc/fullframe-core.php:950
+#: ../inc/fullframe-core.php:948
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: ../inc/fullframe-core.php:1413
+#: ../inc/fullframe-core.php:1411
 msgid "Scroll Up"
 msgstr "Slinkti aukštyn"
 
-#: ../inc/fullframe-core.php:1431
+#: ../inc/fullframe-core.php:1429
 msgid "Posted on"
 msgstr "Paskelbta"
 
-#: ../inc/fullframe-core.php:1432
+#: ../inc/fullframe-core.php:1430
 msgid "By"
 msgstr "pagal"
 
-#: ../inc/fullframe-core.php:1473
+#: ../inc/fullframe-core.php:1471
 msgid "Next &rarr;"
-msgstr ""
+msgstr "Kitas &rarr;"
+
+#: ../inc/fullframe-core.php:1472
+msgid "Next post:"
+msgstr "Paskesnis įrašas:"
 
 #: ../inc/fullframe-core.php:1474
-msgid "Next post:"
-msgstr ""
-
-#: ../inc/fullframe-core.php:1476
 msgid "&larr; Previous"
-msgstr ""
+msgstr "&larr; Ankstesnis"
 
-#: ../inc/fullframe-core.php:1477
+#: ../inc/fullframe-core.php:1475
 msgid "Previous post:"
-msgstr ""
+msgstr "Ankstesnis įrašas:"
 
 #: ../inc/fullframe-default-options.php:56
 msgid "Read More ..."
@@ -895,7 +886,7 @@ msgstr "4 stulpeliai"
 
 #: ../inc/fullframe-default-options.php:320
 msgid "Show Full Content"
-msgstr ""
+msgstr "Rodyti visą turinį"
 
 #: ../inc/fullframe-default-options.php:324
 msgid "Hide Content"
@@ -946,8 +937,8 @@ msgid "Tile Blind"
 msgstr "Plytelių užuolaida"
 
 #: ../inc/fullframe-default-options.php:398
-msgid "Suffle"
-msgstr "Suffle"
+msgid "Shuffle"
+msgstr "Shuffle"
 
 #: ../inc/fullframe-default-options.php:415
 msgid "True"
@@ -1072,7 +1063,7 @@ msgstr "Reddit"
 
 #: ../inc/fullframe-default-options.php:577
 msgid "Stumbleupon"
-msgstr ""
+msgstr "Stumbleupon"
 
 #: ../inc/fullframe-default-options.php:581
 msgid "Pocket"
@@ -1096,27 +1087,27 @@ msgstr "Twitch"
 
 #: ../inc/fullframe-default-options.php:601
 msgid "Website"
-msgstr ""
+msgstr "Interneto svetainėje"
 
 #: ../inc/fullframe-default-options.php:605
 msgid "Phone"
-msgstr ""
+msgstr "Telefono Nr."
 
 #: ../inc/fullframe-default-options.php:609
 msgid "Handset"
-msgstr ""
+msgstr "Handset"
 
 #: ../inc/fullframe-default-options.php:613
 msgid "Cart"
-msgstr ""
+msgstr "Krepšelis"
 
 #: ../inc/fullframe-default-options.php:617
 msgid "Cloud"
-msgstr ""
+msgstr "Cloud"
 
 #: ../inc/fullframe-default-options.php:621
 msgid "Link"
-msgstr ""
+msgstr "Nuoroda"
 
 #: ../inc/fullframe-default-options.php:639
 #: ../inc/fullframe-default-options.php:670
@@ -1186,7 +1177,7 @@ msgstr "Antraštės reklaminio paveikslėlio parinktys"
 
 #: ../inc/fullframe-metabox.php:220
 msgid "Fullframe Options"
-msgstr ""
+msgstr "Fullframe nuostatos"
 
 #: ../inc/fullframe-widgets.php:25
 msgid "Primary Sidebar"
@@ -1254,6 +1245,16 @@ msgstr ""
 "Pagal nutylėjimą jis užkraus paieškos ir archyvų valdiklius, kaip parodyta "
 "žemiau. Jūs galite pridėti valdiklį į šią sritį apsilankę savo <a href=\"%s"
 "\">valdiklių skyde</a> , kuris pakeis numatytuosius valdiklius."
+
+#~ msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+#~ msgstr "<span class=\"meta-nav\">&larr;</span> Senesni pranešimai"
+
+#~ msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+#~ msgstr "Naujausi pranešimai <span class=\"meta-nav\">&rarr;</span>"
+
+#~ msgctxt "Used before publish date."
+#~ msgid "<span class=\"screen-reader-text\">Posted on</span>"
+#~ msgstr "<span class=\"screen-reader-text\">Paskelbta</span>"
 
 #~ msgid "StumbleUpon"
 #~ msgstr "StumbleUpon"

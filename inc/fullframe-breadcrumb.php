@@ -1,10 +1,10 @@
 <?php
 /**
- * The template for displaying the Breadcrumb 
+ * The template for displaying the Breadcrumb
  *
  * @package Catch Themes
  * @subpackage Full Frame
- * @since Full Frame 1.0 
+ * @since Full Frame 1.0
  */
 
 if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
@@ -54,12 +54,12 @@ if( !function_exists( 'fullframe_custom_breadcrumbs' ) ) :
 	function fullframe_custom_breadcrumbs( $showOnHome, $delimiter ) {
 
 		/* === OPTIONS === */
-		$text['home']     = __( 'Home', 'full-frame' ); // text for the 'Home' link
-		$text['category'] = __( '%1$s Archive for %2$s', 'full-frame' ); // text for a category page
-		$text['search']   = __( '%1$sSearch results for: %2$s', 'full-frame' ); // text for a search results page
-		$text['tag']      = __( '%1$sPosts tagged %2$s', 'full-frame' ); // text for a tag page
-		$text['author']   = __( '%1$sView all posts by %2$s', 'full-frame' ); // text for an author page
-		$text['404']      = __( 'Error 404', 'full-frame' ); // text for the 404 page
+		$text['home']     = esc_html__( 'Home', 'full-frame' ); // text for the 'Home' link
+		$text['category'] = esc_html__( '%1$s Archive for %2$s', 'full-frame' ); // text for a category page
+		$text['search']   = esc_html__( '%1$sSearch results for: %2$s', 'full-frame' ); // text for a search results page
+		$text['tag']      = esc_html__( '%1$sPosts tagged %2$s', 'full-frame' ); // text for a tag page
+		$text['author']   = esc_html__( '%1$sView all posts by %2$s', 'full-frame' ); // text for an author page
+		$text['404']      = esc_html__( 'Error 404', 'full-frame' ); // text for the 404 page
 
 		$showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
 		$before      = '<span class="breadcrumb-current">'; // tag before the current crumb
@@ -73,16 +73,16 @@ if( !function_exists( 'fullframe_custom_breadcrumbs' ) ) :
 		$linkAttr   = ' rel="v:url" property="v:title"';
 		$link       = $linkBefore . '<a' . $linkAttr . ' href="%1$s">%2$s ' . $delimiter . '</a>' . $linkAfter;
 
-		
+
 		if( is_front_page() ) {
 
 			if( $showOnHome ) {
 				echo '<div id="breadcrumb-list">
 					<div class="wrapper">';
-					
+
 					echo $linkBefore . '<a href="' . esc_url( $homeLink ) . '">' . $text['home'] . '</a>' . $linkAfter;
-					
-					echo '</div><!-- .wrapper --> 
+
+					echo '</div><!-- .wrapper -->
 				</div><!-- #breadcrumb-list -->';
 			}
 
@@ -90,7 +90,7 @@ if( !function_exists( 'fullframe_custom_breadcrumbs' ) ) :
 		else {
 			echo '<div id="breadcrumb-list">
 					<div class="wrapper">';
-			
+
 			echo sprintf( $link, $homeLink, $text['home'] );
 
 			if( is_home() ) {
@@ -219,16 +219,16 @@ if( !function_exists( 'fullframe_custom_breadcrumbs' ) ) :
 				if( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) {
 					echo ' (';
 				}
-				echo sprintf( __( 'Page %s', 'full-frame' ), max( $paged, $page ) );
+				echo sprintf( esc_html__( 'Page %s', 'full-frame' ), max( $paged, $page ) );
 				if( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) {
 					echo ')';
 				}
 			}
 
-			echo '</div><!-- .wrapper --> 
+			echo '</div><!-- .wrapper -->
 			</div><!-- #breadcrumb-list -->';
 		}
-		
-		
+
+
 	} // end fullframe_breadcrumb_lists
 endif;

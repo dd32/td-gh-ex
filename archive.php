@@ -6,7 +6,7 @@
  *
  * @package Catch Themes
  * @subpackage Full Frame
- * @since Full Frame 1.0 
+ * @since Full Frame 1.0
  */
 
 get_header(); ?>
@@ -27,16 +27,16 @@ get_header(); ?>
 							single_tag_title();
 
 						elseif ( is_author() ) :
-							printf( __( 'Author: %s', 'full-frame' ), '<span class="vcard">' . get_the_author() . '</span>' );
+							printf( esc_html__( 'Author: %s', 'full-frame' ), '<span class="vcard">' . get_the_author() . '</span>' );
 
 						elseif ( is_day() ) :
-							printf( __( 'Day: %s', 'full-frame' ), '<span>' . get_the_date() . '</span>' );
+							printf( esc_html__( 'Day: %s', 'full-frame' ), '<span>' . get_the_date() . '</span>' );
 
 						elseif ( is_month() ) :
-							printf( __( 'Month: %s', 'full-frame' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'full-frame' ) ) . '</span>' );
+							printf( esc_html__( 'Month: %s', 'full-frame' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'full-frame' ) ) . '</span>' );
 
 						elseif ( is_year() ) :
-							printf( __( 'Year: %s', 'full-frame' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'full-frame' ) ) . '</span>' );
+							printf( esc_html__( 'Year: %s', 'full-frame' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'full-frame' ) ) . '</span>' );
 
 						elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
 							_e( 'Asides', 'full-frame' );

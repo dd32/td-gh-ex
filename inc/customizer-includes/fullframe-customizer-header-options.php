@@ -4,7 +4,7 @@
  *
  * @package Catch Themes
  * @subpackage Full Frame
- * @since Full Frame 1.0 
+ * @since Full Frame 1.0
  */
 
 if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
@@ -28,12 +28,12 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 
 	$wp_customize->add_control( 'fullframe_theme_options[enable_featured_header_image]', array(
 			'choices'  	=> $choices,
-			'label'		=> __( 'Enable Featured Header Image on ', 'full-frame' ),
+			'label'		=> esc_html__( 'Enable Featured Header Image on ', 'full-frame' ),
 			'section'   => 'header_image',
 	        'settings'  => 'fullframe_theme_options[enable_featured_header_image]',
 	        'type'	  	=> 'select',
 	) );
-	
+
 
 	$wp_customize->add_setting( 'fullframe_theme_options[featured_image_size]', array(
 		'capability'		=> 'edit_theme_options',
@@ -49,7 +49,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 
 	$wp_customize->add_control( 'fullframe_theme_options[featured_image_size]', array(
 			'choices'  	=> $choices,
-			'label'		=> __( 'Page/Post Featured Header Image Size', 'full-frame' ),
+			'label'		=> esc_html__( 'Page/Post Featured Header Image Size', 'full-frame' ),
 			'section'   => 'header_image',
 			'settings'  => 'fullframe_theme_options[featured_image_size]',
 			'type'	  	=> 'select',
@@ -62,7 +62,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	) );
 
 	$wp_customize->add_control( 'fullframe_theme_options[featured_header_image_alt]', array(
-			'label'		=> __( 'Featured Header Image Alt/Title Tag ', 'full-frame' ),
+			'label'		=> esc_html__( 'Featured Header Image Alt/Title Tag ', 'full-frame' ),
 			'section'   => 'header_image',
 	        'settings'  => 'fullframe_theme_options[featured_header_image_alt]',
 	        'type'	  	=> 'text',
@@ -75,7 +75,7 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	) );
 
 	$wp_customize->add_control( 'fullframe_theme_options[featured_header_image_url]', array(
-			'label'		=> __( 'Featured Header Image Link URL', 'full-frame' ),
+			'label'		=> esc_html__( 'Featured Header Image Link URL', 'full-frame' ),
 			'section'   => 'header_image',
 	        'settings'  => 'fullframe_theme_options[featured_header_image_url]',
 	        'type'	  	=> 'text',
@@ -88,9 +88,9 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	) );
 
 	$wp_customize->add_control( 'fullframe_theme_options[featured_header_image_base]', array(
-		'label'    	=> __( 'Check to Open Link in New Window/Tab', 'full-frame' ),
+		'label'    	=> esc_html__( 'Check to Open Link in New Window/Tab', 'full-frame' ),
 		'section'  	=> 'header_image',
 		'settings' 	=> 'fullframe_theme_options[featured_header_image_base]',
 		'type'     	=> 'checkbox',
-	) );	
+	) );
 // Header Options End

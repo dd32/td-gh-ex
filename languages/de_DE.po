@@ -1,10 +1,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Full Frame\n"
-"Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/catch-"
+"Report-Msgid-Bugs-To: https://catchthemes.com/support-forum/forum/catch-"
 "responsive-free/\n"
-"POT-Creation-Date: 2016-05-03 21:57+0545\n"
-"PO-Revision-Date: 2016-05-03 21:57+0545\n"
+"POT-Creation-Date: 2016-08-21 21:31+0545\n"
+"PO-Revision-Date: 2016-08-21 21:31+0545\n"
 "Last-Translator: BadWolf <f.nelles@hotmail.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: de\n"
@@ -14,12 +14,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Poedit 1.7.1\n"
-"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;__:1;"
-"_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;_x:1,2c;"
-"_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;esc_attr__:1;"
-"esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;esc_html_x:1,2c;"
-"comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2;__;_e;esc_attr_e;"
-"esc_attr__;esc_html__\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__;"
+"_nx:1,2,4c;esc_html__;esc_html_e;esc_attr_x:1,2c\n"
 "X-Poedit-Basepath: .\n"
 "X-Loco-Target-Locale: de_DE\n"
 "X-Poedit-SearchPath-0: ..\n"
@@ -173,8 +169,8 @@ msgstr ""
 msgid "Pages:"
 msgstr "Seiten:"
 
-#: ../content-page.php:35 ../inc/fullframe-core.php:634
-#: ../inc/fullframe-core.php:653 ../inc/fullframe-core.php:779
+#: ../content-page.php:35 ../inc/fullframe-core.php:632
+#: ../inc/fullframe-core.php:651 ../inc/fullframe-core.php:777
 msgid "Edit"
 msgstr "Bearbeiten"
 
@@ -347,7 +343,7 @@ msgstr ""
 
 #: ../inc/customizer-includes/fullframe-customizer-featured-slider.php:179
 msgid "No of Slides"
-msgstr "Anazhl Slider"
+msgstr "Anzahl Slider"
 
 #: ../inc/customizer-includes/fullframe-customizer-header-options.php:31
 msgid "Enable Featured Header Image on "
@@ -441,7 +437,7 @@ msgstr "Auszug Optionen"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:115
 msgid "Excerpt length. Default is 40 words"
-msgstr ""
+msgstr "Auszug L&auml;nge. Standard ist 40 W&ouml;rter"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:122
 msgid "Excerpt Length (words)"
@@ -595,11 +591,11 @@ msgstr "Promotion Headline Link"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:445
 msgid "Scrollup Options"
-msgstr ""
+msgstr "Hochscrollen Einstellungen"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:455
 msgid "Check to disable Scroll Up"
-msgstr ""
+msgstr "Hochscrollen deaktivieren"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:464
 msgid "Change default placeholder text in Search."
@@ -693,110 +689,99 @@ msgstr "Fehler 404 / Error 404"
 msgid "Page %s"
 msgstr "Seite %s"
 
-#: ../inc/fullframe-core.php:88 ../inc/fullframe-menus.php:26
+#: ../inc/fullframe-core.php:86 ../inc/fullframe-menus.php:26
 msgid "Primary Menu"
 msgstr "Erstes Menü"
 
-#: ../inc/fullframe-core.php:600
+#: ../inc/fullframe-core.php:598
 msgid "Post navigation"
 msgstr "Beitragsnavigation"
 
-#: ../inc/fullframe-core.php:609
-msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "<span class=\"meta-nav\">&larr;</span> Ältere Beiträge"
-
-#: ../inc/fullframe-core.php:610
-msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-"Neuere Beiträge\n"
-" <span class=\"meta-nav\">&rarr;</span>"
-
-#: ../inc/fullframe-core.php:634
+#: ../inc/fullframe-core.php:632
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: ../inc/fullframe-core.php:644
+#: ../inc/fullframe-core.php:642
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"says\">sagt:</span>"
 
-#: ../inc/fullframe-core.php:650
+#: ../inc/fullframe-core.php:648
 #, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr "%1$s um %2$s"
 
-#: ../inc/fullframe-core.php:657
+#: ../inc/fullframe-core.php:655
 msgid "Your comment is awaiting moderation."
 msgstr "Dein Kommentar wird geprüft und gegebenenfalls freigeschaltet."
 
-#: ../inc/fullframe-core.php:760
-msgctxt "Used before publish date."
+#: ../inc/fullframe-core.php:758
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
-msgstr "<span class=\"screen-reader-text\">Geposted am</span>"
+msgstr "<span class=\"screen-reader-text\">Veröffentlicht am</span>"
 
-#: ../inc/fullframe-core.php:767
+#: ../inc/fullframe-core.php:765
 msgctxt "Used before post author name."
 msgid "<span class=\"screen-reader-text\">Author</span>"
 msgstr "<span class=\"screen-reader-text\">Autor</span>"
 
-#: ../inc/fullframe-core.php:775
+#: ../inc/fullframe-core.php:773
 msgid "Leave a comment"
 msgstr "Kommentar schreiben"
 
-#: ../inc/fullframe-core.php:775
+#: ../inc/fullframe-core.php:773
 msgid "1 Comment"
 msgstr "1 Kommentar"
 
-#: ../inc/fullframe-core.php:775
+#: ../inc/fullframe-core.php:773
 msgid "% Comments"
 msgstr "% Kommentare"
 
-#: ../inc/fullframe-core.php:796 ../inc/fullframe-core.php:804
+#: ../inc/fullframe-core.php:794 ../inc/fullframe-core.php:802
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ", "
 
-#: ../inc/fullframe-core.php:799
+#: ../inc/fullframe-core.php:797
 msgctxt "Used before category names."
 msgid "<span class=\"screen-reader-text\">Categories</span>"
 msgstr "<span class=\"screen-reader-text\">Kategorien</span>"
 
-#: ../inc/fullframe-core.php:807
+#: ../inc/fullframe-core.php:805
 msgctxt "Used before tag names."
 msgid "<span class=\"screen-reader-text\">Tags</span>"
 msgstr "<span class=\"screen-reader-text\">Tags</span>"
 
-#: ../inc/fullframe-core.php:950
+#: ../inc/fullframe-core.php:948
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: ../inc/fullframe-core.php:1413
+#: ../inc/fullframe-core.php:1411
 msgid "Scroll Up"
 msgstr "Nach oben"
 
-#: ../inc/fullframe-core.php:1431
+#: ../inc/fullframe-core.php:1429
 msgid "Posted on"
 msgstr "Gepostet am"
 
-#: ../inc/fullframe-core.php:1432
+#: ../inc/fullframe-core.php:1430
 msgid "By"
 msgstr "Von"
 
-#: ../inc/fullframe-core.php:1473
+#: ../inc/fullframe-core.php:1471
 msgid "Next &rarr;"
 msgstr "Weiter &rarr;"
 
-#: ../inc/fullframe-core.php:1474
+#: ../inc/fullframe-core.php:1472
 msgid "Next post:"
 msgstr "Nächster Beitrag:"
 
-#: ../inc/fullframe-core.php:1476
+#: ../inc/fullframe-core.php:1474
 msgid "&larr; Previous"
 msgstr "&larr; Zurück"
 
-#: ../inc/fullframe-core.php:1477
+#: ../inc/fullframe-core.php:1475
 msgid "Previous post:"
 msgstr "Vorhergehender Beitrag:"
 
@@ -806,7 +791,7 @@ msgstr "Weiterlesen..."
 
 #: ../inc/fullframe-default-options.php:66
 msgid "Full Frame is a Premium Responsive WordPress Theme"
-msgstr ""
+msgstr "Full Frame ist ein responsives Premium WordPress Theme"
 
 #: ../inc/fullframe-default-options.php:67
 msgid ""
@@ -974,8 +959,8 @@ msgid "Tile Blind"
 msgstr "Jalousie"
 
 #: ../inc/fullframe-default-options.php:398
-msgid "Suffle"
-msgstr "Suffle"
+msgid "Shuffle"
+msgstr "Shuffle"
 
 #: ../inc/fullframe-default-options.php:415
 msgid "True"
@@ -1124,19 +1109,19 @@ msgstr "Twitch"
 
 #: ../inc/fullframe-default-options.php:601
 msgid "Website"
-msgstr ""
+msgstr "Website"
 
 #: ../inc/fullframe-default-options.php:605
 msgid "Phone"
-msgstr ""
+msgstr "Phone"
 
 #: ../inc/fullframe-default-options.php:609
 msgid "Handset"
-msgstr ""
+msgstr "Handset"
 
 #: ../inc/fullframe-default-options.php:613
 msgid "Cart"
-msgstr ""
+msgstr "Warenkorb"
 
 #: ../inc/fullframe-default-options.php:617
 msgid "Cloud"
@@ -1144,7 +1129,7 @@ msgstr "Cloud"
 
 #: ../inc/fullframe-default-options.php:621
 msgid "Link"
-msgstr ""
+msgstr "Verknüpfung"
 
 #: ../inc/fullframe-default-options.php:639
 #: ../inc/fullframe-default-options.php:670
@@ -1214,7 +1199,7 @@ msgstr "Vorgestelltes Headerbild Optionen"
 
 #: ../inc/fullframe-metabox.php:220
 msgid "Fullframe Options"
-msgstr ""
+msgstr "Füllframe Optionen"
 
 #: ../inc/fullframe-widgets.php:25
 msgid "Primary Sidebar"
@@ -1283,13 +1268,23 @@ msgstr ""
 " <a href=\"%s\">Widgets Panel</a> neue Widgets hinzufügen, die die alten Widgets "
 "ersetzen."
 
-#: ../js/jquery.cycle/jquery.cycle2.flip.min.js:2
-msgid "Y"
-msgstr "Y"
+#~ msgid "Y"
+#~ msgstr "Y"
 
-#: ../js/jquery.cycle/jquery.cycle2.flip.min.js:2
-msgid "X"
-msgstr "X"
+#~ msgid "X"
+#~ msgstr "X"
+
+#~ msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+#~ msgstr "<span class=\"meta-nav\">&larr;</span> Ältere Beiträge"
+
+#~ msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+#~ msgstr ""
+#~ "Neuere Beiträge\n"
+#~ " <span class=\"meta-nav\">&rarr;</span>"
+
+#~ msgctxt "Used before publish date."
+#~ msgid "<span class=\"screen-reader-text\">Posted on</span>"
+#~ msgstr "<span class=\"screen-reader-text\">Geposted am</span>"
 
 #~ msgid "StumbleUpon"
 #~ msgstr "StumbleUpon"

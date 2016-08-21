@@ -4,7 +4,7 @@
  *
  * @package Catch Themes
  * @subpackage Full Frame
- * @since Full Frame 1.0 
+ * @since Full Frame 1.0
  */
 
 if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
@@ -24,7 +24,7 @@ if( !function_exists( 'fullframe_featured_content_display' ) ) :
 */
 function fullframe_featured_content_display() {
 	//fullframe_flush_transients();
-	
+
 	global $post, $wp_query;
 
 	// get data value from options
@@ -32,10 +32,10 @@ function fullframe_featured_content_display() {
 	$enablecontent 	= $options['featured_content_option'];
 	$contentselect 	= $options['featured_content_type'];
 	$sliderselect	= $options['featured_content_slider'];
-	
+
 	// Front page displays in Reading Settings
 	$page_on_front 	= get_option('page_on_front') ;
-	$page_for_posts = get_option('page_for_posts'); 
+	$page_for_posts = get_option('page_for_posts');
 
 
 	// Get Page ID outside Loop
@@ -45,7 +45,7 @@ function fullframe_featured_content_display() {
 			$layouts 	 = $options ['featured_content_layout'];
 			$headline 	 = $options ['featured_content_headline'];
 			$subheadline = $options ['featured_content_subheadline'];
-	
+
 			echo '<!-- refreshing cache -->';
 
 			if ( !empty( $layouts ) ) {
@@ -54,9 +54,9 @@ function fullframe_featured_content_display() {
 
 			if( $contentselect == 'demo-featured-content' ) {
 				$classes 		.= ' demo-featured-content' ;
-				$headline 		= __( 'Featured Content', 'full-frame' );
-				$subheadline 	= __( 'Here you can showcase the x number of Featured Content. You can edit this Headline, Subheadline and Feaured Content from "Appearance -> Customize -> Featured Content Options".', 'full-frame' );
-			} 
+				$headline 		= esc_html__( 'Featured Content', 'full-frame' );
+				$subheadline 	= esc_html__( 'Here you can showcase the x number of Featured Content. You can edit this Headline, Subheadline and Feaured Content from "Appearance -> Customize -> Featured Content Options".', 'full-frame' );
+			}
 			elseif ( $contentselect == 'featured-page-content' ) {
 				$classes .= ' featured-page-content' ;
 			}
@@ -96,7 +96,7 @@ function fullframe_featured_content_display() {
 									<div id="content-prev"></div>
 									<div id="content-next"></div>
 								</div>
-								<div class="cycle-slideshow" 
+								<div class="cycle-slideshow"
 								    data-cycle-log="false"
 								    data-cycle-pause-on-hover="true"
 								    data-cycle-swipe="true"
@@ -120,12 +120,12 @@ function fullframe_featured_content_display() {
 								$fullframe_featured_content .='
 								</div><!-- .cycle-slideshow -->';
 							}
-				
-				$fullframe_featured_content .='			
+
+				$fullframe_featured_content .='
 						</div><!-- .featured-content-wrap -->
 					</div><!-- .wrapper -->
 				</section><!-- #featured-content -->';
-		
+
 		set_transient( 'fullframe_featured_content', $fullframe_featured_content, 86940 );
 		}
 	echo $fullframe_featured_content;
@@ -139,13 +139,13 @@ if ( ! function_exists( 'fullframe_featured_content_display_position' ) ) :
  * Homepage Featured Content Position
  *
  * @action fullframe_content, fullframe_after_secondary
- * 
+ *
  * @since Fullframe 1.0
  */
 function fullframe_featured_content_display_position() {
 	// Getting data from Theme Options
 	$options 		= fullframe_get_theme_options();
-	
+
 	//Check Featured Content Position
 	if ( isset( $options [ 'featured_content_position' ] ) ) {
 		$featured_content_position = $options [ 'featured_content_position' ];
@@ -155,12 +155,12 @@ function fullframe_featured_content_display_position() {
 		$featured_content_position =  $options [ 'move_posts_home' ];
 	}
 
-	if ( '1' != $featured_content_position ) { 
+	if ( '1' != $featured_content_position ) {
 		add_action( 'fullframe_before_content', 'fullframe_featured_content_display', 50 );
 	} else {
 		add_action( 'fullframe_after_content', 'fullframe_featured_content_display', 40 );
 	}
-	
+
 }
 endif; // fullframe_featured_content_display_position
 add_action( 'fullframe_before', 'fullframe_featured_content_display_position' );
@@ -191,7 +191,7 @@ function fullframe_demo_content( $options ) {
 				<div class="entry-content">
 					Central Park is is the most visited urban park in the United States as well as one of the most filmed locations in the world. It was opened in 1857 and is expanded in 843 acres of city-owned land.
 				</div>
-			</div><!-- .entry-container -->			
+			</div><!-- .entry-container -->
 		</article>
 
 		<article id="featured-post-2" class="post hentry post-demo">
@@ -207,9 +207,9 @@ function fullframe_demo_content( $options ) {
 				<div class="entry-content">
 					Antique clocks increase in value with the rarity of the design, their condition, and appeal in the market place. Many different materials were used in antique clocks.
 				</div>
-			</div><!-- .entry-container -->			
+			</div><!-- .entry-container -->
 		</article>
-		
+
 		<article id="featured-post-3" class="post hentry post-demo">
 			<figure class="featured-content-image">
 				<img alt="Vespa Scooter" class="wp-post-image" src="'.get_template_directory_uri() . '/images/gallery/featured3-400x225.jpg" />
@@ -223,7 +223,7 @@ function fullframe_demo_content( $options ) {
 				<div class="entry-content">
 					The Vespa has evolved from a single model motor scooter manufactured in 1946 by Piaggio & Co. S.p.A. of Pontedera, Italy-to a full line of scooters, today owned by Piaggio.
 				</div>
-			</div><!-- .entry-container -->			
+			</div><!-- .entry-container -->
 		</article>';
 
 	if( 'layout-four' == $options ['featured_content_layout']) {
@@ -238,7 +238,7 @@ function fullframe_demo_content( $options ) {
 						<a href="#" rel="bookmark">Dhulikhel</a>
 					</h1>
 				</header>
-			</div><!-- .entry-container -->			
+			</div><!-- .entry-container -->
 		</article>';
 	}
 	$fullframe_demo_content .= '</div><!-- .featured_content_slider_wrap -->';
@@ -262,7 +262,7 @@ function fullframe_page_content( $options ) {
 	$quantity 					= $options [ 'featured_content_number' ];
 
 	$more_link_text				= $options['excerpt_more_text'];
-	
+
 	$fullframe_page_content 	= '';
 
    	$number_of_page 			= 0; 		// for number of pages
@@ -293,26 +293,26 @@ function fullframe_page_content( $options ) {
                     'post_type'				=> 'page',
                 ));
 
-		$i=0; 
+		$i=0;
 
 		$fullframe_page_content = '
 		<div class="featured_content_slider_wrap">';
 
-		while ( $get_featured_posts->have_posts()) : 
-			$get_featured_posts->the_post(); 
+		while ( $get_featured_posts->have_posts()) :
+			$get_featured_posts->the_post();
 
 			$i++;
-			
+
 			$title_attribute = apply_filters( 'the_title', get_the_title( $post->ID ) );
 
 			$excerpt = get_the_excerpt();
-			
+
 			$fullframe_page_content .= '
-				<article id="featured-post-' . $i . '" class="post hentry featured-page-content">';	
+				<article id="featured-post-' . $i . '" class="post hentry featured-page-content">';
 				if ( has_post_thumbnail() ) {
 					$fullframe_page_content .= '
 					<figure class="featured-homepage-image">
-						<a href="' . get_permalink() . '" title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'full-frame' ), 'echo' => false ) ). '">
+						<a href="' . get_permalink() . '" title="' . the_title_attribute( array( 'before' => esc_html__( 'Permalink to:', 'full-frame' ), 'echo' => false ) ). '">
 						'. get_the_post_thumbnail( $post->ID, 'fullframe-featured-content', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class' => 'pngfix' ) ) .'
 						</a>
 					</figure>';
@@ -320,7 +320,7 @@ function fullframe_page_content( $options ) {
 				else {
 					//Default value if there is no first image
 					$fullframe_image = '<img class="pngfix wp-post-image" src="'.get_template_directory_uri().'/images/gallery/no-featured-image-1680x720.jpg" >';
-					
+
 					//Get the first image in page, returns false if there is no image
 					$fullframe_first_image = fullframe_get_first_image( $post->ID, 'fullframe-featured-content', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class' => 'pngfix' ) );
 
@@ -329,7 +329,7 @@ function fullframe_page_content( $options ) {
 						$fullframe_image =	$fullframe_first_image;
 					}
 
-					$fullframe_page_content .= '<a title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'full-frame' ), 'echo' => false ) ) . '" href="' . get_permalink() . '">
+					$fullframe_page_content .= '<a title="' . the_title_attribute( array( 'before' => esc_html__( 'Permalink to:', 'full-frame' ), 'echo' => false ) ) . '" href="' . get_permalink() . '">
 						'. $fullframe_image .'
 					</a>';
 				}
@@ -343,13 +343,13 @@ function fullframe_page_content( $options ) {
 								<h1 class="entry-title">
 									<a href="' . get_permalink() . '" rel="bookmark">' . the_title( '','', false ) . '</a>
 								</h1>
-							</header>';		
+							</header>';
 					}
 					if ( '1' == $options['featured_content_enable_excerpt_content'] ) {
 						//Show Excerpt
 						$fullframe_page_content .= '<div class="entry-excerpt"><p>' . $excerpt . '</p></div><!-- .entry-excerpt -->';
 					}
-					elseif ( '2' == $options['featured_content_enable_excerpt_content'] ) { 
+					elseif ( '2' == $options['featured_content_enable_excerpt_content'] ) {
 						//Show Content
 						$content = apply_filters( 'the_content', get_the_content() );
 						$content = str_replace( ']]>', ']]&gt;', $content );
@@ -358,12 +358,12 @@ function fullframe_page_content( $options ) {
 				}
 				$fullframe_page_content .= '
 				</article><!-- .featured-page-'. $i .' -->';
-				
+
 				if ( 0 == ( $i % $layouts ) && $i < $number_of_page ) {
 					//end and start featured_content_slider_wrap div based on logic
 					$fullframe_page_content .= '
 				</div><!-- .featured_content_slider_wrap -->
-				
+
 				<div class="featured_content_slider_wrap">';
 				}
 		endwhile;
@@ -371,8 +371,8 @@ function fullframe_page_content( $options ) {
 		wp_reset_query();
 
 		$fullframe_page_content .= '</div><!-- .featured_content_slider_wrap -->';
-	}		
-	
+	}
+
 	return $fullframe_page_content;
 }
 endif; // fullframe_page_content

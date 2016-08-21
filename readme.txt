@@ -1,6 +1,6 @@
 === Full Frame ===
 
-Full Frame is a Simple, Clean and Spacious Full Width Responsive WordPress Theme based on Catch Base Theme. Built on HTML5, CSS3 and Theme Customizer for real time customization, it comes with a whole set of interesting and rich features which makes this theme highly customizable and flexible. Make your beautiful yet professional website in no time. Full Frame WordPress Theme will be best suited for photography, portfolio and blogging sites. This theme is translation ready and also currently translated in Swedish, French, Brazilian Portuguese, German and Lithuanian languages. Check out Theme Instructions at https://catchthemes.com/theme-instructions/full-frame/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/full-frame/
+Full Frame is a Simple, Clean and Spacious Full Width Responsive WordPress Theme based on Catch Base Theme. Built on HTML5, CSS3 and Theme Customizer for real time customization, it comes with a whole set of interesting and rich features which makes this theme highly customizable and flexible. Make your beautiful yet professional website in no time. Full Frame WordPress Theme will be best suited for photography, portfolio and blogging sites. This theme is translation ready and also currently translated in Swedish, French, Brazilian Portuguese, German, Hungarian, Lithuanian and Danish languages. Check out Theme Instructions at https://catchthemes.com/theme-instructions/full-frame/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/full-frame/
 
 
 == Support ==
@@ -17,6 +17,8 @@ Added Translation for French by Jérôme Joseph ( Email: jerome.joseph28@hotmail
 Added Translation for Brazilian Portuguese by Valdir Trombini ( Email: valdir.trombini@gmail.com )
 Added Translation for German by Micky261 ( Email: karlo261@hotmail.de )
 Added Translation for Lithuanian
+Added Translation for Hungarian by Kürti Gábor ( Email: gabor.kurti@gmail.com )
+Added Translation for Danish by Pernille Kvamsdal (pkvamsdal@outlook.com)
 
 
 == License ==

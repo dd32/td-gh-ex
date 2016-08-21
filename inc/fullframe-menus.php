@@ -4,7 +4,7 @@
  *
  * @package Catch Themes
  * @subpackage Full Frame
- * @since Full Frame 1.0 
+ * @since Full Frame 1.0
  */
 
 if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
@@ -16,27 +16,27 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 
 if ( ! function_exists( 'fullframe_primary_menu' ) ) :
 /**
- * Shows the Primary Menu 
+ * Shows the Primary Menu
  */
 function fullframe_primary_menu() {
     $options    = fullframe_get_theme_options();
     ?>
 	<nav class="nav-primary search-enabled" role="navigation">
         <div class="wrapper">
-            <h1 class="assistive-text"><?php _e( 'Primary Menu', 'full-frame' ); ?></h1>
-            <div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'full-frame' ); ?>"><?php _e( 'Skip to content', 'full-frame' ); ?></a></div>
-            
-            <?php // Header Left Mobile Menu Anchor 
+            <h1 class="assistive-text"><?php esc_html_e( 'Primary Menu', 'full-frame' ); ?></h1>
+            <div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'full-frame' ); ?>"><?php esc_html_e( 'Skip to content', 'full-frame' ); ?></a></div>
+
+            <?php // Header Left Mobile Menu Anchor
             if ( has_nav_menu( 'primary' ) ) {
                 $classes = "mobile-menu-anchor primary-menu";
             }
             else {
-                $classes = "mobile-menu-anchor page-menu"; 
+                $classes = "mobile-menu-anchor page-menu";
             }
             ?>
             <div id="mobile-header-left-menu" class="<?php echo $classes; ?>">
                 <a href="#mobile-header-left-nav" id="header-left-menu" class="genericon genericon-menu">
-                    <span class="mobile-menu-text"><?php _e( 'Menu', 'full-frame' );?></span>
+                    <span class="mobile-menu-text"><?php esc_html_e( 'Menu', 'full-frame' );?></span>
                 </a>
             </div><!-- #mobile-header-menu -->
 
@@ -50,7 +50,7 @@ function fullframe_primary_menu() {
                     </a></div>';
                 }
 
-                if ( has_nav_menu( 'primary' ) ) { 
+                if ( has_nav_menu( 'primary' ) ) {
                     $fullframe_primary_menu_args = array(
                         'theme_location'    => 'primary',
                         'menu_class'        => 'menu fullframe-nav-menu',
@@ -61,10 +61,10 @@ function fullframe_primary_menu() {
                 else {
                     wp_page_menu( array( 'menu_class'  => 'menu fullframe-nav-menu' ) );
                 }
-                
+
                 ?>
                 <div id="header-toggle" class="genericon">
-                    <a class="screen-reader-text" href="#header-container"><?php _e( 'Header Toggle', 'full-frame' ); ?></a>
+                    <a class="screen-reader-text" href="#header-container"><?php esc_html_e( 'Header Toggle', 'full-frame' ); ?></a>
                 </div>
     	</div><!-- .wrapper -->
     </nav><!-- .nav-primary -->
@@ -91,7 +91,7 @@ function fullframe_mobile_menus() {
             );
             wp_nav_menu( $args );
         }
-        else { 
+        else {
             wp_page_menu( array( 'menu_class'  => 'menu' ) );
         }
     echo '</nav><!-- #mobile-header-left-nav -->';

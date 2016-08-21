@@ -7,9 +7,9 @@
  *
  * @package Catch Themes
  * @subpackage Full Frame
- * @since Full Frame 1.0 
+ * @since Full Frame 1.0
  */
- 
+
  if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	header( 'Status: 403 Forbidden' );
 	header( 'HTTP/1.1 403 Forbidden' );
@@ -35,7 +35,7 @@ class FullframeMetaBox {
 	*
 	*/
 	public function __construct( $meta_box_id, $meta_box_title, $post_type ) {
-		
+
 		$this->meta_box = array (
 							'id' 		=> $meta_box_id,
 							'title' 	=> $meta_box_title,
@@ -51,8 +51,8 @@ class FullframeMetaBox {
 
 		// Add metaboxes
 		add_action( 'add_meta_boxes', array( $this, 'add' ) );
-		
-		add_action( 'save_post', array( $this, 'save' ) );	
+
+		add_action( 'save_post', array( $this, 'save' ) );
    	}
 
 	/**
@@ -79,27 +79,27 @@ class FullframeMetaBox {
 		global $post;
 
 		$layout_options			= fullframe_metabox_layouts();
-		$featured_image_options	= fullframe_metabox_featured_image_options();  
+		$featured_image_options	= fullframe_metabox_featured_image_options();
 		$header_image_options 	= fullframe_metabox_header_featured_image_options();
-		
-	    
-	    // Use nonce for verification  
+
+
+	    // Use nonce for verification
 	    wp_nonce_field( basename( __FILE__ ), 'fullframe_custom_meta_box_nonce' );
 
-	    // Begin the field table and loop  ?>  
+	    // Begin the field table and loop  ?>
 	    <div id="fullframe-ui-tabs" class="ui-tabs">
 		    <ul class="fullframe-ui-tabs-nav" id="fullframe-ui-tabs-nav">
-		    	<li><a href="#frag1"><?php _e( 'Layout Options', 'full-frame' ); ?></a></li>
-		    	<li><a href="#frag3"><?php _e( 'Header Featured Image Options', 'full-frame' ); ?></a></li>
-		    	<li><a href="#frag4"><?php _e( 'Single Page/Post Image Layout ', 'full-frame' ); ?></a></li>
-		    </ul> 
+		    	<li><a href="#frag1"><?php esc_html_e( 'Layout Options', 'full-frame' ); ?></a></li>
+		    	<li><a href="#frag3"><?php esc_html_e( 'Header Featured Image Options', 'full-frame' ); ?></a></li>
+		    	<li><a href="#frag4"><?php esc_html_e( 'Single Page/Post Image Layout ', 'full-frame' ); ?></a></li>
+		    </ul>
 		    <div id="frag1" class="catch_ad_tabhead">
 		    	<table id="layout-options" class="form-table" width="100%">
 		            <tbody>
 		                <tr>
 		                    <select name="fullframe-layout-option" id="custom_element_grid_class">
-		      					<?php  
-			                    foreach ( $layout_options as $field ) {  
+		      					<?php
+			                    foreach ( $layout_options as $field ) {
 			                        $metalayout = get_post_meta( $post->ID, 'fullframe-layout-option', true );
 			                        if( empty( $metalayout ) ){
 			                            $metalayout='default';
@@ -107,7 +107,7 @@ class FullframeMetaBox {
 			                   	?>
 			                   		<option value="<?php echo $field['value']; ?>" <?php selected( $metalayout, $field['value'] ); ?>><?php echo $field['label']; ?></option>
 		    					<?php
-		    					} // end foreach 
+		    					} // end foreach
 			                    ?>
 		                    </select>
 		                </tr>
@@ -117,26 +117,26 @@ class FullframeMetaBox {
 
 		    <div id="frag3" class="catch_ad_tabhead">
 		    	<table id="header-image-metabox" class="form-table" width="100%">
-		            <tbody> 
-		                <tr>                
-		                    <?php  
-		                    foreach ( $header_image_options as $field ) { 
-							
+		            <tbody>
+		                <tr>
+		                    <?php
+		                    foreach ( $header_image_options as $field ) {
+
 							 	$metaheader = get_post_meta( $post->ID, $field['id'], true );
-		                        
+
 		                        if ( empty( $metaheader ) ){
 		                            $metaheader='default';
 		                        }
 		                    ?>
-		                        
+
 		                        <td style="width: 100px;">
 		                            <label class="description">
 		                                <input type="radio" name="<?php echo $field['id']; ?>" value="<?php echo $field['value']; ?>" <?php checked( $field['value'], $metaheader ); ?>/>&nbsp;&nbsp;<?php echo $field['label']; ?>
 		                            </label>
 		                        </td>
-		                        
+
 		                    <?php
-		                    } // end foreach 
+		                    } // end foreach
 		                    ?>
 		                </tr>
 		            </tbody>
@@ -145,46 +145,46 @@ class FullframeMetaBox {
 
 		    <div id="frag4" class="catch_ad_tabhead">
 		    	<table id="featured-image-metabox" class="form-table" width="100%">
-		            <tbody> 
+		            <tbody>
 		                <tr>
 		                    <?php
-		                    foreach ($featured_image_options as $field) { 
-							
+		                    foreach ($featured_image_options as $field) {
+
 							 	$metaimage = get_post_meta( $post->ID, $field['id'], true );
-		                        
+
 		                        if (empty( $metaimage ) ){
 		                            $metaimage='default';
-		                        } 
+		                        }
 		                    ?>
 		                        <td style="width: 100px;">
 		                            <label class="description">
 		                                <input type="radio" name="<?php echo $field['id']; ?>" value="<?php echo $field['value']; ?>" <?php checked( $field['value'], $metaimage ); ?>/>&nbsp;&nbsp;<?php echo $field['label']; ?>
 		                            </label>
 		                        </td>
-		                
+
 		                    <?php
-		                    } // end foreach 
+		                    } // end foreach
 		                    ?>
 		                </tr>
 		            </tbody>
-		        </table> 
+		        </table>
 		    </div>
 		</div>
-	<?php 
+	<?php
 	}
 
 	/**
 	 * Save custom metabox data
-	 * 
+	 *
 	 * @action save_post
 	 *
 	 * @since Full Frame 1.5
 	 *
 	 * @access public
 	 */
-	public function save( $post_id ) { 
+	public function save( $post_id ) {
 		global $post_type;
-    
+
 		$post_type_object = get_post_type_object( $post_type );
 
 	    if ( ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )                      // Check Autosave
@@ -196,26 +196,26 @@ class FullframeMetaBox {
 	      return $post_id;
 	    }
 
-	    foreach ( $this->fields as $field ) {      
-			$old = get_post_meta( $post_id, $field, true); 
-			
+	    foreach ( $this->fields as $field ) {
+			$old = get_post_meta( $post_id, $field, true);
+
 			$new = $_POST[ $field ];
 
-			delete_post_meta( $post_id, $field );			
-			
+			delete_post_meta( $post_id, $field );
+
 			if ( '' == $new || array() == $new ) {
 				return;
 			}
 			else {
-				if ( ! update_post_meta ($post_id, $field, sanitize_key ( $new ) ) ) { 
+				if ( ! update_post_meta ($post_id, $field, sanitize_key ( $new ) ) ) {
 					add_post_meta($post_id, $field, sanitize_key ( $new ), true );
 				}
 			}
-		} // end foreach		 
+		} // end foreach
 	}
 }
 
-$fullframe_metabox = new FullframeMetaBox( 
+$fullframe_metabox = new FullframeMetaBox(
 									'fullframe-options', 					//metabox id
 									__( 'Fullframe Options', 'full-frame' ), //metabox title
 									array( 'page', 'post' )				//metabox post types

@@ -246,6 +246,4 @@ function fullframe_reset_all_settings( $input ) {
  */
 function fullframe_sanitize_important_link() {
 	return false;
-} 
-
-
+}

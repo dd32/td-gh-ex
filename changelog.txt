@@ -1,5 +1,18 @@
 == Change log ==
 
+= 2.4 =
+* Bug Fixed: White space issue
+* Bug Fixed: Escaped Slider options on output
+* Bug Fixed: esc_html__ replaced with wp_kses in navigation
+* Bug Fixed: `sprintf() too few arguments` issue on other languages
+* Replaced: Footer widget text color from #4040404 to #888
+* Updated: All catchthemes.com link to ssl
+* Updated: Tags in styles.css header
+* Updated: All translation functions escaped
+* Removed: wpadminbar css due to issues with Theme Check Plugin
+* Added: Hungarian translation hu_HU.po and hu_HU.mo
+* Added: Danish translation da_DK.po and da_DK.mo
+
 = 2.3.1 =
 * Bug Fixed: Logo icon issue fixed ( Reported by lepos )
 

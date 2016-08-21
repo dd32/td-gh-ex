@@ -3,10 +3,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Full Frame\n"
-"Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/catch-"
+"Report-Msgid-Bugs-To: https://catchthemes.com/support-forum/forum/catch-"
 "responsive-free/\n"
-"POT-Creation-Date: 2016-05-03 21:57+0545\n"
-"PO-Revision-Date: 2016-05-03 21:57+0545\n"
+"POT-Creation-Date: 2016-08-21 21:44+0545\n"
+"PO-Revision-Date: 2016-08-21 21:44+0545\n"
 "Last-Translator: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language-Team: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language: pt_BR\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Generator: Poedit 1.7.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__;"
-"_nx:1,2,4c;esc_html__;esc_attr_x:1,2c\n"
+"_nx:1,2,4c;esc_html__;esc_attr_x:1,2c;esc_html_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
@@ -161,8 +161,8 @@ msgstr ""
 msgid "Pages:"
 msgstr "Páginas: "
 
-#: ../content-page.php:35 ../inc/fullframe-core.php:634
-#: ../inc/fullframe-core.php:653 ../inc/fullframe-core.php:779
+#: ../content-page.php:35 ../inc/fullframe-core.php:632
+#: ../inc/fullframe-core.php:651 ../inc/fullframe-core.php:777
 msgid "Edit"
 msgstr "Editar"
 
@@ -709,110 +709,101 @@ msgstr "Erro 404 - Página não encontrada."
 msgid "Page %s"
 msgstr "Página %s"
 
-#: ../inc/fullframe-core.php:88 ../inc/fullframe-menus.php:26
+#: ../inc/fullframe-core.php:86 ../inc/fullframe-menus.php:26
 msgid "Primary Menu"
 msgstr "Menu principal"
 
-#: ../inc/fullframe-core.php:600
+#: ../inc/fullframe-core.php:598
 msgid "Post navigation"
 msgstr "Navegação das postagens"
 
-#: ../inc/fullframe-core.php:609
-msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "<span class=\"meta-nav\">&larr;</span> Postagens mais antigas"
-
-#: ../inc/fullframe-core.php:610
-msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Postagens mais recentes <span class=\"meta-nav\">&rarr;</span"
-
-#: ../inc/fullframe-core.php:634
+#: ../inc/fullframe-core.php:632
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: ../inc/fullframe-core.php:644
+#: ../inc/fullframe-core.php:642
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"says\">disse: </span>"
 
-#: ../inc/fullframe-core.php:650
+#: ../inc/fullframe-core.php:648
 #, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr "Direitos Autorais &copy; %1$s - %2$s. Todos os direitos reservados &reg;."
 
-#: ../inc/fullframe-core.php:657
+#: ../inc/fullframe-core.php:655
 msgid "Your comment is awaiting moderation."
 msgstr ""
 "<strong>Seu Comentário está aguardando a nossa moderação. Obrigado por Comentar!"
 "</strong>"
 
-#: ../inc/fullframe-core.php:760
-msgctxt "Used before publish date."
+#: ../inc/fullframe-core.php:758
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
-msgstr "<span class=\"screen-reader-text\">Publicado em: </span>"
+msgstr "<span class=\"screen-reader-text\">Publicado em</span>"
 
-#: ../inc/fullframe-core.php:767
+#: ../inc/fullframe-core.php:765
 msgctxt "Used before post author name."
 msgid "<span class=\"screen-reader-text\">Author</span>"
 msgstr "<span class=\"screen-reader-text\">Autor: </span>"
 
-#: ../inc/fullframe-core.php:775
+#: ../inc/fullframe-core.php:773
 msgid "Leave a comment"
 msgstr "Deixe um Comentário!"
 
-#: ../inc/fullframe-core.php:775
+#: ../inc/fullframe-core.php:773
 msgid "1 Comment"
 msgstr "1 Comentário &darr;"
 
-#: ../inc/fullframe-core.php:775
+#: ../inc/fullframe-core.php:773
 msgid "% Comments"
 msgstr "% Comentários &darr;"
 
-#: ../inc/fullframe-core.php:796 ../inc/fullframe-core.php:804
+#: ../inc/fullframe-core.php:794 ../inc/fullframe-core.php:802
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ", "
 
-#: ../inc/fullframe-core.php:799
+#: ../inc/fullframe-core.php:797
 msgctxt "Used before category names."
 msgid "<span class=\"screen-reader-text\">Categories</span>"
 msgstr "<span class=\"screen-reader-text\">Categorias: </span>"
 
-#: ../inc/fullframe-core.php:807
+#: ../inc/fullframe-core.php:805
 msgctxt "Used before tag names."
 msgid "<span class=\"screen-reader-text\">Tags</span>"
 msgstr "<span class=\"screen-reader-text\">Tags: </span>"
 
-#: ../inc/fullframe-core.php:950
+#: ../inc/fullframe-core.php:948
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: ../inc/fullframe-core.php:1413
+#: ../inc/fullframe-core.php:1411
 msgid "Scroll Up"
 msgstr "Efeito rolar a página para cima"
 
-#: ../inc/fullframe-core.php:1431
+#: ../inc/fullframe-core.php:1429
 msgid "Posted on"
 msgstr "Postada na"
 
-#: ../inc/fullframe-core.php:1432
+#: ../inc/fullframe-core.php:1430
 msgid "By"
 msgstr "Por: "
 
-#: ../inc/fullframe-core.php:1473
+#: ../inc/fullframe-core.php:1471
 msgid "Next &rarr;"
 msgstr "Próximo &rarr;"
 
-#: ../inc/fullframe-core.php:1474
+#: ../inc/fullframe-core.php:1472
 msgid "Next post:"
 msgstr "Próxima postagem:"
 
-#: ../inc/fullframe-core.php:1476
+#: ../inc/fullframe-core.php:1474
 msgid "&larr; Previous"
 msgstr "&larr;  Anterior"
 
-#: ../inc/fullframe-core.php:1477
+#: ../inc/fullframe-core.php:1475
 msgid "Previous post:"
 msgstr "Postagem anterior:"
 
@@ -822,7 +813,7 @@ msgstr "&hellip; Continue lendo&hellip; &rarr;"
 
 #: ../inc/fullframe-default-options.php:66
 msgid "Full Frame is a Premium Responsive WordPress Theme"
-msgstr ""
+msgstr "Full Frame é um tema WordPress responsivo premium"
 
 #: ../inc/fullframe-default-options.php:67
 msgid ""
@@ -985,7 +976,7 @@ msgid "Tile Blind"
 msgstr "Deslizar com efeito persiana"
 
 #: ../inc/fullframe-default-options.php:398
-msgid "Suffle"
+msgid "Shuffle"
 msgstr "Passar a imagem da frente para trás"
 
 #: ../inc/fullframe-default-options.php:415
@@ -1135,27 +1126,27 @@ msgstr "Twitch"
 
 #: ../inc/fullframe-default-options.php:601
 msgid "Website"
-msgstr ""
+msgstr "Website"
 
 #: ../inc/fullframe-default-options.php:605
 msgid "Phone"
-msgstr ""
+msgstr "Fone"
 
 #: ../inc/fullframe-default-options.php:609
 msgid "Handset"
-msgstr ""
+msgstr "Handset"
 
 #: ../inc/fullframe-default-options.php:613
 msgid "Cart"
-msgstr ""
+msgstr "Carrinho"
 
 #: ../inc/fullframe-default-options.php:617
 msgid "Cloud"
-msgstr ""
+msgstr "Cloud"
 
 #: ../inc/fullframe-default-options.php:621
 msgid "Link"
-msgstr ""
+msgstr "Ligação"
 
 #: ../inc/fullframe-default-options.php:639
 #: ../inc/fullframe-default-options.php:670
@@ -1294,6 +1285,16 @@ msgstr ""
 "Por padrão ele irá carregar os widgets Pesquisar e Arquivos, conforme mostrado "
 "abaixo. Você pode adicionar widget para esta área, visitando o seu <a href=\"%s"
 "\">Painel Widgets</a> que irá substituir os widgets padrão."
+
+#~ msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+#~ msgstr "<span class=\"meta-nav\">&larr;</span> Postagens mais antigas"
+
+#~ msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+#~ msgstr "Postagens mais recentes <span class=\"meta-nav\">&rarr;</span"
+
+#~ msgctxt "Used before publish date."
+#~ msgid "<span class=\"screen-reader-text\">Posted on</span>"
+#~ msgstr "<span class=\"screen-reader-text\">Publicado em: </span>"
 
 #~ msgid "StumbleUpon"
 #~ msgstr "Stumbleupon"

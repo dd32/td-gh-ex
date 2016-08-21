@@ -4,7 +4,7 @@
  *
  * @package Catch Themes
  * @subpackage Full Frame
- * @since Full Frame 1.0 
+ * @since Full Frame 1.0
  */
 
 if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
@@ -38,36 +38,36 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 				$dropdown
 			);
 
-			echo '<p class="description">'. __( 'Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.', 'full-frame' ) . '</p>';
+			echo '<p class="description">'. esc_html__( 'Hold down the Ctrl (windows) / Command (Mac) button to select multiple options.', 'full-frame' ) . '</p>';
 		}
 	}
 
 	//Custom control for dropdown category multiple select
 	class Fullframe_Important_Links extends WP_Customize_Control {
-        public $type = 'important-links'; 
-        
+        public $type = 'important-links';
+
         public function render_content() {
         	//Add Theme instruction, Support Forum, Changelog, Donate link, Review, Facebook, Twitter, Google+, Pinterest links
             $important_links = array(
-							'theme_instructions' => array( 
-								'link'	=> esc_url( 'http://catchthemes.com/theme-instructions/full-frame/' ),
-								'text' 	=> __( 'Theme Instructions', 'full-frame' ),
+							'theme_instructions' => array(
+								'link'	=> esc_url( 'https://catchthemes.com/theme-instructions/full-frame/' ),
+								'text' 	=> esc_html__( 'Theme Instructions', 'full-frame' ),
 								),
-							'support' => array( 
-								'link'	=> esc_url( 'http://catchthemes.com/support/' ),
-								'text' 	=> __( 'Support', 'full-frame' ),
+							'support' => array(
+								'link'	=> esc_url( 'https://catchthemes.com/support/' ),
+								'text' 	=> esc_html__( 'Support', 'full-frame' ),
 								),
-							'changelog' => array( 
-								'link'	=> esc_url( 'http://catchthemes.com/changelogs/full-frame-theme/' ),
-								'text' 	=> __( 'Changelog', 'full-frame' ),
+							'changelog' => array(
+								'link'	=> esc_url( 'https://catchthemes.com/changelogs/full-frame-theme/' ),
+								'text' 	=> esc_html__( 'Changelog', 'full-frame' ),
 								),
-							'donate' => array( 
-								'link'	=> esc_url( 'http://catchthemes.com/donate/' ),
-								'text' 	=> __( 'Donate Now', 'full-frame' ),
+							'donate' => array(
+								'link'	=> esc_url( 'https://catchthemes.com/donate/' ),
+								'text' 	=> esc_html__( 'Donate Now', 'full-frame' ),
 								),
-							'review' => array( 
+							'review' => array(
 								'link'	=> esc_url( 'https://wordpress.org/support/view/theme-reviews/full-frame' ),
-								'text' 	=> __( 'Review', 'full-frame' ),
+								'text' 	=> esc_html__( 'Review', 'full-frame' ),
 								),
 							);
 			foreach ( $important_links as $important_link) {
