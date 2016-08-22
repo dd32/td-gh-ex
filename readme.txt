@@ -72,6 +72,11 @@ GPL compatible for own images
 ----------------------------------------------------
 == Changelog ==
 
+Version 2.4.2
+ * Fixed the bugs on excerpt lenght
+ * Fixed the minor css bugs
+ * Tested on WordPress v4.6 and updated .pot file
+ 
 Version 2.4.1
  * Fixed the Highlighted section slider in responsive
  * Fixed the minor bugs in homepage sidebar

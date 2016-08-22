@@ -553,20 +553,17 @@ endif;
  */
 if( ! function_exists( 'accesspress_mag_excerpt' ) ):
     function accesspress_mag_excerpt(){
-        global $post, $accesspress_mag_default;        
-        if( !empty( $accesspress_mag_default ) ) {
-            $excerpt_type = esc_attr( of_get_option( 'excerpt_type' ) );
-            $excerpt_length = intval( of_get_option( 'excerpt_lenght' ) );
-            $excerpt_content = get_the_content($post -> ID);
-            if( $excerpt_type == 'letters' ){
-                $excerpt_content = accesspress_mag_letter_count( $excerpt_content, $excerpt_length );
-            } else {
-                $excerpt_content = accesspress_mag_word_count( $excerpt_content, $excerpt_length );
-            }
-            echo '<p>'. $excerpt_content .'</p>';
+        global $post;
+        $excerpt_type = esc_attr( of_get_option( 'excerpt_type' ) );
+        $excerpt_length = intval( of_get_option( 'excerpt_lenght' ) );
+        $excerpt_content = get_the_content($post -> ID);
+        
+        if( $excerpt_type == 'letters' ){
+            $excerpt_content = accesspress_mag_letter_count( $excerpt_content, $excerpt_length );
         } else {
-            the_excerpt();
+            $excerpt_content = accesspress_mag_word_count( $excerpt_content, $excerpt_length );
         }
+        echo '<p>'. $excerpt_content .'</p>';
     }
 endif;
 

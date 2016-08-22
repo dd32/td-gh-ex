@@ -140,7 +140,7 @@ class Options_Framework_Interface {
 
 			case 'num':
                     $output .= '<div class="addon-input">';
-                    $output .= '<input id="' . esc_attr($value['id']) . '" class="of-input" name="' . esc_attr($option_name . '[' . $value['id'] . ']') . '" type="text" value="' . esc_attr($val) . '"' . $placeholder . ' />';
+                    $output .= '<input id="' . esc_attr($value['id']) . '" class="of-input" name="' . esc_attr($option_name . '[' . $value['id'] . ']') . '" type="number" value="' . intval($val) . '"' . $placeholder . ' />';
                     $output .= '</div>';
                     break;
 
