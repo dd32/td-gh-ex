@@ -118,7 +118,7 @@ function blogghiamo_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 	
-	wp_enqueue_script( 'blogghiamo-html5shiv', get_template_directory_uri() . '/js/html5shiv.min.js', array(), '3.6', false );
+	wp_enqueue_script( 'blogghiamo-html5shiv', get_template_directory_uri() . '/js/html5shiv.min.js', array(), '3.7.3', false );
 	wp_script_add_data( 'blogghiamo-html5shiv', 'conditional', 'lt IE 9' );
 }
 add_action( 'wp_enqueue_scripts', 'blogghiamo_scripts' );

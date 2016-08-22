@@ -142,3 +142,8 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-background, 
 = Version 1.4.2 =
 * Added admin panel
 * Minor bug fixes
+
+= Version 1.4.3 =
+* Fixed mobile menu for 1024px
+* Updated hover effect on featured images
+* Minor bug fixes
