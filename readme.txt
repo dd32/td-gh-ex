@@ -94,6 +94,9 @@ Source: http://fontawesome.io
 
 # --- EOF --- #
 ============================Change Log================================
+@Version 2.5.2
+1. Revised Theme Description.
+2. Revised Theme Tags List.
 @version 2.5.1
 1.Update Pro Theme Support Link.
 @version 2.5
