@@ -17,14 +17,14 @@ class diarjolite_customize {
 
 		wp_enqueue_style ( 
 			'diarjolite_panel', 
-			get_template_directory_uri() . '/core/admin/includes/css/customize.css', 
+			get_template_directory_uri() . '/core/admin/assets/css/customize.css', 
 			array(), 
 			''
 		);
 
 		wp_enqueue_script( 
 			  'customizer-preview',
-			  get_template_directory_uri().'/core/admin/includes/js/customizer-preview.js',
+			  get_template_directory_uri().'/core/admin/assets/js/customizer-preview.js',
 			  array( 'jquery' ),
 			  '1.0.0', 
 			  true

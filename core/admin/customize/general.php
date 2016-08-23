@@ -6,7 +6,7 @@ if (!function_exists('lookilite_admin_init')) {
 		
 		global $wp_version;
 
-		$file_dir = get_template_directory_uri()."/core/admin/includes/";
+		$file_dir = get_template_directory_uri()."/core/admin/assets/";
 	
 		wp_enqueue_style ( 'lookilite_style', $file_dir.'css/theme.css' ); 
 		wp_enqueue_script( 'lookilite_script', $file_dir.'js/theme.js',array('jquery'),'',TRUE ); 

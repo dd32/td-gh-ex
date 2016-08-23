@@ -1,5 +1,9 @@
 Diarjo Lite Changelog
 
+Version 1.1.1 - Released: 23.08.2016
+
+Important : For a short period of time you can download the premium version of Diarjo for Free.
+
 Version 1.1.0 - Released: 20.09.2015
 
 Moved : Option panel under WordPress Customizer.

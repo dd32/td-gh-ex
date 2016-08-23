@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-20 16:20+0100\n"
-"PO-Revision-Date: 2015-09-20 16:28+0100\n"
+"POT-Creation-Date: 2016-08-23 19:19+0200\n"
+"PO-Revision-Date: 2016-08-23 19:20+0200\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
 "Language: it_IT\n"
@@ -11,9 +11,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: __;gettext;gettext_noop;_e\n"
-"X-Poedit-Basepath: ../\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.6.8\n"
+"X-Generator: Poedit 1.8.6\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:11 layouts/archive-blog.php:51 layouts/home-blog.php:33
@@ -101,13 +101,11 @@ msgstr ""
 "seleziona \"Fisso\", dalle impostazioni di attaccamento dell'immagine di "
 "sfondo)"
 
-#: core/admin/customize/customize.php:19
-#: core/admin/customize/customize.php:443
+#: core/admin/customize/customize.php:19 core/admin/customize/customize.php:443
 msgid "No"
 msgstr "No"
 
-#: core/admin/customize/customize.php:20
-#: core/admin/customize/customize.php:444
+#: core/admin/customize/customize.php:20 core/admin/customize/customize.php:444
 msgid "Yes"
 msgstr "Si"
 
@@ -578,10 +576,6 @@ msgstr "Elementi H6"
 msgid "Insert a size, for for H6 elements (For example, 14px) "
 msgstr "Inserisci una grandezza, per i titoli H6 (Ad esempio, 14px)"
 
-#: core/classes/customize.php:34
-msgid "Upgrade to Diarjo Premium"
-msgstr "Aggiorna a DIarjo Premium"
-
 #: core/functions/widgets.php:9
 msgid "Sidebar"
 msgstr "Sidebars"
@@ -613,6 +607,27 @@ msgstr "Sidebar per la parte inferiore della pagina"
 #: core/functions/widgets.php:47
 msgid "This sidebar will be shown at the bottom of page."
 msgstr "Questa sidebar verrà visualizzata nella parte finale della pagina."
+
+#: core/includes/class-customize.php:34
+msgid "Upgrade to Diarjo Premium"
+msgstr "Aggiorna a DIarjo Premium"
+
+#: core/includes/class-notice.php:58
+msgid ""
+"Important! From today, you can upgrade to the premium version of Diarjo for "
+"FREE! ( This resource will be available for a short period of time) "
+msgstr ""
+"Importante! Da oggi puoi scaricare gratuitamente la versione completa di "
+"Diario. ( Questa risorsa sarà disponibile per un breve periodo di tempo )"
+
+#: core/includes/class-notice.php:59
+#, php-format
+msgid "<a href=\"%1$s\" class=\"dismiss-notice\">Dismiss this notice</a>"
+msgstr "<a href=\"%1$s\" class=\"dismiss-notice\">Nascondi questo avviso</a>"
+
+#: core/includes/class-notice.php:62
+msgid "Download Now"
+msgstr "Scarica Ora"
 
 #: core/main.php:79
 #, php-format

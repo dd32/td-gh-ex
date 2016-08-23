@@ -564,7 +564,7 @@ if (!function_exists('diarjolite_setup')) {
 		if ( ! isset( $content_width ) )
 			$content_width = 940;
 
-		diarjolite_require('/core/classes/');
+		diarjolite_require('/core/includes/');
 		diarjolite_require('/core/admin/customize/');
 		diarjolite_require('/core/templates/');
 		diarjolite_require('/core/functions/');
