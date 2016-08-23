@@ -135,15 +135,56 @@ function page_banner_strip(){
 	
 }
 
+
 if ( ! function_exists( 'spasalon_post_thumbnail' ) ) :
 function spasalon_post_thumbnail() {
 	
 	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 		return;
 	}
-?>
+
+	if ( is_singular() ) :
+	
+		 if( is_page_template('blog-left-sidebar.php') || is_page_template('blog-right-sidebar.php') || is_page_template('blog-full.php') ){
+			?>
+			<a class="post-thumbnail width-sm" href="<?php the_permalink(); ?>" >
+				<?php the_post_thumbnail(); ?>
+			</a>
+			<?php
+		 }else{
+	?>
 		<figure class="post-thumbnail-full">
 		<?php the_post_thumbnail(); ?>
 		</figure>
 		
-<?php }  endif; // End is_singular()
+	<?php } 
+		 
+	else : ?>
+
+	<a class="post-thumbnail width-sm" href="<?php the_permalink(); ?>" >
+		<?php the_post_thumbnail(); ?>
+	</a>
+
+	<?php endif; // End is_singular()
+}
+endif;
+
+
+
+function get_homepage_product_excerpt($content)
+{
+		$excerpt = $content;
+		$excerpt = strip_tags(preg_replace(" (\[.*?\])",'',$excerpt));
+		$excerpt = strip_shortcodes($excerpt);
+		$original_len = strlen($excerpt);
+		$excerpt = substr($excerpt, 0, 80);
+		$len = strlen($excerpt);
+		if($original_len > 80) {
+			$excerpt = $excerpt;
+		return $excerpt.'...';
+		}
+		else
+		{ 
+			return $excerpt; 
+		}
+}

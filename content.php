@@ -19,8 +19,17 @@
 		</div>
 		
 		<div class="entry-content">
-			<?php the_content( __('Read More','spasalon') );
-				  wp_link_pages( );
+			<?php 
+			
+			the_content( __('Read More','spasalon') ); 
+			
+			wp_link_pages( array(
+				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'spasalon' ) . '</span>',
+				'after'       => '</div>',
+				'link_before' => '<span>',
+				'link_after'  => '</span>',
+			) );
+			
 			?>
 		</div>
 		

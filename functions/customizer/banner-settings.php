@@ -4,7 +4,7 @@ function spasalon_banner_customizer( $wp_customize ){
 	
 	/* banner settings */
 	$wp_customize->add_panel( 'banner_settings', array(
-		'priority'       => 129,
+		'priority'       => 132,
 		'capability'     => 'edit_theme_options',
 		'title'      => __('Banner Settings', 'spasalon'),
 	) );
@@ -39,7 +39,7 @@ function spasalon_banner_customizer( $wp_customize ){
 			
 			// category banner desc
 			$wp_customize->add_setting( 'spa_theme_options[banner_description_category]' , array(
-			'sanitize_callback' => 'spasalon_banner_sanitize_text',
+			'sanitize_callback' => 'sanitize_text_field',
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[banner_description_category]' , array(
@@ -78,7 +78,7 @@ function spasalon_banner_customizer( $wp_customize ){
 			
 			// archive banner desc
 			$wp_customize->add_setting( 'spa_theme_options[banner_description_author]' , array(
-			'sanitize_callback' => 'spasalon_banner_sanitize_text',
+			'sanitize_callback' => 'sanitize_text_field',
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[banner_description_author]' , array(
@@ -117,7 +117,7 @@ function spasalon_banner_customizer( $wp_customize ){
 			
 			// Tag banner desc
 			$wp_customize->add_setting( 'spa_theme_options[banner_description_tag]' , array(
-			'sanitize_callback' => 'spasalon_banner_sanitize_text',
+			'sanitize_callback' => 'sanitize_text_field',
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[banner_description_tag]' , array(
@@ -156,7 +156,7 @@ function spasalon_banner_customizer( $wp_customize ){
 			
 			// Search banner desc
 			$wp_customize->add_setting( 'spa_theme_options[banner_description_search]' , array(
-			'sanitize_callback' => 'spasalon_banner_sanitize_text',
+			'sanitize_callback' => 'sanitize_text_field',
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[banner_description_search]' , array(
@@ -195,7 +195,7 @@ function spasalon_banner_customizer( $wp_customize ){
 			
 			// 404 banner desc
 			$wp_customize->add_setting( 'spa_theme_options[banner_description_404]' , array(
-			'sanitize_callback' => 'spasalon_banner_sanitize_text',
+			'sanitize_callback' => 'sanitize_text_field',
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[banner_description_404]' , array(
@@ -234,7 +234,7 @@ function spasalon_banner_customizer( $wp_customize ){
 			
 			// woo banner desc
 			$wp_customize->add_setting( 'spa_theme_options[banner_description_woo]' , array(
-			'sanitize_callback' => 'spasalon_banner_sanitize_text',
+			'sanitize_callback' => 'sanitize_text_field',
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[banner_description_woo]' , array(
@@ -242,12 +242,6 @@ function spasalon_banner_customizer( $wp_customize ){
 			'section'        => 'banner_woo_section',
 			'type'           => 'textarea',
 			) );
-			
-			function spasalon_banner_sanitize_text( $input ) {
-
-			return wp_kses_post( force_balance_tags( $input ) );
-
-			}
 	
 }
 add_action( 'customize_register', 'spasalon_banner_customizer' );

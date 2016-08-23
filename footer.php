@@ -3,6 +3,9 @@ $current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), d
 ?>
 <!-- Footer Section -->
 <footer class="footer-sidebar">	
+	
+	<?php if( is_active_sidebar('footer-sidebar1') || is_active_sidebar('footer-sidebar2') || is_active_sidebar('footer-sidebar3') || is_active_sidebar('footer-sidebar4')) : ?>
+	<div class="empty-footer-sidebar">
 	<!-- Footer Widgets -->	
 	<div class="container">		
 		<div class="row">		
@@ -42,6 +45,8 @@ $current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), d
 		</div>
 	</div>
 	<!-- /End of Footer Widgets -->	
+	</div>
+	<?php endif; ?>
 	
 	<!-- Copyrights -->	
 	<div class="site-info">
@@ -58,7 +63,7 @@ $current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), d
 				
 				<div class="col-md-5">
 					<ul class="footer-links">
-					 <?php  
+					  <?php  
 						wp_nav_menu( 
 							array(  
 								'menu'           => 'footer-menu',
@@ -67,15 +72,12 @@ $current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), d
 								'container'      => false,
 								'menu_class'     => '',
 								'menu_id'        =>'FooterMenu',
-							   'fallback_cb'     => 'wp_page_menu',
+							   'fallback_cb'     => 'webriti_fallback_page_menu',
 								'walker'         => new webriti_nav_walker()
 							)
 						);
-						?>	
+						?>
 					</ul>
-					
-					
-					
 				</div>
 				
 			</div>
@@ -86,8 +88,10 @@ $current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), d
 </footer>
 <!-- /End of Footer Section -->
 
+<!--Scroll To Top--> 
 <a href="#" class="scrollup"><i class="fa fa-chevron-up"></i></a>
-
+<!--/End of Scroll To Top--> 	
 <?php wp_footer(); ?>
 </body>
 </html>
+

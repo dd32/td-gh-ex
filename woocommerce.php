@@ -14,7 +14,7 @@ page_banner_strip(); // banner strip
 		<div class="row">
 			
 			<!--Blog Detail-->
-			<div class="col-md-<?php echo ( !is_active_sidebar( 'woocommerce-1' ) ? '12' :'8' ); ?> col-md-12">
+			<div class="col-md-<?php echo (  is_active_sidebar('woocommerce-1') ? '8' : '12' ); ?> col-xs-12">
 				<div class="site-content">
 				<?php woocommerce_content(); ?>
 				</div>

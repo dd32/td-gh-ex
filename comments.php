@@ -78,6 +78,7 @@ endif;
 	</h3>
 	
 	<?php wp_list_comments( array( 'callback' => 'webriti_comments' ) ); ?>
+	
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) { ?>
 		<nav id="comment-nav-below">
 			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'spasalon' ); ?></h1>
@@ -86,10 +87,9 @@ endif;
 		</nav>
 		<?php }  
 		if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
-	?>
+		?>
 	<p class="no-comments"><?php _e( 'Comments are closed.', 'spasalon' ); ?></p>
-	<?php endif; ?>
-						
+	<?php endif; ?>				
 </div>
 <!--/End of Comments-->
 <?php endif; ?>

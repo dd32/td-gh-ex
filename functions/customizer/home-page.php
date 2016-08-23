@@ -1,19 +1,30 @@
 <?php 
+// Home page slider section
 
-// customizer home page settings
-function spasalon_home_page_customizer( $wp_customize ){
-	
-	/* home page settings */
-	$wp_customize->add_panel( 'home_page_settings', array(
+add_action( 'customize_register', 'spasalon_slider_customizer' );
+
+function spasalon_slider_customizer( $wp_customize ){
+
+/* slider section panel */
+	$wp_customize->add_panel( 'slider_panel', array(
 		'priority'       => 126,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Home Page', 'spasalon'),
+		'title'      => __('Slider Section', 'spasalon'),
 	) );
+	
+	
+	/* Option list of all post */	
+    $options_posts = array();
+    $options_posts_obj = get_posts('posts_per_page=-1');
+    $options_posts[''] = __( 'Choose Post', 'spasalon' );
+    foreach ( $options_posts_obj as $posts ) {
+    	$options_posts[$posts->ID] = $posts->post_title;
+    }
 	
 		/* slider section */
 		$wp_customize->add_section( 'slider_section' , array(
-			'title'      => __('Slider Settings', 'spasalon'),
-			'panel'  => 'home_page_settings'
+			'title'      => __('Settings', 'spasalon'),
+			'panel'  => 'slider_panel'
 		) );
 		
 			// slider banner enable / disable 
@@ -31,9 +42,9 @@ function spasalon_home_page_customizer( $wp_customize ){
 				'no'  => 'OFF'
 			) ) );
 			
+			
 			// slide 1 title one
 			$wp_customize->add_setting( 'spa_theme_options[line_one]' , array(
-			'default' => __('Get Yourself','spasalon'),
 			'type'=>'option',
 			'sanitize_callback' => 'sanitize_text_field',
 			) );
@@ -45,7 +56,6 @@ function spasalon_home_page_customizer( $wp_customize ){
 			
 			// slide 1 title two
 			$wp_customize->add_setting( 'spa_theme_options[line_two]' , array(
-			'default' => __('Refreshed','spasalon'),
 			'type'=>'option',
 			'sanitize_callback' => 'sanitize_text_field',
 			) );
@@ -57,7 +67,6 @@ function spasalon_home_page_customizer( $wp_customize ){
 			
 			// slide desc
 			$wp_customize->add_setting( 'spa_theme_options[description]' , array(
-			'default' => __('Donec justo odio, lobortis eget congue sed, rutrum sit amet mauris. Curabitur sed lectus nulla. Curabitur sed lectus nulla.lobortis eget congue sed, rutrum sit amet mauris. Curabitur sed lectus nulla rutrum sit amet mauris','spasalon'),
 			'type'=>'option',
 			'sanitize_callback' => 'spasalon_home_page_sanitize_text',
 			) );
@@ -67,59 +76,80 @@ function spasalon_home_page_customizer( $wp_customize ){
 			'type'           => 'textarea'
 			) );
 			
-			// slide image
-			$wp_customize->add_setting( 'spa_theme_options[home_feature]' , array(
-			'default' => get_template_directory_uri().'/images/default/home_banner.jpg',
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'esc_url_raw',
+			
+			//Select Post One
+			$wp_customize->add_setting('spa_theme_options[slider_post]',array(
+				'capability'=>'edit_theme_options',
+				'sanitize_callback'=>'sanitize_text_field',
+				'type' => 'option',
+			));
+			
+			$wp_customize->add_control('spa_theme_options[slider_post]',array(
+				'label' => __('Select Post','spasalon'),
+				'section'=>'slider_section',
+				'type'=>'select',
+				'choices'=>$options_posts,
+			));
+			
+			
+			// slider thumbnail enable / disable 
+			$wp_customize->add_setting( 'spa_theme_options[slider_thumbnails_enable]' , array(
+			'default' => 'yes',
+			'sanitize_callback' => 'sanitize_text_field',
 			'type'=>'option'
 			) );
-			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize , 'spa_theme_options[home_feature]' ,
-			array(
-			'label'          => __( 'Featured Banner image', 'spasalon' ),
+			$wp_customize->add_control('spa_theme_options[slider_thumbnails_enable]' , array(
+			'label'          => __( 'Slider Thumbnails Enable in home page', 'spasalon' ),
 			'section'        => 'slider_section',
-		    ) )	);
+			'type'           => 'radio',
+			'choices'        => array(
+				'yes' => 'ON',
+				'no'  => 'OFF'
+			) ) );
 			
 			
-			// slider thumbnail image 1
-			$wp_customize->add_setting( 'spa_theme_options[first_thumb_image]' , array(
-			'default' => get_template_directory_uri().'/images/default/home_thumb.jpg',
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'esc_url_raw',
-			'type'=>'option'
-			) );
-			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize , 'spa_theme_options[first_thumb_image]' ,
-			array(
-			'label'          => __( 'Featured Banner thumbnail 1', 'spasalon' ),
-			'section'        => 'slider_section',
-		    ) )	);
+			//Select Thumbnails Post one
+			$wp_customize->add_setting('spa_theme_options[slider_thumbnail_one]',array(
+				'capability'=>'edit_theme_options',
+				'sanitize_callback'=>'sanitize_text_field',
+				'type' => 'option',
+			));
 			
+			$wp_customize->add_control('spa_theme_options[slider_thumbnail_one]',array(
+				'label' => __('Select Thumnail Post','spasalon'),
+				'section'=>'slider_section',
+				'type'=>'select',
+				'choices'=>$options_posts,
+			));
 			
-			// slider thumbnail image 2
-			$wp_customize->add_setting( 'spa_theme_options[second_thumb_image]' , array(
-			'default' => get_template_directory_uri().'/images/default/home_thumb.jpg',
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'esc_url_raw',
-			'type'=>'option'
-			) );
-			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize , 'spa_theme_options[second_thumb_image]' ,
-			array(
-			'label'          => __( 'Featured Banner thumbnail 2', 'spasalon' ),
-			'section'        => 'slider_section',
-		    ) )	);
+			//Select Thumnails Post Two
+			$wp_customize->add_setting('spa_theme_options[slider_thumbnail_two]',array(
+				'capability'=>'edit_theme_options',
+				'sanitize_callback'=>'sanitize_text_field',
+				'type' => 'option',
+			));
 			
-			// slider thumbnail image 3
-			$wp_customize->add_setting( 'spa_theme_options[third_thumb_image]' , array(
-			'default' => get_template_directory_uri().'/images/default/home_thumb.jpg',
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'esc_url_raw',
-			'type'=>'option'
-			) );
-			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize , 'spa_theme_options[third_thumb_image]' ,
-			array(
-			'label'          => __( 'Featured Banner thumbnail 3', 'spasalon' ),
-			'section'        => 'slider_section',
-		    ) )	);
+			$wp_customize->add_control('spa_theme_options[slider_thumbnail_two]',array(
+				'label' => __('Select Thumnail Post','spasalon'),
+				'section'=>'slider_section',
+				'type'=>'select',
+				'choices'=>$options_posts,
+			));
+			
+			//Select Thumnails Post Three
+			$wp_customize->add_setting('spa_theme_options[slider_thumbnail_three]',array(
+				'capability'=>'edit_theme_options',
+				'sanitize_callback'=>'sanitize_text_field',
+				'type' => 'option',
+			));
+			
+			$wp_customize->add_control('spa_theme_options[slider_thumbnail_three]',array(
+				'label' => __('Select Thumnail Post','spasalon'),
+				'section'=>'slider_section',
+				'type'=>'select',
+				'choices'=>$options_posts,
+			));
+			
 			
 			class WP_btn_slider_Customize_Control extends WP_Customize_Control {
 				
@@ -127,32 +157,84 @@ function spasalon_home_page_customizer( $wp_customize ){
 				public function render_content() {
 				?>
 				<p>
-				<a href="<?php echo esc_url( __('http://webriti.com/spasalon/', 'spasalon'));?>" target="_blank" ><?php _e( 'Add New Slide Upgrade to Pro.','spasalon' ); ?></a>
+				<a href="<?php bloginfo ( 'url' );?>/wp-admin/edit.php" class="button"  target="_blank"><?php _e( 'Click here to add slides', 'spasalon' ); ?></a>
 				</p>
 				<?php
 				}
 			}
+			
 			$wp_customize->add_setting('btn_slider',	array(
 			'default' => '',
 			'capability'     => 'edit_theme_options',
 			'sanitize_callback' => 'sanitize_text_field',
 			'type' => 'option',
 			) );
+			
 			$wp_customize->add_control( new WP_btn_slider_Customize_Control( $wp_customize, 'btn_slider', array(	
 					'label' => __('Discover spasalon Pro','spasalon'),
 					'section' => 'slider_section',
 			) )	);
+	
+}
+
+
+// customizer service section settings
+
+function spasalon_service_section_customizer( $wp_customize ){
+	
+	/* service panel */
+	
+	$wp_customize->add_panel( 'service_panel', array(
+		'priority'       => 127,
+		'capability'     => 'edit_theme_options',
+		'title'      => __('Service Section', 'spasalon'),
+	) );
+		
+
+		$wp_customize->add_section( 'service_settings' , array(
+			'title'      => __('Settings', 'spasalon'),
+			'panel'  => 'service_panel',
+			'priority'       => 1,
+		) );
+		
+			// service hide
+			$wp_customize->add_setting( 'spa_theme_options[service_hide]' , array(
+			'default' => false,
+			'sanitize_callback' => 'sanitize_text_field',
+			'type'=>'option'
+			) );
+			$wp_customize->add_control('spa_theme_options[service_hide]' , array(
+			'label'          => __( 'Hide service section', 'spasalon' ),
+			'section'        => 'service_settings',
+			'type'           => 'checkbox'
+			) );
 			
-		/* service section */
+			// service layout
+			$wp_customize->add_setting( 'spa_theme_options[service_layout]' , array(
+			'default' => 4,
+			'sanitize_callback' => 'sanitize_text_field',
+			'type'=>'option'
+			) );
+			$wp_customize->add_control('spa_theme_options[service_layout]' , array(
+			'label'          => __( 'Select Service Column', 'spasalon' ),
+			'section'        => 'service_settings',
+			'type'           => 'select',
+			'choices' => array(
+				1 => 1,
+				2 => 2,
+				3 => 3,
+				4 => 4,
+			) ) );
+		
 		$wp_customize->add_section( 'service_section' , array(
-			'title'      => __('Service Settings', 'spasalon'),
-			'panel'  => 'home_page_settings'
+			'title'      => __('Section Header', 'spasalon'),
+			'panel'  => 'service_panel',
+			'priority'       => 2,
 		) );
 		
 			// service title
 			$wp_customize->add_setting( 'spa_theme_options[tagline_title]' , array(
-			'default' => 'Treatment we are offering',
-			'sanitize_callback' => 'sanitize_text_field',
+			'sanitize_callback' => 'spasalon_home_page_sanitize_text',
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[tagline_title]' , array(
@@ -161,209 +243,71 @@ function spasalon_home_page_customizer( $wp_customize ){
 			'type'           => 'text'
 			) );
 			
-			//Service Description
+			// service desc
 			$wp_customize->add_setting( 'spa_theme_options[tagline_contents]' , array(
-			'default' => __('In commodo pulvinar metus, id tristique massa ultrices at. Nulla auctor turpis ut mi pulvinar eu accumsan risus sagittis. Mauris nunc ligula, ullamcorper vitae accumsan eu,congue in nulla. Cras hendrerit mi quis nisi semper in sodales nisl faucibus. Sed quis quam eu ante ornare hendrerit.','spasalon'),
-			'sanitize_callback' => 'spasalon_home_page_sanitize_text',
 			'type'=>'option',
+			'sanitize_callback' => 'spasalon_home_page_sanitize_text',
 			) );
 			$wp_customize->add_control('spa_theme_options[tagline_contents]' , array(
 			'label'          => __( 'Service Section Description', 'spasalon' ),
 			'section'        => 'service_section',
 			'type'           => 'textarea'
 			) );
-			
-			
-			
-			
-			// service 1 title
-			$wp_customize->add_setting( 'spa_theme_options[service1_title]' , array(
-			'default' => __('Spa Treatment','spasalon'),
-			'type'=>'option',
-			'sanitize_callback' => 'sanitize_text_field',
-			) );
-			$wp_customize->add_control('spa_theme_options[service1_title]' , array(
-			'label'          => __( 'Service 1 Title', 'spasalon' ),
-			'section'        => 'service_section',
-			'type'           => 'text',
-			) );
-			
-			// service 1 desc
-			$wp_customize->add_setting( 'spa_theme_options[service1_desc]' , array(
-			'default' => __('Pellen tesque habitant morbi tristique netus et malesuada fames ac turpis egestas In in massa urna, vitae vestibulum orci. yoursb Maecenas quis est sed mauris...','spasalon'),
-			'type'=>'option',
-			'sanitize_callback' => 'spasalon_home_page_sanitize_text',
-			) );
-			$wp_customize->add_control('spa_theme_options[service1_desc]' , array(
-			'label'          => __( 'Service 1 Description', 'spasalon' ),
-			'section'        => 'service_section',
-			'type'           => 'textarea'
-			) );
-			
-			// service 1 image
-			$wp_customize->add_setting( 'spa_theme_options[service1_image]' , array(
-			'default' => get_template_directory_uri().'/images/default/home_service_thumb.jpg',
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'esc_url_raw',
-			'type'=>'option'
-			) );
-			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize , 'spa_theme_options[service1_image]' ,
-			array(
-			'label'          => __( 'Service 1 image', 'spasalon' ),
-			'section'        => 'service_section',
-		    ) )	);
-			
-			// service 2 title
-			$wp_customize->add_setting( 'spa_theme_options[service2_title]' , array(
-			'default' => __('Spa Treatment','spasalon'),
-			'type'=>'option',
-			'sanitize_callback' => 'sanitize_text_field',
-			) );
-			$wp_customize->add_control('spa_theme_options[service2_title]' , array(
-			'label'          => __( 'Service 2 Title', 'spasalon' ),
-			'section'        => 'service_section',
-			'type'           => 'text'
-			) );
-			
-			// service 2 desc
-			$wp_customize->add_setting( 'spa_theme_options[service2_desc]' , array(
-			'default' => __('Pellen tesque habitant morbi tristique netus et malesuada fames ac turpis egestas In in massa urna, vitae vestibulum orci. yoursb Maecenas quis est sed mauris...','spasalon'),
-			'type'=>'option',
-			'sanitize_callback' => 'spasalon_home_page_sanitize_text',
-			) );
-			$wp_customize->add_control('spa_theme_options[service2_desc]' , array(
-			'label'          => __( 'Service 2 Description', 'spasalon' ),
-			'section'        => 'service_section',
-			'type'           => 'textarea'
-			) );
-			
-			// service 2 image
-			$wp_customize->add_setting( 'spa_theme_options[service2_image]' , array(
-			'default' => get_template_directory_uri().'/images/default/home_service_thumb.jpg',
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'esc_url_raw',
-			'type'=>'option'
-			) );
-			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize , 'spa_theme_options[service2_image]' ,
-			array(
-			'label'          => __( 'Service 2 image', 'spasalon' ),
-			'section'        => 'service_section',
-		    ) )	);
-			
-			// service 3 title
-			$wp_customize->add_setting( 'spa_theme_options[service3_title]' , array(
-			'default' => __('Spa Treatment','spasalon'),
-			'type'=>'option',
-			'sanitize_callback' => 'sanitize_text_field',
-			
-			
-			) );
-			$wp_customize->add_control('spa_theme_options[service3_title]' , array(
-			'label'          => __( 'Service 3 Title', 'spasalon' ),
-			'section'        => 'service_section',
-			'type'           => 'text'
-			) );
-			
-			// service 3 desc
-			$wp_customize->add_setting( 'spa_theme_options[service3_desc]' , array(
-			'default' => __('Pellen tesque habitant morbi tristique netus et malesuada fames ac turpis egestas In in massa urna, vitae vestibulum orci. yoursb Maecenas quis est sed mauris...','spasalon'),
-			'type'=>'option',
-			'sanitize_callback' => 'spasalon_home_page_sanitize_text',
-			
-			) );
-			$wp_customize->add_control('spa_theme_options[service3_desc]' , array(
-			'label'          => __( 'Service 3 Description', 'spasalon' ),
-			'section'        => 'service_section',
-			'type'           => 'textarea',
-			) );
-			
-			// service 3 image
-			$wp_customize->add_setting( 'spa_theme_options[service3_image]' , array(
-			'default' => get_template_directory_uri().'/images/default/home_service_thumb.jpg',
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'esc_url_raw',
-			'type'=>'option'
-			) );
-			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize , 'spa_theme_options[service3_image]' ,
-			array(
-			'label'          => __( 'Service 3 image', 'spasalon' ),
-			'section'        => 'service_section',
-		    ) )	);
-			
-			// service 4 title
-			$wp_customize->add_setting( 'spa_theme_options[service4_title]' , array(
-			'default' => __('Spa Treatment','spasalon'),
-			'type'=>'option',
-			'sanitize_callback' => 'sanitize_text_field', 
-			) );
-			$wp_customize->add_control('spa_theme_options[service4_title]' , array(
-			'label'          => __( 'Service 4 Title', 'spasalon' ),
-			'section'        => 'service_section',
-			'type'           => 'text'
-			) );
-			
-			// service 4 desc
-			$wp_customize->add_setting( 'spa_theme_options[service4_desc]' , array(
-			'default' => __('Pellen tesque habitant morbi tristique netus et malesuada fames ac turpis egestas In in massa urna, vitae vestibulum orci. yoursb Maecenas quis est sed mauris...','spasalon'),
-			'type'=>'option',
-			'sanitize_callback' => 'spasalon_home_page_sanitize_text',
-			
-			) );
-			$wp_customize->add_control('spa_theme_options[service4_desc]' , array(
-			'label'          => __( 'Service 4 Description', 'spasalon' ),
-			'section'        => 'service_section',
-			'type'           => 'textarea',
-			) );
-			
-			// service 4 image
-			$wp_customize->add_setting( 'spa_theme_options[service4_image]' , array(
-			'default' => get_template_directory_uri().'/images/default/home_service_thumb.jpg',
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'esc_url_raw',
-			'type'=>'option'
-			) );
-			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize , 'spa_theme_options[service4_image]' ,
-			array(
-			'label'          => __( 'Service 4 image', 'spasalon' ),
-			'section'        => 'service_section',
-		    ) )	);
+}
+
+add_action( 'customize_register', 'spasalon_service_section_customizer' );
+
+
+
+
+
+// customizer project settings
+
+add_action( 'customize_register', 'spasalon_project_section_customizer' );
+
+function spasalon_project_section_customizer( $wp_customize ){
 	
-			
-			class WP_btn_service_Customize_Control extends WP_Customize_Control {
-				
-				public $type = 'new_menu';
-				public function render_content() {
-				?>
-				<p>
-				<a href="<?php echo esc_url( __('http://webriti.com/spasalon/', 'spasalon'));?>" target="_blank" ><?php _e( 'Add New Service Upgrade to Pro','spasalon' ); ?></a>
-				
-				</p>
-				<?php
-				}
-			}
-			$wp_customize->add_setting('btn_service',	array(
-			'default' => '',
-			'capability'     => 'edit_theme_options',
+	/* project panel */
+	$wp_customize->add_panel( 'project_panel', array(
+		'priority'       => 128,
+		'capability'     => 'edit_theme_options',
+		'title'      => __('Project Section', 'spasalon'),
+	) );
+		
+		/* settings */
+		$wp_customize->add_section( 'project_settings' , array(
+			'title'      => __('Settings', 'spasalon'),
+			'panel'  => 'project_panel',
+			'priority'       => 1,
+		) );
+		
+			// project hide
+			$wp_customize->add_setting( 'spa_theme_options[project_hide]' , array(
+			'default' => false,
 			'sanitize_callback' => 'sanitize_text_field',
-			'type' => 'option',
+			'type'=>'option'
 			) );
-			$wp_customize->add_control( new WP_btn_service_Customize_Control( $wp_customize, 'btn_service', array(	
-					'label' => __('Discover spasalon Pro','spasalon'),
-					'section' => 'service_section',
-			) )	);
 			
+			$wp_customize->add_control('spa_theme_options[project_hide]' , array(
+			'label'          => __( 'Hide project section', 'spasalon' ),
+			'section'        => 'project_settings',
+			'type'           => 'checkbox'
+			) );
+			
+		
 		/* project section */
 		$wp_customize->add_section( 'project_section' , array(
-			'title'      => __('Project Settings', 'spasalon'),
-			'panel'  => 'home_page_settings'
+			'title'      => __('Section Header', 'spasalon'),
+			'panel'  => 'project_panel',
+			'priority'       => 2,
 		) );
 		
 			// project title
 			$wp_customize->add_setting( 'spa_theme_options[product_title]' , array(
-			'default' => 'Spasalon Our product rang',
-			'sanitize_callback' => 'sanitize_text_field',
+			'sanitize_callback' => 'spasalon_home_page_sanitize_text',
 			'type'=>'option'
 			) );
+			
 			$wp_customize->add_control('spa_theme_options[product_title]' , array(
 			'label'          => __( 'Project Section Title', 'spasalon' ),
 			'section'        => 'project_section',
@@ -372,249 +316,80 @@ function spasalon_home_page_customizer( $wp_customize ){
 			
 			// project desc
 			$wp_customize->add_setting( 'spa_theme_options[product_contents]' , array(
-			'default' => __('A SpaSalon Produc Heading Title In commodo pulvinar metus, id tristique massa ultrices at. Nulla auctor turpis ut mi pulvinar eu accumsan risus sagittis. Mauris nunc ligula, ullamcorper vitae accumsan eu, congue in nulla. Cras hendrerit mi quis nisi semper in sodales nisl faucibus. Sed quis quam eu ante ornare hendrerit.','spasalon'),
 			'type'=>'option',
 			'sanitize_callback' => 'spasalon_home_page_sanitize_text',
+			
 			) );
+			
 			$wp_customize->add_control('spa_theme_options[product_contents]' , array(
 			'label'          => __( 'Project Section Description', 'spasalon' ),
 			'section'        => 'project_section',
 			'type'           => 'textarea'
 			) );
-			
-			// project 1 title
-			$wp_customize->add_setting( 'spa_theme_options[product1_title]' , array(
-			'default' => __('Product 1','spasalon'),
-			'type'=>'option',
-			'sanitize_callback' => 'sanitize_text_field',
-			) );
-			$wp_customize->add_control('spa_theme_options[product1_title]' , array(
-			'label'          => __( 'Product 1 Title', 'spasalon' ),
-			'section'        => 'project_section',
-			'type'           => 'text'
-			) );
-			
-			// project 1 desc
-			$wp_customize->add_setting( 'spa_theme_options[product1_desc]' , array(
-			'default' => __('Pellentesque habitant...','spasalon'),
-			'type'=>'option',
-			'sanitize_callback' => 'spasalon_home_page_sanitize_text',
-			) );
-			$wp_customize->add_control('spa_theme_options[product1_desc]' , array(
-			'label'          => __( 'Product 1 Description', 'spasalon' ),
-			'section'        => 'project_section',
-			'type'           => 'textarea'
-			) );
-			
-			// project 1 image
-			$wp_customize->add_setting( 'spa_theme_options[product1_image]' , array(
-			'default' => get_template_directory_uri().'/images/default/home_product_thumb.jpg',
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'esc_url_raw',
-			'type'=>'option'
-			) );
-			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize , 'spa_theme_options[product1_image]' ,
-			array(
-			'label'          => __( 'Product 1 image', 'spasalon' ),
-			'section'        => 'project_section',
-		    ) )	);
-			
-			// project 2 title
-			$wp_customize->add_setting( 'spa_theme_options[product2_title]' , array(
-			'default' => __('Product 2','spasalon'),
-			'type'=>'option',
-			'sanitize_callback' => 'sanitize_text_field',
-			) );
-			$wp_customize->add_control('spa_theme_options[product2_title]' , array(
-			'label'          => __( 'Product 2 Title', 'spasalon' ),
-			'section'        => 'project_section',
-			'type'           => 'text'
-			) );
-			
-			// project 2 desc
-			$wp_customize->add_setting( 'spa_theme_options[product2_desc]' , array(
-			'default' => __('Pellentesque habitant...','spasalon'),
-			'type'=>'option',
-			'sanitize_callback' => 'spasalon_home_page_sanitize_text',
-			) );
-			$wp_customize->add_control('spa_theme_options[product2_desc]' , array(
-			'label'          => __( 'Product 2 Description', 'spasalon' ),
-			'section'        => 'project_section',
-			'type'           => 'textarea'
-			) );
-			
-			// project 2 image
-			$wp_customize->add_setting( 'spa_theme_options[product2_image]' , array(
-			'default' => get_template_directory_uri().'/images/default/home_product_thumb.jpg',
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'esc_url_raw',
-			'type'=>'option'
-			) );
-			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize , 'spa_theme_options[product2_image]' ,
-			array(
-			'label'          => __( 'Product 2 image', 'spasalon' ),
-			'section'        => 'project_section',
-		    ) )	);
-			
-			// project 3 title
-			$wp_customize->add_setting( 'spa_theme_options[product3_title]' , array(
-			'default' => __('Product 3','spasalon'),
-			'type'=>'option',
-			'sanitize_callback' => 'sanitize_text_field',
-			) );
-			$wp_customize->add_control('spa_theme_options[product3_title]' , array(
-			'label'          => __( 'Product 3 Title', 'spasalon' ),
-			'section'        => 'project_section',
-			'type'           => 'text'
-			) );
-			
-			// project 3 desc
-			$wp_customize->add_setting( 'spa_theme_options[product3_desc]' , array(
-			'default' => __('Pellentesque habitant...','spasalon'),
-			'type'=>'option',
-			'sanitize_callback' => 'spasalon_home_page_sanitize_text',
-			
-			) );
-			$wp_customize->add_control('spa_theme_options[product3_desc]' , array(
-			'label'          => __( 'Product 3 Description', 'spasalon' ),
-			'section'        => 'project_section',
-			'type'           => 'textarea'
-			) );
-			
-			// project 3 image
-			$wp_customize->add_setting( 'spa_theme_options[product3_image]' , array(
-			'default' => get_template_directory_uri().'/images/default/home_product_thumb.jpg',
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'esc_url_raw',
-			'type'=>'option'
-			) );
-			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize , 'spa_theme_options[product3_image]' ,
-			array(
-			'label'          => __( 'Product 3 image', 'spasalon' ),
-			'section'        => 'project_section',
-		    ) )	);
-			
-			// project 4 title
-			$wp_customize->add_setting( 'spa_theme_options[product4_title]' , array(
-			'default' => __('Product 4','spasalon'),
-			'type'=>'option',
-			'sanitize_callback' => 'sanitize_text_field',
-			) );
-			$wp_customize->add_control('spa_theme_options[product4_title]' , array(
-			'label'          => __( 'Product 4 Title', 'spasalon' ),
-			'section'        => 'project_section',
-			'type'           => 'text'
-			) );
-			
-			// project 4 desc
-			$wp_customize->add_setting( 'spa_theme_options[product4_desc]' , array(
-			'default' => __('Pellentesque habitant...','spasalon'),
-			'type'=>'option',
-			'sanitize_callback' => 'spasalon_home_page_sanitize_text',
-			) );
-			$wp_customize->add_control('spa_theme_options[product4_desc]' , array(
-			'label'          => __( 'Product 4 Description', 'spasalon' ),
-			'section'        => 'project_section',
-			'type'           => 'textarea'
-			) );
-			
-			// project 4 image
-			$wp_customize->add_setting( 'spa_theme_options[product4_image]' , array(
-			'default' => get_template_directory_uri().'/images/default/home_product_thumb.jpg',
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'esc_url_raw',
-			'type'=>'option'
-			) );
-			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize , 'spa_theme_options[product4_image]' ,
-			array(
-			'label'          => __( 'Product 4 image', 'spasalon' ),
-			'section'        => 'project_section',
-		    ) )	);
-			
-			// project 5 title
-			$wp_customize->add_setting( 'spa_theme_options[product5_title]' , array(
-			'default' => __('Product 5','spasalon'),
-			'type'=>'option',
-			'sanitize_callback' => 'sanitize_text_field',
-			) );
-			$wp_customize->add_control('spa_theme_options[product5_title]' , array(
-			'label'          => __( 'Product 5 Title', 'spasalon' ),
-			'section'        => 'project_section',
-			'type'           => 'text'
-			) );
-			
-			// project 5 desc
-			$wp_customize->add_setting( 'spa_theme_options[product5_desc]' , array(
-			'default' => __('Pellentesque habitant...','spasalon'),
-			'type'=>'option',
-			'sanitize_callback' => 'spasalon_home_page_sanitize_text',
-			) );
-			$wp_customize->add_control('spa_theme_options[product5_desc]' , array(
-			'label'          => __( 'Product 5 Description', 'spasalon' ),
-			'section'        => 'project_section',
-			'type'           => 'textarea'
-			) );
-			
-			// project 5 image
-			$wp_customize->add_setting( 'spa_theme_options[product5_image]' , array(
-			'default' => get_template_directory_uri().'/images/default/home_product_thumb.jpg',
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'esc_url_raw',
-			'type'=>'option'
-			) );
-			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize , 'spa_theme_options[product5_image]' ,
-			array(
-			'label'          => __( 'Product 5 image', 'spasalon' ),
-			'section'        => 'project_section',
-		    ) )	);
-			
-			class WP_btn_project_Customize_Control extends WP_Customize_Control {
-				
-				public $type = 'new_menu';
-				public function render_content() {
-				?>
-				<p>
-				<a href="<?php echo esc_url( __('http://webriti.com/spasalon/', 'spasalon'));?>" target="_blank" ><?php _e( 'Add New Product Upgrade to Pro','spasalon' ); ?></a>
-				</p>
-				<?php
-				}
-			}
-			$wp_customize->add_setting('btn_project',	array(
-			'default' => '',
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'sanitize_text_field',
-			'type' => 'option',
-			) );
-			$wp_customize->add_control( new WP_btn_project_Customize_Control( $wp_customize, 'btn_project', array(	
-					'label' => __('Discover spasalon Pro','spasalon'),
-					'section' => 'project_section',
-			) )	);
-			
-		/* news section */
-		$wp_customize->add_section( 'news_section' , array(
-			'title'      => __('News Settings', 'spasalon'),
-			'panel'  => 'home_page_settings'
-		) );
+}
+
+
+
+
+
+// customizer news settings
+
+function spasalon_news_customizer( $wp_customize ){
+	
+	/* home page settings */
+	$wp_customize->add_panel( 'news_panel', array(
+		'priority'       => 129,
+		'capability'     => 'edit_theme_options',
+		'title'      => __('News section', 'spasalon'),
+	) );
 		
+		/* settings */
+		$wp_customize->add_section( 'news_settings' , array(
+			'title'      => __('Settings', 'spasalon'),
+			'panel'  => 'news_panel',
+			'priority'       => 1,
+		) );
+			
 			// news enable / disable 
 			$wp_customize->add_setting( 'spa_theme_options[enable_news]' , array(
-			'default' => 'yes',
+			'default' => true,
 			'sanitize_callback' => 'sanitize_text_field',
 			'type'=>'option'
 			) );
+			
 			$wp_customize->add_control('spa_theme_options[enable_news]' , array(
 			'label'          => __( 'Enable News Section', 'spasalon' ),
-			'section'        => 'news_section',
-			'type'           => 'radio',
-			'choices'        => array(
-				'yes' => 'ON',
-				'no'  => 'OFF'
+			'section'        => 'news_settings',
+			'type'           => 'checkbox',
+			) );
+			
+			// news layout
+			$wp_customize->add_setting( 'spa_theme_options[news_layout]' , array(
+			'default' => 2,
+			'sanitize_callback' => 'sanitize_text_field',
+			'type'=>'option'
+			) );
+			$wp_customize->add_control('spa_theme_options[news_layout]' , array(
+			'label'          => __( 'Select News Column Layout', 'spasalon' ),
+			'section'        => 'news_settings',
+			'type'           => 'select',
+			'choices' => array(
+				1 => 1,
+				2 => 2,
+				3 => 3,
+				4 => 4,
 			) ) );
+			
+		/* news section header */
+		$wp_customize->add_section( 'news_section' , array(
+			'title'      => __('News Header', 'spasalon'),
+			'panel'  => 'news_panel',
+			'priority'       => 2,
+		) );
 			
 			// news title
 			$wp_customize->add_setting( 'spa_theme_options[news_title]' , array(
-			'default' => 'Our Latest News & Events',
-			'sanitize_callback' => 'sanitize_text_field',
+			'sanitize_callback' => 'spasalon_home_page_sanitize_text',
 			'type'=>'option'
 			) );
 			$wp_customize->add_control('spa_theme_options[news_title]' , array(
@@ -625,44 +400,20 @@ function spasalon_home_page_customizer( $wp_customize ){
 			
 			// news desc
 			$wp_customize->add_setting( 'spa_theme_options[news_contents]' , array(
-			'default' => __('A SpaSalon Produc Heading Title In commodo pulvinar metus, id tristique massa ultrices at. Nulla auctor turpis ut mi pulvinar eu accumsan risus sagittis. Mauris nunc ligula, ullamcorper vitae accumsan eu, congue in nulla. Cras hendrerit mi quis nisi semper in sodales nisl faucibus. Sed quis quam eu ante ornare hendrerit.','spasalon'),
 			'type'=>'option',
 			'sanitize_callback' => 'spasalon_home_page_sanitize_text',
+			
 			) );
 			$wp_customize->add_control('spa_theme_options[news_contents]' , array(
 			'label'          => __( 'News Section Description', 'spasalon' ),
 			'section'        => 'news_section',
 			'type'           => 'textarea'
 			) );
-			
-			
-			class WP_btn_news_Customize_Control extends WP_Customize_Control {
-				
-				public $type = 'new_menu';
-				public function render_content() {
-				?>
-				<p>
-				<a href="<?php bloginfo ( 'url' );?>/wp-admin/edit.php" class="button"  target="_blank"><?php _e( 'Click here to add new post', 'spasalon' ); ?></a>
-				</p>
-				<?php
-				}
-			}
-			$wp_customize->add_setting('btn_news',	array(
-			'default' => '',
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'sanitize_text_field',
-			'type' => 'option',
-			) );
-			$wp_customize->add_control( new WP_btn_news_Customize_Control( $wp_customize, 'btn_news', array(	
-					'label' => __('Discover spasalon Pro','spasalon'),
-					'section' => 'news_section',
-			) )	);
-	
-			function spasalon_home_page_sanitize_text( $input ) {
+}
+add_action( 'customize_register', 'spasalon_news_customizer' );
+
+function spasalon_home_page_sanitize_text( $input ) {
 
 			return wp_kses_post( force_balance_tags( $input ) );
 
 			}
-	
-}
-add_action( 'customize_register', 'spasalon_home_page_customizer' );

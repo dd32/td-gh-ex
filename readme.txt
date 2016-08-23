@@ -106,6 +106,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@Version 1.7
+1. Home Page Section widgetization with new guideline.
 @Version 1.6.3
 1. Solved Styling issue.
 @Version 1.6.2

@@ -23,7 +23,7 @@
 .navbar-default .navbar-nav > li > a:before, 
 #slider .topbar-detail, 
 #spa-page-header .topbar-detail, 
-a.thumb-btn:before, .flex-direction-nav a:hover::before, 
+a.thumb-btn:before, .flex-direction-nav a:hover::before, .direction-nav a:hover::before, 
 .more-link, 
 .more-link:hover, 
 .paginations a:before, 
@@ -33,24 +33,21 @@ a.thumb-btn:before, .flex-direction-nav a:hover::before,
 .widget table tbody a, 
 .scrollup, 
 ins, 
-input[type="submit"], input[type="reset"]{ 
+input[type="submit"],
+.post-thumbnail i, 
+.woocommerce .widget_price_filter .ui-slider .ui-slider-range, table th
+ { 
 	background-color: #f22853; 
 }
-th{color:#626668;}
 
 /* Text Color */
-.service .entry-header .entry-title > a:hover, 
-.service-page .entry-header .entry-title > a:hover, 
-.home-post .entry-header .entry-title > a:hover, 
-.about-service .entry-header .entry-title > a:hover, 
-.widget .post .entry-header .entry-title > a:hover, 
-.site-content .post .entry-header .entry-title > a:hover, 
+.entry-title > a:hover, 
 .txt-color, .team-designation, .prt-detail h4, .prt-detail h4 a, .product-name, .product-price, .product-detail .price, 
 .widget ul li a:hover, .widget ul li a:focus, .widget table #next a:hover, .widget table #next a:focus, .widget table #prev a:hover, 
 .widget table #prev a:focus, .tagcloud a:hover, .tagcloud a:focus, .footer-sidebar .widget p a:hover, 
 .footer-links li > a:hover, .footer-links li > a:focus, .site-info p a:hover, .site-info p a:focus, 
 .datetime:hover, .datetime:focus, .reply a:hover, .reply a:focus, .phone, 
-tbody a, p a, dl dd a, a { 
+tbody a, p a, dl dd a, a, a:hover, div[class*="wbr_project_widget"] .prt-detail h4 a { 
 	color: #f22853; 
 }
 
@@ -159,3 +156,5 @@ ins span {
 .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover {
     color: #d61841;
 }
+
+.google-map #wpgmza_map { border-bottom: 4px solid #d61841; }

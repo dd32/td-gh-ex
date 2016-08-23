@@ -15,24 +15,7 @@ page_banner_strip(); // banner strip
 		<div class="row">
 			
 			<!--Blog Detail-->
-			<?php 
-				if ( class_exists( 'WooCommerce' ) ) {
-					
-					if( is_account_page() || is_cart() || is_checkout() ) {
-							echo '<div class="col-md-'.( !is_active_sidebar( "woocommerce-1" ) ?"12" :"8" ).'">'; 
-					}
-					else{ 
-				
-					echo '<div class="col-md-'.( !is_active_sidebar( "sidebar-primary" ) ?"12" :"8" ).'">'; 
-					
-					}
-					
-				}
-				else{ 
-				
-					echo '<div class="col-md-'.( !is_active_sidebar( "sidebar-primary" ) ?"12" :"8" ).'">';
-					
-					} ?>
+			<div class="col-md-8 col-xs-12">
 				<div class="site-content">
 					
 					<?php while( have_posts() ): the_post(); ?>

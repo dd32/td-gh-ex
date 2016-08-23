@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: spasalon\n"
-"POT-Creation-Date: 2016-06-18 12:27+0530\n"
-"PO-Revision-Date: 2016-06-18 12:27+0530\n"
+"POT-Creation-Date: 2016-03-19 11:49+0530\n"
+"PO-Revision-Date: 2016-03-19 11:49+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -10,142 +10,176 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.5\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
-"X-Poedit-Basepath: D:\\xampp\\htdocs\\wordpress_latest\\wp-content\\themes"
+"X-Poedit-Basepath: D:\\xampp\\htdocs\\wordpress\\wp-content\\themes"
 "\\spasalon\n"
-"X-Poedit-SearchPath-0: D:\\xampp\\htdocs\\wordpress_latest\\wp-content"
-"\\themes\\spasalon\n"
+"X-Poedit-SearchPath-0: D:\\xampp\\htdocs\\wordpress\\wp-content\\themes"
+"\\spasalon\n"
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/404.php:20
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/404.php:20
 msgid "Oops! Page not found"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/404.php:22
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/404.php:22
 msgid "4"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/404.php:24
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/404.php:24
 msgid "Page doesnt exist or some other error occured. Go to our"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/404.php:24
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/404.php:24
 msgid "home page"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/archive.php:40
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/category.php:40
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/index-news.php:106
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/index.php:38
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/search.php:40
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/tag.php:40
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/about.php:23
+msgid "Welcome to "
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/about.php:85
+msgid "Designation: "
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/archive.php:40
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/blog-full.php:39
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/blog-left-sidebar.php:41
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/blog-right-sidebar.php:39
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/category.php:40
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/index-news.php:109
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/index.php:38
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/search.php:40
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/tag.php:40
 msgid "Previous"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/archive.php:41
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/category.php:41
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/index-news.php:107
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/index.php:39
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/search.php:41
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/tag.php:41
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/archive.php:41
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/blog-full.php:40
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/blog-left-sidebar.php:42
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/blog-right-sidebar.php:40
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/category.php:41
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/index-news.php:110
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/index.php:39
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/search.php:41
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/tag.php:41
 msgid "Next"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/comments.php:17
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/comments.php:17
 msgid "Reply"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/comments.php:32
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/comments.php:32
 msgid "at"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/comments.php:83
-msgid "Comment navigation"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/comments.php:84
-msgid "&larr; Older Comments"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/comments.php:85
-msgid "Newer Comments &rarr;"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/comments.php:90
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/comments.php:85
 msgid "Comments are closed."
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/content-none.php:6
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/contact.php:85
+msgid "Freephone:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/contact.php:89
+msgid "Telephone:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/contact.php:93
+msgid "FAX:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/contact.php:97
+msgid "E-mail:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/contact.php:110
+msgid "Mon."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/contact.php:114
+msgid "Tue. - Wed."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/contact.php:118
+msgid "Thu."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/contact.php:122
+msgid "Fri."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/contact.php:126
+msgid "Sat."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/contact.php:130
+msgid "Sun."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/content-none.php:6
 msgid "Nothing Found"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/content-none.php:12
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/content-none.php:12
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/content-none.php:16
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/content-none.php:16
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/content-none.php:21
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/content-none.php:21
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/content.php:22
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/index-news.php:76
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/content.php:22
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/index-news.php:79
 msgid "Read More"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions.php:53
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/footer.php:92
+msgid "Style Changer"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/footer.php:94
+msgid "Select Color Style"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions.php:57
 msgid "Primary Menu"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions.php:54
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions.php:58
 msgid "Footer Menu"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/header.php:35
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/header.php:35
 msgid "Toggle navigation"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/default_data.php:18
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/index-slider.php:131
+msgid "Explore More"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:20
 msgid "201 567 8978"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/default_data.php:19
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/general-settings.php:129
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:21
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/general-settings.php:216
 msgid "Call us on"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/default_data.php:23
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:36
-msgid "Get Yourself"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/default_data.php:24
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:48
-msgid "Refreshed"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/default_data.php:25
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:60
-msgid ""
-"Donec justo odio, lobortis eget congue sed, rutrum sit amet mauris. "
-"Curabitur sed lectus nulla. Curabitur sed lectus nulla.lobortis eget congue "
-"sed, rutrum sit amet mauris. Curabitur sed lectus nulla rutrum sit amet "
-"mauris"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/default_data.php:32
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:32
 msgid "Treatment we are offering"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/default_data.php:33
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:166
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:33
 msgid ""
 "In commodo pulvinar metus, id tristique massa ultrices at. Nulla auctor "
 "turpis ut mi pulvinar eu accumsan risus sagittis. Mauris nunc ligula, "
@@ -153,425 +187,12 @@ msgid ""
 "semper in sodales nisl faucibus. Sed quis quam eu ante ornare hendrerit."
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/default_data.php:35
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/default_data.php:39
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/default_data.php:43
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/default_data.php:47
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:181
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:218
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:255
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:295
-msgid "Spa Treatment"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/default_data.php:36
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/default_data.php:40
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/default_data.php:44
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/default_data.php:48
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:193
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:230
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:269
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:307
-msgid ""
-"Pellen tesque habitant morbi tristique netus et malesuada fames ac turpis "
-"egestas In in massa urna, vitae vestibulum orci. yoursb Maecenas quis est "
-"sed mauris..."
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/default_data.php:52
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:37
 msgid "Spasalon Our product rang"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/default_data.php:53
-msgid ""
-"A Spasalon Produc Heading Title In commodo pulvinar metus, id tristique "
-"massa ultrices at. Nulla auctor turpis ut mi pulvinar eu accumsan risus "
-"sagittis. Mauris nunc ligula, ullamcorper vitae accumsan eu, congue in "
-"nulla. Cras hendrerit mi quis nisi semper in sodales nisl faucibus. Sed quis "
-"quam eu ante ornare hendrerit."
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/default_data.php:55
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:387
-msgid "Product 1"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/default_data.php:56
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/default_data.php:60
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/default_data.php:64
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/default_data.php:68
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/default_data.php:72
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:399
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:436
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:473
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:511
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:548
-msgid "Pellentesque habitant..."
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/default_data.php:59
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:424
-msgid "Product 2"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/default_data.php:63
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:461
-msgid "Product 3"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/default_data.php:67
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:499
-msgid "Product 4"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/default_data.php:71
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:536
-msgid "Product 5"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/default_data.php:76
-msgid "Our Latest News & Events"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/default_data.php:77
-msgid ""
-"A spasalon Produc Heading Title In commodo pulvinar metus, id tristique "
-"massa ultrices at. Nulla auctor turpis ut mi pulvinar eu accumsan risus "
-"sagittis. Mauris nunc ligula, ullamcorper vitae accumsan eu, congue in "
-"nulla. Cras hendrerit mi quis nisi semper in sodales nisl faucibus. Sed quis "
-"quam eu ante ornare hendrerit."
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/banner-settings.php:9
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/general-settings.php:103
-msgid "Banner Settings"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/banner-settings.php:14
-msgid "Category Banner Settings"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/banner-settings.php:24
-msgid "Category Banner Title 1"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/banner-settings.php:35
-msgid "Category Banner Title 2"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/banner-settings.php:46
-msgid "Category Banner Description"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/banner-settings.php:53
-msgid "Archive Banner Settings"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/banner-settings.php:63
-msgid "Archive Banner Title 1"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/banner-settings.php:74
-msgid "Archive Banner Title 2"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/banner-settings.php:85
-msgid "Archive Banner Description"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/banner-settings.php:92
-msgid "Tag Banner Settings"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/banner-settings.php:102
-msgid "Tag Banner Title 1"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/banner-settings.php:113
-msgid "Tag Banner Title 2"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/banner-settings.php:124
-msgid "Tag Banner Description"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/banner-settings.php:131
-msgid "Search Banner Settings"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/banner-settings.php:141
-msgid "Search Banner Title 1"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/banner-settings.php:152
-msgid "Search Banner Title 2"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/banner-settings.php:163
-msgid "Search Banner Description"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/banner-settings.php:170
-msgid "404 Banner Settings"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/banner-settings.php:180
-msgid "404 Banner Title 1"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/banner-settings.php:191
-msgid "404 Banner Title 2"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/banner-settings.php:202
-msgid "404 Banner Description"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/banner-settings.php:209
-msgid "Woocommerce Page Banner Settings"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/banner-settings.php:219
-msgid "Woocommerce Banner Title 1"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/banner-settings.php:230
-msgid "Woocommerce Banner Title 2"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/banner-settings.php:241
-msgid "Woocommerce Banner Description"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/customizer-pro.php:15
-msgid "http://webriti.com/demo/wp/spasalon/"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/customizer-pro.php:15
-msgid "View Demo"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/customizer-pro.php:30
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/customizer-pro.php:96
-msgid "Discover Health center lite Pro"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/customizer-pro.php:46
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:130
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:338
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:577
-msgid "http://webriti.com/spasalon/"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/customizer-pro.php:46
-msgid "UPGRADE  TO PRO"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/customizer-pro.php:53
-msgid "UPGRADE  TO PRO VERSION"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/customizer-pro.php:66
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/customizer-pro.php:131
-msgid "Discover Spasalon lite Pro"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/customizer-pro.php:81
-msgid "https://wordpress.org/support/view/theme-reviews/spasalon#postform/"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/customizer-pro.php:81
-msgid "ADD YOUR REVIEW"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/customizer-pro.php:112
-msgid "http://webriti.com/help/"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/customizer-pro.php:112
-msgid "DOCUMENTATION"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/customizer-pro.php:116
-msgid ""
-"The Pro Version gives you more opportunities to enhance your site and "
-"business. In order to create effective online presence one have to showcase "
-"their wide range of products, have to use contact us enquiry form, have to "
-"make effective about us page, have to introduce team members, etc etc . The "
-"pro version will give it all. Buy the pro version and give us a chance to "
-"serve you better. "
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/general-settings.php:43
-msgid "General Settings"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/general-settings.php:48
-msgid "Logo Settings"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/general-settings.php:61
-msgid "Upload Logo Image  ( 150 x 35 )"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/general-settings.php:72
-msgid "Width"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/general-settings.php:84
-msgid "Height"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/general-settings.php:96
-msgid "Enable Logo Text"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/general-settings.php:114
-msgid "Enable Spa Banner strip in all pages"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/general-settings.php:141
-msgid "Call us Text"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/general-settings.php:148
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/general-settings.php:160
-msgid "Custom CSS"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/general-settings.php:167
-msgid "Footer Copyright"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/general-settings.php:178
-msgid "Copyright Text"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:10
-msgid "Home Page"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:15
-msgid "Slider Settings"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:26
-msgid "Slider Banner Enable in home page"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:41
-msgid "Featured Banner title 1"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:53
-msgid "Featured Banner title 2"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:65
-msgid "Featured Banner description"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:79
-msgid "Featured Banner image"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:93
-msgid "Featured Banner thumbnail 1"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:107
-msgid "Featured Banner thumbnail 2"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:120
-msgid "Featured Banner thumbnail 3"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:130
-msgid "Add New Slide Upgrade to Pro."
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:142
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:351
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:589
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:657
-msgid "Discover spasalon Pro"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:148
-msgid "Service Settings"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:159
-msgid "Service Section Title"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:171
-msgid "Service Section Description"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:186
-msgid "Service 1 Title"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:198
-msgid "Service 1 Description"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:212
-msgid "Service 1 image"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:223
-msgid "Service 2 Title"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:235
-msgid "Service 2 Description"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:249
-msgid "Service 2 image"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:262
-msgid "Service 3 Title"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:275
-msgid "Service 3 Description"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:289
-msgid "Service 3 image"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:300
-msgid "Service 4 Title"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:313
-msgid "Service 4 Description"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:327
-msgid "Service 4 image"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:338
-msgid "Add New Service Upgrade to Pro"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:357
-msgid "Project Settings"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:368
-msgid "Project Section Title"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:375
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:628
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:38
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:42
 msgid ""
 "A SpaSalon Produc Heading Title In commodo pulvinar metus, id tristique "
 "massa ultrices at. Nulla auctor turpis ut mi pulvinar eu accumsan risus "
@@ -580,213 +201,841 @@ msgid ""
 "quam eu ante ornare hendrerit."
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:380
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:41
+msgid "Our Latest News & Events"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:70
+msgid "Meet Our Great Team"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:72
+msgid "Popular Procedures"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:84
+msgid "Contact Info"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:86
+msgid "Get in Touch"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:87
+msgid "Spa Salon"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:88
+msgid "8901 Marmora Road,"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:89
+msgid "Glasgow,"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:90
+msgid "D04 89GR."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:91
+msgid "+1 800 559 6580"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:92
+msgid "+1 800 603 6035"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:93
+msgid "+1 800 889 9898"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:94
+msgid "themes@webriti.com"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:96
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/template-settings.php:234
+msgid "Opening Hours"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:105
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:109
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:113
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:117
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:121
+msgid "GET YOURSELF"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:106
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:110
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:114
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:118
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:122
+msgid "REFRESHED"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:107
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:111
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:115
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:119
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/default_data.php:123
+msgid ""
+"Banner Description Donec justo odio, lobortis eget congue sed, rutrum sit "
+"amet mauris. Curabitur sed lectus nulla. Curabitur sed lectus nulla.lobortis "
+"eget congue sed, rutrum sit amet mauris. Curabitur sed lectus nulla rutrum "
+"sit amet mauris"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:13
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:14
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:15
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:76
+msgid "Add New Service"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:16
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:48
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:79
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:174
+msgid "New Link"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:17
+msgid "All Featured Services"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:18
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:50
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:81
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:176
+msgid "View Link"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:19
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:51
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:82
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:177
+msgid "Search Links"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:20
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:52
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:83
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:178
+msgid "No Links found"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:21
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:53
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:84
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:179
+msgid "No Links found in Trash"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:45
+msgid "Add New "
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:46
+msgid "Enter member name"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:47
+msgid "Add member name"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:49
+msgid "All Member"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:77
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:78
+msgid "Add new service"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:80
+msgid "All Services"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:171
+msgid "Add New Product"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:172
+msgid "Enter Product Name"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:173
+msgid "Enter Product Name "
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/cpt/cpt.php:175
+msgid "All Product"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/banner-settings.php:9
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/general-settings.php:190
+msgid "Banner Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/banner-settings.php:14
+msgid "Category Banner Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/banner-settings.php:25
+msgid "Category Banner Title 1"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/banner-settings.php:37
+msgid "Category Banner Title 2"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/banner-settings.php:49
+msgid "Category Banner Description"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/banner-settings.php:56
+msgid "Archive Banner Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/banner-settings.php:67
+msgid "Archive Banner Title 1"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/banner-settings.php:79
+msgid "Archive Banner Title 2"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/banner-settings.php:91
+msgid "Archive Banner Description"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/banner-settings.php:98
+msgid "Tag Banner Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/banner-settings.php:109
+msgid "Tag Banner Title 1"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/banner-settings.php:121
+msgid "Tag Banner Title 2"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/banner-settings.php:133
+msgid "Tag Banner Description"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/banner-settings.php:140
+msgid "Search Banner Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/banner-settings.php:151
+msgid "Search Banner Title 1"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/banner-settings.php:163
+msgid "Search Banner Title 2"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/banner-settings.php:175
+msgid "Search Banner Description"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/banner-settings.php:182
+msgid "404 Banner Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/banner-settings.php:193
+msgid "404 Banner Title 1"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/banner-settings.php:205
+msgid "404 Banner Title 2"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/banner-settings.php:217
+msgid "404 Banner Description"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/general-settings.php:76
+msgid "General Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/general-settings.php:82
+msgid "Color Schemes"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/general-settings.php:94
+msgid "Color Scheme"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/general-settings.php:116
+msgid "Enable Custom Color"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/general-settings.php:128
+msgid "Choose Your Color Scheme"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/general-settings.php:135
+msgid "Logo Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/general-settings.php:148
+msgid "Upload Logo Image  ( 250 x 60 )"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/general-settings.php:159
+msgid "Width"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/general-settings.php:171
+msgid "Height"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/general-settings.php:183
+msgid "Enable Logo Text"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/general-settings.php:201
+msgid "Enable Spa Banner strip in all pages"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/general-settings.php:228
+msgid "Call us Text"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/general-settings.php:235
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/general-settings.php:246
+msgid "Custom CSS"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/general-settings.php:253
+msgid "Footer Copyright"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/general-settings.php:263
+msgid "Copyright Text"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/home-page.php:10
+msgid "Home Page"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/home-page.php:15
+msgid "Slider Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/home-page.php:26
+msgid "Slider Banner Enable in home page"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/home-page.php:41
+msgid "Slider Thumbnails Enable in home page"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/home-page.php:56
+msgid "Slider Entries"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/home-page.php:84
+msgid "Slider Effects"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/home-page.php:99
+msgid "Animation Speed"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/home-page.php:123
+msgid "Auto Slide Interval"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/home-page.php:141
+msgid "Service Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/home-page.php:152
+msgid "Service Section Title"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/home-page.php:163
+msgid "Service Section Description"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/home-page.php:175
+msgid "Number of service show on service section"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/home-page.php:189
+msgid "Project Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/home-page.php:200
+msgid "Project Section Title"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/home-page.php:211
 msgid "Project Section Description"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:392
-msgid "Product 1 Title"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:404
-msgid "Product 1 Description"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:418
-msgid "Product 1 image"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:429
-msgid "Product 2 Title"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:441
-msgid "Product 2 Description"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:455
-msgid "Product 2 image"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:466
-msgid "Product 3 Title"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:479
-msgid "Product 3 Description"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:493
-msgid "Product 3 image"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:504
-msgid "Product 4 Title"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:516
-msgid "Product 4 Description"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:530
-msgid "Product 4 image"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:541
-msgid "Product 5 Title"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:553
-msgid "Product 5 Description"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:567
-msgid "Product 5 image"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:577
-msgid "Add New Product Upgrade to Pro"
-msgstr ""
-
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:595
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/home-page.php:218
 msgid "News Settings"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:606
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/home-page.php:229
 msgid "Enable News Section"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:621
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/home-page.php:244
 msgid "News Section Title"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:633
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/home-page.php:255
 msgid "News Section Description"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/customizer/home-page.php:645
-msgid "Click here to add new post"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/home-page.php:267
+msgid "Number of News on News section"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/meta-box/metabox.php:28
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/meta-box/metabox.php:49
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/meta-box/metabox.php:84
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/meta-box/metabox.php:110
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/home-page.php:288
+msgid "Select Category for news"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/layout-manager.php:19
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/layout-manager.php:111
+msgid "Enable"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/layout-manager.php:34
+msgid "Slider section always top on the home page"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/layout-manager.php:35
+msgid "Note:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/layout-manager.php:35
+msgid ""
+"By default all the section are enable on homepage. If you do not want to "
+"display any section just drag that section to the disabled box."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/layout-manager.php:83
+msgid "Layout Manager"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/layout-manager.php:88
+msgid "Front Page Layout"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/layout-manager.php:99
+msgid "Discover Spasalon Pro"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/post-type-slugs.php:10
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/post-type-slugs.php:15
+msgid "Post Type Slugs Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/post-type-slugs.php:26
+msgid "Slider Slug"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/post-type-slugs.php:38
+msgid "Service Slug"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/post-type-slugs.php:50
+msgid "Service Category Slug"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/post-type-slugs.php:62
+msgid "Team Slug"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/post-type-slugs.php:74
+msgid "Products Slug"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/post-type-slugs.php:86
+msgid "Products Category Slug"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/template-settings.php:11
+msgid "Template Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/template-settings.php:16
+msgid "About Page Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/template-settings.php:27
+msgid "Enable Team Section"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/template-settings.php:42
+msgid "Team Section Title"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/template-settings.php:54
+msgid "Enable Service Section"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/template-settings.php:69
+msgid "Team Service Title"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/template-settings.php:76
+msgid "Contact Page Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/template-settings.php:87
+msgid "Enable Google Map Section"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/template-settings.php:102
+msgid "Google Map Section Title"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/template-settings.php:114
+msgid "Google Map URL"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/template-settings.php:126
+msgid "Contact Form Title"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/template-settings.php:138
+msgid "Company Name"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/template-settings.php:150
+msgid "Address 1"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/template-settings.php:162
+msgid "Address 2"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/template-settings.php:174
+msgid "Address 3"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/template-settings.php:186
+msgid "Phone 1"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/template-settings.php:198
+msgid "Phone 2"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/template-settings.php:210
+msgid "Fax No."
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/template-settings.php:222
+msgid "Email Address"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/template-settings.php:246
+msgid "Mon Time"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/template-settings.php:258
+msgid "Tue - Wed Time"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/template-settings.php:270
+msgid "Thus Time"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/template-settings.php:282
+msgid "Fri Time"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/template-settings.php:294
+msgid "Sat Time"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/template-settings.php:306
+msgid "Sun Time"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/typography-settings.php:18
+msgid "Typography Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/typography-settings.php:24
+msgid "Home Page Sections Title"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/typography-settings.php:36
+msgid "Section Title Font Family"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/typography-settings.php:50
+msgid "Section Title Font Size"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/typography-settings.php:64
+msgid "Section Title Font Style"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/typography-settings.php:72
+msgid "Menu Title Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/typography-settings.php:84
+msgid "Menu Title Font Family"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/typography-settings.php:98
+msgid "Menu Title Font Size"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/typography-settings.php:112
+msgid "Menu Title Font Style"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/typography-settings.php:120
+msgid "Post Title Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/typography-settings.php:132
+msgid "Post Title Font Family"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/typography-settings.php:146
+msgid "Post Title Font Size"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/typography-settings.php:160
+msgid "Post Title Font Style"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/typography-settings.php:168
+msgid "Post Excerpt Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/typography-settings.php:180
+msgid "Post Excerpt Font Family"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/typography-settings.php:194
+msgid "Post Excerpt Font Size"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/typography-settings.php:208
+msgid "Post Excerpt Font Style"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/typography-settings.php:216
+msgid "Widget Title Settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/typography-settings.php:228
+msgid "Widget Title Font Family"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/typography-settings.php:242
+msgid "Widget Title Font Size"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/customizer/typography-settings.php:256
+msgid "Widget Title Font Style"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/meta-box/metabox.php:28
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/meta-box/metabox.php:49
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/meta-box/metabox.php:84
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/meta-box/metabox.php:110
 msgid "Enable Banner"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/meta-box/metabox.php:31
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/meta-box/metabox.php:52
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/meta-box/metabox.php:87
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/meta-box/metabox.php:113
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/meta-box/metabox.php:31
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/meta-box/metabox.php:52
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/meta-box/metabox.php:87
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/meta-box/metabox.php:113
 msgid "Banner Description"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/meta-box/metabox.php:34
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/meta-box/metabox.php:55
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/meta-box/metabox.php:90
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/meta-box/metabox.php:116
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/meta-box/metabox.php:34
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/meta-box/metabox.php:55
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/meta-box/metabox.php:90
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/meta-box/metabox.php:116
 msgid "Banner Heading One"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/meta-box/metabox.php:37
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/meta-box/metabox.php:58
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/meta-box/metabox.php:93
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/meta-box/metabox.php:119
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/meta-box/metabox.php:37
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/meta-box/metabox.php:58
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/meta-box/metabox.php:93
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/meta-box/metabox.php:119
 msgid "Banner Heading Two"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/meta-box/metabox.php:61
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/meta-box/metabox.php:61
 msgid "Slide Link"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/meta-box/metabox.php:62
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/meta-box/metabox.php:97
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/meta-box/metabox.php:123
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/meta-box/metabox.php:62
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/meta-box/metabox.php:97
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/meta-box/metabox.php:123
 msgid "Use Proper http:// formate"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/meta-box/metabox.php:65
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/meta-box/metabox.php:100
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/meta-box/metabox.php:125
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/meta-box/metabox.php:65
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/meta-box/metabox.php:100
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/meta-box/metabox.php:125
 msgid "Open link in a new window/tab"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/meta-box/metabox.php:78
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/meta-box/metabox.php:78
 msgid "Product detail"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/meta-box/metabox.php:81
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/meta-box/metabox.php:81
 msgid "Price"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/meta-box/metabox.php:96
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/meta-box/metabox.php:96
 msgid "Product Link"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/meta-box/metabox.php:122
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/meta-box/metabox.php:122
 msgid "Service Link"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/meta-box/metabox.php:134
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/meta-box/metabox.php:134
 msgid "Designation"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/meta-box/metabox.php:137
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/meta-box/metabox.php:137
 msgid "Description"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/meta-box/metabox.php:141
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/meta-box/metabox.php:141
 msgid "Social Media Setting"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/meta-box/metabox.php:142
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/meta-box/metabox.php:142
 msgid "Facebook"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/meta-box/metabox.php:146
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/meta-box/metabox.php:146
 msgid "Twitter Url"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/meta-box/metabox.php:152
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/meta-box/metabox.php:152
 msgid "Google Url"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/widget/sidebars.php:7
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/widget/contact-widget.php:13
+msgid "Spasalon : Contact Widget"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/widget/contact-widget.php:14
+msgid "Contact Widget Section"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/widget/contact-widget.php:74
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/widget/post-widget.php:60
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/widget/product-widget.php:76
+msgid "Title:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/widget/contact-widget.php:79
+msgid "Phone:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/widget/contact-widget.php:84
+msgid "Email:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/widget/contact-widget.php:89
+msgid "Address:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/widget/contact-widget.php:94
+msgid "Facebook Url:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/widget/contact-widget.php:99
+msgid "Twitter Url:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/widget/contact-widget.php:104
+msgid "LinkedIn Url:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/widget/contact-widget.php:109
+msgid "Google Plus Url:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/widget/contact-widget.php:114
+msgid "Skype Url:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/widget/post-widget.php:13
+msgid "Spasalon : Latest Posts"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/widget/post-widget.php:14
+msgid "Latest Post Widget"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/widget/post-widget.php:65
+msgid "No. of post show:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/widget/product-widget.php:13
+msgid "Spasalon : Recent Products"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/widget/product-widget.php:14
+msgid "The most recent products on your site"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/widget/product-widget.php:81
+msgid "No. of product show:"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/widget/sidebars.php:7
 msgid "Primary Sidebar"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/widget/sidebars.php:9
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/widget/sidebars.php:9
 msgid "The primary widget area"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/widget/sidebars.php:17
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/widget/sidebars.php:17
 msgid "Footer Sidebar 1"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/widget/sidebars.php:19
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/widget/sidebars.php:29
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/widget/sidebars.php:39
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/widget/sidebars.php:49
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/widget/sidebars.php:19
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/widget/sidebars.php:29
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/widget/sidebars.php:39
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/widget/sidebars.php:49
 msgid "Footer widget area"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/widget/sidebars.php:27
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/widget/sidebars.php:27
 msgid "Footer Sidebar 2"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/widget/sidebars.php:37
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/widget/sidebars.php:37
 msgid "Footer Sidebar 3"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/widget/sidebars.php:47
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/widget/sidebars.php:47
 msgid "Footer Sidebar 4"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/widget/sidebars.php:57
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/widget/sidebars.php:57
 msgid "Woocommerce Sidebar"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress_latest\wp-content\themes\spasalon/functions/widget/sidebars.php:59
+#: D:\xampp\htdocs\wordpress\wp-content\themes\spasalon/functions/widget/sidebars.php:59
 msgid "Woocommerce sidebar widget area"
 msgstr ""

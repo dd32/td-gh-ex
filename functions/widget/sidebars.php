@@ -3,6 +3,10 @@
 add_action( 'widgets_init', 'spasalon_widgets_init' );
 function spasalon_widgets_init(){
 	
+	$current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), default_data() );
+	$service_layout = 12 / $current_options['service_layout'];
+	$news_layout = 12 / $current_options['news_layout'];
+	
 	register_sidebar( array(
 	'name' => __( 'Primary Sidebar', 'spasalon' ),
 	'id' => 'sidebar-primary',
@@ -11,6 +15,36 @@ function spasalon_widgets_init(){
 	'after_widget' => '</aside>',
 	'before_title' => '<h3 class="widget-title">',
 	'after_title' => '</h3>'
+	) );
+	
+	register_sidebar( array(
+	'name' => __( 'Service Content', 'spasalon' ),
+	'id' => 'sidebar-service',
+	'description' => __( 'Service content widget area', 'spasalon' ),
+	'before_widget' => '<div id="%1$s" class="col-md-'.$service_layout.' col-sm-6 col-xs-12 widget %2$s">',
+	'after_widget' => '</div>',
+	'before_title' => '<h4 class="widget-title">',
+	'after_title' => '</h4>'
+	) );
+	
+	register_sidebar( array(
+	'name' => __( 'Project Content', 'spasalon' ),
+	'id' => 'sidebar-project',
+	'description' => __( 'Project content widget area', 'spasalon' ),
+	'before_widget' => '<div id="%1$s" class="widget item-product  %2$s">',
+	'after_widget' => '</div>',
+	'before_title' => '<h4 class="widget-title">',
+	'after_title' => '</h4>'
+	) );
+	
+	register_sidebar( array(
+	'name' => __( 'News sidebar', 'spasalon' ),
+	'id' => 'sidebar-news',
+	'description' => __( 'News section widget area', 'spasalon' ),
+	'before_widget' => '<div id="%1$s" class="col-md-'.$news_layout.' widget %2$s">',
+	'after_widget' => '</div>',
+	'before_title' => '<h4 class="widget-title">',
+	'after_title' => '</h4>'
 	) );
 	
 	register_sidebar( array(
@@ -62,6 +96,5 @@ function spasalon_widgets_init(){
 	'before_title' => '<h3 class="widget-title">',
 	'after_title' => '</h3>'
 	) );
-	
 	
 }

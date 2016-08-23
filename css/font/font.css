@@ -1,13 +1,14 @@
-/* Marketing Script Font */
+
+/* Roboto Fonts */
 
 @font-face {
-    font-family: 'MarketingScript';
-    src: url('MarketingScript.eot');
-    src: url('MarketingScript.eot?#iefix') format('embedded-opentype'),
-         url('MarketingScript.woff') format('woff'),
-         url('MarketingScript.ttf') format('truetype'),
-         url('MarketingScript.svg#MarketingScript') format('svg');
+    font-family: 'marketingscript';
+    src: url('marketing-script.eot');
+    src: url('marketing-script.eot?#iefix') format('embedded-opentype'),
+         url('marketing-script.ttf') format('truetype'),
+         url('marketing-script.svg#marketingscript') format('svg');
     font-weight: normal;
     font-style: normal;
 
 }
+

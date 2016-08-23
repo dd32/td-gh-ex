@@ -4,77 +4,171 @@ function default_data(){
 	
 	// general settings
 	'spa_bannerstrip_enable' => 'yes',
-	'upload_image'=> '',
-	'height'=>35,
-	'width'=>150,
 	'color_scheme_style'=>'default.css',
+	'custom_color_enable'=>false,
+	'custom_color'=>'#f22853',
 	'spa_custom_css'=>'',
-	'enable_logo_text'=>false,
+	'upload_image'=>'',
+	'width'=>150,
+	'height'=>35,
+	'enable_logo_text' => false,
 	
 	// footer copyright
 	'footer_tagline'=>'&copy; Copyright 2016. All Rights Reserved by <a href="#">Webriti</a>',
 	
 	// home page settings
-	'call_us'=> __( '201 567 8978' , 'spasalon' ),
-	'call_us_text'=>__( 'Call us on' , 'spasalon' ),
+	'call_us'=> '',
+	'call_us_text'=>'',
+	
+	// slider settings
+	'slider_post' => '',
+	'slider_bannerstrip_enable'=>'yes',
+	'line_one'=>'',
+	'line_two'=>'',
+	'description'=>'',
+	'home_feature'=> '',
+	'first_thumb_image' => '',
+	'second_thumb_image' => '',
+	'third_thumb_image' => '',
+	
+	'slider_thumbnail_one' => '',
+	'slider_thumbnail_two' => '',
+	'slider_thumbnail_three'=>'',
 	
 	// slider settings
 	'slider_bannerstrip_enable'=>'yes',
-	'line_one'=>__('Get Yourself','spasalon'),
-	'line_two'=>__('Refreshed','spasalon'),
-	'description'=>__('Donec justo odio, lobortis eget congue sed, rutrum sit amet mauris. Curabitur sed lectus nulla. Curabitur sed lectus nulla.lobortis eget congue sed, rutrum sit amet mauris. Curabitur sed lectus nulla rutrum sit amet mauris','spasalon'),
-	'home_feature'=> get_template_directory_uri().'/images/default/home_banner.jpg',
-	'first_thumb_image' => get_template_directory_uri().'/images/default/home_thumb.jpg',
-	'second_thumb_image' => get_template_directory_uri().'/images/default/home_thumb.jpg',
-	'third_thumb_image' => get_template_directory_uri().'/images/default/home_thumb.jpg',
+	'slider_thumbnails_enable'=>'yes',
 	
 	// services settings
-	'tagline_title'=>__( 'Treatment we are offering' , 'spasalon' ),
-	'tagline_contents'=>__( 'In commodo pulvinar metus, id tristique massa ultrices at. Nulla auctor turpis ut mi pulvinar eu accumsan risus sagittis. Mauris nunc ligula, ullamcorper vitae accumsan eu,congue in nulla. Cras hendrerit mi quis nisi semper in sodales nisl faucibus. Sed quis quam eu ante ornare hendrerit.' , 'spasalon' ),
+	'service_hide' => false,
+	'service_layout'=> 4,
+	'tagline_title'=>'',
+	'tagline_contents'=>'',
+	'tagline_item'=>4,
 	
-	'service1_title'=>__('Spa Treatment','spasalon'),
-	'service1_desc'=>__('Pellen tesque habitant morbi tristique netus et malesuada fames ac turpis egestas In in massa urna, vitae vestibulum orci. yoursb Maecenas quis est sed mauris...','spasalon'),
-	'service1_image'=> get_template_directory_uri().'/images/default/home_service_thumb.jpg',
+	'service1_title'=>'',
+	'service1_desc'=>'',
+	'service1_image'=>'',
 	
-	'service2_title'=>__('Spa Treatment','spasalon'),
-	'service2_desc'=>__('Pellen tesque habitant morbi tristique netus et malesuada fames ac turpis egestas In in massa urna, vitae vestibulum orci. yoursb Maecenas quis est sed mauris...','spasalon'),
-	'service2_image'=> get_template_directory_uri().'/images/default/home_service_thumb.jpg',
+	'service2_title'=>'',
+	'service2_desc'=>'',
+	'service2_image'=> '',
 	
-	'service3_title'=>__('Spa Treatment','spasalon'),
-	'service3_desc'=>__('Pellen tesque habitant morbi tristique netus et malesuada fames ac turpis egestas In in massa urna, vitae vestibulum orci. yoursb Maecenas quis est sed mauris...','spasalon'),
-	'service3_image'=> get_template_directory_uri().'/images/default/home_service_thumb.jpg',
+	'service3_title'=>'',
+	'service3_desc'=>'',
+	'service3_image'=> '',
 	
-	'service4_title'=>__('Spa Treatment','spasalon'),
-	'service4_desc'=>__('Pellen tesque habitant morbi tristique netus et malesuada fames ac turpis egestas In in massa urna, vitae vestibulum orci. yoursb Maecenas quis est sed mauris...','spasalon'),
-	'service4_image'=> get_template_directory_uri().'/images/default/home_service_thumb.jpg',
+	'service4_title'=>'',
+	'service4_desc'=>'',
+	'service4_image'=> '',
 	
 	// project settings
-	'product_title'=>__( 'Spasalon Our product rang' , 'spasalon' ),
-	'product_contents'=>__( 'A Spasalon Produc Heading Title In commodo pulvinar metus, id tristique massa ultrices at. Nulla auctor turpis ut mi pulvinar eu accumsan risus sagittis. Mauris nunc ligula, ullamcorper vitae accumsan eu, congue in nulla. Cras hendrerit mi quis nisi semper in sodales nisl faucibus. Sed quis quam eu ante ornare hendrerit.' , 'spasalon' ),
+	'project_hide' => false,
+	'product_title'=>'',
+	'product_contents'=>'',
 	
-	'product1_title'=>__('Product 1','spasalon'),
-	'product1_desc'=>__('Pellentesque habitant...','spasalon'),
-	'product1_image'=> get_template_directory_uri().'/images/default/home_product_thumb.jpg',
+	'product1_title'=>'',
+	'product1_desc'=>'',
+	'product1_image'=> '',
 	
-	'product2_title'=>__('Product 2','spasalon'),
-	'product2_desc'=>__('Pellentesque habitant...','spasalon'),
-	'product2_image'=> get_template_directory_uri().'/images/default/home_product_thumb.jpg',
+	'product2_title'=>'',
+	'product2_desc'=>'',
+	'product2_image'=> '',
 	
-	'product3_title'=>__('Product 3','spasalon'),
-	'product3_desc'=>__('Pellentesque habitant...','spasalon'),
-	'product3_image'=> get_template_directory_uri().'/images/default/home_product_thumb.jpg',
+	'product3_title'=>'',
+	'product3_desc'=>'',
+	'product3_image'=> '',
 	
-	'product4_title'=>__('Product 4','spasalon'),
-	'product4_desc'=>__('Pellentesque habitant...','spasalon'),
-	'product4_image'=> get_template_directory_uri().'/images/default/home_product_thumb.jpg',
+	'product4_title'=>'',
+	'product4_desc'=>'',
+	'product4_image'=> '',
 	
-	'product5_title'=>__('Product 5','spasalon'),
-	'product5_desc'=>__('Pellentesque habitant...','spasalon'),
-	'product5_image'=> get_template_directory_uri().'/images/default/home_product_thumb.jpg',
+	'product5_title'=>'',
+	'product5_desc'=>'',
+	'product5_image'=> '',
 	
 	// home page news settings
-	'news_title'=>__('Our Latest News & Events','spasalon'),
-	'news_contents'=>__('A spasalon Produc Heading Title In commodo pulvinar metus, id tristique massa ultrices at. Nulla auctor turpis ut mi pulvinar eu accumsan risus sagittis. Mauris nunc ligula, ullamcorper vitae accumsan eu, congue in nulla. Cras hendrerit mi quis nisi semper in sodales nisl faucibus. Sed quis quam eu ante ornare hendrerit.','spasalon'),
-	'enable_news'=>'yes',
+	'enable_news'=>true,
+	'news_layout' => 2,
+	'news_title'=>'',
+	'news_contents'=>'',
+	'blog_selected_category_id'=> 1,
+	'posts_per_page' => 2,
+	
+	
+	
+	// typography settings
+	
+	'h1_size'=>36,
+	'h1_fontfamily'=>'Roboto',
+	'h1_fontstyle'=>'normal',
+	
+	'h2_size'=>30,
+	'h2_fontfamily'=>'Roboto',
+	'h42_fontstyle'=>'normal',
+	
+	'h3_size'=>24,
+	'h3_fontfamily'=>'Roboto',
+	'h3_fontstyle'=>'normal',
+	
+	'h4_size'=>18,
+	'h4_fontfamily'=>'Roboto',
+	'h4_fontstyle'=>'normal',
+	
+	'h5_size'=>14,
+	'h5_fontfamily'=>'Roboto',
+	'h5_fontstyle'=>'normal',
+	
+	'h6_size'=>12,
+	'h6_fontfamily'=>'Roboto',
+	'h6_fontstyle'=>'normal',
+	
+	'home_section_title_fontsize'=>42,
+	'home_section_title_fontfamily'=>'MarketingScript',
+	'home_section_title_fontstyle'=>'normal',
+	
+	'home_section_desc_fontsize'=>16,
+	'home_section_desc_fontfamily'=>'Droid Serif',
+	'home_section_desc_fontstyle'=>'italic',
+	
+	'menu_title_fontsize'=>15,
+	'menu_title_fontfamily'=>'Raleway',
+	'menu_title_fontstyle'=>'normal',
+	
+	'post_title_fontsize'=>20,
+	'post_title_fontfamily'=>'Roboto',
+	'post_title_fontstyle'=>'normal',
+	
+	'postexcerpt_title_fontsize'=>15,
+	'postexcerpt_fontfamily'=>'Roboto',
+	'postexcerpt_fontstyle'=>'normal',
+	
+	'widget_title_fontsize'=>20,
+	'widget_title_fontfamily'=>'Roboto',
+	'widget_title_fontstyle'=>'normal',
+	
+	// banner settings for archive
+	'banner_title_one_category'=>'',
+	'banner_title_two_category'=>'',
+	'banner_description_category'=>'',
+	
+	'banner_title_one_author'=>'',
+	'banner_title_two_author'=>'',
+	'banner_description_author'=>'',
+	
+	'banner_title_one_404'=>'',
+	'banner_title_two_404'=>'',
+	'banner_description_404'=>'',
+	
+	'banner_title_one_tag'=>'',
+	'banner_title_two_tag'=>'',
+	
+	'banner_title_one_search'=>'',
+	'banner_title_two_search'=>'',
+	'banner_description_search'=>'',
+	
+	'banner_title_one_woo'=>'',
+	'banner_title_two_woo'=>'',
+	'banner_description_woo'=>'',
 	);
 }

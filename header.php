@@ -21,16 +21,39 @@ $current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), d
 	<div class="container">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
-			<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
 				<?php
-				if( $current_options['enable_logo_text'] == true ){
-					bloginfo('name');
-				}else{
-				?>
-				<img alt="<?php bloginfo("name"); ?>" src="<?php echo ( esc_url($current_options['upload_image']) ? $current_options['upload_image'] : get_template_directory_uri() . '/images/logo.png' ); ?>" class="img-responsive" style="width:<?php echo esc_html($current_options['width']).'px'; ?>; height:<?php echo esc_html($current_options['height']).'px'; ?>;">
-				<?php } ?>
 				
-			</a>
+				if( has_custom_logo() ) {
+					
+					the_custom_logo();  // Spasaloon custom logo support
+					
+				} else {
+					
+					echo '<a class="navbar-brand" href="'.esc_url( home_url( '/' ) ).'">';
+					
+					if( $current_options['upload_image'] == '' ) {
+						
+						bloginfo('name');   // if no custom logo than print bloginfo name
+						
+					}
+					
+					else {
+						
+						$current_options['upload_image'] = ( $current_options['upload_image'] != '' ? $current_options['upload_image'] : get_template_directory_uri() . '/images/logo.png' );
+						
+						$current_options['width'] = ( $current_options['width'] != '' ? $current_options['width'] : 150 );
+						
+						$current_options['height'] = ( $current_options['height'] != '' ? $current_options['height'] : 35 );
+						
+						echo '<img alt="'.get_bloginfo("name").'" src="'.$current_options['upload_image'].'" class="img-responsive" style="width:'.$current_options['width'].'px; height:'.$current_options['height'].'px;">';
+					
+					}
+					
+					echo '</a>';
+					
+				}
+			
+				?>
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 				<span class="sr-only"><?php _e('Toggle navigation', 'spasalon'); ?></span>
 				<span class="icon-bar"></span>
@@ -42,13 +65,21 @@ $current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), d
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<?php 
+			
 				wp_nav_menu( array(
+				
 				'theme_location' => 'primary',
+				
 				'container'  => 'nav-collapse collapse navbar-inverse-collapse',
+				
 				'menu_class' => 'nav navbar-nav navbar-right',
+				
 				'fallback_cb' => 'webriti_fallback_page_menu',
+				
 				'walker' => new webriti_nav_walker()) 
-				); 
+				
+				);  // primary support menu
+				
 			?>
 		</div>
 	</div>
@@ -56,4 +87,3 @@ $current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), d
 <!-- End of Navbar -->
 
 <div class="clearfix"></div>
-
