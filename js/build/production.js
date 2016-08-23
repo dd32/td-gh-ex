@@ -86,9 +86,11 @@ jQuery(document).ready(function($){
     var body = $('body');
     var siteHeader = $('#site-header');
     var toggleNav = $('#toggle-navigation');
+    var toggleDropdown = $('.toggle-dropdown');
     var menuPrimary = $('#menu-primary');
     var menuPrimaryItems = $('#menu-primary-items');
     var dropdownMenuItems = $('.menu-item').children('a').add( $('.page-item').children('a') );
+    // var menuParents = $('.menu-item-has-children, .page_item_has_children');
 
     objectFitAdjustment();
 
@@ -112,8 +114,11 @@ jQuery(document).ready(function($){
     // display the primary menu at mobile widths
     toggleNav.on('click', openPrimaryMenu);
 
+    // open dropdown menus
+    toggleDropdown.on('click', openDropdownMenu);
+
     // enforce double-click for parent menu items when a touch event is registered
-    $(window).on('touchstart', enableTouchDropdown );
+    // $(window).on('touchstart', enableTouchDropdown );
 
     /* allow keyboard access/visibility for dropdown menu items */
     dropdownMenuItems.focus(function(){
@@ -223,64 +228,58 @@ jQuery(document).ready(function($){
         }
         return menuHeight;
     }
+    
+    function openDropdownMenu() {
 
-    // require a second click to visit parent navigation items
-    function enableTouchDropdown(){
+        // get the button's parent (li)
+        var menuItem = $(this).parent();
 
-        // Remove event listener once fired
-        $(window).off('touchstart', enableTouchDropdown);
+        if( menuItem.hasClass('open') ) {
 
-        // get all the parent menu items
-        var menuParents = $('.menu-item-has-children, .page_item_has_children');
+            menuItem.removeClass('open');
 
-        // add a 'closed' class to each and add an event listener to them
-        menuParents.addClass('closed');
-        menuParents.on('click', openDropdown);
-    }
+            // remove max-height added by JS when opened
+            $(this).siblings('ul').css('max-height', 0);
 
-    // open the dropdown without visiting parent link on first click
-    function openDropdown(e){
+            // change screen reader text
+            $(this).children('span').text(objectL10n.openChildMenu);
 
-        // if the menu item is not showing children
-        if ($(this).hasClass('closed')) {
+            // change aria text
+            $(this).attr('aria-expanded', 'false');
 
-            // prevent link from being visited
-            e.preventDefault();
+            if( window.innerWidth < 800 ) {
+                // just needs long enough for the 0.15s animation fo play out
+                setTimeout(function () {
 
-            // add an open class
-            $(this).addClass('open');
+                    // adjust containing .menu-primary to fit newly expanded list
+                    var menuHeight = calculateMenuHeight();
 
-            // remove 'closed' class to enable link
-            $(this).removeClass('closed');
+                    // adjust to the height
+                    menuPrimary.css('max-height', menuHeight + 48);
 
-            // get the submenu
-            var submenu = $(this).children('ul');
+                }, 200)
+            }
+        } else {
 
-            // set variable
-            var submenuHeight = 0;
+            var ulHeight = 0;
 
-            // get height of all menu items in submenu combined
-            submenu.children('li').each(function () {
-                submenuHeight = submenuHeight + $(this).height();
+            menuItem.addClass('open');
+
+            // get all dropdown children and use their height to set the new max height
+            $(this).siblings('ul').find('li').each(function () {
+                ulHeight = ulHeight + $(this).height() + ( $(this).height() * 1.5 );
             });
 
-            // set ul max-height to the height of all it's children li
-            submenu.css('max-height', submenuHeight);
+            // set the new max height (for smoother transitions)
+            $(this).siblings('ul').css('max-height', ulHeight);
 
-            var listItem = $(this);
+            // change screen reader text
+            $(this).children('span').text(objectL10n.closeChildMenu);
 
-            // get the containing ul if it exists
-            var parentList = listItem.parent('.sub-menu, .children');
+            // change aria text
+            $(this).attr('aria-expanded', 'true');
 
-            // get the height
-            var parentListHeight = parentList.height();
-
-            // expand the height of the parent ul so that it's child can show
-            parentList.css('max-height', parseInt(parentListHeight + submenuHeight));
-
-            // only open the primary menu if clicked menu item is in primary menu
-            if( $(this).parents().hasClass('menu-primary-items') || $(this).parents().hasClass('menu-unset') ) {
-
+            if( window.innerWidth < 800 ) {
                 // just needs long enough for the 0.15s animation fo play out
                 setTimeout(function () {
 

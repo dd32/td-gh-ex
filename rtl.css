@@ -4,10 +4,10 @@ Theme URI: https://www.competethemes.com/unlimited/
 Author: Compete Themes
 Author URI: https://www.competethemes.com
 Description: Fast, responsive, beautiful, and accessible. With Unlimited, your content will reach more people, on more devices, around the world. Unlimited's simple design puts the focus on your content, and supports it with clean, reliable code. See the fully setup live demo here: https://www.competethemes.com/unlimited-live-demo/
-Version: 1.20
+Version: 1.21
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: black, gray, silver, tan, white, dark, light, two-columns, left-sidebar, right-sidebar, fluid-layout, responsive-layout, accessibility-ready, custom-menu, editor-style, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: two-columns, left-sidebar, right-sidebar, accessibility-ready, custom-logo, custom-menu, editor-style, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, education, news
 Text Domain: unlimited
 
 Unlimited WordPress Theme, Copyright 2016 Compete Themes
@@ -497,10 +497,9 @@ a img {
   margin: 0;
   padding-bottom: 2.25em;
 }
-.menu-primary-items a,
-.menu-unset > ul a {
-  display: block;
-  padding: 6px 0;
+.menu-primary-items li,
+.menu-unset > ul li {
+  margin: 12px 0;
 }
 .menu-primary-items ul,
 .menu-unset > ul ul {
@@ -508,22 +507,34 @@ a img {
 }
 
 /* Tier 2 */
+.toggle-dropdown {
+  padding: 2px 5px 2px 5px;
+  margin: 0 8px 0 -30px;
+  border: solid 1px #fff;
+  font-size: 1em;
+  line-height: 1;
+  background: none;
+  color: #fff;
+  transition: -webkit-transform 0.1s ease-in-out;
+  transition: transform 0.1s ease-in-out;
+}
+.toggle-dropdown:hover {
+  cursor: pointer;
+}
+.toggle-dropdown:focus {
+  outline: none;
+}
+.toggle-dropdown:after {
+  content: '\f107';
+  font-family: 'FontAwesome';
+}
+
 .menu-item-has-children,
 .page_item_has_children {
   position: relative;
 }
-.menu-item-has-children > a:after,
-.page_item_has_children > a:after {
-  content: '\f107';
-  font-family: 'FontAwesome';
-  position: absolute;
-  margin-right: 4px;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  transition: all 0.1s ease-in-out;
-}
-.menu-item-has-children.open > a:after,
-.page_item_has_children.open > a:after {
+.menu-item-has-children.open > .toggle-dropdown,
+.page_item_has_children.open > .toggle-dropdown {
   -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
@@ -558,6 +569,16 @@ a img {
     display: none;
   }
 
+  .toggle-dropdown {
+    position: absolute;
+    top: 10px;
+    left: 2px;
+    padding: 6px;
+    margin: 0;
+    border: none;
+    color: #3a3a3a;
+  }
+
   .menu-primary {
     position: relative;
     right: -3.333%;
@@ -574,7 +595,7 @@ a img {
   .menu-primary-items li,
   .menu-unset > ul li {
     display: inline-block;
-    margin-left: -4px;
+    margin: 0 0 0 -4px;
   }
   .menu-primary-items li:hover > a, .menu-primary-items li.focused > a,
   .menu-unset > ul li:hover > a,
@@ -584,6 +605,7 @@ a img {
   }
   .menu-primary-items a,
   .menu-unset > ul a {
+    display: block;
     color: #666666;
     padding: 15px 12px;
     transition: background 0.15s ease-in-out;
@@ -607,27 +629,33 @@ a img {
   .menu-unset .page_item_has_children {
     /* tier 3 */
   }
-  .menu-item-has-children:hover > a:after, .menu-item-has-children.focused > a:after,
-  .menu-unset .page_item_has_children:hover > a:after,
-  .menu-unset .page_item_has_children.focused > a:after {
+  .menu-item-has-children:hover > .toggle-dropdown, .menu-item-has-children.focused > .toggle-dropdown, .menu-item-has-children.open > .toggle-dropdown,
+  .menu-unset .page_item_has_children:hover > .toggle-dropdown,
+  .menu-unset .page_item_has_children.focused > .toggle-dropdown,
+  .menu-unset .page_item_has_children.open > .toggle-dropdown {
     -webkit-transform: translateY(3px);
     transform: translateY(3px);
+  }
+  .menu-item-has-children.open > ul,
+  .menu-unset .page_item_has_children.open > ul {
+    opacity: 1;
+    visibility: visible;
   }
   .menu-item-has-children > a,
   .menu-unset .page_item_has_children > a {
     padding-left: 24px;
   }
-  .menu-item-has-children > a:hover:after, .menu-item-has-children > a:active:after, .menu-item-has-children > a:focus:after,
-  .menu-unset .page_item_has_children > a:hover:after,
-  .menu-unset .page_item_has_children > a:active:after,
-  .menu-unset .page_item_has_children > a:focus:after {
+  .menu-item-has-children > a:hover + button, .menu-item-has-children > a:active + button, .menu-item-has-children > a:focus + button,
+  .menu-unset .page_item_has_children > a:hover + button,
+  .menu-unset .page_item_has_children > a:active + button,
+  .menu-unset .page_item_has_children > a:focus + button {
     -webkit-transform: translateY(3px);
     transform: translateY(3px);
   }
-  .menu-item-has-children > a:hover + ul, .menu-item-has-children > a:active + ul, .menu-item-has-children > a:focus + ul,
-  .menu-unset .page_item_has_children > a:hover + ul,
-  .menu-unset .page_item_has_children > a:active + ul,
-  .menu-unset .page_item_has_children > a:focus + ul {
+  .menu-item-has-children > a:hover ~ ul, .menu-item-has-children > a:active ~ ul, .menu-item-has-children > a:focus ~ ul,
+  .menu-unset .page_item_has_children > a:hover ~ ul,
+  .menu-unset .page_item_has_children > a:active ~ ul,
+  .menu-unset .page_item_has_children > a:focus ~ ul {
     opacity: 1;
     visibility: visible;
   }
@@ -657,9 +685,10 @@ a img {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
-  .menu-item-has-children ul li:hover > a:after, .menu-item-has-children ul li.focused > a:after,
-  .menu-unset .page_item_has_children ul li:hover > a:after,
-  .menu-unset .page_item_has_children ul li.focused > a:after {
+  .menu-item-has-children ul li:hover > .toggle-dropdown, .menu-item-has-children ul li.focused > .toggle-dropdown, .menu-item-has-children ul li.open > .toggle-dropdown,
+  .menu-unset .page_item_has_children ul li:hover > .toggle-dropdown,
+  .menu-unset .page_item_has_children ul li.focused > .toggle-dropdown,
+  .menu-unset .page_item_has_children ul li.open > .toggle-dropdown {
     -webkit-transform: translateX(3px);
     transform: translateX(3px);
   }
@@ -678,10 +707,10 @@ a img {
   .menu-unset .page_item_has_children ul a:focus {
     color: #3a3a3a;
   }
-  .menu-item-has-children ul a:active:after, .menu-item-has-children ul a:hover:after, .menu-item-has-children ul a:focus:after,
-  .menu-unset .page_item_has_children ul a:active:after,
-  .menu-unset .page_item_has_children ul a:hover:after,
-  .menu-unset .page_item_has_children ul a:focus:after {
+  .menu-item-has-children ul a:active + button, .menu-item-has-children ul a:hover + button, .menu-item-has-children ul a:focus + button,
+  .menu-unset .page_item_has_children ul a:active + button,
+  .menu-unset .page_item_has_children ul a:hover + button,
+  .menu-unset .page_item_has_children ul a:focus + button {
     -webkit-transform: translateX(3px);
     transform: translateX(3px);
   }
@@ -696,10 +725,16 @@ a img {
     top: -1px;
     right: 100%;
   }
-  .menu-item-has-children ul .menu-item-has-children > a:after,
-  .menu-item-has-children ul .page_item_has_children > a:after,
-  .menu-unset .page_item_has_children ul .menu-item-has-children > a:after,
-  .menu-unset .page_item_has_children ul .page_item_has_children > a:after {
+  .menu-item-has-children ul .menu-item-has-children > a + button,
+  .menu-item-has-children ul .page_item_has_children > a + button,
+  .menu-unset .page_item_has_children ul .menu-item-has-children > a + button,
+  .menu-unset .page_item_has_children ul .page_item_has_children > a + button {
+    left: 12px;
+  }
+  .menu-item-has-children ul .menu-item-has-children > a + button:after,
+  .menu-item-has-children ul .page_item_has_children > a + button:after,
+  .menu-unset .page_item_has_children ul .menu-item-has-children > a + button:after,
+  .menu-unset .page_item_has_children ul .page_item_has_children > a + button:after {
     content: '\f105';
   }
 
@@ -735,22 +770,22 @@ a img {
     background: #D9D9D9;
   }
 
-  .rtl .menu-primary-items ul .menu-item-has-children > a:after,
-  .rtl .menu-primary-items ul .menu-unset .page_item_has_children > a:after,
-  .rtl .menu-unset ul ul .menu-item-has-children > a:after,
-  .rtl .menu-unset ul ul .menu-unset .page_item_has_children > a:after {
+  .rtl .menu-primary-items ul .menu-item-has-children > a + button:after,
+  .rtl .menu-primary-items ul .menu-unset .page_item_has_children > a + button:after,
+  .rtl .menu-unset ul ul .menu-item-has-children > a + button:after,
+  .rtl .menu-unset ul ul .menu-unset .page_item_has_children > a + button:after {
     content: '\f104';
   }
-  .rtl .menu-primary-items ul .menu-item-has-children > a:hover:after, .rtl .menu-primary-items ul .menu-item-has-children > a:active:after, .rtl .menu-primary-items ul .menu-item-has-children > a:focus:after,
-  .rtl .menu-primary-items ul .menu-unset .page_item_has_children > a:hover:after,
-  .rtl .menu-primary-items ul .menu-unset .page_item_has_children > a:active:after,
-  .rtl .menu-primary-items ul .menu-unset .page_item_has_children > a:focus:after,
-  .rtl .menu-unset ul ul .menu-item-has-children > a:hover:after,
-  .rtl .menu-unset ul ul .menu-item-has-children > a:active:after,
-  .rtl .menu-unset ul ul .menu-item-has-children > a:focus:after,
-  .rtl .menu-unset ul ul .menu-unset .page_item_has_children > a:hover:after,
-  .rtl .menu-unset ul ul .menu-unset .page_item_has_children > a:active:after,
-  .rtl .menu-unset ul ul .menu-unset .page_item_has_children > a:focus:after {
+  .rtl .menu-primary-items ul .menu-item-has-children > a:hover + button, .rtl .menu-primary-items ul .menu-item-has-children > a:active + button, .rtl .menu-primary-items ul .menu-item-has-children > a:focus + button,
+  .rtl .menu-primary-items ul .menu-unset .page_item_has_children > a:hover + button,
+  .rtl .menu-primary-items ul .menu-unset .page_item_has_children > a:active + button,
+  .rtl .menu-primary-items ul .menu-unset .page_item_has_children > a:focus + button,
+  .rtl .menu-unset ul ul .menu-item-has-children > a:hover + button,
+  .rtl .menu-unset ul ul .menu-item-has-children > a:active + button,
+  .rtl .menu-unset ul ul .menu-item-has-children > a:focus + button,
+  .rtl .menu-unset ul ul .menu-unset .page_item_has_children > a:hover + button,
+  .rtl .menu-unset ul ul .menu-unset .page_item_has_children > a:active + button,
+  .rtl .menu-unset ul ul .menu-unset .page_item_has_children > a:focus + button {
     -webkit-transform: translateX(-3px);
     transform: translateX(-3px);
   }
