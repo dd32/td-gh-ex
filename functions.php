@@ -99,7 +99,7 @@ function themonic_scripts_styles() {
 	/*
 	 * Loads Themonic's main stylesheet and the custom stylesheet.
 	 */
-	wp_enqueue_style( 'themonic-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'themonic-style', get_stylesheet_uri(), false, '1.7.7' );
 	wp_enqueue_style( 'custom-style', get_template_directory_uri() . '/custom.css' );
 
 	/*
@@ -299,6 +299,10 @@ function themonic_body_class( $classes ) {
 	if ( ! is_multi_author() )
 		$classes[] = 'single-author';
 
+	// Adds a class of hfeed to non-singular pages.
+	if ( ! is_singular() ) {
+		$classes[] = 'hfeed';
+	}
 	return $classes;
 }
 add_filter( 'body_class', 'themonic_body_class' );

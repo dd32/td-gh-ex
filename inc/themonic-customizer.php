@@ -59,7 +59,41 @@ class Themonic_Textarea_Control extends WP_Customize_Control {
 <?php
 	}
 }
+class Iconic_Header_Control extends WP_Customize_Control {
 
+        public function render_content() {  ?>
+			<p class="iconic-one-pro-thumb">
+        		<img src="<?php echo get_template_directory_uri(); ?>/img/pro.png" />
+        	</p>
+			<label>
+				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+			</label>
+			
+<?php
+        }
+    }
+class Iconic_Customize_Button_Control extends WP_Customize_Control {
+
+        public function render_content() {  ?>
+			
+			<p>
+				<a href="http://themonic.com/iconic-one-pro/" target="_blank" class="button button-secondary">
+					<?php echo esc_html( $this->label ); ?>
+				</a>
+			</p>
+			
+<?php
+        }
+    }
+class Iconic_Customize_Text_Control extends WP_Customize_Control {
+
+        public function render_content() {  ?>
+			
+			<span class="textfield"><?php echo esc_html( $this->label ); ?></span>
+			
+<?php
+        }
+    }	
 $wp_customize->add_section('content' , array(
 	'priority'    => 200,
 ));
@@ -181,5 +215,42 @@ $wp_customize->add_control(new Social_Textarea_Control($wp_customize, 'rss_url',
 	'label' => 'Show Tags on Home Page',
 	'section' => 'io_posts_settings',
 	));
+	// Add Section for Pro Version 
+	$wp_customize->add_section( 'iopro-upgrade', array(
+	'title'    => __( 'PRO Version', 'iconic-one' ),
+	'priority' => 70,
+	));
+	$wp_customize->add_setting( 'iconic-one-customizer-setting', array(
+	'default'           => '',
+	'type'           	=> 'option',
+	'sanitize_callback' => 'esc_attr'
+	));
+	$wp_customize->add_control( new Iconic_Header_Control(
+        $wp_customize, 'iconic-one_pro_version_label', array(
+            'label' => __( 'Iconic One Pro', 'iconic-one' ),
+            'section' => 'iopro-upgrade',
+            'settings' => 'iconic-one-customizer-setting',
+            'priority' => 	1
+            )
+        )
+    );
+	$wp_customize->add_control( new Iconic_Customize_Text_Control(
+        $wp_customize, 'iconic-one_pro_version', array(
+            'label' =>  __( 'Learn more about Iconic One Pro with Unlimited colors, Home Page Slider, Beautiful Author Pages with inbuilt Authorship, Ad Manager for Adsense and banner ads, breadcrumb, pagination and many more..', 'iconic-one' ),
+            'section' => 'iopro-upgrade',
+            'settings' => 'iconic-one-customizer-setting',
+            'priority' => 	2
+            )
+        )
+    );
+	$wp_customize->add_control( new Iconic_Customize_Button_Control(
+        $wp_customize, 'iconic-one_pro_version_button', array(
+            'label' => __('Check Out PRO Version', 'iconic-one'),
+            'section' => 'iopro-upgrade',
+            'settings' => 'iconic-one-customizer-setting',
+            'priority' => 	3
+            )
+        )
+    );
 }
 add_action('customize_register', 'themonic_theme_customizer');

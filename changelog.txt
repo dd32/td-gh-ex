@@ -1,5 +1,13 @@
 Changelog for Iconic One WordPress Responsive Theme | Visit http://themonic.com/iconic-one/ for latest version
 
+-------------- August 2016 ----------------
+
+23/08/2016  - Version 1.7.7
+
+- Minor translation fix
+- Removed hfeed class from header
+- Added pro version section in customizer
+
 -------------- July 2016 ----------------
 
 24/07/2016  - Version 1.7.6

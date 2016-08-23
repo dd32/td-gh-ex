@@ -23,7 +23,7 @@
 					<?php if ( is_single() || ( get_theme_mod( 'iconic_one_date_home' ) == '1' ) ): //for date on single page ?>	
 		<div class="below-title-meta">
 		<div class="adt">
-		<?php _e('By','themonic'); ?>
+		<?php _e('By','iconic-one'); ?>
         <span class="vcard author">
 			<span class="fn"><?php echo the_author_posts_link(); ?></span>
         </span>
