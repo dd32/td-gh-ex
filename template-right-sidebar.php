@@ -13,7 +13,7 @@
     
         <div class="post-container col-md-8 right-sidebar" >
             
-            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+            <?php while ( have_posts() ) : the_post(); ?>
             
                 <?php if ( has_post_thumbnail() ) : ?>
                         
@@ -32,9 +32,7 @@
                     <?php 
                         
                         the_content();  
-                        
                         wp_link_pages(); 
-                        
                         comments_template();
                         
                     ?>
@@ -48,7 +46,7 @@
         <?php 
 			
 			do_action('suevafree_side_sidebar', 'sidebar-area');
-			endwhile; endif;
+			endwhile;
 			
 		?>
            

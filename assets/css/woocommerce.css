@@ -523,6 +523,7 @@ body.woocommerce-cart .woocommerce_cart_details .line:before {
 	visibility:visible;
 }
 
+body.woocommerce-cart .post-article ,
 .woocommerce_cart_page .post-article {
     border-bottom: none;
 }
@@ -824,7 +825,7 @@ body.woocommerce-cart .woocommerce_cart_details .line:before {
 	margin:0 0 5px 0;
 }
 
-.woocommerce_cart_page .post-article {
+article.woocommerce_cart_page .post-article {
     background: none;
     padding: 0;
 	-webkit-box-shadow: none;

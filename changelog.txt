@@ -1,5 +1,10 @@
 SuevaFree Changelog
 
+- Version 2.2.1 - Released: 23.08.2016
+
+-- Fixed : Cart page layout
+-- Edit  : Code optimized.
+
 - Version 2.2.1 - Released: 10.08.2016
 
 -- Updated : WooCommerce templates.
