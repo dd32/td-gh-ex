@@ -16,13 +16,28 @@
                 <button type="button" id="header-nav-btn"><i class="icon-menu"></i><i class="icon-cross"></i></button>
                 <!-- Mobile button -->
                 <ul>
-                <?php 
+                <?php
 				
 					if ( has_nav_menu( 'header-menu' ) ) {
                     	 wp_nav_menu( array( 'theme_location' => 'header-menu', 'items_wrap' => '%3$s','container' => false  ) );
                   	}
 				?>
-                <li class="btn"><a href="<?php echo esc_url(wp_login_url(ascreen_get_curPageURL()));?>"><?php _e('Login','ascreen')?></a></li> 
+
+                <?php
+                if(is_user_logged_in())
+                {
+                    ?>
+                    <li class="btn"><a href="<?php echo esc_url(home_url('/wp-admin/profile.php')); ?>" ><?php _e('Profile','ascreen')?></a></li>
+                    <?php		
+                }
+                else
+                {
+                    ?>
+                    <li class="btn"><a href="<?php echo wp_login_url( get_permalink() ); ?>" ><?php _e('Login','ascreen')?></a></li> 
+                    <?php
+                }                
+                ?> 
+                 
                 </ul>
                 
             </nav>

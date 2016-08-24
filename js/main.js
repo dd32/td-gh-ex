@@ -1,5 +1,5 @@
 jQuery(document).ready(function($){
-
+/*
 	function headerNav() {
 		var nav_li = $(".header-nav").find("li").has(".sub-menu");
 		var header_nav = $(".header-nav");
@@ -11,17 +11,16 @@ jQuery(document).ready(function($){
 		$("#header").hover(function() {
 			$(this).toggleClass("hover");
 		})
-	
-		
 	}
-	
+	*/
 	//headerNav();
 	
 	function headerNavMobile(){
 		var header_nav = $(".header-nav");
 		var header_nav_list = header_nav.children('ul');
 		$("#header-nav-btn").click(function(){
-			$(this).toggleClass("active");
+			$(this).toggleClass("active");//add and remove active class for #header-nav-btn
+			$(this).parents("#header").toggleClass("headerbg");
 			header_nav_list.toggleClass("show");
 		})
 	}
@@ -41,6 +40,9 @@ jQuery(document).ready(function($){
     gotop.click(function (event) {
         $("body,html").animate({ scrollTop: 0 }, 600);
     });
+
+	//check header
+	
 
 
 });

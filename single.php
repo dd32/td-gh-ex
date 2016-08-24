@@ -12,14 +12,14 @@ get_header(); ?>
 
 						<?php
 							ascreen_get_the_category();
-                        ?>             
+                        ?>
                         
                         <h2><?php the_title(); ?></h2>
                         <div class="author-share">
                             <div class="author">
                             	<?php echo get_avatar( the_author_meta('user_nicename'), 48,'','',false ); ?>
                                 
-                                <p><time><?php the_time('M d , Y');?></time></p>
+                                <p><time><?php the_date();?></time></p>
                             </div>
 
                             <?php ascreen_get_share_url();?>

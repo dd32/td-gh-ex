@@ -15,7 +15,7 @@ get_header(); ?>
                             <div class="author">
                             	<?php echo get_avatar( the_author_meta('user_nicename'), 48,'','',false ); ?>
                                 
-                                <p><time><?php the_time('M d , Y');?></time></p>
+                                <p><time><?php the_date();?></time></p>
                             </div>
 
                             <?php ascreen_get_share_url();?>

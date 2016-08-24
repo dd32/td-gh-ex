@@ -4,6 +4,7 @@
 	
 	$template_directory = get_template_directory();
 	require_once( $template_directory . '/includes/customize/customize.php' );
+	
 
 	add_theme_support('post-thumbnails');
 	$args = array();
@@ -130,7 +131,7 @@ function ascreen_better_comments($comment, $args, $depth)
     <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
         <article id="comment-<?php comment_ID(); ?>" class="comment-body">
             <div class="comment_avatar">
-                <?php echo get_avatar($comment, $size = '45', $default = get_stylesheet_directory_uri().'/images/default-avatars.png' ); ?>
+                <?php echo get_avatar($comment, $size = '45'); ?>
             </div>
 
             <div class="comment_postinfo">
@@ -159,34 +160,13 @@ function ascreen_better_comments($comment, $args, $depth)
 <?php
 }
 
-function ascreen_get_curPageURL() 
-{
-    $pageURL = 'http';
-
-    if (@$_SERVER["HTTPS"] == "on") 
-    {
-        $pageURL .= "s";
-    }
-    $pageURL .= "://";
-
-    if ($_SERVER["SERVER_PORT"] != "80") 
-    {
-        $pageURL .= $_SERVER["SERVER_NAME"] . ":" . $_SERVER["SERVER_PORT"] . $_SERVER["REQUEST_URI"];
-    } 
-    else 
-    {
-        $pageURL .= $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"];
-    }
-    return $pageURL;
-}
-
 
 function ascreen_get_author_info() 
 {
 	?>
     <div class="author">
         <a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>"><?php the_author(); ?></a> . 
-        <time><?php the_time('M d , Y');?></time> . 
+        <time><?php the_date();?></time> . 
         <?php
         $categories = get_the_category();
         if(! empty( $categories ))
@@ -194,12 +174,14 @@ function ascreen_get_author_info()
             foreach($categories as $category) {
                 $category->cat_ID;
                 $category->cat_name;
+				$cat_links=get_category_link($category->cat_ID );
+				?>
+				<a href="<?php echo esc_url($cat_links); ?>" title="<?php echo esc_html($category->cat_name); ?>">#<?php echo esc_html($category->cat_name);?>&nbsp;</a>
+                <?php
             }
-            $cat_links=get_category_link($category->cat_ID );
+            
         }
-        ?> 
-        
-        <a href="<?php echo esc_url($cat_links); ?>" title="<?php echo esc_html($category->cat_name); ?>">#<?php echo esc_html($category->cat_name);?></a>                               
+        ?>                        
     </div>
 	<?php
 }
