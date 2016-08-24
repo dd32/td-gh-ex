@@ -26,6 +26,9 @@ For more information about Rubine Lite please go to https://themezee.com/themes/
 
 == Changelog ==
 
+= 1.3.1 =
+* added Right-to-Left language support
+
 = 1.3.0 =
 * fixed dropdown menus on mobile navigation menus
 
