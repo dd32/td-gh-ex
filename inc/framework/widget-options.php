@@ -84,11 +84,11 @@ class Atframework_Widget_Options {
    * Update callback
    */
   public function widget_update ( $instance, $new_instance ) {
-    $instance['sectionId']          = strip_tags($new_instance['sectionId']);
-    $instance['background_color']   = strip_tags( $new_instance['background_color'] );
-    $instance['text_color']         = strip_tags( $new_instance['text_color'] );
-    $instance['widget_title_color'] = strip_tags( $new_instance['widget_title_color'] );    
-	  $instance['column_width']       = strip_tags($new_instance['column_width']);
+    $instance['sectionId']          = sanitize_text_field($new_instance['sectionId']);
+    $instance['background_color']   = sanitize_text_field( $new_instance['background_color'] );
+    $instance['text_color']         = sanitize_text_field( $new_instance['text_color'] );
+    $instance['widget_title_color'] = sanitize_text_field( $new_instance['widget_title_color'] );    
+	  $instance['column_width']       = sanitize_text_field($new_instance['column_width']);
     $instance['image_uri']          = esc_url_raw($new_instance['image_uri']);
     $instance['padding']            = absint($new_instance['padding']);
     $instance['no_container']       = (bool)($new_instance['no_container']);

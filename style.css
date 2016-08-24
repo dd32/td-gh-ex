@@ -4,14 +4,14 @@ Theme URI: http://athemes.com/theme/astrid
 Author: aThemes
 Author URI: http://athemes.com
 Description: Astrid can help you to quickly create an awesome business website. All the features you need are waiting for you in this business theme: color options, fonts, full width header image, custom widgets, blog options and many other interesting and useful options.
-Version: 1.08
+Version: 1.09
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: astrid
 Tags: two-columns, right-sidebar, custom-colors, custom-background, custom-header, custom-menu, featured-images, sticky-post, theme-options, threaded-comments, translation-ready
 
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
+Astrid WordPress Theme, Copyright 2016 aThemes
+Astrid is distributed under the terms of the GNU GPL v2 or later.
 
 Astrid is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
@@ -258,6 +258,9 @@ select {
 .main-navigation li a::before {
 	right: 0;
 	border-top: 1px solid #fcd088;
+}
+.main-navigation ul ul ul { 
+	top: 0 !important;
 }
 .main-navigation li a::after {
 	left: 0;
@@ -1687,7 +1690,7 @@ body.page-template-page_widgetized {
 }
 .footer-logo {
 	max-height: 100px;
-	width: 100%;
+	width: auto;
 	max-width: 100%;
 }
 /* Footer contact */

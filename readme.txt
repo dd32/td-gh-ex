@@ -4,7 +4,7 @@ Contributors: athemes
 Tags: two-columns, right-sidebar, custom-colors, custom-background, custom-header, custom-menu, featured-images, sticky-post, theme-options, threaded-comments, translation-ready
 
 Requires at least: 4.0
-Tested up to: 4.4.2
+Tested up to: 4.6
 Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -22,6 +22,14 @@ Astrid can help you to quickly create an awesome business website. All the featu
 == Frequently Asked Questions ==
 
 == Changelog ==
+= 1.09 - Aug 24 2016 =
+* Fixed footer logo issue;
+* Reverted back header text in custom-header because of issues;
+* Inversed order of site logo check;
+* Switched html5shiv to enqueue;
+* Added copyright info in style.css;
+* Improved sanitization in widget-options.php;
+* Removed default content.
 
 = 1.01 - Feb 16 2016 =
 * Initial release

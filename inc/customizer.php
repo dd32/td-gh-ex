@@ -11,7 +11,7 @@ function astrid_customize_register( $wp_customize ) {
     $wp_customize->get_section( 'header_image' )->panel         = 'astrid_header_panel';
     $wp_customize->get_section( 'title_tagline' )->priority     = '9';
     $wp_customize->get_section( 'title_tagline' )->title        = __('Site branding', 'astrid');
-    //$wp_customize->remove_control( 'header_textcolor' );
+    $wp_customize->remove_control( 'header_textcolor' );
 
 
     //Titles
@@ -96,7 +96,7 @@ function astrid_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'header_text',
         array(
-            'default' => __('5 MINUTE SETUP','astrid'),
+            'default' => '',
             'sanitize_callback' => 'astrid_sanitize_text',
             'transport'     => 'postMessage'
         )
@@ -113,7 +113,7 @@ function astrid_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'header_subtext',
         array(
-            'default' => __('Time to meet Astrid','astrid'),
+            'default' => '',
             'sanitize_callback' => 'astrid_sanitize_text',
             'transport'     => 'postMessage'
         )
@@ -130,7 +130,7 @@ function astrid_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'header_button',
         array(
-            'default' => __('Explore','astrid'),
+            'default' => '',
             'sanitize_callback' => 'astrid_sanitize_text',
             'transport'     => 'postMessage'
         )
@@ -147,7 +147,7 @@ function astrid_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'header_button_url',
         array(
-            'default' => '#primary',
+            'default' => '',
             'sanitize_callback' => 'esc_url_raw',
             'transport'     => 'postMessage'
         )
@@ -683,7 +683,7 @@ function astrid_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'footer_contact_address',
         array(
-            'default' => '29 Bedford St, London',
+            'default' => '',
             'sanitize_callback' => 'astrid_sanitize_text',
         )
     );
@@ -700,7 +700,7 @@ function astrid_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'footer_contact_email',
         array(
-            'default' => 'office@site.com',
+            'default' => '',
             'sanitize_callback' => 'astrid_sanitize_text',
         )
     );
@@ -717,7 +717,7 @@ function astrid_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
         'footer_contact_phone',
         array(
-            'default' => '(020) 4513 3568',
+            'default' => '',
             'sanitize_callback' => 'astrid_sanitize_text',
         )
     );

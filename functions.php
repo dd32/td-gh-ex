@@ -206,8 +206,11 @@ function astrid_scripts() {
 	}
 
 	if ( astrid_blog_layout() == 'masonry-layout' && (is_home() || is_archive()) ) {
-		wp_enqueue_script( 'astrid-masonry-init', get_template_directory_uri() . '/js/masonry-init.js', array('jquery-masonry'), '', true );		
+		wp_enqueue_script( 'astrid-masonry-init', get_template_directory_uri() . '/js/masonry-init.js', array('masonry'), '', true );		
 	}
+
+	wp_enqueue_script( 'astrid-html5shiv', get_template_directory_uri() . '/js/html5shiv.js', array(), '', true );
+    wp_script_add_data( 'astrid-html5shiv', 'conditional', 'lt IE 9' );
 
 }
 add_action( 'wp_enqueue_scripts', 'astrid_scripts' );
@@ -254,16 +257,6 @@ function astrid_category_label($title) {
     return $title;
 }
 add_filter('get_the_archive_title', 'astrid_category_label');
-
-/**
- * Load html5shiv
- */
-function astrid_html5shiv() {
-    echo '<!--[if lt IE 9]>' . "\n";
-    echo '<script src="' . esc_url( get_template_directory_uri() . '/js/html5shiv.js' ) . '"></script>' . "\n";
-    echo '<![endif]-->' . "\n";
-}
-add_action( 'wp_head', 'astrid_html5shiv' );
 
 /**
  * Header image check
@@ -323,15 +316,15 @@ endif;
 function astrid_header_text() {
 
 	if ( !function_exists('pll_register_string') ) {
-		$header_text 		= get_theme_mod('header_text', '5 MINUTE SETUP');
-		$header_subtext 	= get_theme_mod('header_subtext', 'Time to meet Astrid');
-		$header_button		= get_theme_mod('header_button', 'Explore');
+		$header_text 		= get_theme_mod('header_text');
+		$header_subtext 	= get_theme_mod('header_subtext');
+		$header_button		= get_theme_mod('header_button');
 	} else {
-		$header_text 		= pll__(get_theme_mod('header_text', '5 MINUTE SETUP'));
-		$header_subtext 	= pll__(get_theme_mod('header_subtext', 'Time to meet Astrid'));
-		$header_button		= pll__(get_theme_mod('header_button', 'Explore'));
+		$header_text 		= pll__(get_theme_mod('header_text'));
+		$header_subtext 	= pll__(get_theme_mod('header_subtext'));
+		$header_button		= pll__(get_theme_mod('header_button'));
 	}
-	$header_button_url	= get_theme_mod('header_button_url', '#primary');
+	$header_button_url	= get_theme_mod('header_button_url');
 
 	echo '<div class="header-info">
 			<div class="container">
@@ -349,11 +342,11 @@ function astrid_header_text() {
  */
 if ( ! function_exists( 'astrid_branding' ) ) :
 function astrid_branding() {
-	$site_logo = get_theme_mod('site_logo');
-	if ( $site_logo ) {
-		echo '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr(get_bloginfo('name')) . '"><img class="site-logo" src="' . esc_url($site_logo) . '" alt="' . esc_attr(get_bloginfo('name')) . '" /></a>'; 
-	} elseif ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
+	$site_logo = get_theme_mod('site_logo');	
+	if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
 		the_custom_logo();
+	} elseif ( $site_logo ) {
+		echo '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr(get_bloginfo('name')) . '"><img class="site-logo" src="' . esc_url($site_logo) . '" alt="' . esc_attr(get_bloginfo('name')) . '" /></a>'; 
 	} else {
 		echo '<h1 class="site-title"><a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . esc_html(get_bloginfo('name')) . '</a></h1>';
 		echo '<p class="site-description">' . esc_html(get_bloginfo( 'description' )) . '</p>';
@@ -382,9 +375,9 @@ endif;
  */
 if ( ! function_exists( 'astrid_footer_contact' ) ) :
 function astrid_footer_contact() {
-	$footer_contact_address = get_theme_mod('footer_contact_address', __('29 Bedford St, London','astrid'));
-	$footer_contact_email   = antispambot(get_theme_mod('footer_contact_email', __('office@site.com','astrid')));
-	$footer_contact_phone 	= get_theme_mod('footer_contact_phone', __('(020) 4513 3568','astrid'));
+	$footer_contact_address = get_theme_mod('footer_contact_address');
+	$footer_contact_email   = antispambot(get_theme_mod('footer_contact_email'));
+	$footer_contact_phone 	= get_theme_mod('footer_contact_phone');
 
 	echo '<div class="footer-contact">';
 	if ($footer_contact_address) {

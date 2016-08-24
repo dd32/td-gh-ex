@@ -28,7 +28,6 @@ function astrid_custom_header_setup() {
 		'height'                 => 800,
 		'flex-height'            => true,
 		'wp-head-callback'       => '',
-		'header-text'            => false,
 	) ) );
 }
 add_action( 'after_setup_theme', 'astrid_custom_header_setup' );
