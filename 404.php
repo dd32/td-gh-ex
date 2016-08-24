@@ -1,36 +1,48 @@
-<?php get_header();	?>
-<div class="container_wrap">
+<?php
+/**
+ * The template for displaying 404 pages (not found).
+ *
+ * @package Cell
+ */
 
-  <div class="container_12">
-    <div class="grid_12">
-      <div id="loop-meta">
-        <h1 class="loop-meta-title"><?php _e( '404', 'cell' ); ?></h1>
-        <div class="loop-meta-description"><?php _e( 'Whoah! You broke something!', 'cell' ); ?></div>
-      </div> <!-- #loop-meta -->
-    </div>
-  </div>
-  
-  <div class="container_12">
-    <div id="content" class="grid_8">
-      
-      <div id="post-0" class="post-0 post type-post error404 not-found">
-      
-        <div class="entry-content">
-    
-          <p><?php printf( __( "Just kidding! You tried going to %s, which doesn't exist, so that means I probably broke something.", 'cell' ), '<code>' . home_url( esc_url( $_SERVER['REQUEST_URI'] ) ) . '</code>' ); ?></p>
-          
-          <p><?php _e( "The following is a list of the latest posts from the blog. Maybe it will help you find what you're looking for.", 'cell' ); ?></p>
-    
-          <ul>
-            <?php wp_get_archives( array( 'limit' => 20, 'type' => 'postbypost' ) ); ?>
-          </ul>                   
-    
-        </div><!-- end .entry-content -->
-    
-      </div><!-- end #post-0 -->  
-    </div> <!-- end #content -->
-    <?php get_sidebar(); ?>
-  </div>
+get_header(); ?>
 
-</div>
+	<div class="container">
+		<div class="row">
+
+			<div id="primary" class="content-area <?php cell_layout_class( 'content' ); ?>">
+				<main id="main" class="site-main" role="main">
+
+					<section class="error-404 not-found">
+
+						<header class="page-header">
+							<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'cell' ); ?></h1>
+						</header><!-- .page-header -->
+
+						<div class="page-content">
+							<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'cell' ); ?></p>
+
+							<?php the_widget( 'WP_Widget_Search' ); ?>
+
+							<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
+
+							<?php
+							/* translators: %1$s: smiley */
+							$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'cell' ), convert_smilies( ':)' ) ) . '</p>';
+							the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
+							?>
+
+							<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
+
+						</div><!-- .page-content -->
+					</section><!-- .error-404 -->
+
+				</main><!-- #main -->
+			</div><!-- #primary -->
+
+			<?php get_sidebar(); ?>
+
+		</div><!-- .row -->
+	</div><!-- .container -->
+
 <?php get_footer(); ?>
