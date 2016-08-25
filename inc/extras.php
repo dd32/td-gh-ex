@@ -8,56 +8,71 @@
  */
 
 /**
- * Google Fonts
+ * Register fonts for theme.
  *
- * @return string - Google Fonts URL
+ * @return string Fonts URL for the theme.
  */
 function keratin_google_fonts_url() {
 
-    // Fonts URL
+    // Fonts and Other Variables
     $fonts_url = '';
+	$fonts     = array();
+	$subsets   = 'latin,latin-ext';
 
+    // Headings Font
     /* Translators: If there are characters in your language that are not
     * supported by Lato, translate this to 'off'. Do not translate
     * into your own language.
     */
-    $lato = _x( 'on', 'Lato font: on or off', 'keratin' );
+    if ( 'off' !== esc_html_x( 'on', 'Lato font: on or off', 'keratin' ) ) {
+		$fonts[] = 'Lato';
+	}
 
-    /* Translators: If there are characters in your language that are not
+    // Body Font
+	/* Translators: If there are characters in your language that are not
     * supported by Questrial, translate this to 'off'. Do not translate
     * into your own language.
     */
-    $questrial = _x( 'on', 'Questrial font: on or off', 'keratin' );
+    if ( 'off' !== esc_html_x( 'on', 'Questrial font: on or off', 'keratin' ) ) {
+		$fonts[] = 'Questrial';
+	}
 
-    if ( 'off' !== $lato || 'off' !== $questrial ) {
-        $font_families = array();
+	/* Translators: To add an additional character subset specific to your language,
+	* translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'.
+	* Do not translate into your own language.
+	*/
+	$subset = esc_html_x( 'no-subset', 'Add new subset (cyrillic, greek, devanagari, vietnamese)', 'keratin' );
 
-        if ( 'off' !== $lato ) {
-            $font_families[] = 'Lato:100,300,400,700,100italic,300italic,400italic,700italic';
-        }
+	if ( 'cyrillic' === $subset ) {
+		$subsets .= ',cyrillic,cyrillic-ext';
+	} elseif ( 'greek' === $subset ) {
+		$subsets .= ',greek,greek-ext';
+	} elseif ( 'devanagari' === $subset ) {
+		$subsets .= ',devanagari';
+	} elseif ( 'vietnamese' === $subset ) {
+		$subsets .= ',vietnamese';
+	}
 
-        if ( 'off' !== $questrial ) {
-            $font_families[] = 'Questrial';
-        }
+	if ( $fonts ) {
+		$fonts_url = add_query_arg( array(
+			'family' => urlencode( implode( '|', $fonts ) ),
+			'subset' => urlencode( $subsets ),
+		), 'https://fonts.googleapis.com/css' );
+	}
 
-        $query_args = array(
-            'family' => urlencode( implode( '|', $font_families ) ),
-            'subset' => urlencode( 'latin,latin-ext' ),
-        );
+	return $fonts_url;
 
-        $fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
-    }
-
-    return $fonts_url;
 }
 
 /**
- * Enqueue Google Fonts for custom headers
+ * Filter 'get_custom_logo'
+ *
+ * @return string
  */
-function keratin_custom_header_fonts() {
-    wp_enqueue_style( 'keratin-fonts', keratin_google_fonts_url(), array(), null );
+function keratin_get_custom_logo( $html ) {
+	return sprintf( '<div class="site-logo-wrapper">%1$s</div>', $html );
 }
-add_action( 'admin_print_styles-appearance_page_custom-header', 'keratin_custom_header_fonts' );
+add_filter( 'get_custom_logo', 'keratin_get_custom_logo' );
 
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
@@ -124,14 +139,29 @@ add_filter( 'the_content_more_link', 'keratin_the_content_more_link_scroll' );
  */
 function keratin_body_classes( $classes ) {
 
-	// Custom Header Image
-	if ( get_header_image() ) {
-		$classes[] = 'custom-header-image';
-	}
-
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
+	}
+
+	// Adds a class of hfeed to non-singular pages.
+	if ( ! is_singular() ) {
+		$classes[] = 'hfeed';
+	}
+
+	// Site Title & Tagline Class
+	if ( display_header_text() ) {
+		$classes[] = 'has-site-branding';
+	}
+
+	// Custom Header
+	if ( get_header_image() ) {
+		$classes[] = 'has-custom-header';
+	}
+
+	// Custom Background Image
+	if ( get_background_image() ) {
+		$classes[] = 'has-custom-background-image';
 	}
 
 	// Blog Layout (masonry|standard)
@@ -142,12 +172,6 @@ function keratin_body_classes( $classes ) {
 	// Theme Layout (wide|box)
 	$classes[] = 'layout-' . esc_attr( get_theme_mod( 'keratin_theme_layout', 'box' ) );
 
-	// Theme Logo
-	$keratin_logo = get_theme_mod( 'keratin_logo', '' );
-	if ( ! empty( $keratin_logo ) ) {
-		$classes[] = 'site-logo-active';
-	}
-
 	return $classes;
 }
 add_filter( 'body_class', 'keratin_body_classes' );
@@ -157,7 +181,7 @@ add_filter( 'body_class', 'keratin_body_classes' );
  *
  * @return void
  */
-function keratin_content_width() {
+function keratin_template_redirect_content_width() {
 
 	// For Image Attachments
 	if( is_attachment() && wp_attachment_is_image() ) {
@@ -170,7 +194,7 @@ function keratin_content_width() {
 	}
 
 }
-add_action( 'template_redirect', 'keratin_content_width' );
+add_action( 'template_redirect', 'keratin_template_redirect_content_width' );
 
 /**
  * Display Blog Footer.
@@ -209,53 +233,6 @@ function keratin_site_info() {
 <?php
 }
 add_action( 'keratin_footer', 'keratin_site_info' );
-
-if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
-	/**
-	 * Filters wp_title to print a neat <title> tag based on what is being viewed.
-	 *
-	 * @param string $title Default title text for current view.
-	 * @param string $sep Optional separator.
-	 * @return string The filtered title.
-	 */
-	function keratin_wp_title( $title, $sep ) {
-		if ( is_feed() ) {
-			return $title;
-		}
-
-		global $page, $paged;
-
-		// Add the blog name
-		$title .= get_bloginfo( 'name', 'display' );
-
-		// Add the blog description for the home/front page.
-		$site_description = get_bloginfo( 'description', 'display' );
-		if ( $site_description && ( is_home() || is_front_page() ) ) {
-			$title .= " $sep $site_description";
-		}
-
-		// Add a page number if necessary:
-		if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-			$title .= " $sep " . sprintf( __( 'Page %s', 'keratin' ), max( $paged, $page ) );
-		}
-
-		return $title;
-	}
-	add_filter( 'wp_title', 'keratin_wp_title', 10, 2 );
-
-	/**
-	 * Title shim for sites older than WordPress 4.1.
-	 *
-	 * @link https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
-	 * @todo Remove this function when WordPress 4.3 is released.
-	 */
-	function keratin_render_title() {
-		?>
-		<title><?php wp_title( '|', true, 'right' ); ?></title>
-		<?php
-	}
-	add_action( 'wp_head', 'keratin_render_title' );
-endif;
 
 /**
  * Sets the authordata global when viewing an author archive.

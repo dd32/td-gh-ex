@@ -4,12 +4,12 @@ Theme URI: http://themecot.com/wordpress-theme/keratin/
 Author: ThemeCot
 Author URI: http://themecot.com/
 Description: Keratin is a modern and responsive WordPress theme suitable for magazines, newspapers or blogs. It is clean, flat and beautiful masonry grid based theme.
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: keratin
 Domain Path: /languages/
-Tags: black, blue, white, light, two-columns, right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, post-formats, theme-options, microformats, sticky-post, threaded-comments, translation-ready
+Tags: two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, post-formats, theme-options, microformats, sticky-post, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL v2 or later.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -50,12 +50,13 @@ and Blueprint http://www.blueprintcss.org/
 9.0 - Skeleton
 	9.1 - Site Wrapper
 	9.2 - Header
-	9.3 - Site Logo
-	9.4 - Site Branding
-	9.5 - Site Content
-	9.6 - Sidebar
-	9.7 - Footer
-	9.8 - Masonry Wrapper
+	9.3 - Site Branding Wrapper
+	9.4 - Site Logo
+	9.5 - Site Branding
+	9.6 - Site Content
+	9.7 - Sidebar
+	9.8 - Footer
+	9.9 - Masonry Wrapper
 10.0 - Content
 	10.1 - HEntry
 	10.2 - Page Links
@@ -660,12 +661,12 @@ textarea {
 	text-transform: uppercase;
 	zoom: 1; /* IE7 */
 }
-.custom-header-image .sf-menu > li > a {
+.has-custom-header .sf-menu > li > a {
 	text-shadow: 0px 1px 0px #d9d9d9;
 }
-.custom-header-image .sf-menu > li > a:hover,
-.custom-header-image .sf-menu > li > a:focus,
-.custom-header-image .sf-menu > li > a:active {
+.has-custom-header .sf-menu > li > a:hover,
+.has-custom-header .sf-menu > li > a:focus,
+.has-custom-header .sf-menu > li > a:active {
 	text-shadow: none;
 }
 .sf-menu a:hover,
@@ -1020,29 +1021,32 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-9.3 Site Logo
+9.3 Site Branding Wrapper
 --------------------------------------------------------------*/
-.site-logo {
-	margin: 0;
+.site-branding-wrapper {
 	overflow: hidden;
-	padding: 0;
-}
-.site-logo-img {
-	height: auto;
-	max-width: 100%;
-	margin: 0 auto;
 }
 
 /*--------------------------------------------------------------
-9.4 Site Branding
+9.4 Site Custom Logo
+--------------------------------------------------------------*/
+.custom-logo {
+	width: auto;
+	max-height: 100px;
+	margin: 0;
+	padding: 0;
+}
+
+/*--------------------------------------------------------------
+9.5 Site Branding
 --------------------------------------------------------------*/
 .site-branding {
 	margin: 0;
 	overflow: hidden;
 	padding: 0;
 }
-.site-logo-active .site-branding {
-	margin: 30px 0 0;
+.wp-custom-logo.has-site-branding .site-branding {
+	margin: 10px 0 0;
 }
 .site-title {
 	font-size: 24px;
@@ -1053,7 +1057,7 @@ textarea {
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
 }
-.custom-header-image .site-title {
+.has-custom-header .site-title {
 	text-shadow: 0px 1px 0px #d9d9d9;
 }
 .site-title a,
@@ -1076,12 +1080,12 @@ textarea {
 	-ms-word-wrap: break-word;
 	word-wrap: break-word;
 }
-.custom-header-image .site-description {
+.has-custom-header .site-description {
 	text-shadow: 0px 1px 0px #d9d9d9;
 }
 
 /*--------------------------------------------------------------
-9.5 Site Content
+9.6 Site Content
 --------------------------------------------------------------*/
 .site-content {
 	margin: 0 0 65px;
@@ -1096,7 +1100,7 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-9.6 Sidebar
+9.7 Sidebar
 --------------------------------------------------------------*/
 .sidebar {
 	margin: 0;
@@ -1104,7 +1108,7 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-9.7 Footer
+9.8 Footer
 --------------------------------------------------------------*/
 
 /* Site info */
@@ -1141,7 +1145,7 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-9.8 Masonry Wrapper
+9.9 Masonry Wrapper
 --------------------------------------------------------------*/
 .masonry-wrapper:before,
 .masonry-wrapper:after {
@@ -1956,6 +1960,11 @@ form.search-form:before {
 --------------------------------------------------------------*/
 /* For Small to Medium Devices */
 @media (min-width: 768px) and (max-width: 1199px) {
+
+	/* Site Custom Logo */
+	.custom-logo {
+		max-height: 80px;
+	}
 }
 
 /* For Medium Devices */
@@ -2022,6 +2031,16 @@ form.search-form:before {
 	/* Header */
 	.site-header {
 		margin: 0 0 10px;
+	}
+
+	/* Site Branding Wrapper */
+	.site-branding-wrapper {
+		text-align: center;
+	}
+
+	/* Site Custom Logo */
+	.custom-logo {
+		max-height: 60px;
 	}
 
 	/* Site Content */

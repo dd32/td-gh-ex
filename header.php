@@ -30,23 +30,29 @@
 
 				<div class="col-xs-12 col-sm-8 col-md-4 col-lg-4">
 
-					<?php
-					$keratin_logo = get_theme_mod( 'keratin_logo', '' );
-					if ( ! empty( $keratin_logo ) ) :
-					?>
-					<div class="site-logo">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-							<img src="<?php echo esc_url( $keratin_logo ); ?>" class="site-logo-img" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
-						</a>
-					</div><!-- .site-logo -->
-					<?php endif; ?>
+					<div class="site-branding-wrapper">
+						<?php
+						// Site Custom Logo
+						if ( function_exists( 'the_custom_logo' ) ) {
+							the_custom_logo();
+						}
+						?>
 
-					<?php if ( 'blank' !== get_header_textcolor() ) : ?>
-					<div class="site-branding">
-						<h2 class="site-title" itemprop="headline"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h2>
-						<h3 class="site-description" itemprop="description"><?php bloginfo( 'description' ); ?></h3>
-					</div><!-- .site-branding -->
-					<?php endif; ?>
+						<div class="site-branding">
+							<?php if ( is_front_page() && is_home() ) : ?>
+							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+							<?php else : ?>
+								<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+							<?php endif; ?>
+
+							<?php
+							$description = get_bloginfo( 'description', 'display' );
+							if ( $description || is_customize_preview() ) :
+							?>
+							<p class="site-description"><?php echo esc_html( $description ); /* WPCS: xss ok. */ ?></p>
+							<?php endif; ?>
+						</div>
+					</div><!-- .site-branding-wrapper -->
 
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-8 col-lg-8">

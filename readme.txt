@@ -1,8 +1,8 @@
 === Keratin ===
 Contributors: ThemeCot.com
-Tags: black, blue, white, light, two-columns, right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, post-formats, theme-options, microformats, sticky-post, threaded-comments, translation-ready
-Requires at least: 3.9
-Tested up to: 4.1
+Tags: two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, post-formats, theme-options, microformats, sticky-post, threaded-comments, translation-ready
+Requires at least: 4.4
+Tested up to: 4.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,3 +39,30 @@ keratin/fonts
 *** Images Used in the Screenshot ***
 
 Images used in the screenshot are licensed - https://unsplash.com/license (Creative Commons Zero License)
+
+== Changelog ==
+
+= 1.0.2 =
+Release Date: August 26, 2016
+
+* New : WordPress custom logo support added.
+* Enhancement : Custom header improved.
+* Enhancement : Google fonts logic improved.
+* Enhancement : Theme sections are grouped under Theme Options panel.
+* Updated : Font Awesome library updated to latest version 4.6.3.
+* Deprecation : Deprecated tags removed.
+* Deprecation : `wp_title` shim removed.
+* Deprecation : `changelog.txt` removed.
+
+= 1.0.1 =
+Release Date: January 15, 2015
+
+* Enhancement : jQuery enqueue removed - Thanks to @alex27 for the valuable knowledge.
+* Enhancement : Hard-coded <title> tag in the document head removed by adding theme support, and expect WordPress to provide it for us.
+* Enhancement : Readme file (readme.txt) updated.
+* Deprecation : Empty `images` folder removed.
+
+= 1.0 =
+Release Date: December 05, 2014
+
+* Initial release
