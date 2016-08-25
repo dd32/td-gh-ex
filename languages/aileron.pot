@@ -1,10 +1,11 @@
 # Copyright (C) 2014 DoveThemes
 # This file is distributed under the GNU General Public License v2 or later.
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Aileron 1.0\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2015-01-20 14:55+0500\n"
+"POT-Creation-Date: 2016-08-25 21:15+0500\n"
 "PO-Revision-Date: 2015-01-20 14:55+0500\n"
 "Last-Translator: ThemeCot <themecot@gmail.com>\n"
 "Language-Team: ThemeCot <themecot@gmail.com>\n"
@@ -13,10 +14,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.7.3\n"
+"X-Generator: Poedit 1.8.8\n"
 "X-Poedit-KeywordsList: __;_e;_x;_ex;_nx;esc_attr_x;esc_html_e\n"
 "X-Poedit-Basepath: /Applications/MAMP/htdocs/wporg/wp-content/themes/"
-"aileron/\n"
+"aileron\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:26
@@ -147,8 +148,7 @@ msgstr ""
 
 #: content-aside.php:41 content-audio.php:41 content-gallery.php:39
 #: content-image.php:39 content-link.php:50 content-page.php:19
-#: content-quote.php:41 content-single.php:27 content-video.php:39
-#: image.php:82
+#: content-quote.php:41 content-single.php:27 content-video.php:39 image.php:82
 msgid "Pages:"
 msgstr ""
 
@@ -196,8 +196,7 @@ msgstr ""
 
 #: content-aside.php:75 content-audio.php:75 content-gallery.php:73
 #: content-image.php:73 content-link.php:84 content-page.php:28
-#: content-quote.php:75 content-single.php:69 content-video.php:73
-#: image.php:91
+#: content-quote.php:75 content-single.php:69 content-video.php:73 image.php:91
 msgid "Edit"
 msgstr ""
 
@@ -257,11 +256,11 @@ msgstr ""
 msgid "Read More"
 msgstr ""
 
-#: functions.php:50 header.php:52
+#: functions.php:56 header.php:54
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:89
+#: functions.php:107
 msgid "Main Sidebar"
 msgstr ""
 
@@ -277,71 +276,20 @@ msgid ""
 "span>"
 msgstr ""
 
-#: inc/customizer.php:21
-msgid "Getting Started"
-msgstr ""
-
-#: inc/customizer.php:22
-msgid ""
-"Thanks for your interest in Aileron! If you have any questions or run into "
-"any trouble, please visit us the following links. We will get you fixed up!"
-msgstr ""
-
-#: inc/customizer.php:36
-msgid "Documentation"
-msgstr ""
-
-#: inc/customizer.php:57
-msgid "Contact Us"
-msgstr ""
-
-#: inc/customizer.php:70
-msgid "Theme Options"
-msgstr ""
-
-#: inc/customizer.php:81
-msgid "Theme Layout"
-msgstr ""
-
-#: inc/customizer.php:86
-msgid "Wide"
-msgstr ""
-
-#: inc/customizer.php:87
-msgid "Box"
-msgstr ""
-
-#: inc/customizer.php:92
-msgid "Site Title, Tagline, and Logo"
-msgstr ""
-
-#: inc/customizer.php:105
-msgid "Logo"
-msgstr ""
-
-#: inc/extras.php:24 inc/extras.php:30
-msgid "on"
-msgstr ""
-
-#: inc/extras.php:143
+#: inc/extras.php:178
 msgid "&copy; Copyright"
 msgstr ""
 
-#: inc/extras.php:143
+#: inc/extras.php:178
 msgid "&ndash;"
 msgstr ""
 
-#: inc/extras.php:151
+#: inc/extras.php:186
 msgid "&middot;"
 msgstr ""
 
-#: inc/extras.php:151
+#: inc/extras.php:186
 msgid "Powered by"
-msgstr ""
-
-#: inc/extras.php:191
-#, php-format
-msgid "Page %s"
 msgstr ""
 
 #: inc/template-tags.php:23

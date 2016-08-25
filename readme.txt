@@ -1,8 +1,8 @@
 === Aileron ===
 Contributors: ThemeCot.com
-Tags: black, blue, white, light, two-columns, right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, post-formats, theme-options, microformats, sticky-post, threaded-comments, translation-ready
-Requires at least: 3.9
-Tested up to: 4.1
+Tags: two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, post-formats, theme-options, microformats, sticky-post, threaded-comments, translation-ready
+Requires at least: 4.4
+Tested up to: 4.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -33,3 +33,39 @@ Please see the file headers for more information.
 Fonts are licensed - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
 
 aileron/fonts
+
+== Changelog ==
+
+= 1.0.4 =
+Release Date: August 25, 2016
+
+* New : WordPress custom logo support added.
+* Enhancement : Custom header improved.
+* Enhancement : Google fonts logic improved.
+* Enhancement : Theme sections are grouped under Theme Options panel.
+* Updated : Font Awesome library updated to latest version 4.6.3.
+* Deprecation : Deprecated tags removed.
+* Deprecation : `wp_title` shim removed.
+* Deprecation : `changelog.txt` removed.
+
+= 1.0.3 =
+Release Date: January 20, 2015
+
+* Enhancement : HTML5 markup for search form, comment form, comments, gallery and captions.
+* Enhancement : Critical erros of CSS fixed.
+
+= 1.0.2 =
+Release Date: January 07, 2015
+
+* Enhancement : jQuery enqueue removed - Thanks to @karmatosed for the valuable knowledge.
+
+= 1.0.1 =
+Release Date: January 06, 2015
+
+* Enhancement : Hard-coded <title> tag in the document head removed by adding theme support, and expect WordPress to provide it for us.
+* Enhancement : Readme file (readme.txt) updated.
+
+= 1.0 =
+Release Date: November 27, 2014
+
+* Initial release

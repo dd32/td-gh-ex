@@ -5,13 +5,6 @@
  * @package Aileron
  */
 
-/**
- * Set the content width.
- */
-if ( ! isset( $content_width ) ) {
-	$content_width = 620; /* pixels */
-}
-
 if ( ! function_exists( 'aileron_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -40,6 +33,19 @@ function aileron_setup() {
 	 * provide it for us.
 	 */
 	add_theme_support( 'title-tag' );
+
+	/*
+	 * Enable support for custom logo.
+	 *
+	 * @link https://codex.wordpress.org/Theme_Logo
+	 */
+	add_theme_support( 'custom-logo', array(
+		'height'      => 200,
+		'width'       => 580,
+		'flex-height' => true,
+		'flex-width'  => true,
+		'header-text' => array( 'site-title', 'site-description' ),
+	) );
 
 	// Enable support for Post Thumbnails on posts and pages.
 	add_theme_support( 'post-thumbnails' );
@@ -78,6 +84,18 @@ function aileron_setup() {
 }
 endif; // aileron_setup
 add_action( 'after_setup_theme', 'aileron_setup' );
+
+/**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+function aileron_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'aileron_content_width', 620 );
+}
+add_action( 'after_setup_theme', 'aileron_content_width', 0 );
 
 /**
  * Register widgetized area and update sidebar with default widgets.

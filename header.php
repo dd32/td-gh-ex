@@ -25,27 +25,29 @@
 
 	<header id="masthead" class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
 
-		<?php
-		$aileron_logo = get_theme_mod( 'aileron_logo', '' );
-		if ( ! empty( $aileron_logo ) ) :
-		?>
-		<div class="site-logo">
-			<div class="container">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-					<img src="<?php echo esc_url( $aileron_logo ); ?>" class="site-logo" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
-				</a>
-			</div>
-		</div><!-- .site-logo -->
-		<?php endif; ?>
+		<div class="site-branding-wrapper">
+			<?php
+			// Site Custom Logo
+			if ( function_exists( 'the_custom_logo' ) ) {
+				the_custom_logo();
+			}
+			?>
 
-		<?php if ( 'blank' !== get_header_textcolor() ) : ?>
-		<div class="site-branding">
-			<div class="container">
-				<h2 class="site-title" itemprop="headline"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h2>
-				<h3 class="site-description" itemprop="description"><?php bloginfo( 'description' ); ?></h3>
+			<div class="site-branding">
+				<?php if ( is_front_page() && is_home() ) : ?>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<?php else : ?>
+					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<?php endif; ?>
+
+				<?php
+				$description = get_bloginfo( 'description', 'display' );
+				if ( $description || is_customize_preview() ) :
+				?>
+				<p class="site-description"><?php echo esc_html( $description ); /* WPCS: xss ok. */ ?></p>
+				<?php endif; ?>
 			</div>
-		</div><!-- .site-branding -->
-		<?php endif; ?>
+		</div><!-- .site-branding-wrapper -->
 
 		<nav id="site-navigation" class="main-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 			<div class="container">

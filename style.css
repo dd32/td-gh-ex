@@ -4,12 +4,12 @@ Theme URI: http://themecot.com/wordpress-theme/aileron/
 Author: ThemeCot
 Author URI: http://themecot.com/
 Description: Aileron is a magazine and blog WordPress theme with a clean design and modern look. It is well suited for magazine, news, editorial, blog, photography or review site.
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: aileron
 Domain Path: /languages/
-Tags: black, blue, white, light, two-columns, right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, post-formats, theme-options, microformats, sticky-post, threaded-comments, translation-ready
+Tags: two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, post-formats, theme-options, microformats, sticky-post, threaded-comments, translation-ready
 
 This theme, like WordPress, is licensed under the GPL v2 or later.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -50,9 +50,10 @@ and Blueprint http://www.blueprintcss.org/
 9.0 - Skeleton
 	9.1 - Site Wrapper
 	9.2 - Header
-	9.3 - Site Logo
-	9.4 - Site Branding
-	9.5 - Footer
+	9.3 - Site Branding Wrapper
+	9.4 - Site Logo
+	9.5 - Site Branding
+	9.6 - Footer
 10.0 - Widgets
 	10.1 - Search Form Widget
 11.0 - Content
@@ -1038,26 +1039,37 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-9.3 Site Logo
+9.3 Site Branding Wrapper
 --------------------------------------------------------------*/
-.site-logo {
+.site-branding-wrapper {
 	overflow: hidden;
-	margin: 0 0 30px;
 	text-align: center;
 }
-.site-logo img {
-	height: auto;
-	max-width: 100%;
-	margin: 0 auto;
+/*.has-site-branding .site-branding-wrapper,
+.wp-custom-logo .site-branding-wrapper {
+	@include rem(margin, 0 0 15px);
+}*/
+
+/*--------------------------------------------------------------
+9.4 Site Custom Logo
+--------------------------------------------------------------*/
+.custom-logo {
+	width: auto;
+	max-height: 100px;
+	margin: 0;
+	padding: 0;
 }
 
 /*--------------------------------------------------------------
-9.4 Site Branding
+9.5 Site Branding
 --------------------------------------------------------------*/
 .site-branding {
 	overflow: hidden;
 	margin: 0 0 30px;
 	text-align: center;
+}
+.wp-custom-logo.has-site-branding .site-branding {
+	margin: 10px 0 0;
 }
 .site-title {
 	font-size: 55px;
@@ -1066,7 +1078,7 @@ textarea {
 	margin: 0;
 	padding: 0 100px;
 }
-.custom-header-image .site-title {
+.has-custom-header .site-title {
 	text-shadow: 0px 1px 0px #ebebeb;
 }
 .site-title a,
@@ -1087,12 +1099,12 @@ textarea {
 	margin: 5px 0 0;
 	padding: 0 200px;
 }
-.custom-header-image .site-description {
+.has-custom-header .site-description {
 	text-shadow: 0px 1px 0px #ebebeb;
 }
 
 /*--------------------------------------------------------------
-9.5 Footer
+9.6 Footer
 --------------------------------------------------------------*/
 
 /* Site footer widgets */
@@ -1863,6 +1875,11 @@ form.search-form:before {
 /* For Small to Medium Devices */
 @media (min-width: 768px) and (max-width: 1199px) {
 
+	/* Site Custom Logo */
+	.custom-logo {
+		max-height: 80px;
+	}
+
 	/* Header */
 	.site-header {
 		margin: 0 0 40px;
@@ -1899,6 +1916,23 @@ form.search-form:before {
 	/* Header */
 	.site-header {
 		margin: 0 0 15px;
+	}
+
+	/* Site Custom Logo */
+	.custom-logo {
+		max-height: 60px;
+	}
+
+	/* Site Branding */
+	.site-title {
+		font-size: 45px;
+		font-size: 4.5rem;
+		padding: 0 20px;
+	}
+	.site-description {
+		font-size: 16px;
+		font-size: 1.6rem;
+		padding: 0 20px;
 	}
 
 	/* Site Navigation */

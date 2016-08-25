@@ -16,59 +16,22 @@ function aileron_customize_register ( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
 
-	// Getting Started Section
-	$wp_customize->add_section( 'aileron_getting_started', array(
-		'title'       => __( 'Getting Started', 'aileron' ),
-		'description' => __( 'Thanks for your interest in Aileron! If you have any questions or run into any trouble, please visit us the following links. We will get you fixed up!', 'aileron' ),
-		'priority'    => 1,
+	/**
+	 * Theme Options Panel
+	 */
+	$wp_customize->add_panel( 'aileron_theme_options', array(
+	    'title'     => esc_html__( 'Theme Options', 'aileron' ),
+	    'priority'  => 1,
 	) );
 
-	// Documentation
-	$wp_customize->add_setting ( 'aileron_documentation', array(
-		'default' => '',
-	) );
-
-	$wp_customize->add_control(
-		new WP_Aileron_Button_Control(
-			$wp_customize,
-			'aileron_documentation',
-			array(
-				'label'         => __( 'Documentation', 'aileron' ),
-				'section'       => 'aileron_getting_started',
-				'type'          => 'button',
-				'button_tag'    => 'a',
-				'button_class'  => 'button button-primary',
-				'button_href'   => 'http://themecot.com/aileron-theme-documentation/',
-				'button_target' => '_blank',
-			)
-		)
-	);
-
-	// Contact
-	$wp_customize->add_setting ( 'aileron_contact', array(
-		'default'           => '',
-	) );
-
-	$wp_customize->add_control(
-		new WP_Aileron_Button_Control(
-			$wp_customize,
-			'aileron_contact',
-			array(
-				'label'         => __( 'Contact Us', 'aileron' ),
-				'section'       => 'aileron_getting_started',
-				'type'          => 'button',
-				'button_tag'    => 'a',
-				'button_class'  => 'button button-primary',
-				'button_href'   => 'http://themecot.com/contact/',
-				'button_target' => '_blank',
-			)
-		)
-	);
-
-	// Theme Options Section
-	$wp_customize->add_section( 'aileron_theme_options', array(
-		'title'     => __( 'Theme Options', 'aileron' ),
-		'priority'  => 2,
+	/**
+	 * General Options Section
+	 */
+	$wp_customize->add_section( 'aileron_general_options', array (
+		'title'     => esc_html__( 'General Options', 'aileron' ),
+		'panel'     => 'aileron_theme_options',
+		'priority'  => 1,
+		'description' => esc_html__( 'Personalize the settings of your theme.', 'aileron' ),
 	) );
 
 	// Theme Layout
@@ -78,45 +41,93 @@ function aileron_customize_register ( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control ( 'aileron_theme_layout', array(
-		'label'    => __( 'Theme Layout', 'aileron' ),
-		'section'  => 'aileron_theme_options',
+		'label'    => esc_html__( 'Theme Layout', 'aileron' ),
+		'section'  => 'aileron_general_options',
 		'priority' => 2,
 		'type'     => 'select',
 		'choices'  => array(
-			'wide' => __( 'Wide', 'aileron' ),
-			'box'  => __( 'Box', 'aileron' ),
+			'wide' => esc_html__( 'Wide', 'aileron' ),
+			'box'  => esc_html__( 'Box', 'aileron' ),
 		),
 	) );
 
-	// Update the Customizer section title for discoverability.
-	$wp_customize->get_section('title_tagline')->title = __( 'Site Title, Tagline, and Logo', 'aileron' );
-
-	// Logo
-	$wp_customize->add_setting ( 'aileron_logo', array(
-		'default'           =>  '',
-		'sanitize_callback' => 'aileron_sanitize_url',
+	/**
+	 * Theme Support Section
+	 */
+	$wp_customize->add_section( 'aileron_support', array(
+		'title'       => esc_html__( 'Support Options', 'aileron' ),
+		'description' => esc_html__( 'Thanks for your interest in Aileron.', 'aileron' ),
+		'panel'       => 'aileron_theme_options',
+		'priority'    => 2,
 	) );
 
-	$wp_customize->add_control (
-		new WP_Customize_Image_Control(
-	        $wp_customize,
-	        'aileron_logo',
-	        array(
-				'label'    => __( 'Logo', 'aileron' ),
-				'section'  => 'title_tagline',
-	        )
-	    )
+	// Documentation
+	$wp_customize->add_setting ( 'aileron_theme_doc', array(
+		'default' => '',
+	) );
+
+	$wp_customize->add_control(
+		new Aileron_WP_Customize_Button_Control(
+			$wp_customize,
+			'aileron_theme_doc',
+			array(
+				'label'         => esc_html__( 'Aileron Documentation', 'aileron' ),
+				'section'       => 'aileron_support',
+				'priority'      => 2,
+				'type'          => 'button',
+				'button_tag'    => 'a',
+				'button_class'  => 'button button-primary',
+				'button_href'   => 'http://themecot.com/aileron-theme-documentation/',
+				'button_target' => '_blank',
+			)
+		)
+	);
+
+	// Support
+	$wp_customize->add_setting ( 'aileron_theme_support', array(
+		'default' => '',
+	) );
+
+	$wp_customize->add_control(
+		new Aileron_WP_Customize_Button_Control(
+			$wp_customize,
+			'aileron_theme_support',
+			array(
+				'label'         => esc_html__( 'General Support', 'aileron' ),
+				'section'       => 'aileron_support',
+				'priority'      => 3,
+				'type'          => 'button',
+				'button_tag'    => 'a',
+				'button_class'  => 'button button-primary',
+				'button_href'   => 'http://themecot.com/contact/',
+				'button_target' => '_blank',
+			)
+		)
 	);
 
 }
 add_action( 'customize_register', 'aileron_customize_register' );
 
 /**
+ * Sanitize the Theme layout value.
+ *
+ * @param string $theme_layout - Layout type.
+ * @return string Filtered theme layout type (wide|box).
+ */
+function aileron_sanitize_theme_layout( $theme_layout ) {
+	if ( ! in_array( $theme_layout, array( 'wide', 'box' ) ) ) {
+		$theme_layout = 'box';
+	}
+
+	return $theme_layout;
+}
+
+/**
  * Button Control Class
  */
 if ( class_exists( 'WP_Customize_Control' ) ) {
 
-	class WP_Aileron_Button_Control extends WP_Customize_Control {
+	class Aileron_WP_Customize_Button_Control extends WP_Customize_Control {
 		/**
 		 * @access public
 		 * @var string
@@ -209,38 +220,6 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		<?php
 		}
 	}
-
-}
-
-/**
- * Sanitize the Theme layout value.
- *
- * @param string $theme_layout - Layout type.
- * @return string Filtered theme layout type (wide|box).
- */
-function aileron_sanitize_theme_layout( $theme_layout ) {
-	if ( ! in_array( $theme_layout, array( 'wide', 'box' ) ) ) {
-		$theme_layout = 'box';
-	}
-
-	return $theme_layout;
-}
-
-/**
- * Sanitize URL
- *
- * http://codex.wordpress.org/Function_Reference/esc_url_raw
- *
- * @param string $url - The URL to be cleaned.
- * @return Valid URL | empty string
- */
-function aileron_sanitize_url( $url ) {
-
-	if( filter_var( $url, FILTER_VALIDATE_URL ) ) {
-		return esc_url_raw( $url );
-	}
-
-	return '';
 
 }
 
