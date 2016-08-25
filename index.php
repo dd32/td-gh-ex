@@ -36,7 +36,15 @@ get_header(); ?>
             	</ul><!--ul class="blog-article-list"-->
  
  
- 				<?php ascreen_paging_nav(); ?>
+                <?php 
+					the_posts_pagination( array(
+						'mid_size' => 2,
+						'prev_text' => __( 'Previous ', 'ascreen' ),
+						'next_text' => __( ' Next', 'ascreen' ),
+						'screen_reader_text' => __( ' ', 'ascreen' ),
+						
+					) );
+				?>
  
             </div><!--div class="main"-->
 

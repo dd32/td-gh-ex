@@ -17,6 +17,9 @@ Ascreen is distributed under the terms of the GNU General Public License v2
 3. Log into your WP admin panel and click on the Design tab. Now click on the Ascreen theme to activate it.
 
 == Changelog ==
+Version 1.1.4  2016.8.24
+* Fix Some Problems.
+
 Version 1.1.3  2016.8.23
 * Fix Some Problems.
 

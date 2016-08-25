@@ -1,11 +1,13 @@
 <?php
+
+function ascreen_setup(){
+	global $content_width;
 	$lang = get_template_directory(). '/languages';
 	load_theme_textdomain('ascreen', $lang);
 	
 	$template_directory = get_template_directory();
 	require_once( $template_directory . '/includes/customize/customize.php' );
 	
-
 	add_theme_support('post-thumbnails');
 	$args = array();
 	$header_args = array( 
@@ -33,10 +35,11 @@
 	add_theme_support( "title-tag" );//
 	add_editor_style("editor-style.css");
 	if ( !isset( $content_width ) ) $content_width = 1170;	
+}
+add_action( 'after_setup_theme', 'ascreen_setup' );
 	
 function ascreen_custom_scripts()
 {
-	global $is_IE;
 	$theme_info = wp_get_theme();
 		
 	wp_enqueue_style('ascreen-main', get_stylesheet_uri(), array(), $theme_info->get( 'Version' ) );			
@@ -52,7 +55,7 @@ add widgets to wp-admin
 function ascreen_widgets_init() {
 
 	register_sidebar( array(
-		'name' => 'Sidebar',
+		'name' => __('Sidebar','ascreen'),
 		'id' => 'sidebar',
 		'before_widget' => '<div class="sidebar-section"><ul class="blog-category">
 ',
@@ -63,7 +66,7 @@ function ascreen_widgets_init() {
 
 	
 	register_sidebar( array(
-		'name' => 'Footer Area #1',
+		'name' => __('Footer Area #1','ascreen'),		
 		'id' => 'sidebar-1',
 		'before_widget' => '<dl id="%1$s" class="%2$s">',
 		'after_widget' => '</dl>',
@@ -72,7 +75,7 @@ function ascreen_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name' => 'Footer Area #2',
+		'name' => __('Footer Area #2','ascreen'),			
 		'id' => 'sidebar-2',
 		'before_widget' => '<dl id="%1$s" class="%2$s">',
 		'after_widget' => '</dl>',
@@ -81,7 +84,7 @@ function ascreen_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name' => 'Footer Area #3',
+		'name' => __('Footer Area #3','ascreen'),	
 		'id' => 'sidebar-3',
 		'before_widget' => '<dl id="%1$s" class=" %2$s">',
 		'after_widget' => '</dl>',
@@ -90,7 +93,7 @@ function ascreen_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name' => 'Footer Area #4',
+		'name' => __('Footer Area #4','ascreen'),	
 		'id' => 'sidebar-4',
 		'before_widget' => '<dl id="%1$s" class=" %2$s">',
 		'after_widget' => '</dl>',
@@ -99,28 +102,6 @@ function ascreen_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'ascreen_widgets_init' );
-
-function ascreen_paging_nav(){
-	global $wp_query;
-	$pages = $wp_query->max_num_pages; 
-	if ( $pages >= 2 ): 
-		$big = 999999999; 
-		$paginate = paginate_links( array(
-			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-			'format' => '?paged=%#%',
-			'current' => max( 1, get_query_var('paged') ),
-			'total' => $wp_query->max_num_pages,
-			'end_size' => 13, 
-			'type' => 'array' 
-			));
-		echo '<div class="ct_page_nav"><ul class="pagination">';
-		foreach ($paginate as $value)
-		{
-			echo '<li>'.$value.'</li>';
-		}
-		echo '</ul></div>';
-	endif;
-}
 
 
 function ascreen_better_comments($comment, $args, $depth)
