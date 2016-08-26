@@ -1,5 +1,6 @@
 <?php
 
+if ( !class_exists('Atframework_Facts') ) {
 class Atframework_Facts extends WP_Widget {
 
 	public function __construct() {
@@ -204,4 +205,5 @@ class Atframework_Facts extends WP_Widget {
 		}
 	}
 	
+}
 }

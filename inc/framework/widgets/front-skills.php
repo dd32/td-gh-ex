@@ -1,5 +1,6 @@
 <?php
 
+if ( !class_exists('Atframework_Skills') ) {
 class Atframework_Skills extends WP_Widget {
 
 	public function __construct() {
@@ -175,4 +176,5 @@ class Atframework_Skills extends WP_Widget {
 		}
 	}
 	
+}
 }

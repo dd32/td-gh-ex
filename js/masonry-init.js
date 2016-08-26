@@ -5,7 +5,6 @@ jQuery(function($) {
 	$container.imagesLoaded( function() {
 		$container.masonry({
 			itemSelector: '.hentry',
-	        //isAnimated: true,
 			isFitWidth: true,
 			animationOptions: {
 				duration: 500,

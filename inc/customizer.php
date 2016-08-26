@@ -132,7 +132,6 @@ function astrid_customize_register( $wp_customize ) {
         array(
             'default' => '',
             'sanitize_callback' => 'astrid_sanitize_text',
-            'transport'     => 'postMessage'
         )
     );
     $wp_customize->add_control(
@@ -149,7 +148,6 @@ function astrid_customize_register( $wp_customize ) {
         array(
             'default' => '',
             'sanitize_callback' => 'esc_url_raw',
-            'transport'     => 'postMessage'
         )
     );
     $wp_customize->add_control(

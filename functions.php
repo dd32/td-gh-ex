@@ -163,7 +163,7 @@ function astrid_widgets_init() {
 	register_widget( 'Atframework_Posts' );		
 	register_widget( 'Atframework_Video' );		
 	register_widget( 'Atframework_Recent_Posts' );
-	register_widget( 'Atframework_Social' );		
+	register_widget( 'Atframework_Social' );	
 
 }
 add_action( 'widgets_init', 'astrid_widgets_init' );
