@@ -117,3 +117,9 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, cust
 = Version 1.6.4 =
 * Added admin panel
 * Minor bug fixes
+
+= Version 1.6.5 =
+* Fixed mobile menu for tablets
+* Improved featured images hover
+* Updated HTML5Shiv to 3.7.3 version
+* Minor bug fixes

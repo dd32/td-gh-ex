@@ -20,25 +20,11 @@
 			} else {
 				$('.main-navigation .menu-item-home > a').prepend('<i class="fa fa-home spaceRight"></i>');
 			}
-		
-		/*-----------------------------------------------------------------------------------*/
-		/*  Overlay Effect for Featured Image
-		/*-----------------------------------------------------------------------------------*/ 	
-			$(".overlay-img").hover(function () {
-				$(this).stop().animate({
-					opacity: .5
-				}, 300);
-			},
-			function () {
-				$(this).stop().animate({
-					opacity: 0
-				}, 300);
-			});
 			
 		/*-----------------------------------------------------------------------------------*/
 		/*  Mobile Menu
 		/*-----------------------------------------------------------------------------------*/ 
-			if ($( window ).width() < 769) {
+			if ($( window ).width() <= 1024) {
 				$('.main-navigation').find("li").each(function(){
 					if($(this).children("ul").length > 0){
 						$(this).append("<span class='indicator'></span>");
@@ -56,7 +42,7 @@
 				});
 			}
 			$(window).resize(function() {
-				if ($( window ).width() > 769) {
+				if ($( window ).width() > 1024) {
 					$('.main-navigation ul > li.menu-item-has-children, .main-navigation ul > li.page_item_has_children').find('> ul.sub-menu, > ul.children').slideDown(300);
 				}
 			});

@@ -108,7 +108,7 @@ function semplicemente_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 	
-	wp_enqueue_script( 'semplicemente-html5', get_template_directory_uri() . '/js/html5.js', array(), '3.7.2', false );
+	wp_enqueue_script( 'semplicemente-html5', get_template_directory_uri() . '/js/html5shiv.min.js', array(), '3.7.3', false );
 	wp_script_add_data( 'semplicemente-html5', 'conditional', 'lt IE 9' );
 }
 add_action( 'wp_enqueue_scripts', 'semplicemente_scripts' );
