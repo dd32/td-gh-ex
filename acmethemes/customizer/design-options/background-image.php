@@ -5,5 +5,5 @@ $wp_customize->add_section( 'background_image', array(
     'capability'     => 'edit_theme_options',
     'theme_supports' => '',
     'title'          => __( 'Background Image', 'acmephoto' ),
-    'panel'  => 'acmephoto-design-panel'
+    'panel'          => 'acmephoto-design-panel'
 ) );

@@ -9,47 +9,68 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package AcmeThemes
+ * @package Acme Themes
  * @subpackage AcmePhoto
  */
-global $acmephoto_customizer_all_values;
+
 get_header(); ?>
-	<div class="wrapper inner-main-title init-animate fadeInDown animated">
-		<?php if ( is_home() && ! is_front_page() ) : ?>
-			<header>
-				<h1 class="page-title"><?php single_post_title(); ?></h1>
-			</header>
-		<?php endif; ?>
-	</div>
-	<div id="content" class="site-content">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
 		<?php
-		if( 1 == $acmephoto_customizer_all_values['acmephoto-show-breadcrumb'] ){
-			acmephoto_breadcrumbs();
-		}
-		?>
-		<div id="primary" class="content-area">
-			<main id="main" class="site-main" role="main">
+		if ( have_posts() ) :
+
+			if ( is_home() && ! is_front_page() ) : ?>
+				<header>
+					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+				</header>
+
 				<?php
-				if ( have_posts() ) :
-					/* Start the Loop */
-					while ( have_posts() ) : the_post();
+			endif;
+			/**
+			 * acmephoto_action_masonry_start hook
+			 * AcmePhoto 1.0.0
+			 *
+			 * @hooked acmephoto_masonry_start -  0
+			 */
+			do_action( 'acmephoto_action_masonry_start' );
+			/* Start the Loop */
+			while ( have_posts() ) : the_post();
+
 					/*
 					 * Include the Post-Format-specific template for the content.
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
-						get_template_part( 'template-parts/content', get_post_format() );
+					get_template_part( 'template-parts/content', get_post_format() );
 
-					endwhile;
-					the_posts_navigation();
-				else :
-					get_template_part( 'template-parts/content', 'none' );
-				endif; ?>
-			</main><!-- #main -->
-		</div><!-- #primary -->
+			endwhile;
+			/**
+			 * acmephoto_action_masonry_end hook
+			 * AcmePhoto 1.0.0
+			 *
+			 * @hooked acmephoto_masonry_end -  0
+			 */
+			do_action( 'acmephoto_action_masonry_end' );
 
-		<?php get_sidebar( 'left' ); ?>
-		<?php get_sidebar(); ?>
+			/**
+			 * acmephoto_action_navigation hook
+			 * @since acmephoto 1.0.0
+			 *
+			 * @hooked: acmephoto_posts_navigation - 10
+			 *
+			 */
+			do_action( 'acmephoto_action_navigation' );
 
-	</div><!-- #content -->
+		else :
+
+			get_template_part( 'template-parts/content', 'none' );
+
+		endif; ?>
+
+		</main><!-- #main -->
+	</div><!-- #primary -->
+<?php get_sidebar( 'left' ); ?>
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

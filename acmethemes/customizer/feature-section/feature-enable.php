@@ -1,7 +1,7 @@
 <?php
 /*adding sections for enabling feature section in front page*/
 $wp_customize->add_section( 'acmephoto-enable-feature', array(
-    'priority'       => 30,
+    'priority'       => 10,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '',
     'title'          => __( 'Enable Feature Section', 'acmephoto' ),
@@ -16,10 +16,10 @@ $wp_customize->add_setting( 'acmephoto_theme_options[acmephoto-enable-feature]',
 ) );
 
 $wp_customize->add_control( 'acmephoto_theme_options[acmephoto-enable-feature]', array(
-    'label'		=> __( 'Enable Feature Section', 'acmephoto' ),
-    'description'	=> __( 'Feature section will display on front/home page.', 'acmephoto' ),
-    'section'   => 'acmephoto-enable-feature',
-    'settings'  => 'acmephoto_theme_options[acmephoto-enable-feature]',
-    'type'	  	=> 'checkbox',
-    'priority'  => 10
+    'label'		    => __( 'Enable Feature Section', 'acmephoto' ),
+    'description'	=> __( 'Feature section will display on front/home page', 'acmephoto' ),
+    'section'       => 'acmephoto-enable-feature',
+    'settings'      => 'acmephoto_theme_options[acmephoto-enable-feature]',
+    'type'	  	    => 'checkbox',
+    'priority'      => 10
 ) );

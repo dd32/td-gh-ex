@@ -11,9 +11,14 @@ $wp_customize->add_panel( 'acmephoto-header-panel', array(
 /*
 * file for header logo options
 */
-require_once get_template_directory() . '/acmethemes/customizer/header-options/header-logo.php';
+$acmephoto_customizer_header_logo_file_path = acmephoto_file_directory('acmethemes/customizer/header-options/header-logo.php');
+require $acmephoto_customizer_header_logo_file_path;
 
-/*adding header image inside this panel*/
-$wp_customize->get_section( 'header_image' )->panel = 'acmephoto-header-panel';
-$wp_customize->get_section( 'header_image' )->description = __( 'Applied to the slider background image on home/front page and header images of inner pages.', 'acmephoto' );
-$wp_customize->remove_control( 'display_header_text' );
+/*
+* file for header social options
+*/
+$acmephoto_customizer_header_social_file_path = acmephoto_file_directory('acmethemes/customizer/header-options/social-options.php');
+require $acmephoto_customizer_header_social_file_path;
+
+
+

@@ -1,5 +1,7 @@
 <?php
-/*adding sections for custom css options */
+/*
+ * adding sections for custom css options
+*/
 $wp_customize->add_section( 'acmephoto-design-custom-css-option', array(
     'priority'       => 60,
     'capability'     => 'edit_theme_options',
@@ -10,8 +12,8 @@ $wp_customize->add_section( 'acmephoto-design-custom-css-option', array(
 
 /*custom-css*/
 $wp_customize->add_setting( 'acmephoto_theme_options[acmephoto-custom-css]', array(
-    'capability'		=> 'edit_theme_options',
-    'default'			=> $defaults['acmephoto-custom-css'],
+    'capability'		   => 'edit_theme_options',
+    'default'			   => $defaults['acmephoto-custom-css'],
     'sanitize_callback'    => 'wp_filter_nohtml_kses',
     'sanitize_js_callback' => 'wp_filter_nohtml_kses'
 ) );

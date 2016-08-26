@@ -6,22 +6,22 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package AcmeThemes
+ * @package Acme Themes
  * @subpackage AcmePhoto
  */
 
 
 /**
  * acmephoto_action_after_content hook
- * @since AcmePhoto 0.0.1
+ * @since acmephoto 1.0.0
  *
- * @hooked null
+ * @hooked acmephoto_after_content - 10
  */
 do_action( 'acmephoto_action_after_content' );
 
 /**
  * acmephoto_action_before_footer hook
- * @since AcmePhoto 0.0.1
+ * @since acmephoto 1.0.0
  *
  * @hooked null
  */
@@ -29,7 +29,7 @@ do_action( 'acmephoto_action_before_footer' );
 
 /**
  * acmephoto_action_footer hook
- * @since AcmePhoto 0.0.1
+ * @since acmephoto 1.0.0
  *
  * @hooked acmephoto_footer - 10
  */
@@ -37,7 +37,7 @@ do_action( 'acmephoto_action_footer' );
 
 /**
  * acmephoto_action_after_footer hook
- * @since AcmePhoto 0.0.1
+ * @since acmephoto 1.0.0
  *
  * @hooked null
  */
@@ -45,7 +45,7 @@ do_action( 'acmephoto_action_after_footer' );
 
 /**
  * acmephoto_action_after hook
- * @since AcmePhoto 0.0.1
+ * @since acmephoto 1.0.0
  *
  * @hooked acmephoto_page_end - 10
  */

@@ -2,7 +2,7 @@
 /**
  * Dynamic css
  *
- * @since AcmePhoto 0.0.1
+ * @since AcmePhoto 1.0.0
  *
  * @param null
  * @return null
@@ -14,30 +14,37 @@ if ( ! function_exists( 'acmephoto_dynamic_css' ) ) :
 
         global $acmephoto_customizer_all_values;
         /*Color options */
-        $acmephoto_primary_color = $acmephoto_customizer_all_values['acmephoto-primary-color'];
+        $acmephoto_primary_color = esc_attr( $acmephoto_customizer_all_values['acmephoto-primary-color'] );
         $custom_css = '';
-
         /*background*/
-        if( get_header_image() ){
-            $bg_image_url = get_header_image();
-        }
-        else{
-            $bg_image_url =   get_template_directory_uri()."/assets/img/startup-slider.jpg";
-        }
         $custom_css .= "
-              .inner-main-title {
-                background-image:url('{$bg_image_url}');
-                background-repeat:no-repeat;
-                background-size:cover;
-                background-attachment:fixed;
+            mark,
+            .comment-form .form-submit input,
+            #calendar_wrap #wp-calendar #today,
+            #calendar_wrap #wp-calendar #today a,
+            .wpcf7-form input.wpcf7-submit:hover,
+            .breadcrumb,
+            .slider-section .owl-buttons .owl-prev, 
+            .slider-section .owl-buttons .owl-next,
+            .masonry-start .read-more .read-more-btn,
+            .show-more,
+             .slicknav_btn,
+             .widget-title::after,
+             .banner-search .search-block #searchsubmit,
+             .at-sticky{
+                background: {$acmephoto_primary_color};
             }";
         /*color*/
         $custom_css .= "
+            .slider-section .cat-links a,
             a:hover,
-            a:active,
-            a:focus,
-            .btn-primary:hover,
-            .widget li a:hover,
+            .header-wrapper .menu li a:hover,
+            .screen-reader-text:focus,
+            .socials a:hover,
+            .site-title a:hover,
+            .widget_search input#s,
+            .slider-feature-wrap a:hover,
+            .featured-desc .above-entry-meta span:hover,
             .posted-on a:hover,
             .cat-links a:hover,
             .comments-link a:hover,
@@ -45,60 +52,65 @@ if ( ! function_exists( 'acmephoto_dynamic_css' ) ) :
             .tags-links a:hover,
             .byline a:hover,
             .nav-links a:hover,
-            .bx-controls-direction a:hover i,
-             .main-navigation .current_page_item > a,
-            .main-navigation .current-menu-item > a,
-            .main-navigation .active > a,
-            .main-navigation .current_page_ancestor > a{
+            #acmephoto-breadcrumbs a:hover,
+            .wpcf7-form input.wpcf7-submit,
+            .widget li a:hover,
+            .header-wrapper .menu > li.current-menu-item > a,
+            .header-wrapper .menu > li.current-menu-parent > a,
+            .header-wrapper .menu > li.current_page_parent > a,
+            .header-wrapper .menu > li.current_page_ancestor > a{
                 color: {$acmephoto_primary_color};
             }";
 
-        /*background color*/
-        $custom_css .= "
-            .navbar .navbar-toggle:hover,
-            .comment-form .form-submit input,
-            .read-more,
-            .btn-primary,
-            .circle,
-            .line > span,
-            .wpcf7-form input.wpcf7-submit,
+        /*border*/
+         $custom_css .= "
+         .at-sticky::before {
+         	border-top: 18px solid {$acmephoto_primary_color};
+         }
+            .page-header .page-title:after,
+            .single .entry-header.border .entry-title:after{
+                background: {$acmephoto_primary_color};
+                content: '';
+                height: 18px;
+                position: absolute;
+                top: 14px;
+                width: 3px;
+                left:0;
+            }
+            .page-header .page-title:before,
+            .single .entry-header.border .entry-title:before{
+                border-bottom: 7px solid {$acmephoto_primary_color};
+            }
             .wpcf7-form input.wpcf7-submit:hover,
-            .breadcrumb,
-            .banner-search .search-block #searchsubmit{
-                background-color: {$acmephoto_primary_color};
-            }";
-
-        /*borders*/
-        $custom_css .= "
-            .blog article.sticky,
-            .btn-primary:before,
             .banner-search .search-block{
                 border: 2px solid {$acmephoto_primary_color};
-            }";
-
-        $custom_css .= "
-            .comment-form .form-submit input,
-            .read-more{
-                border: 1px solid {$acmephoto_primary_color};
-            }";
-
-        $custom_css .= "
-            .wpcf7-form input.wpcf7-submit::before {
-                border: 4px solid {$acmephoto_primary_color};
-            }";
-
-        $custom_css .= "
-             .breadcrumb::after {
+            }
+            .breadcrumb::after {
                 border-left: 5px solid {$acmephoto_primary_color};
+            }
+            .tagcloud a{
+                border: 1px solid {$acmephoto_primary_color};
+            }
+         ";
+        /*media width*/
+        $custom_css .= "
+            @media screen and (max-width:992px){
+                .slicknav_nav li:hover > a,
+                .slicknav_nav li.current-menu-ancestor a,
+                .slicknav_nav li.current-menu-item  > a,
+                .slicknav_nav li.current_page_item a,
+                .slicknav_nav li.current_page_item .slicknav_item span,
+                .slicknav_nav li .slicknav_item:hover a{
+                    color: {$acmephoto_primary_color};
+                }
             }";
-
-        /*custom css*/
         /*custom css*/
         $acmephoto_custom_css = wp_filter_nohtml_kses ( $acmephoto_customizer_all_values['acmephoto-custom-css'] );
         if ( ! empty( $acmephoto_custom_css ) ) {
             $custom_css .= $acmephoto_custom_css;
         }
         wp_add_inline_style( 'acmephoto-style', $custom_css );
+
     }
 endif;
 add_action( 'wp_enqueue_scripts', 'acmephoto_dynamic_css', 99 );

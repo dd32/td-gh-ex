@@ -2,7 +2,7 @@
 /**
  * Comment Form
  *
- * @since AcmePhoto 0.0.1
+ * @since AcmePhoto 1.0.0
  *
  * @param array $form
  * @return array $form

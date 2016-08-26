@@ -4,16 +4,15 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package AcmeThemes
+ * @package Acme Themes
  * @subpackage AcmePhoto
  */
 
 ?>
-
-<section class="no-results not-found init-animate fadeInDown animated">
-	<header>
+<section class="no-results not-found">
+	<header class="page-header">
 		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'acmephoto' ); ?></h1>
-	</header>
+	</header><!-- .page-header -->
 
 	<div class="page-content">
 		<?php

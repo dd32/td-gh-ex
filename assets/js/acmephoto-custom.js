@@ -1,62 +1,31 @@
-jQuery(document).ready(function($){
-
-    function homeFullScreen() {
-
-        var homeSection = $('#at-banner-slider');
-        var windowHeight = $(window).outerHeight()*.8;
-
-        if (homeSection.hasClass('home-fullscreen')) {
-
-            $('.home-fullscreen').css('height', windowHeight);
-        }
-    }
-    //make slider full width
-    homeFullScreen();
-
-    //window resize
-    $(window).resize(function () {
-        homeFullScreen();
+jQuery(document).ready(function($) {
+    /*responsive menu toggle*/
+    $('.navbar-toggle').click(function () {
+        $('#navbar .main-navigation').slideToggle();
     });
 
-    $(window).load(function () {
-        $('.at-featured-text-slider').show().bxSlider({
-            auto: true,
-            pager: false,
-            mode: 'fade',
-            prevText: '<i class="fa fa-angle-left fa-3x"></i>',
-            nextText: '<i class="fa fa-angle-right fa-3x"></i>'
-        });
-        /*parallax*/
-        jQuery('.at-parallax,.inner-main-title').each(function() {
-            jQuery(this).parallax('center', 0.2, true);
-        });
-
-        /*parallax scolling*/
-        $('a[href*=#]').click(function(event){
-            $('html, body').animate({
-                scrollTop: $( $.attr(this, 'href') ).offset().top-$('.at-navbar').height()
-            }, 1000);
-            event.preventDefault();
-        });
-        /*bootstrap sroolpy*/
-        $("body").scrollspy({target: ".navbar-fixed-top", offset: $('.at-navbar').height()+50 } );
-    });
-
+    /*sticky menu*/
     function stickyMenu() {
-
         var scrollTop = $(window).scrollTop();
-        var offset = 0;
+        var slider_feature_wrap = $('.slider-feature-wrap');
+        if ( slider_feature_wrap.length){
+            if($(window).width() > 1023 ){
+                var offset = slider_feature_wrap.height();
+                if ( scrollTop > offset ) {
+                    $('.at-navbar').addClass('navbar-small');
+                    $('#top-header').hide();
+                }
+                else {
+                    $('.at-navbar').removeClass('navbar-small');
+                    $('#top-header').show();
+                }
+            }
+            else{
+                $('.at-navbar').addClass('navbar-small');
+                $('#top-header').hide();
+            }
+        }
 
-        if ( scrollTop > offset ) {
-            $('#navbar').addClass('navbar-small');
-            $('.sm-up-container').show();
-            $('.scroll-wrap').hide();
-        }
-        else {
-            $('#navbar').removeClass('navbar-small');
-            $('.sm-up-container').hide();
-            $('.scroll-wrap').show();
-        }
     }
     //What happen on window scroll
     stickyMenu();
@@ -65,14 +34,107 @@ jQuery(document).ready(function($){
             stickyMenu();
         }, 300)
     });
+    $(window).resize(function () {
+        stickyMenu();
+    });
 
-
-});
-
-/*animation with wow*/
-wow = new WOW({
-        boxClass: 'init-animate',
-        animateClass: 'animated', // default
+    /*fixed menu in margin*/
+    function at_fixed_content_margin() {
+        if( $('body').hasClass('not-front-page') ){
+            var header_height = $('.at-navbar').height();
+            $('.site-content').css('margin-top',header_height + 10);
+        }
     }
-);
-wow.init();
+    at_fixed_content_margin();
+    $(window).resize(function () {
+        at_fixed_content_margin();
+    });
+
+    /*featured slider*/
+    jQuery('.feature-slider ').show().owlCarousel({
+        navigation : true, // Show next and prev buttons
+        slideSpeed : 300,
+        paginationSpeed : 400,
+        singleItem:true,
+        navigationText : ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>']
+    });
+    
+    /*drop-down menu fixed in ipad*/
+    jQuery('.menu-item-has-children > a').click(function(){
+        var at_this = jQuery(this);
+        if( at_this.hasClass('at-clicked')){
+            return true;
+        };
+        var at_width = jQuery(window).width();
+        if( at_width > 992 && at_width <= 1230 ){
+            at_this.addClass('at-clicked');
+            return false;
+        }
+    });
+
+    // MASSONRY
+    $(window).load(function(){
+        var $masonry_boxes = $( '.masonry-start' );
+        $masonry_boxes.hide();
+
+        var $container = $( '#masonry-loop' );
+        $container.imagesLoaded( function(){
+            $masonry_boxes.fadeIn( 'slow' );
+            $container.masonry({
+                itemSelector : '.masonry-post'
+            });
+        });
+        $(window).resize(function () {
+            $container.masonry('bindResize')
+        });
+    });
+
+    /*new pagination style*/
+    var paged = parseInt(acmephoto_ajax.paged) + 1;
+    var max_num_pages = parseInt(acmephoto_ajax.max_num_pages);
+    var next_posts = acmephoto_ajax.next_posts;
+
+
+    $(document).on( 'click', '.show-more', function( event ) {
+        event.preventDefault();
+        var show_more = $(this);
+        var click = show_more.attr('data-click');
+
+        if( paged >= max_num_pages){
+            show_more.html(acmephoto_ajax.no_more_posts)
+        }
+
+        if( click == 0 || paged >= max_num_pages){
+            return false;
+        }
+        show_more.html('<i class="fa fa-spinner fa-spin fa-fw"></i>');
+        show_more.attr("data-click", 0);
+        var page = parseInt( show_more.attr('data-number') );
+
+
+        $('#acmephoto-temp-post').load(next_posts + ' article.post', function() {
+            /*http://stackoverflow.com/questions/17780515/append-ajax-items-to-masonry-with-infinite-scroll*/
+            paged++;/*next page number*/
+            next_posts = next_posts.replace(/(\/?)page(\/|d=)[0-9]+/, '$1page$2'+ paged);
+
+            var html = $('#acmephoto-temp-post').html();
+            $('#acmephoto-temp-post').html('');
+
+            // Make jQuery object from HTML string
+            var $moreBlocks = $( html ).filter('article.masonry-post');
+
+            // Append new blocks to container
+            $('#masonry-loop').append( $moreBlocks ).imagesLoaded(function(){
+                // Have Masonry position new blocks
+                $('#masonry-loop').masonry( 'appended', $moreBlocks );
+            });
+
+            show_more.attr("data-number", page+1);
+            show_more.attr("data-click", 1);
+            show_more.html("<i class='fa fa-refresh'></i>"+acmephoto_ajax.show_more)
+
+        });
+
+        return false;
+    });
+});

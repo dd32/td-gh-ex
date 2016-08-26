@@ -1,5 +1,13 @@
+<?php
+/**
+ * Custom Searchform
+ *
+ * @package Acme Themes
+ * @subpackage AcmePhoto
+ */
+?>
 <div class="search-block">
-    <form action="<?php echo esc_url( home_url() )?>" class="searchform" id="searchform" method="get" role="search">
+    <form action="<?php echo esc_url( home_url() ); ?>" class="searchform" id="searchform" method="get" role="search">
         <div>
             <label for="menu-search" class="screen-reader-text"></label>
             <?php
