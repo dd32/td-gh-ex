@@ -3,6 +3,9 @@ Avata Theme Change Log
 
 =================================
 
+= Version 1.0.5  = 08/26/2016
+* Remove - Removed page metabox options
+
 = Version 1.0.4  = 08/20/2016
 * Fix - Fixed 404 page and search page style issue
 * Fix - Fixed background Color and background image options issue

@@ -32,12 +32,6 @@ function avata_setup() {
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'avata' ),
 		'footer_menu' => __( 'Footer Menu', 'avata' ),
-		'custom_menu_1' => __( 'Custom Menu 1', 'avata' ),
-		'custom_menu_2' => __( 'Custom Menu 2', 'avata' ),
-		'custom_menu_3' => __( 'Custom Menu 3', 'avata' ),
-		'custom_menu_4' => __( 'Custom Menu 4', 'avata' ),
-		'custom_menu_5' => __( 'Custom Menu 5', 'avata' ),
-		'custom_menu_6' => __( 'Custom Menu 6', 'avata' ),
 	) );
 	
 
@@ -85,13 +79,7 @@ add_action( 'after_setup_theme', 'avata_setup' );
  * Enqueue scripts and styles.
  */
 function avata_scripts() {
-	global $content_width,$avata_post_meta,$post,$avata_homepage_sections;
-	if($post){
-	$avata_post_meta = get_post_meta( $post->ID ,'_avata_post_meta');
-	}
-
-	if( isset($avata_post_meta[0]) && $avata_post_meta[0]!='' )
-	$avata_post_meta = @json_decode( $avata_post_meta[0],true );
+	global $content_width,$post,$avata_homepage_sections;
 
 	$theme_info = wp_get_theme();
 	
@@ -131,13 +119,7 @@ function avata_scripts() {
 		}else{
 			$avata_custom_css .= ".site-name,.site-tagline{color:#".get_header_textcolor().";}";
 			}
- //Page Options
-  if( is_singular() ):
-  
-  if( isset($avata_post_meta['padding_top']) && $avata_post_meta['padding_top'] !=''  ):
-  $avata_custom_css  .= ".page-id-".$post->ID." .page-main{\r\npadding-top:".$avata_post_meta['padding_top'].";\r\n}\r\n";
-  endif;
-endif;
+
 	
 
  wp_enqueue_script( 'avata-bootstrap', get_template_directory_uri() . '/assets/bootstrap/js/bootstrap.js', array( 'jquery' ), null, false );
@@ -163,8 +145,3 @@ require get_template_directory() . '/inc/template-tags.php';
  * Custom functions that act independently of the theme templates.
  */
 require get_template_directory() . '/inc/extras.php';
-
-/**
- * metabox options.
- */
-require get_template_directory() . '/inc/metabox-options.php';
