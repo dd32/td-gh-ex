@@ -1,18 +1,17 @@
-# Copyright (C) 2014 Catch Themes
-# This file is distributed under the GNU General Public License v3 or later.
+# Translation of Gridalicious in German
+# This file is distributed under the same license as the Gridalicious package.
 msgid ""
 msgstr ""
 "Project-Id-Version: Gridalicious\n"
-"Report-Msgid-Bugs-To: https://catchthemes.com/support-forum/forum/catch-base-free/\n"
-"POT-Creation-Date: 2016-08-22 00:41+0545\n"
-"PO-Revision-Date: 2016-08-22 00:42+0545\n"
-"Last-Translator: Catch Themes <info@catchthemes.com>\n"
+"POT-Creation-Date: 2016-08-27 19:51+0545\n"
+"PO-Revision-Date: 2016-08-27 19:51+0545\n"
+"Last-Translator: \n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Poedit 1.7.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__;"
@@ -22,30 +21,29 @@ msgstr ""
 
 #: ../404.php:18
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "Hoppla! Diese Seite konnte nicht gefunden werden."
+msgstr "Oops! Die Seite konnte nicht gefunden werden."
 
 #: ../404.php:22
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links below "
 "or a search?"
 msgstr ""
-"Es sieht so aus, als w&auml;re hier nichts. Vielleicht einen der folgenden Links "
-"oder eine Suche probieren?"
+"Es wurde nichts gefunden. Versuche es mit einem der folgenden Links oder der Suche."
 
 #: ../archive.php:30
 #, php-format
 msgid "Author: %s"
-msgstr "Autor(en): %s"
+msgstr "Autor: %s"
 
 #: ../archive.php:33
 #, php-format
 msgid "Day: %s"
-msgstr "Tag(e): %s"
+msgstr "Tag: %s"
 
 #: ../archive.php:36
 #, php-format
 msgid "Month: %s"
-msgstr "Monat(e): %s"
+msgstr "Monat: %s"
 
 #: ../archive.php:36
 msgctxt "monthly archives date format"
@@ -55,7 +53,7 @@ msgstr "F Y"
 #: ../archive.php:39
 #, php-format
 msgid "Year: %s"
-msgstr "Jahr(e): %s"
+msgstr "Jahr: %s"
 
 #: ../archive.php:39
 msgctxt "yearly archives date format"
@@ -64,7 +62,7 @@ msgstr "Y"
 
 #: ../archive.php:42
 msgid "Asides"
-msgstr "Randbemerkungen"
+msgstr "Kurzmitteilungen"
 
 #: ../archive.php:45
 msgid "Galleries"
@@ -92,7 +90,7 @@ msgstr "Status"
 
 #: ../archive.php:63
 msgid "Audios"
-msgstr "Audiodateien"
+msgstr "Audios"
 
 #: ../archive.php:66
 msgid "Chats"
@@ -107,16 +105,16 @@ msgstr "Archive"
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] "Ein Gedanke zu &ldquo;%2$s&rdquo;"
-msgstr[1] "%1$s Gedanken zu &ldquo;%2$s&rdquo;"
+msgstr[0] "Ein Gedanke zu &bdquo;%2$s&ldquo;"
+msgstr[1] "%1$s Gedanken zu &bdquo;%2$s&ldquo;"
 
 #: ../comments.php:34 ../comments.php:59
 msgid "Comment navigation"
-msgstr "Kommentarnavigation"
+msgstr "Kommentar-Navigation"
 
 #: ../comments.php:35 ../comments.php:60
 msgid "&larr; Older Comments"
-msgstr "&larr; &Auml;ltere Kommentare"
+msgstr "&larr; Ältere Kommentare"
 
 #: ../comments.php:36 ../comments.php:61
 msgid "Newer Comments &rarr;"
@@ -124,32 +122,34 @@ msgstr "Neuere Kommentare &rarr;"
 
 #: ../comments.php:71
 msgid "Comments are closed."
-msgstr "Die Kommentare wurden geschlossen."
+msgstr "Kommentare sind geschlossen."
 
 #: ../content-none.php:15
 msgid "Nothing Found"
-msgstr "Nichts gefunden"
+msgstr "Es konnte nichts gefunden werden."
 
 #: ../content-none.php:21 ../no-results.php:20
 #, php-format
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
-"Bereit, Ihren ersten Kommentar zu ver&ouml;ffentlichen? <a href=\"%1$s\">Hier "
-"beginnen</a>."
+"Bereit, um deinen ersten Beitrag zu veröffentlichen? <a href=\"%1$s\">Starte hier</"
+"a>."
 
 #: ../content-none.php:25 ../no-results.php:24
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some different "
 "keywords."
-msgstr "Leider keine &uuml;bereinstimmung. Bitte benutzen Sie andere Suchbegriffe"
+msgstr ""
+"Entschuldigung, aber zu deinen Suchbegriffen wurde nichts passendes gefunden. Bitte "
+"versuche es mit anderen Stichworten noch einmal."
 
 #: ../content-none.php:30 ../no-results.php:29
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can "
 "help."
 msgstr ""
-"Der gesuchte Inhalt ist leider nicht zu finden. Eine neue (ver&auml;nderte) Suche "
-"probieren?"
+"Es sieht so aus, als ob wir nicht das finden konnten, wonach du gesucht hast. "
+"Möglicherweise hilft die Suchfunktion."
 
 #: ../content-page.php:28 ../content-single.php:31 ../content.php:46
 msgid "Pages:"
@@ -195,7 +195,7 @@ msgstr "Changelog"
 
 #: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:65
 msgid "Donate Now"
-msgstr "Spenden Sie jetzt"
+msgstr "Jetzt spenden"
 
 #: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:69
 msgid "Review"
@@ -228,11 +228,11 @@ msgstr "Optionen f&uuml;r ausgew&auml;hlten Inhalt"
 #: ../inc/customizer-includes/gridalicious-customizer-featured-content-setting.php:34
 #: ../inc/gridalicious-featured-content.php:56
 msgid "Featured Content"
-msgstr "Ausgew&auml;hlter Inhalt"
+msgstr "Hervorgehobener Inhalt"
 
 #: ../inc/customizer-includes/gridalicious-customizer-featured-content-setting.php:28
 msgid "Featured Content Options"
-msgstr "Ausgew&auml;hlter Inhalt: Optionen"
+msgstr "Optionen der Inhaltsexposees"
 
 #: ../inc/customizer-includes/gridalicious-customizer-featured-content-setting.php:52
 msgid "Enable Featured Content on"
@@ -325,11 +325,11 @@ msgstr "Gr&ouml;&szlig;e des Auswahl-Headerbild auf Seite/in Beitrag"
 
 #: ../inc/customizer-includes/gridalicious-customizer-header-options.php:65
 msgid "Featured Header Image Alt/Title Tag "
-msgstr "Auswahl-Headerbild Alt/Title Tag"
+msgstr "Header-Themenbild: Alternativer Titel"
 
 #: ../inc/customizer-includes/gridalicious-customizer-header-options.php:78
 msgid "Featured Header Image Link URL"
-msgstr "Auswahl-Headerbild Link URL"
+msgstr "Header-Themenbild: URL-Verweis"
 
 #: ../inc/customizer-includes/gridalicious-customizer-header-options.php:91
 #: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:421
@@ -343,7 +343,7 @@ msgstr "Hinweis: URL f&uuml;r die entsprechende Social Networking Site eingeben.
 #: ../inc/customizer-includes/gridalicious-customizer-social-icons.php:21
 #: ../inc/customizer-includes/gridalicious-customizer-social-icons.php:27
 msgid "Social Links"
-msgstr "Social Links"
+msgstr "Verweise auf Soziale Medien"
 
 #: ../inc/customizer-includes/gridalicious-customizer-social-icons.php:40
 msgid ""
@@ -359,7 +359,7 @@ msgstr "Grunds&auml;tzliche Themen-Einstellungen"
 
 #: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:23
 msgid "Theme Options"
-msgstr "Themen-Einstellungen"
+msgstr "Theme-Einstellungen"
 
 #: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:28
 msgid ""
@@ -458,11 +458,11 @@ msgstr "Web-Clip-Symbol ausw&auml;hlen/hinzuf&uuml;gen"
 #: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:207
 #: ../inc/gridalicious-metabox.php:93
 msgid "Layout Options"
-msgstr "Layout Optionen"
+msgstr "Layout-Optionen"
 
 #: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:224
 msgid "Default Layout"
-msgstr "Standard-Layout"
+msgstr "Layout"
 
 #: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:244
 msgid "Archive Content Layout"
@@ -515,7 +515,7 @@ msgstr "Um die Felder zu deaktivieren, einfach leer lassen."
 
 #: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:333
 msgid "Promotion Headline Options"
-msgstr "Werbeheadline Optionen"
+msgstr "Optionen für die Themen-Kopfzeile"
 
 #: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:350
 msgid "Enable Promotion Headline on"
@@ -567,7 +567,7 @@ msgstr "Weitere Suchkriterien"
 
 #: ../inc/customizer-includes/gridalicious-customizer-theme-options.php:465
 msgid "Default Display Text in Search"
-msgstr "Standard-Anzeigetext in Suche"
+msgstr "Voreingestellter Anzeigetext im Feld \"Suche\""
 
 #: ../inc/customizer-includes/gridalicious-customizer.php:53
 msgid "Logo"
@@ -595,7 +595,7 @@ msgstr ""
 
 #: ../inc/customizer-includes/gridalicious-customizer.php:147
 msgid "Reset all settings"
-msgstr "Alle Einstellungen zur&uuml;cksetzen ..."
+msgstr "Alle Einstellungen zurücksetzen"
 
 #: ../inc/customizer-includes/gridalicious-customizer.php:158
 msgid "Check to reset all settings to default"
@@ -612,7 +612,7 @@ msgstr "Auf Pro &raquo; upgraden"
 
 #: ../inc/gridalicious-breadcrumb.php:57
 msgid "Home"
-msgstr "Startseite"
+msgstr "Home"
 
 #: ../inc/gridalicious-breadcrumb.php:58
 #, php-format
@@ -645,23 +645,23 @@ msgstr "Seite %s"
 
 #: ../inc/gridalicious-core.php:88 ../inc/gridalicious-menus.php:27
 msgid "Primary Menu"
-msgstr "Prim&auml;rmenu"
+msgstr "Primäres Menü"
 
 #: ../inc/gridalicious-core.php:89 ../inc/gridalicious-menus.php:69
 msgid "Secondary Menu"
-msgstr "Sekund&auml;rmenu"
+msgstr "Sekundär-Menü"
 
 #: ../inc/gridalicious-core.php:565
 msgid "Post navigation"
-msgstr "Beitrags-Navigation"
+msgstr "Artikel-Navigation"
 
 #: ../inc/gridalicious-core.php:574
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
-msgstr "<span class=\"meta-nav\">&larr;</span> &Auml;ltere Beitr&auml;ge"
+msgstr "<span class=\"meta-nav\">&larr;</span> Ältere Artikel"
 
 #: ../inc/gridalicious-core.php:575
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
-msgstr "<span class=\"meta-nav\">&larr;</span> Neuere Beitr&auml;ge"
+msgstr "Neuere Artikel <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../inc/gridalicious-core.php:599
 msgid "Pingback:"
@@ -680,7 +680,7 @@ msgstr "%1$s um %2$s"
 
 #: ../inc/gridalicious-core.php:622
 msgid "Your comment is awaiting moderation."
-msgstr "Ihr Kommentar wartet auf Freischaltung."
+msgstr "Dein Kommentar wartet auf Freischaltung."
 
 #: ../inc/gridalicious-core.php:725
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
@@ -693,7 +693,7 @@ msgstr "<span class=\"screen-reader-text\">Autor</span>"
 
 #: ../inc/gridalicious-core.php:740
 msgid "Leave a comment"
-msgstr "Kommentieren"
+msgstr "Hinterlasse einen Kommentar"
 
 #: ../inc/gridalicious-core.php:740
 msgid "1 Comment"
@@ -706,7 +706,7 @@ msgstr "% Kommentare"
 #: ../inc/gridalicious-core.php:761 ../inc/gridalicious-core.php:769
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
-msgstr ","
+msgstr ", "
 
 #: ../inc/gridalicious-core.php:764
 msgctxt "Used before category names."
@@ -729,11 +729,11 @@ msgstr "Nach oben scrollen"
 
 #: ../inc/gridalicious-core.php:1434
 msgid "Posted on"
-msgstr "Ver&ouml;ffentlicht am"
+msgstr "Ver&ouml;ffentlicht am:"
 
 #: ../inc/gridalicious-core.php:1435
 msgid "By"
-msgstr "Von"
+msgstr "nach"
 
 #: ../inc/gridalicious-core.php:1477
 msgid "Next &rarr;"
@@ -749,7 +749,7 @@ msgstr "&larr; Zurück"
 
 #: ../inc/gridalicious-core.php:1481
 msgid "Previous post:"
-msgstr "Vorhergehender Beitrag:"
+msgstr "Vorheriger Beitrag:"
 
 #: ../inc/gridalicious-default-options.php:56
 msgid "Read More ..."
@@ -769,11 +769,11 @@ msgstr ""
 
 #: ../inc/gridalicious-default-options.php:68
 msgid "Reviews"
-msgstr "Rezensionen"
+msgstr "Bewertungen"
 
 #: ../inc/gridalicious-default-options.php:73
 msgid "Search..."
-msgstr "Suche"
+msgstr "Suchen..."
 
 #: ../inc/gridalicious-default-options.php:112
 msgid "Light"
@@ -813,7 +813,7 @@ msgstr "Homepage / Startseite"
 
 #: ../inc/gridalicious-default-options.php:182
 msgid "Excluding Homepage"
-msgstr "Au&szlig;er Homepage"
+msgstr "außer auf der Startseite"
 
 #: ../inc/gridalicious-default-options.php:186
 msgid "Excluding Homepage, Page/Post Featured Image"
@@ -822,11 +822,11 @@ msgstr "Au&szlig;er Homepage, Seiten-/Beitragsbild"
 #: ../inc/gridalicious-default-options.php:190
 #: ../inc/gridalicious-default-options.php:248
 msgid "Entire Site"
-msgstr "Gesamte Website"
+msgstr "gesamte Site"
 
 #: ../inc/gridalicious-default-options.php:194
 msgid "Entire Site, Page/Post Featured Image"
-msgstr "Gesamte Homepage, Seiten-/Beitragsbild"
+msgstr "Gesamte Seite, mit Seiten/Beitrag-Themenbild"
 
 #: ../inc/gridalicious-default-options.php:198
 msgid "Pages and Posts"
@@ -850,7 +850,7 @@ msgstr ""
 #: ../inc/gridalicious-default-options.php:390
 #: ../inc/gridalicious-default-options.php:624
 msgid "Full Size"
-msgstr "Volle Gr&ouml;&szlig;e"
+msgstr "Vollständige Größe"
 
 #: ../inc/gridalicious-default-options.php:270
 msgid "Demo Featured Content"
@@ -915,7 +915,7 @@ msgstr "Googleplus"
 #: ../inc/gridalicious-default-options.php:422
 #: ../inc/gridalicious-social-icons.php:37
 msgid "Email"
-msgstr "Email"
+msgstr "E-Mail-Adresse"
 
 #: ../inc/gridalicious-default-options.php:426
 msgid "Feed"
@@ -963,7 +963,7 @@ msgstr "CodePen"
 
 #: ../inc/gridalicious-default-options.php:474
 msgid "Path"
-msgstr "Path"
+msgstr "Pfad"
 
 #: ../inc/gridalicious-default-options.php:478
 msgid "Dribbble"
@@ -983,7 +983,7 @@ msgstr "Reddit"
 
 #: ../inc/gridalicious-default-options.php:494
 msgid "Stumbleupon"
-msgstr "Stumbleupon"
+msgstr "StumbleUpon"
 
 #: ../inc/gridalicious-default-options.php:498
 msgid "Pocket"
@@ -999,7 +999,7 @@ msgstr "Spotify"
 
 #: ../inc/gridalicious-default-options.php:510
 msgid "Foursquare"
-msgstr "Foursquare"
+msgstr "FourSquare"
 
 #: ../inc/gridalicious-default-options.php:514
 msgid "Twitch"
@@ -1007,11 +1007,11 @@ msgstr "Twitch"
 
 #: ../inc/gridalicious-default-options.php:518
 msgid "Website"
-msgstr "Website"
+msgstr "﻿Webseite"
 
 #: ../inc/gridalicious-default-options.php:522
 msgid "Phone"
-msgstr "Phone"
+msgstr "﻿Telefon"
 
 #: ../inc/gridalicious-default-options.php:526
 msgid "Handset"
@@ -1037,7 +1037,7 @@ msgstr "Standard"
 
 #: ../inc/gridalicious-default-options.php:592
 msgid "Enable"
-msgstr "Aktivieren"
+msgstr "Freischalten"
 
 #: ../inc/gridalicious-default-options.php:597
 msgid "Disable"
@@ -1045,11 +1045,11 @@ msgstr "Deaktivieren"
 
 #: ../inc/gridalicious-default-options.php:619
 msgid "Featured Image"
-msgstr "Beitragsbild"
+msgstr "Artikelbild"
 
 #: ../inc/gridalicious-default-options.php:629
 msgid "Disable Image"
-msgstr "Bild deaktivieren"
+msgstr "Foto deaktivieren"
 
 #: ../inc/gridalicious-default-options.php:644
 #, php-format
@@ -1059,7 +1059,7 @@ msgstr "Copyright &copy; %1$s %2$s. Alle Rechte vorbehalten."
 
 #: ../inc/gridalicious-default-options.php:646
 msgid "by"
-msgstr "by"
+msgstr "nach"
 
 #: ../inc/gridalicious-featured-content.php:57
 msgid ""
@@ -1081,19 +1081,19 @@ msgstr "Permalink auf:"
 
 #: ../inc/gridalicious-menus.php:28 ../inc/gridalicious-menus.php:70
 msgid "Skip to content"
-msgstr "Weiter zum Inhalt"
+msgstr "Springe zum Inhalt"
 
 #: ../inc/gridalicious-menus.php:44
 msgid "Search"
-msgstr "Suche"
+msgstr "Suchen"
 
 #: ../inc/gridalicious-menus.php:146 ../inc/gridalicious-menus.php:165
 msgid "Menu"
-msgstr "Menu"
+msgstr "Menü"
 
 #: ../inc/gridalicious-metabox.php:94
 msgid "Header Featured Image Options"
-msgstr "Auswahlbild Header Optionen"
+msgstr "Optionen für das Header-Themenbild"
 
 #: ../inc/gridalicious-metabox.php:221
 msgid "Gridalicious Options"
@@ -1101,7 +1101,7 @@ msgstr "Gridalicious Optionen"
 
 #: ../inc/gridalicious-widgets.php:30
 msgid "Primary Sidebar"
-msgstr "Prim&aumlre Seitenleiste"
+msgstr "Primäre Seitenleiste"
 
 #: ../inc/gridalicious-widgets.php:36
 msgid "This is the primary sidebar if you are using a two column site layout option."
@@ -1137,7 +1137,7 @@ msgstr "Fehler 404 - Seite konnte nicht gefunden werden"
 #: ../search.php:19
 #, php-format
 msgid "Search Results for: %s"
-msgstr "Suchergebnisse f&uuml;r: %s"
+msgstr "Suchergebnisse für: %s"
 
 #: ../searchform.php:14 ../searchform.php:15
 msgctxt "label"
@@ -1151,7 +1151,7 @@ msgstr "Suche"
 
 #: ../sidebar.php:80
 msgid "Primary Sidebar Widget Area"
-msgstr "Primärer Seitenleisten Widget-Bereich"
+msgstr "Prim&auml;rer Seitenleisten Widget-Bereich"
 
 #: ../sidebar.php:83
 msgid ""
@@ -1172,201 +1172,8 @@ msgstr ""
 "dargestellt angezeigt. Sie k&ouml;nnen im <a href=\"%s\">Widgets Kontrollfeld</a> "
 "Widgets zu diesem Bereich hinzuf&uuml;gen, welche die Standard-Widgets ersetzen."
 
-#~ msgid "Catch Base is a Premium Responsive WordPress Theme"
-#~ msgstr "Catch Base ist ein responsives Premium WordPress Theme"
+#~ msgid "https://catchthemes.com/"
+#~ msgstr "http://catchthemes.com"
 
-#~ msgid "True"
-#~ msgstr "Richtig"
-
-#~ msgid "Wait"
-#~ msgstr "Warten"
-
-#~ msgid "False"
-#~ msgstr "Falsch"
-
-#~ msgid "Three Columns ( Secondary Sidebar, Content, Primary Sidebar )"
-#~ msgstr "Drei Spalten (sekund&auml;re Seitenleiste, Inhalt, Primärer Seitenleiste)"
-
-#~ msgid "Full Image"
-#~ msgstr "Ganzes Bild"
-
-#~ msgid "Large Image"
-#~ msgstr "Gro&szlig;es Bild"
-
-#~ msgid "Slider Image"
-#~ msgstr "Slider Bild"
-
-#~ msgid "Demo Featured Slider"
-#~ msgstr "Demo Auswahlslider"
-
-#~ msgid "Featured Page Slider"
-#~ msgstr "Ausgew&auml;hlte Seiten Slider"
-
-#~ msgid "Fade"
-#~ msgstr "&Uuml;berblenden"
-
-#~ msgid "Fade Out"
-#~ msgstr "Ausblenden"
-
-#~ msgid "None"
-#~ msgstr "Keine"
-
-#~ msgid "Scroll Horizontal"
-#~ msgstr "Horizontal scrollen"
-
-#~ msgid "Scroll Vertical"
-#~ msgstr "Vertikal scrollen"
-
-#~ msgid "Flip Horizontal"
-#~ msgstr "Horizontal spiegeln"
-
-#~ msgid "Flip Vertical"
-#~ msgstr "Vertikal spiegeln"
-
-#~ msgid "Tile Slide"
-#~ msgstr "Kachel"
-
-#~ msgid "Tile Blind"
-#~ msgstr "Kachel"
-
-#~ msgid "Shuffle"
-#~ msgstr "Zufall"
-
-#~ msgid "Large"
-#~ msgstr "Gro&szlig;"
-
-#~ msgid "Medium"
-#~ msgstr "Medium"
-
-#~ msgid "Full size"
-#~ msgstr "Volle Gr&ouml;&szlig;e"
-
-#~ msgid "Slider Image Size"
-#~ msgstr "Sliderbildgr&ouml;&szlig;e"
-
-#~ msgid "Catchbase Options"
-#~ msgstr "Catchbase Optionen"
-
-#~ msgid ""
-#~ "This is the primary sidebar if you are using a two or three column site layout "
-#~ "option."
-#~ msgstr ""
-#~ "Dies ist die prim&auml;re Seitenleiste, wenn Sie ein zwei-oder dreispaltiges "
-#~ "Layout verwenden."
-
-#~ msgid "Secondary Sidebar"
-#~ msgstr "Sekund&auml;re Seitenleiste"
-
-#~ msgid ""
-#~ "This is the secondary sidebar if you are using a three column site layout option."
-#~ msgstr ""
-#~ "Dies ist die sekund&auml;re Seitenleiste, wenn Sie eine dreispaltiges Layout "
-#~ "verwenden."
-
-#~ msgid "Featured Slider Options"
-#~ msgstr "Optionen Auswahl-Slider"
-
-#~ msgid "Featured Slider"
-#~ msgstr "Sonderartikel-Slider"
-
-#~ msgid "Enable Slider on"
-#~ msgstr "Aktiviere Slider auf"
-
-#~ msgid "Transition Effect"
-#~ msgstr "&Uuml;bergangseffekt"
-
-#~ msgid "seconds(s)"
-#~ msgstr "Sekunde(n)"
-
-#~ msgid "Transition Delay"
-#~ msgstr "&Uuml;berblendung Verz&ouml;gerung"
-
-# Translated by Jürgen Zapp
-#~ msgid "Transition Length"
-#~ msgstr "L&auml;nge der &Uuml;berblendung"
-
-#~ msgid ""
-#~ "True: Fixes the height overlap issue. Slideshow will start as soon as two slider "
-#~ "are available. Slide may display in random, as image is fetch.<br>Wait: Fixes "
-#~ "the height overlap issue.<br> Slideshow will start only after all images are "
-#~ "available."
-#~ msgstr ""
-#~ "Korrigiert die Höhenüberlappung. Die Slideshow startet, wenn mehr als zwei "
-#~ "Slider vorhanden sind. Der Slider könnte die Bilder zufällig anzeigen, jenachdem "
-#~ "wann die Bilder abgerufen (gefetcht) werden. <br />Warten: Korrigiert die "
-#~ "Höhenüberlappung.<br />Die Slideshow wird erst starten, wenn alle Bilder geladen "
-#~ "und verfügbar sind."
-
-#~ msgid "Image Loader"
-#~ msgstr "Bild-Loader"
-
-#~ msgid "Select Slider Type"
-#~ msgstr "Slider Typ ausw&aumlhlen"
-
-#~ msgid ""
-#~ "Save and refresh the page if No. of Slides is changed (Max no of slides is 20)"
-#~ msgstr ""
-#~ "Speichern und Seite neu laden, wenn die Anzahl der Slides ver&aumlndert wird. "
-#~ "(Max. Anzahl 20 Bilder)"
-
-#~ msgid "No of Slides"
-#~ msgstr "Anzahl der Slides (Bilder)"
-
-#~ msgid "Separator between Breadcrumbs"
-#~ msgstr "Separator zwischen Breadcrumbs"
-
-#~ msgid ""
-#~ "Some settings might be missing or disorganized in this version of WordPress. So "
-#~ "we suggest you to upgrade to version 4.0 or better."
-#~ msgstr ""
-#~ "Einige Einstellungen sind in dieser Version von Wordpress m&ouml;glicherweise "
-#~ "nicht vorhanden oder an anderer Stelle. Wir empfehlen Ihnen, auf Version 4.0 "
-#~ "oder h&ouml;her zu aktualisieren."
-
-#~ msgid "Secondary Sidebar Widget Area"
-#~ msgstr "Sekund&auml;rer Seitenleisten Widget-Bereich"
-
-#~ msgid ""
-#~ "This is the Secondary Sidebar Widget Area if you are using a three column site "
-#~ "layout option."
-#~ msgstr ""
-#~ "Dies ist die sekund&auml;re Seitenleiste, wenn Sie eine dreispaltiges Layout "
-#~ "verwenden."
-
-#~ msgid ""
-#~ "This is the Primary Sidebar Widget Area if you are using a two or three column "
-#~ "site layout option."
-#~ msgstr ""
-#~ "Dies ist die prim&auml;re Seitenleiste, wenn Sie ein zwei-oder dreispaltiges "
-#~ "Layout verwenden."
-
-#~ msgctxt "Used before publish date."
-#~ msgid "<span class=\"screen-reader-text\">Posted on</span>"
-#~ msgstr "<span class=\"screen-reader-text\">Veröffentlicht am</span>"
-
-#~ msgid "StumbleUpon"
-#~ msgstr "StumbleUpon"
-
-#~ msgid "Featured Content Settings"
-#~ msgstr "Ausgew&auml;hlter Inhalt: Einstellungen"
-
-#~ msgid "Featured Content Type"
-#~ msgstr "Ausgew&auml;hlter Inhalt: Typ"
-
-#~ msgid "Featured Slider Settings"
-#~ msgstr "Einstellungen Auswahl-Slider"
-
-#~ msgid "Featured Slider Type"
-#~ msgstr "Auswahl Slider Typ"
-
-#~ msgid "Archive for %s"
-#~ msgstr "Archiv f&uuml;r %s"
-
-#~ msgid "Search results for: %s"
-#~ msgstr "Suchergebnisse f&uuml;r: %s"
-
-#~ msgid "Posts tagged %s"
-#~ msgstr "Beitr&auml;ge mit dem Stichwort: %s"
-
-#~ msgid "View all posts by %s"
-#~ msgstr "Alle Beitr&auml;ge von %s"
+#~ msgid "Catch Themes"
+#~ msgstr "Catch Themes"

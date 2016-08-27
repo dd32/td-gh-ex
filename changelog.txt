@@ -1,5 +1,8 @@
 == Change log ==
 
+= 1.6.1 =
+* Bug Fixed: German language translation (Reported by Thorsten Rotter)
+
 = 1.6 =
 * Added German translation de_DE.po and de_DE.mo
 * Bug Fixed: White space issue
