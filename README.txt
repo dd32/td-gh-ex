@@ -1,7 +1,7 @@
 === Electa ===
 Contributors: Kaira
 Donate link: 
-Tags: responsive-layout, fluid-layout, custom-menu, featured-images, theme-options, threaded-comments, translation-ready, white, light, one-column, two-columns, full-width-template
+Tags: one-column, two-columns, three-columns, four-columns, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce, entertainment, food-and-drink, photography, portfolio
 Tested up to: 3.9
 Stable tag: 3.7
 License: GPLv2 or later
@@ -60,6 +60,15 @@ View the theme settings under "Appearance" -> Customize.
 1. Featured Images work best at a minimum of 1000 wide and 600 high.
 
 == Changelog ==
+
+#### 1.2.7
+* Updated theme tags
+* Updated Font Awesome - 4.6.3
+* Removed old update system & link out for premium
+* Updated language .pot file
+Premium: Added social link for Behance
+Premium: Added social link for Medium
+Premium: Added social link for Vimeo
 
 #### 1.2.6
 * Styling fixes for responsive

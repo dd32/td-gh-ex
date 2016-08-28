@@ -5,13 +5,10 @@
  * @package Electa
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.2.6' );
+define( 'KAIRA_THEME_VERSION' , '1.2.7' );
 
-// Is ONLY USED IF the user prompts for the premium update
-define( 'KAIRA_UPDATE_URL', 'https://updates.kairaweb.com/' );
 // Upgrade / Order Premium page
 require get_template_directory() . '/upgrade/upgrade.php';
-require get_template_directory() . '/upgrade/update.php';
 
 // Load WP included scripts
 require get_template_directory() . '/inc/template-tags.php';
@@ -69,7 +66,7 @@ function kaira_setup_theme() {
         'default-image' => '',
         'width'         => 250,
         'height'        => 180,
-        'flex-width' => false,
+        'flex-width' => true,
         'flex-height' => true,
         'header-text' => false,
     ));
@@ -120,8 +117,8 @@ function kaira_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 }
 add_action( 'widgets_init', 'kaira_widgets_init' );
@@ -131,12 +128,12 @@ add_action( 'widgets_init', 'kaira_widgets_init' );
  */
 function kaira_scripts() {
     if( !get_theme_mod( 'kra-body-font', false ) ) {
-        wp_enqueue_style( 'albar-google-body-font-default', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic', array(), KAIRA_THEME_VERSION );
+        wp_enqueue_style( 'electa-google-body-font-default', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic', array(), KAIRA_THEME_VERSION );
     }
     if( !get_theme_mod( 'kra-heading-font', false ) ) {
-        wp_enqueue_style( 'albar-google-heading-font-default', '//fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic', array(), KAIRA_THEME_VERSION );
+        wp_enqueue_style( 'electa-google-heading-font-default', '//fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic', array(), KAIRA_THEME_VERSION );
     }
-    wp_enqueue_style( 'electa-fontawesome', get_template_directory_uri() . '/includes/font-awesome/css/font-awesome.css', array(), '4.0.3' );
+    wp_enqueue_style( 'electa-fontawesome', get_template_directory_uri() . '/includes/font-awesome/css/font-awesome.css', array(), '4.6.3' );
 	wp_enqueue_style( 'electa-style', get_stylesheet_uri(), array(), KAIRA_THEME_VERSION );
 
     if ( ( ( is_front_page() ) && ( ( get_theme_mod( 'kra-home-blocks-layout' ) == 1 ) ) ) || ( is_home() ) && ( get_theme_mod( 'kra-blog-blocks-layout' ) == 1 ) ) {
