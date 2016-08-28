@@ -4,13 +4,10 @@
  *
  * @package topshop
  */
-define( 'TOPSHOP_THEME_VERSION' , '1.2.8' );
+define( 'TOPSHOP_THEME_VERSION' , '1.2.9' );
 
-// Is ONLY USED IF the user prompts for the premium update
-define( 'TOPSHOP_UPDATE_URL', 'https://updates.kairaweb.com/' );
 // Upgrade / Order Premium page
 require get_template_directory() . '/upgrade/upgrade.php';
-require get_template_directory() . '/upgrade/update.php';
 
 // Load WP included scripts
 require get_template_directory() . '/includes/inc/template-tags.php';
@@ -23,6 +20,9 @@ require get_template_directory() . '/customizer/customizer-options.php';
 require get_template_directory() . '/customizer/customizer-library/customizer-library.php';
 require get_template_directory() . '/customizer/styles.php';
 require get_template_directory() . '/customizer/mods.php';
+
+// Load TGM plugin class
+require_once get_template_directory() . '/includes/inc/class-tgm-plugin-activation.php';
 
 if ( ! function_exists( 'topshop_theme_setup' ) ) :
 /**
@@ -138,7 +138,7 @@ function topshop_theme_scripts() {
     wp_enqueue_style( 'topshop-google-body-font-default', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic', array(), TOPSHOP_THEME_VERSION );
     wp_enqueue_style( 'topshop-google-heading-font-default', '//fonts.googleapis.com/css?family=Raleway:500,600,700,100,800,400,300', array(), TOPSHOP_THEME_VERSION );
     
-	wp_enqueue_style( 'topshop-font-awesome', get_template_directory_uri().'/includes/font-awesome/css/font-awesome.css', array(), '4.2.0' );
+	wp_enqueue_style( 'topshop-font-awesome', get_template_directory_uri().'/includes/font-awesome/css/font-awesome.css', array(), '4.6.3' );
 	wp_enqueue_style( 'topshop-style', get_stylesheet_uri(), array(), TOPSHOP_THEME_VERSION );
     wp_enqueue_style( 'topshop-woocommerce-style', get_template_directory_uri().'/templates/css/topshop-woocommerce-style.css', array(), TOPSHOP_THEME_VERSION );
 	
@@ -188,41 +188,6 @@ function topshop_load_customizer_script() {
 }    
 add_action( 'customize_controls_enqueue_scripts', 'topshop_load_customizer_script' );
 
-/* Display the recommended plugins notice that can be dismissed */
-add_action('admin_notices', 'topshop_recommended_plugin_notice');
-
-function topshop_recommended_plugin_notice() {
-    global $pagenow;
-    global $current_user;
-    
-    $user_id = $current_user->ID;
-    
-    /* If on plugins page, check that the user hasn't already clicked to ignore the message */
-    if ( $pagenow == 'plugins.php' ) {
-	    if ( ! get_user_meta( $user_id, 'topshop_recommended_plugin_ignore_notice' ) ) {
-	        echo '<div class="updated"><p>';
-            printf( __( '<p>Install the plugins we at <a href="http://www.kairaweb.com/" target="_blank">Kaira</a> recommended | <a href="%1$s">Hide Notice</a></p>', 'topshop' ), '?topshop_recommended_plugin_nag_ignore=0' ); ?>
-            <a href="<?php echo admin_url('plugin-install.php?tab=favorites&user=kaira'); ?>"><?php printf( __( 'WooCommerce', 'topshop' ), 'topshop' ); ?></a><br />
-            <a href="<?php echo admin_url('plugin-install.php?tab=favorites&user=kaira'); ?>"><?php printf( __( 'SiteOrigin\'s Page Builder', 'topshop' ), 'topshop' ); ?></a><br />
-            <a href="<?php echo admin_url('plugin-install.php?tab=favorites&user=kaira'); ?>"><?php printf( __( 'Meta Slider', 'topshop' ), 'topshop' ); ?></a><br />
-            <a href="<?php echo admin_url('plugin-install.php?tab=favorites&user=kaira'); ?>"><?php printf( __( 'Breadcrumb NavXT', 'topshop' ), 'topshop' ); ?></a>
-            <?php
-	        echo "</p></div>";
-	    }
-	}
-}
-add_action('admin_init', 'topshop_recommended_plugin_nag_ignore');
-
-function topshop_recommended_plugin_nag_ignore() {
-    global $current_user;
-    $user_id = $current_user->ID;
-        
-    /* If user clicks to ignore the notice, add that to their user meta */
-    if ( isset($_GET['topshop_recommended_plugin_nag_ignore']) && '0' == $_GET['topshop_recommended_plugin_nag_ignore'] ) {
-        add_user_meta( $user_id, 'topshop_recommended_plugin_ignore_notice', 'true', true );
-    }
-}
-
 // Create function to check if WooCommerce exists.
 if ( ! function_exists( 'topshop_is_woocommerce_activated' ) ) :
     
@@ -268,3 +233,50 @@ function topshop_exclude_slider_categories_widget( $args ) {
 	return $args;
 }
 add_filter( 'widget_categories_args', 'topshop_exclude_slider_categories_widget' );
+
+/**
+ * Display recommended plugins with the TGM class
+ */
+function topshop_register_required_plugins() {
+	$plugins = array(
+		// The recommended WordPress.org plugins.
+		array(
+			'name'      => 'Page Builder',
+			'slug'      => 'siteorigin-panels',
+			'required'  => false,
+		),
+		array(
+			'name'      => 'WooCommerce',
+			'slug'      => 'woocommerce',
+			'required'  => false,
+		),
+		array(
+			'name'      => 'Widgets Bundle',
+			'slug'      => 'siteorigin-panels',
+			'required'  => false,
+		),
+		array(
+			'name'      => 'Contact Form 7',
+			'slug'      => 'contact-form-7',
+			'required'  => false,
+		),
+		array(
+			'name'      => 'Breadcrumb NavXT',
+			'slug'      => 'breadcrumb-navxt',
+			'required'  => false,
+		),
+		array(
+			'name'      => 'Meta Slider',
+			'slug'      => 'ml-slider',
+			'required'  => false,
+		)
+	);
+	$config = array(
+		'id'           => 'topshop',
+		'menu'         => 'tgmpa-install-plugins',
+		'message'      => '',
+	);
+
+	tgmpa( $plugins, $config );
+}
+add_action( 'tgmpa_register', 'topshop_register_required_plugins' );

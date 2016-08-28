@@ -70,7 +70,7 @@ function customizer_library_topshop_options() {
         'label'   => __( 'Show Top Bar', 'topshop' ),
         'section' => $section,
         'type'    => 'checkbox',
-        'description' => __( 'This will show/hide the top bar in the header<br /><br /><a href="http://kairaweb.com/support/topic/topshop-hooks-for-developers/" target="_blank">TopShop Premium has hooks</a> integrated for developers to hook on to.', 'topshop' ),
+        'description' => __( 'This will show/hide the top bar in the header<br /><br /><a href="https://kairaweb.com/documentation/topshop-hooks-developers/" target="_blank">TopShop Premium has hooks</a> integrated for developers to hook on to.', 'topshop' ),
         'default' => 0,
     );
     
@@ -102,7 +102,7 @@ function customizer_library_topshop_options() {
         'label'   => __( 'Slider Categories', 'topshop' ),
         'section' => $section,
         'type'    => 'text',
-        'description' => __( 'Enter the ID\'s of the post categories you want to display in the slider. Eg: "13,17,19" (no spaces and only comma\'s)<br /><a href="http://kairaweb.com/support/topic/setting-up-the-default-slider/" target="_blank"><b>Follow instructions here</b></a>', 'topshop' )
+        'description' => __( 'Enter the ID\'s of the post categories you want to display in the slider. Eg: "13,17,19" (no spaces and only comma\'s)<br /><a href="https://kairaweb.com/documentation/setting-up-the-default-slider/" target="_blank"><b>Follow instructions here</b></a>', 'topshop' )
     );
     $options['topshop-meta-slider-shortcode'] = array(
         'id' => 'topshop-meta-slider-shortcode',

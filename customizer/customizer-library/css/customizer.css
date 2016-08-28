@@ -38,7 +38,7 @@
     color: #ECECEC !important;
 }
 .kaira-upsell-btn:hover {
-    background-color: #0952A9;
+    background-color: #0952A9 !important;
     color: #FFF !important;
 }
 .kaira-upsell-desc {
