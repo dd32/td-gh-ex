@@ -69,16 +69,6 @@ function wortex_content_width() {
 add_action( 'template_redirect', 'wortex_content_width' );
 
 /*
- * Page title (for WordPress < 4.1 )
- */
-if ( ! function_exists( '_wp_render_title_tag' ) ) :
-	function wortex_render_title() {
-		?><title><?php wp_title( '|', true, 'right' ); ?></title><?php
-	}
-	add_action( 'wp_head', 'wortex_render_title' );
-endif;
-
-/*
  * Add a home link to wp_page_menu() ( wp_nav_menu() fallback )
  */
 function wortex_page_menu_args( $args ) {
