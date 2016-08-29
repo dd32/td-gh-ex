@@ -168,9 +168,10 @@ if (!function_exists('bazaarlite_setup')) {
 			'default-color' => 'fafafa',
 		) );
 		
-		require_once( trailingslashit( get_template_directory() ) . '/core/classes/class-plugin-activation.php' );
-		require_once( trailingslashit( get_template_directory() ) . '/core/classes/customize.php' );
-		require_once( trailingslashit( get_template_directory() ) . '/core/classes/metaboxes.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/includes/class-plugin-activation.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/includes/class-customize.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/includes/class-metaboxes.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/includes/class-notice.php' );
 		require_once( trailingslashit( get_template_directory() ) . '/core/admin/customize/customize.php' );
 		require_once( trailingslashit( get_template_directory() ) . '/core/admin/customize/general.php' );
 		require_once( trailingslashit( get_template_directory() ) . '/core/templates/after-content.php' );

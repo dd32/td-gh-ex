@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-30 15:22+0200\n"
-"PO-Revision-Date: 2016-06-30 15:23+0200\n"
+"POT-Creation-Date: 2016-08-29 21:35+0200\n"
+"PO-Revision-Date: 2016-08-29 21:35+0200\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
 "Language: it_IT\n"
@@ -118,7 +118,7 @@ msgstr "No"
 msgid "Yes"
 msgstr "Si"
 
-#: core/admin/customize/customize.php:31 core/classes/customize.php:322
+#: core/admin/customize/customize.php:31 core/includes/class-customize.php:322
 msgid "Get support"
 msgstr "Ottieni supporto."
 
@@ -770,294 +770,6 @@ msgstr "Elementi H6"
 msgid "Insert a size, for for H6 elements (For example, 14px) "
 msgstr "Inserisci una grandezza, per i titoli H6 ( Per esempio, 14px )"
 
-#: core/classes/class-plugin-activation.php:301
-msgid "Install Required Plugins"
-msgstr "Installa i plugins necessari."
-
-#: core/classes/class-plugin-activation.php:302
-msgid "Install Plugins"
-msgstr "Installa plugins"
-
-#: core/classes/class-plugin-activation.php:303
-#, php-format
-msgid "Installing Plugin: %s"
-msgstr "Installazione plugin: %s"
-
-#: core/classes/class-plugin-activation.php:304
-msgid "Something went wrong with the plugin API."
-msgstr "Qualcosa è andato storto con le API del plugin."
-
-#: core/classes/class-plugin-activation.php:365
-msgid "Return to Required Plugins Installer"
-msgstr "Ritorna all’installatore dei plugin richiesti."
-
-#: core/classes/class-plugin-activation.php:366
-msgid "Return to the dashboard"
-msgstr "Ritorna alla dashboard."
-
-#: core/classes/class-plugin-activation.php:367
-#: core/classes/class-plugin-activation.php:2959
-msgid "Plugin activated successfully."
-msgstr "Plugin attivato con successo."
-
-#: core/classes/class-plugin-activation.php:368
-msgid "The following plugin was activated successfully:"
-msgstr "Il seguente plugin è stato attivato con successo:"
-
-#: core/classes/class-plugin-activation.php:369
-#, php-format
-msgid "No action taken. Plugin %1$s was already active."
-msgstr "Nessuna risposta. Il plugin %1$s era già stato attivato."
-
-#: core/classes/class-plugin-activation.php:370
-#, php-format
-msgid ""
-"Plugin not activated. A higher version of %s is needed for this theme. "
-"Please update the plugin."
-msgstr ""
-"Plugin non attivato. Una versione più recente di %s è richiesta per questo "
-"tema. Si prega di aggiornare il plugin."
-
-#: core/classes/class-plugin-activation.php:371
-#, php-format
-msgid "All plugins installed and activated successfully. %1$s"
-msgstr "Tutti i plugins installati ed attivati con successo. %1$s"
-
-#: core/classes/class-plugin-activation.php:372
-msgid "Dismiss this notice"
-msgstr "Nascondi questo avviso"
-
-#: core/classes/class-plugin-activation.php:373
-msgid "Please contact the administrator of this site for help."
-msgstr ""
-"Si prega di contattare l’amministratore di questo sito per richiedere "
-"assistenza."
-
-#: core/classes/class-plugin-activation.php:488
-msgid "This plugin needs to be updated to be compatible with your theme."
-msgstr ""
-"Questo plugin deve essere aggiornato per essere compatibile con il nostro "
-"tema."
-
-#: core/classes/class-plugin-activation.php:2122
-msgid "Required"
-msgstr "Richiesto"
-
-#: core/classes/class-plugin-activation.php:2125
-msgid "Recommended"
-msgstr "Raccomandato"
-
-#: core/classes/class-plugin-activation.php:2141
-msgid "WordPress Repository"
-msgstr "Repository WordPress"
-
-#: core/classes/class-plugin-activation.php:2144
-msgid "External Source"
-msgstr "Risorse esterne"
-
-#: core/classes/class-plugin-activation.php:2147
-msgid "Pre-Packaged"
-msgstr "Preconfezionato."
-
-#: core/classes/class-plugin-activation.php:2164
-msgid "Not Installed"
-msgstr "Non installato."
-
-#: core/classes/class-plugin-activation.php:2168
-msgid "Installed But Not Activated"
-msgstr "Tutti i plugins installati ed attivati con successo. %1$s"
-
-#: core/classes/class-plugin-activation.php:2170
-msgid "Active"
-msgstr "Attivo"
-
-#: core/classes/class-plugin-activation.php:2176
-msgid "Required Update not Available"
-msgstr "L’aggiornamento richiesto non è disponibile."
-
-#: core/classes/class-plugin-activation.php:2179
-msgid "Requires Update"
-msgstr "È richiesto l’aggiornamento."
-
-#: core/classes/class-plugin-activation.php:2182
-msgid "Update recommended"
-msgstr "Aggiornamento raccomandato"
-
-#: core/classes/class-plugin-activation.php:2334
-msgid "Installed version:"
-msgstr "Versione installata:"
-
-#: core/classes/class-plugin-activation.php:2342
-msgid "Minimum required version:"
-msgstr "Versione minima richiesta:"
-
-#: core/classes/class-plugin-activation.php:2354
-msgid "Available version:"
-msgstr "Versione disponibile"
-
-#: core/classes/class-plugin-activation.php:2377
-#, php-format
-msgid ""
-"No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
-"Dashboard</a>"
-msgstr ""
-"Nessun plugin da installare, aggiornare o attivare. <a href=\"%1$s\">Ritorna "
-"alla dashboard</a>"
-
-#: core/classes/class-plugin-activation.php:2391
-msgid "Plugin"
-msgstr "Plugin"
-
-#: core/classes/class-plugin-activation.php:2392
-msgid "Source"
-msgstr "Fonte"
-
-#: core/classes/class-plugin-activation.php:2393
-msgid "Type"
-msgstr "Tipo"
-
-#: core/classes/class-plugin-activation.php:2397
-msgid "Version"
-msgstr "Versione"
-
-#: core/classes/class-plugin-activation.php:2398
-msgid "Status"
-msgstr "Stato"
-
-#: core/classes/class-plugin-activation.php:2558
-msgid "Install"
-msgstr "Installa"
-
-#: core/classes/class-plugin-activation.php:2564
-msgid "Update"
-msgstr "Aggiornamento"
-
-#: core/classes/class-plugin-activation.php:2567
-msgid "Activate"
-msgstr "Attivare"
-
-#: core/classes/class-plugin-activation.php:2598
-msgid "No plugins were selected to be installed. No action taken."
-msgstr "Nessun plugin selezionato per essere installato. Nessuna risposta."
-
-#: core/classes/class-plugin-activation.php:2600
-msgid "No plugins were selected to be updated. No action taken."
-msgstr "Nessun plugin selezionato per essere aggiornato. Nessuna risposta."
-
-#: core/classes/class-plugin-activation.php:2636
-msgid "No plugins are available to be installed at this time."
-msgstr "Nessun plugin è disponibile per essere installato in questo momento."
-
-#: core/classes/class-plugin-activation.php:2638
-msgid "No plugins are available to be updated at this time."
-msgstr "Nessun plugin è disponibile per essere aggiornato in questo momento."
-
-#: core/classes/class-plugin-activation.php:2958
-msgid "Plugin activation failed."
-msgstr "Installazione plugin fallita."
-
-#: core/classes/class-plugin-activation.php:3288
-#, php-format
-msgid "Updating Plugin %1$s (%2$d/%3$d)"
-msgstr "Aggiornamento plugin %1$s (%2$d/%3$d)"
-
-#: core/classes/class-plugin-activation.php:3290
-#, php-format
-msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-msgstr ""
-"Si è verificato un errore durante l’installazione %1$s: <strong>%2$s</"
-"strong>."
-
-#: core/classes/class-plugin-activation.php:3291
-#, php-format
-msgid "The installation of %1$s failed."
-msgstr "L’installazione di %1$s è fallita."
-
-#: core/classes/class-plugin-activation.php:3295
-msgid ""
-"The installation and activation process is starting. This process may take a "
-"while on some hosts, so please be patient."
-msgstr ""
-"Il processo d’installazione ed attivazione è partito. Questo processo può "
-"richiedere del tempo su alcuni hosting, si prega di attendere."
-
-#: core/classes/class-plugin-activation.php:3296
-#, php-format
-msgid "%1$s installed and activated successfully."
-msgstr "%1$s installato ed attivato con successo."
-
-#: core/classes/class-plugin-activation.php:3297
-msgid "All installations and activations have been completed."
-msgstr "Tutte le installazioni e le attivazione sono state completate."
-
-#: core/classes/class-plugin-activation.php:3298
-#, php-format
-msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-msgstr "Installazione ed attivazione plugin %1$s (%2$d/%3$d)"
-
-#: core/classes/class-plugin-activation.php:3301
-msgid ""
-"The installation process is starting. This process may take a while on some "
-"hosts, so please be patient."
-msgstr ""
-"Il processo d’installazione è partito. Questo processo può richiedere del "
-"tempo su alcuni hosting, si prega di attendere."
-
-#: core/classes/class-plugin-activation.php:3303
-msgid "All installations have been completed."
-msgstr "Tutte le installazioni sono state completate."
-
-#: core/classes/class-plugin-activation.php:3304
-#, php-format
-msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr "Installazione plugin %1$s (%2$d/%3$d)"
-
-#: core/classes/customize.php:34
-msgid "Upgrade to Bazaar Premium"
-msgstr "Aggiorna a Bazar Premium"
-
-#: core/classes/customize.php:326
-msgid ""
-"If you've opened a new support ticket from <strong>WordPress.org</strong>, "
-"please send a reminder to <strong>support@wpinprogress.com</strong>, to get "
-"a faster reply."
-msgstr ""
-"Se hai aperto un nuovo ticket su <strong>WordPress.org</strong>, per favore "
-"invia un promemoria a <strong>support@wpinprogress.com</strong>, per "
-"ottenere rapidamente una risposta."
-
-#: core/classes/customize.php:330
-msgid "Open a new ticket"
-msgstr "Apri un nuovo ticket."
-
-#: core/classes/customize.php:331
-msgid "Send a reminder"
-msgstr "Invia un promemoria."
-
-#: core/classes/customize.php:336
-msgid ""
-"If you like this theme and support, <strong>I'd appreciate</strong> any of "
-"the following:"
-msgstr ""
-"Se ti piace il tema oppure il servizio di supporto, <strong>è gradita</"
-"strong> una delle seguenti azioni:"
-
-#: core/classes/customize.php:340
-msgid "Rate this Theme"
-msgstr "Valuta questo tema."
-
-#: core/classes/customize.php:341
-msgid "Like on Facebook"
-msgstr "Seguici su Facebook."
-
-#: core/classes/customize.php:342
-msgid "Subscribe our newsletter"
-msgstr "Registrati alla nostra newsletter."
-
-#: core/classes/customize.php:343
-msgid "Download our free WordPress themes"
-msgstr "Scarica i nostri temi gratuiti per Wordpress"
-
 #: core/functions/functions_generals.php:78
 msgid "Archives"
 msgstr "Archivi"
@@ -1126,6 +838,307 @@ msgstr "Questa sidebar verrà visualizzata a fondo pagina"
 #: core/functions/functions_woocommerce.php:65
 msgid "View your shopping cart"
 msgstr "Visualizza il carrello"
+
+#: core/includes/class-customize.php:34 core/includes/class-notice.php:62
+msgid "Upgrade to Bazaar Premium"
+msgstr "Aggiorna a Bazar Premium"
+
+#: core/includes/class-customize.php:326
+msgid ""
+"If you've opened a new support ticket from <strong>WordPress.org</strong>, "
+"please send a reminder to <strong>support@wpinprogress.com</strong>, to get "
+"a faster reply."
+msgstr ""
+"Se hai aperto un nuovo ticket su <strong>WordPress.org</strong>, per favore "
+"invia un promemoria a <strong>support@wpinprogress.com</strong>, per "
+"ottenere rapidamente una risposta."
+
+#: core/includes/class-customize.php:330
+msgid "Open a new ticket"
+msgstr "Apri un nuovo ticket."
+
+#: core/includes/class-customize.php:331
+msgid "Send a reminder"
+msgstr "Invia un promemoria."
+
+#: core/includes/class-customize.php:336
+msgid ""
+"If you like this theme and support, <strong>I'd appreciate</strong> any of "
+"the following:"
+msgstr ""
+"Se ti piace il tema oppure il servizio di supporto, <strong>è gradita</"
+"strong> una delle seguenti azioni:"
+
+#: core/includes/class-customize.php:340
+msgid "Rate this Theme"
+msgstr "Valuta questo tema."
+
+#: core/includes/class-customize.php:341
+msgid "Like on Facebook"
+msgstr "Seguici su Facebook."
+
+#: core/includes/class-customize.php:342
+msgid "Subscribe our newsletter"
+msgstr "Registrati alla nostra newsletter."
+
+#: core/includes/class-customize.php:343
+msgid "Download our free WordPress themes"
+msgstr "Scarica i nostri temi gratuiti per Wordpress"
+
+#: core/includes/class-notice.php:58
+msgid ""
+"Upgrade to the premium version of Bazaar, to enable 600+ Google Fonts, "
+"Unlimited sidebars, Portfolio section and much more."
+msgstr ""
+"Aggiorna alla versione premium di Bazaar, per attivare oltre 600 Google "
+"Fonts, barre laterali illimitate, sezione Portfolio e molto altro"
+
+#: core/includes/class-notice.php:59
+#, php-format
+msgid "<a href=\"%1$s\" class=\"dismiss-notice\">Dismiss this notice</a>"
+msgstr "<a href=“%1$s” class=“dismiss-notice”>Nascondi questo avviso</a>"
+
+#: core/includes/class-plugin-activation.php:301
+msgid "Install Required Plugins"
+msgstr "Installa i plugins necessari."
+
+#: core/includes/class-plugin-activation.php:302
+msgid "Install Plugins"
+msgstr "Installa plugins"
+
+#: core/includes/class-plugin-activation.php:303
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr "Installazione plugin: %s"
+
+#: core/includes/class-plugin-activation.php:304
+msgid "Something went wrong with the plugin API."
+msgstr "Qualcosa è andato storto con le API del plugin."
+
+#: core/includes/class-plugin-activation.php:365
+msgid "Return to Required Plugins Installer"
+msgstr "Ritorna all’installatore dei plugin richiesti."
+
+#: core/includes/class-plugin-activation.php:366
+msgid "Return to the dashboard"
+msgstr "Ritorna alla dashboard."
+
+#: core/includes/class-plugin-activation.php:367
+#: core/includes/class-plugin-activation.php:2959
+msgid "Plugin activated successfully."
+msgstr "Plugin attivato con successo."
+
+#: core/includes/class-plugin-activation.php:368
+msgid "The following plugin was activated successfully:"
+msgstr "Il seguente plugin è stato attivato con successo:"
+
+#: core/includes/class-plugin-activation.php:369
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr "Nessuna risposta. Il plugin %1$s era già stato attivato."
+
+#: core/includes/class-plugin-activation.php:370
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+"Plugin non attivato. Una versione più recente di %s è richiesta per questo "
+"tema. Si prega di aggiornare il plugin."
+
+#: core/includes/class-plugin-activation.php:371
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr "Tutti i plugins installati ed attivati con successo. %1$s"
+
+#: core/includes/class-plugin-activation.php:372
+msgid "Dismiss this notice"
+msgstr "Nascondi questo avviso"
+
+#: core/includes/class-plugin-activation.php:373
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+"Si prega di contattare l’amministratore di questo sito per richiedere "
+"assistenza."
+
+#: core/includes/class-plugin-activation.php:488
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+"Questo plugin deve essere aggiornato per essere compatibile con il nostro "
+"tema."
+
+#: core/includes/class-plugin-activation.php:2122
+msgid "Required"
+msgstr "Richiesto"
+
+#: core/includes/class-plugin-activation.php:2125
+msgid "Recommended"
+msgstr "Raccomandato"
+
+#: core/includes/class-plugin-activation.php:2141
+msgid "WordPress Repository"
+msgstr "Repository WordPress"
+
+#: core/includes/class-plugin-activation.php:2144
+msgid "External Source"
+msgstr "Risorse esterne"
+
+#: core/includes/class-plugin-activation.php:2147
+msgid "Pre-Packaged"
+msgstr "Preconfezionato."
+
+#: core/includes/class-plugin-activation.php:2164
+msgid "Not Installed"
+msgstr "Non installato."
+
+#: core/includes/class-plugin-activation.php:2168
+msgid "Installed But Not Activated"
+msgstr "Tutti i plugins installati ed attivati con successo. %1$s"
+
+#: core/includes/class-plugin-activation.php:2170
+msgid "Active"
+msgstr "Attivo"
+
+#: core/includes/class-plugin-activation.php:2176
+msgid "Required Update not Available"
+msgstr "L’aggiornamento richiesto non è disponibile."
+
+#: core/includes/class-plugin-activation.php:2179
+msgid "Requires Update"
+msgstr "È richiesto l’aggiornamento."
+
+#: core/includes/class-plugin-activation.php:2182
+msgid "Update recommended"
+msgstr "Aggiornamento raccomandato"
+
+#: core/includes/class-plugin-activation.php:2334
+msgid "Installed version:"
+msgstr "Versione installata:"
+
+#: core/includes/class-plugin-activation.php:2342
+msgid "Minimum required version:"
+msgstr "Versione minima richiesta:"
+
+#: core/includes/class-plugin-activation.php:2354
+msgid "Available version:"
+msgstr "Versione disponibile"
+
+#: core/includes/class-plugin-activation.php:2377
+#, php-format
+msgid ""
+"No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
+"Dashboard</a>"
+msgstr ""
+"Nessun plugin da installare, aggiornare o attivare. <a href=\"%1$s\">Ritorna "
+"alla dashboard</a>"
+
+#: core/includes/class-plugin-activation.php:2391
+msgid "Plugin"
+msgstr "Plugin"
+
+#: core/includes/class-plugin-activation.php:2392
+msgid "Source"
+msgstr "Fonte"
+
+#: core/includes/class-plugin-activation.php:2393
+msgid "Type"
+msgstr "Tipo"
+
+#: core/includes/class-plugin-activation.php:2397
+msgid "Version"
+msgstr "Versione"
+
+#: core/includes/class-plugin-activation.php:2398
+msgid "Status"
+msgstr "Stato"
+
+#: core/includes/class-plugin-activation.php:2558
+msgid "Install"
+msgstr "Installa"
+
+#: core/includes/class-plugin-activation.php:2564
+msgid "Update"
+msgstr "Aggiornamento"
+
+#: core/includes/class-plugin-activation.php:2567
+msgid "Activate"
+msgstr "Attivare"
+
+#: core/includes/class-plugin-activation.php:2598
+msgid "No plugins were selected to be installed. No action taken."
+msgstr "Nessun plugin selezionato per essere installato. Nessuna risposta."
+
+#: core/includes/class-plugin-activation.php:2600
+msgid "No plugins were selected to be updated. No action taken."
+msgstr "Nessun plugin selezionato per essere aggiornato. Nessuna risposta."
+
+#: core/includes/class-plugin-activation.php:2636
+msgid "No plugins are available to be installed at this time."
+msgstr "Nessun plugin è disponibile per essere installato in questo momento."
+
+#: core/includes/class-plugin-activation.php:2638
+msgid "No plugins are available to be updated at this time."
+msgstr "Nessun plugin è disponibile per essere aggiornato in questo momento."
+
+#: core/includes/class-plugin-activation.php:2958
+msgid "Plugin activation failed."
+msgstr "Installazione plugin fallita."
+
+#: core/includes/class-plugin-activation.php:3288
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr "Aggiornamento plugin %1$s (%2$d/%3$d)"
+
+#: core/includes/class-plugin-activation.php:3290
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+"Si è verificato un errore durante l’installazione %1$s: <strong>%2$s</"
+"strong>."
+
+#: core/includes/class-plugin-activation.php:3291
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr "L’installazione di %1$s è fallita."
+
+#: core/includes/class-plugin-activation.php:3295
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+"Il processo d’installazione ed attivazione è partito. Questo processo può "
+"richiedere del tempo su alcuni hosting, si prega di attendere."
+
+#: core/includes/class-plugin-activation.php:3296
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr "%1$s installato ed attivato con successo."
+
+#: core/includes/class-plugin-activation.php:3297
+msgid "All installations and activations have been completed."
+msgstr "Tutte le installazioni e le attivazione sono state completate."
+
+#: core/includes/class-plugin-activation.php:3298
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr "Installazione ed attivazione plugin %1$s (%2$d/%3$d)"
+
+#: core/includes/class-plugin-activation.php:3301
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+"Il processo d’installazione è partito. Questo processo può richiedere del "
+"tempo su alcuni hosting, si prega di attendere."
+
+#: core/includes/class-plugin-activation.php:3303
+msgid "All installations have been completed."
+msgstr "Tutte le installazioni sono state completate."
+
+#: core/includes/class-plugin-activation.php:3304
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr "Installazione plugin %1$s (%2$d/%3$d)"
 
 #: core/metaboxes/pages.php:19 core/metaboxes/pages.php:30
 #: core/metaboxes/pages.php:56 core/metaboxes/posts.php:19
