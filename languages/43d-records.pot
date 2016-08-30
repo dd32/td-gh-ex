@@ -2,9 +2,9 @@
 # This file is distributed under the MIT License.
 msgid ""
 msgstr ""
-"Project-Id-Version: 43d records 0.9.1\n"
+"Project-Id-Version: 43d records 0.9.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/43d-records_dev\n"
-"POT-Creation-Date: 2016-08-15 05:28:52+00:00\n"
+"POT-Creation-Date: 2016-08-30 14:25:22+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -99,11 +99,7 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: functions.php:193
-msgid "43d Records Editor"
-msgstr ""
-
-#: functions.php:393 index.php:151
+#: functions.php:220 index.php:151
 msgid "Posted On"
 msgstr ""
 

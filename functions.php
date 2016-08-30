@@ -8,7 +8,7 @@
 if (!function_exists('p43d_records_setup')) {
 
   define('P43D_RECORDS_BASE_URL', esc_url(get_template_directory_uri()));
-  define('P43D_RECORDS_VERSION', '0.9.1');
+  define('P43D_RECORDS_VERSION', '0.9.3');
   define('P43D_RECORDS_WEBSITE', 'https://records.43d.jp/'); // for the credit and link
   define('P43D_RECORDS_LIST_NUM', intval(get_option('posts_per_page')));
 
@@ -26,7 +26,7 @@ if (!function_exists('p43d_records_setup')) {
 
     $custom_background_defaults = array(
       'default-color' => 'cccccc',
-      'default-repeat'     => 'no-repeat',
+      'default-repeat' => 'no-repeat',
       'default-position-x' => 'center',
       'default-attachment' => 'fixed',
       'default-image' => esc_url(get_template_directory_uri()) . '/img/default_logo.png',
@@ -170,179 +170,6 @@ if (!function_exists('p43d_records_setup')) {
   }
 
   add_filter('image_size_names_choose', 'p43d_records_add_custom_image_size_select');
-
-
-  function p43d_records_add_scritps_and_styles()
-  {
-    wp_enqueue_script('media-upload');
-    wp_enqueue_script('thickbox');
-    wp_enqueue_style('thickbox');
-
-    wp_register_style('custom_wp_admin_css', get_template_directory_uri() . '/js/jquery-ui-1.11.4.custom/jquery-ui.min.css', false, '1.11.4');
-    wp_enqueue_style('custom_wp_admin_css');
-    wp_register_style('custom_wp_admin_css2', get_template_directory_uri() . '/css/admin.min.css', false, '0.9');
-    wp_enqueue_style('custom_wp_admin_css2');
-    wp_enqueue_script('jquery-ui-datepicker', array('jquery'));
-  }
-
-  add_action('admin_enqueue_scripts', 'p43d_records_add_scritps_and_styles');
-
-
-  function p43d_records_add_meta_box()
-  {
-    add_meta_box("43d_records_form", __('43d Records Editor', '43d-records'), 'p43d_records_form_cb', 'post');
-  }
-
-  function p43d_records_form_cb()
-  {
-    global $post;
-
-    $error_message = '';
-    $custom = get_post_custom($post->ID);
-
-    $recorded_sound_id_mp3 = -1;
-    $recorded_sound_specs_mp3 = '';
-    $recorded_sound_url_mp3 = '';
-    $recorded_sound_id_ogg = -1;
-    $recorded_sound_specs_ogg = '';
-    $recorded_sound_url_ogg = '';
-    $have_img = false;
-    $cover_image_id = -1;
-
-    if (!empty($custom)) {
-      $upload_link = esc_url(get_upload_iframe_src('image', $post->ID));
-
-      if (isset($custom['cf_43d_records_recorded_sound_id_mp3'][0])) {
-        $recorded_sound_id_mp3 = intval($custom['cf_43d_records_recorded_sound_id_mp3'][0]);
-      }
-      if ($recorded_sound_id_mp3 > 0) {
-        $recorded_sound_specs_mp3 = p43d_records_audio_meta_stringify(wp_get_attachment_metadata($recorded_sound_id_mp3));
-      }
-      if (isset($custom['cf_43d_records_recorded_sound_url_mp3'][0])) {
-        $recorded_sound_url_mp3 = $custom['cf_43d_records_recorded_sound_url_mp3'][0];
-      }
-
-      if (isset($custom['cf_43d_records_recorded_sound_id_ogg'][0])) {
-        $recorded_sound_id_ogg = intval($custom['cf_43d_records_recorded_sound_id_ogg'][0]);
-      }
-      if ($recorded_sound_id_ogg > 0) {
-        $recorded_sound_specs_ogg = p43d_records_audio_meta_stringify(wp_get_attachment_metadata($recorded_sound_id_ogg));
-      }
-      if (isset($custom['cf_43d_records_recorded_sound_url_ogg'][0])) {
-        $recorded_sound_url_ogg = $custom['cf_43d_records_recorded_sound_url_ogg'][0];
-      }
-      if (isset($custom['cf_43d_records_cover_image_id'][0])) {
-        $cover_image_id = $custom['cf_43d_records_cover_image_id'][0];
-      }
-      if ($cover_image_id > 0) {
-        $cover_image_src = wp_get_attachment_image_src($cover_image_id, array(640, 640));
-      }
-      $have_img = is_array($cover_image_src);
-
-      $rec_date = isset($custom['cf_43d_records_rec_date'][0]) ? trim($custom['cf_43d_records_rec_date'][0]) : '';
-      $rec_time = isset($custom['cf_43d_records_rec_time'][0]) ? trim($custom['cf_43d_records_rec_time'][0]) : '';
-
-      $equipments = isset($custom['cf_43d_records_equipments'][0]) ? trim($custom['cf_43d_records_equipments'][0]) : '';
-
-      $latitude = isset($custom['cf_43d_records_latitude'][0]) && strlen(trim($custom['cf_43d_records_latitude'][0])) > 0
-        ? floatval($custom['cf_43d_records_latitude'][0]) : '';
-      $longitude = isset($custom['cf_43d_records_longitude'][0]) && strlen(trim($custom['cf_43d_records_longitude'][0])) > 0
-        ? floatval($custom['cf_43d_records_longitude'][0]) : '';
-    }
-    include_once(get_template_directory() . '/admin_inc/post.php');
-  }
-
-  add_action('add_meta_boxes_post', 'p43d_records_add_meta_box');
-
-
-  function p43d_records_save_events($post_id)
-  {
-    global $post;
-    if (!wp_verify_nonce(isset($_REQUEST['e-nonce']) ? $_REQUEST['e-nonce'] : null, 'e-nonce')) {
-      return $post_id;
-    }
-
-    if (!current_user_can('edit_post', $post->ID)) {
-      return $post_id;
-    }
-
-    // sound
-    $recorded_sound_id_mp3 = trim($_REQUEST['recorded_sound_id_mp3']);
-    if ($recorded_sound_id_mp3 > 0) {
-      update_post_meta($post->ID, 'cf_43d_records_recorded_sound_id_mp3', $recorded_sound_id_mp3);
-    } else {
-      update_post_meta($post->ID, 'cf_43d_records_recorded_sound_id_mp3', '');
-    }
-    $recorded_sound_url_mp3 = trim($_REQUEST['recorded_sound_url_mp3']);
-    if (strlen($recorded_sound_url_mp3) > 0) {
-      update_post_meta($post->ID, 'cf_43d_records_recorded_sound_url_mp3', $recorded_sound_url_mp3);
-    } else {
-      update_post_meta($post->ID, 'cf_43d_records_recorded_sound_url_mp3', '');
-    }
-
-    $recorded_sound_id_ogg = trim($_REQUEST['recorded_sound_id_ogg']);
-    if ($recorded_sound_id_ogg > 0) {
-      update_post_meta($post->ID, 'cf_43d_records_recorded_sound_id_ogg', $recorded_sound_id_ogg);
-    } else {
-      update_post_meta($post->ID, 'cf_43d_records_recorded_sound_id_ogg', '');
-    }
-    $recorded_sound_url_ogg = trim($_REQUEST['recorded_sound_url_ogg']);
-    if (strlen($recorded_sound_url_mp3) > 0) {
-      update_post_meta($post->ID, 'cf_43d_records_recorded_sound_url_ogg', $recorded_sound_url_ogg);
-    } else {
-      update_post_meta($post->ID, 'cf_43d_records_recorded_sound_url_ogg', '');
-    }
-
-    // cover image
-    $cover_image_id = intval($_REQUEST['cover_image_id']);
-    if ($cover_image_id > 0) {
-      update_post_meta($post->ID, 'cf_43d_records_cover_image_id', $cover_image_id);
-      update_post_meta($post->ID, '_thumbnail_id', $cover_image_id);
-    } else {
-      update_post_meta($post->ID, 'cf_43d_records_cover_image_id', '');
-      update_post_meta($post->ID, '_thumbnail_id', '');
-    }
-
-    // date recorded on
-    $rec_date = trim($_REQUEST['rec_date']);
-    if (strlen($rec_date) > 0) {
-      update_post_meta($post->ID, 'cf_43d_records_rec_date', $rec_date);
-    } else {
-      update_post_meta($post->ID, 'cf_43d_records_rec_date', '');
-    }
-
-    $rec_time = trim($_REQUEST['rec_time']);
-    if (strlen($rec_time) > 0) {
-      update_post_meta($post->ID, 'cf_43d_records_rec_time', $rec_time);
-    } else {
-      update_post_meta($post->ID, 'cf_43d_records_rec_time', '');
-    }
-
-    // equipments
-    $equipments = trim($_REQUEST['equipments']);
-    if (strlen($equipments) > 0) {
-      update_post_meta($post->ID, 'cf_43d_records_equipments', $equipments);
-    } else {
-      update_post_meta($post->ID, 'cf_43d_records_equipments', '');
-    }
-
-    // location
-    $latitude = trim($_REQUEST['latitude']);
-    if (strlen($latitude) > 0) {
-      update_post_meta($post->ID, 'cf_43d_records_latitude', $latitude);
-    } else {
-      update_post_meta($post->ID, 'cf_43d_records_latitude', '');
-    }
-
-    $longitude = trim($_REQUEST['longitude']);
-    if (strlen($longitude) > 0) {
-      update_post_meta($post->ID, 'cf_43d_records_longitude', $longitude);
-    } else {
-      update_post_meta($post->ID, 'cf_43d_records_longitude', '');
-    }
-  }
-
-  add_action('save_post', 'p43d_records_save_events');
 
 
   function post_list($page = 0, $per_page = P43D_RECORDS_LIST_NUM, $echo = true, $category_name = '', $tag = '')

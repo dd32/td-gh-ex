@@ -107,7 +107,7 @@ while (have_posts()) :
     <li class="menulist" title="Menu"><img src="<?php echo esc_url(P43D_RECORDS_BASE_URL); ?>/img/icon_M.svg"
                                            alt="blog menu"/></li>
     <li class="infobox" title="Information"><img src="<?php echo esc_url(P43D_RECORDS_BASE_URL); ?>/img/icon_I.svg"
-                                                 alt="info"/>
+                                                 alt="information"/>
     </li>
     <li class="timeline" title=""><img src="<?php echo esc_url(P43D_RECORDS_BASE_URL); ?>/img/icon_T.svg"
                                        alt="timeline"/>

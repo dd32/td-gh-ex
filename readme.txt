@@ -1,7 +1,11 @@
 
-43d records is a WordPress theme for publishing sounds and photographs for field recordings.
+43d records is a WordPress theme for publishing sounds and photographs for the field recording lovers.
 
 == Description ==
+
+This theme is designed to publish the records by field recordings. To use designed metadata input forms on the wordpress post editing page, we highly recommend you to install the 43d records plugin before you start to publish. You can download the plugins at the URL below.
+
+https://records.43d.jp/43d-records-plugin.zip
 
 If you click the nav menu "M", the menu panel is shown. The lists of posts, static pages, categories, and tags are shown in the menu panel. If the accessed URL is for an archive page, the menu panel is open when the web page is loaded.
 If you click the nav menu "I", the information panel is shown. The contents of posts are shown in the information panel. If the accessed URL is for a post or a static page, the information panel is open when the web page is loaded.
