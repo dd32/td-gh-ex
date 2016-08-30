@@ -30,6 +30,11 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 2.7.7 | 29th August 2016 =
+* Fix: Issue with portfolio carousel.
+* Update: hooks.
+* Update: CSS.
+
 = Version 2.7.6 | 21st July 2016 =
 * Fix: Empty category Image issue.
 

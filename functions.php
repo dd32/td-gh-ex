@@ -29,6 +29,7 @@ require_once locate_template('/lib/admin_scripts.php');          			// Icon func
 require_once locate_template('/lib/authorbox.php');         				// Author box
 require_once locate_template('/lib/template_hooks/portfolio_hooks.php'); 	// Portfolio Template Hooks
 require_once locate_template('/lib/template_hooks/post_hooks.php'); 		// Post Template Hooks
+require_once locate_template('/lib/template_hooks/page_hooks.php'); 		// Post Template Hooks
 require_once locate_template('/lib/custom-woocommerce.php'); 				// Woocommerce functions
 require_once locate_template('/lib/woo-account.php'); 						// Woocommerce functions
 require_once locate_template('/lib/virtuetoolkit-activate.php'); 			// Plugin Activation

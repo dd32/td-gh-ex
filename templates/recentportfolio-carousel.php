@@ -28,6 +28,7 @@
 					'orderby' 		 => 'date',
 					'order' 		 => 'DESC',
 					'post_type' 	 => 'portfolio',
+					'post__not_in' 	 => array($post->ID),
 					'posts_per_page' => '8'
 					)
 				  );
