@@ -19,7 +19,7 @@ if(absint($bellini['bellini_footer_layout_type']) === 2) :
 		    	</a>
 		    	<span class="sep"> | </span>
 		    	<a href="<?php echo esc_url('http://atlantisthemes.com'); ?>" rel="nofollow">
-					<?php printf( __( 'Theme: %1$s by Pangolin Themes', 'bellini' ), 'Bellini'); ?>
+					<?php printf( __( 'Theme: %1$s by Atlantis Themes', 'bellini' ), 'Bellini'); ?>
 				</a>
 			</div>
 		<?php endif;

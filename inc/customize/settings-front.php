@@ -78,7 +78,7 @@
 
 	// Reorder Frontpage Section
 	$wp_customize->add_section('bellini_frontpage_section_reorder',array(
-			'title' 			=> esc_html__( 'Re-order Frontpage Section', 'bellini' ),
+			'title' 			=> esc_html__( 'Need More Sections?', 'bellini' ),
 			'capability' 		=> 'edit_theme_options',
 			'priority' 			=> 20,
 			'panel' 			=> 'bellini_frontpage_panel',
@@ -98,7 +98,7 @@
 		<li>Select your Homepage template assigned page as <b>Front Page</b></li>
 		<li>Click on <b>Save & Publish</b></li>
 		</ol></br>
-		<a target="_blank" href="%s">Check Documentation</a>', 'bellini' ), esc_url( 'http://atlantisthemes.com' ));
+		<a target="_blank" href="%s">Front Page Demo</a>', 'bellini' ), esc_url( 'http://demo.atlantisthemes.com/front-page/' ));
 
 	$wp_customize->add_setting( 'bellini[bellini_frontpage_helper_documentation]',
 		array(
@@ -222,6 +222,7 @@
 
 	//Hero Image Headline
 	$wp_customize->add_setting('bellini[bellini_static_slider_title]', array(
+		'default'			=> __('Best Shop Theme For WordPress', 'bellini'),
 		'type' 				=> 'option',
 		'sanitize_callback' => 'bellini_sanitize_input',
 		'transport' 		=> 'refresh',
@@ -1187,6 +1188,7 @@ if ( is_woocommerce_activated() ) {
 
 	//Blog Title
 	$wp_customize->add_setting('bellini[bellini_home_blogposts_title]', array(
+		'default'	=> __('Our Stories', 'bellini'),
 		'type' => 'option',
 		'sanitize_callback' => 'bellini_sanitize_input',
 		'transport' => 'refresh',
@@ -1202,6 +1204,7 @@ if ( is_woocommerce_activated() ) {
 
 	//Blog Description
 	$wp_customize->add_setting('bellini[bellini_home_blogposts_description]', array(
+		'default'	=> __('Behind the scenes stories', 'bellini'),
 		'type' => 'option',
 		'sanitize_callback' => 'bellini_sanitize_input',
 		'transport' => 'refresh',
@@ -1413,7 +1416,7 @@ if ( is_woocommerce_activated() ) {
 	// Category Background Color -- Settings
 	$wp_customize->add_setting( 'bellini[bellini_feature_block_background_color]' ,
 		array(
-	    'default' => '#FFEB3B',
+	    'default' => '#ffffff',
 	    'sanitize_callback' => 'sanitize_hex_color',
 	    'type' => 'option',
 	    'transport' => 'postMessage'
@@ -1449,6 +1452,7 @@ if ( is_woocommerce_activated() ) {
 
 	//Blocks Section Title
 	$wp_customize->add_setting('bellini[bellini_feature_blocks_title]', array(
+		'default'	=> __('Our Features', 'bellini'),
 		'type' => 'option',
 		'sanitize_callback' => 'bellini_sanitize_input',
 		'transport' => 'refresh',
@@ -1482,6 +1486,7 @@ if ( is_woocommerce_activated() ) {
 
 	//Block 1 Section Title
 	$wp_customize->add_setting('bellini[bellini_feature_block_title_one]', array(
+		'default'	=> __('Search lights are trained', 'bellini'),
 		'type' => 'option',
 		'sanitize_callback' => 'bellini_sanitize_input',
 		'transport' => 'refresh',
@@ -1497,6 +1502,7 @@ if ( is_woocommerce_activated() ) {
 
 	//Block 1 Content
 	$wp_customize->add_setting('bellini[bellini_feature_block_content_one]', array(
+		'default'	=> __('A worker climbs to the top of the crate. The search lights are trained on the door. The rifleman throw the bolts on their rifles and crack their stun guns, sending arcs of current cracking through the air.', 'bellini'),
 		'type' => 'option',
 		'sanitize_callback' => 'bellini_sanitize_input',
 		'transport' => 'postMessage',
@@ -1511,6 +1517,7 @@ if ( is_woocommerce_activated() ) {
 
 	//Block 1 Image
 	$wp_customize->add_setting('bellini[bellini_feature_block_image_one]', array(
+		'default'	=> get_template_directory_uri() . '/images/block_one.png',
 		'type' => 'option',
 		'sanitize_callback' => 'esc_url_raw',
 		'transport' => 'refresh',
@@ -1543,6 +1550,7 @@ if ( is_woocommerce_activated() ) {
 
 	//Block 2 Section Title
 	$wp_customize->add_setting('bellini[bellini_feature_block_title_two]', array(
+		'default'	=> __('Welcome to Jurassic Park', 'bellini'),
 		'type' => 'option',
 		'sanitize_callback' => 'bellini_sanitize_input',
 		'transport' => 'refresh',
@@ -1558,6 +1566,7 @@ if ( is_woocommerce_activated() ) {
 
 	//Block 2 Content
 	$wp_customize->add_setting('bellini[bellini_feature_block_content_two]', array(
+		'default'	=> __('A worker climbs to the top of the crate. The search lights are trained on the door. The rifleman throw the bolts on their rifles and crack their stun guns, sending arcs of current cracking through the air.', 'bellini'),
 		'type' => 'option',
 		'sanitize_callback' => 'bellini_sanitize_input',
 		'transport' => 'refresh',
@@ -1572,6 +1581,7 @@ if ( is_woocommerce_activated() ) {
 
 	//Block 2 Image
 	$wp_customize->add_setting('bellini[bellini_feature_block_image_two]', array(
+		'default'	=> get_template_directory_uri() . '/images/block_two.png',
 		'type' => 'option',
 		'sanitize_callback' => 'esc_url_raw',
 		'transport' => 'refresh',
@@ -1603,6 +1613,7 @@ if ( is_woocommerce_activated() ) {
 
 	//Block 3 Section Title
 	$wp_customize->add_setting('bellini[bellini_feature_block_title_three]', array(
+		'default'	=> __('Dinosaurs eat man', 'bellini'),
 		'type' => 'option',
 		'sanitize_callback' => 'bellini_sanitize_input',
 		'transport' => 'refresh',
@@ -1618,6 +1629,7 @@ if ( is_woocommerce_activated() ) {
 
 	//Block 3 Content
 	$wp_customize->add_setting('bellini[bellini_feature_block_content_three]', array(
+		'default'	=> __('A worker climbs to the top of the crate. The search lights are trained on the door. The rifleman throw the bolts on their rifles and crack their stun guns, sending arcs of current cracking through the air.', 'bellini'),
 		'type' => 'option',
 		'sanitize_callback' => 'bellini_sanitize_input',
 		'transport' => 'refresh',
@@ -1632,6 +1644,7 @@ if ( is_woocommerce_activated() ) {
 
 	//Block 3 Image
 	$wp_customize->add_setting('bellini[bellini_feature_block_image_three]', array(
+		'default'	=> get_template_directory_uri() . '/images/block_three.png',
 		'type' => 'option',
 		'sanitize_callback' => 'esc_url_raw',
 		'transport' => 'refresh',
@@ -1649,6 +1662,7 @@ if ( is_woocommerce_activated() ) {
 --------------------------------------------------------------*/
 	//Text Field
 	$wp_customize->add_setting('bellini[bellini_frontpage_textarea_section_field]', array(
+			'default'	=> __('It is a text field where you can insert any text, HTMl or shortcode.' , 'bellini'),
 			'type' 				=> 'option',
 			'sanitize_callback' => 'bellini_sanitize_input',
 			'transport' 		=> 'refresh',
@@ -1683,7 +1697,7 @@ if ( is_woocommerce_activated() ) {
 	// Text Field Background Color
 	$wp_customize->add_setting( 'bellini[bellini_frontpage_textarea_section_color]' ,
 		array(
-	    'default' => '#eceef1',
+	    'default' => '#d3e9fb',
 	    'sanitize_callback' => 'sanitize_hex_color',
 	    'type' => 'option',
 	    'transport' => 'postMessage',

@@ -9,6 +9,7 @@
 get_header(); ?>
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
+		<div class="row bellini__canvas">
 		<?php if ( have_posts() ) : ?>
 			<header class="page-header">
 				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'bellini' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
@@ -28,6 +29,7 @@ get_header(); ?>
 		<?php else : ?>
 			<?php get_template_part( 'template-parts/content', 'none' ); ?>
 		<?php endif; ?>
+		</div>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 <?php get_sidebar(); ?>

@@ -14,7 +14,36 @@ $bellini_post_section_pro_conversion 					= esc_html__( '3 more Blog posts & 3 m
 $bellini_footer_section_pro_conversion 					= esc_html__( '3 more footer layouts.', 'bellini');
 $bellini_integration_pro_conversion 					= esc_html__( 'Google Analytics, Hotjar, Facebook Conversion Pixel, Heap Analytics, SumoMe and many more integrations.', 'bellini' );
 $bellini_woocommerce_pro_conversion 					= esc_html__( '3 More Shop page & 3 More Single Product Layouts.', 'bellini');
+$bellini_frontpage_section_pro_conversion 				= sprintf( __( 'You are missing out on</br>
+<ul class="bellini__pro--features">
+<li>Premium Email Support</li>
+<li>Extra Frontpage Sections</li>
+<li>Advanced Customization</li>
+<li>Full WooCommerce Compatibility</li>
+<li>Google Map Section</li>
+<li>Shortcodes &amp; Widgets</li>
+</ul><a target="_blank" href="%s">Upgrade To Pro</a> to unlock all features.', 'bellini' ), esc_url( 'http://atlantisthemes.com/' ));
 
+
+/*--------------------------------------------------------------
+## Frontpage Sections
+--------------------------------------------------------------*/
+
+	$wp_customize->add_setting( 'bellini[bellini_frontpage_section_conversion]',
+		array(
+			'type' 				=> 'option',
+			'sanitize_callback' => 'sanitize_key',
+			)
+	);
+
+			$wp_customize->add_control( new Bellini_Pro_Conversion ( $wp_customize, 'bellini_frontpage_section_conversion', array(
+					'type' => 'info',
+					'label' => esc_html__('Unlock More Sections','bellini'),
+					'description' => $bellini_frontpage_section_pro_conversion,
+					'section' => 'bellini_frontpage_section_reorder',
+					'settings'    => 'bellini[bellini_frontpage_section_conversion]',
+					'priority'   => 90,
+			)) );
 
 /*--------------------------------------------------------------
 ## Frontpage Feature Blocks
