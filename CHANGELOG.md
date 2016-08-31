@@ -1,3 +1,7 @@
+###Version 1.2
+* HTML formating issue fixed like table, list styling.
+* Widget list styling issue fixed.
+* Some other styling issue fixed.
 ###Version 1.1
 * Minor bug fixed.
 ###Version 1.0

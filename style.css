@@ -5,7 +5,7 @@
 	Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, grid-layout, footer-widgets, blog, e-commerce, news, photography, portfolio
 	Author: WebHunt Infotech
 	Author URI: http://www.webhuntinfotech.com/
-	Version: 1.1
+	Version: 1.2
 	License: GNU General Public License v3 or later
 	License URI: http://www.gnu.org/licenses/gpl.html
 	Text Domain: awada
@@ -81,9 +81,12 @@ a.navbar-brand {
 	padding-left: 55px !important;
 	line-height: 36px;
 }
-ul {
+/* ul:not(.blog-desc ul){
 	padding-left:0;
 }
+ul:not(#sidebar .widget ul, #awada_footer_area .widget ul) {
+	padding-left:0;
+} */
 .lead {
 	font-family: 'PT Sans',sans-serif;
 	font-size:18px;
@@ -331,9 +334,9 @@ FOOTER SECTION STYLES
 .footer-area-menu ul{
 	list-style:none;
 	list-style-position:outside;
-	float:right;
+	float:none;
 	display:inline;
-	margin:5px;
+	margin: 5px;
 }   
 .footer-area-menu li{ 
 	line-height:12px;
@@ -747,7 +750,7 @@ BLOG SECTIONS
 }
 .comment-list ul li,
 .comment-list ol li {
-	list-style:none;
+	list-style:inherit;
 }
 .comment-avatar {
 	margin: 0 20px 0 0;
@@ -1105,23 +1108,21 @@ img.alignnone {
 address {
     font-style: italic;
 }
+pre {
+    border: 1px solid #d1d1d1;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.3125;
+    margin: 0 0 1.75em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1.75em;
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
 .blog-masonry .blog-carousel .blog-desc img {
 	width:100%;
-}
-/* Table Styling */
-.blog-masonry .blog-carousel .blog-desc td, .blog-masonry .blog-carousel .blog-desc th, .comments_wrapper .comment-content td, .comments_wrapper .comment-content th{
-    text-align: center !important;
-    border: 1px solid #ededed;
-	padding: 15px;
-    line-height: 1.42857143;
-    vertical-align: midddle;
-}
-.blog-masonry .blog-carousel .blog-desc .content table, .comments_wrapper .comment-content table {
-    text-align: center !important;
-    border: 1px solid #000;
-}
-.blog-masonry .blog-carousel .blog-desc table > tbody > tr.odd > td, .blog-masonry .blog-carousel .blog-desc table > tbody > tr.odd > th, .comments_wrapper .comment-content table > tbody > tr.odd > td, .comments_wrapper .comment-content table > tbody > tr.odd > th {
-    background-color: #f9f9f9;
 }
 /* Header Menu Left Align */
 @media (min-width: 768px){
@@ -1643,9 +1644,6 @@ a.readmore{
 }
 
 @media only screen and (min-width: 620px) and (max-width: 767px) {
-	/* #home_portfolio #boxed-portfolio .col-sm-4 {
-		width: 50%;
-	} */
 	.blog-masonry .col-lg-4  {
 		width: 50%;
 		float: left;
@@ -1684,12 +1682,44 @@ a.readmore{
 		bottom: 4px;
 	}
 }
-/* @media only screen and (max-width: 600px) and (min-width: 220px){
-	.sl-slider-wrapper {
-		height: 0 !important;
-		padding-bottom: 56%;
-	}
-	.demo-2 .sl-slider h2, .demo-2 .sl-slider blockquote {
-		padding: 75px 30px 10px 30px;
-	}
-} */
+/* HTML formating issue fixed like table, list style, widgets styling etc. v-1.2 [31/08/2016] */
+#sidebar .widget ul li, #awada_footer_area .widget ul li, #two-sidebar .widget ul li {
+	list-style-type: none;
+}
+#sidebar .widget ul{
+	padding: 0px 10px;
+}
+#two-sidebar .widget ul{
+	padding: 0;
+}
+#awada_footer_area .widget ul{
+	padding: 0 10px 0 0;
+}
+/* Table Styling */
+.blog-masonry .blog-carousel .blog-desc table, .comments_wrapper .comment-content table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-width: 1px 0 0 1px;
+    margin: 0 0 1.75em;
+    table-layout: fixed;
+    width: 100%;
+}
+.blog-masonry .blog-carousel .blog-desc th, .blog-masonry .blog-carousel .blog-desc td, .comments_wrapper .comment-content th, .comments_wrapper .comment-content .blog-desc td {
+    padding: 0.4375em;
+}
+.blog-masonry .blog-carousel .blog-desc td, .comments_wrapper .comment-content td {
+    border-width: 0 1px 1px 0;
+}
+.blog-masonry .blog-carousel .blog-desc caption, .blog-masonry .blog-carousel .blog-desc th, .blog-masonry .blog-carousel .blog-desc td, .comments_wrapper .comment-content caption, .comments_wrapper .comment-content th, .comments_wrapper .comment-content td {
+    font-weight: normal;
+    text-align: center;
+}
+.blog-masonry .blog-carousel .blog-desc table, .blog-masonry .blog-carousel .blog-desc th, .blog-masonry .blog-carousel .blog-desc  td, .comments_wrapper .comment-content table, .comments_wrapper .comment-content th, .comments_wrapper .comment-content td {
+    border: 1px solid #d1d1d1;
+}
+.blog-masonry .blog-carousel .blog-desc dt, .comments_wrapper .comment-content dt {
+    font-weight: 700;
+}
+.blog-masonry .blog-carousel .blog-desc dd, .comments_wrapper .comment-content dd {
+    margin: 0 0 1.75em;
+}
