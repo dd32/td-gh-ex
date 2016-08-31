@@ -27,13 +27,10 @@ $header_image = get_header_image();
   <div class="container">
       <div class="logo-box">
       <?php
-	  $custom_logo_id = get_theme_mod( 'custom_logo' );
-      $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-      $logo = $image[0];
-	  if( $logo ):?>
-      <a href="<?php echo esc_url(home_url('/')); ?>"><img class="site-logo normal_logo" alt="<?php bloginfo('name'); ?>" src="<?php echo esc_url($logo); ?>" /></a> 
-      <?php endif;?>
-      
+	  the_custom_logo();
+     
+	  ?>
+            
        <div class="name-box">
                             <a href="<?php echo esc_url(home_url('/')); ?>"><h1 class="site-name"><?php bloginfo('name'); ?></h1></a>
                             <span class="site-tagline"><?php bloginfo('description'); ?></span>

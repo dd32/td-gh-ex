@@ -8,7 +8,7 @@
 <section class="section section-features" id="<?php echo $section_id; ?>">
       <div class="container">
         <div class="row">
-          <div class="col-sm-5">
+          <div class="col-md-5">
             <div class="section-features-desc">
             <?php
 	  if( $post_id  > 0 ):
@@ -27,7 +27,7 @@
 	  ?>
             </div>
           </div>
-          <div class="col-sm-6 col-sm-offset-1">
+          <div class="col-md-6">
             <ul class="iconlist">
               <?php 
 	  
@@ -37,7 +37,7 @@
 	  $feature_icon    =  str_replace('fa-','',$feature_icon );
 	  $feature_image   =  esc_url(avata_option('section_features_image_'.$j));
 	  $page            =  absint(avata_option('section_features_page_'.$j));
-	  $link            =  esc_url(avata_option('section_features_link_'.$j));
+	  $link            =  esc_attr(avata_option('section_features_link_'.$j));
 	  $target          =  esc_attr(avata_option('section_features_target_'.$j));
 	  
 	  if( $page > 0):
@@ -48,9 +48,9 @@
 	   $query2->the_post();
 			  
 	  if( $link == "" )
-	  $title = '<h3>'.get_the_title().'</h3>';
+	  $title = get_the_title();
 	  else
-	  $title = '<a href="'.esc_url( get_permalink() ).'" target="'.$target.'"><h3>'.get_the_title().'</h3></a>';
+	  $title = '<a href="'.esc_url( get_permalink() ).'" target="'.$target.'">'.get_the_title().'</a>';
 	  
 	  $icon            = '';
 	  if( $feature_image !='' )
@@ -62,7 +62,7 @@
 	
 			  
 		echo '<li> <span class="iconlist_icon">'.$icon.'</span>
-                <p><strong>'.get_the_title().'</strong></p>
+                <p><strong>'.$title.'</strong></p>
                 <p>'. get_the_excerpt().'</p>
               </li>';
 			  

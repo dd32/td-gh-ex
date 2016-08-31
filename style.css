@@ -4,7 +4,7 @@ Theme URI: https://www.hoothemes.com/themes/avata.html
 Author: HooThemes
 Author URI: http://www.hoothemes.com/
 Description: Based on Bootstrap and coded with HTML5 and CSS3 language, Avata is fully responsive in desktops and mobile devices. With enriched settings , you can easily create a homepage with pre-built layout. background colors, header & footer and logo are also customizable. 
-Version: 1.0.5
+Version: 1.0.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: avata
@@ -36,17 +36,14 @@ h6{
 h1{
 	font-size: 22px;
 	margin-bottom: 15px;
-    line-height: 20px;
 }
 h2{
 	font-size: 18px;
     margin-bottom: 15px;
-    line-height: 18px;
 }
 h3{
 	font-size: 16px;
 	margin-bottom: 10px;
-    line-height: 13px;
 }
 h4{
 	font-size: 14px;
@@ -281,11 +278,10 @@ img.aligncenter {
 h1.site-name{
 	margin-bottom: 5px;
 	}
-img.site-logo {
+img.custom-logo {
     float: left;
-    max-height: 50px;
 }
-.site-logo {
+.custom-logo {
     margin: 10px 18px 10px 0;
 }
 .logo-box {
@@ -1374,8 +1370,11 @@ section{
 .promo-info {
     padding-right: 15px;
 }
-.promo-action .promo-btn-2{
-	margin-left: 20px;
+.promo-action .btn{
+    margin-bottom: 20px;
+}
+.promo-action .promo-btn-1{
+	margin-right: 20px;
 	}
 
 @media screen and (min-width: 768px){
@@ -1383,6 +1382,11 @@ section{
     display: table-cell;
     vertical-align: middle;
 	text-align:right;
+}
+}
+@media screen and (max-width: 768px){
+.section-features .iconlist_icon {
+    position:static;
 }
 }
 /*
