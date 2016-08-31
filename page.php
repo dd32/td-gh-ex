@@ -6,7 +6,14 @@
  */
  
 get_header(); 
-page_banner_strip(); // banner strip
+$my_meta = get_post_meta( get_the_ID() ,'_my_meta', TRUE );
+if( isset($my_meta['banner_enable'])==true ) {
+spasalon_page_banner_strip();
+}
+else
+{
+spasalon_pink_banner_strip(); // banner strip
+}
 ?>
 
 <!-- Blog & Sidebar Section -->
@@ -15,7 +22,24 @@ page_banner_strip(); // banner strip
 		<div class="row">
 			
 			<!--Blog Detail-->
-			<div class="col-md-8 col-xs-12">
+			<?php 
+				if ( class_exists( 'WooCommerce' ) ) {
+					
+					if( is_account_page() || is_cart() || is_checkout() ) {
+							echo '<div class="col-md-'.( !is_active_sidebar( "woocommerce-1" ) ?"12" :"8" ).'">'; 
+					}
+					else{ 
+				
+					echo '<div class="col-md-'.( !is_active_sidebar( "sidebar-primary" ) ?"12" :"8" ).'">'; 
+					
+					}
+					
+				}
+				else{ 
+				
+					echo '<div class="col-md-'.( !is_active_sidebar( "sidebar-primary" ) ?"12" :"8" ).'">';
+					
+					} ?>
 				<div class="site-content">
 					
 					<?php while( have_posts() ): the_post(); ?>

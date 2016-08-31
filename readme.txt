@@ -106,6 +106,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@Version 1.7.1
+1. Added Custom filed Pink Banner Strip.
 @Version 1.7
 1. Home Page Section widgetization with new guideline.
 @Version 1.6.3

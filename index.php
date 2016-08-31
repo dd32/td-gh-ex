@@ -11,9 +11,18 @@
  */
  
 get_header();
-page_banner_strip(); // banner strip
+$my_meta = array();
+if( is_front_page() || is_home() ){
+	$my_meta         = get_post_meta( get_option('page_for_posts') ,'_my_meta', TRUE );
+}
+if( isset($my_meta['banner_enable'])==true ) {
+spasalon_page_banner_strip();
+}
+else
+{
+spasalon_pink_banner_strip(); // banner strip
+}
 ?>
-
 <!-- Blog & Sidebar Section -->
 <section id="section">		
 	<div class="container">
@@ -29,7 +38,9 @@ page_banner_strip(); // banner strip
 						
 							<?php get_template_part('content',''); ?>
 					
-						<?php endwhile; ?>
+						<?php endwhile;
+						wp_reset_postdata();
+						?>
 						
 						<div class="paginations">
 						<?php						

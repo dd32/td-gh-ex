@@ -4,7 +4,7 @@
 */
 
 // banner strip tag
-function page_banner_strip(){
+function spasalon_page_banner_strip(){
 	
 	$current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), default_data() );
 	$call_us         = $current_options['call_us'];
@@ -188,3 +188,53 @@ function get_homepage_product_excerpt($content)
 			return $excerpt; 
 		}
 }
+
+function spasalon_pink_banner_strip() 
+{
+	
+$current_options = wp_parse_args(  get_option( 'spa_theme_options', array() ), default_data() );
+$call_us         = $current_options['call_us'];
+$call_us_text    = $current_options['call_us_text']; 	
+	
+global $wp_query;
+$postid = $wp_query->post->ID;
+if( is_home() ){
+$postid = ( 'page' == get_option( 'show_on_front' ) ? get_option( 'page_for_posts' ) : get_the_ID() );
+}
+wp_reset_query(); 
+if ( get_post_meta($postid, 'spa-page-banner-h1', true) || get_post_meta($postid, 'spa-page-banner-h2', true) || get_post_meta($postid, 'spa-page-description', true) )
+{ ?>
+<section id="spa-page-header">
+		<div class="container">
+			<div class="topbar-detail">
+			
+				<div class="col-md-3">
+					<div class="title">
+						<?php if( get_post_meta($postid, 'spa-page-banner-h1', true)) : ?>
+						<h4><?php echo get_post_meta($postid, 'spa-page-banner-h1', true); ?></h4>
+						<?php endif; ?>
+						<?php if(get_post_meta($postid,'spa-page-banner-h2', true)): ?>
+						<h1><?php echo get_post_meta($postid,'spa-page-banner-h2', true); ?></h1>
+						<?php endif; ?>
+					</div>
+				</div>
+				
+				<div class="col-md-6">
+					<?php if(get_post_meta($postid, 'spa-page-description', true)) :?>
+					<p class="description">
+					<?php echo get_post_meta($postid, 'spa-page-description', true);?>
+					</p>
+					<?php endif; ?>
+				</div>
+				<div class="col-md-3">
+					<div class="addr-detail">
+					<address><?php echo $call_us_text; ?><strong><?php echo $call_us; ?></strong></address>
+					</div>
+				</div>		
+			</div>
+		</div>
+</section>
+<div class="clearfix"></div>
+<?php
+} }
+?>

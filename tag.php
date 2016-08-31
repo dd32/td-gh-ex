@@ -6,7 +6,7 @@
  */
  
 get_header(); 
-page_banner_strip(); // banner strip
+spasalon_page_banner_strip(); // banner strip
 ?>
 
 <!-- Blog & Sidebar Section -->

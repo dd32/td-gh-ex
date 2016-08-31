@@ -6,7 +6,14 @@
  */
  
 get_header(); 
-page_banner_strip(); // banner strip
+$my_meta = get_post_meta( get_the_ID() ,'_my_meta', TRUE );
+if( isset($my_meta['banner_enable'])==true ) {
+spasalon_page_banner_strip();
+}
+else
+{
+spasalon_pink_banner_strip(); // banner strip
+} // banner strip
 ?>
 <!-- Blog & Sidebar Section -->
 <section id="section">		
