@@ -98,6 +98,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.7.13
+- Updated: Font Awesome library updated to latest version v4.6.3. Ensures all icons in FA library are available to use.
+
 Version 1.7.12
 - Fixed:   Custom Redux extensions now load correctly. Issue introduced in previous version where extensions did not load is now corrected.
 
