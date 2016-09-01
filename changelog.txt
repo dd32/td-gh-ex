@@ -3,6 +3,9 @@ Avata Theme Change Log
 
 =================================
 
+= Version 1.0.7  = 09/01/2016
+* Fix - Fixed Feature box link issue 
+
 = Version 1.0.6  = 08/31/2016
 * Fix - Fixed custom logo issue
 * Fix - Fixed Feature box link issue 

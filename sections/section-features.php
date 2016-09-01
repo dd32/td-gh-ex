@@ -47,7 +47,7 @@
 		  while ( $query2->have_posts() ) :
 	   $query2->the_post();
 			  
-	  if( $link == "" )
+	  if( $link != "1" )
 	  $title = get_the_title();
 	  else
 	  $title = '<a href="'.esc_url( get_permalink() ).'" target="'.$target.'">'.get_the_title().'</a>';
