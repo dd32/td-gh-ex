@@ -4,7 +4,7 @@ Theme URI: http://crestaproject.com/downloads/storto/
 Author: Rizzo Andrea - CrestaProject.com
 Author URI: http://crestaproject.com
 Description: Storto: Simple and Modern WordPress Theme created by CrestaProject.com. Live demo http://crestaproject.com/demo/storto/
-Version: 1.4.0
+Version: 1.4.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: storto
@@ -838,6 +838,13 @@ span.overlay-img {
 	width: 100%;
 	z-index: 10;	
 	opacity: 0;
+	-o-transition: opacity .3s ease-in-out;
+    -moz-transition: opacity .3s ease-in-out;
+    -webkit-transition: opacity .3s ease-in-out;
+    transition: opacity .3s ease-in-out;
+}
+span.overlay-img:hover {
+	opacity: 0.5;
 }
 .page-content, .entry-content, .entry-summary {
 	margin: 1.5em 0 0;

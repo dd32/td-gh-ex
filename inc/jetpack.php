@@ -1,7 +1,7 @@
 <?php
 /**
  * Jetpack Compatibility File
- * See: http://jetpack.me/
+ * See: https://jetpack.com/
  *
  * @package storto
  */

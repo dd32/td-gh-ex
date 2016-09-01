@@ -41,71 +41,77 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, cust
 3. Log into your WP admin panel and click on the Design tab. Now click on the Storto theme to activate it.
 
 == Changelog ==
-Version 1.0
+= Version 1.0 =
 * Initial Release
 
-Version 1.1
+= Version 1.1 =
 * Minor Bug Fixes
 
-Version 1.2
+= Version 1.2 =
 * Changed JS for sticky sidebar
 * Minor Bug Fixes
 
-Version 1.2.1
+= Version 1.2.1 =
 * Little Error
 
-Version 1.3
+= Version 1.3 =
 * Added hover effect on featured images
 * Minor Bug Fixes
 
-Version 1.3.1
+= Version 1.3.1 =
 * Added markup in page.php
 * Fixed main menu effect
 * Fixed featured image effect
 * Edit font size
 * Minor bug fixes
 
-Version 1.3.2
+= Version 1.3.2 =
 * Update FontAwesome to 4.3.0v
 * Update sticky post
 * Added title-tag support for WordPress 4.1
 * Minor bug fixes
 
-Version 1.3.3
+= Version 1.3.3 =
 * Added VK social button
 * Fixed Previous and Next Post translation bug
 * Minor bug fixes
 
-Version 1.3.4
+= Version 1.3.4 =
 * Move the "Theme Options" in "WP Customizer"
 * Minor bug fixes
 
-Version 1.3.5
+= Version 1.3.5 =
 * Update FontAwesome to 4.4.0v
 * Minor bug fixes
 
-Version 1.3.6
+= Version 1.3.6 =
 * Update FontAwesome to 4.5.0v
 * Change the sticky sidebar script with Theia Sticky Sidebar
 * Minor bug fixes
 
-Version 1.3.7
+= Version 1.3.7 =
 * Fixed IE9 CSS condition
 * Minor Bug Fixes
 
-Version 1.3.8
+= Version 1.3.8 =
 * Improved Disqus compatibility
 * Updated Sticky Sidebar script
 * Fixed site title in single post
 * Fixed h1 and h2 post title
 * Minor bug fixes
 
-Version 1.3.9
+= Version 1.3.9 =
 * Updated FontAwesome to 4.6.1v
 * Updated Sticky Sidebar script
 * Minor bug fixes
 
-Version 1.4.0
+= Version 1.4.0 =
 * Updated FontAwesome to 4.6.3v
 * Updated Sticky Sidebar script to 1.4.0v
+* Minor bug fixes
+
+= Version 1.4.1 =
+* Updated some functions for WordPress 4.6
+* Updated HTML shiv to 3.7.3 version
+* Improved hover effect on featured images
 * Minor bug fixes
