@@ -34,7 +34,10 @@ function themonic_setup() {
 	
 	// Let WordPress manage the document title starting theme version 1.7.1
 	add_theme_support( 'title-tag' );
-	
+
+	// Woocommerce support
+	add_theme_support( 'woocommerce' );
+
 	// Adds support for Navigation menu, Iconic One uses wp_nav_menu() in one location.
 	register_nav_menu( 'primary', __( 'Primary Menu', 'iconic-one' ) );
 	
@@ -99,7 +102,7 @@ function themonic_scripts_styles() {
 	/*
 	 * Loads Themonic's main stylesheet and the custom stylesheet.
 	 */
-	wp_enqueue_style( 'themonic-style', get_stylesheet_uri(), false, '1.7.7' );
+	wp_enqueue_style( 'themonic-style', get_stylesheet_uri(), false, '1.7.8' );
 	wp_enqueue_style( 'custom-style', get_template_directory_uri() . '/custom.css' );
 
 	/*
