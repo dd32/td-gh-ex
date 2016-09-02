@@ -2,27 +2,64 @@
 # This file is distributed under the same license as the Wallstreet package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-12-30 13:21:23+0000\n"
+"PO-Revision-Date: 2016-09-02 11:18+0530\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/1.0-alpha-1100\n"
+"X-Generator: Poedit 1.5.5\n"
 "Project-Id-Version: Wallstreet\n"
+"POT-Creation-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
 
 #. Theme Name of the plugin/theme
 msgid "Wallstreet"
 msgstr "Wallstreet"
 
 #. Description of the plugin/theme
-msgid "A Business theme which is ideal for creating a corporate / business website. It boasts of 3 beautifully designed page templates , Home, Blog and full width Page.Theme compatible with woocommerce."
-msgstr "Un tema de negocios, que es ideal para la creación de una página web corporativa / negocio. Se jacta de 3 plantillas de páginas bellamente diseñadas, Inicio, Blog y Página de ancho completo.Tema compatible con wooCommerce."
+msgid ""
+"A Business theme which is ideal for creating a corporate / business website. "
+"It boasts of 3 beautifully designed page templates , Home, Blog and full "
+"width Page.Theme also available in spanish translation."
+msgstr ""
+"Un tema para negocios, que es ideal para la creación de una página web "
+"corporativa / negocio. Tiene 3 plantillas de páginas diseñadas muy bonitas: "
+"Inicio, Blog y Página de ancho completo.Tema compatible con wooCommerce."
 
-#: functions.php:236
+#. Template Name of the plugin/theme
+msgid "Full Width Page"
+msgstr "Página de ancho completo"
+
+#: functions/customizer/customizer-project.php:94
+msgid "Project One Thumbnail"
+msgstr "Miniatura del proyecto uno"
+
+#: functions/customizer/customizer-project.php:151
+msgid "Project two Thumbnail"
+msgstr "Miniatura del proyecto dos"
+
+#: functions/customizer/customizer-project.php:212
+msgid "Project three Thumbnail"
+msgstr "Miniatura del proyecto tres"
+
+#: functions/customizer/customizer-project.php:272
+msgid "Project four Thumbnail"
+msgstr "Miniatura del proyecto cuatro"
+
+#: functions/customizer/customizer-slider.php:20
+msgid "Image Upload"
+msgstr "Subida de imágenes"
+
+#: functions/customizer/customizer-social.php:15
+msgid "Social Link "
+msgstr "Enlace social"
+
+#: functions.php:241
 msgid "Something went wrong with the plugin API."
 msgstr "Algo salió mal con la API del plugin."
 
-#: functions.php:249
+#: functions.php:254
 msgid "All plugins installed and activated successfully. %s"
 msgstr "Todos los plugins instalados y activados correctamente. %s"
 
@@ -38,17 +75,22 @@ msgstr "Todas las instalaciones completadas."
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr "Instalar Plugin %1$s (%2$d/%3$d)"
 
-#: functions.php:233
+#: functions.php:238
 msgid "Install Recommended Plugins"
 msgstr "Recomendado instalar plugins"
 
 #: class-tgm-plugin-activation.php:2059
-msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
-msgstr "El proceso de instalación ha comenzado. Este proceso puede tardar un poco según el alojamiento, por favor sea paciente."
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+"El proceso de instalación ha comenzado. Este proceso puede tardar un poco "
+"según el alojamiento, por favor sea paciente."
 
 #: class-tgm-plugin-activation.php:2060
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-msgstr "A ocurrido un error durante la instalación %1$s: <strong>%2$s</strong>."
+msgstr ""
+"A ocurrido un error durante la instalación %1$s: <strong>%2$s</strong>."
 
 #: class-tgm-plugin-activation.php:2061
 msgid "The installation of %1$s failed."
@@ -67,8 +109,12 @@ msgid "Hide Details"
 msgstr "Ocultar detalles"
 
 #: class-tgm-plugin-activation.php:2052
-msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
-msgstr "Comienza el proceso de instalación y activación. Este proceso puede tardar un poco en algunos alojamientos, por favor sea paciente."
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+"Comienza el proceso de instalación y activación. Este proceso puede tardar "
+"un poco en algunos alojamientos, por favor sea paciente."
 
 #: class-tgm-plugin-activation.php:2053
 msgid "%1$s installed and activated successfully."
@@ -100,7 +146,9 @@ msgstr "Descomprimiendo&#8230;"
 
 #: class-tgm-plugin-activation.php:1923
 msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
-msgstr "Descargando el archivo de instalación de <span class=\"code\">%s</span>&#8230;"
+msgstr ""
+"Descargando el archivo de instalación de <span class=\"code\">%s</"
+"span>&#8230;"
 
 #: class-tgm-plugin-activation.php:1922
 msgid "Install package not available."
@@ -119,8 +167,12 @@ msgid "Source"
 msgstr "Origen"
 
 #: class-tgm-plugin-activation.php:1358
-msgid "No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the Dashboard\">Return to the Dashboard</a>"
-msgstr "No hay plugins para instalar o activar. <a href=\"%1$s\" title=\"Return to the Dashboard\">Volver al Escritorio</a>"
+msgid ""
+"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
+"Dashboard\">Return to the Dashboard</a>"
+msgstr ""
+"No hay plugins para instalar o activar. <a href=\"%1$s\" title=\"Return to "
+"the Dashboard\">Volver al Escritorio</a>"
 
 #: class-tgm-plugin-activation.php:1374
 msgid "Plugin"
@@ -178,7 +230,7 @@ msgstr "Descartar este aviso"
 msgid "Return to the Dashboard"
 msgstr "Volver al Escritorio"
 
-#: class-tgm-plugin-activation.php:175 functions.php:247
+#: class-tgm-plugin-activation.php:175 functions.php:252
 msgid "Return to Required Plugins Installer"
 msgstr "Volver al instalador de Plugins"
 
@@ -187,79 +239,124 @@ msgid "Return to the dashboard"
 msgstr "Volver al Escritorio"
 
 #: class-tgm-plugin-activation.php:177 class-tgm-plugin-activation.php:1939
-#: functions.php:248
+#: functions.php:253
 msgid "Plugin activated successfully."
 msgstr "Plugin activado correctamente."
 
-#: class-tgm-plugin-activation.php:171 functions.php:243
-msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
-msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
-msgstr[0] "El siguiente plugin debe actualizarse a la versión más reciente para asegurar la máxima compatibilidad con este tema: %1$s."
-msgstr[1] "Los siguientes plugins necesitan actualizarse a la versión más reciente para asegurar la máxima compatibilidad con este tema: %1$s."
+#: class-tgm-plugin-activation.php:171 functions.php:248
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+"El siguiente plugin debe actualizarse a la versión más reciente para "
+"asegurar la máxima compatibilidad con este tema: %1$s."
+msgstr[1] ""
+"Los siguientes plugins necesitan actualizarse a la versión más reciente para "
+"asegurar la máxima compatibilidad con este tema: %1$s."
 
-#: class-tgm-plugin-activation.php:172 functions.php:244
-msgid "Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated."
-msgid_plural "Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated."
-msgstr[0] "Lo sentimos, no tienes permisos para actualizar el plugin %s. Contacta con el administrador de la web para recibir asistencia acerca de la actualización de plugins."
-msgstr[1] "Lo sentimos, no tienes permisos para actualizar los plugins %s. Contacta con el administrador de la web para recibir asistencia acerca de la actualización de plugins."
+#: class-tgm-plugin-activation.php:172 functions.php:249
+msgid ""
+"Sorry, but you do not have the correct permissions to update the %s plugin. "
+"Contact the administrator of this site for help on getting the plugin "
+"updated."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to update the %s plugins. "
+"Contact the administrator of this site for help on getting the plugins "
+"updated."
+msgstr[0] ""
+"Lo sentimos, no tienes permisos para actualizar el plugin %s. Contacta con "
+"el administrador de la web para recibir asistencia acerca de la "
+"actualización de plugins."
+msgstr[1] ""
+"Lo sentimos, no tienes permisos para actualizar los plugins %s. Contacta con "
+"el administrador de la web para recibir asistencia acerca de la "
+"actualización de plugins."
 
-#: class-tgm-plugin-activation.php:173 functions.php:245
+#: class-tgm-plugin-activation.php:173 functions.php:250
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] "Comenzar a instalar el plugin"
 msgstr[1] "Comenzar a instalar plugins"
 
-#: class-tgm-plugin-activation.php:174 functions.php:246
+#: class-tgm-plugin-activation.php:174 functions.php:251
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] "Comenzar a activar plugin"
 msgstr[1] "Comenzar a activar plugins"
 
-#: class-tgm-plugin-activation.php:167 functions.php:239
-msgid "Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed."
-msgid_plural "Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed."
-msgstr[0] "Lo sentimos, no tienes permisos para instalar el plugin %s. Contacta con el administrador de la web para recibir asistencia acerca de la instalación de plugins."
-msgstr[1] "Lo sentimos, no tienes permisos para instalar los plugins %s. Contacta con el administrador de la web para recibir asistencia acerca de la instalación de plugins."
+#: class-tgm-plugin-activation.php:167 functions.php:244
+msgid ""
+"Sorry, but you do not have the correct permissions to install the %s plugin. "
+"Contact the administrator of this site for help on getting the plugin "
+"installed."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to install the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins installed."
+msgstr[0] ""
+"Lo sentimos, no tienes permisos para instalar el plugin %s. Contacta con el "
+"administrador de la web para recibir asistencia acerca de la instalación de "
+"plugins."
+msgstr[1] ""
+"Lo sentimos, no tienes permisos para instalar los plugins %s. Contacta con "
+"el administrador de la web para recibir asistencia acerca de la instalación "
+"de plugins."
 
-#: class-tgm-plugin-activation.php:168 functions.php:240
+#: class-tgm-plugin-activation.php:168 functions.php:245
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] "El siguiente requiere plugin está actualmente inactiva: %1$s."
 msgstr[1] "El siguiente requiere los plugins son actualmente inactivos: %1$s."
 
-#: class-tgm-plugin-activation.php:169 functions.php:241
+#: class-tgm-plugin-activation.php:169 functions.php:246
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] "Recomienda el siguiente plugin está actualmente inactiva: %1$s."
-msgstr[1] "Recomienda lo siguiente los plugins son actualmente inactivos: %1$s."
+msgstr[1] ""
+"Recomienda lo siguiente los plugins son actualmente inactivos: %1$s."
 
-#: class-tgm-plugin-activation.php:170 functions.php:242
-msgid "Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated."
-msgid_plural "Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated."
-msgstr[0] "Lo sentimos, no tienes permisos para activar el plugin %s. Contacta con el administrador de la web para recibir asistencia acerca de la activación de plugins."
-msgstr[1] "Lo sentimos, no tienes permisos para activar los plugins %s. Contacta con el administrador de la web para recibir asistencia acerca de la activación de plugins."
+#: class-tgm-plugin-activation.php:170 functions.php:247
+msgid ""
+"Sorry, but you do not have the correct permissions to activate the %s "
+"plugin. Contact the administrator of this site for help on getting the "
+"plugin activated."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to activate the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins activated."
+msgstr[0] ""
+"Lo sentimos, no tienes permisos para activar el plugin %s. Contacta con el "
+"administrador de la web para recibir asistencia acerca de la activación de "
+"plugins."
+msgstr[1] ""
+"Lo sentimos, no tienes permisos para activar los plugins %s. Contacta con el "
+"administrador de la web para recibir asistencia acerca de la activación de "
+"plugins."
 
 #: class-tgm-plugin-activation.php:164
 msgid "Something went wrong."
 msgstr "Algo salió mal."
 
-#: class-tgm-plugin-activation.php:165 functions.php:237
+#: class-tgm-plugin-activation.php:165 functions.php:242
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] "Este tema requiere el siguiente plugin: %1$s."
 msgstr[1] "Este tema requiere los siguientes plugins: %1$s."
 
-#: class-tgm-plugin-activation.php:166 functions.php:238
+#: class-tgm-plugin-activation.php:166 functions.php:243
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] "Este Tema recomienda utilizar el plugin: %1$s."
 msgstr[1] "Este Tema recomienda utilizar los plugins: %1$s."
 
-#: class-tgm-plugin-activation.php:163 functions.php:235
+#: class-tgm-plugin-activation.php:163 functions.php:240
 msgid "Installing Plugin: %s"
 msgstr "Instalando plugin: %s"
 
-#: class-tgm-plugin-activation.php:162 functions.php:234
+#: class-tgm-plugin-activation.php:162 functions.php:239
 msgid "Install Plugins"
 msgstr "Instalar plugins"
 
@@ -268,8 +365,12 @@ msgid "Install Required Plugins"
 msgstr "Requiere instalar plugins"
 
 #: functions/customizer/customizer-copyright.php:15 theme_setup_data.php:87
-msgid "Copyright @ 2014 - WALL STREET. Designed by,wallstreet <a href=\"%1$s\" target=\"_blank\">Webriti</a>"
-msgstr "Copyright @ 2014 - WALL STREET. Diseñado por wallstreet <a href=\"%1$s\" target=\"_blank\">Webriti</a>"
+msgid ""
+"Copyright @ 2014 - WALL STREET. Designed by,wallstreet <a href=\"%1$s\" "
+"target=\"_blank\">Webriti</a>"
+msgstr ""
+"Copyright @ 2014 - WALL STREET. Diseñado por wallstreet <a href=\"%1$s\" "
+"target=\"_blank\">Webriti</a>"
 
 #: functions/customizer/customizer-typography.php:682
 msgid "Call Out Area Button"
@@ -344,40 +445,58 @@ msgid "Font Size"
 msgstr "Tamaño de la fuente"
 
 #: functions/customizer/customizer-typography.php:64
-msgid "Want to Add Callout Button Title Typography In Theme Then Upgrade to Pro/"
-msgstr "Si desea agregar tipografía de título de botón call out en el tema entonces actualice a Pro/"
+msgid ""
+"Want to Add Callout Button Title Typography In Theme Then Upgrade to Pro/"
+msgstr ""
+"Si desea agregar tipografía de título de botón call out en el tema entonces "
+"actualice a Pro/"
 
 #: functions/customizer/customizer-typography.php:57
-msgid "Want to Add Callout Area Description Typography In Theme Then Upgrade to Pro/"
-msgstr "Si desea agregar tipografía de descripción de área call out en el tema entonces actualice a Pro/"
+msgid ""
+"Want to Add Callout Area Description Typography In Theme Then Upgrade to Pro/"
+msgstr ""
+"Si desea agregar tipografía de descripción de área call out en el tema "
+"entonces actualice a Pro/"
 
 #: functions/customizer/customizer-typography.php:50
 msgid "Want to Add Callout Area Title Typography In Theme Then Upgrade to Pro/"
-msgstr "Si desea agregar tipografía de título de área call out en el tema entonces actualice a Pro/"
+msgstr ""
+"Si desea agregar tipografía de título de área call out en el tema entonces "
+"actualice a Pro/"
 
 #: functions/customizer/customizer-typography.php:43
 msgid "Want to Add Widget Title Typography In Theme Then Upgrade to Pro/"
-msgstr "Si desea agregar tipografía de título de widget en el tema entonces actualice a Pro/"
+msgstr ""
+"Si desea agregar tipografía de título de widget en el tema entonces "
+"actualice a Pro/"
 
 #: functions/customizer/customizer-typography.php:36
 msgid "Want to Add Portfolio Title Typography In Theme Then Upgrade to Pro/"
-msgstr "Si desea agregar tipografía de título de portfolio en el tema entonces actualice a Pro/"
+msgstr ""
+"Si desea agregar tipografía de título de portfolio en el tema entonces "
+"actualice a Pro/"
 
 #: functions/customizer/customizer-typography.php:29
 msgid "Want to Add Service Title Typography In Theme Then Upgrade to Pro/"
-msgstr "Si desea agregar tipografía de título de servicio en el tema entonces actualice a Pro/"
+msgstr ""
+"Si desea agregar tipografía de título de servicio en el tema entonces "
+"actualice a Pro/"
 
 #: functions/customizer/customizer-typography.php:22
 msgid "Want to Add Post/Page Typography In Theme Then Upgrade to Pro/"
-msgstr "Si desea agregar tipografía de página / post en el tema entonces actualice a Pro/"
+msgstr ""
+"Si desea agregar tipografía de página / post en el tema entonces actualice a "
+"Pro/"
 
 #: functions/customizer/customizer-typography.php:15
 msgid "Want to Add Menus Typography In Theme Then Upgrade to Pro/"
-msgstr "Si desea agregar tipografía de menús en el tema entonces actualice a Pro/"
+msgstr ""
+"Si desea agregar tipografía de menús en el tema entonces actualice a Pro/"
 
 #: functions/customizer/customizer-typography.php:7
 msgid "Want to Add Genral Typography In Theme Then Upgrade to Pro/"
-msgstr "Si desea agregar tipografía general en el tema entonces actualice a Pro/"
+msgstr ""
+"Si desea agregar tipografía general en el tema entonces actualice a Pro/"
 
 #: functions/customizer/customizer-testimonial.php:118
 msgid "Time out Duration"
@@ -438,8 +557,18 @@ msgid "Testimonail Settings"
 msgstr "Configuración de testimonios"
 
 #: functions/customizer/customizer-template.php:678
-msgid "https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Kota+Industrial+Area,+Kota,+Rajasthan&amp;aq=2&amp;oq=kota+&amp;sll=25.003049,76.117499&amp;sspn=0.020225,0.042014&amp;t=h&amp;ie=UTF8&amp;hq=&amp;hnear=Kota+Industrial+Area,+Kota,+Rajasthan&amp;z=13&amp;ll=25.142832,75.879538"
-msgstr "https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Kota+Industrial+Area,+Kota,+Rajasthan&amp;aq=2&amp;oq=kota+&amp;sll=25.003049,76.117499&amp;sspn=0.020225,0.042014&amp;t=h&amp;ie=UTF8&amp;hq=&amp;hnear=Kota+Industrial+Area,+Kota,+Rajasthan&amp;z=13&amp;ll=25.142832,75.879538"
+msgid ""
+"https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;"
+"q=Kota+Industrial+Area,+Kota,+Rajasthan&amp;aq=2&amp;oq=kota+&amp;"
+"sll=25.003049,76.117499&amp;sspn=0.020225,0.042014&amp;t=h&amp;ie=UTF8&amp;"
+"hq=&amp;hnear=Kota+Industrial+Area,+Kota,+Rajasthan&amp;z=13&amp;"
+"ll=25.142832,75.879538"
+msgstr ""
+"https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;"
+"q=Kota+Industrial+Area,+Kota,+Rajasthan&amp;aq=2&amp;oq=kota+&amp;"
+"sll=25.003049,76.117499&amp;sspn=0.020225,0.042014&amp;t=h&amp;ie=UTF8&amp;"
+"hq=&amp;hnear=Kota+Industrial+Area,+Kota,+Rajasthan&amp;z=13&amp;"
+"ll=25.142832,75.879538"
 
 #: functions/customizer/customizer-template.php:666
 msgid "Google Map Title:"
@@ -596,31 +725,46 @@ msgstr "Configuración de Plantilla"
 
 #: functions/customizer/customizer-template.php:45
 msgid "Want to Add Map in Contact Template Then Upgrade to Pro/"
-msgstr "Si desea agregar Mapa en Plantilla de Contacto entonces actualice a Pro/"
+msgstr ""
+"Si desea agregar Mapa en Plantilla de Contacto entonces actualice a Pro/"
 
 #: functions/customizer/customizer-template.php:36
-msgid "Want to Add Contact Form Title & Description in Contact Template Then Upgrade to Pro/"
-msgstr "Si desea agregar Título & Descripción de Formulario en la Plantilla de Contacto entonces actualice a Pro/"
+msgid ""
+"Want to Add Contact Form Title & Description in Contact Template Then "
+"Upgrade to Pro/"
+msgstr ""
+"Si desea agregar Título & Descripción de Formulario en la Plantilla de "
+"Contacto entonces actualice a Pro/"
 
 #: functions/customizer/customizer-template.php:28
 msgid "Want to Add Email in Contact Template Then Upgrade to Pro/"
-msgstr "Si desea agregar Email en Plantilla de Contacto entonces actualice a Pro/"
+msgstr ""
+"Si desea agregar Email en Plantilla de Contacto entonces actualice a Pro/"
 
 #: functions/customizer/customizer-template.php:21
-msgid "Want to Add Contact Phone Number in Contact Template Then Upgrade to Pro/"
-msgstr "Si desea agregar Numero de Teléfono de Contacto en Plantilla de Contacto entonces actualice a Pro/"
+msgid ""
+"Want to Add Contact Phone Number in Contact Template Then Upgrade to Pro/"
+msgstr ""
+"Si desea agregar Numero de Teléfono de Contacto en Plantilla de Contacto "
+"entonces actualice a Pro/"
 
 #: functions/customizer/customizer-template.php:13
 msgid "Want to Add Contact Address in Contact Template Then Upgrade to Pro/"
-msgstr "Si desea agregar Dirección de Contacto en Plantilla de Contacto entonces actualice a Pro/"
+msgstr ""
+"Si desea agregar Dirección de Contacto en Plantilla de Contacto entonces "
+"actualice a Pro/"
 
 #: functions/customizer/customizer-feature.php:283
 msgid "Third Feature Description:"
 msgstr "Descripción de Tercera Característica:"
 
 #: functions/customizer/customizer-template.php:5
-msgid "Want to add About us Template Heading and Add Team Section Then Upgrade to Pro/"
-msgstr "Si desea agregar Encabezado de Plantilla Sobre Nosotros y agregar Sección de Equipo entonces actualice a Pro/"
+msgid ""
+"Want to add About us Template Heading and Add Team Section Then Upgrade to "
+"Pro/"
+msgstr ""
+"Si desea agregar Encabezado de Plantilla Sobre Nosotros y agregar Sección de "
+"Equipo entonces actualice a Pro/"
 
 #: functions/customizer/customizer-feature.php:262
 msgid "Third Feature Title:"
@@ -683,11 +827,16 @@ msgstr "Configuración de Característica de Tema:"
 
 #: functions/customizer/customizer-feature.php:6
 msgid "Want to add Theme Feature Section Then Upgrade to Pro/"
-msgstr "Si desea agregar Sección de Característica de Tema entonces actualice a Pro/"
+msgstr ""
+"Si desea agregar Sección de Característica de Tema entonces actualice a Pro/"
 
 #: functions/customizer/customizer-client.php:61
-msgid "HAVE A LOOK AT OUR CLIENT WE ARE GROWING THEIR BUSINESS AND THEY ARE GOING UP IN THE MARKET BY BEATING THEIR COMPETITORS."
-msgstr "REALICE UN VISTAZO A LOS CLIENTES A LOS CUALES ESTAMOS INCREMENTANDO SU NEGOCIO Y ESTÁN EN ALZA EN EL MERCADO GANANDO A SUS COMPETIDORES."
+msgid ""
+"HAVE A LOOK AT OUR CLIENT WE ARE GROWING THEIR BUSINESS AND THEY ARE GOING "
+"UP IN THE MARKET BY BEATING THEIR COMPETITORS."
+msgstr ""
+"REALICE UN VISTAZO A LOS CLIENTES A LOS CUALES ESTAMOS INCREMENTANDO SU "
+"NEGOCIO Y ESTÁN EN ALZA EN EL MERCADO GANANDO A SUS COMPETIDORES."
 
 #: functions/customizer/customizer-client.php:51
 msgid "Client Title"
@@ -759,8 +908,20 @@ msgid "Home Project Settings"
 msgstr "Configuración de Proyecto de Inicio"
 
 #: functions/customizer/customizer-pro.php:81
-msgid "The Pro Version gives you more opportunities to enhance your site and business. In order to create effective online presence one have to showcase their wide range of products, have to use contact us enquiry form, have to make effective about us page, have to introduce team members, etc etc . The pro version will give it all. Buy the pro version and give us a chance to serve you better. "
-msgstr "La versión Pro le da más oportunidades para mejorar su sitio y negocio. Con el fin de crear presencia en línea efectiva uno tiene que mostrar su amplia gama de productos, tiene que utilizar formulario de contacto y consulta, tendrá que hacer efectiva página acerca de nosotros, tiene que presentar a los miembros del equipo, etc, etc. La versión Pro le dará todo. Compre la versión Pro y darnos la oportunidad de servirle mejor."
+msgid ""
+"The Pro Version gives you more opportunities to enhance your site and "
+"business. In order to create effective online presence one have to showcase "
+"their wide range of products, have to use contact us enquiry form, have to "
+"make effective about us page, have to introduce team members, etc etc . The "
+"pro version will give it all. Buy the pro version and give us a chance to "
+"serve you better. "
+msgstr ""
+"La versión Pro le da más oportunidades para mejorar su sitio y negocio. Con "
+"el fin de crear presencia en línea efectiva uno tiene que mostrar su amplia "
+"gama de productos, tiene que utilizar formulario de contacto y consulta, "
+"tendrá que hacer efectiva página acerca de nosotros, tiene que presentar a "
+"los miembros del equipo, etc, etc. La versión Pro le dará todo. Compre la "
+"versión Pro y darnos la oportunidad de servirle mejor."
 
 #: functions/customizer/customizer-project.php:80
 msgid "Home Portfolio one"
@@ -778,8 +939,12 @@ msgstr "Portfolio de Inicio tres"
 #: functions/customizer/customizer-project.php:129
 #: functions/customizer/customizer-project.php:189
 #: functions/customizer/customizer-project.php:249
-msgid "A wonderful serenity has taken possession of my entire soul, like these sweet mornings"
-msgstr "Una serenidad maravillosa ha tomado posesión de toda mi alma, como estas dulces mañanas"
+msgid ""
+"A wonderful serenity has taken possession of my entire soul, like these "
+"sweet mornings"
+msgstr ""
+"Una serenidad maravillosa ha tomado posesión de toda mi alma, como estas "
+"dulces mañanas"
 
 #: functions/customizer/customizer-project.php:226
 msgid "Home Portfolio Four"
@@ -787,7 +952,8 @@ msgstr "Portfolio de Inicio Cuatro"
 
 #: functions/customizer/customizer-project.php:296
 msgid "Want to add more projects and categorization than upgrade to pro"
-msgstr "Si desea agregar mas proyectos y categorización  entonces actualice a pro"
+msgstr ""
+"Si desea agregar mas proyectos y categorización  entonces actualice a pro"
 
 #: functions/customizer/customizer-project.php:283
 msgid "Add More Project"
@@ -970,8 +1136,12 @@ msgid "Tag Archives: %s"
 msgstr "Archivo de la etiqueta: %s"
 
 #: search.php:63
-msgid "Sorry, but nothing matched your search criteria. Please try again with some different keywords."
-msgstr "Lo sentimos pero no hay nada que se ajuste a tu criterio de búsqueda. Por favor, inténtalo de nuevo con otras palabras clave."
+msgid ""
+"Sorry, but nothing matched your search criteria. Please try again with some "
+"different keywords."
+msgstr ""
+"Lo sentimos pero no hay nada que se ajuste a tu criterio de búsqueda. Por "
+"favor, inténtalo de nuevo con otras palabras clave."
 
 #: search.php:61
 msgid "Nothing Found"
@@ -989,7 +1159,7 @@ msgstr "Anterior"
 msgid "Read more"
 msgstr "Leer más"
 
-#: header.php:81
+#: header.php:80
 msgid "Toggle navigation"
 msgstr "Cambiar navegación"
 
@@ -997,35 +1167,35 @@ msgstr "Cambiar navegación"
 msgid "Search Results For: %s"
 msgstr "Resultados de la búsqueda para: %s"
 
-#: functions.php:154
+#: functions.php:159
 msgid "Your comment is awaiting moderation."
 msgstr "Tu comentario está pendiente de moderación."
 
-#: functions.php:147
+#: functions.php:152
 msgid "Posted on &nbsp;"
 msgstr "Escrito en &nbsp;"
 
-#: functions.php:149
+#: functions.php:154
 msgid "Edit"
 msgstr "Editar"
 
-#: functions.php:140
+#: functions.php:145
 msgid "Reply"
 msgstr "Responder"
 
-#: functions.php:103
+#: functions.php:107
 msgid "footer widget area"
 msgstr "Área de widgets del pie de página"
 
-#: functions.php:93
+#: functions.php:97
 msgid "The left sidebar widget area"
 msgstr "El área de widget de la barra lateral izquierda"
 
-#: functions.php:101
+#: functions.php:105
 msgid "Footer Widget Area"
 msgstr "Área de widgets del pie de página"
 
-#: functions.php:91
+#: functions.php:95
 msgid "Sidebar"
 msgstr "Barra lateral"
 
@@ -1085,8 +1255,14 @@ msgstr "Diseño de Producto"
 #: functions/customizer/customizer-service.php:144
 #: functions/customizer/customizer-service.php:203 theme_setup_data.php:34
 #: theme_setup_data.php:38 theme_setup_data.php:42
-msgid "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit dignissim dapib tumst dign eger porta nisl."
-msgstr "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit dignissim dapib tumst dign eger porta nisl."
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor "
+"sit amet, consectetur adipisicing elit dignissim dapib tumst dign eger porta "
+"nisl."
+msgstr ""
+"Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor "
+"sit amet, consectetur adipisicing elit dignissim dapib tumst dign eger porta "
+"nisl."
 
 #: functions/customizer/customizer-service.php:126 theme_setup_data.php:37
 msgid "WordPress Themes"
@@ -1116,6 +1292,10 @@ msgstr "Título de Servicio Uno"
 msgid "Service Description One"
 msgstr "Descripción de Servicio Uno"
 
+#: functions/customizer/customizer-service.php:53
+msgid "Service Image One"
+msgstr "Imagen del servicio uno"
+
 #: functions/customizer/customizer-service.php:135
 msgid "Service Title Two"
 msgstr "Título de Servicio Dos"
@@ -1124,6 +1304,10 @@ msgstr "Título de Servicio Dos"
 msgid "Service Description Two"
 msgstr "Descripción de Servicio Dos"
 
+#: functions/customizer/customizer-service.php:114
+msgid "Service Image Two"
+msgstr "Imagen del servicio dos"
+
 #: functions/customizer/customizer-service.php:194
 msgid "Service Title Three"
 msgstr "Título de Servicio Tres"
@@ -1131,6 +1315,10 @@ msgstr "Título de Servicio Tres"
 #: functions/customizer/customizer-service.php:212
 msgid "Service Description Three"
 msgstr "Descripción de Servicio Tres"
+
+#: functions/customizer/customizer-service.php:173
+msgid "Service Image Three"
+msgstr "Imagen del servicio tres"
 
 #: theme_setup_data.php:24
 msgid "Clean & Fresh Theme"
@@ -1141,8 +1329,13 @@ msgid "Welcome To Wallstreet"
 msgstr "Bienvenido a Wallstreet"
 
 #: theme_setup_data.php:26
-msgid "The state-of-the-art HTML5 powered flexible layout with lightspeed fast CSS3 transition effects. Works perfect in any modern mobile..."
-msgstr "El diseño flexible impulsado por el estado del arte HTML5 con efectos de transiciones CSS3 rápidas a velocidad de la luz. Funciona perfecto en cualquier móvil moderno..."
+msgid ""
+"The state-of-the-art HTML5 powered flexible layout with lightspeed fast CSS3 "
+"transition effects. Works perfect in any modern mobile..."
+msgstr ""
+"El diseño flexible impulsado por el estado del arte HTML5 con efectos de "
+"transiciones CSS3 rápidas a velocidad de la luz. Funciona perfecto en "
+"cualquier móvil moderno..."
 
 #. Template Name of the plugin/theme
 msgid "Home Page"
@@ -1176,8 +1369,12 @@ msgstr "Estilo Wall Street"
 
 #: theme_setup_data.php:48 theme_setup_data.php:52 theme_setup_data.php:56
 #: theme_setup_data.php:60
-msgid "A wonderful serenity has taken possession of my entire soul, like these sweet mornings."
-msgstr "Una serenidad maravillosa ha tomado posesión de toda mi alma, como estas dulces mañanas."
+msgid ""
+"A wonderful serenity has taken possession of my entire soul, like these "
+"sweet mornings."
+msgstr ""
+"Una serenidad maravillosa ha tomado posesión de toda mi alma, como estas "
+"dulces mañanas."
 
 #: functions/customizer/customizer-social.php:76
 msgid "Twitter Profile Link:"
@@ -1353,8 +1550,11 @@ msgstr[0] "Un pensamiento en &ldquo;%2$s&rdquo;"
 msgstr[1] "%1$s pensamientos en &ldquo;%2$s&rdquo;"
 
 #: comments.php:2
-msgid "This post is password protected. Enter the password to view any comments."
-msgstr "Esta entrada está protegida. Introduce la contraseña para ver los comentarios."
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+"Esta entrada está protegida. Introduce la contraseña para ver los "
+"comentarios."
 
 #: author.php:8
 msgid "Author Archives: %s"
