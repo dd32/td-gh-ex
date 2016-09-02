@@ -74,7 +74,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
         //GENERAL
          'hu_site_identity_sec',
          'hu_general_design_sec',
-         'hu_comments_sec',
+         'hu_smoothscroll_sec',
          'hu_mobiles_sec',
          'hu_social_links_sec',
          'hu_performance_sec',
@@ -219,11 +219,12 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
           'body-background' => array(
                 //'default'     => array(),
                 'default'       => array( 'background-color' => '#eaeaea' ),
-                'control'     => 'HU_Body_Background_Control',
+                'control'     => 'HU_Customize_Modules',
                 'label'       => __( 'Body Background' , 'hueman' ),
                 'description' => __('Set the website background color', 'hueman'),
                 'section'     => 'general_design_sec',
-                'type'        => 'czr_background' ,
+                'type'        => 'czr_module',
+                'module_type' => 'czr_background'
                 //'type'        => 'color',
                 // 'sanitize_callback'    => array( $this, 'hu_sanitize_body_bg' ),@todo
                 // 'sanitize_js_callback' => array( $this, 'hu_sanitize_js_body_bg' ),@todo
@@ -281,6 +282,25 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'min'           => 0,
                 //'transport'     => 'postMessage',
                 'notice'        => __('Give your thumbnails and layout images rounded corners', 'hueman')
+          ),
+          'ext_link_style'  =>  array(
+                'default'       => 0,
+                'control'       => 'HU_controls' ,
+                'label'         => __( "Display an icon next to external links" , "hueman" ),
+                'section'       => 'general_design_sec' ,
+                'type'          => 'checkbox' ,
+                'notice'    => __( 'This will be applied to the links included in post or page content only.' , 'hueman' ),
+                //'transport'     => 'postMessage'
+          ),
+
+          'ext_link_target'  =>  array(
+                'default'       => 0,
+                'control'       => 'HU_controls' ,
+                'label'         => __( "Open external links in a new tab" , "hueman" ),
+                'section'       => 'general_design_sec' ,
+                'type'          => 'checkbox' ,
+                'notice'    => __( 'This will be applied to the links included in post or page content only.' , 'hueman' ),
+                //'transport'     => 'postMessage'
           )
       );
     }
@@ -301,10 +321,11 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
           // )
           'social-links' => array(
                 'default'   => array(),//empty array by default
-                'control'   => 'HU_Customize_Socials',
+                'control'   => 'HU_Customize_Modules',
                 'label'     => __('Create and organize your social links', 'hueman'),
                 'section'   => 'social_links_sec',
-                'type'      => 'czr_socials',//@todo create dynamic type
+                'type'      => 'czr_module',
+                'module_type' => 'czr_social_module',
                 'transport' => 'postMessage',
                 'priority'  => 10
           )
@@ -331,6 +352,23 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'section'   => 'comments_sec',
                 'type'      => 'checkbox',
                 'notice'    => __( 'Comments on pages' , 'hueman' )
+          )
+      );
+    }
+
+    /*-----------------------------------------------------------------------------------------------------
+                                   SMOOTH SCROLL SECTION
+    ------------------------------------------------------------------------------------------------------*/
+    function hu_smoothscroll_sec() {
+      return array(
+          'smoothscroll' => array(
+                'default'   => 1,
+                'control'   => 'HU_controls',
+                'label'     => __('Enable Smooth Scrolling', 'hueman'),
+                'section'   => 'smoothscroll_sec',
+                'type'      => 'checkbox',
+                'notice'    => __( "This option enables a smoother page scroll." , 'hueman' )
+
           )
       );
     }
@@ -373,7 +411,16 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'section'   => 'performance_sec',
                 'type'      => 'checkbox',
                 'notice'    => __( '"Structured data markup" is a standard way to annotate your content so machines can understand it. Implementing it will help your website rank higher in search engines.' , 'hueman' )
+          ),
+          'smart_load_img'  =>  array(
+                'default'       => 0,
+                'control'     =>  'HU_controls',
+                'label'       => __( 'Load images on scroll' , 'hueman' ),
+                'section'     => 'performance_sec',
+                'type'        => 'checkbox',
+                'notice'      => __('Check this option to delay the loading of non visible images. Images below the viewport will be loaded dynamically on scroll. This can really boost speed performances by reducing the weight of long pages that include many images.' , 'hueman')
           )
+
       );
     }
 
@@ -1048,19 +1095,24 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
               'priority' => 40,
               'panel'   => 'hu-general-panel'
         ),
+        'smoothscroll_sec'         => array(
+              'title'    => __( 'Smooth Scroll', 'hueman' ),
+              'priority' => 50,
+              'panel'   => 'hu-general-panel'
+        ),
         'mobiles_sec'         => array(
               'title'    => __( 'Mobile devices', 'hueman' ),
-              'priority' => 50,
+              'priority' => 60,
               'panel'   => 'hu-general-panel'
         ),
         'performance_sec'         => array(
               'title'    => __( 'Performances and SEO', 'hueman' ),
-              'priority' => 60,
+              'priority' => 70,
               'panel'   => 'hu-general-panel'
         ),
         'admin_sec'         => array(
               'title'    => __( 'Hueman Admin Settings', 'hueman' ),
-              'priority' => 60,
+              'priority' => 80,
               'panel'   => 'hu-general-panel'
         ),
 

@@ -31,6 +31,12 @@ if ( ! class_exists( 'HU_utils' ) ) :
 
       }
 
+      //Various WP filters for
+      //content
+      //thumbnails => parses image if smartload enabled
+      //title
+      add_action( 'wp_head'                 , array( $this , 'hu_wp_filters') );
+
       //refresh the theme options right after the _preview_filter when previewing
       add_action( 'customize_preview_init'  , array( $this , 'hu_customize_refresh_db_opt' ) );
     }//construct
@@ -69,6 +75,91 @@ if ( ! class_exists( 'HU_utils' ) ) :
     }
 
 
+
+    /***************************
+    * ON WP_HEAD
+    ****************************/
+    /**
+    * hook : wp_head
+    */
+    function hu_wp_filters() {
+      if ( apply_filters( 'hu_img_smart_load_enabled', hu_is_checked('smart_load_img') ) ) {
+          add_filter( 'the_content'                       , array( $this , 'hu_parse_imgs' ), PHP_INT_MAX );
+          add_filter( 'post_thumbnail_html'               , array( $this , 'hu_parse_imgs' ), PHP_INT_MAX );
+      }
+      add_filter( 'wp_title'                            , array( $this , 'hu_wp_title' ), 10, 2 );
+    }
+
+
+    /**
+    * hook : the_content
+    * Inspired from Unveil Lazy Load plugin : https://wordpress.org/plugins/unveil-lazy-load/ by @marubon
+    *
+    * @return string
+    */
+    function hu_parse_imgs( $_html ) {
+      if( is_feed() || is_preview() || ( wp_is_mobile() && apply_filters('hu_disable_img_smart_load_mobiles', false ) ) )
+        return $_html;
+
+      return preg_replace_callback('#<img([^>]+?)src=[\'"]?([^\'"\s>]+)[\'"]?([^>]*)>#', array( $this , 'hu_regex_callback' ) , $_html);
+    }
+
+
+    /**
+    * callback of preg_replace_callback in hu_parse_imgs
+    * Inspired from Unveil Lazy Load plugin : https://wordpress.org/plugins/unveil-lazy-load/ by @marubon
+    *
+    * @return string
+    */
+    private function hu_regex_callback( $matches ) {
+      $_placeholder = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+
+      if ( false !== strpos( $matches[0], 'data-src' ) ||
+          preg_match('/ data-smartload *= *"false" */', $matches[0]) )
+        return $matches[0];
+      else
+        return apply_filters( 'hu_img_smartloaded',
+          str_replace( 'srcset=', 'data-srcset=',
+              sprintf('<img %1$s src="%2$s" data-src="%3$s" %4$s>',
+                  $matches[1],
+                  $_placeholder,
+                  $matches[2],
+                  $matches[3]
+              )
+          )
+        );
+    }
+
+
+
+    /**
+    * Title element formating
+    * Hook : wp_title
+    *
+    */
+    function hu_wp_title( $title, $sep ) {
+      if ( function_exists( '_wp_render_title_tag' ) )
+        return $title;
+
+      global $paged, $page;
+
+      if ( is_feed() )
+        return $title;
+
+      // Add the site name.
+      $title .= get_bloginfo( 'name' );
+
+      // Add the site description for the home/front page.
+      $site_description = get_bloginfo( 'description' , 'display' );
+      if ( $site_description && hu_is_home() )
+        $title = "$title $sep $site_description";
+
+      // Add a page number if necessary.
+      if ( $paged >= 2 || $page >= 2 )
+        $title = "$title $sep " . sprintf( __( 'Page %s' , 'hueman' ), max( $paged, $page ) );
+
+      return $title;
+    }
 
 
 
@@ -144,36 +235,36 @@ if ( ! class_exists( 'HU_utils' ) ) :
     * @package Hueman
     */
     function hu_opt( $option_name , $option_group = null, $use_default = true ) {
-      //do we have to look for a specific group of option (plugin?)
-      $option_group = is_null($option_group) ? HU_THEME_OPTIONS : $option_group;
-      //when customizing, the db_options property is refreshed each time the preview is refreshed in 'customize_preview_init'
-      $_db_options  = empty($this -> db_options) ? $this -> hu_cache_db_options() : $this -> db_options;
+        //do we have to look for a specific group of option (plugin?)
+        $option_group = is_null( $option_group ) ? HU_THEME_OPTIONS : $option_group;
+        //when customizing, the db_options property is refreshed each time the preview is refreshed in 'customize_preview_init'
+        $_db_options  = empty($this -> db_options) ? $this -> hu_cache_db_options() : $this -> db_options;
 
-      //do we have to use the default ?
-      $__options    = $_db_options;
-      $_default_val = false;
-      if ( $use_default ) {
-        $_defaults      = $this -> default_options;
-        if ( is_array($_defaults) && isset($_defaults[$option_name]) )
-          $_default_val = $_defaults[$option_name];
-        $__options      = wp_parse_args( $_db_options, $_defaults );
-      }
+        //do we have to use the default ?
+        $__options    = $_db_options;
+        $_default_val = false;
+        if ( $use_default ) {
+          $_defaults      = $this -> default_options;
+          if ( is_array($_defaults) && isset($_defaults[$option_name]) )
+            $_default_val = $_defaults[$option_name];
+          $__options      = wp_parse_args( $_db_options, $_defaults );
+        }
 
-      //assign false value if does not exist, just like WP does
-      $_single_opt    = isset($__options[$option_name]) ? $__options[$option_name] : false;
+        //assign false value if does not exist, just like WP does
+        $_single_opt    = isset($__options[$option_name]) ? $__options[$option_name] : false;
 
-      //ctx retro compat => falls back to default val if ctx like option detected
-      //important note : some options like hu_slider are not concerned by ctx
-      if ( ! $this -> hu_is_option_excluded_from_ctx( $option_name ) ) {
-        if ( is_array($_single_opt) && ! class_exists( 'HU_ctx' ) )
-          $_single_opt = $_default_val;
-      }
+        //ctx retro compat => falls back to default val if ctx like option detected
+        //important note : some options like hu_slider are not concerned by ctx
+        if ( ! $this -> hu_is_option_excluded_from_ctx( $option_name ) ) {
+          if ( is_array($_single_opt) && ! class_exists( 'HU_ctx' ) )
+            $_single_opt = $_default_val;
+        }
 
-      //allow ctx filtering globally
-      $_single_opt = apply_filters( "hu_opt" , $_single_opt , $option_name , $option_group, $_default_val );
+        //allow ctx filtering globally
+        $_single_opt = apply_filters( "hu_opt" , $_single_opt , $option_name , $option_group, $_default_val );
 
-      //allow single option filtering
-      return apply_filters( "hu_opt_{$option_name}" , $_single_opt , $option_name , $option_group, $_default_val );
+        //allow single option filtering
+        return apply_filters( "hu_opt_{$option_name}" , $_single_opt , $option_name , $option_group, $_default_val );
     }
 
 
@@ -247,7 +338,7 @@ if ( ! class_exists( 'HU_utils' ) ) :
     * @return bool
     */
     function hu_is_option_excluded_from_ctx( $opt_name ) {
-      return in_array( $opt_name, $this -> hu_get_ctx_excluded_options() );
+      return in_array( $opt_name, $this -> hu_get_skope_excluded_options() );
     }
 
 
@@ -255,9 +346,9 @@ if ( ! class_exists( 'HU_utils' ) ) :
     * Helper : define a set of options not impacted by ctx like last_update_notice.
     * @return  array of excluded option names
     */
-    function hu_get_ctx_excluded_options() {
+    function hu_get_skope_excluded_options() {
       return apply_filters(
-        'hu_get_ctx_excluded_options',
+        'hu_get_skope_excluded_options',
         array(
           'defaults',
           'last_update_notice',

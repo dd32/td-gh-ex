@@ -68,18 +68,28 @@ if ( ! function_exists( 'hu_layout_class' ) ) {
 // 'footer-4'    => 'footer-4'
 if ( ! function_exists('hu_print_widgets_in_location') ) {
   function hu_print_widgets_in_location( $location ) {
+    $_sb_opt_val = hu_get_option('sidebar-areas');
+    //Make sure the sidebar-areas option is properly set
+    //if the option is empty, then re-generate it from the defaults
+    if ( ! is_array($_sb_opt_val) || empty( $_sb_opt_val ) ) {
+        $__options = get_option( HU_THEME_OPTIONS );
+        $__options['sidebar-areas'] = hu_generate_new_sidebar_options();
+        update_option( HU_THEME_OPTIONS, $__options );
+    }
+
     $_eligible_zones = array();
 
     if ( false != hu_get_singular_meta_widget_zone( $location ) ) {
       $_eligible_zones[] = hu_get_singular_meta_widget_zone( $location );
     } else {
       $_eligible_zones    = apply_filters(
-        'hu_eligible_widget_zones',
-        array(),
-        $location,
-        hu_get_option('sidebar-areas')
+          'hu_eligible_widget_zones',
+          array(),
+          $location,
+          hu_get_option('sidebar-areas')
       );
     }
+
     //print a message if this location is visible but has not eligible widget zones to display
     //=> print only when customizing
     if ( empty( $_eligible_zones ) && in_array( $location, array('s1', 's2') ) && hu_is_customize_preview_frame() ) {
@@ -95,6 +105,8 @@ if ( ! function_exists('hu_print_widgets_in_location') ) {
     }
   }
 }//endif
+
+
 
 
 //the job of this function is to print a dynamic widget zone if exists
@@ -451,26 +463,81 @@ add_filter( 'body_class', 'hu_browser_body_class' );
 /* ------------------------------------------------------------------------- */
 /*  Enqueue javascript
 /* ------------------------------------ */
+//hook : wp_enqueue_scripts
 if ( ! function_exists( 'hu_scripts' ) ) {
   function hu_scripts() {
     if ( has_post_format( 'gallery' ) || ( is_home() && ! is_paged() && ( hu_get_option('featured-posts-count') != '0' ) ) ) {
-      wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/assets/front/js/jquery.flexslider.min.js', array( 'jquery' ),'', false );
+      wp_enqueue_script(
+        'flexslider',
+        get_template_directory_uri() . '/assets/front/js/lib/jquery.flexslider.min.js',
+        array( 'jquery' ),
+        '',
+        false
+      );
     }
 
     if ( has_post_format( 'audio' ) ) {
-      wp_enqueue_script( 'jplayer', get_template_directory_uri() . '/assets/front/js/jquery.jplayer.min.js', array( 'jquery' ),'', true );
+      wp_enqueue_script(
+        'jplayer',
+        get_template_directory_uri() . '/assets/front/js/lib/jquery.jplayer.min.js',
+        array( 'jquery' ),
+        '',
+        true
+      );
     }
 
     wp_enqueue_script(
-      'scripts',
-      sprintf('%1$s/assets/front/js/scripts%2$s.js' , get_template_directory_uri(), ( defined('WP_DEBUG') && true === WP_DEBUG ) ? '' : '.min' ),
-      array( 'jquery' ),
-      ( defined('WP_DEBUG') && true === WP_DEBUG ) ? time() : HUEMAN_VER,
-      true
+        'hu-front-scripts',
+        sprintf('%1$s/assets/front/js/scripts%2$s.js' , get_template_directory_uri(), ( defined('WP_DEBUG') && true === WP_DEBUG ) ? '' : '.min' ),
+        array( 'jquery', 'underscore' ),
+        ( defined('WP_DEBUG') && true === WP_DEBUG ) ? time() : HUEMAN_VER,
+        true
     );
 
-    if ( is_singular() && get_option( 'thread_comments' ) ) { wp_enqueue_script( 'comment-reply' ); }
-  }
+    if ( is_singular() && get_option( 'thread_comments' ) ) {
+      wp_enqueue_script( 'comment-reply' );
+    }
+
+    wp_localize_script(
+          'hu-front-scripts',
+          'HUParams',
+          apply_filters( 'hu_customizr_script_params' , array(
+              '_disabled'          => apply_filters( 'hu_disabled_front_js_parts', array() ),
+              'SmoothScroll'      => array(
+                'Enabled' => apply_filters('hu_enable_smoothscroll', ! wp_is_mobile() && hu_is_checked('smoothscroll') ),
+                'Options' => apply_filters('hu_smoothscroll_options', array( 'touchpadSupport' => false ) )
+              ),
+              'centerAllImg'      => apply_filters( 'hu_center_img', true ),
+              'timerOnScrollAllBrowsers' => apply_filters( 'hu_timer_on_scroll_for_all_browser' , true), //<= if false, for ie only
+              'extLinksStyle'       => hu_is_checked('ext_link_style'),
+              'extLinksTargetExt'   => hu_is_checked('ext_link_target'),
+              'extLinksSkipSelectors'   => apply_filters(
+                'hu_ext_links_skip_selectors',
+                array(
+                  'classes' => array('btn', 'button'),
+                  'ids' => array()
+                )
+              ),
+              'imgSmartLoadEnabled' => apply_filters( 'hu_img_smart_load_enabled', hu_is_checked('smart_load_img') ),
+              'imgSmartLoadOpts'    => apply_filters( 'hu_img_smart_load_options' , array(
+                    'parentSelectors' => array(
+                        '.container .content',
+                        '.container .sidebar',
+                        '#footer',
+                        '#header-widgets'
+                    ),
+                    'opts'     => array(
+                        'excludeImg' => array( '.tc-holder-img' )
+                    )
+              )),
+              'goldenRatio'         => apply_filters( 'hu_grid_golden_ratio' , 1.618 ),
+              'gridGoldenRatioLimit' => apply_filters( 'hu_grid_golden_ratio_limit' , 350)
+            )
+        )//end of filter
+       );
+
+
+  }//function
 }
 add_action( 'wp_enqueue_scripts', 'hu_scripts' );
 
@@ -483,26 +550,39 @@ if ( ! function_exists( 'hu_styles' ) ) {
 
     //registered only, will be loaded as a dependency of the wp style.css
     wp_register_style(
-      'hueman-main',
-      sprintf('%1$s/assets/front/css/%2$s%3$s.css',
-          get_template_directory_uri(),
-          $_main_style,
-          hu_is_checked('minified-css') ? '.min' : ''
-      ),
-      array(),
-      ( defined('WP_DEBUG') && true === WP_DEBUG ) ? time() : HUEMAN_VER,
-      'all'
+        'hueman-main-style',
+        sprintf('%1$s/assets/front/css/%2$s%3$s.css',
+            get_template_directory_uri(),
+            $_main_style,
+            hu_is_checked('minified-css') ? '.min' : ''
+        ),
+        array(),
+        ( defined('WP_DEBUG') && true === WP_DEBUG ) ? time() : HUEMAN_VER,
+        'all'
     );
 
     //This function loads the main theme stylesheet or the child theme one
     //1) Not mandatory if only the main theme is activated. But mandatory if a child theme is used (otherwise the child theme style won't be loaded)
     //2) must be loaded as a dependency of 'hueman-main', to make it easier to override the main stylesheet rules without having to increase the specificicty of each child theme css rules
     wp_enqueue_style(
-      'theme-stylesheet',
-      get_stylesheet_uri(),
-      array('hueman-main'),
-      ( defined('WP_DEBUG') && true === WP_DEBUG ) ? time() : HUEMAN_VER,
-      'all'
+        'theme-stylesheet',
+        get_stylesheet_uri(),
+        array('hueman-main-style'),
+        ( defined('WP_DEBUG') && true === WP_DEBUG ) ? time() : HUEMAN_VER,
+        'all'
+    );
+
+    //can be dequeued() if already loaded by a plugin.
+    //=> wp_dequeue_style( 'hueman-font-awesome' )
+    wp_enqueue_style(
+        'hueman-font-awesome',
+        sprintf('%1$s/assets/front/css/%2$s',
+            get_template_directory_uri(),
+            hu_is_checked('minified-css') ? 'font-awesome.min.css' : 'dev-font-awesome.css'
+        ),
+        array( 'theme-stylesheet' ),
+        ( defined('WP_DEBUG') && true === WP_DEBUG ) ? time() : HUEMAN_VER,
+        'all'
     );
   }
 }
