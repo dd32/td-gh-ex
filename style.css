@@ -1,15 +1,15 @@
 /*
 Theme Name: Bakes And Cakes
-Theme URI: http://raratheme.com/theme/bakes-and-cakes/
+Theme URI: http://raratheme.com/wordpress-themes/bakes-and-cakes/
 Author: Rara Theme
 Author URI: http://raratheme.com/
-Description: Bakes and Cakes an elegant WordPress theme suitable for bakery business. It is responsive and displays your website nicely in mobile and tablet devices. Bakes and Cakes is built using HTML5, CSS3 and JQuery . The theme is translation ready.
-
-Version: 1.0.0
+Description: Bakes and Cakes an elegant WordPress theme suitable for bakery business. It is responsive and displays your website nicely in mobile and tablet devices. Bakes and Cakes is built using HTML5 and CSS3 . The theme is translation ready.
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bakes-and-cakes
-Tags: white, light, two-columns, right-sidebar, responsive-layout, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, front-page-post-form, post-formats, sticky-post, threaded-comments, translation-ready
+Tags: Blog, Two-columns, right-sidebar, footer-widgets, custom-background, custom-menu, featured-image-header, featured-images, post-formats, threaded-comments, translation-ready, full-width-template, theme-options
+
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -572,53 +572,62 @@ a:active {
 .main-navigation a:focus{color: #f6a8c6;}
 
 .main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
 	position: absolute;
-	top: 1.5em;
-	left: -999em;
+	top: 100%;
+	left: 0;
 	z-index: 99999;
+	background: #fdfdfd;
+	text-align: left;
+	width: 200px;
+	padding: 5px 0;
+	display: none;
 }
 
 .main-navigation ul ul ul {
-	left: -999em;
+	left: 100%;
 	top: 0;
 }
 
 .main-navigation ul ul a {
-	width: 200px;
+	display: block;
+	padding: 5px 15px;
 }
 
 .main-navigation ul ul li {
-
+	display: block;
+	margin: 0;
 }
 
 .main-navigation li:hover > a,
 .main-navigation li.focus > a {
+	color: #f6a8c6;
 }
 
 .main-navigation ul ul :hover > a,
 .main-navigation ul ul .focus > a {
+	color: #f6a8c6;
 }
 
 .main-navigation ul ul a:hover,
 .main-navigation ul ul a.focus {
+	color: #f6a8c6;
 }
 
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
-	left: auto;
+	display: block;
 }
 
 .main-navigation ul ul li:hover > ul,
 .main-navigation ul ul li.focus > ul {
-	left: 100%;
+	display: block;
 }
 
 .main-navigation .current_page_item > a,
 .main-navigation .current-menu-item > a,
 .main-navigation .current_page_ancestor > a,
 .main-navigation .current-menu-ancestor > a {
+	color: #f6a8c6;
 }
 
 /* Small menu. */
@@ -874,6 +883,8 @@ object {
 --------------------------------------------------------------*/
 .gallery {
 	margin-bottom: 1.5em;
+	margin-left: -10px;
+	margin-right: -10px;
 }
 
 .gallery-item {
@@ -881,6 +892,9 @@ object {
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin: 0 0 20px;
 }
 
 .gallery-columns-2 .gallery-item {
@@ -918,6 +932,11 @@ object {
 .gallery-caption {
 	display: block;
 }
+
+.site{background:#f7f6f4;}
+
+.custom-background .site{margin: 20px;}
+
 /*common site style*/
 .container{
 	max-width: 1200px;
@@ -971,14 +990,15 @@ object {
 }
 
 .site-branding .site-title{
-	font-size: 36px;
-	line-height: 40px;
-	font-weight: 700;
+	font-size: 60px;
+	line-height: 66px;
+	font-weight: 400;
 	margin: 0;
-	font-family: 'Open Sans', sans-serif;
+	font-family: "Niconne",cursive;
+	color: #f6a8c6;
 }
 
-.site-branding .site-title a{color: #555;}
+.site-branding .site-title a{color: #f6a8c6;}
 
 .site-branding .site-title a:hover{text-decoration: none;}
 
@@ -1297,6 +1317,7 @@ object {
 .special .special-post .img-holder{
 	float: left;
 	width: 255px;
+	height: 255px;
 }
 
 .special .special-post:nth-child(2n) .img-holder{
@@ -1306,6 +1327,7 @@ object {
 .special .special-post .img-holder img{
 	vertical-align: top;
 	border-radius: 50%;
+	height: 100%;
 }
 
 .special .special-post .text-holder{
@@ -1404,16 +1426,32 @@ object {
 	background: url(images/img12.jpg) no-repeat;
 	background-size: cover;
 	background-position: center;
+	position: relative;
+}
+
+.our-staff:before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
 }
 
 .our-staff .container{
 	max-height: 678px;
 	overflow: hidden;
+	position: relative;
 }
 
 .our-staff .header{
 	text-align: center;
-	margin: 0 0 50px;
+	margin: 0 auto 50px;
+	/*font-size: 24px;*/
+	/*line-height: 28px;*/
+	color: #fff;
+	max-width: 750px;
 }
 
 .our-staff .header .main-title{
@@ -1457,7 +1495,8 @@ object {
 .our-staff #staff-slider .text-holder{
 	overflow: auto;
 	padding: 56px 46px 28px 46px;
-	max-height: 359px;
+	/*max-height: 359px;*/
+	max-height: 310px;
 }
 
 .our-staff #staff-slider .text-holder .name{
@@ -1473,7 +1512,8 @@ object {
 
 .our-staff #carousel{
 	position: relative;
-	top: -162px;
+	/*top: -162px;*/
+	top: -217px;
 	width: 693px;
 	float: right;
 	text-align: center;
@@ -1618,7 +1658,8 @@ object {
 	width: 125px;
 	font-size: 15px;
 	line-height: 17px;
-	margin-top: 19px;
+	/*margin-top: 19px;*/
+	margin-top: 0;
 	color: #555;
 }
 
@@ -1747,13 +1788,20 @@ object {
 
 .promotional-block .container{position: relative;}
 
+.promotional-block .header{
+	color: #fff;
+	max-width: 750px;
+	text-align: center;
+	margin: 0 auto 40px;
+}
+
 .promotional-block .main-title{
 	font-size: 60px;
 	font-family: 'Niconne', cursive;
 	line-height: 62px;
 	font-weight: normal;
 	color: #fff;
-	margin: 0 0 40px;
+	margin: 0 0 10px;
 	text-align: center;
 }
 
@@ -1837,9 +1885,11 @@ object {
 
 .btn-top:hover{text-decoration: none;}
 
-.map img{
+.map iframe{
+	pointer-events: none;
 	width: 100%;
-	vertical-align: top;
+	border: 0;
+	height: 440px;
 }
 
 /*--------------------------------------------------------------
@@ -2423,6 +2473,21 @@ object {
 	color: #81c9c7;
 }
 
+/*social networks widget*/
+#secondary .widget .social-networks{
+	margin: 0;
+	padding: 17px 21px 0;
+	list-style: none;
+	overflow: hidden;
+	font-size: 20px;
+}
+
+#secondary .widget .social-networks li{
+	float: left;
+	margin-right: 19px;
+	border-bottom: 0;
+}
+
 /*search widget style*/
 .widget.widget_search .widget-title{display: none;}
 
@@ -2493,20 +2558,24 @@ object {
 }
 
 /*widget recent-post style*/
-.widget.widget_bakes_and_cakes_recent_post ul li .post-thumbnail{
+.widget.widget_bakes_and_cakes_recent_post ul li .post-thumbnail,
+.widget.widget_bakes_and_cakes_popular_post ul li .post-thumbnail{
 	float: left;
 	width: 69px;
 	margin-right: 20px;
 }
 
-.widget.widget_bakes_and_cakes_recent_post ul li .post-thumbnail img{
+.widget.widget_bakes_and_cakes_recent_post ul li .post-thumbnail img,
+.widget.widget_bakes_and_cakes_popular_post ul li .post-thumbnail img{
 	vertical-align: top;
 	width: 100%;
 }
 
-.widget.widget_bakes_and_cakes_recent_post ul li .entry-header{overflow: hidden;}
+.widget.widget_bakes_and_cakes_recent_post ul li .entry-header,
+.widget.widget_bakes_and_cakes_popular_post ul li .entry-header{overflow: hidden;}
 
-.widget.widget_bakes_and_cakes_recent_post ul li .entry-header .entry-title{
+.widget.widget_bakes_and_cakes_recent_post ul li .entry-header .entry-title,
+.widget.widget_bakes_and_cakes_popular_post ul li .entry-header .entry-title{
 	font-size: 16px;
 	line-height: 20px;
 	font-weight: 700;
@@ -2514,14 +2583,22 @@ object {
 	margin: 0 0 4px;
 }
 
-.widget.widget_bakes_and_cakes_recent_post ul li .entry-header .entry-title a{color: #666;}
-.widget.widget_bakes_and_cakes_recent_post ul li .entry-header .entry-title a:hover{
+.widget.widget_bakes_and_cakes_recent_post ul li .entry-header .entry-title a,
+.widget.widget_bakes_and_cakes_popular_post ul li .entry-header .entry-title a{color: #666;}
+
+.widget.widget_bakes_and_cakes_recent_post ul li .entry-header .entry-title a:hover,
+.widget.widget_bakes_and_cakes_recent_post ul li .entry-header .entry-title a:focus,
+.widget.widget_bakes_and_cakes_popular_post ul li .entry-header .entry-title a:hover,
+.widget.widget_bakes_and_cakes_popular_post ul li .entry-header .entry-title a:focus{
 	text-decoration: none;
 	color: #81c9c7;
 }
 
-.widget.widget_bakes_and_cakes_recent_post ul li .entry-header .entry-meta a{color: #81c9c7;}
-.widget.widget_bakes_and_cakes_recent_post ul li .entry-header .entry-meta .posted-on a:before{
+.widget.widget_bakes_and_cakes_recent_post ul li .entry-header .entry-meta a,
+.widget.widget_bakes_and_cakes_popular_post ul li .entry-header .entry-meta a{color: #81c9c7;}
+
+.widget.widget_bakes_and_cakes_recent_post ul li .entry-header .entry-meta .posted-on a:before,
+.widget.widget_bakes_and_cakes_popular_post ul li .entry-header .entry-meta .posted-on a:before{
 	font-family: 'FontAwesome';
 	content: '\f133';
 	font-size: 14px;
@@ -2529,7 +2606,10 @@ object {
 	margin-right: 8px;
 }
 
-.widget.widget_bakes_and_cakes_recent_post ul li .entry-header .entry-meta a:hover{
+.widget.widget_bakes_and_cakes_recent_post ul li .entry-header .entry-meta a:hover,
+.widget.widget_bakes_and_cakes_recent_post ul li .entry-header .entry-meta a:focus,
+.widget.widget_bakes_and_cakes_popular_post ul li .entry-header .entry-meta a:hover,
+.widget.widget_bakes_and_cakes_popular_post ul li .entry-header .entry-meta a:focus{
 	text-decoration: none;
 	color: #666;
 }
@@ -2545,7 +2625,7 @@ object {
 .widget.widget_tag_cloud .tagcloud a{
 	background: #edecea;
 	line-height: 36px;
-	height: 36px;
+	/*height: 36px;*/
 	float: left;
 	color: #666;
 	margin: 0 11px 11px 0;
@@ -2583,6 +2663,7 @@ object {
 	font-size: 14px;
 	font-weight: 600;
 	padding: 3px 0;
+	text-align: center;
 }
 
 .widget.widget_calendar thead{background: #fff;}
@@ -2630,6 +2711,55 @@ object {
 	margin-right: 30px;
 }
 
+#secondary .widget.widget_rss .widget-title a{
+	color: #555;
+}
+
+#secondary .widget.widget_rss .widget-title a:hover,
+#secondary .widget.widget_rss .widget-title a:focus{
+	text-decoration: none;
+	color: #81c9c7;
+}
+
+#secondary .widget.widget_rss ul li a{color: #81c9c7;}
+
+#secondary .widget.widget_rss ul li a:hover,
+#secondary .widget.widget_rss ul li a:focus{text-decoration: underline;}
+
+#secondary .widget.widget_text .textwidget{
+	padding: 17px 21px;
+	border: 1px solid #e4e3e1;
+	border-top: 0;
+}
+
+.widget.widget_product_search .woocommerce-product-search {
+    background: #edecea;
+    border: 1px solid #e4e3e1;
+    overflow: hidden;
+    padding: 10px;
+    width: 100%;
+}
+
+.widget.widget_product_search .woocommerce-product-search input[type="search"]{
+	float: left;
+	width: 85%;
+	background: none;
+	border: 0;
+	padding: 3px;
+}
+
+.widget.widget_product_search .woocommerce-product-search input[type="submit"]{
+	background: url("images/bg-search.png") no-repeat;
+    border: 0 none;
+    box-shadow: none;
+    float: right;
+    height: 18px;
+    margin: 7px 0 0;
+    padding: 0;
+    text-indent: -9999px;
+    width: 17px;
+}
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
@@ -2659,17 +2789,27 @@ object {
 
 .site-footer .footer-t{margin: 0 0 30px;}
 
-.site-footer .widget{
-	float: left;
+.site-footer .three-cols{
+	text-align: center;
+}
+
+.site-footer .col{
+	/*float: left;*/
+	display: inline-block;
+	vertical-align: top;
 	width: 25%;
 	padding-left: 10px;
 	padding-right: 10px;
+	margin: 0 -3px;
+	text-align: left;
 }
+
+.site-footer .col.center{width: 50%;}
 
 .site-footer .widget.widget_contact_info span{display: block;}
 
 .site-footer .widget .social-networks{
-	margin: 45px 0 0;
+	margin: 0;
 	padding: 0;
 	list-style: none;
 	overflow: hidden;
@@ -2689,7 +2829,7 @@ object {
 }
 
 .site-footer .widget.widget_contact_form{
-	width: 50%;
+	/*width: 50%;*/
 }
 
 .site-footer .widget.widget_contact_form .form-holder{
@@ -2785,7 +2925,36 @@ object {
 	margin: 0 0 15px;
 }
 
-.site-footer .widget ul li span{float: right;}
+.site-footer .widget ul li a,
+.site-footer .widget.widget_bakes_and_cakes_recent_post ul li .entry-header .entry-title a,
+.site-footer .widget.widget_bakes_and_cakes_recent_post ul li .entry-header .entry-meta a,
+.site-footer .widget.widget_bakes_and_cakes_popular_post ul li .entry-header .entry-title a,
+.site-footer .widget.widget_bakes_and_cakes_popular_post ul li .entry-header .entry-meta a{color: #c4c4c4;}
+
+.site-footer .widget ul li a:hover,
+.site-footer .widget ul li a:focus,
+.site-footer .widget.widget_bakes_and_cakes_recent_post ul li .entry-header .entry-title a:hover,
+.site-footer .widget.widget_bakes_and_cakes_recent_post ul li .entry-header .entry-meta a:hover,
+.site-footer .widget.widget_bakes_and_cakes_recent_post ul li .entry-header .entry-title a:focus,
+.site-footer .widget.widget_bakes_and_cakes_recent_post ul li .entry-header .entry-meta a:focus,
+.site-footer .widget.widget_bakes_and_cakes_popular_post ul li .entry-header .entry-title a:hover,
+.site-footer .widget.widget_bakes_and_cakes_popular_post ul li .entry-header .entry-meta a:hover,
+.site-footer .widget.widget_bakes_and_cakes_popular_post ul li .entry-header .entry-title a:focus,
+.site-footer .widget.widget_bakes_and_cakes_popular_post ul li .entry-header .entry-meta a:focus{
+	text-decoration: none;
+	color: #fff;
+}
+
+.site-footer .widget.widget_calendar .calendar_wrap{
+	background: #f7f6f4;
+}
+
+.site-footer .widget.widget_rss ul li a{color: #fff;}
+
+.site-footer .widget.widget_rss ul li a:hover,
+.site-footer .widget.widget_rss ul li a:focus{
+	text-decoration: underline;
+}
 
 .site-footer .site-info{
 	padding: 0 0 50px;

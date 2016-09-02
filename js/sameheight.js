@@ -18,7 +18,7 @@
 		function columnConform() {
 
 			// find the tallest DIV in the row, and set the heights of all of the DIVs to match it.
-			$('.opening-time').each(function() {
+			jQuery('.opening-time').each(function() {
 
 				// "caching"
 				var $el = $(this);
@@ -51,13 +51,13 @@
 		}
 
 
-		$(window).resize(function() {
+		jQuery(window).resize(function() {
 			columnConform();
 		});
 
 		// Dom Ready
 		// You might also want to wait until window.onload if images are the things that
 		// are unequalizing the blocks
-		$(function() {
+		jQuery(function() {
 			columnConform();
 		});

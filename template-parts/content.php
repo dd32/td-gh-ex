@@ -7,25 +7,16 @@
  * @package Bakes_And_Cakes
  */
 
-
-global $post;
-$bakes_and_cakes_sidebar_layout = '';
-
-if( $post )
-$bakes_and_cakes_sidebar_layout = get_post_meta( $post->ID, 'bakes_and_cakes_sidebar_layout', true ); 
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
- <?php if( has_post_thumbnail() ){ ?>
-        <a href="<?php the_permalink(); ?>" class="post-thumbnail">
-            <?php if( has_post_thumbnail() ){ ?>
-                    <div class="post-thumbnail">
-                         <?php ( is_active_sidebar( 'right-sidebar' ) && ( $bakes_and_cakes_sidebar_layout == 'right-sidebar' ) ) ? the_post_thumbnail( 'bakes-and-cakes-image' ) : the_post_thumbnail( 'bakes-and-cakes-image-full' ) ; ?>
-                    </div>
-            <?php }?>
-        </a>
-    <?php } ?>
+     <?php 
+        if( has_post_thumbnail() ){
+            echo ( is_single() ) ? '<div class="post-thumbnail">' : '<a href="' . esc_url( get_the_permalink() ) . '" class="post-thumbnail">';
+            ( is_active_sidebar( 'right-sidebar' ) ) ? the_post_thumbnail( 'bakes-and-cakes-image' ) : the_post_thumbnail( 'bakes-and-cakes-image-full' );
+            echo ( is_single() ) ? '</div>' : '</a>' ; 
+        }
+    ?>
     <div class="text-holder">
 		<header class="entry-header">
 			<?php
@@ -53,7 +44,7 @@ $bakes_and_cakes_sidebar_layout = get_post_meta( $post->ID, 'bakes_and_cakes_sid
     			) );
             }else{
                 if( false === get_post_format() ){
-                    echo wpautop( bakes_and_cakes_excerpt( get_the_content(), 550, '.', false, false ) );
+                    the_excerpt();
                 }else{
                     the_content( sprintf(
         				/* translators: %s: Name of current post. */

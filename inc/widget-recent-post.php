@@ -32,32 +32,33 @@ class bakes_and_cakes_Recent_Post extends WP_Widget {
 	 *
 	 * @see WP_Widget::widget()
 	 *
-	 * @param array $bakes_and_cakes_args     Widget arguments.
-	 * @param array $bakes_and_cakes_instance Saved values from database.
+	 * @param array $args     Widget arguments.
+	 * @param array $instance Saved values from database.
 	 */
-	public function widget( $bakes_and_cakes_args, $bakes_and_cakes_instance ) {
-	   
-        $bakes_and_cakes_title = $bakes_and_cakes_instance['title'];
-        $bakes_and_cakes_num_post = absint( $bakes_and_cakes_instance['num_post'] );
-        $bakes_and_cakes_show_thumb = $bakes_and_cakes_instance['show_thumbnail'];
-        $bakes_and_cakes_show_date = $bakes_and_cakes_instance['show_postdate'];
+	public function widget( $args, $instance ) {
+
+        $title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Recent Posts', 'bakes-and-cakes' );     
+        $num_post = ! empty( $instance['num_post'] ) ? absint($instance['num_post']) : '3' ;
+        $show_thumbnail = ! empty( $instance['show_thumbnail'] ) ? $instance['show_thumbnail'] : '';
+        $show_postdate = ! empty( $instance['show_postdate'] ) ? $instance['show_postdate'] : '';
+       
         
-        $bakes_and_cakes_qry = new WP_Query( array(
+        $qry = new WP_Query( array(
             'post_type'     => 'post',
             'post_status'   => 'publish',
-            'posts_per_page'=> $bakes_and_cakes_num_post
+            'posts_per_page'=> $num_post
         ) );
-        if( $bakes_and_cakes_qry->have_posts() ){
-            echo $bakes_and_cakes_args['before_widget'];
-            echo $bakes_and_cakes_args['before_title'] . apply_filters('the_title', $bakes_and_cakes_title) . $bakes_and_cakes_args['after_title'];
+        if( $qry->have_posts() ){
+            echo $args['before_widget'];
+            echo $args['before_title'] . apply_filters( 'widget_title', $title ) . $args['after_title'];
             ?>
             <ul>
                 <?php 
-                while( $bakes_and_cakes_qry->have_posts() ){
-                    $bakes_and_cakes_qry->the_post();
+                while( $qry->have_posts() ){
+                    $qry->the_post();
                 ?>
                     <li>
-                        <?php if( has_post_thumbnail() && $bakes_and_cakes_show_thumb ){ ?>
+                        <?php if( has_post_thumbnail() && $show_thumbnail ){ ?>
                             <div class="post-thumbnail">
                                 <a href="<?php the_permalink();?>" class="post-thumbnail">
                                     <?php the_post_thumbnail( 'bakes-and-cakes-post-thumb' );?>
@@ -67,10 +68,12 @@ class bakes_and_cakes_Recent_Post extends WP_Widget {
                         <header class="entry-header">
                                     <h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h3>
                                     <div class="entry-meta">
-                                    <?php if($bakes_and_cakes_show_date){ ?>
-                                     <span class="posted-on"><a href="<?php the_permalink(); ?>">
-                                        <time datetime="<?php printf( __( '%1$s', 'bakes-and-cakes' ), get_the_date('Y-m-d') ); ?>">
-                                        <?php printf( __( '%1$s', 'bakes-and-cakes' ), get_the_date('F jS, Y') ); ?></time></a></span>
+                                    <?php 
+                                        if($show_postdate){  ?>
+                                            <span class="posted-on"><a href="<?php the_permalink(); ?>">
+                                                 <time datetime="<?php printf( __( '%1$s', 'bakes-and-cakes' ), esc_html( get_the_date('Y-m-d') ) ); ?>">
+                                                  <?php printf( __( '%1$s', 'bakes-and-cakes' ), esc_html( get_the_date('Y/m/d') ) ); ?></time></a>
+                                            </span>
                                     <?php } ?>
                                     </div>
                          </header>                       
@@ -81,7 +84,7 @@ class bakes_and_cakes_Recent_Post extends WP_Widget {
             </ul>
             
             <?php
-            echo $bakes_and_cakes_args['after_widget'];   
+            echo $args['after_widget'];   
         }
         wp_reset_postdata();  
 	}
@@ -91,35 +94,35 @@ class bakes_and_cakes_Recent_Post extends WP_Widget {
 	 *
 	 * @see WP_Widget::form()
 	 *
-	 * @param array $bakes_and_cakes_instance Previously saved values from database.
+	 * @param array $instance Previously saved values from database.
 	 */
-	public function form( $bakes_and_cakes_instance ) {
+	public function form( $instance ) {
         
-        $bakes_and_cakes_title = ! empty( $bakes_and_cakes_instance['title'] ) ? $bakes_and_cakes_instance['title'] : __( 'Recent Posts', 'bakes-and-cakes' );		
-        $bakes_and_cakes_num_post = ! empty( $bakes_and_cakes_instance['num_post'] ) ? absint($bakes_and_cakes_instance['num_post']) : '3' ;
-        $bakes_and_cakes_show_thumbnail = ! empty( $bakes_and_cakes_instance['show_thumbnail'] ) ? $bakes_and_cakes_instance['show_thumbnail'] : '';
-        $bakes_and_cakes_show_postdate = ! empty( $bakes_and_cakes_instance['show_postdate'] ) ? $bakes_and_cakes_instance['show_postdate'] : '';
+        $title = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Recent Posts', 'bakes-and-cakes' );		
+        $num_post = ! empty( $instance['num_post'] ) ? absint($instance['num_post']) : '3' ;
+        $show_thumbnail = ! empty( $instance['show_thumbnail'] ) ? $instance['show_thumbnail'] : '';
+        $show_postdate = ! empty( $instance['show_postdate'] ) ? $instance['show_postdate'] : '';
         
         ?>
 		
         <p>
-            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title', 'bakes-and-cakes' ); ?></label> 
-            <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $bakes_and_cakes_title ); ?>" />
+            <label for="<?php echo esc_attr($this->get_field_id( 'title' )); ?>"><?php _e( 'Title', 'bakes-and-cakes' ); ?></label> 
+            <input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'title' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'title' )); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
         
         <p>
-            <label for="<?php echo $this->get_field_id( 'num_post' ); ?>"><?php _e( 'Number of Posts', 'bakes-and-cakes' ); ?></label> 
-            <input class="widefat" id="<?php echo $this->get_field_id( 'num_post' ); ?>" name="<?php echo $this->get_field_name( 'num_post' ); ?>" type="number" step="1" min="1" value="<?php echo esc_attr( $bakes_and_cakes_num_post ); ?>" />
+            <label for="<?php echo esc_attr($this->get_field_id( 'num_post' )); ?>"><?php _e( 'Number of Posts', 'bakes-and-cakes' ); ?></label> 
+            <input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'num_post' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'num_post' )); ?>" type="number" step="1" min="1" value="<?php echo esc_attr( $num_post ); ?>" />
 		</p>
         
         <p>
-            <input id="<?php echo $this->get_field_id( 'show_thumbnail' ); ?>" name="<?php echo $this->get_field_name( 'show_thumbnail' ); ?>" type="checkbox" value="1" <?php checked( '1', $bakes_and_cakes_show_thumbnail ); ?>/>
-            <label for="<?php echo $this->get_field_id( 'show_thumbnail' ); ?>"><?php _e( 'Show Post Thumbnail', 'bakes-and-cakes' ); ?></label>
+            <input id="<?php echo esc_attr($this->get_field_id( 'show_thumbnail' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'show_thumbnail' )); ?>" type="checkbox" value="1" <?php checked( '1', $show_thumbnail ); ?>/>
+            <label for="<?php echo esc_attr($this->get_field_id( 'show_thumbnail' )); ?>"><?php _e( 'Show Post Thumbnail', 'bakes-and-cakes' ); ?></label>
 		</p>
         
         <p>
-            <input id="<?php echo $this->get_field_id( 'show_postdate' ); ?>" name="<?php echo $this->get_field_name( 'show_postdate' ); ?>" type="checkbox" value="1" <?php checked( '1', $bakes_and_cakes_show_postdate ); ?>/>
-            <label for="<?php echo $this->get_field_id( 'show_postdate' ); ?>"><?php _e( 'Show Post Date', 'bakes-and-cakes' ); ?></label>
+            <input id="<?php echo esc_attr($this->get_field_id( 'show_postdate' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'show_postdate' )); ?>" type="checkbox" value="1" <?php checked( '1', $show_postdate ); ?>/>
+            <label for="<?php echo esc_attr($this->get_field_id( 'show_postdate' )); ?>"><?php _e( 'Show Post Date', 'bakes-and-cakes' ); ?></label>
 		</p>
 		<?php 
 	}
@@ -129,19 +132,19 @@ class bakes_and_cakes_Recent_Post extends WP_Widget {
 	 *
 	 * @see WP_Widget::update()
 	 *
-	 * @param array $bakes_and_cakes_new_instance Values just sent to be saved.
-	 * @param array $bakes_and_cakes_old_instance Previously saved values from database.
+	 * @param array $new_instance Values just sent to be saved.
+	 * @param array $old_instance Previously saved values from database.
 	 *
 	 * @return array Updated safe values to be saved.
 	 */
-	public function update( $bakes_and_cakes_new_instance, $bakes_and_cakes_old_instance ) {
-		$bakes_and_cakes_instance = array();
+	public function update( $new_instance, $old_instance ) {
+		$instance = array();
 		
-        $bakes_and_cakes_instance['title'] = ! empty( $bakes_and_cakes_new_instance['title'] ) ? strip_tags( $bakes_and_cakes_new_instance['title'] ) : __( 'Recent Posts', 'bakes-and-cakes' );
-        $bakes_and_cakes_instance['num_post'] = intval( $bakes_and_cakes_new_instance['num_post'] ) ? absint($bakes_and_cakes_new_instance['num_post']) : '3' ;        
-        $bakes_and_cakes_instance['show_thumbnail'] = ! empty( $bakes_and_cakes_new_instance['show_thumbnail'] ) ? esc_attr( $bakes_and_cakes_new_instance['show_thumbnail'] ) : '';
-        $bakes_and_cakes_instance['show_postdate'] = ! empty( $bakes_and_cakes_new_instance['show_postdate'] ) ? esc_attr( $bakes_and_cakes_new_instance['show_postdate'] ) : '';
-		return $bakes_and_cakes_instance;
+        $instance['title'] = ! empty( $new_instance['title'] ) ? strip_tags( $new_instance['title'] ) : __( 'Recent Posts', 'bakes-and-cakes' );
+        $instance['num_post'] = intval( $new_instance['num_post'] ) ? absint($new_instance['num_post']) : '3' ;        
+        $instance['show_thumbnail'] = ! empty( $new_instance['show_thumbnail'] ) ? esc_attr( $new_instance['show_thumbnail'] ) : '';
+        $instance['show_postdate'] = ! empty( $new_instance['show_postdate'] ) ? esc_attr( $new_instance['show_postdate'] ) : '';
+		return $instance;
 	}
 
 } // class Bakes_and_cakes_Recent_Post 

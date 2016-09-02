@@ -12,6 +12,8 @@
  * @package Bakes_And_Cakes
  */
 
+$sidebar_layout = bakes_and_cakes_sidebar_layout();   
+
 get_header(); ?>  
 
 		
@@ -35,5 +37,5 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+if( $sidebar_layout == 'right-sidebar' ) get_sidebar();
 get_footer();

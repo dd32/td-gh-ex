@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<?php do_action('bakes_and_cakes_breadcrumbs'); ?>
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 

@@ -1,7 +1,8 @@
 === Bakes and Cakes ===
 Author: Rara Theme (http://raratheme.com)
 
-Tags: white, light, two-columns, right-sidebar, responsive-layout, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, post-formats, sticky-post, threaded-comments, translation-ready
+Tags: Blog, Two-columns, right-sidebar, footer-widgets, custom-background, custom-menu, featured-image-header, featured-images, post-formats, threaded-comments, translation-ready, full-width-template, theme-options
+
 
 Requires at least: 4.0
 Tested up to: 4.3.1
@@ -20,6 +21,27 @@ Bakes and Cakes an elegant WordPress theme suitable for bakery business. It is r
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
+
+
+== Documentations ==
+1. Setting up the Homepage
+    * To set up the homepage you must first create a new page. 
+    * Create a new Page
+    * Go to Pages > Add New.
+    * Enter the Page Title for the Page
+    * You do not require to enter anything in the content section for creating a home page. 
+    * Select the Homepage Template from the Page Attributes section 
+    * Click Publish.
+
+2. About us Section
+   * To set up the About us section Make a page with default template with the title and content that needs to be displayed under About us Section.
+   * Go to Appearance> Customize>Homepage Settings> About us Section  
+   * Check Enable About us Section to display it in the Homepage.
+   * Choose the page for About us Section.
+   * The Page title of the selected page will appear as the section title.
+   * The featured image and content of the selected page will be displayed under About us Section.
+   * Click Save and Publish.
+
 
 
 == Copyrights and License ==

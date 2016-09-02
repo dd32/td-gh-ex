@@ -22,34 +22,45 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bakes-and-cakes' ); ?></a>
-
+	
 	<header id="masthead" class="site-header" role="banner">
 	    <div class="header-t">
-			<div class="container">
-				<div class="site-branding">
-					<?php
-					if ( is_front_page() && is_home() ) : ?>
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-					<?php else : ?>
-						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-					<?php
-					endif;
-
-					$description = get_bloginfo( 'description', 'display' );
-					if ( $description || is_customize_preview() ) : ?>
-						<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-					<?php
-					endif; ?>
-				</div><!-- .site-branding -->
+			  <div class="container">
+				 <div class="site-branding">
+    			<?php 
+              if( function_exists( 'has_custom_logo' ) && has_custom_logo() ){
+                the_custom_logo();
+              } ?>
+    			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+    			<?php
+    			   $description = get_bloginfo( 'description', 'display' );
+    			if ( $description || is_customize_preview() ) : ?>
+    				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+    			<?php endif; ?>
+    		</div><!-- .site-branding -->
 			</div>
 		</div>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'bakes-and-cakes' ); ?></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
-    <div class="container">
-	<div id="content" class="site-content">
+  <?php $enable_slider = get_theme_mod('bakes_and_cakes_ed_slider');
+        
+        $ed_breadcrumbs = get_theme_mod('bakes_and_cakes_ed_breadcrumb');
+        
+        if( (is_front_page() || is_page_template('template-home.php')) && $enable_slider ) {
+          
+          do_action('bakes_and_cakes_slider');
+       
+        }
+
+        if(!is_page_template('template-home.php')){ 
+   	       
+          echo '<div class="container">';
+	          
+            echo '<div id="content" class="site-content">'; 
+              
+              if($ed_breadcrumbs){ do_action('bakes_and_cakes_breadcrumbs'); }
+        } ?>

@@ -35,7 +35,11 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_navigation();
+			    the_posts_pagination( array(
+				    'prev_text'          => __( 'Previous', 'bakes-and-cakes' ),
+				    'next_text'          => __( 'Next', 'bakes-and-cakes' ),
+				    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bakes-and-cakes' ) . ' </span>',
+				) );
 
 		else :
 
