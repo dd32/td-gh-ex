@@ -24,6 +24,28 @@ jQuery.noConflict()(function($){
 	});
 
 /* ===============================================
+   iOs devices
+   ============================================= */
+
+	function is_ios() {
+	
+		return (
+	
+			(navigator.platform.indexOf("iPhone") !== -1) ||
+			(navigator.platform.indexOf("iPad") !== -1) ||
+			(navigator.platform.indexOf("iPod") !== -1)
+	
+		);
+	
+	}
+	
+	if (is_ios() ) {
+		
+		$('.slick-image').addClass('ios_device');
+
+	}
+
+/* ===============================================
    Woocommerce Header Cart
    ============================================= */
 

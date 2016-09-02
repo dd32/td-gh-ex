@@ -1,5 +1,9 @@
 Bazaar Lite Changelog
 
+- Version 1.2.9 - Released: 02.09.2016
+
+-- Fixed : Distorted slideshow images on iOS devices.
+
 - Version 1.2.8 - Released: 29.08.2016
 
 -- Edit : Code optimized.

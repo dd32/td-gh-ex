@@ -55,7 +55,7 @@ if( !class_exists( 'bazaarlite_admin_notice' ) ) {
             <div class="update-nag notice bazaarlite-notice">
             
             	<div class="bazaarlite-noticedescription">
-					<strong><?php _e( 'Upgrade to the premium version of Bazaar, to enable 600+ Google Fonts, Unlimited sidebars, Portfolio section and much more.', 'bazaar-lite' ); ?></strong><br/>
+					<strong><?php _e( 'Upgrade to the premium version of Bazaar, to enable an extensive option panel, 600+ Google Fonts, unlimited sidebars, portfolio and much more.', 'bazaar-lite' ); ?></strong><br/>
 					<?php printf( __('<a href="%1$s" class="dismiss-notice">Dismiss this notice</a>','bazaar-lite'), esc_url( '?bazaarlite-dismiss=1' ) ); ?>
                 </div>
                 

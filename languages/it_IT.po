@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-29 21:35+0200\n"
-"PO-Revision-Date: 2016-08-29 21:35+0200\n"
+"POT-Creation-Date: 2016-09-02 16:42+0200\n"
+"PO-Revision-Date: 2016-09-02 16:43+0200\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
 "Language: it_IT\n"
@@ -887,11 +887,12 @@ msgstr "Scarica i nostri temi gratuiti per Wordpress"
 
 #: core/includes/class-notice.php:58
 msgid ""
-"Upgrade to the premium version of Bazaar, to enable 600+ Google Fonts, "
-"Unlimited sidebars, Portfolio section and much more."
+"Upgrade to the premium version of Bazaar, to enable an extensive option "
+"panel, 600+ Google Fonts, unlimited sidebars, portfolio and much more."
 msgstr ""
-"Aggiorna alla versione premium di Bazaar, per attivare oltre 600 Google "
-"Fonts, barre laterali illimitate, sezione Portfolio e molto altro"
+"Aggiorna alla versione premium di Bazaar per attivare un pannello di "
+"controllo completo, oltre 600 Google Fonts, barre laterali illimitate, "
+"sezione portfolio e molto altro."
 
 #: core/includes/class-notice.php:59
 #, php-format
@@ -1462,6 +1463,13 @@ msgstr "Proprietario verificato"
 #: woocommerce/single-product/up-sells.php:47
 msgid "You may also like&hellip;"
 msgstr "Ti potrebbe anche interessare&hellip;"
+
+#~ msgid ""
+#~ "Upgrade to the premium version of Bazaar, to enable 600+ Google Fonts, "
+#~ "Unlimited sidebars, Portfolio section and much more."
+#~ msgstr ""
+#~ "Aggiorna alla versione premium di Bazaar, per attivare oltre 600 Google "
+#~ "Fonts, barre laterali illimitate, sezione Portfolio e molto altro"
 
 #~ msgid ""
 #~ "Sorry, it seems that there are no payment methods which support adding a "

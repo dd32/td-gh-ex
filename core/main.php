@@ -260,10 +260,10 @@ if (!function_exists('bazaarlite_scripts_styles')) {
 		wp_localize_script( 'bazaar-lite-jquery.wip', 'wip_vars', $wip_vars );
 
 		wp_enqueue_script ( 'bazaar-lite-html5',get_template_directory_uri().'/assets/scripts/html5.js');
-		wp_script_add_data ( 'html5', 'conditional', 'IE 8' );
+		wp_script_add_data ( 'bazaar-lite-html5', 'conditional', 'IE 8' );
 		
 		wp_enqueue_script ( 'bazaar-lite-selectivizr',get_template_directory_uri().'/assets/scripts/selectivizr-min.js');
-		wp_script_add_data ( 'selectivizr', 'conditional', 'IE 8' );
+		wp_script_add_data ( 'bazaar-lite-selectivizr', 'conditional', 'IE 8' );
 
 	}
 	

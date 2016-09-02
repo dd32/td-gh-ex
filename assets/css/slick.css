@@ -151,6 +151,10 @@
 	background-position: center center;
 }
 
+.slick-wrapper .slick-image.ios_device {
+	background-attachment: inherit;
+}
+
 .slick-wrapper .slick-slide:hover,
 .slick-wrapper .slick-slide:active,
 .slick-wrapper .slick-slide:focus{
