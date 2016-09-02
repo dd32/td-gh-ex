@@ -17,41 +17,35 @@ function spacious_customize_register($wp_customize) {
       public function render_content() {
          //Add Theme instruction, Support Forum, Demo Link, Rating Link
          $important_links = array(
+            'view-pro' => array(
+               'link' => esc_url('http://themegrill.com/themes/spacious-pro/'),
+               'text' => esc_html__('View Pro', 'spacious'),
+            ),
             'theme-info' => array(
                'link' => esc_url('http://themegrill.com/themes/spacious/'),
-               'text' => __('Theme Info', 'spacious'),
+               'text' => esc_html__('Theme Info', 'spacious'),
             ),
             'support' => array(
                'link' => esc_url('http://themegrill.com/support-forum/'),
-               'text' => __('Support Forum', 'spacious'),
+               'text' => esc_html__('Support Forum', 'spacious'),
             ),
             'documentation' => array(
-               'link' => esc_url('http://themegrill.com/theme-instruction/spacious/'),
-               'text' => __('Documentation', 'spacious'),
+               'link' => esc_url('http://docs.themegrill.com/spacious/'),
+               'text' => esc_html__('Documentation', 'spacious'),
             ),
             'demo' => array(
                'link' => esc_url('http://demo.themegrill.com/spacious/'),
-               'text' => __('View Demo', 'spacious'),
+               'text' => esc_html__('View Demo', 'spacious'),
             ),
             'rating' => array(
                'link' => esc_url('http://wordpress.org/support/view/theme-reviews/spacious?filter=5'),
-               'text' => __('Rate this theme', 'spacious'),
+               'text' => esc_html__('Rate this theme', 'spacious'),
             ),
          );
          foreach ($important_links as $important_link) {
             echo '<p><a target="_blank" href="' . $important_link['link'] . '" >' . esc_attr($important_link['text']) . ' </a></p>';
          }
-         ?>
-         <div align="center" style="padding:5px; background-color:#fafafa;border: 1px solid #CCC;margin-bottom: 10px;">
-            <strong><?php esc_attr_e( 'If you like our work. Buy us a beer.', 'spacious' ); ?></strong>
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-               <input type="hidden" name="cmd" value="_s-xclick">
-               <input type="hidden" name="hosted_button_id" value="8AHDCA8CDGAJG">
-               <input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal">
-               <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
-            </form>
-         </div>
-         <?php
+
       }
 
    }
@@ -437,7 +431,7 @@ function spacious_customize_register($wp_customize) {
    ));
 
    $wp_customize->add_control(new spacious_Custom_CSS_Control($wp_customize, $spacious_themename.'[spacious_custom_css]', array(
-      'label' => __('Write your custom css.', 'spacious'),
+      'label' => __('Write your Custom CSS.', 'spacious'),
       'section' => 'spacious_custom_css_setting',
       'settings' => $spacious_themename.'[spacious_custom_css]'
    )));
@@ -684,20 +678,6 @@ function spacious_customize_register($wp_customize) {
 add_action('customize_register', 'spacious_customize_register');
 
 /*****************************************************************************************/
-
-/**
- * Enqueue scripts for customizer
- */
-function spacious_customizer_js() {
-   wp_enqueue_script( 'spacious_customizer_script', get_template_directory_uri() . '/js/spacious_customizer.js', array("jquery"), 'false', true  );
-
-   wp_localize_script( 'spacious_customizer_script', 'spacious_customizer_obj', array(
-
-      'pro' => __('View PRO version','spacious')
-
-   ) );
-}
-add_action( 'customize_controls_enqueue_scripts', 'spacious_customizer_js' );
 
 /*
  * Custom Scripts
