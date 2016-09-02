@@ -50,6 +50,10 @@ function radiate_body_classes( $classes ) {
 		$classes[] = 'group-blog';
 	}
 
+	if( get_theme_mod( 'radiate_responsive_menu_style', '1' == '1' ) ) {
+		$classes[] = 'better-responsive-menu';
+	}
+
 	return $classes;
 }
 add_filter( 'body_class', 'radiate_body_classes' );
@@ -112,4 +116,24 @@ function radiate_internal_css() {
 		</style>
 		<?php
 	endif;
+}
+
+/**
+ * Making the theme Woocommrece compatible
+ */
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
+
+add_filter( 'woocommerce_show_page_title', '__return_false' );
+
+add_action('woocommerce_before_main_content', 'radiate_wrapper_start', 10);
+add_action('woocommerce_after_main_content', 'radiate_wrapper_end', 10);
+
+function radiate_wrapper_start() {
+  echo '<div id="primary">';
+}
+
+function radiate_wrapper_end() {
+  echo '</div>';
 }
