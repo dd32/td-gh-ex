@@ -62,6 +62,9 @@ function accelerate_setup() {
 	 // Supporting title tag via add_theme_support (since WordPress 4.1)
 	 add_theme_support( 'title-tag' );
 
+	// Added WooCommerce support.
+   	add_theme_support( 'woocommerce' );
+
 	// Registering navigation menus.
 	register_nav_menus( array(
 		'primary' 	=> __( 'Primary/Main Menu', 'accelerate' ),
@@ -153,23 +156,14 @@ require_once( ACCELERATE_ADMIN_DIR . '/meta-boxes.php' );
 /** Load Widgets and Widgetized Area */
 require_once( ACCELERATE_WIDGETS_DIR . '/widgets.php' );
 
-/*
- * Adding Admin Menu for theme options
+/**
+ * Assign the Accelerate version to a variable.
  */
-add_action( 'admin_menu', 'accelerate_theme_options_menu' );
-function accelerate_theme_options_menu() {
-	 add_theme_page( 'Theme Options', 'Theme Options', 'manage_options', 'accelerate-theme-options', 'accelerate_theme_options' );
-}
+$theme            = wp_get_theme( 'accelerate' );
+$accelerate_version = $theme['Version'];
 
-function accelerate_theme_options() {
-	 if ( !current_user_can( 'manage_options' ) )  {
-			wp_die( __( 'You do not have sufficient permissions to access this page.', 'accelerate' ) );
-	 } ?>
-	 <h1 class="accelerate-theme-options"><?php _e( 'Theme Options', 'accelerate' ); ?></h1>
-	 <?php
-	 printf( __('<p style="font-size: 16px; max-width: 800px";>As our themes are hosted on WordPress repository, we need to follow the WordPress theme guidelines and as per the new guiedlines we have migrated all our Theme Options to Customizer.</p><p style="font-size: 16px; max-width: 800px";>We too think this is a better move in the long run. All the options are unchanged, it is just that they are moved to customizer. So, please use this <a href="%1$s">link</a> to customize your site. If you have any issues then do let us know via our <a href="%2$s">Contact form</a></p>', 'accelerate'),
-			esc_url(admin_url( 'customize.php' ) ),
-			esc_url('http://themegrill.com/contact/')
-	 );
+/* Calling in the admin area for the Welcome Page */
+if ( is_admin() ) {
+	require get_template_directory() . '/inc/admin/class-accelerate-admin.php';
 }
 ?>

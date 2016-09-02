@@ -17,6 +17,10 @@ function accelerate_customize_register($wp_customize) {
       public function render_content() {
          //Add Theme instruction, Support Forum, Demo Link, Rating Link
          $important_links = array(
+            'view-pro' => array(
+               'link' => esc_url('http://themegrill.com/themes/accelerate-pro/'),
+               'text' => __('View Pro', 'accelerate'),
+            ),
             'theme-info' => array(
                'link' => esc_url('http://themegrill.com/themes/accelerate/'),
                'text' => __('Theme Info', 'accelerate'),
@@ -26,7 +30,7 @@ function accelerate_customize_register($wp_customize) {
                'text' => __('Support Forum', 'accelerate'),
             ),
             'documentation' => array(
-               'link' => esc_url('http://themegrill.com/theme-instruction/accelerate/'),
+               'link' => esc_url('http://docs.themegrill.com/accelerate/'),
                'text' => __('Documentation', 'accelerate'),
             ),
             'demo' => array(
@@ -150,6 +154,27 @@ function accelerate_customize_register($wp_customize) {
          'position_three' => __( 'Position Three: Display the Header image below main/primary menu.', 'accelerate' )
       )
    ));
+
+   // New Responsive Menu
+   $wp_customize->add_section('accelerate_new_menu', array(
+      'priority' => 4,
+      'title'    => __('Responsive Menu Style', 'accelerate'),
+      'panel'    => 'accelerate_header_options'
+   ));
+
+   $wp_customize->add_setting($accelerate_themename.'[accelerate_new_menu]', array(
+      'default'           => '1',
+      'type'              => 'option',
+      'capability'        => 'edit_theme_options',
+      'sanitize_callback' => 'accelerate_checkbox_sanitize'
+   ));
+
+   $wp_customize->add_control($accelerate_themename.'[accelerate_new_menu]', array(
+      'type'    => 'checkbox',
+      'label'   => __('Switch to new responsive menu.', 'accelerate'),
+      'section' => 'accelerate_new_menu'
+   ));
+
    // End of Header Options
 
    // Start of the Design Options
@@ -633,20 +658,6 @@ add_action('customize_register', 'accelerate_customize_register');
 
 /*****************************************************************************************/
 
-/**
- * Enqueue scripts for customizer
- */
-function accelerate_customizer_js() {
-   wp_enqueue_script( 'accelerate_customizer_script', get_template_directory_uri() . '/js/accelerate_customizer.js', array("jquery"), 'false', true  );
-
-   wp_localize_script( 'accelerate_customizer_script', 'accelerate_customizer_obj', array(
-
-      'pro' => __('View PRO version','accelerate')
-
-   ) );
-}
-add_action( 'customize_controls_enqueue_scripts', 'accelerate_customizer_js' );
-
 /*
  * Custom Scripts
  */
@@ -659,7 +670,6 @@ function accelerate_customizer_custom_scripts() { ?>
 	li#accordion-section-accelerate_important_links h3.accordion-section-title:hover { background-color: #77CC6D !important; color: #fff !important; }
 	li#accordion-section-accelerate_important_links h3.accordion-section-title:after { color: #fff !important; }
 	/* Upsell button CSS */
-	.themegrill-pro-info,
 	.customize-control-accelerate-important-links a {
 		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8fc800+0,8fc800+100;Green+Flat+%232 */
 		background: #008EC2;
@@ -675,7 +685,6 @@ function accelerate_customizer_custom_scripts() { ?>
 		padding: 8px 0;
 	}
 
-	.themegrill-pro-info:hover,
 	.customize-control-accelerate-important-links a:hover {
 		color: #ffffff;
 		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#006e2e+0,006e2e+100;Green+Flat+%233 */
