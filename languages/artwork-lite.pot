@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2016-08-19 17:22+0200\n"
-"PO-Revision-Date: 2016-08-19 17:22+0200\n"
+"POT-Creation-Date: 2016-09-02 16:22+0200\n"
+"PO-Revision-Date: 2016-09-02 16:22+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -12,7 +12,7 @@ msgstr ""
 "X-Generator: Poedit 1.5.7\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-KeywordsList: __;_e;_n;_x;esc_html__;esc_attr_e\n"
+"X-Poedit-KeywordsList: __;_e;_n;_x;esc_html__;esc_attr_e;esc_attr_x\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:15
@@ -127,6 +127,14 @@ msgstr ""
 
 #: footer.php:34
 msgid "WordPress"
+msgstr ""
+
+#: searchform.php:9
+msgid "Search..."
+msgstr ""
+
+#: searchform.php:9
+msgid "Search for:"
 msgstr ""
 
 #: classes/theme/class-tgm-plugin-activation.php:324

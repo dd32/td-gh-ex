@@ -1134,10 +1134,6 @@ button, input[type="button"], input[type="submit"] {
   margin: 0;
 }
 
-.widget.mp_artwork_contact_info + .widget.mp_artwork_contact_info {
-  margin-top: 0;
-}
-
 .nav-below {
   margin: 0;
   font-size: 1.250em;
@@ -1476,6 +1472,10 @@ button, input[type="button"], input[type="submit"] {
 .site-footer .widget .info-list {
   font-size: 1.125em;
   color: #ffffff;
+}
+.site-footer .widget.widget_search .search-field {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
 }
 
 .home .page-wrapper .entry-header a:hover, .home .page-wrapper .entry-header a:focus {
