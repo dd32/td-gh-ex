@@ -31,3 +31,5 @@ Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
 
 Images used in Beam Theme are free from all copyright restrictions (CC0).
 Sources may include stocksnap.io, pixabay.com, pexels.com, unsplash.com etc.
+Screenshot image Credits:
+https://pixabay.com/en/office-two-people-business-team-1209640/

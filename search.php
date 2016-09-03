@@ -37,8 +37,6 @@ get_header(); ?>
 
 					endif; 	
 
-					the_widget( 'WP_Widget_Recent_Posts' );
-
 					the_widget( 'WP_Widget_Tag_Cloud' ); 
 					?>
 

@@ -3,7 +3,8 @@
  *
  * Handles toggling the navigation menu for small screens.
  */
-jQuery( function() {
+/*jQuery( function() {*/
+jQuery( document ).ready( function( $ ) {    
 		// Search toggle.
 		jQuery( '.search-toggle' ).on( 'click', function( event ) {
 			var that    = jQuery( this ),

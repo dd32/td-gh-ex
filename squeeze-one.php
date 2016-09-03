@@ -11,18 +11,17 @@ get_header( 'squeeze' ); ?>
 	<div class="site-content-inner">
 
 		<div id="primary" class="content-area full-width-template">
-			
 				<main id="main" class="site-main">
-				<?php 
-				while ( have_posts() ) : the_post(); 
 					
-					get_template_part( 'content', 'page' );
-					
-				endwhile;
-				?>
+					<?php 
+					while ( have_posts() ) : the_post(); 
+
+						get_template_part( 'template-parts/content', 'page' );
+
+					endwhile;
+					?>
 		
 			</main><!-- #main -->
-			
 		</div><!-- #primary -->
 
 <?php 

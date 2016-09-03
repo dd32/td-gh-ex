@@ -3,8 +3,8 @@ Theme Name: Beam
 Theme URI: http://www.beamtheme.com
 Author: Emir Muracevic
 Author URI: http://www.beamtheme.com/author/emirowski/
-Description: <code>Beam</code> is a Multi-purpose, Responsive Wordpress Theme.
-Version: 0.8.6
+Description: Beam is a Clean, Fast, Responsive and Customizable WordPress theme. Ready (and recommended) to use with Child themes. Translatation ready. Features four layout types and five page templates.
+Version: 0.9
 License: GNU General Public License v3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: beam
@@ -608,9 +608,9 @@ a:active{
 
 .mobile-menu {
     padding: 0;
-    margin: 0;
-    width: 75%;
-    max-width: 75% !important;
+    margin-right: 2%;
+    width: 71%;
+    max-width: 71% !important;
     top: 50%;
     transform: translateY(-50%);
     z-index: 99999;
@@ -657,7 +657,10 @@ a:active{
 	margin: 0 0 0 1.25rem;
 }
 
-.main-navigation ul ul li {	margin: 0; }
+.main-navigation ul ul li {	
+    margin: 0; 
+    border-bottom: 1px solid #ccc;
+}
 
 .main-navigation li.menu-parent-item > a:after { /* If you don't want the arrows on the top level drop down, simply remove this style */	
 	font-family: 'FontAwesome';	
@@ -702,11 +705,11 @@ a:active{
 .main-navigation ul ul ul { left: 100%;	top: 0; }
 
 .main-navigation ul ul a {
-	width: 11.5em; /* Nav bar dropdown width */
+	width: 180px; /* Nav bar dropdown width */
 	font-size: 14px;
 }
 
-.main-navigation ul ul a { padding: 5px 10px; /* Padding around each dropdown menu option */ }
+.main-navigation ul ul a { padding: 10px 15px; /* Padding around each dropdown menu option */ }
 
 .main-navigation ul li:hover > ul {	display: block;}
 
@@ -802,6 +805,7 @@ a:active{
 	-webkit-box-shadow: 6px 0px 10px -7px rgba(1,1,1,0.25), -6px 0px 10px -7px rgba(1,1,1,0.25);
 	-moz-box-shadow: 6px 0px 10px -7px rgba(1,1,1,0.25), -6px 0px 10px -7px rgba(1,1,1,0.25);
 	box-shadow: 6px 0px 10px -7px rgba(1,1,1,0.25), -6px 0px 10px -7px rgba(1,1,1,0.25);
+    background-color: #ffffff;
 }
 
 .page-template-no-sidebar #primary {
@@ -823,12 +827,12 @@ a:active{
 	float: right;
 	width: 28.5%;
 	position: relative;
-	padding-top: 30px;
+	padding: 30px 20px 0 0;
 }
 
 .sticky { 
 	border: 1px solid #ccc; 
-	padding: 5px;
+	padding: 10px;
 }
 
 .hentry {
@@ -882,7 +886,7 @@ a:active{
 
 .site-branding {
 	padding: 0;	
-	margin: 0;
+	margin-left: 2%;
 	width: 25%;
 	max-width: 250px;
 	top: 50%;
@@ -893,7 +897,7 @@ a:active{
 }
 
 .site-main { 
-	padding: 30px 30px 30px 50px; 
+	padding: 5%;
 }
 
 
@@ -1014,7 +1018,7 @@ header.shrink {
 #secondary ul, #secondary ol,
 #tertiary ul, #tertiary ol,
 .entry-content-sidebar ul, .entry-content-sidebar ol {
-	margin: 0 0 1em 0;
+	margin: 1em 0 1em 0;
 	padding: 0 0 1em 0;
 }
 
@@ -1170,8 +1174,6 @@ object {
 }
 
 .comment {
-	font-size: 14px;
-	line-height: 1.4em;
 	padding: 10px;
 	margin-bottom: 20px;
 }
@@ -1311,7 +1313,6 @@ span .author {
 }
 
 .widget-title {
-	font-family: sans-serif, Arial;
 	font-size: 24px;
 	line-height: 2.2;
 	text-transform:uppercase;
@@ -1364,6 +1365,28 @@ footer aside.widget li {
 	list-style: disc outside none;
 }
 
+.widget-area .widget.widget_beam_posts_widget li a:before {
+    content: none;  /* Removes FontAwesome arrow icon */
+}
+
+.widget-area .widget.widget_beam_posts_widget li a {
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.widget-area .widget.widget_beam_posts_widget .post-date {
+    color: #2f2f2f;
+    font-weight: 300;
+}
+
+#secondary .widget-title::after {
+    background-color: #3c763d;
+    content: "";
+    width: 55px;
+    display: block;
+    height: 3px;
+    bottom: -10px;
+}
 
 /* =Font Awesome
 ----------------------------------------------- */
@@ -1371,9 +1394,7 @@ footer aside.widget li {
 	font: normal normal normal 14px/1 FontAwesome;
 }
 
-.fa-link { margin: 0 15px; }
 a i.fa-link { text-decoration: none; }
-
 
 .entry-meta .fa-tags,
 .entry-meta .fa-pencil { margin-left: 15px; }
@@ -1391,25 +1412,23 @@ footer.entry-meta .fa-permalink a { text-decoration: none; margin-right: 15px; p
 ----------------------------------------------- */
 
 .featured-image {
-	max-width: 100%;
 	overflow: hidden;
-	clear: both;
-	text-align: center;
-	padding-bottom: 20px;
-    max-width: 124% !important;
-    margin-left: -90px;
+    clear: both;
+    text-align: center;
+    padding-bottom: 20px;
+    max-width: 110% !important;
+    margin: -5.5%;
+    margin-bottom: 10px;
 }
 
 .logo { margin: 10px 15px; }
 
 .site-info { 
 	clear: both; 
-	padding: 20px; 
+	padding: 20px 0; 
 	text-align: center; 
 	font-size: small;
 }
-
-.site-info a { color: #fafafa; }
 
 .site-info p { font-weight: 800; }
 
@@ -1431,7 +1450,7 @@ footer.entry-meta .fa-permalink a { text-decoration: none; margin-right: 15px; p
 
 /* Colors */
 
-/* Conflicts with Customizer Site Background Color
+/*  
 site {
     background: #f1f1f1;
 }
@@ -1454,6 +1473,8 @@ site {
 .site-footer {
     border-top: 1px solid #ccc;
 }
+
+.site-info a { color: #fafafa; }
 
 a,
 a:hover,
@@ -1553,14 +1574,12 @@ blockquote { background: rgba(235, 241, 231, 0.8); }
 	
 	.sidebar-right .entry-content-new,
 	.entry-content-new  {
-		padding: 30px;
+		padding: 5px;
 	}
 	
 	.sidebar-left .entry-content-new {
 		padding-left: 0;
 	}
-	
-
 }
 
 @media screen and (min-width: 980px) {	
@@ -1588,7 +1607,7 @@ blockquote { background: rgba(235, 241, 231, 0.8); }
 	
 	}
 	.site-branding {
-		margin: 0;
+		margin: 1%;
 	}
 }
 
@@ -1605,7 +1624,7 @@ blockquote { background: rgba(235, 241, 231, 0.8); }
 	.double-sidebar #secondary {
 		float: left;
 		margin-left: -320px;
-		width: 310px;
+		width: 300px;
 		position: relative;
 	}
 	
@@ -1635,9 +1654,16 @@ blockquote { background: rgba(235, 241, 231, 0.8); }
 	}
 }
 
+.menu-toggle {
+	display: none;
+	cursor: pointer;
+}
 
 /* =max-width: 768px -------------------- */
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
+	body {
+		font-size: 14px;
+	}
 
 	#primary {
 		float:none;
@@ -1665,7 +1691,6 @@ blockquote { background: rgba(235, 241, 231, 0.8); }
 	.site-branding {
 		width: 50%;
 		max-width: 50% !important;
-		margin: 0;
 		float: left;
 	}
 
@@ -1710,20 +1735,6 @@ blockquote { background: rgba(235, 241, 231, 0.8); }
 	}
 	
 	ul { list-style-position: inside; }
-}
-
-
-.menu-toggle {
-	display: none;
-	cursor: pointer;
-}
-
-
-@media screen and (max-width: 768px) {
-	
-	body {
-		font-size: 14px;
-	}
 	
 	.menu-toggle,
 	.main-navigation.toggled .nav-menu {
@@ -1834,6 +1845,7 @@ blockquote { background: rgba(235, 241, 231, 0.8); }
 	.featured-image {
 		max-width: 100% !important;
     	margin-left: 0;
+		padding-top: 30px;
 	}
 
 }

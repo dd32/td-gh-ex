@@ -27,38 +27,40 @@
 				<div class="site-branding">
 
 				<?php 
-					
-				// Display the Custom Logo
-				the_custom_logo();
+					// No Custom Logo, just display the site's name
+					if (!has_custom_logo()) {
+						?>
+						<h4><?php bloginfo('name'); ?></h4>
+						<?php
+							$description = get_bloginfo( 'description', 'display' );
+							if ( $description || is_customize_preview() ) : ?>
 
-				// No Custom Logo, just display the site's name
-				if (!has_custom_logo()) {
-					?>
-					<h4><?php bloginfo('name'); ?></h4>
-					<?php
-						$description = get_bloginfo( 'description', 'display' );
-						if ( $description || is_customize_preview() ) : ?>
+							<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+						<?php 
+							endif;
+					} else {
+						// Display the Custom Logo
+						the_custom_logo();
+					}
 
-						<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-					<?php 
-						endif;
-				}
-
-					?>
+				?>
 				</div><!-- #site-branding -->
 
 				<?php 
 				$opt_menu_visibility = get_theme_mod( 'opt_menu_visibility', 'option-1' );
-				if ($opt_menu_visibility == 'option-1') {
+                
+                if ($opt_menu_visibility !== '') {
+				
+                if ($opt_menu_visibility == 'option-1') {
 				?>
 
-				<button class="menu-toggle button"><?php _e('Responsive Menu', 'beam' ); ?></button>
+				<button class="menu-toggle menu-button"><?php _e('Responsive Menu', 'beam' ); ?></button>
 
 				<div class="mobile-menu">
 					<?php $args = array(
 							//'theme_location' => 'primary',
 							'container'      => '',
-							'items_wrap'     => '<ul class="nav-menu">%3$s</ul>',
+							'items_wrap'     => '<ul class="menu">%3$s</ul>',
 							); 
 					?>
 					<nav id="site-navigation" class="main-navigation clearfix">
@@ -67,7 +69,7 @@
 				</div>	
 
 
-				<?php } ?>
+				<?php } } ?>
 
 			</div><!-- centeralign-header -->
 		</header><!-- #header-->

@@ -44,12 +44,6 @@
 		$categories_list = get_the_category_list( __( ', ', 'beam' ) );
 		if ( $categories_list && beam_categorized_blog() ) :
 		?>
-
-		<span class="fa fa-permalink">
-			<?php
-				the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a><i class="fa fa-link"></i>' );
-			?>
-		</span>
 		
 		<span class="cat-links">
 		<i class="fa fa-folder-open"></i> <?php printf( __( '%1$s', 'beam' ), $categories_list ); ?>
