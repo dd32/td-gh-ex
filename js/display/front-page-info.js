@@ -8,13 +8,16 @@ jQuery(document).ready( function(){
 										jQuery("#page")
 											.animate({opacity:"0.1"},100);
 										jQuery("#infoHolder")
-											.animate({opacity:"0.7"},200);
+											.animate({opacity:"1"},200);
 										jQuery("div#infoBar")
 											.fadeIn(200);
 										jQuery("#infoClose")
 											.fadeIn(200);
 								}
 							);
+				jQuery("#page")
+					.css("position","fixed")
+					.css("overflow","hidden");
 			}
 		);
 		
@@ -32,6 +35,9 @@ jQuery(document).ready( function(){
 													.animate({opacity:"1"},200);
 											}
 										);
+							jQuery("#page")
+								.css("position","relative")
+								.css("overflow","scroll");
 						}
 					);
 				

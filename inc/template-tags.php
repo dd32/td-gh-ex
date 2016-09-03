@@ -12,7 +12,7 @@ function antonine_licence(){
 			case 'cc-by-nc-sa' : $text = 'Creative Commons CC-BY-NC-SA'; $url = "https://creativecommons.org/licenses/by-nc-sa/4.0/"; break;		
 			case 'cc-by-nc-nd' : $text = 'Creative Commons CC-BY-NC-ND'; $url = "https://creativecommons.org/licenses/by-nc-nd/4.0/"; break;
 		}
-		?><p><a rel="license" href="<?PHP echo $url; ?>"><?PHP echo x("license","antonine","Content licensed as") . " " . $text; ?></a></p><?PHP
+		?><p><a rel="license" href="<?PHP echo $url; ?>"><?PHP echo __("license","antonine","Content licensed as") . " " . $text; ?></a></p><?PHP
 	}
 }
 

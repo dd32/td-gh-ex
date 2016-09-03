@@ -25,5 +25,5 @@
 			</div>
 			<button id="basic_accessibility_widget_default"><?PHP echo __("Default Settings", "antonine"); ?></button>
 		</div>
-	</div>
-</form>
+	</form>
+</div>

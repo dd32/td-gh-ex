@@ -1,11 +1,11 @@
 <?PHP
 	$post = get_query_var('post');
 ?>
-<article id="post-<?php echo $post->ID; ?>" <?php post_class("home-page infinite_scroll"); ?> resource="?<?php echo $post->ID; ?>#id" vocab="http://schema.org/" typeof="Blog">
-	<header class="entry-header">
-		<h2 class="entry-title home-align-title">
+<article random="hello" id="post-<?php echo $post->ID; ?>" <?php post_class("home-page infinite_scroll"); ?> resource="?<?php echo $post->ID; ?>#id" vocab="http://schema.org/" typeof="Blog">
+	<header class="entry-header title-holder">
+		<p class="entry-title home-align-title">
 			<a href="?p=<?PHP echo $post->ID; ?>" rel="bookmark"><?PHP echo $post->post_title; ?></a>
-		</h2>
+		</p>
 	</header>
 	<div class="content-holder">
 		<div class="entry-content-index home-align">
@@ -19,7 +19,7 @@
 		</div>
 	</div><!-- .entry-content -->	
 	<div class="read-more-holder preview_link" target="<?PHP echo $post->ID; ?>">
-		<div class="entry-read-more home-align 	">
+		<div class="entry-read-more home-align">
 			<?PHP echo __("Read more", "antonine"); ?>
 		</div>
 	</div>

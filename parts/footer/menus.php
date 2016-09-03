@@ -25,7 +25,6 @@
 <?PHP
 	get_template_part('parts/menustrip/share/standard');
 ?>
-</div>
 <?PHP
 	}
 	if(get_theme_mod("search")=="on"){

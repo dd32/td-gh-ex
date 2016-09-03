@@ -25,13 +25,22 @@ jQuery(document).ready( function(){
 						jQuery("#filesSpace")
 							.html(response);
 					}
-				);			
+				);
+
+				jQuery("#page")
+					.css("position","fixed")
+					.css("overflow","hidden");			
 							
 			}
 		);
 		
 	jQuery("p#filesClose")
 		.on("click", function(){
+
+				jQuery("#page")
+					.css("position","relative")
+					.css("overflow","scroll");
+
 				antonine_aria("false");
 				jQuery("#filesBar")
 					.fadeOut(250,

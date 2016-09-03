@@ -8,7 +8,7 @@ jQuery(document).ready( function(){
 										jQuery("#page")
 											.animate({opacity:"0.1"},100);
 										jQuery("#filterHolder")
-											.animate({opacity:"0.7"},200);
+											.animate({opacity:"1"},200);
 										jQuery("#filterClose")
 											.fadeIn(200);
 										jQuery("div#filterBar")

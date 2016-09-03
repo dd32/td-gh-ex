@@ -15,6 +15,10 @@ jQuery(document).ready( function(){
 											.fadeIn(200);
 								}
 							);
+
+				jQuery("#page")
+					.css("position","fixed")
+					.css("overflow","hidden");
 			}
 		);
 		
@@ -34,6 +38,10 @@ jQuery(document).ready( function(){
 										);
 						}
 					);
+
+				jQuery("#page")
+					.css("position","relative")
+					.css("overflow","scroll");
 				
 			}
 		);

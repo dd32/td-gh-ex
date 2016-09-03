@@ -112,6 +112,10 @@ div#searchBar{
 	padding:10px;
 }
 
+#searchform{
+	text-align: center;
+}
+
 div.holder{
 	height: 100%;
 	width: 100%;
@@ -289,6 +293,7 @@ div#previewHolderContent{
 }
 
 .home article,
+.search article,
 .archive article{
 	left: -50000px;
 	display: table;
@@ -1068,11 +1073,10 @@ html body .sp-replacer{
 }		
 
 #infoform{
-	width: 85%;
-	height: 70%;
+	width: 80%;
+	height: 60%;
 	overflow-y: scroll;
-	top: 10%;
-	position: relative;
+	position:fixed;
 }
 
 #basic_accessibility_widget_options label,
@@ -1104,6 +1108,15 @@ html body .sp-replacer{
 
 #shareButtons a{
 	padding: 0px 10px;
+}
+
+#commentsSpace blockquote{
+	margin: 5px 0 10px 0;
+}
+
+.no-posts{
+	width:75%;
+	margin: 0 12.5%;
 }
 	
 .sticky{}

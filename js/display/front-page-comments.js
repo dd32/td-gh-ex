@@ -10,14 +10,14 @@ jQuery(document).ready( function(){
 										jQuery("#page")
 											.animate({opacity:"0.1"},100);
 										jQuery("#commentsHolder")
-											.animate({opacity:"0.7"},200);
+											.animate({opacity:"1.0"},200);
 										jQuery("#commentsClose")
 											.fadeIn(200);
 										jQuery("div#commentsBar")
 											.fadeIn(200);
 								}
 							);
-							
+				
 				var data = {
 							'action': 'antonine_comments',
 							'nonce': antonine_comments.nonce
@@ -28,12 +28,22 @@ jQuery(document).ready( function(){
 							.html(response);
 					}
 				);
+
+				jQuery("#page")
+					.css("position","fixed")
+					.css("overflow","hidden");
+			
 			}
 		);
 		
 	jQuery("p#commentsClose")
 		.on("click", function(){
 				antonine_aria("false");
+
+				jQuery("#page")
+					.css("position","relative")
+					.css("overflow","scroll");
+
 				jQuery("#commentsBar")
 					.fadeOut(250,
 						function(){
@@ -45,6 +55,9 @@ jQuery(document).ready( function(){
 													.animate({opacity:"1"},200);
 											}
 										);
+							jQuery("#page")
+								.css("position","relative")
+								.css("overflow","scroll");
 						}
 					);
 				

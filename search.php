@@ -2,7 +2,7 @@
 get_header(); 
 $posts_total = 0;
 
-
+if(have_posts()){
 ?>	
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main"><?PHP
@@ -18,5 +18,19 @@ $posts_total = 0;
 		?></main><!-- .site-main -->
 		<div id="scroll_bottom" scroll="on" page="<?PHP echo $posts_total; ?>" total_posts="<?PHP echo $posts_total; ?>"></div>
 	</div><!-- .content-area -->
-
+<?PHP
+}else{
+	?><div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+			<div class="no-posts">
+				<?PHP
+					echo __("Sorry, nothing found. Try again?","antonine");
+				?>
+				<?PHP
+					get_template_part("parts/search/search-form");
+				?>
+			</div>
+		</main>
+	</div><?PHP
+}?>
 <?php get_footer(); ?>

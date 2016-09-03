@@ -90,6 +90,7 @@
 					'post_type' => 'post',
 					'posts_per_page' => - 1,
 					'order_by' => 'date',
+					'post_status' => 'publish',
 					'post__not_in' => $_POST['read']
 				);
 

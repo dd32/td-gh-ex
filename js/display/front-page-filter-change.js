@@ -84,23 +84,18 @@ jQuery(document).ready( function(){
 																				scrolling = true;
 																							
 																				jQuery('#scroll_bottom').attr("scroll","off");
-																																												
-																				antonine_article_align();
-
-																				antonine_preview_link();
-																																
+																																				antonine_preview_link();										
 																				jQuery( "article")
 																					.each(	
 																						function(index,value){
 																							jQuery(value)
 																								.css("left","0px");
 																							}
-																						);
-																						
+																						);																				
 																				jQuery("#main")
 																					.fadeIn(200);
-																				
-																			}
+																						
+				antonine_article_align();																			}
 																		);
 																	}
 																);

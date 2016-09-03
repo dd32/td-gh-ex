@@ -8,18 +8,27 @@ jQuery(document).ready( function(){
 										jQuery("#page")
 											.animate({opacity:"0.1"},100);
 										jQuery("#widgetsHolder")
-											.animate({opacity:"0.7"},200);
+											.animate({opacity:"1"},200);
 										jQuery("div#widgetsBar")
 											.fadeIn(200);
 										jQuery("#widgetsClose")
 											.fadeIn(200);
 								}
 							);
+
+				jQuery("body")
+					.css("position","fixed")
+					.css("overflow","hidden");
 			}
 		);
 		
 	jQuery("p#widgetsClose")
 		.on("click", function(){
+
+				jQuery("body")
+					.css("position","relative")
+					.css("overflow","scroll");
+
 				antonine_aria("false");
 				jQuery("#widgetsBar")
 					.fadeOut(250,

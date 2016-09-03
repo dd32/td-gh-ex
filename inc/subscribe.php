@@ -12,7 +12,7 @@
 			add_action("wp_ajax_antonine_subscribe_process", array($this, "subscribe_process"));
 			add_action("wp_ajax_nopriv_antonine_unsubscribe_process", array($this, "unsubscribe_process"));
 			add_action("wp_ajax_antonine_unsubscribe_process", array($this, "unsubscribe_process"));
-			add_action("publish_post", array($this, "handle_subscription_publish"));
+			add_action("transition_post_status", array($this, "handle_subscription_publish"), 10, 3);
 		}
 		
 		function mail_from( $email )
@@ -25,35 +25,38 @@
 			return get_bloginfo('name');
 		}
 		
-		function handle_subscription_publish($post_id){
-			global $wpdb;
-			$table_name = $wpdb->prefix . "antonine_subscribe";
-			$results = $wpdb->get_results( "SELECT id, email_address FROM " . $table_name . " WHERE verify = ''" );
-			foreach($results as $result){
-				$random = bin2hex(mcrypt_create_iv(22, MCRYPT_DEV_URANDOM));
-				$hash = password_hash($result->email_address, PASSWORD_BCRYPT);
-				$wpdb->update($table_name, array("unsubscribe" => $random . $hash), array("id" => $result->id));
-				
-				$unsubscribe = $random . $hash;
-				
-				add_filter( 'wp_mail_content_type', array($this, 'set_content_type') );
-				add_filter( 'wp_mail_from', array($this, 'mail_from') );
-				add_filter( 'wp_mail_from_name', array($this, 'mail_from_name') );
-								
-				$unsubscribe = site_url() . "/?unsub=" . $unsubscribe;
-				
-				$post = get_post($post_id);
-				
-				$email = "<p>" . __("Hello", 'antonine') . ",</p><p>" . __("There is new content on", "antonine") . " " . get_bloginfo('name') . "</p>.";
-				$email .= "<p>" . __("Here is a link to the new post", "antonine") . " <a href='" . get_the_permalink($post_id) . "'>" . $post->post_title . "</a></p>.";
-				$email .= "<p><a href='" . $unsubscribe . "'>" . __("Unsubscribe", 'antonine') . "</a></p>"; 
-				$email .= "<p>" . __("Thanks", "antonine") . "</p>"; 
-				
-				wp_mail($result->email_address, "[" . get_bloginfo('name') . "] : " .  __("New Post", 'antonine') . " " . $post->post_title, $email);
-				
-				remove_filter( 'wp_mail_content_type', array($this, 'set_content_type') );
-				remove_filter( 'wp_mail_from', array($this, 'mail_from') );
-				remove_filter( 'wp_mail_from_name', array($this, 'mail_from_name') );				
+		function handle_subscription_publish($new_status, $old_status, $post_id){
+			
+			if ( 'publish' === $new_status && 'publish' !== $old_status ){
+				global $wpdb;
+				$table_name = $wpdb->prefix . "antonine_subscribe";
+				$results = $wpdb->get_results( "SELECT id, email_address FROM " . $table_name . " WHERE verify = ''" );
+				foreach($results as $result){
+					$random = bin2hex(mcrypt_create_iv(22, MCRYPT_DEV_URANDOM));
+					$hash = password_hash($result->email_address, PASSWORD_BCRYPT);
+					$wpdb->update($table_name, array("unsubscribe" => $random . $hash), array("id" => $result->id));
+					
+					$unsubscribe = $random . $hash;
+					
+					add_filter( 'wp_mail_content_type', array($this, 'set_content_type') );
+					add_filter( 'wp_mail_from', array($this, 'mail_from') );
+					add_filter( 'wp_mail_from_name', array($this, 'mail_from_name') );
+									
+					$unsubscribe = site_url() . "/?unsub=" . $unsubscribe;
+					
+					$post = get_post($post_id);
+					
+					$email = "<p>" . __("Hello", 'antonine') . ",</p><p>" . __("There is new content on", "antonine") . " " . get_bloginfo('name') . "</p>.";
+					$email .= "<p>" . __("Here is a link to the new post", "antonine") . " <a href='" . get_the_permalink($post_id) . "'>" . $post->post_title . "</a></p>.";
+					$email .= "<p><a href='" . $unsubscribe . "'>" . __("Unsubscribe", 'antonine') . "</a></p>"; 
+					$email .= "<p>" . __("Thanks", "antonine") . "</p>"; 
+					
+					wp_mail($result->email_address, "[" . get_bloginfo('name') . "] : " .  __("New Post", 'antonine') . " " . $post->post_title, $email);
+					
+					remove_filter( 'wp_mail_content_type', array($this, 'set_content_type') );
+					remove_filter( 'wp_mail_from', array($this, 'mail_from') );
+					remove_filter( 'wp_mail_from_name', array($this, 'mail_from_name') );				
+				}
 			}
 		}
 		

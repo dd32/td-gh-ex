@@ -38,7 +38,7 @@
 	html .tag #main article .content-holder,
 	html .search #main article .content-holder,
 	html .author #main article .content-holder{
-    	width: 90%;
+    		width: 90%;
 		margin: 1% 5%;
 		display: inline-block;
 		height: auto;
@@ -78,24 +78,21 @@
 		font-size: 30px;
 	}
 	
-	html body .holderbar{
-		width: 80%;
-		height: 80%;
-		margin: 10%;
-		position: fixed;
-		top: 10%;
-	}
-	
 	html #commentsSpace, 
 	html #updatesSpace, 
 	html #filesSpace, 
 	html #widgetsSpace{
-		height: 90%;
+		height: 80%;
 	}
 	
 	html #filesSpace div{
 		width: 100%;
 		height: 100px;
+	}
+
+	html div.holderbar{
+		left:10%;
+		width: 80%;
 	}
 	
 	html #filesSpace div p{
@@ -122,7 +119,99 @@
 	html .home article.content_preview .content-holder, 
 	html .search article.content_preview .content-holder, 
 	html .archive article.content_preview .content-holder {
-		width: 90%;
+		width: 80%;
+	}
+
+	html .home article.content_preview .title-holder, 
+	html .search article.content_preview .title-holder, 
+	html .archive article.content_preview .title-holder {
+		width: 60%;
+		margin: 0px;
+	}
+
+	html .home article.content_preview .title-holder #previewTitle, 
+	html .search article.content_preview .title-holder #previewTitle, 
+	html .archive article.content_preview .title-holder #previewTitle {
+		width: 70%;
+		margin: 10px 0px;
+	}
+
+	html .single #comments p.comment-form-author #author, 
+	html .home #comments p.comment-form-author #author,
+	html #comments input#email,
+	html .single p.comment-form-url #url, 
+	html .home p.comment-form-url #url{
+		margin: 0px;
+		clear: both;
+		width: 75%;
+	}
+
+	html #searchform{
+		padding:20px;
+		text-align:center
+	}
+
+	html #searchform form input[type=text]{
+		font-size:16px;
+		margin: 5px 0px;
+	}
+
+	html p.holderclose{
+		right: 11%;
+	}
+
+	html .holderbar div{
+		z-index:0;
+		overflow-y:scroll;
 	}
 	
+	html #subscribesform #emailaddress{
+		width:75%;
+	}
+
+	html div#searchBar {
+    		top: 25%;
+    		height: 30%;
+	}
+
+	html #infoform{
+		width: 85%;
+		overflow-y: scroll;
+		position:fixed;
+		top:15%;
+		left:15%;
+	}
+
+	html #widgetsBar{
+		width: 85%;
+		overflow-y: scroll;
+		position:fixed;
+		top:15%;
+		left:7.5%;
+	}
+
+	html #commentsSpace,
+	html #widgetsSpace{
+		top: 30%;
+	}
+
+	html #widgets-holder h2{
+		width: 60%;
+   		margin-left: 15%;
+    		text-align: center;
+	}
+
+	.widget-title-space{
+		width:60%;
+		text-align:center;
+	}
+
+	html #widgetsBar > h2{
+		width: 80%;
+	}
+
+	html .paginationNumbers{
+		width:80%;
+		margin:0 10%;
+	}
 }
