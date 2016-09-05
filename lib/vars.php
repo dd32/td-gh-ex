@@ -10,6 +10,16 @@ if ( !defined( 'ABSPATH' ) ) {
 	exit;
 }
 /**
+ * add sidebar height with inline style from jQuery for equal height sidebar.
+ * When false, Raindrops will use CSS equal height settings
+ * default false
+ * value bool, true or false
+ * 
+ */
+if ( ! isset( $raindrops_add_inline_style_for_sidebars ) ) {
+	$raindrops_add_inline_style_for_sidebars = false;
+}
+/**
  * Auto load minified CSS and javascript files
  * file naming rule
  *    css filename + $raindrops_minified_suffix + .css
