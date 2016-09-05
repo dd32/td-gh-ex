@@ -17,8 +17,6 @@ function aedificator_customize_register( $wp_customize ) {
 	
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	$wp_customize->remove_control('header_textcolor');
-	$wp_customize->remove_control('display_header_text');	
 	
 
     // Add General Sections
@@ -129,7 +127,7 @@ function aedificator_customize_register( $wp_customize ) {
 	));		
 
 	$wp_customize->add_setting('pwt_slider_button_text_1',array(
-			'default'	=> __('','aedificator'),
+			'default'	=> '',
 			'sanitize_callback'	=> 'sanitize_text_field'
 	));
 	
@@ -190,18 +188,6 @@ function aedificator_customize_register( $wp_customize ) {
 			'section'	=> 'barbelowslider',
 			'setting'	=> 'pwt_slider_bar_below_button_text'
 	));		
-	
-	$wp_customize->add_setting('pwt_slider_bar_below_button_link',array(
-			'default'	=> __('#','aedificator'),
-			'sanitize_callback'	=> 'esc_url_raw'
-	));
-	
-	$wp_customize->add_control('pwt_slider_bar_below_button_link',array(
-			'label'	=> __('Slider Bar Below Button Link','aedificator'),
-			'section'	=> 'barbelowslider',
-			'setting'	=> 'pwt_slider_bar_below_button_link'
-	));		
-	
 
 	$wp_customize->add_setting('pwt_who_box1',array(
 			'default'	=> 0,
@@ -265,18 +251,7 @@ function aedificator_customize_register( $wp_customize ) {
 			'label'	=> __('Bar History Button Text','aedificator'),
 			'section'	=> 'history',
 			'setting'	=> 'pwt_history_button_text'
-	));		
-	
-	$wp_customize->add_setting('pwt_history_button_link',array(
-			'default'	=> __('#','aedificator'),
-			'sanitize_callback'	=> 'esc_url_raw'
-	));
-	
-	$wp_customize->add_control('pwt_history_button_link',array(
-			'label'	=> __('Bar History Button Link','aedificator'),
-			'section'	=> 'history',
-			'setting'	=> 'pwt_history_button_link'
-	));		
+	));				
 	
 }
 add_action( 'customize_register', 'aedificator_customize_register' );
@@ -284,8 +259,3 @@ add_action( 'customize_register', 'aedificator_customize_register' );
 function aedificator_sanitize_integer( $input ) {
     if( is_numeric( $input ) ) {  return intval( $input ); }
 }
-
-function aedificator_custom_customize_enqueue() {
-	wp_enqueue_script( 'aedificator-custom-customize', get_template_directory_uri() . '/assets/js/custom-customize.js', array( 'jquery', 'customize-controls' ), false, true );
-}
-add_action( 'customize_controls_enqueue_scripts', 'aedificator_custom_customize_enqueue' );

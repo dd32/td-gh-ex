@@ -30,6 +30,7 @@
 									<h2><?php the_title(); ?></h2>
 									<?php the_content(); ?>
 									<p class="tags"><span><?php _e( 'Tags:', 'aedificator' ); ?></span> <?php the_tags(); ?></p>
+                                    <p><?php wp_link_pages(); ?></p>
 								</div>
 								<div class="comments">
 									<?php comments_template(); ?>

@@ -29,7 +29,7 @@
 						<div class="column-6-12 right">
 							<div class="gutter">
 								<p class="contact-information">
-								    <a class="icon-envelope" href="mailto:<?php echo esc_html(get_theme_mod('pwt_header_email',__( 'info@example.com', 'aedificator' ))); ?>"><?php echo esc_html(get_theme_mod('pwt_header_email',__( 'info@example.com', 'aedificator' ))); ?></a>
+								    <a class="icon-envelope" href="mailto:<?php echo antispambot(sanitize_email(get_theme_mod('pwt_header_email',__( 'info@example.com', 'aedificator' )))); ?>"><?php echo antispambot(sanitize_email(get_theme_mod('pwt_header_email',__( 'info@example.com', 'aedificator' )))); ?></a>
 									<a class="icon-phone" href="tel:<?php echo esc_html(get_theme_mod('pwt_header_phone',__( '+80 12-878-587', 'aedificator' ))); ?>"><?php echo esc_html(get_theme_mod('pwt_header_phone',__( '+1 802-878-587', 'aedificator' ))); ?></a>
 								</p>
 							</div>

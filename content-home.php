@@ -24,7 +24,7 @@
 			</div>
 		</div>
 	</div>	
-	<?php endwhile; wp_reset_query(); ?>
+	<?php endwhile; wp_reset_postdata(); ?>
 	<?php } ?>
 	<?php 
 	if( get_theme_mod('pwt_slider_content2')) { 
@@ -44,7 +44,7 @@
 			</div>
 		</div>
 	</div>	
-	<?php endwhile; wp_reset_query(); ?>
+	<?php endwhile; wp_reset_postdata(); ?>
 	<?php } ?>
 </div> <!--  END welcome-carousel  -->
 <?php }  ?>
@@ -59,13 +59,13 @@ while( $queryslider->have_posts() ) : $queryslider->the_post();
 			<div class="get-quote-block" <?php if ( has_post_thumbnail() && ! post_password_required() ) : ?> style="background-image: url('<?php echo esc_url(wp_get_attachment_url( get_post_thumbnail_id($post->ID))); ?>')"  <?php  endif; ?>>
 				<div class="section-overlay">
 					<p><?php the_title(); ?></p>
-					<a class="button" href="<?php echo esc_url(get_theme_mod('pwt_slider_bar_below_button_link')); ?>"><?php echo esc_html(get_theme_mod('pwt_slider_bar_below_button_text',__( 'get a quote', 'aedificator' ))); ?></a>
+					<a class="button" href="<?php the_permalink(); ?>"><?php echo esc_html(get_theme_mod('pwt_slider_bar_below_button_text',__( 'get a quote', 'aedificator' ))); ?></a>
 				</div>
 			</div>
 		</div>
 	</div> <!--  END container  -->
 </div> <!--  END section-get-quote  -->		
-<?php endwhile; wp_reset_query(); ?>
+<?php endwhile; wp_reset_postdata(); ?>
 <?php } ?>
 <div class="section section-we-are">
 	<div class="container">
@@ -91,7 +91,7 @@ while( $queryslider->have_posts() ) : $queryslider->the_post();
 					</article>
 				</div>
 			</div>			
-			<?php endwhile; wp_reset_query(); ?>
+			<?php endwhile; wp_reset_postdata(); ?>
 			<?php } ?>
 			<?php 
 			if( get_theme_mod('pwt_who_box2')) { 
@@ -114,7 +114,7 @@ while( $queryslider->have_posts() ) : $queryslider->the_post();
 					</article>
 				</div>
 			</div>			
-			<?php endwhile; wp_reset_query(); ?>
+			<?php endwhile; wp_reset_postdata(); ?>
 			<?php } ?>
 			<?php 
 			if( get_theme_mod('pwt_who_box3')) { 
@@ -137,7 +137,7 @@ while( $queryslider->have_posts() ) : $queryslider->the_post();
 					</article>
 				</div>
 			</div>			
-			<?php endwhile; wp_reset_query(); ?>
+			<?php endwhile; wp_reset_postdata(); ?>
 			<?php } ?>			
 		</div>
 	</div> <!--  END container  -->
@@ -154,13 +154,13 @@ while( $queryslider->have_posts() ) : $queryslider->the_post();
 				<div class="starting-point">
 					<h4><?php the_title(); ?></h4>
 					<p class="italic"><?php the_excerpt(); ?></p>					
-					<a class="button" href="<?php echo esc_url(get_theme_mod('pwt_history_button_link')); ?>"><?php echo esc_html(get_theme_mod('pwt_history_button_text',__( 'Contact Us', 'aedificator' ))); ?></a>
+					<a class="button" href="<?php the_permalink(); ?>"><?php echo esc_html(get_theme_mod('pwt_history_button_text',__( 'Contact Us', 'aedificator' ))); ?></a>
 				</div>
 			</div>
 		</div> <!--  END container  -->
 	</div> <!--  END section-overlay  -->
 </section> <!--  END section-starting-point  -->		
-<?php endwhile; wp_reset_query(); ?>
+<?php endwhile; wp_reset_postdata(); ?>
 <?php } ?>
 <?php while (have_posts()) : the_post(); ?>  
 <div class="section section-we-are">

@@ -25,7 +25,6 @@ get_header(); ?>
 						<div class="article-text">
 							<?php the_content(); ?>	 															
 						</div>
-						<p><?php posts_nav_link(); ?></p>
 						<div class="padinate-page"><?php wp_link_pages(); ?></div> 						
 					</article>
 					<div class="comments">
