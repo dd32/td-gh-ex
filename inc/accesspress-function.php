@@ -30,7 +30,7 @@ function accesspress_store_widgets_init() {
 		'name'          => __( 'Shop Sidebar', 'accesspress-store' ),
 		'id'            => 'shop',
 		'description'   => '',
-		'before_widget' => '<div id="%1$s" class="%2$s '.accesspress_count_widgets( 'shop' ).'">',
+		'before_widget' => '<div id="%1$s" class="widget %2$s '.accesspress_count_widgets( 'shop' ).'">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<span class="widget-title">',
 		'after_title'   => '</span>',
@@ -40,7 +40,7 @@ function accesspress_store_widgets_init() {
 		'name'          => __( 'Header Call To Box', 'accesspress-store' ),
 		'id'            => 'header-callto-action',
 		'description'   => '',
-		'before_widget' => '<div id="%1$s" class="%2$s '.accesspress_count_widgets( 'header-callto' ).'">',
+		'before_widget' => '<div id="%1$s" class="widget %2$s '.accesspress_count_widgets( 'header-callto' ).'">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<span class="widget-title">',
 		'after_title'   => '</span>',
@@ -50,7 +50,7 @@ function accesspress_store_widgets_init() {
 		'name'          => __( 'AP: Promo Widget 1', 'accesspress-store' ),
 		'id'            => 'promo-widget-1',
 		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s '.accesspress_count_widgets( 'promo-widget-1' ).'">',
+		'before_widget' => '<aside id="%1$s" class="widget widget %2$s '.accesspress_count_widgets( 'promo-widget-1' ).'">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
@@ -109,7 +109,7 @@ function accesspress_store_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'AP: Promo Widget 3', 'accesspress-store' ),
 		'id'            => 'promo-widget-3',
-		'description'   => 'You can use widget AP: Icon Set which is what it is designed that it will horizontally allign with 3 row',
+		'description'   => 'You can use widget AP: Icon text block which is what it is designed that it will horizontally allign with 3 row',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s '.accesspress_count_widgets( 'promo-widget-3' ).'">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
@@ -161,7 +161,7 @@ add_action( 'widgets_init', 'accesspress_store_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
- */
+*/
 function accesspress_store_scripts() {
 
 	$font_args = array(
@@ -202,8 +202,7 @@ add_action( 'wp_enqueue_scripts', 'accesspress_store_scripts' );
 
 function accesspress_ticker_header_customizer(){
 	//Check if ticker is enabled
-	if(get_theme_mod('accesspress_ticker_checkbox','1') == 1)
-	{
+	if(get_theme_mod('accesspress_ticker_checkbox','1') == 1){
 		$ticker_title = get_theme_mod('accesspress_ticker_title');
 		if(empty($ticker_title)){
 			$ticker_title="Latest";
@@ -233,24 +232,23 @@ function accesspress_ticker_header_customizer(){
 		            fadeOutSpeed: 300,   
 		            pauseOnItems: 3000,    // The pause on a news item before being replaced  
 		        });
-});
-</script>
-<style type="text/css">#ticker{display:none;}</style>
-<ul id="ticker">
-	<?php 
-		$i=0;
-		foreach($ticker_array as $ticker){
-			$i++;
-			?>
-			<li>
-				<h5 class="ticker_tick ticker-h5-<?php echo $i; ?>"> <?php echo $ticker ?> </h5>
-			</li>
+			});
+		</script>
+		<style type="text/css">#ticker{display:none;}</style>
+		<ul id="ticker">
 			<?php 
-		} 
-	?>
-</ul>
-<?php
-}
+				$i=0;
+				foreach($ticker_array as $ticker){
+					$i++;
+					?>
+					<li>
+						<h5 class="ticker_tick ticker-h5-<?php echo $i; ?>"> <?php echo $ticker ?> </h5>
+					</li>
+					<?php 
+				} 
+			?>
+		</ul>
+	<?php }
 }
 
 function accesspress_slickliderscript(){
@@ -261,44 +259,42 @@ function accesspress_slickliderscript(){
 	$accesspress_slider_transition = get_theme_mod('slider_transition','true');
 	$accesspress_slider_speed = (!get_theme_mod('slider_speed')) ? "5000" : get_theme_mod('slider_speed');
 	$accesspress_slider_pause = (!get_theme_mod('slider_pause')) ? "5000" : get_theme_mod('slider_pause');
-	if( $accesspress_show_slider == "1") : 
-		?>
-	<script type="text/javascript">
-		jQuery(function($){
-			$('#main-slider .bx-slider').slick({
-				dots: <?php echo esc_attr($accesspress_show_pager); ?>,
-				arrows: <?php echo esc_attr($accesspress_show_controls); ?>,
-				speed: <?php echo esc_attr($accesspress_slider_speed); ?>,
-				fade: <?php echo esc_attr($accesspress_slider_transition); ?>,
-				cssEase: 'linear',
-				autoplaySpeed:<?php echo esc_attr($accesspress_slider_pause); ?>,
-				autoplay:<?php echo esc_attr($accesspress_auto_transition); ?>,
-				adaptiveHeight:true,
-				infinite:true,
-                draggable: true,
-			});
+	if( $accesspress_show_slider == "1") : ?>
+		<script type="text/javascript">
+			jQuery(function($){
+				$('#main-slider .bx-slider').slick({
+					dots: <?php echo esc_attr($accesspress_show_pager); ?>,
+					arrows: <?php echo esc_attr($accesspress_show_controls); ?>,
+					speed: <?php echo esc_attr($accesspress_slider_speed); ?>,
+					fade: <?php echo esc_attr($accesspress_slider_transition); ?>,
+					cssEase: 'linear',
+					autoplaySpeed:<?php echo esc_attr($accesspress_slider_pause); ?>,
+					autoplay:<?php echo esc_attr($accesspress_auto_transition); ?>,
+					adaptiveHeight:true,
+					infinite:true,
+	                draggable: true,
+				});
 
-			<?php if($accesspress_slider_transition == "true"){ ?>
-			$('#main-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-			
-			    $('#main-slider .slick-slide .caption-title').removeClass('fadeInDown animated displayNone');
-			    $('#main-slider .slick-slide[data-slick-index='+nextSlide+'] .caption-title').addClass('fadeInDown animated');
-			    $('#main-slider .slick-slide[data-slick-index='+currentSlide+'] .caption-title').addClass('displayNone');
-			    
-			    $('#main-slider .slick-slide .caption-content').removeClass('fadeInUp animated displayNone'); 
-			    $('#main-slider .slick-slide[data-slick-index='+nextSlide+'] .caption-content').addClass('fadeInUp animated');
-			    $('#main-slider .slick-slide[data-slick-index='+currentSlide+'] .caption-content').addClass('displayNone');
-			    
-			    $('#main-slider .slick-slide .caption-read-more1').removeClass('zoomIn animated displayNone'); 
-			    $('#main-slider .slick-slide[data-slick-index='+nextSlide+'] .caption-read-more1').addClass('zoomIn animated');
-			    $('#main-slider .slick-slide[data-slick-index='+currentSlide+'] .caption-read-more1').addClass('displayNone');
-			 
-			});	
-			<?php } ?> 				
-		});
-	</script>
-	<?php
-	endif;
+				<?php if($accesspress_slider_transition == "true"){ ?>
+				$('#main-slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+				
+				    $('#main-slider .slick-slide .caption-title').removeClass('fadeInDown animated displayNone');
+				    $('#main-slider .slick-slide[data-slick-index='+nextSlide+'] .caption-title').addClass('fadeInDown animated');
+				    $('#main-slider .slick-slide[data-slick-index='+currentSlide+'] .caption-title').addClass('displayNone');
+				    
+				    $('#main-slider .slick-slide .caption-content').removeClass('fadeInUp animated displayNone'); 
+				    $('#main-slider .slick-slide[data-slick-index='+nextSlide+'] .caption-content').addClass('fadeInUp animated');
+				    $('#main-slider .slick-slide[data-slick-index='+currentSlide+'] .caption-content').addClass('displayNone');
+				    
+				    $('#main-slider .slick-slide .caption-read-more1').removeClass('zoomIn animated displayNone'); 
+				    $('#main-slider .slick-slide[data-slick-index='+nextSlide+'] .caption-read-more1').addClass('zoomIn animated');
+				    $('#main-slider .slick-slide[data-slick-index='+currentSlide+'] .caption-read-more1').addClass('displayNone');
+				 
+				});	
+				<?php } ?> 				
+			});
+		</script>
+	<?php endif;
 }
 
 add_action('wp_head', 'accesspress_slickliderscript');
@@ -306,50 +302,49 @@ add_action('wp_head', 'accesspress_slickliderscript');
 function accesspress_slidercb(){
 	$accesspress_show_slider = get_theme_mod('show_slider','0') ;
 	$accesspress_show_caption = get_theme_mod('show_caption','0') ;
-	if( $accesspress_show_slider == 1) :
-	?>
-	<section id="main-slider">
-		<div class="bx-slider">
-			<?php 			
-			for ($i=1; $i <= 5 ; $i++) { 
-				$slider_post = get_theme_mod('slider_'.$i.'_post');
-				$slider_button_text = get_theme_mod('slider'.$i.'_button_text');
-				$slider_button_link = get_theme_mod('slider'.$i.'_button_link');
-				if(!empty($slider_post)) :
-			?>
-				<div class="slides">
-					<?php
-					$args = array('post__in'=> array($slider_post));
-					$query1 = new WP_Query( $args );
-					while ( $query1->have_posts() ) {
-						$query1->the_post();
-						$image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'accesspress-slider', true);
-						?>
-						<img src="<?php echo esc_url($image[0]); ?>" alt="<?php echo esc_attr(the_title()); ?>"/>
-						
-						<?php if($accesspress_show_caption == '1'): ?>
-							<div class="slider-caption">
-								<div class="ak-container">									
-									<div class="caption-content-wrapper">
-										<h2 class="caption-title"><?php echo esc_attr(the_title());?></h2>
-										<div class="caption-content">
-											<?php echo accesspress_letter_count(get_the_content(), '165'); ?>
-										</div>
-									</div>
-									<?php if($slider_button_text): ?>
-										<a class="caption-read-more1" href="<?php echo esc_url($slider_button_link); ?>"><?php echo esc_attr($slider_button_text); ?></a>
-									<?php endif; ?>
-								</div>
-							</div>
-						<?php endif; ?>
+	if( $accesspress_show_slider == 1) : ?>
+		<section id="main-slider">
+			<div class="bx-slider">
+				<?php 			
+				for ($i=1; $i <= 5 ; $i++) { 
+					$slider_post = get_theme_mod('slider_'.$i.'_post');
+					$slider_button_text = get_theme_mod('slider'.$i.'_button_text');
+					$slider_button_link = get_theme_mod('slider'.$i.'_button_link');
+					if(!empty($slider_post)) :
+				?>
+					<div class="slides">
 						<?php
-					} wp_reset_postdata();
-					?>
-				</div>
-				<?php  endif;  } ?>
-		</div>
-		<?php  endif; ?>
-	</section>
+						$args = array('post__in'=> array($slider_post));
+						$query1 = new WP_Query( $args );
+						while ( $query1->have_posts() ) {
+							$query1->the_post();
+							$image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'accesspress-slider', true);
+							?>
+							<img src="<?php echo esc_url($image[0]); ?>" alt="<?php echo esc_attr(the_title()); ?>"/>
+							
+							<?php if($accesspress_show_caption == '1'): ?>
+								<div class="slider-caption">
+									<div class="ak-container">									
+										<div class="caption-content-wrapper">
+											<h2 class="caption-title"><?php echo esc_attr(the_title());?></h2>
+											<div class="caption-content">
+												<?php echo accesspress_letter_count(get_the_content(), '165'); ?>
+											</div>
+										</div>
+										<?php if($slider_button_text): ?>
+											<a class="caption-read-more1" href="<?php echo esc_url($slider_button_link); ?>"><?php echo esc_attr($slider_button_text); ?></a>
+										<?php endif; ?>
+									</div>
+								</div>
+							<?php endif; ?>
+							<?php
+						} wp_reset_postdata();
+						?>
+					</div>
+					<?php  endif;  } ?>
+			</div>
+			<?php  endif; ?>
+		</section>
 	<?php
 }
 add_action('accesspress_slickslider','accesspress_slidercb', 10);
@@ -406,52 +401,56 @@ if ( ! function_exists( 'accesspress_footer_count' ) ) {
 	}
 }
 
-	function accesspress_count_widgets( $sidebar_id ) {
-		global $_wp_sidebars_widgets;
-		if ( empty( $_wp_sidebars_widgets ) ) :
-			$_wp_sidebars_widgets = get_option( 'sidebars_widgets', array() );
-		endif;		
-		$sidebars_widgets_count = $_wp_sidebars_widgets;		
-		if ( isset( $sidebars_widgets_count[ $sidebar_id ] ) ) :
-			$widget_count = count( $sidebars_widgets_count[ $sidebar_id ] );
-		$widget_classes = 'widget-count-' . count( $sidebars_widgets_count[ $sidebar_id ] );
-		return $widget_classes;
-		endif;
-	}
+function accesspress_count_widgets( $sidebar_id ) {
+	global $_wp_sidebars_widgets;
+	if ( empty( $_wp_sidebars_widgets ) ) :
+		$_wp_sidebars_widgets = get_option( 'sidebars_widgets', array() );
+	endif;		
+	$sidebars_widgets_count = $_wp_sidebars_widgets;		
+	if ( isset( $sidebars_widgets_count[ $sidebar_id ] ) ) :
+		$widget_count = count( $sidebars_widgets_count[ $sidebar_id ] );
+	$widget_classes = 'widget-count-' . count( $sidebars_widgets_count[ $sidebar_id ] );
+	return $widget_classes;
+	endif;
+}
 
-	function accesspress_header_scripts(){
-		$page_background_option = get_theme_mod('accesspress_background_type');
+
+function accesspress_header_scripts(){
+	$page_background_option = get_theme_mod('accesspress_background_type');
 		$show_slider = get_theme_mod('show_slider');
-		echo "<style>";
+	
+	echo "<style>";
+
 		echo "html body{";
-		if($page_background_option == 'image'): 
-			$background = get_theme_mod('background_image');
-		echo 'background:url('.esc_url($background["image"]).') '.esc_attr($background["repeat"]).' '.esc_attr($background["position"]).' '.esc_attr($background["attachment"]).' '.esc_attr($background["color"]);
-		elseif($page_background_option == 'color'): 
-			echo 'background:'.esc_attr(get_theme_mod('background_color'));
-		elseif($page_background_option == 'pattern'):
-			echo 'background:url('.get_template_directory_uri().'/inc/option-framework/images/patterns/'.esc_attr(get_theme_mod("accesspress_background_image_pattern")).'.png)';
-		else:
-			echo 'background:none;';
-		endif;
+
+			if($page_background_option == 'image'):
+				echo 'background-color:transparent !important;';
+				$background = get_theme_mod('background_image');
+			elseif($page_background_option == 'color'): 
+				echo 'background:'.esc_attr(get_theme_mod('background_color'));
+			elseif($page_background_option == 'pattern'):
+				echo 'background-color:transparent !important;';
+				echo 'background:url('.get_template_directory_uri().'/inc/images/patterns/'.esc_attr(get_theme_mod("accesspress_background_image_pattern")).'.png)';
+			else:
+				echo 'background:none;';
+			endif;
+
 		echo "}";
-		
+
+	
 		if($show_slider == '0'):
 			echo '#masthead{margin-bottom:40px}';
 		endif;
+		
 		if(get_theme_mod('hide_header_cart_link')):
 			echo ".ap-store-cart{display:none;}";
 		endif;
-		echo "</style>";
 
-	}
-	add_action('wp_head', 'accesspress_header_scripts');
+	echo "</style>";
 
-	function accesspress_bodyclass($classes){
-		$classes[]= esc_attr( get_theme_mod('accesspress_webpage_layout') );
-		return $classes;
-	}
-	add_filter( 'body_class', 'accesspress_bodyclass' );
+}
+add_action('wp_head', 'accesspress_header_scripts');
+
 
 	/**
 	 * Output the WooCommerce Breadcrumb
@@ -619,19 +618,8 @@ if( is_woocommerce_activated() ){
 
 
 	/**
-	 * WooCommerce Extra Feature
-	 * --------------------------
-	 *
-	 * Change number of related products on product page
-	 * Set your own value for 'posts_per_page'
-	 *
-	 */ 
-	function accesspress_store_related_products_limit() {
-		global $product;
-		$args['posts_per_page'] = 3;
-		return $args;
-	}
-	
+	 * Display Related Product Number
+	*/
 	add_filter( 'woocommerce_output_related_products_args', 'accesspress_store_related_products_args' );
 	function accesspress_store_related_products_args( $args ) {
 		$args['posts_per_page'] = 3; // 3 related products
@@ -647,13 +635,14 @@ if( is_woocommerce_activated() ){
 	}
 }
 
-add_filter('nav_menu_css_class' , 'accesspress_store_special_nav_class' , 10 , 2);
+
 function accesspress_store_special_nav_class($classes, $item){
 	if($item->title == "Cart"){ 
 		$classes[] = "ap-store-cart";
 	}
 	return $classes;
 }
+add_filter('nav_menu_css_class' , 'accesspress_store_special_nav_class' , 10 , 2);
 
 remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5);
 
@@ -671,15 +660,16 @@ if ( ! function_exists( 'accesspress_store_fallback_menu' ) ) {
 	function accesspress_store_fallback_menu(){
 		$args = array(
 			'menu_class'  => 'store-menu',
-			'echo'        => true,);
+			'echo'        => true,
+		);
 		wp_page_menu( $args );
 	}
 }
 
 /**
  * Load Options Plugin Activation
- */
-require get_template_directory() . '/inc/accesspress-plugin-activation.php';
+*/
+require $accesspress_store_plugin_activation_file_path = accesspress_store_file_directory('inc/accesspress-plugin-activation.php');
 
 function accesspress_store_register_required_plugins() {
 	$plugins = array(
@@ -803,8 +793,7 @@ add_action('tgmpa_register', 'accesspress_store_register_required_plugins');
 
 
 function accesspress_store_custom_css(){
-	$accesspress_store_css = get_theme_mod('accesspress_store_css');
-	?>
+	$accesspress_store_css = get_theme_mod('accesspress_store_css'); ?>
 		<style type="text/css">
 			<?php echo wp_filter_nohtml_kses($accesspress_store_css); ?>
 		</style>

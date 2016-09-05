@@ -1,8 +1,7 @@
 <?php
-
 /**
- * @package Accesspress Pro
- */
+ * @package Accesspress Store
+*/
 function accesspress_store_widgets_show_widget_field($instance = '', $widget_field = '', $athm_field_value = '') {
     // Store Posts in array
     $accesspress_store_postlist[0] = array(
@@ -254,7 +253,7 @@ function accesspress_store_widgets_show_widget_field($instance = '', $widget_fie
                 <?php } ?>
             </p>
 
-                <div id="ap-font-awesome-list">
+            <div id="ap-font-awesome-list">
                 <ul class="ap-font-group">
                     <li><i class="fa fa-glass"></i></li>
                     <li><i class="fa fa-music"></i> </li>
@@ -736,7 +735,7 @@ function accesspress_store_widgets_show_widget_field($instance = '', $widget_fie
                     <li><i class="fa fa-ils"></i></li>
                     <li><i class="fa fa-meanpath"></i></li>
                 </ul>
-</div>
+            </div>
 
             <?php
             break;
@@ -785,26 +784,4 @@ function accesspress_store_widgets_updated_field_value($widget_field, $new_field
         return strip_tags($new_field_value);
     }
 }
-
-/**
- * Enqueue scripts for file uploader
- */
-function optionsframework_media_scriptss($hook) {
-
-    if (function_exists('wp_enqueue_media'))
-        wp_enqueue_media();
-
-    wp_register_script('of-media-uploader', OPTIONS_FRAMEWORK_DIRECTORY . 'js/media-uploader.js', array('jquery'), 1.70);
-    wp_enqueue_script('of-media-uploader');
-    wp_localize_script('of-media-uploader', 'optionsframework_l10n', array(
-        'upload' => __('Upload', 'accesspress-store'),
-        'remove' => __('Remove', 'accesspress-store')
-    ));
-
-    wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css' );
-    wp_enqueue_style( 'ap-admin-css', get_template_directory_uri() . '/inc/css/ap-admin.css' );
-    
-}
-
-add_action('admin_enqueue_scripts', 'optionsframework_media_scriptss');
 

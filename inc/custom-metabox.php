@@ -1,15 +1,14 @@
 <?php
 add_action('add_meta_boxes', 'accesspress_store_add_sidebar_layout_box');
-function accesspress_store_add_sidebar_layout_box(){
-    
+function accesspress_store_add_sidebar_layout_box(){    
     add_meta_box(
-                'accesspress_store_sidebar_layout',
-                'Sidebar Layout', 
-                'accesspress_store_sidebar_layout_callback',
-                'page', 
-                'normal', 
-                'high'
-            ); 
+        'accesspress_store_sidebar_layout',
+        'Sidebar Layout', 
+        'accesspress_store_sidebar_layout_callback',
+        'page', 
+        'normal', 
+        'high'
+    ); 
 }
 
 $accesspress_store_sidebar_layout = array(
@@ -37,8 +36,7 @@ $accesspress_store_sidebar_layout = array(
 
 function accesspress_store_sidebar_layout_callback() { 
     global $post , $accesspress_store_sidebar_layout;
-    wp_nonce_field( basename( __FILE__ ), 'accesspress_store_sidebar_layout_nonce' ); 
-    ?>
+    wp_nonce_field( basename( __FILE__ ), 'accesspress_store_sidebar_layout_nonce' ); ?>
     <table class="form-table">
         <tr>
             <td colspan="4"><em class="f13">Choose Sidebar Template</em></td>
@@ -64,7 +62,9 @@ function accesspress_store_sidebar_layout_callback() {
             <td><em class="f13"><?php _e('You can set up the sidebar content','accesspress-store'); ?> <a href="<?php echo admin_url('/customize.php'); ?>"><?php _e('here','accesspress-store'); ?></a></em></td>
         </tr>
     </table>
-    <?php } 
+    <?php 
+} 
+
 /**
  * save the custom metabox data
  * @hooked to save_post hook
@@ -91,5 +91,5 @@ function accesspress_store_save_sidebar_layout( $post_id ) {
             delete_post_meta($post_id,'accesspress_store_sidebar_layout', $old);  
         } 
      }     
- }
- add_action('save_post', 'accesspress_store_save_sidebar_layout');
+}
+add_action('save_post', 'accesspress_store_save_sidebar_layout');

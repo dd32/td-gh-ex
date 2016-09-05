@@ -33,15 +33,9 @@ class accesspress_store_Icon_Text extends WP_Widget {
      * Array is used in update and form functions
      */
     private function widget_fields() {
-        $style = array(
-            'style1' => 'Style 1', 
-            'style2' => 'Style 2',
-            'style3' => 'Style 3',
-            'style4' => 'Style 4',
-            );
+
         $fields = array(
-            // This widget has no title
-            // Other fields
+
             'icon_text_title' => array(
                 'accesspress_store_widgets_name' => 'icon_text_title',
                 'accesspress_store_widgets_title' => __('Title', 'accesspress-store'),
@@ -68,13 +62,7 @@ class accesspress_store_Icon_Text extends WP_Widget {
                 'accesspress_store_widgets_name' => 'icon_text_readmore_link',
                 'accesspress_store_widgets_title' => __('Read More Link', 'accesspress-store'),
                 'accesspress_store_widgets_field_type' => 'url',
-            ),
-            'icon_text_style' => array(
-                'accesspress_store_widgets_name' => 'icon_text_style',
-                'accesspress_store_widgets_title' => __('Style', 'accesspress-store'),
-                'accesspress_store_widgets_field_type' => 'select',
-                'accesspress_store_widgets_field_options' => $style
-            ),
+            ),            
         );
 
         return $fields;
@@ -96,10 +84,9 @@ class accesspress_store_Icon_Text extends WP_Widget {
         $icon_text_icon = $instance['icon_text_icon'];
         $icon_text_readmore = $instance['icon_text_readmore'];
         $icon_text_readmore_link = $instance['icon_text_readmore_link'];
-        $icon_text_style = $instance['icon_text_style'];
 
         echo $before_widget; ?>
-        <div class="wow fadeInUp ap-icon-text <?php echo $icon_text_style; ?>">
+        <div class="wow fadeInUp ap-icon-text">
         <?php
         
         if (!empty($icon_text_icon)): 

@@ -48,6 +48,14 @@ Images
 
 == Changelog ==
 
+= 2.1.3 =
+
+** Make the theme compatible with latest version of WordPress 4.6
+** Add the missing function prefix.
+** Remove the unnecessary folder, file and make the theme clear.
+** Make the easy child theme supportable.
+** Remove the same duplicate function.
+
 = 2.1.2 =
 
 ** Fixed the product and shop page product listing issue.
