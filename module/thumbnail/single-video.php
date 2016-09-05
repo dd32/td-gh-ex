@@ -8,5 +8,5 @@ if ( isset( $video[0] ) ) {
 		$displayed_video = true;
 	}
 } elseif (has_post_thumbnail()){
-	the_post_thumbnail('post-thumb', array('title' => get_the_title(), 'class' => ''));
+	the_post_thumbnail('ad-mag-lite-post-thumb', array('title' => get_the_title(), 'class' => ''));
 }

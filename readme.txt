@@ -7,6 +7,11 @@ Moreover, with sleekly design, responsiove layout, awesome typography and focus 
 --------------------
 Change log
 --------------------
+= 1.0.6 = (1/09/2016)
+	- Escape data.
+	- Removed aq_resizer, ad_mag_lite_get_youtube_duration.
+	- Removed Advertisement & Quote widgets.
+	- Added prefix 'post-thumb'.
 
 = 1.0.5 = (24/06/2016)
 	- Removed enqueue email.

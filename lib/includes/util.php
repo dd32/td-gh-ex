@@ -176,25 +176,6 @@ function ad_mag_lite_social() {
     <?php
 }
 
-/**
- * Get The Excerpt ( the_excerpt ) for widget
- */
-function ad_mag_lite_get_the_excerpt_for_widget($excerpt, $content, $length = 0) {
-    if ( $length != 0){
-        $ad_mag_lite_length = $length;
-    }else{
-        $ad_mag_lite_length = 10;
-    }
-    $temp_excerp = $excerpt;
-    if ( empty($temp_excerp) ) {
-        $temp_excerp =  strip_tags($content);
-        $temp_excerp =  strip_shortcodes($temp_excerp);
-    }
-
-    $ad_mag_lite_excerpt = wp_trim_words($temp_excerp, $ad_mag_lite_length, $more = null);
-    return $ad_mag_lite_excerpt;
-}
-
 /*
  * Template tag: Show headline
  */
@@ -253,18 +234,14 @@ function ad_mag_lite_get_breadcrumb() {
         $description = '';
         $breadcrumb_before = '<div class="kopa-breadcrumb"><div class="wrapper clearfix">';
         $breadcrumb_after = '</div></div>';
-        $breadcrumb_home = '<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="' . home_url() . '"><span itemprop="title">' . __('Home', 'ad-mag-lite') . '</span></a></span>';
+        $breadcrumb_home = '<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="' . esc_url( home_url('/') ) . '"><span itemprop="title">' . __('Home', 'ad-mag-lite') . '</span></a></span>';
         $breadcrumb = '';
         ?>
 
         <?php
         if (is_home()) {
             $breadcrumb.= $breadcrumb_home;
-            if ( get_option( 'page_for_posts' ) ) {
-                $breadcrumb.= $prefix . sprintf('<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb" class="%1$s">%2$s</span>', $current_class, get_the_title(get_option('page_for_posts')));
-            } else {
-                $breadcrumb.= $prefix . sprintf('<span class="%1$s">%2$s</span>', $current_class, __('Blog', 'ad-mag-lite'));                
-            }
+            $breadcrumb.= $prefix . sprintf('<span class="%1$s">%2$s</span>', $current_class, __('Blog', 'ad-mag-lite'));                
         } else if (is_post_type_archive('product') && get_option('woocommerce_shop_page_id')) {
             $breadcrumb.= $breadcrumb_home;
 
@@ -303,7 +280,7 @@ function ad_mag_lite_get_breadcrumb() {
                 $parents = array_reverse($parents);
                 foreach ($parents as $parent):
                     $item = get_term_by( 'id', $parent, get_query_var( 'taxonomy' ));
-                    $breadcrumb .= $prefix . '<span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="' . get_term_link( $item->slug, 'product_cat' ) . '"><span itemprop="title">' . $item->name . '</span></a></span>';
+                    $breadcrumb .= $prefix . '<span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" href="' .esc_url( get_term_link( $item->slug, 'product_cat' ) ). '"><span itemprop="title">' . $item->name . '</span></a></span>';
                 endforeach;
             endif;
 
@@ -312,14 +289,14 @@ function ad_mag_lite_get_breadcrumb() {
             $breadcrumb.= $prefix . sprintf('<span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a itemprop="url" class="%1$s"><span itemprop="title">%2$s</span></a></span>', $current_class, $queried_object->name);
         } else if ( is_tax( 'product_tag' ) ) {
             $breadcrumb.= $breadcrumb_home;
-            $breadcrumb.= $prefix . '<a href="'.get_page_link( get_option('woocommerce_shop_page_id') ).'">'.get_the_title( get_option('woocommerce_shop_page_id') ).'</a>';
+            $breadcrumb.= $prefix . '<a href="'.esc_url ( get_page_link( get_option('woocommerce_shop_page_id') ) ).'">'.get_the_title( get_option('woocommerce_shop_page_id') ).'</a>';
             $queried_object = get_queried_object();
             $breadcrumb.= $prefix . sprintf('<span class="%1$s">%2$s</span>', $current_class, $queried_object->name);
         } else if (is_single()) {
             global $post;
             $breadcrumb.= $breadcrumb_home;
             if ( is_singular('product')) :
-                $breadcrumb .= $prefix . '<span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="'.get_page_link( get_option('woocommerce_shop_page_id') ).'" itemprop="url"><span itemprop="title">'.get_the_title( get_option('woocommerce_shop_page_id') ).'</span></a></span>';
+                $breadcrumb .= $prefix . '<span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="'.esc_url( get_page_link( get_option('woocommerce_shop_page_id') ) ).'" itemprop="url"><span itemprop="title">'.get_the_title( get_option('woocommerce_shop_page_id') ).'</span></a></span>';
 
                 if ($terms = get_the_terms( $post->ID, 'product_cat' )) :
                     $term = apply_filters( 'jigoshop_product_cat_breadcrumb_terms', current($terms), $terms);
@@ -334,10 +311,10 @@ function ad_mag_lite_get_breadcrumb() {
                         $parents = array_reverse($parents);
                         foreach ($parents as $parent):
                             $item = get_term_by( 'id', $parent, 'product_cat');
-                            $breadcrumb .= $prefix . '<span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="' . get_term_link( $item->slug, 'product_cat' ) . '" itemprop="url"><span itemprop="title">' . $item->name . '</span></a></span>';
+                            $breadcrumb .= $prefix . '<span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="' . esc_url ( get_term_link( $item->slug, 'product_cat' ) ) . '" itemprop="url"><span itemprop="title">' . $item->name . '</span></a></span>';
                         endforeach;
                     endif;
-                    $breadcrumb .= $prefix . '<span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="' . get_term_link( $term->slug, 'product_cat' ) . '" itemprop="url"><span itemprop="title">' . $term->name . '</span></a></span>';
+                    $breadcrumb .= $prefix . '<span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="' . esc_url ( get_term_link( $term->slug, 'product_cat' ) ) . '" itemprop="url"><span itemprop="title">' . $term->name . '</span></a></span>';
                 endif;
 
                 $breadcrumb.= $prefix . sprintf('<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a class="%1$s" itemprop="url"><span itemprop="title">%2$s</span></a></span>', $current_class, get_the_title(get_queried_object_id()));
@@ -345,7 +322,7 @@ function ad_mag_lite_get_breadcrumb() {
                 $categories = get_the_category(get_queried_object_id());
                 if ($categories) {
                     foreach ($categories as $category) {
-                        $breadcrumb.= $prefix . sprintf('<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="%1$s" itemprop="url"><span itemprop="title">%2$s</span></a></span>', get_category_link($category->term_id), $category->name);
+                        $breadcrumb.= $prefix . sprintf('<span itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><a href="%1$s" itemprop="url"><span itemprop="title">%2$s</span></a></span>', esc_url( get_category_link($category->term_id) ), $category->name);
                     }
                 }
 
@@ -380,13 +357,13 @@ function ad_mag_lite_get_breadcrumb() {
             }
 
             if (is_month()) {
-                $breadcrumb.= $prefix . sprintf('<a href="%1$s">%2$s</a>', get_year_link($date['y']), $date['y']);
+                $breadcrumb.= $prefix . sprintf('<a href="%1$s">%2$s</a>', esc_url( get_year_link($date['y']) ), $date['y']);
                 $breadcrumb.= $prefix . sprintf('<span class="%1$s">%2$s</span>', $current_class, date_i18n('F', $date['m']));
             }
 
             if (is_day()) {
-                $breadcrumb.= $prefix . sprintf('<a href="%1$s">%2$s</a>', get_year_link($date['y']), $date['y']);
-                $breadcrumb.= $prefix . sprintf('<a href="%1$s">%2$s</a>', get_month_link($date['y'], $date['m']), date_i18n('F', $date['m']));
+                $breadcrumb.= $prefix . sprintf('<a href="%1$s">%2$s</a>', esc_url( get_year_link($date['y'])), $date['y']);
+                $breadcrumb.= $prefix . sprintf('<a href="%1$s">%2$s</a>', esc_url( get_month_link($date['y'], $date['m'])), date_i18n('F', $date['m']));
                 $breadcrumb.= $prefix . sprintf('<span class="%1$s">%2$s</span>', $current_class, $date['d']);
             }
 
@@ -414,7 +391,7 @@ function ad_mag_lite_get_breadcrumb() {
 }
 
 function ad_mag_lite_register_new_image_sizes(){
-    add_image_size( 'post-thumb', 410, 370, true );                                                                      
+    add_image_size( 'ad-mag-lite-post-thumb', 410, 370, true );                                                                      
 }
 
 /**
@@ -431,14 +408,14 @@ function ad_mag_lite_the_first_category($ID,$class = ''){
         if($terms){
             foreach ($terms as $term) {
                 $product_cat = $term->name;
-                $product_cat_link = get_term_link( $term->term_id, 'product_cat' );
+                $product_cat_link = esc_url( get_term_link( $term->term_id, 'product_cat' ) );
                 break;
             }
             echo '<h5><a href="'.esc_url($product_cat_link).'">'.$product_cat.'</a></h5>';
         }
     }else{
         $category = get_the_category($ID);
-        $category_link = get_category_link( $category[0]->cat_ID );
+        $category_link = esc_url( get_category_link( $category[0]->cat_ID ) );
         if(!empty($class)){
             echo '<h5 class="'.$class.' custom-color-'.$category[0]->cat_ID.'"><a href="'.esc_url($category_link).'">'.$category[0]->cat_name.'</a></h5>';
         }else{

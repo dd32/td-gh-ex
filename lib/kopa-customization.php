@@ -52,7 +52,7 @@ class Ad_Mag_Lite_Customization{
                     $sanitize_callback = 'sanitize_hex_color';
                     break;
                 case 'textarea':
-                    $sanitize_callback = array($this, 'sanitize_textarea');
+                    $sanitize_callback = array($this, 'sanitize_html');
                     break;
                 case 'range':
                 case 'text':
@@ -71,7 +71,7 @@ class Ad_Mag_Lite_Customization{
           
           #set default capability
           if(!isset($setting['capability']) || empty($setting['capability'])){
-          	$capability = 'manage_options';
+          	$capability = 'edit_theme_options';
           }else{
           	$capability = $setting['capability'];
           }
@@ -137,10 +137,9 @@ class Ad_Mag_Lite_Customization{
 		}		
 	}
 
-	public function sanitize_textarea($value){
+  public function sanitize_html( $value ) {
     if($value){
-        $value = htmlspecialchars_decode(esc_html($value));
+      return wp_filter_post_kses( $value );
     }
-    return $value;
-	}
+  }
 }

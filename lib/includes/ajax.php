@@ -31,7 +31,7 @@ if (!function_exists('ad_mag_lite_load_more_blog_3')) {
                         <div class="pd-20">
                             <?php if(has_post_thumbnail()) : ?>
                                 <div class="entry-thumb style1">
-                                <?php ad_mag_lite_the_image( get_the_id(), get_the_title(),  375, 190 ); ?>
+                                <?php the_post_thumbnail( 'ad-mag-lite-article-list-blog-375x190' ); ?>
                                 <?php ad_mag_lite_the_first_category(get_the_id()); ?>
                                     <a class="thumb-icon style1" href="<?php the_permalink(); ?>"></a>
                                 </div>
@@ -44,9 +44,11 @@ if (!function_exists('ad_mag_lite_load_more_blog_3')) {
                                     <span class="entry-date"><i class="fa fa-clock-o"></i><?php echo get_the_date('M j, Y'); ?></span>
                                 </div>
                                 <?php
-                                    global $post;
+                                    $GLOBALS['ad_mag_lite_excerpt_length'] = $limit;
+                                    add_filter( 'excerpt_length', 'ad_mag_lite_set_excerpt_length' );
+                                    the_excerpt();
+                                    remove_filter( 'excerpt_length', 'ad_mag_lite_set_excerpt_length' );
                                 ?>
-                                <p><?php echo ad_mag_lite_get_the_excerpt_for_widget($post->post_excerpt, $post->post_content, $limit); ?></p>
                             </div>
                         </div>       
                     </article>
@@ -101,7 +103,7 @@ if (!function_exists('ad_mag_lite_load_more_blog_2')) {
                         <div class="pd-20">
                             <?php if(has_post_thumbnail()) : ?>
                                 <div class="entry-thumb style1">
-                                    <?php ad_mag_lite_the_image( get_the_id(), get_the_title(),  375, 190 ); ?>
+                                    <?php the_post_thumbnail( 'ad-mag-lite-article-list-blog-375x190' ); ?>
                                 <?php ad_mag_lite_the_first_category(get_the_id()); ?>
                                     <a class="thumb-icon style1" href="<?php the_permalink(); ?>"></a>
                                 </div>
@@ -114,9 +116,11 @@ if (!function_exists('ad_mag_lite_load_more_blog_2')) {
                                     <span class="entry-date"><i class="fa fa-clock-o"></i><?php echo get_the_date('M j, Y'); ?></span>
                                 </div>
                                 <?php
-                                    global $post;
+                                    $GLOBALS['ad_mag_lite_excerpt_length'] = $limit;
+                                    add_filter( 'excerpt_length', 'ad_mag_lite_set_excerpt_length' );
+                                    the_excerpt();
+                                    remove_filter( 'excerpt_length', 'ad_mag_lite_set_excerpt_length' );
                                 ?>
-                                <p><?php echo ad_mag_lite_get_the_excerpt_for_widget($post->post_excerpt, $post->post_content, $limit); ?></p>
                             </div>
                         </div>      
                     </article>

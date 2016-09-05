@@ -102,9 +102,7 @@ function ad_mag_lite_widget_posttype_build_query( $query_args = array() ) {
 }
 
 // Widgets
-get_template_part('lib/includes/widgets/advertisement/widget', 'advertisement');
 get_template_part('lib/includes/widgets/post/widget', 'article-list');
 get_template_part('lib/includes/widgets/others/widget', 'editor');
-get_template_part('lib/includes/widgets/others/widget', 'quote');
 get_template_part('lib/includes/widgets/others/widget', 'follow');
 get_template_part('lib/includes/widgets/comment/widget', 'comments');

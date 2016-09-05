@@ -9,7 +9,7 @@ if ( isset( $audio[0] ) ) {
         $displayed_audio = true;
     }
 } elseif(has_post_thumbnail()){
-    the_post_thumbnail('post-thumb', array('title' => get_the_title(), 'class' => 'img-responsive'));
+    the_post_thumbnail('ad-mag-lite-post-thumb', array('title' => get_the_title(), 'class' => 'img-responsive'));
 }
 
 

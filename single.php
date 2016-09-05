@@ -45,11 +45,6 @@
                 $key = strstr($temp, $close_tags, true).$close_tags;
                 $content = str_replace($key, '', $content);
                 break;
-                // case 'gallery':
-                // $content = preg_replace('/\[gallery.*](.*\[gallery]){0,1}/', '', $content);
-                // $content = apply_filters( 'the_content', $content );
-                // $content = str_replace(']]>', ']]&gt;', $content);
-                // break;
                 case 'video':
                 $content = preg_replace("/\[youtube.*].*\[\/youtube]/", "", $content);
                 $content = preg_replace('/\[vimeo.*].*\[\/vimeo]/', '', $content);
@@ -67,7 +62,7 @@
                 default:
                 $content = apply_filters( 'the_content', $content );
             }
-            echo sprintf( '%s', $content );
+            echo wp_kses_post( $content );
             ?>
 
 </article> 
@@ -104,7 +99,9 @@ if(comments_open()){
 
 <?php if(is_active_sidebar( 'right-sidebar' )) {
     echo '<div class="sidebar">';
+    echo '<div class="ad-mag-right-sb">';
     dynamic_sidebar( 'right-sidebar' );
+    echo '</div>';
     echo '</div>';
 } 
 ?>

@@ -71,9 +71,9 @@
         <?php else: ?>
         <div class="kopa-logo">
             <?php if(is_home()) : ?>
-            <h1 class="site-title"><a href="<?php echo home_url(); ?>"><?php echo bloginfo('name'); ?></a></h1>
+            <h1 class="site-title"><a href="<?php echo esc_url( home_url('/') ); ?>"><?php echo bloginfo('name'); ?></a></h1>
             <?php else: ?>
-            <h2 class="site-title"><a href="<?php echo home_url(); ?>"><?php echo bloginfo('name'); ?></a></h2>
+            <h2 class="site-title"><a href="<?php echo esc_url( home_url('/') ); ?>"><?php echo bloginfo('name'); ?></a></h2>
             <?php endif; ?>
         </div>
         <!-- logo -->

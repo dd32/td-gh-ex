@@ -15,7 +15,7 @@
                     <p><?php _e('We\'re sorry, but we can\'t find the page you were looking for. It\'s probably some thing we\'ve done wrong but now we know about it we\'ll try to fix it. In the meantime, try one of this options:', 'ad-mag-lite'); ?></p>
                     <ul class="arrow-list">
                         <li><a href="javascript: history.go(-1)"><?php _e('Go back to previous page', 'ad-mag-lite'); ?></a></li>
-                        <li><a href="<?php echo home_url(); ?>"><?php _e('Go to homepage', 'ad-mag-lite'); ?></a></li>
+                        <li><a href="<?php echo esc_url ( home_url('/') ); ?>"><?php _e('Go to homepage', 'ad-mag-lite'); ?></a></li>
                     </ul>
                 </div><!--right-col-->
             </section>
