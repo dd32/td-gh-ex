@@ -42,7 +42,7 @@
 
 			</header><!-- #header-main-fixed -->
 
-			<?php if ( get_theme_mod('ayaspirit_slider_display', 1) == 1 && ayaspirit_slider_has_images() ) :
+			<?php if ( is_home() && get_theme_mod('ayaspirit_slider_display', 1) == 1 ) :
 			
 						ayaspirit_display_slider();
 			

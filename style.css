@@ -1,10 +1,10 @@
-/*
+/*!
 Theme Name: AyaSpirit
 Description: AyaSpirit is a Fully Responsive WordPress Theme, a perfect choice for a spiritual, non profit organization website, blog about spritiuality, etc. 100% Responsive Design, Customizable, and Easy to Use WordPress Theme.
 Theme URI: https://ayatemplates.com/product/ayaspirit
 Author: ayatemplates
 Author URI: https://ayatemplates.com
-Version: 1.0.0
+Version: 1.0.1
 Text Domain: ayaspirit
 Tags: blog, two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, featured-images, post-formats, sticky-post, threaded-comments, translation-ready
 License: GNU General Public License v2.0
@@ -318,6 +318,12 @@ ul {
 
 #navmain a:hover {
 	text-decoration:none;
+}
+
+article,
+aside {
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
 }
 
 /* main content */

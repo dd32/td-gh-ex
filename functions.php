@@ -330,6 +330,11 @@ add_action( 'widgets_init', 'ayaspirit_widgets_init' );
  */
 function ayaspirit_display_slider() {
 
+	if ( ! ayaspirit_slider_has_images() ) {
+
+		return;
+	}
+
 	$numberOfSlides = 0;
 ?>
 	<div id="slider" class="sl-slider-wrapper">
@@ -346,7 +351,7 @@ function ayaspirit_display_slider() {
 					<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
 						<div class="sl-slide-inner">
 							<div class="bg-img bg-img-<?php echo esc_attr($i); ?>"
-									style="background-image: url(<?php echo esc_attr($slideImage); ?>);">
+									style="background-image: url(<?php echo esc_url($slideImage); ?>);">
 							</div>
 						</div><!-- .sl-slide-inner -->
 					</div><!-- .sl-slide -->
