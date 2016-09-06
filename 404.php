@@ -5,7 +5,9 @@
  * @package Greenr
  */
 
-get_header(); ?>
+get_header(); 
+get_template_part('breadcrumb');
+?>
 
 	<div id="content" class="site-content container">
 	

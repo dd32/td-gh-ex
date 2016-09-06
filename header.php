@@ -26,12 +26,15 @@ endif;
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php wp_head(); ?>
 </head>     
-
+ 
 <body <?php body_class(); ?>>  
-<div id="page" class="hfeed site">
+<div id="page" class="hfeed site <?php echo greenr_site_style_class(); ?>">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'greenr' ); ?></a>
-
-	<header id="masthead" class="site-header header-wrap" role="banner">
+    <?php do_action('greenr_before_header'); ?>
+	<header id="masthead" class="site-header header-wrap header-image <?php echo greenr_site_style_header_class(); ?>" role="banner"><?php
+	    if ( get_theme_mod ('header_overlay',false ) ) { 
+		    echo '<div class="overlay overlay-header"></div>';     
+	    } ?>
 		<div id="header-top">
 			<div class="container">
 				<div class="eight columns top-contact">
@@ -39,8 +42,7 @@ endif;
 						<p><?php echo esc_html( get_theme_mod( 'contact' ) ); ?></p>
 					<?php else: echo '&nbsp;' ?>
 					<?php endif; ?>
-				</div>
-				
+				</div> 
 				<div class="eight columns">
 					<ul class="social top-right">
 					<?php if( get_theme_mod( 'social-twitter' ) ) : ?>
@@ -66,7 +68,12 @@ endif;
 						<li><a href="<?php echo esc_attr( get_theme_mod( 'social-rss') ); ?>" class="fa fa-rss"></a></li>
 					<?php endif; ?>
 					</ul>
-				</div>
+					<?php if( is_active_sidebar('header-right') ) : ?>
+						<div class="top-right social">
+						    <?php dynamic_sidebar( 'header-right' ); ?>	
+						</div>	
+					<?php endif; ?>
+				</div> 
 			</div>
 		</div>
 
@@ -74,19 +81,22 @@ endif;
 			<div class="container">
 				<div class="logo site-branding six columns">  
 					<?php 
-						$logo_title = get_theme_mod( 'site-title' );
+						$logo_title = get_theme_mod( 'site-title' );    
 						$logo = get_theme_mod( 'custom-logo', '' );
 						$tagline = get_theme_mod( 'site-description',true );
+						if( $logo_title && function_exists( 'the_custom_logo' ) ) {
+                                the_custom_logo();     
+					        }elseif( $logo != '' && $logo_title ) { ?>
+							   <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo esc_url($logo) ?>"></a></h1>
+					<?php	}else { ?>
+								<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+						    <?php } ?>
+						<?php if( $tagline ) : ?>
+								<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+						<?php endif;  
 					?>
-					<?php	if( $logo_title &&  $logo != '' ) : ?>
-							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo esc_url($logo) ?>"></a></h1>
-						<?php else : ?>
-							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>	
-					<?php endif; ?>
-					
-					<?php if( $tagline ) : ?>
-							<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-						<?php endif; ?>				
+
+						
 				</div>
 
 				<div class="ten columns">
@@ -104,6 +114,7 @@ endif;
 
 	<?php if ( function_exists( 'is_woocommerce' ) || function_exists( 'is_cart' ) || function_exists( 'is_checkout' )) :
 	 if ( is_woocommerce() || is_cart() || is_checkout() ) { ?>
+	 	<div class="breadcrumb-wrap">
 		   <div class="container">
 				<div class="sixteen columns breadcrumb">	
 					<header class="entry-header">
@@ -116,6 +127,7 @@ endif;
 					<?php endif; ?> 
 				</div>
 	        </div>
+	    </div>
 	<?php } 
 	endif; ?>
 

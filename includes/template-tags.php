@@ -165,6 +165,34 @@ if ( ! function_exists( 'greenr_breadcrumbs' ) ) {
 
 }
 
+if ( ! function_exists( 'greenr_posts_nav' ) ) :
+/**
+ * Display navigation to next/previous set of posts when applicable.
+ */
+function greenr_posts_nav() {    
+	// Don't print empty markup if there's only one page.
+	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
+		return;
+	}    
+	?>
+	<nav class="navigation paging-navigation clearfix" role="navigation">
+		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'greenr' ); ?></h1>
+		<div class="nav-links">
+
+			<?php if ( get_next_posts_link() ) : ?>
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&lsaquo;</span> Older posts', 'greenr' ) ); ?></div>
+			<?php endif; ?>
+
+			<?php if ( get_previous_posts_link() ) : ?>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rsaquo;</span>', 'greenr' ) ); ?></div>
+			<?php endif; ?>
+
+		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	<?php
+}
+endif;
+
 if ( ! function_exists( 'greenr_paging_nav' ) ) :
 	/**
 	 * Display navigation to next/previous set of posts when applicable.
@@ -490,7 +518,22 @@ add_action( 'save_post',     'greenr_category_transient_flusher' );
 
 
 	// free-extra functions //
+function greenr_author() {
+	$byline = sprintf(
+		_x( '%s', 'post author', 'greenr' ),
+		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '"><i class="fa fa-user"></i> ' . esc_html( get_the_author() ) . '</a></span>'
+	);	
 
+	echo $byline;
+}
+function greenr_get_author() {
+	$byline = sprintf(
+		_x( '%s', 'post author', 'greenr' ),
+		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '"><i class="fa fa-user"></i> ' . esc_html( get_the_author() ) . '</a></span>'
+	);	
+
+	return $byline; 
+}
 
 	// Related Posts Function (call using greenr_related_posts(); ) /NecessarY/ May be write a shortcode?
 	function greenr_related_posts() {
@@ -560,7 +603,7 @@ add_action( 'save_post',     'greenr_category_transient_flusher' );
 		if($start_page <= 0) {
 			$start_page = 1;
 		}
-		echo $before.'<nav class="page-navigation"><ol class="webulous_page_navi clearfix">'."";
+		echo $before.'<nav class="page-navigation navigation pagination"><ol class="webulous_page_navi clearfix">'."";
 		if ($start_page >= 2 && $pages_to_show < $max_page) {
 			$first_page_text = __( "First", 'greenr' );
 			echo '<li class="bpn-first-page-link"><a href="'.get_pagenum_link().'" title="'.$first_page_text.'">'.$first_page_text.'</a></li>';
@@ -583,5 +626,279 @@ add_action( 'save_post',     'greenr_category_transient_flusher' );
 			echo '<li class="bpn-last-page-link"><a href="'.get_pagenum_link($max_page).'" title="'.$last_page_text.'">'.$last_page_text.'</a></li>';
 		}
 		echo '</ol></nav>'.$after."";
+	}
+}
+
+
+/* Greenr Custom Logo */
+
+add_filter( 'get_custom_logo', 'greenr_custom_logo' );
+if( !function_exists('greenr_custom_logo') ) { 
+	function greenr_custom_logo($html) {
+		$custom_logo_id = get_theme_mod( 'custom_logo' );
+		$logo = get_theme_mod( 'custom-logo', '' );
+		echo '<h1 class="site-title img-logo">';
+		if(!$custom_logo_id && $logo!= '') {	
+		    echo '<img src="'.$logo.'">';
+		}else{
+			echo $html;
+		}
+		echo '<h1>';
+	}
+}
+
+
+if ( ! function_exists( 'greenr_entry_top_meta' ) ) : 
+/**
+ * Prints HTML with meta information for the categories, tags and comments.
+ */
+function greenr_entry_top_meta() {   
+	// Post meta data 
+	
+	  $single_post_top_meta = get_theme_mod('single_post_top_meta', array(1,2,6) );
+      // echo '<pre>',print_r($single_post_top_meta),'</pre>';
+	
+    if ( 'post' == get_post_type() ) {  
+		foreach ($single_post_top_meta as $key => $value) {
+		    if( $value == '1') { 
+		    	global $post;?>
+		  	    <span class="date-structure">				
+					<span class="dd"><a class="url fn n" href="<?php echo get_day_link(get_the_time('Y'), get_the_time('m'),get_the_time('d')); ?>"><i class="fa fa-clock-o"></i><?php the_time('j M Y'); ?></a></span>		
+				</span>
+	<?php   }elseif( $value == 2) {
+				printf(
+					_x( '%s', 'post author', 'greenr' ),
+					'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '"><i class="fa fa-user"></i> ' . esc_html( get_the_author() ) . '</a></span>'
+				);	
+			}elseif( $value == 3)  {
+				if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+					echo ' <span class="comments-link"><i class="fa fa-comments"></i>';
+					comments_popup_link( __( 'Leave a comment', 'greenr' ), __( '1 Comment', 'greenr' ), __( '% Comments', 'greenr' ) );
+					echo '</span>';
+			    }
+	        }elseif( $value == 4) {
+				$categories_list = get_the_category_list( __( ', ', 'greenr' ) );
+				if ( $categories_list ) {
+					printf( '<span class="cat-links"><i class="fa fa-folder-open"></i> ' . __( '%1$s ', 'greenr' ) . '</span>', $categories_list );
+				}	
+		    }elseif( $value == 5)  {
+	    		/* translators: used between list items, there is a space after the comma */
+				$tags_list = get_the_tag_list( '', __( ', ', 'greenr' ) );
+				if ( $tags_list ) {
+					printf( '<span class="tags-links"><i class="fa fa-tags"></i> ' . __( '%1$s ', 'greenr' ) . '</span>', $tags_list );
+				}			
+		    }elseif( $value == 6) {
+		        edit_post_link( __( 'Edit', 'greenr' ), '<span class="edit-link"><i class="fa fa-pencil"></i> ', '</span>' );
+		    }
+	    }
+	}
+}
+
+endif;
+if ( ! function_exists( 'greenr_entry_bottom_meta' ) ) : 
+/**
+ * Prints HTML with meta information for the categories, tags and comments.
+ */
+function greenr_entry_bottom_meta() {   
+	// Post meta data 
+	
+	$single_post_bottom_meta = get_theme_mod('single_post_bottom_meta', array(3,4,5) );
+
+	if ( 'post' == get_post_type() ) {  
+		foreach ($single_post_bottom_meta as $key => $value) {
+		    if( $value == '1') { ?>
+		  	    <span class="date-structure">				
+					<span class="dd"><a class="url fn n" href="<?php echo get_day_link(get_the_time('Y'), get_the_time('m'),get_the_time('d')); ?>"><i class="fa fa-clock-o"></i><?php the_time('j M Y'); ?></a></span>	
+				</span>
+	<?php   }elseif( $value == 2) {
+				printf(
+					_x( '%s', 'post author', 'greenr' ),
+					'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '"><i class="fa fa-user"></i> ' . esc_html( get_the_author() ) . '</a></span>'
+				);	
+			}elseif( $value == 3)  {
+				if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+					echo ' <span class="comments-link"><i class="fa fa-comments"></i>';
+					comments_popup_link( __( 'Leave a comment', 'greenr' ), __( '1 Comment', 'greenr' ), __( '% Comments', 'greenr' ) );
+					echo '</span>';
+			    }
+	        }elseif( $value == 4) {
+				$categories_list = get_the_category_list( __( ', ', 'greenr' ) );
+				if ( $categories_list ) {
+					printf( '<span class="cat-links"><i class="fa fa-folder-open"></i> ' . __( '%1$s ', 'greenr' ) . '</span>', $categories_list );
+				}	
+		    }elseif( $value == 5)  {
+	    		/* translators: used between list items, there is a space after the comma */
+				$tags_list = get_the_tag_list( '', __( ', ', 'greenr' ) );
+				if ( $tags_list ) {
+					printf( '<span class="tags-links"><i class="fa fa-tags"></i> ' . __( '%1$s ', 'greenr' ) . '</span>', $tags_list );
+				}			
+		    }elseif( $value == 6) {
+		        edit_post_link( __( 'Edit', 'greenr' ), '<span class="edit-link"><i class="fa fa-pencil"></i> ', '</span>' );
+		    }
+	    }
+	}
+}
+
+endif;
+
+
+/*  Site Layout Option  */
+if( !function_exists('greenr_layout_class') ) {   
+	function greenr_layout_class() {
+		if( is_home() &&  ( get_theme_mod('blog_layout',1) == 3 ||  get_theme_mod('blog_layout',1) == 5) ) {
+	       echo 'sixteen';
+	       return;
+		}
+	     $sidebar_position = get_theme_mod( 'sidebar_position', 'right' ); 
+		     if( 'fullwidth' == $sidebar_position ) {
+		     	echo 'sixteen';
+		     }elseif('two-sidebar' == $sidebar_position || 'two-sidebar-left' == $sidebar_position || 'two-sidebar-right' == $sidebar_position ) {
+		     	echo 'eight';
+		     }
+		     else{
+		     	echo 'eleven';
+		     }
+		     if ( 'no-sidebar' == $sidebar_position ) { 
+		     	echo ' no-sidebar';
+		     }
+	}
+}
+
+/* Two Sidebar Left action */ 
+
+add_action('greenr_two_sidebar_left','greenr_double_sidebar_left');   
+if( !function_exists('greenr_double_sidebar_left') ) { 
+ function greenr_double_sidebar_left() {
+    $sidebar_position = get_theme_mod( 'sidebar_position', 'right' ); 
+		if( 'two-sidebar' == $sidebar_position || 'two-sidebar-left' == $sidebar_position ) :
+			 get_sidebar('left'); 
+		endif; 
+		if('two-sidebar-left' == $sidebar_position || 'left' == $sidebar_position ):
+			get_sidebar(); 
+		endif; 
+ }	
+}
+
+/* Two Sidebar Right action */     
+
+ add_action('greenr_two_sidebar_right','greenr_double_sidebar_right'); 	
+if( !function_exists('greenr_double_sidebar_right') ) { 
+  function greenr_double_sidebar_right() {
+  	 $sidebar_position = get_theme_mod( 'sidebar_position', 'right' ); 
+		 if( 'two-sidebar' == $sidebar_position || 'two-sidebar-right' == $sidebar_position || 'right' == $sidebar_position) :
+			 get_sidebar(); 
+		endif; 	
+		if('two-sidebar-right' == $sidebar_position ):
+			get_sidebar('left'); 
+		endif; 
+ }
+}
+
+
+add_action('greenr_single_flexslider_featured_image','greenr_single_flexslider_featured_image_top');
+if( !function_exists('greenr_single_flexslider_featured_image_top') ) { 
+	function greenr_single_flexslider_featured_image_top() {
+		$single_featured_image = get_theme_mod( 'single_featured_image',true );
+		$single_featured_image_size = get_theme_mod ('single_featured_image_size',1);
+		if( $single_featured_image && $single_featured_image_size == 3 ) {
+		    if( has_post_thumbnail() && ! post_password_required() ) :   
+				the_post_thumbnail( 'greenr-blog-full-width', array('class' => "single_page_flexslider_feature_image") ); 
+			endif;
+		}
+	}
+}
+
+
+add_action('greenr_single_page_flexslider_featured_image','greenr_single_page_flexslider_featured_image_top');
+if( !function_exists('greenr_single_page_flexslider_featured_image_top') ) { 
+	function greenr_single_page_flexslider_featured_image_top() {
+		$single_page_featured_image = get_theme_mod( 'single_page_featured_image',true );
+		$single_page_featured_image_size = get_theme_mod ('single_page_featured_image_size',1);
+		if( $single_page_featured_image && $single_page_featured_image_size == 2) {
+		    if( has_post_thumbnail() && ! post_password_required() ) :   
+				the_post_thumbnail( 'greenr-blog-full-width', array('class' => "single_page_flexslider_feature_image") ); 
+			endif;
+		}
+	}
+}		
+
+
+if( !function_exists('greenr_masonry_blog_layout_class') ) { 
+	function greenr_masonry_blog_layout_class() {
+		if( is_home() && get_theme_mod('blog_layout',1) == 4 ||  get_theme_mod('blog_layout',1) == 5 ) {
+			echo 'masonry-blog-content';
+		}
+	}
+}
+
+if( ! function_exists( 'greenr_featured_image' ) ) {
+	function greenr_featured_image() {
+		$featured_image_size = get_theme_mod ('featured_image_size', 1);
+		if ( has_post_thumbnail() && ! post_password_required() ) :
+			if( $featured_image_size == 1 ) :
+				the_post_thumbnail('greenr-blog-full-width');
+			elseif( $featured_image_size == 2 ) :
+				the_post_thumbnail('greenr-small-featured-image-width');
+			elseif( $featured_image_size == 3 ) :
+				the_post_thumbnail('full');
+			elseif( $featured_image_size == 4 ) :
+				the_post_thumbnail('medium');
+			elseif( $featured_image_size == 5 ) :
+				the_post_thumbnail('large');
+			endif;
+		endif;
+	}
+}
+
+
+/* Page site style class ( layout )*/
+
+if( !function_exists('greenr_site_style_class') ) { 
+	function  greenr_site_style_class(){
+       $site_style = get_theme_mod('site-style');
+	    if( $site_style == 'boxed' )  { 
+		  $site_style_class = 'container boxed-container';
+		}elseif( $site_style == 'fluid' ){
+	       $site_style_class = 'fluid-container';	 
+		}
+		else{
+			 $site_style_class = '';
+		} 
+		return $site_style_class; 
+	}
+}
+
+/* Page site style header class ( layout )*/
+
+if( !function_exists('greenr_site_style_header_class') ) { 
+	function  greenr_site_style_header_class(){
+        $site_style = get_theme_mod('site-style');
+	    if( $site_style == 'boxed' )  { 
+		  $site_style_header_class = 'boxed-header';
+		}elseif( $site_style == 'fluid' ){
+	       $site_style_header_class = 'fluid-header';
+		}
+		else{
+			 $site_style_header_class = '';
+		} 
+		return $site_style_header_class;
+	}
+}
+
+add_action('greenr_sidebar_right_widget','greenr_sidebar_right_widget');
+if( !function_exists('greenr_sidebar_right_widget') ) { 
+	function greenr_sidebar_right_widget() {
+		    if (  is_active_sidebar( 'sidebar-1' ) ) {
+				 dynamic_sidebar('sidebar-1');
+			}else { ?>
+				<aside id="meta" class="widget">
+					<h4 class="widget-title"><?php _e( 'Meta', 'greenr' ); ?></h4>
+					<ul>
+						<?php wp_register(); ?>
+						<li><?php wp_loginout(); ?></li>
+						<?php wp_meta(); ?>
+					</ul>
+		        </aside><?php 
+		   }  
 	}
 }

@@ -5,10 +5,12 @@
  * @package Greenr
  */
 
-get_header(); ?>
+get_header(); 
+?>
 	<div id="content" class="site-content container">
-
-	<section id="primary" class="content-area eleven columns">
+	
+	<?php do_action('greenr_two_sidebar_left'); ?>
+	<section id="primary" class="content-area <?php greenr_layout_class();?> columns">
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
@@ -42,5 +44,5 @@ get_header(); ?>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
-<?php get_sidebar(); ?>
+<?php do_action('greenr_two_sidebar_right'); ?>
 <?php get_footer(); ?>

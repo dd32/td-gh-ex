@@ -6,36 +6,40 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
 	<div class="entry-content">
+	
 <?php 
-	    $featured_image = get_theme_mod( 'featured_image',true );
-	    $featured_image_size = get_theme_mod ('featured_image_size','1');
-		if( $featured_image ) : 
-		        if ( $featured_image_size == '1' ) :?>		
-						<div class="thumb">
-						  <?php	if( $featured_image && has_post_thumbnail() ) : 
-								    the_post_thumbnail('greenr-blog-full-width');
-			                     endif;?>
-			            </div> <?php
-		        else: ?>
-		 	            <div class="thumb">
-		 	                 <?php if( has_post_thumbnail() && ! post_password_required() ) :   
-					               the_post_thumbnail('greenr-small-featured-image-width');
-								endif;?>
-			             </div>  <?php				
-	            endif; 
-		endif; ?>  
+	$featured_image = get_theme_mod( 'featured_image',true );
+	if( $featured_image ) : ?>
+		<div class="post-thumb blog-thumb">
+		  <?php
+			if( function_exists( 'greenr_featured_image' ) ) :
+				greenr_featured_image();
+	        endif;
+		  ?>
+	    </div>
+	<?php endif; ?> 
+
+	<?php do_action('greenr_before_entry_header'); ?>
+ 
 		<div class="entry-body">
 			<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title( '', '' ); ?></a></h1>
 			<?php
-				/* translators: %s: Name of current post */
-				the_content( sprintf(
-					__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'greenr' ), 
-					the_title( '<span class="screen-reader-text">"', '"</span>', false )
-				) );
-			?>
+				if ( get_theme_mod('enable_single_post_top_meta', true ) ): ?>
+					<footer class="entry-meta">
+						<?php if(function_exists('greenr_entry_top_meta') ) {
+						    greenr_entry_top_meta(); 
+						} ?> 
+					</footer><!-- .entry-footer -->
+				<?php endif;?> 
 		</div>
+	<?php do_action('greenr_after_entry_header'); ?> 
+		
+			<?php
+				/* translators: %s: Name of current post */
+				the_content();
+			?>
+		
 
 		<?php
 			wp_link_pages( array(
@@ -46,7 +50,13 @@
 			<br class="clear" />
 	</div><!-- .entry-content -->
 
-	<footer class="entry-meta">
-		<?php greenr_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	<?php do_action('greenr_before_entry_footer'); ?>
+	<?php if ( get_theme_mod('enable_single_post_bottom_meta', true ) ): ?>
+		<footer class="entry-meta">
+			<?php if(function_exists('greenr_entry_bottom_meta') ) {
+			     greenr_entry_bottom_meta();
+			} ?>
+		</footer><!-- .entry-footer -->
+	<?php endif;?>
+<?php do_action('greenr_after_entry_footer'); ?>
 </article><!-- #post-## -->

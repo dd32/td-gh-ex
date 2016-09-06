@@ -10,30 +10,16 @@
  * @package Greenr
  */
 
-get_header(); ?>
+get_header(); 
+get_template_part('breadcrumb'); ?>	
 
-	<div class="container">
-		<div class="sixteen columns breadcrumb">	
-			<header class="entry-header">
-				<h1 class="entry-title"><?php the_title(); ?></h1>
-			</header><!-- .entry-header -->
-			<?php if ( get_theme_mod('breadcrumb' ) && function_exists( 'greenr_breadcrumbs' ) ) : ?>
-				<div id="breadcrumb" role="navigation">
-					<?php greenr_breadcrumbs(); ?>
-				</div>
-			<?php endif; ?>  
-		</div>
-	</div>
 
+<?php do_action('greenr_single_page_flexslider_featured_image'); ?>
 
 <div id="content" class="site-content container">
-
-		<?php $sidebar_position = get_theme_mod( 'sidebar_position', 'right' ); ?>
-		<?php if( 'left' == $sidebar_position ) :?>
-			<?php get_sidebar('left'); ?>
-		<?php endif; ?> 
-
-	<div id="primary" class="content-area eleven columns">
+ 
+	<?php do_action('greenr_two_sidebar_left'); ?>
+	<div id="primary" class="content-area <?php greenr_layout_class();?> columns">
 		<main id="main" class="site-main" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -52,8 +38,6 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-     <?php if( 'right' == $sidebar_position ) :?>
-			<?php get_sidebar(); ?>
-		<?php endif; ?>
+    <?php do_action('greenr_two_sidebar_right'); ?>
 
 <?php get_footer(); ?>

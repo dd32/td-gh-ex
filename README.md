@@ -10,14 +10,14 @@ are licensed under GPLv2
 6. All images used in this theme is licensed under GPL-compatible CC0 License
 Taken from Unsplash, Pixabay and Gratisography
 
+https://pixabay.com/en/mt-fuji-sea-of-clouds-sunrise-477832/#
+https://pixabay.com/en/smartphone-technology-mobile-phone-1281632/#
 https://ununsplash.imgix.net/46/bsrOzgDkQhGRKOVC7Era_9X6A3584.jpg?q=75&fm=jpg&s=7d91f92e93b8c17cffb7bc246ceb3d59
 https://unsplash.imgix.net/45/ZLSw0SXxThSrkXRIiCdT_DSC_0345.jpg?q=75&fm=jpg&s=7a623ea0574c010d25ee095d0c0bcaa2
 https://ununsplash.imgix.net/33/hBd6EPoQT2C8VQYv65ys_White%20Sands.jpg?q=75&fm=jpg&s=440edea0dacbf61ee20f8ff106573fb3
 https://unsplash.imgix.net/45/QDSMoAMTYaZoXpcwBjsL__DSC0104-1.jpg?q=75&fm=jpg&s=a23211f4c321462b631e8bc8978ca4af
 https://unsplash.imgix.net/46/3YNGIU4yRTO4DDifrEfA__MG_2885.jpg?q=75&fm=jpg&s=b7beed3209d5d7fc2bf73c47a4da2e52
 
-http://pixabay.com/en/easter-easter-eggs-colorful-paint-3954/
-http://www.gratisography.com/pictures/46_1.jpg
 
 ======== Documentation =========
 
@@ -45,6 +45,10 @@ http://www.gratisography.com/pictures/46_1.jpg
 16. Other theme options are self explanatory.
 
 == Change Log ==
+Version 1.2.0
+  * Customizer Changed to kirki
+  * Added More Options
+
 Version 1.1.9
    * Change Pro Theme URL
 

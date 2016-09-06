@@ -11,14 +11,12 @@
  * @package Greenr
  */
 
-get_header(); ?>  
-	<div id="content" class="site-content container">
-<?php $sidebar_position = get_theme_mod( 'sidebar_position', 'right' ); ?>
-		<?php if( 'left' == $sidebar_position ) :?>
-			<?php get_sidebar('left'); ?>
-		<?php endif; ?>  
+get_header(); ?> 
 
-	<div id="primary" class="content-area eleven columns">
+	<div id="content" class="site-content container">
+	<?php do_action('greenr_two_sidebar_left'); ?>
+
+	<div id="primary" class="content-area <?php greenr_layout_class();?>  columns">
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( get_theme_mod('breadcrumb') && function_exists( 'greenr_breadcrumbs' ) ) : ?>			
@@ -58,9 +56,6 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
-		<?php if( 'right' == $sidebar_position ) :?>
-			<?php get_sidebar(); ?>
-		<?php endif; ?>
+<?php do_action('greenr_two_sidebar_right'); ?>
 		
 <?php get_footer(); ?>

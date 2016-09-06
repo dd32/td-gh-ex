@@ -11,7 +11,7 @@
 if ( ! isset( $content_width ) ) {
 	$content_width = 870; /* pixels */
 }
-
+ 
 if ( ! function_exists( 'greenr_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -27,6 +27,8 @@ function greenr_setup() {
 	
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
+
+	add_editor_style( 'css/editor-style.css' );
 
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
@@ -63,6 +65,13 @@ function greenr_setup() {
 		'default-image' => '',
 	) ) );
 
+
+    add_theme_support( 'custom-background' );
+	
+
+	add_theme_support( 'custom-logo' );
+
+
 	// Add title-tag support
 	add_theme_support( 'title-tag' );
 
@@ -70,9 +79,16 @@ function greenr_setup() {
 		 * Add Additional image sizes
 		 *
 		 */
-		add_image_size( 'greenr-blog-full-width', 1200,350, true );
-		add_image_size( 'greenr-small-featured-image-width', 450,300, true );
-		add_image_size( 'greenr-blog-large-width', 800,300, true );
+	
+	add_theme_support( 'post-thumbnails' );
+	add_image_size( 'greenr_recent-post-img', 380, 350, true);
+	add_image_size( 'greenr_service-img', 100, 100, true);
+	add_image_size( 'greenr-blog-full-width', 1200,350, true );
+	add_image_size( 'greenr-small-featured-image-width', 450,300, true );
+	add_image_size( 'greenr-blog-large-width', 800,300, true );
+	add_image_size( 'greenr-thumbnail-large', 400,200, true );
+	add_image_size( 'greenr-thumbnail-small', 130,90, true );
+	
 
 	//greenr_customizer_setup();
 }
@@ -166,8 +182,26 @@ function greenr_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 	register_sidebar( array(
+		'name'          => __( 'Sidebar Left', 'greenr' ),
+		'id'            => 'sidebar-left',
+		'description'   => __( 'Left Sidebar', 'greenr' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+	register_sidebar( array(
+		'name'          => __( 'Header Right', 'greenr' ),
+		'id'            => 'header-right',
+		'description'   => '',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+	register_sidebar( array(
 		'name'          => __( 'Footer 1', 'greenr' ),
-		'id'            => 'footer-1',
+		'id'            => 'footer-1', 
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -216,7 +250,6 @@ add_action( 'widgets_init', 'greenr_widgets_init' );
 /**
  * Load Theme Options Panel
  */
-require get_template_directory() . '/includes/theme-options.php';
 
 /**
  * Enqueue Scripts and Styles
@@ -234,8 +267,18 @@ require GREENR_INCLUDES_DIR . '/custom-header.php';
 require GREENR_INCLUDES_DIR . '/template-tags.php';
 
 /**
+ * Free Theme upgrade page 
+ */
+require get_template_directory() . '/includes/theme_upgrade.php';
+/**
+ * Load Jetpack compatibility file.
+ */
+require get_template_directory() . '/includes/jetpack.php';
+
+/**
  * Custom functions that act independently of the theme templates.
  */
+
 require GREENR_INCLUDES_DIR . '/extras.php';
 
 /**
@@ -245,9 +288,20 @@ require GREENR_INCLUDES_DIR . '/customizer.php';
 
 
 /**
+ * Inline style ( Theme Options )
+ */
+require get_template_directory() . '/includes/styles.php';
+
+/**
  * JigoShop Support
  */
 require_once( GREENR_INCLUDES_DIR . '/jigoshop.php' );
+
+/**
+ * Load Filter and Hook functions
+ */
+
+require get_template_directory() . '/includes/hooks-filters.php';
 
 
 function greenr_slide_exists() {
@@ -270,8 +324,16 @@ add_theme_support('woocommerce');
 remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper');
 add_action('woocommerce_before_main_content', 'greenr_output_content_wrapper');
 
+
 function greenr_output_content_wrapper() {
-	echo '<div class="container"><div class="row"><div id="primary" class="content-area eleven columns">';
+	$woocommerce_sidebar = get_theme_mod('woocommerce_sidebar',true ) ;
+	if( $woocommerce_sidebar ) {
+        $woocommerce_sidebar_column = 'eleven';
+    }else {
+        $woocommerce_sidebar_column = 'sixteen';
+        remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar');
+    }
+	echo '<div class="site-content container" id="content"><div id="primary" class="content-area '. $woocommerce_sidebar_column .' columns">';	
 }
 
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end' );
@@ -281,8 +343,9 @@ function greenr_output_content_wrapper_end () {
 	echo "</div>";
 }
 
-add_action( 'init', 'greenr_remove_wc_breadcrumbs' );
+add_action( 'init', 'greenr_remove_wc_breadcrumbs' );  
 function greenr_remove_wc_breadcrumbs() {
    	remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
 }
 
+include_once( get_template_directory() . '/admin/theme-options.php' );

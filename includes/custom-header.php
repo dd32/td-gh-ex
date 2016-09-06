@@ -43,7 +43,22 @@ if ( ! function_exists( 'greenr_header_style' ) ) :
  * @see greenr_custom_header_setup().
  */
 function greenr_header_style() {
-	$header_text_color = get_header_textcolor();
+	if ( get_header_image() ) {
+	?>
+	<style type="text/css">    
+		.header-image {
+			background-image: url(<?php echo get_header_image(); ?>);
+			display: block;
+		}
+        .header-inner {
+        	
+        }
+	</style>
+	<?php
+	}
+}
+endif; // greenr_header_style
+	/*$header_text_color = get_header_textcolor();
 
 	// If no custom options for text are set, let's bail
 	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
@@ -74,8 +89,7 @@ function greenr_header_style() {
 	<?php endif; ?>
 	</style>
 	<?php
-}
-endif; // greenr_header_style
+}*/
 
 if ( ! function_exists( 'greenr_admin_header_style' ) ) :
 /**

@@ -12,79 +12,61 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
     include( get_home_template() );
 } else {
 	get_header(); 
-	if ( get_theme_mod('page-builder' ) ) { 
+	if ( get_theme_mod('page-builder',false ) ) { 
 		if( get_theme_mod('flexslider') ) {   
 			echo do_shortcode( get_theme_mod('flexslider'));
 		} ?>
 
 		<div id="content" class="site-content container">
-			<div id="primary" class="content-area sixteen columns">
-				<main id="main" class="site-main" role="main">
-					<?php
-						while ( have_posts() ) : the_post();
-							the_content();
-						endwhile;
-					?>
-					
+			<?php  if( get_theme_mod('home_sidebar',false ) ) { ?>
+				<div id="primary" class="content-area eleven columns">
+			<?php }else { ?>
+			    <div id="primary" class="content-area sixteen columns">
+			<?php } ?>
+				<main id="main" class="site-main" role="main"><?php
+					while ( have_posts() ) : the_post();
+						the_content();
+					endwhile; ?>
 			     </main><!-- #main -->
 		     </div><!-- #primary -->    
-<?php	} else {
+<?php	}else{
 
-		$output = '';
-		$output .= '<div class="flex-container">';         
-		$output .= '<div class="flexslider">';         
-		$output .= '<ul class="slides">';          
-	if ( greenr_slide_exists() ) {     
-		for( $slide_count = 1 ;  $slide_count < 6; $slide_count++ ) {
-			
-			if ( get_theme_mod( 'image_upload-' . $slide_count ) ) {
-				$output .= '<li>';
-				$slide_image = get_theme_mod( 'image_upload-' . $slide_count );
-				$output .= '<div class="flex-image"><img src="' . esc_url( $slide_image ) . '" alt="" ></div>';
+		if( get_theme_mod('enable_slider',true) ) {
+			get_template_part('category-slider');
+		}
+  
+	    if( get_theme_mod('home_sidebar',false ) ) { ?>
+	        <div id="content" class="site-content container">
+			<div id="primary" class="content-area eleven columns"><?php
+	    }else{ ?>
+	    	<div><?php
+	    }
+
+		if ( get_theme_mod('info_section_status',true) ) {
+			if ( get_theme_mod('info') ) {
+				$info = get_theme_mod('info');
+				echo '<div class="services gap nomrn"><div class="container">';
+				echo $info;
+				echo '</div></div>';
+			}else {
+				echo '<div class="services gap nomrn"><div class="container">';
+				printf('<div class="one-third column"><img src="' . get_template_directory_uri() . '/images/info.png"></div>');
+				echo '<div class="two-thirds column"><h2>';
+				printf( __('Info text : Set your own custom text. Click  <a href="%1$s"target="_blank"> Customizer </a> and Goto Home => Info Section.</h2><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using "Content here, content here", making it look like readable English.</p><div class="row"><div class="eight columns"><h2>Branding Design</h2><p>Duis blandit eget leo eu interdum. Mauris accumsan euismod aliquet. Phasellus quis mi vitae orci tempor tempus vel sit amet nulla. Fusce gravida ligula et felis ultricies, lobortis interdum est ultrices. Praesent commodo justo eget sapien ornare hendrerit. Cras consequat lobortis velit, et hendrerit sapien. Sed commodo vel sem a convallis.</p><a href="#">Keep Reading</a></div><div class="eight columns"><h2>Web Development</h2><p>Duis blandit eget leo eu interdum. Mauris accumsan euismod aliquet. Phasellus quis mi vitae orci tempor tempus vel sit amet nulla. Fusce gravida ligula et felis ultricies, lobortis interdum est ultrices. Praesent commodo justo eget sapien ornare hendrerit. Cras consequat lobortis velit, et hendrerit sapien. Sed commodo vel sem a convallis.</p><a href="#">Keep Reading</a></div></div></div>', 'greenr'), admin_url('customize.php') );
+				echo '</div></div>';
 			}
-
-			if ( get_theme_mod( 'flexcaption-' . $slide_count ) ) {
-				$slide_description =  get_theme_mod( 'flexcaption-' . $slide_count );
-				$output .= '<div class="flex-caption">' . $slide_description . '</div>';
-			} 
-
-			$output .= '</li>';
-			
-		}
-	}else {
-			$output .= '<li>';    
-			$slide_image = GREENR_PARENT_URL .'/images/slide1.png';
-			$output .= '<div class="flex-image"><img src="' . esc_url( $slide_image ) . '" alt="" ></div>';
-			$slide_description = sprintf( __( '<h1>The Most Modern WordPress Theme</h1><h3> Slider Setting </h3><p>You haven\'t created any slider yet. Go to Customizer and click Home => FlexSlider Settings, edit or add  your images and Caption.<p><a href="%1$s"target="_blank"> Customizer </a></p>', 'greenr' ), admin_url('customize.php') );
-			$output .= '<div class="flex-caption">' . $slide_description . '</div>';
-			$output .= '</li>';
 		}
 
-		$output .= '</ul>';
-		$output .= '</div><!-- .flexslider -->';
-		$output .= '</div><!-- .flex-container -->';
+	    if ( get_theme_mod('testimonial_section_status',true) ) {
+			if ( get_theme_mod('testimonial') ) {
+				$testimonial = get_theme_mod( 'testimonial' ) ;
+				echo $testimonial;
+			}else {
+				echo '<div class="container gap"><div class="testimonials"><ul class="slides"><li><div class="testimony"><img src="'. get_template_directory_uri() . '/images/client.png"><p>Testimonial text : Set your own custom text. Click  <a href="'.admin_url('customize.php').'"target="_blank"> Customizer </a> and Goto Home => Testimonial Section.</p><p class="client"><strong>Lord Varys</strong>, Spy Master, Iron Throne</p></div></li></ul><br class="clear"/></div></div>';
+			}
+		}
 
-		echo $output;
-
-	if ( get_theme_mod('info') ) {
-		$info = get_theme_mod('info');
-		echo '<div class="services gap nomrn"><div class="container">';
-		echo $info;
-		echo '</div></div>';
-	}else {
-		echo '<div class="services gap nomrn"><div class="container">';
-		printf('<div class="one-third column"><img src="' . get_template_directory_uri() . '/images/info.png"></div>');
-		echo '<div class="two-thirds column"><h2>';
-		printf( __('Info text : Set your own custom text. Click  <a href="%1$s"target="_blank"> Customizer </a> and Goto Home => Info Section.</h2><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using "Content here, content here", making it look like readable English.</p><div class="row"><div class="eight columns"><h2>Branding Design</h2><p>Duis blandit eget leo eu interdum. Mauris accumsan euismod aliquet. Phasellus quis mi vitae orci tempor tempus vel sit amet nulla. Fusce gravida ligula et felis ultricies, lobortis interdum est ultrices. Praesent commodo justo eget sapien ornare hendrerit. Cras consequat lobortis velit, et hendrerit sapien. Sed commodo vel sem a convallis.</p><a href="#">Keep Reading</a></div><div class="eight columns"><h2>Web Development</h2><p>Duis blandit eget leo eu interdum. Mauris accumsan euismod aliquet. Phasellus quis mi vitae orci tempor tempus vel sit amet nulla. Fusce gravida ligula et felis ultricies, lobortis interdum est ultrices. Praesent commodo justo eget sapien ornare hendrerit. Cras consequat lobortis velit, et hendrerit sapien. Sed commodo vel sem a convallis.</p><a href="#">Keep Reading</a></div></div></div>', 'greenr'), admin_url('customize.php') );
-		echo '</div></div>';
-	}
-
-	if ( get_theme_mod('testimonial') ) {
-		$testimonial = get_theme_mod( 'testimonial' ) ;
-		echo $testimonial;
-	}else {
-		echo '<div class="container gap"><div class="testimonials"><ul class="slides"><li><div class="testimony"><img src="'. get_template_directory_uri() . '/images/client.png"><p>Testimonial text : Set your own custom text. Click  <a href="'.admin_url('customize.php').'"target="_blank"> Customizer </a> and Goto Home => Testimonial Section.</p><p class="client"><strong>Lord Varys</strong>, Spy Master, Iron Throne</p></div></li></ul><br class="clear"/></div></div>';
-	}
+    if( get_theme_mod('service_section_status',true) ) {
 
 		$output = '';
 		$output = '<div class="services">';
@@ -150,21 +132,38 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 		$output .= '</div><!-- .services -->';
 
 		echo $output;
+	}
 
-	if ( get_theme_mod('cta') ) {
-		$cta = get_theme_mod('cta');
-		echo '<div class="container gap">';
-		echo $cta;
-		echo '</div>';
-	}else {
-		echo '<div class="container gap">';
-		echo '<div class="callout-widget"><div class="call-content"><p>CTA text : Set your own custom text. Click  <a href="'.admin_url('customize.php').'"target="_blank"> Customizer </a> and Goto Home => Additional Info Section .</p></div><div class="callout-btn"><a href="#">Take Action</a></div><br class="clear"></div>';
-		echo '</div>';
-	} ?>
-			</main><!-- #main -->
-			</div><!-- #primary -->
-<?php
-}
+    if( get_theme_mod('additional_section_status',true) ) {
+		if ( get_theme_mod('cta') ) {
+			$cta = get_theme_mod('cta');
+			echo '<div class="container gap">';
+			echo $cta;
+			echo '</div>';
+		}else {
+			echo '<div class="container gap">';
+			echo '<div class="callout-widget"><div class="call-content"><p>CTA text : Set your own custom text. Click  <a href="'.admin_url('customize.php').'"target="_blank"> Customizer </a> and Goto Home => Additional Info Section .</p></div><div class="callout-btn"><a href="#">Take Action</a></div><br class="clear"></div>';
+			echo '</div>';
+		} 
+	} 
+
+	if( get_theme_mod('enable_home_default_content',false ) ) {  ?>
+		<div class="container default-home-page"><?php
+			while ( have_posts() ) : the_post();       
+				the_content();
+			endwhile; ?>
+        </div><?php 
+	} 
+
+    if( get_theme_mod('home_sidebar',false ) ) { ?>
+	   </div><!-- #primary --><?php
+    }
+    
+	}
+
+	if( get_theme_mod('home_sidebar',false ) ) { 
+   	   get_sidebar();
+	}
 	get_footer(); 
 }
 ?>

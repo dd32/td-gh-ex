@@ -4,24 +4,42 @@
  *
  * @package Greenr
  */
+$footer_widget_count = get_theme_mod('footer_widgets_count', 4 );
 
-if ( ! is_dynamic_sidebar( ) ) {
-	return;
+switch ( $footer_widget_count ) {
+	case 1:
+		$footer_widget_class = 'sixteen columns';
+		break;
+	case 2:
+		$footer_widget_class = 'eight columns';
+		break;
+	case 3:
+		$footer_widget_class = 'one-third column';    
+		break;
+	
+	default:
+		$footer_widget_class = 'four columns';
+		break;
 }
+
+for ($i = 1; $i <= $footer_widget_count; $i++ ) {
+
 ?>
 
-		<div class="four columns alpha">
-			<?php dynamic_sidebar('footer-1'); ?>
+		<div class="<?php echo $footer_widget_class; ?>">
+			<?php 
+	
+				if ( is_active_sidebar( 'footer-'.$i ) ) :
+				    dynamic_sidebar('footer-'.$i );
+				else: ?>
+			       <aside id="archives" class="widget">
+						<h4 class="widget-title"><?php _e( 'Archives', 'greenr' ); ?></h4>
+						<ul>
+							<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
+						</ul>
+					</aside><?php
+				endif; ?>
+					
 		</div>
 
-		<div class="four columns">
-			<?php dynamic_sidebar('footer-2'); ?>
-		</div>
-
-		<div class="four columns">
-			<?php dynamic_sidebar('footer-3'); ?>
-		</div>
-
-		<div class="four columns omega">
-			<?php dynamic_sidebar('footer-4'); ?>
-		</div>
+<?php } ?>

@@ -1265,9 +1265,7 @@ input.search-submit {
       color: #ffffff; }
 
 .entry-footer {
-  padding: 15px 0;
-  border-top: 1px solid #d7d7d7;
-  border-bottom: 1px solid #d7d7d7; }
+  padding: 15px 0; }
 
 .entry-meta,
 .entry-footer {
@@ -1914,10 +1912,126 @@ ol.comment-list li.byuser {
   box-sizing: content-box;
   margin: 0 -50%; }
 
-
-
 .single-product .woocommerce-breadcrumb {
   margin-bottom: 50px; }
+
+/*----------from kirki--------------------*/
+.no-sidebar {
+  float: none;
+  margin: 0 auto;
+  display: block; }
+
+/* Custom Header Image */
+.header-image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: auto;
+  position: relative; }
+
+.overlay {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: transparent; }
+
+/* STICKY HEADER */
+.sticky-header #header-bottom {
+  position: fixed;
+  top: -2px;
+  left: 0;
+  width: 100%;
+  background: white;
+  z-index: 1000; }
+  .sticky-header #header-bottom .search-form {
+    top: 5px; }
+
+.boxed-container .sticky-header #header-bottom {
+  width: auto;
+  left: auto; }
+
+.admin-bar .sticky-header #header-bottom {
+  top: 30px; }
+
+/* SITE STYLE */
+.container .container {
+  width: 100%; }
+
+.fluid-container .container {
+  width: 100%;
+  max-width: none; }
+
+.boxed-container {
+  overflow: hidden; }
+
+.boxed-header .branding .site-branding {
+  padding-left: 10px; }
+  .boxed-header .branding .site-branding:before {
+    display: none; }
+.boxed-header #header-bottom .thirteen, .boxed-header .twelve, .boxed-header #header-bottom .sixteen {
+  margin-left: 0; }
+.boxed-header .search-form::after {
+  display: none; }
+
+.fluid-header #header-bottom .thirteen, .fluid-header #header-bottom .sixteen {
+  margin-left: 0; }
+
+/* BLOG MASONRY LAYOUT */
+.masonry-blog-content .navigation.pagination, .masonry-blog-content .navigation.post-navigation {
+  position: absolute;
+  bottom: 0;
+  right: 0; }
+
+.navigation.post-navigation {
+  clear: both; }
+
+.masonry-blog-content .navigation.post-navigation {
+  width: 100%;
+  border: none; }
+
+.blog #primary .eight:nth-child(2n+1) {
+  clear: both; }
+.blog #primary .one-third:nth-child(3n+1) {
+  clear: both; }
+
+.navigation.pagination {
+  clear: both; }
+
+#secondary {
+  padding: 11px 5px 20px; }
+
+.blog-box {
+  border: 1px solid #999;
+  margin-bottom: 35px;
+  padding: 20px; }
+  .blog-box .hentry {
+    margin: 0px; }
+  .blog-box article.post {
+    border-bottom: none; }
+
+.single_page_flexslider_feature_image {
+  width: 100%; }
+
+footer {
+  position: relative; }
+
+.flexslider .slides .flex-caption, .home .flexslider .slides .flex-caption {
+  height: auto;
+  padding: 50px; }
+
+.boxed-container .sticky-header #header-bottom {
+  width: 100%;
+  left: 0; }
+
+/* blog page meta */
+.entry-footer, .entry-meta {
+  margin: 15px 0px; }
+  .entry-footer .fa, .entry-meta .fa {
+    color: #999999; }
+  .entry-footer span:hover .fa, .entry-meta span:hover .fa {
+    color: #56cc00; }
 
 /*--------------------------------------------------------------
 11.0 Infinite scroll
@@ -2028,7 +2142,12 @@ dl.wp-caption {
 .social {
   list-style: none;
   margin: 0;
+   color: #fff;
+  list-style: none;
   float: right; }
+   .social ul {
+  list-style: none;
+}
   .social li {
     float: left; }
     .social li a {
@@ -2137,6 +2256,33 @@ h2.site-description {
 
 .footer-bottom .widget-title {
   display: none; }
+
+.scroll-to-top {
+  background: #56cc00;
+  color: #ffffff;
+  bottom: 3%;
+  cursor: pointer;
+  display: none;
+  position: fixed;
+  right: 20px;
+  z-index: 99999;
+  text-align: center;
+  line-height: 40px;
+  width: 40px;
+  background-clip: padding-box;
+  /* stops bg color from leaking outside the border: */
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-transition: background-color 0.3s linear;
+  -moz-transition: background-color 0.3s linear;
+  -o-transition: background-color 0.3s linear;
+  transition: background-color 0.3s linear; }
+
+.scroll-to-top:hover {
+  background: rgba(86, 204, 0, 0.6); }
+
+.textwidget .wpcf7-form p {
+  margin-bottom: 3px; }
 
 .flexslider {
   border: 0 !important;

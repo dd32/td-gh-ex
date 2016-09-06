@@ -1,32 +1,10 @@
 ( function( $ ) {
-	// Add Make Plus message
-		upgrade = $('<a class="greenr-buy-pro"></a>')
-			.attr('href', 'http://www.webulousthemes.com/theme/greenr/')
-			.attr('target', '_blank')
-			.text(greenr_upgrade.message)  
-		;
-		demo = $('<a class="greenr-docs"></a>')
-			.attr('href','http://demo.webulous.in/greenr/')
-			.attr('target','_blank')
-			.text(greenr_upgrade.demo);
-		docs = $('<a class="greenr-docs"></a>')
-			.attr('href','http://www.webulousthemes.com/greenr-free/')
-			.attr('target','_blank')
-			.text(greenr_upgrade.docs);
-		support = $('<a class="greenr-docs"></a>')
-			.attr('href','http://www.webulousthemes.com/support-ticket/')
-			.attr('target','_blank')
-			.text(greenr_upgrade.support);
-
-		$('.preview-notice').append(upgrade);
-		$('.preview-notice').append(demo);
-		$('.preview-notice').append(docs);
-		$('.preview-notice').append(support);
-		// Remove accordion click event
-		$('.greenr-buy-pro').on('click', function(e) {
-			e.stopPropagation();
-		});
-		$('.greenr-docs').on('click',function(e){
-			e.stopPropagation();
-		})
+	$(function() {
+		/*
+		 * This code is based on Theme Foundry's "Make" theme
+		 * Make WordPress Theme, Copyright 2014 The Theme Foundry
+		 * Make is distributed under the terms of the GNU GPL
+		 */
+		$('#customize-theme-controls').append('<div class="customizer-review-link"><p>Star this theme on <a href="https://wordpress.org/support/view/theme-reviews/greenr" target="_blank">WordPress.org! <br/> Leave us a <span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span><span class="dashicons dashicons-star-filled"></span></a> rating </p></div>');
+    });
 } )( jQuery );

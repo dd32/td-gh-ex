@@ -87,3 +87,4 @@ function greenr_setup_author() {
 	}
 }
 add_action( 'wp', 'greenr_setup_author' );
+
