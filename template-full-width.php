@@ -27,7 +27,7 @@ get_header(); ?>
 	<?php do_action('boxy_before_content'); ?>
 
 	<div id="content" class="site-content container">
-
+         <div id="primary" class="content-area  sixteen columns">
 
 			<main id="main" class="site-main" role="main">
 
@@ -46,6 +46,4 @@ get_header(); ?>
 
 			</main><!-- #main -->
 		</div><!-- #primary -->
-	</div><!-- .row -->
-
 <?php get_footer(); ?>

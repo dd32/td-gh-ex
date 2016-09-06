@@ -7,7 +7,7 @@
  * @package BOXY
  */
 
-/*
+/* 
  	* Breadcrumbs function based on http://dimox.net/wordpress-breadcrumbs-without-a-plugin/
  	* Thanks Dimox
  	* Integerated with options panel, instead of hardcoded option as in original
@@ -165,6 +165,126 @@ if ( ! function_exists( 'boxy_breadcrumbs' ) ) {
 	} // end boxy_breadcrumbs()
 
 }
+
+if ( ! function_exists( 'boxy_entry_top_meta' ) ) : 
+/**
+ * Prints HTML with meta information for the categories, tags and comments.
+ */
+function boxy_entry_top_meta() {   
+	// Post meta data 
+	
+	  $single_post_top_meta = get_theme_mod('single_post_top_meta', array(1,2,6) );
+      // echo '<pre>',print_r($single_post_top_meta),'</pre>';
+	
+    if ( 'post' == get_post_type() ) {  
+		foreach ($single_post_top_meta as $key => $value) {
+		    if( $value == '1') { 
+		    	global $post;?>
+		  	    <span class="date-structure">				
+					<span class="dd"><a class="url fn n" href="<?php echo get_day_link(get_the_time('Y'), get_the_time('m'),get_the_time('d')); ?>"><i class="fa fa-clock-o"></i><?php the_time('j M Y'); ?></a></span>		
+				</span>
+	<?php   }elseif( $value == 2) {
+				printf(
+					_x( '%s', 'post author', 'boxy' ),
+					'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '"><i class="fa fa-user"></i> ' . esc_html( get_the_author() ) . '</a></span>'
+				);	
+			}elseif( $value == 3)  {
+				if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+					echo ' <span class="comments-link"><i class="fa fa-comments"></i>';
+					comments_popup_link( __( 'Leave a comment', 'boxy' ), __( '1 Comment', 'boxy' ), __( '% Comments', 'boxy' ) );
+					echo '</span>';
+			    }
+	        }elseif( $value == 4) {
+				$categories_list = get_the_category_list( __( ', ', 'boxy' ) );
+				if ( $categories_list ) {
+					printf( '<span class="cat-links"><i class="fa fa-folder-open"></i> ' . __( '%1$s ', 'boxy' ) . '</span>', $categories_list );
+				}	
+		    }elseif( $value == 5)  {
+	    		/* translators: used between list items, there is a space after the comma */
+				$tags_list = get_the_tag_list( '', __( ', ', 'boxy' ) );
+				if ( $tags_list ) {
+					printf( '<span class="tags-links"><i class="fa fa-tags"></i> ' . __( '%1$s ', 'boxy' ) . '</span>', $tags_list );
+				}			
+		    }elseif( $value == 6) {
+		        edit_post_link( __( 'Edit', 'boxy' ), '<span class="edit-link"><i class="fa fa-pencil"></i> ', '</span>' );
+		    }
+	    }
+	}
+}
+
+endif;
+if ( ! function_exists( 'boxy_entry_bottom_meta' ) ) : 
+/**
+ * Prints HTML with meta information for the categories, tags and comments.
+ */
+function boxy_entry_bottom_meta() {   
+	// Post meta data 
+	
+	$single_post_bottom_meta = get_theme_mod('single_post_bottom_meta', array(1,4,5,6) );
+
+	if ( 'post' == get_post_type() ) {  
+		foreach ($single_post_bottom_meta as $key => $value) {
+		    if( $value == '1') { ?>
+		  	    <span class="date-structure">				
+					<span class="dd"><a class="url fn n" href="<?php echo get_day_link(get_the_time('Y'), get_the_time('m'),get_the_time('d')); ?>"><i class="fa fa-clock-o"></i><?php the_time('j M Y'); ?></a></span>	
+				</span>
+	<?php   }elseif( $value == 2) {
+				printf(
+					_x( '%s', 'post author', 'boxy' ),
+					'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '"><i class="fa fa-user"></i> ' . esc_html( get_the_author() ) . '</a></span>'
+				);	
+			}elseif( $value == 3)  {
+				if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+					echo ' <span class="comments-link"><i class="fa fa-comments"></i>';
+					comments_popup_link( __( 'Leave a comment', 'boxy' ), __( '1 Comment', 'boxy' ), __( '% Comments', 'boxy' ) );
+					echo '</span>';
+			    }
+	        }elseif( $value == 4) {
+				$categories_list = get_the_category_list( __( ', ', 'boxy' ) );
+				if ( $categories_list ) {
+					printf( '<span class="cat-links"><i class="fa fa-folder-open"></i> ' . __( '%1$s ', 'boxy' ) . '</span>', $categories_list );
+				}	
+		    }elseif( $value == 5)  {
+	    		/* translators: used between list items, there is a space after the comma */
+				$tags_list = get_the_tag_list( '', __( ', ', 'boxy' ) );
+				if ( $tags_list ) {
+					printf( '<span class="tags-links"><i class="fa fa-tags"></i> ' . __( '%1$s ', 'boxy' ) . '</span>', $tags_list );
+				}			
+		    }elseif( $value == 6) {
+		        edit_post_link( __( 'Edit', 'boxy' ), '<span class="edit-link"><i class="fa fa-pencil"></i> ', '</span>' );
+		    }
+	    }
+	}
+}
+
+endif;
+if ( ! function_exists( 'boxy_paging_nav' ) ) :
+/**
+ * Display navigation to next/previous set of posts when applicable.
+ */
+function boxy_paging_nav() {
+	// Don't print empty markup if there's only one page.
+	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
+		return;
+	}
+	?>
+	<nav class="navigation paging-navigation clearfix" role="navigation">
+		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'boxy' ); ?></h1>
+		<div class="nav-links">
+
+			<?php if ( get_next_posts_link() ) : ?>
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'boxy' ) ); ?></div>
+			<?php endif; ?>
+
+			<?php if ( get_previous_posts_link() ) : ?>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'boxy' ) ); ?></div>
+			<?php endif; ?>
+
+		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	<?php
+}
+endif;
 
 if ( ! function_exists( 'boxy_posts_nav' ) ) :
 	/**
@@ -327,6 +447,33 @@ if ( ! function_exists( 'boxy_post_date' ) ) :
 		);
 	}
 endif;
+if ( ! function_exists( 'boxy_entry_footer' ) ) :
+/**
+ * Prints HTML with meta information for the categories, tags and comments.
+ */
+function boxy_entry_footer() {
+	// Hide category and tag text for pages.
+	if ( 'post' == get_post_type() ) {
+		/* translators: used between list items, there is a space after the comma */
+		$categories_list = get_the_category_list( __( ', ', 'boxy' ) );
+		if ( $categories_list && boxy_categorized_blog() ) {
+			printf( ' <span class="cat-links"><i class="fa fa-folder-open"></i>' . __( '%1$s ', 'boxy' ) . '</span>', $categories_list );
+		}
+
+		/* translators: used between list items, there is a space after the comma */
+		$tags_list = get_the_tag_list( '', __( ', ', 'boxy' ) );
+		if ( $tags_list ) {
+			printf( '<span class="tags-links"><i class="fa fa-tags"></i> ' . __( '%1$s ', 'boxy' ) . '</span>', $tags_list );
+		}
+	}
+
+	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+		echo '<span class="comments-link">';
+		comments_popup_link( __( '<i class="fa fa-comments"></i>Leave a comment', 'boxy' ), __( '<i class="fa fa-comments"></i> 1 Comment', 'boxy' ), __( '<i class="fa fa-comments"></i> % Comments', 'boxy' ) );
+		echo '</span>';
+	}
+}
+endif;
 
 /**
  * Returns true if a blog has more than 1 category.
@@ -363,7 +510,7 @@ if ( ! function_exists( 'boxy_recent_posts' ) ) {
 		$args = array (
 			'post_type'              => 'post',
 			'post_status'            => 'publish',
-			'posts_per_page'         => get_option( 'posts_per_page' ) - ( get_option( 'posts_per_page' ) % 3 ),
+			'posts_per_page'         => get_theme_mod('recent_posts_count', get_option('post_per_page') ),
 			'ignore_sticky_posts'    => true,
 			'order'                  => 'DESC',
 		);
@@ -538,7 +685,7 @@ if( ! function_exists( 'boxy_pagination' )) {
 		if($start_page <= 0) {
 			$start_page = 1;
 		}
-		echo $before.'<nav class="page-navigation"><ol class="webulous_page_navi clearfix">'."";
+		echo $before.'<nav class="page-navigation navigation pagination"><ol class="webulous_page_navi clearfix">'."";
 		if ($start_page >= 2 && $pages_to_show < $max_page) {
 			$first_page_text = __( "First", 'boxy' );
 			echo '<li class="bpn-first-page-link"><a href="'.get_pagenum_link().'" title="'.$first_page_text.'">'.$first_page_text.'</a></li>';
@@ -573,4 +720,306 @@ function boxy_comments_meta() {
 	}	
 }
 
+/*  Site Layout Option  */
+if( !function_exists('boxy_layout_class') ) {   
+	function boxy_layout_class() {
+		if( is_home() &&  ( get_theme_mod('blog_layout',1) == 3 ||  get_theme_mod('blog_layout',1) == 5) ) {
+	       echo 'sixteen';
+	       return;
+		}
+	     $sidebar_position = get_theme_mod( 'sidebar_position', 'right' ); 
+		     if( 'fullwidth' == $sidebar_position ) {
+		     	echo 'sixteen';
+		     }elseif('two-sidebar' == $sidebar_position || 'two-sidebar-left' == $sidebar_position || 'two-sidebar-right' == $sidebar_position ) {
+		     	echo 'eight';
+		     }
+		     else{
+		     	echo 'eleven';
+		     }
+		     if ( 'no-sidebar' == $sidebar_position ) { 
+		     	echo ' no-sidebar';
+		     }
+	}
+}
 
+/* Two Sidebar Left action */ 
+
+add_action('boxy_two_sidebar_left','boxy_double_sidebar_left');   
+if( !function_exists('boxy_double_sidebar_left') ) { 
+ function boxy_double_sidebar_left() {
+    $sidebar_position = get_theme_mod( 'sidebar_position', 'right' ); 
+		if( 'two-sidebar' == $sidebar_position || 'two-sidebar-left' == $sidebar_position ) :
+			 get_sidebar('left'); 
+		endif; 
+		if('two-sidebar-left' == $sidebar_position || 'left' == $sidebar_position ):
+			get_sidebar(); 
+		endif; 
+ }	
+}
+
+/* Two Sidebar Right action */     
+
+ add_action('boxy_two_sidebar_right','boxy_double_sidebar_right'); 	
+if( !function_exists('boxy_double_sidebar_right') ) { 
+  function boxy_double_sidebar_right() {
+  	 $sidebar_position = get_theme_mod( 'sidebar_position', 'right' ); 
+		 if( 'two-sidebar' == $sidebar_position || 'two-sidebar-right' == $sidebar_position || 'right' == $sidebar_position) :
+			 get_sidebar(); 
+		endif; 	
+		if('two-sidebar-right' == $sidebar_position ):
+			get_sidebar('left'); 
+		endif; 
+ }
+}
+
+
+add_action('boxy_single_flexslider_featured_image','boxy_single_flexslider_featured_image_top');
+if( !function_exists('boxy_single_flexslider_featured_image_top') ) { 
+	function boxy_single_flexslider_featured_image_top() {
+		$single_featured_image = get_theme_mod( 'single_featured_image',true );
+		$single_featured_image_size = get_theme_mod ('single_featured_image_size',1);
+		if( $single_featured_image && $single_featured_image_size == 3 ) {
+		    if( has_post_thumbnail() && ! post_password_required() ) :   
+				the_post_thumbnail( 'post-thumbnail', array('class' => "single_page_flexslider_feature_image") ); 
+			endif;
+		}
+	}
+}
+
+
+add_action('boxy_single_page_flexslider_featured_image','boxy_single_page_flexslider_featured_image_top');
+if( !function_exists('boxy_single_page_flexslider_featured_image_top') ) { 
+	function boxy_single_page_flexslider_featured_image_top() {
+		$single_page_featured_image = get_theme_mod( 'single_page_featured_image',true );
+		$single_page_featured_image_size = get_theme_mod ('single_page_featured_image_size',1);
+		if( $single_page_featured_image && $single_page_featured_image_size == 2) {
+		    if( has_post_thumbnail() && ! post_password_required() ) :   
+				the_post_thumbnail( 'post-thumbnail', array('class' => "single_page_flexslider_feature_image") ); 
+			endif;
+		}
+	}
+}		
+
+/* boxy Custom Logo */
+
+add_filter( 'get_custom_logo', 'boxy_custom_logo' );
+if( !function_exists('boxy_custom_logo') ) { 
+	function boxy_custom_logo($html) {
+		$custom_logo_id = get_theme_mod( 'custom_logo' );
+		$logo = get_theme_mod( 'logo', '' );
+		echo '<h1 class="site-title img-logo">';
+		if(!$custom_logo_id && $logo!= '') {	
+		    echo '<img src="'.$logo.'">';
+		}else{
+			echo $html;
+		}
+		echo '<h1>';
+	}
+}
+
+if( !function_exists('boxy_masonry_blog_layout_class') ) { 
+	function boxy_masonry_blog_layout_class() {
+		if( is_home() && get_theme_mod('blog_layout',1) == 4 ||  get_theme_mod('blog_layout',1) == 5 ) {
+			echo 'masonry-blog-content';
+		}
+	}
+}
+
+if( ! function_exists( 'boxy_featured_image' ) ) {
+	function boxy_featured_image() {
+		$featured_image_size = get_theme_mod ('featured_image_size', 1);
+		if ( has_post_thumbnail() && ! post_password_required() ) :
+			if( $featured_image_size == 1 ) :
+				the_post_thumbnail('boxy-blog-full-width');
+			elseif( $featured_image_size == 2 ) :
+				the_post_thumbnail('boxy-small-featured-image-width');
+			elseif( $featured_image_size == 3 ) :
+				the_post_thumbnail('full');
+			elseif( $featured_image_size == 4 ) :
+				the_post_thumbnail('medium');
+			elseif( $featured_image_size == 5 ) :
+				the_post_thumbnail('large');
+			endif;
+		endif;
+	}
+}
+
+if( !function_exists('boxy_magazine_page_primary_class') ) { 
+	function boxy_magazine_page_primary_class() {
+		$magazine_page_sidebar = get_theme_mod('magazine_sidebar',false);
+        if( $magazine_page_sidebar ) {
+        	echo 'sixteen';
+        }else{
+        	echo 'eleven';
+        }
+	}
+}
+
+/* Page site style class ( layout )*/
+
+if( !function_exists('boxy_site_style_class') ) { 
+	function  boxy_site_style_class(){
+       $site_style = get_theme_mod('site-style');
+	    if( $site_style == 'boxed' )  { 
+		  $site_style_class = 'container boxed-container';
+		}elseif( $site_style == 'fluid' ){
+	       $site_style_class = 'fluid-container';	 
+		}
+		else{
+			 $site_style_class = '';
+		} 
+		return $site_style_class; 
+	}
+}
+
+/* Page site style header class ( layout )*/
+
+if( !function_exists('boxy_site_style_header_class') ) { 
+	function  boxy_site_style_header_class(){
+        $site_style = get_theme_mod('site-style');
+	    if( $site_style == 'boxed' )  { 
+		  $site_style_header_class = 'boxed-header';
+		}elseif( $site_style == 'fluid' ){
+	       $site_style_header_class = 'fluid-header';
+		}
+		else{
+			 $site_style_header_class = '';
+		} 
+		return $site_style_header_class;
+	}
+}
+
+add_action('boxy_sidebar_right_widget','boxy_sidebar_right_widget');
+if( !function_exists('boxy_sidebar_right_widget') ) { 
+	function boxy_sidebar_right_widget() {
+		    if (  is_active_sidebar( 'sidebar-1' ) ) {
+				 dynamic_sidebar('sidebar-1');
+			}else { ?>
+				<aside id="meta" class="widget">
+					<h4 class="widget-title"><?php _e( 'Meta', 'boxy' ); ?></h4>
+					<ul>
+						<?php wp_register(); ?>
+						<li><?php wp_loginout(); ?></li>
+						<?php wp_meta(); ?>
+					</ul>
+		        </aside><?php 
+		   }  
+	}
+}
+
+if( !function_exists('boxy_home_sidebar_class') ) {
+	function boxy_home_sidebar_class() {
+		if( get_theme_mod('home_sidebar',false) ) {
+            echo 'eleven columns';
+		}else{
+			 echo 'sixteen columns';
+		}
+
+    }
+}
+
+
+/**
+ * Theme Update Script
+ *
+ * Runs if version number saved in theme_mod "version" doesn't match current theme version.
+ *  logo update
+ */
+if( !function_exists('boxy_logo_update_check') ) { 
+	function boxy_logo_update_check() {
+		 $ver = get_theme_mod( 'version', false );
+		 // Return if update has already been run
+		 if ( version_compare( $ver, '1.2.6' ) >= 0 ) {
+		    return;
+		 }
+		 // If a logo has been set previously, update to use logo feature introduced in WordPress 4.5
+		 if ( function_exists( 'the_custom_logo' ) && get_theme_mod( 'custom-logo', false ) ) {
+		   // Since previous logo was stored a URL, convert it to an attachment ID
+		   $logo = attachment_url_to_postid( get_theme_mod( 'custom-logo' ) );
+		 if ( is_int( $logo ) ) {
+		     set_theme_mod( 'custom_logo', attachment_url_to_postid( get_theme_mod( 'custom-logo' ) ) );
+		 }
+		    remove_theme_mod( 'custom-logo' );
+		 }
+		 // Update to match your current theme version
+		 set_theme_mod( 'version', '1.2.6' );
+	}
+}
+add_action( 'after_setup_theme', 'boxy_logo_update_check' );
+
+
+/* custom css */
+
+
+//Recent Posts with featured Images to be displayed on home page
+/*if( ! function_exists('boxy_recent_posts') ) {
+	function boxy_recent_posts() {
+		$output = '';
+		$posts_per_page  = get_theme_mod('recent_posts_count', get_option('post_per_page') );
+		// WP_Query arguments
+		$args = array (
+			'post_type'              => 'post',
+			'post_status'            => 'publish',
+			'posts_per_page'         => intval($posts_per_page),
+			'ignore_sticky_posts'    => true,
+			'order'                  => 'DESC',
+		);
+
+		// The Query
+		$query = new WP_Query( $args );
+
+		// The Loop
+		if ( $query->have_posts() && get_theme_mod('enable_recent_post_service',true) ) {
+			$output .= '<div class="post-wrapper">';
+			$output .= '<div class="post-wrapper-head"><h2>' . apply_filters('boxy_post_title',__('Latest Blog Posts','boxy') ). '</h2></div>';
+			$count=1;
+			$output .= '<div class="latest-posts">';
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				if ($count % 3 == 0 || $count % 3 == 1 ) : 
+					$output .= '<div class="latest-post one-third column odd">';
+				        $output .= '<a href="'. get_permalink() . '"><div class="latest-post-thumb"><div class="overlay"></div>';
+						if ( has_post_thumbnail() ) {
+							$output .= get_the_post_thumbnail( $query->post->ID,'boxy_recent-post-img' );
+						}
+						else {
+							$output .= '<img src="' . get_template_directory_uri() . '/images/thumbnail-default.png" alt="">';
+						}
+						$output .= '</div><!-- .latest-post-thumb --></a>';
+						$output .= '<div class="latest-post-content"><div class="post-content-inner">';
+							$output .= '<div class="posted-on"><i class="fa fa-clock-o"></i>' .  get_the_date() . boxy_get_author() .'</div>';
+							$output .= '<h5><a href="'. get_permalink() . '">' . get_the_title() . '</a></h5>';
+							$output .= '<p>' . get_the_content() . '</p>';
+							//$output .= '<a href="' . get_permalink() . '" class="btn-readmore">'.__( apply_filters('boxy_more_text','Read More &raquo;'),'boxy').'</a>';
+						$output .= '</div></div><!-- .latest-post-content -->';				
+						
+					$output .= '</div><!-- .latest-post -->';
+					else :
+				    $output .= '<div class="latest-post one-third column even">';
+					$output .= '<div class="latest-post-content"><div class="post-content-inner">';
+						$output .= '<div class="posted-on"><i class="fa fa-clock-o"></i>' .  get_the_date() . boxy_get_author() . '</div>';
+						$output .= '<h5><a href="'. get_permalink() . '">' . get_the_title() . '</a></h5>';
+						$output .= '<p>' . get_the_content() . '</p>';
+						//$output .= '<a href="' . get_permalink() . '" class="btn-readmore">'.__( apply_filters('boxy_more_text','Read More &raquo;'),'boxy').'</a>';
+					$output .= '</div></div><!-- .latest-post-content -->';
+					$output .= '<div class="latest-post-thumb"><div class="overlay"></div>';
+					if ( has_post_thumbnail() ) {
+						$output .= get_the_post_thumbnail( $query->post->ID,'boxy_recent-post-img' );
+					}
+					else {
+						$output .= '<img src="' . get_template_directory_uri() . '/images/thumbnail-default.png" alt="" />';
+					}
+					$output .= '</div><!-- .latest-post-thumb -->';
+				$output .= '</div><!-- .latest-post -->';
+				endif;
+				$count++;
+			}
+			$output .= '<br class="clear"></div><!-- .latest-posts -->';
+			$output .= '</div><!-- .post-wrapper -->';
+		} 
+		$query = null;
+		// Restore original Post Data
+		wp_reset_postdata();
+		echo $output;
+	}
+}*/

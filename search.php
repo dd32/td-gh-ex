@@ -7,7 +7,8 @@
 
 get_header(); ?>
 <div id="content" class="site-content container"> 
-	<div id="primary" class="content-area eleven columns">
+	<?php do_action('boxy_two_sidebar_left'); ?>	
+	<div id="primary" class="content-area <?php boxy_layout_class();?> columns">
 		<main id="main" class="site-main" role="main">
 
 		<?php if ( have_posts() ) : ?>
@@ -33,7 +34,8 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
+	<?php do_action('boxy_two_sidebar_right'); ?>	
 
-	<?php get_sidebar(); ?>
+	
 	
 <?php get_footer(); ?>

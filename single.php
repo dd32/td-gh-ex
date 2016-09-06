@@ -23,20 +23,19 @@ get_header(); ?>
 		</div>
 	</div>  
 </div>
+<?php do_action('boxy_single_flexslider_featured_image'); ?>
 <div id="content" class="site-content container">
 
-<?php  $sidebar_position = get_theme_mod( 'sidebar_position', 'right' ); 
-				 if( 'left' == $sidebar_position ) :
-					 get_sidebar('left'); 
-				 endif;  ?>
+<?php do_action('boxy_two_sidebar_left'); ?>	
 
-    <div id="primary" class="content-area eleven columns">
+    <div id="primary" class="content-area <?php boxy_layout_class();?> columns">
 
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main blog-content" role="main">
 		
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<?php get_template_part( 'content', 'single' ); ?>
+			<?php do_action('boxy_after_single_content'); ?>
 
 	            <?php boxy_post_nav(); ?>
 
@@ -118,8 +117,6 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
- <?php   $sidebar_position = get_theme_mod( 'sidebar_position', 'right' ); 
-				 if( 'right' == $sidebar_position ) :
-					 get_sidebar(); 
-				 endif;  
+<?php do_action('boxy_two_sidebar_right'); 
+
  get_footer(); ?>

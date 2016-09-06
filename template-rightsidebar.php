@@ -21,6 +21,7 @@ get_header(); ?>
 		</div>
 	</div>
 </div>
+	<?php do_action('boxy_before_content'); ?>
 
 <div id="content" class="site-content container">
 		<div id="primary" class="content-area eleven columns">

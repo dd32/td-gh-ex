@@ -40,6 +40,10 @@ https://pixabay.com/en/man-handsome-male-model-guy-885223/
 16. Other theme options are self explanatory.
 
 == Change Log ==
+v. 1.2.6
+ * Added More options
+ * Customizer Changed to kirki 
+
 v. 1.2.5
  * Fix jigoshop bug
 

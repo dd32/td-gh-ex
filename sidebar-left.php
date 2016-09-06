@@ -5,22 +5,24 @@
  * @package boxy
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-	return;
-}
-?>
 
-<div id="secondary" class="widget-area five columns right-sidebar" role="complementary">
-	<div class="left-sidebar">
-<?php if( is_page() ) : 
-		if(function_exists('generated_dynamic_sidebar') ){ 
-			 generated_dynamic_sidebar();
-		 }
-		else { 
-			dynamic_sidebar( 'sidebar-1' ); 
-		}
-	else:
-		dynamic_sidebar( 'sidebar-1' ); 
-	endif; ?>
+ $sidebar_position = get_theme_mod( 'sidebar_position', 'right' );  ?>
+ 
+ <?php if ( is_page_template('template-twosidebar.php') || 'two-sidebar' == $sidebar_position || is_page_template('template-twosidebarleft.php') || is_page_template('template-twosidebarright.php') || 'two-sidebar-left' == $sidebar_position || 'two-sidebar-right' == $sidebar_position ) { ?>
+      <div id="secondary" class="widget-area four columns" role="complementary">
+ <?php	}else { ?>
+        <div id="secondary" class="widget-area five columns" role="complementary">
+	<?php } ?>
+
+    <div class="left-sidebar">
+		<?php if( is_active_sidebar( 'sidebar-left' ) &&  ( is_page_template('template-twosidebar.php') || 'two-sidebar' == $sidebar_position || is_page_template('template-twosidebarleft.php') || is_page_template('template-twosidebarright.php') || 'two-sidebar-left' == $sidebar_position || 'two-sidebar-right' == $sidebar_position )  ) {
+				dynamic_sidebar( 'sidebar-left' );
+		}else { ?>
+            <aside id="search" class="widget widget_search">
+			   <h4 class="widget-title"><?php _e( 'Search', 'boxy' ); ?></h4>
+				<?php get_search_form(); ?>
+			</aside>
+<?php   } ?>
 	</div>
-</div><!-- #secondary -->   
+
+</div><!-- #secondary -->

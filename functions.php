@@ -29,13 +29,14 @@ if ( ! function_exists( 'boxy_setup' ) ) :
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
+		add_editor_style( 'css/editor-style.css' );
+
 		/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 		add_theme_support( 'post-thumbnails' );
-		add_image_size( 'boxy-rpgallery', 250, 200, true );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
@@ -49,7 +50,14 @@ if ( ! function_exists( 'boxy_setup' ) ) :
 				) ) );
 
 		// Enable support for Post Formats.
-		add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
+		add_theme_support( 'post-formats', array(
+		'aside', 'image', 'video', 'quote', 'link',
+	) );
+
+	add_theme_support( 'custom-background' );
+	
+
+	add_theme_support( 'custom-logo' );
 
 		// Add theme support for Semantic Markup
 		$markup = array( 'search-form', 'comment-form', 'comment-list', );
@@ -61,10 +69,24 @@ if ( ! function_exists( 'boxy_setup' ) ) :
 		/*
 		 * Add Additional image sizes
 		 *
-		 */
-		add_image_size( 'boxy-blog-full-width', 1200,350, true );
-		add_image_size( 'boxy-small-featured-image-width', 450,300, true );
-		add_image_size( 'boxy-blog-large-width', 800,300, true );
+		 */        
+
+		if( get_theme_mod('image_crop_mode') == 'soft' ) {
+			add_image_size( 'boxy_recent-post-img', 380, 350);
+			add_image_size( 'boxy_service-img', 100, 100);
+			add_image_size( 'boxy-blog-full-width', 1200,350);
+			add_image_size( 'boxy-small-featured-image-width', 450,300);
+			add_image_size( 'boxy-blog-large-width', 800,300);
+			add_image_size( 'boxy-rpgallery', 250, 200);		
+		}else {
+			add_image_size( 'boxy_recent-post-img', 380, 350, true);
+			add_image_size( 'boxy_service-img', 100, 100, true);
+			add_image_size( 'boxy-blog-full-width', 1200,350, true );
+			add_image_size( 'boxy-small-featured-image-width', 450,300, true );
+			add_image_size( 'boxy-blog-large-width', 800,300, true );
+			add_image_size( 'boxy-rpgallery', 250, 200, true );
+		}
+	
 	}
 endif; // boxy_setup
 add_action( 'after_setup_theme', 'boxy_setup' );
@@ -162,6 +184,15 @@ function boxy_widgets_init() {
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
 		) );
+	register_sidebar( array(
+		'name'          => __( 'Sidebar Left', 'boxy' ),
+		'id'            => 'sidebar-left',
+		'description'   => __( 'Left Sidebar', 'boxy' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
 
 	register_sidebar( array(
 		'name'          => __( 'Header Top Right', 'boxy' ),
@@ -224,46 +255,53 @@ add_action( 'widgets_init', 'boxy_widgets_init' );
 
 // all //
 
-/**
- * Load Theme Options Panel
- */
-require BOXY_INCLUDES_DIR . '/theme-options.php';
 
 /**
- * Customizer additions.
+ * Enqueue scripts and styles.
  */
-require BOXY_INCLUDES_DIR . '/customizer.php';
-
-
-/**
- * Enqueue Scripts and Styles
- */
-require_once BOXY_INCLUDES_DIR . '/enqueue.php';
+require get_template_directory() . '/includes/enqueue.php';
 
 /**
- * Implement the Custom Header feature.
+ * theme-option panel
  */
-require BOXY_INCLUDES_DIR . '/custom-header.php';
+require get_template_directory() . '/admin/theme-options.php';
 
 /**
  * Custom template tags for this theme.
  */
-require BOXY_INCLUDES_DIR . '/template-tags.php';
+require get_template_directory() . '/includes/template-tags.php';
 
+/**
+ * Free Theme upgrade page 
+ */
+require get_template_directory() . '/includes/theme_upgrade.php';
 /**
  * Custom functions that act independently of the theme templates.
  */
-require BOXY_INCLUDES_DIR . '/extras.php';
-
+require get_template_directory() . '/includes/extras.php';
 /**
- * Load Jigoshop Support
+ * Implement the Custom Header feature.
  */
-require_once BOXY_INCLUDES_DIR . '/jigoshop.php';
+require  get_template_directory()  . '/includes/custom-header.php';
+/**
+ * Customizer additions.
+ */
+require get_template_directory() . '/includes/customizer.php';
 
 /**
  * Load Jetpack compatibility file.
  */
-require BOXY_INCLUDES_DIR. '/jetpack.php';
+require get_template_directory() . '/includes/jetpack.php';
+
+/**
+ * Inline style ( Theme Options )
+ */
+require get_template_directory() . '/includes/styles.php';
+
+/**
+ * Load Filter and Hook functions
+ */
+require get_template_directory() . '/includes/hooks-filters.php';
 
 
 
@@ -295,13 +333,20 @@ function boxy_client_exists() {
 
 /* Woocommerce support */
 
-add_theme_support('woocommerce');   
+add_theme_support('woocommerce');
 
 remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wrapper');
 add_action('woocommerce_before_main_content', 'boxy_output_content_wrapper');
 
 function boxy_output_content_wrapper() {
-	echo '<div class="container"><div class="row"><div id="primary" class="content-area eleven columns">';
+	$woocommerce_sidebar = get_theme_mod('woocommerce_sidebar',true ) ;
+	if( $woocommerce_sidebar ) {
+        $woocommerce_sidebar_column = 'eleven';
+    }else {
+        $woocommerce_sidebar_column = 'sixteen'; 
+        remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar');
+    }
+	echo '<div class="site-content container" id="content"><div id="primary" class="content-area '. $woocommerce_sidebar_column .' columns">';	
 }
 
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end' );
@@ -309,10 +354,34 @@ add_action( 'woocommerce_after_main_content', 'boxy_output_content_wrapper_end' 
 
 function boxy_output_content_wrapper_end () {
 	echo "</div>";
-}
+}    
 
 add_action( 'init', 'boxy_remove_wc_breadcrumbs' );
 function boxy_remove_wc_breadcrumbs() {
    	remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
 }
 
+
+
+// Blog image size cropping ( Select Crop or Hard ) 
+
+if( !function_exists('boxy_image_size_crop_option') ) { 
+	function boxy_image_size_crop_option() {
+		$ver = get_theme_mod( 'version', false );
+		 // Return if update has already been run
+		if ( version_compare( $ver, '1.2.6' ) >= 0 ) {
+	   		if( ! get_theme_mod('image_crop_mode') ) {
+	           set_theme_mod('image_crop_mode','soft');
+			}
+		    return;
+		} 
+
+		if( ! get_theme_mod('image_crop_mode') ) {
+           set_theme_mod('image_crop_mode','hard');   
+		}       
+ 
+		// Update to match your current theme version
+		set_theme_mod( 'version', '1.2.6' );
+	}
+}     
+add_action( 'after_setup_theme', 'boxy_image_size_crop_option' );

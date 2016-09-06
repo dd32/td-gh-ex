@@ -27,15 +27,13 @@ get_header(); ?>
 		</div>
 	</div>
 </div>
+<?php do_action('boxy_single_page_flexslider_featured_image'); ?>
 
 <div id="content" class="site-content container">
 
-		<?php $sidebar_position = get_theme_mod( 'sidebar_position', 'right' ); ?>
-		<?php if( 'left' == $sidebar_position ) :?>
-			<?php get_sidebar('left'); ?>
-		<?php endif; ?> 
+		<?php do_action('boxy_two_sidebar_left'); ?>	
 
-	<div id="primary" class="content-area eleven columns">
+	<div id="primary" class="content-area <?php boxy_layout_class();?> columns">
 		<main id="main" class="site-main" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
@@ -54,8 +52,6 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-     <?php if( 'right' == $sidebar_position ) :?>
-			<?php get_sidebar(); ?>
-		<?php endif; ?>
+    <?php do_action('boxy_two_sidebar_right'); ?>	
 
 <?php get_footer(); ?>

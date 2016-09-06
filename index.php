@@ -11,15 +11,12 @@
  * @package BOXY
  */
 global $boxy;
+
 get_header(); ?>
 <div id="content" class="site-content container">
 
-<?php $sidebar_position = get_theme_mod( 'sidebar_position', 'right' ); ?>
-		<?php if( 'left' == $sidebar_position ) :?>
-			<?php get_sidebar('left'); ?>
-		<?php endif; ?>  
-
-	<div id="primary" class="content-area eleven columns">
+<?php do_action('boxy_two_sidebar_left'); ?>	
+	<div id="primary" class="content-area <?php boxy_layout_class();?> columns">
 		<main id="main" class="site-main" role="main">
 				
 		<?php if ( have_posts() ) : ?>
@@ -54,10 +51,7 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-		<?php if( 'right' == $sidebar_position ) :?>
-			<?php get_sidebar(); ?>
-		<?php endif; ?>
+		<?php do_action('boxy_two_sidebar_right'); ?>	
 		
-<?php get_footer(); ?>
-
+		
 <?php get_footer(); ?>

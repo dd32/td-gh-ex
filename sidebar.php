@@ -5,23 +5,21 @@
  * @package boxy
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-	return;
-}
-?>
+ $sidebar_position = get_theme_mod( 'sidebar_position', 'right' ); 
+ if ( is_page_template('template-twosidebar.php') || 'two-sidebar' == $sidebar_position || is_page_template('template-twosidebarleft.php') || is_page_template('template-twosidebarright.php') || 'two-sidebar-left' == $sidebar_position || 'two-sidebar-right' == $sidebar_position ) { ?>
+      <div id="secondary" class="widget-area four columns" role="complementary">
+ <?php	}else { ?>
+        <div id="secondary" class="widget-area five columns" role="complementary">
+	<?php } ?>
 
-<div id="secondary" class="widget-area  five columns" role="complementary">
 	<div class="left-sidebar">
-<?php if( is_page() ) : 
-		if(function_exists('generated_dynamic_sidebar') ){ 
-			 generated_dynamic_sidebar();
-		 }
-		else { 
-			dynamic_sidebar( 'sidebar-1' ); 
-		}
-	else:
-		dynamic_sidebar( 'sidebar-1' ); 
-	endif; ?>
+	
+		<?php
+		      do_action('boxy_before_sidebar_right_widget');
+		      do_action('boxy_sidebar_right_widget');
+		      do_action('boxy_after_sidebar_right_widget');
+		?>
 
 	</div>
+
 </div><!-- #secondary -->

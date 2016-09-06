@@ -9,16 +9,18 @@
  * @package BOXY
  */
 global $boxy;
-get_header(); ?>
+get_header();
+if( get_theme_mod('blog-slider',false) ) { 
+	get_template_part('category-slider');
+}
+ ?>
 	<div id="content" class="site-content container">
 
-<?php $sidebar_position = get_theme_mod( 'sidebar_position', 'right' ); ?>
-		<?php if( 'left' == $sidebar_position ) :?>
-			<?php get_sidebar('left'); ?>
-		<?php endif; ?> 
-
-	<div id="primary" class="content-area eleven columns">
-		<main id="main" class="site-main" role="main">
+<?php if( get_theme_mod('blog_layout',1) != 3 && get_theme_mod('blog_layout',1) != 5 ) {
+	   	   do_action('boxy_two_sidebar_left');
+	   } ?>	
+	<div id="primary" class="content-area  <?php boxy_layout_class();?> columns">
+		<main id="main" class="site-main  blog-content <?php boxy_masonry_blog_layout_class();?>" role="main">
 
 	
 				
@@ -32,7 +34,7 @@ get_header(); ?>
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
-					get_template_part( 'content', get_post_format() );
+					get_template_part( 'content-blog', get_post_format() );
 				?>
 
 			<?php endwhile; ?>
@@ -55,8 +57,8 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-	<?php if( 'right' == $sidebar_position ) :?>
-			<?php get_sidebar(); ?>
-	<?php endif; ?>
+	<?php if( get_theme_mod('blog_layout',1) != 3 && get_theme_mod('blog_layout',1) != 5 ) {
+	   	   do_action('boxy_two_sidebar_right');
+	   } ?>	
 
 <?php get_footer(); ?>
