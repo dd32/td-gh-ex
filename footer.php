@@ -25,9 +25,13 @@
             
         </div>
     </footer>
-    <div id="toolitembar">
+    
+    <div id="toolitembar">     
         <a href="javascript:;" id="back-top"><i class="icon-top"></i></a>
     </div> 
+
+
+
 
     <?php wp_footer(); ?>   
 </body>

@@ -36,6 +36,8 @@ get_header(); ?>
             	</ul><!--ul class="blog-article-list"-->
  
  
+ 				<?php //ascreen_paging_nav(); ?>
+
                 <?php 
 					the_posts_pagination( array(
 						'mid_size' => 2,

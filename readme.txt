@@ -17,6 +17,16 @@ Ascreen is distributed under the terms of the GNU General Public License v2
 3. Log into your WP admin panel and click on the Design tab. Now click on the Ascreen theme to activate it.
 
 == Changelog ==
+Version 1.1.5  2016.9.6
+* fixed 1:- logo is core issue it should used in customizer
+* 2:- Remove unused code instead commenting in style.css
+* 3:- i did not see after adding header image in header header 
+   image not working so fixed it.
+* 4:- Background image not properly apply in background
+* 5:- post format video is not working fine.
+* 6:- post format in many category not working
+* 7:- Footer widgitize area image not working properly
+
 Version 1.1.4  2016.8.24
 * Fix Some Problems.
 

@@ -2,12 +2,14 @@
 
 function ascreen_setup(){
 	global $content_width;
+
 	$lang = get_template_directory(). '/languages';
 	load_theme_textdomain('ascreen', $lang);
 	
 	$template_directory = get_template_directory();
 	require_once( $template_directory . '/includes/customize/customize.php' );
 	
+
 	add_theme_support('post-thumbnails');
 	$args = array();
 	$header_args = array( 
@@ -23,6 +25,12 @@ function ascreen_setup(){
 	add_theme_support( 'custom-header', $header_args );
 	add_theme_support( 'automatic-feed-links' );//
 
+	add_theme_support( 'custom-logo', array(
+			   'height'      => 50,
+			   'width'       => 50,
+			   'flex-width' => true,
+			) );
+
 	//register menus
 	register_nav_menus(
 					   array(
@@ -37,12 +45,20 @@ function ascreen_setup(){
 	if ( !isset( $content_width ) ) $content_width = 1170;	
 }
 add_action( 'after_setup_theme', 'ascreen_setup' );
+
 	
 function ascreen_custom_scripts()
 {
+	global $is_IE;
 	$theme_info = wp_get_theme();
-		
-	wp_enqueue_style('ascreen-main', get_stylesheet_uri(), array(), $theme_info->get( 'Version' ) );			
+	
+
+	wp_enqueue_style('ascreen-base',  get_template_directory_uri() .'/css/base.css', false, $theme_info->get( 'Version' ), false);			
+
+
+	wp_enqueue_style('ascreen-main', get_stylesheet_uri(), false, $theme_info->get( 'Version' ) );	
+	
+			
 	wp_enqueue_script('ascreen-main', get_template_directory_uri().'/js/main.js', array( 'jquery' ),$theme_info->get( 'Version' ), false );				
 }
 
@@ -68,7 +84,7 @@ function ascreen_widgets_init() {
 	register_sidebar( array(
 		'name' => __('Footer Area #1','ascreen'),		
 		'id' => 'sidebar-1',
-		'before_widget' => '<dl id="%1$s" class="%2$s">',
+		'before_widget' => '<dl id="%1$s" class="%2$s col-md-4">',
 		'after_widget' => '</dl>',
 		'before_title' => '<dt class="title">',
 		'after_title' => '</dt>',
@@ -77,7 +93,7 @@ function ascreen_widgets_init() {
 	register_sidebar( array(
 		'name' => __('Footer Area #2','ascreen'),			
 		'id' => 'sidebar-2',
-		'before_widget' => '<dl id="%1$s" class="%2$s">',
+		'before_widget' => '<dl id="%1$s" class="%2$s col-md-4">',
 		'after_widget' => '</dl>',
 		'before_title' => '<dt class="title">',
 		'after_title' => '</dt>',
@@ -86,7 +102,7 @@ function ascreen_widgets_init() {
 	register_sidebar( array(
 		'name' => __('Footer Area #3','ascreen'),	
 		'id' => 'sidebar-3',
-		'before_widget' => '<dl id="%1$s" class=" %2$s">',
+		'before_widget' => '<dl id="%1$s" class=" %2$s col-md-4">',
 		'after_widget' => '</dl>',
 		'before_title' => '<dt class="title">',
 		'after_title' => '</dt>',
@@ -95,13 +111,35 @@ function ascreen_widgets_init() {
 	register_sidebar( array(
 		'name' => __('Footer Area #4','ascreen'),	
 		'id' => 'sidebar-4',
-		'before_widget' => '<dl id="%1$s" class=" %2$s">',
+		'before_widget' => '<dl id="%1$s" class=" %2$s col-md-4">',
 		'after_widget' => '</dl>',
 		'before_title' => '<dt class="title">',
 		'after_title' => '</dt>',
 	) );
 }
 add_action( 'widgets_init', 'ascreen_widgets_init' );
+
+function ascreen_paging_nav(){
+	global $wp_query;
+	$pages = $wp_query->max_num_pages; 
+	if ( $pages >= 2 ): 
+		$big = 999999999; 
+		$paginate = paginate_links( array(
+			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+			'format' => '?paged=%#%',
+			'current' => max( 1, get_query_var('paged') ),
+			'total' => $wp_query->max_num_pages,
+			'end_size' => 13, 
+			'type' => 'array' 
+			));
+		echo '<div class="ct_page_nav"><ul class="pagination">';
+		foreach ($paginate as $value)
+		{
+			echo '<li>'.$value.'</li>';
+		}
+		echo '</ul></div>';
+	endif;
+}
 
 
 function ascreen_better_comments($comment, $args, $depth)
@@ -152,15 +190,17 @@ function ascreen_get_author_info()
         $categories = get_the_category();
         if(! empty( $categories ))
         {
-            foreach($categories as $category) {
+				$i = 0;
+            foreach($categories as $category){
+				$i++;
+				if($i == 6){ break;}
                 $category->cat_ID;
                 $category->cat_name;
 				$cat_links=get_category_link($category->cat_ID );
 				?>
 				<a href="<?php echo esc_url($cat_links); ?>" title="<?php echo esc_html($category->cat_name); ?>">#<?php echo esc_html($category->cat_name);?>&nbsp;</a>
                 <?php
-            }
-            
+            } 
         }
         ?>                        
     </div>
@@ -169,17 +209,25 @@ function ascreen_get_author_info()
 
 function ascreen_get_the_category() 
 {
-	$categories = get_the_category();
-	 
-	if ( ! empty( $categories ) ) {
-		$cat_name = $categories[0]->cat_name;
-		$cat_ID = $categories[0]->cat_ID;
+	
+	$categories_all = get_the_category();
+	$str = '';
+	$i = 0;
+	
+	foreach($categories_all as $categories ){
+		$i++;
+		if($i == 6){ break;}
+		if ( ! empty( $categories ) ) {
+			$cat_name = $categories->cat_name;
+			$cat_ID = $categories->cat_ID;
+		}
+		
+		$cat_links=get_category_link($cat_ID);
+		
+		$str .= "<a href=\"".esc_url($cat_links)."\" class=\"newsflash\">#".esc_html($cat_name)."</a>";
 	}
 	
-	$cat_links=get_category_link($cat_ID);
-	
-	echo "<a href=\"".esc_url($cat_links)."\" class=\"newsflash\">#".esc_html($cat_name)."</a>";
-	
+	echo $str;
 	
 }
 
@@ -241,3 +289,30 @@ function ascreen_get_share_url()
 	</div>
 	<?php	
 }
+
+
+// Generating Live CSS
+function ascreen_customize_css()
+{
+    ?>
+		<style  id='ascreen_customize_css' type="text/css">
+	<?php	
+			$ascreen_custom_css = "";
+			$header_image       = get_header_image();
+			if (isset($header_image) && ! empty( $header_image ))
+			{
+				$ascreen_custom_css .= "header#header{background:url(".esc_url($header_image). ");}\n";
+			}
+
+			$ascreen_custom_css   = esc_html($ascreen_custom_css);
+			
+			$ascreen_custom_css   = str_replace('&gt;','>',$ascreen_custom_css);			
+
+			echo $ascreen_custom_css;
+				
+			?></style>
+    <?php
+}
+
+add_action( 'wp_head', 'ascreen_customize_css');
+add_action( 'customize_controls_print_styles', 'ascreen_customize_css' );

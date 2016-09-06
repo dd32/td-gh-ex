@@ -25,7 +25,9 @@ jQuery(document).ready(function($){
 		})
 	}
 	headerNavMobile();
-
+	
+	
+	//go top
     var toolitembar = $("#toolitembar");
     var gotop = $("#back-top");
 

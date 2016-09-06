@@ -5,13 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-	<?php wp_head(); ?> 
+	<?php wp_head(); ?>
+    
 </head>
 <body  <?php body_class(); ?>>
 
     <header id="header"  class="header <?php if ( is_admin_bar_showing() ) { echo 'admin_bar_fix';  }?>">
         <div class="wrap">
-            <h1 id="logo"><a href="<?php echo esc_url(home_url('/')); ?>"><span class="blogname"><?php esc_html(bloginfo('name')); ?></span></a></h1>
+            <h1 id="logo">
+			<?php 
+                if ( has_custom_logo() )
+                {
+            ?>
+                <div class="ascreen_logo">	
+                    <?php the_custom_logo();?>
+                </div>
+           <?php
+                }
+            ?> 
+            
+            <div class="ascreen_logo_text">
+                <a href="<?php echo esc_url(home_url('/')); ?>"><span class="blogname"><?php esc_html(bloginfo('name')); ?></span></a><br>
+                <a href="<?php echo esc_url(home_url('/')); ?>"><span class="blogdescription"><?php esc_html(bloginfo('description')); ?></span></a>
+            </div>
+            
+            </h1>
             <nav class="header-nav">
                 <button type="button" id="header-nav-btn"><i class="icon-menu"></i><i class="icon-cross"></i></button>
                 <!-- Mobile button -->
@@ -42,4 +60,5 @@
                 
             </nav>
         </div>
-    </header>
+        
+   </header>
