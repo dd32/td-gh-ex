@@ -4,7 +4,7 @@ Theme URI: http://crestaproject.com/downloads/annina/
 Author: Rizzo Andrea - CrestaProject.com
 Author URI: http://crestaproject.com
 Description: Annina is clean & fresh responsive WordPress Blog Theme, full width and masonry based, one main column e one sidebar column, unlimited colors and theme options by CrestaProject.com. Live demo http://crestaproject.com/demo/annina/
-Version: 1.3.9
+Version: 1.4.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: annina
@@ -1064,6 +1064,12 @@ span.overlay-img {
 	-moz-border-radius-topright: 4px;
 	border-top-left-radius: 4px;
 	border-top-right-radius: 4px;
+	transition: opacity 0.5s ease-in-out;
+	-webkit-transition: opacity 0.5s ease-in-out;
+	-moz-transition: opacity 0.5s ease-in-out;
+}
+span.overlay-img:hover {
+	opacity: 0.3;
 }
 .entry-featuredImg.annina-loader {
 	background-image: url('./images/annina-loading.gif');
