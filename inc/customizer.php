@@ -646,6 +646,54 @@ function attirant_customize_register( $wp_customize ) {
 		)
 	);
 	
+	//---- Pro Settings ----//
+	
+	$wp_customize-> add_section(
+    'attirant_pro',
+    array(
+    	'title'			=> __('Attirant Plus','attirant'),
+    	'priority'		=> 21,
+    	)
+    );
+    
+    class MyCustom_Customize_Control extends WP_Customize_Control {    
+	    
+	    public $type = 'attirant-pro';
+	    
+	    public function render_content() {
+	        ?>
+	       		<label>
+<!--
+					<input type="checkbox" value="<?php echo esc_attr( $this->value() ); ?>" <?php $this->link(); checked( $this->value() ); ?> />
+					<?php echo esc_html( $this->label ); ?>
+					<?php if ( ! empty( $this->description ) ) : ?>
+						<span class="description customize-control-description"><?php echo $this->description; ?></span>
+					<?php endif; ?>
+-->
+					<?php echo __('You can now upgrade to Attirant Plus and unlock the abundant potential of the theme with some amazing and useful features such as <br><br><b>Multiple Layouts</b><br><br><b>Featured Slider</b><br><br><b>WooCommerce Readiness</b><br><br><b>High Flexibility</b><br><br><b>Custom Fields</b><br><br>and much more.<br><br>Check the theme out for yourself <a href="http://www.divjot.co/product/attirant-plus">here</a><br><br><b>If you are enjoying the Lite version, kindly drop in a review ( I hope a good one )  <a href="https://www.wordpress.org/themes/attirant">here</a>.</b>', 'attirant'); ?>
+				</label>
+	        <?php
+	    }
+	}
+    
+    $wp_customize->add_setting(
+	'pro_hide',
+	array(
+		'default'			=> false,
+		'sanitize_callback'	=> 'attirant_sanitize_checkbox',
+		)
+	);
+ 
+	$wp_customize-> add_control( new MyCustom_Customize_Control( $wp_customize,
+    'pro_hide',
+    array(
+    	'type'		=> 'attirant-pro',
+    	'label'		=> __('','attirant'),
+    	'section'	=> 'attirant_pro',
+    	'priority'	=> 1,
+    	)
+    ));
+	
 	function attirant_sanitize_checkbox( $i ) {
 	    if ( $i == 1 ) {
 	        return 1;

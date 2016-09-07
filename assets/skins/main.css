@@ -733,6 +733,7 @@ body.blog #primary-home article span.byline a {
   font-family: "Muli", sans-serif;
   margin-bottom: 20px;
   position: relative;
+  text-align: left;
 }
 #secondary h2.widget-title:before {
   content: "";
@@ -851,26 +852,43 @@ body.blog #primary-home article span.byline a {
   color: white;
 }
 /*---- Search, Archives and stuff ----*/
-.archive header h1.page-title,
-.search header h1.page-title {
+.archive #main,
+.search #main {
+  display: inline-block;
+}
+.archive #main header,
+.search #main header {
+  border-bottom: 0px;
+}
+.archive #main header h1.page-title,
+.search #main header h1.page-title {
   font-family: "Muli", sans-serif;
   margin-bottom: 10px;
 }
-.archive article .featured-thumb,
-.search article .featured-thumb {
+.archive #main article .featured-thumb,
+.search #main article .featured-thumb {
   position: relative;
   margin: auto;
   float: none;
   text-align: center;
   margin-bottom: 20px;
+  display: inline-block;
+  width: 100%;
+  padding-top: 30px;
 }
-.archive article .blog-entry-title,
-.search article .blog-entry-title {
+.archive #main article .blog-entry-title,
+.search #main article .blog-entry-title {
   text-align: center;
+  padding-bottom: 20px;
+  border-bottom: solid 1px #eee;
   font-family: "Muli", sans-serif;
 }
-.archive article .blog-entry-title a,
-.search article .blog-entry-title a {
+.archive #main article .blog-entry-title .entry-title,
+.search #main article .blog-entry-title .entry-title {
+  margin: 0px;
+}
+.archive #main article .blog-entry-title a,
+.search #main article .blog-entry-title a {
   color: #6fb624;
 }
 /*---- Pagination ----*/

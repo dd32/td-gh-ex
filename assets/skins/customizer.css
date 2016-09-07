@@ -1,0 +1,13 @@
+/*
+	CSS for the styling of Them Customizer.
+*/
+#customize-theme-controls #accordion-section-attirant_pro .accordion-section-title {
+  color: #6fb624;
+}
+#customize-theme-controls #accordion-section-attirant_pro .accordion-section-title:before {
+  position: relative;
+  content: "\f0a3";
+  font-family: "FontAwesome";
+  top: 0;
+  margin-right: 10px;
+}

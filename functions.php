@@ -131,6 +131,17 @@ function attirant_scripts_styles() {
 add_action( 'wp_enqueue_scripts', 'attirant_scripts_styles' );
 
 /**
+ * Enqueue the stylesheet.
+ */
+function ving_customizer_stylesheet() {
+
+    wp_register_style( 'ving-customizer-css', get_template_directory_uri() . '/assets/skins/customizer.css', NULL, NULL, 'all' );
+    wp_enqueue_style( 'ving-customizer-css' );
+
+}
+add_action( 'customize_controls_print_styles', 'ving_customizer_stylesheet' );
+
+/**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
