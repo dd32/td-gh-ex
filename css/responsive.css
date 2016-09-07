@@ -60,9 +60,6 @@
     .homepage-middle-ad, .article-ad-section{
         width: 100%;
     }
-    /*.signle-highlight-post{
-        width: 47%;
-    }*/
 }
 /* Portrait tablet to landscape and desktop */
 
@@ -468,8 +465,6 @@
     }
    
 }
-
-
 @media (max-width: 480px) {
 
     .ak-search .search-form .search-field{
@@ -485,5 +480,30 @@
  .signle-highlight-post{
         width: 100%;
         margin: 0 0 10px 0;
+    }
+}
+
+/*===================
+    RTL support
+=====================*/
+@media (max-width: 767px) {
+    .rtl #site-navigation ul li {
+        float: none;
+        text-align: right;        
+    }
+    .rtl #site-navigation .nav-wrapper{
+        float: none;
+    }
+    .rtl .sub-toggle {
+        right: inherit;
+        left: 0;
+    }
+    .rtl .sub-toggle .fa{
+        transform: rotate(180deg);
+    }
+    .rtl #site-navigation ul.sub-menu li:after{
+        left: inherit;
+        right: 0;
+        content: "\f104";
     }
 }

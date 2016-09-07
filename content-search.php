@@ -57,7 +57,11 @@
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
             */
-            accesspress_mag_excerpt();
+            if( has_excerpt() ) {
+                the_excerpt();
+            } else {
+                accesspress_mag_excerpt();   
+            }
 		?>
 
 		<?php

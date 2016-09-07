@@ -72,6 +72,11 @@ GPL compatible for own images
 ----------------------------------------------------
 == Changelog ==
 
+Version 2.4.3
+ * Fixed rtl css at mobile device
+ * Fixed the function about excerpt value at archive page
+ * Updated .pot file
+
 Version 2.4.2
  * Fixed the bugs on excerpt lenght
  * Fixed the minor css bugs
