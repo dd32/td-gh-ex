@@ -25,7 +25,7 @@ jQuery(document).ready( function(){
 							'posts': jQuery('#scroll_bottom').attr("posts_per_page"),
 							'nonce': antonine_scroll.nonce
 						};
-						
+
 						jQuery.post(antonine_scroll.ajaxURL, data, function(response) {
 						
 								response_data = JSON.parse(response);

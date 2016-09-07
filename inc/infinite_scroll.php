@@ -13,7 +13,7 @@
 			{
 				$args = array(
 								'posts_per_page'   => $_POST['posts'],
-								'offset'           => $_POST['offset']
+								'offset'           => ($_POST['offset'] + 1)
 							);
 				
 				if(isset($_POST['cat'])){

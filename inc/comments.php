@@ -19,7 +19,7 @@
 				foreach($comments as $comment) :
 					$date = $comment->comment_date;
 					$post = get_post($comment->comment_post_ID);
-					echo "<p><span><strong>" . $comment->comment_author . "</strong> " . __("on", 'antonine') . " <a href='" . get_permalink($post) . "#comment" . $comment->comment_ID . "'>" . $post->post_title . "</a> " . $date . " " . __("said", 'antonine') . " </span></p><blockquote>" . $comment->comment_content . "</blockquote>"; 
+					echo "<p><span><strong>" . get_comment_author($comment->comment_ID) . "</strong> " . __("on", 'antonine') . " <a href='" . get_permalink($post) . "#comment" . $comment->comment_ID . "'>" . $post->post_title . "</a> " . $date . " " . __("said", 'antonine') . " </span></p><blockquote>" . $comment->comment_content . "</blockquote>"; 
 				endforeach;
 			}
 			else

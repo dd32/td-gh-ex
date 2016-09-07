@@ -33,7 +33,7 @@
 								echo get_avatar($comment->comment_author_email, $size['size']); 
 							?>
 							<span class="fn">
-								<a href="<?PHP echo get_comment_author_link($comment->comment_ID); ?>" rel="external nofollow" class="url"><?PHP echo get_comment_author($comment->comment_ID); ?></a>
+								<a href="<?PHP echo get_comment_author_url($comment->comment_ID); ?>" rel="external nofollow" class="url"><?PHP echo get_comment_author($comment->comment_ID); ?></a>
 							</span> 
 							<span class="says"><?PHP echo __("comments", "antonine"); ?>:</span>	
 						</div><!-- .comment-author -->
