@@ -37,10 +37,10 @@ class bakes_and_cakes_Popular_Post extends WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 	   
-        $title  = ! empty( $instance['title'] ) ? strip_tags( $instance['title'] ) : __( 'Most Viewed', 'bakes-and-cakes' );
-        $num_post  = ! empty( $instance['num_post'] ) ? absint($instance['num_post']) : 3 ;
-        $show_thumbnail = ! empty( $instance['show_thumbnail'] ) ? esc_attr( $instance['show_thumbnail'] ) : '';
-        $show_postdate = ! empty( $instance['show_postdate'] ) ? esc_attr( $instance['show_postdate'] ) : '';
+        $title          = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Most Viewed', 'bakes-and-cakes' );
+        $num_post       = ! empty( $instance['num_post'] ) ? $instance['num_post'] : 3 ;
+        $show_thumbnail = ! empty( $instance['show_thumbnail'] ) ?  $instance['show_thumbnail'] : '';
+        $show_postdate  = ! empty( $instance['show_postdate'] ) ?  $instance['show_postdate'] : '';
         
         $bakes_and_cakes_qry = new WP_Query( array(
             'post_type'             => 'post',
@@ -51,7 +51,7 @@ class bakes_and_cakes_Popular_Post extends WP_Widget {
         ) );
         if( $bakes_and_cakes_qry->have_posts() ){
             echo $args['before_widget'];
-            echo $args['before_title'] . apply_filters( 'widget_title', $title ) . $args['after_title'];
+            if( $title ) echo $args['before_title'] . apply_filters( 'widget_title', $title, $instance, $this->id_base ) . $args['after_title'];
             ?>
             <ul>
                 <?php 
@@ -93,10 +93,10 @@ class bakes_and_cakes_Popular_Post extends WP_Widget {
 	 */
 	public function form( $instance ) {
         
-        $title          = ! empty( $instance['title'] ) ? strip_tags( $instance['title'] ) : __( 'Most Viewed', 'bakes-and-cakes' );		
-        $num_post       = ! empty( $instance['num_post'] ) ? absint($instance['num_post']) : 3 ;
-        $show_thumbnail = ! empty( $instance['show_thumbnail'] ) ? esc_attr( $instance['show_thumbnail'] ) : '';
-        $show_postdate  = ! empty( $instance['show_postdate'] ) ? esc_attr( $instance['show_postdate'] ) : '';
+        $title          = ! empty( $instance['title'] ) ? $instance['title'] : __( 'Most Viewed', 'bakes-and-cakes' );		
+        $num_post       = ! empty( $instance['num_post'] ) ? $instance['num_post'] : 3 ;
+        $show_thumbnail = ! empty( $instance['show_thumbnail'] ) ?  $instance['show_thumbnail'] : '';
+        $show_postdate  = ! empty( $instance['show_postdate'] ) ?  $instance['show_postdate'] : '';
         
         ?>
 		
@@ -136,10 +136,10 @@ class bakes_and_cakes_Popular_Post extends WP_Widget {
 		
         $instance = array();
 		
-        $instance['title']          = ! empty( $new_instance['title'] ) ? strip_tags( $new_instance['title'] ) : __( 'Most Viewed', 'bakes-and-cakes' );
+        $instance['title']          = ! empty( $new_instance['title'] ) ? sanitize_text_field( $new_instance['title'] ) : __( 'Most Viewed', 'bakes-and-cakes' );
         $instance['num_post']       = ! empty( $new_instance['num_post'] ) ? absint( $new_instance['num_post'] ) : 3 ;        
-        $instance['show_thumbnail'] = ! empty( $new_instance['show_thumbnail'] ) ? esc_attr( $new_instance['show_thumbnail'] ) : '';
-        $instance['show_postdate']  = ! empty( $new_instance['show_postdate'] ) ? esc_attr( $new_instance['show_postdate'] ) : '';
+        $instance['show_thumbnail'] = ! empty( $new_instance['show_thumbnail'] ) ? absint( $new_instance['show_thumbnail'] ) : '';
+        $instance['show_postdate']  = ! empty( $new_instance['show_postdate'] ) ? absint( $new_instance['show_postdate'] ) : '';
 		
         return $instance;
         

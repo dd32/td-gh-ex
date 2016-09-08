@@ -48,7 +48,7 @@ function bakes_and_cakes_body_classes( $classes ) {
     }
 
     if(is_page()){
-        $bakes_and_cakes_post_class = get_post_meta( $post->ID, 'bakes_and_cakes_sidebar_layout', true );
+        $bakes_and_cakes_post_class = bakes_and_cakes_sidebar_layout();
         if( $bakes_and_cakes_post_class == 'no-sidebar' )
             $classes[] = 'full-width';
     }
@@ -68,7 +68,7 @@ add_filter( 'body_class', 'bakes_and_cakes_body_classes' );
  
 function bakes_and_cakes_breadcrumbs_cb() {
  
-  $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
+    $showOnHome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
     $delimiter = get_theme_mod( 'bakes_and_cakes_breadcrumb_separator', __( '>', 'bakes-and-cakes' ) ); // delimiter between crumbs
     $home = get_theme_mod( 'bakes_and_cakes_breadcrumb_home_text', __( 'Home', 'bakes-and-cakes' ) ); // text for the 'Home' link
     $showCurrent = get_theme_mod( 'bakes_and_cakes_ed_current', '1' ); // 1 - show current post/page title in breadcrumbs, 0 - don't show
@@ -78,7 +78,7 @@ function bakes_and_cakes_breadcrumbs_cb() {
     global $post;
     $homeLink = home_url();
     
-    if ( is_home() || is_front_page() ) {
+    if ( is_front_page() ) {
     
         if ( $showOnHome == 1 ) echo '<div id="crumbs"><a href="' . esc_url( $homeLink ) . '">' . esc_html( $home ) . '</a></div>';
     
@@ -88,7 +88,7 @@ function bakes_and_cakes_breadcrumbs_cb() {
     
         if ( is_category() ) {
             $thisCat = get_category( get_query_var( 'cat' ), false );
-            if ( $thisCat->parent != 0 ) echo get_category_parents( $thisCat->parent, TRUE, ' <span class="separator">' . $delimiter . '</span> ' );
+            if ( $thisCat->parent != 0 ) echo get_category_parents( $thisCat->parent, TRUE, ' <span class="separator">' . esc_html( $delimiter ) . '</span> ' );
             echo $before .  esc_html( single_cat_title( '', false ) ) . $after;
         
         } elseif ( is_search() ) {
@@ -206,7 +206,12 @@ function bakes_and_cakes_breadcrumbs_cb() {
         
         } elseif ( is_404() ) {
             echo $before . esc_html__( 'Error 404', 'bakes-and-cakes' ) . $after;
-        }
+        
+        } elseif( is_home() ){
+            echo $before;
+                single_post_title();
+            echo $after;
+            }
     
         echo '</div>';
     
@@ -229,12 +234,14 @@ function bakes_and_cakes_move_comment_field_to_bottom( $fields ) {
 add_filter( 'comment_form_fields', 'bakes_and_cakes_move_comment_field_to_bottom' );
 
 if( ! function_exists( 'bakes_and_cakes_slider_cb' )):
- /** Callback for Home Page Slider **/
- function bakes_and_cakes_slider_cb(){
+/**
+ * Callback for Home Page Slider 
+**/
+function bakes_and_cakes_slider_cb(){
     
-    $bakes_and_cakes_slider_caption = get_theme_mod( 'bakes_and_cakes_slider_caption', '1' );
+    $bakes_and_cakes_slider_caption  = get_theme_mod( 'bakes_and_cakes_slider_caption', '1' );
     $bakes_and_cakes_slider_readmore = get_theme_mod( 'bakes_and_cakes_slider_readmore', __( 'Continue Reading', 'bakes-and-cakes' ) );
-    $bakes_and_cakes_slider_cat = get_theme_mod( 'bakes_and_cakes_slider_cat' );
+    $bakes_and_cakes_slider_cat      = get_theme_mod( 'bakes_and_cakes_slider_cat' );
     
     if( $bakes_and_cakes_slider_cat ){
         $bakes_and_cakes_qry = new WP_Query ( array( 
@@ -255,14 +262,14 @@ if( ! function_exists( 'bakes_and_cakes_slider_cb' )):
                     ?>
                         <?php if( has_post_thumbnail() ){?>
                         <li>
-                            <img src="<?php echo esc_url( $bakes_and_cakes_image[0] ); ?>" alt="<?php the_title(); ?>" />
+                            <img src="<?php echo esc_url( $bakes_and_cakes_image[0] ); ?>" alt="<?php the_title_attribute(); ?>" />
                             <?php if( $bakes_and_cakes_slider_caption ){ ?>
                             <div class="banner-text">
                                 <div class="container">
                                     <div class="text">
                                         <strong class="title"><?php the_title(); ?></strong>
                                         
-                                        <a class="btn" href="<?php the_permalink(); ?>"><?php echo esc_attr( $bakes_and_cakes_slider_readmore );?></a>
+                                        <a class="btn" href="<?php the_permalink(); ?>"><?php echo esc_html( $bakes_and_cakes_slider_readmore );?></a>
                                     </div>
                                 </div>
                             </div>
@@ -380,8 +387,7 @@ function bakes_and_cakes_footer_top(){
                     } ?>
                 </div>
                 <div class="col center">    
-                    <?php if ($contact_forms) { 
-                    if(is_contact_form_activated()){ ?>                  
+                    <?php if( is_contact_form_activated() && $contact_forms) { ?>                  
                         <section class="widget widget_contact_form">    
                             <div class="form-holder"> 
                                 <div class="contact-form">
@@ -392,8 +398,7 @@ function bakes_and_cakes_footer_top(){
                                 </div>
                             </div> 
                         </section>
-                    <?php }
-                        } else{
+                    <?php } else{
                             if (is_active_sidebar('footer-second')) {
                                 dynamic_sidebar('footer-second');
                             }
@@ -420,7 +425,7 @@ if( ! function_exists( 'bakes_and_cakes_footer_info' ) ) :
 function bakes_and_cakes_footer_info(){
     ?>
     <div class="site-info">        
-        <span>&copy; <?php echo date('Y'); ?> <a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name');?></a>. <?php esc_html_e('All Rights Reserved.', 'bakes-and-cakes');?></span>
+        <span>&copy; <?php echo esc_html( date_i18n( 'Y' ) ); ?> <a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name');?></a>. <?php esc_html_e('All Rights Reserved.', 'bakes-and-cakes');?></span>
             <a href="<?php echo esc_url( 'http://raratheme.com/wordpress-themes/bakes-and-cakes/' ); ?>" rel="author" target="_blank"><?php echo esc_html__( 'Bakes and Cakes by Rara Theme', 'bakes-and-cakes' ); ?></a>.
             <?php printf(esc_html__('Powered by %s', 'bakes-and-cakes'), '<a href="' . esc_url(__('https://wordpress.org/', 'bakes-and-cakes')) . '">WordPress</a>');?>.  
     </div><!-- .site-info -->
@@ -428,5 +433,14 @@ function bakes_and_cakes_footer_info(){
 }
 endif;
 add_action( 'bakes_and_cakes_footer', 'bakes_and_cakes_footer_info' );
- 
-?>
+
+/**
+ * Escape iframe
+*/
+function bakes_and_cakes_sanitize_iframe( $iframe ){
+        $allow_tag = array(
+            'iframe'=>array(
+            'src'   => array()
+            ) );
+    return wp_kses( $iframe, $allow_tag );
+    }

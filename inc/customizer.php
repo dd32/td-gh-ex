@@ -1174,6 +1174,8 @@ function bakes_and_cakes_customize_register( $wp_customize ) {
     );
     /** Slider Settings Ends */
     
+    if( is_contact_form_activated() ){
+
     $wp_customize->add_section(
         'bakes_and_cakes_contact_form_settings',
         array(
@@ -1215,7 +1217,7 @@ function bakes_and_cakes_customize_register( $wp_customize ) {
             'type' => 'textarea',
         )
      );
-
+    }
         /** Custom CSS*/
     $wp_customize->add_section(
         'bakes_and_cakes_custom_settings',
@@ -1299,14 +1301,6 @@ function bakes_and_cakes_customize_register( $wp_customize ) {
         $file = wp_check_filetype( $image, $mimes );
         // If $image has a valid mime_type, return it; otherwise, return the default.
         return ( $file['ext'] ? $image : $setting->default );
-    }
-
-    function bakes_and_cakes_sanitize_iframe( $iframe ){
-        $allow_tag = array(
-            'iframe'=>array(
-            'src'=>array()
-            ) );
-    return wp_kses( $iframe, $allow_tag );
     }
     
 }

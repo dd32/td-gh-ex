@@ -48,10 +48,10 @@ function bakes_and_cakes_sidebar_layout_callback(){
 
             <div class="radio-image-wrapper" style="float:left; margin-right:30px;">
                 <label class="description">
-                    <span><img src="<?php echo esc_url( $bakes_and_cakes_field['thumbnail'] ); ?>" alt="" /></span><br/>
-                    <input type="radio" name="bakes_and_cakes_sidebar_layout" value="<?php echo $bakes_and_cakes_field['value']; ?>"
+                    <span><img src="<?php echo esc_url( $bakes_and_cakes_field['thumbnail'] ); ?>" alt="<?php echo esc_attr( $bakes_and_cakes_field['label'] ); ?>" /></span><br/>
+                    <input type="radio" name="bakes_and_cakes_sidebar_layout" value="<?php echo esc_attr( $bakes_and_cakes_field['value'] ); ?>"
                     <?php checked( $bakes_and_cakes_field['value'], $bakes_and_cakes_sidebar_metalayout ); if(empty($bakes_and_cakes_sidebar_metalayout)) { checked( $bakes_and_cakes_field['value'], 'right-sidebar' ); } ?>/> 
-                     &nbsp;<?php echo $bakes_and_cakes_field['label']; ?>
+                     &nbsp;<?php echo esc_html( $bakes_and_cakes_field['label'] ); ?>
                 </label>
             </div>
             <?php } // end foreach 

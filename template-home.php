@@ -16,9 +16,9 @@ get_header();
     
     foreach( $bakes_and_cakes_enabled_sections as $bakes_and_cakes_section ){ ?>
         <section class="<?php echo esc_attr( $bakes_and_cakes_section['class'] ); ?>" id="<?php echo esc_attr( $bakes_and_cakes_section['id'] ); ?>" 
-        <?php if($bakes_and_cakes_background_images){
-            foreach($bakes_and_cakes_background_images as $bakes_and_cakes_background_image){
-                if($bakes_and_cakes_section['id'] == $bakes_and_cakes_background_image['bgimage']){
+        <?php if( $bakes_and_cakes_background_images ){
+            foreach( $bakes_and_cakes_background_images as $bakes_and_cakes_background_image ){
+                if( $bakes_and_cakes_section['id'] == $bakes_and_cakes_background_image['bgimage'] ){
                 echo 'style="background: url(' . esc_url(  get_theme_mod( 'bakes_and_cakes_' . $bakes_and_cakes_background_image['bgimage'] .'_background_image') ). '); background-size: cover; background-repeat: no-repeat; background-position: center;"';
             }}
             } ?>>
@@ -26,10 +26,10 @@ get_header();
         </section>
     <?php
     }
-	$iframe = get_theme_mod('bakes_and_cakes_map_section_content');
-    if($iframe){
+	$iframe = get_theme_mod( 'bakes_and_cakes_map_section_content' );
+    if( $iframe ){
     echo '<div class="map">';
-    echo  $iframe;
+    echo  bakes_and_cakes_sanitize_iframe( $iframe );
     echo '</div>';
     }
 

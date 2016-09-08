@@ -7,7 +7,7 @@
  * @package Bakes_And_Cakes
  */
 
-if ( ! is_active_sidebar( 'right-sidebar' ) || is_search() ) {
+if ( ! is_active_sidebar( 'right-sidebar' ) ) {
 	return;
 }
 ?>

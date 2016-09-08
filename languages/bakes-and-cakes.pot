@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-31 11:24+0000\n"
+"POT-Creation-Date: 2016-09-08 10:51+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -159,23 +159,23 @@ msgstr ""
 msgid "Error 404"
 msgstr ""
 
-#: inc/custom-functions.php:236 inc/customizer.php:1143
+#: inc/custom-functions.php:243 inc/customizer.php:1143
 msgid "Continue Reading"
 msgstr ""
 
-#: inc/custom-functions.php:423
+#: inc/custom-functions.php:428
 msgid "All Rights Reserved."
 msgstr ""
 
-#: inc/custom-functions.php:424
+#: inc/custom-functions.php:429
 msgid "Bakes and Cakes by Rara Theme"
 msgstr ""
 
-#: inc/custom-functions.php:425
+#: inc/custom-functions.php:430
 msgid "Powered by %s"
 msgstr ""
 
-#: inc/custom-functions.php:425
+#: inc/custom-functions.php:430
 msgid "https://wordpress.org/"
 msgstr ""
 
@@ -436,33 +436,33 @@ msgstr ""
 msgid "Choose Slider Category"
 msgstr ""
 
-#: inc/customizer.php:1180
+#: inc/customizer.php:1182
 msgid "Contact Form Setting"
 msgstr ""
 
-#: inc/customizer.php:1196
+#: inc/customizer.php:1198
 msgid "Contact Form Title"
 msgstr ""
 
-#: inc/customizer.php:1212
+#: inc/customizer.php:1214
 msgid "Contact Form"
 msgstr ""
 
-#: inc/customizer.php:1214
+#: inc/customizer.php:1216
 msgid ""
 "Enter the Contact Form Shortcode. Ex. [contact-form-7 id=\"186\" "
 "title=\"Google contact\"]"
 msgstr ""
 
-#: inc/customizer.php:1223
+#: inc/customizer.php:1225
 msgid "Custom CSS Settings"
 msgstr ""
 
-#: inc/customizer.php:1241
+#: inc/customizer.php:1243
 msgid "Custom Css"
 msgstr ""
 
-#: inc/customizer.php:1243
+#: inc/customizer.php:1245
 msgid "Put your custom CSS"
 msgstr ""
 
@@ -549,7 +549,7 @@ msgid "%1$s"
 msgstr ""
 
 #: inc/widget-popular-post.php:104 inc/widget-recent-post.php:109 
-#: inc/widget-social-links.php:96
+#: inc/widget-social-links.php:97
 msgid "Title"
 msgstr ""
 
@@ -588,40 +588,40 @@ msgstr ""
 msgid "A Social Links Widget"
 msgstr ""
 
-#: inc/widget-social-links.php:39 inc/widget-social-links.php:84 
-#: inc/widget-social-links.php:150
+#: inc/widget-social-links.php:39 inc/widget-social-links.php:85 
+#: inc/widget-social-links.php:151
 msgid "Social Media"
 msgstr ""
 
-#: inc/widget-social-links.php:55 inc/widget-social-links.php:101
+#: inc/widget-social-links.php:56 inc/widget-social-links.php:102
 msgid "Facebook"
 msgstr ""
 
-#: inc/widget-social-links.php:57 inc/widget-social-links.php:106
+#: inc/widget-social-links.php:58 inc/widget-social-links.php:107
 msgid "Twitter"
 msgstr ""
 
-#: inc/widget-social-links.php:59
+#: inc/widget-social-links.php:60
 msgid "Linkedin"
 msgstr ""
 
-#: inc/widget-social-links.php:61 inc/widget-social-links.php:116
+#: inc/widget-social-links.php:62 inc/widget-social-links.php:117
 msgid "Instagram"
 msgstr ""
 
-#: inc/widget-social-links.php:63 inc/widget-social-links.php:121
+#: inc/widget-social-links.php:64 inc/widget-social-links.php:122
 msgid "Google Plus"
 msgstr ""
 
-#: inc/widget-social-links.php:65 inc/widget-social-links.php:126
+#: inc/widget-social-links.php:66 inc/widget-social-links.php:127
 msgid "Pinterest"
 msgstr ""
 
-#: inc/widget-social-links.php:67 inc/widget-social-links.php:131
+#: inc/widget-social-links.php:68 inc/widget-social-links.php:132
 msgid "YouTube"
 msgstr ""
 
-#: inc/widget-social-links.php:111
+#: inc/widget-social-links.php:112
 msgid "LinkedIn"
 msgstr ""
 
@@ -633,8 +633,7 @@ msgstr ""
 msgid "Sidebar displaying only in woocommerce pages."
 msgstr ""
 
-#: sections/section-about.php:26 sections/section-blog.php:50 
-#: template-parts/content.php:67
+#: sections/section-about.php:26 template-parts/content.php:67
 msgid "Read More"
 msgstr ""
 
