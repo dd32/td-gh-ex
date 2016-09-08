@@ -35,7 +35,7 @@ class awada_footer_recent_posts extends WP_Widget
 				<?php while ($loop->have_posts()) : $loop->the_post(); ?>
 				<li>
 					<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('awada_recent_widget_thumb'); the_title(); ?></a>
-					<a class="readmore" href="<?php the_permalink(); ?>"><?php echo esc_attr(get_the_date(get_option('date_format'))); ?></a>
+					<a class="readmore" href="<?php the_permalink(); ?>"><?php echo get_the_date(get_option('date_format'), get_the_ID()); ?></a>
 					<?php esc_attr(the_tags('Tags: ', ', ')); ?>
 				</li>
 				<?php endwhile; ?>

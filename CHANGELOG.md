@@ -1,3 +1,7 @@
+###Version 1.3
+* Date format issue fixed.
+* Enable/Disable option added for footer widget, footer menu, footer copyright text.
+* Change Custom CSS Editor Styling.
 ###Version 1.2
 * HTML formating issue fixed like table, list styling.
 * Widget list styling issue fixed.

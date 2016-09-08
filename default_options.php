@@ -63,7 +63,9 @@ function awada_theme_options()
         'social_google_plus_link' => '#',
         'social_skype_link' => '#',
 		//Copyright Settings:
-		'copyright_text_footer' => 1,
+		'copyright_text_enabled' => 1,
+		'footer_menu_enabled' => 1,
+		'show_footer_widget' => 1,
         'footer_copyright' => __('Awada Theme', 'awada'),
         'developed_by_text' => __('Developed By', 'awada'),
         'developed_by_link_text' => __('Webhunt Infotech', 'awada'),

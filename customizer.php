@@ -181,15 +181,19 @@ Kirki::add_field('awada_theme', array(
     'sanitize_callback' => 'awada_sanitize_number',
 ));
 Kirki::add_field('awada_theme', array(
-    'type'                 => 'textarea',
-    'settings'             => 'custom_css',
-    'label'                => __('Custom CSS', 'awada'),
-    'description'          => __('Put your custom css here', 'awada'),
-    'section'              => 'general_sec',
-    'default'              => '',
-    'priority'             => 10,
+    'settings' => 'custom_css',
+    'label' => __('Custom Css Editor', 'awada'),
+    'section' => 'general_sec',
+    'type' => 'code',
+    'priority' => 10,
+    'default' => '',
     'sanitize_callback'    => 'wp_filter_nohtml_kses',
     'sanitize_js_callback' => 'wp_filter_nohtml_kses',
+	'choices'     => array(
+		'language' => 'css',
+		'theme'    => 'monokai',
+		'label'=>'Open Css Editor'
+	),
 ));
 
 /* Typography */
@@ -915,72 +919,34 @@ Kirki::add_section('footer_sec', array(
     'capability' => 'edit_theme_options',
 ));
 Kirki::add_field('awada_theme', array(
-    'settings'          => 'footer_background_color',
-    'label'             => __('Footer Background Color', 'awada'),
-    'description'       => __('Change Footer Background Color', 'awada'),
+    'settings'          => 'copyright_text_enabled',
+    'label'             => __('Enable Copyright Text', 'awada'),
     'section'           => 'footer_sec',
-    'type'              => 'color',
-    'priority'          => 9,
-    'default'           => '#121214',
-    'sanitize_callback' => 'awada_sanitize_color',
-    'output'            => array(
-        array(
-            'element'  => '#awada_footer_area',
-            'property' => 'background',
-        ),
-    ),
-    'transport'         => 'auto',
+    'type'              => 'switch',
+    'priority'          => 10,
+    'default'           => 1,
+	'transport'         => 'postMessage',
+    'sanitize_callback' => 'awada_sanitize_checkbox',
 ));
 Kirki::add_field('awada_theme', array(
-    'settings'          => 'footer_text_color',
-    'label'             => __('Footer Text Color', 'awada'),
-    'description'       => __('Change Footer Text Color', 'awada'),
+    'settings'          => 'footer_menu_enabled',
+    'label'             => __('Enable Footer Menu (Secondary Menu)', 'awada'),
     'section'           => 'footer_sec',
-    'type'              => 'color',
-    'priority'          => 9,
-    'default'           => '#31a3dd',
-    'sanitize_callback' => 'awada_sanitize_color',
-    'output'            => array(
-        array(
-            'element'  => '#awada_footer_area li a, #awada_footer_area a',
-            'property' => 'color',
-        ),
-    ),
-    'transport'         => 'auto',
+    'type'              => 'switch',
+    'priority'          => 10,
+    'default'           => 1,
+	'transport'         => 'postMessage',
+    'sanitize_callback' => 'awada_sanitize_checkbox',
 ));
 Kirki::add_field('awada_theme', array(
-    'settings'          => 'copyright_section_bg_color',
-    'label'             => __('Copyright Section Background Color', 'awada'),
-    'description'       => __('Change Copyright Section Background Color', 'awada'),
+    'settings'          => 'show_footer_widget',
+    'label'             => __('Enable Footer Widget Section', 'awada'),
     'section'           => 'footer_sec',
-    'type'              => 'color',
-    'priority'          => 9,
-    'default'           => '#31a3dd',
-    'sanitize_callback' => 'awada_sanitize_color',
-    'output'            => array(
-        array(
-            'element'  => '#copyrights',
-            'property' => 'background',
-        ),
-    ),
-    'transport'         => 'auto',
-));
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'copyright_section_text_color',
-    'label'             => __('Copyright Section Text Color', 'awada'),
-    'description'       => __('Change Copyright Section Text Color', 'awada'),
-    'section'           => 'footer_sec',
-    'type'              => 'color',
-    'priority'          => 9,
-    'default'           => '#fff',
-    'sanitize_callback' => 'awada_sanitize_color',
-    'output'            => array(
-        array(
-            'element'  => '#copyrights, .footer-area-menu li a',
-            'property' => 'color',
-        ),
-    ),
-    'transport'         => 'auto',
+    'type'              => 'switch',
+    'priority'          => 10,
+    'default'           => 1,
+	'transport'         => 'postMessage',
+    'sanitize_callback' => 'awada_sanitize_checkbox',
 ));
 Kirki::add_field('awada_theme', array(
     'settings'          => 'footer_copyright',
@@ -1021,6 +987,74 @@ Kirki::add_field('awada_theme', array(
 	'transport'         => 'postMessage',
     'default'           => $awada_theme_options['developed_by_link'],
     'sanitize_callback' => 'esc_url',
+));
+Kirki::add_field('awada_theme', array(
+    'settings'          => 'footer_background_color',
+    'label'             => __('Footer Background Color', 'awada'),
+    'description'       => __('Change Footer Background Color', 'awada'),
+    'section'           => 'footer_sec',
+    'type'              => 'color',
+    'priority'          => 10,
+    'default'           => '#121214',
+    'sanitize_callback' => 'awada_sanitize_color',
+    'output'            => array(
+        array(
+            'element'  => '#awada_footer_area',
+            'property' => 'background',
+        ),
+    ),
+    'transport'         => 'auto',
+));
+Kirki::add_field('awada_theme', array(
+    'settings'          => 'footer_text_color',
+    'label'             => __('Footer Text Color', 'awada'),
+    'description'       => __('Change Footer Text Color', 'awada'),
+    'section'           => 'footer_sec',
+    'type'              => 'color',
+    'priority'          => 10,
+    'default'           => '#31a3dd',
+    'sanitize_callback' => 'awada_sanitize_color',
+    'output'            => array(
+        array(
+            'element'  => '#awada_footer_area li a, #awada_footer_area a',
+            'property' => 'color',
+        ),
+    ),
+    'transport'         => 'auto',
+));
+Kirki::add_field('awada_theme', array(
+    'settings'          => 'copyright_section_bg_color',
+    'label'             => __('Copyright Section Background Color', 'awada'),
+    'description'       => __('Change Copyright Section Background Color', 'awada'),
+    'section'           => 'footer_sec',
+    'type'              => 'color',
+    'priority'          => 10,
+    'default'           => '#31a3dd',
+    'sanitize_callback' => 'awada_sanitize_color',
+    'output'            => array(
+        array(
+            'element'  => '#copyrights',
+            'property' => 'background',
+        ),
+    ),
+    'transport'         => 'auto',
+));
+Kirki::add_field('awada_theme', array(
+    'settings'          => 'copyright_section_text_color',
+    'label'             => __('Copyright Section Text Color', 'awada'),
+    'description'       => __('Change Copyright Section Text Color', 'awada'),
+    'section'           => 'footer_sec',
+    'type'              => 'color',
+    'priority'          => 10,
+    'default'           => '#fff',
+    'sanitize_callback' => 'awada_sanitize_color',
+    'output'            => array(
+        array(
+            'element'  => '#copyrights, .footer-area-menu li a',
+            'property' => 'color',
+        ),
+    ),
+    'transport'         => 'auto',
 ));
 
 /* Home Page Customizer */
