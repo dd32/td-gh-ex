@@ -66,8 +66,7 @@ get_header();
 								</a>
 							</figure><!-- end.post-featured-image  -->
 						<?php }
-				endif;
-		} ?>
+				endif; ?>
 		<div class="entry-content clearfix">
 		<?php the_content();
 			wp_link_pages( array( 
@@ -108,7 +107,7 @@ get_header();
 				comments_template(); ?>
 			</article>
 		</section> <!-- .post -->
-	<?php
+	<?php }
 		}
 	else { ?>
 	<h1 class="entry-title"> <?php _e( 'No Posts Found.', 'arise' ); ?> </h1>

@@ -142,37 +142,6 @@ function arise_slider_value() {
 		)
 	);
 }
-/********************* Used wp_page_menu filter hook *********************************************/
-	function arise_wp_page_menu_filter($text) {
-		$replace = array(
-			'current_page_item' => 'current-menu-item',
-		);
-		$text = str_replace(array_keys($replace), $replace, $text);
-		return $text;
-	}
-add_filter('wp_page_menu', 'arise_wp_page_menu_filter');
-
-/***************************** Translators *********************************************************/
-function arise_font_url() {
-	$font_url = '';
-	/*
-	 * If there are characters in your language that are not supported
-	 * by Roboto, translate this to 'off'. Do not translate into your own language.
-	 */
-	if ('off' !== _x('on', 'Roboto font: on or off', 'arise')) {
-		$font_url = add_query_arg('family', urlencode('Roboto:400,300,500,700'), "//fonts.googleapis.com/css");
-	}
-	return $font_url;
-}
-/**************************************************************************************/
-function arise_get_featured_posts() {
-	return apply_filters( 'arise_get_featured_posts', array() );
-}
-/************ Return bool if there are featured Posts ********************************/
-function arise_has_featured_posts() {
-	return ! is_paged() && (bool) arise_get_featured_posts();
-}
-
 /**************************** Display Header Title ***********************************/
 function arise_header_title() {
 	$format = get_post_format();
