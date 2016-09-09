@@ -133,7 +133,7 @@ function beautytemple_scripts() {
 	
 	wp_enqueue_style( 'dancing-script', esc_url('fonts.googleapis.com/css', 'https') . '?family=Dancing+Script:400,700', array(), '20151215', false);
 
-	wp_enqueue_style( 'dancing-script', esc_url('fonts.googleapis.com/css', 'https') . '?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i', array(), '20151215', false);
+	wp_enqueue_style( 'lato', esc_url('fonts.googleapis.com/css', 'https') . '?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i', array(), '20151215', false);
 
 	wp_enqueue_script( 'jquery' );
 	
