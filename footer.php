@@ -24,11 +24,11 @@ $social_links_behance = get_theme_mod( 'beautytemple_social_links_behance_option
 		<?php if ($social_links_fb || $social_links_tw || $social_links_gplus || $social_links_instagram || $social_links_behance):?>
 			<div class="social-links row">
 				<ul>
-					<?php if ($social_links_fb):?><li><a target="blank" href="<?php echo $social_links_fb ; ?>"><i class="icon-facebook-squared"></i></a></li><?php endif;?>
-					<?php if ($social_links_tw):?><li><a target="blank" href="<?php echo $social_links_tw ; ?>"><i class="icon-twitter"></i></a></li><?php endif;?>
-					<?php if ($social_links_gplus):?><li><a target="blank" href="<?php echo $social_links_gplus ; ?>"><i class="icon-gplus"></i></a></li><?php endif;?>
-					<?php if ($social_links_instagram):?><li><a target="blank" href="<?php echo $social_links_instagram ; ?>"><i class="icon-instagram"></i></a></li><?php endif;?>
-					<?php if ($social_links_behance):?><li><a target="blank" href="<?php echo $social_links_behance ; ?>"><i class="icon-behance"></i></a></li><?php endif;?>
+					<?php if ($social_links_fb):?><li><a target="blank" href="<?php echo esc_url($social_links_fb) ; ?>"><i class="icon-facebook-squared"></i></a></li><?php endif;?>
+					<?php if ($social_links_tw):?><li><a target="blank" href="<?php echo esc_url($social_links_tw) ; ?>"><i class="icon-twitter"></i></a></li><?php endif;?>
+					<?php if ($social_links_gplus):?><li><a target="blank" href="<?php echo esc_url($social_links_gplus) ; ?>"><i class="icon-gplus"></i></a></li><?php endif;?>
+					<?php if ($social_links_instagram):?><li><a target="blank" href="<?php echo esc_url($social_links_instagram) ; ?>"><i class="icon-instagram"></i></a></li><?php endif;?>
+					<?php if ($social_links_behance):?><li><a target="blank" href="<?php echo esc_url($social_links_behance) ; ?>"><i class="icon-behance"></i></a></li><?php endif;?>
 				</ul>
 			</div>
 		<?php endif;?>	

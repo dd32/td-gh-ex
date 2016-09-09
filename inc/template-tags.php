@@ -116,3 +116,14 @@ function beautytemple_category_transient_flusher() {
 }
 add_action( 'edit_category', 'beautytemple_category_transient_flusher' );
 add_action( 'save_post',     'beautytemple_category_transient_flusher' );
+
+/**
+ * Output custom logo.
+ */
+function beautytemple_the_custom_logo() {
+	
+	if ( function_exists( 'the_custom_logo' ) ) {
+		the_custom_logo();
+	}
+
+}

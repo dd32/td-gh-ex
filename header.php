@@ -31,19 +31,19 @@
 <div id="page" class="site">
 	<header id="masthead" class="site-header" style="background-image: url('<?php header_image(); ?>');" role="banner">
 		<div class="site-branding row">
-			<?php
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url() ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url() ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
-
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php
-			endif; ?>
+				<?php
+				$custom_logo_id = get_theme_mod( 'custom_logo' );
+				$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+				if (!$image[0]):
+					if ( is_front_page() && is_home() ) : ?>
+						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php else : ?>
+						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+					<?php
+					endif;
+				else :?>
+					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo $image[0]; ?>"></a></p>
+				<?php endif ;?>
 		</div><!-- .site-branding -->
 
 	</header><!-- #masthead -->
@@ -59,11 +59,11 @@
 				<?php if ($social_links_fb || $social_links_tw || $social_links_gplus || $social_links_instagram || $social_links_behance):?>
 					<div class="social-links six columns">
 						<ul>
-							<?php if ($social_links_fb):?><li><a target="blank" href="<?php echo $social_links_fb ; ?>"><i class="icon-facebook-squared"></i></a></li><?php endif;?>
-							<?php if ($social_links_tw):?><li><a target="blank" href="<?php echo $social_links_tw ; ?>"><i class="icon-twitter"></i></a></li><?php endif;?>
-							<?php if ($social_links_gplus):?><li><a target="blank" href="<?php echo $social_links_gplus ; ?>"><i class="icon-gplus"></i></a></li><?php endif;?>
-							<?php if ($social_links_instagram):?><li><a target="blank" href="<?php echo $social_links_instagram ; ?>"><i class="icon-instagram"></i></a></li><?php endif;?>
-							<?php if ($social_links_behance):?><li><a target="blank" href="<?php echo $social_links_behance ; ?>"><i class="icon-behance"></i></a></li><?php endif;?>
+							<?php if ($social_links_fb):?><li><a target="blank" href="<?php echo esc_url($social_links_fb) ; ?>"><i class="icon-facebook-squared"></i></a></li><?php endif;?>
+							<?php if ($social_links_tw):?><li><a target="blank" href="<?php echo esc_url($social_links_tw) ; ?>"><i class="icon-twitter"></i></a></li><?php endif;?>
+							<?php if ($social_links_gplus):?><li><a target="blank" href="<?php echo esc_url($social_links_gplus) ; ?>"><i class="icon-gplus"></i></a></li><?php endif;?>
+							<?php if ($social_links_instagram):?><li><a target="blank" href="<?php echo esc_url($social_links_instagram) ; ?>"><i class="icon-instagram"></i></a></li><?php endif;?>
+							<?php if ($social_links_behance):?><li><a target="blank" href="<?php echo esc_url($social_links_behance) ; ?>"><i class="icon-behance"></i></a></li><?php endif;?>
 						</ul>
 					</div>
 				<?php endif;?>			
