@@ -85,7 +85,7 @@ if ( ! class_exists( 'HU_utils' ) ) :
     function hu_wp_filters() {
       if ( apply_filters( 'hu_img_smart_load_enabled', hu_is_checked('smart_load_img') ) ) {
           add_filter( 'the_content'                       , array( $this , 'hu_parse_imgs' ), PHP_INT_MAX );
-          add_filter( 'post_thumbnail_html'               , array( $this , 'hu_parse_imgs' ), PHP_INT_MAX );
+          add_filter( 'hu_post_thumbnail_html'            , array( $this , 'hu_parse_imgs' ) );
       }
       add_filter( 'wp_title'                            , array( $this , 'hu_wp_title' ), 10, 2 );
     }
@@ -98,7 +98,9 @@ if ( ! class_exists( 'HU_utils' ) ) :
     * @return string
     */
     function hu_parse_imgs( $_html ) {
-      if( is_feed() || is_preview() || ( wp_is_mobile() && apply_filters('hu_disable_img_smart_load_mobiles', false ) ) )
+      $_bool = is_feed() || is_preview() || ( wp_is_mobile() && apply_filters('hu_disable_img_smart_load_mobiles', false ) );
+
+      if ( apply_filters( 'hu_disable_img_smart_load', $_bool, current_filter() ) )
         return $_html;
 
       return preg_replace_callback('#<img([^>]+?)src=[\'"]?([^\'"\s>]+)[\'"]?([^>]*)>#', array( $this , 'hu_regex_callback' ) , $_html);

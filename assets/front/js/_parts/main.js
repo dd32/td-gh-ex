@@ -370,6 +370,9 @@ var czrapp = czrapp || {};
       });
     },
 
+    parallax : function() {
+      $( '.parallax-item' ).czrParallax();
+    },
   };//_methods{}
 
   $.extend( czrapp.methods.Czr_Plugins = {} , _methods );
@@ -596,7 +599,8 @@ jQuery(function ($) {
     BrowserDetect : [],
     Czr_Plugins : [
         'imgSmartLoad',
-        'extLinks'
+        'extLinks',
+        'parallax'
     ],
     Czr_UserExperience : [
         'outline',
