@@ -10,6 +10,13 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Ascreen WordPress Theme, Copyright 2016 Coothemes.com
 Ascreen is distributed under the terms of the GNU General Public License v2 
 
+iconfont
+    iconfont by CooThemes
+    iconfont is Licensed under the GPL, version 2 or later
+    https://www.coothemes.com
+
+
+
 == Installation ==
 
 1. Primary: Login to your wp-admin area and go to Appearance -> Themes. Select Install tab and click on Upload link. Select theme .zip and click on Install now button. If you have any errors, use alternate method.
@@ -17,6 +24,9 @@ Ascreen is distributed under the terms of the GNU General Public License v2
 3. Log into your WP admin panel and click on the Design tab. Now click on the Ascreen theme to activate it.
 
 == Changelog ==
+Version 1.1.6  2016.9.10
+* Fix Some Problems.
+
 Version 1.1.5  2016.9.6
 * fixed 1:- logo is core issue it should used in customizer
 * 2:- Remove unused code instead commenting in style.css

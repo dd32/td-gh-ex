@@ -11,8 +11,9 @@ function ascreen_setup(){
 	
 
 	add_theme_support('post-thumbnails');
+	set_post_thumbnail_size( 180, 135 );
 	$args = array();
-	$header_args = array( 
+	$header_args = array(
 	    'default-image'          => '',
 		'default-repeat' => 'no-repeat',
         'default-text-color'     => '2C2C2C',
@@ -277,6 +278,7 @@ function ascreen_get_share_url()
 {
 	?>
 	<div class="share">
+    
 		<?php if( ascreen_get_option( 'ascreen_option','twitter_url','#') != ''){?>
 		<a target="_blank" href="<?php echo esc_url(ascreen_get_option( 'ascreen_option','twitter_url','#'));?>" class="share-twitter cbutton cbutton--effect-jagoda"><i class="icon-twitter"></i></a>
 		<?php }?>
