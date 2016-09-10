@@ -5,7 +5,7 @@
 * Author: AwoThemes
 * Author URI: http://AwoThemes.pro
 * Description: Luxury Wordpress theme with refined typography and bright colors for fashion, beauty, fitness, yoga and lifestyle blogging.
-* Version: 1.0.5
+* Version: 1.0.6
 * License: GNU General Public License v2 or later
 * License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * Text Domain: beautytemple
@@ -635,7 +635,7 @@ html, body { height: 100%; }
 .text-right { text-align: right; }
 
 /* Fonts */
-@font-face { font-family: "entypo"; font-style: normal; font-weight: 400; src: url(../fonts/icons/entypo.eot); src: url("../fonts/icons/entypo.eot?#iefix") format("ie9-skip-eot"), url("../fonts/icons/entypo.woff") format("woff"), url("../fonts/icons/entypo.ttf") format("truetype"); }
+@font-face { font-family: "entypo"; font-style: normal; font-weight: 400; src: url(./fonts/icons/entypo/entypo.eot); src: url("./fonts/icons/entypo/entypo.eot?#iefix") format("ie9-skip-eot"), url("./fonts/icons/entypo/entypo.woff") format("woff"), url("./fonts/icons/entypo/entypo.ttf") format("truetype"); }
 /* Typography */
 h1, h2, h3, h4, h5, h6 { font-family: "Lato", sans-serif; font-weight: 700; color: #2f383d; text-rendering: optimizeLegibility; text-indent: -2px; line-height: 1.2324em; padding-bottom: 0.2912em; }
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: #2f383d; }
