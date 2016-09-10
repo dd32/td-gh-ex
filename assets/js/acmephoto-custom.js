@@ -100,11 +100,11 @@ jQuery(document).ready(function($) {
         var show_more = $(this);
         var click = show_more.attr('data-click');
 
-        if( paged >= max_num_pages){
+        if( (paged-1) >= max_num_pages){
             show_more.html(acmephoto_ajax.no_more_posts)
         }
 
-        if( click == 0 || paged >= max_num_pages){
+        if( click == 0 || (paged-1) >= max_num_pages){
             return false;
         }
         show_more.html('<i class="fa fa-spinner fa-spin fa-fw"></i>');

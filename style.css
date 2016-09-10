@@ -4,7 +4,7 @@ Theme URI: https://www.acmethemes.com/themes/acmephoto/
 Author: acmethemes
 Author URI: https://www.acmethemes.com/
 Description: AcmePhoto is a fully Responsive WordPress Theme based on masonry layout, a perfect theme for a photography website or blog for photographer, as well as portfolio site for your creativity. An elegant theme with quality code and based on customizer. A translation ready theme with major browser compatibility. AcmePhoto comes with lots of features including logo options, site layout options, header options, footer options, sidebar options as well as color options too. Related posts, breadcrumb, search options, social icons, custom widgets are the added features on this theme. This theme packs a lot of premium features  which helps you to make your site awesome and well organized. Demo: http://demo.acmethemes.com/acmephoto, Supports : https://www.acmethemes.com/supports/
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: acmephoto
@@ -400,11 +400,6 @@ i.fa{
 	-moz-box-shadow: 0px 0px 3px 1px rgba(119,119,119,1);
 	box-shadow: 0px 0px 3px 1px rgba(119,119,119,1);
 	padding:0;
-	transition: all 0.5s ease 0s;
-	-webkit-transition: all 0.5s ease 0s;
-	-moz-transition: all 0.5s ease 0s;
-	-o-transition: all 0.5s ease 0s;
-	-ms-transition: all 0.5s ease 0s;
 	z-index: 3000;
 }
 .navbar-header {
@@ -426,7 +421,7 @@ i.fa{
 	color: #ffffff;
 	display: none;
 	font-size: 22px;
-	margin: 3px auto;
+	margin: 19px auto;
 	outline: medium none;
 	text-align: center;
 	transition: all 0.2s ease-out 0s;
@@ -545,7 +540,6 @@ i.fa{
 .main-navigation  ul.sub-menu li a{
 	border-top: none;
 	padding-top: 2px;
-	color: #ffffff;
 }
 
 /* Large desktop */
@@ -574,7 +568,7 @@ i.fa{
 @media screen and (max-width: 1023px) {
 	.navbar-small .main-navigation{
 		background: rgba(0, 0, 0, 1);
-		height: 70vh;
+		max-height: 70vh;
 		overflow-y: scroll;: ;
 		width: 100%;
 	}
@@ -690,7 +684,7 @@ i.fa{
 	border-radius: 30px;
 	color: #2D2D2D;
 	display: inline-block;
-	margin-right: 12px;
+	margin: 0 12px;
 	padding: 8px 24px;
 	transition: all 0.5s ease-in-out 0s;
 }
@@ -722,8 +716,13 @@ i.fa{
 .search-no-results #primary .page-content .search-block {
 	float: none;
 	width: 50%;
+	margin: 0 auto;
 }
-
+.not-found .page-header,
+.not-found .page-content {
+	text-align: center;
+	width: 100%;
+}
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -1186,7 +1185,7 @@ object {
     #FOOTER
 \*-----------------*/
 /*** COMMON FOOTER CSS ***/
-footer.site-footer,
+footer .top-bottom,
 .footer-copyright{
 	border-top: 0;
 	margin-top: 50px;
@@ -1573,6 +1572,7 @@ footer .social a:hover{
 .acmephoto-author-widget img{
 	border-radius: 50%;
 	margin: 0 auto;
+	display: table;
 }
 /* Landscape phone to portrait tablet */
 @media screen and (max-width:767px){
@@ -1653,7 +1653,8 @@ footer .social a:hover{
 	position: relative;
 	margin: 0 auto;
 }
-
+.single .no-thumbnail .entry-data,
+.single .no-thumbnail .entry-footer,
 .single article.post .entry-header,
 .single article.post .entry-content{
 	line-height:22px;
@@ -1694,11 +1695,6 @@ article.post .post-thumb {
 .not-found .page-header .page-title::after {
 	background: transparent;
 }
-.not-found .page-header,
-.not-found .page-content {
-	text-align: center;
-	width: 100%;
-}
 /*breadcrumbs*/
 #acmephoto-breadcrumbs{
 	background: #eeeeef ;
@@ -1710,7 +1706,7 @@ article.post .post-thumb {
 	color: white;
 	display: block;
 	float: left;
-	padding: 10px 0 10px 55px;
+	padding: 10px 0 10px 25px;
 	position: relative;
 	text-decoration: none;
 	font-size: 14px;
