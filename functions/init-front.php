@@ -112,14 +112,15 @@ if ( ! function_exists('hu_print_widgets_in_location') ) {
 //the job of this function is to print a dynamic widget zone if exists
 //if exists but empty, and if the user is in a customization context, let's print a placeholder
 function hu_print_dynamic_sidebars( $_id, $location ) {
-  global $wp_registered_sidebars, $wp_registered_widgets;
+  global $wp_registered_sidebars;
+  $sidebars_widgets = wp_get_sidebars_widgets();
+
   if ( ! isset($wp_registered_sidebars[$_id]) ) {
     return;
   }
 
-  $sidebars_widgets = wp_get_sidebars_widgets();
 
-  if ( hu_is_customize_preview_frame() && ! hu_isprevdem() ) {
+  if ( hu_is_customize_preview_frame() ) {
     //is there a meta setting overriding the customizer ?
     if ( false != hu_get_singular_meta_widget_zone($location) ) {
       printf('<div class="widget"><div class="hu-placeholder-widget"><h3>%1$s<br/><span class="zone-name">"%2$s"</span> %3$s</h3><br/><p>%4$s</p></div></div>',
@@ -138,10 +139,8 @@ function hu_print_dynamic_sidebars( $_id, $location ) {
     }
   }//end if customizing
 
-  do_action('__before_print_dynamic_sidebar', $sidebars_widgets, $_id );
-
   //print it
-  dynamic_sidebar( $_id );
+  dynamic_sidebar($_id);
 }
 
 
@@ -181,23 +180,21 @@ if ( ! function_exists( 'hu_site_title' ) ) {
 
   function hu_site_title() {
     // Text or image?
-    // Since v3.2.4, uses the WP 'custom_logo' theme mod option. Set with a filter.
-    if ( apply_filters( 'hu_display_header_logo', hu_is_checked('display-header-logo') && false != hu_get_img_src_from_option( 'custom-logo' ) ) ) {
-      $logo_src = apply_filters( 'hu_header_logo_src' , hu_get_img_src_from_option( 'custom-logo' ) );
-      $logo_title = '<img src="'. $logo_src . '" alt="' .get_bloginfo('name'). '">';
+    if ( false != hu_get_img_src_from_option( 'custom-logo' ) ) {
+      $logo = '<img src="'. hu_get_img_src_from_option( 'custom-logo' ) . '" alt="'.get_bloginfo('name').'">';
     } else {
-      $logo_title = get_bloginfo('name');
+      $logo = get_bloginfo('name');
     }
 
-    $link = '<a class="custom-logo-link" href="'.home_url('/').'" rel="home">'.$logo_title.'</a>';
+    $link = '<a href="'.home_url('/').'" rel="home">'.$logo.'</a>';
 
-    if ( hu_is_home() ) {
+    if ( is_front_page() || is_home() ) {
       $sitename = '<h1 class="site-title">'.$link.'</h1>'."\n";
     } else {
       $sitename = '<p class="site-title">'.$link.'</p>'."\n";
     }
 
-    return apply_filters('hu_logo_title', $sitename, $logo_title );
+    return $sitename;
   }
 
 }
@@ -323,10 +320,9 @@ if ( ! function_exists( 'hu_blog_title' ) ) {
     $subheading =  wp_kses_post( hu_get_option('blog-subheading') );
     $subheading = $subheading ? $subheading : __('Blog', 'hueman');
 
-    return apply_filters( 'hu_blog_title', sprintf('%1$s <span class="hu-blog-subheading">%2$s</span>',
-        $heading,
-        $subheading
-      )
+    return sprintf('%1$s <span class="hu-blog-subheading">%2$s</span>',
+      $heading,
+      $subheading
     );
   }
 
@@ -427,61 +423,35 @@ if ( ! function_exists( 'hu_get_featured_post_ids' ) ) {
 }
 
 
-
-
-
-/* ------------------------------------------------------------------------- *
- *  Placeholder thumbs for preview demo mode
-/* ------------------------------------------------------------------------- */
-/* Echoes the <img> tag of the placeholder thumbnail
-*  + an animated svg icon
-*  the src property can be filtered
+/*  Echoes the <img> tag of the placeholder thumbnail
+*   the src property can be filtered
 /* ------------------------------------ */
-if ( ! function_exists( 'hu_get_placeholder_thumb' ) ) {
+if ( ! function_exists( 'hu_print_placeholder_thumb' ) ) {
 
-  function hu_get_placeholder_thumb( $_requested_size = 'thumb-medium' ) {
-    $_unique_id = uniqid();
-    $filter = false;
-    $_sizes = array( 'thumb-medium', 'thumb-small', 'thumb-standard' );
-    if ( ! in_array($_requested_size, $_sizes) )
-      $_requested_size = 'thumb-medium';
-    //default $img_src
-    $_img_src = get_template_directory_uri() . "/assets/front/img/{$_requested_size}.png";
-
-    if ( apply_filters( 'hu-use-svg-thumb-placeholder', true ) ) {
-        $_size = $_requested_size . '-empty';
-        $_img_src = get_template_directory_uri() . "/assets/front/img/{$_size}.png";
-        $_svg_height = in_array($_size, array( 'thumb-medium', 'thumb-standard' ) ) ? 100 : 60;
-        ?>
-        <svg class="hu-svg-placeholder <?php echo $_size; ?>" id="<?php echo $_unique_id; ?>" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M928 832q0-14-9-23t-23-9q-66 0-113 47t-47 113q0 14 9 23t23 9 23-9 9-23q0-40 28-68t68-28q14 0 23-9t9-23zm224 130q0 106-75 181t-181 75-181-75-75-181 75-181 181-75 181 75 75 181zm-1024 574h1536v-128h-1536v128zm1152-574q0-159-112.5-271.5t-271.5-112.5-271.5 112.5-112.5 271.5 112.5 271.5 271.5 112.5 271.5-112.5 112.5-271.5zm-1024-642h384v-128h-384v128zm-128 192h1536v-256h-828l-64 128h-644v128zm1664-256v1280q0 53-37.5 90.5t-90.5 37.5h-1536q-53 0-90.5-37.5t-37.5-90.5v-1280q0-53 37.5-90.5t90.5-37.5h1536q53 0 90.5 37.5t37.5 90.5z"/></svg>
-
-        <script type="text/javascript">
-          jQuery( function($){
-            if ( $('#flexslider-featured').length ) {
-              $('#flexslider-featured').on('featured-slider-ready', function() {
-                $( '#<?php echo $_unique_id; ?>' ).animateSvg();
-              });
-            } else { $( '#<?php echo $_unique_id; ?>' ).animateSvg( { svg_opacity : 0.3, filter_opacity : 0.5 } ); }
-          });
-        </script>
-        <?php
-    }
-
-    $_img_src = apply_filters( 'hu_placeholder_thumb_src', $_img_src, $_requested_size );
-    $filter = apply_filters( 'hu_placeholder_thumb_filter', false );
-
-    //make sure we did not lose the img_src
-    if ( false == $_img_src )
-      $_img_src = get_template_directory_uri() . "/assets/front/img/{$_requested_size}.png";
-
-    printf( ' %1$s<img class="hu-img-placeholder" src="%2$s" alt="%3$s" data-hu-post-id="%4$s" />',
-      false !== $filter ? $filter : '',
-      $_img_src,
-      get_the_title(),
-      $_unique_id
+  function hu_print_placeholder_thumb() {
+    printf( '<img src="%1$s" alt="%2$s" />',
+      apply_filters( 'hu_placeholder_thumb_src' , get_template_directory_uri() . '/assets/front/img/thumb-medium.png' ),
+      get_the_title()
     );
   }
+
 }
+
+
+
+
+
+/*  Metas
+/* ------------------------------------ */
+
+
+
+
+
+
+
+
+
 
 
 
@@ -492,15 +462,17 @@ if ( ! function_exists( 'hu_get_placeholder_thumb' ) ) {
 /*  Body class
 /* ------------------------------------ */
 if ( ! function_exists( 'hu_body_class' ) ) {
+
   function hu_body_class( $classes ) {
     $classes[] = hu_layout_class();
     $classes[] = hu_is_checked( 'boxed' ) ? 'boxed' : 'full-width';
-    if ( hu_has_nav_menu('topbar') ) { $classes[] = 'topbar-enabled'; }
+    if ( has_nav_menu('topbar') ) { $classes[] = 'topbar-enabled'; }
     if ( hu_get_option( 'mobile-sidebar-hide' ) == 's1' ) { $classes[] = 'mobile-sidebar-hide-s1'; }
     if ( hu_get_option( 'mobile-sidebar-hide' ) == 's2' ) { $classes[] = 'mobile-sidebar-hide-s2'; }
     if ( hu_get_option( 'mobile-sidebar-hide' ) == 's1-s2' ) { $classes[] = 'mobile-sidebar-hide'; }
     return $classes;
   }
+
 }
 add_filter( 'body_class', 'hu_body_class' );
 
@@ -518,28 +490,6 @@ if ( ! function_exists( 'hu_favicon' ) ) {
 
 }
 add_filter( 'wp_head', 'hu_favicon' );
-
-
-/*  Custom logo
-/* ------------------------------------ */
-//the purpose of this filter is to handle the retro-compatibility for the WP custom logo introduced in wp 4.5 and implemented in Hueman v3.2.4+
-if ( ! function_exists( 'hu_set_custom_logo' ) ) {
-  function hu_set_custom_logo( $_src, $option_name ) {
-    if ( 'custom-logo' != $option_name )
-      return $_src;
-    //do we have a custom logo available in the theme_mods ?
-    if ( ! function_exists( 'the_custom_logo' ) )
-      return $_src;
-    $custom_logo_id = get_theme_mod( 'custom_logo' );
-    if ( false == $custom_logo_id || empty($custom_logo_id) )
-      return $_src;
-
-    return hu_get_img_src( $custom_logo_id );
-  }
-}
-add_filter( 'hu_img_src_from_option', 'hu_set_custom_logo', 10, 2 );
-
-
 
 
 /*  Excerpt ending
@@ -615,9 +565,6 @@ add_filter( 'body_class', 'hu_browser_body_class' );
 
 
 
-
-
-
 /* ------------------------------------------------------------------------- *
  *  Styles and scripts
 /* ------------------------------------------------------------------------- */
@@ -654,15 +601,10 @@ if ( ! function_exists( 'hu_scripts' ) ) {
         true
     );
 
-    if ( is_singular() && get_option( 'thread_comments' ) && comments_open() ) {
+    if ( is_singular() && get_option( 'thread_comments' ) ) {
       wp_enqueue_script( 'comment-reply' );
     }
 
-    global $wp_registered_widgets;
-    $_regwdgt = array();
-    foreach ( $wp_registered_widgets as $_key => $_value) {
-      $_regwdgt[] = $_key;
-    }
     wp_localize_script(
           'hu-front-scripts',
           'HUParams',
@@ -692,14 +634,11 @@ if ( ! function_exists( 'hu_scripts' ) ) {
                         '#header-widgets'
                     ),
                     'opts'     => array(
-                        'excludeImg' => array( '.tc-holder-img' ),
-                        'fadeIn_options' => 100
+                        'excludeImg' => array( '.tc-holder-img' )
                     )
               )),
               'goldenRatio'         => apply_filters( 'hu_grid_golden_ratio' , 1.618 ),
-              'gridGoldenRatioLimit' => apply_filters( 'hu_grid_golden_ratio_limit' , 350),
-              'vivusSvgSpeed' => apply_filters( 'hu_vivus_svg_duration' , 300),
-              'isDevMode' => ( defined('WP_DEBUG') && true === WP_DEBUG ) || ( defined('TC_DEV') && true === TC_DEV )
+              'gridGoldenRatioLimit' => apply_filters( 'hu_grid_golden_ratio_limit' , 350)
             )
         )//end of filter
        );
@@ -1053,152 +992,4 @@ function hu_get_template_part( $path ) {
       get_template_part( $path );
     else if ( '' != $_custom_path )
       load_template( $_custom_path, true );//true for require_once
-}
-
-
-
-
-/* ------------------------------------------------------------------------- *
- *  Page Menu
-/* ------------------------------------------------------------------------- */
-/**
- * Display or retrieve list of pages with optional home link.
- * Modified copy of wp_page_menu()
- * @return string html menu
- */
-function hu_page_menu( $args = array() ) {
-  $defaults = array('show_home' => true, 'sort_column' => 'menu_order, post_title', 'menu_class' => 'menu', 'echo' => true, 'link_before' => '', 'link_after' => '');
-  $args = wp_parse_args( $args, $defaults );
-
-  $args = apply_filters( 'wp_page_menu_args', $args );
-
-  $menu = '';
-
-  $list_args = $args;
-
-  // Show Home in the menu
-  if ( ! empty($args['show_home']) ) {
-    if ( true === $args['show_home'] || '1' === $args['show_home'] || 1 === $args['show_home'] )
-      $text = __('Home' , 'hueman');
-    else
-      $text = $args['show_home'];
-    $class = '';
-    if ( is_front_page() && !is_paged() )
-      $class = 'class="current_page_item"';
-    $menu .= '<li ' . $class . '><a href="' . home_url( '/' ) . '">' . $args['link_before'] . $text . $args['link_after'] . '</a></li>';
-    // If the front page is a page, add it to the exclude list
-    if (get_option('show_on_front') == 'page') {
-      if ( !empty( $list_args['exclude'] ) ) {
-        $list_args['exclude'] .= ',';
-      } else {
-        $list_args['exclude'] = '';
-      }
-      $list_args['exclude'] .= get_option('page_on_front');
-    }
-  }
-
-  $list_args['echo'] = false;
-  $list_args['title_li'] = '';
-  $menu .= str_replace( array( "\r", "\n", "\t" ), '', hu_list_pages($list_args) );
-
-  // if ( $menu )
-  //   $menu = '<ul>' . $menu . '</ul>';
-
-  //$menu = '<div class="' . esc_attr($args['menu_class']) . '">' . $menu . "</div>\n";
-
-  if ( $menu )
-    $menu = '<ul class="' . esc_attr($args['menu_class']) . '">' . $menu . '</ul>';
-
-  //$menu = apply_filters( 'wp_page_menu', $menu, $args );
-  if ( $args['echo'] )
-    echo $menu;
-  else
-    return $menu;
-}
-
-
-/**
- * Retrieve or display list of pages in list (li) format.
- * Modified copy of wp_list_pages
- * @return string HTML list of pages.
- */
-function hu_list_pages( $args = '' ) {
-  $defaults = array(
-    'depth' => 0, 'show_date' => '',
-    'date_format' => get_option( 'date_format' ),
-    'child_of' => 0, 'exclude' => '',
-    'title_li' => __( 'Pages', 'hueman' ), 'echo' => 1,
-    'authors' => '', 'sort_column' => 'menu_order, post_title',
-    'link_before' => '', 'link_after' => '', 'walker' => '',
-  );
-
-  $r = wp_parse_args( $args, $defaults );
-
-  $output = '';
-  $current_page = 0;
-
-  // sanitize, mostly to keep spaces out
-  $r['exclude'] = preg_replace( '/[^0-9,]/', '', $r['exclude'] );
-
-  // Allow plugins to filter an array of excluded pages (but don't put a nullstring into the array)
-  $exclude_array = ( $r['exclude'] ) ? explode( ',', $r['exclude'] ) : array();
-
-  $r['exclude'] = implode( ',', apply_filters( 'wp_list_pages_excludes', $exclude_array ) );
-
-  // Query pages.
-  $r['hierarchical'] = 0;
-  $pages = get_pages( $r );
-
-  if ( ! empty( $pages ) ) {
-    if ( $r['title_li'] ) {
-      $output .= '<li class="pagenav">' . $r['title_li'] . '<ul>';
-    }
-    global $wp_query;
-    if ( is_page() || is_attachment() || $wp_query->is_posts_page ) {
-      $current_page = get_queried_object_id();
-    } elseif ( is_singular() ) {
-      $queried_object = get_queried_object();
-      if ( is_post_type_hierarchical( $queried_object->post_type ) ) {
-        $current_page = $queried_object->ID;
-      }
-    }
-
-    $output .= hu_walk_page_tree( $pages, $r['depth'], $current_page, $r );
-
-    if ( $r['title_li'] ) {
-      $output .= '</ul></li>';
-    }
-  }
-
-  $html = apply_filters( 'wp_list_pages', $output, $r );
-
-  if ( $r['echo'] ) {
-    echo $html;
-  } else {
-    return $html;
-  }
-}
-
-
-/**
- * Retrieve HTML list content for page list.
- *
- * @uses Walker_Page to create HTML list content.
- * @since 2.1.0
- * @see Walker_Page::walk() for parameters and return description.
- */
-function hu_walk_page_tree($pages, $depth, $current_page, $r) {
-  // if ( empty($r['walker']) )
-  //   $walker = new Walker_Page;
-  // else
-  //   $walker = $r['walker'];
-  $walker = new Walker_Page;
-
-  foreach ( (array) $pages as $page ) {
-    if ( $page->post_parent )
-      $r['pages_with_children'][ $page->post_parent ] = true;
-  }
-
-  $args = array($pages, $depth, $r, $current_page);
-  return call_user_func_array(array($walker, 'walk'), $args);
 }

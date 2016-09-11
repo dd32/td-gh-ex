@@ -96,9 +96,8 @@ class AlxTabs extends WP_Widget {
     $instance = wp_parse_args( (array) $instance, $defaults );
 
 		$title = apply_filters('widget_title',$instance['title']);
-    $title = empty( $title ) ? '' : $title;
 		$output = $before_widget."\n";
-		if( $title || ! empty( $before_title) )
+		if($title)
 			$output .= $before_title.$title.$after_title;
 		ob_start();
 
@@ -137,7 +136,11 @@ class AlxTabs extends WP_Widget {
 					<?php if($instance['recent_thumbs']) { // Thumbnails enabled? ?>
 					<div class="tab-item-thumbnail">
 						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-							<?php hu_the_post_thumbnail('thumb-small'); ?>
+							<?php if ( has_post_thumbnail() ): ?>
+								<?php hu_the_post_thumbnail('thumb-small'); ?>
+							<?php else: ?>
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/front/img/thumb-small.png" alt="<?php the_title(); ?>" />
+							<?php endif; ?>
 							<?php if ( has_post_format('video') && !is_sticky() ) echo'<span class="thumb-icon small"><i class="fa fa-play"></i></span>'; ?>
 							<?php if ( has_post_format('audio') && !is_sticky() ) echo'<span class="thumb-icon small"><i class="fa fa-volume-up"></i></span>'; ?>
 							<?php if ( is_sticky() ) echo'<span class="thumb-icon small"><i class="fa fa-star"></i></span>'; ?>
@@ -184,7 +187,11 @@ class AlxTabs extends WP_Widget {
 					<?php if($instance['popular_thumbs']) { // Thumbnails enabled? ?>
 					<div class="tab-item-thumbnail">
 						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-							<?php hu_the_post_thumbnail('thumb-small'); ?>
+							<?php if ( has_post_thumbnail() ): ?>
+								<?php hu_the_post_thumbnail('thumb-small'); ?>
+							<?php else: ?>
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/front/img/thumb-small.png" alt="<?php the_title(); ?>" />
+							<?php endif; ?>
 							<?php if ( has_post_format('video') && !is_sticky() ) echo'<span class="thumb-icon small"><i class="fa fa-play"></i></span>'; ?>
 							<?php if ( has_post_format('audio') && !is_sticky() ) echo'<span class="thumb-icon small"><i class="fa fa-volume-up"></i></span>'; ?>
 							<?php if ( is_sticky() ) echo'<span class="thumb-icon small"><i class="fa fa-star"></i></span>'; ?>

@@ -10,21 +10,6 @@
  *
  * =================================================== */
 ;(function ( $, window, document, undefined ) {
-  /*
-  * In order to handle a smooth scroll
-  * ( inspired by jquery.waypoints and smoothScroll.js )
-  * Maybe use this -> https://gist.github.com/paulirish/1579671
-  */
-  var czrParallaxRequestAnimationFrame = function(callback) {
-    var requestFn = ( czrapp && czrapp.requestAnimationFrame) ||
-      window.requestAnimationFrame ||
-      window.mozRequestAnimationFrame ||
-      window.webkitRequestAnimationFrame ||
-      function( callback ) { window.setTimeout(callback, 1000 / 60); };
-
-    requestFn.call(window, callback);
-  };
-
   //defaults
   var pluginName = 'czrParallax',
       defaults = {
@@ -53,7 +38,6 @@
     //cache some element
     this.$_document   = $(document);
     this.$_window     = czrapp ? czrapp.$_window : $(window);
-    this.doingAnimation = false;
 
     this.initWaypoints();
     this.stageParallaxElements();
@@ -66,7 +50,7 @@
     var self = this,
         _customEvt = $.isArray(this.options.oncustom) ? this.options.oncustom : this.options.oncustom.split(' ');
 
-    _.bindAll( this, 'maybeParallaxMe', 'parallaxMe' );
+    _.bindAll( this, 'parallaxMe' );
     /* TODO: custom events? */
   };
 
@@ -86,14 +70,12 @@
       this.way_start = new Waypoint({
         element: self.element,
         handler: function() {
-          self.maybeParallaxMe();
           if ( ! self.element.hasClass('parallaxing') ){
-            self.$_window.on('scroll', self.maybeParallaxMe );
+            self.$_window.on('scroll', self.parallaxMe );
             self.element.addClass('parallaxing');
           }else{
             self.element.removeClass('parallaxing');
-            self.$_window.off('scroll', self.maybeParallaxMe );
-            self.doingAnimation = false;
+            self.$_window.off('scroll', self.parallaxMe );
             self.element.css('top', 0 );
           }
         }
@@ -102,38 +84,21 @@
       this.way_stop = new Waypoint({
         element: self.element,
         handler: function() {
-          self.maybeParallaxMe();
-          if ( ! self.element.hasClass('parallaxing') ) {
-            self.$_window.on('scroll', self.maybeParallaxMe );
+          if ( ! self.element.hasClass('parallaxing') ){
+            self.$_window.on('scroll', self.parallaxMe );
             self.element.addClass('parallaxing');
           }else {
             self.element.removeClass('parallaxing');
-            self.$_window.off('scroll', self.maybeParallaxMe );
-            self.doingAnimation = false;
+            self.$_window.off('scroll', self.parallaxMe );
           }
         },
         offset: function(){
-          //offset = this.context.innerHeight() - this.adapter.outerHeight();
-          //return - (  offset > 20 /* possible wrong h scrollbar */ ? offset : this.context.innerHeight() );
-          return - this.adapter.outerHeight();
+          offset = this.context.innerHeight() - this.adapter.outerHeight();
+          return - (  offset > 20 /* possible wrong h scrollbar */ ? offset : this.context.innerHeight() );
         }
       });
   };
 
-  /*
-  * In order to handle a smooth scroll
-  */
-  Plugin.prototype.maybeParallaxMe = function() {
-      var self = this;
-
-      if ( !this.doingAnimation ) {
-        this.doingAnimation = true;
-        window.requestAnimationFrame(function() {
-          self.parallaxMe();
-          self.doingAnimation = false;
-        });
-      }
-  };
 
   Plugin.prototype.parallaxMe = function() {
       //parallax only the current slide if in slider context?

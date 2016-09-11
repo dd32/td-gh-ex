@@ -33,50 +33,28 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
     * @package Hueman
     * @since Hueman 3.0
     */
-    public function hu_get_customizer_map( $get_default = null, $what = null ) {
-      if ( ! empty( $this -> customizer_map ) ) {
-        $_customizr_map = $this -> customizer_map;
-      }
-      else {
-        //POPULATE THE MAP WITH DEFAULT HUEMAN SETTINGS
-        add_filter( 'hu_add_panel_map'        , array( $this, 'hu_popul_panels_map'));
-        add_filter( 'hu_remove_section_map'   , array( $this, 'hu_popul_remove_section_map'));
-        //theme switcher's enabled when user opened the customizer from the theme's page
-        //add_filter( 'hu_remove_section_map'   , array( $this, 'hu_set_theme_switcher_visibility'));
-        add_filter( 'hu_add_section_map'      , array( $this, 'hu_popul_section_map' ));
-        //add controls to the map
-        add_filter( 'hu_add_setting_control_map' , array( $this , 'hu_popul_setting_control_map' ), 10, 2 );
-        //$this -> hu_populate_setting_control_map();
+    public function hu_get_customizer_map( $get_default = null ) {
+      if ( ! empty( $this -> customizer_map ) )
+        return $this -> customizer_map;
 
-        //CACHE THE GLOBAL CUSTOMIZER MAP
-        $_customizr_map = array_merge(
-            array( 'add_panel'           => apply_filters( 'hu_add_panel_map', array() ) ),
-            array( 'remove_section'      => apply_filters( 'hu_remove_section_map', array() ) ),
-            array( 'add_section'         => apply_filters( 'hu_add_section_map', array() ) ),
-            array( 'add_setting_control' => apply_filters( 'hu_add_setting_control_map', array(), $get_default ) )
-        );
-        $this -> customizer_map = $_customizr_map;
-      }
-      if ( is_null($what) )
-        return apply_filters( 'hu_customizer_map', $_customizr_map );
-      else {
-        $_to_return = $_customizr_map;
-        switch ( $what ) {
-            case 'add_panel':
-              $_to_return = $_customizr_map['add_panel'];
-            break;
-            case 'remove_section':
-              $_to_return = $_customizr_map['remove_section'];
-            break;
-            case 'add_section':
-              $_to_return = $_customizr_map['add_section'];
-            break;
-            case 'add_setting_control':
-              $_to_return = $_customizr_map['add_setting_control'];
-            break;
-        }
-        return $_to_return;
-      }
+      //POPULATE THE MAP WITH DEFAULT HUEMAN SETTINGS
+      add_filter( 'hu_add_panel_map'        , array( $this, 'hu_popul_panels_map'));
+      add_filter( 'hu_remove_section_map'   , array( $this, 'hu_popul_remove_section_map'));
+      //theme switcher's enabled when user opened the customizer from the theme's page
+      add_filter( 'hu_remove_section_map'   , array( $this, 'hu_set_theme_switcher_visibility'));
+      add_filter( 'hu_add_section_map'      , array( $this, 'hu_popul_section_map' ));
+      //add controls to the map
+      add_filter( 'hu_add_setting_control_map' , array( $this , 'hu_popul_setting_control_map' ), 10, 2 );
+      //$this -> hu_populate_setting_control_map();
+
+      //CACHE THE GLOBAL CUSTOMIZER MAP
+      $this -> customizer_map = array_merge(
+        array( 'add_panel'           => apply_filters( 'hu_add_panel_map', array() ) ),
+        array( 'remove_section'      => apply_filters( 'hu_remove_section_map', array() ) ),
+        array( 'add_section'         => apply_filters( 'hu_add_section_map', array() ) ),
+        array( 'add_setting_control' => apply_filters( 'hu_add_setting_control_map', array(), $get_default ) )
+      );
+      return apply_filters( 'hu_customizer_map', $this -> customizer_map );
     }
 
 
@@ -94,31 +72,28 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
       $_new_map = array();
       $_settings_sections = array(
         //GENERAL
-        'hu_site_identity_sec',
-        'hu_general_design_sec',
-        'hu_comments_sec',
-        'hu_smoothscroll_sec',
-        'hu_mobiles_sec',
-        'hu_social_links_sec',
-        'hu_performance_sec',
-        'hu_admin_sec',
+         'hu_site_identity_sec',
+         'hu_general_design_sec',
+         'hu_comments_sec',
+         'hu_smoothscroll_sec',
+         'hu_mobiles_sec',
+         'hu_social_links_sec',
+         'hu_performance_sec',
+         'hu_admin_sec',
 
         //HEADER
-        'hu_header_design_sec',
-        'hu_header_widget_sec',
-        'hu_header_menu_sec',
+         'hu_header_design_sec',
+         'hu_header_widget_sec',
 
         //CONTENT
-        //'hu_content_home_sec',
-        'hu_content_blog_sec',
-        'hu_content_single_sec',
-        'hu_content_thumbnail_sec',
-        'hu_content_layout_sec',
-        'hu_sidebars_design_sec',
+         'hu_content_blog_sec',
+         'hu_content_single_sec',
+         'hu_content_thumbnail_sec',
+         'hu_content_layout_sec',
+         'hu_sidebars_design_sec',
 
         //FOOTER
-        'hu_footer_design_sec',
-        'hu_footer_menu_sec'
+         'hu_footer_design_sec',
 
       );
 
@@ -164,26 +139,6 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'section'   => 'title_tagline',//<= this is a default WP section, not created for the Hueman theme
                 'type'      => 'czr_upload',
                 'sanitize_callback' => array( $this , 'hu_sanitize_number' )
-          ),
-          'display-header-logo' => array(
-                'default'   => 0,
-                'priority'  => 5,
-                'control'   => 'HU_controls',
-                'label'     => __( 'Display a logo in your header' , 'hueman' ),
-                'section'   => 'title_tagline',
-                'type'      => 'checkbox'
-          ),
-          'logo-max-height'  =>  array(
-                'default'       => 60,
-                'priority'      => 9,
-                'control'       => 'HU_controls' ,
-                'sanitize_callback' => array( $this , 'hu_sanitize_number' ),
-                'label'         => __( "Header Logo Image Max-height" , 'hueman' ),
-                'section'       => 'title_tagline',
-                'type'          => 'number' ,
-                'step'          => 1,
-                'min'           => 20,
-                'transport'     => 'postMessage'
           )
       );
     }
@@ -231,7 +186,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'notice'        => __('Max-width of the container. If you use 2 sidebars, your container should be at least 1200px.<br /><i>Note: For 720px content (default) use <strong>1380px</strong> for 2 sidebars and <strong>1120px</strong> for 1 sidebar. If you use a combination of both, try something inbetween.</i>', 'hueman')//@todo sprintf and split translations
           ),
           'sidebar-padding' => array(
-                'default'   => '30',
+                'default'   => 30,
                 'control'   => 'HU_controls',
                 'label'     => __("Sidebar Width", 'hueman'),
                 'section'   => 'general_design_sec',
@@ -372,7 +327,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'section'   => 'social_links_sec',
                 'type'      => 'czr_module',
                 'module_type' => 'czr_social_module',
-                'transport' => hu_is_partial_refreshed_on() ? 'postMessage' : 'refresh',
+                'transport' => 'postMessage',
                 'priority'  => 10
           )
       );
@@ -507,12 +462,34 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
     ------------------------------------------------------------------------------------------------------*/
     function hu_header_design_sec() {
       global $wp_version;
-      //the header_image was previously handled with a specific Hueman option.
-      //=> for users who had set this option, the use-header-image checkbox should be checked
-      $_old_header_img_id = hu_get_option('header-image');
-      $did_user_set_a_header_image = false != $_old_header_img_id && ! empty($_old_header_img_id);
-
       return array(
+          'custom-logo'  => array(
+                'control'   =>  version_compare( $wp_version, '4.3', '>=' ) ? 'HU_Customize_Cropped_Image_Control' : 'HU_Customize_Upload_Control',
+                'label'     =>  __( 'Custom Header Logo' , 'hueman' ),
+                'section'   => 'header_design_sec' ,
+                'sanitize_callback' => array( $this , 'hu_sanitize_number' ),
+                //we can define suggested cropping area and allow it to be flexible (def 150x150 and not flexible)
+                'width'     => 250,
+                'height'    => 100,
+                'flex_width' => true,
+                'flex_height' => true,
+                //to keep the selected cropped size
+                'dst_width'  => false,
+                'dst_height'  => false,
+                'notice'    => __('Upload your custom logo image. Supported formats : .jpg, .png, .gif, svg, svgz' , 'hueman')
+          ),
+          'logo-max-height'  =>  array(
+                'default'       => 60,
+                'control'       => 'HU_controls' ,
+                'sanitize_callback' => array( $this , 'hu_sanitize_number' ),
+                'label'         => __( "Header Logo Image Max-height" , 'hueman' ),
+                'section'       => 'header_design_sec' ,
+                'type'          => 'number' ,
+                'step'          => 1,
+                'min'           => 20,
+                'transport'     => 'postMessage',
+                'notice'        => __('Your logo image should have the double height of this to be high resolution', 'hueman')
+          ),
           'site-description' => array(
                 'default'   => 1,
                 'control'   => 'HU_controls',
@@ -521,12 +498,18 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'type'      => 'checkbox',
                 'notice'    => __( 'The description that appears next to your logo' , 'hueman' )
           ),
-          'use-header-image' => array(
-                'default'   => $did_user_set_a_header_image,
-                'control'   => 'HU_controls',
-                'label'     => __( 'Use a header banner image' , 'hueman' ),
-                'section'   => 'header_design_sec',
-                'type'      => 'checkbox',
+          'header-image'  => array(
+                'control'   =>  version_compare( $wp_version, '4.3', '>=' ) ? 'HU_Customize_Cropped_Image_Control' : 'HU_Customize_Upload_Control',
+                'label'     =>  __( 'Header Image' , 'hueman' ),
+                'section'   => 'header_design_sec' ,
+                'sanitize_callback' => array( $this , 'hu_sanitize_number' ),
+                'width'     => 1200,
+                'height'    => 180,
+                'flex_width' => true,
+                'flex_height' => true,
+                //to keep the selected cropped size
+                'dst_width'  => false,
+                'dst_height'  => false,
                 'notice'    => __('Upload a header image (supported formats : .jpg, .png, .gif, svg, svgz). This will disable header title/logo, site description, header ads widget' , 'hueman')
           )
         );
@@ -539,7 +522,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
     function hu_header_widget_sec() {
       return array(
           'header-ads' => array(
-                'default'   => hu_user_started_before_version( '3.2.4' ) ? 1 : 0,
+                'default'   => 1,
                 'control'   => 'HU_controls',
                 'label'     => __("Display a widget in your header", 'hueman'),
                 'section'   => 'header_widget_sec',
@@ -550,42 +533,12 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
     }
 
 
-    /*-----------------------------------------------------------------------------------------------------
-                                   Header Menu SECTION
-    ------------------------------------------------------------------------------------------------------*/
-    function hu_header_menu_sec() {
-      return array(
-          'default-menu-header' => array(
-                'default'   => 1,
-                'control'   => 'HU_controls',
-                'label'     => __("Use a default page menu if no menu has been assigned.", 'hueman'),
-                'section'   => 'header_menu_sec',
-                'type'      => 'checkbox'
-          )
-      );
-    }
 
     /******************************************************************************************************
     *******************************************************************************************************
     * PANEL : MAIN CONTENT
     *******************************************************************************************************
     ******************************************************************************************************/
-    /*-----------------------------------------------------------------------------------------------------
-                                   FRONT PAGE CONTENT
-    ------------------------------------------------------------------------------------------------------*/
-    // function hu_content_home_sec() {
-    //   return array(
-    //       'layout-page' => array(
-    //             'default'   => 'inherit',
-    //             'control'   => 'HU_Customize_Layout_Control',
-    //             'label'     => __('Default Page', 'hueman'),
-    //             'section'   => 'content_layout_sec',
-    //             'type'      => 'czr_layouts',//@todo create a radio-image type
-    //             'choices'   => $this -> hu_get_content_layout_choices(),
-    //             'notice'    => __('[ <strong>is_page</strong> ] Default page layout - If a page has a set layout, it will override this.' , 'hueman')
-    //       )
-    //   );
-    // }
 
     /*-----------------------------------------------------------------------------------------------------
                                    CONTENT LAYOUT SECTION
@@ -676,11 +629,9 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
           'blog-heading-enabled' => array(
                 'default'   => 1,
                 'control'   => 'HU_controls',
-                'title'     => __( 'Blog Heading', 'hueman' ),
                 'label'     => __("Display a custom heading for your blog.", 'hueman'),
                 'section'   => 'content_blog_sec',
-                'type'      => 'checkbox',
-                'active_callback' => 'is_home'
+                'type'      => 'checkbox'
           ),
           'blog-heading' => array(
                 'default'   => get_bloginfo('name'),
@@ -689,8 +640,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'type'      => 'text',
                 'section'   => 'content_blog_sec',
                 'notice'    => __( 'Your blog heading. Html is allowed. Note : write a blank space to hide the default content.', 'hueman'),
-                'sanitize_callback' => array( $this, 'hu_sanitize_html_text_input' ),
-                'active_callback' => 'is_home'
+                'sanitize_callback' => array( $this, 'hu_sanitize_html_text_input' )
           ),
           'blog-subheading' => array(
                 'default'   => __( 'Blog', 'hueman'),
@@ -699,22 +649,11 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'type'      => 'text',
                 'section'   => 'content_blog_sec',
                 'notice'    => __( 'Your blog sub-heading. Html is allowed. Note : write a blank space to hide the default content.', 'hueman'),
-                'sanitize_callback' => array( $this, 'hu_sanitize_html_text_input' ),
-                'active_callback' => 'is_home'
-          ),
-          'blog-standard' => array(
-                'default'   => 0,
-                'control'   => 'HU_controls',
-                'title'     => __( 'Post List Design', 'hueman' ),
-                'label'     => __("Display your blog posts as a standard list.", 'hueman'),
-                'section'   => 'content_blog_sec',
-                'type'      => 'checkbox',
-                'notice'    => __( 'While the default blog design is a grid of posts, you can check this option and display one post per row, whith the thumbnail beside the text.' , 'hueman'),
+                'sanitize_callback' => array( $this, 'hu_sanitize_html_text_input' )
           ),
           'excerpt-length'  =>  array(
                 'default'   => 34,
                 'control'   => 'HU_controls' ,
-                'title'     => __( 'Post Summary', 'hueman' ),
                 'sanitize_callback' => array( $this , 'hu_sanitize_number' ),
                 'label'     => __( "Excerpt Length" , 'hueman' ),
                 'section'   => 'content_blog_sec' ,
@@ -722,9 +661,15 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'step'      => 1,
                 'min'       => 0,
                 //'transport' => 'postMessage',
-                'notice'    => sprintf( __( "The WordPress Excerpt is the summary or description of a post. By default, it will be the first words of a post, but you can write a %s if you want. You can set the number of words you want to display with this option." , "hueman" ),
-                      sprintf('<a href="%1$s" title="%2$s" target="_blank">%2$s <span class="dashicons dashicons-external" style="font-size: inherit;display: inherit;"></span></a>', esc_url('codex.wordpress.org/Excerpt#How_to_add_excerpts_to_posts'), __('custom excerpt', 'hueman') )
-                )
+                'notice'    => __( "Set the excerpt length (in number of words)" , "hueman" ),
+          ),
+          'blog-standard' => array(
+                'default'   => 0,
+                'control'   => 'HU_controls',
+                'label'     => __("Display your blog post as a standard list.", 'hueman'),
+                'section'   => 'content_blog_sec',
+                'type'      => 'checkbox',
+                'notice'    => __( 'While the default blog design is a grid of posts, you can check this option and display one post per row, whith the thumbnail beside the text.' , 'hueman')
           ),
           'featured-posts-enabled' => array(
                 'default'   => 1,
@@ -733,18 +678,16 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'label'     => __("Feature posts on top of your blog", 'hueman'),
                 'section'   => 'content_blog_sec',
                 'type'      => 'checkbox',
-                'notice'    => __( 'Check this box to display a selection of posts with a slideshow, on top of your blog.' , 'hueman'),
-                'active_callback' => 'is_home'
+                'notice'    => __( 'Check this box to display a selection of posts with a slideshow, on top of your blog.' , 'hueman')
           ),
           'featured-category' => array(
-                'default'   => "0",
+                'default'   => 0,
                 'control'   => 'HU_controls',
                 'label'     => __("Select a category to feature", 'hueman'),
                 'section'   => 'content_blog_sec',
                 'type'      => 'select',//@todo create a simple cat picker with select type. => evolve to multipicker? Retrocompat ?
                 'choices'   => $this -> hu_get_the_cat_list(),
-                'notice'    => __( 'If no specific category is selected, the featured posts block will display your latest post(s) from all categories.' , 'hueman'),
-                'active_callback' => 'is_home'
+                'notice'    => __( 'If no specific category is selected, the featured posts block will display your latest post(s) from all categories.' , 'hueman')
           ),
           'featured-posts-count'  =>  array(
                 'default'   => 1,
@@ -757,7 +700,6 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'min'       => 0,
                 //'transport' => 'postMessage',
                 'notice'    => __( "Max number of featured posts to display. <br /><i>Set to 1 and it will show it without any slider script</i><br /><i>Set it to 0 to disable</i>" , "hueman" ),//@todo sprintf split translation
-                'active_callback' => 'is_home'
           ),
           'featured-posts-full-content' => array(
                 'default'   => 0,
@@ -765,8 +707,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'label'     => __("Display the full post content", 'hueman'),
                 'section'   => 'content_blog_sec',
                 'type'      => 'checkbox',
-                'notice'    => __( 'By default, your featured posts display the first words of their content ( the "excerpt"). Check this box to display the full content.' , 'hueman'),
-                'active_callback' => 'is_home'
+                'notice'    => __( 'By default, your featured posts display the first words of their content ( the "excerpt"). Check this box to display the full content.' , 'hueman')
           ),
           'featured-slideshow' => array(
                 'default'   => 0,
@@ -774,8 +715,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'label'     => __("Animate your featured posts with a slideshow", 'hueman'),
                 'section'   => 'content_blog_sec',
                 'type'      => 'checkbox',
-                'notice'    => __( 'Enables the automatic animation of the featured posts carousel.' , 'hueman'),
-                'active_callback' => 'is_home'
+                'notice'    => __( 'Enables the automatic animation of the featured posts carousel.' , 'hueman')
           ),
           'featured-slideshow-speed'  =>  array(
                 'default'   => 5000,
@@ -787,8 +727,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'step'      => 500,
                 'min'       => 500,
                 'transport' => 'postMessage',
-                'notice'    => __( "Speed of the automatic slideshow animation" , "hueman" ),
-                'active_callback' => 'is_home'
+                'notice'    => __( "Speed of the automatic slideshow animation" , "hueman" ),//@todo sprintf split translation
           ),
           'featured-posts-include' => array(
                 'default'   => 0,
@@ -796,8 +735,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'label'     => __("Display the featured posts also in the list of posts", 'hueman'),
                 'section'   => 'content_blog_sec',
                 'type'      => 'checkbox',
-                'notice'    => __( 'If this box is checked, your featured posts will be displayed both in the featured slider and in the post list below. Usually not recommended because a given post might appear two times on the same page.' , 'hueman'),
-                'active_callback' => 'is_home'
+                'notice'    => __( 'If this box is checked, your featured posts will be displayed both in the featured slider and in the post list below. Usually not recommended because a given post might appear two times on the same page.' , 'hueman')//@todo sprintf split translation
           )
       );
     }
@@ -911,6 +849,8 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
     }
 
 
+
+
     /******************************************************************************************************
     *******************************************************************************************************
     * PANEL : FOOTER
@@ -924,7 +864,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
       global $wp_version;
       return array(
           'footer-ads' => array(
-                'default'   => hu_user_started_before_version( '3.2.4' ) ? 1 : 0,
+                'default'   => 1,
                 'control'   => 'HU_controls',
                 'label'     => __("Display a full width widget area in your footer", 'hueman'),
                 'section'   => 'footer_design_sec',
@@ -932,7 +872,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'notice'    => __('This zone is located before the other footer widgets and takes 100% of the width. Very appropriate to display a Google Map or an advertisement banner.', 'hueman')
           ),
           'footer-widgets' => array(
-                'default'   => hu_user_started_before_version( '3.2.4' ) ? '0' : '3',
+                'default'   => '0',
                 'control'   => 'HU_Customize_Layout_Control',
                 'label'     => __('Select columns to enable footer widgets', 'hueman'),
                 'section'   => 'footer_design_sec',
@@ -975,21 +915,6 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
       );
     }
 
-
-    /*-----------------------------------------------------------------------------------------------------
-                                   Footer Menu SECTION
-    ------------------------------------------------------------------------------------------------------*/
-    function hu_footer_menu_sec() {
-      return array(
-          'default-menu-footer' => array(
-                'default'   => 0,
-                'control'   => 'HU_controls',
-                'label'     => __("Use a default page menu if no menu has been assigned.", 'hueman'),
-                'section'   => 'footer_menu_sec',
-                'type'      => 'checkbox'
-          )
-      );
-    }
 
 
 
@@ -1068,6 +993,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
     function hu_popul_remove_section_map( $_sections ) {
       //customizer option array
       $remove_section = array(
+        'static_front_page' ,
         'nav',
         'title_tagline'
       );
@@ -1088,13 +1014,8 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
       //=> because once the preview is ready, a postMessage is sent to the panel frame to refresh the sections and panels
       //Do nothing if WP version under 4.2
       global $wp_version;
-      if ( ! version_compare( $wp_version, '4.2', '>=') )
+      if ( hu_is_customize_preview_frame() || ! version_compare( $wp_version, '4.2', '>=') )
         return $_sections;
-
-      if ( isset($_GET['theme']) && is_array($_sections) ) {
-        array_push( $_sections, 'themes');
-        return $_sections;
-      }
 
       //when user access the theme switcher from the admin bar
       $_theme_switcher_requested = false;
@@ -1105,7 +1026,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
         }
       }
 
-      if (  ! is_array($_sections) || $_theme_switcher_requested )
+      if ( isset($_GET['theme']) || ! is_array($_sections) || $_theme_switcher_requested )
         return $_sections;
 
       array_push( $_sections, 'themes');
@@ -1127,25 +1048,27 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
       $menus          = wp_get_nav_menus();
       $num_locations  = count( array_keys( $locations ) );
       global $wp_version;
-      $nav_section_desc =  __( 'Select which menu appears in each location.', 'hueman' );
+      $nav_section_desc =  sprintf( _n('Your theme supports %s menu. Select which menu you would like to use.', 'Your theme supports %s menus. Select which menu appears in each location.', $num_locations, 'hueman' ), number_format_i18n( $num_locations ) );
       //adapt the nav section description for v4.3 (menu in the customizer from now on)
       if ( version_compare( $wp_version, '4.3', '<' ) ) {
-        $nav_section_desc .= "<br/>" . sprintf( __("You can create menus and set their locations %s." , "hueman"),
-          sprintf( '<strong><a href="%1$s" target="_blank" title="%3$s">%2$s</a></strong>',
+        $nav_section_desc .= "<br/>" . sprintf( __("You can create new menu and edit your menu's content %s." , "hueman"),
+          sprintf( '<strong><a href="%1$s" target="_blank" title="%3$s">%2$s &raquo;</a></strong>',
             admin_url('nav-menus.php'),
             __("on the Menus screen in the Appearance section" , "hueman"),
             __("create/edit menus", "hueman")
           )
         );
       } else {
-        $nav_section_desc .= "<br/>" . sprintf( __("You can create menus and set their locations %s." , "hueman"),
-          sprintf( '<strong><a href="%1$s" title="%3$s">%2$s</a><strong>',
-            "javascript:wp.customize.panel('nav_menus').focus();",
+        $nav_section_desc .= "<br/>" . sprintf( __("You can create new menu and edit your menu's content %s." , "hueman"),
+          sprintf( '<strong><a href="%1$s" title="%3$s">%2$s &raquo;</a><strong>',
+            "javascript:wp.customize.section('nav').container.find('.customize-section-back').trigger('click'); wp.customize.panel('nav_menus').focus();",
             __("in the menu panel" , "hueman"),
             __("create/edit menus", "hueman")
           )
         );
       }
+
+      $nav_section_desc .= "<br/><br/>". __( 'If a menu location has no menu assigned to it, a default page menu will be used.', 'hueman');
 
       $_new_sections = array(
         /*---------------------------------------------------------------------------------------------
@@ -1154,7 +1077,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
         //the title_tagline section holds the default WP setting for the Site Title and the Tagline
         //This section has been previously removed from its initial location and is added back here
         'title_tagline'         => array(
-              'title'    => __( 'Site Identity : Logo, Title, Tagline and Site Icon', 'hueman' ),
+              'title'    => __( 'Site Identity : Title, Tagline and Site Icon', 'hueman' ),
               'priority' => 10,
               'panel'   => 'hu-general-panel'
         ),
@@ -1200,7 +1123,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
         -> PANEL : HEADER
         ----------------------------------------------------------------------------------------------*/
         'header_design_sec'         => array(
-              'title'    => __( "Header Design : banner image, ...", 'hueman' ),
+              'title'    => __( 'Header Design : logo, background, ...', 'hueman' ),
               'priority' => 10,
               'panel'   => 'hu-header-panel'
         ),
@@ -1209,12 +1132,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
               'priority' => 20,
               'panel'   => 'hu-header-panel'
         ),
-        'header_menu_sec'         => array(
-              'title'    => __( 'Header Menu', 'hueman' ),
-              'priority' => 30,
-              'panel'   => 'hu-header-panel',
-              'description'    => $nav_section_desc
-        ),
+
 
         /*---------------------------------------------------------------------------------------------
         -> PANEL : CONTENT
@@ -1230,10 +1148,9 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
               'panel'   => 'hu-content-panel'
         ),
         'content_blog_sec'         => array(
-              'title'    => __( 'Post Lists Design and Content : Blog, Archives, Search Results', 'hueman' ),
+              'title'    => __( 'Blog Design and Content', 'hueman' ),
               'priority' => 30,
-              'panel'   => 'hu-content-panel',
-              'active_callback' => 'hu_is_post_list'
+              'panel'   => 'hu-content-panel'
         ),
         'content_single_sec'         => array(
               'title'    => __( 'Single Posts Settings', 'hueman' ),
@@ -1253,12 +1170,6 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
               'title'    => __( 'Footer Design : Logo, layout, ...', 'hueman' ),
               'priority' => 10,
               'panel'   => 'hu-footer-panel'
-        ),
-        'footer_menu_sec'         => array(
-              'title'    => __( 'Footer Menu', 'hueman' ),
-              'priority' => 20,
-              'panel'   => 'hu-footer-panel',
-              'description'    => $nav_section_desc
         )
 
       );

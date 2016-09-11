@@ -1,4 +1,4 @@
-# Hueman v3.2.12
+# Hueman v3.2.2
 ![Hueman - Free Wordpress Theme](/screenshot.png)
 
 > Hueman is a mobile friendly WordPress theme for blogs, magazines and business websites. It's been designed to beautifully display pictures and text content, and engineered to be easy to use and fast. The Hueman theme helps you attract and retain more visitors, that's why it's already used by 70K+ active websites in the world and has received hundreds of five stars ratings.
@@ -73,82 +73,6 @@ Right sidebar, top to bottom:
 See headers of files for further details.
 
 # Changelog
-= 3.2.12 December 6th 2016 =
-* added : support for customize selective refresh for widgets
-* improved : UI for custom css in the customizer
-
-= 3.2.11 December 5th 2016 =
-* updated : customizer made compatible with WP 4.7
-* updated to Font Awesome 4.7.0 (#352)
-* added : a home icon in the customizer
-* fix : always check the existence of controls and settings instances before altering them ( #340 )
-
-= 3.2.10 November 4th 2016 =
-* fixed : php7 compatibility issues (#335)
-* fixed : check if custom_logo is registered first for backward compatibility => custom_logo was introduced in WP 4.5. (#338)
-* fixed : search results and archive pages must be included in the post list context check (#331)
-* fixed : page=welcome.php. Changelog not properly displayed (#328)
-* improved : Moved has_post_thumbnail() check inside the utility hu_the_post_thumbnail()
-* improved : moved all preview demo actions and filter into a separate php file
-* improved : core files reorganization. functions/init-core.php loads the various core files in a clearer sequence.
-* improved : replace post loop counter with core variable (#274), in index.php, archive.php, search.php. No impact for child theme users.
-* improved : in the customizer, the section 'Blog Design and Content' has been renamed 'Post Lists Design and Content : Blog, Archives, Search Results'
-* improved : included all .po translation files in the theme between 30 and 95% translated (#325)
-* improved : disabled the default page menu by default for multisite installs (#326)
-* improved : added a note in the "Menus" customizer panel, explaining where to disable the default header page menu. (#329)
-* improved : don't display widget placeholder when previewing the theme
-* removed : useless old functions/theme-options.php file, related to the previous option system.
-
-= 3.2.9 October 11th 2016 =
-* fixed : WP embed not displayed correctly #298
-* fixed : the saved item of mono item module has to be cast to array #323
-* fixed : <code> blocks not formatted in comments fix #322
-* fixed : WP embed not displayed correctly #298
-* added : better demo placeholder thumbnail
-* improved : replaced hu_is_child() by WP core function
-* improved : placeholder thumb style
-* improved : customizer js code updates
-* removed :  custom.css File From Theme. A  better option is for the user to install a child theme or use a plugin. #319
-
-= 3.2.8 September 29th 2016 =
-* improved : remove unused code
-* improved : set avatar size to 48px by default, like the stylesheet.apply_filters('hu_avatar_size', 48 )
-
-= 3.2.7 September 29th 2016 =
-* fixed : use WordPress core method the_widget() to render the optional default widgets
-
-= 3.2.6 September 27th 2016 =
-* fixed : footer page menu is disabled by default
-* improved : default widgets in sidebars are now using their own instances
-
-= 3.2.5 September 26th 2016 =
-* fixed : don't use iCheck() js library for nav_menu* controls
-* Imp: add requestAnimationFrame js polyfill. This improves the scroll event performance for all browsers.
-* fixed : blinking images when the smart load is enabled
-* fixed : 'blog-standard' boolean option was not handled with hu_is_checked() in the index template
-* improved : hu_get_customizer_map(). Now can return a partial map. For example only the settings.
-* added : support for WP custom logo. Backward compatibility : uses the existing logo image if already set. Still support the logo features for WP versions < 4.5
-* added : a grid-item class to the post list article
-* added : a grid-wrapper id to the post-list wrapper div element
-* added : customizer : active_callback param for some sections and controls => better contextualisation of the customization
-* added : customizer : Front Page Content section in the Content panel. Includes the reading WP default settings : static front page, blog page, ...
-* added : option, the front page can be empty
-* added : hu_is_home_empty() utility
-* added : hu_is_post_list() utility. Typically used to contextualize the customization.
-* added : in customizer > Content > Front Page, a link to blog design when relevant in the front page content section
-* added : a consoleLog utility for the front js code
-* added : svg animation plugins, dependencies : _, Vivus and HUParams
-* added : 3 options in customizer to control default widgets. Enabled by default.
-* added : default widgets are printed in the primary and secondary sidebars if no widgets have been added and if the options to display default widgets are enabled.
-* added : default page menu in the header and footer if no menu assigned to those locations
-* added : options in customizer to deactivate the default page menus
-
-= 3.2.4 September 20th 2016 =
-* improved : implement add_theme_support( 'custom-header') with the header_image theme_mod, in place of the previous header-image hueman option. Ensure retrocompatibility with the previous option.
-
-= 3.2.3 September 12th 2016 =
-* fixed : Plugin recommendation code was not up to date. Updated to TGMPA v2.6.1
-
 = 3.2.2 September 11th 2016 =
 * fixed : dismiss link not showing up in the Hueman Addons plugin recommendation admin notice
 * added : title utility functions like hu_get_search_title()

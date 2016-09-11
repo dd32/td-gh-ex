@@ -18,7 +18,6 @@ if ( ! class_exists( 'HU_utils' ) ) :
     public $options;//not used in customizer context only
     public $is_customizing;
     public $hu_options_prefixes;
-    public static $_theme_setting_list;
 
     function __construct () {
       self::$inst =& $this;
@@ -29,10 +28,8 @@ if ( ! class_exists( 'HU_utils' ) ) :
         $this -> hu_init_properties();
       } else {
         add_action( 'after_setup_theme'       , array( $this , 'hu_init_properties') );
-      }
 
-      //IMPORTANT : this callback needs to be ran AFTER hu_init_properties.
-      add_action( 'after_setup_theme', array( $this, 'ha_cache_theme_setting_list' ), 100 );
+      }
 
       //Various WP filters for
       //content
@@ -77,23 +74,6 @@ if ( ! class_exists( 'HU_utils' ) ) :
       }
     }
 
-
-    /* ------------------------------------------------------------------------- *
-     *  CACHE THE LIST OF THEME SETTINGS ONLY
-    /* ------------------------------------------------------------------------- */
-    //Fired in __construct()
-    //Note : the 'sidebar-areas' setting is not listed in that list because registered specifically
-    function ha_cache_theme_setting_list() {
-        if ( is_array(self::$_theme_setting_list) && ! empty( self::$_theme_setting_list ) )
-          return;
-        $_settings_map = HU_utils_settings_map::$instance -> hu_get_customizer_map( null, 'add_setting_control' );
-        $_settings = array();
-        foreach ( $_settings_map as $_id => $data ) {
-            $_settings[] = $_id;
-        }
-        //$default_options = HU_utils::$inst -> hu_get_default_options();
-        self::$_theme_setting_list = $_settings;
-    }
 
 
     /***************************
@@ -275,6 +255,13 @@ if ( ! class_exists( 'HU_utils' ) ) :
         //assign false value if does not exist, just like WP does
         $_single_opt    = isset($__options[$option_name]) ? $__options[$option_name] : false;
 
+        //ctx retro compat => falls back to default val if ctx like option detected
+        //important note : some options like hu_slider are not concerned by ctx
+        if ( ! $this -> hu_is_option_excluded_from_ctx( $option_name ) ) {
+          if ( is_array($_single_opt) && ! class_exists( 'HU_ctx' ) )
+            $_single_opt = $_default_val;
+        }
+
         //allow ctx filtering globally
         $_single_opt = apply_filters( "hu_opt" , $_single_opt , $option_name , $option_group, $_default_val );
 
@@ -342,5 +329,38 @@ if ( ! class_exists( 'HU_utils' ) ) :
       $this -> db_options = false === get_option( $opt_group ) ? array() : (array)get_option( $opt_group );
       return $this -> db_options;
     }
+
+
+
+    /***************************
+    * CTX COMPAT
+    ****************************/
+    /**
+    * Boolean helper : tells if this option is excluded from the ctx treatments.
+    * @return bool
+    */
+    function hu_is_option_excluded_from_ctx( $opt_name ) {
+      return in_array( $opt_name, $this -> hu_get_skope_excluded_options() );
+    }
+
+
+    /**
+    * Helper : define a set of options not impacted by ctx like last_update_notice.
+    * @return  array of excluded option names
+    */
+    function hu_get_skope_excluded_options() {
+      return apply_filters(
+        'hu_get_skope_excluded_options',
+        array(
+          'defaults',
+          'last_update_notice',
+          'last_update_notice_pro',
+          'sidebar-areas',
+          'social-links',
+          'body-background'
+        )
+      );
+    }
+
   }//end of class
 endif;
