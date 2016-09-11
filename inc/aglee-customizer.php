@@ -1223,26 +1223,15 @@ $wp_customize -> add_section(
 //Custom css code
 $wp_customize->add_setting('aglee_lite_custom_css', array(
     'default' => '',
-    'sanitize_callback' => 'aglee_lite_sanitize_custom_codes',
+    'capability'           => 'edit_theme_options',
+    'sanitize_callback'    => 'wp_filter_nohtml_kses',
+    'sanitize_js_callback' => 'wp_filter_nohtml_kses'
     ));
 
 $wp_customize->add_control('aglee_lite_custom_css',array(
     'type' => 'textarea',
     'label' => __('Custom Css Code','aglee-lite'),
     'description' => __( 'Enter your custom css code here.', 'aglee-lite' ),
-    'section' => 'aglee_lite_custom_tools',
-    ));
-
-//Custom js code
-$wp_customize->add_setting('aglee_lite_custom_js', array(
-    'default' => '',
-    'sanitize_callback' => 'aglee_lite_sanitize_custom_codes',
-    ));
-
-$wp_customize->add_control('aglee_lite_custom_js',array(
-    'type' => 'textarea',
-    'label' => __('Custom Js Code','aglee-lite'),
-    'description' => __( 'Enter your custom js code here.', 'aglee-lite' ),
     'section' => 'aglee_lite_custom_tools',
     ));
 
@@ -1264,11 +1253,6 @@ function aglee_lite_sanitize_checkbox( $input ) {
         return '';
     }
 }
-//custom tools sanitizer 
-function aglee_lite_sanitize_custom_codes($input){
-    return $input;
-}
-
 }
 add_action( 'customize_register', 'aglee_lite_customizer' );
 

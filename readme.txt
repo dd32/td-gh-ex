@@ -60,6 +60,9 @@ License: CC0 Public Domain
 License url: https://creativecommons.org/publicdomain/zero/1.0/deed.en
 
 == Changelog ==
+= 1.0.18 - 11th September, 2016 =
+* Custom Css Sanitize Fix.
+
 = 1.0.17 - 8th September, 2016 =
 * Minor Design Fixes
 
