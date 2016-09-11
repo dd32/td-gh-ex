@@ -22,7 +22,7 @@ function aglee_lite_customizer_themeinfo( $wp_customize ) {
 	$aglee_lite_desc_theme_opt .= "<span>".__('Support forum','aglee-lite').' : </span><a target="_blank" href="'.esc_url('http://8degreethemes.com/support/forum/aglee-lite/').'">'.__('here','aglee-lite').'</a> <br />';
 	$aglee_lite_desc_theme_opt .= "<span>".__('View Video tutorials','aglee-lite').' : </span><a target="_blank" href="'.esc_url('https://www.youtube.com/watch?list=PLyv2_zoytm1ifr1RwkKCsePhS6v5ynylV&v=HhSeA4TyvXQ').'">'.__('here','aglee-lite').'</a> <br />';
 	$aglee_lite_desc_theme_opt .= "<span>".__('Email us','aglee-lite').' : </span><a target="_blank" href="'.esc_url('mailto:support@8degreethemes.com').'">support@8degreethemes.com</a> <br />';
-	$aglee_lite_desc_theme_opt .= "<span>".__('More Details','aglee-lite').' : </span><a target="_blank" href="'.esc_url('http://8degreethemes.com/').'">'.__('here','aglee-lite').'</a>';
+	$aglee_lite_desc_theme_opt .= "<span>".__('More Details','aglee-lite').' : </span><a target="_blank" href="'.esc_url('http://8degreethemes.com/').'">'.__('here','aglee-lite').'</a><a class="upgrade-pro" target="_blank" href="https://8degreethemes.com/wordpress-themes/aglee-pro/"><img src="http://8degreethemes.com/demo/upgrade-aglee-lite.jpg" alt="UPGRADE TO AGLEE PRO" /></a>';
 
 	$wp_customize->add_control( new Aglee_lite_Theme_Info_Custom_Control( $wp_customize ,'theme_info_theme',array(
 		'label' => __( 'About Aglee Lite' , 'aglee-lite' ),
