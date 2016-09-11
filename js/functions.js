@@ -63,7 +63,7 @@ jQuery(document).ready(function($){
             sidebar.removeClass('open');
 
             // update screen reader text and aria-expanded
-            $(this).children('span').text(objectL10n.openPrimaryMenu);
+            $(this).children('span').text(ct_author_objectL10n.openPrimaryMenu);
             $(this).attr('aria-expanded', 'false');
 
             // close all ULs by removing increased max-height
@@ -91,7 +91,7 @@ jQuery(document).ready(function($){
             sidebar.trigger('open');
 
             // update screen reader text and aria-expanded
-            $(this).children('span').text(objectL10n.closePrimaryMenu);
+            $(this).children('span').text(ct_author_objectL10n.closePrimaryMenu);
             $(this).attr('aria-expanded', 'true');
 
             var windowWidth = window.innerWidth;
@@ -127,11 +127,11 @@ jQuery(document).ready(function($){
 
         if( menuItem.hasClass('open') ) {
             menuItem.removeClass('open');
-            $(this).children('span').text(objectL10n.openChildMenu);
+            $(this).children('span').text(ct_author_objectL10n.openChildMenu);
             $(this).attr('aria-expanded', 'false');
         } else {
             menuItem.addClass('open');
-            $(this).children('span').text(objectL10n.closeChildMenu);
+            $(this).children('span').text(ct_author_objectL10n.closeChildMenu);
             $(this).attr('aria-expanded', 'true');
             short = false; // return to false to be measured again (may not be shorter than window now)
         }
@@ -343,7 +343,7 @@ jQuery(document).ready(function($){
 
             $('.featured-image').each(function () {
 
-                if ( !$(this).parent('.post').hasClass('ratio-natural') ) {
+                if ( !$(this).parent('.entry').hasClass('ratio-natural') ) {
 
                     var image = $(this).children('img').add($(this).children('a').children('img'));
 
