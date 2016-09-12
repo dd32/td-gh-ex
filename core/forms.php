@@ -122,7 +122,7 @@ if(!function_exists('cpotheme_form_iconlist')){
 				$checked = null;
 				$selected = '';
 				$current_value = esc_attr($library_key.'-'.$list_key);
-				if($current_value === $value && $value != '') {
+				if($current_value === htmlentities($value) && $value != '') {
 					$checked = ' checked="checked"';
 					$selected = ' cpotheme-iconlist-selected';
 				}

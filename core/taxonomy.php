@@ -3,24 +3,24 @@
 
 //Create the metadata fields for the metadata form.
 if(!function_exists('cpotheme_taxonomy_meta_fields')){
-	function cpotheme_taxonomy_meta_fields($title, $post, $cpo_metadata){
-		if($cpo_metadata == null || sizeof($cpo_metadata) == 0) return;
+	function cpotheme_taxonomy_meta_fields($title, $post, $metadata){
+		wp_enqueue_style('cpotheme-admin');
+		if($metadata == null || sizeof($metadata) == 0) return;
 		$post_id = isset($_GET['tag_ID']) ? $_GET['tag_ID'] : false;
 		$output = '';
 		$field_prefix = 'cpotheme_taxonomy_meta_';
-		
 		
 		$output .= '<h3>'.$title.'</h3>';
 		$output .= '<table class="form-table">';
 		$output .= '<tbody>';
 		
 		//Loop through all the data taxonomies and create the field associated to them.
-		foreach($cpo_metadata as $current_meta){
-			$field_name = $current_meta["name"];
+		foreach($metadata as $current_meta){
+			$field_name = $current_meta['name'];
 			$field_title = $current_meta['label'];
 			$field_desc = $current_meta['desc'];
 			$field_type = $current_meta['type'];
-			$field_value = cpotheme_tax_meta($post_id, $field_name);
+			$field_value = get_term_meta($post_id, $field_name, true);
 
 			$output .= '<tr>';
 			$output .= '<th scope="row"><label for="'.$field_name.'" class="field_title">'.$field_title.'</label></th>';
@@ -41,6 +41,7 @@ if(!function_exists('cpotheme_taxonomy_meta_fields')){
 
 			elseif($field_type == 'iconlist')
 				$output .= cpotheme_form_iconlist($field_name, $field_value, $current_meta);
+
 				
 			//Separators
 			if($field_type != 'separator' && $field_type != 'divider'){
@@ -59,11 +60,11 @@ if(!function_exists('cpotheme_taxonomy_meta_fields')){
 
 // Create the form to insert the metadata in the category list.
 if(!function_exists('cpotheme_taxonomy_meta_form')){
-	function cpotheme_taxonomy_meta_form($title, $post, $cpo_metadata = null){
+	function cpotheme_taxonomy_meta_form($title, $post, $metadata = null){
 		$output = '';
 				
 		//Call the field creator with the needed data.
-		$output .= cpotheme_taxonomy_meta_fields($title, $post, $cpo_metadata);
+		$output .= cpotheme_taxonomy_meta_fields($title, $post, $metadata);
 		echo $output;
 		
 	}
@@ -77,40 +78,19 @@ if(!function_exists('cpotheme_taxonomy_meta_save')){
 		$post_id = $_POST['tag_ID'];		
 		
 		//Loop through all fields
-		foreach($option_fields as $current_field) {
+		foreach($option_fields as $current_field){
 			$field_name = $current_field['name'];
 			if(isset($_POST[$field_name])){
 				$field_value = trim($_POST[$field_name]);
 				
-				$current_value = '';
-				$current_value = get_post_meta($post_id, $field_name, true);
-				
-				// Add metadata
+				//Add metadata
 				if($field_value != ''){
-					$tax_meta[$post_id][$field_name] = $field_value;
-				}
-				// Delete unused metadata
-				else{ 
-					unset($tax_meta[$post_id][$field_name]);
+					update_term_meta($post_id, $field_name, $field_value);
+				}else{ 
+					//Delete unused metadata?
 				}
 			}
 		}
-		
-		// Save metadata to the database and redirect user.
-		update_option('cpotheme_taxonomy', $tax_meta);		
-	}
-}
-
-
-//When a cpo_portfolio_category is deleted we also delete the metadata associated with it.
-if(!function_exists('cpotheme_taxonomy_meta_delete')){
-	function cpotheme_taxonomy_meta_delete($option_fields){
-		$tax_meta = get_option('cpotheme_taxonomy');
-		$post_id = $_POST['tag_ID'];
-		
-		if($tax_meta && isset($tax_meta[$post_id])) unset($tax_meta[$post_id]);
-
-		update_option('cpotheme_taxonomy', $tax_meta);
 	}
 }
 
@@ -118,10 +98,6 @@ if(!function_exists('cpotheme_taxonomy_meta_delete')){
 // Retrieve metadata field $key from the associated $tag_ID
 if(!function_exists('cpotheme_tax_meta')){
 	function cpotheme_tax_meta($id, $key){
-		$tax_meta = get_option('cpotheme_taxonomy');
-		if($tax_meta && isset($tax_meta[$id][$key]))
-			return $tax_meta[$id][$key];
-		else
-		return false;
+		return get_term_meta($id, $key, true);
 	}
 }

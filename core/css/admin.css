@@ -43,7 +43,7 @@
 .cpotheme-imagelist-item { display:inline-block; text-align:center; margin:0 12px 12px 0; line-height:0; } 
 .cpotheme-imagelist-item img { padding:3px; border-radius:2px; background:#fff; box-shadow:0 1px 2px 1px rgba(0,0,0,0.2); -moz-transition:0.4s all; -webkit-transition:0.4s all; transition:0.4s all; }
 .cpotheme-imagelist-item .cpotheme-imagelist-selected { background:#1e8cbe; }
-.cpotheme-imagelist-item input[type=radio] {display: none;}
+.cpotheme-imagelist-item input[type=radio] { }
 
 
 /* --------------------------------------------------------------

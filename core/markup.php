@@ -380,10 +380,10 @@ if(!function_exists('cpotheme_search_form')){
 		if(is_search()){
 			$search_query = '';
 			if(isset($_GET['s'])) 
-				$search_query = esc_attr($_GET['s']);
+				$search_query = get_search_query();
 			
 			echo '<div class="search-form">';
-			echo '<form role="search" method="get" id="search-form" class="search-form" action="'.home_url('/').'">';
+			echo '<form role="search" method="get" id="search-form" class="search-form" action="'.esc_url(home_url('/')).'">';
 			echo '<input type="text" value="'.$search_query.'" name="s" id="s" />';
 			echo '<input type="submit" id="search-submit" value="'.__('Search', 'affluent').'" />';
 			echo '</form>';
@@ -576,86 +576,29 @@ if(!function_exists('cpotheme_post_media')){
 }
 
 
-//Paginates a single post's content by using a numbered list
-if(!function_exists('cpotheme_pagination')){
-	function cpotheme_pagination(){
-		$query = $GLOBALS['wp_query'];
-		$current_page = max(1, absint($query->get('paged')));
-		$total_pages = max(1, absint($query->max_num_pages));
-		if($total_pages == 1) return;
-
-		$pages_to_show = 8;
-		$larger_page_to_show = 10;
-		$larger_page_multiple = 2;
-		$pages_to_show_minus_1 = $pages_to_show - 1;
-		$half_page_start = floor( $pages_to_show_minus_1/2 );
-		$half_page_end = ceil( $pages_to_show_minus_1/2 );
-		$start_page = $current_page - $half_page_start;
-
-		$end_page = $current_page + $half_page_end;
-		
-		if(($end_page - $start_page) != $pages_to_show_minus_1)
-			$end_page = $start_page + $pages_to_show_minus_1;
-
-		if($end_page > $total_pages){
-			$start_page = $total_pages - $pages_to_show_minus_1;
-			$end_page = $total_pages;
-		}
-
-		if($start_page < 1)
-			$start_page = 1;
-
-		$out = '';
-
-		//First Page Link
-		if(1 == $current_page)
-			$out .= '<span class="first_page">'.__('First', 'affluent').'</span>';
-		else
-			$out .= '<a class="pagination-page page first_page" href="'.esc_url(get_pagenum_link(1)).'">'.__('First', 'affluent').'</a>';
-
-		//Show each page
-		foreach(range($start_page, $end_page) as $i){
-			if($i == $current_page)
-				$out .= "<span>$i</span>";
-			else
-				$out .= '<a class="pagination-page page" href="'.esc_url(get_pagenum_link($i)).'">'.$i.'</a>';
-		}
-		
-		//Last Page Link
-		if($total_pages == $current_page)
-			$out .= '<span class="last_page">'.__('Last', 'affluent').'</span>';
-		else
-			$out .= '<a class="pagination-page page last_page" href="'.esc_url(get_pagenum_link($total_pages)).'">'.__('Last', 'affluent').'</a>';
-		
-		$out = '<div id="pagination" class="pagination">'.$out.'</div>';
-
-		echo $out;
-	}
-}
-
-
 //Paginates a list of posts, such as the blog or portfolio
 if(!function_exists('cpotheme_numbered_pagination')){
 	function cpotheme_numbered_pagination($query = ''){
-		global $wp_query;
-		if($query != '')
-			$total_pages = $query->max_num_pages;
-		else
-			$total_pages = $wp_query->max_num_pages;
-		if($total_pages > 1){
-			echo '<div class="pagination">';
-			if(!$current_page = get_query_var('paged'))
-				$current_page = 1;
-			echo paginate_links(array(
-			'base' => str_replace(999999, '%#%', esc_url(get_pagenum_link(999999))),
-			'current' => max(1, get_query_var('paged')),
-			'total' => $total_pages,
-			'mid_size' => 4,
-			'type' => 'list',
-			'prev_next'	=> false
-			));
-			echo '</div>';
-		}
+		the_posts_pagination();
+		// global $wp_query;
+		// if($query != '')
+			// $total_pages = $query->max_num_pages;
+		// else
+			// $total_pages = $wp_query->max_num_pages;
+		// if($total_pages > 1){
+			// echo '<div class="pagination">';
+			// if(!$current_page = get_query_var('paged'))
+				// $current_page = 1;
+			// echo paginate_links(array(
+			// 'base' => str_replace(999999, '%#%', esc_url(get_pagenum_link(999999))),
+			// 'current' => max(1, get_query_var('paged')),
+			// 'total' => $total_pages,
+			// 'mid_size' => 4,
+			// 'type' => 'list',
+			// 'prev_next'	=> false
+			// ));
+			// echo '</div>';
+		// }
 	}
 }
 

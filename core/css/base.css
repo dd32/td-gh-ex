@@ -366,12 +366,21 @@ NAVIGATION
 
 /* NUMBERED POST NAVIGATION */
 .pagination { overflow:hidden; margin:0 0 30px; text-align:center; }
+.pagination h2 { display:none; }
 .pagination ul { display:block; }
 .pagination ul li { display:inline-block; list-style:none; margin:0; padding:0; }
 .pagination span, 
 .pagination a { display:block; margin:0 1px; padding:5px 15px; border-radius:3px; }
 .pagination .current { color:#fff; background:#666; }
 .pagination a:hover { background:#eee; text-decoration:none; }
+
+
+/* NUMBERED POST NAVIGATION */
+.nav-links ul { display:block; }
+.nav-links ul li { display:inline-block; list-style:none; margin:0; padding:0; }
+.nav-links .page-numbers { display:inline-block; margin:0 1px; padding:5px 15px; border-radius:3px; }
+.nav-links .current { color:#fff; background:#666; }
+.nav-links a:hover { background:#eee; text-decoration:none; }
 
 
 /* NUMBERED PAGINATION FOR SINGLE POSTS */

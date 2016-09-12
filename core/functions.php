@@ -175,7 +175,7 @@ function cpotheme_show_posts(){
 //Return true if page title should be displayed
 function cpotheme_show_title(){
 	$display = false;
-	if(!is_front_page() && !is_home()){
+	if(!is_front_page()){
 		$display = true;
 	}
 	return $display;
@@ -183,10 +183,9 @@ function cpotheme_show_title(){
 
 
 //Flush rewrite rules on theme activation
-add_action('after_switch_theme', 'cpotheme_rewrite_flush');
-function cpotheme_rewrite_flush(){
-    flush_rewrite_rules();
-	cpotheme_update_option(CPOTHEME_ID.'_activation_time', time());
+add_action('after_switch_theme', 'cpotheme_after_switch_theme');
+function cpotheme_after_switch_theme(){
+    cpotheme_update_option(CPOTHEME_ID.'_activation_time', time());
 }
 
 
@@ -201,7 +200,17 @@ function cpotheme_sanitize_bool($data){
 
 //Return the URL to the premium theme page
 function cpotheme_upgrade_link($name = 'Customizer'){
-	$url = esc_url(CPOTHEME_PREMIUM_URL.'?utm_source=upsell&utm_medium=theme&utm_campaign='.$name);
+	$url = esc_url(CPOTHEME_PREMIUM_URL);
 	$link = '<a target="_blank" href="'.$url.'">'.esc_attr(CPOTHEME_PREMIUM_NAME).'</a>';
 	return $link;
+}
+
+
+//Remove portfolio if not exists
+add_filter('theme_page_templates', 'cpotheme_page_template_list');
+function cpotheme_page_template_list($page_templates){
+	if(!post_type_exists('cpo_portfolio')){
+		unset($page_templates['template-portfolio.php']);
+	}
+    return $page_templates;
 }

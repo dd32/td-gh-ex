@@ -67,7 +67,8 @@ if(!function_exists('cpotheme_meta_save')){
 				
 				//If the field has an update, process it.
 				if(isset($_POST[$field_name])){
-					$field_value = esc_html($_POST[$field_name]);
+					
+					$field_value = sanitize_text_field($_POST[$field_name]);
 					
 					// Delete unused metadata
 					if(empty($field_value) || $field_value == ''){ 

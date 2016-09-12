@@ -40,10 +40,6 @@ Homepage Partial Slider Image - http://jaymantri.com/
 License: CC0 License
 Copyright: Jay Mantri
 
-Background Image Pattern - http://subtlepatterns.com/symphony/
-License: CC BY-SA 3.0
-Copyright: Irfan Ilias
-
 Logo and Other Image Resources
 License: GPLv2 General Public License
 Copyright: Manuel Vicedo

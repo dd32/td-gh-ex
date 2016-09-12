@@ -11,7 +11,7 @@ function cpotheme_admin_welcome_notice(){
 			$display = false;
 		
 		if(current_user_can('manage_options') && $welcome_dismissed != 'dismissed' && $display){
-			wp_enqueue_style('cpotheme_admin');
+			wp_enqueue_style('cpotheme-admin');
 			$welcome_url = '<a href="'.esc_url(admin_url('themes.php?page=cpotheme-welcome')).'">'.__('quickstart guide', 'affluent').'</a>';
 			$plugin_url = '<strong><a href="'.esc_url(admin_url('themes.php?page=cpotheme-welcome')).'">CPO Content Types</a></strong>';
 			echo '<div class="updated">';

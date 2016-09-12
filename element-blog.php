@@ -5,6 +5,7 @@
 	<div class="post-body <?php if(has_post_thumbnail()) echo 'post-body-image'; ?>">
 		<?php cpotheme_postpage_title(); ?>
 		<div class="post-byline">
+			<?php wp_enqueue_style('cpotheme-fontawesome'); ?>
 			<?php cpotheme_postpage_date(); ?>
 			<?php cpotheme_postpage_author(); ?>
 			<?php cpotheme_postpage_categories(); ?>

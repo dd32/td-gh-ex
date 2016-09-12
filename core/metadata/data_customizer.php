@@ -164,7 +164,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		'section' => 'title_tagline',
 		'type' => 'checkbox',
 		'sanitize' => 'cpotheme_sanitize_bool',
-		'std' => false);
+		'std' => true);
 		
 		$data['general_editlinks'] = array(
 		'label' => __('Show Edit Links', 'affluent'),
