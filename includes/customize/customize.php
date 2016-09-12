@@ -17,7 +17,7 @@ function ascreen_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'ascreen_sanitize_url',
 		'capability'	=> 'edit_theme_options',
 		'transport'		=> 'postMessage',
-		'type' => 'option'
+		//'type' => 'option'
 	) );
 
 	$wp_customize->add_control( 'ascreen_option[facebook_url]', array(
@@ -33,7 +33,7 @@ function ascreen_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'ascreen_sanitize_url',
 		'capability'	=> 'edit_theme_options',
 		'transport'		=> 'postMessage',
-		'type' => 'option'
+		//'type' => 'option'
 	) );
 
 
@@ -50,7 +50,7 @@ function ascreen_customize_register( $wp_customize ) {
 		'sanitize_callback' => 'ascreen_sanitize_url',
 		'capability'	=> 'edit_theme_options',
 		'transport'		=> 'postMessage',
-		'type' => 'option'
+		//'type' => 'option'
 	) );
 
 

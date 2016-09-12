@@ -245,18 +245,22 @@ function ascreen_get_the_category()
  */
 if ( ! function_exists( 'ascreen_get_option' ) ){
 	function ascreen_get_option( $ct_row,$option_name,$default )
-	{			
-		$arr =  get_option($ct_row);		
-		if(is_array($arr))
+	{
+		
+		$arr = get_theme_mods();
+		$arr_row = $arr[$ct_row];
+		
+ 	
+		if(is_array($arr_row))
 		{
-			@$option_value     = $arr[$option_name];
+			@$option_value = $arr_row["$option_name"];
 			if($option_value !='')
 			{
 				return $option_value;
 			}
 			else
 			{
-				if(array_key_exists($option_name,$arr) ){
+				if(array_key_exists($option_name,$arr_row) ){
 					return  false;
 				}	
 				else
