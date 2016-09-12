@@ -20,8 +20,6 @@ if (!function_exists('ad_mag_lite_load_more_blog_3')) {
             'cat' => $cat_id
         );
 
-        $limit = 15;
-
         $wp_query = new WP_Query( $args ); ?>
 
        <?php if (have_posts()) : ?>
@@ -43,12 +41,7 @@ if (!function_exists('ad_mag_lite_load_more_blog_3')) {
                                     &nbsp;|&nbsp;
                                     <span class="entry-date"><i class="fa fa-clock-o"></i><?php echo get_the_date('M j, Y'); ?></span>
                                 </div>
-                                <?php
-                                    $GLOBALS['ad_mag_lite_excerpt_length'] = $limit;
-                                    add_filter( 'excerpt_length', 'ad_mag_lite_set_excerpt_length' );
-                                    the_excerpt();
-                                    remove_filter( 'excerpt_length', 'ad_mag_lite_set_excerpt_length' );
-                                ?>
+                                <?php the_excerpt(); ?>
                             </div>
                         </div>       
                     </article>
@@ -115,12 +108,7 @@ if (!function_exists('ad_mag_lite_load_more_blog_2')) {
                                     &nbsp;|&nbsp;
                                     <span class="entry-date"><i class="fa fa-clock-o"></i><?php echo get_the_date('M j, Y'); ?></span>
                                 </div>
-                                <?php
-                                    $GLOBALS['ad_mag_lite_excerpt_length'] = $limit;
-                                    add_filter( 'excerpt_length', 'ad_mag_lite_set_excerpt_length' );
-                                    the_excerpt();
-                                    remove_filter( 'excerpt_length', 'ad_mag_lite_set_excerpt_length' );
-                                ?>
+                                <?php the_excerpt(); ?>
                             </div>
                         </div>      
                     </article>

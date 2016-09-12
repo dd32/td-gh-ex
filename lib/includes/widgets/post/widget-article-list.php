@@ -178,12 +178,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                     &nbsp;|&nbsp;
                                     <span class="entry-date"><i class="fa fa-clock-o"></i><?php echo get_the_date('M j, Y'); ?></span>
                                 </div>
-                                <?php
-                                    $GLOBALS['ad_mag_lite_excerpt_length'] = $limit;
-                                    add_filter( 'excerpt_length', 'ad_mag_lite_set_excerpt_length' );
-                                    the_excerpt();
-                                    remove_filter( 'excerpt_length', 'ad_mag_lite_set_excerpt_length' );
-                                ?>
+                                <?php the_excerpt(); ?>
                             </div>
                         </article>
                     <?php } else {
@@ -197,7 +192,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                 <?php if(has_post_thumbnail()) : ?>
                                     <div class="entry-thumb style1">
                                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                            <?php the_post_thumbnail( 'ad-mag-lite-article-list-259x155' ); ?>
+                                            <?php the_post_thumbnail( 'ad-mag-lite-article-list-261x178' ); ?>
                                         </a>
                                         <?php ad_mag_lite_the_first_category(get_the_id()); ?>
                                     </div>
@@ -250,12 +245,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                         <div class="entry-meta">
                                             <span class="entry-date"><i class="fa fa-clock-o"></i><?php echo get_the_date('M j, Y'); ?></span>
                                         </div>
-                                        <?php
-                                            $GLOBALS['ad_mag_lite_excerpt_length'] = $limit;
-                                            add_filter( 'excerpt_length', 'ad_mag_lite_set_excerpt_length' );
-                                            the_excerpt();
-                                            remove_filter( 'excerpt_length', 'ad_mag_lite_set_excerpt_length' );
-                                        ?>
+                                        <?php the_excerpt(); ?>
                                     </div>
                                 </article>
                             </li>
@@ -280,7 +270,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                             <?php if(has_post_thumbnail()) : ?>
                                 <div class="entry-thumb style1">
                                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                        <?php the_post_thumbnail( 'ad-mag-lite-article-list-373x215' ); ?>
+                                        <?php the_post_thumbnail( 'ad-mag-lite-article-list-375x245' ); ?>
                                     </a>
                                     <?php ad_mag_lite_the_first_category(get_the_id()); ?>
                                 </div>
@@ -292,12 +282,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                     &nbsp;|&nbsp;
                                     <span class="entry-date"><i class="fa fa-clock-o"></i><?php echo get_the_date('M j, Y'); ?></span>
                                 </div>
-                                <?php
-                                    $GLOBALS['ad_mag_lite_excerpt_length'] = $limit;
-                                    add_filter( 'excerpt_length', 'ad_mag_lite_set_excerpt_length' );
-                                    the_excerpt();
-                                    remove_filter( 'excerpt_length', 'ad_mag_lite_set_excerpt_length' );
-                                ?>
+                                <?php the_excerpt(); ?>
                             </div>
                         </article>
                     <?php } else {
@@ -321,12 +306,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                     <div class="entry-meta">
                                         <span class="entry-date"><i class="fa fa-clock-o"></i><?php echo get_the_date('M j, Y'); ?></span>
                                     </div>
-                                    <?php
-                                        $GLOBALS['ad_mag_lite_excerpt_length'] = $limit;
-                                        add_filter( 'excerpt_length', 'ad_mag_lite_set_excerpt_length' );
-                                        the_excerpt();
-                                        remove_filter( 'excerpt_length', 'ad_mag_lite_set_excerpt_length' );
-                                    ?>
+                                    <?php the_excerpt(); ?>
                                 </div>
                             </article>
                         </li>
@@ -358,7 +338,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                 <?php if(has_post_thumbnail()) : ?>
                                     <div class="entry-thumb style1">
                                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                            <?php the_post_thumbnail( 'ad-mag-lite-article-list-253x174' ); ?>
+                                            <?php the_post_thumbnail( 'ad-mag-lite-article-list-261x178' ); ?>
                                         </a>
                                         <?php ad_mag_lite_the_first_category(get_the_id()); ?>
                                     </div>
@@ -370,12 +350,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                         &nbsp;|&nbsp;
                                         <span class="entry-date"><i class="fa fa-clock-o"></i><?php echo get_the_date('M j, Y'); ?></span>
                                     </div>
-                                    <?php
-                                        $GLOBALS['ad_mag_lite_excerpt_length'] = $limit;
-                                        add_filter( 'excerpt_length', 'ad_mag_lite_set_excerpt_length' );
-                                        the_excerpt();
-                                        remove_filter( 'excerpt_length', 'ad_mag_lite_set_excerpt_length' );
-                                    ?> 
+                                    <?php the_excerpt(); ?> 
                                 </div>
                             </article>
                         </li>
@@ -435,7 +410,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                     <?php if(has_post_thumbnail()) : ?>
                                         <div class="entry-thumb">
                                             <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                                <?php the_post_thumbnail( 'ad-mag-lite-article-list-260x160' ); ?>
+                                                <?php the_post_thumbnail( 'ad-mag-lite-article-list-261x178' ); ?>
                                             </a>
                                         </div>
                                     <?php endif; ?>
@@ -471,7 +446,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                     <?php if(has_post_thumbnail()) : ?>
                                         <div class="entry-thumb style1">
                                             <a href="<?php the_permalink(); ?>" title="<?php the_title();?>">
-                                                <?php the_post_thumbnail( 'ad-mag-lite-article-list-250x180' ); ?>
+                                                <?php the_post_thumbnail( 'ad-mag-lite-article-list-261x178' ); ?>
                                             </a>
                                             <?php ad_mag_lite_the_first_category(get_the_id()); ?>
                                         </div>
@@ -483,12 +458,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                             &nbsp;|&nbsp;
                                             <span class="entry-date"><i class="fa fa-clock-o"></i><?php echo get_the_date('M j, Y'); ?></span>
                                         </div>
-                                        <?php
-                                            $GLOBALS['ad_mag_lite_excerpt_length'] = $limit;
-                                            add_filter( 'excerpt_length', 'ad_mag_lite_set_excerpt_length' );
-                                            the_excerpt();
-                                            remove_filter( 'excerpt_length', 'ad_mag_lite_set_excerpt_length' );
-                                        ?>
+                                        <?php the_excerpt(); ?>
                                     </div>
                                 </article>
                             </li>
@@ -781,12 +751,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                             &nbsp;|&nbsp;
                                             <span class="entry-date"><i class="fa fa-clock-o"></i><?php echo get_the_date('M j, Y'); ?></span>
                                         </div>
-                                        <?php
-                                            $GLOBALS['ad_mag_lite_excerpt_length'] = $limit;
-                                            add_filter( 'excerpt_length', 'ad_mag_lite_set_excerpt_length' );
-                                            the_excerpt();
-                                            remove_filter( 'excerpt_length', 'ad_mag_lite_set_excerpt_length' );
-                                        ?>
+                                        <?php the_excerpt(); ?>
                                         <?php 
                                         $query_args['posts_per_page'] = $instance['number'] - 1;
                                         $query_args['offset'] = 1;
@@ -835,12 +800,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                             &nbsp;|&nbsp;
                                             <span class="entry-date"><i class="fa fa-clock-o"></i><?php echo get_the_date('M j, Y'); ?></span>
                                         </div>
-                                        <?php
-                                            $GLOBALS['ad_mag_lite_excerpt_length'] = $limit;
-                                            add_filter( 'excerpt_length', 'ad_mag_lite_set_excerpt_length' );
-                                            the_excerpt();
-                                            remove_filter( 'excerpt_length', 'ad_mag_lite_set_excerpt_length' );
-                                        ?>
+                                        <?php the_excerpt(); ?>
                                     </div>
                                 </div>       
                             </article>
@@ -878,12 +838,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                             &nbsp;|&nbsp;
                                             <span class="entry-date"><i class="fa fa-clock-o"></i><?php echo get_the_date('M j, Y'); ?></span>
                                         </div>
-                                        <?php
-                                            $GLOBALS['ad_mag_lite_excerpt_length'] = $limit;
-                                            add_filter( 'excerpt_length', 'ad_mag_lite_set_excerpt_length' );
-                                            the_excerpt();
-                                            remove_filter( 'excerpt_length', 'ad_mag_lite_set_excerpt_length' );
-                                        ?>
+                                        <?php the_excerpt(); ?>
                                     </div>
                                 </article>
                             </li>
@@ -947,7 +902,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                         <?php if(has_post_thumbnail()) : ?>
                                             <div class="entry-thumb">
                                                 <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                                    <?php the_post_thumbnail( 'ad-mag-lite-article-list-363x230' ); ?>
+                                                    <?php the_post_thumbnail( 'ad-mag-lite-article-list-375x245' ); ?>
                                                 </a>
                                                 <a class="thumb-icon style1" href="<?php the_permalink(); ?>"></a>
                                             </div>
@@ -1011,7 +966,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                 <?php if(has_post_thumbnail()) : ?>
                                     <div class="entry-thumb">
                                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                            <?php the_post_thumbnail( 'ad-mag-lite-article-list-369x218' ); ?>
+                                            <?php the_post_thumbnail( 'ad-mag-lite-article-list-375x245' ); ?>
                                         </a>
                                         <a class="thumb-icon style1" href="<?php the_permalink(); ?>"></a>
                                     </div>
@@ -1044,7 +999,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                             <?php if(has_post_thumbnail()) : ?>
                                 <div class="entry-thumb">
                                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                        <?php the_post_thumbnail( 'ad-mag-lite-article-list-363x230' ); ?>
+                                        <?php the_post_thumbnail( 'ad-mag-lite-article-list-375x245' ); ?>
                                     </a>
                                     <a class="thumb-icon style1" href="<?php the_permalink(); ?>"></a>
                                 </div>
@@ -1070,7 +1025,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                 <?php if(has_post_thumbnail()) : ?>
                                     <div class="entry-thumb">
                                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                            <?php the_post_thumbnail( 'ad-mag-lite-article-list-363x230' ); ?>
+                                            <?php the_post_thumbnail( 'ad-mag-lite-article-list-375x245' ); ?>
                                         </a>
                                         <a class="thumb-icon style1" href="<?php the_permalink(); ?>"></a>
                                         <?php ad_mag_lite_the_first_category(get_the_id(),'h5-content'); ?>
@@ -1083,12 +1038,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
                                         &nbsp;|&nbsp;
                                         <span class="entry-date"><i class="fa fa-clock-o"></i><?php echo get_the_date('M j, Y'); ?></span>
                                     </div>
-                                    <?php
-                                        $GLOBALS['ad_mag_lite_excerpt_length'] = $limit;
-                                        add_filter( 'excerpt_length', 'ad_mag_lite_set_excerpt_length' );
-                                        the_excerpt();
-                                        remove_filter( 'excerpt_length', 'ad_mag_lite_set_excerpt_length' );
-                                    ?>
+                                    <?php the_excerpt(); ?>
                                 </div>
                             </article>
                         </li>

@@ -1,7 +1,6 @@
 <?php
 
 require_once "lib/kopa-customization.php";
-require_once "lib/aq_resizer.php";
 require trailingslashit(get_template_directory()) . '/lib/includes/ajax.php';
 require trailingslashit(get_template_directory()) . '/lib/includes/util.php';
 require trailingslashit(get_template_directory()) . '/lib/includes/sidebars.php';
@@ -61,23 +60,16 @@ function ad_mag_lite_get_image_sizes() {
         'ad-mag-lite-article-list-89x65' => array(  89, 65, true ),
         'ad-mag-lite-article-list-261x178' => array(  261, 178, true ),
         'ad-mag-lite-article-list-510x271' => array(  510, 271, true ),
-        'ad-mag-lite-article-list-259x155' => array(  259, 155, true ),
         'ad-mag-lite-article-list-155x120' => array(  155, 120, true ),
-        'ad-mag-lite-article-list-373x215' => array(  373, 215, true ),
         'ad-mag-lite-article-list-176x120' => array(  176, 120, true ),
-        'ad-mag-lite-article-list-253x174' => array(  253, 174, true ),
-        'ad-mag-lite-article-list-260x160' => array(  260, 160, true ),
-        'ad-mag-lite-article-list-250x180' => array(  250, 180, true ),
         'ad-mag-lite-article-list-165x120' => array(  165, 120, true ),
         'ad-mag-lite-article-list-85x75' => array(  85, 75, true ),
         'ad-mag-lite-article-list-109x85' => array(  109, 85, true ),
         'ad-mag-lite-article-list-538x316' => array(  538, 316, true ),
-        'ad-mag-lite-article-list-375x245' => array(  375, 245, true ),
         'ad-mag-lite-article-list-140x110' => array(  140, 110, true ),
         'ad-mag-lite-article-list-343x246' => array(  343, 246, true ),
-        'ad-mag-lite-article-list-363x230' => array(  363, 230, true ),
+        'ad-mag-lite-article-list-375x245' => array(  363, 230, true ),
         'ad-mag-lite-article-list-171x121' => array(  171, 121, true ),
-        'ad-mag-lite-article-list-369x218' => array(  369, 218, true ),
         'ad-mag-lite-article-list-blog-375x190' => array(  375, 190, true ),
         'ad-mag-lite-article-list-blog-75x75' => array(  75, 75, true ),
     );
@@ -260,11 +252,4 @@ function ad_mag_lite_the_custom_logo() {
    if ( function_exists( 'the_custom_logo' ) ) {
       the_custom_logo();
    }
-}
-function ad_mag_lite_set_excerpt_length( $length ) { 
-    if ( isset( $GLOBALS['ad_mag_lite_excerpt_length'] ) ){
-        $length = (int) $GLOBALS['ad_mag_lite_excerpt_length'];
-    }
-
-    return $length;
 }

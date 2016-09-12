@@ -53,7 +53,7 @@
                               <?php if(has_post_thumbnail()) : ?>
                               <div class="entry-thumb style1">
                                 <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                                  <?php the_post_thumbnail( 'ad-mag-lite-article-list-250x180' ); ?>
+                                  <?php the_post_thumbnail( 'ad-mag-lite-article-list-261x178' ); ?>
                               </a>
                               <?php ad_mag_lite_the_first_category(get_the_id()); ?>
                               <span class="sticky-icon"></span>

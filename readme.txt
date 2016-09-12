@@ -7,6 +7,10 @@ Moreover, with sleekly design, responsiove layout, awesome typography and focus 
 --------------------
 Change log
 --------------------
+= 1.0.7 = (12/09/2016)
+	- Update image size.
+	- Update excerpt length widget.
+
 = 1.0.6 = (1/09/2016)
 	- Escape data.
 	- Removed aq_resizer, ad_mag_lite_get_youtube_duration.
