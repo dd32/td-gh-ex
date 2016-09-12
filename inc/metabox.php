@@ -20,7 +20,7 @@ function bakes_and_cakes_add_sidebar_layout_box(){
 $bakes_and_cakes_sidebar_layout = array(         
         'right-sidebar' => array(
                         'value' => 'right-sidebar',
-                        'label' => __( 'Right sidebar<br/>(default)', 'bakes-and-cakes' ),
+                        'label' => __( 'Right sidebar (default)', 'bakes-and-cakes' ),
                         'thumbnail' => get_template_directory_uri() . '/images/right-sidebar.png'
                     ),
         'no-sidebar' => array(

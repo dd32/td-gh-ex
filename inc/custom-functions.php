@@ -425,9 +425,17 @@ if( ! function_exists( 'bakes_and_cakes_footer_info' ) ) :
 function bakes_and_cakes_footer_info(){
     ?>
     <div class="site-info">        
-        <span>&copy; <?php echo esc_html( date_i18n( 'Y' ) ); ?> <a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name');?></a>. <?php esc_html_e('All Rights Reserved.', 'bakes-and-cakes');?></span>
-            <a href="<?php echo esc_url( 'http://raratheme.com/wordpress-themes/bakes-and-cakes/' ); ?>" rel="author" target="_blank"><?php echo esc_html__( 'Bakes and Cakes by Rara Theme', 'bakes-and-cakes' ); ?></a>.
-            <?php printf(esc_html__('Powered by %s', 'bakes-and-cakes'), '<a href="' . esc_url(__('https://wordpress.org/', 'bakes-and-cakes')) . '">WordPress</a>');?>.  
+        <span>
+            <?php 
+            echo esc_html__( '&copy;','bakes-and-cakes');
+            echo esc_html(date_i18n('Y')); ?>
+            <a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>.
+            <?php esc_html_e('All Rights Reserved.', 'bakes-and-cakes'); ?>
+        </span>
+        <a href="<?php echo esc_url( 'http://raratheme.com/wordpress-themes/bakes-and-cakes/' ); ?>" rel="author" target="_blank">
+            <?php echo esc_html__( 'Bakes and Cakes by Rara Theme.', 'bakes-and-cakes' ); ?>
+        </a>.
+        <?php printf(esc_html__('Powered by %s', 'bakes-and-cakes'), '<a href="' . esc_url(__('https://wordpress.org/', 'bakes-and-cakes')) . '">WordPress.</a>'); ?>
     </div><!-- .site-info -->
 <?php
 }

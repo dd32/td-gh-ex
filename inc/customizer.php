@@ -1303,6 +1303,10 @@ function bakes_and_cakes_customize_register( $wp_customize ) {
         return ( $file['ext'] ? $image : $setting->default );
     }
     
+    function bakes_and_cakes_sanitize_css( $css ){
+        return wp_strip_all_tags( $css );
+    }
+    
 }
 add_action( 'customize_register', 'bakes_and_cakes_customize_register' );
 

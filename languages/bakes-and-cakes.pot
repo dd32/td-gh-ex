@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-08 10:51+0000\n"
+"POT-Creation-Date: 2016-09-09 11:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -163,19 +163,23 @@ msgstr ""
 msgid "Continue Reading"
 msgstr ""
 
-#: inc/custom-functions.php:428
+#: inc/custom-functions.php:430
+msgid "&copy;"
+msgstr ""
+
+#: inc/custom-functions.php:433
 msgid "All Rights Reserved."
 msgstr ""
 
-#: inc/custom-functions.php:429
-msgid "Bakes and Cakes by Rara Theme"
+#: inc/custom-functions.php:436
+msgid "Bakes and Cakes by Rara Theme."
 msgstr ""
 
-#: inc/custom-functions.php:430
+#: inc/custom-functions.php:438
 msgid "Powered by %s"
 msgstr ""
 
-#: inc/custom-functions.php:430
+#: inc/custom-functions.php:438
 msgid "https://wordpress.org/"
 msgstr ""
 
