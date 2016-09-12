@@ -10,15 +10,15 @@ Author URI: http://satoristudio.net/
 
 Description: Bento is a powerful yet user-friendly free WordPress theme intended for use in the broadest range of web projects. It boasts premium-grade design and is packed with awesome features, some of which are unique for free themes. Bento is mobile-friendly (responsive), retina-ready, optimized for speed, and implements SEO (search engine optimization) best practices. The theme offers unprecedented customization flexibility through a Theme Options panel as well as built-in layouts, including one-page template. Unlimited color combinations for every element of the website, 500+ high-quality vector icons, advanced typography based on Google Fonts, and tons of other cool options and settings make it an ultimate tool for creating websites that are eye-pleasing, unique, and tailored to your needs. The theme offers advanced WooCommerce integration, including page templates, widgets, as well as full checkout funnel styling. Some other small but pleasant features include native infinite scroll, fixed menu options, and detailed settings for customizing the look of each indvidual page. Bento has been developed by an Envato Elite author who has sold 2000+ premium templates on ThemeForest, the largest marketplace in the industry; the theme implements clean, well-commented, developer-friendly code, and includes detailed documentation and a child theme template. Special attention has been paid to ensuring outstanding UX (user experience) and bringing the best in current web design trends and practices to the widest possible audience. Bento is being constantly maintained by its author and offers regular free updates with bugfixes and additional features.
 
-Version: 1.0.1
+Version: 1.4
 
 License: GNU General Public License v2 or later
 
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Tags: black,  blue,  brown,  gray,  green,  orange,  pink,  purple,  red, silver,  tan,  white,  yellow,  dark, light, one-column, two-columns, right-sidebar, left-sidebar, fluid-layout, fixed-layout, responsive-layout, custom-header, custom-background, custom-colors, custom-menu, featured-images, post-formats, sticky-post, translation-ready, full-width-template, theme-options, threaded-comments
+Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, e-commerce, portfolio
 
-Text Domain: satori
+Text Domain: bento
 
 Domain Path: /languages/
 
@@ -234,6 +234,10 @@ select,
 	height: 4.6rem;
 }
 
+textarea {
+	height: auto;
+}
+
 ::-webkit-input-placeholder { 
 	color:#aaa; 
 }
@@ -348,15 +352,15 @@ iframe {
 
 .site-header {
 	background-color: #fff;
-	-webkit-transition: all 0.5s;
-	transition: all 0.5s;
+	-webkit-transition: none;
+	transition: none;
 }
 
 .site-header .bnt-container {
 	display: table;	
 }
 
-.header-default .site-header.fixed-header {
+.site-header.fixed-header {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -446,8 +450,16 @@ iframe {
 	width: 20rem;
 	font-size: 11px;
 	font-size: 1.1rem;
-	background-color: #ddd;
 	border-top: 1px solid #ccc;	
+}
+
+.primary-menu .sub-menu li {
+	background-color: #ddd;
+}
+
+.primary-menu > li > .sub-menu {
+	border-top-style: solid;
+	border-top-color: #fff;
 }
 
 .primary-menu .sub-menu li a {
@@ -505,6 +517,8 @@ iframe {
 	position: relative;
 	display: table-cell;
     vertical-align: middle;	
+	padding: 30px 0;
+	padding: 3rem 0;
 }
 
 .mobile-menu-trigger {
@@ -586,13 +600,13 @@ iframe {
 	opacity: 0.6;
 	top: 0;
 	left: 0;
-	z-index: 999998;
+	z-index: 99998;
 	display: none;
 }
 
 #nav-mobile {
 	position: fixed;
-    z-index: 999999;
+    z-index: 99999;
 	top: 0;
     height: 100%;
 	overflow-y: scroll;
@@ -602,6 +616,8 @@ iframe {
 	padding: 10px 0;
 	padding: 1rem 0;
 	left: -100%;
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
 }
 
 #nav-mobile li a {
@@ -729,7 +745,7 @@ iframe {
 
 .post-header-cta a,
 .post-header-cta div {
-	border: 3px solid #00b285;
+	border: 1px solid #00b285;
 	-webkit-transition: all 0.5s;
 	transition: all 0.5s;
 	cursor: pointer;
@@ -754,7 +770,7 @@ iframe {
 	color: #00906c;
 }
 
-.entry-content > div > div:first-child .siteorigin-panels-stretch {
+.entry-content .panel-grid:first-of-type .siteorigin-panels-stretch {
 	margin-top: -60px;
 	margin-top: -6rem;
 }
@@ -798,6 +814,19 @@ iframe {
     bottom: 100%;
     border-left: 1px dashed;
     height: 1000%;
+}
+
+.panel-grid .sow-features-list .sow-features-feature .sow-icon-container {
+	max-width: 100%;
+}
+
+.panel-grid .sow-features-list .sow-features-feature .sow-icon-container .sow-icon-image {
+	max-width: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: 0;
+    top: 0;
+    left: 0;
 }
 
 /* Novice Header */
@@ -2159,6 +2188,11 @@ h3.author-name {
 	text-transform: uppercase;
 }
 
+.footer-menu .current-menu-item a,
+.footer-menu .current-menu-ancestor a {
+	border-bottom: 1px solid;
+}
+
 
 /* 
 6. WooCommerce
@@ -3056,18 +3090,25 @@ a.shipping-calculator-button:hover {
 @media screen and (min-width: 10em) {
 	
 	.logo img {
-		max-height: 24px;
-		max-height: 2.4rem;
 		width: auto;	
 	}
 	
+	.logo-fullsize {
+		display: none;
+	}
+	
+	.logo-mobile {
+		display: inline;
+	}
+	
 	.mobile-menu-open {
-	    height: 100%;
-		width: 100%;
 		overflow: hidden;
+		height: 100%;
 		position: fixed;
 		top: 0;
 		left: 0;
+		bottom: 0;
+		right: 0;
 	}
 	
 	.admin-bar.mobile-menu-open .site-wrapper,
@@ -3138,9 +3179,13 @@ a.shipping-calculator-button:hover {
 		padding: 4rem 0;
 	}
 	
-	.entry-content .panel-grid:last-child .siteorigin-panels-stretch:last-child {
+	.page-template-default .entry-content .panel-grid:last-child .siteorigin-panels-stretch:last-child {
 		margin-bottom: -40px;
 		margin-bottom: -4rem;
+	}
+	
+	.so-widget-sow-features .sow-features-list {
+		margin: 0 -5%;
 	}
 	
 	.comment .comment {
@@ -3228,6 +3273,13 @@ a.shipping-calculator-button:hover {
 		top: 32px;
 	}
 	
+	.header-side .novice-header {
+		position: relative;
+		z-index: 999;
+		float: right;
+		width: 80%;
+	}
+	
 	.novice-header-title {
 		font-size: 30px;
 		font-size: 3rem;
@@ -3267,7 +3319,7 @@ a.shipping-calculator-button:hover {
 		padding-right: 8%;	
 	}
 	
-	.entry-content .panel-grid:last-child .siteorigin-panels-stretch:last-child {
+	.page-template-default .entry-content .panel-grid:last-child .siteorigin-panels-stretch:last-child {
 		margin-bottom: -120px;
 		margin-bottom: -12rem;
 	}
@@ -3462,6 +3514,12 @@ a.shipping-calculator-button:hover {
 		line-height: 2;
 	}
 	
+	.header-side .primary-menu .sub-menu li a,
+	.header-side .primary-menu .sub-menu li a:hover {
+		background-color: transparent !important;
+	}
+	
+	
 	.header-side .primary-menu .sub-menu {
 		position: relative;
 		margin: 10px 0 0 0 !important;
@@ -3471,7 +3529,7 @@ a.shipping-calculator-button:hover {
 		background-color: transparent !important;
 	}
 	
-	.header-side .primary-menu .sub-menu li:last-child a {
+	.header-side .primary-menu .sub-menu > li:last-child > a:not(.opened-side-menu) {
 		padding-bottom: 0;
 	}
 	
@@ -3540,6 +3598,14 @@ a.shipping-calculator-button:hover {
     	max-width: 100%;	
 	}
 	
+	.logo-fullsize {
+		display: inline;
+	}
+	
+	.logo-mobile {
+		display: none;
+	}
+	
 	.mobile-menu-trigger {
 		display: none;	
 	}
@@ -3555,6 +3621,11 @@ a.shipping-calculator-button:hover {
 	
 	.bnt-container {
 		padding: 0; 
+	}
+	
+	.so-widget-sow-features .sow-features-list {
+		margin: 0 -25px;
+		margin: 0 -2.5rem;
 	}
 	
 	.novice-header-title {

@@ -1,0 +1,63 @@
+@charset "utf-8";
+/* Styles for the Customizer */
+
+.disabled-exp {
+	color: #333;
+    background: #FAFBC1;
+}
+
+#customize-controls .customize-control .description {
+	color: #999;
+}
+
+.customizer-bento-extras {
+	margin-bottom: -15px;
+}
+
+.bnt-customizer-link {
+	width: 100%;
+	display:block;
+	padding: 9px 15px;
+	box-sizing: border-box;
+	position: relative;
+	border-top: 1px solid #ddd
+}
+
+.bnt-customizer-link:hover {
+	background-color: #ddd
+}
+
+.bnt-customizer-link .dashicons {
+	font-size: 18px;
+	margin-right: 10px;
+}
+
+.bnt-customizer-link:after {
+	content: "›";
+	position: absolute;
+	top: -2px;
+	right: 0;
+	padding: 9px 15px;
+	line-height: 20px;
+	font-size: 20px;
+}
+
+.bnt-section-helper-top-margin {
+	margin-top: -15px;
+}
+
+.bnt-extra-link-last {
+	border-bottom: 1px solid #ddd;
+}
+
+.bnt-extra-link-rate {
+	color: #bdbd2b;
+}
+
+.bnt-extra-link-ep {
+	color: #ff8c00;
+}
+
+.bnt-support-link:first-child {
+	border-top: none;
+}

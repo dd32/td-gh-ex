@@ -3,19 +3,23 @@
 
 // Theme setup
 add_action( 'after_setup_theme', 'bnt_theme_setup' );
+add_action( 'after_setup_theme', 'bnt_exists' );
+add_action( 'switch_theme', 'bnt_deactivated' );
 
 function bnt_theme_setup() {
 	
 	// Features
+	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'automatic-feed-links' );
+	add_theme_support( 'customize-selective-refresh-widgets' );
 	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'quote', 'link', 'image' ) );
 	add_theme_support( 'woocommerce' ); 
+	add_theme_support( 'custom-logo' );
 	
 	// Actions
 	add_action( 'wp_enqueue_scripts', 'bnt_theme_styles_scripts' );
 	add_action( 'admin_enqueue_scripts', 'bnt_admin_scripts' );
-	add_action( 'customize_controls_enqueue_scripts', 'bnt_customizer_extras' );
 	add_action( 'template_redirect', 'bnt_theme_adjust_content_width' );
 	add_action( 'wp_head', 'bnt_favicon' );
 	add_action( 'wp_head', 'bnt_google_font' );
@@ -26,18 +30,29 @@ function bnt_theme_setup() {
 	add_action( 'wp_ajax_ajax_pagination', 'bnt_ajax_pagination' );
 	add_action( 'wp_ajax_nopriv_ajax_pagination', 'bnt_ajax_pagination' );
 	add_action( 'widgets_init', 'bnt_register_sidebars' );
+	add_action( 'wp_ajax_bnt_migrate_customizer_options', 'bnt_migrate_customizer_options' );
+	add_action( 'wp_ajax_nopriv_bnt_migrate_customizer_options', 'bnt_migrate_customizer_options' );
 		
 	// Filters
 	add_filter( 'excerpt_more', 'bnt_custom_excerpt_more' );
 	add_filter( 'body_class', 'bnt_extra_classes' );
 	add_filter( 'post_class', 'bnt_has_thumb_class' );
-	add_filter( 'wp_title', 'bnt_wp_title', 10, 2 );
 	add_filter( 'get_the_archive_title', 'bnt_cleaner_archive_titles' );
 	add_filter( 'cmb2_admin_init', 'bnt_metaboxes' );
 	add_filter( 'upload_mimes', 'bnt_font_uploading' );
+	add_filter( 'dynamic_sidebar_params', 'bnt_count_footer_widgets', 50 );
 	
 	// Languages
-	load_theme_textdomain( 'satori', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'bento', get_template_directory() . '/languages' );
+	
+	// Customizer options
+	if ( file_exists( get_template_directory() . '/includes/customizer/customizer.php' ) ) {
+		require_once( get_template_directory() . '/includes/customizer/customizer.php' );
+	}
+	add_action( 'customize_register', 'bnt_customize_register' );
+	add_action( 'customize_controls_print_styles', 'bnt_customizer_stylesheet' );
+	add_action( 'customize_controls_enqueue_scripts', 'bnt_customizer_scripts' );
+	add_action( 'admin_notices', 'bnt_customizer_admin_notice' );
 	
 	// SiteOrigin Content Builder integration
 	add_filter('siteorigin_panels_row_attributes', 'bnt_extra_row_attr', 10, 2);
@@ -72,7 +87,7 @@ function bnt_theme_styles_scripts () {
 	wp_register_script( 'imagesloaded', get_template_directory_uri().'/includes/isotope/imagesloaded.pkgd.min.js', array('jquery'), false, true );
 	wp_register_script( 'fitcolumns', get_template_directory_uri().'/includes/isotope/fit-columns.js', array('jquery'), false, true );
 	wp_register_script( 'fitvids', get_template_directory_uri().'/includes/fitvids/jquery.fitvids.js', array('jquery'), false, true );
-	wp_register_script( 'themescripts', get_template_directory_uri().'/includes/js/theme-scripts.js', array('jquery'), false, true );
+	wp_register_script( 'bento-theme-scripts', get_template_directory_uri().'/includes/js/theme-scripts.js', array('jquery'), false, true );
 	
 	// Enqueue scripts
 	wp_enqueue_script( 'isotope' );
@@ -80,7 +95,7 @@ function bnt_theme_styles_scripts () {
 	wp_enqueue_script( 'imagesloaded' );
 	wp_enqueue_script( 'fitcolumns' );
 	wp_enqueue_script( 'fitvids' );
-	wp_enqueue_script( 'themescripts' );
+	wp_enqueue_script( 'bento-theme-scripts' );
 	
 	// Register styles
 	wp_register_style( 'theme', get_template_directory_uri().'/style.css', array( 'dashicons' ), null, 'all' );
@@ -94,7 +109,8 @@ function bnt_theme_styles_scripts () {
 	bnt_localize_scripts();
 
 	// Inline styles for customizing the theme
-	wp_add_inline_style( 'theme', bnt_insert_custom_css() );
+	wp_add_inline_style( 'theme', bnt_insert_custom_styles() );
+	wp_add_inline_style( 'theme', bnt_customizer_css() );
 	    
 }
 
@@ -103,11 +119,29 @@ function bnt_theme_styles_scripts () {
 function bnt_admin_scripts () {
 	
 	// Register scripts
-	wp_register_script( 'admin', get_template_directory_uri().'/includes/js/admin-scripts.js', array('jquery'), false, true );
+	wp_register_script( 'bento-admin-scripts', get_template_directory_uri().'/includes/js/admin-scripts.js', array('jquery'), false, true );
 	
 	// Enqueue scripts
-	wp_enqueue_script( 'admin' );
+	wp_enqueue_script( 'bento-admin-scripts' );
 	
+	// Passing php variables to admin scripts
+	bnt_localize_admin_scripts();
+	
+}
+
+
+// Registed theme status for the Expansion Pack
+function bnt_exists() {
+	if ( ! get_option( 'bnt_theme' ) ) {
+		if ( function_exists( 'add_option' ) ) {
+			add_option( 'bnt_theme', 'enabled' );
+		}
+	} else {
+		update_option( 'bnt_theme', 'enabled' );
+	}
+}
+function bnt_deactivated() {
+	delete_option('bnt_theme');
 }
 
 
@@ -133,9 +167,9 @@ function bnt_localize_scripts() {
 	if ( get_post_meta( $postid, 'bnt_grid_full_width', true ) == 'on' ) {
 		$bnt_full_width_grid = 'on';
 	}
-    wp_localize_script( 'themescripts', 'phpvars', array(
-		'menu_config' => satori_option( 'bnt_menu_config' ),
-		'fixed_menu' => satori_option( 'bnt_fixed_header' ),
+    wp_localize_script( 'bento-theme-scripts', 'bntThemeVars', array(
+		'menu_config' => get_theme_mod( 'bnt_menu_config' ),
+		'fixed_menu' => get_theme_mod( 'bnt_fixed_header' ),
 		'ajaxurl' => admin_url( 'admin-ajax.php' ),
 	    'query_vars' => json_encode( $bnt_query->query ),
         'max_pages' => $bnt_max_pages,
@@ -143,10 +177,15 @@ function bnt_localize_scripts() {
 		'full_width_grid' => $bnt_full_width_grid,
     ));	
 }
+function bnt_localize_admin_scripts() {
+	wp_localize_script( 'bento-admin-scripts', 'bntAdminVars', array(
+		'ajaxurl' => admin_url( 'admin-ajax.php' ),
+	));
+}
 
 
 // Custom styles
-function bnt_insert_custom_css() {
+function bnt_insert_custom_styles() {
 	
 	$custom_css = '';
 	
@@ -197,445 +236,6 @@ function bnt_insert_custom_css() {
 		';
 	}
 	
-	// Theme Options: Layout and Background tab
-	$bnt_content_width_med_px = intval( satori_option( 'bnt_content_width' ) );
-	$bnt_content_width_med_rem = $bnt_content_width_med_px / 10;
-	$bnt_content_width_hi_px = $bnt_content_width_med_px + 360;
-	$bnt_content_width_hi_rem = $bnt_content_width_hi_px / 10;
-	$bnt_box_width_med_px = $bnt_box_width_med_rem = $bnt_box_width_hi_px = $bnt_box_width_hi_rem = 'none';
-	if ( satori_option( 'bnt_website_layout' ) == 1 ) {
-		$bnt_box_width_med_px = $bnt_content_width_med_px + 80;
-		$bnt_box_width_med_rem = $bnt_box_width_med_px / 10;
-		$bnt_box_width_hi_px = $bnt_content_width_hi_px + 120;
-		$bnt_box_width_hi_rem = $bnt_box_width_hi_px / 10;
-		$custom_css .= '
-			@media screen and (min-width: 80em) {
-				.site-wrapper {
-					max-width: '.$bnt_box_width_med_px.'px;
-					max-width: '.$bnt_box_width_med_rem.'rem;
-				}
-				.bnt-container {
-					max-width: '.$bnt_content_width_med_px.'px;
-					max-width: '.$bnt_content_width_med_rem.'rem;
-				}
-			}
-			@media screen and (min-width: 120em) {
-				.site-wrapper {
-					max-width: '.$bnt_box_width_hi_px.'px;
-					max-width: '.$bnt_box_width_hi_rem.'rem;
-				}
-				.bnt-container {
-					max-width: '.$bnt_content_width_hi_px.'px;
-					max-width: '.$bnt_content_width_hi_rem.'rem;
-				}
-			}
-		';
-		if ( satori_option( 'bnt_website_background' ) == 1 && satori_option( 'bnt_website_background_texture' ) != '' ) {
-			$custom_css .= '
-				body {
-					background-image: url('.satori_option( 'bnt_website_background_texture' ).');
-					background-repeat: repeat;
-				}
-			';
-		} elseif ( satori_option( 'bnt_website_background' ) == 2 && satori_option( 'bnt_website_background_image' ) != '' ) {
-			$custom_css .= '
-				body {
-					background-image: url('.satori_option( 'bnt_website_background_image' ).');
-					background-repeat: no-repeat;
-					background-position: center center;
-					background-size: cover;
-				}
-			';
-		} else {
-			$custom_css .= '
-				body {
-					background-color: '.satori_option( 'bnt_website_background_color' ).';
-				}
-			';
-		}
-	}
-	if ( satori_option( 'bnt_menu_config' ) == 2 ) {
-		$custom_css .= '
-			.header-menu {
-				background-color: '.satori_option( 'bnt_primary_menu_background' ).';
-			}
-		';
-	} else if ( satori_option( 'bnt_menu_config' ) == 3 ) {
-		$custom_css .= '
-			@media screen and (min-width: 48em) {
-				.primary-menu > li {
-					border-color: '.satori_option( 'bnt_menu_separators' ).';
-				}
-				.primary-menu .sub-menu li a:hover {
-					color: '.satori_option( 'bnt_primary_menu_text_hover_color' ).';
-				}
-				.primary-menu .sub-menu, .primary-menu .sub-menu li {
-					border-color: '.satori_option( 'bnt_menu_separators' ).' !important;
-				}
-			}
-		';
-	}
-	
-	// Theme Options: Fonts and Typography tab
-	$bnt_font_face_body = $bnt_font_face_headings = $bnt_font_face_menu = '';
-	$bnt_body_font = $bnt_headings_font = 'Open Sans';
-	$bnt_menu_font = 'Montserrat';
-	$bnt_body_text_size = $bnt_menu_text_size = 14;
-	if ( satori_option( 'bnt_font_body_upload' ) != '' ) {
-		$bnt_font_face_body = '
-			@font-face {
-				font-family: bodyFont;
-				src: url('.satori_option( 'bnt_font_body_upload' ).');
-			}
-		';
-		$bnt_body_font = 'bodyFont';
-	} else if ( satori_option( 'bnt_font_body' ) != '' ) {
-		$bnt_body_font = satori_option( 'bnt_font_body' );
-	}
-	if ( satori_option( 'bnt_font_headings_upload' ) != '' ) {
-		$bnt_font_face_headings = '
-			@font-face {
-				font-family: headingsFont;
-				src: url('.satori_option( 'bnt_font_headings_upload' ).');
-			}
-		';
-		$bnt_headings_font = 'headingsFont';
-	} else if ( satori_option( 'bnt_font_headings' ) != '' ) {
-		$bnt_headings_font = satori_option( 'bnt_font_headings' );
-	}
-	if ( satori_option( 'bnt_font_menu_upload' ) != '' ) {
-		$bnt_font_face_menu = '
-			@font-face {
-				font-family: menuFont;
-				src: url('.satori_option( 'bnt_font_menu_upload' ).');
-			}
-		';
-		$bnt_menu_font = 'menuFont';
-	} else if ( satori_option( 'bnt_font_menu' ) != '' ) {
-		$bnt_menu_font = satori_option( 'bnt_font_menu' );
-	}
-	if ( satori_option( 'bnt_text_size_body' ) != 14 ) {
-		$bnt_body_text_size = satori_option( 'bnt_text_size_body' );
-	}
-	if ( satori_option( 'bnt_text_size_menu' ) != 14 ) {
-		$bnt_menu_text_size = satori_option( 'bnt_text_size_menu' );
-	}
-	$bnt_body_text_size_em = $bnt_body_text_size / 10;
-	$bnt_menu_text_size_rem = $bnt_menu_text_size / 10;
-	if ( satori_option( 'bnt_menu_config' ) == 3 ) {
-		$bnt_menu_parent_after = ( $bnt_menu_text_size_rem * 2 + 2 ) / 1.2;
-	} else {
-		$bnt_menu_parent_after = $bnt_menu_text_size_rem * 6 / 1.2;
-	}
-	$custom_css .= 
-		$bnt_font_face_body.
-		$bnt_font_face_headings.
-		$bnt_font_face_menu.'
-		body {
-			font-family: '.$bnt_body_font.', Arial, sans-serif;
-			font-size: '.$bnt_body_text_size.'px;
-			font-size: '.$bnt_body_text_size_em.'em;
-		}
-		.site-content h1, 
-		.site-content h2, 
-		.site-content h3, 
-		.site-content h4, 
-		.site-content h5, 
-		.site-content h6 {
-			font-family: '.$bnt_headings_font.', Arial, sans-serif;
-		}
-		#nav-primary {
-			font-family: '.$bnt_menu_font.', Arial, sans-serif;
-		}
-		.primary-menu > li > a {
-			font-size: '.$bnt_menu_text_size.'px;
-			font-size: '.$bnt_menu_text_size_rem.'rem;
-		}
-		.primary-menu > .menu-item-has-children > a:after {
-			line-height: '.$bnt_menu_parent_after.';
-		}
-	';
-	if ( satori_option( 'bnt_sentence_case_menu' ) == 1 ) {
-		$custom_css .= '
-			#nav-primary {
-				text-transform: none;
-			}
-		';
-	}
-	
-	// Theme Options: Header Colors tab
-	$custom_css .= '
-		.site-header {
-			background: '.satori_option( 'bnt_header_background_color' ).';
-		}
-		.primary-menu > li > a,
-		#nav-mobile li a,
-		.mobile-menu-trigger,
-		.mobile-menu-close,
-		.ham-menu-close {
-			color: '.satori_option( 'bnt_primary_menu_text_color' ).';
-		}
-		.primary-menu > li > a:hover,
-		.primary-menu > li.current-menu-item > a,
-		.primary-menu > li.current-menu-ancestor > a {
-			color: '.satori_option( 'bnt_primary_menu_text_hover_color' ).';
-		}
-		.primary-menu .sub-menu,
-		#nav-mobile {
-			background-color: '.satori_option( 'bnt_primary_menu_submenu_background_color' ).';
-		}
-		.primary-menu .sub-menu li a:hover,
-		.primary-menu .sub-menu .current-menu-item:not(.current-menu-ancestor) > a,
-		#nav-mobile li a:hover,
-		#nav-mobile .current-menu-item:not(.current-menu-ancestor) > a {
-			background-color: '.satori_option( 'bnt_primary_menu_submenu_background_hover_color' ).';
-		}
-		.primary-menu .sub-menu,
-		.primary-menu .sub-menu li,
-		#nav-mobile li a,
-		#nav-mobile .primary-mobile-menu > li:first-child > a {
-			border-color: '.satori_option( 'bnt_primary_menu_submenu_border_color' ).';
-		}
-		.primary-menu .sub-menu li a {
-			color: '.satori_option( 'bnt_primary_menu_submenu_text_color' ).'; 
-		}
-		.primary-menu .sub-menu li:hover a {
-			color: '.satori_option( 'bnt_primary_menu_submenu_text_hover_color' ).'; 
-		}
-		#nav-mobile {
-			background-color: '.satori_option( 'bnt_mobile_menu_background_color' ).';
-		}
-		#nav-mobile li a,
-		.mobile-menu-trigger,
-		.mobile-menu-close {
-			color: '.satori_option( 'bnt_mobile_menu_text_color' ).';
-		}
-		#nav-mobile li a:hover,
-		#nav-mobile .current-menu-item:not(.current-menu-ancestor) > a {
-			background-color: '.satori_option( 'bnt_mobile_menu_background_hover_color' ).';
-		}
-		#nav-mobile li a,
-		#nav-mobile .primary-mobile-menu > li:first-child > a {
-			border-color: '.satori_option( 'bnt_mobile_menu_border_color' ).';	
-		}
-		#nav-mobile li a:hover,
-		.mobile-menu-trigger-container:hover,
-		.mobile-menu-close:hover {
-			color: '.satori_option( 'bnt_mobile_menu_text_hover_color' ).';
-		}
-	';
-	
-	// Theme Options: Content Colors tab
-	$custom_css .= '
-		.site-content {
-			background-color: '.satori_option( 'bnt_content_background_color' ).';
-		}
-		.site-content h1, 
-		.site-content h2, 
-		.site-content h3, 
-		.site-content h4, 
-		.site-content h5, 
-		.site-content h6 {
-			color: '.satori_option( 'bnt_content_heading_text_color' ).';
-		}
-		.products .product a h3,
-		.masonry-item-box a h2 {
-			color: inherit;	
-		}
-		.site-content {
-			color: '.satori_option( 'bnt_content_body_text_color' ).';
-		}
-		.site-content a:not(.masonry-item-link):not(.page-numbers):not(.ajax-load-more):not(.remove):not(.button) {
-			color: '.satori_option( 'bnt_content_link_text_color' ).';
-		}
-		.page-link-text:not(:hover) {
-			color: #00B285;
-		}
-		label,
-		.wp-caption-text,
-		.post-date-blog,
-		.entry-footer, 
-		.archive-header .archive-description, 
-		.comment-meta,
-		.comment-notes,
-		.project-types,
-		.widget_archive li,
-		.widget_categories li,
-		.widget .post-date,
-		.widget_calendar table caption,
-		.widget_calendar table th,
-		.widget_recent_comments .recentcomments,
-		.product .price del,
-		.widget del,
-		.widget del .amount,
-		.product_list_widget a.remove,
-		.product_list_widget .quantity,
-		.product-categories .count,
-		.product_meta,
-		.shop_table td.product-remove a,
-		.woocommerce-checkout .payment_methods .wc_payment_method .payment_box {
-			color: '.satori_option( 'bnt_content_meta_text_color' ).';
-		}
-		hr,
-		.entry-content table,
-		.entry-content td,
-		.entry-content th,
-		.separator-line,
-		.comment .comment .comment-nested,
-		.comment-respond,
-		.site-footer .widget_recent_entries ul li,
-		.site-footer .widget_recent_comments ul li,
-		.site-footer .widget_categories ul li,
-		.site-footer .widget_archive ul li,
-		.site-footer .widget_product_categories ul li,
-		.woocommerce .site-footer .widget-woo .product_list_widget li,
-		.woocommerce .site-footer .widget-woo .cart_list li:last-child,
-		.woocommerce-tabs .tabs,
-		.woocommerce-tabs .tabs li.active,
-		.cart_item,
-		.cart_totals .cart-subtotal,
-		.cart_totals .order-total,
-		.woocommerce-checkout-review-order table tfoot,
-		.woocommerce-checkout-review-order table tfoot .order-total,
-		.woocommerce-checkout-review-order table tfoot .shipping {
-			border-color: '.satori_option( 'bnt_content_delimiter_color' ).';	
-		}
-		input[type="text"], 
-		input[type="password"], 
-		input[type="email"], 
-		input[type="number"], 
-		input[type="tel"], 
-		input[type="search"], 
-		textarea, 
-		select, 
-		.select2-container {
-			background-color: '.satori_option( 'bnt_content_input_background_color' ).';
-			color: '.satori_option( 'bnt_content_input_text_color' ).';
-		}
-		::-webkit-input-placeholder { 
-			color: '.satori_option( 'bnt_content_input_placeholder_color' ).'; 
-		}
-		::-moz-placeholder { 
-			color: '.satori_option( 'bnt_content_input_placeholder_color' ).'; 
-		}
-		:-ms-input-placeholder { 
-			color: '.satori_option( 'bnt_content_input_placeholder_color' ).'; 
-		}
-		input:-moz-placeholder { 
-			color: '.satori_option( 'bnt_content_input_placeholder_color' ).'; 
-		}
-		.pagination a.page-numbers:hover,
-		.woocommerce-pagination a.page-numbers:hover,
-		.site-content a.ajax-load-more:hover,
-		.page-links .page-link-text:hover,
-		.widget_price_filter .ui-slider .ui-slider-range, 
-		.widget_price_filter .ui-slider .ui-slider-handle,
-		input[type="submit"],
-		.site-content .button,
-		.widget_price_filter .ui-slider .ui-slider-range, 
-		.widget_price_filter .ui-slider .ui-slider-handle {
-			background-color: '.satori_option( 'bnt_content_button_background_color' ).';	
-		}
-		.pagination a.page-numbers:hover,
-		.woocommerce-pagination a.page-numbers:hover,
-		.site-content a.ajax-load-more:hover,
-		.page-links .page-link-text:hover {
-			border-color: '.satori_option( 'bnt_content_button_background_color' ).';
-		}
-		.page-link-text:not(:hover),
-		.pagination a, 
-		.woocommerce-pagination a,
-		.site-content a.ajax-load-more {
-			color: '.satori_option( 'bnt_content_button_background_color' ).';
-		}
-		input[type="submit"]:hover,
-		.site-content .button:hover {
-			background-color: '.satori_option( 'bnt_content_button_hover_background_color' ).';
-		}
-		input[type="submit"],
-		.site-content .button,
-		.pagination a.page-numbers:hover,
-		.woocommerce-pagination a.page-numbers:hover,
-		.site-content a.ajax-load-more:hover,
-		.page-links .page-link-text:hover {
-			color: '.satori_option( 'bnt_content_button_text_color' ).';	
-		}
-		input[type="submit"]:hover,
-		.site-content .button:hover {
-			color: '.satori_option( 'bnt_content_button_text_hover_color' ).';
-		}
-		.shop_table .actions .button,
-		.shipping-calculator-form .button,
-		.checkout_coupon .button,
-		.widget_shopping_cart .button:first-child,
-		.price_slider_amount .button {
-			background-color: '.satori_option( 'bnt_content_secondary_button_background_color' ).';
-		}
-		.shop_table .actions .button:hover,
-		.shipping-calculator-form .button:hover,
-		.checkout_coupon .button:hover,
-		.widget_shopping_cart .button:first-child:hover,
-		.price_slider_amount .button:hover {
-			background-color: '.satori_option( 'bnt_content_secondary_button_hover_background_color' ).';
-		}
-		.shop_table .actions .button,
-		.shipping-calculator-form .button,
-		.checkout_coupon .button,
-		.widget_shopping_cart .button:first-child,
-		.price_slider_amount .button {
-			color: '.satori_option( 'bnt_content_secondary_button_text_color' ).';
-		}
-		.shop_table .actions .button:hover,
-		.shipping-calculator-form .button:hover,
-		.checkout_coupon .button:hover,
-		.widget_shopping_cart .button:first-child:hover,
-		.price_slider_amount .button:hover {
-			color: '.satori_option( 'bnt_content_secondary_button_text_hover_color' ).';
-		}
-	';
-	
-	// Theme Options: Footer Colors tab
-	$custom_css .= '
-		.sidebar-footer {
-			background-color: '.satori_option( 'bnt_footer_widgets_background_color' ).';
-		}
-		.site-footer {
-			color: '.satori_option( 'bnt_footer_text_color' ).';
-		}
-		.site-footer a {
-			color: '.satori_option( 'bnt_footer_link_text_color' ).';
-		}
-		.site-footer label, 
-		.site-footer .post-date-blog, 
-		.site-footer .entry-footer, 
-		.site-footer .comment-meta, 
-		.site-footer .comment-notes, 
-		.site-footer .widget_archive li, 
-		.site-footer .widget_categories li, 
-		.site-footer .widget .post-date, 
-		.site-footer .widget_calendar table caption, 
-		.site-footer .widget_calendar table th, 
-		.site-footer .widget_recent_comments .recentcomments {
-			color: '.satori_option( 'bnt_footer_meta_text_color' ).';
-		}
-		.sidebar-footer .widget_recent_entries ul li, 
-		.sidebar-footer .widget_recent_comments ul li, 
-		.sidebar-footer .widget_categories ul li, 
-		.sidebar-footer .widget_archive ul li {
-			border-color: '.satori_option( 'bnt_footer_delimiter_color' ).';
-		}
-		.bottom-footer {
-			background-color: '.satori_option( 'bnt_footer_bottom_background_color' ).';
-			color: '.satori_option( 'bnt_footer_bottom_text_color' ).';
-		}
-		.bottom-footer a {
-			color: '.satori_option( 'bnt_footer_bottom_link_text_color' ).';
-		}
-	';
-	
-	// Theme Options: Custom CSS tab
-	$custom_css .= satori_option( 'bnt_custom_css' );
-	
 	// Individual page/post settings
 	$postid = '';
 	if ( is_object($post) ) {
@@ -656,7 +256,7 @@ function bnt_insert_custom_css() {
 	if ( get_post_meta( $postid, 'bnt_hide_title', true ) == 'on' ) {
 		$custom_css .= '
 			.post-header-title h1,
-			.entry-title,
+			.entry-title:not(.grid-item-header .entry-title),
 			.post-header-subtitle { 
 				display: none;
 			}
@@ -732,7 +332,7 @@ function bnt_insert_custom_css() {
 				}
 			}
 		';
-		if ( get_post_meta( $postid, 'bnt_transparent_header', true ) == 'on' && satori_option( 'bnt_menu_config' ) != 'side' ) {
+		if ( get_post_meta( $postid, 'bnt_transparent_header', true ) == 'on' && get_theme_mod( 'bnt_menu_config' ) != 'side' ) {
 			$custom_css .= '
 				.site-header.no-fixed-header {
 					background: transparent;
@@ -740,6 +340,9 @@ function bnt_insert_custom_css() {
 					top: 0;
 					width: 100%;
 					z-index: 1;
+				}
+				.primary-menu > li > .sub-menu {
+					border-top-color: transparent;
 				}
 				.no-fixed-header .primary-menu > li > a, 
 				.mobile-menu-trigger,
@@ -754,55 +357,6 @@ function bnt_insert_custom_css() {
 	}	
 	
 	return $custom_css;
-}
-
-
-// Additional Customizer content
-function bnt_customizer_extras() {
-	wp_register_script( 'bnt_customizer', get_template_directory_uri().'/includes/js/customizer-scripts.js', array('jquery'), false, true );
-	wp_enqueue_script( 'bnt_customizer' );
-	wp_localize_script( 'bnt_customizer', 'phpvars', array(
-		'options' => __( 'Go to Theme Options', 'satori' ),
-		'adminurl' => get_admin_url( null, 'themes.php?page=theme-options'),
-		'exp' => __( 'Get the Expansion Pack', 'satori' ),
-		'review' => __( 'Rate the theme (thanks!)', 'satori' ),
-		'documentation' => __( 'View theme manual', 'satori' ),
-	) );
-}
-
-
-// Set meta title
-function bnt_wp_title( $title, $sep ) {
-	global $post;
-	$suffix = get_bloginfo('name');
-	
-	// Custom separator
-	if ( satori_option( 'bnt_meta_title_separator' ) != '' ) {
-		$sep = ' ' . satori_option( 'bnt_meta_title_separator' ) . ' ';
-	}
-	
-	// Pages and posts
-	if ( is_singular($post) && get_post_meta($post->ID, 'bnt_meta_title', true) != '' ) {
-		$title = get_post_meta($post->ID, 'bnt_meta_title', true) . ' ' . $sep . ' ';
-		
-	// Front page
-	} else if ( is_front_page() ) {
-		if ( satori_option( 'bnt_front_meta_title' ) != '' ) {
-			$title = satori_option( 'bnt_front_meta_title' );
-		} else {
-			$title = $suffix;
-		}
-	}
-	
-	// Custom suffix
-	if ( satori_option( 'bnt_meta_title_suffix' ) != '' ) {
-		$suffix = satori_option( 'bnt_meta_title_suffix' );
-	}
-	if ( ! is_front_page() ) {
-		$title .= $suffix;
-	}
-	
-	return $title;
 }
 
 
@@ -830,16 +384,10 @@ function bnt_theme_adjust_content_width() {
 }
 
 
-// Initialize theme options
-if ( file_exists( get_template_directory() . '/includes/theme-options/class-satori-theme-options.php' ) ) {
-	require_once( get_template_directory() . '/includes/theme-options/class-satori-theme-options.php' );
-}
-
-
 // Custom favicon
 function bnt_favicon() {
-	if ( satori_option( 'bnt_favicon' ) ) {
-		echo '<link rel="shortcut icon" href="'.satori_option( 'bnt_favicon' ).'" />';
+	if ( get_theme_mod( 'site_icon' ) ) {
+		echo '<link rel="shortcut icon" href="'.esc_url( get_theme_mod( 'site_icon' ) ).'" />';
 	}
 }
 
@@ -878,7 +426,7 @@ function bnt_register_sidebars() {
 			array(
 				'name'=>'Footer',
 				'id' => 'bnt_footer',
-				'before_widget' => '<div id="%1$s" class="widget widget-footer %2$s '.bnt_count_active_widgets().' clear">',
+				'before_widget' => '<div id="%1$s" class="widget widget-footer %2$s clear">',
 				'after_widget' => '</div>',
 				'before_title' => '<h3 class="widget-title">',
 				'after_title' => '</h3>',
@@ -941,7 +489,7 @@ function bnt_register_required_plugins() {
 
 // Custom excerpt ellipses
 function bnt_custom_excerpt_more($more) {
-	return __('Continue reading', 'satori').' &rarr;';
+	return __('Continue reading', 'bento').' &rarr;';
 }
 
 
@@ -967,11 +515,15 @@ function bnt_extra_classes( $classes ) {
 				}
 			}
 		} else {
-			if ( ! is_active_sidebar( 'bnt_sidebar' ) || get_post_meta( $postid, 'bnt_sidebar_layout', true ) == 'full-width' ) {
+			if ( ( ! is_active_sidebar( 'bnt_sidebar' ) && get_post_type( $postid ) != 'project' ) || get_post_meta( $postid, 'bnt_sidebar_layout', true ) == 'full-width' ) {
 				$classes[] = 'no-sidebar';
 			} else {
 				$classes[] = 'has-sidebar';
-				$classes[] = get_post_meta( $postid, 'bnt_sidebar_layout', true );
+				if ( get_post_meta( $postid, 'bnt_sidebar_layout', true ) != '' ) {
+					$classes[] = get_post_meta( $postid, 'bnt_sidebar_layout', true );
+				} else {
+					$classes[] = 'right-sidebar';
+				}
 			}
 		}
 	} else {
@@ -1003,7 +555,7 @@ function bnt_extra_classes( $classes ) {
 	}
 	
 	// Boxed website layout
-	if ( satori_option( 'bnt_website_layout' ) == 1 ) {
+	if ( get_theme_mod( 'bnt_website_layout' ) == 1 ) {
 		$classes[] = 'boxed-layout';
 	}
 	
@@ -1013,11 +565,11 @@ function bnt_extra_classes( $classes ) {
 	}
 	
 	// Header configuration
-	if ( satori_option( 'bnt_menu_config' ) == 1 ) {
+	if ( get_theme_mod( 'bnt_menu_config' ) == 1 ) {
 		$classes[] = 'header-centered';
-	} else if ( satori_option( 'bnt_menu_config' ) == 2 ) {
+	} else if ( get_theme_mod( 'bnt_menu_config' ) == 2 ) {
 		$classes[] = 'header-hamburger';
-	} else if ( satori_option( 'bnt_menu_config' ) == 3 ) {
+	} else if ( get_theme_mod( 'bnt_menu_config' ) == 3 ) {
 		$classes[] = 'header-side';
 	} else {
 		$classes[] = 'header-default';
@@ -1025,7 +577,7 @@ function bnt_extra_classes( $classes ) {
 	
 	// WooCommerce shop columns
 	if ( class_exists( 'WooCommerce' ) && is_shop() ) {
-		$classes[] = 'shop-columns-'.satori_option( 'bnt_wc_shop_columns' );
+		$classes[] = 'shop-columns-'.get_theme_mod( 'bnt_wc_shop_columns' );
 	}
 	
     return $classes;
@@ -1073,10 +625,29 @@ function bnt_font_uploading( $existing_mimes ){
 
 
 // Count the number of active widgets
-function bnt_count_active_widgets() {
-	$the_sidebars = wp_get_sidebars_widgets();
-	$footer_widget_class = 'column-'.count( $the_sidebars['bnt_footer'] );
-	return $footer_widget_class;
+function bnt_count_footer_widgets( $params ) {
+	global $wp_registered_widgets;
+	global $sidebars_widgets;
+	$widget_count = 0;
+	if ( isset ( $sidebars_widgets['bnt_footer'] ) ) {
+		foreach ( $sidebars_widgets['bnt_footer'] as $widget_id ) {
+			$widget_options = get_option( 'widget_' . $wp_registered_widgets[ $widget_id ]['callback'][0]->id_base );
+			$widget_number = preg_replace( '/[^0-9.]+/i', '', $widget_id );
+			$current_widget_options = $widget_options[ $widget_number ];
+			if ( function_exists( 'pll_current_language' ) ) {
+				if ( $current_widget_options['pll_lang'] == pll_current_language() ) {
+					$widget_count++;
+				}
+			} else {
+				$widget_count ++;
+			}
+		}
+	}	
+	if ( isset( $params[0]['id'] ) && $params[0]['id'] == 'bnt_footer' ) {
+		$class = 'class="column-'.$widget_count.' '; 
+		$params[0]['before_widget'] = str_replace('class="', $class, $params[0]['before_widget']);
+	}
+	return $params;
 }
 
 
@@ -1122,7 +693,11 @@ function bnt_grid_query() {
 	$bnt_grid_query_args = array();
 	$post_types = get_post_meta( $post_id, 'bnt_page_content_types', true );
 	$bnt_grid_query_args['post_type'] = $post_types;
-	$bnt_paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+	if ( is_front_page() ) {
+		$bnt_paged = ( get_query_var('page') ) ? get_query_var('page') : 1;
+	} else {
+		$bnt_paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+	}
 	$bnt_grid_query_args['paged'] = $bnt_paged;
 	$bnt_grid_number_items = get_post_meta( $post_id, 'bnt_page_number_items', true );
 	if ( ctype_digit($bnt_grid_number_items) && ctype_digit($bnt_grid_number_items) != 0 ) {
@@ -1177,38 +752,66 @@ function bnt_metaboxes() {
 	$bnt_seo_settings = new_cmb2_box( 
 		array(
 			'id'            => 'seo_settings_metabox',
-			'title'         => __( 'SEO Settings', 'satori' ),
+			'title'         => __( 'SEO Settings', 'bento' ),
 			'object_types'  => array( 'post', 'page', 'project', 'product' ),
 			'context'       => 'normal',
 			'priority'      => 'low',
 			'show_names'	=> true,
 		) 
 	);
-	$bnt_seo_settings->add_field(
-		array(
-			'name' => __( 'Meta title', 'satori' ),
-			'desc' => __( 'Input the meta title - the text to be used by search engines as well as browser tabs (recommended max length - 60 symbols); the post title will be used by default if this field is empty.', 'satori' ),
-			'id' => $bnt_prefix . 'meta_title',
-			'type' => 'text',
-		)
-	);
-	$bnt_seo_settings->add_field(
-		array(
-			'name' => __( 'Meta description', 'satori' ),
-			'desc' => __( 'Input the meta description - the text to be used by search engines on search result pages (recommended max length - 160 symbols); the first part of the post body will be used by default is this field is left blank.', 'satori' ),
-			'id' => $bnt_prefix . 'meta_description',
-			'type' => 'textarea',
-			'attributes' => array(
-				'rows' => 3,
-			),
-		)
-	);
+	if ( get_option( 'bnt_ep_license_status' ) == 'valid' ) {
+		$bnt_seo_settings->add_field(
+			array(
+				'name' => __( 'Meta title', 'bento' ),
+				'desc' => __( 'Input the meta title - the text to be used by search engines as well as browser tabs (recommended max length - 60 symbols); the post title will be used by default if this field is empty.', 'bento' ),
+				'id' => $bnt_prefix . 'meta_title',
+				'type' => 'text',
+			)
+		);
+		$bnt_seo_settings->add_field(
+			array(
+				'name' => __( 'Meta description', 'bento' ),
+				'desc' => __( 'Input the meta description - the text to be used by search engines on search result pages (recommended max length - 160 symbols); the first part of the post body will be used by default is this field is left blank.', 'bento' ),
+				'id' => $bnt_prefix . 'meta_description',
+				'type' => 'textarea',
+				'attributes' => array(
+					'rows' => 3,
+				),
+			)
+		);
+	} else {
+		$bnt_seo_settings->add_field(
+			array(
+				'name' => __( 'Meta title', 'bento' ),
+				'desc' => sprintf( __( 'Install the %s to set the meta title for individual posts and pages', 'bento' ), $bnt_ep_url ),
+				'id' => $bnt_prefix . 'meta_title',
+				'type' => 'text',
+				'attributes'  => array(
+					'readonly' => 'readonly',
+					'disabled' => 'disabled',
+				),
+			)
+		);
+		$bnt_seo_settings->add_field(
+			array(
+				'name' => __( 'Meta description', 'bento' ),
+				'desc' => sprintf( __( 'Install the %s to set the meta description for individual posts and pages', 'bento' ), $bnt_ep_url ),
+				'id' => $bnt_prefix . 'meta_description',
+				'type' => 'textarea',
+				'attributes' => array(
+					'rows' => 3,
+					'readonly' => 'readonly',
+					'disabled' => 'disabled',
+				),
+			)
+		);
+	}
 	
 	// General page/post settings
 	$bnt_general_settings = new_cmb2_box( 
 		array(
 			'id'            => 'post_settings_metabox',
-			'title'         => __( 'General Settings', 'satori' ),
+			'title'         => __( 'General Settings', 'bento' ),
 			'object_types'  => array( 'post', 'page', 'project', 'product' ),
 			'context'       => 'normal',
 			'priority'      => 'low',
@@ -1217,75 +820,75 @@ function bnt_metaboxes() {
 	);
 	$bnt_general_settings->add_field(
 		array(
-			'name' => __( 'Sidebar layout', 'satori' ),
-			'desc' => __( 'Choose whether to display a sidebar and on which side of the content', 'satori' ),
+			'name' => __( 'Sidebar layout', 'bento' ),
+			'desc' => __( 'Choose whether to display a sidebar and on which side of the content', 'bento' ),
 			'id' => $bnt_prefix . 'sidebar_layout',
 			'type' => 'select',
 			'options' => array(
-				'right-sidebar' => __( 'Right Sidebar (default)', 'satori' ),
-				'left-sidebar' => __( 'Left Sidebar', 'satori' ),
-				'full-width' => __( 'Full Width', 'satori' ),
+				'right-sidebar' => __( 'Right Sidebar (default)', 'bento' ),
+				'left-sidebar' => __( 'Left Sidebar', 'bento' ),
+				'full-width' => __( 'Full Width', 'bento' ),
 			),
 			'default' => 'right-sidebar',
 		)
 	);
 	$bnt_general_settings->add_field(
 		array(
-			'name' => __( 'Page background color', 'satori' ),
-			'desc' => __( 'Choose the background color for current page/post. This will override any settings in the Theme Options', 'satori' ),
+			'name' => __( 'Page background color', 'bento' ),
+			'desc' => __( 'Choose the background color for current page/post. This will override any settings in the Theme Options', 'bento' ),
 			'id' => $bnt_prefix . 'page_background_color',
 			'type' => 'colorpicker',
 		)
 	);
 	$bnt_general_settings->add_field(
 		array(
-			'name' => __( 'Hide title', 'satori' ),
-			'desc' => __( 'Check this option if you DO NOT want to display the title on the page', 'satori' ),
+			'name' => __( 'Hide title', 'bento' ),
+			'desc' => __( 'Check this option if you DO NOT want to display the title on the page', 'bento' ),
 			'id' => $bnt_prefix . 'hide_title',
 			'type' => 'checkbox',
 		)
 	);
 	$bnt_general_settings->add_field(
 		array(
-			'name' => __( 'Uppercase title', 'satori' ),
-			'desc' => __( 'Check this option if you want the page title to be entirely in uppercase (useful for landing pages).', 'satori' ),
+			'name' => __( 'Uppercase title', 'bento' ),
+			'desc' => __( 'Check this option if you want the page title to be entirely in uppercase (useful for landing pages).', 'bento' ),
 			'id' => $bnt_prefix . 'uppercase_title',
 			'type' => 'checkbox',
 		)
 	);
 	$bnt_general_settings->add_field(
 		array(
-			'name' => __( 'Title position', 'satori' ),
-			'desc' => __( 'Choose the position of the title; default is left-aligned.', 'satori' ),
+			'name' => __( 'Title position', 'bento' ),
+			'desc' => __( 'Choose the position of the title; default is left-aligned.', 'bento' ),
 			'id' => $bnt_prefix . 'title_position',
 			'type' => 'select',
 			'options' => array(
-				'left' => __( 'Left-aligned (default)', 'satori' ),
-				'center' => __( 'Centered', 'satori' ),
+				'left' => __( 'Left-aligned (default)', 'bento' ),
+				'center' => __( 'Centered', 'bento' ),
 			),
 			'default' => 'left',
 		)
 	);
 	$bnt_general_settings->add_field(
 		array(
-			'name' => __( 'Title color', 'satori' ),
-			'desc' => __( 'Choose the text color for the title of this post. This will override any settings in the Theme Options', 'satori' ),
+			'name' => __( 'Title color', 'bento' ),
+			'desc' => __( 'Choose the text color for the title of this post. This will override any settings in the Theme Options', 'bento' ),
 			'id' => $bnt_prefix . 'title_color',
 			'type' => 'colorpicker',
 		)
 	);
 	$bnt_general_settings->add_field(
 		array(
-			'name' => __( 'Subtitle', 'satori' ),
-			'desc' => __( 'Input the subtitle for the page.', 'satori' ),
+			'name' => __( 'Subtitle', 'bento' ),
+			'desc' => __( 'Input the subtitle for the page.', 'bento' ),
 			'id' => $bnt_prefix . 'subtitle',
 			'type' => 'textarea',
 		)
 	);
 	$bnt_general_settings->add_field(
 		array(
-			'name' => __( 'Subtitle color', 'satori' ),
-			'desc' => __( 'Choose the text color for the subtitle of this page; default is #999999 (light grey).', 'satori' ),
+			'name' => __( 'Subtitle color', 'bento' ),
+			'desc' => __( 'Choose the text color for the subtitle of this page; default is #999999 (light grey).', 'bento' ),
 			'id' => $bnt_prefix . 'subtitle_color',
 			'type' => 'colorpicker',
 			'default' => '#999999',
@@ -1296,7 +899,7 @@ function bnt_metaboxes() {
 	$bnt_header_settings = new_cmb2_box( 
 		array(
 			'id'            => 'post_header_metabox',
-			'title'         => __( 'Page Header Settings', 'satori' ),
+			'title'         => __( 'Page Header Settings', 'bento' ),
 			'object_types'  => array( 'post', 'page', 'project', 'product' ),
 			'context'       => 'normal',
 			'priority'      => 'low',
@@ -1305,22 +908,22 @@ function bnt_metaboxes() {
 	);
 	$bnt_header_settings->add_field(
 		array(
-			'name' => __( 'Activate extended header', 'satori' ),
-			'desc' => __( 'Check this box to enable extended header options such as header image and call-to-action-buttons.', 'satori' ),
+			'name' => __( 'Activate extended header', 'bento' ),
+			'desc' => __( 'Check this box to enable extended header options such as header image and call-to-action-buttons.', 'bento' ),
 			'id' => $bnt_prefix . 'activate_header',
 			'type' => 'checkbox',
 		)
 	);
 	$bnt_header_settings->add_field(
 		array(
-			'name' => __( 'Header height', 'satori' ),
-			'desc' => __( 'Choose the title top and bottom padding, which will affect the header height; default is 10%', 'satori' ),
+			'name' => __( 'Header height', 'bento' ),
+			'desc' => __( 'Choose the title top and bottom padding, which will affect the header height; default is 10%', 'bento' ),
 			'id' => $bnt_prefix . 'header_image_height',
 			'type' => 'select',
 			'options' => array(
-				'' => __( 'Choose value', 'satori' ),
+				'' => __( 'Choose value', 'bento' ),
 				'5%' => '5%',
-				'10%' => __( '10% (default)', 'satori' ),
+				'10%' => __( '10% (default)', 'bento' ),
 				'15%' => '15%',
 				'20%' => '20%',
 				'25%' => '25%',
@@ -1330,8 +933,8 @@ function bnt_metaboxes() {
 	);
 	$bnt_header_settings->add_field(
 		array(
-			'name' => __( 'Header image', 'satori' ),
-			'desc' => __( 'Upload the image to serve as the header; recommended size is 1400x300 pixels and above, yet mind the file size - excessively large images may worsen user experience', 'satori' ),
+			'name' => __( 'Header image', 'bento' ),
+			'desc' => __( 'Upload the image to serve as the header; recommended size is 1400x300 pixels and above, yet mind the file size - excessively large images may worsen user experience', 'bento' ),
 			'id' => $bnt_prefix . 'header_image',
 			'type' => 'file',
 		)
@@ -1339,8 +942,8 @@ function bnt_metaboxes() {
 	if ( get_option( 'bnt_ep_license_status' ) == 'valid' ) {
 		$bnt_header_settings->add_field(
 			array(
-				'name' => __( 'Header video', 'satori' ),
-				'desc' => __( 'Upload the video file to be used as header background; if this is active, the header image will serve as a placeholder for mobile devices; .mp4 files are recommended, but you can also use .ogv and .webm formats. Please mind the file size - excessively large images may worsen user experience', 'satori' ),
+				'name' => __( 'Header video', 'bento' ),
+				'desc' => __( 'Upload the video file to be used as header background; if this is active, the header image will serve as a placeholder for mobile devices; .mp4 files are recommended, but you can also use .ogv and .webm formats. Please mind the file size - excessively large images may worsen user experience', 'bento' ),
 				'id' => $bnt_prefix . 'header_video_source',
 				'type' => 'file',
 			)
@@ -1348,24 +951,24 @@ function bnt_metaboxes() {
 	}
 	$bnt_header_settings->add_field(
 		array(
-			'name' => __( 'Header image overlay color', 'satori' ),
-			'desc' => __( 'Choose the color for the image overlay, designed to make the title text stand out more clearly', 'satori' ),
+			'name' => __( 'Header image overlay color', 'bento' ),
+			'desc' => __( 'Choose the color for the image overlay, designed to make the title text stand out more clearly', 'bento' ),
 			'id' => $bnt_prefix . 'header_overlay',
 			'type' => 'colorpicker',
 		)
 	);
 	$bnt_header_settings->add_field(
 		array(
-			'name' => __( 'Header image overlay opacity', 'satori' ),
-			'desc' => __( 'Choose the opacity level for the image overlay; 0.0 is fully transparent, 1.0 is fully opaque, default is 0.3', 'satori' ),
+			'name' => __( 'Header image overlay opacity', 'bento' ),
+			'desc' => __( 'Choose the opacity level for the image overlay; 0.0 is fully transparent, 1.0 is fully opaque, default is 0.3', 'bento' ),
 			'id' => $bnt_prefix . 'header_overlay_opacity',
 			'type' => 'select',
 			'options' => array(
-				'' => __( 'Choose value', 'satori' ),
+				'' => __( 'Choose value', 'bento' ),
 				'0.0' => '0.0',
 				'0.1' => '0.1',
 				'0.2' => '0.2',
-				'0.3' => __( '0.3 (default)', 'satori' ),
+				'0.3' => __( '0.3 (default)', 'bento' ),
 				'0.4' => '0.4',
 				'0.5' => '0.5',
 				'0.6' => '0.6',
@@ -1379,48 +982,48 @@ function bnt_metaboxes() {
 	);
 	$bnt_header_settings->add_field(
 		array(
-			'name' => __( 'Transparent website header', 'satori' ),
-			'desc' => __( 'Check this option to make the website header (the top area with the menu and the logo) look like a transparent overlay on top of the header image on this page.', 'satori' ),
+			'name' => __( 'Transparent website header', 'bento' ),
+			'desc' => __( 'Check this option to make the website header (the top area with the menu and the logo) look like a transparent overlay on top of the header image on this page.', 'bento' ),
 			'id' => $bnt_prefix . 'transparent_header',
 			'type' => 'checkbox',
 		)
 	);
 	$bnt_header_settings->add_field(
 		array(
-			'name' => __( 'Website menu color on this page', 'satori' ),
-			'desc' => __( 'Choose the color for the website menu on this page (useful for the transparent header).', 'satori' ),
+			'name' => __( 'Website menu color on this page', 'bento' ),
+			'desc' => __( 'Choose the color for the website menu on this page (useful for the transparent header).', 'bento' ),
 			'id' => $bnt_prefix . 'menu_color',
 			'type' => 'colorpicker',
 		)
 	);
 	$bnt_header_settings->add_field(
 		array(
-			'name' => __( 'Website menu mouse-hover color on this page', 'satori' ),
-			'desc' => __( 'Choose the mouse-over color for the website menu on this page (useful for the transparent header).', 'satori' ),
+			'name' => __( 'Website menu mouse-hover color on this page', 'bento' ),
+			'desc' => __( 'Choose the mouse-over color for the website menu on this page (useful for the transparent header).', 'bento' ),
 			'id' => $bnt_prefix . 'menu_color_hover',
 			'type' => 'colorpicker',
 		)
 	);
 	$bnt_header_settings->add_field(
 		array(
-			'name' => __( 'Call-to-action button text', 'satori' ),
-			'desc' => __( 'Input the text for an optional call-to-action button.', 'satori' ),
+			'name' => __( 'Call-to-action button text', 'bento' ),
+			'desc' => __( 'Input the text for an optional call-to-action button.', 'bento' ),
 			'id' => $bnt_prefix . 'cta_primary_text',
 			'type' => 'text_medium',
 		)
 	);
 	$bnt_header_settings->add_field(
 		array(
-			'name' => __( 'Call-to-action button link', 'satori' ),
-			'desc' => __( 'Paste the URL link to point the call-to-action button to; leave this blank to scroll the page below the header on button click.', 'satori' ),
+			'name' => __( 'Call-to-action button link', 'bento' ),
+			'desc' => __( 'Paste the URL link to point the call-to-action button to; leave this blank to scroll the page below the header on button click.', 'bento' ),
 			'id' => $bnt_prefix . 'cta_primary_link',
 			'type' => 'text',
 		)
 	);
 	$bnt_header_settings->add_field(
 		array(
-			'name' => __( 'Call-to-action button background color', 'satori' ),
-			'desc' => __( 'Choose the background color for the call-to-action buttons; default is #00b285 (green-blue).', 'satori' ),
+			'name' => __( 'Call-to-action button background color', 'bento' ),
+			'desc' => __( 'Choose the background color for the call-to-action buttons; default is #00b285 (green-blue).', 'bento' ),
 			'id' => $bnt_prefix . 'cta_background_color',
 			'type' => 'colorpicker',
 			'default' => '#00b285',
@@ -1428,8 +1031,8 @@ function bnt_metaboxes() {
 	);
 	$bnt_header_settings->add_field(
 		array(
-			'name' => __( 'Call-to-action button mouse-over background color', 'satori' ),
-			'desc' => __( 'Choose the text color for the call-to-action buttons on hover; default is #00906c (dark-green).', 'satori' ),
+			'name' => __( 'Call-to-action button mouse-over background color', 'bento' ),
+			'desc' => __( 'Choose the text color for the call-to-action buttons on hover; default is #00906c (dark-green).', 'bento' ),
 			'id' => $bnt_prefix . 'cta_background_color_hover',
 			'type' => 'colorpicker',
 			'default' => '#00906c',
@@ -1437,8 +1040,8 @@ function bnt_metaboxes() {
 	);
 	$bnt_header_settings->add_field(
 		array(
-			'name' => __( 'Call-to-action button text color', 'satori' ),
-			'desc' => __( 'Choose the text color for the primary call-to-action button; default is #ffffff (white).', 'satori' ),
+			'name' => __( 'Call-to-action button text color', 'bento' ),
+			'desc' => __( 'Choose the text color for the primary call-to-action button; default is #ffffff (white).', 'bento' ),
 			'id' => $bnt_prefix . 'cta_text_color',
 			'type' => 'colorpicker',
 			'default' => '#ffffff',
@@ -1446,32 +1049,32 @@ function bnt_metaboxes() {
 	);
 	$bnt_header_settings->add_field(
 		array(
-			'name' => __( 'Secondary call-to-action button text', 'satori' ),
-			'desc' => __( 'Input the text for an optional secondary call-to-action button.', 'satori' ),
+			'name' => __( 'Secondary call-to-action button text', 'bento' ),
+			'desc' => __( 'Input the text for an optional secondary call-to-action button.', 'bento' ),
 			'id' => $bnt_prefix . 'cta_secondary_text',
 			'type' => 'text_medium',
 		)
 	);
 	$bnt_header_settings->add_field(
 		array(
-			'name' => __( 'Secondary call-to-action button link', 'satori' ),
-			'desc' => __( 'Paste the URL link to point the secondary call-to-action button to; leave this blank to scroll the page below the header on button click.', 'satori' ),
+			'name' => __( 'Secondary call-to-action button link', 'bento' ),
+			'desc' => __( 'Paste the URL link to point the secondary call-to-action button to; leave this blank to scroll the page below the header on button click.', 'bento' ),
 			'id' => $bnt_prefix . 'cta_secondary_link',
 			'type' => 'text',
 		)
 	);
 	$bnt_header_settings->add_field(
 		array(
-			'name' => __( 'Secondary call-to-action button color', 'satori' ),
-			'desc' => __( 'Choose the text and border color for the secondary call-to-action button; default is #00b285 (green-blue) or the same as the primary button.', 'satori' ),
+			'name' => __( 'Secondary call-to-action button color', 'bento' ),
+			'desc' => __( 'Choose the text and border color for the secondary call-to-action button; default is #00b285 (green-blue) or the same as the primary button.', 'bento' ),
 			'id' => $bnt_prefix . 'cta_secondary_color',
 			'type' => 'colorpicker',
 		)
 	);
 	$bnt_header_settings->add_field(
 		array(
-			'name' => __( 'Secondary call-to-action button mouse-over color', 'satori' ),
-			'desc' => __( 'Choose the text and border color for the secondary call-to-action button on hover; default is #00906c (dark-green) or the same as the primary button.', 'satori' ),
+			'name' => __( 'Secondary call-to-action button mouse-over color', 'bento' ),
+			'desc' => __( 'Choose the text and border color for the secondary call-to-action button on hover; default is #00906c (dark-green) or the same as the primary button.', 'bento' ),
 			'id' => $bnt_prefix . 'cta_secondary_color_hover',
 			'type' => 'colorpicker',
 		)
@@ -1482,7 +1085,7 @@ function bnt_metaboxes() {
 		$bnt_headermap_settings = new_cmb2_box( 
 			array(
 				'id'            => 'post_headermap_metabox',
-				'title'         => __( 'Map Header', 'satori' ),
+				'title'         => __( 'Map Header', 'bento' ),
 				'object_types'  => array( 'page' ),
 				'context'       => 'normal',
 				'priority'      => 'low',
@@ -1491,31 +1094,41 @@ function bnt_metaboxes() {
 		);
 		$bnt_headermap_settings->add_field(
 			array(
-				'name' => __( 'Activate Google Maps header', 'satori' ),
-				'desc' => __( 'Check this box to enable Google Maps header; note that this will deactivate the extended header image/video.', 'satori' ),
+				'name' => __( 'Activate Google Maps header', 'bento' ),
+				'desc' => __( 'Check this box to enable Google Maps header; note that this will deactivate the extended header image/video.', 'bento' ),
 				'id' => $bnt_prefix . 'activate_headermap',
 				'type' => 'checkbox',
 			)
 		);
+		$maps_key_url = 'https://developers.google.com/maps/documentation/javascript/get-api-key#get-an-api-key';
+		$maps_key_text = sprintf( wp_kses( __( 'Input the API key for this instance of Maps - you can find detailed instructions on generating your API key <a href="%s" target="_blank">here</a>.', 'bento' ), array(  'a' => array( 'href' => array(), 'target' => array() ) ) ), esc_url( $maps_key_url ) );
 		$bnt_headermap_settings->add_field(
 			array(
-				'name' => __( 'Map center location', 'satori' ),
-				'desc' => __( 'Input the address (country, city, or exact address) of the locaiton on which to center the map.', 'satori' ),
+				'name' => __( 'Google Maps API key', 'bento' ),
+				'desc' => $maps_key_text,
+				'id' => $bnt_prefix . 'headermap_key',
+				'type' => 'text',
+			)
+		);
+		$bnt_headermap_settings->add_field(
+			array(
+				'name' => __( 'Map center location', 'bento' ),
+				'desc' => __( 'Input the address (country, city, or exact address) of the location on which to center the map.', 'bento' ),
 				'id' => $bnt_prefix . 'headermap_center',
 				'type' => 'text',
 			)
 		);
 		$bnt_headermap_settings->add_field(
 			array(
-				'name' => __( 'Map height', 'satori' ),
-				'desc' => __( 'Select the height of the map, in pixels.', 'satori' ),
+				'name' => __( 'Map height', 'bento' ),
+				'desc' => __( 'Select the height of the map, in pixels.', 'bento' ),
 				'id' => $bnt_prefix . 'headermap_height',
 				'type' => 'select',
 				'options' => array(
 					'100' => '100',
 					'200' => '200',
 					'300' => '300',
-					'400' => __( '400 (default)', 'satori' ),
+					'400' => __( '400 (default)', 'bento' ),
 					'500' => '500',
 					'600' => '600',
 					'700' => '700',
@@ -1525,8 +1138,8 @@ function bnt_metaboxes() {
 		);
 		$bnt_headermap_settings->add_field(
 			array(
-				'name' => __( 'Map zoom level', 'satori' ),
-				'desc' => __( 'Choose the zoom level for the map, 1 being entire world and 20 being individual buildings.', 'satori' ),
+				'name' => __( 'Map zoom level', 'bento' ),
+				'desc' => __( 'Choose the zoom level for the map, 1 being entire world and 20 being individual buildings.', 'bento' ),
 				'id' => $bnt_prefix . 'headermap_zoom',
 				'type' => 'select',
 				'options' => array(
@@ -1544,7 +1157,7 @@ function bnt_metaboxes() {
 					12 => '12',
 					13 => '13',
 					14 => '14',
-					15 => __( '15 (default)', 'satori' ),
+					15 => __( '15 (default)', 'bento' ),
 					16 => '16',
 					17 => '17',
 					18 => '18',
@@ -1555,10 +1168,10 @@ function bnt_metaboxes() {
 			)
 		);
 		$snazzymaps_url = 'https://snazzymaps.com';
-		$snazzymaps_link = sprintf( wp_kses( __( 'You can insert the code for custom map styling here; check <a href="%s" target="_blank">Snazzymaps.com</a> for ready-made snippets: when on the page of the particular style, click on the "Copy" button or simply select and copy the code under the "Javascript Style Array" heading.', 'satori' ), array(  'a' => array( 'href' => array() ) ) ), esc_url( $snazzymaps_url ) );
+		$snazzymaps_link = sprintf( wp_kses( __( 'You can insert the code for custom map styling here; check <a href="%s" target="_blank">Snazzymaps.com</a> for ready-made snippets: when on the page of the particular style, click on the "Copy" button or simply select and copy the code under the "Javascript Style Array" heading.', 'bento' ), array(  'a' => array( 'href' => array() ) ) ), esc_url( $snazzymaps_url ) );
 		$bnt_headermap_settings->add_field(
 			array(
-				'name' => __( 'Map custom style', 'satori' ),
+				'name' => __( 'Map custom style', 'bento' ),
 				'desc' => $snazzymaps_link,
 				'id' => $bnt_prefix . 'headermap_style',
 				'type' => 'textarea',
@@ -1570,7 +1183,7 @@ function bnt_metaboxes() {
 	$bnt_tile_settings = new_cmb2_box( 
 		array(
 			'id'            => 'tile_settings_metabox',
-			'title'         => __( 'Masonry Tile Settings / Only for displaying on "Grid" page template with "Masonry" grid type', 'satori' ),
+			'title'         => __( 'Masonry Tile Settings / Only for displaying on "Grid" page template with "Masonry" grid type', 'bento' ),
 			'object_types'  => array( 'post', 'project', 'product' ),
 			'context'       => 'normal',
 			'priority'      => 'low',
@@ -1579,12 +1192,12 @@ function bnt_metaboxes() {
 	);
 	$bnt_tile_settings->add_field(
 		array(
-			'name' => __( 'Tile size', 'satori' ),
-			'desc' => __( 'Choose the size of the tile relative to the default 1x1 tile (defined by the number of columns in the grid)', 'satori' ),
+			'name' => __( 'Tile size', 'bento' ),
+			'desc' => __( 'Choose the size of the tile relative to the default 1x1 tile (defined by the number of columns in the grid)', 'bento' ),
 			'id' => $bnt_prefix . 'tile_size',
 			'type' => 'select',
 			'options' => array(
-				'1x1' => __( '1x1 (default)', 'satori' ),
+				'1x1' => __( '1x1 (default)', 'bento' ),
 				'1x2' => '1x2',
 				'2x1' => '2x1',
 				'2x2' => '2x2',
@@ -1594,8 +1207,8 @@ function bnt_metaboxes() {
 	);
 	$bnt_tile_settings->add_field(
 		array(
-			'name' => __( 'Tile overlay color', 'satori' ),
-			'desc' => __( 'Choose the color for an overlay for the tile background image; default is #666666 (grey)', 'satori' ),
+			'name' => __( 'Tile overlay color', 'bento' ),
+			'desc' => __( 'Choose the color for an overlay for the tile background image; default is #666666 (grey)', 'bento' ),
 			'id' => $bnt_prefix . 'tile_overlay_color',
 			'type' => 'colorpicker',
 			'default' => '#666666',
@@ -1603,19 +1216,27 @@ function bnt_metaboxes() {
 	);
 	$bnt_tile_settings->add_field(
 		array(
-			'name' => __( 'Tile overlay opacity', 'satori' ),
-			'desc' => __( 'Select the opacity level for an overlay for the tile background image, 0 is fully transparent (default is 0.6)', 'satori' ),
+			'name' => __( 'Tile image', 'bento' ),
+			'desc' => __( 'Upload the image to be used in the tile; if this field is empty, the featured image (thumbnail) will be used.', 'bento' ),
+			'id' => $bnt_prefix . 'tile_image',
+			'type' => 'file',
+		)
+	);
+	$bnt_tile_settings->add_field(
+		array(
+			'name' => __( 'Tile overlay opacity', 'bento' ),
+			'desc' => __( 'Select the opacity level for an overlay for the tile background image, 0 is fully transparent (default is 0.6)', 'bento' ),
 			'id' => $bnt_prefix . 'tile_overlay_opacity',
 			'type' => 'select',
 			'options' => array(
-				'' => __( 'Choose value', 'satori' ),
+				'' => __( 'Choose value', 'bento' ),
 				'0.0' => '0.0',
 				'0.1' => '0.1',
 				'0.2' => '0.2',
 				'0.3' => '0.3',
 				'0.4' => '0.4',
 				'0.5' => '0.5',
-				'0.6' => __( '0.6 (default)', 'satori' ),
+				'0.6' => __( '0.6 (default)', 'bento' ),
 				'0.7' => '0.7',
 				'0.8' => '0.8',
 				'0.9' => '0.9',
@@ -1626,8 +1247,8 @@ function bnt_metaboxes() {
 	);
 	$bnt_tile_settings->add_field(
 		array(
-			'name' => __( 'Tile text color', 'satori' ),
-			'desc' => __( 'Choose the color for the text inside the tile; default is #ffffff (white)', 'satori' ),
+			'name' => __( 'Tile text color', 'bento' ),
+			'desc' => __( 'Choose the color for the text inside the tile; default is #ffffff (white)', 'bento' ),
 			'id' => $bnt_prefix . 'tile_text_color',
 			'type' => 'colorpicker',
 			'default' => '#ffffff',
@@ -1635,15 +1256,15 @@ function bnt_metaboxes() {
 	);
 	$bnt_tile_settings->add_field(
 		array(
-			'name' => __( 'Tile text size', 'satori' ),
-			'desc' => __( 'Choose the text size for the tile; default is 16px', 'satori' ),
+			'name' => __( 'Tile text size', 'bento' ),
+			'desc' => __( 'Choose the text size for the tile; default is 16px', 'bento' ),
 			'id' => $bnt_prefix . 'tile_text_size',
 			'type' => 'select',
 			'options' => array(
 				'12' => '12',
 				'13' => '13',
 				'14' => '14',
-				'16' => __( '16 (default)', 'satori' ),
+				'16' => __( '16 (default)', 'bento' ),
 				'18' => '18',
 				'20' => '20',
 				'24' => '24',
@@ -1657,7 +1278,7 @@ function bnt_metaboxes() {
 	$bnt_grid_settings = new_cmb2_box( 
 		array(
 			'id'            => 'grid_settings_metabox',
-			'title'         => __( 'Grid Settings', 'satori' ),
+			'title'         => __( 'Grid Settings', 'bento' ),
 			'object_types'  => array( 'page' ),
 			'context'       => 'normal',
 			'priority'      => 'low',
@@ -1666,8 +1287,8 @@ function bnt_metaboxes() {
 	);
 	$bnt_grid_settings->add_field(
 		array(
-			'name' => __( 'Grid mode', 'satori' ),
-			'desc' => __( 'Choose which grid type to use on this page', 'satori' ),
+			'name' => __( 'Grid mode', 'bento' ),
+			'desc' => __( 'Choose which grid type to use on this page', 'bento' ),
 			'id' => $bnt_prefix . 'page_grid_mode',
 			'type' => 'select',
 			'options' => array(
@@ -1680,14 +1301,14 @@ function bnt_metaboxes() {
 	);
 	$bnt_grid_settings->add_field(
 		array(
-			'name' => __( 'Number of columns', 'satori' ),
-			'desc' => __( 'Select the number of columns in the grid or number of base tiles per line in masonry', 'satori' ),
+			'name' => __( 'Number of columns', 'bento' ),
+			'desc' => __( 'Select the number of columns in the grid or number of base tiles per line in masonry', 'bento' ),
 			'id' => $bnt_prefix . 'page_columns',
 			'type' => 'select',
 			'options' => array(
 				'1' => '1',
 				'2' => '2',
-				'3' => __( '3 (default)', 'satori' ),
+				'3' => __( '3 (default)', 'bento' ),
 				'4' => '4',
 				'5' => '5',
 				'6' => '6',
@@ -1695,19 +1316,30 @@ function bnt_metaboxes() {
 			'default' => '3',
 		)
 	);
+	if ( get_option( 'bnt_ep_license_status' ) == 'valid' ) {
+		$bnt_grid_settings->add_field(
+			array(
+				'name' => __( 'Content types', 'bento' ),
+				'id' => $bnt_prefix . 'page_content_types',
+				'type' => 'multicheck_posttype',
+				'default' => 'post',
+			)
+		);
+	} else {
+		$bnt_grid_settings->add_field(
+			array(
+				'name' => __( 'Content types', 'bento' ),
+				'desc' => sprintf( __( 'Install the %s to use the "project" (portfolio) content type', 'bento' ), $bnt_ep_url ),
+				'id' => $bnt_prefix . 'page_content_types',
+				'type' => 'multicheck_posttype',
+				'default' => 'post',
+			)
+		);
+	}
 	$bnt_grid_settings->add_field(
 		array(
-			'name' => __( 'Content types', 'satori' ),
-			'desc' => sprintf( __( 'Install the %s to use the "project" (portfolio) content type', 'satori' ), $bnt_ep_url ),
-			'id' => $bnt_prefix . 'page_content_types',
-			'type' => 'multicheck_posttype',
-			'default' => 'post',
-		)
-	);
-	$bnt_grid_settings->add_field(
-		array(
-			'name' => __( 'Items per page', 'satori' ),
-			'desc' => __( 'Input the number of items to display per page; default is the number set in "Settings - Reading" admin section', 'satori' ),
+			'name' => __( 'Items per page', 'bento' ),
+			'desc' => __( 'Input the number of items to display per page; default is the number set in "Settings - Reading" admin section', 'bento' ),
 			'id' => $bnt_prefix . 'page_number_items',
 			'type' => 'text_small',
 			'default' => '10',
@@ -1715,8 +1347,8 @@ function bnt_metaboxes() {
 	);
 	$bnt_grid_settings->add_field(
 		array(
-			'name' => __( 'Item margins', 'satori' ),
-			'desc' => __( 'Input the margin width in pixels (default is 10)', 'satori' ),
+			'name' => __( 'Item margins', 'bento' ),
+			'desc' => __( 'Input the margin width in pixels (default is 10)', 'bento' ),
 			'id' => $bnt_prefix . 'page_item_margins',
 			'type' => 'text_small',
 			'default' => '10',
@@ -1724,24 +1356,24 @@ function bnt_metaboxes() {
 	);
 	$bnt_grid_settings->add_field(
 		array(
-			'name' => __( 'Hide tile overlays', 'satori' ),
-			'desc' => __( 'Only display tile overlays in masonry on mouse hover', 'satori' ),
+			'name' => __( 'Hide tile overlays', 'bento' ),
+			'desc' => __( 'Only display tile overlays in masonry on mouse hover', 'bento' ),
 			'id' => $bnt_prefix . 'hide_tile_overlays',
 			'type' => 'checkbox',
 		)
 	);
 	$bnt_grid_settings->add_field(
 		array(
-			'name' => __( 'Force full width', 'satori' ),
-			'desc' => __( 'Check this option if you want the grid to stretch the entire width of the screen', 'satori' ),
+			'name' => __( 'Force full width', 'bento' ),
+			'desc' => __( 'Check this option if you want the grid to stretch the entire width of the screen', 'bento' ),
 			'id' => $bnt_prefix . 'grid_full_width',
 			'type' => 'checkbox',
 		)
 	);
 	$bnt_grid_settings->add_field(
 		array(
-			'name' => __( 'Load items on same page', 'satori' ),
-			'desc' => __( 'Replace the standard pagination with a button which loads next items without refreshing the page', 'satori' ),
+			'name' => __( 'Load items on same page', 'bento' ),
+			'desc' => __( 'Replace the standard pagination with a button which loads next items without refreshing the page', 'bento' ),
 			'id' => $bnt_prefix . 'page_ajax_load',
 			'type' => 'checkbox',
 		)
@@ -1780,14 +1412,15 @@ function bnt_metaboxes() {
 	}
 	function bnt_woo_wrapper_end() {
 		echo '</article></main></div>';
+		$page_id = '';
 		global $post;
 		if ( is_shop() ) {
 			$page_id = woocommerce_get_page_id('shop');
-		} else {
+		} else if ( $post ) {
 			$page_id = $post->ID;
 		}
 		if ( is_active_sidebar( 'bnt_woocommerce' )  ) {
-			if ( get_post_meta( $page_id, 'bnt_sidebar_layout', true ) != 'full-width' ) {
+			if ( get_post_meta( $page_id, 'bnt_sidebar_layout', true ) != 'full-width' || is_product_category() ) {
 				echo '<div class="sidebar widget-area sidebar-woo clear">';
 					dynamic_sidebar( 'bnt_woocommerce' );
 				echo '</div>';
@@ -1817,17 +1450,13 @@ function bnt_metaboxes() {
 	
 	// Custom number of products per shop page
 	function bnt_woo_loop_perpage() {
-		if ( ctype_digit( satori_option( 'bnt_wc_shop_number_items' ) ) ) {
-			$bnt_wc_shop_num = satori_option( 'bnt_wc_shop_number_items' );
-		} else {
-			$bnt_wc_shop_num = '12';
-		}
+		$bnt_wc_shop_num = get_theme_mod( 'bnt_wc_shop_number_items' );
 		return 'return '.$bnt_wc_shop_num.';';
 	}
 	
 	// Custom number of columns on the shop page
 	function bnt_woo_loop_columns() {
-		$bnt_wc_shop_col = (int)satori_option( 'bnt_wc_shop_columns' );
+		$bnt_wc_shop_col = (int)get_theme_mod( 'bnt_wc_shop_columns' );
 		return $bnt_wc_shop_col;
 	}
  
@@ -1844,7 +1473,7 @@ function bnt_metaboxes() {
 	function bnt_woo_custom_product_searchform( $form ) {
 		$form = '
 			<form role="search" method="get" class="woocommerce-product-search" action="'.esc_url( get_home_url( '/'  ) ).'">
-				<input type="search" class="search-field" placeholder="'.esc_attr_x( 'Search Products&hellip;', 'placeholder', 'woocommerce' ).'" value="'.get_search_query().'" name="s" title="'.esc_attr_x( 'Search for:', 'label', 'woocommerce' ).'" />
+				<input type="search" class="search-field" placeholder="'.esc_attr_x( 'Search Products&hellip;', 'placeholder', 'bento' ).'" value="'.get_search_query().'" name="s" title="'.esc_attr_x( 'Search for:', 'label', 'bento' ).'" />
 				<input type="submit" value="&#xf179;" />
 				<input type="hidden" name="post_type" value="product" />
 			</form>

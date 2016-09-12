@@ -7,14 +7,10 @@
     <?php // This part includes meta information and functions ?>
     
     <head>
-    	
-		<?php // Meta tags, used by search engines and browser tabs ?>
-		<?php bnt_meta_title(); ?>		 
-		<?php bnt_meta_description(); ?>
-        
+    	        
 		<?php // Various utilities ?>
     	<meta charset="<?php bloginfo( 'charset' ); ?>" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
             	
@@ -29,12 +25,10 @@
     <body <?php body_class(); ?>>
 	
 		<?php do_action('bnt_body_top'); ?>
-         
-		<?php echo satori_option( 'bnt_analytics_code' ); ?>
-		
+         		
 		<?php bnt_novice_header(); ?>
 		 
-    	<div class="site-wrapper">
+		<div class="site-wrapper clear">
         
 			<header class="site-header no-fixed-header">
             	<div class="bnt-container">

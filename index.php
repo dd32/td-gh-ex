@@ -19,7 +19,7 @@ get_header();
                 // End the Loop
                 } 
 				// Navigation
-				if ( satori_option('bnt_ajax_pagination') != 1 ) {
+				if ( get_theme_mod('bnt_ajax_pagination') != 1 ) {
 					bnt_blog_pagination();
 				}
             } else {
@@ -31,7 +31,7 @@ get_header();
         </main>
         
         <?php 
-		if ( satori_option('bnt_ajax_pagination') == 1 ) {
+		if ( get_theme_mod('bnt_ajax_pagination') == 1 ) {
 			bnt_ajax_load_more(); 
 		}
 		?>

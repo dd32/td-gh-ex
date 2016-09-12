@@ -16,7 +16,7 @@ get_header();
 				?>
 				<header class="archive-header">
                 	<div class="archive-description">
-                    	<?php _e( 'Search results for', 'satori' ); ?>
+                    	<?php _e( 'Search results for', 'bento' ); ?>
                     </div>
 					<h1 class="archive-title">
 						"<?php echo get_search_query(); ?>"

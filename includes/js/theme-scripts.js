@@ -10,12 +10,35 @@ var $str = jQuery.noConflict();
 var $isocontainer = $str('.items-container');
 var lastwindowPos = $str(window).scrollTop();
 
+// Check if an iOS device
+function bntCheckDevice() {
+	var iDevices = [
+		'iPad Simulator',
+		'iPhone Simulator',
+		'iPod Simulator',
+		'iPad',
+		'iPhone',
+		'iPod',
+		'Mac68K',
+		'MacPPC',
+		'MacIntel'
+	];
+	if ( !!navigator.platform ) {
+		while ( iDevices.length ) {
+			if ( navigator.platform === iDevices.pop() ) { 
+				return true; 
+			}
+		}
+	}
+	return false;
+}
+
 
 $str(document).ready(function() {
 	
 	
 	// Submenu animations
-	if ( phpvars.menu_config < 2 ) {
+	if ( bntThemeVars.menu_config < 2 ) {
 		$str('.primary-menu .menu-item-has-children').hover(function() {
 			var parentMenu = $str(this);
 			var submPos = parentMenu.offset().left;
@@ -35,7 +58,7 @@ $str(document).ready(function() {
 		}, function() {
 			$str(this).children('.sub-menu').fadeOut(200);
 		});
-	} else if ( phpvars.menu_config == 2 ) {
+	} else if ( bntThemeVars.menu_config == 2 ) {
 		$str('.ham-menu-trigger-container').click(function() {
 			$str('.header-menu, .ham-menu-close-container').fadeIn(200, function() {
 				$str('body').addClass('mobile-menu-open');
@@ -53,32 +76,42 @@ $str(document).ready(function() {
 				$str('body').removeClass('mobile-menu-open');
 			});
 		});
-	} else if ( phpvars.menu_config == 3 ) {
+	} else if ( bntThemeVars.menu_config == 3 ) {
 		$str('.primary-menu .menu-item-has-children > a').toggle(function(e) {
-			e.preventDefault();
+			if ( ! $str(this).hasClass('opened-side-menu') ) {
+				$str(this).addClass('opened-side-menu');
+			}
 			$str(this).siblings('.sub-menu').slideDown(200);
 		}, function(e) {
 			e.preventDefault();
+			if ( $str(this).hasClass('opened-side-menu') ) {
+				$str(this).removeClass('opened-side-menu');
+			}
 			$str(this).siblings('.sub-menu').slideUp(200);
 		});
 	}
 	
 	
 	// Mobile menu animations
-	$str('.mobile-menu-trigger-container').click(function() {
-		$str('body').addClass('mobile-menu-open');
+	$str('.mobile-menu-trigger-container').click(function() {	
+		var device = bntCheckDevice();
+		if ( device == false ) {
+			$str('body').addClass('mobile-menu-open');
+		}
 		$str('.mobile-menu-shadow').fadeIn(500);
-		$str('#nav-mobile').animate({"left": '0'});
+		$str('#nav-mobile').css("left", '0');
 	});
 	$str('.mobile-menu-close').click(function() {
-		$str('body').removeClass('mobile-menu-open');
+		if ( $str('body').hasClass('mobile-menu-open') ) {
+			$str('body').removeClass('mobile-menu-open');
+		}
 		$str('.mobile-menu-shadow').fadeOut(500);
-		$str('#nav-mobile').animate({"left": '-100%'});
+		$str('#nav-mobile').css("left", '-100%');
 	});
 	
 	
 	// Side menu position on load
-	if ( phpvars.menu_config == 3 ) {
+	if ( bntThemeVars.menu_config == 3 ) {
 		var headertop = 0;
 		if ( $str('#wpadminbar').outerHeight(true) > 0 ) {
 			headertop = $str('#wpadminbar').outerHeight(true);
@@ -88,7 +121,7 @@ $str(document).ready(function() {
 	
 	
 	// Fixed header on scroll
-	if ( phpvars.fixed_menu == 1 && phpvars.menu_config == 0 ) {
+	if ( bntThemeVars.fixed_menu == 1 && bntThemeVars.menu_config != 3 && $str(window).width() > 1280 ) {
 		if ( $str(window).scrollTop() > 0 ) {
 			if ( ! $str('.fixed-header').length ) {
 				var $headerClone = $str('.site-header > .bnt-container').clone();
@@ -102,7 +135,16 @@ $str(document).ready(function() {
 	// Smooth scrolling for same-page menu links
 	$str('.menu-container a').click(function() {
 		if ( /^#/.test($str(this).attr('href')) === true ) {
-			$str('html, body').animate( { scrollTop: $str('[name="' + $str(this).attr('href').substr(1) + '"]').offset().top }, 500 );
+			var hash = $str(this).attr('href').substr(1);
+			var scrollPosition = 0; 
+			var headerHeight = 0;
+			if ( bntThemeVars.fixed_menu == 1 ) {
+				headerHeight = $str('.site-header').outerHeight(true);
+			}
+			if ( $str('[name="' + hash + '"]').length ) {
+				scrollPosition = $str('[name="' + hash + '"]').offset().top - headerHeight - 10;
+				$str('html, body').animate( { scrollTop: scrollPosition }, 500 );
+			}
 			return false;
 		}
 	});
@@ -137,24 +179,24 @@ $str(document).ready(function() {
 			}
 		});
 		$grid.isotope({ 
-			layoutMode: phpvars.grid_mode,
+			layoutMode: bntThemeVars.grid_mode,
 		});
 	});
 	
 	
 	// Ajax pagination
 	var page = 1;
-	if ( page < phpvars.max_pages ) {
+	if ( page < bntThemeVars.max_pages ) {
 		$str('.ajax-load-more').fadeIn(100).css('display','block');
 	}
 	$str('.ajax-load-more').click(function () {
 		$str('.spinner-ajax').fadeIn(400);
 		$str.ajax({
-			url: phpvars.ajaxurl,
+			url: bntThemeVars.ajaxurl,
 			type: 'post',
 			data: {
 				action: 'ajax_pagination',
-				query_vars: phpvars.query_vars,
+				query_vars: bntThemeVars.query_vars,
 				page: page
 			},
 			success: function (html) {
@@ -171,7 +213,7 @@ $str(document).ready(function() {
 		});
 		page++;
 		$str('.spinner-ajax').fadeOut(400);
-		if ( page >= phpvars.max_pages ) {
+		if ( page >= bntThemeVars.max_pages ) {
 			$str('.ajax-load-more').remove();
 		}
 	});
@@ -184,7 +226,7 @@ $str(document).ready(function() {
 	});
 	
 	
-	// Display "add to card" buttons on products
+	// Display "add to cart" buttons on products
 	$str('.products .product').hover(function() {
 		$str(this).find('.add_to_cart_button').fadeIn(200);
 	}, function() {
@@ -196,7 +238,7 @@ $str(document).ready(function() {
 	$str('.nhb-dismiss').click(function() {
 		$str.ajax({
             type:   'post',
-            url:    phpvars.ajaxurl,
+            url:    bntThemeVars.ajaxurl,
 			data: {
                 action: 'dismiss_novice',
                 novice_option: 'novice_header'
@@ -217,7 +259,7 @@ $str(window).load(function () {
 	// Display grid items when everything is loaded
 	$str('.spinner-grid').fadeOut(100);
 	$isocontainer.fadeIn(300, function() {
-		if ( phpvars.full_width_grid == 'on' ) {
+		if ( bntThemeVars.full_width_grid == 'on' ) {
 			var ww = $str(window).width();
 			var im = $str('.grid-item-inner').css('padding-left').replace("px", "");
 			var nw = ww - ( 2 * im );
@@ -231,11 +273,11 @@ $str(window).load(function () {
 	
 	
 	// Submenu margins 
-	if ( phpvars.menu_config == 0 ) {
+	if ( bntThemeVars.menu_config == 0 ) {
 		var headerheight = $str('.site-header').height();
 		var menuheight = $str('.primary-menu').height();
 		var submenumargin = ( headerheight - menuheight ) / 2;
-		$str('.primary-menu > li > .sub-menu').css('margin-top',submenumargin+'px');
+		$str('.primary-menu > li > .sub-menu').css('border-top-width',submenumargin+'px');
 	}
 
 
@@ -246,7 +288,7 @@ $str(window).resize(function () {
 
 
 	// Relayout Isotope on browser resize
-	if ( phpvars.full_width_grid == 'on' ) {
+	if ( bntThemeVars.full_width_grid == 'on' ) {
 		var ww = $str(window).width();
 		var im = $str('.grid-item-inner').css('padding-left').replace("px", "");
 		var nw = ww - ( 2 * im );
@@ -258,7 +300,7 @@ $str(window).resize(function () {
 	
 	
 	// Set overlay menu margin
-	if ( phpvars.menu_config == 2 ) {
+	if ( bntThemeVars.menu_config == 2 ) {
 		var $menu = $str('#nav-primary');
 		var menuHeight = 0;
 		if ( $menu.outerHeight(false) > 0 ) {
@@ -276,7 +318,7 @@ $str(window).scroll(function () {
 	
 	
 	// Side menu on scroll
-	if ( phpvars.menu_config == 3 ) {
+	if ( bntThemeVars.menu_config == 3 ) {
 		var $header = $str('.header-side .site-header');
 		var windowPos = $str(window).scrollTop();
 		var headertop = parseInt($header.css('top'),10);
@@ -314,12 +356,12 @@ $str(window).scroll(function () {
 	
 	
 	// Fixed header on scroll
-	if ( phpvars.fixed_menu == 1 && phpvars.menu_config == 0 ) {
+	if ( bntThemeVars.fixed_menu == 1 && bntThemeVars.menu_config != 3 && $str(window).width() > 1280 ) {
 		if ( $str(window).scrollTop() > 0 ) {
 			if ( ! $str('.fixed-header').length ) {
 				var $headerClone = $str('.site-header > .bnt-container').clone(true);
 				$str('body').append('<header class="site-header fixed-header"></header>');
-				$str('.fixed-header').html($headerClone);
+				$str('.fixed-header').html($headerClone).fadeIn(600);
 			}
 		} else {
 			if ( $str('.fixed-header').length ) {

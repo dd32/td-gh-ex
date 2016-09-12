@@ -2,91 +2,28 @@
 
 
 
-// Generate meta title
-if ( ! function_exists( 'bnt_meta_title' ) ) {
-	
-	function bnt_meta_title() {
-		$sep = '/';
-		if ( satori_option( 'bnt_meta_title_separator' ) != '' ) {
-			$sep = satori_option( 'bnt_meta_title_separator' );
-		}
-		?>
-		<title>
-			<?php wp_title( $sep, true, 'right' ); ?>
-		</title>
-		<?php
-	}
-	
-}
-
-
-// Generate meta description
-if ( ! function_exists( 'bnt_meta_tags' ) ) {
-	
-	function bnt_meta_description() {
-		global $post;
-		
-		// Front page
-		if ( is_front_page() && satori_option( 'bnt_front_meta_description' ) != '' ) {
-			$meta_desc = satori_option( 'bnt_front_meta_description' );
-		
-		// Posts and pages
-		} else if ( is_singular($post) ) {
-			$raw_desc = mb_substr(rtrim(strip_tags(get_post($post->ID)->post_content)), 0, 160);
-			$meta_desc = str_replace( array("\r", "\n", "\t"), ' ', $raw_desc );
-			while (strpos($meta_desc, "  ") !== false) {
-				$meta_desc = str_replace("  ", " ", $meta_desc);
-			}
-			$meta_desc .= '..';
-			if ( get_post_meta($post->ID, 'bnt_meta_description', true) != '' ) {
-				$meta_desc = get_post_meta($post->ID, 'bnt_meta_description', true);
-			}
-			
-		// Taxonomy archives
-		} else if ( ( is_category() || is_tag() || is_tax() ) && term_description() != '' ) {
-			$meta_desc = term_description();
-			
-		// Author archives
-		} else if ( is_author() && get_userdata($post->post_author)->description != '' ) {
-			$meta_desc = get_userdata($post->post_author)->description;
-			
-		// All other instances	
-		} else {
-			if ( satori_option( 'bnt_front_meta_description' ) != '' ) {
-				$meta_desc = satori_option( 'bnt_front_meta_description' );
-			} else {
-				$meta_desc = get_bloginfo('description');
-			}
-		}
-		echo '<meta name="description" content="'.$meta_desc.'" />';
-		
-	}
-	
-}
-
-
 // Include Google Fonts
 if ( ! function_exists( 'bnt_google_font' ) ) {
 	
 	function bnt_google_font() {
 		$fonts = '';
 		$body_font = $headings_font = 'Open Sans';
-		if ( satori_option( 'bnt_font_body' ) != '' ) {
-			$body_font = satori_option( 'bnt_font_body' );
+		if ( get_theme_mod( 'bnt_font_body' ) != '' ) {
+			$body_font = get_theme_mod( 'bnt_font_body' );
 		}
 		$body_font = str_replace( ' ', '+', $body_font );
-		$fonts .= '<link href="https://fonts.googleapis.com/css?family='.$body_font.':400,400italic,700" rel="stylesheet" type="text/css">';
-		if ( satori_option( 'bnt_font_headings' ) != '' && satori_option( 'bnt_font_headings' ) != 'Open Sans' ) {
-			$headings_font = satori_option( 'bnt_font_headings' );
+		$fonts .= '<link href="https://fonts.googleapis.com/css?family='.$body_font.':400,400italic,700&subset=cyrillic,latin-ext" rel="stylesheet" type="text/css">';
+		if ( get_theme_mod( 'bnt_font_headings' ) != '' && get_theme_mod( 'bnt_font_headings' ) != 'Open Sans' ) {
+			$headings_font = get_theme_mod( 'bnt_font_headings' );
 			$headings_font = str_replace( ' ', '+', $headings_font );
-			$fonts .= '<link href="https://fonts.googleapis.com/css?family='.$headings_font.':400,700" rel="stylesheet" type="text/css">';
+			$fonts .= '<link href="https://fonts.googleapis.com/css?family='.$headings_font.':400,700&subset=cyrillic,latin-ext" rel="stylesheet" type="text/css">';
 		}
 		$menu_font = 'Montserrat';
-		if ( satori_option( 'bnt_font_menu' ) != '' ) {
-			$menu_font = satori_option( 'bnt_font_menu' );
+		if ( get_theme_mod( 'bnt_font_menu' ) != '' ) {
+			$menu_font = get_theme_mod( 'bnt_font_menu' );
 		}
 		$menu_font = str_replace( ' ', '+', $menu_font );
-		$fonts .= '<link href="https://fonts.googleapis.com/css?family='.$menu_font.':400" rel="stylesheet" type="text/css">';
+		$fonts .= '<link href="https://fonts.googleapis.com/css?family='.$menu_font.':400&subset=cyrillic,latin-ext" rel="stylesheet" type="text/css">';
 		echo $fonts;
         
 	}
@@ -98,15 +35,24 @@ if ( ! function_exists( 'bnt_google_font' ) ) {
 if ( ! function_exists( 'bnt_logo' ) ) {
 	
 	function bnt_logo() {
-		if ( satori_option('bnt_logo') != '' ) {
+		if ( get_theme_mod( 'custom_logo' ) != '' ) {
+			$custom_logo_id = get_theme_mod( 'custom_logo' );
+			$logo_image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+			$logo_full = $logo_mobile = $logo_image[0];
+			if ( get_theme_mod( 'bnt_logo_mobile' ) != '' ) {
+				$mobile_logo_id = get_theme_mod( 'bnt_logo_mobile' );
+				$mobile_logo_image = wp_get_attachment_image_src( $mobile_logo_id , 'full' );
+				$logo_mobile = $mobile_logo_image[0];
+			}
 			echo '
 			<div class="logo clear">
 				<a href="'.site_url().'">
-					<img src="'.satori_option('bnt_logo').'" alt="'.wp_title('', false).'" />
+					<img class="logo-fullsize" src="'.$logo_full.'" alt="'.wp_title('', false).'" />
+					<img class="logo-mobile" src="'.$logo_mobile.'" alt="'.wp_title('', false).'" />
 				</a>
 			</div>
 			';
-		} 
+		}
 	}
     
 }
@@ -117,7 +63,7 @@ if ( ! function_exists( 'bnt_primary_menu' ) ) {
 	
 	function bnt_primary_menu() {
 		$depth = '3';
-		if ( satori_option( 'bnt_menu_config' ) == 2 ) {
+		if ( get_theme_mod( 'bnt_menu_config' ) == 2 ) {
 			$depth = '1';
 		}
 		?>
@@ -165,8 +111,20 @@ if ( ! function_exists( 'bnt_mobile_menu' ) ) {
 	
 	function bnt_mobile_menu() {
 		$menu_depth = 3;
-		if ( satori_option( 'bnt_mobile_menu_submenus' ) ) {
+		if ( get_theme_mod( 'bnt_mobile_menu_submenus' ) ) {
 			$menu_depth = 1;
+		}
+		
+		// Check if menu exists, exit if it doesn't
+		$menu = wp_nav_menu(
+			array (
+				'theme_location' => 'primary-menu',
+				'echo' => FALSE,
+				'fallback_cb' => '__return_false'
+			)
+		);
+		if ( empty($menu) ) {
+			return;
 		}
 		?>
         <div class="mobile-menu-trigger">
@@ -483,7 +441,7 @@ if ( ! function_exists( 'bnt_post_content' ) ) {
 		} elseif ( get_post_format() === 'quote' ) {
 			echo bnt_quote_format_content();
 		} else {
-			the_content( __( 'Continue reading', 'satori' ).' &rarr;' );	
+			the_content( __( 'Continue reading', 'bento' ).' &rarr;' );	
 		}
 		
 		// Navigation for paged posts
@@ -532,41 +490,40 @@ if ( ! function_exists( 'bnt_entry_meta' ) ) {
 		}
 				
 		// Display post meta - author, category, and comments
-		$post_author = '<i>'.__( 'Posted by', 'satori' ).'</i> <span class="uppercase">'.get_the_author().'</span>';
+		$post_author = '<i>'.__( 'Posted by', 'bento' ).'</i> <span class="uppercase">'.get_the_author().'</span>';
 		$post_categories_ids = wp_get_post_categories( get_the_ID(), array('fields' => 'ids') );
 		$post_categories_names = array();
 		$post_categories = '';
-		if ( ! empty($post_categories_ids) ) {
-			$post_categories_ids = array_diff($post_categories_ids, array('1'));
+		if ( ! empty($post_categories_ids) && ( ! in_category('Uncategorized') ) ) {
 			foreach ( $post_categories_ids as $c ) {
 				$cat = get_category( $c );
 				$post_categories_names[] = $cat->name;
 			}
 			$post_categories_names = implode(", ", $post_categories_names);
-			$post_categories = ' <i>'.__( 'in', 'satori' ).'</i> <span class="uppercase">'.$post_categories_names.'</span>';
+			$post_categories = ' <i>'.__( 'in', 'bento' ).'</i> <span class="uppercase">'.$post_categories_names.'</span>';
 		}
 		$post_comments = '';
 		$num_comments = get_comments_number();
 		if ( comments_open() ) {
 			if ( $num_comments == 0 ) {
-				$comments = __( '0 comments', 'satori' );
+				$comments = __( '0 comments', 'bento' );
 			} elseif ( $num_comments > 1 ) {
-				$comments = $num_comments .' '. __( 'comments', 'satori' );
+				$comments = $num_comments .' '. __( 'comments', 'bento' );
 			} else {
-				$comments = __( '1 comment', 'satori' );
+				$comments = __( '1 comment', 'bento' );
 			}
 			$post_comments = ', <i>'. $comments . '</i>';
 		}
 		$post_date = '';
 		if ( is_singular('post') ) {
-			$post_date = ' <i>'.__( 'on', 'satori' ).'</i> <span class="uppercase">'.the_date('j F Y', '', '', false).'</span>';
+			$post_date = ' <i>'.__( 'on', 'bento' ).'</i> <span class="uppercase">'.the_date('j F Y', '', '', false).'</span>';
 		}
 		$post_meta = $post_author . $post_date . $post_categories . $post_comments;
 		if ( get_post_type() == 'post' ) {
 			echo $post_meta;
 		}
 		
-		edit_post_link( __( 'Edit this', 'satori' ), '<div class="edit-this">', '</div>' );
+		edit_post_link( __( 'Edit this', 'bento' ), '<div class="edit-this">', '</div>' );
 			
 		echo '</footer>';
 		
@@ -579,7 +536,7 @@ if ( ! function_exists( 'bnt_entry_meta' ) ) {
 if ( ! function_exists( 'bnt_author_info' ) ) {
 
 	function bnt_author_info() {
-		if ( is_singular('post') && ! satori_option( 'bnt_author_meta' ) ) {
+		if ( is_singular('post') && get_theme_mod( 'bnt_author_meta' ) != 1 ) {
 			?>
             <div class="author-info">
             	<div class="author-avatar">
@@ -587,7 +544,7 @@ if ( ! function_exists( 'bnt_author_info' ) ) {
                 </div>
                 <div class="author-description">
                 	<h3 class="author-name">
-						<?php echo __( 'Posted by', 'satori' ).' '.get_the_author(); ?>
+						<?php echo __( 'Posted by', 'bento' ).' '.get_the_author(); ?>
                     </h3>
                     <?php if ( get_the_author_meta( 'description' ) != '' ) { ?>
                     <div class="author-bio">
@@ -595,7 +552,7 @@ if ( ! function_exists( 'bnt_author_info' ) ) {
                     </div>
                     <?php } ?>
                     <a class="author-posts" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-                    	<?php printf( __( 'View all posts by %s', 'satori' ), get_the_author() ); ?>
+                    	<?php printf( __( 'View all posts by %s', 'bento' ), get_the_author() ); ?>
                     </a>
                 </div>
             </div>
@@ -615,10 +572,10 @@ if ( ! function_exists( 'bnt_comments_nav' ) ) {
         	<nav class="navigation comment-nav" role="navigation">
                 <div class="nav-links">
                     <?php
-					if ( $next_link = get_next_comments_link( '&larr; '.__( 'Newer Comments', 'satori' ) ) ) {
+					if ( $next_link = get_next_comments_link( '&larr; '.__( 'Newer Comments', 'bento' ) ) ) {
 						printf( '<div class="nav-next">%s</div>', $next_link );
 					}
-					if ( $prev_link = get_previous_comments_link( __( 'Older Comments', 'satori' ).' &rarr;' ) ) {
+					if ( $prev_link = get_previous_comments_link( __( 'Older Comments', 'bento' ).' &rarr;' ) ) {
 						printf( '<div class="nav-previous">%s</div>', $prev_link );
 					}
                     ?>
@@ -649,7 +606,7 @@ if ( ! function_exists( 'bnt_comment' ) ) {
                         <a href="<?php comment_link() ?>" class="comment-date">
                             <?php comment_date(); ?>
                         </a>
-						<?php edit_comment_link(__( 'Edit', 'satori' )); ?>
+						<?php edit_comment_link(__( 'Edit', 'bento' )); ?>
                         <?php
                         comment_reply_link(
                             array_merge( $args, 
@@ -665,7 +622,7 @@ if ( ! function_exists( 'bnt_comment' ) ) {
 					<?php comment_text(); ?>
 				</div>
                 <?php if ( $comment->comment_approved == '0' ) { ?>
-					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'satori' ); ?></em>
+					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'bento' ); ?></em>
 				<?php } ?>
 		<?php
 	}
@@ -679,8 +636,8 @@ if ( ! function_exists( 'bnt_blog_pagination' ) ) {
 	function bnt_blog_pagination() {
 		the_posts_pagination( 
 			array(
-				'prev_text' => '&larr; '.__( 'Previous page', 'satori' ),
-				'next_text' => __( 'Next page', 'satori' ).' &rarr;',
+				'prev_text' => '&larr; '.__( 'Previous page', 'bento' ),
+				'next_text' => __( 'Next page', 'bento' ).' &rarr;',
 			) 
 		);
 	}
@@ -696,13 +653,18 @@ if ( ! function_exists( 'bnt_grid_pagination' ) ) {
 		?>
 		<nav class="navigation pagination grid-pagination" role="navigation">
 			<h2 class="screen-reader-text">
-            	<?php _e( 'Posts navigation', 'satori' ); ?>
+            	<?php _e( 'Posts navigation', 'bento' ); ?>
             </h2>
 			<div class="nav-links">
 				<?php
+				if ( is_front_page() ) {
+					$paged = get_query_var('page');
+				} else {
+					$paged = get_query_var('paged');
+				}
 				echo paginate_links( 
 					array(
-						'current' => max( 1, get_query_var('paged') ),
+						'current' => max( 1, $paged ),
 						'total' => $bnt_query->max_num_pages,
 					) 
 				);
@@ -751,15 +713,15 @@ if ( ! function_exists( 'bnt_quote_format_content' ) ) {
 if ( ! function_exists( 'bnt_copyright' ) ) {
 
 	function bnt_copyright() {
-		$author = 'Satori Studio';
+		$author = 'Bento WordPress '.__( 'theme', 'bento' );
 		if ( is_front_page() ) {
-			$author = '<a href="http://satoristudio.net/" target="blank" title="Satori Studio">Satori Studio</a>';
+			$author = '<a href="http://satoristudio.net/bento-free-wordpress-theme" target="blank" title="Bento">Bento WordPress '.__( 'theme', 'bento' ).'</a>';
 		}
 		$copyright = '<div class="footer-copyright">';
-		if ( get_option( 'bnt_ep_license_status' ) == 'valid' && satori_option( 'bnt_footer_copyright' ) != '' ) {
-			$copyright .= satori_option( 'bnt_footer_copyright' );
+		if ( get_option( 'bnt_ep_license_status' ) == 'valid' && get_theme_mod( 'bnt_footer_copyright' ) != '' ) {
+			$copyright .= get_theme_mod( 'bnt_footer_copyright' );
 		} else {
-			$copyright .= '&#169; '.date('Y').'. Bento '.__( 'theme by', 'satori' ).' '.$author;
+			$copyright .= '&#169; '.date('Y').' '.$author.' - Satori Studio';
 		}
 		$copyright .= '</div>';
 		echo $copyright;
@@ -779,7 +741,7 @@ if ( ! function_exists( 'bnt_ajax_load_more' ) ) {
 	}
 	?>
 		<a class="ajax-load-more <?php echo $class; ?>">
-			<?php _e( 'Load more', 'satori' ); ?>
+			<?php _e( 'Load more', 'bento' ); ?>
         </a>
         <div class="spinner-ajax">
         	<div class="spinner-circle">
@@ -852,8 +814,8 @@ if ( ! function_exists( 'bnt_masonry_item_content' ) ) {
 					$tile_project_types_list[] = $types_object->name;
 				}
 				$tile_project_types_list = implode(', ', $tile_project_types_list);
+				$tile_project_types = '<div class="project-tile-types">'.$tile_project_types_list.'</div>';
 			}
-			$tile_project_types = '<div class="project-tile-types">'.$tile_project_types_list.'</div>';
 		}
 		$tile_text_color = 'color:'.get_post_meta( $post->ID, 'bnt_tile_text_color', true ).';';
 		$tile_text_size = 'font-size:'.get_post_meta( $post->ID, 'bnt_tile_text_size', true ).'px;';
@@ -868,9 +830,13 @@ if ( ! function_exists( 'bnt_masonry_item_content' ) ) {
 		';
 		
 		// Background
-		if ( has_post_thumbnail() ) {
-			$tile_background .= 'style=background-image:url("'.wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' )[0].'")';
+		if ( get_post_meta( $post->ID, 'bnt_tile_image', true ) != '' ) {
+			$tile_image = get_post_meta( $post->ID, 'bnt_tile_image', true );
+		} else if ( has_post_thumbnail() ) {
+			$post_thumb = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
+			$tile_image = $post_thumb[0];
 		}
+		$tile_background .= 'style=background-image:url("'.$tile_image.'")';
 		if ( get_post_meta( $post->ID, 'bnt_tile_overlay_opacity', true) != '' ) {
 			if ( get_post_meta( $bnt_parent_page_id, 'bnt_hide_tile_overlays', true) != 'on' ) {
 				$tile_opacity = 'opacity:'.get_post_meta( $post->ID, 'bnt_tile_overlay_opacity', true).';';
@@ -906,18 +872,18 @@ if ( ! function_exists( 'bnt_novice_header' ) ) {
 			<div class="novice-header">
 				<div class="novice-header-inner">
 					<div class="novice-header-title">
-						<?php _e( 'Welcome to', 'satori' ); ?> <span class="novice-header-title-red">Bento</span><br>
-						<?php _e( 'The Ultimate Free WordPress Theme', 'satori' ); ?>
+						<?php _e( 'Welcome to', 'bento' ); ?> <span class="novice-header-title-red">Bento</span><br>
+						<?php _e( 'The Ultimate Free WordPress Theme', 'bento' ); ?>
 					</div>
 					<div class="novice-header-options">
 						<a class="novice-header-button nhb-manual" href="http://satoristudio.net/bento-manual" target="_blank">
-							<?php _e( 'Open theme manual', 'satori' ); ?>
+							<?php _e( 'Open theme manual', 'bento' ); ?>
 						</a>
 						<a class="novice-header-button nhb-demo" href="http://satoristudio.net/bento" target="_blank">
-							<?php _e( 'View full demo', 'satori' ); ?>
+							<?php _e( 'View full demo', 'bento' ); ?>
 						</a>
 						<a class="novice-header-button nhb-dismiss" target="_blank">
-							<?php _e( 'Dismiss this heading', 'satori' ); ?>
+							<?php _e( 'Dismiss this heading', 'bento' ); ?>
 						</a>
 					</div>
 				</div>

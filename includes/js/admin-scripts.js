@@ -39,5 +39,25 @@ $adm(document).ready(function() {
 		revealMapheader();
 	});
 	
+	
+	// Migrate old theme options into Customizer
+	$adm('.notice-migrate-bento-options .button-primary').click(function() { 
+		$adm.ajax({
+			url: bntAdminVars.ajaxurl,
+			type: 'POST',
+			data: {
+				action: 'bnt_migrate_customizer_options',
+			},
+			success: function(response) {
+				$adm('.notice-migrate-bento-options').hide(300, function() {
+					$adm('.notice-migrate-bento-options-success').show(300);
+				});
+			},
+			error: function(response) {
+				alert('Darn! Something went wrong. Please try again or contact support@satoristudio.net');
+			}
+		});
+	});
+	
 		
 });

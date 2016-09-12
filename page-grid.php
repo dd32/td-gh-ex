@@ -29,7 +29,12 @@ $bnt_grid_columns = get_post_meta( $bnt_parent_page_id, 'bnt_page_columns', true
 			    
 			<?php	
 			// Filter for portfolio items
-			if ( function_exists( 'bnt_ep_portfolio_filter' ) && implode( get_post_meta( $bnt_parent_page_id, 'bnt_page_content_types', true ) ) == 'project' ) {
+			$bnt_grid_current_content_types = 'post';
+			$bnt_grid_current_content_types_array = get_post_meta( $bnt_parent_page_id, 'bnt_page_content_types', true );
+			if ( !empty( $bnt_grid_current_content_types_array ) ) {
+				$bnt_grid_current_content_types = implode( $bnt_grid_current_content_types_array );
+			}
+			if ( function_exists( 'bnt_ep_portfolio_filter' ) && $bnt_grid_current_content_types == 'project' ) {
 				bnt_ep_portfolio_filter();
 			}
 			?>
