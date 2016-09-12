@@ -268,7 +268,7 @@ function bakes_and_cakes_slider_cb(){
                                 <div class="container">
                                     <div class="text">
                                         <strong class="title"><?php the_title(); ?></strong>
-                                        
+                                        <?php the_excerpt(); ?>
                                         <a class="btn" href="<?php the_permalink(); ?>"><?php echo esc_html( $bakes_and_cakes_slider_readmore );?></a>
                                     </div>
                                 </div>

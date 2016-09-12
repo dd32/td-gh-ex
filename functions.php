@@ -7,6 +7,13 @@
  * @package Bakes_And_Cakes
  */
 
+//define theme version
+if ( !defined( 'BAKES_AND_CAKES_THEME_VERSION' ) ) {
+	$theme_data = wp_get_theme();
+	
+	define ( 'BAKES_AND_CAKES_THEME_VERSION', $theme_data->get( 'Version' ) );
+}
+
 if (!function_exists('bakes_and_cakes_setup')):
 /**
  * Sets up theme defaults and registers support for various WordPress features.

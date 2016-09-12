@@ -1,4 +1,4 @@
-=== Bakes and Cakes ===
+﻿=== Bakes and Cakes ===
 Author: Rara Theme (http://raratheme.com)
 
 Tags: Blog, Two-columns, right-sidebar, footer-widgets, custom-background, custom-menu, featured-image-header, featured-images, post-formats, threaded-comments, translation-ready, full-width-template, theme-options
@@ -201,12 +201,14 @@ Bakes and Cakes an elegant WordPress theme suitable for bakery business. It is r
 
 Unless otherwise specified, all the theme files, scripts and images are licensed under GPLv2 or later
 
-
 External resources linked to the theme. 
+
 * Open Sans Font by through Google Font 
 https://www.google.com/fonts/specimen/Open+Sans 
+
 * Niconne Font by through Google Font 
 https://www.google.com/fonts/specimen/Niconne 
+
 *Font Awesome 
 http://fontawesome.io/
 
@@ -216,39 +218,9 @@ All images are under Creative Commons Public Domain deed CC0.
 
 https://pixabay.com/en/cake-cafeteria-desserts-dessert-906263/
 https://pixabay.com/en/pastries-bake-sweet-brownie-756601/
-https://pixabay.com/en/dessert-jam-dough-sugar-678071/
+https://pixabay.com/en/dessert-jam-dough-sugar-678071/ 
 https://pixabay.com/en/dessert-fruit-cake-plate-cherry-978665/
 https://pixabay.com/en/easter-easter-cakes-cookie-cutter-100171/
-https://pixabay.com/en/cake-chocolate-sweet-suites-food-486874/
-https://pixabay.com/en/muffins-bun-the-cake-sweets-742546/
-https://pixabay.com/en/muffins-bun-the-cake-sweets-742546/
-https://pixabay.com/en/berliner-breakfast-bun-cake-17811/
-https://pixabay.com/en/cake-cheese-dessert-candy-1093981/
-https://pixabay.com/en/muffins-pans-filled-vessels-tins-267298/
-https://pixabay.com/en/brunette-cute-fashion-female-girl-15963/
-https://pixabay.com/en/model-fashion-girl-female-glamour-600222/
-https://pixabay.com/en/loch-highlands-scottish-countryside-1022928/
-https://pixabay.com/en/cookies-christmas-cookies-1100808/
-https://pixabay.com/en/lingerie-girl-sexy-beauty-99761/
-https://pixabay.com/en/man-forrest-scotland-male-tree-uk-1022919/
-https://pixabay.com/en/boy-person-model-fashion-casual-1031527/
-https://pixabay.com/en/teenager-daughter-happy-smiling-775053/
-https://pixabay.com/en/slick-man-black-1005333/
-https://pixabay.com/en/dessert-orange-food-chocolate-cake-398966/
-https://pixabay.com/en/cupcake-red-cake-dessert-temptation-252805/
-https://pixabay.com/en/bake-butter-flour-mountain-pile-599521/
-https://pixabay.com/en/cake-cream-strawberry-dessert-219595/
-https://pixabay.com/en/baker-baking-bread-cook-food-858401/
-https://pixabay.com/en/donuts-pastry-bakery-dessert-food-690281/
-https://pixabay.com/en/donuts-pastry-bakery-dessert-food-690281/
-https://pixabay.com/en/bakery-bread-artisan-boulanger-567380/
-https://pixabay.com/en/cookies-baking-kids-bakery-cook-448358/
-https://pixabay.com/en/whip-cream-whisk-bake-pastries-170438/
-https://pixabay.com/en/bake-cookie-dough-ingredients-1063025/
-https://pixabay.com/en/cream-ornate-pastry-bag-bake-170439/
-https://pixabay.com/en/cake-baking-food-sweet-dessert-597175/
-https://pixabay.com/en/bakery-saleswoman-warorot-market-291048/
-https://pixabay.com/en/man-cloak-renaissance-fair-portrait-962563/
 
 
 
@@ -280,10 +252,23 @@ Bakes and Cakes WordPress Theme is distributed under the terms of the GPLv2 or l
    GNU General Public License for more details.
 
 == Changelog ==
+    
+    1.0.4
+    * Fix some bugs
+
+    1.0.3
+    * Fix some bugs.
+    
+    1.0.2
+    * Fix some bugs.
+
     1.0.1
     * Added Popular Post Widgets.
     * Added ability to add Custom CSS in theme options.
     * Added compatibility for custom logo feature.
     * Updated and integrated new theme tags in style.css
-    * Fixed escaping issues in all files.
     * Change the content width to support content in full width.
+    * Fix some bugs. 
+    
+    1.0.0
+    * Initial Release
