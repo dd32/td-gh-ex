@@ -220,7 +220,7 @@ if ($woocommerce_loop['columns'] == '3'){
                 class="attachment-shop_catalog size-<?php echo esc_attr($productimgwidth.'x'.$productimgheight);?> wp-post-image" 
                 alt="<?php echo esc_attr($alt_text); ?>">
             <?php 
-            echo apply_filters('post_thumbnail_html', ob_get_clean(), $post->ID);
+            echo apply_filters('post_thumbnail_html', ob_get_clean(), $post->ID, $image_id, array($productimgwidth, $productimgheight), $attr = '');
 
             } elseif ( woocommerce_placeholder_img_src() ) {
                  echo woocommerce_placeholder_img( 'shop_catalog' );

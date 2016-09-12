@@ -30,6 +30,11 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+
+= Version 2.7.8 | 12th September 2016 =
+* Fix: Issue with post_thumbnail_html.
+* Update: WPML Config.
+
 = Version 2.7.7 | 29th August 2016 =
 * Fix: Issue with portfolio carousel.
 * Update: hooks.
