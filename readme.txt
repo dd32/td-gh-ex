@@ -1,5 +1,5 @@
 ﻿Theme Name : Awaken
-Version    : 2.0.6
+Version    : 2.0.7
 Theme URL  : http://www.themezhut.com/themes/awaken
 Theme Documentation  : http://www.themezhut.com/awaken-theme-documentation
 License: GNU General Public License v2 or later
@@ -182,3 +182,8 @@ Added a method to display sticky posts for the two featured posts that are just 
 
 - Version 2.0.6
 Removed old theme filtering tags and added new tags.
+
+- Version 2.0.7
+Added "header ad" widget area to header.
+Added a checkbox to show/hide search box on navigation. ( Appearance > Customize > General Settins. )
+Updated font awesome font.

@@ -168,6 +168,15 @@ function awaken_widgets_init() {
 		'after_title'   => '</h1></div>',
 	) );
 	register_sidebar( array(
+		'name'          => __( 'Header Ad Area', 'awaken' ),
+		'id'            => 'header-ad',
+		'description'   => __( '728px x 90px Ad area. Use default text widget to put ad codes like google.', 'awaken' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<div class="awt-container"><h1 class="awt-title">',
+		'after_title'   => '</h1></div>',
+	) );
+	register_sidebar( array(
 		'name'          => __( 'Footer Left Sidebar', 'awaken' ),
 		'id'            => 'footer-left',
 		'description'   => '',

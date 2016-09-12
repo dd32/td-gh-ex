@@ -55,7 +55,7 @@
 						echo wp_kses_post( $footer_copyright_text ); 
 					} else { ?>
 						<div class="col-xs-12 col-md-6 col-sm-6">				
-							<?php printf( __( 'Theme: %1$s by %2$s.', 'awaken' ), 'Awaken', '<a href="http://www.themezhut.com" rel="designer">ThemezHut</a>' ); ?>
+							<?php printf( __( 'Theme: %1$s by %2$s.', 'awaken' ), 'Awaken', '<a href="http://www.themezhut.com/themes/awaken" rel="designer">ThemezHut</a>' ); ?>
 						</div>
 						<div class="col-xs-12 col-md-6 col-sm-6 fr">
 							<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'awaken' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'awaken' ), 'WordPress' ); ?></a>

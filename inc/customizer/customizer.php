@@ -134,6 +134,22 @@ function awaken_customize_register( $wp_customize ) {
 		) 
 	);
 
+    $wp_customize->add_setting(
+		'show_search_box',
+		array(
+			'default'			=> true,
+			'sanitize_callback'	=> 'awaken_sanitize_checkbox'
+		)
+	);
+    $wp_customize->add_control(
+		'show_search_box',
+		array(
+			'section'		=> 'awaken_general_settings',
+			'type'			=> 'checkbox',
+			'label'			=> __( 'Show search box on navigation?', 'awaken' ),
+		)
+	);
+
 	// Read more text.
 	$wp_customize->add_setting(
 		'read_more_text',
