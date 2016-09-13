@@ -46,7 +46,7 @@ function bellini_setup() {
 		'primary' 	=> esc_html__( 'Primary Menu', 'bellini' ),
 	) );
 
-	add_image_size( 'bellini-thumb', 620, 300 );
+	add_image_size( 'bellini-thumb', 820, 400 );
 
 	$GLOBALS['content_width'] = apply_filters( 'bellini_content_width', 640 );
 

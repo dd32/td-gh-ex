@@ -3,7 +3,7 @@ Theme Name: Bellini
 Theme URI: http://atlantisthemes.com/
 Author: Pangolin
 Description: Bellini is the perfect theme for creating a eCommerce store or shop. Responsive & flexible layout built with Bootstrap. Customize anything like Google Fonts, Color, Layout, logo upload, full-screen slider, header image and much more.Built with SEO in mind and has Structured Data (Schema) implemented. If you are looking for a beautiful theme with out of the box SEO compatibility & responsiveness, look no further! Check out the live demo at http://demo.atlantisthemes.com/front-page/
-Version: 1.28
+Version: 1.29
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bellini
@@ -567,7 +567,7 @@ a:active {
     .main-navigation ul li {
         display: inline-block;
         position: relative;
-        padding: .75em 1em .75em 0;
+        padding: .75em 1.6em .75em 0;
         border-bottom: none;
     }
 
@@ -1442,6 +1442,7 @@ object {
     text-decoration: none;
     color: #fff;
     -ms-border-radius: .1em;
+    line-height:2em;
 }
 
 .post-meta__category {
