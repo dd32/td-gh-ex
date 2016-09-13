@@ -9,7 +9,7 @@ Tags: two-columns, right-sidebar, custom-background, custom-colors, custom-heade
 
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Version:      1.1.7
+Version:      1.1.8
 */
 @charset "utf-8";
 
@@ -19,16 +19,12 @@ html,body{
 	color: #374051;
 	overflow-x: hidden;
 	line-height: 1;
-	/*padding-top: 70px;*/
 	background-color:#f7f8f8;
 	word-wrap: break-word
 }
 code,pre{font-family:"\5FAE\8F6F\96C5\9ED1",sans-serif}
 input{}
-/*
-a{color:#00b4de}
-a:hover{color:#00c8f2}
-*/
+
 ::selection {
     background:#00D7D5;
     color:#fff;
@@ -71,7 +67,7 @@ a:hover{color:#00c8f2}
 }
 
 .icon-menu:before { content: "\e60b"; }
-.icon-cross:before {  content: "\e605";}/*.icon-menu:before { content: "\f0c9"; }*/
+.icon-cross:before {  content: "\e605";}
 
 .icon-like:before { content: "\e622";}
 .icon-google-plus:before {
@@ -120,8 +116,6 @@ a:hover{color:#00c8f2}
 	to{-webkit-filter:hue-rotate(-360deg)}
 }
 
-
-
 .wrap{max-width:1136px;margin:0 auto}
 #toolitembar{position:fixed;right:25px;bottom:120px;z-index:999}
 #toolitembar a{position:relative;display:block;height:50px;width:50px;background-color:rgba(0,0,0,0.6);color:#fff;text-align:center;-webkit-transition:all ease 0.4s;-moz-transition:all ease 0.4s;-o-transition:all ease 0.4s;transition:all ease 0.4s;margin-bottom:5px}
@@ -169,14 +163,12 @@ a:hover{color:#00c8f2}
 }
 body{ padding-top:0px; }
 
-
 #header:after{content:".";display:block;height:0;clear:both;visibility:hidden}
 #header.close-aliyun{position:fixed !important;top:0 !important}
 #header .btn:active{box-shadow:none}
 #header.static{background:rgba(255,255,255,0.97) !important;box-shadow:0 1px 3px rgba(0,0,0,0.1)}
 
 #header.static .header-nav>ul{display:block !important}
-/*#header .header-nav ul{display:none !important}*/
 
 #header.static .header-nav>ul>li>a{color:#374051}
 #header.static .white-logo{opacity:0}
@@ -185,7 +177,6 @@ body{ padding-top:0px; }
 #header.hover .white-logo{opacity:0}
 
 #header-nav-btn{display:none}
-/*#header-nav-btn{display:block}*/
 
 #logo{-webkit-transition:all ease 0.4s;-moz-transition:all ease 0.4s;-o-transition:all ease 0.4s;transition:all ease 0.4s;position:absolute;top:4px}
 #logo>a{display:block;position:relative}
@@ -197,8 +188,6 @@ body{ padding-top:0px; }
     padding-top: 6px;
     position: relative;
     z-index: 2;
-    max-width: 70%;
-
 }
 .header-nav:before{content:"";position:absolute;height:0;width:100%;left:0;top:100%;background:rgba(255,255,255,0.4);-webkit-transition:all ease 0.4s;-moz-transition:all ease 0.4s;-o-transition:all ease 0.4s;transition:all ease 0.4s}
 .header-nav.show-before:before{height:50px}
@@ -506,8 +495,6 @@ body{ padding-top:0px; }
 @keyframes anim-effect-jagoda-2{0%{-webkit-transform:scale3d(.5, .5, 1);transform:scale3d(.5, .5, 1)}100%{-webkit-transform:scale3d(1.4, 1.4, 1);transform:scale3d(1.4, 1.4, 1)}}
 @-webkit-keyframes swing{0%{opacity:0;-webkit-transform:rotate3d(0, 0, 1, -10deg) scale3d(1.8, 1.8, 1.8)}50%{opacity:.6;-webkit-transform:rotate3d(0, 0, 1, 10deg) translate(0, -16px) scale3d(2, 2, 2)}100%{opacity:0;-webkit-transform:rotate3d(0, 0, 1, -5deg) translate(0, -32px) scale3d(2.2, 2.2, 2.2)}}
 
-
-
 .resources-content{background:#eff4f5;padding:40px 0 60px}
 .resources-content-top{max-width:1048px;margin:0 auto;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.1);margin-bottom:20px}.resources-content-top .inner{padding:20px;position:relative;min-height:320px}.resources-content-top .left{width:47.846889952153%;position:absolute;top:20px;left:20px;height:320px;overflow:hidden;background-repeat:no-repeat;background-size:cover;background-position:center}.resources-content-top .left>span{position:absolute;height:24px;line-height:24px;padding:0 10px;background:#fba923;font-size:12px;color:#fff;left:0;top:0}
 
@@ -549,12 +536,9 @@ body{ padding-top:0px; }
 .resources-content-article h2{font-size:36px;color:#444;line-height:1.4em;margin-bottom:30px}
 .resources-content-article .article-copyright{margin-top:50px;background:#f7f8f9;padding:20px 20px 10px;border-left:2px solid #00c8f2}
 
-
 .cal-items .label-current {
     bottom: 43px;
 }
-
-
 
 /**------- media media screen and (max-width:xxxpx)-------***/
 @charset "utf-8";
@@ -585,8 +569,7 @@ input,button{-webkit-appearance:none}
 	.banner-desk{width:100%;right:auto}
 	.main .sidebar{left:10px}
 	.tools>li{margin:0 20px}	
-	.stat{display:none}	
-	
+	.stat{display:none}		
 	.service>li{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;margin:0;width:49%;padding:0 10% 50px;float:none;display:inline-block;vertical-align:top}	
 	
 	
@@ -607,9 +590,6 @@ input,button{-webkit-appearance:none}
 	.header-nav>button .icon-cross{display:none}	
 	.header-nav>button.active .icon-cross{display:block}	
 	.header-nav>button.active .icon-menu{display:none}
-
-	
-	
 	
 	.header-nav>ul{display:none;-webkit-transition:all ease 0.4s;-moz-transition:all ease 0.4s;-o-transition:all ease 0.4s;transition:all ease 0.4s;position:absolute;left:0;top:100%;width:100%;background:rgba(255,255,255,0.9);-webkit-backdrop-filter:blur(10px);-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;box-shadow:0 1px 3px rgba(0,0,0,0.1)}
 	
@@ -720,9 +700,7 @@ input,button{-webkit-appearance:none}
 .media-row{padding:30px 10px}
 .media-row h3{font-size:20px;padding-top:0}
 }
-
 /**------- media end-------***/
-
 
 #logo{ font-size:28px; margin-top:8px;}
 .copyright a{ color:#AFB8CF;}
@@ -730,7 +708,6 @@ input,button{-webkit-appearance:none}
 .form-submit #submit{ cursor:pointer;}
 
 .ct_page_nav{ width:100%; text-align:center; margin:30px auto 0 auto; padding:0;}
-/*.ct_page_nav ul{ width:100%; text-align:center;}*/
 .ct_page_nav ul li{ float:left; margin-right:15px;}
 .ct_page_nav ul li a{color: #00b4de; float:left;}
 .ct_page_nav ul li a:hover{color:#00c8f2; text-decoration:none;}
@@ -920,8 +897,13 @@ ul{
 
 .wrap .col-md-4 img{ max-width:100%;}
 
-
 /*header not fixed*/
+.header-nav {
+    max-width: 68%;
+	float:right;
+
+}
+#logo{ max-width:30%; overflow:hidden;position: inherit; float:left;}
 
 #header{
 	position: inherit;

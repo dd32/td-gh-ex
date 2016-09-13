@@ -24,6 +24,9 @@ iconfont
 3. Log into your WP admin panel and click on the Design tab. Now click on the Ascreen theme to activate it.
 
 == Changelog ==
+Version 1.1.8  2016.9.13
+* Fix Some Problems.
+
 Version 1.1.7  2016.9.12
 * Fix Some Problems.
 

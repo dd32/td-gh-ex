@@ -10,7 +10,7 @@
 </head>
 <body  <?php body_class(); ?>>
 
-    <header id="header"  class="header <?php if ( is_admin_bar_showing() ) { echo 'admin_bar_fix';  }?>">
+    <header id="header"  class="header <?php //if ( is_admin_bar_showing() ) { //echo 'admin_bar_fix';  }?>">
         <div class="wrap">
             <h1 id="logo">
 			<?php 
