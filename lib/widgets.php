@@ -625,7 +625,7 @@ class Kadence_Image_Grid_Widget extends WP_Widget {
           $type_options[] = '<option value="">All</option>';
  
     foreach ($types as $type) {
-      if ($thetype==$type->slug) { $selected=' selected="selected"';} else { $selected=""; }
+      if ($thetype == $type->slug) { $selected=' selected="selected"';} else { $selected=""; }
       $type_options[] = '<option value="' . $type->slug .'"' . $selected . '>' . $type->name . '</option>';
     }
      $categories= get_categories();

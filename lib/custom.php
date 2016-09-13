@@ -454,10 +454,6 @@ function kadence_adjacent_post_link_plus($args = '', $format = '%link &raquo;', 
     'ex_cats' => '', 'ex_cats_method' => 'weak', 'in_cats' => '', 'ex_posts' => '', 'in_posts' => '',
     'before' => '', 'after' => '', 'num_results' => 1, 'return' => false, 'echo' => true
   );
-
-//  If Post Types Order plugin is installed, default to sorting on menu_order
-  if ( function_exists('CPTOrderPosts') )
-    $defaults['order_by'] = 'menu_order';
   
   $r = wp_parse_args( $args, $defaults );
   if ( empty($r['format']) )

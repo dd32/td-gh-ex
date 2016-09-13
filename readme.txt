@@ -30,8 +30,10 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 2.8.0 | 13th September 2016 =
+* Fix: Issue with cc icon.
 
-= Version 2.7.8 | 12th September 2016 =
+= Version 2.7.9 | 12th September 2016 =
 * Fix: Issue with post_thumbnail_html.
 * Update: WPML Config.
 
