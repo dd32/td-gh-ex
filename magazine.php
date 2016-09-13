@@ -13,8 +13,8 @@ while($featpost->have_posts()) : $featpost->the_post();
 <article class="featured-post" id="featpost<?php echo $newnum?>" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
 <div class="thumbnail-container" itemprop="image">
 
-<?php 
- 
+<?php
+
 if($newnum != 1){
   if ( get_the_post_thumbnail() != '' ) {
     echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
@@ -47,7 +47,7 @@ if($newnum != 1){
    echo '" alt="';the_title();
    echo '" />';
    echo '</a>';
-    } 
+    }
     else{
    echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
     echo '<img src="';
@@ -89,7 +89,7 @@ if($newnum != 1){
    echo '" alt="';the_title();
    echo '" />';
    echo '</a>';
-    } 
+    }
     else{
    echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
     echo '<img src="';
@@ -116,7 +116,7 @@ if($newnum != 1){
 <?php } ?>
 </div>
 </article>
-<?php 
+<?php
 $newnum++;
 endwhile; ?>
 </div>
@@ -127,10 +127,10 @@ endwhile; ?>
 
 
 
-  
 
 
-<?php 
+
+<?php
 
 if(get_theme_mod("homebuilder") && get_theme_mod("category_remember")){
         $totalslide =  explode(', ', get_theme_mod("homebuilder"));
@@ -145,13 +145,13 @@ for($i=0;$i<=$slidecount;$i++){
 
 if($catboxnum == 1 && $catid != 'none' && $catid !=''){?>
 
-<!--Slider--> 
-<div id="cat-slider"><div class="slider-title"><a href='<?php echo get_site_url(); ?>/category/<?php echo str_replace(" ", "-", get_category($catid)->name) ?>'><?php echo get_category($catid)->name ?></a></div><ul class="bjqs">
-<?php $featpost = new WP_Query( 'cat='.$catid.'&posts_per_page=5' );  while($featpost->have_posts()) : $featpost->the_post(); ?>    
-<li> 
+<!--Slider-->
+<div id="cat-slider"><div class="slider-title"><a href='<?php echo get_category_link( $catid ); ?>'><?php echo get_category($catid)->name ?></a></div><ul class="bjqs">
+<?php $featpost = new WP_Query( 'cat='.$catid.'&posts_per_page=5' );  while($featpost->have_posts()) : $featpost->the_post(); ?>
+<li>
 
 <div class="slider-img-con" itemprop="image">
-  <?php if ( get_the_post_thumbnail() != '' ) { 
+  <?php if ( get_the_post_thumbnail() != '' ) {
   echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
   $source_image_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'thumbnail') );
   $imginfo = getimagesize($source_image_url);
@@ -166,7 +166,7 @@ if($catboxnum == 1 && $catid != 'none' && $catid !=''){?>
    echo '" alt="';the_title();
    echo '" />';
     echo '</a>';
-    } 
+    }
     elseif(howlthemes_catch_that_image()){
    $source_image_url = howlthemes_catch_that_image();
    $imginfo = getimagesize($source_image_url);
@@ -182,7 +182,7 @@ if($catboxnum == 1 && $catid != 'none' && $catid !=''){?>
    echo '" alt="';the_title();
    echo '" />';
    echo '</a>';
-    } 
+    }
     else{
    echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
     echo '<img src="';
@@ -193,7 +193,7 @@ if($catboxnum == 1 && $catid != 'none' && $catid !=''){?>
 }
   ?>
 </div><h2 class="bjqs-caption" itemprop="headline"><a href="<?php the_permalink() ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-</li> 
+</li>
 <?php endwhile; ?>
 </ul></div>
 
@@ -201,7 +201,7 @@ if($catboxnum == 1 && $catid != 'none' && $catid !=''){?>
 
 <!--Carousel-->
 <div id="carouselpost">
-<div class="titlecatholder"><span><a href='<?php echo get_site_url(); ?>/category/<?php echo str_replace(" ", "-", get_category($catid)->name) ?>'><?php echo get_category($catid)->name ?></a></span>
+<div class="titlecatholder"><span><a href='<?php echo get_category_link( $catid ); ?>'><?php echo get_category($catid)->name ?></a></span>
 <div class="navigator-holder">
 <a class="buttons prev" href="#"><i class="fa fa-angle-left"></i></a>
 <a class="buttons next" href="#"><i class="fa fa-angle-right"></i></a></div>
@@ -209,10 +209,10 @@ if($catboxnum == 1 && $catid != 'none' && $catid !=''){?>
     <div class="viewport">
       <ul class="overview">
 
-<?php $featpost = new WP_Query( 'cat='.$catid.'&posts_per_page=5' );  while($featpost->have_posts()) : $featpost->the_post(); ?>    
-<li>  
+<?php $featpost = new WP_Query( 'cat='.$catid.'&posts_per_page=5' );  while($featpost->have_posts()) : $featpost->the_post(); ?>
+<li>
 <div class="imgcarholder" itemprop="image">
- <?php if ( get_the_post_thumbnail() != '' ) { 
+ <?php if ( get_the_post_thumbnail() != '' ) {
    echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
   $source_image_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'thumbnail') );
   $imginfo = getimagesize($source_image_url);
@@ -227,7 +227,7 @@ if($catboxnum == 1 && $catid != 'none' && $catid !=''){?>
    echo '" alt="';the_title();
    echo '" />';
     echo '</a>';
-    } 
+    }
    elseif(howlthemes_catch_that_image()){
    $source_image_url = howlthemes_catch_that_image();
   $imginfo = getimagesize($source_image_url);
@@ -236,14 +236,14 @@ if($catboxnum == 1 && $catid != 'none' && $catid !=''){?>
   }
   else{
   $resizedImage = $source_image_url;
-  }   
+  }
    echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
    echo '<img src="';
    echo $resizedImage;
    echo '" alt="';the_title();
    echo '" />';
    echo '</a>';
-    } 
+    }
     else{
    echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
     echo '<img src="';
@@ -264,18 +264,18 @@ if($catboxnum == 1 && $catid != 'none' && $catid !=''){?>
 
       </ul>
     </div>
-    
+
   </div>
 <?php  } if($catboxnum == 3 && $catid != 'none' && $catid !=''){?>
 
 <!--Grid Posts-->
 <div class="grid-posts-holder">
-<div class="titlecatholder"><span><a href='<?php echo get_site_url(); ?>/category/<?php echo str_replace(" ", "-", get_category($catid)->name) ?>'><?php echo get_category($catid)->name ?></a></span></div>
-<?php $featpost = new WP_Query( 'cat='.$catid.'&posts_per_page=5' ); $rnewnum = 1;  while($featpost->have_posts()) : $featpost->the_post(); ?>    
+<div class="titlecatholder"><span><a href='<?php echo get_category_link( $catid ); ?>'><?php echo get_category($catid)->name ?></a></span></div>
+<?php $featpost = new WP_Query( 'cat='.$catid.'&posts_per_page=5' ); $rnewnum = 1;  while($featpost->have_posts()) : $featpost->the_post(); ?>
 <?php if($rnewnum == 1 or $rnewnum == 4){ ?>
 <div class="grid-posts-big" itemprop="image">
- <?php 
- if ( get_the_post_thumbnail() != '' ) { 
+ <?php
+ if ( get_the_post_thumbnail() != '' ) {
     echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
   $source_image_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'thumbnail') );
   $imginfo = getimagesize($source_image_url);
@@ -290,7 +290,7 @@ if($catboxnum == 1 && $catid != 'none' && $catid !=''){?>
    echo '" alt="';the_title();
    echo '" />';
     echo '</a>';
-    } 
+    }
     elseif(howlthemes_catch_that_image()){
    $source_image_url = howlthemes_catch_that_image();
   $imginfo = getimagesize($source_image_url);
@@ -306,7 +306,7 @@ if($catboxnum == 1 && $catid != 'none' && $catid !=''){?>
    echo '" alt="';the_title();
    echo '" />';
    echo '</a>';
-    } 
+    }
     else{
    echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
     echo '<img src="';
@@ -326,8 +326,8 @@ if($catboxnum == 1 && $catid != 'none' && $catid !=''){?>
 </div>
 <?php } else{?>
 
-<div class="grid-posts-small" itemprop="image">  
- <?php if ( get_the_post_thumbnail() != '' ) { 
+<div class="grid-posts-small" itemprop="image">
+ <?php if ( get_the_post_thumbnail() != '' ) {
   echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
   $source_image_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'thumbnail') );
   $imginfo = getimagesize($source_image_url);
@@ -342,7 +342,7 @@ if($catboxnum == 1 && $catid != 'none' && $catid !=''){?>
    echo '" alt="';the_title();
    echo '" />';
     echo '</a>';
-    } 
+    }
     elseif(howlthemes_catch_that_image()){
    $source_image_url = howlthemes_catch_that_image();
   $imginfo = getimagesize($source_image_url);
@@ -358,7 +358,7 @@ if($catboxnum == 1 && $catid != 'none' && $catid !=''){?>
    echo '" alt="';the_title();
    echo '" />';
    echo '</a>';
-    } 
+    }
     else{
    echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
     echo '<img src="';
@@ -377,12 +377,12 @@ if($catboxnum == 1 && $catid != 'none' && $catid !=''){?>
 
 <!--Blog Posts-->
 <div class="blog-cnt-holder">
-  <div class="titlecatholder"><span><a href='<?php echo get_site_url(); ?>/category/<?php echo str_replace(" ", "-", get_category($catid)->name) ?>'><?php echo get_category($catid)->name ?></a></span></div>
+  <div class="titlecatholder"><span><a href='<?php echo get_category_link( $catid ); ?>'><?php echo get_category($catid)->name ?></a></span></div>
 <?php $featpost = new WP_Query( 'cat='.$catid.'&posts_per_page=6' ); $randnewnum = 1;  while($featpost->have_posts()) : $featpost->the_post(); ?>
 <div class="blogposts <?php if($randnewnum== 1 or $randnewnum== 3 or $randnewnum== 5){echo"left-posts";} else{ echo"right-post"; } ?>">
 <div class="hldrblog4" itemprop="image">
-<?php 
-  if ( get_the_post_thumbnail() != '' ) { 
+<?php
+  if ( get_the_post_thumbnail() != '' ) {
     echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
   $source_image_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'thumbnail') );
  $imginfo = getimagesize($source_image_url);
@@ -397,7 +397,7 @@ if($catboxnum == 1 && $catid != 'none' && $catid !=''){?>
    echo '" alt="';the_title();
    echo '" />';
     echo '</a>';
-    } 
+    }
     elseif(howlthemes_catch_that_image()){
    $source_image_url = howlthemes_catch_that_image();
  $imginfo = getimagesize($source_image_url);
@@ -413,7 +413,7 @@ if($catboxnum == 1 && $catid != 'none' && $catid !=''){?>
    echo '" alt="';the_title();
    echo '" />';
    echo '</a>';
-    } 
+    }
     else{
    echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
     echo '<img src="';
@@ -441,10 +441,10 @@ if($catboxnum == 1 && $catid != 'none' && $catid !=''){?>
 <?php  } if($catboxnum == 5 && $catid != 'none' && $catid !=''){?>
 <!--Simple Posts-->
 <div class="simple-posts">
-    <div class="titlecatholder"><span><a href='<?php echo get_site_url(); ?>/category/<?php echo str_replace(" ", "-", get_category($catid)->name) ?>'><?php echo get_category($catid)->name ?></a></span></div>
+    <div class="titlecatholder"><span><a href='<?php echo get_category_link( $catid ); ?>'><?php echo get_category($catid)->name ?></a></span></div>
 <?php $featpost = new WP_Query( 'cat='.$catid.'&posts_per_page=6' ); while($featpost->have_posts()) : $featpost->the_post(); ?>
 <article itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
-<?php if ( get_the_post_thumbnail() != '' ) { 
+<?php if ( get_the_post_thumbnail() != '' ) {
     echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
   $source_image_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID, 'thumbnail') );
  $imginfo = getimagesize($source_image_url);
@@ -459,7 +459,7 @@ if($catboxnum == 1 && $catid != 'none' && $catid !=''){?>
    echo '" alt="';the_title();
    echo '" />';
     echo '</a>';
-    } 
+    }
     elseif(howlthemes_catch_that_image()){
    $source_image_url = howlthemes_catch_that_image();
  $imginfo = getimagesize($source_image_url);
@@ -475,7 +475,7 @@ if($catboxnum == 1 && $catid != 'none' && $catid !=''){?>
    echo '" alt="';the_title();
    echo '" />';
    echo '</a>';
-    } 
+    }
     else{
    echo '<a href="'; the_permalink(); echo '" class="thumbnail-wrapper">';
     echo '<img src="';
@@ -491,7 +491,7 @@ if($catboxnum == 1 && $catid != 'none' && $catid !=''){?>
 <span class="entry-author"><i class="fa fa-user"></i> <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author"><span><?php echo get_the_author() ?></span></a></span>
 <span class="time-drag"><i class="fa fa-calendar-o"></i><span class="dtime"><?php the_time('F j, Y'); ?></span></span>
 <span class="comment-count"><i class="fa fa-comments"></i> <a href="<?php the_permalink() ?>/#comment"><?php echo get_comments_number(); ?></a></span>
- </div> 
+ </div>
 <?php the_excerpt(); ?>
 </div>
 </article>

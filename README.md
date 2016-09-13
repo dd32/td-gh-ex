@@ -1,6 +1,6 @@
 == Aqueduct ==
-Tested up to: WordPress 4.5
-Version: 2.0.0
+Tested up to: WordPress 4.6
+Version: 2.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,7 +22,7 @@ Aqueduct Theme bundles the following third-party resources:
 
 Font Awesome by Dave Gandy
 License: SIL OFL 1.1
-Source: http://fontawesome.io/icons/ 
+Source: http://fontawesome.io/icons/
 
 Basic jQuery Slider plug-in v.1.3
 License: GNU General Public License, version 3 (GPL-3.0)
@@ -40,7 +40,7 @@ tinynav - Copyright (c) 2011-2014 Viljami Salminen
 License: MIT
 Source: http://tinynav.viljamis.com
 
-Image used in screenshot.png: 
+Image used in screenshot.png:
 
 A photo by Abigail Keenan (https://unsplash.com/akeenster), licensed under Creative Commons Zero(http://creativecommons.org/publicdomain/zero/1.0/)
 

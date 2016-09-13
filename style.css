@@ -4,10 +4,10 @@ Theme URI: http://www.howlthemes.com/aqueduct-free-magazine-wordpress-theme/
 Author: HowlThemes
 Author URI: http://www.howlthemes.com
 Description: Aqueduct is easy to use minimal magazine/blog theme for wordpress. It has advance theme builder which let you customize this theme without even touching a single line of code, This Theme is compatible with WooCommerce and BBPress.
-Version: 2.0.1
+Version: 2.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-images, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready
+Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, featured-images, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, E-Commerce, News
 Text Domain: aqueduct
 */
 
@@ -888,7 +888,7 @@ padding-left: 10px;
   border: 1px solid #ddd;
 }
 
-.comment-author.vcard img {  
+.comment-author.vcard img {
   border-radius: 100%;
 width: 64px;
 height: 64px;
@@ -1407,7 +1407,7 @@ overflow: auto;
 }
 
 /*----------------------------
- Tiny Carousel 
+ Tiny Carousel
  ------------------------*/
 
 #carouselpost {
@@ -1535,7 +1535,7 @@ font-size: 14px;
 
 
 /*----------------------------
- Grid Post 
+ Grid Post
  ------------------------*/
 
 .grid-posts-big img {
@@ -2119,7 +2119,7 @@ Media Queries
 .blogposts, .hldrblog4, .blogposts img {
   width: 315px;
   }
- 
+
 .blog-content-hldr {
   width: 410px;
 }
@@ -2145,7 +2145,7 @@ Media Queries
     width:740px;
   }
  .tinynav{ display: block; }
- 
+
  .main-navigation ul, .secondary-navigation ul{display: none;}
  .main-navigation{
   width: 690px;
@@ -2219,8 +2219,8 @@ Media Queries
   float: left;
 }
 li.bjqs-slide {
-   margin-left: 0px !important; 
-   padding-left: 0px; 
+   margin-left: 0px !important;
+   padding-left: 0px;
 }
 .rmeta-holder {
   width: 140px;
