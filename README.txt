@@ -48,6 +48,11 @@ Images
 
 == Changelog ==
 
+= 2.1.4 =
+
+** Make the theme compatible with child theme.
+** Checked the !class_exists in custom control.
+
 = 2.1.3 =
 
 ** Make the theme compatible with latest version of WordPress 4.6
