@@ -8,7 +8,7 @@
 if (!function_exists('p43d_records_setup')) {
 
   define('P43D_RECORDS_BASE_URL', esc_url(get_template_directory_uri()));
-  define('P43D_RECORDS_VERSION', '0.9.3');
+  define('P43D_RECORDS_VERSION', '0.9.4');
   define('P43D_RECORDS_WEBSITE', 'https://records.43d.jp/'); // for the credit and link
   define('P43D_RECORDS_LIST_NUM', intval(get_option('posts_per_page')));
 
@@ -40,7 +40,7 @@ if (!function_exists('p43d_records_setup')) {
   {
 
     wp_enqueue_style('43d-records-normalize', get_template_directory_uri() . '/css/normalize.min.css');
-    wp_enqueue_style('43d-records-style', get_template_directory_uri() . '/style.min.css', array(), P43D_RECORDS_VERSION);
+    wp_enqueue_style('43d-records-style', get_stylesheet_uri(), array(), P43D_RECORDS_VERSION);
 
     wp_enqueue_script('jquery');
     if (is_singular() && comments_open()) {

@@ -7,9 +7,9 @@ This theme is designed to publish the records by field recordings. To use design
 
 https://records.43d.jp/43d-records-plugin.zip
 
-If you click the nav menu "M", the menu panel is shown. The lists of posts, static pages, categories, and tags are shown in the menu panel. If the accessed URL is for an archive page, the menu panel is open when the web page is loaded.
-If you click the nav menu "I", the information panel is shown. The contents of posts are shown in the information panel. If the accessed URL is for a post or a static page, the information panel is open when the web page is loaded.
-If you click the nav menu "T", the timeline of the published sound is shown. This menu "T" appears only if the content includes any sound files.
+When you click the nav menu "Menu", the menu panel is opened. The lists of posts, static pages, categories, and tags are shown in the menu panel. If the accessed URL is for an archive page, the menu panel is opened when the web page is loaded.
+When you click the nav menu "content", the content panel is opened. The contents of a post or a static page are shown in the content panel. If the accessed URL is for a post or a static page, the content panel is opened when the web page is loaded.
+When you click the nav menu "timeline", the timeline of the published sound is opened. This nav menu "timeline" appears only if the content includes any sound files.
 
 == Copyright ==
 

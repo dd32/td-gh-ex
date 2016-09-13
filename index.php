@@ -104,14 +104,9 @@ while (have_posts()) :
   ?>
 
   <ul id="main_menu">
-    <li class="menulist" title="Menu"><img src="<?php echo esc_url(P43D_RECORDS_BASE_URL); ?>/img/icon_M.svg"
-                                           alt="blog menu"/></li>
-    <li class="infobox" title="Information"><img src="<?php echo esc_url(P43D_RECORDS_BASE_URL); ?>/img/icon_I.svg"
-                                                 alt="information"/>
-    </li>
-    <li class="timeline" title=""><img src="<?php echo esc_url(P43D_RECORDS_BASE_URL); ?>/img/icon_T.svg"
-                                       alt="timeline"/>
-    </li>
+    <li class="menulist" title="Menu">menu</li>
+    <li class="infobox" title="Content">content</li>
+    <li class="timeline" title="Timeline">timeline</li>
   </ul>
 
   <ul id="ctrl_btns">
@@ -158,14 +153,16 @@ while (have_posts()) :
 
         <?php if (strlen($p43d_records_latitude) > 0 && strlen($p43d_records_longitude) > 0) :
           $geo_str = p43d_records_geo_stringify($p43d_records_latitude, $p43d_records_longitude);
+          $maplink = 'https://maps.google.com/maps?z=12&amp;t=e'
+            . '&amp;ll=' . $p43d_records_latitude . ',' . $p43d_records_longitude
+            . '&amp;q=' . $p43d_records_latitude . ',' . $p43d_records_longitude;
           ?>
           <p class="geo info"><span
               class="label"><?php esc_html_e('Location', '43d-records'); ?></span><?php echo esc_html($geo_str); ?>
-            <a
-              href="https://maps.google.com/maps?z=12&amp;t=e&amp;ll=<?php echo $p43d_records_latitude . ',' . $p43d_records_longitude; ?>&amp;q=<?php echo $p43d_records_latitude . ',' . $p43d_records_longitude; ?>"
-              target="_blank" class="icon_link"><img class="geo_icon"
-                                                     src="<?php echo esc_url(P43D_RECORDS_BASE_URL); ?>/img/icon_geo.svg"
-                                                     alt="Google Maps"/></a></p>
+            <a href="<?php echo esc_url($maplink); ?>" target="_blank" class="icon_link"><img class="geo_icon"
+                                                                                              src="<?php echo esc_url(P43D_RECORDS_BASE_URL); ?>/img/icon_geo.svg"
+                                                                                              alt="Google Maps"/></a>
+          </p>
         <?php endif; ?>
 
         <?php if ($p43d_records_spec_mp3 !== false) : ?>
@@ -283,12 +280,12 @@ while (have_posts()) :
           echo ' hidden';
         } ?>" data-page="<?php echo $page; ?>" data-last="<?php echo $last_page ?>">
           <a href="<?php echo esc_url(admin_url('admin-ajax.php')); ?>?page=<?php if ($prev_page >= 0) {
-            echo $prev_page;
+            echo esc_url($prev_page);
           } ?>" class="recent<?php if ($page <= 0) {
             echo ' hidden';
           } ?>"><?php printf(__("&laquo; recent %d records", '43d-records'), $per_page); ?></a>
           <a href="<?php echo esc_url(admin_url('admin-ajax.php')); ?>?page=<?php if ($next_page <= $last_page) {
-            echo $next_page;
+            echo esc_url($next_page);
           } ?>" class="past<?php if ($page >= $last_page) {
             echo ' hidden';
           } ?>"><?php printf(__("past %d records &raquo;", '43d-records'), $per_page); ?></a>

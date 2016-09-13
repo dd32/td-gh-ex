@@ -2,9 +2,9 @@
 # This file is distributed under the MIT License.
 msgid ""
 msgstr ""
-"Project-Id-Version: 43d records 0.9.2\n"
+"Project-Id-Version: 43d records 0.9.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/43d-records_dev\n"
-"POT-Creation-Date: 2016-08-30 14:25:22+00:00\n"
+"POT-Creation-Date: 2016-09-13 09:58:55+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -60,11 +60,11 @@ msgstr ""
 msgid "Time (Hours:Minutes)"
 msgstr ""
 
-#: admin_inc/post.php:80 index.php:192
+#: admin_inc/post.php:80 index.php:189
 msgid "Equipments"
 msgstr ""
 
-#: admin_inc/post.php:89 index.php:163
+#: admin_inc/post.php:89 index.php:161
 msgid "Location"
 msgstr ""
 
@@ -99,63 +99,63 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: functions.php:220 index.php:151
+#: functions.php:220 index.php:146
 msgid "Posted On"
 msgstr ""
 
-#: index.php:155
+#: index.php:150
 msgid "Recorded On"
 msgstr ""
 
-#: index.php:173 index.php:182
+#: index.php:170 index.php:179
 msgid "SPECS"
 msgstr ""
 
-#: index.php:200
+#: index.php:197
 msgid "Categories"
 msgstr ""
 
-#: index.php:208
+#: index.php:205
 msgid "Tags"
 msgstr ""
 
-#: index.php:220
+#: index.php:217
 msgid "Pages:"
 msgstr ""
 
-#: index.php:224
+#: index.php:221
 msgid "Page"
 msgstr ""
 
-#: index.php:231
+#: index.php:228
 msgid "<span>&laquo; Previous Entry</span> &ldquo;%title&rdquo;"
 msgstr ""
 
-#: index.php:232
+#: index.php:229
 msgid "<span>&raquo; Next Entry</span> &ldquo;%title&rdquo;"
 msgstr ""
 
-#: index.php:263
+#: index.php:260
 msgid "Recordings List"
 msgstr ""
 
-#: index.php:289
+#: index.php:286
 msgid "&laquo; recent %d records"
 msgstr ""
 
-#: index.php:294
+#: index.php:291
 msgid "past %d records &raquo;"
 msgstr ""
 
-#: index.php:299
+#: index.php:296
 msgid "Static Pages"
 msgstr ""
 
-#: index.php:306
+#: index.php:303
 msgid "categories"
 msgstr ""
 
-#: index.php:325
+#: index.php:322
 msgid "tags"
 msgstr ""
 
