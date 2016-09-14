@@ -1,4 +1,4 @@
-90s Retro v1.3.5
+90s Retro v1.4
 http://organicthemes.com
 
 A WordPress theme designed in the style of an old Geocities site, because we thought it would be funny.
@@ -8,7 +8,7 @@ Image Credits
 - logo.gif: Created by David Morgan, http://dav.idmorgan.com. Licensed under the GPLv2 license.
 - retro-torch.gif: Created by David Morgan, http://dav.idmorgan.com. Licensed under the GPLv2 license.
 - screenshot.png: Created by David Morgan, http://dav.idmorgan.com. Licensed under the GPLv2 license.
-	- Image in screenshot: Photo by Tracy Thomas. Downloaded from Unsplash, https://unsplash.com/license. Licensed under Creative Commons Zero.
+	- Image in screenshot: Photo by Julian Fernandes. Downloaded from Unsplash, https://unsplash.com/license. Licensed under Creative Commons Zero.
 - background.png: Downloaded from Subtle Patters, http://subtlepatterns.com/small-steps/. Licensed under CC BY-SA 3.0.
 
 Audio Credits
@@ -28,8 +28,8 @@ Script Credits
 - html5shiv.js: MIT/GPL2 Licensed.
 - superfish.js: Created by Joel Birch. Dual licensed under the MIT and GPL licenses.
 
- 
-INSTALL: 
+
+INSTALL:
 1. Upload the theme by navigating to Appearance > Themes > Install Themes within the WordPress admin. Select the theme zip file to upload.
 2. Activate the theme after uploading.
 3. Configure and save the theme options within Appearance > Customize.
@@ -102,3 +102,9 @@ CHANGELOG v1.3.4:
 
 CHANGELOG v1.3.5:
 - Fixed typo
+
+CHANGELOG v1.4:
+- Cleaned up PHP
+- Updated screenshot.png
+- Theme Check fixes
+- Footer change plugin notice
