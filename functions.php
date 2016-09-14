@@ -11,7 +11,7 @@
 	require( WL_TEMPLATE_DIR_CORE . '/scripts/css_js.php' ); //Enquiring Resources here	
 	require( WL_TEMPLATE_DIR_CORE . '/comment-function.php' );	
 	require(dirname(__FILE__).'/customizer.php');
-	
+		require( get_template_directory() . '/class-tgm-plugin-activation.php' );
 	//Sane Defaults
 	function weblizar_default_settings()
 {
@@ -362,5 +362,55 @@
 	}
 if (is_admin()) {
 	require_once('core/admin/admin-themes.php');
+	
 }	
+
+//Plugin Recommend
+add_action('tgmpa_register','enigma_plugin_recommend');
+function enigma_plugin_recommend(){
+	$plugins = array(
+	array(
+            'name'      => 'Responsive Coming Soon',
+            'slug'      => 'responsive-coming-soon-page',
+            'required'  => false,
+        ),/* 
+	array(
+            'name'      => 'Photo Video Link Gallery',
+            'slug'      => 'photo-video-link-gallery',
+            'required'  => false,
+        ),
+	array(
+            'name'      => 'Lightbox Gallery',
+            'slug'      => 'simple-lightbox-gallery',
+            'required'  => false,
+        ),
+	array(
+            'name'      => 'Instagram Gallery',
+            'slug'      => 'gallery-for-instagram',
+            'required'  => false,
+        ),
+	array(
+            'name'      => 'Ultimate Responsive Image Slider',
+            'slug'      => 'ultimate-responsive-image-slider',
+            'required'  => false,
+        ),
+	array(
+            'name'      => 'Flickr Album Gallery',
+            'slug'      => 'flickr-album-gallery',
+            'required'  => false,
+        ),
+	array(
+            'name'      => 'Gallery Pro',
+            'slug'      => 'gallery-pro',
+            'required'  => false,
+        ), */
+	array(
+            'name'      => 'Admin Custom Login',
+            'slug'      => 'admin-custom-login',
+            'required'  => false,
+        )
+		
+	);
+    tgmpa( $plugins );
+}
 ?>
