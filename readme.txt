@@ -1,13 +1,24 @@
 ﻿Theme Name : Barletta
-Version    : 1.0.8
+Version    : 1.0.9
 Theme URL  : http://moozthemes.com/barletta-wordpress-theme
-Theme Documentation  : http://moozthemes.com/barletta-wordpress-theme-documentation
+Theme Documentation  : http://moozthemes.com/barletta-wordpress-theme-documentation/
 
 Author URI: http://moozthemes.com
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GNU General Public License v3.0
+License URI: http://www.gnu.org/licenses/gpl.html
 
-== COPYRIGHT AND LICENSE == 
+== COPYRIGHT AND LICENSE ==
+
+Barletta WordPress Theme, Copyright 2016 MOOZ Themes
+Barletta is distributed under the terms of the GNU GPL
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Barletta WordPress Theme bundles the following third-party resources:
+
 Resources packed within the theme. 
 * FontAwesome.
   FFontAwesome 4.2.0
@@ -103,3 +114,6 @@ Drag and drop these widgets to above two widget areas and arrange them as you li
 1.0.8 - 02.09.2016
 * Added WP Instagram Widget plugin support
 * Fixed issue with responsive slider title on mobile phones
+
+1.0.9 - 15.09.2016
+* Added "About author" widget

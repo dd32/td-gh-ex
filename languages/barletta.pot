@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Barletta Theme\n"
-"POT-Creation-Date: 2016-09-02 15:14+0300\n"
+"POT-Creation-Date: 2016-09-15 12:26+0300\n"
 "PO-Revision-Date: 2015-04-04 15:03+0200\n"
 "Last-Translator: Aigars Silkalns <a.silkalns@gmail.com>\n"
 "Language-Team: MOOZ Themes <info@moozthemes.com>\n"
@@ -94,7 +94,7 @@ msgstr ""
 msgid "Full Width"
 msgstr ""
 
-#: ../functions.php:47
+#: ../functions.php:48
 msgid "Main Menu"
 msgstr ""
 
@@ -146,11 +146,11 @@ msgstr ""
 msgid "The widgets added in this sidebar will appear in WooCommerce pages."
 msgstr ""
 
-#: ../functions.php:368
+#: ../functions.php:371
 msgid ". All rights reserved."
 msgstr ""
 
-#: ../functions.php:374
+#: ../functions.php:377
 #, php-format
 msgid "Theme by %1$s Powered by %2$s"
 msgstr ""
@@ -245,6 +245,50 @@ msgstr ""
 
 #: ../inc/template_tags.php:69
 msgid "<div class=\"meta-nav meta-nav-right\"><span>Next Post</span>%title</div>"
+msgstr ""
+
+#: ../inc/widgets/widget-barletta-about.php:14
+msgid "Widget to author"
+msgstr ""
+
+#: ../inc/widgets/widget-barletta-about.php:15
+msgid "Barletta About Author"
+msgstr ""
+
+#: ../inc/widgets/widget-barletta-about.php:22
+msgid "About Me"
+msgstr ""
+
+#: ../inc/widgets/widget-barletta-about.php:67
+msgid "Read More"
+msgstr ""
+
+#: ../inc/widgets/widget-barletta-about.php:89
+msgid "Title "
+msgstr ""
+
+#: ../inc/widgets/widget-barletta-about.php:96
+msgid "Name "
+msgstr ""
+
+#: ../inc/widgets/widget-barletta-about.php:103
+msgid "Position "
+msgstr ""
+
+#: ../inc/widgets/widget-barletta-about.php:110
+msgid "Content "
+msgstr ""
+
+#: ../inc/widgets/widget-barletta-about.php:117
+msgid "Link to more info "
+msgstr ""
+
+#: ../inc/widgets/widget-barletta-about.php:124
+msgid "Rounded Author Image? "
+msgstr ""
+
+#: ../inc/widgets/widget-barletta-about.php:133
+msgid "Upload Image"
 msgstr ""
 
 #: ../inc/widgets/widget-barletta-posts.php:12

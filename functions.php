@@ -41,6 +41,7 @@ function barletta_setup() {
 	add_image_size( 'barletta-thumbnail', 833, 540, true );
 	add_image_size( 'barletta-middle-thumbnail', 627, 320, true );
 	add_image_size( 'barletta-small-thumbnail', 455, 320, true );
+	add_image_size( 'barletta-author-thumbnail', 262, 170, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -241,7 +242,6 @@ if (!function_exists('barletta_custom_css_output'))  {
 			'button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover { background-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; border-color: ' . get_theme_mod( 'barletta_link_hover_color' ) . '; }';		}
 		if ( get_theme_mod('barletta_accent_color')) {
 			echo '.post-navigation .nav-links .meta-nav span { color: ' . get_theme_mod( 'barletta_accent_color' ) . '; }' .
-			'.footer-bottom a { color: ' . get_theme_mod( 'barletta_accent_color' ) . '; }' .
 			'.comment-reply-link, .comment-reply-login { color: ' . get_theme_mod( 'barletta_accent_color' ) . '; }' .
 			'.comments-title { color: ' . get_theme_mod( 'barletta_accent_color' ) . '; }' .
 			'blockquote:before { color: ' . get_theme_mod( 'barletta_accent_color' ) . '; }' .
@@ -346,6 +346,8 @@ function barletta_widgets_init() {
 
 	register_widget( 'barletta_recent_posts' );
 	register_widget( 'barletta_social_widget' );
+	register_widget( 'barletta_about_author' );
+
 }
 add_action( 'widgets_init', 'barletta_widgets_init' );
 
@@ -354,6 +356,7 @@ add_action( 'widgets_init', 'barletta_widgets_init' );
  */
 require_once(get_template_directory() . '/inc/widgets/widget-barletta-posts.php');
 require_once(get_template_directory() . '/inc/widgets/widget-barletta-social.php');
+require_once(get_template_directory() . '/inc/widgets/widget-barletta-about.php');
 
 /*
  * Misc. functions

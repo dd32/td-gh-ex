@@ -4,9 +4,9 @@ Theme URI: http://moozthemes.com/barletta-wordpress-theme
 Author: MOOZ Themes
 Author URI: http://moozthemes.com
 Description: Barletta is a light, elegant and clean design WordPress blog theme which is mainly designed for lifestyle, travel, fashion, food, personal blog and other publishers. Theme is carefully crafted with attention to details and love. Barletta blog theme is fully responsive and your web site will adapt to display on all types of devices. Theme is based on the versatile Bootstrap framework which is known for being reliable and well made making it friendly for developers. Overall, Barletta is a visually stunning theme with polished typography and simple design, great for bloggers. Now theme is optimized to work with JetPack, WooCommerce, Contact Form 7, Mailchimps and other popular free and premium plugins. Enjoy writing, enjoy blogging!
-Version: 1.0.8
+Version: 1.0.9
 License: GNU General Public License v3.0
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: barletta
 Domain Path: /languages/
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-colors, custom-background, custom-menu, featured-images, full-width-template, theme-options, threaded-comments, holiday
@@ -1000,6 +1000,40 @@ dd {
 	color: #545458;
 }
 
+/*** Widget About Author ***/
+.widget-about-author {
+	text-align: center;
+}
+.widget-about-author .author-image {
+	margin: 10px auto 15px;
+}
+
+.widget-about-author .author-image .rounded {
+	border-radius: 100px;
+	margin: 0 auto;
+}
+
+.widget-about-author .author-post h3 {
+	font-size: 19px;
+	color: #4A4A4E;
+	margin: 20px 0 2px;
+}
+
+.widget-about-author .author-post p {
+	margin: 7px 0 0px;
+	font-size: 13px;
+	line-height: 170%;
+	text-align: initial;
+}
+
+.widget-about-author .author-post .author-position {
+	font: 400 13px Roboto, sans-serif;
+	font-weight: 300;
+	line-height: 20px;
+	color: #b1b1b1;
+}
+
+/*** Widget Latest Posts ***/
 .widget-post {
 	display: table;
 	margin: 0 0 20px 0;
@@ -1763,6 +1797,7 @@ and (max-width : 480px) {
 
 .footer-fullwidth .widget-title {
 	text-align: center;
+	margin-top: 5px;
 }
 
 .footer-fullwidth .widget-title:after {
@@ -2008,6 +2043,9 @@ ul.instagram-pics li {
 	margin: 0px;
 }
 
+.footer-fullwidth {
+	overflow: auto;
+}
 
 .footer-fullwidth ul.instagram-pics li img {
 	-webkit-transition: all 0.2s ease-out;

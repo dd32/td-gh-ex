@@ -17,7 +17,7 @@
 	<div class="fullwidth-widgets">
 
 		<!-- left widget -->
-		<?php if ( is_active_sidebar( 'footer-widget-1' ) ) : ?>
+		<?php if ( is_active_sidebar( 'footer-fullwidth-widget' ) ) : ?>
 
 				<?php dynamic_sidebar( 'footer-fullwidth-widget' ); ?>
 
