@@ -97,6 +97,7 @@ function promax_theme_setup() {
 		add_image_size( 'defaultthumb', 262, 200, true);
 		add_image_size( 'popularpost', 340, 154, true);
 		add_image_size( 'latestpostthumb', 75, 75, true);
+		add_image_size( 'promax_singlefull', 816, 500 );
 		//woocommerce plugin support
 		add_theme_support( 'woocommerce' );
 global $content_width;

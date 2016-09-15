@@ -3,6 +3,12 @@
 	<?php if (of_get_option('promax_latest' ) =='1' ) {load_template(get_template_directory() . '/includes/ltposts.php'); } ?>
 	<div id="page-inner" class="clearfix">	
 		<div id="singlecontent"><?php promax_breadcrumbs(); ?>
+		<?php
+		if (of_get_option('show_featured_image') =='on'){
+		if ( has_post_thumbnail()) : the_post_thumbnail('promax_singlefull');
+		endif;
+		}
+		?>
 			<?php if(have_posts()) : ?>
 			<?php while(have_posts())  : the_post(); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

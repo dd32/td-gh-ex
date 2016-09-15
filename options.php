@@ -146,6 +146,16 @@ $options[] = array(
 		'id' => 'promax_popular',
 		'std' => '1',
 		'type' => 'checkbox');
+	$options[] = array(
+		'name' => __( 'Featured Thumbnail Image on Post', 'promax' ),
+		'desc' => __('Show or Hide ', 'promax'),
+		'id' => 'show_featured_image',
+		'std' => 'off',
+		'type' => 'radio',
+		'options' => array(
+		'on' => __('Show','promax'),
+		'off' => __('Hide','promax')
+		));		
 		$options[] = array(
 		'name' => __('TOP and Navigation Menu hide or show', 'promax'),
 		'desc' => __('Top Menu.', 'promax'),
