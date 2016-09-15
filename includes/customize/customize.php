@@ -64,7 +64,7 @@ function ascreen_customize_register( $wp_customize ) {
 add_action( 'customize_register', 'ascreen_customize_register' );
 
 function ascreen_sanitize_url( $value ) {
-      $value = esc_url( $value);
+      $value = esc_url_raw( $value);
       return $value;
 }
 

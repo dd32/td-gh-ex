@@ -20,7 +20,7 @@ get_header(); ?>
 								 
 						?>
                         
-                        <img width="185"  src="<?php echo esc_url(get_template_directory_uri());?>/images/default.jpg" class="attachment-185x135 size-185x135 wp-post-image" sizes="(max-width: 185px) 100vw, 185px" />  
+                        <img width="185"  src="<?php echo get_template_directory_uri();?>/images/default.jpg" class="attachment-185x135 size-185x135 wp-post-image" sizes="(max-width: 185px) 100vw, 185px" />  
                         <?php 
 								 
 								}
@@ -41,9 +41,6 @@ get_header(); ?>
                     <?php endwhile;endif; ?>                
                     
             	</ul><!--ul class="blog-article-list"-->
- 
- 
- 				<?php //ascreen_paging_nav(); ?>
 
                 <?php 
 					the_posts_pagination( array(

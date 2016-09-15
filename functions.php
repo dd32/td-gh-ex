@@ -11,7 +11,7 @@ function ascreen_setup(){
 	
 
 	add_theme_support('post-thumbnails');
-	set_post_thumbnail_size( 180, 135 );
+	set_post_thumbnail_size( 185, 135 );
 	$args = array();
 	$header_args = array(
 	    'default-image'          => '',
@@ -229,68 +229,26 @@ function ascreen_get_the_category()
 	}
 	
 	echo $str;
-	
 }
-
-
-/**
- * Gets option value from the single theme option, stored as an array in the database
- * if all options stored in one row.
- * Stores the serialized array with theme options into the global variable on the first function run on the page.
- *
- * If options are stored as separate rows in database, it simply uses get_option() function.
- *
- * @param string $option_name Theme option name.
- * @param string $default Default value that should be set if the theme option isn't set.
- */
-if ( ! function_exists( 'ascreen_get_option' ) ){
-	function ascreen_get_option( $ct_row,$option_name,$default )
-	{
-		
-		$arr = get_theme_mods();
-		$arr_row = $arr[$ct_row];
-		
- 	
-		if(is_array($arr_row))
-		{
-			@$option_value = $arr_row["$option_name"];
-			if($option_value !='')
-			{
-				return $option_value;
-			}
-			else
-			{
-				if(array_key_exists($option_name,$arr_row) ){
-					return  false;
-				}	
-				else
-				{		
-					return  $default;	
-				}
-			}
-		}
-		else
-		{		
-			return  $default;	
-		}
-	}
-}
-
-
 
 function ascreen_get_share_url() 
-{
+{	
+	$mods = get_theme_mods();
+
+	$twitter_url = !empty($mods['ascreen_option']['twitter_url']) ? $mods['ascreen_option']['twitter_url']:'#';
+	$google_plus_url = !empty($mods['ascreen_option']['google_plus_url']) ? $mods['ascreen_option']['google_plus_url']:'#';	
+	$facebook_url = !empty($mods['ascreen_option']['facebook_url']) ? $mods['ascreen_option']['facebook_url']:'#';	
+
 	?>
 	<div class="share">
-    
-		<?php if( ascreen_get_option( 'ascreen_option','twitter_url','#') != ''){?>
-		<a target="_blank" href="<?php echo esc_url(ascreen_get_option( 'ascreen_option','twitter_url','#'));?>" class="share-twitter cbutton cbutton--effect-jagoda"><i class="icon-twitter"></i></a>
+		<?php if( $twitter_url != ''){?>
+		<a target="_blank" href="<?php echo esc_url($twitter_url);?>" class="share-twitter cbutton cbutton--effect-jagoda"><i class="icon-twitter"></i></a>
 		<?php }?>
-		<?php if( ascreen_get_option( 'ascreen_option','google_plus_url','#') != ''){?>
-		<a target="_blank" href="<?php echo esc_url(ascreen_get_option( 'ascreen_option','google_plus_url','#'));?>" class="share-google-plus cbutton cbutton--effect-jagoda"><i class="icon-google-plus"></i></a>
+		<?php if( $google_plus_url != ''){?>
+		<a target="_blank" href="<?php echo esc_url($google_plus_url);?>" class="share-google-plus cbutton cbutton--effect-jagoda"><i class="icon-google-plus"></i></a>
 		<?php }?>
-		<?php if( ascreen_get_option( 'ascreen_option','facebook_url','#') != ''){?>                                
-		<a target="_blank" href="<?php echo esc_url(ascreen_get_option( 'ascreen_option','facebook_url','#'));?>" class="share-facebook cbutton cbutton--effect-jagoda"><i class="icon-facebook"></i></a>
+		<?php if( $facebook_url != ''){?>                                
+		<a target="_blank" href="<?php echo esc_url($facebook_url);?>" class="share-facebook cbutton cbutton--effect-jagoda"><i class="icon-facebook"></i></a>
 		<?php }?>
 	</div>
 	<?php	
