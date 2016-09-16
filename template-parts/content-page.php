@@ -35,12 +35,12 @@
 
 	    <div class="entry-content">
 		    <?php
-			$abc_default_theme_options = abc_default_theme_options();
+			$abacus_default_theme_options = abacus_default_theme_options();
 
 			if ( is_search() ) {
 				the_excerpt();
 			} else {
-			    the_content( wp_kses_post( get_theme_mod( 'read_more_text', $abc_default_theme_options['read_more_text'] ) ) . ' <span class="screen-reader-text">' . get_the_title() . '</span>' );
+			    the_content( abacus_sanitize_text( get_theme_mod( 'read_more_text', $abacus_default_theme_options['read_more_text'] ) ) . ' <span class="screen-reader-text">' . get_the_title() . '</span>' );
 			}
 			?>
 	    </div><!-- .entry-content -->

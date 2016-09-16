@@ -31,7 +31,7 @@ get_header(); ?>
 				'limit' 			=> 4,
 				'columns' 			=> 4,
 				'title'				=> __( 'Featured', 'abacus' ),
-				'description'		=> wp_kses_post( get_theme_mod( 'featured_title_description', $abc_default_theme_options['featured_title_description'] ) ),
+				'description'		=> abacus_sanitize_text( get_theme_mod( 'featured_title_description', $abacus_default_theme_options['featured_title_description'] ) ),
 				)
 			);
 			$featured_products = do_shortcode( '[featured_products per_page="' . intval( $feature_args['limit'] ) . '" columns="' . intval( $feature_args['columns'] ) . '"]' );
@@ -65,7 +65,7 @@ get_header(); ?>
 				'limit' 			=> 4,
 				'columns' 			=> 4,
 				'title'				=> __( 'Trending', 'abacus' ),
-				'description'		=> wp_kses_post( get_theme_mod( 'popular_title_description', $abc_default_theme_options['popular_title_description'] ) ),
+				'description'		=> abacus_sanitize_text( get_theme_mod( 'popular_title_description', $abacus_default_theme_options['popular_title_description'] ) ),
 				)
 			);
 			$pop_products = do_shortcode( '[top_rated_products per_page="' . intval( $pop_args['limit'] ) . '" columns="' . intval( $pop_args['columns'] ) . '"]' );

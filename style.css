@@ -4,7 +4,7 @@ Theme URI: https://alphabetthemes.com/downloads/abacus-wordpress-theme/
 Author: Alphabet Themes
 Author URI: https://alphabetthemes.com
 Description: Simplify your site with Abacus, an elegant theme specifically built for WooCommerce. Display your products using the included Shop Grid page template. Install Jetpack to add testimonials and more. With tons of possibilities, no two layouts are the same. Designed to look great on desktop browsers, tablets and handheld devices. For a live demo go to http://demos.alphabetthemes.com/?theme=abacus.
-Version: 1.0.1
+Version: 1.0.2
 Text Domain: abacus
 Domain Path: /languages/
 Tags: one-column, two-columns, right-sidebar, grid-layout, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, e-commerce
@@ -17,12 +17,12 @@ Abacus is distributed under the terms of the GNU GPL
 */
 /* =WordPress Core
 -------------------------------------------------------------- */
-.container, .row, #posts-pagination, .comments-area .comment-content, #archive-header .archive-title, #footer .extended-footer {
+.container, .row, .posts-navigation, .comments-area .comment-content, #archive-header .archive-title, #footer .extended-footer {
   *zoom: 1; }
-  .container:before, .row:before, #posts-pagination:before, .comments-area .comment-content:before, #archive-header .archive-title:before, #footer .extended-footer:before, .container:after, .row:after, #posts-pagination:after, .comments-area .comment-content:after, #archive-header .archive-title:after, #footer .extended-footer:after {
+  .container:before, .row:before, .posts-navigation:before, .comments-area .comment-content:before, #archive-header .archive-title:before, #footer .extended-footer:before, .container:after, .row:after, .posts-navigation:after, .comments-area .comment-content:after, #archive-header .archive-title:after, #footer .extended-footer:after {
     content: " ";
     display: table; }
-  .container:after, .row:after, #posts-pagination:after, .comments-area .comment-content:after, #archive-header .archive-title:after, #footer .extended-footer:after {
+  .container:after, .row:after, .posts-navigation:after, .comments-area .comment-content:after, #archive-header .archive-title:after, #footer .extended-footer:after {
     clear: both; }
 
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -238,12 +238,14 @@ th {
     .row {
       margin-left: -20px;
       margin-right: -20px; } }
+  .row.push .cols-2:nth-child(1) {
+    left: 50%; }
+  .row.push .cols-2:nth-child(2) {
+    right: 50%; }
 
 .content-thin,
 .content-wide,
-.cols-2,
-.cols-3,
-.cols-4,
+.cols,
 .centered {
   width: 100%; }
 
@@ -281,13 +283,15 @@ th {
       padding-left: 20px;
       padding-right: 20px; } }
 
-.content-thin,
-.content-wide,
-.cols {
-  float: left; }
+@media (min-width: 768px) {
+  .content-thin,
+  .content-wide,
+  .cols {
+    float: left; } }
 
 .cols {
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  position: relative; }
 
 @media (min-width: 768px) {
   .content-wide,
@@ -684,7 +688,6 @@ img {
   -webkit-transition: all 0.15s ease-in-out;
   transition: all 0.15s ease-in-out;
   display: table;
-  float: left;
   padding: 20px 0; }
   .shrink-nav .site-meta {
     padding: 10px 0;
@@ -710,7 +713,6 @@ img {
   text-transform: uppercase;
   padding-right: 10px;
   font-weight: 500;
-  float: left;
   position: relative; }
   @media (max-width: 375px) {
     .site-title {
@@ -825,8 +827,7 @@ img {
   -webkit-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
   font-size: 17px;
-  font-size: 1.0625rem;
-  float: left; }
+  font-size: 1.0625rem; }
   @media (min-width: 768px) {
     .main-navigation {
       display: inline-block; } }
@@ -898,7 +899,6 @@ img {
             border: 0; } }
 
 .nav-icons {
-  float: right;
   margin-top: 22px; }
   @media (min-width: 768px) {
     .nav-icons {
@@ -992,13 +992,16 @@ img {
   border-radius: 2px;
   text-decoration: none;
   opacity: 0;
-  display: inline-block; }
+  display: inline-block;
+  float: right;
+  margin: -3px 0 0 5px; }
   @media (min-width: 1325px) {
     #back-to-top {
       position: fixed;
       bottom: 15px;
       right: 40px;
-      z-index: 9999; }
+      z-index: 9999;
+      float: none; }
       .woocommerce-demo-store #back-to-top {
         bottom: 75px; } }
   #back-to-top:hover {
@@ -1225,12 +1228,12 @@ img {
   padding-top: 40px;
   padding-bottom: 40px; }
 
-#primary {
-  width: 100%; }
-  @media (min-width: 768px) {
-    #primary {
-      width: 75%; } }
+@media (min-width: 768px) {
+  #primary {
+    width: 75%; }
 
+  #sidebar {
+    width: 25%; } }
 @media (min-width: 980px) {
   .content-thin {
     width: 25%; }
@@ -1574,22 +1577,22 @@ object {
   .post-navigation .nav-previous {
     text-align: center; }
 
-#posts-pagination {
+.posts-navigation {
   padding: 0; }
-  .infinite-scroll #posts-pagination {
+  .infinite-scroll .posts-navigation {
     display: none; }
-  #posts-pagination .previous,
-  #posts-pagination .next {
+  .posts-navigation .nav-previous,
+  .posts-navigation .nav-next {
     width: 50%;
     float: left;
     padding: 20px 20px 20px 0;
     font-size: 14px;
     font-size: 0.875rem;
     margin: 40px 0; }
-  #posts-pagination .next {
+  .posts-navigation .nav-next {
     text-align: left;
     padding: 20px 0 20px 20px; }
-  #posts-pagination .previous {
+  .posts-navigation .nav-previous {
     text-align: right;
     border-right: 1px solid #d6d6d6; }
 
@@ -2304,4 +2307,10 @@ p.demo_store {
   padding: 6px 6px 0; }
 
 .sticky {
-  display: block; }
+  border-top: 10px solid rgba(0, 0, 0, 0.1);
+  padding-bottom: 30px !important;
+  background: rgba(0, 0, 0, 0.05); }
+  .sticky .break-out {
+    margin-bottom: 20px !important; }
+  .sticky .entry-category {
+    padding-top: 20px; }

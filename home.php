@@ -8,9 +8,9 @@
  */
 get_header(); ?>
 
-	<?php if ( $header_image = get_header_image() ) : ?>
+	<?php if ( has_header_image() ) : ?>
 		<div class="parallax">
-			<div class="header-img" style="background-image: url(<?php echo esc_url( $header_image ); ?>); height: <?php echo get_custom_header()->height; ?>px;"></div>
+			<div class="header-img"></div>
 			<?php if ( is_active_sidebar( 'jumbo-headline' ) ) { ?>
 			<div class="container">
 				<div class="row">
@@ -33,9 +33,7 @@ get_header(); ?>
 							get_template_part( 'template-parts/content' );
 						endwhile;
 
-						abc_pagination();
-
-						comments_template( '', true );
+						the_posts_navigation();
 					else :
 						get_template_part( 'template-parts/content', 'none' );
 					endif;

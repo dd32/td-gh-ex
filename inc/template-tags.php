@@ -8,7 +8,7 @@
  * @subpackage Abacus
  * @since Abacus 1.0
  */
-function abc_login_register_menu() {
+function abacus_login_register_menu() {
 	?>
 	<ul class="pull-left">
 		<?php
@@ -34,7 +34,7 @@ function abc_login_register_menu() {
 	<?php
 }
 
-function abc_top_menu() {
+function abacus_top_menu() {
 	?>
 	<ul class="pull-right">
 		<?php
@@ -49,32 +49,14 @@ function abc_top_menu() {
 			<?php if ( $myaccount_page_id && is_user_logged_in() ) { ?>
 				<li><a href="<?php echo esc_url( get_permalink( $myaccount_page_id ) ); ?>"><?php _e( 'My Account', 'abacus' ); ?></a></li>
 			<?php }
-			//abc_cart_link();
+			//abacus_cart_link();
 		}
 		?>
 	</ul>
 	<?php
 }
 
-function abc_pagination() {
-	global $wp_query;
-
-	// Don't print empty markup if there's only one page.
-	if ( $wp_query->max_num_pages < 2 )
-		return;
-	?>
-
-	<div id="posts-pagination" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'abacus' ); ?></h1>
-		<div class="previous">&nbsp;<?php next_posts_link( __( '&larr; Older posts', 'abacus' ) ); ?></div>
-		<div class="next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'abacus' ) ); ?>&nbsp;</div>
-	</div>
-
-	<?php
-	wp_reset_query();
-}
-
-function abc_search_title( $query  ) {
+function abacus_search_title( $query  ) {
     $num = $query->found_posts;
     $type = ( isset( $query->query['post_type'] ) ) ? $query->query['post_type'] : 'post';
 	$paged = ( get_query_var('paged') ) ? get_query_var( 'paged' ) : 1;
@@ -91,7 +73,7 @@ function abc_search_title( $query  ) {
 	);
 }
 
-function abc_search_pagination( $query ) {
+function abacus_search_pagination( $query ) {
 	$max_page = $query->max_num_pages;
 	$paged = ( get_query_var('paged') ) ? get_query_var( 'paged' ) : 1;
     $type = ( isset( $query->query['post_type'] ) ) ? $query->query['post_type'] : 'post';
@@ -123,33 +105,33 @@ function abc_search_pagination( $query ) {
 	wp_reset_query();
 }
 
-function abc_word_count() {
+function abacus_word_count() {
 	return sprintf(
 		__( '%s words', 'abacus' ),
 		str_word_count( strip_tags( get_post_field( 'post_content', get_the_ID() ) ) )
 	);
 }
 
-add_filter( 'pre_get_posts', 'abc_search' );
-function abc_search( $query ) {
+add_filter( 'pre_get_posts', 'abacus_search' );
+function abacus_search( $query ) {
 	if ( ! is_admin() && $query->is_search && $query->is_main_query() )
 		$query->set( 'post_type', array( 'post' ) );
 
     return $query;
 }
 
-add_filter( 'excerpt_more', 'abc_excerpt_more' );
-if ( ! function_exists( 'abc_excerpt_more' ) ) {
-	function abc_excerpt_more( $more ) {
-		$abc_default_theme_options = abc_default_theme_options();
+add_filter( 'excerpt_more', 'abacus_excerpt_more' );
+if ( ! function_exists( 'abacus_excerpt_more' ) ) {
+	function abacus_excerpt_more( $more ) {
+		$abacus_default_theme_options = abacus_default_theme_options();
 
-		return '&hellip; <div><a class="more-link" href="' . esc_url( get_permalink() ) . '">' . wp_kses_post( get_theme_mod( 'read_more_text', $abc_default_theme_options['read_more_text'] ) ) . ' <span class="screen-reader-text">' . get_the_title() . '</span></a></div>';
+		return '&hellip; <div><a class="more-link" href="' . esc_url( get_permalink() ) . '">' . abacus_sanitize_text( get_theme_mod( 'read_more_text', $abacus_default_theme_options['read_more_text'] ) ) . ' <span class="screen-reader-text">' . get_the_title() . '</span></a></div>';
 	}
 }
 
-add_filter( 'the_content_more_link', 'abc_remove_more_link_scroll' );
-if ( ! function_exists( 'abc_remove_more_link_scroll' ) ) {
-	function abc_remove_more_link_scroll( $link ) {
+add_filter( 'the_content_more_link', 'abacus_remove_more_link_scroll' );
+if ( ! function_exists( 'abacus_remove_more_link_scroll' ) ) {
+	function abacus_remove_more_link_scroll( $link ) {
 		return preg_replace( '|#more-[0-9]+|', '', $link );
 	}
 }

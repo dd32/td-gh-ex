@@ -133,3 +133,41 @@ i.quote,
 .subscription-toggle {
 	float: left;
 }
+
+
+/* =Fixes
+-------------------------------------------------------------- */
+@media (min-width: 600px) {
+	.pull-left {
+		float: right !important;
+	}
+
+	.pull-right {
+		float: left !important;
+	}
+}
+
+.site-title {
+	padding: 0 0 0 10px;
+}
+
+@media (min-width: 768px) {
+	.site-meta {
+		margin: 0 0 0 60px;
+	}
+
+	#primary {
+		left: 25%;
+	}
+
+	#sidebar {
+		right: 75%;
+	}
+}
+
+@media (min-width: 1200px) {
+	#primary > article .break-out {
+		margin-left: 0;
+		margin-right: -105px;
+	}
+}

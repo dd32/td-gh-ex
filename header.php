@@ -24,37 +24,42 @@
 		<header id="masthead" role="banner">
 			<nav class="top-navigation menus" role="navigation">
 				<div class="container">
-					<?php abc_login_register_menu(); ?>
+					<?php abacus_login_register_menu(); ?>
 
 					<?php
-					// ABC Social Icons
+					// Requires ABC Premium Features plugin
 					if ( function_exists( 'abc_social_icons_output' ) ) {
 						abc_social_icons_output();
 					}
 					?>
 
-					<?php abc_top_menu(); ?>
+					<?php abacus_top_menu(); ?>
 				</div>
 			</nav>
 
 			<div class="container">
-				<div class="site-meta">
+				<div class="site-meta pull-left">
 					<?php
-					if ( function_exists( 'the_custom_logo' ) && function_exists( 'abc_premium_features' ) )  {
+					if ( function_exists( 'the_custom_logo' ) )  {
 						the_custom_logo();
 					}
 					?>
 
-					<?php $tag = ( is_front_page() && is_home() ) ? 'h1' : 'div'; ?>
-					<<?php echo $tag; ?> class="site-title">
+					<?php
+					$tag = ( is_front_page() && is_home() ) ? 'h1' : 'div';
+					// Requires ABC Premium Features plugin
+					$hide_title_tagline = abacus_sanitize_checkbox( get_theme_mod( 'abc_hide_title_tagline' ) );
+					$class = ( $hide_title_tagline ) ? 'screen-reader-text' : '';
+					?>
+					<<?php echo $tag; ?> class="site-title pull-left <?php echo esc_attr( $class ); ?>">
 						<a href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 					</<?php echo $tag; ?>>
 
-					<div class="site-description"><?php bloginfo( 'description' ); ?></div>
+					<div class="site-description <?php echo esc_attr( $class ); ?>"><?php bloginfo( 'description' ); ?></div>
 				</div>
 
 				<?php if ( has_nav_menu( 'primary' ) ) { ?>
-				<nav class="main-navigation menus" role="navigation">
+				<nav class="main-navigation menus pull-left" role="navigation">
 					<h3 class="screen-reader-text"><?php _e( 'Main menu', 'abacus' ); ?></h3>
 					<ul class="primary-menu">
 						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'items_wrap' => '%3$s', 'container' => '' ) ); ?>
@@ -62,7 +67,7 @@
 				</nav>
 				<?php }	?>
 
-				<nav class="nav-icons menus" role="navigation">
+				<nav class="nav-icons menus pull-right" role="navigation">
 					<ul>
 						<li class="nav-open-top-menu"><i class="fa fa-bars"></i><span><?php _e( 'Menu', 'abacus' ); ?></span></li>
 						<li class="nav-search"><i class="fa fa-search"></i></li>

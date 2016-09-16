@@ -23,7 +23,7 @@ get_header(); ?>
 					?>
 					<?php if ( $product_search_query->have_posts() ) : ?>
 					<header id="archive-header">
-						<h2 class="entry-title archive-title"><?php abc_search_title( $product_search_query ); ?></h2>
+						<h2 class="entry-title archive-title"><?php abacus_search_title( $product_search_query ); ?></h2>
 					</header>
 
 					<div class="woocommerce columns-4">
@@ -37,7 +37,7 @@ get_header(); ?>
 					</div>
 					<?php endif; ?>
 					<?php
-					abc_search_pagination( $product_search_query );
+					abacus_search_pagination( $product_search_query );
 
 				    wp_reset_query();
 			    }
@@ -48,14 +48,14 @@ get_header(); ?>
 					global $wp_query;
 					if ( have_posts() ) : ?>
 						<header id="archive-header">
-							<h2 class="entry-title archive-title"><?php abc_search_title( $wp_query ); ?></h2>
+							<h2 class="entry-title archive-title"><?php abacus_search_title( $wp_query ); ?></h2>
 						</header>
 						<?php
 						while ( have_posts() ) : the_post();
 							get_template_part( 'template-parts/content' );
 						endwhile;
 
-						abc_search_pagination( $wp_query );
+						abacus_search_pagination( $wp_query );
 					else :
 						get_template_part( 'template-parts/content', 'none' );
 					endif;

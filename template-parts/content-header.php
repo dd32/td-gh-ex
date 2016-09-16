@@ -35,13 +35,15 @@
 
 		<div class="entry-meta">
 			<p class="vcard author">
-				<strong><span class="fn">Written by <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_attr( sprintf( __( 'Posts by %s', 'abacus' ), get_the_author() ) ); ?>" rel="author"><?php echo get_the_author(); ?></a></span></strong>
+				<strong><span class="fn">
+					<?php printf( __( 'Written by %s', 'abacus' ), '<strong><a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" title="' . esc_attr( sprintf( __( 'Posts by %s', 'abacus' ), get_the_author() ) ) . '" rel="author">' . get_the_author() . '</a></strong>' ); ?>
+				</span></strong>
 			</p>
 
 			<a href="<?php echo esc_url( get_permalink() ); ?>" class="time"><time class="date published updated" datetime="<?php echo esc_attr( get_the_date( 'Y-m-d' ) ); ?>"><?php echo get_the_date(); ?></time></a>
 
 			<?php if ( ! is_attachment() ) { ?>
-				&nbsp;&nbsp;/&nbsp;&nbsp;<?php echo abc_word_count(); ?>
+				&nbsp;&nbsp;/&nbsp;&nbsp;<?php echo abacus_word_count(); ?>
 			<?php } ?>
 
 			<?php if ( comments_open() ) { ?>

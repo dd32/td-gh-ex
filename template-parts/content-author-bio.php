@@ -16,7 +16,7 @@
 			 *
 			 * @param int $size The avatar height and width size in pixels.
 			 */
-			echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'abc_author_bio_avatar_size', 100 ), '', '', array( 'class' => 'img-circle' ) );
+			echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'abacus_author_bio_avatar_size', 100 ), '', '', array( 'class' => 'img-circle' ) );
 			?>
 		</div>
 

@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Abacus\n"
-"POT-Creation-Date: 2016-06-17 10:53-0400\n"
-"PO-Revision-Date: 2016-06-17 10:53-0400\n"
+"POT-Creation-Date: 2016-09-16 11:19-0400\n"
+"PO-Revision-Date: 2016-09-16 11:19-0400\n"
 "Last-Translator: c.bavota <cbavota@gmail.com>\n"
 "Language-Team: c.bavota <cbavota@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.9\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -59,363 +59,263 @@ msgstr ""
 
 #: footer.php:28
 #, php-format
-msgid "Copyright &copy; %s %s. All Rights Reserved."
+msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
 msgstr ""
 
-#: footer.php:29
+#: footer.php:30
 #, php-format
-msgid "The %s Theme by %s."
+msgid "The %1$s Theme by %2$s."
 msgstr ""
 
-#: functions.php:84
+#: functions.php:78
 msgid "Top Menu"
 msgstr ""
 
-#: functions.php:85
+#: functions.php:79
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:145
+#: functions.php:149
 msgctxt "Roboto font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:153
+#: functions.php:157
 msgctxt "Add new subset (greek, cyrillic, devanagari, vietnamese)"
 msgid "no-subset"
 msgstr ""
 
-#: functions.php:176
+#: functions.php:180
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:178
+#: functions.php:182
 msgid "This section appears on the right of the main content on every page."
 msgstr ""
 
-#: functions.php:186
+#: functions.php:190
 msgid "Jumbo Headline"
 msgstr ""
 
-#: functions.php:188
+#: functions.php:192
 msgid ""
 "This section appears on the front page in the centre of the header image. "
 "Designed specifically for one Text widget. "
 msgstr ""
 
-#: functions.php:197
+#: functions.php:201
 msgid "Shop Categories"
 msgstr ""
 
-#: functions.php:199
+#: functions.php:203
 msgid ""
 "This section appears on the Front Page template below the featured section. "
 "Designed specifically for three widgets. "
 msgstr ""
 
-#: functions.php:207
+#: functions.php:211
 msgid "Shop Banner"
 msgstr ""
 
-#: functions.php:209
+#: functions.php:213
 msgid ""
 "This section appears on the Front Page template above the trending section. "
 "Designed specifically for one widget. "
 msgstr ""
 
-#: header.php:58
+#: header.php:63
 msgid "Main menu"
 msgstr ""
 
-#: header.php:67
+#: header.php:72
 msgid "Menu"
 msgstr ""
 
-#: header.php:83
+#: header.php:88
 msgid "Skip to content"
 msgstr ""
 
-#: inc/about.php:24
+#: inc/about.php:23
 #, php-format
-msgid "Welcome to %s %s"
+msgid "Welcome to %1$s %2$s"
 msgstr ""
 
-#: inc/about.php:24
+#: inc/about.php:23
 #, php-format
 msgid "%s Theme Info"
 msgstr ""
 
-#: inc/about.php:81
+#: inc/about.php:39
 #, php-format
 msgid ""
-"Enjoy the flexible design and efficient codebase that %s provides. Be sure "
-"to %scheck out the demo%s to see some of the possibilities."
+"Enjoy the flexible design and efficient codebase that %1$s provides. Be sure "
+"to %2$scheck out the demo%3$s to see some of the possibilities."
 msgstr ""
 
-#: inc/about.php:91
+#: inc/about.php:48
+msgid "Enhance Your Website"
+msgstr ""
+
+#: inc/about.php:49
 #, php-format
 msgid ""
 "Upgrading %s with the ABC Premium Features plugin will unlock the following "
 "options to help you improve your site&rsquo;s look and functionality."
 msgstr ""
 
-#: inc/about.php:100
+#: inc/about.php:56
+msgid "Custom Colors"
+msgstr ""
+
+#: inc/about.php:58
 msgid ""
 "Why settle on one color when you can choose from any color imaginable. With "
 "the Custom Color plugin, you have the ability to set different colors for "
 "text elements, page backgrounds and more."
 msgstr ""
 
-#: inc/about.php:108
+#: inc/about.php:64
+msgid "Fonts Manager"
+msgstr ""
+
+#: inc/about.php:66
 msgid ""
 "A font can say a lot about a site, so why not test out a few to see which "
 "one might work better. With our Font Manager plugin, you can easily pick "
 "from over 600 Google Fonts or even set up Typekit."
 msgstr ""
 
-#: inc/about.php:116
+#: inc/about.php:72
+msgid "Custom Footer"
+msgstr ""
+
+#: inc/about.php:74
 msgid ""
 "Sometimes you need a little bit more space in your footer for widgets. With "
 "this plugin, you can add up to six columns above the footer and even "
 "customize the text in your footer notice."
 msgstr ""
 
-#: inc/about.php:124
+#: inc/about.php:80
+msgid "Social Icons"
+msgstr ""
+
+#: inc/about.php:82
 msgid ""
 "Being socially active online is a must for any business. That&rsquo;s why we "
 "created the ABC Social Icons premium plugin. Now you can direct any of your "
 "visitors to the social networks you use so they can stay up to date."
 msgstr ""
 
-#: inc/about.php:130
+#: inc/about.php:88
 #, php-format
 msgid ""
 "Want more? Take a look at alphabetthemes.com to see what options are "
-"available when you upgrade. %sUpgrade now &rarr;%s"
+"available when you upgrade. %1$sUpgrade now &rarr;%2$s"
 msgstr ""
 
-#: inc/about.php:137
+#: inc/about.php:95
 msgid "View Documentation"
 msgstr ""
 
-#: inc/about.php:138
+#: inc/about.php:96
 #, php-format
 msgid ""
 "You can read detailed information on how to use %s&rsquo;s features in our "
 "online documentation section."
 msgstr ""
 
-#: inc/about.php:139
+#: inc/about.php:97
 msgid "View documentation &rarr;"
 msgstr ""
 
-#: inc/about.php:147
+#: inc/about.php:105
 msgid "Install Free Plugins"
 msgstr ""
 
-#: inc/about.php:148
+#: inc/about.php:106
 #, php-format
 msgid "Check out some available free plugins that work with %s."
 msgstr ""
 
-#: inc/about.php:160
+#: inc/about.php:109
+msgid "ABC Responsive Videos"
+msgstr ""
+
+#: inc/about.php:112
+msgid "Jetpack by WordPress.com"
+msgstr ""
+
+#: inc/about.php:118
 msgid "Need Support?"
 msgstr ""
 
-#: inc/about.php:161
+#: inc/about.php:119
 #, php-format
 msgid ""
 "If you&rsquo;ve purchased a license from Alphabet Themes, you can access our "
-"%ssupport form%s to ask any questions you might have about one of our themes "
-"or plugins."
+"%1$ssupport form%2$s to ask any questions you might have about one of our "
+"themes or plugins."
 msgstr ""
 
-#: inc/about.php:163
+#: inc/about.php:121
 #, php-format
 msgid "Are you enjoying %s?"
 msgstr ""
 
-#: inc/about.php:164
+#: inc/about.php:122
 #, php-format
 msgid ""
-"Why not leave a review on %sWordPress.org%s? We&rsquo;d really appreciate "
-"it! %s"
+"Why not leave a review on %1$sWordPress.org%2$s? We&rsquo;d really "
+"appreciate it! %3$s"
 msgstr ""
 
-#: inc/about.php:174
-msgid ""
-"Use the field below to activate the license key for the ABC Premium Features "
-"plugin."
+#: inc/customizer.php:12
+msgid "Continue reading"
 msgstr ""
 
-#: inc/about.php:190
-msgid "License Key"
+#: inc/customizer.php:13
+msgid "Featured product description text"
 msgstr ""
 
-#: inc/about.php:192
-msgid "active"
+#: inc/customizer.php:14
+msgid "Popular product description text"
 msgstr ""
 
-#: inc/about.php:194
-msgid "expired"
-msgstr ""
-
-#: inc/about.php:196
-msgid "deactivated"
-msgstr ""
-
-#: inc/about.php:205
-#, php-format
-msgid "This license key expired on %s. Please %srenew%s in order to activate."
-msgstr ""
-
-#: inc/about.php:214
-msgid "Deactivate"
-msgstr ""
-
-#: inc/customizer.php:50 inc/customizer.php:127
+#: inc/customizer.php:23 inc/customizer.php:100
 msgid "Reset"
 msgstr ""
 
-#: inc/customizer.php:83
+#: inc/customizer.php:56
 msgid "Layout"
 msgstr ""
 
-#: inc/customizer.php:93
+#: inc/customizer.php:66
 msgid "Read More text"
 msgstr ""
 
-#: inc/customizer.php:105
+#: inc/customizer.php:78
 msgid "Featured product description"
 msgstr ""
 
-#: inc/customizer.php:106 inc/customizer.php:119
+#: inc/customizer.php:79 inc/customizer.php:92
 msgid "Only on shop grid template"
 msgstr ""
 
-#: inc/customizer.php:118
+#: inc/customizer.php:91
 msgid "Popular product description"
 msgstr ""
 
-#: inc/customizer.php:139
+#: inc/customizer.php:112
 msgid "Click on the button below to reset all theme options back to default."
 msgstr ""
 
-#: inc/customizer.php:156
-#, php-format
-msgid ""
-"Activate the <a target=\"_blank\" href=\"%s\">ABC Premium Features</a> "
-"plugin to open more color options."
-msgstr ""
-
-#: inc/customizer.php:162
-msgid "Fonts"
-msgstr ""
-
-#: inc/customizer.php:174
-#, php-format
-msgid ""
-"Activate the <a target=\"_blank\" href=\"%s\">ABC Premium Features</a> "
-"plugin to open more fonts options."
-msgstr ""
-
-#: inc/customizer.php:180
-msgid "Social Icons"
-msgstr ""
-
-#: inc/customizer.php:192
-#, php-format
-msgid ""
-"Activate the <a target=\"_blank\" href=\"%s\">ABC Premium Features</a> "
-"plugin to open the social icon options."
-msgstr ""
-
-#: inc/customizer.php:198
-msgid "Footer"
-msgstr ""
-
-#: inc/customizer.php:210
-#, php-format
-msgid ""
-"Activate the <a target=\"_blank\" href=\"%s\">ABC Premium Features</a> "
-"plugin to open the footer options."
-msgstr ""
-
-#: inc/customizer.php:227
+#: inc/customizer.php:122
 msgid "Unlock Premium Theme Options"
 msgstr ""
 
-#: inc/customizer.php:228
+#: inc/customizer.php:123
 msgid "Are you sure?"
-msgstr ""
-
-#: inc/plugin-enhancements.php:83
-#, php-format
-msgid ""
-"The %1$s is required to use some of this theme&rsquo;s features, including: "
-msgstr ""
-
-#: inc/plugin-enhancements.php:84
-msgid "Jetpack plugin"
-msgstr ""
-
-#: inc/plugin-enhancements.php:107
-msgid "Site Logo"
-msgstr ""
-
-#: inc/plugin-enhancements.php:116
-msgid "Featured Content"
-msgstr ""
-
-#: inc/plugin-enhancements.php:125
-msgid "Social Menu"
-msgstr ""
-
-#: inc/plugin-enhancements.php:134
-msgid "Menus"
-msgstr ""
-
-#: inc/plugin-enhancements.php:143
-msgid "Comics"
-msgstr ""
-
-#: inc/plugin-enhancements.php:152
-msgid "Testimonials"
-msgstr ""
-
-#: inc/plugin-enhancements.php:161
-msgid "Portfolios"
-msgstr ""
-
-#: inc/plugin-enhancements.php:179
-msgid "no specific module needed"
-msgstr ""
-
-#: inc/plugin-enhancements.php:180
-msgid "Custom Content Types module"
-msgstr ""
-
-#: inc/plugin-enhancements.php:252
-#, php-format
-msgid " Please activate %1$s. %2$s"
-msgstr ""
-
-#: inc/plugin-enhancements.php:254
-msgid "Activate"
-msgstr ""
-
-#: inc/plugin-enhancements.php:262
-#, php-format
-msgid " Please install %1$s. %2$s"
-msgstr ""
-
-#: inc/plugin-enhancements.php:264
-msgid "Install"
-msgstr ""
-
-#: inc/plugin-enhancements.php:289
-#, php-format
-msgid "To use %1$s, please activate the Jetpack plugin&rsquo;s %2$s."
 msgstr ""
 
 #: inc/template-tags.php:26
@@ -443,40 +343,32 @@ msgstr ""
 msgid "My Account"
 msgstr ""
 
-#: inc/template-tags.php:68 inc/template-tags.php:113
-msgid "Posts navigation"
-msgstr ""
-
-#: inc/template-tags.php:69
-msgid "&larr; Older posts"
-msgstr ""
-
-#: inc/template-tags.php:70
-msgid "Newer posts &rarr;"
-msgstr ""
-
-#: inc/template-tags.php:86
+#: inc/template-tags.php:68
 #, php-format
 msgid ""
 "<span class=\"pull-left\">%1$s</span><span class=\"displaying pull-right\">"
 "%2$s of %3$s results for \"%4$s\"</span>"
 msgstr ""
 
-#: inc/template-tags.php:102
+#: inc/template-tags.php:84
 msgid "All results &rarr;"
 msgstr ""
 
-#: inc/template-tags.php:102
+#: inc/template-tags.php:84
 #, php-format
 msgid "Next %s results &rarr;"
 msgstr ""
 
-#: inc/template-tags.php:108
+#: inc/template-tags.php:90
 #, php-format
 msgid "&larr; Previous %s results"
 msgstr ""
 
-#: inc/template-tags.php:128
+#: inc/template-tags.php:95
+msgid "Posts navigation"
+msgstr ""
+
+#: inc/template-tags.php:110
 #, php-format
 msgid "%s words"
 msgstr ""
@@ -510,37 +402,6 @@ msgstr ""
 
 #: page-templates/template-shop-grid.php:97
 msgid "Reviews"
-msgstr ""
-
-#: sidebar.php:13
-msgid "Default Widget"
-msgstr ""
-
-#: sidebar.php:14
-#, php-format
-msgid ""
-"This is just a default widget. It'll disappear as soon as you add your own "
-"widgets on the %sWidgets admin page%s."
-msgstr ""
-
-#: sidebar.php:16
-msgid "Below is an example of an unordered list."
-msgstr ""
-
-#: sidebar.php:18
-msgid "List item one"
-msgstr ""
-
-#: sidebar.php:19
-msgid "List item two"
-msgstr ""
-
-#: sidebar.php:20
-msgid "List item three"
-msgstr ""
-
-#: sidebar.php:21
-msgid "List item four"
 msgstr ""
 
 #: single.php:26
@@ -584,20 +445,25 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: template-parts/content-header.php:38
+#: template-parts/content-header.php:39
+#, php-format
+msgid "Written by %s"
+msgstr ""
+
+#: template-parts/content-header.php:39
 #, php-format
 msgid "Posts by %s"
 msgstr ""
 
-#: template-parts/content-header.php:48
+#: template-parts/content-header.php:50
 msgid "0 Comments"
 msgstr ""
 
-#: template-parts/content-header.php:48
+#: template-parts/content-header.php:50
 msgid "1 Comment"
 msgstr ""
 
-#: template-parts/content-header.php:48
+#: template-parts/content-header.php:50
 msgid "% Comments"
 msgstr ""
 

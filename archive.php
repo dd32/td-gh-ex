@@ -39,7 +39,7 @@ get_header(); ?>
 					endwhile;
 					?>
 
-					<?php abc_pagination(); ?>
+					<?php the_posts_navigation(); ?>
 					<?php
 				else :
 					get_template_part( 'template-parts/content', 'none' );

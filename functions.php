@@ -23,34 +23,27 @@
  * @package WordPress
  * @subpackage Abacus
  * @since Abacus 1.0
- *
- * Namespace prefix abc_ = Alphabet Themes
  */
 
 // Defining constants
-$abc_theme_data = wp_get_theme( 'abacus' );
-define( 'ABC_THEME_URL', get_template_directory_uri() );
-define( 'ABC_THEME_TEMPLATE', get_template_directory() );
-define( 'ABC_THEME_VERSION', trim( $abc_theme_data->Version ) );
-define( 'ABC_THEME_NAME', $abc_theme_data->Name );
-define( 'ABC_FEATURED_CONTENT', false );
+$abacus_theme_data = wp_get_theme( 'abacus' );
+define( 'ABACUS_THEME_URL', get_template_directory_uri() );
+define( 'ABACUS_THEME_TEMPLATE', get_template_directory() );
+define( 'ABACUS_THEME_VERSION', trim( $abacus_theme_data->Version ) );
+define( 'ABACUS_THEME_NAME', $abacus_theme_data->Name );
 
 if ( ! isset( $content_width ) ) {
 	$content_width = 860;
 }
 
-function is_abc_theme() {
-	return true;
-}
-
-foreach ( glob( ABC_THEME_TEMPLATE . '/inc/*' ) as $filename ) {
+foreach ( glob( ABACUS_THEME_TEMPLATE . '/inc/*' ) as $filename ) {
 	include $filename;
 }
 
-add_action( 'after_setup_theme', 'abc_setup' );
-if ( ! function_exists( 'abc_setup' ) ) {
-	function abc_setup() {
-		load_theme_textdomain( 'abacus', ABC_THEME_TEMPLATE . '/languages' );
+add_action( 'after_setup_theme', 'abacus_setup' );
+if ( ! function_exists( 'abacus_setup' ) ) {
+	function abacus_setup() {
+		load_theme_textdomain( 'abacus', ABACUS_THEME_TEMPLATE . '/languages' );
 
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'post-thumbnails' );
@@ -63,23 +56,24 @@ if ( ! function_exists( 'abc_setup' ) ) {
 			'gallery',
 			'caption'
 		) );
-		add_theme_support( 'custom-header', apply_filters( 'abc_custom_header_args', array(
-			//'header-text' => false,
+		add_theme_support( 'custom-header', apply_filters( 'abacus_custom_header_args', array(
+			'header-text' => false,
 			'flex-height' => true,
 			'flex-width' => true,
 			'random-default' => true,
-			'width' => apply_filters( 'abc_header_image_width', 1400 ),
-			'height' => apply_filters( 'abc_header_image_height', 600 ),
-			'wp-head-callback' => 'abc_header_style',
+			'width' => apply_filters( 'abacus_header_image_width', 1400 ),
+			'height' => apply_filters( 'abacus_header_image_width', 600 ),
+			'wp-head-callback' => 'abacus_header_style',
 		) ) );
 		if ( function_exists( 'abc_premium_features' ) ) {
-			add_theme_support( 'custom-background', apply_filters( 'abc_custom_background_args', array(
+			add_theme_support( 'custom-background', apply_filters( 'abacus_custom_background_args', array(
 				'default-color' => '2E3739',
 			) ) );
 		}
 		add_theme_support( 'jetpack-testimonial' );
+		add_theme_support( 'custom-logo' );
 
-		add_editor_style( array( 'css/admin/editor-style.css', '/css/font-awesome.css', abc_fonts_url() ) );
+		add_editor_style( array( 'css/admin/editor-style.css', '/css/font-awesome.css', abacus_fonts_url() ) );
 
 		register_nav_menu( 'top', __( 'Top Menu', 'abacus' ) );
 		register_nav_menu( 'primary', __( 'Primary Menu', 'abacus' ) );
@@ -90,8 +84,8 @@ if ( ! function_exists( 'abc_setup' ) ) {
 	}
 }
 
-if ( ! function_exists( 'abc_header_style' ) ) {
-	function abc_header_style() {
+if ( ! function_exists( 'abacus_header_style' ) ) {
+	function abacus_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		// If no custom options for text are set, let's bail
@@ -118,23 +112,33 @@ if ( ! function_exists( 'abc_header_style' ) ) {
 	}
 }
 
-add_action( 'wp_enqueue_scripts', 'abc_enqueue' );
-if ( ! function_exists( 'abc_enqueue' ) ) {
-	function abc_enqueue() {
-		wp_enqueue_script( 'theme', ABC_THEME_URL .'/js/theme.js', array( 'jquery' ), '', true );
+add_action( 'wp_enqueue_scripts', 'abacus_enqueue' );
+if ( ! function_exists( 'abacus_enqueue' ) ) {
+	function abacus_enqueue() {
+		wp_enqueue_script( 'theme', ABACUS_THEME_URL .'/js/theme.js', array( 'jquery' ), '', true );
 
-		wp_enqueue_style( 'theme-stylesheet', get_stylesheet_uri() );
-		wp_enqueue_style( 'abc-google-fonts', abc_fonts_url(), array(), null );
-		wp_enqueue_style( 'font-awesome', ABC_THEME_URL .'/css/font-awesome.css', false, '4.4.0', 'all' );
+		wp_enqueue_style( 'abacus-stylesheet', get_stylesheet_uri() );
+		wp_enqueue_style( 'abacus-google-fonts', abacus_fonts_url(), array(), null );
+		wp_enqueue_style( 'font-awesome', ABACUS_THEME_URL .'/css/font-awesome.css', false, '4.4.0', 'all' );
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
+
+		if ( is_home() ) {
+			$header_image = get_header_image();
+			$custom_css = "
+				.header-img {
+					background-image: url(" . esc_url( $header_image ) . ");
+					height: " . get_custom_header()->height . "px;
+				}";
+			wp_add_inline_style( 'abacus-stylesheet', $custom_css );
+		}
 	}
 }
 
-if ( ! function_exists( 'abc_fonts_url' ) ) {
-	function abc_fonts_url() {
+if ( ! function_exists( 'abacus_fonts_url' ) ) {
+	function abacus_fonts_url() {
 		$fonts     = array();
 		$subsets   = 'latin,latin-ext';
 
@@ -143,7 +147,7 @@ if ( ! function_exists( 'abc_fonts_url' ) ) {
 		 * by Roboto, translate this to 'off'. Do not translate into your own language.
 		 */
 		if ( 'off' !== _x( 'on', 'Roboto font: on or off', 'abacus' ) ) {
-			$fonts[] = 'Roboto:300,400italic,700italic,400,700';
+			$fonts[] = 'Roboto:300,400,400italic,700,700italic';
 		}
 
 		/*
@@ -169,9 +173,9 @@ if ( ! function_exists( 'abc_fonts_url' ) ) {
 	}
 }
 
-add_action( 'widgets_init', 'abc_widgets_init' );
-if ( ! function_exists( 'abc_widgets_init' ) ) {
-	function abc_widgets_init() {
+add_action( 'widgets_init', 'abacus_widgets_init' );
+if ( ! function_exists( 'abacus_widgets_init' ) ) {
+	function abacus_widgets_init() {
 		register_sidebar( array(
 			'name' => __( 'Sidebar', 'abacus' ),
 			'id' => 'sidebar',
