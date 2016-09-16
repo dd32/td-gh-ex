@@ -10,7 +10,7 @@
     	        
 		<?php // Various utilities ?>
     	<meta charset="<?php bloginfo( 'charset' ); ?>" />
-		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
             	

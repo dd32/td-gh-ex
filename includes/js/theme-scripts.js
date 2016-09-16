@@ -33,6 +33,13 @@ function bntCheckDevice() {
 	return false;
 }
 
+// Generate em values
+function bntEmValue(input) {
+    var emSize = parseFloat( $str('html').css('font-size') );
+    var output = emSize * 1.6 * input;
+	return output;
+}
+
 
 $str(document).ready(function() {
 	
@@ -121,7 +128,7 @@ $str(document).ready(function() {
 	
 	
 	// Fixed header on scroll
-	if ( bntThemeVars.fixed_menu == 1 && bntThemeVars.menu_config != 3 && $str(window).width() > 1280 ) {
+	if ( bntThemeVars.fixed_menu == 1 && bntThemeVars.menu_config != 3 && $str(window).width() > bntEmValue(80) ) {
 		if ( $str(window).scrollTop() > 0 ) {
 			if ( ! $str('.fixed-header').length ) {
 				var $headerClone = $str('.site-header > .bnt-container').clone();
@@ -248,7 +255,7 @@ $str(document).ready(function() {
             $str('.novice-header').fadeOut();
         });
 	});
-	
+		
 		
 });
 
@@ -356,7 +363,7 @@ $str(window).scroll(function () {
 	
 	
 	// Fixed header on scroll
-	if ( bntThemeVars.fixed_menu == 1 && bntThemeVars.menu_config != 3 && $str(window).width() > 1280 ) {
+	if ( bntThemeVars.fixed_menu == 1 && bntThemeVars.menu_config != 3 && $str(window).width() > bntEmValue(80) ) {
 		if ( $str(window).scrollTop() > 0 ) {
 			if ( ! $str('.fixed-header').length ) {
 				var $headerClone = $str('.site-header > .bnt-container').clone(true);
