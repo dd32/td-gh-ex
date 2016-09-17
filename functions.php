@@ -47,11 +47,6 @@ function beautytemple_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 	
-	/*
-	 * Enable support for site logo.
-	 */
-	add_theme_support( 'custom-logo', array( 'size' => 'beautytemple-logo', 'flex-height' => true, 'flex-width'  => true, 'header-text' => array( 'site-title', 'site-description' ) ) );
-
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'beautytemple' ),
@@ -142,13 +137,13 @@ function beautytemple_scripts() {
 	
 	wp_enqueue_script( 'retina', get_template_directory_uri() . '/js/libs/ui/gumby.retina.js', array(), '20151215', true );
 	wp_enqueue_script( 'fixed', get_template_directory_uri() . '/js/libs/ui/gumby.fixed.js', array(), '20151215', true );
-	wp_enqueue_script( 'skiplink', get_template_directory_uri() . '/js/libs/ui/gumby.skiplink.js', array(), '20151215', true );
+	//wp_enqueue_script( 'skiplink', get_template_directory_uri() . '/js/libs/ui/gumby.skiplink.js', array(), '20151215', true );
 	wp_enqueue_script( 'toggleswitch', get_template_directory_uri() . '/js/libs/ui/gumby.toggleswitch.js', array(), '20151215', true );
-	wp_enqueue_script( 'checkbox', get_template_directory_uri() . '/js/libs/ui/gumby.checkbox.js', array(), '20151215', true );
-	wp_enqueue_script( 'radiobtn', get_template_directory_uri() . '/js/libs/ui/gumby.radiobtn.js', array(), '20151215', true );
-	wp_enqueue_script( 'tabs', get_template_directory_uri() . '/js/libs/ui/gumby.tabs.js', array(), '20151215', true );
+	//wp_enqueue_script( 'checkbox', get_template_directory_uri() . '/js/libs/ui/gumby.checkbox.js', array(), '20151215', true );
+	//wp_enqueue_script( 'radiobtn', get_template_directory_uri() . '/js/libs/ui/gumby.radiobtn.js', array(), '20151215', true );
+	//wp_enqueue_script( 'tabs', get_template_directory_uri() . '/js/libs/ui/gumby.tabs.js', array(), '20151215', true );
 	wp_enqueue_script( 'navbar', get_template_directory_uri() . '/js/libs/ui/gumby.navbar.js', array(), '20151215', true );
-	wp_enqueue_script( 'validation', get_template_directory_uri() . '/js/libs/ui/jquery.validation.js', array(), '20151215', true );
+	//wp_enqueue_script( 'validation', get_template_directory_uri() . '/js/libs/ui/jquery.validation.js', array(), '20151215', true );
 	wp_enqueue_script( 'init', get_template_directory_uri() . '/js/libs/gumby.init.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'plugins', get_template_directory_uri() . '/js/plugins.js', array(), '20151215', true );
