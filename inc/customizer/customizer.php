@@ -26,17 +26,17 @@ function rubine_customize_register_options( $wp_customize ) {
 		'capability'     => 'edit_theme_options',
 		'theme_supports' => '',
 		'title'          => esc_html__( 'Theme Options', 'rubine-lite' ),
-		'description'    => '',
+		'description'    => rubine_customize_theme_links(),
 	) );
-	
+
 	// Add postMessage support for site title and description.
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-	
+
 	// Change default background section
 	$wp_customize->get_control( 'background_color'  )->section   = 'background_image';
 	$wp_customize->get_section( 'background_image'  )->title     = esc_html__( 'Background', 'rubine-lite' );
-	
+
 	// Add Display Site Title Setting
 	$wp_customize->add_setting( 'rubine_theme_options[site_title]', array(
         'default'           => true,
@@ -53,7 +53,7 @@ function rubine_customize_register_options( $wp_customize ) {
 		'priority' => 10
 		)
 	);
-	
+
 	// Add Header Tagline option
 	$wp_customize->add_setting( 'rubine_theme_options[header_tagline]', array(
         'default'           => false,
@@ -70,7 +70,7 @@ function rubine_customize_register_options( $wp_customize ) {
 		'priority' => 11
 		)
 	);
-	
+
 	// Add Header Image Link
 	$wp_customize->add_setting( 'rubine_theme_options[custom_header_link]', array(
         'default'           => '',
@@ -87,7 +87,7 @@ function rubine_customize_register_options( $wp_customize ) {
 		'priority' => 10
 		)
 	);
-	
+
 	// Add Custom Header Hide Checkbox
 	$wp_customize->add_setting( 'rubine_theme_options[custom_header_hide]', array(
         'default'           => false,
@@ -115,32 +115,55 @@ function rubine_customize_preview_js() {
 }
 
 
-// Embed JS file for Customizer Controls
-add_action( 'customize_controls_enqueue_scripts', 'rubine_customize_controls_js' );
-
-function rubine_customize_controls_js() {
-	
-	wp_enqueue_script( 'rubine-lite-customizer-controls', get_template_directory_uri() . '/js/customizer-controls.js', array(), '20151202', true );
-	
-	// Localize the script
-	wp_localize_script( 'rubine-lite-customizer-controls', 'rubine_theme_links', array(
-		'title'	=> esc_html__( 'Theme Links', 'rubine-lite' ),
-		'themeURL'	=> esc_url( __( 'https://themezee.com/themes/rubine/', 'rubine-lite' ) . '?utm_source=customizer&utm_medium=textlink&utm_campaign=rubine&utm_content=theme-page' ),
-		'themeLabel'	=> esc_html__( 'Theme Page', 'rubine-lite' ),
-		'docuURL'	=> esc_url( __( 'https://themezee.com/docs/rubine-documentation/', 'rubine-lite' ) . '?utm_source=customizer&utm_medium=textlink&utm_campaign=rubine&utm_content=documentation' ),
-		'docuLabel'	=>  esc_html__( 'Theme Documentation', 'rubine-lite' ),
-		'rateURL'	=> esc_url( 'http://wordpress.org/support/view/theme-reviews/rubine-lite?filter=5' ),
-		'rateLabel'	=> esc_html__( 'Rate this theme', 'rubine-lite' ),
-		)
-	);
-
-}
-
-
 // Embed CSS styles for Theme Customizer
 add_action( 'customize_controls_print_styles', 'rubine_customize_preview_css' );
 
 function rubine_customize_preview_css() {
-	wp_enqueue_style( 'rubine-lite-customizer-css', get_template_directory_uri() . '/css/customizer.css', array(), '20151202' );
+	wp_enqueue_style( 'rubine-lite-customizer-css', get_template_directory_uri() . '/css/customizer.css', array(), '20160915' );
 
+}
+
+/**
+ * Returns Theme Links
+ */
+function rubine_customize_theme_links() {
+
+	ob_start();
+	?>
+
+		<div class="theme-links">
+
+			<span class="customize-control-title"><?php esc_html_e( 'Theme Links', 'rubine-lite' ); ?></span>
+
+			<p>
+				<a href="<?php echo esc_url( __( 'https://themezee.com/themes/rubine/', 'rubine-lite' ) ); ?>?utm_source=customizer&utm_medium=textlink&utm_campaign=rubine&utm_content=theme-page" target="_blank">
+					<?php esc_html_e( 'Theme Page', 'rubine-lite' ); ?>
+				</a>
+			</p>
+
+			<p>
+				<a href="http://preview.themezee.com/rubine/?utm_source=theme-info&utm_medium=textlink&utm_campaign=rubine&utm_content=demo" target="_blank">
+					<?php esc_html_e( 'Theme Demo', 'rubine-lite' ); ?>
+				</a>
+			</p>
+
+			<p>
+				<a href="<?php echo esc_url( __( 'https://themezee.com/docs/rubine-documentation/', 'rubine-lite' ) ); ?>?utm_source=customizer&utm_medium=textlink&utm_campaign=rubine&utm_content=documentation" target="_blank">
+					<?php esc_html_e( 'Theme Documentation', 'rubine-lite' ); ?>
+				</a>
+			</p>
+
+			<p>
+				<a href="<?php echo esc_url( __( 'https://wordpress.org/support/theme/rubine-lite/reviews/?filter=5', 'rubine-lite' ) ); ?>" target="_blank">
+					<?php esc_html_e( 'Rate this theme', 'rubine-lite' ); ?>
+				</a>
+			</p>
+
+		</div>
+
+	<?php
+	$theme_links = ob_get_contents();
+	ob_end_clean();
+
+	return $theme_links;
 }

@@ -353,6 +353,10 @@ article .entry .wp-post-image {
 		float: left;
 	}
 
+	.main-navigation-menu li {
+		width: 100%;
+	}
+
 	.main-navigation-menu a {
 		clear: right;
 	}

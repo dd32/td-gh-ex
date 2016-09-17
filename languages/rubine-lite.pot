@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Rubine Lite\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2016-04-13 14:54+0100\n"
-"PO-Revision-Date: 2016-04-13 14:54+0100\n"
+"POT-Creation-Date: 2016-09-17 12:04+0100\n"
+"PO-Revision-Date: 2016-09-17 12:04+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
 "Language: en_US\n"
@@ -47,27 +47,27 @@ msgstr ""
 msgid "Read more"
 msgstr ""
 
-#: functions.php:20
+#: functions.php:27
 msgid "Menu"
 msgstr ""
 
-#: functions.php:107
+#: functions.php:114
 msgid "Main Navigation"
 msgstr ""
 
-#: functions.php:108
+#: functions.php:115
 msgid "Top Navigation"
 msgstr ""
 
-#: functions.php:109
+#: functions.php:116
 msgid "Social Icons"
 msgstr ""
 
-#: functions.php:140 sidebar.php:14
+#: functions.php:150 sidebar.php:14
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:142
+#: functions.php:152
 msgid "Appears on posts and pages except the full width template."
 msgstr ""
 
@@ -157,70 +157,71 @@ msgstr ""
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/theme-info.php:18 inc/theme-info.php:38
+#: inc/theme-info.php:19 inc/theme-info.php:40
 #, php-format
 msgid "Welcome to %1$s %2$s"
 msgstr ""
 
-#: inc/theme-info.php:19
+#: inc/theme-info.php:20
 msgid "Theme Info"
 msgstr ""
 
-#: inc/theme-info.php:44 inc/customizer/customizer.php:127
+#: inc/theme-info.php:46 inc/customizer/customizer.php:136
 msgid "Theme Links"
 msgstr ""
 
-#: inc/theme-info.php:45 inc/customizer/customizer.php:128
+#: inc/theme-info.php:47 inc/customizer/customizer.php:139
 msgid "https://themezee.com/themes/rubine/"
 msgstr ""
 
-#: inc/theme-info.php:45 inc/customizer/customizer.php:129
+#: inc/theme-info.php:47 inc/customizer/customizer.php:140
 msgid "Theme Page"
 msgstr ""
 
-#: inc/theme-info.php:46
-msgid "Changelog"
-msgstr ""
-
-#: inc/theme-info.php:47
+#: inc/theme-info.php:48 inc/customizer/customizer.php:146
 msgid "Theme Demo"
 msgstr ""
 
-#: inc/theme-info.php:48 inc/theme-info.php:69
-#: inc/customizer/customizer.php:130
+#: inc/theme-info.php:49 inc/theme-info.php:70
+#: inc/customizer/customizer.php:151
 msgid "https://themezee.com/docs/rubine-documentation/"
 msgstr ""
 
-#: inc/theme-info.php:48 inc/theme-info.php:63
-#: inc/customizer/customizer.php:131
+#: inc/theme-info.php:49 inc/theme-info.php:64
+#: inc/customizer/customizer.php:152
 msgid "Theme Documentation"
 msgstr ""
 
-#: inc/theme-info.php:49 inc/customizer/customizer.php:133
+#: inc/theme-info.php:50 inc/theme-info.php:152
+#: inc/customizer/customizer.php:157
+msgid "https://wordpress.org/support/theme/rubine-lite/reviews/?filter=5"
+msgstr ""
+
+#: inc/theme-info.php:50 inc/customizer/customizer.php:158
 msgid "Rate this theme"
 msgstr ""
 
-#: inc/theme-info.php:56
+#: inc/theme-info.php:57
 #, php-format
 msgid "Getting Started with %s"
 msgstr ""
 
-#: inc/theme-info.php:66
+#: inc/theme-info.php:67
 msgid ""
 "You need help to setup and configure this theme? We got you covered with an "
 "extensive theme documentation on our website."
 msgstr ""
 
-#: inc/theme-info.php:70
+#: inc/theme-info.php:71
 #, php-format
 msgid "View %s Documentation"
 msgstr ""
 
-#: inc/theme-info.php:76 inc/customizer/customizer.php:28
+#: inc/theme-info.php:77 inc/customizer/customizer.php:28
 msgid "Theme Options"
 msgstr ""
 
-#: inc/theme-info.php:79
+#: inc/theme-info.php:80
 #, php-format
 msgid ""
 "%s makes use of the Customizer for all theme settings. Click on \"Customize "
@@ -231,36 +232,58 @@ msgstr ""
 msgid "Customize Theme"
 msgstr ""
 
-#: inc/theme-info.php:89 inc/customizer/functions/custom-controls.php:42
-msgid "Pro Version"
+#: inc/theme-info.php:103
+msgid "Get more features"
 msgstr ""
 
-#: inc/theme-info.php:92 inc/customizer/functions/custom-controls.php:45
+#: inc/theme-info.php:110
+msgid "Pro Version Add-on"
+msgstr ""
+
+#: inc/theme-info.php:113
 #, php-format
 msgid ""
-"Purchase the Pro Version of %s to get additional features and advanced "
+"Purchase the %s Pro Add-on and get additional features and advanced "
 "customization options."
 msgstr ""
 
-#: inc/theme-info.php:95 inc/customizer/functions/custom-controls.php:49
+#: inc/theme-info.php:116 inc/customizer/functions/custom-controls.php:49
 msgid "https://themezee.com/addons/rubine-pro/"
 msgstr ""
 
-#: inc/theme-info.php:96 inc/customizer/functions/custom-controls.php:50
+#: inc/theme-info.php:117 inc/customizer/functions/custom-controls.php:50
 #, php-format
 msgid "Learn more about %s Pro"
 msgstr ""
 
-#: inc/theme-info.php:117
+#: inc/theme-info.php:127
+msgid "Recommended Plugins"
+msgstr ""
+
+#: inc/theme-info.php:130
+msgid ""
+"Extend the functionality of your WordPress website with our free and easy to "
+"use plugins."
+msgstr ""
+
+#: inc/theme-info.php:134
+msgid "Install Plugins"
+msgstr ""
+
+#: inc/theme-info.php:149
 #, php-format
 msgid "%1$s is proudly brought to you by %2$s. If you like this theme, %3$s :)"
 msgstr ""
 
-#: inc/theme-info.php:119
+#: inc/theme-info.php:151
 msgid "https://themezee.com/"
 msgstr ""
 
-#: inc/theme-info.php:120
+#: inc/theme-info.php:152
+msgid "Review Rubine"
+msgstr ""
+
+#: inc/theme-info.php:152
 msgid "rate it"
 msgstr ""
 
@@ -282,6 +305,17 @@ msgstr ""
 
 #: inc/customizer/customizer.php:100
 msgid "Hide header image on front page"
+msgstr ""
+
+#: inc/customizer/functions/custom-controls.php:42
+msgid "Pro Version"
+msgstr ""
+
+#: inc/customizer/functions/custom-controls.php:45
+#, php-format
+msgid ""
+"Purchase the Pro Version of %s to get additional features and advanced "
+"customization options."
 msgstr ""
 
 #: inc/customizer/functions/custom-controls.php:58
