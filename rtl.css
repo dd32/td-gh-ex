@@ -300,6 +300,10 @@ blockquote cite {
 		margin: -0.3em 0.3em -0.2em 0.8em;
 	}
 
+	#topnav-menu li {
+		width: 100%;
+	}
+
 	#topnav-menu a {
 		clear: right;
 	}
@@ -327,6 +331,10 @@ blockquote cite {
 
 	#mainnav-toggle:after {
 		float: left;
+	}
+
+	.main-navigation-menu li {
+		width: 100%;
 	}
 
 	.main-navigation-menu a {
