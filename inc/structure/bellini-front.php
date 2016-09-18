@@ -354,7 +354,7 @@ if($bellini['bellini_show_frontpage_blog_posts'] == true) : ?>
 			endwhile;
 
 			if(!empty($bellini['bellini_home_blogposts_button_text'])):?>
-		    <div class="front__blog__cta">
+		    <div class="front__blog__cta col-sm-12">
 		    <a href="<?php if(!empty($bellini['bellini_home_blogposts_button_url'])): echo esc_url($bellini['bellini_home_blogposts_button_url']); endif;?>">
 		       	<button class="button button--cta--center" role="button">
 					<?php echo do_shortcode(wp_kses_post($bellini['bellini_home_blogposts_button_text']));?>

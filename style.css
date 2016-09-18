@@ -3,7 +3,7 @@ Theme Name: Bellini
 Theme URI: http://atlantisthemes.com/
 Author: Pangolin
 Description: Bellini is the perfect theme for creating a eCommerce store or shop. Responsive & flexible layout built with Bootstrap. Customize anything like Google Fonts, Color, Layout, logo upload, full-screen slider, header image and much more.Built with SEO in mind and has Structured Data (Schema) implemented. If you are looking for a beautiful theme with out of the box SEO compatibility & responsiveness, look no further! Check out the live demo at http://demo.atlantisthemes.com/front-page/
-Version: 1.29
+Version: 1.30
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bellini
@@ -567,15 +567,12 @@ a:active {
     .main-navigation ul li {
         display: inline-block;
         position: relative;
-        padding: .75em 1.6em .75em 0;
+        padding: .75em 1.6em 0 0;
         border-bottom: none;
     }
 
     .main-navigation a {
-        padding: .8889em 0;
-    }
-
-    .nav-menu > li > a:after {
+        padding: .8889em 0 0 0;
     }
 
     .nav-menu > li:last-child > a:after {
@@ -691,7 +688,7 @@ a:active {
 .bellini__pagination--np__next {
     width: 10em;
     display: block;
-    margin: .5em auto;
+    margin: .5em 0 .5em auto;
     padding: .5em 1em;
     border-radius: 2px;
     transition: all .2s ease-in-out;
@@ -1078,7 +1075,7 @@ object {
     min-height: 60px;
 }
 
-.header__trans {
+.home .header__trans {
     background: none !important;
     position: absolute;
     top: 1em;
@@ -1127,7 +1124,6 @@ object {
     position: absolute;
     top: 5%;
     right: 2.5%;
-    will-change: transform;
 }
 
 .blog__post .layout-golden--one__right:hover{
@@ -1212,7 +1208,6 @@ object {
     box-shadow: 0 1px 1.5px rgba(0,0,0,.12) ,0 1px 1px rgba(0,0,0,.24);
     -webkit-transform: translateX(8px);
     transform:translateX(8px);
-    will-change: transform;
 }
 
 .entry-header--lb-2 {
@@ -1596,7 +1591,6 @@ object {
     background-repeat: no-repeat;
     background-size: cover;
     -o-background-size: cover;
-    will-change: transform;
     background-attachment: fixed;
 }
 
@@ -2622,7 +2616,7 @@ Hamburger Menu
 #footer-nav li{
     list-style: none;
     display:inline-block;
-    padding: 1em;
+    padding: 1.2rem;
 }
 
 #footer-nav .sub-menu{
@@ -2666,6 +2660,7 @@ Hamburger Menu
         width: 100%;
     }
 
+    .bellini__canvas {padding: 2.5rem;}
     .widget-area--right,
     .widget-area--left {
         margin-top: 6%;
@@ -2766,4 +2761,18 @@ Hamburger Menu
 
 a.ham__close {
     float: right;
+}
+
+blockquote {
+    border: 6px solid;
+    padding: 30px 50px 30px 30px;
+    margin: 40px 0 40px -90px;
+    font-size: 26px;
+    line-height: 38px;
+    font-weight: 600;
+}
+
+#footer-nav {
+    margin: 0;
+    padding: 0;
 }

@@ -892,3 +892,5 @@
 .product-card__info__price {
     padding-bottom: 2rem;
 }
+
+.single-product #content {margin-top:4rem;}

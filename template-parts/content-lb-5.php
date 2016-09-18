@@ -12,7 +12,7 @@
 	$author_id=$post->post_author;
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class("post-item post-item--l5 col-sm-4");?> itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
-<div class="blog__post--l5 row" data-sr="enter right, move 40px">
+<div class="blog__post--l5 row" data-sr="enter bottom, move 40px, wait 0.2s, over 0.8s, after 0.3s">
 	<div class="col-xs-12 post-content--l5">
 		<?php bellini_category(); ?>
 	<header class="entry-header post-title--l5">

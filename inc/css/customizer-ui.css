@@ -255,17 +255,18 @@ textarea:focus,
 
 
 .prefix-upsell-link {
-    display:block;
+    display: block;
     clear: both;
     margin-top: 6px;
-    padding: 3px 5px;
+    padding: 5px 3px;
     text-transform: uppercase;
     font-size: 11px;
     line-height: 1.5;
     letter-spacing: 1px;
     color: #fff;
-    background-color: #f44336;
+    background-color: #FFC107;
     transition: all .2s;
+    border-radius: 4px;
 }
 
 .prefix-upsell-link:before {
@@ -276,7 +277,7 @@ textarea:focus,
 
 .prefix-upsell-link:hover {
     color: #fff;
-    background-color: #e53935;
+    opacity:0.7;
 }
 
 .prefix-upsell-link:hover:before {
@@ -336,10 +337,18 @@ input[type=checkbox]:checked:before {
     width: auto;
 }
 
+.bellini_pro_section:before {
+    font: 400 24px/1 dashicons;
+    content: "\f534";
+    color:#FFC107;
+}
+
 .bellini_pro_section {
-    background-color: #e7f7f9;
-    padding: 1em;
+    background-color: #ffffff;
+    padding: 1em 1em 1em 2em;
     border-radius: 2px;
+    border: 1px solid #eee;
+    border-left: 5px solid #FFC107;
 }
 
 .bellini__pro__button {
@@ -347,8 +356,33 @@ input[type=checkbox]:checked:before {
     margin-top: 1em;
 }
 
+.lite__pro--customizer {
+    background: #03A9F4;
+    color: #fff;
+    padding: .3em 1em;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.lite__pro--customizer:hover {
+    background: #03A9F4;
+    color: #fff;
+    opacity:0.7;
+}
+
 .bellini__pro--features {
     list-style: initial;
     line-height: 1;
-    margin: 1em 0 1em 3em;
+    margin: 1em 0 1em 2em;
 }
+
+#customize-control-bellini_frontpage_section_conversion_one .bellini_pro_section:before{
+    content: "\f328";
+    font-size:2.5rem;
+}
+
+#customize-control-bellini_frontpage_section_conversion_one .bellini_pro_section{
+    border:1px solid #eee;
+}
+
+#accordion-section-bellini_lite_go_premium_section_one h3:before {content: "\f155"; color:#FFC107; opacity:1;}

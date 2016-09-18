@@ -78,7 +78,7 @@
 
 	// Reorder Frontpage Section
 	$wp_customize->add_section('bellini_frontpage_section_reorder',array(
-			'title' 			=> esc_html__( 'Need More Sections?', 'bellini' ),
+			'title' 			=> esc_html__( 'Re-order Sections?', 'bellini' ),
 			'capability' 		=> 'edit_theme_options',
 			'priority' 			=> 20,
 			'panel' 			=> 'bellini_frontpage_panel',
