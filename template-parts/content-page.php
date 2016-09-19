@@ -10,13 +10,25 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php 
+	$header_image_meta = academic_header_image_meta_option();
+	if ( is_array( $header_image_meta ) ) {
+		$header_image_meta = $header_image_meta[1];
+	} 
+	if ( 'show-both' == $header_image_meta ) { ?>
+		<div class="post-thumbnail">
+			<?php the_post_thumbnail();?>
+		</div>
+	<?php }
+
+	if ( ! $header_image_meta || ! get_header_image() ) : ?>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
+	<?php endif; ?>
 
 	<div class="entry-content">
 		<?php
-			the_post_thumbnail();
 			the_content();
 
 			wp_link_pages( array(

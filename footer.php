@@ -9,20 +9,44 @@
  * @package Academic
  */
 
-?>
+/**
+* academic_footer_content hook
+*
+* @hooked academic_add_partner - 10
+*
+*/
+do_action( 'academic_footer_content' );
 
-	</div><!-- #content -->
+/**
+* academic_content_end hook
+*
+* @hooked academic_content_end -  100
+*
+*/
+do_action( 'academic_content_end' );
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'academic' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'academic' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'academic' ), 'academic', '<a href="http://themepalace.com/" rel="designer">Theme Palace</a>' ); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
 
-<?php wp_footer(); ?>
+/**
+* academic_footer hook
+*
+* @hooked academic_footer_start -  10
+* @hooked academic_footer -  30
+* @hooked academic_copyright -  40
+* @hooked academic_footer_end -  100
+*
+*/
+do_action( 'academic_footer' );
+
+
+/**
+* academic_back_to_top hook
+*
+* @hooked academic_back_to_top -  10
+*
+*/
+do_action( 'academic_back_to_top' );
+
+wp_footer(); ?>
 
 </body>
 </html>

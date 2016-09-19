@@ -10,6 +10,11 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<?php  
+	if ( has_post_thumbnail() ) :
+		the_post_thumbnail( $size = 'large', array( 'alt' => get_the_title() ) );
+	endif;
+	?>
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 
@@ -21,10 +26,11 @@
 	</header><!-- .entry-header -->
 
 	<div class="entry-summary">
-		<?php the_excerpt(); ?>
+		<p><?php the_excerpt(); ?></p>
+		<div class="button">
+			<?php  $options = academic_get_theme_options(); ?>
+			<a href="<?php the_permalink(); ?>" class="btn btn-blue"><?php echo esc_html( $options['read_more_text'] ); ?></a>
+		</div>
 	</div><!-- .entry-summary -->
 
-	<footer class="entry-footer">
-		<?php academic_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

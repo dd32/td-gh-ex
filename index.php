@@ -12,7 +12,16 @@
  * @package Academic
  */
 
-get_header(); ?>
+get_header(); 
+
+/**
+ * academic_page_section hook
+ *
+ * @hooked academic_page_section -  10
+ *
+ */
+do_action( 'academic_page_section' );
+?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -40,17 +49,35 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_navigation();
-
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );
 
-		endif; ?>
+		endif; 
+
+		/**
+		* Hook - academic_action_pagination.
+		*
+		* @hooked academic_default_pagination 
+		* @hooked academic_numeric_pagination 
+		*/
+		do_action( 'academic_action_pagination' ); 
+		?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+if ( academic_is_sidebar_enable() ) {
+	get_sidebar();
+}
+
+/**
+ * academic_page_section_end hook
+ *
+ * @hooked academic_page_section_end -  10
+ *
+ */
+do_action( 'academic_page_section_end' );
+
 get_footer();

@@ -12,8 +12,17 @@
  * @package Academic
  */
 
-get_header(); ?>
+get_header(); 
+if ( true === apply_filters( 'academic_filter_frontpage_content_enable', true ) ) : 
 
+/**
+ * academic_page_section hook
+ *
+ * @hooked academic_page_section -  10
+ *
+ */
+do_action( 'academic_page_section' );
+?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
@@ -32,7 +41,18 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-
 <?php
-get_sidebar();
+if ( academic_is_sidebar_enable() ) {
+	get_sidebar();
+}
+endif;
+
+/**
+ * academic_page_section_end hook
+ *
+ * @hooked academic_page_section_end -  10
+ *
+ */
+do_action( 'academic_page_section_end' );
+
 get_footer();
