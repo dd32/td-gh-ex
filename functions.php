@@ -104,18 +104,35 @@ add_action( 'after_setup_theme', 'atlantic_content_width', 0 );
 function atlantic_scripts() {
 	wp_enqueue_style( 'atlantic-normalize', get_template_directory_uri() . '/css/normalize.css', array(), '3.0.3' );
 	wp_enqueue_style( 'atlantic-style', get_stylesheet_uri(), array('atlantic-normalize'), '1.0.0' );
+	wp_enqueue_style('fontawesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css');
+	wp_enqueue_script('jquery-masonry');
+	wp_enqueue_script('atlantic-public-scripts', get_template_directory_uri() . '/js/front-end-scripts.js', array('jquery','jquery-masonry'));
 
-	if ( get_theme_mod('atlantic_font') ) :
+	//Universal Header & Body fonts
+	if ( get_theme_mod('atlantic_font') ){
 		wp_enqueue_style( 'atlantic-google-fonts-content', '//fonts.googleapis.com/css?family=' . get_theme_mod('atlantic_font') . '' );
-	endif;
+	}
 
-	if ( get_theme_mod('atlantic_heading_font') ) :
+	if ( get_theme_mod('atlantic_heading_font') ){
 		wp_enqueue_style( 'atlantic-google-fonts-heading', '//fonts.googleapis.com/css?family=' . get_theme_mod('atlantic_heading_font') . '' );
-	endif;
+	}
+	
+	//H specific fonts
+	$header_elements = array('h1','h2','h3','h4','h5','h6', '.site-title', '.site-description');
+	foreach($header_elements as $header){
+		
+		//custom font families set per header tag
+		$font_family = get_theme_mod('atlantic_' . $header .'_font_family');
 
-	if ( get_theme_mod('atlantic_font') == '' && get_theme_mod('atlantic_heading_font') == '' ) :
-		wp_enqueue_style( 'atlantic-google-fonts', '//fonts.googleapis.com/css?family=Source+Code+Pro:400,900,200' );
-	endif;
+		if($font_family != 'default' && !empty($font_family)){
+			$family = '//fonts.googleapis.com/css?family=' . urlencode($font_family); 
+			wp_enqueue_style( 'atlantic-google-fonts-header-' . $header . '-font', $family);
+		}
+		
+	}
+	
+
+
 
 	wp_enqueue_script( 'atlantic-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 

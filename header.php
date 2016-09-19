@@ -21,6 +21,11 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php
+//global $template;
+//echo $template;
+
+?>
 <div id="page" class="inner site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'atlantic' ); ?></a>
 
