@@ -21,7 +21,7 @@ get_header(); ?>
 					the_archive_description( '<div class="taxonomy-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
-
+			<div class="posts-layout">
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
@@ -33,9 +33,10 @@ get_header(); ?>
 				 */
 				get_template_part( 'template-parts/content', get_post_format() );
 
-			endwhile;
+			endwhile; ?>
+			</div>
 
-			the_posts_navigation();
+			<?php the_posts_navigation();
 
 		else :
 
