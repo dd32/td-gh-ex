@@ -6,4 +6,4 @@
 		<?php cpotheme_grid($query->posts, 'element', 'portfolio', 3, array('class' => 'column-fit')); ?>
 	</div>
 </div>
-<?php endif; ?>
+<?php endif; wp_reset_postdata(); ?>

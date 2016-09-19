@@ -96,7 +96,7 @@ if(!function_exists('cpotheme_edit')){
 if(!function_exists('cpotheme_logo')){
 	function cpotheme_logo($width = 0, $height = 0){
 		$output = '<div id="logo" class="logo">';
-		if(cpotheme_get_option('general_texttitle') == 0){
+		if(cpotheme_get_option('general_texttitle') == false){
 			
 			if(!function_exists('get_custom_logo')){
 				//Old CPOThemes logo
@@ -120,7 +120,10 @@ if(!function_exists('cpotheme_logo')){
 		}
 		
 		$classes = '';
-		if(cpotheme_get_option('general_texttitle') == 0) $classes = ' hidden';
+		if(cpotheme_get_option('general_texttitle') == false){
+			$classes = ' hidden';
+		}
+		
 		if(!is_front_page()){
 			$output .= '<span class="title site-title'.esc_attr($classes).'"><a href="'.esc_url(home_url()).'">'.esc_attr(get_bloginfo('name')).'</a></span>';
 		}else{
@@ -379,9 +382,9 @@ if(!function_exists('cpotheme_search_form')){
 	function cpotheme_search_form(){
 		if(is_search()){
 			$search_query = '';
-			if(isset($_GET['s'])) 
-				$search_query = get_search_query();
-			
+			if(isset($_GET['s'])){ 
+				$search_query = esc_attr(get_search_query());
+			}
 			echo '<div class="search-form">';
 			echo '<form role="search" method="get" id="search-form" class="search-form" action="'.esc_url(home_url('/')).'">';
 			echo '<input type="text" value="'.$search_query.'" name="s" id="s" />';
@@ -580,25 +583,6 @@ if(!function_exists('cpotheme_post_media')){
 if(!function_exists('cpotheme_numbered_pagination')){
 	function cpotheme_numbered_pagination($query = ''){
 		the_posts_pagination();
-		// global $wp_query;
-		// if($query != '')
-			// $total_pages = $query->max_num_pages;
-		// else
-			// $total_pages = $wp_query->max_num_pages;
-		// if($total_pages > 1){
-			// echo '<div class="pagination">';
-			// if(!$current_page = get_query_var('paged'))
-				// $current_page = 1;
-			// echo paginate_links(array(
-			// 'base' => str_replace(999999, '%#%', esc_url(get_pagenum_link(999999))),
-			// 'current' => max(1, get_query_var('paged')),
-			// 'total' => $total_pages,
-			// 'mid_size' => 4,
-			// 'type' => 'list',
-			// 'prev_next'	=> false
-			// ));
-			// echo '</div>';
-		// }
 	}
 }
 

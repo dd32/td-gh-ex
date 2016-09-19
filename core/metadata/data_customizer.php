@@ -164,7 +164,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		'section' => 'title_tagline',
 		'type' => 'checkbox',
 		'sanitize' => 'cpotheme_sanitize_bool',
-		'std' => true);
+		'default' => true);
 		
 		$data['general_editlinks'] = array(
 		'label' => __('Show Edit Links', 'affluent'),
@@ -172,7 +172,7 @@ if(!function_exists('cpotheme_metadata_customizer')){
 		'section' => 'cpotheme_management',
 		'type' => 'checkbox',
 		'sanitize' => 'cpotheme_sanitize_bool',
-		'std' => '1');
+		'default' => true);
 		
 		//Homepage tagline
 		if(defined('CPOTHEME_USE_TAGLINE') && CPOTHEME_USE_TAGLINE == true){

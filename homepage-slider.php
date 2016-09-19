@@ -29,4 +29,4 @@
 	<div class="slider-next" data-cycle-cmd="pause"></div>
 	<?php endif; ?>
 </div> 			
-<?php endif; ?>			
+<?php endif; wp_reset_postdata(); ?>			

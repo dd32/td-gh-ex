@@ -9,4 +9,4 @@
 		<div class="clear"></div>
 	</div>
 </div>
-<?php endif; ?>
+<?php endif; wp_reset_postdata(); ?>
