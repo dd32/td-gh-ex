@@ -7,8 +7,6 @@ add_action( 'customize_controls_enqueue_scripts'        ,  'hu_customize_control
 add_action( 'customize_preview_init'                    , 'hu_customize_preview_js', 20 );
 //exports some wp_query informations. Updated on each preview refresh.
 add_action( 'customize_preview_init'                    , 'hu_add_preview_footer_action', 20 );
-//Various DOM ready actions + print rate link + template
-add_action( 'customize_controls_print_footer_scripts'   , 'hu_various_dom_ready' );
 //Add the visibilities
 add_action( 'customize_controls_print_footer_scripts'   , 'hu_extend_visibilities', 10 );
 
@@ -223,58 +221,23 @@ function hu_add_customize_preview_data() {
 
 
 
-
-
-
-//hook : customize_controls_print_footer_scripts
-function hu_various_dom_ready() {
-  ?>
-  <script id="rate-tpl" type="text/template" >
-    <?php
-      printf( '<span class="czr-rate-link">%1$s %2$s, <br/>%3$s <a href="%4$s" title="%5$s" class="czr-stars" target="_blank">%6$s</a> %7$s</span>',
-        __( 'If you like' , 'hueman' ),
-        __( 'the Hueman theme' , 'hueman'),
-        __( 'we would love to receive a' , 'hueman' ),
-        'https://' . 'wordpress.org/support/view/theme-reviews/hueman?filter=5',
-        __( 'Review the Hueman theme' , 'hueman' ),
-        '&#9733;&#9733;&#9733;&#9733;&#9733;',
-        __( 'rating. Thanks :) !' , 'hueman')
-      );
-    ?>
-  </script>
-  <script id="rate-theme" type="text/javascript">
-    (function (wp, $) {
-      $( function($) {
-        //Render the rate link
-        _render_rate_czr();
-        function _render_rate_czr() {
-          var _cta = _.template(
-                $( "script#rate-tpl" ).html()
-          );
-          $('#customize-footer-actions').append( _cta() );
-        }
-
-        /* Append text to the content panel title */
-        if ( $('#accordion-panel-hu-content-panel').find('.accordion-section-title').first().length ) {
-          $('#accordion-panel-hu-content-panel').find('.accordion-section-title').first().append(
-            $('<span/>', { html : ' ( Home, Blog, Layout, Sidebars, Slideshows, ... )' } ).css('font-style', 'italic').css('font-size', '14px')
-          );
-        }
-      });
-    })(wp, jQuery)
-  </script>
-  <?php
-}
-
-
 //hook : 'customize_controls_enqueue_scripts':10
 function hu_extend_visibilities() {
   ?>
   <script id="control-visibilities" type="text/javascript">
     (function (api, $, _) {
+      var _is_checked = function( to ) {
+          return 0 !== to && '0' !== to && false !== to && 'off' !== to;
+      };
       api.CZR_visibilities.prototype.controlDeps = _.extend(
         api.CZR_visibilities.prototype.controlDeps,
         {
+          'use-header-image' : {
+            controls : ['header_image'],
+            callback : function(to) {
+              return _is_checked(to);
+            }
+          },
           'dynamic-styles' : {
             controls: [
               'boxed',
@@ -290,7 +253,7 @@ function hu_extend_visibilities() {
               'body-background'
             ],
             callback : function (to) {
-              return '0' !== to && false !== to && 'off' !== to;
+              return _is_checked(to);
             },
           },
           'blog-heading-enabled' : {
@@ -299,7 +262,7 @@ function hu_extend_visibilities() {
               'blog-subheading'
             ],
             callback : function (to) {
-              return '0' !== to && false !== to && 'off' !== to;
+              return _is_checked(to);
             },
           },
           'featured-posts-enabled' : {
@@ -312,7 +275,7 @@ function hu_extend_visibilities() {
               'featured-posts-include'
             ],
             callback : function (to) {
-              return '0' !== to && false !== to && 'off' !== to;
+              return _is_checked(to);
             },
           },
           'featured-slideshow' : {
@@ -320,7 +283,7 @@ function hu_extend_visibilities() {
               'featured-slideshow-speed'
             ],
             callback : function (to) {
-              return '0' !== to && false !== to && 'off' !== to;
+              return _is_checked(to);
             },
           },
           'about-page' : {
@@ -328,7 +291,7 @@ function hu_extend_visibilities() {
               'help-button'
             ],
             callback : function (to) {
-              return '0' !== to && false !== to && 'off' !== to;
+              return _is_checked(to);
             },
           }
         }//end of visibility {}

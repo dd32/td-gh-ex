@@ -72,28 +72,28 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
       $_new_map = array();
       $_settings_sections = array(
         //GENERAL
-         'hu_site_identity_sec',
-         'hu_general_design_sec',
-         'hu_comments_sec',
-         'hu_smoothscroll_sec',
-         'hu_mobiles_sec',
-         'hu_social_links_sec',
-         'hu_performance_sec',
-         'hu_admin_sec',
+        'hu_site_identity_sec',
+        'hu_general_design_sec',
+        'hu_comments_sec',
+        'hu_smoothscroll_sec',
+        'hu_mobiles_sec',
+        'hu_social_links_sec',
+        'hu_performance_sec',
+        'hu_admin_sec',
 
         //HEADER
-         'hu_header_design_sec',
-         'hu_header_widget_sec',
+        'hu_header_design_sec',
+        'hu_header_widget_sec',
 
         //CONTENT
-         'hu_content_blog_sec',
-         'hu_content_single_sec',
-         'hu_content_thumbnail_sec',
-         'hu_content_layout_sec',
-         'hu_sidebars_design_sec',
+        'hu_content_blog_sec',
+        'hu_content_single_sec',
+        'hu_content_thumbnail_sec',
+        'hu_content_layout_sec',
+        'hu_sidebars_design_sec',
 
         //FOOTER
-         'hu_footer_design_sec',
+        'hu_footer_design_sec',
 
       );
 
@@ -462,6 +462,11 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
     ------------------------------------------------------------------------------------------------------*/
     function hu_header_design_sec() {
       global $wp_version;
+      //the header_image was previously handled with a specific Hueman option.
+      //=> for users who had set this option, this checkbox should be checked
+      $_old_header_image_val = hu_get_option('header-image');
+      $did_user_set_an_image = false != $_old_header_image_val && ! empty($_old_header_image_val);
+
       return array(
           'custom-logo'  => array(
                 'control'   =>  version_compare( $wp_version, '4.3', '>=' ) ? 'HU_Customize_Cropped_Image_Control' : 'HU_Customize_Upload_Control',
@@ -498,18 +503,12 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'type'      => 'checkbox',
                 'notice'    => __( 'The description that appears next to your logo' , 'hueman' )
           ),
-          'header-image'  => array(
-                'control'   =>  version_compare( $wp_version, '4.3', '>=' ) ? 'HU_Customize_Cropped_Image_Control' : 'HU_Customize_Upload_Control',
-                'label'     =>  __( 'Header Image' , 'hueman' ),
-                'section'   => 'header_design_sec' ,
-                'sanitize_callback' => array( $this , 'hu_sanitize_number' ),
-                'width'     => 1200,
-                'height'    => 180,
-                'flex_width' => true,
-                'flex_height' => true,
-                //to keep the selected cropped size
-                'dst_width'  => false,
-                'dst_height'  => false,
+          'use-header-image' => array(
+                'default'   => $did_user_set_an_image,
+                'control'   => 'HU_controls',
+                'label'     => __( 'Use a header image' , 'hueman' ),
+                'section'   => 'header_design_sec',
+                'type'      => 'checkbox',
                 'notice'    => __('Upload a header image (supported formats : .jpg, .png, .gif, svg, svgz). This will disable header title/logo, site description, header ads widget' , 'hueman')
           )
         );

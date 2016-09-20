@@ -6593,8 +6593,8 @@ $.extend( CZRLayoutSelectMths , {
           },
           _setControlVisibilities : function() {
                 var self = this;
-                _.map( self.controlDeps , function( opts , setId ) {
-                  self._prepare_visibilities( setId, opts );
+                _.each( self.controlDeps , function( opts , setId ) {
+                      self._prepare_visibilities( setId, opts );
                 });
           },
           _getControlDeps : function() {
@@ -6650,43 +6650,57 @@ $.extend( CZRLayoutSelectMths , {
                 return _cb( api.instance(_id)() );
               },
           _prepare_visibilities : function( setId, o ) {
-                var self = this;
-                api( api.CZR_Helpers.build_setId(setId) , function (setting) {
-                  var _params = {
-                    setting   : setting,
-                    setId : setId,
-                    controls  : self._get_dependants(setId),
-                  };
-                  _.map( _params.controls , function( depSetId ) {
-                    self._set_single_dependant_control_visibility( depSetId , _params);
-                  } );
-                });
+                var self = this,
+                    wpSetId = api.CZR_Helpers.build_setId( setId );
+                if ( ! api.has( wpSetId ) ) {
+                  api.consoleLog( 'The following setting for which visibility dependencies are defined, is not registered in the api : ' + wpSetId );
+                  return;
+                }
+                var _set_visibility = function() {
+                    api( wpSetId , function (setting) {
+                          var _params = {
+                            setting   : setting,
+                            setId : setId,
+                            controls  : self._get_dependants(setId),
+                          };
+                          _.each( _params.controls , function( depSetId ) {
+                            self._set_single_dependant_control_visibility( depSetId , _params);
+                          } );
+                    });
+                };
+                if ( 'function' == typeof( api.control( wpSetId ).section ) ) {
+                    api.section( api.control( wpSetId ).section() ).expanded.bind( function(to) {
+                          _set_visibility();
+                    });
+                } else {
+                    _set_visibility();
+                }
           },
 
 
 
           _set_single_dependant_control_visibility : function( depSetId , _params ) {
-                var self = this;
-                api.control( api.CZR_Helpers.build_setId(depSetId) , function (control) {
-                  var _visibility = function (to) {
-                    var _action   = self._get_visibility_action( _params.setId , depSetId ),
-                        _callback = self._get_visibility_cb( _params.setId , _action ),
-                        _bool     = false;
+                var self = this,
+                    wpSetId = api.CZR_Helpers.build_setId(depSetId);
+                api.control( wpSetId , function (control) {
+                    var _visibility = function (to) {
+                        var _action   = self._get_visibility_action( _params.setId , depSetId ),
+                            _callback = self._get_visibility_cb( _params.setId , _action ),
+                            _bool     = false;
 
-                    if ( 'show' == _action && _callback(to, depSetId, _params.setId ) )
-                      _bool = true;
-                    if ( 'hide' == _action && _callback(to, depSetId, _params.setId ) )
-                      _bool = false;
-                    if ( 'both' == _action )
-                      _bool = _callback(to, depSetId, _params.setId );
-                    _bool = self._check_cross_dependant( _params.setId, depSetId ) && _bool;
-                    control.container.toggle( _bool );
-                  };//_visibility()
-
-
-
-                  _visibility( _params.setting() );
-                  _params.setting.bind( _visibility );
+                        if ( 'show' == _action && _callback(to, depSetId, _params.setId ) )
+                          _bool = true;
+                        if ( 'hide' == _action && _callback(to, depSetId, _params.setId ) )
+                          _bool = false;
+                        if ( 'both' == _action )
+                          _bool = _callback(to, depSetId, _params.setId );
+                        _bool = self._check_cross_dependant( _params.setId, depSetId ) && _bool;
+                        control.container.toggle( _bool );
+                    };//_visibility()
+                    api.control( wpSetId ).deferred.embedded.then( function(){
+                        _visibility( _params.setting() );
+                    });
+                    _params.setting.bind( _visibility );
                 });
           },
           _handleFaviconNote : function() {

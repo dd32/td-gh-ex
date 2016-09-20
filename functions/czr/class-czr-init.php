@@ -35,6 +35,8 @@ if ( ! class_exists( 'HU_customize' ) ) :
       add_action( 'customize_register'                       , array( $this , 'hu_alter_wp_customizer_settings' ), 30, 1 );
        //Partial refreshs
       add_action( 'customize_register'                        , array( $this,  'hu_register_partials' ) );
+      //Clean some deprecated options (header-image for example, now handled with wp header_image theme mod)
+      add_action( 'customize_save_after'                      , array( $this,  'hu_clean_deprecated_options' ) );
 
       //Print modules and inputs templates
       $this -> hu_load_tmpl();
@@ -45,6 +47,30 @@ if ( ! class_exists( 'HU_customize' ) ) :
       $this -> css_attr = $this -> hu_get_controls_css_attr();
 
       locate_template( 'functions/czr/czr-resources.php', true, true );
+    }
+
+
+    //hook : customize_save_after
+    //When the users modifies the header_image, check if the old option exists and remove it if needed
+    function hu_clean_deprecated_options( $manager_inst ) {
+      //can we do things ?
+      if ( ! $manager_inst->is_preview() ) {
+        return;
+      }
+      $action = 'save-customize_' . $manager_inst->get_stylesheet();
+      if ( ! check_ajax_referer( $action, 'nonce', false ) ) {
+        return;
+      }
+      //only attempt to update option when header_image is modified
+      $setting_validities = $manager_inst->validate_setting_values( $manager_inst->unsanitized_post_values() );
+      if ( ! is_array( $setting_validities ) || ! isset($setting_validities['header_image'] ) )
+        return;
+      //clean old option if exists
+      $_options = get_option( HU_THEME_OPTIONS );
+      if ( isset($_options['header-image']) ) {
+        unset( $_options['header-image']);
+        update_option( HU_THEME_OPTIONS, $_options );
+      }
     }
 
 
@@ -235,6 +261,11 @@ if ( ! class_exists( 'HU_customize' ) ) :
 
         $_priority = $_priority + 10;
       }//foreach
+
+
+      //MOVE THE HEADER IMAGE CONTROL INTO THE HEADER DESIGN SECTION
+      $wp_customize -> get_control( 'header_image' ) -> section = 'header_design_sec';
+      $wp_customize -> get_control( 'header_image' ) -> priority = 100;
     }
 
 
@@ -258,7 +289,7 @@ if ( ! class_exists( 'HU_customize' ) ) :
      * Therefore to add a section and a control to the Widgets panel, we have to follow the same logic
      * if not, the added section will always be deactivated.
      *
-     * However, the related setting added in this section must always be registered early in customize_register
+     * Note that the related setting added in this section must always be registered early in customize_register
      */
     function hu_schedule_register_sidebar_section( $wp_customize ) {
       $this -> hu_customize_factory (
@@ -629,7 +660,8 @@ if ( ! class_exists( 'HU_customize' ) ) :
         'background_color',
         'show_on_front',
         'page_on_front',
-        'page_for_posts'
+        'page_for_posts',
+        'header_image'
       );
     }
   }//end of class
