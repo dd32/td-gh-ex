@@ -58,7 +58,7 @@ function admiral_setup() {
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'admiral_custom_background_args', array( 'default-color' => '46c6f6' ) ) );
+	add_theme_support( 'custom-background', apply_filters( 'admiral_custom_background_args', array( 'default-color' => 'f5f5f5' ) ) );
 
 	// Set up the WordPress core custom logo feature.
 	add_theme_support( 'custom-logo', apply_filters( 'admiral_custom_logo_args', array(
@@ -115,8 +115,8 @@ function admiral_widgets_init() {
 		'name' => esc_html__( 'Small Sidebar', 'admiral' ),
 		'id' => 'sidebar-small',
 		'description' => esc_html__( 'Appears on posts and pages except the full width template.', 'admiral' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s clearfix">',
-		'after_widget' => '</aside>',
+		'before_widget' => '<div class="widget-wrap"><aside id="%1$s" class="widget %2$s clearfix">',
+		'after_widget' => '</aside></div>',
 		'before_title' => '<div class="widget-header"><h3 class="widget-title">',
 		'after_title' => '</h3></div>',
 	));
@@ -158,9 +158,6 @@ function admiral_scripts() {
 
 	// Passing Parameters to navigation.js.
 	wp_localize_script( 'admiral-jquery-navigation', 'admiral_menu_title', esc_html__( 'Navigation', 'admiral' ) );
-
-	// Register and enqueue sidebar.js.
-	wp_enqueue_script( 'admiral-jquery-sidebar', get_template_directory_uri() . '/js/sidebar.js', array( 'jquery' ), '20160421' );
 
 	// Register and Enqueue Google Fonts.
 	wp_enqueue_style( 'admiral-default-fonts', admiral_google_fonts_url(), array(), null );
