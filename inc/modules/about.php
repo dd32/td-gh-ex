@@ -33,7 +33,7 @@ if ( ! function_exists( 'academic_add_about_section' ) ) :
     academic_render_about_section( $section_details );
   }
 endif;
-add_action( 'academic_primary_content', 'academic_add_about_section', 20 );
+add_action( 'academic_primary_content', 'academic_add_about_section', 60 );
 
 
 if ( ! function_exists( 'academic_get_about_section_details' ) ) :

@@ -45,7 +45,6 @@ do_action( 'academic_page_section' );
 if ( academic_is_sidebar_enable() ) {
 	get_sidebar();
 }
-endif;
 
 /**
  * academic_page_section_end hook
@@ -54,5 +53,6 @@ endif;
  *
  */
 do_action( 'academic_page_section_end' );
+endif;
 
 get_footer();

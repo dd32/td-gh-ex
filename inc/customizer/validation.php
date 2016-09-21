@@ -157,6 +157,7 @@ function academic_validate_category_blog_two_count( $validity, $value ){
    return $validity;
 }
 
+
 /**
  * partners no. of list
  * 

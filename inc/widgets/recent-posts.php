@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage Widgets
- * @since 4.4.0
+ * @since 0.3
  */
 
 if ( ! class_exists( 'WP_Widget' ) ) {

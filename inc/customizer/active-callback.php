@@ -172,6 +172,7 @@ function academic_category_blog_three_sub_category( $control ) {
 	return false;
 }
 
+
 /**
  * Check if partner is enable.
  *

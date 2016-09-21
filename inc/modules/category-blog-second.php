@@ -33,7 +33,7 @@ if ( ! function_exists( 'academic_add_category_blog_three' ) ) :
     academic_render_category_blog_three( $section_details );
   }
 endif;
-add_action( 'academic_primary_content', 'academic_add_category_blog_three', 60 );
+add_action( 'academic_primary_content', 'academic_add_category_blog_three', 20 );
 
 
 if ( ! function_exists( 'academic_get_category_blog_three_details' ) ) :

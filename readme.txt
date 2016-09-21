@@ -6,7 +6,7 @@ Tags: education, translation-ready, e-commerce, custom-background, theme-options
 Contributors: Theme Palace
 Requires at least: 4.4
 Tested up to: 4.6.1
-Stable tag: 0.3
+Stable tag: 0.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -121,6 +121,12 @@ You can choose what taxonomy to display in these sections. If you select a speci
 Whereas in Category blog second, you can choose what to display either the categories name or sub categories name.
 
 == Changelog ==
+
+= 0.4 =
+* Rename category sections
+* Move category section two
+* Add widget social link widget
+* Remove unwanted files
 
 = 0.3 =
 * Add home page sections

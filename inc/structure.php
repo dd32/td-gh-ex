@@ -316,7 +316,7 @@ if ( ! function_exists( 'academic_back_to_top' ) ) :
 	function academic_back_to_top() {
 		$options = academic_get_theme_options();
 		if ( $options['scroll_top_visible'] ) : ?>
-        	<div class="backtotop"><i class="fa fa-long-arrow-up"></i></div><!--end .backtotop-->
+        	<div class="backtotop"><i class="fa fa-angle-up fa-2x"></i></div><!--end .backtotop-->
 		<?php 
 		endif;
 	}

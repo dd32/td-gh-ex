@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Academic 0.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2016-09-19 04:59:42+00:00\n"
+"POT-Creation-Date: 2016-09-21 08:12:31+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -49,26 +49,20 @@ msgstr ""
 msgid "Reply <span>&darr;</span>"
 msgstr ""
 
-#: functions.php:49
+#: functions.php:48
 msgid "Primary"
 msgstr ""
 
-#: functions.php:245
+#: functions.php:244
 msgid "Gallery Thumbnail"
 msgstr ""
 
-#: inc/core.php:43 inc/core.php:45
+#: inc/core.php:43
 msgid "Note"
 msgstr ""
 
 #: inc/core.php:43
-msgid " The recommended size for image is 1350px by 760 while using it for slider"
-msgstr ""
-
-#: inc/core.php:45
-msgid ""
-" The recommended size for image is 340px by 340px while using it for "
-"testimonial"
+msgid " The recommended size for image is 1170px by 500px while using it for slider"
 msgstr ""
 
 #: inc/customizer/custom-controls.php:182
@@ -92,49 +86,44 @@ msgstr ""
 msgid "Theme Options."
 msgstr ""
 
-#: inc/customizer/defaults.php:29 inc/modules/about.php:67
+#: inc/customizer/defaults.php:27 inc/modules/about.php:67
 msgid "Read More"
 msgstr ""
 
-#: inc/customizer/defaults.php:39
-msgid "by"
-msgstr ""
-
-#: inc/customizer/defaults.php:60
-#: inc/customizer/sections/category-blog-two.php:11
+#: inc/customizer/defaults.php:55
+#: inc/customizer/sections/category-blog-second.php:11
 msgid "Second Category Blog"
 msgstr ""
 
-#: inc/customizer/defaults.php:71
-#: inc/customizer/sections/category-blog-three.php:11
+#: inc/customizer/defaults.php:66
 msgid "Third Category Blog"
 msgstr ""
 
-#: inc/customizer/defaults.php:72
+#: inc/customizer/defaults.php:67
 msgid "How can we help you"
 msgstr ""
 
-#: inc/customizer/defaults.php:78
+#: inc/customizer/defaults.php:73
 msgid "Our Partners"
 msgstr ""
 
-#: inc/customizer/defaults.php:86
+#: inc/customizer/defaults.php:81
 msgid "Stay Updated With University"
 msgstr ""
 
-#: inc/customizer/defaults.php:87
+#: inc/customizer/defaults.php:82
 msgid "Lorem Ipsum roin gravida nibh vel"
 msgstr ""
 
-#: inc/customizer/defaults.php:90
+#: inc/customizer/defaults.php:85
 msgid "Contact Info"
 msgstr ""
 
-#: inc/customizer/defaults.php:92
+#: inc/customizer/defaults.php:87
 msgid "28 Jackson Blvd Ste 1020 Chicago IL 60604-2340"
 msgstr ""
 
-#: inc/customizer/defaults.php:94
+#: inc/customizer/defaults.php:89
 msgid "Location Map"
 msgstr ""
 
@@ -147,8 +136,8 @@ msgid "About section options."
 msgstr ""
 
 #: inc/customizer/sections/about.php:23
-#: inc/customizer/sections/category-blog-three.php:23
-#: inc/customizer/sections/category-blog-two.php:23
+#: inc/customizer/sections/category-blog-first.php:23
+#: inc/customizer/sections/category-blog-second.php:23
 #: inc/customizer/sections/partner.php:23 inc/customizer/sections/slider.php:23
 msgid "Enable on"
 msgstr ""
@@ -157,68 +146,72 @@ msgstr ""
 msgid "Select Page"
 msgstr ""
 
-#: inc/customizer/sections/category-blog-three.php:12
-msgid "Third Category Blog options."
+#: inc/customizer/sections/category-blog-first.php:11
+msgid "First Category Blog"
 msgstr ""
 
-#: inc/customizer/sections/category-blog-three.php:37
-#: inc/customizer/sections/category-blog-two.php:37
+#: inc/customizer/sections/category-blog-first.php:12
+msgid "First Category Blog options."
+msgstr ""
+
+#: inc/customizer/sections/category-blog-first.php:37
+#: inc/customizer/sections/category-blog-second.php:37
 #: inc/customizer/sections/partner.php:37
 msgid "Title"
 msgstr ""
 
-#: inc/customizer/sections/category-blog-three.php:60
-#: inc/customizer/sections/category-blog-two.php:60
+#: inc/customizer/sections/category-blog-first.php:60
+#: inc/customizer/sections/category-blog-second.php:60
 #: inc/customizer/sections/partner.php:60
 msgid "Enable Slide Dragable"
 msgstr ""
 
-#: inc/customizer/sections/category-blog-three.php:73
-msgid "Enable Slide Auto Slide"
-msgstr ""
-
-#: inc/customizer/sections/category-blog-three.php:86
-#: inc/customizer/sections/category-blog-two.php:106
-#: inc/customizer/theme-options/layout.php:11
-msgid "Layout"
-msgstr ""
-
-#: inc/customizer/sections/category-blog-three.php:100
-#: inc/customizer/sections/category-blog-two.php:120
-msgid "Content Type"
-msgstr ""
-
-#: inc/customizer/sections/category-blog-three.php:114
-msgid "Icon"
-msgstr ""
-
-#: inc/customizer/sections/category-blog-three.php:115
-msgid "Use font awesome icon: Eg: %s. %sSee more here%s"
-msgstr ""
-
-#: inc/customizer/sections/category-blog-three.php:127
-msgid "Select Parent Category"
-msgstr ""
-
-#: inc/customizer/sections/category-blog-two.php:12
-msgid "Second Category Blog options."
-msgstr ""
-
-#: inc/customizer/sections/category-blog-two.php:73
+#: inc/customizer/sections/category-blog-first.php:73
 #: inc/customizer/sections/partner.php:73
 msgid "Enable Auto Slide"
 msgstr ""
 
-#: inc/customizer/sections/category-blog-two.php:87
+#: inc/customizer/sections/category-blog-first.php:87
 msgid "No. of Articles"
 msgstr ""
 
-#: inc/customizer/sections/category-blog-two.php:88
+#: inc/customizer/sections/category-blog-first.php:88
 msgid "Min 1 / Max 12"
 msgstr ""
 
-#: inc/customizer/sections/category-blog-two.php:133
+#: inc/customizer/sections/category-blog-first.php:106
+#: inc/customizer/sections/category-blog-second.php:86
+#: inc/customizer/theme-options/layout.php:11
+msgid "Layout"
+msgstr ""
+
+#: inc/customizer/sections/category-blog-first.php:120
+#: inc/customizer/sections/category-blog-second.php:100
+msgid "Content Type"
+msgstr ""
+
+#: inc/customizer/sections/category-blog-first.php:133
 msgid "Select Category"
+msgstr ""
+
+#: inc/customizer/sections/category-blog-second.php:12
+msgid "Second Category Blog options."
+msgstr ""
+
+#: inc/customizer/sections/category-blog-second.php:73
+msgid "Enable Slide Auto Slide"
+msgstr ""
+
+#: inc/customizer/sections/category-blog-second.php:114
+msgid "Icon"
+msgstr ""
+
+#: inc/customizer/sections/category-blog-second.php:115
+msgid "Use font awesome icon: Eg: %s. %sSee more here%s"
+msgstr ""
+
+#: inc/customizer/sections/category-blog-second.php:127
+msgid "Select Parent Category"
 msgstr ""
 
 #: inc/customizer/sections/partner.php:11
@@ -319,11 +312,7 @@ msgstr ""
 msgid "Footer Options"
 msgstr ""
 
-#: inc/customizer/theme-options/footer.php:25
-msgid "Copyright"
-msgstr ""
-
-#: inc/customizer/theme-options/footer.php:39
+#: inc/customizer/theme-options/footer.php:27
 msgid "Display Scroll Top Button"
 msgstr ""
 
@@ -381,7 +370,7 @@ msgstr ""
 #: inc/customizer/validation.php:60 inc/customizer/validation.php:79
 #: inc/customizer/validation.php:97 inc/customizer/validation.php:114
 #: inc/customizer/validation.php:133 inc/customizer/validation.php:151
-#: inc/customizer/validation.php:169
+#: inc/customizer/validation.php:170
 msgid "You must supply a valid number."
 msgstr ""
 
@@ -437,11 +426,11 @@ msgstr ""
 msgid "Maximum no of articles is 12"
 msgstr ""
 
-#: inc/customizer/validation.php:171
+#: inc/customizer/validation.php:172
 msgid "Minimum no of list is 1"
 msgstr ""
 
-#: inc/customizer/validation.php:173
+#: inc/customizer/validation.php:174
 msgid "Maximum no of Lists is 15"
 msgstr ""
 
@@ -481,15 +470,15 @@ msgstr ""
 msgid "Next Posts"
 msgstr ""
 
-#: inc/helpers.php:512
+#: inc/helpers.php:513
 msgid "404 Page"
 msgstr ""
 
-#: inc/helpers.php:514
+#: inc/helpers.php:515
 msgid "Search Page"
 msgstr ""
 
-#: inc/helpers.php:518
+#: inc/helpers.php:519
 msgid "Blog Page"
 msgstr ""
 
@@ -509,7 +498,7 @@ msgstr ""
 msgid "Default ( to customizer option )"
 msgstr ""
 
-#: inc/modules/category-blog-three.php:76
+#: inc/modules/category-blog-second.php:76
 msgid "fa-snapchat-ghost"
 msgstr ""
 
@@ -605,24 +594,12 @@ msgstr ""
 msgid "Sub Categories"
 msgstr ""
 
-#: inc/options.php:199
-msgid "Six Col"
-msgstr ""
-
-#: inc/options.php:200
-msgid "Five Col"
-msgstr ""
-
-#: inc/options.php:214
-msgid "Grid"
-msgstr ""
-
-#: inc/options.php:215
-msgid "List"
-msgstr ""
-
 #: inc/structure.php:64
 msgid "Skip to content"
+msgstr ""
+
+#: inc/structure.php:284
+msgid "by"
 msgstr ""
 
 #: inc/template-tags.php:35
@@ -660,7 +637,7 @@ msgstr ""
 msgid "TP: Recent Posts"
 msgstr ""
 
-#: inc/widgets/recent-posts.php:138
+#: inc/widgets/recent-posts.php:138 inc/widgets/social-link.php:78
 msgid "Title:"
 msgstr ""
 
@@ -670,6 +647,26 @@ msgstr ""
 
 #: inc/widgets/recent-posts.php:145
 msgid "Display post date?"
+msgstr ""
+
+#: inc/widgets/social-link.php:27
+msgid "Enter the url only the icon will be displayed as per the links."
+msgstr ""
+
+#: inc/widgets/social-link.php:29
+msgid "TP : Social Link"
+msgstr ""
+
+#: inc/widgets/social-link.php:44 inc/widgets/social-link.php:73
+msgid "Stay Connected"
+msgstr ""
+
+#: inc/widgets/social-link.php:83
+msgid "Number of links to show:"
+msgstr ""
+
+#: inc/widgets/social-link.php:90
+msgid "Link %s :"
 msgstr ""
 
 #: inc/widgets/widgets.php:19
@@ -713,11 +710,11 @@ msgid ""
 msgstr ""
 
 #: template-parts/content-page.php:35 template-parts/content-single.php:53
-#: template-parts/content.php:40
+#: template-parts/content.php:46
 msgid "Pages:"
 msgstr ""
 
-#: template-parts/content-single.php:48
+#: template-parts/content-single.php:48 template-parts/content.php:41
 #. translators: %s: Name of current post.
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
@@ -765,7 +762,7 @@ msgid_plural "%1$s comments"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions.php:116
+#: functions.php:115
 #. translators: If there are characters in your language that are not supported
 #. by Open Sans, translate this to 'off'. Do not translate into your own
 #. language.
@@ -773,7 +770,7 @@ msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:121
+#: functions.php:120
 #. translators: If there are characters in your language that are not supported
 #. by Montserrat Sans, translate this to 'off'. Do not translate into your own
 #. language.
@@ -781,7 +778,7 @@ msgctxt "Montserrat font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:126
+#: functions.php:125
 #. translators: If there are characters in your language that are not supported
 #. by Courgette, translate this to 'off'. Do not translate into your own
 #. language.
@@ -789,14 +786,14 @@ msgctxt "Courgette font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:131
+#: functions.php:130
 #. translators: If there are characters in your language that are not supported
 #. by Roboto, translate this to 'off'. Do not translate into your own language.
 msgctxt "Roboto font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:136
+#: functions.php:135
 #. translators: If there are characters in your language that are not supported
 #. by Raleway, translate this to 'off'. Do not translate into your own
 #. language.
@@ -804,7 +801,7 @@ msgctxt "Raleway font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:141
+#: functions.php:140
 #. translators: If there are characters in your language that are not supported
 #. by Poppins, translate this to 'off'. Do not translate into your own
 #. language.
@@ -812,9 +809,9 @@ msgctxt "Poppins font: on or off"
 msgid "on"
 msgstr ""
 
-#: inc/customizer/defaults.php:39
+#: inc/structure.php:284
 msgctxt "1: Year, 2: Site Title with home URL"
-msgid "Copyright &copy; %1$s %2$s. All Rights Reserved"
+msgid "Copyright &copy; %1$s. All Rights Reserved"
 msgstr ""
 
 #: inc/template-tags.php:30

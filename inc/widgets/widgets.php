@@ -45,11 +45,19 @@ add_action( 'widgets_init', 'academic_widgets_init' );
 require get_template_directory() . '/inc/widgets/recent-posts.php';
 
 /**
+ * Include Social Link widget file
+ */
+require get_template_directory() . '/inc/widgets/social-link.php';
+
+/**
  * Register widgets
  */
 add_action( 'widgets_init', function() {
 
 	// Register Recent Post widget
 	register_widget( 'Academic_Recent_Posts' );
+
+	// Register Social Link widget
+	register_widget( 'Academic_Social_Link' );
 
 });

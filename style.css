@@ -4,7 +4,7 @@ Theme URI: http://themepalace.com/downloads/academic/
 Author: Theme Palace
 Author URI: http://themepalace.com/	
 Description: A clean, modern, engaging and responsive WordPress education theme ideal for educational institutions. Features including full width and boxed layout with slider, focused content, slick effects, posts/features/courses showcasing.  It is loaded with theme options and provides several features to make user-friendly, interactive and visually stunning website with implementation of all features of latest WordPress like partial refresh and validation. It is compatible with top WordPress plugins such as JetPack and Contact Form 7. A special accent is made on its cross-browser compatibility, mobile friendly design and responsive features.
-Version: 0.3
+Version: 0.4
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: academic
@@ -669,7 +669,7 @@ body.search .page-content form button[type="submit"] {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: #333;
+	color: royalblue;
 	text-decoration: none;
 	outline: none;
 }
@@ -1527,7 +1527,7 @@ section,
 	padding-top: 0;
 }
 .no-padding-bottom {
-	padding-bottom: 0;
+	padding: 60px 0;
 }
 #secondary ul, 
 .site-footer .widget ul {
@@ -2414,11 +2414,17 @@ header.entry-header {
     float: left;
 }
 .social-icons ul li:not(:last-child) {
-    margin-right: 5px;
+    margin-right: 25px;
 }
 .social-icons  li a:before {
 	color: #353535;
 	font-size: 16px;
+}
+.site-footer .social-icons  li a:before {
+	font-size: 20px;
+}
+.site-footer .social-icons  li a:before {
+	color: #ffffff;
 }
 .social-icons li {
     float: left;
