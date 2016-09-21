@@ -1,5 +1,5 @@
 /*--------------------------------------------------------------
-TopShop - Header Standard Styling
+TopShop Premium - Header Standard Styling
 --------------------------------------------------------------*/
 
 .topshop-header-layout-standard .site-top-bar-left {
@@ -40,6 +40,10 @@ TopShop - Header Standard Styling
     margin: 0 0 0 8px;
 }
 
+.topshop-header-layout-standard > .site-container {
+    position: relative;
+}
+
 .topshop-header-layout-standard .site-header-left {
     float: left;
 }
@@ -48,9 +52,11 @@ TopShop - Header Standard Styling
     margin: 0;
 }
 .topshop-header-layout-standard .site-header-right {
-    float: right;
-    padding: 34px 0 0;
     font-size: 12px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    margin: -12px 0 0;
 }
 .topshop-header-layout-standard .site-header-right a {
     text-transform: uppercase;
@@ -103,6 +109,12 @@ TopShop - Header Standard Styling
     }
     .topshop-header-layout-standard .site-header-left a {
         display: inline-block;
+    }
+    .topshop-header-layout-standard .site-header-right {
+        position: relative;
+        right: 0;
+        top: 0;
+        margin: 0;
     }
     .topshop-header-layout-standard .site-title {
         padding: 10px 0 3px;

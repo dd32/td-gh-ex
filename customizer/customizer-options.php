@@ -73,6 +73,14 @@ function customizer_library_topshop_options() {
         'description' => __( 'This will show/hide the top bar in the header<br /><br /><a href="https://kairaweb.com/documentation/topshop-hooks-developers/" target="_blank">TopShop Premium has hooks</a> integrated for developers to hook on to.', 'topshop' ),
         'default' => 0,
     );
+    $options['topshop-header-remove-cart'] = array(
+        'id' => 'topshop-header-remove-cart',
+        'label'   => __( 'Remove WooCommerce Cart', 'topshop' ),
+        'section' => $section,
+        'type'    => 'checkbox',
+        'description' => __( '', 'topshop' ),
+        'default' => 0,
+    );
     
     
     // Blog Settings
@@ -85,9 +93,9 @@ function customizer_library_topshop_options() {
     );
     
     $choices = array(
-        'topshop-slider-default' => 'Default Slider',
-        'topshop-meta-slider' => 'Meta Slider',
-        'topshop-no-slider' => 'None'
+        'topshop-slider-default' => __( 'Default Slider', 'topshop' ),
+        'topshop-meta-slider' => __( 'Meta Slider', 'topshop' ),
+        'topshop-no-slider' => __( 'None', 'topshop' )
     );
     $options['topshop-slider-type'] = array(
         'id' => 'topshop-slider-type',
@@ -226,8 +234,8 @@ function customizer_library_topshop_options() {
         'description' => __( 'Enter the ID\'s of the post categories you\'d like to EXCLUDE from the Blog, enter only the ID\'s with a minus sign (-) before them, separated by a comma (,)<br />Eg: "-13, -17, -19"<br />If you enter the ID\'s without the minus then it\'ll show ONLY posts in those categories.', 'topshop' )
     );
     $choices = array(
-        'blog-use-images-loop' => 'Post Images Carousel',
-        'blog-use-featured-image' => 'Use only the featured image'
+        'blog-use-images-loop' => __( 'Post Images Carousel', 'topshop' ),
+        'blog-use-featured-image' => __( 'Use only the featured image', 'topshop' )
     );
     $options['topshop-blog-list-image-type'] = array(
         'id' => 'topshop-blog-list-image-type',

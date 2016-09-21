@@ -4,7 +4,7 @@
  *
  * @package topshop
  */
-define( 'TOPSHOP_THEME_VERSION' , '1.2.9' );
+define( 'TOPSHOP_THEME_VERSION' , '1.3.00' );
 
 // Upgrade / Order Premium page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -240,6 +240,11 @@ add_filter( 'widget_categories_args', 'topshop_exclude_slider_categories_widget'
 function topshop_register_required_plugins() {
 	$plugins = array(
 		// The recommended WordPress.org plugins.
+		array(
+			'name'      => 'Easy Theme Upgrade (For upgrading to Vogue Premium / Delete after upgrade)',
+			'slug'      => 'easy-theme-and-plugin-upgrades',
+			'required'  => false,
+		),
 		array(
 			'name'      => 'Page Builder',
 			'slug'      => 'siteorigin-panels',

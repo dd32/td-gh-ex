@@ -50,32 +50,29 @@
     
     <div class="site-header-right">
         
-        <?php
-        if ( topshop_is_woocommerce_activated() ) { ?>
-        
-            <?php if ( is_user_logged_in() ) { ?>
-                <div class="site-header-right-link"><a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('My Account','topshop'); ?>"><?php _e('My Account','topshop'); ?></a></div>
-            <?php } else { ?>
-                <div class="site-header-right-link"><a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('Login','topshop'); ?>"><?php _e('Sign In / Register','topshop'); ?></a></div>
-            <?php } ?>
-            <div class="header-cart">
-                <a class="header-cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping cart', 'topshop'); ?>">
-                    <span class="header-cart-amount">
-                        <?php echo sprintf( _n( '(%d)', '(%d)', $woocommerce->cart->cart_contents_count, 'topshop' ), $woocommerce->cart->cart_contents_count ); ?> - <?php echo $woocommerce->cart->get_cart_total(); ?>
-                    </span>
-                    <span class="header-cart-checkout<?php echo ( $woocommerce->cart->cart_contents_count > 0 ) ? ' cart-has-items' : ''; ?>">
-                        <i class="fa fa-shopping-cart"></i>
-                    </span>
-                </a>
-            </div>
-            
-        <?php
-        } else { ?>
+        <?php if ( topshop_is_woocommerce_activated() ) : ?>
+            <?php if ( !get_theme_mod( 'topshop-header-remove-cart', false ) ) : ?>
+                <?php if ( is_user_logged_in() ) { ?>
+                    <div class="site-header-right-link"><a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('My Account','topshop'); ?>"><?php _e('My Account','topshop'); ?></a></div>
+                <?php } else { ?>
+                    <div class="site-header-right-link"><a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('Login','topshop'); ?>"><?php _e('Sign In / Register','topshop'); ?></a></div>
+                <?php } ?>
+                <div class="header-cart">
+                    <a class="header-cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="<?php _e('View your shopping cart', 'topshop'); ?>">
+                        <span class="header-cart-amount">
+                            <?php echo sprintf( _n( '(%d)', '(%d)', $woocommerce->cart->cart_contents_count, 'topshop' ), $woocommerce->cart->cart_contents_count ); ?> - <?php echo $woocommerce->cart->get_cart_total(); ?>
+                        </span>
+                        <span class="header-cart-checkout<?php echo ( $woocommerce->cart->cart_contents_count > 0 ) ? ' cart-has-items' : ''; ?>">
+                            <i class="fa fa-shopping-cart"></i>
+                        </span>
+                    </a>
+                </div>
+            <?php endif; ?>
+        <?php else : ?>
             
             <div class="site-top-bar-left-text"><?php echo wp_kses_post( get_theme_mod( 'topshop-header-info-text', 'Call Us: 082 444 BOOM' ) ) ?></div>
             
-        <?php
-        } ?>
+        <?php endif; ?>
         
     </div>
     <div class="clearboth"></div>

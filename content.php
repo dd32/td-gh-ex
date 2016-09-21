@@ -52,13 +52,15 @@ if ( has_post_thumbnail() ) {
 
     	<div class="entry-content">
     		<?php
-    			/* translators: %s: Name of current post */
-    			// the_content( sprintf(
-    			// 	__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'topshop' ),
-    			// 	the_title( '<span class="screen-reader-text">"', '"</span>', false )
-    			// ) );
+            if ( has_excerpt() ) :
                 the_excerpt();
-    		?>
+            else :
+                /* translators: %s: Name of current post */
+                the_content( sprintf(
+                    wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'topshop' ), array( 'span' => array( 'class' => array() ) ) ),
+                    the_title( '<span class="screen-reader-text">"', '"</span>', false )
+                ) );
+            endif; ?>
 
     		<?php
     			wp_link_pages( array(

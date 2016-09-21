@@ -8,6 +8,35 @@
         
         <div class="upgrade-page-top">
             
+            <div class="upgrade-order-number-info-btns-link">
+                <a href="https://kairaweb.com/theme/topshop/#purchase-premium" class="upgrade-page-link" id="upgrade-purchase-link" target="_blank">
+                    <?php printf( __( '<span>TopShop Premium </span><em>$20</em>', 'topshop' ) ); ?>
+                </a>
+            </div>
+            
+            <div class="upgrade-help">
+                <h5><?php printf( __( '<span>Simple Steps to upgrade', 'topshop' ) ); ?></h5>
+                <p>
+                    <a href="https://kairaweb.com/theme/topshop/#purchase-premium" target="_blank">
+                        <?php printf( __( 'Purchase and Download TopShop Premium', 'topshop' ) ); ?>
+                    </a>
+                </p>
+                <p><?php printf( __( 'Install and activate the <a href="https://kairaweb.com/support/install-the-premium-theme/" target="_blank">Easy Theme Upgrades Plugin</a>... That\'s all to do with the plugin', 'topshop' ) ); ?></p>
+                <p><?php printf( __( 'Upload and <a href="https://kairaweb.com/documentation/install-theme-zip-file/" target="_blank">install the TopShop Premium zip</a> as normal at:<b>Appearance -> Themes -> Add New -> Upload Theme</b>', 'topshop' ) ); ?></p>
+                <p><?php printf( __( 'You can then delete the Easy Theme Upgrades plugin', 'topshop' ) ); ?></p>
+            </div>
+            
+            <div class="upgrade-changelog">
+                <h4><?php printf( __( 'Latest features added to TopShop Premium', 'topshop' ) ); ?></h4>
+                <ul>
+                    <li><?php printf( __( 'New leader layout', 'topshop' ) ); ?></li>
+                    <li><?php printf( __( 'New setting to make blog archive pages full width', 'topshop' ) ); ?></li>
+                    <li><?php printf( __( 'New setting to make blog single pages full width', 'topshop' ) ); ?></li>
+                    <li><?php printf( __( 'WooCommerce shop full width settings', 'topshop' ) ); ?></li>
+                    <li><?php printf( __( 'Added new Social Links', 'topshop' ) ); ?></li>
+                </ul>
+            </div>
+            
             <div class="upgrade-order-number-info-btns">
                 <a href="https://kairaweb.com/docs/topshop/" class="upgrade-page-link" target="_blank">
                     <?php printf( __( '<em>Support</em><span>TopShop Documentation </span>', 'topshop' ) ); ?>
@@ -17,16 +46,6 @@
             <div class="upgrade-help">
                 <p><?php printf( __( 'We support all our themes, offering one on one email support to help you build the website you want', 'topshop' ) ); ?></p>
                 <p><?php printf( __( 'While we do support our both free and premium themes... <strong>Premium themes get prioritized support</strong>', 'topshop' ) ); ?></p>
-            </div>
-            
-            <div class="upgrade-order-number-info-btns-link">
-                <a href="https://kairaweb.com/theme/topshop/#purchase-premium" class="upgrade-page-link" id="upgrade-purchase-link" target="_blank">
-                    <?php printf( __( '<span>TopShop Premium </span><em>$20</em>', 'topshop' ) ); ?>
-                </a>
-            </div>
-            
-            <div class="upgrade-help">
-                <p><?php printf( __( '<a href="https://kairaweb.com/support/install-the-premium-theme/" target="_blank">Get help here</a> on purchasing and installing TopShop Premium', 'topshop' ) ); ?></p>
             </div>
             
         </div>

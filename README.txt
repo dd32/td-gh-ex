@@ -9,7 +9,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-TopShop is the perfect theme for all users from the beginner to the developer. With all our settings built neatly into the customizer you can easily edit the website live before publishing. We've packed a lot of settings into TopShop from 2 header layouts, full-width or boxed website, different blog layouts, adding social links, unlimited color selection and being able to change the colors of lots of elements from fonts to naviagtion and lots lots more. We've integrated with some of the best plugins such as SiteOrigin's Page Builder to easily build any page layouts you want, WooCommerce to simply turn your website into an online store, Meta Slider for slick responsive sliders and lots more. For the developers we've added hooks all around the theme to easily add on custom elements or extra functionality. There's also the option of upgrading to premium for a cheap price. Go on... give it a try!
+TopShop is the perfect theme for all users from the beginner to the developer. Being a quick and simple to setup responsive multipurpose WordPress theme, TopShop is very flexible and can be used for any website from a simple blog displaying your personal portfolio, to a corporate business website for your agency, online community, restaurant or real estate purposes, to selling products for your fully functional online eCommerce store. Simply turn TopShop into an online shop by installing the WooCommerce plugin and start selling online in no time at all. TopShop features a simple, clean, minimal and elegant style design which will work perfectly for almost any kind of store. TopShop integrates seamlessly with top popular free plugins such as WooCommerce, for an online eCommerce store, SiteOrigin's drag and drop Page Builder, along with our multiple page templates, for building any type of page layout needed, and lots more. Go on... Give it a try!
 
 == License ==
 
@@ -70,6 +70,16 @@ View the theme settings under "Appearance" -> Customize.
 1. Featured Images work best at a minimum of 1100 wide and 420 high.
 
 == Changelog ==
+
+#### 1.3.00
+* Header styling fixes
+* Fixed missing translations
+* Changed blog list to show Excerpt is exists, otherwise show full content
+* Added setting to remove cart from header
+* Updated language .pot file
+Premium: Added new leader layout
+Premium: Added setting to make blog archive pages full width
+Premium: Added setting to make blog single pages full width
 
 #### 1.2.9
 * Update Font Awesome
