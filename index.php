@@ -36,12 +36,12 @@
 					get_template_part( 'template-parts/content', get_post_format() );
 
 				endwhile;
-	?>
-				<div class="navigation">
-					<?php echo paginate_links( array( 'prev_next' => '', ) ); ?>
-				</div><!-- #navigation -->
 
-	<?php else :
+				the_posts_pagination( array(
+                        'prev_next' => '',
+                    ) );
+
+		  else :
 
 				// if no content is loaded, show the 'no found' template
 				get_template_part( 'template-parts/content', 'none' );

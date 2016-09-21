@@ -2,10 +2,10 @@
 
 Contributors: Aya Templates
 Tags: two-columns, right-sidebar, custom-background, custom-colors, custom-header,
-custom-menu, featured-images, post-formats, sticky-post, threaded-comments, translation-ready
+custom-menu, featured-images, post-formats, threaded-comments, translation-ready
 
 Requires at least: 4.3.0
-Tested up to: 4.5.2
+Tested up to: 4.6.1
 
 == Description ==
 

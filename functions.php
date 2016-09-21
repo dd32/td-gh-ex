@@ -26,6 +26,8 @@
  *
  */
 
+require_once( trailingslashit( get_template_directory() ) . 'customize-pro/class-customize.php' );
+
 if ( ! function_exists( 'ayaspirit_setup' ) ) :
 /**
  * AyaSpirit setup.
@@ -401,19 +403,5 @@ function ayaspirit_slider_has_images() {
 
 	return $result;
 }
-
-/*
-Enqueue Script for top buttons
-*/
-function ayaspirit_customizer_controls(){
-
-	wp_register_script( 'ayaspirit_customizer_top_button', get_template_directory_uri() . '/js/customizer-top-button.js', array( 'jquery' ), true  );
-	wp_enqueue_script( 'ayaspirit_customizer_top_button' );
-
-	wp_localize_script( 'ayaspirit_customizer_top_button', 'customBtns', array(
-        'proget' => esc_html__( 'Get Premium version', 'ayaspirit' )
-	) );
-}
-add_action( 'customize_controls_enqueue_scripts', 'ayaspirit_customizer_controls' );
 
 ?>
