@@ -59,7 +59,7 @@ if( ! function_exists("adney_comments_list") ){
 						$avatar_img = adney_get_avatar_url($get_avatar);
 						//Comment author avatar
 						?>
-						<img class="avatar img-circle" src="<?php echo $avatar_img ?>" alt="">
+						<img class="avatar img-circle" src="<?php echo esc_url($avatar_img); ?>" alt="">
 					</div>
 
 					<div class="media-body">
@@ -125,7 +125,7 @@ if( ! function_exists('adney_comment_form') ){
 			$args['format'] = current_theme_supports( 'html5', 'comment-form' ) ? 'html5' : 'xhtml';
 
 
-		$req      = get_option( 'require_name_email' );
+		$req      =  get_option( 'require_name_email' );
 
 		$aria_req = ( $req ? " aria-required='true'" : '' );
 
@@ -170,8 +170,6 @@ if( ! function_exists('adney_comment_form') ){
     ',
 
 				'must_log_in'          => '
-
-
     <div class="alert alert-danger must-log-in">'
 						. sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'adney' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) )
 						. '</div>',
@@ -307,7 +305,7 @@ function adney_get_post_navigation(){
 
 function adney_check_plugin_active(){
 	if ( ! function_exists( 'is_plugin_active' ) ){
-		require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
+		require_once ABSPATH . '/wp-admin/includes/plugin.php' ;
 	}
 	if ( is_plugin_active( 'xylus-toolkit/xylus-toolkit.php' ) ) {
 		return true;

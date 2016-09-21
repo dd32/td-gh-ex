@@ -4,11 +4,11 @@ Theme URI: http://xylusthemes.com/themes/adney
 Author: xylus
 Author URI: http://xylusthemes.com/
 Description: Adney WordPress Theme is a clean, modern, flat, minimal and fully responsive free business WordPress theme with a light and minimalistic styling, which is perfectly suited for web agency business,corporate business,personal and business portfolio. This flexible business WordPress theme is ideal to promote your services, business or to run a corporate blog. It is a fully responsive theme that looks great on any device.
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: adney
-Tags: black,blue, gray, green, red, white, yellow, light, one-column, two-columns, left-sidebar, right-sidebar, responsive-layout, custom-background, custom-colors, custom-menu,  custom-header, featured-images, sticky-post, post-formats, full-width-template, threaded-comments, translation-ready, theme-options
+Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-menu, custom-logo, custom-header, featured-images, sticky-post, full-width-template, threaded-comments, translation-ready, theme-options, blog, portfolio
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -41,9 +41,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700); /* Montserrat font */
 @import url(https://fonts.googleapis.com/css?family=Ubuntu:400,300,500,700);
-
-
-
 
 /* ##### GENERAL  ##### */
 
@@ -739,7 +736,7 @@ nav.desktop-nav ul.first-level > li > ul.sub-menu{
 	position: absolute;
 	top: 70px;
 	left: 0;
-	min-width: 250px;
+	min-width: 302px;
 	background-color: #60606e;
 }
 nav.desktop-nav ul.first-level > li:last-child > ul.sub-menu{
@@ -1690,6 +1687,10 @@ p.site-description{
 	font-size: 54px;
 }
 
+.header_back .page-title p {
+    color: #fff;
+}
+
 /* CUSTOMIZE THE CAROUSEL */
 
 /* Carousel base class */
@@ -1877,4 +1878,13 @@ a.page-numbers:hover, span.page-numbers.current{
 	border: 2px solid #46B289;
 	background-color: #46B289;
 	color: #fff;
+}
+
+.entry-content table th, .entry-content table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.entry-content ul ul, .entry-content ol ol {
+    margin-left: 20px;
 }

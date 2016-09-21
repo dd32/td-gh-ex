@@ -29,7 +29,7 @@ function adney_register_required_plugins() {
 		array(
 			'name'      => 'Xylus Toolkit',
 			'slug'      => 'xylus-toolkit',
-			'required'  => true,
+			'required'  => false,
 		),
 
 	);

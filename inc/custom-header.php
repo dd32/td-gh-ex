@@ -14,7 +14,7 @@
  */
 function adney_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'adney_custom_header_args', array(
-		'default-image'          => '',
+		'default-image'          => get_template_directory_uri() . '/assets/img/site-hero2.jpg',
 		'default-text-color'     => 'ffffff',
 		'width'                  => 1920,
 		'height'                 => 600,

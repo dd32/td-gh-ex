@@ -15,23 +15,6 @@ function adney_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
-	// Logo Upload
-	$wp_customize->add_setting( 'adney_logo', array(
-			'capability' => 'edit_theme_options',
-			'transport' => 'refresh',
-			'sanitize_callback' => 'esc_url_raw',
-			'type' => 'theme_mod'
-	) );
-
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'adney_logo', array(
-			'label' => __( 'Logo', 'adney' ),
-			'section' => 'title_tagline',
-			'settings' => 'adney_logo',
-			'description' => __('Upload/Change Site Logo.', 'adney'),
-			'priority' 		 => 1,
-	) ) );
-
-
 	// General Settings
 	$wp_customize->add_section( 'general_section', array(
 			'title'          => __( 'General Settings', 'adney' ),
@@ -107,15 +90,6 @@ function adney_customize_register( $wp_customize ) {
 					'priority' 		 => 2
 			)
 	);
-
-
-
-
-
-
-
-
-
 
 	/*
 	 * Homepage Settings Section
@@ -666,12 +640,6 @@ function adney_sanitize_checkbox( $input ) {
 	// Boolean check
 	return ( ( isset( $input ) && true == $input ) ? true : false );
 }
-
-
-
-
-
-
 
 function adney_theme_scheme_color_css() {
 	$default_color   = '#46B289';

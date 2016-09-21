@@ -23,11 +23,13 @@
 		<div class="container">
 			<div class="logo">
 				<?php
-				if( get_theme_mod( 'adney_logo' )){
+				$adney_logo_id = get_theme_mod( 'custom_logo' );
+				$adney_logo = wp_get_attachment_image_src( $adney_logo_id , 'full' );
+				if( !empty( $adney_logo ) && "" != $adney_logo[0] ){
 					?>
 					<div class='site-logo'>
 						<a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name') ); ?>' rel='home'>
-							<img src='<?php echo esc_url( get_theme_mod( 'adney_logo' ) ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>'>
+							<img src='<?php echo esc_url( $adney_logo[0] ); ?>' alt='<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>'>
 						</a>
 					</div>
 				<?php }else{?>
@@ -52,11 +54,13 @@
 				</nav>
 				<!-- mobile navbar -->
 				<nav class="mobile-nav"></nav>
-				<div class="menu-icon">
-					<div class="line"></div>
-					<div class="line"></div>
-					<div class="line"></div>
-				</div>
+				<?php if ( has_nav_menu( 'primary' ) ) { ?>
+					<div class="menu-icon">
+						<div class="line"></div>
+						<div class="line"></div>
+						<div class="line"></div>
+					</div>
+				<?php } ?>
 			</div>
 		</div>
 	</header><!-- #masthead -->
@@ -66,8 +70,6 @@
 		if(is_home() && is_front_page()) {
 			if( get_header_image() ){
 				$url = get_header_image();
-			}else{
-				$url = get_template_directory_uri() . '/assets/img/site-hero2.jpg';
 			}
 		}elseif(is_page()){
 			if ( has_post_thumbnail() ) {
@@ -75,15 +77,11 @@
 			}else{
 				if( get_header_image() ){
 					$url = get_header_image();
-				}else{
-					$url = get_template_directory_uri() . '/assets/img/site-hero2.jpg';
 				}
 			}
 		}else{
 			if( get_header_image() ){
 				$url = get_header_image();
-			}else{
-				$url = get_template_directory_uri() . '/assets/img/site-hero2.jpg';
 			}
 		}
 	?>
@@ -262,4 +260,3 @@
 	<section>
 		<div class="container">
 	<?php } ?>
-

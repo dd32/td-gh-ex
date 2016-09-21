@@ -23,7 +23,7 @@ if( is_front_page() && is_home()){
 	$cta_button_text = (get_option('cta_button_text'))?sanitize_text_field(get_option('cta_button_text')):'';
 	$cta_button_link = (get_option('cta_button_link'))?absint(get_option('cta_button_link')):0;
 	if($cta_button_link > 0){
-		$cta_button_link = get_permalink($cta_button_link);
+		$cta_button_link = esc_url( get_permalink( $cta_button_link ) );
 	}else{
 		$cta_button_link = '#';
 	}
@@ -75,7 +75,7 @@ if( is_front_page() && is_home()){
 			<?php if(get_option('footer_copyright')){?>
 				<div class="row">
 					<div class="uppercase gray-text footer_copyright">
-						<?php echo get_option('footer_copyright'); ?>
+						<?php echo esc_textarea( get_option( 'footer_copyright' ) ); ?>
 					</div>
 				</div>
 			<?php } ?>
@@ -87,7 +87,8 @@ if( is_front_page() && is_home()){
 					<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'adney' ), 'Adney', '<a href="http://xylusthemes.com/" rel="designer">Xylus Themes</a>' ); ?>
 				</div>
 
-				<?php  if(get_theme_mod('display_social')){
+				<?php
+				if(get_theme_mod('display_social', true )){
 					$facebook = (get_option('facebook_url'))?esc_url_raw(get_option('facebook_url')):'';
 					$twittter = (get_option('twitter_url'))?esc_url_raw(get_option('twitter_url')):'';
 					$linkedin = (get_option('linkedin_url'))?esc_url_raw(get_option('linkedin_url')):'';
