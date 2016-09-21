@@ -1,9 +1,9 @@
 <?php
 /**
  *
- * Blackoot Lite WordPress Theme by Iceable Themes | http://www.iceablethemes.com
+ * Blackoot Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
- * Copyright 2014-2015 Mathieu Sarrasin - Iceable Media
+ * Copyright 2014-2016 Mathieu Sarrasin - Iceable Media
  *
  * Theme's Function
  *
@@ -18,7 +18,7 @@ function blackoot_setup(){
 	 * Translations can be added to the /languages directory.
 	 * A .pot template file is included to get you started
 	 */
-	load_theme_textdomain('blackoot', get_template_directory() . '/languages');
+	load_theme_textdomain('blackoot-lite', get_template_directory() . '/languages');
 
 	// Content Width
 	global $content_width;
@@ -66,16 +66,6 @@ function blackoot_content_width() {
 add_action( 'template_redirect', 'blackoot_content_width' );
 
 /*
- * Page title (for WordPress < 4.1 )
- */
-if ( ! function_exists( '_wp_render_title_tag' ) ) :
-	function blackoot_render_title() {
-		?><title><?php wp_title( '|', true, 'right' ); ?></title><?php
-	}
-	add_action( 'wp_head', 'blackoot_render_title' );
-endif;
-
-/*
  * Add a home link to wp_page_menu() ( wp_nav_menu() fallback )
  */
 function blackoot_page_menu_args( $args ) {
@@ -109,7 +99,7 @@ add_filter( 'wp_nav_menu_objects', 'blackoot_add_menu_parent_class' );
  */
 function blackoot_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Default Sidebar', 'blackoot' ),
+		'name'          => __( 'Default Sidebar', 'blackoot-lite' ),
 		'id'            => 'sidebar',
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
@@ -117,7 +107,7 @@ function blackoot_widgets_init() {
 	);
 
 	register_sidebar( array(
-		'name'          => __( 'Footer', 'blackoot' ),
+		'name'          => __( 'Footer', 'blackoot-lite' ),
 		'id'            => 'footer-sidebar',
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
@@ -207,9 +197,15 @@ add_filter( 'the_category', 'blackoot_remove_rel_cat' );
  */
 function blackoot_excerpt_more( $more ) {
 	global $post;
-	return '... <div class="read-more navbutton"><a href="'. get_permalink( get_the_ID() ) . '">'. __("Read More", 'blackoot') .'<i class="fa fa-angle-double-right"></i></a></div>';
+	return '... <div class="read-more navbutton"><a href="'. get_permalink( get_the_ID() ) . '">'. __("Read More", 'blackoot-lite') .'<i class="fa fa-angle-double-right"></i></a></div>';
 }
 add_filter( 'excerpt_more', 'blackoot_excerpt_more' );
+
+function blackoot_content_more( $more ) {
+	global $post;
+	return '<div class="read-more navbutton"><a href="'. get_permalink() . '#more-' . $post->ID . '">'. __("Read More", 'blackoot-lite') .'<i class="fa fa-angle-double-right"></i></a></div>';
+}
+add_filter( 'the_content_more_link', 'blackoot_content_more' );
 
 /*
  * Rewrite and replace wp_trim_excerpt() so it adds a relevant read more link
@@ -281,13 +277,13 @@ function blackoot_article_nav(){
 
 		if ("" != get_adjacent_post( false, "", false ) ): // Is there a previous post?
 			echo '<div class="next navbutton">',
-				next_post_link('%link', __('Next Post', 'blackoot') . '<i class="fa fa-angle-double-right"></i>' ),
+				next_post_link('%link', __('Next Post', 'blackoot-lite') . '<i class="fa fa-angle-double-right"></i>' ),
 				'</div>';
 		endif;
 
 		if ("" != get_adjacent_post( false, "", true ) ): // Is there a next post?
 			echo '<div class="previous navbutton">',
-				previous_post_link('%link', '<i class="fa fa-angle-double-left"></i>' . __('Previous Post', 'blackoot') ),
+				previous_post_link('%link', '<i class="fa fa-angle-double-left"></i>' . __('Previous Post', 'blackoot-lite') ),
 				'</div>';
 		endif;
 
@@ -348,7 +344,7 @@ function blackoot_breadcrumbs() {
 
 	if (!is_front_page()):
 
-		echo '<a href="', esc_url(home_url()), '">', __('Home', 'blackoot'), '</a><span class="separator"> ', $sep, ' </span>';
+		echo '<a href="', esc_url(home_url()), '">', __('Home', 'blackoot-lite'), '</a><span class="separator"> ', $sep, ' </span>';
 
 		if (is_home()):
 
@@ -374,13 +370,13 @@ function blackoot_breadcrumbs() {
 
 		elseif (is_category()): single_cat_title();
 		elseif (is_tag()): single_tag_title();
-		elseif (is_day()): _e('Daily Archives', 'blackoot');
-		elseif (is_month()): _e('Monthly Archives', 'blackoot');
-		elseif (is_year()): _e('Yearly Archives', 'blackoot');
-		elseif (is_author()): _e('Author Archives', 'blackoot');
-		elseif (isset($_GET['paged']) && !empty($_GET['paged'])): _e('Blog Archives', 'blackoot');
-		elseif (is_search()): echo __('Search Results', 'blackoot');
-		elseif (is_404()): echo __('404 Error', 'blackoot');
+		elseif (is_day()): _e('Daily Archives', 'blackoot-lite');
+		elseif (is_month()): _e('Monthly Archives', 'blackoot-lite');
+		elseif (is_year()): _e('Yearly Archives', 'blackoot-lite');
+		elseif (is_author()): _e('Author Archives', 'blackoot-lite');
+		elseif (isset($_GET['paged']) && !empty($_GET['paged'])): _e('Blog Archives', 'blackoot-lite');
+		elseif (is_search()): echo __('Search Results', 'blackoot-lite');
+		elseif (is_404()): echo __('404 Error', 'blackoot-lite');
 
 		endif;
 	endif;
@@ -391,5 +387,3 @@ function blackoot_breadcrumbs() {
  */
 
 require_once 'inc/customizer/customizer.php';
-
-?>
