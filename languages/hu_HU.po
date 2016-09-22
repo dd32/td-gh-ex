@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Full Frame\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/support-forum/forum/catch-base-"
 "free/\n"
-"POT-Creation-Date: 2016-08-21 21:48+0545\n"
-"PO-Revision-Date: 2016-08-21 21:48+0545\n"
+"POT-Creation-Date: 2016-09-22 22:40+0545\n"
+"PO-Revision-Date: 2016-09-22 22:40+0545\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: hu_HU\n"
@@ -637,6 +637,10 @@ msgstr "Fontos hivatkozások"
 #: ../inc/customizer-includes/fullframe-customizer.php:215
 msgid "Upgrade To Pro &raquo;"
 msgstr "Frissítés Pro Verzióra"
+
+#: ../inc/customizer-includes/fullframe-customizer.php:216
+msgid "Refresh the customizer page after saving to view reset effects"
+msgstr ""
 
 #: ../inc/fullframe-breadcrumb.php:57
 msgid "Home"

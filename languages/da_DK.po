@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Full Frame\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-21 21:31+0545\n"
-"PO-Revision-Date: 2016-08-21 21:31+0545\n"
+"POT-Creation-Date: 2016-09-22 22:40+0545\n"
+"PO-Revision-Date: 2016-09-22 22:40+0545\n"
 "Last-Translator: Kurt <catchme@vindu.dk>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: da_DK\n"
@@ -625,6 +625,10 @@ msgstr "Vigtige links"
 #: ../inc/customizer-includes/fullframe-customizer.php:215
 msgid "Upgrade To Pro &raquo;"
 msgstr "Opgrader til Pro &raquo;"
+
+#: ../inc/customizer-includes/fullframe-customizer.php:216
+msgid "Refresh the customizer page after saving to view reset effects"
+msgstr ""
 
 #: ../inc/fullframe-breadcrumb.php:57
 msgid "Home"

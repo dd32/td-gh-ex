@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Full Frame\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/support-forum/forum/catch-"
 "responsive-free/\n"
-"POT-Creation-Date: 2016-08-21 21:44+0545\n"
-"PO-Revision-Date: 2016-08-21 21:44+0545\n"
+"POT-Creation-Date: 2016-09-22 22:40+0545\n"
+"PO-Revision-Date: 2016-09-22 22:40+0545\n"
 "Last-Translator: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language-Team: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language: pt_BR\n"
@@ -675,6 +675,10 @@ msgstr "Links que são muito importantes"
 #: ../inc/customizer-includes/fullframe-customizer.php:215
 msgid "Upgrade To Pro &raquo;"
 msgstr "Upgrade -Tema Catch Responsive Pro &raquo;"
+
+#: ../inc/customizer-includes/fullframe-customizer.php:216
+msgid "Refresh the customizer page after saving to view reset effects"
+msgstr ""
 
 #: ../inc/fullframe-breadcrumb.php:57
 msgid "Home"

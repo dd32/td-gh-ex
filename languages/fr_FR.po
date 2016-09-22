@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Responsive\n"
-"POT-Creation-Date: 2016-08-21 21:35+0545\n"
+"POT-Creation-Date: 2016-09-22 22:40+0545\n"
 "PO-Revision-Date: \n"
 "Last-Translator: PA Angelini <nosencheres@free.fr>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -637,6 +637,10 @@ msgstr "Liens importants "
 #: ../inc/customizer-includes/fullframe-customizer.php:215
 msgid "Upgrade To Pro &raquo;"
 msgstr "Upgrader vers version Pro &raquo;"
+
+#: ../inc/customizer-includes/fullframe-customizer.php:216
+msgid "Refresh the customizer page after saving to view reset effects"
+msgstr ""
 
 #: ../inc/fullframe-breadcrumb.php:57
 msgid "Home"

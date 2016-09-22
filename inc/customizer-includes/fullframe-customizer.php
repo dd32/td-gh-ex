@@ -151,7 +151,7 @@ function fullframe_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'fullframe_theme_options[reset_all_settings]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['reset_all_settings'],
-		'sanitize_callback' => 'fullframe_reset_all_settings',
+		'sanitize_callback' => 'fullframe_sanitize_checkbox',
 		'transport'			=> 'postMessage',
 	) );
 
@@ -210,17 +210,34 @@ add_action( 'customize_preview_init', 'fullframe_customize_preview' );
 function fullframe_customize_scripts() {
 	wp_enqueue_script( 'fullframe_customizer_custom', get_template_directory_uri() . '/js/fullframe-customizer-custom-scripts.min.js', array( 'jquery' ), '20131028', true );
 
-	$fullframe_misc_links = array(
-							'upgrade_link' 				=> esc_url( 'https://catchthemes.com/themes/full-frame-pro/' ),
+	$fullframe_data = array(
+							'upgrade_link' 				=> esc_url( 'https://catchthemes.com/themes/full-frame/' ),
 							'upgrade_text'	 			=> esc_html__( 'Upgrade To Pro &raquo;', 'full-frame' ),
+							'reset_message'        => esc_html__( 'Refresh the customizer page after saving to view reset effects', 'full-frame' )
 		);
 
 	//Add Upgrade Button and old WordPress message via localized script
-	wp_localize_script( 'fullframe_customizer_custom', 'fullframe_misc_links', $fullframe_misc_links );
+	wp_localize_script( 'fullframe_customizer_custom', 'fullframe_data', $fullframe_data );
 
 	wp_enqueue_style( 'fullframe_customizer_custom', get_template_directory_uri() . '/css/fullframe-customizer.css');
 }
 add_action( 'customize_controls_enqueue_scripts', 'fullframe_customize_scripts');
+
+/**
+ * Function to reset date with respect to condition
+ */
+function fullframe_reset_data() {
+	$options  = fullframe_get_theme_options();
+    if( $options['reset_all_settings'] ) {
+    	remove_theme_mods();
+
+        // Flush out all transients	on reset
+        fullframe_flush_transients();
+
+        return;
+    }
+}
+add_action( 'customize_save_after', 'fullframe_reset_data' );
 
 
 //Active callbacks for customizer

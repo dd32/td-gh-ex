@@ -1,5 +1,8 @@
 == Change log ==
 
+= 2.4.1 =
+* Updated: Reset all settings compatibility with WordPress v4.6
+
 = 2.4 =
 * Bug Fixed: White space issue
 * Bug Fixed: Escaped Slider options on output
