@@ -375,5 +375,4 @@ class catchevolution_social_widget extends WP_Widget {
 
 		echo $after_widget;
 	}
-
 }

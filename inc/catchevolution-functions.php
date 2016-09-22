@@ -464,7 +464,7 @@ function catchevolution_body_classes( $classes ) {
 
 	$layout = catchevolution_get_theme_layout();
 
-	
+
 	if ( $layout == 'three-columns' || is_page_template( 'page-three-columns.php' ) ) {
 		$classes[] = 'three-columns';
 	}
@@ -473,16 +473,16 @@ function catchevolution_body_classes( $classes ) {
 	}
 	elseif ( $layout == 'no-sidebar-one-column' || is_page_template( 'page-onecolumn.php' ) ) {
 		$classes[] = 'no-sidebar one-column';
-	}	
+	}
 	elseif ( $layout == 'no-sidebar-full-width' || is_page_template( 'page-fullwidth.php' ) ) {
 		$classes[] = 'no-sidebar full-width';
-	}	
+	}
 	elseif ( $layout == 'left-sidebar' ) {
 		$classes[] = 'left-sidebar';
 	}
 	elseif ( $layout == 'right-sidebar' ) {
 		$classes[] = 'right-sidebar';
-	}	
+	}
 
 	return $classes;
 }
@@ -513,7 +513,16 @@ add_action( 'manage_posts_custom_column', 'catchevolution_posts_id_column', 10, 
 
 
 function catchevolution_posts_id_column_css() {
-	echo '<style type="text/css">#postid { width: 40px; }</style>';
+	echo '
+	<style type="text/css">
+	    #postid { width: 80px; }
+	    @media screen and (max-width: 782px) {
+	        .wp-list-table #postid, .wp-list-table #the-list .postid { display: none; }
+	        .wp-list-table #the-list .is-expanded .postid {
+	            padding-left: 30px;
+	        }
+	    }
+    </style>';
 }
 add_action( 'admin_head-edit.php', 'catchevolution_posts_id_column_css' );
 

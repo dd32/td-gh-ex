@@ -39,4 +39,4 @@ if ( $catchevolution_layout == 'three-columns' || is_page_template( 'page-three-
 /**
  * catchevolution_after_third hook
  */
-do_action( 'catchevolution_after_third' ); ?>
+do_action( 'catchevolution_after_third' );

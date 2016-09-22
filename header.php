@@ -132,4 +132,4 @@ do_action( 'catchevolution_before' ); ?>
                          *
                          * @hooked catchevolution_slider_display - 10 if full width image slide is not selected
                          */
-                        do_action( 'catchevolution_content' ); ?>
+                        do_action( 'catchevolution_content' );

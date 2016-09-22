@@ -50,4 +50,4 @@ if ( $catchevolution_layout == 'left-sidebar' || $catchevolution_layout == 'righ
 /**
  * catchevolution_after_secondary hook
  */
-do_action( 'catchevolution_after_secondary' ); ?>
+do_action( 'catchevolution_after_secondary' );

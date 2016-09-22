@@ -7,7 +7,7 @@ Catch Evolution is a beautifully sleek creation of Catch Themes. It exudes a cle
 == Translation ==
 Catch Evolution theme is translation ready.
 Added Translation for Spanish by Ruben Ramos Fernandez (batmovil69@hotmail.com)
-Added Translation for French by Sebastian Chamusard (admin78@orange.fr)
+Added Translation for French by Sebastian Chamusard (admin78@orange.fr) and Capronnier luc (Email: lcapronnier@yahoo.com)
 Added Translation for Swedish by Andre Fahlstrom (admin@andrefahlstrom.se)
 Added Translation for German by Knut Pfefferkorn (knut.pfefferkorn@gmail.com) 
 Added Translation for Danish by Med venlig hilsen (medvind@medvind.dk)

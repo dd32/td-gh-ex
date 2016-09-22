@@ -89,21 +89,21 @@ function catchevolution_theme_options_do_page() {
                 <div id="theme-option-title">
                     <h2 class="title"><?php _e( 'Theme Options By', 'catch-evolution' ); ?></h2>
                     <h2 class="logo">
-                        <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catch-evolution' ) ); ?>" title="<?php esc_attr_e( 'Catch Themes', 'catch-evolution' ); ?>" target="_blank">
+                        <a href="<?php echo esc_url( __( 'https://catchthemes.com/', 'catch-evolution' ) ); ?>" title="<?php esc_attr_e( 'Catch Themes', 'catch-evolution' ); ?>" target="_blank">
                             <img src="<?php echo get_template_directory_uri().'/inc/panel/images/catch-themes.png'; ?>" alt="<?php _e( 'Catch Themes', 'catch-evolution' ); ?>" />
                         </a>
                     </h2>
                 </div><!-- #theme-option-title -->
 
                 <div id="upgradepro">
-                	<a class="button" href="<?php echo esc_url(__('http://catchthemes.com/themes/catch-evolution-pro/','catch-evolution')); ?>" title="<?php esc_attr_e('Upgrade to Catch Evolution Pro', 'catch-evolution'); ?>" target="_blank"><?php printf(__('Upgrade to Catch Evolution Pro','catch-evolution')); ?></a>
+                	<a class="button" href="<?php echo esc_url(__('https://catchthemes.com/themes/catch-evolution-pro/','catch-evolution')); ?>" title="<?php esc_attr_e('Upgrade to Catch Evolution Pro', 'catch-evolution'); ?>" target="_blank"><?php printf(__('Upgrade to Catch Evolution Pro','catch-evolution')); ?></a>
                	</div><!-- #upgradepro -->
 
                 <div id="theme-support">
                     <ul>
-                    	<li><a class="button donate" href="<?php echo esc_url(__('http://catchthemes.com/donate/','catch-evolution')); ?>" title="<?php esc_attr_e('Donate to Catch Evolution', 'catch-evolution'); ?>" target="_blank"><?php printf(__('Donate Now','catch-evolution')); ?></a></li>
-                  		<li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/theme-instructions/catch-evolution/','catch-evolution')); ?>" title="<?php esc_attr_e('Theme Instruction', 'catch-evolution'); ?>" target="_blank"><?php printf(__('Theme Instruction','catch-evolution')); ?></a></li>
-                   		<li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/support/','catch-evolution')); ?>" title="<?php esc_attr_e('Support', 'catch-evolution'); ?>" target="_blank"><?php printf(__('Support','catch-evolution')); ?></a></li>
+                    	<li><a class="button donate" href="<?php echo esc_url(__('https://catchthemes.com/donate/','catch-evolution')); ?>" title="<?php esc_attr_e('Donate to Catch Evolution', 'catch-evolution'); ?>" target="_blank"><?php printf(__('Donate Now','catch-evolution')); ?></a></li>
+                  		<li><a class="button" href="<?php echo esc_url(__('https://catchthemes.com/theme-instructions/catch-evolution/','catch-evolution')); ?>" title="<?php esc_attr_e('Theme Instruction', 'catch-evolution'); ?>" target="_blank"><?php printf(__('Theme Instruction','catch-evolution')); ?></a></li>
+                   		<li><a class="button" href="<?php echo esc_url(__('https://catchthemes.com/support/','catch-evolution')); ?>" title="<?php esc_attr_e('Support', 'catch-evolution'); ?>" target="_blank"><?php printf(__('Support','catch-evolution')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('https://www.facebook.com/catchthemes/','catch-evolution')); ?>" title="<?php esc_attr_e('Like Catch Themes on Facebook', 'catch-evolution'); ?>" target="_blank"><?php printf(__('Facebook','catch-evolution')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('https://twitter.com/catchthemes/','catch-evolution')); ?>" title="<?php esc_attr_e('Follow Catch Themes on Twitter', 'catch-evolution'); ?>" target="_blank"><?php printf(__('Twitter','catch-evolution')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('http://wordpress.org/support/view/theme-reviews/catch-evolution/','catch-evolution')); ?>" title="<?php esc_attr_e('Rate us 5 Star on WordPress', 'catch-evolution'); ?>" target="_blank"><?php printf(__('5 Star Rating','catch-evolution')); ?></a></li>
@@ -313,7 +313,7 @@ function catchevolution_theme_options_do_page() {
                                 	<tr>
                                         <th scope="row"><?php _e( 'Menu Tutorial', 'catch-evolution' ); ?></th>
                                         <td>
-                                            <a class="button" href="<?php echo esc_url( __( 'http://catchthemes.com/blog/custom-menus-wordpress-themes/','catch-evolution' ) ); ?>" title="<?php esc_attr_e( 'Menu Tutorial', 'catch-evolution' ); ?>" target="_blank"><?php _e( 'Click Here to Read Menu Tutorial', 'catch-evolution' );?></a>
+                                            <a class="button" href="<?php echo esc_url( __( 'https://catchthemes.com/blog/custom-menus-wordpress-themes/','catch-evolution' ) ); ?>" title="<?php esc_attr_e( 'Menu Tutorial', 'catch-evolution' ); ?>" target="_blank"><?php _e( 'Click Here to Read Menu Tutorial', 'catch-evolution' );?></a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -649,7 +649,7 @@ function catchevolution_theme_options_do_page() {
                             	<tr>
                                     <th scope="row"><?php _e( 'Post Slider Tutorial', 'catch-evolution' ); ?></th>
                                     <td>
-                                        <a class="button" href="<?php echo esc_url( __( 'http://catchthemes.com/blog/videos-blog/video-series-adding-featured-post-slider/','catch-evolution' ) ); ?>" title="<?php esc_attr_e( 'Post Slider Tutorial', 'catch-evolution' ); ?>" target="_blank"><?php _e( 'Click Here to Read Post Slider Tutorial', 'catch-evolution' );?></a>
+                                        <a class="button" href="<?php echo esc_url( __( 'https://catchthemes.com/blog/videos-blog/video-series-adding-featured-post-slider/','catch-evolution' ) ); ?>" title="<?php esc_attr_e( 'Post Slider Tutorial', 'catch-evolution' ); ?>" target="_blank"><?php _e( 'Click Here to Read Post Slider Tutorial', 'catch-evolution' );?></a>
                                     </td>
                               	</tr>
                                 <tr>
@@ -1193,7 +1193,7 @@ function catchevolution_theme_name() {
  */
 function catchevolution_theme_author() {
 
-    return '<span class="theme-author"><a href="' . esc_url( 'http://catchthemes.com/' ) . '" target="_blank" title="' . esc_attr__( 'Catch Themes', 'catch-evolution' ) . '">' . __( 'Catch Themes', 'catch-evolution' ) . '</a></span>';
+    return '<span class="theme-author"><a href="' . esc_url( 'https://catchthemes.com/' ) . '" target="_blank" title="' . esc_attr__( 'Catch Themes', 'catch-evolution' ) . '">' . __( 'Catch Themes', 'catch-evolution' ) . '</a></span>';
 
 }
 

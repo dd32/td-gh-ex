@@ -1,8 +1,16 @@
 == Change log ==
 
+2.8
+* Bug Fixed: White space issue
+* Bug Fixed: Content Width issue when selecting layout from metabox
+* Fixed: ID column display issue in mobile devices
+* Updated: Instagram logo
+* Updated: All instances of http://catchthemes.com changed to https://catchthemes.com
+* Updated: Tags in styles.css header
+
 2.7.2
 * Updated: French translation fr_FR.po and fr_FR.mo
-* Rename: widget_catchevolution_social_widget from "CT: Social Widget" to "CT Social-Search Widget"
+* Renamed: widget_catchevolution_social_widget from "CT: Social Widget" to "CT Social-Search Widget"
 
 2.7.1
 * Bug Fixed: Page layout issue (Reported by Marebos)
