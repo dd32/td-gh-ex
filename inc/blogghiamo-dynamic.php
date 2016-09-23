@@ -348,7 +348,7 @@ function blogghiamo_custom_css_styles() {
 	.navigation.pagination .nav-links span.current	{
 		color: <?php echo esc_attr($box_color_second); ?>;
 	}
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 1024px) {
 		.main-navigation ul li .indicator {
 			color: <?php echo esc_attr($box_color_second); ?>;
 		}

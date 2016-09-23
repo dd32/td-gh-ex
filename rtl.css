@@ -67,3 +67,23 @@ code, .menu-toggle, .main-navigation.toggled .nav-menu {
 	padding-left: inherit;
 	padding-right: 5%;
 }
+
+.main-navigation ul ul ul {
+	left: inherit;
+	right: 100%;
+}
+.main-navigation ul ul li a:not(:last-child):after {
+    content: "\f0d9";
+    margin: 0 5px 0 0;
+    float: left;
+}
+.navigation.pagination .nav-links a.next i:before {
+	content: "\f100";
+}
+.navigation.pagination .nav-links a.prev i:before {
+	content: "\f101";
+}
+#toTop {
+	right: inherit;
+	left: 1.5em;
+}

@@ -120,7 +120,7 @@ class Blogghiamo_Admin {
 
 					<a href="<?php echo esc_url( apply_filters( 'blogghiamo_pro_theme_url', 'http://crestaproject.com/demo/blogghiamo-pro/' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View PRO version Demo', 'blogghiamo' ); ?></a>
 
-					<a href="<?php echo esc_url( apply_filters( 'blogghiamo_pro_theme_url', 'http://wordpress.org/support/view/theme-reviews/blogghiamo?filter=5#postform' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'blogghiamo' ); ?></a>
+					<a href="<?php echo esc_url( apply_filters( 'blogghiamo_pro_theme_url', 'https://wordpress.org/support/theme/blogghiamo/reviews/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'blogghiamo' ); ?></a>
 				</p>
 				</div>
 

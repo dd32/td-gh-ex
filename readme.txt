@@ -147,3 +147,8 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-background, 
 * Fixed mobile menu for 1024px
 * Updated hover effect on featured images
 * Minor bug fixes
+
+= Version 1.4.4 =
+* Improved RTL mode
+* Fixed mobile menu
+* Minor bug fixes
