@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Everest\n"
-"POT-Creation-Date: 2016-05-13 18:09+0545\n"
+"POT-Creation-Date: 2016-09-23 12:10+0545\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -220,7 +220,7 @@ msgstr "%sについて"
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "%sの投稿をすべて読む<span class=\"meta-nav\">&rarr;</span>"
 
-#: ../functions.php:116 ../inc/catcheverest-functions.php:411
+#: ../functions.php:125 ../inc/catcheverest-functions.php:411
 msgid "Primary Menu"
 msgstr "第1メニュー"
 
@@ -458,8 +458,8 @@ msgstr "Xing"
 msgid "ID"
 msgstr "ID"
 
-#: ../inc/catcheverest-functions.php:1311
-#: ../inc/catcheverest-functions.php:1325
+#: ../inc/catcheverest-functions.php:1320
+#: ../inc/catcheverest-functions.php:1334
 msgid "Menu"
 msgstr "Menu"
 
@@ -1087,8 +1087,8 @@ msgid "Theme Options By"
 msgstr "Theme Options By"
 
 #: ../inc/panel/theme-options.php:91
-msgid "http://catchthemes.com/"
-msgstr "http://catchthemes.com/"
+msgid "https://catchthemes.com/"
+msgstr "https://catchthemes.com/"
 
 #: ../inc/panel/theme-options.php:91 ../inc/panel/theme-options.php:92
 #: ../inc/panel/theme-options.php:1284
@@ -1096,28 +1096,28 @@ msgid "Catch Themes"
 msgstr "Catch Themes"
 
 #: ../inc/panel/theme-options.php:98
-msgid "http://catchthemes.com/themes/catch-everest-pro/"
-msgstr "http://catchthemes.com/themes/catch-everest-pro/"
+msgid "https://catchthemes.com/themes/catch-everest-pro/"
+msgstr "https://catchthemes.com/themes/catch-everest-pro/"
 
 #: ../inc/panel/theme-options.php:98
 msgid "Upgrade to Catch Everest Pro"
 msgstr "Upgrade to Catch Everest Pro"
 
 #: ../inc/panel/theme-options.php:103
-msgid "http://catchthemes.com/donate/"
-msgstr "http://catchthemes.com/donate/"
+msgid "https://catchthemes.com/donate/"
+msgstr "https://catchthemes.com/donate/"
 
 #: ../inc/panel/theme-options.php:103
 msgid "Donate to Catch Everest"
 msgstr "Donate to Catch Everest"
 
 #: ../inc/panel/theme-options.php:104
-msgid "http://catchthemes.com/support/"
-msgstr "http://catchthemes.com/support/"
+msgid "https://catchthemes.com/support/"
+msgstr "https://catchthemes.com/support/"
 
 #: ../inc/panel/theme-options.php:105
-msgid "http://catchthemes.com/theme-instructions/catch-everest/"
-msgstr "http://catchthemes.com/theme-instructions/catch-everest/"
+msgid "https://catchthemes.com/theme-instructions/catch-everest/"
+msgstr "https://catchthemes.com/theme-instructions/catch-everest/"
 
 #: ../inc/panel/theme-options.php:105
 msgid "Theme Instruction"
@@ -2330,8 +2330,8 @@ msgstr "検索する"
 #~ msgid "To update the Theme, login to your account at"
 #~ msgstr "To update the Theme, login to your account at"
 
-#~ msgid "http://catchthemes.com/login/"
-#~ msgstr "http://catchthemes.com/login/"
+#~ msgid "https://catchthemes.com/login/"
+#~ msgstr "https://catchthemes.com/login/"
 
 #~ msgid "download"
 #~ msgstr "download"
@@ -2532,9 +2532,9 @@ msgstr "検索する"
 #~ msgstr "第2メニュー"
 
 #~ msgid ""
-#~ "http://catchthemes.com/support-forum/forum/catch-evolution-pro-premium/"
+#~ "https://catchthemes.com/support-forum/forum/catch-evolution-pro-premium/"
 #~ msgstr ""
-#~ "http://catchthemes.com/support-forum/forum/catch-evolution-pro-premium/"
+#~ "https://catchthemes.com/support-forum/forum/catch-evolution-pro-premium/"
 
 #~ msgid ""
 #~ "Custom Header Image can be managed from Header Featured Image Options"

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Everest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-13 18:08+0545\n"
-"PO-Revision-Date: 2016-05-13 18:08+0545\n"
+"POT-Creation-Date: 2016-09-23 12:09+0545\n"
+"PO-Revision-Date: 2016-09-23 12:09+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <support@catchthemes.com>\n"
 "Language: en_US\n"
@@ -226,7 +226,7 @@ msgstr ""
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: ../functions.php:116 ../inc/catcheverest-functions.php:411
+#: ../functions.php:125 ../inc/catcheverest-functions.php:411
 msgid "Primary Menu"
 msgstr ""
 
@@ -452,8 +452,8 @@ msgstr ""
 msgid "ID"
 msgstr ""
 
-#: ../inc/catcheverest-functions.php:1311
-#: ../inc/catcheverest-functions.php:1325
+#: ../inc/catcheverest-functions.php:1320
+#: ../inc/catcheverest-functions.php:1334
 msgid "Menu"
 msgstr ""
 
@@ -1081,7 +1081,7 @@ msgid "Theme Options By"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:91
-msgid "http://catchthemes.com/"
+msgid "https://catchthemes.com/"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:91 ../inc/panel/theme-options.php:92
@@ -1090,7 +1090,7 @@ msgid "Catch Themes"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:98
-msgid "http://catchthemes.com/themes/catch-everest-pro/"
+msgid "https://catchthemes.com/themes/catch-everest-pro/"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:98
@@ -1098,7 +1098,7 @@ msgid "Upgrade to Catch Everest Pro"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:103
-msgid "http://catchthemes.com/donate/"
+msgid "https://catchthemes.com/donate/"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:103
@@ -1106,11 +1106,11 @@ msgid "Donate to Catch Everest"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:104
-msgid "http://catchthemes.com/support/"
+msgid "https://catchthemes.com/support/"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:105
-msgid "http://catchthemes.com/theme-instructions/catch-everest/"
+msgid "https://catchthemes.com/theme-instructions/catch-everest/"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:105

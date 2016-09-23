@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Everest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-13 18:09+0545\n"
-"PO-Revision-Date: 2016-05-13 18:09+0545\n"
+"POT-Creation-Date: 2016-09-23 12:10+0545\n"
+"PO-Revision-Date: 2016-09-23 12:10+0545\n"
 "Last-Translator: \n"
 "Language-Team: Stephan Ermann <info@bewegungsfelder.de>\n"
 "Language: de\n"
@@ -229,7 +229,7 @@ msgstr "Über %s"
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Alle Beiträge anschauen von %s <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../functions.php:116 ../inc/catcheverest-functions.php:411
+#: ../functions.php:125 ../inc/catcheverest-functions.php:411
 msgid "Primary Menu"
 msgstr "Primäres Menü"
 
@@ -468,8 +468,8 @@ msgstr "Xing"
 msgid "ID"
 msgstr "ID"
 
-#: ../inc/catcheverest-functions.php:1311
-#: ../inc/catcheverest-functions.php:1325
+#: ../inc/catcheverest-functions.php:1320
+#: ../inc/catcheverest-functions.php:1334
 msgid "Menu"
 msgstr "Menü"
 
@@ -1120,8 +1120,8 @@ msgid "Theme Options By"
 msgstr "Theme Optionen von"
 
 #: ../inc/panel/theme-options.php:91
-msgid "http://catchthemes.com/"
-msgstr "http://catchthemes.com/"
+msgid "https://catchthemes.com/"
+msgstr "https://catchthemes.com/"
 
 #: ../inc/panel/theme-options.php:91 ../inc/panel/theme-options.php:92
 #: ../inc/panel/theme-options.php:1284
@@ -1129,28 +1129,28 @@ msgid "Catch Themes"
 msgstr "Catch Themes"
 
 #: ../inc/panel/theme-options.php:98
-msgid "http://catchthemes.com/themes/catch-everest-pro/"
-msgstr "http://catchthemes.com/themes/catch-everest-pro/"
+msgid "https://catchthemes.com/themes/catch-everest-pro/"
+msgstr "https://catchthemes.com/themes/catch-everest-pro/"
 
 #: ../inc/panel/theme-options.php:98
 msgid "Upgrade to Catch Everest Pro"
 msgstr "Upgrade to Catch Everest Pro"
 
 #: ../inc/panel/theme-options.php:103
-msgid "http://catchthemes.com/donate/"
-msgstr "http://catchthemes.com/donate/"
+msgid "https://catchthemes.com/donate/"
+msgstr "https://catchthemes.com/donate/"
 
 #: ../inc/panel/theme-options.php:103
 msgid "Donate to Catch Everest"
 msgstr "Spende an Catch Everest"
 
 #: ../inc/panel/theme-options.php:104
-msgid "http://catchthemes.com/support/"
-msgstr "http://catchthemes.com/support/"
+msgid "https://catchthemes.com/support/"
+msgstr "https://catchthemes.com/support/"
 
 #: ../inc/panel/theme-options.php:105
-msgid "http://catchthemes.com/theme-instructions/catch-everest/"
-msgstr "http://catchthemes.com/theme-instructions/catch-everest/"
+msgid "https://catchthemes.com/theme-instructions/catch-everest/"
+msgstr "https://catchthemes.com/theme-instructions/catch-everest/"
 
 #: ../inc/panel/theme-options.php:105
 msgid "Theme Instruction"
@@ -1945,8 +1945,8 @@ msgstr "Suche"
 #~ msgid "Theme"
 #~ msgstr "Theme"
 
-#~ msgid "http://catchthemes.com/theme-instructions/catch-everest-pro/"
-#~ msgstr "http://catchthemes.com/theme-instructions/catch-everest-pro/"
+#~ msgid "https://catchthemes.com/theme-instructions/catch-everest-pro/"
+#~ msgstr "https://catchthemes.com/theme-instructions/catch-everest-pro/"
 
 #~ msgid "Featured Slider"
 #~ msgstr "Slider Einstellungen"
@@ -2426,8 +2426,8 @@ msgstr "Suche"
 #~ msgid "To update the Theme, login to your account at"
 #~ msgstr "To update the Theme, login to your account at"
 
-#~ msgid "http://catchthemes.com/login/"
-#~ msgstr "http://catchthemes.com/login/"
+#~ msgid "https://catchthemes.com/login/"
+#~ msgstr "https://catchthemes.com/login/"
 
 #~ msgid "download"
 #~ msgstr "download"

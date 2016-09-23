@@ -368,7 +368,7 @@ function catcheverest_header_left() { ?>
                     <img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
                 </a></div>
                 <div id="hgroup" class="with-logo">
-            <?php 
+            <?php
         	}
         	else {
                 echo '<div id="hgroup">';
@@ -1296,7 +1296,16 @@ function catcheverest_posts_id_column( $col, $val ) {
 add_action( 'manage_posts_custom_column', 'catcheverest_posts_id_column', 10, 2 );
 
 function catcheverest_posts_id_column_css() {
-	echo '<style type="text/css">#postid { width: 40px; }</style>';
+	echo '
+	<style type="text/css">
+	    #postid { width: 80px; }
+	    @media screen and (max-width: 782px) {
+	        .wp-list-table #postid, .wp-list-table #the-list .postid { display: none; }
+	        .wp-list-table #the-list .is-expanded .postid {
+	            padding-left: 30px;
+	        }
+	    }
+    </style>';
 }
 
 add_action( 'admin_head-edit.php', 'catcheverest_posts_id_column_css' );

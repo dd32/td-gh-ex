@@ -88,21 +88,21 @@ function catcheverest_theme_options_do_page() {
                 <div id="theme-option-title">
                     <h2 class="title"><?php _e( 'Theme Options By', 'catch-everest' ); ?></h2>
                     <h2 class="logo">
-                        <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catch-everest' ) ); ?>" title="<?php esc_attr_e( 'Catch Themes', 'catch-everest' ); ?>" target="_blank">
+                        <a href="<?php echo esc_url( __( 'https://catchthemes.com/', 'catch-everest' ) ); ?>" title="<?php esc_attr_e( 'Catch Themes', 'catch-everest' ); ?>" target="_blank">
                             <img src="<?php echo get_template_directory_uri().'/inc/panel/images/catch-themes.png'; ?>" alt="<?php _e( 'Catch Themes', 'catch-everest' ); ?>" />
                         </a>
                     </h2>
                 </div><!-- #theme-option-title -->
 
                 <div id="upgradepro">
-                    <a class="button" href="<?php echo esc_url(__('http://catchthemes.com/themes/catch-everest-pro/','catch-everest')); ?>" title="<?php esc_attr_e('Upgrade to Catch Everest Pro', 'catch-everest'); ?>" target="_blank"><?php printf(__('Upgrade to Catch Everest Pro','catch-everest')); ?></a>
+                    <a class="button" href="<?php echo esc_url(__('https://catchthemes.com/themes/catch-everest-pro/','catch-everest')); ?>" title="<?php esc_attr_e('Upgrade to Catch Everest Pro', 'catch-everest'); ?>" target="_blank"><?php printf(__('Upgrade to Catch Everest Pro','catch-everest')); ?></a>
                 </div><!-- #upgradepro -->
 
                 <div id="theme-support">
                     <ul>
-                        <li><a class="button donate" href="<?php echo esc_url(__('http://catchthemes.com/donate/','catch-everest')); ?>" title="<?php esc_attr_e('Donate to Catch Everest', 'catch-everest'); ?>" target="_blank"><?php printf(__('Donate Now','catch-everest')); ?></a></li>
-                        <li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/support/','catch-everest')); ?>" title="<?php esc_attr_e('Support', 'catch-everest'); ?>" target="_blank"><?php printf(__('Support','catch-everest')); ?></a></li>
-                        <li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/theme-instructions/catch-everest/','catch-everest')); ?>" title="<?php esc_attr_e('Theme Instruction', 'catch-everest'); ?>" target="_blank"><?php printf(__('Theme Instruction','catch-everest')); ?></a></li>
+                        <li><a class="button donate" href="<?php echo esc_url(__('https://catchthemes.com/donate/','catch-everest')); ?>" title="<?php esc_attr_e('Donate to Catch Everest', 'catch-everest'); ?>" target="_blank"><?php printf(__('Donate Now','catch-everest')); ?></a></li>
+                        <li><a class="button" href="<?php echo esc_url(__('https://catchthemes.com/support/','catch-everest')); ?>" title="<?php esc_attr_e('Support', 'catch-everest'); ?>" target="_blank"><?php printf(__('Support','catch-everest')); ?></a></li>
+                        <li><a class="button" href="<?php echo esc_url(__('https://catchthemes.com/theme-instructions/catch-everest/','catch-everest')); ?>" title="<?php esc_attr_e('Theme Instruction', 'catch-everest'); ?>" target="_blank"><?php printf(__('Theme Instruction','catch-everest')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('https://www.facebook.com/catchthemes/','catch-everest')); ?>" title="<?php esc_attr_e('Like Catch Themes on Facebook', 'catch-everest'); ?>" target="_blank"><?php printf(__('Facebook','catch-everest')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('https://twitter.com/catchthemes/','catch-everest')); ?>" title="<?php esc_attr_e('Follow Catch Themes on Twitter', 'catch-everest'); ?>" target="_blank"><?php printf(__('Twitter','catch-everest')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('http://wordpress.org/support/view/theme-reviews/catch-everest','catch-everest')); ?>" title="<?php esc_attr_e('Rate us 5 Star on WordPress', 'catch-everest'); ?>" target="_blank"><?php printf(__('5 Star Rating','catch-everest')); ?></a></li>
@@ -1281,7 +1281,7 @@ function catcheverest_theme_name() {
  */
 function catcheverest_theme_author() {
 
-    return '<span class="theme-author"><a href="' . esc_url( 'http://catchthemes.com/' ) . '" target="_blank" title="' . esc_attr__( 'Catch Themes', 'catch-everest' ) . '">' . __( 'Catch Themes', 'catch-everest' ) . '</a></span>';
+    return '<span class="theme-author"><a href="' . esc_url( 'https://catchthemes.com/' ) . '" target="_blank" title="' . esc_attr__( 'Catch Themes', 'catch-everest' ) . '">' . __( 'Catch Themes', 'catch-everest' ) . '</a></span>';
 
 }
 

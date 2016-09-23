@@ -17,18 +17,27 @@ if ( ! function_exists( 'catcheverest_content_width' ) ) :
 	 * @global int $content_width
 	 */
 	function catcheverest_content_width() {
-		$layout  = catcheverest_get_theme_layout();
-
-		$content_width = 690;
-
-		if( $layout == 'no-sidebar-full-width' ) {
-			$content_width = 1040; /* pixels */
-		}
-
-		$GLOBALS['content_width'] = apply_filters( 'catcheverest_content_width', $content_width );
+		$GLOBALS['content_width'] = apply_filters( 'catcheverest_content_width', 690 );
 	}
 endif;
 add_action( 'after_setup_theme', 'catcheverest_content_width', 0 );
+
+
+if ( ! function_exists( 'catcheverest_template_redirect' ) ) :
+	/**
+	 * Set the content width in pixels, based on the theme's design and stylesheet for different value other than the default one
+	 *
+	 * @global int $content_width
+	 */
+	function catcheverest_template_redirect() {
+	    $layout  = catcheverest_get_theme_layout();
+
+		if ( $layout == 'no-sidebar-full-width' ) {
+			$GLOBALS['content_width'] = 1040;
+		}
+	}
+endif;
+add_action( 'template_redirect', 'catcheverest_template_redirect' );
 
 
 if ( ! function_exists( 'catcheverest_setup' ) ) :

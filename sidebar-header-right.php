@@ -33,4 +33,4 @@ if ( $options[ 'disable_header_right_sidebar' ] == "0" ) {	?>
 /** 
  * catcheverest_after_header_right hook hook
  */
-do_action( 'catcheverest_after_header_right' ); ?> 
+do_action( 'catcheverest_after_header_right' );

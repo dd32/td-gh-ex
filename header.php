@@ -107,4 +107,4 @@ do_action( 'catcheverest_before' ); ?>
          *
 	 	 * catcheverest_homepage_featured_display 10
          */
-        do_action( 'catcheverest_main' ); ?>
+        do_action( 'catcheverest_main' );

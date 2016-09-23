@@ -261,4 +261,4 @@ class catcheverest_adspace_widget extends WP_Widget {
 		echo $after_widget;
 	}
 
-} 
+}

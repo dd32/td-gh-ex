@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Everest\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-13 18:09+0545\n"
-"PO-Revision-Date: 2016-05-13 18:09+0545\n"
+"POT-Creation-Date: 2016-09-23 12:10+0545\n"
+"PO-Revision-Date: 2016-09-23 12:10+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: de_CH\n"
@@ -228,7 +228,7 @@ msgstr "%s Hakkında Bilgi"
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "%s <span class=\"meta-nav\"> iletilerinin tümünü gör &rarr;</span>"
 
-#: ../functions.php:116 ../inc/catcheverest-functions.php:411
+#: ../functions.php:125 ../inc/catcheverest-functions.php:411
 msgid "Primary Menu"
 msgstr "Ana Mönü"
 
@@ -467,8 +467,8 @@ msgstr "Xing"
 msgid "ID"
 msgstr "ID"
 
-#: ../inc/catcheverest-functions.php:1311
-#: ../inc/catcheverest-functions.php:1325
+#: ../inc/catcheverest-functions.php:1320
+#: ../inc/catcheverest-functions.php:1334
 msgid "Menu"
 msgstr "Mönü"
 
@@ -1096,8 +1096,8 @@ msgid "Theme Options By"
 msgstr "Tema Seçeneklerini Sağlayan"
 
 #: ../inc/panel/theme-options.php:91
-msgid "http://catchthemes.com/"
-msgstr "http://catchthemes.com/"
+msgid "https://catchthemes.com/"
+msgstr "https://catchthemes.com/"
 
 #: ../inc/panel/theme-options.php:91 ../inc/panel/theme-options.php:92
 #: ../inc/panel/theme-options.php:1284
@@ -1105,28 +1105,28 @@ msgid "Catch Themes"
 msgstr "Catch Temaları"
 
 #: ../inc/panel/theme-options.php:98
-msgid "http://catchthemes.com/themes/catch-everest-pro/"
-msgstr "http://catchthemes.com/themes/catch-everest-pro/"
+msgid "https://catchthemes.com/themes/catch-everest-pro/"
+msgstr "https://catchthemes.com/themes/catch-everest-pro/"
 
 #: ../inc/panel/theme-options.php:98
 msgid "Upgrade to Catch Everest Pro"
 msgstr "Catch Everest Pro temasına yükselt"
 
 #: ../inc/panel/theme-options.php:103
-msgid "http://catchthemes.com/donate/"
-msgstr "http://catchthemes.com/donate/"
+msgid "https://catchthemes.com/donate/"
+msgstr "https://catchthemes.com/donate/"
 
 #: ../inc/panel/theme-options.php:103
 msgid "Donate to Catch Everest"
 msgstr "Catch Everest için bağış yap"
 
 #: ../inc/panel/theme-options.php:104
-msgid "http://catchthemes.com/support/"
-msgstr "http://catchthemes.com/support/"
+msgid "https://catchthemes.com/support/"
+msgstr "https://catchthemes.com/support/"
 
 #: ../inc/panel/theme-options.php:105
-msgid "http://catchthemes.com/theme-instructions/catch-everest/"
-msgstr "http://catchthemes.com/theme-instructions/catch-everest/"
+msgid "https://catchthemes.com/theme-instructions/catch-everest/"
+msgstr "https://catchthemes.com/theme-instructions/catch-everest/"
 
 #: ../inc/panel/theme-options.php:105
 msgid "Theme Instruction"
@@ -1774,11 +1774,11 @@ msgstr "Ara"
 #~ msgid "Catch Kathmandu by"
 #~ msgstr "Catch Kathmandu by"
 
-#~ msgid "http://catchthemes.com"
-#~ msgstr "http://catchthemes.com"
+#~ msgid "https://catchthemes.com"
+#~ msgstr "https://catchthemes.com"
 
-#~ msgid "http://catchthemes.com/themes/catch-kathmandu-pro/"
-#~ msgstr "http://catchthemes.com/themes/catch-kathmandu-pro/"
+#~ msgid "https://catchthemes.com/themes/catch-kathmandu-pro/"
+#~ msgstr "https://catchthemes.com/themes/catch-kathmandu-pro/"
 
 #~ msgid "Upgrade to Catch Kathmandu Pro"
 #~ msgstr "Catch Kathmandu Pro temasına yükselt"
@@ -1786,8 +1786,8 @@ msgstr "Ara"
 #~ msgid "Donate to Catch Kathmandu"
 #~ msgstr "Catch Kathmandu için bağış yap"
 
-#~ msgid "http://catchthemes.com/theme-instructions/catch-kathmandu/"
-#~ msgstr "http://catchthemes.com/theme-instructions/catch-kathmandu/"
+#~ msgid "https://catchthemes.com/theme-instructions/catch-kathmandu/"
+#~ msgstr "https://catchthemes.com/theme-instructions/catch-kathmandu/"
 
 #~ msgid "http://wordpress.org/support/view/theme-reviews/catch-kathmandu"
 #~ msgstr "http://wordpress.org/support/view/theme-reviews/catch-kathmandu"

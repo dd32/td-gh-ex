@@ -1316,7 +1316,7 @@ function catcheverest_customize_scripts() {
 	wp_register_script( 'catcheverest_customizer_custom', get_template_directory_uri() . '/inc/panel/js/customizer-custom-scripts.js', array( 'jquery' ), '20140108', true );
 
     $catcheverest_misc_links = array(
-							'upgrade_link' 				=> esc_url( 'http://catchthemes.com/themes/catch-everest-pro/' ),
+							'upgrade_link' 				=> esc_url( 'https://catchthemes.com/themes/catch-everest-pro/' ),
 							'upgrade_text'	 			=> __( 'Upgrade To Pro &raquo;', 'catch-everest' ),
 		);
 
