@@ -120,7 +120,7 @@ class Semplicemente_Admin {
 
 					<a href="<?php echo esc_url( apply_filters( 'semplicemente_pro_theme_url', 'http://crestaproject.com/demo/semplicemente-pro/' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View PRO version Demo', 'semplicemente' ); ?></a>
 
-					<a href="<?php echo esc_url( apply_filters( 'semplicemente_pro_theme_url', 'http://wordpress.org/support/view/theme-reviews/semplicemente?filter=5#postform' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'semplicemente' ); ?></a>
+					<a href="<?php echo esc_url( apply_filters( 'semplicemente_pro_theme_url', 'https://wordpress.org/support/theme/semplicemente/reviews/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'semplicemente' ); ?></a>
 				</p>
 				</div>
 

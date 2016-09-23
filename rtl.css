@@ -66,7 +66,7 @@ textarea {
 .readMoreLink i.fa-angle-double-right:before {
 	content: "\f100";
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
 	.menu-toggle, .main-navigation.toggled .nav-menu {
 		text-align: right;
 		float: right;

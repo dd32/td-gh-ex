@@ -123,3 +123,7 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, cust
 * Improved featured images hover
 * Updated HTML5Shiv to 3.7.3 version
 * Minor bug fixes
+
+= Version 1.6.6 =
+* Improved RTL mode
+* Minor bug fixes
