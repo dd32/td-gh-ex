@@ -8,6 +8,35 @@
         
         <div class="upgrade-page-top">
             
+            <div class="upgrade-order-number-info-btns-link">
+                <a href="https://kairaweb.com/theme/albar/#purchase-premium" class="upgrade-page-link" id="upgrade-purchase-link" target="_blank">
+                    <?php printf( __( '<span>Albar Premium </span><em>$20</em>', 'albar' ) ); ?>
+                </a>
+            </div>
+            
+            <div class="upgrade-help">
+                <h5><?php printf( __( '<span>Simple Steps to upgrade', 'albar' ) ); ?></h5>
+                <p>
+                    <a href="https://kairaweb.com/theme/albar/#purchase-premium" target="_blank">
+                        <?php printf( __( 'Purchase and Download Albar Premium', 'albar' ) ); ?>
+                    </a>
+                </p>
+                <p><?php printf( __( 'Install and activate the <a href="https://kairaweb.com/support/install-the-premium-theme/" target="_blank">Easy Theme Upgrades Plugin</a>... That\'s all to do with the plugin', 'albar' ) ); ?></p>
+                <p><?php printf( __( 'Upload and <a href="https://kairaweb.com/documentation/install-theme-zip-file/" target="_blank">install the Albar Premium zip</a> as normal at:<b>Appearance -> Themes -> Add New -> Upload Theme</b>', 'albar' ) ); ?></p>
+                <p><?php printf( __( 'You can then delete the Easy Theme Upgrades plugin', 'albar' ) ); ?></p>
+            </div>
+            
+            <div class="upgrade-changelog">
+                <h4><?php printf( __( 'Latest features added to Albar Premium', 'albar' ) ); ?></h4>
+                <ul>
+                    <li><?php printf( __( 'Custom WooCommerce styling', 'albar' ) ); ?></li>
+                    <li><?php printf( __( 'Remove default slider text', 'albar' ) ); ?></li>
+                    <li><?php printf( __( 'Select slider transition animation', 'albar' ) ); ?></li>
+                    <li><?php printf( __( '2 different header layouts', 'albar' ) ); ?></li>
+                    <li><?php printf( __( 'Sticky header', 'albar' ) ); ?></li>
+                </ul>
+            </div>
+            
             <div class="upgrade-order-number-info-btns">
                 <a href="https://kairaweb.com/docs/albar/" class="upgrade-page-link" target="_blank">
                     <?php printf( __( '<em>Support</em><span>Albar Documentation </span>', 'albar' ) ); ?>
@@ -17,16 +46,6 @@
             <div class="upgrade-help">
                 <p><?php printf( __( 'We support all our themes, offering one on one email support to help you beild the website you want', 'albar' ) ); ?></p>
                 <p><?php printf( __( 'While we do support our both free and premium themes... <strong>Premium themes get prioritized support</strong>', 'albar' ) ); ?></p>
-            </div>
-            
-            <div class="upgrade-order-number-info-btns-link">
-                <a href="https://kairaweb.com/theme/albar/#purchase-premium" class="upgrade-page-link" id="upgrade-purchase-link" target="_blank">
-                    <?php printf( __( '<span>Albar Premium </span><em>$20</em>', 'albar' ) ); ?>
-                </a>
-            </div>
-            
-            <div class="upgrade-help">
-                <p><?php printf( __( '<a href="https://kairaweb.com/support/install-the-premium-theme/" target="_blank">Get help here</a> on purchasing and installing Albar Premium', 'albar' ) ); ?></p>
             </div>
             
         </div>

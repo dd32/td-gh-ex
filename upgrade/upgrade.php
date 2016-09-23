@@ -10,7 +10,7 @@
  */
 function kaira_premium_admin_menu() {
     global $kaira_upgrade_page;
-    $kaira_upgrade_page = add_theme_page( __( 'About Albar', 'kaira' ), '<span class="premium-link">' . __( 'About Albar', 'kaira' ) . '</span>', 'edit_theme_options', 'theme_info', 'kaira_render_upgrade_page' );
+    $kaira_upgrade_page = add_theme_page( __( 'About Albar', 'albar' ), '<span class="premium-link">' . __( 'About Albar', 'albar' ) . '</span>', 'edit_theme_options', 'theme_info', 'kaira_render_upgrade_page' );
 }
 add_action( 'admin_menu', 'kaira_premium_admin_menu' );
 

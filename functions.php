@@ -4,7 +4,7 @@
  *
  * @package Albar
  */
-define( 'KAIRA_THEME_VERSION' , '1.7.4' );
+define( 'KAIRA_THEME_VERSION' , '1.7.5' );
 
 // Is ONLY USED IF the user prompts for the premium update
 define( 'KAIRA_UPDATE_URL', 'https://updates.kairaweb.com/' );
@@ -22,6 +22,9 @@ include get_template_directory() . '/includes/widgets.php';
 require get_template_directory() . '/includes/inc/template-tags.php';
 require get_template_directory() . '/includes/inc/extras.php';
 require get_template_directory() . '/includes/inc/customizer.php';
+
+// Load TGM plugin class
+require_once get_template_directory() . '/includes/inc/class-tgm-plugin-activation.php';
 
 if ( ! function_exists( 'kaira_setup_theme' ) ) :
 /**
@@ -303,40 +306,6 @@ if ( kaira_is_woocommerce_activated() ) {
     require get_template_directory() . '/includes/inc/woocommerce-inc.php';
 }
 
-/* Display the recommended plugins notice that can be dismissed */
-add_action('admin_notices', 'kaira_recommended_plugin_notice');
-
-function kaira_recommended_plugin_notice() {
-    global $pagenow;
-    global $current_user;
-    
-    $user_id = $current_user->ID;
-    
-    /* If on plugins page, check that the user hasn't already clicked to ignore the message */
-    if ( $pagenow == 'plugins.php' ) {
-        if ( ! get_user_meta( $user_id, 'kaira_recommended_plugin_ignore_notice' ) ) {
-            echo '<div class="updated"><p>';
-            printf( __( '<p>Install the plugins we at <a href="http://www.kairaweb.com/" target="_blank">Kaira</a> recommended | <a href="%1$s">Hide Notice</a></p>', 'albar' ), '?kaira_recommended_plugin_nag_ignore=0' ); ?>
-            <a href="<?php echo admin_url('plugin-install.php?tab=favorites&user=kaira'); ?>"><?php printf( __( 'SiteOrigin\'s Page Builder', 'albar' ), 'albar' ); ?></a><br />
-            <a href="<?php echo admin_url('plugin-install.php?tab=favorites&user=kaira'); ?>"><?php printf( __( 'Contact Form 7', 'albar' ), 'albar' ); ?></a><br />
-            <a href="<?php echo admin_url('plugin-install.php?tab=favorites&user=kaira'); ?>"><?php printf( __( 'Breadcrumb NavXT', 'albar' ), 'albar' ); ?></a>
-            <?php
-            echo '</p></div>';
-        }
-    }
-}
-add_action('admin_init', 'kaira_recommended_plugin_nag_ignore');
-
-function kaira_recommended_plugin_nag_ignore() {
-    global $current_user;
-    $user_id = $current_user->ID;
-        
-    /* If user clicks to ignore the notice, add that to their user meta */
-    if ( isset($_GET['kaira_recommended_plugin_nag_ignore']) && '0' == $_GET['kaira_recommended_plugin_nag_ignore'] ) {
-        add_user_meta( $user_id, 'kaira_recommended_plugin_ignore_notice', 'true', true );
-    }
-}
-
 /**
  * Exclude slider category from sidebar widgets.
  */
@@ -349,3 +318,55 @@ function kaira_exclude_slider_categories_widget( $args ) {
     return $args;
 }
 add_filter( 'widget_categories_args', 'kaira_exclude_slider_categories_widget' );
+
+/**
+ * Display recommended plugins with the TGM class
+ */
+function kaira_register_required_plugins() {
+    $plugins = array(
+        // The recommended WordPress.org plugins.
+        array(
+            'name'      => 'Easy Theme Upgrade (For upgrading to Albar Premium)',
+            'slug'      => 'easy-theme-and-plugin-upgrades',
+            'required'  => false,
+        ),
+        array(
+            'name'      => 'Page Builder',
+            'slug'      => 'siteorigin-panels',
+            'required'  => false,
+        ),
+        array(
+            'name'      => 'WooCommerce',
+            'slug'      => 'woocommerce',
+            'required'  => false,
+        ),
+        array(
+            'name'      => 'Widgets Bundle',
+            'slug'      => 'siteorigin-panels',
+            'required'  => false,
+        ),
+        array(
+            'name'      => 'Contact Form 7',
+            'slug'      => 'contact-form-7',
+            'required'  => false,
+        ),
+        array(
+            'name'      => 'Breadcrumb NavXT',
+            'slug'      => 'breadcrumb-navxt',
+            'required'  => false,
+        ),
+        array(
+            'name'      => 'Meta Slider',
+            'slug'      => 'ml-slider',
+            'required'  => false,
+        )
+    );
+    $config = array(
+        'id'           => 'albar',
+        'menu'         => 'tgmpa-install-plugins',
+        'message'      => '',
+    );
+
+    tgmpa( $plugins, $config );
+}
+add_action( 'tgmpa_register', 'kaira_register_required_plugins' );
