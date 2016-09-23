@@ -8,21 +8,14 @@ function catchflames_default_sliders() {
 	// get data value from theme options
 	global $catchflames_options_settings;
     $options = $catchflames_options_settings;
-	$sliderlayout = $options[ 'select_slider_layout' ];
 
 	if ( !$catchflames_default_sliders = get_transient( 'catchflames_default_sliders' ) ) {
 		echo '<!-- refreshing cache -->';
 
-		$sliderlayout = $options[ 'select_slider_layout' ];
-		if ( $sliderlayout == 'fullwidth' ) :
-			$layoutclass = 'full-width';
-		else :
-			$layoutclass = 'normal-width';
-		endif;
 		//data-cycle-loader="'. esc_attr( $options['image'] ) .'"
 
 		$catchflames_default_sliders = '
-		<div id="main-slider" class="featured-demo-slider ' . $layoutclass . '">
+		<div id="main-slider" class="featured-demo-slider">
 			<section class="featured-slider cycle-slideshow"
 			    data-cycle-log="false"
 			    data-cycle-pause-on-hover="true"
@@ -86,17 +79,10 @@ function catchflames_page_sliders() {
 	if( ( !$catchflames_page_sliders = get_transient( 'catchflames_page_sliders' ) ) && !empty( $options[ 'featured_slider_page' ] ) ) {
 		echo '<!-- refreshing cache -->';
 
-		$sliderlayout = $options[ 'select_slider_layout' ];
-		if ( $sliderlayout == 'fullwidth' ) :
-			$layoutclass = 'full-width';
-			$imagesize = 'featured-slider-full';
-		else :
-			$layoutclass = 'normal-width';
-			$imagesize = 'featured-slider-normal';
-		endif;
+		$imagesize = 'featured-slider-normal';
 
 		$catchflames_page_sliders = '
-		<div id="main-slider" class="featured-page-slider ' . $layoutclass . '">
+		<div id="main-slider" class="featured-page-slider">
         	<section class="featured-slider cycle-slideshow"
 			    data-cycle-log="false"
 			    data-cycle-pause-on-hover="true"

@@ -49,11 +49,11 @@ function catchflames_scripts_method() {
 		else if ( 'flipHorz' ==  $options['transition_effect'] || 'flipVert' ==  $options['transition_effect'] ){
 			wp_enqueue_script( 'jquery.cycle2.flip', get_template_directory_uri() . '/js/jquery.cycle/jquery.cycle2.flip.min.js', array( 'jquery.cycle2' ), '20140128', true );
 		}
-		// Suffle transition plugin addition
+		// Shuffle transition plugin addition
 		else if ( 'tileSlide' ==  $options['transition_effect'] || 'tileBlind' ==  $options['transition_effect'] ){
 			wp_enqueue_script( 'jquery.cycle2.tile', get_template_directory_uri() . '/js/jquery.cycle/jquery.cycle2.tile.min.js', array( 'jquery.cycle2' ), '20140128', true );
 		}
-		// Suffle transition plugin addition
+		// Shuffle transition plugin addition
 		else if ( 'shuffle' ==  $options['transition_effect'] ){
 			wp_enqueue_script( 'jquery.cycle2.shuffle', get_template_directory_uri() . '/js/jquery.cycle/jquery.cycle2.shuffle.min.js', array( 'jquery.cycle2' ), '20140128 ', true );
 		}
@@ -621,7 +621,16 @@ add_action( 'manage_posts_custom_column', 'catchflames_posts_id_column', 10, 2 )
 add_action( 'manage_pages_custom_column', 'catchflames_posts_id_column', 10, 2 );
 
 function catchflames_posts_id_column_css() {
-	echo '<style type="text/css">#postid { width: 40px; }</style>';
+	echo '
+	<style type="text/css">
+	    #postid { width: 80px; }
+	    @media screen and (max-width: 782px) {
+	        .wp-list-table #postid, .wp-list-table #the-list .postid { display: none; }
+	        .wp-list-table #the-list .is-expanded .postid {
+	            padding-left: 30px;
+	        }
+	    }
+    </style>';
 }
 add_action( 'admin_head-edit.php', 'catchflames_posts_id_column_css' );
 

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Flames\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-14 17:50+0545\n"
-"PO-Revision-Date: 2016-06-14 17:50+0545\n"
+"POT-Creation-Date: 2016-09-23 23:22+0545\n"
+"PO-Revision-Date: 2016-09-23 23:22+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: sv_SE\n"
@@ -142,7 +142,7 @@ msgstr "Kommentarer är avstängda."
 #: ../content-gallery.php:18 ../content-gallery.php:50 ../content-image.php:18
 #: ../content-link.php:18 ../content-page.php:13 ../content-quote.php:16
 #: ../content-status.php:17 ../content.php:31 ../content.php:35
-#: ../inc/catchflames-functions.php:907
+#: ../inc/catchflames-functions.php:916
 #, php-format
 msgid "Permalink to %s"
 msgstr "Direktlänk till %s"
@@ -318,11 +318,11 @@ msgstr "Status"
 msgid "Featured"
 msgstr "Utvalda"
 
-#: ../functions.php:161 ../inc/panel/theme-options.php:277
+#: ../functions.php:170 ../inc/panel/theme-options.php:277
 msgid "Fixed Header Top Menu"
 msgstr "Fixerad Toppmeny Sidhuvud"
 
-#: ../functions.php:162
+#: ../functions.php:171
 msgid "Primary Menu"
 msgstr "Primär Meny"
 
@@ -426,135 +426,135 @@ msgstr ""
 msgid "ID"
 msgstr "ID"
 
-#: ../inc/catchflames-functions.php:755
+#: ../inc/catchflames-functions.php:764
 #: ../inc/panel/customizer/customizer.php:606
 #: ../inc/panel/theme-options.php:115 ../inc/panel/theme-options.php:1039
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../inc/catchflames-functions.php:760
+#: ../inc/catchflames-functions.php:769
 #: ../inc/panel/customizer/customizer.php:616
 #: ../inc/panel/theme-options.php:116 ../inc/panel/theme-options.php:1047
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../inc/catchflames-functions.php:765
+#: ../inc/catchflames-functions.php:774
 #: ../inc/panel/customizer/customizer.php:626
 #: ../inc/panel/theme-options.php:117 ../inc/panel/theme-options.php:1055
 msgid "Google+"
 msgstr "Google+"
 
-#: ../inc/catchflames-functions.php:770 ../inc/panel/theme-options.php:1087
+#: ../inc/catchflames-functions.php:779 ../inc/panel/theme-options.php:1087
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: ../inc/catchflames-functions.php:775
+#: ../inc/catchflames-functions.php:784
 #: ../inc/panel/customizer/customizer.php:636
 #: ../inc/panel/theme-options.php:1063
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../inc/catchflames-functions.php:780
+#: ../inc/catchflames-functions.php:789
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ../inc/catchflames-functions.php:785
+#: ../inc/catchflames-functions.php:794
 #: ../inc/panel/customizer/customizer.php:656
 #: ../inc/panel/theme-options.php:1079
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../inc/catchflames-functions.php:790
+#: ../inc/catchflames-functions.php:799
 #: ../inc/panel/customizer/customizer.php:676
 #: ../inc/panel/theme-options.php:1095
 msgid "AIM"
 msgstr "AIM"
 
-#: ../inc/catchflames-functions.php:795
+#: ../inc/catchflames-functions.php:804
 #: ../inc/panel/customizer/customizer.php:686
 #: ../inc/panel/theme-options.php:1103
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../inc/catchflames-functions.php:800
+#: ../inc/catchflames-functions.php:809
 #: ../inc/panel/customizer/customizer.php:696
 #: ../inc/panel/theme-options.php:1112
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/catchflames-functions.php:805
+#: ../inc/catchflames-functions.php:814
 #: ../inc/panel/customizer/customizer.php:706
 #: ../inc/panel/theme-options.php:1120
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/catchflames-functions.php:810
+#: ../inc/catchflames-functions.php:819
 #: ../inc/panel/customizer/customizer.php:716
 #: ../inc/panel/theme-options.php:1128
 msgid "deviantART"
 msgstr "deviantART"
 
-#: ../inc/catchflames-functions.php:815
+#: ../inc/catchflames-functions.php:824
 #: ../inc/panel/customizer/customizer.php:726
 #: ../inc/panel/theme-options.php:1136
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/catchflames-functions.php:820
+#: ../inc/catchflames-functions.php:829
 #: ../inc/panel/customizer/customizer.php:736
 #: ../inc/panel/theme-options.php:1145
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../inc/catchflames-functions.php:825
+#: ../inc/catchflames-functions.php:834
 #: ../inc/panel/customizer/customizer.php:746
 #: ../inc/panel/theme-options.php:1153
 msgid "RSS"
 msgstr "RSS"
 
-#: ../inc/catchflames-functions.php:830
+#: ../inc/catchflames-functions.php:839
 #: ../inc/panel/customizer/customizer.php:756
 #: ../inc/panel/theme-options.php:1161
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: ../inc/catchflames-functions.php:835
+#: ../inc/catchflames-functions.php:844
 #: ../inc/panel/customizer/customizer.php:766
 #: ../inc/panel/theme-options.php:1169
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/catchflames-functions.php:840
+#: ../inc/catchflames-functions.php:849
 #: ../inc/panel/customizer/customizer.php:776
 #: ../inc/panel/theme-options.php:1177
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/catchflames-functions.php:845
+#: ../inc/catchflames-functions.php:854
 #: ../inc/panel/customizer/customizer.php:786
 #: ../inc/panel/theme-options.php:1185
 msgid "Soundcloud"
 msgstr "Soundcloud"
 
-#: ../inc/catchflames-functions.php:850
+#: ../inc/catchflames-functions.php:859
 #: ../inc/panel/customizer/customizer.php:796
 #: ../inc/panel/theme-options.php:1193
 msgid "Email"
 msgstr "E-mail"
 
-#: ../inc/catchflames-functions.php:855
+#: ../inc/catchflames-functions.php:864
 #: ../inc/panel/customizer/customizer.php:806
 #: ../inc/panel/theme-options.php:1201
 msgid "Contact"
 msgstr "Contact"
 
-#: ../inc/catchflames-functions.php:860
+#: ../inc/catchflames-functions.php:869
 #: ../inc/panel/customizer/customizer.php:816
 #: ../inc/panel/theme-options.php:1209
 msgid "Xing"
 msgstr "Xing"
 
-#: ../inc/catchflames-functions.php:865
+#: ../inc/catchflames-functions.php:874
 msgid "SpecificFeeds"
 msgstr ""
 
@@ -615,7 +615,7 @@ msgstr "Inget sidofält"
 msgid "Sidebar Layout Options"
 msgstr "Sidofält layoutalternativ"
 
-#: ../inc/catchflames-slider.php:190
+#: ../inc/catchflames-slider.php:176
 msgid ""
 "You have selected Page Slider but you haven't added the Page ID in "
 "\"Appearance => Theme Options => Featured Slider => Featured Page Slider "
@@ -1098,33 +1098,33 @@ msgid "Enable Slider"
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:508
-#: ../inc/panel/theme-options.php:871
-msgid "Select Slider Type"
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:520
 msgid "Transition Effect"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:532
+#: ../inc/panel/customizer/customizer.php:520
 #: ../inc/panel/theme-options.php:940
 msgid "Transition Delay"
 msgstr "Övergång Fördröjning"
 
-#: ../inc/panel/customizer/customizer.php:549
+#: ../inc/panel/customizer/customizer.php:537
 #: ../inc/panel/theme-options.php:950
 msgid "Transition Length"
 msgstr "Övergång Tid"
 
-#: ../inc/panel/customizer/customizer.php:578
+#: ../inc/panel/customizer/customizer.php:566
 #: ../inc/panel/theme-options.php:910
 msgid "Number of Slides"
 msgstr "Antal i Bildspel"
 
-#: ../inc/panel/customizer/customizer.php:579
+#: ../inc/panel/customizer/customizer.php:567
 msgid ""
 "Customizer page needs to be refreshed after saving if number of slides is "
 "changed"
+msgstr ""
+
+#: ../inc/panel/customizer/customizer.php:583
+#: ../inc/panel/theme-options.php:871
+msgid "Select Slider Type"
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:597
@@ -1212,8 +1212,8 @@ msgid "Theme Options By"
 msgstr "Tema Alternativ Av"
 
 #: ../inc/panel/theme-options.php:105
-msgid "http://catchthemes.com/"
-msgstr "http://catchthemes.com/"
+msgid "https://catchthemes.com/"
+msgstr "https://catchthemes.com/"
 
 #: ../inc/panel/theme-options.php:105 ../inc/panel/theme-options.php:106
 #: ../inc/panel/theme-options.php:1716
@@ -1221,7 +1221,7 @@ msgid "Catch Themes"
 msgstr "Catch Themes"
 
 #: ../inc/panel/theme-options.php:113
-msgid "http://catchthemes.com/support-forum/forum/catch-flames-pro-premium/"
+msgid "https://catchthemes.com/support-forum/forum/catch-flames-pro-premium/"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:113
@@ -1229,7 +1229,7 @@ msgid "Support Forum"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:114
-msgid "http://catchthemes.com/theme-instructions/catch-flames-pro/"
+msgid "https://catchthemes.com/theme-instructions/catch-flames-pro/"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:114
@@ -1454,8 +1454,8 @@ msgid "Menu Tutorial"
 msgstr "Meny Handledning"
 
 #: ../inc/panel/theme-options.php:454
-msgid "http://catchthemes.com/blog/custom-menus-wordpress-themes/"
-msgstr "http://catchthemes.com/blog/custom-menus-wordpress-themes/"
+msgid "https://catchthemes.com/blog/custom-menus-wordpress-themes/"
+msgstr "https://catchthemes.com/blog/custom-menus-wordpress-themes/"
 
 #: ../inc/panel/theme-options.php:454
 msgid "Click Here to Read Menu Tutorial"

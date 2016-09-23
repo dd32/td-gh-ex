@@ -56,4 +56,4 @@ do_action( 'catchflames_before_footer_sidebar' ); ?>
 /** 
  * catchflames_after_footer_sidebar hook
  */
-do_action( 'catchflames_after_footer_sidebar' );    
+do_action( 'catchflames_after_footer_sidebar' );

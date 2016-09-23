@@ -1,5 +1,18 @@
 == Change log ==
 
+Version 3.1
+* Bug Fixed: Content Width issue when selecting layout from metabox
+* Bug Fixed: Error select_slider_layout fixed(removed)
+* Fixed: Slider type and Content type priority issue
+* Fixed: ID column display issue in mobile devices
+* Updated: All instances of http://catchthemes.com changed to https://catchthemes.com
+* Bug Fixed: white space issue
+* Bug Fixed: Content Width issue when selecting layout from metabox
+* Fixed: ID column display issue in mobile devices
+* Updated: Instagram logo
+* Updated: All instances of http://catchthemes.com changed to https://catchthemes.com
+* Updated: Tags in styles.css header
+
 Version 3.0
 * Added: Promotion Headline Option
 * Added: Featured Content Option

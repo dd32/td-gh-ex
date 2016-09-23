@@ -503,18 +503,6 @@ function catchflames_customize_register( $wp_customize ) {
 			'default' 		=> $defaults['enable_slider'],
 			'choices'		=> catchflames_enable_slider_options(),
 		),
-		'select_slider_type' => array(
-			'id' 				=> 'select_slider_type',
-			'title' 			=> __( 'Select Slider Type', 'catch-flames' ),
-			'description'		=> '',
-			'field_type' 		=> 'select',
-			'sanitize' 			=> 'catchflames_sanitize_select',
-			'panel' 			=> 'featured_slider',
-			'section' 			=> 'slider_options',
-			'default' 			=> $defaults['select_slider_type'],
-			'active_callback'	=> 'catchflames_is_slider_active',
-			'choices'			=> catchflames_slider_types(),
-		),
 		'transition_effect' => array(
 			'id' 				=> 'transition_effect',
 			'title' 			=> __( 'Transition Effect', 'catch-flames' ),
@@ -589,6 +577,18 @@ function catchflames_customize_register( $wp_customize ) {
 						            'max'   => 20,
 						            'step'  => 1,
 						        	)
+		),
+		'select_slider_type' => array(
+			'id' 				=> 'select_slider_type',
+			'title' 			=> __( 'Select Slider Type', 'catch-flames' ),
+			'description'		=> '',
+			'field_type' 		=> 'select',
+			'sanitize' 			=> 'catchflames_sanitize_select',
+			'panel' 			=> 'featured_slider',
+			'section' 			=> 'slider_options',
+			'default' 			=> $defaults['select_slider_type'],
+			'active_callback'	=> 'catchflames_is_slider_active',
+			'choices'			=> catchflames_slider_types(),
 		),
 
 		//Social Links
@@ -865,17 +865,6 @@ function catchflames_customize_register( $wp_customize ) {
 			'section'         => 'featured_content',
 			'default'         => $defaults['featured_content_position'],
 		),
-		'featured_content_type' => array(
-			'active_callback' => 'catchflames_is_featured_content_active',
-			'id'              => 'featured_content_type',
-			'title'           => esc_html__( 'Select Content Type', 'catch-flames' ),
-			'description'     => '',
-			'field_type'      => 'select',
-			'sanitize'        => 'catchflames_sanitize_select',
-			'section'         => 'featured_content',
-			'default'         => $defaults['featured_content_type'],
-			'choices'         => catchflames_featured_content_types(),
-		),
 		'featured_content_headline' => array(
 			'active_callback' => 'catchflames_is_featured_content_active',
 			'id'              => 'featured_content_headline',
@@ -895,6 +884,17 @@ function catchflames_customize_register( $wp_customize ) {
 			'sanitize'        => 'wp_kses_post',
 			'section'         => 'featured_content',
 			'default'         => $defaults['featured_content_subheadline'],
+		),
+		'featured_content_type' => array(
+			'active_callback' => 'catchflames_is_featured_content_active',
+			'id'              => 'featured_content_type',
+			'title'           => esc_html__( 'Select Content Type', 'catch-flames' ),
+			'description'     => '',
+			'field_type'      => 'select',
+			'sanitize'        => 'catchflames_sanitize_select',
+			'section'         => 'featured_content',
+			'default'         => $defaults['featured_content_type'],
+			'choices'         => catchflames_featured_content_types(),
 		),
 		'featured_content_number' => array(
 			'active_callback' => 'catchflames_is_demo_featured_content_inactive',
@@ -1270,7 +1270,7 @@ function catchflames_customize_scripts() {
 	wp_register_script( 'catchflames_customizer_custom', get_template_directory_uri() . '/inc/panel/customizer-custom-scripts.js', array( 'jquery' ), '20140108', true );
 
     $catchflames_misc_links = array(
-							'upgrade_link' 				=> esc_url( 'http://catchthemes.com/themes/catch-flames-pro/' ),
+							'upgrade_link' 				=> esc_url( 'https://catchthemes.com/themes/catch-flames-pro/' ),
 							'upgrade_text'	 			=> __( 'Upgrade To Pro &raquo;', 'catch-flames' ),
 		);
 

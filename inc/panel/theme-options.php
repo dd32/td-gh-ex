@@ -102,7 +102,7 @@ function catchflames_theme_options_do_page() {
                 <div id="theme-option-title">
                     <h2 class="title"><?php _e( 'Theme Options By', 'catch-flames' ); ?></h2>
                     <h2 class="logo">
-                        <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catch-flames' ) ); ?>" title="<?php esc_attr_e( 'Catch Themes', 'catch-flames' ); ?>" target="_blank">
+                        <a href="<?php echo esc_url( __( 'https://catchthemes.com/', 'catch-flames' ) ); ?>" title="<?php esc_attr_e( 'Catch Themes', 'catch-flames' ); ?>" target="_blank">
                             <img src="<?php echo get_template_directory_uri().'/inc/panel/images/catch-themes.png'; ?>" alt="<?php _e( 'Catch Themes', 'catch-flames' ); ?>" />
                         </a>
                     </h2>
@@ -110,8 +110,8 @@ function catchflames_theme_options_do_page() {
 
                 <div id="theme-support">
                     <ul>
-                        <li><a class="button" href="<?php echo esc_url( __( 'http://catchthemes.com/support-forum/forum/catch-flames-pro-premium/','catch-flames' ) ); ?>" title="<?php esc_attr_e( 'Support Forum', 'catch-flames' ); ?>" target="_blank"><?php printf( __( 'Support Forum','catch-flames' ) ); ?></a></li>
-                        <li><a class="button" href="<?php echo esc_url( __( 'http://catchthemes.com/theme-instructions/catch-flames-pro/','catch-flames' ) ); ?>" title="<?php esc_attr_e( 'Theme Instruction', 'catch-flames' ); ?>" target="_blank"><?php printf( __( 'Theme Instruction','catch-flames' ) ); ?></a></li>
+                        <li><a class="button" href="<?php echo esc_url( __( 'https://catchthemes.com/support-forum/forum/catch-flames-pro-premium/','catch-flames' ) ); ?>" title="<?php esc_attr_e( 'Support Forum', 'catch-flames' ); ?>" target="_blank"><?php printf( __( 'Support Forum','catch-flames' ) ); ?></a></li>
+                        <li><a class="button" href="<?php echo esc_url( __( 'https://catchthemes.com/theme-instructions/catch-flames-pro/','catch-flames' ) ); ?>" title="<?php esc_attr_e( 'Theme Instruction', 'catch-flames' ); ?>" target="_blank"><?php printf( __( 'Theme Instruction','catch-flames' ) ); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url( __( 'https://www.facebook.com/catchthemes/','catch-flames' ) ); ?>" title="<?php esc_attr_e( 'Like Catch Themes on Facebook', 'catch-flames' ); ?>" target="_blank"><?php printf( __( 'Facebook','catch-flames' ) ); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url( __( 'https://twitter.com/catchthemes/','catch-flames' ) ); ?>" title="<?php esc_attr_e( 'Follow Catch Themes on Twitter', 'catch-flames' ); ?>" target="_blank"><?php printf( __( 'Twitter','catch-flames' ) ); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url( __( 'https://plus.google.com/+Catchthemes','catch-flames' ) ); ?>" title="<?php esc_attr_e( 'Follow Catch Themes on Google+', 'catch-flames' ); ?>" target="_blank"><?php printf( __( 'Google+','catch-flames' ) ); ?></a></li>
@@ -451,7 +451,7 @@ function catchflames_theme_options_do_page() {
                                 	<?php _e( 'Menu Tutorial', 'catch-flames' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                	<a class="button" href="<?php echo esc_url( __( 'http://catchthemes.com/blog/custom-menus-wordpress-themes/','catch-flames' ) ); ?>" title="<?php esc_attr_e( 'Menu Tutorial', 'catch-flames' ); ?>" target="_blank"><?php _e( 'Click Here to Read Menu Tutorial', 'catch-flames' );?></a>
+                                	<a class="button" href="<?php echo esc_url( __( 'https://catchthemes.com/blog/custom-menus-wordpress-themes/','catch-flames' ) ); ?>" title="<?php esc_attr_e( 'Menu Tutorial', 'catch-flames' ); ?>" target="_blank"><?php _e( 'Click Here to Read Menu Tutorial', 'catch-flames' );?></a>
                            		</div>
                          	</div><!-- .row -->
                             <div class="row">
@@ -1713,7 +1713,7 @@ function catchflames_theme_name() {
  */
 function catchflames_theme_author() {
 
-    return '<span class="theme-author"><a href="' . esc_url( 'http://catchthemes.com/' ) . '" target="_blank" title="' . esc_attr__( 'Catch Themes', 'catch-flames' ) . '">' . __( 'Catch Themes', 'catch-flames' ) . '</a></span>';
+    return '<span class="theme-author"><a href="' . esc_url( 'https://catchthemes.com/' ) . '" target="_blank" title="' . esc_attr__( 'Catch Themes', 'catch-flames' ) . '">' . __( 'Catch Themes', 'catch-flames' ) . '</a></span>';
 
 }
 
