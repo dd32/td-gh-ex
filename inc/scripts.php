@@ -3,14 +3,20 @@
 // Front-end scripts
 function ct_apex_load_scripts_styles() {
 
-	wp_enqueue_style( 'ct-apex-google-fonts', '//fonts.googleapis.com/css?family=Open+Sans:400,700|Satisfy' );
+	$font_args = array(
+		'family' => urlencode( 'Open Sans:400,700|Satisfy' ),
+		'subset' => urlencode( 'latin,latin-ext' )
+	);
+	$fonts_url = add_query_arg( $font_args, '//fonts.googleapis.com/css' );
+	
+	wp_enqueue_style( 'ct-apex-google-fonts', $fonts_url );
 
 	wp_enqueue_script( 'ct-apex-js', get_template_directory_uri() . '/js/build/production.min.js', array( 'jquery' ), '', true );
-	wp_localize_script( 'ct-apex-js', 'objectL10n', array(
-		'openMenu'       => __( 'open menu', 'apex' ),
-		'closeMenu'      => __( 'close menu', 'apex' ),
-		'openChildMenu'  => __( 'open dropdown menu', 'apex' ),
-		'closeChildMenu' => __( 'close dropdown menu', 'apex' )
+	wp_localize_script( 'ct-apex-js', 'ct_apex_objectL10n', array(
+		'openMenu'       => esc_html__( 'open menu', 'apex' ),
+		'closeMenu'      => esc_html__( 'close menu', 'apex' ),
+		'openChildMenu'  => esc_html__( 'open dropdown menu', 'apex' ),
+		'closeChildMenu' => esc_html__( 'close dropdown menu', 'apex' )
 	) );
 
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/font-awesome/css/font-awesome.min.css' );

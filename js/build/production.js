@@ -128,7 +128,7 @@ jQuery(document).ready(function($){
             $('html, body').animate({scrollTop: '0'}, 200);
 
             // change screen reader text
-            $(this).children('span').text(objectL10n.openMenu);
+            $(this).children('span').text(ct_apex_objectL10n.openMenu);
 
             // change aria text
             $(this).attr('aria-expanded', 'false');
@@ -142,7 +142,7 @@ jQuery(document).ready(function($){
             menuPrimaryContainer.css('max-height', menuHeight);
 
             // change screen reader text
-            $(this).children('span').text(objectL10n.closeMenu);
+            $(this).children('span').text(ct_apex_objectL10n.closeMenu);
 
             // change aria text
             $(this).attr('aria-expanded', 'true');
@@ -164,7 +164,7 @@ jQuery(document).ready(function($){
             $(this).siblings('ul').css('max-height', 0);
 
             // change screen reader text
-            $(this).children('span').text(objectL10n.openChildMenu);
+            $(this).children('span').text(ct_apex_objectL10n.openChildMenu);
 
             // change aria text
             $(this).attr('aria-expanded', 'false');
@@ -186,7 +186,7 @@ jQuery(document).ready(function($){
             menuPrimaryContainer.css('max-height', 9999);
 
             // change screen reader text
-            $(this).children('span').text(objectL10n.closeChildMenu);
+            $(this).children('span').text(ct_apex_objectL10n.closeChildMenu);
 
             // change aria text
             $(this).attr('aria-expanded', 'true');
@@ -218,7 +218,7 @@ jQuery(document).ready(function($){
 
             $('.featured-image').each(function () {
 
-                if ( !$(this).parent().parent('.post').hasClass('ratio-natural') ) {
+                if ( !$(this).parent().parent('.entry').hasClass('ratio-natural') ) {
 
                     var image = $(this).children('img').add($(this).children('a').children('img'));
 
