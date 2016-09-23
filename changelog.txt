@@ -1,12 +1,15 @@
 == Change Log ==
 
+Version 4.5.1
+* Fixed: ID column display issue in mobile devices
+
 Version 4.5
 * Added: Fitvid JS script for responsive videos support
 * Bug Fixed: Removed white space issue
 * Bug Fixed: Featured Slider Transition Length not changing from customizer
 * Bug Fixed: Meta box values not taking for default layout( sidebar layout ) in body class
-* Enhancment: Line height for heading tags
-* Enhancment: Used the_archive_title() and the_archive_description() in archive.php
+* Enhanced: Line height for heading tags
+* Enhanced: Used the_archive_title() and the_archive_description() in archive.php
 * Updated: Instagram logo
 * Updated: Styles.css tags
 * Updated: All instances of http://catchthemes.com changed to https://catchthemes.com

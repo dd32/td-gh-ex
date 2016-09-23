@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-18 12:36+0545\n"
-"PO-Revision-Date: 2016-07-18 12:36+0545\n"
+"POT-Creation-Date: 2016-09-23 13:49+0545\n"
+"PO-Revision-Date: 2016-09-23 13:49+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Kris Thomsen <mail@kristhomsen.dk>\n"
 "Language: da_DK\n"
@@ -390,109 +390,109 @@ msgstr ""
 msgid "ID"
 msgstr "ID"
 
-#: ../functions.php:776
+#: ../functions.php:785
 msgid "Name"
 msgstr "Navn"
 
-#: ../functions.php:778 ../functions.php:1005
+#: ../functions.php:787 ../functions.php:1014
 #: ../inc/customizer/customizer.php:613 ../inc/theme-options.php:808
 msgid "Email"
 msgstr "Email"
 
-#: ../functions.php:911
+#: ../functions.php:920
 msgid "Footer Social Links Menu"
 msgstr ""
 
-#: ../functions.php:915 ../inc/customizer/customizer.php:433
+#: ../functions.php:924 ../inc/customizer/customizer.php:433
 #: ../inc/theme-options.php:525 ../inc/theme-options.php:701
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../functions.php:920 ../inc/customizer/customizer.php:443
+#: ../functions.php:929 ../inc/customizer/customizer.php:443
 #: ../inc/theme-options.php:526 ../inc/theme-options.php:706
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../functions.php:925
+#: ../functions.php:934
 msgid "Google Plus"
 msgstr "Google Plus"
 
-#: ../functions.php:930
+#: ../functions.php:939
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: ../functions.php:935 ../inc/customizer/customizer.php:473
+#: ../functions.php:944 ../inc/customizer/customizer.php:473
 #: ../inc/theme-options.php:724
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../functions.php:940
+#: ../functions.php:949
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ../functions.php:945 ../inc/theme-options.php:736
+#: ../functions.php:954 ../inc/theme-options.php:736
 msgid "RSS Feed"
 msgstr "RSS Feed"
 
-#: ../functions.php:950 ../inc/theme-options.php:742
+#: ../functions.php:959 ../inc/theme-options.php:742
 msgid "Deviantart"
 msgstr "Deviantart"
 
-#: ../functions.php:955 ../inc/customizer/customizer.php:513
+#: ../functions.php:964 ../inc/customizer/customizer.php:513
 #: ../inc/theme-options.php:748
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../functions.php:960 ../inc/customizer/customizer.php:523
+#: ../functions.php:969 ../inc/customizer/customizer.php:523
 #: ../inc/theme-options.php:754
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../functions.php:965 ../inc/customizer/customizer.php:533
+#: ../functions.php:974 ../inc/customizer/customizer.php:533
 #: ../inc/theme-options.php:760
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../functions.php:970 ../inc/customizer/customizer.php:543
+#: ../functions.php:979 ../inc/customizer/customizer.php:543
 #: ../inc/theme-options.php:766
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../functions.php:975
+#: ../functions.php:984
 msgid "AIM"
 msgstr "AIM"
 
-#: ../functions.php:980 ../inc/customizer/customizer.php:563
+#: ../functions.php:989 ../inc/customizer/customizer.php:563
 #: ../inc/theme-options.php:778
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../functions.php:985 ../inc/customizer/customizer.php:573
+#: ../functions.php:994 ../inc/customizer/customizer.php:573
 #: ../inc/theme-options.php:784
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: ../functions.php:990 ../inc/customizer/customizer.php:583
+#: ../functions.php:999 ../inc/customizer/customizer.php:583
 #: ../inc/theme-options.php:790
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../functions.php:995 ../inc/customizer/customizer.php:593
+#: ../functions.php:1004 ../inc/customizer/customizer.php:593
 #: ../inc/theme-options.php:796
 msgid "Skype"
 msgstr "Skype"
 
-#: ../functions.php:1000 ../inc/customizer/customizer.php:603
+#: ../functions.php:1009 ../inc/customizer/customizer.php:603
 #: ../inc/theme-options.php:802
 msgid "Soundcloud"
 msgstr "Soundcloud"
 
-#: ../functions.php:1010 ../inc/customizer/customizer.php:623
+#: ../functions.php:1019 ../inc/customizer/customizer.php:623
 #: ../inc/theme-options.php:813
 msgid "Xing"
 msgstr "Xing"
 
-#: ../functions.php:1015 ../inc/customizer/customizer.php:633
+#: ../functions.php:1024 ../inc/customizer/customizer.php:633
 #: ../inc/theme-options.php:818
 msgid "Meetup"
 msgstr "Meetup"

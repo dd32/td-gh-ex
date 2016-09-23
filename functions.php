@@ -676,7 +676,16 @@ function catchbox_posts_id_column( $col, $val ) {
 add_action( 'manage_posts_custom_column', 'catchbox_posts_id_column', 10, 2 );
 
 function catchbox_posts_id_column_css() {
-	echo '<style type="text/css">#postid { width: 50px; }</style>';
+	echo '
+	<style type="text/css">
+	    #postid { width: 80px; }
+	    @media screen and (max-width: 782px) {
+	        .wp-list-table #postid, .wp-list-table #the-list .postid { display: none; }
+	        .wp-list-table #the-list .is-expanded .postid {
+	            padding-left: 30px;
+	        }
+	    }
+    </style>';
 }
 add_action( 'admin_head-edit.php', 'catchbox_posts_id_column_css' );
 
