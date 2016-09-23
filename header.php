@@ -129,4 +129,4 @@ do_action( 'adventurous_before' ); ?>
              * adventurous_content_sidebar_wrapper 10
 			 * adventurous_breadcrumb_display 20
              */
-            do_action( 'adventurous_content_sidebar' ); ?> 
+            do_action( 'adventurous_content_sidebar' );

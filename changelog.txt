@@ -1,4 +1,16 @@
-== Changelog ==
+= Changelog ==
+
+Version 2.0
+* Added: Active callbacks in Featured Content
+* Bug Fixed: white space issue
+* Bug Fixed: Renamed 'catchresponsive' with 'adventurous' as handle prefix for html5shiv enqueue
+* Bug Fixed: Sanitization in theme-options
+* Bug Fixed: Added option "Check to disable slider text" in Featured Slider Section in customizer(Previously present in theme options)
+* Fixed: ID column display issue in mobile devices
+* Updated: Instagram and YouTube logo
+* Updated: Content Width Implementation code
+* Updated: Tags in styles.css header
+* Updated: All instances of catchthemes.com converted to https
 
 Version 1.9.3
 * Updated German language file
@@ -142,5 +154,5 @@ Version 0.2
 
 
 Version 0.1
-* Initial release in http://catchthemes.com
+* Initial release in https://catchthemes.com
 * Submitted theme for review in http://wordpress.org

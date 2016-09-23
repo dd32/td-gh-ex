@@ -68,4 +68,4 @@
 			</div><!-- .author-link	-->
 		</div><!-- .author-description -->
 	</div><!-- .author-info -->
-<?php endif; ?> 
+<?php endif;

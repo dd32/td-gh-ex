@@ -135,7 +135,7 @@ function adventurous_site_link() {
  * @return string
  */
 function adventurous_shop_link() {
-	return '<a href="'. esc_url( __( 'http://catchthemes.com', 'adventurous' ) ) . '" target="_blank" title="' . esc_attr__( 'Catch Themes', 'adventurous' ) . '"><span>' . __( 'Catch Themes', 'adventurous' ) . '</span></a>';
+	return '<a href="'. esc_url( __( 'https://catchthemes.com', 'adventurous' ) ) . '" target="_blank" title="' . esc_attr__( 'Catch Themes', 'adventurous' ) . '"><span>' . __( 'Catch Themes', 'adventurous' ) . '</span></a>';
 }
 
 

@@ -476,47 +476,50 @@ function adventurous_customize_register( $wp_customize ) {
 
 		//Featured Content
 		'enable-featured' => array(
-			'id' 			=> 'enable-featured',
-			'title' 		=> __( 'Enable Featured Content', 'adventurous' ),
-			'description'	=> '',
-			'field_type' 	=> 'select',
-			'sanitize' 		=> 'adventurous_sanitize_select',
-			'panel' 		=> 'featured_content',
-			'section' 		=> 'featured_content_settings',
-			'default' 		=> $defaults['enable-featured'],
-			'choices'		=> adventurous_enable_featured_content_options(),
+			'id'              => 'enable-featured',
+			'title'           => __( 'Enable Featured Content', 'adventurous' ),
+			'description'     => '',
+			'field_type'      => 'select',
+			'sanitize'        => 'adventurous_sanitize_select',
+			'panel'           => 'featured_content',
+			'section'         => 'featured_content_settings',
+			'default'         => $defaults['enable-featured'],
+			'choices'         => adventurous_enable_featured_content_options(),
 		),
 		'homepage_featured_headline' => array(
-			'id' 			=> 'homepage_featured_headline',
-			'title' 		=> __( 'Featured Content Headline Text', 'adventurous' ),
-			'description'	=> __( 'Leave empty if you want to remove headline', 'adventurous' ),
-			'field_type' 	=> 'text',
-			'sanitize' 		=> 'sanitize_text_field',
-			'panel' 		=> 'featured_content',
-			'section' 		=> 'featured_content_settings',
-			'default' 		=> $defaults['homepage_featured_headline']
+			'id'              => 'homepage_featured_headline',
+			'title'           => __( 'Featured Content Headline Text', 'adventurous' ),
+			'description'     => __( 'Leave empty if you want to remove headline', 'adventurous' ),
+			'field_type'      => 'text',
+			'sanitize'        => 'sanitize_text_field',
+			'panel'           => 'featured_content',
+			'section'         => 'featured_content_settings',
+			'default'         => $defaults['homepage_featured_headline'],
+			'active_callback' => 'adventurous_is_featured_content_active'
 		),
 		'homepage_featured_subheadline' => array(
-			'id' 			=> 'homepage_featured_subheadline',
-			'title' 		=> __( 'Featured Content Subheadline Text ', 'adventurous' ),
-			'description'	=> __( 'Leave empty if you want to remove Subheadline', 'adventurous' ),
-			'field_type' 	=> 'text',
-			'sanitize' 		=> 'sanitize_text_field',
-			'panel' 		=> 'featured_content',
-			'section' 		=> 'featured_content_settings',
-			'default' 		=> $defaults['homepage_featured_subheadline']
+			'id'              => 'homepage_featured_subheadline',
+			'title'           => __( 'Featured Content Subheadline Text ', 'adventurous' ),
+			'description'     => __( 'Leave empty if you want to remove Subheadline', 'adventurous' ),
+			'field_type'      => 'text',
+			'sanitize'        => 'sanitize_text_field',
+			'panel'           => 'featured_content',
+			'section'         => 'featured_content_settings',
+			'default'         => $defaults['homepage_featured_subheadline'],
+			'active_callback' => 'adventurous_is_featured_content_active'
 		),
 
 		'homepage_featured_qty' => array(
-			'id' 			=> 'homepage_featured_qty',
-			'title' 		=> __( 'Number of Featured Content', 'adventurous' ),
-			'description'	=> '',
-			'field_type' 	=> 'number',
-			'sanitize' 		=> 'adventurous_sanitize_number_range',
-			'panel' 		=> 'featured_content',
-			'section' 		=> 'featured_content_settings',
-			'default' 		=> $defaults['homepage_featured_qty'],
-			'input_attrs' 	=> array(
+			'id'              => 'homepage_featured_qty',
+			'title'           => __( 'Number of Featured Content', 'adventurous' ),
+			'description'     => '',
+			'field_type'      => 'number',
+			'sanitize'        => 'adventurous_sanitize_number_range',
+			'panel'           => 'featured_content',
+			'section'         => 'featured_content_settings',
+			'default'         => $defaults['homepage_featured_qty'],
+			'active_callback' => 'adventurous_is_featured_content_active',
+			'input_attrs'     => array(
 					            'style' => 'width: 45px;',
 					            'min'   => 0,
 					            'max'   => 20,
@@ -524,15 +527,16 @@ function adventurous_customize_register( $wp_customize ) {
 					        	)
 		),
 		'homepage_featured_layout' => array(
-			'id' 			=> 'homepage_featured_layout',
-			'title' 		=> __( 'Featured Content Layout', 'adventurous' ),
-			'description'	=> '',
-			'field_type' 	=> 'radio',
-			'sanitize' 		=> 'adventurous_sanitize_select',
-			'panel' 		=> 'featured_content',
-			'section' 		=> 'featured_content_settings',
-			'default' 		=> $defaults['homepage_featured_layout'],
-			'choices'		=> adventurous_featured_content_layouts(),
+			'id'              => 'homepage_featured_layout',
+			'title'           => __( 'Featured Content Layout', 'adventurous' ),
+			'description'     => '',
+			'field_type'      => 'radio',
+			'sanitize'        => 'adventurous_sanitize_select',
+			'panel'           => 'featured_content',
+			'section'         => 'featured_content_settings',
+			'default'         => $defaults['homepage_featured_layout'],
+			'active_callback' => 'adventurous_is_featured_content_active',
+			'choices'         => adventurous_featured_content_layouts(),
 		),
 
 		//Slider Options
@@ -621,6 +625,17 @@ function adventurous_customize_register( $wp_customize ) {
 						            'max'   => 20,
 						            'step'  => 1,
 						        	)
+		),
+		'disable_slider_text' => array(
+			'id' 				=> 'disable_slider_text',
+			'title' 			=> __( 'Check to disable slider text', 'adventurous' ),
+			'description'		=> '',
+			'field_type' 		=> 'checkbox',
+			'sanitize' 			=> 'adventurous_sanitize_checkbox',
+			'panel' 			=> 'featured_slider',
+			'section' 			=> 'slider_options',
+			'default' 			=> $defaults['disable_slider_text'],
+			'active_callback'	=> 'adventurous_is_slider_active',
 		),
 
 		//Featured Post Slider
@@ -1188,9 +1203,10 @@ function adventurous_customize_register( $wp_customize ) {
 			new Adventurous_Note_Control(
 				$wp_customize, $theme_slug . 'options[homepage_featured_content_note][' . $i . ']',
 				array(
-					'label'		=> sprintf( __( 'Featured Content #%s', 'adventurous' ), $i ),
-					'section'   => $theme_slug .'featured_content_settings',
-					'settings'  => $theme_slug . 'options[homepage_featured_content_note][' . $i . ']',
+					'label'           => sprintf( __( 'Featured Content #%s', 'adventurous' ), $i ),
+					'section'         => $theme_slug .'featured_content_settings',
+					'settings'        => $theme_slug . 'options[homepage_featured_content_note][' . $i . ']',
+					'active_callback' => 'adventurous_is_featured_content_active'
 				)
 			)
 		);
@@ -1209,9 +1225,10 @@ function adventurous_customize_register( $wp_customize ) {
 			new WP_Customize_Image_Control(
 				$wp_customize, $theme_slug . 'options[homepage_featured_image][' . $i . ']',
 				array(
-					'label'		=> __( 'Image', 'adventurous' ),
-					'section'   => $theme_slug .'featured_content_settings',
-					'settings'  => $theme_slug . 'options[homepage_featured_image][' . $i . ']',
+					'label'           => __( 'Image', 'adventurous' ),
+					'section'         => $theme_slug .'featured_content_settings',
+					'settings'        => $theme_slug . 'options[homepage_featured_image][' . $i . ']',
+					'active_callback' => 'adventurous_is_featured_content_active'
 				)
 			)
 		);
@@ -1229,10 +1246,11 @@ function adventurous_customize_register( $wp_customize ) {
 		$wp_customize->add_control(
 			$theme_slug . 'options[homepage_featured_url][' . $i . ']',
 			array(
-				'label'		=> __( 'Link URL', 'adventurous' ),
-				'section'	=> $theme_slug .'featured_content_settings',
-				'settings'	=> $theme_slug . 'options[homepage_featured_url][' . $i . ']',
-				'type'		=> 'url'
+				'label'           => __( 'Link URL', 'adventurous' ),
+				'section'         => $theme_slug .'featured_content_settings',
+				'settings'        => $theme_slug . 'options[homepage_featured_url][' . $i . ']',
+				'type'            => 'url',
+				'active_callback' => 'adventurous_is_featured_content_active'
 			)
 		);
 
@@ -1249,10 +1267,11 @@ function adventurous_customize_register( $wp_customize ) {
 		$wp_customize->add_control(
 			$theme_slug . 'options[homepage_featured_base][' . $i . ']',
 			array(
-				'label'		=> __( 'Target. Open Link in New Window?', 'adventurous' ),
-				'section'	=> $theme_slug .'featured_content_settings',
-				'settings'	=> $theme_slug . 'options[homepage_featured_base][' . $i . ']',
-				'type'		=> 'checkbox'
+				'label'           => __( 'Target. Open Link in New Window?', 'adventurous' ),
+				'section'         => $theme_slug .'featured_content_settings',
+				'settings'        => $theme_slug . 'options[homepage_featured_base][' . $i . ']',
+				'type'            => 'checkbox',
+				'active_callback' => 'adventurous_is_featured_content_active'
 			)
 		);
 
@@ -1269,11 +1288,12 @@ function adventurous_customize_register( $wp_customize ) {
 		$wp_customize->add_control(
 			$theme_slug . 'options[homepage_featured_title][' . $i . ']',
 			array(
-				'label'			=> __( 'Title', 'adventurous' ),
-				'section'		=> $theme_slug .'featured_content_settings',
-				'settings'		=> $theme_slug . 'options[homepage_featured_title][' . $i . ']',
-				'description'	=> __( 'Leave empty if you want to remove title', 'adventurous' ),
-				'type'			=> 'text'
+				'label'           => __( 'Title', 'adventurous' ),
+				'section'         => $theme_slug .'featured_content_settings',
+				'settings'        => $theme_slug . 'options[homepage_featured_title][' . $i . ']',
+				'description'     => __( 'Leave empty if you want to remove title', 'adventurous' ),
+				'type'            => 'text',
+				'active_callback' => 'adventurous_is_featured_content_active'
 			)
 		);
 
@@ -1290,11 +1310,12 @@ function adventurous_customize_register( $wp_customize ) {
 		$wp_customize->add_control(
 			$theme_slug . 'options[homepage_featured_content][' . $i . ']',
 			array(
-				'label'			=> __( 'Content', 'adventurous' ),
-				'section'		=> $theme_slug .'featured_content_settings',
-				'settings'		=> $theme_slug . 'options[homepage_featured_content][' . $i . ']',
-				'description'	=> __( 'Appropriate Words: 10', 'adventurous' ),
-				'type'			=> 'textarea'
+				'label'           => __( 'Content', 'adventurous' ),
+				'section'         => $theme_slug .'featured_content_settings',
+				'settings'        => $theme_slug . 'options[homepage_featured_content][' . $i . ']',
+				'description'     => __( 'Appropriate Words: 10', 'adventurous' ),
+				'type'            => 'textarea',
+				'active_callback' => 'adventurous_is_featured_content_active'
 			)
 		);
 	}
@@ -1399,7 +1420,7 @@ function adventurous_customize_scripts() {
 	wp_register_script( 'adventurous_customizer_custom', get_template_directory_uri() . '/inc/panel/js/customizer-custom-scripts.js', array( 'jquery' ), '20140108', true );
 
     $adventurous_misc_links = array(
-							'upgrade_link' 				=> esc_url( 'http://catchthemes.com/themes/adventurous-pro/' ),
+							'upgrade_link' 				=> esc_url( 'https://catchthemes.com/themes/adventurous-pro/' ),
 							'upgrade_text'	 			=> __( 'Upgrade To Pro &raquo;', 'adventurous' ),
 		);
 

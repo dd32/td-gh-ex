@@ -98,3 +98,24 @@ if( ! function_exists( 'adventurous_is_category_slider_active' ) ) :
 		return ( ( $enable == 'enable-slider-allpage' || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && $enable == 'enable-slider-homepage' ) ) && 'category-slider' == $type );
 	}
 endif;
+
+if( ! function_exists( 'adventurous_is_featured_content_active' ) ) :
+	/**
+	* Return true if featured content is active
+	*
+	* @since Adventurous 1.9.4
+	*/
+	function adventurous_is_featured_content_active( $control ) {
+		global $wp_query;
+		
+		$page_id = $wp_query->get_queried_object_id();
+
+		// Front page display in Reading Settings
+		$page_for_posts = get_option('page_for_posts'); 
+
+		$enable = $control->manager->get_setting( 'adventurous_options[enable-featured]' )->value();
+
+		//return true only if previwed page on customizer matches the type of slider option selected
+		return ( $enable == 'allpage' || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && $enable == 'homepage' ) );
+	}
+endif;

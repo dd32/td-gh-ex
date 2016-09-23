@@ -90,21 +90,21 @@ function adventurous_theme_options_do_page() {
                 <div id="theme-option-title">
                     <h2 class="title"><?php _e( 'Theme Options By', 'adventurous' ); ?></h2>
                     <h2 class="logo">
-                        <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'adventurous' ) ); ?>" title="<?php esc_attr_e( 'Catch Themes', 'adventurous' ); ?>" target="_blank">
+                        <a href="<?php echo esc_url( __( 'https://catchthemes.com/', 'adventurous' ) ); ?>" title="<?php esc_attr_e( 'Catch Themes', 'adventurous' ); ?>" target="_blank">
                             <img src="<?php echo get_template_directory_uri().'/inc/panel/images/catch-themes.png'; ?>" alt="<?php _e( 'Catch Themes', 'adventurous' ); ?>" />
                         </a>
                     </h2>
                 </div><!-- #theme-option-title -->
 
                 <div id="upgradepro">
-                	<a class="button" href="<?php echo esc_url( __( 'http://catchthemes.com/themes/adventurous-pro/', 'adventurous' ) ); ?>" title="<?php esc_attr_e( 'Upgrade to Adventurous Pro', 'adventurous' ); ?>" target="_blank"><?php printf( __( 'Upgrade to Adventurous Pro','adventurous') ); ?></a>
+                	<a class="button" href="<?php echo esc_url( __( 'https://catchthemes.com/themes/adventurous-pro/', 'adventurous' ) ); ?>" title="<?php esc_attr_e( 'Upgrade to Adventurous Pro', 'adventurous' ); ?>" target="_blank"><?php printf( __( 'Upgrade to Adventurous Pro','adventurous') ); ?></a>
                	</div><!-- #upgradepro -->
 
                 <div id="theme-support">
                     <ul>
-                    	<li><a class="button donate" href="<?php echo esc_url(__('http://catchthemes.com/donate/','adventurous')); ?>" title="<?php esc_attr_e('Donate to Adventurous', 'adventurous'); ?>" target="_blank"><?php printf(__('Donate Now','adventurous')); ?></a></li>
-                        <li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/support/','adventurous')); ?>" title="<?php esc_attr_e('Support', 'adventurous'); ?>" target="_blank"><?php printf(__('Support','adventurous')); ?></a></li>
-                        <li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/theme-instructions/adventurous-pro/','adventurous')); ?>" title="<?php esc_attr_e('Theme Instruction', 'adventurous'); ?>" target="_blank"><?php printf(__('Theme Instruction','adventurous')); ?></a></li>
+                    	<li><a class="button donate" href="<?php echo esc_url(__('https://catchthemes.com/donate/','adventurous')); ?>" title="<?php esc_attr_e('Donate to Adventurous', 'adventurous'); ?>" target="_blank"><?php printf(__('Donate Now','adventurous')); ?></a></li>
+                        <li><a class="button" href="<?php echo esc_url(__('https://catchthemes.com/support/','adventurous')); ?>" title="<?php esc_attr_e('Support', 'adventurous'); ?>" target="_blank"><?php printf(__('Support','adventurous')); ?></a></li>
+                        <li><a class="button" href="<?php echo esc_url(__('https://catchthemes.com/theme-instructions/adventurous-pro/','adventurous')); ?>" title="<?php esc_attr_e('Theme Instruction', 'adventurous'); ?>" target="_blank"><?php printf(__('Theme Instruction','adventurous')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('https://www.facebook.com/catchthemes/','adventurous')); ?>" title="<?php esc_attr_e('Like Catch Themes on Facebook', 'adventurous'); ?>" target="_blank"><?php printf(__('Facebook','adventurous')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('https://twitter.com/catchthemes/','adventurous')); ?>" title="<?php esc_attr_e('Follow Catch Themes on Twitter', 'adventurous'); ?>" target="_blank"><?php printf(__('Twitter','adventurous')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('http://wordpress.org/support/view/theme-reviews/adventurous','adventurous')); ?>" title="<?php esc_attr_e('Rate us 5 Star on WordPress', 'adventurous'); ?>" target="_blank"><?php printf(__('5 Star Rating','adventurous')); ?></a></li>
@@ -1403,16 +1403,16 @@ function adventurous_theme_options_validate( $options ) {
 		$input_validated[ 'enable_promotion' ] = $input[ 'enable_promotion' ];
 	}
 	if( isset( $input[ 'homepage_headline' ] ) ) {
-		$input_validated['homepage_headline'] =  wp_kses_post( $input[ 'homepage_headline' ] ) ? $input [ 'homepage_headline' ] : $defaults[ 'homepage_headline' ];
+		$input_validated['homepage_headline'] =  wp_kses_post( $input[ 'homepage_headline' ] );
 	}
 	if( isset( $input[ 'homepage_subheadline' ] ) ) {
-		$input_validated['homepage_subheadline'] =  wp_kses_post( $input[ 'homepage_subheadline' ] ) ? $input [ 'homepage_subheadline' ] : $defaults[ 'homepage_subheadline' ];
+		$input_validated['homepage_subheadline'] =  wp_kses_post( $input[ 'homepage_subheadline' ] );
 	}
 	if( isset( $input[ 'homepage_headline_button' ] ) ) {
-		$input_validated['homepage_headline_button'] =  sanitize_text_field( $input[ 'homepage_headline_button' ] ) ? $input [ 'homepage_headline_button' ] : $defaults[ 'homepage_headline_button' ];
+		$input_validated['homepage_headline_button'] =  sanitize_text_field( $input[ 'homepage_headline_button' ] );
 	}
 	if( isset( $input[ 'homepage_headline_url' ] ) ) {
-		$input_validated['homepage_headline_url'] =  esc_url_raw( $input[ 'homepage_headline_url' ] ) ? $input [ 'homepage_headline_url' ] : $defaults[ 'homepage_headline_url' ];
+		$input_validated['homepage_headline_url'] =  esc_url_raw( $input[ 'homepage_headline_url' ] );
 	}
 	if ( isset( $input[ 'homepage_headline_target' ] ) ) {
 		$input_validated[ 'homepage_headline_target' ] = $input[ 'homepage_headline_target' ];
@@ -1440,7 +1440,7 @@ function adventurous_theme_options_validate( $options ) {
 		$input_validated[ 'page_featured_image' ] = $input[ 'page_featured_image' ];
 	}
 	if ( isset( $input[ 'featured_header_image' ] ) ) {
-		$input_validated[ 'featured_header_image' ] = esc_url_raw( $input[ 'featured_header_image' ] ) ? $input [ 'featured_header_image' ] : $defaults[ 'featured_header_image' ];
+		$input_validated[ 'featured_header_image' ] = esc_url_raw( $input[ 'featured_header_image' ] );
 	}
 	if ( isset( $input[ 'featured_header_image_alt' ] ) ) {
 		$input_validated[ 'featured_header_image_alt' ] = sanitize_text_field( $input[ 'featured_header_image_alt' ] );
@@ -1482,10 +1482,10 @@ function adventurous_theme_options_validate( $options ) {
 
     }
 	if( isset( $input[ 'homepage_featured_headline' ] ) ) {
-		$input_validated['homepage_featured_headline'] =  sanitize_text_field( $input[ 'homepage_featured_headline' ] ) ? $input [ 'homepage_featured_headline' ] : $defaults[ 'homepage_featured_headline' ];
+		$input_validated['homepage_featured_headline'] =  sanitize_text_field( $input[ 'homepage_featured_headline' ] );
 	}
 	if( isset( $input[ 'homepage_featured_subheadline' ] ) ) {
-		$input_validated['homepage_featured_subheadline'] =  sanitize_text_field( $input[ 'homepage_featured_subheadline' ] ) ? $input [ 'homepage_featured_subheadline' ] : $defaults[ 'homepage_featured_subheadline' ];
+		$input_validated['homepage_featured_subheadline'] =  sanitize_text_field( $input[ 'homepage_featured_subheadline' ] );
 	}
 	if ( isset( $input[ 'homepage_featured_image' ] ) ) {
 		$input_validated[ 'homepage_featured_image' ] = array();
@@ -1506,7 +1506,7 @@ function adventurous_theme_options_validate( $options ) {
 		$input_validated[ 'homepage_featured_layout' ] = $input[ 'homepage_featured_layout' ];
 	}
 	if ( isset( $input[ 'homepage_featured_qty' ] ) ) {
-		$input_validated[ 'homepage_featured_qty' ] = absint( $input[ 'homepage_featured_qty' ] ) ? $input [ 'homepage_featured_qty' ] : $defaults[ 'homepage_featured_qty' ];
+		$input_validated[ 'homepage_featured_qty' ] = absint( $input[ 'homepage_featured_qty' ] );
 		for ( $i = 1; $i <= $input [ 'homepage_featured_qty' ]; $i++ ) {
 			if ( !empty( $input[ 'homepage_featured_image' ][ $i ] ) ) {
 				$input_validated[ 'homepage_featured_image' ][ $i ] = esc_url_raw($input[ 'homepage_featured_image' ][ $i ] );
@@ -1694,7 +1694,7 @@ function adventurous_theme_options_validate( $options ) {
     }
     //data validation for excerpt length
     if ( isset( $input[ 'excerpt_length' ] ) ) {
-        $input_validated[ 'excerpt_length' ] = absint( $input[ 'excerpt_length' ] ) ? $input [ 'excerpt_length' ] : $defaults[ 'excerpt_length' ];
+        $input_validated[ 'excerpt_length' ] = absint( $input[ 'excerpt_length' ] );
     }
 	if ( isset( $input['reset_moretag'] ) ) {
 		// Our checkbox value is either 0 or 1
@@ -1709,7 +1709,7 @@ function adventurous_theme_options_validate( $options ) {
 
 
     if( isset( $input[ 'search_display_text' ] ) ) {
-        $input_validated[ 'search_display_text' ] = sanitize_text_field( $input[ 'search_display_text' ] ) ? $input [ 'search_display_text' ] : $defaults[ 'search_display_text' ];
+        $input_validated[ 'search_display_text' ] = sanitize_text_field( $input[ 'search_display_text' ] );
     }
 
 	// Data Validation for Featured Image

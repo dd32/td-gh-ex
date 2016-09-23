@@ -58,4 +58,4 @@ do_action( 'adventurous_before_footer_sidebar' ); ?>
 /** 
  * adventurous_after_footer_sidebar hook
  */
-do_action( 'adventurous_after_footer_sidebar' ); ?> 
+do_action( 'adventurous_after_footer_sidebar' );

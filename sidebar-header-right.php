@@ -34,4 +34,4 @@ if ( $options[ 'disable_header_right_sidebar' ] == "0" ) {	?>
 /** 
  * adventurous_after_header_right hook
  */
-do_action( 'adventurous_after_header_right' ); ?> 
+do_action( 'adventurous_after_header_right' );

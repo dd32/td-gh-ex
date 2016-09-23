@@ -56,19 +56,19 @@ class Adventurous_Important_Links extends WP_Customize_Control {
     	//Add Theme instruction, Support Forum, Changelog, Donate link, Review, Facebook, Twitter, Google+, Pinterest links
         $important_links = array(
 						'theme_instructions' => array(
-							'link'	=> esc_url( 'http://catchthemes.com/theme-instructions/adventurous/' ),
+							'link'	=> esc_url( 'https://catchthemes.com/theme-instructions/adventurous/' ),
 							'text' 	=> __( 'Theme Instructions', 'adventurous' ),
 							),
 						'support' => array(
-							'link'	=> esc_url( 'http://catchthemes.com/support/' ),
+							'link'	=> esc_url( 'https://catchthemes.com/support/' ),
 							'text' 	=> __( 'Support', 'adventurous' ),
 							),
 						'changelog' => array(
-							'link'	=> esc_url( 'http://catchthemes.com/changelogs/adventurous-theme/' ),
+							'link'	=> esc_url( 'https://catchthemes.com/changelogs/adventurous-theme/' ),
 							'text' 	=> __( 'Changelog', 'adventurous' ),
 							),
 						'donate' => array(
-							'link'	=> esc_url( 'http://catchthemes.com/donate/' ),
+							'link'	=> esc_url( 'https://catchthemes.com/donate/' ),
 							'text' 	=> __( 'Donate Now', 'adventurous' ),
 							),
 						'review' => array(

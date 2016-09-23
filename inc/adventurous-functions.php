@@ -74,8 +74,8 @@ function adventurous_scripts() {
 	}
 
 	// Load the html5 shiv.
-	wp_enqueue_script( 'catchresponsive-html5', get_template_directory_uri() . '/js/html5.min.js', array(), '3.7.3' );
-	wp_script_add_data( 'catchresponsive-html5', 'conditional', 'lt IE 9' );
+	wp_enqueue_script( 'adventurous-html5', get_template_directory_uri() . '/js/html5.min.js', array(), '3.7.3' );
+	wp_script_add_data( 'adventurous-html5', 'conditional', 'lt IE 9' );
 
 	/**
 	 * Browser Specific Enqueue Script
@@ -875,7 +875,16 @@ add_action( 'manage_posts_custom_column', 'adventurous_posts_id_column', 10, 2 )
 add_action( 'manage_pages_custom_column', 'adventurous_posts_id_column', 10, 2 );
 
 function adventurous_posts_id_column_css() {
-	echo '<style type="text/css">#postid { width: 40px; }</style>';
+	echo '
+	<style type="text/css">
+	    #postid { width: 80px; }
+	    @media screen and (max-width: 782px) {
+	        .wp-list-table #postid, .wp-list-table #the-list .postid { display: none; }
+	        .wp-list-table #the-list .is-expanded .postid {
+	            padding-left: 30px;
+	        }
+	    }
+    </style>';
 }
 add_action( 'admin_head-edit.php', 'adventurous_posts_id_column_css' );
 

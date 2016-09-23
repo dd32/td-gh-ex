@@ -16,11 +16,7 @@ if ( ! function_exists( 'adventurous_content_width' ) ) :
 	 * @global int $content_width
 	 */
 	function adventurous_content_width() {
-		$layout  = adventurous_get_theme_layout();
-
-		$content_width = 800;
-
-		$GLOBALS['content_width'] = apply_filters( 'adventurous_content_width', $content_width );
+		$GLOBALS['content_width'] = apply_filters( 'adventurous_content_width', 800 );
 	}
 endif;
 add_action( 'after_setup_theme', 'adventurous_content_width', 0 );
@@ -170,7 +166,7 @@ function adventurous_setup() {
 			'width'       => 245,
 			'flex-height' => true,
 			'flex-width'  => true,
-		) );	
+		) );
 	}
 
 }
