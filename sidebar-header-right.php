@@ -34,4 +34,4 @@ if ( $options[ 'disable_header_right_sidebar' ] == "0" ) {	?>
 /**
  * catchkathmandu_after_header_right hook
  */
-do_action( 'catchkathmandu_after_header_right' ); ?>
+do_action( 'catchkathmandu_after_header_right' );

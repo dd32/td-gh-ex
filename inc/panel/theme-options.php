@@ -90,21 +90,21 @@ function catchkathmandu_theme_options_do_page() {
                 <div id="theme-option-title">
                     <h2 class="title"><?php _e( 'Theme Options By', 'catch-kathmandu' ); ?></h2>
                     <h2 class="logo">
-                        <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'catch-kathmandu' ) ); ?>" title="<?php esc_attr_e( 'Catch Themes', 'catch-kathmandu' ); ?>" target="_blank">
+                        <a href="<?php echo esc_url( __( 'https://catchthemes.com/', 'catch-kathmandu' ) ); ?>" title="<?php esc_attr_e( 'Catch Themes', 'catch-kathmandu' ); ?>" target="_blank">
                             <img src="<?php echo get_template_directory_uri().'/inc/panel/images/catch-themes.png'; ?>" alt="<?php _e( 'Catch Themes', 'catch-kathmandu' ); ?>" />
                         </a>
                     </h2>
                 </div><!-- #theme-option-title -->
 
                 <div id="upgradepro">
-                	<a class="button" href="<?php echo esc_url(__('http://catchthemes.com/themes/catch-kathmandu-pro/','catch-kathmandu')); ?>" title="<?php esc_attr_e('Upgrade to Catch Kathmandu Pro', 'catch-kathmandu'); ?>" target="_blank"><?php printf(__('Upgrade to Catch Kathmandu Pro','catch-kathmandu')); ?></a>
+                	<a class="button" href="<?php echo esc_url(__('https://catchthemes.com/themes/catch-kathmandu-pro/','catch-kathmandu')); ?>" title="<?php esc_attr_e('Upgrade to Catch Kathmandu Pro', 'catch-kathmandu'); ?>" target="_blank"><?php printf(__('Upgrade to Catch Kathmandu Pro','catch-kathmandu')); ?></a>
                	</div><!-- #upgradepro -->
 
                 <div id="theme-support">
                     <ul>
-                    	<li><a class="button donate" href="<?php echo esc_url(__('http://catchthemes.com/donate/','catch-kathmandu')); ?>" title="<?php esc_attr_e('Donate to Catch Kathmandu', 'catch-kathmandu'); ?>" target="_blank"><?php printf(__('Donate Now','catch-kathmandu')); ?></a></li>
-                        <li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/support/','catch-kathmandu')); ?>" title="<?php esc_attr_e('Support', 'catch-kathmandu'); ?>" target="_blank"><?php printf(__('Support','catch-kathmandu')); ?></a></li>
-                        <li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/theme-instructions/catch-kathmandu/','catch-kathmandu')); ?>" title="<?php esc_attr_e('Theme Instruction', 'catch-kathmandu'); ?>" target="_blank"><?php printf(__('Theme Instruction','catch-kathmandu')); ?></a></li>
+                    	<li><a class="button donate" href="<?php echo esc_url(__('https://catchthemes.com/donate/','catch-kathmandu')); ?>" title="<?php esc_attr_e('Donate to Catch Kathmandu', 'catch-kathmandu'); ?>" target="_blank"><?php printf(__('Donate Now','catch-kathmandu')); ?></a></li>
+                        <li><a class="button" href="<?php echo esc_url(__('https://catchthemes.com/support/','catch-kathmandu')); ?>" title="<?php esc_attr_e('Support', 'catch-kathmandu'); ?>" target="_blank"><?php printf(__('Support','catch-kathmandu')); ?></a></li>
+                        <li><a class="button" href="<?php echo esc_url(__('https://catchthemes.com/theme-instructions/catch-kathmandu/','catch-kathmandu')); ?>" title="<?php esc_attr_e('Theme Instruction', 'catch-kathmandu'); ?>" target="_blank"><?php printf(__('Theme Instruction','catch-kathmandu')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('https://www.facebook.com/catchthemes/','catch-kathmandu')); ?>" title="<?php esc_attr_e('Like Catch Themes on Facebook', 'catch-kathmandu'); ?>" target="_blank"><?php printf(__('Facebook','catch-kathmandu')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('https://twitter.com/catchthemes/','catch-kathmandu')); ?>" title="<?php esc_attr_e('Follow Catch Themes on Twitter', 'catch-kathmandu'); ?>" target="_blank"><?php printf(__('Twitter','catch-kathmandu')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('http://wordpress.org/support/view/theme-reviews/catch-kathmandu','catch-kathmandu')); ?>" title="<?php esc_attr_e('Rate us 5 Star on WordPress', 'catch-kathmandu'); ?>" target="_blank"><?php printf(__('5 Star Rating','catch-kathmandu')); ?></a></li>

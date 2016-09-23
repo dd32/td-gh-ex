@@ -1527,7 +1527,7 @@ function catchkathmandu_customize_scripts() {
 	wp_register_script( 'catchkathmandu_customizer_custom', get_template_directory_uri() . '/inc/panel/js/customizer-custom-scripts.js', array( 'jquery' ), '20140108', true );
 
     $catchkathmandu_misc_links = array(
-							'upgrade_link' 				=> esc_url( 'http://catchthemes.com/themes/catch-kathmandu-pro/' ),
+							'upgrade_link' 				=> esc_url( 'https://catchthemes.com/themes/catch-kathmandu-pro/' ),
 							'upgrade_text'	 			=> __( 'Upgrade To Pro &raquo;', 'catch-kathmandu' ),
 		);
 

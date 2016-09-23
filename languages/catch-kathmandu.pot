@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Kathmandu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-19 20:36+0545\n"
-"PO-Revision-Date: 2016-04-19 20:36+0545\n"
+"POT-Creation-Date: 2016-09-23 23:35+0545\n"
+"PO-Revision-Date: 2016-09-23 23:35+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: en_US\n"
@@ -454,8 +454,8 @@ msgstr ""
 msgid "ID"
 msgstr ""
 
-#: ../inc/catchkathmandu-functions.php:1839
-#: ../inc/catchkathmandu-functions.php:1852
+#: ../inc/catchkathmandu-functions.php:1848
+#: ../inc/catchkathmandu-functions.php:1861
 msgid "Menu"
 msgstr ""
 
@@ -596,12 +596,12 @@ msgid "Title (optional):"
 msgstr ""
 
 #. translators: header image description
-#: ../inc/custom-header.php:80
+#: ../inc/custom-header.php:79
 msgid "Default Logo"
 msgstr ""
 
 #. translators: header image description
-#: ../inc/custom-header.php:86
+#: ../inc/custom-header.php:85
 msgid "Catch Kathmandu Logo"
 msgstr ""
 
@@ -625,7 +625,7 @@ msgid "Y"
 msgstr ""
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:146
-msgid "http://catchthemes.com"
+msgid "https://catchthemes.com"
 msgstr ""
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:146
@@ -1304,11 +1304,11 @@ msgid "Theme Options By"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:93
-msgid "http://catchthemes.com/"
+msgid "https://catchthemes.com/"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:100
-msgid "http://catchthemes.com/themes/catch-kathmandu-pro/"
+msgid "https://catchthemes.com/themes/catch-kathmandu-pro/"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:100
@@ -1316,7 +1316,7 @@ msgid "Upgrade to Catch Kathmandu Pro"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:105
-msgid "http://catchthemes.com/donate/"
+msgid "https://catchthemes.com/donate/"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:105
@@ -1324,11 +1324,11 @@ msgid "Donate to Catch Kathmandu"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:106
-msgid "http://catchthemes.com/support/"
+msgid "https://catchthemes.com/support/"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:107
-msgid "http://catchthemes.com/theme-instructions/catch-kathmandu/"
+msgid "https://catchthemes.com/theme-instructions/catch-kathmandu/"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:107

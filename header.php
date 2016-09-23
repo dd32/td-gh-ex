@@ -123,4 +123,4 @@ do_action( 'catchkathmandu_before' ); ?>
          *
 	 	 * catchkathmandu_homepage_featured_display 10
          */
-        do_action( 'catchkathmandu_content_sidebar_start' ); ?>        
+        do_action( 'catchkathmandu_content_sidebar_start' );       

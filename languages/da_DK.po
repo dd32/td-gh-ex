@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Kathmandu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-19 20:37+0545\n"
-"PO-Revision-Date: 2016-04-19 20:37+0545\n"
+"POT-Creation-Date: 2016-09-23 23:35+0545\n"
+"PO-Revision-Date: 2016-09-23 23:35+0545\n"
 "Last-Translator: Johan Michaelsen <johan.orgel@post.tele.dk>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: da_DK\n"
@@ -469,8 +469,8 @@ msgstr "Meetup"
 msgid "ID"
 msgstr "ID"
 
-#: ../inc/catchkathmandu-functions.php:1839
-#: ../inc/catchkathmandu-functions.php:1852
+#: ../inc/catchkathmandu-functions.php:1848
+#: ../inc/catchkathmandu-functions.php:1861
 msgid "Menu"
 msgstr "Menu"
 
@@ -613,12 +613,12 @@ msgid "Title (optional):"
 msgstr "Title (optional):"
 
 #. translators: header image description
-#: ../inc/custom-header.php:80
+#: ../inc/custom-header.php:79
 msgid "Default Logo"
 msgstr "Standard logo"
 
 #. translators: header image description
-#: ../inc/custom-header.php:86
+#: ../inc/custom-header.php:85
 msgid "Catch Kathmandu Logo"
 msgstr "Catch Kathmandu Logo"
 
@@ -642,8 +642,8 @@ msgid "Y"
 msgstr "Y"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:146
-msgid "http://catchthemes.com"
-msgstr "http://catchthemes.com"
+msgid "https://catchthemes.com"
+msgstr "https://catchthemes.com"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:146
 #: ../inc/panel/theme-options.php:93 ../inc/panel/theme-options.php:94
@@ -1334,32 +1334,32 @@ msgid "Theme Options By"
 msgstr "Tema indstillinger af"
 
 #: ../inc/panel/theme-options.php:93
-msgid "http://catchthemes.com/"
-msgstr "http://catchthemes.com/"
+msgid "https://catchthemes.com/"
+msgstr "https://catchthemes.com/"
 
 #: ../inc/panel/theme-options.php:100
-msgid "http://catchthemes.com/themes/catch-kathmandu-pro/"
-msgstr "http://catchthemes.com/themes/catch-kathmandu-pro/"
+msgid "https://catchthemes.com/themes/catch-kathmandu-pro/"
+msgstr "https://catchthemes.com/themes/catch-kathmandu-pro/"
 
 #: ../inc/panel/theme-options.php:100
 msgid "Upgrade to Catch Kathmandu Pro"
 msgstr "Opgradér til Catch Kathmandu Pro"
 
 #: ../inc/panel/theme-options.php:105
-msgid "http://catchthemes.com/donate/"
-msgstr "http://catchthemes.com/donate/"
+msgid "https://catchthemes.com/donate/"
+msgstr "https://catchthemes.com/donate/"
 
 #: ../inc/panel/theme-options.php:105
 msgid "Donate to Catch Kathmandu"
 msgstr "Donér til Catch Kathmandu"
 
 #: ../inc/panel/theme-options.php:106
-msgid "http://catchthemes.com/support/"
-msgstr "http://catchthemes.com/support/"
+msgid "https://catchthemes.com/support/"
+msgstr "https://catchthemes.com/support/"
 
 #: ../inc/panel/theme-options.php:107
-msgid "http://catchthemes.com/theme-instructions/catch-kathmandu/"
-msgstr "http://catchthemes.com/theme-instructions/catch-kathmandu/"
+msgid "https://catchthemes.com/theme-instructions/catch-kathmandu/"
+msgstr "https://catchthemes.com/theme-instructions/catch-kathmandu/"
 
 #: ../inc/panel/theme-options.php:107
 msgid "Theme Instruction"
@@ -1959,11 +1959,11 @@ msgstr "Søg"
 #~ msgid "Webmaster Tools"
 #~ msgstr "Webmaster Værktøjer"
 
-#~ msgid "http://catchthemes.com/themes/catch-everest-pro/"
-#~ msgstr "http://catchthemes.com/themes/catch-everest-pro/"
+#~ msgid "https://catchthemes.com/themes/catch-everest-pro/"
+#~ msgstr "https://catchthemes.com/themes/catch-everest-pro/"
 
-#~ msgid "http://catchthemes.com/theme-instructions/catch-everest/"
-#~ msgstr "http://catchthemes.com/theme-instructions/catch-everest/"
+#~ msgid "https://catchthemes.com/theme-instructions/catch-everest/"
+#~ msgstr "https://catchthemes.com/theme-instructions/catch-everest/"
 
 #~ msgid "http://wordpress.org/support/view/theme-reviews/catch-everest"
 #~ msgstr "http://wordpress.org/support/view/theme-reviews/catch-everest"
@@ -2230,8 +2230,8 @@ msgstr "Søg"
 #~ msgid "Theme:"
 #~ msgstr "Tema:"
 
-#~ msgid "http://catchthemes.com/theme-instructions/catch-everest-pro/"
-#~ msgstr "http://catchthemes.com/theme-instructions/catch-everest-pro/"
+#~ msgid "https://catchthemes.com/theme-instructions/catch-everest-pro/"
+#~ msgstr "https://catchthemes.com/theme-instructions/catch-everest-pro/"
 
 #~ msgid "Enable Zoom in Mobile Devices?"
 #~ msgstr "Aktver zoom in på mobiler?"

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Kathmandu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-19 20:37+0545\n"
-"PO-Revision-Date: 2016-04-19 20:37+0545\n"
+"POT-Creation-Date: 2016-09-23 23:36+0545\n"
+"PO-Revision-Date: 2016-09-23 23:36+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: it\n"
@@ -465,8 +465,8 @@ msgstr "Meetup"
 msgid "ID"
 msgstr "ID"
 
-#: ../inc/catchkathmandu-functions.php:1839
-#: ../inc/catchkathmandu-functions.php:1852
+#: ../inc/catchkathmandu-functions.php:1848
+#: ../inc/catchkathmandu-functions.php:1861
 msgid "Menu"
 msgstr "Menu"
 
@@ -607,12 +607,12 @@ msgid "Title (optional):"
 msgstr "Titolo (opzionale):"
 
 #. translators: header image description
-#: ../inc/custom-header.php:80
+#: ../inc/custom-header.php:79
 msgid "Default Logo"
 msgstr "Logo di defalut"
 
 #. translators: header image description
-#: ../inc/custom-header.php:86
+#: ../inc/custom-header.php:85
 msgid "Catch Kathmandu Logo"
 msgstr "Catch Kathmandu Logo"
 
@@ -636,8 +636,8 @@ msgid "Y"
 msgstr "Y"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:146
-msgid "http://catchthemes.com"
-msgstr "http://catchthemes.com"
+msgid "https://catchthemes.com"
+msgstr "https://catchthemes.com"
 
 #: ../inc/panel/catchkathmandu-theme-options-defaults.php:146
 #: ../inc/panel/theme-options.php:93 ../inc/panel/theme-options.php:94
@@ -1317,32 +1317,32 @@ msgid "Theme Options By"
 msgstr "Opzioni del tema da"
 
 #: ../inc/panel/theme-options.php:93
-msgid "http://catchthemes.com/"
-msgstr "http://catchthemes.com/"
+msgid "https://catchthemes.com/"
+msgstr "https://catchthemes.com/"
 
 #: ../inc/panel/theme-options.php:100
-msgid "http://catchthemes.com/themes/catch-kathmandu-pro/"
-msgstr "http://catchthemes.com/themes/catch-kathmandu-pro/"
+msgid "https://catchthemes.com/themes/catch-kathmandu-pro/"
+msgstr "https://catchthemes.com/themes/catch-kathmandu-pro/"
 
 #: ../inc/panel/theme-options.php:100
 msgid "Upgrade to Catch Kathmandu Pro"
 msgstr "Aggiorna a Catch Kathmandu Pro"
 
 #: ../inc/panel/theme-options.php:105
-msgid "http://catchthemes.com/donate/"
-msgstr "http://catchthemes.com/donate/"
+msgid "https://catchthemes.com/donate/"
+msgstr "https://catchthemes.com/donate/"
 
 #: ../inc/panel/theme-options.php:105
 msgid "Donate to Catch Kathmandu"
 msgstr "Dona a Catch Kathmandu"
 
 #: ../inc/panel/theme-options.php:106
-msgid "http://catchthemes.com/support/"
-msgstr "http://catchthemes.com/support/"
+msgid "https://catchthemes.com/support/"
+msgstr "https://catchthemes.com/support/"
 
 #: ../inc/panel/theme-options.php:107
-msgid "http://catchthemes.com/theme-instructions/catch-kathmandu/"
-msgstr "http://catchthemes.com/theme-instructions/catch-kathmandu/"
+msgid "https://catchthemes.com/theme-instructions/catch-kathmandu/"
+msgstr "https://catchthemes.com/theme-instructions/catch-kathmandu/"
 
 #: ../inc/panel/theme-options.php:107
 msgid "Theme Instruction"
@@ -2122,8 +2122,8 @@ msgstr "Cerca"
 #~ msgid "Add Advertisement Code or Image URL"
 #~ msgstr "Add Advertisement Code or Image URL"
 
-#~ msgid "http://catchthemes.com/support-forum/forum/catch-everest-public/"
-#~ msgstr "http://catchthemes.com/support-forum/forum/catch-everest-public/"
+#~ msgid "https://catchthemes.com/support-forum/forum/catch-everest-public/"
+#~ msgstr "https://catchthemes.com/support-forum/forum/catch-everest-public/"
 
 #~ msgid "Site Verification"
 #~ msgstr "Verifica del sito"

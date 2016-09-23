@@ -1,5 +1,13 @@
 == Change log ==
 
+Version 3.8
+* Bug Fixed: white space issue
+* Bug Fixed: Renamed 'catchresponsive' with 'catchkathmandu' as handle prefix for html5shiv enqueue
+* Bug Fixed: ID column display issue in mobile devices
+* Removed: max-width parameter in custom header(depreciated)
+* Updated: Instagram and YouTube logo
+* Updated: All instances of http://catchthemes.com changed to https://catchthemes.com
+
 Version 3.7.2
 * Bug Fixed: Customizer options for Custom Header ( Reported by igarciadelamo )
 
@@ -202,5 +210,5 @@ Version 0.2
 * Re-uploading in WordPress.org as the previous ticket got empty
 
 Version 0.1
-* Initial release in http://catchthemes.com
+* Initial release in https://catchthemes.com
 * Submitted theme for review in http://wordpress.org

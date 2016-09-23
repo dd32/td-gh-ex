@@ -143,7 +143,7 @@ function catchkathmandu_site_link() {
  * @return string
  */
 function catchkathmandu_shop_link() {
-	return '<a href="'. esc_url( __( 'http://catchthemes.com', 'catch-kathmandu' ) ) . '" target="_blank" title="' . esc_attr__( 'Catch Themes', 'catch-kathmandu' ) . '"><span>' . __( 'Catch Themes', 'catch-kathmandu' ) . '</span></a>';
+	return '<a href="'. esc_url( __( 'https://catchthemes.com', 'catch-kathmandu' ) ) . '" target="_blank" title="' . esc_attr__( 'Catch Themes', 'catch-kathmandu' ) . '"><span>' . __( 'Catch Themes', 'catch-kathmandu' ) . '</span></a>';
 }
 
 
@@ -316,6 +316,3 @@ function catchkathmandu_transition_effects() {
 
 	return apply_filters( 'catchkathmandu_transition_effects', $options );
 }
-
-
-

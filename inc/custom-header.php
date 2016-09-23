@@ -43,7 +43,6 @@ function catchkathmandu_custom_header_setup() {
 		// Set height and width, with a maximum value for the width.
 		'height'                 => 85,
 		'width'                  => 84,
-		'max-width'              => 1280,
 
 		// Support flexible height and width.
 		'flex-height'            => true,

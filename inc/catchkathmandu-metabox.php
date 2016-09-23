@@ -266,4 +266,4 @@ function catchkathmandu_save_custom_meta( $post_id ) {
 	 } // end foreach 
 	 
 }
-add_action('save_post', 'catchkathmandu_save_custom_meta'); 
+add_action('save_post', 'catchkathmandu_save_custom_meta');

@@ -48,4 +48,4 @@
         </div><!-- #third .widget-area -->
         <?php endif; ?>        
     </div><!-- #supplementary -->
-</div><!-- #footer-sidebar -->    
+</div><!-- #footer-sidebar -->  

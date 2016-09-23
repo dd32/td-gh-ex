@@ -24,4 +24,4 @@ if ( is_active_sidebar( 'sidebar-header-top' ) ) {	?>
 /** 
  * catchkathmandu_after_header_top hook
  */
-do_action( 'catchkathmandu_after_header_top' ); ?> 
+do_action( 'catchkathmandu_after_header_top' );
