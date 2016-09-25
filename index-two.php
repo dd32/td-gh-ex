@@ -71,12 +71,12 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 						</a>
 				</figure>	
                     <div class="welcome_right_content">
-    					<h1><a href="#"><?php _e('About AccessPress Lite','accesspresslite') ?></a></h1>
+    					<h1><a href="#"><?php _e('About AccessPress Lite','accesspress-lite') ?></a></h1>
     					<div  class="welcome-detail welcome-detail-full-width">
     					<p><?php 
-    						_e("AccessPress Lite is a HTML5 & CSS3 Responsive WordPress Business Theme with clean, minimal yet highly professional design.With our years of experience, we've developed this theme and given back to this awesome WordPress community. The theme is complete with many useful features. The intuitive theme options let you manage all the possible options/features of the theme. abore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco labolabore et dolore magna aliqua.Ulabore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboxx",'accesspresslite');
+    						_e("AccessPress Lite is a HTML5 & CSS3 Responsive WordPress Business Theme with clean, minimal yet highly professional design.With our years of experience, we've developed this theme and given back to this awesome WordPress community. The theme is complete with many useful features. The intuitive theme options let you manage all the possible options/features of the theme. abore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco labolabore et dolore magna aliqua.Ulabore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboxx",'accesspress-lite');
     					?></p>
-                        <a href="#" class="read-more bttn"><?php _e('Read more','accesspresslite') ?></a>
+                        <a href="#" class="read-more bttn"><?php _e('Read more','accesspress-lite') ?></a>
     					</div>
                     </div>
 
@@ -85,7 +85,7 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 </section>
 <?php do_action('accesspresslite_call_to_action');?>
 <section id="mid-section" class="ak-container">
-<h1><?php _e('Features Posts','accesspresslite') ?></h1>
+<h1><?php _e('Features Posts','accesspress-lite') ?></h1>
 <?php 
 if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)){
     ?><div class="feature_wrap clearfix"><?php 
@@ -287,10 +287,10 @@ if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)
     		<img src="<?php echo get_template_directory_uri().'/images/demo/feature2.JPG' ?>" alt="<?php echo 'featuredpost'.$featured_post; ?>">
     		
         </figure>
-		<h2><a href="#"><?php _e('Featured Post','accesspresslite'); ?> <?php echo $featured_post; ?></a></h2>
+		<h2><a href="#"><?php _e('Featured Post','accesspress-lite'); ?> <?php echo $featured_post; ?></a></h2>
 
 		<div class="featured-content">
-			<p><?php _e('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate...','accesspresslite'); ?></p>
+			<p><?php _e('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate...','accesspress-lite'); ?></p>
 		</div>
         
 	</div>
@@ -437,10 +437,10 @@ wp_reset_query(); ?>
         else:  
         ?>
         <aside id="text-3" class="widget widget_text">
-            <h3 class="widget-title"><?php _e('Why AccessPress?','accesspresslite'); ?></h3>
+            <h3 class="widget-title"><?php _e('Why AccessPress?','accesspress-lite'); ?></h3>
             <div class="textwidget">
             <?php _e('labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco labolabore et dolore magna aliqua. <br />
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco labolabore et dolore magna aliqua. Ulabore et dolore magna aliqua.','accesspresslite');?>
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco labolabore et dolore magna aliqua. Ulabore et dolore magna aliqua.','accesspress-lite');?>
                 
             </div>
         </aside>
@@ -453,7 +453,7 @@ wp_reset_query(); ?>
         if ( is_active_sidebar( 'textblock-2' ) ) : ?>
 		  <?php dynamic_sidebar( 'textblock-2' ); ?>
 		<?php elseif(!empty($gallery_code)): ?>	
-		<h3><?php _e('Gallery','accesspresslite')?></h3>
+		<h3><?php _e('Gallery','accesspress-lite')?></h3>
         <?php 
         echo do_shortcode($gallery_code );
         else: ?>

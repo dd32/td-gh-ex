@@ -34,23 +34,23 @@ function accesspresslite_add_sidebar_layout_box()
 $accesspresslite_sidebar_layout = array(
         'left-sidebar' => array(
                         'value'     => 'left-sidebar',
-                        'label'     => __( 'Left sidebar', 'accesspresslite' ),
+                        'label'     => __( 'Left sidebar', 'accesspress-lite' ),
                         'thumbnail' => get_template_directory_uri() . '/inc/admin-panel/images/left-sidebar.png'
                     ), 
         'right-sidebar' => array(
                         'value' => 'right-sidebar',
-                        'label' => __( 'Right sidebar<br/>(default)', 'accesspresslite' ),
+                        'label' => __( 'Right sidebar<br/>(default)', 'accesspress-lite' ),
                         'thumbnail' => get_template_directory_uri() . '/inc/admin-panel/images/right-sidebar.png'
                     ),
         'both-sidebar' => array(
                         'value'     => 'both-sidebar',
-                        'label'     => __( 'Both Sidebar', 'accesspresslite' ),
+                        'label'     => __( 'Both Sidebar', 'accesspress-lite' ),
                         'thumbnail' => get_template_directory_uri() . '/inc/admin-panel/images/both-sidebar.png'
                     ),
        
         'no-sidebar' => array(
                         'value'     => 'no-sidebar',
-                        'label'     => __( 'No sidebar', 'accesspresslite' ),
+                        'label'     => __( 'No sidebar', 'accesspress-lite' ),
                         'thumbnail' => get_template_directory_uri() . '/inc/admin-panel/images/no-sidebar.png'
                     )   
 
@@ -64,7 +64,7 @@ wp_nonce_field( basename( __FILE__ ), 'accesspresslite_sidebar_layout_nonce' );
 
 <table class="form-table">
 <tr>
-<td colspan="4"><em class="f13"><?php _e('Choose Sidebar Template','accesspresslite'); ?></em></td>
+<td colspan="4"><em class="f13"><?php _e('Choose Sidebar Template','accesspress-lite'); ?></em></td>
 </tr>
 
 <tr>
@@ -85,7 +85,7 @@ wp_nonce_field( basename( __FILE__ ), 'accesspresslite_sidebar_layout_nonce' );
 </td>
 </tr>
 <tr>
-    <td><em class="f13"><?php echo sprintf(__('You can set up the sidebar content <a href="%s" target="_blank">here</a> in Sidebar tab','accesspresslite'), admin_url('/themes.php?page=theme_options')); ?></em></td>
+    <td><em class="f13"><?php echo sprintf(__('You can set up the sidebar content <a href="%s" target="_blank">here</a> in Sidebar tab','accesspress-lite'), admin_url('/themes.php?page=theme_options')); ?></em></td>
 </tr>
 </table>
 

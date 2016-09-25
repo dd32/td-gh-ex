@@ -73,9 +73,9 @@ $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspressl
  */
 function accesspresslite_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Left Sidebar', 'accesspresslite' ),
+		'name'          => __( 'Left Sidebar', 'accesspress-lite' ),
 		'id'            => 'left-sidebar',
-		'description'   => __( 'Display items in the Left Sidebar of the inner pages', 'accesspresslite' ),
+		'description'   => __( 'Display items in the Left Sidebar of the inner pages', 'accesspress-lite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -83,9 +83,9 @@ function accesspresslite_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Right Sidebar', 'accesspresslite' ),
+		'name'          => __( 'Right Sidebar', 'accesspress-lite' ),
 		'id'            => 'right-sidebar',
-		'description'   => __( 'Display items in the Right Sidebar of the inner pages', 'accesspresslite' ),
+		'description'   => __( 'Display items in the Right Sidebar of the inner pages', 'accesspress-lite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -93,9 +93,9 @@ function accesspresslite_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Event Sidebar', 'accesspresslite' ),
+		'name'          => __( 'Event Sidebar', 'accesspress-lite' ),
 		'id'            => 'event-sidebar',
-		'description'   => __( 'Display items in the Left Sidebar of the inner pages', 'accesspresslite' ),
+		'description'   => __( 'Display items in the Left Sidebar of the inner pages', 'accesspress-lite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1>',
@@ -103,9 +103,9 @@ function accesspresslite_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Blog Right Sidebar', 'accesspresslite' ),
+		'name'          => __( 'Blog Right Sidebar', 'accesspress-lite' ),
 		'id'            => 'blog-sidebar',
-		'description'   => __( 'Display items for the blog category in the Right Sidebar of the inner pages', 'accesspresslite' ),
+		'description'   => __( 'Display items for the blog category in the Right Sidebar of the inner pages', 'accesspress-lite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -113,9 +113,9 @@ function accesspresslite_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Footer Area One', 'accesspresslite' ),
+		'name'          => __( 'Footer Area One', 'accesspress-lite' ),
 		'id'            => 'footer-1',
-		'description'   => __( 'Display items in First Footer Area', 'accesspresslite' ),
+		'description'   => __( 'Display items in First Footer Area', 'accesspress-lite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -123,9 +123,9 @@ function accesspresslite_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Footer Area Two', 'accesspresslite' ),
+		'name'          => __( 'Footer Area Two', 'accesspress-lite' ),
 		'id'            => 'footer-2',
-		'description'   => __( 'Display items in Second Footer Area', 'accesspresslite' ),
+		'description'   => __( 'Display items in Second Footer Area', 'accesspress-lite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -133,9 +133,9 @@ function accesspresslite_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Footer Area Three', 'accesspresslite' ),
+		'name'          => __( 'Footer Area Three', 'accesspress-lite' ),
 		'id'            => 'footer-3',
-		'description'   => __( 'Display items in Third Footer Area', 'accesspresslite' ),
+		'description'   => __( 'Display items in Third Footer Area', 'accesspress-lite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -143,9 +143,9 @@ function accesspresslite_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Footer Area Four', 'accesspresslite' ),
+		'name'          => __( 'Footer Area Four', 'accesspress-lite' ),
 		'id'            => 'footer-4',
-		'description'   => __( 'Display items in Fourth Footer Area', 'accesspresslite' ),
+		'description'   => __( 'Display items in Fourth Footer Area', 'accesspress-lite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -153,9 +153,9 @@ function accesspresslite_widgets_init() {
 	) );
     
     register_sidebar( array(
-		'name'          => __( 'Left Block above footer', 'accesspresslite' ),
+		'name'          => __( 'Left Block above footer', 'accesspress-lite' ),
 		'id'            => 'textblock-1',
-		'description'   => __( 'Display items in the left just above the footer', 'accesspresslite' ),
+		'description'   => __( 'Display items in the left just above the footer', 'accesspress-lite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -163,9 +163,9 @@ function accesspresslite_widgets_init() {
 	) );
     
     register_sidebar( array(
-		'name'          => __( 'Middle Block above footer', 'accesspresslite' ),
+		'name'          => __( 'Middle Block above footer', 'accesspress-lite' ),
 		'id'            => 'textblock-2',
-		'description'   => __( 'Display items in the middle just above the footer and replaces defaul gallery', 'accesspresslite' ),
+		'description'   => __( 'Display items in the middle just above the footer and replaces defaul gallery', 'accesspress-lite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -173,9 +173,9 @@ function accesspresslite_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Right Block above footer', 'accesspresslite' ),
+		'name'          => __( 'Right Block above footer', 'accesspress-lite' ),
 		'id'            => 'textblock-3',
-		'description'   => __( 'Display items in the Right just above the footer and replaces Testimonials', 'accesspresslite' ),
+		'description'   => __( 'Display items in the Right just above the footer and replaces Testimonials', 'accesspress-lite' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -614,7 +614,7 @@ function accesspresslite_admin_notice() {
     if (is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" ) {
     ?>
     <div class="updated">
-        <p><?php echo sprintf(__( 'Go to <a href="%s">Theme Options Panel</a> to set up the website.', 'accesspresslite' ), esc_url(admin_url('/themes.php?page=theme_options'))); ?></p>
+        <p><?php echo sprintf(__( 'Go to <a href="%s">Theme Options Panel</a> to set up the website.', 'accesspress-lite' ), esc_url(admin_url('/themes.php?page=theme_options'))); ?></p>
     </div>
     <?php
     }
@@ -684,77 +684,77 @@ function accesspresslite_register_required_plugins() {
         'is_automatic' => true,                   // Automatically activate plugins after installation or not.
         'message'      => '',                      // Message to output right before the plugins table.
         'strings'      => array(
-            'page_title'                      => __( 'Install Required Plugins', 'accesspresslite' ),
-            'menu_title'                      => __( 'Install Plugins', 'accesspresslite' ),
-            'installing'                      => __( 'Installing Plugin: %s', 'accesspresslite' ), // %s = plugin name.
-            'oops'                            => __( 'Something went wrong with the plugin API.', 'accesspresslite' ),
+            'page_title'                      => __( 'Install Required Plugins', 'accesspress-lite' ),
+            'menu_title'                      => __( 'Install Plugins', 'accesspress-lite' ),
+            'installing'                      => __( 'Installing Plugin: %s', 'accesspress-lite' ), // %s = plugin name.
+            'oops'                            => __( 'Something went wrong with the plugin API.', 'accesspress-lite' ),
             'notice_can_install_required'     => _n_noop(
                 'This theme requires the following plugin: %1$s.',
                 'This theme requires the following plugins: %1$s.',
-                'accesspresslite'
+                'accesspress-lite'
             ), // %1$s = plugin name(s).
             'notice_can_install_recommended'  => _n_noop(
                 'This theme recommends the following plugin: %1$s.',
                 'This theme recommends the following plugins: %1$s.',
-                'accesspresslite'
+                'accesspress-lite'
             ), // %1$s = plugin name(s).
             'notice_cannot_install'           => _n_noop(
                 'Sorry, but you do not have the correct permissions to install the %1$s plugin.',
                 'Sorry, but you do not have the correct permissions to install the %1$s plugins.',
-                'accesspresslite'
+                'accesspress-lite'
             ), // %1$s = plugin name(s).
             'notice_ask_to_update'            => _n_noop(
                 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.',
                 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.',
-                'accesspresslite'
+                'accesspress-lite'
             ), // %1$s = plugin name(s).
             'notice_ask_to_update_maybe'      => _n_noop(
                 'There is an update available for: %1$s.',
                 'There are updates available for the following plugins: %1$s.',
-                'accesspresslite'
+                'accesspress-lite'
             ), // %1$s = plugin name(s).
             'notice_cannot_update'            => _n_noop(
                 'Sorry, but you do not have the correct permissions to update the %1$s plugin.',
                 'Sorry, but you do not have the correct permissions to update the %1$s plugins.',
-                'accesspresslite'
+                'accesspress-lite'
             ), // %1$s = plugin name(s).
             'notice_can_activate_required'    => _n_noop(
                 'The following required plugin is currently inactive: %1$s.',
                 'The following required plugins are currently inactive: %1$s.',
-                'accesspresslite'
+                'accesspress-lite'
             ), // %1$s = plugin name(s).
             'notice_can_activate_recommended' => _n_noop(
                 'The following recommended plugin is currently inactive: %1$s.',
                 'The following recommended plugins are currently inactive: %1$s.',
-                'accesspresslite'
+                'accesspress-lite'
             ), // %1$s = plugin name(s).
             'notice_cannot_activate'          => _n_noop(
                 'Sorry, but you do not have the correct permissions to activate the %1$s plugin.',
                 'Sorry, but you do not have the correct permissions to activate the %1$s plugins.',
-                'accesspresslite'
+                'accesspress-lite'
             ), // %1$s = plugin name(s).
             'install_link'                    => _n_noop(
                 'Begin installing plugin',
                 'Begin installing plugins',
-                'accesspresslite'
+                'accesspress-lite'
             ),
             'update_link'                     => _n_noop(
                 'Begin updating plugin',
                 'Begin updating plugins',
-                'accesspresslite'
+                'accesspress-lite'
             ),
             'activate_link'                   => _n_noop(
                 'Begin activating plugin',
                 'Begin activating plugins',
-                'accesspresslite'
+                'accesspress-lite'
             ),
-            'return'                          => __( 'Return to Required Plugins Installer', 'accesspresslite' ),
-            'plugin_activated'                => __( 'Plugin activated successfully.', 'accesspresslite' ),
-            'activated_successfully'          => __( 'The following plugin was activated successfully:', 'accesspresslite' ),
-            'plugin_already_active'           => __( 'No action taken. Plugin %1$s was already active.', 'accesspresslite' ),  // %1$s = plugin name(s).
-            'plugin_needs_higher_version'     => __( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'accesspresslite' ),  // %1$s = plugin name(s).
-            'complete'                        => __( 'All plugins installed and activated successfully. %1$s', 'accesspresslite' ), // %s = dashboard link.
-            'contact_admin'                   => __( 'Please contact the administrator of this site for help.', 'accesspresslite' ),
+            'return'                          => __( 'Return to Required Plugins Installer', 'accesspress-lite' ),
+            'plugin_activated'                => __( 'Plugin activated successfully.', 'accesspress-lite' ),
+            'activated_successfully'          => __( 'The following plugin was activated successfully:', 'accesspress-lite' ),
+            'plugin_already_active'           => __( 'No action taken. Plugin %1$s was already active.', 'accesspress-lite' ),  // %1$s = plugin name(s).
+            'plugin_needs_higher_version'     => __( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'accesspress-lite' ),  // %1$s = plugin name(s).
+            'complete'                        => __( 'All plugins installed and activated successfully. %1$s', 'accesspress-lite' ), // %s = dashboard link.
+            'contact_admin'                   => __( 'Please contact the administrator of this site for help.', 'accesspress-lite' ),
 
             'nag_type'                        => 'updated', // Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.
         )

@@ -55,13 +55,13 @@
 		<div id="bottom-footer">
 		<div class="ak-container">
 			<h1 class="site-info">
-				<a href="<?php echo esc_url('http://wordpress.org/'); ?>"><?php _e( 'Free WordPress Theme', 'accesspresslite' ); ?></a>
+				<a href="<?php echo esc_url('http://wordpress.org/'); ?>"><?php _e( 'Free WordPress Theme', 'accesspress-lite' ); ?></a>
 				<span class="sep"> | </span>
 				<a href="<?php echo esc_url('https://accesspressthemes.com/');?>" title="AccessPress Themes" target="_blank">AccessPress Lite</a>
 			</h1><!-- .site-info -->
 
 			<div class="copyright">
-				<?php _e('Copyright','accesspresslite') ?> &copy; <?php echo date('Y') ?> 
+				<?php _e('Copyright','accesspress-lite') ?> &copy; <?php echo date('Y') ?> 
 				<a target="_blank" href="http://demo.accesspressthemes.com/accesspresslite/">
 				<?php if(!empty($accesspresslite_settings['footer_copyright'])){
 					echo $accesspresslite_settings['footer_copyright']; 

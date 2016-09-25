@@ -11,8 +11,8 @@ if ( ! defined( 'WPINC' ) ) {
 // Add upsell page to the menu.
 function accesspresslite_add_upsell() {
 	add_theme_page(
-		__( 'More Themes', 'accesspresslite' ),
-		__( 'More Themes', 'accesspresslite' ),
+		__( 'More Themes', 'accesspress-lite' ),
+		__( 'More Themes', 'accesspress-lite' ),
 		'administrator',
 		'accesspresslite-themes',
 		'accesspresslite_display_upsell'
@@ -28,7 +28,7 @@ function accesspresslite_display_upsell() {
 	<div class="wrap">
 	<h1 style="margin-bottom:20px;">
 	<img src="<?php echo get_template_directory_uri(); ?>/inc/admin-panel/images/accesspressthemes.png"/>
-	<?php echo sprintf(__( 'More Themes from <a href="%s" target="_blank">AccessPress Themes</a>', 'accesspresslite' ) , esc_url('https://accesspressthemes.com/'))?>
+	<?php echo sprintf(__( 'More Themes from <a href="%s" target="_blank">AccessPress Themes</a>', 'accesspress-lite' ) , esc_url('https://accesspressthemes.com/'))?>
 	</h1>
 
 	<div class="theme-browser rendered">
@@ -56,9 +56,9 @@ function accesspresslite_display_upsell() {
 					<div class="theme-screenshot">
 						<img src="<?php echo $theme->screenshot_url ?>"/>
 					</div>
-					<h3 class="theme-name" id="accesspress-parallax-name"><strong><?php _e('Active','accesspresslite'); ?></strong>: <?php echo $theme->name; ?></h3>
+					<h3 class="theme-name" id="accesspress-parallax-name"><strong><?php _e('Active','accesspress-lite'); ?></strong>: <?php echo $theme->name; ?></h3>
 					<div class="theme-actions">
-						<a class="button button-secondary activate" target="_blank" href="<?php echo get_site_url(). '/wp-admin/customize.php' ?>"><?php _e('Customize','accesspresslite'); ?></a>
+						<a class="button button-secondary activate" target="_blank" href="<?php echo get_site_url(). '/wp-admin/customize.php' ?>"><?php _e('Customize','accesspress-lite'); ?></a>
 					</div>
 				</div>
 			<?php
@@ -93,10 +93,10 @@ function accesspresslite_display_upsell() {
 					<div class="theme-actions">
 						<?php if( wp_get_theme( $theme->slug )->exists() ) { ?>
 							<!-- Show the tick image notifying the theme is already installed. -->
-							<img data-toggle="tooltip" title="<?php _e( 'Already installed', 'accesspresslite' ); ?>" data-placement="bottom" class="theme-exists" src="<?php echo $directory_uri ?>/inc/admin-panel/images/tick.png"/>
+							<img data-toggle="tooltip" title="<?php _e( 'Already installed', 'accesspress-lite' ); ?>" data-placement="bottom" class="theme-exists" src="<?php echo $directory_uri ?>/inc/admin-panel/images/tick.png"/>
 							<!-- Activate Button -->
 							<a  class="button button-secondary activate"
-								href="<?php echo wp_nonce_url( admin_url( 'themes.php?action=activate&amp;stylesheet=' . urlencode( $theme->slug ) ), 'switch-theme_' . $theme->slug );?>" ><?php _e('Activate','accesspresslite') ?></a>
+								href="<?php echo wp_nonce_url( admin_url( 'themes.php?action=activate&amp;stylesheet=' . urlencode( $theme->slug ) ), 'switch-theme_' . $theme->slug );?>" ><?php _e('Activate','accesspress-lite') ?></a>
 						<?php }else {
 							// Set the install url for the theme.
 							$install_url = add_query_arg( array(
@@ -105,10 +105,10 @@ function accesspresslite_display_upsell() {
 								), self_admin_url( 'update.php' ) );
 						?>
 							<!-- Install Button -->
-							<a data-toggle="tooltip" data-placement="bottom" title="<?php echo 'Downloaded ' . number_format( $theme_details->downloaded ) . ' times'; ?>" class="button button-secondary activate" href="<?php echo esc_url( wp_nonce_url( $install_url, 'install-theme_' . $theme->slug ) ); ?>" ><?php _e( 'Install Now', 'accesspresslite' ); ?></a>
+							<a data-toggle="tooltip" data-placement="bottom" title="<?php echo 'Downloaded ' . number_format( $theme_details->downloaded ) . ' times'; ?>" class="button button-secondary activate" href="<?php echo esc_url( wp_nonce_url( $install_url, 'install-theme_' . $theme->slug ) ); ?>" ><?php _e( 'Install Now', 'accesspress-lite' ); ?></a>
 						<?php } ?>
 
-						<a class="button button-primary load-customize hide-if-no-customize" target="_blank" href="<?php echo $theme->preview_url; ?>"><?php _e( 'Live Preview', 'accesspresslite' ); ?></a>
+						<a class="button button-primary load-customize hide-if-no-customize" target="_blank" href="<?php echo $theme->preview_url; ?>"><?php _e( 'Live Preview', 'accesspress-lite' ); ?></a>
 					</div>
 				</div>
 				<?php

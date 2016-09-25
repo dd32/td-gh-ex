@@ -65,14 +65,19 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.46.8
+* Fixed the theme tag
+* Fixed text domain issue
+* Updated .pot file
+
 Version 2.46.7
-*Update sidebat testimonial title issue
-*Add Sticky sidebar js
-*Minor css Fixed
-*Screenshot change
+* Update sidebat testimonial title issue
+* Add Sticky sidebar js
+* Minor css Fixed
+* Screenshot change
 
 Version 2.46.6
-*Menu Align Issue solve
+* Menu Align Issue solve
 
 Version 2.46.5
 * Update default template selection ssue
@@ -84,16 +89,16 @@ Version 2.46.5
 * Update Template selection issue
 
 Version 2.46.3
-*Footer Gallery Issue Fixed
-*Change Default content
+* Footer Gallery Issue Fixed
+* Change Default content
 
 Veresion 2.46.0
-*Change Screenshot
-*Fix design issue at footer
-*Fix menu design issue
+* Change Screenshot
+* Fix design issue at footer
+* Fix menu design issue
 
 Veresion 2.46.0
-*Add new home page layout with new design
+* Add new home page layout with new design
 
 Version 2.45.9
 * Espanish Translation Added

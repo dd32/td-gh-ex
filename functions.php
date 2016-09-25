@@ -29,9 +29,9 @@ function accesspresslite_setup() {
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 * If you're building a theme based on AccesspressLite, use a find and replace
-	 * to change 'accesspresslite' to the name of your theme in all the template files
+	 * to change 'accesspress-lite' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'accesspresslite', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'accesspress-lite', get_template_directory() . '/languages' );
 
 	/**
 	 * Add callback for custom TinyMCE editor stylesheets. (editor-style.css)
@@ -64,7 +64,7 @@ function accesspresslite_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'accesspresslite' ),
+		'primary' => __( 'Primary Menu', 'accesspress-lite' ),
 	) );
 
 	// Enable support for Post Formats.

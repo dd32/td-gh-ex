@@ -35,7 +35,7 @@ $cat_portfolio = $accesspresslite_settings['portfolio_cat'];
 		
 		<div><?php echo accesspresslite_excerpt( get_the_content() , 400 ) ?></div>
 		</div>
-		<a href="<?php the_permalink(); ?>" class="cat-event-more bttn"><?php _e('More','accesspresslite');?></a>
+		<a href="<?php the_permalink(); ?>" class="cat-event-more bttn"><?php _e('More','accesspress-lite');?></a>
 	</div><!-- .entry-content -->
 </article>
 
@@ -111,10 +111,10 @@ $full_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '
 		<div class="short-content">
 		<?php echo accesspresslite_excerpt( get_the_content() , 500 ) ?>
 		</div>
-		<a href="<?php the_permalink(); ?>" class="bttn"><?php _e('More','accesspresslite')?></a>
+		<a href="<?php the_permalink(); ?>" class="bttn"><?php _e('More','accesspress-lite')?></a>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'accesspresslite' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'accesspress-lite' ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -125,21 +125,21 @@ $full_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '
 		<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
 			<?php
 				/* translators: used between list items, there is a space after the comma */
-				$categories_list = get_the_category_list( __( ', ', 'accesspresslite' ) );
+				$categories_list = get_the_category_list( __( ', ', 'accesspress-lite' ) );
 				if ( $categories_list && accesspresslite_categorized_blog() ) :
 			?>
 			<span class="cat-links">
-				<?php printf( __( 'Posted in %1$s', 'accesspresslite' ), $categories_list ); ?>
+				<?php printf( __( 'Posted in %1$s', 'accesspress-lite' ), $categories_list ); ?>
 			</span>
 			<?php endif; // End if categories ?>
 
 			<?php
 				/* translators: used between list items, there is a space after the comma */
-				$tags_list = get_the_tag_list( '', __( ', ', 'accesspresslite' ) );
+				$tags_list = get_the_tag_list( '', __( ', ', 'accesspress-lite' ) );
 				if ( $tags_list ) :
 			?>
 			<span class="tags-links">
-				<?php printf( __( 'Tagged %1$s', 'accesspresslite' ), $tags_list ); ?>
+				<?php printf( __( 'Tagged %1$s', 'accesspress-lite' ), $tags_list ); ?>
 			</span>
 			<?php endif; // End if $tags_list ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
