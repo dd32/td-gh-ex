@@ -115,3 +115,7 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, cust
 * Updated HTML shiv to 3.7.3 version
 * Improved hover effect on featured images
 * Minor bug fixes
+
+= Version 1.4.2 =
+* Updated Sticky Sidebar script to 1.5.0v
+* Minor bug fixes

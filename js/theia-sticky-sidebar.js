@@ -1,5 +1,5 @@
 /*!
- * Theia Sticky Sidebar v1.4.0
+ * Theia Sticky Sidebar v1.5.0
  * https://github.com/WeCodePixels/theia-sticky-sidebar
  *
  * Glues your website's sidebars, making them permanently visible while scrolling.
@@ -32,7 +32,7 @@
             var success = tryInit(options, $that);
 
             if (!success) {
-                console.log('TST: Body width smaller than options.minWidth. Init is delayed.');
+                console.log('TSS: Body width smaller than options.minWidth. Init is delayed.');
 
                 $(document).scroll(function (options, $that) {
                     return function (evt) {
@@ -87,7 +87,7 @@
 
                 // Get container
                 o.container = $(o.options.containerSelector);
-                if (o.container.size() == 0) {
+                if (o.container.length == 0) {
                     o.container = o.sidebar.parent();
                 }
 
@@ -105,13 +105,17 @@
                 // Get the sticky sidebar element. If none has been found, then create one.
                 o.stickySidebar = o.sidebar.find('.theiaStickySidebar');
                 if (o.stickySidebar.length == 0) {
-                    o.sidebar.find('script').remove(); // Remove <script> tags, otherwise they will be run again on the next line.
+                    // Remove <script> tags, otherwise they will be run again when added to the stickySidebar.
+                    var javaScriptMIMETypes = /(?:text|application)\/(?:x-)?(?:javascript|ecmascript)/i;
+                    o.sidebar.find('script').filter(function(index, script) {
+                        return script.type.length === 0 || script.type.match(javaScriptMIMETypes);
+                    }).remove();
+
                     o.stickySidebar = $('<div>').addClass('theiaStickySidebar').append(o.sidebar.children());
                     o.sidebar.append(o.stickySidebar);
                 }
 
                 // Get existing top and bottom margins and paddings
-                o.marginTop = parseInt(o.sidebar.css('margin-top'));
                 o.marginBottom = parseInt(o.sidebar.css('margin-bottom'));
                 o.paddingTop = parseInt(o.sidebar.css('padding-top'));
                 o.paddingBottom = parseInt(o.sidebar.css('padding-bottom'));
@@ -174,14 +178,14 @@
                     var position = 'static';
 
                     // If the user has scrolled down enough for the sidebar to be clipped at the top, then we can consider changing its position.
-                    if (scrollTop >= o.container.offset().top + (o.paddingTop + o.marginTop - o.options.additionalMarginTop)) {
+                    if (scrollTop >= o.sidebar.offset().top + (o.paddingTop - o.options.additionalMarginTop)) {
                         // The top and bottom offsets, used in various calculations.
-                        var offsetTop = o.paddingTop + o.marginTop + options.additionalMarginTop;
+                        var offsetTop = o.paddingTop + options.additionalMarginTop;
                         var offsetBottom = o.paddingBottom + o.marginBottom + options.additionalMarginBottom;
 
                         // All top and bottom positions are relative to the window, not to the parent elemnts.
-                        var containerTop = o.container.offset().top;
-                        var containerBottom = o.container.offset().top + getClearedHeight(o.container);
+                        var containerTop = o.sidebar.offset().top;
+                        var containerBottom = o.sidebar.offset().top + getClearedHeight(o.container);
 
                         // The top and bottom offsets relative to the window screen top (zero) and bottom (window height).
                         var windowOffsetTop = 0 + options.additionalMarginTop;
@@ -195,7 +199,7 @@
                             windowOffsetBottom = $(window).height() - o.marginBottom - o.paddingBottom - options.additionalMarginBottom;
                         }
 
-                        var staticLimitTop = containerTop - scrollTop + o.paddingTop + o.marginTop;
+                        var staticLimitTop = containerTop - scrollTop + o.paddingTop;
                         var staticLimitBottom = containerBottom - scrollTop - o.paddingBottom - o.marginBottom;
 
                         var top = o.stickySidebar.offset().top - scrollTop;
@@ -253,9 +257,10 @@
                     if (position == 'fixed') {
                         o.stickySidebar.css({
                             'position': 'fixed',
-                            'width': o.sidebar.width(),
-                            'top': top,
-                            'left': o.sidebar.offset().left + parseInt(o.sidebar.css('padding-left'))
+                            'width': getWidthForObject(o.stickySidebar) + 'px',
+                            'transform': 'translateY(' + top + 'px)',
+                            'left': (o.sidebar.offset().left + parseInt(o.sidebar.css('padding-left'))) + 'px',
+                            'top': '0px'
                         });
                     }
                     else if (position == 'absolute') {
@@ -263,10 +268,11 @@
 
                         if (o.stickySidebar.css('position') != 'absolute') {
                             css.position = 'absolute';
-                            css.top = scrollTop + top - o.sidebar.offset().top - o.stickySidebarPaddingTop - o.stickySidebarPaddingBottom;
+                            css.transform = 'translateY(' + (scrollTop + top - o.sidebar.offset().top - o.stickySidebarPaddingTop - o.stickySidebarPaddingBottom) + 'px)';
+                            css.top = '0px';
                         }
 
-                        css.width = o.sidebar.width();
+                        css.width = getWidthForObject(o.stickySidebar) + 'px';
                         css.left = '';
 
                         o.stickySidebar.css(css);
@@ -310,7 +316,8 @@
                     });
                     o.stickySidebar.css({
                         'position': 'static',
-                        'width': ''
+                        'width': '',
+                        'transform': 'none'
                     });
                 }
 
@@ -325,6 +332,22 @@
                     return height;
                 }
             });
+        }
+        
+        function getWidthForObject(object) {
+            var width;
+            
+            try {
+                width = object[0].getBoundingClientRect().width;
+            }
+            catch(err) {
+            }
+            
+            if (typeof width === "undefined") {
+                width = object.width();
+            }
+            
+            return width;
         }
     }
 })(jQuery);
