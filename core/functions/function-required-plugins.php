@@ -29,6 +29,12 @@ if (!function_exists('suevafree_required_plugins')) {
 			),
 	
 			array(
+				'name'      => 'WIP WooCarousel Lite',
+				'slug'      => 'wip-woocarousel-lite',
+				'required'  => false,
+			),
+	
+			array(
 				'name'      => 'Regenerate Thumbnails',
 				'slug'      => 'regenerate-thumbnails',
 				'required'  => false,

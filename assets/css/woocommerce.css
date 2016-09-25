@@ -875,7 +875,8 @@ body.archive.woocommerce .product-category mark.count {
 	width:100%
 }
 
-.product-wrapper {
+.product-wrapper,
+.woocommerce_cart_page {
 	margin-bottom:50px;
 }
 
