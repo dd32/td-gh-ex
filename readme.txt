@@ -80,6 +80,18 @@ The exceptions to this license are as follows:
 *
 * screenshot.png (slider image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/sun-sunrise-ray-view-indonesian-866451/
 
+== Homepage Slider ==
+
+By Default the Homepage slider is disabled, but it can be easily enabled:
+
+1. Login to your Admin Panel
+
+2. Navigate to Left Menu -> Appearance -> Customize -> 'Slider' Section
+
+3. Check the 'Display Slider' checkbox
+
+4. Save the changes by clicking on the 'Save & Publish' button
+
 == Contacts ==
 
 Author Website: https://ayatemplates.com

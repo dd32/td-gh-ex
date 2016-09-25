@@ -131,7 +131,7 @@ function ayaspirit_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 			'ayaspirit_slider_display',
 			array(
-					'default'           => 1,
+					'default'           => 0,
 					'sanitize_callback' => 'esc_attr',
 			)
 	);

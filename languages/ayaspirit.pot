@@ -70,6 +70,10 @@ msgstr ""
 msgid "Copyright Text"
 msgstr ""
 
+#: functions.php:249
+msgid "on"
+msgstr ""
+
 #: functions.php:318
 msgid "Sidebar Widget Area"
 msgstr ""
