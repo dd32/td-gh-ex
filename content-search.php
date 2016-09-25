@@ -17,6 +17,6 @@
   <?php endif; ?>
   <div class="entry-summary"><?php echo avata_get_summary();?></div>
   <?php if ( $readmore == '1' ): ?>
-  <a href="<?php the_permalink();?>" class="read-more"><?php _e( 'Read More', 'avata' );?> ...</a> 
+  <a href="<?php the_permalink();?>" class="read-more"><?php _e( 'Read More', 'avata' );?> ...<span class="screen-reader-text"><?php the_title();?></span></a> 
   <?php endif; ?>
 </article>

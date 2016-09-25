@@ -8,7 +8,7 @@ $main_class = 'no-aside';
 <section class="page-main" id="content">
   <div class="container">
     <div id="primary" class="content-area row <?php echo $main_class;?>">
-        <main id="main" class="site-main col-main" role="main">
+        <main id="main" class="site-main col-main" role="main" aria-label="<?php _e( 'Main Area', 'avata' ); ?>">
           <?php while ( have_posts() ) : the_post(); ?>
           <?php get_template_part( 'content', 'page' ); ?>
           <?php

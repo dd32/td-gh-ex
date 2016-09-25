@@ -17,7 +17,7 @@
 		  while ( $query->have_posts() ) :
 			  $query->the_post();
 	  ?>
-              <h1 class="heading-lite"><?php the_title();?></h1>
+              <h2 class="heading-lite"><?php the_title();?></h2>
               <?php the_content();?>
      <?php
 	  endwhile;
@@ -62,7 +62,7 @@
 	
 			  
 		echo '<li> <span class="iconlist_icon">'.$icon.'</span>
-                <p><strong>'.$title.'</strong></p>
+                <h3>'.$title.'</h3>
                 <p>'. get_the_excerpt().'</p>
               </li>';
 			  

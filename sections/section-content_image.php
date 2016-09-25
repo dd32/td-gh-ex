@@ -20,7 +20,7 @@
 			  $query->the_post();
 	  ?>
             <div class="col-sm-7 content-image-content">
-                <h1 class="heading-lite"><?php the_title();?></h1>
+                <h2 class="heading-lite"><?php the_title();?></h2>
                 <div class="section-content"><?php the_content();?></div>
             </div>
             <div class="col-sm-5 content-image-image <?php echo $img_class; ?>">

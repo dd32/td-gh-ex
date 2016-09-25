@@ -9,7 +9,7 @@ get_header(); ?>
 <section class="page-main" id="content">
   <div class="container">
 	<div id="primary" class="content-area ">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main" role="main" aria-label="<?php _e( 'Main Area', 'avata' ); ?>">
             
 			<section class="error-404 not-found row">
             <div class="col-main col-md-9">
@@ -20,9 +20,10 @@ get_header(); ?>
 				<div class="page-content">
 					<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'avata' ); ?></p>
 
-					<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>/" role="search">
+					<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>/" role="search" aria-label="<?php _e( 'Search Form', 'avata' ); ?>">
 						<label>
 							<span class='screen-reader-text'><?php _e( 'Search', 'avata'); ?></span>
+                            <label for='s' class='screen-reader-text'><?php _e( 'Search', 'avata' ); ?></label> 
 							<input type="search" name="s" />
 						</label> 
 						<input type="submit" name="submit" value="<?php _e( 'Search', 'avata' ); ?>" class="search-submit" />

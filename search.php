@@ -9,7 +9,7 @@ get_header(); ?>
 <section class="page-main" id="content">
   <div class="container">
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main" role="main" aria-label="<?php _e( 'Main Area', 'avata' ); ?>">
 		<?php if ( have_posts() ) : ?>
 
 			<header class="page-header">

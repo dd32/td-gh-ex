@@ -17,7 +17,7 @@ function avata_paging_nav() {
 		return;
 	}
 	?>
-	<nav class="navigation paging-navigation" role="navigation">
+	<nav class="navigation paging-navigation" role="navigation" aria-label="<?php _e( 'Paging Navigation', 'avata' ); ?>">
 		<div class="nav-links">
 			<?php echo paginate_links(); ?>
 
@@ -40,8 +40,8 @@ function avata_post_nav() {
 		return;
 	}
 	?>
-	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'avata' ); ?></h1>
+	<nav class="navigation post-navigation" role="navigation" aria-label="<?php _e( 'Post Navigation', 'avata' ); ?>">
+		<span class="screen-reader-text"><?php _e( 'Post navigation', 'avata' ); ?></span>
 		<div class="nav-links">
 			<?php
 				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', 'avata' ) );

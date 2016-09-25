@@ -40,7 +40,7 @@
         <div class="hero_wrap">
        
           <div class="hero_content">
-            <h1 class="hero_title"><?php the_title();?></h1>
+            <h2 class="hero_title"><?php the_title();?></h2>
             <div class="hero_subtitle"><?php the_excerpt();?></div>
           </div>
           </div>

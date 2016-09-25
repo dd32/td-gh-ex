@@ -22,6 +22,10 @@ The theme itself is nothing but 100% GPL v2 or later.
  ## jQuery Superfish Menu Plugin
    * Copyright (c) 2013 Joel Birch
    * Dual licensed under the MIT and GPL licenses
+   
+ ## jquery.meanmenu.js
+  * Copyright (C) 2012-2014 Chris Wharton @ MeanThemes (https://github.com/meanthemes/meanMenu)
+  * GNU General Public License
 
 == Fonts
 

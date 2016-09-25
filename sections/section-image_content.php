@@ -28,7 +28,7 @@
       </div>
       
       <div class="col-md-5 content-image-content">
-        <h1 class="heading-lite"><?php the_title();?></h1>
+        <h2 class="heading-lite"><?php the_title();?></h2>
         <div class="section-content"><?php the_content();?></div>
          </div>
       

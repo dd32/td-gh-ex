@@ -68,16 +68,21 @@
 			$fields =  array(
 
 			'author' =>
-			  '<div class="row"><section class="comment-form-author form-group col-md-4"><input id="author" class="input-name form-control" name="author" placeholder="'.__('Name', 'avata'). ( $req ? ' *' : '' ).'"  type="text" value="' . esc_attr( $commenter['comment_author'] ) .
+			  '<div class="row"><section class="comment-form-author form-group col-md-4">
+			  <label for="author" class="screen-reader-text">'. __( 'Name', 'avata' ).'</label> 
+			  <input id="author" class="input-name form-control" name="author" placeholder="'.__('Name', 'avata'). ( $req ? ' *' : '' ).'"  type="text" value="' . esc_attr( $commenter['comment_author'] ) .
 			  '" size="30" ' . $aria_req . $html_req. ' /></section>',
 		
 			'email' =>
-			  '<section class="comment-form-email form-group col-md-4"><input id="email" class="input-name form-control" name="email" placeholder="'.__('Email', 'avata'). ( $req ? ' *' : '' ).'"  type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+			  '<section class="comment-form-email form-group col-md-4">
+			  <label for="email" class="screen-reader-text">'. __( 'Email', 'avata' ).'</label> 
+			  <input id="email" class="input-name form-control" name="email" placeholder="'.__('Email', 'avata'). ( $req ? ' *' : '' ).'"  type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
 			  '" size="30" ' . $aria_req . $html_req. ' /></section>',
 		
 			'url' =>
-			  '<section class="comment-form-url form-group col-md-4"><input id="url" class="input-name form-control" placeholder="'.__('Website', 'avata').'" name="url"  type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
-			  '" size="30" /></section></div>'
+			  '<section class="comment-form-url form-group col-md-4">
+			  <label for="url" class="screen-reader-text">'. __( 'Website', 'avata' ).'</label> 
+			  <input id="url" class="input-name form-control" placeholder="'.__('Website', 'avata').'" name="url"  type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .'" size="30" /></section></div>'
     );
 	  
     		return $fields;
@@ -94,7 +99,9 @@
         // remove "Text or HTML to be displayed after the set of comment fields"
         'comment_notes_after' => '',
         // redefine textarea (the comment body)
-        'comment_field' => '<div class="clear"></div><p class="form-allowed-tags"></p><section class="comment-form-comment form-group"><div id="comment-textarea"><textarea id="comment" name="comment" placeholder="'.__('Message', 'avata').' *"  cols="45" rows="8"  class="textarea-comment form-control" aria-required="true"></textarea></div></section>'
+        'comment_field' => '<div class="clear"></div><p class="form-allowed-tags"></p><section class="comment-form-comment form-group"><div id="comment-textarea">
+		 <label for="comment" class="screen-reader-text">'. __( 'Message', 'avata' ).'</label> 
+		<textarea id="comment" name="comment" placeholder="'.__('Message', 'avata').' *"  cols="45" rows="8"  class="textarea-comment form-control" aria-required="true"></textarea></div></section>'
 );
 
 ?>

@@ -6,7 +6,7 @@ get_header(); ?>
   <div class="container">
     <div id="primary" class="content-area">
       <div class="row">
-        <main id="main" class="site-main col-md-9" role="main">
+        <main id="main" class="site-main col-md-9" role="main" aria-label="<?php _e( 'Main Area', 'avata' ); ?>">
           <?php if ( have_posts() ) : ?>
           <?php /* Start the Loop */ ?>
           <?php while ( have_posts() ) : the_post(); ?>

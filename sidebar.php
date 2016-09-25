@@ -1,4 +1,4 @@
-<aside id="sidebar" class="alignright col-md-3">
+<aside id="sidebar" class="alignright col-md-3" role="complementary" aria-label="<?php _e( 'Sidebar', 'avata' ); ?>">
   <?php
   if (  is_active_sidebar( 'sidebar-blog' ) ){
 	 dynamic_sidebar(  'sidebar-blog'  );

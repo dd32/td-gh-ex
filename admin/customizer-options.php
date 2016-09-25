@@ -737,7 +737,7 @@ $options['avata_section_hero_id'] = array(
 		'section' => $section,
 		'type'    => 'text',
 		'choices' => '',
-		'default' => '<h1>Ready to <b>Get Started</b>?</h1>',
+		'default' => '<h2>Ready to <b>Get Started</b>?</h2>',
 	);
  
  $options['avata_section_promo_btn_text_1'] = array(

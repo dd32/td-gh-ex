@@ -1,10 +1,12 @@
+</div>
  <!--Footer-->
  <?php 
  $display_footer_widgets    = avata_option('display_footer_widgets'); 
  $footer_columns            = avata_option('footer_columns'); 
  ?>
+ <footer id="footer" role="contentinfo" aria-label="<?php _e( 'Footer Info', 'avata' ); ?>">
   <?php if( $display_footer_widgets == '1' ):?>
-<footer id="footer">
+
 <div class="container">
     <div class="row">
     <?php 
@@ -21,7 +23,7 @@
                     <?php }?>
       </div>
     </div>
-</footer>
+
 <?php endif;?>
 
 <section id="footer-copyright">
@@ -44,7 +46,7 @@
     </div>
 </section>
 
-
+</footer>
 <?php wp_footer(); ?>
 
 </body>
