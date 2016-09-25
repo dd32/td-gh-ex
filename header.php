@@ -62,4 +62,3 @@ $header_image = get_header_image();
     </nav>
   </div>
 </header>
-<div id="content">

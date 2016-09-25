@@ -1,4 +1,3 @@
-</div>
  <!--Footer-->
  <?php 
  $display_footer_widgets    = avata_option('display_footer_widgets'); 
@@ -6,7 +5,7 @@
  ?>
  <footer id="footer" role="contentinfo" aria-label="<?php _e( 'Footer Info', 'avata' ); ?>">
   <?php if( $display_footer_widgets == '1' ):?>
-
+<section class="widget-area">
 <div class="container">
     <div class="row">
     <?php 
@@ -23,10 +22,11 @@
                     <?php }?>
       </div>
     </div>
-
+</section>
 <?php endif;?>
 
 <section id="footer-copyright">
+
     <div class="container">
         <div class="row">
             <p class="col-md-4">

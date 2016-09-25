@@ -46,7 +46,7 @@ function avata_setup() {
         'height'                 => '120',
         'flex-height'            => true,
         'flex-width'             => true,
-        'default-text-color'     => '333333',
+        'default-text-color'     => 'd54e21',
         'header-text'            => true,
         'uploads'                => true,
         'wp-head-callback'       => '',
