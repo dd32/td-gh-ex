@@ -41,6 +41,10 @@ one-column, left-sidebar, responsive-layout, custom-background, custom-menu, cus
 3. Log into your WP admin panel and click on the Design tab. Now click on the Zenzero theme to activate it.
 
 == Changelog ==
+= Version 1.3.6 =
+* Fixed mobile menu for iPad
+* Minor Bug Fixes
+
 = Version 1.3.5 =
 * Updated mobile menu for iPad
 * Improved featured image hover effect

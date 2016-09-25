@@ -93,7 +93,7 @@ textarea {
 .main-navigation ul ul a {
 	text-align: right;
 }
-@media all and (max-width: 768px) {
+@media all and (max-width: 1024px) {
 	.menu-toggle, .main-navigation.toggled .nav-menu {
 		text-align: right;
 		float: right;

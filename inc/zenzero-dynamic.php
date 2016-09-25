@@ -185,7 +185,7 @@ function zenzero_color_primary_register( $wp_customize ) {
     ) );
 	
 	$wp_customize->add_control('zenzero_theme_options_hidesearch', array(
-        'label'      => __( 'Show Search Button in Main Menu', 'zenzero' ),
+        'label'      => __( 'Show Search Button', 'zenzero' ),
         'section'    => 'cresta_zenzero_options',
         'settings'   => 'zenzero_theme_options_hidesearch',
         'type'       => 'checkbox',
@@ -401,7 +401,7 @@ function zenzero_custom_css_styles() {
 	.tagcloud a:hover {
 		border: 1px solid <?php echo esc_attr($special_box_color_fourth); ?>;
 	}
-	@media screen and (max-width: 768px) {
+	@media screen and (max-width: 1024px) {
 		.main-navigation ul li .indicator {
 			color: <?php echo esc_attr($special_box_color_fourth); ?>;
 		}

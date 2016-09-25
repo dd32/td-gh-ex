@@ -120,7 +120,7 @@ class Zenzero_Admin {
 
 					<a href="<?php echo esc_url( apply_filters( 'zenzero_pro_theme_url', 'http://crestaproject.com/demo/zenzero-pro/' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View PRO version Demo', 'zenzero' ); ?></a>
 
-					<a href="<?php echo esc_url( apply_filters( 'zenzero_pro_theme_url', 'http://wordpress.org/support/view/theme-reviews/zenzero?filter=5#postform' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'zenzero' ); ?></a>
+					<a href="<?php echo esc_url( apply_filters( 'zenzero_pro_theme_url', 'https://wordpress.org/support/theme/zenzero/reviews/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'zenzero' ); ?></a>
 				</p>
 				</div>
 
