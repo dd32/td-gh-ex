@@ -4,8 +4,8 @@
 <!--[if !(IE 7) | !(IE 8)  ]><!--><html <?php language_attributes(); ?>><!--<![endif]-->
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php wp_head(); ?>
@@ -18,7 +18,8 @@
   <?php echo adelle_theme_heading(); ?>
 
   <nav class="nav" id="nav" itemscope itemtype="http://schema.org/SiteNavigationElement">
-    <?php wp_nav_menu( 'theme_location=top_menu&container_class=menu&fallback_cb=wp_page_menu&show_home=1' ); ?>
+    <div class="menu-click">&nbsp;</div>
+    <?php wp_nav_menu( 'theme_location=top_menu&container_class=menu&menu_class=main-menu&fallback_cb=wp_page_menu&show_home=1' ); ?>
 
     <form role="search" method="get" class="header-form" action="<?php echo esc_url( home_url() ); ?>">
       <fieldset>

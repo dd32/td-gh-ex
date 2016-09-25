@@ -1,55 +1,27 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Adelle Theme\n"
-"POT-Creation-Date: 2015-08-20 09:49+0800\n"
-"PO-Revision-Date: 2015-08-20 09:49+0800\n"
+"POT-Creation-Date: 2016-09-26 00:27+0800\n"
+"PO-Revision-Date: 2016-09-26 00:27+0800\n"
 "Last-Translator: Andrew Wong <hello@bluchic.com>\n"
-"Language-Team: BluChic <hello@bluchic.com>\n"
+"Language-Team: Bluchic <hello@bluchic.com>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.9\n"
+"X-Generator: Poedit 1.8.7\n"
 "X-Poedit-KeywordsList: __;_e\n"
-"X-Poedit-Basepath: ../\n"
+"X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:9
-msgid "Error 404 - Not Found"
+msgid "Oopss! 404 Not Found"
 msgstr ""
 
-#: 404.php:14
-msgid "404 Not Found"
-msgstr ""
-
-#: 404.php:19 content-none.php:12
-msgid "Archives by month"
-msgstr ""
-
-#: 404.php:25 content-none.php:18
-msgid "Archives by category"
-msgstr ""
-
-#: archive.php:8
-msgid "Archive of"
-msgstr ""
-
-#: archive.php:8
-msgid "category"
-msgstr ""
-
-#: archive.php:10
-msgid "Posts Tagged"
-msgstr ""
-
-#: archive.php:12 archive.php:14 archive.php:16
-msgid "archive"
-msgstr ""
-
-#: archive.php:18
-msgid "Author Archive"
+#: 404.php:11
+msgid "The page you are looking for has not been found. How about search it out?"
 msgstr ""
 
 #: comments.php:7
@@ -57,22 +29,22 @@ msgid "This post is password protected. Enter the password to view comments"
 msgstr ""
 
 #: comments.php:14 comments.php:31
-msgid "Older comments"
+msgid "&ltrif;  Older comments"
 msgstr ""
 
 #: comments.php:15 comments.php:32
-msgid "Newer comments"
+msgid "Newer comments &rtrif;"
 msgstr ""
 
-#: comments.php:19 content-list.php:17 content.php:19
+#: comments.php:19 content-list.php:19 content.php:19
 msgid "0 comment"
 msgstr ""
 
-#: comments.php:19 content-list.php:17 content.php:19
+#: comments.php:19 content-list.php:19 content.php:19
 msgid "1 Comment"
 msgstr ""
 
-#: comments.php:19 content-list.php:17 content.php:19
+#: comments.php:19 content-list.php:19 content.php:19
 msgid "% Comments"
 msgstr ""
 
@@ -88,35 +60,6 @@ msgstr ""
 msgid "Comments are closed"
 msgstr ""
 
-#: comments.php:55 comments.php:61
-msgid "Comment"
-msgstr ""
-
-#: comments.php:56
-msgid "Leave a Reply"
-msgstr ""
-
-#: comments.php:57
-#, php-format
-msgid "Leave a reply to %s"
-msgstr ""
-
-#: comments.php:58
-msgid "Cancel reply"
-msgstr ""
-
-#: comments.php:63
-msgid "Name"
-msgstr ""
-
-#: comments.php:64
-msgid "Email"
-msgstr ""
-
-#: comments.php:65
-msgid "Website"
-msgstr ""
-
 #: content-list.php:6 content.php:6
 msgid "categories"
 msgstr ""
@@ -126,8 +69,15 @@ msgid "Not Found"
 msgstr ""
 
 #: content-none.php:7
-msgid ""
-"You have come to a page that is either not existing or already been removed"
+msgid "You have come to a page that is either not existing or already been removed"
+msgstr ""
+
+#: content-none.php:12
+msgid "Archives by month"
+msgstr ""
+
+#: content-none.php:18
+msgid "Archives by category"
 msgstr ""
 
 #: content.php:23
@@ -158,61 +108,48 @@ msgstr ""
 msgid "Top Menu"
 msgstr ""
 
-#: functions.php:211
-msgid "Please enable referrers in your browser."
-msgstr ""
-
-#: functions.php:221
-msgid "ago"
-msgstr ""
-
-#: functions.php:233
+#: functions.php:210
 #, php-format
 msgid "<h6>%s</h6>"
 msgstr ""
 
-#: functions.php:234
+#: functions.php:211
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: functions.php:234
-#, php-format
-msgid "%s"
-msgstr ""
-
-#: functions.php:236
+#: functions.php:213
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: functions.php:258
+#: functions.php:235
 msgid "Pages:"
 msgstr ""
 
-#: functions.php:263
+#: functions.php:240
 msgid "Next page"
 msgstr ""
 
-#: functions.php:264
+#: functions.php:241
 msgid "Previous page"
 msgstr ""
 
-#: functions.php:297
+#: functions.php:254
 msgid "Previous"
 msgstr ""
 
-#: functions.php:298
+#: functions.php:255
 msgid "Next"
 msgstr ""
 
-#: functions.php:313
+#: functions.php:264
 msgid "Right Widget"
 msgstr ""
 
-#: functions.php:330
+#: functions.php:281
 msgid "Instagram Widget"
 msgstr ""
 
-#: search.php:8
+#: search.php:7
 msgid "Searching for"
 msgstr ""

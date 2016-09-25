@@ -21,7 +21,7 @@ if( post_password_required() ) { ?>
       <?php wp_list_comments( 'type=comment' ); ?>
     </ol>
   <?php } if( !empty( $comments_by_type['pings'] ) ) { ?>
-    <h4 id="comments"><?php echo absint( count( $wp_query->comments_by_type['pings'] ) ); ?><?php _e( 'Pingbacks &amp; Trackbacks on', 'ace' ); ?> <?php the_title(); ?></h4>
+    <h4 id="comments"><?php echo absint( count( $wp_query->comments_by_type['pings'] ) ); ?><?php _e( 'Pingbacks &amp; Trackbacks on', 'adelle' ); ?> <?php the_title(); ?></h4>
     <ol class="commentlist">
       <?php wp_list_comments( 'type=pingback' ); ?>
     </ol>

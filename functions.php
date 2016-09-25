@@ -1,4 +1,5 @@
 <?php
+require_once( get_template_directory() . '/includes/adelle_getting_started.php' );
 
 // ==================================================================
 // Theme stylesheets
@@ -9,9 +10,8 @@ function adelle_theme_styles() {
   wp_enqueue_style( 'adelle-style', get_stylesheet_uri(), '15.11.2', array(), 'all' );
   wp_enqueue_style( 'google-font', '//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Muli:400,400italic|Montserrat:400,700', null, array(), 'all' );
   if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' );
-  wp_enqueue_script( 'adelle-respond', get_template_directory_uri() . '/js/respond.min.js', array( 'jquery' ), '1.0.1', true );
-  wp_enqueue_script( 'adelle-fitvids', get_template_directory_uri() . '/js/fitvids.min.js', array( 'jquery' ), '1.0', true );
-  wp_enqueue_script( 'adelle-tinynav', get_template_directory_uri() . '/js/tinynav.min.js', array( 'jquery' ), null, true );
+  wp_enqueue_script( 'adelle-doubletaptogo', get_template_directory_uri() . '/js/doubletaptogo.js', array( 'jquery' ), null, true );
+  wp_enqueue_script( 'adelle-fitvids', get_template_directory_uri() . '/js/fitvids.js', array( 'jquery' ), '1.0', true );
   wp_enqueue_script( 'adelle-scripts', get_template_directory_uri() . '/js/scripts.js', array( 'jquery' ), null, true );
 }
 add_action( 'wp_enqueue_scripts', 'adelle_theme_styles' );
@@ -177,7 +177,7 @@ function adelle_setup() {
   // HTML5 Support
   // ==================================================================
 	add_theme_support( 'html5', array(
-    'search-form',
+	'search-form',
     'comment-form',
     'comment-list',
     'gallery',
@@ -197,16 +197,6 @@ function adelle_setup() {
 // ====================================================================================================================================
 }
 add_action( 'after_setup_theme', 'adelle_setup' );
-
-// ==================================================================
-// Comment spam, prevention
-// ==================================================================
-function adelle_theme_check_referrer() {
-  if (!isset($_SERVER['HTTP_REFERER']) || $_SERVER['HTTP_REFERER'] == "" ) {
-    wp_die( __( 'Please enable referrers in your browser.', 'adelle' ) );
-  }
-}
-add_action( 'check_comment_flood', 'adelle_theme_check_referrer' );
 
 // ==================================================================
 // Custom comment style
@@ -299,3 +289,8 @@ function adelle_footer_widgets_instagram_init() {
   ) );
 }
 add_action( 'widgets_init', 'adelle_footer_widgets_instagram_init' );
+
+// ==================================================================
+// Gettting started
+// ==================================================================
+if ( is_admin() && isset( $_GET['activated'] ) && $pagenow == "themes.php" ) wp_redirect( 'themes.php?page=adelle_getting_started.php' );
