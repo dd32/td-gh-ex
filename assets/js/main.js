@@ -48,9 +48,10 @@ jQuery(document).ready(function($){
 			  }					 
    });
   
-  
+  if(!$('.mean-bar').length){
   $('.hero_content').css({'height':$('.hero_content').parents('section').height()});
   $('.bottom-image').css({'height':$('.bottom-image').parents('section').height()});
+  }
   
   // 
   

@@ -117,7 +117,7 @@ function avata_scripts() {
 	if(get_header_textcolor()=='blank'){
 		    $avata_custom_css .= ".site-name,.site-tagline{display: none;}";
 		}else{
-			$avata_custom_css .= ".site-name a,.site-tagline{color:#".get_header_textcolor().";}";
+			$avata_custom_css .= ".site-name a,.site-tagline{color:#".get_header_textcolor()." !important;}";
 			}
 
 	
