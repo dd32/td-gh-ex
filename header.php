@@ -19,7 +19,7 @@
 <div id="page" class="hfeed site">
 
 <?php
-    $header_layout = esc_attr( get_theme_mod( 'accesspress_header_layout_type', 'headerone' ) );
+    $header_layout = esc_attr( get_theme_mod( 'accesspress_header_layout_type', 'headertwo' ) );
     if( $header_layout == 'headerone' ){
         get_template_part('header/header', 'one');
     }else{

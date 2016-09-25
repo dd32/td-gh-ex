@@ -19,7 +19,7 @@ function accesspress_store_body_classes( $classes ) {
 		$classes[] = 'group-blog';
 	}
 
-	$widget_title_style = esc_attr( get_theme_mod( 'accesspress_widget_layout_type' ) );
+	$widget_title_style = esc_attr( get_theme_mod( 'accesspress_widget_layout_type', 'title_style_two' ) );
 
 	if($widget_title_style == 'title_style_two'){
 		$classes[] = 'apwidget_title';

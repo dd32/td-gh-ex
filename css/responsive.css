@@ -7,13 +7,13 @@
         left:0;
         right:inherit;
         bottom:inherit;
-        top:50px;
+        /*top:50%;*/
     }
     .widget_accesspress_store_product2 .feature-cat-product  .slick-next{
         right:0;
         left:inherit;
         bottom:inherit;
-        top:50px;
+         /*top:50%;*/
     }
     .ak-container{
         min-height:auto !important; 
@@ -25,11 +25,11 @@
     body.boxed #page{
         width: 100%;
     }
-	.widget_accesspress_store_product2 .feature-cat-product.right_align .slick-next,
+/*	.widget_accesspress_store_product2 .feature-cat-product.right_align .slick-next,
 .widget_accesspress_store_product2 .feature-cat-product.right_align .slick-prev{
 	bottom: -10%;
     top: inherit;
-}
+}*/
 }
 
 @media(max-width: 1180px) {
@@ -106,9 +106,9 @@
     .slider-caption {
         top: 0%;
     }
-
     .promo-wrap2 .promo-image .caption {
-        top: 10px;        
+        top: 10px;
+        margin-top: 0;      
     }
     .promo-wrap2 .promo-image .caption h4 {
         font-size: 31px;
@@ -313,6 +313,13 @@
     .price > del {
         display: none !important;
     }
+    /******header1******/
+    .right-header-main.clearfix{
+        float: none;
+        height: auto;
+        max-height: 100%;
+    }
+
 }
 
 @media (max-width: 1169px) {
@@ -626,13 +633,9 @@
         top: 0%;
     }
 
-    .promo-wrap2 .promo-image .caption {
+    /*.promo-wrap2 .promo-image .caption {
         top: 0px; 
-    }
-    .promo-wrap2 .promo-image .caption h4 {
-        font-size: 31px;
-        width:100%;
-    }
+    }*/
     .top-footer-block .widget-title {
         font-size: 14px;
     }
@@ -709,6 +712,24 @@
     .woocommerce.single.single-product .img-wrap{
         float:none;
         width:100%;
+    }
+    /*slider slick button*/
+    .apwidget_title .new-prod-slide .slick-prev, 
+    .apwidget_title .new-prod-slide .slick-next,
+    .widget_accesspress_store_product2 .feature-cat-product .slick-prev, 
+    .widget_accesspress_store_product2 .feature-cat-product .slick-next {
+        opacity: 1;
+        visibility: visible;
+    }
+    .promo-wrap2 .promo-image .caption h4 {
+        font-size: 26px;
+        width:100%;
+        line-height: 1.2;
+    }
+    .style_one .promo-desc-title,
+    .style_one .promo-desc{
+        font-size: 15px;
+        line-height: 1.2;
     }
 }
 @media (max-width: 780px) {
@@ -1006,7 +1027,7 @@
         padding:30px 0px;
     }
     .promo-wrap2 .promo-image .caption {
-        top: 0px;
+        /*top: 0px;*/
         width: 90%;
         left: 10px;
     }
@@ -1055,7 +1076,8 @@
 	.widget_accesspress_store_product2 .feature-cat-image.left_align{
 		width:100%;	
 	}
-	.widget_accesspress_store_product2 .feature-cat-product.right_align .slick-next, .widget_accesspress_store_product2 .feature-cat-product.right_align .slick-prev{
+	.widget_accesspress_store_product2 .feature-cat-product.right_align .slick-next, 
+    .widget_accesspress_store_product2 .feature-cat-product.right_align .slick-prev{
 		position:static;	
 	}
 	.widget_accesspress_store_product2 .feature-cat-product.right_align .slick-next{
@@ -1538,6 +1560,10 @@
 	top:50%;
 	margin-top:-11px;
 }
+    .promo-wrap2 .promo-image .caption{
+        top: 3px;
+
+    }
 }
 @media(max-width: 599px) {
     .feature-prod-wrap{
@@ -1596,13 +1622,14 @@
     }
     .cta-banner{
         margin:0px;
+        float: none;
     }
     .promo-wrap2 .promo-image .caption h4 {
         font-size: 22px;
-        line-height:normal;
+       /* line-height:normal;*/
         margin:0px;
         padding:0px;
-        padding-bottom:5px;
+        /*padding-bottom:5px;*/
     }
     .promo-wrap2 .promo-image .caption .promo-desc-title {
         font-size: 12px;
@@ -1780,7 +1807,7 @@
         font-size: 18px;
     }
     .promo-wrap2 .promo-image .caption {
-       
+       top: 30px;
     }
     #main-slider .caption-wrapper {
         margin-top: -60px;
@@ -2039,4 +2066,16 @@
     margin-left:0
 }
 
+}
+
+@media (max-width: 320px){
+    .promo-wrap2 .promo-image .caption {
+       top: 10px;
+    }
+    .promo-product1 aside:nth-child(2) .caption{
+        top: 10%;
+    }
+    .woocommerce ul.products.list .collection_desc{
+        padding-left: 10px;
+    }
 }

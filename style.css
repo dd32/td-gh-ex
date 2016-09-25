@@ -4,11 +4,11 @@ Theme URI: https://accesspressthemes.com/wordpress-themes/accesspress-store/
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com/
 Description: AccessPress Store is free WordPress theme that work beautifully with WooCommerce. The theme is packed with lots of exciting feature that enhances the ecommerce experience. It features Product slider, advanced whistlist, Featured product show list, call to action and many more. With its advanced customizer options, setting up the ecommerce website has become much more easy. Great customer support via online chat, email, support forum. Official support forum: http://accesspressthemes.com/support/ View full demo here: http://demo.accesspressthemes.com/accesspress-store/
-Version: 2.1.4
+Version: 2.1.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: accesspress-store
-Tags: e-commerce, custom-menu, one-column, two-columns, three-columns, left-sidebar, right-sidebar, featured-images, custom-header, custom-colors, custom-background, threaded-comments, featured-images, custom-header
+Tags: e-commerce, custom-menu, one-column, two-columns, three-columns, left-sidebar, right-sidebar, featured-images, custom-header, custom-colors, custom-background, threaded-comments, featured-images, custom-header, rtl-language-support
 This theme, like WordPress, is licensed under the GPL.
 
 AccessPress Store is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
@@ -1035,7 +1035,8 @@ HEADER TWO
     background: none;
     border-top: 1px solid #eee;
 }
-.headertwo .home_navigation .inner_home::after, .headertwo .home_navigation .inner_home #menu::after {
+.headertwo .home_navigation .inner_home::after, 
+.headertwo .home_navigation .inner_home #menu::after {
     display: none;
 }
 .headertwo .home_navigation .inner_home {
@@ -2327,6 +2328,9 @@ widget css
     font-weight: 400;
     line-height: 22px;
     padding: 0 20px 0 10px;
+}
+.widget-area .tagcloud {
+    padding-left: 0px;
 }
 .tagcloud {
     padding-left: 30px;
@@ -4309,7 +4313,7 @@ div.view-cart .sub-menu {
 }
 .before-top-header {
     padding: 5px 0;
-} 
+}
 .top-header {
     margin: 0px;
     margin-bottom: 15px;
@@ -4689,6 +4693,10 @@ span.onsale:after,
     min-width: 50px;
     border-radius: 0;
     margin: 0px;
+    /*left: 220px;*/
+    right: 0;
+    /*width: 0;*/
+    left: auto;
 }
 .woocommerce.single.single-product del {
     display: inline-block !important;
@@ -5457,6 +5465,7 @@ span.onsale:after,
     font-size: 44px;
     line-height: 44px;
     text-transform: uppercase;
+    margin-bottom: 5px;
 }
 #content .page_header_wrap #accesspress-breadcrumb,
 .woocommerce .entry-header .woocommerce-breadcrumb {
@@ -5646,8 +5655,8 @@ li.cat-parent {
 .woocommerce .widget_price_filter .ui-slider span.ui-slider-handle:last-child {
     background: url("images/range-right.png") no-repeat scroll center center !important;
 }
-.woocommerce .widget_price_filter .price_slider_amount button {
-    float: right !important;
+.woocommerce.widget_price_filter .price_slider_wrapper .price_slider_amount button {
+    float: right;
     border-radius: 0px !important;
     background: #e24545 !important;
     font-size: 14px;
@@ -5665,8 +5674,8 @@ li.cat-parent {
     color: #E24545 !important;
     border: 2px solid #e24545;
 }
-.woocommerce .widget_price_filter .price_label {
-    float: left !important;
+.woocommerce.widget_price_filter .price_slider_wrapper .price_label {
+    float: left;
     color: #e24545;
     font-weight: 700;
     font-size: 14px;
@@ -6548,7 +6557,7 @@ ul.products.list li.product hr {
     background: #ffffff;
     text-align: left;
     position: relative;
-    margin-left: 10px;
+    /*margin-left: 10px;*/
 }
 .style_two .caption .widget-title {
     font-family: 'lato';
@@ -6656,7 +6665,7 @@ AP WIDGET TITLE SECOND AYOUT
     overflow: hidden;
     position: absolute;
     text-indent: -70px;
-    top: 50%;
+    top: 35%;
     visibility: hidden;
     width: 40px;
 }
@@ -6672,7 +6681,8 @@ AP WIDGET TITLE SECOND AYOUT
     margin-left: 0;
     left: inherit;
 }
-.apwidget_title .new-prod-slide .slick-prev::before, .widget_accesspress_store_product2 .feature-cat-product .slick-prev::before {
+.apwidget_title .new-prod-slide .slick-prev::before, 
+.widget_accesspress_store_product2 .feature-cat-product .slick-prev::before {
     color: #fff;
     content: "\f104";
     font-family: fontawesome;
@@ -6681,6 +6691,7 @@ AP WIDGET TITLE SECOND AYOUT
     position: absolute;
     text-indent: 77px;
     top: 50%;
+    margin-left: 3px;
 }
 .widget_accesspress_store_product2 .feature-cat-product .slick-prev::before {
     text-indent: -50px;
@@ -6695,6 +6706,7 @@ AP WIDGET TITLE SECOND AYOUT
     position: absolute;
     text-indent: 85px;
     top: 50%;
+    /*margin-right: -3px;*/
 }
 .widget_accesspress_store_product2 .feature-cat-product .slick-next::before {
     left: 31px;
@@ -6750,8 +6762,11 @@ AP WIDGET TITLE SECOND AYOUT
     width: 100%;
     z-index: -1;
 }
-.apwidget_title #secondary.sidebar .product_list_widget::before, .apwidget_title #secondary.sidebar .woocommerce > ul:before,
-.apwidget_title .comment-form::before, .apwidget_title .widget > p::before, .apwidget_title #secondary.sidebar .widget_price_filter::after {
+.apwidget_title #secondary.sidebar .product_list_widget::before, 
+.apwidget_title #secondary.sidebar .woocommerce > ul:before,
+.apwidget_title .comment-form::before, 
+.apwidget_title .widget > p::before, 
+.apwidget_title #secondary.sidebar .widget_price_filter::after {
     border-top: 1px solid #ddd;
     content: "";
     /*height: 100%;*/
@@ -6760,6 +6775,9 @@ AP WIDGET TITLE SECOND AYOUT
     width: 100%;
     left: 0;
 }
+.apwidget_title #review_form .comment-form::before{
+    border-top:0;
+ }
 .apwidget_title .top-footer-block .cta-banner {
     margin-top: 0;
 }

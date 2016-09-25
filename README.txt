@@ -48,6 +48,10 @@ Images
 
 == Changelog ==
 
+= 2.1.5 =
+
+** RTL language support.
+
 = 2.1.4 =
 
 ** Make the theme compatible with child theme.

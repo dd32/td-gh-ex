@@ -214,7 +214,7 @@ function accesspress_ticker_header_customizer(){
 		$ticker_array = array($ticker_text1, $ticker_text2, $ticker_text3, $ticker_text4);
 		?>
 		<script>
-			jQuery(document).ready(function($){
+			jQuery(document).ready(function($){				
 				$('#ticker').ticker({
 		            speed: 0.10,           // The speed of the reveal
 		            ajaxFeed: false,       // Populate jQuery News Ticker via a feed
@@ -260,8 +260,13 @@ function accesspress_slickliderscript(){
 	$accesspress_slider_speed = (!get_theme_mod('slider_speed')) ? "5000" : get_theme_mod('slider_speed');
 	$accesspress_slider_pause = (!get_theme_mod('slider_pause')) ? "5000" : get_theme_mod('slider_pause');
 	if( $accesspress_show_slider == "1") : ?>
-		<script type="text/javascript">
+		<script type="text/javascript">			
 			jQuery(function($){
+				if($('body').hasClass('rtl')){
+				    var rtlClass = true;
+				} else {
+				   var rtlClass = false;
+				}
 				$('#main-slider .bx-slider').slick({
 					dots: <?php echo esc_attr($accesspress_show_pager); ?>,
 					arrows: <?php echo esc_attr($accesspress_show_controls); ?>,
@@ -273,6 +278,7 @@ function accesspress_slickliderscript(){
 					adaptiveHeight:true,
 					infinite:true,
 	                draggable: true,
+	                rtl: rtlClass,
 				});
 
 				<?php if($accesspress_slider_transition == "true"){ ?>

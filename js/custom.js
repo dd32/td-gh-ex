@@ -1,5 +1,11 @@
 jQuery(function ($) {
 
+    if($('body').hasClass('rtl')){
+        var rtlClass = true;
+    } else {
+       var rtlClass = false;
+    }
+
     //Navigation toggle
     $("#toggle").click(function () {
         $(this).toggleClass("on");
@@ -27,6 +33,7 @@ jQuery(function ($) {
         slidesToShow: 4,
         slidesToScroll: 1,
         cssEase: 'ease',
+        rtl: rtlClass,
         responsive: [
             {
                 breakpoint: 1024,
@@ -67,6 +74,7 @@ jQuery(function ($) {
         slidesToShow: 4,
         slidesToScroll: 1,
         cssEase: 'ease',
+        rtl: rtlClass,
         responsive: [
             {
                 breakpoint: 1024,
@@ -104,6 +112,7 @@ jQuery(function ($) {
         slidesToShow: 2,
         slidesToScroll: 1,
         cssEase: 'ease',
+        rtl: rtlClass,
         responsive: [
             {
                 breakpoint: 1024,
