@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-11 23:50+0545\n"
-"PO-Revision-Date: 2016-04-11 23:50+0545\n"
+"POT-Creation-Date: 2016-09-27 01:21+0545\n"
+"PO-Revision-Date: 2016-09-27 01:21+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team:  <kurpachev@gmail.com>\n"
 "Language: ru\n"
@@ -579,8 +579,8 @@ msgstr "Theme Options By"
 
 #: ../functions/panel/theme_options.php:91
 #: ../functions/simplecatch_functions.php:779
-msgid "http://catchthemes.com/"
-msgstr "http://catchthemes.com/"
+msgid "https://catchthemes.com/"
+msgstr "https://catchthemes.com/"
 
 #: ../functions/panel/theme_options.php:91
 #: ../functions/panel/theme_options.php:92
@@ -588,28 +588,28 @@ msgid "Catch Themes"
 msgstr "Catch Themes"
 
 #: ../functions/panel/theme_options.php:97
-msgid "http://catchthemes.com/themes/simple-catch-pro/"
-msgstr "http://catchthemes.com/themes/simple-catch-pro/"
+msgid "https://catchthemes.com/themes/simple-catch-pro/"
+msgstr "https://catchthemes.com/themes/simple-catch-pro/"
 
 #: ../functions/panel/theme_options.php:97
 msgid "Upgrade to Simple Catch Pro"
 msgstr "Обновите до Simple Catch Pro"
 
 #: ../functions/panel/theme_options.php:102
-msgid "http://catchthemes.com/donate/"
-msgstr "http://catchthemes.com/donate/"
+msgid "https://catchthemes.com/donate/"
+msgstr "https://catchthemes.com/donate/"
 
 #: ../functions/panel/theme_options.php:102
 msgid "Donate"
 msgstr "Donate"
 
 #: ../functions/panel/theme_options.php:103
-msgid "http://catchthemes.com/support/"
-msgstr "http://catchthemes.com/support/"
+msgid "https://catchthemes.com/support/"
+msgstr "https://catchthemes.com/support/"
 
 #: ../functions/panel/theme_options.php:104
-msgid "http://catchthemes.com/theme-instructions/simple-catch/"
-msgstr "http://catchthemes.com/theme-instructions/simple-catch/"
+msgid "https://catchthemes.com/theme-instructions/simple-catch/"
+msgstr "https://catchthemes.com/theme-instructions/simple-catch/"
 
 #: ../functions/panel/theme_options.php:104
 msgid "Theme Instruction"
@@ -1191,11 +1191,11 @@ msgstr "Веб-сайт"
 msgid "ID"
 msgstr "ID"
 
-#: ../functions/simplecatch_functions.php:1168 ../page-blog.php:97
+#: ../functions/simplecatch_functions.php:1177 ../page-blog.php:97
 msgid "Previous"
 msgstr "Пред."
 
-#: ../functions/simplecatch_functions.php:1169 ../page-blog.php:98
+#: ../functions/simplecatch_functions.php:1178 ../page-blog.php:98
 msgid "Next"
 msgstr "След."
 
@@ -1373,8 +1373,8 @@ msgstr "Попробуйте более общие ключевые слова"
 #~ msgid "Content Color Options"
 #~ msgstr "Параметры цветов содержимого страницы"
 
-#~ msgid "http://catchthemes.com/support-forum/forum/simple-catch-public/"
-#~ msgstr "http://catchthemes.com/support-forum/forum/simple-catch-public/"
+#~ msgid "https://catchthemes.com/support-forum/forum/simple-catch-public/"
+#~ msgstr "https://catchthemes.com/support-forum/forum/simple-catch-public/"
 
 #~ msgid "Featured Slider Post #"
 #~ msgstr "Сообщение для слайда #"

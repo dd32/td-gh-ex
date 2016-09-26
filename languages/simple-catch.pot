@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-11 23:49+0545\n"
-"PO-Revision-Date: 2016-04-11 23:49+0545\n"
+"POT-Creation-Date: 2016-09-27 01:20+0545\n"
+"PO-Revision-Date: 2016-09-27 01:20+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchinternet.com>\n"
 "Language: en\n"
@@ -570,7 +570,7 @@ msgstr ""
 
 #: ../functions/panel/theme_options.php:91
 #: ../functions/simplecatch_functions.php:779
-msgid "http://catchthemes.com/"
+msgid "https://catchthemes.com/"
 msgstr ""
 
 #: ../functions/panel/theme_options.php:91
@@ -579,7 +579,7 @@ msgid "Catch Themes"
 msgstr ""
 
 #: ../functions/panel/theme_options.php:97
-msgid "http://catchthemes.com/themes/simple-catch-pro/"
+msgid "https://catchthemes.com/themes/simple-catch-pro/"
 msgstr ""
 
 #: ../functions/panel/theme_options.php:97
@@ -587,7 +587,7 @@ msgid "Upgrade to Simple Catch Pro"
 msgstr ""
 
 #: ../functions/panel/theme_options.php:102
-msgid "http://catchthemes.com/donate/"
+msgid "https://catchthemes.com/donate/"
 msgstr ""
 
 #: ../functions/panel/theme_options.php:102
@@ -595,11 +595,11 @@ msgid "Donate"
 msgstr ""
 
 #: ../functions/panel/theme_options.php:103
-msgid "http://catchthemes.com/support/"
+msgid "https://catchthemes.com/support/"
 msgstr ""
 
 #: ../functions/panel/theme_options.php:104
-msgid "http://catchthemes.com/theme-instructions/simple-catch/"
+msgid "https://catchthemes.com/theme-instructions/simple-catch/"
 msgstr ""
 
 #: ../functions/panel/theme_options.php:104
@@ -1176,11 +1176,11 @@ msgstr ""
 msgid "ID"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:1168 ../page-blog.php:97
+#: ../functions/simplecatch_functions.php:1177 ../page-blog.php:97
 msgid "Previous"
 msgstr ""
 
-#: ../functions/simplecatch_functions.php:1169 ../page-blog.php:98
+#: ../functions/simplecatch_functions.php:1178 ../page-blog.php:98
 msgid "Next"
 msgstr ""
 

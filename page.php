@@ -10,5 +10,3 @@
  */
 
 	if( function_exists( 'simplecatch_content' ) ) simplecatch_content();
-
-?> 

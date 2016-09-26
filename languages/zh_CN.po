@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-11 23:50+0545\n"
-"PO-Revision-Date: 2016-04-11 23:50+0545\n"
+"POT-Creation-Date: 2016-09-27 01:21+0545\n"
+"PO-Revision-Date: 2016-09-27 01:21+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchinternet.com>\n"
 "Language: en\n"
@@ -570,8 +570,8 @@ msgstr "主题选项作者"
 
 #: ../functions/panel/theme_options.php:91
 #: ../functions/simplecatch_functions.php:779
-msgid "http://catchthemes.com/"
-msgstr "http://catchthemes.com/"
+msgid "https://catchthemes.com/"
+msgstr "https://catchthemes.com/"
 
 #: ../functions/panel/theme_options.php:91
 #: ../functions/panel/theme_options.php:92
@@ -579,28 +579,28 @@ msgid "Catch Themes"
 msgstr "Catch 主题"
 
 #: ../functions/panel/theme_options.php:97
-msgid "http://catchthemes.com/themes/simple-catch-pro/"
-msgstr "http://catchthemes.com/themes/simple-catch-pro/"
+msgid "https://catchthemes.com/themes/simple-catch-pro/"
+msgstr "https://catchthemes.com/themes/simple-catch-pro/"
 
 #: ../functions/panel/theme_options.php:97
 msgid "Upgrade to Simple Catch Pro"
 msgstr "升级到Simple Catch Pro"
 
 #: ../functions/panel/theme_options.php:102
-msgid "http://catchthemes.com/donate/"
-msgstr "http://catchthemes.com/donate/"
+msgid "https://catchthemes.com/donate/"
+msgstr "https://catchthemes.com/donate/"
 
 #: ../functions/panel/theme_options.php:102
 msgid "Donate"
 msgstr "Donate"
 
 #: ../functions/panel/theme_options.php:103
-msgid "http://catchthemes.com/support/"
-msgstr "http://catchthemes.com/support/"
+msgid "https://catchthemes.com/support/"
+msgstr "https://catchthemes.com/support/"
 
 #: ../functions/panel/theme_options.php:104
-msgid "http://catchthemes.com/theme-instructions/simple-catch/"
-msgstr "http://catchthemes.com/theme-instructions/simple-catch/"
+msgid "https://catchthemes.com/theme-instructions/simple-catch/"
+msgstr "https://catchthemes.com/theme-instructions/simple-catch/"
 
 #: ../functions/panel/theme_options.php:104
 msgid "Theme Instruction"
@@ -1174,11 +1174,11 @@ msgstr "网址"
 msgid "ID"
 msgstr "ID"
 
-#: ../functions/simplecatch_functions.php:1168 ../page-blog.php:97
+#: ../functions/simplecatch_functions.php:1177 ../page-blog.php:97
 msgid "Previous"
 msgstr "上一页"
 
-#: ../functions/simplecatch_functions.php:1169 ../page-blog.php:98
+#: ../functions/simplecatch_functions.php:1178 ../page-blog.php:98
 msgid "Next"
 msgstr "下一页"
 
@@ -1354,8 +1354,8 @@ msgstr "尝试更普遍的关键词"
 #~ msgid "Content Color Options"
 #~ msgstr "内容颜色选项"
 
-#~ msgid "http://catchthemes.com/support-forum/forum/simple-catch-public/"
-#~ msgstr "http://catchthemes.com/support-forum/forum/simple-catch-public/"
+#~ msgid "https://catchthemes.com/support-forum/forum/simple-catch-public/"
+#~ msgstr "https://catchthemes.com/support-forum/forum/simple-catch-public/"
 
 #~ msgid "Featured Slider Post #"
 #~ msgstr "特色幻灯片文章"

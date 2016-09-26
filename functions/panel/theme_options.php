@@ -88,20 +88,20 @@ function simplecatch_theme_options_do_page() {
                 <div id="theme-option-title">
                     <h2 class="title"><?php _e( 'Theme Options By', 'simple-catch' ); ?></h2>
                     <h2 class="logo">
-                        <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'simple-catch' ) ); ?>" title="<?php esc_attr_e( 'Catch Themes', 'simple-catch' ); ?>" target="_blank">
+                        <a href="<?php echo esc_url( __( 'https://catchthemes.com/', 'simple-catch' ) ); ?>" title="<?php esc_attr_e( 'Catch Themes', 'simple-catch' ); ?>" target="_blank">
                             <img src="<?php echo get_template_directory_uri().'/functions/panel/images/catch-themes.png'; ?>" alt="<?php _e( 'Catch Themes', 'simple-catch' ); ?>" />
                         </a>
                     </h2>
                 </div><!-- #theme-option-title -->
                 <div id="upgradepro">
-                	<a class="button" href="<?php echo esc_url(__('http://catchthemes.com/themes/simple-catch-pro/','simple-catch')); ?>" title="<?php esc_attr_e('Upgrade to Simple Catch Pro', 'simple-catch'); ?>" target="_blank"><?php printf(__('Upgrade to Simple Catch Pro','simple-catch')); ?></a>
+                	<a class="button" href="<?php echo esc_url(__('https://catchthemes.com/themes/simple-catch-pro/','simple-catch')); ?>" title="<?php esc_attr_e('Upgrade to Simple Catch Pro', 'simple-catch'); ?>" target="_blank"><?php printf(__('Upgrade to Simple Catch Pro','simple-catch')); ?></a>
                	</div><!-- #upgradepro -->
 
                 <div id="theme-support">
                     <ul>
-                    	<li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/donate/','simple-catch')); ?>" title="<?php esc_attr_e('Donate', 'simple-catch'); ?>" target="_blank"><?php printf(__('Donate','simple-catch')); ?></a></li>
-                        <li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/support/','simple-catch')); ?>" title="<?php esc_attr_e('Support', 'simple-catch'); ?>" target="_blank"><?php printf(__('Support','simple-catch')); ?></a></li>
-                        <li><a class="button" href="<?php echo esc_url(__('http://catchthemes.com/theme-instructions/simple-catch/','simple-catch')); ?>" title="<?php esc_attr_e('Theme Instruction', 'simple-catch'); ?>" target="_blank"><?php printf(__('Theme Instruction','simple-catch')); ?></a></li>
+                    	<li><a class="button" href="<?php echo esc_url(__('https://catchthemes.com/donate/','simple-catch')); ?>" title="<?php esc_attr_e('Donate', 'simple-catch'); ?>" target="_blank"><?php printf(__('Donate','simple-catch')); ?></a></li>
+                        <li><a class="button" href="<?php echo esc_url(__('https://catchthemes.com/support/','simple-catch')); ?>" title="<?php esc_attr_e('Support', 'simple-catch'); ?>" target="_blank"><?php printf(__('Support','simple-catch')); ?></a></li>
+                        <li><a class="button" href="<?php echo esc_url(__('https://catchthemes.com/theme-instructions/simple-catch/','simple-catch')); ?>" title="<?php esc_attr_e('Theme Instruction', 'simple-catch'); ?>" target="_blank"><?php printf(__('Theme Instruction','simple-catch')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('https://www.facebook.com/catchthemes/','simple-catch')); ?>" title="<?php esc_attr_e('Like Catch Themes on Facebook', 'simple-catch'); ?>" target="_blank"><?php printf(__('Facebook','simple-catch')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('https://twitter.com/catchthemes/','simple-catch')); ?>" title="<?php esc_attr_e('Follow Catch Themes on Twitter', 'simple-catch'); ?>" target="_blank"><?php printf(__('Twitter','simple-catch')); ?></a></li>
                         <li><a class="button" href="<?php echo esc_url(__('http://wordpress.org/support/view/theme-reviews/simple-catch','simple-catch')); ?>" title="<?php esc_attr_e('Rate us 5 Star on WordPress', 'simple-catch'); ?>" target="_blank"><?php printf(__('5 Star Rating','simple-catch')); ?></a></li>

@@ -1037,7 +1037,7 @@ function simplecatch_customize_scripts() {
 	wp_register_script( 'simplecatch_customizer_custom', get_template_directory_uri() . '/functions/panel/customizer-custom-scripts.js', array( 'jquery' ), '20140108', true );
 
     $simplecatch_misc_links = array(
-							'upgrade_link' 				=> esc_url( 'http://catchthemes.com/themes/simple-catch-pro/' ),
+							'upgrade_link' 				=> esc_url( 'https://catchthemes.com/themes/simple-catch-pro/' ),
 							'upgrade_text'	 			=> __( 'Upgrade To Pro &raquo;', 'simple-catch' ),
 		);
 

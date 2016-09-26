@@ -776,7 +776,7 @@ function simplecatch_custom_tag_cloud() {
 function simplecatch_footer() {
 ?>
 	<div class="col5 powered-by">
-        <?php _e( 'Powered By:', 'simple-catch');?> <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'simple-catch' ) ); ?>" target="_blank" title="<?php esc_attr_e( 'Powered By WordPress', 'simple-catch' ); ?>"><?php _e( 'WordPress', 'simple-catch' ); ?></a> | <?php _e( 'Theme:', 'simple-catch');?> <a href="<?php echo esc_url( __( 'http://catchthemes.com/', 'simple-catch' ) ); ?>" target="_blank" title="<?php esc_attr_e( 'Simple Catch', 'simple-catch' ); ?>"><?php _e( 'Simple Catch', 'simple-catch' ); ?></a>
+        <?php _e( 'Powered By:', 'simple-catch');?> <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'simple-catch' ) ); ?>" target="_blank" title="<?php esc_attr_e( 'Powered By WordPress', 'simple-catch' ); ?>"><?php _e( 'WordPress', 'simple-catch' ); ?></a> | <?php _e( 'Theme:', 'simple-catch');?> <a href="<?php echo esc_url( __( 'https://catchthemes.com/', 'simple-catch' ) ); ?>" target="_blank" title="<?php esc_attr_e( 'Simple Catch', 'simple-catch' ); ?>"><?php _e( 'Simple Catch', 'simple-catch' ); ?></a>
   	</div><!--.col5 powered-by-->
 
 <?php
@@ -1083,7 +1083,16 @@ function simplecatch_posts_id_column( $col, $val ) {
 add_action( 'manage_posts_custom_column', 'simplecatch_posts_id_column', 10, 2 );
 
 function simplecatch_posts_id_column_css() {
-	echo '<style type="text/css">#postid { width: 40px; }</style>';
+	echo '
+	<style type="text/css">
+	    #postid { width: 80px; }
+	    @media screen and (max-width: 782px) {
+	        .wp-list-table #postid, .wp-list-table #the-list .postid { display: none; }
+	        .wp-list-table #the-list .is-expanded .postid {
+	            padding-left: 30px;
+	        }
+	    }
+    </style>';
 }
 add_action( 'admin_head-edit.php', 'simplecatch_posts_id_column_css' );
 

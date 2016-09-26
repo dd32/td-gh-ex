@@ -41,28 +41,28 @@ class Simple_Catch_Customize_Dropdown_Categories_Control extends WP_Customize_Co
 
 //Custom control for important link
 class Simple_Catch_Important_Links extends WP_Customize_Control {
-    public $type = 'important-links'; 
-    
+    public $type = 'important-links';
+
     public function render_content() {
     	//Add Theme instruction, Support Forum, Changelog, Donate link, Review, Facebook, Twitter, Google+, Pinterest links
         $important_links = array(
-						'theme_instructions' => array( 
-							'link'	=> esc_url( 'http://catchthemes.com/theme-instructions/catcheverest/' ),
+						'theme_instructions' => array(
+							'link'	=> esc_url( 'https://catchthemes.com/theme-instructions/catcheverest/' ),
 							'text' 	=> __( 'Theme Instructions', 'simple-catch' ),
 							),
-						'support' => array( 
-							'link'	=> esc_url( 'http://catchthemes.com/support/' ),
+						'support' => array(
+							'link'	=> esc_url( 'https://catchthemes.com/support/' ),
 							'text' 	=> __( 'Support', 'simple-catch' ),
 							),
-						'changelog' => array( 
-							'link'	=> esc_url( 'http://catchthemes.com/changelogs/catcheverest-theme/' ),
+						'changelog' => array(
+							'link'	=> esc_url( 'https://catchthemes.com/changelogs/catcheverest-theme/' ),
 							'text' 	=> __( 'Changelog', 'simple-catch' ),
 							),
-						'donate' => array( 
-							'link'	=> esc_url( 'http://catchthemes.com/donate/' ),
+						'donate' => array(
+							'link'	=> esc_url( 'https://catchthemes.com/donate/' ),
 							'text' 	=> __( 'Donate Now', 'simple-catch' ),
 							),
-						'review' => array( 
+						'review' => array(
 							'link'	=> esc_url( 'https://wordpress.org/support/view/theme-reviews/catcheverest' ),
 							'text' 	=> __( 'Review', 'simple-catch' ),
 							),
@@ -101,6 +101,6 @@ class Simple_Catch_Customize_Checkbox extends WP_Customize_Control {
         </label>
          <?php if ( !empty( $this->description ) ) : ?>
             <span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
-        <?php endif; ?>	        
+        <?php endif; ?>
     <?php }
 }

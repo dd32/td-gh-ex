@@ -68,4 +68,4 @@
         <?php get_search_form(); ?>
     </div><!-- .post -->
 
-<?php endif; ?>
+<?php endif;
