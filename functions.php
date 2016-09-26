@@ -421,11 +421,13 @@ function antonine_custom_css() {
 		.read-more-holder{
 			background-color: rgba(<?PHP echo $hex[0] . "," . $hex[1] . "," . $hex[2]; ?>, 1.0); 
 		}
-		
+
+		.page article,		
 		.single article,
 		.links .linkprevious,
 		.links .linknext,
 		.single .links,
+		.page .links,
 		#gradient{
 			background-color: <?PHP echo get_theme_mod("site_single_post_background_colour"); ?>;
 		}
@@ -488,6 +490,7 @@ function antonine_custom_css() {
 		}
 		
 		.single #content,
+		.page #content,
 		.home #main article, 
 		.search #main article, 
 		.archive #main article{
@@ -496,6 +499,7 @@ function antonine_custom_css() {
 			box-shadow: 10px 10px 40px 0px rgba(<?PHP echo $hex[0] . "," . $hex[1] . "," . $hex[2]; ?>,0.55);
 		}
 
+		.page #main article .aside,
 		.single #main article .aside{
 			border:1px solid <?PHP echo get_theme_mod('shadow_colour'); ?>;
 			-webkit-border-radius: 20px;

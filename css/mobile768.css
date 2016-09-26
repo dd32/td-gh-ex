@@ -214,4 +214,8 @@
 		width:80%;
 		margin:0 10%;
 	}
+
+	html .fn{
+		float:none;
+	}
 }

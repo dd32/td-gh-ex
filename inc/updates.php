@@ -82,7 +82,7 @@
 				foreach($rows as $comment){
 					$date = $comment->comment_date;
 					$post = get_post($comment->comment_post_ID);
-					$response->new_comments .= "<p><span><strong>" . get_comment_author($comment->comment_author) . "</strong> " . __("on", 'antonine') . " <a href='" . get_permalink($post) . "#comment" . $comment->comment_ID . "'>" . $post->post_title . "</a> " . $date . " " . __("said",'antonine') . " </span></p><blockquote>" . $comment->comment_content . "</blockquote>"; 
+					$response->new_comments .= "<p><span><strong>" . get_comment_author($comment->comment_ID) . "</strong> " . __("on", 'antonine') . " <a href='" . get_permalink($post) . "#comment" . $comment->comment_ID . "'>" . $post->post_title . "</a> " . $date . " " . __("said",'antonine') . " </span></p><blockquote>" . $comment->comment_content . "</blockquote>"; 
 					$response->new_comments_count++;
 				}
 				

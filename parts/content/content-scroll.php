@@ -10,7 +10,7 @@
 	<div class="content-holder">
 		<div class="entry-content-index home-align">
 			<?php
-				$content = strip_tags($post->post_content);
+				$content = strip_tags(do_shortcode($post->post_content));
 				$words = explode(" ", $content);
 				$excerpt = array_slice($words,0,20);
 				echo implode(" ", $excerpt);

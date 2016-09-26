@@ -340,10 +340,12 @@ div#previewHolderContent{
 	border:none;
 }	
 
+.page article .entry-content,
 .single article .entry-content{
 	margin: 2%;
 }
 
+.page #content,
 .single #content{
 	margin: 0% 10% 10% 10%;
 	width: 80%;
@@ -702,10 +704,12 @@ button{
 	padding: 20px;
 }
 
+.page p.entry-title,
 .single p.entry-title{
 	font-size: 40px;
 }
 
+.page .entry-content,
 .single .entry-content{
 	margin: 20px 0px;
 }
@@ -733,6 +737,7 @@ img.avatar{
 	padding: 15px;
 }
 
+.page #primary,
 .single #primary{
 	margin-top: 10px;
 }
@@ -755,17 +760,22 @@ strong{
 	font-weight: bold;
 }
 
+.page article,
 .single article{
 	width: 100%;
 	display: inline-block;
 }
 
+.page .navigation,
+.page header,
+.page footer,
 .single .navigation,
 .single header,
 .single footer{
 	margin: 2%;
 }
 
+.page footer.comment-meta,
 .single footer.comment-meta{
 	margin: 0%;
 }
@@ -946,21 +956,26 @@ h6{
 	padding:2%;
 }	
 
+.page article ul,
+.page article ol,
 .single article ul,
 .single article ol{
 	padding-left: 2.5%;
 }	
 
+.page p.comment-form-url #url
 .single p.comment-form-url #url,
 .home p.comment-form-url #url{
 	margin-left: 14px;
 }
 
+.page #comments p.comment-form-author #author,
 .single #comments p.comment-form-author #author,
 .home #comments p.comment-form-author #author{
 	margin-left: 13px;
 }
 
+.page .content-holder,
 .single .content-holder,
 #comments{
 	margin: 2%;
@@ -993,6 +1008,7 @@ h6{
 	text-align: center;
 }
 
+.page .thumbnail,
 .single .thumbnail{
 	text-align:center;
 	margin:0 auto;
@@ -1030,33 +1046,40 @@ html body .sp-replacer{
 	cursor: hand;
 }
 
+.page #main article .aside
 .single #main article .aside{
 	width:80%;
 	padding: 5%;
 	margin:0% 5%;
 }
 
+.page blockquote,
 .single blockquote{
 	font-style: italic;
 	font-size: 40px;
 }
-	
+
+.page .image,	
 .single .image{
 	height: 500px;
 	text-align: center;
 	margin: 0 auto;
 }	
 
+.page .gallery,
+.page .video .wp-video
 .single .gallery,
 .single .video .wp-video{
 	text-align: center;
 	margin: 0 auto;
 }	
-	
+
+.page .gallery img,	
 .single .gallery img{
 	display: inline-block;
 }	
-		
+
+.page .chat p,		
 .single .chat p{
 	display: inline-block;
 }	
