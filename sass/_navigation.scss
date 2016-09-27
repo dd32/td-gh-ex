@@ -86,7 +86,7 @@ a {
 			padding-top: 0.1875em; 
 			position: absolute;
 			text-align: left !important;
-			z-index: 2;  
+			z-index: 300;  
 			
 			@media (max-width: $large) {
 				.resp & {
@@ -107,7 +107,7 @@ a {
 
 				&:hover > a {
 					background: $highlight-color;
-					color: #FFF; 
+					color: #fff; 
 				}					
 			}	
 
@@ -199,24 +199,24 @@ a {
         margin-bottom: 1.78571em;
         max-width: 100%;
         width: 100%;
-        -webkit-touch-callout: none;
-    	-webkit-user-select: none;
-    	-khtml-user-select: none;
-    	-moz-user-select: none;
-    	-ms-user-select: none;
-    	user-select: none;
+        
+        > div {
+            float: none;
+        }    
         
         ul {
             display: block;
             margin: 0;
-
+            
 			> li[class*=children] {
 
-				.sub-menu li {
-					margin-bottom: 2px; 
+				.sub-menu li,
+				.children li {
+					margin-bottom: 2px;
 				}
 
-				&.up > .sub-menu {
+				&.up > .sub-menu,
+				&.up > .children {
 					display: block;
 				}
 
@@ -224,7 +224,8 @@ a {
 					margin-bottom: 0 !important;
 				}				
 
-				> .sub-menu {
+				> .sub-menu,
+				> .children {
 					display: none;
 				}
 
@@ -247,34 +248,70 @@ a {
 	        	}
 
 	        	> a:hover ~ span {
-	        		background: $background-color;
-	          		color: $text-color;
-	        	}
-	        
-	        	@at-root .no-touch .responsive-menu .main-navigation.toggled ul > li[class*=children]:hover > span:hover {
-	        		background: $highlight-color;
 	          		color: #fff;
 	        	}
 
 	        	&.up > span:after {
 	          		content: "\f077" !important;
-	        	}       				     
+	        	}
+
+				// Level one.
+				ul li { 
+
+					a {
+						padding-left: 36px;
+					}
+					
+					// Level two.
+					ul li {
+
+						a {
+							padding-left: 54px;
+						}
+						
+						// Level three.
+						ul li {
+							
+							a {
+								padding-left: 72px;
+							}
+
+							// Level three.
+							ul li {
+
+								a {
+									padding-left: 90px; 
+								}
+								
+								// Level four.
+								ul li {
+									a {
+										padding-left: 108px;
+									}
+									
+									// Level five.
+									ul li a {
+										padding-left: 126px;  
+									}
+								}
+							}
+						}
+					}
+				}	        	       				     
 			}       
             
             li {
-            	background: $background-color;
                 display: block;
                 margin: 0;
-                padding: 0;
                 width: 100%;
                 
                 a {
-                    background: $background-color;
-                    display: block;
+	            	background: $background-color;
                     color: $text-color;
-                    line-height: 46px;
+                    height: auto !important;
+                    line-height: normal !important;
                     margin: 0 0 2px; 
-                    padding: 0 18px;
+                    padding: 14px 18px 15px;
                     text-align: left;
                     @include transition(none);
                     
@@ -286,13 +323,6 @@ a {
                     }
                 }                            
             }
-	      	
-	      	ul {
-	      		background: #fff !important;
-	      		border-top: 2px solid #fff !important;
-	       		display: none;
-	       		padding-top: 0;
-	      	}
 	               			
             > ul > li > a:last-of-type {
                 margin-bottom: 0;
@@ -308,24 +338,20 @@ a {
                 > a:hover {
                     border-bottom: none;
                 }
-            }
-
-            .sub-menu,
-            .children {
-            
-                .menu-item-has-children,
-                .page_item_has_children {    
-                                        
-                    > a:after {
-                        content: none;       
-                    }                
-                }  
-            }                   
+            }                  
 
             ul { 
                 background: none;
+                display: none; 
+                margin-top: 2px; 
+                opacity: 1 !important;
+                padding-top: 0;
                 position: static;
-                z-index: 2;  
+                z-index: 2;
+                
+                li {
+                	background: #fff; 
+                }  
                 
                 li:hover > a {
                     background: $background-color;
@@ -333,17 +359,17 @@ a {
                 }   
                  
                 li a {
-                    line-height: 46px;
+                    line-height: normal;
                     
                     &:hover {
                         background: $highlight-color;
                         border-bottom: none;
-                        color: #fff; 
+                        color: #fff;    
                     }
                     
                 }
             }                        
-        }       
+        }          
     }
 }
 

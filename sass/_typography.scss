@@ -100,6 +100,7 @@ blockquote {
 	border-left: 0.1875em solid $highlight-color;
 	margin-top: 1.6875em;
 	margin-bottom: 1.6875em;  
+	overflow: hidden;
 	padding: 0 0 0 1.6875em;
 
 	cite {

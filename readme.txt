@@ -4,15 +4,15 @@ Contributors: Misplon
 Tags: one-column, two-columns, right-sidebar, custom-menu, featured-images, footer-widgets, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog
 
 Requires at least: 4.1
-Tested up to: 4.5.3
+Tested up to: 4.6.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Clean, crisp and lightweight. Puro is a theme for bloggers, creatives and small businesses.
+Clean, crisp and lightweight. Puro is a theme for bloggers, creatives, and small businesses.
 
 == Description ==
 
-A content focussed minimalist theme, perfect for your blog, portfolio or small business site. We've closely integrated SiteOrigin's Page Builder for responsive layouts and Meta Slider for smooth, easy to build sliders. Puro is responsive, Retina ready and fully compatible with Jetpack, Contact Form 7, Gravity Forms and WP PageNavi. Included is a .rtl CSS file for right to left languages.
+A content focussed minimalist theme, perfect for your blog, portfolio or small business site. We've closely integrated SiteOrigin's Page Builder for responsive layouts and Meta Slider for smooth, easy to build sliders. Puro is responsive, Retina-ready and fully compatible with Jetpack, Contact Form 7, Gravity Forms and WP PageNavi. Included is a .rtl CSS file for right to left languages.
 
 == Installation ==
 

@@ -7,7 +7,7 @@
  * @license GPL 2.0
  */
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.0.9.1' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.0.9.2' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://updates.purothemes.com' );
 define( 'SITEORIGIN_THEME_JS_PREFIX', defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min' );
 
@@ -230,14 +230,18 @@ function puro_custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'puro_custom_excerpt_length', 999 );
 
+if ( ! function_exists( 'puro_excerpt_more' ) ) :
 /**
  * Add a more link to the excerpt.
  */
 function puro_excerpt_more( $more ) {
+	if ( is_search() ) return;
 	if ( siteorigin_setting( 'blog_archive_content' ) == 'excerpt' && siteorigin_setting( 'blog_excerpt_more' ) ) {
-		return '<a class="more-link" href="' . get_permalink() . '">' . wp_kses_post( siteorigin_setting( 'blog_read_more' ) ) .'</a>';
+		$read_more_text = siteorigin_setting( 'blog_read_more' ) ? esc_html( siteorigin_setting( 'blog_read_more' ) ) : __( 'Continue reading', 'puro' );
+		return '<p><a class="more-link" href="' . get_permalink() . '">' . $read_more_text . '</a></p>';
 	}
 }
+endif;
 add_filter( 'excerpt_more', 'puro_excerpt_more' );
 
 /**
@@ -285,15 +289,18 @@ function puro_render_slider() {
 	}
 }
 
+if ( ! function_exists( 'puro_read_more_link' ) ) :
 /**
  * Filter the read more link.
  */
 function puro_read_more_link() {
-	return '<a class="more-link"href="' . get_permalink() . '">' . wp_kses_post( siteorigin_setting('blog_read_more') ) .'</a>';
+	$read_more_text = siteorigin_setting( 'blog_read_more' ) ? esc_html( siteorigin_setting( 'blog_read_more' ) ) : __( 'Continue reading', 'puro' );
+	return '<a class="more-link"href="' . get_permalink() . '">' . $read_more_text . '</a>';
 }
 add_filter( 'the_content_more_link', 'puro_read_more_link' );
+endif;
 
-if ( ! function_exists( 'puro_premium_responsive_menu' ) ) :
+if ( ! function_exists( 'puro_responsive_menu' ) ) :
 /**
  * Add the responsive menu button.
  */
@@ -347,3 +354,14 @@ function puro_responsive_header() {
 	}
 }
 add_action( 'wp_head', 'puro_responsive_header' );
+
+if ( ! function_exists( 'puro_is_woocommerce_active' ) ) :
+/**
+ * Check that WooCommerce is active.
+ *
+ * @return bool
+ */
+function puro_is_woocommerce_active() {
+	return in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) );
+}
+endif;

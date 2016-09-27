@@ -1,5 +1,15 @@
 == Changelog ==
 
+= 1.0.9.2 - 27 September 2016 =
+* Updated settings framework.
+* Added default text for the Continue reading text theme setting.
+* Refactored mobile menu JS and CSS.
+* Removed menu drop-down item limit.
+* Solved issue with drop-down menu visibility.
+* Improved blockquote formatting.
+* RTL spacing fix for aligned images.
+* Premium: Fixed page sharing bug.
+
 = 1.0.9.1 - 15 August 2016 =
 * Added sub-menu toggling to the mobile menu.
 * Added mobile menu collapse setting.

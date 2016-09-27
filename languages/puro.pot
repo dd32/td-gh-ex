@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Puro\n"
-"POT-Creation-Date: 2016-08-05 13:02+0200\n"
+"POT-Creation-Date: 2016-09-27 12:42+0200\n"
 "PO-Revision-Date: 2015-06-10 19:10+0200\n"
 "Last-Translator: Puro <support@purothemes.com>\n"
 "Language-Team: \n"
@@ -126,6 +126,10 @@ msgid ""
 "and attributes: %s"
 msgstr ""
 
+#: ../functions.php:240 ../functions.php:297 ../inc/settings.php:209
+msgid "Continue reading"
+msgstr ""
+
 #: ../header.php:23
 msgid "Skip to content"
 msgstr ""
@@ -152,7 +156,7 @@ msgstr ""
 msgid "Page %s"
 msgstr ""
 
-#: ../inc/legacy.php:5 ../inc/legacy.php:6 ../inc/settings/settings.php:408
+#: ../inc/legacy.php:5 ../inc/legacy.php:6 ../inc/settings/settings.php:407
 msgid "Theme Settings"
 msgstr ""
 
@@ -190,7 +194,7 @@ msgstr ""
 
 #: ../inc/premium/premium.php:12 ../inc/premium/premium.php:179
 #: ../inc/premium/premium.php:279 ../inc/premium/tpl/upgrade-page.php:16
-#: ../inc/premium/tpl/upgrade-page.php:123 ../inc/update/update.php:52
+#: ../inc/premium/tpl/upgrade-page.php:123
 msgid "Premium"
 msgstr ""
 
@@ -704,9 +708,8 @@ msgstr ""
 msgid "Allow users to submit comments without a page re-load on submit."
 msgstr ""
 
-#: ../inc/settings.php:160 ../premium/inc/settings.php:26
-#: ../upgrade/upgrade.php:40
-msgid "Post Sharing"
+#: ../inc/settings.php:160 ../upgrade/upgrade.php:40
+msgid "Post and Page Sharing"
 msgstr ""
 
 #: ../inc/settings.php:161 ../premium/inc/settings.php:27
@@ -743,10 +746,6 @@ msgid ""
 "time."
 msgstr ""
 
-#: ../inc/settings.php:209
-msgid "Continue reading"
-msgstr ""
-
 #: ../inc/settings.php:227
 msgid "Copyright {year}"
 msgstr ""
@@ -778,28 +777,36 @@ msgstr ""
 msgid "Free #WordPress Theme from @SiteOrigin"
 msgstr ""
 
-#: ../inc/settings/inc/about_page.php:162
+#: ../inc/settings/inc/about_page.php:143
 msgid "Take a Tour"
 msgstr ""
 
-#: ../inc/settings/inc/about_page.php:170
+#: ../inc/settings/inc/about_page.php:152
 msgid "Get Updates"
 msgstr ""
 
-#: ../inc/settings/inc/about_page.php:178
+#: ../inc/settings/inc/about_page.php:161
+msgid "Documentation"
+msgstr ""
+
+#: ../inc/settings/inc/about_page.php:170
+msgid "Write a Review"
+msgstr ""
+
+#: ../inc/settings/inc/about_page.php:179
 msgid "Upgrade to Premium"
 msgstr ""
 
-#: ../inc/settings/inc/about_page.php:216
+#: ../inc/settings/inc/about_page.php:237
 msgid "Watch The Video"
 msgstr ""
 
-#: ../inc/settings/inc/about_page.php:229
+#: ../inc/settings/inc/about_page.php:250
 #, php-format
 msgid "If you like %s, please share it!"
 msgstr ""
 
-#: ../inc/settings/inc/about_page.php:259
+#: ../inc/settings/inc/about_page.php:280
 msgid "Proudly Created By"
 msgstr ""
 
@@ -809,6 +816,16 @@ msgstr ""
 
 #: ../inc/settings/inc/control/font.php:68
 msgid "Subset"
+msgstr ""
+
+#: ../inc/settings/inc/control/premium.php:15
+#, php-format
+msgid ""
+"%s Premium adds loads of extra customization settings and useful features."
+msgstr ""
+
+#: ../inc/settings/inc/control/premium.php:24
+msgid "Find Out More"
 msgstr ""
 
 #: ../inc/settings/inc/control/teaser.php:24
@@ -873,8 +890,12 @@ msgstr ""
 msgid "Taxonomy"
 msgstr ""
 
-#: ../inc/settings/settings.php:409
+#: ../inc/settings/settings.php:408
 msgid "Change settings for your theme."
+msgstr ""
+
+#: ../inc/settings/settings.php:415 ../inc/settings/settings.php:433
+msgid "SiteOrigin Premium"
 msgstr ""
 
 #: ../inc/template-tags.php:21
@@ -920,6 +941,10 @@ msgstr ""
 #: ../inc/template-tags.php:149
 #, php-format
 msgid "%s Logo"
+msgstr ""
+
+#: ../inc/update/update.php:52
+msgid "Puro Premium"
 msgstr ""
 
 #: ../inc/update/update.php:54
@@ -1102,6 +1127,10 @@ msgstr ""
 
 #: ../premium/inc/customizer.php:430
 msgid "Footer Padding (em)"
+msgstr ""
+
+#: ../premium/inc/settings.php:26
+msgid "Post Sharing"
 msgstr ""
 
 #: ../premium/inc/settings.php:30

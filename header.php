@@ -34,7 +34,7 @@
 			<?php if ( siteorigin_setting( 'navigation_header_menu' ) ) { ?>
 				<nav id="site-navigation" class="main-navigation" role="navigation">
 					<?php do_action( 'puro_before_nav_menu' ) ?>
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'depth' => 4, ) ); ?>
+					<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 				</nav><!-- #site-navigation -->
 			<?php } ?>
 		</div><!-- .site-header-inner -->

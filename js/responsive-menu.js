@@ -45,25 +45,20 @@
 
 ( function( $ ) {
 
-    $( document ).ready( function() {
-        $( '.menu-item[class*=children]' ).append( '<span></span>' ).click( function( e ) {
-            $( this ).toggleClass( "up" );
-            return false;
-        });
-
-        $( '.menu-item > a' ).click(function() {
-            event.stopPropagation();
-        } );  
-    } );  
+$( 'li[class*=children]' ).append( '<span></span>' );
+$( 'li[class*=children]>span' ).click( function( e ) {
+    $( this ).closest( 'li[class*=children]' ).toggleClass( 'up' );
+    return false;
+});
 
   $( window ).resize( function() {
 
-    windowWidth = $(window).width();
-    navigation  = $('#masthead, #site-navigation');
+    windowWidth = $( window ).width();
+    navigation  = $( 'nav' );
     isToggled   = navigation.hasClass( 'toggled' );
 
     if ( windowWidth > puro_resp_menu_params.collapse && isToggled ) {
-      navigation.removeClass('toggled');
+        navigation.removeClass( 'toggled' );
     }
 
   } );

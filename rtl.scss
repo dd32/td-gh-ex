@@ -171,13 +171,13 @@ input[type="radio"] {
 blockquote.alignleft,
 figure.wp-caption.alignleft,
 img.alignleft {
-	margin: 0 0 1.6875em 1.6875em;
+	margin: 0 1.6875em 1.6875em 0;
 }
 
 blockquote.alignright,
 figure.wp-caption.alignright,
 img.alignright {
-	margin: 0 1.6875em 1.6875em 0;
+	margin: 0 0 1.6875em 1.6875em;
 }
 
 /*--------------------------------------------------------------
