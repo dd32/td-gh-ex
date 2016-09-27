@@ -30,13 +30,22 @@ if ( ! class_exists( 'HU_customize' ) ) :
       //add the customizer built with the builder below
       add_action( 'customize_register'                       , array( $this , 'hu_customize_register' ), 20, 1 );
       //add the customizer built with the builder below
-      add_action( 'customize_register'                        , array( $this , 'hu_schedule_register_sidebar_section' ), 1000, 1 );
+      add_action( 'customize_register'                       , array( $this , 'hu_schedule_register_sidebar_section' ), 1000, 1 );
       //modify some WP built-in settings / controls / sections
       add_action( 'customize_register'                       , array( $this , 'hu_alter_wp_customizer_settings' ), 30, 1 );
-       //Partial refreshs
-      add_action( 'customize_register'                        , array( $this,  'hu_register_partials' ) );
+
+      //Partial refreshs
+      add_action( 'customize_register'                       , array( $this,  'hu_register_partials' ) );
       //Clean some deprecated options (header-image for example, now handled with wp header_image theme mod)
       add_action( 'customize_save_after'                      , array( $this,  'hu_clean_deprecated_options' ) );
+
+      //custom logo compatibility option for WP version < WP 4.5
+      //the Hueman theme has switched to the WP custom_logo theme mod since v3.2.4
+      //for older version, the previous control is used
+      if ( ! function_exists( 'the_custom_logo' ) ) {
+        add_filter( 'hu_site_identity_sec', array( $this, 'hu_register_old_custom_logo') );
+      }
+
 
       //Print modules and inputs templates
       $this -> hu_load_tmpl();
@@ -48,6 +57,7 @@ if ( ! class_exists( 'HU_customize' ) ) :
 
       locate_template( 'functions/czr/czr-resources.php', true, true );
     }
+
 
 
     //hook : customize_save_after
@@ -71,6 +81,35 @@ if ( ! class_exists( 'HU_customize' ) ) :
         unset( $_options['header-image']);
         update_option( HU_THEME_OPTIONS, $_options );
       }
+    }
+
+
+
+    //hook : hu_site_identity_sec
+    //Registers the custom logo for WP version < 4.5
+    function hu_register_old_custom_logo( $settings ) {
+        global $wp_version;
+        return array_merge(
+          $settings,
+          array(
+              'custom-logo'  => array(
+                'control'   =>  version_compare( $wp_version, '4.3', '>=' ) ? 'HU_Customize_Cropped_Image_Control' : 'HU_Customize_Upload_Control',
+                'label'     =>  __( 'Custom Header Logo' , 'hueman' ),
+                'section'   => 'title_tagline' ,
+                'sanitize_callback' => array( HU_utils_settings_map::$instance , 'hu_sanitize_number' ),
+                //we can define suggested cropping area and allow it to be flexible (def 150x150 and not flexible)
+                'width'     => 250,
+                'height'    => 100,
+                'flex_width' => true,
+                'flex_height' => true,
+                //to keep the selected cropped size
+                'dst_width'  => false,
+                'dst_height'  => false,
+                'notice'    => __('Upload your custom logo image. Supported formats : .jpg, .png, .gif, svg, svgz' , 'hueman'),
+                'priority' => 7
+              )
+          )
+        );
     }
 
 
@@ -184,6 +223,20 @@ if ( ! class_exists( 'HU_customize' ) ) :
       $wp_customize -> get_setting( 'blogname' )->transport = 'postMessage';
       $wp_customize -> get_setting( 'blogdescription' )->transport = 'postMessage';
 
+      //MOVE WP FRONT PAGE SECTION TO CONTENT PANEL
+      $wp_customize -> get_section( 'static_front_page' ) -> panel = 'hu-content-panel';
+      $wp_customize -> get_section( 'static_front_page' ) -> title = __( 'Front Page Content', 'hueman' );
+      $wp_customize -> get_section( 'static_front_page' ) -> priority = 5;
+      $wp_customize -> get_section( 'static_front_page' ) -> active_callback = 'hu_is_home';
+
+      //CHANGE THE STATIC FRONT PAGE WP CONTROLS
+      $wp_customize -> get_control( 'show_on_front' ) -> type = 'select';
+      $wp_customize -> get_control( 'show_on_front' ) -> choices = array(
+          '__nothing__'   => __( 'Don\'t show any posts or page' , 'hueman'),
+          'posts'   => __( 'Your latest posts' , 'hueman'),
+          'page'    => __( 'A static page' , 'hueman'  )
+      );
+
 
       //IF WP VERSION >= 4.3 AND SITE_ICON SETTING EXISTS
       //=> REMOVE OLD FAV ICON CONTROL
@@ -266,7 +319,16 @@ if ( ! class_exists( 'HU_customize' ) ) :
       //MOVE THE HEADER IMAGE CONTROL INTO THE HEADER DESIGN SECTION
       $wp_customize -> get_control( 'header_image' ) -> section = 'header_design_sec';
       $wp_customize -> get_control( 'header_image' ) -> priority = 100;
-    }
+
+      //CHANGE THE CUSTOM LOGO PRIORITY
+      $wp_customize -> get_control( 'custom_logo' ) -> priority = 7;
+
+      //The selective refresh support will be added later to the custom logo
+      if ( isset( $wp_customize->selective_refresh ) && is_object($wp_customize->get_setting( 'custom_logo' ) ) ) {
+        $wp_customize -> selective_refresh -> remove_partial( 'custom_logo' );
+        $wp_customize -> get_setting( 'custom_logo' ) -> transport = 'refresh';
+      }
+    }//end of hu_alter_wp_customizer_settings()
 
 
     /*
@@ -401,7 +463,8 @@ if ( ! class_exists( 'HU_customize' ) ) :
                 'description',
                 'panel',
                 'theme_supports',
-                'type'
+                'type',
+                'active_callback'
           ),
           'settings' => array(
                 'default'     =>  null,
@@ -655,13 +718,14 @@ if ( ! class_exists( 'HU_customize' ) ) :
       return array(
         'blogname',
         'blogdescription',
-        'site-icon',
-        'custom-logo',
+        'site_icon',
+        'custom_logo',
         'background_color',
         'show_on_front',
         'page_on_front',
         'page_for_posts',
-        'header_image'
+        'header_image',
+        'header_image_data'
       );
     }
   }//end of class
