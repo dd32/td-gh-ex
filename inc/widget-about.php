@@ -41,13 +41,13 @@ class beka_about_widget extends WP_Widget {
                 ?>
                 <span class="author-social">
                     <?php if( $fb_url ) { ?>
-                    <a href="<?php echo $fb_url; ?>"><span class="ti-facebook"></span></a>
+                    <a href="<?php echo $fb_url; ?>"><span class="fa fa-facebook"></span></a>
                     <?php }
-                    if( $twtr_url ) { ?><a href="<?php echo $twtr_url; ?>"><span class="ti-twitter"></span></a>
+                    if( $twtr_url ) { ?><a href="<?php echo $twtr_url; ?>"><span class="fa fa-twitter"></span></a>
                     <?php }
-                    if( $gp_url ) { ?><a href="<?php echo $gp_url; ?>"><span class="ti-google"></span></a>                    
+                    if( $gp_url ) { ?><a href="<?php echo $gp_url; ?>"><span class="fa fa-google"></span></a>                    
                     <?php }
-                    if( $inst_url ) { ?><a href="<?php echo $inst_url; ?>"><span class="ti-instagram"></span></a>
+                    if( $inst_url ) { ?><a href="<?php echo $inst_url; ?>"><span class="fa fa-instagram"></span></a>
                     <?php } ?>
                 </span>
                 

@@ -48,11 +48,11 @@
         <footer class="entry-footer">
             <div class="share-buttons">
                 <h1>Share This Post :</h1>
-                <a href="#"><span class="ti-facebook"></span></a>
-                <a href="#"><span class="ti-twitter"></span></a>
-                <a href="#"><span class="ti-tumbler"></span></a>
-                <a href="#"><span class="ti-google"></span></a>
-                <a href="#"><span class="ti-instagram"></span></a>
+                <a href="#"><span class="fa fa-facebook"></span></a>
+                <a href="#"><span class="fa fa-twitter"></span></a>
+                <a href="#"><span class="fa fa-tumblr"></span></a>
+                <a href="#"><span class="fa fa-google-plus"></span></a>
+                <a href="#"><span class="fa fa-instagram"></span></a>
             </div>
         </footer><!-- .entry-footer -->
     </div><!-- .post-content -->

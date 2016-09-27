@@ -2,13 +2,13 @@
 Theme Name: Beka
 Theme URI: http://fancythemes.com/themes/beka/
 Author: FancyThemes
-Author URI: https://fancythemes.com/
-Description: Beka is a beutiful WordPress blogging theme designed for bloggers, writers, authors, artists, tech blogs, travel blogs, and pretty much for anyone who wants to stat a WordPress blog. The theme works smoothly with all the popular plugins such as Optin Forms, Contact Form 7, and more.
-Version: 1.0.0
+Author URI: http://fancythemes.com/
+Description: Description
+Version: 1.1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: beka
-Tags: two-columns, right-sidebar, left-sidebar, custom-colors, custom-background, custom-header, featured-images, sticky-post, blog, threaded-comments, news, photography
+Tags: three-columns, two-columns, custom-colors, custom-logo, custom-menu, featured-images, theme-options, blog, news
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -449,7 +449,6 @@ input[type="submit"] {
 	border-color: #ccc #ccc #bbb;
 	border-radius: 3px;
 	background: #e6e6e6;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
 	color: rgba(0, 0, 0, .8);
 	font-size: 12px;
 	font-size: 0.75rem;
@@ -463,7 +462,6 @@ input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
 	border-color: #ccc #bbb #aaa;
-	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
 }
 
 button:focus,
@@ -475,7 +473,6 @@ input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
 	border-color: #aaa #bbb #bbb;
-	box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
 input[type="text"],
@@ -1139,9 +1136,8 @@ a:active {
     font-size: 14px;
     color: #7e838b;
 }
-.post-date .ti-calendar,
-.entry-meta .ti-user,
-.ti-comment {
+.post-date .fa,
+.entry-meta .fa {
     margin-right: 10px;
 }
 .read-more {

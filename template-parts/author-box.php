@@ -7,9 +7,6 @@
                 <div class="author-head">
                     <h5><?php the_author_meta('display_name'); ?>&nbsp;<?php _e('(Author)','beka'); ?></h5>
                     <div class="author-social">
-                        <span class="ti-facebook"></span>
-                        <span class="ti-facebook"></span>
-                        <span class="ti-facebook"></span>
                         <?php if(get_the_author_meta('facebook')) { ?><span class="author-fb"><a class="fa fa-facebook" href="<?php echo get_the_author_meta('facebook'); ?>"></a></span><?php } ?>
                         <?php if(get_the_author_meta('twitter')) { ?><span class="author-twitter"><a class="fa fa-twitter" href="<?php echo get_the_author_meta('twitter'); ?>"></a></span><?php } ?>
                         <?php if(get_the_author_meta('googleplus')) { ?><span class="author-gp"><a class="fa fa-google-plus" href="<?php echo get_the_author_meta('googleplus'); ?>"></a></span><?php } ?>

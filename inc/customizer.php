@@ -26,7 +26,7 @@ function beka_customize_register( $wp_customize ) {
     
     // Header text
 	$wp_customize->add_setting('header_text', array(
-		'default' => 'Welcome to Awesome Blog Design perfact blog',
+		'default' => 'Welcome to Awesome Blog Design perfect blog',
 		'transport' => 'refresh',
         'sanitize_callback' => 'wp_filter_post_kses',
 	));
@@ -58,15 +58,6 @@ function beka_customize_register( $wp_customize ) {
 		)
 	));
     
-    
-    /* --
-        -- Social Section --
-    -- */
-	$wp_customize->add_section('social_section', array(
-		'title' => __('Social', 'beka'),
-		'priority' => 34,
-	));
-    
     // Facebook
 	$wp_customize->add_setting('facebook_url', array(
 		'default' => '',
@@ -78,7 +69,7 @@ function beka_customize_register( $wp_customize ) {
 		'facebook_url',
 		array(
 			'label'    => __('Facebook URL', 'beka'),
-			'section'  => 'social_section',
+			'section'  => 'header_section',
 			'settings' => "facebook_url",
 			'type'     => 'text',
 		)
@@ -94,7 +85,7 @@ function beka_customize_register( $wp_customize ) {
 		'twitter_url',
 		array(
 			'label'    => __('Twitter URL', 'beka'),
-			'section'  => 'social_section',
+			'section'  => 'header_section',
 			'settings' => "twitter_url",
 			'type'     => 'text',
 		)
@@ -110,24 +101,8 @@ function beka_customize_register( $wp_customize ) {
 		'gp_url',
 		array(
 			'label'    => __('Google Plus URL', 'beka'),
-			'section'  => 'social_section',
+			'section'  => 'header_section',
 			'settings' => "gp_url",
-			'type'     => 'text',
-		)
-	));
-    // Tumbler
-	$wp_customize->add_setting('tumblr_url', array(
-		'default' => '',
-        'sanitize_callback' => 'esc_url_raw',
-		'transport' => 'refresh',
-	));
-    $wp_customize->add_control(new WP_Customize_Control(
-		$wp_customize,
-		'tumblr_url',
-		array(
-			'label'    => __('Tumblr URL', 'beka'),
-			'section'  => 'social_section',
-			'settings' => "tumblr_url",
 			'type'     => 'text',
 		)
 	));
@@ -142,7 +117,7 @@ function beka_customize_register( $wp_customize ) {
 		'instagram_url',
 		array(
 			'label'    => __('Instagram URL', 'beka'),
-			'section'  => 'social_section',
+			'section'  => 'header_section',
 			'settings' => "instagram_url",
 			'type'     => 'text',
 		)

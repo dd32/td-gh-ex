@@ -1,6 +1,6 @@
 === beka ===
 
-Contributors: FancyThemes
+Contributors: automattic
 Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
 
 Requires at least: 4.0
@@ -13,7 +13,7 @@ A starter theme called beka, or underscores.
 
 == Description ==
 
-Beka is a beutiful WordPress blogging theme designed for bloggers, writers, authors, artists, tech blogs, travel blogs, and pretty much for anyone who wants to stat a WordPress blog. The theme works smoothly with all the popular plugins such as Optin Forms, Contact Form 7, and more.
+Hi. I'm a starter theme called beka, or underscores, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
 
 == Installation ==
 
@@ -29,7 +29,7 @@ beka includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
-= 1.0 - June 23 2015 =
+= 1.0 - May 12 2015 =
 * Initial release
 
 == Credits ==

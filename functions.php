@@ -144,7 +144,7 @@ add_action( 'widgets_init', 'beka_widgets_init' );
 function beka_scripts() {
 	wp_enqueue_style( 'beka-style', get_stylesheet_uri() );
     
-	wp_enqueue_style( 'beka-fonts', get_stylesheet_directory_uri() . '/themify-icons.css' );
+	wp_enqueue_style( 'beka-fontawesome', get_stylesheet_directory_uri() . '/css/font-awesome.css' );
     
 	wp_enqueue_style( 'beka-responsive', get_stylesheet_directory_uri() . '/responsive.css' );
 
@@ -319,8 +319,8 @@ function beka_post_nav() {
             $prev_post = get_previous_post();
             
             $next_post = get_next_post();
-            previous_post_link('<div class="post-nav-links prev-link-wrapper"><div class="post-nav-link-bg"></div><div class="prev-link"><span class="uppercase"><span class="ti-arrow-circle-left"></span> &nbsp;'. __("Previous Article","beka").'</span><div class="nav-title"> %link</div>'."</div></div>");
-            next_post_link('<div class="post-nav-links next-link-wrapper"><div class="post-nav-link-bg"></div><div class="next-link"><span class="uppercase">'. __("Next Article","beka") .' &nbsp;<span class="ti-arrow-circle-right"></span></span> <div class="nav-title"> %link</div>'."</div></div>");
+            previous_post_link('<div class="post-nav-links prev-link-wrapper"><div class="post-nav-link-bg"></div><div class="prev-link"><span class="uppercase"><span class="fa fa-arrow-circle-left"></span> &nbsp;'. __("Previous Article","beka").'</span><div class="nav-title"> %link</div>'."</div></div>");
+            next_post_link('<div class="post-nav-links next-link-wrapper"><div class="post-nav-link-bg"></div><div class="next-link"><span class="uppercase">'. __("Next Article","beka") .' &nbsp;<span class="fa fa-arrow-circle-right"></span></span> <div class="nav-title"> %link</div>'."</div></div>");
         endif;
         ?>
     </nav><!-- .navigation -->

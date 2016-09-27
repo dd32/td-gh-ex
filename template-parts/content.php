@@ -41,7 +41,7 @@ global $first_post;
             }
             else{ ?>
                 <span class="post-date clearfix">
-                    <span class="ti-calendar"></span>
+                    <span class="fa fa-calendar-o"></span>
                     <time datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>" title="<?php echo esc_html( get_the_date() ); ?>">
                         <?php the_time('F d, Y'); ?>
                     </time>

@@ -34,10 +34,10 @@ function beka_posted_on() {
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
-	echo '<span class="posted-on"><span class="byline"><span class="ti-user"></span> ' . $byline . '</span><span class="post-date"><span class="ti-calendar"></span>' . $posted_on . '</span></span>'; // WPCS: XSS OK.
+	echo '<span class="posted-on"><span class="byline"><span class="fa fa-user"></span> ' . $byline . '</span><span class="post-date"><span class="fa fa-calendar-o"></span>' . $posted_on . '</span></span>'; // WPCS: XSS OK.
     
     echo '<span class="comments-link">';
-	echo '<span class="icon-comments"><span class="ti-comment"></span></span>';
+	echo '<span class="icon-comments"><span class="fa fa-comment-o"></span></span>';
 	comments_popup_link( esc_html__( 'No Comments', 'beka' ), esc_html__( '1', 'beka' ), esc_html__( '%', 'beka' ) );
 	echo '</span>';
 

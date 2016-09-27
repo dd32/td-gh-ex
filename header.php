@@ -25,7 +25,7 @@
 	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'beka' ); ?></a>
 
     <?php 
-        $header_text = get_theme_mod('header_text');
+        $header_text = get_theme_mod('header_text','Welcome to Awesome Blog Design perfect blog');
         $social_button = get_theme_mod('social_button');
         if( $header_text !='' && $social_button !='' ){
     ?>
@@ -41,22 +41,22 @@
                     <div class="social-icons">
                         <?php $facebook = get_theme_mod('facebook_url');
                             if($facebook) { ?>
-                            <a href="<?php echo $facebook; ?>"><span class="ti-facebook"></span></a>
+                            <a href="<?php echo $facebook; ?>"><span class="fa fa-facebook"></span></a>
                         <?php } ?>
                         
                         <?php $twitter = get_theme_mod('twitter_url');
                             if($twitter) { ?>
-                            <a href="<?php echo $twitter; ?>"><span class="ti-twitter"></span></a>
+                            <a href="<?php echo $twitter; ?>"><span class="fa fa-twitter"></span></a>
                         <?php } ?>
                         
                         <?php $google = get_theme_mod('gp_url');
                             if($google) { ?>
-                            <a href="<?php echo $google; ?>"><span class="ti-google"></span></a>
+                            <a href="<?php echo $google; ?>"><span class="fa fa-google"></span></a>
                         <?php } ?>
                         
                         <?php $instagram = get_theme_mod('instagram_url');
                             if($instagram) { ?>
-                            <a href="<?php echo $instagram; ?>"><span class="ti-instagram"></span></a>
+                            <a href="<?php echo $instagram; ?>"><span class="fa fa-instagram"></span></a>
                         <?php } ?>
                     </div>
             <?php } ?>
