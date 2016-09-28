@@ -85,9 +85,9 @@ if(!function_exists('cpotheme_taxonomy_meta_save')){
 				
 				//Add metadata
 				if($field_value != ''){
-					update_term_meta($post_id, $field_name, $field_value);
+					update_term_meta($post_id, $field_name, sanitize_text_field($field_value));
 				}else{ 
-					//Delete unused metadata?
+					//TODO: Delete metadata if it matches default value on option array
 				}
 			}
 		}
