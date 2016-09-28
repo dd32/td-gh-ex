@@ -5,6 +5,7 @@ $font__pre: "Courier 10 Pitch", Courier, monospace;
 $font__line-height-body: 1.5;
 $font__line-height-pre: 1.6;
 // Other Sizes
-$base__spacing: $font__line-height-body * 1em;
-$small__spacing: $base__spacing / 2;
+$base__spacing: 24px;
+$small__spacing: 14px;
+$big__spacing: 36px;
 $base-z-index: 0;

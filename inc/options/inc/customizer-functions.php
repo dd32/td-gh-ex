@@ -33,6 +33,44 @@ function igthemes_customizer_custom_control_css() {
     .customize-control-radio-image label.ui-state-hover img {
         border: 2px solid #fff;
     }
+    .customize-control-heading {
+        background: #fafafa;
+        margin: 0 -12px 5px -12px;
+        padding: 12px 12px 8px 12px;
+        border-top: 1px solid #eaeaea;
+        border-bottom: 1px solid #eaeaea;
+    }
+    #customize-control-upgrade_premium .button-upgrade {
+          background: #fc3;
+          border: 1px solid #e6ac00;
+          color: #5d4b16;
+          text-transform: uppercase;
+          display: inline-block;
+          text-decoration: none;
+          font-size: 13px;
+          line-height: 30px;
+          height: 32px;
+          margin: 15px 0;
+          padding: 0 20px 1px;
+          cursor: pointer;
+          -webkit-appearance: none;
+          -webkit-border-radius: 2px;
+          border-radius: 2px;
+          white-space: nowrap;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          text-shadow: 2px 2px #fd3;
+    }
+    #customize-control-upgrade_premium .button-upgrade:hover {
+        background: #fd3;
+        color: #5d4b16;
+        border-color: #ffc61a;
+    }
+    #customize-control-upgrade_premium ul {
+        list-style: square;
+        margin: 10px 16px;
+    }
     </style>
     <?php
 }

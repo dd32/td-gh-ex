@@ -3,7 +3,7 @@
 ------------------------------*/
 article {   
     border: 1px solid $color__gray;
-    padding:1em;
+    padding:$small__spacing $base__spacing;
     background:rgba(255, 255, 255, 0.8);
     -moz-box-shadow: 0px 2px 2px $color__gray;
     -webkit-box-shadow: 0px 2px 2px $color__gray;
@@ -169,5 +169,5 @@ article {
 	display: none;
 }
 .page-header {
-    margin-top: $base__spacing;
+    margin-top: $small__spacing;
 }

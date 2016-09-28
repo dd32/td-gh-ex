@@ -1,16 +1,19 @@
 h3.widget-title {
     text-shadow: 1px 1px 0 #fff;
     background-color: lighten($color__light-gray,20%);
-    margin: -8px -13px 10px;
-    padding: 10px;
+    margin-top: -$small__spacing;
+    margin-left: -$base__spacing;
+    margin-right: -$base__spacing;
+    margin-bottom: $small__spacing;
+    padding: $small__spacing $base__spacing;
     border: 1px solid #fff;
     border-bottom: 1px solid $color__gray;
 }
 
 .widget {
-    margin: 0 0 1.5em 0;
+    margin: 0 0 $base__spacing 0;
     border: 1px solid $color__gray;
-    padding:8px 13px;
+    padding: $small__spacing $base__spacing;
     background:rgba(255, 255, 255, 0.8);
     -moz-box-shadow: 0px 2px 2px $color__gray;
     -webkit-box-shadow: 0px 2px 2px $color__gray;
@@ -21,13 +24,19 @@ h3.widget-title {
 		max-width: 100%;
 	}
     ul {
-        margin: 0;
+        margin-top:  -$small__spacing;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom:  -$small__spacing;
         padding: 0;
         list-style: none;
         li {
             border-bottom: 1px solid $color__gray;
-            margin: -8px -12px 8px;
-            padding: 10px;
+            margin-top: 0;
+            margin-left:  -$base__spacing;
+            margin-right: -$base__spacing;
+            margin-bottom: 0;
+            padding: $small__spacing - 4 $base__spacing;
             &:last-child {
                 border-bottom: none;
             }
@@ -41,10 +50,10 @@ h3.widget-title {
             border: none;
             li {
                 border-bottom:none;
-                padding:0 12px;
+                padding:0 $small__spacing;
                 margin:0px;
                 a {
-                    padding-left: 20px;
+                    padding-left: $small__spacing;
                 }
 
             }
@@ -52,15 +61,15 @@ h3.widget-title {
     }
 }
 .header-widget-region {
-    margin: 2em 0 3em 0;
+    margin: $base__spacing 0 0 0;
     display: inline-block;
     width: 100%;
     .widget {
-        padding: 0;
+        padding: $small__spacing $base__spacing;
     }
 }
 .footer-widget-region {
-    margin-top: 3em;
+    margin-top: $big__spacing;
 }
 
 //categories and archives
@@ -91,8 +100,12 @@ h3.widget-title {
 .widget_calendar {
     #wp-calendar {
         background: rgba(255,255,255,.9);
+        margin-bottom: $small__spacing;
+        th, td {
+            padding: 8px 5px;
+            text-align: center;
+        }
     }
-    
 }
 //tag 
 .widget_tag_cloud {

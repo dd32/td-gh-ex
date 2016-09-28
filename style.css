@@ -3,8 +3,8 @@ Theme Name: Base WP
 Theme URI: http://www.iograficathemes.com/downloads/base-wp/
 Author: iografica
 Author URI: http://www.iograficathemes.com/
-Description: Base WP is a basic blog or business, responsive and clean coded, WordPress theme. Base WP is e-commerce, multilingual ready, SEO friendly and cross-browser compatible. The theme is fully integrated with the most popular and free plugins for Wordpress like WooCommerce, Easy Digital Downloads, Yoast Seo, Beaver Builder, and much more. You can customize the theme via the Customizer, use this theme as an ecommerce or as a simple blogging platform.
-Version: 1.44
+Description: Base WP is a basic blog or business, responsive and clean coded, WordPress theme. Base WP is e-commerce, multilingual ready, SEO friendly and cross-browser compatible. The theme is fully integrated with the most popular and free plugins for Wordpress like WooCommerce, Easy Digital Downloads, Yoast Seo, Beaver Builder, Elementor, and much more. You can customize the theme via the Customizer, use this theme as an ecommerce or as a simple blogging platform.
+Version: 1.45
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: base-wp
@@ -289,7 +289,7 @@ input[type="search"]::-webkit-search-decoration {
 
 fieldset {
   border: none;
-  margin: 0.75em 0;
+  margin: 14px 0;
   padding: 0;
 }
 
@@ -333,8 +333,8 @@ th {
   .col2 {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 48.82117%;
+    margin-right: 3.24338%;
+    width: 48.37831%;
   }
   .col2:last-child {
     margin-right: 0;
@@ -348,8 +348,8 @@ th {
   .col3 {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 31.76157%;
+    margin-right: 3.24338%;
+    width: 31.17108%;
   }
   .col3:last-child {
     margin-right: 0;
@@ -363,8 +363,8 @@ th {
   .col4 {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 23.23176%;
+    margin-right: 3.24338%;
+    width: 22.56747%;
   }
   .col4:last-child {
     margin-right: 0;
@@ -388,6 +388,7 @@ th {
 # Layout
 --------------------------------------------------------------*/
 @media screen and (min-width: 769px) {
+  #header-menu,
   #primary-menu,
   .site-content {
     content: "";
@@ -398,14 +399,14 @@ th {
     margin-right: auto;
     display: block;
     clear: both;
-    padding-left: 1.5em;
-    padding-right: 1.5em;
+    padding-left: 24px;
+    padding-right: 24px;
   }
   .content-area {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 65.88078%;
+    margin-right: 3.24338%;
+    width: 65.58554%;
   }
   .content-area:last-child {
     margin-right: 0;
@@ -413,10 +414,10 @@ th {
   .widget-area {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 31.76157%;
+    margin-right: 3.24338%;
+    width: 31.17108%;
     margin-right: 0;
-    padding: 2em 0;
+    padding: 24px 0;
   }
   .widget-area:last-child {
     margin-right: 0;
@@ -424,9 +425,9 @@ th {
   .sidebar-left .content-area {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 65.88078%;
-    margin-left: 34.11922%;
+    margin-right: 3.24338%;
+    width: 65.58554%;
+    margin-left: 34.41446%;
   }
   .sidebar-left .content-area:last-child {
     margin-right: 0;
@@ -434,9 +435,9 @@ th {
   .sidebar-left .widget-area {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 31.76157%;
-    margin-left: -102.35765%;
+    margin-right: 3.24338%;
+    width: 31.17108%;
+    margin-left: -103.24338%;
   }
   .sidebar-left .widget-area:last-child {
     margin-right: 0;
@@ -444,9 +445,9 @@ th {
   .page-template-page-focus .content-area {
     float: left;
     display: block;
-    margin-right: 2.35765%;
-    width: 82.94039%;
-    margin-left: 8.5298%;
+    margin-right: 3.24338%;
+    width: 82.79277%;
+    margin-left: 8.60361%;
   }
   .page-template-page-focus .content-area:last-child {
     margin-right: 0;
@@ -455,7 +456,7 @@ th {
   .full-width .content-area {
     float: left;
     display: block;
-    margin-right: 2.35765%;
+    margin-right: 3.24338%;
     width: 100%;
     margin-left: 0%;
   }
@@ -468,12 +469,24 @@ th {
 .footer-widget-region,
 #primary-menu,
 .site-content {
-  padding-left: 1.5em;
-  padding-right: 1.5em;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .content-area {
-  padding: 2em 0;
+  padding: 24px 0;
+}
+
+.page-template-elemntor .site-content,
+.page-template-beaver-builder .site-content {
+  content: "";
+  display: table;
+  table-layout: fixed;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding: 0;
 }
 
 /*--------------------------------------------------------------
@@ -520,7 +533,7 @@ h6 {
   font-weight: 400;
   clear: both;
   padding: 0;
-  margin: 5px 0;
+  margin: 0;
 }
 
 h1 a,
@@ -530,6 +543,7 @@ h4 a,
 h5 a,
 h6 a {
   color: inherit;
+  font-weight: inherit;
 }
 
 h1 {
@@ -557,7 +571,7 @@ h6 {
 }
 
 p {
-  margin: 0 0 0.75em;
+  margin: 0 0 14px;
 }
 
 dfn, cite, em, i {
@@ -1499,7 +1513,7 @@ input[type="submit"] {
   font-size: 16px;
   font-size: 1rem;
   line-height: 1;
-  padding: 0.625em 0.9em;
+  padding: 11.66667px 16.8px;
   text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
   -webkit-appearance: none;
 }
@@ -1565,7 +1579,7 @@ textarea {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  padding: 0.41667em 0.75em;
+  padding: 7.77778px 14px;
 }
 
 input[type="text"]:focus,
@@ -1683,7 +1697,7 @@ a:hover, a:active {
   }
   .main-navigation ul li a {
     display: block;
-    padding: .9em 1em;
+    padding: 14px;
   }
   .main-navigation ul li:hover > ul,
   .main-navigation ul li.focus > ul {
@@ -1736,7 +1750,7 @@ a:hover, a:active {
   .main-navigation {
     clear: both;
     width: 100%;
-    padding: 0.75em;
+    padding: 14px;
     margin: 0;
     border-top: 1px solid rgba(100, 105, 105, 0.1);
     border-bottom: 1px solid rgba(100, 105, 105, 0.1);
@@ -1960,16 +1974,19 @@ ul.page-numbers li .current, ul.page-numbers li .breadcrumb a, .breadcrumb ul.pa
 h3.widget-title {
   text-shadow: 1px 1px 0 #fff;
   background-color: rgba(202, 205, 205, 0.1);
-  margin: -8px -13px 10px;
-  padding: 10px;
+  margin-top: -14px;
+  margin-left: -24px;
+  margin-right: -24px;
+  margin-bottom: 14px;
+  padding: 14px 24px;
   border: 1px solid #fff;
   border-bottom: 1px solid rgba(100, 105, 105, 0.1);
 }
 
 .widget {
-  margin: 0 0 1.5em 0;
+  margin: 0 0 24px 0;
   border: 1px solid rgba(100, 105, 105, 0.1);
-  padding: 8px 13px;
+  padding: 14px 24px;
   background: rgba(255, 255, 255, 0.8);
   -moz-box-shadow: 0px 2px 2px rgba(100, 105, 105, 0.1);
   -webkit-box-shadow: 0px 2px 2px rgba(100, 105, 105, 0.1);
@@ -1982,15 +1999,21 @@ h3.widget-title {
 }
 
 .widget ul {
-  margin: 0;
+  margin-top: -14px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: -14px;
   padding: 0;
   list-style: none;
 }
 
 .widget ul li {
   border-bottom: 1px solid rgba(100, 105, 105, 0.1);
-  margin: -8px -12px 8px;
-  padding: 10px;
+  margin-top: 0;
+  margin-left: -24px;
+  margin-right: -24px;
+  margin-bottom: 0;
+  padding: 10px 24px;
 }
 
 .widget ul li:last-child {
@@ -2009,30 +2032,36 @@ h3.widget-title {
 
 .widget ul ul li {
   border-bottom: none;
-  padding: 0 12px;
+  padding: 0 14px;
   margin: 0px;
 }
 
 .widget ul ul li a {
-  padding-left: 20px;
+  padding-left: 14px;
 }
 
 .header-widget-region {
-  margin: 2em 0 3em 0;
+  margin: 24px 0 0 0;
   display: inline-block;
   width: 100%;
 }
 
 .header-widget-region .widget {
-  padding: 0;
+  padding: 14px 24px;
 }
 
 .footer-widget-region {
-  margin-top: 3em;
+  margin-top: 36px;
 }
 
 .widget_calendar #wp-calendar {
   background: rgba(255, 255, 255, 0.9);
+  margin-bottom: 14px;
+}
+
+.widget_calendar #wp-calendar th, .widget_calendar #wp-calendar td {
+  padding: 8px 5px;
+  text-align: center;
 }
 
 .widget_tag_cloud a {
@@ -2193,12 +2222,18 @@ h3.widget-title {
   max-width: 1190px;
   margin-left: auto;
   margin-right: auto;
+  padding: 24px;
   display: block;
   text-align: center;
 }
 
+.site-header .site-branding h1.site-title {
+  margin: 0;
+  padding: 0;
+}
+
 .site-header .site-branding h1.site-title a {
-  margin: 15px 0 10px 0;
+  margin: 0;
   padding: 0;
   display: block;
   font-weight: 400;
@@ -2207,13 +2242,13 @@ h3.widget-title {
 .site-header .site-branding .site-description {
   display: block;
   font-weight: 300;
-  margin: 0 0 25px 0;
+  margin: 0;
   padding: 0;
   font-size: 1.2em;
 }
 
 .site-header .site-branding .custom-logo {
-  margin: 25px 0;
+  margin: 14px 0;
 }
 
 .site-header .header-image {
@@ -2242,8 +2277,72 @@ h3.widget-title {
 .site-header .header-nav ul li {
   display: inline-block;
   *display: inline;
-  padding: .8em;
+  padding: 14px 7px;
   font-size: .95em;
+}
+
+@media screen and (min-width: 769px) {
+  .site-header.inline .header-content {
+    content: "";
+    display: table;
+    table-layout: fixed;
+    max-width: 1190px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  .site-header.inline .site-branding {
+    float: left;
+    display: block;
+    margin-right: 3.24338%;
+    width: 48.37831%;
+    display: block;
+    text-align: left;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .site-header.inline .site-branding:last-child {
+    margin-right: 0;
+  }
+  .site-header.inline .site-branding h1.site-title a {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    float: left;
+  }
+  .site-header.inline .site-branding .site-description {
+    margin: 14px 0 14px 14px;
+    padding: 0;
+    display: inline-block;
+  }
+  .site-header.inline .site-branding .custom-logo {
+    margin: 25px 0;
+  }
+  .site-header.inline .header-nav {
+    text-align: right;
+    background: rgba(202, 205, 205, 0.1);
+    border-bottom: 1px solid rgba(150, 155, 155, 0.1);
+  }
+  .site-header.inline .header-nav ul {
+    float: left;
+    display: block;
+    margin-right: 3.24338%;
+    width: 48.37831%;
+    margin-right: 0;
+    float: right;
+    margin-bottom: 0;
+    display: block;
+    list-style: none;
+  }
+  .site-header.inline .header-nav ul:last-child {
+    margin-right: 0;
+  }
+  .site-header.inline .header-nav ul li {
+    display: inline-block;
+    *display: inline;
+    padding: 16px 7px;
+    font-size: 1em;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -2279,7 +2378,7 @@ h3.widget-title {
 .site-footer .site-info, .site-footer .footer-text {
   text-align: center;
   font-size: .9em;
-  padding: 1.5em 0;
+  padding: 24px 0;
 }
 
 .site-footer .footer-text {
@@ -2289,7 +2388,7 @@ h3.widget-title {
 
 .site-footer .scroll-top {
   text-align: center;
-  margin-top: 1.5em;
+  margin-top: 24px;
 }
 
 .site-footer .scroll-top #scrolltop {
@@ -2315,7 +2414,7 @@ h3.widget-title {
 ------------------------------*/
 article {
   border: 1px solid rgba(100, 105, 105, 0.1);
-  padding: 1em;
+  padding: 14px 24px;
   background: rgba(255, 255, 255, 0.8);
   -moz-box-shadow: 0px 2px 2px rgba(100, 105, 105, 0.1);
   -webkit-box-shadow: 0px 2px 2px rgba(100, 105, 105, 0.1);
@@ -2496,7 +2595,7 @@ article {
 }
 
 .page-header {
-  margin-top: 1.5em;
+  margin-top: 14px;
 }
 
 /*--------------------------------------------------------------
@@ -2591,7 +2690,7 @@ article {
   width: 100%;
   text-align: left;
   padding: 10px 0 0 0;
-  margin: 1.5em 0 0 0;
+  margin: 24px 0 0 0;
 }
 
 .breadcrumb .current, .breadcrumb a {
@@ -3075,8 +3174,8 @@ object {
 .edd_download_columns_3 .edd_download {
   float: left;
   display: block;
-  margin-right: 2.35765%;
-  width: 31.76157%;
+  margin-right: 3.24338%;
+  width: 31.17108%;
 }
 
 .edd_download_columns_3 .edd_download:last-child {
@@ -3107,75 +3206,4 @@ input[type="submit"].edd-submit {
   .edd_download_columns_3 .edd_download {
     width: 100% !important;
   }
-}
-
-/*--------------------------------------------------------------
-# Beaver Builder
---------------------------------------------------------------*/
-.fl-builder-bar-title img {
-  display: inline-block;
-}
-
-.fl-builder .entry-header {
-  display: none;
-}
-
-.fl-builder .site-content {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-.fl-builder .site-content .container {
-  max-width: none;
-  width: auto;
-  margin: 0;
-  padding: 0;
-}
-
-.fl-builder .site-content .container .entry-content {
-  margin: 0;
-}
-
-.fl-builder .site-content .container .entry-footer {
-  border-bottom: none;
-}
-
-.fl-builder.full-width .site-content {
-  max-width: none;
-  width: auto;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.fl-builder.full-width .entry-content {
-  margin: 0;
-  padding: 0;
-}
-
-.fl-builder.full-width .content-area {
-  margin: 0;
-  padding: 0;
-}
-
-.fl-builder.full-width article {
-  padding: 0;
-}
-
-.fl-builder.full-width .hentry {
-  margin-bottom: 0;
-}
-
-.elementor-page .site-content {
-  content: "";
-  display: table;
-  table-layout: fixed;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  clear: both;
-  padding-left: 0;
-  padding-right: 0;
 }

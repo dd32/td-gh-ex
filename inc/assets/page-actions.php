@@ -3,8 +3,9 @@
  * SINGLE PAGE
 -----------------------------------------------------------------*/
 add_action( 'igthemes_single_page', 'igthemes_page_header', 10 );
-add_action( 'igthemes_single_page', 'igthemes_page_content', 20 );
-add_action( 'igthemes_single_page', 'igthemes_page_footer', 30 );
+add_action( 'igthemes_single_page', 'igthemes_page_image', 20 );
+add_action( 'igthemes_single_page', 'igthemes_page_content', 30 );
+add_action( 'igthemes_single_page', 'igthemes_page_footer', 40 );
 
 /*----------------------------------------------------------------
  * PAGE HEADER
@@ -22,18 +23,26 @@ if ( ! function_exists( 'igthemes_page_header' ) ) {
 
    <?php }
 }
-
+/*----------------------------------------------------------------
+ * PAGE IMAGE
+-----------------------------------------------------------------*/
+if ( ! function_exists( 'igthemes_page_image' ) ) {
+	// start function
+	function igthemes_page_image() { ?>
+		<div class="entry-image">
+            <?php igthemes_post_thumbnail( 'full' ); ?>
+        </div>
+    <?php }
+}
 /*----------------------------------------------------------------
  * PAGE CONTENT
 -----------------------------------------------------------------*/
 if ( ! function_exists( 'igthemes_page_content' ) ) {
 	// start function
 	function igthemes_page_content() { ?>
-
 		<div class="entry-content">
         <?php
-            igthemes_post_thumbnail( 'full' );
-
+        
 			the_content();
 
 			wp_link_pages( array(
@@ -41,7 +50,7 @@ if ( ! function_exists( 'igthemes_page_content' ) ) {
 				'after'  => '</div>',
 			) );
 		?>
-		
+		</div><!-- .entry-content -->
 <?php }
 }
 

@@ -30,7 +30,7 @@
             position: relative;
             a {
                 display: block;
-                padding: .9em 1em;
+                padding: $small__spacing;
                 &:hover,
                 &.focus {
                 }
@@ -146,7 +146,6 @@
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
-
 	.site-main & {
 		margin: 0 0 1.5em;
         padding: 10px 0;

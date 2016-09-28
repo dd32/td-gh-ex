@@ -11,6 +11,7 @@
     $woocommerce_url = 'https://wordpress.org/plugins/woocommerce/';
     $beaverbuilder_url= 'https://wordpress.org/plugins/beaver-builder-lite-version/';
     $edd_url= 'https://wordpress.org/plugins/easy-digital-downloads/';
+    $elementor_url= 'https://wordpress.org/plugins/elementor/';
 ?>
 <div id="wp_resources" class="panel">
     <h3><?php esc_html_e( 'Recommended Resources', 'base-wp' ); ?></h3>
@@ -109,6 +110,25 @@
                 <p class="button disabled"><?php esc_html_e( 'plugin active', 'base-wp' ); ?></p>
             <?php  } else { ; ?>
                 <a class="button secondary-button" href="<?php echo $edd_url; ?>/" target="_blank">
+                    <?php esc_html_e( 'view now', 'base-wp' ); ?>
+                </a>
+            <?php  } ; ?>
+        </li>
+        <!-- 06 item -->
+        <li class="item">
+            <a class="image-link" href="<?php echo $elementor_url; ?>" target="_blank">
+                <img src="<?php echo get_template_directory_uri(); ?>/inc/admin/welcome/images/elementor.png" alt="Elementor plugin" />
+            </a>
+            <h4 class="title">
+                <?php esc_html_e( 'Elementor', 'base-wp' ); ?>
+            </h4>
+            <p class="description">
+         <?php esc_html_e('Elementor is the most advanced frontend drag & drop page builder.', 'base-wp'); ?>
+            </p>
+            <?php  if ( is_plugin_active( 'elementor/elementor.php' ) ) { ; ?>
+                <p class="button disabled"><?php esc_html_e( 'plugin active', 'base-wp' ); ?></p>
+            <?php  } else { ; ?>
+                <a class="button secondary-button" href="<?php echo $elementor_url; ?>/" target="_blank">
                     <?php esc_html_e( 'view now', 'base-wp' ); ?>
                 </a>
             <?php  } ; ?>

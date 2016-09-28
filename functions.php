@@ -199,7 +199,7 @@ require get_template_directory() . '/inc/assets/template-actions.php';
 require get_template_directory() . '/inc/assets/post-actions.php';
 require get_template_directory() . '/inc/assets/page-actions.php';
 require get_template_directory() . '/inc/assets/jetpack/jetpack-funtions.php';
-require get_template_directory() . '/inc/assets/beaver-builder/beaver-builder.php';
+require get_template_directory() . '/inc/assets/beaver-builder/beaver-builder-function.php';
 
 /*----------------------------------------------------------------------
 # EDD SUPPORT
