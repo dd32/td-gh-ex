@@ -47,13 +47,13 @@ $wp_customize->add_section('social-settings', array(
 ));
 // SHOP
 $wp_customize->add_section('shop-settings', array(
-    'title' => esc_html__('Shop', 'base-wp-premium'),
+    'title' => esc_html__('Shop', 'base-wp'),
     'panel' => 'igtheme_options',
     'priority' => 70,
 ));
 // ADVANCED
 $wp_customize->add_section('advanced-settings', array(
-    'title' => esc_html__('Advanced', 'base-wp-premium'),
+    'title' => esc_html__('Advanced', 'base-wp'),
     'panel' => 'igtheme_options',
     'priority' => 80,
 ));
