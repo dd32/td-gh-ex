@@ -120,7 +120,7 @@ class Annina_Admin {
 
 					<a href="<?php echo esc_url( apply_filters( 'annina_pro_theme_url', 'http://crestaproject.com/demo/annina-pro/' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View PRO version Demo', 'annina' ); ?></a>
 
-					<a href="<?php echo esc_url( apply_filters( 'annina_pro_theme_url', 'http://wordpress.org/support/view/theme-reviews/annina?filter=5#postform' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'annina' ); ?></a>
+					<a href="<?php echo esc_url( apply_filters( 'annina_pro_theme_url', 'https://wordpress.org/support/theme/annina/reviews/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'annina' ); ?></a>
 				</p>
 				</div>
 
