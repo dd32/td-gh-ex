@@ -14,6 +14,24 @@
 get_header();
 ?>
 
+	<?php if ( has_header_image() && is_front_page() ) : ?>
+		<div class="parallax">
+			<div class="header-img"></div>
+			<?php if ( is_active_sidebar( 'jumbo-headline' ) ) { ?>
+			<div class="container">
+				<div class="row">
+					<div class="home-top">
+						<?php dynamic_sidebar( 'jumbo-headline' ); ?>
+					</div>
+				</div>
+			</div>
+			<?php } ?>
+		</div>
+	<?php endif; ?>
+
+	<?php if ( is_front_page() ) { ?>
+	<div class="home-container">
+	<?php } ?>
 	<div class="container">
 		<div class="row">
 			<div id="primary" class="cols">
@@ -29,5 +47,8 @@ get_header();
 			<?php get_sidebar(); ?>
 		</div>
 	</div>
+	<?php if ( is_front_page() ) { ?>
+	</div>
+	<?php } ?>
 
 <?php get_footer(); ?>

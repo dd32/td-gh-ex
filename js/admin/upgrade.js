@@ -1,7 +1,13 @@
-( function($) {
-	$( window ).load( function() {
-		$( '#customize-theme-controls' ).append(
-			'<div class="premium-upgrade"><a href="https://alphabetthemes.com/downloads/abc-premium-features/" target="_blank">' + Abacus_Customizer.upgradeAd + '<span class="dashicons dashicons-arrow-right-alt"></span></a></div>'
-		);
+( function( api ) {
+	// Extends our custom "example-1" section.
+	api.sectionConstructor['premium-upgrade'] = api.Section.extend( {
+
+		// No events for this type of section.
+		attachEvents: function () {},
+
+		// Always make the section active.
+		isContextuallyActive: function () {
+			return true;
+		}
 	} );
-} )(jQuery);
+} )( wp.customize );

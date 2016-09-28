@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Abacus\n"
-"POT-Creation-Date: 2016-09-16 11:19-0400\n"
-"PO-Revision-Date: 2016-09-16 11:19-0400\n"
+"POT-Creation-Date: 2016-09-28 12:56-0400\n"
+"PO-Revision-Date: 2016-09-28 12:56-0400\n"
 "Last-Translator: c.bavota <cbavota@gmail.com>\n"
 "Language-Team: c.bavota <cbavota@gmail.com>\n"
 "MIME-Version: 1.0\n"
@@ -282,39 +282,39 @@ msgstr ""
 msgid "Popular product description text"
 msgstr ""
 
-#: inc/customizer.php:23 inc/customizer.php:100
+#: inc/customizer.php:23 inc/customizer.php:125
 msgid "Reset"
 msgstr ""
 
-#: inc/customizer.php:56
+#: inc/customizer.php:81
 msgid "Layout"
 msgstr ""
 
-#: inc/customizer.php:66
+#: inc/customizer.php:91
 msgid "Read More text"
 msgstr ""
 
-#: inc/customizer.php:78
+#: inc/customizer.php:103
 msgid "Featured product description"
 msgstr ""
 
-#: inc/customizer.php:79 inc/customizer.php:92
+#: inc/customizer.php:104 inc/customizer.php:117
 msgid "Only on shop grid template"
 msgstr ""
 
-#: inc/customizer.php:91
+#: inc/customizer.php:116
 msgid "Popular product description"
 msgstr ""
 
-#: inc/customizer.php:112
+#: inc/customizer.php:137
 msgid "Click on the button below to reset all theme options back to default."
 msgstr ""
 
-#: inc/customizer.php:122
+#: inc/customizer.php:146
 msgid "Unlock Premium Theme Options"
 msgstr ""
 
-#: inc/customizer.php:123
+#: inc/customizer.php:159
 msgid "Are you sure?"
 msgstr ""
 

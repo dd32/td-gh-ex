@@ -51,6 +51,14 @@ Source: http://www.splitshire.com/vintage-barber-tools/
 
 == CHANGELOG ==
 
+09/28/2016 v1.0.3
+* Modified upgrade button to Justin Tadlock's example
+* Modified upgrade.js
+* Added header image to static front page
+* Updated CSS to fix responsive issues
+* Updated CSS to add .bypostauthor
+* Updated language files
+
 09/16/2016 v1.0.2
 * Fixed gettext plurals
 * Fixed RTL layout issues

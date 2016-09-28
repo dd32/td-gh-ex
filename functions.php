@@ -125,7 +125,7 @@ if ( ! function_exists( 'abacus_enqueue' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
 
-		if ( is_home() ) {
+		if ( is_front_page() ) {
 			$header_image = get_header_image();
 			$custom_css = "
 				.header-img {

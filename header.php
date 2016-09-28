@@ -38,7 +38,7 @@
 			</nav>
 
 			<div class="container">
-				<div class="site-meta pull-left">
+				<div class="site-meta">
 					<?php
 					if ( function_exists( 'the_custom_logo' ) )  {
 						the_custom_logo();
@@ -67,7 +67,7 @@
 				</nav>
 				<?php }	?>
 
-				<nav class="nav-icons menus pull-right" role="navigation">
+				<nav class="nav-icons menus" role="navigation">
 					<ul>
 						<li class="nav-open-top-menu"><i class="fa fa-bars"></i><span><?php _e( 'Menu', 'abacus' ); ?></span></li>
 						<li class="nav-search"><i class="fa fa-search"></i></li>

@@ -43,38 +43,6 @@
 	transition: right 0.15s ease-in-out;
 }
 
-.in-sub-panel .premium-upgrade {
-	left: -300px;
-	width: 300px;
-}
-
-#customize-control-layout .customize-control-title {
-	margin-bottom: 5px;
-}
-
-#customize-control-layout label {
-	display: block;
-	clear: both;
-	margin-bottom: 10px;
-	position: relative;
-}
-
-#customize-control-layout label input {
-	display: inline-block;
-	margin-top: -80px;
-}
-
-#customize-control-layout div {
-	width: 124px;
-	height: 84px;
-	background: url(../../images/layout.jpg) no-repeat 0 0;
-	display: inline-block;
-}
-
-	#customize-control-layout .right {
-		background-position: 0 -84px;
-	}
-
-p.description.more-top {
-    margin-top: 8px;
+.premium-upgrade .accordion-section-title {
+	padding: 0;
 }

@@ -23,6 +23,31 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 			echo '<button type="button" class="button" id="abc-reset-theme-options">' . __( 'Reset', 'abacus' ) . '</button>';
 		}
 	}
+
+	if ( ! function_exists( 'abc_premium_features' ) ) {
+		class Abacus_Customize_Section_Pro extends WP_Customize_Section {
+			public $type = 'premium-upgrade';
+			public $pro_url = '';
+
+			public function json() {
+				$json = parent::json();
+				$json['pro_url']  = esc_url( $this->pro_url );
+				return $json;
+			}
+
+			protected function render_template() { ?>
+
+				<li id="accordion-section-{{ data.id }}" class="accordion-section control-section control-section-{{ data.type }} cannot-expand premium-upgrade">
+
+					<h3 class="accordion-section-title">
+						<a href="{{ data.pro_url }}" target="_blank">{{ data.title }}
+
+						<span class="dashicons dashicons-arrow-right-alt"></span></a>
+					</h3>
+				</li>
+			<?php }
+		}
+	}
 }
 
 class Abacus_Customizer {
@@ -112,6 +137,18 @@ class Abacus_Customizer {
 				'description' => __( 'Click on the button below to reset all theme options back to default.', 'abacus' ),
 			)
 		) );
+
+		// Don't display upgrade message if ABC Premium Features plugin is activated
+		if ( ! function_exists( 'abc_premium_features' ) ) {
+			$wp_customize->register_section_type( 'Abacus_Customize_Section_Pro' );
+			$wp_customize->add_section(
+				new Abacus_Customize_Section_Pro ( $wp_customize, 'premium_upgrade', array(
+					'title'    => esc_html__( 'Unlock Premium Theme Options', 'abacus' ),
+					'pro_url'  => 'https://alphabetthemes.com/downloads/abc-premium-features/',
+					'priority' => 999,
+				) )
+			);
+		}
 	}
 
 	public function customize_controls_enqueue_scripts() {
@@ -119,7 +156,6 @@ class Abacus_Customizer {
         wp_localize_script( 'abacus-customizer', 'Abacus_Customizer', array(
             'customizerURL' => admin_url( 'customize.php' ),
             'exportNonce' => wp_create_nonce( 'abc-customizer' ),
-            'upgradeAd' => __( 'Unlock Premium Theme Options', 'abacus' ),
             'confirmText' => __( 'Are you sure?', 'abacus' ),
         ));
 
