@@ -7,7 +7,7 @@ function igthemes_custom_header_setup() {
     add_theme_support( 'custom-header', apply_filters( 'igthemes_custom_header_args', array(
 	            'default-image' => '',
 				'header-text'   => false,
-				'width'         => 1088,
+				'width'         => 1142,
 				'height'        => 300,
 				'flex-width'    => true,
 				'flex-height'   => true,

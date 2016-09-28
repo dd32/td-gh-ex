@@ -3,8 +3,8 @@ Theme Name: Base WP
 Theme URI: http://www.iograficathemes.com/downloads/base-wp/
 Author: iografica
 Author URI: http://www.iograficathemes.com/
-Description: Base WP is a basic blog or business, responsive and clean coded, WordPress theme. Base WP is e-commerce, multilingual ready, SEO friendly and cross-browser compatible. The theme is fully integrated with the most popular and free plugins for Wordpress like WooCommerce, Easy Digital Downloads, Yoast Seo, Beaver Builder, and much more. You can customize the theme via the Customizer, use this theme as an ecommerce or as a simple blogging platform.
-Version: 1.44
+Description: Base WP is a basic blog or business, responsive and clean coded, WordPress theme. Base WP is e-commerce, multilingual ready, SEO friendly and cross-browser compatible. The theme is fully integrated with the most popular and free plugins for Wordpress like WooCommerce, Easy Digital Downloads, Yoast Seo, Beaver Builder, Elementor, and much more. You can customize the theme via the Customizer, use this theme as an ecommerce or as a simple blogging platform.
+Version: 1.45
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: base-wp
@@ -44,11 +44,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
     ## Galleries
 /*------------------------------------------------------------*/
 @import 'bourbon';
-@import 'neat';
 // Change the grid settings
-$gutter: 25px;
+$gutter: 2.563em;
 $max-width: 1190px;
 $grid-columns: 12;
+@import 'neat';
+
 /*--------------------------------------------------------------*/
 @import "sass/variables-site/variables-site";
 @import "sass/mixins/mixins-master";

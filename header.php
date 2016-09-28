@@ -24,7 +24,7 @@
 <div id="page" class="site">
     <a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'base-wp' ); ?></a>
 
-    <header id="masthead" class="site-header" role="banner">
+    <header id="masthead" class="site-header <?php echo apply_filters('igthemes-header-class', 'expanded'); ?>" role="banner">
 
     <?php
     /**

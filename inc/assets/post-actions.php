@@ -3,8 +3,9 @@
  * SINGLE POST
 -----------------------------------------------------------------*/
 add_action( 'igthemes_single_post', 'igthemes_post_header', 10 );
-add_action( 'igthemes_single_post', 'igthemes_post_content', 20 );
-add_action( 'igthemes_single_post', 'igthemes_post_footer', 30 );
+add_action( 'igthemes_single_post', 'igthemes_post_image', 20 );
+add_action( 'igthemes_single_post', 'igthemes_post_content', 30 );
+add_action( 'igthemes_single_post', 'igthemes_post_footer', 40 );
 
 /*-----------------------------------------------------------------
  * POST HEADER
@@ -16,12 +17,9 @@ if ( ! function_exists( 'igthemes_post_header' ) ) {
  	  <header class="entry-header">
 		<?php
 			if (is_single()) {
-                igthemes_post_thumbnail( 'full' );
 				the_title( '<h1 class="entry-title">', '</h1>' );
 			} else {
-                if (get_theme_mod('main_featured_images', 1 ) == 1) {
-                    igthemes_post_thumbnail( 'full' );
-                }
+                
 				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			}
 
@@ -34,6 +32,26 @@ if ( ! function_exists( 'igthemes_post_header' ) ) {
           
 	   </header><!-- .entry-header -->
    <?php }
+}
+/*-----------------------------------------------------------------
+ * POST IMAGE
+-----------------------------------------------------------------*/
+if ( ! function_exists( 'igthemes_post_image' ) ) {
+	// start function
+	function igthemes_post_image() {  ?>
+
+		<div class="entry-image">
+        <?php
+            if (is_single()) {
+                igthemes_post_thumbnail( 'full' );
+			}
+            elseif (!is_single() && get_theme_mod('main_featured_images', 1 ) == 1) {
+                igthemes_post_thumbnail( 'full' );
+            }
+        ?>
+		</div><!-- .entry-image -->
+
+    <?php  } 
 }
 /*-----------------------------------------------------------------
  * POST CONTENT

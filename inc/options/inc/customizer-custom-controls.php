@@ -66,10 +66,18 @@ class IGthemes_More_Control extends WP_Customize_Control {
 
             <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
             <p>
-                <?php esc_html_e( 'Base WP Premium expands the already powerful free version of this theme and gives access to our priority support service.', 'base-wp' ); ?></br>
-                <a href="<?php echo esc_url( 'http://www.iograficathemes.com/downloads/base-wp-premium' ); ?>" target="_blank" class="button-upgrade"><?php esc_html_e('upgrade to premium', 'base-wp'); ?></a>
+                <?php esc_html_e( 'Base WP Premium expands the already powerful free version of this theme and gives access to our priority support service.', 'base-wp' ); ?>
+            <ul>
+                <li><?php esc_html_e( 'All options enabled', 'base-wp' ); ?></li>
+                <li><?php esc_html_e( 'Custom widgets', 'base-wp' ); ?></li>
+                <li><?php esc_html_e( 'Custom page and post settings', 'base-wp' ); ?></li>
+                <li><?php esc_html_e( 'Premium support', 'base-wp' ); ?></li>
+                <li><?php esc_html_e( 'Money back guarantee', 'base-wp' ); ?></li>
+            </ul>
+            <a href="<?php echo esc_url( 'http://www.iograficathemes.com/downloads/base-wp-premium' ); ?>" target="_blank" class="button-upgrade">
+                <?php esc_html_e('upgrade to premium', 'base-wp'); ?>
+            </a>
             </p>
-
             <span class="customize-control-title"><?php esc_html_e( 'Enjoying the theme?', 'base-wp' ); ?></span>
 
             <p>
@@ -96,6 +104,19 @@ class IGthemes_Only_Premium extends WP_Customize_Control {
                 </a>
             </span>
         <?php
+    }
+}
+class IGthemes_Heading extends WP_Customize_Control {
+    public $type = 'heading';
+    public function render_content() {
+    ?>
+        <?php if ( ! empty( $this->label ) ) : ?>
+            <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+        <?php endif; ?>
+        <?php if ( ! empty( $this->description ) ) : ?>
+            <span class="customize-control-description"><?php echo esc_html( $this->description );  ?></span>
+        <?php endif; ?>
+    <?php
     }
 }
 endif;
