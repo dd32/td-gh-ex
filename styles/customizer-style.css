@@ -2,35 +2,45 @@
 /* Theme Colors */
 /* Social Media Brand Colors */
 /*===== Mixins =====*/
-/* Customizer Styles */
-.upgrades-ad {
-  text-align: center;
-  border-bottom: solid 1px #eee;
-}
-.upgrades-ad a {
-  display: block;
-  padding: 9px 0;
-  color: white;
+#accordion-section-ct_ignite_plus .accordion-section-title {
+  color: #fff;
   background: #43b3c4;
 }
-.upgrades-ad a:link, .upgrades-ad a:visited, .upgrades-ad a:hover, .upgrades-ad a:active, .upgrades-ad a:focus {
-  color: white;
+#accordion-section-ct_ignite_plus .accordion-section-title:after {
+  color: #fff;
 }
-.upgrades-ad a:hover, .upgrades-ad a:active, .upgrades-ad a:focus {
-  background: #3ea5b3;
+#accordion-section-ct_ignite_plus .accordion-section-title:hover, #accordion-section-ct_ignite_plus .accordion-section-title:active, #accordion-section-ct_ignite_plus .accordion-section-title:focus {
+  background: #3EA7B8 !important;
+  color: #fff !important;
 }
-.upgrades-ad a:hover span, .upgrades-ad a:active span, .upgrades-ad a:focus span {
-  right: -3px;
-}
-.upgrades-ad span {
-  position: relative;
-  right: 0;
-  -webkit-transition: right 0.15s ease-in-out;
-  transition: right 0.15s ease-in-out;
+#accordion-section-ct_ignite_plus .accordion-section-title:hover:after, #accordion-section-ct_ignite_plus .accordion-section-title:active:after, #accordion-section-ct_ignite_plus .accordion-section-title:focus:after {
+  color: #fff !important;
 }
 
-#accordion-section-colors {
-  display: none !important;
+#customize-control-ignite_plus ul {
+  list-style: disc;
+  padding-left: 15px;
+}
+#customize-control-ignite_plus .bold {
+  font-weight: 600;
+}
+#customize-control-ignite_plus .button-wrapper {
+  text-align: center;
+}
+#customize-control-ignite_plus .ignite-plus-button {
+  display: inline-block;
+  font-size: 14px;
+  padding: 12px 24px;
+  background: #F4923A;
+  color: #fff;
+  border-radius: 3px;
+  border-left: solid 2px #CC8437;
+  border-right: solid 2px #CC8437;
+  border-bottom: solid 4px #CC8437;
+  text-decoration: none;
+}
+#customize-control-ignite_plus .ignite-plus-button:hover, #customize-control-ignite_plus .ignite-plus-button:active, #customize-control-ignite_plus .ignite-plus-button:focus {
+  background: #ff9233;
 }
 
 /**
@@ -116,13 +126,11 @@
 
 .ms-drop.bottom {
   top: 100%;
-  -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
 }
 
 .ms-drop.top {
   bottom: 100%;
-  -webkit-box-shadow: 0 -2px 3px rgba(0, 0, 0, 0.15);
   box-shadow: 0 -2px 3px rgba(0, 0, 0, 0.15);
 }
 
@@ -148,20 +156,14 @@
   font-size: 1em;
   border: 1px solid #aaa;
   border-radius: 0;
-  -webkit-box-shadow: none;
   box-shadow: none;
   background: #fff url("multiple-select.png") no-repeat 100% -22px;
-  background: url("multiple-select.png") no-repeat 100% -22px, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, white), color-stop(0.99, #eeeeee));
-  background: url("multiple-select.png") no-repeat 100% -22px, -webkit-linear-gradient(center bottom, white 85%, #eeeeee 99%);
-  background: url("multiple-select.png") no-repeat 100% -22px, -webkit-gradient(linear, left top, left bottom, color-stop(85%, #ffffff), color-stop(99%, #eeeeee));
   background: url("multiple-select.png") no-repeat 100% -22px, -webkit-linear-gradient(top, #ffffff 85%, #eeeeee 99%);
-  background: url("multiple-select.png") no-repeat 100% -22px, linear-gradient(top, #ffffff 85%, #eeeeee 99%);
+  background: url("multiple-select.png") no-repeat 100% -22px, linear-gradient(to bottom, #ffffff 85%, #eeeeee 99%);
 }
 
 .ms-search, .ms-search input {
-  -webkit-box-sizing: border-box;
   -khtml-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
   box-sizing: border-box;
 }
