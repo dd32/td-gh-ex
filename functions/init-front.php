@@ -118,12 +118,9 @@ function hu_maybe_print_default_widgets( $sidebars_widgets, $_zone_id ) {
     if ( ! in_array( $_zone_id, array( 'primary', 'secondary') ) )
       return;
 
-    global $wp_registered_sidebars;
-
     $_widgets_to_print = array();
     switch ($_zone_id) {
       case 'secondary':
-        $_widgets_to_print[] = 'WP_Widget_Search';
         $_widgets_to_print[] = 'AlxTabs';
         break;
 
@@ -138,20 +135,8 @@ function hu_maybe_print_default_widgets( $sidebars_widgets, $_zone_id ) {
     $_wgt_instances = array();
 
     foreach ( $_widgets_to_print as $_class) {
-      $_wgt_instances[] = new $_class();
-    }
-
-    if ( empty($_wgt_instances) )
-      return;
-
-    $sidebar = $wp_registered_sidebars[$_zone_id];
-    foreach ( $_wgt_instances as $_inst ) {
-      $_array_inst = (array)$_inst;
-      $params = array_merge( $sidebar, array('widget_id' => $_array_inst['id_base'], 'widget_name' => $_array_inst['name']) );
-      $callback = $_inst -> _get_display_callback();
-      if ( is_callable($callback) ) {
-        $callback[0] -> widget( $params, $callback );
-      }
+      if ( class_exists( $_class) )
+        the_widget( $_class );
     }
 }
 
@@ -693,10 +678,15 @@ if ( ! function_exists( 'hu_scripts' ) ) {
         true
     );
 
-    if ( is_singular() && get_option( 'thread_comments' ) ) {
+    if ( is_singular() && get_option( 'thread_comments' ) && comments_open() ) {
       wp_enqueue_script( 'comment-reply' );
     }
 
+    global $wp_registered_widgets;
+    $_regwdgt = array();
+    foreach ( $wp_registered_widgets as $_key => $_value) {
+      $_regwdgt[] = $_key;
+    }
     wp_localize_script(
           'hu-front-scripts',
           'HUParams',
@@ -733,7 +723,9 @@ if ( ! function_exists( 'hu_scripts' ) ) {
               'goldenRatio'         => apply_filters( 'hu_grid_golden_ratio' , 1.618 ),
               'gridGoldenRatioLimit' => apply_filters( 'hu_grid_golden_ratio_limit' , 350),
               'vivusSvgSpeed' => apply_filters( 'hu_vivus_svg_duration' , 300),
-              'isDevMode' => ( defined('WP_DEBUG') && true === WP_DEBUG ) || ( defined('TC_DEV') && true === TC_DEV )
+              'isDevMode' => ( defined('WP_DEBUG') && true === WP_DEBUG ) || ( defined('TC_DEV') && true === TC_DEV ),
+              'regSb' => wp_json_encode( wp_get_sidebars_widgets() ),
+              'regWg' => wp_json_encode( $_regwdgt )
             )
         )//end of filter
        );
