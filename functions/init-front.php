@@ -112,7 +112,8 @@ function hu_maybe_print_default_widgets( $sidebars_widgets, $_zone_id ) {
     //has user enable default widgets?
     if ( ! hu_is_checked('show-sb-example-wgt') || ! hu_is_checked( "{$_zone_id}-example-wgt") )
       return;
-    if ( ! array_key_exists($_zone_id, $sidebars_widgets) || ( is_array( $sidebars_widgets[$_zone_id] ) && ! empty($sidebars_widgets[$_zone_id] ) ) )
+    //stop here is the zone id has already been populated with widgets
+    if ( array_key_exists( $_zone_id, $sidebars_widgets ) && is_array( $sidebars_widgets[$_zone_id] ) && ! empty($sidebars_widgets[$_zone_id] ) )
       return;
     //we only want to print default widgets in primary and secondary sidebars
     if ( ! in_array( $_zone_id, array( 'primary', 'secondary') ) )
@@ -723,9 +724,7 @@ if ( ! function_exists( 'hu_scripts' ) ) {
               'goldenRatio'         => apply_filters( 'hu_grid_golden_ratio' , 1.618 ),
               'gridGoldenRatioLimit' => apply_filters( 'hu_grid_golden_ratio_limit' , 350),
               'vivusSvgSpeed' => apply_filters( 'hu_vivus_svg_duration' , 300),
-              'isDevMode' => ( defined('WP_DEBUG') && true === WP_DEBUG ) || ( defined('TC_DEV') && true === TC_DEV ),
-              'regSb' => wp_json_encode( wp_get_sidebars_widgets() ),
-              'regWg' => wp_json_encode( $_regwdgt )
+              'isDevMode' => ( defined('WP_DEBUG') && true === WP_DEBUG ) || ( defined('TC_DEV') && true === TC_DEV )
             )
         )//end of filter
        );
