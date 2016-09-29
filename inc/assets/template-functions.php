@@ -60,7 +60,7 @@ if ( ! function_exists( 'igthemes_breadcrumb' ) ) {
                     echo esc_html__('Home', 'base-wp');
                     echo '</a>';
                     if (is_single()) {
-                        the_category('&bull;');
+                        the_category('');
                         if (is_singular( 'post' )) {
                             echo '<span class="current">';
                             the_title();

@@ -4,7 +4,7 @@ Theme URI: http://www.iograficathemes.com/downloads/base-wp/
 Author: iografica
 Author URI: http://www.iograficathemes.com/
 Description: Base WP is a basic blog or business, responsive and clean coded, WordPress theme. Base WP is e-commerce, multilingual ready, SEO friendly and cross-browser compatible. The theme is fully integrated with the most popular and free plugins for Wordpress like WooCommerce, Easy Digital Downloads, Yoast Seo, Beaver Builder, Elementor, and much more. You can customize the theme via the Customizer, use this theme as an ecommerce or as a simple blogging platform.
-Version: 1.46
+Version: 1.47
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: base-wp
@@ -477,7 +477,7 @@ th {
   padding: 24px 0;
 }
 
-.page-template-elemntor .site-content,
+.page-template-elementor .site-content,
 .page-template-beaver-builder .site-content {
   content: "";
   display: table;
@@ -1975,10 +1975,10 @@ h3.widget-title {
   text-shadow: 1px 1px 0 #fff;
   background-color: rgba(202, 205, 205, 0.1);
   margin-top: -14px;
-  margin-left: -24px;
-  margin-right: -24px;
+  margin-left: -14px;
+  margin-right: -14px;
   margin-bottom: 14px;
-  padding: 14px 24px;
+  padding: 14px;
   border: 1px solid #fff;
   border-bottom: 1px solid rgba(100, 105, 105, 0.1);
 }
@@ -1986,7 +1986,7 @@ h3.widget-title {
 .widget {
   margin: 0 0 24px 0;
   border: 1px solid rgba(100, 105, 105, 0.1);
-  padding: 14px 24px;
+  padding: 14px;
   background: rgba(255, 255, 255, 0.8);
   -moz-box-shadow: 0px 2px 2px rgba(100, 105, 105, 0.1);
   -webkit-box-shadow: 0px 2px 2px rgba(100, 105, 105, 0.1);
@@ -2010,10 +2010,10 @@ h3.widget-title {
 .widget ul li {
   border-bottom: 1px solid rgba(100, 105, 105, 0.1);
   margin-top: 0;
-  margin-left: -24px;
-  margin-right: -24px;
+  margin-left: -14px;
+  margin-right: -14px;
   margin-bottom: 0;
-  padding: 10px 24px;
+  padding: 10px 14px;
 }
 
 .widget ul li:last-child {
@@ -2281,70 +2281,6 @@ h3.widget-title {
   font-size: .95em;
 }
 
-@media screen and (min-width: 769px) {
-  .site-header.inline .header-content {
-    content: "";
-    display: table;
-    table-layout: fixed;
-    max-width: 1190px;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
-  }
-  .site-header.inline .site-branding {
-    float: left;
-    display: block;
-    margin-right: 3.24338%;
-    width: 48.37831%;
-    display: block;
-    text-align: left;
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-  .site-header.inline .site-branding:last-child {
-    margin-right: 0;
-  }
-  .site-header.inline .site-branding h1.site-title a {
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-    float: left;
-  }
-  .site-header.inline .site-branding .site-description {
-    margin: 14px 0 14px 14px;
-    padding: 0;
-    display: inline-block;
-  }
-  .site-header.inline .site-branding .custom-logo {
-    margin: 25px 0;
-  }
-  .site-header.inline .header-nav {
-    text-align: right;
-    background: rgba(202, 205, 205, 0.1);
-    border-bottom: 1px solid rgba(150, 155, 155, 0.1);
-  }
-  .site-header.inline .header-nav ul {
-    float: left;
-    display: block;
-    margin-right: 3.24338%;
-    width: 48.37831%;
-    margin-right: 0;
-    float: right;
-    margin-bottom: 0;
-    display: block;
-    list-style: none;
-  }
-  .site-header.inline .header-nav ul:last-child {
-    margin-right: 0;
-  }
-  .site-header.inline .header-nav ul li {
-    display: inline-block;
-    *display: inline;
-    padding: 16px 7px;
-    font-size: 1em;
-  }
-}
-
 /*--------------------------------------------------------------
 ## Footer
 --------------------------------------------------------------*/
@@ -2414,7 +2350,7 @@ h3.widget-title {
 ------------------------------*/
 article {
   border: 1px solid rgba(100, 105, 105, 0.1);
-  padding: 14px 24px;
+  padding: 14px;
   background: rgba(255, 255, 255, 0.8);
   -moz-box-shadow: 0px 2px 2px rgba(100, 105, 105, 0.1);
   -webkit-box-shadow: 0px 2px 2px rgba(100, 105, 105, 0.1);
@@ -2582,10 +2518,6 @@ article {
 /*-----------------------------
 # Archives page
 ------------------------------*/
-.sticky {
-  display: block;
-}
-
 .hentry {
   margin-bottom: 1.5em;
 }
@@ -2642,6 +2574,7 @@ article {
 
 .comments-area .comment-list .comment {
   list-style: none;
+  margin: 24px 0;
 }
 
 .comments-area .comment-list .comment .comment-content {
@@ -2701,6 +2634,17 @@ article {
 .breadcrumb a::after {
   content: "/";
   margin: 0 5px;
+}
+
+.breadcrumb ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline-block;
+}
+
+.breadcrumb ul li {
+  display: inline-block;
 }
 
 /*--------------------------------------------------------------
