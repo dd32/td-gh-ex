@@ -1,6 +1,6 @@
 <?php
 /* 	Socialia Theme's General Page to display all Pages
-	Copyright: 2012-2015, D5 Creation, www.d5creation.com
+	Copyright: 2012-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Socialia 2.0
 */
@@ -23,7 +23,7 @@
 		</div>
         <?php endwhile; ?><div class="clear"> </div>
 	<?php edit_post_link('Edit', '<p>', '</p>'); ?>
-	<?php if (d5socialia_get_option ('cpage', '' ) != '1' ): if (comments_open( $post->ID ) == true ): comments_template('', true); endif; endif;?>
+	<?php if (d5socialia_get_option ('cpage', '' ) != '1' ): comments_template('', true); endif;?>
 	<?php else: ?>
 		<p><?php _e('Sorry, no pages matched your criteria.','d5-socialia'); ?></p>
 	<?php endif; ?>

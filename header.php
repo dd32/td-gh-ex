@@ -1,7 +1,7 @@
 <?php
 
 /* 	Socialia Theme's Header
-	Copyright: 2012-2015, D5 Creation, www.d5creation.com
+	Copyright: 2012-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Socialia 2.0
 */

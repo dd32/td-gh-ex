@@ -1,6 +1,6 @@
 <?php 
 /* 	Socialia Theme's About Page
-	Copyright: 2012-2015, D5 Creation, www.d5creation.com
+	Copyright: 2012-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Socialia 3.0
 */
@@ -75,7 +75,7 @@
 	</div>
     
     <div class="specialmsg">
-    		<div class="specialtext floatlt ">Extend Theme is only $7.5 with DEVELOPER Memnership</div>
+    		<div class="specialtext floatlt ">Extend Theme is only $7.5 with DEVELOPER Membership</div>
         	<a class="specialbutton floatrt" href="<?php echo esc_url('http://d5creation.com/mp/'); ?>">View Pricing and Features</a>
     </div>
 

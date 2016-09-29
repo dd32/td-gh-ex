@@ -1,6 +1,6 @@
 <?php
 /* 	Socialia Theme's Functions
-	Copyright: 2012-2015, D5 Creation, www.d5creation.com
+	Copyright: 2012-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Socialia 2.0
 */
@@ -74,9 +74,8 @@ function d5socialia_setup() {
 	
 	wp_enqueue_script( 'd5socialia-menu-style', get_template_directory_uri(). '/js/menu.js', array( 'jquery' ) );
 	wp_enqueue_style('d5socialia-gfonts1', '//fonts.googleapis.com/css?family=Marvel:400', false );
-	wp_enqueue_script( 'd5socialia_skitter-easing', get_template_directory_uri() . '/js/jquery.easing.1.3.js', array( 'jquery' ) );
 	wp_enqueue_style ('d5socialia_skitter-style', get_template_directory_uri() . '/css/skitter.styles.css' );
-	wp_enqueue_script( 'd5socialia_skitter-main', get_template_directory_uri() . '/js/jquery.skitter.js', array( 'jquery' ) );
+	wp_enqueue_script( 'd5socialia_skitter-main', get_template_directory_uri() . '/js/jquery.skitter.js', array( 'jquery', 'jquery-effects-core' ) );
 	}
 	add_action( 'wp_enqueue_scripts', 'socialia_enqueue_scripts' );
 

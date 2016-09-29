@@ -1,6 +1,6 @@
 <?php 
 /* 	Socialia Theme's About Page
-	Copyright: 2012-2015, D5 Creation, www.d5creation.com
+	Copyright: 2012-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Socialia 3.0
 */
@@ -72,7 +72,7 @@ You can Visit the Socialia Extend <a href="<?php echo esc_url('http://demo.d5cre
             
             <tr><th><a href="<?php echo esc_url('http://d5creation.com/themegallery/'); ?>" target="_blank">Learn More</a></th><th><a href="<?php echo esc_url('http://d5creation.com/themegallery/'); ?>" target="_blank">Learn More</a></th><th><a href="<?php echo esc_url('http://d5creation.com/themegallery/'); ?>" target="_blank">Learn More</a></th></tr>
 		</table>
-        <span class="alncenter">* Each Extend Theme is only $7.5 with DEVELOPER Memnership</span>
+        <span class="alncenter">* Each Extend Theme is only $7.5 with DEVELOPER Membership</span>
         
         <div class="specialmsg">
     		<div class="specialtext floatlt ">Learn More about our Flexible Membership Options</div>
