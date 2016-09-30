@@ -1,5 +1,11 @@
 SuevaFree Changelog
 
+- Version 2.2.4 - Released: 30.09.2016
+
+-- Updated : TGM Plugin Activation.
+-- Fixed : WooCommerce messages.
+-- Edit : Code optimized.
+
 - Version 2.2.3 - Released: 25.09.2016
 
 -- Fixed : Cart page margin.

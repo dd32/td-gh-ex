@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-26 20:15+0200\n"
-"PO-Revision-Date: 2016-04-26 20:16+0200\n"
+"POT-Creation-Date: 2016-09-30 19:09+0200\n"
+"PO-Revision-Date: 2016-09-30 19:11+0200\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
 "Language: it_IT\n"
@@ -95,7 +95,7 @@ msgstr "No"
 msgid "Yes"
 msgstr "Si"
 
-#: core/admin/customize/customize.php:29 core/classes/customize.php:333
+#: core/admin/customize/customize.php:29 core/includes/class-customize.php:333
 msgid "Get support"
 msgstr "Ottieni supporto."
 
@@ -695,341 +695,68 @@ msgstr "Elementi H6"
 msgid "Insert a size, for for H6 elements (For example, 14px) "
 msgstr "Inserisci una grandezza, per i titoli H6 (Ad esempio, 14px)"
 
-#: core/classes/class-plugin-activation.php:301
-msgid "Install Required Plugins"
-msgstr "Installa i plugins necessari."
+#: core/functions/function-widgets.php:7
+msgid "Sidebar"
+msgstr "Sidebar"
 
-#: core/classes/class-plugin-activation.php:302
-msgid "Install Plugins"
-msgstr "Installa plugins"
+#: core/functions/function-widgets.php:9
+msgid "This sidebar will be shown at the side of posts and pages."
+msgstr "Questa sidebar verrà visualizzata a lato di pagine ed articoli"
 
-#: core/classes/class-plugin-activation.php:303
+#: core/functions/function-widgets.php:19
+msgid "Home Sidebar"
+msgstr "Sidebar homepage"
+
+#: core/functions/function-widgets.php:21
+msgid "This sidebar will be shown at the side of the homepage"
+msgstr "Questa sidebar verrà visualizzata a lato della pagina principale."
+
+#: core/functions/function-widgets.php:31
+msgid "Category Sidebar"
+msgstr "Sidebar categoria"
+
+#: core/functions/function-widgets.php:33
+msgid "This sidebar will be shown at the side of category page."
+msgstr "Questa sidebar verrà visualizzata a lato delle categorie"
+
+#: core/functions/function-widgets.php:43
+msgid "Search Sidebar"
+msgstr "Sidebar pagina di ricerca"
+
+#: core/functions/function-widgets.php:45
+msgid "This sidebar will be shown at the side of search page."
+msgstr "Questa sidebar verrà visualizzata a lato della pagina di ricerca"
+
+#: core/functions/function-widgets.php:55
+msgid "Bottom Sidebar"
+msgstr "Sidebar per la parte inferiore della pagina"
+
+#: core/functions/function-widgets.php:57
+msgid "This sidebar will be shown after the content."
+msgstr "Questa sidebar verrà visualizzata dopo il contenuto della pagina"
+
+#: core/functions/function-woocommerce.php:41
+#: core/functions/function-woocommerce.php:71
+msgid "View your shopping cart"
+msgstr "Visualizza il carrello"
+
+#: core/functions/function-woocommerce.php:44
+#: core/functions/function-woocommerce.php:74
 #, php-format
-msgid "Installing Plugin: %s"
-msgstr "Installazione plugin: %s"
-
-#: core/classes/class-plugin-activation.php:304
-msgid "Something went wrong with the plugin API."
-msgstr "Qualcosa è andato storto con le API del plugin."
-
-#: core/classes/class-plugin-activation.php:306
-#, php-format
-msgid "This theme requires the following plugin: %1$s."
-msgstr "Questo tema richiede il seguente plugin: %1$s."
-
-#: core/classes/class-plugin-activation.php:311
-#, php-format
-msgid "This theme recommends the following plugin: %1$s."
-msgstr "Questo tema raccomanda il seguente plugin: %1$s."
-
-#: core/classes/class-plugin-activation.php:316
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to install the %1$s "
-"plugin."
-msgstr "Spiacente, ma non hai i permessi per installare il %1$s plugin."
-
-#: core/classes/class-plugin-activation.php:321
-#, php-format
-msgid ""
-"The following plugin needs to be updated to its latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgstr ""
-"I seguenti plugin richiedono l’aggiornamento alla versione più recente per "
-"assicurare la massima compatibilità con questo tema: %1$s."
-
-#: core/classes/class-plugin-activation.php:326
-#, php-format
-msgid "There is an update available for: %1$s."
-msgstr "È disponibile un nuovo aggiornamento per:  %1$s."
-
-#: core/classes/class-plugin-activation.php:331
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to update the %1$s plugin."
-msgstr "Spiacente, ma non hai i permessi per aggiornare il %1$s plugin."
-
-#: core/classes/class-plugin-activation.php:336
-#, php-format
-msgid "The following required plugin is currently inactive: %1$s."
-msgstr "Il seguente plugin richiesto è attualmente non attivo: %1$s."
-
-#: core/classes/class-plugin-activation.php:341
-#, php-format
-msgid "The following recommended plugin is currently inactive: %1$s."
-msgstr "Il seguente plugin raccomandato è attualmente non attivo: %1$s."
-
-#: core/classes/class-plugin-activation.php:346
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to activate the %1$s "
-"plugin."
-msgstr "Spiacente, ma non hai i permessi per attivare il %1$s plugin."
-
-#: core/classes/class-plugin-activation.php:351
-msgid "Begin installing plugin"
-msgstr "Inizia l’installazione del plugin."
-
-#: core/classes/class-plugin-activation.php:356
-msgid "Begin updating plugin"
-msgstr "Inizia l’aggiornamento del plugin."
-
-#: core/classes/class-plugin-activation.php:361
-msgid "Begin activating plugin"
-msgstr "Inizia l’attivazione del plugin."
-
-#: core/classes/class-plugin-activation.php:365
-msgid "Return to Required Plugins Installer"
-msgstr "Ritorna all’installatore dei plugin richiesti."
-
-#: core/classes/class-plugin-activation.php:366
-msgid "Return to the dashboard"
-msgstr "Ritorna alla dashboard."
-
-#: core/classes/class-plugin-activation.php:367
-#: core/classes/class-plugin-activation.php:2959
-msgid "Plugin activated successfully."
-msgstr "Plugin attivato con successo."
-
-#: core/classes/class-plugin-activation.php:368
-#: core/classes/class-plugin-activation.php:2787
-msgid "The following plugin was activated successfully:"
-msgid_plural "The following plugins were activated successfully:"
-msgstr[0] "Il seguente plugin è stato attivato con successo:"
-msgstr[1] "Il seguente plugin è stato attivato con successo:"
-
-#: core/classes/class-plugin-activation.php:369
-#, php-format
-msgid "No action taken. Plugin %1$s was already active."
-msgstr "Nessuna risposta. Il plugin %1$s era già stato attivato."
-
-#: core/classes/class-plugin-activation.php:370
-#, php-format
-msgid ""
-"Plugin not activated. A higher version of %s is needed for this theme. "
-"Please update the plugin."
-msgstr ""
-"Plugin non attivato. Una versione più recente di %s è richiesta per questo "
-"tema. Si prega di aggiornare il plugin."
-
-#: core/classes/class-plugin-activation.php:371
-#, php-format
-msgid "All plugins installed and activated successfully. %1$s"
-msgstr "Tutti i plugins installati ed attivati con successo. %1$s"
-
-#: core/classes/class-plugin-activation.php:372
-msgid "Dismiss this notice"
-msgstr "Nascondi questo avviso"
-
-#: core/classes/class-plugin-activation.php:373
-msgid "Please contact the administrator of this site for help."
-msgstr ""
-"Si prega di contattare l’amministratore di questo sito per richiedere "
-"assistenza."
-
-#: core/classes/class-plugin-activation.php:2122
-msgid "Required"
-msgstr "Richiesto"
-
-#: core/classes/class-plugin-activation.php:2125
-msgid "Recommended"
-msgstr "Raccomandato"
-
-#: core/classes/class-plugin-activation.php:2141
-msgid "WordPress Repository"
-msgstr "Repository WordPress"
-
-#: core/classes/class-plugin-activation.php:2144
-msgid "External Source"
-msgstr "Risorse esterne"
-
-#: core/classes/class-plugin-activation.php:2147
-msgid "Pre-Packaged"
-msgstr "Preconfezionato."
-
-#: core/classes/class-plugin-activation.php:2164
-msgid "Not Installed"
-msgstr "Non installato."
-
-#: core/classes/class-plugin-activation.php:2168
-msgid "Installed But Not Activated"
-msgstr "Installato ma non attivato."
-
-#: core/classes/class-plugin-activation.php:2170
-msgid "Active"
-msgstr "Attivo"
-
-#: core/classes/class-plugin-activation.php:2176
-msgid "Required Update not Available"
-msgstr "L’aggiornamento richiesto non è disponibile."
-
-#: core/classes/class-plugin-activation.php:2179
-msgid "Requires Update"
-msgstr "È richiesto l’aggiornamento."
-
-#: core/classes/class-plugin-activation.php:2182
-msgid "Update recommended"
-msgstr "Aggiornamento raccomandato"
-
-#: core/classes/class-plugin-activation.php:2238
-#, php-format
-msgid "To Install <span class=\"count\">(%s)</span>"
-msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgid "%d"
+msgid_plural "%d"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/classes/class-plugin-activation.php:2241
-#, php-format
-msgid "Update Available <span class=\"count\">(%s)</span>"
-msgid_plural "Update Available <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: core/classes/class-plugin-activation.php:2244
-#, php-format
-msgid "To Activate <span class=\"count\">(%s)</span>"
-msgid_plural "To Activate <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: core/classes/class-plugin-activation.php:2334
-msgid "Installed version:"
-msgstr "Versione installata:"
-
-#: core/classes/class-plugin-activation.php:2342
-msgid "Minimum required version:"
-msgstr "Versione minima richiesta:"
-
-#: core/classes/class-plugin-activation.php:2354
-msgid "Available version:"
-msgstr "Versione disponibile"
-
-#: core/classes/class-plugin-activation.php:2377
-#, php-format
-msgid ""
-"No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
-"Dashboard</a>"
-msgstr ""
-"Nessun plugin da installare, aggiornare o attivare. <a href=“%1$s”>Ritorna "
-"alla dashboard</a>"
-
-#: core/classes/class-plugin-activation.php:2391
-msgid "Plugin"
-msgstr "Plugin"
-
-#: core/classes/class-plugin-activation.php:2392
-msgid "Source"
-msgstr "Fonte"
-
-#: core/classes/class-plugin-activation.php:2393
-msgid "Type"
-msgstr "Tipo"
-
-#: core/classes/class-plugin-activation.php:2397
-msgid "Version"
-msgstr "Versione"
-
-#: core/classes/class-plugin-activation.php:2398
-msgid "Status"
-msgstr "Stato"
-
-#: core/classes/class-plugin-activation.php:2558
-msgid "Install"
-msgstr "Installa"
-
-#: core/classes/class-plugin-activation.php:2564
-msgid "Update"
-msgstr "Aggiornamento"
-
-#: core/classes/class-plugin-activation.php:2567
-msgid "Activate"
-msgstr "Attivare"
-
-#: core/classes/class-plugin-activation.php:2598
-msgid "No plugins were selected to be installed. No action taken."
-msgstr "Nessun plugin selezionato per essere installato. Nessuna risposta."
-
-#: core/classes/class-plugin-activation.php:2600
-msgid "No plugins were selected to be updated. No action taken."
-msgstr "Nessun plugin selezionato per essere aggiornato. Nessuna risposta."
-
-#: core/classes/class-plugin-activation.php:2636
-msgid "No plugins are available to be installed at this time."
-msgstr "Nessun plugin è disponibile per essere installato in questo momento."
-
-#: core/classes/class-plugin-activation.php:2638
-msgid "No plugins are available to be updated at this time."
-msgstr "Nessun plugin è disponibile per essere aggiornato in questo momento."
-
-#: core/classes/class-plugin-activation.php:2958
-msgid "Plugin activation failed."
-msgstr "Installazione plugin fallita."
-
-#: core/classes/class-plugin-activation.php:3288
-#, php-format
-msgid "Updating Plugin %1$s (%2$d/%3$d)"
-msgstr "Aggiornamento plugin %1$s (%2$d/%3$d)"
-
-#: core/classes/class-plugin-activation.php:3290
-#, php-format
-msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-msgstr ""
-"Si è verificato un errore durante l’installazione %1$s: <strong>%2$s</"
-"strong>."
-
-#: core/classes/class-plugin-activation.php:3291
-#, php-format
-msgid "The installation of %1$s failed."
-msgstr "L’installazione di %1$s è fallita."
-
-#: core/classes/class-plugin-activation.php:3295
-msgid ""
-"The installation and activation process is starting. This process may take a "
-"while on some hosts, so please be patient."
-msgstr ""
-"Il processo d’installazione ed attivazione è partito. Questo processo può "
-"richiedere del tempo su alcuni hosting, si prega di attendere."
-
-#: core/classes/class-plugin-activation.php:3296
-#, php-format
-msgid "%1$s installed and activated successfully."
-msgstr "%1$s installato ed attivato con successo."
-
-#: core/classes/class-plugin-activation.php:3297
-msgid "All installations and activations have been completed."
-msgstr "Tutte le installazioni e le attivazione sono state completate."
-
-#: core/classes/class-plugin-activation.php:3298
-#, php-format
-msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-msgstr "Installazione ed attivazione plugin %1$s (%2$d/%3$d)"
-
-#: core/classes/class-plugin-activation.php:3301
-msgid ""
-"The installation process is starting. This process may take a while on some "
-"hosts, so please be patient."
-msgstr ""
-"Il processo d’installazione è partito. Questo processo può richiedere del "
-"tempo su alcuni hosting, si prega di attendere."
-
-#: core/classes/class-plugin-activation.php:3303
-msgid "All installations have been completed."
-msgstr "Tutte le installazioni sono state completate."
-
-#: core/classes/class-plugin-activation.php:3304
-#, php-format
-msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr "Installazione plugin %1$s (%2$d/%3$d)"
-
-#: core/classes/customize.php:34
+#: core/includes/class-customize.php:34 core/includes/class-notice.php:62
 msgid "Upgrade to Sueva Premium"
 msgstr "Aggiorna a Sueva Premium"
 
-#: core/classes/customize.php:36
+#: core/includes/class-customize.php:36
 msgid "Live Demo"
 msgstr "Live Demo"
 
-#: core/classes/customize.php:337
+#: core/includes/class-customize.php:337
 msgid ""
 "If you've opened a new support ticket from <strong>WordPress.org</strong>, "
 "please send a reminder to <strong>support@wpinprogress.com</strong>, to get "
@@ -1039,15 +766,15 @@ msgstr ""
 "invia un promemoria a <strong>support@wpinprogress.com</strong>, per "
 "ottenere rapidamente una risposta."
 
-#: core/classes/customize.php:341
+#: core/includes/class-customize.php:341
 msgid "Open a new ticket"
 msgstr "Apri un nuovo ticket."
 
-#: core/classes/customize.php:342
+#: core/includes/class-customize.php:342
 msgid "Send a reminder"
 msgstr "Invia un promemoria."
 
-#: core/classes/customize.php:347
+#: core/includes/class-customize.php:347
 msgid ""
 "If you like this theme and support, <strong>I'd appreciate</strong> any of "
 "the following:"
@@ -1055,79 +782,363 @@ msgstr ""
 "Se ti piace il tema oppure il servizio di supporto, <strong>è gradita</"
 "strong> una delle seguenti azioni:"
 
-#: core/classes/customize.php:351
+#: core/includes/class-customize.php:351
 msgid "Rate this Theme"
 msgstr "Valuta questo tema."
 
-#: core/classes/customize.php:352
+#: core/includes/class-customize.php:352
 msgid "Like on Facebook"
 msgstr "Seguici su Facebook."
 
-#: core/classes/customize.php:353
+#: core/includes/class-customize.php:353
 msgid "Subscribe our newsletter"
 msgstr "Registrati alla nostra newsletter."
 
-#: core/classes/customize.php:354
+#: core/includes/class-customize.php:354
 msgid "Download our free WordPress themes"
 msgstr "Scarica i nostri temi gratuiti per WordPress"
 
-#: core/functions/widgets.php:7
-msgid "Sidebar"
-msgstr "Sidebar"
+#: core/includes/class-notice.php:58
+msgid ""
+"Upgrade to the premium version of Sueva, to enable 600+ Google Fonts, "
+"Unlimited sidebars, Portfolio section and much more."
+msgstr ""
+"Aggiorna alla versione premium di Sueva, per attivare oltre 600 Google "
+"Fonts, barre laterali illimitate, sezione Portfolio e molto altro."
 
-#: core/functions/widgets.php:9
-msgid "This sidebar will be shown at the side of posts and pages."
-msgstr "Questa sidebar verrà visualizzata a lato di pagine ed articoli"
+#: core/includes/class-notice.php:59
+#: core/includes/class-plugin-activation.php:372
+msgid "Dismiss this notice"
+msgstr "Nascondi questo avviso"
 
-#: core/functions/widgets.php:19
-msgid "Home Sidebar"
-msgstr "Sidebar homepage"
+#: core/includes/class-plugin-activation.php:301
+msgid "Install Required Plugins"
+msgstr "Installa i plugins necessari."
 
-#: core/functions/widgets.php:21
-msgid "This sidebar will be shown at the side of the homepage"
-msgstr "Questa sidebar verrà visualizzata a lato della pagina principale."
+#: core/includes/class-plugin-activation.php:302
+msgid "Install Plugins"
+msgstr "Installa plugins"
 
-#: core/functions/widgets.php:31
-msgid "Category Sidebar"
-msgstr "Sidebar categoria"
-
-#: core/functions/widgets.php:33
-msgid "This sidebar will be shown at the side of category page."
-msgstr "Questa sidebar verrà visualizzata a lato delle categorie"
-
-#: core/functions/widgets.php:43
-msgid "Search Sidebar"
-msgstr "Sidebar pagina di ricerca"
-
-#: core/functions/widgets.php:45
-msgid "This sidebar will be shown at the side of search page."
-msgstr "Questa sidebar verrà visualizzata a lato della pagina di ricerca"
-
-#: core/functions/widgets.php:55
-msgid "Bottom Sidebar"
-msgstr "Sidebar per la parte inferiore della pagina"
-
-#: core/functions/widgets.php:57
-msgid "This sidebar will be shown after the content."
-msgstr "Questa sidebar verrà visualizzata dopo il contenuto della pagina"
-
-#: core/functions/woocommerce.php:41 core/functions/woocommerce.php:71
-msgid "View your shopping cart"
-msgstr "Visualizza il carrello"
-
-#: core/functions/woocommerce.php:44 core/functions/woocommerce.php:74
+#: core/includes/class-plugin-activation.php:303
 #, php-format
-msgid "%d"
-msgid_plural "%d"
-msgstr[0] ""
-msgstr[1] ""
+msgid "Installing Plugin: %s"
+msgstr "Installazione plugin: %s"
+
+#: core/includes/class-plugin-activation.php:304
+msgid "Something went wrong with the plugin API."
+msgstr "Qualcosa è andato storto con le API del plugin."
+
+#: core/includes/class-plugin-activation.php:306
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgstr "Questo tema richiede il seguente plugin: %1$s."
+
+#: core/includes/class-plugin-activation.php:311
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgstr "Questo tema raccomanda il seguente plugin: %1$s."
+
+#: core/includes/class-plugin-activation.php:316
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to install the %1$s "
+"plugin."
+msgstr "Spiacente, ma non hai i permessi per installare il %1$s plugin."
+
+#: core/includes/class-plugin-activation.php:321
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr ""
+"I seguenti plugin richiedono l’aggiornamento alla versione più recente per "
+"assicurare la massima compatibilità con questo tema: %1$s."
+
+#: core/includes/class-plugin-activation.php:326
+#, php-format
+msgid "There is an update available for: %1$s."
+msgstr "È disponibile un nuovo aggiornamento per:  %1$s."
+
+#: core/includes/class-plugin-activation.php:331
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to update the %1$s plugin."
+msgstr "Spiacente, ma non hai i permessi per aggiornare il %1$s plugin."
+
+#: core/includes/class-plugin-activation.php:336
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgstr "Il seguente plugin richiesto è attualmente non attivo: %1$s."
+
+#: core/includes/class-plugin-activation.php:341
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgstr "Il seguente plugin raccomandato è attualmente non attivo: %1$s."
+
+#: core/includes/class-plugin-activation.php:346
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to activate the %1$s "
+"plugin."
+msgstr "Spiacente, ma non hai i permessi per attivare il %1$s plugin."
+
+#: core/includes/class-plugin-activation.php:351
+msgid "Begin installing plugin"
+msgstr "Inizia l’installazione del plugin."
+
+#: core/includes/class-plugin-activation.php:356
+msgid "Begin updating plugin"
+msgstr "Inizia l’aggiornamento del plugin."
+
+#: core/includes/class-plugin-activation.php:361
+msgid "Begin activating plugin"
+msgstr "Inizia l’attivazione del plugin."
+
+#: core/includes/class-plugin-activation.php:365
+msgid "Return to Required Plugins Installer"
+msgstr "Ritorna all’installatore dei plugin richiesti."
+
+#: core/includes/class-plugin-activation.php:366
+msgid "Return to the dashboard"
+msgstr "Ritorna alla dashboard."
+
+#: core/includes/class-plugin-activation.php:367
+#: core/includes/class-plugin-activation.php:2959
+msgid "Plugin activated successfully."
+msgstr "Plugin attivato con successo."
+
+#: core/includes/class-plugin-activation.php:368
+#: core/includes/class-plugin-activation.php:2787
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] "Il seguente plugin è stato attivato con successo:"
+msgstr[1] "Il seguente plugin è stato attivato con successo:"
+
+#: core/includes/class-plugin-activation.php:369
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr "Nessuna risposta. Il plugin %1$s era già stato attivato."
+
+#: core/includes/class-plugin-activation.php:370
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+"Plugin non attivato. Una versione più recente di %s è richiesta per questo "
+"tema. Si prega di aggiornare il plugin."
+
+#: core/includes/class-plugin-activation.php:371
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr "Tutti i plugins installati ed attivati con successo. %1$s"
+
+#: core/includes/class-plugin-activation.php:373
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+"Si prega di contattare l’amministratore di questo sito per richiedere "
+"assistenza."
+
+#: core/includes/class-plugin-activation.php:2122
+msgid "Required"
+msgstr "Richiesto"
+
+#: core/includes/class-plugin-activation.php:2125
+msgid "Recommended"
+msgstr "Raccomandato"
+
+#: core/includes/class-plugin-activation.php:2141
+msgid "WordPress Repository"
+msgstr "Repository WordPress"
+
+#: core/includes/class-plugin-activation.php:2144
+msgid "External Source"
+msgstr "Risorse esterne"
+
+#: core/includes/class-plugin-activation.php:2147
+msgid "Pre-Packaged"
+msgstr "Preconfezionato."
+
+#: core/includes/class-plugin-activation.php:2164
+msgid "Not Installed"
+msgstr "Non installato."
+
+#: core/includes/class-plugin-activation.php:2168
+msgid "Installed But Not Activated"
+msgstr "Installato ma non attivato."
+
+#: core/includes/class-plugin-activation.php:2170
+msgid "Active"
+msgstr "Attivo"
+
+#: core/includes/class-plugin-activation.php:2176
+msgid "Required Update not Available"
+msgstr "L’aggiornamento richiesto non è disponibile."
+
+#: core/includes/class-plugin-activation.php:2179
+msgid "Requires Update"
+msgstr "È richiesto l’aggiornamento."
+
+#: core/includes/class-plugin-activation.php:2182
+msgid "Update recommended"
+msgstr "Aggiornamento raccomandato"
+
+#: core/includes/class-plugin-activation.php:2238
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] "Per installare <span class=“count”>(%s)</span>"
+msgstr[1] "Per installare <span class=“count”>(%s)</span>"
+
+#: core/includes/class-plugin-activation.php:2241
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] "Aggiornamento disponibile <span class=“count”>(%s)</span>"
+msgstr[1] "Aggiornamento disponibile <span class=“count”>(%s)</span>"
+
+#: core/includes/class-plugin-activation.php:2244
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] "Per attivare <span class=“count”>(%s)</span>"
+msgstr[1] "Per attivare <span class=“count”>(%s)</span>"
+
+#: core/includes/class-plugin-activation.php:2334
+msgid "Installed version:"
+msgstr "Versione installata:"
+
+#: core/includes/class-plugin-activation.php:2342
+msgid "Minimum required version:"
+msgstr "Versione minima richiesta:"
+
+#: core/includes/class-plugin-activation.php:2354
+msgid "Available version:"
+msgstr "Versione disponibile"
+
+#: core/includes/class-plugin-activation.php:2377
+#, php-format
+msgid ""
+"No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
+"Dashboard</a>"
+msgstr ""
+"Nessun plugin da installare, aggiornare o attivare. <a href=“%1$s”>Ritorna "
+"alla dashboard</a>"
+
+#: core/includes/class-plugin-activation.php:2391
+msgid "Plugin"
+msgstr "Plugin"
+
+#: core/includes/class-plugin-activation.php:2392
+msgid "Source"
+msgstr "Fonte"
+
+#: core/includes/class-plugin-activation.php:2393
+msgid "Type"
+msgstr "Tipo"
+
+#: core/includes/class-plugin-activation.php:2397
+msgid "Version"
+msgstr "Versione"
+
+#: core/includes/class-plugin-activation.php:2398
+msgid "Status"
+msgstr "Stato"
+
+#: core/includes/class-plugin-activation.php:2558
+msgid "Install"
+msgstr "Installa"
+
+#: core/includes/class-plugin-activation.php:2564
+msgid "Update"
+msgstr "Aggiornamento"
+
+#: core/includes/class-plugin-activation.php:2567
+msgid "Activate"
+msgstr "Attivare"
+
+#: core/includes/class-plugin-activation.php:2598
+msgid "No plugins were selected to be installed. No action taken."
+msgstr "Nessun plugin selezionato per essere installato. Nessuna risposta."
+
+#: core/includes/class-plugin-activation.php:2600
+msgid "No plugins were selected to be updated. No action taken."
+msgstr "Nessun plugin selezionato per essere aggiornato. Nessuna risposta."
+
+#: core/includes/class-plugin-activation.php:2636
+msgid "No plugins are available to be installed at this time."
+msgstr "Nessun plugin è disponibile per essere installato in questo momento."
+
+#: core/includes/class-plugin-activation.php:2638
+msgid "No plugins are available to be updated at this time."
+msgstr "Nessun plugin è disponibile per essere aggiornato in questo momento."
+
+#: core/includes/class-plugin-activation.php:2958
+msgid "Plugin activation failed."
+msgstr "Installazione plugin fallita."
+
+#: core/includes/class-plugin-activation.php:3288
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr "Aggiornamento plugin %1$s (%2$d/%3$d)"
+
+#: core/includes/class-plugin-activation.php:3290
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+"Si è verificato un errore durante l’installazione %1$s: <strong>%2$s</"
+"strong>."
+
+#: core/includes/class-plugin-activation.php:3291
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr "L’installazione di %1$s è fallita."
+
+#: core/includes/class-plugin-activation.php:3295
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+"Il processo d’installazione ed attivazione è partito. Questo processo può "
+"richiedere del tempo su alcuni hosting, si prega di attendere."
+
+#: core/includes/class-plugin-activation.php:3296
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr "%1$s installato ed attivato con successo."
+
+#: core/includes/class-plugin-activation.php:3297
+msgid "All installations and activations have been completed."
+msgstr "Tutte le installazioni e le attivazione sono state completate."
+
+#: core/includes/class-plugin-activation.php:3298
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr "Installazione ed attivazione plugin %1$s (%2$d/%3$d)"
+
+#: core/includes/class-plugin-activation.php:3301
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+"Il processo d’installazione è partito. Questo processo può richiedere del "
+"tempo su alcuni hosting, si prega di attendere."
+
+#: core/includes/class-plugin-activation.php:3303
+msgid "All installations have been completed."
+msgstr "Tutte le installazioni sono state completate."
+
+#: core/includes/class-plugin-activation.php:3304
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr "Installazione plugin %1$s (%2$d/%3$d)"
 
 #: core/main.php:56
 #, php-format
 msgid "Page %s"
 msgstr "Page %s"
 
-#: core/main.php:354
+#: core/main.php:356
 msgid "Article"
 msgstr "Articolo"
 
@@ -1224,7 +1235,6 @@ msgstr "Spedizione"
 #: woocommerce/cart/cart-totals.php:80 woocommerce/cart/cart.php:42
 #: woocommerce/checkout/review-order.php:18
 #: woocommerce/checkout/review-order.php:97
-#: woocommerce/order/order-details.php:30
 msgid "Total"
 msgstr "Totale"
 
@@ -1255,7 +1265,6 @@ msgid "Cart"
 msgstr "Carrello"
 
 #: woocommerce/cart/cart.php:39 woocommerce/checkout/review-order.php:17
-#: woocommerce/order/order-details.php:29
 msgid "Product"
 msgstr "Prodotto"
 
@@ -1330,104 +1339,24 @@ msgid "Click here to enter your code"
 msgstr "Clicca qui per inserire il tuo codice"
 
 #: woocommerce/global/form-login.php:26
-#: woocommerce/myaccount/form-lost-password.php:24
 msgid "Username or email"
 msgstr "Nome utente o e-mail"
 
-#: woocommerce/global/form-login.php:30 woocommerce/myaccount/form-login.php:39
-#: woocommerce/myaccount/form-login.php:89
+#: woocommerce/global/form-login.php:30
 msgid "Password"
 msgstr "Password"
 
-#: woocommerce/global/form-login.php:39 woocommerce/myaccount/form-login.php:28
-#: woocommerce/myaccount/form-login.php:47
+#: woocommerce/global/form-login.php:39
 msgid "Login"
 msgstr "Accedi"
 
-#: woocommerce/global/form-login.php:42 woocommerce/myaccount/form-login.php:49
+#: woocommerce/global/form-login.php:42
 msgid "Remember me"
 msgstr "Ricordami"
 
-#: woocommerce/global/form-login.php:46 woocommerce/myaccount/form-login.php:53
+#: woocommerce/global/form-login.php:46
 msgid "Lost your password?"
 msgstr "Hai perso la tua password?"
-
-#: woocommerce/myaccount/form-add-payment-method.php:41
-msgid ""
-"Sorry, it seems that there are no payment methods which support adding a new "
-"payment method. Please contact us if you require assistance or wish to make "
-"alternate arrangements."
-msgstr ""
-"Spiacente, sembra non siano disponibili metodi di spedizione che supporti "
-"l’aggiunta di un nuovo metodo di spedizione. Si prega di contattarci nel "
-"caso si necessiti di assistenza o desideriate prendere accordi alternativi."
-
-#: woocommerce/myaccount/form-add-payment-method.php:49
-msgid "Add Payment Method"
-msgstr "Aggiungi un metodo di pagamento"
-
-#: woocommerce/myaccount/form-edit-address.php:16
-#: woocommerce/order/order-details.php:201
-msgid "Billing Address"
-msgstr "Indirizzo di fatturazione"
-
-#: woocommerce/myaccount/form-edit-address.php:16
-#: woocommerce/order/order-details.php:220
-msgid "Shipping Address"
-msgstr "Indirizzo di spedizione"
-
-#: woocommerce/myaccount/form-edit-address.php:45
-msgid "Save Address"
-msgstr "Salva indirizzo"
-
-#: woocommerce/myaccount/form-login.php:35
-msgid "Username or email address"
-msgstr "Nome utente o indirizzo e-mail"
-
-#: woocommerce/myaccount/form-login.php:66
-#: woocommerce/myaccount/form-login.php:103
-msgid "Register"
-msgstr "Registrato"
-
-#: woocommerce/myaccount/form-login.php:75
-msgid "Username"
-msgstr "Nome utente"
-
-#: woocommerce/myaccount/form-login.php:82
-msgid "Email address"
-msgstr "Indirizzo email"
-
-#: woocommerce/myaccount/form-login.php:96
-msgid "Anti-spam"
-msgstr "Anti-spam"
-
-#: woocommerce/myaccount/form-lost-password.php:22
-msgid ""
-"Lost your password? Please enter your username or email address. You will "
-"receive a link to create a new password via email."
-msgstr ""
-"Hai perso la tua password? Per favore, inserisci il tuo nome utente oppure "
-"la tua e-mail. Riceverai un link per creare una nuova password."
-
-#: woocommerce/myaccount/form-lost-password.php:28
-msgid "Enter a new password below."
-msgstr "Inserisci una nuova password di seguito"
-
-#: woocommerce/myaccount/form-lost-password.php:31
-msgid "New password"
-msgstr "Nuova password"
-
-#: woocommerce/myaccount/form-lost-password.php:35
-msgid "Re-enter new password"
-msgstr "Inserisci nuovamente la password"
-
-#: woocommerce/myaccount/form-lost-password.php:48
-msgid "Reset Password"
-msgstr "Resetta password"
-
-#: woocommerce/myaccount/form-lost-password.php:48
-msgid "Save"
-msgstr "Salva"
 
 #: woocommerce/order/form-tracking.php:20
 msgid ""
@@ -1460,62 +1389,12 @@ msgstr "Indirizzo email utilizzato alla cassa"
 msgid "Track"
 msgstr "Traccia"
 
-#: woocommerce/order/order-details.php:25
-msgid "Order Details"
-msgstr "Dettagli ordine"
-
-#: woocommerce/order/order-details.php:68
-#, php-format
-msgid "Download file%s"
-msgstr "Scarica file%s"
-
-#: woocommerce/order/order-details.php:134
-#: woocommerce/order/order-details.php:138
-#, php-format
-msgid "(Includes %s)"
-msgstr "(Includi %s)"
-
-#: woocommerce/order/order-details.php:156
-msgid "Refunded:"
-msgstr "Rimborsato:"
-
-#: woocommerce/order/order-details.php:165
-msgid "Note:"
-msgstr "Nota:"
-
-#: woocommerce/order/order-details.php:175
-msgid "Customer details"
-msgstr "Dettagli acquirente"
-
-#: woocommerce/order/order-details.php:180
-msgid "Email:"
-msgstr "E-mail"
-
-#: woocommerce/order/order-details.php:180
-#: woocommerce/single-product-reviews.php:68
-msgid "Email"
-msgstr "Email"
-
-#: woocommerce/order/order-details.php:184
-msgid "Telephone:"
-msgstr "Telefono:"
-
-#: woocommerce/order/order-details.php:184
-msgid "Telephone"
-msgstr "Telefono"
-
-#: woocommerce/order/order-details.php:206
-#: woocommerce/order/order-details.php:225
-#: woocommerce/single-product/meta.php:26
-msgid "N/A"
-msgstr "N/A"
-
 #: woocommerce/single-product-reviews.php:24
 #, php-format
 msgid "%s review for %s"
 msgid_plural "%s reviews for %s"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%s recensione per %s"
+msgstr[1] "%s recensioni per %s"
 
 #: woocommerce/single-product-reviews.php:26
 msgid "Reviews"
@@ -1537,6 +1416,10 @@ msgstr "Lascia una risposta a %s"
 #: woocommerce/single-product-reviews.php:66
 msgid "Name"
 msgstr "Nome"
+
+#: woocommerce/single-product-reviews.php:68
+msgid "Email"
+msgstr "Email"
 
 #: woocommerce/single-product-reviews.php:71
 msgid "Submit"
@@ -1585,6 +1468,10 @@ msgstr ""
 msgid "SKU:"
 msgstr "SKU:"
 
+#: woocommerce/single-product/meta.php:26
+msgid "N/A"
+msgstr "N/A"
+
 #: woocommerce/single-product/meta.php:30
 msgid "Category:"
 msgid_plural "Categories:"
@@ -1594,10 +1481,10 @@ msgstr[1] ""
 #: woocommerce/single-product/meta.php:32
 msgid "Tag:"
 msgid_plural "Tags:"
-msgstr[0] "Tag"
-msgstr[1] ""
+msgstr[0] "Tag:"
+msgstr[1] "Tags:"
 
-#: woocommerce/single-product/product-image.php:42
+#: woocommerce/single-product/product-image.php:51
 msgid "Placeholder"
 msgstr "Segnaposto"
 
@@ -1605,20 +1492,20 @@ msgstr "Segnaposto"
 msgid "Related Products"
 msgstr "Prodotti correlati"
 
-#: woocommerce/single-product/review.php:41
+#: woocommerce/single-product/review.php:42
 #, php-format
 msgid "Rated %d out of 5"
 msgstr "Valutato %d su 5"
 
-#: woocommerce/single-product/review.php:42
+#: woocommerce/single-product/review.php:43
 msgid "out of 5"
 msgstr "su 5"
 
-#: woocommerce/single-product/review.php:49
+#: woocommerce/single-product/review.php:50
 msgid "Your comment is awaiting approval"
 msgstr "Il tuo commento è in attesa di approvazione."
 
-#: woocommerce/single-product/review.php:58
+#: woocommerce/single-product/review.php:59
 msgid "verified owner"
 msgstr "Proprietario verificato"
 
@@ -1629,6 +1516,92 @@ msgstr "Informazioni aggiuntive"
 #: woocommerce/single-product/up-sells.php:47
 msgid "You may also like&hellip;"
 msgstr "Ti potrebbe anche interessare&hellip;"
+
+#~ msgid ""
+#~ "Sorry, it seems that there are no payment methods which support adding a "
+#~ "new payment method. Please contact us if you require assistance or wish "
+#~ "to make alternate arrangements."
+#~ msgstr ""
+#~ "Spiacente, sembra non siano disponibili metodi di spedizione che supporti "
+#~ "l’aggiunta di un nuovo metodo di spedizione. Si prega di contattarci nel "
+#~ "caso si necessiti di assistenza o desideriate prendere accordi "
+#~ "alternativi."
+
+#~ msgid "Add Payment Method"
+#~ msgstr "Aggiungi un metodo di pagamento"
+
+#~ msgid "Billing Address"
+#~ msgstr "Indirizzo di fatturazione"
+
+#~ msgid "Shipping Address"
+#~ msgstr "Indirizzo di spedizione"
+
+#~ msgid "Save Address"
+#~ msgstr "Salva indirizzo"
+
+#~ msgid "Username or email address"
+#~ msgstr "Nome utente o indirizzo e-mail"
+
+#~ msgid "Register"
+#~ msgstr "Registrato"
+
+#~ msgid "Username"
+#~ msgstr "Nome utente"
+
+#~ msgid "Email address"
+#~ msgstr "Indirizzo email"
+
+#~ msgid "Anti-spam"
+#~ msgstr "Anti-spam"
+
+#~ msgid ""
+#~ "Lost your password? Please enter your username or email address. You will "
+#~ "receive a link to create a new password via email."
+#~ msgstr ""
+#~ "Hai perso la tua password? Per favore, inserisci il tuo nome utente "
+#~ "oppure la tua e-mail. Riceverai un link per creare una nuova password."
+
+#~ msgid "Enter a new password below."
+#~ msgstr "Inserisci una nuova password di seguito"
+
+#~ msgid "New password"
+#~ msgstr "Nuova password"
+
+#~ msgid "Re-enter new password"
+#~ msgstr "Inserisci nuovamente la password"
+
+#~ msgid "Reset Password"
+#~ msgstr "Resetta password"
+
+#~ msgid "Save"
+#~ msgstr "Salva"
+
+#~ msgid "Order Details"
+#~ msgstr "Dettagli ordine"
+
+#~ msgid "Download file%s"
+#~ msgstr "Scarica file%s"
+
+#~ msgid "(Includes %s)"
+#~ msgstr "(Includi %s)"
+
+#~ msgid "Refunded:"
+#~ msgstr "Rimborsato:"
+
+#~ msgid "Note:"
+#~ msgstr "Nota:"
+
+#~ msgid "Customer details"
+#~ msgstr "Dettagli acquirente"
+
+#~ msgid "Email:"
+#~ msgstr "E-mail"
+
+#~ msgid "Telephone:"
+#~ msgstr "Telefono:"
+
+#~ msgid "Telephone"
+#~ msgstr "Telefono"
 
 #~ msgid "Login Area"
 #~ msgstr "Area Login"
