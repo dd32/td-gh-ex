@@ -1,12 +1,11 @@
 <?php
 /**
- * Implement an optional custom header for thebox
+ * Sets up the WordPress core custom header
  *
  * See http://codex.wordpress.org/Custom_Headers
  *
- * @package WordPress
- * @package thebox
- * @since thebox 1.0
+ * @package The Box
+ * @since The Box 1.0
  */
 
 
@@ -27,13 +26,11 @@ function thebox_custom_header_setup() {
 		'default-image'          => '',
 
 		// Set height and width, with a maximum value for the width.
-		'height'                 => 320,
-		'width'                  => 980,
-		'max-width'              => 980,
+		'height'                 => 500,
+		'width'                  => 1440,
 
-		// Support flexible height and width.
+		// Support flexible height
 		'flex-height'            => true,
-		//'flex-width'             => true,
 
 		// Random image rotation off by default.
 		'random-default'         => false,

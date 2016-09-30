@@ -3,6 +3,7 @@
  * Template Name: No-Sidebar Page Template
  *
  * @package The Box
+ * @since The Box 1.0
  */
 
 get_header(); ?>
@@ -12,7 +13,7 @@ get_header(); ?>
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php get_template_part( 'content', 'page' ); ?>
+					<?php get_template_part( 'template-parts/content', 'page' ); ?>
 
 					<?php
 					// If comments are open or we have at least one comment, load up the comment template

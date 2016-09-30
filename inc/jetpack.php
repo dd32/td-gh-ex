@@ -3,7 +3,8 @@
  * Jetpack Compatibility File
  * See: http://jetpack.me/
  *
- * @package: thebox
+ * @package The Box
+ * @since The Box 1.0
  */
 
 

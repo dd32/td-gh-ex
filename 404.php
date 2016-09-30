@@ -2,7 +2,7 @@
 /**
  * The template for displaying 404 pages (Not Found).
  *
- * @package WordPress
+ * @package The Box
  * @since The Box 1.0
  */
 
@@ -12,12 +12,12 @@ get_header(); ?>
 		<div id="content" class="site-content" role="main">
 			<article id="post-0" class="post hentry error404 not-found">
 				<header class="entry-header">
-					<h1 class="entry-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'thebox' ); ?></h1>
+					<h1 class="entry-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'the-box' ); ?></h1>
 				</header><!-- .entry-header -->
 
 				<div class="entry-content">
 				
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'thebox' ); ?></p>
+					<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'the-box' ); ?></p>
 
 					<?php get_search_form(); ?>
 
