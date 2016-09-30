@@ -62,7 +62,7 @@ function appointment_news_customizer( $wp_customize ) {
     array(
         'default' => __('Latest News','appointment'),
 		'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'appointment_news_sanitize_html',
 		'type' => 'option',
 		)
 	);	
@@ -77,7 +77,7 @@ function appointment_news_customizer( $wp_customize ) {
     array(
         'default' => __('Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupid non proident, sunt in culpa qui official deserunt mollit anim id est laborum.','appointment'),
 		'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'appointment_news_sanitize_html',
 		'type' => 'option',
 		)
 	);	
@@ -123,6 +123,11 @@ function appointment_news_customizer( $wp_customize ) {
         'section' => 'news_section_settings',
 		 'choices' => array('2'=>__('2', 'appointment'), '4'=>__('4', 'appointment'), '6' => __('6','appointment'), '8' => __('8','appointment'),'10'=> __('10','appointment'), '12'=> __('12','appointment'),'14'=> __('14','appointment'), '16' =>__('16','appointment')),
 		));
+		
+	function appointment_news_sanitize_html( $input ) {
+    return force_balance_tags( $input );
+	}	
+		
 		}
 	add_action( 'customize_register', 'appointment_news_customizer' );
 	

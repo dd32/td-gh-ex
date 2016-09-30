@@ -94,6 +94,8 @@ Source: http://fontawesome.io
 
 # --- EOF --- #
 ============================Change Log================================
+@Version 2.5.3
+1. Allow HTML on Home page section title & Description.
 @Version 2.5.2
 1. Revised Theme Description.
 2. Revised Theme Tags List.

@@ -43,7 +43,7 @@ function appointment_callout_customizer( $wp_customize ) {
     array(
         'default' => __('Want to say Hey or find out more?','appointment'),
 		'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'appointment_callout_sanitize_html',
 		'type' => 'option',
 		)
 	);	
@@ -58,7 +58,7 @@ function appointment_callout_customizer( $wp_customize ) {
     array(
         'default' => __('Reprehen derit in voluptate velit cillum dolore eu fugiat nulla pariaturs sint occaecat proidentse.','appointment'),
 		'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'appointment_callout_sanitize_html',
 		'type' => 'option',
 		)
 	);	
@@ -97,7 +97,7 @@ function appointment_callout_customizer( $wp_customize ) {
 	array( 
 	'default' => __('Purshase Now!','appointment'),
 	'capability'     => 'edit_theme_options',
-	'sanitize_callback' => 'sanitize_text_field',
+	'sanitize_callback' => 'appointment_callout_sanitize_html',
 	'type' => 'option',
 	) 
 	);
@@ -156,7 +156,7 @@ function appointment_callout_customizer( $wp_customize ) {
 	array( 
 	'default' => __('Get in Touch!','appointment'),
 	'capability'     => 'edit_theme_options',
-	'sanitize_callback' => 'sanitize_text_field',
+	'sanitize_callback' => 'appointment_callout_sanitize_html',
 	'type' => 'option',
 	) 
 	);
@@ -201,6 +201,10 @@ function appointment_callout_customizer( $wp_customize ) {
 			'section' => 'callout_get_in_touch_settings',
 		)
 	);
+	function appointment_callout_sanitize_html( $input ) {
+    return force_balance_tags( $input );
+	}
+	
 	}
 	add_action( 'customize_register', 'appointment_callout_customizer' );
 	?>

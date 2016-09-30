@@ -41,7 +41,7 @@ $wp_customize->add_panel( 'appointment_service_options', array(
     array(
         'default' => __('Our Services','appointment'),
 		'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'appointment_service_sanitize_html',
 		'type' => 'option'
     )	
 	);
@@ -58,7 +58,7 @@ $wp_customize->add_panel( 'appointment_service_options', array(
     'appointment_options[service_description]',
     array(
         'default' => __('Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupid non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','appointment'),
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'appointment_service_sanitize_html',
 		'type' => 'option'
     )	
 	);
@@ -68,7 +68,7 @@ $wp_customize->add_panel( 'appointment_service_options', array(
         'label' => __('Service Description','appointment'),
         'section' => 'service_section_head',
         'type' => 'text',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'appointment_service_sanitize_html',
     )
 	);	
 	
@@ -99,7 +99,7 @@ $wp_customize->add_panel( 'appointment_service_options', array(
     array(
         'default' => __('Easy to Use','appointment'),
 		'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'appointment_service_sanitize_html',
 		'type' => 'option'
     )	
 	);
@@ -117,7 +117,7 @@ $wp_customize->add_panel( 'appointment_service_options', array(
     array(
         'default' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consec tetur adipisicing elit dignissim dapib tumst.','appointment'),
 		 'capability'     => 'edit_theme_options',
-		 'sanitize_callback' => 'sanitize_text_field',
+		 'sanitize_callback' => 'appointment_service_sanitize_html',
 		 'type' => 'option'
     )	
 	);
@@ -162,7 +162,7 @@ $wp_customize->add_setting(
     array(
         'default' => __('Easy to Use','appointment'),
 		'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'appointment_service_sanitize_html',
 		'type' => 'option',
     )	
 );
@@ -180,7 +180,7 @@ $wp_customize->add_setting(
     array(
         'default' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consec tetur adipisicing elit dignissim dapib tumst.','appointment'),
 		 'capability'     => 'edit_theme_options',
-		 'sanitize_callback' => 'sanitize_text_field',
+		 'sanitize_callback' => 'appointment_service_sanitize_html',
 		 'type' => 'option',
     )	
 );
@@ -225,7 +225,7 @@ $wp_customize->add_setting(
     array(
         'default' => __('Easy to Use','appointment'),
 		'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'appointment_service_sanitize_html',
 		'type' =>'option',
     )	
 );
@@ -243,7 +243,7 @@ $wp_customize->add_setting(
     array(
         'default' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consec tetur adipisicing elit dignissim dapib tumst.','appointment'),
 		'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'appointment_service_sanitize_html',
 		'type' =>'option',
     )	
 );
@@ -286,7 +286,7 @@ $wp_customize->add_setting(
     array(
         'default' => __('Easy to Use','appointment'),
 		'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'appointment_service_sanitize_html',
 		'type' => 'option'
     )	
 );
@@ -304,7 +304,7 @@ $wp_customize->add_setting(
     array(
         'default' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consec tetur adipisicing elit dignissim dapib tumst.','appointment'),
 		'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'appointment_service_sanitize_html',
 		'type' => 'option'
     )	
 );
@@ -348,7 +348,7 @@ $wp_customize->add_setting(
     array(
         'default' => __('Easy to Use','appointment'),
 		'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'appointment_service_sanitize_html',
 		'type' => 'option',
     )	
 );
@@ -367,7 +367,7 @@ $wp_customize->add_setting(
     array(
         'default' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consec tetur adipisicing elit dignissim dapib tumst.','appointment'),
 		'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'appointment_service_sanitize_html',
 		'type' => 'option'
     )	
 );
@@ -411,7 +411,7 @@ $wp_customize->add_setting(
     array(
         'default' => __('Easy to Use','appointment'),
 		'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'appointment_service_sanitize_html',
 		'type' => 'option',
     )	
 );
@@ -430,7 +430,7 @@ $wp_customize->add_setting(
     array(
         'default' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consec tetur adipisicing elit dignissim dapib tumst.','appointment'),
 		'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_text_field',
+		'sanitize_callback' => 'appointment_service_sanitize_html',
 		'type' => 'option',
     )	
 );
@@ -478,6 +478,11 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'ap
 		'setting' => 'appointment_options[service_pro]',
     ))
 );
+
+function appointment_service_sanitize_html( $input ) {
+    return force_balance_tags( $input );
+	}
+
 
 }
 add_action( 'customize_register', 'appointment_service_customizer' );
