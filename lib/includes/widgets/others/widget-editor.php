@@ -17,11 +17,24 @@ class Ad_Mag_Lite_Editor extends WP_Widget {
 public function widget( $args, $instance ) {
         extract( $args );
 
-        $title  = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
+        if ( isset( $instance['title'] ) ) {
+            $title  = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
+        } else {
+            $title = '';
+        }
         
-        $role   = $instance['role'];
+        if ( isset( $instance['role'] ) ) {
+            $role = $instance['role'];
+        } else {
+            $role = 'author';
+        }
         
-        $number = $instance['number'];
+        
+        if ( isset( $instance['number'] ) ) {
+            $number = $instance['number'];
+        } else {
+            $number = 5;
+        }
 
         echo wp_kses_post($before_widget);
         ?>  

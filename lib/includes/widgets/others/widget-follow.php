@@ -19,7 +19,11 @@ public function widget( $args, $instance ) {
     ob_start();
     extract( $args );
 
-    $title  = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
+    if ( isset( $instance['title'] ) ) {
+        $title  = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
+    } else {
+        $title = '';
+    }
 
     $social_links = array(
         'social_facebook'  => array(

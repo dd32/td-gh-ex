@@ -17,8 +17,16 @@ class Ad_Mag_Lite_Comments extends WP_Widget {
 public function widget( $args, $instance ) {
         extract( $args );
 
-        $title  = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
-        $number = $instance['number'];
+        if ( isset( $instance['title'] ) ) {
+            $title  = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
+        } else {
+            $title = '';
+        }
+        if ( isset( $instance['number'] ) ) {
+            $number = $instance['number'];
+        } else {
+            $number = 5;
+        }
 
         $comments = get_comments( apply_filters( 'widget_comments_args', array(
             'number'      => $number,

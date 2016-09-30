@@ -17,26 +17,45 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
     function widget($args, $instance) {
         extract( $args );
 
-        $title  = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
+        if ( isset( $instance['title'] ) ) {
+            $title  = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
+        }
         
-        $style  = $instance['style'];
-        
-        $limit  = $instance['excerpt_length'];
-        
-        $url = $instance['url'];
+        if ( isset( $instance['style'] ) ) {
+            $style  = $instance['style'];
+        } else {
+            $style = 'style_2';
+        }
+
+        if ( isset( $instance['excerpt_length'] ) ) {
+            $limit  = $instance['excerpt_length'];
+        }
+
+        if ( isset( $instance['url'] ) ) {
+            $url = $instance['url'];
+        }
 
         $query_args = array(
             'post_type'      => 'post',
-            'posts_per_page' => $instance['number'],
-            'order'          => $instance['order'] == 'ASC' ? 'ASC' : 'DESC',
-            'orderby'        => $instance['orderby']
         );
 
-        if(empty($instance['categories'])){
+        if ( isset( $instance['number'] ) ) {
+            $query_args['posts_per_page'] = $instance['number'];
+        }
+
+        if ( isset( $instance['order'] ) ) {
+            $query_args['order'] = $instance['order'] == 'ASC' ? 'ASC' : 'DESC';
+        }
+
+        if ( isset( $instance['orderby'] ) ) {
+            $query_args['orderby'] = $instance['orderby'];
+        }
+
+        if( isset( $instance['categories'] )  && empty($instance['categories'] ) ) {
             $query_args['ignore_sticky_posts'] = true;
         }
 
-        if ( $instance['categories'] ) {
+        if ( isset( $instance['categories'] ) && $instance['categories'] ) {
             $query_args['tax_query'][] = array(
                 'taxonomy' => 'category',
                 'field'    => 'term_id',
@@ -44,7 +63,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
             );
         }
 
-        if ( $instance['tags'] ) {
+        if ( isset( $instance['tags'] ) && $instance['tags'] ) {
             $query_args['tax_query'][] = array(
                 'taxonomy' => 'post_tag',
                 'field'    => 'term_id',
@@ -56,7 +75,7 @@ class Ad_Mag_Lite_Articles_List extends WP_Widget {
              count( $query_args['tax_query'] ) === 2 ) {
             $query_args['tax_query']['relation'] = $instance['relation'];
         }
-
+        
         $article = new WP_Query( $query_args );
 
         $num_post = count($article->posts);

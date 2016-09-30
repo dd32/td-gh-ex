@@ -7,6 +7,9 @@ Moreover, with sleekly design, responsiove layout, awesome typography and focus 
 --------------------
 Change log
 --------------------
+= 1.0.8 = (12/09/2016)
+	- Fixed widget when added in customizer.
+
 = 1.0.7 = (12/09/2016)
 	- Update image size.
 	- Update excerpt length widget.
