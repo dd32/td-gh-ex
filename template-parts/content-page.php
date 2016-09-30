@@ -7,14 +7,17 @@
  * @package App_Landing_Page
  */
 
-global $post;
-$app_landing_page_sidebar_layout = get_post_meta( $post->ID, 'app_landing_page_sidebar_layout', true );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <?php echo ( !is_single() ) ? '<a href="' . esc_url( get_the_permalink() ) . '" class="post-thumbnail">' : '<div class="post-thumbnail">'; ?>
- 		<?php ( is_active_sidebar( 'right-sidebar' ) && ( $app_landing_page_sidebar_layout == 'right-sidebar' ) ) ? the_post_thumbnail( 'app-landing-page-with-sidebar' ) : the_post_thumbnail( 'app-landing-page-without-sidebar' ) ; ?>
-    <?php echo ( !is_single() ) ? '</a>' : '</div>' ;?>
+    <?php
+    /**
+     * Before Page entry content
+     * 
+     * @hooked app_landing_page_page_content_image 
+    */
+    do_action( 'app_landing_page_before_page_entry_content' );    
+    ?>
     <div class="text-holder">
 		<div class="entry-content">
 		<?php

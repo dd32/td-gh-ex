@@ -13,7 +13,6 @@
  */
 
 get_header(); ?>
- <div class="row">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
@@ -21,9 +20,6 @@ get_header(); ?>
 		if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
 
 			<?php
 			endif;
@@ -40,11 +36,8 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_pagination( array(
-   			 'mid_size' => 2,
-  			  'prev_text' => __( '<span class="fa fa-angle-double-left"></span>', 'app-landing-page' ),
-   			 'next_text' => __( '<span class="fa fa-angle-double-right"></span>', 'app-landing-page' ),
-			) ); 
+			app_landing_page_pagination();
+
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );

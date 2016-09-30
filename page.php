@@ -11,15 +11,8 @@
  *
  * @package App_Landing_Page
  */
-
+$sidebar_layout = app_landing_page_sidebar_layout();
 get_header(); ?>
-	<div class="top-bar">
-		<div class="page-header">
-			<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
-		</div>
-			<?php do_action( 'app_landing_page_breadcrumbs' ); ?>
-	</div>
-		 <div class="row">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
@@ -40,5 +33,6 @@ get_header(); ?>
 	</div><!-- #primary -->
 
 <?php
+if( $sidebar_layout == 'right-sidebar' )
 get_sidebar();
 get_footer();

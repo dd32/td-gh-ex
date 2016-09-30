@@ -9,31 +9,33 @@
  * @package App_Landing_Page
  */
 
-?>
-				<?php if( is_404() ) { echo '</div>'; } ?>
-			</div>
-		</div>
-	</div><!-- #content -->
+    /**
+     * After Content
+     * 
+     * @hooked app_landing_page_content_end - 20
+    */
+    do_action( 'app_landing_page_after_content' );
+    
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="container">
-			<?php if ( is_active_sidebar( 'footer-sidebar' ) ) { ?>
-			
-			<?php dynamic_sidebar( 'footer-sidebar' ); ?>
-			
-	
-			<?php  } ?>
+    /**
+     * App Landing Page Footer
+     * 
+     * @hooked app_landing_page_footer_start  - 20
+     * @hooked app_landing_page_footer_widgets   - 30
+     * @hooked app_landing_page_footer_credit - 40
+     * @hooked app_landing_page_footer_end    - 50
+    */
+	do_action( 'app_landing_page_footer' ); 
+    
+    /**
+	 * After Footer
+     * 
+     * @hooked app_landing_page_page_end - 20
+	 */
+    do_action( 'app_landing_page_page_end' );
+    
 
-
-            <div class="site-info">
-				<p>&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>. <?php esc_html_e( 'All Rights Reserved.', 'app-landing-page' ); ?></p>
-				<p><?php esc_html_e( 'Theme by ', 'app-landing-page' ); ?><a href="<?php echo esc_url( 'http://raratheme.com/' ); ?>" rel="designer"><?php esc_html_e( 'Rara Theme', 'app-landing-page' ); ?></a>. <?php printf( esc_html__( 'Powered by %s', 'app-landing-page' ), '<a href="'. esc_url( __( 'https://wordpress.org/', 'app-landing-page' ) ) .'">WordPress</a>' ); ?>.</span>
-			</div>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
-
-<?php wp_footer(); ?>
+wp_footer(); ?>
 
 </body>
 </html>

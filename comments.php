@@ -28,30 +28,20 @@ if ( post_password_required() ) {
 		<h2 class="comments-title">
 			<?php
 				printf( // WPCS: XSS OK.
-					esc_html( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'app-landing-page' ) ),
+					esc_html( _nx( '1 Comment', '%1$s Comments', get_comments_number(), 'comments title', 'app-landing-page' ) ),
 					number_format_i18n( get_comments_number() ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			?>
 		</h2>
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'app-landing-page' ); ?></h2>
-			<div class="nav-links">
-
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'app-landing-page' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'app-landing-page' ) ); ?></div>
-
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-above -->
-		<?php endif; // Check for comment navigation. ?>
-
 		<ol class="comment-list">
 			<?php
 				wp_list_comments( array(
 					'style'      => 'ol',
 					'short_ping' => true,
+					//'callback'   => 'app_landing_page_comment',
+          			'avatar_size'=> 79,
 				) );
 			?>
 		</ol><!-- .comment-list -->
@@ -79,7 +69,73 @@ if ( post_password_required() ) {
 	<?php
 	endif;
 
-	comment_form();
 	?>
 
+   <div class="comment-area">
+    
+    <?php
+    //https://codex.wordpress.org/Function_Reference/comment_form
+        $commenter = wp_get_current_commenter();
+        $req = get_option( 'require_name_email' );
+        $aria_req = ( $req ? " aria-required='true'" : '' );
+        $required_text = esc_attr__( 'Required fields are marked', 'app-landing-page' );
+        
+        $fields =  array(
+
+          'author' =>
+            '<p class="comment-form-author"><input id="author" name="author" placeholder="' . esc_attr__( 'Name*', 'app-landing-page' ) . '" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
+            '" size="30"' . $aria_req . ' /></p>',
+        
+          'email' =>
+            '<p class="comment-form-email"><input id="email" name="email" placeholder="' . esc_attr__( 'Email*', 'app-landing-page' ) . '" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+            '" size="30"' . $aria_req . ' /></p>',
+        
+          'url' =>
+            '<p class="comment-form-url"><input id="url" name="url" placeholder="' . esc_attr__( 'Website', 'app-landing-page' ) . '" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
+            '" size="30" /></p>',
+        );
+        
+        $args = array(
+          'id_form'           => 'commentform',
+          'class_form'      => 'comment-form',
+          'id_submit'         => 'submit',
+          'class_submit'      => 'submit',
+          'name_submit'       => 'submit',
+          'title_reply'       => esc_attr__( 'Leave a Reply', 'app-landing-page' ),
+          'title_reply_to'    => esc_attr__( 'Leave a Reply to %s', 'app-landing-page' ),
+          'cancel_reply_link' => esc_attr__( 'Cancel Reply', 'app-landing-page' ),
+          'label_submit'      => esc_attr__( 'POST COMMENT', 'app-landing-page' ),
+          'format'            => 'xhtml',
+        
+          'comment_field' =>  '<p class="comment-form-comment"><label for="comment">
+            </label><textarea id="comment" name="comment" placeholder="' . esc_attr__( 'Comment', 'app-landing-page' ) . '" cols="45" rows="8" aria-required="true">' .
+            '</textarea></p>',
+        
+          'must_log_in' => '<p class="must-log-in">' .
+            sprintf(
+              esc_html__( 'You must be <a href="%s">logged in</a> to post a comment.', 'app-landing-page' ),
+              wp_login_url( apply_filters( 'the_permalink', get_permalink() ) )
+            ) . '</p>',
+        
+          'logged_in_as' => '<p class="logged-in-as">' .
+            sprintf(
+            __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'app-landing-page' ),
+              admin_url( 'profile.php' ),
+              $user_identity,
+              wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) )
+            ) . '</p>',
+        
+          'comment_notes_before' => '<p class="comment-notes"><span class="email-notes">' .
+            esc_html__( 'Your email address will not be published. ', 'app-landing-page' ) . '</span>' . ( $req ? $required_text : '' ) .
+            '<span class="required">*</span></p>',
+        
+          'comment_notes_after' => '',
+        
+          'fields' => apply_filters( 'comment_form_default_fields', $fields ),
+        );
+        
+        comment_form( $args ); 
+	?>
+
+</div>
 </div><!-- #comments -->

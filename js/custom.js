@@ -1,9 +1,5 @@
 
 jQuery(document).ready(function($){
-   
-
-$(document).ready(function(){
-	$('.section-5 .col').equalHeights();
 
 	$("body").niceScroll({
 		cursorcolor: "#5fbd3e",
@@ -15,7 +11,14 @@ $(document).ready(function(){
 		cursorborderradius: "0px;"
 	});
 
-	new WOW().init();
+	/* Equal Height */
+     $('.section-5 .col').matchHeight({
+        byRow: true,
+        property: 'height',
+        target: null,
+        remove: false
+    });
+
 
 	$('#responsive-menu-button').sidr({
     	name: 'sidr-main',
@@ -23,14 +26,22 @@ $(document).ready(function(){
     	side: 'right'
     });
 
-});
+	var date_in = app_landing_page_data.date;
 
+   	$('#days').countdown( date_in, function(event) {
+  		$(this).html(event.strftime('%D'));
+	});
+	$('#hours').countdown( date_in, function(event) {
+  		$(this).html(event.strftime('%H'));
+	});
+	$('#minutes').countdown(date_in, function(event) {
+  		$(this).html(event.strftime('%M'));
+	});
+	$('#seconds').countdown(date_in, function(event) {
+  		$(this).html(event.strftime('%S'));
+	});
 	//Event CountDown------------
- $('[data-countdown]').each(function() {
-   var $this = $(this), finalDate = $(this).data('countdown');
-   $this.countdown(finalDate, function(event) {
-     $this.html(event.strftime('<li><div class="holder"><span>%D</span></div>Days</li><li><div class="holder"><span>%H</span></div>Hours</span></li><li><div class="holder"><span>%M</span></div>Minutes</span></li><li><div class="holder"><span>%S</span></div>Seconds</span></li>'));
-   });
- });
+	new WOW().init();
+
 	
 });

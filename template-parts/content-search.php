@@ -10,19 +10,16 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php echo  '<a href="' . esc_url( get_the_permalink() ) . '" class="post-thumbnail">'?>
- 		<?php the_post_thumbnail( 'app-landing-page-with-sidebar' ) ; ?>
-    <?php echo'</a>';?>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-
-		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php app_landing_page_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
-
+<?php 
+    /**
+     * Before search entry summary
+     * 
+     * @hooked app_landing_page_post_content_image - 10
+     * @hooked app_landing_page_post_entry_header_before   - 20 
+     * @hooked app_landing_page_post_entry_header  - 30 
+    */
+    do_action( 'app_landing_page_before_search_entry_summary' );   
+    ?>
 	<div class="entry-summary">
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
@@ -31,4 +28,13 @@
 		<a href="<?php the_permalink(); ?>" class="btn-readmore"><?php esc_html_e( 'Read More', 'app-landing-page' ); ?></a>
 		<?php app_landing_page_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
+    <?php
+         /**
+         * After Page entry content
+         * 
+         * @hooked app_landing_page_post_entry_header_after   - 10 
+         */
+         do_action( 'app_landing_page_after_post_entry_content' ); 
+     ?>
+     
 </article><!-- #post-## -->
