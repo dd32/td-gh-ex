@@ -42,6 +42,9 @@ require( WEBRITI_THEME_FUNCTIONS_PATH . '/widget/wbr-register-page-widget.php');
 
 require( WEBRITI_THEME_FUNCTIONS_PATH . '/widget/wbr-news-widget.php');
 
+// Spasalon Info Page
+require( WEBRITI_THEME_FUNCTIONS_PATH . '/spasalon-info/welcome-screen.php');
+
 
 
 if ( ! function_exists( 'spasalon_setup' ) ) :

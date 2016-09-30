@@ -106,6 +106,10 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@Version 1.7.3
+1. Add Theme Info Detail Page.
+@Version 1.7.2
+1. Remove tags : Blog, E-Commerce, Education, Entertainment, Food & Drink, Holiday, Photography, Portfolio
 @Version 1.7.1
 1. Added Custom filed Pink Banner Strip.
 @Version 1.7
