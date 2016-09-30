@@ -20,14 +20,7 @@ get_header(); ?>
 				<div class="page-content">
 					<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'avata' ); ?></p>
 
-					<form method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>/" role="search" aria-label="<?php _e( 'Search Form', 'avata' ); ?>">
-						<label>
-							<span class='screen-reader-text'><?php _e( 'Search', 'avata'); ?></span>
-                            <label for='s' class='screen-reader-text'><?php _e( 'Search', 'avata' ); ?></label> 
-							<input type="search" name="s" />
-						</label> 
-						<input type="submit" name="submit" value="<?php _e( 'Search', 'avata' ); ?>" class="search-submit" />
-					</form>				
+					<?php get_search_form() ;?>				
 
 	
 				</div><!-- .page-content -->

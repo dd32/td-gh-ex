@@ -21,7 +21,7 @@ function avata_setup() {
 		$content_width = 1170; /* pixels */
 	}
 	
-	load_theme_textdomain( 'avata', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'avata' );
 
     add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );
@@ -84,8 +84,8 @@ function avata_scripts() {
 	$theme_info = wp_get_theme();
 	
  wp_enqueue_style( 'avata-rokkitt', esc_url('http://fonts.googleapis.com/css?family=Rokkitt:400,700|Open+Sans:400,300italic,300,400italic,600,600italic,700,700italic,800,800italic, false'), '', false );
- wp_enqueue_style( 'avata-font-awesome',  get_template_directory_uri() .'/assets/fonts/font-awesome/css/font-awesome.min.css', false, '', false );
- wp_enqueue_style( 'avata-bootstrap',  get_template_directory_uri() .'/assets/bootstrap/css/bootstrap.css', false, '', false );
+ wp_enqueue_style( 'font-awesome',  get_template_directory_uri() .'/assets/fonts/font-awesome/css/font-awesome.min.css', false, '', false );
+ wp_enqueue_style( 'bootstrap',  get_template_directory_uri() .'/assets/bootstrap/css/bootstrap.css', false, '', false );
  wp_enqueue_style( 'avata-main', get_stylesheet_uri() );
  
  $avata_custom_css = '';
@@ -122,10 +122,10 @@ function avata_scripts() {
 
 	
 
- wp_enqueue_script( 'avata-bootstrap', get_template_directory_uri() . '/assets/bootstrap/js/bootstrap.js', array( 'jquery' ), null, false );
- wp_enqueue_script( 'avata-hoverIntent', get_template_directory_uri() . '/assets/js/hoverIntent.js', array( 'jquery' ), null, true );
- wp_enqueue_script( 'avata-superfish', get_template_directory_uri() . '/assets/js/superfish.js', array( 'jquery' ), null, true );
- wp_enqueue_script( 'avata-jquery.meanmenu', get_template_directory_uri() . '/assets/js/jquery.meanmenu.js', array( 'jquery' ), null, true );
+ wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/bootstrap/js/bootstrap.js', array( 'jquery' ), null, false );
+ wp_enqueue_script( 'hoverIntent', get_template_directory_uri() . '/assets/js/hoverIntent.js', array( 'jquery' ), null, true );
+ wp_enqueue_script( 'superfish', get_template_directory_uri() . '/assets/js/superfish.js', array( 'jquery' ), null, true );
+ wp_enqueue_script( 'jquery.meanmenu', get_template_directory_uri() . '/assets/js/jquery.meanmenu.js', array( 'jquery' ), null, true );
  wp_enqueue_script( 'avata-main', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery' ),  $theme_info->get( 'Version' ), true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

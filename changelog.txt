@@ -3,6 +3,11 @@ Avata Theme Change Log
 
 =================================
 
+= Version 1.1.3  = 09/30/2016
+* Remove - Removed prefixes of 3rd party js and css
+* Remove - Removed custom search form in 404.php
+* Remove - Removed languages folder
+
 = Version 1.1.2  = 09/28/2016
 * Fix - Fixed some color contrast issues
 * Fix - Fixed 'Skip Links' issue
