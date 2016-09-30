@@ -17,7 +17,7 @@
     If you love the Excellent Previous Style Options You may consider using our <a href="<?php echo esc_url('http://d5creation.com/themegallery/'); ?>" target="_blank">Extend Version Themes</a>. <span class="impspe">All Options will be under <b>Appearance > NewsPress Options</b> with large screen and user friendtly Interface in Extended Version</span>
     </div>
     
-<div class="infohead"><?php echo'<span class="donation">A Theme is an effort of many sleepless nights of the Developers.  If you like this FREEE Theme You can consider for a 5 star rating and honest review. Your review will inspire us. You can<a href="https://wordpress.org/support/view/theme-reviews/newspress-lite?filter=5" target="_blank"> <strong>Review Here</strong></a></span><br /><br /><span class="donation">Need Logo Inserter, Multilayer Slider, Unlimited Slide Items, Links from Featured Boxes, More Control, More Features and Options? Try <a href="'.esc_url('http://d5creation.com/theme/newspress/').'" target="_blank"><strong>NewsPress Extend Edition</strong></a> for Many Exciting Features with Dedicated Support from D5 Creation team. There are Promotional Offers. You can avail those promotions from <a href="'.esc_url('http://d5creation.com/').'" target="_blank">D5 Creation Site</a></span><br /><br /><span class="donation"><a href="'.esc_url('http://demo.d5creation.com/themes/?theme=NewsPress').'" target="_blank">Live Demo</a> of NewsPress Extend</span>'; ?>
+<div class="infohead"><?php echo'<span class="donation">A Theme is an effort of many sleepless nights of the Developers.  If you like this FREEE Theme You can consider for a 5 star rating and honest review. Your review will inspire us. You can<a href="https://wordpress.org/support/view/theme-reviews/newspress-lite?filter=5" target="_blank"> <strong>Review Here</strong></a></span><br /><br /><span class="donation">Need Easy Logo Inserter, Multilayer Slider, Unlimited Slide Items, Links from Featured Boxes, More Control, More Features and Options? Try <a href="'.esc_url('http://d5creation.com/theme/newspress/').'" target="_blank"><strong>NewsPress Extend Edition</strong></a> for Many Exciting Features with Dedicated Support from D5 Creation team. There are Promotional Offers. You can avail those promotions from <a href="'.esc_url('http://d5creation.com/').'" target="_blank">D5 Creation Site</a></span><br /><br /><span class="donation"><a href="'.esc_url('http://demo.d5creation.com/themes/?theme=NewsPress').'" target="_blank">Live Demo</a> of NewsPress Extend</span>'; ?>
 <a href="<?php echo esc_url('http://d5creation.com/theme/newspress/'); ?>" target="_blank" class="extendlink"> </a>
         </div>
         
@@ -56,7 +56,6 @@
             <tr><td>Editor's Choice</td><td>NO</td><td>YES</td></tr>
             <tr><td>Maintenance Mode</td><td>NO</td><td>YES</td></tr>
 			<tr><td>RESPONSIVE</td><td>YES</td><td>YES</td></tr>
-			<tr><td>Logo and Favicon Inserter Option</td><td>NO</td><td>YES</td></tr>
             <tr><td>Google Analytics Code, Custom CSS and Scripts Inserter</td><td>NO</td><td>YES</td></tr>
             <tr><td>Customizable Copyright Notice and SiteMap Option</td><td>NO</td><td>YES</td></tr>
             <tr><td>Hiding options for Theme Credit to D5 Creation and WordPress</td><td>NO</td><td>YES</td></tr>

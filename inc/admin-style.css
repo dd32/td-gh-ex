@@ -1,12 +1,12 @@
-/* 	NewsPress Theme's Admin Style
+/* 	Awesome Theme's Admin Style
 	Copyright: 2012-2016, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
-	Since NewsPress 3.0
+	Since Awesome 3.0
 */
 
 #about-page { width:90%; min-width: 950px; display: block; margin: 10px 0; border-radius: 5px; background: #DDDDDD; border: 1px solid #cccccc; padding: 10px 15px; line-height: 1.7; overflow: hidden; }
 .about-title { background: #CCCCCC url("images/d5logo.png") no-repeat scroll left center / auto 85%; text-align: right; font-size: 35px; padding: 10px; margin: -10px -15px 10px; color: #06add7; text-shadow: 1px 1px 0 #dddddd; font-weight: 100; }
-.about-title span { font-size: 45px; font-weight: bold; }
+.about-title span { font-size: 45px; }
 #about-page a, .infohead a { color: #ff3a05; text-decoration: none; }
 .impspe { color: #06add7; }
 .specialmsg { background: #ffffff; border-left: 5px solid #ff3a05; display: block; margin: 20px auto; overflow: hidden; padding: 15px 10px; font-size: 15px; }
@@ -20,8 +20,8 @@
 #about-page .specialbutton:hover { background: #0098d0 ; box-shadow: none; }
 #about-page .specialbutton:active { position: relative; top: 1px; }
 .heading-des { font-size: 17px; }
-.infohead { background:#333333; border: 3px solid #14AAFD; border-radius: 5px; color: #EEEEEE; padding: 10px; transition:all .75s; -moz-transition:all .75s; -o-transition:all .75s; -webkit-transition:all .75s; font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 15px;}
-.infohead:hover { background:#111111; border: 3px solid #ee510c; }
+.infohead { background:#333333; border-left: 5px solid #14AAFD;  color: #EEEEEE; padding: 10px; transition:all .75s; -moz-transition:all .75s; -o-transition:all .75s; -webkit-transition:all .75s; font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 15px;}
+.infohead:hover { background:#111111; }
 a.extendlink { float: right; height: 50px; width: 290px; margin-top: -15px; background: url("images/extendlogo.png") no-repeat scroll 0 0 / 100% auto transparent; }
 .spetitle { font-size: 35px; text-align: center; color: #06add7; text-shadow: 1px 1px 0 #EEEEEE; }
 
