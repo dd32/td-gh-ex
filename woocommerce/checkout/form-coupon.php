@@ -21,7 +21,7 @@ if ( ! WC()->cart->coupons_enabled() ) {
 
     <p class="coupon_link">
    
-        <?php echo apply_filters( 'woocommerce_checkout_coupon_message', __( 'Have a coupon? ', 'bazaar-lite' ) . '<a href="#" class="showcoupon">' . __( 'Click here to enter your code', 'bazaar-lite' ) . '</a>' ); ?>
+        <?php echo apply_filters( 'woocommerce_checkout_coupon_message', __( 'Have a coupon? ', 'bazaar-lite' ) . ' <a href="#" class="showcoupon">' . __( 'Click here to enter your code', 'bazaar-lite' ) . '</a>' ); ?>
    
     </p>
 

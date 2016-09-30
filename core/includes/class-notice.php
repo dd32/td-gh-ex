@@ -56,7 +56,7 @@ if( !class_exists( 'bazaarlite_admin_notice' ) ) {
             
             	<div class="bazaarlite-noticedescription">
 					<strong><?php _e( 'Upgrade to the premium version of Bazaar, to enable an extensive option panel, 600+ Google Fonts, unlimited sidebars, portfolio and much more.', 'bazaar-lite' ); ?></strong><br/>
-					<?php printf( __('<a href="%1$s" class="dismiss-notice">Dismiss this notice</a>','bazaar-lite'), esc_url( '?bazaarlite-dismiss=1' ) ); ?>
+					<?php printf( '<a href="%1$s" class="dismiss-notice">'. __( 'Dismiss this notice', 'bazaar-lite' ) .'</a>', esc_url( '?bazaarlite-dismiss=1' ) ); ?>
                 </div>
                 
                 <a target="_blank" href="<?php echo esc_url( 'https://www.themeinprogress.com/bazaar-free-ecommerce-wordpress-theme/?ref=2&campaign=bazaar-notice' ); ?>" class="button"><?php _e( 'Upgrade to Bazaar Premium', 'bazaar-lite' ); ?></a>

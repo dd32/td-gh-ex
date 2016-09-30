@@ -276,8 +276,9 @@ span.sku_wrapper {
     width: 100%;
 }
 
+body.woocommerce-checkout .post-article header.title ,
 .post-article .woocommerce-MyAccount-content header.title {
-	text-align:left
+	text-align:left !important
 }
 
 /* ===============================================
@@ -371,6 +372,10 @@ span.sku_wrapper {
 /* ===============================================
    Woocommerce orders
    ============================================= */
+
+.woocommerce .order_details {
+    padding: 0;
+}
 
 .woocommerce table.shop_table th,
 .woocommerce table.shop_table td {
@@ -519,12 +524,22 @@ article.woocommerce_cart_page .post-article {
 	margin:0;
 }
 
+.woocommerce-error ,
+.woocommerce-message ,
+.woocommerce-info ,
 .woocommerce .woocommerce-error ,
 .woocommerce .woocommerce-message ,
 .woocommerce .woocommerce-info {
 	border:none;
 	line-height:40px;
     background-color: #fff;
+}
+
+.woocommerce .container-fluid .woocommerce-error ,
+.woocommerce .container-fluid .woocommerce-message ,
+.woocommerce .container-fluid .woocommerce-info {
+	margin-left:15px;
+	margin-right:15px;
 }
 
 body.minimal-layout .woocommerce-error ,

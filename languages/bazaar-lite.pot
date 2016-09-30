@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-30 15:23+0200\n"
+"POT-Creation-Date: 2016-09-30 18:23+0200\n"
 "PO-Revision-Date: 2015-07-07 12:29+0100\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
@@ -117,7 +117,7 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: core/admin/customize/customize.php:31 core/classes/customize.php:322
+#: core/admin/customize/customize.php:31 core/includes/class-customize.php:322
 msgid "Get support"
 msgstr ""
 
@@ -731,275 +731,6 @@ msgstr ""
 msgid "Insert a size, for for H6 elements (For example, 14px) "
 msgstr ""
 
-#: core/classes/class-plugin-activation.php:301
-msgid "Install Required Plugins"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:302
-msgid "Install Plugins"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:303
-#, php-format
-msgid "Installing Plugin: %s"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:304
-msgid "Something went wrong with the plugin API."
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:365
-msgid "Return to Required Plugins Installer"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:366
-msgid "Return to the dashboard"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:367
-#: core/classes/class-plugin-activation.php:2959
-msgid "Plugin activated successfully."
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:368
-msgid "The following plugin was activated successfully:"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:369
-#, php-format
-msgid "No action taken. Plugin %1$s was already active."
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:370
-#, php-format
-msgid ""
-"Plugin not activated. A higher version of %s is needed for this theme. "
-"Please update the plugin."
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:371
-#, php-format
-msgid "All plugins installed and activated successfully. %1$s"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:372
-msgid "Dismiss this notice"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:373
-msgid "Please contact the administrator of this site for help."
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:488
-msgid "This plugin needs to be updated to be compatible with your theme."
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:2122
-msgid "Required"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:2125
-msgid "Recommended"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:2141
-msgid "WordPress Repository"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:2144
-msgid "External Source"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:2147
-msgid "Pre-Packaged"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:2164
-msgid "Not Installed"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:2168
-msgid "Installed But Not Activated"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:2170
-msgid "Active"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:2176
-msgid "Required Update not Available"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:2179
-msgid "Requires Update"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:2182
-msgid "Update recommended"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:2334
-msgid "Installed version:"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:2342
-msgid "Minimum required version:"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:2354
-msgid "Available version:"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:2377
-#, php-format
-msgid ""
-"No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
-"Dashboard</a>"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:2391
-msgid "Plugin"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:2392
-msgid "Source"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:2393
-msgid "Type"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:2397
-msgid "Version"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:2398
-msgid "Status"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:2558
-msgid "Install"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:2564
-msgid "Update"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:2567
-msgid "Activate"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:2598
-msgid "No plugins were selected to be installed. No action taken."
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:2600
-msgid "No plugins were selected to be updated. No action taken."
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:2636
-msgid "No plugins are available to be installed at this time."
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:2638
-msgid "No plugins are available to be updated at this time."
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:2958
-msgid "Plugin activation failed."
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:3288
-#, php-format
-msgid "Updating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:3290
-#, php-format
-msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:3291
-#, php-format
-msgid "The installation of %1$s failed."
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:3295
-msgid ""
-"The installation and activation process is starting. This process may take a "
-"while on some hosts, so please be patient."
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:3296
-#, php-format
-msgid "%1$s installed and activated successfully."
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:3297
-msgid "All installations and activations have been completed."
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:3298
-#, php-format
-msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:3301
-msgid ""
-"The installation process is starting. This process may take a while on some "
-"hosts, so please be patient."
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:3303
-msgid "All installations have been completed."
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:3304
-#, php-format
-msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: core/classes/customize.php:34
-msgid "Upgrade to Bazaar Premium"
-msgstr ""
-
-#: core/classes/customize.php:326
-msgid ""
-"If you've opened a new support ticket from <strong>WordPress.org</strong>, "
-"please send a reminder to <strong>support@wpinprogress.com</strong>, to get "
-"a faster reply."
-msgstr ""
-
-#: core/classes/customize.php:330
-msgid "Open a new ticket"
-msgstr ""
-
-#: core/classes/customize.php:331
-msgid "Send a reminder"
-msgstr ""
-
-#: core/classes/customize.php:336
-msgid ""
-"If you like this theme and support, <strong>I'd appreciate</strong> any of "
-"the following:"
-msgstr ""
-
-#: core/classes/customize.php:340
-msgid "Rate this Theme"
-msgstr ""
-
-#: core/classes/customize.php:341
-msgid "Like on Facebook"
-msgstr ""
-
-#: core/classes/customize.php:342
-msgid "Subscribe our newsletter"
-msgstr ""
-
-#: core/classes/customize.php:343
-msgid "Download our free WordPress themes"
-msgstr ""
-
 #: core/functions/functions_generals.php:78
 msgid "Archives"
 msgstr ""
@@ -1067,6 +798,58 @@ msgstr ""
 #: core/functions/functions_woocommerce.php:37
 #: core/functions/functions_woocommerce.php:65
 msgid "View your shopping cart"
+msgstr ""
+
+#: core/includes/class-customize.php:34 core/includes/class-notice.php:62
+msgid "Upgrade to Bazaar Premium"
+msgstr ""
+
+#: core/includes/class-customize.php:326
+msgid ""
+"If you've opened a new support ticket from <strong>WordPress.org</strong>, "
+"please send a reminder to <strong>support@wpinprogress.com</strong>, to get "
+"a faster reply."
+msgstr ""
+
+#: core/includes/class-customize.php:330
+msgid "Open a new ticket"
+msgstr ""
+
+#: core/includes/class-customize.php:331
+msgid "Send a reminder"
+msgstr ""
+
+#: core/includes/class-customize.php:336
+msgid ""
+"If you like this theme and support, <strong>I'd appreciate</strong> any of "
+"the following:"
+msgstr ""
+
+#: core/includes/class-customize.php:340
+msgid "Rate this Theme"
+msgstr ""
+
+#: core/includes/class-customize.php:341
+msgid "Like on Facebook"
+msgstr ""
+
+#: core/includes/class-customize.php:342
+msgid "Subscribe our newsletter"
+msgstr ""
+
+#: core/includes/class-customize.php:343
+msgid "Download our free WordPress themes"
+msgstr ""
+
+#: core/includes/class-notice.php:58
+msgid ""
+"Upgrade to the premium version of Bazaar, to enable an extensive option "
+"panel, 600+ Google Fonts, unlimited sidebars, portfolio and much more."
+msgstr ""
+
+#: core/includes/class-notice.php:59
+#, php-format
+msgid "<a href=\"%1$s\" class=\"dismiss-notice\">Dismiss this notice</a>"
 msgstr ""
 
 #: core/metaboxes/pages.php:19 core/metaboxes/pages.php:30

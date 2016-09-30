@@ -8,22 +8,11 @@
  * or theme author for support.
  *
  * @package   TGM-Plugin-Activation
- * @version   2.5.1
+ * @version   2.6.1
  * @link      http://tgmpluginactivation.com/
  * @author    Thomas Griffin, Gary Jones, Juliette Reinders Folmer
  * @copyright Copyright (c) 2011, Thomas Griffin
  * @license   GPL-2.0+
- *
- * @wordpress-plugin
- * Plugin Name: TGM Plugin Activation
- * Plugin URI:
- * Description: Plugin installation and activation for WordPress themes.
- * Version:     2.5.1
- * Author:      Thomas Griffin, Gary Jones, Juliette Reinders Folmer
- * Author URI:  http://tgmpluginactivation.com/
- * Text Domain: tgmpa
- * Domain Path: /languages/
- * Copyright:   2011, Thomas Griffin
  */
 
 /*
@@ -66,7 +55,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 *
 		 * @const string Version number.
 		 */
-		const TGMPA_VERSION = '2.5.1';
+		const TGMPA_VERSION = '2.6.1';
 
 		/**
 		 * Regular expression to test if a URL is a WP plugin repo URL.
@@ -99,7 +88,6 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 * Holds arrays of plugin details.
 		 *
 		 * @since 1.0.0
-		 *
 		 * @since 2.5.0 the array has the plugin slug as an associative key.
 		 *
 		 * @var array
@@ -140,7 +128,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 *
 		 * @var string
 		 */
-		public $id = 'tgmpa';
+		public $id = 'bazaar-lite';
 
 		/**
 		 * Name of the query-string argument for the admin page.
@@ -149,7 +137,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 *
 		 * @var string
 		 */
-		public $menu = 'tgmpa-install-plugins';
+		protected $menu = 'tgmpa-install-plugins';
 
 		/**
 		 * Parent menu file slug.
@@ -256,19 +244,62 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 * Adds a reference of this object to $instance, populates default strings,
 		 * does the tgmpa_init action hook, and hooks in the interactions to init.
 		 *
+		 * {@internal This method should be `protected`, but as too many TGMPA implementations
+		 * haven't upgraded beyond v2.3.6 yet, this gives backward compatibility issues.
+		 * Reverted back to public for the time being.}}
+		 *
 		 * @since 1.0.0
 		 *
 		 * @see TGM_Plugin_Activation::init()
 		 */
-		protected function __construct() {
+		public function __construct() {
 			// Set the current WordPress version.
 			$this->wp_version = $GLOBALS['wp_version'];
 
 			// Announce that the class is ready, and pass the object (for advanced use).
 			do_action_ref_array( 'tgmpa_init', array( $this ) );
 
+			/*
+			 * Load our text domain and allow for overloading the fall-back file.
+			 *
+			 * {@internal IMPORTANT! If this code changes, review the regex in the custom TGMPA
+			 * generator on the website.}}
+			 */
+
 			// When the rest of WP has loaded, kick-start the rest of the class.
 			add_action( 'init', array( $this, 'init' ) );
+		}
+
+		/**
+		 * Magic method to (not) set protected properties from outside of this class.
+		 *
+		 * {@internal hackedihack... There is a serious bug in v2.3.2 - 2.3.6  where the `menu` property
+		 * is being assigned rather than tested in a conditional, effectively rendering it useless.
+		 * This 'hack' prevents this from happening.}}
+		 *
+		 * @see https://github.com/TGMPA/TGM-Plugin-Activation/blob/2.3.6/tgm-plugin-activation/class-tgm-plugin-activation.php#L1593
+		 *
+		 * @since 2.5.2
+		 *
+		 * @param string $name  Name of an inaccessible property.
+		 * @param mixed  $value Value to assign to the property.
+		 * @return void  Silently fail to set the property when this is tried from outside of this class context.
+		 *               (Inside this class context, the __set() method if not used as there is direct access.)
+		 */
+		public function __set( $name, $value ) {
+			return;
+		}
+
+		/**
+		 * Magic method to get the value of a protected property outside of this class context.
+		 *
+		 * @since 2.5.2
+		 *
+		 * @param string $name Name of an inaccessible property.
+		 * @return mixed The property value.
+		 */
+		public function __get( $name ) {
+			return $this->{$name};
 		}
 
 		/**
@@ -298,53 +329,47 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
 			// Load class strings.
 			$this->strings = array(
-				'page_title'                      => __( 'Install Required Plugins', 'bazaar-lite' ),
-				'menu_title'                      => __( 'Install Plugins', 'bazaar-lite' ),
-				'installing'                      => __( 'Installing Plugin: %s', 'bazaar-lite' ),
-				'oops'                            => __( 'Something went wrong with the plugin API.', 'bazaar-lite' ),
+				'page_title'                      => esc_html__( 'Install Required Plugins', 'bazaar-lite' ),
+				'menu_title'                      => esc_html__( 'Install Plugins', 'bazaar-lite' ),
+				/* translators: %s: plugin name. */
+				'installing'                      => esc_html__( 'Installing Plugin: %s', 'bazaar-lite' ),
+				/* translators: %s: plugin name. */
+				'updating'                        => esc_html__( 'Updating Plugin: %s', 'bazaar-lite' ),
+				'oops'                            => esc_html__( 'Something went wrong with the plugin API.', 'bazaar-lite' ),
 				'notice_can_install_required'     => _n_noop(
+					/* translators: 1: plugin name(s). */
 					'This theme requires the following plugin: %1$s.',
 					'This theme requires the following plugins: %1$s.',
 					'bazaar-lite'
 				),
 				'notice_can_install_recommended'  => _n_noop(
+					/* translators: 1: plugin name(s). */
 					'This theme recommends the following plugin: %1$s.',
 					'This theme recommends the following plugins: %1$s.',
 					'bazaar-lite'
 				),
-				'notice_cannot_install'           => _n_noop(
-					'Sorry, but you do not have the correct permissions to install the %1$s plugin.',
-					'Sorry, but you do not have the correct permissions to install the %1$s plugins.',
-					'bazaar-lite'
-				),
 				'notice_ask_to_update'            => _n_noop(
+					/* translators: 1: plugin name(s). */
 					'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.',
 					'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.',
 					'bazaar-lite'
 				),
 				'notice_ask_to_update_maybe'      => _n_noop(
+					/* translators: 1: plugin name(s). */
 					'There is an update available for: %1$s.',
 					'There are updates available for the following plugins: %1$s.',
 					'bazaar-lite'
 				),
-				'notice_cannot_update'            => _n_noop(
-					'Sorry, but you do not have the correct permissions to update the %1$s plugin.',
-					'Sorry, but you do not have the correct permissions to update the %1$s plugins.',
-					'bazaar-lite'
-				),
 				'notice_can_activate_required'    => _n_noop(
+					/* translators: 1: plugin name(s). */
 					'The following required plugin is currently inactive: %1$s.',
 					'The following required plugins are currently inactive: %1$s.',
 					'bazaar-lite'
 				),
 				'notice_can_activate_recommended' => _n_noop(
+					/* translators: 1: plugin name(s). */
 					'The following recommended plugin is currently inactive: %1$s.',
 					'The following recommended plugins are currently inactive: %1$s.',
-					'bazaar-lite'
-				),
-				'notice_cannot_activate'          => _n_noop(
-					'Sorry, but you do not have the correct permissions to activate the %1$s plugin.',
-					'Sorry, but you do not have the correct permissions to activate the %1$s plugins.',
 					'bazaar-lite'
 				),
 				'install_link'                    => _n_noop(
@@ -362,15 +387,19 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 					'Begin activating plugins',
 					'bazaar-lite'
 				),
-				'return'                          => __( 'Return to Required Plugins Installer', 'bazaar-lite' ),
-				'dashboard'                       => __( 'Return to the dashboard', 'bazaar-lite' ),
-				'plugin_activated'                => __( 'Plugin activated successfully.', 'bazaar-lite' ),
-				'activated_successfully'          => __( 'The following plugin was activated successfully:', 'bazaar-lite' ),
-				'plugin_already_active'           => __( 'No action taken. Plugin %1$s was already active.', 'bazaar-lite' ),
-				'plugin_needs_higher_version'     => __( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'bazaar-lite' ),
-				'complete'                        => __( 'All plugins installed and activated successfully. %1$s', 'bazaar-lite' ),
-				'dismiss'                         => __( 'Dismiss this notice', 'bazaar-lite' ),
-				'contact_admin'                   => __( 'Please contact the administrator of this site for help.', 'bazaar-lite' ),
+				'return'                          => esc_html__( 'Return to Required Plugins Installer', 'bazaar-lite' ),
+				'dashboard'                       => esc_html__( 'Return to the Dashboard', 'bazaar-lite' ),
+				'plugin_activated'                => esc_html__( 'Plugin activated successfully.', 'bazaar-lite' ),
+				'activated_successfully'          => esc_html__( 'The following plugin was activated successfully:', 'bazaar-lite' ),
+				/* translators: 1: plugin name. */
+				'plugin_already_active'           => esc_html__( 'No action taken. Plugin %1$s was already active.', 'bazaar-lite' ),
+				/* translators: 1: plugin name. */
+				'plugin_needs_higher_version'     => esc_html__( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'bazaar-lite' ),
+				/* translators: 1: dashboard link. */
+				'complete'                        => esc_html__( 'All plugins installed and activated successfully. %1$s', 'bazaar-lite' ),
+				'dismiss'                         => esc_html__( 'Dismiss this notice', 'bazaar-lite' ),
+				'notice_cannot_install_activate'  => esc_html__( 'There are one or more required or recommended plugins to install, update or activate.', 'bazaar-lite' ),
+				'contact_admin'                   => esc_html__( 'Please contact the administrator of this site for help.', 'bazaar-lite' ),
 			);
 
 			do_action( 'tgmpa_register' );
@@ -399,9 +428,10 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 					add_action( 'admin_init', array( $this, 'admin_init' ), 1 );
 					add_action( 'admin_enqueue_scripts', array( $this, 'thickbox' ) );
 				}
-
-				add_action( 'load-plugins.php', array( $this, 'add_plugin_action_link_filters' ), 1 );
 			}
+
+			// If needed, filter plugin action links.
+			add_action( 'load-plugins.php', array( $this, 'add_plugin_action_link_filters' ), 1 );
 
 			// Make sure things get reset on switch theme.
 			add_action( 'switch_theme', array( $this, 'flush_plugins_cache' ) );
@@ -422,8 +452,11 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		}
 
 		/**
-		 * Prevent activation of plugins which don't meet the minimum version requirement from the
-		 * WP native plugins page.
+		 * Hook in plugin action link filters for the WP native plugins page.
+		 *
+		 * - Prevent activation of plugins which don't meet the minimum version requirements.
+		 * - Prevent deactivation of force-activated plugins.
+		 * - Add update notice if update available.
 		 *
 		 * @since 2.5.0
 		 */
@@ -485,7 +518,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 			$actions['update'] = sprintf(
 				'<a href="%1$s" title="%2$s" class="edit">%3$s</a>',
 				esc_url( $this->get_tgmpa_status_url( 'update' ) ),
-				esc_attr__( 'This plugin needs to be updated to be compatible with your theme.', 'bazaar-lite' ),
+				esc_attresc_html__( 'This plugin needs to be updated to be compatible with your theme.', 'bazaar-lite' ),
 				esc_html__( 'Update Required', 'bazaar-lite' )
 			);
 
@@ -594,22 +627,26 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		/**
 		 * Add the menu item.
 		 *
+		 * {@internal IMPORTANT! If this function changes, review the regex in the custom TGMPA
+		 * generator on the website.}}
+		 *
 		 * @since 2.5.0
 		 *
 		 * @param array $args Menu item configuration.
 		 */
-
 		protected function add_admin_menu( array $args ) {
+			
 			if ( has_filter( 'tgmpa_admin_menu_use_add_theme_page' ) ) {
 				_deprecated_function( 'The "tgmpa_admin_menu_use_add_theme_page" filter', '2.5.0', esc_html__( 'Set the parent_slug config variable instead.', 'bazaar-lite' ) );
 			}
-			
+
 			$this->page_hook = call_user_func( 'add_theme_page', $args['page_title'], $args['menu_title'], $args['capability'], $args['menu_slug'], $args['function'] );
 			// if ( 'themes.php' === $this->parent_slug ) {
 			// 	$this->page_hook = call_user_func( 'add_theme_page', $args['page_title'], $args['menu_title'], $args['capability'], $args['menu_slug'], $args['function'] );
 			// } else {
 			// 	$this->page_hook = call_user_func( 'add_submenu_page', $args['parent_slug'], $args['page_title'], $args['menu_title'], $args['capability'], $args['menu_slug'], $args['function'] );
 			// }
+
 		}
 
 		/**
@@ -637,7 +674,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
 			?>
 			<div class="tgmpa wrap">
-				<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
+				<h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
 				<?php $plugin_table->prepare_items(); ?>
 
 				<?php
@@ -743,15 +780,17 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 					require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
 				}
 
+				$title     = ( 'update' === $install_type ) ? $this->strings['updating'] : $this->strings['installing'];
 				$skin_args = array(
 					'type'   => ( 'bundled' !== $this->plugins[ $slug ]['source_type'] ) ? 'web' : 'upload',
-					'title'  => sprintf( $this->strings['installing'], $this->plugins[ $slug ]['name'] ),
+					'title'  => sprintf( $title, $this->plugins[ $slug ]['name'] ),
 					'url'    => esc_url_raw( $url ),
 					'nonce'  => $install_type . '-plugin_' . $slug,
 					'plugin' => '',
 					'api'    => $api,
 					'extra'  => $extra,
 				);
+				unset( $title );
 
 				if ( 'update' === $install_type ) {
 					$skin_args['plugin'] = $this->plugins[ $slug ]['file_path'];
@@ -777,7 +816,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 					$upgrader->install( $source );
 				}
 
-				remove_filter( 'upgrader_source_selection', array( $this, 'maybe_adjust_source_dir' ), 1, 3 );
+				remove_filter( 'upgrader_source_selection', array( $this, 'maybe_adjust_source_dir' ), 1 );
 
 				// Make sure we have the correct file path now the plugin is installed/updated.
 				$this->populate_file_path( $slug );
@@ -896,11 +935,11 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				$subdir_name = untrailingslashit( str_replace( trailingslashit( $remote_source ), '', $source ) );
 
 				if ( ! empty( $subdir_name ) && $subdir_name !== $desired_slug ) {
-					$from = untrailingslashit( $source );
-					$to   = trailingslashit( $remote_source ) . $desired_slug;
+					$from_path = untrailingslashit( $source );
+					$to_path   = trailingslashit( $remote_source ) . $desired_slug;
 
-					if ( true === $GLOBALS['wp_filesystem']->move( $from, $to ) ) {
-						return trailingslashit( $to );
+					if ( true === $GLOBALS['wp_filesystem']->move( $from_path, $to_path ) ) {
+						return trailingslashit( $to_path );
 					} else {
 						return new WP_Error( 'rename_failed', esc_html__( 'The remote plugin package does not contain a folder with the desired slug and renaming did not work.', 'bazaar-lite' ) . ' ' . esc_html__( 'Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines.', 'bazaar-lite' ), array( 'found' => $subdir_name, 'expected' => $desired_slug ) );
 					}
@@ -990,8 +1029,8 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 * @return null Returns early if we're on the Install page.
 		 */
 		public function notices() {
-			// Remove nag on the install page / Return early if the nag message has been dismissed.
-			if ( $this->is_tgmpa_page() || get_user_meta( get_current_user_id(), 'tgmpa_dismissed_notice_' . $this->id, true ) ) {
+			// Remove nag on the install page / Return early if the nag message has been dismissed or user < author.
+			if ( ( $this->is_tgmpa_page() || $this->is_core_update_page() ) || get_user_meta( get_current_user_id(), 'tgmpa_dismissed_notice_' . $this->id, true ) || ! current_user_can( apply_filters( 'tgmpa_show_admin_notice_capability', 'publish_posts' ) ) ) {
 				return;
 			}
 
@@ -999,9 +1038,10 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 			$message = array();
 
 			// Initialize counters used to determine plurality of action link texts.
-			$install_link_count  = 0;
-			$update_link_count   = 0;
-			$activate_link_count = 0;
+			$install_link_count          = 0;
+			$update_link_count           = 0;
+			$activate_link_count         = 0;
+			$total_required_action_count = 0;
 
 			foreach ( $this->plugins as $slug => $plugin ) {
 				if ( $this->is_plugin_active( $slug ) && false === $this->does_plugin_have_update( $slug ) ) {
@@ -1017,9 +1057,9 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 						} else {
 							$message['notice_can_install_recommended'][] = $slug;
 						}
-					} else {
-						// Need higher privileges to install the plugin.
-						$message['notice_cannot_install'][] = $slug;
+					}
+					if ( true === $plugin['required'] ) {
+						$total_required_action_count++;
 					}
 				} else {
 					if ( ! $this->is_plugin_active( $slug ) && $this->can_plugin_activate( $slug ) ) {
@@ -1031,15 +1071,15 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 							} else {
 								$message['notice_can_activate_recommended'][] = $slug;
 							}
-						} else {
-							// Need higher privileges to activate the plugin.
-							$message['notice_cannot_activate'][] = $slug;
+						}
+						if ( true === $plugin['required'] ) {
+							$total_required_action_count++;
 						}
 					}
 
 					if ( $this->does_plugin_require_update( $slug ) || false !== $this->does_plugin_have_update( $slug ) ) {
 
-						if ( current_user_can( 'install_plugins' ) ) {
+						if ( current_user_can( 'update_plugins' ) ) {
 							$update_link_count++;
 
 							if ( $this->does_plugin_require_update( $slug ) ) {
@@ -1047,9 +1087,9 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 							} elseif ( false !== $this->does_plugin_have_update( $slug ) ) {
 								$message['notice_ask_to_update_maybe'][] = $slug;
 							}
-						} else {
-							// Need higher privileges to update the plugin.
-							$message['notice_cannot_update'][] = $slug;
+						}
+						if ( true === $plugin['required'] ) {
+							$total_required_action_count++;
 						}
 					}
 				}
@@ -1057,7 +1097,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 			unset( $slug, $plugin );
 
 			// If we have notices to display, we move forward.
-			if ( ! empty( $message ) ) {
+			if ( ! empty( $message ) || $total_required_action_count > 0 ) {
 				krsort( $message ); // Sort messages.
 				$rendered = '';
 
@@ -1065,97 +1105,136 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				// filtered, using <p>'s in our html would render invalid html output.
 				$line_template = '<span style="display: block; margin: 0.5em 0.5em 0 0; clear: both;">%s</span>' . "\n";
 
-				// If dismissable is false and a message is set, output it now.
-				if ( ! $this->dismissable && ! empty( $this->dismiss_msg ) ) {
-					$rendered .= sprintf( $line_template, wp_kses_post( $this->dismiss_msg ) );
-				}
+				if ( ! current_user_can( 'activate_plugins' ) && ! current_user_can( 'install_plugins' ) && ! current_user_can( 'update_plugins' ) ) {
+					$rendered  = esc_html( $this->strings['notice_cannot_install_activate'] ) . ' ' . esc_html( $this->strings['contact_admin'] );
+					$rendered .= $this->create_user_action_links_for_notice( 0, 0, 0, $line_template );
+				} else {
 
-				// Render the individual message lines for the notice.
-				foreach ( $message as $type => $plugin_group ) {
-					$linked_plugins = array();
-
-					// Get the external info link for a plugin if one is available.
-					foreach ( $plugin_group as $plugin_slug ) {
-						$linked_plugins[] = $this->get_info_link( $plugin_slug );
+					// If dismissable is false and a message is set, output it now.
+					if ( ! $this->dismissable && ! empty( $this->dismiss_msg ) ) {
+						$rendered .= sprintf( $line_template, wp_kses_post( $this->dismiss_msg ) );
 					}
-					unset( $plugin_slug );
 
-					$count          = count( $plugin_group );
-					$linked_plugins = array_map( array( 'TGMPA_Utils', 'wrap_in_em' ), $linked_plugins );
-					$last_plugin    = array_pop( $linked_plugins ); // Pop off last name to prep for readability.
-					$imploded       = empty( $linked_plugins ) ? $last_plugin : ( implode( ', ', $linked_plugins ) . ' ' . esc_html_x( 'and', 'plugin A *and* plugin B', 'bazaar-lite' ) . ' ' . $last_plugin );
+					// Render the individual message lines for the notice.
+					foreach ( $message as $type => $plugin_group ) {
+						$linked_plugins = array();
 
-					$rendered .= sprintf(
-						$line_template,
-						sprintf(
-							translate_nooped_plural( $this->strings[ $type ], $count, 'bazaar-lite' ),
-							$imploded,
-							$count
-						)
-					);
+						// Get the external info link for a plugin if one is available.
+						foreach ( $plugin_group as $plugin_slug ) {
+							$linked_plugins[] = $this->get_info_link( $plugin_slug );
+						}
+						unset( $plugin_slug );
 
-					if ( 0 === strpos( $type, 'notice_cannot' ) ) {
-						$rendered .= $this->strings['contact_admin'];
-					}
-				}
-				unset( $type, $plugin_group, $linked_plugins, $count, $last_plugin, $imploded );
+						$count          = count( $plugin_group );
+						$linked_plugins = array_map( array( 'TGMPA_Utils', 'wrap_in_em' ), $linked_plugins );
+						$last_plugin    = array_pop( $linked_plugins ); // Pop off last name to prep for readability.
+						$imploded       = empty( $linked_plugins ) ? $last_plugin : ( implode( ', ', $linked_plugins ) . ' ' . esc_html_x( 'and', 'plugin A *and* plugin B', 'bazaar-lite' ) . ' ' . $last_plugin );
 
-				// Setup action links.
-				$action_links = array(
-					'install'  => '',
-					'update'   => '',
-					'activate' => '',
-					'dismiss'  => $this->dismissable ? '<a href="' . esc_url( add_query_arg( 'tgmpa-dismiss', 'dismiss_admin_notices' ) ) . '" class="dismiss-notice" target="_parent">' . esc_html( $this->strings['dismiss'] ) . '</a>' : '',
-				);
-
-				$link_template = '<a href="%2$s">%1$s</a>';
-
-				if ( current_user_can( 'install_plugins' ) ) {
-					if ( $install_link_count > 0 ) {
-						$action_links['install'] = sprintf(
-							$link_template,
-							translate_nooped_plural( $this->strings['install_link'], $install_link_count, 'tgmpa' ),
-							esc_url( $this->get_tgmpa_status_url( 'install' ) )
+						$rendered .= sprintf(
+							$line_template,
+							sprintf(
+								translate_nooped_plural( $this->strings[ $type ], $count, 'bazaar-lite' ),
+								$imploded,
+								$count
+							)
 						);
+
 					}
-					if ( $update_link_count > 0 ) {
-						$action_links['update'] = sprintf(
-							$link_template,
-							translate_nooped_plural( $this->strings['update_link'], $update_link_count, 'tgmpa' ),
-							esc_url( $this->get_tgmpa_status_url( 'update' ) )
-						);
-					}
-				}
+					unset( $type, $plugin_group, $linked_plugins, $count, $last_plugin, $imploded );
 
-				if ( current_user_can( 'activate_plugins' ) && $activate_link_count > 0 ) {
-					$action_links['activate'] = sprintf(
-						$link_template,
-						translate_nooped_plural( $this->strings['activate_link'], $activate_link_count, 'tgmpa' ),
-						esc_url( $this->get_tgmpa_status_url( 'activate' ) )
-					);
-				}
-
-				$action_links = apply_filters( 'tgmpa_notice_action_links', $action_links );
-
-				$action_links = array_filter( (array) $action_links ); // Remove any empty array items.
-
-				if ( ! empty( $action_links ) && is_array( $action_links ) ) {
-					$action_links = sprintf( $line_template, implode( ' | ', $action_links ) );
-					$rendered    .= apply_filters( 'tgmpa_notice_rendered_action_links', $action_links );
+					$rendered .= $this->create_user_action_links_for_notice( $install_link_count, $update_link_count, $activate_link_count, $line_template );
 				}
 
 				// Register the nag messages and prepare them to be processed.
-				if ( ! empty( $this->strings['nag_type'] ) ) {
-					add_settings_error( 'tgmpa', 'tgmpa', $rendered, sanitize_html_class( strtolower( $this->strings['nag_type'] ) ) );
-				} else {
-					$nag_class = version_compare( $this->wp_version, '3.8', '<' ) ? 'updated' : 'update-nag';
-					add_settings_error( 'tgmpa', 'tgmpa', $rendered, $nag_class );
-				}
+				add_settings_error( 'bazaar-lite', 'bazaar-lite', $rendered, $this->get_admin_notice_class() );
 			}
 
 			// Admin options pages already output settings_errors, so this is to avoid duplication.
 			if ( 'options-general' !== $GLOBALS['current_screen']->parent_base ) {
 				$this->display_settings_errors();
+			}
+		}
+
+		/**
+		 * Generate the user action links for the admin notice.
+		 *
+		 * @since 2.6.0
+		 *
+		 * @param int $install_count  Number of plugins to install.
+		 * @param int $update_count   Number of plugins to update.
+		 * @param int $activate_count Number of plugins to activate.
+		 * @param int $line_template  Template for the HTML tag to output a line.
+		 * @return string Action links.
+		 */
+		protected function create_user_action_links_for_notice( $install_count, $update_count, $activate_count, $line_template ) {
+			// Setup action links.
+			$action_links = array(
+				'install'  => '',
+				'update'   => '',
+				'activate' => '',
+				'dismiss'  => $this->dismissable ? '<a href="' . esc_url( wp_nonce_url( add_query_arg( 'tgmpa-dismiss', 'dismiss_admin_notices' ), 'tgmpa-dismiss-' . get_current_user_id() ) ) . '" class="dismiss-notice" target="_parent">' . esc_html( $this->strings['dismiss'] ) . '</a>' : '',
+			);
+
+			$link_template = '<a href="%2$s">%1$s</a>';
+
+			if ( current_user_can( 'install_plugins' ) ) {
+				if ( $install_count > 0 ) {
+					$action_links['install'] = sprintf(
+						$link_template,
+						translate_nooped_plural( $this->strings['install_link'], $install_count, 'bazaar-lite' ),
+						esc_url( $this->get_tgmpa_status_url( 'install' ) )
+					);
+				}
+				if ( $update_count > 0 ) {
+					$action_links['update'] = sprintf(
+						$link_template,
+						translate_nooped_plural( $this->strings['update_link'], $update_count, 'bazaar-lite' ),
+						esc_url( $this->get_tgmpa_status_url( 'update' ) )
+					);
+				}
+			}
+
+			if ( current_user_can( 'activate_plugins' ) && $activate_count > 0 ) {
+				$action_links['activate'] = sprintf(
+					$link_template,
+					translate_nooped_plural( $this->strings['activate_link'], $activate_count, 'bazaar-lite' ),
+					esc_url( $this->get_tgmpa_status_url( 'activate' ) )
+				);
+			}
+
+			$action_links = apply_filters( 'tgmpa_notice_action_links', $action_links );
+
+			$action_links = array_filter( (array) $action_links ); // Remove any empty array items.
+
+			if ( ! empty( $action_links ) ) {
+				$action_links = sprintf( $line_template, implode( ' | ', $action_links ) );
+				return apply_filters( 'tgmpa_notice_rendered_action_links', $action_links );
+			} else {
+				return '';
+			}
+		}
+
+		/**
+		 * Get admin notice class.
+		 *
+		 * Work around all the changes to the various admin notice classes between WP 4.4 and 3.7
+		 * (lowest supported version by TGMPA).
+		 *
+		 * @since 2.6.0
+		 *
+		 * @return string
+		 */
+		protected function get_admin_notice_class() {
+			if ( ! empty( $this->strings['nag_type'] ) ) {
+				return sanitize_html_class( strtolower( $this->strings['nag_type'] ) );
+			} else {
+				if ( version_compare( $this->wp_version, '4.2', '>=' ) ) {
+					return 'notice-warning';
+				} elseif ( version_compare( $this->wp_version, '4.1', '>=' ) ) {
+					return 'notice';
+				} else {
+					return 'updated';
+				}
 			}
 		}
 
@@ -1167,10 +1246,10 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		protected function display_settings_errors() {
 			global $wp_settings_errors;
 
-			settings_errors( 'tgmpa' );
+			settings_errors( 'bazaar-lite' );
 
 			foreach ( (array) $wp_settings_errors as $key => $details ) {
-				if ( 'tgmpa' === $details['setting'] ) {
+				if ( 'bazaar-lite' === $details['setting'] ) {
 					unset( $wp_settings_errors[ $key ] );
 					break;
 				}
@@ -1178,14 +1257,15 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		}
 
 		/**
-		 * Add dismissable admin notices.
+		 * Register dismissal of admin notices.
 		 *
-		 * Appends a link to the admin nag messages. If clicked, the admin notice disappears and no longer is visible to users.
+		 * Acts on the dismiss link in the admin nag messages.
+		 * If clicked, the admin notice disappears and will no longer be visible to this user.
 		 *
 		 * @since 2.1.0
 		 */
 		public function dismiss() {
-			if ( isset( $_GET['tgmpa-dismiss'] ) ) {
+			if ( isset( $_GET['tgmpa-dismiss'] ) && check_admin_referer( 'tgmpa-dismiss-' . get_current_user_id() ) ) {
 				update_user_meta( get_current_user_id(), 'tgmpa_dismissed_notice_' . $this->id, 1 );
 			}
 		}
@@ -1292,13 +1372,13 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 			$key     = preg_replace( '`[^A-Za-z0-9_-]`', '', $key );
 
 			/**
-			* Filter a sanitized key string.
-			*
-			* @since 3.0.0
-			*
-			* @param string $key     Sanitized key.
-			* @param string $raw_key The key prior to sanitization.
-			*/
+			 * Filter a sanitized key string.
+			 *
+			 * @since 2.5.0
+			 *
+			 * @param string $key     Sanitized key.
+			 * @param string $raw_key The key prior to sanitization.
+			 */
 			return apply_filters( 'tgmpa_sanitize_key', $key, $raw_key );
 		}
 
@@ -1341,7 +1421,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 * @since 2.0.0
 		 *
 		 * @param array $install_actions Existing array of actions.
-		 * @return array Amended array of actions.
+		 * @return false|array Amended array of actions.
 		 */
 		public function actions( $install_actions ) {
 			// Remove action links on the TGMPA install page.
@@ -1551,6 +1631,35 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		}
 
 		/**
+		 * Determine if we're on a WP Core installation/upgrade page.
+		 *
+		 * @since 2.6.0
+		 *
+		 * @return boolean True when on a WP Core installation/upgrade page, false otherwise.
+		 */
+		protected function is_core_update_page() {
+			// Current screen is not always available, most notably on the customizer screen.
+			if ( ! function_exists( 'get_current_screen' ) ) {
+				return false;
+			}
+
+			$screen = get_current_screen();
+
+			if ( 'update-core' === $screen->base ) {
+				// Core update screen.
+				return true;
+			} elseif ( 'plugins' === $screen->base && ! empty( $_POST['action'] ) ) { // WPCS: CSRF ok.
+				// Plugins bulk update screen.
+				return true;
+			} elseif ( 'update' === $screen->base && ! empty( $_POST['action'] ) ) { // WPCS: CSRF ok.
+				// Individual updates (ajax call).
+				return true;
+			}
+
+			return false;
+		}
+
+		/**
 		 * Retrieve the URL to the TGMPA Install page.
 		 *
 		 * I.e. depending on the config settings passed something along the lines of:
@@ -1662,11 +1771,28 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 			$api = $this->get_plugins_api( $slug );
 
 			if ( false !== $api && isset( $api->requires ) ) {
-				return version_compare( $GLOBALS['wp_version'], $api->requires, '>=' );
+				return version_compare( $this->wp_version, $api->requires, '>=' );
 			}
 
 			// No usable info received from the plugins API, presume we can update.
 			return true;
+		}
+
+		/**
+		 * Check to see if the plugin is 'updatetable', i.e. installed, with an update available
+		 * and no WP version requirements blocking it.
+		 *
+		 * @since 2.6.0
+		 *
+		 * @param string $slug Plugin slug.
+		 * @return bool True if OK to proceed with update, false otherwise.
+		 */
+		public function is_plugin_updatetable( $slug ) {
+			if ( ! $this->is_plugin_installed( $slug ) ) {
+				return false;
+			} else {
+				return ( false !== $this->does_plugin_have_update( $slug ) && $this->can_plugin_update( $slug ) );
+			}
 		}
 
 		/**
@@ -1824,7 +1950,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
 		/**
 		 * Forces plugin deactivation if the parameter 'force_deactivation'
-		 * is set to true.
+		 * is set to true and adds the plugin to the 'recently active' plugins list.
 		 *
 		 * This allows theme authors to specify certain plugins that must be
 		 * deactivated upon switching from the current theme to another.
@@ -1835,20 +1961,38 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 * @since 2.2.0
 		 */
 		public function force_deactivation() {
+			$deactivated = array();
+
 			foreach ( $this->plugins as $slug => $plugin ) {
-				// Only proceed forward if the parameter is set to true and plugin is active.
-				if ( true === $plugin['force_deactivation'] && $this->is_plugin_active( $slug ) ) {
+				/*
+				 * Only proceed forward if the parameter is set to true and plugin is active
+				 * as a 'normal' (not must-use) plugin.
+				 */
+				if ( true === $plugin['force_deactivation'] && is_plugin_active( $plugin['file_path'] ) ) {
 					deactivate_plugins( $plugin['file_path'] );
+					$deactivated[ $plugin['file_path'] ] = time();
 				}
+			}
+
+			if ( ! empty( $deactivated ) ) {
+				update_option( 'recently_activated', $deactivated + (array) get_option( 'recently_activated' ) );
 			}
 		}
 
 		/**
 		 * Echo the current TGMPA version number to the page.
+		 *
+		 * @since 2.5.0
 		 */
 		public function show_tgmpa_version() {
 			echo '<p style="float: right; padding: 0em 1.5em 0.5em 0;"><strong><small>',
-				esc_html( sprintf( _x( 'TGMPA v%s', '%s = version number', 'bazaar-lite' ), self::TGMPA_VERSION ) ),
+				esc_html(
+					sprintf(
+						/* translators: %s: version number */
+						esc_html__( 'TGMPA v%s', 'bazaar-lite' ),
+						self::TGMPA_VERSION
+					)
+				),
 				'</small></strong></p>';
 		}
 
@@ -1857,7 +2001,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 		 *
 		 * @since 2.4.0
 		 *
-		 * @return object The TGM_Plugin_Activation object.
+		 * @return \TGM_Plugin_Activation The TGM_Plugin_Activation object.
 		 */
 		public static function get_instance() {
 			if ( ! isset( self::$instance ) && ! ( self::$instance instanceof self ) ) {
@@ -1871,9 +2015,11 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 	if ( ! function_exists( 'load_tgm_plugin_activation' ) ) {
 		/**
 		 * Ensure only one instance of the class is ever invoked.
+		 *
+		 * @since 2.5.0
 		 */
 		function load_tgm_plugin_activation() {
-			$GLOBALS['tgmpa'] = TGM_Plugin_Activation::get_instance();
+			$GLOBALS['bazaar-lite'] = TGM_Plugin_Activation::get_instance();
 		}
 	}
 
@@ -1895,13 +2041,28 @@ if ( ! function_exists( 'tgmpa' ) ) {
 	 * @param array $config  Optional. An array of configuration values.
 	 */
 	function tgmpa( $plugins, $config = array() ) {
-		$instance = call_user_func( array( get_class( $GLOBALS['tgmpa'] ), 'get_instance' ) );
+		$instance = call_user_func( array( get_class( $GLOBALS['bazaar-lite'] ), 'get_instance' ) );
 
 		foreach ( $plugins as $plugin ) {
 			call_user_func( array( $instance, 'register' ), $plugin );
 		}
 
 		if ( ! empty( $config ) && is_array( $config ) ) {
+			// Send out notices for deprecated arguments passed.
+			if ( isset( $config['notices'] ) ) {
+				_deprecated_argument( __FUNCTION__, '2.2.0', 'The `notices` config parameter was renamed to `has_notices` in TGMPA 2.2.0. Please adjust your configuration.' );
+				if ( ! isset( $config['has_notices'] ) ) {
+					$config['has_notices'] = $config['notices'];
+				}
+			}
+
+			if ( isset( $config['parent_menu_slug'] ) ) {
+				_deprecated_argument( __FUNCTION__, '2.4.0', 'The `parent_menu_slug` config parameter was removed in TGMPA 2.4.0. In TGMPA 2.5.0 an alternative was (re-)introduced. Please adjust your configuration. For more information visit the website: http://tgmpluginactivation.com/configuration/#h-configuration-options.' );
+			}
+			if ( isset( $config['parent_url_slug'] ) ) {
+				_deprecated_argument( __FUNCTION__, '2.4.0', 'The `parent_url_slug` config parameter was removed in TGMPA 2.4.0. In TGMPA 2.5.0 an alternative was (re-)introduced. Please adjust your configuration. For more information visit the website: http://tgmpluginactivation.com/configuration/#h-configuration-options.' );
+			}
+
 			call_user_func( array( $instance, 'config' ), $config );
 		}
 	}
@@ -1975,7 +2136,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		 * @since 2.2.0
 		 */
 		public function __construct() {
-			$this->tgmpa = call_user_func( array( get_class( $GLOBALS['tgmpa'] ), 'get_instance' ) );
+			$this->tgmpa = call_user_func( array( get_class( $GLOBALS['bazaar-lite'] ), 'get_instance' ) );
 
 			parent::__construct(
 				array(
@@ -2048,7 +2209,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				if ( ! empty( $upgrade_notice ) ) {
 					$table_data[ $i ]['upgrade_notice'] = $upgrade_notice;
 
-					add_action( "tgmpa_after_plugin_row_$slug", array( $this, 'wp_plugin_update_row' ), 10, 2 );
+					add_action( "tgmpa_after_plugin_row_{$slug}", array( $this, 'wp_plugin_update_row' ), 10, 2 );
 				}
 
 				$table_data[ $i ] = apply_filters( 'tgmpa_table_data_item', $table_data[ $i ], $plugin );
@@ -2119,10 +2280,10 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		 */
 		protected function get_plugin_advise_type_text( $required ) {
 			if ( true === $required ) {
-				return __( 'Required', 'bazaar-lite' );
+				return esc_html__( 'Required', 'bazaar-lite' );
 			}
 
-			return __( 'Recommended', 'bazaar-lite' );
+			return esc_html__( 'Recommended', 'bazaar-lite' );
 		}
 
 		/**
@@ -2138,13 +2299,13 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 			switch ( $type ) {
 				case 'repo':
-					$string = __( 'WordPress Repository', 'bazaar-lite' );
+					$string = esc_html__( 'WordPress Repository', 'bazaar-lite' );
 					break;
 				case 'external':
-					$string = __( 'External Source', 'bazaar-lite' );
+					$string = esc_html__( 'External Source', 'bazaar-lite' );
 					break;
 				case 'bundled':
-					$string = __( 'Pre-Packaged', 'bazaar-lite' );
+					$string = esc_html__( 'Pre-Packaged', 'bazaar-lite' );
 					break;
 			}
 
@@ -2161,25 +2322,25 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		 */
 		protected function get_plugin_status_text( $slug ) {
 			if ( ! $this->tgmpa->is_plugin_installed( $slug ) ) {
-				return __( 'Not Installed', 'bazaar-lite' );
+				return esc_html__( 'Not Installed', 'bazaar-lite' );
 			}
 
 			if ( ! $this->tgmpa->is_plugin_active( $slug ) ) {
-				$install_status = __( 'Installed But Not Activated', 'bazaar-lite' );
+				$install_status = esc_html__( 'Installed But Not Activated', 'bazaar-lite' );
 			} else {
-				$install_status = __( 'Active', 'bazaar-lite' );
+				$install_status = esc_html__( 'Active', 'bazaar-lite' );
 			}
 
 			$update_status = '';
 
 			if ( $this->tgmpa->does_plugin_require_update( $slug ) && false === $this->tgmpa->does_plugin_have_update( $slug ) ) {
-				$update_status = __( 'Required Update not Available', 'bazaar-lite' );
+				$update_status = esc_html__( 'Required Update not Available', 'bazaar-lite' );
 
 			} elseif ( $this->tgmpa->does_plugin_require_update( $slug ) ) {
-				$update_status = __( 'Requires Update', 'bazaar-lite' );
+				$update_status = esc_html__( 'Requires Update', 'bazaar-lite' );
 
 			} elseif ( false !== $this->tgmpa->does_plugin_have_update( $slug ) ) {
-				$update_status = __( 'Update recommended', 'bazaar-lite' );
+				$update_status = esc_html__( 'Update recommended', 'bazaar-lite' );
 			}
 
 			if ( '' === $update_status ) {
@@ -2187,7 +2348,8 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 			}
 
 			return sprintf(
-				_x( '%1$s, %2$s', '%1$s = install status, %2$s = update status', 'bazaar-lite' ),
+				/* translators: 1: install status, 2: update status */
+				_x( '%1$s, %2$s', 'Install/Update Status', 'bazaar-lite' ),
 				$install_status,
 				$update_status
 			);
@@ -2232,15 +2394,19 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 				switch ( $type ) {
 					case 'all':
+						/* translators: 1: number of plugins. */
 						$text = _nx( 'All <span class="count">(%s)</span>', 'All <span class="count">(%s)</span>', $count, 'plugins', 'bazaar-lite' );
 						break;
 					case 'install':
+						/* translators: 1: number of plugins. */
 						$text = _n( 'To Install <span class="count">(%s)</span>', 'To Install <span class="count">(%s)</span>', $count, 'bazaar-lite' );
 						break;
 					case 'update':
+						/* translators: 1: number of plugins. */
 						$text = _n( 'Update Available <span class="count">(%s)</span>', 'Update Available <span class="count">(%s)</span>', $count, 'bazaar-lite' );
 						break;
 					case 'activate':
+						/* translators: 1: number of plugins. */
 						$text = _n( 'To Activate <span class="count">(%s)</span>', 'To Activate <span class="count">(%s)</span>', $count, 'bazaar-lite' );
 						break;
 					default:
@@ -2331,7 +2497,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				}
 
 				$output[] = sprintf(
-					'<p><span style="min-width: 32px; text-align: right; float: right;%1$s">%2$s</span>' . __( 'Installed version:', 'bazaar-lite' ) . '</p>',
+					'<p><span style="min-width: 32px; text-align: right; float: right;%1$s">%2$s</span>' . esc_html__( 'Installed version:', 'bazaar-lite' ) . '</p>',
 					$color,
 					$installed
 				);
@@ -2339,7 +2505,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 			if ( ! empty( $item['minimum_version'] ) ) {
 				$output[] = sprintf(
-					'<p><span style="min-width: 32px; text-align: right; float: right;">%1$s</span>' . __( 'Minimum required version:', 'bazaar-lite' ) . '</p>',
+					'<p><span style="min-width: 32px; text-align: right; float: right;">%1$s</span>' . esc_html__( 'Minimum required version:', 'bazaar-lite' ) . '</p>',
 					$item['minimum_version']
 				);
 			}
@@ -2351,7 +2517,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				}
 
 				$output[] = sprintf(
-					'<p><span style="min-width: 32px; text-align: right; float: right;%1$s">%2$s</span>' . __( 'Available version:', 'bazaar-lite' ) . '</p>',
+					'<p><span style="min-width: 32px; text-align: right; float: right;%1$s">%2$s</span>' . esc_html__( 'Available version:', 'bazaar-lite' ) . '</p>',
 					$color,
 					$item['available_version']
 				);
@@ -2374,7 +2540,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		 * @since 2.2.0
 		 */
 		public function no_items() {
-			printf( wp_kses_post( __( 'No plugins to install, update or activate. <a href="%1$s">Return to the Dashboard</a>', 'bazaar-lite' ) ), esc_url( self_admin_url() ) );
+			echo esc_html__( 'No plugins to install, update or activate.', 'bazaar-lite' ) . ' <a href="' . esc_url( self_admin_url() ) . '"> ' . esc_html__( 'Return to the Dashboard', 'bazaar-lite' ) . '</a>';
 			echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
 		}
 
@@ -2388,14 +2554,14 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		public function get_columns() {
 			$columns = array(
 				'cb'     => '<input type="checkbox" />',
-				'plugin' => __( 'Plugin', 'bazaar-lite' ),
-				'source' => __( 'Source', 'bazaar-lite' ),
-				'type'   => __( 'Type', 'bazaar-lite' ),
+				'plugin' => esc_html__( 'Plugin', 'bazaar-lite' ),
+				'source' => esc_html__( 'Source', 'bazaar-lite' ),
+				'type'   => esc_html__( 'Type', 'bazaar-lite' ),
 			);
 
 			if ( 'all' === $this->view_context || 'update' === $this->view_context ) {
-				$columns['version'] = __( 'Version', 'bazaar-lite' );
-				$columns['status']  = __( 'Status', 'bazaar-lite' );
+				$columns['version'] = esc_html__( 'Version', 'bazaar-lite' );
+				$columns['status']  = esc_html__( 'Status', 'bazaar-lite' );
 			}
 
 			return apply_filters( 'tgmpa_table_columns', $columns );
@@ -2443,16 +2609,19 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 			// Display the 'Install' action link if the plugin is not yet available.
 			if ( ! $this->tgmpa->is_plugin_installed( $item['slug'] ) ) {
-				$actions['install'] = _x( 'Install %2$s', '%2$s = plugin name in screen reader markup', 'bazaar-lite' );
+				/* translators: %2$s: plugin name in screen reader markup */
+				$actions['install'] = esc_html__( 'Install %2$s', 'bazaar-lite' );
 			} else {
 				// Display the 'Update' action link if an update is available and WP complies with plugin minimum.
 				if ( false !== $this->tgmpa->does_plugin_have_update( $item['slug'] ) && $this->tgmpa->can_plugin_update( $item['slug'] ) ) {
-					$actions['update'] = _x( 'Update %2$s', '%2$s = plugin name in screen reader markup', 'bazaar-lite' );
+					/* translators: %2$s: plugin name in screen reader markup */
+					$actions['update'] = esc_html__( 'Update %2$s', 'bazaar-lite' );
 				}
 
 				// Display the 'Activate' action link, but only if the plugin meets the minimum version.
 				if ( $this->tgmpa->can_plugin_activate( $item['slug'] ) ) {
-					$actions['activate'] = _x( 'Activate %2$s', '%2$s = plugin name in screen reader markup', 'bazaar-lite' );
+					/* translators: %2$s: plugin name in screen reader markup */
+					$actions['activate'] = esc_html__( 'Activate %2$s', 'bazaar-lite' );
 				}
 			}
 
@@ -2471,7 +2640,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				);
 
 				$action_links[ $action ] = sprintf(
-					'<a href="%1$s">' . esc_html( $text ) . '</a>',
+					'<a href="%1$s">' . esc_html( $text ) . '</a>', // $text contains the second placeholder.
 					esc_url( $nonce_url ),
 					'<span class="screen-reader-text">' . esc_html( $item['sanitized_plugin'] ) . '</span>'
 				);
@@ -2555,16 +2724,16 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 			if ( 'update' !== $this->view_context && 'activate' !== $this->view_context ) {
 				if ( current_user_can( 'install_plugins' ) ) {
-					$actions['tgmpa-bulk-install'] = __( 'Install', 'bazaar-lite' );
+					$actions['tgmpa-bulk-install'] = esc_html__( 'Install', 'bazaar-lite' );
 				}
 			}
 
 			if ( 'install' !== $this->view_context ) {
 				if ( current_user_can( 'update_plugins' ) ) {
-					$actions['tgmpa-bulk-update'] = __( 'Update', 'bazaar-lite' );
+					$actions['tgmpa-bulk-update'] = esc_html__( 'Update', 'bazaar-lite' );
 				}
 				if ( current_user_can( 'activate_plugins' ) ) {
-					$actions['tgmpa-bulk-activate'] = __( 'Activate', 'bazaar-lite' );
+					$actions['tgmpa-bulk-activate'] = esc_html__( 'Activate', 'bazaar-lite' );
 				}
 			}
 
@@ -2595,9 +2764,9 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				// Did user actually select any plugins to install/update ?
 				if ( empty( $_POST['plugin'] ) ) {
 					if ( 'install' === $install_type ) {
-						$message = __( 'No plugins were selected to be installed. No action taken.', 'bazaar-lite' );
+						$message = esc_html__( 'No plugins were selected to be installed. No action taken.', 'bazaar-lite' );
 					} else {
-						$message = __( 'No plugins were selected to be updated. No action taken.', 'bazaar-lite' );
+						$message = esc_html__( 'No plugins were selected to be updated. No action taken.', 'bazaar-lite' );
 					}
 
 					echo '<div id="message" class="error"><p>', esc_html( $message ), '</p></div>';
@@ -2624,8 +2793,13 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 						continue;
 					}
 
+					// For install: make sure this is a plugin we *can* install and not one already installed.
+					if ( 'install' === $install_type && true === $this->tgmpa->is_plugin_installed( $slug ) ) {
+						unset( $plugins_to_install[ $key ] );
+					}
+
 					// For updates: make sure this is a plugin we *can* update (update available and WP version ok).
-					if ( 'update' === $install_type && ( $this->tgmpa->is_plugin_installed( $slug ) && ( false === $this->tgmpa->does_plugin_have_update( $slug ) || ! $this->tgmpa->can_plugin_update( $slug ) ) ) ) {
+					if ( 'update' === $install_type && false === $this->tgmpa->is_plugin_updatetable( $slug ) ) {
 						unset( $plugins_to_install[ $key ] );
 					}
 				}
@@ -2633,9 +2807,9 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				// No need to proceed further if we have no plugins to handle.
 				if ( empty( $plugins_to_install ) ) {
 					if ( 'install' === $install_type ) {
-						$message = __( 'No plugins are available to be installed at this time.', 'bazaar-lite' );
+						$message = esc_html__( 'No plugins are available to be installed at this time.', 'bazaar-lite' );
 					} else {
-						$message = __( 'No plugins are available to be updated at this time.', 'bazaar-lite' );
+						$message = esc_html__( 'No plugins are available to be updated at this time.', 'bazaar-lite' );
 					}
 
 					echo '<div id="message" class="error"><p>', esc_html( $message ), '</p></div>';
@@ -2699,9 +2873,9 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				}
 				unset( $slug, $name, $source );
 
-				// Create a new instance of TGM_Bulk_Installer.
-				$installer = new TGM_Bulk_Installer(
-					new TGM_Bulk_Installer_Skin(
+				// Create a new instance of TGMPA_Bulk_Installer.
+				$installer = new TGMPA_Bulk_Installer(
+					new TGMPA_Bulk_Installer_Skin(
 						array(
 							'url'          => esc_url_raw( $this->tgmpa->get_tgmpa_url() ),
 							'nonce'        => 'bulk-' . $this->_args['plural'],
@@ -2712,8 +2886,9 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				);
 
 				// Wrap the install process with the appropriate HTML.
-				echo '<div class="tgmpa wrap">',
-					'<h2>', esc_html( get_admin_page_title() ), '</h2>';
+				echo '<div class="tgmpa">',
+					'<h2 style="font-size: 23px; font-weight: 400; line-height: 29px; margin: 0; padding: 9px 15px 4px 0;">', esc_html( get_admin_page_title() ), '</h2>
+					<div class="update-php" style="width: 100%; height: 98%; min-height: 850px; padding-top: 1px;">';
 
 				// Process the bulk installation submissions.
 				add_filter( 'upgrader_source_selection', array( $this->tgmpa, 'maybe_adjust_source_dir' ), 1, 3 );
@@ -2727,9 +2902,9 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 					$installer->bulk_install( $sources );
 				}
 
-				remove_filter( 'upgrader_source_selection', array( $this->tgmpa, 'maybe_adjust_source_dir' ), 1, 3 );
+				remove_filter( 'upgrader_source_selection', array( $this->tgmpa, 'maybe_adjust_source_dir' ), 1 );
 
-				echo '</div>';
+				echo '</div></div>';
 
 				return true;
 			}
@@ -2848,6 +3023,34 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 	}
 }
 
+
+if ( ! class_exists( 'TGM_Bulk_Installer' ) ) {
+
+	/**
+	 * Hack: Prevent TGMPA v2.4.1- bulk installer class from being loaded if 2.4.1- is loaded after 2.5+.
+	 *
+	 * @since 2.5.2
+	 *
+	 * {@internal The TGMPA_Bulk_Installer class was originally called TGM_Bulk_Installer.
+	 *            For more information, see that class.}}
+	 */
+	class TGM_Bulk_Installer {
+	}
+}
+if ( ! class_exists( 'TGM_Bulk_Installer_Skin' ) ) {
+
+	/**
+	 * Hack: Prevent TGMPA v2.4.1- bulk installer skin class from being loaded if 2.4.1- is loaded after 2.5+.
+	 *
+	 * @since 2.5.2
+	 *
+	 * {@internal The TGMPA_Bulk_Installer_Skin class was originally called TGM_Bulk_Installer_Skin.
+	 *            For more information, see that class.}}
+	 */
+	class TGM_Bulk_Installer_Skin {
+	}
+}
+
 /**
  * The WP_Upgrader file isn't always available. If it isn't available,
  * we load it here.
@@ -2864,15 +3067,20 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 	 * Load bulk installer
 	 */
 	function tgmpa_load_bulk_installer() {
+		// Silently fail if 2.5+ is loaded *after* an older version.
+		if ( ! isset( $GLOBALS['bazaar-lite'] ) ) {
+			return;
+		}
+
 		// Get TGMPA class instance.
-		$tgmpa_instance = call_user_func( array( get_class( $GLOBALS['tgmpa'] ), 'get_instance' ) );
+		$tgmpa_instance = call_user_func( array( get_class( $GLOBALS['bazaar-lite'] ), 'get_instance' ) );
 
 		if ( isset( $_GET['page'] ) && $tgmpa_instance->menu === $_GET['page'] ) {
 			if ( ! class_exists( 'Plugin_Upgrader', false ) ) {
 				require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
 			}
 
-			if ( ! class_exists( 'TGM_Bulk_Installer' ) ) {
+			if ( ! class_exists( 'TGMPA_Bulk_Installer' ) ) {
 
 				/**
 				 * Installer class to handle bulk plugin installations.
@@ -2882,13 +3090,15 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 				 *
 				 * @since 2.2.0
 				 *
-				 * @internal Since 2.5.0 the class is an extension of Plugin_Upgrader rather than WP_Upgrader
+				 * {@internal Since 2.5.0 the class is an extension of Plugin_Upgrader rather than WP_Upgrader.}}
+				 * {@internal Since 2.5.2 the class has been renamed from TGM_Bulk_Installer to TGMPA_Bulk_Installer.
+				 *            This was done to prevent backward compatibility issues with v2.3.6.}}
 				 *
 				 * @package TGM-Plugin-Activation
 				 * @author  Thomas Griffin
 				 * @author  Gary Jones
 				 */
-				class TGM_Bulk_Installer extends Plugin_Upgrader {
+				class TGMPA_Bulk_Installer extends Plugin_Upgrader {
 					/**
 					 * Holds result of bulk plugin installation.
 					 *
@@ -2934,7 +3144,7 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 					 */
 					public function __construct( $skin = null ) {
 						// Get TGMPA class instance.
-						$this->tgmpa = call_user_func( array( get_class( $GLOBALS['tgmpa'] ), 'get_instance' ) );
+						$this->tgmpa = call_user_func( array( get_class( $GLOBALS['bazaar-lite'] ), 'get_instance' ) );
 
 						parent::__construct( $skin );
 
@@ -2955,8 +3165,8 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 					 * @since 2.2.0
 					 */
 					public function activate_strings() {
-						$this->strings['activation_failed']  = __( 'Plugin activation failed.', 'bazaar-lite' );
-						$this->strings['activation_success'] = __( 'Plugin activated successfully.', 'bazaar-lite' );
+						$this->strings['activation_failed']  = esc_html__( 'Plugin activation failed.', 'bazaar-lite' );
+						$this->strings['activation_success'] = esc_html__( 'Plugin activated successfully.', 'bazaar-lite' );
 					}
 
 					/**
@@ -2989,17 +3199,19 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 					 *
 					 * @since 2.2.0
 					 *
-					 * @internal This is basically a near identical copy of the WP Core Plugin_Upgrader::bulk_upgrade()
-					 * method, with minor adjustments to deal with new installs instead of upgrades.
+					 * {@internal This is basically a near identical copy of the WP Core
+					 * Plugin_Upgrader::bulk_upgrade() method, with minor adjustments to deal with
+					 * new installs instead of upgrades.
 					 * For ease of future synchronizations, the adjustments are clearly commented, but no other
-					 * comments are added. Code style has been made to comply.
+					 * comments are added. Code style has been made to comply.}}
 					 *
 					 * @see Plugin_Upgrader::bulk_upgrade()
 					 * @see https://core.trac.wordpress.org/browser/tags/4.2.1/src/wp-admin/includes/class-wp-upgrader.php#L838
+					 * (@internal Last synced: Dec 31st 2015 against https://core.trac.wordpress.org/browser/trunk?rev=36134}}
 					 *
 					 * @param array $plugins The plugin sources needed for installation.
 					 * @param array $args    Arbitrary passed extra arguments.
-					 * @return string|bool Install confirmation messages on success, false on failure.
+					 * @return array|false   Install confirmation messages on success, false on failure.
 					 */
 					public function bulk_install( $plugins, $args = array() ) {
 						// [TGMPA + ] Hook auto-activation in.
@@ -3025,16 +3237,17 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 						$res = $this->fs_connect( array( WP_CONTENT_DIR, WP_PLUGIN_DIR ) );
 						if ( ! $res ) {
 							$this->skin->footer();
-
 							return false;
 						}
 
 						$this->skin->bulk_header();
 
-						// Only start maintenance mode if:
-						// - running Multisite and there are one or more plugins specified, OR
-						// - a plugin with an update available is currently active.
-						// @TODO: For multisite, maintenance mode should only kick in for individual sites if at all possible.
+						/*
+						 * Only start maintenance mode if:
+						 * - running Multisite and there are one or more plugins specified, OR
+						 * - a plugin with an update available is currently active.
+						 * @TODO: For multisite, maintenance mode should only kick in for individual sites if at all possible.
+						 */
 						$maintenance = ( is_multisite() && ! empty( $plugins ) );
 
 						/*
@@ -3066,22 +3279,24 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 								continue;
 							}
 
-							// Get the URL to the zip file
+							// Get the URL to the zip file.
 							$r = $current->response[ $plugin ];
 
 							$this->skin->plugin_active = is_plugin_active($plugin);
 							*/
 
-							$result = $this->run( array(
-								'package'           => $plugin, // [TGMPA + ] adjusted.
-								'destination'       => WP_PLUGIN_DIR,
-								'clear_destination' => false, // [TGMPA + ] adjusted.
-								'clear_working'     => true,
-								'is_multi'          => true,
-								'hook_extra'        => array(
-									'plugin' => $plugin,
-								),
-							) );
+							$result = $this->run(
+								array(
+									'package'           => $plugin, // [TGMPA + ] adjusted.
+									'destination'       => WP_PLUGIN_DIR,
+									'clear_destination' => false, // [TGMPA + ] adjusted.
+									'clear_working'     => true,
+									'is_multi'          => true,
+									'hook_extra'        => array(
+										'plugin' => $plugin,
+									),
+								)
+							);
 
 							$results[ $plugin ] = $this->result;
 
@@ -3194,7 +3409,7 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 				}
 			}
 
-			if ( ! class_exists( 'TGM_Bulk_Installer_Skin' ) ) {
+			if ( ! class_exists( 'TGMPA_Bulk_Installer_Skin' ) ) {
 
 				/**
 				 * Installer skin to set strings for the bulk plugin installations..
@@ -3204,13 +3419,17 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 				 *
 				 * @since 2.2.0
 				 *
+				 * {@internal Since 2.5.2 the class has been renamed from TGM_Bulk_Installer_Skin to
+				 *            TGMPA_Bulk_Installer_Skin.
+				 *            This was done to prevent backward compatibility issues with v2.3.6.}}
+				 *
 				 * @see https://core.trac.wordpress.org/browser/trunk/src/wp-admin/includes/class-wp-upgrader-skins.php
 				 *
 				 * @package TGM-Plugin-Activation
 				 * @author  Thomas Griffin
 				 * @author  Gary Jones
 				 */
-				class TGM_Bulk_Installer_Skin extends Bulk_Upgrader_Skin {
+				class TGMPA_Bulk_Installer_Skin extends Bulk_Upgrader_Skin {
 					/**
 					 * Holds plugin info for each individual plugin installation.
 					 *
@@ -3256,7 +3475,7 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 					 */
 					public function __construct( $args = array() ) {
 						// Get TGMPA class instance.
-						$this->tgmpa = call_user_func( array( get_class( $GLOBALS['tgmpa'] ), 'get_instance' ) );
+						$this->tgmpa = call_user_func( array( get_class( $GLOBALS['bazaar-lite'] ), 'get_instance' ) );
 
 						// Parse default and new args.
 						$defaults = array(
@@ -3285,23 +3504,30 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 					public function add_strings() {
 						if ( 'update' === $this->options['install_type'] ) {
 							parent::add_strings();
-							$this->upgrader->strings['skin_before_update_header'] = __( 'Updating Plugin %1$s (%2$d/%3$d)', 'bazaar-lite' );
+							/* translators: 1: plugin name, 2: action number 3: total number of actions. */
+							$this->upgrader->strings['skin_before_update_header'] = esc_html__( 'Updating Plugin %1$s (%2$d/%3$d)', 'bazaar-lite' );
 						} else {
-							$this->upgrader->strings['skin_update_failed_error'] = __( 'An error occurred while installing %1$s: <strong>%2$s</strong>.', 'bazaar-lite' );
-							$this->upgrader->strings['skin_update_failed']       = __( 'The installation of %1$s failed.', 'bazaar-lite' );
+							/* translators: 1: plugin name, 2: error message. */
+							$this->upgrader->strings['skin_update_failed_error'] = esc_html__( 'An error occurred while installing %1$s: <strong>%2$s</strong>.', 'bazaar-lite' );
+							/* translators: 1: plugin name. */
+							$this->upgrader->strings['skin_update_failed'] = esc_html__( 'The installation of %1$s failed.', 'bazaar-lite' );
 
 							if ( $this->tgmpa->is_automatic ) {
 								// Automatic activation strings.
-								$this->upgrader->strings['skin_upgrade_start']        = __( 'The installation and activation process is starting. This process may take a while on some hosts, so please be patient.', 'bazaar-lite' );
-								$this->upgrader->strings['skin_update_successful']    = __( '%1$s installed and activated successfully.', 'bazaar-lite' ) . ' <a href="#" class="hide-if-no-js" onclick="%2$s"><span>' . esc_html__( 'Show Details', 'bazaar-lite' ) . '</span><span class="hidden">' . esc_html__( 'Hide Details', 'bazaar-lite' ) . '</span>.</a>';
-								$this->upgrader->strings['skin_upgrade_end']          = __( 'All installations and activations have been completed.', 'bazaar-lite' );
-								$this->upgrader->strings['skin_before_update_header'] = __( 'Installing and Activating Plugin %1$s (%2$d/%3$d)', 'bazaar-lite' );
+								$this->upgrader->strings['skin_upgrade_start'] = esc_html__( 'The installation and activation process is starting. This process may take a while on some hosts, so please be patient.', 'bazaar-lite' );
+								/* translators: 1: plugin name. */
+								$this->upgrader->strings['skin_update_successful'] = esc_html__( '%1$s installed and activated successfully.', 'bazaar-lite' ) . ' <a href="#" class="hide-if-no-js" onclick="%2$s"><span>' . esc_html__( 'Show Details', 'bazaar-lite' ) . '</span><span class="hidden">' . esc_html__( 'Hide Details', 'bazaar-lite' ) . '</span>.</a>';
+								$this->upgrader->strings['skin_upgrade_end']       = esc_html__( 'All installations and activations have been completed.', 'bazaar-lite' );
+								/* translators: 1: plugin name, 2: action number 3: total number of actions. */
+								$this->upgrader->strings['skin_before_update_header'] = esc_html__( 'Installing and Activating Plugin %1$s (%2$d/%3$d)', 'bazaar-lite' );
 							} else {
 								// Default installation strings.
-								$this->upgrader->strings['skin_upgrade_start']        = __( 'The installation process is starting. This process may take a while on some hosts, so please be patient.', 'bazaar-lite' );
-								$this->upgrader->strings['skin_update_successful']    = esc_html__( '%1$s installed successfully.', 'bazaar-lite' ) . ' <a href="#" class="hide-if-no-js" onclick="%2$s"><span>' . esc_html__( 'Show Details', 'bazaar-lite' ) . '</span><span class="hidden">' . esc_html__( 'Hide Details', 'bazaar-lite' ) . '</span>.</a>';
-								$this->upgrader->strings['skin_upgrade_end']          = __( 'All installations have been completed.', 'bazaar-lite' );
-								$this->upgrader->strings['skin_before_update_header'] = __( 'Installing Plugin %1$s (%2$d/%3$d)', 'bazaar-lite' );
+								$this->upgrader->strings['skin_upgrade_start'] = esc_html__( 'The installation process is starting. This process may take a while on some hosts, so please be patient.', 'bazaar-lite' );
+								/* translators: 1: plugin name. */
+								$this->upgrader->strings['skin_update_successful'] = esc_html__( '%1$s installed successfully.', 'bazaar-lite' ) . ' <a href="#" class="hide-if-no-js" onclick="%2$s"><span>' . esc_html__( 'Show Details', 'bazaar-lite' ) . '</span><span class="hidden">' . esc_html__( 'Hide Details', 'bazaar-lite' ) . '</span>.</a>';
+								$this->upgrader->strings['skin_upgrade_end']       = esc_html__( 'All installations have been completed.', 'bazaar-lite' );
+								/* translators: 1: plugin name, 2: action number 3: total number of actions. */
+								$this->upgrader->strings['skin_before_update_header'] = esc_html__( 'Installing Plugin %1$s (%2$d/%3$d)', 'bazaar-lite' );
 							}
 						}
 					}
@@ -3523,15 +3749,15 @@ if ( ! class_exists( 'TGMPA_Utils' ) ) {
 
 			if ( is_bool( $value ) ) {
 				return $value;
-			} else if ( is_int( $value ) && ( 0 === $value || 1 === $value ) ) {
+			} elseif ( is_int( $value ) && ( 0 === $value || 1 === $value ) ) {
 				return (bool) $value;
-			} else if ( ( is_float( $value ) && ! is_nan( $value ) ) && ( (float) 0 === $value || (float) 1 === $value ) ) {
+			} elseif ( ( is_float( $value ) && ! is_nan( $value ) ) && ( (float) 0 === $value || (float) 1 === $value ) ) {
 				return (bool) $value;
-			} else if ( is_string( $value ) ) {
+			} elseif ( is_string( $value ) ) {
 				$value = trim( $value );
 				if ( in_array( $value, $true, true ) ) {
 					return true;
-				} else if ( in_array( $value, $false, true ) ) {
+				} elseif ( in_array( $value, $false, true ) ) {
 					return false;
 				} else {
 					return false;

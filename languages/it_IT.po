@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-02 16:42+0200\n"
-"PO-Revision-Date: 2016-09-02 16:43+0200\n"
+"POT-Creation-Date: 2016-09-30 18:34+0200\n"
+"PO-Revision-Date: 2016-09-30 18:34+0200\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
 "Language: it_IT\n"
@@ -895,251 +895,8 @@ msgstr ""
 "sezione portfolio e molto altro."
 
 #: core/includes/class-notice.php:59
-#, php-format
-msgid "<a href=\"%1$s\" class=\"dismiss-notice\">Dismiss this notice</a>"
-msgstr "<a href=“%1$s” class=“dismiss-notice”>Nascondi questo avviso</a>"
-
-#: core/includes/class-plugin-activation.php:301
-msgid "Install Required Plugins"
-msgstr "Installa i plugins necessari."
-
-#: core/includes/class-plugin-activation.php:302
-msgid "Install Plugins"
-msgstr "Installa plugins"
-
-#: core/includes/class-plugin-activation.php:303
-#, php-format
-msgid "Installing Plugin: %s"
-msgstr "Installazione plugin: %s"
-
-#: core/includes/class-plugin-activation.php:304
-msgid "Something went wrong with the plugin API."
-msgstr "Qualcosa è andato storto con le API del plugin."
-
-#: core/includes/class-plugin-activation.php:365
-msgid "Return to Required Plugins Installer"
-msgstr "Ritorna all’installatore dei plugin richiesti."
-
-#: core/includes/class-plugin-activation.php:366
-msgid "Return to the dashboard"
-msgstr "Ritorna alla dashboard."
-
-#: core/includes/class-plugin-activation.php:367
-#: core/includes/class-plugin-activation.php:2959
-msgid "Plugin activated successfully."
-msgstr "Plugin attivato con successo."
-
-#: core/includes/class-plugin-activation.php:368
-msgid "The following plugin was activated successfully:"
-msgstr "Il seguente plugin è stato attivato con successo:"
-
-#: core/includes/class-plugin-activation.php:369
-#, php-format
-msgid "No action taken. Plugin %1$s was already active."
-msgstr "Nessuna risposta. Il plugin %1$s era già stato attivato."
-
-#: core/includes/class-plugin-activation.php:370
-#, php-format
-msgid ""
-"Plugin not activated. A higher version of %s is needed for this theme. "
-"Please update the plugin."
-msgstr ""
-"Plugin non attivato. Una versione più recente di %s è richiesta per questo "
-"tema. Si prega di aggiornare il plugin."
-
-#: core/includes/class-plugin-activation.php:371
-#, php-format
-msgid "All plugins installed and activated successfully. %1$s"
-msgstr "Tutti i plugins installati ed attivati con successo. %1$s"
-
-#: core/includes/class-plugin-activation.php:372
 msgid "Dismiss this notice"
 msgstr "Nascondi questo avviso"
-
-#: core/includes/class-plugin-activation.php:373
-msgid "Please contact the administrator of this site for help."
-msgstr ""
-"Si prega di contattare l’amministratore di questo sito per richiedere "
-"assistenza."
-
-#: core/includes/class-plugin-activation.php:488
-msgid "This plugin needs to be updated to be compatible with your theme."
-msgstr ""
-"Questo plugin deve essere aggiornato per essere compatibile con il nostro "
-"tema."
-
-#: core/includes/class-plugin-activation.php:2122
-msgid "Required"
-msgstr "Richiesto"
-
-#: core/includes/class-plugin-activation.php:2125
-msgid "Recommended"
-msgstr "Raccomandato"
-
-#: core/includes/class-plugin-activation.php:2141
-msgid "WordPress Repository"
-msgstr "Repository WordPress"
-
-#: core/includes/class-plugin-activation.php:2144
-msgid "External Source"
-msgstr "Risorse esterne"
-
-#: core/includes/class-plugin-activation.php:2147
-msgid "Pre-Packaged"
-msgstr "Preconfezionato."
-
-#: core/includes/class-plugin-activation.php:2164
-msgid "Not Installed"
-msgstr "Non installato."
-
-#: core/includes/class-plugin-activation.php:2168
-msgid "Installed But Not Activated"
-msgstr "Tutti i plugins installati ed attivati con successo. %1$s"
-
-#: core/includes/class-plugin-activation.php:2170
-msgid "Active"
-msgstr "Attivo"
-
-#: core/includes/class-plugin-activation.php:2176
-msgid "Required Update not Available"
-msgstr "L’aggiornamento richiesto non è disponibile."
-
-#: core/includes/class-plugin-activation.php:2179
-msgid "Requires Update"
-msgstr "È richiesto l’aggiornamento."
-
-#: core/includes/class-plugin-activation.php:2182
-msgid "Update recommended"
-msgstr "Aggiornamento raccomandato"
-
-#: core/includes/class-plugin-activation.php:2334
-msgid "Installed version:"
-msgstr "Versione installata:"
-
-#: core/includes/class-plugin-activation.php:2342
-msgid "Minimum required version:"
-msgstr "Versione minima richiesta:"
-
-#: core/includes/class-plugin-activation.php:2354
-msgid "Available version:"
-msgstr "Versione disponibile"
-
-#: core/includes/class-plugin-activation.php:2377
-#, php-format
-msgid ""
-"No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
-"Dashboard</a>"
-msgstr ""
-"Nessun plugin da installare, aggiornare o attivare. <a href=\"%1$s\">Ritorna "
-"alla dashboard</a>"
-
-#: core/includes/class-plugin-activation.php:2391
-msgid "Plugin"
-msgstr "Plugin"
-
-#: core/includes/class-plugin-activation.php:2392
-msgid "Source"
-msgstr "Fonte"
-
-#: core/includes/class-plugin-activation.php:2393
-msgid "Type"
-msgstr "Tipo"
-
-#: core/includes/class-plugin-activation.php:2397
-msgid "Version"
-msgstr "Versione"
-
-#: core/includes/class-plugin-activation.php:2398
-msgid "Status"
-msgstr "Stato"
-
-#: core/includes/class-plugin-activation.php:2558
-msgid "Install"
-msgstr "Installa"
-
-#: core/includes/class-plugin-activation.php:2564
-msgid "Update"
-msgstr "Aggiornamento"
-
-#: core/includes/class-plugin-activation.php:2567
-msgid "Activate"
-msgstr "Attivare"
-
-#: core/includes/class-plugin-activation.php:2598
-msgid "No plugins were selected to be installed. No action taken."
-msgstr "Nessun plugin selezionato per essere installato. Nessuna risposta."
-
-#: core/includes/class-plugin-activation.php:2600
-msgid "No plugins were selected to be updated. No action taken."
-msgstr "Nessun plugin selezionato per essere aggiornato. Nessuna risposta."
-
-#: core/includes/class-plugin-activation.php:2636
-msgid "No plugins are available to be installed at this time."
-msgstr "Nessun plugin è disponibile per essere installato in questo momento."
-
-#: core/includes/class-plugin-activation.php:2638
-msgid "No plugins are available to be updated at this time."
-msgstr "Nessun plugin è disponibile per essere aggiornato in questo momento."
-
-#: core/includes/class-plugin-activation.php:2958
-msgid "Plugin activation failed."
-msgstr "Installazione plugin fallita."
-
-#: core/includes/class-plugin-activation.php:3288
-#, php-format
-msgid "Updating Plugin %1$s (%2$d/%3$d)"
-msgstr "Aggiornamento plugin %1$s (%2$d/%3$d)"
-
-#: core/includes/class-plugin-activation.php:3290
-#, php-format
-msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-msgstr ""
-"Si è verificato un errore durante l’installazione %1$s: <strong>%2$s</"
-"strong>."
-
-#: core/includes/class-plugin-activation.php:3291
-#, php-format
-msgid "The installation of %1$s failed."
-msgstr "L’installazione di %1$s è fallita."
-
-#: core/includes/class-plugin-activation.php:3295
-msgid ""
-"The installation and activation process is starting. This process may take a "
-"while on some hosts, so please be patient."
-msgstr ""
-"Il processo d’installazione ed attivazione è partito. Questo processo può "
-"richiedere del tempo su alcuni hosting, si prega di attendere."
-
-#: core/includes/class-plugin-activation.php:3296
-#, php-format
-msgid "%1$s installed and activated successfully."
-msgstr "%1$s installato ed attivato con successo."
-
-#: core/includes/class-plugin-activation.php:3297
-msgid "All installations and activations have been completed."
-msgstr "Tutte le installazioni e le attivazione sono state completate."
-
-#: core/includes/class-plugin-activation.php:3298
-#, php-format
-msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-msgstr "Installazione ed attivazione plugin %1$s (%2$d/%3$d)"
-
-#: core/includes/class-plugin-activation.php:3301
-msgid ""
-"The installation process is starting. This process may take a while on some "
-"hosts, so please be patient."
-msgstr ""
-"Il processo d’installazione è partito. Questo processo può richiedere del "
-"tempo su alcuni hosting, si prega di attendere."
-
-#: core/includes/class-plugin-activation.php:3303
-msgid "All installations have been completed."
-msgstr "Tutte le installazioni sono state completate."
-
-#: core/includes/class-plugin-activation.php:3304
-#, php-format
-msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr "Installazione plugin %1$s (%2$d/%3$d)"
 
 #: core/metaboxes/pages.php:19 core/metaboxes/pages.php:30
 #: core/metaboxes/pages.php:56 core/metaboxes/posts.php:19
@@ -1463,6 +1220,186 @@ msgstr "Proprietario verificato"
 #: woocommerce/single-product/up-sells.php:47
 msgid "You may also like&hellip;"
 msgstr "Ti potrebbe anche interessare&hellip;"
+
+#~ msgid "<a href=\"%1$s\" class=\"dismiss-notice\">Dismiss this notice</a>"
+#~ msgstr "<a href=“%1$s” class=“dismiss-notice”>Nascondi questo avviso</a>"
+
+#~ msgid "Install Required Plugins"
+#~ msgstr "Installa i plugins necessari."
+
+#~ msgid "Install Plugins"
+#~ msgstr "Installa plugins"
+
+#~ msgid "Installing Plugin: %s"
+#~ msgstr "Installazione plugin: %s"
+
+#~ msgid "Something went wrong with the plugin API."
+#~ msgstr "Qualcosa è andato storto con le API del plugin."
+
+#~ msgid "Return to Required Plugins Installer"
+#~ msgstr "Ritorna all’installatore dei plugin richiesti."
+
+#~ msgid "Return to the dashboard"
+#~ msgstr "Ritorna alla dashboard."
+
+#~ msgid "Plugin activated successfully."
+#~ msgstr "Plugin attivato con successo."
+
+#~ msgid "The following plugin was activated successfully:"
+#~ msgstr "Il seguente plugin è stato attivato con successo:"
+
+#~ msgid "No action taken. Plugin %1$s was already active."
+#~ msgstr "Nessuna risposta. Il plugin %1$s era già stato attivato."
+
+#~ msgid ""
+#~ "Plugin not activated. A higher version of %s is needed for this theme. "
+#~ "Please update the plugin."
+#~ msgstr ""
+#~ "Plugin non attivato. Una versione più recente di %s è richiesta per "
+#~ "questo tema. Si prega di aggiornare il plugin."
+
+#~ msgid "All plugins installed and activated successfully. %1$s"
+#~ msgstr "Tutti i plugins installati ed attivati con successo. %1$s"
+
+#~ msgid "Please contact the administrator of this site for help."
+#~ msgstr ""
+#~ "Si prega di contattare l’amministratore di questo sito per richiedere "
+#~ "assistenza."
+
+#~ msgid "This plugin needs to be updated to be compatible with your theme."
+#~ msgstr ""
+#~ "Questo plugin deve essere aggiornato per essere compatibile con il nostro "
+#~ "tema."
+
+#~ msgid "Required"
+#~ msgstr "Richiesto"
+
+#~ msgid "Recommended"
+#~ msgstr "Raccomandato"
+
+#~ msgid "WordPress Repository"
+#~ msgstr "Repository WordPress"
+
+#~ msgid "External Source"
+#~ msgstr "Risorse esterne"
+
+#~ msgid "Pre-Packaged"
+#~ msgstr "Preconfezionato."
+
+#~ msgid "Not Installed"
+#~ msgstr "Non installato."
+
+#~ msgid "Installed But Not Activated"
+#~ msgstr "Tutti i plugins installati ed attivati con successo. %1$s"
+
+#~ msgid "Active"
+#~ msgstr "Attivo"
+
+#~ msgid "Required Update not Available"
+#~ msgstr "L’aggiornamento richiesto non è disponibile."
+
+#~ msgid "Requires Update"
+#~ msgstr "È richiesto l’aggiornamento."
+
+#~ msgid "Update recommended"
+#~ msgstr "Aggiornamento raccomandato"
+
+#~ msgid "Installed version:"
+#~ msgstr "Versione installata:"
+
+#~ msgid "Minimum required version:"
+#~ msgstr "Versione minima richiesta:"
+
+#~ msgid "Available version:"
+#~ msgstr "Versione disponibile"
+
+#~ msgid ""
+#~ "No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
+#~ "Dashboard</a>"
+#~ msgstr ""
+#~ "Nessun plugin da installare, aggiornare o attivare. <a href=\"%1$s"
+#~ "\">Ritorna alla dashboard</a>"
+
+#~ msgid "Plugin"
+#~ msgstr "Plugin"
+
+#~ msgid "Source"
+#~ msgstr "Fonte"
+
+#~ msgid "Type"
+#~ msgstr "Tipo"
+
+#~ msgid "Version"
+#~ msgstr "Versione"
+
+#~ msgid "Status"
+#~ msgstr "Stato"
+
+#~ msgid "Install"
+#~ msgstr "Installa"
+
+#~ msgid "Update"
+#~ msgstr "Aggiornamento"
+
+#~ msgid "Activate"
+#~ msgstr "Attivare"
+
+#~ msgid "No plugins were selected to be installed. No action taken."
+#~ msgstr "Nessun plugin selezionato per essere installato. Nessuna risposta."
+
+#~ msgid "No plugins were selected to be updated. No action taken."
+#~ msgstr "Nessun plugin selezionato per essere aggiornato. Nessuna risposta."
+
+#~ msgid "No plugins are available to be installed at this time."
+#~ msgstr ""
+#~ "Nessun plugin è disponibile per essere installato in questo momento."
+
+#~ msgid "No plugins are available to be updated at this time."
+#~ msgstr ""
+#~ "Nessun plugin è disponibile per essere aggiornato in questo momento."
+
+#~ msgid "Plugin activation failed."
+#~ msgstr "Installazione plugin fallita."
+
+#~ msgid "Updating Plugin %1$s (%2$d/%3$d)"
+#~ msgstr "Aggiornamento plugin %1$s (%2$d/%3$d)"
+
+#~ msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+#~ msgstr ""
+#~ "Si è verificato un errore durante l’installazione %1$s: <strong>%2$s</"
+#~ "strong>."
+
+#~ msgid "The installation of %1$s failed."
+#~ msgstr "L’installazione di %1$s è fallita."
+
+#~ msgid ""
+#~ "The installation and activation process is starting. This process may "
+#~ "take a while on some hosts, so please be patient."
+#~ msgstr ""
+#~ "Il processo d’installazione ed attivazione è partito. Questo processo può "
+#~ "richiedere del tempo su alcuni hosting, si prega di attendere."
+
+#~ msgid "%1$s installed and activated successfully."
+#~ msgstr "%1$s installato ed attivato con successo."
+
+#~ msgid "All installations and activations have been completed."
+#~ msgstr "Tutte le installazioni e le attivazione sono state completate."
+
+#~ msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+#~ msgstr "Installazione ed attivazione plugin %1$s (%2$d/%3$d)"
+
+#~ msgid ""
+#~ "The installation process is starting. This process may take a while on "
+#~ "some hosts, so please be patient."
+#~ msgstr ""
+#~ "Il processo d’installazione è partito. Questo processo può richiedere del "
+#~ "tempo su alcuni hosting, si prega di attendere."
+
+#~ msgid "All installations have been completed."
+#~ msgstr "Tutte le installazioni sono state completate."
+
+#~ msgid "Installing Plugin %1$s (%2$d/%3$d)"
+#~ msgstr "Installazione plugin %1$s (%2$d/%3$d)"
 
 #~ msgid ""
 #~ "Upgrade to the premium version of Bazaar, to enable 600+ Google Fonts, "

@@ -23,6 +23,12 @@ if (!function_exists('bazaarlite_required_plugins')) {
 		$plugins = array(
 
 			array(
+				'name'      => 'WIP WooCarousel Lite',
+				'slug'      => 'wip-woocarousel-lite',
+				'required'  => false,
+			),
+	
+			array(
 				'name'      => 'WIP Custom Login',
 				'slug'      => 'wip-custom-login',
 				'required'  => false,
