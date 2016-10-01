@@ -3,7 +3,6 @@
 * The Header for our theme.
 */
 ?><!DOCTYPE html>
-<?php global $advertica_shortname, $advertica_themename; ?>
 <!--[if IE 7]>
 <html class="ie ie7" <?php language_attributes(); ?>>
 <![endif]-->
@@ -15,8 +14,8 @@
 <!--<![endif]-->
 <head>
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <!--[if IE 9]>
 	<meta http-equiv="X-UA-Compatible" content="IE=9" />
 <![endif]-->
@@ -33,9 +32,9 @@
 						<div class="row-fluid">      
 							<!-- #logo -->
 							<div id="logo" class="span4">
-								<?php if(sketch_get_option($advertica_shortname."_logo_img")){ ?>
-									<a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>" ><img class="logo" src="<?php echo sketch_get_option($advertica_shortname."_logo_img"); ?>" alt="<?php echo sketch_get_option($advertica_shortname."_logo_alt"); ?>" /></a>
-								<?php } else{ ?>
+								<?php if( get_theme_mod('advertica_lite_logo_img', '') != '' ){ ?>
+									<a href="<?php echo esc_url(home_url('/')); ?>" title="<?php bloginfo('name'); ?>" ><img class="logo" src="<?php echo esc_url( get_theme_mod('advertica_lite_logo_img') ); ?>" alt="<?php bloginfo('name') ?>" /></a>
+								<?php } elseif ( display_header_text() ) { ?>
 								<!-- #description -->
 								<div id="site-title" class="logo_desp">
 									<a href="<?php echo esc_url(home_url('/')); ?>" title="<?php bloginfo('name') ?>" ><?php bloginfo('name'); ?></a> 
@@ -49,7 +48,7 @@
 							<div class="top-nav-menu span8">
 							<?php 
 								if( function_exists( 'has_nav_menu' ) && has_nav_menu( 'Header' ) ) {
-									wp_nav_menu(array( 'container_class' => 'ske-menu', 'container_id' => 'skenav', 'menu_id' => 'menu-main','menu' => 'Primary Menu','theme_location' => 'Header' )); 
+									wp_nav_menu(array( 'container_class' => 'ske-menu', 'container_id' => 'skenav', 'menu_id' => 'menu-main','theme_location' => 'Header' )); 
 								} else {
 								?>
 								<div class="ske-menu" id="skenav">
@@ -68,11 +67,10 @@
 			</div>
 			<!-- glow --> 
 		</div>
-<!-- #header -->
+	<!-- #header -->
 		<div class="header-clone"></div>
 		
 <!-- header image section -->
-  <?php $classes = get_body_class(); ?>
-  <?php if(in_array('front-page',$classes)) {  include("includes/front-header-image-section.php");} ?>
+<?php get_template_part("includes/front","header-image-section"); ?>
 
 <div id="main" class="clearfix">

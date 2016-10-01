@@ -4,7 +4,7 @@
 * Learn more: http://codex.wordpress.org/Template_Hierarchy
 */
 get_header(); ?>
-<?php global $advertica_shortname; ?>
+
 <div class="main-wrapper-item">
 	<div class="bread-title-holder">
 		<div class="bread-title-bg-image full-bg-breadimage-fixed"></div>
@@ -15,7 +15,10 @@ get_header(); ?>
 						<?php  $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author)); ?>
 						<?php _e('Author Archives : ','advertica-lite'); echo $curauth->display_name;  ?>
 					</h1>
-					<?php if ((class_exists('advertica_breadcrumb_class'))) {$advertica_breadcumb->custom_breadcrumb();} ?>
+					<?php  if( get_theme_mod('breadcrumb_sec', 'on') == 'on' ) {
+						if ((class_exists('advertica_lite_breadcrumb_class'))) {$advertica_breadcumb->advertica_lite_custom_breadcrumb();}
+					}
+					?>
 				</div>
 			</div>
 		</div>

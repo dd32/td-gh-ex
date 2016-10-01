@@ -1,74 +1,52 @@
 ﻿/*
 Theme Name: Advertica Lite
 Theme URI: http://www.sketchthemes.com/themes/advertica-the-uber-clean-multipurpose-wordpress-theme/
-Description: Behold the glory of the most beautiful Business theme, ADVERTICA. Advertica is a clean, elegant, beautiful, responsive, and SEO optimized WordPress Theme from SketchThemes. Adverica features a bag full of features that would give you a massive edge when you're creating a website for yourself or for your clients. Some key features worth noticing are: 1-It has a responsive bootstrap framework allowing your site to be seen flawlessly even on mobile devices. 2-Featured Boxes allows you to highlight your key service sectors. 3-You can showcase your work through the 'Latest Projects section'. 4-A Parallax Section is there to give your side a creative edge. 5-Easy to use and customizable Admin Panel which is as easy as pie. 6-Beautifully carved Footer which can be ornate with cool widgets. Apart from the above mentioned super-cool features, Advertica dawns Fluid Layout, Fixed Layout, Persistant Header, Custom Menu, Full-Width Template, Client Logo Section, Translation Ready, Easy to Use Theme Options Panel, Sticky Posts, Right & Left Sidebars, SEO Optimized, Supports Threaded Comments.
-Version: 1.0.1
+Description: Advertica Lite is responsive and multipurpose wordpress theme effectively used for business, corporate or portfolio purpose. It works good for creative professionals, advertising agency or even construction business, engineering industry or contractor. Advertica Lite comes with a highly responsive bootstrap framework and a parallax section to mesmerize your visitors with maximum effect. This trendy theme clubs rtl support and impressive landing page and also ideal for marketing or digital marketing of your products and services. The startups can have appealing presentation of their site through this theme while those in the business can decently put up their portfolio.
+Version: 1.0.10
 Author: SketchThemes
-Author URI: http://www.sketchthemes.com
-License: GNU General Public License v2.0
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: blue, gray, orange, pink, purple, dark, light, two-columns, right-sidebar, left-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-colors, custom-menu, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
--------------------------------------------------------------- */
+Author URI: https://sketchthemes.com/
+License: GNU General Public License v3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Tags: custom-background, custom-colors, custom-header, custom-menu, editor-style, one-column, two-columns, right-sidebar, featured-image-header, featured-images, sticky-post, theme-options, threaded-comments, translation-ready , full-width-template
+Text Domain: advertica-lite
 
-/* =OpanSans Fonts
--------------------------------------------------------------- */
-@font-face {
-    font-family: 'OpenSansLight';
-    src: url('css/fonts/OpenSans-Light-webfont.eot');
-    src: url('css/fonts/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('css/fonts/OpenSans-Light-webfont.woff') format('woff'),
-         url('css/fonts/OpenSans-Light-webfont.ttf') format('truetype'),
-         url('css/fonts/OpenSans-Light-webfont.svg#OpenSansLight') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'OpenSansRegular';
-    src: url('css/fonts/OpenSans-Regular-webfont.eot');
-    src: url('css/fonts/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('css/fonts/OpenSans-Regular-webfont.woff') format('woff'),
-         url('css/fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
-         url('css/fonts/OpenSans-Regular-webfont.svg#OpenSansRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'OpenSansSemibold';
-    src: url('css/fonts/OpenSans-Semibold-webfont.eot');
-    src: url('css/fonts/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('css/fonts/OpenSans-Semibold-webfont.woff') format('woff'),
-         url('css/fonts/OpenSans-Semibold-webfont.ttf') format('truetype'),
-         url('css/fonts/OpenSans-Semibold-webfont.svg#OpenSansSemibold') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'OpenSansBold';
-    src: url('css/fonts/OpenSansBold-webfont.eot');
-    src: url('css/fonts/OpenSansBold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('css/fonts/OpenSansBold-webfont.woff') format('woff'),
-         url('css/fonts/OpenSansBold-webfont.ttf') format('truetype'),
-         url('css/fonts/OpenSansBold-webfont.svg#OpenSansBold') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'open_sansitalic';
-    src: url('css/fonts/OpenSans-Italic-webfont.eot');
-    src: url('css/fonts/OpenSans-Italic-webfont.eot?#iefix') format('embedded-opentype'),
-         url('css/fonts/OpenSans-Italic-webfont.woff') format('woff'),
-         url('css/fonts/OpenSans-Italic-webfont.ttf') format('truetype'),
-         url('css/fonts/OpenSans-Italic-webfont.svg#open_sansitalic') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-/*--------------------------------------------------------------*/
+Advertica Lite WordPress Theme, Copyright 2015 SketchThemes
+Advertica Lite WordPress theme is distributed under the terms of the GNU GPL.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+--------------------------------------------------------------
+WARNING: (BEFORE YOU MAKE ANY CHANGES)
+--------------------------------------------------------------
+Please do not edit style.css or any other Theme files or 
+Templates directly. If you do, your customizations will be lost 
+as soon as you update Invert Lite.
+
+WordPress and SketchThemes highly recommends Child Theme.
+
+Read More:
+
+- http://codex.wordpress.org/Child_Themes  
+
+--------------------------------------------------------------
+*/
 
 .clear {clear:both;}
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {background: transparent;border: 0;margin: 0;padding: 0;vertical-align: baseline;}
-body { color: #777777;  font-family: 'OpenSansRegular';  font-size: 12px;  line-height: 22px;font-weight:300;}
+body { color: #777777;  font-family: 'Open Sans', sans-serif;  font-size: 12px;  line-height: 22px;font-weight:300;}
 p, dl, hr, h1, h2, h3, h4, h5, h6, ol, ul, pre, table, address, fieldset, figure {font-weight: 300;  margin-bottom: 20px;  line-height: 22px;}
-h1, h2, h3, h4, h5, h6{ color: #555555;font-family: 'OpenSansSemiBold';font-weight: normal;letter-spacing: -0.5px;}
+h1, h2, h3, h4, h5, h6{ color: #555555; font-weight: 600; letter-spacing: -0.5px;}
 pre {  overflow: auto;  width: 98%;}
 embed {max-width: 100%;}
 ol{list-style: decimal outside none;}
@@ -77,7 +55,7 @@ li{margin-left: 30px;}
 dl {margin: 0 0 24px;float: left;}
 dt {font-weight: 400;}
 dd {margin-bottom: 18px;}
-blockquote {background-color: #F54336;border-radius: 2px;font-size: 14px !important; padding:8px 5px 8px 20px;  margin-right: 10px;  margin-bottom: 10px;  color: #FFFFFF;  quotes: none;  font-family: 'open_sansitalic';line-height: 22px;}
+blockquote {background-color: #F54336;border-radius: 2px;font-size: 14px !important; padding:8px 5px 8px 20px;  margin-right: 10px;  margin-bottom: 10px;  color: #FFFFFF;  quotes: none;  font-style: italic;line-height: 22px;}
 cite{font-weight: 400;}
 blockquote cite a{color: #FFFFFF;}
 iframe { max-width: 100%; width:100%;outline: none;border:none;overflow:hidden;border:none;}
@@ -100,12 +78,12 @@ body.page-template-template-front-page-php #main{margin-top:0 !important;}
 #header { padding: 0;  position: relative;   z-index: 9999; box-shadow: 3px 0 2px rgba(0, 0, 0, 0.5);background: #fff;}
 .skehead-headernav{ left: 0;top: 0;width: 100%;z-index: 200;}
 #header.skehead-headernav.skehead-headernav-shrink{position:fixed;-moz-box-sizing: border-box;box-sizing: border-box;}
-#logo {transition: height 0.3s ease 0s, line-height 0.3s ease 0s; margin-top: 5px;  margin-bottom: 5px;position: relative;max-height: 62px;}
+#logo {transition: height 0.3s ease 0s, line-height 0.3s ease 0s; margin-top: 5px;  margin-bottom: 5px;position: relative; max-height: 62px;}
 #logo #site-title { display: block;font-size: 18px;margin: 8px 0 11px;}
-.skehead-headernav .logo{margin-top:18px;}
+.skehead-headernav .logo{margin-top:18px; max-width: 100%; max-height: 62px; }
 .skehead-headernav.skehead-headernav-shrink .logo {  height: 34px;margin-top: 3px;position: relative;top: 3px;width: auto;}
 .skehead-headernav.skehead-headernav-shrink #logo #site-title {margin: 0 0 2px;}
-#logo #site-title a { color: #333333;display: inline-block;font-family: OpenSansBold;font-size: 18px;font-weight: 300;line-height: 23px; margin-top: 5px; text-decoration: none; text-transform: uppercase;} 
+#logo #site-title a { color: #333333;display: inline-block;font-size: 18px;font-weight: 700;line-height: 23px; margin-top: 5px; text-decoration: none; text-transform: uppercase;} 
 #logo #site-description { color: #555;  font-size: 11px; line-height: 15px;position: relative; left: 1px;}
 .skehead-headernav.skehead-headernav-shrink #logo #site-title a{font-size: 15px;line-height: 20px;  margin-top: 6px;}
 .skehead-headernav.skehead-headernav-shrink  #logo #site-description {  font-size: 11px;margin-top: 2px;}
@@ -135,12 +113,12 @@ body.page-template-template-front-page-php #main{margin-top:0 !important;}
 #skenav ul ul a {  line-height: 1.2em;  font-size: 13px;  padding: 10px 20px;  width: auto;  height: auto;  color: #FFFFFF;  }
 #header.skehead-headernav-shrink #skenav ul ul a {  line-height: 1.2em;  }
 #skenav ul li:hover{  z-index:999999999999;  }
-* html #skenav ul li.current_page_item a, * html #skenav ul li.current-menu-ancestor a, * html #skenav ul li.current-menu-item a, * html #skenav ul li.current-menu-parent a, * html #skenav ul li a:hover {  color: #fff;  }
+* html #skenav ul li.current_page_item a, * html #skenav ul li.current-menu-ancestor a, * html #skenav ul li.current-menu-item a,* html #skenav ul li.current-menu-parent a, * html #skenav ul li a:hover {  color: #fff;  }
 
 /* =Content
 -------------------------------------------------------------- */
 #container {}
-#main {  padding: 0 0 0px;  background: none repeat scroll 0 0 #FEFEFE; }
+#main {  padding: 0 0 0px; }
 #content {  word-wrap: break-word;  -ms-word-wrap: break-word; }
 .left-sidebar #content{margin-top:0px;}
 .container.post-wrap { margin-top: 60px;  }
@@ -170,8 +148,8 @@ body.page-template-template-front-page-php #main{margin-top:0 !important;}
 .entry {  margin: 10px 0 15px;  }
 .entry-title a {  color: #000000;  text-decoration: none;  }
 .post-title{ margin-bottom: 4px;}
-.post-title a { font-family: OpenSansSemibold; font-size: 26px; line-height: 30px;transition: all 0.3s linear 0s; -webkit-transition: all 0.3s linear 0s;-moz-transition: all 0.3s linear 0s;-o-transition: all 0.3s linear 0s;} 	
-.title{ font-family: OpenSansSemibold; font-size: 26px; line-height: 30px;} 
+.post-title a { font-weight: 600; font-size: 26px; line-height: 30px;transition: all 0.3s linear 0s; -webkit-transition: all 0.3s linear 0s;-moz-transition: all 0.3s linear 0s;-o-transition: all 0.3s linear 0s;} 	
+.title{ font-weight: 600; font-size: 26px; line-height: 30px;} 
 .skepost-meta {  color: #999; font-size: 11px; margin-bottom: 15px; word-spacing: 2px } 	
 .skepost-meta abbr {  border: none;  }
 .skepost-meta abbr:hover {  border-bottom: 1px dotted #666;  }
@@ -194,14 +172,14 @@ body.page .edit-link {  clear: both;  display: block;  }
 .readmore a {  background-color: #444444;  border-radius: 5px 5px 5px 5px;  color: #FFFFFF;  display: block;  font-style: italic;  height: 24px;  overflow: hidden;  padding: 0 2px 0 10px;  text-decoration: none;  width: 91px;  }
 .readmore a:hover {  background-color: #5F5F5F;  }
 #content .continue{ text-align:right; }
-.continue a { border: 1px solid #999; cursor: pointer; color:#999;  margin-top: 4px; display: inline-block; font-family: OpenSansBold; font-size: 12px; letter-spacing: 1px; line-height: 20px; margin-bottom: 0; padding: 8px 9px; position: relative; text-transform: uppercase; transition: all 0.3s linear 0s;-webkit-transition: all 0.3s linear 0s;-moz-transition: all 0.3s linear 0s;-o-transition: all 0.3s linear 0s;} 	
+.continue a { border: 1px solid #999; cursor: pointer; color:#999;  margin-top: 4px; display: inline-block; font-weight: 700; font-size: 12px; letter-spacing: 1px; line-height: 20px; margin-bottom: 0; padding: 8px 9px; position: relative; text-transform: uppercase; transition: all 0.3s linear 0s;-webkit-transition: all 0.3s linear 0s;-moz-transition: all 0.3s linear 0s;-o-transition: all 0.3s linear 0s;} 	
 .continue a:hover { background: none repeat scroll 0 0 #F54336; color: #FFFFFF; transition: all 0.3s linear 0s; -webkit-transition: all 0.3s linear 0s;  	-moz-transition: all 0.3s linear 0s;  	-o-transition: all 0.3s linear 0s;  }
-.sticky-post {  border-bottom: 1px solid rgba(0, 0, 0, 0); font-family: OpenSansSemibold; font-size: 20px; font-weight: 300; padding-bottom: 10px; padding-top: 35px; text-transform: uppercase; width: 120px;} 	
+.sticky-post {  border-bottom: 1px solid rgba(0, 0, 0, 0); font-weight: 600; font-size: 20px; padding-bottom: 10px; padding-top: 35px; text-transform: uppercase; width: 120px;} 	
 .sticky-post:first-child{padding-top:0; margin-top: -5px;}
 #content .post.sticky { padding-top: 15px;}
 .single #content .title{margin-bottom:4px;}
 #content.blogsidebar{margin-top:0px;}
-#front-content-box .container p {margin:0;}
+#front-page-content .container p {margin:0;}
 
 /* = page title css
 -------------------------------------------------------------- */
@@ -213,6 +191,13 @@ body.page .edit-link {  clear: both;  display: block;  }
 
 /* = front css
 -------------------------------------------------------------- */
+.front-header-image{display: none; line-height: 0;}
+.home .front-header-image{display: block;}
+#front-page-content{display: none;}
+.home.page #front-page-content{display: block;}
+#front-blog-wrap .span4:nth-child(3n+1) { margin-left: 0;}
+#front-blog-wrap .span4{padding-bottom:25px; min-height: 320px;}
+
 #featured-box{margin-top:95px;}
 .skt-section{margin-top:65px;}
 .skt-iconbox.iconbox-top {text-align: center;}
@@ -236,7 +221,7 @@ body.page .edit-link {  clear: both;  display: block;  }
 .skt-iconbox.iconbox-top .iconbox-content h4:after {background-color: #999999; bottom: 0; content: "";  display: block;height: 1px; left: 50%; margin-left: -25px; position: absolute; width: 50px;  }
 .skt-iconbox.iconbox-top .iconbox-content h4 {margin-bottom: 20px;padding-bottom: 20px;}
 .skt-iconbox .iconbox-content h4 {font-size: 19px; position: relative; text-transform: capitalize;} 	
-.skt-parallax-button {border: 1px solid #F54336; cursor: pointer; display: inline-block; font-family: OpenSansBold; font-size: 12px; letter-spacing: 1px; line-height: 20px; margin-bottom: 0; padding: 8px 25px; position: relative; text-transform: uppercase;transition: all 0.3s linear 0s; -webkit-transition: all 0.3s linear 0s; -moz-transition: all 0.3s linear 0s; -o-transition: all 0.3s linear 0s; } 	
+.skt-parallax-button {border: 1px solid #F54336; cursor: pointer; display: inline-block; font-weight: 700; font-size: 12px; letter-spacing: 1px; line-height: 20px; margin-bottom: 0; padding: 8px 25px; position: relative; text-transform: uppercase;transition: all 0.3s linear 0s; -webkit-transition: all 0.3s linear 0s; -moz-transition: all 0.3s linear 0s; -o-transition: all 0.3s linear 0s; } 	
 .skt-parallax-button:hover { background:#F54336;color:#fff; transition: all 0.3s linear 0s;-webkit-transition: all 0.3s linear 0s;-moz-transition: all 0.3s linear 0s;-o-transition: all 0.3s linear 0s;}
 .iconbox-content h4{transition: all .5s ease 0s; -webkit-transition: all .5s ease 0s; -moz-transition: all .5s ease 0s; -o-transition: all .5s ease 0s;}
 .mid-box-mid .mid-box:hover .iconbox-content h4{transition: all .5s ease 0s; -webkit-transition: all .5s ease 0s; -moz-transition: all .5s ease 0s; -o-transition: all .5s ease 0s;}
@@ -264,13 +249,13 @@ body.page .edit-link {  clear: both;  display: block;  }
 .clients-items li:hover img{opacity: 1;transition: all 0.8s ease 0s;-webkit-transition: all 0.8s ease 0s;-moz-transition: all 0.8s ease 0s;-o-transition: all 0.8s ease 0s;}
 .clients-items li a:hover { border-bottom: 1px solid #F54336; opacity: 1;transition: all 0.8s ease 0s;-webkit-transition: all 0.8s ease 0s; -moz-transition: all 0.8s ease 0s;-o-transition: all 0.8s ease 0s;  }
 .clients-items {margin-top:40px;margin-bottom: 0;}
-.para_btn{ border: 1px solid #FFFFFF; color: #FFFFFF; display: inline-block; font-family: 'OpenSansBold'; font-size: 12px; letter-spacing: 2px; line-height: 21px; margin-top: 35px; padding: 8px 17px; text-transform: uppercase;transition: all 0.8s ease 0s;-webkit-transition: all 0.8s ease 0s; -moz-transition: all 0.8s ease 0s; -o-transition: all 0.8s ease 0s; } 	
+.para_btn{ border: 1px solid #FFFFFF; color: #FFFFFF; display: inline-block; font-weight: 700; font-size: 12px; letter-spacing: 2px; line-height: 21px; margin-top: 35px; padding: 8px 17px; text-transform: uppercase;transition: all 0.8s ease 0s;-webkit-transition: all 0.8s ease 0s; -moz-transition: all 0.8s ease 0s; -o-transition: all 0.8s ease 0s; } 	
 .para_btn:hover { background: none repeat scroll 0 0 #FFFFFF;transition: all 0.8s ease 0s;-webkit-transition: all 0.8s ease 0s;  	-moz-transition: all 0.8s ease 0s;  	-o-transition: all 0.8s ease 0s;  color:#FFA500;}
 .skt-awesome-section {text-align: center;}
-.skt-awesome-title {color: #fff;font-family: OpenSansSemibold;font-size: 50px;line-height: 50px;}
+.skt-awesome-title {color: #fff;font-weight: 600;font-size: 50px;line-height: 50px;}
 .skt-awesome-desp {font-size: 18px;line-height: 27px;margin-top: 10px;}
-#full-client-box h3 {font-family: 'OpenSansbold';font-size: 18px;font-weight: 300;letter-spacing: 1px;margin: 0 0 10px;padding-top: 0; text-transform: uppercase;}
-#full-client-box .border_left {border-bottom: 1px solid #999999; display: block;margin-bottom: 10px;width: 100px;}
+.inline-border {font-size: 18px;font-weight: 700;letter-spacing: 1px;margin: 0 0 10px;padding-top: 0; text-transform: uppercase;}
+.border_left {border-bottom: 1px solid #999999; display: block;margin-bottom: 10px;width: 100px;}
 #full-client-box {margin-bottom: 65px;}
 
 
@@ -322,7 +307,7 @@ input[type=submit] {color: #333;}
 .comments-template {border-top:1px dotted #EEEEEE;  margin-bottom: 20px;  margin-top: 20px;}
 .comments-template #commentsbox { padding-top: 10px;}
 .comments-template a {text-decoration: none; }
-.comments-template .reply  a {  border: 1px solid #F54336;  cursor: pointer;  display: inline-block;  font-family: OpenSansBold;font-size: 12px !important;letter-spacing: 1px; text-transform: uppercase;line-height: 19px; margin-bottom: 0;  padding:7px 22px;  position: relative;  transition: all 0.3s linear 0s;  -webkit-transition: all 0.3s linear 0s;  -moz-transition: all 0.3s linear 0s;  -o-transition: all 0.3s linear 0s;  text-decoration: none;  }
+.comments-template .reply  a {  border: 1px solid #F54336;  cursor: pointer;  display: inline-block;  font-weight: 700;font-size: 12px !important;letter-spacing: 1px; text-transform: uppercase;line-height: 19px; margin-bottom: 0;  padding:7px 22px;  position: relative;  transition: all 0.3s linear 0s;  -webkit-transition: all 0.3s linear 0s;  -moz-transition: all 0.3s linear 0s;  -o-transition: all 0.3s linear 0s;  text-decoration: none;  }
 .comments-template .reply  a:hover { background: none repeat scroll 0 0 #F54336;color: #FFFFFF; transition: all 0.3s linear 0s; -webkit-transition: all 0.3s linear 0s;-moz-transition: all 0.3s linear 0s;-o-transition: all 0.3s linear 0s;}
 #comments {  color:#333;  font-size:18px;  margin-bottom:0;  padding:10px 0;  }
 .commentmetadata {  margin:0 0 15px;  position: relative;  }
@@ -340,9 +325,9 @@ h3#reply-title {  margin: 18px 0;  }
 #cancel-comment-reply-link {  font-size: 12px;  font-weight: normal;  line-height: 18px;  color: #888;  text-decoration: none;  }
 #respond .required {  color: #ff4b33;font-size: 16px;}
 #respond label {  float: left;font-size: 13px; margin-top: 5px;color:#666;}
-#respond input[type="submit"] {background: none repeat scroll 0 0 rgba(0, 0, 0, 0); border: 1px solid #F54336; cursor: pointer; display: inline-block; height: auto; font-family: OpenSansBold;font-size: 12px !important;letter-spacing: 1px; margin-bottom: 0;padding: 8px 25px;position: relative; text-transform: uppercase;transition: all 0.3s linear 0s;-webkit-transition: all 0.3s linear 0s;-moz-transition: all 0.3s linear 0s;-o-transition: all 0.3s linear 0s;  }
+#respond input[type="submit"] {background: none repeat scroll 0 0 rgba(0, 0, 0, 0); border: 1px solid #F54336; cursor: pointer; display: inline-block; height: auto; font-weight: 700;font-size: 12px !important;letter-spacing: 1px; margin-bottom: 0;padding: 8px 25px;position: relative; text-transform: uppercase;transition: all 0.3s linear 0s;-webkit-transition: all 0.3s linear 0s;-moz-transition: all 0.3s linear 0s;-o-transition: all 0.3s linear 0s;  }
 #respond input[type="submit"]:hover {background: none repeat scroll 0 0 #F54336; color: #FFFFFF; transition: all 0.3s linear 0s;  -webkit-transition: all 0.3s linear 0s; -moz-transition: all 0.3s linear 0s; -o-transition: all 0.3s linear 0s;  }
-#respond input, #respond textarea { background: none repeat scroll 0 0 #F9F9F9; border: 1px solid #E1E1E1; color: #666666; float: right; font-family: OpenSansRegular,sans-serif; font-size: 12px; font-weight: 300; height: 30px; margin: 0 0 22px; padding: 4px; width: 78%;}  	
+#respond input, #respond textarea { background: none repeat scroll 0 0 #F9F9F9; border: 1px solid #E1E1E1; color: #666666; float: right; font-family: 'Open Sans', sans-serif; font-size: 12px; font-weight: 300; height: 30px; margin: 0 0 22px; padding: 4px; width: 78%;}  	
 #respond .comment-form-comment {      height: 102px;  }
 #commentform .submit {  float: right;  width: 175px;  }
 #respond textarea {  height: 182px;  overflow:auto;  }
@@ -381,8 +366,8 @@ h3#reply-title {  margin: 18px 0;  }
 .ske_search label {display: none;  }
 .error404 #searchform input[type="text"],
 .search #searchform input[type="text"], 
-#sidebar #searchform input[type="text"],#footer #searchform input[type="text"] {  border: 1px solid #DDDDDD; color: #666; font-family: 'OpenSansRegular', sans-serif; height: 25px; padding-left: 5px; width: 197px;border-right:0; font-size: 12px;font-weight: 300;} 
-#searchform input[type="submit"] { height: 29px; border-style: none; color: #FFFFFF; display: block; font-family: 'OpenSansRegular', sans-serif;overflow: hidden; padding: 4px 11px; text-decoration: none; width: auto;cursor:pointer;font-size: 12px;font-weight: 300;margin:0;-webkit-padding-before:5px;-webkit-padding-after:5px;-webkit-padding-start:14px;-webkit-padding-end:14px;} 	
+#sidebar #searchform input[type="text"],#footer #searchform input[type="text"] {  border: 1px solid #DDDDDD; color: #666; font-family: 'Open Sans', sans-serif; height: 25px; padding-left: 5px; width: 197px;border-right:0; font-size: 12px;font-weight: 300;} 
+#searchform input[type="submit"] { height: 29px; border-style: none; color: #FFFFFF; display: block; font-family: 'Open Sans', sans-serif; overflow: hidden; padding: 4px 11px; text-decoration: none; width: auto;cursor:pointer;font-size: 12px;font-weight: 300;margin:0;-webkit-padding-before:5px;-webkit-padding-after:5px;-webkit-padding-start:14px;-webkit-padding-end:14px;} 	
 #footer #searchform input[type="text"]{border:0;height:27px;}
 .ske-container {margin:0 0 40px;} 
 .widget_search .ske-title {border-bottom: none;}
@@ -395,10 +380,10 @@ h3#reply-title {  margin: 18px 0;  }
 #wp-calendar {background: none repeat scroll 0 0 #F54336;color: #FFFFFF;padding: 2px;  width: 100%;  }
 #wp-calendar caption {color: #525252;font-size: 13px;font-weight:normal;padding-bottom: 4px;  text-align: left;  }
 #wp-calendar thead {font-size: 11px;}
-#wp-calendar thead th {border: medium none;color: #FFFFFF;font-family: OpenSansBold;font-size: 12px;padding: 9px 5px;text-align: center;}
+#wp-calendar thead th {border: medium none;color: #FFFFFF;font-weight: 700;font-size: 12px;padding: 9px 5px;text-align: center;}
 #wp-calendar tbody {color: #aaa;}
 #wp-calendar tbody td {  border: medium none;  padding: 3px 0 2px;  text-align: center;color:#f2f2f2; font-size:12px; }
-#wp-calendar a { color: #FFFFFF; font-family: OpenSansSemibold; font-size: 13px; font-weight: 400; } 
+#wp-calendar a { color: #FFFFFF; font-weight: 600; font-size: 13px; } 
 #wp-calendar tbody a { background: none repeat scroll 0 0 #F0F0F0; color: #333333; display: block; font-weight: 400; height: 23px; line-height: 24px; margin: 0 auto; text-align: center; width: 25px; } 
 #wp-calendar a:hover {  color: #000;}
 tfoot td {padding: 9px 5px;}
@@ -408,7 +393,7 @@ tfoot td {padding: 9px 5px;}
 #sidebar div.follow-icons li a{background: none repeat scroll 0 0 #eee;}
 #sidebar div.follow-icons  .social li a:before{color:#333;}
 #sidebar div.follow-icons  .social li a:hover:before{color:#fff;}
-#sidebar select{ border: 1px solid #DDDDDD;color: #666666;font-family: OpenSansRegular;font-size: 12px;padding: 4px;width: 100%;}
+#sidebar select{ border: 1px solid #DDDDDD;color: #666666;font-family: 'Open Sans', sans-serif;font-size: 12px;padding: 4px;width: 100%;}
 .ske_widget .widget_tag_cloud a,.ske_widget .tagcloud a {    background: none repeat scroll 0 0 #EEEEEE;    color: #333333;    display: inline-block;    font-size: 12px !important;    margin-bottom: 5px;    padding: 6px 10px;    transition: all 1s ease 0s;}
 .ske_widget .widget_tag_cloud a:hover,.ske_widget .tagcloud a:hover {color:#333333;}
 .ske_widget .widget_tag_cloud a,.ske-container .tagcloud a {    border-radius: 2px;    color: #333333;    font-weight: 400;    line-height: 20px;    margin-right: 2px;    text-transform: capitalize;}
@@ -436,12 +421,12 @@ tfoot td {padding: 9px 5px;}
 .ske_widget ul.social{margin-bottom:0;}
 #sidebar .ske_widget div.follow-icons ul.social li:before{margin-right:0px;}
 #sidebar .ske_widget div.follow-icons ul.social li {margin-top:0;margin-bottom:10px;}
-#sidebar .ske-title,#footer .sitename{  font-family: 'OpenSansBold'; font-size: 13px; letter-spacing: 2px; margin-bottom: 25px; text-transform: uppercase;} 	  	
+#sidebar .ske-title,#footer .sitename{  font-weight: 700; font-size: 13px; letter-spacing: 2px; margin-bottom: 25px; text-transform: uppercase;} 	  	
 #footer #wp-calendar {background:#2C2D2E; }
 #footer #wp-calendar thead th{color:#ddd;}
 #footer #wp-calendar caption {color:#ccc;}
 #footer .tagcloud a {border-radius: 2px;}
-#footer select { width: 100%;padding: 5px;font-family: OpenSansRegular;font-size: 12px;border: 0;  color: #666;}
+#footer select { width: 100%;padding: 5px;font-family: 'Open Sans', sans-serif;font-size: 12px;border: 0;  color: #666;}
 
 /* =Left Sidebars
 -------------------------------------------------------------- */
@@ -461,21 +446,21 @@ tfoot td {padding: 9px 5px;}
 #content .contact-left form input[type="text"],#content .contact-left form input[type="email"],
 #content .contact-left form input[type="url"],#content .contact-left form input[type="tel"],
 #content .contact-left form input[type="number"],#content .contact-left form input[type="range"],
-#content .contact-left form input[type="date"],#content .contact-left form input[type="file"]{  background: #f9f9f9; border: 1px solid #e1e1e1; color: #666666; font-family: 'opensansregular',sans-serif; font-size: 12px;  height: 30px; margin: 5px 0 0; padding: 4px; width: 97.5%; }
+#content .contact-left form input[type="date"],#content .contact-left form input[type="file"]{  background: #f9f9f9; border: 1px solid #e1e1e1; color: #666666; font-family: 'Open Sans', sans-serif; font-size: 12px;  height: 30px; margin: 5px 0 0; padding: 4px; width: 97.5%; }
 #content .contact-left form select{ background: none repeat scroll 0 0 transparent; border: 1px solid #e1e1e1; height: 30px; padding: 4px; margin: 5px 0 0; width: 97.5%; }
 #content .contact-left form input[type="text"]:focus,#content .contact-left form input[type="email"]:focus,
 #content .contact-left form input[type="url"]:focus,#content .contact-left form input[type="tel"]:focus,
 #content .contact-left form input[type="number"]:focus,#content .contact-left form input[type="range"]:focus,
 #content .contact-left form input[type="date"]:focus,#content .contact-left form input[type="file"]:focus{ border: 1px solid #F54336;}
-#content .contact-left form textarea{ background: #f9f9f9; border: 1px solid #e1e1e1; height: 150px; padding: 4px; margin-top: 4px; width: 98.8%;     color: #666666; font-family: 'opensansregular',sans-serif; font-size: 12px; margin-bottom: 0px;} 	
+#content .contact-left form textarea{ background: #f9f9f9; border: 1px solid #e1e1e1; height: 150px; padding: 4px; margin-top: 4px; width: 98.8%;     color: #666666; font-family: 'Open Sans', sans-serif; font-size: 12px; margin-bottom: 0px;} 	
 #content .contact-left form textarea:focus{ border: 1px solid #F54336;}
-#content .contact-left form input[type="submit"]{background:none repeat scroll 0 0 rgba(0, 0, 0, 0); border: 1px solid #F54336; cursor: pointer; display: inline-block;      display: inline-block;font-family: OpenSansBold;font-size: 12px;letter-spacing: 1px;margin-bottom: 0; padding: 8px 25px; position: relative;float:right;     text-transform: uppercase;transition: all 0.3s linear 0s;-webkit-transition: all 0.3s linear 0s;-moz-transition: all 0.3s linear 0s;-o-transition: all 0.3s linear 0s;}  
+#content .contact-left form input[type="submit"]{background:none repeat scroll 0 0 rgba(0, 0, 0, 0); border: 1px solid #F54336; cursor: pointer; display: inline-block;      display: inline-block;font-weight: 700;font-size: 12px;letter-spacing: 1px;margin-bottom: 0; padding: 8px 25px; position: relative;float:right;     text-transform: uppercase;transition: all 0.3s linear 0s;-webkit-transition: all 0.3s linear 0s;-moz-transition: all 0.3s linear 0s;-o-transition: all 0.3s linear 0s;}  
 #content .contact-left form input[type="submit"]:hover { background: none repeat scroll 0 0 #F54336; color: #FFFFFF; transition: all 0.3s linear 0s;-webkit-transition: all 0.3s linear 0s;-moz-transition: all 0.3s linear 0s;-o-transition: all 0.3s linear 0s; } 
 #map .gm-style img{max-width:inherit;}
-span.wpcf7-not-valid-tip { color: #FF0000;display: block;font-family: OpenSansregular;font-size: 12px;letter-spacing: 1px;margin-top: 3px;} 
-div.wpcf7-validation-errors { border: 1px solid #F7E700; font-size: 13px; font-weight: 400; margin-left: 0; margin-right: 0; font-family: OpenSansSemibold;} 
-div.wpcf7-mail-sent-ng {border: 1px solid #FF0000;font-size: 13px; font-weight: 400; margin-left: 0; margin-right: 0; font-family: OpenSansSemibold;}
-div.wpcf7-mail-sent-ok {border: 1px solid #398F14;font-size: 13px; font-weight: 400; margin-left: 0; margin-right: 0; font-family: OpenSansSemibold; }
+span.wpcf7-not-valid-tip { color: #FF0000;display: block;font-family: 'Open Sans', sans-serif;font-size: 12px;letter-spacing: 1px;margin-top: 3px;} 
+div.wpcf7-validation-errors { border: 1px solid #F7E700; font-size: 13px; font-weight: 600; margin-left: 0; margin-right: 0; } 
+div.wpcf7-mail-sent-ng {border: 1px solid #FF0000;font-size: 13px; font-weight: 600; margin-left: 0; margin-right: 0; }
+div.wpcf7-mail-sent-ok {border: 1px solid #398F14;font-size: 13px; font-weight: 600; margin-left: 0; margin-right: 0; }
 div.wpcf7 img.ajax-loader {margin-top: 12px !important;}
 .contactsidetemp div.wpcf7 img.ajax-loader {margin-left: 5px !important;}
 #contactform label{  font-family:'Open Sans',sans-serif;  }
@@ -491,10 +476,10 @@ div.m-style-iw{width:300px !important;height:auto !important;}
 .siteinfo .sitename a {color: #FFFFFF;font-size: 20px;text-decoration: none;}
 .siteinfo .sitedescription {color: #858585;font-size: 12px;}
 #footer .second_wrapper { }
-#footer .third_wrapper { background-color: #2D2E2F; color: #777777; font-family: OpenSansSemibold; margin: 0 auto; padding: 15px 0;}
+#footer .third_wrapper { background-color: #2D2E2F; color: #777777; font-weight: 600; margin: 0 auto; padding: 15px 0;}
 #footer .ske-footer-container {float: left;padding-top: 41px; margin-bottom:41px;}
 #footer li.ske-footer-container {list-style: none outside none;}
-.ske-title.ske-footer-title {color: #777777; font-family: 'OpenSansbold'; font-size: 13px; letter-spacing: 2px; margin-bottom: 20px; padding-bottom: 5px; text-transform: uppercase;} 	
+.ske-title.ske-footer-title {color: #777777; font-weight: 700; font-size: 13px; letter-spacing: 2px; margin-bottom: 20px; padding-bottom: 5px; text-transform: uppercase;} 	
 .ske-footer-container ul li a,.ske_widget a {  height: 20px;  margin-bottom: 5px;  transition: all .5s linear 0s; -moz-transition: all .5s ease 0s; -webkit-transition: all .5s ease 0s; -o-transition: all .5s ease 0s;  }
 .ske-footer-container ul li a:hover,.ske_widget a:hover{transition: all .5s linear 0s; -moz-transition: all .5s ease 0s; -webkit-transition: all .5s ease 0s; -o-transition: all .5s ease 0s;}
 .ske-footer-container ul li { border-bottom: 1px dotted #3B3B3B; list-style: none outside none; margin-bottom: 7px; margin-left: 0; padding-bottom: 7px; padding-left: 1px;}
@@ -549,6 +534,7 @@ ul.childpages {  list-style-type: disc;  margin-left: 20px;  }
 .wp-caption {  background: none repeat scroll 0 0 #FFFFFF;  border: 1px solid #F0F0F0;  padding: 5px 3px;  text-align: center;  border: 1px solid #EEEEEE;  max-width: 100%;  }
 .wp-caption-text {  margin-bottom: 5px;  margin-top: 5px;  font-size: 11px;  } 
 .sticky {}
+.screen-reader-text{}
 .gallery-caption {}
 .gallery-item dd {float: none;}
 .alignright {float: right;margin: 5px 0px 20px 20px;}
@@ -581,3 +567,19 @@ ul.childpages {  list-style-type: disc;  margin-left: 20px;  }
 .single .thumb-wrap span.image_hover{	background: url("../images/hover_image_big.png") no-repeat scroll center center #000000;}
 .single .thumb-wrap a span { cursor: pointer;    display: none;    height: 100%;    left: 0;    position: absolute;    top: 0;    width: 100%;    z-index: 2;}
 .gallery a span.video_hover{  background: black url(images/hover_video_big.png) no-repeat center center;  }
+/**********************************8*/
+.this_child {
+    border-left: 1px solid rgba(0,0,0,.15);
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 36px;
+    width: 50px;
+    text-align: center;
+    z-index: 1;
+    line-height: 33px;
+    display: none;
+    font-family: "FontAwesome";
+    color: #333;
+}

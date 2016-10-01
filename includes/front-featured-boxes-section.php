@@ -1,4 +1,3 @@
-<?php global $advertica_shortname; ?>
 <div id="featured-box" class="skt-section">
 	<div class="container">
 		<div class="mid-box-mid row-fluid"> 
@@ -6,21 +5,21 @@
 			<div class="mid-box span4 fade_in_hide element_fade_in">
 				<div class="skt-iconbox iconbox-top">		
 					<div class="iconbox-icon skt-animated small-to-large skt-viewport">	
-						<?php if(sketch_get_option($advertica_shortname.'_fb1_first_part_image')) { ?>
-							<a class="skt-featured-images" href="<?php if(sketch_get_option($advertica_shortname."_fb1_first_part_link")) { echo sketch_get_option($advertica_shortname."_fb1_first_part_link"); } ?>" title="<?php if(sketch_get_option($advertica_shortname."_fb1_first_part_heading")) { echo sketch_get_option($advertica_shortname."_fb1_first_part_heading"); } ?>">
-									<span class="skt-featured-image-mask"></span>
-									<img class="skin-bg" src="<?php  echo sketch_get_option($advertica_shortname.'_fb1_first_part_image','advertica-lite'); ?>" alt="boximg"/>	  
+						<?php if( get_theme_mod('first_feature_image', '') != '' ) { ?>
+							<a class="skt-featured-images" href="<?php echo esc_url( get_theme_mod('first_feature_link', '#') ); ?>" title="<?php echo esc_attr( get_theme_mod('first_feature_heading', __('Business Strategy', 'advertica-lite') ) ); ?>">
+								<span class="skt-featured-image-mask"></span>
+								<img class="skin-bg" src="<?php echo esc_url( get_theme_mod('first_feature_image') ) ?>" alt="boximg"/>
 							</a>
 						<?php } else { ?>
-						<a class="skt-featured-icons" href="<?php if(sketch_get_option($advertica_shortname."_fb1_first_part_link")) { echo sketch_get_option($advertica_shortname."_fb1_first_part_link"); } ?>" title="<?php if(sketch_get_option($advertica_shortname."_fb1_first_part_heading")) { echo sketch_get_option($advertica_shortname."_fb1_first_part_heading"); } ?>">
+						<a class="skt-featured-icons" href="<?php echo esc_url( get_theme_mod('first_feature_link', '#') ); ?>" title="<?php echo esc_attr( get_theme_mod('first_feature_heading', __('Business Strategy', 'advertica-lite') ) ); ?>">
 							<i class="fa fa-briefcase"></i>		  
 						</a>
 						<?php } ?>
 					</div>		
-					<div class="iconbox-content">		
-						<h4><?php if(sketch_get_option($advertica_shortname."_fb1_first_part_heading")) { echo sketch_get_option($advertica_shortname."_fb1_first_part_heading"); } ?></h4>			
-						<p><?php if(sketch_get_option($advertica_shortname."_fb1_first_part_content")) { echo sketch_get_option($advertica_shortname."_fb1_first_part_content"); } ?></p>		
-					</div>			
+					<div class="iconbox-content">
+						<h4 id="first-feature-heading"><?php echo esc_attr( get_theme_mod('first_feature_heading', __('Business Strategy', 'advertica-lite') ) ); ?></h4>
+						<p><?php echo wp_kses_post( get_theme_mod('first_feature_content', __('Get focused from your target consumers and increase your business with Web portal Design and Development.', 'advertica-lite') ) ); ?></p>
+					</div>
 					<div class="clearfix"></div>	
 				</div>
 			</div>
@@ -28,21 +27,21 @@
 			<div class="mid-box span4 fade_in_hide element_fade_in" >
 				<div class="skt-iconbox iconbox-top">
 					<div class="iconbox-icon skt-animated small-to-large skt-viewport">	
-					  <?php if(sketch_get_option($advertica_shortname.'_fb2_second_part_image')) { ?>
-						<a class="skt-featured-images" href="<?php if(sketch_get_option($advertica_shortname."_fb2_second_part_link")) { echo sketch_get_option($advertica_shortname."_fb2_second_part_link"); } ?>" title="<?php if(sketch_get_option($advertica_shortname."_fb2_second_part_heading")) { echo sketch_get_option($advertica_shortname."_fb2_second_part_heading"); } ?>">
+					<?php if( get_theme_mod('second_feature_image', '') != '' ) { ?>
+						<a class="skt-featured-images" href="<?php echo esc_url( get_theme_mod('second_feature_link', '#') ); ?>" title="<?php echo esc_attr( get_theme_mod('second_feature_heading', __('Quality Products', 'advertica-lite') ) ); ?>">
 								<span class="skt-featured-image-mask"></span>
-								<img class="skin-bg" src="<?php  echo sketch_get_option($advertica_shortname.'_fb2_second_part_image','advertica-lite'); ?>" alt="boximg"/>
-						</a>
+								<img class="skin-bg" src="<?php echo esc_url( get_theme_mod('second_feature_image') ) ?>" alt="boximg"/>
+							</a>
 					  <?php } else { ?>
-						<a class="skt-featured-icons" href="<?php if(sketch_get_option($advertica_shortname."_fb2_second_part_link")) { echo sketch_get_option($advertica_shortname."_fb2_second_part_link"); } ?>" title="<?php if(sketch_get_option($advertica_shortname."_fb2_second_part_heading")) { echo sketch_get_option($advertica_shortname."_fb2_second_part_heading"); } ?>">
+						<a class="skt-featured-icons" href="<?php echo esc_url( get_theme_mod('second_feature_link', '#') ); ?>" title="<?php echo esc_attr( get_theme_mod('second_feature_heading', __('Quality Products', 'advertica-lite') ) ); ?>">
 							<i class="fa fa-bar-chart-o"></i>
 						</a>
 					  <?php  } ?>	
 					</div>		
-					<div class="iconbox-content">		
-						<h4><?php if(sketch_get_option($advertica_shortname."_fb2_second_part_heading")) { echo sketch_get_option($advertica_shortname."_fb2_second_part_heading"); } ?></h4>				
-						<p><?php if(sketch_get_option($advertica_shortname."_fb2_second_part_content")) { echo sketch_get_option($advertica_shortname."_fb2_second_part_content"); } ?></p>			
-					</div>			
+					<div class="iconbox-content">
+						<h4 id="second-feature-heading"><?php echo esc_attr( get_theme_mod('second_feature_heading', __('Quality Products', 'advertica-lite') ) ); ?></h4>
+						<p><?php echo wp_kses_post( get_theme_mod('second_feature_content', __('Products with the ultimate features and functionality that provide the complete satisfaction to the clients.', 'advertica-lite') ) ); ?></p>
+					</div>
 					<div class="clearfix"></div>	
 				</div>
 			</div>
@@ -50,21 +49,21 @@
 			<div class="mid-box span4 fade_in_hide element_fade_in" >
 				<div class="skt-iconbox iconbox-top">		
 					<div class="iconbox-icon skt-animated small-to-large skt-viewport">
-					  <?php if(sketch_get_option($advertica_shortname.'_fb3_third_part_image')) { ?>			
-						<a class="skt-featured-images" href="<?php if(sketch_get_option($advertica_shortname."_fb3_third_part_link")) { echo sketch_get_option($advertica_shortname."_fb3_third_part_link"); } ?>" title="<?php if(sketch_get_option($advertica_shortname."_fb3_third_part_heading")) { echo sketch_get_option($advertica_shortname."_fb3_third_part_heading"); } ?>">				
+					<?php if( get_theme_mod('third_feature_image', '') != '' ) { ?>
+						<a class="skt-featured-images" href="<?php echo esc_url( get_theme_mod('third_feature_link', '#') ); ?>" title="<?php echo esc_attr( get_theme_mod('third_feature_heading', __('Best Business Plans', 'advertica-lite') ) ); ?>">
 								<span class="skt-featured-image-mask"></span>
-								<img class="skin-bg" src="<?php  echo sketch_get_option($advertica_shortname.'_fb3_third_part_image','advertica-lite'); ?>" alt="boximg"/>
-						</a>
+								<img class="skin-bg" src="<?php echo esc_url( get_theme_mod('third_feature_image') ) ?>" alt="boximg"/>
+							</a>
 					  <?php } else { ?>
-						<a class="skt-featured-icons" href="<?php if(sketch_get_option($advertica_shortname."_fb3_third_part_link")) { echo sketch_get_option($advertica_shortname."_fb3_third_part_link"); } ?>" title="<?php if(sketch_get_option($advertica_shortname."_fb3_third_part_heading")) { echo sketch_get_option($advertica_shortname."_fb3_third_part_heading"); } ?>">				
+						<a class="skt-featured-icons" href="<?php echo esc_url( get_theme_mod('third_feature_link', '#') ); ?>" title="<?php echo esc_attr( get_theme_mod('third_feature_heading', __('Best Business Plans', 'advertica-lite') ) ); ?>">
 							<i class="fa fa-sitemap"></i>
 						</a>
 					  <?php } ?>	
 					</div>			
-					<div class="iconbox-content">			
-						<h4><?php if(sketch_get_option($advertica_shortname."_fb3_third_part_heading")) { echo sketch_get_option($advertica_shortname."_fb3_third_part_heading"); } ?></h4>				
-						<p><?php if(sketch_get_option($advertica_shortname."_fb3_third_part_content")) { echo sketch_get_option($advertica_shortname."_fb3_third_part_content"); } ?></p>		
-					</div>		
+					<div class="iconbox-content">
+						<h4 id="third-feature-heading"><?php echo esc_attr( get_theme_mod('third_feature_heading', __('Best Business Plans', 'advertica-lite') ) ); ?></h4>
+						<p><?php echo wp_kses_post( get_theme_mod('third_feature_content', __('Based on the client requirement, different business plans suits and fulfill your business and cost requirement.', 'advertica-lite') ) ); ?></p>
+					</div>
 					<div class="clearfix"></div>	
 				</div>
 			</div>

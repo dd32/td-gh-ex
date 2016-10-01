@@ -12,14 +12,13 @@
  */
 get_header(); ?>
 
-<?php global $advertica_shortname; ?>
 <div class="main-wrapper-item">
 	<div class="bread-title-holder">
 		<div class="bread-title-bg-image full-bg-breadimage-fixed"></div>
 		 <div class="container">
 			 <div class="row-fluid">
 				  <div class="container_inner clearfix">
-					 <h1 class="title"><?php if(sketch_get_option($advertica_shortname.'_blogpage_heading')) { echo sketch_get_option($advertica_shortname.'_blogpage_heading'); } ?></h1>
+					 <h1 class="title"><?php echo esc_attr( get_theme_mod('blogpage_heading', __('Blog', 'advertica-lite') ) ); ?></h1>
 				   </div>
 			 </div>
 		</div>

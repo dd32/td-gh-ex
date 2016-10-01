@@ -1,10 +1,10 @@
 <?php
 
-class advertica_breadcrumb_class {
+class advertica_lite_breadcrumb_class {
 
     var $opts;
 
-    function custom_breadcrumb() {
+    function advertica_lite_custom_breadcrumb() {
 
         $this->opts = array(
 
@@ -20,7 +20,7 @@ class advertica_breadcrumb_class {
 
         global $post, $options;
 
-        echo '<section class="cont_nav"><div class="cont_nav_inner"><p><a href="' . home_url() . '/">' . __('Home', 'advertica-lite') . '</a>';
+        echo '<section class="cont_nav"><div class="cont_nav_inner"><p><a href="' . esc_url(home_url('/')) . '">' . __('Home', 'advertica-lite') . '</a>';
 
        
 
@@ -36,7 +36,7 @@ class advertica_breadcrumb_class {
 
         }
 
-        $output = $this->simple_breadcrumb_case($post);
+        $output = $this->advertica_lite_simple_breadcrumb_case($post);
 
         if (is_page() || is_single()) {
 
@@ -54,7 +54,7 @@ class advertica_breadcrumb_class {
 
 
 
-    function simple_breadcrumb_case($der_post) {
+    function advertica_lite_simple_breadcrumb_case($der_post) {
 
         $markup = $this->opts['before'] . $this->opts['delimiter'] . $this->opts['after'];
 
@@ -64,17 +64,17 @@ class advertica_breadcrumb_class {
 
                 $my_query = get_post($der_post->post_parent);
 
-                $this->simple_breadcrumb_case($my_query);
+                $this->advertica_lite_simple_breadcrumb_case($my_query);
 
                 
 
                 $link = '<a href="';
 
-                $link .= get_permalink($my_query->ID);
+                $link .= esc_url( get_permalink($my_query->ID) );
 
                 $link .= '">';
 
-                $link .= '' . get_the_title($my_query->ID) . '</a>' . $markup;
+                $link .= '' . esc_attr( get_the_title($my_query->ID) ). '</a>' . $markup;
 
                 
 
@@ -214,6 +214,6 @@ class advertica_breadcrumb_class {
 
 }
 
-$advertica_breadcumb = new advertica_breadcrumb_class();
+$advertica_breadcumb = new advertica_lite_breadcrumb_class();
 
 ?>
