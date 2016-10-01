@@ -55,3 +55,9 @@ Please visit http://wordpress.org/support/ if you have any questions about the t
 - changed theme tags (removed flexible-width, added responsive-layout)
 - changed screenshot.png to 1200 x 900 px
 - changed blockquote styles
+
+#### 1.3.0
+
+- updated theme tags (removed deprecated, added footer-widgets, translation-ready, blog)
+- added load_theme_textdomain
+- added languages/suits.pot file

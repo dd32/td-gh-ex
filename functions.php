@@ -34,6 +34,12 @@ require get_template_directory() . '/inc/custom-header.php';
  */
 function suits_setup() {
 	/*
+	 * Make theme available for translation.
+	 * Translations can be added to the /languages/ directory.
+	 */
+	load_theme_textdomain( 'suits', get_template_directory() . '/languages' );
+
+	/*
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, icons, and column width.
 	 */
