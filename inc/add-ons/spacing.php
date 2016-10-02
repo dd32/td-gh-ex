@@ -170,7 +170,7 @@ if ( !function_exists('generate_spacing_css') ) :
 				'margin-bottom' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
 			),
 			
-			'.separate-containers .widget, .separate-containers .post, .separate-containers .page-header, .widget-area .main-navigation' => array(
+			'.separate-containers .widget, .separate-containers .site-main > *, .separate-containers .page-header, .widget-area .main-navigation' => array(
 				'margin-bottom' => ( isset( $spacing_settings['separator'] ) ) ? $spacing_settings['separator'] . 'px' : null,
 			),
 			
