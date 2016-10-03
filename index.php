@@ -1,6 +1,7 @@
 <?php 
 get_header(); 
 asiathemes_breadcrumbs();
+get_template_part('blog','postslider');
 ?>  
 <!-----Blog Section------>
 <section id="blog">

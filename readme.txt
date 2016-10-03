@@ -77,6 +77,11 @@ released
 @version 2.8
 1. Fixed all issues according new wordpress guideline.
 
+@Version 2.9
+1. Screenshot update.
+2. Add Header image setting in the theme and default header image added also.
+3. Update style default tags.
+
 *****************Licence Copyrights Attribution*******************
 Becorp WordPress Theme, Copyright 2015 asiathemes
 Becorp is distributed under the terms of the GNU GPL
@@ -181,23 +186,12 @@ Images Taken from : https://pixabay.com/
 	   the terms of the Creative Commons CC0 Universal Public Domain Dedication
 ** --> All other images were created by Asiathemes as per requirement.
 
-*************** Slider Images ***************
-Image Slide 1:https://pixabay.com/en/colleagues-seminar-presentation-437024/
-
-Image Slide 2:https://pixabay.com/en/laptop-notebook-startup-computer-849798/
-
-Image Slide 3:https://pixabay.com/en/executive-laptop-business-office-844143/
-
-*************** Portfolio Images URL ***************
-https://pixabay.com/en/student-typing-keyboard-text-woman-849828/
-
-https://pixabay.com/en/student-typing-keyboard-text-woman-849822/
-
-https://pixabay.com/en/pause-break-tennis-match-rest-828757/
-
 *************** Header Titile Strip Image ***************
 
 Header title image :- https://pixabay.com/en/abstract-polygon-black-white-grey-1175050/
+
+*************** Default Header Images  ***************
+https://pixabay.com/en/business-lady-business-girl-1584654/
 
 ** --> All other images were created by Asiathemes as per requirement.
 ** --> All Image link is a free public picture and distributed under the terms of the Creative Commons CC0 Universal Public Domain Dedication
