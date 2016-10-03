@@ -554,7 +554,7 @@ if ( ! isset( $raindrops_base_setting_args ) ) {
 	if ( ! is_child_theme() &&
 		( ! empty( $raindrops_current_style_type) && ! array_key_exists ( $raindrops_current_style_type , $raindrops_style_types ) || 
 			empty( $raindrops_current_style_type) ) ) {
-		delete_option( 'raindrops_theme_settings' );
+		//@1.433 todo
 		$raindrops_current_style_type = 'dark';
 	}
 
