@@ -1,76 +1,71 @@
 <?php
-//Making jQuery Google API
-function backyard_modify_jquery() {
-      wp_deregister_script('jquery');
-      wp_register_script('jquery', get_template_directory_uri().'/assets/js/jquery.min.js', array(), '1.11.3' );
-      wp_enqueue_script('jquery');
+if ( ! function_exists( 'backyard_fonts_url' ) ) :
+/**
+ * Register Google fonts for Backyard.
+ *
+ * @since Backyard 1.0
+ *
+ * @return string Google fonts URL for the theme.
+ */
+function backyard_fonts_url() {
+	$fonts_url = '';
+	$fonts     = array();
+	$subsets   = 'latin,latin-ext';
+
+	/* translators: If there are characters in your language that are not supported by Merriweather, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Open+Sans font: on or off', 'backyard' ) ) {
+		$fonts[] = 'Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800';
+	}
+
+	/* translators: If there are characters in your language that are not supported by Montserrat, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Playfair+Display: on or off', 'backyard' ) ) {
+		$fonts[] = 'Playfair+Display';
+	}
+
+	/* translators: If there are characters in your language that are not supported by Inconsolata, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Inconsolata font: on or off', 'backyard' ) ) {
+		$fonts[] = 'Inconsolata:400';
+	}
+
+	if ( $fonts ) {
+		$fonts_url = add_query_arg(array(
+			'family' => urlencode( implode( '|', $fonts ) ),
+			'subset' => urlencode( $subsets ),
+		), 'https://fonts.googleapis.com/css' );
+	}
+
+	return $fonts_url;
 }
-add_action('wp_enqueue_scripts', 'backyard_modify_jquery');
+endif;
+
 
 /**
  * Enqueue scripts and stylesheets
  *
  */
 function backyard_scripts() {
-	wp_enqueue_style('style', get_stylesheet_uri() );
-        wp_enqueue_style('bootstrap_min', get_template_directory_uri().'/assets/css/bootstrap.min.css');
-        wp_enqueue_style('main_css', get_template_directory_uri().'/assets/css/main.css');
+	    wp_enqueue_style('backyard-fonts', backyard_fonts_url(), array(), null);
+	    wp_enqueue_style('backyard-style', get_stylesheet_uri() );
+        wp_enqueue_style('bootstrap-maxcdn', get_template_directory_uri().'/assets/css/bootstrap.min.css');
+        wp_enqueue_style('main-style', get_template_directory_uri().'/assets/css/main.css');
         wp_enqueue_style('responsive', get_template_directory_uri().'/assets/css/responsive.css');
-		wp_enqueue_style('font-awesome', get_template_directory_uri().'/assets/css/font-awesome.min.css');
-        wp_enqueue_style('animate_min_css', get_template_directory_uri().'/assets/css/animate.min.css');
-        wp_enqueue_script('wow_min_js', get_template_directory_uri().'/assets/js/wow.min.js', array(),true );
-        wp_enqueue_script('owl_carousel', get_template_directory_uri().'/assets/js/owl.carousel.js', array(),true );
-        wp_enqueue_script('custom', get_template_directory_uri().'/assets/js/custom.js', array(),true );
-        wp_enqueue_script('jquery_flexslider', get_template_directory_uri().'/assets/js/jquery.flexslider.js', array(),true );
-		wp_enqueue_script('jquery_collagePlus', get_template_directory_uri().'/assets/js/jquery.collagePlus.js', array(),true );
-		wp_enqueue_script('bootstrap_min_js', get_template_directory_uri().'/assets/js/bootstrap.min.js', array(),true );
-		wp_enqueue_script('maps_google', 'https://maps.google.com/maps/api/js?sensor=false', array(),true );
-        wp_enqueue_script('axgmap_map', get_template_directory_uri().'/assets/js/jquery.axgmap.js', array(),true );
- if (is_page() && is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-        wp_enqueue_script( 'comment-reply' );
+		wp_enqueue_style('font-awesome-maxcdn', get_template_directory_uri().'/assets/css/font-awesome.min.css');
+        wp_enqueue_style('animate-style', get_template_directory_uri().'/assets/css/animate.min.css');
+        wp_enqueue_script('wow-scripts', get_template_directory_uri().'/assets/js/wow.min.js', array('jquery'),true );
+        wp_enqueue_script('owl-carousel-scripts', get_template_directory_uri().'/assets/js/owl.carousel.js', array('jquery'),true);
+        wp_enqueue_script('custom-scripts', get_template_directory_uri().'/assets/js/custom.js', array('jquery'),true );
+        wp_enqueue_script('flexslider-scripts', get_template_directory_uri().'/assets/js/jquery.flexslider.js', array('jquery'),true);
+		wp_enqueue_script('collagePlus-scripts', get_template_directory_uri().'/assets/js/jquery.collagePlus.js', array('jquery'),true);
+		// Load the HTML5 Shiv.
+		wp_enqueue_script('backyard-html5', get_template_directory_uri() . '/assets/js/html5shiv.min.js', array(), '3.7.2');
+		wp_script_add_data('backyard-html5', 'conditional', 'lt IE 9' );
+		//Respond.js for IE8 support of HTML5 elements and media queries
+		wp_enqueue_script('backyard-ie8supportofhtml5', get_template_directory_uri() . '/assets/js/respond.min.js', array(), '1.4.2');
+		wp_script_add_data('backyard-ie8supportofhtml5', 'conditional', 'lt IE 8');
+		wp_enqueue_script('bootstrap-netdna', get_template_directory_uri().'/assets/js/bootstrap.min.js', array('jquery'),true);
+        if (is_page() && is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+        wp_enqueue_script( 'comment-reply');
     }
-        
 }
-
-function backyard_editor_styles() {
-    add_editor_style( 'editor-style.css');
-}
-add_action('admin_init', 'backyard_editor_styles' );
-
 add_action('wp_enqueue_scripts', 'backyard_scripts');
-/*Contact form script*/
-
-function contactform_add_script() {
- wp_enqueue_script('contactform-script', get_template_directory_uri().'/assets/js/backyard-contact-form.js', array('jquery') );
- wp_localize_script('contactform-script', 'ajax_object', array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
-}
-add_action('wp_enqueue_scripts', 'contactform_add_script');
-function backyard_contact_form_send() {
-    $name=sanitize_text_field($_POST['name']);
-    $email=sanitize_text_field($_POST['email']);
-    $phone=sanitize_text_field($_POST['phone']);
-    $msg=sanitize_text_field($_POST['msg']);
-	$subject='Contact Detail';
-    $to = get_option('admin_email');
-    $body="<table width='500'>
-    <tr><td>Name :</td><td>".$name."</td></tr>
-    <tr><td>Email :</td><td>".$email."</td></tr>
-    <tr><td>Phone :</td><td>".$phone."</td></tr>
-    <tr><td>Message :</td><td>".$msg."</td></tr>
-    </table>";
-    $headers= "From: $name <$email>\n";
-    $headers.= "Reply-To: $subject <$email>\n";
-    $headers.= "Return-Path: $subject <$email>\n";
-    $headers.= "Content-type: text/html; charset=UTF-8 \r\n";
-    $headers.= "MIME-version: 1.0\n";
-    if (@mail($to, $subject, $body, $headers,"-f $email")){
-    print "<span style='color:green; font-weight: bold;'>Your message sent successfully.</span><span id='mail-sent-success' success='1'></span>" ;
-  } else {
-	print "<span style='color:red; font-weight: bold;'>Sorry! Please try again. </span>";	 }
-        
-die();
-}
- add_action('wp_ajax_contact_form_send', 'backyard_contact_form_send');
- add_action('wp_ajax_nopriv_contact_form_send', 'backyard_contact_form_send');
-
-
+?>

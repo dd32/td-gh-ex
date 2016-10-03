@@ -1,3 +1,4 @@
+<?php get_header(); ?>
 <section id="content">
  <section class="container paddingtop">
         <div class="row">
@@ -16,7 +17,7 @@
 				 * If you want to overload this in a child theme then include a file
 				 * called content-search.php and that will be used instead.
 				 */
-				get_template_part('templates/content', 'search');
+				get_template_part('template-parts/content', 'search');
 
 			// End the loop.
 			endwhile;
@@ -30,17 +31,14 @@
 
 		// If no content, include the "No posts found" template.
 		else :
-			get_template_part('templates/content', 'none');
+			get_template_part('template-parts/content', 'none');
 
 		endif; ?>
               
           </main>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pull-right">
-            <div class="sidebar wow fadeInUp">
-             <?php include backyard_sidebar_path(); ?>
-            </div>
-        </div>
+        <?php get_sidebar(); ?>
       </div>
     </section>
   </section>
+  <?php get_footer(); ?>

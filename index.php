@@ -1,9 +1,10 @@
+<?php get_header(); ?>
 <section id="content">
 <section class="container paddingtop">
 
       <div class="row">
 
-        <?php global $backyard; if(isset($backyard['show_bread_crumb_id']) && $backyard['show_bread_crumb_id']==1){ ?>
+        <?php if(get_theme_mod('enable_breadcrumb',false)){ ?>
 
        <div> <div class="col-lg-12"> <div class="breadcrumbs"><?php the_breadcrumbs(); ?></div></div></div>
 
@@ -12,7 +13,7 @@
        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
           <main id="main" class="site-main">
            <?php if(have_posts()): while(have_posts()): the_post();
-           get_template_part('templates/content', get_post_format());    
+           get_template_part('template-parts/content', get_post_format());    
            ?>
             <!--post-->
            <?php endwhile; ?>
@@ -24,12 +25,9 @@
           </main>
         </div>
          
-       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pull-right">
-          <div class="sidebar wow fadeInUp">
-          <?php include backyard_sidebar_path(); ?>
-          </div>
-        </div>
+        <?php get_sidebar(); ?>
       
       </div>
     </section>
 </section>
+<?php get_footer(); ?>

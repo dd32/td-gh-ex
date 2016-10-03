@@ -2,68 +2,19 @@
 /**
  * Register sidebars and widgets
  */
-function backyard_sidebar_list() {
-  $all_sidebars=array(array('name'=>__('Primary Sidebar', 'backyard'), 'id'=>'sidebar-primary'));
-  global $backyard; 
-  if(isset($backyard['cust_sidebars'])) {
-  if (is_array($backyard['cust_sidebars'])) {
-    $i = 1;
-  foreach($backyard['cust_sidebars'] as $sidebar){
-    if(empty($sidebar)) {$sidebar = 'sidebar'.$i;}
-    $all_sidebars[]=array('name'=>$sidebar, 'id'=>'sidebar'.$i);
-    $i++;
-  }
- }
-}
-  global $vir_sidebars;
-  $vir_sidebars = $all_sidebars;
-  return $all_sidebars;
-}
-add_action('init', 'backyard_sidebar_list');
-function backyard_register_sidebars(){
-  $the_sidebars = backyard_sidebar_list();
-  if (function_exists('register_sidebar')){
-    foreach($the_sidebars as $side){
-      backyard_register_sidebar($side['name'], $side['id']);    
-    }
-
-  }
-}
-function backyard_register_sidebar($name, $id){
-  register_sidebar(array('name'=>$name,
-    'id' => $id,
-    'before_widget' => '<section id="%1$s" class="%2$s"><div class="widget-inner">',
-    'after_widget' => '</div></section>',
-    'before_title' => '<h4 class="title3">',
-    'after_title' => '</h4>',
-  ));
-}
-add_action('widgets_init', 'backyard_register_sidebars');
 
 function backyard_widgets_init() {
   //Topbar 
-  
-  register_sidebar(array(
-    'name'          => __('Topbar Widget', 'backyard'),
-    'id'            => 'topbarright',
-    'before_widget' => '<div class="row">',
-    'after_widget'  => '</div>',
-    'before_title'  => '<div class="col-md-12"><h2 class="title"><span>',
-    'after_title'   => '</span></h2></div>',
-  ));
-
   // Sidebars
   register_sidebar(array(
     'name'=> __('Primary Sidebar', 'backyard'),
-    'id'=> 'sidebar-primary',
+    'id'=> 'primary-sidebar',
     'before_widget'=> '<aside id="%1$s" class="widget voffset3 text-center">',
     'after_widget'=> '</aside>',
     'before_title'=> '<h4 class="title3">',
     'after_title'=> '</h4>',
   ));
-  // Footer
-  global $footer_widgets_layout; if(get_theme_mod('footer_widgets_layout')) { $footer_widgets_layout=get_theme_mod('footer_widgets_layout'); }
-  if ($footer_widgets_layout == "fourc") {
+  
     if ( function_exists('register_sidebar') )
       register_sidebar(array(
         'name' => __('Footer Column One', 'backyard'),
@@ -104,73 +55,6 @@ function backyard_widgets_init() {
         'after_title' => '</h4>',
       )
     );
-  } else if ($footer_widgets_layout == "threec") {
-    if ( function_exists('register_sidebar') )
-      register_sidebar(array(
-        'name' => __('Footer Column One', 'backyard'),
-        'id' => 'footer_third_1',
-        'before_widget' => '<div class="ftr-widget"><aside id="%1$s" class="%2$s">',
-        'after_widget' => '</aside></div>',
-        'before_title' => '<h4 class="title3">',
-        'after_title' => '</h4>',
-      )
-    );
-    if ( function_exists('register_sidebar') )
-      register_sidebar(array(
-        'name' => __('Footer Column Two', 'backyard'),
-        'id' => 'footer_third_2',
-        'before_widget' => '<div class="ftr-widget"><aside id="%1$s" class="%2$s">',
-        'after_widget' => '</aside></div>',
-        'before_title' => '<h4 class="title3">',
-        'after_title' => '</h4>',
-      )
-    );
-    if ( function_exists('register_sidebar') )
-      register_sidebar(array(
-        'name' => __('Footer Column Three', 'backyard'),
-        'id' => 'footer_third_3',
-        'before_widget' => '<div class="ftr-widget"><aside id="%1$s" class="%2$s">',
-        'after_widget' => '</aside></div>',
-        'before_title' => '<h4 class="title3">',
-        'after_title' => '</h4>',
-      )
-    );
-  } else if ($footer_widgets_layout == "twoc") {
-    if ( function_exists('register_sidebar') )
-      register_sidebar(array(
-        'name' => __('Footer Column One', 'backyard'),
-        'id' => 'footer_two_1',
-        'before_widget' => '<div class="ftr-widget"><aside id="%1$s" class="%2$s">',
-        'after_widget' => '</aside></div>',
-        'before_title' => '<h4 class="title3">',
-        'after_title' => '</h4>',
-      )
-    );
-    if ( function_exists('register_sidebar') )
-      register_sidebar(array(
-        'name' => __('Footer Column Two', 'backyard'),
-        'id' => 'footer_two_2',
-        'before_widget' => '<div class="ftr-widget"><aside id="%1$s" class="%2$s">',
-        'after_widget' => '</aside></div>',
-        'before_title' => '<h4 class="title3">',
-        'after_title' => '</h4>',
-      )
-    );
-    
-  }else {
-      if ( function_exists('register_sidebar') )
-        register_sidebar(array(
-          'name' => __('Footer Column', 'backyard'),
-          'id' => 'footer_onecol_1',
-          'before_widget' => '<div class="ftr-widget"><aside id="%1$s" class="%2$s">',
-          'after_widget' => '</aside></div>',
-          'before_title' => '<h4 class="title3">',
-          'after_title' => '</h4>',
-        )
-      );
-      
-    }
-
   // Widgets
   register_widget('Backyard_Social_Widget');
   register_widget('Backyard_Recent_Posts_Widget');
@@ -254,94 +138,94 @@ class Backyard_Social_Widget extends WP_Widget {
   function update($new_instance, $old_instance) {
     $instance = $old_instance;
      $instance['title'] = strip_tags($new_instance['title']);
-    $instance['facebook'] = strip_tags($new_instance['facebook']);
-    $instance['twitter'] = strip_tags($new_instance['twitter']);
-    $instance['instagram'] = strip_tags($new_instance['instagram']);
-    $instance['googleplus'] = strip_tags($new_instance['googleplus']);
-    $instance['flickr'] = strip_tags($new_instance['flickr']);
-    $instance['vimeo'] = strip_tags($new_instance['vimeo']);
-    $instance['youtube'] = strip_tags($new_instance['youtube']);
-    $instance['pinterest'] = strip_tags($new_instance['pinterest']);
-    $instance['dribbble'] = strip_tags($new_instance['dribbble']);
-    $instance['linkedin'] = strip_tags($new_instance['linkedin']);
-    $instance['tumblr'] = strip_tags($new_instance['tumblr']);
-    $instance['vk'] = strip_tags($new_instance['vk']);
-    $instance['rss'] = strip_tags($new_instance['rss']);
+    $instance['facebook'] = esc_url_raw($new_instance['facebook']);
+    $instance['twitter'] = esc_url_raw($new_instance['twitter']);
+    $instance['instagram'] = esc_url_raw($new_instance['instagram']);
+    $instance['googleplus'] = esc_url_raw($new_instance['googleplus']);
+    $instance['flickr'] = esc_url_raw($new_instance['flickr']);
+    $instance['vimeo'] = esc_url_raw($new_instance['vimeo']);
+    $instance['youtube'] = esc_url_raw($new_instance['youtube']);
+    $instance['pinterest'] = esc_url_raw($new_instance['pinterest']);
+    $instance['dribbble'] = esc_url_raw($new_instance['dribbble']);
+    $instance['linkedin'] = esc_url_raw($new_instance['linkedin']);
+    $instance['tumblr'] = esc_url_raw($new_instance['tumblr']);
+    $instance['vk'] = esc_url_raw($new_instance['vk']);
+    $instance['rss'] = esc_url_raw($new_instance['rss']);
     return $instance;
   }
 
 
   function form($instance) {
     $title = isset($instance['title']) ? esc_attr($instance['title']) : '';
-    $facebook = isset($instance['facebook']) ? esc_attr($instance['facebook']) : '';
-    $twitter = isset($instance['twitter']) ? esc_attr($instance['twitter']) : '';
-    $instagram = isset($instance['instagram']) ? esc_attr($instance['instagram']) : '';
-    $googleplus = isset($instance['googleplus']) ? esc_attr($instance['googleplus']) : '';
-    $flickr = isset($instance['flickr']) ? esc_attr($instance['flickr']) : '';
-    $vimeo = isset($instance['vimeo']) ? esc_attr($instance['vimeo']) : '';
-    $youtube = isset($instance['youtube']) ? esc_attr($instance['youtube']) : '';
-    $pinterest = isset($instance['pinterest']) ? esc_attr($instance['pinterest']) : '';
-    $dribbble = isset($instance['dribbble']) ? esc_attr($instance['dribbble']) : '';
-    $linkedin = isset($instance['linkedin']) ? esc_attr($instance['linkedin']) : '';
-    $tumblr = isset($instance['tumblr']) ? esc_attr($instance['tumblr']) : '';
-    $vk = isset($instance['vk']) ? esc_attr($instance['vk']) : '';
-    $rss = isset($instance['rss']) ? esc_attr($instance['rss']) : '';
+    $facebook = isset($instance['facebook']) ? esc_url($instance['facebook']) : '';
+    $twitter = isset($instance['twitter']) ? esc_url($instance['twitter']) : '';
+    $instagram = isset($instance['instagram']) ? esc_url($instance['instagram']) : '';
+    $googleplus = isset($instance['googleplus']) ? esc_url($instance['googleplus']) : '';
+    $flickr = isset($instance['flickr']) ? esc_url($instance['flickr']) : '';
+    $vimeo = isset($instance['vimeo']) ? esc_url($instance['vimeo']) : '';
+    $youtube = isset($instance['youtube']) ? esc_url($instance['youtube']) : '';
+    $pinterest = isset($instance['pinterest']) ? esc_url($instance['pinterest']) : '';
+    $dribbble = isset($instance['dribbble']) ? esc_url($instance['dribbble']) : '';
+    $linkedin = isset($instance['linkedin']) ? esc_url($instance['linkedin']) : '';
+    $tumblr = isset($instance['tumblr']) ? esc_url($instance['tumblr']) : '';
+    $vk = isset($instance['vk']) ? esc_url($instance['vk']) : '';
+    $rss = isset($instance['rss']) ? esc_url($instance['rss']) : '';
   ?>
   <p>
       <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e('Title:', 'backyard'); ?></label>
-      <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
+      <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_url($title); ?>" />
     </p>
     <p>
       <label for="<?php echo esc_attr($this->get_field_id('facebook')); ?>"><?php _e('Facebook:', 'backyard'); ?></label>
-      <input class="widefat" id="<?php echo esc_attr($this->get_field_id('facebook')); ?>" name="<?php echo esc_attr($this->get_field_name('facebook')); ?>" type="text" value="<?php echo esc_attr($facebook); ?>" />
+      <input class="widefat" id="<?php echo esc_attr($this->get_field_id('facebook')); ?>" name="<?php echo esc_attr($this->get_field_name('facebook')); ?>" type="text" value="<?php echo esc_url($facebook); ?>" />
     </p>
     <p>
       <label for="<?php echo esc_attr($this->get_field_id('twitter')); ?>"><?php _e('Twitter:', 'backyard'); ?></label>
-      <input class="widefat" id="<?php echo esc_attr($this->get_field_id('twitter')); ?>" name="<?php echo esc_attr($this->get_field_name('twitter')); ?>" type="text" value="<?php echo esc_attr($twitter); ?>" />
+      <input class="widefat" id="<?php echo esc_attr($this->get_field_id('twitter')); ?>" name="<?php echo esc_attr($this->get_field_name('twitter')); ?>" type="text" value="<?php echo esc_url($twitter); ?>" />
     </p>
     <p>
       <label for="<?php echo esc_attr($this->get_field_id('instagram')); ?>"><?php _e('Instagram:', 'backyard'); ?></label>
-      <input class="widefat" id="<?php echo esc_attr($this->get_field_id('instagram')); ?>" name="<?php echo esc_attr($this->get_field_name('instagram')); ?>" type="text" value="<?php echo esc_attr($instagram); ?>" />
+      <input class="widefat" id="<?php echo esc_attr($this->get_field_id('instagram')); ?>" name="<?php echo esc_attr($this->get_field_name('instagram')); ?>" type="text" value="<?php echo esc_url($instagram); ?>" />
     </p>
     <p>
       <label for="<?php echo esc_attr($this->get_field_id('googleplus')); ?>"><?php _e('GooglePlus:', 'backyard'); ?></label>
-      <input class="widefat" id="<?php echo esc_attr($this->get_field_id('googleplus')); ?>" name="<?php echo esc_attr($this->get_field_name('googleplus')); ?>" type="text" value="<?php echo esc_attr($googleplus); ?>" />
+      <input class="widefat" id="<?php echo esc_attr($this->get_field_id('googleplus')); ?>" name="<?php echo esc_attr($this->get_field_name('googleplus')); ?>" type="text" value="<?php echo esc_url($googleplus); ?>" />
     </p>
     <p>
       <label for="<?php echo esc_attr($this->get_field_id('flickr')); ?>"><?php _e('Flickr:', 'backyard'); ?></label>
-      <input class="widefat" id="<?php echo esc_attr($this->get_field_id('flickr')); ?>" name="<?php echo esc_attr($this->get_field_name('flickr')); ?>" type="text" value="<?php echo esc_attr($flickr); ?>" />
+      <input class="widefat" id="<?php echo esc_attr($this->get_field_id('flickr')); ?>" name="<?php echo esc_attr($this->get_field_name('flickr')); ?>" type="text" value="<?php echo esc_url($flickr); ?>" />
     </p>
     <p>
       <label for="<?php echo esc_attr($this->get_field_id('vimeo')); ?>"><?php _e('Vimeo:', 'backyard'); ?></label>
-      <input class="widefat" id="<?php echo esc_attr($this->get_field_id('vimeo')); ?>" name="<?php echo esc_attr($this->get_field_name('vimeo')); ?>" type="text" value="<?php echo esc_attr($vimeo); ?>" />
+      <input class="widefat" id="<?php echo esc_attr($this->get_field_id('vimeo')); ?>" name="<?php echo esc_attr($this->get_field_name('vimeo')); ?>" type="text" value="<?php echo esc_url($vimeo); ?>" />
     </p>
     <p>
       <label for="<?php echo esc_attr($this->get_field_id('youtube')); ?>"><?php _e('Youtube:', 'backyard'); ?></label>
-      <input class="widefat" id="<?php echo esc_attr($this->get_field_id('youtube')); ?>" name="<?php echo esc_attr($this->get_field_name('youtube')); ?>" type="text" value="<?php echo esc_attr($youtube); ?>" />
+      <input class="widefat" id="<?php echo esc_attr($this->get_field_id('youtube')); ?>" name="<?php echo esc_attr($this->get_field_name('youtube')); ?>" type="text" value="<?php echo esc_url($youtube); ?>" />
     </p>
     <p>
       <label for="<?php echo esc_attr($this->get_field_id('pinterest')); ?>"><?php _e('Pinterest:', 'backyard'); ?></label>
-      <input class="widefat" id="<?php echo esc_attr($this->get_field_id('pinterest')); ?>" name="<?php echo esc_attr($this->get_field_name('pinterest')); ?>" type="text" value="<?php echo esc_attr($pinterest); ?>" />
+      <input class="widefat" id="<?php echo esc_attr($this->get_field_id('pinterest')); ?>" name="<?php echo esc_attr($this->get_field_name('pinterest')); ?>" type="text" value="<?php echo esc_url($pinterest); ?>" />
     </p>
     <p>
       <label for="<?php echo esc_attr($this->get_field_id('dribbble')); ?>"><?php _e('Dribbble:', 'backyard'); ?></label>
-      <input class="widefat" id="<?php echo esc_attr($this->get_field_id('dribbble')); ?>" name="<?php echo esc_attr($this->get_field_name('dribbble')); ?>" type="text" value="<?php echo esc_attr($dribbble); ?>" />
+      <input class="widefat" id="<?php echo esc_attr($this->get_field_id('dribbble')); ?>" name="<?php echo esc_attr($this->get_field_name('dribbble')); ?>" type="text" value="<?php echo esc_url($dribbble); ?>" />
     </p>
     <p>
       <label for="<?php echo esc_attr($this->get_field_id('linkedin')); ?>"><?php _e('Linkedin:', 'backyard'); ?></label>
-      <input class="widefat" id="<?php echo esc_attr($this->get_field_id('linkedin')); ?>" name="<?php echo esc_attr($this->get_field_name('linkedin')); ?>" type="text" value="<?php echo esc_attr($linkedin); ?>" />
+      <input class="widefat" id="<?php echo esc_attr($this->get_field_id('linkedin')); ?>" name="<?php echo esc_attr($this->get_field_name('linkedin')); ?>" type="text" value="<?php echo esc_url($linkedin); ?>" />
     </p>
     <p>
       <label for="<?php echo esc_attr($this->get_field_id('tumblr')); ?>"><?php _e('Tumblr:', 'backyard'); ?></label>
-      <input class="widefat" id="<?php echo esc_attr($this->get_field_id('tumblr')); ?>" name="<?php echo esc_attr($this->get_field_name('tumblr')); ?>" type="text" value="<?php echo esc_attr($tumblr); ?>" />
+      <input class="widefat" id="<?php echo esc_attr($this->get_field_id('tumblr')); ?>" name="<?php echo esc_attr($this->get_field_name('tumblr')); ?>" type="text" value="<?php echo esc_url($tumblr); ?>" />
     </p>
     <p>
       <label for="<?php echo esc_attr($this->get_field_id('vk')); ?>"><?php _e('VK:', 'backyard'); ?></label>
-      <input class="widefat" id="<?php echo esc_attr($this->get_field_id('vk')); ?>" name="<?php echo esc_attr($this->get_field_name('vk')); ?>" type="text" value="<?php echo esc_attr($vk); ?>" />
+      <input class="widefat" id="<?php echo esc_attr($this->get_field_id('vk')); ?>" name="<?php echo esc_attr($this->get_field_name('vk')); ?>" type="text" value="<?php echo esc_url($vk); ?>" />
     </p>
     <p>
       <label for="<?php echo esc_attr($this->get_field_id('rss')); ?>"><?php _e('RSS:', 'backyard'); ?></label>
-      <input class="widefat" id="<?php echo esc_attr($this->get_field_id('rss')); ?>" name="<?php echo esc_attr($this->get_field_name('rss')); ?>" type="text" value="<?php echo esc_attr($rss); ?>" />
+      <input class="widefat" id="<?php echo esc_attr($this->get_field_id('rss')); ?>" name="<?php echo esc_attr($this->get_field_name('rss')); ?>" type="text" value="<?php echo esc_url($rss); ?>" />
     </p>
   <?php
   }
@@ -384,13 +268,8 @@ class Backyard_Popular_Posts_Widget extends WP_Widget {
     <?php  while ($popular_posts->have_posts()) : $popular_posts->the_post(); ?>
     <div class="popular-post">
         <a href="<?php the_permalink() ?>" title="<?php echo esc_attr(get_the_title() ? get_the_title() : get_the_ID()); ?>" class="recentpost_featimg">
-          <?php global $post; if(has_post_thumbnail( $post->ID ) ) { 
-            echo '<span>'; the_post_thumbnail( 'popular-thumb' ); echo '</span>';
-          } else { 
-            $image_url = backyard_post_widget_default_placeholder();
-            $image = aq_resize($image_url, 257, 151, true);
-            if(empty($image)) { $image = $image_url; }
-            echo '<span><img width="256" height="151" src="'.esc_attr($image).'" class="img-responsive" alt=""></span>'; } ?></a>
+         <span><?php the_post_thumbnail('backyard-popular-thumb', array('class'=>'img-responsive','alt' => get_the_title() )); ?></span>
+          </a>
         <h6><a href="<?php the_permalink()  ?>"><?php if ( get_the_title() ) the_title(); else the_ID(); ?> </a></h6>
         <p class="text font-italic textcolor"><?php echo get_the_date(get_option( 'date_format' )); ?></p>
     </div>
@@ -477,13 +356,8 @@ class Backyard_Recent_Posts_Widget extends WP_Widget {
     <?php  while ($recent_posts->have_posts()) : $recent_posts->the_post(); ?>
     <div class="recent">
         <a href="<?php the_permalink() ?>" title="<?php echo esc_attr(get_the_title() ? get_the_title() : get_the_ID()); ?>" class="recentpost_featimg">
-          <?php global $post; if(has_post_thumbnail( $post->ID ) ) { 
-            echo '<span>'; the_post_thumbnail( 'widget-thumb' ); echo '</span>';
-          } else { 
-            $image_url = backyard_post_widget_default_placeholder();
-            $image = aq_resize($image_url, 54, 47, true);
-            if(empty($image)) { $image = $image_url; }
-            echo '<span><img width="54" height="47" src="'.esc_attr($image).'" class="img-responsive" alt=""></span>'; } ?></a>
+         <span><?php the_post_thumbnail('backyard-widget-thumb', array('class'=>'img-responsive','alt' => get_the_title() )); ?></span>
+         </a>
         <p  class="recent-post-title"><a href="<?php the_permalink() ?>"><?php if ( get_the_title() ) the_title(); else the_ID(); ?></a></p>
         <p class="textcolor"><?php echo get_the_date(get_option( 'date_format' )); ?></p>
     </div>
@@ -545,7 +419,7 @@ function backyard_admin_script() {
   if(is_admin()){ if(kad_is_edit_page()){
     function backyard_widget_uploadScript(){
       wp_enqueue_media();
-      wp_enqueue_script('backyardimhup_script', get_template_directory_uri() . '/assets/js/widget_upload.js');
+      wp_enqueue_script('widget-upload-script', get_template_directory_uri() . '/assets/js/widget_upload.js');
     }
     add_action('admin_enqueue_scripts', 'backyard_widget_uploadScript');
     }}
@@ -625,5 +499,4 @@ class About_With_Image extends WP_Widget{
   }
 
 }
-
 ?>

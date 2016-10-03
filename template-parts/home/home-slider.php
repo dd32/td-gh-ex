@@ -1,7 +1,9 @@
-  <div class="flexslider slider loading">
+<?php if(get_theme_mod('slider_cat')): ?>
+<div class="flexslider slider loading">
   <ul class="slides">
         <?php
-                $slider_cat=array(get_theme_mod('slider_cat'));
+               
+               echo $slider_cat=array(get_theme_mod('slider_cat'));
                 $args = array(
 		'post_type'=>'post',
 		'cat' =>$slider_cat,
@@ -11,12 +13,10 @@
         
               if ($wp_query->have_posts()) : while ( $wp_query->have_posts() ) : $wp_query->the_post(); 
                       if (has_post_thumbnail( $post->ID ) ) {
-                          $image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); 
-                          $thumbnailURL = $image_url[0]; 
-                          $image = aq_resize($thumbnailURL, 1920, 517, true);
-                          if(empty($image)) { $image = $thumbnailURL; } ?>
+                          $backyard_slider_attachment = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID ), 'full'); 
+                          $backyard_slider_imageUrl=$backyard_slider_attachment[0];  ?>
                           <li> 
-                              <div class="slider-image" style="background-image:url(<?php echo esc_url($image); ?>)"></div>
+                              <div class="slider-image" style="background-image:url(<?php echo esc_url($backyard_slider_imageUrl); ?>)"></div>
                                <div class="slider-content">
           <h1><?php the_title_limit( 18, '...'); ?></h1>
           <p><?php echo excerpt(20); ?></p>
@@ -27,3 +27,4 @@
               <?php endif;  wp_reset_query(); ?>
             </ul>
 </div>
+<?php endif; ?>

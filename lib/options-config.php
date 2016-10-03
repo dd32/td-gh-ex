@@ -47,18 +47,7 @@
 			'default' => 1,
 			'sanitize_callback' => 'yds_boolean',
 						),
-						'footer_widgets_layout' => array(
-						 'type' => 'radio',
-						 'label' => __('Footer Widget Layout Options', 'backyard'),
-						 'description' => esc_html__('Select main content and sidebar alignment.', 'backyard'),
-						 'choices' => array(
-							 'fourc' => __('Four Column', 'backyard'),
-							 'threec' => __('Three Column', 'backyard'),
-							 'twoc' => __('Two Column', 'backyard'),
-						 ),
-						'default' => 'right'),
-                    
-                                          'footer_logo_upload_chk' => array(
+						'footer_logo_upload_chk' => array(
 			                  'type' => 'checkbox',
 			                  'label' => __('Footer Logo Option', 'backyard'),
 			                  'default' => 1,
@@ -94,7 +83,7 @@
                                         'choose_slider' => array(
 			                'type' => 'checkbox',
 			                'label' => __('Home Page Slider', 'backyard'),
-			                'default' => 1,
+			                'default' => 0,
 			                'sanitize_callback' => 'yds_boolean',),
                                       
 					'slider_cat' => array(

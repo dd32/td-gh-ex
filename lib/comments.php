@@ -1,4 +1,6 @@
-<?php class backyard_walker_comment extends Walker {
+<?php
+if (!class_exists('backyard_walker_comment')) {
+ class backyard_walker_comment extends Walker {
     /**
      * What the class handles.
      *
@@ -336,4 +338,4 @@
             </article><!-- .comment-body -->
 <?php
     }
-} ?>
+}} ?>

@@ -1,3 +1,4 @@
+<?php get_header(); ?>
 <section id="content">
 <section class="container paddingtop">
    <div class="row">
@@ -9,11 +10,11 @@
                // Start the loop.
                  while ( have_posts() ) : the_post(); ?>
              <main id="main" class="site-main wow fadeInUp">
-              <?php get_template_part('templates/content', get_post_format()); ?>
+              <?php get_template_part('template-parts/content', get_post_format()); ?>
             </main>
 <?php endwhile; wp_reset_query(); ?>
 <?php if ( comments_open() || get_comments_number() ) :
-comments_template('/templates/comments.php', true);
+comments_template();
 endif;
 // Previous/next post navigation.
 the_post_navigation( array(
@@ -29,11 +30,8 @@ the_post_navigation( array(
 
              ?>
 </div>
-<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pull-right">
-<div class="sidebar wow fadeInUp">
-<?php include backyard_sidebar_path(); ?>
-</div>
-</div>
+<?php get_sidebar(); ?>
 </div>
 </section>
 </section>
+<?php get_footer(); ?>

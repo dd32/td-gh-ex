@@ -1,5 +1,4 @@
 <?php 
-
 function the_breadcrumbs(){
 	
 	if(get_theme_mod('enable_breadcrumb',true)){
@@ -21,7 +20,7 @@ function the_breadcrumbs(){
 	/* === END OF OPTIONS === */
 
 	global $post;
-	$homeLink = home_url('url') . '/';
+	$homeLink = home_url('') . '/';
 	$linkBefore = '<span typeof="v:Breadcrumb">';
 	$linkAfter = '</span>';
 	$linkAttr = ' rel="v:url" property="v:title"';

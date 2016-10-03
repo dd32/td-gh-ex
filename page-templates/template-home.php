@@ -1,9 +1,10 @@
- <?php 
+<?php
  /*
 Template Name: Home Page
 */
-  if(get_theme_mod('choose_slider',true)) {
-   get_template_part('templates/home/home', 'slider');
+get_header(); 
+  if(get_theme_mod('choose_slider',false)) {
+   get_template_part('template-parts/home/home', 'slider');
   }
  ?>   
    <section id="content">
@@ -17,9 +18,9 @@ Template Name: Home Page
            <?php 
             global $the_query;
             $paged=(get_query_var('page')) ? get_query_var('page') : 1;
-            $the_query=new WP_Query(array('post_type'=>'post','posts_per_page' => 5,'paged' => $paged));
+            $the_query=new WP_Query(array('post_type'=>'post','posts_per_page' => 10,'paged' => $paged));
             if($the_query->have_posts()): while($the_query->have_posts()): $the_query->the_post();
-            get_template_part('templates/content', get_post_format());  
+            get_template_part('template-parts//content', get_post_format());  
            ?>
             <!--post-->
            <?php endwhile; ?>
@@ -31,14 +32,11 @@ Template Name: Home Page
           </main>
         </div>
          
-       <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pull-right">
-          <div class="sidebar wow fadeInUp">
-          <?php include backyard_sidebar_path(); ?>
-          </div>
-        </div>
+       <?php get_sidebar(); ?>
       
       </div>
     </section>
    
   </section>
   <!--content-->
+  <?php get_footer(); ?>
