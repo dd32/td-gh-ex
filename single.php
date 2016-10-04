@@ -1,33 +1,47 @@
-<?php get_header();	?>
+<?php
+/**
+ * The Template for displaying all single posts.
+ *
+ * @package Bandana
+ */
 
-<?php get_template_part( 'loop-meta' ); ?>
-  
-<div class="container_16 clearfix">
-  
-  <div class="grid_10">
-    <div id="content">	  
-	  
-	  <?php if ( have_posts() ) : ?>
-      
-        <?php while ( have_posts() ) : the_post(); ?>
-        
-          <?php get_template_part( 'content', 'single' ); ?>
-        
-        <?php endwhile; ?>
-      
-      <?php else : ?>
-                  
-        <?php get_template_part( 'loop-error' ); ?>
-      
-      <?php endif; ?>
-      
-      <?php bandana_loop_nav_singular_post(); ?>
-    
-    </div> <!-- end #content -->
-  </div> <!-- end .grid_10 -->
-  
-  <?php get_sidebar(); ?>
+get_header(); ?>
 
-</div> <!-- end .container_16 -->
-  
+	<div class="container">
+		<div class="row">
+
+			<div id="primary" class="content-area <?php bandana_layout_class( 'content' ); ?>">
+				<main id="main" class="site-main" role="main">
+
+					<div id="post-wrapper" class="post-wrapper">
+					<?php while ( have_posts() ) : the_post(); ?>
+
+						<?php get_template_part( 'template-parts/content', 'single' ); ?>
+
+						<?php
+						if ( '' !== get_the_author_meta( 'description' ) ) {
+							get_template_part( 'template-parts/biography' );
+						}
+						?>
+
+						<?php bandana_the_post_pagination(); ?>
+
+						<?php
+							// If comments are open or we have at least one comment, load up the comment template
+							if ( comments_open() || '0' != get_comments_number() ) :
+								comments_template();
+							endif;
+						?>
+
+					<?php endwhile; // end of the loop. ?>
+					</div><!-- .post-wrapper -->
+
+				</main><!-- #main -->
+			</div><!-- #primary -->
+
+			<?php get_sidebar(); ?>
+
+		</div><!-- .row -->
+	</div><!-- .container -->
+
 <?php get_footer(); ?>
