@@ -12,7 +12,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area home-loop-columns-four<?php echo ( ( is_front_page() ) && ( get_theme_mod( 'kra-home-blocks-layout' ) == 1 ) ) ? ' content-area-full' : ''; ?>">
+	<div id="primary" class="content-area home-loop-columns-four <?php echo ( ( is_front_page() ) && ( get_theme_mod( 'kra-home-blocks-layout' ) == 1 ) ) ? sanitize_html_class( 'content-area-full' ) : ''; ?>">
 		<main id="main" class="site-main" role="main">
             
             <?php if ( ( is_front_page() ) && ( get_theme_mod( 'kra-home-blocks-layout' ) == 1 ) ) : ?>

@@ -1,7 +1,7 @@
 === Electa ===
 Contributors: Kaira
 Donate link: 
-Tags: one-column, two-columns, three-columns, four-columns, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce, entertainment, food-and-drink, photography, portfolio
+Tags: one-column, two-columns, three-columns, four-columns, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce, entertainment, photography, portfolio
 Tested up to: 3.9
 Stable tag: 3.7
 License: GPLv2 or later
@@ -9,7 +9,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-A grid-based portfolio theme with multiple column layouts for the featured images, perfect for photoblogging and/or a portfolio site. Electa integrated nicely with some powerful plugins such as WooCommerce, SiteOrigin's Page Builder and more, making it very simple to build a nice website.
+Electa is your grid layout personal or commercial portfolio theme. Electa is the perfect theme to display any site from your photography portfolio, personal blog, restaurant websites, wedding sites, entertainment websites, or any site you'd like to display your beautiful images on. Along with the blocks layout, Electa has multiple page layouts which work well with SiteOrigin's simple drag and drop Page Builder, allowing you to built any type of page layout you like. Also integrated with WooCommerce, Electa can easily turn into a full online eCommerce store where you can sell products. Install WooCommerce now and build your own online shop in no time. Download Electa now and give it a go!
 
 == License ==
 
@@ -60,6 +60,13 @@ View the theme settings under "Appearance" -> Customize.
 1. Featured Images work best at a minimum of 1000 wide and 600 high.
 
 == Changelog ==
+
+#### 1.2.8
+* Added missing sanitization
+* Styling fixes
+Premium: Added setting to customize header color styling
+Premium: Added setting to remove Page Titles
+Premium: Added setting to align navigation text - Left, Right or Center aligned
 
 #### 1.2.7
 * Updated theme tags

@@ -5,7 +5,7 @@
 
 $postclass = '';
 if ( ! has_post_thumbnail() )
-    $postclass = 'post-no-thumbnail';
+    $postclass = sanitize_html_class( 'post-no-thumbnail' );
 
 if ( has_post_thumbnail() )
     $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'blog_standard_img' );

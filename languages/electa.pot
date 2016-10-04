@@ -1,7 +1,8 @@
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Electa\n"
-"POT-Creation-Date: 2016-08-28 17:03+0200\n"
+"POT-Creation-Date: 2016-10-04 10:08+0200\n"
 "PO-Revision-Date: 2016-08-28 17:03+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -9,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.9\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_n:1,2;__ngettext:1,2;"
@@ -503,36 +504,84 @@ msgid "About Electa"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:13
-msgid "<em>Support</em><span>Electa Documentation </span>"
+msgid "<span>Electa Premium </span><em>$20</em>"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:18
+msgid "<span>Simple Steps to upgrade"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:21
+msgid "Purchase and Download Electa Premium"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:24
+msgid ""
+"Install and activate the <a href=\"https://kairaweb.com/support/install-the-"
+"premium-theme/\" target=\"_blank\">Easy Theme Upgrades Plugin</a>... That's "
+"all to do with the plugin"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:25
+msgid ""
+"Upload and <a href=\"https://kairaweb.com/documentation/install-theme-zip-"
+"file/\" target=\"_blank\">install the Electa Premium zip</a> as normal at:"
+"<b>Appearance -> Themes -> Add New -> Upload Theme</b>"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:26
+msgid "You can then delete the Easy Theme Upgrades plugin"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:30
+msgid "Latest features added to Electa Premium"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:32
+msgid "Added setting to customize header color styling"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:33
+msgid "Added setting to remove Page Titles"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:34
+msgid "Added setting to align navigation text - Left, Right or Center aligned"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:35
+msgid "Added theme styling for WooCommerce"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:36
+msgid "Added option to make shop page full width"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:37
+msgid "Added new social icons"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:43
+msgid "<em>Support</em><span>Electa Documentation </span>"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:48
 msgid ""
 "We support all our themes, offering one on one email support to help you "
 "build the website you want"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:19
+#: upgrade/tpl/upgrade-page.php:49
 msgid ""
 "While we do support our both free and premium themes... <strong>Premium "
 "themes get prioritized support</strong>"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:24
-msgid "<span>Electa Premium </span><em>$20</em>"
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:29
-msgid ""
-"<a href=\"https://kairaweb.com/support/install-the-premium-theme/\" target="
-"\"_blank\">Get help here</a> on purchasing and installing Electa Premium"
-msgstr ""
-
-#: upgrade/tpl/upgrade-page.php:37 upgrade/tpl/upgrade-page.php:43
+#: upgrade/tpl/upgrade-page.php:57 upgrade/tpl/upgrade-page.php:63
 msgid "Upgrade to Premium"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:40
+#: upgrade/tpl/upgrade-page.php:60
 msgid ""
 "If you've enjoyed using our Electa theme to build your website, then you "
 "should love the premium version which comes with a bunch of extra features "
@@ -541,22 +590,22 @@ msgid ""
 "the website you want."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:48 upgrade/tpl/upgrade-page.php:54
+#: upgrade/tpl/upgrade-page.php:68 upgrade/tpl/upgrade-page.php:74
 msgid "Continued Updates"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:51
+#: upgrade/tpl/upgrade-page.php:71
 msgid ""
 "Once you upgrade to Electa Premium, you'll then support and move over to our "
 "premium updates system which will ensure Electa works with all future "
 "versions of WordPress that are released."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:59 upgrade/tpl/upgrade-page.php:65
+#: upgrade/tpl/upgrade-page.php:79 upgrade/tpl/upgrade-page.php:85
 msgid "Get Premium Support"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:62
+#: upgrade/tpl/upgrade-page.php:82
 msgid ""
 "Upgrading to Electa Premium will also give you prioritized support, ensuring "
 "we get to your queries first.<br /><br />We have a growing <a href='https://"
@@ -565,52 +614,52 @@ msgid ""
 "target='_blank'>email support</a> to sort out any queries you may have."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:76
+#: upgrade/tpl/upgrade-page.php:96
 msgid ""
 "We aim to keep our prices low, all our themes are under <strong>$30</"
 "strong>, while still offering you great WordPress themes."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:78
+#: upgrade/tpl/upgrade-page.php:98
 msgid ""
 "Upgrading will support us and enable us to keep building WordPress themes."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:80
+#: upgrade/tpl/upgrade-page.php:100
 #, php-format
 msgid ""
 "If you like our themes and/or found our support helpful, please let us know "
 "by <a href='%s' target='_blank'>giving us a review</a>."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:84
+#: upgrade/tpl/upgrade-page.php:104
 msgid "Theme Ratings"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:96
+#: upgrade/tpl/upgrade-page.php:116
 msgid "SpySunny"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:99
+#: upgrade/tpl/upgrade-page.php:119
 msgid "Very user-friendly theme with excellent support."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:105
+#: upgrade/tpl/upgrade-page.php:125
 msgid "Fitoni"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:108
+#: upgrade/tpl/upgrade-page.php:128
 msgid ""
 "What a great theme!! been using it for a long time, very clean code, easy to "
 "use, easy to customize, really cant say any wrong about it!!!<br /><br /"
 ">Give it a try and you will not be dissapointed! this theme is THE BEST!!"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:114
+#: upgrade/tpl/upgrade-page.php:134
 msgid "NayWordPress"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:117
+#: upgrade/tpl/upgrade-page.php:137
 msgid ""
 "I've purchased the Premium Theme for my Online Store. Very awesome! Support "
 "assistance 100&#37; available, easy to customize. I recommend it to everyone "

@@ -15,7 +15,7 @@
 <body <?php body_class(  ); ?>>
 <div id="page">
 
-<header id="masthead" class="site-header<?php echo ( get_header_image() ) ? '' : ' header-nologo'; ?>" role="banner">
+<header id="masthead" class="site-header <?php echo ( get_header_image() ) ? '' : sanitize_html_class( 'header-nologo' ); ?>" role="banner">
     <?php if ( get_theme_mod( 'kra-header-search', false ) ) : ?>
     <div class="search-button">
         <div class="search-block">
