@@ -93,6 +93,12 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.2.15
+- Updated: Logo alt tag now translation ready.
+- Updated: Improved ecaping of outputs in 00.theme-setup.php.
+- Updated: Improved ecaping of outputs in 01.general-settings.php.
+- Updated: Redux migration script removed as all users are highly likely to have already migrated.
+
 Version 1.2.14
 - Fixed:   prettyPhoto.js now fully compatible with https sites.
 - Updated: Font Awesome library updated to latest version v4.6.3. Ensures all icons in FA library are available to use.

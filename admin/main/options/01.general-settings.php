@@ -17,7 +17,7 @@ global $thinkup_general_sitedescription;
 
 	if ( $thinkup_general_logoswitch == "option1" ) {
 		if ( ! empty( $thinkup_general_logolink ) ) {
-			echo '<img src="' . $thinkup_general_logolink . '" alt="Logo">';
+			echo '<img src="' . $thinkup_general_logolink . '" alt="' . esc_attr__( 'Logo', 'renden' ) . '">';
 		} 
 	} else if ( $thinkup_general_logoswitch == "option2" or empty( $thinkup_general_logoswitch ) ) {
 		if ( empty( $thinkup_general_sitetitle ) ) {
@@ -53,7 +53,7 @@ function thinkup_custom_favicon() {
 global $thinkup_general_faviconlink;
 
 	if ( ! empty( $thinkup_general_faviconlink ) ) {
-		echo '<link rel="Shortcut Icon" type="image/x-icon" href="' . $thinkup_general_faviconlink . '" />';
+		echo '<link rel="Shortcut Icon" type="image/x-icon" href="' . esc_url( $thinkup_general_faviconlink ) . '" />';
 	}	
 }
 add_action('wp_head', 'thinkup_custom_favicon');
@@ -453,7 +453,7 @@ $class_intro = NULL;
 
 	// Output page title and breadcrumb
 	if ( ! is_front_page() ) {
-		echo	'<div id="intro" class="' . $class_intro . '"><div class="wrap-safari"><div id="intro-core">',
+		echo	'<div id="intro" class="' . esc_attr( $class_intro ) . '"><div class="wrap-safari"><div id="intro-core">',
 				'<h1 class="page-title"><span>',
 				thinkup_title_select(),
 				'</span></h1>',
@@ -500,7 +500,7 @@ class thinkup_nav_menu_responsive extends Walker_Nav_Menu{
 		$attributes = ! empty( $item->attr_title ) ? ' title="' . esc_attr( $item->attr_title ) .'"' : '';
 		$attributes .= ! empty( $item->target ) ? ' target="' . esc_attr( $item->target ) .'"' : '';
 		$attributes .= ! empty( $item->xfn ) ? ' rel="' . esc_attr( $item->xfn ) .'"' : '';
-		$attributes .= ! empty( $item->url ) ? ' href="' . esc_attr( $item->url ) .'"' : '';
+		$attributes .= ! empty( $item->url ) ? ' href="' . esc_url( $item->url ) .'"' : '';
 
         // Insert title for top level
 		$title = ( $depth == 0 )
@@ -597,14 +597,12 @@ add_action( 'body_class', 'thinkup_input_responsiveclass');
 function thinkup_custom_css() {
 global $thinkup_general_customcss;
 
-global $post;
-
 // Set variables to avoid php non-object notice error
 $_thinkup_meta_customcss = NULL;
 
 	if ( ! empty( $thinkup_general_customcss ) ) {
 		echo 	"\n" .'<style type="text/css">' . "\n",
-				esc_html( $thinkup_general_customcss ) . "\n",
+				wp_kses_post( $thinkup_general_customcss ) . "\n",
 				'</style>' . "\n";
 	}
 }
