@@ -56,7 +56,7 @@
             if( has_excerpt() ) {
                 the_excerpt();
             } else {
-                accesspress_mag_excerpt();   
+                accesspress_mag_excerpt();
             }
 		?>
 

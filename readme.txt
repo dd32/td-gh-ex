@@ -72,6 +72,9 @@ GPL compatible for own images
 ----------------------------------------------------
 == Changelog ==
 
+Version 2.4.4
+ * Removed the plugin slug from tgmpa function which doesn't exist
+ 
 Version 2.4.3
  * Fixed rtl css at mobile device
  * Fixed the function about excerpt value at archive page

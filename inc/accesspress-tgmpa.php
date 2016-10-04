@@ -23,14 +23,6 @@ function accesspress_mag_required_plugins() {
     $plugins = array(
 
         // This is an example of how to include a plugin pre-packaged with a theme.
-        
-         array(
-            'name'      => __( 'Newsletter', 'accesspress-mag' ), //The plugin name
-            'slug'      => 'newsletter',  // The plugin slug (typically the folder name)
-            'required'  => false,  // If false, the plugin is only 'recommended' instead of required.
-            'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-            'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
-            ),
          array(
             'name'      => __( 'AccessPress Social Icons', 'accesspress-mag' ),
             'slug'      => 'accesspress-social-icons',
