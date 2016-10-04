@@ -98,6 +98,11 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.7.14
+- Updated: Improved ecaping of outputs in 01.general-settings.php.
+- Updated: Function "Walker_Nav_Menu_Responsive" renamed to "thinkup_nav_menu_responsive".
+- Updated: Redux migration script removed as all users are highly likely to have already migrated.
+
 Version 1.7.13
 - Updated: Font Awesome library updated to latest version v4.6.3. Ensures all icons in FA library are available to use.
 
