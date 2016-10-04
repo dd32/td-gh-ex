@@ -653,11 +653,11 @@ msgid "Buy Rational Pro"
 msgstr ""
 
 #: ../includes/sketchtheme-upsell.php:215
-msgid "Incart Theme"
+msgid "Avis Theme"
 msgstr ""
 
 #: ../includes/sketchtheme-upsell.php:219
-msgid "InCart - Responsive WooCommerce WordPress Theme"
+msgid "Avis - Responsive WooCommerce WordPress Theme"
 msgstr ""
 
 #: ../includes/sketchtheme-upsell.php:222
@@ -671,11 +671,11 @@ msgid ""
 msgstr ""
 
 #: ../includes/sketchtheme-upsell.php:226
-msgid "Try Incart Free"
+msgid "Try Avis Free"
 msgstr ""
 
 #: ../includes/sketchtheme-upsell.php:228
-msgid "Buy Incart Pro"
+msgid "Buy Avis Pro"
 msgstr ""
 
 #: ../includes/sketchtheme-upsell.php:240

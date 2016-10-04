@@ -2,7 +2,7 @@
 Contributors: SketchThemes, tikendramaitry
 Tags: custom-background, custom-colors, custom-header, custom-menu, editor-style, one-column, two-columns, right-sidebar, featured-image-header, featured-images, sticky-post, theme-options, threaded-comments, translation-ready , full-width-template
 Requires at least: 3.8
-Tested up to: 4.6
+Tested up to: 4.6.1
 Stable tag: 1.0.3
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
