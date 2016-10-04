@@ -81,7 +81,7 @@ function thebox_scripts() {
 	wp_enqueue_style( 'thebox-icons', get_template_directory_uri() . '/fonts/fa-icons.css', array(), '1.7' );
 		
 	// Loads main stylesheet.
-	wp_enqueue_style( 'thebox-style', get_stylesheet_uri(), array(), '1.4.4' );
+	wp_enqueue_style( 'thebox-style', get_stylesheet_uri(), array(), '1.4.5' );
 	
 	wp_enqueue_script( 'thebox-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 

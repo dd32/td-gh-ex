@@ -96,3 +96,6 @@ Please visit https://wordpress.org/support/theme/the-box if you have any questio
 - Update: Add Social links options to the Customizer
 - Update: High resolution Header Image
 - New: Add Xing Social Link
+
+1.4.5
+- Fix: Mobile Menu

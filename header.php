@@ -52,7 +52,7 @@
 				<span class="screen-reader-text"><?php _e( 'open menu', 'the-box' ); ?></span>
 				<span class="button-toggle"></span>
 			</button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'main-menu' ) ); ?>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
 		</nav><!-- .main-navigation -->
 		
 		<?php $header_image = get_header_image();

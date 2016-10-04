@@ -4,7 +4,7 @@ Theme URI: http://www.designlabthemes.com/the-box-wordpress-theme/
 Author: Design Lab
 Author URI: http://www.designlabthemes.com/
 Description: Simple and minimal two columns Theme: custom header, custom background, custom colors, post thumbnails, post formats
-Version: 1.4.4
+Version: 1.4.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: the-box
@@ -35,6 +35,8 @@ Tags: one-column, two-columns, right-sidebar, theme-options, custom-header, cust
 13: - Responsive
 
 */
+
+
 
 
 /* 01: Normalize 
@@ -737,6 +739,9 @@ input#s {
 	border: 1px solid #eee;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
+	-webkit-border-radius: none;
+	border-radius: none;
+	-webkit-appearance: none;
 }
 
 .entry-content input#s {
@@ -921,17 +926,16 @@ h3 a {
 	padding: 0 1em;
 }
 
-.main-menu > li > a:hover,
 .main-navigation > div > ul > li > a:hover {
 	color: #fff;
 }
 
-.main-menu > li.menu-item-has-children > a,
+.main-navigation > div > ul > li.menu-item-has-children > a,
 .main-navigation > div > ul > li.page_item_has_children > a {
 	padding-right: 18px;
 }
 
-.main-menu > li.menu-item-has-children > a:before,
+.main-navigation > div > ul > li.menu-item-has-children > a:before,
 .main-navigation > div > ul > li.page_item_has_children > a:before {
 	font-family: "icons-font" !important;
 	font-style: normal !important;
@@ -986,7 +990,6 @@ h3 a {
     top: -6px;
 }
 
-.main-menu > li:hover > ul,
 .main-navigation > div > ul > li:hover > ul {
 	visibility: visible;
 	opacity: 1;
@@ -1067,12 +1070,15 @@ button.menu-toggle:active{
 	background-color: transparent;
 }
 
+button.menu-toggle:focus {
+	outline: none;
+}
+
 /* Button Toggle */
 
 .button-toggle {
 	display: block;
     background-color: #252525;
-    content: "";
     height: 3px;
     opacity: 1;
     position: absolute;
@@ -1119,84 +1125,6 @@ button.menu-toggle:active{
 .toggled .button-toggle:after {
     opacity: 1;
     transform: translate(0px, -7px) rotate(45deg);
-}
-
-@media screen and (max-width: 768px) {
-	.main-navigation.toggled {
-	margin-top: 10px;
-	background-color: transparent;
-	}
-	.main-navigation ul {
-	display: none;
-	}
-	button.menu-toggle,
-	.main-navigation.toggled .main-menu {
-	display: block;
-	float: none;
-	}
-	.main-navigation.toggled .main-menu {
-	margin: 0;
-	padding: 0;
-	position: relative;
-	z-index: 999;
-	background-color: #252525;
-	}
-	.main-navigation.toggled > div {
-    margin: 0;
-	}
-	.main-navigation.toggled li {
-	float: none;
-	}
-	.main-navigation.toggled ul {
-	text-align: left;
-	}
-	.main-navigation.toggled ul li {
-	display: block;
-	}
-	.main-navigation.toggled ul ul {
-	visibility: visible;
-	opacity: 1;
-	position: static;
-	display: block;
-	left: auto;
-	top: auto;
-	border: none;
-	-webkit-box-shadow: none;
-	box-shadow: none;
-	background: transparent;
-	width: 100%;
-	}
-	.main-navigation.toggled ul ul:after,
-	.main-navigation.toggled a:before {
-	content: none !important;
-	}
-	.main-navigation.toggled ul a,
-	.main-navigation.toggled ul ul a {
-	display: block;
-	width: auto;
-	height: auto;
-	padding: 12px 15px;
-	line-height: 1.5;
-	color: #ddd;
-	border-bottom: 1px solid #353535;
-	background: transparent;
-	}
-	.main-navigation.toggled a:hover,
-	.main-navigation.toggled ul ul a:hover,
-	.main-navigation.toggled a:active,
-	.main-navigation.toggled ul ul a:active,
-	.main-navigation.toggled li:hover a,
-	.main-navigation.toggled li:focus a {
-	background-color: #252525;
-	}
-	.site-header .main-navigation.toggled ul ul a:hover {
-	color: #fff;
-	}
-	.main-menu > li > .sub-menu,
-	.main-menu > li > .sub-menu > li > .sub-menu {
-	visibility: visible;
-	opacity: 1;
-	}
 }
 
 /* Footer Navigation */
@@ -1305,16 +1233,17 @@ button.menu-toggle:active{
 
 .site-brand {
 	position: relative;
-	margin: 20px 0 0;
+	margin: 20px 0;
 }
-
+	
 hgroup {
-	width: 100%;
+    float: left;
+    width: 50%;
+    padding: 0 20px 0 0;
     -webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	padding-right: 60px;
 }
-
+	
 hgroup h1 a {
 	text-decoration: none;
 	outline: none;
@@ -1342,16 +1271,19 @@ hgroup h1 a {
 /* Social Links */
 
 .social-navigation {
-	width: 100%;
+	float: left;
+    padding: 0 0 0 20px;
+    margin: 10px 0 0;
+    width: 50%;
     -webkit-box-sizing: border-box;
 	box-sizing: border-box;
-	margin: 10px 0 0;
 }
 
 .social-links {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    text-align: right;
 }
 
 .social-links li {
@@ -2127,28 +2059,11 @@ textarea {
 	}
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768px) {
 	/* Layout */
 	#page {
 	max-width: 740px;
 	padding: 0 40px;
-	}
-	/* Header */
-	hgroup {
-    float: left;
-    width: 50%;
-    padding: 0 20px 0 0;
-	}
-	.site-brand {
-	margin-bottom: 20px;
-	}
-	.social-navigation {
-    float: left;
-    padding: 0 0 0 20px;
-    width: 50%;
-	}
-	.social-links {
-	text-align: right;
 	}
 	/* Content */
 	.entry-title,
@@ -2219,5 +2134,101 @@ textarea {
 	}
 	.sidebar-content .widget-area {
 	float: left;	
+	}
+}
+
+@media (max-width: 768px), (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
+	/* Header */
+	hgroup {
+	width: 100%;
+    float: none;
+	padding-right: 60px;
+	}
+	.site-brand {
+	margin-bottom: 0;
+	}
+	.social-navigation {
+	width: 100%;
+	float: none;
+    padding: 0;
+	}
+	.social-links {
+	text-align: left;
+	}
+	/* Mobile Navigation */
+	.main-navigation.toggled {
+	margin-top: 10px;
+	background-color: transparent;
+	}
+	.main-navigation ul {
+	display: none;
+	}
+	button.menu-toggle,
+	.main-navigation.toggled .nav-menu {
+	display: block;
+	float: none;
+	}
+	.main-navigation.toggled .nav-menu {
+	margin: 0;
+	padding: 0;
+	position: relative;
+	z-index: 999;
+	background-color: #252525;
+	}
+	.main-navigation.toggled > div {
+    margin: 0;
+	}
+	.main-navigation.toggled li {
+	float: none;
+	}
+	.main-navigation.toggled ul {
+	text-align: left;
+	}
+	.main-navigation.toggled ul li {
+	display: block;
+	}
+	.main-navigation.toggled ul ul {
+	visibility: visible;
+	opacity: 1;
+	position: static;
+	display: block;
+	left: auto;
+	top: auto;
+	border: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	background: transparent;
+	width: 100%;
+	}
+	.main-navigation.toggled ul ul:after,
+	.main-navigation.toggled a:before {
+	content: none !important;
+	}
+	.main-navigation.toggled ul a,
+	.main-navigation.toggled ul ul a {
+	display: block;
+	width: auto;
+	height: auto;
+	padding: 12px 15px;
+	line-height: 1.5;
+	color: #ddd;
+	border-bottom: 1px solid #353535;
+	background: transparent;
+	}
+	.main-navigation.toggled a:hover,
+	.main-navigation.toggled ul ul a:hover,
+	.main-navigation.toggled a:active,
+	.main-navigation.toggled ul ul a:active,
+	.main-navigation.toggled li:hover a,
+	.main-navigation.toggled li:focus a {
+	background-color: #252525;
+	}
+	.site-header .main-navigation.toggled ul ul a:hover {
+	color: #fff;
+	}
+	.main-navigation > div > ul > li > .sub-menu,
+	.main-navigation > div > ul > li > .sub-menu > li > .sub-menu {
+	visibility: visible;
+	opacity: 1;
 	}
 }
