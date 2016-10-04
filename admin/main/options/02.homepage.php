@@ -41,7 +41,7 @@ $slider_toggle           = NULL;
 				} else if (isset($thinkup_homepage_sliderpreset) && is_array($thinkup_homepage_sliderpreset)) {
 					foreach ($thinkup_homepage_sliderpreset as $slide) {
 						echo '<li>',
-							 '<img src="' . get_template_directory_uri() . '/images/transparent.png" style="background: url(' . $slide['slide_image_url'] . ') no-repeat center; background-size: cover;" alt="' . $slide['slide_title']. '" />',
+							 '<img src="' . esc_url( get_template_directory_uri() ) . '/images/transparent.png" style="background: url(' . esc_url( $slide['slide_image_url'] ) . ') no-repeat center; background-size: cover;" alt="' . esc_attr( $slide['slide_title'] ) . '" />',
 							 '<div class="rslides-content">',
 							 '<div class="wrap-safari">',
 							 '<div class="rslides-content-inner">',
@@ -49,7 +49,7 @@ $slider_toggle           = NULL;
 							 
 								if ( ! empty( $slide['slide_title'] ) ) {
 									echo '<div class="featured-title">',
-										 '<span>' . $slide['slide_title'] . '</span>',
+										 '<span>' . esc_html( $slide['slide_title'] ) . '</span>',
 										 '</div>';
 								}
 								if ( ! empty( $slide['slide_description'] ) ) {
@@ -61,7 +61,7 @@ $slider_toggle           = NULL;
 								}
 								if ( ! empty( $slide['slide_url'] ) ) {
 									echo '<div class="featured-link">',
-										 '<a href="' . $slide['slide_url'] . '"><span>' . __( 'Read More', 'lan-thinkupthemes' ) . '</a></span>',
+										 '<a href="' . esc_url( $slide['slide_url'] ) . '"><span>' . __( 'Read More', 'lan-thinkupthemes' ) . '</a></span>',
 										 '</div>';
 								}
 
@@ -94,96 +94,13 @@ global $thinkup_homepage_sliderpresetheight;
 	if ( is_front_page() or thinkup_check_ishome() ) {
 		if ( empty( $thinkup_homepage_sliderswitch ) or $thinkup_homepage_sliderswitch == 'option1' ) {
 		echo 	"\n" .'<style type="text/css">' . "\n",
-			'#slider .rslides, #slider .rslides li { height: ' . $thinkup_homepage_sliderpresetheight . 'px; max-height: ' . $thinkup_homepage_sliderpresetheight . 'px; }' . "\n",
-			'#slider .rslides img { height: 100%; max-height: ' . $thinkup_homepage_sliderpresetheight . 'px; }' . "\n",
+			'#slider .rslides, #slider .rslides li { height: ' . esc_html( $thinkup_homepage_sliderpresetheight ) . 'px; max-height: ' . esc_html( $thinkup_homepage_sliderpresetheight ) . 'px; }' . "\n",
+			'#slider .rslides img { height: 100%; max-height: ' . esc_html( $thinkup_homepage_sliderpresetheight ) . 'px; }' . "\n",
 			'</style>' . "\n";
 		}
 	}
 }
 add_action( 'wp_head','thinkup_input_sliderhomeheight', '13' );
-
-// Add Slider - Inner Page
-function thinkup_input_sliderpage() {
-global $post;
-
-$_thinkup_meta_slider     = get_post_meta( $post->ID, '_thinkup_meta_slider', true );
-$_thinkup_meta_slidername = get_post_meta( $post->ID, '_thinkup_meta_slidername', true );
-$_thinkup_meta_sliderpage = get_post_meta( $post->ID, '_thinkup_meta_sliderimages', true ); 
-
-$count = 0;
-
-	if ( ! is_front_page() and !thinkup_check_ishome() and !is_archive() and $_thinkup_meta_slider == 'on' ) {
-
-		echo	'<div id="slider"><div id="slider-core">';
-
-			if ( empty( $_thinkup_meta_slidername ) and is_array( $_thinkup_meta_sliderpage ) ) {
-			echo '<div class="rslides-container"><div class="rslides-inner page-inner"><ul class="slides">';
-
-				foreach ( $_thinkup_meta_sliderpage['image'] as $slide => $list) {
-
-				$slide_id          = $_thinkup_meta_sliderpage['image'][ $count ];
-				$slide_title       = $_thinkup_meta_sliderpage['title'][ $count ];
-				$slide_description = $_thinkup_meta_sliderpage['description'][ $count ];
-
-				$slide_img = wp_get_attachment_image_src( $slide_id, true );
-
-						echo '<li>',
-							 '<img src="' . get_template_directory_uri() . '/images/transparent.png" style="background: url(' . $slide_img[0] . ') no-repeat center; background-size: cover;" alt="' . $slide_title . '" />',
-							 '<div class="rslides-content">',
- 							 '<div class="wrap-safari">',
-							 '<div class="rslides-content-inner">',
-							 '<div class="featured">';
-
-								if ( ! empty( $slide_title ) ) {
-									echo '<div class="featured-title">',
-										 '<span>' . $slide_title . '</span>',
-										 '</div>';
-								}
-								if ( ! empty( $slide_description ) ) {
-									$slide_description = str_replace( '<p>', '<p><span>', wpautop( $slide_description ));
-									$slide_description = str_replace( '</p>', '</span></p>', $slide_description );
-									echo '<div class="featured-excerpt">',
-										 $slide_description,
-										 '</div>';
-								}
-						 echo '</div>',
-							  '</div>',
-							  '</div>',
-							  '</div>',
-							  '</li>';
-
-						$count++;
-					}
-
-				echo '</ul></div></div>';
-			} else if ( ! empty( $_thinkup_meta_slidername ) ) {
-				echo do_shortcode( $_thinkup_meta_slidername );
-			}
-		echo '</div></div>';
-	}
-}
-
-// Add ThinkUpSlider Height - Inner Page
-function thinkup_input_sliderpageheight() {
-global $post;
-
-$_thinkup_meta_slider     = get_post_meta( $post->ID, '_thinkup_meta_slider', true );
-$_thinkup_meta_slidername = get_post_meta( $post->ID, '_thinkup_meta_slidername', true );
-$_thinkup_meta_sliderpage = get_post_meta( $post->ID, '_thinkup_meta_sliderimages', true ); 
-
-		if ( is_array( $_thinkup_meta_sliderpage ) ) $slide_height = $_thinkup_meta_sliderpage['height'];
-
-		if ( empty( $slide_height ) ) $slide_height = '200';
-
-		if ( ! is_front_page() and !thinkup_check_ishome() and $_thinkup_meta_slider == 'on' and empty( $_thinkup_meta_slidername ) and ! empty( $_thinkup_meta_sliderpage[ 'image' ][0] ) ) {
-
-		echo 	"\n" .'<style type="text/css">' . "\n",
-			'#slider .rslides, #slider .rslides li { height: ' . $slide_height . 'px; max-height: ' . $slide_height . 'px; }' . "\n",
-			'#slider .rslides img { height: 100%; max-height: ' . $slide_height . 'px; }' . "\n",
-			'</style>' . "\n";
-	}
-}
-add_action( 'wp_head','thinkup_input_sliderpageheight', '13' );
 
 /* Add full width slider class to body */
 function thinkup_input_sliderclass($classes){
@@ -244,19 +161,19 @@ global $thinkup_homepage_section3_link;
 		$thinkup_homepage_section3_image = wp_get_attachment_image_src($thinkup_homepage_section3_image, 'column3-1/3');
 
 	// Set default values for titles
-	if ( empty( $thinkup_homepage_section1_title ) ) $thinkup_homepage_section1_title = 'Perfect For All';
-	if ( empty( $thinkup_homepage_section2_title ) ) $thinkup_homepage_section2_title = '100% Responsive';
-	if ( empty( $thinkup_homepage_section3_title ) ) $thinkup_homepage_section3_title = 'Powerful Framework';
+	if ( empty( $thinkup_homepage_section1_title ) ) $thinkup_homepage_section1_title = __( 'Perfect For All', 'lan-thinkupthemes' );
+	if ( empty( $thinkup_homepage_section2_title ) ) $thinkup_homepage_section2_title = __( '100% Responsive', 'lan-thinkupthemes' );
+	if ( empty( $thinkup_homepage_section3_title ) ) $thinkup_homepage_section3_title = __( 'Powerful Framework', 'lan-thinkupthemes' );
 
 	// Set default values for descriptions
 	if ( empty( $thinkup_homepage_section1_desc ) ) 
-	$thinkup_homepage_section1_desc = 'The modern design of Minamaze (Lite) makes it the perfect choice for any website. Business, charity, blog, well everything!';
+	$thinkup_homepage_section1_desc = __( 'The modern design of Minamaze (Lite) makes it the perfect choice for any website. Business, charity, blog, well everything!', 'lan-thinkupthemes' );
 
 	if ( empty( $thinkup_homepage_section2_desc ) ) 
-	$thinkup_homepage_section2_desc = 'Minamaze (Lite) is 100% responsive. It looks great on all devices, from mobile to desktops and everything in between!';
+	$thinkup_homepage_section2_desc = __( 'Minamaze (Lite) is 100% responsive. It looks great on all devices, from mobile to desktops and everything in between!', 'lan-thinkupthemes' );
 
 	if ( empty( $thinkup_homepage_section3_desc ) ) 
-	$thinkup_homepage_section3_desc = 'Get a taste of our awesome ThinkUpThemes Framework and make changes to your site easily, without touching any code at all!';
+	$thinkup_homepage_section3_desc = __( 'Get a taste of our awesome ThinkUpThemes Framework and make changes to your site easily, without touching any code at all!', 'lan-thinkupthemes' );
 
 	// Get page names for links
 	if ( !empty( $thinkup_homepage_section1_link ) ) $thinkup_homepage_section1_link = get_permalink( $thinkup_homepage_section1_link );
@@ -273,9 +190,9 @@ global $thinkup_homepage_section3_link;
 					'<div class="section">',
 					'<div class="entry-header">';
 					if ( empty( $thinkup_homepage_section1_image ) ) {
-						echo '<img src="' . get_template_directory_uri() . '/images/slideshow/featured1.png' . '" alt="" />';
+						echo '<img src="' . esc_url( get_template_directory_uri() ) . '/images/slideshow/featured1.png' . '" alt="" />';
 					} else {
-						echo '<img src="' . $thinkup_homepage_section1_image[0] . '"  alt="" />';
+						echo '<img src="' . esc_url( $thinkup_homepage_section1_image[0] ) . '"  alt="" />';
 					}
 			echo	'</div>',
 					'<div class="entry-content">',
@@ -289,9 +206,9 @@ global $thinkup_homepage_section3_link;
 					'<div class="section">',
 					'<div class="entry-header">';
 					if ( empty( $thinkup_homepage_section2_image ) ) {
-						echo '<img src="' . get_template_directory_uri() . '/images/slideshow/featured2.png' . '"  alt="" />';
+						echo '<img src="' . esc_url( get_template_directory_uri() ) . '/images/slideshow/featured2.png' . '"  alt="" />';
 					} else {
-						echo '<img src="' . $thinkup_homepage_section2_image[0] . '"  alt="" />';
+						echo '<img src="' . esc_url( $thinkup_homepage_section2_image[0] ) . '"  alt="" />';
 					}
 			echo	'</div>',
 					'<div class="entry-content">',
@@ -305,9 +222,9 @@ global $thinkup_homepage_section3_link;
 					'<div class="section">',
 					'<div class="entry-header">';
 					if ( empty( $thinkup_homepage_section3_image ) ) {
-						echo '<img src="' . get_template_directory_uri() . '/images/slideshow/featured3.png' . '"  alt="" />';
+						echo '<img src="' . esc_url( get_template_directory_uri() ) . '/images/slideshow/featured3.png' . '"  alt="" />';
 					} else {
-						echo '<img src="' . $thinkup_homepage_section3_image[0] . '"  alt="" />';
+						echo '<img src="' . esc_url( $thinkup_homepage_section3_image[0] ) . '"  alt="" />';
 					}
 			echo	'</div>',
 					'<div class="entry-content">',
@@ -341,27 +258,27 @@ global $thinkup_homepage_introactioncustom;
 		if (empty( $thinkup_homepage_introactionbutton ) ) {
 			if ( empty( $thinkup_homepage_introactionteaser ) ) {
 				echo	'<div class="action-text">
-						<h3>' . $thinkup_homepage_introaction . '</h3>
+						<h3>' . esc_html( $thinkup_homepage_introaction ) . '</h3>
 						</div>';
 				} else {
 				echo	'<div class="action-text action-teaser">
-						<h3>' . $thinkup_homepage_introaction . '</h3>
+						<h3>' . esc_html( $thinkup_homepage_introaction ) . '</h3>
 						<p>' . esc_html( $thinkup_homepage_introactionteaser ) . '</p>
 						</div>';
 				}
 		} else if ( ! empty( $thinkup_homepage_introactionbutton ) ) {
 			if ( empty( $thinkup_homepage_introactionteaser ) ) {
 				echo	'<div class="action-text three_fourth">
-						<h3>' . $thinkup_homepage_introaction . '</h3>
+						<h3>' . esc_html( $thinkup_homepage_introaction ) . '</h3>
 						</div>';
 				} else {
 				echo	'<div class="action-text three_fourth action-teaser">
-						<h3>' . $thinkup_homepage_introaction . '</h3>
+						<h3>' . esc_html( $thinkup_homepage_introaction ) . '</h3>
 						<p>' . esc_html( $thinkup_homepage_introactionteaser ) . '</p>
 						</div>';
 				}
 			if ( $thinkup_homepage_introactionlink == 'option1' ) {
-				echo '<div class="action-button one_fourth last"><a href="' . get_permalink( $thinkup_homepage_introactionpage ) . '"><h4 class="themebutton">';
+				echo '<div class="action-button one_fourth last"><a href="' . esc_url( get_permalink( $thinkup_homepage_introactionpage ) ) . '"><h4 class="themebutton">';
 				echo esc_html( $thinkup_homepage_introactionbutton );
 				echo '</h4></a></div>';
 			} else if ( $thinkup_homepage_introactionlink == 'option2' ) {
@@ -377,11 +294,6 @@ global $thinkup_homepage_introactioncustom;
 		echo '</div></div>';
 	}
 }
-
-
-/* ----------------------------------------------------------------------------------
-	CALL TO ACTION - OUTRO - PREMIUM FEATURE
----------------------------------------------------------------------------------- */
 
 
 ?>

@@ -127,6 +127,11 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.3.16
+- Updated: Logo alt tag now translation ready.
+- Updated: Improved ecaping of outputs in 02.homepage.php.
+- Updated: Function thinkup_input_sliderpage() removed as it's not being used in the theme.
+
 Version 1.3.15
 - Fixed:   prettyPhoto.js now fully compatible with https sites.
 - Updated: Font Awesome library updated to latest version v4.6.3. Ensures all icons in FA library are available to use.

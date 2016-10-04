@@ -17,7 +17,7 @@ global $thinkup_general_sitedescription;
 
 	if ( $thinkup_general_logoswitch == "option1" ) {
 		if ( ! empty( $thinkup_general_logolink ) ) {
-			echo '<img src="' . $thinkup_general_logolink . '" alt="Logo">';
+			echo '<img src="' . $thinkup_general_logolink . '" alt="' . esc_attr__( 'Logo', 'lan-thinkupthemes' ) . '">';
 		} 
 	} else if ( $thinkup_general_logoswitch == "option2" or empty( $thinkup_general_logoswitch ) ) {
 		if ( empty( $thinkup_general_sitetitle ) ) {
