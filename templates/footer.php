@@ -1,4 +1,4 @@
-<footer id="containerfooter" class="footerclass">
+<footer id="containerfooter" class="footerclass" itemscope itemtype="http://schema.org/WPFooter">
   <div class="container">
   	<div class="row">
   		<?php global $virtue; if(isset($virtue['footer_layout'])) { $footer_layout = $virtue['footer_layout']; } else { $footer_layout = 'fourc'; }

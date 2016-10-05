@@ -30,6 +30,9 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 2.8.1 | 4th October 2016 =
+* Update: Schema, now google doesn't show "errors".
+
 = Version 2.8.0 | 13th September 2016 =
 * Fix: Issue with cc icon.
 

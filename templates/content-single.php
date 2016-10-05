@@ -31,7 +31,7 @@
     do_action( 'kadence_single_post_begin' ); 
     ?>
 <div id="content" class="container">
-    <div class="row single-article" itemscope="" itemtype="http://schema.org/BlogPosting">
+    <div class="row single-article" itemscope itemtype="http://schema.org/BlogPosting">
         <div class="main <?php echo esc_attr( kadence_main_class() ); ?>" role="main">
         <?php while (have_posts()) : the_post(); ?>
             <article <?php post_class(); ?>>
@@ -54,8 +54,11 @@
                                 if(empty($image[0])) { $image = array($attachment_src[0], $attachment_src[1], $attachment_src[2]); }
 
                                     echo '<li>';
-                                        echo '<a href="'.esc_url($attachment_src[0]).'" data-rel="lightbox">';
-                                            echo '<img src="'.esc_url($image[0]).'" width="'.esc_attr($image[1]).'" height="'.esc_attr($image[2]).'" alt="'.esc_attr($caption).'" '.kt_get_srcset_output($image[1], $image[2], $attachment_src[0], $attachment).' itemprop="image"/>';
+                                        echo '<a href="'.esc_url($attachment_src[0]).'" data-rel="lightbox" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">';
+                                            echo '<img src="'.esc_url($image[0]).'" width="'.esc_attr($image[1]).'" height="'.esc_attr($image[2]).'" alt="'.esc_attr($caption).'" '.kt_get_srcset_output($image[1], $image[2], $attachment_src[0], $attachment).' itemprop="contentUrl"/>';
+                                                echo '<meta itemprop="url" content="'.esc_url($image[0]).'">';
+                                                echo '<meta itemprop="width" content="'.esc_attr($image[1]).'">';
+                                                echo '<meta itemprop="height" content="'.esc_attr($image[2]).'">';
                                         echo '</a>';
                                     echo '</li>';
                                 }
@@ -70,6 +73,14 @@
                     <div class="videofit">
                         <?php echo do_shortcode( get_post_meta( $post->ID, '_kad_post_video', true ) ); ?>
                     </div>
+                    <?php if (has_post_thumbnail( $post->ID ) ) { 
+                        $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); ?>
+                    <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                        <meta itemprop="url" content="<?php echo esc_url($image[0]); ?>">
+                        <meta itemprop="width" content="<?php echo esc_attr($image[1])?>">
+                        <meta itemprop="height" content="<?php echo esc_attr($image[2])?>">
+                    </div>
+                    <?php } ?>
                 </section>
             <?php } else if ($headcontent == 'image') {
                     if (has_post_thumbnail( $post->ID ) ) {        
@@ -78,9 +89,12 @@
                         $image = aq_resize( $image_src[0], $slidewidth, $slideheight, true, false, false, $image_id); //resize & crop the image
                         if(empty($image[0])) { $image = array($image_src[0], $image_src[1], $image_src[2]); }
                         ?>
-                            <div class="imghoverclass postfeat post-single-img" itemprop="image">
+                            <div class="imghoverclass postfeat post-single-img" itemscope itemtype="https://schema.org/ImageObject">
                                 <a href="<?php echo esc_url($image_src[0]); ?>" data-rel="lightbox" class="lightboxhover">
-                                    <img src="<?php echo esc_url($image[0]); ?>"  width="<?php echo esc_attr($image[1]); ?>" height="<?php echo esc_attr($image[2]); ?>" <?php echo kt_get_srcset_output($image[1], $image[2], $image[0], $image_id);?> itemprop="image" alt="<?php the_title(); ?>" />
+                                    <img src="<?php echo esc_url($image[0]); ?>"  width="<?php echo esc_attr($image[1]); ?>" height="<?php echo esc_attr($image[2]); ?>" <?php echo kt_get_srcset_output($image[1], $image[2], $image[0], $image_id);?> itemprop="contentUrl" alt="<?php the_title(); ?>" />
+                                    <meta itemprop="url" content="<?php echo esc_url($image[0]); ?>">
+                                    <meta itemprop="width" content="<?php echo esc_attr($image[1])?>">
+                                    <meta itemprop="height" content="<?php echo esc_attr($image[2])?>">
                                 </a>
                             </div>
                         <?php

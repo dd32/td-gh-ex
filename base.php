@@ -11,7 +11,7 @@
           include kadence_template_path(); ?>
             
           <?php if (kadence_display_sidebar()) : ?>
-            <aside class="<?php echo esc_attr(kadence_sidebar_class()); ?> kad-sidebar" role="complementary">
+            <aside class="<?php echo esc_attr(kadence_sidebar_class()); ?> kad-sidebar" role="complementary" itemscope itemtype="http://schema.org/WPSideBar">
               <div class="sidebar">
                 <?php include kadence_sidebar_path(); ?>
               </div><!-- /.sidebar -->

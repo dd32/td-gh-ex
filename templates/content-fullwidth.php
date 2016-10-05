@@ -1,4 +1,7 @@
-              <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="" itemtype="http://schema.org/BlogPosting">
+<?php 
+// depreciated... will be removed
+?>    
+    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="" itemtype="http://schema.org/BlogPosting">
                   <div class="row">
                       <?php global $post, $virtue;
                           $postsummery  = get_post_meta( $post->ID, '_kad_post_summery', true );
@@ -190,7 +193,8 @@
                               <?php the_excerpt(); ?>
                           </div>
                           <footer>
-                              <?php $tags = get_the_tags(); if ($tags) { ?> <span class="posttags"><i class="icon-tag"></i> <?php the_tags('', ', ', ''); ?> </span><?php } ?>
+                           <?php do_action( 'kadence_post_excerpt_footer' );
+                              $tags = get_the_tags(); if ($tags) { ?> <span class="posttags"><i class="icon-tag"></i> <?php the_tags('', ', ', ''); ?> </span><?php } ?>
                           </footer>
                         </div><!-- Text size -->
                   </div><!-- row-->

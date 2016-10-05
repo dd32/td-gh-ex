@@ -25,6 +25,7 @@ function virtue_post_footer_pagination() {
     wp_link_pages(array('before' => '<nav class="pagination kt-pagination">', 'after' => '</nav>', 'link_before'=> '<span>','link_after'=> '</span>'));
 }
 
+add_action( 'kadence_single_loop_post_footer', 'virtue_post_footer_tags', 20 );
 add_action( 'kadence_single_post_footer', 'virtue_post_footer_tags', 20 );
 function virtue_post_footer_tags() {
   $tags = get_the_tags();
@@ -33,10 +34,6 @@ function virtue_post_footer_tags() {
     the_tags('', ', ', '');
     echo '</span>';
   }
-}
-add_action( 'kadence_single_post_footer', 'virtue_post_footer_meta', 30 );
-function virtue_post_footer_meta() {
-echo '<meta itemprop="dateModified" content="'.esc_attr(get_the_modified_date()).'">';
 }
 
 add_action( 'kadence_single_post_footer', 'virtue_post_nav', 40 );
@@ -78,4 +75,16 @@ function virtue_post_bottom_carousel() {
 add_action( 'kadence_single_post_after', 'virtue_post_comments', 40 );
 function virtue_post_comments() {
   comments_template('/templates/comments.php');
+}
+add_action( 'kadence_post_excerpt_footer', 'virtue_post_footer_meta', 30 );
+add_action( 'kadence_post_mini_excerpt_footer', 'virtue_post_footer_meta', 30 );
+add_action( 'kadence_post_carousel_small_excerpt_footer', 'virtue_post_footer_meta', 30 );
+add_action( 'kadence_single_loop_post_footer', 'virtue_post_footer_meta', 20 );
+add_action( 'kadence_single_post_footer', 'virtue_post_footer_meta', 30 );
+function virtue_post_footer_meta() {
+    get_template_part('templates/entry', 'meta-footer');
+}
+add_action( 'kadence_post_carousel_small_excerpt_footer', 'virtue_post_footer_meta_author', 30 );
+function virtue_post_footer_meta_author() {
+    echo '<meta class="author vcard fn" itemprop="author" content="'.get_the_author().'"/>';
 }

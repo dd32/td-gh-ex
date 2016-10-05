@@ -28,27 +28,32 @@
                 $textsize = 'col-md-12'; 
                 if (has_post_thumbnail( $post->ID ) ) {
                     $image_id = get_post_thumbnail_id( $post->ID );
-                    $image_url = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); 
-                    $thumbnailURL = $image_url[0];
-                    $image = aq_resize($thumbnailURL, $slidewidth, $slideheight, true);
-                    if(empty($image)) { $image = $thumbnailURL; }
+                    $image_src = wp_get_attachment_image_src( $image_id, 'full' ); 
+                    $image = aq_resize($image_src[0], $slidewidth, $slideheight, true, false, false, $image_id);
+                    if(empty($image[0])) { $image = $image_src; }
                     ?>
                     <div class="col-md-12">
-                        <div class="imghoverclass img-margin-center">
+                        <div class="imghoverclass img-margin-center" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
                             <a href="<?php the_permalink()  ?>" title="<?php echo esc_attr(get_the_title()); ?>">
-                                <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" itemprop="image"  class="iconhover" style="display:block;">
+                                <img src="<?php echo esc_url($image[0]); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" width="<?php echo esc_attr($image[1]);?>" height="<?php echo esc_attr($image[2]);?>" itemprop="contentUrl"  class="iconhover" <?php echo kt_get_srcset_output($image[1], $image[2], $image_src[0], $image_id);?>>
+                                    <meta itemprop="url" content="<?php echo esc_url($image[0]); ?>">
+                                    <meta itemprop="width" content="<?php echo esc_attr($image[1])?>">
+                                    <meta itemprop="height" content="<?php echo esc_attr($image[2])?>">
                             </a> 
                         </div>
                     </div>
                     <?php $image = null; $thumbnailURL = null; 
                 } else {
                         $thumbnailURL = virtue_post_default_placeholder();
-                        $image = aq_resize($thumbnailURL, $slidewidth, $slideheight, true);
-                        if(empty($image)) { $image = $thumbnailURL; } ?>
+                        $image = aq_resize($thumbnailURL, $slidewidth, $slideheight, true, false, false);
+                        if(empty($image[0])) { $image = array($thumbnailURL, null, null); } ?>
                         <div class="col-md-12">
-                        <div class="imghoverclass img-margin-center">
+                        <div class="imghoverclass img-margin-center" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
                           <a href="<?php the_permalink()  ?>" title="<?php echo esc_attr(get_the_title()); ?>">
-                                  <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" itemprop="image"  class="iconhover" style="display:block;">
+                                    <img src="<?php echo esc_url($image[0]); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" width="<?php echo esc_attr($image[1]);?>" height="<?php echo esc_attr($image[2]);?>" itemprop="contentUrl"  class="iconhover" >
+                                    <meta itemprop="url" content="<?php echo esc_url($image[0]); ?>">
+                                    <meta itemprop="width" content="<?php echo esc_attr($image[1])?>">
+                                    <meta itemprop="height" content="<?php echo esc_attr($image[2])?>">
                               </a> 
                            </div>
                        </div>
@@ -57,27 +62,32 @@
             } elseif($postsummery == 'img_portrait') { 
                 $textsize = 'col-md-7'; 
                 if (has_post_thumbnail( $post->ID ) ) {
-                    $image_url = wp_get_attachment_image_src( 
-                    get_post_thumbnail_id( $post->ID ), 'full' ); 
-                    $thumbnailURL = $image_url[0]; 
-                    $image = aq_resize($thumbnailURL, $portraitwidth, $portraitheight, true);
-                    if(empty($image)) { $image = $thumbnailURL; } ?>
+                    $image_id = get_post_thumbnail_id( $post->ID );
+                    $image_src = wp_get_attachment_image_src( $image_id, 'full' ); 
+                    $image = aq_resize($image_src[0], $portraitwidth, $portraitheight, true, false, false, $image_id);
+                    if(empty($image[0])) { $image = $image_src; } ?>
                     <div class="col-md-5 post-image-container">
-                        <div class="imghoverclass img-margin-center">
+                        <div class="imghoverclass img-margin-center" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
                             <a href="<?php the_permalink()  ?>" title="<?php echo esc_attr(get_the_title()); ?>">
-                                <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" itemprop="image"  class="iconhover" style="display:block;">
+                                <img src="<?php echo esc_url($image[0]); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" width="<?php echo esc_attr($image[1]);?>" height="<?php echo esc_attr($image[2]);?>" itemprop="contentUrl"  class="iconhover" <?php echo kt_get_srcset_output($image[1], $image[2], $image_src[0], $image_id);?>>
+                                <meta itemprop="url" content="<?php echo esc_url($image[0]); ?>">
+                                <meta itemprop="width" content="<?php echo esc_attr($image[1])?>">
+                                <meta itemprop="height" content="<?php echo esc_attr($image[2])?>">
                             </a> 
                          </div>
                      </div>
                     <?php $image = null; $thumbnailURL = null; 
                 } else {
                   $thumbnailURL = virtue_post_default_placeholder();
-                  $image = aq_resize($thumbnailURL, $portraitwidth, $portraitheight, true);
-                  if(empty($image)) { $image = $thumbnailURL; } ?>
+                  $image = aq_resize($thumbnailURL, $portraitwidth, $portraitheight, true, false, false);
+                  if(empty($image[0])) { $image = array($thumbnailURL, null, null); } ?>
                   <div class="col-md-5 post-image-container">
-                    <div class="imghoverclass img-margin-center">
+                    <div class="imghoverclass img-margin-center" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
                         <a href="<?php the_permalink()  ?>" title="<?php echo esc_attr(get_the_title()); ?>">
-                            <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" itemprop="image"  class="iconhover" style="display:block;">
+                            <img src="<?php echo esc_url($image[0]); ?>" alt="<?php echo esc_attr(get_the_title()); ?>" width="<?php echo esc_attr($image[1]);?>" height="<?php echo esc_attr($image[2]);?>" itemprop="contentUrl"  class="iconhover">
+                            <meta itemprop="url" content="<?php echo esc_url($image[0]); ?>">
+                            <meta itemprop="width" content="<?php echo esc_attr($image[1])?>">
+                            <meta itemprop="height" content="<?php echo esc_attr($image[2])?>">
                         </a> 
                      </div>
                  </div>
@@ -94,13 +104,16 @@
                                 $attachments = array_filter( explode( ',', $image_gallery ) );
                                 if ($attachments) {
                                     foreach ($attachments as $attachment) {
-                                        $attachment_url = wp_get_attachment_url($attachment , 'full');
-                                        $image = aq_resize($attachment_url, $slidewidth, $slideheight, true);
+                                        $attachment_src = wp_get_attachment_image_src($attachment , 'full');
+                                        $image = aq_resize($attachment_url, $slidewidth, $slideheight, true, false, false, $attachment);
                                         $alt = get_post_meta($attachment, '_wp_attachment_image_alt', true);
-                                        if(empty($image)) {$image = $attachment_url;} ?>
+                                         if(empty($image[0])) {$image = $attachment_src;}  ?>
                                             <li>
-                                                <a href="<?php the_permalink() ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
-                                                    <img src="<?php echo esc_attr($image); ?>" itemprop="image" alt="<?php echo esc_attr($alt);?>"  class="" />
+                                                <a href="<?php the_permalink() ?>" alt="<?php echo esc_attr(get_the_title()); ?>" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                                                    <img src="<?php echo esc_attr($image[0]); ?>" itemprop="contentUrl" alt="<?php echo esc_attr($alt);?>" width="<?php echo esc_attr($image[1]);?>" height="<?php echo esc_attr($image[2]);?>" <?php echo kt_get_srcset_output($image[1], $image[2], $attachment_src[0], $attachment);?> />
+                                                    <meta itemprop="url" content="<?php echo esc_url($image[0]); ?>">
+                                                    <meta itemprop="width" content="<?php echo esc_attr($image[1])?>">
+                                                    <meta itemprop="height" content="<?php echo esc_attr($image[2])?>">
                                             </a>
                                         </li>
                                     <?php 
@@ -122,13 +135,16 @@
                                     $attachments = array_filter( explode( ',', $image_gallery ) );
                                     if ($attachments) {
                                         foreach ($attachments as $attachment) {
-                                            $attachment_url = wp_get_attachment_url($attachment , 'full');
-                                            $image = aq_resize($attachment_url, $portraitwidth, $portraitheight, true);
+                                            $attachment_src = wp_get_attachment_image_src($attachment , 'full');
+                                            $image = aq_resize($attachment_src[0], $portraitwidth, $portraitheight, true, false, false, $attachment);
                                             $alt = get_post_meta($attachment, '_wp_attachment_image_alt', true);
-                                            if(empty($image)) {$image = $attachment_url;} ?>
+                                            if(empty($image[0])) {$image = $attachment_src;} ?>
                                             <li>
-                                                <a href="<?php the_permalink() ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
-                                                    <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($alt);?>" itemprop="image" class="" />
+                                                <a href="<?php the_permalink() ?>" alt="<?php echo esc_attr(get_the_title()); ?>" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                                                    <img src="<?php echo esc_url($image[0]); ?>" alt="<?php echo esc_attr($alt);?>" itemprop="contentUrl" width="<?php echo esc_attr($image[1]);?>" height="<?php echo esc_attr($image[2]);?>" <?php echo kt_get_srcset_output($image[1], $image[2], $attachment_src[0], $attachment);?> />
+                                                    <meta itemprop="url" content="<?php echo esc_url($image[0]); ?>">
+                                                    <meta itemprop="width" content="<?php echo esc_attr($image[1])?>">
+                                                    <meta itemprop="height" content="<?php echo esc_attr($image[2])?>">
                                                 </a>
                                             </li>
                                         <?php 
@@ -146,6 +162,15 @@
                             <?php global $post; echo get_post_meta( $post->ID, '_kad_post_video', true ); ?>
                         </div>
                     </div>
+                    <?php if (has_post_thumbnail( $post->ID ) ) { 
+                        $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); ?>
+                    <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                        <meta itemprop="url" content="<?php echo esc_url($image[0]); ?>">
+                        <meta itemprop="width" content="<?php echo esc_attr($image[1])?>">
+                        <meta itemprop="height" content="<?php echo esc_attr($image[2])?>">
+                    </div>
+                    <?php } ?>
+
             <?php 
             } else { 
                 $textsize = 'col-md-12 kttextpost'; 
@@ -171,7 +196,8 @@
                     ?>
                 </div>
                 <footer>
-                    <?php $tags = get_the_tags(); if ($tags) { ?>
+                <?php do_action( 'kadence_post_excerpt_footer' );
+                    $tags = get_the_tags(); if ($tags) { ?>
                         <span class="posttags color_gray"><i class="icon-tag"></i> <?php the_tags('', ', ', ''); ?></span>
                     <?php } ?>
                 </footer>
