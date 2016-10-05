@@ -639,7 +639,7 @@ if ( ! function_exists( 'fullframe_comment' ) ) :
 				<footer class="comment-meta">
 					<div class="comment-author vcard">
 						<?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
-						<?php printf( esc_html__( '%s <span class="says">says:</span>', 'full-frame' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+						<?php printf( __( '%s <span class="says">says:</span>', 'full-frame' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
 					</div><!-- .comment-author -->
 
 					<div class="comment-metadata">
