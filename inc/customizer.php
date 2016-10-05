@@ -28,7 +28,7 @@ function bakes_and_cakes_customize_register( $wp_customize ) {
         $options_pages[$pages->ID] = $pages->post_title; 
     }
     
-    if( is_woocommerce_activated() ){
+    if( bakes_and_cakes_is_woocommerce_activated() ){
         /* Option list of all post */ 
         $options_products = array();
         $options_products_obj = get_posts('posts_per_page=-1&post_type=product');
@@ -263,7 +263,7 @@ function bakes_and_cakes_customize_register( $wp_customize ) {
             'choices' => $options_pages,
         )
     );
-   if( is_woocommerce_activated() ){
+   if( bakes_and_cakes_is_woocommerce_activated() ){
      /*select product */
     $wp_customize->add_setting(
         'bakes_and_cakes_product_one',
@@ -1174,7 +1174,7 @@ function bakes_and_cakes_customize_register( $wp_customize ) {
     );
     /** Slider Settings Ends */
     
-    if( is_contact_form_activated() ){
+    if( bakes_and_cakes_is_contact_form_activated() ){
 
     $wp_customize->add_section(
         'bakes_and_cakes_contact_form_settings',

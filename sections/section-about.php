@@ -23,7 +23,11 @@ $about_us_page  = get_theme_mod('bakes_and_cakes_about_us_page');
 			<div class="text">
 				<?php the_excerpt(); ?>
 			</div>
-				<div class="btn-holder"><a href="<?php the_permalink(); ?>"><?php echo _e('Read More', 'bakes-and-cakes'); ?></a></div>
+				<div class="btn-holder">
+				    <a href="<?php the_permalink(); ?>">
+				        <?php echo _e('Read More', 'bakes-and-cakes'); ?>
+				    </a>
+				</div>
 		</div>
         <?php if( has_post_thumbnail()){ ?>
 		<div class="columns-2 image-holder">		   

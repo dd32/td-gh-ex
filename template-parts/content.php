@@ -62,11 +62,16 @@
 		</div><!-- .entry-content -->
 
 	
-		<?php if( !is_single() ){ ?>
+		
 	    <footer class="entry-footer">
-			<a href="<?php the_permalink(); ?>" class="readmore"><?php esc_html_e( 'Read More', 'bakes-and-cakes' ); ?></a>
+			<?php 
+			if( !is_single() ){ ?>
+			   <a href="<?php the_permalink(); ?>" class="readmore"><?php esc_html_e( 'Read More', 'bakes-and-cakes' ); ?></a>
+			<?php
+			}
+			bakes_and_cakes_entry_footer();
+			?> 
 		</footer><!-- .entry-footer -->
-	    <?php }?>
 	</div>
 
 </article><!-- #post-## -->

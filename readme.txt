@@ -1,12 +1,12 @@
-﻿=== Bakes and Cakes ===
+=== Bakes and Cakes ===
 Author: Rara Theme (http://raratheme.com)
 
-Tags: Blog, Two-columns, right-sidebar, footer-widgets, custom-background, custom-menu, featured-image-header, featured-images, post-formats, threaded-comments, translation-ready, full-width-template, theme-options
+Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
 
 
 Requires at least: 4.0
 Tested up to: 4.3.1
-Stable tag: 1.0.0
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -201,16 +201,16 @@ Bakes and Cakes an elegant WordPress theme suitable for bakery business. It is r
 
 Unless otherwise specified, all the theme files, scripts and images are licensed under GPLv2 or later
 
+
 External resources linked to the theme. 
-
-* Open Sans Font by through Google Font 
-https://www.google.com/fonts/specimen/Open+Sans 
-
-* Niconne Font by through Google Font 
-https://www.google.com/fonts/specimen/Niconne 
-
-*Font Awesome 
-http://fontawesome.io/
+    * Open Sans Font by through Google Font 
+    https://www.google.com/fonts/specimen/Open+Sans 
+   
+    * Niconne Font by through Google Font 
+    https://www.google.com/fonts/specimen/Niconne 
+    
+    *Font Awesome 
+    http://fontawesome.io/
 
 
 # Images
@@ -224,6 +224,7 @@ https://pixabay.com/en/easter-easter-cakes-cookie-cutter-100171/
 
 
 
+
 # JS
 All the JS are licensed under GPLv2 or later
 
@@ -231,6 +232,7 @@ flexslider.woothemes.com/
 http://sachinchoolur.github.io/lightslider/ 
 https://css-tricks.com/examples/EqualHeightsInRows/ 
 https://www.berriart.com/sidr/
+https://jqueryui.com/tabs/
 
 
 * Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
@@ -252,15 +254,18 @@ Bakes and Cakes WordPress Theme is distributed under the terms of the GPLv2 or l
    GNU General Public License for more details.
 
 == Changelog ==
-    
-    1.0.4
-    * Fix some bugs
+    1.0.5
+    *  Fixed escaping and prefix issues.
+    *  Fixed other bugs.
 
+    1.0.4
+    * Fixed some bugs.
+    
     1.0.3
-    * Fix some bugs.
+    * Fixed some bugs.
     
     1.0.2
-    * Fix some bugs.
+    * Fixed some bugs.
 
     1.0.1
     * Added Popular Post Widgets.
@@ -268,7 +273,7 @@ Bakes and Cakes WordPress Theme is distributed under the terms of the GPLv2 or l
     * Added compatibility for custom logo feature.
     * Updated and integrated new theme tags in style.css
     * Change the content width to support content in full width.
-    * Fix some bugs. 
+    * Fixed some bugs. 
     
     1.0.0
     * Initial Release

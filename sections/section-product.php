@@ -29,7 +29,7 @@ $featured_product_page  = get_theme_mod('bakes_and_cakes_featured_product_page')
 	wp_reset_postdata();
     }
 
-if( is_woocommerce_activated() ){
+if( bakes_and_cakes_is_woocommerce_activated() ){
     
 	$featured_product_one   = get_theme_mod('bakes_and_cakes_product_one');
 	$featured_product_two   = get_theme_mod('bakes_and_cakes_product_two');
@@ -66,7 +66,10 @@ if( is_woocommerce_activated() ){
 					 </div>
 					<div class="text-holder">
 						<a href="<?php the_permalink(); ?>"><strong class="name"><?php the_title(); ?></strong></a>
-						<span class="price"><?php $string = wc_price( $price, array() ); echo $string; ?></span>
+						<span class="price">
+						    <?php $string = wc_price( $price, array() );
+						          echo wp_kses_post( $string ); ?>
+						</span>
 						
 					</div>
 				</li>

@@ -52,7 +52,7 @@ function bakes_and_cakes_body_classes( $classes ) {
         if( $bakes_and_cakes_post_class == 'no-sidebar' )
             $classes[] = 'full-width';
     }
-    if( is_woocommerce_activated() && ( is_shop() || is_product_category() || is_product_tag() || 'product' === get_post_type() ) && ! is_active_sidebar( 'shop-sidebar' ) ){
+    if( bakes_and_cakes_is_woocommerce_activated() && ( is_shop() || is_product_category() || is_product_tag() || 'product' === get_post_type() ) && ! is_active_sidebar( 'shop-sidebar' ) ){
       $classes[] = 'full-width';
     }
 
@@ -107,7 +107,7 @@ function bakes_and_cakes_breadcrumbs_cb() {
             echo $before . esc_html( get_the_time( 'Y' ) ) . $after;
     
         } elseif ( is_single() && !is_attachment() ) {
-            if ( is_woocommerce_activated() && 'product' === get_post_type() ) {
+            if ( bakes_and_cakes_is_woocommerce_activated() && 'product' === get_post_type() ) {
                 if ( $terms = wc_get_product_terms( $post->ID, 'product_cat', array( 'orderby' => 'parent', 'order' => 'DESC' ) ) ) {
                     $main_term = apply_filters( 'woocommerce_breadcrumb_main_term', $terms[0], $terms );
                     $ancestors = get_ancestors( $main_term->term_id, 'product_cat' );
@@ -137,7 +137,7 @@ function bakes_and_cakes_breadcrumbs_cb() {
                 if ( $showCurrent == 1 ) echo $before . esc_html( get_the_title() ) . $after;
             }
         
-        } elseif( is_woocommerce_activated() && ( is_product_category() || is_product_tag() ) ){
+        } elseif( bakes_and_cakes_is_woocommerce_activated() && ( is_product_category() || is_product_tag() ) ){
             
             $current_term = $GLOBALS['wp_query']->get_queried_object();
             if( is_product_category() ){
@@ -152,7 +152,7 @@ function bakes_and_cakes_breadcrumbs_cb() {
             }           
             if ( $showCurrent == 1 ) echo $before . esc_html( $current_term->name ) . $after;
         
-        } elseif( is_woocommerce_activated() && is_shop() ){
+        } elseif( bakes_and_cakes_is_woocommerce_activated() && is_shop() ){
             if ( get_option( 'page_on_front' ) == wc_get_page_id( 'shop' ) ) {
             return;
           }
@@ -359,7 +359,7 @@ function bakes_and_cakes_bg_image_settings(){
     $bakes_and_cakes_bg = array();
     foreach($bakes_and_cakes_bg_images as $bakes_and_cakes_bg_image){
     
-    if(esc_attr( get_theme_mod( 'bakes_and_cakes_' . $bakes_and_cakes_bg_image['bgimage'] . '_background_image' ))){
+    if( get_theme_mod( 'bakes_and_cakes_' . $bakes_and_cakes_bg_image['bgimage'] . '_background_image' ) ){
        $bakes_and_cakes_bg[] = array(
         'bgimage' => $bakes_and_cakes_bg_image['bgimage']
         );
@@ -387,14 +387,14 @@ function bakes_and_cakes_footer_top(){
                     } ?>
                 </div>
                 <div class="col center">    
-                    <?php if( is_contact_form_activated() && $contact_forms) { ?>                  
+                    <?php if( bakes_and_cakes_is_contact_form_activated() && $contact_forms) { ?>                  
                         <section class="widget widget_contact_form">    
                             <div class="form-holder"> 
                                 <div class="contact-form">
                                     <?php if($contact_title) { ?>     
-                                    <h2 class="main-title"><?php echo $contact_title; ?></h2>
+                                    <h2 class="main-title"><?php echo esc_html( $contact_title ); ?></h2>
                                     <?php }         
-                                    echo do_shortcode($contact_forms); ?>
+                                    echo do_shortcode( $contact_forms ); ?>
                                 </div>
                             </div> 
                         </section>

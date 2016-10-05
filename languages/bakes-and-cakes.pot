@@ -3,16 +3,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-09 11:56+0000\n"
+"POT-Creation-Date: 2016-09-30 11:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
 "Language: \n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Loco https://localise.biz/"
+"X-Generator: Loco - https://localise.biz/"
 
 #: 404.php:21
 msgid "404 Error"
@@ -115,19 +115,19 @@ msgstr ""
 msgid "Primary"
 msgstr ""
 
-#: functions.php:176
+#: functions.php:174
 msgid "Right Sidebar"
 msgstr ""
 
-#: functions.php:186
+#: functions.php:184
 msgid "Footer First"
 msgstr ""
 
-#: functions.php:196
+#: functions.php:194
 msgid "Footer Second"
 msgstr ""
 
-#: functions.php:206
+#: functions.php:204
 msgid "Footer Third"
 msgstr ""
 
@@ -476,7 +476,7 @@ msgid "Sidebar Layout"
 msgstr ""
 
 #: inc/metabox.php:23
-msgid "Right sidebar<br/>(default)"
+msgid "Right sidebar (default)"
 msgstr ""
 
 #: inc/metabox.php:28
@@ -498,8 +498,7 @@ msgid " %s"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
-#. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:35 inc/template-tags.php:50 inc/template-tags.php:56
+#: inc/template-tags.php:35 inc/template-tags.php:51
 msgid ", "
 msgstr ""
 
@@ -507,29 +506,13 @@ msgstr ""
 msgid " %1$s"
 msgstr ""
 
-#: inc/template-tags.php:52
-msgid "Posted in %1$s"
-msgstr ""
-
-#: inc/template-tags.php:58
-msgid "Tagged %1$s"
-msgstr ""
-
-#: inc/template-tags.php:64
-msgid "Leave a comment"
-msgstr ""
-
-#: inc/template-tags.php:64
-msgid "1 Comment"
-msgstr ""
-
-#: inc/template-tags.php:64
-msgid "% Comments"
+#: inc/template-tags.php:53
+msgid " %1$s "
 msgstr ""
 
 #. translators: %s: Name of current post
 #. translators: %s: Name of current post
-#: inc/template-tags.php:71 template-parts/content-page.php:40
+#: inc/template-tags.php:60 template-parts/content-page.php:40
 msgid "Edit %s"
 msgstr ""
 
@@ -637,7 +620,7 @@ msgstr ""
 msgid "Sidebar displaying only in woocommerce pages."
 msgstr ""
 
-#: sections/section-about.php:26 template-parts/content.php:67
+#: sections/section-about.php:28 template-parts/content.php:69
 msgid "Read More"
 msgstr ""
 
