@@ -19,7 +19,9 @@ function promax_scripts() {
 		if (of_get_option('promax_favicon') != '') {
 			echo '<link rel="shortcut icon" href="' . esc_url(of_get_option('promax_favicon')) . '"/>' . "\n";
 	}
-	
+	if ( is_rtl() ) {
+	wp_enqueue_style( 'republic-rtl-css', get_template_directory_uri() . '/css/rtl.css' );
+}
 		//Custom css output	
 		$custom_css = html_entity_decode(of_get_option('promax_customcss'));
 		wp_add_inline_style( 'promax-style', $custom_css );	  
@@ -38,7 +40,7 @@ add_action( 'customize_controls_enqueue_scripts', 'promax_custom_customize_enque
 add_filter( 'wp_nav_menu_items', 'promax_home_link', 10, 2 );
 
 function promax_home_link($items, $promax_args) {
-	if (is_front_page() && $promax_args->theme_location == 'primary')
+	if ($promax_args->theme_location == 'primary')
 	$class = 'class="current_page_item home-icon"';
 	else
 	$class = 'class="home-icon"';
@@ -116,7 +118,7 @@ global $content_width;
 			array(
  				'promax-navigation' => __('Navigation', 'promax'),
  				'primary' => __('Primary', 'promax'),
- 				'Footer-menu' => __('Footer Menu', 'promax'),
+ 				'footer-menu' => __('Footer Menu', 'promax'),
 				)		
 		);
 		// Setup the WordPress core custom background feature.

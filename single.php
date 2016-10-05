@@ -12,7 +12,7 @@
 			<?php if(have_posts()) : ?>
 			<?php while(have_posts())  : the_post(); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-<h1><?php the_title(); ?></h1>
+<h1 class="entry-title"><?php the_title(); ?></h1>
 <div id="metad"><span class="postmeta_box">
 		<?php get_template_part('/includes/postmeta'); ?><?php edit_post_link(
 		sprintf(
