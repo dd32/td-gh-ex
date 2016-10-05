@@ -12,7 +12,7 @@
 		// Display a thumbnail if one exists and not on single post
 		bavotasan_display_post_thumbnail();
 
-	    get_template_part( 'content', 'header' ); ?>
+	    get_template_part( 'template-parts/content', 'header' ); ?>
 
 	    <div class="entry-content description clearfix">
 		    <?php
@@ -23,5 +23,5 @@
 			?>
 	    </div><!-- .entry-content -->
 	    <?php if ( is_singular() && ! is_front_page() )
-	    	get_template_part( 'content', 'footer' ); ?>
+	    	get_template_part( 'template-parts/content', 'footer' ); ?>
 	</article><!-- #post-<?php the_ID(); ?> -->

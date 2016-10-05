@@ -29,15 +29,16 @@
 	} );
 
 	// Shortcode
-	if ( theme_js_vars.carousel ) {
-		var autoplay = ( theme_js_vars.autoplay ) ? '' : 'pause';
+	if ( arcade_basic_vars.carousel ) {
+		var autoplay = ( arcade_basic_vars.autoplay ) ? '' : 'pause';
 		$( '.carousel' ).carousel( autoplay );
 	}
 
-	if ( theme_js_vars.tooltip )
+	if ( arcade_basic_vars.tooltip ) {
 		$( 'a[rel="tooltip"]' ).tooltip();
+	}
 
-	if ( theme_js_vars.tabs ) {
+	if ( arcade_basic_vars.tabs ) {
 		$( '.nav-tabs a' ).click( function(e) {
 			e.preventDefault();
 			$(this).tab( 'show' );
@@ -52,12 +53,13 @@
 	} );
 
     // Arc the site title
-    if ( 0 != theme_js_vars.arc )
+    if ( 0 !== arcade_basic_vars.arc ) {
         $( '#site-title a' ).arctext( {
-        	radius: theme_js_vars.arc,
+        	radius: arcade_basic_vars.arc,
         	rotate: is_rtl,
-        	fitText	: theme_js_vars.fittext
+        	fitText	: arcade_basic_vars.fittext
         } );
+    }
 
     // Set up jumbo header image
     if ( $card.length ) {
@@ -75,10 +77,11 @@
 			} )
 			.trigger( 'resize.title-card' )
 			.scroll( function () {
-				if ( $window.scrollTop() >= ( $more_site.data( 'scroll-to' ) - 50 ) )
+				if ( $window.scrollTop() >= ( $more_site.data( 'scroll-to' ) - 50 ) ) {
 					$( '#site-navigation' ).addClass( 'black' );
-				else
+				} else {
 					$( '#site-navigation' ).removeClass( 'black' );
+				}
 			} );
 
         $card.fillsize( '> img.header-img' );

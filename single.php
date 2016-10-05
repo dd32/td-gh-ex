@@ -11,7 +11,7 @@ get_header(); ?>
 			<div id="primary" <?php bavotasan_primary_attr(); ?>>
 				<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php get_template_part( 'content', get_post_format() ); ?>
+					<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
 
 					<div id="posts-pagination" class="clearfix">
 						<h3 class="sr-only"><?php _e( 'Post navigation', 'arcade-basic' ); ?></h3>

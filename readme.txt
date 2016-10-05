@@ -29,37 +29,63 @@ The free version of Arcade does not include the following features:
 * Social menu
 * Shortcodes
 
-== LICENSES ==
+== COPYRIGHT ==
 
-Bootstrap - http://getbootstrap.com/
-License: [[http://www.apache.org/licenses/LICENSE-2.0|Apache License v2.0]]
+Arcade Basic WordPress Theme, Copyright 2016 Bavotasan Web Development Inc.
+Arcade Basic is distributed under the terms of the GNU GPL
 
-SASS - http://sass-lang.com/
-License: [[http://opensource.org/licenses/MIT|MIT]]
-Copyright: Hampton Catlin, Nathan Weizenbaum
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-fillsize.js - http://github.com/rstacruz/jquery-stuff/tree/master/fillsize
-License: [[http://opensource.org/licenses/MIT|MIT]]
-Copyright: Rico Sta. Cruz
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
 
-Arctext - https://github.com/codrops/Arctext
-License: [[http://opensource.org/licenses/MIT|MIT]]
-Copyright: Pedro Botelho / Codrops
+Arcade Basic Theme bundles the following third-party resources:
 
-html5shiv - http://code.google.com/p/html5shiv/
-License: [[http://opensource.org/licenses/MIT|MIT]]
+Bootstrap - Copyright Twitter, Inc.
+License: MIT license
+Source: http://getbootstrap.com/
 
-Font Awesome - http://fortawesome.github.io/Font-Awesome/
-License: [[http://opensource.org/licenses/MIT|MIT]]
-Copyright: Dave Gandy, https://twitter.com/davegandy
+fillsize.js - Copyright Rico Sta. Cruz
+License: MIT license
+Source: http://github.com/rstacruz/jquery-stuff/tree/master/fillsize
 
-Google Fonts - http://www.google.com/fonts/
-License: [[http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL|SIL Open Font License]]
+Arctext - Copyright Pedro Botelho / Codrops
+License: MIT license
+Source: https://github.com/codrops/Arctext
 
-Stock Images - http://unsplash.com/
-Licensed under the terms of CC0
+Font Awesome, Copyright Dave Gandy
+License: MIT license
+Source: http://fortawesome.github.io/Font-Awesome/
+
+Google Fonts - Copyright Daniel Johnson, Steve Matteson
+License: Open Font License
+Source: https://fonts.google.com/specimen/Megrim
+Source: https://fonts.google.com/specimen/Raleway
+Source: https://fonts.google.com/specimen/Open+Sans
+
+Stock Images - Copyright Unsplash
+License: CC0
+Source: https://unsplash.com/search/tricycle?photo=GG0jOrmwqtw
 
 == CHANGELOG ==
+
+10/05/2016 v1.0.9
+* Updated Font Awesome
+* Updated Bootstrap
+* Updated upgrade button to use API
+* Updated licenses
+* Updated screenshot
+* Updated CSS
+* Updated language files
+* Fixed prefixes for stylesheets and scripts
+* Moved template parts into new folder
+* Removed HTML5 Shiv
+* Removed searchform.php
 
 06/06/2016 v1.0.8
 * Fix for dropdown menu issue

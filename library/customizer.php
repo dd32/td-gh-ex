@@ -97,6 +97,29 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 			echo '<p class="description">' . __( 'The sidebar will not appear on the Post Block page template.', 'arcade-basic' ) . '</p>';
 	    }
 	}
+
+	class Bavotasan_Customize_Section_Pro extends WP_Customize_Section {
+		public $type = 'premium-upgrade';
+		public $pro_url = '';
+
+		public function json() {
+			$json = parent::json();
+			$json['pro_url']  = esc_url( $this->pro_url );
+			return $json;
+		}
+
+		protected function render_template() { ?>
+
+			<li id="accordion-section-{{ data.id }}" class="accordion-section control-section control-section-{{ data.type }} cannot-expand premium-upgrade">
+
+				<h3 class="accordion-section-title">
+					<a href="{{ data.pro_url }}" target="_blank">{{ data.title }}
+
+					<span class="dashicons dashicons-arrow-right-alt"></span></a>
+				</h3>
+			</li>
+		<?php }
+	}
 }
 
 class Bavotasan_Customizer {
@@ -109,7 +132,7 @@ class Bavotasan_Customizer {
 	public function customize_controls_print_styles() {
 		wp_enqueue_script( 'bavotasan_image_widget', BAVOTASAN_THEME_URL . '/library/js/admin/image-widget.js', array( 'jquery' ), '', true );
 		wp_enqueue_style( 'bavotasan_image_widget_css', BAVOTASAN_THEME_URL . '/library/css/admin/image-widget.css' );
-		wp_enqueue_style( 'font_awesome', BAVOTASAN_THEME_URL .'/library/css/font-awesome.css', false, '4.3.0', 'all' );
+		wp_enqueue_style( 'font-awesome', BAVOTASAN_THEME_URL .'/library/css/font-awesome.css', false, '4.6.3', 'all' );
 	}
 
 	/**
@@ -298,6 +321,15 @@ class Bavotasan_Customizer {
 			'type' => 'checkbox',
 			'priority' => 40,
 		) );
+
+		$wp_customize->register_section_type( 'Bavotasan_Customize_Section_Pro' );
+		$wp_customize->add_section(
+			new Bavotasan_Customize_Section_Pro ( $wp_customize, 'premium_upgrade', array(
+				'title'    => esc_html__( 'Unlock Premium Theme Options', 'arcade-basic' ),
+				'pro_url'  => 'https://themes.bavotasan.com/themes/arcade-wordpress-theme/',
+				'priority' => 999,
+			) )
+		);
 	}
 
 	/**

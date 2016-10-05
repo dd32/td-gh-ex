@@ -33,7 +33,7 @@ get_header();
 						    <?php the_content( __( 'Read more', 'arcade-basic') ); ?>
 					    </div><!-- .entry-content -->
 
-					    <?php get_template_part( 'content', 'footer' ); ?>
+					    <?php get_template_part( 'template-parts/content', 'footer' ); ?>
 					</article><!-- #post-<?php the_ID(); ?> -->
 
 					<?php

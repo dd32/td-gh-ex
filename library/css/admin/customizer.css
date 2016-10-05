@@ -43,7 +43,6 @@
 	transition: right 0.15s ease-in-out;
 }
 
-.in-sub-panel .premium-upgrade {
-	left: -300px;
-	width: 300px;
+.premium-upgrade .accordion-section-title {
+	padding: 0;
 }

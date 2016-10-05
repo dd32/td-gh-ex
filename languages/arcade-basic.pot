@@ -3,15 +3,15 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Arcade Basic\n"
-"POT-Creation-Date: 2016-03-14 11:06-0400\n"
-"PO-Revision-Date: 2016-03-14 11:06-0400\n"
+"POT-Creation-Date: 2016-10-05 11:40-0400\n"
+"PO-Revision-Date: 2016-10-05 11:40-0400\n"
 "Last-Translator: c.bavota <cbavota@gmail.com>\n"
 "Language-Team: c.bavota <cbavota@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7\n"
-"X-Poedit-Basepath: ../..\n"
+"X-Generator: Poedit 1.8.9\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -51,79 +51,6 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: content-aside.php:9
-msgid "<i class=\"fa fa-asterisk\"></i> Aside"
-msgstr ""
-
-#: content-aside.php:12 content-audio.php:12 content-gallery.php:12
-#: content-image.php:16 content-link.php:12 content-quote.php:12
-#: content-status.php:18 content-video.php:12 content.php:20 page.php:33
-msgid "Read more"
-msgstr ""
-
-#: content-footer.php:11 image.php:51
-msgid "Pages:"
-msgstr ""
-
-#: content-footer.php:12 functions.php:301 functions.php:324 image.php:52
-msgid "(edit)"
-msgstr ""
-
-#: content-footer.php:13
-msgid "Tags:"
-msgstr ""
-
-#: content-header.php:24
-#, php-format
-msgid "by %s"
-msgstr ""
-
-#: content-header.php:25
-#, php-format
-msgid "Posts by %s"
-msgstr ""
-
-#: content-header.php:31
-msgid "on"
-msgstr ""
-
-#: content-header.php:39
-msgid "in"
-msgstr ""
-
-#: content-header.php:49
-msgid "0 Comments"
-msgstr ""
-
-#: content-header.php:49
-msgid "1 Comment"
-msgstr ""
-
-#: content-header.php:49
-msgid "% Comments"
-msgstr ""
-
-#: content-link.php:9
-msgid "<i class=\"fa fa-link\"></i> Link"
-msgstr ""
-
-#: content-none.php:9
-msgid "Nothing found"
-msgstr ""
-
-#: content-none.php:12
-msgid "No results were found. Please try again."
-msgstr ""
-
-#: content-status.php:9
-msgid "<i class=\"fa fa-plus-square\"></i> Status"
-msgstr ""
-
-#: content-status.php:15
-#, php-format
-msgid "Posted on %1$s at %2$s"
-msgstr ""
-
 #: footer.php:17
 #, php-format
 msgid "Copyright &copy; %s %s. All Rights Reserved."
@@ -151,75 +78,72 @@ msgstr ""
 msgid "Default Header 1"
 msgstr ""
 
-#: functions.php:206
+#: functions.php:207
 msgid "First Sidebar"
 msgstr ""
 
-#: functions.php:208
+#: functions.php:209
 msgid ""
 "This is the first sidebar. It won't appear on the home page unless you set a "
 "static front page."
 msgstr ""
 
-#: functions.php:216 library/about.php:150
+#: functions.php:217 library/about.php:150
 msgid "Jumbo Headline"
 msgstr ""
 
-#: functions.php:218
+#: functions.php:219
 msgid ""
 "Area on the home page below the large header image. Designed specifically "
 "for one text widget. "
 msgstr ""
 
-#: functions.php:226 library/about.php:161
+#: functions.php:227 library/about.php:161
 msgid "Home Page Top Area"
 msgstr ""
 
-#: functions.php:228
+#: functions.php:229
 msgid ""
 "Area on the home page above the main content. Designed specifically for four "
 "Icon & Text widgets. Add at least one widget to make it appear."
 msgstr ""
 
-#: functions.php:253
-msgid "Posts navigation"
-msgstr ""
-
-#: functions.php:255
-msgid "&larr; Older posts"
-msgstr ""
-
-#: functions.php:259
-msgid "Newer posts &rarr;"
-msgstr ""
-
-#: functions.php:300
+#: functions.php:272
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: functions.php:305
+#: functions.php:273 functions.php:296 image.php:52
+#: template-parts/content-footer.php:12
+msgid "(edit)"
+msgstr ""
+
+#: functions.php:277
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: functions.php:324
+#: functions.php:296
 msgid "Pingback:"
 msgstr ""
 
-#: functions.php:367
+#: functions.php:339
 msgid "Read more &rarr;"
 msgstr ""
 
-#: header.php:30
+#: header.php:29
 msgid "Main menu"
 msgstr ""
 
-#: header.php:31
+#: header.php:30
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:72
+#: header.php:71
 msgid "See More"
+msgstr ""
+
+#: image.php:51 template-parts/content-footer.php:11
+msgid "Pages:"
 msgstr ""
 
 #: image.php:58 single.php:17
@@ -306,7 +230,7 @@ msgid ""
 "your main content will also resize your sidebar."
 msgstr ""
 
-#: library/about.php:131 library/customizer.php:231
+#: library/about.php:131 library/customizer.php:254
 msgid "Sidebar Layout"
 msgstr ""
 
@@ -487,105 +411,109 @@ msgstr ""
 msgid "The sidebar will not appear on the Post Block page template."
 msgstr ""
 
-#: library/customizer.php:133
+#: library/customizer.php:156
 msgid "Arc Radius"
 msgstr ""
 
-#: library/customizer.php:144
+#: library/customizer.php:167
 msgid "Arc Radius (Inner Pages)"
 msgstr ""
 
-#: library/customizer.php:146
+#: library/customizer.php:169
 msgid ""
 "The space and rotation for each letter will be calculated using the arc "
 "radius and the width of the site title. Leave blank for no arc."
 msgstr ""
 
-#: library/customizer.php:156
+#: library/customizer.php:179
 msgid "Use Fittext for long site title"
 msgstr ""
 
-#: library/customizer.php:168
+#: library/customizer.php:191
 msgid "Header Icon"
 msgstr ""
 
-#: library/customizer.php:175
+#: library/customizer.php:198
 msgid "Layout"
 msgstr ""
 
-#: library/customizer.php:185
+#: library/customizer.php:208
 msgid "Site Width"
 msgstr ""
 
-#: library/customizer.php:190
+#: library/customizer.php:213
 msgid "1200px"
 msgstr ""
 
-#: library/customizer.php:191
+#: library/customizer.php:214
 msgid "992px"
 msgstr ""
 
-#: library/customizer.php:213
+#: library/customizer.php:236
 msgid "Main Content Width"
 msgstr ""
 
-#: library/customizer.php:226
+#: library/customizer.php:249
 msgid "Left"
 msgstr ""
 
-#: library/customizer.php:227
+#: library/customizer.php:250
 msgid "Right"
 msgstr ""
 
-#: library/customizer.php:239 library/widgets/widget-image-icon.php:108
+#: library/customizer.php:262 library/widgets/widget-image-icon.php:108
 msgid "Default"
 msgstr ""
 
-#: library/customizer.php:240 library/widgets/widget-image-icon.php:109
+#: library/customizer.php:263 library/widgets/widget-image-icon.php:109
 msgid "Light Blue"
 msgstr ""
 
-#: library/customizer.php:241 library/widgets/widget-image-icon.php:110
+#: library/customizer.php:264 library/widgets/widget-image-icon.php:110
 msgid "Blue"
 msgstr ""
 
-#: library/customizer.php:242 library/widgets/widget-image-icon.php:111
+#: library/customizer.php:265 library/widgets/widget-image-icon.php:111
 msgid "Red"
 msgstr ""
 
-#: library/customizer.php:243 library/widgets/widget-image-icon.php:112
+#: library/customizer.php:266 library/widgets/widget-image-icon.php:112
 msgid "Yellow"
 msgstr ""
 
-#: library/customizer.php:244 library/widgets/widget-image-icon.php:113
+#: library/customizer.php:267 library/widgets/widget-image-icon.php:113
 msgid "Green"
 msgstr ""
 
-#: library/customizer.php:249
+#: library/customizer.php:272
 msgid "Posts"
 msgstr ""
 
-#: library/customizer.php:251
+#: library/customizer.php:274
 msgid "These options do not affect the Post Block page template."
 msgstr ""
 
-#: library/customizer.php:260
+#: library/customizer.php:283
 msgid "Display Author"
 msgstr ""
 
-#: library/customizer.php:272
+#: library/customizer.php:295
 msgid "Display Date"
 msgstr ""
 
-#: library/customizer.php:284
+#: library/customizer.php:307
 msgid "Display Categories"
 msgstr ""
 
-#: library/customizer.php:296
+#: library/customizer.php:319
 msgid "Display Comment Count"
 msgstr ""
 
-#: library/customizer.php:318
+#: library/customizer.php:328
+msgid "Unlock Premium Theme Options"
+msgstr ""
+
+#: library/customizer.php:350
 msgid "Upgrade to premium version"
 msgstr ""
 
@@ -763,18 +691,16 @@ msgstr ""
 msgid "Automatically add paragraphs"
 msgstr ""
 
+#: page.php:33 template-parts/content-aside.php:12
+#: template-parts/content-audio.php:12 template-parts/content-gallery.php:12
+#: template-parts/content-image.php:16 template-parts/content-link.php:12
+#: template-parts/content-quote.php:12 template-parts/content-status.php:18
+#: template-parts/content-video.php:12 template-parts/content.php:20
+msgid "Read more"
+msgstr ""
+
 #: search.php:19
 msgid " search results for"
-msgstr ""
-
-#: searchform.php:10
-msgctxt "label"
-msgid "Search for:"
-msgstr ""
-
-#: searchform.php:11
-msgctxt "placeholder"
-msgid "Search &hellip;"
 msgstr ""
 
 #: sidebar.php:13
@@ -814,6 +740,65 @@ msgstr ""
 
 #: single.php:19
 msgid "%title &rarr;"
+msgstr ""
+
+#: template-parts/content-aside.php:9
+msgid "<i class=\"fa fa-asterisk\"></i> Aside"
+msgstr ""
+
+#: template-parts/content-footer.php:13
+msgid "Tags:"
+msgstr ""
+
+#: template-parts/content-header.php:24
+#, php-format
+msgid "by %s"
+msgstr ""
+
+#: template-parts/content-header.php:25
+#, php-format
+msgid "Posts by %s"
+msgstr ""
+
+#: template-parts/content-header.php:31
+msgid "on"
+msgstr ""
+
+#: template-parts/content-header.php:39
+msgid "in"
+msgstr ""
+
+#: template-parts/content-header.php:49
+msgid "0 Comments"
+msgstr ""
+
+#: template-parts/content-header.php:49
+msgid "1 Comment"
+msgstr ""
+
+#: template-parts/content-header.php:49
+msgid "% Comments"
+msgstr ""
+
+#: template-parts/content-link.php:9
+msgid "<i class=\"fa fa-link\"></i> Link"
+msgstr ""
+
+#: template-parts/content-none.php:9
+msgid "Nothing found"
+msgstr ""
+
+#: template-parts/content-none.php:12
+msgid "No results were found. Please try again."
+msgstr ""
+
+#: template-parts/content-status.php:9
+msgid "<i class=\"fa fa-plus-square\"></i> Status"
+msgstr ""
+
+#: template-parts/content-status.php:15
+#, php-format
+msgid "Posted on %1$s at %2$s"
 msgstr ""
 
 #. Theme Name of the plugin/theme

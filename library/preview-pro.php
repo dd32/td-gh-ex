@@ -145,23 +145,23 @@ class Bavotasan_Preview_Pro {
 
 			<div class="changelog feature-list">
 				<h2><?php _e( 'Even More Theme Options', 'arcade-basic' ); ?></h2>
-				<div class="feature-section col two-col">
-					<div>
+				<div class="under-the-hood two-col">
+					<div class="col">
 						<h4><?php _e( 'Full Width Posts/Pages', 'arcade-basic' ); ?></h4>
 						<p><?php _e( 'Each page/post has an option to remove both sidebars so you can use the full width of your site to display whatever you want.', 'arcade-basic' ); ?></p>
 					</div>
-					<div class="last-feature">
+					<div class="col">
 						<h4><?php _e( 'Multiple Sidebar Layouts', 'arcade-basic' ); ?></h4>
 						<p><?php _e( 'Sometimes one sidebar just isn&rsquo;t enough, so add a second one and place it where you want.', 'arcade-basic' ); ?></p>
 					</div>
 				</div>
 
-				<div class="feature-section col two-col">
-					<div>
+				<div class="under-the-hood two-col">
+					<div class="col">
 						<h4><?php _e( 'Bootstrap Shortcodes', 'arcade-basic' ); ?></h4>
 						<p><?php printf( __( 'Shortcodes are awesome and easy to use. That&rsquo;s why %s comes with a bunch, like a slideshow carousel, alert boxes and more.', 'arcade-basic' ), '<em>' . $this->theme_name . '</em>' ); ?></p>
 					</div>
-					<div class="last-feature">
+					<div class="col">
 						<h4><?php _e( 'Import/Export Tool', 'arcade-basic' ); ?></h4>
 						<p><?php _e( 'Once you&rsquo;ve set up your site exactly how you want, you can easily export the Theme Options and Custom CSS for safe keeping.', 'arcade-basic' ); ?></p>
 					</div>
