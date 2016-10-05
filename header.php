@@ -74,7 +74,6 @@
 
 	<?php /*  Call To Action - Intro */ thinkup_input_ctaintro(); ?>
 	<?php /*  Pre-Designed HomePage Content */ thinkup_input_homepagesection(); ?>
-	<?php /* Custom Slider */ thinkup_input_sliderpage(); ?>
 
 	<div id="content">
 	<div id="content-core">

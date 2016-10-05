@@ -127,6 +127,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.3.17
+- Fixed:   Function thinkup_input_sliderpage() removed from header.php. Caused Fatal issue with version previous version.
+
 Version 1.3.16
 - Updated: Logo alt tag now translation ready.
 - Updated: Improved ecaping of outputs in 02.homepage.php.
