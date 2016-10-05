@@ -106,6 +106,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@Version 1.7.4
+1. Update Theme Info Detail :- Jetpack gallery Support info.
 @Version 1.7.3
 1. Add Theme Info Detail Page.
 @Version 1.7.2

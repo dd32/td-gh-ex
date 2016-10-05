@@ -113,14 +113,22 @@
 
 	<div class="col-md-6">
 	<div class="spasalon-tab-pane-half">
-		<p><strong><?php esc_html_e( 'Translation Ready', 'spasalon' ); ?></strong></p>
-		<p><?php esc_html_e( 'Theme supports  yet another famous plugin WPML / Polylang. With the help of this support you can create website in multiple languages.', 'spasalon' ); ?></p>
+		<p><strong><?php esc_html_e( 'Jetpack Gallery Support', 'spasalon' ); ?></strong></p>
+		<p><?php esc_html_e( 'The native WordPress image gallery displays as a grid of image thumbnails. If you want to show overlay effects on the gallery images? You need to install', 'spasalon' ); ?> <a href="https://wordpress.org/plugins/jetpack/" target="_blank"><?php _e('Jetpack plugin,','spasalon'); ?></a> <?php _e('Using Jetpack you can create four types of gallery style like Tiled Mosaic, Square Tiles, Circles and Tiled Columns. See gallery look on Spasalon theme demo.', 'spasalon' ); ?> <a href="http://webriti.com/demo/wp/spasalon/gallery/" target="_blank"><?php _e('Click Here', 'spasalon' ); ?> </a></p>
 		<hr>
 	</div>
 	</div>
 
 	
 	<div class="clearfix"></div>
+	
+	<div class="col-md-6">
+	<div class="spasalon-tab-pane-half">
+		<p><strong><?php esc_html_e( 'Translation Ready', 'spasalon' ); ?></strong></p>
+		<p><?php esc_html_e( 'Theme supports  yet another famous plugin WPML / Polylang. With the help of this support you can create website in multiple languages.', 'spasalon' ); ?></p>
+		<hr>
+	</div>
+	</div>
 	
 </div>	
 </div>

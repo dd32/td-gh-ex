@@ -400,7 +400,7 @@
 .btn-wrap a.btn i { margin-right: 10px; }
 
 @media (max-width: 1500px) {
-.pricing1 .plan .feature li { height: 300px;}
+.pricing1 .plan .feature li { height: 150px;}
 
 }
 @media (max-width: 1024px) {

@@ -47,6 +47,11 @@
 						</li>
 						
 						<li>
+							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Jetpack Gallery Support','spasalon' ); ?></span>
+							<p> <?php esc_html_e('Create Awesome Gallery with Overlay','spasalon');?></p>
+						</li>
+						
+						<li>
 							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'WooCommerce Support','spasalon' ); ?></span>
 							<p> <?php esc_html_e('Create your online shop with Spasalon Theme','spasalon');?></p>
 						</li>
@@ -115,6 +120,7 @@
 						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Spasalon: Page Widget [Service, Product], Spasalon: Latest News Widget','spasalon'); ?> </li>
 						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Support For Featured Image','spasalon'); ?> </li>
 						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Not Customizable','spasalon'); ?> </li>
+						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Simple Thumbnail Gallery','spasalon'); ?> </li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
@@ -146,6 +152,7 @@
 						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Spasalon: Page / Service Widget, Spasalon: Product Category Widget, Spasalon: Recent Products Widget, Spasalon: Team Widget, Spasalon: Latest News Widget, Spasalon: Latest Post and Spasalon: Contact Widget','spasalon'); ?> </li>
 						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Support for thousands of Font-Awesome Icon , Featured Images and Read More Button / Link','spasalon'); ?> </li>
 						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Customizable' ,'spasalon'); ?> </li>
+						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Overlay Effects Gallery' ,'spasalon'); ?> </li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
