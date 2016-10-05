@@ -1465,7 +1465,7 @@ Redux::setSection( $opt_name, array(
             'options' => array('p_primarystyle' => __('Primary Color Style', 'pinnacle'), 'p_lightstyle' => __('Light Style', 'pinnacle'), 'p_darkstyle' => __('Dark Style', 'pinnacle')),
             ),
           array(
-            'id'=>'info_product_ph_defaults',
+            'id'=>'info_portfolio_ph_defaults',
             'type' => 'info',
             'customizer' => false,
             'desc' => __('Single Portfolio Page Header', 'pinnacle'),
@@ -1488,7 +1488,7 @@ Redux::setSection( $opt_name, array(
         array(
             'id'=>'single_portfolio_header_title',
             'type' => 'select',
-            'title' => __('Product Default Title Text', 'pinnacle'), 
+            'title' => __('Portfolio Default Title Text', 'pinnacle'), 
             'options' => array('category' => __('Category of Portfolio', 'pinnacle'), 'posttitle' => __('Portfolio Title', 'pinnacle'), 'custom' => __('Custom', 'pinnacle')),
             'width' => 'width:60%',
             'customizer' => false,
