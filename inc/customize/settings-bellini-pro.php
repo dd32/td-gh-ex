@@ -3,6 +3,7 @@
 /*--------------------------------------------------------------
 ## Bellini Pro Description
 --------------------------------------------------------------*/
+$bellini_frontpage_slider_pro_conversion 				= esc_html__( 'Post & Page Slider.', 'bellini' );
 
 $bellini_frontpage_block_pro_conversion 				= esc_html__( '3 more block layouts & ability to set block section background image.', 'bellini' );
 $bellini_frontpage_woo_category_pro_conversion 			= esc_html__( '3 more category layouts & section background image.', 'bellini');
@@ -49,7 +50,7 @@ $wp_customize->add_section('bellini_lite_go_premium_section_one',array(
 
 			$wp_customize->add_control( new Bellini_Pro_Conversion ( $wp_customize, 'bellini_frontpage_section_conversion_one', array(
 					'type' => 'info',
-					'label' => esc_html__('Hey, you are using on Basic version. Unlock More possibilities and features.','bellini'),
+					'label' => esc_html__('Hey, you are using Basic version. Unlock More possibilities and features.','bellini'),
 					'description' => $bellini_frontpage_section_pro_conversion_one,
 					'section' => 'bellini_lite_go_premium_section_one',
 					'settings'    => 'bellini[bellini_frontpage_section_conversion_one]',
@@ -71,6 +72,27 @@ $wp_customize->add_section('bellini_lite_go_premium_section_one',array(
 					'settings'    => 'bellini[bellini_frontpage_section_conversion]',
 					'priority'   => 90,
 			)) );
+
+
+/*--------------------------------------------------------------
+## Frontpage Feature Slider
+--------------------------------------------------------------*/
+
+	$wp_customize->add_setting( 'bellini_front_slider_pro_conversion',
+		array(
+			'type' 				=> 'option',
+			'sanitize_callback' => 'sanitize_key',
+			)
+	);
+			$wp_customize->add_control( new Bellini_Pro_Conversion ( $wp_customize, 'bellini_front_slider_pro_conversion',
+				array(
+					'label' => esc_html__('You are missing out on','bellini'),
+					'description' => $bellini_frontpage_slider_pro_conversion,
+					'section' => 'bellini_frontpage_section_slider',
+					'settings'    => 'bellini_front_slider_pro_conversion',
+					'priority'   => 100,
+			)) );
+
 
 /*--------------------------------------------------------------
 ## Frontpage Feature Blocks

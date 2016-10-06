@@ -50,7 +50,7 @@ $wp_customize->add_section('bellini_link_color_section',array(
 
 		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize,'header_background_color',
 			array(
-				'label'      => esc_html__( 'Header - Background Color', 'bellini' ),
+				'label'      => esc_html__( 'Header Background', 'bellini' ),
 				'section'    => 'section_color',
 				'settings'   => 'bellini[header_background_color]',
 			    'priority'   => 3
@@ -70,7 +70,7 @@ $wp_customize->add_section('bellini_link_color_section',array(
 
 		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize,'widgets_background_color',
 			array(
-				'label'      => esc_html__( 'Widget - Background Color', 'bellini' ),
+				'label'      => esc_html__( 'Widget Background', 'bellini' ),
 				'section'    => 'section_color',
 				'settings'   => 'bellini[widgets_background_color]',
 			    'priority'   => 4,
@@ -90,7 +90,7 @@ $wp_customize->add_section('bellini_link_color_section',array(
 
 		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize,'footer_background_color',
 			array(
-				'label'      => esc_html__( 'Footer - Background Color', 'bellini' ),
+				'label'      => esc_html__( 'Footer Background', 'bellini' ),
 				'section'    => 'section_color',
 				'settings'   => 'bellini[footer_background_color]',
 			    'priority'   => 6

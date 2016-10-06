@@ -350,10 +350,9 @@ function bellini_section_content_class_switcher($value){
 /**
 * Check & Prints out Scroll To Top if activated
 */
-
-if($bellini['bellini_show_scroll_to_top'] == true) :
- add_action( 'wp_footer', 'bellini_scroll_to_top' );
-    function bellini_scroll_to_top(){ ?>
+function bellini_scroll_to_top(){
+    global $bellini;
+     if($bellini['bellini_show_scroll_to_top'] == true) :   ?>
         <script>
             // Scroll To Top
             jQuery(window).scroll(function(){
@@ -369,8 +368,9 @@ if($bellini['bellini_show_scroll_to_top'] == true) :
                 return false;
             });
         </script>
-    <?php }
-endif;
+    <?php
+    endif;
+}
 
 
 /**

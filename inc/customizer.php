@@ -33,7 +33,7 @@ $wp_customize->get_control( 'header_textcolor' )->section 	= 'text_color';
 $wp_customize->get_setting( 'background_color' )->default 	= '#eceef1';
 $wp_customize->get_control( 'background_color' )->section 	= 'section_color';
 $wp_customize->get_control( 'background_color' )->priority 	= 3;
-$wp_customize->get_control( 'background_color' )->label 	= esc_html__('Website - Background Color', 'bellini');
+$wp_customize->get_control( 'background_color' )->label 	= esc_html__('Website Background', 'bellini');
 
 
 
@@ -287,7 +287,7 @@ a:hover,a:focus,a:active{color: <?php echo $link_hover_color; ?>;}
 
 
 	@media (max-width:640px){
-		.slider-content{
+		.slider-content__title, .slider-content{
 		background-color:<?php echo $slider_background_color_mobile; ?>;
 		color:<?php echo $slider_text_color_mobile; ?>;
 		}

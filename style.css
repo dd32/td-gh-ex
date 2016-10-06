@@ -3,7 +3,7 @@ Theme Name: Bellini
 Theme URI: http://atlantisthemes.com/
 Author: Pangolin
 Description: Bellini is the perfect theme for creating a eCommerce store or shop. Responsive & flexible layout built with Bootstrap. Customize anything like Google Fonts, Color, Layout, logo upload, full-screen slider, header image and much more.Built with SEO in mind and has Structured Data (Schema) implemented. If you are looking for a beautiful theme with out of the box SEO compatibility & responsiveness, look no further! Check out the live demo at http://demo.atlantisthemes.com/front-page/
-Version: 1.31
+Version: 1.32
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bellini
@@ -77,11 +77,6 @@ i {
     font-style: italic;
 }
 
-blockquote {
-    margin: 0 1.5em;
-    border-color:inherit;
-}
-
 address {
     margin: 0 0 1.5em;
 }
@@ -130,6 +125,13 @@ html {
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+    text-rendering: optimizeSpeed;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
 }
 
 * {
@@ -573,7 +575,7 @@ a:active {
     .main-navigation ul li {
         display: inline-block;
         position: relative;
-        padding: .75em 1.6em 0 0;
+        padding: .75rem 1.6rem 0 0;
         border-bottom: none;
     }
 
@@ -1441,7 +1443,6 @@ object {
     padding: .6% 1%;
     border-radius: .1em;
     text-decoration: none;
-    color: #fff;
     -ms-border-radius: .1em;
     line-height:2em;
 }
@@ -1547,16 +1548,16 @@ object {
 
 /* Layout 4 */
 
-
 .s__post--l4 .single-post__featured-image{
     margin:0;
     width:100%;
 }
 
 .s__post--l4 .container--card-content {
-    width: 80%;
-    margin: 0 10%;
-    margin-top: -100px;
+    margin-top: -60px;
+    max-width: 950px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .post-meta__tag__item {
@@ -1598,14 +1599,6 @@ object {
     background-size: cover;
     -o-background-size: cover;
     background-attachment: fixed;
-}
-
-.front-feature-blocks,
-.front-product-category,
-.front-new-arrival,
-.front__product-featured,
-.front-blog,
-.front-text-field {
     padding-top: 2%;
     padding-bottom: 3%;
 }
@@ -2224,8 +2217,8 @@ Hamburger Menu
 
 .site-branding {
     position: relative;
-    padding-top: 1.5%;
     line-height: 1em;
+    padding-top: .75rem;
 }
 
 .page-header {
@@ -2673,26 +2666,12 @@ Hamburger Menu
         margin-bottom: 6%;
     }
 
-    .form-field {
-        width: 70%;
-    }
-
-    .logo__text {
-        font-size: xx-large;
-    }
-
-    .slider-content__title {
-        margin-top: 0;
-    }
-
-    .blog__post .layout-golden--one__right {
-        position: initial;
-    }
-
-    .comment__meta {
-        display: block;
-        position: static;
-    }
+    .form-field {width: 70%;}
+    .logo__text {font-size: xx-large;}
+    .slider-content__title {margin-top: 0; padding-top:1em;}
+    .slider__cta--one, .slider__cta--two {margin-bottom: .5em;}
+    .blog__post .layout-golden--one__right {position: initial;}
+    .comment__meta {display: block;position: static;}
 
     .post-navigation .nav-next,
     .post-navigation .nav-previous {
@@ -2769,13 +2748,21 @@ a.ham__close {
     float: right;
 }
 
+
 blockquote {
-    border: 6px solid;
-    padding: 30px 50px 30px 30px;
-    margin: 40px 0 40px -90px;
-    font-size: 26px;
-    line-height: 38px;
-    font-weight: 600;
+    position: relative;
+    margin: 20px 0;
+    padding: 10px 50px;
+}
+
+blockquote:before {
+    content: "\201C";
+    font-size: 3.75em;
+    font-weight: bold;
+    font-style: normal;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 #footer-nav {

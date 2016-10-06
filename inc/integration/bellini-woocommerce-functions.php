@@ -157,9 +157,9 @@ function bellini_woo__dequeue_styles( $enqueue_styles ) {
 
 if ( ! function_exists( 'bellini_before_woo_product_archive_item_one' ) ):
 	function bellini_before_woo_product_archive_item_one() {
-	global $bellini;
-	$woo_product_column = sanitize_html_class($bellini['bellini_woo_shop_product_column']);?>
-		<div class="<?php echo $woo_product_column; ?>" data-sr="enter bottom, move 40px, wait 0.2s, over 0.8s, after 0.3s" itemscope itemtype="http://schema.org/Product">
+		global $bellini;
+		$woo_product_column = esc_attr($bellini['bellini_woo_shop_product_column']);?>
+		<div data-sr="enter bottom, move 40px, wait 0.2s, over 0.8s, after 0.3s" itemscope itemtype="http://schema.org/Product" class="product--l1 <?php echo $woo_product_column;?>">
 		<div class="product-card__inner">
 		<?php
 	}

@@ -27,7 +27,7 @@ global $bellini;
 </div>
 </div>
 </footer><!-- #colophon -->
-<a href="#0" class="scrollToTop"><i class="fa fa-arrow-circle-up fa-lg"></i></a>
+<a href="#0" class="scrollToTop"><i class="fa fa-angle-up fa-lg"></i></a>
 </div><!-- #page -->
 <?php wp_footer(); ?>
 </body>
