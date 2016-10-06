@@ -1,6 +1,6 @@
 === Bhumi - WordPress Theme by Code Themes ===
 Contributors: Code Themes
-Version: 1.1.4
+Version: 1.1.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: right-sidebar,two-columns,custom-menu, right-sidebar,featured-image-header,theme-options, threaded-comments, featured-images, flexible-header,footer-widgets, translation-ready ,rtl-language-support
@@ -102,6 +102,12 @@ Source: https://images.unsplash.com/photo-1440635592348-167b1b30296f
 
 
 == ChangeLog ==
+
+= 1.1.5 =
+Option to choose slides number added in slider options
+Excerpt length and read more button option added in home blog options
+Logo responsive issue fixed
+03/10/2016
 
 = 1.1.4 =
 Theme color option aded in customizer.

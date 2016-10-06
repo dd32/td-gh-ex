@@ -29,6 +29,15 @@
 	.logo img{
 		margin: 5px auto 15px;
 	}
+	.social{
+		text-align: center !important;
+	}
+	.head-contact-info{
+		text-align: center !important;
+	}
+	.logo{
+		text-align: center !important;
+	}
 }
 
 @media (min-width:992px) and (max-width:1199px) {

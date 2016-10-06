@@ -71,7 +71,26 @@ function bhumi_customizer( $wp_customize ) {
 			'priority' => 35, // Mixed with top-level-section hierarchy.
 			)
 		);
-		$wp_customize->add_setting('bhumi_options[slider_category]',
+	$wp_customize->add_setting(
+		'bhumi_options[slider_number]',
+		array(
+			'type'              => 'option',
+			'default'           =>'5',
+			'sanitize_callback' =>'absint',
+			'capability'        => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control( 'slider_number', array(
+		'label'    => __( 'Number of Slider', 'bhumi' ),
+		'type'     =>'text',
+		'section'  => 'slider_sec',
+		'settings' => 'bhumi_options[slider_number]',
+		'input_attrs' => array(
+		   'placeholder' => '5',
+		),
+	) );
+
+	$wp_customize->add_setting('bhumi_options[slider_category]',
 	        array(
 	            'type' => 'option',
 	            'sanitize_callback' => 'bhumi_sanitize_checkbox',
@@ -87,6 +106,8 @@ function bhumi_customizer( $wp_customize ) {
 	            'settings'   => 'bhumi_options[slider_category]'
 	        )
 	);
+
+
 	$version_wp = get_bloginfo('version');
     if($version_wp < 4.5){
 		$wp_customize->add_section(
@@ -320,6 +341,41 @@ function bhumi_customizer( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting(
+		'bhumi_options[blog_read_more]',
+		array(
+			'type'              => 'option',
+			'default'           =>__( 'Read More', 'bhumi' ),
+			'sanitize_callback' =>'esc_html',
+			'capability'        => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control( 'blog_read_more', array(
+		'label'    => __( 'Button Text', 'bhumi' ),
+		'type'     =>'text',
+		'section'  => 'blog_section',
+		'settings' => 'bhumi_options[blog_read_more]',
+	) );
+
+	$wp_customize->add_setting(
+		'bhumi_options[blog_excerpt_length]',
+		array(
+			'type'              => 'option',
+			'default'           =>'40',
+			'sanitize_callback' =>'absint',
+			'capability'        => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control( 'blog_excerpt_length', array(
+		'label'    => __( 'Excerpt length ', 'bhumi' ),
+		'type'     =>'text',
+		'section'  => 'blog_section',
+		'settings' => 'bhumi_options[blog_excerpt_length]',
+		'input_attrs' => array(
+		   'placeholder' => '40',
+		),
+	) );
+
+	$wp_customize->add_setting(
 		'bhumi_options[blog_show_posts]',
 		array(
 			'type'    => 'option',
@@ -338,6 +394,7 @@ function bhumi_customizer( $wp_customize ) {
 			'catg' => esc_html__( 'Show Posts Through Category', 'bhumi' )
 			),
 	) );
+
 
 	$wp_customize->add_setting('bhumi_options[blog_category]',
 	        array(

@@ -24,6 +24,7 @@
 				'width'                              =>'150',
 				'custom_css'                         =>'',
 				'slider_category'                    => 'default',
+				'slider_number'						 => 5,
 				'service_category'                   => 'default',
 				'portfolio_category'                 => 'default',
 
@@ -64,6 +65,8 @@
 				'blog_show_posts'					 => '',
 				'bhumi_latest_show_posts'		     => 'all_posts',
 				'blog_category'						 => '',
+				'blog_excerpt_length'				=> 40,
+				'blog_read_more'					=> __( 'Read More', 'bhumi' )
 
 			);
 			return apply_filters( 'bhumi_options', $cpm_theme_options );
@@ -316,3 +319,10 @@ if ( ! function_exists( 'bhumi_the_featured_video' ) ) {
         }
     }
 }
+
+function bhumi_excerpt_length( $length ) {
+	$cpm_theme_options = bhumi_get_options();
+	$blog_excerpt_length = absint($cpm_theme_options['blog_excerpt_length']);
+	return $blog_excerpt_length;
+}
+add_filter( 'excerpt_length', 'bhumi_excerpt_length', 999 );

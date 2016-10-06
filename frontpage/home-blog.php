@@ -1,6 +1,7 @@
 <div class="bhumi_blog_area ">
 <?php $cpm_theme_options = bhumi_get_options();
 $blog_show_posts         = $cpm_theme_options['blog_show_posts'];
+$blog_read_more          = $cpm_theme_options['blog_read_more'];
 $blog_category           = ($blog_show_posts == 'catg'?$cpm_theme_options['blog_category']:'');
 if($cpm_theme_options['blog_title'] !='') { ?>
 	<div class="container">
@@ -52,7 +53,7 @@ if($cpm_theme_options['blog_title'] !='') { ?>
 				</div>
 				<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 				<?php the_excerpt( __( 'Read More' , 'bhumi' ) ); ?>
-				<a href="<?php the_permalink(); ?>" class="bhumi_blog_read_btn"><?php esc_html_e('Read More','bhumi'); ?></a>
+				<a href="<?php the_permalink(); ?>" class="bhumi_blog_read_btn"><?php echo esc_html($blog_read_more); ?></a>
 				<div class="bhumi_blog_thumb_footer">
 					<ul class="bhumi_blog_thumb_date">
 						<li><i class="fa fa-user"></i><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php echo get_the_author(); ?></a></li>
