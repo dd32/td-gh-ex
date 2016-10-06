@@ -1,93 +1,82 @@
-<!DOCTYPE html>
-<!--[if IE 8]> <html <?php language_attributes(); ?> class="ie8"> <![endif]-->
-<!--[if !IE]><!--> <html <?php language_attributes(); ?>> <!--<![endif]-->
+<?php
+/**
+ * The header for our theme.
+ *
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ *
+ * @link    https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package Newsmag
+ */
 
+?><!DOCTYPE html>
+<html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<title><?php wp_title( '|', true, 'right' ); ?></title>	
-	
-	
-	<!-- Mobile Specific Meta -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-	
-	<!--[if lt IE 9]>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
-	<![endif]-->
-
-<?php wp_head(); ?>
+	<?php wp_head(); ?>
 </head>
+
 <body <?php body_class(); ?>>
-
-<?php global $newsmag; ?>
-
-
-<div class="page-loader">
-	<img src="<?php echo get_template_directory_uri(); ?>/img/loader.gif" alt="">
-</div> 
-
-
-<div class="main-wrap container">
-
-
-		<header class="site-header" role="banner">
-			
-			
-			<div class="col-sm-9">
-
-			<?php if(isset($newsmag['logo']['url'])){ ?>
-
-				<?php if($newsmag['logo']['url']){ ?>
-					<a href="<?php echo esc_url(home_url('/')); ?>" class="u-url" rel="home" title="<?php bloginfo('name'); ?>">
-						<img src="<?php echo esc_url($newsmag['logo']['url']); ?>" class="newsmag-logo"alt="<?php bloginfo('name'); ?>">
-					</a>
-				<?php }else{ ?>
-				
-				<h1 class="p-title">
-					<a href="<?php echo esc_url(home_url('/')); ?>" class="u-url" title="<?php bloginfo('description'); ?>" rel="home"><?php bloginfo('name'); ?></a>
-				</h1>
-
-				<?php } }else{ ?>
-
-					<h1 class="p-title">
-						<a href="<?php echo esc_url(home_url('/')); ?>" class="u-url" title="<?php bloginfo('description'); ?>" rel="home"><?php bloginfo('name'); ?></a>
-					</h1>
-
-				<?php } ?>
-
-			</div> <!-- col-sm-3 -->
-
-			
-			<div class="col-sm-3">
-				
-				<div class="h-entry">
-					
-					<?php get_search_form(); ?>				
-	
-				</div> <!-- h-entry -->
-
-			</div> <!-- col-sm-3 -->
-
-			<div class="menu-justify-wrap">
-				<div class="menu-justify visible-xs">
-					<i class="fa fa-align-justify"></i>
+<div id="page" class="site">
+	<header id="masthead" class="site-header" role="banner">
+		<div class="site-branding container">
+			<div class="row">
+				<div class="col-md-4 header-logo">
+					<?php
+					if ( function_exists( 'the_custom_logo' ) ) {
+						if ( has_custom_logo() ) {
+							the_custom_logo();
+						} else { ?>
+							<a class="site-title"
+							   href="<?php echo esc_url_raw( get_home_url() ) ?>"> <?php echo get_option( 'blogname', 'newsmag' ) ?></a>
+						<?php }
+					}
+					$header_textcolor = get_theme_mod( 'header_textcolor' );
+					$description      = get_bloginfo( 'description', 'display' );
+					if ( $header_textcolor !== 'blank' && ! empty( $description ) ) : ?>
+						<p class="site-description" <?php echo ( ! empty( $header_textcolor ) ) ? 'style="color:#' . esc_attr( $header_textcolor ) . '"' : ''; ?>><?php echo wp_kses_post( $description ); /* WPCS: xss ok. */ ?></p>
+						<?php
+					endif;
+					?>
 				</div>
-			</div>			
 
+				<?php
+				$newsmag_show_banner = get_theme_mod( 'newsmag_show_banner_on_homepage', true );
+				?>
+				<?php if ( $newsmag_show_banner ): ?>
+					<div class="col-md-8 header-banner">
+						<?php
+						$banner = get_theme_mod( 'newsmag_banner_type', 'image' );
+						get_template_part( 'template-parts/banner/banner', $banner );
+						?>
+					</div>
+				<?php endif; ?>
+			</div>
+		</div><!-- .site-branding -->
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<button class="menu-toggle" aria-controls="primary-menu"
+						        aria-expanded="false"><span class="fa fa-bars"></span></button>
+						<?php wp_nav_menu( array(
+							                   'theme_location' => 'primary',
+							                   'menu_id'        => 'primary-menu',
+							                   'items_wrap'     => '<ul id="%1$s" class="menu %2$s">%3$s</ul>'
+						                   ) ); ?>
+					</div>
 
+					<?php
+					get_template_part( 'template-parts/social' );
+					?>
+				</div>
+			</div>
 
-			<?php wp_nav_menu(
-				array(
-					'theme_location' => 'top-menu',
-					'container' => 'nav',
-					'container_class' => 'primary-navigation col-sm-12',
-					'menu_class' => 'nav navbar-nav',
-					'fallback_cb' => 'newsmag_header_fallback',
-					'depth' => 3
-				)); ?>
+		</nav><!-- #site-navigation -->
+	</header><!-- #masthead -->
 
-
-		</header>		
+	<div id="content" class="site-content">

@@ -1,25 +1,34 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying 404 pages (not found).
+ *
+ * @link    https://codex.wordpress.org/Creating_an_Error_404_Page
+ *
+ * @package Newsmag
+ */
 
-<?php get_sidebar(); ?>
+get_header(); ?>
+<div class="container">
+	<div class="row">
+		<div id="primary" class="content-area">
+			<main id="main" class="site-main" role="main">
 
-<section class="content-error" role="main">			
-			
-			<div class="col-sm-8">
+				<section class="error-404 not-found">
+					<header class="page-header">
+						<h1><?php _e( 'Oops! That page can&rsquo;t be found.', 'newsmag' ); ?></h1>
+					</header><!-- .page-header -->
 
-				<div class="error-deep">
-					
-					<i class="fa fa-unlink fa-3x"></i>
+					<div class="page-content">
+						<p><?php _e( 'It looks like nothing was found at this location. Maybe try a better search?', 'newsmag' ); ?></p>
 
-					<h3><?php _e('Page Not Found!','newsmag'); ?></h3>
+						<?php get_search_form(); ?>
 
-					<p class="go-home"><?php _e('Go to','newsmag'); ?> <a href="<?php echo esc_url(home_url('/')); ?>" class="u-url" rel="home"><?php _e('Homepage','newsmag'); ?></a></p>
+					</div><!-- .page-content -->
+				</section><!-- .error-404 -->
 
-				</div>
-
-			</div> <!-- end col-sm-8 -->			
-
-</section> <!-- end content-error -->
-
-<?php get_template_part('footer','widget' ); ?>
-
+			</main><!-- #main -->
+		</div><!-- #primary -->
+	</div><!--/.row-->
+</div><!--/.container-->
 <?php get_footer(); ?>
+

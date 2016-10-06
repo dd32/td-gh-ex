@@ -1,78 +1,78 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying all single posts.
+ *
+ * @link    https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ *
+ * @package Newsmag
+ */
 
-<?php get_sidebar(); ?>
+get_header();
+$image = get_custom_header();
+$title = '';
 
-<section class="content-main" role="main">
+while ( have_posts() ) : the_post();
+	$img   = get_the_post_thumbnail_url();
+	$title = get_the_title();
+endwhile;
 
-			<div class="col-sm-8">
+if ( empty( $img ) ) {
+	$img = get_custom_header();
+	$img = $img->url;
+}
+?>
+<?php if ( ! empty( $img ) ): ?>
+	<div class="newsmag-custom-header <?php echo is_single() ? 'newsmag-custom-header-single-post': '' ?>" style="background-image:url(<?php echo esc_url_raw($img) ?>)">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<h2><?php echo esc_html($title) ?></h2>
+				</div>
+			</div>
+		</div>
+	</div>
+<?php endif; ?>
+<?php
+	$breadcrumbs_enabled = get_theme_mod( 'newsmag_enable_post_breadcrumbs', true );
+	if ( $breadcrumbs_enabled ) { ?>
+		<div class="container <?php echo is_single() ? 'newsmag-breadcrumbs-container' : ''; ?>">
+			<div class="row <?php echo is_single() ? 'newsmag-breadcrumbs-row' : ''; ?>">
+				<div class="col-xs-12">
+					<?php newsmag_breadcrumbs(); ?>
+				</div>
+			</div>
+		</div>
+	<?php } ?>
+	<div class="container">
+		<div class="row">
+			<?php
+			$layout = get_theme_mod( 'newsmag_blog_layout', 'right-sidebar' ); ?>
 
-				<div class="blog-wide blog-single col-sm-12">
+			<?php if ( $layout === 'left-sidebar' ): ?>
+				<?php get_sidebar( 'sidebar' ); ?>
+			<?php endif; ?>
 
-					<div class="main-category">				
-							
-							<?php while(have_posts()):the_post(); ?>
+			<div id="primary" class="content-area <?php echo ( $layout === 'fullwidth' ) ? '' : 'col-lg-8 col-md-8'; ?> col-xs-12 newsmag-sidebar">
+				<main id="main" class="site-main" role="main">
+					<?php
+					while ( have_posts() ) : the_post();
 
-									<div class="breadcrumb post-path">
-										<ul class="clearfix">
-											<li><a href="<?php echo esc_url(home_url('/')); ?>" class="u-url" rel="home"><?php _e('Home','newsmag'); ?></a></li>
-											<li><i class="fa fa-angle-double-right"></i></li>
-											<li><?php the_category(' - '); ?></li>
-											<li><i class="fa fa-angle-double-right"></i></li>
-											<li><?php the_title(); ?></li>
-																						
-										</ul>
-									</div>												
+						get_template_part( 'template-parts/content', 'single' );
 
-									<?php get_template_part('format',get_post_format()); ?>
+						// If comments are open or we have at least one comment, load up the comment template.
+						if ( comments_open() || get_comments_number() ) :
+							comments_template();
+						endif;
 
-									<hr>
+					endwhile; // End of the loop.
+					?>
 
-										<div class="single-tags">
-											<?php the_tags(__('Tags : ','newsmag'),'  ',''); ?>
-										</div>
-
-										<hr>
-
-										<div class="next-prev-posts clearfix">
-
-											<div class="prev-post">
-												<?php previous_post_link('<i class="fa fa-angle-double-left"></i>%link'); ?>
-											</div>
-
-											<div class="next-post">
-												<?php next_post_link('%link<i class="fa fa-angle-double-right"></i>'); ?>
-											</div>
-
-										</div>
-
-									
-
-									<?php if(get_the_author_meta('description')): ?>
-
-										<?php get_template_part('author-bio'); ?>
-										
-									<?php endif; ?>
-
-
-									<?php if(comments_open()){ ?>
-
-										<div class="comment-hr"></div>
-										
-									<?php } ?>
-									
-									<?php comments_template(); ?>
-
-
-							<?php endwhile; ?>						
-
-					</div> <!-- end main-category -->					
-
-				</div> <!-- end category-mixed-blog -->		
-
-			</div> <!-- end col-sm-8 -->
-
-</section> <!-- end content-main -->
-
-<?php get_template_part('footer','widget' ); ?>
-
-<?php get_footer(); ?>
+				</main><!-- #main -->
+			</div><!-- #primary -->
+			<?php if ( $layout === 'right-sidebar' ): ?>
+				<?php get_sidebar( 'sidebar' ); ?>
+			<?php endif; ?>
+		</div>
+	</div>
+<?php
+get_footer();

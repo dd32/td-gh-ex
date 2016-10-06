@@ -1,9 +1,19 @@
-<aside class="sidebar" role="complemantary">
-			
-	<div class="col-sm-4">
+<?php
+/**
+ * The sidebar containing the main widget area.
+ *
+ * @link    https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package Newsmag
+ */
 
-		<?php if(dynamic_sidebar('sidebar')); ?>
+if ( ! is_active_sidebar( 'sidebar' ) ) {
+	return;
+}
+?>
 
-	</div> <!-- end col-sm-3 -->
-
-</aside> <!-- end sidebar -->
+<aside id="secondary" class="widget-area col-lg-4 col-md-4 col-sm-4 newsmag-sidebar hidden-xs" role="complementary">
+	<div class="newsmag-blog-sidebar">
+		<?php dynamic_sidebar( 'sidebar' ); ?>
+	</div>
+</aside><!-- #secondary -->

@@ -1,46 +1,56 @@
-<?php global $newsmag; ?>
+<?php
+/**
+ * The template for displaying the footer.
+ *
+ * Contains the closing of the #content div and all content after.
+ *
+ * @link    https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package Newsmag
+ */
 
-<footer class="site-footer col-sm-12" role="contentinfo">
+?>
+</div><!-- #content -->
 
-			<?php   
-				
-				$args = array(
-					'theme_location' => 'footer-menu',				
-					'container' => 'div',
-					'container_class' => 'footer-menu',				
-					'fallback_cb' => 'newsmag_footer_fallback',
-					'depth' => 1,					
-				);
-			
-				wp_nav_menu( $args ); ?>
+<footer id="colophon" class="site-footer" role="contentinfo">
 
-			<div class="footer-line"></div>		
-			
-			<div class="col-sm-6">
-				
-				<span class="p-text">
-					 <?php echo $newsmag['opt-editor']; ?> 
-				</span>
+	<?php get_sidebar( 'footer' ) ?>
+	<?php $go_top_enabled = get_theme_mod('newsmag_enable_go_top', true); ?>
 
-			</div> <!-- end col-sm-6 -->
+	<?php if ( $go_top_enabled ): ?>
+		<a href="#0" id="back-to-top" class="back-to-top">
+			<span class="fa fa-angle-up"></span>
+		</a>
+	<?php endif; ?>
 
-			<div class="site-generator col-sm-6">
-				
-				<span><?php _e('Theme by','newsmag'); ?> <a href='<?php echo esc_url("http://burak-aydin.com"); ?>' target="_blank" rel="generator">Burak Aydin</a></span>
-				<span class="sep">|</span>
-				<span><?php _e('Powered by','newsmag'); ?> <a href="<?php echo esc_url('http://wordpress.org'); ?>" target="_blank" rel="generator">WordPress</a></span>
-
-			</div> <!-- end col-sm-6 -->
-
-		</footer>
-
-	</div> <!-- end main-wrap -->	
-
-	
-	<div class="go-top-button">
-		<i class="fa fa-angle-up"></i>
-	</div>
+	<?php
+	$copyright_area        = get_theme_mod( 'newsmag_enable_copyright', true );
+	$copyright_attribution = get_theme_mod( 'newsmag_enable_attribution', true );
+	?>
+	<?php if ( $copyright_area || $copyright_attribution ): ?>
+		<div class="site-info">
+			<div class="container">
+				<div class="row">
+					<?php if ( $copyright_area ): ?>
+						<div class="col-md-6">
+							<?php
+							echo wp_kses_post( get_theme_mod( 'newsmag_copyright_contents', '&copy; ' . date( "Y" ) . ' <a href="https://machothemes.com/newsmag-lite/">Newsmag</a>. All rights reserved.' ) );
+							?>
+						</div>
+					<?php endif; ?>
+					<?php if ( $copyright_attribution ): ?>
+						<div class="col-md-6 text-right">
+							<?php echo __( 'Created by <a href="https://machothemes.com">Macho Themes</a>', 'newsmag' ) ?>
+						</div>
+					<?php endif; ?>
+				</div>
+			</div>
+		</div>
+	<?php endif; ?>
+</footer><!-- #colophon -->
+</div><!-- #page -->
 
 <?php wp_footer(); ?>
+
 </body>
 </html>
