@@ -75,7 +75,7 @@ class Accesspress_Basic_Contact_Widget extends WP_Widget {
         ?>
             <div class="contact-info">
                 <?php if(!empty($contact_title)) : ?>
-                    <?php echo $before_title.$contact_title.$after_title; ?>
+                    <?php echo $before_title.esc_attr($contact_title).$after_title; ?>
                 <?php endif; ?>
                 <ul class="contact-info-wrapper">
                     <?php if(!empty($contact_phone)) : ?>

@@ -124,3 +124,8 @@ Version 3.0.5
 ===============
 * Fixed Sidebar width issues in both sidebar layout
 * Used updated version of tgmpa plugin
+
+Version 3.0.6
+===============
+* Fixed some escaping issues.
+* Updated Latest Font awesome
