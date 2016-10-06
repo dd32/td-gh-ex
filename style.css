@@ -2,7 +2,7 @@
 Theme Name: Affinity
 Theme URI: https://wordpress.com/themes/affinity/
 Description: Affinity is a classic one-page theme designed with weddings and family announcements in mind.
-Version: 1.0.4
+Version: 1.0.6
 Author: Automattic
 Author URI: http://wordpress.com/themes/
 License: GNU General Public License v2 or later
@@ -937,6 +937,7 @@ body {
   top: 50%;
   left: 50%;
   text-align: center;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
@@ -1098,6 +1099,7 @@ body {
   position: fixed;
   right: 1.6em;
   top: 50%;
+  -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
 .panel-navigation .sep {
@@ -1139,6 +1141,7 @@ body {
   position: absolute;
   padding: 0.8em 3.2em 0.8em 0.8em;
   top: -.3em;
+  -webkit-transform: translateX(6em);
   transform: translateX(6em);
   visibility: hidden;
   outline: none;
@@ -1153,6 +1156,7 @@ body {
   color: #e0e1e3;
   font-weight: bold;
   visibility: visible;
+  -webkit-transform: translateX(2.4em);
   transform: translateX(2.4em);
   opacity: 1;
   outline: none;
@@ -1419,6 +1423,7 @@ body {
   position: absolute;
   top: .8em;
   left: 100%;
+  -webkit-transform: translateX(-100%) translateX(-1.6em);
   transform: translateX(-100%) translateX(-1.6em);
 }
 .menu-toggle:hover, .menu-toggle:active, .menu-toggle:focus {
@@ -1431,6 +1436,7 @@ body {
   left: auto;
   margin-bottom: 1.6em;
   float: right;
+  -webkit-transform: none;
   transform: none;
 }
 
@@ -1858,6 +1864,7 @@ body {
   -webkit-appearance: inherit;
   margin: 0 auto;
   left: 50%;
+  -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
 }
 #infinite-handle span button, #infinite-handle span span {
@@ -1872,6 +1879,7 @@ body {
 .infinite-loader .spinner {
   margin: 0 auto;
   left: 50%;
+  -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
 }
 
@@ -2005,6 +2013,7 @@ object {
   top: 3.2em;
   right: 3.2em;
   text-transform: uppercase;
+  -webkit-transform: translate(3px, -3px);
   transform: translate(3px, -3px);
   font-weight: bold;
 }
@@ -2173,6 +2182,7 @@ object {
     position: absolute;
     top: 50%;
     left: 50%;
+    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     z-index: 1;
   }
@@ -2236,6 +2246,7 @@ object {
     position: relative;
     top: auto;
     left: auto;
+    -webkit-transform: none;
     transform: none;
   }
   .affinity-front-page .no-featured-image .edit-link {
@@ -2350,6 +2361,7 @@ object {
   .no-custom-header .site-title,
   .site-title {
     text-align: left;
+    -webkit-transform: translateY(0);
     transform: translateY(0);
     position: relative;
     top: auto;
@@ -2360,6 +2372,7 @@ object {
     position: absolute;
     top: 50%;
     left: 50%;
+    -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     z-index: 2;
     width: 90%;
@@ -2437,6 +2450,7 @@ object {
     border-right: 14px solid transparent;
     position: absolute;
     left: 50%;
+    -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
     top: -20px;
   }
@@ -2484,6 +2498,7 @@ object {
   }
   .main-navigation ul ul li:hover > ul,
   .main-navigation ul ul li.focus > ul {
+    -webkit-transform: translateX(0);
     transform: translateX(0);
     left: 100%;
   }
@@ -2506,6 +2521,7 @@ object {
   .main-navigation ul li:hover > ul,
   .main-navigation ul li.focus > ul {
     left: 50%;
+    -webkit-transform: translateX(-0.75em) translateX(-50%);
     transform: translateX(-0.75em) translateX(-50%);
   }
   .main-navigation li {
@@ -2573,6 +2589,7 @@ object {
     line-height: 1;
     display: inline-block;
     vertical-align: text-top;
+    -webkit-transform: rotate(-90deg);
     transform: rotate(-90deg);
     -webkit-font-smoothing: antialiased;
   }
@@ -2828,12 +2845,14 @@ object {
   }
 
   .wp-caption.alignleft.below-entry-meta .wp-caption-text {
+    -webkit-transform: translateX(-100%) translateX(-1.6em);
     transform: translateX(-100%) translateX(-1.6em);
     text-align: right;
   }
 
   .wp-caption.alignright.below-sidebar .wp-caption-text {
     right: 0;
+    -webkit-transform: translateX(100%) translateX(1.6em);
     transform: translateX(100%) translateX(1.6em);
     text-align: left;
   }

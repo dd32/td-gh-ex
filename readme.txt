@@ -1,10 +1,8 @@
 === Affinity ===
 
 Contributors: automattic
-Tags: blog, wedding, contemporary, elegant, modern, sophisticated, brown, dark, custom-background, custom-colors, custom-header, featured-image-header, featured-images, flexible-header, full-width-template, infinite-scroll, rtl-language-support, site-logo, theme-options, threaded-comments, translation-ready, responsive-layout, one-column, two-columns, right-sidebar
 Requires at least: 4.3
-Tested up to: 4.5
-Stable tag: 1.0.0
+Tested up to: 4.6.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -148,6 +146,22 @@ Affinity also supports the following features:
 -- Camera by Anthony Delanoix from https://unsplash.com/photos/YZzkUW3Tn_g, CC0 license (https://unsplash.com/license)
 
 == Changelog ==
+
+= 6 October 2016 =
+* Since HEADER_TEXTCOLOR has been deprecated use default-text-color
+
+= 4 October 2016 =
+* Add the new `fixed-menu` feature tag to the stylesheet.
+
+= 2 September 2016 =
+* Update version number to be in line with WordPress.com download.
+* Add `-webkit-` prefix to `tranform` CSS property.
+
+= 8 August 2016 =
+* Update a Headstart attachment URL to a smaller image.
+
+= 11 July 2016 =
+* add one page tag to style.css
 
 = 27 June 2016 =
 * Add check to make sure screen size is larger than a tablet before adding inline min-height to header.
