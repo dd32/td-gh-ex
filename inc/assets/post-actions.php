@@ -13,15 +13,24 @@ add_action( 'igthemes_single_post', 'igthemes_post_footer', 40 );
 if ( ! function_exists( 'igthemes_post_header' ) ) {
 	// start function
     function igthemes_post_header() { ?>
-    <header class="entry-header">
+
+ 	  <header class="entry-header">
 		<?php
-        the_title( '<h1 class="entry-title">', '</h1>' );
+			if (is_single()) {
+				the_title( '<h1 class="entry-title">', '</h1>' );
+			} else {
+                
+				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			}
+
 		if ( 'post' === get_post_type() ) : ?>
-		  <div class="entry-meta">
+		<div class="entry-meta">
 			<?php igthemes_posted_on(); ?>
-		  </div><!-- .entry-meta -->
-		<?php endif; ?>
-    </header><!-- .entry-header -->
+		</div><!-- .entry-meta -->
+		<?php
+		endif; ?>
+          
+	   </header><!-- .entry-header -->
    <?php }
 }
 /*-----------------------------------------------------------------
@@ -30,9 +39,18 @@ if ( ! function_exists( 'igthemes_post_header' ) ) {
 if ( ! function_exists( 'igthemes_post_image' ) ) {
 	// start function
 	function igthemes_post_image() {  ?>
+
 		<div class="entry-image">
-        <?php igthemes_post_thumbnail( 'full' ); ?>
+        <?php
+            if (is_single()) {
+                igthemes_post_thumbnail( 'full' );
+			}
+            elseif (!is_single() && get_theme_mod('main_featured_images', 1 ) == 1) {
+                igthemes_post_thumbnail( 'full' );
+            }
+        ?>
 		</div><!-- .entry-image -->
+
     <?php  } 
 }
 /*-----------------------------------------------------------------
@@ -44,20 +62,37 @@ if ( ! function_exists( 'igthemes_post_content' ) ) {
 
 		<div class="entry-content">
         <?php
+            if (is_singular()) {
                 the_content( sprintf(
                     /* translators: %s: Name of current post. */
                     wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'base-wp' ), array( 'span' => array( 'class' => array() ) ) ),
                     the_title( '<span class="screen-reader-text">"', '"</span>', false )
                 ) );
+
                 wp_link_pages( array(
                     'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'base-wp' ),
                     'after'  => '</div>',
                 ) );
+            } elseif (get_theme_mod('main_post_content', 0 ) == 0 && !is_singular())  { 
+                the_excerpt();
+            } else {
+            the_content( sprintf(
+                /* translators: %s: Name of current post. */
+                wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'base-wp' ), array( 'span' => array( 'class' => array() ) ) ),
+                the_title( '<span class="screen-reader-text">"', '"</span>', false )
+            ) );
+
+            wp_link_pages( array(
+                'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'base-wp' ),
+                'after'  => '</div>',
+            ) );
+            }
         ?>
 		</div><!-- .entry-content -->
 
     <?php  } 
 }
+
 
 /*-----------------------------------------------------------------
  * POST FOOTER

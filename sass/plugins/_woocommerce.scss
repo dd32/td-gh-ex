@@ -52,7 +52,7 @@
 	   }
 	   &:active,
 	   &:focus {
-		  border-color: $color__border-button-hover;
+		  border-color: $color__border-button-focus;
 		  box-shadow: none;
           color: #fff;
 	   }

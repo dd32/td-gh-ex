@@ -36,12 +36,10 @@ function igthemes_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'igthemes_body_classes' );
 
-/**
- * Add a pingback url auto-discovery header for singularly identifiable articles.
- */
-function igthemes_pingback_header() {
-	if ( is_singular() && pings_open() ) {
-		echo '<link rel="pingback" href="', bloginfo( 'pingback_url' ), '">';
-	}
+/*
+function igthemes_post_classes( $classes ) {
+
+    return $classes;
 }
-add_action( 'wp_head', 'igthemes_pingback_header' );
+add_filter( 'post_class', 'igthemes_post_classes' );
+*/

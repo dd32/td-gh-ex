@@ -6,24 +6,25 @@ input[type="submit"] {
 	border-color: $color__border-button;
     @include border-radius(3px);
 	background: $color__background-button;
-    color: $color__text-button;
+    color: #fff;
 	box-shadow: none;
 	@include font-size(1);
-	line-height: $font__line-height-body;
-	padding: $small__spacing/2 $base__spacing;
+	line-height: 1;
+	padding: $small__spacing/1.2 $small__spacing*1.2;
 	text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
     -webkit-appearance: none;
+
 	&:hover {
         background: $color__background-button-hover;
 		border-color: $color__border-button-hover;
 		box-shadow:none;
-        color: $color__text-button-hover;
+        color: #fff;
 	}
 
 	&:active,
 	&:focus {
-		border-color: $color__border-button-hover;
+		border-color: $color__border-button-focus;
 		box-shadow: none;
-        color: $color__text-button-hover;
+        color: #fff;
 	}
 }

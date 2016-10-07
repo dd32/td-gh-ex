@@ -10,6 +10,10 @@
         background: -webkit-radial-gradient(50% -3%, ellipse cover, rgba(0, 0, 0, 0.2), rgba(97, 97, 97, 0) 40%);
         background: radial-gradient(ellipse at 50% 0%, rgba(0, 0, 0, 0.2), rgba(97, 97, 97, 0) 80%);
     }
+    .footer-widget-region {
+        clear: both;
+        display: block;
+    }
     .scroll-top,
     .social-url {
         clear: both;

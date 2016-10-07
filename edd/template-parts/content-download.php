@@ -14,6 +14,6 @@
 	/**
 	 * Functions hooked into igthemes_single_post 
 	 */
-	do_action( 'igthemes_single_post' );
+	do_action( 'igthemes_single_download' );
 	?>
 </article><!-- #post-## -->

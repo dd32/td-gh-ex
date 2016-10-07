@@ -30,14 +30,15 @@ add_action( 'customize_register', 'igthemes_customize_register' );
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function igthemes_customize_preview_js() {
-	wp_enqueue_script( 'igthemes_customizer', get_template_directory_uri() . '/inc/admin/options/assetts/js/customizer.js', array( 'customize-preview' ), '20151215', true );
+	wp_enqueue_script( 'igthemes_customizer', get_template_directory_uri() . '/inc/options/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', 'igthemes_customize_preview_js' );
 
 /**
  * Required files
  */
-require dirname( __FILE__ ) . '/assetts/customizer-settings.php';
-require dirname( __FILE__ ) . '/assetts/customizer-custom-controls.php';
-require dirname( __FILE__ ) . '/assetts/customizer-sanitization.php';
-require dirname( __FILE__ ) . '/assetts/customizer-reset.php';
+require get_template_directory() . '/inc/options/inc/customizer-options.php';
+require get_template_directory() . '/inc/options/inc/customizer-custom-controls.php';
+require get_template_directory() . '/inc/options/inc/customizer-sanitization.php';
+require get_template_directory() . '/inc/options/inc/customizer-functions.php';
+require get_template_directory() . '/inc/options/inc/customizer-reset.php';
