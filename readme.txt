@@ -3,9 +3,9 @@ Author: Rara Theme (http://raratheme.com)
 
 Tags: Blog, two-columns, right-sidebar, footer-widgets, education, custom-background, custom-menu, featured-image-header, featured-images, post-formats, threaded-comments, translation-ready, full-width-template, theme-options
 
-Requires at least: 4.4.2
-Tested up to: 4.5.3
-Stable tag: 1.0.6
+Requires at least: 4.6
+Tested up to: 4.6.1
+Stable tag: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -157,6 +157,10 @@ Benevolent WordPress Theme is distributed under the terms of the GPLv2 or later
    
    
 == Changelog ==
+    1.0.7
+    * Remove fixed logo image size. 
+    * Added Information section in customizer.
+    
     1.0.6
     * Fix minor design issues
     * Fix blank menu icon in responsive design.    

@@ -93,8 +93,6 @@ function benevolent_setup() {
     
     /* Custom Logo */
     add_theme_support( 'custom-logo', array(
-    	'width'       => 270,
-		'height'      => 60,
     	'header-text' => array( 'site-title', 'site-description' ),
     ) );
     
@@ -237,6 +235,14 @@ function benevolent_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'benevolent_scripts' );
 
+if ( is_admin() ) : // Load only if we are viewing an admin page
+function benevolent_admin_scripts() {
+	wp_enqueue_style( 'benevolent-admin-style',get_template_directory_uri().'/inc/css/admin.css', '1.0', 'screen' );    
+    wp_enqueue_script( 'benevolent-admin-js', get_template_directory_uri().'/inc/js/admin.js', array( 'jquery' ), '', true );
+}
+add_action( 'admin_enqueue_scripts', 'benevolent_admin_scripts' );
+endif;
+
 /**
  * Custom template tags for this theme.
  */
@@ -281,3 +287,8 @@ require get_template_directory() . '/inc/widget-popular-post.php';
  * Social Link Widget
  */
 require get_template_directory() . '/inc/widget-social-links.php';
+
+/**
+ * Theme Info
+ */
+require get_template_directory() . '/inc/info.php';
