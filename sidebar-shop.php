@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Base WP
+ * @package Base_WP
  */
 
 if ( ! is_active_sidebar( 'sidebar-shop' ) ) {

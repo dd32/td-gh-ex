@@ -7,7 +7,7 @@ textarea {
 	font-family: $font__main;
 	@include font-size(1);
 	line-height: $font__line-height-body;
-    font-weight: $font__light;
+    font-weight: 300;
     word-wrap: break-word;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;

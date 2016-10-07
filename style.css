@@ -4,7 +4,7 @@ Theme URI: http://www.iograficathemes.com/downloads/base-wp/
 Author: iografica
 Author URI: http://www.iograficathemes.com/
 Description: Base WP is a basic blog or business, responsive and clean coded, WordPress theme. Base WP is e-commerce, multilingual ready, SEO friendly and cross-browser compatible. The theme is fully integrated with the most popular and free plugins for Wordpress like WooCommerce, Easy Digital Downloads, Yoast Seo, Beaver Builder, Elementor, and much more. You can customize the theme via the Customizer, use this theme as an ecommerce or as a simple blogging platform.
-Version: 1.487
+Version: 2.00
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: base-wp
@@ -289,7 +289,7 @@ input[type="search"]::-webkit-search-decoration {
 
 fieldset {
   border: none;
-  margin: 0;
+  margin: 14px 0;
   padding: 0;
 }
 
@@ -529,7 +529,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #444444;
+  color: #555555;
   font-weight: 400;
   clear: both;
   padding: 0;
@@ -605,7 +605,7 @@ code, kbd, tt, var {
 }
 
 abbr, acronym {
-  border-bottom: 1px dotted rgba(100, 105, 105, 0.1);
+  border-bottom: 1px dotted #666;
   cursor: help;
 }
 
@@ -1398,14 +1398,14 @@ html {
 }
 
 body {
-  background: #ffffff;
+  background: #f9f9f9;
   /* Fallback for when there is no custom background color defined. */
 }
 
 blockquote {
   quotes: "" "";
-  margin: 0 0 24px 0;
-  padding: 24px;
+  margin: 0 0 0.75em 0;
+  padding: 20px 25px;
   background: rgba(150, 155, 155, 0.1);
   border-left: 4px solid rgba(100, 105, 105, 0.1);
 }
@@ -1424,14 +1424,14 @@ q {
 }
 
 hr {
-  background-color: rgba(100, 105, 105, 0.1);
+  background-color: #e5e5e5;
   border: 0;
   height: 1px;
-  margin-bottom: 24px;
+  margin-bottom: 1.5em;
 }
 
 ul, ol {
-  margin: 0 0 14px 24px;
+  margin: 0 0 1em 2.5em;
   padding: 0;
 }
 
@@ -1446,15 +1446,15 @@ ol {
 li > ul,
 li > ol {
   margin-bottom: 0;
-  margin-left: 24px;
+  margin-left: 1.5em;
 }
 
 dt {
-  font-weight: 700;
+  font-weight: bold;
 }
 
 dd {
-  margin: 0 24px 24px;
+  margin: 0 1.5em 1.5em;
 }
 
 img {
@@ -1476,14 +1476,14 @@ table, .woocommerce table.shop_attributes,
 table th, .woocommerce table.shop_attributes th,
 .woocommerce table.shop_table th,
 .woocommerce table.my_account_orders th, .edd-checkout #edd_checkout_cart th {
-  padding: 14px;
+  padding: 15px;
   text-align: left;
 }
 
 table td, .woocommerce table.shop_attributes td,
 .woocommerce table.shop_table td,
 .woocommerce table.my_account_orders td, .edd-checkout #edd_checkout_cart td {
-  padding: 14px;
+  padding: 15px;
 }
 
 /*--------------------------------------------------------------
@@ -1508,12 +1508,12 @@ input[type="submit"] {
   -moz-border-radius: 3px;
   border-radius: 3px;
   background: #444444;
-  color: #ffffff;
+  color: #fff;
   box-shadow: none;
   font-size: 16px;
   font-size: 1rem;
-  line-height: 1.5;
-  padding: 7px 24px;
+  line-height: 1;
+  padding: 11.66667px 16.8px;
   text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
   -webkit-appearance: none;
 }
@@ -1528,10 +1528,10 @@ input[type="submit"].edd-submit:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-  background: #ff9900;
-  border-color: #ff9900;
+  background: #f90;
+  border-color: #f90;
   box-shadow: none;
-  color: #ffffff;
+  color: #fff;
 }
 
 button:active,
@@ -1553,9 +1553,9 @@ input[type="reset"]:active,
 input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-  border-color: #ff9900;
+  border-color: #f90;
   box-shadow: none;
-  color: #ffffff;
+  color: #fff;
 }
 
 input[type="text"],
@@ -1579,7 +1579,7 @@ textarea {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  padding: 7px 14px;
+  padding: 7.77778px 14px;
 }
 
 input[type="text"]:focus,
@@ -1598,7 +1598,7 @@ input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
-  color: #6f6f6f;
+  color: #666;
   outline-color: transparent;
   outline-style: none;
 }
@@ -1626,7 +1626,7 @@ label {
   font-family: "Lucida Grande","Lucida Sans Unicode",Tahoma,sans-serif;
   font-size: 12px;
   color: #444444;
-  font-weight: 700;
+  font-weight: bold;
   text-align: left;
   margin: 0;
   padding: 0;
@@ -1892,15 +1892,15 @@ ul.page-numbers li .current, ul.page-numbers li .breadcrumb a, .breadcrumb ul.pa
 }
 
 .screen-reader-text:focus {
-  background-color: #ffffff;
+  background-color: #f1f1f1;
   border-radius: 3px;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   clip: auto !important;
-  color: #666666;
+  color: #f90;
   display: block;
   font-size: 14px;
   font-size: 0.875rem;
-  font-weight: 700;
+  font-weight: bold;
   height: auto;
   left: 5px;
   line-height: normal;
@@ -1923,13 +1923,13 @@ ul.page-numbers li .current, ul.page-numbers li .breadcrumb a, .breadcrumb ul.pa
 .alignleft {
   display: inline;
   float: left;
-  margin-right: 14px;
+  margin-right: 1.5em;
 }
 
 .alignright {
   display: inline;
   float: right;
-  margin-left: 14px;
+  margin-left: 1.5em;
 }
 
 .aligncenter {
@@ -1972,20 +1972,22 @@ ul.page-numbers li .current, ul.page-numbers li .breadcrumb a, .breadcrumb ul.pa
 # Widgets
 --------------------------------------------------------------*/
 h3.widget-title {
-  text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.1);
-  background: rgba(202, 205, 205, 0.1);
+  text-shadow: 1px 1px 0 #fff;
+  background-color: rgba(202, 205, 205, 0.1);
   margin-top: -14px;
   margin-left: -14px;
   margin-right: -14px;
   margin-bottom: 14px;
   padding: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid #fff;
+  border-bottom: 1px solid rgba(100, 105, 105, 0.1);
 }
 
 .widget {
   margin: 0 0 24px 0;
+  border: 1px solid rgba(100, 105, 105, 0.1);
   padding: 14px;
+  background: rgba(255, 255, 255, 0.8);
   -moz-box-shadow: 0px 2px 2px rgba(100, 105, 105, 0.1);
   -webkit-box-shadow: 0px 2px 2px rgba(100, 105, 105, 0.1);
   box-shadow: 0px 2px 2px rgba(100, 105, 105, 0.1);
@@ -2039,7 +2041,7 @@ h3.widget-title {
 }
 
 .header-widget-region {
-  margin: 36px 0 0 0;
+  margin: 24px 0 0 0;
   display: inline-block;
   width: 100%;
 }
@@ -2213,39 +2215,33 @@ h3.widget-title {
   background: #fff;
 }
 
-.site-header .site-title {
-  content: "";
-  display: table;
-  table-layout: fixed;
-  max-width: 1190px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  padding: 14px 24px;
+.site-header .site-branding {
+  padding: 24px;
+  display: block;
+  text-align: left;
 }
 
-.site-header .site-title a {
+.site-header .site-branding h1.site-title {
+  margin: 0;
+  padding: 0;
+}
+
+.site-header .site-branding h1.site-title a {
   margin: 0;
   padding: 0;
   display: block;
   font-weight: 400;
 }
 
-.site-header .site-description {
-  content: "";
-  display: table;
-  table-layout: fixed;
-  max-width: 1190px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 24px 24px 24px;
+.site-header .site-branding .site-description {
   display: block;
-  text-align: center;
   font-weight: 300;
+  margin: 0;
+  padding: 0;
   font-size: 1.2em;
 }
 
-.site-header .custom-logo {
+.site-header .site-branding .custom-logo {
   margin: 14px 0;
 }
 
@@ -2297,6 +2293,11 @@ h3.widget-title {
   background: radial-gradient(ellipse at 50% 0%, rgba(0, 0, 0, 0.2), rgba(97, 97, 97, 0) 80%);
 }
 
+.site-footer .footer-widget-region {
+  clear: both;
+  display: block;
+}
+
 .site-footer .scroll-top,
 .site-footer .social-url {
   clear: both;
@@ -2344,6 +2345,7 @@ h3.widget-title {
 article {
   border: 1px solid rgba(100, 105, 105, 0.1);
   padding: 14px;
+  background: rgba(255, 255, 255, 0.8);
   -moz-box-shadow: 0px 2px 2px rgba(100, 105, 105, 0.1);
   -webkit-box-shadow: 0px 2px 2px rgba(100, 105, 105, 0.1);
   box-shadow: 0px 2px 2px rgba(100, 105, 105, 0.1);
@@ -2614,7 +2616,7 @@ article {
   display: inline-block;
   width: 100%;
   text-align: left;
-  padding: 14px 0 0 0;
+  padding: 10px 0 0 0;
   margin: 24px 0 0 0;
 }
 
@@ -2818,8 +2820,8 @@ object {
 .button#edd-purchase-button:hover,
 .woocommerce input.button:hover,
 .woocommerce #respond input#submit:hover {
-  background-color: #ff9900;
-  border-color: #ff9900;
+  background-color: #f90;
+  border-color: #f90;
   box-shadow: none;
   color: #fff;
 }
@@ -2853,7 +2855,7 @@ object {
 .woocommerce input.button:focus,
 .woocommerce #respond input#submit:active,
 .woocommerce #respond input#submit:focus {
-  border-color: #ff9900;
+  border-color: #f90;
   box-shadow: none;
   color: #fff;
 }
