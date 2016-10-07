@@ -14,8 +14,8 @@ body {
 
 blockquote {
     quotes: "" "";
-    margin: 0 0 0.75em 0;
-    padding: 20px 25px;
+    margin: 0 0 $base__spacing 0;
+    padding: $base__spacing;
     background: $color__light-gray;
     border-left: 4px solid $color__gray;
     &:before,
@@ -31,10 +31,10 @@ q {
     font-style: italic;
 }
 hr {
-    background-color: $color__background-hr;
+    background-color: $color__gray;
     border: 0;
     height: 1px;
-    margin-bottom: 1.5em;
+    margin-bottom: $base__spacing;
 }
 
 @import "lists";

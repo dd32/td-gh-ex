@@ -7,7 +7,7 @@
 
 <div id="getting_started" class="panel">
     <div class="theme_link evidence">
-        <?php if ( is_plugin_active( 'base-wp-premium/base-wp-premium.php' ) )  { ?>
+        <?php if ( is_plugin_active( 'base-wp-premium/'. $theme_data->get( 'TextDomain' ) .'-premium.php' ) )  { ?>
            <h3><?php printf(esc_html__('%s Premium', 'base-wp'), $theme_data->Name); ?></h3>
            <p>
                <?php esc_html_e( 'Remember to activate your license key to get sproduct support and updates.', 'base-wp'); ?>
@@ -16,7 +16,7 @@
                <?php esc_html_e('view license key', 'base-wp'); ?>
           </a></p>
            <p>
-           <strong><?php printf(esc_html__('Having troubles?', 'base-wp'), $theme_data->Name); ?></strong></br>
+           <strong><?php esc_html__('Having troubles?', 'base-wp'); ?></strong></br>
 
             <?php printf(__('<a href="%s" target="_blank">Contact us</a> and talk with our support team, we will glad to help you.', 'base-wp'), esc_url( 'http://www.iograficathemes.com/premium-support/' )); ?>
 
@@ -27,7 +27,7 @@
             <?php printf(__('%s Premium expands the already powerful free version of this theme and gives access to our priority support service.', 'base-wp'), $theme_data->Name); ?>
         </p>    
         <p> 
-            <a href="<?php echo esc_url( 'http://www.iograficathemes.com/downloads/base-wp-premium' ); ?>" target="_blank" class="button-upgrade"><?php esc_html_e('upgrade to premium', 'base-wp'); ?></a>
+            <a href="<?php echo esc_url( 'http://www.iograficathemes.com/downloads/'. $theme_data->get( 'TextDomain' ) .'-premium' ); ?>" target="_blank" class="button-upgrade"><?php esc_html_e('upgrade to premium', 'base-wp'); ?></a>
         </p>
         <?php } ?>
     </div>
@@ -35,14 +35,14 @@
         <h3><?php esc_html_e( 'Enjoying the theme?', 'base-wp' ); ?></h3>
         <p class="about"><?php esc_html_e( 'If you like this theme why not leave us a review on WordPress.org?  We\'d really appreciate it!', 'base-wp' ); ?></p>
         <p>
-            <a href="<?php echo esc_url( 'https://wordpress.org/themes/base-wp' ); ?>" target="_blank" class="button button-secondary"><?php esc_html_e('Add Your Review', 'base-wp'); ?></a>
+            <a href="<?php echo esc_url( 'https://wordpress.org/support/theme/'. $theme_data->get( 'TextDomain' ) .'/reviews/#new-post' ); ?>" target="_blank" class="button button-secondary"><?php esc_html_e('Add Your Review', 'base-wp'); ?></a>
         </p>
     </div>
     <div class="theme_link">
         <h3><?php esc_html_e( 'Theme Documentation', 'base-wp' ); ?></h3>
         <p class="about"><?php printf(esc_html__('Need any help to setup and configure %s? Please have a look at our documentations instructions.', 'base-wp'), $theme_data->Name); ?></p>
         <p>
-            <a href="<?php echo esc_url( 'http://www.iograficathemes.com/documentation/base-wp-premium/' ); ?>" target="_blank" class="button button-secondary"><?php esc_html_e('View Documentation', 'base-wp'); ?></a>
+            <a href="<?php echo esc_url( 'http://www.iograficathemes.com/documentation/'. $theme_data->get( 'TextDomain' ) .'-premium/' ); ?>" target="_blank" class="button button-secondary"><?php esc_html_e('View Documentation', 'base-wp'); ?></a>
         </p>
     </div>
     <div class="theme_link">

@@ -1,20 +1,18 @@
 h3.widget-title {
-    text-shadow: 1px 1px 0 #fff;
-    background-color: lighten($color__light-gray,20%);
+    text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.1);
+    background: lighten($color__light-gray,20%);
     margin-top: -$small__spacing;
     margin-left: -$small__spacing;
     margin-right: -$small__spacing;
     margin-bottom: $small__spacing;
     padding: $small__spacing;
-    border: 1px solid #fff;
-    border-bottom: 1px solid $color__gray;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .widget {
     margin: 0 0 $base__spacing 0;
-    border: 1px solid $color__gray;
     padding: $small__spacing;
-    background:rgba(255, 255, 255, 0.8);
     -moz-box-shadow: 0px 2px 2px $color__gray;
     -webkit-box-shadow: 0px 2px 2px $color__gray;
     box-shadow: 0px 2px 2px $color__gray;
@@ -61,7 +59,7 @@ h3.widget-title {
     }
 }
 .header-widget-region {
-    margin: $base__spacing 0 0 0;
+    margin: $big__spacing 0 0 0;
     display: inline-block;
     width: 100%;
     .widget {
