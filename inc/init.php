@@ -61,10 +61,7 @@ require $accesspress_store_customizer_file_path = accesspress_store_file_directo
 */
 require $accesspress_store_widget_file_path = accesspress_store_file_directory('inc/widgets/accesspress-widget.php');
 
-
-
-
-
-
-
-
+/**
+ * Load Options Plugin Activation
+*/
+require $accesspress_store_plugin_activation_file_path = accesspress_store_file_directory('inc/accesspress-plugin-activation.php');

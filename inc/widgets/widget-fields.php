@@ -90,7 +90,7 @@ function accesspress_store_widgets_show_widget_field($instance = '', $widget_fie
             <?php
             break;
         
-        //iframe Textarea
+        //frame Textarea
         case 'iframe_textarea' :
             ?>
             <p>

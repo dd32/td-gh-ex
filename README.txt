@@ -48,6 +48,11 @@ Images
 
 == Changelog ==
 
+= 2.1.6 =
+
+** Change the plugins activation function use latest version.
+** Fixed the slider css issue.
+
 = 2.1.5 =
 
 ** RTL language support.
