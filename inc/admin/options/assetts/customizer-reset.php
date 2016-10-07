@@ -28,7 +28,7 @@ class IGthemes_Customizer_Reset {
         }
 
         public function customize_controls_print_scripts() {
-            wp_enqueue_script( 'igthemes-customizer-reset',  get_template_directory_uri() . '/inc/options/js/customizer-reset.js', array( 'jquery' ), '20150120' );
+            wp_enqueue_script( 'igthemes-customizer-reset',  get_template_directory_uri() . '/inc/admin/options/assetts/js/customizer-reset.js', array( 'jquery' ), '20150120' );
             wp_localize_script( 'igthemes-customizer-reset', '_IGthemesCustomizerReset', array(
                 'reset'   => __( 'Reset', 'base-wp' ),
                 'confirm' => __( "Attention! This will remove all customizations ever made via customizer to this theme!\n\nThis action is irreversible!", 'base-wp' ),

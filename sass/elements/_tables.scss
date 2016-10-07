@@ -3,10 +3,10 @@ table {
     width: 100%;
     text-align: left;
     th {
-        padding: 15px;
+        padding: $small__spacing;
         text-align: left;
     }
     td {
-        padding: 15px;
+        padding: $small__spacing;
     }
 }

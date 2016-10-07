@@ -1,66 +1,4 @@
 <?php
-//start class
-class IGthemes_Customizer {
-// add some settings
-public static function igthemes_customize($wp_customize) {
-
-$wp_customize->add_panel( 'igtheme_options', array(
-  'title' => __( 'Theme Settings', 'base-wp'),
-  'description' => '', 
-  'priority' => 10, 
-) );
-// LAYOUT
-$wp_customize->add_section('layout-settings', array(
-    'title' => __('Layout', 'base-wp'),
-    'panel' => 'igtheme_options',
-    'priority' => 10, 
- ));
-// Header
-$wp_customize->add_section( 'header-settings' , array(
-  'title' => __( 'Header', 'base-wp'),
-  'panel' => 'igtheme_options',
-  'priority' => 20, 
-) );
-// TYPOGRAPHY
-$wp_customize->add_section('typography-settings', array(
-    'title' => __('Typography', 'base-wp'),
-    'panel' => 'igtheme_options',
-    'priority' => 30, 
-));
-// BUTTONS
-$wp_customize->add_section('buttons-settings', array(
-    'title' => __('Buttons', 'base-wp'),
-    'panel' => 'igtheme_options',
-    'priority' => 40, 
- ));
-// FOOTER
-$wp_customize->add_section('footer-settings', array(
-    'title' => __('Footer', 'base-wp'),
-    'panel' => 'igtheme_options',
-    'priority' => 50, 
-));
-// SOCIAL
-$wp_customize->add_section('social-settings', array(
-    'title' => __('Social', 'base-wp'),
-    'panel' => 'igtheme_options',
-    'priority' => 60, 
-));
-// SHOP
-$wp_customize->add_section('shop-settings', array(
-    'title' => esc_html__('Shop', 'base-wp'),
-    'panel' => 'igtheme_options',
-    'priority' => 70,
-));
-// ADVANCED
-$wp_customize->add_section('advanced-settings', array(
-    'title' => esc_html__('Advanced', 'base-wp'),
-    'panel' => 'igtheme_options',
-    'priority' => 80,
-));
-// END SECTIONS
-
-//ADD CONTROLS
-require get_template_directory() . '/inc/options/inc/customizer-premium.php';
 /*****************************************************************
 * LAYOUT SETTINGS
 ******************************************************************/
@@ -98,8 +36,8 @@ require get_template_directory() . '/inc/options/inc/customizer-premium.php';
                 'section'		=> 'layout-settings',
                 'settings'      => 'main_sidebar',
                 'choices'		=> array(
-                    'left' 	    => get_template_directory_uri() . '/inc/options/images/left.png',
-                    'right' 	=> get_template_directory_uri() . '/inc/options/images/right.png'
+                    'left' 	    => get_template_directory_uri() . '/inc/admin/options/assetts/images/left.png',
+                    'right' 	=> get_template_directory_uri() . '/inc/admin/options/assetts/images/right.png'
                 )
             )
     ));
@@ -230,7 +168,7 @@ require get_template_directory() . '/inc/options/inc/customizer-premium.php';
         array(
         
         'sanitize_callback' => 'igthemes_sanitize_hex_color',
-        'default'  => '#ffffff',
+        'default'  => $header_background_color,
         'transport' => 'postMessage'
 
     ));
@@ -251,7 +189,7 @@ require get_template_directory() . '/inc/options/inc/customizer-premium.php';
         array(
         
         'sanitize_callback' => 'igthemes_sanitize_hex_color',
-        'default'  => '#666666',
+        'default'  => $header_text_color,
         'transport' => 'postMessage'
     ));
     $wp_customize->add_control(
@@ -270,7 +208,7 @@ require get_template_directory() . '/inc/options/inc/customizer-premium.php';
         'header_link_normal',
         array(
         'sanitize_callback' => 'igthemes_sanitize_hex_color',
-        'default'  => '#444444',
+        'default'  => $header_link_normal,
         'transport' => 'postMessage'
     ));
     $wp_customize->add_control(
@@ -290,7 +228,7 @@ require get_template_directory() . '/inc/options/inc/customizer-premium.php';
         array(
         
         'sanitize_callback' => 'igthemes_sanitize_hex_color',
-        'default'  => '#ff9900',
+        'default'  => $header_link_hover,
     ));
     $wp_customize->add_control(
         new WP_Customize_color_Control(
@@ -323,7 +261,7 @@ require get_template_directory() . '/inc/options/inc/customizer-premium.php';
         'body_text_color',
         array(
         'sanitize_callback' => 'igthemes_sanitize_hex_color',
-        'default'  => '#666666',
+        'default'  => $body_text_color,
         'transport' => 'postMessage'
     ));
     $wp_customize->add_control(
@@ -343,7 +281,7 @@ require get_template_directory() . '/inc/options/inc/customizer-premium.php';
         'body_headings_color',
         array(
         'sanitize_callback' => 'igthemes_sanitize_hex_color',
-        'default'  => '#444444',
+        'default'  => $body_headings_color,
         'transport' => 'postMessage'
     ));
     $wp_customize->add_control(
@@ -363,7 +301,7 @@ require get_template_directory() . '/inc/options/inc/customizer-premium.php';
         'body_link_normal',
         array(
         'sanitize_callback' => 'igthemes_sanitize_hex_color',
-        'default'  => '#444444',
+        'default'  => $body_link_normal,
         'transport' => 'postMessage'
     ));
     $wp_customize->add_control(
@@ -383,7 +321,7 @@ require get_template_directory() . '/inc/options/inc/customizer-premium.php';
         'body_link_hover',
         array(
         'sanitize_callback' => 'igthemes_sanitize_hex_color',
-        'default'  => '#ff9900'
+        'default'  => $body_link_hover,
     ));
     $wp_customize->add_control(
         new WP_Customize_color_Control(
@@ -441,7 +379,7 @@ require get_template_directory() . '/inc/options/inc/customizer-premium.php';
         'button_background_normal',
         array(
         'sanitize_callback' => 'igthemes_sanitize_hex_color',
-        'default'  => '#444444',
+        'default'  => $button_background_normal,
         'transport' => 'postMessage'
     ));
     $wp_customize->add_control(
@@ -461,7 +399,7 @@ require get_template_directory() . '/inc/options/inc/customizer-premium.php';
         'button_background_hover',
         array(
         'sanitize_callback' => 'igthemes_sanitize_hex_color',
-        'default'  => '#ff9900'
+        'default'  => $button_background_hover,
     ));
     $wp_customize->add_control(
         new WP_Customize_color_Control(
@@ -480,7 +418,7 @@ require get_template_directory() . '/inc/options/inc/customizer-premium.php';
         'button_text_normal',
         array(
         'sanitize_callback' => 'igthemes_sanitize_hex_color',
-        'default'  => '#ffffff',
+        'default'  => $button_text_normal,
         'transport' => 'postMessage'
     ));
     $wp_customize->add_control(
@@ -500,7 +438,7 @@ require get_template_directory() . '/inc/options/inc/customizer-premium.php';
         'button_text_hover',
         array(
         'sanitize_callback' => 'igthemes_sanitize_hex_color',
-        'default'  => '#ffffff'
+        'default'  => $button_text_hover,
     ));
     $wp_customize->add_control(
         new WP_Customize_color_Control(
@@ -534,7 +472,7 @@ require get_template_directory() . '/inc/options/inc/customizer-premium.php';
         'footer_background_color',
         array(
         'sanitize_callback' => 'igthemes_sanitize_hex_color',
-        'default'  => '#ffffff',
+        'default'  => $footer_background_color,
         'transport' => 'postMessage'
     ));
     $wp_customize->add_control(
@@ -554,7 +492,7 @@ require get_template_directory() . '/inc/options/inc/customizer-premium.php';
         'footer_text_color',
         array(
         'sanitize_callback' => 'igthemes_sanitize_hex_color',
-        'default'  => '#666666',
+        'default'  => $footer_text_color,
         'transport' => 'postMessage'
     ));
     $wp_customize->add_control(
@@ -574,7 +512,7 @@ require get_template_directory() . '/inc/options/inc/customizer-premium.php';
         'footer_headings_color',
         array(
         'sanitize_callback' => 'igthemes_sanitize_hex_color',
-        'default'  => '#444444',
+        'default'  => $footer_headings_color,
         'transport' => 'postMessage'
     ));
     $wp_customize->add_control(
@@ -594,7 +532,7 @@ require get_template_directory() . '/inc/options/inc/customizer-premium.php';
         'footer_link_normal',
         array(
         'sanitize_callback' => 'igthemes_sanitize_hex_color',
-        'default'  => '#444444',
+        'default'  => $footer_link_normal,
         'transport' => 'postMessage'
     ));
     $wp_customize->add_control(
@@ -614,7 +552,7 @@ require get_template_directory() . '/inc/options/inc/customizer-premium.php';
         'footer_link_hover',
         array(
         'sanitize_callback' => 'igthemes_sanitize_hex_color',
-        'default'  => '#ff9900'
+        'default'  => $footer_link_hover,
     ));
     $wp_customize->add_control(
         new WP_Customize_color_Control(
@@ -783,9 +721,3 @@ require get_template_directory() . '/inc/options/inc/customizer-premium.php';
         'settings' => 'shop-buttons',
         'priority'   => 6
     ) ) );
-//END
-    }
-}
-// Setup the Theme Customizer settings and controls...
-add_action('customize_register' , array('IGthemes_Customizer' , 'igthemes_customize') );
-//END OF CLASS

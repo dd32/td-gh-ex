@@ -1,31 +1,26 @@
 .site-header {
     background: #fff;
-    .site-branding {
+    .site-title {
         @include outer-container();
-        padding: $base__spacing;
+        text-align: center;
+        padding: $small__spacing $base__spacing;
+        a {
+            margin: 0;
+            padding: 0;
+            display: block;
+            font-weight: $font__normal;
+        }
+    }
+    .site-description {
+        @include outer-container();
+        padding:  0 $base__spacing $base__spacing $base__spacing ;
         display: block;
         text-align: center;
-
-        h1.site-title {
-            margin: 0;
-            padding: 0;
-            a {
-                margin: 0;
-                padding: 0;
-                display: block;
-                font-weight: 400;
-            }
-        }
-        .site-description {
-            display: block;
-            font-weight: 300;
-            margin: 0;
-            padding: 0;
-            font-size: 1.2em;
-        }
-        .custom-logo {
-            margin: $small__spacing 0;
-        }
+        font-weight: $font__light;
+        font-size: 1.2em;
+    }
+    .custom-logo {
+        margin: $small__spacing 0;
     }
     .header-image {
         display: block;

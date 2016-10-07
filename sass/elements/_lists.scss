@@ -1,5 +1,5 @@
 ul, ol {
-	margin: 0 0 1em 2.5em;
+	margin: 0 0 $small__spacing $base__spacing;
     padding: 0;
 }
 
@@ -14,13 +14,13 @@ ol {
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-left: 1.5em;
+	margin-left: $base__spacing;
 }
 
 dt {
-	font-weight: bold;
+	font-weight: $font__bold;
 }
 
 dd {
-	margin: 0 1.5em 1.5em;
+	margin: 0 $base__spacing $base__spacing;
 }
