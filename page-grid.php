@@ -4,15 +4,15 @@
 
 <?php 
 // Define variables
-$bnt_parent_page_id = get_the_ID();
-$bnt_grid_mode = get_post_meta( $bnt_parent_page_id, 'bnt_page_grid_mode', true );
-$bnt_grid_columns = get_post_meta( $bnt_parent_page_id, 'bnt_page_columns', true );
+$bento_parent_page_id = get_the_ID();
+$bento_grid_mode = get_post_meta( $bento_parent_page_id, 'bento_page_grid_mode', true );
+$bento_grid_columns = get_post_meta( $bento_parent_page_id, 'bento_page_columns', true );
 ?>
 
 <div class="bnt-container">
     
     <div class="content content-page">
-        <main class="site-main grid-main grid-main-<?php echo $bnt_grid_mode; ?>" role="main">
+        <main class="site-main grid-main grid-main-<?php echo $bento_grid_mode; ?>">
         	
             <?php 
             // The primary Loop
@@ -29,22 +29,22 @@ $bnt_grid_columns = get_post_meta( $bnt_parent_page_id, 'bnt_page_columns', true
 			    
 			<?php	
 			// Filter for portfolio items
-			$bnt_grid_current_content_types = 'post';
-			$bnt_grid_current_content_types_array = get_post_meta( $bnt_parent_page_id, 'bnt_page_content_types', true );
-			if ( !empty( $bnt_grid_current_content_types_array ) ) {
-				$bnt_grid_current_content_types = implode( $bnt_grid_current_content_types_array );
+			$bento_grid_current_content_types = 'post';
+			$bento_grid_current_content_types_array = get_post_meta( $bento_parent_page_id, 'bento_page_content_types', true );
+			if ( !empty( $bento_grid_current_content_types_array ) ) {
+				$bento_grid_current_content_types = implode( $bento_grid_current_content_types_array );
 			}
-			if ( function_exists( 'bnt_ep_portfolio_filter' ) && $bnt_grid_current_content_types == 'project' ) {
-				bnt_ep_portfolio_filter();
+			if ( function_exists( 'bento_ep_portfolio_filter' ) && $bento_grid_current_content_types == 'project' ) {
+				bento_ep_portfolio_filter();
 			}
 			?>
             
 			<?php 
             // Build the query
-            $bnt_query = new WP_Query( bnt_grid_query() );
+            $bento_query = new WP_Query( bento_grid_query() );
             
             // Start the Loop
-            if ( $bnt_query->have_posts() ) { 
+            if ( $bento_query->have_posts() ) { 
             ?>
             	
                 <div class="spinner-grid">
@@ -54,16 +54,16 @@ $bnt_grid_columns = get_post_meta( $bnt_parent_page_id, 'bnt_page_columns', true
                     </div>
                 </div>
                 
-                <div class="items-container grid-container grid-<?php echo $bnt_grid_mode; ?> grid-columns-<?php echo $bnt_grid_columns; ?>">
+                <div class="items-container grid-container grid-<?php echo $bento_grid_mode; ?> grid-columns-<?php echo $bento_grid_columns; ?>">
 					
-					<?php if ( get_post_meta( $bnt_parent_page_id, 'bnt_page_grid_mode', true ) != 'rows' ) { ?>
+					<?php if ( get_post_meta( $bento_parent_page_id, 'bento_page_grid_mode', true ) != 'rows' ) { ?>
                 	<div class="grid-sizer">
                     </div>
 					<?php } ?>
                     
                     <?php
-                    while ( $bnt_query->have_posts() ) { 
-                        $bnt_query->the_post(); 
+                    while ( $bento_query->have_posts() ) { 
+                        $bento_query->the_post(); 
 						
                         // Render the items
                     	get_template_part( 'content', 'grid' );  
@@ -75,10 +75,10 @@ $bnt_grid_columns = get_post_meta( $bnt_parent_page_id, 'bnt_page_columns', true
                 </div>
             
             	<?php 
-				if ( get_post_meta( $bnt_parent_page_id, 'bnt_page_ajax_load', true ) == 'on' ) {
-					bnt_ajax_load_more(); 
+				if ( get_post_meta( $bento_parent_page_id, 'bento_page_ajax_load', true ) == 'on' ) {
+					bento_ajax_load_more(); 
 				} else {
-					bnt_grid_pagination();
+					bento_grid_pagination();
 				}
 				
             }

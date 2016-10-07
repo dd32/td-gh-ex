@@ -12,19 +12,19 @@ $str(document).ready(function() {
 			<div class="bnt-section-helper-top-margin"> \
 			</div> \
 	';
-	if ( bntCustomizerVars.license_status != 'valid' ) {
+	if ( bentoCustomizerVars.license_status != 'valid' ) {
 		links += ' \
 			<a class="bnt-customizer-link bnt-extra-link bnt-extra-link-first bnt-extra-link-ep" href="http://satoristudio.net/bento-free-wordpress-theme/#expansion-pack" target="_blank"> \
 				<span class="dashicons dashicons-carrot"> \
 				</span>'
-				+bntCustomizerVars.exp+
+				+bentoCustomizerVars.exp+
 			'</a>';
 	}
 	links += ' \
 			<a class="bnt-customizer-link bnt-extra-link bnt-extra-link-last bnt-extra-link-rate" href="https://wordpress.org/support/theme/bento/reviews/?filter=5#new-post" target="_blank"> \
 				<span class="dashicons dashicons-heart"> \
 				</span>'
-				+bntCustomizerVars.review+
+				+bentoCustomizerVars.review+
 			'</a> \
 		</li>';
 	$str('#customize-theme-controls > ul').prepend(links);
@@ -33,8 +33,8 @@ $str(document).ready(function() {
 	// Control visibility logic
 	
 	function bntWebsiteLayout() {
-		var $parent = $str( '#customize-control-bnt_website_layout select' );
-		var $child = $str( '#customize-control-bnt_website_background' );
+		var $parent = $str( '#customize-control-bento_website_layout select' );
+		var $child = $str( '#customize-control-bento_website_background' );
 		if ( $parent.attr('value') == 1 ) {
 			$child.show();
 		} else {
@@ -42,14 +42,14 @@ $str(document).ready(function() {
 		}
 	}
 	bntWebsiteLayout();
-	$str( '#customize-control-bnt_website_layout select' ).change( function() {
+	$str( '#customize-control-bento_website_layout select' ).change( function() {
 		bntWebsiteLayout();
 		bntWebsiteBackground();
 	});
 	
 	function bntWebsiteBackground() {
-		var $parent = $str( '#customize-control-bnt_website_background select' );
-		var $children = $str( '#customize-control-bnt_website_background_color, #customize-control-bnt_website_background_texture, #customize-control-bnt_website_background_image' );
+		var $parent = $str( '#customize-control-bento_website_background select' );
+		var $children = $str( '#customize-control-bento_website_background_color, #customize-control-bento_website_background_texture, #customize-control-bento_website_background_image' );
 		if ( $parent.is(':visible') ) {
 			var pvalue = $parent.attr('value');
 			$children.each(function( index, value ) {
@@ -64,14 +64,14 @@ $str(document).ready(function() {
 		}
 	}
 	bntWebsiteBackground();
-	$str( '#customize-control-bnt_website_background select' ).change( function() {
+	$str( '#customize-control-bento_website_background select' ).change( function() {
 		bntWebsiteBackground();
 	});
 	
 	function bntMenuBackground() {
-		var $parent = $str( '#customize-control-bnt_menu_config select' );
-		var $child1 = $str( '#customize-control-bnt_primary_menu_background' );
-		var $child2 = $str( '#customize-control-bnt_menu_separators' );
+		var $parent = $str( '#customize-control-bento_menu_config select' );
+		var $child1 = $str( '#customize-control-bento_primary_menu_background' );
+		var $child2 = $str( '#customize-control-bento_menu_separators' );
 		if ( $parent.attr('value') == 2 ) {
 			$child1.show();
 			$child2.hide();
@@ -84,13 +84,13 @@ $str(document).ready(function() {
 		}
 	}
 	bntMenuBackground();
-	$str( '#customize-control-bnt_menu_config select' ).change( function() {
+	$str( '#customize-control-bento_menu_config select' ).change( function() {
 		bntMenuBackground();
 	});
 	
 	function bntPopupLocation() {
-		var $parent = $str( '#customize-control-bnt_cta_location select' );
-		var $child = $str( '#customize-control-bnt_cta_page' );
+		var $parent = $str( '#customize-control-bento_cta_location select' );
+		var $child = $str( '#customize-control-bento_cta_page' );
 		if ( $parent.attr('value') == 4 ) {
 			$child.show();
 		} else {
@@ -98,13 +98,13 @@ $str(document).ready(function() {
 		}
 	}
 	bntPopupLocation();
-	$str( '#customize-control-bnt_cta_location select' ).change( function() {
+	$str( '#customize-control-bento_cta_location select' ).change( function() {
 		bntPopupLocation();
 	});
 	
 	function bntPopupTrigger() {
-		var $parent = $str( '#customize-control-bnt_cta_trigger select' );
-		var $child = $str( '#customize-control-bnt_cta_timeonpage' );
+		var $parent = $str( '#customize-control-bento_cta_trigger select' );
+		var $child = $str( '#customize-control-bento_cta_timeonpage' );
 		if ( $parent.attr('value') == 0 ) {
 			$child.show();
 		} else {
@@ -112,7 +112,7 @@ $str(document).ready(function() {
 		}
 	}
 	bntPopupTrigger();
-	$str( '#customize-control-bnt_cta_trigger select' ).change( function() {
+	$str( '#customize-control-bento_cta_trigger select' ).change( function() {
 		bntPopupTrigger();
 	});
 		

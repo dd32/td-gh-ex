@@ -6,13 +6,13 @@
 			<div class="after-content">
 			</div>
             
-            <footer class="site-footer" role="contentinfo">
+            <footer class="site-footer">
 				
 				<?php // Footer widget area ?>
-				<?php if ( is_active_sidebar( 'bnt_footer' )  ) { ?>
+				<?php if ( is_active_sidebar( 'bento_footer' )  ) { ?>
                     <div class="widget-area sidebar-footer clear">
                         <div class="bnt-container">
-                            <?php dynamic_sidebar( 'bnt_footer' ); ?>
+                            <?php dynamic_sidebar( 'bento_footer' ); ?>
                         </div>
                 	</div>
                 <?php } ?>
@@ -21,9 +21,9 @@
                 <div class="bottom-footer clear">
                 	<div class="bnt-container">
 					
-						<?php bnt_footer_menu(); ?>
+						<?php bento_footer_menu(); ?>
 						
-                        <?php bnt_copyright(); ?>
+                        <?php bento_copyright(); ?>
 						
                     </div>
                 </div>

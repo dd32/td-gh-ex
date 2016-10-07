@@ -4,17 +4,17 @@
 
 	<?php 
 	
-	bnt_post_date_blog(); 
+	bento_post_date_blog(); 
 	
-	bnt_post_thumbnail();
+	bento_post_thumbnail();
 	
-	bnt_post_title();
+	bento_post_title();
 	
-	bnt_post_content();
+	bento_post_content();
 	
-	bnt_entry_meta();
+	bento_entry_meta();
 	
-	bnt_author_info();
+	bento_author_info();
 	
 	?>
 		

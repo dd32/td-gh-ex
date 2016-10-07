@@ -31,7 +31,7 @@ get_header();
                 // End the Loop
                 } 
 				// Navigation
-				bnt_blog_pagination();
+				bento_blog_pagination();
             } else {
                 // Display a specialized template if no posts have been found
                 get_template_part( 'content', 'none' );	

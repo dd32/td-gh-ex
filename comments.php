@@ -21,7 +21,7 @@ if ( post_password_required() ) {
             ?>
         </h3>
     
-        <?php bnt_comments_nav(); ?>
+        <?php bento_comments_nav(); ?>
     
         <div class="comment-list">
             <?php
@@ -30,12 +30,12 @@ if ( post_password_required() ) {
 				'style' => 'div',
 				'type' => 'comment',
 				'avatar_size' => 40,
-				'callback' => 'bnt_comment',
+				'callback' => 'bento_comment',
 			) );
             ?>
         </div>
     
-        <?php bnt_comments_nav(); ?>
+        <?php bento_comments_nav(); ?>
     
     <?php } ?>
     

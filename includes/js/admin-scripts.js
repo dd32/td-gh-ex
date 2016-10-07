@@ -13,40 +13,40 @@ $adm(document).ready(function() {
 	
 	
 	// Reveal extended page header settings when the respective checkbox is active
-	var revealExtheader = function() {
-		if ( $adm('#bnt_activate_header').is(':checked') ) {
+	var bento_revealExtheader = function() {
+		if ( $adm('#bento_activate_header').is(':checked') ) {
 			$adm('#cmb2-metabox-post_header_metabox .cmb-row:not(:first-child)').show();
 		} else {
 			$adm('#cmb2-metabox-post_header_metabox .cmb-row:not(:first-child)').hide();
 		}
 	}
-	revealExtheader();
-	$adm('#bnt_activate_header').change( function() {
-		revealExtheader();
+	bento_revealExtheader();
+	$adm('#bento_activate_header').change( function() {
+		bento_revealExtheader();
 	});
 	
 	
 	// Reveal Google Maps header settings when the respective checkbox is active
-	var revealMapheader = function() {
-		if ( $adm('#bnt_activate_headermap').is(':checked') ) {
+	var bento_revealMapheader = function() {
+		if ( $adm('#bento_activate_headermap').is(':checked') ) {
 			$adm('#cmb2-metabox-post_headermap_metabox .cmb-row:not(:first-child)').show();
 		} else {
 			$adm('#cmb2-metabox-post_headermap_metabox .cmb-row:not(:first-child)').hide();
 		}
 	}
-	revealMapheader();
-	$adm('#bnt_activate_headermap').change( function() {
-		revealMapheader();
+	bento_revealMapheader();
+	$adm('#bento_activate_headermap').change( function() {
+		bento_revealMapheader();
 	});
 	
 	
 	// Migrate old theme options into Customizer
 	$adm('.notice-migrate-bento-options .button-primary').click(function() { 
 		$adm.ajax({
-			url: bntAdminVars.ajaxurl,
+			url: bentoAdminVars.ajaxurl,
 			type: 'POST',
 			data: {
-				action: 'bnt_migrate_customizer_options',
+				action: 'bento_migrate_customizer_options',
 			},
 			success: function(response) {
 				$adm('.notice-migrate-bento-options').hide(300, function() {
@@ -54,7 +54,7 @@ $adm(document).ready(function() {
 				});
 			},
 			error: function(response) {
-				alert('Darn! Something went wrong. Please try again or contact support@satoristudio.net');
+				alert('Shoot! Something went wrong. Please try again or contact support@satoristudio.net');
 			}
 		});
 	});

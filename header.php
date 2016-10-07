@@ -11,7 +11,7 @@
 		<?php // Various utilities ?>
     	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<link rel="profile" href="http://gmpg.org/xfn/11" />
             	
 		<?php // Tag for including header files; should always be the last element inside the <head> section ?>
@@ -24,26 +24,26 @@
     
     <body <?php body_class(); ?>>
 	
-		<?php do_action('bnt_body_top'); ?>
+		<?php do_action('bento_body_top'); ?>
          		
-		<?php bnt_novice_header(); ?>
+		<?php bento_novice_header(); ?>
 		 
 		<div class="site-wrapper clear">
         
 			<header class="site-header no-fixed-header">
             	<div class="bnt-container">
                 
-                	<?php bnt_mobile_menu(); ?>
+                	<?php bento_mobile_menu(); ?>
             		
-                    <?php bnt_logo(); ?>
+                    <?php bento_logo(); ?>
                     
-                    <?php bnt_primary_menu(); ?>
+                    <?php bento_primary_menu(); ?>
                     
                 </div>
             </header>
 			
 			<!-- .site-header -->
 						
-			<?php bnt_post_header(); ?>
+			<?php bento_post_header(); ?>
 				        
         	<div class="site-content">

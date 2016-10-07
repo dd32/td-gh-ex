@@ -7,7 +7,7 @@ get_header();
 <div class="bnt-container">
 
 	<div class="content content-blog">
-        <main class="site-main" role="main">
+        <main class="site-main">
 
 			<?php 
             // Start the Loop
@@ -19,8 +19,8 @@ get_header();
                 // End the Loop
                 } 
 				// Navigation
-				if ( get_theme_mod('bnt_ajax_pagination') != 1 ) {
-					bnt_blog_pagination();
+				if ( get_theme_mod('bento_ajax_pagination') != 1 ) {
+					bento_blog_pagination();
 				}
             } else {
                 // Display a specialized template if no posts have been found
@@ -31,8 +31,8 @@ get_header();
         </main>
         
         <?php 
-		if ( get_theme_mod('bnt_ajax_pagination') == 1 ) {
-			bnt_ajax_load_more(); 
+		if ( get_theme_mod('bento_ajax_pagination') == 1 ) {
+			bento_ajax_load_more(); 
 		}
 		?>
         

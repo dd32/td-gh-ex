@@ -2,26 +2,26 @@
 
 
 // Extra styles
-function bnt_customizer_stylesheet() {
+function bento_customizer_stylesheet() {
 	
 	// Stylesheet
 	wp_register_style( 'bento-customizer-css', get_template_directory_uri().'/includes/customizer/customizer-styles.css', NULL, NULL, 'all' );
 	wp_enqueue_style( 'bento-customizer-css' );
 	
 	// Extra styles
-	wp_add_inline_style( 'bento-customizer-css', bnt_customizer_extra_css() );
+	wp_add_inline_style( 'bento-customizer-css', bento_customizer_extra_css() );
 	
 }
 
 // Add extra CSS
-function bnt_customizer_extra_css() {
+function bento_customizer_extra_css() {
 	$extra_styles = '';
-	if ( get_option( 'bnt_ep_license_status' ) != 'valid' ) {
+	if ( get_option( 'bento_ep_license_status' ) != 'valid' ) {
 		$extra_styles = '
-			#accordion-section-bnt_seo .accordion-section-title:after,
-			#accordion-section-bnt_analytics .accordion-section-title:after,
-			#accordion-section-bnt_cta_popup .accordion-section-title:after,
-			#accordion-section-bnt_preloader .accordion-section-title:after {
+			#accordion-section-bento_seo .accordion-section-title:after,
+			#accordion-section-bento_analytics .accordion-section-title:after,
+			#accordion-section-bento_cta_popup .accordion-section-title:after,
+			#accordion-section-bento_preloader .accordion-section-title:after {
 				content: "\f511";
 				color: #ff8c00;
 			}
@@ -32,36 +32,36 @@ function bnt_customizer_extra_css() {
 
 
 // Custom scripts
-function bnt_customizer_scripts() {
+function bento_customizer_scripts() {
 	
 	// Enqueue the script file
 	wp_enqueue_script( 'bento-customizer-scripts', get_template_directory_uri().'/includes/customizer/customizer-scripts.js', array('jquery'), false, true );
 	
 	// Passing php variables to admin scripts
-	bnt_localize_customizer_scripts();
+	bento_localize_customizer_scripts();
 	
 }
 
 
 // Additional Customizer content
-function bnt_localize_customizer_scripts() {
-	$bnt_license_status = 'invalid';
-	if ( get_option( 'bnt_ep_license_status' ) == 'valid' ) {
-		$bnt_license_status = 'valid';
+function bento_localize_customizer_scripts() {
+	$bento_license_status = 'invalid';
+	if ( get_option( 'bento_ep_license_status' ) == 'valid' ) {
+		$bento_license_status = 'valid';
 	}
-	wp_localize_script( 'bento-customizer-scripts', 'bntCustomizerVars', array(
+	wp_localize_script( 'bento-customizer-scripts', 'bentoCustomizerVars', array(
 		'exp' => __( 'Get the Expansion Pack', 'bento' ),
 		'review' => __( 'Rate the theme (thanks!)', 'bento' ),
-		'license_status' => $bnt_license_status,
+		'license_status' => $bento_license_status,
 	) );
 }
 
 
 // Notification for disabled fields
-function bnt_customizer_disabled_field() {
+function bento_customizer_disabled_field() {
 	$exp_url = '<a href="http://satoristudio.net/bento-free-wordpress-theme/#expansion-pack" target="_blank">'.__( 'Expansion Pack', 'bento' ).'</a>';
 	$exp_link = '<span class="disabled-exp">' . sprintf( __( 'This option (and much more cool stuff) is available in the %s. Supercharge your Bento!', 'bento' ), $exp_url ) . '</span>';
-	if ( get_option( 'bnt_ep_license_status' ) == 'valid' ) {
+	if ( get_option( 'bento_ep_license_status' ) == 'valid' ) {
 		$exp_link = '';
 	}
 	echo $exp_link;
@@ -69,7 +69,7 @@ function bnt_customizer_disabled_field() {
 
 
 // Sanitize copyright field
-function bnt_sanitize_copyright( $input ) {
+function bento_sanitize_copyright( $input ) {
 	$allowed_html = array(
 		'a' => array(
 			'href' => array(),
@@ -83,7 +83,7 @@ function bnt_sanitize_copyright( $input ) {
 
 
 // Sanitize font uploads
-function bnt_sanitize_font_uploads( $input ) {
+function bento_sanitize_font_uploads( $input ) {
     $output = '';
     $filetype = wp_check_filetype( $input );
 	$allowed_types = array( 'image/svg+xml', 'application/x-font-ttf', 'application/x-font-opentype', 'application/font-woff', 'application/vnd.ms-fontobject' );
@@ -97,7 +97,7 @@ function bnt_sanitize_font_uploads( $input ) {
 
 
 // Sanitize checkboxes
-function bnt_sanitize_checkboxes( $input ) {
+function bento_sanitize_checkboxes( $input ) {
 	if ( $input == 1 ) {
         return 1;
     } else {
@@ -107,7 +107,7 @@ function bnt_sanitize_checkboxes( $input ) {
 
 
 // Sanitize select drop-downs
-function bnt_sanitize_choices( $input, $setting ) {
+function bento_sanitize_choices( $input, $setting ) {
     global $wp_customize;
     $control = $wp_customize->get_control( $setting->id );
     if ( array_key_exists( $input, $control->choices ) ) {
@@ -119,7 +119,7 @@ function bnt_sanitize_choices( $input, $setting ) {
 
 
 // Controls
-function bnt_customize_register( $wp_customize ) {
+function bento_customize_register( $wp_customize ) {
 	
 	// Custom copyright control
 	class WP_Copyright_Customize_Control extends WP_Customize_Control {
@@ -131,12 +131,12 @@ function bnt_customize_register( $wp_customize ) {
 			if ( ! empty( $this->description ) ) {
 				echo '<span class="description customize-control-description">'.$this->description.'</span>';
 			}
-			bnt_customizer_disabled_field();
+			bento_customizer_disabled_field();
 			$disabled_field = '';
-			if ( get_option( 'bnt_ep_license_status' ) != 'valid' ) {
+			if ( get_option( 'bento_ep_license_status' ) != 'valid' ) {
 				$disabled_field = 'disabled';
 			}
-			echo '<input type="text" value="" '.$disabled_field.' data-customize-setting-link="bnt_footer_copyright">';
+			echo '<input type="text" value="" '.$disabled_field.' data-customize-setting-link="bento_footer_copyright">';
 		}
 	}
 	
@@ -177,7 +177,7 @@ function bnt_customize_register( $wp_customize ) {
 		public function render_content() {
 			$exp_url = '<a href="http://satoristudio.net/bento-free-wordpress-theme/#expansion-pack" target="_blank">'.__( 'Expansion Pack', 'bento' ).'</a>';
 			$exp_link = sprintf( __( 'These options (and many more cool features) are available in the %s. Supercharge your Bento!', 'bento' ), $exp_url );
-			if ( get_option( 'bnt_ep_license_status' ) == 'valid' ) {
+			if ( get_option( 'bento_ep_license_status' ) == 'valid' ) {
 				$exp_link = '';
 			}
 			echo '
@@ -191,7 +191,7 @@ function bnt_customize_register( $wp_customize ) {
 	// Theme support
 	
 	$wp_customize->add_section( 
-		'bnt_theme_support', 
+		'bento_theme_support', 
 		array(
 			'title' => __( 'Bento Help', 'bento' ),
 			'priority' => 19,
@@ -199,7 +199,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_support', 
+		'bento_support', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '',
@@ -209,9 +209,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_Help_Customize_Control(
 		$wp_customize,
-		'bnt_support', 
+		'bento_support', 
 			array(
-				'section' => 'bnt_theme_support',
+				'section' => 'bento_theme_support',
 				'type' => 'text_help',
 			)
 		)
@@ -220,17 +220,17 @@ function bnt_customize_register( $wp_customize ) {
 	// Site Identity
 	
 	$wp_customize->add_setting( 
-		'bnt_footer_copyright', 
+		'bento_footer_copyright', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '',
-			'sanitize_callback' => 'bnt_sanitize_copyright',
+			'sanitize_callback' => 'bento_sanitize_copyright',
 		)
 	);
 	$wp_customize->add_control(
 		new WP_Copyright_Customize_Control(
 		$wp_customize,
-		'bnt_footer_copyright', 
+		'bento_footer_copyright', 
 			array(
 				'section' => 'title_tagline',
 				'priority' => 4,
@@ -242,7 +242,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_logo_mobile', 
+		'bento_logo_mobile', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '',
@@ -252,7 +252,7 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Media_Control( 
 			$wp_customize, 
-			'bnt_logo_mobile', 
+			'bento_logo_mobile', 
 			array(
 				'section' => 'title_tagline',
 				'priority' => 9,
@@ -266,7 +266,7 @@ function bnt_customize_register( $wp_customize ) {
 	// Site Elements
 	
 	$wp_customize->add_section( 
-		'bnt_site_elements', 
+		'bento_site_elements', 
 		array(
 			'title' => __( 'Website Elements', 'bento' ),
 			'priority' => 21,
@@ -274,17 +274,17 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_author_meta', 
+		'bento_author_meta', 
 		array(
 			'type' => 'theme_mod',
 			'default' => 0,
-			'sanitize_callback' => 'bnt_sanitize_checkboxes',
+			'sanitize_callback' => 'bento_sanitize_checkboxes',
 		)
 	);
 	$wp_customize->add_control( 
-		'bnt_author_meta', 
+		'bento_author_meta', 
 		array(
-			'section' => 'bnt_site_elements',
+			'section' => 'bento_site_elements',
 			'type' => 'checkbox',
 			'label' => __( 'Hide author block below posts', 'bento' ),
 			'description' => __( 'Check this option to stop displaying the author information in blog posts, below the content.', 'bento' ),
@@ -292,17 +292,17 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_ajax_pagination', 
+		'bento_ajax_pagination', 
 		array(
 			'type' => 'theme_mod',
 			'default' => 0,
-			'sanitize_callback' => 'bnt_sanitize_checkboxes',
+			'sanitize_callback' => 'bento_sanitize_checkboxes',
 		)
 	);
 	$wp_customize->add_control( 
-		'bnt_ajax_pagination', 
+		'bento_ajax_pagination', 
 		array(
-			'section' => 'bnt_site_elements',
+			'section' => 'bento_site_elements',
 			'type' => 'checkbox',
 			'label' => __( 'Load posts on the same page in blog', 'bento' ),
 			'description' => __( 'Enable this to replace the standard blog pagination with a "Load more" button that does not reload the page.', 'bento' ),
@@ -310,17 +310,17 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_fixed_header', 
+		'bento_fixed_header', 
 		array(
 			'type' => 'theme_mod',
 			'default' => 0,
-			'sanitize_callback' => 'bnt_sanitize_checkboxes',
+			'sanitize_callback' => 'bento_sanitize_checkboxes',
 		)
 	);
 	$wp_customize->add_control( 
-		'bnt_fixed_header', 
+		'bento_fixed_header', 
 		array(
-			'section' => 'bnt_site_elements',
+			'section' => 'bento_site_elements',
 			'type' => 'checkbox',
 			'label' => __( 'Fix header on top of page on scroll', 'bento' ),
 			'description' => __( 'Check this option if you wish to fix the header to the top of the screen while the website is being scrolled.', 'bento' ),
@@ -328,17 +328,17 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_mobile_menu_submenus', 
+		'bento_mobile_menu_submenus', 
 		array(
 			'type' => 'theme_mod',
 			'default' => 0,
-			'sanitize_callback' => 'bnt_sanitize_checkboxes',
+			'sanitize_callback' => 'bento_sanitize_checkboxes',
 		)
 	);
 	$wp_customize->add_control( 
-		'bnt_mobile_menu_submenus', 
+		'bento_mobile_menu_submenus', 
 		array(
-			'section' => 'bnt_site_elements',
+			'section' => 'bento_site_elements',
 			'type' => 'checkbox',
 			'label' => __( 'Hide submenu items in mobile menu', 'bento' ),
 			'description' => __( 'Check this option to only display top-level items in the mobile menu.', 'bento' ),
@@ -346,7 +346,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_wc_shop_number_items', 
+		'bento_wc_shop_number_items', 
 		array(
 			'type' => 'theme_mod',
 			'default' => 12,
@@ -354,23 +354,23 @@ function bnt_customize_register( $wp_customize ) {
 		)
 	);
 	$wp_customize->add_control( 
-		'bnt_wc_shop_number_items', 
+		'bento_wc_shop_number_items', 
 		array(
-			'section' => 'bnt_site_elements',
+			'section' => 'bento_site_elements',
 			'type' => 'number',
 			'input_attrs' => array(
 				'min' => 1,
 				'max' => 999,
 				'step' => 1,
 			),
-			'active_callback' => 'bnt_woo_active',
+			'active_callback' => 'bento_woo_active',
 			'label' => __( 'Number of products per shop page (WooCommerce only)', 'bento' ),
 			'description' => __( 'Indicate the number of products to be displayed per page in the WooCommerce shop page; default is 12. Note that the WooCommerce plugin is not part of the theme needs to be installed separately.', 'bento' ),
 		)
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_wc_shop_columns', 
+		'bento_wc_shop_columns', 
 		array(
 			'type' => 'theme_mod',
 			'default' => 4,
@@ -378,16 +378,16 @@ function bnt_customize_register( $wp_customize ) {
 		)
 	);
 	$wp_customize->add_control( 
-		'bnt_wc_shop_columns', 
+		'bento_wc_shop_columns', 
 		array(
-			'section' => 'bnt_site_elements',
+			'section' => 'bento_site_elements',
 			'type' => 'number',
 			'input_attrs' => array(
 				'min' => 1,
 				'max' => 6,
 				'step' => 1,
 			),
-			'active_callback' => 'bnt_woo_active',
+			'active_callback' => 'bento_woo_active',
 			'label' => __( 'Number of columns on the shop page (WooCommerce only)', 'bento' ),
 			'description' => __( 'Input the number of columns for the WooCommerce shop page; default is 4; Note that the WooCommerce plugin is not part of the theme needs to be installed separately.', 'bento' ),
 		)
@@ -396,7 +396,7 @@ function bnt_customize_register( $wp_customize ) {
 	// Layout and Background
 	
 	$wp_customize->add_section( 
-		'bnt_layout_background', 
+		'bento_layout_background', 
 		array(
 			'title' => __( 'Layout and Background', 'bento' ),
 			'priority' => 23,
@@ -404,17 +404,17 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_content_width', 
+		'bento_content_width', 
 		array(
 			'type' => 'theme_mod',
 			'default' => 1080,
-			'sanitize_callback' => 'bnt_sanitize_choices',
+			'sanitize_callback' => 'bento_sanitize_choices',
 		)
 	);
 	$wp_customize->add_control( 
-		'bnt_content_width', 
+		'bento_content_width', 
 		array(
-			'section' => 'bnt_layout_background',
+			'section' => 'bento_layout_background',
 			'type' => 'select',
 			'choices' => array( 
 				900 => '900',
@@ -432,17 +432,17 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_website_layout', 
+		'bento_website_layout', 
 		array(
 			'type' => 'theme_mod',
 			'default' => 0, 
-			'sanitize_callback' => 'bnt_sanitize_choices',
+			'sanitize_callback' => 'bento_sanitize_choices',
 		)
 	);
 	$wp_customize->add_control( 
-		'bnt_website_layout', 
+		'bento_website_layout', 
 		array(
-			'section' => 'bnt_layout_background',
+			'section' => 'bento_layout_background',
 			'type' => 'select',
 			'choices' => array( 
 				__( 'Wide (default)', 'bento' ), 
@@ -454,17 +454,17 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_website_background', 
+		'bento_website_background', 
 		array(
 			'type' => 'theme_mod',
 			'default' => 0,
-			'sanitize_callback' => 'bnt_sanitize_choices',
+			'sanitize_callback' => 'bento_sanitize_choices',
 		)
 	);
 	$wp_customize->add_control( 
-		'bnt_website_background', 
+		'bento_website_background', 
 		array(
-			'section' => 'bnt_layout_background',
+			'section' => 'bento_layout_background',
 			'type' => 'select',
 			'choices' => array( 
 				__( 'Solid color (default)', 'bento' ), 
@@ -477,7 +477,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_website_background_color', 
+		'bento_website_background_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#e6e6e6',
@@ -487,9 +487,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_website_background_color', 
+			'bento_website_background_color', 
 			array(
-				'section' => 'bnt_layout_background',
+				'section' => 'bento_layout_background',
 				'label' => __( 'Boxed layout: website background color', 'bento' ),
 				'description' => __( 'Choose the background color for the outer parts of the boxed website; default is #e6e6e6 (light-grey).', 'bento' ),
 			)
@@ -497,7 +497,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_website_background_texture', 
+		'bento_website_background_texture', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '',
@@ -507,9 +507,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Media_Control(
 			$wp_customize,
-			'bnt_website_background_texture', 
+			'bento_website_background_texture', 
 			array(
-				'section' => 'bnt_layout_background',
+				'section' => 'bento_layout_background',
 				'mime_type' => 'image',
 				'label' => __( 'Boxed layout: website background texture', 'bento' ),
 				'description' => __( 'Upload the image to serve as the repeating texture for the outer parts of the boxed website.', 'bento' ),
@@ -518,7 +518,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_website_background_image', 
+		'bento_website_background_image', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '',
@@ -528,9 +528,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Media_Control(
 			$wp_customize,
-			'bnt_website_background_image', 
+			'bento_website_background_image', 
 			array(
-				'section' => 'bnt_layout_background',
+				'section' => 'bento_layout_background',
 				'mime_type' => 'image',
 				'label' => __( 'Boxed layout: website background image', 'bento' ),
 				'description' => __( 'Upload the image to serve as the full-width background for the outer parts of the boxed website.', 'bento' ),
@@ -539,17 +539,17 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_menu_config', 
+		'bento_menu_config', 
 		array(
 			'type' => 'theme_mod',
 			'default' => 0,
-			'sanitize_callback' => 'bnt_sanitize_choices',
+			'sanitize_callback' => 'bento_sanitize_choices',
 		)
 	);
 	$wp_customize->add_control( 
-		'bnt_menu_config', 
+		'bento_menu_config', 
 		array(
-			'section' => 'bnt_layout_background',
+			'section' => 'bento_layout_background',
 			'type' => 'select',
 			'choices' => array( 
 				__( 'Top, right-aligned (default)', 'bento' ),
@@ -565,7 +565,7 @@ function bnt_customize_register( $wp_customize ) {
 	// Fonts and Typography
 	
 	$wp_customize->add_section( 
-		'bnt_fonts', 
+		'bento_fonts', 
 		array(
 			'title' => __( 'Fonts and Typography', 'bento' ),
 			'priority' => 24,
@@ -575,7 +575,7 @@ function bnt_customize_register( $wp_customize ) {
 	$fonts_url = '<a href="http://www.google.com/webfonts" style="color:#999;" target="_blank">http://www.google.com/webfonts</a>';
 	
 	$wp_customize->add_setting( 
-		'bnt_font_body', 
+		'bento_font_body', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '',
@@ -583,9 +583,9 @@ function bnt_customize_register( $wp_customize ) {
 		)
 	);
 	$wp_customize->add_control( 
-		'bnt_font_body', 
+		'bento_font_body', 
 		array(
-			'section' => 'bnt_fonts',
+			'section' => 'bento_fonts',
 			'type' => 'text',
 			'label' => __( 'Body font (Google Fonts)', 'bento' ),
 			'description' => sprintf( __( 'Input Google Font name for the body font, e.g. Open Sans, exactly as spelled in the Google Fonts directory. You can preview Google Fonts here: %s; Default is Open Sans.', 'bento' ), $fonts_url ),
@@ -593,19 +593,19 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_font_body_upload', 
+		'bento_font_body_upload', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '',
-			'sanitize_callback' => 'bnt_sanitize_font_uploads',
+			'sanitize_callback' => 'bento_sanitize_font_uploads',
 		)
 	);
 	$wp_customize->add_control( 
 		new WP_Customize_Upload_Control(
 			$wp_customize,
-			'bnt_font_body_upload', 
+			'bento_font_body_upload', 
 			array(
-				'section' => 'bnt_fonts',
+				'section' => 'bento_fonts',
 				'label' => __( 'Body font (Upload your own)', 'bento' ),
 				'description' => __( 'Upload the font file to be used as body font; you can use .ttf, .otf, .woff and .eot file formats. This overrides the previous setting.', 'bento' ),
 			) 
@@ -613,17 +613,17 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_text_size_body', 
+		'bento_text_size_body', 
 		array(
 			'type' => 'theme_mod',
 			'default' => 14,
-			'sanitize_callback' => 'bnt_sanitize_choices',
+			'sanitize_callback' => 'bento_sanitize_choices',
 		)
 	);
 	$wp_customize->add_control( 
-		'bnt_text_size_body', 
+		'bento_text_size_body', 
 		array(
-			'section' => 'bnt_fonts',
+			'section' => 'bento_fonts',
 			'type' => 'select',
 			'choices' => array( 
 				12 => '12',
@@ -640,7 +640,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_font_headings', 
+		'bento_font_headings', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '',
@@ -648,9 +648,9 @@ function bnt_customize_register( $wp_customize ) {
 		)
 	);
 	$wp_customize->add_control( 
-		'bnt_font_headings', 
+		'bento_font_headings', 
 		array(
-			'section' => 'bnt_fonts',
+			'section' => 'bento_fonts',
 			'type' => 'text',
 			'label' => __( 'Headings font (Google Fonts)', 'bento' ),
 			'description' => sprintf( __( 'Input Google Font name for the headings font, e.g. Open Sans, exactly as spelled in the Google Fonts directory. You can preview Google Fonts here: %s; Default is Open Sans.', 'bento' ), $fonts_url ),
@@ -658,19 +658,19 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_font_headings_upload', 
+		'bento_font_headings_upload', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '',
-			'sanitize_callback' => 'bnt_sanitize_font_uploads',
+			'sanitize_callback' => 'bento_sanitize_font_uploads',
 		)
 	);
 	$wp_customize->add_control( 
 		new WP_Customize_Upload_Control(
 			$wp_customize,
-			'bnt_font_headings_upload', 
+			'bento_font_headings_upload', 
 			array(
-				'section' => 'bnt_fonts',
+				'section' => 'bento_fonts',
 				'label' => __( 'Headings font (Upload your own)', 'bento' ),
 				'description' => __( 'Upload the font file to be used as headings font; you can use .ttf, .otf, .woff and .eot file formats. This overrides the previous setting.', 'bento' ),
 			) 
@@ -678,7 +678,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_font_menu', 
+		'bento_font_menu', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '',
@@ -686,9 +686,9 @@ function bnt_customize_register( $wp_customize ) {
 		)
 	);
 	$wp_customize->add_control( 
-		'bnt_font_menu', 
+		'bento_font_menu', 
 		array(
-			'section' => 'bnt_fonts',
+			'section' => 'bento_fonts',
 			'type' => 'text',
 			'label' => __( 'Menu font (Google Fonts)', 'bento' ),
 			'description' => sprintf( __( 'Input Google Font name for the menu font, e.g. Montserrat, exactly as spelled in the Google Fonts directory. You can preview Google Fonts here: %s; Default is Montserrat.', 'bento' ), $fonts_url ),
@@ -696,19 +696,19 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_font_menu_upload', 
+		'bento_font_menu_upload', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '',
-			'sanitize_callback' => 'bnt_sanitize_font_uploads',
+			'sanitize_callback' => 'bento_sanitize_font_uploads',
 		)
 	);
 	$wp_customize->add_control( 
 		new WP_Customize_Upload_Control(
 			$wp_customize,
-			'bnt_font_menu_upload', 
+			'bento_font_menu_upload', 
 			array(
-				'section' => 'bnt_fonts',
+				'section' => 'bento_fonts',
 				'label' => __( 'Menu font (Upload your own)', 'bento' ),
 				'description' => __( 'Upload the font file to be used as menu font; you can use .ttf, .otf, .woff and .eot file formats. This overrides the previous setting.', 'bento' ),
 			) 
@@ -716,17 +716,17 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_text_size_menu', 
+		'bento_text_size_menu', 
 		array(
 			'type' => 'theme_mod',
 			'default' => 14,
-			'sanitize_callback' => 'bnt_sanitize_choices',
+			'sanitize_callback' => 'bento_sanitize_choices',
 		)
 	);
 	$wp_customize->add_control( 
-		'bnt_text_size_menu', 
+		'bento_text_size_menu', 
 		array(
-			'section' => 'bnt_fonts',
+			'section' => 'bento_fonts',
 			'type' => 'select',
 			'choices' => array( 
 				12 => '12',
@@ -743,17 +743,17 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_sentence_case_menu', 
+		'bento_sentence_case_menu', 
 		array(
 			'type' => 'theme_mod',
 			'default' => 0,
-			'sanitize_callback' => 'bnt_sanitize_checkboxes',
+			'sanitize_callback' => 'bento_sanitize_checkboxes',
 		)
 	);
 	$wp_customize->add_control( 
-		'bnt_sentence_case_menu', 
+		'bento_sentence_case_menu', 
 		array(
-			'section' => 'bnt_fonts',
+			'section' => 'bento_fonts',
 			'type' => 'checkbox',
 			'label' => __( 'Remove uppercase from menu text', 'bento' ),
 			'description' => __( 'Check this option to render the menu items in sentence case (normal caps).', 'bento' ),
@@ -763,7 +763,7 @@ function bnt_customize_register( $wp_customize ) {
 	// Header Colors
 	
 	$wp_customize->add_section( 
-		'bnt_colors_header', 
+		'bento_colors_header', 
 		array(
 			'title' => __( 'Header Colors', 'bento' ),
 			'priority' => 25,
@@ -771,7 +771,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_header_background_color', 
+		'bento_header_background_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#ffffff',
@@ -781,9 +781,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_header_background_color', 
+			'bento_header_background_color', 
 			array(
-				'section' => 'bnt_colors_header',
+				'section' => 'bento_colors_header',
 				'label' => __( 'Header background color', 'bento' ),
 				'description' => __( 'Choose the background color for the top section of the website; default is #ffffff (white).', 'bento' ),
 			)
@@ -791,7 +791,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_primary_menu_background', 
+		'bento_primary_menu_background', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#eeeeee',
@@ -801,9 +801,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_primary_menu_background', 
+			'bento_primary_menu_background', 
 			array(
-				'section' => 'bnt_colors_header',
+				'section' => 'bento_colors_header',
 				'label' => __( 'Primary menu: background color', 'bento' ),
 				'description' => __( 'Choose the background color of the overlay menu; default is #eeeeee (light-grey).', 'bento' ),
 			)
@@ -811,7 +811,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_primary_menu_text_color', 
+		'bento_primary_menu_text_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#333333',
@@ -821,9 +821,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_primary_menu_text_color', 
+			'bento_primary_menu_text_color', 
 			array(
-				'section' => 'bnt_colors_header',
+				'section' => 'bento_colors_header',
 				'label' => __( 'Primary menu: text color', 'bento' ),
 				'description' => __( 'Choose the text color for the main navigation menu; this will also apply to mobile menu text color by default, if nothing is chosen in the respective option below; default is #333333 (dark-grey).', 'bento' ),
 			)
@@ -831,7 +831,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_primary_menu_text_hover_color', 
+		'bento_primary_menu_text_hover_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#00B285',
@@ -841,9 +841,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_primary_menu_text_hover_color', 
+			'bento_primary_menu_text_hover_color', 
 			array(
-				'section' => 'bnt_colors_header',
+				'section' => 'bento_colors_header',
 				'label' => __( 'Primary menu: text color on hover', 'bento' ),
 				'description' => __( 'Choose which color menu items become on mouse hover; default is #00b285 (blue-green).', 'bento' ),
 			)
@@ -851,7 +851,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_menu_separators', 
+		'bento_menu_separators', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#eeeeee',
@@ -861,9 +861,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_menu_separators', 
+			'bento_menu_separators', 
 			array(
-				'section' => 'bnt_colors_header',
+				'section' => 'bento_colors_header',
 				'label' => __( 'Primary menu: item separators', 'bento' ),
 				'description' => __( 'Choose the color for the separator lines in the primary menu; default is #eeeeee (light-grey).', 'bento' ),
 			)
@@ -871,7 +871,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_primary_menu_submenu_background_color', 
+		'bento_primary_menu_submenu_background_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#dddddd',
@@ -881,9 +881,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_primary_menu_submenu_background_color', 
+			'bento_primary_menu_submenu_background_color', 
 			array(
-				'section' => 'bnt_colors_header',
+				'section' => 'bento_colors_header',
 				'label' => __( 'Primary menu: submenu background color', 'bento' ),
 				'description' => __( 'Choose the background color for the submenus; this will also apply to mobile menu background color by default, if nothing is chosen in the respective option below; default is #dddddd (grey).', 'bento' ),
 			)
@@ -891,7 +891,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_primary_menu_submenu_background_hover_color', 
+		'bento_primary_menu_submenu_background_hover_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#cccccc',
@@ -901,9 +901,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_primary_menu_submenu_background_hover_color', 
+			'bento_primary_menu_submenu_background_hover_color', 
 			array(
-				'section' => 'bnt_colors_header',
+				'section' => 'bento_colors_header',
 				'label' => __( 'Primary menu: submenu background color on hover', 'bento' ),
 				'description' => __( 'Choose the color used as a background for submenu items on mouse hover; this will also apply to mobile menu hover background color by default, if nothing is chosen in the respective option below; default is #cccccc (grey).', 'bento' ),
 			)
@@ -911,7 +911,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_primary_menu_submenu_border_color', 
+		'bento_primary_menu_submenu_border_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#cccccc',
@@ -921,9 +921,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_primary_menu_submenu_border_color', 
+			'bento_primary_menu_submenu_border_color', 
 			array(
-				'section' => 'bnt_colors_header',
+				'section' => 'bento_colors_header',
 				'label' => __( 'Primary menu: submenu border color', 'bento' ),
 				'description' => __( 'Choose the color of submenu item borders; this will also apply to mobile menu border color by default, if nothing is chosen in the respective option below; default is #cccccc (grey).', 'bento' ),
 			)
@@ -931,7 +931,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_primary_menu_submenu_text_color', 
+		'bento_primary_menu_submenu_text_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#333333',
@@ -941,9 +941,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_primary_menu_submenu_text_color', 
+			'bento_primary_menu_submenu_text_color', 
 			array(
-				'section' => 'bnt_colors_header',
+				'section' => 'bento_colors_header',
 				'label' => __( 'Primary menu: submenu text color', 'bento' ),
 				'description' => __( 'Choose the text color for the submenus; default is #333333 (dark-grey).', 'bento' ),
 			)
@@ -951,7 +951,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_primary_menu_submenu_text_hover_color', 
+		'bento_primary_menu_submenu_text_hover_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#333333',
@@ -961,9 +961,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_primary_menu_submenu_text_hover_color', 
+			'bento_primary_menu_submenu_text_hover_color', 
 			array(
-				'section' => 'bnt_colors_header',
+				'section' => 'bento_colors_header',
 				'label' => __( 'Primary menu: submenu text color on hover', 'bento' ),
 				'description' => __( 'Choose the mouse-hover text color for the submenus; default is #333333 (dark-grey).', 'bento' ),
 			)
@@ -971,7 +971,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_mobile_menu_background_color', 
+		'bento_mobile_menu_background_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#dddddd',
@@ -981,9 +981,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_mobile_menu_background_color', 
+			'bento_mobile_menu_background_color', 
 			array(
-				'section' => 'bnt_colors_header',
+				'section' => 'bento_colors_header',
 				'label' => __( 'Mobile menu: background color', 'bento' ),
 				'description' => __( 'Choose the background color for the mobile menu; default is #dddddd (light-grey).', 'bento' ),
 			)
@@ -991,7 +991,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_mobile_menu_background_hover_color', 
+		'bento_mobile_menu_background_hover_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#cccccc',
@@ -1001,9 +1001,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_mobile_menu_background_hover_color', 
+			'bento_mobile_menu_background_hover_color', 
 			array(
-				'section' => 'bnt_colors_header',
+				'section' => 'bento_colors_header',
 				'label' => __( 'Mobile menu: background color on hover', 'bento' ),
 				'description' => __( 'Choose the background color on hover; default is #cccccc (light-grey).', 'bento' ),
 			)
@@ -1011,7 +1011,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_mobile_menu_border_color', 
+		'bento_mobile_menu_border_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#cccccc',
@@ -1021,9 +1021,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_mobile_menu_border_color', 
+			'bento_mobile_menu_border_color', 
 			array(
-				'section' => 'bnt_colors_header',
+				'section' => 'bento_colors_header',
 				'label' => __( 'Mobile menu: border color', 'bento' ),
 				'description' => __( 'Choose the border color for the mobile menu; default is #cccccc (light-grey).', 'bento' ),
 			)
@@ -1031,7 +1031,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_mobile_menu_text_color', 
+		'bento_mobile_menu_text_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#333333',
@@ -1041,9 +1041,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_mobile_menu_text_color', 
+			'bento_mobile_menu_text_color', 
 			array(
-				'section' => 'bnt_colors_header',
+				'section' => 'bento_colors_header',
 				'label' => __( 'Mobile menu: text color', 'bento' ),
 				'description' => __( 'Choose the text color for the mobile menu; default is #333333 (dark-grey).', 'bento' ),
 			)
@@ -1051,7 +1051,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_mobile_menu_text_hover_color', 
+		'bento_mobile_menu_text_hover_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#333333',
@@ -1061,9 +1061,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_mobile_menu_text_hover_color', 
+			'bento_mobile_menu_text_hover_color', 
 			array(
-				'section' => 'bnt_colors_header',
+				'section' => 'bento_colors_header',
 				'label' => __( 'Mobile menu: text color on hover', 'bento' ),
 				'description' => __( 'Choose the text color on mouse hover for the mobile menu; default is #333333 (dark-grey).', 'bento' ),
 			)
@@ -1073,7 +1073,7 @@ function bnt_customize_register( $wp_customize ) {
 	// Content Colors
 	
 	$wp_customize->add_section( 
-		'bnt_colors_content', 
+		'bento_colors_content', 
 		array(
 			'title' => __( 'Content Colors', 'bento' ),
 			'priority' => 26,
@@ -1081,7 +1081,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_content_background_color', 
+		'bento_content_background_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#f4f4f4',
@@ -1091,9 +1091,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_content_background_color', 
+			'bento_content_background_color', 
 			array(
-				'section' => 'bnt_colors_content',
+				'section' => 'bento_colors_content',
 				'label' => __( 'Content area background color', 'bento' ),
 				'description' => __( 'Choose the background color for the main content area of the website; default is #f4f4f4 (light-grey).', 'bento' ),
 			)
@@ -1101,7 +1101,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_content_heading_text_color', 
+		'bento_content_heading_text_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#333333',
@@ -1111,9 +1111,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_content_heading_text_color', 
+			'bento_content_heading_text_color', 
 			array(
-				'section' => 'bnt_colors_content',
+				'section' => 'bento_colors_content',
 				'label' => __( 'Heading color', 'bento' ),
 				'description' => __( 'Choose the color of headings throughout the website; default is #333333 (dark-grey).', 'bento' ),
 			)
@@ -1121,7 +1121,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_content_body_text_color', 
+		'bento_content_body_text_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#333333',
@@ -1131,9 +1131,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_content_body_text_color', 
+			'bento_content_body_text_color', 
 			array(
-				'section' => 'bnt_colors_content',
+				'section' => 'bento_colors_content',
 				'label' => __( 'Body text color', 'bento' ),
 				'description' => __( 'Choose the primary text color for the body of the website; default is #333333 (dark-grey).', 'bento' ),
 			)
@@ -1141,7 +1141,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_content_link_text_color', 
+		'bento_content_link_text_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#00b285',
@@ -1151,9 +1151,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_content_link_text_color', 
+			'bento_content_link_text_color', 
 			array(
-				'section' => 'bnt_colors_content',
+				'section' => 'bento_colors_content',
 				'label' => __( 'Link text color', 'bento' ),
 				'description' => __( 'Choose the color for the link text throughout the website; default is #00b285 (blue-green).', 'bento' ),
 			)
@@ -1161,7 +1161,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_content_meta_text_color', 
+		'bento_content_meta_text_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#999999',
@@ -1171,9 +1171,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_content_meta_text_color', 
+			'bento_content_meta_text_color', 
 			array(
-				'section' => 'bnt_colors_content',
+				'section' => 'bento_colors_content',
 				'label' => __( 'Meta text color', 'bento' ),
 				'description' => __( 'Pick the color for meta content such as post dates, comment counts, and post counts; default is #999999 (grey).', 'bento' ),
 			)
@@ -1181,7 +1181,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_content_delimiter_color', 
+		'bento_content_delimiter_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#dddddd',
@@ -1191,9 +1191,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_content_delimiter_color', 
+			'bento_content_delimiter_color', 
 			array(
-				'section' => 'bnt_colors_content',
+				'section' => 'bento_colors_content',
 				'label' => __( 'Delimiter line color', 'bento' ),
 				'description' => __( 'Choose the color for delimiter lines, e.g. before comments, in sidebar widgets and in the shopping cart; also applies to in-text tables; default is #dddddd (light-grey).', 'bento' ),
 			)
@@ -1201,7 +1201,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_content_input_background_color', 
+		'bento_content_input_background_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#e4e4e4',
@@ -1211,9 +1211,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_content_input_background_color', 
+			'bento_content_input_background_color', 
 			array(
-				'section' => 'bnt_colors_content',
+				'section' => 'bento_colors_content',
 				'label' => __( 'Input fields: background color', 'bento' ),
 				'description' => __( 'Choose the background color for input fields, such as comments and search; default is #e4e4e4 (light-grey).', 'bento' ),
 			)
@@ -1221,7 +1221,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_content_input_text_color', 
+		'bento_content_input_text_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#333333',
@@ -1231,9 +1231,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_content_input_text_color', 
+			'bento_content_input_text_color', 
 			array(
-				'section' => 'bnt_colors_content',
+				'section' => 'bento_colors_content',
 				'label' => __( 'Input fields: text color', 'bento' ),
 				'description' => __( 'Choose the color for the text typed into input fields, such as comment forms; default is #333333 (dark-grey).', 'bento' ),
 			)
@@ -1241,7 +1241,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_content_input_placeholder_color', 
+		'bento_content_input_placeholder_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#aaaaaa',
@@ -1251,9 +1251,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_content_input_placeholder_color', 
+			'bento_content_input_placeholder_color', 
 			array(
-				'section' => 'bnt_colors_content',
+				'section' => 'bento_colors_content',
 				'label' => __( 'Input fields: placeholder text color', 'bento' ),
 				'description' => __( 'Choose the placeholder text color for input fields, i.e. the text that appears in empty fields; default is #aaaaaa (grey).', 'bento' ),
 			)
@@ -1261,7 +1261,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_content_button_background_color', 
+		'bento_content_button_background_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#00b285',
@@ -1271,9 +1271,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_content_button_background_color', 
+			'bento_content_button_background_color', 
 			array(
-				'section' => 'bnt_colors_content',
+				'section' => 'bento_colors_content',
 				'label' => __( 'Buttons color', 'bento' ),
 				'description' => __( 'Choose the color for buttons throughout the website; default is #00b285 (blue-green).', 'bento' ),
 			)
@@ -1281,7 +1281,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_content_button_hover_background_color', 
+		'bento_content_button_hover_background_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#00906c',
@@ -1291,9 +1291,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_content_button_hover_background_color', 
+			'bento_content_button_hover_background_color', 
 			array(
-				'section' => 'bnt_colors_content',
+				'section' => 'bento_colors_content',
 				'label' => __( 'Button color on hover', 'bento' ),
 				'description' => __( 'Choose the color for buttons on mouse hover; default is #00906c (dark blue-green).', 'bento' ),
 			)
@@ -1301,7 +1301,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_content_button_text_color', 
+		'bento_content_button_text_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#ffffff',
@@ -1311,9 +1311,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_content_button_text_color', 
+			'bento_content_button_text_color', 
 			array(
-				'section' => 'bnt_colors_content',
+				'section' => 'bento_colors_content',
 				'label' => __( 'Button text color', 'bento' ),
 				'description' => __( 'Choose the color for button text; default is #ffffff (white).', 'bento' ),
 			)
@@ -1321,7 +1321,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_content_button_text_hover_color', 
+		'bento_content_button_text_hover_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#ffffff',
@@ -1331,9 +1331,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_content_button_text_hover_color', 
+			'bento_content_button_text_hover_color', 
 			array(
-				'section' => 'bnt_colors_content',
+				'section' => 'bento_colors_content',
 				'label' => __( 'Button text color on hover', 'bento' ),
 				'description' => __( 'Choose the color for button text on mouse hover; default is #ffffff (white).', 'bento' ),
 			)
@@ -1341,7 +1341,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_content_secondary_button_background_color', 
+		'bento_content_secondary_button_background_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#999999',
@@ -1351,9 +1351,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_content_secondary_button_background_color', 
+			'bento_content_secondary_button_background_color', 
 			array(
-				'section' => 'bnt_colors_content',
+				'section' => 'bento_colors_content',
 				'label' => __( 'Secondary button color', 'bento' ),
 				'description' => __( 'Choose the color for secondary buttons, mainly for WooCommerce plugin, e.g. "update basket" and "apply coupon"; default is #999999 (grey).', 'bento' ),
 			)
@@ -1361,7 +1361,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_content_secondary_button_hover_background_color', 
+		'bento_content_secondary_button_hover_background_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#777777',
@@ -1371,9 +1371,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_content_secondary_button_hover_background_color', 
+			'bento_content_secondary_button_hover_background_color', 
 			array(
-				'section' => 'bnt_colors_content',
+				'section' => 'bento_colors_content',
 				'label' => __( 'Secondary button color on hover', 'bento' ),
 				'description' => __( 'Choose the color for secondary buttons on mouse hover; default is #777777 (grey).', 'bento' ),
 			)
@@ -1381,7 +1381,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_content_secondary_button_text_color', 
+		'bento_content_secondary_button_text_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#ffffff',
@@ -1391,9 +1391,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_content_secondary_button_text_color', 
+			'bento_content_secondary_button_text_color', 
 			array(
-				'section' => 'bnt_colors_content',
+				'section' => 'bento_colors_content',
 				'label' => __( 'Secondary button text color', 'bento' ),
 				'description' => __( 'Choose the text color for secondary buttons, mainly for WooCommerce plugin, e.g. "update basket" and "apply coupon"; default is #ffffff (white).', 'bento' ),
 			)
@@ -1401,7 +1401,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_content_secondary_button_text_hover_color', 
+		'bento_content_secondary_button_text_hover_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#ffffff',
@@ -1411,9 +1411,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_content_secondary_button_text_hover_color', 
+			'bento_content_secondary_button_text_hover_color', 
 			array(
-				'section' => 'bnt_colors_content',
+				'section' => 'bento_colors_content',
 				'label' => __( 'Secondary button text color on hover', 'bento' ),
 				'description' => __( 'Choose the text color for secondary buttons on mouse hover; default is #ffffff (white).', 'bento' ),
 			)
@@ -1423,7 +1423,7 @@ function bnt_customize_register( $wp_customize ) {
 	// Footer Colors
 	
 	$wp_customize->add_section( 
-		'bnt_colors_footer', 
+		'bento_colors_footer', 
 		array(
 			'title' => __( 'Footer Colors', 'bento' ),
 			'priority' => 27,
@@ -1431,7 +1431,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_footer_widgets_background_color', 
+		'bento_footer_widgets_background_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#888888',
@@ -1441,9 +1441,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_footer_widgets_background_color', 
+			'bento_footer_widgets_background_color', 
 			array(
-				'section' => 'bnt_colors_footer',
+				'section' => 'bento_colors_footer',
 				'label' => __( 'Footer widget area background color', 'bento' ),
 				'description' => __( 'Choose the background color for the footer widget area; default is #888888 (grey).', 'bento' ),
 			)
@@ -1451,7 +1451,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_footer_text_color', 
+		'bento_footer_text_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#cccccc',
@@ -1461,9 +1461,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_footer_text_color', 
+			'bento_footer_text_color', 
 			array(
-				'section' => 'bnt_colors_footer',
+				'section' => 'bento_colors_footer',
 				'label' => __( 'Footer text color', 'bento' ),
 				'description' => __( 'Choose the text color for the footer; default is #cccccc (light-grey).', 'bento' ),
 			)
@@ -1471,7 +1471,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_footer_link_text_color', 
+		'bento_footer_link_text_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#ffffff',
@@ -1481,9 +1481,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_footer_link_text_color', 
+			'bento_footer_link_text_color', 
 			array(
-				'section' => 'bnt_colors_footer',
+				'section' => 'bento_colors_footer',
 				'label' => __( 'Footer link color', 'bento' ),
 				'description' => __( 'Choose the color for links in the footer; default is #ffffff (white).', 'bento' ),
 			)
@@ -1491,7 +1491,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_footer_meta_text_color', 
+		'bento_footer_meta_text_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#aaaaaa',
@@ -1501,9 +1501,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_footer_meta_text_color', 
+			'bento_footer_meta_text_color', 
 			array(
-				'section' => 'bnt_colors_footer',
+				'section' => 'bento_colors_footer',
 				'label' => __( 'Footer meta text color', 'bento' ),
 				'description' => __( 'Choose the color meta text, such as dates and post counts, in the footer; default is #aaaaaa (light-grey).', 'bento' ),
 			)
@@ -1511,7 +1511,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_footer_delimiter_color', 
+		'bento_footer_delimiter_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#999999',
@@ -1521,9 +1521,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_footer_delimiter_color', 
+			'bento_footer_delimiter_color', 
 			array(
-				'section' => 'bnt_colors_footer',
+				'section' => 'bento_colors_footer',
 				'label' => __( 'Footer delimiter text color', 'bento' ),
 				'description' => __( 'Choose the color for delimiter lines in the footer widgets; default is #999999 (light-grey).', 'bento' ),
 			)
@@ -1531,7 +1531,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_footer_bottom_background_color', 
+		'bento_footer_bottom_background_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#666666',
@@ -1541,9 +1541,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_footer_bottom_background_color', 
+			'bento_footer_bottom_background_color', 
 			array(
-				'section' => 'bnt_colors_footer',
+				'section' => 'bento_colors_footer',
 				'label' => __( 'Bottom footer background color', 'bento' ),
 				'description' => __( 'Choose the background color for the bottom part of the footer containing the optional footer menu and the copyright information; default is #666666 (grey).', 'bento' ),
 			)
@@ -1551,7 +1551,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_footer_bottom_text_color', 
+		'bento_footer_bottom_text_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#cccccc',
@@ -1561,9 +1561,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_footer_bottom_text_color', 
+			'bento_footer_bottom_text_color', 
 			array(
-				'section' => 'bnt_colors_footer',
+				'section' => 'bento_colors_footer',
 				'label' => __( 'Bottom footer: text color', 'bento' ),
 				'description' => __( 'Choose the color for the bottom footer text; default is #cccccc (light-grey).', 'bento' ),
 			)
@@ -1571,7 +1571,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_footer_bottom_link_text_color', 
+		'bento_footer_bottom_link_text_color', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '#ffffff',
@@ -1581,9 +1581,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'bnt_footer_bottom_link_text_color', 
+			'bento_footer_bottom_link_text_color', 
 			array(
-				'section' => 'bnt_colors_footer',
+				'section' => 'bento_colors_footer',
 				'label' => __( 'Bottom footer: link color', 'bento' ),
 				'description' => __( 'Choose the color for links in the bottom footer area; default is #ffffff (white).', 'bento' ),
 			)
@@ -1593,7 +1593,7 @@ function bnt_customize_register( $wp_customize ) {
 	// Custom CSS
 	
 	$wp_customize->add_section( 
-		'bnt_custom_css', 
+		'bento_custom_css', 
 		array(
 			'title' => __( 'Custom CSS', 'bento' ),
 			'priority' => 28,
@@ -1601,7 +1601,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_custom_css', 
+		'bento_custom_css', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '',
@@ -1609,9 +1609,9 @@ function bnt_customize_register( $wp_customize ) {
 		)
 	);
 	$wp_customize->add_control( 
-		'bnt_custom_css', 
+		'bento_custom_css', 
 		array(
-			'section' => 'bnt_custom_css',
+			'section' => 'bento_custom_css',
 			'type' => 'textarea',
 			'label' => __( 'Custom Styles', 'bento' ),
 			'description' => __( 'Enter any custom CSS here to apply to the website.', 'bento' ),
@@ -1621,7 +1621,7 @@ function bnt_customize_register( $wp_customize ) {
 	// SEO Settings
 	
 	$wp_customize->add_section( 
-		'bnt_seo', 
+		'bento_seo', 
 		array(
 			'title' => __( 'SEO Settings', 'bento' ),
 			'priority' => 29,
@@ -1629,7 +1629,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_ep_seo_upg', 
+		'bento_ep_seo_upg', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '',
@@ -1639,9 +1639,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_EP_Customize_Control(
 		$wp_customize,
-		'bnt_ep_seo_upg', 
+		'bento_ep_seo_upg', 
 			array(
-				'section' => 'bnt_seo',
+				'section' => 'bento_seo',
 				'type' => 'text_ep',
 			)
 		)
@@ -1650,7 +1650,7 @@ function bnt_customize_register( $wp_customize ) {
 	// Analytics code
 	
 	$wp_customize->add_section( 
-		'bnt_analytics', 
+		'bento_analytics', 
 		array(
 			'title' => __( 'Analytics Code', 'bento' ),
 			'priority' => 30,
@@ -1658,7 +1658,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_ep_analytics_upg', 
+		'bento_ep_analytics_upg', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '',
@@ -1668,9 +1668,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_EP_Customize_Control(
 		$wp_customize,
-		'bnt_ep_analytics_upg', 
+		'bento_ep_analytics_upg', 
 			array(
-				'section' => 'bnt_analytics',
+				'section' => 'bento_analytics',
 				'type' => 'text_ep',
 			)
 		)
@@ -1679,7 +1679,7 @@ function bnt_customize_register( $wp_customize ) {
 	// Call to action popup
 	
 	$wp_customize->add_section( 
-		'bnt_cta_popup', 
+		'bento_cta_popup', 
 		array(
 			'title' => __( 'Call to Action Popup', 'bento' ),
 			'priority' => 31,
@@ -1687,7 +1687,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_ep_popup_upg', 
+		'bento_ep_popup_upg', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '',
@@ -1697,9 +1697,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_EP_Customize_Control(
 		$wp_customize,
-		'bnt_ep_popup_upg', 
+		'bento_ep_popup_upg', 
 			array(
-				'section' => 'bnt_cta_popup',
+				'section' => 'bento_cta_popup',
 				'type' => 'text_ep',
 			)
 		)
@@ -1708,7 +1708,7 @@ function bnt_customize_register( $wp_customize ) {
 	// Preloader
 	
 	$wp_customize->add_section( 
-		'bnt_preloader', 
+		'bento_preloader', 
 		array(
 			'title' => __( 'Preloader', 'bento' ),
 			'priority' => 32,
@@ -1716,7 +1716,7 @@ function bnt_customize_register( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting( 
-		'bnt_ep_preloader_upg', 
+		'bento_ep_preloader_upg', 
 		array(
 			'type' => 'theme_mod',
 			'default' => '',
@@ -1726,9 +1726,9 @@ function bnt_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_EP_Customize_Control(
 		$wp_customize,
-		'bnt_ep_preloader_upg', 
+		'bento_ep_preloader_upg', 
 			array(
-				'section' => 'bnt_preloader',
+				'section' => 'bento_preloader',
 				'type' => 'text_ep',
 			)
 		)
@@ -1738,51 +1738,51 @@ function bnt_customize_register( $wp_customize ) {
 
 
 // Insert CSS from settings
-function bnt_customizer_css() {
+function bento_customizer_css() {
 	
 	$customizer_css = '';
 	
 	// Theme Options: Layout and Background tab
-	$bnt_content_width_med_px = get_theme_mod( 'bnt_content_width', 1080 );
-	$bnt_content_width_med_rem = $bnt_content_width_med_px / 10;
-	$bnt_content_width_hi_px = $bnt_content_width_med_px + 360;
-	$bnt_content_width_hi_rem = $bnt_content_width_hi_px / 10;
-	$bnt_box_width_med_px = $bnt_box_width_med_rem = $bnt_box_width_hi_px = $bnt_box_width_hi_rem = 'none';
-	$bnt_box_width_med_px = $bnt_content_width_med_px + 80;
-	$bnt_box_width_med_rem = $bnt_box_width_med_px / 10;
-	$bnt_box_width_hi_px = $bnt_content_width_hi_px + 120;
-	$bnt_box_width_hi_rem = $bnt_box_width_hi_px / 10;
+	$bento_content_width_med_px = get_theme_mod( 'bento_content_width', 1080 );
+	$bento_content_width_med_rem = $bento_content_width_med_px / 10;
+	$bento_content_width_hi_px = $bento_content_width_med_px + 360;
+	$bento_content_width_hi_rem = $bento_content_width_hi_px / 10;
+	$bento_box_width_med_px = $bento_box_width_med_rem = $bento_box_width_hi_px = $bento_box_width_hi_rem = 'none';
+	$bento_box_width_med_px = $bento_content_width_med_px + 80;
+	$bento_box_width_med_rem = $bento_box_width_med_px / 10;
+	$bento_box_width_hi_px = $bento_content_width_hi_px + 120;
+	$bento_box_width_hi_rem = $bento_box_width_hi_px / 10;
 	$customizer_css .= '
 		@media screen and (min-width: 80em) {
 			.bnt-container {
-				max-width: '.$bnt_content_width_med_px.'px;
-				max-width: '.$bnt_content_width_med_rem.'rem;
+				max-width: '.$bento_content_width_med_px.'px;
+				max-width: '.$bento_content_width_med_rem.'rem;
 			}
 		}
 		@media screen and (min-width: 120em) {
 			.bnt-container {
-				max-width: '.$bnt_content_width_hi_px.'px;
-				max-width: '.$bnt_content_width_hi_rem.'rem;
+				max-width: '.$bento_content_width_hi_px.'px;
+				max-width: '.$bento_content_width_hi_rem.'rem;
 			}
 		}
 	';
-	if ( get_theme_mod( 'bnt_website_layout', 0 ) == 1 ) {
+	if ( get_theme_mod( 'bento_website_layout', 0 ) == 1 ) {
 		$customizer_css .= '
 			@media screen and (min-width: 80em) {
 				.site-wrapper {
-					max-width: '.$bnt_box_width_med_px.'px;
-					max-width: '.$bnt_box_width_med_rem.'rem;
+					max-width: '.$bento_box_width_med_px.'px;
+					max-width: '.$bento_box_width_med_rem.'rem;
 				}
 			}
 			@media screen and (min-width: 120em) {
 				.site-wrapper {
-					max-width: '.$bnt_box_width_hi_px.'px;
-					max-width: '.$bnt_box_width_hi_rem.'rem;
+					max-width: '.$bento_box_width_hi_px.'px;
+					max-width: '.$bento_box_width_hi_rem.'rem;
 				}
 			}
 		';
-		if ( get_theme_mod( 'bnt_website_background', 0 ) == 1 && get_theme_mod( 'bnt_website_background_texture', '' ) != '' ) {
-			$website_background_texture_id = get_theme_mod( 'bnt_website_background_texture', '' );
+		if ( get_theme_mod( 'bento_website_background', 0 ) == 1 && get_theme_mod( 'bento_website_background_texture', '' ) != '' ) {
+			$website_background_texture_id = get_theme_mod( 'bento_website_background_texture', '' );
 			$website_background_texture_image = wp_get_attachment_image_src( $website_background_texture_id , 'full' );
 			$website_background_texture = $website_background_texture_image[0];
 			$customizer_css .= '
@@ -1791,8 +1791,8 @@ function bnt_customizer_css() {
 					background-repeat: repeat;
 				}
 			';
-		} elseif ( get_theme_mod( 'bnt_website_background', 0 ) == 2 && get_theme_mod( 'bnt_website_background_image', '' ) != '' ) {
-			$website_background_image_id = get_theme_mod( 'bnt_website_background_image', '' );
+		} elseif ( get_theme_mod( 'bento_website_background', 0 ) == 2 && get_theme_mod( 'bento_website_background_image', '' ) != '' ) {
+			$website_background_image_id = get_theme_mod( 'bento_website_background_image', '' );
 			$website_background_image_image = wp_get_attachment_image_src( $website_background_image_id , 'full' );
 			$website_background_image = $website_background_image_image[0];
 			$customizer_css .= '
@@ -1806,27 +1806,27 @@ function bnt_customizer_css() {
 		} else {
 			$customizer_css .= '
 				body {
-					background-color: '.get_theme_mod( 'bnt_website_background_color', '#e6e6e6' ).';
+					background-color: '.get_theme_mod( 'bento_website_background_color', '#e6e6e6' ).';
 				}
 			';
 		}
 	}
-	if ( get_theme_mod( 'bnt_menu_config', 0 ) == 2 ) {
+	if ( get_theme_mod( 'bento_menu_config', 0 ) == 2 ) {
 		$customizer_css .= '
 			.header-menu {
-				background-color: '.get_theme_mod( 'bnt_primary_menu_background', '#eeeeee' ).';
+				background-color: '.get_theme_mod( 'bento_primary_menu_background', '#eeeeee' ).';
 			}
 		';
-	} else if ( get_theme_mod( 'bnt_menu_config', 0 ) == 3 ) {
+	} else if ( get_theme_mod( 'bento_menu_config', 0 ) == 3 ) {
 		$customizer_css .= '
 			@media screen and (min-width: 48em) {
 				.header-side .primary-menu > li,
 				.header-side .primary-menu .sub-menu, 
 				.header-side .primary-menu .sub-menu li {
-					border-color: '.get_theme_mod( 'bnt_menu_separators', '#eeeeee' ).';
+					border-color: '.get_theme_mod( 'bento_menu_separators', '#eeeeee' ).';
 				}
 				.header-side .primary-menu .sub-menu li a:hover {
-					color: '.get_theme_mod( 'bnt_primary_menu_text_hover_color', '#00B285' ).';
+					color: '.get_theme_mod( 'bento_primary_menu_text_hover_color', '#00B285' ).';
 				}
 				.header-side .primary-menu .sub-menu li, 
 				.header-side #nav-mobile {
@@ -1837,64 +1837,64 @@ function bnt_customizer_css() {
 	}
 	
 	// Theme Options: Fonts and Typography tab
-	$bnt_font_face_body = $bnt_font_face_headings = $bnt_font_face_menu = '';
-	$bnt_body_font = $bnt_headings_font = 'Open Sans';
-	$bnt_menu_font = 'Montserrat';
-	$bnt_body_text_size = $bnt_menu_text_size = 14;
-	if ( get_theme_mod( 'bnt_font_body_upload', '' ) != '' ) {
-		$bnt_font_face_body = '
+	$bento_font_face_body = $bento_font_face_headings = $bento_font_face_menu = '';
+	$bento_body_font = $bento_headings_font = 'Open Sans';
+	$bento_menu_font = 'Montserrat';
+	$bento_body_text_size = $bento_menu_text_size = 14;
+	if ( get_theme_mod( 'bento_font_body_upload', '' ) != '' ) {
+		$bento_font_face_body = '
 			@font-face {
 				font-family: bodyFont;
-				src: url('.get_theme_mod( 'bnt_font_body_upload', '' ).');
+				src: url('.get_theme_mod( 'bento_font_body_upload', '' ).');
 			}
 		';
-		$bnt_body_font = 'bodyFont';
-	} else if ( get_theme_mod( 'bnt_font_body', '' ) != '' ) {
-		$bnt_body_font = get_theme_mod( 'bnt_font_body', '' );
+		$bento_body_font = 'bodyFont';
+	} else if ( get_theme_mod( 'bento_font_body', '' ) != '' ) {
+		$bento_body_font = get_theme_mod( 'bento_font_body', '' );
 	}
-	if ( get_theme_mod( 'bnt_font_headings_upload', '' ) != '' ) {
-		$bnt_font_face_headings = '
+	if ( get_theme_mod( 'bento_font_headings_upload', '' ) != '' ) {
+		$bento_font_face_headings = '
 			@font-face {
 				font-family: headingsFont;
-				src: url('.get_theme_mod( 'bnt_font_headings_upload', '' ).');
+				src: url('.get_theme_mod( 'bento_font_headings_upload', '' ).');
 			}
 		';
-		$bnt_headings_font = 'headingsFont';
-	} else if ( get_theme_mod( 'bnt_font_headings', '' ) != '' ) {
-		$bnt_headings_font = get_theme_mod( 'bnt_font_headings', '' );
+		$bento_headings_font = 'headingsFont';
+	} else if ( get_theme_mod( 'bento_font_headings', '' ) != '' ) {
+		$bento_headings_font = get_theme_mod( 'bento_font_headings', '' );
 	}
-	if ( get_theme_mod( 'bnt_font_menu_upload', '' ) != '' ) {
-		$bnt_font_face_menu = '
+	if ( get_theme_mod( 'bento_font_menu_upload', '' ) != '' ) {
+		$bento_font_face_menu = '
 			@font-face {
 				font-family: menuFont;
-				src: url('.get_theme_mod( 'bnt_font_menu_upload', '' ).');
+				src: url('.get_theme_mod( 'bento_font_menu_upload', '' ).');
 			}
 		';
-		$bnt_menu_font = 'menuFont';
-	} else if ( get_theme_mod( 'bnt_font_menu', '' ) != '' ) {
-		$bnt_menu_font = get_theme_mod( 'bnt_font_menu', '' );
+		$bento_menu_font = 'menuFont';
+	} else if ( get_theme_mod( 'bento_font_menu', '' ) != '' ) {
+		$bento_menu_font = get_theme_mod( 'bento_font_menu', '' );
 	}
-	if ( get_theme_mod( 'bnt_text_size_body', 14 ) != 14 ) {
-		$bnt_body_text_size = get_theme_mod( 'bnt_text_size_body', 14 );
+	if ( get_theme_mod( 'bento_text_size_body', 14 ) != 14 ) {
+		$bento_body_text_size = get_theme_mod( 'bento_text_size_body', 14 );
 	}
-	if ( get_theme_mod( 'bnt_text_size_menu', 14 ) != 14 ) {
-		$bnt_menu_text_size = get_theme_mod( 'bnt_text_size_menu', 14 );
+	if ( get_theme_mod( 'bento_text_size_menu', 14 ) != 14 ) {
+		$bento_menu_text_size = get_theme_mod( 'bento_text_size_menu', 14 );
 	}
-	$bnt_body_text_size_em = $bnt_body_text_size / 10;
-	$bnt_menu_text_size_rem = $bnt_menu_text_size / 10;
-	if ( get_theme_mod( 'bnt_menu_config', 0 ) == 3 ) {
-		$bnt_menu_parent_after = ( $bnt_menu_text_size_rem * 2 + 2 ) / 1.2;
+	$bento_body_text_size_em = $bento_body_text_size / 10;
+	$bento_menu_text_size_rem = $bento_menu_text_size / 10;
+	if ( get_theme_mod( 'bento_menu_config', 0 ) == 3 ) {
+		$bento_menu_parent_after = ( $bento_menu_text_size_rem * 2 + 2 ) / 1.2;
 	} else {
-		$bnt_menu_parent_after = $bnt_menu_text_size_rem * 6 / 1.2;
+		$bento_menu_parent_after = $bento_menu_text_size_rem * 6 / 1.2;
 	}
 	$customizer_css .= 
-		$bnt_font_face_body.
-		$bnt_font_face_headings.
-		$bnt_font_face_menu.'
+		$bento_font_face_body.
+		$bento_font_face_headings.
+		$bento_font_face_menu.'
 		body {
-			font-family: '.$bnt_body_font.', Arial, sans-serif;
-			font-size: '.$bnt_body_text_size.'px;
-			font-size: '.$bnt_body_text_size_em.'em;
+			font-family: '.$bento_body_font.', Arial, sans-serif;
+			font-size: '.$bento_body_text_size.'px;
+			font-size: '.$bento_body_text_size_em.'em;
 		}
 		.site-content h1, 
 		.site-content h2, 
@@ -1903,20 +1903,20 @@ function bnt_customizer_css() {
 		.site-content h5, 
 		.site-content h6,
 		.post-header-title h1 {
-			font-family: '.$bnt_headings_font.', Arial, sans-serif;
+			font-family: '.$bento_headings_font.', Arial, sans-serif;
 		}
 		#nav-primary {
-			font-family: '.$bnt_menu_font.', Arial, sans-serif;
+			font-family: '.$bento_menu_font.', Arial, sans-serif;
 		}
 		.primary-menu > li > a {
-			font-size: '.$bnt_menu_text_size.'px;
-			font-size: '.$bnt_menu_text_size_rem.'rem;
+			font-size: '.$bento_menu_text_size.'px;
+			font-size: '.$bento_menu_text_size_rem.'rem;
 		}
 		.primary-menu > .menu-item-has-children > a:after {
-			line-height: '.$bnt_menu_parent_after.';
+			line-height: '.$bento_menu_parent_after.';
 		}
 	';
-	if ( get_theme_mod( 'bnt_sentence_case_menu', 0 ) == 1 ) {
+	if ( get_theme_mod( 'bento_sentence_case_menu', 0 ) == 1 ) {
 		$customizer_css .= '
 			#nav-primary {
 				text-transform: none;
@@ -1929,72 +1929,72 @@ function bnt_customizer_css() {
 		.site-header,
 		.header-default .site-header.fixed-header,
 		.header-side .site-wrapper {
-			background: '.get_theme_mod( 'bnt_header_background_color', '#ffffff' ).';
+			background: '.get_theme_mod( 'bento_header_background_color', '#ffffff' ).';
 		}
 		.primary-menu > li > .sub-menu {
-			border-top-color: '.get_theme_mod( 'bnt_header_background_color', '#ffffff' ).';
+			border-top-color: '.get_theme_mod( 'bento_header_background_color', '#ffffff' ).';
 		}
 		.primary-menu > li > a,
 		#nav-mobile li a,
 		.mobile-menu-trigger,
 		.mobile-menu-close,
 		.ham-menu-close {
-			color: '.get_theme_mod( 'bnt_primary_menu_text_color', '#333333' ).';
+			color: '.get_theme_mod( 'bento_primary_menu_text_color', '#333333' ).';
 		}
 		.primary-menu > li > a:hover,
 		.primary-menu > li.current-menu-item > a,
 		.primary-menu > li.current-menu-ancestor > a {
-			color: '.get_theme_mod( 'bnt_primary_menu_text_hover_color', '#00B285' ).';
+			color: '.get_theme_mod( 'bento_primary_menu_text_hover_color', '#00B285' ).';
 		}
 		.primary-menu .sub-menu li,
 		#nav-mobile {
-			background-color: '.get_theme_mod( 'bnt_primary_menu_submenu_background_color', '#dddddd' ).';
+			background-color: '.get_theme_mod( 'bento_primary_menu_submenu_background_color', '#dddddd' ).';
 		}
 		.primary-menu .sub-menu li a:hover,
 		.primary-menu .sub-menu .current-menu-item:not(.current-menu-ancestor) > a,
 		#nav-mobile li a:hover,
 		#nav-mobile .current-menu-item:not(.current-menu-ancestor) > a {
-			background-color: '.get_theme_mod( 'bnt_primary_menu_submenu_background_hover_color', '#cccccc' ).';
+			background-color: '.get_theme_mod( 'bento_primary_menu_submenu_background_hover_color', '#cccccc' ).';
 		}
 		.primary-menu .sub-menu,
 		.primary-menu .sub-menu li,
 		#nav-mobile li a,
 		#nav-mobile .primary-mobile-menu > li:first-child > a {
-			border-color: '.get_theme_mod( 'bnt_primary_menu_submenu_border_color', '#cccccc' ).';
+			border-color: '.get_theme_mod( 'bento_primary_menu_submenu_border_color', '#cccccc' ).';
 		}
 		.primary-menu .sub-menu li a {
-			color: '.get_theme_mod( 'bnt_primary_menu_submenu_text_color', '#333333' ).'; 
+			color: '.get_theme_mod( 'bento_primary_menu_submenu_text_color', '#333333' ).'; 
 		}
 		.primary-menu .sub-menu li:hover a {
-			color: '.get_theme_mod( 'bnt_primary_menu_submenu_text_hover_color', '#333333' ).'; 
+			color: '.get_theme_mod( 'bento_primary_menu_submenu_text_hover_color', '#333333' ).'; 
 		}
 		#nav-mobile {
-			background-color: '.get_theme_mod( 'bnt_mobile_menu_background_color', '#dddddd' ).';
+			background-color: '.get_theme_mod( 'bento_mobile_menu_background_color', '#dddddd' ).';
 		}
 		#nav-mobile li a,
 		.mobile-menu-trigger,
 		.mobile-menu-close {
-			color: '.get_theme_mod( 'bnt_mobile_menu_text_color', '#333333' ).';
+			color: '.get_theme_mod( 'bento_mobile_menu_text_color', '#333333' ).';
 		}
 		#nav-mobile li a:hover,
 		#nav-mobile .current-menu-item:not(.current-menu-ancestor) > a {
-			background-color: '.get_theme_mod( 'bnt_mobile_menu_background_hover_color', '#cccccc' ).';
+			background-color: '.get_theme_mod( 'bento_mobile_menu_background_hover_color', '#cccccc' ).';
 		}
 		#nav-mobile li a,
 		#nav-mobile .primary-mobile-menu > li:first-child > a {
-			border-color: '.get_theme_mod( 'bnt_mobile_menu_border_color', '#cccccc' ).';	
+			border-color: '.get_theme_mod( 'bento_mobile_menu_border_color', '#cccccc' ).';	
 		}
 		#nav-mobile li a:hover,
 		.mobile-menu-trigger-container:hover,
 		.mobile-menu-close:hover {
-			color: '.get_theme_mod( 'bnt_mobile_menu_text_hover_color', '#333333' ).';
+			color: '.get_theme_mod( 'bento_mobile_menu_text_hover_color', '#333333' ).';
 		}
 	';
 	
 	// Theme Options: Content Colors tab
 	$customizer_css .= '
 		.site-content {
-			background-color: '.get_theme_mod( 'bnt_content_background_color', '#f4f4f4' ).';
+			background-color: '.get_theme_mod( 'bento_content_background_color', '#f4f4f4' ).';
 		}
 		.site-content h1, 
 		.site-content h2, 
@@ -2002,17 +2002,17 @@ function bnt_customizer_css() {
 		.site-content h4, 
 		.site-content h5, 
 		.site-content h6 {
-			color: '.get_theme_mod( 'bnt_content_heading_text_color', '#333333' ).';
+			color: '.get_theme_mod( 'bento_content_heading_text_color', '#333333' ).';
 		}
 		.products .product a h3,
 		.masonry-item-box a h2 {
 			color: inherit;	
 		}
 		.site-content {
-			color: '.get_theme_mod( 'bnt_content_body_text_color', '#333333' ).';
+			color: '.get_theme_mod( 'bento_content_body_text_color', '#333333' ).';
 		}
 		.site-content a:not(.masonry-item-link):not(.page-numbers):not(.ajax-load-more):not(.remove):not(.button) {
-			color: '.get_theme_mod( 'bnt_content_link_text_color', '#00b285' ).';
+			color: '.get_theme_mod( 'bento_content_link_text_color', '#00b285' ).';
 		}
 		.page-link-text:not(:hover) {
 			color: #00B285;
@@ -2040,7 +2040,7 @@ function bnt_customizer_css() {
 		.product_meta,
 		.shop_table td.product-remove a,
 		.woocommerce-checkout .payment_methods .wc_payment_method .payment_box {
-			color: '.get_theme_mod( 'bnt_content_meta_text_color', '#999999' ).';
+			color: '.get_theme_mod( 'bento_content_meta_text_color', '#999999' ).';
 		}
 		hr,
 		.entry-content table,
@@ -2064,7 +2064,7 @@ function bnt_customizer_css() {
 		.woocommerce-checkout-review-order table tfoot,
 		.woocommerce-checkout-review-order table tfoot .order-total,
 		.woocommerce-checkout-review-order table tfoot .shipping {
-			border-color: '.get_theme_mod( 'bnt_content_delimiter_color', '#dddddd' ).';	
+			border-color: '.get_theme_mod( 'bento_content_delimiter_color', '#dddddd' ).';	
 		}
 		input[type="text"], 
 		input[type="password"], 
@@ -2075,20 +2075,20 @@ function bnt_customizer_css() {
 		textarea, 
 		select, 
 		.select2-container {
-			background-color: '.get_theme_mod( 'bnt_content_input_background_color', '#e4e4e4' ).';
-			color: '.get_theme_mod( 'bnt_content_input_text_color', '#333333' ).';
+			background-color: '.get_theme_mod( 'bento_content_input_background_color', '#e4e4e4' ).';
+			color: '.get_theme_mod( 'bento_content_input_text_color', '#333333' ).';
 		}
 		::-webkit-input-placeholder { 
-			color: '.get_theme_mod( 'bnt_content_input_placeholder_color', '#aaaaaa' ).'; 
+			color: '.get_theme_mod( 'bento_content_input_placeholder_color', '#aaaaaa' ).'; 
 		}
 		::-moz-placeholder { 
-			color: '.get_theme_mod( 'bnt_content_input_placeholder_color', '#aaaaaa' ).'; 
+			color: '.get_theme_mod( 'bento_content_input_placeholder_color', '#aaaaaa' ).'; 
 		}
 		:-ms-input-placeholder { 
-			color: '.get_theme_mod( 'bnt_content_input_placeholder_color', '#aaaaaa' ).'; 
+			color: '.get_theme_mod( 'bento_content_input_placeholder_color', '#aaaaaa' ).'; 
 		}
 		input:-moz-placeholder { 
-			color: '.get_theme_mod( 'bnt_content_input_placeholder_color', '#aaaaaa' ).'; 
+			color: '.get_theme_mod( 'bento_content_input_placeholder_color', '#aaaaaa' ).'; 
 		}
 		.pagination a.page-numbers:hover,
 		.woocommerce-pagination a.page-numbers:hover,
@@ -2100,23 +2100,23 @@ function bnt_customizer_css() {
 		.site-content .button,
 		.widget_price_filter .ui-slider .ui-slider-range, 
 		.widget_price_filter .ui-slider .ui-slider-handle {
-			background-color: '.get_theme_mod( 'bnt_content_button_background_color', '#00b285' ).';	
+			background-color: '.get_theme_mod( 'bento_content_button_background_color', '#00b285' ).';	
 		}
 		.pagination a.page-numbers:hover,
 		.woocommerce-pagination a.page-numbers:hover,
 		.site-content a.ajax-load-more:hover,
 		.page-links .page-link-text:hover {
-			border-color: '.get_theme_mod( 'bnt_content_button_background_color', '#00b285' ).';
+			border-color: '.get_theme_mod( 'bento_content_button_background_color', '#00b285' ).';
 		}
 		.page-link-text:not(:hover),
 		.pagination a, 
 		.woocommerce-pagination a,
 		.site-content a.ajax-load-more {
-			color: '.get_theme_mod( 'bnt_content_button_background_color', '#00b285' ).';
+			color: '.get_theme_mod( 'bento_content_button_background_color', '#00b285' ).';
 		}
 		input[type="submit"]:hover,
 		.site-content .button:hover {
-			background-color: '.get_theme_mod( 'bnt_content_button_hover_background_color', '#00906c' ).';
+			background-color: '.get_theme_mod( 'bento_content_button_hover_background_color', '#00906c' ).';
 		}
 		input[type="submit"],
 		.site-content .button,
@@ -2124,52 +2124,52 @@ function bnt_customizer_css() {
 		.woocommerce-pagination a.page-numbers:hover,
 		.site-content a.ajax-load-more:hover,
 		.page-links .page-link-text:hover {
-			color: '.get_theme_mod( 'bnt_content_button_text_color', '#ffffff' ).';	
+			color: '.get_theme_mod( 'bento_content_button_text_color', '#ffffff' ).';	
 		}
 		input[type="submit"]:hover,
 		.site-content .button:hover {
-			color: '.get_theme_mod( 'bnt_content_button_text_hover_color', '#ffffff' ).';
+			color: '.get_theme_mod( 'bento_content_button_text_hover_color', '#ffffff' ).';
 		}
 		.shop_table .actions .button,
 		.shipping-calculator-form .button,
 		.checkout_coupon .button,
 		.widget_shopping_cart .button:first-child,
 		.price_slider_amount .button {
-			background-color: '.get_theme_mod( 'bnt_content_secondary_button_background_color', '#999999' ).';
+			background-color: '.get_theme_mod( 'bento_content_secondary_button_background_color', '#999999' ).';
 		}
 		.shop_table .actions .button:hover,
 		.shipping-calculator-form .button:hover,
 		.checkout_coupon .button:hover,
 		.widget_shopping_cart .button:first-child:hover,
 		.price_slider_amount .button:hover {
-			background-color: '.get_theme_mod( 'bnt_content_secondary_button_hover_background_color', '#777777' ).';
+			background-color: '.get_theme_mod( 'bento_content_secondary_button_hover_background_color', '#777777' ).';
 		}
 		.shop_table .actions .button,
 		.shipping-calculator-form .button,
 		.checkout_coupon .button,
 		.widget_shopping_cart .button:first-child,
 		.price_slider_amount .button {
-			color: '.get_theme_mod( 'bnt_content_secondary_button_text_color', '#ffffff' ).';
+			color: '.get_theme_mod( 'bento_content_secondary_button_text_color', '#ffffff' ).';
 		}
 		.shop_table .actions .button:hover,
 		.shipping-calculator-form .button:hover,
 		.checkout_coupon .button:hover,
 		.widget_shopping_cart .button:first-child:hover,
 		.price_slider_amount .button:hover {
-			color: '.get_theme_mod( 'bnt_content_secondary_button_text_hover_color', '#ffffff' ).';
+			color: '.get_theme_mod( 'bento_content_secondary_button_text_hover_color', '#ffffff' ).';
 		}
 	';
 	
 	// Theme Options: Footer Colors tab
 	$customizer_css .= '
 		.sidebar-footer {
-			background-color: '.get_theme_mod( 'bnt_footer_widgets_background_color', '#888888' ).';
+			background-color: '.get_theme_mod( 'bento_footer_widgets_background_color', '#888888' ).';
 		}
 		.site-footer {
-			color: '.get_theme_mod( 'bnt_footer_text_color', '#cccccc' ).';
+			color: '.get_theme_mod( 'bento_footer_text_color', '#cccccc' ).';
 		}
 		.site-footer a {
-			color: '.get_theme_mod( 'bnt_footer_link_text_color', '#ffffff' ).';
+			color: '.get_theme_mod( 'bento_footer_link_text_color', '#ffffff' ).';
 		}
 		.site-footer label, 
 		.site-footer .post-date-blog, 
@@ -2182,25 +2182,25 @@ function bnt_customizer_css() {
 		.site-footer .widget_calendar table caption, 
 		.site-footer .widget_calendar table th, 
 		.site-footer .widget_recent_comments .recentcomments {
-			color: '.get_theme_mod( 'bnt_footer_meta_text_color', '#aaaaaa' ).';
+			color: '.get_theme_mod( 'bento_footer_meta_text_color', '#aaaaaa' ).';
 		}
 		.sidebar-footer .widget_recent_entries ul li, 
 		.sidebar-footer .widget_recent_comments ul li, 
 		.sidebar-footer .widget_categories ul li, 
 		.sidebar-footer .widget_archive ul li {
-			border-color: '.get_theme_mod( 'bnt_footer_delimiter_color', '#999999' ).';
+			border-color: '.get_theme_mod( 'bento_footer_delimiter_color', '#999999' ).';
 		}
 		.bottom-footer {
-			background-color: '.get_theme_mod( 'bnt_footer_bottom_background_color', '#666666' ).';
-			color: '.get_theme_mod( 'bnt_footer_bottom_text_color', '#cccccc' ).';
+			background-color: '.get_theme_mod( 'bento_footer_bottom_background_color', '#666666' ).';
+			color: '.get_theme_mod( 'bento_footer_bottom_text_color', '#cccccc' ).';
 		}
 		.bottom-footer a {
-			color: '.get_theme_mod( 'bnt_footer_bottom_link_text_color', '#ffffff' ).';
+			color: '.get_theme_mod( 'bento_footer_bottom_link_text_color', '#ffffff' ).';
 		}
 	';
 	
 	// Theme Options: Custom CSS tab
-	$customizer_css .= get_theme_mod( 'bnt_custom_css', '' );
+	$customizer_css .= get_theme_mod( 'bento_custom_css', '' );
 	
 	return $customizer_css;
 	
@@ -2208,13 +2208,13 @@ function bnt_customizer_css() {
 
 
 // Control display callback - check for WooCommerce
-function bnt_woo_active() {
+function bento_woo_active() {
 	return class_exists( 'WooCommerce' );
 }
 
 
 // Display admin notice for migrating theme settings to Customizer
-function bnt_customizer_admin_notice() {
+function bento_customizer_admin_notice() {
 	$old_options = get_option( 'satori_options', 'none' );
 	$customizer_url = get_admin_url( null, 'customize.php' );
 	$success_message = sprintf( wp_kses( __( 'Migration successful! Check out the <a href="%s">Customizer</a>', 'bento' ), array(  'a' => array( 'href' => array() ) ) ), esc_url( $customizer_url ) );
@@ -2222,10 +2222,10 @@ function bnt_customizer_admin_notice() {
 		?>
 		<div class="notice notice-warning is-dismissible notice-migrate-bento-options">
 			<h3>
-				<?php _e( 'Action required - migrate Bento theme options into the Customizer', 'bento' ); ?>
+				<?php esc_attr_e( 'Action required - migrate Bento theme options into the Customizer', 'bento' ); ?>
 			</h3>
 			<p>
-				<?php _e( 'Due to a change in WordPress rules, all theme options are now handled by the native Customizer ("Appearance -> Customize" admin section). Please click on the button below to transfer existing Bento theme options to the Customizer', 'bento' ); ?>:
+				<?php esc_attr_e( 'Due to a change in WordPress rules, all theme options are now handled by the native Customizer ("Appearance -> Customize" admin section). Please click on the button below to transfer existing Bento theme options to the Customizer', 'bento' ); ?>:
 			</p>
 			<p>
 				<input name="Migrate Bento options" type="submit" class="button-primary" value="<?php _e( 'Transfer theme options', 'bento' ); ?> &rsaquo;">
@@ -2242,7 +2242,7 @@ function bnt_customizer_admin_notice() {
 
 
 // Get attachment ID from URL
-function bnt_get_attachment_id( $url ) {
+function bento_get_attachment_id( $url ) {
 	$attachment_id = '';
 	$dir = wp_upload_dir();
 	if ( false !== strpos( $url, $dir['baseurl'] . '/' ) ) {
@@ -2277,28 +2277,51 @@ function bnt_get_attachment_id( $url ) {
 
 
 // Migrate older options to Customizer
-function bnt_migrate_customizer_options() {
-	if ( isset($_POST['action']) && $_POST['action'] == 'bnt_migrate_customizer_options' ) {
+function bento_migrate_customizer_options() {
+	if ( isset($_POST['action']) && $_POST['action'] == 'bento_migrate_customizer_options' ) {
 		$old_options = get_option( 'satori_options' );
+		
 		if ( $old_options ) {
+			
+			// Migrate options
 			foreach ( $old_options as $old_option_name => $old_option_value ) {
 				if ( $old_option_value != '' ) {
+					$new_option_name = str_replace( 'bnt_', 'bento_', $old_option_name );
 					if ( $old_option_name == 'bnt_logo_mobile' ) {
-						$file_id = bnt_get_attachment_id( $old_option_value );
-						set_theme_mod( $old_option_name, $file_id );
-					} else if ( $old_option_name == 'bnt_logo' ) {
-						$file_id = bnt_get_attachment_id( $old_option_value );
+						$file_id = bento_get_attachment_id( $old_option_value );
+						set_theme_mod( $new_option_name, $file_id );
+					} else if ( $old_option_name == 'custom_logo' ) {
+						$file_id = bento_get_attachment_id( $old_option_value );
 						set_theme_mod( 'custom_logo', $file_id );
-					} else if ( $old_option_name == 'bnt_favicon' ) {
-						$file_id = bnt_get_attachment_id( $old_option_value );
+					} else if ( $old_option_name == 'site_icon' ) {
+						$file_id = bento_get_attachment_id( $old_option_value );
 						update_option( 'site_icon', $file_id );
 					} else {
-						set_theme_mod( $old_option_name, $old_option_value );
+						set_theme_mod( $new_option_name, $old_option_value );
 					}
 				}
 			}
 			delete_option( 'satori_options' );
+			
+			// Migrate post meta
+			$posts_args = array(
+				'posts_per_page' => -1,
+				'post_type' => array( 'post', 'page', 'project', 'product' ),
+			);
+			$posts_array = get_posts( $posts_args );
+			foreach ( $posts_array as $post ) {
+				$post_meta = get_post_meta( $post->ID );
+				foreach( $post_meta as $old_meta_key => $meta_val ) {
+					if ( strpos( $old_meta_key, 'bnt_' ) !== false ) {
+						$new_meta_key = str_replace( 'bnt_', 'bento_', $old_meta_key );
+						update_post_meta( $post->ID, $new_meta_key, $meta_val[0] );
+						delete_post_meta( $post->ID, $old_meta_key );
+					}
+				}
+			}
+			
 		}
+		
 	}
 	die();
 }
