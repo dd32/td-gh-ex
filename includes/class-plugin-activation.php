@@ -331,7 +331,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
 			// Load class strings.
 			$this->strings = array(
-				'page_title'					  => __( 'Install Required Plugins', 'avis-lite' ),
+				'page_title'					  => __( 'Install Recommended Plugins', 'avis-lite' ),
 				'menu_title'					  => __( 'Install Plugins', 'avis-lite' ),
 				/* translators: %s: plugin name. */
 				'installing'					  => __( 'Installing Plugin: %s', 'avis-lite' ),
@@ -389,7 +389,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 					'Begin activating plugins',
 					'avis-lite'
 				),
-				'return'						  => __( 'Return to Required Plugins Installer', 'avis-lite' ),
+				'return'						  => __( 'Return to Recommended Plugins Installer', 'avis-lite' ),
 				'dashboard'					   => __( 'Return to the Dashboard', 'avis-lite' ),
 				'plugin_activated'				=> __( 'Plugin activated successfully.', 'avis-lite' ),
 				'activated_successfully'		  => __( 'The following plugin was activated successfully:', 'avis-lite' ),

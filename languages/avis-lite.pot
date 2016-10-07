@@ -741,11 +741,11 @@ msgid "Buy Foodeez Pro"
 msgstr ""
 
 #: ../includes/sketchtheme-upsell.php:289
-msgid "Advertica Theme"
+msgid "Avis Theme"
 msgstr ""
 
 #: ../includes/sketchtheme-upsell.php:293
-msgid "Advertica - Creative MultiPurpose WordPress Theme"
+msgid "Avis - Creative MultiPurpose WordPress Theme"
 msgstr ""
 
 #: ../includes/sketchtheme-upsell.php:296
@@ -760,11 +760,11 @@ msgid ""
 msgstr ""
 
 #: ../includes/sketchtheme-upsell.php:300
-msgid "Try Advertica Free"
+msgid "Try Avis Free"
 msgstr ""
 
 #: ../includes/sketchtheme-upsell.php:302
-msgid "Buy Advertica Pro"
+msgid "Buy Avis Pro"
 msgstr ""
 
 #: ../includes/sketchtheme-upsell.php:314

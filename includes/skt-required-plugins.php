@@ -2,7 +2,7 @@
 /**
  * Include the TGM_Plugin_Activation class.
  */
-require_once dirname( __FILE__ ) . '/class-plugin-activation.php';
+require_once get_template_directory() . '/includes/class-plugin-activation.php';
 /**
  * Register the required plugins for this theme.
  *
@@ -28,17 +28,17 @@ function avis_lite_theme_register_required_plugins() {
 		array(
 			'name' => 'Simple Html Slider',
 			'slug' => 'simple-html-slider',
-			'required' => true
+			'required' => false
 		),
 		array(
 			'name' => 'Full Width Background Gallery',
 			'slug' => 'full-width-background-gallery',
-			'required' => true
+			'required' => false
 		),
 		array(
 			'name' => 'Business Opening Hours',
 			'slug' => 'business-opening-hours',
-			'required' => true
+			'required' => false
 		),
 	);
 
@@ -59,12 +59,12 @@ function avis_lite_theme_register_required_plugins() {
 		'is_automatic'    	=> false,					   	// Automatically activate plugins after installation or not
 		'message' 			=> '',							// Message to output right before the plugins table
 		'strings'      		=> array(
-			'page_title'                       			=> __( 'Install Required Plugins For Avis PRO Theme', 'avis-lite'),
+			'page_title'                       			=> __( 'Install Recommended Plugins For Avis Lite Theme', 'avis-lite'),
 			'menu_title'                       			=> __( 'Avis Plugins', 'avis-lite'),
 			'installing'                       			=> __( 'Installing Plugin: %s', 'avis-lite'), // %1$s = plugin name
 			'oops'                             			=> __( 'Something went wrong with the plugin API.', 'avis-lite'),
-			'notice_can_install_required'     			=> _n_noop( 'Avis PRO theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.','avis-lite' ), // %1$s = plugin name(s)
-			'notice_can_install_recommended'			=> _n_noop( 'Avis PRO recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.','avis-lite' ), // %1$s = plugin name(s)
+			'notice_can_install_required'     			=> _n_noop( 'Avis Lite theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.','avis-lite' ), // %1$s = plugin name(s)
+			'notice_can_install_recommended'			=> _n_noop( 'Avis Lite recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.','avis-lite' ), // %1$s = plugin name(s)
 			'notice_cannot_install'  					=> _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.','avis-lite' ), // %1$s = plugin name(s)
 			'notice_can_activate_required'    			=> _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.','avis-lite' ), // %1$s = plugin name(s)
 			'notice_can_activate_recommended'			=> _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.','avis-lite' ), // %1$s = plugin name(s)
@@ -73,7 +73,7 @@ function avis_lite_theme_register_required_plugins() {
 			'notice_cannot_update' 						=> _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.','avis-lite' ), // %1$s = plugin name(s)
 			'install_link' 					  			=> _n_noop( 'Begin installing plugin', 'Begin installing plugins','avis-lite' ),
 			'activate_link' 				  			=> _n_noop( 'Activate installed plugin', 'Activate installed plugins','avis-lite' ),
-			'return'                           			=> __( 'Return to Required Plugins Installer', 'avis-lite'),
+			'return'                           			=> __( 'Return to Recommended Plugins Installer', 'avis-lite'),
 			'plugin_activated'                 			=> __( 'Plugin activated successfully.', 'avis-lite'),
 			'complete' 									=> __( 'All plugins installed and activated successfully. %s', 'avis-lite'), // %1$s = dashboard link
 			'nag_type'									=> 'updated' // Determines admin notice type - can only be 'updated' or 'error'

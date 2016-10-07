@@ -137,7 +137,6 @@ function avis_lite_theme_setup() {
 	register_nav_menus( array(
 		'Header' => __( 'Main Navigation', 'avis-lite' ),
 	));
-	require get_template_directory() . '/includes/admin/welcome-screen/welcome-screen.php';
 }
 add_action( 'after_setup_theme', 'avis_lite_theme_setup' ); 
 
@@ -160,3 +159,7 @@ if ( !defined( 'AVIS_REQUIRED_PLUGINS' ) ) {
 	define( 'AVIS_REQUIRED_PLUGINS', trailingslashit(get_theme_root()) . 'avis-lite/includes/plugins' );
 }
 include_once('includes/skt-required-plugins.php');
+//---------------------------------------------------------------------
+/* Upshell Pro Theme
+/*---------------------------------------------------------------------------*/
+require_once( trailingslashit( get_template_directory() ) . 'sketchthemes-upsell/class-customize.php' );

@@ -2,7 +2,7 @@
 Contributors: SketchThemes, tikendramaitry
 Tags: custom-background, custom-colors, custom-header, custom-menu, editor-style, one-column, two-columns, right-sidebar, featured-image-header, featured-images, sticky-post, theme-options, threaded-comments, translation-ready , full-width-template
 Requires at least: 3.8
-Tested up to: 4.6.1
+Tested up to: 4.6
 Stable tag: 1.0.3
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -93,8 +93,13 @@ Read the following blog for more https://sketchthemes.com/blog/effective-steps-t
 
 == Changelog ==
 
-= 1.0.4 =
+= 1.0.6 =
+* Added upsell link.
+
+= 1.0.5 =
 * WP 4.6 compatible.
+
+= 1.0.4 =
 * Updated Font Awesome Icons.
 * Added social links.
 * Removed unused css.
