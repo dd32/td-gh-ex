@@ -48,7 +48,7 @@
                   or things might explode!
 *************************************************************************/
 
-if ( ! class_exists( 'CMB2_Bootstrap_212', false ) ) {
+if ( ! class_exists( 'Bento_CMB2_Bootstrap_212', false ) ) {
 
 	/**
 	 * Handles checking for and loading the newest version of CMB2
@@ -61,7 +61,7 @@ if ( ! class_exists( 'CMB2_Bootstrap_212', false ) ) {
 	 * @license   GPL-2.0+
 	 * @link      http://webdevstudios.com
 	 */
-	class CMB2_Bootstrap_212 {
+	class Bento_CMB2_Bootstrap_212 {
 
 		/**
 		 * Current version number
@@ -80,17 +80,17 @@ if ( ! class_exists( 'CMB2_Bootstrap_212', false ) ) {
 		const PRIORITY = 9987;
 
 		/**
-		 * Single instance of the CMB2_Bootstrap_212 object
+		 * Single instance of the Bento_CMB2_Bootstrap_212 object
 		 *
-		 * @var CMB2_Bootstrap_212
+		 * @var Bento_CMB2_Bootstrap_212
 		 */
 		public static $single_instance = null;
 
 		/**
-		 * Creates/returns the single instance CMB2_Bootstrap_212 object
+		 * Creates/returns the single instance Bento_CMB2_Bootstrap_212 object
 		 *
 		 * @since  2.0.0
-		 * @return CMB2_Bootstrap_212 Single instance object
+		 * @return Bento_CMB2_Bootstrap_212 Single instance object
 		 */
 		public static function initiate() {
 			if ( null === self::$single_instance ) {
@@ -151,6 +151,6 @@ if ( ! class_exists( 'CMB2_Bootstrap_212', false ) ) {
 	}
 
 	// Make it so...
-	CMB2_Bootstrap_212::initiate();
+	Bento_CMB2_Bootstrap_212::initiate();
 
 }

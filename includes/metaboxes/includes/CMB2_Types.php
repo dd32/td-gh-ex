@@ -289,13 +289,13 @@ class CMB2_Types {
 		$this->_desc( true, true, true );
 		?>
 
-		<div id="<?php echo $table_id; ?>" class="cmb-repeat-table cmb-nested">
+		<div id="<?php echo esc_html( $table_id ); ?>" class="cmb-repeat-table cmb-nested">
 			<div class="cmb-tbody cmb-field-list">
 				<?php $this->repeatable_rows(); ?>
 			</div>
 		</div>
 		<p class="cmb-add-row">
-			<button data-selector="<?php echo $table_id; ?>" class="cmb-add-row-button button"><?php echo esc_html( $this->_text( 'add_row_text', __( 'Add Row', 'bento' ) ) ); ?></button>
+			<button data-selector="<?php echo esc_html( $table_id ); ?>" class="cmb-add-row-button button"><?php echo esc_html( $this->_text( 'add_row_text', __( 'Add Row', 'bento' ) ) ); ?></button>
 		</p>
 
 		<?php
@@ -349,12 +349,12 @@ class CMB2_Types {
 		$disabled = $disable_remover ? ' button-disabled' : '';
 		?>
 
-		<div class="cmb-row <?php echo $class; ?>">
+		<div class="cmb-row <?php echo esc_html( $class ); ?>">
 			<div class="cmb-td">
 				<?php $this->_render(); ?>
 			</div>
 			<div class="cmb-td cmb-remove-row">
-				<button class="button cmb-remove-row-button<?php echo $disabled; ?>"><?php echo esc_html( $this->_text( 'remove_row_text', __( 'Remove', 'bento' ) ) ); ?></button>
+				<button class="button cmb-remove-row-button<?php echo esc_html( $disabled ); ?>"><?php echo esc_html( $this->_text( 'remove_row_text', __( 'Remove', 'bento' ) ) ); ?></button>
 			</div>
 		</div>
 
@@ -374,7 +374,7 @@ class CMB2_Types {
 			return '';
 		}
 
-		$desc = $this->field->args( 'description' );
+		$desc = esc_html( $this->field->args( 'description' ) );
 
 		if ( ! $desc ) {
 			return;
@@ -496,7 +496,7 @@ class CMB2_Types {
 		) );
 
 		wp_editor( $a['value'], $a['id'], $a['options'] );
-		echo $a['desc'];
+		echo esc_html( $a['desc'] );
 	}
 
 	public function text_date( $args = array() ) {
@@ -838,8 +838,8 @@ class CMB2_Types {
 
 		echo $this->input( array(
 			'class'           => 'cmb2-oembed regular-text',
-			'data-objectid'   => $this->field->object_id,
-			'data-objecttype' => $this->field->object_type,
+			'data-objectid'   => esc_html( $this->field->object_id ),
+			'data-objecttype' => esc_html( $this->field->object_type ),
 		) ),
 		'<p class="cmb-spinner spinner" style="display:none;"></p>',
 		'<div id="', $this->_id( '-status' ), '" class="cmb2-media-status ui-helper-clearfix embed_wrap">', $oembed, '</div>';
@@ -855,8 +855,8 @@ class CMB2_Types {
 			'type'  => 'hidden',
 			'class' => 'cmb2-upload-file cmb2-upload-list',
 			'size'  => 45, 'desc'  => '', 'value'  => '',
-			'data-previewsize' => is_array( $img_size ) ? sprintf( '[%s]', implode( ',', $img_size ) ) : 50,
-			'data-queryargs'   => ! empty( $query_args ) ? json_encode( $query_args ) : '',
+			'data-previewsize' => esc_html( is_array( $img_size ) ? sprintf( '[%s]', implode( ',', $img_size ) ) : 50 ),
+			'data-queryargs'   => esc_html( ! empty( $query_args ) ? json_encode( $query_args ) : '' ),
 		) ),
 		$this->input( array(
 			'type'  => 'button',
@@ -915,12 +915,12 @@ class CMB2_Types {
 		$input_type = array_key_exists( 'url', $options ) && false === $options['url'] ? 'hidden' : 'text';
 
 		echo $this->input( array(
-			'type'  => $input_type,
+			'type'  => esc_html( $input_type ),
 			'class' => 'cmb2-upload-file regular-text',
 			'size'  => 45,
 			'desc'  => '',
-			'data-previewsize' => is_array( $img_size ) ? '[' . implode( ',', $img_size ) . ']' : 350,
-			'data-queryargs'   => ! empty( $query_args ) ? json_encode( $query_args ) : '',
+			'data-previewsize' => esc_html( is_array( $img_size ) ? '[' . implode( ',', $img_size ) . ']' : 350 ),
+			'data-queryargs'   => esc_html( ! empty( $query_args ) ? json_encode( $query_args ) : '' ),
 		) );
 
 		printf( '<input class="cmb2-upload-button button" type="button" value="%s" />', esc_attr( $this->_text( 'add_upload_file_text', __( 'Add or Upload File', 'bento' ) ) ) );
@@ -954,7 +954,7 @@ class CMB2_Types {
 		echo $this->input( array(
 			'type'  => 'hidden',
 			'class' => 'cmb2-upload-file-id',
-			'value' => $_id_value,
+			'value' => esc_html( $_id_value ),
 			'desc'  => '',
 		) ),
 		'<div id="', $this->_id( '-status' ), '" class="cmb2-media-status">';

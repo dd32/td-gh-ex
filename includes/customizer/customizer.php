@@ -64,7 +64,17 @@ function bento_customizer_disabled_field() {
 	if ( get_option( 'bento_ep_license_status' ) == 'valid' ) {
 		$exp_link = '';
 	}
-	echo $exp_link;
+	echo wp_kses( $exp_link, 
+		array( 
+			'a' => array( 
+				'target' => array(), 
+				'href' => array(),
+			), 
+			'span' => array( 
+				'class' => array(),
+			),
+		) 
+	);
 }
 
 
@@ -122,7 +132,7 @@ function bento_sanitize_choices( $input, $setting ) {
 function bento_customize_register( $wp_customize ) {
 	
 	// Custom copyright control
-	class WP_Copyright_Customize_Control extends WP_Customize_Control {
+	class Bento_WP_Copyright_Customize_Control extends WP_Customize_Control {
 		public $type = 'text_copyright';
 		public function render_content() {
 			if ( ! empty( $this->label ) ) {
@@ -141,7 +151,7 @@ function bento_customize_register( $wp_customize ) {
 	}
 	
 	// Custom help section
-	class WP_Help_Customize_Control extends WP_Customize_Control {
+	class Bento_WP_Help_Customize_Control extends WP_Customize_Control {
 		public $type = 'text_help';
 		public function render_content() {
 			echo '
@@ -172,7 +182,7 @@ function bento_customize_register( $wp_customize ) {
 	}
 	
 	// This feature is available in the EP call
-	class WP_EP_Customize_Control extends WP_Customize_Control {
+	class Bento_WP_EP_Customize_Control extends WP_Customize_Control {
 		public $type = 'text_ep';
 		public function render_content() {
 			$exp_url = '<a href="http://satoristudio.net/bento-free-wordpress-theme/#expansion-pack" target="_blank">'.__( 'Expansion Pack', 'bento' ).'</a>';
@@ -207,7 +217,7 @@ function bento_customize_register( $wp_customize ) {
 		)
 	);
 	$wp_customize->add_control(
-		new WP_Help_Customize_Control(
+		new Bento_WP_Help_Customize_Control(
 		$wp_customize,
 		'bento_support', 
 			array(
@@ -228,7 +238,7 @@ function bento_customize_register( $wp_customize ) {
 		)
 	);
 	$wp_customize->add_control(
-		new WP_Copyright_Customize_Control(
+		new Bento_WP_Copyright_Customize_Control(
 		$wp_customize,
 		'bento_footer_copyright', 
 			array(
@@ -1637,7 +1647,7 @@ function bento_customize_register( $wp_customize ) {
 		)
 	);
 	$wp_customize->add_control(
-		new WP_EP_Customize_Control(
+		new Bento_WP_EP_Customize_Control(
 		$wp_customize,
 		'bento_ep_seo_upg', 
 			array(
@@ -1666,7 +1676,7 @@ function bento_customize_register( $wp_customize ) {
 		)
 	);
 	$wp_customize->add_control(
-		new WP_EP_Customize_Control(
+		new Bento_WP_EP_Customize_Control(
 		$wp_customize,
 		'bento_ep_analytics_upg', 
 			array(
@@ -1695,7 +1705,7 @@ function bento_customize_register( $wp_customize ) {
 		)
 	);
 	$wp_customize->add_control(
-		new WP_EP_Customize_Control(
+		new Bento_WP_EP_Customize_Control(
 		$wp_customize,
 		'bento_ep_popup_upg', 
 			array(
@@ -1724,7 +1734,7 @@ function bento_customize_register( $wp_customize ) {
 		)
 	);
 	$wp_customize->add_control(
-		new WP_EP_Customize_Control(
+		new Bento_WP_EP_Customize_Control(
 		$wp_customize,
 		'bento_ep_preloader_upg', 
 			array(

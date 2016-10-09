@@ -5,8 +5,8 @@
 <?php 
 // Define variables
 $bento_parent_page_id = get_the_ID();
-$bento_grid_mode = get_post_meta( $bento_parent_page_id, 'bento_page_grid_mode', true );
-$bento_grid_columns = get_post_meta( $bento_parent_page_id, 'bento_page_columns', true );
+$bento_grid_mode = esc_html( get_post_meta( $bento_parent_page_id, 'bento_page_grid_mode', true ) );
+$bento_grid_columns = esc_html( get_post_meta( $bento_parent_page_id, 'bento_page_columns', true ) );
 ?>
 
 <div class="bnt-container">

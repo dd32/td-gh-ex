@@ -22,7 +22,6 @@ function bento_theme_setup() {
 	add_action( 'admin_enqueue_scripts', 'bento_admin_scripts' );
 	add_action( 'template_redirect', 'bento_theme_adjust_content_width' );
 	add_action( 'wp_head', 'bento_favicon' );
-	add_action( 'wp_head', 'bento_google_font' );
 	add_action( 'get_header', 'bento_enable_threaded_comments' );
 	add_action( 'wp_ajax_dismiss_novice', 'bento_dismiss_novice' );
 	add_action( 'wp_ajax_nopriv_dismiss_novice', 'bento_dismiss_novice' );
@@ -104,6 +103,7 @@ function bento_theme_styles_scripts () {
 	// Enqueue styles
 	wp_enqueue_style( 'bento-theme' );
 	wp_enqueue_style( 'bento-fontawesome' );
+	wp_enqueue_style( 'bento-google-fonts', bento_google_fonts(), array(), null );
 		
 	// Passing php variables to theme scripts
 	bento_localize_scripts();

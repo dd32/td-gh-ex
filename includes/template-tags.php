@@ -3,28 +3,50 @@
 
 
 // Include Google Fonts
-if ( ! function_exists( 'bento_google_font' ) ) {
+if ( ! function_exists( 'bento_google_fonts' ) ) {
 	
-	function bento_google_font() {
-		$fonts = '';
-		$body_font = $headings_font = 'Open Sans';
+	function bento_google_fonts() {
+		
+		$fonts_url = '';
+		
+		// Define fonts based on Customizer settings
+		$body_font = $head_font = 'Open Sans';
 		if ( get_theme_mod( 'bento_font_body' ) != '' ) {
 			$body_font = get_theme_mod( 'bento_font_body' );
 		}
-		$body_font = str_replace( ' ', '+', $body_font );
-		$fonts .= '<link href="https://fonts.googleapis.com/css?family='.$body_font.':400,400italic,700&subset=cyrillic,latin-ext" rel="stylesheet" type="text/css">';
 		if ( get_theme_mod( 'bento_font_headings' ) != '' && get_theme_mod( 'bento_font_headings' ) != 'Open Sans' ) {
-			$headings_font = get_theme_mod( 'bento_font_headings' );
-			$headings_font = str_replace( ' ', '+', $headings_font );
-			$fonts .= '<link href="https://fonts.googleapis.com/css?family='.$headings_font.':400,700&subset=cyrillic,latin-ext" rel="stylesheet" type="text/css">';
+			$head_font = get_theme_mod( 'bento_font_headings' );
 		}
 		$menu_font = 'Montserrat';
 		if ( get_theme_mod( 'bento_font_menu' ) != '' ) {
 			$menu_font = get_theme_mod( 'bento_font_menu' );
 		}
-		$menu_font = str_replace( ' ', '+', $menu_font );
-		$fonts .= '<link href="https://fonts.googleapis.com/css?family='.$menu_font.':400&subset=cyrillic,latin-ext" rel="stylesheet" type="text/css">';
-		echo $fonts;
+		
+		// Translators: if there are characters in your language that are not supported by chosen font, translate this to 'off'.
+		$body_font_on = _x( 'on', 'Google Font for body text: on or off', 'bento' );
+		$head_font_on = _x( 'on', 'Google Font for heading text: on or off', 'bento' );
+		$menu_font_on = _x( 'on', 'Google Font for menu text: on or off', 'bento' );
+		
+		// Construct url query based on chosen fonts
+		if ( 'off' !== $body_font_on || 'off' !== $head_font_on || 'off' !== $menu_font_on ) {
+			$font_families = array();
+			if ( 'off' !== $body_font_on ) {
+				$font_families[] = $body_font.':400,700,400italic';
+			}
+			if ( 'off' !== $head_font_on ) {
+				$font_families[] = $head_font.':400,700,400italic';
+			}
+			if ( 'off' !== $menu_font_on ) {
+				$font_families[] = $menu_font.':400,700';
+			}
+			$query_args = array(
+				'family' => urlencode( implode( '|', $font_families ) ),
+				'subset' => urlencode( 'cyrillic,latin-ext' ),
+			);
+			$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+		}
+
+		return esc_url_raw( $fonts_url );
         
 	}
 	
@@ -523,7 +545,7 @@ if ( ! function_exists( 'bento_entry_meta' ) ) {
 		}
 		$post_meta = $post_author . $post_date . $post_categories . $post_comments;
 		if ( get_post_type() == 'post' ) {
-			echo $post_meta;
+			echo wp_kses( $post_meta, array( 'span' => array( 'class' => array() ), 'i' => array() ) );
 		}
 		
 		edit_post_link( __( 'Edit this', 'bento' ), '<div class="edit-this">', '</div>' );
@@ -716,18 +738,30 @@ if ( ! function_exists( 'bento_quote_format_content' ) ) {
 if ( ! function_exists( 'bento_copyright' ) ) {
 
 	function bento_copyright() {
-		$author = 'Bento WordPress '.__( 'theme', 'bento' );
+		$author = 'Bento WordPress '.__( 'Theme', 'bento' );
 		if ( is_front_page() ) {
-			$author = '<a href="http://satoristudio.net/bento-free-wordpress-theme" target="blank" title="Bento">Bento WordPress '.__( 'theme', 'bento' ).'</a>';
+			$author = '<a href="http://satoristudio.net/bento-free-wordpress-theme" target="blank" title="Bento WordPress theme">Bento</a> WordPress '.__( 'Theme', 'bento' );
 		}
 		$copyright = '<div class="footer-copyright">';
 		if ( get_option( 'bento_ep_license_status' ) == 'valid' && get_theme_mod( 'bento_footer_copyright' ) != '' ) {
 			$copyright .= get_theme_mod( 'bento_footer_copyright' );
 		} else {
-			$copyright .= '&#169; '.date('Y').' '.$author.' - Satori Studio';
+			$copyright .= '&#169; '.date('Y').' '.$author;
 		}
 		$copyright .= '</div>';
-		echo $copyright;
+		echo wp_kses( $copyright, 
+			array( 
+				'a' => array( 
+					'target' => array(), 
+					'href' => array(),
+					'title' => array(),
+				),
+				'div' => array(
+					'class' => array(),
+				),
+				'span' => array(),
+			)
+		);
 	}
 	
 }
@@ -743,7 +777,7 @@ if ( ! function_exists( 'bento_ajax_load_more' ) ) {
 		$class = 'grid-ajax-load-more';
 	}
 	?>
-		<a class="ajax-load-more <?php echo $class; ?>">
+		<a class="ajax-load-more <?php echo esc_html( $class ); ?>">
 			<?php _e( 'Load more', 'bento' ); ?>
         </a>
         <div class="spinner-ajax">
