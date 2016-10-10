@@ -15,7 +15,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: 404.php:23
 msgid "That page can't be found."
@@ -120,7 +120,7 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: content-page.php:30, content-single.php:39, content.php:48, templates/template-full-notitle.php:27
+#: content-page.php:30, content-single.php:39, content.php:49, templates/template-full-notitle.php:27
 msgid "Pages:"
 msgstr ""
 
@@ -130,6 +130,10 @@ msgstr ""
 
 #: content.php:30
 msgid "Permalink to %s"
+msgstr ""
+
+#: content.php:47, inc/settings.php:351, inc/template-tags.php:514, loops/loop-circleicon.php:22, loops/loop-grid.php:24
+msgid "Continue reading"
 msgstr ""
 
 #: fontawesome/icon-sections.php:4
@@ -244,15 +248,15 @@ msgstr ""
 msgid "Back To Top"
 msgstr ""
 
-#: functions.php:578
+#: functions.php:580
 msgid "SiteOrigin Page Builder"
 msgstr ""
 
-#: functions.php:583
+#: functions.php:585
 msgid "SiteOrigin Widgets Bundle"
 msgstr ""
 
-#: functions.php:588
+#: functions.php:590
 msgid "SiteOrigin CSS"
 msgstr ""
 
@@ -350,9 +354,11 @@ msgstr ""
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: inc/class-tgm-plugin-activation.php:388
+#: inc/class-tgm-plugin-activation.php:388, inc/class-tgm-plugin-activation.php:2952
 msgid "The following plugin was activated successfully:"
-msgstr ""
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
 
 #: inc/class-tgm-plugin-activation.php:390
 msgid "No action taken. Plugin %1$s was already active."
@@ -573,12 +579,6 @@ msgstr ""
 #: inc/class-tgm-plugin-activation.php:2934
 msgid "No plugins are available to be activated at this time."
 msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2952
-msgid "The following plugin was activated successfully:"
-msgid_plural "The following plugins were activated successfully:"
-msgstr[0] ""
-msgstr[1] ""
 
 #: inc/class-tgm-plugin-activation.php:3158
 msgid "Plugin activation failed."
@@ -921,7 +921,7 @@ msgid "Checkout Button Border Color"
 msgstr ""
 
 #: inc/customizer.php:513
-msgid " Masthead Sidebar Widget Titles"
+msgid " Masthead Widget Titles"
 msgstr ""
 
 #: inc/customizer.php:520
@@ -1642,10 +1642,6 @@ msgstr ""
 
 #: inc/settings.php:311
 msgid "Call me! Maybe?"
-msgstr ""
-
-#: inc/settings.php:351
-msgid "Continue reading"
 msgstr ""
 
 #: inc/settings.php:406
