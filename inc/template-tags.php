@@ -7,6 +7,29 @@
  * @license GPL 2.0
  */
 
+if ( ! function_exists( 'puro_author_box' ) ) :
+/**
+ * Displays the author author biographical info on single posts.
+ */
+function puro_author_box() { ?>
+	<div class="author-box">
+		<div class="author-avatar">
+			<?php echo get_avatar( get_the_author_meta( 'ID' ), 120 ); ?>
+		</div>
+		<div class="author-description">
+			<h3><?php echo get_the_author(); ?></h3>
+			<span class="author-posts">
+				<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
+					<?php esc_html_e( 'View posts by ', 'puro' );
+					echo get_the_author(); ?>
+				</a>
+			</span>		
+			<div><?php echo wp_kses( get_the_author_meta( 'description' ), null ); ?></div>
+		</div>
+	</div>
+<?php }
+endif;
+
 if ( ! function_exists( 'puro_pagination' ) ) :
 /**
  * Display post pagination where applicable.

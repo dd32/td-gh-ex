@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Puro\n"
-"POT-Creation-Date: 2016-09-27 12:42+0200\n"
+"POT-Creation-Date: 2016-10-08 18:41+0200\n"
 "PO-Revision-Date: 2015-06-10 19:10+0200\n"
 "Last-Translator: Puro <support@purothemes.com>\n"
 "Language-Team: \n"
@@ -103,30 +103,38 @@ msgid ""
 "<a href=\"%s\" title=\"A Free WordPress Theme by Puro\">Theme by Puro</a>"
 msgstr ""
 
-#: ../functions.php:94
+#: ../functions.php:93
 msgid "Primary Menu"
 msgstr ""
 
-#: ../functions.php:95
+#: ../functions.php:94
 msgid "Social Network Icon Menu"
 msgstr ""
 
-#: ../functions.php:139 ../premium/inc/customizer.php:32
+#: ../functions.php:138 ../premium/inc/customizer.php:32
 msgid "Sidebar"
 msgstr ""
 
-#: ../functions.php:148 ../inc/settings.php:26 ../premium/inc/customizer.php:37
+#: ../functions.php:140
+msgid "Visible on posts and pages that use the default template."
+msgstr ""
+
+#: ../functions.php:147 ../inc/settings.php:26 ../premium/inc/customizer.php:37
 msgid "Footer"
 msgstr ""
 
-#: ../functions.php:218
+#: ../functions.php:149
+msgid "A column will be automatically assigned to each widget inserted."
+msgstr ""
+
+#: ../functions.php:217
 #, php-format
 msgid ""
 "You may use these <abbr title=\"HyperText Markup Language\">HTML</abbr> tags "
 "and attributes: %s"
 msgstr ""
 
-#: ../functions.php:240 ../functions.php:297 ../inc/settings.php:209
+#: ../functions.php:239 ../functions.php:296 ../inc/settings.php:213
 msgid "Continue reading"
 msgstr ""
 
@@ -149,29 +157,6 @@ msgstr ""
 
 #: ../inc/customizer/customizer.php:616
 msgid "Reset Customizations"
-msgstr ""
-
-#: ../inc/extras.php:83
-#, php-format
-msgid "Page %s"
-msgstr ""
-
-#: ../inc/legacy.php:5 ../inc/legacy.php:6 ../inc/settings/settings.php:407
-msgid "Theme Settings"
-msgstr ""
-
-#: ../inc/legacy.php:17
-msgid "Puro Theme Settings Have Moved"
-msgstr ""
-
-#: ../inc/legacy.php:19
-msgid "Our theme settings now take advantage of the WordPress Customizer."
-msgstr ""
-
-#: ../inc/legacy.php:20
-msgid ""
-"Navigate to <strong>Appearance > Customize > Theme Settings</strong> to "
-"access theme settings."
 msgstr ""
 
 #: ../inc/metaslider.php:6
@@ -680,73 +665,81 @@ msgid "Display the post comment count."
 msgstr ""
 
 #: ../inc/settings.php:146
-msgid "Post Edit Link"
+msgid "Post Author Box"
 msgstr ""
 
 #: ../inc/settings.php:147
+msgid "Display the post author biographical info."
+msgstr ""
+
+#: ../inc/settings.php:150
+msgid "Post Edit Link"
+msgstr ""
+
+#: ../inc/settings.php:151
 msgid ""
 "Display an Edit link below post content. Visible if a user is logged in and "
 "allowed to edit the content. Also applies to Pages."
 msgstr ""
 
-#: ../inc/settings.php:151
+#: ../inc/settings.php:155
 msgid "Comment Form Allowed Tags"
 msgstr ""
 
-#: ../inc/settings.php:152
+#: ../inc/settings.php:156
 msgid ""
 "Display the explanatory text below the comment form that lets users know "
 "which HTML tags may be used."
 msgstr ""
 
-#: ../inc/settings.php:155 ../premium/inc/settings.php:21
+#: ../inc/settings.php:159 ../premium/inc/settings.php:21
 #: ../upgrade/upgrade.php:34
 msgid "AJAX Comments"
 msgstr ""
 
-#: ../inc/settings.php:156 ../premium/inc/settings.php:22
+#: ../inc/settings.php:160 ../premium/inc/settings.php:22
 msgid "Allow users to submit comments without a page re-load on submit."
 msgstr ""
 
-#: ../inc/settings.php:160 ../upgrade/upgrade.php:40
+#: ../inc/settings.php:164 ../upgrade/upgrade.php:40
 msgid "Post and Page Sharing"
 msgstr ""
 
-#: ../inc/settings.php:161 ../premium/inc/settings.php:27
+#: ../inc/settings.php:165 ../premium/inc/settings.php:27
 msgid ""
 "Show icons to share your posts on Facebook, Twitter, Google+ and LinkedIn."
 msgstr ""
 
-#: ../inc/settings.php:165
+#: ../inc/settings.php:169
 msgid "Footer Copyright Text"
 msgstr ""
 
-#: ../inc/settings.php:166
+#: ../inc/settings.php:170
 msgid ""
 "{site-title}, {copyright} and {year} can be used to display your website "
 "title, a copyright symbol and the current year."
 msgstr ""
 
-#: ../inc/settings.php:170 ../premium/inc/settings.php:40
+#: ../inc/settings.php:174 ../premium/inc/settings.php:40
 msgid "Footer Attribution Link"
 msgstr ""
 
-#: ../inc/settings.php:171 ../premium/inc/settings.php:41
+#: ../inc/settings.php:175 ../premium/inc/settings.php:41
 msgid ""
 "Remove the theme attribution link from your footer without editing any code."
 msgstr ""
 
-#: ../inc/settings.php:174
+#: ../inc/settings.php:178
 msgid "Enqueue JavaScript in Footer"
 msgstr ""
 
-#: ../inc/settings.php:175
+#: ../inc/settings.php:179
 msgid ""
 "Enqueue theme JavaScript files in the footer. Doing so can improve site load "
 "time."
 msgstr ""
 
-#: ../inc/settings.php:227
+#: ../inc/settings.php:232
 msgid "Copyright {year}"
 msgstr ""
 
@@ -890,6 +883,10 @@ msgstr ""
 msgid "Taxonomy"
 msgstr ""
 
+#: ../inc/settings/settings.php:407
+msgid "Theme Settings"
+msgstr ""
+
 #: ../inc/settings/settings.php:408
 msgid "Change settings for your theme."
 msgstr ""
@@ -898,47 +895,51 @@ msgstr ""
 msgid "SiteOrigin Premium"
 msgstr ""
 
-#: ../inc/template-tags.php:21
+#: ../inc/template-tags.php:23
+msgid "View posts by "
+msgstr ""
+
+#: ../inc/template-tags.php:44
 msgid "Posts navigation"
 msgstr ""
 
-#: ../inc/template-tags.php:36
+#: ../inc/template-tags.php:59
 msgid "Previous"
 msgstr ""
 
-#: ../inc/template-tags.php:37
+#: ../inc/template-tags.php:60
 msgid "Next"
 msgstr ""
 
-#: ../inc/template-tags.php:63
+#: ../inc/template-tags.php:86
 msgid "Post navigation"
 msgstr ""
 
-#: ../inc/template-tags.php:66 ../inc/template-tags.php:67
+#: ../inc/template-tags.php:89 ../inc/template-tags.php:90
 msgid "%title"
 msgstr ""
 
-#: ../inc/template-tags.php:82
+#: ../inc/template-tags.php:105
 msgid "Sticky"
 msgstr ""
 
-#: ../inc/template-tags.php:98 ../inc/template-tags.php:102
+#: ../inc/template-tags.php:121 ../inc/template-tags.php:125
 msgid ", "
 msgstr ""
 
-#: ../inc/template-tags.php:107
+#: ../inc/template-tags.php:130
 msgid "Leave a comment"
 msgstr ""
 
-#: ../inc/template-tags.php:107
+#: ../inc/template-tags.php:130
 msgid "1 Comment"
 msgstr ""
 
-#: ../inc/template-tags.php:107
+#: ../inc/template-tags.php:130
 msgid "% Comments"
 msgstr ""
 
-#: ../inc/template-tags.php:149
+#: ../inc/template-tags.php:172
 #, php-format
 msgid "%s Logo"
 msgstr ""

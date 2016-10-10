@@ -1,6 +1,7 @@
 === Puro ===
 
 Contributors: Misplon
+
 Tags: one-column, two-columns, right-sidebar, custom-menu, featured-images, footer-widgets, full-width-template, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog
 
 Requires at least: 4.1
@@ -110,10 +111,14 @@ HTML5 Shiv, Copyright 2014 Alexander Farkas (aFarkas)
 Licensed under a dual license system (MIT or GPL version 2)
 Source: https://github.com/aFarkas/html5shiv
 
+Normalize.css, Copyright Nicolas Gallagher and Jonathan Neal
+Licensed under the [MIT License](http://opensource.org/licenses/MIT)
+Source: https://github.com/necolas/normalize.css/
+
 Selectivizr, Copyright Keith Clark
 Licensed under the MIT License
 Source: https://github.com/keithclark/selectivizr
 
-== SiteOrigin Extras ==
+== SiteOrigin Settings ==
 
-This theme makes use of the SiteOrigin Settings and Extras Framework contained in the folders inc/settings and extras/. All code is licensed under GPL 2.0 and copyright 2013 Greg Priday unless otherwise stated in the file header. 
+This theme makes use of the SiteOrigin Settings Framework contained in the /inc folder. All code is licensed under GPL 2.0 and copyright 2013 Greg Priday unless otherwise stated in the file header. 

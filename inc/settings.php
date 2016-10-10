@@ -142,6 +142,10 @@ function puro_theme_settings(){
 	$settings->add_field('blog', 'post_comment_count', 'checkbox', __('Post Comment Count', 'puro'), array(
 		'description' => __('Display the post comment count.', 'puro')
 	));	
+
+	$settings->add_field('blog', 'post_author_box', 'checkbox', __('Post Author Box', 'puro'), array(
+		'description' => __('Display the post author biographical info.', 'puro')
+	));		
     
 	$settings->add_field( 'blog', 'edit_link', 'checkbox', __( 'Post Edit Link', 'puro' ), array(
 		'description' => __( 'Display an Edit link below post content. Visible if a user is logged in and allowed to edit the content. Also applies to Pages.', 'puro' )
@@ -214,7 +218,8 @@ function puro_theme_setting_defaults($defaults){
 	$defaults['blog_post_author'] = true;
 	$defaults['blog_post_cats'] = true;
 	$defaults['blog_post_tags'] = true;	
-	$defaults['blog_post_comment_count'] = true;			
+	$defaults['blog_post_comment_count'] = true;
+	$defaults['blog_post_author_box'] = false;			
 	$defaults['blog_edit_link'] = true;
 
 	$defaults['comments_comment_form_tags'] = true;		

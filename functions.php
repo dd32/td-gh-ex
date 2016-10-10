@@ -7,7 +7,7 @@
  * @license GPL 2.0
  */
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.0.9.2' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.1' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://updates.purothemes.com' );
 define( 'SITEORIGIN_THEME_JS_PREFIX', defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min' );
 
@@ -27,7 +27,6 @@ include get_template_directory() . '/inc/update/update.php';
 // Load the theme specific files.
 include get_template_directory() . '/inc/extras.php';
 include get_template_directory() . '/inc/jetpack.php';
-include get_template_directory() . '/inc/legacy.php';
 include get_template_directory() . '/inc/metaslider.php';
 include get_template_directory() . '/inc/plugin-activation/plugin-activation.php';
 include get_template_directory() . '/inc/settings.php';
@@ -136,18 +135,18 @@ add_action( 'after_setup_theme', 'puro_setup' );
  */
 function puro_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'puro' ),
+		'name'          => esc_html__( 'Sidebar', 'puro-themes' ),
 		'id'            => 'sidebar-1',
-		'description'	=> 'Visible on posts and pages that use the default template.',
+		'description'	=> esc_html__( 'Visible on posts and pages that use the default template.', 'puro' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Footer', 'puro' ),
+		'name'          => esc_html__( 'Footer', 'puro' ),
 		'id'            => 'sidebar-2',
-		'description'	=> 'A column will be automatically assigned to each widget inserted.',
+		'description'	=> esc_html__( 'A column will be automatically assigned to each widget inserted.', 'puro' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',
