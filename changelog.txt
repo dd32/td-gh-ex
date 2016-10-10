@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.1.1 - 10 October 2016 =
+* Fix incorrect text domain.
+
 = 1.1 - 10 October 2016 =
 * Added a single post author box which can be enabled from Theme Settings > Blog.
 * Removed legacy WordPress functions no longer required.

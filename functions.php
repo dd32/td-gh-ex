@@ -7,7 +7,7 @@
  * @license GPL 2.0
  */
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.1' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.1.1' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://updates.purothemes.com' );
 define( 'SITEORIGIN_THEME_JS_PREFIX', defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min' );
 
@@ -135,7 +135,7 @@ add_action( 'after_setup_theme', 'puro_setup' );
  */
 function puro_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'puro-themes' ),
+		'name'          => esc_html__( 'Sidebar', 'puro' ),
 		'id'            => 'sidebar-1',
 		'description'	=> esc_html__( 'Visible on posts and pages that use the default template.', 'puro' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',

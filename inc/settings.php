@@ -237,15 +237,15 @@ function puro_theme_setting_defaults($defaults){
 }
 add_filter('siteorigin_settings_defaults', 'puro_theme_setting_defaults');
 
-function puro_blog_layout_options(){
+function puro_blog_layout_options() {
 	$layouts = array();
-	foreach( glob(get_template_directory().'/loops/loop-*.php') as $template ) {
+	foreach ( glob( get_template_directory().'/loops/loop-*.php') as $template ) {
 		$headers = get_file_data( $template, array(
 			'loop_name' => 'Loop Name',
 		) );
 
-		preg_match('/loop\-(.*?)\.php/', basename($template), $matches);
-		if(!empty($matches[1])) {
+		preg_match( '/loop\-(.*?)\.php/', basename( $template ), $matches );
+		if ( ! empty( $matches[1] ) ) {
 			$layouts[$matches[1]] = $headers['loop_name'];
 		}
 	}
