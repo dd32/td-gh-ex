@@ -5,14 +5,13 @@
 	Since Searchlight 1.0
 */
 
-// 	Tell WordPress for wp_title in order to modify document title content
-	function searchlight_filter_wp_title( $title ) {
-    $site_name = get_bloginfo( 'name' );
-    $filtered_title = $site_name . $title;
-    return $filtered_title;
-	}
-	add_filter( 'wp_title', 'searchlight_filter_wp_title' );
+	require_once ( trailingslashit(get_template_directory()) . 'inc/customize.php' );
 	
+	function searchlight_about_page() { 
+	add_theme_page( 'Searchlight Options', 'Searchlight Options', 'edit_theme_options', 'theme-about', 'searchlight_theme_about' ); 
+	}
+	add_action('admin_menu', 'searchlight_about_page');
+	function searchlight_theme_about() {  require_once ( trailingslashit(get_template_directory()) . 'inc/theme-about.php' ); }
 
 	function searchlight_setup() {
 //	Theme TextDomain for the Language File
@@ -28,8 +27,7 @@
 
 // 	Tell WordPress for the Feed Link
 	add_theme_support( 'automatic-feed-links' );
-	add_editor_style();
-	add_theme_support( "title-tag" );
+	add_theme_support( 'title-tag' );
 // 	This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 150, 150, true ); // default Post Thumbnail dimensions (cropped)
@@ -62,19 +60,28 @@
 // 	Functions for adding script
 	function searchlight_enqueue_scripts() { 
 	wp_enqueue_style('searchlight-style', get_stylesheet_uri(), false );
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) { 
-		wp_enqueue_script( 'comment-reply' ); 
-	}
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {  wp_enqueue_script( 'comment-reply' );  }
 
-	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'searchlight-menu-style', get_template_directory_uri(). '/js/menu.js' );
+	wp_enqueue_script( 'searchlight-menu-style', get_template_directory_uri(). '/js/menu.js', array( 'jquery' ) );
 	wp_register_style('searchlight-gfonts1', '//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800', false );
 	wp_enqueue_style('searchlight-gfonts1');
 	wp_register_style('searchlight-gfonts2', '//fonts.googleapis.com/css?family=Monda:400,700', false );
 	wp_enqueue_style('searchlight-gfonts2');
+	
+	wp_enqueue_script( 'searchlight-fixed-header', get_template_directory_uri(). '/js/fixedheader.js', array( 'jquery' ));
+	
+	if (is_front_page() || is_page_template( 'front-page.php' ) ): 
+	wp_enqueue_script( 'searchlight-flex-js', get_template_directory_uri(). '/js/jquery.flexslider.js', array( 'jquery' ) );
+	wp_enqueue_style('searchlight-flex-css', get_template_directory_uri(). '/css/flexslider.css' );
+	endif;	
+	
 	wp_enqueue_style('searchlight-responsive', get_template_directory_uri(). '/style-responsive.css' );
 	}
 	add_action( 'wp_enqueue_scripts', 'searchlight_enqueue_scripts' );
+	
+	// 	Functions for adding script to Admin Area
+	function searchlight_admin_style() { wp_enqueue_style( 'searchlight_admin_css', get_template_directory_uri() . '/inc/admin-style.css', false ); }
+	add_action( 'admin_enqueue_scripts', 'searchlight_admin_style' );
 	
 function searchlight_creditline () {
 	echo '&copy; ' . date("Y"). ': ' . get_bloginfo( 'name' ). '<span class="credit"> | Searchlight ' . __('Theme by:', 'searchlight') . ' <a href="'.  esc_url('http://d5creation.com/theme/searchlight/') .'" target="_blank"> D5 Creation</a> | ' . __('Powered by:', 'searchlight') . ' <a href="http://wordpress.org" target="_blank">WordPress</a>';
@@ -213,95 +220,4 @@ function searchlight_creditline () {
             return $title;
         }
     }
-	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
-	require_once dirname( __FILE__ ) . '/inc/options-framework.php';
-	require_once get_template_directory() . '/inc/options.php';
-	function searchlight_custom_code() { 
-?>
-	
-	<style type="text/css">
-	.site-title, 
-	.site-title:active, 
-	.site-title:hover { color: #<?php echo get_header_textcolor(); ?>; }
-	}
-			
-	<?php 
-	if (esc_html(of_get_option('colorcssaccept', '0')) == '1') :
-	$color1 = esc_html(of_get_option('color1', '#149755'));
-	$color2 = esc_html(of_get_option('color2', '#05D24D'));
-	$color3 = esc_html(of_get_option('color3', '#03D56B'));
-	
-echo ' 
 
-	#header, .bqpcontainer .featured-box, .vidtitle span { border-color: '.$color1.'; }
-	#searchlight-top-menu #searchsubmit, .heading2 em, .read-more, .page-link a, .flex-direction-nav li a:hover:before { background-color: '.$color1.'; }
-	a, .widget h3, #heading1 em, .heading-desc3, .vidtitle h2, .vidtitle span:before, .statitem  h3, .boxtopicon, .flexslider.main-slider .flex-direction-nav li a:hover:before, .bqpcontainer .featured-box:hover h3.ftitle, .searchinfo h1.page-title { color: '.$color1.';}
-	#searchlight-main-menu a{color:'.$color2.';}
-	#searchlight-main-menu .menu-item-home a:hover,
-	#searchlight-main-menu a:hover,
-	#searchlight-main-menu .selected a,
-	#searchlight-main-menu .current-menu-item > a,
-	#searchlight-main-menu .current-menu-ancestor > a,
-	#searchlight-main-menu .current_page_item > a,
-	#searchlight-main-menu .current_page_ancestor > a,
-	#searchlight-main-menu ul ul,
-	.sub-menu, .sub-menu ul ul, .go-top {background-color: '.$color2.';}
-	button,
-	input[type="reset"],
-	input[type="button"],
-	input[type="submit"],
-	.contactcontainer input[type="submit"]{  background: '.$color2.'; background-image: -webkit-linear-gradient(top, '.$color2.', '.$color3.'); background-image: 	-moz-linear-gradient(top, '.$color2.', '.$color3.');   background-image: -ms-linear-gradient(top, '.$color2.', '.$color3.'); background-image: -o-linear-gradient(top, '.$color2.', '.$color3.'); background-image: linear-gradient(to bottom, '.$color2.', '.$color3.'); }
-	button:hover,
-	input[type="reset"]:hover,
-	input[type="button"]:hover,
-	input[type="submit"]:hover,
-	.contactcontainer input[type="submit"]:hover { background: '.$color3.'; background-image: -webkit-linear-gradient(top, '.$color3.', '.$color2.'); background-image: 	-moz-linear-gradient(top, '.$color3.', '.$color2.');   background-image: -ms-linear-gradient(top, '.$color3.', '.$color2.'); background-image: -o-linear-gradient(top, '.$color3.', '.$color2.'); background-image: linear-gradient(to bottom, '.$color3.', '.$color2.'); }
-	a:hover, h1.page-title, h1.arc-post-title, h3.arc-src, #comments .comment-author cite a, #respond .required,.site-title, .site-title:active, .site-title:hover { color:'.$color3.'; }
-	.bqpcontainer .featured-box:hover { border-color: '.$color3.'; }
-	.bqpcontainer .featured-box:hover .read-more, .read-more:hover, .flex-direction-nav li a:before {  background-color: '.$color3.'; }
-	#right-sidebar .widget-title, h1.page-title { background: ' . $color3 . ';
-	background: -webkit-linear-gradient(-45deg, ' . $color1 . ' 50%, ' . $color3 . ' 50%);
-	background: -moz-inear-gradient(-45deg, ' . $color1 . ' 50%, ' . $color3 . ' 50%);
-	background: -o-linear-gradient(-45deg, ' . $color1 . ' 50%, ' . $color3 . ' 50%);
-	background: -ms-linear-gradient(-45deg, ' . $color1 . ' 50%, ' . $color3 . ' 50%);
-	background: linear-gradient(-45deg, ' . $color1 . ' 50%, ' . $color3 . ' 50%);
-	background-size: 110% 100%;
-	}
-
-
-';
-endif;
-	
-	echo '
-	#right-sidebar .widget{ background: -webkit-linear-gradient(-45deg, #EEEEEE 50%, #DDDDDD 50%); background: -moz-inear-gradient(-45deg, #EEEEEE 50%, #DDDDDD 50%); background: -o-linear-gradient(-45deg, #EEEEEE 50%, #DDDDDD 50%); background: -ms-linear-gradient(-45deg, #EEEEEE 50%, #DDDDDD 50%); background: linear-gradient(-45deg, #EEEEEE 50%, #DDDDDD 50%); background-size: 100% 100%; }
-	#footer{ background: -webkit-linear-gradient(-45deg, #252525 50%, #373737 50%); background: -moz-inear-gradient(-45deg, #252525 50%, #373737 50%); background: -o-linear-gradient(-45deg, #252525 50%, #373737 50%); background: -ms-linear-gradient(-45deg, #252525 50%, #373737 50%); background: linear-gradient(-45deg, #252525 50%, #373737 50%); background-size: 100% 100%; }
-	.social a { background: -webkit-linear-gradient(-45deg, #111111 50%, rgba(0, 0, 0, 0.15) 50%); background: -moz-inear-gradient(-45deg, #111111 50%, rgba(0, 0, 0, 0.15) 50%); 	background: -o-linear-gradient(-45deg, #111111 50%, rgba(0, 0, 0, 0.15) 50%); background: -ms-linear-gradient(-45deg, #111111 50%, rgba(0, 0, 0, 0.15) 50%); background: linear-gradient(-45deg, #111111 50%, rgba(0, 0, 0, 0.15) 50%); background-size: 100% 100%; }
-	#right-sidebar .widget-title, h1.page-title { background: #05d24d; background: -webkit-linear-gradient(-45deg, #05d24d 50%, #149755 50%); background: -moz-inear-gradient(-45deg, #05d24d 50%, #149755 50%); background: -o-linear-gradient(-45deg, #05d24d 50%, #149755 50%); background: -ms-linear-gradient(-45deg, #05d24d 50%, #149755 50%); background: linear-gradient(-45deg, #05d24d 50%, #149755 50%); background-size: 110% 100%; }
-	';
-	
-	
-	if (esc_html(of_get_option('header-fixed', '1')) != '1') : echo '#header { z-index:99991; position:relative; } .headerheight { display: none; }' ; endif; 
-	if (esc_html(of_get_option('site-layout', '2c-r-fixed')) == '1col-fixed') : echo '#content { width: 100%; } #right-sidebar { display: none; } .bqpcontainer .featured-box { width: 29.7%; }' ; endif; 
-	if (esc_html(of_get_option('site-layout', '2c-r-fixed')) == '2c-l-fixed') : echo '#content { float: right; } #right-sidebar { float: left; }' ; endif; 
-	echo '.heading3container { background-image: url("'. of_get_option('heading3back', get_template_directory_uri() . '/images/heading3back.png') .'"); }' ; 
-	if ( 'posts' != get_option( 'show_on_front' )): echo '.f-blog-page h1.page-title { display: none; }'; endif; 
-	if ( is_admin_bar_showing() && esc_html(of_get_option('header-fixed', '1')) == '1' ): echo '#header { top: 32px; }'; endif;
-
-	
-
-	?> 
-	</style>
-	
-<?php 
-	
-	}
-	
-	add_action('wp_head', 'searchlight_custom_code');
-	
-	
-	
-	
-	
-	
-	
-	

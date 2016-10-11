@@ -9,19 +9,14 @@
 ?>
 
 <?php get_header(); ?>
-<div class="clear"></div>
-<?php if ( esc_url(of_get_option('banner-image', get_template_directory_uri() . '/images/banner.jpg')) != '' ) : ?>
-<div class="bannerimage"><img src="<?php echo esc_url(of_get_option('banner-image', get_template_directory_uri() . '/images/banner.jpg')); ?>" /></div>
-<?php endif; ?>
-<div class="clear"></div>
+<?php get_template_part( 'fpslide' ); ?>
 <?php if ( 'posts' == get_option( 'show_on_front' ) ): ?>
 <div id="fpblog-box-item" class="box100 bqpcontainer" >
 	<div class="box90">
     <div id="content">	
-        <div class="featured-boxs" data-scroll-reveal="enter bottom, move 40px, over 2s, wait 0.2s">
+        <div class="featured-boxs">
 
 			<?php  if (have_posts()) : while (have_posts()) : the_post(); ?>
-
 
 			<div class="featured-box view effect"><a href="<?php the_permalink(); ?>" target="_blank" ><div class="fpthumb"><?php the_post_thumbnail('searchlight-fpage-thumb'); ?></div><h3 class="ftitle"><?php the_title(); ?></h3></a><div class="fppost-content"><?php $searchlight_excerpt_length=20; the_excerpt(); ?></div></div>
 
@@ -30,8 +25,8 @@
 		<?php endif; wp_reset_query(); ?>
 		
         </div>
-		</div>
-        <?php get_sidebar(); ?>
+	</div>
+    <?php get_sidebar(); ?>
 	
     </div>
 </div>

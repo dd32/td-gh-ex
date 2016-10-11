@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Innovation Lite\n"
-"POT-Creation-Date: 2016-04-30 19:52+0600\n"
+"POT-Creation-Date: 2016-10-12 00:51+0600\n"
 "PO-Revision-Date: 2015-10-29 02:02+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7\n"
+"X-Generator: Poedit 1.8.9\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -68,356 +68,186 @@ msgstr ""
 msgid "Comments are Closed"
 msgstr ""
 
-#: functions.php:22
-msgid "Main Menu"
-msgstr ""
-
-#: functions.php:22
-msgid "Top Menu"
-msgstr ""
-
-#: functions.php:80
-msgid "Theme by:"
-msgstr ""
-
-#: functions.php:80
-msgid "Powered by:"
-msgstr ""
-
-#: functions.php:96 functions.php:102
+#: fpslide.php:25 functions.php:103 functions.php:109
 msgid "Read More"
 msgstr ""
 
-#: functions.php:116
+#: functions.php:21 header.php:34
+msgid "Main Menu"
+msgstr ""
+
+#: functions.php:21
+msgid "Top Menu"
+msgstr ""
+
+#: functions.php:87
+msgid "Theme by:"
+msgstr ""
+
+#: functions.php:87
+msgid "Powered by:"
+msgstr ""
+
+#: functions.php:123
 msgid "Edit"
 msgstr ""
 
-#: functions.php:126
+#: functions.php:133
 msgid "SORRY, NOT FOUND ANYTHING"
 msgstr ""
 
-#: functions.php:127
+#: functions.php:134
 msgid "You Can Try Another Search..."
 msgstr ""
 
-#: functions.php:129
+#: functions.php:136
 msgid "&laquo; Or Return to the Home Page"
 msgstr ""
 
-#: functions.php:139
+#: functions.php:146
 msgid "NEWER ENTRIES"
 msgstr ""
 
-#: functions.php:140
+#: functions.php:147
 msgid "OLDER ENTRIES"
 msgstr ""
 
-#: functions.php:149
+#: functions.php:156
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:158
+#: functions.php:165
 msgid "Secondary Sidebar"
 msgstr ""
 
-#: functions.php:167
+#: functions.php:174
 msgid "Footer Area One"
 msgstr ""
 
-#: functions.php:176
+#: functions.php:183
 msgid "Footer Area Two"
 msgstr ""
 
-#: functions.php:185
+#: functions.php:192
 msgid "Footer Area Three"
 msgstr ""
 
-#: functions.php:195
+#: functions.php:202
 msgid "Footer Area Four"
 msgstr ""
 
-#: inc/includes/class-options-framework-admin.php:91
-#: inc/includes/class-options-framework-admin.php:92 inc/options.php:17
+#: inc/customize.php:9
+msgid "SEARCHLIGHT OPTIONS"
+msgstr ""
+
+#: inc/customize.php:10
+msgid "We appreciate an"
+msgstr ""
+
+#: inc/customize.php:10
+msgid "Honest Review"
+msgstr ""
+
+#: inc/customize.php:10
+msgid "of this Theme if you Love our Work"
+msgstr ""
+
+#: inc/customize.php:12
+msgid ""
+"Need More Features and Options including Exciting Slide and 100+ Advanced "
+"Features? Try "
+msgstr ""
+
+#: inc/customize.php:13
+msgid "Searchlight Extend"
+msgstr ""
+
+#: inc/customize.php:16
+msgid "You can Visit the Searchlight Extend "
+msgstr ""
+
+#: inc/customize.php:16
+msgid "Demo Here"
+msgstr ""
+
+#: inc/customize.php:23
+msgid "(000) 111-222"
+msgstr ""
+
+#: inc/customize.php:31
+msgid "Contact Number"
+msgstr ""
+
+#: inc/customize.php:34
+msgid "Input your Contact Number"
+msgstr ""
+
+#: inc/customize.php:44
+msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Front Page Slide"
+msgstr ""
+
+#: inc/customize.php:60
+msgid "Slide Image "
+msgstr ""
+
+#: inc/customize.php:63
+msgid ""
+"Upload an image for the Front Page Banner. 1400px X 530px image is "
+"recommended"
+msgstr ""
+
+#: inc/customize.php:68
+msgid "Searchlight Theme"
+msgstr ""
+
+#: inc/customize.php:76
+msgid "Slide Title"
+msgstr ""
+
+#: inc/customize.php:83
+msgid "Innovative Professional and Responsive Theme"
+msgstr ""
+
+#: inc/customize.php:91
+msgid "Slide Sub Title"
+msgstr ""
+
+#: inc/customize.php:98
+msgid ""
+"This is a Test Image Text for Searchlight Theme. You can change this text "
+"from Customizer"
+msgstr ""
+
+#: inc/customize.php:106
+msgid "Slide Caption"
+msgstr ""
+
+#: inc/customize.php:113
+msgid "#"
+msgstr ""
+
+#: inc/customize.php:121
+msgid "Slide Link"
+msgstr ""
+
+#: inc/customize.php:135
+msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Social Links"
+msgstr ""
+
+#: inc/customize.php:151
+msgid "Social Link"
+msgstr ""
+
 #: options.php:18
 msgid "Searchlight Options"
 msgstr ""
 
-#: inc/includes/class-options-framework-admin.php:203
-msgid "Save Options"
-msgstr ""
-
-#: inc/includes/class-options-framework-admin.php:204
-msgid "Restore Defaults"
-msgstr ""
-
-#: inc/includes/class-options-framework-admin.php:204
-msgid "Click OK to reset. Any theme settings will be lost!"
-msgstr ""
-
-#: inc/includes/class-options-media-uploader.php:62
-msgid "No file chosen"
-msgstr ""
-
-#: inc/includes/class-options-media-uploader.php:65
-#: inc/includes/class-options-media-uploader.php:118
-msgid "Upload"
-msgstr ""
-
-#: inc/includes/class-options-media-uploader.php:67
-#: inc/includes/class-options-media-uploader.php:119
-msgid "Remove"
-msgstr ""
-
-#: inc/includes/class-options-media-uploader.php:70
-msgid "Upgrade your version of WordPress for full media support."
-msgstr ""
-
-#: inc/includes/class-options-media-uploader.php:94
-msgid "View File"
-msgstr ""
-
-#: inc/includes/class-options-sanitization.php:378
-msgid "No Repeat"
-msgstr ""
-
-#: inc/includes/class-options-sanitization.php:379
-msgid "Repeat Horizontally"
-msgstr ""
-
-#: inc/includes/class-options-sanitization.php:380
-msgid "Repeat Vertically"
-msgstr ""
-
-#: inc/includes/class-options-sanitization.php:381
-msgid "Repeat All"
-msgstr ""
-
-#: inc/includes/class-options-sanitization.php:393
-msgid "Top Left"
-msgstr ""
-
-#: inc/includes/class-options-sanitization.php:394
-msgid "Top Center"
-msgstr ""
-
-#: inc/includes/class-options-sanitization.php:395
-msgid "Top Right"
-msgstr ""
-
-#: inc/includes/class-options-sanitization.php:396
-msgid "Middle Left"
-msgstr ""
-
-#: inc/includes/class-options-sanitization.php:397
-msgid "Middle Center"
-msgstr ""
-
-#: inc/includes/class-options-sanitization.php:398
-msgid "Middle Right"
-msgstr ""
-
-#: inc/includes/class-options-sanitization.php:399
-msgid "Bottom Left"
-msgstr ""
-
-#: inc/includes/class-options-sanitization.php:400
-msgid "Bottom Center"
-msgstr ""
-
-#: inc/includes/class-options-sanitization.php:401
-msgid "Bottom Right"
-msgstr ""
-
-#: inc/includes/class-options-sanitization.php:413
-msgid "Scroll Normally"
-msgstr ""
-
-#: inc/includes/class-options-sanitization.php:414
-msgid "Fixed in Place"
-msgstr ""
-
-#: inc/includes/class-options-sanitization.php:486
-#: inc/includes/class-options-sanitization.php:494
-msgid "Normal"
-msgstr ""
-
-#: inc/includes/class-options-sanitization.php:487
-msgid "Italic"
-msgstr ""
-
-#: inc/includes/class-options-sanitization.php:495
-msgid "Bold"
-msgstr ""
-
-#: inc/includes/class-options-sanitization.php:496
-msgid "100"
-msgstr ""
-
-#: inc/includes/class-options-sanitization.php:497
-msgid "200"
-msgstr ""
-
-#: inc/includes/class-options-sanitization.php:498
-msgid "300"
-msgstr ""
-
-#: inc/includes/class-options-sanitization.php:499
-msgid "400"
-msgstr ""
-
-#: inc/includes/class-options-sanitization.php:500
-msgid "500"
-msgstr ""
-
-#: inc/includes/class-options-sanitization.php:501
-msgid "600"
-msgstr ""
-
-#: inc/includes/class-options-sanitization.php:502
-msgid "700"
-msgstr ""
-
-#: inc/includes/class-options-sanitization.php:503
-msgid "800"
-msgstr ""
-
-#: inc/includes/class-options-sanitization.php:504
-msgid "900"
-msgstr ""
-
-#: inc/includes/class-options-sanitization.php:512
-msgid "Left Align"
-msgstr ""
-
-#: inc/includes/class-options-sanitization.php:513
-msgid "Right Align"
-msgstr ""
-
-#: inc/includes/class-options-sanitization.php:514
-msgid "Center Align"
-msgstr ""
-
-#: inc/includes/class-options-sanitization.php:515
-msgid "Justify Align"
-msgstr ""
-
-#: inc/options.php:21
-msgid ""
-"A Theme is an effort of many sleepless nights of Developers. You can "
-"contribute on this development translating this theme in your Language. You "
-"can send your translation/language file to us, "
-msgstr ""
-
-#: inc/options.php:21
-msgid "Contact Us."
-msgstr ""
-
-#: inc/options.php:21
-msgid "You can inspire us writing a "
-msgstr ""
-
-#: inc/options.php:21
-msgid "Positive Review"
-msgstr ""
-
-#: inc/options.php:21
-msgid "of our Theme"
-msgstr ""
-
-#: inc/options.php:21
-msgid ""
-"Need More Features and Options including Exciting Multi Layer Slide, "
-"Unlimited Slides with layered Effects, Unlimited Featured Boxes, Color "
-"Changing Options, Easy Translation Option and 100+ Advanced Features? Try"
-msgstr ""
-
-#: inc/options.php:21
-msgid "You can Visit the Searchlight Extend Demo "
-msgstr ""
-
-#: inc/options.php:21
-msgid "Here"
-msgstr ""
-
-#: inc/options.php:35
-msgid "Banner Image"
-msgstr ""
-
-#: inc/options.php:36
-msgid "You can upload a Banner Image for your site here"
-msgstr ""
-
-#: inc/options.php:42 options.php:31
-msgid "Fixed Header?"
-msgstr ""
-
-#: inc/options.php:43
-msgid ""
-"Uncheck it if you do not want to show the Header Fixed. Default is Fixed."
-msgstr ""
-
-#: inc/options.php:49
-msgid "Site Layout"
-msgstr ""
-
-#: inc/options.php:50
-msgid "You can set the Site Layout for Whole the Site."
-msgstr ""
-
-#: inc/options.php:61
-msgid "Contact Number"
-msgstr ""
-
-#: inc/options.php:62
-msgid "Set Your Contact Number"
-msgstr ""
-
-#: inc/options.php:72
-msgid "Site Colors"
-msgstr ""
-
-#: inc/options.php:76
-msgid "Use This Customized Design"
-msgstr ""
-
-#: inc/options.php:77
-msgid "Check this box if you want to use the following Custom Style Code"
-msgstr ""
-
-#: inc/options.php:83
-msgid "Color 01"
-msgstr ""
-
-#: inc/options.php:84 inc/options.php:91 inc/options.php:98
-msgid "Change the Color"
-msgstr ""
-
-#: inc/options.php:90
-msgid "Color 02"
-msgstr ""
-
-#: inc/options.php:97
-msgid "Color 03"
-msgstr ""
-
-#: inc/options.php:106
-msgid "Social Links"
-msgstr ""
-
-#: inc/options.php:113
-msgid "Social Link - "
-msgstr ""
-
-#: inc/options.php:114
-msgid ""
-"Input Your Social Page Link. Example: <b>http://profiles.wordpress.org/"
-"d5creation</b>.  If you do not want to show anything here leave the box "
-"blank. This Version supports only WordPress, Dribbble, Github, Tumblr, "
-"YouTube, Flickr, Vimeo, Instagram, Codepen and LinkedIn"
-msgstr ""
-
 #: options.php:19
 msgid "Here You can Set Some Specific Options of Searchlight Theme"
+msgstr ""
+
+#: options.php:31
+msgid "Fixed Header?"
 msgstr ""
 
 #: post-content.php:35
@@ -457,18 +287,17 @@ msgid "Searchlight"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://d5creation.com/theme/searchlight/"
+msgid "http://d5creation.com/theme/searchlight"
 msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Searchlight is a CSS3 Powered and Latest WordPress Version Ready Responsive "
+"Searchlight is a CSS3 Powered and  WordPress Latest Version Ready Responsive "
 "Theme.  Super Elegant and Professional Searchlight Theme will be adjusted "
 "automatically with all smart devices.  Searchlight is a Professional Quality "
-"Theme where you can set any Layout ( Left Sidebar, Right Sidebar, Full "
-"Width ), set Theme Colors to your own, set Social Links etc.  You can Visit "
-"the Searchlight Theme Page at http://d5creation/theme/searchlight and Demo "
-"at http://demo.d5creation.com/themes/?theme=Searchlight"
+"Theme where you can show Slide Images with Captions, set Social Links etc.  "
+"You can Visit the Searchlight Theme Page at http://d5creation/theme/"
+"searchlight and Demo at http://demo.d5creation.com/themes/?theme=Searchlight"
 msgstr ""
 
 #. Author of the plugin/theme

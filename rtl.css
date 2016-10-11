@@ -1,15 +1,15 @@
 /*
 Theme Name: Searchlight
-Theme URI: http://d5creation.com/theme/searchlight/
+Theme URI: http://d5creation.com/theme/searchlight
 
 Author: D5 Creation
 Author URI: http://d5creation.com/
 
-Description: Searchlight is a CSS3 Powered and Latest WordPress Version Ready Responsive Theme.  Super Elegant and Professional Searchlight Theme will be adjusted automatically with all smart devices.  Searchlight is a Professional Quality Theme where you can set any Layout ( Left Sidebar, Right Sidebar, Full Width ), set Theme Colors to your own, set Social Links etc.  You can Visit the Searchlight Theme Page at http://d5creation/theme/searchlight and Demo at http://demo.d5creation.com/themes/?theme=Searchlight
+Description: Searchlight is a CSS3 Powered and  WordPress Latest Version Ready Responsive Theme.  Super Elegant and Professional Searchlight Theme will be adjusted automatically with all smart devices.  Searchlight is a Professional Quality Theme where you can show Slide Images with Captions, set Social Links etc.  You can Visit the Searchlight Theme Page at http://d5creation/theme/searchlight and Demo at http://demo.d5creation.com/themes/?theme=Searchlight
 
-Version: 1.7.1
+Version: 1.9
 
-Tags: green, white, black, light, one-column, two-columns, right-sidebar, left-sidebar, fluid-layout, responsive-layout, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, full-width-template, rtl-language-support, translation-ready, theme-options 
+Tags: two-columns, right-sidebar, left-sidebar, footer-widgets, rtl-language-support, featured-images, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, entertainment, full-width-template, theme-options, translation-ready, blog, portfolio, education, food-and-drink
 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -77,6 +77,11 @@ img.site-logo,.site-title {
 	float:right;
 }
 
+#header.smallheader {
+	right: 0;
+	left: auto;
+}
+
 #content {
 	float:right;
 }
@@ -85,40 +90,40 @@ img.site-logo,.site-title {
 	float:left;
 }
 
-#searchlight-main-menu {
+#main-menu-con {
 	float:left;
 }
 
-#searchlight-main-menu li {
+#main-menu-con li {
 	float:right;
 }
 
-#searchlight-main-menu li ul {
+#main-menu-con li ul {
 	float:right;
 }
 
-#searchlight-main-menu ul ul,
+#main-menu-con ul ul,
 .sub-menu, .sub-menu ul ul {
 	float:right;
 	right:0;
 	left: auto;
 }
 
-#searchlight-main-menu ul ul ul {
+#main-menu-con ul ul ul {
 	right:100%;
 	left: auto;
 }
 
-#searchlight-main-menu ul ul a {
+#main-menu-con ul ul a {
 	text-align:right;
 }
 
-#searchlight-main-menu .menu-item-has-children a, #searchlight-main-menu .page_item_has_children a {
+#main-menu-con .menu-item-has-children a, #main-menu-con .page_item_has_children a {
 	padding-left: 20px;
 	padding-right: 0;
 }
 
-#searchlight-main-menu li.menu-item-has-children a:after, #searchlight-main-menu li.page_item_has_children a:after {
+#main-menu-con li.menu-item-has-children a:after, #main-menu-con li.page_item_has_children a:after {
 	margin-right: 5px;
 	padding-right: 5px;
 	left: 3px;
@@ -127,27 +132,32 @@ img.site-logo,.site-title {
 	margin-left: auto;
 }
 
-#searchlight-top-menu {
+.mobile-menu::before {
+	padding-left: 10px;
+	padding-right: 0;
+}
+
+#top-menu-con {
 	float: left;
 }
 
-#searchlight-top-menu ul.menu {
+#top-menu-con ul.menu {
 	float: left;
 }
 
-#searchlight-top-menu .menu li {
+#top-menu-con .menu li {
 	float:right;
 }
 
-#searchlight-top-menu .menu a:before {
+#top-menu-con .menu a:before {
 	padding: 0 0 0 5px;
 }
 
-#searchlight-top-menu #searchform {
+#top-menu-con #searchform {
 	float: left;
 }
 
-#searchlight-top-menu #searchsubmit {
+#top-menu-con #searchsubmit {
 	margin-right: -5px;
 	margin-left: auto;
 }
@@ -170,6 +180,10 @@ img.site-logo,.site-title {
 .post-meta span {
 	padding-left: 20px;
 	padding-right: 0;
+}
+
+.widget {
+	text-align: right;
 }
 
 #left-sidebar .widget ul, #left-sidebar .widget ul {
@@ -300,7 +314,7 @@ h2.commentsbox:before {
 	margin:0 -25px 0 0;
 }
 
-#searchlight-main-menu.gobottom {
+#main-menu-con.gobottom {
 	left: 5%;
 	right: auto;
 }
@@ -320,4 +334,5 @@ h2.commentsbox:before {
 .social a {
 	float: right;
 }
+
 

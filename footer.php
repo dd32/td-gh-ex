@@ -11,8 +11,8 @@
 <div class="versep"></div>
 <div id="footer-content">
 <div class="social social-link">
-	  <?php foreach (range(1, 5 ) as $numslinksn) { 
-	  if ( of_get_option('sl' . $numslinksn, '#') != '' ): echo '<a href="'. esc_url(of_get_option('sl' . $numslinksn, '#')) .'" target="_blank"> </a>'; endif;
+	  <?php foreach (range(1, 5 ) as $searchlight_sll) { 
+	  if ( searchlight_get_option('sl' . $searchlight_sll, '#') != '' ): echo '<a href="'. esc_url(searchlight_get_option('sl' . $searchlight_sll, '#')) .'" target="_blank"> </a>'; endif;
 	  } ?>
 </div>
 
