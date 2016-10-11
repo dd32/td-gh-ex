@@ -2,8 +2,8 @@
 
 Theme Name: Sparkling
 Theme URI: http://colorlib.com/wp/sparkling/
-Version: 2.2.2
-Tested up to: WP 4.4
+Version: 2.3.2
+Tested up to: WP 4.6
 
 Author: Aigars Silkalns
 Author URI: http://colorlib.com/wp/
@@ -63,6 +63,22 @@ Afterwards you can continue theme setup and customization via WordPress Dashboar
 Theme documentation is available on http://colorlib.com/wp/support/sparkling
 
 /*========= Changelog =========*/
+
+= 2.3.2 - 11.10.2016 =
+
+* Removed redundant functions and replaced with ones from WP core. 
+
+= 2.3.1 - 08.07.2016 =
+
+* Hungarian translation thanks to Varga Szabolcs
+
+= 2.3.0 - 30.06.2016 =
+
+* Added TGMPA & Kiwi Social Share Plugin
+* Updated theme tags
+* Fixed deprecated constructor notice for widgets
+* Updated language files thanks to Vaidas Elksnys
+* Other fixes and improvements.
 
 = 2.2.3 - 18.03.2016 =
 
