@@ -146,9 +146,8 @@ if ( ! class_exists( 'HU_customize' ) ) :
 
     //hook : customize_register
     function hu_register_partials( WP_Customize_Manager $wp_customize ) {
-
-        // Abort if selective refresh is not available.
-        if ( ! isset( $wp_customize->selective_refresh ) ) {
+        //Bail if selective refresh is not available (old versions) or disabled (for skope for example)
+        if ( ! isset( $wp_customize->selective_refresh ) || ! hu_is_partial_refreshed_on() ) {
             return;
         }
 
@@ -368,6 +367,7 @@ if ( ! class_exists( 'HU_customize' ) ) :
                     'module_type' => 'czr_widget_areas_module',
                     'notice'    => __('You must save changes for the new areas to appear below. <br /><i>Warning: Make sure each area has a unique ID.</i>' , 'hueman'),
                     'transport' => 'postMessage',
+                    'skoped' => false
               )
 
           )

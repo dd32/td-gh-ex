@@ -106,28 +106,73 @@ if ( ! function_exists('hu_print_widgets_in_location') ) {
   }
 }//endif
 
+
 //@param $sidebars_widgets = wp_get_sidebars_widgets()
 //@param $_zone_id = id of the widget zone, ex : primary
 function hu_maybe_print_default_widgets( $sidebars_widgets, $_zone_id ) {
-    //has user enable default widgets?
-    if ( ! hu_is_checked('show-sb-example-wgt') || ! hu_is_checked( "{$_zone_id}-example-wgt") )
-      return;
     //stop here is the zone id has already been populated with widgets
     if ( array_key_exists( $_zone_id, $sidebars_widgets ) && is_array( $sidebars_widgets[$_zone_id] ) && ! empty($sidebars_widgets[$_zone_id] ) )
       return;
+
     //we only want to print default widgets in primary and secondary sidebars
-    if ( ! in_array( $_zone_id, array( 'primary', 'secondary') ) )
+    if ( ! in_array( $_zone_id, array( 'primary', 'secondary', 'footer-1', 'footer-2', 'footer-3') ) )
       return;
 
     $_widgets_to_print = array();
     switch ($_zone_id) {
-      case 'secondary':
-        $_widgets_to_print[] = 'AlxTabs';
-        break;
-
       case 'primary':
-        $_widgets_to_print[] = 'AlxPosts';
-        break;
+        $_widgets_to_print[] = array(
+          'AlxPosts' => array(
+            'args' => array('before_title' => sprintf('<h3 class="widget-title">%s</h3>', __( 'Discover', 'hueman') ) )
+          )
+        );
+      break;
+      case 'secondary':
+        $_widgets_to_print[] = array(
+          'AlxTabs' => array(
+            'args' => array('before_title' => sprintf('<h3 class="widget-title">%s</h3>', __( 'Recommended', 'hueman') ) )
+          )
+        );
+      break;
+      case 'footer-1':
+        $_widgets_to_print[] = array(
+          'WP_Widget_Recent_Posts' => array(
+            'instance' => array(
+              'title' => __( 'RECENT POSTS', 'hueman'),
+              'number' => 4
+            ),
+            'args' => array(
+              //'before_title' => sprintf('<h3 class="widget-title">%s</h3>', __( 'Recent Posts', 'hueman') )
+            )
+          )
+        );
+      break;
+      case 'footer-2':
+        $_widgets_to_print[] = array(
+          'WP_Widget_Recent_Comments' => array(
+            'instance' => array(
+              'title' => __( 'RECENT COMMENTS', 'hueman'),
+              'number' => 4
+            ),
+            'args' => array(
+              //'before_title' => sprintf('<h3 class="widget-title">%s</h3>', __( 'Recent Posts', 'hueman') )
+            )
+          )
+        );
+      break;
+      case 'footer-3':
+        $_widgets_to_print[] = array(
+          'AlxTabs' => array(
+            'instance' => array(
+              'recent_enable'   => 0,
+              'comments_enable'   => 0,
+              'tags_enable'     => 0,
+              'popular_num' => 2,
+            ),
+            'args' => array('before_title' => sprintf('<h3 class="widget-title"><strong>%s</strong></h3>', __( 'HIGHLIGHTS', 'hueman') ) )
+          )
+        );
+      break;
     }
     if ( empty($_widgets_to_print) )
       return;
@@ -135,9 +180,14 @@ function hu_maybe_print_default_widgets( $sidebars_widgets, $_zone_id ) {
     //find the widget instance ids
     $_wgt_instances = array();
 
-    foreach ( $_widgets_to_print as $_class) {
-      if ( class_exists( $_class) )
-        the_widget( $_class );
+    foreach ( $_widgets_to_print as $_wgt ) {
+      foreach (  $_wgt as $_class => $params ) {
+          if ( class_exists( $_class) ) {
+            $_instance = isset( $params['instance'] ) ? $params['instance'] : array();
+            $_args = isset( $params['args'] ) ? $params['args'] : array();
+            the_widget( $_class, $_instance, $_args );
+          }
+      }
     }
 }
 
@@ -151,8 +201,8 @@ function hu_print_dynamic_sidebars( $_id, $location ) {
   }
 
   $sidebars_widgets = wp_get_sidebars_widgets();
-
-  hu_maybe_print_default_widgets( $sidebars_widgets, $_id );
+  if ( hu_isprevdem() )
+    hu_maybe_print_default_widgets( $sidebars_widgets, $_id );
 
   if ( hu_is_customize_preview_frame() ) {
     //is there a meta setting overriding the customizer ?
@@ -215,13 +265,14 @@ if ( ! function_exists( 'hu_site_title' ) ) {
   function hu_site_title() {
     // Text or image?
     // Since v3.2.4, uses the WP 'custom_logo' theme mod option. Set with a filter.
-    if ( hu_is_checked('display-header-logo') && false != hu_get_img_src_from_option( 'custom-logo' ) ) {
-      $logo = '<img src="'. hu_get_img_src_from_option( 'custom-logo' ) . '" alt="'.get_bloginfo('name').'">';
+    if ( apply_filters( 'hu_display_header_logo', hu_is_checked('display-header-logo') && false != hu_get_img_src_from_option( 'custom-logo' ) ) ) {
+      $logo_src = apply_filters( 'hu_header_logo_src' , hu_get_img_src_from_option( 'custom-logo' ) );
+      $logo_title = '<img src="'. $logo_src . '" alt="' .get_bloginfo('name'). '">';
     } else {
-      $logo = get_bloginfo('name');
+      $logo_title = get_bloginfo('name');
     }
 
-    $link = '<a class="custom-logo-link" href="'.home_url('/').'" rel="home">'.$logo.'</a>';
+    $link = '<a class="custom-logo-link" href="'.home_url('/').'" rel="home">'.$logo_title.'</a>';
 
     if ( hu_is_home() ) {
       $sitename = '<h1 class="site-title">'.$link.'</h1>'."\n";
@@ -229,7 +280,7 @@ if ( ! function_exists( 'hu_site_title' ) ) {
       $sitename = '<p class="site-title">'.$link.'</p>'."\n";
     }
 
-    return apply_filters('hu_logo_title', $sitename, $logo );
+    return apply_filters('hu_logo_title', $sitename, $logo_title );
   }
 
 }
@@ -355,9 +406,10 @@ if ( ! function_exists( 'hu_blog_title' ) ) {
     $subheading =  wp_kses_post( hu_get_option('blog-subheading') );
     $subheading = $subheading ? $subheading : __('Blog', 'hueman');
 
-    return sprintf('%1$s <span class="hu-blog-subheading">%2$s</span>',
-      $heading,
-      $subheading
+    return apply_filters( 'hu_blog_title', sprintf('%1$s <span class="hu-blog-subheading">%2$s</span>',
+        $heading,
+        $subheading
+      )
     );
   }
 
@@ -458,48 +510,125 @@ if ( ! function_exists( 'hu_get_featured_post_ids' ) ) {
 }
 
 
+
+
+
+/* ------------------------------------------------------------------------- *
+ *  Placeholder thumbs for preview demo mode
+/* ------------------------------------------------------------------------- */
 /* Echoes the <img> tag of the placeholder thumbnail
-*  or an animated svg icon
+*  + an animated svg icon
 *  the src property can be filtered
 /* ------------------------------------ */
 if ( ! function_exists( 'hu_print_placeholder_thumb' ) ) {
 
   function hu_print_placeholder_thumb( $_size = 'thumb-medium' ) {
     $_unique_id = uniqid();
+    $filter = false;
     $_sizes = array( 'thumb-medium', 'thumb-small', 'thumb-standard' );
     if ( ! in_array($_size, $_sizes) )
       $_size = 'thumb-medium';
+    //default $img_src
+    $_img_src = get_template_directory_uri() . "/assets/front/img/{$_size}.png";
 
-    if ( ! apply_filters( 'hu-use-svg-thumb-placeholder', true ) ) {
-      $_img_src = get_template_directory_uri() . "/assets/front/img/{$_size}.png";
-    } else {
-      $_size = $_size . '-empty';
-      $_img_src = get_template_directory_uri() . "/assets/front/img/{$_size}.png";
-      $_svg_height = in_array($_size, array( 'thumb-medium', 'thumb-standard' ) ) ? 100 : 60;
-      ?>
-      <svg class="hu-svg-placeholder <?php echo $_size; ?>" id="<?php echo $_unique_id; ?>" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M928 832q0-14-9-23t-23-9q-66 0-113 47t-47 113q0 14 9 23t23 9 23-9 9-23q0-40 28-68t68-28q14 0 23-9t9-23zm224 130q0 106-75 181t-181 75-181-75-75-181 75-181 181-75 181 75 75 181zm-1024 574h1536v-128h-1536v128zm1152-574q0-159-112.5-271.5t-271.5-112.5-271.5 112.5-112.5 271.5 112.5 271.5 271.5 112.5 271.5-112.5 112.5-271.5zm-1024-642h384v-128h-384v128zm-128 192h1536v-256h-828l-64 128h-644v128zm1664-256v1280q0 53-37.5 90.5t-90.5 37.5h-1536q-53 0-90.5-37.5t-37.5-90.5v-1280q0-53 37.5-90.5t90.5-37.5h1536q53 0 90.5 37.5t37.5 90.5z"/></svg>
+    if ( apply_filters( 'hu-use-svg-thumb-placeholder', true ) ) {
+        if ( hu_isprevdem() ) {
+          $_img_src = hu_get_prevdem_img_src( $_size );
+          $filter = '<span class="filter-placeholder"></span>';
+        } else {
+          $_size = $_size . '-empty';
+          $_img_src = get_template_directory_uri() . "/assets/front/img/{$_size}.png";
+        }
 
-      <script type="text/javascript">
-        jQuery( function($){ $( '#<?php echo $_unique_id; ?>' ).animateSvg(); });
-      </script>
-      <?php
+        $_svg_height = in_array($_size, array( 'thumb-medium', 'thumb-standard' ) ) ? 100 : 60;
+        ?>
+        <svg class="hu-svg-placeholder <?php echo $_size; ?>" id="<?php echo $_unique_id; ?>" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M928 832q0-14-9-23t-23-9q-66 0-113 47t-47 113q0 14 9 23t23 9 23-9 9-23q0-40 28-68t68-28q14 0 23-9t9-23zm224 130q0 106-75 181t-181 75-181-75-75-181 75-181 181-75 181 75 75 181zm-1024 574h1536v-128h-1536v128zm1152-574q0-159-112.5-271.5t-271.5-112.5-271.5 112.5-112.5 271.5 112.5 271.5 271.5 112.5 271.5-112.5 112.5-271.5zm-1024-642h384v-128h-384v128zm-128 192h1536v-256h-828l-64 128h-644v128zm1664-256v1280q0 53-37.5 90.5t-90.5 37.5h-1536q-53 0-90.5-37.5t-37.5-90.5v-1280q0-53 37.5-90.5t90.5-37.5h1536q53 0 90.5 37.5t37.5 90.5z"/></svg>
+
+        <script type="text/javascript">
+          jQuery( function($){
+            if ( $('#flexslider-featured').length ) {
+              $('#flexslider-featured').on('featured-slider-ready', function() {
+                $( '#<?php echo $_unique_id; ?>' ).animateSvg();
+              });
+            } else { $( '#<?php echo $_unique_id; ?>' ).animateSvg( { svg_opacity : 0.3, filter_opacity : 0.5 } ); }
+          });
+        </script>
+        <?php
     }
 
-    printf( '<img class="hu-img-placeholder" src="%1$s" alt="%2$s" data-hu-post-id="%3$s" />',
+    //make sure we did not last the img_src
+    if ( false == $_img_src )
+      $_img_src = get_template_directory_uri() . "/assets/front/img/{$_size}.png";
+
+    printf( ' %1$s<img class="hu-img-placeholder" src="%2$s" alt="%3$s" data-hu-post-id="%4$s" />',
+      false !== $filter ? $filter : '',
       apply_filters( 'hu_placeholder_thumb_src' , $_img_src ),
       get_the_title(),
       $_unique_id
     );
   }
-
 }
 
 
 
+/* Placeholder thumb helper
+*  @return a random img src string
+*  Can be recursive if a specific img size is not found
+/* ------------------------------------ */
+function hu_get_prevdem_img_src( $_size = 'thumb-medium', $i = 0 ) {
+    //prevent infinite loop
+    if ( 10 == $i ) {
+      return;
+    }
+    $sizes_suffix_map = array(
+        'thumb-small'     => '160x160',
+        'thumb-medium'    => '520x245',
+        'thumb-standard'  => '320x320'
+    );
+    $requested_size = isset( $sizes_suffix_map[$_size] ) ? $sizes_suffix_map[$_size] : '520x245';
+    $path = HU_BASE . 'assets/front/img/demo/';
+    //Build or re-build the global dem img array
+    if ( ! isset( $GLOBALS['prevdem_img'] ) || empty( $GLOBALS['prevdem_img'] ) ) {
+        if ( is_dir( $path ) ) {
+          $imgs = scandir( $path );
+        }
+        $candidates = array();
+        if ( ! $imgs )
+          return array();
 
+        foreach ( $imgs as $img ) {
+          if ( '.' === $img[0] || is_dir( $path . $img ) ) {
+            continue;
+          }
+          $candidates[] = $img;
+        }
+        $GLOBALS['prevdem_img'] = $candidates;
+    }
+    $candidates = $GLOBALS['prevdem_img'];
+    //get a random image name
+    $rand_key = array_rand($candidates);
+    $img_name = $candidates[ $rand_key ];
+    //extract img prefix
+    $img_prefix_expl = explode( '-', $img_name );
+    $img_prefix = $img_prefix_expl[0];
 
-
-
+    $requested_size_img_name = "{$img_prefix}-{$requested_size}.jpg";
+    //if file does not exists, reset the global and recursively call it again
+    if ( ! file_exists( $path . $requested_size_img_name ) ) {
+      unset( $GLOBALS['prevdem_img'] );
+      $i++;
+      return hu_get_prevdem_img_src( $_size, $i );
+    }
+    //unset all sizes of the img found and update the global
+    $new_candidates = $candidates;
+    foreach ( $candidates as $_key => $_img ) {
+      if ( substr( $_img , 0, strlen( "{$img_prefix}-" ) ) == "{$img_prefix}-" ) {
+        unset( $new_candidates[$_key] );
+      }
+    }
+    $GLOBALS['prevdem_img'] = $new_candidates;
+    return get_template_directory_uri() . '/assets/front/img/demo/' . $requested_size_img_name;
+}
 
 
 
@@ -515,7 +644,6 @@ if ( ! function_exists( 'hu_print_placeholder_thumb' ) ) {
 /*  Body class
 /* ------------------------------------ */
 if ( ! function_exists( 'hu_body_class' ) ) {
-
   function hu_body_class( $classes ) {
     $classes[] = hu_layout_class();
     $classes[] = hu_is_checked( 'boxed' ) ? 'boxed' : 'full-width';
@@ -525,7 +653,6 @@ if ( ! function_exists( 'hu_body_class' ) ) {
     if ( hu_get_option( 'mobile-sidebar-hide' ) == 's1-s2' ) { $classes[] = 'mobile-sidebar-hide'; }
     return $classes;
   }
-
 }
 add_filter( 'body_class', 'hu_body_class' );
 

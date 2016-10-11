@@ -37,6 +37,11 @@ function hu_doing_customizer_ajax() {
 }
 
 
+//@return boolean
+function hu_is_partial_refreshed_on() {
+  return apply_filters( 'hu_partial_refresh_on', true );
+}
+
 
 /**
 * Are we in a customization context ? => ||
@@ -83,24 +88,6 @@ function hu_checked( $val ) {
   echo hu_is_checked( $val ) ? 'checked="checked"' : '';
 }
 
-/**
-* Checks if we use a child theme. Uses a deprecated WP functions (get _theme_data) for versions <3.4
-* @return boolean
-*
-*/
-function hu_is_child() {
-  // get themedata version wp 3.4+
-  if ( function_exists( 'wp_get_theme' ) ) {
-    //get WP_Theme object
-    $_theme       = wp_get_theme();
-    //define a boolean if using a child theme
-    return $_theme -> parent() ? true : false;
-  }
-  else {
-    $_theme       = call_user_func('get_' .'theme_data', get_stylesheet_directory().'/style.css' );
-    return ! empty($_theme['Template']) ? true : false;
-  }
-}
 
 
 /**
@@ -147,9 +134,40 @@ function hu_user_started_before_version( $_ver ) {
 function hu_has_nav_menu( $_location ) {
   if ( has_nav_menu( $_location ) || ! in_array( $_location, array( 'header', 'footer') ) )
     return has_nav_menu( $_location );
-  return hu_is_checked( "default-menu-{$_location}" );
+  $bool = false;
+  switch ($_location) {
+    case 'header':
+      $bool = hu_is_checked( "default-menu-{$_location}" );
+    break;
+
+    case 'footer':
+      $bool = hu_isprevdem();
+    break;
+  }
+  return $bool;
 }
 
+
+
+//@return an array of unfiltered options
+//=> all options or a single option val
+function hu_get_raw_option( $opt_name = null, $opt_group = null ) {
+    $alloptions = wp_cache_get( 'alloptions', 'options' );
+    $alloptions = maybe_unserialize($alloptions);
+    if ( ! is_null( $opt_group ) && isset($alloptions[$opt_group]) ) {
+      $alloptions = maybe_unserialize($alloptions[$opt_group]);
+    }
+    if ( is_null( $opt_name ) )
+      return $alloptions;
+    return isset( $alloptions[$opt_name] ) ? maybe_unserialize($alloptions[$opt_name]) : false;
+}
+
+
+//@return bool
+function hu_isprevdem() {
+  $_active_theme = hu_get_raw_option( 'template' );
+  return apply_filters( 'hu_isprevdem', ( $_active_theme != strtolower(THEMENAME) && ! is_child_theme() ) );
+}
 
 
 /* ------------------------------------------------------------------------- *
@@ -162,7 +180,7 @@ function hu_has_nav_menu( $_location ) {
 */
 function hu_is_home() {
   //get info whether the front page is a list of last posts or a page
-  return ( is_home() && ( 'posts' == get_option( 'show_on_front' ) || '__nothing__' == get_option( 'show_on_front' ) ) ) || is_front_page();
+  return is_home() || ( is_home() && ( 'posts' == get_option( 'show_on_front' ) || '__nothing__' == get_option( 'show_on_front' ) ) ) || is_front_page();
 }
 
 /**
@@ -193,10 +211,11 @@ function hu_is_post_list() {
   global $wp_query;
 
   return apply_filters( 'hu_is_post_list',
-    ! is_singular()
+    ( ! is_singular()
     && ! is_404()
-    && 0 != $wp_query -> post_count
-    && ! hu_is_home_empty()
+    && ( is_search() && 0 != $wp_query -> post_count )
+    && ! hu_is_home_empty() )
+    || hu_is_blogpage() || is_home()
   );
 }
 
@@ -328,7 +347,7 @@ if( ! defined( 'HU_BASE_CHILD' ) )      define( 'HU_BASE_CHILD' , get_stylesheet
 if( ! defined( 'HU_BASE_URL' ) )        define( 'HU_BASE_URL' , get_template_directory_uri() . '/' );
 //HU_BASE_URL_CHILD http url of the loaded child theme
 if( ! defined( 'HU_BASE_URL_CHILD' ) )  define( 'HU_BASE_URL_CHILD' , get_stylesheet_directory_uri() . '/' );
-//THEMENAME contains the Name of the currently loaded theme
+//THEMENAME contains the Name of the currently loaded theme. Will always be the parent theme name is a child theme is activated.
 if( ! defined( 'THEMENAME' ) )       define( 'THEMENAME' , $hu_base_data['title'] );
 //TEXT DOMAIN FOR TRANSLATIONS
 if( ! defined( 'THEME_TEXT_DOM' ) )       define( 'THEME_TEXT_DOM' , 'hueman' );
@@ -915,6 +934,10 @@ if ( ! function_exists( 'hu_setup' ) ) {
 add_action( 'after_setup_theme', 'hu_setup' );
 
 
+
+
+
+
 /*  Register sidebars
 /* ------------------------------------ */
 //@return the array of built-in widget zones
@@ -993,6 +1016,27 @@ function hu_get_default_widget_zones() {
     )
   );
 }
+
+//@return an array of default widgets ids
+function hu_get_widget_zone_ids() {
+  $widgets = hu_get_default_widget_zones();
+  return array_keys( $widgets );
+}
+
+
+//@return an array of widget option names
+function hu_get_registered_widgets_option_names() {
+  global $wp_registered_widgets;
+  $opt_names = array();
+  foreach ($wp_registered_widgets as $id => $data ) {
+    if ( ! isset($data['callback']) || ! isset($data['callback'][0]) || ! isset($data['callback'][0] -> option_name ) )
+      continue;
+    if ( ! in_array( $data['callback'][0] -> option_name, $opt_names ) )
+      array_push( $opt_names, $data['callback'][0] -> option_name );
+  }
+  return $opt_names;
+}
+
 
 
 //@return the array describing the previous correspondance between location => widget zone name
@@ -1259,19 +1303,21 @@ add_filter( 'embed_oembed_html', 'hu_embed_wmode_transparent', 10, 3 );
 /*  Add responsive container to embeds
 /* ------------------------------------ */
 if ( ! function_exists( 'hu_embed_html' ) ) {
-
   function hu_embed_html( $html, $url ) {
-
-    $pattern    = '/^https?:\/\/(www\.)?twitter\.com/';
-    $is_twitter = preg_match( $pattern, $url );
-
-    if ( 1 === $is_twitter ) {
+    require_once( ABSPATH . WPINC . '/class-oembed.php' );
+    $wp_oembed = _wp_oembed_get_object();
+    $provider = $wp_oembed -> get_provider( $url, $args = '' );
+    if ( ! $provider || false === $data = $wp_oembed->fetch( $provider, $url, $args ) ) {
       return $html;
     }
-
-    return '<div class="video-container">' . $html . '</div>';
+    $type = $data -> type;
+    switch( $type ) {
+        case 'video' :
+          $html = sprintf('<div class="video-container">%1$s</div>', $html );
+        break;
+    }
+    return $html;
   }
-
 }
 add_filter( 'embed_oembed_html', 'hu_embed_html', 10, 3 );
 
@@ -1539,4 +1585,65 @@ if ( ! function_exists('alx_sidebar_primary') ) {
   function alx_sidebar_primary() {
     return 'primary';
   }
+}
+
+
+/* ------------------------------------------------------------------------- *
+ *  Demo
+/* ------------------------------------------------------------------------- */
+if ( hu_isprevdem() ) {
+    add_filter('hu_display_header_logo', '__return_true');
+    add_filter('hu_header_logo_src', 'hu_prevdem_logo' );
+    add_filter('hu_footer_logo_src', 'hu_prevdem_logo' );
+    function hu_prevdem_logo( $_src ) {
+      $logo_path = 'assets/front/img/demo/logo/logo.png';
+      if ( file_exists( HU_BASE . $logo_path ) )
+        return get_template_directory_uri() . '/' . $logo_path;
+      return $_src;
+    }
+    add_filter('hu_blog_title', 'hu_prevdem_blogheading');
+    function hu_prevdem_blogheading() {
+        return sprintf('%1$s <span class="hu-blog-subheading">%2$s</span>',
+            "THE BLOG",
+            "WHAT'S NEW?"
+        );
+    }
+
+    add_filter('hu_opt_social-links', 'hu_prevdem_socials');
+    function hu_prevdem_socials() {
+      $def_social = array(
+          'title' => '',
+          'social-icon' => '',
+          'social-link' => '',
+          'social-color' => 'rgba(255,255,255,0.7)',
+          'social-target' => 1
+      );
+      $raw = array(
+            array(
+                'title' => 'Follow us on Twitter',
+                'social-icon' => 'fa-twitter'
+            ),
+            array(
+                'title' => 'Follow us on Facebook',
+                'social-icon' => 'fa-facebook'
+            ),
+            array(
+                'title' => 'Follow us on Linkedin',
+                'social-icon' => 'fa-linkedin'
+            ),
+            array(
+                'title' => 'Follow us on Google',
+                'social-icon' => 'fa-google'
+            ),
+            array(
+                'title' => 'Rss feed',
+                'social-icon' => 'fa-rss'
+            )
+      );
+      $socials = array();
+      foreach ( $raw as $key => $data) {
+        $socials[] = wp_parse_args( $data, $def_social );
+      }
+      return $socials;
+    }
 }
