@@ -2,7 +2,7 @@
 /**
  * Single
  *
- * @package Bcorp Basics
+ * @package BCorp Basics
  * @author Tim Brattberg
  * @link http://www.bcorp.com
  *
@@ -18,7 +18,10 @@ $bcorp_sidebar = bcorp_sidebar_position($post->ID); ?>
 				while ( have_posts() ) {
 					the_post();
 					get_template_part( 'content', get_post_format() );
-					bcorp_post_nav();
+					the_post_navigation( array(
+            'prev_text'                  => __( '&larr; %title' ),
+            'next_text'                  => __( '%title &rarr;' ),
+        	) );
 					if ( comments_open() || get_comments_number() ) comments_template();
 				}
 			?></div><?php

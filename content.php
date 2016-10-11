@@ -2,7 +2,7 @@
 /**
  * Content
  *
- * @package Bcorp Basics
+ * @package BCorp Basics
  * @author Tim Brattberg
  * @link http://www.bcorp.com
  *
@@ -37,4 +37,4 @@ if (!is_single()) { ?>
 if (!is_single()) { ?>
 		</div>
 	</div><?php
-} ?>
+}

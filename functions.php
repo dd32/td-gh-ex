@@ -2,7 +2,7 @@
 /**
  * Functions
  *
- * @package Bcorp Basics
+ * @package BCorp Basics
  * @author Tim Brattberg
  * @link http://www.bcorp.com
  */
@@ -83,19 +83,10 @@ endif;
 add_filter('get_search_form', 'bcorp_search_form');
 if (!function_exists('bcorp_search_form')):
 	function bcorp_search_form($text) {
-		$text='<form role="search" method="get" class="search-form" action="'.home_url().'"><input type="submit" class="search-submit" value="&#xf179;">
+		$text='<form role="search" method="get" class="search-form" action="'.esc_url(home_url()).'"><input type="submit" class="search-submit" value="&#xf179;">
 			<input type="search" class="search-field" placeholder="Search..." value="" name="s" title="Search for:"></form>';
 	  return $text;
 	}
-endif;
-
-if ( ! function_exists( '_wp_render_title_tag' ) ) :
-   function bcorp_theme_slug_render_title() {
-      ?>
-      <title><?php wp_title( '|', true, 'right' ); ?></title>
-      <?php
-   }
-   add_action( 'wp_head', 'bcorp_theme_slug_render_title' );
 endif;
 
 add_action( 'widgets_init', 'bcorp_register_sidebars' );
@@ -149,6 +140,7 @@ if (!function_exists('bcorp_enqueue_scripts')):
 		wp_enqueue_style( 'bcorp-dashicons-style', get_stylesheet_uri(), array('dashicons'));
 		wp_enqueue_script('sticky_js', get_template_directory_uri().'/js/jquery.sticky.js','','',true);
 		wp_enqueue_script('bcorp_js',get_template_directory_uri().'/js/bcorp.js','','',true);
+		wp_enqueue_style( 'wpb-google-fonts', 'http://fonts.googleapis.com/css?family=Noto+Serif:regular|Open+Sans:600|Quantico:italic', false );
 	}
 endif;
 
@@ -161,43 +153,25 @@ if (!function_exists('bcorp_sidebar_position')):
 	}
 endif;
 
-if (!function_exists('bcorp_get_title')):
-	function bcorp_get_title() {
-		if (is_category()) echo  'Category: '.single_cat_title( '', false ) ;
-		elseif (is_tag()) echo  'Tag: '.single_tag_title( '', false ) ;
-		elseif (is_search()) echo esc_html__('Search Results for: ','bcorp-basics').get_search_query();
-		elseif (is_404()) echo esc_html__('Page Not Found','bcorp-basics');
-		elseif (is_author()) echo esc_html__('Posts by ','bcorp-basics').get_the_author();
-		elseif (is_archive()) {
-			if (get_post_format()) echo ucfirst(get_post_format()).' Archives';
-			elseif ( is_day() ) echo esc_html__( 'Daily Archives: ', 'bcorp-basics' ). get_the_date();
-			elseif ( is_month() ) echo esc_html__( 'Monthly Archives: ', 'bcorp-basics' ). get_the_date( _x( 'F Y', 'monthly archives date format', 'bcorp-basics' ) );
-			elseif ( is_year() ) echo esc_html__( 'Yearly Archives: ', 'bcorp-basics' ). get_the_date( _x( 'Y', 'yearly archives date format', 'bcorp-basics' ) ) ;
-			else echo esc_html_e( 'Archives', 'bcorp-basics' );
-		}
-		elseif (is_home()) echo bloginfo('name'); else echo substr(get_the_title(),0,35);
-	}
-endif;
-
 if (!function_exists('bcorp_get_breadcrumbs')):
 	function bcorp_get_breadcrumbs() {
     global $wp_query;
     if ( !is_front_page() ){
         echo '<ul class="breadcrumbs bcorp-color-alt">';
-        echo '<li><a href="'.get_home_url().'">Home</a></li>';
+        echo '<li><a href="'.esc_url(get_home_url()).'">'.esc_html__('Home','bcorp-basics').'</a></li>';
         if ( is_category() )
         {
             $catTitle = single_cat_title( "", false );
             $cat = get_cat_ID($catTitle);
             echo "<li>/ ". get_category_parents($cat, TRUE, "  " ) ."</li>";
         }
-				elseif ( is_author()) echo "<li>/ Posts by ".get_the_author()."</li>";
+				elseif ( is_author()) echo "<li>/ ".esc_html__('Posts by','bcorp-basics')." ".get_the_author()."</li>";
 				elseif ( is_day() ) echo '<li>/ '. get_the_date().'</li>';
 				elseif ( is_month() ) echo '<li>/ '. get_the_date( _x( 'F Y', 'monthly archives date format', 'bcorp-basics' ) ).'</li>';
 				elseif ( is_year() ) echo '<li>/ '. get_the_date( _x( 'Y', 'yearly archives date format', 'bcorp-basics' ) ) .'</li>';
 				elseif (is_tag()) echo  '<li>/ '.single_tag_title( '', false ).'</li>' ;
         elseif ( is_search() ) {
-            echo "<li>/ Search Results</li>";
+            echo "<li>/ ".esc_html__('Search Results','bcorp-basics')."</li>";
         }
 				elseif ( wp_attachment_is_image())
 				{
@@ -206,7 +180,7 @@ if (!function_exists('bcorp_get_breadcrumbs')):
 				elseif (get_post_type() == 'portfolio') {
 					$terms = get_the_terms( '', 'portfolio-category' );
 					echo '<li>/ ';
-					if (isset($terms[0]->slug)) echo '<a href="'.get_term_link( $terms[0]->slug, 'portfolio-category' ).'">'.$terms[0]->name.'</a></li><li>/ ';
+					if (isset($terms[0]->slug)) echo '<a href="'.esc_url(get_term_link( $terms[0]->slug, 'portfolio-category' )).'">'.$terms[0]->name.'</a></li><li>/ ';
 					echo substr(the_title('','', FALSE),0,35) ."</li>";
 				}
         elseif ( is_single() )
@@ -228,14 +202,14 @@ if (!function_exists('bcorp_get_breadcrumbs')):
                 array_push($ancestors, $post->ID);
                 foreach ( $ancestors as $ancestor ){
                     if( $ancestor != end($ancestors) ){
-                        echo '<li>/  <a href="'. get_permalink($ancestor) .'">'. strip_tags( apply_filters( 'single_post_title', get_the_title( $ancestor ) ) ) .'</a></li>';
+                        echo '<li>/  <a href="'. esc_url(get_permalink($ancestor)) .'">'. strip_tags( apply_filters( 'single_post_title', get_the_title( $ancestor ) ) ) .'</a></li>';
                     } else {
                         echo '<li>/  '. strip_tags( apply_filters( 'single_post_title', get_the_title( $ancestor ) ) ) .'</li>';
                     }
                 }
             }
         }
-				elseif (is_archive() && get_post_format()) return '<li>/ '.ucfirst(get_post_format()).' Archives</li>';
+				elseif (is_archive() && get_post_format()) return '<li>/ '.ucfirst(get_post_format()).' '.esc_html__('Archives','bcorp-basics').'</li>';
         echo "</ul>";
     }
 	}
@@ -244,7 +218,7 @@ endif;
 if (!function_exists('bcorp_get_link_url')):
 function bcorp_get_link_url() {
 	$has_url = get_url_in_content(get_the_content());
-	return $has_url ? $has_url : apply_filters( 'the_permalink', get_permalink() );
+	return $has_url ? $has_url : apply_filters( 'the_permalink', esc_url(get_permalink()) );
 }
 endif;
 
@@ -277,94 +251,9 @@ if (!function_exists('bcorp_post_thumbnail')):
 	}
 endif;
 
-if (!function_exists('bcorp_get_sidebar_nav')):
-	function bcorp_get_sidebar_nav()
-	{
-	  global $wp_query;
-	  if ( !is_home() ){
-			if ( is_page() ) { ?>
-				<ul class="bcorp-sidebar-nav widget"><?php
-	      	$post = $wp_query->get_queried_object();
-					if (get_pages('child_of='.$post->ID.'&parent='.$post->ID))
-						wp_list_pages( array('title_li'=>'','depth'=>1,'child_of'=>$post->ID) );
-					else wp_list_pages( array('title_li'=>'','depth'=>1,'child_of'=>$post->post_parent) ); ?>
-				</ul><?php
-	    }
-	  }
-	}
-endif;
-
-if (!function_exists('bcorp_paging_nav')):
-	function bcorp_paging_nav() {
-		if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
-			return;
-		}
-
-		$paged        = get_query_var( 'paged' ) ? intval( get_query_var( 'paged' ) ) : 1;
-		$pagenum_link = html_entity_decode( get_pagenum_link() );
-		$query_args   = array();
-		$url_parts    = explode( '?', $pagenum_link );
-
-		if ( isset( $url_parts[1] ) ) {
-			wp_parse_str( $url_parts[1], $query_args );
-		}
-
-		$pagenum_link = remove_query_arg( array_keys( $query_args ), $pagenum_link );
-		$pagenum_link = trailingslashit( $pagenum_link ) . '%_%';
-
-		$format  = $GLOBALS['wp_rewrite']->using_index_permalinks() && ! strpos( $pagenum_link, 'index.php' ) ? 'index.php/' : '';
-		$format .= $GLOBALS['wp_rewrite']->using_permalinks() ? user_trailingslashit( 'page/%#%', 'paged' ) : '?paged=%#%';
-
-		// Set up paginated links.
-		$links = paginate_links( array(
-			'base'     => $pagenum_link,
-			'format'   => $format,
-			'total'    => $GLOBALS['wp_query']->max_num_pages,
-			'current'  => $paged,
-			'mid_size' => 1,
-			'add_args' => array_map( 'urlencode', $query_args ),
-			'prev_text' => esc_html__( '&larr; Previous', 'bcorp-basics' ),
-			'next_text' => esc_html__( 'Next &rarr;', 'bcorp-basics' ),
-		) );
-
-		if ( $links ) {
-			?>
-			<nav class="navigation paging-navigation" role="navigation">
-				<div class="pagination loop-pagination">
-					<?php echo $links; ?>
-				</div>
-			</nav><?php
-		}
-	}
-endif;
-
 add_filter( 'excerpt_more', 'bcorp_excerpt_more' );
 if (!function_exists('bcorp_excerpt_more')):
 	function bcorp_excerpt_more( $more ) { return ' ...'; }
-endif;
-
-if (!function_exists('bcorp_post_nav')):
-	function bcorp_post_nav() {
-		$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
-		$next     = get_adjacent_post( false, '', false );
-		if ( ! $next && ! $previous ) {
-			return;
-		}
-		?>
-		<nav class="navigation post-navigation" role="navigation">
-			<div class="nav-links">
-				<?php
-				if ( is_attachment() ) :
-					previous_post_link( '%link', '<span class="meta-nav">'.esc_html__('Published In','bcorp-basics').'</span>%title' );
-				else :
-					previous_post_link( '%link', '<span class="bcorp-post-navigation bcorp-previous-post">&larr;%title<span>' );
-					next_post_link( '%link', '<span class="bcorp-post-navigation bcorp-next-post">%title&rarr;</span>' );
-				endif;
-				?>
-			</div>
-		</nav>
-		<?php
-	}
 endif;
 
 if (!function_exists('bcorp_link_pages')):
@@ -401,7 +290,7 @@ if (!function_exists('bcorp_post_meta')):
 		}
 		$postcomments = ob_get_clean();
 		if (get_edit_post_link()) {
-			$postedit = '<span class="edit-link"><a href="'.get_edit_post_link().'">'.esc_html__( 'Edit', 'bcorp-basics' ).'</a></span>';
+			$postedit = '<span class="edit-link"><a href="'.esc_url(get_edit_post_link()).'">'.esc_html__( 'Edit', 'bcorp-basics' ).'</a></span>';
 		} else $postedit ='';
 		if (!is_single()) $posttitle = '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">'.get_the_title().'</a></h2>';
 		else 	$posttitle = '<h2 class="entry-title">'.get_the_title().'</h2>';
@@ -506,5 +395,3 @@ if (!function_exists('bcorp_register_required_plugins')):
 	    tgmpa( $plugins, $config );
 	}
 endif;
-
-?>

@@ -2,7 +2,7 @@
 /**
  * Search Results
  *
- * @package Bcorp Basics
+ * @package BCorp Basics
  * @author Tim Brattberg
  * @link http://www.bcorp.com
  *
@@ -19,7 +19,10 @@ $bcorp_sidebar = bcorp_sidebar_position("search"); ?>
 							the_post();
 							get_template_part( 'content', get_post_format() );
 						}
-						bcorp_paging_nav();
+						the_posts_pagination( array(
+							'prev_text' => '&larr; '.__( 'PREVIOUS', 'bcorp-basics' ),
+							'next_text' => __( 'NEXT', 'bcorp-basics' ).' &rarr;',
+						) );
 					} else get_template_part( 'content', 'none' );
 			?></div><!-- #bcorp-row --><?php
 			if ($bcorp_sidebar!='bcorp_no_sidebar') {

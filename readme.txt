@@ -1,8 +1,8 @@
 === BCorp Basics ===
 Contributors: Tim Brattberg
 Requires at least: WordPress 4.1
-Tested up to: WordPress 4.5-trunk
-Version: 1.02
+Tested up to: WordPress 4.6.1-trunk
+Version: 1.03
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: featured-images, threaded-comments, one-column, two-columns, full-width-template
@@ -45,6 +45,15 @@ License: SIL OFL 1.1
 Licence URI: http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
 Source: http://fontawesome.io
 
+TGM-Plugin-Activation version   2.6.1
+Source:      http://tgmpluginactivation.com/
+Author:    Thomas Griffin, Gary Jones, Juliette Reinders Folmer
+Copyright: Copyright (c) 2011, Thomas Griffin
+License:   GPL-2.0+
+
+Normalize.css is a project by Nicolas Gallagher, co-created with Jonathan Neal.
+Licence: MIT License
+Source: https://github.com/necolas/normalize.css/
 
 == Changelog ==
 
@@ -52,3 +61,8 @@ Source: http://fontawesome.io
 * Released: July 19, 2016
 
 Initial release
+
+= 1.03 =
+* Released: October 11, 2016
+
+Security Fixes, Minor Updates

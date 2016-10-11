@@ -2,7 +2,7 @@
 /**
  * Page
  *
- * @package Bcorp Basics
+ * @package BCorp Basics
  * @author Tim Brattberg
  * @link http://www.bcorp.com
  *
