@@ -20,7 +20,7 @@ function promax_scripts() {
 			echo '<link rel="shortcut icon" href="' . esc_url(of_get_option('promax_favicon')) . '"/>' . "\n";
 	}
 	if ( is_rtl() ) {
-	wp_enqueue_style( 'republic-rtl-css', get_template_directory_uri() . '/css/rtl.css' );
+	wp_enqueue_style( 'promax-rtl-css', get_template_directory_uri() . '/css/rtl.css' );
 }
 		//Custom css output	
 		$custom_css = html_entity_decode(of_get_option('promax_customcss'));
@@ -184,6 +184,38 @@ add_filter( 'get_search_form', 'promax_search_form' );
 	    'before_title' => '<h4 class="widgettitle">',
 	    'after_title' => '</h4>',
 	));
+	register_sidebar(array(
+		'name' => __( 'After Single Post Content', 'promax' ),
+		'id' => 'aftersinglepost',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	    'after_widget' => '</div>',
+	    'before_title' => '<h4>',
+	    'after_title' => '</h4>',
+	));
+	register_sidebar(array(
+		'name' => __( 'After Page Content', 'promax' ),
+		'id' => 'aftersinglepage',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	    'after_widget' => '</div>',
+	    'before_title' => '<h4>',
+	    'after_title' => '</h4>',
+	));	
+	register_sidebar(array(
+		'name' => __( 'Header Right Widget', 'promax' ),
+		'id' => 'headerban',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	    'after_widget' => '</div>',
+	    'before_title' => '<h4>',
+	    'after_title' => '</h4>',
+	));
+	register_sidebar(array(
+		'name' => __( 'Below Navigation Widget', 'promax' ),
+		'id' => 'belownaviwid',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+	    'after_widget' => '</div>',
+	    'before_title' => '<h4>',
+	    'after_title' => '</h4>',
+	));	
 	register_sidebar(array(
 		'name' => __( 'Bottom Menu 1', 'promax' ),
 		'id' => 'probottom1',

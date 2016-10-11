@@ -22,7 +22,10 @@
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
           <?php endif; ?>		
 		</div>		
-		<div id="banner-top">	<?php echo of_get_option( 'banner_top'); ?></div>		
+		
+		<div id="banner-top">	<?php echo of_get_option( 'banner_top'); ?>
+		<?php if ( !dynamic_sidebar('headerban') ) :  endif; ?>
+		</div>		
     </div> <!-- end div #header-inner -->
 	</div> <!-- end div #header -->
 
@@ -50,3 +53,4 @@
 	</div> <!-- end div #pronav -->
 	<!-- END TOP NAVIGATION -->
 <?php } ?>
+<?php if ( !dynamic_sidebar('belownaviwid') ) :  endif; ?>

@@ -23,7 +23,7 @@
 								<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'promax' ), 'after' => '</div>' ) ); ?>
 							</div> <!-- end div .entry -->
 								<div class="gap"></div><?php if (of_get_option('promax_author' ) =='1' ) {load_template(get_template_directory() . '/includes/author.php'); } ?>
-
+<?php if ( !dynamic_sidebar('aftersinglepage') ) :  endif; ?>
 									<div class="comments">
 								<?php comments_template(); ?>
 							</div> <!-- end div .comments -->

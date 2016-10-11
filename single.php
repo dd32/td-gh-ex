@@ -34,6 +34,7 @@
 			<div id="single-nav-left"><?php previous_post_link('<strong>%link</strong>'); ?></div>
 		<div id="single-nav-right"><?php next_post_link('<strong>%link</strong>'); ?></div>
         </div>
+			<?php if ( !dynamic_sidebar('aftersinglepost') ) :  endif; ?>
         <!-- END single-nav -->
 			<div class="comments">	<?php comments_template(); ?>	</div> <!-- end div .comments --></article>
 			<?php endwhile; ?>
