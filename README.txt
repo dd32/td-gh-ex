@@ -61,6 +61,9 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.2.9
+* Fixed search mobile display
+
 #### 1.2.8
 * Added missing sanitization
 * Styling fixes

@@ -4,7 +4,7 @@ Theme URI: https://kairaweb.com/theme/electa/
 Author: Kaira
 Author URI: https://kairaweb.com/
 Description: Electa is your grid layout personal or commercial portfolio theme. Electa is the perfect theme to display any site from your photography portfolio, personal blog, restaurant websites, wedding sites, entertainment websites, or any site you'd like to display your beautiful images on. Along with the blocks layout, Electa has multiple page layouts which work well with SiteOrigin's simple drag and drop Page Builder, allowing you to built any type of page layout you like. Also integrated with WooCommerce, Electa can easily turn into a full online eCommerce store where you can sell products. Install WooCommerce now and build your own online shop in no time. Download Electa now and give it a go!
-Version: 1.2.8
+Version: 1.2.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: electa
@@ -1619,6 +1619,10 @@ object {
         margin-left: 220px;
     }
     
+    .search-button {
+        left: 180px;
+    }
+    
 }
 
 @media screen and (max-width: 782px) {
@@ -1742,6 +1746,31 @@ object {
     .open-page-item > ul.children,
     .open-page-item > ul.sub-menu {
         display: block !important;
+    }
+    
+    .search-button {
+        display: block !important;
+        bottom: -70px;
+        left: 20px;
+        right: 20px;
+    }
+    .search-block-arrow {
+        display: none;
+    }
+    .search-block {
+        position: relative;
+        top: 0;
+        left: 0 !important;
+        width: 100%;
+    }
+    .search-block .search-field {
+        width: 100%;
+    }
+    .search-block .search-submit {
+        position: absolute;
+        left: auto;
+        right: 9px;
+        top: 9px;
     }
 
 }
