@@ -30,6 +30,9 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 2.8.2 | 11th October 2016 =
+* Update: Issue with icons select not showing.
+
 = Version 2.8.1 | 4th October 2016 =
 * Update: Schema, now google doesn't show "errors".
 

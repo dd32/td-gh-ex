@@ -1974,7 +1974,6 @@ function virtue_override_panel() {
     wp_register_style('virtue-redux-custom-css', get_template_directory_uri() . '/themeoptions/options/css/style.css', false, 258);    
     wp_enqueue_style( 'virtue-redux-custom-css' );
     wp_dequeue_style( 'select2-css' );
-    wp_dequeue_script( 'select2-js' );
     wp_dequeue_style( 'redux-elusive-icon' );
     wp_dequeue_style( 'redux-elusive-icon-ie7' );
 }

@@ -241,7 +241,7 @@ if (!class_exists('ReduxFramework_kad_icons')) {
 
             wp_enqueue_script (
                 'kad-field-icons-js', 
-                get_template_directory_uri() . '/themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons' . Redux_Functions::isMin () . '.js', 
+                get_template_directory_uri() . '/themeoptions/options/extensions/kad_icons/kad_icons/field_kad_icons-min.js', 
                 array( 'jquery', 'jquery-ui-core', 'jquery-ui-accordion', 'wp-color-picker' ), 
                 time (), 
                 true

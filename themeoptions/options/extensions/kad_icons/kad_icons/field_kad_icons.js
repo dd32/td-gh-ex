@@ -13,7 +13,7 @@
     redux.field_objects.kad_icons.init = function( selector ) {
 
         if ( !selector ) {
-             selector = $( document ).find( ".redux-group-tab:visible" ).find( '.redux-container-kad_icons' );
+            selector = $( document ).find( ".redux-group-tab:visible" ).find( '.redux-container-kad_icons' );
         }
 
         $( selector ).each(
