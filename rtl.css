@@ -1,5 +1,5 @@
  body {
-	 direction: rtl;
+	   direction: rtl;
      unicode-bidi: embed;
  }
  .main-navigation a,.site-content,.footer-widgets,.service-content {
@@ -18,3 +18,608 @@
  .comment-list > li .comment-awaiting-moderation {
  	padding-right:180px;
  }
+
+
+
+ .column, .columns{
+	float:right;
+}
+
+.heading-center .sep::before, .heading-center-white .sep::before,.title-divider h3.widget-title::before, .title-divider .sep::before{
+	left:calc(100% - 40px);
+	}
+	.site-footer .widget_meta li a, .site-footer .widget_pages li a, .site-footer .widget_recent_entries li a, .site-footer .widget_nav_menu li a{
+		background: none;
+	}
+	.site-footer .textwidget ul.cnt-address li{
+		padding:10px 44px 10px 0px;
+	}
+	.site-footer .textwidget ul.cnt-address li i{
+		right: -9px;
+		left: auto;
+	}
+  .whyus-left ul li{
+
+    background:rgba(0, 0, 0, 0) url("images/icon-star.png") no-repeat scroll right center;
+  }
+
+.main-navigation ul.nav-menu > li {
+  float: right;
+   }
+
+.comment-navigation .nav-previous,
+.paging-navigation .nav-previous,
+.post-navigation .nav-previous {
+  float: right;
+  }
+  .comment-navigation .nav-previous .meta-nav,
+  .paging-navigation .nav-previous .meta-nav,
+  .post-navigation .nav-previous .meta-nav {
+    padding: 6px 10px; }
+
+.comment-navigation .nav-next,
+.paging-navigation .nav-next,
+.post-navigation .nav-next {
+  float: left;
+  text-align: right;
+ }
+  
+    .site-main .post-navigation .nav-links a span {
+      
+      float: right;
+    
+      }
+  .site-main .post-navigation .nav-links .nav-next a span {
+    float: right;
+   }
+
+/*--------------------------------------------------------------
+9.0 Widgets
+--------------------------------------------------------------*/
+
+   
+      .widget ul li li {
+        padding-left: 0px;
+        padding-right: 10px;  }
+
+
+
+
+  #secondary .widget li {
+    background: url("../images/icon-arrow2.gif") no-repeat left 10px;
+    padding-left: 0px;
+    padding-right: 35px;
+     }
+
+
+
+#secondary {
+  padding-left: 0px;
+   padding-right: 50px; }
+
+.right-sidebar {
+  padding-left: 0px !important;
+  padding-right: 50px; }
+
+/*--------------------------------------------------------------
+10.0 Content
+--------------------------------------------------------------*/
+
+  .site-footer .widget li a {
+    padding-left: 0; }
+    
+
+/* Footer Menu */
+.footer-bottom p {
+  text-align: right; }
+  
+
+/*--------------------------------------------------------------
+10.1 Posts and pages
+--------------------------------------------------------------*/
+.entry-content {
+  padding-top: 20px; }
+
+
+
+
+
+
+    .related-posts ul li {
+      float: right;
+    }
+      .related-posts ul li a {
+      
+        text-align: right; }
+
+
+
+/*--------------------------------------------------------------
+10.3 Comments
+--------------------------------------------------------------*/
+
+
+ol.comment-list .reply {
+ 
+  background: url("../images/icon-reply.png") no-repeat left center;
+  padding-left: 0px; 
+padding-right: 25px;}
+
+
+.comment-form .comment-form-author,
+.comment-form .comment-form-email,
+.comment-form .comment-form-url {
+ 
+  float: right;
+ }
+  
+
+/*--------------------------------------------------------------
+10.4 Shortcodes
+--------------------------------------------------------------*/
+.services {
+  
+  text-align: right;
+  }
+  
+
+  .services .service {
+    
+    text-align: right;
+    }
+ 
+  .flex-container .flex-direction-nav a {
+  
+    text-align: center;
+    }
+ 
+  .flex-recent-posts ul.slides li, .widget_recent-posts-widget .recent-posts ul.slides li {
+    
+    float: right;
+     }
+ 
+    .flex-recent-posts ul.slides .recent-post h4, .widget_recent-posts-widget .recent-posts ul.slides .recent-post h4 {
+    
+      text-align: right;
+       }
+   
+  .whyus-left ul {
+    text-align: right;
+     }
+    .whyus-left ul li {
+     
+      padding-left: 0px;
+      padding-right: 25px;
+     }
+
+
+.recent-work-title {
+  text-align: right;
+  }
+
+/*--------------------------------------------------------------
+10.4 Shortcodes
+--------------------------------------------------------------*/
+
+    .share-box ul li a, .top-right ul li a, .site-content .widget_social-networks-widget ul li a, .footer-top .widget_social-networks-widget ul li a {
+     
+      text-align: center;
+       }
+
+
+.widget_stat-widget .stat-container {
+  text-align: right; }
+
+  .tabs.center ul {
+    float: none;
+    text-align: right;
+   }
+
+
+.icon-right .service,
+.icon-left .service {
+ 
+  float: right; }
+  
+.icon-right .icon-wrapper,
+.icon-left .icon-wrapper {
+ 
+  float: right;
+  text-align: center; }
+
+.icon-top .service .icon-title, .icon-top .icon-wrapper p {
+  text-align: right; }
+
+.icon-left .icon-wrapper {
+  float: right; }
+.icon-left .service {
+  float: right; }
+
+.icon-right .service {
+  text-align: right; }
+.icon-right .more-button {
+  text-align: right; }
+
+
+.team-social ul {
+
+  text-align: right;
+   }
+
+    .team-social ul li a {
+      
+      text-align: center;
+      }
+      
+
+.team-avatar {
+  
+  text-align: right;
+   }
+
+
+  .team-content p {
+    text-align: right;
+    }
+  .team-content h4 {
+    
+    text-align: right; }
+ 
+  .widget.widget_skill-widget .skill-container .skill {
+   
+    /*margin: -8px 70px 10px 0;*/
+     margin: -8px 0px 10px 70;
+  }
+
+  .ui-accordion h3 {
+   
+    padding-left: 0px;
+    padding-right: 55px;
+    }
+  
+  .ui-accordion .ui-accordion-content {
+   
+    text-align: right;
+    }
+ 
+  .widget_recent-work-widget .widget-title {
+  
+    text-align: right; }
+
+  .widget_recent-work-widget .recent_work_overlay a {
+   
+    text-align: right;
+     }
+ 
+
+ul.filter-options {
+
+  text-align: right;
+  }
+
+
+#filters {
+
+  text-align: right; }
+
+    .widget_recent-posts-widget .recent-post .entry-date {
+      float: right;
+      text-align: right;
+   }
+
+    .widget_recent-posts-widget .recent-post .post-content {
+    
+      float: right;
+      padding-right: 20px;
+      padding-left: 0px; }
+
+    .widget_recent-posts-widget .recent-posts li {
+      
+      float: right;
+      }
+
+
+.overlay_icon a {
+
+  text-align: center; }
+
+  ul#portfolio li.item {
+    float: right; }
+
+  .portfolio_details h3,
+  .portfolio_details p {
+   
+    text-align: right; }
+
+  .flex-container .flex-direction-nav a {
+ 
+    text-align: center;
+    display: block;
+    }
+   
+  .flex-container .flexslider .flex-image {
+    text-align: right; }
+  
+  .ei-title h3,
+  .ei-title h2 {
+    text-align: right; }
+
+#ei-slider ul {
+  text-align: right;
+   }
+
+  .breadcrumb-wrap #breadcrumb #crumbs {
+   
+    text-align: right; }
+
+  .alert-message a {
+    float: right;
+    padding: 0px 0px 0px 15px;
+    }
+
+
+.btn,
+.widget_button-widget .btn {
+  
+  text-align: right;
+   }
+
+.dropcap {
+  float: right;
+  }
+
+
+
+.widget_heading-widget .center {
+  text-align: right; }
+
+h1.tcenter,
+h2.tcenter,
+h3.tcenter,
+h4.tcenter,
+h5.tcenter {
+  text-align: right; }
+
+h1.tright,
+h2.tright,
+h3.tright,
+h4.tright,
+h5.tright {
+  text-align: right; }
+
+h1.tleft,
+h2.tleft,
+h3.tleft,
+h4.tleft,
+h5.tleft {
+  text-align: right; }
+
+.pullright {
+  float: right;
+  }
+
+.pullleft {
+  float: left; }
+
+.toggle .toggle-title {
+  
+  padding-left: 10px;
+  padding-right: 40px;
+  }
+
+.withtip:before {
+  
+  text-align: right;
+}
+
+
+.circle-icon-box {
+  
+  text-align: right; }
+  .circle-icon-box .circle-icon-wrapper {
+    text-align: center;
+   }
+    
+    .circle-icon-box .service p {
+      
+      text-align: right; }
+    .circle-icon-box .service p.more-button {
+     
+      text-align: right;
+      }
+     
+  
+
+i.boxy {
+  
+  text-align: right;
+ }
+
+  .callout-widget p,
+  .callout-widget h4 {
+    text-align: right; }
+ 
+  .callout-widget .callout-btn a {
+   
+    text-align: right;
+   }
+  
+  .callout-widget .call-content {
+    float: right;
+    }
+  .callout-widget .callout-btn {
+    float: right;
+    }
+
+.widget_testimonial-widget {
+
+  text-align: right;
+ }
+  
+  .widget_testimonial-widget .testimony {
+   text-align: right;
+   
+     }
+  .widget_testimonial-widget h3.widget-title {
+    text-align: right;
+     }
+  
+    .widget_testimonial-widget ul li p.client {
+    
+      text-align:right;
+      }
+      .flex-control-nav{
+      	text-align: right;
+      }
+      
+.widget_image-box-widget .image-box {
+  text-align: right;
+ }
+  
+.widget_image-box-widget h4 {
+
+  text-align: right;
+  }
+
+
+.author-bio .author-info .avatar {
+ 
+  float: right; }
+.author-bio .author-info .description {
+  float: right;
+ }
+
+.site-footer {
+  /* Circle Icon Box */
+  /* Call Out */
+  /* Divider */
+  /* Flex Slider */
+  /* Our Team */
+  /* Quote */
+  /* Recent Work */
+  /* Recent Post Gallery */
+  /* Testimonial */
+  /* Flex Slider */
+  /* Search Form */
+  /* Footer Menu */ }
+  
+  .site-footer .callout-widget .call-content,
+  .site-footer .callout-widget .callout-btn {
+    float: none; }
+  
+    .site-footer .widget.widget_recent-work-widget h3 {
+      text-align: right;
+     }
+
+.woocommerce #content input.button,
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce-page #content input.button,
+.woocommerce-page #respond input#submit,
+.woocommerce-page a.button,
+.woocommerce-page button.button,
+.woocommerce-page input.button {
+
+  text-align: right;
+   }
+
+/* align center */
+.center-align p.text {
+  text-align: right; }
+
+
+    .flex-container .flex-caption h1, .flex-container .flex-caption h2, .flex-container .flex-caption h3, .flex-container .flex-caption h4, .flex-container .flex-caption h5, .flex-container .flex-caption h6, .flex-container .flex-caption p,
+    .flex-container .flex-caption ul {
+   
+      text-align: right;
+  }
+    
+/* common class */
+/* headline separater */
+.heading-center, .heading-center-white {
+  text-align: right; }
+  
+
+.heading-center-white .sep {
+  
+  text-align: right; }
+
+
+.title-divider h3.widget-title, .title-divider .sep {
+  text-align: right;
+  }
+ 
+   .search-form input.search-field {
+  
+  padding-right: 30px; }
+
+.error-404.not-found {
+  text-align: right; }
+  
+  .error-404.not-found .widget {
+    text-align: right; }
+  
+
+/*------------from kirki-----------*/
+.no-sidebar {
+  float: none;
+  }
+
+.boxed-header .branding .site-branding {
+  padding-left: 0px; 
+padding-right: 10px;}
+
+
+/*--------------------------------------------------------------
+12.1 Captions
+--------------------------------------------------------------*/
+
+.wp-caption-text {
+  text-align: right; }
+
+/*--------------------------------------------------------------
+12.2 Galleries
+--------------------------------------------------------------*/
+
+
+.gallery-item {
+ 
+  text-align: right;
+  }
+  
+
+/*--------------------------------------------------------------
+12.3 Galleries
+--------------------------------------------------------------*/
+
+@media only screen and (max-width: 768px) {
+
+  .site-branding {
+    text-align: right;
+    }
+
+  .site-header .top-right {
+    text-align: right; }
+
+  .nav-wrap .search-form,
+  .search-form {
+    text-align: right; }
+  
+   
+
+  .site-footer .footer-bottom ul.menu {
+    text-align: right;
+ }
+  .site-footer .footer-bottom p {
+    text-align: right; }
+
+
+@media only screen and (max-width: 700px) {
+    .breadcrumb #breadcrumb #crumbs {
+      text-align: right; }
+
+   }
+
+

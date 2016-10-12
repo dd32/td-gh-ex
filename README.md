@@ -40,6 +40,11 @@ https://pixabay.com/en/man-handsome-male-model-guy-885223/
 16. Other theme options are self explanatory.
 
 == Change Log ==
+v. 1.2.7
+ * Fix old version function bug
+ * Added RTL language Support
+ * Fix Twitter link
+ 
 v. 1.2.6
  * Added More options
  * Customizer Changed to kirki 

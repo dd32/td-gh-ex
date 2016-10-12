@@ -835,7 +835,7 @@ if( ! function_exists( 'boxy_featured_image' ) ) {
 				the_post_thumbnail('boxy-small-featured-image-width');
 			elseif( $featured_image_size == 3 ) :
 				the_post_thumbnail('full');
-			elseif( $featured_image_size == 4 ) :
+			elseif( $featured_image_size == 4 ) :    
 				the_post_thumbnail('medium');
 			elseif( $featured_image_size == 5 ) :
 				the_post_thumbnail('large');
@@ -918,12 +918,11 @@ if( !function_exists('boxy_home_sidebar_class') ) {
     }
 }
 
-
 /**
  * Theme Update Script
  *
  * Runs if version number saved in theme_mod "version" doesn't match current theme version.
- *  logo update
+ * Logo update
  */
 if( !function_exists('boxy_logo_update_check') ) { 
 	function boxy_logo_update_check() {
@@ -946,6 +945,7 @@ if( !function_exists('boxy_logo_update_check') ) {
 	}
 }
 add_action( 'after_setup_theme', 'boxy_logo_update_check' );
+
 
 
 /* custom css */

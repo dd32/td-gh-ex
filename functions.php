@@ -32,10 +32,10 @@ if ( ! function_exists( 'boxy_setup' ) ) :
 		add_editor_style( 'css/editor-style.css' );
 
 		/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
-	 */
+		 * Enable support for Post Thumbnails on posts and pages.
+		 *
+		 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
+		 */
 		add_theme_support( 'post-thumbnails' );
 
 		// This theme uses wp_nav_menu() in one location.
@@ -49,15 +49,15 @@ if ( ! function_exists( 'boxy_setup' ) ) :
 					'default-image' => '',
 				) ) );
 
-		// Enable support for Post Formats.
-		add_theme_support( 'post-formats', array(
-		'aside', 'image', 'video', 'quote', 'link',
-	) );
+			// Enable support for Post Formats.
+			add_theme_support( 'post-formats', array(
+			'aside', 'image', 'video', 'quote', 'link',
+		) );
 
-	add_theme_support( 'custom-background' );
-	
+		add_theme_support( 'custom-background' );
+		
 
-	add_theme_support( 'custom-logo' );
+		add_theme_support( 'custom-logo' );
 
 		// Add theme support for Semantic Markup
 		$markup = array( 'search-form', 'comment-form', 'comment-list', );
@@ -66,7 +66,7 @@ if ( ! function_exists( 'boxy_setup' ) ) :
 		// Add theme support for title tag
 		add_theme_support( 'title-tag' );
 
-		/*
+        /*
 		 * Add Additional image sizes
 		 *
 		 */        
@@ -86,7 +86,7 @@ if ( ! function_exists( 'boxy_setup' ) ) :
 			add_image_size( 'boxy-blog-large-width', 800,300, true );
 			add_image_size( 'boxy-rpgallery', 250, 200, true );
 		}
-	
+	  
 	}
 endif; // boxy_setup
 add_action( 'after_setup_theme', 'boxy_setup' );
@@ -95,57 +95,61 @@ add_action( 'after_setup_theme', 'boxy_customizer_setup',11 );
 if( ! function_exists( 'boxy_customizer_setup' ) ) {
 		//echo '<pre>', print_r($boxy), '</pre>';
 	function boxy_customizer_setup() {
-		if(  count( get_theme_mods() ) <= 1 ) {
-			global $options;
-			$boxy = get_option('boxy');
-			foreach($options['panels']['theme_options']['sections'] as $section) {
-				foreach( $section['fields'] as $name => $settings ) {
-					//echo 'Name: ' . $name . '<br>' . 'Value: ' . $boxy[$name] . '<br>';
-					if( ! get_theme_mod( $name ) && isset( $boxy[$name] ) ) {
-						if( is_array( $boxy[$name] ) ) {
-							set_theme_mod( $name, $boxy[$name]['url'] );
-						} else {
-							set_theme_mod( $name, $boxy[$name] );
-						}
-					}
-				}		
-			}
-
-		 	foreach($options['panels']['home']['sections'] as $section) {
-				foreach( $section['fields'] as $name => $settings ) {
-					if( ! get_theme_mod( $name ) && isset( $boxy[$name] ) ) {
-								if( is_array($boxy[$name]) ) {
-									set_theme_mod( $name, $boxy[$name]['url'] );
-								} 
-								else {
-									set_theme_mod( $name, $boxy[$name] );
-								}
-					}
-			
-					if ( isset ( $boxy['slides'] ) ) {		
-						$slide_count = 1;
-						foreach($boxy['slides'] as $slide) {
-							if( ! get_theme_mod( 'image_upload-' . $slide_count ) && isset( $slide['image'] ) ) {
-								set_theme_mod( 'image_upload-' . $slide_count, $slide['image']);
+		$ver = get_theme_mod( 'version', false );
+		// Return if update has already been run
+		if ( version_compare( $ver, '1.1.6' , '<=' ) && !empty($ver) ) {
+			if(  count( get_theme_mods() ) <= 1 ) {
+				global $options;
+				$boxy = get_option('boxy');
+				foreach($options['panels']['theme_options']['sections'] as $section) {
+					foreach( $section['fields'] as $name => $settings ) {
+						//echo 'Name: ' . $name . '<br>' . 'Value: ' . $boxy[$name] . '<br>';
+						if( ! get_theme_mod( $name ) && isset( $boxy[$name] ) ) {
+							if( is_array( $boxy[$name] ) ) {
+								set_theme_mod( $name, $boxy[$name]['url'] );
+							} else {
+								set_theme_mod( $name, $boxy[$name] );
 							}
-							if( ! get_theme_mod( 'flexcaption-' . $slide_count ) && isset( $slide['description'] ) ) {
-								set_theme_mod( 'flexcaption-' . $slide_count, $slide['description']);
-							}
-							$slide_count++;
 						}
-					}
-					if ( isset ( $boxy['clients'] ) ) {
-						$slide_count = 1;
-						foreach($boxy['clients'] as $slide) {
-							if( ! get_theme_mod( 'client_image-' . $slide_count ) && isset( $slide['image'] ) ) {
-								set_theme_mod( 'client_image-' . $slide_count, $slide['image']);  
-							}
-							$slide_count++;
-						}
-					}
+					}		
 				}
-			}	
-		}
+
+			 	foreach($options['panels']['home']['sections'] as $section) {
+					foreach( $section['fields'] as $name => $settings ) {
+						if( ! get_theme_mod( $name ) && isset( $boxy[$name] ) ) {
+									if( is_array($boxy[$name]) ) {
+										set_theme_mod( $name, $boxy[$name]['url'] );
+									} 
+									else {
+										set_theme_mod( $name, $boxy[$name] );
+									}
+						}
+				
+						if ( isset ( $boxy['slides'] ) ) {		
+							$slide_count = 1;
+							foreach($boxy['slides'] as $slide) {
+								if( ! get_theme_mod( 'image_upload-' . $slide_count ) && isset( $slide['image'] ) ) {
+									set_theme_mod( 'image_upload-' . $slide_count, $slide['image']);
+								}
+								if( ! get_theme_mod( 'flexcaption-' . $slide_count ) && isset( $slide['description'] ) ) {
+									set_theme_mod( 'flexcaption-' . $slide_count, $slide['description']);
+								}
+								$slide_count++;
+							}
+						}
+						if ( isset ( $boxy['clients'] ) ) {
+							$slide_count = 1;
+							foreach($boxy['clients'] as $slide) {
+								if( ! get_theme_mod( 'client_image-' . $slide_count ) && isset( $slide['image'] ) ) {
+									set_theme_mod( 'client_image-' . $slide_count, $slide['image']);  
+								}
+								$slide_count++;
+							}
+						}
+					}
+				}	
+			}
+	    }
 	}
 }
 

@@ -92,7 +92,7 @@ endif;
 	
 	<?php if ( function_exists( 'is_woocommerce' ) || function_exists( 'is_cart' ) || function_exists( 'is_chechout' ) ) :
 	 if ( is_woocommerce() || is_cart() || is_checkout() ) { ?>
-	    <div class="breadcrumb-wrap">
+	    <div class="breadcrumb-wrap">  
 			<div class="container">
 				<div class="ten columns">
 					<header class="entry-header">
