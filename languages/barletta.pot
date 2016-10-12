@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Barletta Theme\n"
-"POT-Creation-Date: 2016-09-15 12:26+0300\n"
+"POT-Creation-Date: 2016-03-22 22:16+0200\n"
 "PO-Revision-Date: 2015-04-04 15:03+0200\n"
 "Last-Translator: Aigars Silkalns <a.silkalns@gmail.com>\n"
 "Language-Team: MOOZ Themes <info@moozthemes.com>\n"
@@ -19,6 +19,66 @@ msgstr ""
 
 #: ../404.php:12
 msgid "Page not found"
+msgstr ""
+
+#: ../archive.php:25
+#, php-format
+msgid "Author: %s"
+msgstr ""
+
+#: ../archive.php:28
+#, php-format
+msgid "Day: %s"
+msgstr ""
+
+#: ../archive.php:31
+#, php-format
+msgid "Month: %s"
+msgstr ""
+
+#: ../archive.php:34
+#, php-format
+msgid "Year: %s"
+msgstr ""
+
+#: ../archive.php:37
+msgid "Asides"
+msgstr ""
+
+#: ../archive.php:40
+msgid "Galleries"
+msgstr ""
+
+#: ../archive.php:43
+msgid "Images"
+msgstr ""
+
+#: ../archive.php:46
+msgid "Videos"
+msgstr ""
+
+#: ../archive.php:49
+msgid "Quotes"
+msgstr ""
+
+#: ../archive.php:52
+msgid "Links"
+msgstr ""
+
+#: ../archive.php:55
+msgid "Statuses"
+msgstr ""
+
+#: ../archive.php:58
+msgid "Audios"
+msgstr ""
+
+#: ../archive.php:61
+msgid "Chats"
+msgstr ""
+
+#: ../archive.php:64 ../sidebar.php:35
+msgid "Archives"
 msgstr ""
 
 #: ../comments.php:25
@@ -94,63 +154,63 @@ msgstr ""
 msgid "Full Width"
 msgstr ""
 
-#: ../functions.php:48
+#: ../functions.php:15
+msgid "Logo Only"
+msgstr ""
+
+#: ../functions.php:16
+msgid "Logo + Tagline"
+msgstr ""
+
+#: ../functions.php:17
+msgid "Title Only"
+msgstr ""
+
+#: ../functions.php:18
+msgid "Title + Tagline"
+msgstr ""
+
+#: ../functions.php:59
 msgid "Main Menu"
 msgstr ""
 
-#: ../functions.php:281
+#: ../functions.php:202
 msgid "Primary Sidebar"
 msgstr ""
 
-#: ../functions.php:283
+#: ../functions.php:204
 msgid "Main sidebar that appears on the left."
 msgstr ""
 
-#: ../functions.php:290
+#: ../functions.php:211
 msgid "Content Sidebar"
 msgstr ""
 
-#: ../functions.php:292
+#: ../functions.php:213
 msgid "Additional sidebar that appears on the right."
 msgstr ""
 
-#: ../functions.php:299
+#: ../functions.php:220
 msgid "Footer Widget 1"
 msgstr ""
 
-#: ../functions.php:301 ../functions.php:310 ../functions.php:319
+#: ../functions.php:222 ../functions.php:231 ../functions.php:240
 msgid "Appears in the footer section of the site."
 msgstr ""
 
-#: ../functions.php:308
+#: ../functions.php:229
 msgid "Footer Widget 2"
 msgstr ""
 
-#: ../functions.php:317
+#: ../functions.php:238
 msgid "Footer Widget 3"
 msgstr ""
 
-#: ../functions.php:326
-msgid "Footer Full-Width Widget"
-msgstr ""
-
-#: ../functions.php:328
-msgid "For full width widgets. Appears in the footer section of the site."
-msgstr ""
-
-#: ../functions.php:337
-msgid "WooCommerce Sidebar"
-msgstr ""
-
-#: ../functions.php:339
-msgid "The widgets added in this sidebar will appear in WooCommerce pages."
-msgstr ""
-
-#: ../functions.php:371
+#: ../functions.php:268
 msgid ". All rights reserved."
 msgstr ""
 
-#: ../functions.php:377
+#: ../functions.php:274
 #, php-format
 msgid "Theme by %1$s Powered by %2$s"
 msgstr ""
@@ -171,40 +231,28 @@ msgstr ""
 msgid "Choose between different layout options to be used as default"
 msgstr ""
 
-#: ../inc/customizer.php:56
+#: ../inc/customizer.php:55
+msgid "Display Comments on Static Pages?"
+msgstr ""
+
+#: ../inc/customizer.php:68
 msgid "Slider Settings"
 msgstr ""
 
-#: ../inc/customizer.php:58
+#: ../inc/customizer.php:70
 msgid "Change slider settings here."
 msgstr ""
 
-#: ../inc/customizer.php:72
+#: ../inc/customizer.php:84
 msgid "Choose a category."
 msgstr ""
 
-#: ../inc/customizer.php:86
+#: ../inc/customizer.php:98
 msgid "Show Slider?"
 msgstr ""
 
-#: ../inc/customizer.php:103
-msgid "Accent color"
-msgstr ""
-
-#: ../inc/customizer.php:116
-msgid "Links hover color"
-msgstr ""
-
-#: ../inc/customizer.php:117
-msgid "Hover color for links in text, headings and menu"
-msgstr ""
-
-#: ../inc/customizer.php:130
-msgid "Titles background color"
-msgstr ""
-
-#: ../inc/customizer.php:131
-msgid "Titles font color is white, please chose dark color for titles background"
+#: ../inc/customizer.php:115
+msgid "Logo"
 msgstr ""
 
 #: ../inc/extras.php:79
@@ -245,50 +293,6 @@ msgstr ""
 
 #: ../inc/template_tags.php:69
 msgid "<div class=\"meta-nav meta-nav-right\"><span>Next Post</span>%title</div>"
-msgstr ""
-
-#: ../inc/widgets/widget-barletta-about.php:14
-msgid "Widget to author"
-msgstr ""
-
-#: ../inc/widgets/widget-barletta-about.php:15
-msgid "Barletta About Author"
-msgstr ""
-
-#: ../inc/widgets/widget-barletta-about.php:22
-msgid "About Me"
-msgstr ""
-
-#: ../inc/widgets/widget-barletta-about.php:67
-msgid "Read More"
-msgstr ""
-
-#: ../inc/widgets/widget-barletta-about.php:89
-msgid "Title "
-msgstr ""
-
-#: ../inc/widgets/widget-barletta-about.php:96
-msgid "Name "
-msgstr ""
-
-#: ../inc/widgets/widget-barletta-about.php:103
-msgid "Position "
-msgstr ""
-
-#: ../inc/widgets/widget-barletta-about.php:110
-msgid "Content "
-msgstr ""
-
-#: ../inc/widgets/widget-barletta-about.php:117
-msgid "Link to more info "
-msgstr ""
-
-#: ../inc/widgets/widget-barletta-about.php:124
-msgid "Rounded Author Image? "
-msgstr ""
-
-#: ../inc/widgets/widget-barletta-about.php:133
-msgid "Upload Image"
 msgstr ""
 
 #: ../inc/widgets/widget-barletta-posts.php:12
@@ -437,7 +441,7 @@ msgstr ""
 
 #: ../searchform.php:14
 msgctxt "placeholder"
-msgid "Search & help"
+msgid "Search&hellp;"
 msgstr ""
 
 #: ../searchform.php:14
@@ -448,8 +452,4 @@ msgstr ""
 #: ../searchform.php:16
 msgctxt "submit button"
 msgid "Search"
-msgstr ""
-
-#: ../sidebar.php:39
-msgid "Archives"
 msgstr ""

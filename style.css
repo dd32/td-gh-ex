@@ -4,7 +4,7 @@ Theme URI: http://moozthemes.com/barletta-wordpress-theme
 Author: MOOZ Themes
 Author URI: http://moozthemes.com
 Description: Barletta is a light, elegant and clean design WordPress blog theme which is mainly designed for lifestyle, travel, fashion, food, personal blog and other publishers. Theme is carefully crafted with attention to details and love. Barletta blog theme is fully responsive and your web site will adapt to display on all types of devices. Theme is based on the versatile Bootstrap framework which is known for being reliable and well made making it friendly for developers. Overall, Barletta is a visually stunning theme with polished typography and simple design, great for bloggers. Now theme is optimized to work with JetPack, WooCommerce, Contact Form 7, Mailchimps and other popular free and premium plugins. Enjoy writing, enjoy blogging!
-Version: 1.0.9
+Version: 1.1.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: barletta
@@ -363,6 +363,23 @@ dd {
 	letter-spacing: 2px;
 }
 
+@media (min-width: 768px) {
+	.navbar .container {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+}
+
+.navbar .navbar-center .navbar-nav {
+	display: inline-block;
+	float: none;
+	vertical-align: top;
+}
+
+.navbar .navbar-center {
+	text-align: center;
+}
+
 .navbar-nav > .active > a:hover {
 	color: #fff;
 	background-color: #7DC07B;
@@ -668,6 +685,16 @@ dd {
 	margin-bottom: 30px;
 }
 
+.blog-post .entry-content a {
+	-webkit-box-shadow: inset 0px -3px 0px 0px #7dc07b;
+	-moz-box-shadow: inset 0px -3px 0px 0px #7dc07b;
+	box-shadow: inset 0px -3px 0px 0px #7dc07b;
+}
+
+.blog-post .entry-content a:hover, a:focus, a:active, a.active {
+	color: #7dc07b;
+}
+
 .blog-post .mz-entry-tags {
 	margin: 40px 0;
 	text-align: left;
@@ -691,6 +718,16 @@ dd {
 
 .blog-post .entry-tags a:hover {
 	color: #7DC07B;
+}
+
+/* for mobile */
+@media (max-width: 768px) {
+	.blog-post {
+		padding: 40px 10px 50px 10px;
+	}
+	.blog-post .entry-title {
+		font-size: 28px;		
+	}
 }
 
 .page article {
@@ -1245,6 +1282,12 @@ dd {
 	padding: 40px;
 	border: 1px solid #EAEAEA;
 }
+/* for mobile */
+@media (max-width: 768px) {
+	.comments-area {
+		padding: 10px;
+	}
+}
 
 .comments-title,
 .comment-list,
@@ -1557,11 +1600,23 @@ dd {
 	padding: 0;
 }
 
+.embed-vimeo {
+	text-align: center;
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 25px;
+	height: 0;
+}
+
 /* Make sure embeds and iframes fit their containers */
 embed,
 iframe,
 object {
-	max-width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -1788,11 +1843,11 @@ and (max-width : 480px) {
 }
 
 .footer-bottom a {
-	color: #7DC07B;
+	color: #9A9A9A;
 }
 
 .footer-bottom a:hover {
-	color: #fff;
+	text-decoration: underline;
 }
 
 .footer-fullwidth .widget-title {

@@ -1,5 +1,5 @@
 ﻿Theme Name : Barletta
-Version    : 1.0.9
+Version    : 1.1.0
 Theme URL  : http://moozthemes.com/barletta-wordpress-theme
 Theme Documentation  : http://moozthemes.com/barletta-wordpress-theme-documentation/
 
@@ -117,3 +117,7 @@ Drag and drop these widgets to above two widget areas and arrange them as you li
 
 1.0.9 - 15.09.2016
 * Added "About author" widget
+
+1.1.0 - 12.10.2016
+* Added option to center menu (go to customizer -> layout options, check box "center menu")
+* Added option to change footer colors and copyright text

@@ -45,6 +45,20 @@ function barletta_customizer( $wp_customize ) {
 			'choices'    => $barletta_site_layout
 		));	
 
+		// checkbox center menu
+		$wp_customize->add_setting( 'barletta_menu_center', array(
+			'default'        => false,
+			'transport'  =>  'refresh',
+			'sanitize_callback' => 'barletta_sanitize_checkbox'
+		) );
+
+		$wp_customize->add_control( 'barletta_menu_center', array(
+			'priority'  => 2,
+			'label'     => __('Center Menu?','barletta'),
+			'section'   => 'barletta_layout_section',
+			'type'      => 'checkbox',
+		) );
+
 	/**
 	 * Section: Slider settings
 	 */
@@ -89,6 +103,23 @@ function barletta_customizer( $wp_customize ) {
 		) );
 
 		/**
+		 * Section: Change footer text
+		 */
+
+		// Change footer copyright text
+		$wp_customize->add_setting( 'barletta_footer_text', array(
+			'default'        => '',
+			'sanitize_callback' => 'barletta_sanitize_input',
+			'transport'  =>  'refresh',
+		));
+
+		$wp_customize->add_control( 'barletta_footer_text', array(
+			'label'     => __('Footer Copyright Text','barletta'),
+			'section'   => 'title_tagline',
+			'priority'    => 31,
+		));
+
+		/**
 		 * Section: Colors
 		 */
 
@@ -128,7 +159,35 @@ function barletta_customizer( $wp_customize ) {
 
 		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'barletta_titles_color', array(
 			'label'     => __('Titles background color','barletta'),
-			'description' => __('Titles font color is white, please chose dark color for titles background', 'barletta'),
+			'description' => __('Widget titles font color is white, please chose dark color for titles background', 'barletta'),
+			'section'   => 'colors',
+			'priority'  => 2,
+		)));
+
+		// Change Footer background
+		$wp_customize->add_setting( 'barletta_footer_background', array(
+			'default'        => '#2D2D2D',
+			'sanitize_callback' => 'barletta_sanitize_hexcolor',
+			'transport'  =>  'refresh',
+		));
+
+		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'barletta_footer_background', array(
+			'label'     => __('Footer background color','barletta'),
+			'description' => __('Change footer background color here', 'barletta'),
+			'section'   => 'colors',
+			'priority'  => 2,
+		)));
+
+		// Change Footer background
+		$wp_customize->add_setting( 'barletta_footer_color', array(
+			'default'        => '#9A9A9A',
+			'sanitize_callback' => 'barletta_sanitize_hexcolor',
+			'transport'  =>  'refresh',
+		));
+
+		$wp_customize->add_control( new WP_Customize_Color_Control($wp_customize, 'barletta_footer_color', array(
+			'label'     => __('Footer font color','barletta'),
+			'description' => __('Change footer font color here', 'barletta'),
 			'section'   => 'colors',
 			'priority'  => 2,
 		)));
@@ -136,6 +195,13 @@ function barletta_customizer( $wp_customize ) {
 }
 
 add_action( 'customize_register', 'barletta_customizer' );
+
+/**
+ * Adds sanitization for text inputs
+ */
+function barletta_sanitize_input($input ) {
+	return wp_kses_post( force_balance_tags( $input ) );
+}
 
 /**
  * Adds sanitization callback function: Slider Category
