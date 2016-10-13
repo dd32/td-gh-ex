@@ -4,7 +4,7 @@ Theme URI: http://www.iograficathemes.com/downloads/base-wp/
 Author: iografica
 Author URI: http://www.iograficathemes.com/
 Description: Base WP is a basic blog or business, responsive and clean coded, WordPress theme. Base WP is e-commerce, multilingual ready, SEO friendly and cross-browser compatible. The theme is fully integrated with the most popular and free plugins for Wordpress like WooCommerce, Easy Digital Downloads, Yoast Seo, Beaver Builder, Elementor, and much more. You can customize the theme via the Customizer, use this theme as an ecommerce or as a simple blogging platform.
-Version: 2.02
+Version: 2.03
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: base-wp
@@ -1494,7 +1494,7 @@ table td, .woocommerce table.shop_attributes td,
   width: 28px;
   width: 30px;
   height: 30px;
-  line-height: 28px;
+  line-height: 48px;
   text-align: center;
   float: right;
   -webkit-font-smoothing: antialiased;
@@ -1979,7 +1979,7 @@ ul.page-numbers li a {
   display: inline-block;
   width: 100%;
   margin: 0;
-  padding: 0 24px;
+  padding: 24px 24px 0;
 }
 
 .breadcrumb .current, .breadcrumb a {
@@ -2298,11 +2298,6 @@ h3.widget-title {
   width: 100%;
 }
 
-.site-header .header-content .site-branding {
-  padding: 24px;
-  float: left;
-}
-
 .site-header .header-content .site-branding.center {
   text-align: center;
   float: left;
@@ -2316,10 +2311,6 @@ h3.widget-title {
 
 .site-header .header-content .site-branding.center:last-child {
   margin-right: 0;
-}
-
-.site-header .header-content .site-branding.inline {
-  margin: 0 0 0 14px;
 }
 
 .site-header .header-content .site-branding .site-title {
@@ -2337,38 +2328,12 @@ h3.widget-title {
 .site-header .header-content .site-branding .site-description {
   margin: 0;
   padding: 0;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .site-header .header-content .site-branding .custom-logo {
   margin: 0;
   padding: 0;
-}
-
-.site-header .header-content .header-image {
-  display: block;
-  margin: 0 auto;
-}
-
-.site-header .header-content .header-nav.inline {
-  padding: 24px 24px 24px 0;
-  float: right;
-}
-
-.site-header .header-content .header-nav.inline ul {
-  list-style: none;
-  text-align: right;
-  margin-left: 0;
-}
-
-.site-header .header-content .header-nav.inline ul li {
-  *display: inline;
-  display: inline-block;
-}
-
-.site-header .header-content .header-nav.inline ul li a {
-  display: block;
-  padding: 24px 14px 24px 0;
 }
 
 .site-header .header-content .header-nav.center {

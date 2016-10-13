@@ -19,11 +19,6 @@
                 @include padding($base__spacing);
                 float: none;
             }
-            &.inline {
-            @include margin(0 0 0 $small__spacing);
-            }
-            @include padding($base__spacing);
-            float: left;
             .site-title {
                 @include margin(0);
                 @include padding(0);
@@ -37,36 +32,15 @@
             .site-description {
                 @include margin(0);
                 @include padding(0);
-                font-weight: $font__normal;
+                font-weight: $font__light;
             }
             .custom-logo {
                 @include margin(0);
                 @include padding(0);
             }        
         }
-        .header-image {
-            display: block;
-            margin: 0 auto;
-        }
         //header navigation
         .header-nav {
-            &.inline {
-                @include padding($base__spacing $base__spacing $base__spacing 0);
-                float: right;
-                ul {
-                    list-style: none;
-                    text-align: right;
-                    margin-left: 0;
-                    li {
-                        *display: inline;
-                        display: inline-block;
-                        a {
-                            display: block;
-                            @include padding($base__spacing $small__spacing $base__spacing 0);
-                        }
-                    }
-                }
-            }
             //first center
             &.center {
                 @include margin(null -999em);
