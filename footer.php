@@ -30,13 +30,14 @@
         <div class="ftr-bottom">
           <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-left">
-            <?php if(get_theme_mod('footer_copyright_bar',true)){ ?>
+          
             <a href="<?php echo home_url(); ?>" class="ftr-logo">
-           <?php if(get_theme_mod('footer_logo_upload_chk',true)){  ?>
-        <img src="<?php if(get_theme_mod('footer_logo_upload')){ echo esc_url(get_theme_mod('footer_logo_upload')); }else { echo get_template_directory_uri(); ?>/assets/images/ftr-logo.png<?php }?>" width="186" height="21" alt=""/>
-           <?php  } ?>
-           </a>
-          <?php } ?>
+           <?php if(get_theme_mod('footer_logo_upload_chk',true)): 
+		          if(get_theme_mod('footer_logo_upload')):  ?>
+        <img src="<?php echo esc_url(get_theme_mod('footer_logo_upload')); ?>" alt="<?php bloginfo('name'); ?>"/>
+           <?php  else : bloginfo('name');  endif; ?>
+           
+          <?php else: bloginfo('name'); endif; ?></a>
            </div>
            <?php if(get_theme_mod('footer_copyright_bar',true)){ ?>
             <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 pull-right">
@@ -47,7 +48,7 @@
         		$footertext = str_replace('[copyright]','&copy;',$footertext);
         		$footertext = str_replace('[the-year]',date('Y'),$footertext);
         		$footertext = str_replace('[site-name]',get_bloginfo('name'),$footertext);
-        		$footertext = str_replace('[theme-credit]','- WordPress Theme by <a href="'.esc_url( __( 'http://www.ydesignservices.com/', 'backyard' ) ).'" target="_blank">Y Design Services</a>',$footertext);
+        		$footertext = str_replace('[theme-credit]',''.__('- WordPress Theme by','backyard').' <a href="'.esc_url(__( 'http://www.ydesignservices.com/', 'backyard')).'" target="_blank">'.__('Y Design Services','backyard').'</a>',$footertext);
         		 echo do_shortcode($footertext); ?></p>
              <?php endif; ?>
                

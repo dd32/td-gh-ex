@@ -36,9 +36,10 @@
       <div class="row">
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 pull-left">
 <div class="main-logo">   <div id="logo">
-           <a href="<?php echo home_url(); ?>">
-           
-           <img src="<?php if(get_theme_mod('logo')){echo esc_url(get_theme_mod('logo'));}else { echo esc_url(get_template_directory_uri() ); ?>/assets/images/logo.png<?php } ?>" class="img-responsive" alt=""/>
+           <a href="<?php echo esc_url(home_url('/')); ?>">
+           <?php if(get_header_image()): ?>
+           <img src="<?php echo esc_url(get_header_image()); ?>" class="img-responsive" alt="<?php bloginfo('name'); ?>"/>
+           <?php else: bloginfo( 'name' ); endif; ?>
            </a>
            </div></div><!--main-logo-->
            <!--logo--></div>

@@ -1,7 +1,7 @@
 <?php $options = array(
 		'capability' => 10,
 		'type' => 'theme_mod',
-		'panels' => apply_filters( 'mynah_customizer_options', array(
+		'panels' => apply_filters( 'backyard_customizer_options', array(
         'mynah' => array(
  	    'priority'   => 9,
 		'title'=> __('Theme Options', 'backyard'),
@@ -15,29 +15,19 @@
 			'type' => 'checkbox',
 			'label' => __('Enable Breadcrumb', 'backyard'),
 			'default' => 0,
-			'sanitize_callback' => 'yds_boolean',),
+			'sanitize_callback' => 'backyard_boolean',),
  		 'show_top_bar' => array(
 			'type' => 'checkbox',
 			'label' => __('Show Top Bar', 'backyard'),
 			'default' => 1,
-			'sanitize_callback' => 'yds_boolean',),
+			'sanitize_callback' => 'backyard_boolean',),
                      'show_search' => array(
 			'type' => 'checkbox',
 			'label' => __('Show Search', 'backyard'),
 			'default' => 1,
-			'sanitize_callback' => 'yds_boolean',),
+			'sanitize_callback' => 'backyard_boolean',),
                  ),),
- 		'header' => array(
-		'title' => __('Header', 'backyard'),
-		'fields' => array(
-		'logo' => array(
-			  'type' => 'image',
-			  'label' => __('Upload Logo', 'backyard'),
-			  'sanitize_callback' => 'esc_url_raw',
-		  ),
-		
-		  ),
- 		),
+ 		
   	   'footer' => array(
 		'title' => __('Footer', 'backyard'),
 		'fields' => array(
@@ -45,13 +35,13 @@
 			'type' => 'checkbox',
 			'label' => __('Footer Widget Area', 'backyard'),
 			'default' => 1,
-			'sanitize_callback' => 'yds_boolean',
+			'sanitize_callback' => 'backyard_boolean',
 						),
 						'footer_logo_upload_chk' => array(
 			                  'type' => 'checkbox',
 			                  'label' => __('Footer Logo Option', 'backyard'),
 			                  'default' => 1,
-			                  'sanitize_callback' => 'yds_boolean',
+			                  'sanitize_callback' => 'backyard_boolean',
 						),
                                                  
                                                  'footer_logo_upload' => array(
@@ -64,14 +54,14 @@
 			                            'type' => 'checkbox',
 			                            'label' => __('Footer Copyright Bar', 'backyard'),
 			                            'default' => 1,
-			                            'sanitize_callback' => 'yds_boolean',
+			                            'sanitize_callback' => 'backyard_boolean',
 						),                             
                     
 						'copyright' => array(
 						 'type' => 'textarea',
 						 'label' =>__('Footer Copyright Text (Validated for HTML)', 'backyard'),
 						 'description' => esc_html__('Validated for HTML', 'backyard'),
-						 'sanitize_callback' => 'yds_allowhtml_string',
+						 'sanitize_callback' => 'backyard_allowhtml_string',
 													),
 						  ),
  		         ),
@@ -84,7 +74,7 @@
 			                'type' => 'checkbox',
 			                'label' => __('Home Page Slider', 'backyard'),
 			                'default' => 0,
-			                'sanitize_callback' => 'yds_boolean',),
+			                'sanitize_callback' => 'backyard_boolean',),
                                       
 					'slider_cat' => array(
 							'type' => 'category',
@@ -137,7 +127,7 @@
 	)
 	);
 
-function yds_boolean($value){
+function backyard_boolean($value){
 	if(is_bool($value)) {
 		return $value;
 	} else {
@@ -145,7 +135,7 @@ function yds_boolean($value){
 	}
 }
 
-function yds_breadcrumb_char_choices($value='') {
+function backyard_breadcrumb_char_choices($value='') {
 	$choices = array('1','2','3');
 
 	if( in_array($value, $choices)) {
@@ -155,9 +145,9 @@ function yds_breadcrumb_char_choices($value='') {
 	}
 }
 
-if ( ! function_exists('yds_allowhtml_string')) {
+if (!function_exists('backyard_allowhtml_string')) {
 
-    function yds_allowhtml_string($string) {
+    function backyard_allowhtml_string($string) {
         $allowed_tags = array(    
         'a' => array(
         'href' => array(),

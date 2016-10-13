@@ -50,16 +50,16 @@
   <section id="respond">
 
   <?php $comment_args = array( 'fields' => apply_filters( 'comment_form_default_fields', array(
-           'author' => '<div class="col1">' . '<label for="author">' . __('Name', 'backyard') . ( $req ? ' ' : '' ) . '</label> ' .
+           'author' => '<div class="col1">' . '<label for="author">' . __('Name', 'backyard') .( $req ? ' ' : '').'</label> ' .
                         '<input class="form-control" id="author" name="author" type="text" value="' . esc_attr( $comment_author ) . '" ' . ( $req ? 'aria-required="true"' : '') . ' /></div>',
             'email'  => '<div class="col1"><label for="email">' . __( 'Email', 'backyard') . ( $req ? '  ' : '' ) . '</label> ' .
                         '<input class="form-control" type="email" class="text" name="email" id="email" value="' . esc_attr(  $comment_author_email ) . '" ' . ( $req ? 'aria-required="true"' : '') . ' /></div>',
 						
-			'redirect_to' => '<input type="hidden" name="redirect_to" value="'.get_permalink().'"/>',			
+			'redirect_to' => '<input type="hidden" name="redirect_to" value="'.esc_url(get_permalink()).'"/>',			
 		
             'url'    => '<div class="col2 urlfield"><label for="url">' . __( 'Website', 'backyard' ) . '</label> ' .
 
-                        '<input class="form-control" id="url" name="url" type="url" value="' . esc_attr( $comment_author_url ) . '" /></div>',
+                        '<input class="form-control" id="url" name="url" type="url" value="' . esc_url($comment_author_url) . '" /></div>',
 						
 
                         ) 
@@ -69,31 +69,18 @@
               'comment_field'        => '<div class="col2 textareabox"><label for="comment">' . __( 'Comment', 'backyard' ) . '</label> <textarea id="comment" name="comment" class="form-control input-xlarge" rows="8" aria-required="true" required="required"></textarea> </div>',
 
               'comment_notes_before' => '',
-
               'comment_notes_after'  => '',
-
               'id_form'              => 'commentform',
-
               'id_submit'            => 'submit',
-
               'class_submit'         => 'btn btn-default fillbg',
-
               'name_submit'          => 'submit',
-
               'title_reply'          => __('Leave a Reply', 'backyard'),
-
               'title_reply_to'       => __('Leave a Reply to %s', 'backyard'),
-
               'label_submit'         => __('Post Comment', 'backyard'),
-
               'submit_button'        => '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />',
-
               'submit_field'         => '<p class="form-submit">%1$s %2$s</p>',
-
               'format'               => 'html5',
-
         );
-
         comment_form($comment_args); ?>
 
   </section><!-- /#respond -->

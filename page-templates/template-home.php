@@ -17,10 +17,9 @@ get_header();
           <main id="main" class="site-main">
            <?php 
             global $the_query;
-            $paged=(get_query_var('page')) ? get_query_var('page') : 1;
-            $the_query=new WP_Query(array('post_type'=>'post','posts_per_page' => 10,'paged' => $paged));
+            $the_query=new WP_Query(array('post_type'=>'post','posts_per_page' =>8));
             if($the_query->have_posts()): while($the_query->have_posts()): $the_query->the_post();
-            get_template_part('template-parts//content', get_post_format());  
+            get_template_part('template-parts/content', get_post_format());  
            ?>
             <!--post-->
            <?php endwhile; ?>

@@ -2,9 +2,8 @@
 <div class="flexslider slider loading">
   <ul class="slides">
         <?php
-               
-               echo $slider_cat=array(get_theme_mod('slider_cat'));
-                $args = array(
+       $slider_cat=array(get_theme_mod('slider_cat'));
+       $args = array(
 		'post_type'=>'post',
 		'cat' =>$slider_cat,
 		'posts_per_page'=>-1,
@@ -18,7 +17,7 @@
                           <li> 
                               <div class="slider-image" style="background-image:url(<?php echo esc_url($backyard_slider_imageUrl); ?>)"></div>
                                <div class="slider-content">
-          <h1><?php the_title_limit( 18, '...'); ?></h1>
+          <h1><?php backyard_title_limit( 18, '...'); ?></h1>
           <p><?php echo excerpt(20); ?></p>
           <a href="<?php the_permalink(); ?>" class="btn"><?php _e('READ MORE', 'backyard'); ?></a>
           </div></li>

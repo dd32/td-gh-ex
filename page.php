@@ -3,7 +3,7 @@
  <section class="container paddingtop">
         <div class="row">
         <?php if(get_theme_mod('enable_breadcrumb',false)){ ?>
-        <div> <div class="col-lg-12"><div class="breadcrumbs"><?php the_breadcrumbs(); ?></div></div></div>
+        <div> <div class="col-lg-12"><div class="breadcrumbs"><?php backyard_breadcrumbs(); ?></div></div></div>
         <?php } ?>
         <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
            <?php if(have_posts()): while(have_posts()): the_post(); ?>
