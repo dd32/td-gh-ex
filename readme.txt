@@ -29,6 +29,8 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 == Changelog ==
 
 = Theme Name: Virtue =
+= Version 2.8.3 | 12th October 2016 =
+* Fix: Issue with Undefined variable.
 
 = Version 2.8.2 | 11th October 2016 =
 * Update: Issue with icons select not showing.

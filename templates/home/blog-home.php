@@ -89,8 +89,8 @@
                            			}
                            				$image_id = get_post_thumbnail_id( $post->ID );
 										$image_src = wp_get_attachment_image_src( $image_id, 'full' ); 
-										$thumbnailURL = $image_url[0];
-										$image = aq_resize($thumbnailURL, $img_width, 270, true, false, false, $image_id);
+										$thumbnailURL = $image_src[0];
+										$image = aq_resize($image_src[0], $img_width, 270, true, false, false, $image_id);
 										if(empty($image[0])) { $image = $image_src; }
 										$img_srcset = kt_get_srcset_output($img_width, '270', $image_src[0], $image_id);
 										?>
