@@ -12,8 +12,7 @@ class advance_Welcome {
 		/* create dashbord page */
 		add_action( 'admin_menu', array( $this, 'advance_welcome_register_menu' ) );
 
-		/* activation notice */
-		add_action( 'load-themes.php', array( $this, 'advance_activation_admin_notice' ) );
+		
 
 		
 		
@@ -59,10 +58,7 @@ class advance_Welcome {
 	 * Welcome screen content
 	 */
 	public function advance_welcome_screen() {
-
-		require_once( ABSPATH . 'wp-load.php' );
-		require_once( ABSPATH . 'wp-admin/admin.php' );
-		require_once( ABSPATH . 'wp-admin/admin-header.php' );
+	
 		?>
 
 		

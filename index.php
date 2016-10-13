@@ -8,23 +8,52 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package Safreen
+ * @package advance
  */
 
 get_header(); ?>
- <!-- head select -->   
-	
-        <?php get_template_part('headers/part','headsingle'); ?>
-        
-	<!-- / head select --> 
-		<?php if ( is_home() && ! is_front_page() ) : ?>
-			<div id="sub_banner">
- 				<h1><?php single_post_title(); ?></h1>
-				<div class='h-line'></div>
-			</div>
-		<?php endif; ?>
 
-		<div id="content">
+			<!-- head select -->   
+  <?php $advance_slider_enabel = get_theme_mod('advance_slider_enabel',1);?>
+	<?php if( isset($advance_slider_enabel) && $advance_slider_enabel == 1 ):?> 
+       <?php $advance_header_checkbox = get_theme_mod('advance_header_checkbox',1);?>
+       
+       		<?php if( isset($advance_header_checkbox) && $advance_header_checkbox == 1){ ?>
+      			 <?php get_template_part('headers/part','head1'); ?>
+        		<?php } ?>
+        
+             <?php if( isset($advance_header_checkbox) && $advance_header_checkbox == 0){ ?>
+          <?php get_template_part('headers/part','headsingle'); ?>
+        <?php } ?> 
+     <?php else:?> 
+  <?php get_template_part('headers/part','headsingle'); ?>
+  <div class="clearfix"></div>
+ <?php endif?> 
+<!-- / head select --> 
+
+	<?php if (  is_front_page() || is_home() ) { ?>
+  			<?php $advance_slider_enabel = get_theme_mod('advance_slider_enabel',1);?>
+    			<?php if( isset($advance_slider_enabel) && $advance_slider_enabel == 1 ):?>
+
+					 <!--Slider-->
+					<div id="slider">
+ 				 <?php get_template_part('parts/salider','post'); ?>
+ 			</div>  
+			<div class="clearfix"></div>
+		<?php endif?>
+	<?php } ?> 
+
+		<div class="clearfix"></div>	
+
+	<?php if ( is_active_sidebar( 'sidebar_frontpage' ) ) :?>
+		<div id="front-widget">
+			<?php	dynamic_sidebar( 'sidebar_frontpage' );?>
+         </div>
+	<?php endif;?>
+    
+ <?php $value = get_theme_mod( 'advance_latest_post', true ); ?>
+ <div class="<?php echo ( $value ) ? 'advance-latest-on' : 'advance-latest-off '; ?> ">
+		<div id="content  ">
   		<div class="row">
     		<div class="large-9 columns <?php if ( !is_active_sidebar( 'sidebar' ) ){ ?> nosid <?php }?>">	
   					<?php if ( have_posts() ) : ?>
@@ -58,6 +87,6 @@ get_header(); ?>
 			</div><!--sidebar END--> 
 	 </div><!--row END-->
 </div><!--content END-->
-		
+</div>		
 
 <?php get_footer(); ?>

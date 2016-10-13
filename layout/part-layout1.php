@@ -1,4 +1,4 @@
-  <div class="lay1 wow fadeInup">
+  <div class="lay1 wow fadeInup"> 
   
  
   
@@ -20,9 +20,10 @@
                   <div <?php post_class(); ?> id="post-<?php the_ID(); ?>"> 
                       
                        
-                    <div class="matchhe post_warp large-3 medium-6 columns wow fadeInLeft page-delay   ">
+                  <div class="matchhe post_warp large-4 medium-6 columns  ">
+                   					<div class="single_latest_news">
               
-                  <div class="post_image">
+                  						<div class="latest_news_image">
                        <!--CALL TO POST IMAGE-->
                              
                        <?php  if ( get_the_post_thumbnail() != '' ) {
@@ -46,17 +47,15 @@
 													</div><!-- post image -->
                   
                   
-                  <div class=" post_content2">
-                 <div class=" post_content3">
-                      
-    <?php the_title( sprintf( '<h2 class="postitle_lay"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-                       
-                      <p><?php the_excerpt(); ?></p> 
-                      
-                  </div> <!-- .post_content2 -->
-                  	</div><!-- post_content3 -->
-   						</div><!-- columns -->
-                        </div>
+                  <div class=" latest_news_desc">
+               						<?php the_title( sprintf( '<h2><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+                      				<h4><?php the_author(); ?> | <?php the_time( get_option('date_format') ); ?></h4>
+             						<p><?php the_excerpt(); ?></p> 
+             						<a class="read_more" href="<?php echo esc_url(get_permalink());?>"><?php echo esc_attr__('Read more','advance');?></a>
+                   			  </div><!-- latest_news_desc-->
+                 		</div>
+               		</div>
+                    </div>
               <?php endwhile ?> 
   
               <?php endif ?>

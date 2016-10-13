@@ -73,13 +73,3 @@ function advance_kirki_i10n( $config ) {
 }
 add_filter( 'kirki/config', 'advance_kirki_i10n' );
 
-function kirki_demo_configuration_sample_styling( $config ) {
-	return wp_parse_args( array(
-		'logo_image'   => esc_url(get_template_directory_uri() . '/images/logosaf.png'),
-		'description'  => esc_attr__( 'The theme description.', 'advance' ),
-		'color_accent' => '#0091EA',
-		'color_back'   => '#FFFFFF',
-		
-	), $config );
-}
-add_filter( 'kirki/config', 'kirki_demo_configuration_sample_styling' );

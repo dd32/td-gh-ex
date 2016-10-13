@@ -1627,3 +1627,29 @@ li.customize-control {
   left: 195px; }
 
 /*# sourceMappingURL=customizer.css.map */
+
+.upgrade_pro{
+	display: inline-block;
+text-align: center;
+line-height: 1;
+cursor: pointer;
+transition: background-color 0.25s ease-out 0s, color 0.25s ease-out 0s;
+vertical-align: middle;
+border: 1px solid transparent;
+border-radius: 0px;
+margin: 0px 0px 0rem;
+font-size: 0.9rem;
+background-color: rgb(232, 47, 33);
+color: rgb(254, 254, 254);
+padding: 0.85em 4em;
+margin-left: 8px;}
+
+.upgrade_pro a{color: white;
+font-size: 18px;
+font-weight: 800;}
+
+#accordion-section-upgrade_to_pro  .accordion-section-title{background-color:#C00;color: aliceblue;}
+
+#accordion-section-upgrade_to_pro  h3:hover{background-color:#C00;color: aliceblue;}
+
+

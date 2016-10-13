@@ -6,6 +6,8 @@
 
 
 /* adding layout panel */
+
+
 Kirki::add_panel( 'theme_options', array(
     'priority'    => 10,
     'title'       => esc_attr__( 'Theme Options', 'advance' ),

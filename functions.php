@@ -128,9 +128,6 @@ endif;
 
 function advance_catch_that_image() {
 global $post, $posts;
-$advancefirst_img = esc_url('');
-ob_start();
-ob_end_clean();
 if(preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches)){
 $advancefirst_img = $matches [1] [0];
 return $advancefirst_img;
@@ -142,6 +139,25 @@ return $advancefirst_img;
 }
 
 
+/*advance Color Sanitization*/
+function advance_sanitize_hex( $color = '#FFFFFF', $hash = true ) {
+		$color = trim( $color );
+		$color = str_replace( '#', '', $color );
+		if ( 3 == strlen( $color ) ) {
+			$color = substr( $color, 0, 1 ) . substr( $color, 0, 1 ) . substr( $color, 1, 1 ) . substr( $color, 1, 1 ) . substr( $color, 2, 1 ) . substr( $color, 2, 1 );
+		}
+
+		$substr = array();
+		for ( $i = 0; $i <= 5; $i++ ) {
+			$default    = ( 0 == $i ) ? 'F' : ( $substr[$i-1] );
+			$substr[$i] = substr( $color, $i, 1 );
+			$substr[$i] = ( false === $substr[$i] || ! ctype_xdigit( $substr[$i] ) ) ? $default : $substr[$i];
+		}
+		$hex = implode( '', $substr );
+
+		return ( ! $hash ) ? $hex : '#' . $hex;
+
+}
 
 /**
  * Filter the except length to 20 characters.
@@ -165,7 +181,20 @@ function advance_excerpt_more( $more ) {
 }
 add_filter( 'excerpt_more', 'advance_excerpt_more' );
 
- 
+/**
+ * Excluding category id 1 and 2 in 'home' blog page
+ * Alter the main loop
+ * @uses pre_get_posts hook
+*/
+function advance_exclude_post( $query ) {
+    if ( $query->is_home() && $query->is_main_query() ) {
+		$advance_num_post =  esc_attr(get_theme_mod ('Staticimage_post',esc_attr('Hello world!')));
+		$excluded = array( -$advance_num_post );
+		
+		 $query->set('post__not_in', $excluded);
+    }
+}
+add_action( 'pre_get_posts', 'advance_exclude_post' ); 
 
 //Load CSS files
 
@@ -174,7 +203,7 @@ wp_enqueue_style( 'advance-style', get_stylesheet_uri() );
 wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/fonts/awesome/css/font-awesome.min.css','font_awesome', true );
 wp_enqueue_style( 'foundation', get_template_directory_uri() . '/css/foundation.css','foundation_css', true );
 wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/animate.css','animate_css', true );
-wp_enqueue_style( 'advance_mobile', get_template_directory_uri() . '/css/safree-mobile.css' ,'advancemobile_css', true);
+wp_enqueue_style( 'advance_mobile', get_template_directory_uri() . '/css/advance-mobile.css' ,'advancemobile_css', true);
 wp_enqueue_style( 'sidrcss', get_template_directory_uri() . '/css/jquery.sidr.dark.css' ,'mobilemenu', true);
 wp_enqueue_style( 'normalize', get_template_directory_uri() . '/css/normalize.css' ,'normalize_css', true);
 wp_enqueue_style( 'advance-fonts', advance_fonts_url(), array(), null );
@@ -251,13 +280,6 @@ function advance_fonts_url() {
 }
 
 
-/**
- * Add Google Fonts, editor styles to WYSIWYG editor
- */
-function advance_editor_styles() {
-	add_editor_style( array( 'editor-style.css', advance_fonts_url() ) );
-}
-add_action( 'after_setup_theme', 'advance_editor_styles' );
 
 
 
@@ -295,18 +317,6 @@ if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 }
 }
 add_action('wp_enqueue_scripts', 'advance_head_js');
-
-
-/**
- * Load css for widgets
- */
-
-function advance_admin_style() {
-  wp_enqueue_style('advance_widgets_custom_css', get_template_directory_uri() . '/css/advance_widgets_custom_css.css');
-	wp_enqueue_style( 'advance_fontawesome_custom_css', get_template_directory_uri() . '/fonts/awesome/css/font-awesome.min.css' );
-	
-	}
-add_action('admin_enqueue_scripts', 'advance_admin_style');
 
 
 /**
@@ -350,17 +360,10 @@ function advance_widgets_init(){
 
 add_action( 'widgets_init', 'advance_widgets_init' );
 
-		
- 
-
-
 //load widgets ,kirki ,customizer
 require_once(get_template_directory() . '/inc/kirki/kirki.php');
 require_once(get_template_directory() . '/inc/customizer.php');
 require_once(get_template_directory() . '/inc/widgets.php');
-require(get_template_directory() . '/inc/upsell.php');
-require_once(get_template_directory() . '/inc/extra.php');
-require_once(get_template_directory() . '/inc/about-theme.php');
 require_once(get_template_directory() . '/inc/widgets/advance_serviceblock.php');
 if ( is_admin() ) {
 require_once(get_template_directory() . '/inc/admin/welcome-screen/welcome-screen.php');

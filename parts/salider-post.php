@@ -20,29 +20,32 @@ $advance_staticslider_image = esc_url( get_theme_mod('advance_staticslider_image
 			$loop_advance = new WP_Query($args_advance);
           			wp_reset_postdata(); 
 			     if($loop_advance->have_posts()) : ?>
-			  <?php while($loop_advance->have_posts()) : 
-		$loop_advance->the_post(); ?>
-		<section class="masthead" style="background-image:url( <?php echo $advance_staticslider_image ?>);" >
-                    <div class="masthead-overlay"></div>  
-		<div class="masthead-arrow"></div>
+			  			<?php while($loop_advance->have_posts()) : 
+								$loop_advance->the_post(); ?>
+									<section class="masthead" style="background-image:url( <?php echo $advance_staticslider_image ?>);" >
+                    					<div class="masthead-overlay"></div>  
+										<div class="masthead-arrow"></div>
         
-					 <div class="masthead-dsc">
-           <div class="row warp">
-		<h1><?php the_title(); ?></h1>
-		<p><?php the_excerpt(); ?> </p>
+					 						<div class="masthead-dsc">
+           										<div class="row warp">
+													<h1><?php the_title(); ?></h1>
+														<?php the_excerpt(); ?>
 		
-        <?php $advance_Static_Sliderbutton = get_theme_mod('advance_Static_Sliderbutton',1);?>
-        <?php if( isset($advance_Static_Sliderbutton) && $advance_Static_Sliderbutton == 1 ):?>
-         <?php if( !empty($advance_staticslider_uri1) ):?>
-                                    <a href="<?php echo $advance_staticslider_uri1 ?>" class='hero_btn'>  <?php echo $bnt_advance ?>  </a>
-                                    <?php else:?>
-                                     <a href="<?php echo esc_url( get_permalink() ); ?>" class='hero_btn'>  <?php echo $bnt_advance ?>  </a>
-                                    <?php endif;?>
-                                    <?php endif;?>
-                                                                         <?php if( !empty($advance_staticslider_uri2) ):?>
-                                    <a href="<?php echo $advance_staticslider_uri2 ?>" class='hero_btn_full'> <?php echo $bnt2_advance ?></a>
-                                    <?php endif;?>
-                                    </div></div>
-				</section>
-			<?php endwhile; ?>
-			<?php endif;?>
+        													<div class="sl-button">
+        														<?php $advance_Static_Sliderbutton = get_theme_mod('advance_Static_Sliderbutton',1);?>
+        														<?php if( isset($advance_Static_Sliderbutton) && $advance_Static_Sliderbutton == 1 ):?>
+         															<?php if( !empty($advance_staticslider_uri1) ):?>
+                                    									<a href="<?php echo $advance_staticslider_uri1 ?>" class='hero_btn'>  <?php echo $bnt_advance ?>  </a>
+                                    										<?php else:?>
+                                     									<a href="<?php echo esc_url( get_permalink() ); ?>" class='hero_btn'>  <?php echo $bnt_advance ?>  </a>
+                                    								<?php endif;?>
+                                    							<?php endif;?>
+                                                                <?php if( !empty($advance_staticslider_uri2) ):?>
+                                    								<a href="<?php echo $advance_staticslider_uri2 ?>" class='hero_btn_full'> <?php echo $bnt2_advance ?></a>
+                                    							<?php endif;?>
+                                   							</div>
+                                    					</div>
+                                   				 </div>
+									</section>
+						 <?php endwhile; ?>
+					<?php endif;?>

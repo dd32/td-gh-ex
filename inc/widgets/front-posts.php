@@ -44,7 +44,7 @@ class advance_front_Posts extends WP_Widget {
 		$subtitle = isset( $instance['subtitle'] ) ? $instance['subtitle'] : __('Check Out Our Portfolio', 'advance');
 	    $count = isset( $instance['count'] ) ? absint($instance['count']) : '6';
 		$category = isset( $instance['category'] ) ? $instance['category'] : '';
-		$content_bg = isset( $instance['content_bg'] ) ? $instance['content_bg'] : 'rgb(255, 255, 255)';
+		$content_bg = isset( $instance['content_bg'] ) ? $instance['content_bg'] : '#edf3f4';
 		$subtitle_textcolor = isset( $instance['subtitle_textcolor'] ) ? $instance['subtitle_textcolor'] : '';
 		$padtopbottom = isset( $instance['padtopbottom'] ) ? $instance['padtopbottom'] : '';
 		
@@ -101,12 +101,12 @@ class advance_front_Posts extends WP_Widget {
                           					<!--CALL TO POST IMAGE-->
                              
                        						<?php  if ( get_the_post_thumbnail() != '' ) {
-						        				echo '<a href="';esc_url( the_permalink()); echo '" >';
+						        				echo '<a href="';esc_url( get_permalink()); echo '" >';
 							         			the_post_thumbnail();
 									  			echo '</a>';
 									
                                  				} else {
-    							 				echo '<a href="';esc_url( the_permalink()); echo '" >';
+    							 				echo '<a href="';esc_url( get_permalink()); echo '" >';
                          						echo '<img src="';
      											echo  esc_url (advance_catch_that_image());
      											echo '" alt="" />';
@@ -168,8 +168,8 @@ class advance_front_Posts extends WP_Widget {
 		$instance['category'] = wp_kses_post($new_instance['category']);
 		
 		/* Color */
-		$instance['content_bg'] = wp_kses_post($new_instance['content_bg']);
-	   $instance['subtitle_textcolor'] = strip_tags($new_instance['subtitlecolor']);
+		$instance['content_bg'] = advance_sanitize_hex($new_instance['content_bg']);
+	   $instance['subtitle_textcolor'] = advance_sanitize_hex($new_instance['subtitlecolor']);
 	   $instance['padtopbottom'] = strip_tags($new_instance['padtopbottom']);
 
 		return $instance;
@@ -193,7 +193,7 @@ class advance_front_Posts extends WP_Widget {
 		'subtitle' => __('Check Out Our Work','advance'),
 		'count' => '6',
 		'category' => array(),
-		'content_bg' => 'rgba(8, 162, 134, 0.02)',
+		'content_bg' => '#edf3f4',
 	    'subtitle_textcolor'=>'#176079',
 		'padtopbottom' =>'2',
 		);

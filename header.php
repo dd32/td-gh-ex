@@ -44,6 +44,9 @@
     
             
 <div id="wrapper">
+
+
+         
 <div id="search-container" class="search-box-wrapper clear">
         <div class="search-box clear">
             <?php get_search_form(); ?>

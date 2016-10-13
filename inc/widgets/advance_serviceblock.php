@@ -18,7 +18,7 @@ class advance_serviceblock extends WP_Widget {
     function widget($args, $instance) {
 
         extract($args);
-			$content_bg = isset( $instance['content_bg'] ) ? $instance['content_bg'] : 'rgb(255, 255, 255)';
+			$content_bg = isset( $instance['content_bg'] ) ? $instance['content_bg'] : '#ffffff';
 			$content_titlecolor =isset( $instance['content_titlecolor'] ) ? $instance['content_titlecolor'] : '';
 			$content_textcolor=isset( $instance['content_textcolor'] ) ? $instance['content_textcolor'] : '';
 			$content_iconcolor=isset( $instance['content_iconcolor'] ) ? $instance['content_iconcolor'] : '';
@@ -49,7 +49,7 @@ class advance_serviceblock extends WP_Widget {
                          <?php if (!empty($instance['sub_title'])): ?>
                             <div class="colored-line"></div>
 								<div class="section-description">
-                                	<h4 style="color:<?php echo $content_textcolor; ?>"><?php echo  htmlspecialchars_decode(apply_filters('widget_title', $instance['sub_title'])); ?></h4></div>
+                                	<h4 style="color:<?php echo $content_titlecolor ;?>"><?php echo  htmlspecialchars_decode(apply_filters('widget_title', $instance['sub_title'])); ?></h4></div>
                         		<div class="colored-line"></div>
                          <?php endif;?>
        			 </div><!--section head end-->
@@ -196,31 +196,31 @@ class advance_serviceblock extends WP_Widget {
         $instance = $old_instance;
        
 		/*heading */
-		$instance['title'] = strip_tags($new_instance['title']);
+		$instance['title'] = sanitize_text_field($new_instance['title']);
 		$instance['sub_title'] = stripslashes(wp_filter_post_kses($new_instance['sub_title']));
 			
 		/*Box 1 */
-        $instance['icon1'] = strip_tags( $new_instance['icon1'] );
-		$instance['image_uri1'] = strip_tags( $new_instance['image_uri1'] );
+        $instance['icon1'] = wp_kses_post( $new_instance['icon1'] );
+		$instance['image_uri1'] = esc_url_raw( $new_instance['image_uri1'] );
         $instance['cat_block1'] = strip_tags($new_instance['cat_block1']);
-		$instance['box_uri1'] = strip_tags( $new_instance['box_uri1'] );
+		$instance['box_uri1'] = wp_kses_post( $new_instance['box_uri1'] );
 		
 		/*Box 2 */
-        $instance['icon2'] = strip_tags( $new_instance['icon2'] );
-		$instance['image_uri2'] = strip_tags( $new_instance['image_uri2'] );
+        $instance['icon2'] = wp_kses_post( $new_instance['icon2'] );
+		$instance['image_uri2'] = esc_url_raw( $new_instance['image_uri2'] );
         $instance['cat_block2'] = strip_tags($new_instance['cat_block2']);
-		$instance['box_uri2'] = strip_tags( $new_instance['box_uri2'] );
+		$instance['box_uri2'] = wp_kses_post( $new_instance['box_uri2'] );
 		        
 		/*Box 3 */
-        $instance['icon3'] = strip_tags( $new_instance['icon3'] );
-		$instance['image_uri3'] = strip_tags( $new_instance['image_uri3'] );
+        $instance['icon3'] = wp_kses_post( $new_instance['icon3'] );
+		$instance['image_uri3'] = esc_url_raw( $new_instance['image_uri3'] );
        	$instance['cat_block3'] = strip_tags($new_instance['cat_block3']);
-		$instance['box_uri3'] = strip_tags( $new_instance['box_uri3'] );
+		$instance['box_uri3'] = wp_kses_post( $new_instance['box_uri3'] );
 		
-       $instance['content_iconcolor'] = strip_tags($new_instance['content_iconcolor']);
-       $instance['content_bg'] = strip_tags($new_instance['content_bg']);
-	   $instance['content_titlecolor'] = strip_tags($new_instance['content_titlecolor']);
-	   $instance['content_textcolor'] = strip_tags($new_instance['content_textcolor']);
+       $instance['content_iconcolor'] = advance_sanitize_hex($new_instance['content_iconcolor']);
+       $instance['content_bg'] = advance_sanitize_hex($new_instance['content_bg']);
+	   $instance['content_titlecolor'] = advance_sanitize_hex($new_instance['content_titlecolor']);
+	   $instance['content_textcolor'] = advance_sanitize_hex($new_instance['content_textcolor']);
 	   $instance['padbottom'] = strip_tags($new_instance['padbottom']);
 	   $instance['padtop'] = strip_tags($new_instance['padtop']);
         return $instance;
@@ -236,7 +236,7 @@ class advance_serviceblock extends WP_Widget {
 		'cat_block2'=> 'sample-page' ,
 		'cat_block3'=> 'sample-page' ,
 		'content_iconcolor'=>'#1cbac8',
-		'content_bg' => 'rgb(255, 255, 255)',
+		'content_bg' => '#ffffff',
 		'content_textcolor'=>'#999999',
 		'content_titlecolor'=>'#464545',
 		'padbottom'=>'1',

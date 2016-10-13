@@ -9,6 +9,13 @@ Kirki::add_config( 'advance', array(
 /* adding layout_front_page_setting field */
 
 Kirki::add_field( 'advance', array(
+    'type'        => 'custom',
+    'settings'    => 'advance_to_pro',
+    'section'     => 'upgrade_to_pro',
+	'default'     => '<div class="upgrade_pro"><a href="'. esc_url('http://www.imonthemes.com/advance-pro/').'" target="_blank">' . esc_html__( 'Upgrade to pro', 'advance' ) . '</a></div>',
+    'priority'    => 10,
+) );
+Kirki::add_field( 'advance', array(
     'type'        => 'toggle',
     'settings'    => 'advance_body_preloder',
     'label'       => esc_attr__( 'Disable preloder', 'advance' ),
@@ -39,47 +46,15 @@ Kirki::add_field( 'advance', array(
 ) );
 
 
-
-
-
-
-
 Kirki::add_field( 'advance', array(
-    'type'        => 'radio-image',
-    'settings'    => 'layout_select',
-    'label'       => esc_attr__( 'Front Page post Layout', 'advance' ),
-    'description' => esc_attr__( 'Select a front page post layout', 'advance' ),
+    'type'        => 'toggle',
+    'settings'    => 'advance_latest_post',
+    'label'       => esc_attr__( 'Disable Latest post in front page', 'advance' ),
     'section'     => 'layout_front_page',
-    'default'     => 'layout1',
+    'default'     => '1',
     'priority'    => 10,
-    'choices'     => array(
-        'layout1'   => get_template_directory_uri() . '/inc/images/layout1.png',
-        'layout2' =>  get_template_directory_uri() . '/inc/images/layout2.png',
-		
-        
-    ),
-	
 ) );
 
-
-
-Kirki::add_field( 'advance', array(
-    'type'        => 'text',
-    'settings'    => 'advance_latest_blog',
-    'label'       => esc_attr__( 'Latest Blog Title', 'advance' ),
-    'section'     => 'layout_front_page',
-    'default'     => esc_attr__( 'Latest Blog', 'advance' ),
-    'priority'    => 10,
-	'transport' => 'postMessage',
-	'js_vars'   => array(
-        array(
-            'element'  => '.text-center h2',
-            'function' => 'html',
-            'property' => '',
-            
-        ),
-    ), 
-) );
 
 
 
@@ -121,280 +96,73 @@ Kirki::add_field( 'advance', array(
 		
 /*  title typography */
 
-
-
 Kirki::add_field( 'advance', array(
-    'type'     => 'select',
-    'settings' => 'title_typography_font_family',
-    'label'    => esc_attr__( 'Site title Typography', 'advance' ),
-    'section'  => 'advance_headtitle_settings',
-    'default'  => 'sans-serif',
-    'priority' => 10,
-    'choices'  => Kirki_Fonts::get_font_choices(),
-    'output'   => array(
-        array(
-            'element'  => '#site-title a',
-            'property' => 'font-family',
-        ),
-    ),
+	'type'        => 'typography',
+	'settings'    => 'title_typography',
+	'label'       => esc_attr__( 'Site title Typography', 'advance' ),
+	'section'     => 'advance_headtitle_settings',
+	'transport' => 'auto',
+	'default'     => array(
+		'font-family'    => 'Roboto',
+		'variant'        => 'regular',
+		'font-size'      => '48px',
+		'line-height'    => '2.5',
+		'letter-spacing' => '0',
+		'subsets'        => array( 'latin-ext' ),
+		'color'          => '#fff',
+		'text-transform' => 'none',
 		
-  'transport' => 'postMessage',
-    'js_vars'   => array(
-        array(
-            'element'  => '#site-title a',
-            'function' => 'css',
-            'property' => 'font-family',
-           
-        ),
-    ),
-	) );
-	
-Kirki::add_field( 'advance', array(
-	'type'        => 'slider',
-	'settings'    => 'title_typography_font_weight',
-	'label'       => esc_attr__( 'Font Weight', 'advance' ),
-	'section'     => 'advance_headtitle_settings',
-	'default'     => 400,
-	'priority' => 10,
-	'choices'     => array(
-		'min'  => '100',
-		'max'  => '800',
-		'step' => '100',
 	),
-	'output'   => array(
-        array(
-            'element'  => '#site-title a',
-            'property' => 'font-weight',
-        ),
-    ),
-	'transport' => 'postMessage',
-	'js_vars'   => array(
-        array(
-            'element'  => '#site-title a',
-            'function' => 'css',
-            'property' => 'font-weight',
-			'units'    => '',
-           
-        ),
-    ),
-) );
-
-Kirki::add_field( 'advance', array(
-	'type'        => 'slider',
-	'settings'    => 'title_typography_font_size',
-	'label'       => esc_attr__( 'Font size', 'advance' ),
-	'section'     => 'advance_headtitle_settings',
-	'default'     => 48,
-	 'priority'    => 10,
-	'choices'     => array(
-		'min'  => '12',
-		'max'  => '200',
-		'step' => '1',
-	),
-	'output'   => array(
-        array(
-            'element'  => '#site-title a',
-            'property' => 'font-size',
-			'units'    => 'px',
-        ),
-    ),
-	'transport' => 'postMessage',
-	'js_vars'   => array(
-        array(
-            'element'  => '#site-title a',
-            'function' => 'css',
-            'property' => 'font-size',
-			'units'    => 'px',
-           
-        ),
-    ),
-) );
-
-Kirki::add_field( 'advance', array(
-    'type'        => 'color',
-    'settings'    => 'title_typography_font_color',
-    'label'       => esc_attr__( 'Title  text color', 'advance' ),
-    'section'     => 'advance_headtitle_settings',
-    'default'     => '#ffffff',
-    'priority'    => 10,
-	
-	'output' => array(
-        array(
-            'element'  => '#site-title a,.branding--clone #site-title a,.branding-single #site-title a',
-			
-            'property' => 'color',
-            'units'    => '',
-          ),
+	'priority'    => 10,
+	'output'      => array(
+		array(
+			'element' => '#site-title a',
 		),
-       'transport' => 'postMessage',
-    'js_vars'   => array(
-        array(
-            'element'  => '#site-title a,.branding--clone #site-title a,.branding-single #site-title a',
-            'function' => 'css',
-            'property' => 'color',
-            
-        ),
-    ), 
-	) );    
+	),
+) );
+
+
+
+
 /*  menu typography */
-
 Kirki::add_field( 'advance', array(
-    'type'     => 'select',
-    'settings' => 'menu_typography_font_family',
-    'label'    => esc_attr__( ' Menu Typography', 'advance' ),
-    'section'  => 'advance_headtitle_settings',
-    'default'  => 'sans-serif',
-    'priority' => 10,
-    'choices'  => Kirki_Fonts::get_font_choices(),
-    'output'   => array(
-        array(
-            'element'  => '#navmenu li a,#navmenu ul li ul li a',
-            'property' => 'font-family',
-        ),
-    ),
+	'type'        => 'typography',
+	'settings'    => 'menus_typography',
+	'label'       => esc_attr__( 'Site menu Typography', 'advance' ),
+	'section'     => 'advance_headtitle_settings',
+	'transport' => 'auto',
+	'default'     => array(
+		'font-family'    => 'Roboto',
+		'variant'        => 'regular',
+		'font-size'      => '14px',
+		'line-height'    => '1',
+		'letter-spacing' => '0',
+		'subsets'        => array( 'latin-ext' ),
+		'color'          => '#fff',
+		'text-transform' => 'uppercase ',
 		
-  'transport' => 'postMessage',
-    'js_vars'   => array(
-        array(
-            'element'  => '#navmenu li a,#navmenu ul li ul li a',
-            'function' => 'css',
-            'property' => 'font-family',
-           
-        ),
-    ),
-	) );
-	
-Kirki::add_field( 'advance', array(
-	'type'        => 'slider',
-	'settings'    => 'menu_typography_font_weight',
-	'label'       => esc_attr__( 'Font Weight', 'advance' ),
-	'section'     => 'advance_headtitle_settings',
-	'default'     => 600,
-	'choices'     => array(
-		'min'  => '100',
-		'max'  => '800',
-		'step' => '100',
 	),
-	'output'   => array(
-        array(
-            'element'  => '#navmenu li a,#navmenu ul li ul li a',
-            'property' => 'font-weight',
-        ),
-    ),
-	'transport' => 'postMessage',
-	'js_vars'   => array(
-        array(
-            'element'  => '#navmenu li a,#navmenu ul li ul li a',
-            'function' => 'css',
-            'property' => 'font-weight',
-           
-        ),
-    ),
-) );
-
-Kirki::add_field( 'advance', array(
-	'type'        => 'slider',
-	'settings'    => 'menu_typography_font_size',
-	'label'       => esc_attr__( 'Font size', 'advance' ),
-	'section'     => 'advance_headtitle_settings',
-	'default'     => 14,
-	'choices'     => array(
-		'min'  => '12',
-		'max'  => '200',
-		'step' => '1',
-	),
-	'output'   => array(
-        array(
-            'element'  => '#navmenu li a,#navmenu ul li ul li a',
-            'property' => 'font-size',
-			'units'    => 'px',
-        ),
-    ),
-	'transport' => 'postMessage',
-	'js_vars'   => array(
-        array(
-            'element'  => '#navmenu li a,#navmenu ul li ul li a',
-            'function' => 'css',
-            'property' => 'font-size',
-			'units'    => 'px',
-           
-        ),
-    ),
-) );
-
-Kirki::add_field( 'advance', array(
-	'type'        => 'slider',
-	'settings'    => 'menu_typography_font_space',
-	'label'       => esc_attr__( 'Font size', 'advance' ),
-	'section'     => 'advance_headtitle_settings',
-	'default'     => 0.8,
-	'choices'     => array(
-		'min'  => '0.5',
-		'max'  => '20',
-		'step' => '0.5',
-	),
-	'output'   => array(
-        array(
-            'element'  => '#navmenu li a,#navmenu ul li ul li a',
-            'property' => 'letter-spacing',
-			'units'    => 'px',
-        ),
-    ),
-	'transport' => 'postMessage',
-	'js_vars'   => array(
-        array(
-            'element'  => '#navmenu li a,#navmenu ul li ul li a',
-            'function' => 'css',
-            'property' => 'letter-spacing',
-			'units'    => 'px',
-           
-        ),
-    ),
-) );
-
-Kirki::add_field( 'advance', array(
-    'type'        => 'color',
-    'settings'    => 'menu_typography_font_color',
-    'label'       => esc_attr__( 'text color', 'advance' ),
-    'section'     => 'advance_headtitle_settings',
-    'default'     => '#ffffff',
-    'priority'    => 10,
-	
-	'output' => array(
-        array(
-            'element'  => '#navmenu li a,#navmenu ul li ul li a,.branding--clone #navmenu li a,.branding--clone #navmenu ul li ul li a,.branding-single #navmenu li a,.branding-single #navmenu ul li ul li a,.home #navmenu ul li.current-menu-item > a,.social-advance i',
-			
-            'property' => 'color',
-            'units'    => '',
-          ),
+	'priority'    => 10,
+	'output'      => array(
+		array(
+			'element' => '#navmenu li a,#navmenu ul li ul li a,.branding--clone #navmenu li a,.branding--clone #navmenu ul li ul li a,.branding-single #navmenu li a,.branding-single #navmenu ul li ul li a,.home #navmenu ul li.current-menu-item > a,.social-advance i',
 		),
-       'transport' => 'postMessage',
-    'js_vars'   => array(
-        array(
-            'element'  => '#navmenu li a,#navmenu ul li ul li a,.branding--clone #navmenu li a,.branding--clone #navmenu ul li ul li a,.branding-single #navmenu li a,.branding-single #navmenu ul li ul li a,.home #navmenu ul li.current-menu-item > a',
-            'function' => 'css',
-            'property' => 'color',
-            
-        ),
-    ), 
-	) );    
+	),
+) );
+
+
+	
 
 
 /*color and reorder */
-Kirki::add_field( 'advance', array(
-    'type'        => 'custom',
-    'settings'    => 'custom_demo2',
-    'section'     => 'advance_color_settings',
-    'default'     => '<div style="padding: 20px;background-color:#D03232; color: #fff;">Reorder work in Pro version and have more color options </div>',
-    'priority'    => 10,
-) );
+
 
 Kirki::add_field( 'advance', array(
     'type'        => 'color',
     'settings'    => 'advance_flavour_color',
     'label'       => esc_attr__( 'Flavour color', 'advance' ),
     'section'     => 'advance_color_settings',
-    'default'     => '#36abfc',
+    'default'     => '#1cbac8',
     'priority'    => 10,
 	
 	'output' => array(
@@ -405,12 +173,12 @@ Kirki::add_field( 'advance', array(
             'units'    => '',
         ),
         array(
-            'element'  => '.colored-line,#navmenu .search-form .search-submit,.search-form .search-submit,#navmenu .search-form .search-submit,.search-form .search-submit,.search-box-wrapper,#loading-center-absolute .object',
+            'element'  => '.colored-line,#navmenu .search-form .search-submit,.search-form .search-submit,#navmenu .search-form .search-submit,.search-form .search-submit,.search-box-wrapper,#loading-center-absolute .object,#slider .hero_btn_full',
             'property' => 'background-color',
             'units'    => '',
         ),
 		 array(
-            'element'  => '.h-line,.nivo-caption .h-line,.btn-slider-advance',
+            'element'  => '.h-line,.nivo-caption .h-line,.btn-slider-advance,#slider .hero_btn_full',
             'property' => 'border-color',
             'units'    => '',
         ),
@@ -425,7 +193,7 @@ Kirki::add_field( 'advance', array(
     'settings'    => 'advance_hover_color',
     'label'       => esc_attr__( 'Hover color', 'advance' ),
     'section'     => 'advance_color_settings',
-    'default'     => '#D03232',
+    'default'     => '#ff6699',
     'priority'    => 10,
 	
 	'output' => array(
@@ -437,13 +205,13 @@ Kirki::add_field( 'advance', array(
         ),
         array(
             'element'  => '#navmenu ul li ul li:hover,#navmenu ul > li ul li:hover,btn-slider-advance:hover,btn-border-light:hover,#submit:hover, #searchsubmit:hover,#navmenu ul > li::after,.branding-single--clone #navmenu ul li ul:hover,#slider .hero_btn:hover,.btn-lines .line-top,
-.btn-lines .line-bottom,.btn-lines .line-left,.btn-lines .line-right,.actionbox-controls-two .hero_btn:hover',
+.btn-lines .line-bottom,.btn-lines .line-left,.btn-lines .line-right,.actionbox-controls-two .hero_btn:hover,#slider  .hero_btn_full:hover',
             'property' => 'background-color',
             'units'    => '',
         ),
 		
 		  array(
-            'element'  => '#slider .hero_btn:hover',
+            'element'  => '#slider .hero_btn:hover,#slider  .hero_btn_full:hover',
             'property' => 'border-color',
             'units'    => '',
         ),
@@ -493,7 +261,7 @@ Kirki::add_field('advance', array(
                 'type' => 'select',
                 'settings' => 'Staticimage_post',
                 'label' => esc_attr__('Choose Post For Static Slider', 'advance'),
-                'description' => esc_attr__('Choose for post Static image.If you dont want to show thsi psot into latest post section just put the post into "static-image" category', 'advance'),
+                'description' => esc_attr__('Choose for post Static image.', 'advance'),
                 'help' => '',
                 'section' => 'slider_setup',
                 'default' => 'Hello world!',
@@ -682,7 +450,7 @@ Kirki::add_field( 'advance', array(
     'settings'    => 'advance_search_box',
     'label'       => esc_attr__( 'Show search Icon in header', 'advance' ),
     'section'     => 'advance_social',
-    'default'     => '1',
+    'default'     => '0',
     'priority'    => 1,
 ) );
 

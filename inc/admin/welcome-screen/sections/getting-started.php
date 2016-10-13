@@ -36,7 +36,7 @@ $customizer_url = admin_url() . 'customize.php' ;
                 <div class="block">
                 <i class="fa fa-book fa-4x" aria-hidden="true"></i>
                     <p><?php _e('advance is extensively documented. You will find useful information about the theme ranging from introductions to advanced features.','advance'); ?></p>
-                    <a href="<?php echo esc_url('http://advance-docs.imonthemes.com/');?>" target="_blank"  ><?php _e('Documentation','advance'); ?></a>
+                    <a href="<?php echo esc_url('http://advance.imonthemes.com/docs/');?>" target="_blank"  ><?php _e('Documentation','advance'); ?></a>
                 </div>
                  <!--BLOCK 1-->
                 <div class="block">
@@ -80,21 +80,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 <img class="alignnone wp-image-16" src="<?php echo  esc_url(get_template_directory_uri().'/inc/admin/img/fron-widgest.jpg');?>" alt="service" width="824" height="375" />
 
 
- 	<li>
-<h3 style="text-align: left;"><?php _e('How to add service Block ?','advance'); ?></h3>
-<h3><strong><?php _e('Service Block','advance'); ?></strong></h3>
-</li>
-</ol>
-<ul>
- 	<li style="text-align: left;"><?php _e('Create 3 pages from pages tab','advance'); ?></li>
- 	<li style="text-align: left;"><?php _e('Go to customize  =&gt; theme option =&gt; service block =&gt; Add a widgets =&gt; select','advance'); ?> <strong><?php _e('advance-service block','advance'); ?> </strong><?php _e('(like that add 3 service block )','advance'); ?></li>
- 	<li style="text-align: left;"><?php _e('now from service block widgets select your page for service block content (screen shot image )','advance'); ?></li>
-</ul>
-<img class="alignnone wp-image-16" src="<?php echo  esc_url(get_template_directory_uri().'/inc/admin/img/service.jpg');?>" alt="service" width="824" height="375" />
-<ul>
  	
-<ul>
- 	<li>
 <h3><strong><?php _e('Menu','advance'); ?></strong></h3>
 </li>
 </ul>

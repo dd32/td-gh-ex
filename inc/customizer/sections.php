@@ -4,6 +4,14 @@
  */
  
 /* adding layout_front_page section*/
+Kirki::add_section( 'upgrade_to_pro', array(
+    'title'          =>esc_attr__( 'Upgrade to pro', 'advance' ),
+    'panel'          => 'theme_options', // Not typically needed.
+    'priority'       => 1,
+    
+    
+) );
+
 Kirki::add_section( 'layout_front_page', array(
     'title'          =>esc_attr__( 'General setting', 'advance' ),
     'panel'          => 'theme_options', // Not typically needed.
