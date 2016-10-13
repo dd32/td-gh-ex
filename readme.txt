@@ -1,6 +1,6 @@
 === Backyard ===
 Contributors: Y Design Services
-Tags: one-column, two-columns, right-sidebar, responsive-layout, editor-style, translation-ready, custom-background, custom-menu, custom-header, featured-images, full-width-template, threaded-comments
+Tags: one-column, two-columns, right-sidebar, editor-style, translation-ready, custom-background, custom-menu, custom-header, featured-images, full-width-template, threaded-comments
 Donate link: http://www.ydesignservices.com
 Requires at least: 4.0
 Tested up to: 4.2.2
@@ -14,7 +14,7 @@ Description
 
 Backyard is a clean and modern WordPress blog theme with premium look and feel well suited for everyone. Theme is built using bootstrap framework making it fully responsive and mobile friendly. This theme has several customization options that are available in WordPress Theme Customizer. Theme is also multilingual ready and translated in several languages. Theme comes with a lot of features to showcase your content with style and pixel perfect graphics.
 
-one-column, two-columns, right-sidebar, responsive-layout, editor-style, translation-ready, custom-background, custom-menu, custom-header, featured-images, full-width-template, threaded-comments
+one-column, two-columns, right-sidebar, editor-style, translation-ready, custom-background, custom-menu, custom-header, featured-images, full-width-template, threaded-comments
 
 Theme URI: http://www.ydesignservices.com/product/free-wordpress-themes/backyard/
 
