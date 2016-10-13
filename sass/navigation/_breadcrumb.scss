@@ -3,7 +3,7 @@
     display: inline-block;
     width: 100%;
     @include margin(0);
-    @include padding(0 $base__spacing);
+    @include padding($base__spacing $base__spacing 0 $base__spacing);
     .current {
         padding: 0;
         display: inline-block;        
