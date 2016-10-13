@@ -40,8 +40,8 @@
 			<?php endif; ?>
 
 			<div class="copyright">
-				<p>Copyright &copy; <?php bloginfo( 'name' ); ?><br />
-				<a href="http://photricity.com/">WordPress Theme by Photricity Web Design</a></p>
+				<p><?php esc_attr_e( 'Copyright &copy;', 'arix' ); ?> <?php bloginfo( 'name' ); ?><br />
+				<a href="<?php echo esc_url( __( 'http://photricity.com/', 'arix' ) ); ?>"><?php esc_attr_e( 'Arix theme', 'arix' ); ?></a> <?php esc_attr_e( 'by Photricity', 'arix' ); ?></p>
 			</div>
 		</div>
 	</footer>

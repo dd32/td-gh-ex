@@ -4,13 +4,13 @@ function arix_scripts() {
 	// load main stylesheet
 	wp_enqueue_style( 'arix-style', get_stylesheet_uri() );
 
-	// load google fonts
-	wp_enqueue_style( 'arix-fonts', 'https://fonts.googleapis.com/css?family=Dosis:300,500', false );
-
 	// load scripts and styles for comments
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+	
+	// load google fonts
+	wp_enqueue_style( 'arix-fonts', arix_google_fonts(), array(), null );
 }
 add_action( 'wp_enqueue_scripts', 'arix_scripts' );
 
@@ -31,7 +31,6 @@ function arix_functions() {
 	add_theme_support( 'html5', array(
 		'comment-list',
 		'comment-form',
-		'search-form',
 		'gallery',
 		'caption',
 	) );
@@ -39,7 +38,7 @@ function arix_functions() {
 	// custom background image support
 	add_theme_support( 'custom-background' , array(
 		'default-color'       => 'dce2e5',
-		'default-image'       => '%1$s/images/sun-grass.jpg',
+		'default-image'       => '%1$s/images/arix-background.jpg',
 		'default-repeat'      => 'no-repeat',
 		'default-position-x'  => 'center',
 		'default-position-y'  => 'center',
@@ -48,7 +47,7 @@ function arix_functions() {
 
 	// custom logo support
 	add_theme_support( 'custom-logo', array(
-		'height'      => 160,
+		'height'      => 360,
 		'width'       => 460,
 		'flex-height' => true,
 		'flex-width'  => true,
@@ -60,8 +59,8 @@ function arix_functions() {
 	    'main_menu' => __( 'Main Menu', 'arix' )
 	) );
 
-	// post editor css
-	add_editor_style();
+	// visual editor styles and fonts
+	add_editor_style( array( 'editor-style.css', arix_google_fonts() ) );
 }
 add_action( 'after_setup_theme', 'arix_functions' );
 
@@ -93,10 +92,13 @@ add_action( 'widgets_init', 'arix_widgets' );
 
 
 
-// content width
-if ( ! isset( $content_width ) ) {
-	$content_width = 1000;
+
+// set content width
+function arix_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'arix_content_width', 1000 );
 }
+add_action( 'after_setup_theme', 'arix_content_width', 0 );
+
 
 
 
@@ -127,20 +129,28 @@ function arix_page_nav() {
 
 
 
+// register google fonts
+if ( ! function_exists( 'arix_google_fonts' ) ) :
 
-// visual editor font
-function arix_add_editor_font() {
-    add_editor_style( '//fonts.googleapis.com/css?family=Dosis:300,500' );
+function arix_google_fonts() {
+	$fonts_url = '';
+	$fonts     = array();
+	$subsets   = 'latin,latin-ext';
+
+	/* translators: If there are characters in your language that are not supported by Dosis, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Dosis font: on or off', 'arix' ) ) {
+		$fonts[] = 'Dosis:300,500';
+	}
+
+	if ( $fonts ) {
+		$fonts_url = add_query_arg( array(
+			'family' => urlencode( implode( '|', $fonts ) ),
+			'subset' => urlencode( $subsets ),
+		), 'https://fonts.googleapis.com/css' );
+	}
+	return $fonts_url;
 }
-add_action( 'after_setup_theme', 'arix_add_editor_font' );
-
-// visual editor style
-function arix_editor_styles() {
-	add_editor_style();
-}
-add_action( 'admin_init', 'arix_editor_styles' );
-
-
+endif;
 
 
 

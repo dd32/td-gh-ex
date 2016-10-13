@@ -21,15 +21,16 @@
 			<?php wp_nav_menu( array(
 				'theme_location' => 'main_menu',
 				'menu'           => __( 'Main Menu', 'arix' ),
+				'depth'          => 2,
 				'items_wrap'     => '
-					<a class="mobile-nav open" href="#nav" title="Open Menu">
+					<a class="mobile-nav open" href="#nav">
 						<svg viewBox="0 0 24 24">
 						<rect x="3" y="11" width="18" height="2" />
 						<rect x="3" y="16" width="18" height="2" />
 						<rect x="3" y="6" width="18" height="2" />
 						</svg>
 					</a>
-					<a class="mobile-nav close" href="#" title="Close Menu">
+					<a class="mobile-nav close" href="#">
 						<svg viewBox="0 0 24 24">
 						<rect x="11" y="3" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -4.9706 12)" width="2" height="18" />
 						<rect x="3" y="11" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -4.9706 12)" width="18" height="2" />
@@ -43,7 +44,7 @@
 		<div class="margin">
 			<div id="hero" class="clear">
 				<div class="two-thirds">
-					<h1><a href="<?php echo home_url(); ?>/"><?php bloginfo( 'name' ); ?></a></h1>
+					<h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 					<h3><?php bloginfo( 'description' ); ?></h3>
 				</div>
 			</div>
