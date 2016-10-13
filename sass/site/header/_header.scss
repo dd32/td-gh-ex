@@ -1,49 +1,89 @@
 .site-header {
-    background: #fff;
-    .site-branding {
-        padding: $base__spacing;
-        display: block;
-        text-align: left;
-        h1.site-title {
-            margin: 0;
-            padding: 0;
-            a {
-                margin: 0;
-                padding: 0;
-                display: block;
-                font-weight: 400;
+    &:after {
+        width: 100%;
+        display:block;
+        content: "";
+        float: left;
+        height: 5px;
+        background: -webkit-radial-gradient(50% -3%, ellipse cover, rgba(0, 0, 0, 0.1), rgba(97, 97, 97, 0) 40%);
+        background: radial-gradient(ellipse at 50% 0%, rgba(0, 0, 0, 0.1), rgba(97, 97, 97, 0) 80%);
+    }
+    .header-content {
+         @include outer-container();
+         width: 100%;
+        .site-branding {
+            &.center {
+                text-align: center;
+                @include span-columns(12);
+                @include margin(0);
+                @include padding($base__spacing);
+                float: none;
             }
+            &.inline {
+            @include margin(0 0 0 $small__spacing);
+            }
+            @include padding($base__spacing);
+            float: left;
+            .site-title {
+                @include margin(0);
+                @include padding(0);
+                a {
+                    @include margin(0);
+                    @include padding(0);
+                    display: block;
+                    font-weight: $font__normal;
+                }
+            }
+            .site-description {
+                @include margin(0);
+                @include padding(0);
+                font-weight: $font__normal;
+            }
+            .custom-logo {
+                @include margin(0);
+                @include padding(0);
+            }        
         }
-        .site-description {
+        .header-image {
             display: block;
-            font-weight: 300;
-            margin: 0;
-            padding: 0;
-            font-size: 1.2em;
+            margin: 0 auto;
         }
-        .custom-logo {
-            margin: $small__spacing 0;
-        }
-    }
-    .header-image {
-        display: block;
-        margin: 0 auto;
-    }
-    //header navigation
-    .header-nav {
-        text-align: center;
-        background: lighten($color__light-gray,20%);
-        border-bottom: 1px solid $color__light-gray;
-        ul {
-            @include outer-container();
-            margin-bottom: 0;
-            display: block;
-            list-style: none;
-            li {
-                display: inline-block;
-                *display: inline;
-                padding:$small__spacing $small__spacing/2;
-                font-size: .95em;
+        //header navigation
+        .header-nav {
+            &.inline {
+                @include padding($base__spacing $base__spacing $base__spacing 0);
+                float: right;
+                ul {
+                    list-style: none;
+                    text-align: right;
+                    margin-left: 0;
+                    li {
+                        *display: inline;
+                        display: inline-block;
+                        a {
+                            display: block;
+                            @include padding($base__spacing $small__spacing $base__spacing 0);
+                        }
+                    }
+                }
+            }
+            //first center
+            &.center {
+                @include margin(null -999em);
+                @include padding(null 999em);
+                ul {
+                    list-style: none;
+                    text-align: center;
+                    margin: 0;
+                    li {
+                        *display: inline;
+                        display: inline-block;
+                        a {
+                            display: block;
+                            @include padding($small__spacing);
+                        }
+                    }
+                }
             }
         }
     }

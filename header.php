@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Base_WP
+ * @package Base WP
  */
 
 ?><!DOCTYPE html>
@@ -15,7 +15,6 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <?php wp_head(); ?>
 </head>
@@ -24,14 +23,14 @@
 <div id="page" class="site">
     <a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'base-wp' ); ?></a>
 
-    <header id="masthead" class="site-header <?php echo apply_filters('igthemes-header-class', 'expanded'); ?>" role="banner">
-
-    <?php
-    /**
-     * Functions hooked in to igthemes_before_content
-     */
-    do_action( 'igthemes_header' ); ?>
-
+    <header id="masthead" class="site-header" <?php apply_filters('igthemes_header_image_filter', 'igthemes_header_image' ); ?> role="banner">
+        <div class="header-content">
+            <?php
+            /**
+             * Functions hooked in to igthemes_before_content
+             */
+            do_action( 'igthemes_header' ); ?>
+        </div>
     </header><!-- #masthead -->
 
     <?php

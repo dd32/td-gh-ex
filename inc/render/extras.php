@@ -29,17 +29,19 @@ function igthemes_body_classes( $classes ) {
             $classes[] = 'full-width';
     }
     // sidebar left page tempalte.
-    if ( is_page_template( 'page-sidebarleft.php' ) || get_theme_mod('main_sidebar') =='left' && is_post_type_archive('post') ||  get_theme_mod('main_sidebar') =='left' && is_home() ||  get_theme_mod('main_sidebar') =='left' && is_singular('post') ) {
+    if ( is_page_template( 'page-sidebarleft.php' ) || get_theme_mod('main_sidebar') =='left' && is_post_type_archive('post') ||  get_theme_mod('main_sidebar') =='left' && is_front_page() || get_theme_mod('main_sidebar') =='left' && is_home() || get_theme_mod('main_sidebar') =='left' && is_singular('post') ) {
         $classes[] = 'sidebar-left';
     }
     return $classes;
 }
 add_filter( 'body_class', 'igthemes_body_classes' );
 
-/*
-function igthemes_post_classes( $classes ) {
-
-    return $classes;
+/**
+ * Add a pingback url auto-discovery header for singularly identifiable articles.
+ */
+function igthemes_pingback_header() {
+	if ( is_singular() && pings_open() ) {
+		echo '<link rel="pingback" href="', bloginfo( 'pingback_url' ), '">';
+	}
 }
-add_filter( 'post_class', 'igthemes_post_classes' );
-*/
+add_action( 'wp_head', 'igthemes_pingback_header' );

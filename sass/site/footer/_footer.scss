@@ -1,49 +1,50 @@
 .site-footer {
-    background: #ffffff;
-    border-top: 1px solid $color__gray;
+    background: $color__background-footer;
     &:before {
         width: 100%;
-        display: block;
+        display:block;
         content: "";
-        position: absolute;
+        float: left;
         height: 5px;
-        background: -webkit-radial-gradient(50% -3%, ellipse cover, rgba(0, 0, 0, 0.2), rgba(97, 97, 97, 0) 40%);
-        background: radial-gradient(ellipse at 50% 0%, rgba(0, 0, 0, 0.2), rgba(97, 97, 97, 0) 80%);
-    }
-    .footer-widget-region {
-        clear: both;
-        display: block;
+        background: -webkit-radial-gradient(50% -3%, ellipse cover, rgba(0, 0, 0, 0.1), rgba(97, 97, 97, 0) 40%);
+        background: radial-gradient(ellipse at 50% 0%, rgba(0, 0, 0, 0.1), rgba(97, 97, 97, 0) 80%);
     }
     .scroll-top,
     .social-url {
         clear: both;
         display: block;
         text-align: center;
+        @include margin(0);
     }
     .site-info {
         text-align: center;
-        font-size: .9em;
-        padding: $base__spacing 0;
+        @include margin($base__spacing);
+        @include padding(0);
     }
     .footer-text {
         @extend .site-info;
-        border:none;
-        padding-top: 0;
+        @include margin(0);
+        @include padding(0);;
     }
     .scroll-top {
         text-align: center;
-        margin-top: $base__spacing;
+        @include padding(0);
+        border-top: 1px solid $color__light-gray;
+        border-bottom: 1px solid $color__light-gray;
         #scrolltop {
-            font-size: 1.2em;
-            border: 1px solid;
-            @include border-radius(100%);
-            padding: .2em .4em;
+            border-left: 1px solid $color__light-gray;
+            border-right: 1px solid $color__light-gray;
+            @include font-size(1.1);
+            padding: 5px 10px;
+            display: inline-block;
         }
     }
     .social-url {
         a {
-            font-size: 1.1em;
-            margin: 1em .5em;
+            @include font-size(1.1);
+            vertical-align: middle;
+            @include margin(0);
+            @include padding( $small__spacing $small__spacing/2 );
             display: inline-block;
         }
     }

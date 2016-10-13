@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package Base_WP
+ * @package Base WP
  */
 
 if ( ! function_exists( 'igthemes_posts_navigation' ) ) :
@@ -54,10 +54,9 @@ if ( ! function_exists( 'igthemes_posted_on' ) ) :
 function igthemes_posted_on() {
     //AUTHOR
     $byline = sprintf(
-          esc_html_x( '%s', 'post author', 'base-wp' ),
+          esc_html_x( apply_filters('igthemes-author','igthemes-author-text') . '%s', 'post author', 'base-wp' ),
           '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
     );
-    echo '<span class="byline">' . $byline . '</span>';
     //TIME
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
@@ -72,11 +71,11 @@ function igthemes_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		esc_html_x( '%s', 'post date', 'base-wp' ),
+		esc_html_x( apply_filters('igthemes_date', 'igthemes_date_text') . '%s', 'post date', 'base-wp' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
-
-	echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
+    //RETURN
+	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 }
 endif;
 
@@ -89,14 +88,14 @@ function igthemes_entry_footer() {
 	if ( 'post' === get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'base-wp' ) );
-		if ( $categories_list && Base_WP_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in: %1$s', 'base-wp' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+		if ( $categories_list && igthemes_categorized_blog() ) {
+			printf( '<span class="cat-links">' . esc_html__( apply_filters('igthemes_cat_links', 'igthemes-cat-text') . '%1$s', 'base-wp' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 		}
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'base-wp' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged: %1$s', 'base-wp' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			printf( '<span class="tags-links">' . esc_html__( apply_filters('igthemes_tags_links', 'igthemes-tags-text') . '%1$s', 'base-wp' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
     //commnet
@@ -124,8 +123,8 @@ endif;
  *
  * @return bool
  */
-function Base_WP_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'Base_WP_categories' ) ) ) {
+function igthemes_categorized_blog() {
+	if ( false === ( $all_the_cool_cats = get_transient( 'igthemes_categories' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
 			'fields'     => 'ids',
@@ -137,27 +136,27 @@ function Base_WP_categorized_blog() {
 		// Count the number of categories that are attached to the posts.
 		$all_the_cool_cats = count( $all_the_cool_cats );
 
-		set_transient( 'Base_WP_categories', $all_the_cool_cats );
+		set_transient( 'igthemes_categories', $all_the_cool_cats );
 	}
 
 	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so Base_WP_categorized_blog should return true.
+		// This blog has more than 1 category so igthemes_categorized_blog should return true.
 		return true;
 	} else {
-		// This blog has only 1 category so Base_WP_categorized_blog should return false.
+		// This blog has only 1 category so igthemes_categorized_blog should return false.
 		return false;
 	}
 }
 
 /**
- * Flush out the transients used in Base_WP_categorized_blog.
+ * Flush out the transients used in igthemes_categorized_blog.
  */
-function Base_WP_category_transient_flusher() {
+function igthemes_category_transient_flusher() {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 		return;
 	}
 	// Like, beat it. Dig?
-	delete_transient( 'Base_WP_categories' );
+	delete_transient( 'igthemes_categories' );
 }
-add_action( 'edit_category', 'Base_WP_category_transient_flusher' );
-add_action( 'save_post',     'Base_WP_category_transient_flusher' );
+add_action( 'edit_category', 'igthemes_category_transient_flusher' );
+add_action( 'save_post',     'igthemes_category_transient_flusher' );

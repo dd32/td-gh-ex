@@ -9,7 +9,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Base_WP
+ * @package Base WP
  */
 
 get_header(); ?>

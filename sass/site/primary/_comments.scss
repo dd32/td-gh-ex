@@ -6,15 +6,16 @@
 }
 //comment
 .comments-area {
-    margin: 3em 0;
+    @include margin($base__spacing 0);
+    @include padding(0);
     .comment-reply-title {
-        font-weight: 400;
+        font-weight: $font__normal;
     }
     .comment-list {
         margin-left: 0;
         .children {
-            padding: 0;
-            margin: 0 0 0 40px;
+            @include margin(0 0 0 $base__spacing*2);
+            @include padding(0);
             position: relative;
             &:before {
                 font-family: 'simple-line-icons';
@@ -31,29 +32,51 @@
         }
         .comment {
             list-style: none;
-            margin: $base__spacing 0;
+            @include margin($base__spacing 0);
+            @include padding(0);
             .comment-content {
-                padding: 10px 0 0 0;
+                @include margin(0);
+                @include padding($small__spacing);
             }
             .reply {
-                font-size: 0.923em;
-                margin-bottom: 30px;
+                @include margin($small__spacing);
+                @include padding(0);
+                text-align: right;
+                text-transform: lowercase;
+                &:after {
+                    font-family: 'simple-line-icons';
+                    content: '\e606';
+                    margin-left: 5px;
+                    font-size: .6em;
+                    
+                }
             }
             .comment-meta {
+                @include padding($small__spacing);
                 .comment-author {
                     .avatar {
-                        @include padding(0);
                         @include margin(5px 10px 5px 0);
-                        float: left
+                        @include padding(0);
+                        float: left;
                     }
                 }
                 .comment-metadata {
-                font-size: 0.9em;
                     a {
                         clear: right;
                     }
                 }
             }
+        }
+    }
+    .comment-respond {
+        @include margin($base__spacing 0);
+    }
+    .comment-form-author,
+    .comment-form-email,
+    .comment-form-url {
+        label {
+            min-width: 60px;
+            display: inline-block;
         }
     }
 }

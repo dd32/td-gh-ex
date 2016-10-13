@@ -2,8 +2,8 @@
 /*----------------------------------------------------------------
  * SINGLE PAGE
 -----------------------------------------------------------------*/
-add_action( 'igthemes_single_page', 'igthemes_page_header', 10 );
-add_action( 'igthemes_single_page', 'igthemes_page_image', 20 );
+add_action( 'igthemes_single_page', 'igthemes_page_header', 20 );
+add_action( 'igthemes_single_page', 'igthemes_page_image', 10 );
 add_action( 'igthemes_single_page', 'igthemes_page_content', 30 );
 add_action( 'igthemes_single_page', 'igthemes_page_footer', 40 );
 

@@ -7,7 +7,7 @@ Stable tag: 2.00
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Base WP is the perfect theme for your next blog or e-commerce project.
+ Base WP is a basic blog or business, responsive and clean coded, WordPress theme.
 
 == Description ==
 
@@ -23,7 +23,7 @@ Base WP is a basic blog or business, responsive and clean coded, WordPress theme
 
 = Does this theme support any plugins? =
 
-Base WP includes support for Infinite Scroll in Jetpack.
+Base WP includes support for Infinite Scroll in Jetpack, WooCommerce, Easy Digital Downloads, Yoast Seo, Beaver Builder, Elementor, Contact Form 7 and much more.
 
 == Credits ==
 
@@ -250,3 +250,10 @@ All Javascript is located in /js/ with license headers where appropriate.
 == 2.00 ==
 * Fixed errors of previous update.
 * Wrong version number fixed.
+
+== 2.01 ==
+* Revamped theme design.
+* Added header image as background.
+* Removed widgets icons.
+* Updated theme framework.
+* Added dynamic css.

@@ -10,20 +10,16 @@ html {
 
 body {
     background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+    overflow-x: hidden;
 }
 
 blockquote {
     quotes: "" "";
-    margin: 0 0 0.75em 0;
-    padding: 20px 25px;
-    background: $color__light-gray;
-    border-left: 4px solid $color__gray;
-    &:before,
-    &:after {
-        content: "";
-    }
+    border-left: 4px solid;
+    @include margin(0 0 $small__spacing 0);
+    @include padding($small__spacing);
     p {
-        margin: 5px 0;
+        margin: 0;
     }
 }
 q {
@@ -31,10 +27,10 @@ q {
     font-style: italic;
 }
 hr {
-    background-color: $color__background-hr;
+    background-color: $color__gray;
     border: 0;
     height: 1px;
-    margin-bottom: 1.5em;
+    margin-bottom: $base__spacing;
 }
 
 @import "lists";
@@ -46,3 +42,5 @@ img {
 }
 
 @import "tables";
+
+@import "icons";

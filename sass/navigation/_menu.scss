@@ -1,36 +1,35 @@
 //main navigation
 @include media(769px) {
 .main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
-    border-top: 1px solid $color__gray;
-    border-bottom: 1px solid $color__gray;
-    margin-bottom: -1px;
+    clear: both;
+    @include margin(null -999em);
+    @include padding(null 999em);    
+    //first center
+    &.center {
+        ul {
+            text-align: center;
+            ul {
+                text-align: left;
+            }
+        }
+    }
     //first
 	ul {
         display: none;
 		list-style: none;
-		margin: 0;
-		padding-left: 0;
-        text-align: center;
-        &:after {
-            width: 100%;
-            display:block;
-            content: "";
-            margin-bottom: -5px;			
-            height: 5px;
-            background: -webkit-radial-gradient(50% -3%, ellipse cover, rgba(0, 0, 0, 0.2), rgba(97, 97, 97, 0) 40%);
-            background: radial-gradient(ellipse at 50% 0%, rgba(0, 0, 0, 0.2), rgba(97, 97, 97, 0) 80%);
-        }
+		@include margin(0);
+        @include padding(0 $base__spacing);
+
         li {
             *float: left;
             display: inline-block;
             position: relative;
+            &:last-child {
+            }
             a {
                 display: block;
-                padding: $small__spacing;
+                @include margin(0);
+                @include padding($small__spacing);
                 &:hover,
                 &.focus {
                 }
@@ -46,47 +45,46 @@
 		}
         //second level
         ul {
+            @include padding(0);
 			float: left;
 			position: absolute;
 			top: 100%;
 			left: -999em;
 			z-index: 99999;
-            text-align: left;
-            margin-top:  0;
+            -moz-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+            -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
+            box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
             &:after {
                 content: none;
             }
             li {
+                border:none;
 				&:hover > ul,
 				&.focus > ul {
 					left: 100%;
                     width: 100%;
-                    margin-top: 0;
 				}
                 a {
 				    width: 200px;
-                    padding: 15px;
                     &:hover,
                     &.focus {
                     }
-			     }
+                }
 			}
-
 			ul {
 				left: -999em;
 				top: 0;
 			}
             //children
             .menu-item-has-children > a:after {
-                    font-family: 'simple-line-icons';
-                    content: "\e606";
-                    position: relative;
-                    float: right;
-                    @include opacity(.5);
+                font-family: 'simple-line-icons';
+                content: "\e606";
+                position: relative;
+                float: right;
+                @include opacity(.5);
             }
-		}
-
-	}
+        }
+    }
 	.current_page_item > a,
 	.current-menu-item > a,
 	.current_page_ancestor > a,
@@ -104,25 +102,38 @@
     .main-navigation {
         clear: both;
         width: 100%;
-        padding: $small__spacing;
-        margin: 0;
-        border-top: 1px solid $color__gray;
-        border-bottom: 1px solid $color__gray;
-        #primary-menu {
-            margin: 0;
-            padding: 0;
-            list-style: none;
+        @include margin(0);
+        @include padding(0 $base__spacing);
+        &.center {
             text-align: center;
+        }
+        //first
+        ul {
+            display: none;
+            list-style: none;
+            @include margin(0);
+            @include padding(0);
             li {
-                list-style: none;
+                border: none;
+                @include margin(0);
+                @include padding(0);
                 a {
                     display: block;
-                    padding: 15px;
+                    @include margin(0);
+                    @include padding($small__spacing 0);
                 }
             }
+            //second level
             ul {
-                margin: 0;
-                padding: 0;
+                @include margin(0);
+                @include padding(0);
+                li {
+                    @include margin(0);
+                    @include padding(0);
+                    a {
+                        width: 100%;
+                     }
+                }
             }
         }
     }
@@ -135,81 +146,16 @@
         display: none;
     }
     .menu-toggle {
-        margin: 0 auto;
         @include border-radius(0);
         font-size: 1em;
-
-    }
-
-}
-//comment and post navigation
-.comment-navigation,
-.posts-navigation,
-.post-navigation {
-	.site-main & {
-		margin: 0 0 1.5em;
-        padding: 10px 0;
-		overflow: hidden;
-	}
-
-	.nav-previous {
-		float: left;
-		width: 50%;
-        &:before {
-            font-family: 'simple-line-icons';
-            content: '\e605';
-            margin-right: 10px;
-            vertical-align: middle;
-            font-size: .9em;
-        }
-	}
-
-	.nav-next {
-		float: right;
-		text-align: right;
-		width: 50%;
-        &:after {
-            font-family: 'simple-line-icons';
-            content: '\e606';
-            margin-left: 10px;
-            vertical-align: middle;
-            font-size: .9em;
-        }
-	}
-}
-//numeric pagination
-.pagination {
-    clear: both;
-}
-ul.page-numbers {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: inline-block;
-    clear: both;
-    border: 1px solid $color__gray;
-    border-right: none;
-    -moz-box-shadow: 0px 2px 2px $color__gray;
-    -webkit-box-shadow: 0px 2px 2px $color__gray;
-    box-shadow: 0px 2px 2px $color__gray;
-    li {
-        display: inline-block;
-        float: left;
         @include margin(0);
-        background: #fff;
-        border-right:  1px solid $color__gray;
-        .dots,
-        .current,
-        a {
-            display: block;
-            @include padding(5px 14px);
-            text-decoration: none;
-            &:hover {
-                background: $color__light-gray;
-            }
+        @include padding($small__spacing);
+        &:hover {
         }
-        .current {
-            background: $color__light-gray;
+    }
+    &.center {
+        .menu-toggle {
+            @include margin(0 auto);
         }
     }
 }

@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package base_wp
+ * @package Base WP
  */
 
 if ( ! function_exists( 'base_wp_setup' ) ) :
@@ -62,7 +62,7 @@ function base_wp_setup() {
 
     // Set up the WordPress core custom background feature.
     add_theme_support( 'custom-background', apply_filters( 'base_wp_custom_background_args', array(
-        'default-color' => 'ffffff',
+        'default-color' => 'fafafa',
         'default-image' => '',
     ) ) );
 
@@ -172,19 +172,9 @@ function base_wp_google_fonts() {
 add_action( 'wp_enqueue_scripts', 'base_wp_google_fonts' );
 
 /**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/inc/extras.php';
-
-/**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/options/customizer.php';
+require get_template_directory() . '/inc/admin/options/customizer.php';
 /**
  * Welcome screen.
  */
@@ -193,13 +183,20 @@ require get_template_directory() . '/inc/admin/welcome/welcome-screen.php';
 /**
  * Template functions an actionss.
  */
-
-require get_template_directory() . '/inc/assets/template-functions.php';
-require get_template_directory() . '/inc/assets/template-actions.php';
-require get_template_directory() . '/inc/assets/post-actions.php';
-require get_template_directory() . '/inc/assets/page-actions.php';
-require get_template_directory() . '/inc/assets/jetpack/jetpack-funtions.php';
-require get_template_directory() . '/inc/assets/beaver-builder/beaver-builder-function.php';
+require get_template_directory() . '/inc/render/template-functions.php';
+require get_template_directory() . '/inc/render/template-tags.php';
+require get_template_directory() . '/inc/render/template-dynamic-css.php';
+require get_template_directory() . '/inc/render/extras.php';
+//structure
+require get_template_directory() . '/inc/render/structure/header.php';
+require get_template_directory() . '/inc/render/structure/content-top.php';
+require get_template_directory() . '/inc/render/structure/footer.php';
+require get_template_directory() . '/inc/render/structure/loop.php';
+require get_template_directory() . '/inc/render/structure/post.php';
+require get_template_directory() . '/inc/render/structure/page.php';
+//plugins
+require get_template_directory() . '/inc/plugins/jetpack/jetpack-funtions.php';
+require get_template_directory() . '/inc/plugins/beaver-builder/bbuilder-functions.php';
 
 /*----------------------------------------------------------------------
 # EDD SUPPORT
@@ -210,12 +207,11 @@ if ( ! function_exists( 'is_edd_activated' ) ) {
     }
 }
 if (is_edd_activated()) {
-    require get_template_directory() . '/inc/assets/edd/edd-functions.php';
-    require get_template_directory() . '/inc/assets/edd/download-actions.php';
+    require get_template_directory() . '/inc/plugins/edd/edd-functions.php';
 }
 
 /*----------------------------------------------------------------------
-# DECLARE WOOCOMMERCE SUPPORT
+# WOOCOMMERCE SUPPORT
 ------------------------------------------------------------------------*/
 add_action( 'after_setup_theme', 'igthemes_woocommerce_support' );
 function igthemes_woocommerce_support() {
@@ -230,5 +226,5 @@ if ( ! function_exists( 'is_woocommerce_activated' ) ) {
 }
 
 if (is_woocommerce_activated()) {
-    require get_template_directory() . '/inc/assets/woocommerce/wc-functions.php';
+    require get_template_directory() . '/inc/plugins/woocommerce/wc-functions.php';
 }

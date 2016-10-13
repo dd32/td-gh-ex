@@ -5,7 +5,6 @@
 add_action( 'igthemes_single_download', 'igthemes_download_header', 10 );
 add_action( 'igthemes_single_download', 'igthemes_download_content', 20 );
 add_action( 'igthemes_single_download', 'igthemes_download_footer', 30 );
-add_action( 'igthemes_single_download', 'igthemes_init_structured_data', 40 );
 
 /*-----------------------------------------------------------------
  * POST HEADER
@@ -74,20 +73,26 @@ if ( ! function_exists( 'igthemes_download_content' ) ) {
 -----------------------------------------------------------------*/
 if ( ! function_exists( 'igthemes_download_footer' ) ) {
 	// start function
-	function igthemes_download_footer() { ?>
-	<footer class="entry-footer">
-		<?php 
-            if (has_term('','download_category' )) :
-               echo '<span class="cat-links">';
-                    the_terms( get_the_id(), 'download_category', '<span class="title">Categories:</span>', ', ', '' );
-                echo '</span>';
-            endif;
-            if (has_term('','download_tag' )) :
-               echo '<span class="tag-links">';
-                    the_terms( get_the_id(), 'download_tag', '<span class="title">Tags:</span> ', ', ', '' );
-                echo '</span>';
-            endif;
-        ?>
-	</footer><!-- .entry-footer -->
-<?php }
+	function igthemes_download_footer() { 
+        //open entry-footer
+        if ( has_term('','download_category' ) || has_term('','download_tag' ) ) :
+	       echo '<footer class="entry-footer">';
+        endif;
+        //show categories
+        if (has_term('','download_category' )) :
+            echo '<span class="cat-links">';
+                the_terms( get_the_id(), 'download_category', '<span class="title">Categories:</span>', ', ', '' );
+            echo '</span>';
+        endif;
+        //sow tags
+        if (has_term('','download_tag' )) :
+            echo '<span class="tag-links">';
+                the_terms( get_the_id(), 'download_tag', '<span class="title">Tags:</span> ', ', ', '' );
+            echo '</span>';
+        endif;
+        //close ntry-footer
+        if ( has_term('','download_category' ) || has_term('','download_tag' ) ) :
+	       echo '</footer>';
+        endif;
+    }
 }
