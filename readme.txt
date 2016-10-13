@@ -3,7 +3,7 @@ Contributors: iografica
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, footer-widgets, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
 Requires at least: 4.0
 Tested up to: 4.4.2
-Stable tag: 2.00
+Stable tag: 2.02
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,7 +11,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Base WP is a basic blog or business, responsive and clean coded, WordPress theme. Base WP is e-commerce, multilingual ready, SEO friendly and cross-browser compatible. The theme is fully integrated with the most popular and free plugins for Wordpress like WooCommerce, Easy Digital Downloads, Yoast Seo, Beaver Builder, Elementor and much more. You can customize the theme via the Customizer, use this theme as an ecommerce or as a simple blogging platform.
+Base WP is a basic blog or business, responsive and clean coded, WordPress theme. 
+Base WP is e-commerce, multilingual ready, SEO friendly and cross-browser compatible. The theme is fully integrated with the most popular and free plugins for Wordpress like WooCommerce, Easy Digital Downloads, Yoast Seo, Beaver Builder, Elementor and much more. 
+You can customize the theme via the Customizer, use this theme as an ecommerce or as a simple blogging platform.
 
 == Installation ==
 
@@ -257,3 +259,6 @@ All Javascript is located in /js/ with license headers where appropriate.
 * Removed widgets icons.
 * Updated theme framework.
 * Added dynamic css.
+
+== 2.02 ==
+* Fixed theme image.
