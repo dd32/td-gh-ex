@@ -1,9 +1,9 @@
 a {
 	color: $color__link;
     text-decoration: none;
-    font-weight: 300;
+    font-weight: $font__normal;
 	&:visited {
-		color: $color__link-visited;
+		color: $color__link;
 	}
 	&:hover,
 	&:focus,

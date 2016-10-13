@@ -1,75 +1,57 @@
 h3.widget-title {
-    text-shadow: 1px 1px 0 #fff;
-    background-color: lighten($color__light-gray,20%);
     margin-top: -$small__spacing;
     margin-left: -$small__spacing;
     margin-right: -$small__spacing;
     margin-bottom: $small__spacing;
-    padding: $small__spacing;
-    border: 1px solid #fff;
-    border-bottom: 1px solid $color__gray;
+    @include padding($small__spacing);
 }
-
+.widget-area{
+    @include padding($base__spacing);
+}
 .widget {
-    margin: 0 0 $base__spacing 0;
-    border: 1px solid $color__gray;
-    padding: $small__spacing;
-    background:rgba(255, 255, 255, 0.8);
-    -moz-box-shadow: 0px 2px 2px $color__gray;
-    -webkit-box-shadow: 0px 2px 2px $color__gray;
-    box-shadow: 0px 2px 2px $color__gray;
-
-	/* Make sure select elements fit in widgets. */
+    @include margin(0 0 $base__spacing 0);
+    @include padding($small__spacing);
+    position: relative;
+    -webkit-box-shadow: 1px  2px 2px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 1px  2px 2px  rgba(0, 0, 0, 0.05);
+    box-shadow: 0px  2px 2px rgba(0, 0, 0, 0.05);
+  	/* Make sure select elements fit in widgets. */
 	select {
 		max-width: 100%;
 	}
     ul {
-        margin-top:  -$small__spacing;
-        margin-left: 0;
-        margin-right: 0;
-        margin-bottom:  -$small__spacing;
-        padding: 0;
         list-style: none;
+        margin: 0;
         li {
-            border-bottom: 1px solid $color__gray;
-            margin-top: 0;
-            margin-left:  -$small__spacing;
-            margin-right: -$small__spacing;
-            margin-bottom: 0;
-            padding: $small__spacing - 4 $small__spacing;
-            &:last-child {
-                border-bottom: none;
+            padding: $small__spacing;
+            margin-left: -$small__spacing;
+            margin-right: -$small__spacing;  
+            border-top: 1px solid $color__light-gray;
+            &:first-child {
+                border-top: none;
             }
             a {
-                display: inline-block;
+                display:block;
             }
-        }
-        ul {
-            margin: 0;
-            padding: 0;
-            border: none;
-            li {
-                border-bottom:none;
-                padding:0 $small__spacing;
-                margin:0px;
-                a {
-                    padding-left: $small__spacing;
+            ul {
+                li {
+                    margin: 0;
+                    padding: 0;
                 }
-
-            }
+            } 
         }
     }
 }
 .header-widget-region {
-    margin: $base__spacing 0 0 0;
+    @include margin(0 null);
+    @include padding($base__spacing);
     display: inline-block;
     width: 100%;
-    .widget {
-        padding: $small__spacing $base__spacing;
-    }
 }
 .footer-widget-region {
-    margin-top: $big__spacing;
+    @include margin(0 null);
+    @include padding($base__spacing);
+    width: 100%;
 }
 
 //categories and archives
@@ -77,7 +59,6 @@ h3.widget-title {
 .widget_categories {
     ul {
         li {
-
         }
     }
 }
@@ -85,7 +66,6 @@ h3.widget-title {
 .widget_recent_entries {
     ul {
         li {
-
         }
     }
 }
@@ -96,14 +76,24 @@ h3.widget-title {
         }
     }
 }
+//menu
+.widget_nav_menu {
+    ul {
+        .menu-item-has-children {
+            padding: 0;
+            a {
+                padding: $small__spacing;
+            }
+            li {
+              border-top: 1px solid $color__light-gray;
+            }
+        }
+    }
+}
 //calendar 
 .widget_calendar {
     #wp-calendar {
-        background: rgba(255,255,255,.9);
-        margin-bottom: $small__spacing;
         th, td {
-            padding: 8px 5px;
-            text-align: center;
         }
     }
 }
@@ -118,55 +108,14 @@ h3.widget-title {
     }
     
 }
+//search
+.widget_search {
+    input.search-field {
+        width: 50%;
+    }
+}
 .widget select {
     max-width: 100%;
-}
-
-//widget icon
-.widget_archive h3.widget-title:before, .widget_calendar h3.widget-title:before,
-.widget_categories h3.widget-title:before, .widget_igthemes_recent_posts_widget h3.widget-title:before,
-.widget_meta h3.widget-title:before, .widget_nav_menu h3.widget-title:before,
-.widget_recent_comments h3.widget-title:before, .widget_recent_entries h3.widget-title:before,
-.widget_search h3.widget-title:before, .widget_tag_cloud h3.widget-title:before,
-.widget_text h3.widget-title:before {
-    font-family: 'simple-line-icons';
-    margin-right: 5px;
-}
-//icons
-.widget_archive h3.widget-title:before {
-    content: "\e03f";
-}
-
-.widget_categories h3.widget-title:before {
-    content: "\e039";
-}
-
-.widget_recent_comments h3.widget-title:before {
-    content: "\e04a";
-}
-
-.widget_recent_entries h3.widget-title:before {
-    content: "\e085";
-}
-
-.widget_calendar h3.widget-title:before {
-    content: "\e075";
-}
-
-.widget_nav_menu h3.widget-title:before {
-    content: "\e08d";
-}
-
-.widget_tag_cloud h3.widget-title:before {
-    content: "\e055";
-}
-
-.widget_search h3.widget-title:before {
-    content: "\e090";
-}
-
-.widget_text h3.widget-title:before {
-    content: "\e060";
 }
 
 //premim widgets

@@ -1,8 +1,6 @@
 .gallery {
-	margin-bottom: 1.5em;
-    padding: 25px;
-    background: $color__gray;
-    
+    @include margin(0);
+    @include padding(0);
 }
 
 .gallery-item {
@@ -10,11 +8,9 @@
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
-    
     img {
-        padding: 5px;
-        margin: 2px;
-        background: #fff;
+        @include margin(0);
+        @include padding(0);
     }
 
 	.gallery-columns-2 & {

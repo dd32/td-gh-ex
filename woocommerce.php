@@ -2,7 +2,7 @@
 /**
  * The template for displaying all woocommece pages.
  *
- * @package Basic Shop
+ * @package Base WP
  */
 
 get_header(); ?>
