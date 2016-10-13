@@ -3,8 +3,10 @@
 <head>
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />	
-	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+	<?php endif; ?>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 		<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?> id="top">
@@ -23,7 +25,8 @@
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
           <?php endif; ?>		
 		</div>		
-		<div id="banner-top"><?php echo of_get_option( 'banner_top'); ?></div>		
+		<div id="banner-top"><?php echo of_get_option( 'banner_top'); ?>
+		<?php if (!dynamic_sidebar('headerwid') ) : endif; ?></div>		
 	</div> <!-- end div #header -->
 
 	<!-- END HEADER -->
@@ -56,3 +59,5 @@
 	 } //endif
  }//endif
  ?>
+ 
+ <?php if (!dynamic_sidebar('belownavi') ) : endif; ?>

@@ -18,7 +18,9 @@ function digital_scripts() {
 		if ( ( of_get_option('slider_enabled') != 0 ) && ( is_front_page() ||  is_home() ) )  {
 		wp_enqueue_script( 'digital-custom-js', get_template_directory_uri() . '/js/custom.js', array('jquery','digital-nivo-slider') );
 	}
-
+if ( is_rtl() ) {
+	wp_enqueue_style( 'digital-rtl-css', get_template_directory_uri() . '/css/rtl.css' );
+}
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
 	if (of_get_option('digital_favicon') != '') {
@@ -129,7 +131,7 @@ $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s<
 function digital_theme_setup() { 
 	 
 		add_theme_support( 'post-thumbnails' );
-		add_image_size( 'defaultthumb', 390, 210, true);
+		add_image_size( 'defaultthumb', 390, 210);
 		add_image_size( 'popularpost', 75, 75 , true );
 		add_image_size( 'latestpost', 125, 120 , true );
 	    load_theme_textdomain('digital', get_template_directory() . '/languages');
@@ -239,6 +241,39 @@ function digital_comment_form_fields( $fields ) {
 		'name' => __( 'Sidebar Right', 'digital' ),
 	    'before_widget' => '<div class="box clearfloat"><div class="boxinside clearfloat">',
 		'id' => 'digsidebar',
+	    'after_widget' => '</div></div>',
+	    'before_title' => '<h4 class="widgettitle">',
+	    'after_title' => '</h4>',
+	));
+		register_sidebar(array(
+		'name' => __( 'Header Widget', 'digital' ),
+	    'before_widget' => '<div class="box clearfloat"><div class="boxinside clearfloat">',
+		'id' => 'headerwid',
+	    'after_widget' => '</div></div>',
+	    'before_title' => '<h4 class="widgettitle">',
+	    'after_title' => '</h4>',
+	));
+	
+		register_sidebar(array(
+		'name' => __( 'Below Navigation', 'digital' ),
+	    'before_widget' => '<div class="box clearfloat"><div class="boxinside clearfloat">',
+		'id' => 'belownavi',
+	    'after_widget' => '</div></div>',
+	    'before_title' => '<h4 class="widgettitle">',
+	    'after_title' => '</h4>',
+	));
+		register_sidebar(array(
+		'name' => __( 'Below Single Post Content', 'digital' ),
+	    'before_widget' => '<div class="box clearfloat"><div class="boxinside clearfloat">',
+		'id' => 'belowsinglepost',
+	    'after_widget' => '</div></div>',
+	    'before_title' => '<h4 class="widgettitle">',
+	    'after_title' => '</h4>',
+	));
+		register_sidebar(array(
+		'name' => __( 'Below Page Content', 'digital' ),
+	    'before_widget' => '<div class="box clearfloat"><div class="boxinside clearfloat">',
+		'id' => 'belowpagecontent',
 	    'after_widget' => '</div></div>',
 	    'before_title' => '<h4 class="widgettitle">',
 	    'after_title' => '</h4>',

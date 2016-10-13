@@ -22,6 +22,7 @@ $after = ''; the_tags("",$before, $seperator, $after );
 			<div id="single-nav-left"><?php previous_post_link('&laquo; <strong>%link</strong>'); ?></div>
 		<div id="single-nav-right"><?php next_post_link('<strong>%link</strong> &raquo;'); ?></div>
         </div>		<?php } ?>
+		 <?php if (!dynamic_sidebar('belowsinglepost') ) : endif; ?>
         <!-- END single-nav -->
 			<div class="comments">	<?php comments_template(); ?>	</div> <!-- end div .comments --></article>
 			<?php endwhile; ?>

@@ -16,7 +16,7 @@
 							</div> <!-- end div .entry -->
 							
 			<div class="gap"></div><?php if (of_get_option('digital_author' ) =='1' ) {load_template(get_template_directory() . '/includes/author.php'); } ?>
-
+ <?php if (!dynamic_sidebar('belowpagecontent') ) : endif; ?>
 									<div class="comments">
 								<?php comments_template(); ?>
 							</div> <!-- end div .comments -->
