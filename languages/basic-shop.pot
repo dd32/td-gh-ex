@@ -1,125 +1,76 @@
-# Loco Gettext template
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Basic Shop\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Thu May 12 2016 16:39:43 GMT+0200 (CEST)\n"
-"POT-Revision-Date: Thu May 12 2016 16:39:47 GMT+0200 (CEST)\n"
+"POT-Creation-Date: 2016-10-14 13:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
 "Language: \n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-Basepath: .\n"
-"X-Poedit-SearchPath-0: ..\n"
-"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
-"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
-"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
-"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
-"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
-"X-Generator: Loco - https://localise.biz/"
+"X-Generator: Loco https://localise.biz/"
 
-#: ../404.php:17
-msgid "Oops! That page can&rsquo;t be found."
-msgstr ""
-
-#: ../404.php:21
-msgid ""
-"It looks like nothing was found at this location. Maybe try one of the links "
-"below or a search?"
-msgstr ""
-
-#: ../comments.php:31
-#, php-format
+#: comments.php:30
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../comments.php:40 ../comments.php:61
+#: comments.php:39 comments.php:60
 msgid "Comment navigation"
 msgstr ""
 
-#: ../comments.php:43 ../comments.php:64
+#: comments.php:42 comments.php:63
 msgid "Older Comments"
 msgstr ""
 
-#: ../comments.php:44 ../comments.php:65
+#: comments.php:43 comments.php:64
 msgid "Newer Comments"
 msgstr ""
 
-#: ../comments.php:78
+#: comments.php:77
 msgid "Comments are closed."
 msgstr ""
 
-#: ../functions.php:47
-msgid "Primary"
-msgstr ""
-
-#: ../functions.php:48
-msgid "Header Menu"
-msgstr ""
-
-#: ../functions.php:106
-msgid "Sidebar"
-msgstr ""
-
-#: ../functions.php:108 ../functions.php:117
-msgid "Add widgets here."
-msgstr ""
-
-#: ../functions.php:115
-msgid "Sidebar Shop"
-msgstr ""
-
-#: ../functions.php:125
-#, php-format
-msgid "Header %d"
-msgstr ""
-
-#: ../functions.php:127
-#, php-format
-msgid "Widgetized Header Region %d."
-msgstr ""
-
-#: ../functions.php:137
-#, php-format
-msgid "Footer %d"
-msgstr ""
-
-#: ../functions.php:139
-#, php-format
-msgid "Widgetized Footer Region %d."
-msgstr ""
-
-#. Translators: If there are characters in your language that are not
-#. supported by this font, translate this to 'off'. Do not translate
-#. into your own language.
-#: ../functions.php:164
-msgctxt "Open Sans font: on or off"
-msgid "on"
-msgstr ""
-
-#. Translators: If there are characters in your language that are not
-#. supported by this font, translate this to 'off'. Do not translate
-#. into your own language.
-#: ../functions.php:170
-msgctxt "Raleway font: on or off"
-msgid "on"
-msgstr ""
-
-#: ../header.php:25
+#: header.php:24
 msgid "Skip to content"
 msgstr ""
 
+#: search.php:19
+msgid "Search Results for: %s"
+msgstr ""
+
+#: single.php:21 inc/render/template-tags.php:43 
+#: inc/plugins/edd/templates/single-download.php:20
+msgid "Next"
+msgstr ""
+
+#: single.php:22 inc/render/template-tags.php:42 
+#: inc/plugins/edd/templates/single-download.php:21
+msgid "Previous"
+msgstr ""
+
+#: 404.php:17
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:21
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+
+#: 404.php:33
+msgid "Most Used Categories"
+msgstr ""
+
 #. Name of the template
-msgid "Focus page"
+msgid "Sidebar left"
 msgstr ""
 
 #. Name of the template
@@ -127,68 +78,585 @@ msgid "Full width"
 msgstr ""
 
 #. Name of the template
-msgid "Sidebar left"
+#: inc/admin/welcome/sections/wp-resources.php:123
+msgid "Elementor"
 msgstr ""
 
-#: ../search.php:19
-#, php-format
-msgid "Search Results for: %s"
+#: page-elementor.php:24
+msgid "Use the Elementor plugin for this page template"
 msgstr ""
 
-#: ../core/template-tags.php:35
+#: functions.php:47
+msgid "Primary"
+msgstr ""
+
+#: functions.php:48
+msgid "Header Menu"
+msgstr ""
+
+#: functions.php:94
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:96 functions.php:105 functions.php:127
+msgid "Add widgets here."
+msgstr ""
+
+#: functions.php:103
+msgid "Header widget area"
+msgstr ""
+
+#: functions.php:113
+msgid "Footer %d"
+msgstr ""
+
+#: functions.php:115
+msgid "Widgetized Footer Region %d."
+msgstr ""
+
+#: functions.php:125
+msgid "Shop widget area"
+msgstr ""
+
+#. Name of the template
+msgid "Focus page"
+msgstr ""
+
+#. Name of the template
+#: inc/admin/welcome/sections/wp-resources.php:85
+msgid "Beaver Builder"
+msgstr ""
+
+#: page-beaver-builder.php:24
+msgid "Use the Beaver Builder plugin for this page template"
+msgstr ""
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:21
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:25
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:31
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: inc/render/template-functions.php:32 inc/render/template-functions.php:34
+msgid "%s"
+msgstr ""
+
+#: inc/render/template-tags.php:34
 msgid "&#8592;"
 msgstr ""
 
-#: ../core/template-tags.php:36
+#: inc/render/template-tags.php:35
 msgid "&#8594;"
 msgstr ""
 
-#: ../core/template-tags.php:67
-#, php-format
-msgctxt "post date"
-msgid "%s"
-msgstr ""
-
-#: ../core/template-tags.php:72
-#, php-format
-msgctxt "post author"
-msgid "%s"
-msgstr ""
-
 #. translators: used between list items, there is a space after the comma
 #. translators: used between list items, there is a space after the comma
-#: ../core/template-tags.php:81 ../core/template-tags.php:87
+#: inc/render/template-tags.php:90 inc/render/template-tags.php:96
 msgid ", "
 msgstr ""
 
-#: ../core/template-tags.php:83 ../core/template-tags.php:89
-#, php-format
-msgid "%1$s"
-msgstr ""
-
 #. translators: %s: post title
-#: ../core/template-tags.php:105
-#, php-format
-msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+#: inc/render/template-tags.php:105
+msgid "Leave a comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
 #. translators: %s: Name of current post
 #. translators: %s: Name of current post
-#: ../core/template-tags.php:112 ../core/structure/page.php:39
-#, php-format
+#: inc/render/template-tags.php:112 inc/render/structure/page.php:67
 msgid "Edit %s"
 msgstr ""
 
-#: ../core/template-tags.php:170
-#, php-format
-msgid "%s"
+#: inc/plugins/edd/download-actions.php:50 inc/render/structure/post.php:47 
+#: inc/render/structure/loop.php:59
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: ../core/options/inc/customizer-reset.php:33
+#: inc/plugins/edd/download-actions.php:55 inc/render/structure/post.php:51 
+#: inc/render/structure/page.php:47 inc/render/structure/loop.php:63
+msgid "Pages:"
+msgstr ""
+
+#: inc/admin/welcome/welcome-screen.php:40
+msgid "Thanks for choosing "
+msgstr ""
+
+#: inc/admin/welcome/welcome-screen.php:41
+msgid ""
+"! You can read documentation to how get the most out of your new theme on "
+"the %swelcome screen%s."
+msgstr ""
+
+#: inc/admin/welcome/welcome-screen.php:45
+msgid "Get started with %s"
+msgstr ""
+
+#: inc/render/structure/content-top.php:39
+msgid "Home"
+msgstr ""
+
+#: inc/render/structure/header.php:58 
+#: inc/admin/options/assetts/customizer-options.php:147 
+#: inc/admin/options/assetts/customizer-options.php:706
+msgid "Menu"
+msgstr ""
+
+#: inc/render/structure/footer.php:18
+msgid "%1$s designed by %2$s."
+msgstr ""
+
+#: inc/admin/welcome/sections/wp-resources.php:17
+msgid "Recommended Resources"
+msgstr ""
+
+#: inc/admin/welcome/sections/wp-resources.php:18
+msgid ""
+"%s works well with the following WordPress free and premium plugins and "
+"services. Feel free to give they a look."
+msgstr ""
+
+#: inc/admin/welcome/sections/wp-resources.php:27
+msgid "Shortpixel"
+msgstr ""
+
+#: inc/admin/welcome/sections/wp-resources.php:30
+msgid "Speed up your website with beautifully optimized images."
+msgstr ""
+
+#: inc/admin/welcome/sections/wp-resources.php:33 
+#: inc/admin/welcome/sections/wp-resources.php:53 
+#: inc/admin/welcome/sections/wp-resources.php:72 
+#: inc/admin/welcome/sections/wp-resources.php:91 
+#: inc/admin/welcome/sections/wp-resources.php:110 
+#: inc/admin/welcome/sections/wp-resources.php:129
+msgid "plugin active"
+msgstr ""
+
+#: inc/admin/welcome/sections/wp-resources.php:36 
+#: inc/admin/welcome/sections/wp-resources.php:56 
+#: inc/admin/welcome/sections/wp-resources.php:75 
+#: inc/admin/welcome/sections/wp-resources.php:94 
+#: inc/admin/welcome/sections/wp-resources.php:113 
+#: inc/admin/welcome/sections/wp-resources.php:132
+msgid "view now"
+msgstr ""
+
+#: inc/admin/welcome/sections/wp-resources.php:46
+msgid "Yoast SEO"
+msgstr ""
+
+#: inc/admin/welcome/sections/wp-resources.php:49
+msgid ""
+"Write better content and have a fully optimized WordPress site using Yoast "
+"SEO plugin\n"
+"."
+msgstr ""
+
+#: inc/admin/welcome/sections/wp-resources.php:66
+msgid "WooCommerce"
+msgstr ""
+
+#: inc/admin/welcome/sections/wp-resources.php:69
+msgid ""
+"WooCommerce is a powerful, extendable eCommerce plugin that helps you sell "
+"anything."
+msgstr ""
+
+#: inc/admin/welcome/sections/wp-resources.php:88
+msgid ""
+"Easily build beautiful home pages, professional landing pages, and more with "
+"this content builder."
+msgstr ""
+
+#: inc/admin/welcome/sections/wp-resources.php:104
+msgid "Easy Digital Downloads"
+msgstr ""
+
+#: inc/admin/welcome/sections/wp-resources.php:107
+msgid ""
+"Sell digital downloads through WordPress with this complete digital "
+"downloads management plugin."
+msgstr ""
+
+#: inc/admin/welcome/sections/wp-resources.php:126
+msgid "Elementor is the most advanced frontend drag & drop page builder."
+msgstr ""
+
+#: inc/admin/welcome/sections/tabs.php:11
+msgid ""
+"Here you can read the documentation and know how to get the most out of your "
+"new theme."
+msgstr ""
+
+#: inc/admin/welcome/sections/tabs.php:13
+msgid "Getting Started"
+msgstr ""
+
+#: inc/admin/welcome/sections/tabs.php:14
+msgid "Resources"
+msgstr ""
+
+#: inc/admin/welcome/sections/getting-started.php:11 
+#: inc/admin/welcome/sections/getting-started.php:25
+msgid "%s Premium"
+msgstr ""
+
+#: inc/admin/welcome/sections/getting-started.php:13
+msgid ""
+"Remember to activate your license key to get sproduct support and updates."
+msgstr ""
+
+#: inc/admin/welcome/sections/getting-started.php:16
+msgid "view license key"
+msgstr ""
+
+#: inc/admin/welcome/sections/getting-started.php:19
+msgid "Having troubles?"
+msgstr ""
+
+#: inc/admin/welcome/sections/getting-started.php:21
+msgid ""
+"<a href=\"%s\" target=\"_blank\">Contact us</a> and talk with our support "
+"team, we will glad to help you."
+msgstr ""
+
+#: inc/admin/welcome/sections/getting-started.php:27
+msgid ""
+"%s Premium expands the already powerful free version of this theme and gives "
+"access to our priority support service."
+msgstr ""
+
+#: inc/admin/welcome/sections/getting-started.php:30 
+#: inc/admin/options/assetts/customizer-custom-controls.php:60
+msgid "upgrade to premium"
+msgstr ""
+
+#: inc/admin/welcome/sections/getting-started.php:35 
+#: inc/admin/options/assetts/customizer-custom-controls.php:63
+msgid "Enjoying the theme?"
+msgstr ""
+
+#: inc/admin/welcome/sections/getting-started.php:36
+msgid ""
+"If you like this theme why not leave us a review on WordPress.org?  We'd "
+"really appreciate it!"
+msgstr ""
+
+#: inc/admin/welcome/sections/getting-started.php:38
+msgid "Add Your Review"
+msgstr ""
+
+#: inc/admin/welcome/sections/getting-started.php:42
+msgid "Theme Documentation"
+msgstr ""
+
+#: inc/admin/welcome/sections/getting-started.php:43
+msgid ""
+"Need any help to setup and configure %s? Please have a look at our "
+"documentations instructions."
+msgstr ""
+
+#: inc/admin/welcome/sections/getting-started.php:45
+msgid "View Documentation"
+msgstr ""
+
+#: inc/admin/welcome/sections/getting-started.php:49
+msgid "Theme Customizer"
+msgstr ""
+
+#: inc/admin/welcome/sections/getting-started.php:50
+msgid ""
+"%s supports the Theme Customizer for all theme settings. Click \"Customize\" "
+"to start customize your site."
+msgstr ""
+
+#: inc/admin/welcome/sections/getting-started.php:52
+msgid "Start Customize"
+msgstr ""
+
+#: inc/admin/welcome/sections/getting-started.php:59
+msgid "Free themes"
+msgstr ""
+
+#: inc/admin/welcome/sections/getting-started.php:81 
+#: inc/admin/welcome/sections/getting-started.php:114 
+#: inc/admin/welcome/sections/getting-started.php:143 
+#: inc/admin/welcome/sections/getting-started.php:165
+msgid "An error has occurred"
+msgstr ""
+
+#: inc/admin/welcome/sections/getting-started.php:92
+msgid "installed"
+msgstr ""
+
+#: inc/admin/welcome/sections/getting-started.php:103
+msgid "Install Now"
+msgstr ""
+
+#: inc/admin/welcome/sections/getting-started.php:119
+msgid "Free plugins"
+msgstr ""
+
+#: inc/admin/welcome/sections/getting-started.php:155
+msgid "Download Now"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-premium.php:8
+msgid "More Options"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-premium.php:19
+msgid "Looking for more options?"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-premium.php:34
+msgid "Show posts in columns"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-premium.php:46
+msgid "Enable image lightbox"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-premium.php:60
+msgid "Select the header layout"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-premium.php:72
+msgid "Enable sticky menu"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-premium.php:84
+msgid "Enable responsive Off-Canvas menu"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-premium.php:99
+msgid "Add your preferred Google Font"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-premium.php:112
+msgid "Headings font family"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-premium.php:124
+msgid "Body font family"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-premium.php:136
+msgid "Change body and headings font size"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-premium.php:148
+msgid "Remove footer credits"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-premium.php:159
+msgid "Custom footer text"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-premium.php:171
+msgid "Select the shop layout"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-premium.php:183
+msgid "Products per page"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-premium.php:195
+msgid "Display shopping cart link"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-premium.php:208
+msgid "Change shop buttons colors"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-premium.php:221
+msgid "Custom CSS"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-premium.php:222
+msgid "Add your custom css code"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-premium.php:232
+msgid "Custom JS"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-premium.php:233
+msgid "Add your custom js code"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:11
+msgid "Blog layout"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:33
+msgid "Select the blog layout"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:50
+msgid "Display full posts content"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:63
+msgid "Images"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:75
+msgid "Display posts featured images"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:88
+msgid "Navigation"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:103
+msgid "Display breadcrumb?"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:104
+msgid "Yoast Breadcrumb supported<br>NavXT Breadcrumb supported"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:119
+msgid "Use numeric pagination ?"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:120
+msgid "WP-PageNavi supported"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:135 
+#: inc/admin/options/assetts/customizer-options.php:694 
+#: inc/admin/options/assetts/customizer-settings.php:24
+msgid "Layout"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:159 
+#: inc/admin/options/assetts/customizer-options.php:253 
+#: inc/admin/options/assetts/customizer-options.php:371 
+#: inc/admin/options/assetts/customizer-options.php:464
+msgid "Colors"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:180 
+#: inc/admin/options/assetts/customizer-options.php:390 
+#: inc/admin/options/assetts/customizer-options.php:483
+msgid "Background color"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:200 
+#: inc/admin/options/assetts/customizer-options.php:503
+msgid "Text color"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:219 
+#: inc/admin/options/assetts/customizer-options.php:312 
+#: inc/admin/options/assetts/customizer-options.php:543
+msgid "Link color"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:238 
+#: inc/admin/options/assetts/customizer-options.php:331 
+#: inc/admin/options/assetts/customizer-options.php:562
+msgid "Link hover color"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:272
+msgid "Body text color"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:292
+msgid "Headings color"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:344
+msgid "Font family"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:356
+msgid "Font size"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:409
+msgid "Background hover"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:429
+msgid "Text normal"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:448
+msgid "Text hover"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:523
+msgid "Hedings color"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:575
+msgid "Footer content"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:590
+msgid "Facebook url"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:602
+msgid "Twitter url"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:614
+msgid "Google plus url"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:625
+msgid "Pinterest url"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:636
+msgid "Tumblr url"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:647
+msgid "Instagram url"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:658
+msgid "Linkedin url"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:669
+msgid "Dribble url"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:680
+msgid "Youtube url"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-options.php:718 
+#: inc/admin/options/assetts/customizer-settings.php:42
+msgid "Buttons"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-reset.php:33
 msgid "Reset"
 msgstr ""
 
-#: ../core/options/inc/customizer-reset.php:34
+#: inc/admin/options/assetts/customizer-reset.php:34
 msgid ""
 "Attention! This will remove all customizations ever made via customizer to "
 "this theme!\n"
@@ -196,513 +664,85 @@ msgid ""
 "This action is irreversible!"
 msgstr ""
 
-#: ../core/options/inc/customizer-settings.php:16 ../core/options/inc/customizer-
-#: settings.php:105
-msgid "UPGRADE TO PREMIUM"
+#: inc/admin/options/assetts/customizer-settings.php:18
+msgid "Theme Settings"
 msgstr ""
 
-#: ../core/options/inc/customizer-settings.php:20
-msgid "General"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:25
-msgid "Layout"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:29
-msgid "Main Layout"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:33
-msgid "Single Layout"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:37 ../core/options/inc/customizer-
-#: settings.php:321
-msgid "Shop Layout"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:43
-msgid "Style"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:47
-msgid "Body"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:53
+#: inc/admin/options/assetts/customizer-settings.php:30
 msgid "Header"
 msgstr ""
 
-#: ../core/options/inc/customizer-settings.php:58
-msgid "Main Menu"
+#: inc/admin/options/assetts/customizer-settings.php:36
+msgid "Typography"
 msgstr ""
 
-#: ../core/options/inc/customizer-settings.php:63
-msgid "Buttons"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:67 ../core/options/inc/customizer-
-#: settings.php:73
+#: inc/admin/options/assetts/customizer-settings.php:48
 msgid "Footer"
 msgstr ""
 
-#: ../core/options/inc/customizer-settings.php:79
+#: inc/admin/options/assetts/customizer-settings.php:54
 msgid "Social"
 msgstr ""
 
-#: ../core/options/inc/customizer-settings.php:85
+#: inc/admin/options/assetts/customizer-settings.php:60
+msgid "Shop"
+msgstr ""
+
+#: inc/admin/options/assetts/customizer-settings.php:66
 msgid "Advanced"
 msgstr ""
 
-#: ../core/options/inc/customizer-settings.php:106
+#: inc/admin/options/assetts/customizer-custom-controls.php:51
 msgid ""
-"If you like this theme, considering supporting development by purchasing the "
-"premium version."
+"Basic Shop Premium expands the already powerful free version of this theme "
+"and gives access to our priority support service."
 msgstr ""
 
-#: ../core/options/inc/customizer-settings.php:107
-msgid "Main premium features:"
+#: inc/admin/options/assetts/customizer-custom-controls.php:53
+msgid "All options enabled"
 msgstr ""
 
-#: ../core/options/inc/customizer-settings.php:108
-msgid "- All options enabled"
+#: inc/admin/options/assetts/customizer-custom-controls.php:54
+msgid "Custom widgets"
 msgstr ""
 
-#: ../core/options/inc/customizer-settings.php:109
-msgid "- Priority support"
+#: inc/admin/options/assetts/customizer-custom-controls.php:55
+msgid "Custom page and post settings"
 msgstr ""
 
-#: ../core/options/inc/customizer-settings.php:110
-msgid "- Money back guarantee"
+#: inc/admin/options/assetts/customizer-custom-controls.php:56
+msgid "Premium support"
 msgstr ""
 
-#: ../core/options/inc/customizer-settings.php:111
-msgid "upgrade to premium"
+#: inc/admin/options/assetts/customizer-custom-controls.php:57
+msgid "Money back guarantee"
 msgstr ""
 
-#: ../core/options/inc/customizer-settings.php:134
-msgid "Display breadcrumb"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:135
-msgid "Yoast Breadcrumb supported<br>NavXT Breadcrumb supported"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:151
-msgid "Use numeric pagination"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:152
-msgid "WP-PageNavi supported"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:168
-msgid "Use lightbox"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:169
-msgid "Enable image lightbox"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:187
-msgid "Footer Credits"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:188
-msgid "Replace default theme credits with custom text"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:213
-msgid "Blog Layout"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:214
-msgid "Select the layout for the blog"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:233
-msgid "Posts grid"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:234
-msgid "Show posts in columns"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:249
-msgid "Hide featured images"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:250
-msgid "Hide posts featured images"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:265
-msgid "Display post excerpt"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:266
-msgid "Show post content as excerpt"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:283
-msgid "Post Layout"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:284
-msgid "Select the layout for the post"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:303
-msgid "Menu cart link"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:304
-msgid "Show menu cart in the menu"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:322
-msgid "Select the layout for the shop"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:343
-msgid "Product Layout"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:344
-msgid "Select the layout for the single product"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:367 ../core/options/inc/customizer-
-#: settings.php:466 ../core/options/inc/customizer-settings.php:606
-msgid "Background Color"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:389
-msgid "Tagline Color"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:406 ../core/options/inc/customizer-
-#: settings.php:486 ../core/options/inc/customizer-settings.php:566 ..
-#: /core/options/inc/customizer-settings.php:646
-msgid "Link Normal"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:426 ../core/options/inc/customizer-
-#: settings.php:506 ../core/options/inc/customizer-settings.php:586 ..
-#: /core/options/inc/customizer-settings.php:666
-msgid "Link Hover"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:449
-msgid "Site Title Color"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:526 ../core/options/inc/customizer-
-#: settings.php:626
-msgid "Text Color"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:546
-msgid "Headings Color"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:686
-msgid "Background Normal"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:706
-msgid "Background Hover"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:726
-msgid "Text Normal"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:747
-msgid "Text Hover"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:767
-msgid "Facebook url"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:779
-msgid "Twitter url"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:791
-msgid "Google plus url"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:802
-msgid "Pinterest url"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:813
-msgid "Tumblr url"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:824
-msgid "Instagram url"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:835
-msgid "Linkedin url"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:846
-msgid "Dribble url"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:857
-msgid "Vimeo url"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:868
-msgid "Youtube url"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:879
-msgid "RSS url"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:894
-msgid "Custom CSS"
-msgstr ""
-
-#: ../core/options/inc/customizer-settings.php:895
-msgid "Add your custom css code"
-msgstr ""
-
-#: ../core/structure/before-content.php:60
-msgid "Home"
-msgstr ""
-
-#: ../core/structure/footer.php:59
-msgid "https://wordpress.org/"
-msgstr ""
-
-#: ../core/structure/footer.php:59
-#, php-format
-msgid "Powered by %s"
-msgstr ""
-
-#: ../core/structure/footer.php:61
-#, php-format
-msgid "Theme: %1$s by %2$s."
-msgstr ""
-
-#: ../core/structure/header.php:35
-msgid "Primary Menu"
-msgstr ""
-
-#: ../core/structure/page.php:24 ../core/structure/post.php:49
-msgid "Pages:"
-msgstr ""
-
-#: ../core/structure/post.php:44
-#, php-format
-msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
-#: ../core/structure/woocommerce.php:33
-msgctxt "breadcrumb"
-msgid "Home"
-msgstr ""
-
-#: ../core/welcome/welcome-screen.php:40
-msgid "Thanks for choosing "
-msgstr ""
-
-#: ../core/welcome/welcome-screen.php:41
-#, php-format
+#: inc/admin/options/assetts/customizer-custom-controls.php:66
 msgid ""
-"! You can read documentation to how get the most out of your new theme on "
-"the %swelcome screen%s."
+"Why not leave us a review on %sWordPress.org%s?  We'd really appreciate it!"
 msgstr ""
 
-#: ../core/welcome/welcome-screen.php:45
-#, php-format
-msgid "Get started with %s"
-msgstr ""
-
-#: ../core/welcome/sections/getting-started.php:11
-msgid "Upgrade to premium"
-msgstr ""
-
-#: ../core/welcome/sections/getting-started.php:12
-msgid ""
-"If you like this theme, considering supporting development by purchasing the "
-" premium version."
-msgstr ""
-
-#: ../core/welcome/sections/getting-started.php:13
-msgid "Upgrade To Premium"
-msgstr ""
-
-#: ../core/welcome/sections/getting-started.php:17
-msgid "Theme Customizer"
-msgstr ""
-
-#: ../core/welcome/sections/getting-started.php:18
-#, php-format
-msgid ""
-"%s supports the Theme Customizer for all theme settings. Click \"Customize\" "
-"to start customize your site."
-msgstr ""
-
-#: ../core/welcome/sections/getting-started.php:20
-msgid "Start Customize"
-msgstr ""
-
-#: ../core/welcome/sections/getting-started.php:24
-msgid "Theme Documentation"
-msgstr ""
-
-#: ../core/welcome/sections/getting-started.php:25
-#, php-format
-msgid ""
-"Need any help to setup and configure %s? Please have a look at our "
-"documentations instructions."
-msgstr ""
-
-#: ../core/welcome/sections/getting-started.php:27
-msgid "View Documentation"
-msgstr ""
-
-#: ../core/welcome/sections/getting-started.php:31
-msgid "Having Trouble, Need Support?"
-msgstr ""
-
-#: ../core/welcome/sections/getting-started.php:32
-#, php-format
-msgid "Support for %s WordPress theme is conducted through our support system."
-msgstr ""
-
-#: ../core/welcome/sections/tabs.php:11
-msgid ""
-"Here you can read the documentation and know how to get the most out of your "
-"new theme."
-msgstr ""
-
-#: ../core/welcome/sections/tabs.php:13
-msgid "Getting Started"
-msgstr ""
-
-#: ../core/welcome/sections/tabs.php:14
-msgid "Resources"
-msgstr ""
-
-#: ../core/welcome/sections/wp-resources.php:16
-msgid "Recommended Resources"
-msgstr ""
-
-#: ../core/welcome/sections/wp-resources.php:17
-#, php-format
-msgid ""
-"%s works well with the following WordPress free and premium plugins and "
-"services. Feel free to give they a look."
-msgstr ""
-
-#: ../core/welcome/sections/wp-resources.php:26
-msgid "Shortpixel"
-msgstr ""
-
-#: ../core/welcome/sections/wp-resources.php:29
-msgid "Speed up your website with beautifully optimized images."
-msgstr ""
-
-#: ../core/welcome/sections/wp-resources.php:32 ../core/welcome/sections/wp-
-#: resources.php:52 ../core/welcome/sections/wp-resources.php:71 ..
-#: /core/welcome/sections/wp-resources.php:90 ../core/welcome/sections/wp-
-#: resources.php:109
-msgid "plugin active"
-msgstr ""
-
-#: ../core/welcome/sections/wp-resources.php:35 ../core/welcome/sections/wp-
-#: resources.php:55 ../core/welcome/sections/wp-resources.php:74 ..
-#: /core/welcome/sections/wp-resources.php:93 ../core/welcome/sections/wp-
-#: resources.php:112
-msgid "view now"
-msgstr ""
-
-#: ../core/welcome/sections/wp-resources.php:45
-msgid "Yoast SEO"
-msgstr ""
-
-#: ../core/welcome/sections/wp-resources.php:48
-msgid ""
-"Write better content and have a fully optimized WordPress site using Yoast "
-"SEO plugin\n"
-"."
-msgstr ""
-
-#: ../core/welcome/sections/wp-resources.php:65
-msgid "WooCommerce"
-msgstr ""
-
-#: ../core/welcome/sections/wp-resources.php:68
-msgid ""
-"WooCommerce is a powerful, extendable eCommerce plugin that helps you sell "
-"anything."
-msgstr ""
-
-#: ../core/welcome/sections/wp-resources.php:84
-msgid "Beaver Builder"
-msgstr ""
-
-#: ../core/welcome/sections/wp-resources.php:87
-msgid ""
-"Easily build beautiful home pages, professional landing pages, and more with "
-"this content builder."
-msgstr ""
-
-#: ../core/welcome/sections/wp-resources.php:103
-msgid "Easy Digital Downloads"
-msgstr ""
-
-#: ../core/welcome/sections/wp-resources.php:106
-msgid ""
-"Sell digital downloads through WordPress with this complete digital "
-"downloads management plugin."
-msgstr ""
-
-#: ../template-parts/content-none.php:14
-msgid "Nothing Found"
-msgstr ""
-
-#: ../template-parts/content-none.php:21
-#, php-format
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-
-#: ../template-parts/content-none.php:25
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
-msgstr ""
-
-#: ../template-parts/content-none.php:31
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
-"searching can help."
+#: inc/admin/options/assetts/customizer-custom-controls.php:85
+msgid " - only premium"
 msgstr ""
 
 #. Name of the theme
 msgid "Basic Shop"
 msgstr ""
 
-#. Theme URI of the theme
-msgid "http://iograficathemes.com/"
+#. Description of the theme
+msgid "A basic and solid WordPress ecommerce theme"
 msgstr ""
 
-#. Description of the theme
-msgid ""
-"Basic Shop is a simple, beautiful and fully customizable responsive "
-"WordPress theme."
+#. URI of the theme
+msgid "http://www.iograficathemes.com/downloads/basic-shop/"
 msgstr ""
 
 #. Author of the theme
 msgid "iografica"
+msgstr ""
+
+#. Author URI of the theme
+msgid "http://www.iograficathemes.com"
 msgstr ""

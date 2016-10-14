@@ -10,12 +10,15 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <?php
+	<?php
 	/**
-	 * @hooked igthemes_post_header - 10
-	 * @hooked igthemes_post_content - 20
-	 * @hooked igthemes_post_footer - 30
+	 * Functions hooked into igthemes_single_post  and igthemes_loop
 	 */
-	do_action( 'igthemes_single_post' );
+    if (is_single()) {
+        do_action( 'igthemes_single_post' );
+    } else {
+        do_action( 'igthemes_loop' );
+    }
+	   
 	?>
 </article><!-- #post-## -->

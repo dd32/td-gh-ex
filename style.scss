@@ -1,63 +1,125 @@
-/*
+/*!
 Theme Name: Basic Shop
 Theme URI: http://www.iograficathemes.com/downloads/basic-shop/
 Author: iografica
-Author URI: http://iograficathemes.com/
-Description: Basic Shop is a simple, beautiful and fully customizable responsive WordPress theme.
-Basic shop has a header widget area, a footer widget area and the standard sidebar on the side
-With Basic Shop you can make a beautiful e-commerce website thanks to the compatibility with WooCommerce and Easy Digital Downloads and you can also display specific widgets only for shop and products page. The theme is fully integrated with Yoast Seo, Beaver Builder, NavXT Breadcrumb, WP-PageNavi and other of the most usefull and popular free and premium WordPress plugins. More advanced features and customizations are available in the premium version.
-Version: 1.00
+Author URI: http://www.iograficathemes.com
+Description: A basic and solid WordPress ecommerce theme
+Version: 1.02
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: basic-shop
-Tags: light, one-column, two-columns, left-sidebar, right-sidebar, responsive-layout, custom-colors, custom-menu, featured-images, theme-options
+Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, footer-widgets, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-This theme is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+Basic Shop is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
 
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+    ## Links
+    ## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+    ## Posts and pages
+    ## Comments
+# Infinite scroll
+# Media
+    ## Captions
+    ## Galleries
 /*------------------------------------------------------------*/
 @import 'bourbon';
-@import 'susy';
+// Change the grid settings
+$max-width: 1190px;
+@import 'neat';
+
+/*--------------------------------------------------------------*/
+@import "sass/variables-site/variables-site";
+@import "sass/mixins/mixins-master";
 
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
-@import 'sass/normalize/normalize';
+@import "sass/normalize";
+/*--------------------------------------------------------------
+# Grid
+--------------------------------------------------------------*/
+@import "sass/layout/_grid";
+/*--------------------------------------------------------------
+# Layout
+--------------------------------------------------------------*/
+@import "sass/layout/_layout";
 
 /*--------------------------------------------------------------
-# Utils
+# Typography
 --------------------------------------------------------------*/
-@import 'sass/variables';
-@import 'sass/mixins';
+@import "sass/typography/typography";
 
 /*--------------------------------------------------------------
-# Base
+# Elements
 --------------------------------------------------------------*/
-@import 'sass/base/base';
-@import 'sass/components/typography';
-@import 'sass/base/layout';
+@import "sass/elements/elements";
+
 /*--------------------------------------------------------------
-# Components
+# Forms
 --------------------------------------------------------------*/
-@import 'sass/components/header';
-@import 'sass/components/menu';
-@import 'sass/components/content';
-@import 'sass/components/pagination';
-@import 'sass/components/forms';
-@import 'sass/components/media';
-@import 'sass/components/widgets';
-@import 'sass/components/footer';
-@import 'sass/components/plugins';
-@import 'sass/components/woocommerce';
-@import 'sass/components/edd';
+@import "sass/forms/forms";
+
 /*--------------------------------------------------------------
-# Extra
+# Navigation
 --------------------------------------------------------------*/
-@import 'sass/extra/magnific-popup';
+@import "sass/navigation/navigation";
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+@import "sass/modules/accessibility";
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+@import "sass/modules/alignments";
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+@import "sass/modules/clearings";
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+@import "sass/site/secondary/widgets";
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+@import "sass/site/site";
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+@import "sass/modules/infinite-scroll";
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+@import "sass/media/media";
+
+/*--------------------------------------------------------------
+# Plugins
+--------------------------------------------------------------*/
+@import "sass/plugins/plugins";

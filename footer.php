@@ -10,30 +10,31 @@
  */
 
 ?>
-        <?php
-		  /**
-		  * @hooked  
-		  */
-		do_action( 'igthemes_content_bottom' ); ?>
-	   </div><!-- .container -->
-	</div><!-- #content -->
-        <?php
-	       /**
-	       * @hooked igthemes_footer_widgets 10
-           */
-	    do_action( 'igthemes_after_content' ); ?>
+    <?php
+    /**
+     * Functions hooked in to igthemes_content_bottom
+     *
+     * @hooked
+     */
+    do_action( 'igthemes_content_bottom' ); ?>
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-        <div class="container">
-        <?php
-            /**
-            * @hooked igthemes_social_links 10
-            * @hooked igthemes_site_info 20
-            */
-            do_action( 'igthemes_site_footer' );
-        ?>
-        </div><!-- .container -->
-	</footer><!-- #colophon -->
+    </div><!-- #content -->
+
+    <?php
+    /**
+     * Functions hooked in to igthemes_after_content
+     *
+     * @hooked
+     */
+    do_action( 'igthemes_after_content' ); ?>
+
+    <footer id="colophon" class="site-footer" role="contentinfo">
+       <?php
+       /**
+       * Functions hooked in to igthemes_before_content
+       */
+       do_action( 'igthemes_footer' ); ?>
+    </footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

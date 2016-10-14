@@ -10,12 +10,11 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <?php
+	<?php
 	/**
-	 * @hooked igthemes_page_header - 10
-	 * @hooked igthemes_page_content - 20
-	 * @hooked igthemes_page_footer - 30
+	 * Functions hooked into igthemes_single_page 
 	 */
 	do_action( 'igthemes_single_page' );
 	?>
+
 </article><!-- #post-## -->
