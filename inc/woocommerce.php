@@ -29,15 +29,15 @@ function abacus_wrapper_end() {
 	<?php
 }
 
-function is_woocommerce_activated() {
+function abacus_woocommerce_activated() {
 	return class_exists( 'woocommerce' ) ? true : false;
 }
 
 function woocommerce_button_proceed_to_checkout() {
-	$checkout_url = WC()->cart->get_checkout_url();
+	$checkout_url = wc_get_checkout_url();
 
 	?>
-	<a href="<?php echo $checkout_url; ?>" class="checkout-button btn btn-danger btn-lg"><?php _e( 'Proceed to Checkout', 'abacus' ); ?></a>
+	<a href="<?php echo esc_url( $checkout_url ); ?>" class="checkout-button btn btn-danger btn-lg"><?php _e( 'Proceed to Checkout', 'abacus' ); ?></a>
 	<?php
 }
 

@@ -38,6 +38,7 @@
 
 .feature-section.three-col {
 	border: 0;
+	overflow: hidden;
 }
 
 .feature-section.three-col h4.no-top {

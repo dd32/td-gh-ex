@@ -13,7 +13,7 @@
 		if ( has_post_thumbnail() ) {
 			?>
 			<div class="break-out fadeInUp">
-				<a href="<?php the_permalink(); ?>">
+				<a href="<?php esc_url( the_permalink() ); ?>">
 					<?php the_post_thumbnail( 'large' ); ?>
 				</a>
 			</div>
@@ -36,7 +36,7 @@
 		<div class="entry-meta">
 			<p class="vcard author">
 				<strong><span class="fn">
-					<?php printf( __( 'Written by %s', 'abacus' ), '<strong><a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" title="' . esc_attr( sprintf( __( 'Posts by %s', 'abacus' ), get_the_author() ) ) . '" rel="author">' . get_the_author() . '</a></strong>' ); ?>
+					<?php printf( __( 'Written by %s', 'abacus' ), '<strong><a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" title="' . esc_attr( sprintf( __( 'Posts by %s', 'abacus' ), get_the_author() ) ) . '" rel="author">' . get_the_author() . '</a></strong>' ); ?>
 				</span></strong>
 			</p>
 

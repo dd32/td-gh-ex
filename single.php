@@ -3,8 +3,8 @@
  * The template for displaying all single posts and attachments
  *
  * @package WordPress
- * @subpackage Collect
- * @since Collect 1.0
+ * @subpackage Abacus
+ * @since Abacus 1.0
  */
 get_header(); ?>
 

@@ -15,10 +15,10 @@ $abacus_default_theme_options = abacus_default_theme_options();
 		</div>
 
 		<header class="entry-header">
-			<?php if ( '' != get_the_post_thumbnail() ) : ?>
-			<div class="testimonial-thumbnail">
-				<?php the_post_thumbnail( 'abacus-testimonial-thumbnail', array( 'class' => 'img-circle' ) ); ?>
-			</div>
+			<?php if ( has_post_thumbnail() ) : ?>
+				<div class="testimonial-thumbnail">
+					<?php the_post_thumbnail( 'abacus-testimonial-thumbnail', array( 'class' => 'img-circle' ) ); ?>
+				</div>
 			<?php endif; ?>
 
 			<?php the_title( '<h3 class="entry-title">', '</h3>' ); ?>

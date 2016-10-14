@@ -13,7 +13,7 @@ get_header(); ?>
 			<section id="primary" class="cols">
 			    <?php
 				   $search_post_type = ( isset( $_GET['search_post_type'] ) ) ? $_GET['search_post_type'] : '';
-				if ( is_woocommerce_activated() && 'post' != $search_post_type ) {
+				if ( abacus_woocommerce_activated() && 'post' != $search_post_type ) {
 					$args = array(
 						's' => esc_attr( $_GET['s'] ),
 						'post_type' => 'product',

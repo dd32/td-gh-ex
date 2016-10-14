@@ -1,6 +1,6 @@
 <?php
 /**
- * Custom template tags for Collect
+ * Custom template tags for Abacus
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
@@ -24,7 +24,7 @@ function abacus_login_register_menu() {
 			$current_user = wp_get_current_user();
 			?>
 			<li><p><?php printf( __( 'Welcome, %s', 'abacus' ), '<em>' . $current_user->display_name . '</em>' ); ?></p></li>
-			<li><a href="<?php echo esc_url( wp_logout_url( get_permalink() ) ); ?>" title="<?php esc_attr_e( 'Logout', 'abacus' ); ?>"><?php esc_attr_e( 'Logout', 'abacus' ); ?></a></li>
+			<li><a href="<?php echo esc_url( wp_logout_url( get_permalink() ) ); ?>" title="<?php esc_attr_e( 'Logout', 'abacus' ); ?>"><?php _e( 'Logout', 'abacus' ); ?></a></li>
 		<?php } else {
 			$login_text = ( get_option( 'users_can_register' ) || 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) ? __( 'Login <span>or</span> Register', 'abacus' ) : __( 'Login', 'abacus' );
 			?>
@@ -42,7 +42,7 @@ function abacus_top_menu() {
 			wp_nav_menu( array( 'theme_location' => 'top', 'items_wrap' => '%3$s', 'container' => '' ) );
 		}
 		if ( class_exists( 'woocommerce' ) ) {
-			$shop_page_url = get_permalink( woocommerce_get_page_id( 'shop' ) );
+			$shop_page_url = get_permalink( wc_get_page_id( 'shop' ) );
 			$myaccount_page_id = get_option( 'woocommerce_myaccount_page_id' );
 			?>
 			<li><a href="<?php echo esc_url( $shop_page_url ); ?>"><?php _e( 'Shop', 'abacus' ); ?></a></li>

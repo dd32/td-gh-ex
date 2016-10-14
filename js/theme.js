@@ -1,5 +1,5 @@
 (function ( $ ) {
-	$( '.main-navigation' )
+	$( '.main-navigation, .top-navigation' )
 	   .find( '.menu-item-has-children > a' ).after( '<i class="fa fa-caret-down"></i>' )
 	   .end()
 	   .find( '.menu-item-has-children i' ).on( 'click', function () {

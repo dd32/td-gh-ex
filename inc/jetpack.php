@@ -4,8 +4,8 @@
  * See: https://jetpack.me/
  *
  * @package WordPress
- * @subpackage Collect
- * @since Collect 1.0
+ * @subpackage Abacus
+ * @since Abacus 1.0
  */
 function abacus_front_page_render() {
 	while ( have_posts() ) : the_post();

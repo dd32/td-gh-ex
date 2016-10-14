@@ -83,7 +83,7 @@ class Abacus_Documentation {
 				</div>
 			</div>
 
-			<div class="feature-section three-col" style="overflow:hidden;">
+			<div class="feature-section three-col">
 				<p class="want-more">
 				<?php printf( __( 'Want more? Take a look at alphabetthemes.com to see what options are available when you upgrade. %1$sUpgrade now &rarr;%2$s', 'abacus' ), '<a href="' . esc_url( $abc_url ) . '/downloads/abc-premium-features/" class="button button-primary" target="_blank">', '</a>' ); ?> </p>
 

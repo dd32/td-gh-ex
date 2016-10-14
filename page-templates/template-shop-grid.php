@@ -8,7 +8,7 @@
  * @subpackage Abacus
  * @since Abacus 1.0
  */
-$primary_attr = ( is_active_sidebar( 'shop-grid' ) ) ? bavotasan_primary_attr( false ) : ' class="col-md-12"';
+$abacus_default_theme_options = abacus_default_theme_options();
 get_header(); ?>
 
 	<div id="primary" class="container">
@@ -26,7 +26,7 @@ get_header(); ?>
 			}
 		endwhile;
 
-		if ( is_woocommerce_activated() ) {
+		if ( abacus_woocommerce_activated() ) {
 			$feature_args = apply_filters( 'abacus_featured_products_args', array(
 				'limit' 			=> 4,
 				'columns' 			=> 4,

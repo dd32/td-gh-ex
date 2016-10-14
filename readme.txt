@@ -8,6 +8,8 @@ Simplify your site with Abacus, a theme specifically built for WooCommerce. Disp
 
 == NOTES ==
 
+Placing text over the header image requires adding a Text Widget to Jumbo Headline area.
+
 The testimonials feature requires the Jetpack plugin.
 https://jetpack.com/
 
@@ -50,6 +52,16 @@ Source: http://www.splitshire.com/vintage-elegance/
 Source: http://www.splitshire.com/vintage-barber-tools/
 
 == CHANGELOG ==
+
+10/14/2016 v1.0.4
+* Added validation to URLs
+* Added default values to shop grid template
+* Updated deprecated functions
+* Updated prefixes
+* Updated editor-style.css
+* Fixed drop down menu issue for top navigation
+* Removed reference to different theme
+* Removed call to unused sidebar
 
 09/28/2016 v1.0.3
 * Modified upgrade button to Justin Tadlock's example

@@ -14,7 +14,7 @@
 			if ( has_post_thumbnail() ) {
 				?>
 				<div class="break-out fadeInUp">
-					<a href="<?php the_permalink(); ?>">
+					<a href="<?php esc_url( the_permalink() ); ?>">
 						<?php the_post_thumbnail( 'large' ); ?>
 					</a>
 				</div>
