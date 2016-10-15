@@ -10,7 +10,11 @@
 		init: function(){
 			this.cacheDom();
 			this.bindEvents();
+
+			this.$html.removeClass('no-js').addClass('js');
+
 			this.resizeHandler();
+			this.archiveTitlesFix();
 			this.fullWidthVideoEmbeds();
 		},
 
@@ -18,10 +22,13 @@
 			this.$window = $(window);
 			this.$document = $(document);
 			this.$htmlAndBody = this.$document.find('html, body');
+			this.$html = this.$document.find('html');
 			this.$scrollToTop = this.$document.find('.scroll-to-top');
 			this.$menuHeaderToggle = this.$document.find('.menu-toggle');
 			this.$menuHeaderContainer = this.$document.find('.header-menu-container');
-			this.$videoEmbeds = this.$document.find('.post_format-post-format-video iframe, post_format-post-format-video video');
+			this.$videoPosts = this.$document.find('.single-format-video .post');
+			this.$videoEmbeds = this.$videoPosts.find('iframe, video, embed, object, .video-player, .videopress-placeholder');
+			this.$archiveTitle = this.$document.find('.archive .content-title');
 		},
 
 		bindEvents: function(){
@@ -53,12 +60,13 @@
 		},
 
 		fullWidthVideoEmbeds: function(){
-			for( var x=0; x<this.$videoEmbeds.length; x++){
-				var $video = $( this.$videoEmbeds[x] );
+			if( this.$videoEmbeds.length ){
+				for( var x=0; x<this.$videoEmbeds.length; x++){
+					var $video = $( this.$videoEmbeds[x] );
 
-				$video.width('100%');
-				$video.height( ($video.width()/16) * 9 );
-
+					$video.width('100%');
+					$video.height( ($video.width()/16) * 9 );
+				}
 			}
 		},
 
@@ -68,9 +76,20 @@
 			}else{
 				this.$scrollToTop.hide(500);
 			}
+		},
+
+		archiveTitlesFix: function(){
+			if( this.$archiveTitle.length ){
+				var archiveTitle = this.$archiveTitle.html().split(': ');
+
+				if( archiveTitle.length > 1 ){
+					archiveTitle.shift();
+					this.$archiveTitle.html( archiveTitle.join(': ') );
+				}
+			}
 		}
 	}
-	
-	bidnis.init();
+
+	$(document).ready( bidnis.init.bind(bidnis) );
 
 })(jQuery);

@@ -126,15 +126,37 @@ ol ol {
   }
 }
 
-.archive .content-title:before {
+.sticky .archive-entry-header h3:before {
+  content: "";
+  margin: 0;
+}
+
+.sticky .archive-entry-header h3:after {
+  font-family: FontAwesome;
+  content: '\f08d';
+  margin-left: .5rem;
+}
+
+.single .content-title:before,
+.archive .content-title:before,
+.error404 .content-title:before {
   content: '';
+}
+
+.sticky .archive-entry-header h3:before,
+.single:not(.single-format-standard) .content-title:before,
+.archive .content-title:before {
   margin-right: 0;
 }
 
+.sticky .archive-entry-header h3:after,
+.single:not(.single-format-standard) .content-title:after,
 .archive .content-title:after {
-  font-family: FontAwesome;
-  content: '\f114';
   margin-left: .5rem;
+}
+
+.archive .content-title:after {
+  content: '\f114';
 }
 
 .tag .content-title:after {
@@ -149,48 +171,51 @@ ol ol {
   content: '\f073';
 }
 
-.term-post-format-aside .content-title:after {
-  content: '\f016';
+.search .content-title:after {
+  content: '\f002';
 }
 
+.error404 .content-title:after {
+  content: '\f15b';
+}
+
+/* post format prefix icons*/
+.attachment .content-title:after,
+.single-format-image .content-title:after,
+.single-format-gallery .content-title:after,
 .term-post-format-image .content-title:after,
 .term-post-format-gallery .content-title:after {
   content: '\f03e';
 }
 
-.term-post-format-video .content-title:after {
-  content: '\f1c8';
-}
-
-.term-post-format-quote .content-title:after {
-  content: '\f10e';
-}
-
-.term-post-format-link .content-title:after {
-  content: '\f0c1';
-}
-
-.term-post-format-status .content-title:after {
-  content: '\f12a';
-}
-
+.single-format-audio .content-title:after,
 .term-post-format-audio .content-title:after {
   content: '\f001';
 }
 
+.single-format-video .content-title:after,
+.term-post-format-video .content-title:after {
+  content: '\f03d';
+}
+
+.single-format-status .content-title:after,
+.term-post-format-status .content-title:after {
+  content: '\f12a';
+}
+
+.single-format-link .content-title:after,
+.term-post-format-link .content-title:after {
+  content: '\f0c1';
+}
+
+.single-format-quote .content-title:after,
+.term-post-format-quote .content-title:after {
+  content: '\f10e';
+}
+
+.single-format-chat .content-title:after,
 .term-post-format-chat .content-title:after {
   content: '\f086';
-}
-
-.sticky .archive-entry-header h3:before {
-  content: '';
-  margin-right: 0;
-}
-
-.sticky .archive-entry-header h3:after {
-  font-family: FontAwesome;
-  content: '\f08d';
-  margin-left: .5rem;
 }
 
 .entry-meta > span {

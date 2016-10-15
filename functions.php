@@ -39,9 +39,11 @@ if ( ! function_exists( 'bidnis_setup' ) ) :
 			'chat',
 		) );
 
+		// Enables support for custom logo
+		add_theme_support( 'custom-logo' );
+
 		//Enable support for Post Thumbnails on posts, pages and more
 		add_theme_support( 'post-thumbnails' );
-
 
 		//Support for custom background settings
 		add_theme_support( 'custom-background', array(
@@ -50,7 +52,7 @@ if ( ! function_exists( 'bidnis_setup' ) ) :
 
 		//Support for custom header settings
 		add_theme_support( 'custom-header', array(
-			'default-image'						=> get_template_directory_uri() . '/assets/images/header.jpg',
+			'default-image'						=> '%s/assets/images/header.jpg',
 			'random-default'					=> false,
 			'width'										=> 1920,
 			'height'									=> 960,
@@ -58,6 +60,15 @@ if ( ! function_exists( 'bidnis_setup' ) ) :
 			'flex-width'							=> false,
 			'header-text'							=> false,
 			'uploads'					 				=> true,
+		) );
+
+		// Default custom headers packaged with the theme.
+		register_default_headers( array(
+			'vaping360' => array(
+				'url'           => '%s/assets/images/header.jpg',
+				'thumbnail_url' => '%s/assets/images/header.jpg',
+				'description'   => _x( 'laptop', 'Laptop', 'bidnis' )
+			)
 		) );
 
 		// Adds RSS feed in head
@@ -172,17 +183,6 @@ function bidnis_widget_init(){
 }
 add_action( 'widgets_init', 'bidnis_widget_init' );
 
-/**
- * Handles JavaScript detection.
- *
- * Adds a 'js' class to the root <html> element when JavaScript is detected.
- *
- * @since Bidnis 1.0
- */
-function bidnis_javascript_detection() {
-	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
-}
-add_action( 'wp_head', 'bidnis_javascript_detection', 0 );
 
 /**
 	* Scripts, Styles and fonts
@@ -197,17 +197,17 @@ function bidnis_scripts(){
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/lib/font-awesome/css/font-awesome.min.css', array(), '4.6.3');
 
 	// Enqueue style.css from root theme folder
-	wp_enqueue_style( 'style', get_stylesheet_uri() );
+	wp_enqueue_style( 'bidnis-style', get_stylesheet_uri() );
 
 	// Enqueue theme JS and include jQuery
-	wp_enqueue_script( 'functions', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), wp_get_theme()->get('Version'), true );
+	wp_enqueue_script( 'bidnis-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), wp_get_theme()->get('Version'), true );
 }
 add_action( 'wp_enqueue_scripts', 'bidnis_scripts' );
 
 if ( ! function_exists( 'bidnis_customize_styles' ) ) :
 	function bidnis_customize_styles() { ?>
 		<style type="text/css" id="bidnis-customize-styles">
-			*{ border-color: <?php echo get_theme_mod('color_scheme', '#ffd200')?> !important; }
+			*{ border-color: <?php echo esc_html( get_theme_mod('color_scheme', '#ffd200') )?> !important; }
 
 			body{ background-color: #<?php echo get_background_color(); ?>; }
 
@@ -219,7 +219,7 @@ if ( ! function_exists( 'bidnis_customize_styles' ) ) :
 			.nav-next a,
 			.page-numbers:not(.dots),
 			.pagination,
-			.pagination a{ color: <?php echo get_theme_mod('text_color', '#191919'); ?>; }
+			.pagination a{ color: <?php echo esc_html( get_theme_mod('text_color', '#191919') ); ?>; }
 
 			.site-header,
 			.header-menu .menu-item:hover,
@@ -236,15 +236,15 @@ if ( ! function_exists( 'bidnis_customize_styles' ) ) :
 			.scroll-to-top:hover,
 			.page-numbers.current,
 			.pagination > span:not(.page-links-title),
-			.pagination > a:hover{ background-color: <?php echo get_theme_mod('color_scheme', '#ffd200')?>; }
+			.pagination > a:hover{ background-color: <?php echo esc_html( get_theme_mod('color_scheme', '#ffd200') ); ?>; }
 
 			.site-header,
 			.site-header a,
 			.site-tagline,
 			.header-menu .menu-item:hover > a,
-			.header-menu .current-menu-item > a{ color: <?php echo get_theme_mod('header-text-color', '#191919')?>; }
+			.header-menu .current-menu-item > a{ color: <?php echo esc_html( get_theme_mod('header-text-color', '#191919') )?>; }
 
-			a{ color: <?php echo get_theme_mod('link_color', '#191919'); ?>; }
+			a{ color: <?php echo esc_html( get_theme_mod('link_color', '#191919') ); ?>; }
 
 		</style>
 	<?php }

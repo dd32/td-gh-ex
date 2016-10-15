@@ -8,7 +8,7 @@
  */
 
 while( have_posts() ): the_post(); ?>
-	<?php get_template_part('template-parts/content', 'header'); ?>
+	<?php get_template_part('template-parts/content_header'); ?>
 	
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<?php the_content(); ?>

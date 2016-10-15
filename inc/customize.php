@@ -34,18 +34,6 @@
 			'type'			=> 'checkbox',
 		) );
 
-		// logo
-		$wp_customize->add_setting( 'logo', array(
-			'default'	=> '',
-			'sanitize_callback' => 'esc_url_raw'
-		) );
-
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'logo', array(
-			'label'      => __( 'Upload a logo', 'bidnis' ),
-			'section'    => 'title_tagline',
-			'settings'   => 'logo'
-		) ) );
-
 		// Color scheme
 		$wp_customize->add_setting( 'color_scheme', array(
 			'default'	=> '#ffd200',
@@ -312,7 +300,7 @@
 		) );
 	
 		$wp_customize->add_control( 'social_media_rss', array(
-			'label'			=> 'RSS Link',
+			'label'			=> __('RSS Link', 'bidnis'),
 			'section'		=> 'social_icons',
 			'type'			=> 'checkbox',
 		) );
@@ -406,7 +394,7 @@
 		) );
 	
 		$wp_customize->add_control( 'footer_advert', array(
-			'label'			=> __('Advertise Theme Author', 'bidnis'),
+			'label'			=> __('Advertise Theme', 'bidnis'),
 			'section'		=> 'footer',
 			'type'			=> 'checkbox',
 		) );
@@ -429,4 +417,3 @@
 		// Boolean check 
 		return ( ( isset( $input ) && true == $input ) ? true : false );
 	}
-?>

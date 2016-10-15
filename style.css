@@ -4,11 +4,14 @@
 	Author: Kniffen Technologies
 	Author URI: http://knifftech.net
 	Description: Bidnis as the name suggests ia a theme designed for business, consultant and corporate related websites.
-	Version: 1.0.0
+	Version: 1.1.0
 	License: GNU General Public License v3
 	License URI: http://www.gnu.org/licenses/gpl-3.0.html  
 	Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-images, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
 	Text Domain: bidnis
+
+	Bidnis WordPress Theme, Copyright (C) 2016, Kniffen Technologies
+	Bidnis is distributed under the terms of the GNU GPL v3
 */
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
@@ -599,7 +602,8 @@ input[type="email"],
 input[type="url"],
 input[type="search"],
 input[type="file"],
-textarea {
+textarea,
+select {
   max-width: 90%;
   max-width: -webkit-calc( 100% - 10px);
   max-width: -moz-calc( 100% - 10px);
@@ -980,9 +984,10 @@ img {
      -moz-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  margin-right: 10px;
 }
 
-.site-logo {
+.custom-logo-link {
   display: block;
 }
 
@@ -1009,6 +1014,10 @@ img {
   text-transform: uppercase;
 }
 
+.site-title ~ .site-tagline {
+  margin-top: -8px;
+}
+
 .site-title {
   font-size: 2.2rem;
   margin: 0;
@@ -1019,7 +1028,7 @@ img {
 }
 
 .site-tagline {
-  margin: -8px 0 0 0;
+  margin: 0;
   font-size: .8rem;
 }
 
@@ -1167,6 +1176,9 @@ img {
   .site-header-items-wrapper {
     padding: 0 0 20px;
     margin: 0;
+  }
+  .custom-logo-link {
+    text-align: center;
   }
   .social-bar,
   .site-identity {
@@ -1459,10 +1471,34 @@ main > article:not(:last-child) {
   margin-bottom: 10px;
 }
 
-.archive .content-title:before {
+.content-title:before, .content-title:after {
   font-family: FontAwesome;
-  content: '\f114';
+}
+
+.sticky .archive-entry-header h3:before,
+.single:not(.single-format-standard) .content-title:before,
+.archive .content-title:before {
   margin-right: .5rem;
+}
+
+.archive-entry-header a {
+  text-decoration: none;
+}
+
+.archive-entry-header a:hover {
+  text-decoration: underline;
+}
+
+.content-title-description p {
+  margin: 0;
+}
+
+.sticky .archive-entry-header h3:before {
+  content: '\f08d';
+}
+
+.archive .content-title:before {
+  content: '\f114';
 }
 
 .tag .content-title:before {
@@ -1477,55 +1513,73 @@ main > article:not(:last-child) {
   content: '\f073';
 }
 
-.term-post-format-aside .content-title:before {
-  content: '\f016';
+.search .content-title:before {
+  content: '\f002';
 }
 
+.error404 .content-title:before {
+  content: '\f15b';
+}
+
+/* post format prefix icons*/
+.attachment .content-title:before,
+.single-format-image .content-title:before,
+.single-format-gallery .content-title:before,
 .term-post-format-image .content-title:before,
 .term-post-format-gallery .content-title:before {
   content: '\f03e';
 }
 
-.term-post-format-video .content-title:before {
-  content: '\f1c8';
-}
-
-.term-post-format-quote .content-title:before {
-  content: '\f10e';
-}
-
-.term-post-format-link .content-title:before {
-  content: '\f0c1';
-}
-
-.term-post-format-status .content-title:before {
-  content: '\f12a';
-}
-
+.single-format-audio .content-title:before,
 .term-post-format-audio .content-title:before {
   content: '\f001';
 }
 
+.single-format-video .content-title:before,
+.term-post-format-video .content-title:before {
+  content: '\f03d';
+}
+
+.single-format-status .content-title:before,
+.term-post-format-status .content-title:before {
+  content: '\f12a';
+}
+
+.single-format-link .content-title:before,
+.term-post-format-link .content-title:before {
+  content: '\f0c1';
+}
+
+.single-format-quote .content-title:before,
+.term-post-format-quote .content-title:before {
+  content: '\f10e';
+}
+
+.single-format-chat .content-title:before,
 .term-post-format-chat .content-title:before {
   content: '\f086';
 }
 
-.content-title-description p {
-  margin: 0;
+/* Post format */
+.single-format-quote .post,
+.single-format-link .post,
+.single-format-status .post,
+.single-format-audio .post {
+  font-weight: bold;
+  font-size: 2em;
 }
 
-.sticky .archive-entry-header h3:before {
-  font-family: FontAwesome;
-  content: '\f08d';
-  margin-right: .5rem;
+.single-format-quote .post q,
+.single-format-quote .post blockquote {
+  border: none;
 }
 
-.archive-entry-header a {
-  text-decoration: none;
+.single-format-link .post {
+  text-align: center;
 }
 
-.archive-entry-header a:hover {
-  text-decoration: underline;
+.single-format-chat .post {
+  font-weight: bold;
 }
 
 /* Meta */

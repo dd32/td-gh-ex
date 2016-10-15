@@ -21,12 +21,9 @@
 	<header class="site-header">
 		<div class="wrapper site-header-items-wrapper">
 			<div class="site-identity">
-				<?php if( get_theme_mod('logo') ): ?>
-					<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-						<img src="<?php echo get_theme_mod('logo'); ?>" />
-					</a>
-
-				<?php elseif( get_theme_mod('display_site_title', true) ): ?>
+				<?php if( function_exists( 'the_custom_logo' ) ) the_custom_logo(); ?>
+				
+				<?php if( get_theme_mod('display_site_title', true) ): ?>
 					<h1 class="site-title">
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
 					</h1>
@@ -56,6 +53,6 @@
 			) );
 		endif; ?>
 
-		<?php get_template_part('template-parts/header', 'image'); ?>
+		<?php get_template_part('template-parts/header_image'); ?>
 
 	</header>

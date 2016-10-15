@@ -31,10 +31,9 @@
 				<?php
 					$bidnis_theme_data = wp_get_theme();
 
-					printf( __( 'Theme: <a href="%2$s">%1$s</a> by %3$s', 'bidnis' ),
+					printf( __( 'Theme: <a href="%2$s">%1$s</a>', 'bidnis' ),
 						$bidnis_theme_data['Name'],
-						esc_html( $bidnis_theme_data->get( 'ThemeURI' ) ),
-						$bidnis_theme_data['Author']
+						esc_url( $bidnis_theme_data->get( 'ThemeURI' ) )
 					);
 				?>
 			</span>

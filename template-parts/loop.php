@@ -12,13 +12,13 @@ if( have_posts() ):
 			<header class="archive-entry-header">
 				<?php // Title
 					if ( is_sticky() && is_home() && ! is_paged() ){
-						the_title('<h3><a href="'.get_the_permalink().'">','</a></h3>');
+						the_title('<h3><a href="' . esc_url( get_the_permalink() ) . '">','</a></h3>');
 					}else if( get_the_title() != '' ){
-						the_title('<h3></i><a href="'.get_the_permalink().'">','</a></h3>');
+						the_title('<h3></i><a href="' . esc_url( get_the_permalink() ) . '">','</a></h3>');
 				
 					}else{
 						printf('<h3><a href="%1$s">%2$s</a></h3>',
-							get_the_permalink(),
+							esc_url( get_the_permalink() ),
 							__('Untitled post', 'bidnis')
 						);
 					}
@@ -29,7 +29,7 @@ if( have_posts() ):
 
 			<?php // Post thumbnail
 			if( has_post_thumbnail() && get_theme_mod('thumbnail_index', true) ): ?>
-				<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
+				<a class="post-thumbnail" href="<?php esc_url( get_the_permalink() ); ?>" aria-hidden="true">
 					<?php the_post_thumbnail( 'post-thumbnail', array( 'alt' => the_title_attribute( 'echo=0' ) ) ); ?>
 				</a>
 			<?php endif; ?>
@@ -47,7 +47,7 @@ if( have_posts() ):
 						
 						// Read more 
 						if( get_theme_mod('read_more', true) ): ?>
-							<a class="read-more" title="<?php the_title(); ?>" href="<?php the_permalink(); ?>">
+							<a class="read-more" title="<?php esc_attr( the_title() ); ?>" href="<?php esc_url( get_the_permalink() ); ?>">
 								<?php _e( 'Read more', 'bidnis' ); ?>
 							</a>
 						<?php endif;

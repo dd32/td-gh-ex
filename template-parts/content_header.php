@@ -35,14 +35,10 @@
 
 	<?php ( is_single() && !is_page() ) ? get_template_part('template-parts/entry_meta') : false; ?>
 
-	<?php if( is_single() ): ?>
+	<?php if( is_singular() && has_post_thumbnail() && get_theme_mod( 'thumbnail_content', true ) ): ?>
 		<div class="post-thumbnail">
-			<?php if( has_post_thumbnail() && get_theme_mod('thumbnail_content', true) ){
-				the_post_thumbnail();
-			}
-			
-			echo ( wp_attachment_is_image( get_the_ID() ) ) ? wp_get_attachment_image( get_the_ID(), 'large') : false; ?>
-		</div><!-- .post-thumbnail -->
+			<?php the_post_thumbnail(); ?>
+		</div>
 	<?php endif; ?>
 	
 </header>

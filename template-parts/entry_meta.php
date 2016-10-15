@@ -26,6 +26,17 @@
 		}
 	?>
 
+	<?php // attachment image dimentions
+		if( wp_attachment_is_image() ){
+			$metadata = wp_get_attachment_metadata();
+
+			printf( '<span><i class="fa fa-camera"></i> %1$s x %2$s</span>',
+				absint( $metadata['width'] ),
+				absint( $metadata['height'] )
+			);
+		}
+	?>
+
 	<?php // comments
 		$bidnis_comments_count = get_comments_number();
 		if( get_theme_mod( 'entry_meta_comments', true ) && $bidnis_comments_count > 0 && comments_open() ){

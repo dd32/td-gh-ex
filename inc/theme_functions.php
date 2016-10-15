@@ -20,7 +20,6 @@ $bidnis_social_media_icons = array(
 	'Vine'				=>	'fa-vine',
 	'SnapChat'		=>	'fa-snapchat-ghost',
 	'LinkedIn'		=>	'fa-linkedin',
-	'Google'			=>	'fa-google',
 	'Google+'			=>	'fa-google-plus',
 	'YouTube'			=>	'fa-youtube',
 	'Twitch'			=>	'fa-twitch',
@@ -36,18 +35,31 @@ $bidnis_social_media_icons = array(
 	'GitHub'			=>	'fa-github',
 	'BitBucket'		=>	'fa-bitbucket',
 	'Behance'			=>	'fa-behance',
-	'WhatsApp'		=>	'fa-whatsapp',
 	'LastFM'			=>	'fa-lastfm',
 	'DeviantArt'	=>	'fa-deviantart',
 	'BitCoin'			=>	'fa-btc',
 );
 
+function bidnis_any_social_icons(){
+	global $bidnis_social_media_icons;
+
+	if(get_theme_mod( 'social_media_rss' )) return true;
+
+	foreach( $bidnis_social_media_icons as $service => $icon ){
+		if( get_theme_mod( 'social_media_'.strtolower($service) ) ) return true;
+	}
+
+	return false;
+}
+
 function bidnis_social_media(){
+	if( !bidnis_any_social_icons() ) return;
+
 	global $bidnis_social_media_icons; ?>
 	
 	<div class="bidnis-social-media-links">
 		<?php if(get_theme_mod( 'social_media_rss' )): ?>
-			<a title="<?php bloginfo('rss2_url'); ?>" href="<?php bloginfo('rss2_url'); ?>" target="_blank">
+			<a title="<?php esc_attr( bloginfo('rss2_url') ); ?>" href="<?php esc_url( bloginfo('rss2_url') ); ?>" target="_blank">
 				<i class="fa fa-rss"></i>
 			</a>
 		<?php endif;
@@ -55,7 +67,7 @@ function bidnis_social_media(){
 		foreach( $bidnis_social_media_icons as $service => $icon ):
 			if( get_theme_mod( 'social_media_'.strtolower($service) ) ): ?>
 				<a href="<?php echo esc_url( get_theme_mod( 'social_media_'.strtolower($service) ) ); ?>" target="_blank">
-					<i class="fa <?php echo $icon; ?>"></i>
+					<i class="fa <?php echo esc_attr( $icon ); ?>"></i>
 				</a>
 			<?php endif;
 		endforeach; ?>
@@ -70,67 +82,15 @@ function bidnis_social_media(){
 function bidnis_phone_email(){ ?>
 	<div class="bidnis-phone-email">
 		<?php if( get_theme_mod('phone') ): ?>
-			<a class="bidnis-phone" href="tel:<?php echo get_theme_mod('phone'); ?>"><?php echo get_theme_mod('phone'); ?></a>
+			<a class="bidnis-phone" href="tel:<?php echo esc_url( get_theme_mod('phone') ); ?>"><?php echo esc_html( get_theme_mod('phone') ); ?></a>
 		<?php endif; ?>
 
 		<?php if( get_theme_mod('email') ): ?>
-			<a class="bidnis-email" href="mailto:<?php echo get_theme_mod('email'); ?>" target="_top"><?php echo get_theme_mod('email'); ?></a>
+			<a class="bidnis-email" href="mailto:<?php echo esc_url( get_theme_mod('email') ); ?>" target="_top"><?php echo esc_html( get_theme_mod('email') ); ?></a>
 		<?php endif; ?>
 	</div>
 
 <?php }
-
-/**
-	* Archive titles
-	*
-	* @since Bidnis 1.0
-	*/
-function bidnis_get_archive_title(){
-	if ( is_category() ) {
-		$title = single_cat_title( '', false );
-	} elseif ( is_tag() ) {
-		$title = single_tag_title( '', false );
-	} elseif ( is_author() ) {
-		$title = sprintf( __( '<span class="vcard">%s</span>', 'bidnis' ), get_the_author() );
-	} elseif ( is_year() ) {
-		$title = get_the_date( _x( 'Y', 'yearly archives date format', 'bidnis' ) );
-	} elseif ( is_month() ) {
-		$title = get_the_date( _x( 'F Y', 'monthly archives date format', 'bidnis' ) );
-	} elseif ( is_day() ) {
-		$title = get_the_date( _x( 'F j, Y', 'daily archives date format', 'bidnis' ) );
-	} elseif ( is_tax( 'post_format' ) ) {
-		if ( is_tax( 'post_format', 'post-format-aside' ) ) {
-			$title = _x( 'Asides', 'post format archive title', 'bidnis' );
-		} elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) {
-			$title = _x( 'Galleries', 'post format archive title', 'bidnis' );
-		} elseif ( is_tax( 'post_format', 'post-format-image' ) ) {
-			$title = _x( 'Images', 'post format archive title', 'bidnis' );
-		} elseif ( is_tax( 'post_format', 'post-format-video' ) ) {
-			$title = _x( 'Videos', 'post format archive title', 'bidnis' );
-		} elseif ( is_tax( 'post_format', 'post-format-quote' ) ) {
-			$title = _x( 'Quotes', 'post format archive title', 'bidnis' );
-		} elseif ( is_tax( 'post_format', 'post-format-link' ) ) {
-			$title = _x( 'Links', 'post format archive title', 'bidnis' );
-		} elseif ( is_tax( 'post_format', 'post-format-status' ) ) {
-			$title = _x( 'Statuses', 'post format archive title', 'bidnis' );
-		} elseif ( is_tax( 'post_format', 'post-format-audio' ) ) {
-			$title = _x( 'Audio', 'post format archive title', 'bidnis' );
-		} elseif ( is_tax( 'post_format', 'post-format-chat' ) ) {
-			$title = _x( 'Chats', 'post format archive title', 'bidnis' );
-		}
-	} elseif ( is_post_type_archive() ) {
-		$title = post_type_archive_title( '', false );
-	} elseif ( is_tax() ) {
-		$tax = get_taxonomy( get_queried_object()->taxonomy );
-		/* translators: 1: Taxonomy singular name, 2: Current taxonomy term */
-		$title = sprintf( __( '%1$s: %2$s', 'bidnis' ), $tax->labels->singular_name, single_term_title( '', false ) );
-	} else {
-		$title = __( 'Archives', 'bidnis' );
-	}
-
-	return $title;
-}
-add_filter('get_the_archive_title', 'bidnis_get_archive_title');
 
 /**
 	* Add classes to body depending on custom changes and content
@@ -183,7 +143,7 @@ function bidnis_excerpt_read_more($more) {
 	global $post;
 	
 	if( !get_theme_mod('read_more', true) ){
-		return '... <a href="'. get_permalink($post->ID) . '">Read more</a>';
+		return '... <a href="'. esc_url( get_permalink($post->ID) ) . '">Read more</a>';
 	}else{
 		return '...';
 	}
@@ -223,7 +183,7 @@ function bidnis_breadcrumbs(){
 
 						foreach ($ancestors as $crumb) {
 							printf( '<span><a href="%1$s">%2$s</a></span>',
-								get_permalink($crumb),
+								esc_url( get_permalink($crumb) ),
 								get_the_title($crumb)
 							);
 						}
@@ -239,4 +199,3 @@ function bidnis_breadcrumbs(){
 		</div>
 	<?php endif;
 }
-?>

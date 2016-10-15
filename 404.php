@@ -14,7 +14,7 @@ get_header(); ?>
 	<?php get_sidebar('left'); ?>
 
 	<main>
-		<?php get_template_part('template-parts/content', 'header'); ?>
+		<?php get_template_part('template-parts/content_header'); ?>
 		
 		<p><?php _e( 'This is somewhat embarrassing, isn&rsquo;t it?', 'bidnis' ); ?></p>
 		<p><?php _e( 'It looks like nothing was found at this location.', 'bidnis' ); ?></p>
