@@ -7,13 +7,16 @@
     	<!--LOGO START-->
         <div id="site-title">
         <?php if ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) : ?>
-                    <?php advance_the_custom_logo(); ?>
-                    <?php else : ?>
-                    
-       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?> - <?php bloginfo('description'); ?>" rel="home"><?php bloginfo('name'); ?></a>
-	   
-	   
-	   <?php endif;?>	
+        	<?php advance_the_custom_logo(); ?>
+       		 <?php else : ?>
+   			<h1 class="site-title">	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+	    	
+        	<?php
+                $description = get_bloginfo( 'description', 'display' );
+                if ( $description || is_customize_preview() ) : ?>
+                    <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+            <?php endif; ?>
+         <?php endif;?>
        
         
         </div>

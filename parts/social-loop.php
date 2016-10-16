@@ -1,16 +1,16 @@
 <?php
 
 
-$advance_facebook = esc_url( get_theme_mod ('fbsoc_text_advance'));
-$advance_twitter = esc_url( get_theme_mod ('ttsoc_text_advance'));
-$advance_googleplus = esc_url( get_theme_mod ('gpsoc_text_advance'));
-$advance_pinterest = esc_url( get_theme_mod ('pinsoc_text_advance'));
-$advance_youtube = esc_url( get_theme_mod ('ytbsoc_text_advance'));
-$advance_linkedin = esc_url( get_theme_mod ('linsoc_text_advance'));
-$advance_vimeo = esc_url( get_theme_mod ('vimsoc_text_advance'));
-$advance_flickr = esc_url( get_theme_mod ('flisoc_text_advance'));
-$advance_rss = esc_url( get_theme_mod ('rsssoc_text_advance'));
-$advance_instagram = esc_url( get_theme_mod ('instagram_text_advance'));
+$advance_facebook = get_theme_mod ('fbsoc_text_advance');
+$advance_twitter =  get_theme_mod ('ttsoc_text_advance');
+$advance_googleplus = get_theme_mod ('gpsoc_text_advance');
+$advance_pinterest =  get_theme_mod ('pinsoc_text_advance');
+$advance_youtube =  get_theme_mod ('ytbsoc_text_advance');
+$advance_linkedin = get_theme_mod ('linsoc_text_advance');
+$advance_vimeo = get_theme_mod ('vimsoc_text_advance');
+$advance_flickr = get_theme_mod ('flisoc_text_advance');
+$advance_rss = get_theme_mod ('rsssoc_text_advance');
+$advance_instagram =  get_theme_mod ('instagram_text_advance');
 
 ?> 
 

@@ -19,7 +19,7 @@ function advance_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'advance_customize_register' );
 
-if ( is_admin() ) {
+
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
@@ -35,7 +35,7 @@ function advance_registers() {
 	
 }
 add_action( 'customize_controls_enqueue_scripts', 'advance_registers' );
-}
+
 
 require get_template_directory() . '/inc/customizer/config.php';
 require get_template_directory() . '/inc/customizer/panels.php';

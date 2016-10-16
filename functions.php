@@ -305,11 +305,11 @@ wp_enqueue_script('wow',get_template_directory_uri().'/js/wow.js',array('jquery'
 wp_enqueue_script('sidr',get_template_directory_uri().'/js/jquery.sidr.min.js',array('jquery'), true);
 wp_enqueue_script('matchHeight',get_template_directory_uri().'/js/jquery.matchHeight.js',array('jquery'), true);
 
-$advance_Static_Sliderpara = get_theme_mod('advance_Static_Sliderpara',1);
-if( isset($advance_Static_Sliderpara) && $advance_Static_Sliderpara == 1 ):
+$advance_Static_Sliderpara = get_theme_mod('advance_Static_Sliderpara',0);
+if( isset($advance_Static_Sliderpara) && $advance_Static_Sliderpara == 0 ):
 wp_enqueue_script('advance_StaticSliderh',get_template_directory_uri().'/js/halfparallax.js',array('jquery'), true);
 endif;
-if( isset($advance_Static_Sliderpara) && $advance_Static_Sliderpara == 0 ):
+if( isset($advance_Static_Sliderpara) && $advance_Static_Sliderpara == 1 ):
 wp_enqueue_script('advance_StaticSlider',get_template_directory_uri().'/js/headerParallax.js',array('jquery'), true);
 endif;
 if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
@@ -317,6 +317,26 @@ if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 }
 }
 add_action('wp_enqueue_scripts', 'advance_head_js');
+
+/**
+ * Register admin style
+ *
+ * 
+ */
+
+if ( is_admin() ) {
+add_action('admin_enqueue_scripts', 'advance_welcome_scripts');
+
+function advance_welcome_scripts() {    
+
+	
+    wp_enqueue_script('advance_welcome-page', get_template_directory_uri() . '/js/welcome-page.js', false, '1.0', true);
+	
+	wp_enqueue_style( 'welcome-page_css', get_template_directory_uri() . '/css/welcome-page.css' );
+	
+
+}
+}
 
 
 /**

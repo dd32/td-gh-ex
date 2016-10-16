@@ -1,7 +1,7 @@
  <?php 
 // Define all Variables.
-$bnt_advance = esc_html ( get_theme_mod('advance_link_name1',esc_attr__('Know More','advance')) );
-$bnt2_advance = esc_html ( get_theme_mod('advance_link_name2',esc_attr__('Buy Theme','advance')) );
+$bnt_advance = esc_html ( get_theme_mod('advance_link_name1','Know More') );
+$bnt2_advance = esc_html ( get_theme_mod('advance_link_name2','Buy Theme') );
 $advance_staticslider_uri1 = esc_url( get_theme_mod('advance_staticslider_uri1') );
 $advance_staticslider_uri2 = esc_url( get_theme_mod('advance_staticslider_uri2') );
 $advance_staticslider_image = esc_url( get_theme_mod('advance_staticslider_image',esc_url(get_template_directory_uri().'/images/slider.jpg')) );

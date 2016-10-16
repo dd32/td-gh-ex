@@ -10,7 +10,7 @@ jQuery( document ).ready( function() {
 
 		value.bind( function( to ) {
 
-			jQuery( '#site-title a' ).html( to );
+			jQuery( '#site-title h1 a' ).html( to );
 
 		} ); // value.bind
 
@@ -26,7 +26,7 @@ jQuery( document ).ready( function() {
 
 		value.bind( function( to ) {
 
-			jQuery( '#site-description' ).html( to );
+			jQuery( '#site-title .site-description' ).html( to );
 
 		} ); // value.bind
 

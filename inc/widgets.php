@@ -9,8 +9,8 @@ require(get_template_directory() . '/inc/widgets/advance_welcome.php');
 if ( is_admin() ) {
 add_action('admin_enqueue_scripts', 'advance_widget_scripts');
 
-function advance_widget_scripts() {    
-
+function advance_widget_scripts($hook) {    
+if( 'widgets.php' == $hook || 'post.php' == $hook ){
 	 wp_enqueue_style( 'wp-color-picker' );      
      wp_enqueue_script( 'wp-color-picker' );
 	if( function_exists( 'wp_enqueue_media' ) ) {
@@ -22,8 +22,10 @@ function advance_widget_scripts() {
 	wp_enqueue_style( 'advance_fontawesome_custom_css', get_template_directory_uri() . '/fonts/awesome/css/font-awesome.min.css' );
 	
 }
-
 }
+}
+
+
 /*****************************************/
 /******          WIDGETS     *************/
 /*****************************************/

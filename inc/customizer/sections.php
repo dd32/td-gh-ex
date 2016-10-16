@@ -42,7 +42,7 @@ Kirki::add_section( 'advance_color_settings', array(
 
 
 Kirki::add_section( 'slider_setup', array(
-    'title'          => esc_attr__( 'Slider setup', 'advance' ),
+    'title'          => esc_attr__( 'Static image setup', 'advance' ),
     'panel'          => 'theme_options', // Not typically needed.
     'priority'       => 2,
     
@@ -84,13 +84,6 @@ Kirki::add_section( 'advance_callout',array(
     
 ) );
 
-Kirki::add_section( 'advance_typography', array(
-    'title'          => esc_attr__( 'Typography settings', 'advance' ),
-    'panel'          => 'theme_options', // Not typically needed.
-    'priority'       => 12,
-    
-    
-) );
 
 
 

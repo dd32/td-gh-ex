@@ -106,7 +106,7 @@ Kirki::add_field( 'advance', array(
 		'font-family'    => 'Roboto',
 		'variant'        => 'regular',
 		'font-size'      => '48px',
-		'line-height'    => '2.5',
+		'line-height'    => '1.5',
 		'letter-spacing' => '0',
 		'subsets'        => array( 'latin-ext' ),
 		'color'          => '#fff',
@@ -116,12 +116,36 @@ Kirki::add_field( 'advance', array(
 	'priority'    => 10,
 	'output'      => array(
 		array(
-			'element' => '#site-title a',
+			'element' => '#site-title .site-title',
 		),
 	),
 ) );
 
 
+Kirki::add_field( 'advance', array(
+	'type'        => 'typography',
+	'settings'    => 'sitedescription_typography',
+	'label'       => esc_attr__( 'Site description Typography', 'advance' ),
+	'section'     => 'advance_headtitle_settings',
+	'transport' => 'auto',
+	'default'     => array(
+		'font-family'    => 'Roboto',
+		'variant'        => 'regular',
+		'font-size'      => '12px',
+		'line-height'    => '0',
+		'letter-spacing' => '2px',
+		'subsets'        => array( 'latin-ext' ),
+		'color'          => '#fff',
+		'text-transform' => 'none',
+		
+	),
+	'priority'    => 10,
+	'output'      => array(
+		array(
+			'element' => '#site-title .site-description',
+		),
+	),
+) );
 
 
 /*  menu typography */
@@ -229,7 +253,7 @@ Kirki::add_field( 'advance', array(
 Kirki::add_field( 'advance', array(
     'type'        => 'switch',
     'settings'    => 'advance_slider_enabel',
-    'label'       => esc_attr__( 'Enable/disabel Static slider', 'advance' ),
+    'label'       => esc_attr__( 'Enable/disabel Static image', 'advance' ),
     'section'     => 'slider_setup',
     'default'     => '1',
     'priority'    => 1,
@@ -242,7 +266,7 @@ Kirki::add_field( 'advance', array(
 Kirki::add_field( 'advance', array(
     'type'        => 'toggle',
     'settings'    => 'advance_Static_Sliderbutton',
-    'label'       => esc_attr__( 'Remove slider 1st button', 'advance' ),
+    'label'       => esc_attr__( 'Remove Static 1st button', 'advance' ),
     'section'     => 'slider_setup',
     'default'     => '1',
     'priority'    => 1,
@@ -251,16 +275,16 @@ Kirki::add_field( 'advance', array(
 Kirki::add_field( 'advance', array(
     'type'        => 'toggle',
     'settings'    => 'advance_Static_Sliderpara',
-    'label'       => esc_attr__( 'Make slider image full screen', 'advance' ),
+    'label'       => esc_attr__( 'Make Static image full screen', 'advance' ),
     'section'     => 'slider_setup',
-    'default'     => '1',
+    'default'     => '0',
     'priority'    => 1,
 ) );
  
 Kirki::add_field('advance', array(
                 'type' => 'select',
                 'settings' => 'Staticimage_post',
-                'label' => esc_attr__('Choose Post For Static Slider', 'advance'),
+                'label' => esc_attr__('Choose Post For Static image', 'advance'),
                 'description' => esc_attr__('Choose for post Static image.', 'advance'),
                 'help' => '',
                 'section' => 'slider_setup',
@@ -277,14 +301,14 @@ Kirki::add_field('advance', array(
 Kirki::add_field( 'advance', array(
         'type'     => 'text',
         'settings'  => 'advance_link_name1',
-        'label'    => esc_attr__( 'Slideer button 1st', 'advance' ),
+        'label'    => esc_attr__( 'Static image button 1st', 'advance' ),
         'section'  => 'slider_setup',
         'default'  => esc_attr__( 'Know More', 'advance' ),
         'priority' => 1,
 		'transport' => 'postMessage',
 	'js_vars'   => array(
         array(
-            'element'  => '#slider .hvr-sweep-to-top',
+            'element'  => '#slider .hero_btn',
             'function' => 'html',
             'property' => '',
             
@@ -296,14 +320,14 @@ Kirki::add_field( 'advance', array(
 Kirki::add_field( 'advance', array(
         'type'     => 'text',
         'settings'  => 'advance_link_name2',
-        'label'    => esc_attr__( 'Slider button 2nd', 'advance' ),
+        'label'    => esc_attr__( 'Static image button 2nd', 'advance' ),
         'section'  => 'slider_setup',
         'default'  => esc_attr__( 'Try Now !', 'advance' ),
         'priority' => 1,
 		'transport' => 'postMessage',
 	'js_vars'   => array(
         array(
-            'element'  => '#slider .hvr-sweep-to-bottom-border',
+            'element'  => '#slider .hero_btn_full',
             'function' => 'html',
             'property' => '',
             
@@ -316,7 +340,7 @@ Kirki::add_field( 'advance', array(
 Kirki::add_field( 'advance', array(
     'type'        => 'color',
     'settings'    => 'advance_slider_textcolor',
-    'label'       => esc_attr__( 'Slider title text color', 'advance' ),
+    'label'       => esc_attr__( 'Static image title text color', 'advance' ),
     'section'     => 'slider_setup',
     'default'     => '#ffffff',
     'priority'    => 1,
@@ -347,7 +371,7 @@ Kirki::add_field( 'advance', array(
 	Kirki::add_field( 'advance', array(
         'type'     => 'image',
         'settings'  => 'advance_staticslider_image',
-        'label'    => esc_attr__( 'Upload static slider image  ', 'advance' ),
+        'label'    => esc_attr__( 'Upload static image  ', 'advance' ),
         'section'  => 'slider_setup',
 		'default'     => get_template_directory_uri() . '/images/slider.jpg',
         'priority' => 10,
@@ -543,13 +567,7 @@ Kirki::add_field( 'advance', array(
 		
 /* Typography settings */
 
-Kirki::add_field( 'advance', array(
-    'type'        => 'custom',
-    'settings'    => 'custom_demo',
-    'section'     => 'advance_typography',
-    'default'     => esc_attr__('Typography controls available in pro version ','advance'),
-    'priority'    => 10,
-) );
+
 
 
 /* mobile layout settings */
