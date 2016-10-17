@@ -41,9 +41,13 @@ The exceptions to this license are as follows:
 
 
 #######################  Changelog ######################
+= 3.4.32 October 17th 2016 =
+* fixed : added back function tc__f() for retro-compatibility
+* updated : grey.css is now the default skin, color #5A5A5A. No impact for previous version users using the old default skin (blue3.css)
+
 = 3.4.31 October 16th 2016 =
-* fixed : footer widgets not displayed
 * fixed : wrong class name in czr-init.php
+* fixed : footer widgets not displayed
 
 = 3.4.30 October 15th 2016 =
 * added : in single post, new wp filter : apply_filters( 'tc_single_post_section_class', array( 'entry-content' )
