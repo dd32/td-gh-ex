@@ -121,3 +121,6 @@ Drag and drop these widgets to above two widget areas and arrange them as you li
 1.1.0 - 12.10.2016
 * Added option to center menu (go to customizer -> layout options, check box "center menu")
 * Added option to change footer colors and copyright text
+
+1.1.1 - 17.10.2016
+* Fixed issue with responsive video

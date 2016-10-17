@@ -408,3 +408,9 @@ function barletta_my_search_form($text) {
 	$text = str_replace('value="Search"', 'value=""', $text);
 	return $text;
 }
+
+// Add wrapper to video embed
+add_filter( 'embed_oembed_html', 'barletta_video_embed_html', 10 );
+function barletta_video_embed_html( $html ) { 
+	return '<div class="embed-vimeo">' . $html . '</div>'; 
+} 
