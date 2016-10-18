@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TopShop\n"
-"POT-Creation-Date: 2016-09-21 13:29+0200\n"
+"POT-Creation-Date: 2016-10-18 14:12+0200\n"
 "PO-Revision-Date: 2016-06-01 15:20+0200\n"
 "Last-Translator: Kaira <zack@kairaweb.com>\n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.9\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_n:1,2;__ngettext:1,2;"
@@ -51,10 +51,6 @@ msgstr ""
 
 #: content-page.php:15 content-single.php:25 content.php:67
 msgid "Pages:"
-msgstr ""
-
-#: content-page.php:22 includes/inc/template-tags.php:122
-msgid "Edit"
 msgstr ""
 
 #: content.php:60
@@ -817,6 +813,10 @@ msgstr ""
 msgid "% Comments"
 msgstr ""
 
+#: includes/inc/template-tags.php:122
+msgid "Edit"
+msgstr ""
+
 #: includes/inc/template-tags.php:139
 #, php-format
 msgid "Category: %s"
@@ -965,20 +965,28 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: templates/slider/homepage-slider.php:71
+#: templates/slider/homepage-slider.php:78
 msgid "Demo Slide One"
 msgstr ""
 
-#: templates/slider/homepage-slider.php:74
+#: templates/slider/homepage-slider.php:82
 msgid "A Little Extra Thought"
 msgstr ""
 
-#: templates/slider/homepage-slider.php:81
+#: templates/slider/homepage-slider.php:84
+msgid "It's that little extra thought that counts"
+msgstr ""
+
+#: templates/slider/homepage-slider.php:91
 msgid "Demo Slide Two"
 msgstr ""
 
-#: templates/slider/homepage-slider.php:84
+#: templates/slider/homepage-slider.php:95
 msgid "Online Shopping"
+msgstr ""
+
+#: templates/slider/homepage-slider.php:97
+msgid "Install WooCommerce to start building your online store"
 msgstr ""
 
 #: templates/titlebar.php:7

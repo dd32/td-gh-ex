@@ -4,7 +4,7 @@ Theme URI: https://kairaweb.com/theme/topshop/
 Author: Kaira
 Author URI: https://kairaweb.com/
 Description: TopShop is the perfect theme for all users from the beginner to the developer. Being a quick and simple to setup responsive multipurpose WordPress theme, TopShop is very flexible and can be used for any website from a simple blog displaying your personal portfolio, to a corporate business website for your agency, online community, restaurant or real estate purposes, to selling products for your fully functional online eCommerce store. Simply turn TopShop into an online shop by installing the WooCommerce plugin and start selling online in no time at all. TopShop features a simple, clean, minimal and elegant style design which will work perfectly for almost any kind of store. TopShop integrates seamlessly with top popular free plugins such as WooCommerce, for an online eCommerce store, SiteOrigin's drag and drop Page Builder, along with our multiple page templates, for building any type of page layout needed, and lots more. Go on... Give it a try!
-Version: 1.3.00
+Version: 1.3.01
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: topshop
@@ -985,26 +985,38 @@ a:active {
 .home-slider-remove .home-slider { 
     visibility: hidden;
 }
-.home-slider div {
+.home-slider-block {
+	display: block;
     float: left;
     position: relative;
 }
-.home-slider div h3 {
+.home-slider-block-inner {
+	position: absolute;
+	font-size: 19px;
+	color: #fff;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	margin: -65px 0 0;
+    
+	text-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
+}
+.home-slider-block h3 {
     color: #FFF;
     font-size: 48px;
     letter-spacing: 1px;
-    margin: -26px 0 0;
+    margin: 0 0 8px;
     padding: 0;
-    position: absolute;
-    text-align: center;
     text-shadow: 0 0 2px rgba(0, 0, 0, 0.8);
     text-transform: uppercase;
-    top: 50%;
-    width: 100%;
-    z-index: 8;
 }
-.home-slider div h3 a {
+.home-slider-block h3 a {
     color: #fff;
+}
+.home-slider-block-inner p {
+	max-width: 980px;
+	margin: 0 auto;
 }
 .home-slider img {
     display: block;
@@ -1042,6 +1054,7 @@ a:active {
 .home-slider-next {
     position: absolute;
     top: 50%;
+    background-image: none !important;
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 200px;
     color: #FFFFFF;
@@ -1055,12 +1068,11 @@ a:active {
     cursor: pointer;
     z-index: 9;
     transform: scale(0.7);
-    
     -webkit-transition: all 0.2s ease 0s;
-     -moz-transition: all 0.2s ease 0s;
-      -ms-transition: all 0.2s ease 0s;
-       -o-transition: all 0.2s ease 0s;
-          transition: all 0.2s ease 0s;
+    -moz-transition: all 0.2s ease 0s;
+    -ms-transition: all 0.2s ease 0s;
+    -o-transition: all 0.2s ease 0s;
+    transition: all 0.2s ease 0s;
 }
 .home-slider-prev {
     left: 5px;
@@ -1084,7 +1096,6 @@ a:active {
     opacity: 0.4;
     cursor: default;
 }
-
 
 /* -------- Extra Styling -------- */
 .search-btn {
@@ -1764,10 +1775,13 @@ object {
     	top: 52px;
     }
     
-    .home-slider div h3 {
-        font-size: 32px;
-        margin: -22px 0 0;
+    .home-slider-block h3 {
+        font-size: 30px;
     }
+    .home-slider-block-inner {
+		font-size: 14px;
+		margin: -30px 0 0;
+	}
     
     .content-area {
         width: 100% !important;
@@ -1822,21 +1836,25 @@ object {
         float: none;
     }
     
-    .home-slider div h3 {
+    .home-slider-block-inner {
+    	margin: -30px 0 0;
+    }
+    .home-slider-block h3 {
         font-size: 28px;
-        margin: -22px 0 0;
     }
     
 }
 
-@media screen and (max-width: 400px) {
-    
-    .home-slider div h3 {
-        font-size: 20px;
-        margin: -28px 0px 0;
-        padding: 0 50px;
+@media screen and (max-width: 560px) {
+	
+	.home-slider-block-inner {
+    	margin: -25px 0 0;
+    	font-size: 13px;
     }
-    
+    .home-slider-block h3 {
+        font-size: 18px;
+    }
+	
 }
 
 body.show-main-menu #main-menu {

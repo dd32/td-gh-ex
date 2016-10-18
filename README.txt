@@ -71,6 +71,13 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.01
+* WooCommerce styling fixes - My Account
+* Default slider now uses Excerpt/Content text
+* Updated language .pot file
+Premium: Added setting to remove Page Titles
+Premium: Added setting to remove Single Post Titles
+
 #### 1.3.00
 * Header styling fixes
 * Fixed missing translations

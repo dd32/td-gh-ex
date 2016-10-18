@@ -104,7 +104,7 @@
                 fx: 'uncover-fade',
                 duration: 450
             },
-            auto: false,
+            auto: 6500,
             pagination: '.home-slider-pager',
             prev: ".home-slider-prev",
             next: ".home-slider-next"
