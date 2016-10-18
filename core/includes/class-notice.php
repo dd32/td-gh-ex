@@ -55,11 +55,12 @@ if( !class_exists( 'diarjolite_admin_notice' ) ) {
             <div class="update-nag notice diarjolite-notice">
             
             	<div class="diarjolite-noticedescription">
-					<strong><?php _e( 'Important! From today, you can upgrade to the premium version of Diarjo for FREE! ( This resource will be available for a short period of time) ', 'diarjolite' ); ?></strong><br/>
+                    <strong><?php _e( 'Upgrade to the premium version of Diarjo, to enable an extensive option panel, 600+ Google Fonts, unlimited sidebars, portfolio and much more.', 'diarjolite' ); ?></strong><br/>
+
 					<?php printf( __('<a href="%1$s" class="dismiss-notice">Dismiss this notice</a>','diarjolite'), esc_url( '?diarjolite-dismiss=1' ) ); ?>
                 </div>
                 
-                <a target="_blank" href="<?php echo esc_url( 'https://www.themeinprogress.com/reserved-area/?ref=2&campaign=diarjonotice' ); ?>" class="button"><?php _e( 'Download Now', 'diarjolite' ); ?></a>
+                <a target="_blank" href="<?php echo esc_url( 'https://www.themeinprogress.com/diarjo-free-creative-minimal-wordpress-theme/?ref=2&campaign=diarjonotice' ); ?>" class="button"><?php _e( 'Upgrade to Diarjo Premium', 'diarjolite' ); ?></a>
                 <div class="clear"></div>
 
             </div>
