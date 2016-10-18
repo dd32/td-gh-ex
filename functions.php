@@ -146,8 +146,8 @@ function awaken_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<div class="widget-title-container"><h1 class="widget-title">',
-		'after_title'   => '</h1></div>',
+		'before_title'  => '<div class="widget-title-container"><h2 class="widget-title">',
+		'after_title'   => '</h2></div>',
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Magazine 1', 'awaken' ),
@@ -155,8 +155,8 @@ function awaken_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<div class="awt-container"><h1 class="awt-title">',
-		'after_title'   => '</h1></div>',
+		'before_title'  => '<div class="awt-container"><h2 class="awt-title">',
+		'after_title'   => '</h2></div>',
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Magazine 2', 'awaken' ),
@@ -164,8 +164,8 @@ function awaken_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<div class="awt-container"><h1 class="awt-title">',
-		'after_title'   => '</h1></div>',
+		'before_title'  => '<div class="awt-container"><h2 class="awt-title">',
+		'after_title'   => '</h2></div>',
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Header Ad Area', 'awaken' ),
@@ -173,8 +173,8 @@ function awaken_widgets_init() {
 		'description'   => __( '728px x 90px Ad area. Use default text widget to put ad codes like google.', 'awaken' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<div class="awt-container"><h1 class="awt-title">',
-		'after_title'   => '</h1></div>',
+		'before_title'  => '<div class="awt-container"><h2 class="awt-title">',
+		'after_title'   => '</h2></div>',
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Footer Left Sidebar', 'awaken' ),
@@ -182,8 +182,8 @@ function awaken_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="footer-widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h2 class="footer-widget-title">',
+		'after_title'   => '</h2>',
 	) );	
 	register_sidebar( array(
 		'name'          => __( 'Footer Mid Sidebar', 'awaken' ),
@@ -191,8 +191,8 @@ function awaken_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="footer-widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h2 class="footer-widget-title">',
+		'after_title'   => '</h2>',
 	) );	
 	register_sidebar( array(
 		'name'          => __( 'Footer Right Sidebar', 'awaken' ),
@@ -200,8 +200,8 @@ function awaken_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="footer-widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h2 class="footer-widget-title">',
+		'after_title'   => '</h2>',
 	) );
 }
 add_action( 'widgets_init', 'awaken_widgets_init' );

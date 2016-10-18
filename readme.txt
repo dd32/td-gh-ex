@@ -1,5 +1,5 @@
 ﻿Theme Name : Awaken
-Version    : 2.0.7
+Version    : 2.0.8
 Theme URL  : http://www.themezhut.com/themes/awaken
 Theme Documentation  : http://www.themezhut.com/awaken-theme-documentation
 License: GNU General Public License v2 or later
@@ -187,3 +187,9 @@ Removed old theme filtering tags and added new tags.
 Added "header ad" widget area to header.
 Added a checkbox to show/hide search box on navigation. ( Appearance > Customize > General Settins. )
 Updated font awesome font.
+
+- Version 2.0.8
+Changed widget post titles <h1> tags to <h3>
+Changed blog listing titles <h1> tags to <h2>
+Fixed undefined variable issue in magazine widgets.
+Added the previously removed theme section again to the customizer.

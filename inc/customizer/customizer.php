@@ -15,7 +15,6 @@ function awaken_customize_register( $wp_customize ) {
 	require( get_template_directory() . '/inc/customizer/custom-controls/control-category-dropdown.php' );
 	require( get_template_directory() . '/inc/customizer/custom-controls/control-custom-content.php' );
 
-	$wp_customize->remove_section( 'themes' );
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
