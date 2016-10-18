@@ -35,10 +35,20 @@
 	<header id="masthead" class="site-header" role="banner">
 		<hgroup>
 			<?php 
-			if(is_home()){
-			  echo badjohnny_seo_wrapper('h1 class="site-title"','<a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a>');
+			$custom_logo_id = get_theme_mod( 'custom_logo' );
+			$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+            $logo='';
+			
+			if($custom_logo_id<>''){
+			  $logo='<img src="'.$image[0].'" alt="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" />';
 			}else{
-			  echo badjohnny_seo_wrapper('h3 class="site-title"','<a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.get_bloginfo( 'name' ).'</a>');
+			  $logo=get_bloginfo( 'name' );
+			}
+
+			if(is_home()){
+			  echo badjohnny_seo_wrapper('h1 class="site-title"','<a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.$logo.'</a>');
+			}else{
+			  echo badjohnny_seo_wrapper('h3 class="site-title"','<a href="'.esc_url( home_url( '/' ) ).'" title="'.esc_attr( get_bloginfo( 'name', 'display' ) ).'" rel="home">'.$logo.'</a>');
 			}
 			?>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
