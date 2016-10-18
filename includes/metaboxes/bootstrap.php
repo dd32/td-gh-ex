@@ -15,7 +15,7 @@ if ( is_admin() ) {
 	 *
 	 * In most cases, this should be used to add metaboxes. See example-functions.php
 	 */
-	do_action( 'cmb2_admin_init' );
+	do_action( 'bento_cmb2_admin_init' );
 }
 
 /**
@@ -23,14 +23,14 @@ if ( is_admin() ) {
  *
  * Can be used to add metaboxes if needed on the front-end or needed on the front and backend.
  */
-do_action( 'cmb2_init' );
+do_action( 'bento_cmb2_init' );
 
 /**
  * For back-compat. Does the dirtywork of instantiating all the
  * CMB2 instances for the cmb2_meta_boxes filter
  * @since  2.0.2
  */
-$all_meta_boxes_config = apply_filters( 'cmb2_meta_boxes', array() );
+$all_meta_boxes_config = apply_filters( 'bento_cmb2_meta_boxes', array() );
 foreach ( (array) $all_meta_boxes_config as $meta_box_config ) {
 	new CMB2( $meta_box_config );
 }
@@ -38,7 +38,7 @@ foreach ( (array) $all_meta_boxes_config as $meta_box_config ) {
 /**
  * Fires after all CMB2 instances are created
  */
-do_action( 'cmb2_init_before_hookup' );
+do_action( 'bento_cmb2_init_before_hookup' );
 
 /**
  * Get all created metaboxes, and instantiate CMB2_hookup
@@ -54,6 +54,6 @@ foreach ( CMB2_Boxes::get_all() as $cmb ) {
 /**
  * Fires after CMB2 initiation process has been completed
  */
-do_action( 'cmb2_after_init' );
+do_action( 'bento_cmb2_after_init' );
 
 // End. That's it, folks! //

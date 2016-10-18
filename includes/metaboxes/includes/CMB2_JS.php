@@ -48,7 +48,7 @@ class CMB2_JS {
 	 */
 	public static function enqueue() {
 		// Filter required script dependencies
-		$dependencies = apply_filters( 'cmb2_script_dependencies', self::$dependencies );
+		$dependencies = apply_filters( 'bento_cmb2_script_dependencies', self::$dependencies );
 
 		// if colorpicker
 		if ( ! is_admin() && isset( $dependencies['wp-color-picker'] ) ) {
@@ -142,7 +142,7 @@ class CMB2_JS {
 			),
 		);
 
-		wp_localize_script( self::$handle, self::$js_variable, apply_filters( 'cmb2_localized_data', $l10n ) );
+		wp_localize_script( self::$handle, self::$js_variable, apply_filters( 'bento_cmb2_localized_data', $l10n ) );
 	}
 
 }

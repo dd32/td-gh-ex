@@ -225,7 +225,7 @@ function cmb2_get_metabox_form( $meta_box, $object_id = 0, $args = array() ) {
 	$form = ob_get_contents();
 	ob_end_clean();
 
-	return apply_filters( 'cmb2_get_metabox_form', $form, $object_id, $cmb );
+	return apply_filters( 'bento_cmb2_get_metabox_form', $form, $object_id, $cmb );
 }
 
 /**
@@ -278,7 +278,7 @@ function cmb2_print_metabox_form( $meta_box, $object_id = 0, $args = array() ) {
 		CMB2_hookup::enqueue_cmb_js();
 	}
 
-	$form_format = apply_filters( 'cmb2_get_metabox_form_format', $args['form_format'], $object_id, $cmb );
+	$form_format = apply_filters( 'bento_cmb2_get_metabox_form_format', $args['form_format'], $object_id, $cmb );
 
 	$format_parts = explode( '%3$s', $form_format );
 

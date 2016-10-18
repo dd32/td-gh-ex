@@ -213,7 +213,7 @@ class CMB2_Field {
 		 *
 		 * @param CMB2_Field object $field This field object
 		 */
-		$data = apply_filters( 'cmb2_override_meta_value', 'cmb2_field_no_override_val', $this->object_id, $a, $this );
+		$data = apply_filters( 'bento_cmb2_override_meta_value', 'cmb2_field_no_override_val', $this->object_id, $a, $this );
 
 		/**
 		 * Filter and parameters are documented for 'cmb2_override_meta_value' filter (above).
@@ -224,7 +224,7 @@ class CMB2_Field {
 		 *
 		 * @since 2.0.0
 		 */
-		$data = apply_filters( "cmb2_override_{$a['field_id']}_meta_value", $data, $this->object_id, $a, $this );
+		$data = apply_filters( "bento_cmb2_override_{$a['field_id']}_meta_value", $data, $this->object_id, $a, $this );
 
 		// If no override, get value normally
 		if ( 'cmb2_field_no_override_val' === $data ) {
@@ -277,7 +277,7 @@ class CMB2_Field {
 		 *
 		 * @param CMB2_Field object $field This field object
 		 */
-		$override = apply_filters( 'cmb2_override_meta_save', null, $a, $this->args(), $this );
+		$override = apply_filters( 'bento_cmb2_override_meta_save', null, $a, $this->args(), $this );
 
 		/**
 		 * Filter and parameters are documented for 'cmb2_override_meta_save' filter (above).
@@ -288,7 +288,7 @@ class CMB2_Field {
 		 *
 		 * @since 2.0.0
 		 */
-		$override = apply_filters( "cmb2_override_{$a['field_id']}_meta_save", $override, $a, $this->args(), $this );
+		$override = apply_filters( "bento_cmb2_override_{$a['field_id']}_meta_save", $override, $a, $this->args(), $this );
 
 		// If override, return that
 		if ( null !== $override ) {
@@ -339,7 +339,7 @@ class CMB2_Field {
 		 * @param array $field_args All field arguments
 		 * @param CMB2_Field object $field This field object
 		 */
-		$override = apply_filters( 'cmb2_override_meta_remove', null, $a, $this->args(), $this );
+		$override = apply_filters( 'bento_cmb2_override_meta_remove', null, $a, $this->args(), $this );
 
 		/**
 		 * Filter whether to override removing of meta value.
@@ -361,7 +361,7 @@ class CMB2_Field {
 		 * @param array $field_args All field arguments
 		 * @param CMB2_Field object $field This field object
 		 */
-		$override = apply_filters( "cmb2_override_{$a['field_id']}_meta_remove", $override, $a, $this->args(), $this );
+		$override = apply_filters( "bento_cmb2_override_{$a['field_id']}_meta_remove", $override, $a, $this->args(), $this );
 
 		// If no override, remove as usual
 		if ( null !== $override ) {
@@ -544,7 +544,7 @@ class CMB2_Field {
 		 *                      and not values. The value can be anything, because it is meaningless. Example:
 		 *                      array( 'my_custom_field' => 1 )
 		 */
-		$all_fields = array_merge( apply_filters( 'cmb2_non_repeatable_fields', array() ), $internal_fields );
+		$all_fields = array_merge( apply_filters( 'bento_cmb2_non_repeatable_fields', array() ), $internal_fields );
 		return isset( $all_fields[ $type ] );
 	}
 
@@ -570,7 +570,7 @@ class CMB2_Field {
 		}
 
 		// Or custom escaping filter can be used
-		$esc = apply_filters( "cmb2_types_esc_{$this->type()}", null, $meta_value, $this->args(), $this );
+		$esc = apply_filters( "bento_cmb2_types_esc_{$this->type()}", null, $meta_value, $this->args(), $this );
 		if ( null !== $esc ) {
 			return $esc;
 		}
@@ -760,7 +760,7 @@ class CMB2_Field {
 		 *
 		 * @param array $field_types The types of fields which should get the 'table-layout' class
 		 */
-		$repeat_table_rows_types = apply_filters( 'cmb2_repeat_table_row_types', array(
+		$repeat_table_rows_types = apply_filters( 'bento_cmb2_repeat_table_row_types', array(
 			'text_url', 'text',
 		) );
 
@@ -795,7 +795,7 @@ class CMB2_Field {
 		 * @param string            $classes Space-separated list of row classes
 		 * @param CMB2_Field object $field   This field object
 		 */
-		return apply_filters( 'cmb2_row_classes', implode( ' ', $classes ), $this );
+		return apply_filters( 'bento_cmb2_row_classes', implode( ' ', $classes ), $this );
 	}
 
 	/**
@@ -940,7 +940,7 @@ class CMB2_Field {
 		) );
 
 		// Allow a filter override of the default value
-		$args['default']    = apply_filters( 'cmb2_default_filter', $args['default'], $this );
+		$args['default']    = apply_filters( 'bento_cmb2_default_filter', $args['default'], $this );
 		// $args['multiple']   = isset( $args['multiple'] ) ? $args['multiple'] : ( 'multicheck' == $args['type'] ? true : false );
 		$args['repeatable'] = $args['repeatable'] && ! $this->repeatable_exception( $args['type'] );
 		$args['inline']     = $args['inline'] || false !== stripos( $args['type'], '_inline' );
@@ -970,7 +970,7 @@ class CMB2_Field {
 			$args['options']['textarea_name'] = $args['_name'];
 		}
 
-		$option_types = apply_filters( 'cmb2_all_or_nothing_types', array( 'select', 'radio', 'radio_inline', 'taxonomy_select', 'taxonomy_radio', 'taxonomy_radio_inline' ), $this );
+		$option_types = apply_filters( 'bento_cmb2_all_or_nothing_types', array( 'select', 'radio', 'radio_inline', 'taxonomy_select', 'taxonomy_radio', 'taxonomy_radio_inline' ), $this );
 
 		if ( in_array( $args['type'], $option_types, true ) ) {
 

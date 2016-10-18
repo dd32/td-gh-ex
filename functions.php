@@ -21,7 +21,6 @@ function bento_theme_setup() {
 	add_action( 'wp_enqueue_scripts', 'bento_theme_styles_scripts' );
 	add_action( 'admin_enqueue_scripts', 'bento_admin_scripts' );
 	add_action( 'template_redirect', 'bento_theme_adjust_content_width' );
-	add_action( 'wp_head', 'bento_favicon' );
 	add_action( 'get_header', 'bento_enable_threaded_comments' );
 	add_action( 'wp_ajax_dismiss_novice', 'bento_dismiss_novice' );
 	add_action( 'wp_ajax_nopriv_dismiss_novice', 'bento_dismiss_novice' );
@@ -37,7 +36,7 @@ function bento_theme_setup() {
 	add_filter( 'body_class', 'bento_extra_classes' );
 	add_filter( 'post_class', 'bento_has_thumb_class' );
 	add_filter( 'get_the_archive_title', 'bento_cleaner_archive_titles' );
-	add_filter( 'cmb2_admin_init', 'bento_metaboxes' );
+	add_filter( 'bento_cmb2_admin_init', 'bento_metaboxes' );
 	add_filter( 'upload_mimes', 'bento_font_uploading' );
 	add_filter( 'dynamic_sidebar_params', 'bento_count_footer_widgets', 50 );
 	
@@ -81,19 +80,19 @@ function bento_theme_setup() {
 function bento_theme_styles_scripts () {	
 	
 	// Register scripts
-	wp_register_script( 'bento-isotope', get_template_directory_uri().'/includes/isotope/isotope.pkgd.min.js', array('jquery'), false, true );
-	wp_register_script( 'bento-packery', get_template_directory_uri().'/includes/isotope/packery-mode.pkgd.min.js', array('jquery'), false, true );
-	wp_register_script( 'bento-imagesloaded', get_template_directory_uri().'/includes/isotope/imagesloaded.pkgd.min.js', array('jquery'), false, true );
-	wp_register_script( 'bento-fitcolumns', get_template_directory_uri().'/includes/isotope/fit-columns.js', array('jquery'), false, true );
-	wp_register_script( 'bento-fitvids', get_template_directory_uri().'/includes/fitvids/jquery.fitvids.js', array('jquery'), false, true );
+	wp_register_script( 'isotope', get_template_directory_uri().'/includes/isotope/isotope.pkgd.min.js', array('jquery'), false, true );
+	wp_register_script( 'packery', get_template_directory_uri().'/includes/isotope/packery-mode.pkgd.min.js', array('jquery'), false, true );
+	wp_register_script( 'imagesloaded', get_template_directory_uri().'/includes/isotope/imagesloaded.pkgd.min.js', array('jquery'), false, true );
+	wp_register_script( 'fitcolumns', get_template_directory_uri().'/includes/isotope/fit-columns.js', array('jquery'), false, true );
+	wp_register_script( 'fitvids', get_template_directory_uri().'/includes/fitvids/jquery.fitvids.js', array('jquery'), false, true );
 	wp_register_script( 'bento-theme-scripts', get_template_directory_uri().'/includes/js/theme-scripts.js', array('jquery'), false, true );
 	
 	// Enqueue scripts
-	wp_enqueue_script( 'bento-isotope' );
-	wp_enqueue_script( 'bento-packery' );
-	wp_enqueue_script( 'bento-imagesloaded' );
-	wp_enqueue_script( 'bento-fitcolumns' );
-	wp_enqueue_script( 'bento-fitvids' );
+	wp_enqueue_script( 'isotope' );
+	wp_enqueue_script( 'packery' );
+	wp_enqueue_script( 'imagesloaded' );
+	wp_enqueue_script( 'fitcolumns' );
+	wp_enqueue_script( 'fitvids' );
 	wp_enqueue_script( 'bento-theme-scripts' );
 	
 	// Register styles
@@ -280,7 +279,8 @@ function bento_insert_custom_styles() {
 		}
 		if ( get_post_meta( $postid, 'bento_uppercase_title', true ) == 'on' ) {
 			$custom_css .= '
-				.post-header-title h1 { 
+				.post-header-title h1,
+				.entry-header h1 { 
 					text-transform: uppercase;
 				}
 			';
@@ -382,14 +382,6 @@ if ( file_exists( get_template_directory() . '/includes/template-tags.php' ) ) {
 function bento_theme_adjust_content_width() {
 	if ( ! isset( $content_width ) ) {
     	$content_width = 1080;
-	}
-}
-
-
-// Custom favicon
-function bento_favicon() {
-	if ( get_theme_mod( 'site_icon' ) ) {
-		echo '<link rel="shortcut icon" href="'.esc_url( get_theme_mod( 'site_icon' ) ).'" />';
 	}
 }
 

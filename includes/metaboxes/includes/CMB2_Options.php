@@ -164,7 +164,7 @@ class CMB2_Option {
 			return false;
 		}
 
-		$test_save = apply_filters( "cmb2_override_option_save_{$this->key}", 'cmb2_no_override_option_save', $this->options, $this );
+		$test_save = apply_filters( "bento_cmb2_override_option_save_{$this->key}", 'cmb2_no_override_option_save', $this->options, $this );
 
 		if ( 'cmb2_no_override_option_save' !== $test_save ) {
 			return $test_save;
@@ -186,7 +186,7 @@ class CMB2_Option {
 	public function get_options( $default = null ) {
 		if ( empty( $this->options ) && ! empty( $this->key ) ) {
 
-			$test_get = apply_filters( "cmb2_override_option_get_{$this->key}", 'cmb2_no_override_option_get', $default, $this );
+			$test_get = apply_filters( "bento_cmb2_override_option_get_{$this->key}", 'cmb2_no_override_option_get', $default, $this );
 
 			if ( 'cmb2_no_override_option_get' !== $test_get ) {
 				$this->options = $test_get;

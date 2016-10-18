@@ -55,7 +55,7 @@ class CMB2_Types {
 		 *                                   but could also be `comment`, `user` or `options-page`.
 		 * @param object $field_type_object  This `CMB2_Types` object
 		 */
-		do_action( "cmb2_render_$name", $this->field, $this->field->escaped_value(), $this->field->object_id, $this->field->object_type, $this );
+		do_action( "bento_cmb2_render_$name", $this->field, $this->field->escaped_value(), $this->field->object_id, $this->field->object_type, $this );
 	}
 
 	/**
@@ -153,10 +153,10 @@ class CMB2_Types {
 	public function is_valid_img_ext( $file ) {
 		$file_ext = $this->get_file_ext( $file );
 
-		$is_valid_types = apply_filters( 'cmb2_valid_img_types', array( 'jpg', 'jpeg', 'png', 'gif', 'ico', 'icon' ) );
+		$is_valid_types = apply_filters( 'bento_cmb2_valid_img_types', array( 'jpg', 'jpeg', 'png', 'gif', 'ico', 'icon' ) );
 		$is_valid = $file_ext && in_array( $file_ext, (array) $is_valid_types );
 
-		return (bool) apply_filters( 'cmb2_' . $this->field->id() . '_is_valid_img_ext', $is_valid, $file, $file_ext );
+		return (bool) apply_filters( 'bento_cmb2_' . $this->field->id() . '_is_valid_img_ext', $is_valid, $file, $file_ext );
 	}
 
 	/**
@@ -168,7 +168,7 @@ class CMB2_Types {
 	 * @return array            Parsed and filtered arguments
 	 */
 	public function parse_args( $args, $element, $defaults ) {
-		return wp_parse_args( apply_filters( "cmb2_{$element}_attributes", $this->field->maybe_set_attributes( $args ), $defaults, $this->field, $this ), $defaults );
+		return wp_parse_args( apply_filters( "bento_cmb2_{$element}_attributes", $this->field->maybe_set_attributes( $args ), $defaults, $this->field, $this ), $defaults );
 	}
 
 	/**
@@ -668,8 +668,8 @@ class CMB2_Types {
 
 		$option_none  = $this->field->args( 'show_option_none' );
 		if ( ! empty( $option_none ) ) {
-			$option_none_value = apply_filters( 'cmb2_taxonomy_select_default_value', '' );
-			$option_none_value = apply_filters( "cmb2_taxonomy_select_{$this->_id()}_default_value", $option_none_value );
+			$option_none_value = apply_filters( 'bento_cmb2_taxonomy_select_default_value', '' );
+			$option_none_value = apply_filters( "bento_cmb2_taxonomy_select_{$this->_id()}_default_value", $option_none_value );
 
 			$options .= $this->select_option( array(
 				'label'   => $option_none,
@@ -750,7 +750,7 @@ class CMB2_Types {
 		} else {
 			$option_none  = $this->field->args( 'show_option_none' );
 			if ( ! empty( $option_none ) ) {
-				$option_none_value = apply_filters( "cmb2_taxonomy_radio_{$this->_id()}_default_value", apply_filters( 'cmb2_taxonomy_radio_default_value', '' ) );
+				$option_none_value = apply_filters( "bento_cmb2_taxonomy_radio_{$this->_id()}_default_value", apply_filters( 'bento_cmb2_taxonomy_radio_default_value', '' ) );
 				$args = array(
 					'value' => $option_none_value,
 					'label' => $option_none,
