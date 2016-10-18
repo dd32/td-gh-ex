@@ -4,7 +4,7 @@ Theme URI: http://www.tenman.info/wp3/raindrops/
 Description: This theme can change freely fonts,layout,color scheme and header image for each post,page. The google fonts, you can use freely in the post more than 90percent of the fonts.Color scheme and layout, you can freely change from theme customizer.For more updates, please make sure to open the link of the changelog from the help tab of this theme page.Add new post, so also to help tab of edit post page has been described how to use tips, please visit. Supported languages Japanese - JAPAN (ja) French - FRANCE (fr_FR) Polish - POLAND (PL) (pl_PL) Portuguese - BRAZIL (pt_BR)
 Author: Tenman
 Author URI: http://www.tenman.info/wp3/
-Version: 1.436
+Version: 1.437
 Tags: one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, post-formats, featured-images, full-width-template, rtl-language-support, microformats
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -3454,7 +3454,7 @@ sup {
 .page-template-blank_front .raindrops-category-posts,
 .page-template-blank_front .raindrops-tag-posts .title{
     text-overflow: ellipsis;
-    max-height:2.4em;
+    max-height:2.3em;
     overflow:hidden;
 }
 
@@ -3607,22 +3607,24 @@ body#front-page-template-pages:not(.logged-in) .entry-meta{
 /* raindrops-toc  for front-page.php ,full-width.php */
 
 #front-page-template-pages  .page{
-    margin:0 10%;
+    margin:auto;
     padding:1em;
 }
 .page-template-full-width .raindrops-toc-front,
 .page-template-full-width .entry.page{
-    margin:0 10%;
+    margin:auto;
     padding:1em;
 }
-
+.raindrops-toc-front{
+    margin:0 1em;
+}
 .raindrops-toc-front li{
     list-style:none;
-    width:31%;
+    width:32%;
     text-align:center;
     display:inline-block;
     box-sizing:border-box;
-    margin:1%;
+    margin:.5%;
     border:1px solid rgba(222,222,222,.8);
 }
 .raindrops-toc-front a{
@@ -3851,9 +3853,15 @@ body#front-page-template-pages:not(.logged-in) .entry-meta{
     clear:both;
     visibility:hidden;
 }
-.portfolio-page-content,
-.stickies{
+.portfolio-page-content{
     margin:1% 3%;
+}
+.stickies{
+    border-top: solid 6px rgba(68, 68, 68,0.5);
+    padding: 1.53846153846em 1.53846153846em 1.53846153846em 1.53846153846em;
+    background: url(images/sticky.png);
+    margin-bottom: 2em;
+    line-height: 1.5;
 }
 .portfolio .edit-link{
     margin:0;
