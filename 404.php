@@ -12,7 +12,7 @@ get_header(); ?>
 
 			<section class="error-404 not-found">
 				<header class="page-header">
-                    <h1 class="page-title"><?php echo wp_kses_post( get_theme_mod( 'kra-website-error-head', false ) ) ?></h1>
+                    <h1 class="page-title"><?php echo wp_kses_post( get_theme_mod( 'kra-website-error-head', __( 'Oops! That page can\'t be found.', 'electa' ) ) ); ?></h1>
                     
                     <?php if ( function_exists( 'bcn_display' ) ) : ?>
                         <div class="cx-breadcrumbs">
@@ -24,7 +24,7 @@ get_header(); ?>
                 
                 <i class="fa fa-ban"></i>
                 
-                <p><?php echo wp_kses_post( get_theme_mod( 'kra-website-error-msg', false ) ) ?></p>
+                <p><?php echo wp_kses_post( get_theme_mod( 'kra-website-error-msg', __( 'The page you are looking for can\'t be found. Please select one of the options below.', 'electa' ) ) ); ?></p>
                 
                 <div class="not-found-options">
                     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="electa-button"><?php _e( 'Return Home', 'electa' ); ?></a>

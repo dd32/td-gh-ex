@@ -108,6 +108,7 @@ function customizer_library_kaira_build_styles() {
                 .electa-button:hover,
                 .main-navigation button:hover,
                 #comments .form-submit #submit:hover,
+                .header-menu-button:hover,
                 .wpcf7-submit:hover'
             ),
             'declarations' => array(

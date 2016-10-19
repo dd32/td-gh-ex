@@ -61,6 +61,11 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.00
+* Mobile style tweaks
+* Fixed 404 message & nothing found message
+Premium: Fixed sticky header bug
+
 #### 1.2.9
 * Fixed search mobile display
 

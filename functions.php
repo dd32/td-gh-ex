@@ -5,7 +5,7 @@
  * @package Electa
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.2.9' );
+define( 'KAIRA_THEME_VERSION' , '1.3.00' );
 
 // Upgrade / Order Premium page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -82,14 +82,6 @@ function kaira_setup_theme() {
 	 */
 	add_theme_support( 'html5', array(
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
-	) );
-
-	/*
-	 * Enable support for Post Formats.
-	 * See http://codex.wordpress.org/Post_Formats
-	 */
-	add_theme_support( 'post-formats', array(
-		'aside', 'image', 'video', 'quote', 'link',
 	) );
 
 	// Setup the WordPress core custom background feature.

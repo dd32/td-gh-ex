@@ -18,7 +18,7 @@
 
 		<?php elseif ( is_search() ) : ?>
 
-			<p><?php echo wp_kses_post( get_theme_mod( 'kra-website-nosearch-msg', false ) ) ?></p>
+			<p><?php echo wp_kses_post( get_theme_mod( 'kra-website-nosearch-msg', __( 'Sorry, but nothing matched your search terms. Please try again with some different keywords or return to home.', 'electa' ) ) ); ?></p>
             
 			<div class="not-found-options">
                 <a href="<?php echo esc_url(home_url('/')); ?>" class="electa-button"><?php _e( 'Return Home', 'electa' ); ?></a>
@@ -31,7 +31,7 @@
 
 		<?php else : ?>
 
-			<p><?php echo wp_kses_post( get_theme_mod( 'kra-website-nosearch-msg', false ) ) ?></p>
+			<p><?php echo wp_kses_post( get_theme_mod( 'kra-website-nosearch-msg', __( 'Sorry, but nothing matched your search terms. Please try again with some different keywords or return to home.', 'electa' ) ) ); ?></p>
             
 			<div class="not-found-options">
                 <a href="<?php echo esc_url(home_url('/')); ?>" class="electa-button"><?php _e( 'Return Home', 'electa' ); ?></a>

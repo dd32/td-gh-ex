@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Electa\n"
-"POT-Creation-Date: 2016-10-04 10:08+0200\n"
+"POT-Creation-Date: 2016-10-19 11:13+0200\n"
 "PO-Revision-Date: 2016-08-28 17:03+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -18,6 +18,16 @@ msgstr ""
 "esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: js\n"
+
+#: 404.php:15 customizer/customizer-options.php:245
+msgid "Oops! That page can't be found."
+msgstr ""
+
+#: 404.php:27 customizer/customizer-options.php:253
+msgid ""
+"The page you are looking for can't be found. Please select one of the "
+"options below."
+msgstr ""
 
 #: 404.php:30 content-none.php:24 content-none.php:37
 msgid "Return Home"
@@ -121,6 +131,13 @@ msgstr ""
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: content-none.php:21 content-none.php:34
+#: customizer/customizer-options.php:261
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords or return to home."
 msgstr ""
 
 #: content-page.php:25 content-single.php:25 content.php:31
@@ -358,22 +375,12 @@ msgstr ""
 msgid "404 Error Page Heading"
 msgstr ""
 
-#: customizer/customizer-options.php:245
-msgid "Oops! That page can't be found."
-msgstr ""
-
 #: customizer/customizer-options.php:246
 msgid "Enter the heading for the 404 Error page"
 msgstr ""
 
 #: customizer/customizer-options.php:250
 msgid "Error 404 Message"
-msgstr ""
-
-#: customizer/customizer-options.php:253
-msgid ""
-"The page you are looking for can't be found. Please select one of the "
-"options below."
 msgstr ""
 
 #: customizer/customizer-options.php:254
@@ -384,12 +391,6 @@ msgstr ""
 msgid "No Search Results"
 msgstr ""
 
-#: customizer/customizer-options.php:261
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords or return to home."
-msgstr ""
-
 #: customizer/customizer-options.php:262
 msgid "Enter the default text for when no search results are found"
 msgstr ""
@@ -398,7 +399,7 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:115
+#: functions.php:107
 msgid "Sidebar"
 msgstr ""
 
