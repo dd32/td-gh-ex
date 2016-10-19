@@ -96,9 +96,10 @@
   }
 }
 
-.newsmag-image {
+.newsmag-image, .newsmag-post-box-image {
   overflow: hidden;
   display: block;
+  position: relative;
   > img,
   > a > img {
     -moz-transition: all 0.3s;
@@ -193,11 +194,13 @@
   margin-bottom: 40px;
   background-size: cover;
   background-repeat: no-repeat;
+  position: relative;
   .container {
     position: relative;
     top: 40%;
   }
-  h2 {
+  h3, h2 {
+    text-transform: initial;
     color: #FFF;
     font-size: 33px;
     font-family: 'Poppins', serif;
@@ -208,6 +211,23 @@
     height: 455px;
     margin-bottom: 0;
     background-attachment: fixed;
+    &:before {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      background: -moz-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 1) 100%);
+      background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, transparent), color-stop(90%, rgba(0, 0, 0, 1)));
+      background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 1) 100%);
+      background: -o-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 1) 100%);
+      background: -ms-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 1) 100%);
+      background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0);
+      content: '';
+      z-index: 0;
+    }
     .container {
       position: relative;
       top: 50%;
@@ -215,6 +235,7 @@
       transform: translateY(-50%);
     }
   }
+
 }
 
 .newsmag-archive-page {
@@ -228,13 +249,10 @@
   padding-bottom: 30px;
   border-bottom: 1px solid #ebebeb;
   &:last-of-type {
-    border-bottom: none;
-    padding-bottom: 0;
+    margin-bottom: 10px;
   }
   @media (min-width: 768px) {
-    > .row > .col-xs-12:last-of-type {
-      padding-left: 0;
-    }
+
   }
   @media (max-width: 767px) {
     .newsmag-image {
@@ -245,8 +263,31 @@
   .newsmag-image {
     display: inline-block;
     float: left;
+    position: relative;
     img {
       width: 100%;
+    }
+    &.newsmag-sticky-post-image {
+      float: none;
+      width: 100%;
+      margin-bottom: 25px;
+    }
+    .newsmag-format-sign {
+      position: absolute;
+      display: inline-block;
+      top: 0;
+      left: 20px;
+      color: #FFF;
+      z-index: 1;
+      background: $color__brand-red;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+      span {
+        color: #FFF;
+        font-size: 20px;
+      }
     }
   }
 
@@ -256,17 +297,25 @@
       font-family: $font__alternate;
       margin-top: 0;
       font-weight: 700;
+      text-transform: initial;
       > a {
         color: inherit;
+        font-weight: 700;
         &:hover,
         &:focus {
           text-decoration: none;
-          color: inherit;
+          color: $color__brand-red;
         }
       }
     }
+    color: #767676;
     .colored {
       margin-right: 5px;
+    }
+    &.newsmag-sticky-post-title {
+      h3 {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -363,5 +412,40 @@
     display: inline-block;
     width: 100%;
     position: relative;
+  }
+}
+
+.newsmag-image {
+  position: relative;
+  .newsmag-post-box-a-category {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 12px;
+    line-height: 12px;
+    text-transform: uppercase;
+    color: #FFF;
+    font-weight: 700;
+    font-family: 'Poppins', serif;
+    background: $color__brand-red;
+    padding: 6px 7px 5px 7px;
+    z-index: 2;
+  }
+  a {
+    &:before {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 45%;
+      background-color: rgba(41, 41, 41, 0);
+      background-image: -webkit-linear-gradient(bottom, #000, rgba(0, 0, 0, 0));
+      background-image: -moz-linear-gradient(bottom, #000, rgba(0, 0, 0, 0));
+      background-image: -o-linear-gradient(bottom, #000, rgba(0, 0, 0, 0));
+      background-image: -ms-linear-gradient(bottom, #000, rgba(0, 0, 0, 0));
+      background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
+      content: '';
+      z-index: 1;
+    }
   }
 }

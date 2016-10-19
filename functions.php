@@ -42,11 +42,23 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 		 */
 		add_theme_support( 'title-tag' );
 
+
 		/*
 		 * Enable support for Post Formats.
 		 * See https://developer.wordpress.org/themes/functionality/post-formats/
 		 */
-		add_theme_support( 'post-formats', array() );
+
+		add_theme_support( 'post-formats', array(
+			'aside',
+			'image',
+			'quote',
+			'link',
+			'gallery',
+			'video',
+			'status',
+			'audio',
+			'chat'
+		) );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
@@ -76,30 +88,10 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 		/**
 		 * Post Thumbs
 		 */
-		add_image_size( 'newsmag-single-post', 760, 490, true );
+		add_image_size( 'newsmag-single-post', 730, 330, true );
 		add_image_size( 'newsmag-recent-post-big', 560, 416, true );
 		add_image_size( 'newsmag-recent-post-list-image', 65, 65, true );
 		add_image_size( 'newsmag-slider-image', 1920, 600, true );
-
-		/**
-		 * Banners
-		 */
-		add_image_size( 'newsmag-wide-banner', 728, 90, true );
-		add_image_size( 'newsmag-square-banner', 300, 250, true );
-		add_image_size( 'newsmag-skyscraper-banner', 300, 600, true );
-
-		add_filter( 'image_size_names_choose', 'newsmag_image_sizes' );
-		function newsmag_image_sizes( $sizes ) {
-			$addsizes = array(
-				'newsmag-single-post'       => __( 'Single Post Size', 'newsmag' ),
-				'newsmag-wide-banner'       => __( 'Wide Banner', 'newsmag' ),
-				'newsmag-square-banner'     => __( 'Square Banner', 'newsmag' ),
-				'newsmag-skyscraper-banner' => __( 'Sky scraper Banner', 'newsmag' )
-			);
-			$newsizes = array_merge( $sizes, $addsizes );
-
-			return $newsizes;
-		}
 
 		/**
 		 * Add support for the custom logo functionality
@@ -140,9 +132,37 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 					"id"          => 'newsmag-req-ac-static-latest-news',
 					"title"       => esc_html__( 'Set front page to static', 'newsmag' ),
 					"description" => esc_html__( 'If you just installed Newsmag, and are not able to see the front-page demo, you need to go to Settings -> Reading , Front page displays and select "Static Page".', 'newsmag' ),
+					"help"        => wp_kses( 'If you need more help understanding how this works, check out the following <a target="_blank"  href="https://codex.wordpress.org/Creating_a_Static_Front_Page#WordPress_Static_Front_Page_Process">link</a>,', 'newsmag' ),
 					"check"       => newsmag_is_not_static_page()
 				),
-
+				array(
+					'id'          => 'newsmag-req-ac-add-widgets',
+					'title'       => esc_html__( 'Build your homepage!', 'newsmag' ),
+					'description' => esc_html__( 'Get started with Newsmag by adding a Slider Widget to the Header Area or by adding a Content widget. To achieve any of these actions, please head on to Customize -> Widgets -> Homepage : Header Area or Content Area and select any of the widgets presented there.', 'newsmag' ),
+					'check'       => newsmag_has_widgets()
+				),
+				array(
+					"id"          => 'newsmag-req-ac-install-wp-import-plugin',
+					"title"       => esc_html__( 'Install WordPress Importer', 'newsmag' ),
+					"description" => esc_html__( 'Please install the WordPress Importer to create the demo content.', 'newsmag' ),
+					"check"       => newsmag_check_wordpress_importer(),
+					"plugin_slug" => 'wordpress-importer'
+				),
+				array(
+					"id"          => 'newsmag-req-ac-install-wp-import-widget-plugin',
+					"title"       => esc_html__( 'Install Widget Importer Exporter', 'newsmag' ),
+					"description" => esc_html__( 'Please install the WordPress widget importer to create the demo content', 'newsmag' ),
+					"check"       => defined( "WIE_VERSION" ),
+					"plugin_slug" => 'widget-importer-exporter'
+				),
+				array(
+					"id"          => 'newsmag-req-ac-install-data',
+					"title"       => esc_html__( 'Run the import!', 'newsmag' ),
+					"description" => esc_html__( 'Head over to our website and download the sample content data.', 'newsmag' ),
+					"help"        => '<a target="_blank"  href="https://www.machothemes.com/sample-data/newsmag-lite-posts.xml">' . __( 'Posts', 'newsmag' ) . '</a>, 
+									   <a target="_blank"  href="https://www.machothemes.com/sample-data/newsmag-lite-widgets.wie">' . __( 'Widgets', 'newsmag' ) . '</a>',
+					"check"       => newsmag_has_content(),
+				),
 			);
 			require get_template_directory() . '/inc/admin/welcome-screen/welcome-screen.php';
 		}
@@ -151,10 +171,81 @@ endif;
 add_action( 'after_setup_theme', 'newsmag_setup' );
 
 /**
+ * @param string $format
+ *
+ * @return bool|mixed
+ */
+function newsmag_format_icon( $format = 'standard' ) {
+	if ( $format === 'standard' ) {
+		return false;
+	}
+
+	$icons = array(
+		'aside'   => 'fa fa-hashtag',
+		'image'   => 'fa fa-picture-o',
+		'quote'   => 'fa fa-quote-left',
+		'link'    => 'fa fa-link',
+		'gallery' => 'fa fa-th-large',
+		'video'   => 'fa fa-video-camera',
+		'status'  => 'fa fa-heartbeat',
+		'audio'   => 'fa fa-headphones',
+		'chat'    => 'fa fa-comment-o'
+	);
+
+	return $icons[ $format ];
+}
+
+/**
  * @return bool
  */
 function newsmag_is_not_static_page() {
 	return 'page' == get_option( 'show_on_front' ) ? true : false;
+}
+
+/**
+ * @return bool
+ */
+function newsmag_has_widgets() {
+	if ( ! is_active_sidebar( 'homepage-slider' ) && ! is_active_sidebar( 'content-area' ) ) {
+		return false;
+	}
+
+	return true;
+}
+
+/**
+ * @return bool
+ */
+function newmsag_has_posts() {
+	$count_posts = wp_count_posts();
+	if ( (int) $count_posts->publish > 4 ) {
+		return true;
+	}
+
+	return false;
+}
+
+function newsmag_has_content() {
+	$check = array(
+		'widgets' => newsmag_has_widgets(),
+		'posts'   => newmsag_has_posts(),
+	);
+
+	if ( $check['widgets'] && $check['posts'] ) {
+		return true;
+	}
+
+	return false;
+}
+
+function newsmag_check_wordpress_importer() {
+	if ( file_exists( ABSPATH . 'wp-content/plugins/wordpress-importer/wordpress-importer.php' ) ) {
+		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+		return is_plugin_active( 'wordpress-importer/wordpress-importer.php' );
+	}
+
+	return false;
 }
 
 /**
@@ -232,7 +323,7 @@ function newsmag_scripts() {
 	 * Load the fonts
 	 */
 	$query_args = array(
-		'family' => 'Hind:400,700|Lato:400,600,700|Poppins:400,500,600,700'
+		'family' => 'Lato:400,600,700|Poppins:400,500,600,700'
 	);
 
 	wp_enqueue_style( 'newsmag-fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), 1, 'all' );
@@ -274,6 +365,25 @@ function newsmag_scripts() {
 
 add_action( 'wp_enqueue_scripts', 'newsmag_scripts' );
 
+function newsmag_admin_scripts() {
+	/**
+	 * Load the fonts
+	 */
+	$query_args = array(
+		'family' => 'Lato:400,600,700|Poppins:400,500,600,700'
+	);
+
+	wp_enqueue_style( 'newsmag-fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), 1, 'all' );
+}
+
+add_action( 'admin_enqueue_scripts', 'newsmag_admin_scripts' );
+
+function newsmag_add_editor_styles() {
+	add_editor_style( 'inc/assets/css/custom-editor-style.css' );
+}
+
+add_action( 'admin_init', 'newsmag_add_editor_styles' );
+
 function newsmag_the_posts_navigation( $args = array() ) {
 	echo get_the_posts_navigation( $args );
 }
@@ -307,6 +417,8 @@ function newsmag_widget_init() {
 	}
 }
 
+add_action( 'widgets_init', 'newsmag_widget_init' );
+
 function newsmag_dirname_to_classname( $dirname ) {
 	$class_name = explode( '-', $dirname );
 	$class_name = array_map( 'ucfirst', $class_name );
@@ -315,7 +427,42 @@ function newsmag_dirname_to_classname( $dirname ) {
 	return $class_name;
 }
 
-add_action( 'widgets_init', 'newsmag_widget_init' );
+add_action( 'wp_ajax_newsmag_get_attachment_image', 'newsmag_get_attachment_image' );
+add_action( 'wp_ajax_nopriv_newsmag_get_attachment_image', 'newsmag_get_attachment_image' );
+
+function newsmag_get_attachment_image() {
+	$id   = intval( $_POST['attachment_id'] );
+	$size = esc_html( $_POST['attachment_size'] );
+
+	$src = wp_get_attachment_image( $id, false );
+
+	echo $src;
+	die();
+}
+
+function newsmag_remove_specific_widget( $sidebars_widgets ) {
+
+	foreach ( $sidebars_widgets as $widget_area => $widget_list ) {
+
+		if ( $widget_area === 'homepage-slider' && ! empty( $widget_list ) ) {
+			foreach ( $widget_list as $pos => $widget_id ) {
+				if ( strpos( $widget_id, 'newsmag_slider_widget' ) !== false ) {
+					continue;
+				}
+				unset( $sidebars_widgets[ $widget_area ][ $pos ] );
+			}
+
+			if ( count( $sidebars_widgets[ $widget_area ] ) > 1 ) {
+				$sidebars_widgets[ $widget_area ] = array_slice( $sidebars_widgets[ $widget_area ], 0, 1 );
+			}
+		}
+
+	}
+
+	return $sidebars_widgets;
+}
+
+add_filter( 'sidebars_widgets', 'newsmag_remove_specific_widget' );
 /**
  * Customizer additions.
  */
@@ -325,6 +472,11 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Load lazyload
+ */
+require get_template_directory() . '/inc/components/lazyload/class-newsmag-lazyload.php';
 
 /**
  * Sidebars

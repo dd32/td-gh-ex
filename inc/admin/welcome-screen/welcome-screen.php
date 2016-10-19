@@ -21,17 +21,6 @@ class Newsmag_Welcome {
 		/* enqueue script for customizer */
 		add_action( 'customize_controls_enqueue_scripts', array( $this, 'newsmag_welcome_scripts_for_customizer' ) );
 
-		/* load welcome screen */
-		add_action( 'newsmag_welcome', array( $this, 'newsmag_welcome_getting_started' ), 10 );
-		add_action( 'newsmag_welcome', array( $this, 'newsmag_welcome_actions_required' ), 20 );
-
-		if ( class_exists( 'MT_Theme_Importer' ) ) {
-			add_action( 'newsmag_welcome', array( $this, 'newsmag_welcome_import_demo' ), 30 );
-		}
-
-		add_action( 'newsmag_welcome', array( $this, 'newsmag_welcome_changelog' ), 50 );
-
-
 		/* ajax callback for dismissable required actions */
 		add_action( 'wp_ajax_newsmag_dismiss_required_action', array(
 			$this,
@@ -41,7 +30,6 @@ class Newsmag_Welcome {
 			$this,
 			'newsmag_dismiss_required_action_callback'
 		) );
-
 	}
 
 	/**
@@ -51,7 +39,10 @@ class Newsmag_Welcome {
 	 * @since 1.8.2.4
 	 */
 	public function newsmag_welcome_register_menu() {
-		add_theme_page( 'About Newsmag', 'About Newsmag', 'edit_theme_options', 'newsmag-welcome', array(
+		$action_count = $this->count_actions();
+		$title        = $action_count > 0 ? 'About Newsmag <span class="badge-action-count">' . esc_html( $action_count ) . '</span>' : 'About Newsmag';
+
+		add_theme_page( 'About Newsmag', $title, 'edit_theme_options', 'newsmag-welcome', array(
 			$this,
 			'newsmag_welcome_screen'
 		) );
@@ -92,36 +83,16 @@ class Newsmag_Welcome {
 	 */
 	public function newsmag_welcome_style_and_scripts( $hook_suffix ) {
 
-		if ( 'appearance_page_newsmag-welcome' == $hook_suffix ) {
-			wp_enqueue_style( 'newsmag-welcome-screen-css', get_template_directory_uri() . '/inc/admin/welcome-screen/css/welcome.css' );
-			wp_enqueue_script( 'newsmag-welcome-screen-js', get_template_directory_uri() . '/inc/admin/welcome-screen/js/welcome.js', array( 'jquery' ) );
+		wp_enqueue_style( 'newsmag-welcome-screen-css', get_template_directory_uri() . '/inc/admin/welcome-screen/css/welcome.css' );
+		wp_enqueue_script( 'newsmag-welcome-screen-js', get_template_directory_uri() . '/inc/admin/welcome-screen/js/welcome.js', array( 'jquery' ) );
 
-			global $newsmag_required_actions;
+		wp_localize_script( 'newsmag-welcome-screen-js', 'newsmagWelcomeScreenObject', array(
+			'nr_actions_required'      => $this->count_actions(),
+			'ajaxurl'                  => admin_url( 'admin-ajax.php' ),
+			'template_directory'       => get_template_directory_uri(),
+			'no_required_actions_text' => __( 'Hooray! There are no required actions for you right now.', 'newsmag' )
+		) );
 
-			$nr_actions_required = 0;
-
-			/* get number of required actions */
-			if ( get_option( 'newsmag_show_required_actions' ) ):
-				$newsmag_show_required_actions = get_option( 'newsmag_show_required_actions' );
-			else:
-				$newsmag_show_required_actions = array();
-			endif;
-
-			if ( ! empty( $newsmag_required_actions ) ):
-				foreach ( $newsmag_required_actions as $newsmag_required_action_value ):
-					if ( ( ! isset( $newsmag_required_action_value['check'] ) || ( isset( $newsmag_required_action_value['check'] ) && ( $newsmag_required_action_value['check'] == false ) ) ) && ( ( isset( $newsmag_show_required_actions[ $newsmag_required_action_value['id'] ] ) && ( $newsmag_show_required_actions[ $newsmag_required_action_value['id'] ] == true ) ) || ! isset( $newsmag_show_required_actions[ $newsmag_required_action_value['id'] ] ) ) ) :
-						$nr_actions_required ++;
-					endif;
-				endforeach;
-			endif;
-
-			wp_localize_script( 'newsmag-welcome-screen-js', 'newsmagWelcomeScreenObject', array(
-				'nr_actions_required'      => $nr_actions_required,
-				'ajaxurl'                  => admin_url( 'admin-ajax.php' ),
-				'template_directory'       => get_template_directory_uri(),
-				'no_required_actions_text' => __( 'Hooray! There are no required actions for you right now.', 'newsmag' )
-			) );
-		}
 	}
 
 	/**
@@ -134,29 +105,10 @@ class Newsmag_Welcome {
 		wp_enqueue_style( 'newsmag-welcome-screen-customizer-css', get_template_directory_uri() . '/inc/admin/welcome-screen/css/welcome_customizer.css' );
 		wp_enqueue_script( 'newsmag-welcome-screen-customizer-js', get_template_directory_uri() . '/inc/admin/welcome-screen/js/welcome_customizer.js', array( 'jquery' ), '20120206', true );
 
-		global $newsmag_required_actions;
-
-		$nr_actions_required = 0;
-
-		/* get number of required actions */
-		if ( get_option( 'newsmag_show_required_actions' ) ):
-			$newsmag_show_required_actions = get_option( 'newsmag_show_required_actions' );
-		else:
-			$newsmag_show_required_actions = array();
-		endif;
-
-		if ( ! empty( $newsmag_required_actions ) ):
-			foreach ( $newsmag_required_actions as $newsmag_required_action_value ):
-				if ( ( ! isset( $newsmag_required_action_value['check'] ) || ( isset( $newsmag_required_action_value['check'] ) && ( $newsmag_required_action_value['check'] == false ) ) ) && ( ( isset( $newsmag_show_required_actions[ $newsmag_required_action_value['id'] ] ) && ( $newsmag_show_required_actions[ $newsmag_required_action_value['id'] ] == true ) ) || ! isset( $newsmag_show_required_actions[ $newsmag_required_action_value['id'] ] ) ) ) :
-					$nr_actions_required ++;
-				endif;
-			endforeach;
-		endif;
-
 		wp_localize_script( 'newsmag-welcome-screen-customizer-js', 'newsmagWelcomeScreenCustomizerObject', array(
-			'nr_actions_required' => $nr_actions_required,
-			'aboutpage'           => esc_url( admin_url( 'themes.php?page=newsmag-welcome#actions_required' ) ),
-			'customizerpage'      => esc_url( admin_url( 'customize.php#actions_required' ) ),
+			'nr_actions_required' => $this->count_actions(),
+			'aboutpage'           => esc_url( admin_url( 'themes.php?page=newsmag-welcome&tab=recommended_actions' ) ),
+			'customizerpage'      => esc_url( admin_url( 'customize.php#recommended_actions' ) ),
 			'themeinfo'           => __( 'View Theme Info', 'newsmag' ),
 		) );
 	}
@@ -213,6 +165,38 @@ class Newsmag_Welcome {
 		die(); // this is required to return a proper result
 	}
 
+	/**
+	 *
+	 */
+	public function count_actions() {
+		global $newsmag_required_actions;
+
+		$newsmag_show_required_actions = get_option( 'newsmag_show_required_actions' );
+		if ( ! $newsmag_show_required_actions ) {
+			$newsmag_show_required_actions = array();
+		}
+
+		$i = 0;
+		foreach ( $newsmag_required_actions as $action ) {
+			$true      = false;
+			$dismissed = false;
+
+			if ( ! $action['check'] ) {
+				$true = true;
+			}
+
+			if ( ! empty( $newsmag_show_required_actions ) && isset( $newsmag_show_required_actions[ $action['id'] ] ) && ! $newsmag_show_required_actions[ $action['id'] ] ) {
+				$true = false;
+			}
+
+			if ( $true ) {
+				$i ++;
+			}
+		}
+
+
+		return $i;
+	}
 
 	/**
 	 * Welcome screen content
@@ -220,78 +204,63 @@ class Newsmag_Welcome {
 	 * @since 1.8.2.4
 	 */
 	public function newsmag_welcome_screen() {
-
 		require_once( ABSPATH . 'wp-load.php' );
 		require_once( ABSPATH . 'wp-admin/admin.php' );
 		require_once( ABSPATH . 'wp-admin/admin-header.php' );
+
+		$newsmag      = wp_get_theme();
+		$active_tab   = isset( $_GET['tab'] ) ? $_GET['tab'] : 'getting_started';
+		$action_count = $this->count_actions();
+
 		?>
 
-		<ul class="newsmag-nav-tabs" role="tablist">
-			<li role="presentation" class="active"><a href="#getting_started" aria-controls="getting_started" role="tab"
-			                                          data-toggle="tab"><?php esc_html_e( 'Getting started', 'newsmag' ); ?></a>
-			</li>
-			<li role="presentation" class="newsmag-w-red-tab"><a href="#actions_required"
-			                                                    aria-controls="actions_required" role="tab"
-			                                                    data-toggle="tab"><?php esc_html_e( 'Recommended actions', 'newsmag' ); ?></a>
-			</li>
-			<?php if ( class_exists( 'MT_Theme_Importer' ) ) { ?>
-				<li role="presentation"><a href="#import_demo" aria-controls="import_demo" role="tab"
-				                           data-toggle="tab"><?php esc_html_e( 'Import Demo', 'newsmag' ); ?></a></li>
-			<?php } ?>
-			<li role="presentation"><a href="#changelog" aria-controls="changelog" role="tab"
-			                           data-toggle="tab"><?php esc_html_e( 'Changelog', 'newsmag' ); ?></a></li>
-		</ul>
+		<div class="wrap about-wrap epsilon-wrap">
 
-		<div class="newsmag-tab-content">
+			<h1><?php _e( 'Welcome to Newsmag! - Version ' . $newsmag['Version'], 'newsmag' ); ?></h1>
+
+			<div
+				class="about-text"><?php echo esc_html__( 'Newsmag is now installed and ready to use! Get ready to build something beautiful. We hope you enjoy it! We want to make sure you have the best experience using Newsmag and that is why we gathered here all the necessary information for you. We hope you will enjoy using Newsmag, as much as we enjoy creating great products.', 'newsmag' ); ?></div>
+
+			<div class="wp-badge epsilon-welcome-logo"></div>
+
+
+			<h2 class="nav-tab-wrapper wp-clearfix">
+				<a href="<?php echo admin_url( 'themes.php?page=newsmag-welcome&tab=getting_started' ); ?>"
+				   class="nav-tab <?php echo $active_tab == 'getting_started' ? 'nav-tab-active' : ''; ?>"><?php echo esc_html__( 'Getting Started', 'newsmag' ); ?></a>
+				<a href="<?php echo admin_url( 'themes.php?page=newsmag-welcome&tab=recommended_actions' ); ?>"
+				   class="nav-tab <?php echo $active_tab == 'recommended_actions' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Recommended Actions', 'newsmag' ); ?>
+					<?php echo $action_count > 0 ? '<span class="badge-action-count">' . esc_html( $action_count ) . '</span>' : '' ?></a>
+				<a href="<?php echo admin_url( 'themes.php?page=newsmag-welcome&tab=support' ); ?>"
+				   class="nav-tab <?php echo $active_tab == 'support' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Support', 'newsmag' ); ?></a>
+				<a href="<?php echo admin_url( 'themes.php?page=newsmag-welcome&tab=changelog' ); ?>"
+				   class="nav-tab <?php echo $active_tab == 'changelog' ? 'nav-tab-active' : ''; ?> "><?php echo esc_html__( 'Changelog', 'newsmag' ); ?></a>
+			</h2>
 
 			<?php
-			/**
-			 * @hooked newsmag_welcome_getting_started - 10
-			 * @hooked newsmag_welcome_actions_required - 20
-			 * @hooked newsmag_welcome_changelog - 50
-			 */
-			do_action( 'newsmag_welcome' ); ?>
+			switch ( $active_tab ) {
+				case 'getting_started':
+					require_once get_template_directory() . '/inc/admin/welcome-screen/sections/getting-started.php';
+					break;
+				case 'recommended_actions':
+					require_once get_template_directory() . '/inc/admin/welcome-screen/sections/actions-required.php';
+					break;
+				case 'support':
+					require_once get_template_directory() . '/inc/admin/welcome-screen/sections/support.php';
+					break;
+				case 'changelog':
+					require_once get_template_directory() . '/inc/admin/welcome-screen/sections/changelog.php';
+					break;
+				default:
+					require_once get_template_directory() . '/inc/admin/welcome-screen/sections/getting-started.php';
+					break;
+			}
+			?>
 
-		</div>
+
+		</div><!--/.wrap.about-wrap-->
+
 		<?php
 	}
-
-	/**
-	 * Getting started
-	 *
-	 * @since 1.8.2.4
-	 */
-	public function newsmag_welcome_getting_started() {
-		require_once( get_template_directory() . '/inc/admin/welcome-screen/sections/getting-started.php' );
-	}
-
-	/**
-	 * Actions required
-	 *
-	 * @since 1.8.2.4
-	 */
-	public function newsmag_welcome_actions_required() {
-		require_once( get_template_directory() . '/inc/admin/welcome-screen/sections/actions-required.php' );
-	}
-
-	/**
-	 * Changelog
-	 *
-	 * @since 1.8.2.4
-	 */
-	public function newsmag_welcome_import_demo() {
-		require_once( get_template_directory() . '/inc/admin/welcome-screen/sections/import-demo.php' );
-	}
-
-	/**
-	 * Changelog
-	 *
-	 * @since 1.8.2.4
-	 */
-	public function newsmag_welcome_changelog() {
-		require_once( get_template_directory() . '/inc/admin/welcome-screen/sections/changelog.php' );
-	}
-
 }
 
 new Newsmag_Welcome();

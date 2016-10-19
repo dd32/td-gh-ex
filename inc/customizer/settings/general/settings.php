@@ -46,7 +46,7 @@ $wp_customize->add_setting( 'newsmag_blog_breadcrumb_menu_separator',
 		                            'Newsmag_Customizer_Helper',
 		                            'newsmag_sanitize_radio_buttons'
 	                            ),
-	                            'default'           => 'rarr'
+	                            'default'           => '/'
                             )
 );
 
@@ -72,7 +72,7 @@ $wp_customize->add_setting( 'newsmag_footer_columns',
 		                            'Newsmag_Customizer_Helper',
 		                            'newsmag_sanitize_radio_buttons'
 	                            ),
-	                            'default'           => 3
+	                            'default'           => 4
                             )
 );
 
@@ -145,6 +145,14 @@ $wp_customize->add_setting( 'newsmag_show_single_post_tags',
 	                            'default'           => true
                             )
 );
+
+$wp_customize->add_setting( 'newsmag_excerpt_length',
+                            array(
+	                            'sanitize_callback' => 'absint',
+	                            'default'           => 25
+                            )
+);
+
 /**
  * Upsell
  */
@@ -153,7 +161,7 @@ $wp_customize->add_setting( 'newsmag_upsell_macho_blog',
 	                            'sanitize_callback' => 'esc_html',
 	                            'default'           => ''
                             ) );
-$wp_customize->add_setting( 'newsmag_upsell_pro_version',
+$wp_customize->add_setting( 'newsmag_upsell_pro_banners',
                             array(
 	                            'sanitize_callback' => 'esc_html',
 	                            'default'           => ''

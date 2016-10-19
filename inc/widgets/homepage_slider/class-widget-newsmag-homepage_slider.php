@@ -25,25 +25,28 @@ class Widget_Newsmag_homepage_slider extends WP_Widget {
 		}
 
 		?>
+		<p>
+			<label><?php _e( 'Title', 'newsmag' ); ?> :</label>
+			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"
+			       id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
+			       value="<?php echo esc_attr( $title ); ?>">
+		</p>
 
-		<label><?php _e( 'Title', 'newsmag' ); ?> :</label><br>
-		<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"
-		       id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" value="<?php echo esc_attr( $title ); ?>">
-		<br>
-		<hr>
-		<label><?php _e( 'Category', 'newsmag' ); ?> :</label><br>
-		<select name="<?php echo $this->get_field_name( 'newsmag_category' ); ?>"
-		        id="<?php echo $this->get_field_id( 'newsmag_category' ); ?>">
-			<option value="" <?php if ( empty( $instance['newsmag_category'] ) ) {
-				echo 'selected="selected"';
-			} ?>><?php _e( '&ndash; Select a category &ndash;', 'newsmag' ) ?></option>
-			<?php
-			$categories = get_categories( 'hide_empty=0' );
-			foreach ( $categories as $category ) { ?>
-				<option
-					value="<?php echo esc_attr($category->slug); ?>" <?php selected( esc_attr($category->slug), $instance['newsmag_category'] ); ?>><?php echo esc_html($category->cat_name); ?></option>
-			<?php } ?>
-		</select><br>
+		<p>
+			<label><?php _e( 'Category', 'newsmag' ); ?> :</label>
+			<select name="<?php echo $this->get_field_name( 'newsmag_category' ); ?>"
+			        id="<?php echo $this->get_field_id( 'newsmag_category' ); ?>">
+				<option value="" <?php if ( empty( $instance['newsmag_category'] ) ) {
+					echo 'selected="selected"';
+				} ?>><?php _e( '&ndash; Select a category &ndash;', 'newsmag' ) ?></option>
+				<?php
+				$categories = get_categories( 'hide_empty=0' );
+				foreach ( $categories as $category ) { ?>
+					<option
+						value="<?php echo esc_attr( $category->slug ); ?>" <?php selected( esc_attr( $category->slug ), $instance['newsmag_category'] ); ?>><?php echo esc_html( $category->cat_name ); ?></option>
+				<?php } ?>
+			</select>
+		</p>
 
 	<?php }
 
@@ -67,12 +70,14 @@ class Widget_Newsmag_homepage_slider extends WP_Widget {
 	 */
 	public function get_posts( $args ) {
 		$idObj = get_category_by_slug( $args['newsmag_category'] );
-		$id    = $idObj->term_id;
-
-		$atts = array(
-			'cat'            => $id,
+		$atts  = array(
 			'posts_per_page' => 2,
 		);
+
+		if ( $idObj ) {
+			$id          = $idObj->term_id;
+			$atts['cat'] = $id;
+		}
 
 		$posts = new WP_Query( $atts );
 

@@ -52,7 +52,7 @@
 /**
 * Select all widgets except for the search box
 */
-.widget:not(.widget_newsmag_banner) {
+.widget:not(.widget_newsmag_banner):not(.newsmag_slider) {
   > h3 {
     font-size: 18px;
     font-family: $font__alternate;
@@ -93,16 +93,32 @@
           border-bottom: none;
         }
         > a {
-          width: 70px;
-          height: 70px;
+          width: 65px;
+          height: 65px;
           display: inline-block;
           float: left;
+          position: relative;
+          &:before {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 45%;
+            background-color: rgba(41, 41, 41, 0);
+            background-image: -webkit-linear-gradient(bottom, #000, rgba(0, 0, 0, 0));
+            background-image: -moz-linear-gradient(bottom, #000, rgba(0, 0, 0, 0));
+            background-image: -o-linear-gradient(bottom, #000, rgba(0, 0, 0, 0));
+            background-image: -ms-linear-gradient(bottom, #000, rgba(0, 0, 0, 0));
+            background-image: linear-gradient(to top, #000, rgba(0, 0, 0, 0));
+            content: '';
+            z-index: 1;
+          }
         }
         .content {
           display: inline-block;
           float: left;
           margin-left: 20px;
-          width: 75%;
+          width: 67%;
           a {
             font-weight: 700;
             font-size: 15px;
@@ -210,6 +226,13 @@
     }
   }
 
+  &.popular-posts {
+    .posts-list {
+      .content {
+        margin-top: 4px;
+      }
+    }
+  }
   /**
   * Style the tag cloud
   */
@@ -597,7 +620,7 @@
     font-size: 15px;
     font-family: $font__main;
     margin-bottom: 40px;
-    h3 {
+    > h3.widget-title {
       font-family: $font__alternate;
       font-size: 17px;
       text-transform: uppercase;
@@ -606,7 +629,6 @@
       margin-top: 0;
       color: #333333;
     }
-
     &.widget_newsmag_recent {
       .newsmag-recent-post-widget {
         height: 65px;
@@ -615,6 +637,7 @@
         .newsmag-title {
           h3 {
             margin-bottom: 15px;
+            text-transform: initial;
           }
         }
         .newsmag-post-content {

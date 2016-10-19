@@ -21,55 +21,15 @@ jQuery(document).ready(function () {
                 jQuery('.newsmag-tab-pane#actions_required h1').append('<div id="temp_load" style="text-align:center"><img src="' + newsmagWelcomeScreenObject.template_directory + '/inc/admin/welcome-screen/img/ajax-loader.gif" /></div>');
             },
             success: function (data) {
+                location.reload();
                 jQuery("#temp_load").remove();
                 /* Remove loading gif */
-                jQuery('#' + data).parent().remove();
+                jQuery('#' + data).parent().slideToggle().remove();
                 /* Remove required action box */
-
-                var newsmag_actions_count = jQuery('.newsmag-actions-count').text();
-                /* Decrease or remove the counter for required actions */
-                if (typeof newsmag_actions_count !== 'undefined') {
-                    if (newsmag_actions_count == '1') {
-                        jQuery('.newsmag-actions-count').remove();
-                        jQuery('.newsmag-tab-pane#actions_required').append('<p>' + newsmagWelcomeScreenObject.no_required_actions_text + '</p>');
-                    }
-                    else {
-                        jQuery('.newsmag-actions-count').text(parseInt(newsmag_actions_count) - 1);
-                    }
-                }
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 console.log(jqXHR + " :: " + textStatus + " :: " + errorThrown);
             }
         });
     });
-
-    /* Tabs in welcome page */
-    function newsmag_welcome_page_tabs(event) {
-        jQuery(event).parent().addClass("active");
-        jQuery(event).parent().siblings().removeClass("active");
-        var tab = jQuery(event).attr("href");
-        jQuery(".newsmag-tab-pane").not(tab).css("display", "none");
-        jQuery(tab).fadeIn();
-    }
-
-    var newsmag_actions_anchor = location.hash;
-
-    if ((typeof newsmag_actions_anchor !== 'undefined') && (newsmag_actions_anchor != '')) {
-        newsmag_welcome_page_tabs('a[href="' + newsmag_actions_anchor + '"]');
-    }
-
-    jQuery(".newsmag-nav-tabs a").click(function (event) {
-        event.preventDefault();
-        newsmag_welcome_page_tabs(this);
-    });
-
-    /* Tab Content height matches admin menu height for scrolling purpouses */
-    $tab = jQuery('.newsmag-tab-content > div');
-    $admin_menu_height = jQuery('#adminmenu').height();
-    if ((typeof $tab !== 'undefined') && (typeof $admin_menu_height !== 'undefined')) {
-        $newheight = $admin_menu_height - 180;
-        $tab.css('min-height', $newheight);
-    }
-
 });

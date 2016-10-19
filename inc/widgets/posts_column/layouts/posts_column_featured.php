@@ -10,24 +10,26 @@ if ( $posts->have_posts() ):
 				if ( has_post_thumbnail() ) {
 					$image = get_the_post_thumbnail( get_the_ID(), 'newsmag-recent-post-big' );
 				}
-
+				$new_image = apply_filters( 'newsmag_widget_image', $image );
+				$allowed_tags = array('img' => array('data-original' => true, 'srcset' => true, 'sizes' => true, 'src' => true, 'class' => true, 'alt' => true, 'width' => true, 'height' => true), 'noscript' => array());
 				?>
 				<div class="newsmag-post-box-a">
-					<?php if ( ! empty( $instance['title'] ) ) { ?>
-						<h2 class="colored"><?php echo esc_html( $instance['title'] ); ?></h2>
-					<?php } else { ?>
-						<h2 class="colored">
-							<a href="<?php esc_url( $category[0]->link ) ?>"><?php echo esc_html( $category[0]->name ) ?></a>
-						</h2>
-					<?php } ?>
+					<h2>
+						<a href="<?php echo esc_url( get_category_link( $category[0]->term_id ) ) ?>">
+							<?php echo empty( $instance['title'] ) ? esc_html( $category[0]->name ) : esc_html( $instance['title'] ); ?>
+						</a>
+					</h2>
 					<a class="newsmag-post-box-image" href="<?php echo esc_url( get_the_permalink() ); ?>">
-						<?php echo wp_kses_post( $image ); ?>
+						<?php echo wp_kses($new_image, $allowed_tags); ?>
 						<span class="newsmag-post-box-a-category"><?php echo esc_html( $category[0]->name ) ?></span>
 					</a>
 					<h3>
 						<a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo wp_trim_words( get_the_title(), 9 ); ?></a>
 					</h3>
-					<span class="colored fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
+					<?php if ( $instance['show_date'] === 'on' ): ?>
+						<span class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
+					<?php endif; ?>
+					<?php newsmag_posted_on('comments'); ?>
 					<p><?php echo wp_trim_words( get_the_content(), 20, ' <a href="' . esc_url( get_the_permalink() ) . '">…</a>' ) ?></p>
 				</div>
 				<?php
@@ -36,6 +38,8 @@ if ( $posts->have_posts() ):
 				if ( has_post_thumbnail() ) {
 					$image = get_the_post_thumbnail( get_the_ID(), 'newsmag-recent-post-list-image' );
 				}
+				$new_image = apply_filters( 'newsmag_widget_image', $image );
+				$allowed_tags = array('img' => array('data-original' => true, 'srcset' => true, 'sizes' => true, 'src' => true, 'class' => true, 'alt' => true, 'width' => true, 'height' => true), 'noscript' => array());
 
 				?>
 				<div class="newsmag-blog-post-layout-b">
@@ -43,7 +47,7 @@ if ( $posts->have_posts() ):
 						<div class="col-sm-3 col-xs-4">
 							<div class="newsmag-image">
 								<a href=" <?php echo esc_url( get_the_permalink() ); ?>">
-									<?php echo wp_kses_post( $image ) ?>
+									<?php echo wp_kses($new_image, $allowed_tags); ?>
 								</a>
 							</div>
 						</div>
@@ -52,7 +56,10 @@ if ( $posts->have_posts() ):
 								<h3>
 									<a href="<?php echo esc_url( get_the_permalink() ); ?>"><?php echo wp_trim_words( get_the_title(), 15 ); ?></a>
 								</h3>
-								<span class="colored fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
+								<?php if ( $instance['show_date'] === 'on' ): ?>
+									<span class="fa fa-clock-o"></span> <?php echo esc_html( get_the_date() ); ?>
+								<?php endif; ?>
+								<?php newsmag_posted_on('comments'); ?>
 							</div>
 						</div>
 					</div>

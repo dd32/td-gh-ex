@@ -20,19 +20,19 @@ if ( ! empty( $img ) ): ?>
 			<div class="row">
 				<div class="col-xs-12">
 					<h2 class="page-title">
-					<?php
-					if ( is_day() ) :
-						printf( __( 'Day: %s', 'newsmag' ), get_the_date() );
-					elseif ( is_month() ) :
-						printf( __( 'Month: %s', 'newsmag' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'newsmag' ) ) );
-					elseif ( is_year() ) :
-						printf( __( 'Year: %s', 'newsmag' ), get_the_date( _x( 'Y', 'yearly archives date format', 'newsmag' ) ) );
-					elseif ( is_category() ):
-						the_archive_title();
-					else :
-						_e( 'Archives', 'newsmag' );
-					endif;
-					?>
+						<?php
+						if ( is_day() ) :
+							printf( __( 'Day: %s', 'newsmag' ), get_the_date() );
+						elseif ( is_month() ) :
+							printf( __( 'Month: %s', 'newsmag' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'newsmag' ) ) );
+						elseif ( is_year() ) :
+							printf( __( 'Year: %s', 'newsmag' ), get_the_date( _x( 'Y', 'yearly archives date format', 'newsmag' ) ) );
+						elseif ( is_category() ):
+							the_archive_title();
+						else :
+							single_tag_title( __( 'Tags archive: ', 'newsmag' ) );
+						endif;
+						?>
 					</h2>
 				</div>
 			</div>
@@ -40,19 +40,6 @@ if ( ! empty( $img ) ): ?>
 	</div>
 <?php endif; ?>
 	<div class="container">
-		<?php
-		/**
-		 * Enable breadcrumbs
-		 */
-		$breadcrumbs_enabled = get_theme_mod( 'newsmag_enable_post_breadcrumbs', true );
-		if ( $breadcrumbs_enabled ) { ?>
-			<div class="row">
-				<div class="col-xs-12">
-					<?php newsmag_breadcrumbs(); ?>
-				</div>
-			</div>
-		<?php } ?>
-
 		<div class="row">
 			<?php
 			$layout = get_theme_mod( 'newsmag_blog_layout', 'right-sidebar' ); ?>
