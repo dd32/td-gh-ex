@@ -52,6 +52,8 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version 1.6.5
+1. Update Style.css File for tags not showing on wordpress.org
 @Version 1.6.4.8
 1. Change Theme Description Priority.
 @Version 1.6.4.7
