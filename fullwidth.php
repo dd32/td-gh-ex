@@ -20,7 +20,7 @@
  <?php spark_content(); ?>
  </div><div class="clear"> </div>
  <?php edit_post_link(__('Edit This Entry','spark'), '<p>', '</p>'); ?>
- <?php if (comments_open( $post->ID ) == true ): comments_template('', true); endif; ?>
+ <?php comments_template('', true); ?>
  <?php endwhile; endif; ?>
  
 

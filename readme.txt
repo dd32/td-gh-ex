@@ -1,7 +1,7 @@
 ----------------------------------
 SPARK
 ----------------------------------
-Version: 	1.5
+Version: 	1.7
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
@@ -34,6 +34,11 @@ Instructions:
 ===============
 Changelog
 ===============
+
+Version 1.7
+=============================
+- Code Cleanup
+- Relative Tags Added
 
 Version 1.5
 =============================
