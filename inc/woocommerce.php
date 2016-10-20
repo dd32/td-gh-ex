@@ -49,7 +49,7 @@ function abacus_cart_link() {
 	}
 	?>
 	<li class="site-header-cart<?php echo esc_attr( $class ); ?>">
-		<a class="cart-contents" href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'abacus' ); ?>">
+		<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'abacus' ); ?>">
 			<?php echo wp_kses_data( WC()->cart->get_cart_total() ); ?> <span class="count"><?php echo wp_kses_data( sprintf( _n( '%d Item', '%d Items', WC()->cart->get_cart_contents_count(), 'abacus' ), WC()->cart->get_cart_contents_count() ) );?></span>
 		</a>
 		<ul><li><?php the_widget( 'WC_Widget_Cart', 'title=' ); ?></li></ul>
@@ -89,7 +89,7 @@ remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_pr
 
 add_action( 'woocommerce_shop_loop_item_title', 'abacus_woocommerce_template_loop_product_title', 10 );
 function abacus_woocommerce_template_loop_product_title() {
-	echo '</a><div class="shop-item-meta"><a href="' . get_the_permalink() . '"><h3>' . get_the_title() . '</h3></a>';
+	echo '</a><div class="shop-item-meta"><a href="' . esc_url( get_permalink() ) . '"><h3>' . get_the_title() . '</h3></a>';
 
     $product_cats = wp_get_post_terms( get_the_ID(), 'product_cat' );
 

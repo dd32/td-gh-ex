@@ -11,6 +11,22 @@
 $abacus_default_theme_options = abacus_default_theme_options();
 get_header(); ?>
 
+	<?php if ( has_header_image() ) : ?>
+		<div class="parallax">
+			<div class="header-img"></div>
+			<?php if ( is_active_sidebar( 'jumbo-headline' ) ) { ?>
+			<div class="container">
+				<div class="row">
+					<div class="home-top">
+						<?php dynamic_sidebar( 'jumbo-headline' ); ?>
+					</div>
+				</div>
+			</div>
+			<?php } ?>
+		</div>
+	<?php endif; ?>
+
+	<div class="home-container">
 	<div id="primary" class="container">
 
 		<?php
@@ -106,6 +122,7 @@ get_header(); ?>
 				</div>
 			</section><!-- .testimonials -->
 		<?php endif; ?>
+	</div>
 	</div>
 
 <?php get_footer(); ?>

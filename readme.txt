@@ -53,6 +53,10 @@ Source: http://www.splitshire.com/vintage-barber-tools/
 
 == CHANGELOG ==
 
+10/20/2016 v1.0.5
+* Fixed esc_url() functions
+* Replaced deprecated WooCommerce functions
+
 10/14/2016 v1.0.4
 * Added validation to URLs
 * Added default values to shop grid template
