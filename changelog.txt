@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+SimplyBlack version 4.8 - october 2016
+- added page template with left sidebar
+- several small adjustments
+- new screenshot
+
 SimplyBlack version 4.7 - august 2016
 - file content-postmeta-single: display post format too
 - updated text strings

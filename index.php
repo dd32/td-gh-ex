@@ -1,6 +1,6 @@
 <?php
 /*
- * The template for homepage.
+ * The template for main blog page.
  */
 ?>
 
