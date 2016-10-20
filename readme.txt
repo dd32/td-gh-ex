@@ -1,12 +1,12 @@
 === GridBulletin ===
 Contributors: Guido07111975
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donation%40guidovanderleest%2enl
-Version: 4.5
+Version: 4.6
 Requires at least: 4.2
 Tested up to: 4.6
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: one-column, two-columns, right-sidebar, full-width-template, custom-background, custom-header, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, blog, editor-style, translation-ready
+Tags: one-column, two-columns, right-sidebar, left-sidebar, full-width-template, custom-background, custom-header, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, blog, editor-style, translation-ready
 
 
 == Description ==
@@ -39,7 +39,7 @@ Theme offers a menu that can contain subpages (2 levels deep).
 
 You can create and set menu via WordPress Dashboard > Appearance > Menus.
 
-= Archive Page =
+= Archive page =
 Display your archive page with or without sidebar and archive title via WordPress Dashboard > Appearance > Customize. 
 
 
