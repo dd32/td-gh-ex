@@ -1,11 +1,11 @@
 /*
 Theme Name: BlueGray
 Theme URI: http://www.guidovanderleest.nl/bluegray
-Version: 4.7
+Version: 4.8
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: BlueGray is a free, clean, minimalistic, responsive, mobile-friendly WordPress theme. Features: sidebar, homepage widgets, footer widgets, custom header image, custom background, custom logo to replace site title and tagline, full width page template, dropdown navigation. For more info please check readme file. Enjoy.
-Tags: one-column, two-columns, right-sidebar, full-width-template, custom-background, custom-header, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, blog, editor-style, translation-ready
+Tags: one-column, two-columns, right-sidebar, left-sidebar, full-width-template, custom-background, custom-header, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, blog, editor-style, translation-ready
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: bluegray
@@ -76,6 +76,7 @@ body {background:#eee; font-family:'Open Sans', sans-serif; font-size:1em; color
 #main-content:after {content:''; display:block; height:0; clear:both;}
 
 #content {width:66%; float:left; padding:20px 2% 20px 0;}
+#content-right {width:66%; float:right; padding:20px 0 20px 2%;}
 #content-full {width:100%; float:left; padding:20px 0;}
 
 
@@ -114,12 +115,13 @@ p {margin:0 0 10px;}
 
 /* TABLE AND LISTS */
 table {margin:10px 0; border-collapse:collapse;}
-table, th, td {border: 1px solid #ddd; padding:5px 10px;}
+table, th, td {border:1px solid #ddd; padding:5px 10px;}
 table th {font-weight:bold;}
 
-ul {list-style:square; margin:5px 0 5px 0;}
-ol {list-style:decimal; margin:5px 0 5px 0;}
+ul {list-style:square; margin:10px 0;}
+ol {list-style:decimal; margin:10px 0;}
 li {margin:0 0 0 20px;}
+li > ul, li > ol {margin:0;}
 dl {margin:10px 0;}
 dt {font-weight:bold;}
 dd {margin:0 0 0 20px;}
@@ -132,6 +134,7 @@ input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hove
 input[type="checkbox"] {-webkit-appearance:checkbox; -moz-appearance:checkbox;}
 input[type="radio"] {-webkit-appearance:radio; -moz-appearance:radio;}
 select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
+button {font-size:1em; font-family:'Open Sans', sans-serif;}
 
 
 /* HEADER FIRST */
@@ -172,8 +175,7 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 
 
 /* HOMEPAGE WIDGET AREA */
-#header-widgets {width:100%; clear:both; float:left; border-bottom:1px solid #ddd;}
-
+#homepage-widgets {width:100%; clear:both; float:left; border-bottom:1px solid #ddd;}
 .home-left {float:left; width:32%; margin:20px 0 0;}
 .home-middle {float:left; width:32%; margin:20px 2% 0;}
 .home-right {float:right; width:32%; margin:20px 0 0;}
@@ -223,6 +225,7 @@ img.alignleft {float:left; margin:0.4em 1em 0.4em 0;}
 img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 .wp-post-image, .single-image {float:left; margin:0.4em 1em 0.4em 0;}
+.single-image-right {float:right; margin:0.4em 0 0.4em 1em;}
 
 .wp-caption {max-width:100%;}
 .wp-caption-text {text-align:center;}
@@ -264,6 +267,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 /* SIDEBAR AND WIDGETS */
 #sidebar {width:32%; float:right; padding:20px 0 0;}
+#sidebar-left {width:32%; float:left; padding:20px 0 0;}
 .widget {padding:15px 5%; margin:0 0 20px; background:#f8f8f8; border:1px solid #ddd;}
 .widgettitle {margin:0 0 10px; padding:0 0 5px; color:#00aaff; border-bottom:2px solid #00aaff;}
 
@@ -277,12 +281,12 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 /* FOOTER WIDGET AREA */
 #footer-widgets {max-width:1160px; clear:both; position:relative; margin:0 auto 0; padding:0 20px;}
 #footer-widgets:after {content:''; display:block; height:0; clear:both;}
-#footer .widget {padding:10px 0; margin:0 0 10px; background:none; border:none;}
-#footer .widgettitle {padding:0; color:#ddd; border:0;}
-
 .footer-left {float:left; width:32%; margin:20px 0 0;}
 .footer-middle {float:left; width:32%; margin:20px 2% 0;}
 .footer-right {float:right; width:32%; margin:20px 0 0;}
+
+#footer .widget {padding:10px 0; margin:0 0 10px; background:none; border:none;}
+#footer .widgettitle {padding:0; color:#ddd; border:0;}
 
 
 /* FOOTER INPUTS */
@@ -300,7 +304,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 	/* MAIN CONTENT AREA */
 	#main-content {width:100%; float:left; padding:0;}
-	#content, #content-full {width:100%; padding:10px 0;}
+	#content, #content-right, #content-full {width:100%; float:left; padding:10px 0;}
 
 	/* HEADER FIRST */
 	#header-first {width:100%; float:left; padding:0;}
@@ -315,7 +319,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	.nav-head select {display:block; width:100%; height:35px; margin:0 auto 0; font-size:1em; line-height:1.2em; color:#fff; background:#333; border:0;}
 
 	/* HOMEPAGE WIDGET AREA */
-	#header-widgets {border:0; margin:10px 0 0;}
+	#homepage-widgets {border:0; margin:10px 0 0;}
 	.home-right, .home-middle, .home-left {width:100%; margin:0; float:left;} 
 
 	/* HEADINGS */
@@ -326,10 +330,10 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	.format-status .avatar {margin:0.3em 0.5em 0.3em 0;}
 
 	/* IMAGES */
-	.wp-post-image, .single-image {width:50%; margin:0.3em 0.5em 0.3em 0;}
+	.wp-post-image, .single-image, .single-image-right {width:50%; float:left; margin:0.3em 0.5em 0.3em 0;}
 
 	/* SIDEBAR AND WIDGETS */
-	#sidebar {width:100%; float:left; padding:0;}
+	#sidebar, #sidebar-left {width:100%; float:left; padding:0;}
 	.widget {padding:10px 3%; margin:0 0 10px;} 
 
 	/* FOOTER */
