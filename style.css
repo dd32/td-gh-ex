@@ -1,7 +1,7 @@
 /*
 Theme Name: LeftSide
 Theme URI: http://www.guidovanderleest.nl/leftside
-Version: 4.2
+Version: 4.3
 Author: Guido van der Leest
 Author URI: http://www.guidovanderleest.nl
 Description: LeftSide is a free, clean, minimalistic, responsive, mobile-friendly WordPress theme. Features: sidebar, sidebar navigation, footer widgets, custom header image, custom background, custom logo to replace site title and tagline. For more info please check readme file. Enjoy.
@@ -111,12 +111,13 @@ p {margin:0 0 10px;}
 
 /* TABLE AND LISTS */
 table {margin:10px 0; border-collapse:collapse;}
-table, th, td {border: 1px solid #ccc; padding:5px 10px;}
+table, th, td {border:1px solid #ccc; padding:5px 10px;}
 table th {font-weight:bold;}
 
-ul {list-style:square; margin:5px 0 5px 0;}
-ol {list-style:decimal; margin:5px 0 5px 0;}
+ul {list-style:square; margin:10px 0;}
+ol {list-style:decimal; margin:10px 0;}
 li {margin:0 0 0 20px;}
+li > ul, li > ol {margin:0;}
 dl {margin:10px 0;}
 dt {font-weight:bold;}
 dd {margin:0 0 0 20px;}
@@ -129,29 +130,21 @@ input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hove
 input[type="checkbox"] {-webkit-appearance:checkbox; -moz-appearance:checkbox;}
 input[type="radio"] {-webkit-appearance:radio; -moz-appearance:radio;}
 select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
+button {font-size:1em; font-family:'Open Sans', sans-serif;}
 
 
-/* HEADER */
-#header {width:30%; float:left; padding:20px 2%; background:#f8f8f8;}
+/* SIDEBAR */
+#sidebar {width:30%; float:left; padding:20px 2%; background:#f8f8f8;}
 
 
-/* HEADER LOGO */
+/* SIDEBAR LOGO */
 .logo {width:100%; text-align:center; padding:0 0 20px;}
 .logo h1 a:hover {text-decoration:none; color:#333;}
 .logo h2 {padding:5px 0; font-size:1.45em;}
 .logo img {padding:10px 0 0;}
 
 
-/* HEADER IMAGE */
-#header-image {width:66%; float:right;}
-.header-img {width:100%; height:auto;}
-
-
-/* HEADER IMAGE MOBILE */
-#header-image-mobile {display:none;}
-
-
-/* HEADER MENU */
+/* SIDEBAR MENU */
 .nav-head {clear:both; padding:10px 0;}
 .nav-head select {display:none;}
 .nav-head ul {padding:0; margin:0; z-index:999; list-style:none;}
@@ -161,12 +154,31 @@ select {max-width:100%; -webkit-appearance:menulist; -moz-appearance:menulist;}
 .nav-head .current_page_item > a, .nav-head .current_page_parent > a {text-decoration:underline;}
 
 
-/* HEADER SUBMENU */
+/* SIDEBAR SUBMENU */
 .nav-head ul ul {display:none; position:absolute; left:100%; top:0;}
 .nav-head ul ul ul {display:none; position:absolute; top:0; left:100%;}
 .nav-head ul ul a {width:15em; padding:5px 10px; background:#666; color:#ddd;}
 .nav-head ul li:hover > ul {display:block;}
 .nav-head ul li ul li {margin:0;}
+
+
+/* SIDEBAR MENU TITLE */
+.nav-head-title {background:#666; color:#ddd; padding:5px 15px; margin:0 0 10px;}
+
+
+/* WIDGETS */
+#sidebar-widgets {width:100%; float:left;}
+.widget {padding:10px 0; margin:0 0 10px;}
+.widgettitle {background:#666; color:#ddd; padding:5px 15px; margin:0 0 10px;}
+
+
+/* HEADER IMAGE */
+#header-image {width:66%; float:right;}
+.header-img {width:100%; height:auto;}
+
+
+/* HEADER IMAGE MOBILE */
+#header-image-mobile {display:none;}
 
 
 /* PAGE */
@@ -252,12 +264,6 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 .comment-next {float:right; padding:5px 0;}
 
 
-/* SIDEBAR AND WIDGETS */
-#sidebar {width:100%; float:left;}
-.widget {padding:10px 0; margin:0 0 10px;}
-.widgettitle, .nav-widgettitle {background:#666; color:#ddd; padding:5px 15px; margin:0 0 10px;}
-
-
 /* FOOTER */
 #footer {width:100%; clear:both; float:left; background:#666; color:#ddd;}
 #footer a {color:#ddd;}
@@ -266,12 +272,12 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 
 /* FOOTER WIDGET AREA */
 #footer-widgets {width:100%; clear:both; float:left;}
-#footer .widget {padding:0; margin:20px 0 0;}
-#footer .widgettitle {padding:0; background:none;}
-
 .footer-left {float:left; width:30%; margin:10px 0 0 2%;}
 .footer-middle {float:left; width:30%; margin:10px 3%;}
 .footer-right {float:right; width:30%; margin:10px 2% 0 0;}
+
+#footer .widget {padding:0; margin:20px 0 0;}
+#footer .widgettitle {padding:0; background:none;}
 
 
 /* FOOTER INPUTS */
@@ -290,13 +296,24 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	/* MAIN CONTENT AREA */
 	#content {width:100%; padding:10px 0;}
 
-	/* HEADER */
-	#header {width:100%; padding:0; background:none;}
+	/* SIDEBAR */
+	#sidebar {width:100%; padding:0; background:none;}
 
-	/* HEADER LOGO */
+	/* SIDEBAR LOGO */
 	.logo {padding: 10px 0;}
 	.logo h1 {font-size:2.25em;}
 	.logo h2 {padding:0; font-size:1.45em;}
+
+	/* SIDEBAR MENU */
+	.nav-head ul {display: none;} 
+	.nav-head {padding:0 0 10px;}
+	.nav-head select {display:block; width:100%; height:35px; margin:0 auto 0; font-size:1em; line-height:1.2em; color:#fff; background:#e77776; border:0;}
+
+	/* SIDEBAR MENU TITLE */
+	.nav-head-title {display:none;}
+
+	/* WIDGETS */
+	.widget {padding:5px 0; margin:0 0 5px;}
 
 	/* HEADER IMAGE */
 	#header-image {display:none;}
@@ -304,12 +321,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	/* HEADER IMAGE MOBILE */
 	#header-image-mobile {display:block; width:100%; float:left;}
 
-	/* HEADER MENU */
-	.nav-head ul {display: none;} 
-	.nav-head {padding:0 0 10px;}
-	.nav-head select {display:block; width:100%; height:35px; margin:0 auto 0; font-size:1em; line-height:1.2em; color:#fff; background:#e77776; border:0;}
-
-	/* PAGE AND POST */
+	/* POST */
 	.postmetadata {margin:10px 0;}
 
 	/* HEADINGS */
@@ -322,11 +334,7 @@ img.aligncenter {display:block; margin:0.4em auto 0.4em auto;}
 	/* IMAGES */
 	.wp-post-image, .single-image {width:50%; margin:0.3em 0.5em 0.3em 0;}
 
-	/* SIDEBAR AND WIDGETS */
-	.widget {padding:5px 0; margin:0 0 5px;}
-	.nav-widgettitle {display:none;}
-
 	/* FOOTER WIDGET AREA */
-	#footer .widget {padding:5px 0; margin:0 0 5px;}
 	.footer-right, .footer-middle, .footer-left {width:94%; margin:0; padding:0 3%; float:left;} 
+	#footer .widget {padding:5px 0; margin:0 0 5px;}
 }

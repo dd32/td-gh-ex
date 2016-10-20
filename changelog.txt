@@ -1,6 +1,14 @@
 CHANGELOG
 =========
 
+LeftSide version 4.3 - october 2016
+- some logical changes in div and class elements
+- files style and header: changed #header into #sidebar
+- files style and sidebar: changed #sidebar into #sidebar-widgets
+- files style and header: changed .nav-widgettitle into .nav-head-title
+- several small adjustments
+- new screenshot
+
 LeftSide version 4.2 - august 2016
 - file functions: translation fix
 
