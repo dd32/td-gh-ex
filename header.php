@@ -1,6 +1,6 @@
 <?php
 /*
- * The header for displaying logo, menu, header-image and header-widgets.
+ * The header for displaying logo, menu, header-image and homepage-widgets.
  */
 ?>
 
@@ -57,8 +57,8 @@
 
 	<?php if( is_front_page() ) {?>
 	<?php if ( is_active_sidebar( 'homepage-right' ) || is_active_sidebar( 'homepage-middle' ) || is_active_sidebar( 'homepage-left' ) ) {?> 
-	<div id="header-fourth-container">
-		<div id="header-fourth">
+	<div id="homepage-widgets-container">
+		<div id="homepage-widgets">
 			<div class="home-left"> 
 				<?php dynamic_sidebar( 'homepage-left' ); ?>
 			</div>

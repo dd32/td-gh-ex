@@ -1,17 +1,18 @@
 <?php
 /*
- * The default template for displaying pages.
+ * Template Name: Left Sidebar Template
+ * Description: Template with left sidebar.
  */
 ?>
 
 <?php get_header(); ?>
-<div id="content">
+<div id="content-right">
 	<?php while ( have_posts() ) : the_post(); ?>
 
 		<h1 class="page-title"><?php the_title(); ?></h1>
 
 		<?php if ( has_post_thumbnail() ) { 
-			the_post_thumbnail('single', array('class' => 'single-image')); 
+			the_post_thumbnail('single', array('class' => 'single-image-right')); 
 		} ?>
 
 		<?php the_content(); ?>
@@ -25,6 +26,6 @@
 	<?php endwhile; ?>
 
 	<?php edit_post_link( __( 'Edit', 'multicolors' ), '<div class="edit-link">', '</div>' ); ?>
-</div>	
-<?php get_sidebar(); ?>
+</div>		
+<?php get_sidebar('left'); ?>
 <?php get_footer(); ?>
