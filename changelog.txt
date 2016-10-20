@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+DarkOrange version 5.1 - october 2016
+- added page template with left sidebar
+- several small adjustments
+- new screenshot
+
 DarkOrange version 5.0 - august 2016
 - file content-postmeta-single: display post format too
 - updated text strings
