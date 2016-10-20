@@ -1,6 +1,6 @@
 <?php
 /*
- * The header for displaying logo, menu, header-image and header-widgets.
+ * The header for displaying logo, menu, header-image and homepage-widgets.
  */
 ?>
 

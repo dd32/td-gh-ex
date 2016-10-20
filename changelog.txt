@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+Medical version 4.3 - october 2016
+- added page template with left sidebar
+- several small adjustments
+- new screenshot
+
 Medical version 4.2 - august 2016
 - file content-postmeta-single: display post format too
 - updated text strings
