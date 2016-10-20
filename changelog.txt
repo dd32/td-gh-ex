@@ -1,6 +1,11 @@
 CHANGELOG
 =========
 
+Shipyard version 4.9 - october 2016
+- added page template with left sidebar
+- several small adjustments
+- new screenshot
+
 Shipyard version 4.8 - august 2016
 - file content-postmeta-single: display post format too
 - updated text strings

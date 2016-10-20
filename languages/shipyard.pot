@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Shipyard\n"
-"POT-Creation-Date: 2016-08-05 11:14+0200\n"
+"POT-Creation-Date: 2016-10-09 17:57+0200\n"
 "PO-Revision-Date: 2015-11-16 00:15+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -136,7 +136,7 @@ msgstr ""
 msgid "Set a logo to replace site title and tagline."
 msgstr ""
 
-#: page-full.php:28 page.php:27 single.php:33
+#: page-full.php:28 page-sidebar-left.php:28 page.php:27 single.php:33
 msgid "Edit"
 msgstr ""
 
