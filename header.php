@@ -1,6 +1,6 @@
 <?php
 /*
- * The header for displaying logo, menu, header-image, header-widgets and search bar.
+ * The header for displaying logo, menu, header-image, homepage-widgets and search bar.
  */
 ?>
 
@@ -61,7 +61,7 @@
 		<h3 class="searchbar-title"><?php echo $search_title; ?></h3>
 		<form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>"> 
 			<input type="search" class="search-field" placeholder="<?php echo $search_title; ?>" value="<?php echo get_search_query() ?>" name="s" title="<?php echo $search_title; ?>" /> 
-			<input type="submit" id="searchsubmit" value="<?php _e( 'Search', 'myknowledgebase' ) ?>" />
+			<input type="submit" class="search-submit" value="<?php _e( 'Search', 'myknowledgebase' ) ?>" />
 			<input type="hidden" name="post_type" value="post" />
 		</form>
 	</div>

@@ -1,12 +1,12 @@
 === MyKnowledgeBase ===
 Contributors: Guido07111975
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donation%40guidovanderleest%2enl
-Version: 4.5
+Version: 4.6
 Requires at least: 4.2
 Tested up to: 4.6
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: one-column, two-columns, right-sidebar, full-width-template, custom-background, custom-header, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, blog, editor-style, translation-ready
+Tags: one-column, two-columns, right-sidebar, left-sidebar, full-width-template, custom-background, custom-header, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, blog, editor-style, translation-ready
 
 
 == Description ==
@@ -44,7 +44,7 @@ The knowledgebase uses the default WordPress categories and posts.
 
 Create a new page and select the knowledgebase page template. You can choose between 3 columns (with sidebar) and 4 columns (without sidebar).
 
-Exclude a category, set amount of posts for each category and order posts by date or name via WordPress Dashboard > Appearance > Customize. 
+Show or hide page title, exclude a category, set amount of posts for each category and order posts by date or name via WordPress Dashboard > Appearance > Customize. 
 
 If you want this page to be homepage go to Settings > Reading and select this page as hompepage.
 

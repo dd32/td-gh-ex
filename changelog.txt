@@ -1,6 +1,13 @@
 CHANGELOG
 =========
 
+MyKnowledgeBase version 4.6 - october 2016
+- added page template with left sidebar
+- knowledgebase page template: you can now add content (text) too
+- customizer: show or hide page title on knowledgebase page
+- several small adjustments
+- new screenshot
+
 MyKnowledgeBase version 4.5 - august 2016
 - customizer: textual changes
 - updated file functions

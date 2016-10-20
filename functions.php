@@ -201,6 +201,21 @@
 			'priority' => 31, 
 			'description' => __( 'Settings for the knowledgebase page template.', 'myknowledgebase' ),
 		) );
+		$wp_customize->add_setting( 'myknowledgebase_page_title', array( 
+			'capability' => 'edit_theme_options', 
+			'sanitize_callback' => 'sanitize_text_field', 
+			'default' => 'no', 
+		) ); 
+		$wp_customize->add_control( new WP_Customize_Control ( $wp_customize, 'myknowledgebase_page_title', array( 
+			'label' => __( 'Display page title', 'myknowledgebase' ), 
+			'section' => 'myknowledgebase_posts_section',
+			'settings' => 'myknowledgebase_page_title', 
+			'type' => 'radio', 
+			'choices' => array( 
+				'yes' => __('Yes', 'myknowledgebase'), 
+				'no' => __('No', 'myknowledgebase'), 
+			), 
+		) ) );
 		$wp_customize->add_setting( 'myknowledgebase_posts', array( 
 			'capability' => 'edit_theme_options', 
 			'sanitize_callback' => 'sanitize_text_field', 
