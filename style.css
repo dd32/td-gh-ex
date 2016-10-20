@@ -3,7 +3,7 @@ Theme Name: Bellini
 Theme URI: http://atlantisthemes.com/
 Author: Pangolin
 Description: Bellini is the perfect theme for creating a eCommerce store or shop. Responsive & flexible layout built with Bootstrap. Customize anything like Google Fonts, Color, Layout, logo upload, full-screen slider, header image and much more.Built with SEO in mind and has Structured Data (Schema) implemented. If you are looking for a beautiful theme with out of the box SEO compatibility & responsiveness, look no further! Check out the live demo at http://demo.atlantisthemes.com/front-page/
-Version: 1.32
+Version: 1.33
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bellini
@@ -426,9 +426,7 @@ a:active {
     outline: 0;
 }
 
-.site-description {
-    margin-top: 1em;
-}
+.site-description {margin-top: 1rem;}
 
 /*--------------------------------------------------------------
 ## Menus
@@ -478,10 +476,6 @@ a:active {
 .main-navigation ul ul ul {
     top: 0;
     left: -999em;
-}
-
-.main-navigation ul ul a {
-    color: rgba(255,255,255,.6);
 }
 
 .main-navigation ul ul:hover > a,
@@ -591,7 +585,7 @@ a:active {
         z-index: 99999;
         float: left;
         position: absolute;
-        top: 4.3em;
+        top: 3.3em;
         left: -999em;
         margin: 0;
         text-align: left;
@@ -604,7 +598,7 @@ a:active {
 
     .main-navigation ul ul a {
         width: 220px;
-        padding: 1em 2em;
+        padding: 1rem 1.5rem;
     }
 
     .main-navigation div > ul > li > ul::before {
@@ -625,6 +619,7 @@ a:active {
 
 .post-navigation {
     width: 100%;
+    margin:3rem 0 1.5rem 0;
 }
 
 .posts-navigation {
@@ -657,8 +652,7 @@ a:active {
 }
 
 .site-main .comment-navigation,
-.site-main .posts-navigation,
-.site-main .post-navigation {
+.site-main .posts-navigation{
     margin: 0 0 1.5em;
     overflow: hidden;
 }
@@ -1323,20 +1317,9 @@ object {
     height:100%;
 }
 
-
-.post-item--l4{
-
-}
-
-
-.blog-post__thumbnail--l4{
-    padding: 0;
-}
-
-
-.blog__post__bottom {
-    text-align: center;
-}
+.blog-post__thumbnail--l4{padding: 0;}
+.post-title--l4 h3 { line-height: 1.2; }
+.post-title--l4 .blog__post__bottom {text-align: left;padding: 0 2.5rem;}
 
 /*--------------------------------------------------------------
 ## Blog Posts : Layout 5
@@ -1621,6 +1604,8 @@ object {
 .front__slider__static {
     position: relative;
     line-height: 0;
+    width: 100%;
+    float: left;
 }
 
 .front__slider__static img {
@@ -1733,7 +1718,7 @@ object {
 }
 
 .widget-area--blog {
-    margin-top: 2%;
+    margin-top: 0;
 }
 
 .widget-area{
@@ -1748,16 +1733,13 @@ object {
     padding-right:0;
 }
 
-.widget-area__footer .widget-title {
-    border-bottom: 1px solid;
-    padding-bottom: .8em;
-}
-
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
 
 .comments-area {
+    width:100%;
+    float:left;
     margin-top: 2%;
     margin-bottom: 4%;
 }
@@ -1848,7 +1830,6 @@ object {
 .comment-respond {
     float: left;
     width: 100%;
-    padding: 0 6%;
 }
 
 .comment-reply-title {
@@ -2223,6 +2204,7 @@ Hamburger Menu
 
 .page-header {
     border: none;
+    padding: 4em 2em;
 }
 
 .element-title--post:hover,
@@ -2768,4 +2750,24 @@ blockquote:before {
 #footer-nav {
     margin: 0;
     padding: 0;
+}
+
+.post-navigation .nav-previous,
+.post-navigation .nav-next {
+    padding: 4rem 0;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+}
+
+.post-navigation .nav-previous{
+    border-right: 1px solid #eee;
+}
+
+h1.site-title {font-size:3rem;}
+
+.search-form .search-field {
+    padding: .5em;
+    border: 1px solid rgba(0,0,0,.15);
+    box-sizing: border-box;
+    border-radius: 4px;
 }

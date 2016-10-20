@@ -29,7 +29,6 @@
 /* WooCommerce Search */
 .site-search__icon {cursor: pointer;}
 .active {display: block;}
-.woocommerce.widget_product_search {display: none;}
 .site-search__icon:before {content: '\f002';}
 
 .widget_product_search form input[type=submit] {
@@ -68,6 +67,7 @@
     position: absolute;
     right: 0;
     width: 350px;
+    display:none;
 }
 
 /* Cart */
@@ -108,8 +108,8 @@
 }
 
 .mini_cart_item:hover {
-    -webkit-transform: scale(1.04);
-    transform: scale(1.04);
+    -webkit-transform: scale(1.02);
+    transform: scale(1.02);
 }
 
 .woocommerce ul.cart_list li img,
@@ -716,7 +716,7 @@
 }
 
 .cart-toggles{
-    margin-top:1rem;
+    margin-top:1.2rem;
     padding-top: 0;
     border: 0;
     border-radius: 2px;
@@ -770,7 +770,7 @@
 }
 
 .site-search{
-    padding: 1rem 1rem .75rem 0;
+    padding: 1.2rem 1rem .75rem 0;
     text-transform: uppercase;
 }
 

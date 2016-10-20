@@ -8,9 +8,8 @@
  */
 global $bellini;
 get_header(); ?>
-<div class="container">
-	<div id="primary" class="content-area <?php bellini_blog_sidebar(); ?>">
-		<main id="main" class="site-main" role="main">
+<div id="primary" class="content-area">
+<main id="main" class="site-main" role="main">
 		<?php
 		if ( have_posts() ) : ?>
 			<header class="page-header">
@@ -19,6 +18,13 @@ get_header(); ?>
 					the_archive_description( '<div class="taxonomy-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
+
+			<div class="bellini__canvas">
+			<div class="row">
+			<div class="template__blog <?php bellini_blog_sidebar();?>">
+			<section class="posts__grid">
+			<div class="row">
+
 			<?php
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
@@ -29,12 +35,16 @@ get_header(); ?>
 					get_template_part( 'template-parts/content-lb-5');
 				endif;
 			endwhile;
-			bellini_pagination();
+					bellini_pagination();
+					echo '</div>';
+					echo '</section>';
+					echo '</div>';
+	 				get_sidebar('blog');
+	 				echo '</div>';
 		else :
 			get_template_part( 'template-parts/content', 'none' );
 		endif; ?>
+		wp_reset_postdata(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
-<?php get_sidebar('blog');?>
-</div>
 <?php get_footer(); ?>

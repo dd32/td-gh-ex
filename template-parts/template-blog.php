@@ -7,8 +7,7 @@
  */
 get_header(); ?>
 
-<div class="row">
-<div id="primary" class="content-area <?php bellini_blog_sidebar(); ?>">
+<div id="primary" class="content-area">
 <main id="main" class="site-main" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
 <?php
 		//Fix homepage pagination
@@ -34,10 +33,15 @@ get_header(); ?>
 			echo '<header class="col-md-12 page__header entry-header">';
 			echo '<div class="single page-meta">';
 			the_title( '<h1 class="entry-title element-title single-page__title" itemprop="headline">', '</h1>' );
-			bellini_breadcrumb_integration();
-			echo '</header>';
-			echo '<section class="blog">';
-			echo '<div class="bellini__canvas">';
+			bellini_breadcrumb_integration();?>
+			</header>
+			<div class="bellini__canvas">
+			<div class="row">
+			<div class="template__blog <?php bellini_blog_sidebar();?>">
+			<section class="posts__grid">
+			<div class="row">
+
+			<?php
 			while ( $wp_query->have_posts() ) : $wp_query->the_post();
 				if ( absint($bellini['bellini_layout_blog']) === 1 ):
 					get_template_part( 'template-parts/content' );
@@ -47,14 +51,15 @@ get_header(); ?>
 				endif;
 			endwhile;
 				bellini_pagination();
+				echo '</div>';
+				echo '</section>';
+				echo '</div>';
+	 			get_sidebar('blog');
+	 			echo '</div>';
 		} else {
 			get_template_part( 'template-parts/content', 'none' );
 		}
 		wp_reset_postdata(); ?>
-    	</section>
 		</main><!-- #main -->
 	</div><!-- #primary -->
-	<?php get_sidebar('blog'); ?>
-</div><!-- row -->
-</div>
 <?php get_footer(); ?>

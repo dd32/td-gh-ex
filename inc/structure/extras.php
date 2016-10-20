@@ -81,7 +81,7 @@ function bellini_category() {
     $categories_list = get_the_category_list( esc_html__( '  |   ', 'bellini' ) );
 
         if ( $categories_list && bellini_categorized_blog() ) {
-            printf( '<span class="post-meta__category category col-xs-12" rel="tag">' . esc_html__( '%1$s', 'bellini' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+            printf( '<span class="post-meta__category category" rel="tag">' . esc_html__( '%1$s', 'bellini' ) . '</span>', $categories_list ); // WPCS: XSS OK.
         }
     }
 }

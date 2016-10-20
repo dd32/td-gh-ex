@@ -11,10 +11,10 @@ global $bellini;
 <article id="post-<?php the_ID(); ?>" <?php post_class();?> itemscope itemtype="http://schema.org/Article">
 <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="<?php echo get_site_url(); ?>"/>
 <div class="container--card-content clearfix">
-<div class="col-xs-12 text-right"><?php bellini_edit_content(); ?></div>
-<header class="single-post__header--l3 col-xs-12">
+<div class="text-right"><?php bellini_edit_content(); ?></div>
+<header class="single-post__header--l3">
 	<?php bellini_category(); ?>
-	<div class="single-post__title--l3 col-xs-12">
+	<div class="post__header__inner">
 	<?php the_title( '<h1 class="element-title element-title--post single-post__title--l3" itemprop="name headline">', '</h1>' ); ?>
 
 	<?php if($bellini['bellini_show_post_meta'] == true):
@@ -29,11 +29,11 @@ global $bellini;
 </header>
 <?php
 	if ( has_excerpt( $post->ID ) ):?>
-		<div itemprop="description" class="single-post__excerpt--l3 col-xs-12 text-center">
+		<div itemprop="description" class="single-post__excerpt--l3 text-center">
 			<?php echo get_the_excerpt();?>
 		</div>
 <?php endif;?>
-<div class="single-post__body--l3 col-xs-12" itemprop="articleBody">
+<div class="single-post__body--l3" itemprop="articleBody">
 	<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
@@ -42,8 +42,15 @@ global $bellini;
 			) );
 		?>
 </div><!-- .entry-content -->
-<footer class="single-post__footer--l3 col-xs-12">
+<footer class="single-post__footer--l3">
 	<?php bellini_post_tag(); ?>
 </footer><!-- .entry-footer -->
+	<?php the_post_navigation();?>
+	<?php
+		// If comments are open or we have at least one comment, load up the comment template.
+		if ( comments_open() || get_comments_number() ) :
+			comments_template();
+		endif;
+	?>
 </div>
 </article><!-- #post-## -->

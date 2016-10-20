@@ -221,6 +221,7 @@ textarea{
 }
 
 .element-title,
+.page-title,
 .element-title--post,
 .element-title--main,
 .single-page__title,
@@ -248,7 +249,6 @@ textarea{
 /* Color */
 <?php echo $primary_color_text;?>{color: <?php echo $bellini_primary_color; ?>;}
 <?php echo $primary_color_background;?>{background-color: <?php echo $bellini_primary_color; ?>;}
-.widget-area__footer .widget-title{border-bottom-color: <?php echo $bellini_primary_color; ?>;}
 <?php echo $bellini_meta_color_text;?>{color: <?php echo $bellini_accent_color; ?>;}
 <?php echo $bellini_meta_color_background;?>{background-color: <?php echo $bellini_accent_color; ?>;}
 
