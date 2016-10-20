@@ -19,7 +19,7 @@
 
 <body <?php body_class(); ?> >
 <div id="container">
-	<div id="header">
+	<div id="sidebar">
 		<div class="logo"> 
 			<?php if ( get_theme_mod( 'darkelements_logo' ) ) : ?> 
 				<a href='<?php echo esc_url( home_url( '/' ) ); ?>' title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel='home'>
@@ -36,7 +36,7 @@
 			} else {
 				$menu_title = esc_attr__( 'Menu', 'darkelements' );
 			} ?>
-			<h3 class="nav-widgettitle"><?php echo $menu_title; ?></h3>
+			<h3 class="nav-head-title"><?php echo $menu_title; ?></h3>
 
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container_class' => 'nav-head' ) ); ?>
 		<?php endif; ?>

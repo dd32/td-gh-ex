@@ -1,7 +1,7 @@
 === DarkElements ===
 Contributors: Guido07111975
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donation%40guidovanderleest%2enl
-Version: 4.7
+Version: 4.8
 Requires at least: 4.2
 Tested up to: 4.6
 License: GNU General Public License v3 or later
