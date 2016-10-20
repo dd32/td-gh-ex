@@ -952,7 +952,7 @@ if( cyberchimps_get_option( 'archive_post_excerpts', 0 ) != 0 ) {
 function cyberchimps_blog_read_more_text() {
 
 	// Get the value of blog read more text option.
-	$read_more = cyberchimps_get_option( 'blog_read_more_text' );
+	$read_more = esc_html(cyberchimps_get_option( 'blog_read_more_text' ));
 
 	// Check whether any not null value supplied and set the value accordingly.
 	if( '' != $read_more ) {

@@ -109,10 +109,10 @@ function cyberchimps_custom_background_cb() {
 
 	// $color is the saved custom color.
 	// A default has to be specified in style.css. It will not be printed here.
-	$color = get_theme_mod( 'background_color' );
+	$color = esc_html(get_theme_mod( 'background_color' ));
 
 	// CyberChimps background image
-	$cc_background = get_theme_mod( 'cyberchimps_background' );
+	$cc_background = esc_html(get_theme_mod( 'cyberchimps_background' ));
 	
 	if ( !$background && !$color && !$cc_background ) {
 		return;
@@ -121,19 +121,19 @@ function cyberchimps_custom_background_cb() {
 	if ( $background ) {
 		$image = " background-image: url('$background');";
 
-		$repeat = get_theme_mod( 'background_repeat', 'repeat' );
+		$repeat = esc_html(get_theme_mod( 'background_repeat', 'repeat' ));
 		if ( !in_array( $repeat, array( 'no-repeat', 'repeat-x', 'repeat-y', 'repeat' ) ) ) {
 			$repeat = 'repeat';
 		}
 		$repeat = " background-repeat: $repeat;";
 
-		$position = get_theme_mod( 'background_position_x', 'left' );
+		$position = esc_html(get_theme_mod( 'background_position_x', 'left' ));
 		if ( !in_array( $position, array( 'center', 'right', 'left' ) ) ) {
 			$position = 'left';
 		}
 		$position = " background-position: top $position;";
 
-		$attachment = get_theme_mod( 'background_attachment', 'scroll' );
+		$attachment = esc_html(get_theme_mod( 'background_attachment', 'scroll' ));
 		if ( !in_array( $attachment, array( 'fixed', 'scroll' ) ) ) {
 			$attachment = 'scroll';
 		}

@@ -720,7 +720,7 @@ function cyberchimps_add_core_fields( $fields_list ) {
 		'id'      => 'custom_logo_url_link',
 		'class'   => 'custom_logo_url_toggle',
 		'type'    => 'text',
-		'std'     => home_url(),
+		'std'     => esc_url(home_url()),
 		'section' => 'cyberchimps_header_options_section',
 		'heading' => 'cyberchimps_header_heading'
 	);

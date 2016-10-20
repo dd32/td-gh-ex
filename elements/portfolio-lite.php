@@ -220,13 +220,11 @@ function cyberchimps_portfolio_lite_content() {
 		$title_enable = cyberchimps_get_option( 'cyberchimps_blog_portfolio_title_toggle', 1 );
 		$title        = cyberchimps_get_option( 'cyberchimps_blog_portfolio_title', 'Portfolio' );
 
-		$portfolio_default_image = get_template_directory_uri() . '/cyberchimps/lib/images/portfolio.jpg';
-		
 		// Getting Image URL for each protfolio
-		$img1 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_one', $portfolio_default_image );
-		$img2 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_two', $portfolio_default_image );
-		$img3 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_three', $portfolio_default_image );
-		$img4 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_four', $portfolio_default_image );
+		$img1 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_one', get_template_directory_uri() . apply_filters( 'cyberchimps_portfolio_lite_img1', '/cyberchimps/lib/images/portfolio.jpg' ) );
+		$img2 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_two', get_template_directory_uri() . apply_filters( 'cyberchimps_portfolio_lite_img2', '/cyberchimps/lib/images/portfolio.jpg' ) );
+		$img3 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_three', get_template_directory_uri() . apply_filters( 'cyberchimps_portfolio_lite_img3', '/cyberchimps/lib/images/portfolio.jpg' ) );
+		$img4 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_four', get_template_directory_uri() . apply_filters( 'cyberchimps_portfolio_lite_img4', '/cyberchimps/lib/images/portfolio.jpg' ) );
 
 		// Getting caption for each protfolio
 		$caption1 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_one_caption', 'CyberChimps' );
