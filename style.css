@@ -2,7 +2,7 @@
 Theme Name: ProMax
 Theme URI: http://www.insertcart.com/product/promax-wordpress-theme/
 Description: ProMax Theme is best WordPress theme design for personal and business uses with full features and SEO Optimize.This WordPress Theme can easily adapts on your mobile and desktop or any other device. Theme comes with lots of customization and connect social media like Facebook, Google+, twitter, YouTube and Adsense ready It supports all the awesome WordPress features completely free theme for blogging. Now theme support WooCommerce plugin demo http://demo.baztro.com/promax 
-Version: 1.6.61
+Version: 1.6.62
 Author: InsertCart.com
 Author URI: http://www.insertcart.com/
 Tags: custom-menu, custom-header, custom-background, one-column, two-columns, right-sidebar, theme-options, threaded-comments, sticky-post, translation-ready, editor-style, featured-images, rtl-language-support, footer-widgets, blog, e-commerce, photography, news
@@ -363,7 +363,9 @@ img, img a {
 
 /************Top Navigation Menu************/
 .nav{
-margin:0 auto;}
+    display: flex;
+	margin:0 auto;
+}
 #navigation .home-icon img{padding-bottom: 3px;}
 #navigation .home-icon {display:block;}
 .home-icon{display:none;}
@@ -379,9 +381,9 @@ margin:0 auto;}
 	background: #5B89B8;
 }
 #navigation-inner {
-	position: relative;
-	float: left;
-	max-width: 73%;
+    position: relative;
+    float: left;
+    width: 100%;
 	}
 #navigation .secondary{
 	border-top-right-radius: 2px;
@@ -471,7 +473,9 @@ font-size: 16px;
     content: '';
 }
 /*******************Pronav*************/
-#TopMenuSocial{float: right;    max-width: 25%;}
+#TopMenuSocial{float: right;
+    max-width: 34%;
+    display: inline-table;}
 #TopMenuSocial a {
     color: #fff;
 }

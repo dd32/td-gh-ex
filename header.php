@@ -33,12 +33,13 @@
 
 	<!-- BEGIN TOP NAVIGATION -->
 	<?php if (of_get_option('promax_topmenushow') !=='off') { ?>
-<div id="navigation" ><div class="nav"><?php get_template_part('/includes/social'); ?>
+<div id="navigation" ><div class="nav">
     <div id="navigation-inner" class="clearfix">
 		<div class="secondary">
 		<?php wp_nav_menu( array( 'theme_location' => 'promax-navigation', 'fallback_cb' => 'promax_hdmenu','menu_class' => 'nav-menu') );	?>
 		</div><!-- end div #nav secondry -->
 	    </div> <!-- end div #navigation-inner -->
+		<?php get_template_part('/includes/social'); ?>
 	    </div> <!-- end div #navigation-inner -->
 	</div> <!-- end div #navigation -->
 	<!-- END TOP NAVIGATION -->

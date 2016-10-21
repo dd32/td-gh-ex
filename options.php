@@ -587,6 +587,7 @@ $options[] = array(
             <p><span class="buypre"><a href="' . esc_url(__('http://forum.insertcart.com','promax')) . '" target="_blank">' . esc_attr__( 'Support Forum', 'promax' ) . '</a></span></p></br>
 			<ol>
 			<li><a href="' . esc_url(__('http://www.insertcart.com/faq-frequently-asked-question-theme-setup/','promax')) . '" target="_blank">' . esc_attr__( 'FAQ - Frequently Asked Question About Theme Setup', 'promax' ) . '</a></li>
+			<li><a href="' . esc_url(__('http://www.insertcart.com/set-featured-thumbnail-image-post-wp/','promax')) . '" target="_blank">' . esc_attr__( 'Set Featured Thumbnail Image of Post WP', 'promax' ) . '</a></li>
 			<li><a href="' . esc_url(__('http://www.insertcart.com/making-post-by-importing-docx-file-content-into-post-images/','promax')) . '" target="_blank">' . esc_attr__( 'Making Post by Importing Docx File Content into Post Images', 'promax' ) . '</a></li>
 			<li><a href="' . esc_url(__('http://www.insertcart.com/how-to-secure-website-made-these-changes-in-htaccess/','promax')) . '" target="_blank">' . esc_attr__( 'How to Secure Website? Made these changes in .htaccess', 'promax' ) . '</a></li>
 			<li><a href="' . esc_url(__('http://www.insertcart.com/how-to-add-icon-navigation-menu/','promax')) . '" target="_blank">' . esc_attr__( 'How to Add Icon Navigation Menu', 'promax' ) . '</a></li>
@@ -595,6 +596,10 @@ $options[] = array(
 			<li><a href="' . esc_url(__('http://www.insertcart.com/get-current-page-url-in-wordpress/','promax')) . '" target="_blank">' . esc_attr__( 'Get Current Page URL in WordPress', 'promax' ) . '</a></li>
 			<li><a href="' . esc_url(__('http://www.insertcart.com/add-ad-code-after-every-few-post/','promax')) . '" target="_blank">' . esc_attr__( 'Add Ad Code After Every Few Post', 'promax' ) . '</a></li>
 			<li><a href="' . esc_url(__('http://www.insertcart.com/add-icons-wordpress-customizer-setting-panel/','promax')) . '" target="_blank">' . esc_attr__( 'Add Icons to WordPress Customizer Setting Panel', 'promax' ) . '</a></li>
+			<li><a href="' . esc_url(__('http://www.insertcart.com/add-icons-wordpress-customizer-setting-panel/','promax')) . '" target="_blank">' . esc_attr__( 'Add Icons to WordPress Customizer Setting Panel', 'promax' ) . '</a></li>
+			<li><a href="' . esc_url(__('http://www.insertcart.com/get-category-in-wp/','promax')) . '" target="_blank">' . esc_attr__( 'Get Category in WP - Parent, Link, Subcategory, ID, Name, List', 'promax' ) . '</a></li>
+			<li><a href="' . esc_url(__('http://www.insertcart.com/fix-missing-required-field-in-google-webmaster-tools-structure/','promax')) . '" target="_blank">' . esc_attr__( 'Fix Missing required field in Google Webmaster Tools Structure', 'promax' ) . '</a></li>
+			<li><a href="' . esc_url(__('http://www.insertcart.com/how-to-add-schema-markup-for-navigation-menu/','promax')) . '" target="_blank">' . esc_attr__( 'How to Add Schema Markup for Navigation Menu', 'promax' ) . '</a></li>
 			</ol>',
             'type' => 'info');		
 		
