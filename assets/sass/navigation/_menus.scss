@@ -205,7 +205,8 @@
       padding-right: 40px;
       position: relative;
       &.active,
-      &:hover {
+      &:hover,
+      &:focus {
         > a {
           color: $color__brand-red;
         }
@@ -216,6 +217,9 @@
         text-transform: uppercase;
         font-family: "Poppins";
         font-weight: 500;
+        &:focus {
+          color: $color__brand-red;
+        }
       }
       &:last-of-type {
         padding-right: 0;
@@ -229,14 +233,16 @@
           padding-left: 5px;
           color: $color__text-title;
         }
-        &:hover {
+        &:hover,
+        &:focus {
           &:after {
             color: $color__brand-red;
           }
         }
         > ul {
           li {
-            &:hover {
+            &:hover
+            &:focus {
               color: $color__brand-red;
               > a, &:after {
                 color: $color__brand-red;
@@ -257,7 +263,8 @@
                 bottom: 12px;
                 color: #333;
               }
-              &:hover {
+              &:hover
+              &:focus {
                 &:after {
                   color: $color__brand-red;
                 }

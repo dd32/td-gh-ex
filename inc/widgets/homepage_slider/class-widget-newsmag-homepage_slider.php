@@ -15,10 +15,10 @@ class Widget_Newsmag_homepage_slider extends WP_Widget {
 		if ( isset( $instance['title'] ) ) {
 			$title = $instance['title'];
 		} else {
-			$title = '';
+			$title = 'Today’s hot topics';
 		}
 
-		if ( isset( $instance['newsmag_category'] ) ) {
+		if ( ! empty( $instance['newsmag_category'] ) ) {
 			$newsmag_category = $instance['newsmag_category'];
 		} else {
 			$instance['newsmag_category'] = '';
@@ -26,14 +26,14 @@ class Widget_Newsmag_homepage_slider extends WP_Widget {
 
 		?>
 		<p>
-			<label><?php _e( 'Title', 'newsmag' ); ?> :</label>
+			<label><?php _e( 'Headline', 'newsmag' ); ?> </label>
 			<input type="text" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>"
 			       id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
 			       value="<?php echo esc_attr( $title ); ?>">
 		</p>
 
 		<p>
-			<label><?php _e( 'Category', 'newsmag' ); ?> :</label>
+			<label><?php _e( 'Category', 'newsmag' ); ?> </label>
 			<select name="<?php echo $this->get_field_name( 'newsmag_category' ); ?>"
 			        id="<?php echo $this->get_field_id( 'newsmag_category' ); ?>">
 				<option value="" <?php if ( empty( $instance['newsmag_category'] ) ) {
@@ -91,10 +91,10 @@ class Widget_Newsmag_homepage_slider extends WP_Widget {
 		if ( isset( $instance['title'] ) ) {
 			$title = $instance['title'];
 		} else {
-			$title = '';
+			$title = 'Today’s hot topics';
 		}
 
-		if ( isset( $instance['newsmag_category'] ) ) {
+		if ( ! empty( $instance['newsmag_category'] ) ) {
 			$newsmag_category = $instance['newsmag_category'];
 		} else {
 			$instance['newsmag_category'] = 'uncategorized';

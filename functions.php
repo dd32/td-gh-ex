@@ -90,6 +90,10 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 		 */
 		add_image_size( 'newsmag-single-post', 730, 330, true );
 		add_image_size( 'newsmag-recent-post-big', 560, 416, true );
+		add_image_size( 'newsmag-post-horizontal', 350, 260, true );
+		add_image_size( 'newsmag-vertical-post', 255, 195, true );
+		add_image_size( 'newsmag-post-grid', 360, 270, true );
+		add_image_size( 'newsmag-post-grid-small', 275, 210, true );
 		add_image_size( 'newsmag-recent-post-list-image', 65, 65, true );
 		add_image_size( 'newsmag-slider-image', 1920, 600, true );
 
@@ -217,8 +221,10 @@ function newsmag_has_widgets() {
  * @return bool
  */
 function newmsag_has_posts() {
-	$count_posts = wp_count_posts();
-	if ( (int) $count_posts->publish > 4 ) {
+	$args  = array( "s" => 'Gary Johns: \'What is Aleppo\'' );
+	$query = get_posts( $args );
+
+	if ( ! empty( $query ) ) {
 		return true;
 	}
 
@@ -325,6 +331,7 @@ function newsmag_scripts() {
 	$query_args = array(
 		'family' => 'Lato:400,600,700|Poppins:400,500,600,700'
 	);
+	$newsmag    = wp_get_theme();
 
 	wp_enqueue_style( 'newsmag-fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), 1, 'all' );
 	wp_enqueue_style( 'font-awesome-style', get_template_directory_uri() . '/assets/vendors/fontawesome//font-awesome.min.css' );
@@ -340,7 +347,7 @@ function newsmag_scripts() {
 	 * Theme styling
 	 */
 	wp_enqueue_style( 'newsmag-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'newsmag-stylesheet', get_template_directory_uri() . '/assets/css/style.css' );
+	wp_enqueue_style( 'newsmag-stylesheet', get_template_directory_uri() . '/assets/css/style.css', array(), $newsmag['Version'] );
 	/**
 	 * Load menu script & skip-link-focus-fix
 	 */

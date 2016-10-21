@@ -110,6 +110,20 @@
     margin-bottom: 45px;
     position: relative;
     color: #767676;
+    a.newsmag-comments-link {
+      color: #767676;
+      &:hover,&:focus {
+        color: $color__brand-red;
+      }
+    }
+    .meta {
+      a {
+        color: #767676;
+        &:hover {
+          color: $color__brand-red;
+        }
+      }
+    }
     h2 {
       font-family: 'Poppins';
       font-size: 16px;
@@ -135,6 +149,15 @@
         color: #FFF;
         padding: 0 20px;
         background: $color__brand-red;
+        font-weight: 700;
+      }
+    }
+    &.posts-column-layout {
+      h3 {
+        font-weight: 700;
+        a {
+          font-weight: 700;
+        }
       }
     }
     &.thumbnail-layout {
@@ -143,22 +166,19 @@
         font-size: 16px;
         line-height: 17px;
         a {
-          font-weight: 700;
+          font-weight: 600;
         }
       }
     }
     h3 {
       font-size: 23px;
       margin-top: 23px;
-      font-weight: 700;
+      font-weight: 600;
       font-family: 'Poppins';
       text-transform: initial;
       a {
-        font-weight: 700;
+        font-weight: 600;
       }
-    }
-    span.colored {
-      margin-right: 5px;
     }
     p {
       margin-top: 9px;
@@ -194,6 +214,22 @@
         background: $color__brand-red;
         padding: 6px 7px 5px 7px;
         z-index: 2;
+        -webkit-transition: all .2s ease-in;
+        transition: all .2s ease-in;
+        a {
+          color: #FFF;
+          font-weight: 700;
+          font-size: 12px;
+          line-height: 12px;
+          &:before {
+            display: none;
+          }
+        }
+        &:hover {
+          background-color: #000;
+          -webkit-transition: all .2s ease-in;
+          transition: all .2s ease-in;
+        }
       }
     }
   }
@@ -270,6 +306,14 @@
     &:last-of-type {
       border-bottom: 0;
     }
+
+    a.newsmag-comments-link {
+      color: #767676;
+      &:hover,&:focus {
+        color: $color__brand-red;
+      }
+    }
+
     @media (min-width: 768px) {
       > .row > .col-sm-9 {
         padding-left: 0;
@@ -290,10 +334,6 @@
       }
     }
 
-    span.colored {
-      margin-right: 5px;
-    }
-
     .newsmag-title {
       h3 {
         font-size: 16px;
@@ -304,7 +344,7 @@
         font-weight: 700;
         > a {
           color: #333;
-          font-weight: 700;
+          font-weight: 600;
           &:hover,
           &:focus {
             text-decoration: none;
@@ -372,6 +412,13 @@
         background: $color__brand-red;
         padding: 3px 7px 1px 7px;
         z-index: 2;
+        -webkit-transition: all .2s ease-in;
+        transition: all .2s ease-in;
+        &:hover {
+          background-color: #000;
+          -webkit-transition: all .2s ease-in;
+          transition: all .2s ease-in;
+        }
       }
 
       .newsmag-title {
@@ -413,7 +460,7 @@
     padding-right: 15px;
   }
   .newsmag-blog-post-layout-banner {
-    min-height: 275px;
+    padding: 0;
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -422,7 +469,25 @@
     transition: all 0.2s;
     border: 2px solid #FFF;
     position: relative;
-
+    > a {
+      display: block;
+      width: 100%;
+      padding: 0;
+      overflow: hidden;
+      img {
+        width: 100%;
+      }
+    }
+    &.col-md-3 {
+      > a {
+        height: 210px;
+      }
+    }
+    &.col-md-6 {
+      > a {
+        height: 270px;
+      }
+    }
     &:hover {
       background-size: 115% 115%;
       -moz-transition: all 0.2s;
@@ -434,7 +499,7 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 45%;
+      height: 100%;
       background-color: rgba(41, 41, 41, 0);
       background-image: -webkit-linear-gradient(bottom, #000, rgba(0, 0, 0, 0));
       background-image: -moz-linear-gradient(bottom, #000, rgba(0, 0, 0, 0));
@@ -459,6 +524,11 @@
           color: #FFF;
           font-size: 23px;
           font-weight: 700;
+          &:hover,
+          &:focus{
+            color:$color__brand-red;
+            text-shadow: 1px 1px 2px rgba(255, 61, 46, 0.3);
+          }
         }
       }
       .meta {
@@ -467,6 +537,15 @@
         display: inline-block;
         width: 100%;
         margin-bottom: 15px;
+        a {
+          color: #FFF;
+          &.newsmag-comments-link {
+            color: #FFF;
+            &:hover,&:focus {
+              color: $color__brand-red;
+            }
+          }
+        }
       }
       .newsmag-post-layout-category {
         font-size: 12px;
@@ -478,6 +557,22 @@
         background: $color__brand-red;
         padding: 2px 7px 0 7px;
         z-index: 2;
+        -webkit-transition: all .2s ease-in;
+        transition: all .2s ease-in;
+        &:hover {
+          background-color: #000;
+          -webkit-transition: all .2s ease-in;
+          transition: all .2s ease-in;
+        }
+        a {
+          color: #FFF;
+          font-weight: 700;
+          font-size: 12px;
+          line-height: 12px;
+          &:before {
+            display: none;
+          }
+        }
       }
     }
 
