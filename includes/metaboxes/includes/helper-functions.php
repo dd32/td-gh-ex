@@ -225,7 +225,7 @@ function cmb2_get_metabox_form( $meta_box, $object_id = 0, $args = array() ) {
 	$form = ob_get_contents();
 	ob_end_clean();
 
-	return apply_filters( 'bento_cmb2_get_metabox_form', $form, $object_id, $cmb );
+	return apply_filters( 'cmb2_get_metabox_form', $form, $object_id, $cmb );
 }
 
 /**
@@ -247,7 +247,7 @@ function cmb2_print_metabox_form( $meta_box, $object_id = 0, $args = array() ) {
 
 	$args = wp_parse_args( $args, array(
 		'form_format' => '<form class="cmb-form" method="post" id="%1$s" enctype="multipart/form-data" encoding="multipart/form-data"><input type="hidden" name="object_id" value="%2$s">%3$s<input type="submit" name="submit-cmb" value="%4$s" class="button-primary"></form>',
-		'save_button' => __( 'Save', 'bento' ),
+		'save_button' => __( 'Save', 'cmb2' ),
 		'object_type' => $cmb->mb_object_type(),
 		'cmb_styles'  => $cmb->prop( 'cmb_styles' ),
 		'enqueue_js'  => $cmb->prop( 'enqueue_js' ),
@@ -278,7 +278,7 @@ function cmb2_print_metabox_form( $meta_box, $object_id = 0, $args = array() ) {
 		CMB2_hookup::enqueue_cmb_js();
 	}
 
-	$form_format = apply_filters( 'bento_cmb2_get_metabox_form_format', $args['form_format'], $object_id, $cmb );
+	$form_format = apply_filters( 'cmb2_get_metabox_form_format', $args['form_format'], $object_id, $cmb );
 
 	$format_parts = explode( '%3$s', $form_format );
 

@@ -48,7 +48,7 @@
                   or things might explode!
 *************************************************************************/
 
-if ( ! class_exists( 'Bento_CMB2_Initiate', false ) ) {
+if ( ! class_exists( 'CMB2_Bootstrap_212', false ) ) {
 
 	/**
 	 * Handles checking for and loading the newest version of CMB2
@@ -61,7 +61,7 @@ if ( ! class_exists( 'Bento_CMB2_Initiate', false ) ) {
 	 * @license   GPL-2.0+
 	 * @link      http://webdevstudios.com
 	 */
-	class Bento_CMB2_Initiate {
+	class CMB2_Bootstrap_212 {
 
 		/**
 		 * Current version number
@@ -80,17 +80,17 @@ if ( ! class_exists( 'Bento_CMB2_Initiate', false ) ) {
 		const PRIORITY = 9987;
 
 		/**
-		 * Single instance of the Bento_CMB2_Initiate object
+		 * Single instance of the CMB2_Bootstrap_212 object
 		 *
-		 * @var Bento_CMB2_Initiate
+		 * @var CMB2_Bootstrap_212
 		 */
 		public static $single_instance = null;
 
 		/**
-		 * Creates/returns the single instance Bento_CMB2_Initiate object
+		 * Creates/returns the single instance CMB2_Bootstrap_212 object
 		 *
 		 * @since  2.0.0
-		 * @return Bento_CMB2_Initiate Single instance object
+		 * @return CMB2_Bootstrap_212 Single instance object
 		 */
 		public static function initiate() {
 			if ( null === self::$single_instance ) {
@@ -138,6 +138,8 @@ if ( ! class_exists( 'Bento_CMB2_Initiate', false ) ) {
 				define( 'CMB2_DIR', trailingslashit( dirname( __FILE__ ) ) );
 			}
 
+			$this->l10ni18n();
+
 			// Include helper functions
 			require_once 'includes/helper-functions.php';
 
@@ -148,9 +150,33 @@ if ( ! class_exists( 'Bento_CMB2_Initiate', false ) ) {
 			require_once 'bootstrap.php';
 		}
 
+		/**
+		 * Registers CMB2 text domain path
+		 * @since  2.0.0
+		 */
+		public function l10ni18n() {
+
+			$loaded = load_plugin_textdomain( 'cmb2', false, '/languages/' );
+
+			if ( ! $loaded ) {
+				$loaded = load_muplugin_textdomain( 'cmb2', '/languages/' );
+			}
+
+			if ( ! $loaded ) {
+				$loaded = load_theme_textdomain( 'cmb2', get_stylesheet_directory() . '/languages/' );
+			}
+
+			if ( ! $loaded ) {
+				$locale = apply_filters( 'plugin_locale', get_locale(), 'cmb2' );
+				$mofile = dirname( __FILE__ ) . '/languages/cmb2-' . $locale . '.mo';
+				load_textdomain( 'cmb2', $mofile );
+			}
+
+		}
+
 	}
 
 	// Make it so...
-	Bento_CMB2_Initiate::initiate();
+	CMB2_Bootstrap_212::initiate();
 
 }

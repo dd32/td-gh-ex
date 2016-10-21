@@ -55,7 +55,7 @@ class CMB2_Types {
 		 *                                   but could also be `comment`, `user` or `options-page`.
 		 * @param object $field_type_object  This `CMB2_Types` object
 		 */
-		do_action( "bento_cmb2_render_$name", $this->field, $this->field->escaped_value(), $this->field->object_id, $this->field->object_type, $this );
+		do_action( "cmb2_render_$name", $this->field, $this->field->escaped_value(), $this->field->object_id, $this->field->object_type, $this );
 	}
 
 	/**
@@ -153,10 +153,10 @@ class CMB2_Types {
 	public function is_valid_img_ext( $file ) {
 		$file_ext = $this->get_file_ext( $file );
 
-		$is_valid_types = apply_filters( 'bento_cmb2_valid_img_types', array( 'jpg', 'jpeg', 'png', 'gif', 'ico', 'icon' ) );
+		$is_valid_types = apply_filters( 'cmb2_valid_img_types', array( 'jpg', 'jpeg', 'png', 'gif', 'ico', 'icon' ) );
 		$is_valid = $file_ext && in_array( $file_ext, (array) $is_valid_types );
 
-		return (bool) apply_filters( 'bento_cmb2_' . $this->field->id() . '_is_valid_img_ext', $is_valid, $file, $file_ext );
+		return (bool) apply_filters( 'cmb2_' . $this->field->id() . '_is_valid_img_ext', $is_valid, $file, $file_ext );
 	}
 
 	/**
@@ -168,7 +168,7 @@ class CMB2_Types {
 	 * @return array            Parsed and filtered arguments
 	 */
 	public function parse_args( $args, $element, $defaults ) {
-		return wp_parse_args( apply_filters( "bento_cmb2_{$element}_attributes", $this->field->maybe_set_attributes( $args ), $defaults, $this->field, $this ), $defaults );
+		return wp_parse_args( apply_filters( "cmb2_{$element}_attributes", $this->field->maybe_set_attributes( $args ), $defaults, $this->field, $this ), $defaults );
 	}
 
 	/**
@@ -289,13 +289,13 @@ class CMB2_Types {
 		$this->_desc( true, true, true );
 		?>
 
-		<div id="<?php echo esc_html( $table_id ); ?>" class="cmb-repeat-table cmb-nested">
+		<div id="<?php echo $table_id; ?>" class="cmb-repeat-table cmb-nested">
 			<div class="cmb-tbody cmb-field-list">
 				<?php $this->repeatable_rows(); ?>
 			</div>
 		</div>
 		<p class="cmb-add-row">
-			<button data-selector="<?php echo esc_html( $table_id ); ?>" class="cmb-add-row-button button"><?php echo esc_html( $this->_text( 'add_row_text', __( 'Add Row', 'bento' ) ) ); ?></button>
+			<button data-selector="<?php echo $table_id; ?>" class="cmb-add-row-button button"><?php echo esc_html( $this->_text( 'add_row_text', __( 'Add Row', 'cmb2' ) ) ); ?></button>
 		</p>
 
 		<?php
@@ -349,12 +349,12 @@ class CMB2_Types {
 		$disabled = $disable_remover ? ' button-disabled' : '';
 		?>
 
-		<div class="cmb-row <?php echo esc_html( $class ); ?>">
+		<div class="cmb-row <?php echo $class; ?>">
 			<div class="cmb-td">
 				<?php $this->_render(); ?>
 			</div>
 			<div class="cmb-td cmb-remove-row">
-				<button class="button cmb-remove-row-button<?php echo esc_html( $disabled ); ?>"><?php echo esc_html( $this->_text( 'remove_row_text', __( 'Remove', 'bento' ) ) ); ?></button>
+				<button class="button cmb-remove-row-button<?php echo $disabled; ?>"><?php echo esc_html( $this->_text( 'remove_row_text', __( 'Remove', 'cmb2' ) ) ); ?></button>
 			</div>
 		</div>
 
@@ -374,7 +374,7 @@ class CMB2_Types {
 			return '';
 		}
 
-		$desc = esc_html( $this->field->args( 'description' ) );
+		$desc = $this->field->args( 'description' );
 
 		if ( ! $desc ) {
 			return;
@@ -496,7 +496,7 @@ class CMB2_Types {
 		) );
 
 		wp_editor( $a['value'], $a['id'], $a['options'] );
-		echo esc_html( $a['desc'] );
+		echo $a['desc'];
 	}
 
 	public function text_date( $args = array() ) {
@@ -668,8 +668,8 @@ class CMB2_Types {
 
 		$option_none  = $this->field->args( 'show_option_none' );
 		if ( ! empty( $option_none ) ) {
-			$option_none_value = apply_filters( 'bento_cmb2_taxonomy_select_default_value', '' );
-			$option_none_value = apply_filters( "bento_cmb2_taxonomy_select_{$this->_id()}_default_value", $option_none_value );
+			$option_none_value = apply_filters( 'cmb2_taxonomy_select_default_value', '' );
+			$option_none_value = apply_filters( "cmb2_taxonomy_select_{$this->_id()}_default_value", $option_none_value );
 
 			$options .= $this->select_option( array(
 				'label'   => $option_none,
@@ -746,11 +746,11 @@ class CMB2_Types {
 		$options    = ''; $i = 1;
 
 		if ( ! $terms ) {
-			$options .= sprintf( '<li><label>%s</label></li>', esc_html( $this->_text( 'no_terms_text', __( 'No terms', 'bento' ) ) ) );
+			$options .= sprintf( '<li><label>%s</label></li>', esc_html( $this->_text( 'no_terms_text', __( 'No terms', 'cmb2' ) ) ) );
 		} else {
 			$option_none  = $this->field->args( 'show_option_none' );
 			if ( ! empty( $option_none ) ) {
-				$option_none_value = apply_filters( "bento_cmb2_taxonomy_radio_{$this->_id()}_default_value", apply_filters( 'bento_cmb2_taxonomy_radio_default_value', '' ) );
+				$option_none_value = apply_filters( "cmb2_taxonomy_radio_{$this->_id()}_default_value", apply_filters( 'cmb2_taxonomy_radio_default_value', '' ) );
 				$args = array(
 					'value' => $option_none_value,
 					'label' => $option_none,
@@ -794,7 +794,7 @@ class CMB2_Types {
 		$options     = ''; $i = 1;
 
 		if ( ! $terms ) {
-			$options .= sprintf( '<li><label>%s</label></li>', esc_html( $this->_text( 'no_terms_text', __( 'No terms', 'bento' ) ) ) );
+			$options .= sprintf( '<li><label>%s</label></li>', esc_html( $this->_text( 'no_terms_text', __( 'No terms', 'cmb2' ) ) ) );
 		} else {
 
 			foreach ( $terms as $term ) {
@@ -838,8 +838,8 @@ class CMB2_Types {
 
 		echo $this->input( array(
 			'class'           => 'cmb2-oembed regular-text',
-			'data-objectid'   => esc_html( $this->field->object_id ),
-			'data-objecttype' => esc_html( $this->field->object_type ),
+			'data-objectid'   => $this->field->object_id,
+			'data-objecttype' => $this->field->object_type,
 		) ),
 		'<p class="cmb-spinner spinner" style="display:none;"></p>',
 		'<div id="', $this->_id( '-status' ), '" class="cmb2-media-status ui-helper-clearfix embed_wrap">', $oembed, '</div>';
@@ -855,13 +855,13 @@ class CMB2_Types {
 			'type'  => 'hidden',
 			'class' => 'cmb2-upload-file cmb2-upload-list',
 			'size'  => 45, 'desc'  => '', 'value'  => '',
-			'data-previewsize' => esc_html( is_array( $img_size ) ? sprintf( '[%s]', implode( ',', $img_size ) ) : 50 ),
-			'data-queryargs'   => esc_html( ! empty( $query_args ) ? json_encode( $query_args ) : '' ),
+			'data-previewsize' => is_array( $img_size ) ? sprintf( '[%s]', implode( ',', $img_size ) ) : 50,
+			'data-queryargs'   => ! empty( $query_args ) ? json_encode( $query_args ) : '',
 		) ),
 		$this->input( array(
 			'type'  => 'button',
 			'class' => 'cmb2-upload-button button cmb2-upload-list',
-			'value'  => esc_html( $this->_text( 'add_upload_files_text', __( 'Add or Upload Files', 'bento' ) ) ),
+			'value'  => esc_html( $this->_text( 'add_upload_files_text', __( 'Add or Upload Files', 'cmb2' ) ) ),
 			'name'  => '', 'id'  => '',
 		) );
 
@@ -915,15 +915,15 @@ class CMB2_Types {
 		$input_type = array_key_exists( 'url', $options ) && false === $options['url'] ? 'hidden' : 'text';
 
 		echo $this->input( array(
-			'type'  => esc_html( $input_type ),
+			'type'  => $input_type,
 			'class' => 'cmb2-upload-file regular-text',
 			'size'  => 45,
 			'desc'  => '',
-			'data-previewsize' => esc_html( is_array( $img_size ) ? '[' . implode( ',', $img_size ) . ']' : 350 ),
-			'data-queryargs'   => esc_html( ! empty( $query_args ) ? json_encode( $query_args ) : '' ),
+			'data-previewsize' => is_array( $img_size ) ? '[' . implode( ',', $img_size ) . ']' : 350,
+			'data-queryargs'   => ! empty( $query_args ) ? json_encode( $query_args ) : '',
 		) );
 
-		printf( '<input class="cmb2-upload-button button" type="button" value="%s" />', esc_attr( $this->_text( 'add_upload_file_text', __( 'Add or Upload File', 'bento' ) ) ) );
+		printf( '<input class="cmb2-upload-button button" type="button" value="%s" />', esc_attr( $this->_text( 'add_upload_file_text', __( 'Add or Upload File', 'cmb2' ) ) ) );
 
 		$this->_desc( true, true );
 
@@ -954,7 +954,7 @@ class CMB2_Types {
 		echo $this->input( array(
 			'type'  => 'hidden',
 			'class' => 'cmb2-upload-file-id',
-			'value' => esc_html( $_id_value ),
+			'value' => $_id_value,
 			'desc'  => '',
 		) ),
 		'<div id="', $this->_id( '-status' ), '" class="cmb2-media-status">';
@@ -1001,7 +1001,7 @@ class CMB2_Types {
 			$args['tag'],
 			$args['image'],
 			isset( $args['cached_id'] ) ? ' rel="' . $args['cached_id'] . '"' : '',
-			esc_html( $this->_text( 'remove_image_text', __( 'Remove Image', 'bento' ) ) ),
+			esc_html( $this->_text( 'remove_image_text', __( 'Remove Image', 'cmb2' ) ) ),
 			isset( $args['id_input'] ) ? $args['id_input'] : ''
 		);
 	}
@@ -1015,12 +1015,12 @@ class CMB2_Types {
 	public function file_status_output( $args ) {
 		printf( '<%1$s class="file-status"><span>%2$s <strong>%3$s</strong></span>&nbsp;&nbsp; (<a href="%4$s" target="_blank" rel="external">%5$s</a> / <a href="#" class="cmb2-remove-file-button"%6$s>%7$s</a>)%8$s</%1$s>',
 			$args['tag'],
-			esc_html( $this->_text( 'file_text', __( 'File:', 'bento' ) ) ),
+			esc_html( $this->_text( 'file_text', __( 'File:', 'cmb2' ) ) ),
 			$this->get_file_name_from_path( $args['value'] ),
 			$args['value'],
-			esc_html( $this->_text( 'file_download_text', __( 'Download', 'bento' ) ) ),
+			esc_html( $this->_text( 'file_download_text', __( 'Download', 'cmb2' ) ) ),
 			isset( $args['cached_id'] ) ? ' rel="' . $args['cached_id'] . '"' : '',
-			esc_html( $this->_text( 'remove_text', __( 'Remove', 'bento' ) ) ),
+			esc_html( $this->_text( 'remove_text', __( 'Remove', 'cmb2' ) ) ),
 			isset( $args['id_input'] ) ? $args['id_input'] : ''
 		);
 	}

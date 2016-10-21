@@ -117,7 +117,7 @@ class CMB2 {
 	public function __construct( $meta_box, $object_id = 0 ) {
 
 		if ( empty( $meta_box['id'] ) ) {
-			wp_die( __( 'Metabox configuration is required to have an ID parameter', 'bento' ) );
+			wp_die( __( 'Metabox configuration is required to have an ID parameter', 'cmb2' ) );
 		}
 
 		$this->meta_box = wp_parse_args( $meta_box, $this->mb_defaults );
@@ -140,7 +140,7 @@ class CMB2 {
 		 *
 		 * @param array $cmb This CMB2 object
 		 */
-		do_action( "bento_cmb2_init_{$this->cmb_id}", $this );
+		do_action( "cmb2_init_{$this->cmb_id}", $this );
 	}
 
 	/**
@@ -167,7 +167,7 @@ class CMB2 {
 		 *	                           Could also be `comment`, `user` or `options-page`.
 		 * @param array  $cmb         This CMB2 object
 		 */
-		do_action( 'bento_cmb2_before_form', $this->cmb_id, $object_id, $object_type, $this );
+		do_action( 'cmb2_before_form', $this->cmb_id, $object_id, $object_type, $this );
 
 		/**
 		 * Hook before form table begins
@@ -182,7 +182,7 @@ class CMB2 {
 		 * @param int    $object_id   The ID of the current object
 		 * @param array  $cmb         This CMB2 object
 		 */
-		do_action( "bento_cmb2_before_{$object_type}_form_{$this->cmb_id}", $object_id, $this );
+		do_action( "cmb2_before_{$object_type}_form_{$this->cmb_id}", $object_id, $this );
 
 		echo '<div class="cmb2-wrap form-table"><div id="cmb2-metabox-', sanitize_html_class( $this->cmb_id ), '" class="cmb2-metabox cmb-field-list">';
 
@@ -228,7 +228,7 @@ class CMB2 {
 		 *	                           Could also be `comment`, `user` or `options-page`.
 		 * @param array  $cmb         This CMB2 object
 		 */
-		do_action( 'bento_cmb2_after_form', $this->cmb_id, $object_id, $object_type, $this );
+		do_action( 'cmb2_after_form', $this->cmb_id, $object_id, $object_type, $this );
 
 		/**
 		 * Hook after form form has been rendered
@@ -242,7 +242,7 @@ class CMB2 {
 		 * @param int    $object_id   The ID of the current object
 		 * @param array  $cmb         This CMB2 object
 		 */
-		do_action( "bento_cmb2_after_{$object_type}_form_{$this->cmb_id}", $object_id, $this );
+		do_action( "cmb2_after_{$object_type}_form_{$this->cmb_id}", $object_id, $this );
 
 		echo "\n<!-- End CMB2 Fields -->\n";
 
@@ -329,7 +329,7 @@ class CMB2 {
 			}
 
 			echo '
-			<div class="cmbhandle" title="' , __( 'Click to toggle', 'bento' ), '"><br></div>
+			<div class="cmbhandle" title="' , __( 'Click to toggle', 'cmb2' ), '"><br></div>
 			<h3 class="cmb-group-title cmbhandle-title"><span>', $field_group->replace_hash( $field_group->options( 'group_title' ) ), '</span></h3>
 
 			<div class="inside cmb-td cmb-nested cmb-field-list">';
@@ -453,7 +453,7 @@ class CMB2 {
 		 *                            Will only include field ids that had values change.
 		 * @param array  $cmb         This CMB2 object
 		 */
-		do_action( "bento_cmb2_save_{$object_type}_fields", $object_id, $this->cmb_id, $this->updated, $this );
+		do_action( "cmb2_save_{$object_type}_fields", $object_id, $this->cmb_id, $this->updated, $this );
 
 		/**
 		 * Fires after all fields have been saved.
@@ -469,7 +469,7 @@ class CMB2 {
 		 *                            Will only include field ids that had values change.
 		 * @param array  $cmb         This CMB2 object
 		 */
-		do_action( "bento_cmb2_save_{$object_type}_fields_{$this->cmb_id}", $object_id, $this->updated, $this );
+		do_action( "cmb2_save_{$object_type}_fields_{$this->cmb_id}", $object_id, $this->updated, $this );
 
 	}
 
@@ -491,7 +491,7 @@ class CMB2 {
 		 * @param array $cmb       This CMB2 object
 		 * @param int   $object_id The ID of the current object
 		 */
-		do_action( "bento_cmb2_{$this->object_type()}_process_fields_{$this->cmb_id}", $this, $this->object_id() );
+		do_action( "cmb2_{$this->object_type()}_process_fields_{$this->cmb_id}", $this, $this->object_id() );
 
 		// Remove the show_on properties so saving works
 		$this->prop( 'show_on', array() );

@@ -63,7 +63,7 @@ class CMB2_hookup {
 		$this->once( 'wp_ajax_nopriv_cmb2_oembed_handler', array( cmb2_ajax(), 'oembed_handler' ) );
 
 		foreach ( get_class_methods( 'CMB2_Show_Filters' ) as $filter ) {
-			add_filter( 'bento_cmb2_show_on', array( 'CMB2_Show_Filters', $filter ), 10, 3 );
+			add_filter( 'cmb2_show_on', array( 'CMB2_Show_Filters', $filter ), 10, 3 );
 		}
 
 	}
@@ -134,7 +134,7 @@ class CMB2_hookup {
 		$front = is_admin() ? '' : '-front';
 
 		// Filter required styles and register stylesheet
-		$styles = apply_filters( 'bento_cmb2_style_dependencies', array() );
+		$styles = apply_filters( 'cmb2_style_dependencies', array() );
 		wp_register_style( 'cmb2-styles', cmb2_utils()->url( "css/cmb2{$front}{$min}.css" ), $styles );
 
 		self::$css_registration_done = true;
@@ -283,7 +283,7 @@ class CMB2_hookup {
 		 * @param mixed  $meta_box_args Array of the metabox arguments
 		 * @param mixed  $cmb           The CMB2 instance
 		 */
-		$show = (bool) apply_filters( 'bento_cmb2_show_on', $show, $this->cmb->meta_box, $this->cmb );
+		$show = (bool) apply_filters( 'cmb2_show_on', $show, $this->cmb->meta_box, $this->cmb );
 
 		return $show;
 	}
@@ -386,7 +386,7 @@ class CMB2_hookup {
 	 * @since  2.0.0
 	 */
 	public static function enqueue_cmb_css() {
-		if ( ! apply_filters( 'bento_cmb2_enqueue_css', true ) ) {
+		if ( ! apply_filters( 'cmb2_enqueue_css', true ) ) {
 			return false;
 		}
 
@@ -399,7 +399,7 @@ class CMB2_hookup {
 	 * @since  2.0.0
 	 */
 	public static function enqueue_cmb_js() {
-		if ( ! apply_filters( 'bento_cmb2_enqueue_js', true ) ) {
+		if ( ! apply_filters( 'cmb2_enqueue_js', true ) ) {
 			return false;
 		}
 

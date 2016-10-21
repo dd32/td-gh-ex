@@ -36,7 +36,7 @@ function bento_theme_setup() {
 	add_filter( 'body_class', 'bento_extra_classes' );
 	add_filter( 'post_class', 'bento_has_thumb_class' );
 	add_filter( 'get_the_archive_title', 'bento_cleaner_archive_titles' );
-	add_filter( 'bento_cmb2_admin_init', 'bento_metaboxes' );
+	add_filter( 'cmb2_admin_init', 'bento_metaboxes' );
 	add_filter( 'upload_mimes', 'bento_font_uploading' );
 	add_filter( 'dynamic_sidebar_params', 'bento_count_footer_widgets', 50 );
 	
@@ -442,8 +442,10 @@ function bento_register_sidebars() {
 
 
 // Initialize the metabox class
-if ( file_exists( get_template_directory() . '/includes/metaboxes/init.php' ) ) {
-	require_once ( get_template_directory().'/includes/metaboxes/init.php' );
+if ( ! class_exists( 'CMB2_Bootstrap_212' ) ) {
+	if ( file_exists( get_template_directory() . '/includes/metaboxes/init.php' ) ) {
+		require_once ( get_template_directory().'/includes/metaboxes/init.php' );
+	}
 }
 
 
