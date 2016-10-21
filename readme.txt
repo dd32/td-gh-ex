@@ -65,6 +65,9 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.46.9
+* Add feature section title input field
+
 Version 2.46.8
 * Fixed the theme tag
 * Fixed text domain issue

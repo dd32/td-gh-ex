@@ -30,6 +30,7 @@ $accesspresslite_options = array(
 	'welcome_post_char' => '650',
 	'show_fontawesome' => false,
     'big_icons' => false,
+    'featured_section_title' => __('Feature Posts','accesspress-lite'),
 	'featured_post1' => '',
 	'featured_post2' => '',
 	'featured_post3' => '',
@@ -548,7 +549,11 @@ function accesspresslite_theme_options_page() {
 							<label for="big_icons"><?php _e('Check to enable','accesspress-lite'); ?></label><br />
 						</td>
 					</tr>
-                    
+                    <tr><th scope="row"><label for="featured_post1"><?php _e('Featured Section Title','accesspress-lite'); ?></label></th>
+					<td>
+                       <input id="featured_section_title" name="accesspresslite_options[featured_section_title]" type="text" value="<?php if ( isset($settings['featured_section_title'])){echo esc_attr($settings['featured_section_title']); } ?>" placeholder="<?php _e('Features Section Title','accesspress-lite'); ?>" />
+					</td>
+					</tr>
 					<tr><th scope="row"><label for="featured_post1"><?php _e('Featured Post 1','accesspress-lite'); ?></label></th>
 					<td>
 					<select id="featured_post1" name="accesspresslite_options[featured_post1]">
@@ -1121,6 +1126,7 @@ function accesspresslite_validate_options( $input ) {
 	// We strip all tags from the text field, to avoid vulnerablilties.
     $input['welcome_post'] = wp_filter_nohtml_kses( $input['welcome_post'] );
     $input['slider_options'] = wp_filter_nohtml_kses( $input['slider_options'] );
+    $input['featured_section_title'] = sanitize_text_field( $input['featured_section_title'] );
     $input['featured_post1'] = wp_filter_nohtml_kses( $input['featured_post1'] );
     $input['featured_post2'] = wp_filter_nohtml_kses( $input['featured_post2'] );
     $input['featured_post3'] = wp_filter_nohtml_kses( $input['featured_post3'] );

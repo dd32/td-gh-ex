@@ -4,6 +4,7 @@ $accesspresslite_settings = get_option( 'accesspresslite_options', $accesspressl
 $accesspresslite_layout = $accesspresslite_settings['accesspresslite_home_page_layout'];
 $accesspresslite_welcome_post_id = $accesspresslite_settings['welcome_post'];
 $accesspresslite_event_category = $accesspresslite_settings['event_cat'];
+$featured_section_title = $accesspresslite_settings['featured_section_title'];
 $featured_post1 = $accesspresslite_settings['featured_post1'];
 $featured_post2 = $accesspresslite_settings['featured_post2'];
 $featured_post3 = $accesspresslite_settings['featured_post3'];
@@ -85,7 +86,7 @@ if( $accesspresslite_layout !== 'Layout2') { ?>
 </section>
 <?php do_action('accesspresslite_call_to_action');?>
 <section id="mid-section" class="ak-container">
-<h1><?php _e('Features Posts','accesspress-lite') ?></h1>
+<?php if($featured_section_title){ ?><h1><?php echo esc_attr($featured_section_title); ?></h1><?php } ?>
 <?php 
 if(!empty($featured_post1) || !empty($featured_post2) || !empty($featured_post3)){
     ?><div class="feature_wrap clearfix"><?php 
