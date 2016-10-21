@@ -10,7 +10,7 @@ if ( has_post_thumbnail() ) {
 <article id="post-<?php the_ID(); ?>" <?php post_class( $has_img . ' blog-post-side-layout' ); ?>>
     
     <?php
-    if ( get_theme_mod( 'topshop-blog-list-image-type', false ) == 'blog-use-images-loop' ) : ?>
+    if ( get_theme_mod( 'topshop-blog-list-image-type' ) == 'blog-use-images-loop' ) : ?>
         <div class="post-loop-images">
             
             <div class="post-loop-images-carousel-wrapper post-loop-images-carousel-wrapper-remove">

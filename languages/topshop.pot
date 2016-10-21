@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: TopShop\n"
-"POT-Creation-Date: 2016-10-18 14:12+0200\n"
+"POT-Creation-Date: 2016-10-21 11:51+0200\n"
 "PO-Revision-Date: 2016-06-01 15:20+0200\n"
 "Last-Translator: Kaira <zack@kairaweb.com>\n"
 "Language-Team: \n"
@@ -58,12 +58,14 @@ msgstr ""
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: customizer/customizer-library/custom-controls/upsell.php:27
-msgid "Buy TopShop Premium"
+#: customizer/customizer-library/custom-controls/upsell.php:26
+msgid "Get TopShop Premium"
 msgstr ""
 
-#: customizer/customizer-library/custom-controls/upsell.php:28
-msgid "Premium has a bunch of extra settings"
+#: customizer/customizer-library/custom-controls/upsell.php:27
+msgid ""
+"View the <a href=\"https://kairaweb.com/theme/topshop/#premium-features\" "
+"target=\"_blank\">TopShop Premium features</a>"
 msgstr ""
 
 #: customizer/customizer-library/extensions/fonts.php:115
@@ -125,70 +127,68 @@ msgstr ""
 msgid "Layout Options"
 msgstr ""
 
-#: customizer/customizer-options.php:39
-msgid "Site Layout"
-msgstr ""
-
-#: customizer/customizer-options.php:47
-msgid "Header Layout"
-msgstr ""
-
-#: customizer/customizer-options.php:54
+#: customizer/customizer-options.php:38
 msgid "Show Search"
 msgstr ""
 
-#: customizer/customizer-options.php:57
+#: customizer/customizer-options.php:41
 msgid "Enable to a slogan for your site. This uses the site Tagline"
 msgstr ""
 
-#: customizer/customizer-options.php:62
+#: customizer/customizer-options.php:46
 msgid "Sticky Header"
 msgstr ""
 
-#: customizer/customizer-options.php:65
+#: customizer/customizer-options.php:49
 msgid "Select this box to make the main navigation sticky"
 msgstr ""
 
-#: customizer/customizer-options.php:70
+#: customizer/customizer-options.php:54
 msgid "Show Top Bar"
 msgstr ""
 
-#: customizer/customizer-options.php:73
+#: customizer/customizer-options.php:57
 msgid ""
 "This will show/hide the top bar in the header<br /><br /><a href=\"https://"
 "kairaweb.com/documentation/topshop-hooks-developers/\" target=\"_blank"
 "\">TopShop Premium has hooks</a> integrated for developers to hook on to."
 msgstr ""
 
-#: customizer/customizer-options.php:78
+#: customizer/customizer-options.php:62
 msgid "Remove WooCommerce Cart"
 msgstr ""
 
-#: customizer/customizer-options.php:91
+#: customizer/customizer-options.php:72 customizer/customizer-options.php:118
+#: customizer/customizer-options.php:183 customizer/customizer-options.php:237
+#: customizer/customizer-options.php:255 customizer/customizer-options.php:306
+msgid "TopShop Premium"
+msgstr ""
+
+#: customizer/customizer-options.php:83
 msgid "Slider Options"
 msgstr ""
 
-#: customizer/customizer-options.php:96
+#: customizer/customizer-options.php:88
 msgid "Default Slider"
 msgstr ""
 
-#: customizer/customizer-options.php:97
+#: customizer/customizer-options.php:89
 msgid "Meta Slider"
 msgstr ""
 
-#: customizer/customizer-options.php:98
+#: customizer/customizer-options.php:90
 msgid "None"
 msgstr ""
 
-#: customizer/customizer-options.php:102
+#: customizer/customizer-options.php:94
 msgid "Choose a Slider"
 msgstr ""
 
-#: customizer/customizer-options.php:110
+#: customizer/customizer-options.php:102
 msgid "Slider Categories"
 msgstr ""
 
-#: customizer/customizer-options.php:113
+#: customizer/customizer-options.php:105
 msgid ""
 "Enter the ID's of the post categories you want to display in the slider. Eg: "
 "\"13,17,19\" (no spaces and only comma's)<br /><a href=\"https://kairaweb."
@@ -196,78 +196,66 @@ msgid ""
 "\"><b>Follow instructions here</b></a>"
 msgstr ""
 
-#: customizer/customizer-options.php:117
+#: customizer/customizer-options.php:109
 msgid "Slider Shortcode"
 msgstr ""
 
-#: customizer/customizer-options.php:120
+#: customizer/customizer-options.php:112
 msgid ""
 "For a more advanced slider we recommend <a href=\"https://getdpd.com/cart/"
 "hoplink/15318?referrer=9jtzbgs34v8k4c0gs\" target=\"_blank\">Meta Slider</"
 "a><br /><br />Enter the slider shortcode here"
 msgstr ""
 
-#: customizer/customizer-options.php:126
-msgid "Extra Slider Settings"
-msgstr ""
-
-#: customizer/customizer-options.php:138
+#: customizer/customizer-options.php:130
 msgid "Styling Options"
 msgstr ""
 
-#: customizer/customizer-options.php:144
+#: customizer/customizer-options.php:136
 msgid "Main Color"
 msgstr ""
 
-#: customizer/customizer-options.php:151
+#: customizer/customizer-options.php:143
 msgid "Secondary Color"
 msgstr ""
 
-#: customizer/customizer-options.php:159
+#: customizer/customizer-options.php:151
 msgid "Body Font"
 msgstr ""
 
-#: customizer/customizer-options.php:167
+#: customizer/customizer-options.php:159
 msgid "Body Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:174
+#: customizer/customizer-options.php:166
 msgid "Headings Font"
 msgstr ""
 
-#: customizer/customizer-options.php:182
+#: customizer/customizer-options.php:174
 msgid "Heading Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:191
-msgid "Extra Styling options"
-msgstr ""
-
-#: customizer/customizer-options.php:198
+#: customizer/customizer-options.php:190
 msgid "Custom CSS"
 msgstr ""
 
-#: customizer/customizer-options.php:202
+#: customizer/customizer-options.php:194
 msgid "Add custom CSS to your theme"
 msgstr ""
 
-#: customizer/customizer-options.php:211
+#: customizer/customizer-options.php:203
 msgid "Blog Options"
 msgstr ""
 
-#: customizer/customizer-options.php:218
-msgid "Blog Post Layout"
-msgstr ""
-
-#: customizer/customizer-options.php:224
+#: customizer/customizer-options.php:209
 msgid "Blog Page Title"
 msgstr ""
 
-#: customizer/customizer-options.php:231
+#: customizer/customizer-options.php:216
 msgid "Exclude Blog Categories"
 msgstr ""
 
-#: customizer/customizer-options.php:234
+#: customizer/customizer-options.php:219
 msgid ""
 "Enter the ID's of the post categories you'd like to EXCLUDE from the Blog, "
 "enter only the ID's with a minus sign (-) before them, separated by a comma "
@@ -275,82 +263,74 @@ msgid ""
 "then it'll show ONLY posts in those categories."
 msgstr ""
 
-#: customizer/customizer-options.php:237
+#: customizer/customizer-options.php:222
 msgid "Post Images Carousel"
 msgstr ""
 
-#: customizer/customizer-options.php:238
+#: customizer/customizer-options.php:223
 msgid "Use only the featured image"
 msgstr ""
 
-#: customizer/customizer-options.php:242
+#: customizer/customizer-options.php:227
 msgid "Blog List Image"
 msgstr ""
 
-#: customizer/customizer-options.php:255
+#: customizer/customizer-options.php:248
 msgid "Social Links"
 msgstr ""
 
-#: customizer/customizer-options.php:262
-msgid "Add Social Links"
-msgstr ""
-
-#: customizer/customizer-options.php:273
+#: customizer/customizer-options.php:266
 msgid "Website Text"
 msgstr ""
 
-#: customizer/customizer-options.php:279
+#: customizer/customizer-options.php:272
 msgid "Header Info Text"
 msgstr ""
 
-#: customizer/customizer-options.php:282
+#: customizer/customizer-options.php:275
 msgid "Call Us: 082 444 BOOM"
 msgstr ""
 
-#: customizer/customizer-options.php:283
+#: customizer/customizer-options.php:276
 msgid "This is the text in the header"
 msgstr ""
 
-#: customizer/customizer-options.php:288
-msgid "Site Copy Text"
-msgstr ""
-
-#: customizer/customizer-options.php:294
+#: customizer/customizer-options.php:280
 msgid "404 Error Page Heading"
 msgstr ""
 
-#: customizer/customizer-options.php:297
+#: customizer/customizer-options.php:283
 msgid "Oops! <span>404</span>"
 msgstr ""
 
-#: customizer/customizer-options.php:298
+#: customizer/customizer-options.php:284
 msgid "Enter the heading for the 404 Error page"
 msgstr ""
 
-#: customizer/customizer-options.php:302
+#: customizer/customizer-options.php:288
 msgid "Error 404 Message"
 msgstr ""
 
-#: customizer/customizer-options.php:305
+#: customizer/customizer-options.php:291
 msgid ""
 "It looks like that page does not exist. <br />Return home or try a search"
 msgstr ""
 
-#: customizer/customizer-options.php:306
+#: customizer/customizer-options.php:292
 msgid "Enter the default text on the 404 error page (Page not found)"
 msgstr ""
 
-#: customizer/customizer-options.php:310
+#: customizer/customizer-options.php:296
 msgid "No Search Results"
 msgstr ""
 
-#: customizer/customizer-options.php:313
+#: customizer/customizer-options.php:299
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: customizer/customizer-options.php:314
+#: customizer/customizer-options.php:300
 msgid "Enter the default text for when no search results are found"
 msgstr ""
 
@@ -382,15 +362,15 @@ msgstr ""
 msgid "Top Bar Menu"
 msgstr ""
 
-#: functions.php:117
+#: functions.php:109
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:127
+#: functions.php:119
 msgid "TopShop Footer"
 msgstr ""
 
-#: functions.php:129
+#: functions.php:121
 msgid "The footer will divide into however many widgets are put here."
 msgstr ""
 

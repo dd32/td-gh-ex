@@ -71,6 +71,10 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.02
+* Added missin sanitization - improving security
+* Removed Post Formats - Not used
+
 #### 1.3.01
 * WooCommerce styling fixes - My Account
 * Default slider now uses Excerpt/Content text

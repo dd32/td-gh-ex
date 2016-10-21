@@ -33,22 +33,6 @@ function customizer_library_topshop_options() {
         'priority' => '30'
     );
     
-    // Upsell Button One
-    $options['topshop-upsell-one'] = array(
-        'id' => 'topshop-upsell-one',
-        'label'   => __( 'Site Layout', 'topshop' ),
-        'section' => $section,
-        'type'    => 'upsell',
-    );
-    
-    // Upsell Button Two
-    $options['topshop-upsell-two'] = array(
-        'id' => 'topshop-upsell-two',
-        'label'   => __( 'Header Layout', 'topshop' ),
-        'section' => $section,
-        'type'    => 'upsell',
-    );
-    
     $options['topshop-header-search'] = array(
         'id' => 'topshop-header-search',
         'label'   => __( 'Show Search', 'topshop' ),
@@ -80,6 +64,14 @@ function customizer_library_topshop_options() {
         'type'    => 'checkbox',
         'description' => __( '', 'topshop' ),
         'default' => 0,
+    );
+    
+    // Upsell Button
+    $options['topshop-upsell-layout'] = array(
+        'id' => 'topshop-upsell-layout',
+        'label'   => __( 'TopShop Premium', 'topshop' ),
+        'section' => $section,
+        'type'    => 'upsell',
     );
     
     
@@ -120,10 +112,10 @@ function customizer_library_topshop_options() {
         'description' => __( 'For a more advanced slider we recommend <a href="https://getdpd.com/cart/hoplink/15318?referrer=9jtzbgs34v8k4c0gs" target="_blank">Meta Slider</a><br /><br />Enter the slider shortcode here', 'topshop' )
     );
     
-    // Upsell Button Slider
-    $options['topshop-upsell-two-one'] = array(
-        'id' => 'topshop-upsell-two-one',
-        'label'   => __( 'Extra Slider Settings', 'topshop' ),
+    // Upsell Button
+    $options['topshop-upsell-slider'] = array(
+        'id' => 'topshop-upsell-slider',
+        'label'   => __( 'TopShop Premium', 'topshop' ),
         'section' => $section,
         'type'    => 'upsell',
     );
@@ -185,10 +177,10 @@ function customizer_library_topshop_options() {
         'default' => $heading_font_color,
     );
     
-    // Upsell Button Styling
-    $options['topshop-upsell-two-two'] = array(
-        'id' => 'topshop-upsell-two-two',
-        'label'   => __( 'Extra Styling options', 'topshop' ),
+    // Upsell Button
+    $options['topshop-upsell-styling'] = array(
+        'id' => 'topshop-upsell-styling',
+        'label'   => __( 'TopShop Premium', 'topshop' ),
         'section' => $section,
         'type'    => 'upsell',
     );
@@ -212,13 +204,6 @@ function customizer_library_topshop_options() {
         'priority' => '50'
     );
     
-    // Upsell Button Three
-    $options['topshop-upsell-three'] = array(
-        'id' => 'topshop-upsell-three',
-        'label'   => __( 'Blog Post Layout', 'topshop' ),
-        'section' => $section,
-        'type'    => 'upsell',
-    );
     $options['topshop-blog-title'] = array(
         'id' => 'topshop-blog-title',
         'label'   => __( 'Blog Page Title', 'topshop' ),
@@ -246,6 +231,14 @@ function customizer_library_topshop_options() {
         'default' => 'blog-use-featured-image'
     );
     
+    // Upsell Button
+    $options['topshop-upsell-blog'] = array(
+        'id' => 'topshop-upsell-blog',
+        'label'   => __( 'TopShop Premium', 'topshop' ),
+        'section' => $section,
+        'type'    => 'upsell',
+    );
+    
     
     // Social Settings
     $section = 'topshop-social';
@@ -256,10 +249,10 @@ function customizer_library_topshop_options() {
         'priority' => '80'
     );
     
-    // Upsell Button Four
-    $options['topshop-upsell-four'] = array(
-        'id' => 'topshop-upsell-four',
-        'label'   => __( 'Add Social Links', 'topshop' ),
+    // Upsell Button
+    $options['topshop-upsell-social'] = array(
+        'id' => 'topshop-upsell-social',
+        'label'   => __( 'TopShop Premium', 'topshop' ),
         'section' => $section,
         'type'    => 'upsell',
     );
@@ -281,13 +274,6 @@ function customizer_library_topshop_options() {
         'type'    => 'text',
         'default' => __( 'Call Us: 082 444 BOOM', 'topshop'),
         'description' => __( 'This is the text in the header', 'topshop' )
-    );
-    // Upsell Button Five
-    $options['topshop-upsell-five'] = array(
-        'id' => 'topshop-upsell-five',
-        'label'   => __( 'Site Copy Text', 'topshop' ),
-        'section' => $section,
-        'type'    => 'upsell',
     );
     $options['topshop-website-error-head'] = array(
         'id' => 'topshop-website-error-head',
@@ -312,6 +298,14 @@ function customizer_library_topshop_options() {
         'type'    => 'textarea',
         'default' => __( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'topshop'),
         'description' => __( 'Enter the default text for when no search results are found', 'topshop' )
+    );
+    
+    // Upsell Button
+    $options['topshop-upsell-website'] = array(
+        'id' => 'topshop-upsell-website',
+        'label'   => __( 'TopShop Premium', 'topshop' ),
+        'section' => $section,
+        'type'    => 'upsell',
     );
 
 	// Adds the sections to the $options array
