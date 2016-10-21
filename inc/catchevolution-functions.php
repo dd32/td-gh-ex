@@ -34,7 +34,7 @@ function catchevolution_scripts_method() {
 	//Responsive
 	wp_enqueue_script('catchevolution-menu', get_template_directory_uri() . '/js/catchevolution-menu.min.js', array('jquery'), '1.1.0', true);
 	wp_enqueue_style( 'catchevolution-responsive', get_template_directory_uri() . '/css/responsive.css' );
-	wp_enqueue_script( 'catchevolution-fitvids', get_template_directory_uri() . '/js/catchevolution-fitvids.min.js', array( 'jquery' ), '20130324', true );
+	wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/js/catchevolution-fitvids.min.js', array( 'jquery' ), '20130324', true );
 
 	/**
 	 * Adds JavaScript to pages with the comment form to support
@@ -46,15 +46,18 @@ function catchevolution_scripts_method() {
 
 	//Browser Specific Enqueue Script i.e. for IE 1-6
 	$catchevolution_ua = strtolower($_SERVER['HTTP_USER_AGENT']);
-	if(preg_match('/(?i)msie [1-6]/',$catchevolution_ua)) {
-		wp_enqueue_script( 'catchevolution-pngfix', get_template_directory_uri() . '/js/pngfix.min.js' );
-	}
-	//browser specific queuing i.e. for IE 1-8
-	if(preg_match('/(?i)msie [1-8]/',$catchevolution_ua)) {
-	 	wp_enqueue_script( 'catchevolution-ieltc8', get_template_directory_uri() . '/js/catchevolution-ielte8.min.js', array( 'jquery' ), '20130114', false );
-		wp_enqueue_style( 'catchevolution-iecss', get_template_directory_uri() . '/css/ie.css' );
+	if (preg_match('/(?i)msie [1-6]/',$catchevolution_ua)) {
+
 	}
 
+	//browser specific queuing
+	//for IE 1-8
+	wp_enqueue_script( 'catchevolution-html5', get_template_directory_uri() . '/js/catchevolution-ielte8.min.js', array(), '3.7.3' );
+	wp_script_add_data( 'catchevolution-html5', 'conditional', 'lt IE 9' );
+
+	//for IE 1-6
+	wp_enqueue_script( 'catchevolution-pngfix', get_template_directory_uri() . '/js/pngfix.min.js' );
+	wp_script_add_data( 'catchevolution-pngfix', 'conditional', 'lte IE 6' );
 } // catchevolution_scripts_method
 add_action( 'wp_enqueue_scripts', 'catchevolution_scripts_method' );
 
@@ -103,7 +106,7 @@ add_filter( 'wp_head', 'catchevolution_responsive', 1 );
 function catchevolution_favicon() {
 	//delete_transient( 'catchevolution_favicon' );
 
-	if( ( !$catchevolution_favicon = get_transient( 'catchevolution_favicon' ) ) ) {
+	if ( ( !$catchevolution_favicon = get_transient( 'catchevolution_favicon' ) ) ) {
 
 		global $catchevolution_options_settings;
         $options = $catchevolution_options_settings;
@@ -168,12 +171,12 @@ function catchevolution_inline_css() {
 		$catchevolution_inline_css	.= '<style type="text/css" media="screen">' . "\n";
 
 		//Disable Header
-		if( !empty( $options[ 'disable_header' ] ) ) {
+		if ( !empty( $options[ 'disable_header' ] ) ) {
 			$catchevolution_inline_css	.=  "#branding { display: none; }" . "\n";
 		}
 
 		//Custom CSS Option
-		if( !empty( $options[ 'custom_css' ] ) ) {
+		if ( !empty( $options[ 'custom_css' ] ) ) {
 			$catchevolution_inline_css	.=  $options['custom_css'] . "\n";
 		}
 
@@ -196,7 +199,7 @@ function catchevolution_excerpt_length( $length ) {
 	global $catchevolution_options_settings;
     $options = $catchevolution_options_settings;
 
-	if( empty( $options['excerpt_length'] ) )
+	if ( empty( $options['excerpt_length'] ) )
 		$options = catchevolution_get_default_theme_options();
 
 	$length = $options['excerpt_length'];
@@ -507,7 +510,7 @@ add_filter( 'manage_posts_columns', 'catchevolution_post_id_column' );
 
 
 function catchevolution_posts_id_column( $col, $val ) {
-	if( $col == 'postid' ) echo $val;
+	if ( $col == 'postid' ) echo $val;
 }
 add_action( 'manage_posts_custom_column', 'catchevolution_posts_id_column', 10, 2 );
 
@@ -578,11 +581,11 @@ function catchevolution_sliders() {
 	//delete_transient( 'catchevolution_sliders' );
 
 	// This function passes the value of slider effect to js file
-    if( function_exists( 'catchevolution_pass_slider_value' ) ) {
+    if ( function_exists( 'catchevolution_pass_slider_value' ) ) {
       	catchevolution_pass_slider_value();
   	}
 
-	if( ( !$catchevolution_sliders = get_transient( 'catchevolution_sliders' ) ) && !empty( $options[ 'featured_slider' ] ) ) {
+	if ( ( !$catchevolution_sliders = get_transient( 'catchevolution_sliders' ) ) && !empty( $options[ 'featured_slider' ] ) ) {
 		echo '<!-- refreshing cache -->';
 
 		$catchevolution_sliders = '
@@ -633,7 +636,7 @@ function catchevolution_default_sliders() {
 	//delete_transient( 'catchevolution_default_sliders' );
 
 	// This function passes the value of slider effect to js file
-    if( function_exists( 'catchevolution_pass_slider_value' ) ) {
+    if ( function_exists( 'catchevolution_pass_slider_value' ) ) {
       	catchevolution_pass_slider_value();
   	}
 
@@ -709,13 +712,13 @@ function catchevolution_alter_home( $query ){
 	$cats = $options[ 'front_page_category' ];
 
     if ( $options[ 'exclude_slider_post'] != "0" && !empty( $options[ 'featured_slider' ] ) ) {
-		if( $query->is_main_query() && $query->is_home() ) {
+		if ( $query->is_main_query() && $query->is_home() ) {
 			$query->query_vars['post__not_in'] = $options[ 'featured_slider' ];
 		}
 	}
 
 	if ( !in_array( '0', $cats ) ) {
-		if( $query->is_main_query() && $query->is_home() ) {
+		if ( $query->is_main_query() && $query->is_home() ) {
 			$query->query_vars['category__in'] = $options[ 'front_page_category' ];
 		}
 	}
@@ -869,15 +872,15 @@ function catchevolution_social_networks() {
 						$options[ 'social_meetup' ]
 					);
 	$flag = 0;
-	if( !empty( $elements ) ) {
+	if ( !empty( $elements ) ) {
 		foreach( $elements as $option) {
-			if( !empty( $option ) ) {
+			if ( !empty( $option ) ) {
 				$flag = 1;
 			}
 			else {
 				$flag = 0;
 			}
-			if( $flag == 1 ) {
+			if ( $flag == 1 ) {
 				break;
 			}
 		}
@@ -1073,15 +1076,15 @@ function catchevolution_social_search() {
 						$options[ 'social_meetup' ]
 					);
 	$flag = 0;
-	if( !empty( $elements ) ) {
+	if ( !empty( $elements ) ) {
 		foreach( $elements as $option) {
-			if( !empty( $option ) ) {
+			if ( !empty( $option ) ) {
 				$flag = 1;
 			}
 			else {
 				$flag = 0;
 			}
-			if( $flag == 1 ) {
+			if ( $flag == 1 ) {
 				break;
 			}
 		}
@@ -1297,7 +1300,7 @@ add_action('wp_footer', 'catchevolution_footercode');
 function catchevolution_web_clip() {
 	//delete_transient( 'catchevolution_web_clip' );
 
-	if( ( !$catchevolution_web_clip = get_transient( 'catchevolution_web_clip' ) ) ) {
+	if ( ( !$catchevolution_web_clip = get_transient( 'catchevolution_web_clip' ) ) ) {
 
 		global $catchevolution_options_settings;
         $options = $catchevolution_options_settings;

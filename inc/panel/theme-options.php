@@ -867,6 +867,10 @@ function catchevolution_theme_options_validate( $options ) {
 	global $catchevolution_options_defaults;
 	$defaults = $catchevolution_options_defaults;
 
+    if( $options['reset_all_settings'] == "1" ) {
+        return $defaults;
+    }
+
     $input = array();
     $input = $options;
 
@@ -956,8 +960,9 @@ function catchevolution_theme_options_validate( $options ) {
 		if ( $input['reset_sidebar_layout'] == 1 ) {
 			global $catchevolution_options_defaults;
 			$defaults = $catchevolution_options_defaults;
-			$input_validated[ 'sidebar_layout' ] = $defaults[ 'sidebar_layout' ];
-			$input_validated[ 'content_layout' ] = $defaults[ 'content_layout' ];
+            $input_validated[ 'sidebar_layout' ]     = $defaults[ 'sidebar_layout' ];
+            $input_validated[ 'content_layout' ]     = $defaults[ 'content_layout' ];
+            $input_validated['reset_sidebar_layout'] = "0";
 		}
 	}
 
@@ -983,8 +988,9 @@ function catchevolution_theme_options_validate( $options ) {
 		if( $input['reset_more_tag'] == 1 ) {
 			global $catchevolution_options_defaults;
 			$defaults = $catchevolution_options_defaults;
-			$input_validated[ 'more_tag_text' ] = $defaults[ 'more_tag_text' ];
-			$input_validated[ 'excerpt_length' ] = $defaults[ 'excerpt_length' ];
+            $input_validated[ 'more_tag_text' ]  = $defaults[ 'more_tag_text' ];
+            $input_validated[ 'excerpt_length' ] = $defaults[ 'excerpt_length' ];
+            $input_validated[ 'reset_more_tag' ] = "0";
 		}
 	}
 

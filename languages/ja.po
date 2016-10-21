@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Evolution\n"
-"POT-Creation-Date: 2016-09-22 22:10+0545\n"
+"POT-Creation-Date: 2016-10-21 18:13+0545\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -48,41 +48,12 @@ msgstr ""
 "URLを正しく入力しなおしてブラウザの「更新」ボタンをクリックするか、以下の検索"
 "ボックスにキーワードを入力して検索してください。"
 
-#: ../archive.php:22
-#, php-format
-msgid "Daily Archives: %s"
-msgstr "日別アーカイブ： %s"
-
-#: ../archive.php:24
-#, php-format
-msgid "Monthly Archives: %s"
-msgstr "月別アーカイブ：%s"
-
-#: ../archive.php:24
-msgctxt "monthly archives date format"
-msgid "F Y"
-msgstr "F Y"
-
-#: ../archive.php:26
-#, php-format
-msgid "Yearly Archives: %s"
-msgstr "年別アーカイブ：%s"
-
-#: ../archive.php:26
-msgctxt "yearly archives date format"
-msgid "Y"
-msgstr "Y"
-
-#: ../archive.php:28
-msgid "Blog Archives"
-msgstr "ブログアーカイブ："
-
-#: ../archive.php:52 ../author.php:69 ../category.php:45 ../index.php:32
+#: ../archive.php:42 ../author.php:69 ../category.php:45 ../index.php:32
 #: ../page-blog.php:65 ../search.php:39 ../tag.php:45
 msgid "Nothing Found"
 msgstr "見つかりませんでした。"
 
-#: ../archive.php:56 ../author.php:73 ../category.php:49 ../index.php:36
+#: ../archive.php:46 ../author.php:73 ../category.php:49 ../index.php:36
 #: ../page-blog.php:69 ../tag.php:49
 msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
@@ -137,7 +108,7 @@ msgstr "コメント欄は閉じられています。"
 #: ../content-gallery.php:16 ../content-gallery.php:48 ../content-image.php:15
 #: ../content-link.php:16 ../content-page.php:13 ../content-quote.php:14
 #: ../content-status.php:15 ../content.php:27 ../content.php:31
-#: ../content.php:63 ../inc/catchevolution-functions.php:605
+#: ../content.php:63 ../inc/catchevolution-functions.php:608
 #, php-format
 msgid "Permalink to %s"
 msgstr "%sのパーマリンク"
@@ -186,8 +157,8 @@ msgstr "ページ："
 #: ../content-gallery.php:96 ../content-image.php:73 ../content-link.php:50
 #: ../content-page.php:27 ../content-quote.php:79 ../content-single.php:64
 #: ../content-status.php:51 ../content.php:120 ../image.php:97
-#: ../inc/catchevolution-functions.php:358
-#: ../inc/catchevolution-functions.php:386
+#: ../inc/catchevolution-functions.php:361
+#: ../inc/catchevolution-functions.php:389
 msgid "Edit"
 msgstr "編集する"
 
@@ -245,7 +216,7 @@ msgid "Image"
 msgstr "イメージ"
 
 #: ../content-image.php:26 ../content.php:75
-#: ../inc/catchevolution-functions.php:216
+#: ../inc/catchevolution-functions.php:219
 #, php-format
 msgid "%s"
 msgstr "%s"
@@ -263,7 +234,7 @@ msgstr ""
 "class=\"sep\"> by </span> <span class=\"author vcard\"><a class=\"url fn n\" "
 "href=\"%4$s\" title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
 
-#: ../content-image.php:44 ../inc/catchevolution-functions.php:435
+#: ../content-image.php:44 ../inc/catchevolution-functions.php:438
 #, php-format
 msgid "View all posts by %s"
 msgstr "%sの投稿をすべて読む"
@@ -359,43 +330,43 @@ msgstr ""
 "<a href=\"%3$s\" title=\"フルサイズ画像へのリンク\">%4$s &times; %5$s</a> カ"
 "テゴリー: <a href=\"%6$s\" title=\"%7$s へ戻る\" rel=\"gallery\">%8$s</a>"
 
-#: ../inc/catchevolution-functions.php:271 ../single.php:15
+#: ../inc/catchevolution-functions.php:274 ../single.php:15
 msgid "Post navigation"
 msgstr "投稿ナビゲーション"
 
-#: ../inc/catchevolution-functions.php:279
+#: ../inc/catchevolution-functions.php:282
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> 過去の投稿"
 
-#: ../inc/catchevolution-functions.php:280
+#: ../inc/catchevolution-functions.php:283
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "最新の投稿 <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../inc/catchevolution-functions.php:358
+#: ../inc/catchevolution-functions.php:361
 msgid "Pingback:"
 msgstr "ピンバック:"
 
 #. translators: 1: comment author, 2: date and time
-#: ../inc/catchevolution-functions.php:375
+#: ../inc/catchevolution-functions.php:378
 #, php-format
 msgid "%1$s on %2$s <span class=\"says\">said:</span>"
 msgstr "%1$s %2$s <span class=\"says\">より:</span>"
 
 #. translators: 1: date, 2: time
-#: ../inc/catchevolution-functions.php:381
+#: ../inc/catchevolution-functions.php:384
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s at %2$s"
 
-#: ../inc/catchevolution-functions.php:390
+#: ../inc/catchevolution-functions.php:393
 msgid "Your comment is awaiting moderation."
 msgstr "コメントは管理者の承認待ちです。"
 
-#: ../inc/catchevolution-functions.php:399
+#: ../inc/catchevolution-functions.php:402
 msgid "Reply <span>&darr;</span>"
 msgstr "返信する <span>&darr;</span>"
 
-#: ../inc/catchevolution-functions.php:429
+#: ../inc/catchevolution-functions.php:432
 #, php-format
 msgid ""
 "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel="
@@ -410,173 +381,173 @@ msgstr ""
 "span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title="
 "\"%6$s\" rel=\"author\">%7$s</a></span></span>"
 
-#: ../inc/catchevolution-functions.php:501
+#: ../inc/catchevolution-functions.php:504
 msgid "ID"
 msgstr "ID"
 
-#: ../inc/catchevolution-functions.php:779
+#: ../inc/catchevolution-functions.php:782
 msgid "Name"
 msgstr "名前"
 
-#: ../inc/catchevolution-functions.php:781
-#: ../inc/catchevolution-functions.php:990
-#: ../inc/catchevolution-functions.php:1194
-#: ../inc/panel/customizer/customizer.php:652
+#: ../inc/catchevolution-functions.php:784
+#: ../inc/catchevolution-functions.php:993
+#: ../inc/catchevolution-functions.php:1197
+#: ../inc/panel/customizer/customizer.php:653
 #: ../inc/panel/theme-options.php:790
 msgid "Email"
 msgstr "メールアドレス"
 
-#: ../inc/catchevolution-functions.php:895
-#: ../inc/catchevolution-functions.php:1099
-#: ../inc/panel/customizer/customizer.php:462
+#: ../inc/catchevolution-functions.php:898
+#: ../inc/catchevolution-functions.php:1102
+#: ../inc/panel/customizer/customizer.php:463
 #: ../inc/panel/theme-options.php:107 ../inc/panel/theme-options.php:694
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../inc/catchevolution-functions.php:900
-#: ../inc/catchevolution-functions.php:1104
-#: ../inc/panel/customizer/customizer.php:472
+#: ../inc/catchevolution-functions.php:903
+#: ../inc/catchevolution-functions.php:1107
+#: ../inc/panel/customizer/customizer.php:473
 #: ../inc/panel/theme-options.php:108 ../inc/panel/theme-options.php:699
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../inc/catchevolution-functions.php:905
-#: ../inc/catchevolution-functions.php:1109
-#: ../inc/panel/customizer/customizer.php:482
+#: ../inc/catchevolution-functions.php:908
+#: ../inc/catchevolution-functions.php:1112
+#: ../inc/panel/customizer/customizer.php:483
 #: ../inc/panel/theme-options.php:704
 msgid "Google+"
 msgstr "Google+"
 
-#: ../inc/catchevolution-functions.php:910
-#: ../inc/catchevolution-functions.php:1114 ../inc/panel/theme-options.php:725
+#: ../inc/catchevolution-functions.php:913
+#: ../inc/catchevolution-functions.php:1117 ../inc/panel/theme-options.php:725
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: ../inc/catchevolution-functions.php:915
-#: ../inc/catchevolution-functions.php:1119
-#: ../inc/panel/customizer/customizer.php:492
+#: ../inc/catchevolution-functions.php:918
+#: ../inc/catchevolution-functions.php:1122
+#: ../inc/panel/customizer/customizer.php:493
 #: ../inc/panel/theme-options.php:709
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../inc/catchevolution-functions.php:920
-#: ../inc/catchevolution-functions.php:1124
+#: ../inc/catchevolution-functions.php:923
+#: ../inc/catchevolution-functions.php:1127
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ../inc/catchevolution-functions.php:925
-#: ../inc/catchevolution-functions.php:1129
-#: ../inc/panel/customizer/customizer.php:512
+#: ../inc/catchevolution-functions.php:928
+#: ../inc/catchevolution-functions.php:1132
+#: ../inc/panel/customizer/customizer.php:513
 #: ../inc/panel/theme-options.php:719
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../inc/catchevolution-functions.php:930
-#: ../inc/catchevolution-functions.php:1134
-#: ../inc/panel/customizer/customizer.php:532
+#: ../inc/catchevolution-functions.php:933
+#: ../inc/catchevolution-functions.php:1137
+#: ../inc/panel/customizer/customizer.php:533
 #: ../inc/panel/theme-options.php:730
 msgid "AIM"
 msgstr "AIM"
 
-#: ../inc/catchevolution-functions.php:935
-#: ../inc/catchevolution-functions.php:1139
-#: ../inc/panel/customizer/customizer.php:542
+#: ../inc/catchevolution-functions.php:938
+#: ../inc/catchevolution-functions.php:1142
+#: ../inc/panel/customizer/customizer.php:543
 #: ../inc/panel/theme-options.php:735
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../inc/catchevolution-functions.php:940
-#: ../inc/catchevolution-functions.php:1144
-#: ../inc/panel/customizer/customizer.php:552
+#: ../inc/catchevolution-functions.php:943
+#: ../inc/catchevolution-functions.php:1147
+#: ../inc/panel/customizer/customizer.php:553
 #: ../inc/panel/theme-options.php:740
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/catchevolution-functions.php:945
-#: ../inc/catchevolution-functions.php:1149
-#: ../inc/panel/customizer/customizer.php:562
+#: ../inc/catchevolution-functions.php:948
+#: ../inc/catchevolution-functions.php:1152
+#: ../inc/panel/customizer/customizer.php:563
 #: ../inc/panel/theme-options.php:745
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/catchevolution-functions.php:950
-#: ../inc/catchevolution-functions.php:1154
-#: ../inc/panel/customizer/customizer.php:572
+#: ../inc/catchevolution-functions.php:953
+#: ../inc/catchevolution-functions.php:1157
+#: ../inc/panel/customizer/customizer.php:573
 #: ../inc/panel/theme-options.php:750
 msgid "deviantART"
 msgstr "deviantART"
 
-#: ../inc/catchevolution-functions.php:955
-#: ../inc/catchevolution-functions.php:1159
-#: ../inc/panel/customizer/customizer.php:582
+#: ../inc/catchevolution-functions.php:958
+#: ../inc/catchevolution-functions.php:1162
+#: ../inc/panel/customizer/customizer.php:583
 #: ../inc/panel/theme-options.php:755
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/catchevolution-functions.php:960
-#: ../inc/catchevolution-functions.php:1164
-#: ../inc/panel/customizer/customizer.php:592
+#: ../inc/catchevolution-functions.php:963
+#: ../inc/catchevolution-functions.php:1167
+#: ../inc/panel/customizer/customizer.php:593
 #: ../inc/panel/theme-options.php:760
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../inc/catchevolution-functions.php:965
-#: ../inc/catchevolution-functions.php:1169
-#: ../inc/panel/customizer/customizer.php:602
+#: ../inc/catchevolution-functions.php:968
+#: ../inc/catchevolution-functions.php:1172
+#: ../inc/panel/customizer/customizer.php:603
 #: ../inc/panel/theme-options.php:765
 msgid "RSS"
 msgstr "RSS"
 
-#: ../inc/catchevolution-functions.php:970
-#: ../inc/catchevolution-functions.php:1174
-#: ../inc/panel/customizer/customizer.php:612
+#: ../inc/catchevolution-functions.php:973
+#: ../inc/catchevolution-functions.php:1177
+#: ../inc/panel/customizer/customizer.php:613
 #: ../inc/panel/theme-options.php:770
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: ../inc/catchevolution-functions.php:975
-#: ../inc/catchevolution-functions.php:1179
-#: ../inc/panel/customizer/customizer.php:622
+#: ../inc/catchevolution-functions.php:978
+#: ../inc/catchevolution-functions.php:1182
+#: ../inc/panel/customizer/customizer.php:623
 #: ../inc/panel/theme-options.php:775
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/catchevolution-functions.php:980
-#: ../inc/catchevolution-functions.php:1184
-#: ../inc/panel/customizer/customizer.php:632
+#: ../inc/catchevolution-functions.php:983
+#: ../inc/catchevolution-functions.php:1187
+#: ../inc/panel/customizer/customizer.php:633
 #: ../inc/panel/theme-options.php:780
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/catchevolution-functions.php:985
-#: ../inc/catchevolution-functions.php:1189
-#: ../inc/panel/customizer/customizer.php:642
+#: ../inc/catchevolution-functions.php:988
+#: ../inc/catchevolution-functions.php:1192
+#: ../inc/panel/customizer/customizer.php:643
 #: ../inc/panel/theme-options.php:785
 msgid "Soundcloud"
 msgstr "Soundcloud"
 
-#: ../inc/catchevolution-functions.php:995
-#: ../inc/catchevolution-functions.php:1199
-#: ../inc/panel/customizer/customizer.php:662
+#: ../inc/catchevolution-functions.php:998
+#: ../inc/catchevolution-functions.php:1202
+#: ../inc/panel/customizer/customizer.php:663
 #: ../inc/panel/theme-options.php:795
 msgid "Contact"
 msgstr "Contact"
 
-#: ../inc/catchevolution-functions.php:1000
-#: ../inc/catchevolution-functions.php:1204
-#: ../inc/panel/customizer/customizer.php:672
+#: ../inc/catchevolution-functions.php:1003
+#: ../inc/catchevolution-functions.php:1207
+#: ../inc/panel/customizer/customizer.php:673
 #: ../inc/panel/theme-options.php:800
 msgid "Xing"
 msgstr "Xing"
 
-#: ../inc/catchevolution-functions.php:1005
-#: ../inc/catchevolution-functions.php:1209
-#: ../inc/panel/customizer/customizer.php:682
+#: ../inc/catchevolution-functions.php:1008
+#: ../inc/catchevolution-functions.php:1212
+#: ../inc/panel/customizer/customizer.php:683
 #: ../inc/panel/theme-options.php:805
 msgid "Meetup"
 msgstr "Meetup"
 
-#: ../inc/catchevolution-functions.php:1338
+#: ../inc/catchevolution-functions.php:1341
 msgid "Footer menu"
 msgstr "フッターメニュー"
 
@@ -982,163 +953,159 @@ msgid "Check to Reset Layout"
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:284
-#: ../inc/panel/customizer/customizer.php:334
+#: ../inc/panel/customizer/customizer.php:335
 msgid "Please refresh the customizer after saving if reset option is used"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:295
+#: ../inc/panel/customizer/customizer.php:296
 #: ../inc/panel/theme-options.php:480
 msgid "Front page posts categories:"
 msgstr "フロントページの投稿カテゴリー:"
 
-#: ../inc/panel/customizer/customizer.php:296
+#: ../inc/panel/customizer/customizer.php:297
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:307
+#: ../inc/panel/customizer/customizer.php:308
 #: ../inc/panel/theme-options.php:513
 msgid "More Tag Text"
 msgstr "Moreタグに表示する文字"
 
-#: ../inc/panel/customizer/customizer.php:317
+#: ../inc/panel/customizer/customizer.php:318
 #: ../inc/panel/theme-options.php:518
 msgid "Excerpt length(words)"
 msgstr "抜粋する記事の長さ（文字数）"
 
-#: ../inc/panel/customizer/customizer.php:333
+#: ../inc/panel/customizer/customizer.php:334
 msgid "Check to Reset Excerpt"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:345
+#: ../inc/panel/customizer/customizer.php:346
 msgid "Feed Redirect url"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:346
+#: ../inc/panel/customizer/customizer.php:347
 msgid " Add in the Feedburner URL"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:358
+#: ../inc/panel/customizer/customizer.php:359
 msgid "Enter your custom CSS styles"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:370
+#: ../inc/panel/customizer/customizer.php:371
 msgid "Enable Slider"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:381
+#: ../inc/panel/customizer/customizer.php:382
 #: ../inc/panel/theme-options.php:601
 msgid "Number of Slides"
 msgstr "スライダーの数"
 
-#: ../inc/panel/customizer/customizer.php:382
+#: ../inc/panel/customizer/customizer.php:383
 msgid ""
 "Customizer page needs to be refreshed after saving if number of slides is "
 "changed"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:397
+#: ../inc/panel/customizer/customizer.php:398
 msgid "Transition Effect"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:408
+#: ../inc/panel/customizer/customizer.php:409
 #: ../inc/panel/theme-options.php:626
 msgid "Transition Delay"
 msgstr "トランジションの遅れ"
 
-#: ../inc/panel/customizer/customizer.php:424
+#: ../inc/panel/customizer/customizer.php:425
 #: ../inc/panel/theme-options.php:633
 msgid "Transition Length"
 msgstr "トランジションの長さ"
 
-#: ../inc/panel/customizer/customizer.php:442
+#: ../inc/panel/customizer/customizer.php:443
 msgid "Check to Exclude Slider posts from Homepage posts"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:453
+#: ../inc/panel/customizer/customizer.php:454
 msgid "Check to Enable Social Icons in Footer"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:502
+#: ../inc/panel/customizer/customizer.php:503
 #: ../inc/panel/theme-options.php:714
 msgid "Youtube"
 msgstr "Youtube"
 
-#: ../inc/panel/customizer/customizer.php:522
+#: ../inc/panel/customizer/customizer.php:523
 msgid "LinkedIn"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:694
+#: ../inc/panel/customizer/customizer.php:695
 #: ../inc/panel/theme-options.php:823
 msgid "Code to display on Header"
 msgstr "ヘッダーに表示するコード"
 
-#: ../inc/panel/customizer/customizer.php:695
+#: ../inc/panel/customizer/customizer.php:696
 msgid ""
 "Here you can put scripts from Google, Facebook etc. which will load on Header"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:705
+#: ../inc/panel/customizer/customizer.php:706
 #: ../inc/panel/theme-options.php:832
 msgid "Code to display on Footer"
 msgstr "フッターに表示させるコード"
 
-#: ../inc/panel/customizer/customizer.php:706
+#: ../inc/panel/customizer/customizer.php:707
 msgid ""
 "Here you can put scripts from Google, Facebook etc. which will load on Footer"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:722
+#: ../inc/panel/customizer/customizer.php:723
 msgid "Check to Disable Favicon"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:732
+#: ../inc/panel/customizer/customizer.php:733
 msgid "Fav Icon"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:744
+#: ../inc/panel/customizer/customizer.php:745
 msgid "Check to Disable Web Clip Icon"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:754
+#: ../inc/panel/customizer/customizer.php:755
 msgid "Web Clip Icon"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:772
+#: ../inc/panel/customizer/customizer.php:773
 msgid "Check to Disable Header Logo"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:782
+#: ../inc/panel/customizer/customizer.php:783
 msgid "Logo"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:949
+#: ../inc/panel/customizer/customizer.php:955
 #, php-format
 msgid "Featured Post Slider #%s"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:963
+#: ../inc/panel/customizer/customizer.php:969
 msgid ""
 "Caution: Reset all settings to default. Refresh the page after save to view "
 "full effects."
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:965
+#: ../inc/panel/customizer/customizer.php:971
 msgid "Reset all settings"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:975
+#: ../inc/panel/customizer/customizer.php:982
 msgid "Check to reset all settings to default"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:985
-#: ../inc/panel/customizer/customizer.php:996
+#: ../inc/panel/customizer/customizer.php:992
+#: ../inc/panel/customizer/customizer.php:1003
 msgid "Important Links"
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:1034
-msgid "Upgrade To Pro &raquo;"
 msgstr ""
 
 #: ../inc/panel/theme-options.php:84
@@ -1154,7 +1121,7 @@ msgid "https://catchthemes.com/"
 msgstr "https://catchthemes.com/"
 
 #: ../inc/panel/theme-options.php:92 ../inc/panel/theme-options.php:93
-#: ../inc/panel/theme-options.php:1196
+#: ../inc/panel/theme-options.php:1202
 msgid "Catch Themes"
 msgstr "Catch Themes"
 
@@ -1587,19 +1554,19 @@ msgstr ""
 "注意: フッターにロードさせる、GoogleやFacebook、Add Thisなどのスクリプトをこ"
 "こに入力します。"
 
-#: ../inc/panel/theme-options.php:1164
+#: ../inc/panel/theme-options.php:1170
 msgid "Y"
 msgstr "Y"
 
-#: ../inc/panel/theme-options.php:1185
+#: ../inc/panel/theme-options.php:1191
 msgid "Theme: Catch Evolution by "
 msgstr "Theme: Catch Evolution by "
 
-#: ../inc/panel/theme-options.php:1207
+#: ../inc/panel/theme-options.php:1213
 msgid "Copyright"
 msgstr "Copyright"
 
-#: ../inc/panel/theme-options.php:1207
+#: ../inc/panel/theme-options.php:1213
 msgid "All Rights Reserved"
 msgstr "All Rights Reserved"
 
@@ -1632,6 +1599,26 @@ msgstr "次へ <span class=\"meta-nav\">&rarr;</span>"
 #, php-format
 msgid "Tag Archives: %s"
 msgstr "タグ別アーカイブ: %s"
+
+#~ msgid "Daily Archives: %s"
+#~ msgstr "日別アーカイブ： %s"
+
+#~ msgid "Monthly Archives: %s"
+#~ msgstr "月別アーカイブ：%s"
+
+#~ msgctxt "monthly archives date format"
+#~ msgid "F Y"
+#~ msgstr "F Y"
+
+#~ msgid "Yearly Archives: %s"
+#~ msgstr "年別アーカイブ：%s"
+
+#~ msgctxt "yearly archives date format"
+#~ msgid "Y"
+#~ msgstr "Y"
+
+#~ msgid "Blog Archives"
+#~ msgstr "ブログアーカイブ："
 
 #~ msgid "More Theme Options &raquo;"
 #~ msgstr "More Theme Options &raquo;"

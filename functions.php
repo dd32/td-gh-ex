@@ -219,7 +219,7 @@ if ( ! function_exists( 'catchevolution_get_theme_layout' ) ) :
 		if ( $page_id == $page_for_posts || $page_id == $page_on_front ) {
 	        $id = $page_id;
 	    }
-	    else if ( is_singular() ) {
+	    elseif ( is_singular() ) {
 	 		if ( is_attachment() ) {
 				$id = $post->post_parent;
 			}
@@ -307,7 +307,7 @@ function catchevolution_logo_migrate() {
 
    	// If a logo has been set previously, update to use logo feature introduced in WordPress 4.5
 	if ( function_exists( 'the_custom_logo' ) ) {
-		if( isset( $options['featured_logo_header'] ) && '' != $options['featured_logo_header'] ) {
+		if ( isset( $options['featured_logo_header'] ) && '' != $options['featured_logo_header'] ) {
 			// Since previous logo was stored a URL, convert it to an attachment ID
 			$logo = attachment_url_to_postid( $options['featured_logo_header'] );
 
@@ -347,7 +347,7 @@ function catchevolution_site_icon_migrate() {
 
    	// If a logo has been set previously, update to use logo feature introduced in WordPress 4.5
 	if ( function_exists( 'has_site_icon' ) ) {
-		if( isset( $options['fav_icon'] ) && '' != $options['fav_icon'] ) {
+		if ( isset( $options['fav_icon'] ) && '' != $options['fav_icon'] ) {
 			// Since previous logo was stored a URL, convert it to an attachment ID
 			$site_icon = attachment_url_to_postid( $options['fav_icon'] );
 

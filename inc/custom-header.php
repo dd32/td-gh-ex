@@ -280,8 +280,8 @@ function catchevolution_logo() {
 				<div id="site-logo" class="' . esc_attr( $classses ) . '">' . get_custom_logo() . '</div><!-- #site-logo -->';
 			}
 		}
-		else if( empty( $options[ 'remove_header_logo' ] ) ) {
-			//@remove else if block when WP v4.8 is released
+		elseif ( empty( $options[ 'remove_header_logo' ] ) ) {
+			//@remove elseif block when WP v4.8 is released
 			echo '<!-- refreshing cache -->';
 
 			$catchevolution_logo = '';

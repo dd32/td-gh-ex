@@ -12,10 +12,10 @@
 	global $catchevolution_options_settings;
     $options = $catchevolution_options_settings;
 	$layout = $options[ 'sidebar_layout' ];
-	if ( $layout == 'no-sidebar-full-width' ) { 
+	if ( $layout == 'no-sidebar-full-width' ) {
 		$imagesize = "featured-slider-larger";
-	} 
-	else { 
+	}
+	else {
 		$imagesize = "featured-slider";
 	}
 ?>
@@ -43,8 +43,8 @@
                 </div><!-- .entry-meta -->
 			<?php endif; ?>
 		</header><!-- .entry-header -->
-        	
-		 <?php 
+
+		 <?php
 			global $catchevolution_options_settings;
     		$options = $catchevolution_options_settings;
 			$current_content_layout = $options['content_layout'];
@@ -56,10 +56,10 @@
         <?php elseif ( post_password_required() ) : // Password Protected Post ?>
             <div class="entry-content">
                 <?php the_content(); ?>
-            </div><!-- .entry-summary -->    
+            </div><!-- .entry-summary -->
         <?php elseif ( $current_content_layout=='excerpt' && !empty( $catchevolution_excerpt ) ) : // Only display Featured Image and Excerpts if checked in Theme Option ?>
             <div class="entry-summary">
-                <?php if( has_post_thumbnail() ):?>
+                <?php if ( has_post_thumbnail() ):?>
                		<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'catch-evolution' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
 						<?php the_post_thumbnail( $imagesize ); ?>
                    	</a>
@@ -68,17 +68,17 @@
             </div><!-- .entry-summary -->
 		<?php else : ?>
 		<div class="entry-content">
-			<?php 
+			<?php
 			global $catchevolution_options_settings;
 			$options = $catchevolution_options_settings;
 			$more_tag_text = $options[ 'more_tag_text' ];
 			the_content( sprintf( __( '%s', 'catch-evolution' ), esc_attr( $more_tag_text ) ) ); ?>
-			<?php wp_link_pages( array( 
+			<?php wp_link_pages( array(
                 'before'		=> '<div class="page-link"><span class="pages">' . __( 'Pages:', 'catch-evolution' ) . '</span>',
                 'after'			=> '</div>',
                 'link_before' 	=> '<span>',
                 'link_after'   	=> '</span>',
-            ) ); 
+            ) );
             ?>
 		</div><!-- .entry-content -->
 		<?php endif; ?>

@@ -283,10 +283,11 @@ function catchevolution_customize_register( $wp_customize ) {
 			'title' 		=> __( 'Check to Reset Layout', 'catch-evolution' ),
 			'description'	=> __( 'Please refresh the customizer after saving if reset option is used', 'catch-evolution' ),
 			'field_type' 	=> 'checkbox',
-			'sanitize' 		=> 'catchevolution_sanitize_reset_layout',
+			'sanitize' 		=> 'catchevolution_sanitize_checkbox',
 			'panel' 		=> 'theme_options',
 			'section' 		=> 'layout_options',
-			'default' 		=> $defaults['reset_sidebar_layout']
+			'default' 		=> $defaults['reset_sidebar_layout'],
+			'transport'	    => 'postMessage',
 		),
 
 		//Homepage/Frontpage Settings
@@ -328,12 +329,12 @@ function catchevolution_customize_register( $wp_customize ) {
 					            'step'  => 1,
 					        	)
 		),
-		'reset_moretag' => array(
-			'id' 			=> 'reset_moretag',
+		'reset_more_tag' => array(
+			'id' 			=> 'reset_more_tag',
 			'title' 		=> __( 'Check to Reset Excerpt', 'catch-evolution' ),
 			'description'	=> __( 'Please refresh the customizer after saving if reset option is used', 'catch-evolution' ),
 			'field_type' 	=> 'checkbox',
-			'sanitize' 		=> 'catchevolution_sanitize_reset_moretag',
+			'sanitize' 		=> 'catchevolution_sanitize_checkbox',
 			'panel' 		=> 'theme_options',
 			'section' 		=> 'excerpt_more_tag_settings',
 			'default' 		=> ''
@@ -793,6 +794,8 @@ function catchevolution_customize_register( $wp_customize ) {
 	}
 
 	foreach ( $settings_parameters as $option ) {
+		$transport = isset( $option['transport'] ) ? $option['transport'] : 'refresh';
+
 		if( 'image' == $option['field_type'] ) {
 			$wp_customize->add_setting(
 				// $id
@@ -824,7 +827,9 @@ function catchevolution_customize_register( $wp_customize ) {
 				array(
 					'type'				=> 'option',
 					'sanitize_callback'	=> $option['sanitize'],
-					'default'			=> $option['default'],				)
+					'default'			=> $option['default'],
+					'transport'			=> $transport,
+				)
 			);
 
 			$params = array(
@@ -892,7 +897,8 @@ function catchevolution_customize_register( $wp_customize ) {
 				array(
 					'default'			=> $option['default'],
 					'type'				=> 'option',
-					'sanitize_callback'	=> $option['sanitize']
+					'sanitize_callback'	=> $option['sanitize'],
+					'transport'			=> $transport,
 				)
 			);
 
@@ -967,7 +973,8 @@ function catchevolution_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'catchevolution_options[reset_all_settings]', array(
 		'capability'		=> 'edit_theme_options',
-		'sanitize_callback' => 'catchevolution_reset_all_settings',
+		'sanitize_callback' => 'catchevolution_sanitize_checkbox',
+		'type'              => 'option',
 		'transport'			=> 'postMessage',
 	) );
 
@@ -989,7 +996,7 @@ function catchevolution_customize_register( $wp_customize ) {
 	 * Has dummy Sanitizaition function as it contains no value to be sanitized
 	 */
 	$wp_customize->add_setting( 'important_links', array(
-		'sanitize_callback'	=> 'catchevolution_sanitize_important_link',
+		'sanitize_callback'	=> 'sanitize_text_field',
 	) );
 
 	$wp_customize->add_control( new Catchevolution_Important_Links( $wp_customize, 'important_links', array(
@@ -1027,19 +1034,18 @@ add_action( 'customize_save', 'catchevolution_customize_preview' );
  * @since Catch Evolution 2.3
  */
 function catchevolution_customize_scripts() {
-	wp_register_script( 'catchevolution_customizer_custom', get_template_directory_uri() . '/inc/panel/customizer-custom-scripts.js', array( 'jquery' ), '20140108', true );
+	wp_enqueue_script( 'catchevolution_customizer_custom', get_template_directory_uri() . '/inc/panel/customizer-custom-scripts.js', array( 'jquery' ), '20140108', true );
 
-    $catchevolution_misc_links = array(
-							'upgrade_link' 				=> esc_url( 'https://catchthemes.com/themes/catch-evolution-pro/' ),
-							'upgrade_text'	 			=> __( 'Upgrade To Pro &raquo;', 'catch-evolution' ),
-		);
+    $catchevolution_data = array(
+		'reset_message' => esc_html__( 'Refresh the customizer page after saving to view reset effects', 'catch-evolution' ),
+		'reset_options' => array(
+			'catchevolution_options[reset_sidebar_layout]',
+			'catchevolution_options[reset_more_tag]',
+			'catchevolution_options[reset_all_settings]',
+		)
+	);
 
-    //Add More Theme Options Button
-    wp_localize_script( 'catchevolution_customizer_custom', 'catchevolution_misc_links', $catchevolution_misc_links );
-
-    wp_enqueue_script( 'catchevolution_customizer_custom' );
-
-    wp_enqueue_style( 'catchevolution_customizer_custom', get_template_directory_uri() . '/inc/panel/catchevolution-customizer.css');
+    wp_localize_script( 'catchevolution_customizer_custom', 'catchevolution_data', $catchevolution_data );
 }
 add_action( 'customize_controls_enqueue_scripts', 'catchevolution_customize_scripts' );
 
@@ -1048,3 +1054,6 @@ require get_template_directory() . '/inc/panel/customizer/customizer-active-call
 
 //Sanitize functions for customizer
 require get_template_directory() . '/inc/panel/customizer/customizer-sanitize-functions.php';
+
+// Add Upgrade to Pro Button.
+require_once( trailingslashit( get_template_directory() ) . '/inc/panel/customizer/upgrade-button/class-customize.php' );
