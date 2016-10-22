@@ -152,3 +152,7 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-background, 
 * Improved RTL mode
 * Fixed mobile menu
 * Minor bug fixes
+
+= Version 1.4.6 =
+* Updated SmoothScroll to 1.4.5 version
+* Minor bug fixes
