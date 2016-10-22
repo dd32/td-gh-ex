@@ -192,6 +192,24 @@ function zenzero_color_primary_register( $wp_customize ) {
     ) );
 	
 	/*
+	Search Button
+	=====================================================
+	*/
+	$wp_customize->add_setting('zenzero_theme_options_socialheader', array(
+        'default'    => '',
+        'type'       => 'theme_mod',
+        'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'zenzero_sanitize_checkbox'
+    ) );
+	
+	$wp_customize->add_control('zenzero_theme_options_socialheader', array(
+        'label'      => __( 'Show Social Button in the header', 'zenzero' ),
+        'section'    => 'cresta_zenzero_options',
+        'settings'   => 'zenzero_theme_options_socialheader',
+        'type'       => 'checkbox',
+    ) );
+	
+	/*
 	Upgrade to PRO
 	=====================================================
 	*/
