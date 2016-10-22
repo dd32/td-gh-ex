@@ -7,7 +7,7 @@ get_header();
 <div class="bnt-container">
 
 	<div class="content content-search">
-        <main class="site-main" role="main">
+        <main class="site-main">
 
 			<?php 
             // Start the Loop
@@ -16,10 +16,10 @@ get_header();
 				?>
 				<header class="archive-header">
                 	<div class="archive-description">
-                    	<?php _e( 'Search results for', 'bento' ); ?>
+                    	<?php esc_html_e( 'Search results for', 'bento' ); ?>
                     </div>
 					<h1 class="archive-title">
-						"<?php echo get_search_query(); ?>"
+						"<?php echo esc_html( get_search_query() ); ?>"
                     </h1>
 				</header>
                 <?php

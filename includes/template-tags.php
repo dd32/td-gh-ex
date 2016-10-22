@@ -68,9 +68,9 @@ if ( ! function_exists( 'bento_logo' ) ) {
 			}
 			echo '
 			<div class="logo clear">
-				<a href="'.site_url().'">
-					<img class="logo-fullsize" src="'.$logo_full.'" alt="'.get_bloginfo( 'name' ).'" />
-					<img class="logo-mobile" src="'.$logo_mobile.'" alt="'.get_bloginfo( 'name' ).'" />
+				<a href="'.esc_url( site_url() ).'">
+					<img class="logo-fullsize" src="'.$logo_full.'" alt="'.esc_attr( get_bloginfo( 'name' ) ).'" />
+					<img class="logo-mobile" src="'.$logo_mobile.'" alt="'.esc_attr( get_bloginfo( 'name' ) ).'" />
 				</a>
 			</div>
 			';
@@ -240,12 +240,12 @@ if ( ! function_exists( 'bento_post_header' ) ) {
 		// Set titles
 		$title = $subtitle = $cta = $video_header = '';
 		if ( get_post_meta( $post->ID, 'bento_hide_title', true) != 'on' ) {
-			$title = '<h1>'.get_the_title().'</h1>';
+			$title = '<h1>'.wp_kses( get_the_title(), array( 'br' => array() ) ).'</h1>';
 		}
 		if ( get_post_meta( $postid, 'bento_subtitle', true ) != '' ) {
 			$subtitle = '
 				<div class="post-header-subtitle">
-					'.esc_html( get_post_meta( $postid, 'bento_subtitle', true ) ).'
+					'.wp_kses( get_post_meta( $postid, 'bento_subtitle', true ), array( 'br' => array() ) ).'
 				</div>
 			';
 		}
@@ -382,9 +382,9 @@ if ( ! function_exists( 'bento_post_date_blog' ) ) {
 		} else {
 			$post_date_link = $post_date_link_close = '';	
 		}
-		$post_day = get_the_date('d');
-		$post_month = get_the_date('M');
-		$post_year = get_the_date('Y');
+		$post_day = esc_html( get_the_date('d') );
+		$post_month = esc_html( get_the_date('M') );
+		$post_year = esc_html( get_the_date('Y') );
 		echo '
 			<div class="post-date-blog">
 				'.$post_date_link.'
@@ -466,7 +466,7 @@ if ( ! function_exists( 'bento_post_content' ) ) {
 		} elseif ( get_post_format() === 'quote' ) {
 			echo bento_quote_format_content();
 		} else {
-			the_content( __( 'Continue reading', 'bento' ).' &rarr;' );	
+			the_content( esc_html__( 'Continue reading', 'bento' ).' &rarr;' );	
 		}
 		
 		// Navigation for paged posts
@@ -515,7 +515,7 @@ if ( ! function_exists( 'bento_entry_meta' ) ) {
 		}
 				
 		// Display post meta - author, category, and comments
-		$post_author = '<i>'.__( 'Posted by', 'bento' ).'</i> <span class="uppercase">'.get_the_author().'</span>';
+		$post_author = '<i>'.esc_html__( 'Posted by', 'bento' ).'</i> <span class="uppercase">'.get_the_author().'</span>';
 		$post_categories_ids = wp_get_post_categories( get_the_ID(), array('fields' => 'ids') );
 		$post_categories_names = array();
 		$post_categories = '';
@@ -525,30 +525,30 @@ if ( ! function_exists( 'bento_entry_meta' ) ) {
 				$post_categories_names[] = $cat->name;
 			}
 			$post_categories_names = implode(", ", $post_categories_names);
-			$post_categories = ' <i>'.__( 'in', 'bento' ).'</i> <span class="uppercase">'.$post_categories_names.'</span>';
+			$post_categories = ' <i>'.esc_html__( 'in', 'bento' ).'</i> <span class="uppercase">'.$post_categories_names.'</span>';
 		}
 		$post_comments = '';
 		$num_comments = get_comments_number();
 		if ( comments_open() ) {
 			if ( $num_comments == 0 ) {
-				$comments = __( '0 comments', 'bento' );
+				$comments = esc_html__( '0 comments', 'bento' );
 			} elseif ( $num_comments > 1 ) {
-				$comments = $num_comments .' '. __( 'comments', 'bento' );
+				$comments = $num_comments .' '. esc_html__( 'comments', 'bento' );
 			} else {
-				$comments = __( '1 comment', 'bento' );
+				$comments = esc_html__( '1 comment', 'bento' );
 			}
 			$post_comments = ', <i>'. $comments . '</i>';
 		}
 		$post_date = '';
 		if ( is_singular('post') ) {
-			$post_date = ' <i>'.__( 'on', 'bento' ).'</i> <span class="uppercase">'.the_date('j F Y', '', '', false).'</span>';
+			$post_date = ' <i>'.esc_html__( 'on', 'bento' ).'</i> <span class="uppercase">'.the_date('j F Y', '', '', false).'</span>';
 		}
 		$post_meta = $post_author . $post_date . $post_categories . $post_comments;
 		if ( get_post_type() == 'post' ) {
 			echo wp_kses( $post_meta, array( 'span' => array( 'class' => array() ), 'i' => array() ) );
 		}
 		
-		edit_post_link( __( 'Edit this', 'bento' ), '<div class="edit-this">', '</div>' );
+		edit_post_link( esc_html__( 'Edit this', 'bento' ), '<div class="edit-this">', '</div>' );
 			
 		echo '</footer>';
 		
@@ -569,7 +569,7 @@ if ( ! function_exists( 'bento_author_info' ) ) {
                 </div>
                 <div class="author-description">
                 	<h3 class="author-name">
-						<?php echo __( 'Posted by', 'bento' ).' '.get_the_author(); ?>
+						<?php echo esc_html__( 'Posted by', 'bento' ).' '.esc_html( get_the_author() ); ?>
                     </h3>
                     <?php if ( get_the_author_meta( 'description' ) != '' ) { ?>
                     <div class="author-bio">
@@ -577,7 +577,7 @@ if ( ! function_exists( 'bento_author_info' ) ) {
                     </div>
                     <?php } ?>
                     <a class="author-posts" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author">
-                    	<?php printf( __( 'View all posts by %s', 'bento' ), get_the_author() ); ?>
+                    	<?php printf( esc_html__( 'View all posts by %s', 'bento' ), esc_html( get_the_author() ) ); ?>
                     </a>
                 </div>
             </div>
@@ -597,10 +597,10 @@ if ( ! function_exists( 'bento_comments_nav' ) ) {
         	<nav class="navigation comment-nav" role="navigation">
                 <div class="nav-links">
                     <?php
-					if ( $next_link = get_next_comments_link( '&larr; '.__( 'Newer Comments', 'bento' ) ) ) {
+					if ( $next_link = get_next_comments_link( '&larr; '.esc_html__( 'Newer Comments', 'bento' ) ) ) {
 						printf( '<div class="nav-next">%s</div>', $next_link );
 					}
-					if ( $prev_link = get_previous_comments_link( __( 'Older Comments', 'bento' ).' &rarr;' ) ) {
+					if ( $prev_link = get_previous_comments_link( esc_html__( 'Older Comments', 'bento' ).' &rarr;' ) ) {
 						printf( '<div class="nav-previous">%s</div>', $prev_link );
 					}
                     ?>
@@ -631,7 +631,7 @@ if ( ! function_exists( 'bento_comment' ) ) {
                         <a href="<?php comment_link() ?>" class="comment-date">
                             <?php comment_date(); ?>
                         </a>
-						<?php edit_comment_link(__( 'Edit', 'bento' )); ?>
+						<?php edit_comment_link( esc_html__( 'Edit', 'bento' ) ); ?>
                         <?php
                         comment_reply_link(
                             array_merge( $args, 
@@ -647,7 +647,7 @@ if ( ! function_exists( 'bento_comment' ) ) {
 					<?php comment_text(); ?>
 				</div>
                 <?php if ( $comment->comment_approved == '0' ) { ?>
-					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'bento' ); ?></em>
+					<em class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'bento' ); ?></em>
 				<?php } ?>
 		<?php
 	}
@@ -661,8 +661,8 @@ if ( ! function_exists( 'bento_blog_pagination' ) ) {
 	function bento_blog_pagination() {
 		the_posts_pagination( 
 			array(
-				'prev_text' => '&larr; '.__( 'Previous page', 'bento' ),
-				'next_text' => __( 'Next page', 'bento' ).' &rarr;',
+				'prev_text' => '&larr; '.esc_html__( 'Previous page', 'bento' ),
+				'next_text' => esc_html__( 'Next page', 'bento' ).' &rarr;',
 			) 
 		);
 	}
@@ -678,7 +678,7 @@ if ( ! function_exists( 'bento_grid_pagination' ) ) {
 		?>
 		<nav class="navigation pagination grid-pagination" role="navigation">
 			<h2 class="screen-reader-text">
-            	<?php _e( 'Posts navigation', 'bento' ); ?>
+            	<?php esc_html_e( 'Posts navigation', 'bento' ); ?>
             </h2>
 			<div class="nav-links">
 				<?php
@@ -706,10 +706,19 @@ if ( ! function_exists( 'bento_grid_pagination' ) ) {
 if ( ! function_exists( 'bento_link_format_content' ) ) {
 
 	function bento_link_format_content() {
-		$url = get_the_content();
+		$url = wp_kses( 
+			get_the_content(), 
+			array( 
+				'a' => array( 
+					'href' => array(), 
+					'title' => array(), 
+					'target' => array() 
+				) 
+			) 
+		);
 		$anchor = get_the_title();
 		if ( ! filter_var( $url, FILTER_VALIDATE_URL ) === false ) { 
-			return '<a href="'.$url.'" title="'.$anchor.'" target="_blank">'.$anchor.'</a>';
+			return '<a href="'.esc_url( $url ).'" title="'.esc_attr( $anchor ).'" target="_blank">'.esc_html( $anchor ).'</a>';
 		} else {
 			return $url;	
 		}
@@ -722,8 +731,8 @@ if ( ! function_exists( 'bento_link_format_content' ) ) {
 if ( ! function_exists( 'bento_quote_format_content' ) ) {
 
 	function bento_quote_format_content() {
-		$quote = get_the_content();
-		$author = get_the_title();
+		$quote = esc_html( get_the_content() );
+		$author = esc_html( get_the_title() );
 		$output = '<div class="format-quote-text">'.$quote.'</div>';
 		if ( $author != '' ) {
 			$output .= '<div class="format-quote-author">'.$author.'</div>';
@@ -738,9 +747,9 @@ if ( ! function_exists( 'bento_quote_format_content' ) ) {
 if ( ! function_exists( 'bento_copyright' ) ) {
 
 	function bento_copyright() {
-		$author = 'Bento WordPress '.__( 'Theme', 'bento' );
+		$author = 'Bento WordPress '.esc_html__( 'Theme', 'bento' );
 		if ( is_front_page() ) {
-			$author = '<a href="http://satoristudio.net/bento-free-wordpress-theme" target="blank" title="Bento WordPress theme">Bento</a> WordPress '.__( 'Theme', 'bento' );
+			$author = '<a href="http://satoristudio.net/bento-free-wordpress-theme" target="blank" title="Bento WordPress theme">Bento</a> WordPress '.esc_html__( 'Theme', 'bento' );
 		}
 		$copyright = '<div class="footer-copyright">';
 		if ( get_option( 'bento_ep_license_status' ) == 'valid' && get_theme_mod( 'bento_footer_copyright' ) != '' ) {
@@ -778,7 +787,7 @@ if ( ! function_exists( 'bento_ajax_load_more' ) ) {
 	}
 	?>
 		<a class="ajax-load-more <?php echo esc_html( $class ); ?>">
-			<?php _e( 'Load more', 'bento' ); ?>
+			<?php esc_html_e( 'Load more', 'bento' ); ?>
         </a>
         <div class="spinner-ajax">
         	<div class="spinner-circle">
@@ -799,7 +808,7 @@ if ( ! function_exists( 'bento_excerpt' ) ) {
 		$content = str_replace( ']]>', ']]&gt;', $content );
 		// First check if the post has an excerpt
 		if ( has_excerpt() ) {
-			$excerpt = get_the_excerpt(); 
+			$excerpt = esc_html( get_the_excerpt() ); 
 		} else {
 			$content_main = $content['main'];
 			if ( strlen($content_main) > $length ) {
@@ -808,7 +817,7 @@ if ( ! function_exists( 'bento_excerpt' ) ) {
 					$excerpt = $content_main;
 				} else {
 					$excerpt = substr( $content_main, 0, $pos );
-					$excerpt .= '.. <a href="'.get_post_permalink().'">&rarr;</a>';
+					$excerpt .= '.. <a href="'.esc_url( get_post_permalink() ).'">&rarr;</a>';
 				}
 			} else {
 				$excerpt = $content_main;
@@ -836,9 +845,9 @@ if ( ! function_exists( 'bento_masonry_item_content' ) ) {
 		
 		// Content
 		if ( get_post_format( $post->ID ) === 'quote' ) {
-			$tile_title = '"'.get_the_content().'"<br><br><em>'.get_the_title().'</em>';
+			$tile_title = '"'.esc_html( get_the_content() ).'"<br><br><em>'.esc_html( get_the_title() ).'</em>';
 		} else {
-			$tile_title = get_the_title();
+			$tile_title = esc_html( get_the_title() );
 		}
 		if ( get_post_meta( $bento_parent_page_id, 'bento_hide_tile_overlays', true) == 'on' ) {
 			$tile_content_opacity = 'style="opacity: 0.0"';
@@ -850,7 +859,7 @@ if ( ! function_exists( 'bento_masonry_item_content' ) ) {
 				$tile_project_types_list = array();
 				if ( $types_objects != false ) {
 					foreach ( $types_objects as $types_object ) {
-						$tile_project_types_list[] = $types_object->name;
+						$tile_project_types_list[] = esc_html( $types_object->name );
 					}
 					$tile_project_types_list = implode(', ', $tile_project_types_list);
 					$tile_project_types = '<div class="project-tile-types">'.$tile_project_types_list.'</div>';
@@ -873,7 +882,7 @@ if ( ! function_exists( 'bento_masonry_item_content' ) ) {
 		if ( get_post_meta( $post->ID, 'bento_tile_image', true ) != '' ) {
 			$tile_image = esc_url( get_post_meta( $post->ID, 'bento_tile_image', true ) );
 		} else if ( has_post_thumbnail() ) {
-			$post_thumb = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
+			$post_thumb = esc_url( wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ) );
 			$tile_image = $post_thumb[0];
 		}
 		$tile_background .= 'style=background-image:url("'.$tile_image.'")';
@@ -912,18 +921,18 @@ if ( ! function_exists( 'bento_novice_header' ) ) {
 			<div class="novice-header">
 				<div class="novice-header-inner">
 					<div class="novice-header-title">
-						<?php _e( 'Welcome to', 'bento' ); ?> <span class="novice-header-title-red">Bento</span><br>
-						<?php _e( 'The Ultimate Free WordPress Theme', 'bento' ); ?>
+						<?php esc_html_e( 'Welcome to', 'bento' ); ?> <span class="novice-header-title-red">Bento</span><br>
+						<?php esc_html_e( 'The Ultimate Free WordPress Theme', 'bento' ); ?>
 					</div>
 					<div class="novice-header-options">
 						<a class="novice-header-button nhb-manual" href="http://satoristudio.net/bento-manual" target="_blank">
-							<?php _e( 'Open theme manual', 'bento' ); ?>
+							<?php esc_html_e( 'Open theme manual', 'bento' ); ?>
 						</a>
 						<a class="novice-header-button nhb-demo" href="http://satoristudio.net/bento" target="_blank">
-							<?php _e( 'View full demo', 'bento' ); ?>
+							<?php esc_html_e( 'View full demo', 'bento' ); ?>
 						</a>
 						<a class="novice-header-button nhb-dismiss" target="_blank">
-							<?php _e( 'Dismiss this heading', 'bento' ); ?>
+							<?php esc_html_e( 'Dismiss this heading', 'bento' ); ?>
 						</a>
 					</div>
 				</div>

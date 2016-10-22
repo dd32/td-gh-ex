@@ -50,8 +50,8 @@ function bento_localize_customizer_scripts() {
 		$bento_license_status = 'valid';
 	}
 	wp_localize_script( 'bento-customizer-scripts', 'bentoCustomizerVars', array(
-		'exp' => __( 'Get the Expansion Pack', 'bento' ),
-		'review' => __( 'Rate the theme (thanks!)', 'bento' ),
+		'exp' => esc_html__( 'Get the Expansion Pack', 'bento' ),
+		'review' => esc_html__( 'Rate the theme (thanks!)', 'bento' ),
 		'license_status' => $bento_license_status,
 	) );
 }
@@ -59,8 +59,8 @@ function bento_localize_customizer_scripts() {
 
 // Notification for disabled fields
 function bento_customizer_disabled_field() {
-	$exp_url = '<a href="http://satoristudio.net/bento-free-wordpress-theme/#expansion-pack" target="_blank">'.__( 'Expansion Pack', 'bento' ).'</a>';
-	$exp_link = '<span class="disabled-exp">' . sprintf( __( 'This option (and much more cool stuff) is available in the %s. Supercharge your Bento!', 'bento' ), $exp_url ) . '</span>';
+	$exp_url = '<a href="http://satoristudio.net/bento-free-wordpress-theme/#expansion-pack" target="_blank">'.esc_html__( 'Expansion Pack', 'bento' ).'</a>';
+	$exp_link = '<span class="disabled-exp">' . sprintf( esc_html__( 'This option (and much more cool stuff) is available in the %s. Supercharge your Bento!', 'bento' ), $exp_url ) . '</span>';
 	if ( get_option( 'bento_ep_license_status' ) == 'valid' ) {
 		$exp_link = '';
 	}
@@ -139,7 +139,7 @@ function bento_customize_register( $wp_customize ) {
 				echo '<span class="customize-control-title">'.esc_html( $this->label ).'</span>';
 			}
 			if ( ! empty( $this->description ) ) {
-				echo '<span class="description customize-control-description">'.$this->description.'</span>';
+				echo '<span class="description customize-control-description">'.esc_html( $this->description ).'</span>';
 			}
 			bento_customizer_disabled_field();
 			$disabled_field = '';
@@ -159,22 +159,22 @@ function bento_customize_register( $wp_customize ) {
 					<a class="bnt-customizer-link bnt-support-link" href="http://satoristudio.net/bento-manual/" target="_blank">
 						<span class="dashicons dashicons-book">
 						</span>
-						'.__( 'View theme manual', 'bento' ).'
+						'.esc_html__( 'View theme manual', 'bento' ).'
 					</a>
 					<a class="bnt-customizer-link bnt-support-link" href="https://wordpress.org/support/theme/bento/" target="_blank">
 						<span class="dashicons dashicons-sos">
 						</span>
-						'.__( 'Visit support forum', 'bento' ).'
+						'.esc_html__( 'Visit support forum', 'bento' ).'
 					</a>
 					<a class="bnt-customizer-link bnt-support-link" href="https://www.facebook.com/satoristudio.net/" target="_blank">
 						<span class="dashicons dashicons-facebook-alt">
 						</span>
-						'.__( 'Like our Facebook page', 'bento' ).'
+						'.esc_html__( 'Like our Facebook page', 'bento' ).'
 					</a>
 					<a class="bnt-customizer-link bnt-support-link" href="https://twitter.com/satoristudionet/" target="_blank">
 						<span class="dashicons dashicons-twitter">
 						</span>
-						'.__( 'Follow us on Twitter', 'bento' ).'
+						'.esc_html__( 'Follow us on Twitter', 'bento' ).'
 					</a>
 				</div>
 			';
@@ -185,8 +185,8 @@ function bento_customize_register( $wp_customize ) {
 	class Bento_WP_EP_Customize_Control extends WP_Customize_Control {
 		public $type = 'text_ep';
 		public function render_content() {
-			$exp_url = '<a href="http://satoristudio.net/bento-free-wordpress-theme/#expansion-pack" target="_blank">'.__( 'Expansion Pack', 'bento' ).'</a>';
-			$exp_link = sprintf( __( 'These options (and many more cool features) are available in the %s. Supercharge your Bento!', 'bento' ), $exp_url );
+			$exp_url = '<a href="http://satoristudio.net/bento-free-wordpress-theme/#expansion-pack" target="_blank">'.esc_html__( 'Expansion Pack', 'bento' ).'</a>';
+			$exp_link = sprintf( esc_html__( 'These options (and many more cool features) are available in the %s. Supercharge your Bento!', 'bento' ), $exp_url );
 			if ( get_option( 'bento_ep_license_status' ) == 'valid' ) {
 				$exp_link = '';
 			}
@@ -203,7 +203,7 @@ function bento_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 
 		'bento_theme_support', 
 		array(
-			'title' => __( 'Bento Help', 'bento' ),
+			'title' => esc_html__( 'Bento Help', 'bento' ),
 			'priority' => 19,
 		) 
 	);
@@ -245,8 +245,8 @@ function bento_customize_register( $wp_customize ) {
 				'section' => 'title_tagline',
 				'priority' => 4,
 				'type' => 'text_copyright',
-				'label' => __( 'Customize the copyright message in the footer', 'bento' ),
-				'description' => __( 'Use this field to add your own message instead of the theme link in the footer.', 'bento' ),
+				'label' => esc_html__( 'Customize the copyright message in the footer', 'bento' ),
+				'description' => esc_html__( 'Use this field to add your own message instead of the theme link in the footer.', 'bento' ),
 			)
 		)
 	);
@@ -267,8 +267,8 @@ function bento_customize_register( $wp_customize ) {
 				'section' => 'title_tagline',
 				'priority' => 9,
 				'mime_type' => 'image',
-				'label' => __( 'Logo for mobile devices (optional)', 'bento' ),
-				'description' => __( 'Upload the image to be used as the logo on smartphones and tablets (i.e. all devices with screens smaller than 1280px). Leave this blank to use the default logo above.', 'bento' ),
+				'label' => esc_html__( 'Logo for mobile devices (optional)', 'bento' ),
+				'description' => esc_html__( 'Upload the image to be used as the logo on smartphones and tablets (i.e. all devices with screens smaller than 1280px). Leave this blank to use the default logo above.', 'bento' ),
 			) 
 		) 
 	);
@@ -278,7 +278,7 @@ function bento_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 
 		'bento_site_elements', 
 		array(
-			'title' => __( 'Website Elements', 'bento' ),
+			'title' => esc_html__( 'Website Elements', 'bento' ),
 			'priority' => 21,
 		) 
 	);
@@ -296,8 +296,8 @@ function bento_customize_register( $wp_customize ) {
 		array(
 			'section' => 'bento_site_elements',
 			'type' => 'checkbox',
-			'label' => __( 'Hide author block below posts', 'bento' ),
-			'description' => __( 'Check this option to stop displaying the author information in blog posts, below the content.', 'bento' ),
+			'label' => esc_html__( 'Hide author block below posts', 'bento' ),
+			'description' => esc_html__( 'Check this option to stop displaying the author information in blog posts, below the content.', 'bento' ),
 		)
 	);
 	
@@ -314,8 +314,8 @@ function bento_customize_register( $wp_customize ) {
 		array(
 			'section' => 'bento_site_elements',
 			'type' => 'checkbox',
-			'label' => __( 'Load posts on the same page in blog', 'bento' ),
-			'description' => __( 'Enable this to replace the standard blog pagination with a "Load more" button that does not reload the page.', 'bento' ),
+			'label' => esc_html__( 'Load posts on the same page in blog', 'bento' ),
+			'description' => esc_html__( 'Enable this to replace the standard blog pagination with a "Load more" button that does not reload the page.', 'bento' ),
 		)
 	);
 	
@@ -332,8 +332,8 @@ function bento_customize_register( $wp_customize ) {
 		array(
 			'section' => 'bento_site_elements',
 			'type' => 'checkbox',
-			'label' => __( 'Fix header on top of page on scroll', 'bento' ),
-			'description' => __( 'Check this option if you wish to fix the header to the top of the screen while the website is being scrolled.', 'bento' ),
+			'label' => esc_html__( 'Fix header on top of page on scroll', 'bento' ),
+			'description' => esc_html__( 'Check this option if you wish to fix the header to the top of the screen while the website is being scrolled.', 'bento' ),
 		)
 	);
 	
@@ -350,8 +350,8 @@ function bento_customize_register( $wp_customize ) {
 		array(
 			'section' => 'bento_site_elements',
 			'type' => 'checkbox',
-			'label' => __( 'Hide submenu items in mobile menu', 'bento' ),
-			'description' => __( 'Check this option to only display top-level items in the mobile menu.', 'bento' ),
+			'label' => esc_html__( 'Hide submenu items in mobile menu', 'bento' ),
+			'description' => esc_html__( 'Check this option to only display top-level items in the mobile menu.', 'bento' ),
 		)
 	);
 	
@@ -374,8 +374,8 @@ function bento_customize_register( $wp_customize ) {
 				'step' => 1,
 			),
 			'active_callback' => 'bento_woo_active',
-			'label' => __( 'Number of products per shop page (WooCommerce only)', 'bento' ),
-			'description' => __( 'Indicate the number of products to be displayed per page in the WooCommerce shop page; default is 12. Note that the WooCommerce plugin is not part of the theme needs to be installed separately.', 'bento' ),
+			'label' => esc_html__( 'Number of products per shop page (WooCommerce only)', 'bento' ),
+			'description' => esc_html__( 'Indicate the number of products to be displayed per page in the WooCommerce shop page; default is 12. Note that the WooCommerce plugin is not part of the theme needs to be installed separately.', 'bento' ),
 		)
 	);
 	
@@ -398,8 +398,8 @@ function bento_customize_register( $wp_customize ) {
 				'step' => 1,
 			),
 			'active_callback' => 'bento_woo_active',
-			'label' => __( 'Number of columns on the shop page (WooCommerce only)', 'bento' ),
-			'description' => __( 'Input the number of columns for the WooCommerce shop page; default is 4; Note that the WooCommerce plugin is not part of the theme needs to be installed separately.', 'bento' ),
+			'label' => esc_html__( 'Number of columns on the shop page (WooCommerce only)', 'bento' ),
+			'description' => esc_html__( 'Input the number of columns for the WooCommerce shop page; default is 4; Note that the WooCommerce plugin is not part of the theme needs to be installed separately.', 'bento' ),
 		)
 	);
 	
@@ -408,7 +408,7 @@ function bento_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 
 		'bento_layout_background', 
 		array(
-			'title' => __( 'Layout and Background', 'bento' ),
+			'title' => esc_html__( 'Layout and Background', 'bento' ),
 			'priority' => 23,
 		) 
 	);
@@ -430,14 +430,14 @@ function bento_customize_register( $wp_customize ) {
 				900 => '900',
 				960 => '960', 
 				1020 => '1020',
-				1080 => __( '1080 (default)', 'bento' ),
+				1080 => esc_html__( '1080 (default)', 'bento' ),
 				1140 => '1140',
 				1200 => '1200',
 				1260 => '1260',
 				1320 => '1320'
 			),
-			'label' => __( 'Content width', 'bento' ),
-			'description' => __( 'Set the width of the content container, in pixels; default is 1080.', 'bento' ),
+			'label' => esc_html__( 'Content width', 'bento' ),
+			'description' => esc_html__( 'Set the width of the content container, in pixels; default is 1080.', 'bento' ),
 		)
 	);
 	
@@ -455,11 +455,11 @@ function bento_customize_register( $wp_customize ) {
 			'section' => 'bento_layout_background',
 			'type' => 'select',
 			'choices' => array( 
-				__( 'Wide (default)', 'bento' ), 
-				__( 'Boxed', 'bento' ) 
+				esc_html__( 'Wide (default)', 'bento' ), 
+				esc_html__( 'Boxed', 'bento' ) 
 			),
-			'label' => __( 'Website layout', 'bento' ),
-			'description' => __( 'Choose the layout of the website: - "wide" means that the full-width elements such as the header will stretch the entire width of the browser window (this is default). - "boxed" means that the website will be restricted to a maximum width and there will be space left between the content and the sides of the browser window.', 'bento' ),
+			'label' => esc_html__( 'Website layout', 'bento' ),
+			'description' => esc_html__( 'Choose the layout of the website: - "wide" means that the full-width elements such as the header will stretch the entire width of the browser window (this is default). - "boxed" means that the website will be restricted to a maximum width and there will be space left between the content and the sides of the browser window.', 'bento' ),
 		)
 	);
 	
@@ -477,12 +477,12 @@ function bento_customize_register( $wp_customize ) {
 			'section' => 'bento_layout_background',
 			'type' => 'select',
 			'choices' => array( 
-				__( 'Solid color (default)', 'bento' ), 
-				__( 'Repeated texture', 'bento' ),
-				__( 'Full-size image', 'bento' )
+				esc_html__( 'Solid color (default)', 'bento' ), 
+				esc_html__( 'Repeated texture', 'bento' ),
+				esc_html__( 'Full-size image', 'bento' )
 			),
-			'label' => __( 'Boxed layout: website background', 'bento' ),
-			'description' => __( 'Choose the type of background for the boxed website layout; default is solid color.', 'bento' ),
+			'label' => esc_html__( 'Boxed layout: website background', 'bento' ),
+			'description' => esc_html__( 'Choose the type of background for the boxed website layout; default is solid color.', 'bento' ),
 		) 
 	);
 	
@@ -500,8 +500,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_website_background_color', 
 			array(
 				'section' => 'bento_layout_background',
-				'label' => __( 'Boxed layout: website background color', 'bento' ),
-				'description' => __( 'Choose the background color for the outer parts of the boxed website; default is #e6e6e6 (light-grey).', 'bento' ),
+				'label' => esc_html__( 'Boxed layout: website background color', 'bento' ),
+				'description' => esc_html__( 'Choose the background color for the outer parts of the boxed website; default is #e6e6e6 (light-grey).', 'bento' ),
 			)
 		)
 	);
@@ -521,8 +521,8 @@ function bento_customize_register( $wp_customize ) {
 			array(
 				'section' => 'bento_layout_background',
 				'mime_type' => 'image',
-				'label' => __( 'Boxed layout: website background texture', 'bento' ),
-				'description' => __( 'Upload the image to serve as the repeating texture for the outer parts of the boxed website.', 'bento' ),
+				'label' => esc_html__( 'Boxed layout: website background texture', 'bento' ),
+				'description' => esc_html__( 'Upload the image to serve as the repeating texture for the outer parts of the boxed website.', 'bento' ),
 			) 
 		)
 	);
@@ -542,8 +542,8 @@ function bento_customize_register( $wp_customize ) {
 			array(
 				'section' => 'bento_layout_background',
 				'mime_type' => 'image',
-				'label' => __( 'Boxed layout: website background image', 'bento' ),
-				'description' => __( 'Upload the image to serve as the full-width background for the outer parts of the boxed website.', 'bento' ),
+				'label' => esc_html__( 'Boxed layout: website background image', 'bento' ),
+				'description' => esc_html__( 'Upload the image to serve as the full-width background for the outer parts of the boxed website.', 'bento' ),
 			) 
 		)
 	);
@@ -562,13 +562,13 @@ function bento_customize_register( $wp_customize ) {
 			'section' => 'bento_layout_background',
 			'type' => 'select',
 			'choices' => array( 
-				__( 'Top, right-aligned (default)', 'bento' ),
-				__( 'Top, centered', 'bento' ),
-				__( 'Top, hamburger button + overlay', 'bento' ),
-				__( 'Left side', 'bento' ),
+				esc_html__( 'Top, right-aligned (default)', 'bento' ),
+				esc_html__( 'Top, centered', 'bento' ),
+				esc_html__( 'Top, hamburger button + overlay', 'bento' ),
+				esc_html__( 'Left side', 'bento' ),
 			),
-			'label' => __( 'Menu layout', 'bento' ),
-			'description' => __( 'Choose the way the primary menu is displayed: - "top, right-aligned" is the classic header with menu on the right (this is default); "top, centered" makes the menu and the logo align to the center of the header, "top, hamburger button" hides the menu behind a mobile-style three-line icon which displays a full-page overlay menu when clicked - suitable for websites with simple and non-hierarchical navigation structure; "left side" displays the menu and the logo to the left of the content area, as a separate section.', 'bento' ),
+			'label' => esc_html__( 'Menu layout', 'bento' ),
+			'description' => esc_html__( 'Choose the way the primary menu is displayed: - "top, right-aligned" is the classic header with menu on the right (this is default); "top, centered" makes the menu and the logo align to the center of the header, "top, hamburger button" hides the menu behind a mobile-style three-line icon which displays a full-page overlay menu when clicked - suitable for websites with simple and non-hierarchical navigation structure; "left side" displays the menu and the logo to the left of the content area, as a separate section.', 'bento' ),
 		) 
 	);
 	
@@ -577,7 +577,7 @@ function bento_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 
 		'bento_fonts', 
 		array(
-			'title' => __( 'Fonts and Typography', 'bento' ),
+			'title' => esc_html__( 'Fonts and Typography', 'bento' ),
 			'priority' => 24,
 		) 
 	);
@@ -597,8 +597,8 @@ function bento_customize_register( $wp_customize ) {
 		array(
 			'section' => 'bento_fonts',
 			'type' => 'text',
-			'label' => __( 'Body font (Google Fonts)', 'bento' ),
-			'description' => sprintf( __( 'Input Google Font name for the body font, e.g. Open Sans, exactly as spelled in the Google Fonts directory. You can preview Google Fonts here: %s; Default is Open Sans.', 'bento' ), $fonts_url ),
+			'label' => esc_html__( 'Body font (Google Fonts)', 'bento' ),
+			'description' => sprintf( esc_html__( 'Input Google Font name for the body font, e.g. Open Sans, exactly as spelled in the Google Fonts directory. You can preview Google Fonts here: %s; Default is Open Sans.', 'bento' ), $fonts_url ),
 		)
 	);
 	
@@ -616,8 +616,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_font_body_upload', 
 			array(
 				'section' => 'bento_fonts',
-				'label' => __( 'Body font (Upload your own)', 'bento' ),
-				'description' => __( 'Upload the font file to be used as body font; you can use .ttf, .otf, .woff and .eot file formats. This overrides the previous setting.', 'bento' ),
+				'label' => esc_html__( 'Body font (Upload your own)', 'bento' ),
+				'description' => esc_html__( 'Upload the font file to be used as body font; you can use .ttf, .otf, .woff and .eot file formats. This overrides the previous setting.', 'bento' ),
 			) 
 		)
 	);
@@ -638,14 +638,14 @@ function bento_customize_register( $wp_customize ) {
 			'choices' => array( 
 				12 => '12',
 				13 => '13', 
-				14 => __( '14 (default)', 'bento' ),
+				14 => esc_html__( '14 (default)', 'bento' ),
 				16 => '16',
 				18 => '18',
 				20 => '20',
 				24 => '24',
 			),
-			'label' => __( 'Body text size', 'bento' ),
-			'description' => __( 'Choose the font size for the body text; default is 14px.', 'bento' ),
+			'label' => esc_html__( 'Body text size', 'bento' ),
+			'description' => esc_html__( 'Choose the font size for the body text; default is 14px.', 'bento' ),
 		) 
 	);
 	
@@ -662,8 +662,8 @@ function bento_customize_register( $wp_customize ) {
 		array(
 			'section' => 'bento_fonts',
 			'type' => 'text',
-			'label' => __( 'Headings font (Google Fonts)', 'bento' ),
-			'description' => sprintf( __( 'Input Google Font name for the headings font, e.g. Open Sans, exactly as spelled in the Google Fonts directory. You can preview Google Fonts here: %s; Default is Open Sans.', 'bento' ), $fonts_url ),
+			'label' => esc_html__( 'Headings font (Google Fonts)', 'bento' ),
+			'description' => sprintf( esc_html__( 'Input Google Font name for the headings font, e.g. Open Sans, exactly as spelled in the Google Fonts directory. You can preview Google Fonts here: %s; Default is Open Sans.', 'bento' ), $fonts_url ),
 		)
 	);
 	
@@ -681,8 +681,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_font_headings_upload', 
 			array(
 				'section' => 'bento_fonts',
-				'label' => __( 'Headings font (Upload your own)', 'bento' ),
-				'description' => __( 'Upload the font file to be used as headings font; you can use .ttf, .otf, .woff and .eot file formats. This overrides the previous setting.', 'bento' ),
+				'label' => esc_html__( 'Headings font (Upload your own)', 'bento' ),
+				'description' => esc_html__( 'Upload the font file to be used as headings font; you can use .ttf, .otf, .woff and .eot file formats. This overrides the previous setting.', 'bento' ),
 			) 
 		)
 	);
@@ -700,8 +700,8 @@ function bento_customize_register( $wp_customize ) {
 		array(
 			'section' => 'bento_fonts',
 			'type' => 'text',
-			'label' => __( 'Menu font (Google Fonts)', 'bento' ),
-			'description' => sprintf( __( 'Input Google Font name for the menu font, e.g. Montserrat, exactly as spelled in the Google Fonts directory. You can preview Google Fonts here: %s; Default is Montserrat.', 'bento' ), $fonts_url ),
+			'label' => esc_html__( 'Menu font (Google Fonts)', 'bento' ),
+			'description' => sprintf( esc_html__( 'Input Google Font name for the menu font, e.g. Montserrat, exactly as spelled in the Google Fonts directory. You can preview Google Fonts here: %s; Default is Montserrat.', 'bento' ), $fonts_url ),
 		)
 	);
 	
@@ -719,8 +719,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_font_menu_upload', 
 			array(
 				'section' => 'bento_fonts',
-				'label' => __( 'Menu font (Upload your own)', 'bento' ),
-				'description' => __( 'Upload the font file to be used as menu font; you can use .ttf, .otf, .woff and .eot file formats. This overrides the previous setting.', 'bento' ),
+				'label' => esc_html__( 'Menu font (Upload your own)', 'bento' ),
+				'description' => esc_html__( 'Upload the font file to be used as menu font; you can use .ttf, .otf, .woff and .eot file formats. This overrides the previous setting.', 'bento' ),
 			) 
 		)
 	);
@@ -741,14 +741,14 @@ function bento_customize_register( $wp_customize ) {
 			'choices' => array( 
 				12 => '12',
 				13 => '13', 
-				14 => __( '14 (default)', 'bento' ),
+				14 => esc_html__( '14 (default)', 'bento' ),
 				16 => '16',
 				18 => '18',
 				20 => '20',
 				24 => '24',
 			),
-			'label' => __( 'Menu text size', 'bento' ),
-			'description' => __( 'Choose the font size for the menu text; default is 14px.', 'bento' ),
+			'label' => esc_html__( 'Menu text size', 'bento' ),
+			'description' => esc_html__( 'Choose the font size for the menu text; default is 14px.', 'bento' ),
 		) 
 	);
 	
@@ -765,8 +765,8 @@ function bento_customize_register( $wp_customize ) {
 		array(
 			'section' => 'bento_fonts',
 			'type' => 'checkbox',
-			'label' => __( 'Remove uppercase from menu text', 'bento' ),
-			'description' => __( 'Check this option to render the menu items in sentence case (normal caps).', 'bento' ),
+			'label' => esc_html__( 'Remove uppercase from menu text', 'bento' ),
+			'description' => esc_html__( 'Check this option to render the menu items in sentence case (normal caps).', 'bento' ),
 		)
 	);
 	
@@ -775,7 +775,7 @@ function bento_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 
 		'bento_colors_header', 
 		array(
-			'title' => __( 'Header Colors', 'bento' ),
+			'title' => esc_html__( 'Header Colors', 'bento' ),
 			'priority' => 25,
 		) 
 	);
@@ -794,8 +794,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_header_background_color', 
 			array(
 				'section' => 'bento_colors_header',
-				'label' => __( 'Header background color', 'bento' ),
-				'description' => __( 'Choose the background color for the top section of the website; default is #ffffff (white).', 'bento' ),
+				'label' => esc_html__( 'Header background color', 'bento' ),
+				'description' => esc_html__( 'Choose the background color for the top section of the website; default is #ffffff (white).', 'bento' ),
 			)
 		)
 	);
@@ -814,8 +814,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_primary_menu_background', 
 			array(
 				'section' => 'bento_colors_header',
-				'label' => __( 'Primary menu: background color', 'bento' ),
-				'description' => __( 'Choose the background color of the overlay menu; default is #eeeeee (light-grey).', 'bento' ),
+				'label' => esc_html__( 'Primary menu: background color', 'bento' ),
+				'description' => esc_html__( 'Choose the background color of the overlay menu; default is #eeeeee (light-grey).', 'bento' ),
 			)
 		)
 	);
@@ -834,8 +834,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_primary_menu_text_color', 
 			array(
 				'section' => 'bento_colors_header',
-				'label' => __( 'Primary menu: text color', 'bento' ),
-				'description' => __( 'Choose the text color for the main navigation menu; this will also apply to mobile menu text color by default, if nothing is chosen in the respective option below; default is #333333 (dark-grey).', 'bento' ),
+				'label' => esc_html__( 'Primary menu: text color', 'bento' ),
+				'description' => esc_html__( 'Choose the text color for the main navigation menu; this will also apply to mobile menu text color by default, if nothing is chosen in the respective option below; default is #333333 (dark-grey).', 'bento' ),
 			)
 		)
 	);
@@ -854,8 +854,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_primary_menu_text_hover_color', 
 			array(
 				'section' => 'bento_colors_header',
-				'label' => __( 'Primary menu: text color on hover', 'bento' ),
-				'description' => __( 'Choose which color menu items become on mouse hover; default is #00b285 (blue-green).', 'bento' ),
+				'label' => esc_html__( 'Primary menu: text color on hover', 'bento' ),
+				'description' => esc_html__( 'Choose which color menu items become on mouse hover; default is #00b285 (blue-green).', 'bento' ),
 			)
 		)
 	);
@@ -874,8 +874,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_menu_separators', 
 			array(
 				'section' => 'bento_colors_header',
-				'label' => __( 'Primary menu: item separators', 'bento' ),
-				'description' => __( 'Choose the color for the separator lines in the primary menu; default is #eeeeee (light-grey).', 'bento' ),
+				'label' => esc_html__( 'Primary menu: item separators', 'bento' ),
+				'description' => esc_html__( 'Choose the color for the separator lines in the primary menu; default is #eeeeee (light-grey).', 'bento' ),
 			)
 		)
 	);
@@ -894,8 +894,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_primary_menu_submenu_background_color', 
 			array(
 				'section' => 'bento_colors_header',
-				'label' => __( 'Primary menu: submenu background color', 'bento' ),
-				'description' => __( 'Choose the background color for the submenus; this will also apply to mobile menu background color by default, if nothing is chosen in the respective option below; default is #dddddd (grey).', 'bento' ),
+				'label' => esc_html__( 'Primary menu: submenu background color', 'bento' ),
+				'description' => esc_html__( 'Choose the background color for the submenus; this will also apply to mobile menu background color by default, if nothing is chosen in the respective option below; default is #dddddd (grey).', 'bento' ),
 			)
 		)
 	);
@@ -914,8 +914,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_primary_menu_submenu_background_hover_color', 
 			array(
 				'section' => 'bento_colors_header',
-				'label' => __( 'Primary menu: submenu background color on hover', 'bento' ),
-				'description' => __( 'Choose the color used as a background for submenu items on mouse hover; this will also apply to mobile menu hover background color by default, if nothing is chosen in the respective option below; default is #cccccc (grey).', 'bento' ),
+				'label' => esc_html__( 'Primary menu: submenu background color on hover', 'bento' ),
+				'description' => esc_html__( 'Choose the color used as a background for submenu items on mouse hover; this will also apply to mobile menu hover background color by default, if nothing is chosen in the respective option below; default is #cccccc (grey).', 'bento' ),
 			)
 		)
 	);
@@ -934,8 +934,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_primary_menu_submenu_border_color', 
 			array(
 				'section' => 'bento_colors_header',
-				'label' => __( 'Primary menu: submenu border color', 'bento' ),
-				'description' => __( 'Choose the color of submenu item borders; this will also apply to mobile menu border color by default, if nothing is chosen in the respective option below; default is #cccccc (grey).', 'bento' ),
+				'label' => esc_html__( 'Primary menu: submenu border color', 'bento' ),
+				'description' => esc_html__( 'Choose the color of submenu item borders; this will also apply to mobile menu border color by default, if nothing is chosen in the respective option below; default is #cccccc (grey).', 'bento' ),
 			)
 		)
 	);
@@ -954,8 +954,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_primary_menu_submenu_text_color', 
 			array(
 				'section' => 'bento_colors_header',
-				'label' => __( 'Primary menu: submenu text color', 'bento' ),
-				'description' => __( 'Choose the text color for the submenus; default is #333333 (dark-grey).', 'bento' ),
+				'label' => esc_html__( 'Primary menu: submenu text color', 'bento' ),
+				'description' => esc_html__( 'Choose the text color for the submenus; default is #333333 (dark-grey).', 'bento' ),
 			)
 		)
 	);
@@ -974,8 +974,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_primary_menu_submenu_text_hover_color', 
 			array(
 				'section' => 'bento_colors_header',
-				'label' => __( 'Primary menu: submenu text color on hover', 'bento' ),
-				'description' => __( 'Choose the mouse-hover text color for the submenus; default is #333333 (dark-grey).', 'bento' ),
+				'label' => esc_html__( 'Primary menu: submenu text color on hover', 'bento' ),
+				'description' => esc_html__( 'Choose the mouse-hover text color for the submenus; default is #333333 (dark-grey).', 'bento' ),
 			)
 		)
 	);
@@ -994,8 +994,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_mobile_menu_background_color', 
 			array(
 				'section' => 'bento_colors_header',
-				'label' => __( 'Mobile menu: background color', 'bento' ),
-				'description' => __( 'Choose the background color for the mobile menu; default is #dddddd (light-grey).', 'bento' ),
+				'label' => esc_html__( 'Mobile menu: background color', 'bento' ),
+				'description' => esc_html__( 'Choose the background color for the mobile menu; default is #dddddd (light-grey).', 'bento' ),
 			)
 		)
 	);
@@ -1014,8 +1014,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_mobile_menu_background_hover_color', 
 			array(
 				'section' => 'bento_colors_header',
-				'label' => __( 'Mobile menu: background color on hover', 'bento' ),
-				'description' => __( 'Choose the background color on hover; default is #cccccc (light-grey).', 'bento' ),
+				'label' => esc_html__( 'Mobile menu: background color on hover', 'bento' ),
+				'description' => esc_html__( 'Choose the background color on hover; default is #cccccc (light-grey).', 'bento' ),
 			)
 		)
 	);
@@ -1034,8 +1034,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_mobile_menu_border_color', 
 			array(
 				'section' => 'bento_colors_header',
-				'label' => __( 'Mobile menu: border color', 'bento' ),
-				'description' => __( 'Choose the border color for the mobile menu; default is #cccccc (light-grey).', 'bento' ),
+				'label' => esc_html__( 'Mobile menu: border color', 'bento' ),
+				'description' => esc_html__( 'Choose the border color for the mobile menu; default is #cccccc (light-grey).', 'bento' ),
 			)
 		)
 	);
@@ -1054,8 +1054,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_mobile_menu_text_color', 
 			array(
 				'section' => 'bento_colors_header',
-				'label' => __( 'Mobile menu: text color', 'bento' ),
-				'description' => __( 'Choose the text color for the mobile menu; default is #333333 (dark-grey).', 'bento' ),
+				'label' => esc_html__( 'Mobile menu: text color', 'bento' ),
+				'description' => esc_html__( 'Choose the text color for the mobile menu; default is #333333 (dark-grey).', 'bento' ),
 			)
 		)
 	);
@@ -1074,8 +1074,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_mobile_menu_text_hover_color', 
 			array(
 				'section' => 'bento_colors_header',
-				'label' => __( 'Mobile menu: text color on hover', 'bento' ),
-				'description' => __( 'Choose the text color on mouse hover for the mobile menu; default is #333333 (dark-grey).', 'bento' ),
+				'label' => esc_html__( 'Mobile menu: text color on hover', 'bento' ),
+				'description' => esc_html__( 'Choose the text color on mouse hover for the mobile menu; default is #333333 (dark-grey).', 'bento' ),
 			)
 		)
 	);
@@ -1085,7 +1085,7 @@ function bento_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 
 		'bento_colors_content', 
 		array(
-			'title' => __( 'Content Colors', 'bento' ),
+			'title' => esc_html__( 'Content Colors', 'bento' ),
 			'priority' => 26,
 		) 
 	);
@@ -1104,8 +1104,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_content_background_color', 
 			array(
 				'section' => 'bento_colors_content',
-				'label' => __( 'Content area background color', 'bento' ),
-				'description' => __( 'Choose the background color for the main content area of the website; default is #f4f4f4 (light-grey).', 'bento' ),
+				'label' => esc_html__( 'Content area background color', 'bento' ),
+				'description' => esc_html__( 'Choose the background color for the main content area of the website; default is #f4f4f4 (light-grey).', 'bento' ),
 			)
 		)
 	);
@@ -1124,8 +1124,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_content_heading_text_color', 
 			array(
 				'section' => 'bento_colors_content',
-				'label' => __( 'Heading color', 'bento' ),
-				'description' => __( 'Choose the color of headings throughout the website; default is #333333 (dark-grey).', 'bento' ),
+				'label' => esc_html__( 'Heading color', 'bento' ),
+				'description' => esc_html__( 'Choose the color of headings throughout the website; default is #333333 (dark-grey).', 'bento' ),
 			)
 		)
 	);
@@ -1144,8 +1144,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_content_body_text_color', 
 			array(
 				'section' => 'bento_colors_content',
-				'label' => __( 'Body text color', 'bento' ),
-				'description' => __( 'Choose the primary text color for the body of the website; default is #333333 (dark-grey).', 'bento' ),
+				'label' => esc_html__( 'Body text color', 'bento' ),
+				'description' => esc_html__( 'Choose the primary text color for the body of the website; default is #333333 (dark-grey).', 'bento' ),
 			)
 		)
 	);
@@ -1164,8 +1164,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_content_link_text_color', 
 			array(
 				'section' => 'bento_colors_content',
-				'label' => __( 'Link text color', 'bento' ),
-				'description' => __( 'Choose the color for the link text throughout the website; default is #00b285 (blue-green).', 'bento' ),
+				'label' => esc_html__( 'Link text color', 'bento' ),
+				'description' => esc_html__( 'Choose the color for the link text throughout the website; default is #00b285 (blue-green).', 'bento' ),
 			)
 		)
 	);
@@ -1184,8 +1184,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_content_meta_text_color', 
 			array(
 				'section' => 'bento_colors_content',
-				'label' => __( 'Meta text color', 'bento' ),
-				'description' => __( 'Pick the color for meta content such as post dates, comment counts, and post counts; default is #999999 (grey).', 'bento' ),
+				'label' => esc_html__( 'Meta text color', 'bento' ),
+				'description' => esc_html__( 'Pick the color for meta content such as post dates, comment counts, and post counts; default is #999999 (grey).', 'bento' ),
 			)
 		)
 	);
@@ -1204,8 +1204,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_content_delimiter_color', 
 			array(
 				'section' => 'bento_colors_content',
-				'label' => __( 'Delimiter line color', 'bento' ),
-				'description' => __( 'Choose the color for delimiter lines, e.g. before comments, in sidebar widgets and in the shopping cart; also applies to in-text tables; default is #dddddd (light-grey).', 'bento' ),
+				'label' => esc_html__( 'Delimiter line color', 'bento' ),
+				'description' => esc_html__( 'Choose the color for delimiter lines, e.g. before comments, in sidebar widgets and in the shopping cart; also applies to in-text tables; default is #dddddd (light-grey).', 'bento' ),
 			)
 		)
 	);
@@ -1224,8 +1224,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_content_input_background_color', 
 			array(
 				'section' => 'bento_colors_content',
-				'label' => __( 'Input fields: background color', 'bento' ),
-				'description' => __( 'Choose the background color for input fields, such as comments and search; default is #e4e4e4 (light-grey).', 'bento' ),
+				'label' => esc_html__( 'Input fields: background color', 'bento' ),
+				'description' => esc_html__( 'Choose the background color for input fields, such as comments and search; default is #e4e4e4 (light-grey).', 'bento' ),
 			)
 		)
 	);
@@ -1244,8 +1244,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_content_input_text_color', 
 			array(
 				'section' => 'bento_colors_content',
-				'label' => __( 'Input fields: text color', 'bento' ),
-				'description' => __( 'Choose the color for the text typed into input fields, such as comment forms; default is #333333 (dark-grey).', 'bento' ),
+				'label' => esc_html__( 'Input fields: text color', 'bento' ),
+				'description' => esc_html__( 'Choose the color for the text typed into input fields, such as comment forms; default is #333333 (dark-grey).', 'bento' ),
 			)
 		)
 	);
@@ -1264,8 +1264,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_content_input_placeholder_color', 
 			array(
 				'section' => 'bento_colors_content',
-				'label' => __( 'Input fields: placeholder text color', 'bento' ),
-				'description' => __( 'Choose the placeholder text color for input fields, i.e. the text that appears in empty fields; default is #aaaaaa (grey).', 'bento' ),
+				'label' => esc_html__( 'Input fields: placeholder text color', 'bento' ),
+				'description' => esc_html__( 'Choose the placeholder text color for input fields, i.e. the text that appears in empty fields; default is #aaaaaa (grey).', 'bento' ),
 			)
 		)
 	);
@@ -1284,8 +1284,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_content_button_background_color', 
 			array(
 				'section' => 'bento_colors_content',
-				'label' => __( 'Buttons color', 'bento' ),
-				'description' => __( 'Choose the color for buttons throughout the website; default is #00b285 (blue-green).', 'bento' ),
+				'label' => esc_html__( 'Buttons color', 'bento' ),
+				'description' => esc_html__( 'Choose the color for buttons throughout the website; default is #00b285 (blue-green).', 'bento' ),
 			)
 		)
 	);
@@ -1304,8 +1304,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_content_button_hover_background_color', 
 			array(
 				'section' => 'bento_colors_content',
-				'label' => __( 'Button color on hover', 'bento' ),
-				'description' => __( 'Choose the color for buttons on mouse hover; default is #00906c (dark blue-green).', 'bento' ),
+				'label' => esc_html__( 'Button color on hover', 'bento' ),
+				'description' => esc_html__( 'Choose the color for buttons on mouse hover; default is #00906c (dark blue-green).', 'bento' ),
 			)
 		)
 	);
@@ -1324,8 +1324,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_content_button_text_color', 
 			array(
 				'section' => 'bento_colors_content',
-				'label' => __( 'Button text color', 'bento' ),
-				'description' => __( 'Choose the color for button text; default is #ffffff (white).', 'bento' ),
+				'label' => esc_html__( 'Button text color', 'bento' ),
+				'description' => esc_html__( 'Choose the color for button text; default is #ffffff (white).', 'bento' ),
 			)
 		)
 	);
@@ -1344,8 +1344,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_content_button_text_hover_color', 
 			array(
 				'section' => 'bento_colors_content',
-				'label' => __( 'Button text color on hover', 'bento' ),
-				'description' => __( 'Choose the color for button text on mouse hover; default is #ffffff (white).', 'bento' ),
+				'label' => esc_html__( 'Button text color on hover', 'bento' ),
+				'description' => esc_html__( 'Choose the color for button text on mouse hover; default is #ffffff (white).', 'bento' ),
 			)
 		)
 	);
@@ -1364,8 +1364,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_content_secondary_button_background_color', 
 			array(
 				'section' => 'bento_colors_content',
-				'label' => __( 'Secondary button color', 'bento' ),
-				'description' => __( 'Choose the color for secondary buttons, mainly for WooCommerce plugin, e.g. "update basket" and "apply coupon"; default is #999999 (grey).', 'bento' ),
+				'label' => esc_html__( 'Secondary button color', 'bento' ),
+				'description' => esc_html__( 'Choose the color for secondary buttons, mainly for WooCommerce plugin, e.g. "update basket" and "apply coupon"; default is #999999 (grey).', 'bento' ),
 			)
 		)
 	);
@@ -1384,8 +1384,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_content_secondary_button_hover_background_color', 
 			array(
 				'section' => 'bento_colors_content',
-				'label' => __( 'Secondary button color on hover', 'bento' ),
-				'description' => __( 'Choose the color for secondary buttons on mouse hover; default is #777777 (grey).', 'bento' ),
+				'label' => esc_html__( 'Secondary button color on hover', 'bento' ),
+				'description' => esc_html__( 'Choose the color for secondary buttons on mouse hover; default is #777777 (grey).', 'bento' ),
 			)
 		)
 	);
@@ -1404,8 +1404,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_content_secondary_button_text_color', 
 			array(
 				'section' => 'bento_colors_content',
-				'label' => __( 'Secondary button text color', 'bento' ),
-				'description' => __( 'Choose the text color for secondary buttons, mainly for WooCommerce plugin, e.g. "update basket" and "apply coupon"; default is #ffffff (white).', 'bento' ),
+				'label' => esc_html__( 'Secondary button text color', 'bento' ),
+				'description' => esc_html__( 'Choose the text color for secondary buttons, mainly for WooCommerce plugin, e.g. "update basket" and "apply coupon"; default is #ffffff (white).', 'bento' ),
 			)
 		)
 	);
@@ -1424,8 +1424,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_content_secondary_button_text_hover_color', 
 			array(
 				'section' => 'bento_colors_content',
-				'label' => __( 'Secondary button text color on hover', 'bento' ),
-				'description' => __( 'Choose the text color for secondary buttons on mouse hover; default is #ffffff (white).', 'bento' ),
+				'label' => esc_html__( 'Secondary button text color on hover', 'bento' ),
+				'description' => esc_html__( 'Choose the text color for secondary buttons on mouse hover; default is #ffffff (white).', 'bento' ),
 			)
 		)
 	);
@@ -1435,7 +1435,7 @@ function bento_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 
 		'bento_colors_footer', 
 		array(
-			'title' => __( 'Footer Colors', 'bento' ),
+			'title' => esc_html__( 'Footer Colors', 'bento' ),
 			'priority' => 27,
 		) 
 	);
@@ -1454,8 +1454,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_footer_widgets_background_color', 
 			array(
 				'section' => 'bento_colors_footer',
-				'label' => __( 'Footer widget area background color', 'bento' ),
-				'description' => __( 'Choose the background color for the footer widget area; default is #888888 (grey).', 'bento' ),
+				'label' => esc_html__( 'Footer widget area background color', 'bento' ),
+				'description' => esc_html__( 'Choose the background color for the footer widget area; default is #888888 (grey).', 'bento' ),
 			)
 		)
 	);
@@ -1474,8 +1474,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_footer_text_color', 
 			array(
 				'section' => 'bento_colors_footer',
-				'label' => __( 'Footer text color', 'bento' ),
-				'description' => __( 'Choose the text color for the footer; default is #cccccc (light-grey).', 'bento' ),
+				'label' => esc_html__( 'Footer text color', 'bento' ),
+				'description' => esc_html__( 'Choose the text color for the footer; default is #cccccc (light-grey).', 'bento' ),
 			)
 		)
 	);
@@ -1494,8 +1494,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_footer_link_text_color', 
 			array(
 				'section' => 'bento_colors_footer',
-				'label' => __( 'Footer link color', 'bento' ),
-				'description' => __( 'Choose the color for links in the footer; default is #ffffff (white).', 'bento' ),
+				'label' => esc_html__( 'Footer link color', 'bento' ),
+				'description' => esc_html__( 'Choose the color for links in the footer; default is #ffffff (white).', 'bento' ),
 			)
 		)
 	);
@@ -1514,8 +1514,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_footer_meta_text_color', 
 			array(
 				'section' => 'bento_colors_footer',
-				'label' => __( 'Footer meta text color', 'bento' ),
-				'description' => __( 'Choose the color meta text, such as dates and post counts, in the footer; default is #aaaaaa (light-grey).', 'bento' ),
+				'label' => esc_html__( 'Footer meta text color', 'bento' ),
+				'description' => esc_html__( 'Choose the color meta text, such as dates and post counts, in the footer; default is #aaaaaa (light-grey).', 'bento' ),
 			)
 		)
 	);
@@ -1534,8 +1534,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_footer_delimiter_color', 
 			array(
 				'section' => 'bento_colors_footer',
-				'label' => __( 'Footer delimiter text color', 'bento' ),
-				'description' => __( 'Choose the color for delimiter lines in the footer widgets; default is #999999 (light-grey).', 'bento' ),
+				'label' => esc_html__( 'Footer delimiter text color', 'bento' ),
+				'description' => esc_html__( 'Choose the color for delimiter lines in the footer widgets; default is #999999 (light-grey).', 'bento' ),
 			)
 		)
 	);
@@ -1554,8 +1554,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_footer_bottom_background_color', 
 			array(
 				'section' => 'bento_colors_footer',
-				'label' => __( 'Bottom footer background color', 'bento' ),
-				'description' => __( 'Choose the background color for the bottom part of the footer containing the optional footer menu and the copyright information; default is #666666 (grey).', 'bento' ),
+				'label' => esc_html__( 'Bottom footer background color', 'bento' ),
+				'description' => esc_html__( 'Choose the background color for the bottom part of the footer containing the optional footer menu and the copyright information; default is #666666 (grey).', 'bento' ),
 			)
 		)
 	);
@@ -1574,8 +1574,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_footer_bottom_text_color', 
 			array(
 				'section' => 'bento_colors_footer',
-				'label' => __( 'Bottom footer: text color', 'bento' ),
-				'description' => __( 'Choose the color for the bottom footer text; default is #cccccc (light-grey).', 'bento' ),
+				'label' => esc_html__( 'Bottom footer: text color', 'bento' ),
+				'description' => esc_html__( 'Choose the color for the bottom footer text; default is #cccccc (light-grey).', 'bento' ),
 			)
 		)
 	);
@@ -1594,8 +1594,8 @@ function bento_customize_register( $wp_customize ) {
 			'bento_footer_bottom_link_text_color', 
 			array(
 				'section' => 'bento_colors_footer',
-				'label' => __( 'Bottom footer: link color', 'bento' ),
-				'description' => __( 'Choose the color for links in the bottom footer area; default is #ffffff (white).', 'bento' ),
+				'label' => esc_html__( 'Bottom footer: link color', 'bento' ),
+				'description' => esc_html__( 'Choose the color for links in the bottom footer area; default is #ffffff (white).', 'bento' ),
 			)
 		)
 	);
@@ -1605,7 +1605,7 @@ function bento_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 
 		'bento_custom_css', 
 		array(
-			'title' => __( 'Custom CSS', 'bento' ),
+			'title' => esc_html__( 'Custom CSS', 'bento' ),
 			'priority' => 28,
 		) 
 	);
@@ -1623,8 +1623,8 @@ function bento_customize_register( $wp_customize ) {
 		array(
 			'section' => 'bento_custom_css',
 			'type' => 'textarea',
-			'label' => __( 'Custom Styles', 'bento' ),
-			'description' => __( 'Enter any custom CSS here to apply to the website.', 'bento' ),
+			'label' => esc_html__( 'Custom Styles', 'bento' ),
+			'description' => esc_html__( 'Enter any custom CSS here to apply to the website.', 'bento' ),
 		)
 	);
 	
@@ -1633,7 +1633,7 @@ function bento_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 
 		'bento_seo', 
 		array(
-			'title' => __( 'SEO Settings', 'bento' ),
+			'title' => esc_html__( 'SEO Settings', 'bento' ),
 			'priority' => 29,
 		)
 	);
@@ -1662,7 +1662,7 @@ function bento_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 
 		'bento_analytics', 
 		array(
-			'title' => __( 'Analytics Code', 'bento' ),
+			'title' => esc_html__( 'Analytics Code', 'bento' ),
 			'priority' => 30,
 		)
 	);
@@ -1691,7 +1691,7 @@ function bento_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 
 		'bento_cta_popup', 
 		array(
-			'title' => __( 'Call to Action Popup', 'bento' ),
+			'title' => esc_html__( 'Call to Action Popup', 'bento' ),
 			'priority' => 31,
 		)
 	);
@@ -1720,7 +1720,7 @@ function bento_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 
 		'bento_preloader', 
 		array(
-			'title' => __( 'Preloader', 'bento' ),
+			'title' => esc_html__( 'Preloader', 'bento' ),
 			'priority' => 32,
 		)
 	);
@@ -2227,7 +2227,7 @@ function bento_woo_active() {
 function bento_customizer_admin_notice() {
 	$old_options = get_option( 'satori_options', 'none' );
 	$customizer_url = get_admin_url( null, 'customize.php' );
-	$success_message = sprintf( wp_kses( __( 'Migration successful! Check out the <a href="%s">Customizer</a>', 'bento' ), array(  'a' => array( 'href' => array() ) ) ), esc_url( $customizer_url ) );
+	$success_message = sprintf( wp_kses( esc_html__( 'Migration successful! Check out the <a href="%s">Customizer</a>', 'bento' ), array(  'a' => array( 'href' => array() ) ) ), esc_url( $customizer_url ) );
 	if ( $old_options != 'none' ) {
 		?>
 		<div class="notice notice-warning is-dismissible notice-migrate-bento-options">
@@ -2238,7 +2238,7 @@ function bento_customizer_admin_notice() {
 				<?php esc_attr_e( 'Due to a change in WordPress rules, all theme options are now handled by the native Customizer ("Appearance -> Customize" admin section). Please click on the button below to transfer existing Bento theme options to the Customizer', 'bento' ); ?>:
 			</p>
 			<p>
-				<input name="Migrate Bento options" type="submit" class="button-primary" value="<?php _e( 'Transfer theme options', 'bento' ); ?> &rsaquo;">
+				<input name="Migrate Bento options" type="submit" class="button-primary" value="<?php esc_html_e( 'Transfer theme options', 'bento' ); ?> &rsaquo;">
 			</p>
 		</div>
 		<div class="notice notice-success is-dismissible hidden notice-migrate-bento-options-success">

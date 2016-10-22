@@ -16,7 +16,7 @@ if ( post_password_required() ) {
     
         <h3 class="comments-title">
             <?php 
-            echo get_comments_number().' ';
+            echo esc_html( get_comments_number() ).' ';
             printf( _nx( 'comment', 'comments', get_comments_number(), 'comment section title', 'bento' ) ); 
             ?>
         </h3>
@@ -47,12 +47,12 @@ if ( post_password_required() ) {
     $fields =  array(
         'author' => '
             <div class="comment-form-field comment-form-author">
-                <label for="author">'.__( 'Name', 'bento' ).'</label>
+                <label for="author">'.esc_html__( 'Name', 'bento' ).'</label>
                 <input 
                     id="author" 
                     name="author" 
                     type="text" 
-                    placeholder="'.__( 'Name','bento' ).'" 
+                    placeholder="'.esc_html__( 'Name','bento' ).'" 
                     value="'.esc_attr( $commenter['comment_author'] ).'" 
                     size="30"'.$aria_req.
                 ' />
@@ -60,12 +60,12 @@ if ( post_password_required() ) {
         ',
         'email' => '
             <div class="comment-form-field comment-form-email">
-                <label for="email">'.__( 'Email', 'bento' ).'</label>
+                <label for="email">'.esc_html__( 'Email', 'bento' ).'</label>
                 <input 
                     id="email" 
                     name="email" 
                     type="text" 
-                    placeholder="'.__( 'Email','bento' ).'" 
+                    placeholder="'.esc_html__( 'Email','bento' ).'" 
                     value="'. esc_attr( $commenter['comment_author_email'] ).'" 
                     size="30"'.$aria_req.
                 ' />
@@ -73,14 +73,14 @@ if ( post_password_required() ) {
         ',
     );
     $comment_form_args = array(
-        'label_submit' => __( 'Submit Comment', 'bento' ),
+        'label_submit' => esc_html__( 'Submit Comment', 'bento' ),
         'comment_notes_before' => '',
         'comment_field' => '
             <div class="comment-form-comment">
                 <textarea
                     id="comment" 
                     name="comment" 
-                    placeholder="'.__( 'Comment', 'bento' ).'" 
+                    placeholder="'.esc_html__( 'Comment', 'bento' ).'" 
                     cols="45" rows="8" 
                     aria-required="true"
                 ></textarea>

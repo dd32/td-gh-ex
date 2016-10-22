@@ -19,7 +19,7 @@ get_header();
 					the_archive_title( '<h1 class="archive-title">', '</h1>' );
 					the_archive_description( '<div class="archive-description">', '</div>' );
 					if ( is_author() ) {
-						echo '<div class="archive-description">'.get_the_author_meta( 'description' ).'</div>';
+						echo wp_kses( '<div class="archive-description">'.get_the_author_meta( 'description' ).'</div>', array( 'div' => array( 'class' => array() ) ) );
 					}
 				?>
 				</header>

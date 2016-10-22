@@ -12,12 +12,12 @@ get_header();
 			<section class="error-404 not-found">
 				
                 <header class="page-header">
-					<h1 class="entry-title"><?php _e( 'This page can&rsquo;t be found.', 'bento' ); ?></h1>
+					<h1 class="entry-title"><?php esc_html_e( 'This page can&rsquo;t be found.', 'bento' ); ?></h1>
 				</header>
 
 				<div class="page-content">
 					<p>
-						<?php echo __( 'It looks like nothing was found for this URL. You can try clicking the logo to return to the home page or searching using the form below', 'bento' ).' -'; ?>
+						<?php esc_html_e( 'It looks like nothing was found for this URL. You can try clicking the logo to return to the home page or searching using the form below', 'bento' ).' -'; ?>
                     </p>
 					<?php get_search_form(); ?>
 				</div>
