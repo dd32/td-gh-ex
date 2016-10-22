@@ -28,6 +28,14 @@ get_header();
 	}?>
 	<div id="main">
 	<?php
+	if( has_post_thumbnail() && $arise_settings['arise_display_page_featured_image']!=0) { ?>
+		<figure class="post-featured-image">
+			<a href="<?php the_permalink();?>" title="<?php echo the_title_attribute('echo=0'); ?>">
+			<?php the_post_thumbnail(); ?>
+			</a>
+		</figure><!-- end.post-featured-image  -->
+	<?php }
+	
 	if( have_posts() ) {
 		while( have_posts() ) {
 			the_post(); ?>

@@ -25,19 +25,8 @@ get_header();
 	<?php
 	if( have_posts() ) {
 		while( have_posts() ) {
-			the_post(); ?>
-	<section id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<article class="post-format">
-			<header class="entry-header">
-				<h2 class="entry-title"> <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute();?>">
-				<?php the_title(); ?> </a> </h2> <!-- .entry-title -->
-			</header>
-			<div class="entry-content clearfix">
-				<?php the_excerpt(); ?>
-			</div>
-		</article>
-	</section>
-	<?php
+			the_post();
+	get_template_part( 'content', get_post_format() );
 		}
 	}
 	else { ?>

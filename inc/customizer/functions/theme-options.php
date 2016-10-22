@@ -236,7 +236,7 @@
 		'type' => 'option',
 	));
 	$wp_customize->add_control( 'arise_theme_options[arise_top_social_icons]', array(
-		'priority'=>40,
+		'priority'=>43,
 		'label' => __('Disable Top Social Icons', 'arise'),
 		'section' => 'arise_custom_header',
 		'settings' => 'arise_theme_options[arise_top_social_icons]',
@@ -248,10 +248,22 @@
 		'type' => 'option',
 	));
 	$wp_customize->add_control( 'arise_theme_options[arise_buttom_social_icons]', array(
-		'priority'=>40,
+		'priority'=>46,
 		'label' => __('Disable Buttom Social Icons', 'arise'),
 		'section' => 'arise_custom_header',
 		'settings' => 'arise_theme_options[arise_buttom_social_icons]',
+		'type' => 'checkbox',
+	));
+	$wp_customize->add_setting( 'arise_theme_options[arise_display_page_featured_image]', array(
+		'default' => 0,
+		'sanitize_callback' => 'arise_checkbox_integer',
+		'type' => 'option',
+	));
+	$wp_customize->add_control( 'arise_theme_options[arise_display_page_featured_image]', array(
+		'priority'=>48,
+		'label' => __('Display Page Featured Image', 'freesia-empire'),
+		'section' => 'arise_custom_header',
+		'settings' => 'arise_theme_options[arise_display_page_featured_image]',
 		'type' => 'checkbox',
 	));
 	$wp_customize->add_setting( 'arise_theme_options[arise_reset_all]', array(

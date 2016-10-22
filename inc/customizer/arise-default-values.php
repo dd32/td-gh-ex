@@ -53,7 +53,8 @@ function arise_get_option_defaults_values() {
 		'arise_entry_meta_blog' => 'show-meta',
 		'arise_slider_content'	=> 'on',
 		'arise_top_social_icons'	=> 0,
-		'arise_buttom_social_icons'	=> 0
+		'arise_buttom_social_icons'	=> 0,
+		'arise_display_page_featured_image'=>0
 		);
 	return apply_filters( 'arise_get_option_defaults_values', $arise_default_values );
 }
