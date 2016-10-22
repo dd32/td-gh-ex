@@ -14,7 +14,9 @@ require get_template_directory() . '/includes/customizer.php';
 function optimize_scripts() {
 	wp_enqueue_style( 'optimize-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'optimize-font-awesome', get_stylesheet_directory_uri() . '/font-awesome/css/font-awesome.min.css' );
-
+	if ( is_rtl() ) {
+	wp_enqueue_style( 'optimize-rtl-css', get_template_directory_uri() . '/css/rtl.min.css' );
+}
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -27,15 +29,14 @@ function optimize_custom_customize_enqueue() {
 	wp_enqueue_style( 'customizer-css', get_stylesheet_directory_uri() . '/css/customizer-css.css' );
 }
 add_action( 'customize_controls_enqueue_scripts', 'optimize_custom_customize_enqueue' );
-	
+
  function optimize_googlemeta() {
        	if (of_get_option('optimize_headad') != '') {
             echo '' . of_get_option('optimize_headad') . '' . "\n";
         } 
     }
 add_action('wp_head', 'optimize_googlemeta');
-	
-	
+
 function optimize_post_meta_data() {
 	printf( __( '%2$s  %4$s', 'optimize' ),
 	'meta-prep meta-prep-author posted', 
@@ -52,20 +53,20 @@ function optimize_post_meta_data() {
 		)
 	);
 }
-	
+
 function optimize_theme_setup() { 
 
 		add_theme_support( 'post-thumbnails', array( 'post' ) ); // Add it for posts
 		set_post_thumbnail_size( 150, 150, true ); // Normal post thumbnails, 200 pixels wide by 200 pixels tall, hard crop mode
 		add_image_size( 'widgetthumb', 60, 60, true );
-	
+
 	    load_theme_textdomain('optimize', get_template_directory() . '/languages');
 			 //woocommerce plugin support
 		add_theme_support( 'woocommerce' );
         add_editor_style();
 		add_theme_support( 'title-tag' );
         add_theme_support('automatic-feed-links');
-		
+
 		register_nav_menu( 'primary', __( 'Navigation Menu', 'optimize' ) );
 		register_nav_menu( 'Footer-menu', __( 'Footer Menu', 'optimize' ) );
 		// Setup the WordPress core custom background feature.
@@ -80,7 +81,7 @@ function optimize_theme_setup() {
 		}
 
 	}
-	
+
 	/* Excerpt ********************************************/
 
     function optimize_excerptlength_teaser($length) {
@@ -92,27 +93,20 @@ function optimize_theme_setup() {
     function optimize_excerptmore($more) {
     return '...';
     }
-    
-    
+
     function optimize_excerpt($length_callback='', $more_callback='') {
     global $post;
     add_filter('excerpt_length', $length_callback);
- 
+
     add_filter('excerpt_more', $more_callback);
-   
+
     $output = get_the_excerpt();
     $output = apply_filters('wptexturize', $output);
     $output = apply_filters('convert_chars', $output);
     $output = ''.$output.'';
     echo $output;    }
-	
-	
+
 add_action( 'after_setup_theme', 'optimize_theme_setup' );
-	
-
-
-
-	
 
 /* Widgets ********************************************/
 
@@ -125,7 +119,31 @@ add_action( 'after_setup_theme', 'optimize_theme_setup' );
 	    'before_title' => '<h4 class="widgettitle">',
 	    'after_title' => '</h4>',
 	    'id' => 'opsidebar',
-	));	
+	));
+	register_sidebar(array(
+		'name' => __( 'Below Navigation', 'optimize' ),
+	    'before_widget' => '<div class="box clearfloat"><div class="boxinside clearfloat">',
+	    'after_widget' => '</div></div>',
+	    'before_title' => '<h4 class="widgettitle">',
+	    'after_title' => '</h4>',
+	    'id' => 'belownavi',
+	));
+	register_sidebar(array(
+		'name' => __( 'After Single Post', 'optimize' ),
+	    'before_widget' => '<div class="box clearfloat"><div class="boxinside clearfloat">',
+	    'after_widget' => '</div></div>',
+	    'before_title' => '<h4 class="widgettitle">',
+	    'after_title' => '</h4>',
+	    'id' => 'afterpost',
+	));
+	register_sidebar(array(
+		'name' => __( 'After Page', 'optimize' ),
+	    'before_widget' => '<div class="box clearfloat"><div class="boxinside clearfloat">',
+	    'after_widget' => '</div></div>',
+	    'before_title' => '<h4 class="widgettitle">',
+	    'after_title' => '</h4>',
+	    'id' => 'afterpage',
+	));
 	register_sidebar(array(
 		'name' => __( 'Footer 1', 'optimize' ),
 	    'id' => 'opbottom1',
@@ -155,7 +173,7 @@ add_action( 'after_setup_theme', 'optimize_theme_setup' );
 }
 add_action('widgets_init', 'optimize_widgets_init');
 //---------------------------- [ Pagenavi Function ] ------------------------------//
- 
+
 function optimize_pagenavi() {
   global $wp_query;
 	$big = 123456789;
@@ -177,18 +195,17 @@ function optimize_pagenavi() {
 	 }
 }
 
-
 /* ----------------------------------------------------------------------------------- */
 /* Customize Comment Form
 /*----------------------------------------------------------------------------------- */
 add_filter( 'comment_form_default_fields', 'optimize_comment_form_fields' );
 function optimize_comment_form_fields( $fields ) {
     $commenter = wp_get_current_commenter();
-    
+
     $req      = get_option( 'require_name_email' );
     $aria_req = ( $req ? " aria-required='true'" : '' );
     $html5    = current_theme_supports( 'html5', 'comment-form' ) ? 1 : 0;
-    
+
     $fields   =  array(
         'author' => '<div class="large-6 columns"><div class="row collapse prefix-radius"><div class="small-3 columns">' . '<span class="prefix"><i class="fa fa-user"></i>' . __( 'Name','optimize' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</span> </div>' .
                     '<div class="small-9 columns"><input class="form-control" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="20"' . $aria_req . ' /></div></div></div>',
@@ -197,16 +214,14 @@ function optimize_comment_form_fields( $fields ) {
         'url'    => '<div class="large-6 columns"><div class="row collapse prefix-radius"><div class="small-3 columns">' . '<span class="prefix"><i class="fa fa-external-link"></i>' . __( 'Website','optimize' ) . '</span> </div>' .
                     '<div class="small-9 columns"><input class="form-control" id="url" name="url" ' . ( $html5 ? 'type="url"' : 'type="text"' ) . ' value="' . esc_attr( $commenter['comment_author_url'] ) . '" size="30" /></div></div></div>'        
     );
-    
+
     return $fields;
-    
-    
+
 }
 
 add_filter( 'comment_form_defaults', 'optimize_comment_form' );
 function optimize_comment_form( $argsbutton ) {
         $argsbutton['class_submit'] = 'button'; 
-    
     return $argsbutton;
 }
 ?>

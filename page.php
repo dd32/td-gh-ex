@@ -17,6 +17,8 @@
 		<?php get_template_part('/includes/postmeta'); ?><?php edit_post_link('Edit', ' &#124; ', ''); ?>
 	</span><!-- .entry-header -->
 <div class="gap"></div><?php if (of_get_option('optimize_author' ) =='1' ) {load_template(get_template_directory() . '/includes/author.php'); } ?>
+<?php if ( !dynamic_sidebar('afterpage') ) : ?>
+			<?php endif; ?>
 							<div class="comments">
 								<?php comments_template(); ?>
 							</div> <!-- end div .comments -->

@@ -53,3 +53,5 @@
 	    </div> <!-- end div #navigation-inner -->
 	</div> <!-- end div #navigation -->
 	<!-- END TOP NAVIGATION -->
+	<?php if ( !dynamic_sidebar('belownavi') ) : ?>
+			<?php endif; ?>
