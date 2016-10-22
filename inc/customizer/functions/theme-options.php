@@ -261,7 +261,7 @@
 	));
 	$wp_customize->add_control( 'arise_theme_options[arise_display_page_featured_image]', array(
 		'priority'=>48,
-		'label' => __('Display Page Featured Image', 'freesia-empire'),
+		'label' => __('Display Page Featured Image', 'arise'),
 		'section' => 'arise_custom_header',
 		'settings' => 'arise_theme_options[arise_display_page_featured_image]',
 		'type' => 'checkbox',

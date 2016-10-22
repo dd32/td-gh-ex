@@ -1,4 +1,7 @@
 == CHANGE LOG ==
+= 2.1.2.4 =
+	- Fix - Text domain name by mistake uploaded fixed
+
 = 2.1.2.3 =
 	- New - Featured Image also displayed on page
 	- Fix - Featured Image on Search Results added
