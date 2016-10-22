@@ -10,7 +10,7 @@
             
             <div class="upgrade-order-number-info-btns-link">
                 <a href="https://kairaweb.com/theme/topshop/#purchase-premium" class="upgrade-page-link" id="upgrade-purchase-link" target="_blank">
-                    <?php printf( __( '<span>TopShop Premium </span><em>$20</em>', 'topshop' ) ); ?>
+                    <?php printf( __( '<span>TopShop Premium </span><em>$24</em>', 'topshop' ) ); ?>
                 </a>
             </div>
             
@@ -56,7 +56,7 @@
             <h3 class="upgrade-page-sub-title"><?php _e( 'Upgrade to Premium', 'topshop' ); ?></h3>
             <div class="upgrade-page-left-box">
                 <div class="upgrade-page-left-box-left">
-                    <?php printf( __( "If you've enjoyed using our TopShop theme to build your website, then you should love the premium version which comes with a bunch of extra features for a low cost of <strong>$20</strong>.<br /><br />With TopShop premium we offer continued updates and you'll get prioritized support to help you build the website you want.", 'topshop' ) ); ?>
+                    <?php printf( __( "If you've enjoyed using our TopShop theme to build your website, then you should love the premium version which comes with a bunch of extra features for a low cost of <strong>$24</strong>.<br /><br />With TopShop premium we offer continued updates and you'll get prioritized support to help you build the website you want.", 'topshop' ) ); ?>
                 </div>
                 <div class="upgrade-page-left-box-right">
                     <img src="<?php echo get_template_directory_uri(); ?>/upgrade/images/upgrade-payment.png" alt="<?php _e( 'Upgrade to Premium', 'topshop' ); ?>" />

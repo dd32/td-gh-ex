@@ -57,12 +57,18 @@ function customizer_library_topshop_options() {
         'description' => __( 'This will show/hide the top bar in the header<br /><br /><a href="https://kairaweb.com/documentation/topshop-hooks-developers/" target="_blank">TopShop Premium has hooks</a> integrated for developers to hook on to.', 'topshop' ),
         'default' => 0,
     );
+    $options['topshop-header-remove-acc'] = array(
+        'id' => 'topshop-header-remove-acc',
+        'label'   => __( 'Remove "Sign In/Account" link', 'topshop' ),
+        'section' => $section,
+        'type'    => 'checkbox',
+        'default' => 0,
+    );
     $options['topshop-header-remove-cart'] = array(
         'id' => 'topshop-header-remove-cart',
         'label'   => __( 'Remove WooCommerce Cart', 'topshop' ),
         'section' => $section,
         'type'    => 'checkbox',
-        'description' => __( '', 'topshop' ),
         'default' => 0,
     );
     

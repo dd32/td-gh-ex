@@ -17,7 +17,7 @@ get_header(); ?>
 
 				<div class="page-content">
 					<p>
-                        <?php echo wp_kses_post( get_theme_mod( 'topshop-website-error-head', 'It looks like that page does not exist. <br />Return home or try a search' ) ); ?>
+                        <?php echo wp_kses_post( get_theme_mod( 'topshop-website-error-msg', 'It looks like that page does not exist. <br />Return home or try a search' ) ); ?>
 					</p>
 
 				</div><!-- .page-content -->

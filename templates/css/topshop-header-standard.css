@@ -65,11 +65,10 @@ TopShop Premium - Header Standard Styling
     color: #626262;
 }
 .topshop-header-layout-standard .site-header-right-link {
-    box-shadow: 1px 0 0 rgba(0, 0, 0, 0.08);
     display: inline-block;
     vertical-align: top;
     margin: 1px 0 0;
-    padding: 1px 8px 1px 0;
+    padding: 1px 5px 1px 0;
     line-height: 14px;
 }
 .topshop-header-layout-standard .site-header-right-link a {

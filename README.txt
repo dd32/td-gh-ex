@@ -71,6 +71,12 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.03
+* Fixed 404 message bug
+* Added setting to remove Account link next to the cart
+* Updated language .pot file
+Premium: Added setting to change cart icon - Cart / Basket / Bag icons
+
 #### 1.3.02
 * Added missin sanitization - improving security
 * Removed Post Formats - Not used
