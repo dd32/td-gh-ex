@@ -69,11 +69,10 @@ jQuery(document).ready(function () {
     }
 
     // Superfish Menu Enhancement
-    jQuery('#primary-menu').superfish({
+    jQuery('ul.nav-menu').superfish({
                 delay:       1000,
                 animation:   {opacity:'show',height:'show'},
-                speed:       'normal',
-                speedOut:    'normal',
+                speed:       'fast',
                 autoArrows:  true,
                 dropShadows: false
     });
