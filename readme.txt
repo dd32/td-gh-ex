@@ -53,6 +53,9 @@ Source: http://www.splitshire.com/vintage-barber-tools/
 
 == CHANGELOG ==
 
+10/23/2016 v1.0.6
+* Fixed missing echoes
+
 10/20/2016 v1.0.5
 * Fixed esc_url() functions
 * Replaced deprecated WooCommerce functions
