@@ -7,7 +7,7 @@
  * @license GPL 2.0
  */
 
-define('SITEORIGIN_THEME_VERSION', '1.5.5');
+define('SITEORIGIN_THEME_VERSION', '1.5.6');
 define('SITEORIGIN_THEME_JS_PREFIX', '.min');
 
 // Load the new settings framework
