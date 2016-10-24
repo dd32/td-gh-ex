@@ -1,73 +1,66 @@
 
 
-<div class="branding">
+<div class="branding" style="background:url(<?php header_image(); ?>)no-repeat center center /cover;">
 
- <div class="row">
- 	<?php if (  is_front_page() || is_home() ) { ?>
+ 	<div class="row">
+ 			
  
     		<!--LOGO START-->
-   <div id="site-title">
-        <?php if ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) : ?>
-        	<?php advance_the_custom_logo(); ?>
-       		 <?php else : ?>
-   			<h1 class="site-title">	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+   				<div id="site-title">
+       				 <?php if ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) : ?>
+        					<?php advance_the_custom_logo(); ?>
+       		 			<?php else : ?>
+   							<h1 class="site-title">	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 	    	
-        	<?php
-                $description = get_bloginfo( 'description', 'display' );
-                if ( $description || is_customize_preview() ) : ?>
-                    <p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-            <?php endif; ?>
-         <?php endif;?>
-    </div>
+        					<?php
+                			$description = get_bloginfo( 'description', 'display' );
+                			if ( $description || is_customize_preview() ) : ?>
+                    			<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+            				<?php endif; ?>
+         			<?php endif;?>
+    			</div>
         
-     <?php } ?>  
+      
       
          <!--LOGO END-->
          
-      <div id="menu_wrap">
-       <?php $advance_search_checkbox = get_theme_mod('advance_search_box',1);?>
-<?php if( isset($advance_search_checkbox) && $advance_search_checkbox == 1):?>
+     	 <div id="menu_wrap">
+       		<?php $advance_search_checkbox = get_theme_mod('advance_search_box',1);?>
+				<?php if( isset($advance_search_checkbox) && $advance_search_checkbox == 1):?>
 
- <div class="social-advance">
-<div class="search-toggle">
-                <i class="fa fa-search"></i>
-                <a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'advance' ); ?></a>
-            </div></div>
-        <?php endif; ?>
-  
-       <?php $advance_social1_checkbox = get_theme_mod('advance_social1_checkbox',1);?>
-<?php if( isset($advance_social1_checkbox) && $advance_social1_checkbox == 1):?>
-
-       
-     
-            <!--social-->    
-            <?php get_template_part('parts/social','loop'); ?>
-              <?php endif?>
-              
-              
+					 <div class="social-advance">
+						<div class="search-toggle">
+                			<i class="fa fa-search"></i>
+                				<a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'advance' ); ?></a>
+            			</div>
+                 	</div>
+        		<?php endif; ?>
+  				 <?php $advance_social1_checkbox = get_theme_mod('advance_social1_checkbox',1);?>
+			<?php if( isset($advance_social1_checkbox) && $advance_social1_checkbox == 1):?>
+      		<!--social-->    
+            	<?php get_template_part('parts/social','loop'); ?>
+           <?php endif?>      
        
         <!--MENU STARTS-->
-       <h3 class="menu-toggle"><?php _e( 'Menu', 'advance' ); ?></h3>
+       			<h3 class="menu-toggle"><?php _e( 'Menu', 'advance' ); ?></h3>
        
-        <div id="navmenu">
+       			 <div id="navmenu">
         
- 		<?php 
-		wp_nav_menu( array( 
+ 					<?php 
+						wp_nav_menu( array( 
 		
-		  'container_class' => 'menu-header', 
-		  'theme_location' => 'primary' 
-		  ) ); 
+		  				'container_class' => 'menu-header', 
+		  				'theme_location' => 'primary' 
+		  				) ); 
 		 
-		 ?> 
+					 ?> 
         
-     </div>
-      
-     
-         </div>
-         
-        </div>
+    			</div>
+      	</div>
+       
+    </div>
         <a id="showHere"></a>
-        </div>
+</div>
          
              <!--MENU END-->
               

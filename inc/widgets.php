@@ -11,11 +11,14 @@ add_action('admin_enqueue_scripts', 'advance_widget_scripts');
 
 function advance_widget_scripts($hook) {    
 if( 'widgets.php' == $hook || 'post.php' == $hook ){
+	
+	if( function_exists( 'wp_enqueue_media' ) ) {
 	 wp_enqueue_style( 'wp-color-picker' );      
      wp_enqueue_script( 'wp-color-picker' );
+	}
 	if( function_exists( 'wp_enqueue_media' ) ) {
 
-	wp_enqueue_media();
+		wp_enqueue_media();
 	}
     wp_enqueue_script('advance_widget_scripts', get_template_directory_uri() . '/js/advance-widget.js', false, '1.0', true);
 	 wp_enqueue_style('advance_widgets_custom_css', get_template_directory_uri() . '/css/advance_widgets_custom_css.css');

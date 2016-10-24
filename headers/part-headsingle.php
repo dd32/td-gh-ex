@@ -1,5 +1,5 @@
 
-<div class="branding-single">
+<div class="branding-single" style="background:url(<?php header_image(); ?>)no-repeat center center /cover;">
  <div class="row"> 
  
  
