@@ -1,7 +1,10 @@
 == Changelog ==
 
+= 1.1.2 - 24 October 2016 =
+* Changed heading one to heading two in archive loops to improve SEO.
+
 = 1.1.1 - 10 October 2016 =
-* Fix incorrect text domain.
+* Fixed incorrect text domain.
 
 = 1.1 - 10 October 2016 =
 * Added a single post author box which can be enabled from Theme Settings > Blog.

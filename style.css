@@ -4,7 +4,7 @@ Author: Puro
 Author URI: https://purothemes.com/
 Theme URI: https://purothemes.com/themes/puro/
 Description: A content focussed minimalist theme, perfect for your blog, portfolio or small business site. We've closely integrated SiteOrigin's Page Builder for responsive layouts and Meta Slider for smooth, easy to build sliders. Puro is responsive, Retina-ready and fully compatible with Jetpack, Contact Form 7, Gravity Forms and WP PageNavi. Included is a .rtl CSS file for right to left languages. For assistance, check out our <a href="https://purothemes.com/documentation/puro-theme/">theme documentation</a> (http://purothemes.com/documentation/) or ask a question on our <a href="https://purothemes.com/support/forum/puro/">support forum</a> (https://purothemes.com/support/forum/puro/).
-Version: 1.1.1
+Version: 1.1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: puro
@@ -1572,20 +1572,20 @@ article:last-of-type {
   text-align: left;
   margin: 0;
 }
-.entry-header h1.entry-title {
+.entry-header .entry-title {
   font-size: 32px;
   font-size: 2rem;
   line-height: 1.6875em;
   margin: 0;
 }
-.entry-header h1.entry-title a {
+.entry-header .entry-title a {
   color: #333;
 }
-.entry-header h1.entry-title a:hover {
+.entry-header .entry-title a:hover {
   color: #2ac176;
 }
 @media (max-width: 30rem) {
-  .resp .entry-header h1.entry-title {
+  .resp .entry-header .entry-title {
     font-size: 23px;
     font-size: 1.4375rem;
     line-height: normal;
@@ -1867,11 +1867,11 @@ article:last-of-type {
     width: 100%;
   }
 }
-.puro-left-thumb-loop .featured-image .entry-header h1.entry-title {
+.puro-left-thumb-loop .featured-image .entry-header .entry-title {
   margin-top: -0.4em;
 }
 @media (max-width: 48rem) {
-  .resp .puro-left-thumb-loop .featured-image .entry-header h1.entry-title {
+  .resp .puro-left-thumb-loop .featured-image .entry-header .entry-title {
     margin: 0;
   }
 }
@@ -1905,11 +1905,11 @@ article:last-of-type {
     width: 100%;
   }
 }
-.puro-left-medium-loop .featured-image .entry-header h1.entry-title {
+.puro-left-medium-loop .featured-image .entry-header .entry-title {
   margin-top: -0.4em;
 }
 @media (max-width: 48rem) {
-  .resp .puro-left-medium-loop .featured-image .entry-header h1.entry-title {
+  .resp .puro-left-medium-loop .featured-image .entry-header .entry-title {
     margin: 0;
   }
 }
@@ -2304,72 +2304,46 @@ object {
   padding-bottom: 3.375em;
   border-color: #e5e5e5;
 }
-.site-footer .widget:last-of-type {
-  float: right;
-  margin-right: 0;
-}
 .site-footer .widget-count-1 {
-  float: left;
-  margin-right: 0;
-  margin-left: 0;
   width: 100%;
 }
 .site-footer .widget-count-2 {
-  float: left;
-  margin-right: 1.69492%;
-  width: 49.15254%;
+  width: 48.75%;
 }
 .site-footer .widget-count-3 {
-  float: left;
-  margin-right: 1.69492%;
-  width: 32.20339%;
+  width: 31.6666666667%;
 }
 .site-footer .widget-count-4 {
-  float: left;
-  margin-right: 1.69492%;
-  width: 23.72881%;
+  width: 23.125%;
 }
 .site-footer .widget-count-5 {
-  float: left;
-  margin-right: 1.69492%;
-  width: 18.64407%;
+  width: 18%;
 }
 .site-footer .widget-count-6 {
-  float: left;
-  margin-right: 1.69492%;
-  width: 15.25424%;
+  width: 14.5833333333%;
 }
 .site-footer .widget-count-7 {
-  float: left;
-  margin-right: 1.69492%;
-  width: 12.83305%;
+  width: 12.1428571429%;
 }
 .site-footer .widget-count-8 {
-  float: left;
-  margin-right: 1.69492%;
-  width: 11.01695%;
+  width: 10.3125%;
 }
 .site-footer .widget-count-9 {
-  float: left;
-  margin-right: 1.69492%;
-  width: 9.60424%;
+  width: 8.8888888889%;
 }
 .site-footer .widget-count-10 {
-  float: left;
-  margin-right: 1.69492%;
-  width: 8.47458%;
+  width: 7.75%;
 }
-@media (max-width: 30rem) {
-  .resp .site-footer .widget-count-1,
-  .resp .site-footer .widget-count-2,
-  .resp .site-footer .widget-count-3,
-  .resp .site-footer .widget-count-4,
-  .resp .site-footer .widget-count-5,
-  .resp .site-footer .widget-count-6,
-  .resp .site-footer .widget-count-7,
-  .resp .site-footer .widget-count-8,
-  .resp .site-footer .widget-count-9,
-  .resp .site-footer .widget-count-10 {
+.site-footer .widget {
+  box-sizing: content-box;
+  margin-right: 2.5%;
+  float: left;
+}
+.site-footer .widget:last-of-type {
+  margin-right: 0;
+}
+@media (max-width: 48rem) {
+  .resp .site-footer .footer-main .widget {
     width: 100%;
   }
 }

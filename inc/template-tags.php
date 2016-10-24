@@ -14,7 +14,9 @@ if ( ! function_exists( 'puro_author_box' ) ) :
 function puro_author_box() { ?>
 	<div class="author-box">
 		<div class="author-avatar">
-			<?php echo get_avatar( get_the_author_meta( 'ID' ), 120 ); ?>
+			<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
+				<?php echo get_avatar( get_the_author_meta( 'ID' ), 120 ); ?>
+			</a>
 		</div>
 		<div class="author-description">
 			<h3><?php echo get_the_author(); ?></h3>
