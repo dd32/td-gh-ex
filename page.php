@@ -19,55 +19,54 @@ get_header();?>
 
 <!-- Page header -->
 <header class="col-md-12 page__header entry-header">
-<div class="single page-meta">
+	<div class="single page-meta">
+		<?php
+			edit_post_link(
+						sprintf(
+							esc_html__( 'Edit %s', 'bellini' ),
+							the_title( '<span class="screen-reader-text">"', '"</span>', false )
+						),
+							'<span class="edit-link">',
+							'</span>'
+			);
 
-<?php
-	edit_post_link(
-				sprintf(
-					/* translators: %s: Name of current post */
-					esc_html__( 'Edit %s', 'bellini' ),
-					the_title( '<span class="screen-reader-text">"', '"</span>', false )
-				),
-					'<span class="edit-link">',
-					'</span>'
-	);
-?>
-<?php the_title( '<h1 class="entry-title element-title single-page__title" itemprop="headline">', '</h1>' ); ?>
-<?php bellini_breadcrumb_integration(); ?>
-
-</div>
+		the_title( '<h1 class="entry-title element-title single-page__title" itemprop="headline">', '</h1>' );
+		bellini_breadcrumb_integration(); ?>
+	</div>
 </header>
 
-<div class="row bellini__canvas">
+<div class="col-md-12">
+<div class="bellini__canvas">
+<div class="row">
+	<?php get_sidebar('left'); ?>
 
-<?php get_sidebar('left'); ?>
+	<div id="primary" class="content-area single-page__content <?php bellini_sidebar_content_class(); ?>">
+		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<div class="container--card-content">
+			<div class="entry-content" itemprop="text">
+				<?php the_content(); ?>
+				<?php
+					wp_link_pages( array(
+						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'bellini' ),
+						'after'  => '</div>',
+					) );
+				?>
+			</div>
+		</div>
+		</div>
 
-<div id="primary" class="content-area single-page__content <?php bellini_sidebar_content_class(); ?>">
-<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-<div class="container--card-content">
-
-<div class="entry-content" itemprop="text">
-	<?php the_content(); ?>
 	<?php
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'bellini' ),
-			'after'  => '</div>',
-		) );
+		if ( comments_open() || get_comments_number() ) :
+			comments_template();
+		endif;
 	?>
-</div>
+	</div>
+
+	<?php get_sidebar();?>
+	<?php endwhile; // End of the loop. ?>
 
 </div>
 </div>
-<?php
-	if ( comments_open() || get_comments_number() ) :
-		comments_template();
-	endif;
-?>
-</div>
-
-<?php get_sidebar();?>
-<?php endwhile; // End of the loop. ?>
-
 </div>
 </main>
 <?php get_footer(); ?>
