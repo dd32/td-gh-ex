@@ -92,14 +92,12 @@ article {
 .hentry {
 	@include margin(0 null $base__spacing null);
     @include padding($base__spacing);
-    -webkit-box-shadow: 1px  2px 2px rgba(0, 0, 0, 0.05);
-    -moz-box-shadow: 1px  2px 2px  rgba(0, 0, 0, 0.05);
-    box-shadow: 0px  2px 2px rgba(0, 0, 0, 0.05);
+    @include box-shadow(1px, 2px, 2px, rgba(0, 0, 0, 0.05));
 }
 .updated:not(.published){
 	display: none;
 }
 .page-header {
     @include margin(0);
-    @include padding(0 $base__spacing);
+    @include padding($base__spacing $base__spacing 0 $base__spacing);
 }

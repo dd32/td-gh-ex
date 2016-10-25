@@ -276,6 +276,11 @@
             display: inline-block;
         }
     }
+    .woocommerce-product-search {
+        input.search-field {
+            width: 50%;
+        }
+    }
     .widget_product_categories {
         ul {
             li {

@@ -39,15 +39,15 @@ if ( ! function_exists( 'igthemes_social' ) ) {
     function igthemes_social() { ?>
     <div class="social-url">
         <?php if ( get_theme_mod('facebook_url') ) {
-            $facebook_url = esc_url(get_theme_mod('facebook_url', ''));
+            $facebook_url = esc_url(get_theme_mod('facebook_url', 'https://www.facebook.com/iograficathemes'));
             echo "<a href='$facebook_url' title='Facebook' target='_blank' class='facebook-icon'><span class='icon-social-facebook'></span></a>";
         }?>
         <?php if ( get_theme_mod('twitter_url') ) {
-            $twitter_url = esc_url(get_theme_mod('twitter_url', ''));
+            $twitter_url = esc_url(get_theme_mod('twitter_url', 'https://twitter.com/iograficathemes'));
             echo "<a href='$twitter_url' title='Twitter' target='_blank' class='twitter-icon'><span class='icon-social-twitter'></span></a>";
         }?>
         <?php if ( get_theme_mod('google_url') ) {
-            $google_url = esc_url(get_theme_mod('google_url', ''));
+            $google_url = esc_url(get_theme_mod('google_url', 'https://plus.google.com/+Iograficathemes'));
             echo "<a href='$google_url' title='Google Plus' target='_blank' class='google-icon'><span class='icon-social-google'></span></a>";
         }?>
         <?php if ( get_theme_mod('pinterest_url') ) {

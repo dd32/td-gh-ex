@@ -36,7 +36,7 @@
 }
 .site-content {
     @include margin(0 null);
-    @include padding(0);
+    @include padding($small__spacing 0 0 0);
 }
 .page-template-elementor,
 .page-template-beaver-builder {

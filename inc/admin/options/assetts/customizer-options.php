@@ -169,7 +169,7 @@
         
         'sanitize_callback' => 'igthemes_sanitize_hex_color',
         'default'  => $header_background_color,
-        'transport' => 'postMessage'
+        //'transport' => 'postMessage'
 
     ));
     $wp_customize->add_control(
@@ -190,7 +190,7 @@
         
         'sanitize_callback' => 'igthemes_sanitize_hex_color',
         'default'  => $header_text_color,
-        'transport' => 'postMessage'
+        //'transport' => 'postMessage'
     ));
     $wp_customize->add_control(
         new WP_Customize_color_Control(
@@ -209,7 +209,7 @@
         array(
         'sanitize_callback' => 'igthemes_sanitize_hex_color',
         'default'  => $header_link_normal,
-        'transport' => 'postMessage'
+        //'transport' => 'postMessage'
     ));
     $wp_customize->add_control(
         new WP_Customize_color_Control(
@@ -262,7 +262,7 @@
         array(
         'sanitize_callback' => 'igthemes_sanitize_hex_color',
         'default'  => $body_text_color,
-        'transport' => 'postMessage'
+        //'transport' => 'postMessage'
     ));
     $wp_customize->add_control(
         new WP_Customize_color_Control(
@@ -282,7 +282,7 @@
         array(
         'sanitize_callback' => 'igthemes_sanitize_hex_color',
         'default'  => $body_headings_color,
-        'transport' => 'postMessage'
+        //'transport' => 'postMessage'
     ));
     $wp_customize->add_control(
         new WP_Customize_color_Control(
@@ -302,7 +302,7 @@
         array(
         'sanitize_callback' => 'igthemes_sanitize_hex_color',
         'default'  => $body_link_normal,
-        'transport' => 'postMessage'
+        //'transport' => 'postMessage'
     ));
     $wp_customize->add_control(
         new WP_Customize_color_Control(
@@ -380,7 +380,7 @@
         array(
         'sanitize_callback' => 'igthemes_sanitize_hex_color',
         'default'  => $button_background_normal,
-        'transport' => 'postMessage'
+        //'transport' => 'postMessage'
     ));
     $wp_customize->add_control(
         new WP_Customize_color_Control(
@@ -419,7 +419,7 @@
         array(
         'sanitize_callback' => 'igthemes_sanitize_hex_color',
         'default'  => $button_text_normal,
-        'transport' => 'postMessage'
+        //'transport' => 'postMessage'
     ));
     $wp_customize->add_control(
         new WP_Customize_color_Control(
@@ -473,7 +473,7 @@
         array(
         'sanitize_callback' => 'igthemes_sanitize_hex_color',
         'default'  => $footer_background_color,
-        'transport' => 'postMessage'
+        //'transport' => 'postMessage'
     ));
     $wp_customize->add_control(
         new WP_Customize_color_Control(
@@ -493,7 +493,7 @@
         array(
         'sanitize_callback' => 'igthemes_sanitize_hex_color',
         'default'  => $footer_text_color,
-        'transport' => 'postMessage'
+        //'transport' => 'postMessage'
     ));
     $wp_customize->add_control(
         new WP_Customize_color_Control(
@@ -513,7 +513,7 @@
         array(
         'sanitize_callback' => 'igthemes_sanitize_hex_color',
         'default'  => $footer_headings_color,
-        'transport' => 'postMessage'
+        //'transport' => 'postMessage'
     ));
     $wp_customize->add_control(
         new WP_Customize_color_Control(
@@ -533,7 +533,7 @@
         array(
         'sanitize_callback' => 'igthemes_sanitize_hex_color',
         'default'  => $footer_link_normal,
-        'transport' => 'postMessage'
+        //'transport' => 'postMessage'
     ));
     $wp_customize->add_control(
         new WP_Customize_color_Control(

@@ -46,9 +46,11 @@ if ( ! function_exists( 'igthemes_page_content' ) ) {
 			the_content();
 
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'base-wp' ),
-				'after'  => '</div>',
-			) );
+                'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'base-wp' ) . '</span>',
+                'after'       => '</div>',
+                'link_before' => '<span class="num">',
+                'link_after'  => '</span>',
+	       ) );
 		?>
 		</div><!-- .entry-content -->
 <?php }
