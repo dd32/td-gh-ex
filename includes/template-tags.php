@@ -882,8 +882,8 @@ if ( ! function_exists( 'bento_masonry_item_content' ) ) {
 		if ( get_post_meta( $post->ID, 'bento_tile_image', true ) != '' ) {
 			$tile_image = esc_url( get_post_meta( $post->ID, 'bento_tile_image', true ) );
 		} else if ( has_post_thumbnail() ) {
-			$post_thumb = esc_url( wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ) );
-			$tile_image = $post_thumb[0];
+			$post_thumb = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
+			$tile_image = esc_url( $post_thumb[0] );
 		}
 		$tile_background .= 'style=background-image:url("'.$tile_image.'")';
 		if ( get_post_meta( $post->ID, 'bento_tile_overlay_opacity', true) != '' ) {

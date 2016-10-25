@@ -710,11 +710,22 @@ function bento_metaboxes() {
 	
 	// Define strings
 	$bento_prefix = 'bento_';
-	$bento_ep_url = '<a href="http://satoristudio.net/bento-free-wordpress-theme/#expansion-pack/?utm_source=disabled&utm_medium=theme&utm_campaign=theme" target="_blank">Expansion Pack</a>';
+	$bento_ep_url = wp_kses( 
+		'<a href="http://satoristudio.net/bento-free-wordpress-theme/#expansion-pack/?utm_source=disabled&utm_medium=theme&utm_campaign=theme" target="_blank">Expansion Pack</a>', 
+		array(
+			'a' => array(
+				'href' => array(),
+				'target' => array(),
+			),
+		) 
+	);
 	
 	// Function to add a multicheck with post types
 	add_action( 'cmb2_render_multicheck_posttype', 'bento_render_multicheck_posttype', 10, 5 );
 	function bento_render_multicheck_posttype( $field, $escaped_value, $object_id, $object_type, $field_type_object ) {
+		if ( version_compare( CMB2_VERSION, '2.2.2', '>=' ) ) {
+			$field_type_object->type = new CMB2_Type_Radio( $field_type_object );
+		}
 		$cpts = array( 'post', 'project' );
 		if ( class_exists( 'WooCommerce' ) ) {
 			$cpts[] = 'product';
