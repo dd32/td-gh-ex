@@ -224,8 +224,8 @@ class Kadence_Contact_Widget extends WP_Widget {
   public function update($new_instance, $old_instance) {
     $instance = $old_instance;
     $instance['title'] = strip_tags($new_instance['title']);
-  $instance['company'] = strip_tags($new_instance['company']);
-  $instance['name'] = strip_tags($new_instance['name']);
+    $instance['company'] = strip_tags($new_instance['company']);
+    $instance['name'] = strip_tags($new_instance['name']);
     $instance['street_address'] = strip_tags($new_instance['street_address']);
     $instance['locality'] = strip_tags($new_instance['locality']);
     $instance['region'] = strip_tags($new_instance['region']);

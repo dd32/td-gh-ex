@@ -29,6 +29,10 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 == Changelog ==
 
 = Theme Name: Virtue =
+
+= Version 2.8.4 | 24th October 2016 =
+* Update: new version number.
+
 = Version 2.8.3 | 12th October 2016 =
 * Fix: Issue with Undefined variable.
 

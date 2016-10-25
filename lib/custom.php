@@ -633,7 +633,7 @@ function kadence_show_extra_profile_fields( $user ) { ?>
     <th><label for="youtube">YouTube</label></th>
     <td>
       <input type="text" name="youtube" id="youtube" value="<?php echo esc_attr( get_the_author_meta( 'youtube', $user->ID ) ); ?>" class="regular-text" /><br />
-      <span class="description"><?php _e('Please enter your YourTube url. (be sure to include http://)', 'virtue'); ?></span>
+      <span class="description"><?php _e('Please enter your YouTube url. (be sure to include https://)', 'virtue'); ?></span>
     </td>
   </tr>
     <tr>
