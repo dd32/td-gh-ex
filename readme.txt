@@ -66,6 +66,10 @@ Images
 
 == Changelog ==
 Version 2.46.9
+* Change Screenshot
+* Post Title issue solve
+
+Version 2.46.9
 * Add feature section title input field
 
 Version 2.46.8
