@@ -62,6 +62,18 @@
         'settings' => 'header_layout',
         'priority'   => 2
     ) ) );
+//header_mobile_nav
+    $wp_customize->add_setting('header_mobile_nav', array(
+        'default'    		=> null,
+        'sanitize_callback' => 'igthemes_sanitize_text',
+    ));
+    $wp_customize->add_control( new IGthemes_Only_Premium( $wp_customize, 'header_mobile_nav', array(
+        'label' => esc_html__('', 'base-wp'),
+        'description' => esc_html__('Choose the mobile menu: Off-Canvas - Multi-Level - Standard', 'base-wp'),
+        'section' => 'header-settings',
+        'settings' => 'header_mobile_nav',
+        'priority'   => 4
+    ) ) );
 //header_nav_sticky
     $wp_customize->add_setting('header_nav_sticky', array(
         'default'    		=> null,
@@ -72,20 +84,9 @@
         'description' => esc_html__('Enable sticky menu', 'base-wp'),
         'section' => 'header-settings',
         'settings' => 'header_nav_sticky',
-        'priority'   => 4
-    ) ) );
-//header_nav_side
-    $wp_customize->add_setting('header_nav_side', array(
-        'default'    		=> null,
-        'sanitize_callback' => 'igthemes_sanitize_text',
-    ));
-    $wp_customize->add_control( new IGthemes_Only_Premium( $wp_customize, 'header_nav_side', array(
-        'label' => esc_html__('', 'base-wp'),
-        'description' => esc_html__('Enable responsive Off-Canvas menu', 'base-wp'),
-        'section' => 'header-settings',
-        'settings' => 'header_nav_side',
         'priority'   => 5
     ) ) );
+
         
 // TYPOGRAPHY SETTINGS ****************************
      

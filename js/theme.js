@@ -31,6 +31,7 @@
         $("#scrolltop").scrollToTop();
     });
 })(jQuery);
+
 /*
  *  colourBrightness.js
  *

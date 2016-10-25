@@ -1,19 +1,19 @@
 === Base WP ===
 Contributors: iografica
-Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, footer-widgets, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
-Requires at least: 4.0
-Tested up to: 4.4.2
-Stable tag: 2.03
+Requires at least: 4.4
+Tested up to: 4.5
+Version: 2.04
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, footer-widgets, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
 
- Base WP is a basic blog or business, responsive and clean coded, WordPress theme.
+Base WP is a beautiful responsive, elegant and clean coded WordPress theme that can be used for pesonal, business or ecommerce websites.
 
 == Description ==
 
 Base WP is a basic blog or business, responsive and clean coded, WordPress theme. 
-Base WP is e-commerce, multilingual ready, SEO friendly and cross-browser compatible. The theme is fully integrated with the most popular and free plugins for Wordpress like WooCommerce, Easy Digital Downloads, Yoast Seo, Beaver Builder, Elementor and much more. 
-You can customize the theme via the Customizer, use this theme as an ecommerce or as a simple blogging platform.
+Base WP is e-commerce, multilingual ready, SEO friendly and cross-browser compatible. The theme is fully integrated with the most popular and free Wordpress plugins like WooCommerce, Easy Digital Downloads, Yoast Seo, Beaver Builder, Elementor and much more. 
+You can customize Base WP via the Customizer and use this theme as an ecommerce or as a simple blogging platform.
 
 == Installation ==
 
@@ -34,6 +34,7 @@ Base WP includes support for Infinite Scroll in Jetpack, WooCommerce, Easy Digit
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2015 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
 * HTML5 Shiv, copyright 2014 Alexander Farkas licensed under the MIT/GPL2 License, source: https://github.com/aFarkas/html5shiv/
 * Respond.js, copyright 2014 Scott Jehl licensed under the MIT license, source: http://j.mp/respondjs
+* SlickNav, copyright 2016 Josh Cope licensed under the MIT license, source: http://slicknav.com
 * Screenshot images are licensed under Creative Commons Deed CC0.
 
 All Javascript is located in /js/ with license headers where appropriate.
@@ -266,3 +267,7 @@ All Javascript is located in /js/ with license headers where appropriate.
 == 2.03 ==
 * Fixed menu css issues.
 * Fixed breadcrumb css issues.
+
+== 2.04 ==
+* Updated core framework.
+* Updated css.

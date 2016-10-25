@@ -41,3 +41,4 @@ require dirname( __FILE__ ) . '/assetts/customizer-settings.php';
 require dirname( __FILE__ ) . '/assetts/customizer-custom-controls.php';
 require dirname( __FILE__ ) . '/assetts/customizer-sanitization.php';
 require dirname( __FILE__ ) . '/assetts/customizer-reset.php';
+require dirname( __FILE__ ) . '/assetts/customizer-dynamic-css.php';

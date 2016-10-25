@@ -23,10 +23,10 @@ h3.widget-title {
         list-style: none;
         margin: 0;
         li {
-            padding: $small__spacing;
+            padding: $small__spacing/2 $small__spacing;
             margin-left: -$small__spacing;
             margin-right: -$small__spacing;  
-            border-top: 1px solid $color__light-gray;
+            border-top: 1px solid $color__gray;
             &:first-child {
                 border-top: none;
             }
@@ -44,9 +44,12 @@ h3.widget-title {
 }
 .header-widget-region {
     @include margin(0 null);
-    @include padding($base__spacing);
+    @include padding($base__spacing $base__spacing 0 $base__spacing);
     display: inline-block;
     width: 100%;
+    &:empty {
+        display:none;
+    }
 }
 .footer-widget-region {
     @include margin(0 null);
