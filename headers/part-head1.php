@@ -1,6 +1,6 @@
 
 
-<div class="branding" <?php if ( function_exists( 'header_image' ) && header_image() ) : ?>style="background:url(<?php header_image(); ?>)no-repeat center center /cover;"><?php endif;?>
+<div class="branding"  <?php if ( function_exists( 'header_image' ) && header_image() ) : ?>style="background:url(<?php header_image(); ?>)no-repeat center center /cover;" <?php endif; ?>>
 
  	<div class="row">
  			
@@ -25,7 +25,7 @@
          <!--LOGO END-->
          
      	 <div id="menu_wrap">
-       		<?php $advance_search_checkbox = get_theme_mod('advance_search_box',1);?>
+       		<?php $advance_search_checkbox = get_theme_mod('advance_search_box',0);?>
 				<?php if( isset($advance_search_checkbox) && $advance_search_checkbox == 1):?>
 
 					 <div class="social-advance">
@@ -57,10 +57,10 @@
         
     			</div>
       	</div>
-       
-    </div>
         <a id="showHere"></a>
-</div>
+    </div>
+     </div>  
+
          
              <!--MENU END-->
               

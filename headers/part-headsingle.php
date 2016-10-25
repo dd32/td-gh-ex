@@ -1,5 +1,5 @@
 
-<div class="branding-single" style="background:url(<?php header_image(); ?>)no-repeat center center /cover;">
+<div class="branding-single" <?php if ( function_exists( 'header_image' ) && header_image() ) : ?>style="background:url(<?php header_image(); ?>)no-repeat center center /cover;" <?php endif; ?>>
  <div class="row"> 
  
  
