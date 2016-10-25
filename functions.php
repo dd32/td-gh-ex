@@ -65,10 +65,10 @@ if ( ! function_exists( 'catchbox_template_redirect' ) ) :
 		if ( is_page_template( 'page-fullwidth.php' ) ) {
 			$GLOBALS['content_width'] = 880; /* pixels */
 		}
-		else if ( is_page_template( 'page-disable-sidebar.php' ) ) {
+		elseif ( is_page_template( 'page-disable-sidebar.php' ) ) {
 			$GLOBALS['content_width'] = 660; /* pixels */
 		}
-		else if ( $layout == 'content-onecolumn' || is_page_template( 'page-onecolumn.php' ) ) {
+		elseif ( $layout == 'content-onecolumn' || is_page_template( 'page-onecolumn.php' ) ) {
 			$GLOBALS['content_width'] = 620; /* pixels */
 		}
 	}
@@ -220,7 +220,7 @@ if ( ! function_exists( 'catchbox_get_theme_layout' ) ) :
 		if ( $page_id == $page_for_posts || $page_id == $page_on_front ) {
 	        $id = $page_id;
 	    }
-	    else if ( is_singular() ) {
+	    elseif ( is_singular() ) {
 	 		if ( is_attachment() ) {
 				$id = $post->post_parent;
 			}
@@ -249,10 +249,10 @@ if ( ! function_exists( 'catchbox_get_theme_layout' ) ) :
 		if ( 'content-sidebar' ==$layout ) {
 			$layout = 'right-sidebar';
 		}
-		else if ( 'sidebar-content' ==$layout ) {
+		elseif ( 'sidebar-content' ==$layout ) {
 			$layout = 'left-sidebar';
 		}
-		else if ( 'content-onecolumn' ==$layout ) {
+		elseif ( 'content-onecolumn' ==$layout ) {
 			$layout = 'no-sidebar-one-column';
 		}
 
@@ -320,7 +320,7 @@ function catchbox_site_icon_migrate() {
 
    	// If a logo has been set previously, update to use logo feature introduced in WordPress 4.5
 	if ( function_exists( 'has_site_icon' ) ) {
-		if( isset( $options['fav_icon'] ) && '' != $options['fav_icon'] ) {
+		if ( isset( $options['fav_icon'] ) && '' != $options['fav_icon'] ) {
 			// Since previous logo was stored a URL, convert it to an attachment ID
 			$site_icon = attachment_url_to_postid( $options['fav_icon'] );
 
@@ -344,7 +344,7 @@ add_action( 'after_setup_theme', 'catchbox_site_icon_migrate' );
  */
 function catchbox_excerpt_length( $length ) {
 	$options = catchbox_get_theme_options();
-	if( empty( $options['excerpt_length'] ) )
+	if ( empty( $options['excerpt_length'] ) )
 		$options = catchbox_get_default_theme_options();
 
 	$length = $options['excerpt_length'];
@@ -671,7 +671,7 @@ function catchbox_post_id_column( $post_columns ) {
 add_filter( 'manage_posts_columns', 'catchbox_post_id_column' );
 
 function catchbox_posts_id_column( $col, $val ) {
-	if( $col == 'postid' ) echo $val;
+	if ( $col == 'postid' ) echo $val;
 }
 add_action( 'manage_posts_custom_column', 'catchbox_posts_id_column', 10, 2 );
 
@@ -708,9 +708,9 @@ function catchbox_scripts_method() {
 	/**
 	 * Loads up Responsive Menu
 	 */
-	wp_enqueue_script( 'catchbox-sidr', get_template_directory_uri() . '/js/jquery.sidr.min.js', array( 'jquery' ), '2.1.1.1', false );
+	wp_enqueue_script( 'jquery-sidr', get_template_directory_uri() . '/js/jquery.sidr.min.js', array( 'jquery' ), '2.1.1.1', false );
 
-	wp_enqueue_script( 'catchbox-fitvids', get_template_directory_uri() . '/js/catchbox-fitvids.min.js', array( 'jquery' ), '20140315', true );
+	wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/js/catchbox-fitvids.min.js', array( 'jquery' ), '20140315', true );
 
 	//Register JQuery circle all and JQuery set up as dependent on Jquery-cycle
 	wp_register_script( 'jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
@@ -759,11 +759,11 @@ if ( ! function_exists( 'catchbox_alter_home' ) ):
  */
 function catchbox_alter_home( $query ) {
 	$options = catchbox_get_theme_options();
-	if( !isset( $options[ 'exclude_slider_post' ] ) ) {
+	if ( !isset( $options[ 'exclude_slider_post' ] ) ) {
  		$options[ 'exclude_slider_post' ] = "0";
  	}
     if ( $options[ 'exclude_slider_post'] != "0" && !empty( $options[ 'featured_slider' ] ) ) {
-		if( $query->is_main_query() && $query->is_home() ) {
+		if ( $query->is_main_query() && $query->is_home() ) {
 			$query->query_vars['post__not_in'] = $options[ 'featured_slider' ];
 
 		}
@@ -899,21 +899,21 @@ function catchbox_socialprofile() {
 
     $options = catchbox_get_theme_options();
 	$flag = 0;
-	if( !empty( $options ) ) {
+	if ( !empty( $options ) ) {
 		foreach( $options as $option ) {
-			if( $option ) {
+			if ( $option ) {
 				$flag = 1;
 			}
 			else {
 				$flag = 0;
 			}
-			if( $flag == 1) {
+			if ( $flag == 1) {
 				break;
 			}
 		}
 	}
 
-	if( ( !$catchbox_socialprofile = get_transient( 'catchbox_socialprofile' ) ) && ($flag == 1) ) {
+	if ( ( !$catchbox_socialprofile = get_transient( 'catchbox_socialprofile' ) ) && ($flag == 1) ) {
 		echo '<!-- refreshing cache -->';
 
 		$catchbox_socialprofile = '

@@ -665,7 +665,7 @@ function catchbox_customize_register( $wp_customize ) {
 	);
 
 	//@remove Remove if block when WordPress 4.8 is released
-	if( !function_exists( 'has_site_icon' ) ) {
+	if ( !function_exists( 'has_site_icon' ) ) {
 		$settings_favicon = array(
 			//Favicon
 			'fav_icon' => array(
@@ -696,7 +696,7 @@ function catchbox_customize_register( $wp_customize ) {
 		$settings_parameters = array_merge( $settings_parameters, $settings_favicon);
 	}
 
-	if( function_exists( 'has_custom_logo' ) ) {
+	if ( function_exists( 'has_custom_logo' ) ) {
 		$settings_header_image = array(
 			//Favicon
 			'header_image_position' => array(
@@ -719,7 +719,7 @@ function catchbox_customize_register( $wp_customize ) {
 	}
 
 	foreach ( $settings_parameters as $option ) {
-		if( 'image' == $option['field_type'] ) {
+		if ( 'image' == $option['field_type'] ) {
 			$wp_customize->add_setting(
 				// $id
 				$theme_slug . 'options[' . $option['id'] . ']',
@@ -743,7 +743,7 @@ function catchbox_customize_register( $wp_customize ) {
 				)
 			);
 		}
-		else if ('checkbox' == $option['field_type'] ) {
+		elseif ('checkbox' == $option['field_type'] ) {
 			$wp_customize->add_setting(
 				// $id
 				$theme_slug . 'options[' . $option['id'] . ']',
@@ -830,7 +830,7 @@ function catchbox_customize_register( $wp_customize ) {
 		}
 	}
 
-	if( !isset( $options['slider_qty'] ) || !is_numeric( $options['slider_qty'] ) ) {
+	if ( !isset( $options['slider_qty'] ) || !is_numeric( $options['slider_qty'] ) ) {
 		$options[ 'slider_qty' ] = 4;
 	}
 
