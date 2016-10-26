@@ -14,25 +14,21 @@ if ( ! function_exists( 'actions_site_branding' ) ) {
 	function actions_site_branding() {
 		
 	?>
-	<div class="header-area full">
-	    <div class="main">
-			<header id="masthead" class="site-header inner">
-				<div class="header-elements">
-					<?php actions_the_custom_logo(); ?>					
-					<span class="site-title">
-						<?php 
-						$title = get_bloginfo('name');
-						$description = get_bloginfo( 'description'); ?>						
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( $description ); ?>" alt="<?php echo esc_attr( $title ); ?>">
-								<?php bloginfo( 'name' ); ?>
-							</a>
-						
-					</span>
-				</div>
-			</header>			
+		<div class="main">
+			<div class="header-elements">
+				<?php actions_the_custom_logo(); ?>					
+				<span class="site-title">
+					<?php 
+					$title = get_bloginfo('name');
+					$description = get_bloginfo( 'description'); ?>						
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( $description ); ?>" alt="<?php echo esc_attr( $title ); ?>">
+							<?php bloginfo( 'name' ); ?>
+						</a>
+				</span>
+			</div>
 		</div>
-	</div>
-		<?php 
+			
+	<?php 
 	}
 }
 
@@ -43,20 +39,24 @@ if ( ! function_exists( 'actions_primary_navigation' ) ) {
 	 * @return void
 	 */
 	function actions_primary_navigation() {
-		?>
-		    <div class="main">
-			<div class="main-menu-container inner">
-			
-				<nav id="site-navigation" class="main-navigation clear" role="navigation">
-				
-					<span class="menu-toggle"> <?php _e( 'Menu', 'actions' ); ?></span>
-					<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'actions' ); ?></a>		
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'fallback_cb' => 'actions_menu_home' ) ); ?>
-				
-				</nav>
-			</div>
-			</div>
-		<?php
+		if ( has_nav_menu( 'primary' ) ) : ?>
+			<button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'actions' ); ?></button>
+			<div id="site-header-menu" class="site-header-menu">
+				<div class="main">
+					<?php if ( has_nav_menu( 'primary' ) ) : ?>
+						<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'actions' ); ?>">
+						<?php
+							wp_nav_menu( array(
+								'theme_location' => 'primary',
+								'menu_class'     => 'primary-menu',
+							) );
+						?>
+						</nav><!-- .main-navigation -->
+					<?php endif; ?>
+				</div>
+			</div><!-- .site-header-menu -->
+		<?php endif; ?>
+	<?php
 	}
 }
 

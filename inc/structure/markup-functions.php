@@ -11,7 +11,8 @@
 if ( ! function_exists( 'actions_top_header' ) ) {
 	function actions_top_header() {
 		?>
-		
+		<div class="header-area full">	    
+			<header id="masthead" class="site-header inner">
 	    <?php
 	}
 }
@@ -19,7 +20,8 @@ if ( ! function_exists( 'actions_top_header' ) ) {
 if ( ! function_exists( 'actions_bottom_header' ) ) {
 	function actions_bottom_header() {
 		?>
-		
+			</header>		
+		</div>
 	    <?php
 	}
 }

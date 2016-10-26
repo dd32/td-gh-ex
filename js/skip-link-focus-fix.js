@@ -1,16 +1,16 @@
 /**
- * skip-link-focus-fix.js
+ * Makes "skip to content" link work correctly in IE9, Chrome, and Opera
+ * for better accessibility.
  *
- * Helps with accessibility for keyboard only users.
- *
- * Learn more: https://git.io/vWdr2
+ * @link http://www.nczonline.net/blog/2013/01/15/fixing-skip-to-content-links/
  */
-( function() {
-	var is_webkit = navigator.userAgent.toLowerCase().indexOf( 'webkit' ) > -1,
-	    is_opera  = navigator.userAgent.toLowerCase().indexOf( 'opera' )  > -1,
-	    is_ie     = navigator.userAgent.toLowerCase().indexOf( 'msie' )   > -1;
 
-	if ( ( is_webkit || is_opera || is_ie ) && document.getElementById && window.addEventListener ) {
+ ( function() {
+	var isWebkit = navigator.userAgent.toLowerCase().indexOf( 'webkit' ) > -1,
+		isOpera  = navigator.userAgent.toLowerCase().indexOf( 'opera' )  > -1,
+		isIE     = navigator.userAgent.toLowerCase().indexOf( 'msie' )   > -1;
+
+	if ( ( isWebkit || isOpera || isIE ) && document.getElementById && window.addEventListener ) {
 		window.addEventListener( 'hashchange', function() {
 			var id = location.hash.substring( 1 ),
 				element;
@@ -27,7 +27,10 @@
 				}
 
 				element.focus();
+
+				// Repositions the window on jump-to-anchor to account for admin bar and border height.
+				window.scrollBy( 0, -53 );
 			}
 		}, false );
 	}
-})();
+} )();
