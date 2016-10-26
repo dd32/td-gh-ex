@@ -18,7 +18,10 @@
             <span class="screen-reader-text"><?php _e( 'Search for:', 'accesspress-mag' ) ?></span>
             <input type="search" title="<?php esc_attr_e( 'Search for:', 'accesspress-mag' ); ?>" name="s" value="<?php echo get_search_query(); ?>" placeholder="<?php echo esc_attr( $search_placeholder ); ?>" class="search-field" />
         </label>
-        <input type="submit" value="<?php echo esc_attr( $search_button ); ?>" class="search-submit" />
+        <div class="icon-holder">
+        
+        <button type="submit" class="search-submit"><i class="fa fa-search"></i></button>
+        </div>
      </form>
      <div class="overlay-search"> </div> 
     </div><!-- .ak-search -->

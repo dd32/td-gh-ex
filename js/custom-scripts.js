@@ -5,8 +5,8 @@
 
 jQuery(document).ready(function($){
         
-$('.search-icon i.fa-search').click(function() {
-    $('.search-icon .ak-search').toggleClass('active');
+$('.main-navigation .search-icon i.fa-search').click(function() {
+    $(this).next('.ak-search').toggleClass('active');
 });
 
 $('.ak-search .close').click(function() {

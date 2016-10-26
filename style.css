@@ -4,7 +4,7 @@ Theme URI:    https://accesspressthemes.com/wordpress-themes/accesspress-mag/
 Author:       AccessPress Theme
 Author URI:   http://accesspressthemes.com/
 Description:  AccessPress Mag is clean & modern WordPress magazine theme. It is ideal for newspaper, editorial, online magazine, blog or personal website. It is a cutting-edge, feature-rich FREE WordPress theme and is fully-responsive. Its feature includes: 2 post layout, news ticker, sticky menu, author block, large featured images for page/post, social media integration for wider social reach. Demo: http://demo.accesspressthemes.com/accesspress-mag/ Support forum: https://accesspressthemes.com/support/ 
-Version:      2.4.4
+Version:      2.4.5
 License:      GNU General Public License v3 or later
 License URI:  http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain:  accesspress-mag
@@ -2969,4 +2969,66 @@ nav.woocommerce-MyAccount-navigation ul li a {
 }
 .woocommerce-account .woocommerce-MyAccount-content {
    width: 73%;
+}
+/*
+==========================
+widget search
+==========================
+*/
+.widget.widget_search .ak-search {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+}
+.widget.widget_search .ak-search .close {
+    display: none;
+}
+.widget.widget_search .ak-search .search-form {
+    opacity: 1;
+    visibility: visible;
+    z-index: 999999;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+    background: none;
+    position: static;
+    height: 36px;
+    margin-left: 0;
+    margin-top: 0;
+    width: 100%;
+    padding: 0;
+} 
+.widget.widget_search .ak-search .search-form .search-field {
+    height: 36px;
+    border: 1px solid #ddd;  
+    padding: 0 10px;
+    font-size: 13px;
+    width: 85%;  
+}
+.widget.widget_search .search-icon i {
+    display: block;
+    color: #fff;
+    position: absolute;
+    right: 15px;
+    z-index: 9;
+    font-size: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+}
+.widget.widget_search .ak-search .search-form .search-submit {
+    display: block;
+    width: 15%;
+    height: 36px;
+    font-size: 0;
+    background: #000;
+}
+.widget.widget_search .ak-search .search-form .icon-holder {
+    position: relative;
+}
+.widget.widget_search .search-icon {
+    width: 100%;
+    float: none;
 }

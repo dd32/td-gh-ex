@@ -10,7 +10,7 @@ if ( ! is_active_sidebar( 'accesspress-mag-sidebar-left' ) ) {
 }
 ?>
 
-<div id="secondary-left-sidebar" class="" role="complementary">
+<div id="secondary-left-sidebar" class="widget-area" role="complementary">
 	<div id="secondary">
 		<?php dynamic_sidebar( 'accesspress-mag-sidebar-left' ); ?>
 	</div>

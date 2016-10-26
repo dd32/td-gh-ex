@@ -111,7 +111,7 @@
                 </div><!-- .nav-wrapper -->
                 <?php 
                     get_search_form(); 
-                    if ( $accesspress_mag_random_icon == 1 ) { accesspress_mag_random_post(); } 
+                    if ( $accesspress_mag_random_icon == 1 ) { accesspress_mag_random_post(); }
                 ?>
             </div><!-- .apmag-container -->
 		</nav><!-- #site-navigation -->

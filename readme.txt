@@ -72,6 +72,9 @@ GPL compatible for own images
 ----------------------------------------------------
 == Changelog ==
 
+Version 2.4.5
+ * Fixed the search bugs at header and widget area
+ 
 Version 2.4.4
  * Removed the plugin slug from tgmpa function which doesn't exist
  
