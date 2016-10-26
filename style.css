@@ -4,7 +4,7 @@ Theme URI: http://www.iograficathemes.com/downloads/base-wp/
 Author: iografica
 Author URI: http://www.iograficathemes.com/
 Description: Base WP is a beautiful responsive, elegant and clean coded WordPress theme that can be used for pesonal, business or ecommerce websites.
-Version: 2.04
+Version: 2.05
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: base-wp
@@ -2866,7 +2866,8 @@ object {
 ## Captions
 --------------------------------------------------------------*/
 .wp-caption {
-  margin: 0;
+  margin-top: 14px;
+  margin-bottom: 14px;
   padding: 0;
   max-width: 100%;
 }
@@ -2879,7 +2880,7 @@ object {
 
 .wp-caption .wp-caption-text {
   margin: 0;
-  padding: 0;
+  padding: 14px;
 }
 
 .wp-caption-text {
