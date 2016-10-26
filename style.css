@@ -3,7 +3,7 @@ Theme Name: Bellini
 Theme URI: http://atlantisthemes.com/
 Author: Pangolin
 Description: Bellini is the perfect theme for creating a eCommerce store or shop. Responsive & flexible layout built with Bootstrap. Customize anything like Google Fonts, Color, Layout, logo upload, full-screen slider, header image and much more.Built with SEO in mind and has Structured Data (Schema) implemented. If you are looking for a beautiful theme with out of the box SEO compatibility & responsiveness, look no further! Check out the live demo at http://demo.atlantisthemes.com/front-page/
-Version: 1.35
+Version: 1.36
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bellini
@@ -366,7 +366,7 @@ input[type='submit'][disabled]:focus {
     position: relative;
     margin-top: 6px;
     margin-bottom: 6px;
-    padding: 1.5% 5%;
+    padding:.5em 2em;
     border: none;
     border-radius: 2px;
     overflow: hidden;
@@ -551,7 +551,7 @@ a:active {
     }
 
     .main-navigation {
-        padding: 0;
+        padding: 0 0 .4em 0;
     }
 
     .main-navigation ul {
@@ -1389,12 +1389,9 @@ object {
     font-style: italic;
 }
 
-.single.post-meta {
-    text-transform: uppercase;
-}
-
 .edit-link {
-    float: right;
+    padding: .6em;
+    border-radius: 4px;
 }
 
 .post-edit-link:before {
@@ -1414,14 +1411,6 @@ object {
 
 .post-meta__time a {
     text-decoration: none;
-}
-
-.post-meta__tag__item a {
-    padding: .6% 1%;
-    border-radius: .1em;
-    text-decoration: none;
-    -ms-border-radius: .1em;
-    line-height:2em;
 }
 
 .post-meta__category {
@@ -1507,6 +1496,7 @@ object {
 .s__post--l3 .post-meta__author{
     display: block;
     padding:0;
+    margin:0;
 }
 
 .single-post__body--l3 {
@@ -1536,12 +1526,6 @@ object {
     margin-left: auto;
     margin-right: auto;
 }
-
-.post-meta__tag__item {
-    margin-top: 1em;
-    display: block;
-}
-
 
 /*--------------------------------------------------------------
 ## Frontpage Templates
@@ -2374,8 +2358,8 @@ Hamburger Menu
 
 .widget-area ul li,
 .widget-area__footer ul li {
-    margin-bottom: .618em;
-    padding: 4px 0;
+    margin-bottom: .24em;
+    padding: .04em 0;
     list-style-type: none;
 }
 
@@ -2759,9 +2743,88 @@ blockquote:before {
 
 h1.site-title {font-size:3rem;}
 
-.search-form .search-field {
+.breadcrumb_last,
+.single.post-meta,
+.single.post-meta a,
+.post-meta__category a,
+.comment-reply-link,
+.comment__author,
+.blog-post__meta .post-meta__time,
+.post-meta__author,
+.comment-edit-link,
+.post-meta__time{
+    font-style:italic;
+}
+
+.post-meta__category a:after{
+    content:" | ";
+    opacity:0.35;
+}
+
+.post-meta__category a:last-child:after{
+    display: none;
+}
+
+.post-meta__tag__item{
+    display: inline-block;
+    margin-bottom: 3px;
+    margin-top: 1em;
+    cursor: default;
+}
+
+.post-meta__tag__item a{
+    font-size: .75em;
+    height: 21px;
+    line-height: 21px;
+    margin: 0 4px 0 4px;
+    padding: 0 7px 0 14px;
+    white-space: nowrap;
+    position: relative;
+    text-decoration: none;
+    border-radius: 1px 3px 3px 1px;
+    letter-spacing: 1px;
+    transition: all .3s ease;
+    display: inline-block;
+}
+
+.post-meta__tag__item a:before{
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: -5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 1px 1px 1px 2px;
+    -webkit-transform: scale(1, 1.5) rotate(45deg);
+    transform: scale(1, 1.5) rotate(45deg);
+    transition: all .3s ease;
+}
+
+.post-meta__tag__item a:after{
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 1px;
+    width: 5px;
+    height: 5px;
+    border-radius: 4px;
+    transition: all .3s ease;
+}
+
+.site-footer a:hover{opacity:0.8; text-decoration:none;}
+.site-footer .sep{opacity:0.3;}
+
+.widget_search .search-submit {
+    display: none;
+}
+
+.widget_search input[type=search] {
     padding: .5em;
     border: 1px solid rgba(0,0,0,.15);
     box-sizing: border-box;
     border-radius: 4px;
+    line-height: 2;
+    width: 100%;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
 }

@@ -15,7 +15,7 @@ jQuery(document).ready(function () {
         });
 
     // Equal Height
-
+    jQuery('.nav-previous, .nav-next').matchHeight();
     jQuery('.feature-block__inner').matchHeight();
     jQuery('.equal-height').matchHeight();
     jQuery('.front__product-featured__text, .front__product-featured__image').matchHeight();

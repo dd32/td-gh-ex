@@ -78,7 +78,7 @@ function bellini_blog_sidebar(){
 function bellini_category() {
     if ( 'post' === get_post_type() ) {
     /* translators: used between list items, there is a space after the comma */
-    $categories_list = get_the_category_list( esc_html__( '  |   ', 'bellini' ) );
+    $categories_list = get_the_category_list( esc_html__( ' ', 'bellini' ) );
 
         if ( $categories_list && bellini_categorized_blog() ) {
             printf( '<span class="post-meta__category category" rel="tag">' . esc_html__( '%1$s', 'bellini' ) . '</span>', $categories_list ); // WPCS: XSS OK.

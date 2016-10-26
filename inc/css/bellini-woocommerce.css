@@ -54,12 +54,16 @@
 
 .widget_product_search form input.search-field {
     box-sizing: border-box;
-    width: 68%;
+    width: 100%;
+    padding: .5em;
+    border: 1px solid rgba(0,0,0,.15);
+    box-sizing: border-box;
+    border-radius: 4px;
+    line-height: 2;
 }
 
 .widget_product_search form input[type=submit] {
-    box-sizing: border-box;
-    width: 30%;
+    display:none;
 }
 
 .site-header .widget.woocommerce.widget_product_search {
@@ -730,15 +734,10 @@
 }
 
 .cart-toggles--close{
-    font-size: 1.2rem;
     width: 100%;
     margin: 0;
     margin-bottom: 15px;
     padding: 21px !important;
-
-    letter-spacing: 1px;
-    text-transform: uppercase;
-
     border-bottom: solid 1px #ddd;
     background: #fff;
     box-shadow: 0 0 2px rgba(6,8,8,.15);

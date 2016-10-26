@@ -11,7 +11,7 @@ global $bellini;
 <article id="post-<?php the_ID(); ?>" <?php post_class();?> itemscope itemtype="http://schema.org/Article">
 <meta itemscope itemprop="mainEntityOfPage"  itemType="https://schema.org/WebPage" itemid="<?php echo get_site_url(); ?>"/>
 <div class="container--card-content clearfix">
-<div class="text-right"><?php bellini_edit_content(); ?></div>
+<div class="text-center"><?php bellini_edit_content(); ?></div>
 <header class="single-post__header--l3">
 	<?php bellini_category(); ?>
 	<div class="post__header__inner">
