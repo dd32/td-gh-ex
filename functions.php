@@ -132,11 +132,12 @@ if(preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $m
 $advancefirst_img = $matches [1] [0];
 return $advancefirst_img;
 }
-else {
 $advance_latest_nopic = get_theme_mod('advance_latest_nopic',0);
 if( isset($advance_latest_nopic) && $advance_latest_nopic == 1 ){	
+
+
 $advancefirst_img = esc_url(get_template_directory_uri()."/images/blank1.jpg");
-}
+
 return $advancefirst_img;
 }
 }
