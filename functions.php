@@ -148,4 +148,5 @@ add_action('widgets_init', 'barista_register_sidebars_setup');
 ================================================================================================
 */
 require_once(get_template_directory() . '/includes/custom-header.php');
+require_once(get_template_directory() . '/includes/customizer.php');
 require_once(get_template_directory() . '/includes/template-tags.php');

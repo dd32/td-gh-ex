@@ -15,11 +15,11 @@ content. This content.php is the main content that will be displayed.
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
-        <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
+        <?php the_title(sprintf('<h1 class="entry-title"><a href="%s">', esc_url(get_permalink())), '</a></h1>'); ?>
     </header>
-    <div class="entry-content">
+    <section class="entry-content">
         <?php the_content(); ?>
         <?php wp_link_pages(); ?>
-    </div>
+    </section>
 </article>
 <?php comments_template(); ?>

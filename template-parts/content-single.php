@@ -20,6 +20,9 @@ content. This content.php is the main content that will be displayed.
     <header class="entry-header">
         <?php the_title(sprintf('<h1 class="entry-title"><a href="%s">', esc_url(get_permalink())), '</a></h1>'); ?>
     </header>
+    <div class="entry-metadata">
+        <?php barista_entry_posted_on(); ?>
+    </div>
     <div class="entry-content">
         <?php the_content(); ?>
         <?php wp_link_pages(); ?>

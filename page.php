@@ -16,17 +16,21 @@ the content.
 */
 ?>
 <?php get_header(); ?>
-    <div id="content-area" class="content-area">
-        <?php if (have_posts()) : ?>
-            <?php while (have_posts()) : the_post(); ?>
-                <?php get_template_part('template-parts/content', 'page'); ?>
-        <?php endwhile; ?>
-                <div class="paging-navigation">
-                    <?php the_posts_pagination(); ?>
-                </div>
-        <?php else : ?>
-                    <?php get_template_part('template-parts/content', 'none'); ?>
+    <div class="<?php echo esc_attr(get_theme_mod('barista_page_layout_settings', 'default')); ?>">
+        <div id="content-area" class="content-area">
+            <?php if (have_posts()) : ?>
+                <?php while (have_posts()) : the_post(); ?>
+                    <?php get_template_part('template-parts/content', 'page'); ?>
+            <?php endwhile; ?>
+            <?php else : ?>
+                <?php get_template_part('template-parts/content', 'none'); ?>
         <?php endif; ?>
+        </div>
+        <?php if ('sidebar-left' == get_theme_mod('barista_page_layout_settings')) { ?>
+            <?php get_sidebar('page'); ?>
+        <?php } ?>
+        <?php if ('sidebar-right' == get_theme_mod('barista_page_layout_settings')) { ?>
+            <?php get_sidebar('page'); ?>
+        <?php } ?>
     </div>
-<?php get_sidebar('page'); ?>
 <?php get_footer(); ?>

@@ -14,15 +14,26 @@ content. This content.php is the main content that will be displayed.
 */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <div class="featured-image">
+        <?php the_post_thumbnail(); ?>
+    </div>
     <header class="entry-header">
-        <?php the_title(sprintf('<h1 class="entry-title"><a href="%s">', esc_url(get_permalink())), '</a></h1>'); ?> 
-        <small><?php barista_entry_posted_on(); ?></small>
+        <?php the_title(sprintf('<h1 class="entry-title"><a href="%s">', esc_url(get_permalink())), '</a></h1>'); ?>
+        <small><?php barista_index_entry_posted_on(); ?></small>
     </header>
-    <div class="entry-content">
-        <?php the_content(); ?>
-        <div class="entry-footer">
-            <?php barista_entry_taxonomies(); ?>
-        </div>
+    <div class="entry-excerpt">
+        <?php the_excerpt(); ?>
+        <?php if (!is_singular() || is_front_page()) { ?>
+            <div class="continue-reading">
+                <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
+                    <?php
+                        printf(
+                            wp_kses(__('Continue reading %s', 'barista'), array('span' => array('class' => array()))),
+                            the_title('<span class="screen-reader-text">"', '"</span>', false)
+                        );
+                    ?>
+                </a>
+            </div>
+        <?php } ?>
     </div>
 </article>
-<?php comments_template(); ?>

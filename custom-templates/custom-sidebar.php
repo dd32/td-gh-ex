@@ -19,17 +19,24 @@ perform their jobs.
 */
 ?>
 <?php get_header(); ?>
-    <div id="content-area" class="content-area">
-        <?php if (have_posts()) : ?>
-            <?php while (have_posts()) : the_post(); ?>
-                <?php get_template_part('template-parts/content', 'custom-sidebar'); ?>
-        <?php endwhile; ?>
+    <div class="<?php echo esc_attr(get_theme_mod('barista_custom_layout_settings', 'default')); ?>">
+        <div id="content-area" class="content-area">
+            <?php if (have_posts()) : ?>
+                <?php while (have_posts()) : the_post(); ?>
+                    <?php get_template_part('template-parts/content', 'custom-sidebar'); ?>
+            <?php endwhile; ?>
                 <div class="paging-navigation">
                     <?php the_posts_pagination(); ?>
                 </div>
-        <?php else : ?>
+            <?php else : ?>
                     <?php get_template_part('template-parts/content', 'none'); ?>
-        <?php endif; ?>
+            <?php endif; ?>
+        </div>
+        <?php if ('sidebar-left' == get_theme_mod('barista_custom_layout_settings')) { ?>
+            <?php get_sidebar('custom'); ?>
+        <?php } ?>
+        <?php if ('sidebar-right' == get_theme_mod('barista_custom_layout_settings')) { ?>
+            <?php get_sidebar('custom'); ?>
+        <?php } ?>
     </div>
-<?php get_sidebar('custom'); ?>
 <?php get_footer(); ?>

@@ -1,10 +1,10 @@
 /*
 Theme Name: Barista
-Theme URI: http://lumiathemes.com/portfolio/barista/
+Theme URI: https://www.lumiathemes.com/portfolio/barista/
 Author: Benjamin Lu
-Author URI: http://lumiathemes.com/
+Author URI: https://www.lumiathemes.com/
 Description: Barista is converted into a responsive theme with the same features as before. It also comes with custom sidebar and full width without no sidebar. Custom Background and Header is available. 
-Version: 2.1
+Version: 2.2
 License: Barista is distributed under the terms of the GNU GPL.
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-background, custom-header, one-column, right-sidebar, threaded-comments, translation-ready, two-columns
@@ -891,7 +891,7 @@ a:hover {
 	position: absolute;
 	height: 27px;
 	width: 27px;
-	top: 12px;
+	top: 7px;
 	right: 6px;
 	-webkit-box-sizing: content-box;
 	-moz-box-sizing: content-box;
@@ -911,7 +911,7 @@ a:hover {
 	line-height: 27px;
 	position: relative;
 	top: 0;
-	left: 1px;
+	left: 0;
 	width: 27px;
 }
 
@@ -1045,8 +1045,7 @@ span.page-numbers {
 }
 
 .site-content {
-    margin: 0.625em 0;
-    padding: 0.625em;
+    margin: 0.625em 0.625em;
 }
 
 /*
@@ -1094,9 +1093,20 @@ span.page-numbers {
 ================================================================================================
 */
 .content-area {
-    float: left;
-    width: 67.72908366533865%;
+    margin: 0 auto;
+    width: 70.2191235059761%; /* 705px */
 }
+
+.sidebar-left .content-area {
+    float: right;
+    width: 70.2191235059761%;
+}
+
+.sidebar-right .content-area {
+    float: left;
+    width: 70.2191235059761%;
+}
+
 
 .content-area.full-width {
     width: 100%;
@@ -1107,7 +1117,7 @@ span.page-numbers {
 }
 
 .entry-header {
-    text-align: left;
+    text-align: center;
 }
 
 .entry-title {
@@ -1119,6 +1129,37 @@ span.page-numbers {
     margin: 2em 0;
 }
 
+.continue-reading {
+	text-align: center;
+}
+
+.continue-reading a,
+.entry-content .continue-reading a {
+	display: inline-block;
+	margin: 1em auto;
+	padding: 16px 20px;
+	font-family: "Open Sans", sans-serif;
+	text-decoration: none;
+	border: 1px solid #c3c3c3;
+}
+
+.continue-reading a:hover,
+.continue-reading a:focus,
+.entry-content .continue-reading a:hover,
+.entry-content .continue-reading a:focus {
+	border-color: #000;
+	border-width: 1px;
+	box-shadow: none;
+}
+
+.continue-reading::after {
+	display: block;
+    content: "";
+    width: 7em;
+    border-bottom: 1px solid #c3c3c3;
+    margin: 40px auto 0;
+}
+
 .cat-link,
 .tag-link {
     display: block;
@@ -1128,6 +1169,38 @@ span.page-numbers {
 
 .tag-link .fa-tags {
     margin: 0;
+}
+
+.entry-metadata {
+    background: #eeeeee;
+    margin: 1.250em 0;
+    padding: 1em;
+    text-align: center;
+}
+
+.entry-date,
+.entry-comments {
+    font-size: 13px;
+    font-style: italic;
+}
+
+.entry-metadata .avatar {
+    border: 0.500em solid #cccccc;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+.entry-metadata .by-author {
+    display: block;
+    font-family: 'Sanchez', serif;
+    font-size: 1.250em;
+}
+
+.entry-metadata .published {
+    display: block;
+    font-size: 14px;
+    font-style: italic;
 }
 
 .tag-list,
@@ -1143,6 +1216,7 @@ span.page-numbers {
 .sticky::before {
     content: "Featured";
     display: block;
+    text-align: center;
 }
 
 
@@ -1202,7 +1276,7 @@ span.page-numbers {
 
 .comments-area p {
     font-size: 14px;
-    margin-left: 70px;
+    margin-left: 60px;
     margin-top: 20px;
 }
 
@@ -1317,7 +1391,7 @@ ol.children {
 
 #respond textarea#comment{
     height: 200px;
-    width: 99%;	
+    width: 100%;	
 }
 
 /*
@@ -1356,8 +1430,18 @@ ol.children {
 */
 .widget-area {
     float: right;
-    width: 29.8804780876494%;
+    width: 28.28685258964143%; /* 284px */
     word-break: break-all;
+}
+
+.sidebar-left .widget-area {
+    float: left;
+    width: 28.28685258964143%; /* 284px */
+}
+
+.sidebar-right .widget-area {
+    float: right;
+    width: 28.28685258964143%; /* 284px */
 }
 
 .widget-area .search-submit,
@@ -1649,6 +1733,7 @@ input[type = "search"] {
         background: #D5973C;
         border-bottom: 4px solid #916A31;
 		position: relative;
+		min-height: 3.5em;
 		max-width: 100%;
 		margin: 0 auto;
 		padding: 0;
@@ -1661,11 +1746,11 @@ input[type = "search"] {
     }
     
     .nav-menu a {
-        color: #ffffff;
+        color: #000000;
     }
     
     .nav-menu a:hover {
-        color: #ffffff;
+        color: #000000;
     }
 	
 	.primary-navigation ul,
@@ -1696,6 +1781,11 @@ input[type = "search"] {
 		display: block;
 		text-align: left;
 	}
+    
+    .primary-navigation a {
+        color: #ffffff;
+        padding: 0.5em 1em;
+    }
 	
 	.primary-navigation a,
 	.primary-navigation ul ul li:last-child a {
@@ -1747,8 +1837,8 @@ input[type = "search"] {
 	
 	/* Simplify the drop-down toggle */
 	.dropdown-toggle {
-		top: 9px;
-		right: 12px;
+		top: 7px;
+		right: 8px;
 
 	}
 	
