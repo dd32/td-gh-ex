@@ -7,7 +7,7 @@
     ?>    
         <div class="container ct_footer_columns">
             <div class="row ioftsc">
-            	<?php get_sidebar( 'footer' ); ?>
+            	<?php get_template_part( 'template-parts/sidebar', 'footer' );; ?>
             </div>
         </div>
 	<?php }?>       

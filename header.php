@@ -17,24 +17,37 @@
         <?php 
 			if ( has_custom_logo() )
 			{
-				the_custom_logo();
-			}else{
-		?>       
+		?>
+			<div class="logo">	
+				<?php the_custom_logo();?>
+			</div>
+       <?php
+			}
+		?>               
             <div class="name-box">
                 <a href="<?php echo esc_url(home_url('/')); ?>"><h1 class="ct_site_name"><?php echo bloginfo('name');?></h1></a>
                 <span class="ct_site_tagline"><?php echo get_bloginfo('description');?></span>
             </div>
-		<?php }?>
+
 
         </div> <!--logo end-->
 
         <div id="ct-top-navigation">
             <nav id="top-menu-nav">
-            <?php				
-				if ( has_nav_menu( 'primary-menu' ) ) {
-					 wp_nav_menu( array( 'theme_location' => 'primary-menu', 'container' => '', 'fallback_cb' => '', 'menu_class' => 'nav', 'menu_id' => 'top-menu' ) );
-				}
-            ?>
+                <ul id="top-menu" class="nav">
+					<?php				
+                        if ( has_nav_menu( 'primary-menu' ) ) {
+                             wp_nav_menu( array( 'theme_location' => 'primary-menu', 'items_wrap' => '%3$s','container' => false  ) );
+                        }
+						
+						$hide_login_menu = acool_get_option( 'ct_acool','hide_login_menu',0 ); 
+						if( !$hide_login_menu)
+						{
+							acool_login_li();
+						}
+                    ?>
+                    
+                </ul>
             </nav>
 
             <?php do_action( 'ct_header_top' ); ?>

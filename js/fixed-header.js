@@ -10,8 +10,7 @@ jQuery(document).ready(function($){
 		   $(".ct_header_class").height("80px"); 
 		}
 		else
-		{
-			  
+		{			  
 			$("#ct_header").addClass( 'fixed' );  
 			$(".ct_header_class").height("70px"); 
 		}

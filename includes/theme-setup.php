@@ -6,21 +6,19 @@ function acool_setup(){
 
 	$args = array();
 	$header_args = array( 
-	    'default-image'     	=> '',
-		'default-repeat' 		=> 'no-repeat',
-        'default-text-color'	=> '2C2C2C',
-		'url'                	=> '',
-        'width'             	=> 1920,
-        'height'             	=> 89,
-		'header-text' 			=> false
-
+	    'default-image'          => '',
+		'default-repeat'         => 'no-repeat',
+        'default-text-color'     => '2C2C2C',
+		'url'                    => '',
+        'width'                  => 1920,
+        'height'                 => 89,
+        'flex-height'            => true
      );
 	add_theme_support( 'custom-background', $args );
 	add_theme_support( 'custom-header', $header_args );	
 	add_theme_support( 'automatic-feed-links' );//
 	add_theme_support( "title-tag" );//
-
-
+	
 	// set support  "Featured Image"
 	add_theme_support('post-thumbnails'); 
 	add_image_size('s475', 475, 475);
@@ -50,7 +48,7 @@ function acool_custom_scripts()
 {
 	global $is_IE;
 	$theme_info = wp_get_theme();
-	//css
+	
 	wp_enqueue_style('font-awesome',  get_template_directory_uri() .'/css/font-awesome.min.css', false, '4.5.0', false);
 	wp_enqueue_style('bootstrap',  get_template_directory_uri() .'/css/bootstrap.min.css', false, '3.3.5', false);	
 	wp_enqueue_style('acool-main', get_stylesheet_uri(), array(), $theme_info->get( 'Version' ) );	
@@ -63,16 +61,28 @@ function acool_custom_scripts()
 		wp_enqueue_script( 'queryloader2', get_template_directory_uri().'/js/queryloader2.min.js', array( 'jquery' ), '', false );
 		wp_enqueue_script( 'acool-loader', get_template_directory_uri().'/js/loader.js', array( 'jquery' ), '', false );		
 	}
-	$fixed_header  =  acool_get_option( 'ct_acool','fixed_header',0);	
+	$fixed_header  =  acool_get_option( 'ct_acool','fixed_header',1);	
 
-	if($fixed_header){
+	if($fixed_header && !is_front_page() || ($fixed_header && is_home()) ){
 		wp_enqueue_script( 'acool-fixed-header', get_template_directory_uri().'/js/fixed-header.js', array( 'jquery' ), '', false );
+	}	
+	else if($fixed_header && is_front_page() ){		
+		wp_enqueue_script( 'acool-fixed-header2', get_template_directory_uri().'/js/fixed-header2.js', array( 'jquery' ), '', false );		
 	}
+	
 
 	wp_enqueue_script('scrollTo', get_template_directory_uri().'/js/jquery.scrollTo.min.js', array( 'jquery' ), '2.1.2', false );	
-	wp_enqueue_script('acool-common', get_template_directory_uri().'/js/common.js', array( 'jquery' ), $theme_info->get( 'Version' ), false );
+
 	//	
 	wp_enqueue_script( 'waypoints', get_template_directory_uri().'/js/jquery.waypoints.min.js', array( 'jquery' ), $theme_info->get( 'Version' ), false );
+	
+	//wp_enqueue_script( 'noframework.waypoints', get_template_directory_uri().'/js/noframework.waypoints.min.js', false, $theme_info->get( 'Version' ), false );	
+	wp_enqueue_script('acool-js', get_template_directory_uri().'/js/common.js', array( 'jquery' ), $theme_info->get( 'Version' ), false );	
+	wp_localize_script( 'acool-js', 'acool_params', array(
+		'ajaxurl'        => admin_url('admin-ajax.php'),
+		'themeurl' => get_template_directory_uri(),		
+	));
+			
 }
   
 if (!is_admin())
@@ -120,36 +130,41 @@ function acool_customize_css()
 			}
 
 			//------- customize css  -------
-			$header_bgcolor = acool_get_option( 'ct_acool','header_bgcolor','' );
+			$header_bgcolor = acool_get_option( 'ct_acool','header_bgcolor','#ffffff' );
 			$rbg = acool_hex2rgb($header_bgcolor);
 			
 			$header_opacity       =  acool_get_option( 'ct_acool','header_opacity',0.4);
 			$fixed_header         =  acool_get_option( 'ct_acool','fixed_header',1);			
+			
 
-			$acool_custom_css  .=  '.ct_header_class_post_page{border-bottom-width: 1px;border-bottom-style: solid;	border-bottom-color: #EEE;}';
 
 			if( $fixed_header )
 			{
 				$acool_custom_css  .= ".fixed{ position: fixed; width: 100%; background: rgba(".$rbg[0].", ".$rbg[1].", ".$rbg[2].", ".$header_opacity.") !important;z-index:999;}.carousel-caption{bottom: 10%;top: 25%;}";
 			}
+			
 			if($header_bgcolor !='')
 			{
 				$acool_custom_css  .='.site-header { background-color:'.$header_bgcolor.';}';
 			}
 			//$fixed_header         =  of_get_option("fixed_header") ;
+			
+			//$acool_custom_css  .=  '.ct_header_class_post_page{border-bottom-width: 1px;border-bottom-style: solid;	border-bottom-color: #EEE;}';	
+			echo $header_bgcolor;		
 			if($header_bgcolor == '#ffffff') 
 			{
-				if(!$fixed_header ){
-					$acool_custom_css  .= '.ct_header_class{border-bottom-color:#F0F0F0;}';	
-				}
+				$acool_custom_css  .= '.ct_header_class{border-bottom-width: 1px;border-bottom-style: solid;	border-bottom-color:#F0F0F0;}';	
 			}
 			else
-			{				
-				if(!$fixed_header ){
-					$acool_custom_css  .= '.ct_header_class{border-bottom-color:'.$header_bgcolor.';}';
-				}
-			}			
-					
+			{
+				$acool_custom_css  .= '.ct_header_class{border-bottom-width: 1px;border-bottom-style: solid;	border-bottom-color:'.$header_bgcolor.';}';
+			}
+			
+			if( $fixed_header && is_front_page() && !is_home() ){
+				$acool_custom_css  .= ".ct_header_class{border-bottom-color: rgba(".$rbg[0].", ".$rbg[1].", ".$rbg[2].", ".$header_opacity.") !important;}";	
+			}
+			
+		
 			if ( 'blank' == get_header_textcolor() || '' == get_header_textcolor() )
 			{			
 				$acool_custom_css  .= '.ct_site_name{ line-height:52px; }';	
@@ -223,4 +238,64 @@ function acool_more_link($more_link, $more_link_text) {
 	return str_replace($more_link_text, __( 'Read More...', 'acool' ), $more_link);
 }
 add_filter('the_content_more_link', 'acool_more_link', 10, 2); 
-?>
+
+
+	/*	
+	*	send email
+	*	---------------------------------------------------------------------
+	*/
+function acool_contact(){
+	if(trim($_POST['Name']) === '') {
+		$Error = __('Please enter your name.','acool');
+		$hasError = true;
+	} else {
+		$name = trim($_POST['Name']);
+	}
+
+	if(trim($_POST['Email']) === '')  {
+		$Error = __('Please enter your email address.','acool');
+		$hasError = true;
+	} else if (!preg_match("/^[[:alnum:]][a-z0-9_.-]*@[a-z0-9.-]+\.[a-z]{2,4}$/i", trim($_POST['Email']))) {
+		$Error = __('You entered an invalid email address.','acool');
+		$hasError = true;
+	} else {
+		$email = trim($_POST['Email']);
+	}
+
+	if(trim($_POST['Message']) === '') {
+		$Error =  __('Please enter a message.','acool');
+		$hasError = true;
+	} else {
+		if(function_exists('stripslashes')) {
+			$message = stripslashes(trim($_POST['Message']));
+		} else {
+			$message = trim($_POST['Message']);
+		}
+	}
+
+	if(!isset($hasError)) {
+	   if (isset($_POST['sendto']) && preg_match("/^[[:alnum:]][a-z0-9_.-]*@[a-z0-9.-]+\.[a-z]{2,4}$/i", trim($_POST['sendto']))) {
+	     $emailTo = $_POST['sendto'];
+	   }
+	   else{
+	 	 $emailTo = get_option('admin_email');
+		}
+		 if($emailTo !=""){
+		$subject = 'From '.$name;
+		$body = "Name: $name \n\nEmail: $email \n\nMessage: $message";
+		$headers = 'From: '.$name.' <'.$emailTo.'>' . "\r\n" . 'Reply-To: ' . $email;
+
+		wp_mail($emailTo, $subject, $body, $headers);
+		$emailSent = true;
+		}
+		echo json_encode(array("msg"=>__("Your message has been successfully sent!","acool"),"error"=>0));
+		
+	}
+	else
+	{
+		echo json_encode(array("msg"=>$Error,"error"=>1));
+	}
+		die() ;
+}
+add_action('wp_ajax_acool_contact', 'acool_contact');
+add_action('wp_ajax_nopriv_acool_contact', 'acool_contact');

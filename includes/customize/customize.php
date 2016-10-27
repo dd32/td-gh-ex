@@ -78,7 +78,7 @@ function acool_customize_register( $wp_customize ) {
         'section'    => 'colors',
         'settings'   => 'ct_acool[other_link_hover_color]',
     ) ) );
-	
+
 
 	//Theme Settings section
 	$wp_customize->add_section( 'ct_acool_settings' , array(
@@ -149,7 +149,22 @@ function acool_customize_register( $wp_customize ) {
 		'type'      => 'checkbox',
 		'priority'  => 50,
 	) );
-
+	
+	//Header Opacity
+	$wp_customize->add_setting( 'ct_acool[header_opacity]', array(
+		'default'       => 0.4,
+		'type'			=> 'option',
+		'capability'	=> 'edit_theme_options',
+		'sanitize_callback' => 'acool_sanitize_decimal_num',
+		'transport'		=> 'postMessage',
+	) );
+	$wp_customize->add_control( 'ct_acool[header_opacity]', array(
+		'label'		=> __( 'Header Opacity', 'acool' ),
+		'section'	=> 'ct_acool_settings',
+		'type' => 'select',
+		'choices'  => array('0.1'=> '0.1','0.2'=> '0.2','0.3'=> '0.3','0.4'=> '0.4','0.5'=> '0.5','0.6'=> '0.6','0.7'=> '0.7','0.8'=> '0.8','0.9'=> '0.9','1'=> '1'),
+		'priority'  => 50,
+	) );
 
 	//show breadcrumb
 	$wp_customize->add_setting( 'ct_acool[show_breadcrumb]', array(
@@ -198,121 +213,340 @@ function acool_customize_register( $wp_customize ) {
 		'type'      => 'checkbox',
 		'priority'  => 50,
 		'description'=>__('Hide date, author, category...below blog title.','acool')
-	) );	
-
-	//Header Opacity
-	$wp_customize->add_setting( 'ct_acool[header_opacity]', array(
-		'default'       => 0.4,
+	) );
+	
+	//Hide Login menu
+	$wp_customize->add_setting( 'ct_acool[hide_login_menu]', array(
+		'default'       => 0,
 		'type'			=> 'option',
 		'capability'	=> 'edit_theme_options',
 		'sanitize_callback' => 'acool_sanitize_num',
 		'transport'		=> 'postMessage',
 	) );
-	$wp_customize->add_control( 'ct_acool[header_opacity]', array(
-		'label'		=> __( 'Header Opacity', 'acool' ),
+	$wp_customize->add_control( 'ct_acool[hide_login_menu]', array(
+		'label'		=> __( 'Hide Login Menu', 'acool' ),
 		'section'	=> 'ct_acool_settings',
-		'type' => 'select',
-		'choices'  => array('0.1'=> '0.1','0.2'=> '0.2','0.3'=> '0.3','0.4'=> '0.4','0.5'=> '0.5','0.6'=> '0.6','0.7'=> '0.7','0.8'=> '0.8','0.9'=> '0.9','1'=> '1'),
+		'type'      => 'checkbox',
 		'priority'  => 50,
-	) );	
-
-	/*
-	 * HomePage Banner Set
-	*/
-	$wp_customize->add_section('ct_homepage_banner' , array(
-		'title' => __('HomePage Banner', 'acool'),
-		'priority' => 120,
-		'description' => '<p class="documentation-text">' . __('Must set up a Static Front Page, the banner will be displayed!', 'acool') . '</p>', 
-	));
-		
-	//homepage banner images
-	$wp_customize->add_setting( 'ct_acool[homepage_banner_img]', array(
-		'default' => get_stylesheet_directory_uri().'/images/banner1.jpg',
-		'sanitize_callback' => 'acool_sanitize_url',
-		'capability'	=> 'edit_theme_options',
-		'transport'		=> 'postMessage',
-		'type' => 'option'
-	) );
-
-	$wp_customize->add_control( 'ct_acool[homepage_banner_img]', array(
-		'label'		=> __( 'Homepage Banner Images:', 'acool' ),
-		'section'	=> 'ct_homepage_banner',
-		'settings'	=> 'ct_acool[homepage_banner_img]',
-		'type'		=> 'url',
 	) );
 	
+
+
+
+		// Theme Options Panel
+		$wp_customize->add_panel( 'acool_homepage_set', array(
+			'title'     => esc_html__( 'Homepage Set', 'acool' ),
+			'priority'  => 120,
+			'description' => '<p class="documentation-text">' . __('Must enable the Featured Homepage, and set up a Static Front Page, the banner will be displayed!', 'acool') . '</p>', 
+		) );		
 	
-	//
-	$wp_customize->add_setting( 'ct_acool[homepage_banner_button_url]', array(
-		
-		'default' => __('#', 'acool'),
-		'sanitize_callback' => 'acool_sanitize_url',
-		'capability'	=> 'edit_theme_options',
-		'transport'		=> 'postMessage',
-		'type' => 'option'
-	) );
-
-	$wp_customize->add_control( 'ct_acool[homepage_banner_button_url]', array(
-		'label'		=> __( 'Homepage Banner Button Url:', 'acool' ),
-		'section'	=> 'ct_homepage_banner',
-		'settings'	=> 'ct_acool[homepage_banner_button_url]',
-		'type'		=> 'url',
-	) );	
+		/*
+		 * HomePage Banner Set
+		*/
+		$wp_customize->add_section('ct_homepage_banner' , array(
+			'title' => esc_html__('HomePage Banner', 'acool'),
+			'panel'     => 'acool_homepage_set',
+			'priority' => 120,
+			
+		));
+			
+		//homepage banner images		
+		//  =============================
+		//  = Image Upload              =
+		//  =============================
+		$wp_customize->add_setting('ct_acool[homepage_banner_img]', array(
+			'default' => get_stylesheet_directory_uri().'/images/banner1.jpg',
+			'sanitize_callback' => 'acool_sanitize_url',
+			'capability'        => 'edit_theme_options',
+			'type'           => 'option',
 	
-
-
-	//homepage banner H1
-	$wp_customize->add_setting( 'ct_acool[homepage_banner_text_h1]', array(
+		));
+	
+		$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'homepage_banner_img', array(
+			'label'    => __('Homepage Banner Image:', 'acool'),
+			'section'  => 'ct_homepage_banner',
+			'settings' => 'ct_acool[homepage_banner_img]',
+		)));		
 		
-		'default' => __('The jQuery slider that just slides.', 'acool'),
-		'sanitize_callback' => 'acool_sanitize_textarea',
-		'capability'	=> 'edit_theme_options',
-		'transport'		=> 'postMessage',
-		'type' => 'option'
-	) );
-
-	$wp_customize->add_control( 'ct_acool[homepage_banner_text_h1]', array(
-		'label'		=> __( 'Homepage Banner Text H1:', 'acool' ),
-		'section'	=> 'ct_homepage_banner',
-		'settings'	=> 'ct_acool[homepage_banner_text_h1]',
-		'type'		=> 'textarea',
-	) );
-
-
-	//homepage banner text
-	$wp_customize->add_setting( 'ct_acool[homepage_banner_text]', array(
+		//
+		$wp_customize->add_setting( 'ct_acool[homepage_banner_button_url]', array(
+			
+			'default' => __('#', 'acool'),
+			'sanitize_callback' => 'acool_sanitize_url',
+			'capability'	=> 'edit_theme_options',
+			'transport'		=> 'postMessage',
+			'type' => 'option'
+		) );
+	
+		$wp_customize->add_control( 'ct_acool[homepage_banner_button_url]', array(
+			'label'		=> __( 'Homepage Banner Button Url:', 'acool' ),
+			'section'	=> 'ct_homepage_banner',
+			'settings'	=> 'ct_acool[homepage_banner_button_url]',
+			'type'		=> 'url',
+		) );	
 		
-		'default' => __('No fancy effects or unnecessary markup.', 'acool'),
-		'sanitize_callback' => 'acool_sanitize_textarea',
-		'capability'	=> 'edit_theme_options',
-		'transport'		=> 'postMessage',
-		'type' => 'option'
-	) );
-
-	$wp_customize->add_control( 'ct_acool[homepage_banner_text]', array(
-		'label'		=> __( 'Homepage Banner Text:', 'acool' ),
-		'section'	=> 'ct_homepage_banner',
-		'settings'	=> 'ct_acool[homepage_banner_text]',
-		'type'		=> 'textarea',
-	) );
 	
 	
-	//homepage banner text
-	$wp_customize->add_setting( 'ct_acool[homepage_banner_button_text]', array(
+		//homepage banner H1
+		$wp_customize->add_setting( 'ct_acool[homepage_banner_text_h1]', array(
+			
+			'default' => __('The jQuery slider that just slides.', 'acool'),
+			'sanitize_callback' => 'acool_sanitize_textarea',
+			'capability'	=> 'edit_theme_options',
+			'transport'		=> 'postMessage',
+			'type' => 'option'
+		) );
+	
+		$wp_customize->add_control( 'ct_acool[homepage_banner_text_h1]', array(
+			'label'		=> __( 'Homepage Banner Text H1:', 'acool' ),
+			'section'	=> 'ct_homepage_banner',
+			'settings'	=> 'ct_acool[homepage_banner_text_h1]',
+			'type'		=> 'textarea',
+		) );
+	
+	
+		//homepage banner text
+		$wp_customize->add_setting( 'ct_acool[homepage_banner_text]', array(
+			
+			'default' => __('No fancy effects or unnecessary markup.', 'acool'),
+			'sanitize_callback' => 'acool_sanitize_textarea',
+			'capability'	=> 'edit_theme_options',
+			'transport'		=> 'postMessage',
+			'type' => 'option'
+		) );
+	
+		$wp_customize->add_control( 'ct_acool[homepage_banner_text]', array(
+			'label'		=> __( 'Homepage Banner Text:', 'acool' ),
+			'section'	=> 'ct_homepage_banner',
+			'settings'	=> 'ct_acool[homepage_banner_text]',
+			'type'		=> 'textarea',
+		) );
 		
-		'default' => __('Download', 'acool'),
-		'sanitize_callback' => 'acool_sanitize_textarea',
-		'capability'	=> 'edit_theme_options',
-		'transport'		=> 'postMessage',
-		'type' => 'option'
-	) );
+		
+		//homepage banner text
+		$wp_customize->add_setting( 'ct_acool[homepage_banner_button_text]', array(
+			
+			'default' => __('Download', 'acool'),
+			'sanitize_callback' => 'acool_sanitize_textarea',
+			'capability'	=> 'edit_theme_options',
+			'transport'		=> 'postMessage',
+			'type' => 'option'
+		) );
+	
+		$wp_customize->add_control( 'ct_acool[homepage_banner_button_text]', array(
+			'label'		=> __( 'Homepage Banner Button Text:', 'acool' ),
+			'section'	=> 'ct_homepage_banner',
+			'settings'	=> 'ct_acool[homepage_banner_button_text]',
+			'type'		=> 'textarea',
+		) );
 
-	$wp_customize->add_control( 'ct_acool[homepage_banner_button_text]', array(
-		'label'		=> __( 'Homepage Banner Button Text:', 'acool' ),
-		'section'	=> 'ct_homepage_banner',
-		'settings'	=> 'ct_acool[homepage_banner_button_text]',
-		'type'		=> 'textarea',
-	) );
+
+		/*
+		 * HomePage post_list Set
+		*/
+		$wp_customize->add_section('ct_homepage_post_list' , array(
+			'title' => esc_html__('HomePage Post List Set', 'acool'),
+			'panel'     => 'acool_homepage_set',
+			'priority' => 120,
+		));
+		
+		
+		//homepage Post List H1
+		$wp_customize->add_setting( 'ct_acool[homepage_post_list_h1]', array(
+			
+			'default' => __('Blog posts', 'acool'),
+			'sanitize_callback' => 'acool_sanitize_textarea',
+			'capability'	=> 'edit_theme_options',
+			'transport'		=> 'postMessage',
+			'type' => 'option'
+		) );
+	
+		$wp_customize->add_control( 'ct_acool[homepage_post_list_h1]', array(
+			'label'		=> __( 'Homepage Post List Title:', 'acool' ),
+			'section'	=> 'ct_homepage_post_list',
+			'settings'	=> 'ct_acool[homepage_post_list_h1]',
+			'type'		=> 'text',
+		) );
+	
+	
+		//homepage Post List text
+		$wp_customize->add_setting( 'ct_acool[homepage_post_list_text]', array(
+			
+			'default' => __('Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere.', 'acool'),
+			'sanitize_callback' => 'acool_sanitize_textarea',
+			'capability'	=> 'edit_theme_options',
+			'transport'		=> 'postMessage',
+			'type' => 'option'
+		) );
+	
+		$wp_customize->add_control( 'ct_acool[homepage_post_list_text]', array(
+			'label'		=> __( 'Homepage Post List Text:', 'acool' ),
+			'section'	=> 'ct_homepage_post_list',
+			'settings'	=> 'ct_acool[homepage_post_list_text]',
+			'type'		=> 'textarea',
+		) );		
+		
+		
+		
+		//Homepage Post List Number
+		$wp_customize->add_setting( 'ct_acool[homepage_post_list_num]', array(
+			
+			'default' => 6,
+			'sanitize_callback' => 'acool_sanitize_textarea',
+			'capability'	=> 'edit_theme_options',
+			'transport'		=> 'postMessage',
+			'type' => 'option',
+			
+		) );
+	
+		$wp_customize->add_control( 'ct_acool[homepage_post_list_num]', array(
+			'label'		=> __( 'Homepage Post List Number:', 'acool' ),
+			'section'	=> 'ct_homepage_post_list',
+			'settings'	=> 'ct_acool[homepage_post_list_num]',
+			'type'     => 'select',
+  			'choices'  =>  array('3' => 3,'6' => 6,'9' => 9,'12' => 12),
+			//'default'  => 6,
+		) );
+		
+		
+	
+		//
+		$wp_customize->add_setting( 'ct_acool[homepage_blog_url]', array(
+			
+			'default' =>  esc_url(home_url('/')).'blog/',
+			'sanitize_callback' => 'acool_sanitize_url',
+			'capability'	=> 'edit_theme_options',
+			'transport'		=> 'postMessage',
+			'type' => 'option'
+		) );
+	
+		$wp_customize->add_control( 'ct_acool[homepage_blog_url]', array(
+			'label'		=> __( 'Blog Url:', 'acool' ),
+			'section'	=> 'ct_homepage_post_list',
+			'settings'	=> 'ct_acool[homepage_blog_url]',
+			'type'		=> 'url',
+		) );	
+			
+		function get_categories_select() {
+		 $teh_cats = get_categories();
+			$results;
+			$count = count($teh_cats);
+			for ($i=0; $i < $count; $i++) {
+			  if (isset($teh_cats[$i]))
+				$results[$teh_cats[$i]->slug] = $teh_cats[$i]->name;
+			  else
+				$count++;
+			}
+		  return $results;
+		}	
+	
+		$wp_customize->add_setting('ct_acool[post_list_cat]', array(
+			'default'        => 'uncategorized',
+			'capability'     => 'edit_theme_options',
+			
+			'sanitize_callback' => 'acool_sanitize_textarea',
+			'transport'		=> 'postMessage',
+			'type' => 'option'			
+			
+		));
+		$wp_customize->add_control( 'ct_acool[post_list_cat]', array(
+			'settings' => 'ct_acool[post_list_cat]',
+			'label'   => __( 'Post List Category:', 'acool' ),
+			'section' => 'ct_homepage_post_list',
+			'type'    => 'select',
+			'choices' => get_categories_select()
+		));		
+
+
+
+		/*
+		 * HomePage contact_us Set
+		*/
+		$wp_customize->add_section('ct_homepage_contact_us' , array(
+			'title' => esc_html__('HomePage Contact Us Set', 'acool'),
+			'panel'     => 'acool_homepage_set',
+			'priority' => 120,
+		));
+		
+		
+		//homepage Contact Us H1
+		$wp_customize->add_setting( 'ct_acool[homepage_contact_ust_h1]', array(
+			
+			'default' => __('Contact Us', 'acool'),
+			'sanitize_callback' => 'acool_sanitize_textarea',
+			'capability'	=> 'edit_theme_options',
+			'transport'		=> 'postMessage',
+			'type' => 'option'
+		) );
+	
+		$wp_customize->add_control( 'ct_acool[homepage_contact_us_h1]', array(
+			'label'		=> __( 'Homepage Contact Us Title:', 'acool' ),
+			'section'	=> 'ct_homepage_contact_us',
+			'settings'	=> 'ct_acool[homepage_contact_ust_h1]',
+			'type'		=> 'text',
+		) );
+	
+	
+		//homepage Contact Us text
+		$wp_customize->add_setting( 'ct_acool[homepage_contact_us_text]', array(
+			
+			'default' => __('Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere.', 'acool'),
+			'sanitize_callback' => 'acool_sanitize_textarea',
+			'capability'	=> 'edit_theme_options',
+			'transport'		=> 'postMessage',
+			'type' => 'option'
+		) );
+	
+		$wp_customize->add_control( 'ct_acool[homepage_contact_us_text]', array(
+			'label'		=> __( 'Homepage Contact Us Text:', 'acool' ),
+			'section'	=> 'ct_homepage_contact_us',
+			'settings'	=> 'ct_acool[homepage_contact_us_text]',
+			'type'		=> 'textarea',
+		) );
+
+
+
+		//homepage Contact Us email
+		$wp_customize->add_setting( 'ct_acool[homepage_contact_us_email]', array(
+			
+			'default' => get_bloginfo( 'admin_email'),
+			'sanitize_callback' => 'acool_sanitize_textarea',
+			'capability'	=> 'edit_theme_options',
+			'transport'		=> 'postMessage',
+			'type' => 'option'
+		) );
+	
+		$wp_customize->add_control( 'ct_acool[homepage_contact_us_email]', array(
+			'label'		=> __( 'Contact Us Email:', 'acool' ),
+			'section'	=> 'ct_homepage_contact_us',
+			'settings'	=> 'ct_acool[homepage_contact_us_email]',
+			'type'		=> 'email',
+		) );
+
+
+
+		//homepage Contact Us Google Maps
+		$wp_customize->add_setting( 'ct_acool[google_maps]', array(
+			
+			'default' => '!1m18!1m12!1m3!1d3058.276857292534!2d-75.2014636841563!3d39.95756237942114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6c656420e77d1%3A0x904100f3a0d41015!2s3852+Filbert+St%2C+Philadelphia%2C+PA+19104!5e0!3m2!1sen!2sus!4v1477039414870',
+			'sanitize_callback' => 'acool_sanitize_textarea',
+			'capability'	=> 'edit_theme_options',
+			'transport'		=> 'postMessage',
+			'type' => 'option'
+		) );
+	
+		$wp_customize->add_control( 'ct_acool[google_maps]', array(
+			'label'		=> __( 'Google Maps API:', 'acool' ),//https://support.google.com/maps/answer/144361?co=GENIE.Platform%3DDesktop&hl=en
+			'section'	=> 'ct_homepage_contact_us',
+			'settings'	=> 'ct_acool[google_maps]',
+			'type'		=> 'textarea',
+			'description' => '<p class="documentation-text">' . __('Get:', 'acool') . ' https://support.google.com/maps/answer/144361?co=GENIE.Platform%3DDesktop&hl=en</p>', 
+		) );
+
+
+
+
+
 
 	/*
 	 * footer info add
@@ -337,8 +571,8 @@ function acool_customize_register( $wp_customize ) {
 		'type'		=> 'textarea',
 	) );
 
-	
-}
+}	
+
 add_action( 'customize_register', 'acool_customize_register' );
 
 
@@ -347,6 +581,12 @@ function acool_sanitize_textarea( $str ) {
 	return wp_kses_post($str);
 }
 
+function acool_sanitize_decimal_num( $value) {
+  if ( ! $value || is_null($value) )
+	return $value;
+  	$value = esc_attr( $value); // clean input
+	return ( 0 < $value ) ? $value : null;
+}
 
 function acool_sanitize_num( $value) {
   if ( ! $value || is_null($value) )
@@ -357,14 +597,14 @@ function acool_sanitize_num( $value) {
 }
 
 function acool_sanitize_hex_color( $color ) {
-	if ( $unhashed = sanitize_hex_color_no_hash( $color ) )
-	  return '#' . $unhashed;
-	
-	return $color;
+  if ( $unhashed = sanitize_hex_color_no_hash( $color ) )
+	return '#'.$unhashed;
+
+  return '#'.$color;
 }
 
-function acool_sanitize_url( $str ) {
-      $value = esc_url_raw( $value);
+function acool_sanitize_url( $value ) {
+      $value = esc_url( $value);
       return $value;
 }
 

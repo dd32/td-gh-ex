@@ -1,3 +1,4 @@
+
 /**
  * This file adds some LIVE to the Theme Customizer live preview. To leverage
  * this, set your custom settings to 'postMessage' and then add your handling
@@ -12,14 +13,14 @@
 			$('.ct_site_tagline').css('font-family', newval );
 			$('.ct_site_name').css('font-family', newval );
 			
-		});
-	});
+		} );
+	} );
 
 	wp.customize( 'ct_acool[menu_font]', function( value ) {
 		value.bind( function( newval ) {
 			$('#ct-top-navigation nav#top-menu-nav ul li a,#ct_mobile_nav_menu ul li a').css('font-family', newval );
-		});
-	});
+		} );
+	} );
 
 	wp.customize( 'ct_acool[title_font]', function( value ) {
 		value.bind( function( newval ) {
@@ -71,39 +72,44 @@
 
 			} else {
 				//$('#ct-top-navigation').css('margin-left','140px' );
-				//$('.ct_logo').css('padding-left','56px' );
-				$header_box.removeClass( 'container' );
+				//$('.ct_logo').css('padding-left','56px' );				
+				$header_box.removeClass( 'container' );		
 			}
 		} );
-	} );
+	} );	
+	
+
 	
     //Update other_link_color in real time...
     wp.customize( 'ct_acool[other_link_color]', function( value ) {
-        value.bind(function( newval){
-            $('.ct_entry_meta a').css('color', newval );
-            $('.ct_sidebar a').css('color', newval );			
-            $('header li a').css('color', newval );			
-			
-        });
-    });	
-	
-	
-	
-    wp.customize( 'ct_acool[other_link_hover_color]', function( value ) {		
+		
         value.bind( function( newval ) {			
-            $('li a:hover').css('color', newval );
-            $('a:hover').css('color', newval );
+            $('a').css('color', newval );			
+            $('li a').css('color', newval );			
+			
+        } );
+    } );	
+	
+    wp.customize( 'ct_acool[other_link_hover_color]', function( value ) {
+		
+        value.bind( function( newval ) {			
+            $('li a:hover').css('color', newval );			
+            $('a:hover').css('color', newval );			
+			
         } );
     } );	
 
-    wp.customize( 'ct_acool[content_link_color]', function( value ) {		
+
+    wp.customize( 'ct_acool[content_link_color]', function( value ) {
+		
         value.bind( function( newval ) {			
             $('.post a').css('color', newval );		
             $('.page a').css('color', newval );				
         } );
     } );	
 	
-    wp.customize( 'ct_acool[content_link_hover_color]', function( value ) {		
+    wp.customize( 'ct_acool[content_link_hover_color]', function( value ) {
+		
         value.bind( function( newval ) {			
             $('.post a:hover').css('color', newval );		
             $('.page a:hover').css('color', newval );				
@@ -112,10 +118,19 @@
 
 
     wp.customize( 'ct_acool[footer_info]', function( value ) {
+		
         value.bind( function( newval ) {
 			$("span.footer_info").text(newval);	
-			$('span.footer_info').css('display', 'block' );				
+			$('span.footer_info').css('display', 'block' );	
+			//span.footer_info{ display:block;}		
+            //$('.ct_single_content p a:hover').css('color', newval );				
         } );
-    } );
-	
+    } );	
+
+
 } )( jQuery );
+
+
+
+
+

@@ -1,11 +1,11 @@
-<?php get_header(); ?>   
+<?php			
+get_header(); ?>   
 
 <div class="ct_single">
+	<div class="container"><div class="row">   
 
-	<div class="container"><div class="row">
- 
-		<?php if(function_exists('acool_breadcrumbs') && acool_get_option( 'ct_acool','show_breadcrumb',1 ) ){ acool_breadcrumbs();} ?> 
-    
+		<?php if(function_exists('acool_breadcrumbs') && acool_get_option( 'ct_acool','show_breadcrumb',1 ) ){ acool_breadcrumbs();} ?>     
+         
         <div class="col-md-8 ct_single_content" > 
             
         <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
@@ -20,8 +20,8 @@
             
                     <?php the_content(); ?>
                 	<p class="ct_clear"></p> 
-                </div> 
-          
+                </div>
+      
 				<?php if(has_tag()){?>
                     <div class="ct_border">
                         <div id="article-tag">
@@ -29,8 +29,7 @@
                         </div> 
                     </div>    
                         
-                <?php }?> 
-    
+                <?php }?>    
     
                	<?php
 					$args = array (
@@ -45,11 +44,10 @@
 					);
 					 
 					wp_link_pages( $args );
-				?>    
-                
+				?>
+
                 <?php
 					if ( comments_open() ){ 
-						$withcomments = "1";
 						comments_template();
 					}
                 ?>
@@ -57,9 +55,9 @@
              </div>  
         <?php endwhile;endif; ?> 
         </div>
-    
+
         <?php get_sidebar(); ?>
-             
+          
 	</div></div> 		      
 </div>
 
