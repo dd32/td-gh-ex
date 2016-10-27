@@ -82,8 +82,8 @@ class advance_front_Posts extends WP_Widget {
       					$args = array(
 										'posts_per_page'=>$count,
 										'cat' => $category,
-										'orderby' => 'ID',
-										'order'=>'ASC',
+										'orderby' => 'post_date',
+										'order' => 'DESC',
 										'paged' => $paged);
 										
 

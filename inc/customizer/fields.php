@@ -55,7 +55,14 @@ Kirki::add_field( 'advance', array(
     'priority'    => 10,
 ) );
 
-
+Kirki::add_field( 'advance', array(
+    'type'        => 'toggle',
+    'settings'    => 'advance_latest_nopic',
+    'label'       => esc_attr__( 'Disable latest post no photo', 'advance' ),
+    'section'     => 'layout_front_page',
+    'default'     => '1',
+    'priority'    => 10,
+) );
 
 
 /* Footer section */
@@ -202,8 +209,14 @@ Kirki::add_field( 'advance', array(
             'units'    => '',
         ),
 		 array(
-            'element'  => '.h-line,.nivo-caption .h-line,.btn-slider-advance,#slider .hero_btn_full',
+            'element'  => '.h-line,.nivo-caption .h-line,.btn-slider-advance,#slider .hero_btn_full,.advance_nav .current',
             'property' => 'border-color',
+            'units'    => '',
+        ),
+		
+		 array(
+            'element'  => '.pagination .current',
+            'property' => 'background',
             'units'    => '',
         ),
     )
@@ -229,13 +242,13 @@ Kirki::add_field( 'advance', array(
         ),
         array(
             'element'  => '#navmenu ul li ul li:hover,#navmenu ul > li ul li:hover,btn-slider-advance:hover,btn-border-light:hover,#submit:hover, #searchsubmit:hover,#navmenu ul > li::after,.branding-single--clone #navmenu ul li ul:hover,#slider .hero_btn:hover,.btn-lines .line-top,
-.btn-lines .line-bottom,.btn-lines .line-left,.btn-lines .line-right,.actionbox-controls-two .hero_btn:hover,#slider  .hero_btn_full:hover',
+.btn-lines .line-bottom,.btn-lines .line-left,.btn-lines .line-right,.actionbox-controls-two .hero_btn:hover,#slider  .hero_btn_full:hover,.read_more:hover',
             'property' => 'background-color',
             'units'    => '',
         ),
 		
 		  array(
-            'element'  => '#slider .hero_btn:hover,#slider  .hero_btn_full:hover',
+            'element'  => '#slider .hero_btn:hover,#slider  .hero_btn_full:hover,.read_more:hover',
             'property' => 'border-color',
             'units'    => '',
         ),

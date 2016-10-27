@@ -12,7 +12,7 @@ Domain Path: /languages/
 Description: Advance is a clean responsive WordPress theme. It is specially designed for Business, and general corporate website.  It comes with the necessary feature for your website such as a business, personal, blog, portfolio etc.It is fully responsive and thus, looks stunning on all screen types: desktop, notebook, tablet and smartphones.
 
 
-Version: 1.1.0
+Version: 1.1.1
 
 Tags: featured-images,front-page-post-form, sticky-post, threaded-comments,blog,entertainment,food-and-drink
 
@@ -807,7 +807,7 @@ NEWS
 }
 #footer .widgets .widget ul li a {
     text-decoration: none;
-    color: #888;
+    color: #FFF;
 }
 #footer .widgets .widget .menu li{padding-left:0px; padding-right:0px;}
 
@@ -839,7 +839,7 @@ NEWS
     background-color: #222533;
 }
 #copyright a {
-    color: #666;
+    color: #fff;
 }
 .copytext {
     float: left;
