@@ -36,6 +36,9 @@ Custom Css:
 
 == Change log ==
 
+= 1.3.91 =
+* Font-awesome Icons updated
+ 
 = 1.3.4 =
 * Fixed slider issue
 
