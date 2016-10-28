@@ -687,6 +687,12 @@ if (!function_exists('suevafree_scripts_styles')) {
 		wp_enqueue_script( "jquery-ui-tabs", array('jquery'));
 		wp_enqueue_script( "masonry", array('jquery') );
 
+		wp_enqueue_script  ( 'suevafree-html5', get_template_directory_uri().'/assets/scripts/html5.js');
+		wp_script_add_data ( 'suevafree-html5', 'conditional', 'IE 8' );
+		
+		wp_enqueue_script  ( 'suevafree-selectivizr', get_template_directory_uri().'/assets/scripts/selectivizr-min.js');
+		wp_script_add_data ( 'suevafree-selectivizr', 'conditional', 'IE 8' );
+
 	}
 	
 	add_action( 'wp_enqueue_scripts', 'suevafree_scripts_styles', 11 );
@@ -728,6 +734,7 @@ if (!function_exists('suevafree_setup')) {
 			"/core/includes/",
 			"/core/admin/customize/",
 			"/core/functions/",
+			"/core/post-formats/",
 			"/core/templates/",
 			"/core/metaboxes/",
 		);

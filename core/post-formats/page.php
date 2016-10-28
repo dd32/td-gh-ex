@@ -9,36 +9,50 @@
  * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-do_action('suevafree_thumbnail', 'blog' ); ?>
-    
-<div class="post-article">
+if (!function_exists('suevafree_page_format_function')) {
 
-	<?php 
-	
-		do_action('suevafree_before_content'); 
+	function suevafree_page_format_function() {
 		
-		if ( is_page() ) : 
+		do_action('suevafree_thumbnail', 'blog' ); ?>
+			
+		<div class="post-article">
 		
-			echo '<div class="line"></div>';
+			<?php 
 			
-		endif;
+				do_action('suevafree_before_content'); 
+				
+				if ( is_page() ) : 
+				
+					echo '<div class="line"></div>';
+					
+				endif;
+					
+				if ( is_search() ):
+					
+					do_action('suevafree_excerpt');
+				
+				else:
 			
-		if ( is_search() ):
+					the_content();
+					
+					echo "<div class='clear'></div>";
+					
+					wp_link_pages();
+					
+					comments_template();
+					
+				endif;
 			
-			do_action('suevafree_excerpt');
+			?>
 		
-		else:
-	
-			the_content();
-			
-			echo "<div class='clear'></div>";
-			
-			wp_link_pages();
-			
-			comments_template();
-			
-		endif;
-	
-	?>
+		</div>
 
-</div>
+<?php 
+
+	}
+
+	add_action( 'suevafree_page_format', 'suevafree_page_format_function', 10, 2 );
+
+}
+
+?>

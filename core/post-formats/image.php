@@ -10,30 +10,40 @@
  * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-	if ( ! suevafree_is_single() ) :
-	
-		do_action('suevafree_thumbnail', 'blog', 'overlay'); 
-	
-	else :
+if (!function_exists('suevafree_image_format_function')) {
 
-		do_action('suevafree_thumbnail','blog'); 
+	function suevafree_image_format_function() {
 	
+		if ( ! suevafree_is_single() ) :
+		
+			do_action('suevafree_thumbnail', 'blog', 'overlay'); 
+		
+		else :
+	
+			do_action('suevafree_thumbnail','blog'); 
+		
 ?>
-
-    <div class="post-article">
     
-        <?php 
+        <div class="post-article">
         
-            do_action('suevafree_before_content');
-            do_action('suevafree_post_info');
-            do_action('suevafree_after_content');
+            <?php 
             
-        ?>
-    
-    </div>
+                do_action('suevafree_before_content');
+                do_action('suevafree_post_info');
+                do_action('suevafree_after_content');
+                
+            ?>
+        
+        </div>
 
 <?php 
 
 	endif; 
+
+	}
+
+	add_action( 'suevafree_image_format', 'suevafree_image_format_function', 10, 2 );
+
+}
 
 ?>

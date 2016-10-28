@@ -32,8 +32,8 @@ if (!function_exists('suevafree_postformat_function')) {
 			$postformats = "standard";
 		
 		}
-						
-		get_template_part( 'core/post-formats/' . $postformats );
+
+		do_action( 'suevafree_' . $postformats . '_format' );
 	
 	}
 	

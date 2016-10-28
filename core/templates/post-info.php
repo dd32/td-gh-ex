@@ -12,7 +12,11 @@
 
 if (!function_exists('suevafree_post_info_function')) {
 	
-	function suevafree_post_info_function() { ?>
+	function suevafree_post_info_function() { 
+	
+		global $post;
+
+?>
 
         <div class="line"> 
     
