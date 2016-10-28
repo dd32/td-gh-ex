@@ -1,5 +1,5 @@
 === Arix WordPress Theme ===
-Version: 1.1
+Version: 1.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,7 +19,7 @@ License: GPLv2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
 
 == Changelog ==
 
-Version: 1.1
+Version: 1.1.1
 Date: 10/12/2016
 Description: Multiple fixes to comply with theme requirements.
 
