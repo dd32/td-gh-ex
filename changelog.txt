@@ -1,5 +1,10 @@
 == Change log ==
 
+= 2.3.1 =
+* Bug Fixed: white space issue
+* Updated: theme tags
+* Updated: All instances of http://catchthemes.com changed to https://catchthemes.com
+
 = 2.3 =
 * Added: Custom Header Support
 

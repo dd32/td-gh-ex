@@ -151,7 +151,7 @@ function create_featured_slide_transition_effects() {
 		),
 		'shuffle'	=> array(
 			'value' => 'shuffle',
-			'label' => __( 'Suffle', 'create' ),
+			'label' => __( 'Shuffle', 'create' ),
 		)
 	);
 

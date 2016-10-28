@@ -1,9 +1,9 @@
 === Create ===
 
 Contributors: Catch Themes and Emil Uzelac 
-Tags: black, tan, white, light, dark, two-columns, left-sidebar, fixed-layout, responsive-layout, custom-background, custom-menu, editor-style, featured-images, microformats, sticky-post, theme-options, translation-ready
+Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce, portfolio
 Requires at least: 4.1
-Tested up to: 4.4.2
+Tested up to: 4.6.1
 Create WordPress Theme, Copyright 2012-2016 Catchthemes.com
 Create is distributed under the terms of the GNU General Public License v3 
 

@@ -404,7 +404,7 @@ function create_profile() { ?>
 		<?php _ex( 'by', 'attribution', 'create' ); ?>
 	</span>
 	<span class="theme-author">
-		<a href="<?php echo esc_url( 'http://catchthemes.com/' ); ?>" target="_blank">
+		<a href="<?php echo esc_url( 'https://catchthemes.com/' ); ?>" target="_blank">
 			<?php echo esc_attr( 'Catch Themes' ); ?>
 		</a>
 	</span>

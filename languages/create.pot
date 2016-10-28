@@ -3,10 +3,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Create\n"
-"Report-Msgid-Bugs-To: http://catchthemes.com/support-forum/forum/create-"
+"Report-Msgid-Bugs-To: https://catchthemes.com/support-forum/forum/create-"
 "free/\n"
-"POT-Creation-Date: 2016-05-10 22:20+0545\n"
-"PO-Revision-Date: 2016-05-10 22:20+0545\n"
+"POT-Creation-Date: 2016-10-28 22:22+0545\n"
+"PO-Revision-Date: 2016-10-28 22:22+0545\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: en\n"
@@ -454,7 +454,7 @@ msgid "Tile Blind"
 msgstr ""
 
 #: ../inc/default-options.php:154
-msgid "Suffle"
+msgid "Shuffle"
 msgstr ""
 
 #: ../inc/default-options.php:170

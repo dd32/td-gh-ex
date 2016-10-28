@@ -52,19 +52,19 @@ function create_customize_register( $wp_customize ) {
         	//Add Theme instruction, Support Forum, Changelog, Donate link, Review, Facebook, Twitter, Google+, Pinterest links
             $important_links = array(
 							'theme_instructions' => array(
-								'link'	=> esc_url( 'http://catchthemes.com/theme-instructions/create/' ),
+								'link'	=> esc_url( 'https://catchthemes.com/theme-instructions/create/' ),
 								'text' 	=> __( 'Theme Instructions', 'create' ),
 								),
 							'support' => array(
-								'link'	=> esc_url( 'http://catchthemes.com/support/' ),
+								'link'	=> esc_url( 'https://catchthemes.com/support/' ),
 								'text' 	=> __( 'Support', 'create' ),
 								),
 							'changelog' => array(
-								'link'	=> esc_url( 'http://catchthemes.com/changelogs/create-theme/' ),
+								'link'	=> esc_url( 'https://catchthemes.com/changelogs/create-theme/' ),
 								'text' 	=> __( 'Changelog', 'create' ),
 								),
 							'donate' => array(
-								'link'	=> esc_url( 'http://catchthemes.com/donate/' ),
+								'link'	=> esc_url( 'https://catchthemes.com/donate/' ),
 								'text' 	=> __( 'Donate Now', 'create' ),
 								),
 							'review' => array(
@@ -136,7 +136,7 @@ function create_customize_scripts() {
 	wp_register_script( 'create_customizer_custom', get_template_directory_uri() . '/js/customizer-custom-scripts.js', array( 'jquery' ), '20131028', true );
 
 	$create_misc_links = array(
-							'upgrade_link' 				=> esc_url( 'http://catchthemes.com/themes/create-pro/' ),
+							'upgrade_link' 				=> esc_url( 'https://catchthemes.com/themes/create-pro/' ),
 							'upgrade_text'	 			=> __( 'Upgrade To Pro &raquo;', 'create' ),
 						);
 

@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Create\n"
-"POT-Creation-Date: 2016-05-10 22:20+0545\n"
-"PO-Revision-Date: 2016-05-10 22:20+0545\n"
+"POT-Creation-Date: 2016-10-28 22:22+0545\n"
+"PO-Revision-Date: 2016-10-28 22:22+0545\n"
 "Last-Translator: \n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: de_DE\n"
@@ -446,7 +446,7 @@ msgid "Tile Blind"
 msgstr "Kachel"
 
 #: ../inc/default-options.php:154
-msgid "Suffle"
+msgid "Shuffle"
 msgstr "Zufall"
 
 #: ../inc/default-options.php:170
@@ -784,11 +784,11 @@ msgstr "Suche nach:"
 #~ msgid "Search"
 #~ msgstr "Suche"
 
-#~ msgid "http://catchthemes.com/themes/create/"
-#~ msgstr "http://catchthemes.com/themes/create/"
+#~ msgid "https://catchthemes.com/themes/create/"
+#~ msgstr "https://catchthemes.com/themes/create/"
 
 #~ msgid "Catch Themes"
 #~ msgstr "Catch Themes"
 
-#~ msgid "http://catchthemes.com/"
-#~ msgstr "http://catchthemes.com"
+#~ msgid "https://catchthemes.com/"
+#~ msgstr "https://catchthemes.com"
