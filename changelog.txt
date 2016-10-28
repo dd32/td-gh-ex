@@ -1,5 +1,8 @@
 == Change log ==
 
+= 1.6.2 =
+* Updated: Reset all settings compatibility with WordPress v4.6
+
 = 1.6.1 =
 * Bug Fixed: German language translation (Reported by Thorsten Rotter)
 

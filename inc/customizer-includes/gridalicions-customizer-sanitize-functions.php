@@ -219,27 +219,6 @@ function gridalicious_sanitize_select( $input, $setting ) {
 
 
 /**
- * Reset all settings to default
- * @param  $input entered value
- * @return sanitized output
- *
- * @since Full Frame 1.9
- */
-function gridalicious_reset_all_settings( $input ) {
-	if ( $input == 1 ) {
-        // Set default values
-        set_theme_mod( 'gridalicious_theme_options', gridalicious_get_default_theme_options() );
-       
-        // Flush out all transients	on reset
-        gridalicious_flush_transients();
-    } 
-    else {
-        return '';
-    }
-}
-
-
-/**
  * Dummy Sanitizaition function as it contains no value to be sanitized
  *
  * @since Full Frame 1.9

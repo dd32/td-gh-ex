@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gridalicious\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/support-forum/forum/gridalicious-free/\n"
-"POT-Creation-Date: 2016-08-27 19:51+0545\n"
-"PO-Revision-Date: 2016-08-27 19:51+0545\n"
+"POT-Creation-Date: 2016-10-28 19:33+0545\n"
+"PO-Revision-Date: 2016-10-28 19:33+0545\n"
 "Last-Translator: Laurent DURETZ <laurent@duretz.net>\n"
 "Language-Team: Laurent DURETZ <laurent@duretz.net>\n"
 "Language: fr_FR\n"
@@ -585,6 +585,10 @@ msgstr "Liens importants"
 #: ../inc/customizer-includes/gridalicious-customizer.php:214
 msgid "Upgrade To Pro &raquo;"
 msgstr "Améliorer vers version pro & raquo;"
+
+#: ../inc/customizer-includes/gridalicious-customizer.php:217
+msgid "Refresh the customizer page after saving to view reset effects"
+msgstr ""
 
 #: ../inc/gridalicious-breadcrumb.php:57
 msgid "Home"

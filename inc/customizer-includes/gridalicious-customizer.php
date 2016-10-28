@@ -150,7 +150,7 @@ function gridalicious_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'gridalicious_theme_options[reset_all_settings]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['reset_all_settings'],
-		'sanitize_callback' => 'gridalicious_reset_all_settings',
+		'sanitize_callback' => 'gridalicious_sanitize_checkbox',
 		'transport'			=> 'postMessage',
 	) );
 
@@ -214,12 +214,31 @@ function gridalicious_customize_scripts() {
 							'upgrade_text'	=> __( 'Upgrade To Pro &raquo;', 'gridalicious' ),
 						);
 
+	$gridalicious_misc_links['reset_message'] = esc_html__( 'Refresh the customizer page after saving to view reset effects', 'gridalicious' );
+
 	//Add Upgrade Button
 	wp_localize_script( 'gridalicious_customizer_custom', 'gridalicious_misc_links', $gridalicious_misc_links );
 
 	wp_enqueue_style( 'gridalicious_customizer_custom', get_template_directory_uri() . '/css/gridalicious-customizer.css');
 }
 add_action( 'customize_controls_enqueue_scripts', 'gridalicious_customize_scripts');
+
+
+/**
+ * Function to reset date with respect to condition
+ */
+function gridalicious_reset_data() {
+	$options  = gridalicious_get_theme_options();
+    if( $options['reset_all_settings'] ) {
+    	remove_theme_mods();
+
+        // Flush out all transients	on reset
+        gridalicious_flush_transients();
+
+        return;
+    }
+}
+add_action( 'customize_save_after', 'gridalicious_reset_data' );
 
 //Active callbacks for customizer
 require get_template_directory() . '/inc/customizer-includes/gridalicions-customizer-active-callbacks.php';

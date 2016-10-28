@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Gridalicious\n"
-"POT-Creation-Date: 2016-08-27 19:51+0545\n"
-"PO-Revision-Date: 2016-08-27 19:51+0545\n"
+"POT-Creation-Date: 2016-10-28 19:33+0545\n"
+"PO-Revision-Date: 2016-10-28 19:33+0545\n"
 "Last-Translator: \n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: de_DE\n"
@@ -609,6 +609,10 @@ msgstr "Wichtige links"
 #: ../inc/customizer-includes/gridalicious-customizer.php:214
 msgid "Upgrade To Pro &raquo;"
 msgstr "Auf Pro &raquo; upgraden"
+
+#: ../inc/customizer-includes/gridalicious-customizer.php:217
+msgid "Refresh the customizer page after saving to view reset effects"
+msgstr ""
 
 #: ../inc/gridalicious-breadcrumb.php:57
 msgid "Home"
