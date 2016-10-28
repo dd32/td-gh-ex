@@ -633,7 +633,13 @@ if (!function_exists('alhenalite_scripts_styles')) {
 		wp_enqueue_script( "masonry", array('jquery') );
 
 		alhenalite_enqueue_script('/assets/js');
+
+		wp_enqueue_script  ( 'alhenalite-html5', get_template_directory_uri().'/assets/scripts/html5.js');
+		wp_script_add_data ( 'alhenalite-html5', 'conditional', 'IE 8' );
 		
+		wp_enqueue_script  ( 'alhenalite-selectivizr', get_template_directory_uri().'/assets/scripts/selectivizr-min.js');
+		wp_script_add_data ( 'alhenalite-selectivizr', 'conditional', 'IE 8' );
+
 	}
 	
 	add_action( 'wp_enqueue_scripts', 'alhenalite_scripts_styles', 11 );

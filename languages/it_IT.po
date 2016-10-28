@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-11 22:17+0200\n"
-"PO-Revision-Date: 2016-07-11 22:17+0200\n"
+"POT-Creation-Date: 2016-10-29 01:10+0200\n"
+"PO-Revision-Date: 2016-10-29 01:10+0200\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
 "Language: it_IT\n"
@@ -588,6 +588,23 @@ msgstr "Elementi H6"
 msgid "Insert a size, for for H6 elements (For example, 14px) "
 msgstr "Inserisci una grandezza, per i titoli H6 ( Per esempio, 14px )"
 
+#: core/classes/class-notice.php:58
+msgid ""
+"Upgrade to the premium version of Alhena, to enable 600+ Google Fonts, "
+"Unlimited sidebars, Portfolio section and much more."
+msgstr ""
+"Aggiorna alla versione premium di Alhena, per attivare oltre 600 Google "
+"Fonts, barre laterali illimitate, sezione Portfolio e molto altro."
+
+#: core/classes/class-notice.php:59
+#: core/classes/class-plugin-activation.php:372
+msgid "Dismiss this notice"
+msgstr "Chiudi questa notifica"
+
+#: core/classes/class-notice.php:62 core/classes/customize.php:34
+msgid "Upgrade to Alhena Premium"
+msgstr "Aggiorna a Alhena Pro"
+
 #: core/classes/class-plugin-activation.php:301
 msgid "Install Required Plugins"
 msgstr "Installa i plugin richiesti"
@@ -640,10 +657,6 @@ msgstr ""
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr "Tutti i plugin sono stati installati ed attivati con successo. %1$s"
-
-#: core/classes/class-plugin-activation.php:372
-msgid "Dismiss this notice"
-msgstr "Chiudi questa notifica"
 
 #: core/classes/class-plugin-activation.php:373
 msgid "Please contact the administrator of this site for help."
@@ -823,10 +836,6 @@ msgstr "Tutte le installazioni sono state completate."
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr "Installazione Plugin %1$s (%2$d/%3$d)"
-
-#: core/classes/customize.php:34
-msgid "Upgrade to Alhena Premium"
-msgstr "Aggiorna a Alhena Pro"
 
 #: core/classes/customize.php:306
 msgid ""
@@ -1207,7 +1216,7 @@ msgstr "SKU:"
 msgid "N/A"
 msgstr "N/A"
 
-#: woocommerce/single-product/product-image.php:42
+#: woocommerce/single-product/product-image.php:51
 msgid "Placeholder"
 msgstr "Segnaposto"
 

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-11 22:17+0200\n"
+"POT-Creation-Date: 2016-10-29 01:09+0200\n"
 "PO-Revision-Date: 2015-09-12 17:44+0100\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
@@ -554,6 +554,21 @@ msgstr ""
 msgid "Insert a size, for for H6 elements (For example, 14px) "
 msgstr ""
 
+#: core/classes/class-notice.php:58
+msgid ""
+"Upgrade to the premium version of Alhena, to enable 600+ Google Fonts, "
+"Unlimited sidebars, Portfolio section and much more."
+msgstr ""
+
+#: core/classes/class-notice.php:59
+#: core/classes/class-plugin-activation.php:372
+msgid "Dismiss this notice"
+msgstr ""
+
+#: core/classes/class-notice.php:62 core/classes/customize.php:34
+msgid "Upgrade to Alhena Premium"
+msgstr ""
+
 #: core/classes/class-plugin-activation.php:301
 msgid "Install Required Plugins"
 msgstr ""
@@ -603,10 +618,6 @@ msgstr ""
 #: core/classes/class-plugin-activation.php:371
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
-msgstr ""
-
-#: core/classes/class-plugin-activation.php:372
-msgid "Dismiss this notice"
 msgstr ""
 
 #: core/classes/class-plugin-activation.php:373
@@ -776,10 +787,6 @@ msgstr ""
 #: core/classes/class-plugin-activation.php:3304
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: core/classes/customize.php:34
-msgid "Upgrade to Alhena Premium"
 msgstr ""
 
 #: core/classes/customize.php:306
@@ -1149,7 +1156,7 @@ msgstr ""
 msgid "N/A"
 msgstr ""
 
-#: woocommerce/single-product/product-image.php:42
+#: woocommerce/single-product/product-image.php:51
 msgid "Placeholder"
 msgstr ""
 

@@ -27,6 +27,12 @@ if (!function_exists('alhenalite_required_plugins')) {
 				'slug'      => 'wip-custom-login',
 				'required'  => false,
 			),
+			
+			array(
+				'name'      => 'WIP WooCarousel Lite',
+				'slug'      => 'wip-woocarousel-lite',
+				'required'  => false,
+			),
 	
 			array(
 				'name'      => 'Regenerate Thumbnails',

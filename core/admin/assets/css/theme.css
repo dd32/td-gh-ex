@@ -15,6 +15,68 @@
 	float:right;
 }
 
+/* ===============================================
+   NOTICE SECTION
+   =============================================== */
+   
+.alhenalite-notice {
+	width:100;
+	display:block;
+	border-color:#ec7063;
+	padding:25px
+}
+
+.alhenalite-notice .dismiss-notice {
+	margin-top:5px;
+	font-size:12px;
+}
+
+.alhenalite-notice .alhenalite-noticedescription {
+	float:left;
+	font-size:14px;
+}
+
+.alhenalite-notice .button {
+	background: #ec7063;
+	border:solid 2px #ec7063;
+	color:#fff !important;
+	padding: 8px 16px;
+	height:auto;
+	line-height:normal;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	float:right;
+	text-transform:uppercase;
+	font-weight:bold
+}
+
+.alhenalite-notice .button:hover ,
+.alhenalite-notice .button:active ,
+.alhenalite-notice .button:focus {
+	border-color: #e74c3c;
+	background-color:#e74c3c;
+}
+
+@media screen and (max-width: 782px) {
+
+	.alhenalite-notice {
+		margin-top: 15px !important;
+	}
+
+	.alhenalite-notice .alhenalite-noticedescription {
+		float:none;
+		text-align:center;
+	}
+
+	.alhenalite-notice .button {
+		float: none;
+		margin: 10px 0 0 0;
+		width: 100%;
+		text-align: center;	
+	}
+
+}
 
 /* ===============================================
    TABS
