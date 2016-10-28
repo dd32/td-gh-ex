@@ -46,9 +46,9 @@
 		/*  Home icon in main menu
 		/*-----------------------------------------------------------------------------------*/ 
 			if($('body').hasClass('rtl')) {
-				$('.main-navigation .menu-item-home > a').append('<i class="fa fa-home spaceLeft"></i>');
+				$('.main-navigation .menu-item-home:first-child > a').append('<i class="fa fa-home spaceLeft"></i>');
 			} else {
-				$('.main-navigation .menu-item-home > a').prepend('<i class="fa fa-home spaceRight"></i>');
+				$('.main-navigation .menu-item-home:first-child > a').prepend('<i class="fa fa-home spaceRight"></i>');
 			}
 			
 		/*-----------------------------------------------------------------------------------*/
