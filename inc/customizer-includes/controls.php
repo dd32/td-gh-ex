@@ -31,44 +31,32 @@ class Blue_Planet_Customize_Heading_Control extends WP_Customize_Control {
 	 *
 	 * @since 1.0.0
 	 */
-	public function render_content() {
-	?>
-      <h3 class="bp-customize-heading"><?php echo esc_html( $this->label ); ?></h3><!-- .bp-customize-heading -->
-    <?php
-	}
-}
-
-/**
- * Customize Control for Message.
- *
- * @since 1.0.0
- *
- * @see WP_Customize_Control
- */
-class Blue_Planet_Customize_Message_Control extends WP_Customize_Control {
+	public function render_content() {}
 
 	/**
-	 * Control type.
-	 *
-	 * @access public
-	 * @var string
-	 */
-	public $type = 'message';
-
-	/**
-	 * Render content.
+	 * Add custom parameters to pass to the JS via JSON.
 	 *
 	 * @since 1.0.0
 	 */
-	public function render_content() {
+	public function to_json() {
+		parent::to_json();
+
+		$this->json['value'] = $this->value();
+		$this->json['link']  = $this->get_link();
+		$this->json['id']    = $this->id;
+	}
+
+	/**
+	 * Content template.
+	 *
+	 * @since 1.0.0
+	 */
+	public function content_template() {
 	?>
-	<?php if ( ! empty( $this->label ) ) : ?>
-		<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-	<?php endif; ?>
-	<?php if ( ! empty( $this->description ) ) : ?>
-		<span class="description customize-control-description bp-customize-message"><?php echo $this->description; ?></span>
-	<?php endif; ?>
-	<?php
+      <# if ( data.label ) { #>
+      	<h3 class="bp-customize-heading">{{ data.label }}</h3>
+      <# } #>
+    <?php
 	}
 }
 
@@ -118,7 +106,72 @@ class Blue_Planet_Customize_Dropdown_Taxonomies_Control extends WP_Customize_Con
 		$args['taxonomy'] = $our_taxonomy;
 		$this->taxonomy = esc_attr( $our_taxonomy );
 
+		$tax_args = array(
+			'hierarchical' => 0,
+			'taxonomy'     => $this->taxonomy,
+		);
+		$all_taxonomies = get_categories( $tax_args );
+
+		$choices = array();
+		$choices[0] = esc_html__( '&mdash; Select &mdash;', 'blue-planet' );
+		if ( ! empty( $all_taxonomies ) && ! is_wp_error( $all_taxonomies ) ) {
+			foreach ( $all_taxonomies as $tax ) {
+				$choices[ $tax->term_id ] = $tax->name;
+			}
+		}
+
+		$this->choices = $choices;
+
 		parent::__construct( $manager, $id, $args );
+	}
+
+	/**
+	 * Enqueue scripts/styles.
+	 *
+	 * @since  1.0.0
+	 */
+	public function enqueue() {
+		wp_enqueue_script( 'blue-planet-customize-controls' );
+	}
+
+
+	/**
+	 * Add custom parameters to pass to the JS via JSON.
+	 *
+	 * @since 1.0.0
+	 */
+	public function to_json() {
+		parent::to_json();
+
+		$this->json['choices'] = $this->choices;
+		$this->json['link']    = $this->get_link();
+		$this->json['value']   = $this->value();
+		$this->json['id']      = $this->id;
+	}
+
+	/**
+	 * Content template.
+	 *
+	 * @since 1.0.0
+	 */
+	public function content_template() {
+		?>
+			<label>
+			<# if ( data.label ) { #>
+				<span class="customize-control-title">{{ data.label }}</span>
+			<# } #>
+			<# if ( data.description ) { #>
+				<span class="description customize-control-description">{{{ data.description }}}</span>
+			<# } #>
+			<select {{{ data.link }}} name="_customize-{{ data.type }}-{{ data.id }}" id="{{ data.id }}">
+				<# _.each( data.choices, function( label, choice ) { #>
+
+					<option value="{{ choice }}" <# if ( choice === data.value ) { #> selected="selected" <# } #>>{{{ label }}}</option>
+
+				<# } ) #>
+			</select>
+			</label>
+		<?php
 	}
 
 	/**
@@ -126,31 +179,5 @@ class Blue_Planet_Customize_Dropdown_Taxonomies_Control extends WP_Customize_Con
 	 *
 	 * @since 1.0.0
 	 */
-	public function render_content() {
-
-		$tax_args = array(
-		'hierarchical' => 0,
-		'taxonomy'     => $this->taxonomy,
-		);
-		$all_taxonomies = get_categories( $tax_args );
-
-	?>
-    <label>
-      <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-         <select <?php $this->link(); ?>>
-            <?php
-			  printf( '<option value="%s" %s>%s</option>', '', selected( $this->value(), '', false ), __( '&mdash; Select &mdash;', 'blue-planet' ) );
-				?>
-            <?php if ( ! empty( $all_taxonomies ) ) : ?>
-				<?php foreach ( $all_taxonomies as $key => $tax ) : ?>
-                <?php
-				  printf( '<option value="%s" %s>%s</option>', $tax->term_id, selected( $this->value(), $tax->term_id, false ), $tax->name );
-					?>
-				<?php endforeach; ?>
-			<?php endif; ?>
-         </select>
-
-    </label>
-    <?php
-	}
+	public function render_content() {}
 }
