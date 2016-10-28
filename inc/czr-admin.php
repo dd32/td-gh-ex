@@ -58,7 +58,7 @@ if ( ! class_exists( 'CZR_admin_init' ) ) :
       if ( wp_is_post_revision( $post_id ) || ( ! empty($post) && 'auto-draft' == $post->post_status ) )
         return;
 
-      if ( ! class_exists( 'CZR_post_thumbnails' ) ) {
+      if ( ! class_exists( 'CZR_post_thumbnails' ) || ! is_object(CZR_post_thumbnails::$instance) ) {
         CZR___::$instance -> czr_fn_req_once( 'inc/czr-front.php' );
         new CZR_post_thumbnails();
       }
@@ -81,11 +81,11 @@ if ( ! class_exists( 'CZR_admin_init' ) ) :
       if ( wp_is_post_revision( $post_id ) || ( ! empty($post) && 'auto-draft' == $post->post_status ) )
         return;
 
-      if ( ! class_exists( 'CZR_post_thumbnails' ) ) {
+      if ( ! class_exists( 'CZR_post_thumbnails' ) || ! is_object(CZR_post_thumbnails::$instance) ) {
         CZR___::$instance -> czr_fn_req_once( 'inc/czr-front.php' );
         new CZR_post_thumbnails();
       }
-      if ( ! class_exists( 'CZR_slider' ) ) {
+      if ( ! class_exists( 'CZR_slider' ) || ! is_object(CZR_slider::$instance) ) {
         CZR___::$instance -> czr_fn_req_once( 'inc/czr-front.php' );
         new CZR_slider();
       }
@@ -773,7 +773,7 @@ foreach ( $plugins as $plugin_path ) {
 endif;
 //GET MYSQL VERSION
 global $wpdb;
-$mysql_ver =  ( ! empty( $wpdb->use_mysqli ) && $wpdb->use_mysqli ) ? @mysqli_get_server_info( $wpdb->dbh ) : @mysql_get_server_info();
+$mysql_ver =  ( ! empty( $wpdb->use_mysqli ) && $wpdb->use_mysqli ) ? @mysqli_get_server_info( $wpdb->dbh ) : '';
 ?>
 
 PHP Version:              <?php echo PHP_VERSION . "\n"; ?>
@@ -781,7 +781,6 @@ MySQL Version:            <?php echo $mysql_ver . "\n"; ?>
 Web Server Info:          <?php echo $_SERVER['SERVER_SOFTWARE'] . "\n"; ?>
 
 WordPress Memory Limit:   <?php echo ( $this -> czr_fn_let_to_num( WP_MEMORY_LIMIT )/( 1024 ) )."MB"; ?><?php echo "\n"; ?>
-PHP Safe Mode:            <?php echo ini_get( 'safe_mode' ) ? "Yes" : "No\n"; ?>
 PHP Memory Limit:         <?php echo ini_get( 'memory_limit' ) . "\n"; ?>
 PHP Upload Max Size:      <?php echo ini_get( 'upload_max_filesize' ) . "\n"; ?>
 PHP Post Max Size:        <?php echo ini_get( 'post_max_size' ) . "\n"; ?>

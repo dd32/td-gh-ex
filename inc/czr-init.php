@@ -382,7 +382,7 @@ if ( ! class_exists( 'CZR___' ) ) :
     * @since  3.3+
     */
     function czr_fn_is_customize_preview_frame() {
-      return ! is_admin() && isset($_REQUEST['wp_customize']);
+      return is_customize_preview() || ( ! is_admin() && isset($_REQUEST['customize_messenger_channel']) );
     }
 
 
@@ -2387,10 +2387,6 @@ if ( ! class_exists( 'CZR_plugins_compat' ) ) :
                }
                .tc-wc-menu .widget_shopping_cart .product_list_widget li a.remove {
                  position: relative; float: left; top: auto; margin-right: 0.2em;
-               }
-               /* hack for the first letter issue */
-               .tc-wc-menu .count:before {
-                 content: '';
                }
                .tc-wc-menu .widget_shopping_cart .product_list_widget {
                  max-height: 10em;
