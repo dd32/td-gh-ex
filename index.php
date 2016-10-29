@@ -53,7 +53,9 @@ get_header(); ?>
     
     <?php if ( !is_active_sidebar( 'sidebar_frontpage' ) ) : ?>
      <?php if(is_customize_preview()){ ?>
-                                        <div class="replace_widgets"><?php _e('You can Advance Widgets Here For service Block,Welcome Widgets ,Post Widgets.','advance'); ?> <?php _e('Customize => theme option => front page widgets','advance'); ?></a></div>
+                                        <div class="replace_widgets">
+										<?php _e('You can add Advance front page Widgets Here for service block,welcome , latest post etc.','advance'); ?> <?php _e('Customize => theme option => Frontpage widget area','advance'); ?></a>
+                                        </div>
                                 <?php } ?> 
                                 <?php endif; ?>
                                 
@@ -61,7 +63,11 @@ get_header(); ?>
  <?php if(is_customize_preview()){ ?>
   <?php $value = get_theme_mod( 'advance_latest_post', true ); ?>
  <div class="<?php echo ( $value ) ? 'advance-latest-on' : 'advance-latest-off '; ?> ">
-                                        <div class="replace_widgets "><?php _e('You can remove latest Post section','advance'); ?> <?php _e('Customize => theme option => General setting=>Disable Latest post in front page','advance'); ?></a></div></div>
+                                        <div class="replace_widgets ">
+										<?php _e('You can remove latest Post section','advance'); ?>
+                                         <?php _e('Customize => theme option => General setting=>Disable Latest post in front page','advance'); ?>
+                                         </div>
+                                        </div>
                                 <?php } ?> 
                                 
                                 
@@ -89,7 +95,9 @@ get_header(); ?>
 			 		<?php get_template_part('pagination'); ?>  
 
 				<?php else : ?>
-
+                <?php if(! is_customize_preview()){ ?>
+                 <div class="replace_widgets"><?php _e('You can add Advance front page Widgets Here .','advance'); ?> <?php _e('Customize => theme option => Frontpage widget area','advance'); ?></a></div>
+ <?php } ?> 
 			<?php get_template_part( 'content', 'none' ); ?>
 			
 		<?php endif; ?>

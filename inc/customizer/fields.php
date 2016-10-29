@@ -215,7 +215,7 @@ Kirki::add_field( 'advance', array(
         ),
 		
 		 array(
-            'element'  => '.pagination .current',
+            'element'  => '.pagination .current,.overlay-search,.advance-search .search-form,.advance-search .search-form .search-submit',
             'property' => 'background',
             'units'    => '',
         ),

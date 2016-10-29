@@ -30,8 +30,14 @@
 
 					 <div class="social-advance">
 						<div class="search-toggle">
-                			<i class="fa fa-search"></i>
-                				<a href="#search-container" class="screen-reader-text"><?php _e( 'Search', 'advance' ); ?></a>
+                			 <div class="search-icon">
+                        <i class="fa fa-search"></i>
+                        <div class="advance-search">
+                            <div class="close">&times;</div>
+                                 <?php get_search_form(); ?>
+                         <div class="overlay-search"> </div> 
+                        </div>
+                    </div> 
             			</div>
                  	</div>
         		<?php endif; ?>
@@ -40,7 +46,8 @@
       		<!--social-->    
             	<?php get_template_part('parts/social','loop'); ?>
            <?php endif?>      
-       
+     
+
         <!--MENU STARTS-->
        			<h3 class="menu-toggle"><?php _e( 'Menu', 'advance' ); ?></h3>
        

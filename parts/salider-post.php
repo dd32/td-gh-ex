@@ -17,14 +17,15 @@ $advance_staticslider_image = esc_url( get_theme_mod('advance_staticslider_image
 					
 				);
 
-			$loop_advance = new WP_Query($args_advance);
-          			wp_reset_postdata(); 
-			     if($loop_advance->have_posts()) : ?>
-			  			<?php while($loop_advance->have_posts()) : 
-								$loop_advance->the_post(); ?>
-									<section class="masthead" style="background-image:url( <?php echo $advance_staticslider_image ?>);" >
+			$loop_advance = new WP_Query($args_advance);?>
+          			
+					<section class="masthead" style="background-image:url( <?php echo $advance_staticslider_image ?>);" >
                     					<div class="masthead-overlay"></div>  
 										<div class="masthead-arrow"></div>
+			    <?php if($loop_advance->have_posts()) : ?>
+			  			<?php while($loop_advance->have_posts()) : 
+								$loop_advance->the_post(); ?>
+									
         
 					 						<div class="masthead-dsc">
            										<div class="row warp">
@@ -46,6 +47,8 @@ $advance_staticslider_image = esc_url( get_theme_mod('advance_staticslider_image
                                    							</div>
                                     					</div>
                                    				 </div>
-									</section>
+									
 						 <?php endwhile; ?>
+                         <?php wp_reset_postdata(); ?>
 					<?php endif;?>
+					</section>
