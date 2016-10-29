@@ -8,7 +8,7 @@
     height: 154px;
     overflow: hidden;
     z-index: 1; /*In front of grass*/
-    background: transparent url(images/egg1.png)repeat-x;
+    background: transparent url(../images/egg1.png)repeat-x;
 }
 
 .egg2 {
@@ -19,5 +19,5 @@
     height: 154px;
     overflow: hidden;
     z-index: 4;
-    background: transparent url(images/egg2.png)repeat-x;
+    background: transparent url(../images/egg2.png)repeat-x;
 }

@@ -1,6 +1,6 @@
 === Bunny ===
 Contributors: Carolina NYmark
-Tags: threaded-comments, custom-menu, sticky-post, translation-ready, one-column, two-columns, editor-style, featured-images, theme-options, right-sidebar
+Tags: threaded-comments, custom-menu, sticky-post, translation-ready, one-column, two-columns, editor-style, featured-images, theme-options, right-sidebar,blog
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
@@ -26,11 +26,25 @@ The code is sometimes commented in both English and Swedish. -In those cases, th
 If you have any questions or suggestions for this theme please use the theme support page, http://wordpress.org/support/theme/bunny.
 
 = My title and tagline looks funny, how do I fix this? =
-Please open the theme customizer. Under the headline 'Site Title and Tagline' you will find the settings for the arced(curved) text.
+Please open the theme customizer. Under the Theme Options panel and the 'Arc Settings' section you will find the settings for the curved text.
 Set a small number for a high arc, and high number for a low arc.
 
 
 == Changelog ==
+
+= 1.6 2016-10-26 =
+Updated the styling of the menu. Moved the mobile menu below the site title.
+Added an option to show halloween themed images.
+Moved the theme options into their own panel.
+Updated the styling of borders, comments, and sidebars.
+Clouds: replaced the javascript with css animations.
+Moved the extra css files into the inc folder.
+Removed archive.php, search.php, 404.php, author.php. These now fall back to index.php.
+Replaced page.php and single.php with singular.php.
+Improved aria roles and screen reader texts.
+Added a new larger screenshot.
+
+
 = 1.5 2016-06-18 =
 Updated theme uri and theme tags.
 Added support for title-tag.
@@ -68,6 +82,9 @@ Moved the arc javascript output to the footer.
 
 
 == Resources Used In This Theme ==
+
+Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
 
 Fonts
 Open Sans Condensed is released under Apache License, version 2.0.
@@ -111,5 +128,13 @@ Reindeer:
 https://openclipart.org/detail/189378/flying-reindeer-by-isacvale-189378
 Moon: 
 https://openclipart.org/detail/121903/full-moon-by-merlin2525
+Bat:
+https://openclipart.org/detail/2699/bat
+Pumpkin:
+https://openclipart.org/detail/2858/pumpkin
+Tombstone: 
+https://openclipart.org/detail/87133/halloween-tombstone-angry-face
+
+2016-10-26: The leaf was also downloaded from https://openclipart.org, but has since been removed.
 
 The rest of the images were made by and released into the public domain by the theme author.

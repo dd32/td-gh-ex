@@ -1,6 +1,6 @@
 /*Adds a Christmas feeling -see customizer */
-html {
-	background: url(images/wintersky.png) repeat-x fixed;
+body{
+	background: url(../images/wintersky.png) repeat-x fixed;
 }
 
 .grass {
@@ -13,9 +13,10 @@ html {
     height: 184px;
     overflow: hidden;
     z-index: -1;
-    background: transparent url(images/snow.png)repeat-x;
+    background: transparent url(../images/snow.png)repeat-x;
 }
-.kaninf{
+
+.kanin{
 	position: fixed;
     top:44%;
     left: 20px;
@@ -23,7 +24,7 @@ html {
     height: 443px;
     overflow: hidden;
     z-index: 2; /*Display in front of grass*/
-    background: transparent url(images/kaninchristmas1.png)no-repeat;
+    background: transparent url(../images/kaninchristmas1.png)no-repeat;
 }
 
 .sol{
@@ -34,16 +35,16 @@ html {
     height: 160px;
     overflow: hidden;
     z-index:-3;/*Display behind the clouds*/
-    background: transparent url(images/rudolf.png)no-repeat;
+    background: transparent url(../images/bat.png)no-repeat;
 }
 
 .far-clouds {
-    background: transparent url(images/cloud1.png) 500px 94px repeat-x fixed;
+    background: transparent url(../images/cloud1.png) 500px 94px repeat-x fixed;
 	 z-index: -2;
 	 opacity: 0.7;
 }
 .near-clouds {
-    background: transparent url(images/cloud2.png)0px 63px repeat-x fixed;
+    background: transparent url(../images/cloud2.png)0px 63px repeat-x fixed;
 	z-index: -1;
 	opacity: 0.7;
 }
@@ -56,7 +57,7 @@ html {
     height: 154px;
     overflow: hidden;
     z-index: 1; /*In front of grass*/
-    background: transparent url(images/gift1.png)repeat-x;
+    background: transparent url(../images/gift1.png)repeat-x;
 }
 
 .egg2 {
@@ -67,5 +68,5 @@ html {
     height: 154px;
     overflow: hidden;
     z-index: 4;
-    background: transparent url(images/gift2.png)repeat-x;
+    background: transparent url(../images/gift2.png)repeat-x;
 }
