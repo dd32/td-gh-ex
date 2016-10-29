@@ -34,7 +34,11 @@ window.matchMedia = window.matchMedia || (function(e, f) {
     }
 })(document);
 
-
+jQuery(document).ready(function($){
+// WOW
+    new WOW().init();
+	
+	});
 /* 
  * js start
  */
@@ -69,8 +73,7 @@ jQuery(document).ready(function($){
         jQuery('#footer').css('margin-top', 1 + (docHeight - footerTop) + 'px');
     }
 	
-	// WOW
-    new WOW().init();
+	
 	
 	// matchHeight
                     jQuery('.matchhe').matchHeight({

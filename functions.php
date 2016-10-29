@@ -305,7 +305,7 @@ wp_enqueue_script('advance_other',get_template_directory_uri().'/js/advance_othe
         } else {
           wp_enqueue_style( 'advance_preloder', get_template_directory_uri() . '/css/preloder.css' ,'advance_preloder', true); 
         }
-		
+		wp_enqueue_script('wow',get_template_directory_uri().'/js/wow.js',array('jquery'), true);
 $advance_Static_Sliderpara = get_theme_mod('advance_Static_Sliderpara',0);
 if( isset($advance_Static_Sliderpara) && $advance_Static_Sliderpara == 0 ):
 wp_enqueue_script('advance_StaticSliderh',get_template_directory_uri().'/js/halfparallax.js',array('jquery'), true);

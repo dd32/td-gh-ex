@@ -94,7 +94,7 @@ class advance_front_Posts extends WP_Widget {
 					<?php  while ($wp_query_post_advance->have_posts()) {								
 							$wp_query_post_advance->the_post();?>
    
-              					<div class="matchhe post_warp large-4 medium-6 columns  ">
+              					<div class="matchhe post_warp large-4 medium-6 columns wow fadeInLeft page-delay ">
                    					<div class="single_latest_news">
               
                   						<div class="latest_news_image">

@@ -10,7 +10,7 @@
 ?>
 
 	
-              					<div class="matchhe post_warp large-4 medium-6 columns  ">
+              					<div class="matchhe post_warp large-4 medium-6 columns wow fadeInLeft page-delay  ">
                    					<div class="single_latest_news">
               
                   						<div class="latest_news_image">

@@ -38,7 +38,7 @@ class advance_serviceblock extends WP_Widget {
 <div class=" style2-service"  style=" <?php if (!empty($instance['content_bg'])): ?> background-color:<?php echo esc_attr($instance['content_bg']); ?> ;<?php endif; ?> <?php if (!empty($instance['padtop']) || !empty($instance['padbottom']) ): ?> padding-bottom: <?php echo esc_attr($instance['padbottom']); ?>%;  padding-top:<?php echo esc_attr($instance['padtop']); ?>%; <?php endif; ?>"  >
 	<div class=" row">
 			<?php if (!empty($instance['title']) || !empty($instance['sub_title'])): ?>
- 					<div class="section-header wow fadeIn animated animated">
+ 					<div class="section-header wow fadeIn animated " data-wow-duration="1s">
  
 						 <?php if (!empty($instance['title'])): ?>
                             	<h2 class="section-title wow fadeIn" style=" color:<?php echo $content_titlecolor ;?>"  >
@@ -70,7 +70,7 @@ class advance_serviceblock extends WP_Widget {
 			$wp_query_advance = new WP_Query($args);
 			?>
             
-			<div class="medium-4 columns ">
+			<div class="medium-4 columns wow slideInUp animated  " data-wow-duration="0.5s">
 				<div class=" style2-content btn-lines matchhe">
 <!--hover effct-->
 					<span class="line-top"></span>
@@ -105,7 +105,7 @@ class advance_serviceblock extends WP_Widget {
  	<a <?php if (!empty($instance['box_uri2'])): ?> href="<?php echo esc_url($instance['box_uri2']); ?> " <?php endif; ?> >
  
  
-				<div class="medium-4 columns">
+				<div class="medium-4 columns wow slideInUp animated  " data-wow-duration="0.5s">
 						<div class=" style2-content btn-lines matchhe">
 							<!--hover effct-->
 							<span class="line-top"></span>
@@ -146,7 +146,7 @@ class advance_serviceblock extends WP_Widget {
  	<a <?php if (!empty($instance['box_uri3'])): ?> href="<?php echo esc_url($instance['box_uri3']); ?> " <?php endif; ?> >
  
  
-				<div class="medium-4 columns">
+				<div class="medium-4 columns wow slideInUp animated  " data-wow-duration="1s">
 						<div class=" style2-content btn-lines matchhe">
 							<!--hover effct-->
 							<span class="line-top"></span>
