@@ -22,7 +22,7 @@
 	<?php else : ?>
 	
 			<h1 class="entry-title">
-				<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
+				<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 			</h1>
 	
 	<?php endif; ?>
@@ -32,7 +32,7 @@
 		<?php if ( !is_single() && get_the_title() === '' ) : ?>
 
 				<span class="clock-icon">
-					<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
+					<a href="<?php the_permalink(); ?>" rel="bookmark">
 						<time datetime="<?php the_time( 'Y-m-d' ); ?>"><?php the_time(get_option('date_format')); ?></time>
 					</a>
 				</span><!-- .clock-icon -->
@@ -44,20 +44,6 @@
 				</span><!-- .clock-icon -->
 			
 		<?php endif; ?>
-		
-		<?php if ( ! post_password_required() ) :
-		
-					$format = get_post_format();
-						if ( current_theme_supports( 'post-formats', $format ) ) :
-							printf( '<span class="%1$s-icon"> <a href="%2$s">%3$s</a></span>',
-									$format,							
-									esc_url( get_post_format_link( $format ) ),
-									get_post_format_string( $format )
-								);
-						endif;
-				
-			   endif;
-		?>
 
 		<?php if ( ! post_password_required() ) : ?>
 
@@ -96,7 +82,7 @@
 				<div class="content">
 					<?php if ( has_post_thumbnail() ) : ?>
 								
-								<a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>">
+								<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 									<?php the_post_thumbnail(); ?>
 								</a>
 								

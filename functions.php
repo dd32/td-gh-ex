@@ -210,7 +210,7 @@ add_action('customize_register', 'ayaspirit_customize_register');
 function ayaspirit_load_scripts() {
 
 	// load main stylesheet.
-	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/font-awesome.min.css', array( ) );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array( ) );
 	wp_enqueue_style( 'ayaspirit-style', get_stylesheet_uri(), array() );
 	
 	wp_enqueue_style( 'ayaspirit-fonts', ayaspirit_fonts_url(), array(), null );

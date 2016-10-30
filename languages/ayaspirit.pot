@@ -95,8 +95,12 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: single.php:40 single.php:41
-msgid "%title"
+#: single.php:41
+msgid "Prev Chapter: %title"
+msgstr ""
+
+#: single.php:42
+msgid "Next Chapter: %title"
 msgstr ""
 
 #: template-parts/content-none.php:17
