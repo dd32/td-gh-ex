@@ -40,7 +40,11 @@ of this theme. This also displays the navigation menu as well or any extra featu
             <?php get_search_form(); ?>
         </div>
     </div>
-    <header id="site-header" class="site-header" style="background: url(<?php header_image(); ?>);">
+    <?php if (get_header_image()) { ?>
+        <header id="site-header" class="site-header" style="background: url(<?php header_image(); ?>);">
+    <?php } else { ?>
+            <header id="site-header" class="site-header">
+    <?php } ?>
         <div id="site-branding" class="site-branding">
             <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
             <h4 class="site-description"><?php bloginfo('description'); ?></h4>

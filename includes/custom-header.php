@@ -31,7 +31,6 @@ function beyond_expectations_custom_header_setup() {
     $args = array(
         // Text color and image (empty to use none).
         'default-text-color'     => 'ffffff',
-        'default-image'          => get_template_directory_uri() . '/images/header-image.jpg',
 
         // Set height and width, with a maximum value for the width.
         'height'                 => 300,
