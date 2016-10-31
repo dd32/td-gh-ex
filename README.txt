@@ -61,6 +61,12 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.01
+* Added hooks to the header
+* Changed block titles to always show on mobile
+Premium: Setting to choose custom title font
+Premium: Settings to change site title & description sizes and spacing
+
 #### 1.3.00
 * Mobile style tweaks
 * Fixed 404 message & nothing found message

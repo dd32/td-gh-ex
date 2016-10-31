@@ -25,6 +25,8 @@
     </div>
     <?php endif; ?>
     
+    <?php do_action ( 'electa_hook_before_branding' ); ?>
+    
     <div class="site-header-inner">
     	<div class="site-branding">
             <?php if ( get_header_image() ) : ?>
@@ -40,6 +42,8 @@
             <?php endif; ?>
     	</div>
         
+        <?php do_action ( 'electa_hook_before_navigation' ); ?>
+        
         <nav id="site-navigation" class="main-navigation" role="navigation">
             <span class="header-menu-button"><i class="fa fa-bars"></i><span><?php _e( 'Menu', 'electa' ); ?></span></span>
             <div id="main-menu" class="main-menu-container">
@@ -47,6 +51,8 @@
                 <?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
             </div>
         </nav> <!-- #site-navigation -->
+        
+        <?php do_action ( 'electa_hook_after_navigation' ); ?>
         
         <?php if( get_theme_mod( 'kra-header-search', false ) ) : ?>
         <div class="header-social">
@@ -56,6 +62,8 @@
         
         <?php printf( __( '</div><div class="site-info">Theme: %1$s by %2$s', 'electa' ), 'Electa', '<a href="https://kairaweb.com/">Kaira</a>' ); ?>
     </div>
+    
+    <?php do_action ( 'electa_hook_after_in_header' ); ?>
 </header><!-- #masthead -->
 
 <div id="content" class="site-content">
