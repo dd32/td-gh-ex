@@ -95,9 +95,7 @@ get_header(); ?>
 			 		<?php get_template_part('pagination'); ?>  
 
 				<?php else : ?>
-                <?php if(! is_customize_preview()){ ?>
-                 <div class="replace_widgets"><?php _e('You can add Advance front page Widgets Here .','advance'); ?> <?php _e('Customize => theme option => Frontpage widget area','advance'); ?></a></div>
- <?php } ?> 
+               
 			<?php get_template_part( 'content', 'none' ); ?>
 			
 		<?php endif; ?>
