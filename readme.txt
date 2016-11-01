@@ -98,6 +98,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.7.15
+- New:     Function thinkup_photon_exception() added to ensure theme theme bundled transparent.png image displays correctly when Jetpack Photon is activated.
+
 Version 1.7.14
 - Updated: Improved ecaping of outputs in 01.general-settings.php.
 - Updated: Function "Walker_Nav_Menu_Responsive" renamed to "thinkup_nav_menu_responsive".
