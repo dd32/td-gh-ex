@@ -524,3 +524,16 @@ function thinkup_googlefonts_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'thinkup_googlefonts_scripts' );
 
+
+//----------------------------------------------------------------------------------
+//	FIX JETPACK PHOTON IMAGE LOAD ISSUE - DISABLE CACHING FOR SPECIFIC IMAGES 
+//----------------------------------------------------------------------------------
+
+function thinkup_photon_exception( $val, $src, $tag ) {
+        if ( $src == get_template_directory_uri() . '/images/transparent.png' ) {
+                return true;
+        }
+        return $val;
+}
+add_filter( 'jetpack_photon_skip_image', 'thinkup_photon_exception', 10, 3 );
+
