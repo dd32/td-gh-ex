@@ -93,6 +93,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.2.16
+- New:     Function thinkup_photon_exception() added to ensure theme theme bundled transparent.png image displays correctly when Jetpack Photon is activated.
+
 Version 1.2.15
 - Updated: Logo alt tag now translation ready.
 - Updated: Improved ecaping of outputs in 00.theme-setup.php.
