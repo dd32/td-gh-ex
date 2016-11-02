@@ -147,6 +147,9 @@ Affinity also supports the following features:
 
 == Changelog ==
 
+= 28 October 2016 =
+* Add additional checks for header image.
+
 = 6 October 2016 =
 * Since HEADER_TEXTCOLOR has been deprecated use default-text-color
 
