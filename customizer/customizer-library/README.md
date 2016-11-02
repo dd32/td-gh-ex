@@ -8,7 +8,7 @@ The customizer allows WordPress developers to add options for themes and plugins
 
 Instead of adding options to the $wp_customize object directly, developers can just define an array of controls and sections and pass it to the Customizer_Library class.
 
-To see how this works in practice, please see the [Customizer Library conica](https://github.com/devinsays/customizer-library-conica) theme.
+To see how this works in practice, please see the [Customizer Library Demo](https://github.com/devinsays/customizer-library-demo) theme.
 
 The Customizer Library adds sections, settings and controls to the customizer based on the array that gets passed to it.  There is default sanitization for all options (though you're still welcome to pass a sanitize_callback).  All options are also saved by default as theme_mods (though look for a future update to make this more flexible).
 
@@ -68,7 +68,7 @@ $panel = 'panel';
 
 $panels[] = array(
 	'id' => $panel,
-	'title' => __( 'Panel Examples', 'conica' ),
+	'title' => __( 'Panel Examples', 'demo' ),
 	'priority' => '100'
 );
 
@@ -76,14 +76,14 @@ $section = 'panel-section';
 
 $sections[] = array(
 	'id' => $section,
-	'title' => __( 'Panel Section', 'conica' ),
+	'title' => __( 'Panel Section', 'demo' ),
 	'priority' => '10',
 	'panel' => $panel
 );
 
 $options['example-panel-text'] = array(
 	'id' => 'example-panel-text',
-	'label'   => __( 'Example Text Input', 'conica' ),
+	'label'   => __( 'Example Text Input', 'demo' ),
 	'section' => $section,
 	'type'    => 'text',
 );
@@ -179,7 +179,7 @@ $options['example-radio'] = array(
 ~~~php
 $options['example-upload'] = array(
 	'id' => 'example-upload',
-	'label'   => __( 'Example Upload', 'conica' ),
+	'label'   => __( 'Example Upload', 'demo' ),
 	'section' => $section,
 	'type'    => 'upload',
 	'default' => '',
@@ -191,7 +191,7 @@ $options['example-upload'] = array(
 ~~~php
 $options['example-color'] = array(
 	'id' => 'example-color',
-	'label'   => __( 'Example Color', 'conica' ),
+	'label'   => __( 'Example Color', 'demo' ),
 	'section' => $section,
 	'type'    => 'color',
 	'default' => $color // hex
@@ -204,10 +204,10 @@ $options['example-color'] = array(
 ~~~php
 $options['example-textarea'] = array(
 	'id' => 'example-textarea',
-	'label'   => __( 'Example Textarea', 'conica' ),
+	'label'   => __( 'Example Textarea', 'demo' ),
 	'section' => $section,
 	'type'    => 'textarea',
-	'default' => __( 'Example textarea text.', 'conica'),
+	'default' => __( 'Example textarea text.', 'demo'),
 );
 ~~~
 
@@ -216,7 +216,7 @@ $options['example-textarea'] = array(
 ~~~php
 $options['example-font'] = array(
 	'id' => 'example-font',
-	'label'   => __( 'Example Font', 'conica' ),
+	'label'   => __( 'Example Font', 'demo' ),
 	'section' => $section,
 	'type'    => 'select',
 	'choices' => customizer_library_get_font_choices(),
@@ -229,7 +229,7 @@ $options['example-font'] = array(
 ~~~php
 $options['example-range'] = array(
 	'id' => 'example-range',
-	'label'   => __( 'Example Range Input', 'conica' ),
+	'label'   => __( 'Example Range Input', 'demo' ),
 	'section' => $section,
 	'type'    => 'range',
 	'input_attrs' => array(
@@ -238,6 +238,19 @@ $options['example-range'] = array(
         'step'  => 1,
         'style' => 'color: #0a0',
 	)
+);
+~~~
+
+### Content
+
+~~~php
+$options['example-content'] = array(
+	'id' => 'example-content',
+	'label' => __( 'Example Content', 'conica' ),
+	'section' => $section,
+	'type' => 'content',
+	'content' => '<p>' . __( 'Content to output. Use <a href="#">HTML</a> if you like.', 'conica' ) . '</p>',
+	'description' => __( 'Optional: Example Description.', 'conica' )
 );
 ~~~
 
@@ -253,10 +266,10 @@ $customizer_library = Customizer_Library::Instance();
 $customizer_library->add_options( $options );
 ~~~
 
-### conica
+### Demo
 
 A full working example can be found here:
-https://github.com/devinsays/customizer-library-conica/blob/master/inc/customizer-options.php
+https://github.com/devinsays/customizer-library-demo/blob/master/inc/customizer-options.php
 
 ## Styles
 
@@ -305,7 +318,7 @@ if ( $mod ) {
 The Customizer Library has a helper functions to output font stacks and load inline fonts.  This code was also developed by [The Theme Foundry](https://thethemefoundry.com/) for use in [Make](https://thethemefoundry.com/wordpress-themes/make/).  You can see an example of font enqueing in "inc/mods.php":
 
 ~~~php
-function conica_fonts() {
+function demo_fonts() {
 
 	// Font options
 	$fonts = array(
@@ -316,10 +329,10 @@ function conica_fonts() {
 	$font_uri = customizer_library_get_google_font_uri( $fonts );
 
 	// Load Google Fonts
-	wp_enqueue_style( 'conica_fonts', $font_uri, array(), null, 'screen' );
+	wp_enqueue_style( 'demo_fonts', $font_uri, array(), null, 'screen' );
 
 }
-add_action( 'wp_enqueue_scripts', 'conica_fonts' );
+add_action( 'wp_enqueue_scripts', 'demo_fonts' );
 ~~~
 
 Fonts can be used in inline styles like this:
@@ -345,6 +358,11 @@ if ( $mod != customizer_library_get_default( $setting ) ) {
 ~~~
 
 ## Change Log
+
+Development
+===
+
+* Enhancement: Content option (for help text, HTML output, etc.)
 
 1.3.0
 ===

@@ -1,0 +1,275 @@
+/*--------------------------------------------------------------
+-- Light Skin --
+--------------------------------------------------------------*/
+
+body {
+    background: #FFF; /* Fallback for when there is no custom background color defined. */
+}
+
+body,
+button,
+input,
+select,
+textarea {
+    color: #808080;
+}
+
+pre {
+    background: #eee;
+}
+
+hr {
+    background-color: #ccc;
+}
+
+.entry-content code {
+    background: #f7f7f7;
+    border: 1px solid #D8D8D8;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea {
+    color: #666;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.18) inset;
+}
+
+/* =Content
+----------------------------------------------- */
+.hentry {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+.wp-caption {
+    border: 1px solid #ccc;
+}
+
+.entry-content code {
+    background: #f7f7f7;
+    border: 1px solid #D8D8D8;
+}
+
+.scroll-to-top {
+    background-color: #1d1d1d;
+}
+
+.site-header {
+    background-color: #FFF;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.12);
+    color: #8a8a8a;
+}
+
+.not-found .fa-ban {
+    color: #BDBDBD;
+}
+
+.search-results .page-header {
+}
+.search-results .page-title span {
+}
+
+.widget-area .widget-title {
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.2);
+}
+
+/* ---------------- Header colors ---------------- */
+
+.header-top-bar {
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.08) inset;
+    color: #b0b0b0;
+}
+.header-top-bar-left ul li {
+    box-shadow: 1px 0 0 rgba(0, 0, 0, 0.08);
+}
+.header-top-bar-right ul li {
+    box-shadow: 1px 0 0 rgba(0, 0, 0, 0.08);
+}
+.header-top-bar-right-ad i.fa,
+.header-top-bar-right-no i.fa,
+.header-top-bar-ad i.fa,
+.header-top-bar-no i.fa
+ {
+    color: #1d1d1d;
+}
+.header-bar-inner,
+.site-sticky-header .header-bar {
+    background-color: #FFF;
+}
+.site-sticky-header .header-bar {
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.12);
+}
+.site-header-main {
+    background-color: #FFFFFF;
+}
+.site-header-three .header-bar,
+.site-header-four .header-bar {
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+}
+
+.search-block {
+    background-color: #FFF;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+.search-block-close i {
+    color: #000000;
+}
+
+.site-sticky-header .main-navigation {
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+    background-color: #FFF;
+}
+
+/* ---------------- Navigation default colors ---------------- */
+
+.main-navigation,
+.header-cart {
+    color: #1d1d1d;
+}
+.main-navigation ul ul {
+    background-color: #FFF;
+}
+
+.main-navigation ul ul li.current_page_item > a,
+.main-navigation ul ul li.current-menu-item > a,
+.main-navigation ul ul li.current_page_ancestor > a {
+    color: #FFF;
+}
+
+.menu-dropdown-btn {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #838383;
+}
+
+.conica-navigation-style-blocks .nav-arrow {
+    border-bottom: 15px solid #ebebeb;
+}
+
+/* ---------------- Page Header ---------------- */
+.title-bar.page-header {
+    background-color: #1d1d1d;
+    box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.08) inset;
+}
+.title-bar.page-header h1 {
+    color: #FFF;
+}
+.page-header .conica-breadcrumbs {
+    color: #AFAFAF;
+}
+.page-header .conica-breadcrumbs a {
+    color: #DFDFDF;
+}
+
+/* ---- Content Area Styling ---- */
+
+body.page-template-default .site-main,
+.woocommerce #container #content,
+.woocommerce-page #container #content,
+.woocommerce.single-product #container #content,
+.woocommerce-page.single-product #container #content,
+body .content-area .site-main {
+    box-shadow: -1px 0 0 rgba(0, 0, 0, 0.04) inset;
+}
+body.page-template-template-left-sidebar .site-main,
+body.blog.conica-blog-lists-leftsidebar .content-area .site-main,
+body.archive.conica-blog-lists-archives-leftsidebar .content-area .site-main,
+body.single.single-post.conica-blog-single-leftsidebar .content-area .site-main {
+    box-shadow: 1px 0 0 rgba(0, 0, 0, 0.04) inset;
+}
+.widget-area {
+    box-shadow: -1px 0 0 rgba(0, 0, 0, 0.04);
+}
+body.page-template-template-left-sidebar .widget-area,
+body.blog.conica-blog-lists-leftsidebar .widget-area,
+body.archive.conica-blog-lists-archives-leftsidebar .widget-area,
+body.single.single-post.conica-blog-single-leftsidebar .widget-area {
+    box-shadow: 1px 0 0 rgba(0, 0, 0, 0.04);
+}
+
+.site-boxed {
+    background-color: #FFF;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.12);
+}
+
+.post,
+.search article.page {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* -------- Home Slider Styling -------- */
+
+.home-slider-wrap {
+    background-color: #1d1d1d;
+    border-bottom: 1px solid #efefef;
+}
+.home-slider-block {
+    color: #FFF !important;
+}
+.home-slider-block-inner {
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+}
+.home-slider-block-bg {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.home-slider-block-title a {
+    color: #fff;
+}
+.home-slider-pager a.selected span {
+    background-color: #ffffff;
+}
+.home-slider-pager span {
+    border: 1px solid #FFFFFF;
+}
+.home-slider-prev,
+.home-slider-next {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #FFFFFF;
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+}
+.home-slider-prev:hover,
+.home-slider-next:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ---- WooCommerce Pages Left SideBar ---- */
+
+body.post-type-archive-product.woocommerce.conica-shop-leftsidebar .widget-area,
+body.archive.woocommerce.conica-shop-archives-leftsidebar .widget-area,
+body.single-product.woocommerce.conica-shop-single-leftsidebar .widget-area {
+    box-shadow: 1px 0 0 rgba(0, 0, 0, 0.04);
+}
+body.post-type-archive-product.woocommerce.conica-shop-leftsidebar #container #content,
+body.archive.woocommerce.conica-shop-archives-leftsidebar #container #content,
+body.single-product.woocommerce.conica-shop-single-leftsidebar #container #content {
+    box-shadow: 1px 0 0 rgba(0, 0, 0, 0.04) inset;
+}
+
+/* ---- Footer Styling ---- */
+
+.site-footer-standard,
+.site-footer-custom {
+    background-color: #FDFDFD;
+    color: #1d1d1d;
+}
+.site-footer-no-widgets {
+    color: rgba(0, 0, 0, 0.4);
+}
+.site-footer .widgettitle,
+.site-footer .widget-title {
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.2);
+    color: #000000;
+}
+
+.site-footer-bottom-bar {
+    background-color: #1d1d1d;
+    color: #656565;
+}
+
+.site-footer-social {
+    border-top: 1px solid #efefef;
+}
+.site-footer-social .site-footer-bottom-bar {
+    background-color: #efefef;
+    color: #000;
+}

@@ -74,6 +74,7 @@ if ( ! function_exists( 'customizer_library_register' ) ) : /**
 
 					case 'text':
 					case 'url':
+					case 'number':
 					case 'select':
 					case 'radio':
 					case 'checkbox':
@@ -85,16 +86,6 @@ if ( ! function_exists( 'customizer_library_register' ) ) : /**
 						);
 
 						break;
-					
-					case 'upsell':
-
-	                    $wp_customize->add_control(
-	                        new Customizer_Library_Upsell(
-	                            $wp_customize, $option['id'], $option
-	                        )
-	                    );
-
-	                	break;
 
 					case 'color':
 
@@ -162,6 +153,19 @@ if ( ! function_exists( 'customizer_library_register' ) ) : /**
 							) );
 
 						endif;
+
+						break;
+
+					case 'content':
+					case 'line':
+
+						// error_log( print_r( $option ) );
+
+						$wp_customize->add_control(
+							new Customizer_Library_Content(
+								$wp_customize, $option['id'], $option
+							)
+						);
 
 						break;
 

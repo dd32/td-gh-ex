@@ -12,6 +12,7 @@ function customizer_conica_fonts() {
 
 	// Font options
 	$fonts = array(
+		get_theme_mod( 'conica-title-font', customizer_library_get_default( 'conica-title-font' ) ),
 		get_theme_mod( 'conica-body-font', customizer_library_get_default( 'conica-body-font' ) ),
 		get_theme_mod( 'conica-heading-font', customizer_library_get_default( 'conica-heading-font' ) )
 	);

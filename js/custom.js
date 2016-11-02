@@ -1,37 +1,32 @@
 /**
- * Conica Theme Custom Functionality
- *
+ * Custom Functionality
  */
 ( function( $ ) {
     
     jQuery( document ).ready( function() {
         
+        // Add button to sub-menu item to show nested pages / Only used on mobile
+        $( '.main-navigation li.page_item_has_children, .main-navigation li.menu-item-has-children' ).prepend( '<span class="menu-dropdown-btn"><i class="fa fa-angle-down"></i></span>' );
         // Insert up arrow for navigation
-        $( '.navigation-main ul > li a' ).wrapInner( '<span class="nav-span"></span>' );
-        $( '.navigation-main ul ul' ).prepend( '<span class="nav-arrow"></span>' );
+        $( '.main-navigation ul li a' ).wrapInner( '<span class="nav-span"></span>' );
+        $( '.main-navigation ul ul' ).prepend( '<span class="nav-arrow"></span>' );
         
-        $( '.stick-header' ).waypoint( 'sticky', {
-            handler: function(direction) {
-                if ( direction=='down' ) {
-                    $( '.sticky-wrapper' ).css( 'height', '75px' );
-                } else {
-                    $( '.sticky-wrapper' ).css( 'height', 'auto' );
-                }
-            },
-            offset: 0
+        // Mobile nav button functionality
+        $( '.menu-dropdown-btn' ).bind( 'click', function() {
+            $(this).parent().toggleClass( 'open-page-item' );
+        });
+        // The menu button
+        $( '.header-menu-button' ).click( function(e) {
+            $( 'body' ).toggleClass( 'show-main-menu' );
+        });
+        $( '.main-menu-close' ).click( function(e){
+            $( '.header-menu-button' ).click();
         });
         
-		// Adding padding to the footer widgets
-		$( '.footer-widgets .widget').wrapInner( '<div class="footer-widgets-pad" />' );
-		// Add class to last footer widget
-		$( '.footer-widgets .widget:last').addClass( 'footer-widget-last' );
-		
         // Search Show / Hide
-        $( '.search-button' ).toggle( function(){
-            $( '.search-block' ).animate( { bottom: '-=55' }, 120 );
+        $( '.search-button' ).click( function(e) {
+            $( 'body' ).toggleClass( 'show-site-search' );
             $( '.search-block .search-field' ).focus();
-        },function(){
-            $( '.search-block' ).animate( { bottom: '+=55' }, 120 );
         });
         
         // Scroll To Top Button Functionality
@@ -79,10 +74,11 @@
                 fx: 'uncover-fade',
                 duration: 450
             },
-            auto: 6500,
+            auto: 5000,
             pagination: '.home-slider-pager',
             prev: '.home-slider-prev',
             next: '.home-slider-next'
         });
     }
+    
 } )( jQuery );

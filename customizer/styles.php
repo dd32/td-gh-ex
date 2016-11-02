@@ -26,38 +26,42 @@ function customizer_library_conica_build_styles() {
 		Customizer_Library_Styles()->add( array(
 			'selectors' => array(
 				'#comments .form-submit #submit,
-                .search-block .search-submit,
-                .no-results-btn,
-                button,
-                input[type="button"],
-                input[type="reset"],
-                input[type="submit"],
-                .woocommerce ul.products li.product a.add_to_cart_button, .woocommerce-page ul.products li.product a.add_to_cart_button,
-                .woocommerce ul.products li.product .onsale, .woocommerce-page ul.products li.product .onsale,
-                .woocommerce button.button.alt,
-                .woocommerce-page button.button.alt,
-                .woocommerce input.button.alt:hover,
-                .woocommerce-page #content input.button.alt:hover,
-                .woocommerce .cart-collaterals .shipping_calculator .button,
-                .woocommerce-page .cart-collaterals .shipping_calculator .button,
-                .woocommerce a.button,
-                .woocommerce-page a.button,
-                .woocommerce input.button,
-                .woocommerce-page #content input.button,
-                .woocommerce-page input.button,
-                .woocommerce #review_form #respond .form-submit input,
-                .woocommerce-page #review_form #respond .form-submit input,
-                .woocommerce-cart .wc-proceed-to-checkout a.checkout-button,
-                .single-product span.onsale,
-                .main-navigation ul ul a:hover,
-                .main-navigation ul ul li.current-menu-item > a,
-                .main-navigation ul ul li.current_page_item > a,
-                .main-navigation ul ul li.current-menu-parent > a,
-                .main-navigation ul ul li.current_page_parent > a,
-                .main-navigation ul ul li.current-menu-ancestor > a,
-                .main-navigation ul ul li.current_page_ancestor > a,
-                .main-navigation button,
-                .wpcf7-submit'
+				.search-block .search-submit,
+				.no-results-btn,
+				.search-block .search-submit,
+				.conica-navigation-style-blocks a:hover span,
+				.conica-navigation-style-blocks li.current_page_item > a span,
+				.conica-navigation-style-blocks li.current_page_ancestor > a span,
+				.main-navigation ul ul li a:hover,
+				.main-navigation ul ul li.current-menu-item > a,
+				.main-navigation ul ul li.current_page_item > a,
+				.main-navigation ul ul li.current-menu-parent > a,
+				.main-navigation ul ul li.current_page_parent > a,
+				.main-navigation ul ul li.current-menu-ancestor > a,
+				.main-navigation ul ul li.current_page_ancestor > a,
+				button,
+				input[type="button"],
+				input[type="reset"],
+				input[type="submit"],
+				.woocommerce ul.products li.product a.add_to_cart_button, .woocommerce-page ul.products li.product a.add_to_cart_button,
+				.woocommerce ul.products li.product .onsale, .woocommerce-page ul.products li.product .onsale,
+				.woocommerce button.button.alt,
+				.woocommerce-page button.button.alt,
+				.woocommerce input.button.alt:hover,
+				.woocommerce-page #content input.button.alt:hover,
+				.woocommerce .cart-collaterals .shipping_calculator .button,
+				.woocommerce-page .cart-collaterals .shipping_calculator .button,
+				.woocommerce a.button,
+				.woocommerce-page a.button,
+				.woocommerce input.button,
+				.woocommerce-page #content input.button,
+				.woocommerce-page input.button,
+				.woocommerce #review_form #respond .form-submit input,
+				.woocommerce-page #review_form #respond .form-submit input,
+				.woocommerce-cart .wc-proceed-to-checkout a.checkout-button:hover,
+				.single-product span.onsale,
+				.woocommerce nav.woocommerce-pagination ul li span.current,
+				.wpcf7-submit'
 			),
 			'declarations' => array(
 				'background' => 'inherit',
@@ -67,28 +71,75 @@ function customizer_library_conica_build_styles() {
 	}
 	
 	$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
-
 	if ( $mod !== customizer_library_get_default( $setting ) ) {
 
 		$color = sanitize_hex_color( $mod );
 
 		Customizer_Library_Styles()->add( array(
 			'selectors' => array(
-				'.content-area .entry-content a,
+				'a,
+				.conica-navigation-style-plain a:hover,
+				.conica-navigation-style-plain li.current-menu-item > a,
+				.conica-navigation-style-plain li.current_page_item > a,
+				.conica-navigation-style-plain li.current-menu-parent > a,
+				.conica-navigation-style-plain li.current_page_parent > a,
+				.conica-navigation-style-plain li.current-menu-ancestor > a,
+				.conica-navigation-style-plain li.current_page_ancestor > a,
+				.content-area .entry-content a,
 				#comments a,
-				.search-btn,
 				.post-edit-link,
 				.site-title a,
+				.entry-content a,
+				.conica-blog-standard-block a,
+				.widget ul li a,
+				#comments .logged-in-as a,
+				.entry-footer a,
 				.error-404.not-found .page-header .page-title span,
 				.search-button .fa-search,
-				.header-cart-checkout.cart-has-items .fa-shopping-cart'
+				.header-cart-checkout.cart-has-items i.fa'
 			),
 			'declarations' => array(
-                'color' => $color . ' !important'
+                'color' => $color . ''
 			)
 		) );
 	}
-	
+	$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+	if ( $mod !== customizer_library_get_default( $setting ) ) {
+
+		$color = sanitize_hex_color( $mod );
+
+		Customizer_Library_Styles()->add( array(
+			'selectors' => array(
+				'.conica-navigation-style-underline a:hover,
+				.conica-navigation-style-underline li.current-menu-item > a,
+				.conica-navigation-style-underline li.current_page_item > a,
+				.conica-navigation-style-underline li.current-menu-parent > a,
+				.conica-navigation-style-underline li.current_page_parent > a,
+				.conica-navigation-style-underline li.current-menu-ancestor > a,
+				.conica-navigation-style-underline li.current_page_ancestor > a'
+			),
+			'declarations' => array(
+                'box-shadow' => '0 -4px ' . $color . ' inset'
+			)
+		) );
+	}
+	$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+	if ( $mod !== customizer_library_get_default( $setting ) ) {
+
+		$color = sanitize_hex_color( $mod );
+
+		Customizer_Library_Styles()->add( array(
+			'selectors' => array(
+				'.site-header,
+				.site-footer-widgets .widgettitle,
+				.conica-navigation-style-underline ul ul'
+			),
+			'declarations' => array(
+                'border-color' => $color
+			)
+		) );
+	}
+	/* ---------------------------------------- Primary Color -------- */
 	
 
 	// Secondary Color
@@ -102,29 +153,29 @@ function customizer_library_conica_build_styles() {
 		Customizer_Library_Styles()->add( array(
 			'selectors' => array(
 				'.main-navigation button:hover,
-                #comments .form-submit #submit:hover,
-                .search-block .search-submit:hover,
-                .no-results-btn:hover,
-                button,
-                input[type="button"],
-                input[type="reset"],
-                input[type="submit"],
-                .woocommerce input.button.alt,
-                .woocommerce-page #content input.button.alt,
-                .woocommerce .cart-collaterals .shipping_calculator .button,
-                .woocommerce-page .cart-collaterals .shipping_calculator .button,
-                .woocommerce a.button:hover,
-                .woocommerce-page a.button:hover,
-                .woocommerce input.button:hover,
-                .woocommerce-page #content input.button:hover,
-                .woocommerce-page input.button:hover,
-                .woocommerce ul.products li.product a.add_to_cart_button:hover, .woocommerce-page ul.products li.product a.add_to_cart_button:hover,
-                .woocommerce button.button.alt:hover,
-                .woocommerce-page button.button.alt:hover,
-                .woocommerce #review_form #respond .form-submit input:hover,
-                .woocommerce-page #review_form #respond .form-submit input:hover,
-                .woocommerce-cart .wc-proceed-to-checkout a.checkout-button:hover,
-                .wpcf7-submit:hover'
+				#comments .form-submit #submit:hover,
+				.search-block .search-submit:hover,
+				.no-results-btn:hover,
+				button,
+				input[type="button"],
+				input[type="reset"],
+				input[type="submit"],
+				.woocommerce input.button.alt,
+				.woocommerce-page #content input.button.alt,
+				.woocommerce .cart-collaterals .shipping_calculator .button,
+				.woocommerce-page .cart-collaterals .shipping_calculator .button,
+				.woocommerce a.button:hover,
+				.woocommerce-page a.button:hover,
+				.woocommerce input.button:hover,
+				.woocommerce-page #content input.button:hover,
+				.woocommerce-page input.button:hover,
+				.woocommerce ul.products li.product a.add_to_cart_button:hover, .woocommerce-page ul.products li.product a.add_to_cart_button:hover,
+				.woocommerce button.button.alt:hover,
+				.woocommerce-page button.button.alt:hover,
+				.woocommerce #review_form #respond .form-submit input:hover,
+				.woocommerce-page #review_form #respond .form-submit input:hover,
+				.woocommerce-cart .wc-proceed-to-checkout a.checkout-button,
+				.wpcf7-submit:hover'
 			),
 			'declarations' => array(
 				'background' => 'inherit',
@@ -142,23 +193,23 @@ function customizer_library_conica_build_styles() {
 		Customizer_Library_Styles()->add( array(
 			'selectors' => array(
 				'a:hover,
-                .widget-area .widget a:hover,
-                .site-footer-widgets .widget a:hover,
-                .site-footer .widget a:hover,
-                .search-btn:hover,
-                .search-button .fa-search:hover,
-                .woocommerce #content div.product p.price,
-                .woocommerce-page #content div.product p.price,
-                .woocommerce-page div.product p.price,
-                .woocommerce #content div.product span.price,
-                .woocommerce div.product span.price,
-                .woocommerce-page #content div.product span.price,
-                .woocommerce-page div.product span.price,
-
-                .woocommerce #content div.product .woocommerce-tabs ul.tabs li.active,
-                .woocommerce div.product .woocommerce-tabs ul.tabs li.active,
-                .woocommerce-page #content div.product .woocommerce-tabs ul.tabs li.active,
-                .woocommerce-page div.product .woocommerce-tabs ul.tabs li.active'
+				.header-top-bar-left .header-social-icon:hover,
+				.widget-area .widget a:hover,
+				.site-footer-widgets .widget a:hover,
+				.site-footer .widget a:hover,
+				.search-btn:hover,
+				.search-button .fa-search:hover,
+				.woocommerce #content div.product p.price,
+				.woocommerce-page #content div.product p.price,
+				.woocommerce-page div.product p.price,
+				.woocommerce #content div.product span.price,
+				.woocommerce div.product span.price,
+				.woocommerce-page #content div.product span.price,
+				.woocommerce-page div.product span.price,
+				.woocommerce #content div.product .woocommerce-tabs ul.tabs li.active,
+				.woocommerce div.product .woocommerce-tabs ul.tabs li.active,
+				.woocommerce-page #content div.product .woocommerce-tabs ul.tabs li.active,
+				.woocommerce-page div.product .woocommerce-tabs ul.tabs li.active'
 			),
 			'declarations' => array(
 				'color' => $color
@@ -255,7 +306,25 @@ function customizer_library_conica_build_styles() {
 			)
 		) );
 	}
+	
+	// Site Title Font
+	$setting = 'conica-title-font';
+	$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+	$stack = customizer_library_get_font_stack( $mod );
 
+	if ( $mod != customizer_library_get_default( $setting ) ) {
+
+		Customizer_Library_Styles()->add( array(
+			'selectors' => array(
+				'.site-title a'
+			),
+			'declarations' => array(
+				'font-family' => $stack
+			)
+		) );
+
+	}
+	
 }
 endif;
 

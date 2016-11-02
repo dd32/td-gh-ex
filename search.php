@@ -7,17 +7,15 @@
 
 get_header(); ?>
 	
-	<div class="site-container">
-		
-		<section id="primary" class="content-area">
-			<main id="main" class="site-main" role="main">
+	<section id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
 
-			<?php if ( have_posts() ) : ?>
-
-				<header class="page-header">
-					<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'conica' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-				</header><!-- .page-header -->
-
+		<?php if ( have_posts() ) : ?>
+			
+			<?php
+			// IF blog is grid layout
+			echo ( get_theme_mod( 'conica-set-blog-layout' ) == 'blog-grid-layout' ) ? '<div class="blog-grid-layout-wrap blog-grid-layout-wrap-remove"><div class="blog-grid-layout-wrap-inner">' : ''; ?>
+			
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 
@@ -31,21 +29,22 @@ get_header(); ?>
 					?>
 
 				<?php endwhile; ?>
+				
+			<?php
+			// IF blog is grid layout
+			echo ( get_theme_mod( 'conica-set-blog-layout' ) == 'blog-grid-layout' ) ? '<div class="clearboth"></div></div></div>' : ''; ?>
 
-				<?php the_posts_navigation(); ?>
+			<?php the_posts_navigation(); ?>
 
-			<?php else : ?>
+		<?php else : ?>
 
-				<?php get_template_part( 'templates/contents/content', 'none' ); ?>
+			<?php get_template_part( 'templates/contents/content', 'none' ); ?>
 
-			<?php endif; ?>
+		<?php endif; ?>
 
-			</main><!-- #main -->
-		</section><!-- #primary -->
+		</main><!-- #main -->
+	</section><!-- #primary -->
 
-		<?php get_sidebar(); ?>
-	    
-		<div class="clearboth"></div>
-    </div>
-
+	<?php get_sidebar(); ?>
+	
 <?php get_footer(); ?>

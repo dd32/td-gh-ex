@@ -7,7 +7,17 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
+	
+	<?php if ( get_theme_mod( 'conica-page-fimage-layout' ) == 'conica-page-fimage-layout-standard' ) : ?>
+		
+		<?php if ( has_post_thumbnail() ) : ?>
+			<div class="entry-content-img">
+				<?php the_post_thumbnail( 'full' ); ?>
+			</div>
+		<?php endif; ?>
+		
+	<?php endif; ?>
+	
 	<div class="entry-content">
 		<?php the_content(); ?>
 		<?php
@@ -17,9 +27,5 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php edit_post_link( esc_html__( 'Edit', 'conica' ), '<span class="edit-link">', '</span>' ); ?>
-	</footer><!-- .entry-footer -->
 	
 </article><!-- #post-## -->

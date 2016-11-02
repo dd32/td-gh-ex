@@ -5,18 +5,14 @@
  * @package Conica
  */
 
-define( 'CONICA_THEME_VERSION' , '1.2.4' );
+define( 'CONICA_THEME_VERSION' , '1.2.5' );
 
-// Is ONLY USED IF the user prompts for the premium update
-// define( 'CONICA_UPDATE_URL', 'https://updates.kairaweb.com/' );
-// Upgrade / Order Premium page
-// require get_template_directory() . '/upgrade/upgrade.php';
-// require get_template_directory() . '/upgrade/update.php';
+// Get help / Premium Page
+require get_template_directory() . '/upgrade/upgrade.php';
 
 // Load WP included scripts
 require get_template_directory() . '/includes/inc/template-tags.php';
 require get_template_directory() . '/includes/inc/extras.php';
-// require get_template_directory() . '/includes/inc/jetpack.php';
 require get_template_directory() . '/includes/inc/customizer.php';
 
 // Load Customizer Library scripts
@@ -25,7 +21,12 @@ require get_template_directory() . '/customizer/customizer-library/customizer-li
 require get_template_directory() . '/customizer/styles.php';
 require get_template_directory() . '/customizer/mods.php';
 
-if ( ! function_exists( 'kaira_setup_theme' ) ) :
+// Load TGM plugin class
+require_once get_template_directory() . '/includes/inc/class-tgm-plugin-activation.php';
+// Add customizer Upgrade class
+require_once( get_template_directory() . '/includes/conica-pro/class-customize.php' );
+
+if ( ! function_exists( 'conica_setup_theme' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -33,7 +34,7 @@ if ( ! function_exists( 'kaira_setup_theme' ) ) :
  * before the init hook. The init hook is too late for some features, such as indicating
  * support post thumbnails.
  */
-function kaira_setup_theme() {
+function conica_setup_theme() {
     
     /**
      * Set the content width based on the theme's design and stylesheet.
@@ -67,39 +68,32 @@ function kaira_setup_theme() {
 	 * This theme uses wp_nav_menu() in one location.
 	 */
 	register_nav_menus( array(
-		'main-menu' => __( 'Main Menu', 'conica' )
+		'conica-main-menu' => __( 'Main Menu', 'conica' ),
+		'conica-header-menu' => __( 'Top Bar Menu', 'conica' ),
+		'conica-footer-menu' => __( 'Footer Menu', 'conica' )
 	) );
 
-	add_theme_support('post-thumbnails');
-    add_image_size('blog_standard_img', 580, 380, true );
+	add_theme_support( 'post-thumbnails' );
 	
-	// The custom header is used for the logo
-	add_theme_support('custom-header', array(
-        'default-image' => '',
-		'width'         => 300,
-		'height'        => 110,
-		'flex-width' => false,
-		'flex-height' => false,
-		'header-text' => false,
-	));
+	// The custom logo is used for the logo
+	add_theme_support( 'custom-logo', array(
+		'height'      => 105,
+		'width'       => 400,
+		'flex-height' => true,
+		'flex-width'  => true,
+	) );
 	
 	add_editor_style();
-
-	/**
-	 * Enable support for Post Formats
-	 */
-	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
-    add_theme_support( 'custom-background', array( 'default-color' => '#F5F5F5', ) );
-    
+    add_theme_support( 'custom-background', array( 'default-color' => '#FFFFFF', ) );
     add_theme_support( 'woocommerce' );
 }
-endif; // kaira_setup
-add_action( 'after_setup_theme', 'kaira_setup_theme' );
+endif; // conica_setup_theme
+add_action( 'after_setup_theme', 'conica_setup_theme' );
 
 /**
  * Register widgetized area and update sidebar with default widgets
  */
-function kaira_widgets_init() {
+function conica_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Sidebar', 'conica' ),
 		'id'            => 'sidebar-1',
@@ -108,56 +102,66 @@ function kaira_widgets_init() {
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
 	) );
-	register_sidebar(array(
-		'name' => __('conica Footer', 'conica'),
-		'id' => 'site-footer',
-	));
 	
+	register_sidebar(array(
+		'name' => __( 'Conica Standard Footer', 'conica' ),
+		'id' => 'conica-site-footer-standard',
+	));
 }
-add_action( 'widgets_init', 'kaira_widgets_init' );
-
-if(!function_exists('kaira_footer_widget_params')):
-/**
- * Set the widths of the footer widgets
- *
- * @param $params
- * @return mixed
- * 
- * @filter dynamic_sidebar_params
- */
-function kaira_footer_widget_params($params){
-	// Check that this is the footer
-	if($params[0]['id'] != 'site-footer') return $params;
-
-	$sidebars_widgets = wp_get_sidebars_widgets();
-	$count = count($sidebars_widgets[$params[0]['id']]);
-	$params[0]['before_widget'] = preg_replace('/\>$/', ' style="width:'.round(100/$count,4).'%" >', $params[0]['before_widget']);
-
-	return $params;
-}
-endif;
-add_filter('dynamic_sidebar_params', 'kaira_footer_widget_params');
+add_action( 'widgets_init', 'conica_widgets_init' );
 
 /**
  * Enqueue scripts and styles
  */
-function kaira_scripts() {
-    wp_enqueue_style( 'conica-body-font-default', '//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic|Droid+Sans:400,700', array(), CONICA_THEME_VERSION );
-    wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/includes/font-awesome/css/font-awesome.css', array(), '4.3.0' );
+function conica_scripts() {
+    wp_enqueue_style( 'conica-body-font-default', '//fonts.googleapis.com/css?family=Poppins:400,300,500,600,700|Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic', array(), CONICA_THEME_VERSION );
+    
+    wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/includes/font-awesome/css/font-awesome.css', array(), '4.6.3' );
 	wp_enqueue_style( 'conica-style', get_stylesheet_uri(), array(), CONICA_THEME_VERSION );
-
-	wp_enqueue_script( 'conica-navigation', get_template_directory_uri() . '/js/navigation.js', array(), CONICA_THEME_VERSION, true );
-	wp_enqueue_script( 'conica-caroufredSel', get_template_directory_uri() . '/js/jquery.carouFredSel-6.2.1-packed.js', array('jquery'), CONICA_THEME_VERSION, true );
+	
+	if ( conica_is_woocommerce_activated() ) {
+		wp_enqueue_style( 'conica-woocommerce-style', get_template_directory_uri().'/templates/css/conica-woocommerce-style.css', array(), CONICA_THEME_VERSION );
+	}
+	
+	if ( get_theme_mod( 'conica-set-site-skin' ) == 'conica-skin-dark' ) :
+		wp_enqueue_style( 'conica-skin-dark', get_template_directory_uri().'/templates/css/skins/dark-skin.css', array(), CONICA_THEME_VERSION );
+	else :
+		wp_enqueue_style( 'conica-skin-light', get_template_directory_uri().'/templates/css/skins/light-skin.css', array(), CONICA_THEME_VERSION );
+	endif;
+	
+	if ( get_theme_mod( 'conica-set-header-layout' ) == 'conica-header-layout-two' ) :
+		wp_enqueue_style( 'conica-header-style-two', get_template_directory_uri().'/templates/css/header/header-two.css', array(), CONICA_THEME_VERSION );
+	elseif ( get_theme_mod( 'conica-set-header-layout' ) == 'conica-header-layout-three' ) :
+		wp_enqueue_style( 'conica-header-style-three', get_template_directory_uri().'/templates/css/header/header-three.css', array(), CONICA_THEME_VERSION );
+	elseif ( get_theme_mod( 'conica-set-header-layout' ) == 'conica-header-layout-four' ) :
+		wp_enqueue_style( 'conica-header-style-four', get_template_directory_uri().'/templates/css/header/header-four.css', array(), CONICA_THEME_VERSION );
+	else :
+		wp_enqueue_style( 'conica-header-style-one', get_template_directory_uri().'/templates/css/header/header-one.css', array(), CONICA_THEME_VERSION );
+	endif;
+	
+	if ( get_theme_mod( 'conica-footer-layout' ) == 'conica-footer-layout-social' ) :
+	    wp_enqueue_style( 'conica-footer-social-style', get_template_directory_uri().'/templates/css/footer/footer-social.css', array(), CONICA_THEME_VERSION );
+	elseif ( get_theme_mod( 'conica-footer-layout' ) == 'conica-footer-layout-none' ) :
+	    wp_enqueue_style( 'conica-no-footer-style', get_template_directory_uri().'/templates/css/footer/footer-none.css', array(), CONICA_THEME_VERSION );
+	else :
+		wp_enqueue_style( 'conica-footer-standard-style', get_template_directory_uri().'/templates/css/footer/footer-standard.css', array(), CONICA_THEME_VERSION );
+	endif;
+	
+	wp_enqueue_script( 'conica-caroufredSel', get_template_directory_uri() . '/js/caroufredsel/jquery.carouFredSel-6.2.1-packed.js', array('jquery'), CONICA_THEME_VERSION, true );
+    wp_enqueue_script( 'conica-custom-js', get_template_directory_uri() . '/js/custom.js', array('jquery'), CONICA_THEME_VERSION, true );
     
-    wp_enqueue_script( 'conica-waypoints', get_template_directory_uri() . '/js/waypoints.min.js', array('jquery'), CONICA_THEME_VERSION, true );
-    wp_enqueue_script( 'conica-waypoints-sticky', get_template_directory_uri() . '/js/waypoints-sticky.min.js', array('jquery'), CONICA_THEME_VERSION, true );
+    if ( get_theme_mod( 'conica-set-sticky-header' ) ) {
+    	wp_enqueue_script( 'conica-waypoints', get_template_directory_uri() . '/js/waypoints/waypoints.min.js', array('jquery'), CONICA_THEME_VERSION, true );
+    	wp_enqueue_script( 'conica-waypoints-sticky', get_template_directory_uri() . '/js/waypoints/waypoints-sticky.min.js', array('jquery'), CONICA_THEME_VERSION, true );
+		wp_enqueue_script( 'conica-sticky-header', get_template_directory_uri() . '/js/waypoints/sticky-header.js', array('jquery'), CONICA_THEME_VERSION, true );
+	}
     
-	wp_enqueue_script( 'conica-custom-js', get_template_directory_uri() . '/js/custom.js', array('jquery'), CONICA_THEME_VERSION, true );
-    
-    if ( is_home() ) {
-        wp_enqueue_script( 'jquery-masonry' );
-        wp_enqueue_script( 'conica-masonry-custom', get_template_directory_uri() . '/js/blog-layout.js', array('jquery'), CONICA_THEME_VERSION, true );
-    }
+    if ( get_theme_mod( 'conica-set-blog-layout' ) == 'blog-grid-layout' ) {
+	    if ( is_home() || is_archive() || is_search() ) {
+	        wp_enqueue_script( 'jquery-masonry' );
+	        wp_enqueue_script( 'conica-masonry-custom', get_template_directory_uri() . '/js/blog-layout.js', array('jquery'), CONICA_THEME_VERSION, true );
+	    }
+	}
     
 	wp_enqueue_script( 'conica-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), CONICA_THEME_VERSION, true );
     
@@ -169,24 +173,16 @@ function kaira_scripts() {
 		wp_enqueue_script( 'kaira-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array('jquery'), CONICA_THEME_VERSION );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'kaira_scripts' );
+add_action( 'wp_enqueue_scripts', 'conica_scripts' );
 
 /**
- * Enqueue admin styling.
+ * To maintain backwards compatibility with older versions of WordPress
  */
-function conica_load_admin_script() {
-    wp_enqueue_style( 'conica-admin-css', get_template_directory_uri() . '/upgrade/css/admin-css.css' );
+function conica_the_custom_logo() {
+	if ( function_exists( 'the_custom_logo' ) ) {
+		the_custom_logo();
+	}
 }
-add_action( 'admin_enqueue_scripts', 'conica_load_admin_script' );
-
-/**
- * Enqueue conica custom customizer styling.
- */
-function conica_load_customizer_script() {
-    wp_enqueue_script( 'conica-customizer-js', get_template_directory_uri() . '/customizer/customizer-library/js/customizer-custom.js', array('jquery'), CONICA_THEME_VERSION, true );
-    wp_enqueue_style( 'conica-customizer-css', get_template_directory_uri() . '/customizer/customizer-library/css/customizer.css' );
-}
-add_action( 'customize_controls_enqueue_scripts', 'conica_load_customizer_script' );
 
 /**
  * Check if WooCommerce exists.
@@ -199,37 +195,121 @@ endif; // conica_is_woocommerce_activated
 
 // If WooCommerce exists include ajax cart
 if ( conica_is_woocommerce_activated() ) {
-    require get_template_directory() . '/includes/inc/woocommerce-header-inc.php';
+    require get_template_directory() . '/includes/inc/woocommerce-cart.php';
 }
+
+/**
+ * Add classes to the blog list for styling.
+ */
+function conica_add_post_classes ( $classes ) {
+	global $current_class;
+	
+	if ( is_home() || is_archive() || is_search() ) :
+		$conica_blog_layout = 'blog-left-layout';
+		if ( get_theme_mod( 'conica-set-blog-layout' ) ) {
+		    $conica_blog_layout = sanitize_html_class( get_theme_mod( 'conica-set-blog-layout' ) );
+		}
+		$classes[] = $conica_blog_layout;
+
+		$conica_blog_style = sanitize_html_class( 'blog-style-plain' );
+		$classes[] = $conica_blog_style;
+		
+		$classes[] = $current_class;
+		$current_class = ( $current_class == 'blog-alt-odd' ) ? sanitize_html_class( 'blog-alt-even' ) : sanitize_html_class( 'blog-alt-odd' );
+	endif;
+	
+	return $classes;
+}
+global $current_class;
+$current_class = sanitize_html_class( 'blog-alt-odd' );
+add_filter ( 'post_class' , 'conica_add_post_classes' );
+
+/**
+ * Enqueue conica custom customizer styling.
+ */
+function conica_load_customizer_script() {
+    wp_enqueue_script( 'conica-customizer-js', get_template_directory_uri() . '/customizer/customizer-library/js/customizer-custom.js', array('jquery'), CONICA_THEME_VERSION, true );
+    wp_enqueue_style( 'conica-customizer-css', get_template_directory_uri() . '/customizer/customizer-library/css/customizer.css' );
+}
+add_action( 'customize_controls_enqueue_scripts', 'conica_load_customizer_script' );
 
 /**
  * Add classed to the body tag from settings
  */
 function conica_add_body_class( $classes ) {
-    if ( get_theme_mod( 'conica-woocommerce-shop-fullwidth' ) ) {
-        $classes[] = 'conica-shop-full-width';
-    }
+	$conica_skin = sanitize_html_class( 'conica-skin-light' );
+	if ( get_theme_mod( 'conica-set-site-skin' ) ) {
+		$conica_skin = sanitize_html_class( get_theme_mod( 'conica-set-site-skin' ) );
+	}
+	$classes[] = sanitize_html_class( $conica_skin );
     
     return $classes;
 }
 add_filter( 'body_class', 'conica_add_body_class' );
 
 /**
- * Adjust is_home query if conica-blog-cats is set
+ * Adjust is_home query if conica-set-blog-cats is set
  */
 function conica_set_blog_queries( $query ) {
     $blog_query_set = '';
-    if ( get_theme_mod( 'conica-blog-cats', false ) ) {
-        $blog_query_set = get_theme_mod( 'conica-blog-cats' );
+    if ( get_theme_mod( 'conica-set-blog-cats', false ) ) {
+        $blog_query_set = get_theme_mod( 'conica-set-blog-cats' );
     }
     
     if ( $blog_query_set ) {
         // do not alter the query on wp-admin pages and only alter it if it's the main query
         if ( !is_admin() && $query->is_main_query() ){
             if ( is_home() ){
-                $query->set( 'cat', $blog_query_set );
+                $query->set( 'cat', esc_attr( $blog_query_set ) );
             }
         }
     }
 }
 add_action( 'pre_get_posts', 'conica_set_blog_queries' );
+
+/**
+ * Display recommended plugins with the TGM class
+ */
+function conica_register_required_plugins() {
+	$plugins = array(
+		// The recommended WordPress.org plugins.
+		array(
+			'name'      => __( 'Page Builder', 'conica' ),
+			'slug'      => 'siteorigin-panels',
+			'required'  => false,
+		),
+		array(
+			'name'      => __( 'WooCommerce', 'conica' ),
+			'slug'      => 'woocommerce',
+			'required'  => false,
+		),
+		array(
+			'name'      => __( 'Widgets Bundle', 'conica' ),
+			'slug'      => 'siteorigin-panels',
+			'required'  => false,
+		),
+		array(
+			'name'      => __( 'Contact Form 7', 'conica' ),
+			'slug'      => 'contact-form-7',
+			'required'  => false,
+		),
+		array(
+			'name'      => __( 'Breadcrumb NavXT', 'conica' ),
+			'slug'      => 'breadcrumb-navxt',
+			'required'  => false,
+		),
+		array(
+			'name'      => __( 'Meta Slider', 'conica' ),
+			'slug'      => 'ml-slider',
+			'required'  => false,
+		)
+	);
+	$config = array(
+		'id'           => 'conica',
+		'menu'         => 'tgmpa-install-plugins',
+		'message'      => '',
+	);
+
+	tgmpa( $plugins, $config );
+}
+add_action( 'tgmpa_register', 'conica_register_required_plugins' );

@@ -82,7 +82,7 @@ function customizer_library_get_google_font_uri( $fonts ) {
 	if ( empty( $family ) ) {
 		return '';
 	} else {
-		$request = '//fonts.googleapis.com/css?family=' . implode( '%7C', $family );
+		$request = '//fonts.googleapis.com/css?family=' . implode( '|', $family );
 	}
 
 	// Load the font subset
@@ -5433,6 +5433,16 @@ function customizer_library_get_google_fonts() {
 		),
 		'Pontano Sans' => array(
 			'label'    => 'Pontano Sans',
+			'variants' => array(
+				'regular',
+			),
+			'subsets' => array(
+				'latin',
+				'latin-ext',
+			),
+		),
+		'Poppins' => array(
+			'label'    => 'Poppins',
 			'variants' => array(
 				'regular',
 			),

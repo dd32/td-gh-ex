@@ -1,26 +1,17 @@
-
-#customize-theme-controls #accordion-section-conica-site-layout-section .accordion-section-title:hover,
-#customize-theme-controls #accordion-section-conica-header-section .accordion-section-title:hover,
-#customize-theme-controls #accordion-section-conica-slider-section .accordion-section-title:hover,
-#customize-theme-controls #accordion-section-conica-blog-section .accordion-section-title:hover,
-#customize-theme-controls #accordion-section-conica-website-section .accordion-section-title:hover,
+#customize-theme-controls #accordion-panel-conica-panel-website .accordion-section-title:hover,
+#customize-theme-controls #accordion-panel-conica-panel-text .accordion-section-title:hover,
+#customize-theme-controls #accordion-panel-conica-panel-font-options .accordion-section-title:hover,
 #customize-theme-controls #accordion-section-colors .accordion-section-title:hover,
-#customize-theme-controls #accordion-section-conica-typography-section .accordion-section-title:hover,
-#customize-theme-controls #accordion-section-conica-social-section .accordion-section-title:hover,
-#customize-theme-controls #accordion-section-conica-footer-section .accordion-section-title:hover {
+#customize-theme-controls #accordion-section-conica-section-social .accordion-section-title:hover {
     background-color: #006CC9;
     color: #FFF;
 }
 
-#customize-theme-controls #accordion-section-conica-site-layout-section.control-section.open .customize-section-title,
-#customize-theme-controls #accordion-section-conica-header-section.control-section.open .customize-section-title,
-#customize-theme-controls #accordion-section-conica-slider-section.control-section.open .customize-section-title,
-#customize-theme-controls #accordion-section-conica-blog-section.control-section.open .customize-section-title,
-#customize-theme-controls #accordion-section-conica-website-section.control-section.open .customize-section-title,
-#customize-theme-controls #accordion-section-colors.control-section.open .customize-section-title,
-#customize-theme-controls #accordion-section-conica-typography-section.control-section.open .customize-section-title,
-#customize-theme-controls #accordion-section-conica-social-section.control-section.open .customize-section-title,
-#customize-theme-controls #accordion-section-conica-footer-section.control-section.open .customize-section-title {
+#customize-theme-controls #accordion-panel-conica-panel-website li.accordion-section div.accordion-section-title,
+#customize-theme-controls #accordion-panel-conica-panel-text li.accordion-section div.accordion-section-title,
+#customize-theme-controls #accordion-panel-conica-panel-font-options li.accordion-section div.accordion-section-title,
+#customize-theme-controls #accordion-section-colors li.accordion-section div.accordion-section-title,
+#customize-theme-controls #accordion-section-conica-section-social li.accordion-section div.accordion-section-title {
     background-color: #006CC9 !important;
     color: #FFF !important;
 }
@@ -29,28 +20,11 @@
 	color: inherit;
 }
 
-.kaira-upsell {
-    padding: 10px 0 5px;
+#customize-control-conica-website-error-msg,
+#customize-control-conica-website-txt-copy {
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+	padding: 0 0 25px;
+    margin-bottom: 20px;
 }
-.kaira-upsell-title {
-    font-weight: 600;
-}
-.kaira-upsell-btn {
-    background-color: #006CC9;
-    display: inline-block;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 3px;
-    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset;
-    margin: 8px 0 0;
-    padding: 8px 20px 10px;
-    color: #ECECEC;
-}
-.kaira-upsell-btn:hover {
-    background-color: #0952A9;
-    color: #FFF;
-}
-.kaira-upsell-desc {
-    font-size: 12px;
-    padding: 6px 0 4px 5px;
-    max-width: 245px;
-}
+
+

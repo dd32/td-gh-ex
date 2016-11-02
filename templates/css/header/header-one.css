@@ -1,0 +1,353 @@
+/*--------------------------------------------------------------
+-- Header - One --
+--------------------------------------------------------------*/
+
+/* ---- Header Top Bar Styling ---- */
+
+.header-top-bar {
+	min-height: 34px;
+	font-size: 12px;
+}
+.header-top-bar-left {
+	float: left;
+	padding: 7px 0;
+}
+.header-top-bar-left > div {
+	display: inline-block;
+	vertical-align: middle;
+}
+.header-top-bar-left ul {
+	margin: 0;
+	padding: 0;
+}
+.header-top-bar-left ul li {
+	margin: 0 4px 0 0;
+	padding: 0 5px 0 0;
+	list-style-type: none;
+	display: inline-block;
+	line-height: 11px;
+}
+.header-top-bar-left ul li:last-child {
+	box-shadow: none
+}
+.header-top-bar-left ul li a {
+	color: inherit;
+	text-transform: uppercase;
+}
+.header-top-bar-left .social-icon {
+	font-size: 14px;
+	margin: 0 4px 0 0;
+	display: inline-block;
+	vertical-align: middle;
+	padding: 1px 4px 2px;
+}
+.header-top-bar-right {
+	float: right;
+	padding: 10px 0 10px;
+}
+.header-top-bar-right-ad {
+	margin: 0 0 0 10px;
+}
+.header-top-bar-right-no {
+	margin: 0 0 0 10px;
+}
+.header-top-bar-right i.fa {
+	font-size: 14px;
+	margin: 0 1px 0 0;
+}
+.header-bar > .site-container {
+    position: relative;
+}
+.header-bar-inner {
+    position: relative;
+    z-index: 5;
+}
+
+/* ---- Header Styling ---- */
+
+.site-branding {
+	float: left;
+}
+.site-branding a,
+.site-branding a img {
+    display: block;
+}
+.site-header-main {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 10;
+    margin: -52px 0 0;
+}
+.main-navigation {
+	float: left;
+}
+.site-social {
+    font-size: 24px;
+    min-height: 18px;
+    padding: 15px 0 0;
+    text-align: right;
+}
+.site-social i {
+    margin: 0 0 0 12px;
+}
+
+.site-title {
+	margin: 18px 0 0;
+	padding: 0;
+	font-size: 48px;
+	font-weight: 300;
+	text-transform: uppercase;
+}
+.site-title a {
+	font-weight: inherit;
+}
+.site-description {
+	font-size: 12px;
+	font-weight: 300;
+	margin: 0 0 0 5px;
+	padding: 0 0 25px;
+	text-transform: uppercase;
+	color: inherit;
+}
+
+.search-button {
+    cursor: pointer;
+    display: inline-block;
+    margin: 28px 0 0 12px;
+    padding: 10px 0 10px 15px;
+    position: relative;
+    float: right;
+}
+.search-button i {
+    font-size: 16px;
+}
+.search-block {
+	border-radius: 0 0 3px 3px;
+	font-size: 14px;
+	padding: 8px 8px;
+	position: absolute;
+	right: 26px;
+	bottom: 5px;
+	z-index: 4;
+	width: 290px;
+    
+	-webkit-transition: bottom 0.3s ease 0.08s;
+	-moz-transition: bottom 0.3s ease 0.08s;
+	-ms-transition: bottom 0.3s ease 0.08s;
+	-o-transition: bottom 0.3s ease 0.08s;
+	transition: bottom 0.3s ease 0.08s;
+}
+
+.search-block .search-field {
+	padding: 7px 8px;
+	width: 100%;
+	outline: none;
+}
+.search-block .search-submit {
+    border-radius: 0 3px 3px 0;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    height: 35px;
+    width: 36px;
+    padding: 2px 0 0;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+}
+.search-block-close {
+    cursor: pointer;
+    height: 20px;
+    left: 2px;
+    position: absolute;
+    top: 33px;
+    width: 17px;
+    display: none;
+}
+.search-block-close i {
+    font-size: 15px;
+}
+
+.header-cart {
+    float: left;
+}
+a.header-cart-contents {
+    padding: 38px 0 44px 14px;
+}
+.header-cart i.fa {
+    position: relative;
+    top: -1px;
+    font-size: 12px;
+}
+.main-navigation a {
+    padding: 42px 14px 43px;
+}
+.site-header-nocart .main-navigation ul > li:last-child a {
+    padding: 42px 0 43px 14px;
+}
+.main-navigation ul ul {
+    top: 103px;
+}
+
+body.show-site-search .search-block {
+    bottom: -48px;
+}
+
+.conica-navigation-animation-none.conica-navigation-style-blocks ul ul {
+    top: 103px;
+}
+.conica-navigation-animation-none.conica-navigation-style-underline ul ul {
+    top: 99px;
+}
+.conica-navigation-animation-none.conica-navigation-style-plain ul ul {
+    top: 103px;
+}
+
+/* -------- Top Bar Switch -------- */
+
+.header-top-bar.header-top-bar-switch .header-top-bar-left {
+    float: right;
+}
+.header-top-bar.header-top-bar-switch .header-top-bar-left ul li:last-child {
+    margin: 0;
+}
+.header-top-bar.header-top-bar-switch .header-top-bar-left .social-icon {
+    margin: 0 0 0 4px;
+}
+.header-top-bar.header-top-bar-switch .header-top-bar-left .social-icon:last-child {
+    padding-right: 0;
+}
+
+.header-top-bar.header-top-bar-switch .header-top-bar-right {
+    float: left;
+}
+.header-top-bar.header-top-bar-switch .header-top-bar-right-ad {
+    margin: 0;
+}
+
+/* -------- Header Right Aligned -------- */
+
+.site-header-align-right .site-branding {
+	float: right;
+	text-align: right;
+}
+.site-header-align-right .site-header-main {
+	right: auto;
+	left: 0;
+}
+.site-header-align-right .header-menu-button {
+    padding: 38px 20px 43px 0px;
+}
+.site-header-align-right .search-button {
+	float: left;
+}
+
+.site-header-align-right .main-navigation ul li:first-child a {
+	padding-left: 0;
+}
+
+/* -------- Sticky Header -------- */
+
+.site-sticky-header .header-bar {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+body.admin-bar .site-sticky-header .header-bar {
+    top: 32px;
+}
+.site-boxed .site-sticky-header .header-bar {
+    left: auto;
+    max-width: 1180px;
+}
+
+@media only screen and (max-width: 782px) {
+    
+    .header-top-bar {
+        font-size: 12px;
+    }
+    .header-top-bar-left {
+        float: none;
+        width: 100%;
+        text-align: center;
+        padding: 3px 0 0;
+    }
+    .header-top-bar-right {
+        float: none;
+        width: 100%;
+        text-align: center;
+        padding: 0 0 3px;
+    }
+    .header-bar > .site-container {
+        padding: 0;
+    }
+    .site-branding {
+        float: none !important;
+        width: 100%;
+        text-align: center !important;
+    }
+    .site-title {
+        font-size: 38px;
+        margin: 8px 0 0 !important;
+    }
+    .site-description {
+        font-size: 11px;
+        padding: 0 0 2px;
+    }
+    .site-header-main {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        margin: 0;
+        text-align: center;
+        padding: 0 0 5px;
+    }
+    .search-button {
+        z-index: 11;
+        margin: 0;
+        position: relative;
+        display: inline-block;
+        right: auto;
+        bottom: auto;
+        float: none;
+        padding: 0 10px 4px;
+    }
+    .search-block {
+        left: 25px;
+        width: auto;
+    }
+    
+    .main-navigation {
+        float: none;
+    }
+    
+    /* -------- CANCEL Sticky Header -------- */
+    .site-sticky-header .header-bar {
+        box-shadow: none;
+        position: relative;
+        width: auto;
+        left: auto;
+        top: auto;
+    }
+    .site-boxed .site-sticky-header .header-bar {
+        left: auto;
+        max-width: none;
+    }
+    
+}
+
+@media only screen and (max-width: 560px) {
+    
+    .menu-header-menu-container {
+        display: block;
+        text-align: center;
+    }
+    .header-top-bar-right-ad,
+    .header-top-bar-right-no {
+        display: inline-block;
+    }
+    
+}

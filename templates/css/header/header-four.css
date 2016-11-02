@@ -1,0 +1,382 @@
+/*--------------------------------------------------------------
+-- Header - Three --
+--------------------------------------------------------------*/
+
+/* ---- Header Top Bar Styling ---- */
+
+.header-top-bar {
+	min-height: 34px;
+    font-size: 12px;
+}
+.header-top-bar-left {
+	float: left;
+	padding: 9px 0;
+}
+.header-top-bar-left > div {
+	display: inline-block;
+	vertical-align: middle;
+}
+.header-top-bar-left ul {
+	margin: 0;
+	padding: 0;
+}
+.header-top-bar-left ul li {
+	margin: 0 4px 0 0;
+	padding: 0 5px 0 0;
+	list-style-type: none;
+	display: inline-block;
+	line-height: 11px;
+}
+.header-top-bar-left ul li:last-child {
+	box-shadow: none
+}
+.header-top-bar-left ul li a {
+	color: inherit;
+	text-transform: uppercase;
+}
+.header-top-bar-right {
+	float: right;
+	padding: 9px 0 7px;
+}
+.header-top-bar-right-ad {
+	margin: 0 0 0 10px;
+	vertical-align: middle;
+}
+.header-top-bar-right-no {
+	vertical-align: middle;
+}
+.header-top-bar-right i.fa {
+	font-size: 14px;
+	margin: 0 1px 0 0;
+}
+.header-bar > .site-container {
+    position: relative;
+}
+.header-bar-inner {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+}
+.header-top-bar-right .social-icon {
+    font-size: 14px;
+    margin: -2px 0 0 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.header-top-bar-right .social-icon i.fa {
+    color: inherit;
+}
+
+/* ---- Header Styling ---- */
+
+.site-branding {
+	display: inline-block;
+}
+.site-branding a,
+.site-branding a img {
+    display: block;
+}
+.site-header-main {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 10;
+    margin: -28px 0 0;
+}
+.site-header-main .header-top-bar-right-no {
+    display: inline-block;
+    margin: 20px 0 0 20px;
+}
+.site-header-nav-center .main-navigation {
+	text-align: center;
+}
+.main-navigation li {
+    float: none;
+    display: inline-block;
+}
+.main-navigation a {
+    padding: 18px 14px 18px;
+}
+.main-navigation ul ul {
+    top: 54px;
+}
+
+.conica-navigation-animation-none.conica-navigation-style-blocks ul ul {
+    top: 54px;
+}
+.conica-navigation-animation-none.conica-navigation-style-underline ul ul {
+    top: 50px;
+}
+.conica-navigation-animation-none.conica-navigation-style-plain ul ul {
+    top: 54px;
+}
+
+.site-social {
+    font-size: 24px;
+    min-height: 18px;
+    padding: 15px 0 0;
+    text-align: right;
+}
+.site-social i {
+    margin: 0 0 0 12px;
+}
+
+.site-title {
+	margin: 20px 0 0;
+	padding: 0;
+	font-size: 48px;
+	font-weight: 300;
+	text-transform: uppercase;
+}
+.site-title a {
+	font-weight: inherit;
+}
+.site-description {
+	font-size: 12px;
+	font-weight: 300;
+	margin: 0 0 0 5px;
+	padding: 0 0 25px;
+	text-transform: uppercase;
+    color: inherit;
+}
+
+.search-button {
+    cursor: pointer;
+    display: inline-block;
+    margin: -2px 0 0 10px;
+    padding: 3px 0 3px 2px;
+    position: relative;
+    float: right;
+}
+.search-button i {
+    font-size: 16px;
+}
+.search-block {
+	border-radius: 0 0 3px 3px;
+	font-size: 14px;
+	padding: 8px 8px;
+	position: absolute;
+	right: 26px;
+	bottom: 5px;
+	z-index: 4;
+	width: 290px;
+    
+	-webkit-transition: bottom 0.3s ease 0.08s;
+	-moz-transition: bottom 0.3s ease 0.08s;
+	-ms-transition: bottom 0.3s ease 0.08s;
+	-o-transition: bottom 0.3s ease 0.08s;
+	transition: bottom 0.3s ease 0.08s;
+}
+
+.search-block .search-field {
+	padding: 7px 8px;
+	width: 100%;
+	outline: none;
+}
+.search-block .search-submit {
+    border-radius: 0 3px 3px 0;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    height: 35px;
+    width: 36px;
+    padding: 2px 0 0;
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+}
+.search-block-close {
+    cursor: pointer;
+    height: 20px;
+    left: 2px;
+    position: absolute;
+    top: 33px;
+    width: 17px;
+    display: none;
+}
+.search-block-close i {
+    font-size: 15px;
+}
+
+.main-navigation {
+    text-align: center;
+}
+#primary-menu,
+#main-menu > div {
+    display: inline-block;
+    vertical-align: middle;
+}
+.header-cart {
+    display: inline-block;
+    vertical-align: middle;
+}
+a.header-cart-contents {
+    padding: 18px 14px 18px;
+}
+a.header-cart-contents span {
+    background: none !important;
+    padding: 0;
+}
+.header-cart i.fa {
+    position: relative;
+    top: -1px;
+    font-size: 12px;
+}
+
+body.show-site-search .search-block {
+    bottom: -48px;
+}
+
+/* -------- Top Bar Switch -------- */
+
+.header-top-bar.header-top-bar-switch .header-top-bar-left {
+    float: right;
+}
+.header-top-bar.header-top-bar-switch .header-top-bar-left ul li:last-child {
+    margin: 0;
+}
+.header-top-bar.header-top-bar-switch .header-top-bar-left .social-icon {
+    margin: 0 0 0 4px;
+}
+.header-top-bar.header-top-bar-switch .header-top-bar-left .social-icon:last-child {
+    padding-right: 0;
+}
+
+.header-top-bar.header-top-bar-switch .header-top-bar-right {
+    float: left;
+}
+.header-top-bar.header-top-bar-switch .header-top-bar-right-ad {
+    margin: 0;
+}
+
+/* -------- Sticky Header -------- */
+
+.site-sticky-header .main-navigation {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+body.admin-bar .site-sticky-header .main-navigation {
+    top: 32px;
+}
+.site-boxed .site-sticky-header .main-navigation {
+    left: auto;
+    max-width: 1180px;
+}
+
+@media only screen and (max-width: 980px) {
+    
+    .header-menu-button {
+        padding: 14px 0 18px;
+    }
+    
+    .main-navigation li {
+        display: block;
+        float: none;
+    }
+    #primary-menu,
+    #main-menu > div {
+        display: block;
+    }
+    div.header-cart {
+        position: absolute;
+        top: 25px;
+        left: 23px;
+        color: inherit;
+    }
+    body.admin-bar div.header-cart {
+        top: 35px;
+        left: 15px;
+    }
+    
+}
+
+@media only screen and (max-width: 782px) {
+    
+    .header-top-bar {
+        font-size: 12px;
+    }
+    .header-top-bar-left {
+        float: none;
+        width: 100%;
+        text-align: center;
+        padding: 3px 0 0;
+    }
+    .header-top-bar-right {
+        float: none;
+        width: 100%;
+        text-align: center;
+        padding: 0 0 3px;
+    }
+    .site-header-main .header-top-bar-right-no {
+        margin: 0;
+    }
+    .header-bar > .site-container {
+        padding: 0;
+    }
+    .site-branding {
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+    .site-title {
+        font-size: 38px;
+        margin: 8px 0 0 !important;
+    }
+    .site-description {
+        font-size: 11px;
+        padding: 0 0 8px;
+    }
+    .site-header-main {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 100%;
+        margin: 0;
+        text-align: center;
+    }
+    .search-button {
+        margin: 0px 0 0 6px;
+        float: none;
+        vertical-align: middle;
+    }
+    .search-block {
+        left: 25px;
+        width: auto;
+    }
+    
+    .main-navigation {
+        float: none;
+    }
+    body.admin-bar div.header-cart {
+        top: 65px;
+    }
+    
+    /* -------- CANCEL Sticky Header -------- */
+    .site-sticky-header .header-bar {
+        box-shadow: none;
+        position: relative;
+        width: auto;
+        left: auto;
+        top: auto;
+    }
+    .site-boxed .site-sticky-header .header-bar {
+        left: auto;
+        max-width: none;
+    }
+    
+}
+
+@media only screen and (max-width: 560px) {
+    
+    .menu-header-menu-container {
+        display: block;
+        text-align: center;
+    }
+    .header-top-bar-right-ad,
+    .header-top-bar-right-no {
+        display: inline-block;
+    }
+    
+}

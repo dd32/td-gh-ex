@@ -34,12 +34,12 @@ if ( post_password_required() )
 		<ol class="comment-list">
 			<?php
 			/* Loop through and list the comments. Tell wp_list_comments()
-			 * to use kaira_comment() to format the comments.
+			 * to use conica_comment() to format the comments.
 			 * If you want to overload this in a child theme then you can
-			 * define kaira_comment() and that will be used instead.
-			 * See kaira_comment() in inc/template-tags.php for more.
+			 * define conica_comment() and that will be used instead.
+			 * See conica_comment() in inc/template-tags.php for more.
 			 */
-			wp_list_comments( array( 'callback' => 'kaira_comment' ) ); ?>
+			wp_list_comments( array( 'callback' => 'conica_comment' ) ); ?>
 		</ol><!-- .comment-list -->
 		
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>

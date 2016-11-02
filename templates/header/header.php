@@ -1,45 +1,18 @@
 
-<header id="masthead" class="site-header <?php echo ( get_theme_mod( 'conica-site-layout' ) == 'conica-site-boxed' ) ? ' header-boxed-in' : ''; ?>">
+<?php if ( get_theme_mod( 'conica-set-header-layout' ) == 'conica-header-layout-two' ) : ?>
     
-    <div class="header-bar">
-        
-        <div class="site-container">
-            
-            <div class="header-bar-inner">
-                
-                <div class="site-branding">
-                    <?php if ( get_header_image() ) : ?>
-                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php esc_url( header_image() ); ?>" alt="<?php echo esc_attr( get_bloginfo('name') ) ?>" /></a>
-                    <?php else : ?>
-                        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-                        <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-                    <?php endif; ?>
-                </div>
-                
-                <?php if ( get_theme_mod( 'conica-site-layout' ) ) : ?>
-                <div class="search-button">
-                    <i class="fa fa-search"></i>
-                </div>
-                <?php endif; ?>
-                
-                <div class="site-header-right">
-                    <nav id="site-navigation" class="navigation-main" role="navigation">
-                        <h1 class="menu-toggle"><?php _e( 'Menu', 'conica' ); ?></h1>
-                        <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
-                    </nav><!-- #site-navigation -->
-                    
-                </div>
-                
-                <div class="clearboth"></div>
-            </div>
-            
-            <div class="search-block">
-                <?php get_search_form(); ?>
-            </div>
-            
-        </div>
-        
-    </div>
-    <div class="clearboth"></div>
+    <?php get_template_part( '/templates/header/header-two' ); ?>
     
-</header><!-- #masthead -->
+<?php elseif ( get_theme_mod( 'conica-set-header-layout' ) == 'conica-header-layout-three' ) : ?>
+    
+    <?php get_template_part( '/templates/header/header-three' ); ?>
+    
+<?php elseif ( get_theme_mod( 'conica-set-header-layout' ) == 'conica-header-layout-four' ) : ?>
+    
+    <?php get_template_part( '/templates/header/header-four' ); ?>
+    
+<?php else : ?>
+    
+    <?php get_template_part( '/templates/header/header-one' ); ?>
+    
+<?php endif; ?>

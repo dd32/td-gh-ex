@@ -11,7 +11,7 @@
 <section class="no-results not-found">
 	
 	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'conica' ); ?></h1>
+		<h1 class="page-title"><?php echo wp_kses_post( get_theme_mod( 'conica-website-nosearch-head', __( 'Nothing Found', 'conica' ) ) ); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="page-content">

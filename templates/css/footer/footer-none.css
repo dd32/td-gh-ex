@@ -1,0 +1,30 @@
+/*--------------------------------------------------------------
+Footer None Styling
+--------------------------------------------------------------*/
+
+.site-footer-none {
+    
+}
+
+@media only screen and (max-width: 782px) {
+    
+    .site-footer-bottom-bar-left {
+    	width: 100%;
+    	float: none;
+    	text-align: center;
+    	padding: 4px 0 10px;
+    }
+    .site-footer-bottom-bar-right {
+    	width: 100%;
+    	float: none;
+    	text-align: center;
+    	padding: 0 0 5px;
+    }
+    .site-footer-bottom-bar-right .social-pinterest.nolink {
+    	margin: 0;
+    }
+    .site-footer-bottom-bar-right .social-pinterest span {
+    	display: none;
+    }
+    
+}

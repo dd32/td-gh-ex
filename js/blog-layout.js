@@ -19,7 +19,7 @@
     });
     
     function onBlogGridLayout() {
-        // $( '.blog-grid-layout-wrap' ).removeClass( 'blog-grid-layout-wrap-remove' );
+        $( '.blog-grid-layout-wrap' ).removeClass( 'blog-grid-layout-wrap-remove' );
     }
     
 } )( jQuery );

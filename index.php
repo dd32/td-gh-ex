@@ -13,17 +13,14 @@
 
 get_header(); ?>
 	
-	<?php get_template_part( '/templates/title-bar' ); ?>
-	
-	<div class="site-container">
-
-		<div id="primary" class="content-area">
-				
+	<div id="primary" class="content-area">
+    	<main id="main" class="site-main" role="main">
+			
 			<?php if ( have_posts() ) : ?>
 			
 				<?php
 				// IF blog is grid layout
-				echo ( get_theme_mod( 'conica-blog-layout' ) == 'blog-post-grid-layout' ) ? '<div class="blog-grid-layout-wrap"><div class="blog-grid-layout-wrap-inner">' : ''; ?>
+				echo ( get_theme_mod( 'conica-set-blog-layout' ) == 'blog-grid-layout' ) ? '<div class="blog-grid-layout-wrap blog-grid-layout-wrap-remove"><div class="blog-grid-layout-wrap-inner">' : ''; ?>
 
 					<?php /* Start the Loop */ ?>
 					<?php while ( have_posts() ) : the_post(); ?>
@@ -33,14 +30,14 @@ get_header(); ?>
 							 * If you want to override this in a child theme, then include a file
 							 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 							 */
-							get_template_part( 'templates/contents/content', get_post_format() );
+							get_template_part( 'templates/contents/content' );
 						?>
 
 					<?php endwhile; ?>
 					
 				<?php
 				// IF blog is grid layout
-				echo ( get_theme_mod( 'conica-blog-layout' ) == 'blog-post-grid-layout' ) ? '<div class="clearboth"></div></div></div>' : ''; ?>
+				echo ( get_theme_mod( 'conica-set-blog-layout' ) == 'blog-grid-layout' ) ? '<div class="clearboth"></div></div></div>' : ''; ?>
 
 				<?php the_posts_navigation(); ?>
 
@@ -50,11 +47,9 @@ get_header(); ?>
 
 			<?php endif; ?>
 			
-		</div><!-- #primary -->
-		
-		<?php get_sidebar(); ?>
+		</main><!-- #main -->
+	</div><!-- #primary -->
 	
-		<div class="clearboth"></div>
-	</div>
+    <?php get_sidebar(); ?>
 	
 <?php get_footer(); ?>

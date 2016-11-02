@@ -1,4 +1,12 @@
-<!DOCTYPE html>
+<?php
+/**
+ * The header for our theme.
+ *
+ * Displays all of the <head> section and everything up till <div id="content">
+ *
+ * @package Conica
+ */
+?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
@@ -9,15 +17,19 @@
 </head>
 
 <body <?php body_class(); ?>>
-   
-<?php if ( get_theme_mod( 'conica-site-layout' ) == 'conica-site-boxed' ) : ?>
-<div class="site-boxed">
-<?php endif; ?>
 
-<?php get_template_part( '/templates/header/header' ); ?>
+<div id="page">
+
+<?php echo ( get_theme_mod( 'conica-set-site-layout' ) == 'conica-site-boxed' ) ? '<div class="site-boxed">' : ''; ?>
+	
+	<?php get_template_part( '/templates/header/header' ); ?>
 
 <?php if ( is_front_page() ) : ?>
     
-    <?php get_template_part( '/templates/homepage-slider' ); ?>
+    <?php get_template_part( '/templates/slider/homepage-slider' ); ?>
     
 <?php endif; ?>
+
+<?php get_template_part( '/templates/title-bar' ); ?>
+
+<div class="site-content site-container <?php echo ( ! is_active_sidebar( 'sidebar-1' ) ) ? sanitize_html_class( 'content-no-sidebar' ) : sanitize_html_class( 'content-has-sidebar' ); ?>">
