@@ -3,16 +3,22 @@
 	<?php if (of_get_option('promax_latest' ) =='1' ) {load_template(get_template_directory() . '/includes/ltposts.php'); } ?>
 	<div id="page-inner" class="clearfix">	
 		<div id="singlecontent"><?php promax_breadcrumbs(); ?>
-		<?php
+<?php if(have_posts()) : ?>
+			<?php while(have_posts())  : the_post(); ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>	
+	<?php
 		if (of_get_option('show_featured_image') =='on'){
 		if ( has_post_thumbnail()) : the_post_thumbnail('promax_singlefull');
+		?>
+		<h1 class="entry-title featured"><?php the_title(); ?></h1>
+		<?php
 		endif;
 		}
+		else { ?>
+		<h1 class="entry-title"><?php the_title(); ?></h1>
+		<?php }
 		?>
-			<?php if(have_posts()) : ?>
-			<?php while(have_posts())  : the_post(); ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-<h1 class="entry-title"><?php the_title(); ?></h1>
+			
 <div id="metad"><span class="postmeta_box">
 		<?php get_template_part('/includes/postmeta'); ?><?php edit_post_link(
 		sprintf(
