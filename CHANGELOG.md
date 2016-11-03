@@ -1,3 +1,5 @@
+###Version 1.4
+* Image stretch issue fixed.
 ###Version 1.3
 * Date format issue fixed.
 * Enable/Disable option added for footer widget, footer menu, footer copyright text.
