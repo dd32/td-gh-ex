@@ -3,7 +3,7 @@ Theme Name: Bellini
 Theme URI: http://atlantisthemes.com/
 Author: Pangolin
 Description: Bellini is the perfect theme for creating a eCommerce store or shop. Responsive & flexible layout built with Bootstrap. Customize anything like Google Fonts, Color, Layout, logo upload, full-screen slider, header image and much more.Built with SEO in mind and has Structured Data (Schema) implemented. If you are looking for a beautiful theme with out of the box SEO compatibility & responsiveness, look no further! Check out the live demo at http://demo.atlantisthemes.com/front-page/
-Version: 1.36
+Version: 1.37
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bellini
@@ -251,7 +251,10 @@ img {
 .nav-menu li > a:after,
 .nav-menu li > a:hover:after,
 .bellini__pagination--np__next:after,
-.bellini__pagination--np__previous:before {
+.bellini__pagination--np__previous:before,
+.post-meta__time a:before,
+.post-meta__author__link:before,
+.comments-link a:before {
     font-family: 'FontAwesome';
 }
 
@@ -457,7 +460,7 @@ a:active {
     display: block;
     padding: .3889em 0 0 1.5556em;
     text-decoration: none;
-    transition: all .2s ease-in-out;
+    transition: all 200ms ease-in 0s;
     border-bottom: 2px solid transparent;
 }
 
@@ -677,7 +680,8 @@ a:active {
 }
 
 .page-numbers.current {
-    border-radius: 2px;
+    font-size: 1.08em;
+    border-bottom: .15em solid;
 }
 
 .bellini__pagination--np__previous,
@@ -1031,6 +1035,15 @@ object {
 /*--------------------------------------------------------------
 ## Title
 --------------------------------------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: .5rem;
+}
 
 .element-title {
     text-decoration: none;
@@ -1040,14 +1053,14 @@ object {
 }
 
 .element-title--main {
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
     text-align: center;
 }
 
 .element-title--sub {
-    margin-bottom: 3.5%;
+    margin-top:.5em;
+    margin-bottom: 1.5%;
     text-align: center;
-    font-weight: normal;
     line-height: 1.618;
 }
 
@@ -1421,6 +1434,12 @@ object {
 
 .post-meta__category a {
     text-decoration: none;
+    border: 1px solid;
+    margin-right: 4px;
+    padding: .06em .6em;
+    font-size: .85em;
+    color: #fff;
+    border-radius: 2px;
 }
 
 .single-post__body {
@@ -1440,8 +1459,11 @@ object {
     color: inherit;
 }
 
-.post-meta__time {
-    margin-bottom: 1em;
+.post-meta__author,
+.post-meta__time,
+.comments-link {
+    margin-bottom: .2em;
+    padding-bottom: 0;
     display: block;
 }
 
@@ -1548,20 +1570,24 @@ object {
     margin-top: 2em;
 }
 
+.front-bellini-default-content,
 .front-feature-blocks,
 .front-product-category,
 .front-new-arrival,
 .front__product-featured,
 .front-blog,
 .front-text-field {
+    padding-top: 2%;
+    padding-bottom: 3%;
     display: block;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     -o-background-size: cover;
-    background-attachment: fixed;
-    padding-top: 2%;
-    padding-bottom: 3%;
+    width:100%;
+    float:left;
+    position: relative;
+    z-index: 9;
 }
 
 .front__product-featured {
@@ -1692,7 +1718,8 @@ object {
 }
 
 .widget-area__footer {
-    padding-bottom: 2%;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
 }
 
 .widget-area--blog {
@@ -1716,10 +1743,10 @@ object {
 --------------------------------------------------------------*/
 
 .comments-area {
-    width:100%;
-    float:left;
-    margin-top: 2%;
-    margin-bottom: 4%;
+    width: 100%;
+    float: left;
+    margin-top: 4.2em;
+    margin-bottom: 2em;
 }
 
 .comment-content a {
@@ -1808,6 +1835,7 @@ object {
 .comment-respond {
     float: left;
     width: 100%;
+    margin-top:2em;
 }
 
 .comment-reply-title {
@@ -2170,7 +2198,7 @@ Hamburger Menu
 }
 
 .site-footer {
-    padding: .8em;
+    padding: 4rem 0 1rem 0;
     text-align: center;
 }
 
@@ -2216,6 +2244,7 @@ Hamburger Menu
 }
 
 .widget-title {
+    padding-top: 1em;
     margin-bottom: 1em;
     text-align: center;
 }
@@ -2385,6 +2414,7 @@ Hamburger Menu
     bottom: 50px;
     text-decoration: none;
     font-size: 2.618em;
+    z-index: 99;
 }
 
 
@@ -2748,21 +2778,12 @@ h1.site-title {font-size:3rem;}
 .single.post-meta a,
 .post-meta__category a,
 .comment-reply-link,
-.comment__author,
 .blog-post__meta .post-meta__time,
 .post-meta__author,
 .comment-edit-link,
-.post-meta__time{
+.post-meta__time,
+.comments-link a{
     font-style:italic;
-}
-
-.post-meta__category a:after{
-    content:" | ";
-    opacity:0.35;
-}
-
-.post-meta__category a:last-child:after{
-    display: none;
 }
 
 .post-meta__tag__item{
@@ -2771,6 +2792,19 @@ h1.site-title {font-size:3rem;}
     margin-top: 1em;
     cursor: default;
 }
+
+.post-meta__time a:before,
+.post-meta__author__link:before,
+.comments-link a:before {
+    font-family: 'FontAwesome';
+    font-style: normal;
+    padding-right: .5em;
+    opacity:0.6;
+}
+
+.post-meta__author__link:before{content: '\f2c0';}
+.post-meta__time a:before{content: '\F017';}
+.comments-link a:before{content: '\F27b';}
 
 .post-meta__tag__item a{
     font-size: .75em;
@@ -2828,3 +2862,8 @@ h1.site-title {font-size:3rem;}
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
 }
+
+.comment-body__left{text-align:center;}
+.comment-body__left .comment__author {padding-top:.5em;}
+.comment-body__right .button--reply,
+.comment-body__right .comment__meta {font-size:.85em}

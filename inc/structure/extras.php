@@ -226,14 +226,14 @@ function bellini_pagination() {
     global $bellini;
     if($bellini['bellini_blog_pagination_type'] == 1):
         // Next & Previous Page Pagination
-        echo '<div class="bellini__pagination--np col-md-12">';
+        echo '<div class="bellini__pagination--np col-xs-12">';
         next_posts_link('Next Page', 0);
         previous_posts_link('Previous Page', 0);
         echo '</div>';
     endif;
     if($bellini['bellini_blog_pagination_type'] == 2):
         // Numeric Pagination
-        echo '<div class="col-md-12">';
+        echo '<div class="col-xs-12">';
         the_posts_pagination();
         echo '</div>';
     endif;
@@ -351,26 +351,25 @@ function bellini_section_content_class_switcher($value){
 * Check & Prints out Scroll To Top if activated
 */
 function bellini_scroll_to_top(){
-    global $bellini;
-     if($bellini['bellini_show_scroll_to_top'] == true) :   ?>
-        <script>
-            // Scroll To Top
-            jQuery(window).scroll(function(){
-                if (jQuery(this).scrollTop() > 700) {
-                    jQuery('.scrollToTop').fadeIn();
-                } else {
-                    jQuery('.scrollToTop').fadeOut();
-                }
-            });
-            //Click event to scroll to top
-            jQuery('.scrollToTop').click(function(){
-                jQuery('html, body').animate({scrollTop : 0},1000);
-                return false;
-            });
-        </script>
-    <?php
-    endif;
-}
+  global $bellini;
+    if($bellini['bellini_show_scroll_to_top'] == true){ ?>
+  <script>
+  // Scroll To Top
+  jQuery(window).scroll(function(){
+    if (jQuery(this).scrollTop() > 700) {
+        jQuery('.scrollToTop').fadeIn();
+    } else {
+        jQuery('.scrollToTop').fadeOut();
+    }
+    });
+
+    //Click event to scroll to top
+    jQuery('.scrollToTop').click(function(){
+      jQuery('html, body').animate({scrollTop : 0},1000);
+            return false;
+    });
+    </script>
+<?php }}
 
 
 /**

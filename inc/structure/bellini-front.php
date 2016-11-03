@@ -424,3 +424,14 @@ function bellini_frontpage_text_field_shortcode(){
 	</section>
 <?php  endif;
 }
+
+function bellini_front_default_page_content(){
+	if ( have_posts() and is_page() ) :
+	while ( have_posts() ) {
+		echo '<section class="front-bellini-default-content">';
+		the_post();
+		get_template_part( 'template-parts/content', 'page' );
+		echo '</section>';
+	}
+	endif;
+}

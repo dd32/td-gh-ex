@@ -197,9 +197,9 @@ $bellini_custom_code_css							= esc_attr($bellini['bellini_custom_css']);
 
 // CSS Classes
 $primary_color_text 			= ".bellini-social__link a span,.scrollToTop";
-$primary_color_background 		= ".edit-link,.page-numbers.current,.hamburger-inner,.hamburger-inner::before,.hamburger-inner::after,.hamburger__site-title,.main-navigation ul ul,.product-featured__title h1:after,.product-featured__title--l2 h1:after,.product-featured__title--l3 h1:after";
+$primary_color_background 		= ".page-numbers.current,.hamburger-inner,.hamburger-inner::before,.hamburger-inner::after,.hamburger__site-title,.main-navigation ul ul,.product-featured__title h1:after,.product-featured__title--l2 h1:after,.product-featured__title--l3 h1:after";
 
-$bellini_meta_color_text 		= ".post-meta__time a,.breadcrumb_last,.single.post-meta,.single.post-meta a,.post-meta__category a,.comment-reply-link,.comment__author,.blog-post__meta .post-meta__time,.post-meta__author,.comment-edit-link";
+$bellini_meta_color_text 		= ".comments-link a,.post-meta__time a,.breadcrumb_last,.single.post-meta,.single.post-meta a,.post-meta__category a,.comment-reply-link,.comment__author,.blog-post__meta .post-meta__time,.post-meta__author,.comment-edit-link";
 $bellini_meta_color_background 	= ".main-navigation li a:before,.menu-toggle,.post-meta__tag__item a,.post-meta__tag__item a:before,.post-meta__tag__item a:after";
 $button_color_background 		= ".comment-form input[type=submit],.button--cta--center,.site-search form input[type=submit],.button--secondary";
 $button_color_text 				= ".button--secondary a,.button--cta--center,.comment-form input[type=submit]";

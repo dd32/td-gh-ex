@@ -60,7 +60,7 @@ add_action( 'widgets_init', 'bellini_widgets_init' );
 function bellini_widgets_init() {
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Widget Area: Right', 'bellini' ),
+		'name'          => esc_html__( 'Sidebar Right', 'bellini' ),
 		'id'            => 'sidebar-right',
 		'description'   => '',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -70,7 +70,7 @@ function bellini_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Widget Area: Left', 'bellini' ),
+		'name'          => esc_html__( 'Sidebar Left', 'bellini' ),
 		'id'            => 'sidebar-left',
 		'description'   => '',
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -80,7 +80,7 @@ function bellini_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Widget Area: Blog', 'bellini' ),
+		'name'          => esc_html__( 'Sidebar Blog Right', 'bellini' ),
 		'id'            => 'sidebar-blog',
 		'description'   => esc_html__( 'These widgets will be only visible in Blog Page Template, Archive pages','bellini' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -90,7 +90,7 @@ function bellini_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => esc_html__( 'Widget Area: Footer', 'bellini' ),
+		'name'          => esc_html__( 'Widget Area - Footer', 'bellini' ),
 		'id'            => 'sidebar-footer',
 		'description'   => esc_html__( 'You can change the Footer Widget Column count from Customize - Layout - Layout Footer','bellini' ),
 		'before_widget' => apply_filters('bellini_widget_footer_column','<section id="%1$s" class="widget__footer col-md-3 %2$s">'),
