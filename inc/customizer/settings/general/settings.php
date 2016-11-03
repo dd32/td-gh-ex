@@ -11,6 +11,16 @@ $wp_customize->add_setting( 'newsmag_enable_news_ticker',
                             )
 );
 
+$wp_customize->add_setting( 'newsmag_featured_image_in_content',
+                            array(
+	                            'sanitize_callback' => array(
+		                            'Newsmag_Customizer_Helper',
+		                            'newsmag_sanitize_checkbox'
+	                            ),
+	                            'default'           => true
+                            )
+);
+
 /**
  * Show / Hide the search icon from the top bar
  */
@@ -21,6 +31,19 @@ $wp_customize->add_setting( 'newsmag_enable_menu_search',
 		                            'newsmag_sanitize_checkbox'
 	                            ),
 	                            'default'           => true
+                            )
+);
+
+/**
+ * Sticky menu
+ */
+$wp_customize->add_setting( 'newsmag_enable_sticky_menu',
+                            array(
+	                            'sanitize_callback' => array(
+		                            'Newsmag_Customizer_Helper',
+		                            'newsmag_sanitize_checkbox'
+	                            ),
+	                            'default'           => false
                             )
 );
 

@@ -15,6 +15,22 @@ $wp_customize->add_control( new Epsilon_Control_Toggle(
 	                            )
                             )
 );
+
+/**
+ * Enable / Disable sticky menu
+ */
+$wp_customize->add_control( new Epsilon_Control_Toggle(
+	                            $wp_customize,
+	                            'newsmag_enable_sticky_menu',
+	                            array(
+		                            'type'        => 'mte-toggle',
+		                            'label'       => esc_html__( 'Sticky Menu', 'newsmag' ),
+		                            'description' => esc_html__( 'Toggling this to on will make the navigation menu stick to the top of header when scrolling.', 'newsmag' ),
+		                            'section'     => 'newsmag_general_section',
+	                            )
+                            )
+);
+
 /**
  * Enable / Disable Go top
  */
@@ -76,6 +92,17 @@ $wp_customize->add_control(
 	)
 );
 
+$wp_customize->add_control( new Epsilon_Control_Toggle(
+	                            $wp_customize,
+	                            'newsmag_featured_image_in_content',
+	                            array(
+		                            'type'        => 'mte-toggle',
+		                            'label'       => esc_html__( 'Featured image in content', 'newsmag' ),
+		                            'description' => esc_html__( 'Set this to ON to display the image in the blog post content. Else it will be shown in the header', 'newsmag' ),
+		                            'section'     => 'newsmag_blog_section',
+	                            )
+                            )
+);
 
 $wp_customize->add_control( new Epsilon_Control_Toggle(
 	                            $wp_customize,

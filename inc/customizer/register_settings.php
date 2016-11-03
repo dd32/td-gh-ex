@@ -39,7 +39,6 @@ class Newsmag_Customizer_Helper {
 		$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 		$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 		$wp_customize->get_setting( 'custom_logo' )->transport     = 'refresh';
-
 		$wp_customize->get_section( 'header_image' )->panel     = 'newsmag_panel_blog';
 		$wp_customize->get_section( 'header_image' )->priority  = 4;
 		$wp_customize->get_section( 'header_image' )->title     = __( 'Blog Archive Header Image', 'newsmag' );

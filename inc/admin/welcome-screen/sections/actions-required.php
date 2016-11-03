@@ -23,19 +23,30 @@
 			}
 			?>
 			<div class="newsmag-action-required-box">
-				<span class="dashicons dashicons-no-alt newsmag-dismiss-required-action" id="<?php echo $newsmag_required_action_value['id']; ?>"></span>
+				<span class="dashicons dashicons-no-alt newsmag-dismiss-required-action"
+				      id="<?php echo $newsmag_required_action_value['id']; ?>"></span>
 				<h3><?php if ( ! empty( $newsmag_required_action_value['title'] ) ): echo $newsmag_required_action_value['title']; endif; ?></h3>
 				<p>
 					<?php if ( ! empty( $newsmag_required_action_value['description'] ) ): echo $newsmag_required_action_value['description']; endif; ?>
 					<?php if ( ! empty( $newsmag_required_action_value['help'] ) ): echo '<br/>' . $newsmag_required_action_value['help']; endif; ?>
 				</p>
 				<?php
-				if ( ! empty( $newsmag_required_action_value['plugin_slug'] ) ):
-					?><p><a
-						href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=' . $newsmag_required_action_value['plugin_slug'] ), 'install-plugin_' . $newsmag_required_action_value['plugin_slug'] ) ); ?>"
-						class="button button-primary"><?php if ( ! empty( $newsmag_required_action_value['title'] ) ): echo $newsmag_required_action_value['title']; endif; ?></a>
-					</p><?php
-				endif;
+				if ( ! empty( $newsmag_required_action_value['plugin_slug'] ) ) {
+					$installed = false;
+					$url       = wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=' . $newsmag_required_action_value['plugin_slug'] ), 'install-plugin_' . $newsmag_required_action_value['plugin_slug'] );
+
+
+					if ( file_exists( ABSPATH . 'wp-content/plugins/' . $newsmag_required_action_value['plugin_slug'] . '/' . $newsmag_required_action_value['plugin_slug'] . '.php' ) ) {
+						$installed = true;
+						$url       = wp_nonce_url( self_admin_url( 'themes.php?page=newsmag-welcome&tab=recommended_actions&action=activate_plugin&plugin=' . $newsmag_required_action_value['plugin_slug'] . '/' . $newsmag_required_action_value['plugin_slug'] . '.php' ), 'activate_plugin_' . $newsmag_required_action_value['plugin_slug'] );
+					}
+					?>
+					<p>
+						<a href="<?php echo esc_url( $url ); ?>"
+						   class="button button-primary"><?php if ( ! empty( $newsmag_required_action_value['title'] ) ): echo $newsmag_required_action_value['title']; endif; ?></a>
+					</p>
+					<?php
+				};
 				?>
 			</div>
 			<?php

@@ -101,54 +101,6 @@ function newsmag_get_attachment_id( $url ) {
 	return (int) $attachment_id;
 }
 
-/**
- * Change default fields, add placeholder and change type attributes.
- *
- * @param  array $fields
- *
- * @return array
- */
-function newsmag_comment_placeholders( $fields ) {
-	$fields['author'] = str_replace(
-		'<input',
-		'<input placeholder="'
-		. _x(
-			'Name *',
-			'comment form placeholder',
-			'newsmag'
-		)
-		. '"',
-		$fields['author']
-	);
-	$fields['email']  = str_replace(
-		'<input id="email" name="email"',
-		'<input placeholder="'
-		. _x(
-			'Email *',
-			'comment form placeholder',
-			'newsmag'
-		)
-		. '"  id="email" name="email"',
-		$fields['email']
-	);
-	$fields['url']    = str_replace(
-		'<input id="url" name="url"',
-		'<input placeholder="'
-		. _x(
-			'Website',
-			'comment form placeholder',
-			'newsmag'
-		)
-		. '" id="url" name="url"',
-		$fields['url']
-	);
-
-	return $fields;
-}
-
-add_filter( 'comment_form_default_fields', 'newsmag_comment_placeholders' );
-
-
 /*
 /* Add responsive container to embeds
 */
@@ -255,6 +207,11 @@ function newsmag_get_first_posts( $array ) {
 
 }
 
+/**
+ * Render the image banner ( in header )
+ *
+ * @return string
+ */
 function newsmag_render_banner() {
 	$banner_type = get_theme_mod( 'newsmag_banner_type', 'image' );
 
@@ -278,4 +235,42 @@ function newsmag_render_banner() {
 	$html .= '</div>';
 
 	return $html;
+}
+
+/**
+ * @param string $format
+ *
+ * @return bool|mixed
+ */
+function newsmag_format_icon( $format = 'standard' ) {
+	if ( $format === 'standard' ) {
+		return false;
+	}
+
+	$icons = array(
+		'aside'   => 'fa fa-hashtag',
+		'image'   => 'fa fa-picture-o',
+		'quote'   => 'fa fa-quote-left',
+		'link'    => 'fa fa-link',
+		'gallery' => 'fa fa-th-large',
+		'video'   => 'fa fa-video-camera',
+		'status'  => 'fa fa-heartbeat',
+		'audio'   => 'fa fa-headphones',
+		'chat'    => 'fa fa-comment-o'
+	);
+
+	return $icons[ $format ];
+}
+
+add_action( 'wp_ajax_newsmag_get_attachment_image', 'newsmag_get_attachment_image' );
+add_action( 'wp_ajax_nopriv_newsmag_get_attachment_image', 'newsmag_get_attachment_image' );
+
+function newsmag_get_attachment_image() {
+	$id   = intval( $_POST['attachment_id'] );
+	$size = esc_html( $_POST['attachment_size'] );
+
+	$src = wp_get_attachment_image( $id, false );
+
+	echo $src;
+	die();
 }
