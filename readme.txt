@@ -119,3 +119,6 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, cust
 = Version 1.4.2 =
 * Updated Sticky Sidebar script to 1.5.0v
 * Minor bug fixes
+
+= Version 1.4.3 =
+* Updated FontAwesome to 4.7.0v
