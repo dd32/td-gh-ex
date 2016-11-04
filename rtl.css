@@ -93,6 +93,14 @@ textarea {
 .main-navigation ul ul a {
 	text-align: right;
 }
+aside ul.menu .indicatorBar {
+	right: inherit;
+	left: 0;
+}
+aside ul.menu ul.sub-menu {
+	padding-left: 0em;
+	padding-right: 1.5em;
+}
 @media all and (max-width: 1024px) {
 	.menu-toggle, .main-navigation.toggled .nav-menu {
 		text-align: right;

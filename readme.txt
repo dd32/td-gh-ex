@@ -41,6 +41,12 @@ one-column, left-sidebar, responsive-layout, custom-background, custom-menu, cus
 3. Log into your WP admin panel and click on the Design tab. Now click on the Zenzero theme to activate it.
 
 == Changelog ==
+= Version 1.3.8 =
+* Updated FontAwesome to 4.7.0 Version
+* Updated Smooth Scroll to 1.4.5 Version
+* Improved custom menu in the sidebar
+* Minor bug fixes
+
 = Version 1.3.7 =
 * Added the possibility to show the social buttons also in the header
 * Minor Bug Fixes

@@ -1,5 +1,5 @@
 //
-// SmoothScroll for websites v1.4.4 (Balazs Galambosi)
+// SmoothScroll for websites v1.4.5 (Balazs Galambosi)
 // http://www.smoothscroll.net/
 //
 // Licensed under the terms of the MIT license.
@@ -60,7 +60,7 @@ var isMac = /^Mac/.test(navigator.platform);
 
 var key = { left: 37, up: 38, right: 39, down: 40, spacebar: 32, 
             pageup: 33, pagedown: 34, end: 35, home: 36 };
-
+var arrowKeys = { 37: 1, 38: 1, 39: 1, 40: 1 };
 
 /***********************************************
  * INITIALIZE
@@ -101,16 +101,13 @@ function init() {
     }
 
     /**
-     * Please duplicate this radar for a Safari fix! 
-     * rdar://22376037
-     * https://openradar.appspot.com/radar?id=4965070979203072
-     * 
-     * Only applies to Safari now, Chrome fixed it in v45:
+     * Safari 10 fixed it, Chrome fixed it in v45:
      * This fixes a bug where the areas left and right to 
      * the content does not trigger the onmousewheel event
      * on some pages. e.g.: html, body { height: 100% }
      */
-    else if (scrollHeight > windowHeight &&
+    else if (isOldSafari &&
+             scrollHeight > windowHeight &&
             (body.offsetHeight <= windowHeight || 
              html.offsetHeight <= windowHeight)) {
 
@@ -299,19 +296,18 @@ function wheel(event) {
     }
     
     var target = event.target;
-    var overflowing = overflowingAncestor(target);
 
-    // use default if there's no overflowing
-    // element or default action is prevented   
+    // leave early if default action is prevented   
     // or it's a zooming event with CTRL 
-    if (!overflowing || event.defaultPrevented || event.ctrlKey) {
+    if (event.defaultPrevented || event.ctrlKey) {
         return true;
     }
     
     // leave embedded content alone (flash & pdf)
     if (isNodeName(activeElement, 'embed') || 
        (isNodeName(target, 'embed') && /\.pdf/i.test(target.src)) ||
-       isNodeName(activeElement, 'object')) {
+        isNodeName(activeElement, 'object') ||
+        target.shadowRoot) {
         return true;
     }
 
@@ -336,6 +332,20 @@ function wheel(event) {
     if (event.deltaMode === 1) {
         deltaX *= 40;
         deltaY *= 40;
+    }
+
+    var overflowing = overflowingAncestor(target);
+
+    // nothing to do if there's no element that's scrollable
+    if (!overflowing) {
+        // except Chrome iframes seem to eat wheel events, which we need to 
+        // propagate up, if the iframe has nothing overflowing to scroll
+        if (isFrame && isChrome)  {
+            // change target to iframe element itself for the parent frame
+            Object.defineProperty(event, "target", {value: window.frameElement});
+            return parent.wheel(event);
+        }
+        return true;
     }
     
     // check if it's a touchpad scroll that should be ignored
@@ -379,28 +389,41 @@ function keydown(event) {
     // or inside interactive elements
     var inputNodeNames = /^(textarea|select|embed|object)$/i;
     var buttonTypes = /^(button|submit|radio|checkbox|file|color|image)$/i;
-    if ( inputNodeNames.test(target.nodeName) ||
+    if ( event.defaultPrevented ||
+         inputNodeNames.test(target.nodeName) ||
          isNodeName(target, 'input') && !buttonTypes.test(target.type) ||
          isNodeName(activeElement, 'video') ||
          isInsideYoutubeVideo(event) ||
          target.isContentEditable || 
-         event.defaultPrevented   ||
          modifier ) {
       return true;
     }
-    
-    // spacebar should trigger button press
+
+    // [spacebar] should trigger button press, leave it alone
     if ((isNodeName(target, 'button') ||
          isNodeName(target, 'input') && buttonTypes.test(target.type)) &&
         event.keyCode === key.spacebar) {
       return true;
     }
+
+    // [arrwow keys] on radio buttons should be left alone
+    if (isNodeName(target, 'input') && target.type == 'radio' &&
+        arrowKeys[event.keyCode])  {
+      return true;
+    }
     
     var shift, x = 0, y = 0;
-    var elem = overflowingAncestor(activeElement);
-    var clientHeight = elem.clientHeight;
+    var overflowing = overflowingAncestor(activeElement);
 
-    if (elem == document.body) {
+    if (!overflowing) {
+        // Chrome iframes seem to eat key events, which we need to 
+        // propagate up, if the iframe has nothing overflowing to scroll
+        return (isFrame && isChrome) ? parent.keydown(event) : true;
+    }
+
+    var clientHeight = overflowing.clientHeight; 
+
+    if (overflowing == document.body) {
         clientHeight = window.innerHeight;
     }
 
@@ -422,11 +445,12 @@ function keydown(event) {
             y = clientHeight * 0.9;
             break;
         case key.home:
-            y = -elem.scrollTop;
+            y = -overflowing.scrollTop;
             break;
         case key.end:
-            var damt = elem.scrollHeight - elem.scrollTop - clientHeight;
-            y = (damt > 0) ? damt+10 : 0;
+            var scroll = overflowing.scrollHeight - overflowing.scrollTop;
+            var scrollRemaining = scroll - clientHeight;
+            y = (scrollRemaining > 0) ? scrollRemaining + 10 : 0;
             break;
         case key.left:
             x = -options.arrowScroll;
@@ -438,7 +462,7 @@ function keydown(event) {
             return true; // a key we don't care about
     }
 
-    scrollArray(elem, x, y);
+    scrollArray(overflowing, x, y);
     event.preventDefault();
     scheduleClearCache();
 }
@@ -555,7 +579,9 @@ function directionCheck(x, y) {
 var deltaBufferTimer;
 
 if (window.localStorage && localStorage.SS_deltaBuffer) {
-    deltaBuffer = localStorage.SS_deltaBuffer.split(',');
+    try { // #46 Safari throws in private browsing for localStorage 
+        deltaBuffer = localStorage.SS_deltaBuffer.split(',');
+    } catch (e) { } 
 }
 
 function isTouchpad(deltaY) {
@@ -563,14 +589,14 @@ function isTouchpad(deltaY) {
     if (!deltaBuffer.length) {
         deltaBuffer = [deltaY, deltaY, deltaY];
     }
-    deltaY = Math.abs(deltaY)
+    deltaY = Math.abs(deltaY);
     deltaBuffer.push(deltaY);
     deltaBuffer.shift();
     clearTimeout(deltaBufferTimer);
     deltaBufferTimer = setTimeout(function () {
-        if (window.localStorage) {
+        try { // #46 Safari throws in private browsing for localStorage
             localStorage.SS_deltaBuffer = deltaBuffer.join(',');
-        }
+        } catch (e) { }  
     }, 1000);
     return !allDeltasDivisableBy(120) && !allDeltasDivisableBy(100);
 } 
@@ -681,6 +707,7 @@ var isChrome  = /chrome/i.test(userAgent) && !isEdge;
 var isSafari  = /safari/i.test(userAgent) && !isEdge; 
 var isMobile  = /mobile/i.test(userAgent);
 var isIEWin7  = /Windows NT 6.1/i.test(userAgent) && /rv:11/i.test(userAgent);
+var isOldSafari = isSafari && (/Version\/8/i.test(userAgent) || /Version\/9/i.test(userAgent));
 var isEnabledForBrowser = (isChrome || isSafari || isIEWin7) && !isMobile;
 
 var wheelEvent;
@@ -708,7 +735,7 @@ function SmoothScroll(optionsToSet) {
 SmoothScroll.destroy = cleanup;
 
 if (window.SmoothScrollOptions) // async API
-    SmoothScroll(window.SmoothScrollOptions)
+    SmoothScroll(window.SmoothScrollOptions);
 
 if (typeof define === 'function' && define.amd)
     define(function() {
