@@ -38,7 +38,7 @@ endif;
 /**
  * Sanitizing the page/post
  *
- * @since acmephoto 1.0.0
+ * @since AcmePhoto 1.0.0
  *
  * @param $input user input value
  * @return sanitized output as $input
@@ -56,7 +56,7 @@ endif;
 /**
  * Sanitizing the select callback example
  *
- * @since acmephoto 1.0.0
+ * @since AcmePhoto 1.0.0
  *
  * @see sanitize_key()               https://developer.wordpress.org/reference/functions/sanitize_key/
  * @see $wp_customize->get_control() https://developer.wordpress.org/reference/classes/wp_customize_manager/get_control/

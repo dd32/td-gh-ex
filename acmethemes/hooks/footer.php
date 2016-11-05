@@ -44,11 +44,11 @@ if ( ! function_exists( 'acmephoto_footer' ) ) :
                 is_active_sidebar( 'footer-top-col-three' ) 
             ){
                 ?>
-                <div class="top-bottom wrapper">
+                <div class="top-bottom clearfix">
                     <?php
                     $footer_top_col = 'acme-col-3';
                     ?>
-                    <div id="footer-top">
+                    <div id="footer-top" class="wrapper">
                         <div class="footer-columns">
                             <?php if( is_active_sidebar( 'footer-top-col-one' ) ) : ?>
                                 <div class="footer-sidebar <?php echo esc_attr( $footer_top_col );?>">

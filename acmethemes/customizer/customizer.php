@@ -3,7 +3,7 @@
  * AcmePhoto Theme Customizer.
  *
  * @package Acme Themes
- * @subpackage Acmephoto
+ * @subpackage AcmePhoto
  */
 
 /*

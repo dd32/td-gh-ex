@@ -19,6 +19,7 @@ $acmephoto_blog_show_cats = $acmephoto_customizer_all_values['acmephoto-blog-sho
 $acmephoto_blog_show_comments = $acmephoto_customizer_all_values['acmephoto-blog-show-comments'];
 $acmephoto_blog_show_date = $acmephoto_customizer_all_values['acmephoto-blog-show-date'];
 $acmephoto_blog_show_author = $acmephoto_customizer_all_values['acmephoto-blog-show-author'];
+
 $gab = "acme-col-3 article-ap masonry-post ";
 if( 1 != $acmephoto_blog_enable_gap ){
 	$gab .= ' no-gab';

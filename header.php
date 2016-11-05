@@ -12,7 +12,7 @@
 
 /**
  * acmephoto_action_before_head hook
- * @since acmephoto 1.0.0
+ * @since AcmePhoto 1.0.0
  *
  * @hooked acmephoto_set_global -  0
  * @hooked acmephoto_doctype -  10
@@ -23,7 +23,7 @@ do_action( 'acmephoto_action_before_head' );?>
 		<?php
 		/**
 		 * acmephoto_action_before_wp_head hook
-		 * @since acmephoto 1.0.0
+		 * @since AcmePhoto 1.0.0
 		 *
 		 * @hooked acmephoto_before_wp_head -  10
 		 */
@@ -37,7 +37,7 @@ do_action( 'acmephoto_action_before_head' );?>
 <?php
 /**
  * acmephoto_action_before hook
- * @since acmephoto 1.0.0
+ * @since AcmePhoto 1.0.0
  *
  * @hooked acmephoto_page_start - 10
  * @hooked acmephoto_page_start - 15
@@ -46,7 +46,7 @@ do_action( 'acmephoto_action_before' );
 
 /**
  * acmephoto_action_before_header hook
- * @since acmephoto 1.0.0
+ * @since AcmePhoto 1.0.0
  *
  * @hooked acmephoto_skip_to_content - 10
  */
@@ -54,7 +54,7 @@ do_action( 'acmephoto_action_before_header' );
 
 /**
  * acmephoto_action_header hook
- * @since acmephoto 1.0.0
+ * @since AcmePhoto 1.0.0
  *
  * @hooked acmephoto_after_header - 10
  */
@@ -62,7 +62,7 @@ do_action( 'acmephoto_action_header' );
 
 /**
  * acmephoto_action_after_header hook
- * @since acmephoto 1.0.0
+ * @since AcmePhoto 1.0.0
  *
  * @hooked null
  */
@@ -70,7 +70,7 @@ do_action( 'acmephoto_action_after_header' );
 
 /**
  * acmephoto_action_before_content hook
- * @since acmephoto 1.0.0
+ * @since AcmePhoto 1.0.0
  *
  * @hooked acmephoto_before_content - 10
  */

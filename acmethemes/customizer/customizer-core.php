@@ -42,7 +42,7 @@ endif;
 /**
  * Sidebar layout options
  *
- * @since acmephoto 1.0.0
+ * @since AcmePhoto 1.0.0
  *
  * @param null
  * @return array $acmephoto_sidebar_layout
@@ -79,7 +79,7 @@ if ( !function_exists('acmephoto_pagination_options') ) :
 endif;
 
 /**
- * Pagination Options
+ * Button Options
  *
  * @since AcmePhoto 1.0.0
  *
@@ -95,6 +95,26 @@ if ( !function_exists('acmephoto_feature_button_options') ) :
             'hide'  => __( 'Hide', 'acmephoto' )
         );
         return apply_filters( 'acmephoto_feature_button_options', $acmephoto_feature_button_options );
+    }
+endif;
+
+/**
+ * Button Options
+ *
+ * @since AcmePhoto 1.0.0
+ *
+ * @param null
+ * @return array acmephoto_menu_position_options
+ *
+ */
+if ( !function_exists('acmephoto_menu_position_options') ) :
+    function acmephoto_menu_position_options() {
+        $acmephoto_menu_position_options =  array(
+            'top-normal'  => __( 'Top Normal', 'acmephoto' ),
+            'top-fixed'  => __( 'Top Fixed', 'acmephoto' ),
+            'below-feature'  => __( 'Below Feature', 'acmephoto' )
+        );
+        return apply_filters( 'acmephoto_menu_position_options', $acmephoto_menu_position_options );
     }
 endif;
 
@@ -134,12 +154,15 @@ if ( !function_exists('acmephoto_get_default_theme_options') ) :
         $default_theme_options = array(
             /*feature section options*/
             'acmephoto-enable-feature'       => '',
+            'acmephoto-feature-enable-social'       => '',
             'acmephoto-feature-page'         => 0,
+            'acmephoto-feature-height'       => 60,
             'acmephoto-feature-button-option'=> 'search',
 
             /*header options*/
             'acmephoto-header-logo'          => '',
             'acmephoto-header-id-display-opt'=> 'title-and-tagline',
+            'acmephoto-menu-position-options'=> 'below-feature',
             'acmephoto-facebook-url'         => '',
             'acmephoto-twitter-url'          => '',
             'acmephoto-instagram-url'          => '',

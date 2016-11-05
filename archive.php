@@ -52,7 +52,7 @@ get_header(); ?>
 
 			/**
 			 * acmephoto_action_navigation hook
-			 * @since acmephoto 1.0.0
+			 * @since AcmePhoto 1.0.0
 			 *
 			 * @hooked: acmephoto_posts_navigation - 10
 			 *

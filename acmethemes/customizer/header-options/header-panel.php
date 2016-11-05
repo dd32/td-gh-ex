@@ -20,5 +20,10 @@ require $acmephoto_customizer_header_logo_file_path;
 $acmephoto_customizer_header_social_file_path = acmephoto_file_directory('acmethemes/customizer/header-options/social-options.php');
 require $acmephoto_customizer_header_social_file_path;
 
+/*
+* file for menu options
+*/
+$acmephoto_customizer_header_menu_option_file_path = acmephoto_file_directory('acmethemes/customizer/header-options/menu-option.php');
+require $acmephoto_customizer_header_menu_option_file_path;
 
 

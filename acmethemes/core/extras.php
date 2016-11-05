@@ -5,7 +5,7 @@
  * Eventually, some of the functionality here could be replaced by core features.
  *
  * @package Acme Themes
- * @subpackage Acmephoto
+ * @subpackage AcmePhoto
  */
 
 /**

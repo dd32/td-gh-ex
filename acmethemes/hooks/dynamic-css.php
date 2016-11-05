@@ -24,8 +24,6 @@ if ( ! function_exists( 'acmephoto_dynamic_css' ) ) :
             #calendar_wrap #wp-calendar #today a,
             .wpcf7-form input.wpcf7-submit:hover,
             .breadcrumb,
-            .slider-section .owl-buttons .owl-prev, 
-            .slider-section .owl-buttons .owl-next,
             .masonry-start .read-more .read-more-btn,
             .show-more,
              .slicknav_btn,

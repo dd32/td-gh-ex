@@ -23,7 +23,7 @@ if ( !function_exists('acmephoto_posts_navigation') ) :
             else{
                 $output_page = $page_number + 1;
             }
-            echo "<div class='show-more' data-number='$output_page'><i class='fa fa-refresh'></i>".__('Show More','acmephoto')."</div><div id='acmephoto-temp-post'></div>";
+            echo "<div class='clearfix'></div> <div class='show-more' data-number='$output_page'><i class='fa fa-refresh'></i>".__('Show More','acmephoto')."</div><div id='acmephoto-temp-post'></div>";
         }
     }
 endif;

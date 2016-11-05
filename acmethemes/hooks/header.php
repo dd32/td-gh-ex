@@ -69,9 +69,53 @@ if ( ! function_exists( 'acmephoto_front_logo_options' ) ) :
 endif;
 
 /**
+ * Logo options
+ *
+ * @since AcmePhoto 1.0.1
+ *
+ * @param null
+ * @return null
+ *
+ */
+if ( ! function_exists( 'acmephoto_front_navigation_options' ) ) :
+
+    function acmephoto_front_navigation_options() {
+        global $acmephoto_customizer_all_values;
+        ?>
+        <div class="wrapper">
+            <div class="sticky-site-identity">
+                <?php
+                acmephoto_front_logo_options();
+                ?><!--acmephoto-header-id-display-opt-->
+            </div>
+            <?php
+            if( 1 == $acmephoto_customizer_all_values['acmephoto-enable-social'] ){
+                do_action('acmephoto_action_social_links');
+            }
+            ?>
+            <button type="button" class="navbar-toggle"><i class="fa fa-bars"></i></button>
+            <div class="main-navigation clearfix" id="main-navigation">
+                <?php
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'primary',
+                        'menu_id' => 'primary-menu',
+                        'menu_class' => 'nav navbar-nav navbar-right animated',
+                    )
+                );
+                ?>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+        <?php
+
+    }
+endif;
+
+/**
  * Doctype Declaration
  *
- * @since acmephoto 1.0.0
+ * @since AcmePhoto 1.0.0
  *
  * @param null
  * @return null
@@ -89,7 +133,7 @@ add_action( 'acmephoto_action_before_head', 'acmephoto_doctype', 10 );
 /**
  * Code inside head tag but before wp_head funtion
  *
- * @since acmephoto 1.0.0
+ * @since AcmePhoto 1.0.0
  *
  * @param null
  * @return null
@@ -111,7 +155,7 @@ add_action( 'acmephoto_action_before_wp_head', 'acmephoto_before_wp_head', 10 );
 /**
  * Add body class
  *
- * @since acmephoto 1.0.0
+ * @since AcmePhoto 1.0.0
  *
  * @param null
  * @return null
@@ -122,11 +166,14 @@ if ( ! function_exists( 'acmephoto_body_class' ) ) :
     function acmephoto_body_class( $acmephotobody_classes ) {
         global $acmephoto_customizer_all_values;
         $acmephoto_enable_feature = $acmephoto_customizer_all_values['acmephoto-enable-feature'];
+        $acmephoto_menu_position_options = $acmephoto_customizer_all_values['acmephoto-menu-position-options'];
 
         if ( 'boxed' == $acmephoto_customizer_all_values['acmephoto-default-layout'] ) {
             $acmephotobody_classes[] = 'boxed-layout';
         }
-        if( !is_front_page() || ( is_front_page() && is_home() && 1 != $acmephoto_enable_feature)){
+        if( 
+            ( !is_front_page() && ('top-fixed' == $acmephoto_menu_position_options || 'below-feature' == $acmephoto_menu_position_options) ) || 
+            ( is_front_page() && is_home() && 'top-fixed' == $acmephoto_menu_position_options && 1 != $acmephoto_enable_feature)){
             $acmephotobody_classes[] = 'not-front-page';
         }
         $acmephotobody_classes[] = acmephoto_sidebar_selection();
@@ -140,7 +187,7 @@ add_action( 'body_class', 'acmephoto_body_class', 10, 1);
 /**
  * Page start
  *
- * @since acmephoto 1.0.0
+ * @since AcmePhoto 1.0.0
  *
  * @param null
  * @return null
@@ -159,7 +206,7 @@ add_action( 'acmephoto_action_before', 'acmephoto_page_start', 15 );
 /**
  * Skip to content
  *
- * @since acmephoto 1.0.0
+ * @since AcmePhoto 1.0.0
  *
  * @param null
  * @return null
@@ -175,6 +222,7 @@ if ( ! function_exists( 'acmephoto_skip_to_content' ) ) :
 
 endif;
 add_action( 'acmephoto_action_before_header', 'acmephoto_skip_to_content', 10 );
+
 /**
  * Main header
  *
@@ -188,19 +236,36 @@ if ( ! function_exists( 'acmephoto_header' ) ) :
     function acmephoto_header() {
         global $acmephoto_customizer_all_values;
         $acmephoto_enable_feature = $acmephoto_customizer_all_values['acmephoto-enable-feature'];
-
-        if( is_front_page() && 1 == $acmephoto_enable_feature ){
+        $acmephoto_menu_position_options = $acmephoto_customizer_all_values['acmephoto-menu-position-options'];
+        if( 'top-normal' == $acmephoto_menu_position_options ) {
             ?>
-            <div class="top-header" id="top-header">
-                <div class="wrapper">
-                    <div class="navbar-header clearfix">
-                        <?php
-                        acmephoto_front_logo_options();
-                        ?><!--acmephoto-header-id-display-opt-->
-                    </div>
-                </div>
+            <div class="navbar at-navbar normal-navigation clearfix" id="navbar" role="navigation">
+                <?php
+                acmephoto_front_navigation_options();
+                ?>
             </div>
             <?php
+        }
+        elseif( 'top-fixed' == $acmephoto_menu_position_options ) {
+            /*do nothing*/
+        }
+        else{
+            if ( is_front_page() && 1 == $acmephoto_enable_feature ){
+                ?>
+                <div class="top-header" id="top-header">
+                    <div class="wrapper">
+                        <div class="navbar-header clearfix">
+                            <?php
+                            acmephoto_front_logo_options();
+                            ?><!--acmephoto-header-id-display-opt-->
+                        </div>
+                    </div>
+                </div>
+                <?php
+            }
+            else{
+                /*do nothing*/
+            }
         }
     }
 endif;
@@ -209,7 +274,7 @@ add_action( 'acmephoto_action_header', 'acmephoto_header', 10 );
 /**
  * Before main content
  *
- * @since acmephoto 1.0.0
+ * @since AcmePhoto 1.0.0
  *
  * @param null
  * @return void
@@ -221,12 +286,13 @@ if ( ! function_exists( 'acmephoto_before_content' ) ) :
 
         global $acmephoto_customizer_all_values;
         $acmephoto_enable_feature = $acmephoto_customizer_all_values['acmephoto-enable-feature'];
+        $acmephoto_menu_position_options = $acmephoto_customizer_all_values['acmephoto-menu-position-options'];
         if ( is_front_page() && 1 == $acmephoto_enable_feature ) {
             echo '<div class="slider-feature-wrap clearfix">';
             /**
              * Slide
              * acmephoto_action_feature_slider
-             * @since acmephoto 1.1.0
+             * @since AcmePhoto 1.1.0
              *
              * @hooked acmephoto_feature_slider -  0
              */
@@ -237,39 +303,27 @@ if ( ! function_exists( 'acmephoto_before_content' ) ) :
             $acmephoto_content_id = "content";
         }
         $inner_nav = '';
-        if( !is_front_page() || ( is_front_page() && 1 != $acmephoto_enable_feature )){
-            $inner_nav .= ' navbar-small';
+        if( 'top-normal' != $acmephoto_menu_position_options ){
+            if( !is_front_page() ||
+                ( is_front_page() && 1 != $acmephoto_enable_feature )  ||
+                ( is_front_page() && 1 == $acmephoto_enable_feature && 'top-fixed' == $acmephoto_menu_position_options )){
+                $inner_nav .= ' navbar-small';
+            }
+            else{
+                $inner_nav .= ' at-navbar-controller';
+            }
+            ?>
+            <div class="navbar at-navbar clearfix <?php echo esc_attr( $inner_nav );?>" id="navbar" role="navigation">
+                <?php
+                acmephoto_front_navigation_options();
+                ?>
+            </div>
+            <?php
         }
         ?>
-        <div class="navbar at-navbar clearfix <?php echo esc_attr( $inner_nav );?>" id="navbar" role="navigation">
-            <div class="wrapper">
-                <div class="sticky-site-identity">
-                    <?php
-                    acmephoto_front_logo_options();
-                    ?><!--acmephoto-header-id-display-opt-->
-                </div>
-                <?php
-                if( 1 == $acmephoto_customizer_all_values['acmephoto-enable-social'] ){
-                    do_action('acmephoto_action_social_links');
-                }
-                ?>
-                <button type="button" class="navbar-toggle"><i class="fa fa-bars"></i></button>
-                <div class="main-navigation clearfix" id="main-navigation">
-                    <?php
-                    wp_nav_menu(
-                        array(
-                            'theme_location' => 'primary',
-                            'menu_id' => 'primary-menu',
-                            'menu_class' => 'nav navbar-nav navbar-right animated',
-                        )
-                    );
-                    ?>
-                </div>
-                <!--/.nav-collapse -->
-            </div>
-        </div>
+
         <div class="wrapper content-wrapper clearfix">
-    <div id="<?php echo esc_attr( $acmephoto_content_id ); ?>" class="site-content">
+    <div id="<?php echo esc_attr( $acmephoto_content_id ); ?>" class="site-content clearfix">
     <?php
         if( 1 == $acmephoto_customizer_all_values['acmephoto-show-breadcrumb'] ){
             acmephoto_breadcrumbs();

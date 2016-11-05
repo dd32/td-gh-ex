@@ -5,7 +5,7 @@
  * Eventually, some of the functionality here could be replaced by core features.
  *
  * @package Acme Themes
- * @subpackage Acmephoto
+ * @subpackage AcmePhoto
  */
 
 
@@ -99,6 +99,7 @@ endif;
  * @return bool
  */
 if ( ! function_exists( 'acmephoto_categorized_blog' ) ) :
+	
 	function acmephoto_categorized_blog() {
 		if ( false === ( $all_the_cool_cats = get_transient( 'acmephoto_categories' ) ) ) {
 			// Create an array of all the categories that are attached to posts.
@@ -124,6 +125,7 @@ if ( ! function_exists( 'acmephoto_categorized_blog' ) ) :
 			return false;
 		}
 	}
+
 endif;
 
 
@@ -131,6 +133,7 @@ endif;
  * Flush out the transients used in acmephoto_categorized_blog.
  */
 if ( ! function_exists( 'acmephoto_category_transient_flusher' ) ) :
+	
 	function acmephoto_category_transient_flusher() {
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 			return;
@@ -138,6 +141,7 @@ if ( ! function_exists( 'acmephoto_category_transient_flusher' ) ) :
 		// Like, beat it. Dig?
 		delete_transient( 'acmephoto_categories' );
 	}
+
 endif;
 
 

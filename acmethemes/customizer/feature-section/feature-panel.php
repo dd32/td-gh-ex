@@ -20,3 +20,9 @@ require $acmephoto_customizer_feature_enable_file_path;
 */
 $acmephoto_customizer_feature_category_file_path = acmephoto_file_directory('acmethemes/customizer/feature-section/feature-slider.php');
 require $acmephoto_customizer_feature_category_file_path;
+
+/*
+* file for feature slider category
+*/
+$acmephoto_customizer_feature_social_options_file_path = acmephoto_file_directory('acmethemes/customizer/feature-section/social-options.php');
+require $acmephoto_customizer_feature_social_options_file_path;

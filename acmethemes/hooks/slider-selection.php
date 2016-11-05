@@ -10,22 +10,22 @@
  */
 if ( !function_exists('acmephoto_default_slider') ) :
     function acmephoto_default_slider(){
+
+        $bg_image_style = 'height:60vh;';
+        $bg_image_style .= 'background-image:url(' . esc_url( get_template_directory_uri()."/assets/img/acme-photo-feature.jpg" ) . ');background-repeat:no-repeat;background-size:cover;background-attachment:scroll;background-position: center;';
+
+
         ?>
-        <div class="item">
-            <a href="#">
-                <img src="<?php echo esc_url( get_template_directory_uri()."/assets/img/acme-photo-feature.jpg" ); ?>"/>
-            </a>
+        <div class="item" style="<?php echo $bg_image_style; ?>">
             <div class="slider-desc">
                 <div class="slider-details">
-                    <a href="#">
-                        <div class="slide-title">
-                            <?php _e('Life Is Beautiful','acmephoto'); ?>
-                        </div>
-                    </a>
+                    <div class="slide-title">
+                        <?php _e('Life Is Beautiful','acmephoto'); ?>
+                    </div>
+                    <?php
+                    echo '<div class="slide-caption">'.__("Don't miss anything",'acmephoto').'</div>';
+                    ?>
                 </div>
-                <?php
-                echo '<div class="slide-caption">'.__("Don't miss anything",'acmephoto').'</div>';
-                ?>
             </div>
         </div>
         <?php
@@ -46,16 +46,28 @@ if ( ! function_exists( 'acmephoto_display_feature_slider' ) ) :
     function acmephoto_display_feature_slider(){
         global $acmephoto_customizer_all_values;
         $acmephoto_feature_page = $acmephoto_customizer_all_values['acmephoto-feature-page'];
+        $acmephoto_feature_height = $acmephoto_customizer_all_values['acmephoto-feature-height'];
         $acmephoto_feature_button_option = $acmephoto_customizer_all_values['acmephoto-feature-button-option'];
         if ( 0 != $acmephoto_feature_page ) {
-            $acmephoto_cat_post_args = array(
-                'page_id'         => $acmephoto_feature_page,
-                'posts_per_page'      => 1,
+            $acmephoto_child_page_args = array(
+                'post_parent'         => $acmephoto_feature_page,
+                'posts_per_page'      => 3,
                 'post_type'           => 'page',
                 'no_found_rows'       => true,
                 'post_status'         => 'publish'
             );
-            $slider_query = new WP_Query($acmephoto_cat_post_args);
+            $slider_query = new WP_Query( $acmephoto_child_page_args );
+            if ( !$slider_query->have_posts() ){
+                $acmephoto_child_page_args = array(
+                    'page_id'         => $acmephoto_feature_page,
+                    'posts_per_page'      => 1,
+                    'post_type'           => 'page',
+                    'no_found_rows'       => true,
+                    'post_status'         => 'publish'
+                );
+                $slider_query = new WP_Query( $acmephoto_child_page_args );
+            }
+            $bg_image_style = 'height:'.$acmephoto_feature_height."vh;";
             if ($slider_query->have_posts()):
                 while ($slider_query->have_posts()): $slider_query->the_post();
                     if (has_post_thumbnail()) {
@@ -63,11 +75,9 @@ if ( ! function_exists( 'acmephoto_display_feature_slider' ) ) :
                     } else {
                         $image_url[0] = get_template_directory_uri() . '/assets/img/no-image-avalable.png';
                     }
+                    $bg_image_style .= 'background-image:url(' . esc_url( $image_url[0] ) . ');background-repeat:no-repeat;background-size:cover;background-attachment:scroll;background-position: center;';
                     ?>
-                    <div class="item">
-                        <a href="javascript:void (0)">
-                            <img src="<?php echo esc_url( $image_url[0] ); ?>"/>
-                        </a>
+                    <div class="item" style="<?php echo $bg_image_style; ?>">
                         <div class="slider-desc">
                             <div class="slider-details">
                                 <div class="slide-title">
@@ -77,22 +87,12 @@ if ( ! function_exists( 'acmephoto_display_feature_slider' ) ) :
                                     <?php echo esc_html( get_the_excerpt() ); ?>
                                 </div>
                                 <?php
-                                if( 'search' == $acmephoto_feature_button_option ){
-                                    ?>
-                                    <div class="banner-search">
-                                        <?php get_search_form()?>
-                                    </div>
-                                    <?php
-                                }
-                                elseif ( 'read-more' == $acmephoto_feature_button_option ){
+                                if ( 'read-more' == $acmephoto_feature_button_option ){
                                     ?>
                                     <a href="<?php the_permalink()?>" class="read-more">
                                         <?php _e( 'Read More', 'acmephoto' );?>
                                     </a>
                                     <?php
-                                }
-                                else{
-                                    /*do nothing*/
                                 }
                                 ?>
                             </div>
@@ -101,8 +101,7 @@ if ( ! function_exists( 'acmephoto_display_feature_slider' ) ) :
                     <?php
                 endwhile;
                 wp_reset_postdata();
-                ?>
-            <?php endif;
+            endif;
         }
         else{
             acmephoto_default_slider();
@@ -120,12 +119,45 @@ endif;
  */
 if ( !function_exists('acmephoto_feature_slider') ) :
     function acmephoto_feature_slider() {
+        global $acmephoto_customizer_all_values;
+        $acmephoto_feature_button_option = $acmephoto_customizer_all_values['acmephoto-feature-button-option'];
+        $acmephoto_feature_enable_social = $acmephoto_customizer_all_values['acmephoto-feature-enable-social'];
+
+        /*slider start*/
         ?>
         <div class="slider-section">
-            <div class="feature-slider owl-carousel">
+            <?php
+            if( 'search' == $acmephoto_feature_button_option ){
+                ?>
+                <div class="banner-search">
+                    <?php get_search_form()?>
+                </div>
+                <?php
+            }
+            if( 1 == $acmephoto_feature_enable_social ) {
+                ?>
+                <div class="banner-social">
+                    <?php
+                    do_action('acmephoto_action_social_links');
+                    ?>
+                </div>
+                <?php
+            }
+            ?>
+            <div
+                class="feature-slider cycle-slideshow"
+                data-cycle-fx = 'tileBlind'
+                data-cycle-speed = 1000
+                data-cycle-pause-on-hover = true
+                data-cycle-timeout = 2000
+                data-cycle-slides = '.item'
+            >
+                <!-- prev/next links -->
+                <div class="owl-prev cycle-prev"><i class="fa fa-angle-left"></i></div>
+                <div class="owl-next cycle-next"><i class="fa fa-angle-right"></i></div>
                 <?php acmephoto_display_feature_slider(); ?>
             </div>
-        </div>
+        </div><!-- .slider-section -->
         <?php
     }
 endif;

@@ -90,8 +90,6 @@ add_action( 'after_setup_theme', 'acmephoto_content_width', 0 );
  * Enqueue scripts and styles.
  */
 function acmephoto_scripts() {
-    /*owl css*/
-    wp_enqueue_style( 'jquery-owl', get_template_directory_uri() . '/assets/library/owl-carousel/owl.carousel.css', array(), '1.3.3' );
 
     /*google font */
     wp_enqueue_style( 'acmephoto-googleapis', '//fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:400,600', array(), '1.0.0' );
@@ -111,8 +109,9 @@ function acmephoto_scripts() {
     wp_enqueue_script('respond', get_template_directory_uri() . '/assets/library/respond/respond.min.js', array('jquery'), '1.1.2', false);
     wp_script_add_data( 'respond', 'conditional', 'lt IE 9' );
 
-    /*bxslider js*/
-    wp_enqueue_script('jquery-owl', get_template_directory_uri() . '/assets/library/owl-carousel/owl.carousel.min.js', array('jquery'), '1.3.3', 1);
+    /*cycle2*/
+    wp_enqueue_script('jquery-cycle2', get_template_directory_uri() . '/assets/library/cycle2/jquery.cycle2.js', array('jquery'), '1.3.3', 1);
+    wp_enqueue_script('jquery-cycle2-tile', get_template_directory_uri() . '/assets/library/cycle2/jquery.cycle2.tile.js', array('jquery'), '1.3.3', 1);
 
     /*masonry js*/
     wp_enqueue_script( 'masonry' );

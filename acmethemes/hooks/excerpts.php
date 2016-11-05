@@ -19,7 +19,7 @@ add_filter('excerpt_length', 'acmephoto_alter_excerpt');
 /**
  * Add blank for more view
  *
- * @since acmephoto 1.0.0
+ * @since AcmePhoto 1.0.0
  *
  * @param null
  * @return null

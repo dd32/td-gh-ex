@@ -5,7 +5,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
  * @package Acme Themes
- * @subpackage Acmephoto
+ * @subpackage AcmePhoto
  */
 
 get_header(); ?>
@@ -49,7 +49,7 @@ get_header(); ?>
 
 			/**
 			 * acmephoto_action_navigation hook
-			 * @since acmephoto 1.0.0
+			 * @since AcmePhoto 1.0.0
 			 *
 			 * @hooked: acmephoto_posts_navigation - 10
 			 *

@@ -3,17 +3,17 @@
  * Custom author
  *
  * @package Acme Themes
- * @subpackage Acmephoto
+ * @subpackage AcmePhoto
  */
-if ( ! class_exists( 'acmephoto_author_widget' ) ) :
+if ( ! class_exists( 'Acmephoto_author_widget' ) ) :
     /**
      * Class for adding author widget
      * A new way to add author
      * @package Acme Themes
-     * @subpackage Acmephoto
+     * @subpackage AcmePhoto
      * @since 1.0.0
      */
-    class acmephoto_author_widget extends WP_Widget {
+    class Acmephoto_author_widget extends WP_Widget {
         /*defaults values for fields*/
         private $defaults = array(
             'acmephoto_author_title' => '',
@@ -165,7 +165,7 @@ if ( ! function_exists( 'acmephoto_author_widget' ) ) :
      *
      */
     function acmephoto_author_widget() {
-        register_widget( 'acmephoto_author_widget' );
+        register_widget( 'Acmephoto_author_widget' );
     }
 endif;
 add_action( 'widgets_init', 'acmephoto_author_widget' );
