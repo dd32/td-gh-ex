@@ -25,7 +25,7 @@
 				<div id="header-content-wrapper">
 
 					<div id="header-logo">
-						<?php ayaspirit_show_website_logo_image_or_title(); ?>
+						<?php ayaspirit_show_website_logo_image_and_title(); ?>
 					</div><!-- #header-logo -->
 
 					<nav id="navmain">

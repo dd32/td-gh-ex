@@ -1,8 +1,9 @@
 == AyaSpirit WordPress Theme ==
 
 Contributors: Aya Templates
-Tags: two-columns, right-sidebar, custom-background, custom-colors, custom-header,
-custom-menu, featured-images, post-formats, threaded-comments, translation-ready
+Tags: blog, two-columns, right-sidebar, custom-background, custom-logo,
+custom-colors, custom-header, custom-menu, featured-images, threaded-comments,
+translation-ready, sticky-post, theme-options
 
 Requires at least: 4.3.0
 Tested up to: 4.6.1

@@ -64,7 +64,7 @@ function ayaspirit_setup() {
 
 	// This theme uses wp_nav_menu() in header menu
 	register_nav_menus( array(
-		'primary'   => __( 'primary menu', 'ayaspirit' ),
+		'primary'   => __( 'Primary Menu', 'ayaspirit' ),
 	) );
 
 	/*
@@ -79,7 +79,7 @@ function ayaspirit_setup() {
 	) );
 
 	// add the visual editor to resemble the theme style
-	add_editor_style( array( 'css/editor-style.css' ) );
+	add_editor_style( array( 'css/editor-style.css', get_template_directory_uri() . '/css/font-awesome.min.css' ) );
 
 	// add custom background				 
 	add_theme_support( 'custom-background', 
@@ -87,25 +87,32 @@ function ayaspirit_setup() {
 				 );
 
 	// add content width
+	global $content_width;
 	if ( ! isset( $content_width ) ) {
 		$content_width = 900;
 	}
 
 	// add custom header
-	add_theme_support( 'custom-header', array (
-					   'default-image'          => '',
-					   'random-default'         => '',
-					   'width'                  => 145,
-					   'height'                 => 36,
-					   'flex-height'            => true,
-					   'flex-width'             => true,
-					   'default-text-color'     => '',
-					   'header-text'            => '',
-					   'uploads'                => true,
-					   'wp-head-callback'       => '',
-					   'admin-head-callback'    => '',
-					   'admin-preview-callback' => '',
-					) );
+    add_theme_support( 'custom-header', array (
+                       'default-image'          => '',
+                       'random-default'         => '',
+                       'flex-height'            => true,
+                       'flex-width'             => true,
+                       'uploads'                => true,
+                       'width'                  => 900,
+                       'height'                 => 100,
+                       'default-text-color'        => '#000000',
+                       'wp-head-callback'       => 'ayaspirit_header_style',
+                    ) );
+
+    // add custom logo
+    add_theme_support( 'custom-logo', array (
+                       'width'                  => 145,
+                       'height'                 => 36,
+                       'flex-height'            => true,
+                       'flex-width'             => true,
+                    ) );
+
 
 }
 endif; // ayaspirit_setup
@@ -267,32 +274,24 @@ function ayaspirit_fonts_url() {
 /**
  * Display website's logo image
  */
-function ayaspirit_show_website_logo_image_or_title() {
+function ayaspirit_show_website_logo_image_and_title() {
 
-	if ( get_header_image() != '' ) {
-	
-		// Check if the user selected a header Image in the Customizer or the Header Menu
-		$logoImgPath = get_header_image();
-		$siteTitle = get_bloginfo( 'name' );
-		$imageWidth = get_custom_header()->width;
-		$imageHeight = get_custom_header()->height;
-		
-		echo '<a href="' . esc_url( home_url('/') ) . '" title="' . esc_attr( get_bloginfo('name') ) . '">';
-		
-		echo '<img src="' . esc_url( $logoImgPath ) . '" alt="' . esc_attr( $siteTitle ) . '" title="' . esc_attr( $siteTitle ) . '" width="' . esc_attr( $imageWidth ) . '" height="' . esc_attr( $imageHeight ) . '" />';
-		
-		echo '</a>';
+	if ( has_custom_logo() ) {
 
-	} else {
-	
-		echo '<a href="' . esc_url( home_url('/') ) . '" title="' . esc_attr( get_bloginfo('name') ) . '">';
-		
-		echo '<h1>'.get_bloginfo('name').'</h1>';
-		
-		echo '</a>';
-		
-		echo '<strong>'.get_bloginfo('description').'</strong>';
-	}
+        the_custom_logo();
+    }
+
+    $header_text_color = get_header_textcolor();
+
+    if ( 'blank' !== $header_text_color ) {
+    
+        echo '<div id="site-identity">';
+        echo '<a href="' . esc_url( home_url('/') ) . '" title="' . esc_attr( get_bloginfo('name') ) . '">';
+        echo '<h1>'.get_bloginfo('name').'</h1>';
+        echo '</a>';
+        echo '<strong>'.get_bloginfo('description').'</strong>';
+        echo '</div>';
+    }
 }
 
 /**
@@ -402,6 +401,37 @@ function ayaspirit_slider_has_images() {
 	}
 
 	return $result;
+}
+
+function ayaspirit_header_style() {
+
+    $header_text_color = get_header_textcolor();
+
+    if ( ! has_header_image()
+        && ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color
+             || 'blank' === $header_text_color ) ) {
+
+        return;
+    }
+
+
+    $headerImage = get_header_image();
+?>
+    <style type="text/css">
+        <?php if ( has_header_image() ) : ?>
+
+                #header-main-fixed {background-image: url("<?php echo esc_attr( $headerImage ); ?>");}
+
+        <?php endif; ?>
+
+        <?php if ( get_theme_support( 'custom-header', 'default-text-color' ) !== $header_text_color
+                    && 'blank' !== $header_text_color ) : ?>
+
+                #header-main-fixed {color: #<?php echo esc_attr( $header_text_color ); ?>;}
+
+        <?php endif; ?>
+    </style>
+<?php
 }
 
 ?>

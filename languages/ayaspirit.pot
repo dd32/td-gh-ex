@@ -46,7 +46,7 @@ msgid "WordPress"
 msgstr ""
 
 #: functions.php:67
-msgid "primary menu"
+msgid "Primary Menu"
 msgstr ""
 
 #: functions.php:125
