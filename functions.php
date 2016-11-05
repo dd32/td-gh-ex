@@ -64,6 +64,8 @@ function bharat_setup() {
 
 	// This theme supports a variety of post formats.
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote', 'status' ) );
+	
+	add_theme_support( 'title-tag' );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menu( 'primary', __( 'Primary Menu', 'bharat' ) );

@@ -18,7 +18,7 @@
 			<?php endif; ?>
 
 			<?php do_action( 'bharat_credits' ); ?>
-			<a href="<?php echo esc_url( __( 'http://smallenvelop.com/', 'bharat' ) ); ?>" title="<?php esc_attr_e( 'SmallEnvelop', 'bharat' ); ?>"><?php printf( __( 'Bhārat %s', 'bharat' ), 'Theme ' ); ?></a><a href="<?php echo esc_url( __( 'http://wordpress.org/', 'bharat' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'bharat' ); ?>"><?php printf( __( 'proudly powered by %s', 'bharat' ), 'WordPress' ); ?></a>
+			<a href="<?php echo esc_url( __( 'http://smallenvelop.com/', 'bharat' ) ); ?>" title="<?php esc_attr_e( 'SmallEnvelop', 'bharat' ); ?>"><?php printf( __( 'Bharat %s', 'bharat' ), 'Theme ' ); ?></a><a href="<?php echo esc_url( __( 'http://wordpress.org/', 'bharat' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'bharat' ); ?>"><?php printf( __( 'proudly powered by %s', 'bharat' ), 'WordPress' ); ?></a>
 		</div><!-- .site-info -->
 
 		<div class="social-icons">

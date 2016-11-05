@@ -53,8 +53,11 @@ function bharat_customizer($wp_customize) {
     );
 	
 	//Top Logo
-	$wp_customize->add_setting('bharat_logo');
-			
+	$wp_customize->add_setting('bharat_logo', array(
+	'default' => '',
+	'sanitize_callback' => 'esc_url_raw',
+	'transport'   => 'refresh',
+	));
     $wp_customize->add_control( new WP_Customize_Image_Control(
         $wp_customize, 'bharat_logo', array(
         'label' => __('Logo', 'bharat'),
@@ -76,7 +79,11 @@ function bharat_customizer($wp_customize) {
     );
 	
 	//Top Feature Image
-	$wp_customize->add_setting('bharat_top_feature_left_image');
+	$wp_customize->add_setting('bharat_top_feature_left_image', array(
+	'default' => '',
+	'sanitize_callback' => 'esc_url_raw',
+	'transport'   => 'refresh',
+	));
 			
     $wp_customize->add_control( new WP_Customize_Image_Control(
         $wp_customize, 'bharat_top_feature_left_image', array(
@@ -189,7 +196,10 @@ function bharat_customizer($wp_customize) {
     )));
 	
 	//  First image
-	$wp_customize->add_setting('bharat_three_feature_image1');
+	$wp_customize->add_setting('bharat_three_feature_image1', array(
+	'default' => '',
+	'sanitize_callback' => 'esc_url_raw',
+	));
 			
     $wp_customize->add_control( new WP_Customize_Image_Control(
         $wp_customize, 'bharat_three_feature_image1', array(
@@ -238,7 +248,10 @@ function bharat_customizer($wp_customize) {
 	//  Second icon
 	// --------------------------------------
 	//  Second image
-	$wp_customize->add_setting('bharat_three_feature_image2');
+	$wp_customize->add_setting('bharat_three_feature_image2', array(
+	'default' => '',
+	'sanitize_callback' => 'esc_url_raw',
+	));
 			
     $wp_customize->add_control( new WP_Customize_Image_Control(
         $wp_customize, 'bharat_three_feature_image2', array(
@@ -288,7 +301,10 @@ function bharat_customizer($wp_customize) {
 	//  Third icon
 	// --------------------------------------
 	//  Third image
-	$wp_customize->add_setting('bharat_three_feature_image3');
+	$wp_customize->add_setting('bharat_three_feature_image3', array(
+	'default' => '',
+	'sanitize_callback' => 'esc_url_raw',
+	));
 			
     $wp_customize->add_control( new WP_Customize_Image_Control(
         $wp_customize, 'bharat_three_feature_image3', array(
