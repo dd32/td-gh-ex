@@ -1,6 +1,9 @@
 			<a href="#" class="scrollup"></a>
 			<footer id="footer-main">
 				<div id="footer-content-wrapper">
+
+					<?php get_sidebar('footer'); ?>
+
 					<div class="clear">
 						<div id="fsocial">
 							<ul class="footer-social-widget">

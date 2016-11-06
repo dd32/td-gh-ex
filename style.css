@@ -1,12 +1,12 @@
-/*
+/*!
 Theme Name: fGymm
-Description: fGymm is a Gym Fitness WordPress theme. It is fully responsive, customizable, responsive slider, multi-level drop-down menu, admin panel options, W3C markup validated, search engine optimized, translation ready, multiple browsers support, translation ready and much more.
+Description: fGymm is a Fully Responsive Gym and Fitness WordPress Theme designed for health and fitness clubs, CrossFit programs, fitness professionals, personal trainers, etc. Features include built-in Homepage Slider, Multi-level Drop-down Menu, W3C markup validated, Search Engine Optimized, Header and Footer Social Icons (Facebook, Google+, Twitter, LinkedIn, Instagram, Tumblr, YouTube, Pinterest, VK, Flickr, Vine), Sidebar and 3 Footer Widget Areas, Multiple Browsers Support, Translation Ready and much more.
 Theme URI: https://tishonator.com/product/fgymm
 Author: tishonator
 Author URI: https://tishonator.com
 Text Domain: fgymm
-Version: 1.5.1
-Tags: blog, entertainment, two-columns, right-sidebar, custom-background, custom-header, custom-menu, featured-images, post-formats, sticky-post, threaded-comments, translation-ready
+Version: 1.6.0
+Tags: blog, entertainment, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, post-formats, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -146,7 +146,7 @@ ul {
 	width:100%;
 	z-index:5000;
     box-shadow: 0 5px 10px -2px #777;
-	color:#000000;
+	color:#CCCCCC;
 }
 
 #header-main-fixed a {
@@ -165,13 +165,14 @@ ul {
 	padding:0 2% 0 2%;
 }
 
+#header-logo > a.custom-logo-link,
+#header-logo #site-identity {
+    float:left;
+}
+
 #header-logo h1 {
 	padding:0;
 	color:#FAFAFA;
-}
-	
-#header-logo strong {
-	color:#CCCCCC;
 }
 
 dt.gallery-icon:before {
@@ -470,6 +471,10 @@ article,
 	color:#ffffff;
 }
 
+#footer-main .post-date {
+	margin:0 0 0 14px;
+}
+
 .footer-social-widget li {
 	border: 1px solid;
     border-radius: 2px;
@@ -516,7 +521,9 @@ article,
 	margin:0 0 0 14px;
 }
 
-.col ul:not(.social-widget) > li:before {
+.col3a ul:not(.social-widget) > li:before,
+.col3b ul:not(.social-widget) > li:before,
+.col3c ul:not(.social-widget) > li:before {
 	font-family:'FontAwesome';
 	font-style:normal;
 	font-weight:normal;
@@ -550,48 +557,64 @@ article,
 	content: "\f09a";
 }
 
-.facebook32:before {
-	content: "\f082";
-}
-
 .google16:before {
 	content: "\f0d5";
 }
 
-.google32:before {
-	content: "\f0d4";
+.instagram16:before {
+	content: "\f16d";
+}
+
+.linkedin16:before {
+	content: "\f0e1";
 }
 
 .rss16:before {
 	content: "\f09e";
 }
 
-.rss32:before {
-	content: "\f143";
+.tumblr16:before {
+	content: "\f173";
+}
+
+.twitter16:before {
+	content: "\f099";
 }
 
 .youtube16:before {
 	content: "\f167";
 }
 
-.youtube32:before {
-	content: "\f166";
+.pinterest16:before {
+    content: "\f0d2";
+}
+
+.vk16:before {
+    content: "\f189";
+}
+
+.flickr16:before {
+    content: "\f16e";
+}
+
+.vine16:before {
+    content: "\f1ca";
 }
 
 .facebook16:before,
 .google16:before,
+.instagram16:before,
 .rss16:before,
-.youtube16:before {
-	font-family:'FontAwesome';
-	font-size: 16px;
-}
-
-.facebook32:before,
-.google32:before,
-.rss32:before,
-.youtube32:before {
-	font-family:'FontAwesome';
-	font-size: 32px;
+.tumblr16:before,
+.linkedin16:before,
+.twitter16:before,
+.youtube16:before,
+.pinterest16:before,
+.vk16:before,
+.flickr16:before,
+.vine16:before {
+    font-family:'FontAwesome';
+    font-size: 16px;
 }
 
 .header-social-widget a:before {
@@ -751,6 +774,30 @@ blockquote, figure {
 #top-widget {
 	clear:both;
 	padding:10px 2%;
+}
+
+.nav-links {
+	padding-top:10px;
+}
+
+.nav-links .nav-previous {
+	float:left;
+}
+
+.nav-links .nav-previous:before {
+	font-family:'FontAwesome';
+	content:"\f100";
+	margin-right:5px;
+}
+
+.nav-links .nav-next {
+	float:right;
+}
+
+.nav-links .nav-next:after {
+	font-family:'FontAwesome';
+	content:"\f101";
+	margin-left:5px;
 }
 
 /* utilities classes */
@@ -1020,12 +1067,12 @@ blockquote, figure {
 .tags-icon,
 .category-icon,
 .author-icon {
-    border: 1px solid #555555;
+    border: 1px solid #cccccc;
     padding: 5px;
     font-size:16px;
     margin: 5px 10px 5px 0;
     display: inline-block;
-    border-radius: 1px;
+    border-radius: 3px;
 }
 
 .comments-icon:before,
@@ -1448,6 +1495,11 @@ img.wp-post-image {
 	display: none;
 }
 
+.post-date {
+	display:block;
+	margin:-5px 0 10px 13px;
+}
+
 /* Large Resolution */
 @media screen and (min-width: 800px) {
 	
@@ -1456,6 +1508,23 @@ img.wp-post-image {
 		float:left;
 		margin:0 0 20px 2%;
 		width:63%;
+	}
+
+	/* columns */
+	.col3a,
+	.col3b,
+	.col3c {
+		float:left;
+		width:30.6%;
+	}
+	
+	.col3a,
+	.col3b {
+		margin:0 3.5% 5px 0;
+	}
+	
+	.col3c {
+		margin:0 0 5px 0;
 	}
 
 	#sidebar {
@@ -1973,6 +2042,27 @@ img.wp-post-image {
 	#container .button {
 		padding:6px 8px;
 	}
+
+	/* columns */
+	.col3a,
+	.col3b,
+	.col3c {
+		float:left;
+		width:48%;
+	}
+
+	.col3a,
+	.col3c {
+		margin:0 4% 5px 0;
+	}
+
+	.col3b {
+		margin:0 0 5px 0;
+	}
+
+	.col3c {
+		clear:both;
+	}
 }
 
 /* Small Resolution */
@@ -2095,6 +2185,14 @@ img.wp-post-image {
 	#contact-form input[type="url"],
 	#contact-form textarea {
 		width:96%;
+	}
+
+	.col3a,
+	.col3b,
+	.col3c {
+		float:none;
+		width:96%;
+		margin:0 2% 5px 2%;
 	}
 }
 

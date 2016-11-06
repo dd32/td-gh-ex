@@ -16,7 +16,7 @@
 					<div class="clear">
 					</div>
 					<div id="header-logo">
-						<?php fgymm_show_website_logo_image_or_title(); ?>
+						<?php fgymm_show_website_logo_image_and_title(); ?>
 					</div>
 					<nav id="navmain">
 						<?php wp_nav_menu( array(

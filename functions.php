@@ -8,6 +8,8 @@
  *
  */
 
+require_once( trailingslashit( get_template_directory() ) . 'customize-pro/class-customize.php' );
+
 if ( ! function_exists( 'fgymm_setup' ) ) :
 /**
  * fGymm setup.
@@ -25,12 +27,13 @@ function fgymm_setup() {
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
-		'primary'   => __( 'primary menu', 'fgymm' ),
+		'primary'   => __( 'Primary Menu', 'fgymm' ),
 	) );
 
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 1200, 0, true );
 
+	global $content_width;
 	if ( ! isset( $content_width ) )
 		$content_width = 900;
 
@@ -43,20 +46,25 @@ function fgymm_setup() {
 	add_theme_support( 'custom-background', $args );
 
 	// add custom header
-	add_theme_support( 'custom-header', array (
-					   'default-image'          => '',
-					   'random-default'         => false,
-					   'width'                  => 113,
-					   'height'                 => 40,
-					   'flex-height'            => true,
-					   'flex-width'             => true,
-					   'default-text-color'     => '',
-					   'header-text'            => '',
-					   'uploads'                => true,
-					   'wp-head-callback'       => '',
-					   'admin-head-callback'    => '',
-					   'admin-preview-callback' => '',
-					) );
+    add_theme_support( 'custom-header', array (
+                       'default-image'          => '',
+                       'random-default'         => '',
+                       'flex-height'            => true,
+                       'flex-width'             => true,
+                       'uploads'                => true,
+                       'width'                  => 900,
+                       'height'                 => 100,
+                       'default-text-color'        => '#cccccc',
+                       'wp-head-callback'       => 'fgymm_header_style',
+                    ) );
+
+    // add custom logo
+    add_theme_support( 'custom-logo', array (
+                       'width'                  => 145,
+                       'height'                 => 36,
+                       'flex-height'            => true,
+                       'flex-width'             => true,
+                    ) );
 					
 	add_theme_support( "title-tag" );
 
@@ -71,7 +79,7 @@ function fgymm_setup() {
 	
 
 	// add the visual editor to resemble the theme style
-	add_editor_style( array( 'css/editor-style.css' ) );
+	add_editor_style( array( 'css/editor-style.css', get_template_directory_uri() . '/css/font-awesome.min.css' ) );
 }
 endif; // fgymm_setup
 add_action( 'after_setup_theme', 'fgymm_setup' );
@@ -84,7 +92,7 @@ add_action( 'after_setup_theme', 'fgymm_setup' );
 function fgymm_load_scripts() {
 
 	// load main stylesheet.
-	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/font-awesome.min.css', array( ) );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array( ) );
 	wp_enqueue_style( 'fgymm-style', get_stylesheet_uri(), array() );
 	
 	wp_enqueue_style( 'fgymm-fonts', fgymm_fonts_url(), array(), null );
@@ -118,6 +126,39 @@ function fgymm_widgets_init() {
 						'before_title'	 =>  '<div class="sidebar-before-title"></div><h3 class="sidebar-title">',
 						'after_title'	 =>  '</h3><div class="sidebar-after-title"></div>',
 					) );
+
+	// Register Footer Column #1
+	register_sidebar( array (
+							'name'			 =>  __( 'Footer Column #1', 'fgymm' ),
+							'id' 			 =>  'footer-column-1-widget-area',
+							'description'	 =>  __( 'The Footer Column #1 widget area', 'fgymm' ),
+							'before_widget'  =>  '',
+							'after_widget'	 =>  '',
+							'before_title'	 =>  '<h2 class="footer-title">',
+							'after_title'	 =>  '</h2><div class="footer-after-title"></div>',
+						) );
+	
+	// Register Footer Column #2
+	register_sidebar( array (
+							'name'			 =>  __( 'Footer Column #2', 'fgymm' ),
+							'id' 			 =>  'footer-column-2-widget-area',
+							'description'	 =>  __( 'The Footer Column #2 widget area', 'fgymm' ),
+							'before_widget'  =>  '',
+							'after_widget'	 =>  '',
+							'before_title'	 =>  '<h2 class="footer-title">',
+							'after_title'	 =>  '</h2><div class="footer-after-title"></div>',
+						) );
+	
+	// Register Footer Column #3
+	register_sidebar( array (
+							'name'			 =>  __( 'Footer Column #3', 'fgymm' ),
+							'id' 			 =>  'footer-column-3-widget-area',
+							'description'	 =>  __( 'The Footer Column #3 widget area', 'fgymm' ),
+							'before_widget'  =>  '',
+							'after_widget'	 =>  '',
+							'before_title'	 =>  '<h2 class="footer-title">',
+							'after_title'	 =>  '</h2><div class="footer-after-title"></div>',
+						) );
 }
 add_action( 'widgets_init', 'fgymm_widgets_init' );
 
@@ -167,57 +208,97 @@ function fgymm_show_social_sites() {
 	$socialURL = get_theme_mod('fgymm_social_facebook', '#');
 	if ( !empty($socialURL) ) {
 
-		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Facebook', 'fgymm') . '" class="facebook16"></a></li>';
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Facebook', 'fgymm') . '" class="facebook16"></a>';
 	}
 
 	$socialURL = get_theme_mod('fgymm_social_google', '#');
 	if ( !empty($socialURL) ) {
 
-		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Google+', 'fgymm') . '" class="google16"></a></li>';
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Google+', 'fgymm') . '" class="google16"></a>';
+	}
+
+	$socialURL = get_theme_mod('fgymm_social_twitter', '#');
+	if ( !empty($socialURL) ) {
+
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Twitter', 'fgymm') . '" class="twitter16"></a>';
+	}
+
+	$socialURL = get_theme_mod('fgymm_social_linkedin', '#');
+	if ( !empty($socialURL) ) {
+
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on LinkedIn', 'fgymm') . '" class="linkedin16"></a>';
+	}
+
+	$socialURL = get_theme_mod('fgymm_social_instagram', '#');
+	if ( !empty($socialURL) ) {
+
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Instagram', 'fgymm') . '" class="instagram16"></a>';
 	}
 
 	$socialURL = get_theme_mod('fgymm_social_rss', get_bloginfo( 'rss2_url' ));
 	if ( !empty($socialURL) ) {
 
-		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow our RSS Feeds', 'fgymm') . '" class="rss16"></a></li>';
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow our RSS Feeds', 'fgymm') . '" class="rss16"></a>';
+	}
+
+	$socialURL = get_theme_mod('fgymm_social_tumblr', '#');
+	if ( !empty($socialURL) ) {
+
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Tumblr', 'fgymm') . '" class="tumblr16"></a>';
 	}
 
 	$socialURL = get_theme_mod('fgymm_social_youtube', '#');
 	if ( !empty($socialURL) ) {
 
-		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Youtube', 'fgymm') . '" class="youtube16"></a></li>';
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Youtube', 'fgymm') . '" class="youtube16"></a>';
+	}
+
+	$socialURL = get_theme_mod('fgymm_social_pinterest', '#');
+	if ( !empty($socialURL) ) {
+
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Pinterest', 'fgymm') . '" class="pinterest16"></a>';
+	}
+
+	$socialURL = get_theme_mod('fgymm_social_vk', '#');
+	if ( !empty($socialURL) ) {
+
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on VK', 'fgymm') . '" class="vk16"></a>';
+	}
+
+	$socialURL = get_theme_mod('fgymm_social_flickr', '#');
+	if ( !empty($socialURL) ) {
+
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Flickr', 'fgymm') . '" class="flickr16"></a>';
+	}
+
+	$socialURL = get_theme_mod('fgymm_social_vine', '#');
+	if ( !empty($socialURL) ) {
+
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Vine', 'fgymm') . '" class="vine16"></a>';
 	}
 }
 
 /**
  * Display website's logo image
  */
-function fgymm_show_website_logo_image_or_title() {
+function fgymm_show_website_logo_image_and_title() {
 
-	if ( get_header_image() != '' ) {
-	
-		// Check if the user selected a header Image in the Customizer or the Header Menu
-		$logoImgPath = get_header_image();
-		$siteTitle = get_bloginfo( 'name' );
-		$imageWidth = get_custom_header()->width;
-		$imageHeight = get_custom_header()->height;
-		
-		echo '<a href="' . esc_url( home_url('/') ) . '" title="' . esc_attr( get_bloginfo('name') ) . '">';
-		
-		echo '<img src="' . esc_url( $logoImgPath ) . '" alt="' . esc_attr( $siteTitle ) . '" title="' . esc_attr( $siteTitle ) . '" width="' . esc_attr( $imageWidth ) . '" height="' . esc_attr( $imageHeight ) . '" />';
-		
-		echo '</a>';
+	if ( has_custom_logo() ) {
 
-	} else {
-	
-		echo '<a href="' . esc_url( home_url('/') ) . '" title="' . esc_attr( get_bloginfo('name') ) . '">';
-		
-		echo '<h1>'.get_bloginfo('name').'</h1>';
-		
-		echo '</a>';
-		
-		echo '<strong>'.get_bloginfo('description').'</strong>';
-	}
+        the_custom_logo();
+    }
+
+    $header_text_color = get_header_textcolor();
+
+    if ( 'blank' !== $header_text_color ) {
+    
+        echo '<div id="site-identity">';
+        echo '<a href="' . esc_url( home_url('/') ) . '" title="' . esc_attr( get_bloginfo('name') ) . '">';
+        echo '<h1>'.get_bloginfo('name').'</h1>';
+        echo '</a>';
+        echo '<strong>'.get_bloginfo('description').'</strong>';
+        echo '</div>';
+    }
 }
 
 /**
@@ -243,7 +324,7 @@ function fgymm_display_slider() {
 			// display slides
 			for ( $i = 1; $i <= 3; ++$i ) {
 
-					$defaultSlideContent = __( '<h3>Lorem ipsum dolor</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a class="btn" title="Read more" href="#">Read more</a>', 'fgymm' );
+					$defaultSlideContent = __( '<h3>Lorem ipsum dolor</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a title="Read more" href="#">Read more</a>', 'fgymm' );
 					
 					$defaultSlideImage = get_template_directory_uri().'/images/slider/' . $i .'.jpg';
 
@@ -271,7 +352,7 @@ function fgymm_the_content() {
 	if ( has_post_thumbnail() ) {
 ?>
 
-		<a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>">
+		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 			<?php the_post_thumbnail(); ?>
 		</a>
 								
@@ -319,7 +400,7 @@ function fgymm_customize_register( $wp_customize ) {
 		$wp_customize->add_setting(
 			$slideContentId,
 			array(
-				'default'           => __( '<h2>Lorem ipsum dolor</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a class="btn" title="Read more" href="#">Read more</a>', 'fgymm' ),
+				'default'           => __( '<h2>Lorem ipsum dolor</h2><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a title="Read more" href="#">Read more</a>', 'fgymm' ),
 				'sanitize_callback' => 'force_balance_tags',
 			)
 		);
@@ -431,6 +512,63 @@ function fgymm_customize_register( $wp_customize ) {
         )
 	);
 
+	// Add Twitter url
+	$wp_customize->add_setting(
+		'fgymm_social_twitter',
+		array(
+		    'default'           => '#',
+		    'sanitize_callback' => 'esc_url_raw',
+		)
+	);
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fgymm_social_twitter',
+        array(
+            'label'          => __( 'Twitter URL', 'fgymm' ),
+            'section'        => 'fgymm_social_section',
+            'settings'       => 'fgymm_social_twitter',
+            'type'           => 'text',
+            )
+        )
+	);
+
+	// Add LinkedIn url
+	$wp_customize->add_setting(
+		'fgymm_social_linkedin',
+		array(
+		    'default'           => '#',
+		    'sanitize_callback' => 'esc_url_raw',
+		)
+	);
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fgymm_social_linkedin',
+        array(
+            'label'          => __( 'LinkedIn URL', 'fgymm' ),
+            'section'        => 'fgymm_social_section',
+            'settings'       => 'fgymm_social_linkedin',
+            'type'           => 'text',
+            )
+        )
+	);
+
+	// Add Instagram url
+	$wp_customize->add_setting(
+		'fgymm_social_instagram',
+		array(
+		    'default'           => '#',
+		    'sanitize_callback' => 'esc_url_raw',
+		)
+	);
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fgymm_social_instagram',
+        array(
+            'label'          => __( 'LinkedIn URL', 'fgymm' ),
+            'section'        => 'fgymm_social_section',
+            'settings'       => 'fgymm_social_instagram',
+            'type'           => 'text',
+            )
+        )
+	);
+
 	// Add RSS Feeds url
 	$wp_customize->add_setting(
 		'fgymm_social_rss',
@@ -445,6 +583,25 @@ function fgymm_customize_register( $wp_customize ) {
             'label'          => __( 'RSS Feeds URL', 'fgymm' ),
             'section'        => 'fgymm_social_section',
             'settings'       => 'fgymm_social_rss',
+            'type'           => 'text',
+            )
+        )
+	);
+
+	// Add Tumblr url
+	$wp_customize->add_setting(
+		'fgymm_social_tumblr',
+		array(
+		    'default'           => '#',
+		    'sanitize_callback' => 'esc_url_raw',
+		)
+	);
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fgymm_social_tumblr',
+        array(
+            'label'          => __( 'Tumblr URL', 'fgymm' ),
+            'section'        => 'fgymm_social_section',
+            'settings'       => 'fgymm_social_tumblr',
             'type'           => 'text',
             )
         )
@@ -468,23 +625,84 @@ function fgymm_customize_register( $wp_customize ) {
             )
         )
 	);
+
+	// Add Pinterest url
+	$wp_customize->add_setting(
+		'fgymm_social_pinterest',
+		array(
+		    'default'           => '#',
+		    'sanitize_callback' => 'esc_url_raw',
+		)
+	);
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fgymm_social_pinterest',
+        array(
+            'label'          => __( 'Pinterest URL', 'fgymm' ),
+            'section'        => 'fgymm_social_section',
+            'settings'       => 'fgymm_social_pinterest',
+            'type'           => 'text',
+            )
+        )
+	);
+
+	// Add VK url
+	$wp_customize->add_setting(
+		'fgymm_social_vk',
+		array(
+		    'default'           => '#',
+		    'sanitize_callback' => 'esc_url_raw',
+		)
+	);
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fgymm_social_vk',
+        array(
+            'label'          => __( 'VK URL', 'fgymm' ),
+            'section'        => 'fgymm_social_section',
+            'settings'       => 'fgymm_social_vk',
+            'type'           => 'text',
+            )
+        )
+	);
+
+	// Add Flickr url
+	$wp_customize->add_setting(
+		'fgymm_social_flickr',
+		array(
+		    'default'           => '#',
+		    'sanitize_callback' => 'esc_url_raw',
+		)
+	);
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fgymm_social_flickr',
+        array(
+            'label'          => __( 'Flickr URL', 'fgymm' ),
+            'section'        => 'fgymm_social_section',
+            'settings'       => 'fgymm_social_flickr',
+            'type'           => 'text',
+            )
+        )
+	);
+
+	// Add Vine url
+	$wp_customize->add_setting(
+		'fgymm_social_vine',
+		array(
+		    'default'           => '#',
+		    'sanitize_callback' => 'esc_url_raw',
+		)
+	);
+
+	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fgymm_social_vine',
+        array(
+            'label'          => __( 'Vine URL', 'fgymm' ),
+            'section'        => 'fgymm_social_section',
+            'settings'       => 'fgymm_social_vine',
+            'type'           => 'text',
+            )
+        )
+	);
 }
 add_action('customize_register', 'fgymm_customize_register');
-
-/*
-Enqueue Script for top buttons
-*/
-function fgymm_customizer_controls(){
-
-	wp_register_script( 'fgymm_customizer_top_buttons', get_template_directory_uri() . '/js/customizer-top-buttons.js', array( 'jquery' ), true  );
-	wp_enqueue_script( 'fgymm_customizer_top_buttons' );
-
-	wp_localize_script( 'fgymm_customizer_top_buttons', 'customBtns', array(
-		'prodemo' => esc_html__( 'Demo Premium version', 'fgymm' ),
-        'proget' => esc_html__( 'Get Premium version', 'fgymm' )
-	) );
-}
-add_action( 'customize_controls_enqueue_scripts', 'fgymm_customizer_controls' );
 
 /**
  *	Displays date for blog posts
@@ -505,6 +723,37 @@ function fgymm_show_post_date() {
 		</div>
 	</div>
 <?php
+}
+
+function fgymm_header_style() {
+
+    $header_text_color = get_header_textcolor();
+
+    if ( ! has_header_image()
+        && ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color
+             || 'blank' === $header_text_color ) ) {
+
+        return;
+    }
+
+    $headerImage = get_header_image();
+?>
+    <style type="text/css">
+        <?php if ( has_header_image() ) : ?>
+
+                #header-main-fixed {background-image: url("<?php echo esc_attr( $headerImage ); ?>");}
+
+        <?php endif; ?>
+
+        <?php if ( get_theme_support( 'custom-header', 'default-text-color' ) !== $header_text_color
+                    && 'blank' !== $header_text_color ) : ?>
+
+                #header-main-fixed {color: #<?php echo esc_attr( $header_text_color ); ?>;}
+
+        <?php endif; ?>
+    </style>
+<?php
+
 }
 
 ?>

@@ -62,7 +62,7 @@ msgid "Comments are closed."
 msgstr ""
 
 #: ../functions.php:28
-msgid "primary menu"
+msgid "Primary Menu"
 msgstr ""
 
 #: ../functions.php:122
@@ -73,20 +73,52 @@ msgstr ""
 msgid "The sidebar widget area"
 msgstr ""
 
-#: ../functions.php:179
+#: ../functions.php:279
 msgid "Follow us on Facebook"
 msgstr ""
 
-#: ../functions.php:185
+#: ../functions.php:285
 msgid "Follow us on Google+"
 msgstr ""
 
-#: ../functions.php:191
+#: ../functions.php:291
+msgid "Follow us on Twitter"
+msgstr ""
+
+#: ../functions.php:297
+msgid "Follow us on LinkedIn"
+msgstr ""
+
+#: ../functions.php:303
+msgid "Follow us on Instagram"
+msgstr ""
+
+#: ../functions.php:309
 msgid "Follow our RSS Feeds"
 msgstr ""
 
-#: ../functions.php:197
+#: ../functions.php:315
+msgid "Follow us on Tumblr"
+msgstr ""
+
+#: ../functions.php:321
 msgid "Follow us on Youtube"
+msgstr ""
+
+#: ../functions.php:327
+msgid "Follow us on Pinterest"
+msgstr ""
+
+#: ../functions.php:333
+msgid "Follow us on VK"
+msgstr ""
+
+#: ../functions.php:339
+msgid "Follow us on Flickr"
+msgstr ""
+
+#: ../functions.php:345
+msgid "Follow us on Vine"
 msgstr ""
 
 #: ../functions.php:255
@@ -180,4 +212,24 @@ msgstr ""
 #: ../template-parts/content-page.php:22
 #: ../template-parts/content.php:67
 msgid "Edit"
+msgstr ""
+
+#: ../customize-pro/class-customize.php:76
+msgid "tGymm"
+msgstr ""
+
+#: ../customize-pro/class-customize.php:77
+msgid "Upgrade to Pro"
+msgstr ""
+
+#: ../sidebar-footer.php:26
+msgid "Footer Col Widget 1"
+msgstr ""
+
+#: ../sidebar-footer.php:50
+msgid "Footer Col Widget 2"
+msgstr ""
+
+#: ../sidebar-footer.php:74
+msgid "Footer Col Widget 3"
 msgstr ""

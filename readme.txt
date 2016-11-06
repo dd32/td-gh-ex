@@ -1,13 +1,18 @@
 === fGymm ===
 Contributors: tishonator
-Tags: blog, entertainment, two-columns, right-sidebar, custom-background, custom-header,
-custom-menu, featured-images, post-formats, sticky-post, threaded-comments, translation-ready
-Requires at least: 4.4.1
-Tested up to: 4.5.3
+Tags: entertainment, two-columns, right-sidebar, custom-logo, custom-background,
+custom-header, custom-menu, featured-images, post-formats, threaded-comments,
+translation-ready, sticky-post, theme-options, footer-widgets
+Requires at least: 4.5.0
+Tested up to: 4.6.1
 
 == Description ==
 
-fGymm is a Gym Fitness WordPress theme. It is fully responsive, customizable, responsive slider, multi-level drop-down menu, admin panel options, W3C markup validated, search engine optimized, translation ready, multiple browsers support, translation ready and much more.
+fGymm is a Fully Responsive Gym and Fitness WordPress Theme designed for health and fitness clubs,
+CrossFit programs, fitness professionals, personal trainers, etc. Features include built-in Homepage Slider,
+Multi-level Drop-down Menu, W3C markup validated, Search Engine Optimized, Header and Footer Social
+Icons (Facebook, Google+, Twitter, LinkedIn, Instagram, Tumblr, YouTube, Pinterest, VK, Flickr, Vine),
+Sidebar and 3 Footer Widget Areas, Multiple Browsers Support, Translation Ready and much more.
 
 == Installation ==
 
