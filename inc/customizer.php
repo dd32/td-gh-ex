@@ -31,7 +31,7 @@ function beautytemple_customize_register( $wp_customize ) {
 			$wp_customize->add_setting('beautytemple_social_links_fb_option', array(
 				'default'        => 'http://facebook.com',
 				'capability'     => 'edit_theme_options',
-				'sanitize_callback' => 'beautytemple_sanitize_text',
+				'sanitize_callback' => 'esc_url_raw',
 			));
 		 
 			$wp_customize->add_control('beautytemple_social_links_fb_ctrl', array(
@@ -48,7 +48,7 @@ function beautytemple_customize_register( $wp_customize ) {
 			$wp_customize->add_setting('beautytemple_social_links_tw_option', array(
 				'default'        => 'http://twitter.com',
 				'capability'     => 'edit_theme_options',
-				'sanitize_callback' => 'beautytemple_sanitize_text',
+				'sanitize_callback' => 'esc_url_raw',
 			));
 		 
 			$wp_customize->add_control('beautytemple_social_links_tw_ctrl', array(
@@ -65,7 +65,7 @@ function beautytemple_customize_register( $wp_customize ) {
 			$wp_customize->add_setting('beautytemple_social_links_gplus_option', array(
 				'default'        => 'http://plus.google.com',
 				'capability'     => 'edit_theme_options',
-				'sanitize_callback' => 'beautytemple_sanitize_text',
+				'sanitize_callback' => 'esc_url_raw',
 			));
 		 
 			$wp_customize->add_control('beautytemple_social_links_gplus_ctrl', array(
@@ -82,7 +82,7 @@ function beautytemple_customize_register( $wp_customize ) {
 			$wp_customize->add_setting('beautytemple_social_links_instagram_option', array(
 				'default'        => 'http://instagram.com',
 				'capability'     => 'edit_theme_options',
-				'sanitize_callback' => 'beautytemple_sanitize_text',
+				'sanitize_callback' => 'esc_url_raw',
 			));
 		 
 			$wp_customize->add_control('beautytemple_social_links_instagram_ctrl', array(
@@ -100,7 +100,7 @@ function beautytemple_customize_register( $wp_customize ) {
 			$wp_customize->add_setting('beautytemple_social_links_behance_option', array(
 				'default'        => 'http://behance.net',
 				'capability'     => 'edit_theme_options',
-				'sanitize_callback' => 'beautytemple_sanitize_text',
+				'sanitize_callback' => 'esc_url_raw',
 			));
 		 
 			$wp_customize->add_control('beautytemple_social_links_behance_ctrl', array(
@@ -112,9 +112,7 @@ function beautytemple_customize_register( $wp_customize ) {
 				
 }
 add_action( 'customize_register', 'beautytemple_customize_register' );
-function beautytemple_sanitize_text( $input ) {
-    return wp_kses_post( force_balance_tags( $input ) );
-}
+
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
