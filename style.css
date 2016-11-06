@@ -4,7 +4,7 @@
 	Author: Kniffen Technologies
 	Author URI: http://knifftech.net
 	Description: Bidnis as the name suggests ia a theme designed for business, consultant and corporate related websites.
-	Version: 1.1.0
+	Version: 1.1.1
 	License: GNU General Public License v3
 	License URI: http://www.gnu.org/licenses/gpl-3.0.html  
 	Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-images, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
@@ -419,7 +419,7 @@ th {
   font-size: 11pt;
 }
 
-html {
+body {
   font-family: "Open Sans", sans-serif;
 }
 
@@ -1494,6 +1494,7 @@ main > article:not(:last-child) {
 }
 
 .sticky .archive-entry-header h3:before {
+  font-family: FontAwesome;
   content: '\f08d';
 }
 

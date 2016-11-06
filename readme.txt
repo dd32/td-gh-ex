@@ -67,3 +67,9 @@ https://www.pexels.com/photo/mock-up-technology-laptop-apple-51171/
 - Cleaned up template parts, post formats and image.php
 - Replaced custom get_the_archive_title filter with JS solution
 - Escaped various user inputs
+
+1.1.1 - 2016.11.06
+- Enqueued comment-reply script
+- Replaced customized css styles being added to the header with wp_add_inline_style option
+- Fixed sticky post icon not showing
+- Added editor stylesheet

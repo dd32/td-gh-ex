@@ -24,10 +24,11 @@ if ( ! function_exists( 'bidnis_setup' ) ) :
 		// Content width
 		if ( ! isset( $content_width ) ) $content_width = 1280;
 
-		/**
-			* Enable support for Post Formats
-			* @link https://codex.wordpress.org/Function_Reference/add_theme_support#Post_Formats
-			*/
+		// Adds editor styles
+		add_editor_style( str_replace( ',', '%2C', 'https://fonts.googleapis.com/css?family=Open+Sans:400,600,800,800italic,700italic,700,600italic,400italic,300italic,300' ) );
+		add_editor_style();
+
+		// Enables support for Post Formats
 		add_theme_support( 'post-formats', array(
 			'image',
 			'video',
@@ -42,7 +43,7 @@ if ( ! function_exists( 'bidnis_setup' ) ) :
 		// Enables support for custom logo
 		add_theme_support( 'custom-logo' );
 
-		//Enable support for Post Thumbnails on posts, pages and more
+		//Enables support for Post Thumbnails on posts, pages and more
 		add_theme_support( 'post-thumbnails' );
 
 		//Support for custom background settings
@@ -201,55 +202,84 @@ function bidnis_scripts(){
 
 	// Enqueue theme JS and include jQuery
 	wp_enqueue_script( 'bidnis-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), wp_get_theme()->get('Version'), true );
+
+	// Comment-reply script
+	if ( (!is_admin()) && is_singular() && comments_open() && get_option('thread_comments') ){
+		wp_enqueue_script( 'comment-reply' );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'bidnis_scripts' );
 
-if ( ! function_exists( 'bidnis_customize_styles' ) ) :
-	function bidnis_customize_styles() { ?>
-		<style type="text/css" id="bidnis-customize-styles">
-			*{ border-color: <?php echo esc_html( get_theme_mod('color_scheme', '#ffd200') )?> !important; }
 
-			body{ background-color: #<?php echo get_background_color(); ?>; }
+/**
+	* Customized CSS options
+	*
+	* @since Bidnis 1.1.1
+	*/
+function bidnis_customize_styles(){
+	$options = [
+		get_theme_mod('color_scheme', '#ffd200'),
+		'#'.get_background_color(),
+		get_theme_mod('text_color', '#191919'),
+		get_theme_mod('header-text-color', '#191919'),
+		get_theme_mod('link_color', '#191919')
+	];
 
-			body,
-			.archive-entry-header h3 a,
-			.read-more,
-			.comment-reply-link,
-			.nav-previous a,
-			.nav-next a,
-			.page-numbers:not(.dots),
-			.pagination,
-			.pagination a{ color: <?php echo esc_html( get_theme_mod('text_color', '#191919') ); ?>; }
+	$css = '
+		*{
+			border-color: %1$s !important;
+		}
 
-			.site-header,
-			.header-menu .menu-item:hover,
-			.header-menu .current-menu-item,
-			.header-image-cta,
-			input[type="submit"]:hover,
-			input[type="reset"]:hover,
-			button:hover,
-			.comment-reply-link:hover,
-			.read-more:hover,
-			.nav-previous a:hover,
-			.nav-next a:hover,
-			.page-numbers:not(.dots):hover,
-			.scroll-to-top:hover,
-			.page-numbers.current,
-			.pagination > span:not(.page-links-title),
-			.pagination > a:hover{ background-color: <?php echo esc_html( get_theme_mod('color_scheme', '#ffd200') ); ?>; }
+		body{
+			background-color: %2$s;
+		}
 
-			.site-header,
-			.site-header a,
-			.site-tagline,
-			.header-menu .menu-item:hover > a,
-			.header-menu .current-menu-item > a{ color: <?php echo esc_html( get_theme_mod('header-text-color', '#191919') )?>; }
+		a{ color: %5$s; }
 
-			a{ color: <?php echo esc_html( get_theme_mod('link_color', '#191919') ); ?>; }
+		body,
+		.archive-entry-header h3 a,
+		.read-more,
+		.comment-reply-link,
+		.nav-previous a,
+		.nav-next a,
+		.page-numbers:not(.dots),
+		.pagination,
+		.pagination a{
+			color: %3$s;
+		}
 
-		</style>
-	<?php }
-endif;
-add_action('wp_head', 'bidnis_customize_styles');
+		.site-header,
+		.header-menu .menu-item:hover,
+		.header-menu .current-menu-item,
+		.header-image-cta,
+		input[type="submit"]:hover,
+		input[type="reset"]:hover,
+		button:hover,
+		.comment-reply-link:hover,
+		.read-more:hover,
+		.nav-previous a:hover,
+		.nav-next a:hover,
+		.page-numbers:not(.dots):hover,
+		.scroll-to-top:hover,
+		.page-numbers.current,
+		.pagination > span:not(.page-links-title),
+		.pagination > a:hover{
+			background-color: %1$s;
+		}
+
+		.site-header,
+		.site-header a,
+		.site-tagline,
+		.header-menu .menu-item:hover > a,
+		.header-menu .current-menu-item > a{
+			color: %4$s; 
+		}
+	';
+
+	wp_add_inline_style( 'bidnis-style', vsprintf($css, $options) );
+}
+add_action( 'wp_enqueue_scripts', 'bidnis_customize_styles' );
+
 
 /**
 	* Included files
