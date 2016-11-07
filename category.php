@@ -16,7 +16,10 @@ get_header(); ?>
      <div class="page_content">
         <section class="site-main">
             <header class="page-header">
-				<h1 class="entry-title"><?php single_cat_title( __('Category: ','beautiplus')); ?></h1>
+				<?php
+						the_archive_title( '<h1 class="entry-title">', '</h1>' );
+						the_archive_description( '<div class="taxonomy-description">', '</div>' );
+					?>
             </header><!-- .page-header -->
 			<?php if ( have_posts() ) : ?>
                 <div class="blog-post">
@@ -25,7 +28,7 @@ get_header(); ?>
                         <?php get_template_part( 'content', get_post_format() ); ?>
                     <?php endwhile; ?>
                 </div>
-                <?php beautiplus_pagination(); ?>
+                <?php the_posts_pagination(); ?>
             <?php else : ?>
                 <?php get_template_part( 'no-results', 'archive' ); ?>
             <?php endif; ?>

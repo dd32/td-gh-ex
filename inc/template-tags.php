@@ -7,53 +7,6 @@
  * @package Beautiplus
  */
 
-if ( ! function_exists( 'beautiplus_content_nav' ) ) :
-/**
- * Display navigation to next/previous pages when applicable
- */
-function beautiplus_content_nav( $nav_id ) {
-	global $wp_query, $post;
-
-	// Don't print empty markup on single pages if there's nowhere to navigate.
-	if ( is_single() ) {
-		$previous = ( is_attachment() ) ? get_post( $post->post_parent ) : get_adjacent_post( false, '', true );
-		$next = get_adjacent_post( false, '', false );
-
-		if ( ! $next && ! $previous )
-			return;
-	}
-
-	// Don't print empty markup in archives if there's only one page.
-	if ( $wp_query->max_num_pages < 2 && ( is_home() || is_archive() || is_search() ) )
-		return;
-
-	$nav_class = ( is_single() ) ? 'post-navigation' : 'paging-navigation';
-	?>
-	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>">
-		<h1 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'beautiplus' ); ?></h1>
-
-	<?php if ( is_single() ) : // navigation links for single posts ?>
-
-		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . esc_attr_x( '&larr;', 'Previous post link', 'beautiplus' ) . '</span> %title' ); ?>
-		<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . esc_attr_x( '&rarr;', 'Next post link', 'beautiplus' ) . '</span>' ); ?>
-
-	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
-
-		<?php if ( get_next_posts_link() ) : ?>
-		<div class="nav-previous"><?php next_posts_link( esc_attr__( '<span class="meta-nav">&larr;</span> Older posts', 'beautiplus' ) ); ?></div>
-		<?php endif; ?>
-
-		<?php if ( get_previous_posts_link() ) : ?>
-		<div class="nav-next"><?php previous_posts_link( esc_attr__( 'Newer posts <span class="meta-nav">&rarr;</span>', 'beautiplus' ) ); ?></div>
-		<?php endif; ?>
-
-	<?php endif; ?>
-		<div class="clear"></div>
-	</nav><!-- #<?php echo esc_html( $nav_id ); ?> -->
-	<?php
-}
-endif; // beautiplus_content_nav
-
 if ( ! function_exists( 'beautiplus_comment' ) ) :
 /**
  * Template for comments and pingbacks.
@@ -67,7 +20,7 @@ function beautiplus_comment( $comment, $args, $depth ) {
 
 	<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
 		<div class="comment-body">
-			<?php esc_html_e( 'Pingback:', 'beautiplus' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( esc_attr__( 'Edit', 'beautiplus' ), '<span class="edit-link">', '</span>' ); ?>
+			<?php _e( 'Pingback:', 'beautiplus' ); ?> <?php comment_author_link(); ?> <?php edit_comment_link( __( 'Edit', 'beautiplus' ), '<span class="edit-link">', '</span>' ); ?>
 		</div>
 
 	<?php else : ?>
@@ -78,19 +31,8 @@ function beautiplus_comment( $comment, $args, $depth ) {
 				<div class="comment-author vcard">
 					<?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, 34 ); ?>
 				</div><!-- .comment-author -->
-
-				<div class="comment-metadata">
-					<?php printf( esc_attr__( '<cite class="fn">%s</cite> on','beautiplus', get_comment_author_link() )); ?>
-					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
-						<time datetime="<?php comment_time( 'c' ); ?>">
-							<?php printf( esc_attr_x( '%1$s', '1: date', 'beautiplus' ), get_comment_date(), get_comment_time() ); ?>
-						</time>
-					</a>
-					<?php edit_comment_link( esc_attr__( 'Edit', 'beautiplus' ), '<span class="edit-link">', '</span>' ); ?>
-				</div><!-- .comment-metadata -->
-
 				<?php if ( '0' == $comment->comment_approved ) : ?>
-				<p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'beautiplus' ); ?></p>
+				<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'beautiplus' ); ?></p>
 				<?php endif; ?>
 			</footer><!-- .comment-meta -->
 
@@ -110,7 +52,7 @@ function beautiplus_comment( $comment, $args, $depth ) {
 		</article><!-- .comment-body -->
 
 	<?php      
-	endif;
+	endif; 
 }
 endif; // ends check for beautiplus_comment()
 
@@ -181,10 +123,10 @@ function beautiplus_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	printf( esc_attr__( '<span class="posted-on">Published %1$s</span><span class="byline"> by %2$s</span>', 'beautiplus' ),
+	printf( __( '<span class="posted-on">Published %1$s</span><span class="byline"> by %2$s</span>', 'beautiplus' ),
 		sprintf( '<a href="%1$s" rel="bookmark">%2$s</a>',
 			esc_url( get_permalink() ),
-			esc_attr($time_string)
+			$time_string
 		),
 		sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s">%2$s</a></span>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),

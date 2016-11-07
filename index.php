@@ -29,7 +29,7 @@ get_header();
                     
                         endwhile;
                         // Previous/next post navigation.
-                        beautiplus_pagination();
+                        the_posts_pagination();
                     
                     else :
                         // If no content, include the "No posts found" template.

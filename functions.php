@@ -1,4 +1,4 @@
-<?php   
+<?php
 /**
  * Beautiplus functions and definitions
  *
@@ -25,10 +25,11 @@ function beautiplus_setup() {
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support('woocommerce');
 	add_theme_support( 'post-thumbnails' );
-	add_theme_support( 'custom-header' );
-	add_filter('widget_text', 'do_shortcode');
-	add_theme_support( 'title-tag' );
-	add_image_size('beautiplus-homepage-thumb',240,145,true);
+	add_theme_support( 'custom-header', array( 
+		'default-text-color' => false,
+		'header-text' => false,
+	) );
+	add_theme_support( 'title-tag' );	
 	add_theme_support( 'custom-logo', array(
 		'height'      => 100,
 		'width'       => 100,
@@ -46,21 +47,6 @@ function beautiplus_setup() {
 endif; // beautiplus_setup
 add_action( 'after_setup_theme', 'beautiplus_setup' );
 
-// Set the word limit of post content 
-function beautiplus_content($limit) {
-$content = explode(' ', get_the_excerpt(), $limit);
-if (count($content)>=$limit) {
-array_pop($content);
-$content = implode(" ",$content).'...';
-} else {
-$content = implode(" ",$content);
-}	
-$content = preg_replace('/\[.+\]/','', $content);
-$content = apply_filters('the_content', $content);
-$content = str_replace(']]>', ']]&gt;', $content);
-return $content;
-}
-
 function beautiplus_widgets_init() { 	
 	
 	register_sidebar( array(
@@ -71,58 +57,83 @@ function beautiplus_widgets_init() {
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
+	) );
+	
+	register_sidebar( array(
+		'name'          => __( 'Footer Widget 1', 'beautiplus' ),
+		'description'   => __( 'Appears on footer', 'beautiplus' ),
+		'id'            => 'footer-1',
+		'before_widget' => '<aside id="%1$s" class="cols-4 widget-column-1 %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h5>',
+		'after_title'   => '</h5>',
+	) );
+	
+	register_sidebar( array(
+		'name'          => __( 'Footer Widget 2', 'beautiplus' ),
+		'description'   => __( 'Appears on footer', 'beautiplus' ),
+		'id'            => 'footer-2',
+		'before_widget' => '<aside id="%1$s" class="cols-4 widget-column-2 %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h5>',
+		'after_title'   => '</h5>',
+	) );
+	
+	register_sidebar( array(
+		'name'          => __( 'Footer Widget 3', 'beautiplus' ),
+		'description'   => __( 'Appears on footer', 'beautiplus' ),
+		'id'            => 'footer-3',
+		'before_widget' => '<aside id="%1$s" class="cols-4 widget-column-3 %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h5>',
+		'after_title'   => '</h5>',
+	) );
+	
+	register_sidebar( array(
+		'name'          => __( 'Footer Widget 4', 'beautiplus' ),
+		'description'   => __( 'Appears on footer', 'beautiplus' ),
+		'id'            => 'footer-4',
+		'before_widget' => '<aside id="%1$s" class="cols-4 widget-column-4 %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h5>',
+		'after_title'   => '</h5>',
 	) );	
 	
 }
 add_action( 'widgets_init', 'beautiplus_widgets_init' );
 
-
 function beautiplus_font_url(){
-		$font_url = '';		
-		
+		$font_url = '';				
 		/* Translators: If there are any character that are not
 		* supported by Montserrat, trsnalate this to off, do not
 		* translate into your own language.
 		*/
 		$montserrat = _x('on','montserrat:on or off','beautiplus');		
 		
-		
-		/* Translators: If there has any character that are not supported 
-		*  by Scada, translate this to off, do not translate
-		*  into your own language.
-		*/
-		$scada = _x('on','Scada:on or off','beautiplus');	
-		
 		if('off' !== $montserrat ){
 			$font_family = array();
 			
 			if('off' !== $montserrat){
 				$font_family[] = 'Montserrat:300,400,600,700,800,900';
-			}
-					
-						
+			}						
 			$query_args = array(
 				'family'	=> urlencode(implode('|',$font_family)),
-			);
-			
+			);			
 			$font_url = add_query_arg($query_args,'//fonts.googleapis.com/css');
-		}
-		
+		}		
 	return $font_url;
 	}
 
-
 function beautiplus_scripts() {
 	wp_enqueue_style('beautiplus-font', beautiplus_font_url(), array());
-	wp_enqueue_style( 'beautiplus-basic-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'beautiplus-editor-style', get_template_directory_uri()."/editor-style.css" );
-	wp_enqueue_style( 'nivo-style', get_template_directory_uri()."/css/nivo-slider.css" );
-	wp_enqueue_style( 'beautiplus-responsive-style', get_template_directory_uri()."/css/responsive.css" );		
-	wp_enqueue_style( 'beautiplus-default-style', get_template_directory_uri()."/css/default.css" );
-	wp_enqueue_script( 'nivo-jquery', get_template_directory_uri() . '/js/jquery.nivo.slider.js', array('jquery') );
-	wp_enqueue_script( 'beautiplus-custom-jquery', get_template_directory_uri() . '/js/custom.js' );
-	wp_enqueue_style( 'animation-style', get_template_directory_uri()."/css/animation.css" );	
-	wp_enqueue_style( 'font-awesome-style', get_template_directory_uri()."/css/font-awesome.css" );
+	wp_enqueue_style( 'beautiplus-basic-style', get_stylesheet_uri() );	
+	wp_enqueue_style( 'nivo-slider', get_template_directory_uri()."/css/nivo-slider.css" );
+	wp_enqueue_style( 'beautiplus-responsive', get_template_directory_uri()."/css/responsive.css" );		
+	wp_enqueue_style( 'beautiplus-default', get_template_directory_uri()."/css/default.css" );
+	wp_enqueue_script( 'jquery-nivo-slider', get_template_directory_uri() . '/js/jquery.nivo.slider.js', array('jquery') );
+	wp_enqueue_script( 'beautiplus-custom', get_template_directory_uri() . '/js/custom.js' );
+	wp_enqueue_style( 'animation', get_template_directory_uri()."/css/animation.css" );	
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri()."/css/font-awesome.css" );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -131,53 +142,25 @@ function beautiplus_scripts() {
 add_action( 'wp_enqueue_scripts', 'beautiplus_scripts' );
 
 function beautiplus_ie_stylesheet(){
-	global $wp_styles;
+	// Load the Internet Explorer specific stylesheet.
+	wp_enqueue_style('beautiplus-ie', get_template_directory_uri().'/css/ie.css', array( 'beautiplus-style' ), '20160928' );
+	wp_style_add_data('beautiplus-ie','conditional','lt IE 10');
 	
-	/** Load our IE-only stylesheet for all versions of IE.
-	*   <!--[if lt IE 9]> ... <![endif]-->
-	*
-	*  Note: It is also possible to just check and see if the $is_IE global in WordPress is set to true before
-	*  calling the wp_enqueue_style() function. If you are trying to load a stylesheet for all browsers
-	*  EXCEPT for IE, then you would HAVE to check the $is_IE global since WordPress doesn't have a way to
-	*  properly handle non-IE conditional comments.
-	*/
-	wp_enqueue_style('beautiplus-ie', get_template_directory_uri().'/css/ie.css', array('beautiplus-style'));
-	$wp_styles->add_data('beautiplus-ie','conditional','IE');
+	// Load the Internet Explorer 8 specific stylesheet.
+	wp_enqueue_style( 'beautiplus-ie8', get_template_directory_uri() . '/css/ie8.css', array( 'beautiplus-style' ), '20160928' );
+	wp_style_add_data( 'beautiplus-ie8', 'conditional', 'lt IE 9' );
+
+	// Load the Internet Explorer 7 specific stylesheet.
+	wp_enqueue_style( 'beautiplus-ie7', get_template_directory_uri() . '/css/ie7.css', array( 'beautiplus-style' ), '20160928' );
+	wp_style_add_data( 'beautiplus-ie7', 'conditional', 'lt IE 8' );	
 	}
 add_action('wp_enqueue_scripts','beautiplus_ie_stylesheet');
 
-
-function beautiplus_pagination() {
-	global $wp_query;
-	$big = 12345678;
-	$page_format = paginate_links( array(
-	    'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-	    'format' => '?paged=%#%',
-	    'current' => max( 1, get_query_var('paged') ),
-	    'total' => $wp_query->max_num_pages,
-	    'type'  => 'array'
-	) );
-	if( is_array($page_format) ) {
-		$paged = ( get_query_var('paged') == 0 ) ? 1 : get_query_var('paged');
-		echo '<div class="pagination"><div><ul>';
-		echo '<li><span>'. $paged . ' of ' . $wp_query->max_num_pages .'</span></li>';
-		foreach ( $page_format as $page ) {
-			echo "<li>$page</li>";
-		}
-		echo '</ul></div></div>';
-	}
-}
+define('beautiplus_theme_doc','https://gracethemes.com/documentation/beautiplus-doc/','beautiplus');
+define('beautiplus_protheme_url','https://gracethemes.com/themes/modern-wordpress-theme/','beautiplus');
+define('beautiplus_live_demo','https://gracethemes.com/demo/beautiplus/','beautiplus');
 
 
-define('Grace_URL','http://www.gracethemes.com','beautiplus');
-define('Grace_THEME_DOC','http://gracethemes.com/documentation/beautiplus-doc/','beautiplus');
-define('Grace_PRO_THEME_URL','http://gracethemes.com/themes/modern-wordpress-theme/','beautiplus');
-define('Grace_LIVE_DEMO','http://gracethemes.com/demo/beautiplus/','beautiplus');
-
-
-function beautiplus_themebytext(){
-		return "Design & Develop by <a href=".esc_url(Grace_URL)." target='_blank'>Grace Themes</a>";
-}
 /**
  * Implement the Custom Header feature.
  */
@@ -208,33 +191,6 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-
-
-function beautiplus_custom_blogpost_pagination( $wp_query ){
-	$big = 999999999; // need an unlikely integer
-	if ( get_query_var('paged') ) { $pageVar = 'paged'; }
-	elseif ( get_query_var('page') ) { $pageVar = 'page'; }
-	else { $pageVar = 'paged'; }
-	$pagin = paginate_links( array(
-		'base' 			=> str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-		'format' 		=> '?'.$pageVar.'=%#%',
-		'current' 		=> max( 1, get_query_var($pageVar) ),
-		'total' 		=> $wp_query->max_num_pages,
-		'prev_text'		=> __('&laquo; Prev','beautiplus'),
-		'next_text' 	=> __('Next &raquo;','beautiplus'),
-		'type'  => 'array'
-	) ); 
-	if( is_array($pagin) ) {
-		$paged = ( get_query_var('paged') == 0 ) ? 1 : get_query_var('paged');
-		echo '<div class="pagination"><div><ul>';
-		echo '<li><span>'. $paged . ' of ' . $wp_query->max_num_pages .'</span></li>';
-		foreach ( $pagin as $page ) {
-			echo "<li>$page</li>";
-		}
-		echo '</ul></div></div>';
-	} 
-}
-
 if ( ! function_exists( 'beautiplus_the_custom_logo' ) ) :
 /**
  * Displays the optional custom logo.
@@ -248,11 +204,3 @@ function beautiplus_the_custom_logo() {
 	}
 }
 endif;
-
-
-// get slug by id
-function beautiplus_get_slug_by_id($id) {
-	$post_data = get_post($id, ARRAY_A);
-	$slug = $post_data['post_name'];
-	return $slug; 
-}

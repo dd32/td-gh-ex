@@ -9,9 +9,8 @@
             <h3><a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
             <?php if ( 'post' == get_post_type() ) : ?>
                 <div class="postmeta">
-                    <div class="post-date"><?php echo get_the_date(); ?></div><!-- post-date -->
-                    <div class="post-comment"> &nbsp;|&nbsp; <a href="<?php comments_link(); ?>"><?php comments_number(); ?></a></div>
-                    <div class="post-categories"> &nbsp;|&nbsp; <?php esc_attr_e('Category:','beautiplus'); ?> <?php the_category( esc_attr__( ', ', 'beautiplus' )); ?></div>                  
+                    <div class="post-date"><?php the_date(); ?></div><!-- post-date -->
+                    <div class="post-comment"> &nbsp;|&nbsp; <a href="<?php comments_link(); ?>"><?php comments_number(); ?></a></div>                                     
                 </div><!-- postmeta -->
             <?php endif; ?>
         </header><!-- .entry-header -->
@@ -27,10 +26,10 @@
         </div><!-- .entry-summary -->
         <?php else : ?>
         <div class="entry-content">
-            <?php the_content( esc_attr__( 'Continue reading <span class="meta-nav">&rarr;</span>', 'beautiplus' ) ); ?>
+            <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'beautiplus' ) ); ?>
             <?php
                 wp_link_pages( array(
-                    'before' => '<div class="page-links">' . esc_attr__( 'Pages:', 'beautiplus' ),
+                    'before' => '<div class="page-links">' . __( 'Pages:', 'beautiplus' ),
                     'after'  => '</div>',
                 ) );
             ?>

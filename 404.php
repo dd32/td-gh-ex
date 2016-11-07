@@ -11,10 +11,10 @@ get_header(); ?>
     <div class="page_content">
         <section class="site-main" id="sitemain">
             <header class="page-header">
-                <h1 class="entry-title"><?php esc_attr_e( '<strong>404</strong> Not Found', 'beautiplus' ); ?></h1>
+                <h1 class="entry-title"><?php _e( '404 Not Found', 'beautiplus' ); ?></h1>
             </header><!-- .page-header -->
             <div class="page-content">
-                <p class="text-404"><?php esc_attr_e( 'Looks like you have taken a wrong turn.....<br />Don\'t worry... it happens to the best of us.', 'beautiplus' ); ?></p>
+                <p><?php _e( 'Looks like you have taken a wrong turn..Dont worry... it happens to the best of us.', 'beautiplus' ); ?></p>
                
             </div><!-- .page-content -->
         </section>

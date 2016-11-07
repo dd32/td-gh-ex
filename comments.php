@@ -18,56 +18,60 @@
 if ( post_password_required() )
 	return;
 ?>
-
-	<div id="comments" class="comments-area">
-
-	<?php // You can start editing here -- including this comment! ?>
+<div id="comments" class="comments-area">
 
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
-				printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'beautiplus' ),
-					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
+				$comments_number = get_comments_number();
+				if ( 1 === $comments_number ) {
+					/* translators: %s: post title */
+					printf( _x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'beautiplus' ), get_the_title() );
+				} else {
+					printf(
+						/* translators: 1: number of comments, 2: post title */
+						_nx(
+							'%1$s thought on &ldquo;%2$s&rdquo;',
+							'%1$s thoughts on &ldquo;%2$s&rdquo;',
+							$comments_number,
+							'comments title',
+							'beautiplus'
+						),
+						number_format_i18n( $comments_number ),
+						get_the_title()
+					);
+				}
 			?>
 		</h2>
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav id="comment-nav-above" class="comment-navigation" role="navigation">
-			<h1 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'beautiplus' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( esc_attr__( '&larr; Older Comments', 'beautiplus' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( esc_attr__( 'Newer Comments &rarr;', 'beautiplus' ) ); ?></div>
-		</nav><!-- #comment-nav-above -->
-		<?php endif; // check for comment navigation ?>
+		<?php the_comments_navigation(); ?>
 
 		<ol class="comment-list">
 			<?php
-				/* Loop through and list the comments. Tell wp_list_comments()
-				 * to use beautiplus_comment() to format the comments.
-				 * If you want to override this in a child theme, then you can
-				 * define beautiplus_comment() and that will be used instead.
-				 * See beautiplus_comment() in inc/template-tags.php for more.
-				 */
-				wp_list_comments( array( 'callback' => 'beautiplus_comment' ) );
+				wp_list_comments( array(
+					'style'       => 'ol',
+					'short_ping'  => true,
+					'avatar_size' => 42,
+				) );
 			?>
 		</ol><!-- .comment-list -->
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav id="comment-nav-below" class="comment-navigation" role="navigation">
-			<h1 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'beautiplus' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( esc_attr__( '&larr; Older Comments', 'beautiplus' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( esc_attr__( 'Newer Comments &rarr;', 'beautiplus' ) ); ?></div>
-		</nav><!-- #comment-nav-below -->
-		<?php endif; // check for comment navigation ?>
+		<?php the_comments_navigation(); ?>
 
-	<?php endif; // have_comments() ?>
+	<?php endif; // Check for have_comments(). ?>
 
 	<?php
 		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+		if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'beautiplus' ); ?></p>
+		<p class="no-comments"><?php _e( 'Comments are closed.', 'beautiplus' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form(); ?>
+	<?php
+		comment_form( array(
+			'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
+			'title_reply_after'  => '</h2>',
+		) );
+	?>
 
-</div><!-- #comments -->
+</div><!-- .comments-area -->

@@ -86,7 +86,6 @@ h2.section_title{ text-align:center;}
 
 @media screen and (max-width:1169px) and (min-width:981px) { 
 html{overflow-x:hidden; }
-.logo{ float:left; text-align:left;}
 .nivo-caption{ bottom:20%;}
 }
 

@@ -2,10 +2,10 @@
 /* Free Modern  WordPress Theme */
 /*-----------------------------------------------------------------------------------*/
 
-Theme Name      :   beautiplus
-Theme URI         :   http://gracethemes.com/themes/free-modern-wordpress-theme/
-Version                :   1.0.0
-Tested up to        :   WP 4.5.2
+Theme Name      :   Beautiplus
+Theme URI         :   https://gracethemes.com/themes/free-modern-wordpress-theme/
+Version                :   1.2.0
+Tested up to        :   WP 4.6.1
 Author                  :   Grace Themes
 Author URI           :   http://www.gracethemes.com/
 
@@ -40,9 +40,7 @@ Theme is Built using the following resource bundles.
    (https://creativecommons.org/about/cc0)
 
 	Slider Images:	
-	https://pixabay.com/en/woman-blonde-outdoors-fashion-984295/
-	https://pixabay.com/en/portrait-woman-outdoor-1097950/
-	https://pixabay.com/en/girl-outdoors-smiling-happy-358770/
+	https://pixabay.com/en/woman-blonde-outdoors-fashion-984295/	
 
 	Other Images:
 	https://pixabay.com/en/watch-timepiece-woman-wearing-828848/
@@ -55,3 +53,23 @@ Theme is Built using the following resource bundles.
 	
 
 For any help you can mail us at support[at]gracethemes.com
+
+/*-----------------------------------------------------------------------------------*/
+/* Copyright */
+/*-----------------------------------------------------------------------------------*/
+
+Beautiplus WordPress Theme, Copyright 2016
+Beautiplus is distributed under the terms of the GNU GPL
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see < http://www.gnu.org/licenses/ >
