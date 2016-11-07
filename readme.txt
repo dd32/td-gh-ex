@@ -32,6 +32,9 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
+= 1.4.6 | 7th November 2016 = 
+* Update: Add some checks for images.
+
 = 1.4.5 | 4th October 2016 = 
 * Update: Portfolio Grid Title order.
 

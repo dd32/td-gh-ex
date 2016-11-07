@@ -22,6 +22,10 @@ function kt_get_srcset($width,$height,$url,$id) {
     return;
   }
   $image_meta = get_post_meta( $id, '_wp_attachment_metadata', true );
+
+  if(empty($image_meta['file'])){
+    return;
+  }
   // If possible add in our images on the fly sizes
   $ext = substr($image_meta['file'], strrpos($image_meta['file'], "."));
   $pathflyfilename = str_replace($ext,'-'.$width.'x'.$height.'' . $ext, $image_meta['file']);
