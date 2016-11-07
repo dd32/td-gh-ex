@@ -25,7 +25,7 @@ You can customize Base WP via the Customizer and use this theme as an ecommerce 
 
 = Does this theme support any plugins? =
 
-Base WP includes support for Infinite Scroll in Jetpack, WooCommerce, Easy Digital Downloads, Yoast Seo, Beaver Builder, Elementor, Contact Form 7 and much more.
+Base WP includes support Jetpack, Yoast Seo, Contact Form 7, Beaver Builder, Elementor, Easy Digital Downloads, WooCommerce, NavXT Breadcrumb, WP-PageNavi and other of the most usefull and popular free and premium WordPress plugins.
 
 == Credits ==
 
@@ -274,3 +274,6 @@ All Javascript is located in /js/ with license headers where appropriate.
 
 == 2.05 ==
 * Fixed image caption alignment.
+
+== 2.06 ==
+* Fixed widget sidebar heading tag.
