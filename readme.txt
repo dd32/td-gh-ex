@@ -156,3 +156,9 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-background, 
 = Version 1.4.6 =
 * Updated SmoothScroll to 1.4.5 version
 * Minor bug fixes
+
+= Version 1.4.7 =
+* Updated FontAwesome to 4.7.0 Version
+* Updated SmoothScroll to 1.4.5 Version
+* Improved custom menu in the sidebar
+* Minor bug fixes

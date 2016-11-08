@@ -6,7 +6,7 @@
 		/*-----------------------------------------------------------------------------------*/
 		/*  Home icon in main menu
 		/*-----------------------------------------------------------------------------------*/ 
-			$('.main-navigation .menu-item-home > a').prepend('<i class="fa fa-lg fa-home spaceRight"></i>');
+			$('.main-navigation .menu-item-home:first-child > a').prepend('<i class="fa fa-lg fa-home spaceRight"></i>');
 			
 		/*-----------------------------------------------------------------------------------*/
 		/*  If the Tagcloud widget exist or Edit Comments Link exist
@@ -33,6 +33,27 @@
 			$(this).toggleClass("active");
 			return false;
 		});
+		
+		/*-----------------------------------------------------------------------------------*/
+		/*  Menu Widget
+		/*-----------------------------------------------------------------------------------*/
+			if ( $( 'aside ul.menu' ).length ) {
+				$('aside ul.menu').find("li").each(function(){
+					if($(this).children("ul").length > 0){
+						$(this).append("<span class='indicatorBar'></span>");
+					}
+				});
+				$('aside ul.menu > li.menu-item-has-children .indicatorBar, .aside ul.menu > li.page_item_has_children .indicatorBar').click(function() {
+					$(this).parent().find('> ul.sub-menu, > ul.children').toggleClass('yesOpenBar');
+					$(this).toggleClass('yesOpenBar');
+					var $self = $(this).parent();
+					if($self.find('> ul.sub-menu, > ul.children').hasClass('yesOpenBar')) {
+						$self.find('> ul.sub-menu, > ul.children').slideDown(300);
+					} else {
+						$self.find('> ul.sub-menu, > ul.children').slideUp(200);
+					}
+				});
+			}
 			
 		/*-----------------------------------------------------------------------------------*/
 		/*  Mobile Menu

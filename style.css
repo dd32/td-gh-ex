@@ -4,7 +4,7 @@ Theme URI: http://crestaproject.com/downloads/blogghiamo/
 Author: Rizzo Andrea - CrestaProject.com
 Author URI: http://crestaproject.com
 Description: Simple and Minimal WordPress Theme with two columns, unlimited colors, theme options and share buttons created by CrestaProject.com. Live demo http://crestaproject.com/demo/blogghiamo/
-Version: 1.4.6
+Version: 1.4.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: blogghiamo
@@ -965,6 +965,48 @@ aside ul li {
 }
 #wp-calendar tbody td#today {
 	border: 1px solid #0a7db0;
+}
+/* Menu Widget */
+aside ul.menu ul.sub-menu {
+	display: none;
+	padding-left: 2em;
+}
+aside ul.menu li {
+	position: relative;
+	border-bottom-width: 0;
+    border-bottom-style: none;
+    border-bottom-color: transparent;
+    padding: 0;
+}
+aside ul.menu li a {
+	border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(0,0,0,.05);
+    padding: 0.5em 0;
+	display: block;
+	height: 46px;
+}
+aside ul.menu .indicatorBar {
+	position: absolute;
+    right: 0;
+    top: 0;
+    width: 46px;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+	cursor: pointer;
+    font-family: 'FontAwesome';
+	font-size: 16px;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-color: rgba(0,0,0,.05);
+}
+aside ul.menu .indicatorBar:before {
+	content: "\f107";
+}
+
+aside ul.menu .indicatorBar.yesOpenBar:before {
+	content: "\f106";
 }
 
 /*--------------------------------------------------------------
