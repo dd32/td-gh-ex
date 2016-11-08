@@ -10,7 +10,7 @@
 </head>
 <body  <?php body_class(); ?>>
 
-    <header id="header"  class="header <?php //if ( is_admin_bar_showing() ) { //echo 'admin_bar_fix';  }?>">
+    <header id="header"  class="header <?php if ( is_admin_bar_showing() ) { echo 'admin_bar_fix';  }?>">
         <div class="wrap">
             <h1 id="logo">
 			<?php 
@@ -35,7 +35,6 @@
                 <!-- Mobile button -->
                 <ul>
                 <?php
-				
 					if ( has_nav_menu( 'header-menu' ) ) {
                     	 wp_nav_menu( array( 'theme_location' => 'header-menu', 'items_wrap' => '%3$s','container' => false  ) );
                   	}

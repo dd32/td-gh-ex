@@ -15,6 +15,12 @@ iconfont
     iconfont is Licensed under the GPL, version 2 or later
     https://www.coothemes.com
 
+JS Files
+    QueryLoader2 is Licensed under the  WTFPL license
+    http://www.opensource.org/licenses/mit-license.php
+
+    jquery.mb.YTPlayer is Licensed under the  GPL license
+    https://github.com/pupunzi/jquery.mb.YTPlayer/blob/master/licences/GPL-LICENSE.txt
 
 
 == Installation ==

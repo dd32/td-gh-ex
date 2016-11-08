@@ -1,5 +1,16 @@
 
 == Changelog ==
+Version 1.2.1  2016.11.7
+* fix some problem
+* add plugin recommend
+
+
+Version 1.2.0  2016.9.18
+* add home section video and contact us
+* add upgrade to pro
+* add themes option in customize
+
+
 Version 1.1.9  2016.9.13
 * remove ascreen_get_option()
 * add default featrue images

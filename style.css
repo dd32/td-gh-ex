@@ -1,15 +1,15 @@
 /*
 Theme Name:    Ascreen
-Description:  Ascreen is a one page WordPress theme loaded with lots of features. Clean, fast, fully responsive, SEO friendly  and backed by excellent technical support, Ascreen is perfect for your business.
+Description:  Ascreen is a beautiful free one page WordPress theme featured with full width home sliders. Clean, fast, fully responsive, HTML5 video background,contact us,SEO friendly  and backed by excellent technical support, Ascreen is perfect for your business.
 Author:       Coothemes
 Author URI:   https://www.coothemes.com
 Theme URI:   https://www.coothemes.com/themes/ascreen.php
 Text Domain: ascreen
-Tags: two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, featured-images, translation-ready,Portfolio, footer-widgets,Grid-Layout
+Tags: two-columns, right-sidebar, custom-background,Theme-Options, custom-colors, custom-header, custom-menu, featured-images, translation-ready,Portfolio, footer-widgets,Grid-Layout
 
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Version:      1.1.9
+Version:      1.2.1
 */
 @charset "utf-8";
 
@@ -214,7 +214,7 @@ body{ padding-top:0px; }
 	font-weight:400;
 	font-size:0.9em;
 }
-.header-nav>ul>li>a:hover{color:#00c8f2 !important}
+.header-nav>ul>li>a:hover{color:#00c8f2 !important; text-decoration:none;}
 .header-nav>ul>.active>a{color:#00c8f2 !important}
 .header-nav>ul>.active>a:after{content:"";position:absolute;height:2px;bottom:-8px;left:0;width:100%;background:#00c8f2}
 .header-nav .btn+.btn{margin-left:15px}
@@ -388,7 +388,10 @@ body{ padding-top:0px; }
 .blog-content>.wrap{max-width:1120px;margin:0 auto}
 .blog-content>.wrap:after{content:".";display:block;height:0;clear:both;visibility:hidden}
 .blog-content .main{float:left;width:73%}.blog-content .main>h2{font-size:24px;margin-bottom:25px;font-weight:bold}
-.blog-content .main>h2 span{font-size:13px}.blog-content .sidebar{float:right;width:24.107142857143%}.blog-article-list li{background:#fff;padding:20px;padding-right:50px;box-shadow:0 1px 3px rgba(0,0,0,0.08);position:relative;min-height:135px;margin-bottom:20px}.blog-article-list li:before{content:"";display:block;position:absolute;right:-2px;top:-2px;-webkit-transition:border-width 0.2s ease-in, opacity 0ms ease-in 0ms;-moz-transition:border-width 0.2s ease-in, opacity 0ms ease-in 0ms;-o-transition:border-width 0.2s ease-in, opacity 0ms ease-in 0ms;transition:border-width 0.2s ease-in, opacity 0ms ease-in 0ms;opacity:0;border-width:0;height:0;width:0;border-style:solid;border-color:#f7f8f8 #f7f8f8 transparent transparent}.blog-article-list li:after{content:"";display:block;opacity:0;border-width:0;position:absolute;right:0;top:0;height:0;width:0;border-style:solid;border-color:#f7f8f8 #f7f8f8 transparent transparent;background:#e8e8e8;-webkit-transition:border-width 0.2s ease-in, opacity 0ms ease-in 0ms;-moz-transition:border-width 0.2s ease-in, opacity 0ms ease-in 0ms;-o-transition:border-width 0.2s ease-in, opacity 0ms ease-in 0ms;transition:border-width 0.2s ease-in, opacity 0ms ease-in 0ms}.blog-article-list li:hover:before{-webkit-transition:border-width 0.2s ease-in, opacity 0ms ease-in 0ms;-moz-transition:border-width 0.2s ease-in, opacity 0ms ease-in 0ms;-o-transition:border-width 0.2s ease-in, opacity 0ms ease-in 0ms;transition:border-width 0.2s ease-in, opacity 0ms ease-in 0ms;opacity:1;border-width:10px}.blog-article-list li:hover:after{-webkit-transition:border-width 0.2s ease-in, opacity 0ms ease-in 0ms;-moz-transition:border-width 0.2s ease-in, opacity 0ms ease-in 0ms;-o-transition:border-width 0.2s ease-in, opacity 0ms ease-in 0ms;transition:border-width 0.2s ease-in, opacity 0ms ease-in 0ms;opacity:1;border-width:8px}.blog-article-list .images{position:absolute;left:20px;top:20px;height:135px;width:180px;cursor:pointer}.blog-article-list .images:before{content:"";display:block;height:50px;width:180px;position:absolute;left:0;bottom:0;background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMSAxIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48bGluZWFyR3JhZGllbnQgaWQ9Imxlc3NoYXQtZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9InJnYigwLCAwLCAwKSIgc3RvcC1vcGFjaXR5PSIwIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSJyZ2IoMCwgMCwgMCkiIHN0b3Atb3BhY2l0eT0iMC4xNSIvPjwvbGluZWFyR3JhZGllbnQ+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNsZXNzaGF0LWdlbmVyYXRlZCkiIC8+PC9zdmc+);background-image:-webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 100%);background-image:-moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 100%);background-image:-o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 100%);background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 100%);z-index:1;-webkit-transition:all ease 0.4s;-moz-transition:all ease 0.4s;-o-transition:all ease 0.4s;transition:all ease 0.4s}
+.blog-content .main>h2 span{font-size:13px}.blog-content .sidebar{float:right;width:24.107142857143%}
+.blog-article-list li{background:#fff;padding:20px;padding-right:50px;box-shadow:0 1px 3px rgba(0,0,0,0.08);position:relative;min-height:180px;margin-bottom:20px}
+.blog-article-list li:before{content:"";display:block;position:absolute;right:-2px;top:-2px;-webkit-transition:border-width 0.2s ease-in, opacity 0ms ease-in 0ms;-moz-transition:border-width 0.2s ease-in, opacity 0ms ease-in 0ms;-o-transition:border-width 0.2s ease-in, opacity 0ms ease-in 0ms;transition:border-width 0.2s ease-in, opacity 0ms ease-in 0ms;opacity:0;border-width:0;height:0;width:0;border-style:solid;border-color:#f7f8f8 #f7f8f8 transparent transparent}
+.blog-article-list li:after{content:"";display:block;opacity:0;border-width:0;position:absolute;right:0;top:0;height:0;width:0;border-style:solid;border-color:#f7f8f8 #f7f8f8 transparent transparent;background:#e8e8e8;-webkit-transition:border-width 0.2s ease-in, opacity 0ms ease-in 0ms;-moz-transition:border-width 0.2s ease-in, opacity 0ms ease-in 0ms;-o-transition:border-width 0.2s ease-in, opacity 0ms ease-in 0ms;transition:border-width 0.2s ease-in, opacity 0ms ease-in 0ms}.blog-article-list li:hover:before{-webkit-transition:border-width 0.2s ease-in, opacity 0ms ease-in 0ms;-moz-transition:border-width 0.2s ease-in, opacity 0ms ease-in 0ms;-o-transition:border-width 0.2s ease-in, opacity 0ms ease-in 0ms;transition:border-width 0.2s ease-in, opacity 0ms ease-in 0ms;opacity:1;border-width:10px}.blog-article-list li:hover:after{-webkit-transition:border-width 0.2s ease-in, opacity 0ms ease-in 0ms;-moz-transition:border-width 0.2s ease-in, opacity 0ms ease-in 0ms;-o-transition:border-width 0.2s ease-in, opacity 0ms ease-in 0ms;transition:border-width 0.2s ease-in, opacity 0ms ease-in 0ms;opacity:1;border-width:8px}.blog-article-list .images{position:absolute;left:20px;top:20px;height:135px;width:180px;cursor:pointer}.blog-article-list .images:before{content:"";display:block;height:50px;width:180px;position:absolute;left:0;bottom:0;background-image:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMSAxIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48bGluZWFyR3JhZGllbnQgaWQ9Imxlc3NoYXQtZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9InJnYigwLCAwLCAwKSIgc3RvcC1vcGFjaXR5PSIwIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSJyZ2IoMCwgMCwgMCkiIHN0b3Atb3BhY2l0eT0iMC4xNSIvPjwvbGluZWFyR3JhZGllbnQ+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNsZXNzaGF0LWdlbmVyYXRlZCkiIC8+PC9zdmc+);background-image:-webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 100%);background-image:-moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 100%);background-image:-o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 100%);background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.15) 100%);z-index:1;-webkit-transition:all ease 0.4s;-moz-transition:all ease 0.4s;-o-transition:all ease 0.4s;transition:all ease 0.4s}
 .blog-article-list .images:after{content:"";display:block;position:absolute;height:22px;line-height:22px;padding:0 10px;font-size:12px;color:#fff;bottom:0;right:0;z-index:10}
 .blog-article-list .images.newsflash:after{background:#ff6868;content:"Blog"}
 .blog-article-list .images.technical:after{background:#308fff;content:"Tech"}
@@ -911,11 +914,16 @@ ul{
 
 }
 #logo{ max-width:30%; overflow:hidden;position: inherit; float:left;}
-
+/*
 #header{
 	position: inherit;
 }
-.blog-content{padding-top:30px;padding-bottom:50px}
+.blog-content{padding-top:20px;padding-bottom:50px}*/
 .header-nav .sub-menu { z-index:99999;}
 
 /*header not fixed end*/
+
+.blog-page .blog-article{ padding-top:1px; margin-top:0;}
+
+#crumbs{margin-bottom:20px;}
+

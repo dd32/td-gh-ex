@@ -8,7 +8,7 @@ function ascreen_setup(){
 	
 	$template_directory = get_template_directory();
 	require_once( $template_directory . '/includes/customize/customize.php' );
-	
+	require_once( $template_directory . '/includes/tgm-plugin.php' );	
 
 	add_theme_support('post-thumbnails');
 	set_post_thumbnail_size( 185, 135 );
@@ -16,13 +16,17 @@ function ascreen_setup(){
 	$header_args = array(
 	    'default-image'          => '',
 		'default-repeat' => 'no-repeat',
-        'default-text-color'     => '2C2C2C',
+        'default-text-color'     => '00BAE1',
 		'url'                    => '',
         'width'                  => 1920,
         'height'                 => 89,
         'flex-height'            => true
      );
-	add_theme_support( 'custom-background', $args );
+	$background_args = array(
+		'default-color' => 'f7f8f8',
+	);	 
+		 
+	add_theme_support( 'custom-background', $background_args );
 	add_theme_support( 'custom-header', $header_args );
 	add_theme_support( 'automatic-feed-links' );//
 
@@ -60,7 +64,28 @@ function ascreen_custom_scripts()
 	wp_enqueue_style('ascreen-main', get_stylesheet_uri(), false, $theme_info->get( 'Version' ) );	
 	
 			
-	wp_enqueue_script('ascreen-main', get_template_directory_uri().'/js/main.js', array( 'jquery' ),$theme_info->get( 'Version' ), false );				
+	wp_enqueue_script('ascreen-main', get_template_directory_uri().'/js/main.js', array( 'jquery' ),$theme_info->get( 'Version' ), false );			
+
+	//video
+	wp_enqueue_script('jquery.mb.YTPlayer.js', get_template_directory_uri().'/js/jquery.mb.YTPlayer.js', array( 'jquery' ), $theme_info->get( 'Version' ), false );	
+
+	
+	$mods = get_theme_mods();
+	$enable_query_loader = !empty($mods['ascreen_option']['enable_query_loader']) ? $mods['ascreen_option']['enable_query_loader']:0;	
+	if( $enable_query_loader == 1)
+	{
+		wp_enqueue_script( 'queryloader2', get_template_directory_uri().'/js/queryloader2.min.js', array( 'jquery' ), '', false );
+		wp_enqueue_script( 'ascreen-loader', get_template_directory_uri().'/js/loader.js', array( 'jquery' ), '', false );		
+	}
+	
+	wp_localize_script( 'ascreen-main', 'ascreen_params', array(
+		'ajaxurl'        => admin_url('admin-ajax.php'),
+		'themeurl' => get_template_directory_uri(),
+		
+	)  );		
+	
+		
+		
 }
 
 add_action( 'wp_enqueue_scripts', 'ascreen_custom_scripts' );
@@ -267,6 +292,36 @@ function ascreen_customize_css()
 			{
 				$ascreen_custom_css .= "header#header{background:url(".esc_url($header_image). ");}\n";
 			}
+			
+			$mods = get_theme_mods();
+			//print_r($mods);
+		
+			$fixed_header = !empty($mods['ascreen_option']['fixed_header']) ? $mods['ascreen_option']['fixed_header']:1;
+			$box_header_center = !empty($mods['ascreen_option']['box_header_center']) ? $mods['ascreen_option']['box_header_center']:0;		
+			$enable_home_section = !empty($mods['ascreen_option']['enable_home_section']) ? $mods['ascreen_option']['enable_home_section']:'0';	
+			
+			if( $fixed_header == 0)
+			{
+				$ascreen_custom_css .= "#header{position: inherit;}.blog-content{padding-top:30px;}";
+			}
+			if($enable_home_section == '1'){
+				$ascreen_custom_css .= ".blog-content{padding-top:50px;}";
+			}
+			if( $box_header_center == 0)
+			{
+				$ascreen_custom_css .= "#header .wrap{max-width:98%;}";
+			}			
+			
+			
+			if ( 'blank' != get_header_textcolor() && '' != get_header_textcolor() )
+			{
+				$header_textcolor  =  ' color:#' . get_header_textcolor() . ';';
+				
+				$ascreen_custom_css .=  '#logo .blogdescription,#logo .blogname {'.esc_attr($header_textcolor).'}';
+ 
+			}				
+			$ascreen_custom_css .="body{ background-color: #f7f8f8; }";
+			
 
 			$ascreen_custom_css   = esc_html($ascreen_custom_css);
 			
@@ -280,3 +335,174 @@ function ascreen_customize_css()
 
 add_action( 'wp_head', 'ascreen_customize_css');
 add_action( 'customize_controls_print_styles', 'ascreen_customize_css' );
+
+
+function ascreen_customize_scripts() {
+	wp_enqueue_script( 'ascreen_customizer_custom', get_template_directory_uri() . '/js/customizer-custom-scripts.js', array( 'customize-controls', 'iris', 'underscore', 'wp-util' ), '20150630', true );
+
+	$clean_box_misc_links = array(
+							'upgrade_link' 				=> esc_url( 'https://www.coothemes.com/themes/ascreen.php' ),
+							'upgrade_text'	 			=> __( 'Upgrade To Pro &raquo;', 'ascreen' ),
+							'WP_version'				=> get_bloginfo( 'version' ),
+							'old_version_message'		=> __( 'Some settings might be missing or disorganized in this version of WordPress. So we suggest you to upgrade to version 4.0 or better.', 'ascreen' )
+		);
+	if ( !(defined( 'ASCREEN_THEME_PRO_USED' ) && ASCREEN_THEME_PRO_USED ))
+	{
+		wp_localize_script( 'ascreen_customizer_custom', 'clean_box_misc_links', $clean_box_misc_links );
+	}
+	
+
+	wp_enqueue_style( 'ascreen_customizer_custom_css', get_template_directory_uri() . '/css/customizer.css');
+}
+add_action( 'customize_controls_enqueue_scripts', 'ascreen_customize_scripts');
+
+
+
+function ascreen_breadcrumbs() {
+	//$delimiter = '»';	
+	$delimiter = "&raquo;";
+	$before = '<span class="current">';
+	$after = '</span>'; 
+	if ( !is_home() && !is_front_page() || is_paged() ) {
+		echo '<div itemscope itemtype="http://schema.org/WebPage" id="crumbs">';
+		global $post;
+		$homeLink = home_url();
+		echo ' <a itemprop="breadcrumb" href="' . $homeLink . '">' . __( 'Home' , 'ascreen' ) . '</a> ' . $delimiter . ' ';
+		if ( is_category() ) { 
+			global $wp_query;
+			$cat_obj = $wp_query->get_queried_object();
+			$thisCat = $cat_obj->term_id;
+			$thisCat = get_category($thisCat);
+			$parentCat = get_category($thisCat->parent);
+			if ($thisCat->parent != 0){
+				$cat_code = get_category_parents($parentCat, TRUE, ' ' . $delimiter . ' ');
+				echo $cat_code = str_replace ('<a','<a itemprop="breadcrumb"', $cat_code );
+			}
+			echo $before . '' . single_cat_title('', false) . '' . $after;
+		} elseif ( is_day() ) {
+			echo '<a itemprop="breadcrumb" href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
+			echo '<a itemprop="breadcrumb"  href="' . get_month_link(get_the_time('Y'),get_the_time('m')) . '">' . get_the_time('F') . '</a> ' . $delimiter . ' ';
+			echo $before . get_the_time('d') . $after;
+		} elseif ( is_month() ) { 
+			echo '<a itemprop="breadcrumb" href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $delimiter . ' ';
+			echo $before . get_the_time('F') . $after;
+		} elseif ( is_year() ) { 
+			echo $before . get_the_time('Y') . $after;
+		} elseif ( is_single() && !is_attachment() ) { 
+			if ( get_post_type() != 'post' ) { 
+				$post_type = get_post_type_object(get_post_type());
+				$slug = $post_type->rewrite;
+				echo '<a itemprop="breadcrumb" href="' . $homeLink . '/' . $slug['slug'] . '/">' . $post_type->labels->singular_name . '</a> ' . $delimiter . ' ';
+				echo $before . get_the_title() . $after;
+			} else { 
+				$cat = get_the_category(); $cat = $cat[0];
+				$cat_code = get_category_parents($cat, TRUE, ' ' . $delimiter . ' ');
+				echo $cat_code = str_replace ('<a','<a itemprop="breadcrumb"', $cat_code );
+				echo $before . get_the_title() . $after;
+			}
+		} elseif ( !is_single() && !is_page() && get_post_type() != 'post' ) {
+			$post_type = get_post_type_object(get_post_type());
+			echo $before . $post_type->labels->singular_name . $after;
+		} elseif ( is_attachment() ) { 
+			$parent = get_post($post->post_parent);
+			$cat = get_the_category($parent->ID); $cat = $cat[0];
+			echo '<a itemprop="breadcrumb" href="' . get_permalink($parent) . '">' . $parent->post_title . '</a> ' . $delimiter . ' ';
+			echo $before . get_the_title() . $after;
+		} elseif ( is_page() && !$post->post_parent ) { 
+			echo $before . get_the_title() . $after;
+		} elseif ( is_page() && $post->post_parent ) { 
+			$parent_id  = $post->post_parent;
+			$breadcrumbs = array();
+			while ($parent_id) {
+				$page = get_page($parent_id);
+				$breadcrumbs[] = '<a itemprop="breadcrumb" href="' . get_permalink($page->ID) . '">' . get_the_title($page->ID) . '</a>';
+				$parent_id  = $page->post_parent;
+			}
+			$breadcrumbs = array_reverse($breadcrumbs);
+			foreach ($breadcrumbs as $crumb) echo $crumb . ' ' . $delimiter . ' ';
+			echo $before . get_the_title() . $after;
+		} elseif ( is_search() ) { 
+			echo $before ;
+			printf( __( 'Search Results for: %s', 'ascreen' ),  get_search_query() );
+			echo  $after;
+		} elseif ( is_tag() ) { 
+			echo $before ;
+			printf( __( 'Tag Archives: %s', 'ascreen' ), single_tag_title( '', false ) );
+			echo  $after;
+		} elseif ( is_author() ) { 
+			global $author;
+			$userdata = get_userdata($author);
+			echo $before ;
+			printf( __( 'Author Archives: %s', 'ascreen' ),  $userdata->display_name );
+			echo  $after;
+		} elseif ( is_404() ) { 
+			echo $before;
+			_e( 'Not Found', 'ascreen' );
+			echo  $after;
+		}
+		if ( get_query_var('paged') ) { 
+			if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() )
+				echo sprintf( __( '( Page %s )', 'ascreen' ), get_query_var('paged') );
+		}
+		echo '</div>';
+	}
+}
+
+	/*	
+	*	send email
+	*	---------------------------------------------------------------------
+	*/
+function ascreen_contact(){
+	if(trim($_POST['Name']) === '') {
+		$Error = __('Please enter your name.','ascreen');
+		$hasError = true;
+	} else {
+		$name = trim($_POST['Name']);
+	}
+
+	if(trim($_POST['Email']) === '')  {
+		$Error = __('Please enter your email address.','ascreen');
+		$hasError = true;
+	} else if (!preg_match("/^[[:alnum:]][a-z0-9_.-]*@[a-z0-9.-]+\.[a-z]{2,4}$/i", trim($_POST['Email']))) {
+		$Error = __('You entered an invalid email address.','ascreen');
+		$hasError = true;
+	} else {
+		$email = trim($_POST['Email']);
+	}
+
+	if(trim($_POST['Message']) === '') {
+		$Error =  __('Please enter a message.','ascreen');
+		$hasError = true;
+	} else {
+		if(function_exists('stripslashes')) {
+			$message = stripslashes(trim($_POST['Message']));
+		} else {
+			$message = trim($_POST['Message']);
+		}
+	}
+
+	if(!isset($hasError)) {
+	   if (isset($_POST['sendto']) && preg_match("/^[[:alnum:]][a-z0-9_.-]*@[a-z0-9.-]+\.[a-z]{2,4}$/i", trim($_POST['sendto']))) {
+	     $emailTo = $_POST['sendto'];
+	   }
+	   else{
+	 	 $emailTo = get_option('admin_email');
+		}
+		 if($emailTo !=""){
+		$subject = 'From '.$name;
+		$body = "Name: $name \n\nEmail: $email \n\nMessage: $message";
+		$headers = 'From: '.$name.' <'.$emailTo.'>' . "\r\n" . 'Reply-To: ' . $email;
+
+		wp_mail($emailTo, $subject, $body, $headers);
+		$emailSent = true;
+		}
+		echo json_encode(array("msg"=>__("Your message has been successfully sent!","ascreen"),"error"=>0));
+	}
+	else
+	{
+		echo json_encode(array("msg"=>$Error,"error"=>1));
+	}
+		die() ;
+}
+add_action('wp_ajax_ascreen_contact', 'ascreen_contact');
+add_action('wp_ajax_nopriv_ascreen_contact', 'ascreen_contact');

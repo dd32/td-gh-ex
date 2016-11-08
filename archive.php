@@ -5,7 +5,10 @@ get_header(); ?>
 
 	<div class="blog-content">
         <div class="wrap">
+        
+          	<?php if ( function_exists('ascreen_breadcrumbs') ) {echo ascreen_breadcrumbs();} ?>      
             <div class="main">
+
                 <!--article-->
                 <ul class="blog-article-list">
                 	<?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
