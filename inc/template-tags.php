@@ -15,9 +15,9 @@ function puro_author_box() { ?>
 	<div class="author-box">
 		<div class="author-avatar">
 			<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
-				<?php echo get_avatar( get_the_author_meta( 'ID' ), 120 ); ?>
+				<?php echo get_avatar( get_the_author_meta( 'ID' ), 80 ); ?>
 			</a>
-		</div>
+		</div><!-- .author-avatar -->
 		<div class="author-description">
 			<h3><?php echo get_the_author(); ?></h3>
 			<span class="author-posts">
@@ -25,9 +25,11 @@ function puro_author_box() { ?>
 					<?php esc_html_e( 'View posts by ', 'puro' );
 					echo get_the_author(); ?>
 				</a>
-			</span>		
-			<div><?php echo wp_kses( get_the_author_meta( 'description' ), null ); ?></div>
-		</div>
+			</span>	
+			<?php if ( ! empty ( get_the_author_meta( 'description' ) ) ) : ?>
+				<div><?php echo wp_kses( get_the_author_meta( 'description' ), null ); ?></div>
+			<?php endif; ?>
+		</div><!-- .author-description -->
 	</div>
 <?php }
 endif;

@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 1.1.3 - 08 November 2016 =
+* Fixed footer widget responsive bug.
+* Improved author box layout when no author description added.
+
 = 1.1.2 - 24 October 2016 =
 * Changed heading one to heading two in archive loops to improve SEO.
 

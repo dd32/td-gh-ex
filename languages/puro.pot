@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Puro\n"
-"POT-Creation-Date: 2016-10-08 18:41+0200\n"
+"POT-Creation-Date: 2016-11-08 12:38+0200\n"
 "PO-Revision-Date: 2015-06-10 19:10+0200\n"
 "Last-Translator: Puro <support@purothemes.com>\n"
 "Language-Team: \n"
@@ -80,8 +80,8 @@ msgid ""
 msgstr ""
 
 #: ../content-page.php:25 ../content-single.php:28 ../content-video.php:43
-#: ../content.php:38 ../loops/loop-medium-left.php:49
-#: ../loops/loop-thumbnail-left.php:49
+#: ../content.php:38 ../loops/loop-medium-left.php:41
+#: ../loops/loop-thumbnail-left.php:41
 #: ../page-templates/full-width-no-title.php:28
 #: ../page-templates/full-width-unconstrained-content-no-title.php:28
 #: ../page-templates/no-title.php:28
@@ -89,8 +89,8 @@ msgid "Pages:"
 msgstr ""
 
 #: ../content-page.php:34 ../content-search.php:24 ../content-single.php:38
-#: ../content-video.php:53 ../content.php:48 ../loops/loop-medium-left.php:61
-#: ../loops/loop-thumbnail-left.php:61
+#: ../content-video.php:53 ../content.php:48 ../loops/loop-medium-left.php:53
+#: ../loops/loop-thumbnail-left.php:53
 #: ../page-templates/full-width-no-title.php:35
 #: ../page-templates/full-width-unconstrained-content-no-title.php:35
 #: ../page-templates/no-title.php:35
@@ -895,51 +895,51 @@ msgstr ""
 msgid "SiteOrigin Premium"
 msgstr ""
 
-#: ../inc/template-tags.php:23
+#: ../inc/template-tags.php:25
 msgid "View posts by "
 msgstr ""
 
-#: ../inc/template-tags.php:44
+#: ../inc/template-tags.php:48
 msgid "Posts navigation"
 msgstr ""
 
-#: ../inc/template-tags.php:59
+#: ../inc/template-tags.php:63
 msgid "Previous"
 msgstr ""
 
-#: ../inc/template-tags.php:60
+#: ../inc/template-tags.php:64
 msgid "Next"
 msgstr ""
 
-#: ../inc/template-tags.php:86
+#: ../inc/template-tags.php:90
 msgid "Post navigation"
 msgstr ""
 
-#: ../inc/template-tags.php:89 ../inc/template-tags.php:90
+#: ../inc/template-tags.php:93 ../inc/template-tags.php:94
 msgid "%title"
 msgstr ""
 
-#: ../inc/template-tags.php:105
+#: ../inc/template-tags.php:109
 msgid "Sticky"
 msgstr ""
 
-#: ../inc/template-tags.php:121 ../inc/template-tags.php:125
+#: ../inc/template-tags.php:125 ../inc/template-tags.php:129
 msgid ", "
 msgstr ""
 
-#: ../inc/template-tags.php:130
+#: ../inc/template-tags.php:134
 msgid "Leave a comment"
 msgstr ""
 
-#: ../inc/template-tags.php:130
+#: ../inc/template-tags.php:134
 msgid "1 Comment"
 msgstr ""
 
-#: ../inc/template-tags.php:130
+#: ../inc/template-tags.php:134
 msgid "% Comments"
 msgstr ""
 
-#: ../inc/template-tags.php:172
+#: ../inc/template-tags.php:176
 #, php-format
 msgid "%s Logo"
 msgstr ""

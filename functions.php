@@ -7,7 +7,7 @@
  * @license GPL 2.0
  */
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.1.2' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.1.3' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://updates.purothemes.com' );
 define( 'SITEORIGIN_THEME_JS_PREFIX', defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min' );
 
