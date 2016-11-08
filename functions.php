@@ -50,7 +50,7 @@ function silver_quantum_enqueue_scripts_setup() {
     wp_enqueue_style('font-awesome', get_template_directory_uri() . '/extras/font-awesome/css/font-awesome.css', '20160601', true);
     
     // Enable and activate Google Font (Ubuntu) for Silver Quantum.
-    wp_enqueue_style('silver-quantum-ubuntu', '//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic');
+    wp_enqueue_style('silver-quantum-ubuntu', '//fonts.googleapis.com/css?family=Merriweather+Sans:400,400i,700,700i|Sanchez:400,400i');
     
     // Enable and Activate Navigation JavaScript for Silver Quantum.
     wp_enqueue_script('silver-quantum-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20160601', true);
