@@ -153,7 +153,7 @@ if ( !function_exists('acmephoto_get_default_theme_options') ) :
 
         $default_theme_options = array(
             /*feature section options*/
-            'acmephoto-enable-feature'       => '',
+            'acmephoto-enable-feature'       => 1,
             'acmephoto-feature-enable-social'       => '',
             'acmephoto-feature-page'         => 0,
             'acmephoto-feature-height'       => 60,
@@ -162,7 +162,7 @@ if ( !function_exists('acmephoto_get_default_theme_options') ) :
             /*header options*/
             'acmephoto-header-logo'          => '',
             'acmephoto-header-id-display-opt'=> 'title-and-tagline',
-            'acmephoto-menu-position-options'=> 'below-feature',
+            'acmephoto-menu-position-options'=> 'top-normal',
             'acmephoto-facebook-url'         => '',
             'acmephoto-twitter-url'          => '',
             'acmephoto-instagram-url'          => '',

@@ -53,10 +53,10 @@ if ( ! function_exists( 'acmephoto_dynamic_css' ) ) :
             #acmephoto-breadcrumbs a:hover,
             .wpcf7-form input.wpcf7-submit,
             .widget li a:hover,
-            .header-wrapper .menu > li.current-menu-item > a,
-            .header-wrapper .menu > li.current-menu-parent > a,
-            .header-wrapper .menu > li.current_page_parent > a,
-            .header-wrapper .menu > li.current_page_ancestor > a{
+            .main-navigation ul > li.current-menu-item > a,
+            .main-navigation ul > li.current-menu-parent > a,
+            .main-navigation ul > li.current_page_parent > a,
+            .main-navigation ul > li.current_page_ancestor > a{
                 color: {$acmephoto_primary_color};
             }";
 
