@@ -4,7 +4,7 @@ Theme URI: https://www.lumiathemes.com/portfolio/silver-quantum/
 Author: Benjamin Lu
 Author URI: https://www.lumiathemes.com/
 Description: This Silver Quantum is converted into a responsive theme with the same features such as a fixed top navigation so that when users scrolls down, the navigation stays in its place. It also comes with custom sidebar and full width without no sidebar. Custom Background and Header is available. 
-Version: 0.3.2
+Version: 0.3.3
 License: Silver Quantum is distributed under the terms of the GNU GPL.
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-background, custom-header, one-column, right-sidebar, threaded-comments, translation-ready, two-columns
@@ -822,7 +822,7 @@ a:hover {
 .primary-navigation {
 	clear: both;
 	display: block;
-    font-family: 'Ubuntu', 'sans-serif';
+    font-family: 'Sanchez', serif;
 	width: 100%;
 }
 
@@ -901,8 +901,8 @@ a:hover {
 	position: absolute;
 	height: 27px;
 	width: 27px;
-	top: 12px;
-	right: 6px;
+	top: 10px;
+	right: 8px;
 	-webkit-box-sizing: content-box;
 	-moz-box-sizing: content-box;
 	box-sizing: content-box;
@@ -921,7 +921,7 @@ a:hover {
 	line-height: 27px;
 	position: relative;
 	top: 0;
-	left: 1px;
+	left: 0;
 	width: 27px;
 }
 
@@ -1064,7 +1064,7 @@ span.page-numbers {
 */
 .site-header {
     background: url(images/header-image.jpg) no-repeat;
-    padding: 3.3em;
+    padding: 3em;
 }
 
 .site-branding {
@@ -1308,12 +1308,12 @@ ol.children {
     color: #000000;
 	padding: 16px 20px;
     font-size: 1em;
-	font-family: "Open Sans", sans-serif;
 	text-decoration: none;
 	border: 1px solid #c3c3c3;
 }
 
-.form-submit .submit:hover {
+.form-submit .submit:hover,
+.form-submit .submit:focus {
 	border-color: #000;
 	border-width: 1px;
     color: #000000;
@@ -1706,7 +1706,7 @@ input[type = "search"] {
 	/* Simplify the drop-down toggle */
 	.dropdown-toggle {
 		top: 9px;
-		right: 12px;
+		right: 10px;
 
 	}
 	
