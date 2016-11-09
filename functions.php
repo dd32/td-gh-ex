@@ -35,6 +35,9 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_socila_link.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro.php');
 	
+	// Rambo Info Page
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/rambo-info/welcome-screen.php');
+	
   	//wp title tag starts here
   	function rambo_head( $title, $sep )
   	{	global $paged, $page;		
