@@ -26,9 +26,7 @@ function puro_author_box() { ?>
 					echo get_the_author(); ?>
 				</a>
 			</span>	
-			<?php if ( ! empty ( get_the_author_meta( 'description' ) ) ) : ?>
-				<div><?php echo wp_kses( get_the_author_meta( 'description' ), null ); ?></div>
-			<?php endif; ?>
+			<div><?php echo wp_kses( get_the_author_meta( 'description' ), null ); ?></div>
 		</div><!-- .author-description -->
 	</div>
 <?php }
