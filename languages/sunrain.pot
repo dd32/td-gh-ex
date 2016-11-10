@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Small Business\n"
-"POT-Creation-Date: 2016-01-29 18:31+0600\n"
+"POT-Creation-Date: 2016-11-10 11:35+0600\n"
 "PO-Revision-Date: 2016-01-23 02:33+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 1.8.9\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -104,11 +104,11 @@ msgstr ""
 msgid "Comments are Closed"
 msgstr ""
 
-#: front-page.php:67
+#: front-page.php:65
 msgid "Latest <em>Blog"
 msgstr ""
 
-#: fullwidth.php:22 page.php:25
+#: fullwidth.php:20 page.php:25
 msgid "Edit"
 msgstr ""
 
@@ -120,31 +120,31 @@ msgstr ""
 msgid "Top Menu"
 msgstr ""
 
-#: functions.php:113 functions.php:119
+#: functions.php:116 functions.php:122
 msgid "Read More"
 msgstr ""
 
-#: functions.php:151
+#: functions.php:154
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:160
+#: functions.php:163
 msgid "Secondary Sidebar"
 msgstr ""
 
-#: functions.php:169
+#: functions.php:172
 msgid "Footer Area One"
 msgstr ""
 
-#: functions.php:178
+#: functions.php:181
 msgid "Footer Area Two"
 msgstr ""
 
-#: functions.php:187
+#: functions.php:190
 msgid "Footer Area Three"
 msgstr ""
 
-#: functions.php:196
+#: functions.php:199
 msgid "Footer Area Four"
 msgstr ""
 
@@ -406,15 +406,15 @@ msgid "SunRain"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://d5creation.com/themes/sunrain/"
+msgid "http://d5creation.com/theme/sunrain"
 msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
 "SunRain is CSS3 Powered and WordPress Latest Version Ready Responsive "
-"Theme.  SunRain has Multi Layered Slider where two Slides can show many "
-"Items which can be controlled from the Theme Options Panel.  Super Elegant "
-"and Professional Sunrain Theme will be adjusted automatically with all smart "
+"Theme.  SunRain has Multi Layer Slider where two Slides can show many Items "
+"which can be controlled from the Theme Options Panel.  Super Elegant and "
+"Professional Sunrain Theme will be adjusted automatically with all smart "
 "devices if the Responsive Layout be Selected.  Full Wide Template can be "
 "used for showing showcase or other pages. You can Visit the SunRain Demo at "
 "http://demo.d5creation.com/wp/themes/sunrain"
@@ -425,5 +425,5 @@ msgid "D5 Creation"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://d5creation.com/"
+msgid "http://d5creation.com"
 msgstr ""

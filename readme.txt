@@ -1,7 +1,7 @@
 ----------------------------------
 SunRain
 ----------------------------------
-Version: 	1.5
+Version: 	1.7
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
@@ -11,7 +11,7 @@ Copyright: 	D5 Creation
 License: 	GNU General Public License v2 or later
 
 
-This Product is provided "as is" with no waranty or liabilities of D5 Creation. All the PHP Code, Applicable Images and other Applicable particulars are licensed under the GNU General Public License v2 or later or competible GPL License of the Theme. Copyright and License information is declared in the header of each file where applicable. 
+This Product is provided "as is" with no warranty or liabilities of D5 Creation. All the PHP Code, Applicable Images and other Applicable particulars are licensed under the GNU General Public License v2 or later or competible GPL License of the Theme. Copyright and License information is declared in the header of each file where applicable. 
 
 
 victory.png, success.png, featured-image1.png, featured-image2.png, featured-image3.png, featured-image3.png, featured-image4.png, featured-image5.png: These Images are Licensed under Public Domain CC0, Source: https://pixabay.com/en/woman-hat-the-elegance-jewelry-1028398/, https://pixabay.com/en/girl-portrait-beauty-long-hair-755864/,  https://pixabay.com/en/decorative-pattern-shape-abstract-1091576/  

@@ -65,6 +65,9 @@
 	
 	wp_enqueue_script( 'sunrain-menu-style', get_template_directory_uri(). '/js/menu.js', array( 'jquery' ) );
 	
+	wp_enqueue_script( 'sunrain-html5', get_template_directory_uri().'/js/html5.js');
+    wp_script_add_data( 'sunrain-html5', 'conditional', 'lt IE 9' );
+	
 	wp_register_style('sunrain-gfonts1', '//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800', false );
 	wp_enqueue_style('sunrain-gfonts1');
 	if (is_front_page()): 
