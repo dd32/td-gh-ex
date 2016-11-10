@@ -36,7 +36,7 @@ get_header(); ?><div id="container">
           	            
           <!-- End the Loop. -->          
         	
-			<?php if (comments_open( $post->ID ) == true ): comments_template('', true); endif;?>
+			<?php comments_template('', true);?>
                       
 </div>			
 <?php get_sidebar(); ?>

@@ -23,7 +23,7 @@
 		</div>
 		<?php endwhile; ?><div class="clear"> </div>
 	<?php edit_post_link(__('Edit This Entry','writing-board'), '<p>', '</p>'); ?>
-	 <?php if (comments_open( $post->ID ) == true ): comments_template('', true); endif; ?>
+	 <?php comments_template('', true); ?>
 	<?php else: ?>
 		<p><?php _e('Sorry, no pages matched your criteria','writing-board'); ?></p>
 	<?php endif; ?>

@@ -5,9 +5,7 @@
 	Based on the Simplest D5 Framework for WordPress
 	Since Writing Board 1.0
 */
-?>
-
-<?php get_header(); ?>
+get_header(); ?>
 			<div id="container">
             <div id="content">
             <div class="main-slider">

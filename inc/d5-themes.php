@@ -55,12 +55,12 @@
 				</div>
 			</a>
             
-			<a href="<?php echo esc_url('http://d5creation.com/theme/innovation/' ) ?>" target="_blank">
+			<a href="<?php echo esc_url('http://d5creation.com/theme/simplify/' ) ?>" target="_blank">
 				<div class="view view-sixth">
 					<img alt="Responsive WordPress Theme" src="<?php echo get_template_directory_uri() . '/inc/images/simplify.png' ?>" />
 					<div class="mask">
-						<h2>Simplicity</h2>
-						<p>Simplicity was the 5th top most Popular Theme at WordPress.org. This Theme is fully Responsive and Elegant. It can be used for any Websites</p>
+						<h2>SIMPLIFY</h2>
+						<p>SIMPLIFY was the 5th top most Popular Theme at WordPress.org. This Theme is fully Responsive and Elegant. It can be used for any Websites</p>
 						<span class="info">Read More</span>
 					</div>
 				</div>
