@@ -16,9 +16,6 @@ if ( ! function_exists( 'retro_setup' ) ) :
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
-		// Enable selective refresh for Widgets.
-		add_theme_support( 'customize-selective-refresh-widgets' );
-
 		// Enable support for Post Thumbnails.
 		add_theme_support( 'post-thumbnails' );
 
@@ -59,94 +56,25 @@ add_action( 'after_setup_theme', 'retro_setup' );
 
 /*
 -------------------------------------------------------------------------------------------------------
-	Admin Support Link
--------------------------------------------------------------------------------------------------------
-*/
-
-function retro_support_link() {
-	global $submenu;
-	$support_link = esc_url( 'https://organicthemes.com/support/' );
-	$submenu['themes.php'][] = array( __( 'Theme Support', '90s-retro' ), 'manage_options', $support_link );
-}
-add_action( 'admin_menu', 'retro_support_link' );
-
-/*
--------------------------------------------------------------------------------------------------------
 	Admin Notice
 -------------------------------------------------------------------------------------------------------
 */
 
-/** Function retro_theme_admin_notice */
-function retro_theme_admin_notice() {
-	if ( ! PAnD::is_admin_notice_active( 'notice-90s-retro-30' ) ) {
-		return;
-	}
-	?>
-
-	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-		var js, fjs = d.getElementsByTagName(s)[0];
-		if (d.getElementById(id)) return;
-		js = d.createElement(s); js.id = id;
-		js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.9&appId=246727095428680";
-		fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));</script>
-
-	<script>window.twttr = (function(d, s, id) {
-		var js, fjs = d.getElementsByTagName(s)[0],
-		t = window.twttr || {};
-		if (d.getElementById(id)) return t;
-		js = d.createElement(s);
-		js.id = id;
-		js.src = "https://platform.twitter.com/widgets.js";
-		fjs.parentNode.insertBefore(js, fjs);
-
-		t._e = [];
-		t.ready = function(f) {
-			t._e.push(f);
-		};
-
-		return t;
-	}(document, "script", "twitter-wjs"));</script>
-
-	<div data-dismissible="notice-90s-retro-30" class="notice updated is-dismissible">
-
-		<p><?php printf( __( 'Thanks for choosing the 90s Retro theme! Enter your email to receive important updates and information from <a href="%1$s" target="_blank">Organic Themes</a>.', '90s-retro' ), 'https://organicthemes.com' ); ?></p>
-
-		<div class="follows" style="overflow: hidden; margin-bottom: 12px;">
-
-			<div id="mc_embed_signup" class="clear" style="float: left;">
-				<form action="//organicthemes.us1.list-manage.com/subscribe/post?u=7cf6b005868eab70f031dc806&amp;id=c3cce2fac0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-					<div id="mc_embed_signup_scroll">
-						<div id="mce-responses" class="clear">
-							<div class="response" id="mce-error-response" style="display:none"></div>
-							<div class="response" id="mce-success-response" style="display:none"></div>
-						</div>
-						<div class="mc-field-group" style="float: left;">
-							<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email Address">
-						</div>
-						<div style="float: left; margin-left: 6px;"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-						<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_7cf6b005868eab70f031dc806_c3cce2fac0" tabindex="-1" value=""></div>
-					</div>
-				</form>
-			</div>
-
-			<div class="social-links" style="float: left; margin-left: 24px; margin-top: 4px;">
-				<div class="fb-like" style="float: left;" data-href="https://www.facebook.com/OrganicThemes/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
-				<div class="twitter-follow" style="float: left; margin-left: 6px;"><a class="twitter-follow-button" href="https://twitter.com/OrganicThemes" data-show-count="false">Follow @OrganicThemes</a></div>
-			</div>
-
-		</div>
-
-	</div>
-
-	<script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-	<?php
+function retro_admin_notice() {
+	echo '<div class="updated"><p>';
+	printf( __( 'Enjoying this rad theme!? Check out <a href="%1$s" target="_blank">more tubular WordPress themes</a> from the righteous folks at Organic Themes.', '90s-retro' ), 'http://organicthemes.com/themes/' );
+	echo '</p></div>';
 }
-add_action( 'admin_init', array( 'PAnD', 'init' ) );
-add_action( 'admin_notices', 'retro_theme_admin_notice' );
+add_action( 'admin_notices', 'retro_admin_notice' );
 
-require( get_template_directory() . '/includes/persist-admin-notices-dismissal/persist-admin-notices-dismissal.php' );
+if ( ! class_exists( 'Organic_Footer_Modifier' ) ) {
+	function retro_admin_footer_notice() {
+		echo '<div class="updated"><p>';
+		printf( __( 'Want to remove or change those pesky footer credits? Get the <a href="%1$s" target="_blank">Footer Change Plugin</a> from Organic Themes! Use discount code <b>FOOTERSAVE10</b> to save $10!', '90s-retro' ), 'http://organicthemes.com/footer-change-plugin/' );
+		echo '</p></div>';
+	}
+	add_action( 'admin_notices', 'retro_admin_footer_notice' );
+}
 
 /*
 -------------------------------------------------------------------------------------------------------
@@ -176,6 +104,7 @@ if ( ! function_exists( 'retro_enqueue_scripts' ) ) {
 		wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.css', array( 'retro-style' ), '1.0' );
 
 		// Enqueue Scripts.
+		wp_enqueue_script( 'retro-html5shiv', get_template_directory_uri() . '/js/html5shiv.js' );
 		wp_enqueue_script( 'retro-fitvids', get_template_directory_uri() . '/js/jquery.fitvids.js', array( 'jquery' ), '20130729' );
 		wp_enqueue_script( 'retro-hover', get_template_directory_uri() . '/js/hoverIntent.js', array( 'jquery' ), '20130729' );
 		wp_enqueue_script( 'retro-superfish', get_template_directory_uri() . '/js/superfish.js', array( 'jquery', 'retro-hover' ), '20130729' );
@@ -398,5 +327,3 @@ add_action( 'body_class', 'retro_body_class' );
 require_once( get_template_directory() . '/includes/jetpack.php' );
 require_once( get_template_directory() . '/includes/customizer.php' );
 require_once( get_template_directory() . '/includes/typefaces.php' );
-require_once( get_template_directory() . '/includes/plugin-activation.php' );
-require_once( get_template_directory() . '/includes/plugin-activation-class.php' );
