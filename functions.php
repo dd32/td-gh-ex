@@ -539,6 +539,13 @@ if ( ! function_exists( 'ct_ignite_customizer_social_media_array' ) ) {
 			'steam',
 			'vk',
 			'academia',
+			'bandcamp',
+			'etsy',
+			'quora',
+			'ravelry',
+			'meetup',
+			'telegram',
+			'podcast',
 			'weibo',
 			'tencent-weibo',
 			'paypal',
@@ -625,3 +632,16 @@ if ( ! function_exists( 'ct_ignite_allow_skype_protocol' ) ) {
 	}
 }
 add_filter( 'kses_allowed_protocols' , 'ct_ignite_allow_skype_protocol' );
+
+// trigger theme switch on link click and send to Appearance menu
+function ct_ignite_welcome_redirect() {
+
+	$welcome_url = add_query_arg(
+		array(
+			'page' => 'ignite-options'
+		),
+		admin_url( 'themes.php' )
+	);
+	wp_redirect( esc_url( $welcome_url ) );
+}
+add_action( 'after_switch_theme', 'ct_ignite_welcome_redirect' );
