@@ -59,6 +59,8 @@ function white_spektrum_enqueue_scripts_setup() {
 		'collapse' => '<span class="screen-reader-text">' . __('Collapse Child Menu', 'white-spektrum') . '</span>',
 	));
     
+
+    
     // Enable and Activate Thread Comments/Comment Reply for White Spektrum.
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
@@ -132,4 +134,5 @@ add_action('widgets_init', 'white_spektrum_register_sidebars_setup');
  5.0 - Required Files
 ================================================================================================
 */
+require_once(get_template_directory() . '/includes/customizer.php');
 require_once(get_template_directory() . '/includes/template-tags.php');

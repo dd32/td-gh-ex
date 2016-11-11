@@ -1,14 +1,14 @@
 /*
 Theme Name: White Spektrum
-Theme URI: http://lumiathemes.com/portfolio/white-spektrum/
+Theme URI: http://www.lumiathemes.com/portfolio/white-spektrum/
 Author: Benjamin Lu
-Author URI: http://lumiathemes.com/
+Author URI: http://www.lumiathemes.com/
 Description: White Spektrum is a fully responsive WordPress theme tht looks great on smartphones and tablets. 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: left-sidebar, one-column, right-sidebar, two-columns, sticky-post, threaded-comments, translation-ready
 Text Domain: white-spektrum
-Version: 0.1.5
+Version: 0.1.6
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -655,6 +655,7 @@ img {
     max-width: 100%;
 }
 
+
 /*
 ================================================================================================
  5.0 - Forms
@@ -1086,6 +1087,16 @@ span.page-numbers {
 ================================================================================================
 */
 .content-area {
+    margin: 0 auto;
+    width: 72.64957264957265%;
+}
+
+.sidebar-left .content-area {
+    float: right;
+    width: 72.64957264957265%;
+}
+
+.sidebar-right .content-area {
     float: left;
     width: 72.64957264957265%;
 }
@@ -1354,9 +1365,13 @@ ol.children {
 24.0 - Widget Area
 ================================================================================================
 */
-.widget-area {
+.sidebar-left .widget-area {
+    float: left;
+    width: 25%;
+}
+
+.sidebar-right .widget-area {
     float: right;
-    /* width: 29.296875%; */
     width: 25%;
 }
 
