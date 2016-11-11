@@ -4,7 +4,7 @@ Theme URI: http://raratheme.com/wordpress-themes/benevolent/
 Author: Rara Theme
 Author URI: http://raratheme.com/
 Description: Benevolent is an easy to use, clean modern and  flexible multipurpose theme.   Although the theme was designed with nonprofit organizations in mind , the theme is very versatile and can be used by any business websites, digital agency, consultancy, corporate business, freelancers, and bloggers. The theme is SEO friendly with optimized codes, which  make it easy for your site to rank on Google and other search engines. Benevolent comes with several features to make user-friendly, interactive and visually stunning website. Such features include custom menu with Call to Action Button, advance full width slider,  community section, Stats counter,  Client Section, Banner with Call to Action Button  (CTA),  and social media. It has four footer area and a right sidebar and includes  four custom widgets for the recent posts, popular posts, social media and the featured post. The theme is rigorously tested and optimized for speed and faster page load time and has a secure and clean code. The theme is also translation ready. Designed with visitor engagement in mind, Benevolent helps you to easily and intuitively create professional and appealing websites. Check the demo at http://raratheme.com/preview/benevolent/, documentation at http://raratheme.com/documentation/benevolent and get support at http://raratheme.com/support-forum/. 
-Version: 1.0.7
+Version: 1.0.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: benevolent
@@ -2398,8 +2398,7 @@ object {
 	background: #fcb216;
 	color: #fff;
 }
-.site-footer .columns-4,
-.site-footer .widget{
+.site-footer .column{
 	width: 25%;
 	padding-left: 10px;
 	padding-right: 10px;

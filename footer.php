@@ -21,17 +21,20 @@
         <div class="container">
 			<div class="footer-t">
 				<div class="row">
-					<?php 
+					
+					<div class = "column">
+						<?php if( is_active_sidebar( 'footer-one') ) dynamic_sidebar( 'footer-one' ); ?>
+					</div>
+					<div class = "column">
+						<?php if( is_active_sidebar( 'footer-two') ) dynamic_sidebar( 'footer-two' ); ?>
+					</div>
+					<div class = "column">
+						<?php if( is_active_sidebar( 'footer-three') ) dynamic_sidebar( 'footer-three' ); ?>
+					</div>
+					<div class = "column">
+						<?php if( is_active_sidebar( 'footer-four' ) ) dynamic_sidebar( 'footer-four' ); ?>
+					</div>
                     
-                        if( is_active_sidebar( 'footer-one') ) dynamic_sidebar( 'footer-one' ); 
-                        
-                        if( is_active_sidebar( 'footer-two') ) dynamic_sidebar( 'footer-two' );
-                        
-                        if( is_active_sidebar( 'footer-three') ) dynamic_sidebar( 'footer-three' );
-                        
-                        if( is_active_sidebar( 'footer-four' ) ) dynamic_sidebar( 'footer-four' );
-                    
-                    ?>
 				</div>
 			</div>
 		</div>

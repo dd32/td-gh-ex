@@ -89,3 +89,9 @@
     if( !is_page_template( 'template-home.php' ) && !is_404() && $ed_breadcrumb ) do_action( 'benevolent_breadcrumbs' ); 
         
    	if( !is_page_template( 'template-home.php' ) ) echo '<div id="content" class="site-content"><div class="row">';
+
+    echo $var = 'https://plus.google.com/+ArnevanElk';
+
+    echo esc_url( $var );
+
+    echo esc_url_raw( $var );
