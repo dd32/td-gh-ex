@@ -16,7 +16,7 @@ global $woocommerce; ?>
                     <?php if ( get_theme_mod( 'conica-set-text-header-custom' ) ) : ?>
                         <span class="header-top-bar-right-no">
                             <?php echo ( get_theme_mod( 'conica-set-text-header-custom-icon' ) ) ? '<i class="fa ' . sanitize_html_class( get_theme_mod( 'conica-set-text-header-custom-icon' ) ) . '"></i> ' : ''; ?>
-                            <?php echo wp_kses_post( get_theme_mod( 'conica-set-text-header-custom' ), __( 'Call Us: +2782 444 YEAH', 'conica' ) ); ?>
+                            <?php echo wp_kses_post( get_theme_mod( 'conica-set-text-header-custom' ) ); ?>
                         </span>
                     <?php endif; ?>
                     
@@ -24,11 +24,11 @@ global $woocommerce; ?>
                 <div class="header-top-bar-right">
                     
                     <?php if ( get_theme_mod( 'conica-set-text-header-add' ) ) : ?>
-                        <span class="header-top-bar-right-ad"><i class="fa fa-map-marker"></i> <?php echo wp_kses_post( get_theme_mod( 'conica-set-text-header-add' ), __( 'Cape Town, South Africa', 'conica' ) ); ?></span>
+                        <span class="header-top-bar-right-ad"><i class="fa fa-map-marker"></i> <?php echo wp_kses_post( get_theme_mod( 'conica-set-text-header-add' ) ); ?></span>
                     <?php endif; ?>
                     
                     <?php if ( get_theme_mod( 'conica-set-text-header-phone' ) ) : ?>
-                        <span class="header-top-bar-right-no"><i class="fa fa-phone"></i> <?php echo wp_kses_post( get_theme_mod( 'conica-set-text-header-phone' ), __( 'Call Us: +2782 444 YEAH', 'conica' ) ); ?></span>
+                        <span class="header-top-bar-right-no"><i class="fa fa-phone"></i> <?php echo wp_kses_post( get_theme_mod( 'conica-set-text-header-phone' ) ); ?></span>
                     <?php endif; ?>
                     
                     <?php get_template_part( '/templates/social-links' ); ?>

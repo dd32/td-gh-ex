@@ -6,10 +6,6 @@
 	            <ul>
 	                <?php dynamic_sidebar( 'conica-site-footer-standard' ); ?>
 	            </ul>
-	        <?php else : ?>
-	        	<div class="site-footer-no-widgets">
-	        		<?php _e( 'Add your own widgets here', 'conica' ); ?>
-	        	</div>
 	    	<?php endif; ?>
             <div class="clearboth"></div>
         </div>

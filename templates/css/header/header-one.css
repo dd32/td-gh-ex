@@ -67,6 +67,8 @@
 
 .site-branding {
 	float: left;
+	position: relative;
+	z-index: 12;
 }
 .site-branding a,
 .site-branding a img {

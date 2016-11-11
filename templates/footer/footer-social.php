@@ -24,9 +24,11 @@
 			
 			<?php endif; ?>
 			
-        	<div class="site-footer-social-ad">
-        		<i class="fa fa-map-marker"></i> <?php echo wp_kses_post( get_theme_mod( 'conica-website-site-add', 'Cape Town, South Africa' ) ) ?>
-        	</div>
+			<?php if ( get_theme_mod( 'conica-website-site-add' ) ) : ?>
+	        	<div class="site-footer-social-ad">
+	        		<i class="fa fa-map-marker"></i> <?php echo wp_kses_post( get_theme_mod( 'conica-website-site-add' ) ) ?>
+	        	</div>
+			<?php endif; ?>
 			
 			<div class="site-footer-social-copy">
 				<?php printf( __( 'Theme: %1$s by %2$s', 'conica' ), 'Conica', '<a href="https://kairaweb.com/">Kaira</a>' ); ?>

@@ -49,16 +49,16 @@ global $woocommerce; ?>
                     <div class="header-meta">
                         
                         <?php if ( get_theme_mod( 'conica-set-text-header-add' ) ) : ?>
-                            <span class="header-top-bar-ad"><i class="fa fa-map-marker"></i> <?php echo wp_kses_post( get_theme_mod( 'conica-set-text-header-add' ), __( 'Cape Town, South Africa', 'conica' ) ); ?></span>
+                            <span class="header-top-bar-ad"><i class="fa fa-map-marker"></i> <?php echo wp_kses_post( get_theme_mod( 'conica-set-text-header-add' ) ); ?></span>
                         <?php endif; ?>
                         
                         <?php if ( get_theme_mod( 'conica-set-text-header-phone' ) ) : ?>
-                            <span class="header-top-bar-no"><i class="fa fa-phone"></i> <?php echo wp_kses_post( get_theme_mod( 'conica-set-text-header-phone' ), __( 'Call Us: +2782 444 YEAH', 'conica' ) ); ?></span>
+                            <span class="header-top-bar-no"><i class="fa fa-phone"></i> <?php echo wp_kses_post( get_theme_mod( 'conica-set-text-header-phone' ) ); ?></span>
                         <?php endif; ?>
                         
                         <?php if ( get_theme_mod( 'conica-set-text-header-custom' ) ) : ?>
                             <span class="header-top-bar-no">
-                                <?php echo wp_kses_post( get_theme_mod( 'conica-set-text-header-custom' ), __( 'Call Us: +2782 444 YEAH', 'conica' ) ); ?>
+                                <?php echo wp_kses_post( get_theme_mod( 'conica-set-text-header-custom' ) ); ?>
                                 <?php echo ( get_theme_mod( 'conica-set-text-header-custom-icon' ) ) ? '<i class="fa ' . sanitize_html_class( get_theme_mod( 'conica-set-text-header-custom-icon' ) ) . '"></i> ' : ''; ?>
                             </span>
                         <?php endif; ?>
