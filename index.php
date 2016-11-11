@@ -4,6 +4,7 @@ global $category_name, $tag;
 
 $category_name = is_category() ? single_cat_title('', false) : '';
 $tag = is_tag() ? single_tag_title('', false) : '';
+$p43d_records_total_length_formatted = '';
 
 while (have_posts()) :
 
@@ -89,14 +90,14 @@ while (have_posts()) :
       $p43d_records_cover_image_src_5120 = $p43d_records_cover_image_src_full;
     }
 
-    $p43d_records_rec_date = trim(@$p43d_records_custom['cf_43d_records_rec_date'][0]);
-    $p43d_records_rec_time = trim(@$p43d_records_custom['cf_43d_records_rec_time'][0]);
+    $p43d_records_rec_date = isset($p43d_records_custom['cf_43d_records_rec_date'][0]) ? trim($p43d_records_custom['cf_43d_records_rec_date'][0]) : '';
+    $p43d_records_rec_time = isset($p43d_records_custom['cf_43d_records_rec_time'][0]) ? trim($p43d_records_custom['cf_43d_records_rec_time'][0]) : '';
 
-    $p43d_records_equips = trim(@$p43d_records_custom['cf_43d_records_equipments'][0]);
+    $p43d_records_equips = isset($p43d_records_custom['cf_43d_records_equipments'][0]) ? trim($p43d_records_custom['cf_43d_records_equipments'][0]) : '';
 
-    $p43d_records_latitude = strlen(trim(@$p43d_records_custom['cf_43d_records_latitude'][0])) > 0
+    $p43d_records_latitude = isset($p43d_records_custom['cf_43d_records_latitude'][0]) && strlen(trim($p43d_records_custom['cf_43d_records_latitude'][0])) > 0
       ? floatval($p43d_records_custom['cf_43d_records_latitude'][0]) : '';
-    $p43d_records_longitude = strlen(trim(@$p43d_records_custom['cf_43d_records_longitude'][0])) > 0
+    $p43d_records_longitude = isset($p43d_records_custom['cf_43d_records_longitude'][0]) && strlen(trim($p43d_records_custom['cf_43d_records_longitude'][0])) > 0
       ? floatval($p43d_records_custom['cf_43d_records_longitude'][0]) : '';
   }
 

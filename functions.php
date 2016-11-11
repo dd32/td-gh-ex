@@ -8,7 +8,7 @@
 if (!function_exists('p43d_records_setup')) {
 
   define('P43D_RECORDS_BASE_URL', esc_url(get_template_directory_uri()));
-  define('P43D_RECORDS_VERSION', '0.9.4');
+  define('P43D_RECORDS_VERSION', '0.9.5');
   define('P43D_RECORDS_WEBSITE', 'https://records.43d.jp/'); // for the credit and link
   define('P43D_RECORDS_LIST_NUM', intval(get_option('posts_per_page')));
 

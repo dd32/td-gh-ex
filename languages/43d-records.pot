@@ -2,7 +2,7 @@
 # This file is distributed under the MIT License.
 msgid ""
 msgstr ""
-"Project-Id-Version: 43d records 0.9.3\n"
+"Project-Id-Version: 43d records 0.9.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/43d-records_dev\n"
 "POT-Creation-Date: 2016-09-13 09:58:55+00:00\n"
 "MIME-Version: 1.0\n"
