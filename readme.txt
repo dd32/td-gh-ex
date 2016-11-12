@@ -5,7 +5,7 @@ Tags: Blog, two-columns, right-sidebar, footer-widgets, education, custom-backgr
 
 Requires at least: 4.6
 Tested up to: 4.6.1
-Stable tag: 1.0.8
+Stable tag: 1.0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -157,7 +157,10 @@ Benevolent WordPress Theme is distributed under the terms of the GPLv2 or later
    
    
 == Changelog ==
-	1.0.8
+	1.0.9
+    * Fixed unwanted code in the header.
+    
+    1.0.8
     * Fixed Footer Column.
 	* Widgets Updated. 
 
