@@ -100,6 +100,8 @@ function white_spektrum_theme_setup() {
     // Enable and Activate Featured Image for White Spektrum.
     add_theme_support('post-thumbnails');
     add_image_size('white-spektrum-banner', 780, 250, true);
+    
+    add_editor_style('css/editor-styles.css');
 }
 add_action('after_setup_theme', 'white_spektrum_theme_setup');
 

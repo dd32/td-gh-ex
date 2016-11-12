@@ -21,7 +21,7 @@ perform their jobs.
 ================================================================================================
 Table of Content
 ================================================================================================
- 1.0 - Load Customize Radio Image Class
+ 1.0 - Customize Custom Classes (Setup)
  2.0 - Customize Register (Setup)
  3.0 - Customize Register (Validation)
  4.0 - Customize Register (Preview)
@@ -32,14 +32,56 @@ Table of Content
 ================================================================================================
 Table of Content
 ================================================================================================
- 1.0 - Customize Radio Image
- 2.0 - Customize Register (Setup)
- 3.0 - Customize Register (Validation)
- 4.0 - Customize Register (Preview)
+ 1.0 - Custom Classes (Setup)
 ================================================================================================
 */
 function white_spektrum_custom_classes_setup($wp_customize) {
-    require_once(get_template_directory() . '/customize/customize-radio-image.php');
+    class White_Spektrum_Control_Radio_Image extends WP_Customize_Control {
+        public $type = 'radio-image';
+
+        public function enqueue() {
+            wp_enqueue_script('white-spektrum-customize-controls', get_template_directory_uri() . '/js/customize-controls.js', array('jquery'));
+             wp_enqueue_style('white-spektrum-customize-controls', get_template_directory_uri() . '/css/customize-controls.css');
+        }
+
+        public function to_json() {
+            parent::to_json();
+
+            // We need to make sure we have the correct image URL.
+            foreach ( $this->choices as $value => $args )
+                $this->choices[ $value ]['url'] = esc_url( sprintf( $args['url'], get_template_directory_uri(), get_stylesheet_directory_uri() ) );
+
+            $this->json['choices'] = $this->choices;
+            $this->json['link']    = $this->get_link();
+            $this->json['value']   = $this->value();
+            $this->json['id']      = $this->id;
+        }
+
+        public function content_template() { ?>
+
+            <# if ( ! data.choices ) {
+                return;
+            } #>
+
+            <# if ( data.label ) { #>
+                <span class="customize-control-title">{{ data.label }}</span>
+            <# } #>
+
+            <# if ( data.description ) { #>
+                <span class="description customize-control-description">{{{ data.description }}}</span>
+            <# } #>
+
+            <# _.each( data.choices, function( args, choice ) { #>
+                <label>
+                    <input type="radio" value="{{ choice }}" name="_customize-{{ data.type }}-{{ data.id }}" {{{ data.link }}} <# if ( choice === data.value ) { #> checked="checked" <# } #> />
+
+                    <span class="screen-reader-text">{{ args.label }}</span>
+
+                    <img src="{{ args.url }}" alt="{{ args.label }}" />
+                </label>
+            <# } ) #>
+        <?php }
+    }
     
     $wp_customize->register_control_type('White_Spektrum_Control_Radio_Image');
 }

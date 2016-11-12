@@ -14,14 +14,22 @@ content. This content-single.php is the main content that will be displayed.
 */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-        <div class="post-thumbniail-banner">
-            <?php the_post_thumbnail('white-spektrum-banner'); ?>
-        </div>
-        <header class="entry-header">
-            <?php the_title(sprintf('<h1 class="entry-title"><a href="%s">', esc_url(get_permalink())), '</a></h1>'); ?>
-            <span class="post-index-metadata"><?php white_spektrum_index_entry_posted_on(); ?></span>
-        </header>
-        <?php the_content(); ?>
-        <?php wp_link_pages(); ?>
+    <div class="post-thumbniail-banner">
+        <?php the_post_thumbnail('white-spektrum-banner'); ?>
+    </div>
+    <header class="entry-header">
+        <?php the_title(sprintf('<h1 class="entry-title"><a href="%s">', esc_url(get_permalink())), '</a></h1>'); ?>
+    </header>
+    <div class="entry-excerpt">
+        <?php the_excerpt(); ?>
+    </div>
+    <div class="entry-metadata">
+        <?php white_spektrum_entry_posted_on(); ?>
+    </div>
+    <?php the_content(); ?>
+    <div class="entry-footer">
+        <?php white_spektrum_entry_taxonomies(); ?>
+    </div>
+    <?php wp_link_pages(); ?>
 </article>
 <?php comments_template(); ?>
