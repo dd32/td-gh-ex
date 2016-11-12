@@ -32,10 +32,10 @@ perform their jobs.
             <?php endif; ?>
         </div>
         <?php if ('sidebar-left' == get_theme_mod('page_layout')) { ?>
-            <?php get_sidebar(); ?>
+            <?php get_sidebar('page'); ?>
         <?php } ?>
         <?php if ('sidebar-right' == get_theme_mod('page_layout')) { ?>
-            <?php get_sidebar(); ?>
+            <?php get_sidebar('page'); ?>
         <?php } ?>
     </div>
 <?php get_footer(); ?>

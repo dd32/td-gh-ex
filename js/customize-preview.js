@@ -36,6 +36,15 @@
 		} );
 	} );
     
+	// Custom Header Background Color
+	wp.customize('body_text_color', function(value) {
+		value.bind(function(to) {
+			$('body').css( {
+				'color': to 
+			});
+		} );
+	} );
+    
 	// Custom Layout Options
 	wp.customize('post_layout', function(value) {
 		value.bind(function(to) {

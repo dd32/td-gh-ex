@@ -33,10 +33,10 @@ perform their jobs.
             <?php endif; ?>
         </div>
         <?php if ('sidebar-left' == get_theme_mod('custom_layout')) { ?>
-            <?php get_sidebar(); ?>
+            <?php get_sidebar('custom'); ?>
         <?php } ?>
         <?php if ('sidebar-right' == get_theme_mod('custom_layout')) { ?>
-            <?php get_sidebar(); ?>
+            <?php get_sidebar('custom'); ?>
         <?php } ?>
     </div>
 <?php get_footer(); ?>

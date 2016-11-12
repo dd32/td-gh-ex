@@ -160,6 +160,46 @@ function white_spektrum_customize_register_setup($wp_customize) {
             ),
         ),
     )));
+    
+    // Enable and activate extra colors for White Spektrum.
+    $wp_customize->add_setting('body_text_color', array(
+        'default'           => '#000000',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport'         => 'postMessage',
+    ));
+    
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'body_text_color', array(
+        'label'        => __( 'Body Color', 'white-spektrum' ),
+        'section'    => 'colors',
+        'settings'   => 'body_text_color',
+    )));
+    
+    // Enable and activate extra colors for White Spektrum.
+    $wp_customize->add_setting('body_link_color', array(
+        'default'           => '#1d1d1d',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport'         => 'postMessage',
+    ));
+    
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'body_link_color', array(
+        'label'        => __( 'Body Link Color', 'white-spektrum' ),
+        'section'    => 'colors',
+        'settings'   => 'body_link_color',
+    )));
+    
+    // Enable and activate extra colors for White Spektrum.
+    $wp_customize->add_setting('body_link_color_hover', array(
+        'default'           => '#1d1d1d',
+        'sanitize_callback' => 'sanitize_hex_color',
+        'transport'         => 'postMessage',
+    ));
+    
+    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'body_link_color_hover', array(
+        'label'        => __( 'Body Link Color Hover', 'white-spektrum' ),
+        'section'    => 'colors',
+        'settings'   => 'body_link_color_hover',
+    )));
+    
 }
 add_action('customize_register', 'white_spektrum_customize_register_setup');
 
@@ -178,6 +218,24 @@ function white_spektrum_sanitize_layout($value) {
     }
     return $value;
 }
+
+function white_spektrum_custom_colors_css() { ?>
+    <style type="text/css">
+        body {
+            color: <?php echo esc_html(get_theme_mod('body_text_color', '#1d1d1d')); ?>;
+        }
+
+        a {
+            color: <?php echo esc_html(get_theme_mod('body_link_color', '#1a1a1a')); ?>;
+        }
+
+        a:hover {
+            color: <?php echo esc_html(get_theme_mod('body_link_color_hover', '#1d1d1d')); ?>
+        }
+    </style>
+<?php
+}
+add_action('wp_head', 'white_spektrum_custom_colors_css');
 
 /*
 ================================================================================================

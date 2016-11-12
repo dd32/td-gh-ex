@@ -59,6 +59,7 @@ function white_spektrum_enqueue_script_setup() {
 		'collapse' => '<span class="screen-reader-text">' . __('collapse child menu', 'white-spektrum') . '</span>',
 	));
     
+    // Enable and activate Threaded Comments for White Spektrum.
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
     }
@@ -88,6 +89,7 @@ function white_spektrum_theme_setup() {
     // Enable and Activate Navigation Menus for White Spektrum.
     register_nav_menus(array(
         'primary-navigation'    => esc_html__('Primary Navigation', 'white-spektrum'),
+        'social-navigation'     => esc_html__('Social Navigation', 'white-spektrum'),
     ));
     
     // Enable and Activate Custom Background for White Spektrum.
@@ -130,15 +132,6 @@ function white_spektrum_register_sidebars_setup() {
     register_sidebar(array(
         'name'          => __('Custom Sidebar', 'white-spektrum'),
         'id'            => 'custom-sidebar',
-        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</aside>',
-        'before_title'  => '<h2 class="widget-title">',
-        'after_title'   => '</h2>',
-    ));
-    
-    register_sidebar(array(
-        'name'          => __('Footer Area', 'white-spektrum'),
-        'id'            => 'footer-area',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget'  => '</aside>',
         'before_title'  => '<h2 class="widget-title">',
