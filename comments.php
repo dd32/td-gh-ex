@@ -9,7 +9,7 @@ display the comments for the theme.
 @package        White Spektrum WordPress Theme
 @copyright      Copyright (C) 2016. Benjamin Lu
 @license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
-@author         Benjamin Lu (http://luminathemes.com/)
+@author         Benjamin Lu (https://www.luminathemes.com/)
 ================================================================================================
 */
 ?>

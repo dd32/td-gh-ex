@@ -2,9 +2,9 @@ White Spektrum WordPress Theme
 ================================================================================================
 Contributor: benlumia007
 Tags: custom-background, custom-header, right-sidebar
-Requres at least: 4.4
-Tested up to: 4.5.3
-Stable tag: 0.1.1
+Requres at least: 4.5
+Tested up to: 4.6.1
+Stable tag: 0.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,52 +53,16 @@ Not Available At the Moment
 
 Changelog
 ================================================================================================
-Version: 0.1.5
-Added Custom Background Support
-
-Version: 0.1.4
-Minor Changes
-
-Version: 0.1.3
-Big Changes
-
-Version: 0.1.2
-Minor Changes
-
-Version: 0.1.1
-Updated and Fixed issues
-
-Version: 0.1.0
-Minor Changes by Reviewer
-
-Version: 0.0.9
-Minor Changes
-
-Version: 0.0.8
-Forgot to add code 
-
-Version: 0.0.7 
-Minor Changes
-
-Version: 0.0.6
-CSS breaking (fixed)
-
-Version: 0.0.5
-Minor Changes
-
-Version: 0.0.4
-Minor Changes
-
 Version: 0.0.3
-Readjust container width
-Change layout to fit what it was supposed to be. 
+- Fixed Bugs
+- Minor Changes
+- Add New Tags
 
 Version: 0.0.2
-Replace Footer Site Info with correct url and info
-Replace Screenshot Author and URL
+- Rendered New CSS
 
 Version: 0.0.1
-Initial Release
+- Initial Release
 
 
 Upgrade Notice
@@ -111,3 +75,13 @@ Resources
 Font Awesome by Dave Gandy - http://fontawesome.io
 Font Awesome licensed under SIL OFL 1.1 · Code licensed under MIT License
 Source: http://fortawesome.github.io/Font-Awesome/
+
+Merriweather Sans (Google Font)
+Designer: Sorkin Type
+License: Sil Open Font License
+Source: https://fonts.google.com/specimen/Merriweather+Sans
+
+Sanchez (Google Font)
+Designer: Daniel Hernandez
+License: Sil Open Font License
+Source: https://fonts.google.com/specimen/Sanchez

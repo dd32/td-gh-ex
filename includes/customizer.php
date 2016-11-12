@@ -1,7 +1,7 @@
 <?php
 /*
 ================================================================================================
-Amity - customizer.php
+White Spektrum - customizer.php
 ================================================================================================
 This is the most generic template file in a WordPress theme and is one of the two required files 
 for a theme (the other style.css). The index.php template file is flexible. It can be used to 
@@ -10,10 +10,10 @@ WordPress. Or it can be divided into modular template files, each taking on part
 If you do not provide other template files, WordPress may have default files or functions to 
 perform their jobs.
 
-@package        Amity WordPress Theme
+@package        White Spektrum WordPress Theme
 @copyright      Copyright (C) 2016. Benjamin Lu
 @license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
-@author         Benjamin Lu (http://lumiathemes.com/)
+@author         Benjamin Lu (https://www.lumiathemes.com/)
 ================================================================================================
 */
 
@@ -21,76 +21,151 @@ perform their jobs.
 ================================================================================================
 Table of Content
 ================================================================================================
- 1.0 - Load Customize Classes ($wp_customize)
+ 1.0 - Load Customize Radio Image Class
  2.0 - Customize Register (Setup)
- 2.0 - Customize Register (Validation)
- 3.0 - Customize Register (Preview)
+ 3.0 - Customize Register (Validation)
+ 4.0 - Customize Register (Preview)
 ================================================================================================
 */
 
 /*
 ================================================================================================
- 1.0 - Customize Register (Setup)
+Table of Content
+================================================================================================
+ 1.0 - Customize Radio Image
+ 2.0 - Customize Register (Setup)
+ 3.0 - Customize Register (Validation)
+ 4.0 - Customize Register (Preview)
 ================================================================================================
 */
-function white_spektrum_customize_classes($wp_customize) {
-    // Load Customize Classses for White Spektrum.
+function white_spektrum_custom_classes_setup($wp_customize) {
     require_once(get_template_directory() . '/customize/customize-radio-image.php');
     
-    // Register Control Types for White Spektrum.
     $wp_customize->register_control_type('White_Spektrum_Control_Radio_Image');
 }
-add_action('customize_register', 'white_spektrum_customize_classes', 0);
-
-
-
+add_action('customize_register', 'white_spektrum_custom_classes_setup');
 
 
 /*
 ================================================================================================
- 1.0 - Load Customize Classes ($wp_customize)
- 2.0 - Global Layouts Customizer Setup
+ 2.0 - Customize Register (Setup)
 ================================================================================================
 */
-function white_spektrum_customize_register_setup($wp_customize) {    
-    
-    $wp_customize->add_section('global_layouts', array(
-        'title' => esc_html__('Global Layouts', 'white-spektrum'),
+function white_spektrum_customize_register_setup($wp_customize) {
+	$wp_customize->get_setting('blogname')->transport         = 'postMessage';
+	$wp_customize->get_setting('blogdescription')->transport  = 'postMessage';
+	$wp_customize->get_setting('header_textcolor')->transport = 'postMessage';
+    $wp_customize->remove_control('display_header_text');
+
+    // Enable and activate Post Layout for White Spektrum.
+    $wp_customize->add_panel('general_layouts', array(
+        'title' => esc_html__('General Layouts', 'white-spektrum'),
         'priority'  => 5
     ));
     
-    $wp_customize->add_setting('theme_layouts', array(
-        'default'       => 'default',
+    $wp_customize->add_section('post_layout', array(
+        'title'     => esc_html__('Post Layout', 'white-spektrum'),
+        'panel'     => 'general_layouts',
+        'priority'  => 5
+    ));
+    
+    $wp_customize->add_setting('post_layout', array(
+        'default'       => 'sidebar-right',
         'sanitize_callback' => 'white_spektrum_sanitize_layout',
     ));
     
-    $wp_customize->add_control(new White_Spektrum_Control_Radio_Image($wp_customize, 'theme_layouts', array(
-        'label'     => __('Global Layouts', 'white-spektrum'),
-        'section'   => 'global_layouts',
-        'settings'  => 'theme_layouts',
+    $wp_customize->add_control(new White_Spektrum_Control_Radio_Image($wp_customize, 'post_layout', array(
+        'label'     => __('Post Layout', 'white-spektrum'),
+        'section'   => 'post_layout',
+        'settings'  => 'post_layout',
         'type'      => 'radio-image',
         'choices'  => array(
-            'default' => array(
-                'label' => esc_html__('Default', 'white-spektrum'),
-                'url'   => '%s/images/1col.png',
+            'sidebar-right' => array(
+                'label' => esc_html__('Right Sidebar (Default)', 'white-spektrum'),
+                'url'   => '%s/images/2cr.png',
             ),
             'sidebar-left' => array(
                 'label' => esc_html__('Left Sidebar', 'white-spektrum'),
                 'url'   => '%s/images/2cl.png',
             ),
-            'sidebar-right' => array(
-                'label' => esc_html__('Right Sidebar', 'white-spektrum'),
-                'url'   => '%s/images/2cr.png',
+            'full-width' => array(
+                'label' => esc_html__('Content Full', 'white-spektrum'),
+                'url'   => '%s/images/1col.png',
             ),
         ),
     )));
     
+    // Enable and activate Page Layout for White Spektrum.
+    $wp_customize->add_section('page_layout', array(
+        'title'     => esc_html__('Page Layout', 'white-spektrum'),
+        'panel'     => 'general_layouts',
+        'priority'  => 5
+    ));
+    
+    $wp_customize->add_setting('page_layout', array(
+        'default'       => 'sidebar-right',
+        'sanitize_callback' => 'white_spektrum_sanitize_layout',
+    ));
+    
+    $wp_customize->add_control(new White_Spektrum_Control_Radio_Image($wp_customize, 'page_layout', array(
+        'label'     => __('Page Layout', 'white-spektrum'),
+        'section'   => 'page_layout',
+        'settings'  => 'page_layout',
+        'type'      => 'radio-image',
+        'choices'  => array(
+            'sidebar-right' => array(
+                'label' => esc_html__('Right Sidebar (Default)', 'white-spektrum'),
+                'url'   => '%s/images/2cr.png',
+            ),
+            'sidebar-left' => array(
+                'label' => esc_html__('Left Sidebar', 'white-spektrum'),
+                'url'   => '%s/images/2cl.png',
+            ),
+            'full-width' => array(
+                'label' => esc_html__('Content Full', 'white-spektrum'),
+                'url'   => '%s/images/1col.png',
+            ),
+        ),
+    )));
+    
+    // Enable and activate Custom Layout for White Spektrum.
+    $wp_customize->add_section('custom_layout', array(
+        'title'     => esc_html__('Custom Layout', 'white-spektrum'),
+        'panel'     => 'general_layouts',
+        'priority'  => 5
+    ));
+    
+    $wp_customize->add_setting('custom_layout', array(
+        'default'       => 'sidebar-right',
+        'sanitize_callback' => 'white_spektrum_sanitize_layout',
+    ));
+    
+    $wp_customize->add_control(new White_Spektrum_Control_Radio_Image($wp_customize, 'custom_layout', array(
+        'label'     => __('Custom Layout', 'white-spektrum'),
+        'section'   => 'custom_layout',
+        'settings'  => 'custom_layout',
+        'type'      => 'radio-image',
+        'choices'  => array(
+            'sidebar-right' => array(
+                'label' => esc_html__('Right Sidebar (Default)', 'white-spektrum'),
+                'url'   => '%s/images/2cr.png',
+            ),
+            'sidebar-left' => array(
+                'label' => esc_html__('Left Sidebar', 'white-spektrum'),
+                'url'   => '%s/images/2cl.png',
+            ),
+            'full-width' => array(
+                'label' => esc_html__('Content Full', 'white-spektrum'),
+                'url'   => '%s/images/1col.png',
+            ),
+        ),
+    )));
 }
-add_action('customize_register', 'white_spektrum_customize_register_setup', 5);
+add_action('customize_register', 'white_spektrum_customize_register_setup');
 
 /*
 ================================================================================================
- 2.0 - Customize Register (Validation)
+ 3.0 - Customize Register (Validation)
 ================================================================================================
 */
 function white_spektrum_sanitize_checkbox($checked) {
@@ -98,14 +173,19 @@ function white_spektrum_sanitize_checkbox($checked) {
 }
 
 function white_spektrum_sanitize_layout($value) {
-    if (!in_array($value, array('default', 'sidebar-left', 'sidebar-right'))) {
-        $value = 'default';
+    if (!in_array($value, array('sidebar-right', 'sidebar-left', 'full-width'))) {
+        $value = 'sidebar-right';
     }
     return $value;
 }
 
 /*
 ================================================================================================
- 3.0 - Customize Register (Preview)
+ 4.0 - Customize Register (Preview)
 ================================================================================================
 */
+function white_spektrum_customize_preview_js() {
+    // Enable and activate Customize Preview JavaScript for White Spektrum.
+    wp_enqueue_script('white-spektrum-customize-preview', get_template_directory_uri() . '/js/customize-preview.js', array('customize-preview'), '20161111', true);
+}
+add_action('customize_preview_init', 'white_spektrum_customize_preview_js');
