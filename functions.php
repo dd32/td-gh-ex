@@ -81,7 +81,7 @@ function bhost_setup() {
 endif; // bhost_setup
 add_action( 'after_setup_theme', 'bhost_setup' );
 
-define('BHOST_PRO_THEME_URL','https://graygrids.com/item/bhost-pro-responsive-multi-purpose-wordpress-theme/','bhost');
+define('BHOST_PRO_THEME_URL','http://getmasum.net/item/bhost-pro-responsive-wordpress-theme/','bhost');
 define('BHOST_LIVE_DEMO','//getmasum.net/preview/bhost/','bhost');
 
 
