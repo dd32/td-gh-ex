@@ -4,7 +4,7 @@ Theme URI: https://www.lumiathemes.com/portfolio/beyond-expectations/
 Author: Benjamin Lu
 Author URI: https://www.lumiathemes.com/
 Description: Beyond Expectations is  responsive theme that comes with custom sidebar and full width without no sidebar. Custom Background and Header is available. 
-Version: 0.1.7
+Version: 0.1.8
 License: Barista is distributed under the terms of the GNU GPL.
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-background, custom-header, one-column, right-sidebar, threaded-comments, translation-ready, two-columns
@@ -514,7 +514,7 @@ textarea {
 ================================================================================================
 */
 body {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Merriweather Sans', sans-serif;
 }
 
 h1,
@@ -912,7 +912,7 @@ a:hover {
 	line-height: 27px;
 	position: relative;
 	top: 0;
-	left: 1px;
+	left: 0;
 	width: 27px;
 }
 
@@ -1555,7 +1555,6 @@ ol.children {
     color: #000000;
 	padding: 16px 20px;
     font-size: 1em;
-	font-family: "Open Sans", sans-serif;
 	text-decoration: none;
 	border: 1px solid #c3c3c3;
 }
@@ -1666,12 +1665,13 @@ input[type = "search"] {
 
 .rss-date {
     display: block;
-    margin-top: 5px;
-    text-align: right;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: left;
 }
 
 .rssSummary {
-    margin-top: 10px;
+
 }
 
 #wp-calendar {
@@ -2025,7 +2025,7 @@ input[type = "search"] {
 	/* Simplify the drop-down toggle */
 	.dropdown-toggle {
 		top: 6px;
-		right: 12px;
+		right: 8px;
 
 	}
 	
