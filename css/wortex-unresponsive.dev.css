@@ -105,6 +105,7 @@ form { margin-bottom: 20px; }
 fieldset { margin-bottom: 20px; }
 
 input[type="text"],
+input[type="search"],
 input[type="password"],
 input[type="email"],
 textarea,
@@ -487,7 +488,7 @@ or wrap each row of columns in a <div class="row"> */
     padding-left: 20px;
 }
 
-#navbar #searchform {
+#navbar .search-form {
 	display:none;
 	position: absolute;
 	top: 50%;
@@ -497,7 +498,7 @@ or wrap each row of columns in a <div class="row"> */
 	z-index: 9999;
 }
 
-#navbar #s {
+#navbar .search-field {
 	color: #1e7481;
 	min-width: 200px;
 	max-width: 100%;
@@ -510,8 +511,7 @@ or wrap each row of columns in a <div class="row"> */
 	background: #fff;
 }
 
-#searchform label { display: none; }
-#searchform #searchsubmit { display: none; }
+.search-form .search-submit { display: none; }
 
 /* #Header Image */
 
@@ -994,7 +994,7 @@ p.comment-form-url
 .tagcloud a:visited { background-color: #212526; }
 
 /* Search */
-#searchform div { position: relative; }
+#searchform label { position: relative; }
 
 /* Calendar */
 #calendar_wrap table { margin-left: auto; margin-right: auto; }
@@ -1360,6 +1360,7 @@ pre,
 .notfilled { color: #999!important; }
 
 input[type="text"],
+input[type="search"],
 input[type="password"],
 input[type="email"],
 textarea {
@@ -1380,6 +1381,7 @@ textarea {
 }
 
 input[type="text"]:focus,
+input[type="search"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
 textarea:focus {
@@ -1387,9 +1389,11 @@ textarea:focus {
 	border: none;
 	box-shadow: none;
 	background-color: #1e7481;
+	outline: none;
 }
 
 input[type="text"],
+input[type="search"],
 input[type="password"],
 input[type="email"] {
 	height: 30px;
@@ -1454,9 +1458,10 @@ p a, p a:visited {
 /* Transitions */
 a, a:visited,
 #navbar ul li,
-#nav-search #s,
+#nav-search .search-field,
 #page-container .paged_nav > span,
 input[type="text"],
+input[type="search"],
 input[type="password"],
 input[type="email"],
 input[type="submit"],

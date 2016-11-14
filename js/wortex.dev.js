@@ -6,11 +6,11 @@
 
 /* Index *
 ==================================================
- * 1. Wortex's own scripts + plugins init 
- * 2. Superfish 
+ * 1. Wortex's own scripts + plugins init
+ * 2. Superfish
  */
 
-/* 1. Wortex's own scripts + plugins init 
+/* 1. Wortex's own scripts + plugins init
 ================================================== */
 
 $ = jQuery;
@@ -44,13 +44,13 @@ $(document).ready(function($){
 	// Navbar Search functions
 	var menuwidth = 0;
 	$("#navbar > div > ul > li").each(function() { menuwidth += $(this).outerWidth(); });
-	$("#navbar #s").width(menuwidth-35);
+	$("#navbar .search-field").width(menuwidth-35);
 	$("#nav-search .nav-search-toggle").click(function(e) {
-		$("#navbar #searchform").toggle();
+		$("#navbar .search-form").toggle();
 		$("i", this).toggleClass("fa-search").toggleClass("fa-close");
-		$("#navbar #s").focus();
-		var $placeholder = $('#navbar #s').attr('data-placeholder');
-		if($('#navbar #s').attr('value') == $placeholder) $('#navbar #s').setCursorPosition(0);	
+		$("#navbar .search-field").focus();
+		var $placeholder = $('#navbar .search-field').attr('data-placeholder');
+		if($('#navbar .search-field').attr('value') == $placeholder) $('#navbar .search-field').setCursorPosition(0);	
 		e.preventDefault();
 	});
 
@@ -63,7 +63,7 @@ $(document).ready(function($){
 
 	/*--- Hookup Superfish ---*/
 
-	$('ul.sf-menu').superfish({ 
+	$('ul.sf-menu').superfish({
 		delay:	700,	// the delay in milliseconds that the mouse can remain outside a submenu without it closing
 		animation:	{opacity:'show',height:'show'},	// an object equivalent to first parameter of jQuery’s .animate() method
 		speed:	'normal',	// speed of the animation. Equivalent to second parameter of jQuery’s .animate() method
@@ -78,7 +78,7 @@ $(document).ready(function($){
 
 /*--- Helper functions ---*/
 
-$.fn.setCursorPosition = function(position){	    
+$.fn.setCursorPosition = function(position){
 	    if(this.lengh == 0) return this;
 	    input = this[0];
 	    if (input.createTextRange) {
@@ -109,7 +109,7 @@ function navbarWidth() {
 	$("#navbar").css("width", menuWidth + 'px' );
 }
 
-/* 2. Superfish 
+/* 2. Superfish
 ================================================== */
 
 /*
@@ -141,7 +141,7 @@ function navbarWidth() {
 					o.retainPath=($.inArray($$[0],o.$path)>-1);
 					$$.hideSuperfishUl();
 					if (o.$path.length && $$.parents(['li.',o.hoverClass].join('')).length<1){over.call(o.$path);}
-				},o.delay);	
+				},o.delay);
 			},
 			getMenu = function($menu){
 				var menu = $menu.parents(['ul.',c.menuClass,':first'].join(''))[0];
@@ -149,7 +149,7 @@ function navbarWidth() {
 				return menu;
 			},
 			addArrow = function($a){ $a.addClass(c.anchorClass).append($arrow.clone()); };
-			
+
 		return this.each(function() {
 			var s = this.serial = sf.o.length;
 			var o = $.extend({},sf.defaults,op);
@@ -158,20 +158,20 @@ function navbarWidth() {
 					.filter('li:has(ul)').removeClass(o.pathClass);
 			});
 			sf.o[s] = sf.op = o;
-			
+
 			$('li:has(ul)',this)[($.fn.hoverIntent && !o.disableHI) ? 'hoverIntent' : 'hover'](over,out).each(function() {
 				if (o.autoArrows) addArrow( $('>a:first-child',this) );
 			})
 			.not('.'+c.bcClass)
 				.hideSuperfishUl();
-			
+
 			var $a = $('a',this);
 			$a.each(function(i){
 				var $li = $a.eq(i).parents('li');
 				$a.eq(i).focus(function(){over.call($li);}).blur(function(){out.call($li);});
 			});
 			o.onInit.call(this);
-			
+
 		}).each(function() {
 			var menuClasses = [c.menuClass];
 			if (sf.op.dropShadows  && !($.browser.msie && $.browser.version < 7)) menuClasses.push(c.shadowClass);
