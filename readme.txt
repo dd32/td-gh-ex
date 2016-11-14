@@ -3,10 +3,14 @@
 Astrology Theme by VaultThemes http://vaultthemes.com/
 
 === About Astrology ===
-Astrology is a premium quality WordPress theme for astrologers, pandit, and religious gurus. It is a modern looking classy WordPress theme which can also be used for almost all kinds of individual consultants as it is easily customizable through WordPress Customizer options. It is mobile friendly as it is built on top of the Twitter bootstrap framework. It is search engine friendly too. The theme is supported by our professional team of designers and developers so feel free to use it and enjoy its awesome features.
+Astrology is a premium quality WordPress theme for astrology blog. It is a modern looking classy WordPress theme which can even be used for almost all kinds of startup or already existing small or medium sized businesses. It is easily customizable through Customizer options. It is mobile friendly as it is built on top of Twitter bootstrap framework. It is search engine friendly too. The theme is supported by our professional team of designers and developers so feel free to use it and enjoy its awesome features.
 
 === Tags ===
-one-column, two-columns,left-sidebar,grid-layout,custom-logo,custom-colors,custom-background,custom-menu,featured-images,translation-ready,blog,footer-widgets,full-width-template,theme-options,threaded-comments
+custom-colors, custom-background, custom-menu, featured-images, translation-ready
+
+== License ==
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 == Installation ==
 
@@ -14,46 +18,39 @@ one-column, two-columns,left-sidebar,grid-layout,custom-logo,custom-colors,custo
 2. Click Upload and Choose File, then select the astrology.zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
-== Menu Restrictions ==
-Astrology works perfectly fine with upto level 3 menu. If there are further levels than it overwrites the content of previous menu items. 
+---------------------------------------------------------
+License and Copyrights for Resources used in this theme
+---------------------------------------------------------
 
-== License ==
-Astrology WordPress Theme, Copyright 2012 VaultThemes
-Astrology is distributed under the terms of the GNU GPL
+i) Fontawesome Library 
+===========
+License URI:  http://fontawesome.io/license/
+Resource Name: fontawesome
+License Name: Open Font License (OFL) Version 4.6.3
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+ii)Fonts
+===========
+https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i	
+They are under SIL Open Font.
+	
+iii)Bootstrap Library
+===========
+we used are licensed under the Apache License v3.3.6
+Bootstrap - http://getbootstrap.com
+Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see.
-
-Astrology WordPress Theme bundles the following third-party resources:
-
-Bootstrap css, jQuery library, Copyright 2011-2015 Twitter
-Bootstrap is licensed under MIT 
-Source: https://github.com/twbs/bootstrap/blob/master/LICENSE
-
-Fontawesome css, icon font library
-Fontawesome is dual-licensed under the terms of the MIT license for css and the SIL OFL 1.1 for fonts
-Source: http://fontawesome.io
-
-Josefin Sans Google font library
-Josefin Sans is licensed under the SIL OFL 1.1 for fonts
-Source: https://fonts.googleapis.com/css?family=Josefin+Sans:300,300i,400,400i,600,600i,700,700i
-
+---------------------------------------------------------
 Images
-Images are licenced under the CC0
-Source: https://pixabay.com/en/worried-girl-woman-waiting-sitting-413690/
-		https://pixabay.com/en/bible-books-coffee-god-jesus-1149924/
-		https://pixabay.com/en/fractal-abstract-background-physics-1280084/
+---------------------------------------------------------
+i)
+	Resource URI: https://pixabay.com/en/horoscope-astrology-zodiac-aries-639126/
+	License: CC0 1.0
+	License URI: http://creativecommons.org/publicdomain/zero/1.0/deed.en 
 
+ii)
+	Resource URI: https://pixabay.com/en/ball-glass-about-reflection-625908/
+	License: CC0 1.0
+	License URI: http://creativecommons.org/publicdomain/zero/1.0/deed.en
 
 == Credits ==
 

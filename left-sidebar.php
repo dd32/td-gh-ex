@@ -1,6 +1,6 @@
 <?php
  /**
- * Template Name: Full Width
+ * Template Name: Left Sidebar
  * @package astrology
  */
 get_header(); ?>
@@ -13,7 +13,7 @@ get_header(); ?>
 <section id="blog-innerpage-content">
     <div class="container">
         <div class="row">               
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-xs-12 col-sm-12 col-md-9">
                 <div class="blog-single-inner-page">
                 	<?php
 					if ( have_posts() ) :
@@ -30,6 +30,7 @@ get_header(); ?>
 					endif; ?>         
 				</div>
             </div>
+			<?php get_sidebar(); ?>
         </div>
     </div>
 </section>

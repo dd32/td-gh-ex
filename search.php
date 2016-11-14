@@ -10,7 +10,7 @@ get_header(); ?>
 	<div class="container">
 		<div class="blog-title">
 		    <h2><?php printf( esc_html__( 'Search Results for: %s', 'astrology'), get_search_query(false)); ?></h2>
-		    <div class="breadCumbs"><?php astrology_custom_breadcrumbs(); ?></div>
+		    <div class="breadCumbs"><?php custom_breadcrumbs(); ?></div>
 		</div>
 	</div>
 </section>
@@ -20,4 +20,4 @@ get_header(); ?>
 		get_template_part( 'template-parts/content', 'none' );  ?>
 </section>
 <?php endif;
-get_footer();
+get_footer(); ?>

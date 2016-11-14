@@ -5,15 +5,15 @@
  */
 ?>
 <div class="container">
-<div class="row responsiveLayout">
-    <?php get_sidebar(); ?>
-    <div class="col-xs-12 col-sm-12 col-md-9 content">
+<div class="row">            
+    <div class="col-xs-12 col-sm-12 col-md-9 pull-right">
         <div class="bloginner-content-part2">
             <div class="grid">
-            <?php if ( have_posts() ) : $i=1;
+            <?php
+                if ( have_posts() ) : $i=1;
                     while ( have_posts() ) : the_post();?>                
                         <div class="grid-sizer"></div>
-                        <div <?php post_class('blog-content-left grid-item'); ?> id="post-<?php the_ID(); ?>">
+                        <div class="blog-content-left grid-item <?php post_class(); ?>" id="post-<?php the_ID(); ?>">
                             <div class="blog-info-text">
                                 <a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
                                 <ul>
@@ -31,7 +31,8 @@
                                 <a href="<?php the_permalink(); ?>"><?php _e('Read More','astrology')?></a>
                             </div>
                         </div>
-                    <?php if($i % 2 == 0):
+                    <?php
+					if($i % 2 == 0):
 						echo '<div class="clearfix"></div>'; 
 					endif;
 					$i++;
@@ -43,8 +44,10 @@
                         'prev_text'          => __( 'Previous', 'astrology' ),
                         'next_text'          => __( 'Next', 'astrology' ),
                     ) );
-                endif; ?>
+                endif; 
+            ?>
         </div>
     </div>
+    <?php get_sidebar(); ?>
 </div>
-</div>
+</div>                       

@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Astrology\n"
-"POT-Creation-Date: 2017-05-06 11:32+0530\n"
+"POT-Creation-Date: 2016-11-14 18:34+0530\n"
 "PO-Revision-Date: 2016-11-14 18:13+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -34,507 +34,38 @@ msgstr ""
 msgid "Author: "
 msgstr ""
 
-#: footer.php:52
+#: category.php:11
+msgid "Category: "
+msgstr ""
+
+#: comments.php:41
+msgid "POST"
+msgstr ""
+
+#: footer.php:67
 msgid "Powered by"
 msgstr ""
 
-#: footer.php:52
-msgid "Astrology WordPress Theme"
+#: full-width.php:26 left-sidebar.php:26 page.php:29 single.php:28
+#: template-parts/content.php:44
+msgid "Previous"
 msgstr ""
 
-#: functions.php:21
+#: full-width.php:27 left-sidebar.php:27 page.php:30 single.php:27
+#: template-parts/content.php:45
+msgid "Next"
+msgstr ""
+
+#: functions.php:28
 msgid "Primary"
 msgstr ""
 
-#: functions.php:60
-msgid "Page Builder by SiteOrigin"
+#: functions.php:29
+msgid "Footer"
 msgstr ""
 
-#: functions.php:65
-msgid "SiteOrigin Widgets Bundle"
-msgstr ""
-
-#: functions.php:79
-msgid "Install Recommended Plugins"
-msgstr ""
-
-#: functions.php:80 inc/class-tgm-plugin-activation.php:328
-msgid "Install Plugins"
-msgstr ""
-
-#: functions.php:81 inc/class-tgm-plugin-activation.php:330
-#, php-format
-msgid "Installing Plugin: %s"
-msgstr ""
-
-#: functions.php:82 inc/class-tgm-plugin-activation.php:333
-msgid "Something went wrong with the plugin API."
-msgstr ""
-
-#: functions.php:83 inc/class-tgm-plugin-activation.php:336
-#, php-format
-msgid "This theme requires the following plugin: %1$s."
-msgid_plural "This theme requires the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions.php:84 inc/class-tgm-plugin-activation.php:342
-#, php-format
-msgid "This theme recommends the following plugin: %1$s."
-msgid_plural "This theme recommends the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions.php:85
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to install the %s plugin. "
-"Contact the administrator of this site for help on getting the plugin "
-"installed."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to install the %s "
-"plugins. Contact the administrator of this site for help on getting the "
-"plugins installed."
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions.php:86 inc/class-tgm-plugin-activation.php:360
-#, php-format
-msgid "The following required plugin is currently inactive: %1$s."
-msgid_plural "The following required plugins are currently inactive: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions.php:87 inc/class-tgm-plugin-activation.php:366
-#, php-format
-msgid "The following recommended plugin is currently inactive: %1$s."
-msgid_plural "The following recommended plugins are currently inactive: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions.php:88
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to activate the %s "
-"plugin. Contact the administrator of this site for help on getting the "
-"plugin activated."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to activate the %s "
-"plugins. Contact the administrator of this site for help on getting the "
-"plugins activated."
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions.php:89 inc/class-tgm-plugin-activation.php:348
-#, php-format
-msgid ""
-"The following plugin needs to be updated to its latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgid_plural ""
-"The following plugins need to be updated to their latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions.php:90
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to update the %s plugin. "
-"Contact the administrator of this site for help on getting the plugin "
-"updated."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to update the %s plugins. "
-"Contact the administrator of this site for help on getting the plugins "
-"updated."
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions.php:91 inc/class-tgm-plugin-activation.php:371
-msgid "Begin installing plugin"
-msgid_plural "Begin installing plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions.php:92 inc/class-tgm-plugin-activation.php:381
-msgid "Begin activating plugin"
-msgid_plural "Begin activating plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: functions.php:93
-msgid "Return to Recommended Plugins Installer"
-msgstr ""
-
-#: functions.php:94 inc/class-tgm-plugin-activation.php:387
-#: inc/class-tgm-plugin-activation.php:3159
-msgid "Plugin activated successfully."
-msgstr ""
-
-#: functions.php:95
-#, php-format
-msgid "All plugins installed and activated successfully. %s"
-msgstr ""
-
-#: inc/breadcumbs.php:9
-msgid "Homepage"
-msgstr ""
-
-#: inc/breadcumbs.php:200 template-parts/content-page.php:24
-#: template-parts/content-single.php:29
+#: inc/breadcumbs.php:215 template-parts/content-single.php:31
 msgid "Page"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:327
-msgid "Install Required Plugins"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:332
-#, php-format
-msgid "Updating Plugin: %s"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:354
-#, php-format
-msgid "There is an update available for: %1$s."
-msgid_plural "There are updates available for the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/class-tgm-plugin-activation.php:376
-msgid "Begin updating plugin"
-msgid_plural "Begin updating plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/class-tgm-plugin-activation.php:385
-msgid "Return to Required Plugins Installer"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:386
-#: inc/class-tgm-plugin-activation.php:827
-#: inc/class-tgm-plugin-activation.php:2533
-#: inc/class-tgm-plugin-activation.php:3580
-msgid "Return to the Dashboard"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:388
-#: inc/class-tgm-plugin-activation.php:2952
-msgid "The following plugin was activated successfully:"
-msgid_plural "The following plugins were activated successfully:"
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/class-tgm-plugin-activation.php:390
-#, php-format
-msgid "No action taken. Plugin %1$s was already active."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:392
-#, php-format
-msgid ""
-"Plugin not activated. A higher version of %s is needed for this theme. "
-"Please update the plugin."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:394
-#, php-format
-msgid "All plugins installed and activated successfully. %1$s"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:395
-msgid "Dismiss this notice"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:396
-msgid ""
-"There are one or more required or recommended plugins to install, update or "
-"activate."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:397
-msgid "Please contact the administrator of this site for help."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:522
-msgid "This plugin needs to be updated to be compatible with your theme."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:523
-msgid "Update Required"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:934
-msgid ""
-"The remote plugin package does not contain a folder with the desired slug "
-"and renaming did not work."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:934
-#: inc/class-tgm-plugin-activation.php:937
-msgid ""
-"Please contact the plugin provider and ask them to package their plugin "
-"according to the WordPress guidelines."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:937
-msgid ""
-"The remote plugin package consists of more than one file, but the files are "
-"not packaged in a folder."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:1121
-#: inc/class-tgm-plugin-activation.php:2948
-msgctxt "plugin A *and* plugin B"
-msgid "and"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:1982
-#, php-format
-msgid "TGMPA v%s"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2273
-msgid "Required"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2276
-msgid "Recommended"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2292
-msgid "WordPress Repository"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2295
-msgid "External Source"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2298
-msgid "Pre-Packaged"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2315
-msgid "Not Installed"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2319
-msgid "Installed But Not Activated"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2321
-msgid "Active"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2327
-msgid "Required Update not Available"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2330
-msgid "Requires Update"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2333
-msgid "Update recommended"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2342
-#, php-format
-msgctxt "Install/Update Status"
-msgid "%1$s, %2$s"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2388
-#, php-format
-msgctxt "plugins"
-msgid "All <span class=\"count\">(%s)</span>"
-msgid_plural "All <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/class-tgm-plugin-activation.php:2392
-#, php-format
-msgid "To Install <span class=\"count\">(%s)</span>"
-msgid_plural "To Install <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/class-tgm-plugin-activation.php:2396
-#, php-format
-msgid "Update Available <span class=\"count\">(%s)</span>"
-msgid_plural "Update Available <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/class-tgm-plugin-activation.php:2400
-#, php-format
-msgid "To Activate <span class=\"count\">(%s)</span>"
-msgid_plural "To Activate <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/class-tgm-plugin-activation.php:2482
-msgctxt "as in: \"version nr unknown\""
-msgid "unknown"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2490
-msgid "Installed version:"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2498
-msgid "Minimum required version:"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2510
-msgid "Available version:"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2533
-msgid "No plugins to install, update or activate."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2547
-msgid "Plugin"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2548
-msgid "Source"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2549
-msgid "Type"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2553
-msgid "Version"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2554
-msgid "Status"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2603
-#, php-format
-msgid "Install %2$s"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2608
-#, php-format
-msgid "Update %2$s"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2614
-#, php-format
-msgid "Activate %2$s"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2684
-msgid "Upgrade message from the plugin author:"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2717
-msgid "Install"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2723
-msgid "Update"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2726
-msgid "Activate"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2757
-msgid "No plugins were selected to be installed. No action taken."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2759
-msgid "No plugins were selected to be updated. No action taken."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2800
-msgid "No plugins are available to be installed at this time."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2802
-msgid "No plugins are available to be updated at this time."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2908
-msgid "No plugins were selected to be activated. No action taken."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2934
-msgid "No plugins are available to be activated at this time."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:3158
-msgid "Plugin activation failed."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:3498
-#, php-format
-msgid "Updating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:3501
-#, php-format
-msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:3503
-#, php-format
-msgid "The installation of %1$s failed."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:3507
-msgid ""
-"The installation and activation process is starting. This process may take a "
-"while on some hosts, so please be patient."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:3509
-#, php-format
-msgid "%1$s installed and activated successfully."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:3509
-#: inc/class-tgm-plugin-activation.php:3517
-msgid "Show Details"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:3509
-#: inc/class-tgm-plugin-activation.php:3517
-msgid "Hide Details"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:3510
-msgid "All installations and activations have been completed."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:3512
-#, php-format
-msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:3515
-msgid ""
-"The installation process is starting. This process may take a while on some "
-"hosts, so please be patient."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:3517
-#, php-format
-msgid "%1$s installed successfully."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:3518
-msgid "All installations have been completed."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:3520
-#, php-format
-msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
 #: inc/customizer.php:11
@@ -585,6 +116,10 @@ msgstr ""
 msgid "Secondary Color"
 msgstr ""
 
+#: inc/default.php:18
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
 #: inc/widgets.php:9
 msgid "Sidebar"
 msgstr ""
@@ -614,65 +149,45 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: searchform.php:8
+#: searchform.php:9
 msgctxt "label"
 msgid "Search for:"
 msgstr ""
 
-#: searchform.php:9
+#: searchform.php:10
 msgctxt "placeholder"
 msgid "Search..."
 msgstr ""
 
-#: searchform.php:11
+#: searchform.php:12
 msgctxt "submit button"
 msgid "Search"
 msgstr ""
 
-#: single.php:29 template-parts/content-full.php:15
-#, php-format
-msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
+#: tag.php:10
+msgid "Tag: "
 msgstr ""
 
-#: single.php:37 template-parts/content-search.php:66
-#: template-parts/content.php:44
-msgid "Next"
-msgstr ""
-
-#: single.php:38 template-parts/content-search.php:65
-#: template-parts/content.php:43
-msgid "Previous"
-msgstr ""
-
-#: template-parts/content-none.php:10
+#: template-parts/content-none.php:11
 msgid "Nothing Found"
 msgstr ""
 
-#: template-parts/content-none.php:22
+#: template-parts/content-none.php:24
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: template-parts/content-none.php:24
+#: template-parts/content-none.php:28
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: template-parts/content-none.php:29
+#: template-parts/content-none.php:34
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
-msgstr ""
-
-#: template-parts/content-page.php:20 template-parts/content-single.php:25
-msgid "Pages:"
-msgstr ""
-
-#: template-parts/content-search.php:32 template-parts/content-search.php:55
-#: template-parts/content.php:31
-msgid "Read More"
 msgstr ""
 
 #: template-parts/content-single.php:12
@@ -680,11 +195,15 @@ msgid "By "
 msgstr ""
 
 #: template-parts/content-single.php:13
-msgid "Posted on "
+msgid "Posted on"
 msgstr ""
 
-#: template-parts/content-single.php:14
-msgid "Category : "
+#: template-parts/content-single.php:27
+msgid "Pages:"
+msgstr ""
+
+#: template-parts/content.php:31
+msgid "Read More"
 msgstr ""
 
 #. Theme Name of the plugin/theme
@@ -692,18 +211,18 @@ msgid "Astrology"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://vaultthemes.com/wordpress-themes/astrology/"
+msgid "https://vaultthemes.com/products/astrology-wordpress-theme/"
 msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Astrology is a premium quality WordPress theme for astrologers , pudits and "
-"religious gurus. It is a modern looking classy WordPress theme which can "
-"also be used for almost all kinds of individual consultants as it is easily "
-"customizable through WordPress Customizer options. It is mobile friendly as "
-"it is built on top of Twitter bootstrap framework. It is search engine "
-"friendly too. The theme is supported by our professional team of designers "
-"and developers so feel free to use it and enjoy its awesome features."
+"Astrology is a premium quality WordPress theme for astrology blog. It is a "
+"modern looking classy WordPress theme which can even be used for almost all "
+"kinds of startup or already existing small or medium sized businesses. It is "
+"easily customizable through Customizer options. It is mobile friendly as it "
+"is built on top of Twitter bootstrap framework. It is search engine friendly "
+"too. The theme is supported by our professional team of designers and "
+"developers so feel free to use it and enjoy its awesome features."
 msgstr ""
 
 #. Author of the plugin/theme
