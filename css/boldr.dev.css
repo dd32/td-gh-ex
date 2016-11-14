@@ -242,6 +242,7 @@ fieldset {
 }
 
 input[type="text"],
+input[type="search"],
 input[type="password"],
 input[type="email"],
 textarea,
@@ -272,6 +273,7 @@ select {
 }
 
 input[type="text"]:focus,
+input[type="search"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
 textarea:focus {
@@ -561,7 +563,7 @@ or wrap each row of columns in a <div class="row"> */
 
 #navbar ul li,
 #navbar ul li a,
-#nav-search #s {
+#nav-search .search-field {
 	transition: all .5s;
 	-moz-transition: all .5s;
 	-webkit-transition: all .5s;
@@ -643,20 +645,20 @@ or wrap each row of columns in a <div class="row"> */
 	width: 190px;
 }
 
-#searchform {
+.search-form {
 	margin: 15px 0;
 	position: relative;
 }
 
-#searchform #s {
-	width: 160px;
+.search-form .search-field {
+	width: 170px;
 }
 
 #searchform label {
-	display: none;
+	position: relative;
 }
 
-#searchform #searchsubmit {
+.search-form .search-submit {
 	height: 30px;
 	width: 30px;
 	margin: 0;
@@ -1346,9 +1348,19 @@ p.comment-form-url
 }
 
 /* Search */
-#searchform div {
-	position: relative;
+#sidebar .search-form {
+	padding: 0;
 }
+
+.search-form .search-field::-webkit-input-placeholder { color: #fff; }
+.search-form .search-field::-moz-placeholder { color: #fff; }
+.search-form .search-field:-ms-input-placeholder { color: #fff; }
+.search-form .search-field:-moz-placeholder { color: #fff; }
+
+.search-form .search-field:focus::-webkit-input-placeholder { color: transparent }
+.search-form .search-field:focus::-moz-placeholder { color: transparent; }
+.search-form .search-field:focus:-ms-input-placeholder { color: transparent; }
+.search-form .search-field:focus:-moz-placeholder { color: transparent; }
 
 /* Calendar */
 
@@ -1826,6 +1838,7 @@ label {
 }
 
 input[type="text"],
+input[type="search"],
 input[type="password"],
 input[type="email"],
 textarea {
@@ -1846,6 +1859,7 @@ textarea {
 }
 
 input[type="text"]:focus,
+input[type="search"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
 textarea:focus {
@@ -1853,9 +1867,11 @@ textarea:focus {
 	color: #fff;
 	border: none;
 	box-shadow: none;
+	outline: none;
 }
 
 input[type="text"],
+input[type="search"],
 input[type="password"],
 input[type="email"] {
 	height: 30px;
@@ -2170,17 +2186,20 @@ a img.aligncenter {
 	#nav-search {
 		width: 150px;
 	}
-	#nav-search #s {
-		width: 112px;
+	#nav-search .search-field {
+		width: 122px;
 	}
-	#searchform #searchsubmit {
+	#nav-search .search-submit {
 		left: 122px;
 	}
-	#searchform #s {
+    .search-form .search-submit {
+		left: 131px;
+	}
+	.search-form .search-field {
 		width: 131px;
 	}
-	#sidebar #searchform #s {
-		width: 117px;
+	#sidebar .search-form .search-field {
+		width: 131px;
 	}
 	#calendar_wrap td {
 		padding: 1px 3px;
@@ -2282,10 +2301,10 @@ a img.aligncenter {
 	#nav-search {
 		display: none;
 	}
-	#sidebar #searchform #s {
-		width: 245px;
+	#sidebar .search-form .search-field {
+		width: 255px;
 	}
-	#sidebar #searchform #searchsubmit {
+	#sidebar .search-form .search-submit {
 		left: 255px;
 	}
 	#calendar_wrap td {
@@ -2350,10 +2369,10 @@ a img.aligncenter {
 	#navbar > .menu-container {
 		width: 420px;
 	}
-	#sidebar #searchform #s {
-		width: 365px;
+	#sidebar .search-form .search-field {
+		width: 375px;
 	}
-	#sidebar #searchform #searchsubmit {
+	#sidebar .search-form .search-submit {
 		left: 375px;
 	}
 	#calendar_wrap td {

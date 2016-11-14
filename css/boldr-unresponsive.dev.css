@@ -241,6 +241,7 @@ fieldset {
 }
 
 input[type="text"],
+input[type="search"],
 input[type="password"],
 input[type="email"],
 textarea,
@@ -271,6 +272,7 @@ select {
 }
 
 input[type="text"]:focus,
+input[type="search"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
 textarea:focus {
@@ -560,7 +562,7 @@ or wrap each row of columns in a <div class="row"> */
 
 #navbar ul li,
 #navbar ul li a,
-#nav-search #s {
+#nav-search .search-field {
 	transition: all .5s;
 	-moz-transition: all .5s;
 	-webkit-transition: all .5s;
@@ -642,20 +644,20 @@ or wrap each row of columns in a <div class="row"> */
 	width: 190px;
 }
 
-#searchform {
+.search-form {
 	margin: 15px 0;
 	position: relative;
 }
 
-#searchform #s {
-	width: 160px;
+.search-form .search-field {
+	width: 170px;
 }
 
 #searchform label {
-	display: none;
+	position: relative;
 }
 
-#searchform #searchsubmit {
+.search-form .search-submit {
 	height: 30px;
 	width: 30px;
 	margin: 0;
@@ -1345,9 +1347,19 @@ p.comment-form-url
 }
 
 /* Search */
-#searchform div {
-	position: relative;
+#sidebar .search-form {
+	padding: 0;
 }
+
+.search-form .search-field::-webkit-input-placeholder { color: #fff; }
+.search-form .search-field::-moz-placeholder { color: #fff; }
+.search-form .search-field:-ms-input-placeholder { color: #fff; }
+.search-form .search-field:-moz-placeholder { color: #fff; }
+
+.search-form .search-field:focus::-webkit-input-placeholder { color: transparent }
+.search-form .search-field:focus::-moz-placeholder { color: transparent; }
+.search-form .search-field:focus:-ms-input-placeholder { color: transparent; }
+.search-form .search-field:focus:-moz-placeholder { color: transparent; }
 
 /* Calendar */
 
@@ -1825,6 +1837,7 @@ label {
 }
 
 input[type="text"],
+input[type="search"],
 input[type="password"],
 input[type="email"],
 textarea {
@@ -1845,6 +1858,7 @@ textarea {
 }
 
 input[type="text"]:focus,
+input[type="search"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
 textarea:focus {
@@ -1852,9 +1866,11 @@ textarea:focus {
 	color: #fff;
 	border: none;
 	box-shadow: none;
+	outline: none;
 }
 
 input[type="text"],
+input[type="search"],
 input[type="password"],
 input[type="email"] {
 	height: 30px;
