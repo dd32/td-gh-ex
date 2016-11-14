@@ -6,10 +6,12 @@
  */
 get_header(); ?>
 <section id="blog-title-top">
-	<div class="blog-title">
-	    <h2><?php esc_html_e( "Oops! That page can't be found", 'astrology' ); ?></h2>
-	    <span><?php echo get_breadcrumb(); ?></span>
-	</div>	
+    <div class="container">
+        <div class="blog-title">
+            <h2><?php esc_html_e( "Oops! That page can't be found", 'astrology' ); ?></h2>
+            <div class="breadCumbs"><?php custom_breadcrumbs(); ?></div>
+        </div>
+    </div>
 </section>
 <section id="blogcontent">
     <div class="container">

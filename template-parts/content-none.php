@@ -6,9 +6,12 @@
  */
 ?>
 <section id="blog-title-top">
-	<div class="blog-title">
-	    <h2><?php _e( 'Nothing Found', 'astrology' ); ?></h2>
-	</div>	
+	<div class="container">
+		<div class="blog-title">
+		    <h2><?php _e( 'Nothing Found', 'astrology' ); ?></h2>
+		    <div class="breadCumbs"><?php custom_breadcrumbs(); ?></div>
+		</div>
+	</div>
 </section>
 <section id="blog-innerpage-content">
 <div class="container">

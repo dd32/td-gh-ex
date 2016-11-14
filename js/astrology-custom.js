@@ -20,6 +20,11 @@
                         mainmenu.find('ul').show();
                     }
                 }
+                if (jQuery('body').hasClass('menuOpen')) {
+                    jQuery('body').removeClass('menuOpen');
+                } else {
+                    jQuery('body').addClass('menuOpen');
+                }
             });
             cssmenu.find('li ul').parent().addClass('has-sub');
             multiTg = function () {
@@ -37,7 +42,7 @@
             else cssmenu.addClass('dropdown');
             if (settings.sticky === true) cssmenu.css('position', 'fixed');
             resizeFix = function () {
-                var mediasize = 767;
+                var mediasize = 1024;
                 if (jQuery(window).width() > mediasize) {
                     cssmenu.find('ul').show();
                 }
@@ -72,39 +77,53 @@
                 }
             }
         });
+        var $grid = jQuery('.grid').imagesLoaded(function () {
+            $grid.masonry({
+                itemSelector: '.grid-item',
+                percentPosition: true,
+                columnWidth: '.grid-sizer'
+            });
+        });
     });
 })(jQuery);
+jQuery(window).scroll(function () {
+    if (jQuery(window).scrollTop() > 150) {
+        jQuery('.header-top').addClass('fixed-header');
+    } else {
+        jQuery('.header-top').removeClass('fixed-header');
+    }
+});
 /* Main-Menu Js End */
 /*menu-button*/
 var Menu = {
-  
-  el: {
-    ham: jQuery('.menu'),
-    menuTop: jQuery('.menu-top'),
-    menuMiddle: jQuery('.menu-middle'),
-    menuBottom: jQuery('.menu-bottom')
-  },
-  
-  init: function() {
-    Menu.bindUIactions();
-  },
-  
-  bindUIactions: function() {
-    Menu.el.ham
-        .on(
-          'click',
-        function(event) {
-        Menu.activateMenu(event);
-        event.preventDefault();
-      }
-    );
-  },
-  
-  activateMenu: function() {
-    Menu.el.menuTop.toggleClass('menu-top-click');
-    Menu.el.menuMiddle.toggleClass('menu-middle-click');
-    Menu.el.menuBottom.toggleClass('menu-bottom-click'); 
-  }
+
+    el: {
+        ham: jQuery('.menu'),
+        menuTop: jQuery('.menu-top'),
+        menuMiddle: jQuery('.menu-middle'),
+        menuBottom: jQuery('.menu-bottom')
+    },
+
+    init: function () {
+        Menu.bindUIactions();
+    },
+
+    bindUIactions: function () {
+        Menu.el.ham
+            .on(
+                'click',
+                function (event) {
+                    Menu.activateMenu(event);
+                    event.preventDefault();
+                }
+            );
+    },
+
+    activateMenu: function () {
+        Menu.el.menuTop.toggleClass('menu-top-click');
+        Menu.el.menuMiddle.toggleClass('menu-middle-click');
+        Menu.el.menuBottom.toggleClass('menu-bottom-click');
+    }
 };
 
 Menu.init();

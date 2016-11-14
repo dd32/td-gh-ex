@@ -33,23 +33,3 @@ function MoveCommentFieldToBottom( $fields ) {
 	return $fields;
 }
 add_filter( 'comment_form_fields', 'MoveCommentFieldToBottom' );
-
-function get_breadcrumb() {
-    echo '<a href="'.home_url().'" rel="nofollow">Home</a>';
-    if (is_category() || is_single()) {
-        echo "&nbsp;&nbsp;&#47;&nbsp;&nbsp;";
-        the_category(' &bull; ');
-            if (is_single()) {
-                echo " &nbsp;&nbsp;&#47;&nbsp;&nbsp; ";
-                the_title();
-            }
-    } elseif (is_page()) {
-        echo "&nbsp;&nbsp;&#47;&nbsp;&nbsp;";
-        echo "<a href='".get_the_permalink()."'>".get_the_title()."</a>";
-    } elseif (is_search()) {
-        echo "&nbsp;&nbsp;&#47;&nbsp;&nbsp;Search Results for... ";
-        echo '"<em>';
-        echo the_search_query();
-        echo '</em>"';
-    }
-}

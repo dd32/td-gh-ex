@@ -18,13 +18,7 @@ function AstrologySetup() {
 		define( 'NO_HEADER_TEXT', true );
 	endif;
 
-	add_theme_support( 'custom-logo', array(
-			'height'      => 80,
-			'width'       => 500,
-			'flex-width'  => true,
-			'flex-height' => true,
-			'header-text' => array( 'site-title', 'site-description' ),
-	) );
+	add_theme_support( 'custom-logo' );
 	
 	add_editor_style();
 	add_theme_support( 'title-tag' );
@@ -56,6 +50,15 @@ function AstrologyContentWidth() {
 }
 add_action( 'after_setup_theme', 'AstrologyContentWidth', 0 );
 
+function AstrologerCustomExcerptLength( $length ) {
+    return 34;
+}
+add_filter( 'excerpt_length', 'AstrologerCustomExcerptLength', 999 );
+function AstrologerCustomExcerptLengthMore( $more ) {
+    return ' {...}';
+}
+add_filter( 'excerpt_more', 'AstrologerCustomExcerptLengthMore' );
+
 /**
  * wp enqueue style and script.
  */
@@ -75,3 +78,4 @@ require_once get_template_directory() . '/inc/customizer.php';
  * default astrology functions.
  */
 require_once get_template_directory() . '/inc/default.php';
+require_once get_template_directory() . '/inc/breadcumbs.php';

@@ -1,2 +1,6 @@
 Version 1.0.0 (07-11-2016)
 i)  Theme Submitted for approval
+
+Version 1.0.1 (14-11-2016)
+i)  Added masonry in blog listing page.
+ii) Changed menu style.

@@ -5,9 +5,11 @@
  */
 get_header(); ?>
 <section id="blog-title-top">
-	<div class="blog-title">
-	    <h2><?php the_title();?></h2>
-	    <span><?php echo get_breadcrumb(); ?></span>
+	<div class="container">
+		<div class="blog-title">
+		    <h2><?php the_title();?></h2>
+		    <div class="breadCumbs"><?php custom_breadcrumbs(); ?></div>
+		</div>
 	</div>
 </section>
 <section id="blog-innerpage-content">
