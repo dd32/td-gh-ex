@@ -1,12 +1,12 @@
-/*
+/*!
 Theme Name: fKidd
 Description: fKidd is a Free Multi-Purpose WordPress Theme. Features: Fully Responsive, Customizable, Built-in Responsive Slider, Multi-Level Drop-Down Menu, W3C Markup Validated, Customizer Options: Social Sites, Header Phone and Email, Slider, Header Logo, Footer, Search Engine Optimized, Social Sites: Facebook, Google+, Twitter, LinkedIn, Instagram, RSS Feeds, Tumblr, YouTube, Pinterest, VK, Flickr, Vine, Multiple browsers support (IE 9, IE 10, IE 11, Chrome, Firefox, Opera, and Safari), Header and Footer Menu, Translation ready and much more.
 Theme URI: https://tishonator.com/product/fkidd
 Author: tishonator
 Author URI: https://tishonator.com
-Version: 1.7.0
+Version: 1.8.0
 Text Domain: fkidd
-Tags: education, blog, two-columns, right-sidebar, custom-background, custom-header, custom-menu, featured-images, post-formats, sticky-post, threaded-comments, translation-ready
+Tags: education, blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, post-formats, threaded-comments, sticky-post, theme-options, footer-widgets, translation-ready
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -176,6 +176,11 @@ dt.gallery-icon:before {
 
 #header-logo h1 {
 	padding:0;
+}
+
+#header-logo > a.custom-logo-link,
+#header-logo #site-identity {
+    float:left;
 }
 
 .widget > ul,
@@ -806,6 +811,30 @@ blockquote, figure {
 #top-widget {
 	clear:both;
 	padding:10px 2%;
+}
+
+.nav-links {
+	padding-top:10px;
+}
+
+.nav-links .nav-previous {
+	float:left;
+}
+
+.nav-links .nav-previous:before {
+	font-family:'FontAwesome';
+	content:"\f100";
+	margin-right:5px;
+}
+
+.nav-links .nav-next {
+	float:right;
+}
+
+.nav-links .nav-next:after {
+	font-family:'FontAwesome';
+	content:"\f101";
+	margin-left:5px;
 }
 
 /* utilities classes */
@@ -1492,6 +1521,23 @@ img.wp-post-image {
 		width:63%;
 	}
 
+	/* columns */
+	.col3a,
+	.col3b,
+	.col3c {
+		float:left;
+		width:30.6%;
+	}
+	
+	.col3a,
+	.col3b {
+		margin:0 3.5% 5px 0;
+	}
+	
+	.col3c {
+		margin:0 0 5px 0;
+	}
+
 	#sidebar {
 		float:left;
 		margin:10px 2% 30px 2%;
@@ -1958,6 +2004,27 @@ img.wp-post-image {
 	#container .button {
 		padding:6px 8px;
 	}
+
+	/* columns */
+	.col3a,
+	.col3b,
+	.col3c {
+		float:left;
+		width:48%;
+	}
+
+	.col3a,
+	.col3c {
+		margin:0 4% 5px 0;
+	}
+
+	.col3b {
+		margin:0 0 5px 0;
+	}
+
+	.col3c {
+		clear:both;
+	}
 }
 
 /* Small Resolution */
@@ -2076,6 +2143,14 @@ img.wp-post-image {
 	#contact-form input[type="url"],
 	#contact-form textarea {
 		width:96%;
+	}
+
+	.col3a,
+	.col3b,
+	.col3c {
+		float:none;
+		width:96%;
+		margin:0 2% 5px 2%;
 	}
 }
 

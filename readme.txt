@@ -1,10 +1,10 @@
 === fKidd ===
 Contributors: tishonator
 Tags: education, blog, two-columns, right-sidebar, custom-background,
-custom-header, custom-menu, featured-images, post-formats, sticky-post,
+custom-header, custom-menu, featured-images, post-formats,
 threaded-comments, translation-ready
 Requires at least: 4.4.0
-Tested up to: 4.5.3
+Tested up to: 4.6.1
 
 == Description ==
 

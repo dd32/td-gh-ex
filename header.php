@@ -20,7 +20,7 @@
 						</ul>
 					</div>
 					<div id="header-logo">
-						<?php fkidd_show_website_logo_image_or_title(); ?>
+						<?php fkidd_show_website_logo_image_and_title(); ?>
 					</div>
 					<nav id="navmain">
 						<?php wp_nav_menu( array('theme_location' => 'primary',
