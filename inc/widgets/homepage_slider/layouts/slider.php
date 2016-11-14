@@ -21,7 +21,7 @@
 
 							?>
 						</a>
-						<div class="slider-caption hidden-xss">
+						<div class="slider-caption">
 
 							<?php
 
@@ -51,7 +51,6 @@
 					</div> <!-- end image -->
 				</div> <!-- end h-entry -->
 			<?php endwhile; ?>
-		<?php endif; ?>
 	</div> <!-- end slider swipe -->
 
 	<!-- article navigation list -->
@@ -82,5 +81,5 @@
 		</ul>
 	</div>
 	<!-- end article navigation list -->
-
+	<?php endif; ?>
 </section>
