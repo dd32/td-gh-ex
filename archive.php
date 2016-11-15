@@ -12,37 +12,11 @@
 ?>
 	<div class="title-container">
 <?php
-
-		if ( is_category() ) {
-?>
-		<h1 class="title"><?php printf( __( 'Category Archive for &#8216;%s&#8217;', 'bexley' ), single_cat_title( '', false ) ); ?></h1>
-<?php
-		} else if( is_tag() ) {
-?>
-		<h1 class="title"><?php printf( __( 'Tag Archive for &#8216;%s&#8217;', 'bexley' ), single_tag_title( '', false ) ); ?></h1>
-<?php
-		} else if ( is_day() ) {
-?>
-		<h1 class="title"><?php printf( __( 'Archive for %s', 'bexley' ), get_the_date( 'F jS, Y' ) ); ?></h1>
-<?php
-		} else if ( is_month() ) {
-?>
-		<h1 class="title"><?php printf( __( 'Archive for %s', 'bexley' ), get_the_date( 'F Y' ) ); ?></h1>
-<?php
-		} else if (is_year()) {
-?>
-		<h1 class="title"><?php printf( __( 'Archive for %s', 'bexley' ), get_the_date( 'Y' ) ); ?></h1>
-<?php
-		} else {
-?>
-		<h1 class="title"><?php _e( 'Blog Archives', 'bexley' ); ?></h1>
-<?php
-		}
-
+		the_archive_title( '<h1 class="title">', '</h1>' );
 		the_archive_description( '<div class="category_description">', '</div>' );
-
 ?>
 	</div>
+
 	<div id="main-content">
 <?php
 
@@ -51,7 +25,13 @@
 			get_template_part( 'content' );
 		}
 
-		bexley_numeric_pagination();
+		the_posts_pagination(
+			array(
+				'mid_size' => 2,
+				'next_text' => esc_html__( 'Older &rsaquo;', 'bexley' ),
+				'prev_text' => esc_html__( '&lsaquo; Newer', 'bexley' ),
+			)
+		);
 ?>
 	</div>
 <?php

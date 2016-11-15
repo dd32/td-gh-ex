@@ -1,21 +1,26 @@
-# Translation of Bexley in Irish
-# This file is distributed under the same license as the Bexley package.
+# Translation of WordPress.com - Themes - Bexley in Irish
+# This file is distributed under the same license as the WordPress.com - Themes - Bexley package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2014-06-04 22:19:02+0000\n"
+"PO-Revision-Date: 2016-07-12 03:15:01+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n<11 ? 3 : 4;\n"
-"X-Generator: GlotPress/1.0-alpha-1100\n"
-"Project-Id-Version: Bexley\n"
+"X-Generator: GlotPress/2.1.0-beta.2\n"
+"Language: ga_IE\n"
+"Project-Id-Version: WordPress.com - Themes - Bexley\n"
+
+#: functions.php:47
+msgid "Menu"
+msgstr "Roghchlár"
 
 #. Template Name of the plugin/theme
 #: wp-content/themes/premium/bexley/custom-templates/custom-page-fullwidth.php
 msgid "Full Width"
 msgstr "Lánleithead"
 
-#: searchform.php:9
+#: searchform.php:10
 msgctxt "search input placeholder text"
 msgid "Search..."
 msgstr "Cuartú..."
@@ -44,138 +49,132 @@ msgstr "&lsaquo; Ar ais"
 msgid "<div class=\"postmetadata\">Published <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\" pubdate>%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%7$s</a></div>"
 msgstr "<div class=\"postmetadata\">Foilsithe <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\" pubdate>%2$s</time></span> ag <a href=\"%3$s\" title=\"Nasc leis an íomhá lánmhéide\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Fill ar %7$s\" rel=\"gallery\">%7$s</a></div>"
 
-#: header.php:33
+#: header.php:32
 msgid "Home"
 msgstr "Baile"
 
-#: functions.php:384
+#: functions.php:364
 msgid "Display featured image on blog posts"
 msgstr "An íomhá ardaithe a thaispeáint ar na hailt bhlaga"
 
-#: functions.php:371
+#: functions.php:349
 msgid "Right"
 msgstr "Ar dheis"
 
-#: functions.php:370
+#: functions.php:348
 msgid "Center"
 msgstr "Lár"
 
-#: functions.php:369
+#: functions.php:347
 msgid "Left (default)"
 msgstr "Ar chlé (réamhshocrú)"
 
-#: functions.php:366
+#: functions.php:344
 msgid "Homepage Title Alignment"
 msgstr "Suí an Teidil ar an Leathanach Baile"
 
-#: functions.php:339
+#: functions.php:312
 msgid "Options for the bexley theme."
 msgstr "Socruithe téama bexley."
 
-#: functions.php:338
+#: functions.php:311
 msgid "Theme"
 msgstr "Téama"
 
-#: functions.php:284
+#: functions.php:255
 msgid "Read More &rarr;"
 msgstr "Tuilleadh Eolais &rarr;"
 
-#: functions.php:226
+#: functions.php:195
 msgid "&lsaquo; Newer"
 msgstr "&lsaquo; Chun Tosaigh"
 
-#: functions.php:225
+#: functions.php:194
 msgid "Older &rsaquo;"
 msgstr "Chun Deiridh &rsaquo;"
 
-#: functions.php:166
+#: functions.php:133
 msgid "Read More"
 msgstr "Tuilleadh"
 
-#: functions.php:146
+#: functions.php:112
 msgid "Widgets that display at the bottom of the website."
 msgstr "Giúirléidí a thaispeántar in íochtar an tsuímh ghréasáin."
 
-#: functions.php:144
+#: functions.php:110
 msgid "Footer Widgets"
 msgstr "Giúirléidí Buntáisc"
 
-#: functions.php:133
+#: functions.php:99
 msgid "Widgets that display on the side of your website. Keep this empty to remove the sidebar."
 msgstr "Giúirléidí a thaispeántar ar thaobh do shuímh ghréasáin. Coinnigh folamh é gan an taobh-bharra a thaispeáint."
 
-#: functions.php:131
+#: functions.php:97
 msgid "Sidebar Widgets"
 msgstr "Giúirléidí Taoibh"
 
-#: functions.php:118
+#: functions.php:84
 msgid "Top Menu"
 msgstr "Barr-roghchlár"
 
 #. Translators: If there are characters in your language that are not
 #. * supported by Lora, translate this to 'off'. Do not translate into your
 #. * own language.
-#. *
-#. * Technique borrowed from TwentyThirteen
-#: functions.php:76
+#: functions.php:34
 msgctxt "Google font: on or off"
 msgid "on"
 msgstr "on"
 
-#: functions.php:48
-msgid "Page %s"
-msgstr "Leathanach %s"
-
-#: footer.php:28
+#: footer.php:36
 msgid "Theme: %1$s by %2$s."
 msgstr "Téama: %1$s le %2$s."
 
-#: footer.php:26
+#: footer.php:34
 msgid "Proudly powered by %s"
 msgstr "Le cumhacht %s"
 
-#: content-single.php:57
+#: content-single.php:61
 msgid "&rsaquo;"
 msgstr "&rsaquo;"
 
-#: content-single.php:54
+#: content-single.php:58
 msgid "&lsaquo;"
 msgstr "&lsaquo;"
 
-#: content-single.php:48
+#: content-single.php:51
 msgctxt "Tag list seperator"
 msgid ", "
 msgstr ", "
 
-#: content-single.php:48
+#: content-single.php:51
 msgid "Tagged as: "
 msgstr "Clibeanna: "
 
-#: content-single.php:41
+#: content-single.php:44
 msgid "Categories: "
 msgstr "Ranganna:"
 
-#: content-page.php:16 content-single.php:32
+#: content-page.php:18 content-single.php:34
 msgid "Pages: "
 msgstr "Leathanaigh:"
 
-#: content-empty.php:19
+#: content-empty.php:20
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr "Sén chaoi nár frítheadh na téarmaí a chuartaigh tú. D’fhéadfá focla eile a chuartú."
 
-#: content-empty.php:15
+#: content-empty.php:16
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr "bhFuil tú réidh le halt a fhoilsiú? <a href=\"%1$s\">Féadfaidh tú tosaí anseo</a>."
 
-#: content-empty.php:9
+#: content-empty.php:10
 msgid "Nothing Found"
 msgstr "Gan Toradh"
 
-#: comments.php:35
+#: comments.php:40
 msgid "Newer Comments &rsaquo;"
 msgstr "Chun Tosaigh &rsaquo;"
 
-#: comments.php:32
+#: comments.php:37
 msgid "&lsaquo; Older Comments"
 msgstr "&lsaquo; Chun Deiridh"
 

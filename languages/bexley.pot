@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2.0 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Bexley 1.1\n"
+"Project-Id-Version: Bexley 1.2\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/bexley\n"
-"POT-Creation-Date: 2016-06-14 03:14:29+00:00\n"
+"POT-Creation-Date: 2016-07-12 03:14:56+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -129,73 +129,77 @@ msgctxt "Google font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:76
+#: functions.php:47
+msgid "Menu"
+msgstr ""
+
+#: functions.php:84
 msgid "Top Menu"
 msgstr ""
 
-#: functions.php:89
+#: functions.php:97
 msgid "Sidebar Widgets"
 msgstr ""
 
-#: functions.php:91
+#: functions.php:99
 msgid ""
 "Widgets that display on the side of your website. Keep this empty to remove "
 "the sidebar."
 msgstr ""
 
-#: functions.php:102
+#: functions.php:110
 msgid "Footer Widgets"
 msgstr ""
 
-#: functions.php:104
+#: functions.php:112
 msgid "Widgets that display at the bottom of the website."
 msgstr ""
 
-#: functions.php:125
+#: functions.php:133
 msgid "Read More"
 msgstr ""
 
-#: functions.php:186
+#: functions.php:194
 msgid "Older &rsaquo;"
 msgstr ""
 
-#: functions.php:187
+#: functions.php:195
 msgid "&lsaquo; Newer"
 msgstr ""
 
-#: functions.php:247
+#: functions.php:255
 msgid "Read More &rarr;"
 msgstr ""
 
-#: functions.php:303
+#: functions.php:311
 msgid "Theme"
 msgstr ""
 
-#: functions.php:304
+#: functions.php:312
 msgid "Options for the bexley theme."
 msgstr ""
 
-#: functions.php:317
+#: functions.php:325
 msgid "Use image ratio on homepage"
 msgstr ""
 
-#: functions.php:336
+#: functions.php:344
 msgid "Homepage Title Alignment"
 msgstr ""
 
-#: functions.php:339
+#: functions.php:347
 msgid "Left (default)"
 msgstr ""
 
-#: functions.php:340
+#: functions.php:348
 msgid "Center"
 msgstr ""
 
-#: functions.php:341
+#: functions.php:349
 msgid "Right"
 msgstr ""
 
-#: functions.php:356
+#: functions.php:364
 msgid "Display featured image on blog posts"
 msgstr ""
 

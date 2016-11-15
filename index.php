@@ -16,7 +16,13 @@
 			get_template_part( 'content' );
 		}
 
-		bexley_numeric_pagination();
+		the_posts_pagination(
+			array(
+				'mid_size' => 2,
+				'next_text' => esc_html__( 'Older &rsaquo;', 'bexley' ),
+				'prev_text' => esc_html__( '&lsaquo; Newer', 'bexley' ),
+			)
+		);
 ?>
 	</div>
 <?php

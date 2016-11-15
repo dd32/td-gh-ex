@@ -11,6 +11,8 @@ Tags: one-column, two-columns, right-sidebar, flexible-header, custom-background
 
 Bexley is a photo blog - placing the photos at the forefront and giving you plenty of space to add your own writing around them.
 
+[Theme documentation](https://prothemedesign.com/documentation/theme/bexley/)
+
 == Installation ==
 
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
@@ -27,6 +29,20 @@ Bexley includes support for most features in [Jetpack](https://wordpress.org/plu
 
 == Changelog ==
 
+= 2.0 - 15th November 2016 =
+* Updates based upon wordpress.org theme review
+* Tidy the codes
+* Remove header code that's not used
+* Switch to standard the_posts_pagination rather than custom function
+* Escape more things for extra security
+
+= 1.2.1 - 24 September 2016 =
+* Fix incorrect text domain
+* Remove box-shadow css prefix
+
+= 1.2 - 11 July 2016 =
+* Fix issue with responsive navigation not allowing the first menu item to be selected
+
 = 1.1 - 5 June 2016 =
 * Tidy up the codes
 * replace wp_title with title-tag support
@@ -40,3 +56,8 @@ Bexley includes support for most features in [Jetpack](https://wordpress.org/plu
 == Credits ==
 
 * [Roboto Slab](https://www.google.com/fonts/specimen/Roboto+Slab) Font from Google Fonts, licensed under [Apache License, version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html)
+* [HTML5Shiv](https://github.com/aFarkas/html5shiv) HTML5 Shiv, licensed under [GPL-2.0](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
+* [Unsplash](http://unsplash.com) The photos used in the screenshot.png file are from Unsplash.com - licensed under CC0 Public Domain (http://creativecommons.org/publicdomain/zero/1.0/deed.en)
+* Theme Images are created by @binarymoon and licensed under [GPL-2.0](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
+* [Genericons](https://genericons.com/): font by Automattic (http://automattic.com/), licensed under [GPL2](https://www.gnu.org/licenses/gpl-2.0.html)
+* [Superfish](https://github.com/joeldbirch/superfish): dropdown menu library, licensed under [MIT](https://github.com/joeldbirch/superfish/blob/master/MIT-LICENSE.txt)

@@ -26,19 +26,23 @@ function bexley_enqueue() {
 	wp_enqueue_style( 'bexley-style', get_template_directory_uri().'/styles/css/styles.css', null, '1.1' );
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/styles/genericons/genericons.css', array(), '3.0.3' );
 
-	/* Translators: If there are characters in your language that are not
-	 * supported by Lora, translate this to 'off'. Do not translate into your
-	 * own language.
-	 */
+	// Fonts.
+	$fonts_url = bexley_fonts();
 
-	$font = _x( 'on', 'Google font: on or off', 'bexley' );
-
-	if ( 'off' !== $font ) {
-		wp_enqueue_style( 'bexley-style-font-roboto-slab', 'https://fonts.googleapis.com/css?family=Roboto+Slab:700,300', null, '1.0', 'all' );
+	if ( $fonts_url ) {
+		wp_enqueue_style( 'bexley-fonts', $fonts_url, array(), null );
 	}
 
 	wp_enqueue_script( 'bexley-script-superfish', get_template_directory_uri() . '/js/superfish.js', array( 'jquery' ), '1.0', false );
 	wp_enqueue_script( 'bexley-script-main', get_template_directory_uri() . '/js/main.js', array( 'jquery', 'masonry' ), '1.0.1', false );
+
+	wp_localize_script(
+		'bexley-script-main',
+		'js_i18n',
+		array(
+			'menu' => esc_html__( 'Menu', 'bexley' ),
+		)
+	);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -47,6 +51,40 @@ function bexley_enqueue() {
 }
 
 add_action( 'wp_enqueue_scripts', 'bexley_enqueue' );
+
+
+/**
+ * Get url for embedding Google fonts.
+ *
+ * Output can be filtered with 'bexley_fonts' filter.
+ *
+ * @return string|boolean Font url or false if there are no fonts.
+ */
+function bexley_fonts() {
+
+	$fonts = array();
+
+	/* translators: If there are characters in your language that are not supported by Roboto Slab, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== esc_html_x( 'on', 'Google font: on or off', 'bexley' ) ) {
+		$fonts['roboto-slab'] = 'Roboto+Slab:700,300';
+	}
+
+	// Filter fonts. Allows them to be disabled/ added to.
+	$fonts = apply_filters( 'bexley_fonts', $fonts );
+
+	if ( $fonts ) {
+		// Build font embed query string.
+		$query_args = array(
+			'family' => rawurlencode( implode( '|', $fonts ) ),
+			'subset' => rawurlencode( 'latin,latin-ext' ),
+		);
+
+		return add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+	}
+
+	return false;
+
+}
 
 
 /**
@@ -71,7 +109,7 @@ function bexley_after_setup_theme() {
 	add_theme_support( 'custom-background', $args );
 
 	// HTML5 FTW.
-	add_theme_support( 'html5', array( 'comment-list', 'search-form', 'comment-form' ) );
+	add_theme_support( 'html5', array( 'comment-list', 'comment-form' ) );
 
 	register_nav_menu( 'top_menu', __( 'Top Menu', 'bexley' ) );
 
@@ -122,7 +160,7 @@ add_action( 'widgets_init', 'bexley_widgets_init' );
  */
 function bexley_excerptmore( $more ) {
 
-	return '... <a href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'Read More', 'bexley' ) . '</a>';
+	return '&hellip; <a href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'Read More', 'bexley' ) . '</a>';
 
 }
 
@@ -154,44 +192,6 @@ function bexley_add_menu_class( $ulclass ) {
 
 
 /**
- * Numeric pagination for custom queries
- * Much nicer than next and previous links :)
- *
- * @global type $wp_query
- * @param type $pageCount
- * @param type $query
- * @return type
- */
-function bexley_numeric_pagination ($pageCount = 9, $query = null) {
-
-	if ( null == $query ) {
-		global $wp_query;
-		$query = $wp_query;
-	}
-
-	if ( 1 >= $query->max_num_pages ) {
-		return;
-	}
-
-	$big = 9999999999; // need an unlikely integer
-
-	echo '<div class="archive-pagination pagination">';
-	echo paginate_links( array(
-		'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-		'format' => '?paged=%#%',
-		'current' => max( 1, get_query_var('paged') ),
-		'total' => $query->max_num_pages,
-		'end_size' => 0,
-		'mid_size' => $pageCount,
-		'next_text' => __( 'Older &rsaquo;', 'bexley' ),
-		'prev_text' => __( '&lsaquo; Newer', 'bexley' )
-	) );
-	echo '</div>';
-
-}
-
-
-/**
  * Add extra body classes
  *
  * @param array $classes List of classes to modify.
@@ -211,7 +211,7 @@ function bexley_body_class( $classes ) {
 		$classes[] = 'has-custom-header';
 	}
 
-	$classes[] = 'title-alignment-' . get_theme_mod( 'bexley_title_alignment', 0 );
+	$classes[] = 'title-alignment-' . esc_attr( get_theme_mod( 'bexley_title_alignment', 0 ) );
 
 	return $classes;
 

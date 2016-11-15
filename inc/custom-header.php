@@ -55,7 +55,7 @@ function bexley_colour_styles() {
 	.masthead .branding h1.logo a,
 	.masthead .branding h1.logo a:hover,
 	.masthead .branding h2.description {
-		color:#<?php echo get_header_textcolor(); ?>;
+		color:#<?php echo esc_attr( get_header_textcolor() ); ?>;
 	}
 <?php
 	}
