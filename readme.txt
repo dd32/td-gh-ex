@@ -1,5 +1,6 @@
 Appointment Blue is the child version of Appointment theme.
-
+@version 1.1.3
+1. Added Spanish Locale
 @version 1.1.2
 1. Solved Responsive issue.
 2. Add Title Tag Support.
