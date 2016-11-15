@@ -92,3 +92,14 @@ function igthemes_color_brightness( $hex, $steps ) {
     $b_hex  = str_pad( dechex( $b ), 2, '0', STR_PAD_LEFT );
     return '#' . $r_hex . $g_hex . $b_hex;
 }
+/*----------------------------------------------------------------------
+# HOME POSTS PER PAGE
+ ----------------------------------------------------------------------*/
+function igthemes_home_pagesize( $query ) {
+    if ( !is_admin() && $query->is_main_query() && is_home() ) {
+        // Display only 1 post for the original blog archive
+        $query->set( 'posts_per_page', get_theme_mod('home_posts_per_page','12') );
+        return;
+    }
+}
+add_action( 'pre_get_posts', 'igthemes_home_pagesize', 10 );

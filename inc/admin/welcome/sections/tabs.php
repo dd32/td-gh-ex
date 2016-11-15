@@ -12,4 +12,5 @@
 <h2 class="igthemes-nav-tab nav-tab-wrapper">
     <a href="#getting_started" class="nav-tab nav-tab-active"><?php esc_html_e( 'Getting Started', 'base-wp' ); ?></a>
     <a href="#wp_resources" class="nav-tab"><?php esc_html_e( 'Resources', 'base-wp' ); ?></a>
+    <a href="#system_info" class="nav-tab"><?php esc_html_e( 'System Info', 'base-wp' ); ?></a>
 </h2>

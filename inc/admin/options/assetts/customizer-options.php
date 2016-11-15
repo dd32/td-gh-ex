@@ -1,5 +1,161 @@
 <?php
 /*****************************************************************
+* HOME SETTINGS
+******************************************************************/
+//home_heading
+    $wp_customize->add_setting( 'home_heading', array(
+        'sanitize_callback' => 'igthemes_sanitize_textarea',
+    ));
+
+    $wp_customize->add_control( new IGthemes_Heading( $wp_customize, 'home_heading', array(
+         'section' => 'home-settings',
+         'label' => __( 'Posts', 'base-wp' ),
+         'description' => __( '', 'base-wp' ),
+         'active_callback' => 'is_home',
+    ) ) );
+//home_posts_per_page
+    $wp_customize->add_setting( 'home_posts_per_page', array(
+        'default' => '12',
+        'sanitize_callback' => 'igthemes_sanitize_text',
+    ));
+    $wp_customize->add_control('home_posts_per_page', array(
+        'label' => __('', 'base-wp'),
+        'description' => __('Change the number of posts showed in the home page.', 'base-wp'),
+        'type' => 'number',
+        'section' => 'home-settings',
+        'settings' => 'home_posts_per_page',
+        'input_attrs' => array(
+            'style' => 'width: 65px;',
+        ),
+         'active_callback' => 'is_home',
+    ));
+//home_portfolio_heading
+    $wp_customize->add_setting( 'home_portfolio_heading', array(
+        'sanitize_callback' => 'igthemes_sanitize_textarea',
+    ));
+    $wp_customize->add_control( new IGthemes_Heading( $wp_customize, 'home_portfolio_heading', array(
+         'section' => 'home-settings',
+         'label' => __( 'Portfolio section', 'base-wp' ),
+         'description' => __( 'To use this section you must download and install our free <a href="https://wordpress.org/plugins/ig-portfolio/" target="_blank">IG Portfolio</a> plugin.', 'base-wp' ),
+         'active_callback' => 'is_home',
+    ) ) );
+//home_portfolio
+    $wp_customize->add_setting('home_portfolio', array(
+        'sanitize_callback' => 'igthemes_sanitize_checkbox',
+        'default' => 0,
+    ));
+    $wp_customize->add_control('home_portfolio', array(
+        'label' => __('Enable portfolio section?', 'base-wp'),
+        'description' => __('', 'base-wp'),
+        'type' => 'checkbox',
+        'section' => 'home-settings',
+        'settings' => 'home_portfolio',
+        'active_callback' => 'is_home',
+    ));
+//home_portfolio_title
+    $wp_customize->add_setting('home_portfolio_title', array(
+        'default' => __('Our new projects', 'base-wp'),
+        'sanitize_callback' => 'igthemes_sanitize_textarea',
+    ));
+    $wp_customize->add_control('home_portfolio_title', array(
+        'label' => __('', 'base-wp'),
+        'description' => __('Section title', 'base-wp'),
+        'type' => 'text',
+        'section' => 'home-settings',
+        'settings' => 'home_portfolio_title',
+        'active_callback' => 'is_home',
+    ));
+//home_portfolio_description
+    $wp_customize->add_setting('home_portfolio_description', array(
+        'sanitize_callback' => 'igthemes_sanitize_text',
+        'default' => __('See our latest works!', 'base-wp'),
+         'active_callback' => 'is_home',
+    ));
+    $wp_customize->add_control('home_portfolio_description', array(
+        'label' => __('', 'base-wp'),
+        'description' => __('Section description', 'base-wp'),
+        'type' => 'textarea',
+        'section' => 'home-settings',
+        'settings' => 'home_portfolio_description',
+        'active_callback' => 'is_home',
+    ));
+//home_portfolio_tax
+    $wp_customize->add_setting( 'home_portfolio_tax', array(
+        'default' => '',
+        'sanitize_callback' => 'igthemes_sanitize_text',
+    ));
+    $wp_customize->add_control('home_portfolio_tax', array(
+        'label' => __('', 'base-wp'),
+        'description' => __('Write the slug of the category you want to show', 'base-wp'),
+        'type' => 'text',
+        'section' => 'home-settings',
+        'settings' => 'home_portfolio_tax',
+        'active_callback' => 'is_home',
+    ));
+//home_testimonials_heading
+    $wp_customize->add_setting( 'home_testimonials_heading', array(
+        'sanitize_callback' => 'igthemes_sanitize_textarea',
+    ));
+
+    $wp_customize->add_control( new IGthemes_Heading( $wp_customize, 'home_testimonials_heading', array(
+         'section' => 'home-settings',
+         'label' => __( 'Testimonials section', 'base-wp' ),
+         'description' => __( 'To use this section you must download and install our free <a href="https://wordpress.org/plugins/ig-testimonals/" target="_blank">IG Testimonials</a> plugin.', 'base-wp' ),
+         'active_callback' => 'is_home',
+    ) ) );
+//home_testimonials
+    $wp_customize->add_setting('home_testimonials', array(
+        'sanitize_callback' => 'igthemes_sanitize_checkbox',
+        'default' => 0,
+    ));
+    $wp_customize->add_control('home_testimonials', array(
+        'label' => __('Enable testimonials section?', 'base-wp'),
+        'description' => __('', 'base-wp'),
+        'type' => 'checkbox',
+        'section' => 'home-settings',
+        'settings' => 'home_testimonials',
+        'active_callback' => 'is_home',
+    ));
+//home_testimonials_title
+    $wp_customize->add_setting('home_testimonials_title', array(
+        'default' => __('What our clients says', 'base-wp'),
+         'sanitize_callback' => 'igthemes_sanitize_textarea',
+    ));
+    $wp_customize->add_control('home_testimonials_title', array(
+        'label' => esc_html__('', 'base-wp'),
+        'description' => __('Section title', 'base-wp'),
+        'type' => 'text',
+        'section' => 'home-settings',
+        'settings' => 'home_testimonials_title',
+        'active_callback' => 'is_home',
+    ));
+//home_testimonials_description
+    $wp_customize->add_setting('home_testimonials_description', array(
+        'sanitize_callback' => 'igthemes_sanitize_text',
+        'default' => __('We make every thing with best quality, our customers and partners are very happy!', 'base-wp'),
+    ));
+    $wp_customize->add_control('home_testimonials_description', array(
+        'label' => __('', 'base-wp'),
+        'description' => __('Section description', 'base-wp'),
+        'type' => 'textarea',
+        'section' => 'home-settings',
+        'settings' => 'home_testimonials_description',
+        'active_callback' => 'is_home',
+    ));
+//home_testimonials_tax
+    $wp_customize->add_setting( 'home_testimonials_tax', array(
+        'default' => '',
+        'sanitize_callback' => 'igthemes_sanitize_text',
+    ));
+    $wp_customize->add_control('home_testimonials_tax', array(
+        'label' => __('', 'base-wp'),
+        'description' => __('Write the slug of the category you want to show', 'base-wp'),
+        'type' => 'text',
+        'section' => 'home-settings',
+        'settings' => 'home_testimonials_tax',
+        'active_callback' => 'is_home',
+    ));
+/*****************************************************************
 * LAYOUT SETTINGS
 ******************************************************************/
 //Images

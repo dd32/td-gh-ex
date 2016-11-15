@@ -100,7 +100,7 @@ class IGthemes_Heading extends WP_Customize_Control {
             <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
         <?php endif; ?>
         <?php if ( ! empty( $this->description ) ) : ?>
-            <span class="customize-control-description"><?php echo esc_html( $this->description );  ?></span>
+            <span class="customize-control-description"><?php _e( $this->description );  ?></span>
         <?php endif; ?>
     <?php
     }
