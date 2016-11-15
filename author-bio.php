@@ -2,11 +2,11 @@
 /**
  * The template for displaying Author bios.
  *
- * @package	Anarcho Notepad
- * @since	2.3
- * @author	Arthur (Berserkr) Gareginyan <arthurgareginyan@gmail.com>
- * @copyright 	Copyright (c) 2013-2014, Arthur Gareginyan
- * @link      	http://mycyberuniverse.tk/anarcho-notepad.html
+ * @package     Anarcho Notepad
+ * @since       2.5
+ * @author      Arthur Gareginyan <arthurgareginyan@gmail.com>
+ * @copyright 	Copyright (c) 2013-2016, Arthur Gareginyan
+ * @link      	http://mycyberuniverse.com/anarcho-notepad.html
  * @license   	http://www.gnu.org/licenses/gpl-3.0.html
  */
 ?>
