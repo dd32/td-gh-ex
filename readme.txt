@@ -1,7 +1,7 @@
 Appointment Theme README.
 
-A Free Orange colored Business Blog theme that supports Primary menu's , Primary sidebar,Four widgets area at the footer region,Post Metaetc. 
-It has a perfect design that's great for any Business/Firms  Blogs who wants a new look for their site. Three page templates Blog, Full Widht Page and Contact Page. 
+Appointment WordPress Theme is a fully responsive and translation ready theme that allows you to create stunning blogs and websites. Theme is well suited for companies, law firms, travel, photography, recipe, design, art, personal and any other creative websites and blogs. The theme is developed using Bootstrap 3 that makes it mobile and tablets friendly. It has various options in WordPress Customizer to change look of the theme. Theme customizer can be used to add your own custom header, favicon, logo, slides, services, callout and many more . In the premium version you can add different type of slides like video, aside, quote, status and standard all have a different HTML look. Number of inbuilt widgets, sidebars support for WPML, Polylang translation WordPress Plugins, Contact Form 7, portfolio template, contact us , portfolio column layouts and many sections on business homepage template. Appointment theme comes with Spanish translation. Other translations / locals yet to come. Just navigate to Appearance > Customize to start customizing.
+ 
 Appointment supports featured post slider based on the concept of custom post types.
 Author: Priyanshu Mittal,Shahid Mansuri,Vibhore Purandey and Akhilesh Nagar.
 Theme Homepage Url: http://www.appointpress.com/theme/appointment
@@ -94,6 +94,8 @@ Source: http://fontawesome.io
 
 # --- EOF --- #
 ============================Change Log================================
+@Version 2.5.4
+1. Added Spanish Locale
 @Version 2.5.3
 1. Allow HTML on Home page section title & Description.
 @Version 2.5.2
