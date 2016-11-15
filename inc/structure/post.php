@@ -24,31 +24,132 @@ if ( ! function_exists( 'actions_post_header' ) ) {
 	}
 }
 
+if ( ! function_exists( 'actions_search_header' ) ) {
+	/**
+	 * Display the post header with a link to the single post
+	 * @since 1.0.0
+	 */
+	function actions_search_header() { 
+		if ( is_search() ) { ?>
+		<header class="page-header">
+			<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'actions' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
+		</header><!-- .page-header -->
+	<?php }
+	}
+}
+
+if ( ! function_exists( 'actions_archive_title' ) ) {
+/**
+ * Build the archive title
+ *
+ * @since 1.3.24
+ */
+	function actions_archive_title() {
+	
+	?>
+	<header class="page-header<?php if ( is_author() ) echo ' clearfix';?>">
+		<?php do_action( 'actions_before_archive_title' ); ?>
+		<h1 class="page-title">
+			<?php
+				if ( is_category() ) :
+					single_cat_title();
+
+				elseif ( is_tag() ) :
+					single_tag_title();
+
+				elseif ( is_author() ) :
+					/* Queue the first post, that way we know
+					 * what author we're dealing with (if that is the case).
+					*/
+					the_post();
+					echo get_avatar( get_the_author_meta( 'ID' ), 75 );
+					printf( '<span class="vcard">' . get_the_author() . '</span>' );
+					/* Since we called the_post() above, we need to
+					 * rewind the loop back to the beginning that way
+					 * we can run the loop properly, in full.
+					 */
+					rewind_posts();
+
+				elseif ( is_day() ) :
+					printf( __( 'Day: %s', 'actions' ), '<span>' . get_the_date() . '</span>' );
+
+				elseif ( is_month() ) :
+					printf( __( 'Month: %s', 'actions' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
+
+				elseif ( is_year() ) :
+					printf( __( 'Year: %s', 'actions' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
+
+				elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
+					_e( 'Asides', 'actions' );
+
+				elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
+					_e( 'Images', 'actions');
+
+				elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
+					_e( 'Videos', 'actions' );
+
+				elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
+					_e( 'Quotes', 'actions' );
+
+				elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
+					_e( 'Links', 'actions' );
+
+				else :
+					//_e( 'Archives', 'actions' );
+
+				endif;
+			?>
+		</h1>
+		<?php do_action( 'actions_after_archive_title' ); ?>
+		<?php
+			// Show an optional term description.
+			$term_description = term_description();
+			if ( ! empty( $term_description ) ) :
+				printf( '<div class="taxonomy-description">%s</div>', $term_description );
+			endif;
+			
+			if ( get_the_author_meta('description') && is_author() ) : // If a user has filled out their decscription show a bio on their entries
+				echo '<div class="author-info">' . get_the_author_meta('description') . '</div>';
+			endif;
+		?>
+		<?php do_action( 'actions_after_archive_description' ); ?>
+	</header><!-- .page-header -->
+	<?php
+	}
+}
+
+if ( ! function_exists( 'actions_post_meta' ) ) {
+	/**
+	 * Display the post content with a link to the single post
+	 * @since 1.0.0
+	 */
+	function actions_post_meta() {
+		if ( 'post' == get_post_type() ) { ?>
+			<div class="entry-meta">
+			    <?php actions_posted_on(); ?>
+			</div>
+	<?php }
+	}
+}	
+
 if ( ! function_exists( 'actions_post_content' ) ) {
 	/**
 	 * Display the post content with a link to the single post
 	 * @since 1.0.0
 	 */
 	function actions_post_content() { 
-	    if ( is_search() ) { ?>		
-		
-		    <header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'actions' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
-		
-		<?php }
+	    do_action( 'post_while_before' );
 		
 		while ( have_posts() ) : the_post(); ?>
 		    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		        <?php actions_post_header(); ?>
+		        <?php do_action('post_header' ); ?>
 		        <div class="entry-content">
 		        <?php
-		            actions_post_thumbnail( 'full' );
-		            if ( 'post' == get_post_type() ) { ?>
-			            <div class="entry-meta">
-			               <?php actions_posted_on(); ?>
-			            </div>
-	            <?php }
+				/*
+				 * @see  actions_post_thumbnail()
+				 * @see  actions_post_meta()
+				 */
+		        do_action( 'entry_top' );		            
 
 		        if ( is_search() ) {
 					the_excerpt();
@@ -65,7 +166,7 @@ if ( ! function_exists( 'actions_post_content' ) ) {
 			        'before' => '<div class="page-links">' . __( 'Pages:', 'actions' ),
 			        'after'  => '</div>',
 		        ) );
-		        //actions_entry_footer(); ?>
+		        ?>
 		        </div><!-- .entry-content -->
 		    </article><!-- #post-## -->
         <?php 

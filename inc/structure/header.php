@@ -15,20 +15,33 @@ if ( ! function_exists( 'actions_site_branding' ) ) {
 		
 	?>
 		<div class="main">
-			<div class="header-elements">
-				<?php actions_the_custom_logo(); ?>					
-				<span class="site-title">
-					<?php 
-					$title = get_bloginfo('name');
-					$description = get_bloginfo( 'description'); ?>						
+			<div class="header-elements">				
+				<div class="header-title">
+					<?php actions_the_custom_logo(); ?>
+					<span class="site-title">
+					<?php					
+						$title = get_bloginfo('name');
+						$description = get_bloginfo( 'description'); ?>						
 						<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( $description ); ?>" alt="<?php echo esc_attr( $title ); ?>">
 							<?php bloginfo( 'name' ); ?>
 						</a>
-				</span>
+					</span>
+				</div>
+				<?php do_action( 'actions_header_extras' ) ?>
 			</div>
 		</div>
 			
 	<?php 
+	}
+}
+
+if ( ! function_exists( 'actions_header_widget' ) ) {
+	function actions_header_widget() {
+		if ( is_active_sidebar( 'sidebar-header' )  ) { ?>
+			<div id="secondary" class="widget-area" role="complementary">					 
+	            <?php dynamic_sidebar( 'sidebar-header' ); ?>
+			</div><!-- .sidebar .widget-area -->
+		<?php }
 	}
 }
 

@@ -121,6 +121,16 @@ function actions_widgets_init() {
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
+	
+	register_sidebar( array(
+		'name'          => __( 'Header Widget', 'actions' ),
+		'id'            => 'sidebar-header',
+		'description'   => __('Ideal for that extra CTA button, a search box or some extra infor above the fold. Only add 1 widget!', 'actions' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
 }
 
 if ( ! function_exists( 'actions_fonts_url' ) ) :
@@ -182,39 +192,35 @@ add_action( 'wp_head', 'actions_javascript_detection', 0 );
  */
 function actions_scripts() {
 	global $actions_version;
+	$parent_style = 'actions-style'; // This is 'actions-style' for the Actions theme.
+	$child_style = 'actions-child-style';
 	
 	// Add custom fonts, used in the main stylesheet.
 	wp_enqueue_style( 'actions-fonts', actions_fonts_url(), array(), null );
 
 	// Add Genericons, used in the main stylesheet.
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.6.1' );
+	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/assets/genericons/genericons.css', array(), '3.6.1' );
 
-	wp_enqueue_style( 'actions-style', get_template_directory_uri() . '/style.css', '', $actions_version );
+	//wp_enqueue_style( 'actions-style', get_template_directory_uri() . '/style.css', '', $actions_version );
+	if ( wp_get_theme()->get('Name') != 'Actions' ) {
+		wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css', array(), $actions_version );
+		wp_enqueue_style( $child_style, get_stylesheet_directory_uri() . '/style.css', array( $parent_style ), $actions_version );
+	} else {
+		wp_enqueue_style( $parent_style, get_stylesheet_uri(), array(), $actions_version );
+	}
 
 	wp_style_add_data( 'actions-rtl', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'actions-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'actions-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 	
-	wp_enqueue_script( 'actions-script', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '20160816', true );
+	wp_enqueue_script( 'actions-script', get_template_directory_uri() . '/assets/js/navigation.js', array( 'jquery' ), '20160816', true );
 
 	wp_localize_script( 'actions-script', 'screenReaderText', array(
 		'expand'   => __( 'expand child menu', 'actions' ),
 		'collapse' => __( 'collapse child menu', 'actions' ),
 	) );
-}
-
-/**
- * Enqueue child theme stylesheet.
- * A separate function is required as the child theme css needs to be enqueued _after_ the parent theme
- * primary css and the separate WooCommerce css.
- * @since  1.0.0
- */
-function actions_child_scripts() {
-	if ( is_child_theme() || !is_admin() ) {
-		wp_enqueue_style( 'actions-child-style', get_stylesheet_uri(), '' );
-	}
 }
