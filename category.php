@@ -1,6 +1,6 @@
 <?php
-get_header(); 
-global $wp_query;
+	get_header(); 
+	global $wp_query;
 ?>	
 	<div id="primary" class="content-area">
 		<?PHP
@@ -14,10 +14,11 @@ global $wp_query;
 
 			endwhile;
 	
-		?></main><!-- .site-main -->
+		?></main>
 		<?PHP
 			get_template_part( 'parts/scroll/scroll' );
 		?>
-	</div><!-- .content-area -->
-
-<?php get_footer(); ?>
+	</div>
+<?php 
+	get_footer(); 
+?>

@@ -49,5 +49,5 @@
 		<?php antonine_entry_meta(); ?><br />
 		<?php edit_post_link( __( 'Edit', 'antonine' ), '<span class="edit-link">', '</span>' ); ?><br /><br />
 		<?php antonine_licence(); ?>	
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+	</footer>
+</article>

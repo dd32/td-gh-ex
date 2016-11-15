@@ -1,19 +1,20 @@
 <?php
 
 function antonine_licence(){
-	$license = get_theme_mod("license");
+	$license = esc_html(get_theme_mod("antonine[license]","none"));
+	$text = "";
 	if($license!="none"){
 		switch(get_theme_mod("license")){
-			case 'zero' : $text = 'Creative Commons Zero'; $url = "https://creativecommons.org/publicdomain/zero/1.0/"; break;
-			case 'cc-by' : $text = 'Creative Commons CC-BY'; $url = "https://creativecommons.org/licenses/by/4.0/";	break;	
-			case 'cc-by-sa' : $text = 'Creative Commons CC-BY-SA'; $url = "https://creativecommons.org/licenses/by-sa/4.0/"; break;		
-			case 'cc-by-nd' : $text = 'Creative Commons CC-BY-ND'; $url = "https://creativecommons.org/licenses/by-nd/4.0/"; break;		
-			case 'cc-by-nc' : $text = 'Creative Commons CC-BY-NC'; $url = "https://creativecommons.org/licenses/by-nc/4.0/"; break;		
-			case 'cc-by-nc-sa' : $text = 'Creative Commons CC-BY-NC-SA'; $url = "https://creativecommons.org/licenses/by-nc-sa/4.0/"; break;		
-			case 'cc-by-nc-nd' : $text = 'Creative Commons CC-BY-NC-ND'; $url = "https://creativecommons.org/licenses/by-nc-nd/4.0/"; break;
+			case 'zero' : $text = __('Creative Commons Zero',"antonine"); $url = "https://creativecommons.org/publicdomain/zero/1.0/"; break;
+			case 'cc-by' : $text = __('Creative Commons CC-BY',"antonine"); $url = "https://creativecommons.org/licenses/by/4.0/";	break;	
+			case 'cc-by-sa' : $text = __('Creative Commons CC-BY-SA',"antonine"); $url = "https://creativecommons.org/licenses/by-sa/4.0/"; break;		
+			case 'cc-by-nd' : $text = __('Creative Commons CC-BY-ND',"antonine"); $url = "https://creativecommons.org/licenses/by-nd/4.0/"; break;		
+			case 'cc-by-nc' : $text = __('Creative Commons CC-BY-NC',"antonine"); $url = "https://creativecommons.org/licenses/by-nc/4.0/"; break;		
+			case 'cc-by-nc-sa' : $text = __('Creative Commons CC-BY-NC-SA',"antonine"); $url = "https://creativecommons.org/licenses/by-nc-sa/4.0/"; break;		
+			case 'cc-by-nc-nd' : $text = __('Creative Commons CC-BY-NC-ND',"antonine"); $url = "https://creativecommons.org/licenses/by-nc-nd/4.0/"; break;
 		}
 		if(trim($text)!=""){
-					?><p><a rel="license" href="<?PHP echo $url; ?>"><?PHP echo __("Content licensed as","antonine") . " " . $text; ?></a></p><?PHP
+			?><p><a rel="license" href="<?PHP echo $url; ?>"><?PHP echo __("Content licensed as","antonine") . " " . $text; ?></a></p><?PHP
 		}
 	}
 }
@@ -42,44 +43,12 @@ function antonine_get_categories_links($id){
 	}
 	
 	if(count($html)==0){
-		$html[] = __("No Categories", "antonine");
+		$html[] = esc_html(__("No Categories", "antonine"));
 	}
 	
 	return $html;
 
 }
-
-function antonine_get_tags($id){
-
-	$post_tags = wp_get_post_tags($id);
-	$cats = array();
-		
-	foreach($post_tags as $c){
-		$cat = get_tag( $c );
-		$cats[] = array( 'name' => $cat->name, 'slug' => $cat->slug, 'link' => get_tag_link($c) );
-	}
-	
-	return $cats;
-
-}
-
-function antonine_get_tags_links($id){
-
-	$html = array();
-	$cats = antonine_get_tags($id);
-	
-	foreach($cats as $cat){
-		$html[] = "span property='subject'><a property='name' href='" . $cat['link'] ."'>" . $cat['name'] . "</a></span>";
-	}
-	
-	if(count($html)==0){
-		$html[] = __("No Tags", "antonine");
-	}
-	
-	return $html;
-
-}
-
 
 function antonine_author_meta() {
 
@@ -146,30 +115,6 @@ function antonine_author_title(){
 
 }
 
-function antonine_child_categories(){
-
-	?><footer class="page-footer">
-		<h1 class="page-title"><?PHP echo __('Related Categories', 'antonine'); ?></h1>
-		<div class="taxonomy-description"><?PHP
-		
-			$category = get_category($_GET['cat']);
-			
-			$childcats = get_categories('child_of=' . $category->parent . '&hide_empty=1&exclude=' . $_GET['cat']);
-			$output = array();
-			foreach ($childcats as $childcat) {
-				if (cat_is_ancestor_of($ancestor, $childcat->cat_ID) == false){
-					$output[] = '<a href="'.get_category_link($childcat->cat_ID).'">' . $childcat->cat_name . '</a>';
-					$ancestor = $childcat->cat_ID;
-				}
-			}
-			
-			echo implode(" / ", $output);
-			
-		?></div>
-	</footer><?PHP
-
-}
-
 function antonine_posts_authors_list($type, $id){
 
 	$the_query = new WP_Query( array($type => $id, 'posts_per_page' => -1) );
@@ -188,17 +133,3 @@ function antonine_posts_authors_list($type, $id){
 	return $authors;
 	
 }
-
-function antonine_posts_authors_html($type, $id){
-
-	$authors = array_unique(antonine_posts_authors_list($type, $id));
-
-	$output = array();
-	foreach($authors as $author){
-		$output[] = "<a href='" . get_author_posts_url($author) . "'>" . ucfirst(get_the_author_meta( 'display_name', $author )) . "</a>";
-	}
-	
-	echo implode(" / ", $output);
-
-}
-

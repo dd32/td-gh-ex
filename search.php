@@ -1,8 +1,8 @@
 <?php
-get_header(); 
-$posts_total = 0;
+	get_header(); 
+	$posts_total = 0;
 
-if(have_posts()){
+	if(have_posts()){
 ?>	
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main"><?PHP
@@ -15,12 +15,12 @@ if(have_posts()){
 
 			endwhile;
 	
-		?></main><!-- .site-main -->
+		?></main>
 		<div id="scroll_bottom" scroll="on" page="<?PHP echo $posts_total; ?>" total_posts="<?PHP echo $posts_total; ?>"></div>
-	</div><!-- .content-area -->
+	</div>
 <?PHP
-}else{
-	?><div id="primary" class="content-area">
+	}else{
+?><div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<div class="no-posts">
 				<?PHP
@@ -33,4 +33,6 @@ if(have_posts()){
 		</main>
 	</div><?PHP
 }?>
-<?php get_footer(); ?>
+<?php 
+	get_footer(); 
+?>

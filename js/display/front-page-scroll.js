@@ -60,6 +60,8 @@ jQuery(document).ready( function(){
 												.html();
 									jQuery("#main")
 										.html(html + "<p class='nomoreposts'>" + response_data.data + "</p>");
+										
+									antonine_preview_link();	
 								}
 								
 							}

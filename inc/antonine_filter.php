@@ -60,8 +60,7 @@
 			}
 			else
 			{
-				print_r($_POST);
-				echo "Nonce failed";
+				echo esc_html(__("Nonce failed","antonine"));
 			}
 			wp_die();
 		}
@@ -89,9 +88,9 @@
 				if($_POST['date']==0){
 					$response->count = count($query->posts);
 					if(count($query->posts)!=1){
-						$response->text = __(" Matching Posts", 'antonine');
+						$response->text = esc_html(__(" Matching Posts", 'antonine'));
 					}else{
-						$response->text = __(" Matching Post", 'antonine');
+						$response->text = esc_html(__(" Matching Post", 'antonine'));
 					}
 				}else{
 					foreach($query->posts as $index => $post){
@@ -101,18 +100,18 @@
 					}
 					$response->count = count($query->posts);
 					if(count($query->posts)!=1){
-						$response->text = __(" Matching Posts", 'antonine');
+						$response->text = esc_html(__(" Matching Posts", 'antonine'));
 					}else{
-						$response->text = __(" Matching Post", 'antonine');
+						$response->text = esc_html(__(" Matching Post", 'antonine'));
 					}
 				}
 				
 				if($_POST['text']==""){
 					$response->count = count($query->posts);
 					if(count($query->posts)!=1){
-						$response->text = __(" Matching Posts", 'antonine');
+						$response->text = esc_html(__(" Matching Posts", 'antonine'));
 					}else{
-						$response->text = __(" Matching Post", 'antonine');
+						$response->text = esc_html(__(" Matching Post", 'antonine'));
 					}
 				}else{
 					foreach($query->posts as $index => $post){
@@ -123,9 +122,9 @@
 					}
 					$response->count = count($query->posts);
 					if(count($query->posts)!=1){
-						$response->text = __(" Matching Posts", 'antonine');
+						$response->text = esc_html(__(" Matching Posts", 'antonine'));
 					}else{
-						$response->text = __(" Matching Post", 'antonine');
+						$response->text = esc_html(__(" Matching Post", 'antonine'));
 					}
 				}
 				
@@ -134,8 +133,7 @@
 			}
 			else
 			{
-				print_r($_POST);
-				echo "Nonce failed";
+				echo esc_html(__("Nonce failed","antonine"));
 			}
 			wp_die();
 		}	

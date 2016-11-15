@@ -1,6 +1,7 @@
 <?php 
 
 	global $query_string;
+	
 	query_posts( $query_string . '&order=ASC&orderby=title' );
 
 	if ( have_posts() ) : 

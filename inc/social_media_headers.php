@@ -19,9 +19,9 @@
 		
 		function display_site_header(){
 		
-			$img = get_theme_mod("sm_logo");
+			$img = get_theme_mod("antonine[sm_logo]", FALSE);
 		
-			if($img!=""){
+			if($img){
 			
 				$info = getimagesize($img);
 			

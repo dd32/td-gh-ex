@@ -14,6 +14,15 @@
 				__( 'Continue reading %s', 'antonine' ),
 				the_title( '<span class="screen-reader-text">', '</span>', false )
 			) );
+			
+			wp_link_pages( array(
+				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'antonine' ) . '</span>',
+				'after'       => '</div>',
+				'link_before' => '<span>',
+				'link_after'  => '</span>',
+				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'antonine' ) . ' </span>%',
+				'separator'   => '<span class="screen-reader-text">, </span>',
+			) );
 		?>
 	</div>
 	
@@ -22,5 +31,5 @@
 		<?php antonine_entry_meta(); ?><br />
 		<?php edit_post_link( __( 'Edit', 'antonine' ), '<span class="edit-link">', '</span>' ); ?><br /><br />
 		<?php antonine_licence(); ?>	
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+	</footer>
+</article>

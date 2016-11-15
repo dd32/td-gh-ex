@@ -2,12 +2,18 @@
 Theme Name: Antonine
 Author: pgogy
 Description: Antonine is a responsive, infinite scrolling theme with a variety of extra features including - facebook-esque notifications, WCAG compliance, new post subscription, fast file access and much more
-Version: 1.07
-Tags: custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, sticky-post, translation-ready
+Version: 1.09
+Tags: custom-colors, custom-menu, editor-style, featured-images, microformats, post-formats, sticky-post, translation-ready
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Author URI: https://pgogywebstuff.com/
-Theme URI: https://pgogywebstuff.com/antonine
 Text Domain: antonine
 css in css/main.css
+
+This theme (Antonine) is copyright Pat Lockley 2016
+This theme is licensed as GPL
+
+The Spectrum JS Library used in the Accessibility code is copyright Brian Grinstead (https://github.com/bgrins)
+This code is licensed as MIT
+
 */

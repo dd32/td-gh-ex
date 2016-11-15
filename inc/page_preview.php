@@ -27,8 +27,7 @@
 			}
 			else
 			{
-				print_r($_POST);
-				echo "Nonce failed";
+				echo esc_html(__("Nonce failed","antonine"));
 			}
 			wp_die();
 		}	

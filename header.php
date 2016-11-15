@@ -2,7 +2,6 @@
 <html <?php language_attributes(); ?> class="no-js">
 <?PHP
 	get_template_part('parts/header/main');
-	get_template_part('parts/header/dc');
 ?>
 <body <?php body_class(); ?>>
 	<div id="page" class="hfeed site">
@@ -16,7 +15,7 @@
 						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?PHP echo get_bloginfo('name'); ?></a></p>
 					<?php endif;
 				?>
-				</div><!-- .site-branding -->
-			</header><!-- .site-header -->
+				</div>
+			</header>
 		</div>
 		<div id="content" class="site-content">

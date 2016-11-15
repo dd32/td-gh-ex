@@ -1,6 +1,6 @@
 <script>(function(){document.documentElement.className='js'})();</script>
 <?php
-	if(get_theme_mod("info")=="on"){
+	if(get_theme_mod("antonine[info]","on")=="on"){
 ?>
 <div id="navMenuHolder" class="holder">
 	<p id='menuClose' class="holderclose"><span><span class="fa fa-times"></span></span></p>
@@ -20,14 +20,7 @@
 </div>
 <?PHP
 	}
-	if(get_theme_mod("share")=="on"){
-?>
-<?PHP
-	get_template_part('parts/menustrip/share/standard');
-?>
-<?PHP
-	}
-	if(get_theme_mod("search")=="on"){
+	if(get_theme_mod("antonine[search]","on")=="on"){
 ?>
 <div id="searchHolder" class="holder">
 	<div id="searchBar" class="holderbar">
@@ -38,7 +31,7 @@
 </div>
 <?PHP
 	}
-	if(get_theme_mod("accessibility")=="on"){
+	if(get_theme_mod("antonine[accessibility]","on")=="on"){
 ?>
 <div id="accessHolder" class="holder">
 	<div id="accessBar" class="holderbar">
@@ -50,7 +43,7 @@
 <?PHP
 	}
 	if(is_home()){
-		if(get_theme_mod("filters")=="on"){
+		if(get_theme_mod("antonine[filters]","on")=="on"){
 ?>
 <div id="filterHolder" class="holder">
 	<p id='filterClose' class="holderclose"><span><span class="fa fa-times"></span></span></p>
@@ -63,7 +56,7 @@
 <?PHP
 		}
 	}
-	if(get_theme_mod("comments")=="on"){
+	if(get_theme_mod("antonine[comments]","on")=="on"){
 ?>
 <div id="commentsHolder" class="holder">
 	<div id="commentsBar" class="holderbar">
@@ -74,7 +67,7 @@
 </div>
 <?PHP
 	}
-	if(get_theme_mod("info")=="on"){
+	if(get_theme_mod("antonine[info]","on")=="on"){
 ?>
 <div id="infoHolder" class="holder">
 	<div id="infoBar" class="holderbar">
@@ -85,29 +78,7 @@
 </div>
 <?PHP
 	}
-	if(get_theme_mod("subscribe")=="on"){
-?>
-<div id="subscribeHolder" class="holder">
-	<div id="subscribeBar" class="holderbar">
-		<?PHP
-			get_template_part('parts/menustrip/subscribe/standard');
-		?>
-	</div>
-</div>
-<?PHP
-	}
-	if(get_theme_mod("updates")=="on"){
-?>
-<div id="updatesHolder" class="holder">
-	<div id="updatesBar" class="holderbar">
-		<?PHP
-			get_template_part('parts/menustrip/update/standard');
-		?>
-	</div>
-</div>
-<?PHP
-	}
-	if(get_theme_mod("widgets")=="on"){
+	if(get_theme_mod("antonine[widgets]","on")=="on"){
 ?>
 <div id="widgetsHolder" class="holder">
 	<div id="widgetsBar" class="holderbar">
@@ -118,7 +89,7 @@
 </div>
 <?PHP
 	}
-	if(get_theme_mod("files")=="on"){
+	if(get_theme_mod("antonine[files]","on")=="on"){
 ?>
 <div id="filesHolder" class="holder">
 	<div id="filesBar" class="holderbar">

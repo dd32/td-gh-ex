@@ -1,4 +1,6 @@
-<?php if ( have_posts() ) : 
+<?php 
+
+if ( have_posts() ) : 
 
 	antonine_author_title();
 	

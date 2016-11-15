@@ -36,18 +36,18 @@
 								<a href="<?PHP echo get_comment_author_url($comment->comment_ID); ?>" rel="external nofollow" class="url"><?PHP echo get_comment_author($comment->comment_ID); ?></a>
 							</span> 
 							<span class="says"><?PHP echo __("comments", "antonine"); ?>:</span>	
-						</div><!-- .comment-author -->
+						</div>
 						<div class="comment-metadata">
 							<a href="<?PHP echo get_permalink(get_the_id()); ?>?cpage=<?PHP echo $wp_query->query['cpage']; ?>#comment-<?PHP echo $comment->comment_ID; ?>" >
 								<time datetime="<?PHP echo str_replace($comment->comment_date_gmt," ","T") ?>+00:00">
 									<?PHP echo comment_date(); ?>						
 								</time>
 							</a>
-						</div><!-- .comment-metadata -->
-					</footer><!-- .comment-meta -->
+						</div>
+					</footer>
 					<div class="comment-content">
 						<p><?PHP echo get_comment_text( $comment->comment_ID ); ?></p>
-					</div><!-- .comment-content -->
+					</div>
 					<div class="reply">
 						<a rel="nofollow" class="comment-reply-link" href="<?PHP 
 
@@ -60,17 +60,17 @@
 
 									echo $link;
 
-									?><?PHP echo $char; ?>cpage=<?PHP echo $wp_query->query['cpage']; ?>&replytocom=<?PHP echo $comment->comment_ID; ?>#respond" aria-label="<?PHP echo __("Reply to", "antonine"); ?> <?PHP get_comment_author($comment->comment_ID); ?>">
+									?><?PHP echo $char; ?>cpage=<?PHP echo $wp_query->query['cpage']; ?>&replytocom=<?PHP echo $comment->comment_ID; ?>#respond" aria-label="<?PHP echo esc_html(__("Reply to", "antonine")); ?> <?PHP get_comment_author($comment->comment_ID); ?>">
 							<?PHP echo __("Reply to", "antonine"); ?> <?PHP echo get_comment_author($comment->comment_ID); ?>
 						</a>
 					</div>
-				</article><!-- .comment-body -->
+				</article>
 			</li>	
 			<?PHP
 		}
 
 		?>
-		</ol><!-- .comment-list -->
+		</ol>
 	<?PHP
 		echo paginate_comments_links( 
 					array(
@@ -81,7 +81,6 @@
 					);
 		?>
 	<?PHP
-		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'antonine' ); ?></p>
@@ -104,4 +103,4 @@
 		$comment_form = str_replace("novalidate", "", $comment_form);
 		echo $comment_form;
 	?>
-</div><!-- .comments-area -->
+</div>

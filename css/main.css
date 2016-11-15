@@ -1141,5 +1141,9 @@ html body .sp-replacer{
 	width:75%;
 	margin: 0 12.5%;
 }
+
+section.error-404 header.page-header{
+	text-align:center;
+}	
 	
 .sticky{}

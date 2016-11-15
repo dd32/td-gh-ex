@@ -23,4 +23,4 @@
 			<?PHP echo __("Read more", "antonine"); ?>
 		</div>
 	</div>
-</article><!-- #post-## -->
+</article>

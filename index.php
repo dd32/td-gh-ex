@@ -1,5 +1,5 @@
 <?php
-get_header(); 
+	get_header(); 
 ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main" tabindex="-1"><?PHP
@@ -7,7 +7,7 @@ get_header();
 			get_template_part( 'parts/home/all_posts'); 
 		
 		?>
-		</main><!-- .site-main -->
+		</main>
 		<div id="scroll_bottom" <?PHP
 			foreach($wp_query->query_vars as $name => $value){
 				
@@ -19,5 +19,7 @@ get_header();
 				}
 			}
 		?> scroll="on" page="<?PHP echo $wp_query->query_vars['posts_per_page']; ?>"></div>
-	</div><!-- .content-area -->
-<?php get_footer(); ?>
+	</div>
+<?php 
+	get_footer(); 
+?>

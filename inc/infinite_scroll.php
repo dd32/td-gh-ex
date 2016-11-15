@@ -47,15 +47,14 @@
 					echo json_encode($response);
 				}else{
 					$response->end = true;
-					$response->data = __("No more posts", 'antonine');
+					$response->data = esc_html(__("No more posts", 'antonine'));
 					echo json_encode($response);
 				}
 				
 			}
 			else
 			{
-				print_r($_POST);
-				echo "Nonce failed";
+				echo esc_html(__("Nonce failed","antonine"));
 			}
 			wp_die();
 		}	

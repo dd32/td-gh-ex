@@ -1,6 +1,6 @@
 <?php
-get_header(); 
-global $wp_query;
+	get_header(); 
+	global $wp_query;
 ?>	
 	<div id="primary" class="content-area">
 		<div class="paginationNumbers">
@@ -22,7 +22,7 @@ global $wp_query;
 
 			endwhile;
 	
-		?></main><!-- .site-main -->
+		?></main>
 		<div id="scroll_bottom" <?PHP
 			foreach($wp_query->query_vars as $name => $value){
 				
@@ -34,6 +34,7 @@ global $wp_query;
 				}
 			}
 		?> scroll="on" page="<?PHP echo $wp_query->query_vars['posts_per_page']; ?>"></div>
-	</div><!-- .content-area -->
-
-<?php get_footer(); ?>
+	</div>
+<?php 
+	get_footer(); 
+?>

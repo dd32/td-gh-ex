@@ -16,22 +16,28 @@ function antonine_customize_register_social_media( $wp_customize ){
 	$wp_customize->add_section( 'social_media' , array(
 		'title'       => __( 'Social Media Logo', 'antonine' ),
 		'priority'    => 30,
-		'description' => 'Upload a logo',
+		'description' => __('Upload a logo','antonine'),
 	) );
 
 	$wp_customize->add_setting( 
-		'sm_logo',
+		'antonie[sm_logo]',
 		array(
 			'default' => 'on',
 			'sanitize_callback' => 'antonine_sanitize_file',
 		)
 	);
 
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'sm_logo', array(
-		'label'    => __( 'Logo', 'antonine' ),
-		'section'  => 'social_media',
-		'settings' => 'sm_logo',
-	) ) );
+	$wp_customize->add_control( 
+		new WP_Customize_Image_Control( 
+			$wp_customize, 
+			'antonine[sm_logo]', 
+			array(
+				'label'    => __( 'Logo', 'antonine' ),
+				'section'  => 'social_media',
+				'settings' => 'antonine[sm_logo]',
+			) 
+		) 
+	);
 }
 
 function antonine_customize_register_scroll_layout( $wp_customize ){
@@ -42,7 +48,7 @@ function antonine_customize_register_scroll_layout( $wp_customize ){
 	) );
 	
 	$wp_customize->add_setting(
-		'scroll',
+		'antonine[scroll]',
 		array(
 			'default' => 'on',
 			'sanitize_callback' => 'antonine_sanitize_radio',
@@ -50,10 +56,10 @@ function antonine_customize_register_scroll_layout( $wp_customize ){
 	);
 	 
 	$wp_customize->add_control(
-		'scroll',
+		'antonine[scroll]',
 		array(
 			'type' => 'radio',
-			'label' => 'Show scroll to top',
+			'label' => __('Show scroll to top','antonine'),
 			'section' => 'scroll_layout',
 			'choices' => array(
 				'on' => 'On',
@@ -64,7 +70,6 @@ function antonine_customize_register_scroll_layout( $wp_customize ){
 		
 }
 
-
 function antonine_customize_register_menu_layout( $wp_customize ){
 
 	$wp_customize->add_section( 'menu_layout' , array(
@@ -73,7 +78,7 @@ function antonine_customize_register_menu_layout( $wp_customize ){
 	) );
 	
 	$wp_customize->add_setting(
-		'info',
+		'antonine[info]',
 		array(
 			'default' => 'on',
 			'sanitize_callback' => 'antonine_sanitize_radio',
@@ -81,10 +86,10 @@ function antonine_customize_register_menu_layout( $wp_customize ){
 	);
 	 
 	$wp_customize->add_control(
-		'info',
+		'antonine[info]',
 		array(
 			'type' => 'radio',
-			'label' => 'Display info',
+			'label' => __('Display info','antonine'),
 			'section' => 'menu_layout',
 			'choices' => array(
 				'on' => 'On',
@@ -94,7 +99,7 @@ function antonine_customize_register_menu_layout( $wp_customize ){
 	);
 	
 	$wp_customize->add_setting(
-		'share',
+		'antonine[menu]',
 		array(
 			'default' => 'on',
 			'sanitize_callback' => 'antonine_sanitize_radio',
@@ -102,31 +107,10 @@ function antonine_customize_register_menu_layout( $wp_customize ){
 	);
 	 
 	$wp_customize->add_control(
-		'share',
+		'antonine[menu]',
 		array(
 			'type' => 'radio',
-			'label' => 'Display social media share',
-			'section' => 'menu_layout',
-			'choices' => array(
-				'on' => 'On',
-				'off' => 'Off'		
-			),
-		)
-	);
-	
-	$wp_customize->add_setting(
-		'menu',
-		array(
-			'default' => 'on',
-			'sanitize_callback' => 'antonine_sanitize_radio',
-		)
-	);
-	 
-	$wp_customize->add_control(
-		'menu',
-		array(
-			'type' => 'radio',
-			'label' => 'Display menu',
+			'label' => __('Display menu','antonine'),
 			'section' => 'menu_layout',
 			'choices' => array(
 				'on' => 'On',
@@ -137,7 +121,7 @@ function antonine_customize_register_menu_layout( $wp_customize ){
 	
 	
 	$wp_customize->add_setting(
-		'search',
+		'antonine[search]',
 		array(
 			'default' => 'on',
 			'sanitize_callback' => 'antonine_sanitize_radio',
@@ -145,10 +129,31 @@ function antonine_customize_register_menu_layout( $wp_customize ){
 	);
 	 
 	$wp_customize->add_control(
-		'search',
+		'antonine[search]',
 		array(
 			'type' => 'radio',
-			'label' => 'Display search',
+			'label' => __('Display search','antonine'),
+			'section' => 'menu_layout',
+			'choices' => array(
+				'on' => 'On',
+				'off' => 'Off'		
+			),
+		)
+	);
+	
+	$wp_customize->add_setting(
+		'antonine[filters]',
+		array(
+			'default' => 'on',
+			'sanitize_callback' => 'antonine_sanitize_radio',
+		)
+	);
+	 
+	$wp_customize->add_control(
+		'antonine[filters]',
+		array(
+			'type' => 'radio',
+			'label' => __('Display filters','antonine'),
 			'section' => 'menu_layout',
 			'choices' => array(
 				'on' => 'On',
@@ -159,7 +164,7 @@ function antonine_customize_register_menu_layout( $wp_customize ){
 	
 	
 	$wp_customize->add_setting(
-		'updates',
+		'antonine[comments]',
 		array(
 			'default' => 'on',
 			'sanitize_callback' => 'antonine_sanitize_radio',
@@ -167,10 +172,10 @@ function antonine_customize_register_menu_layout( $wp_customize ){
 	);
 	 
 	$wp_customize->add_control(
-		'updates',
+		'antonine[comments]',
 		array(
 			'type' => 'radio',
-			'label' => 'Display updates',
+			'label' => __('Display comments','antonine'),
 			'section' => 'menu_layout',
 			'choices' => array(
 				'on' => 'On',
@@ -181,7 +186,7 @@ function antonine_customize_register_menu_layout( $wp_customize ){
 	
 	
 	$wp_customize->add_setting(
-		'filters',
+		'antonine[widgets]',
 		array(
 			'default' => 'on',
 			'sanitize_callback' => 'antonine_sanitize_radio',
@@ -189,54 +194,10 @@ function antonine_customize_register_menu_layout( $wp_customize ){
 	);
 	 
 	$wp_customize->add_control(
-		'filters',
+		'antonine[widgets]',
 		array(
 			'type' => 'radio',
-			'label' => 'Display filters',
-			'section' => 'menu_layout',
-			'choices' => array(
-				'on' => 'On',
-				'off' => 'Off'		
-			),
-		)
-	);
-	
-	
-	$wp_customize->add_setting(
-		'comments',
-		array(
-			'default' => 'on',
-			'sanitize_callback' => 'antonine_sanitize_radio',
-		)
-	);
-	 
-	$wp_customize->add_control(
-		'comments',
-		array(
-			'type' => 'radio',
-			'label' => 'Display comments',
-			'section' => 'menu_layout',
-			'choices' => array(
-				'on' => 'On',
-				'off' => 'Off'		
-			),
-		)
-	);
-	
-	
-	$wp_customize->add_setting(
-		'widgets',
-		array(
-			'default' => 'on',
-			'sanitize_callback' => 'antonine_sanitize_radio',
-		)
-	);
-	 
-	$wp_customize->add_control(
-		'widgets',
-		array(
-			'type' => 'radio',
-			'label' => 'Display widgets',
+			'label' => __('Display widgets','antonine'),
 			'section' => 'menu_layout',
 			'choices' => array(
 				'on' => 'On',
@@ -248,7 +209,7 @@ function antonine_customize_register_menu_layout( $wp_customize ){
 	
 	
 	$wp_customize->add_setting(
-		'files',
+		'antonine[files]',
 		array(
 			'default' => 'on',
 			'sanitize_callback' => 'antonine_sanitize_radio',
@@ -256,10 +217,10 @@ function antonine_customize_register_menu_layout( $wp_customize ){
 	);
 	 
 	$wp_customize->add_control(
-		'files',
+		'antonine[files]',
 		array(
 			'type' => 'radio',
-			'label' => 'Display files',
+			'label' => __('Display files','antonine'),
 			'section' => 'menu_layout',
 			'choices' => array(
 				'on' => 'On',
@@ -269,7 +230,7 @@ function antonine_customize_register_menu_layout( $wp_customize ){
 	);
 	
 	$wp_customize->add_setting(
-		'accessibility',
+		'antonine[accessibility]',
 		array(
 			'default' => 'on',
 			'sanitize_callback' => 'antonine_sanitize_radio',
@@ -277,10 +238,10 @@ function antonine_customize_register_menu_layout( $wp_customize ){
 	);
 	 
 	$wp_customize->add_control(
-		'accessibility',
+		'antonine[accessibility]',
 		array(
 			'type' => 'radio',
-			'label' => 'Display accessibility',
+			'label' => __('Display accessibility','antonine'),
 			'section' => 'menu_layout',
 			'choices' => array(
 				'on' => 'On',
@@ -288,28 +249,6 @@ function antonine_customize_register_menu_layout( $wp_customize ){
 			),
 		)
 	);
-	
-	$wp_customize->add_setting(
-		'subscribe',
-		array(
-			'default' => 'on',
-			'sanitize_callback' => 'antonine_sanitize_radio',
-		)
-	);
-	 
-	$wp_customize->add_control(
-		'subscribe',
-		array(
-			'type' => 'radio',
-			'label' => 'Display subscription',
-			'section' => 'menu_layout',
-			'choices' => array(
-				'on' => 'On',
-				'off' => 'Off'		
-			),
-		)
-	);
-	
 	
 }
 
@@ -321,7 +260,7 @@ function antonine_customize_register_page_layout( $wp_customize ){
 	) );
 	
 	$wp_customize->add_setting(
-		'author',
+		'antonine[author]',
 		array(
 			'default' => 'on',
 			'sanitize_callback' => 'antonine_sanitize_radio',
@@ -329,43 +268,15 @@ function antonine_customize_register_page_layout( $wp_customize ){
 	);
 	 
 	$wp_customize->add_control(
-		'author',
+		'antonine[author]',
 		array(
 			'type' => 'radio',
-			'label' => 'Display Author',
+			'label' => __('Display Author','antonine'),
 			'section' => 'page_layout',
 			'choices' => array(
 				'on' => 'On',
 				'off' => 'Off'		
 			),
-		)
-	);
-	
-}
-
-function antonine_customize_register_fav_icon( $wp_customize ){
-	
-	$wp_customize->add_section( 'fav_icon' , array(
-		'title'      => __( 'Fav Icon', 'antonine' ),
-		'priority'   => 2,
-	) );
-
-	$wp_customize->add_setting(
-		'fav_icon_url',
-		array(
-			'sanitize_callback' => 'antonine_sanitize_file'
-		)
-	);
-	 
-	$wp_customize->add_control(
-		new WP_Customize_Image_Control(
-			$wp_customize,
-			'fav_icon_url',
-			array(
-				'label' => 'Fav Icon',
-				'section' => 'fav_icon',
-				'settings' => 'fav_icon_url'
-			)
 		)
 	);
 	
@@ -379,9 +290,9 @@ function antonine_customize_register_add_site_colours( $wp_customize ) {
 	) );
 	
 	$wp_customize->add_setting(
-		'site_allsite_background_colour',
+		'antonine[site_allsite_background_colour]',
 		array(
-			'default' => '',
+			'default' => '#fefefe',
 			'transport' => 'postMessage',
 			'sanitize_callback' => 'antonine_sanitize_colour',
 		)
@@ -390,19 +301,19 @@ function antonine_customize_register_add_site_colours( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'site_allsite_background_colour',
+			'antonine[site_allsite_background_colour]',
 			array(
-				'label' => 'Site background colour',
+				'label' => __('Site background colour','antonine'),
 				'section' => 'site_colours',
-				'settings' => 'site_allsite_background_colour'
+				'settings' => 'antonine[site_allsite_background_colour]'
 			)
 		)
 	);
 	
 	$wp_customize->add_setting(
-		'site_alllink_colour',
+		'antonine[site_alllink_colour]',
 		array(
-			'default' => '',
+			'default' => '#550000',
 			'transport' => 'postMessage',
 			'sanitize_callback' => 'antonine_sanitize_colour',
 		)
@@ -411,19 +322,19 @@ function antonine_customize_register_add_site_colours( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'site_alllink_colour',
+			'antonine[site_alllink_colour]',
 			array(
-				'label' => 'Site Link Colour',
+				'label' => __('Site Link Colour','antonine'),
 				'section' => 'site_colours',
-				'settings' => 'site_alllink_colour'
+				'settings' => 'antonine[site_alllink_colour]'
 			)
 		)
 	);
 	
 	$wp_customize->add_setting(
-		'site_alllink_hover_colour',
+		'antonine[site_alllink_hover_colour]',
 		array(
-			'default' => '',
+			'default' => '#ff0000',
 			'transport' => 'postMessage',
 			'sanitize_callback' => 'antonine_sanitize_colour',
 		)
@@ -432,40 +343,19 @@ function antonine_customize_register_add_site_colours( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'site_alllink_hover_colour',
+			'antonine[site_alllink_hover_colour]',
 			array(
-				'label' => 'Site Link Hover Colour',
+				'label' => __('Site Link Hover Colour','antonine'),
 				'section' => 'site_colours',
-				'settings' => 'site_alllink_hover_colour'
-			)
-		)
-	);
-
-	$wp_customize->add_setting(
-		'site_post_background_colour',
-		array(
-			'default' => '',
-			'transport' => 'postMessage',
-			'sanitize_callback' => 'antonine_sanitize_colour',
-		)
-	);
-	
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			'site_post_background_colour',
-			array(
-				'label' => 'Home Page Post Background Colour',
-				'section' => 'site_colours',
-				'settings' => 'site_post_background_colour'
+				'settings' => 'antonine[site_alllink_hover_colour]'
 			)
 		)
 	);
 
 	$wp_customize->add_setting(
-		'site_single_post_background_colour',
+		'antonine[site_post_background_colour]',
 		array(
-			'default' => '',
+			'default' => '#ffffff',
 			'transport' => 'postMessage',
 			'sanitize_callback' => 'antonine_sanitize_colour',
 		)
@@ -474,145 +364,19 @@ function antonine_customize_register_add_site_colours( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'site_single_post_background_colour',
+			'antonine[site_post_background_colour]',
 			array(
-				'label' => 'Single Post Background Colour',
+				'label' => __('Home Page Post Background Colour','antonine'),
 				'section' => 'site_colours',
-				'settings' => 'site_single_post_background_colour'
-			)
-		)
-	);
-	
-	$wp_customize->add_setting(
-		'site_alltext_colour',
-		array(
-			'default' => '',
-			'transport' => 'postMessage',
-			'sanitize_callback' => 'antonine_sanitize_colour',
-		)
-	);
-	
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			'site_alltext_colour',
-			array(
-				'label' => 'Site Text Colour',
-				'section' => 'site_colours',
-				'settings' => 'site_alltext_colour'
-			)
-		)
-	);
-	
-	$wp_customize->add_setting(
-		'site_title_colour',
-		array(
-			'default' => '',
-			'transport' => 'postMessage',
-			'sanitize_callback' => 'antonine_sanitize_colour',
-		)
-	);
-	
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			'site_title_colour',
-			array(
-				'label' => 'Site Article Title Colour',
-				'section' => 'site_colours',
-				'settings' => 'site_title_colour'
-			)
-		)
-	);
-	
-	$wp_customize->add_setting(
-		'site_header_background_colour',
-		array(
-			'default' => '',
-			'transport' => 'postMessage',
-			'sanitize_callback' => 'antonine_sanitize_colour',
-		)
-	);
-	
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			'site_header_background_colour',
-			array(
-				'label' => 'Site Header Background Colour',
-				'section' => 'site_colours',
-				'settings' => 'site_header_background_colour'
-			)
-		)
-	);
-	
-	$wp_customize->add_setting(
-		'site_header_text_colour',
-		array(
-			'default' => '',
-			'transport' => 'postMessage',
-			'sanitize_callback' => 'antonine_sanitize_colour',
-		)
-	);
-	
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			'site_header_text_colour',
-			array(
-				'label' => 'Site Header Text Colour',
-				'section' => 'site_colours',
-				'settings' => 'site_header_text_colour'
-			)
-		)
-	);
-	
-	$wp_customize->add_setting(
-		'site_title_colour',
-		array(
-			'default' => '',
-			'transport' => 'postMessage',
-			'sanitize_callback' => 'antonine_sanitize_colour',
-		)
-	);
-	
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			'site_title_colour',
-			array(
-				'label' => 'Site Title Colour',
-				'section' => 'site_colours',
-				'settings' => 'site_title_colour'
-			)
-		)
-	);
-	
-	$wp_customize->add_setting(
-		'site_submenu_background_colour',
-		array(
-			'default' => '',
-			'transport' => 'postMessage',
-			'sanitize_callback' => 'antonine_sanitize_colour',
-		)
-	);
-	
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			'site_submenu_background_colour',
-			array(
-				'label' => 'Site SubMenu Background Colour',
-				'section' => 'site_colours',
-				'settings' => 'site_submenu_background_colour'
+				'settings' => 'antonine[site_post_background_colour]'
 			)
 		)
 	);
 
 	$wp_customize->add_setting(
-		'site_menu_background_hover_colour',
+		'antonine[site_single_post_background_colour]',
 		array(
-			'default' => '',
+			'default' => '#ffffff',
 			'transport' => 'postMessage',
 			'sanitize_callback' => 'antonine_sanitize_colour',
 		)
@@ -621,19 +385,19 @@ function antonine_customize_register_add_site_colours( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'site_menu_background_hover_colour',
+			'antonine[site_single_post_background_colour]',
 			array(
-				'label' => 'Site Menu Background Hover Colour',
+				'label' => __('Single Post Background Colour','antonine'),
 				'section' => 'site_colours',
-				'settings' => 'site_menu_background_hover_colour'
+				'settings' => 'antonine[site_single_post_background_colour]'
 			)
 		)
 	);
 	
 	$wp_customize->add_setting(
-		'site_menu_background_current_colour',
+		'antonine[site_alltext_colour]',
 		array(
-			'default' => '',
+			'default' => '#000000',
 			'transport' => 'postMessage',
 			'sanitize_callback' => 'antonine_sanitize_colour',
 		)
@@ -642,19 +406,19 @@ function antonine_customize_register_add_site_colours( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'site_menu_background_current_colour',
+			'antonine[site_alltext_colour]',
 			array(
-				'label' => 'Site Menu Current Page Colour',
+				'label' => __('Site Text Colour','antonine'),
 				'section' => 'site_colours',
-				'settings' => 'site_menu_background_current_colour'
+				'settings' => 'antonine[site_alltext_colour]'
 			)
 		)
 	);
 	
 	$wp_customize->add_setting(
-		'site_menu_text_colour',
+		'antonine[site_title_colour]',
 		array(
-			'default' => '',
+			'default' => '#555555',
 			'transport' => 'postMessage',
 			'sanitize_callback' => 'antonine_sanitize_colour',
 		)
@@ -663,19 +427,19 @@ function antonine_customize_register_add_site_colours( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'site_menu_text_colour',
+			'antonine[site_title_colour]',
 			array(
-				'label' => 'Site Menu Text Colour',
+				'label' => __('Site Article Title Colour','antonine'),
 				'section' => 'site_colours',
-				'settings' => 'site_menu_text_colour'
+				'settings' => 'antonine[site_title_colour]'
 			)
 		)
 	);
 	
 	$wp_customize->add_setting(
-		'site_menu_text_hover_colour',
+		'antonine[site_header_background_colour]',
 		array(
-			'default' => '',
+			'default' => '#fefefe',
 			'transport' => 'postMessage',
 			'sanitize_callback' => 'antonine_sanitize_colour',
 		)
@@ -684,19 +448,19 @@ function antonine_customize_register_add_site_colours( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'site_menu_text_hover_colour',
+			'antonine[site_header_background_colour]',
 			array(
-				'label' => 'Site Menu Text Hover Colour',
+				'label' => __('Site Header Background Colour','antonine'),
 				'section' => 'site_colours',
-				'settings' => 'site_menu_text_hover_colour'
+				'settings' => 'antonine[site_header_background_colour]'
 			)
 		)
 	);
 	
 	$wp_customize->add_setting(
-		'site_button_colour',
+		'antonine[site_header_text_colour]',
 		array(
-			'default' => '',
+			'default' => '#000000',
 			'transport' => 'postMessage',
 			'sanitize_callback' => 'antonine_sanitize_colour',
 		)
@@ -705,19 +469,19 @@ function antonine_customize_register_add_site_colours( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'site_button_colour',
+			'antonine[site_header_text_colour]',
 			array(
-				'label' => 'Site Button Colour',
+				'label' => __('Site Header Text Colour','antonine'),
 				'section' => 'site_colours',
-				'settings' => 'site_button_colour'
+				'settings' => 'antonine[site_header_text_colour]'
 			)
 		)
 	);
 	
 	$wp_customize->add_setting(
-		'site_button_text_colour',
+		'antonine[site_title_colour]',
 		array(
-			'default' => '',
+			'default' => '#ffaaaa',
 			'transport' => 'postMessage',
 			'sanitize_callback' => 'antonine_sanitize_colour',
 		)
@@ -726,19 +490,19 @@ function antonine_customize_register_add_site_colours( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'site_button_text_colour',
+			'antonine[site_title_colour]',
 			array(
-				'label' => 'Site Button Text Colour',
+				'label' => __('Site Title Colour','antonine'),
 				'section' => 'site_colours',
-				'settings' => 'site_button_text_colour'
+				'settings' => 'antonine[site_title_colour]'
 			)
 		)
 	);
 	
 	$wp_customize->add_setting(
-		'pagination_background_colour',
+		'antonine[site_submenu_background_colour]',
 		array(
-			'default' => '',
+			'default' => '#000000',
 			'transport' => 'postMessage',
 			'sanitize_callback' => 'antonine_sanitize_colour',
 		)
@@ -747,19 +511,19 @@ function antonine_customize_register_add_site_colours( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'pagination_background_colour',
+			'antonine[site_submenu_background_colour]',
 			array(
-				'label' => 'Pagination Background Colour',
+				'label' => __('Site SubMenu Background Colour','antonine'),
 				'section' => 'site_colours',
-				'settings' => 'pagination_background_colour'
+				'settings' => 'antonine[site_submenu_background_colour]'
 			)
 		)
 	);
-	
+
 	$wp_customize->add_setting(
-		'pagination_link_colour',
+		'antonine[site_menu_background_hover_colour]',
 		array(
-			'default' => '',
+			'default' => '#aaaaaa',
 			'transport' => 'postMessage',
 			'sanitize_callback' => 'antonine_sanitize_colour',
 		)
@@ -768,17 +532,164 @@ function antonine_customize_register_add_site_colours( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'pagination_link_colour',
+			'antonine[site_menu_background_hover_colour]',
 			array(
-				'label' => 'Pagination Link Colour',
+				'label' => __('Site Menu Background Hover Colour','antonine'),
 				'section' => 'site_colours',
-				'settings' => 'pagination_link_colour'
+				'settings' => 'antonine[site_menu_background_hover_colour]'
 			)
 		)
 	);
 	
 	$wp_customize->add_setting(
-		'shadow_colour',
+		'antonine[site_menu_background_current_colour]',
+		array(
+			'default' => '#cccccc',
+			'transport' => 'postMessage',
+			'sanitize_callback' => 'antonine_sanitize_colour',
+		)
+	);
+	
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'antonine[site_menu_background_current_colour]',
+			array(
+				'label' => __('Site Menu Current Page Colour','antonine'),
+				'section' => 'site_colours',
+				'settings' => 'antonine[site_menu_background_current_colour]'
+			)
+		)
+	);
+	
+	$wp_customize->add_setting(
+		'antonine[site_menu_text_colour]',
+		array(
+			'default' => '#000000',
+			'transport' => 'postMessage',
+			'sanitize_callback' => 'antonine_sanitize_colour',
+		)
+	);
+	
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'antonine[site_menu_text_colour]',
+			array(
+				'label' => __('Site Menu Text Colour','antonine'),
+				'section' => 'site_colours',
+				'settings' => 'antonine[site_menu_text_colour]'
+			)
+		)
+	);
+	
+	$wp_customize->add_setting(
+		'antonine[site_menu_text_hover_colour]',
+		array(
+			'default' => '#FF0000',
+			'transport' => 'postMessage',
+			'sanitize_callback' => 'antonine_sanitize_colour',
+		)
+	);
+	
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'antonine[site_menu_text_hover_colour]',
+			array(
+				'label' => __('Site Menu Text Hover Colour','antonine'),
+				'section' => 'site_colours',
+				'settings' => 'antonine[site_menu_text_hover_colour]'
+			)
+		)
+	);
+	
+	$wp_customize->add_setting(
+		'antonine[site_button_colour]',
+		array(
+			'default' => '#000000',
+			'transport' => 'postMessage',
+			'sanitize_callback' => 'antonine_sanitize_colour',
+		)
+	);
+	
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'antonine[site_button_colour]',
+			array(
+				'label' => __('Site Button Colour','antonine'),
+				'section' => 'site_colours',
+				'settings' => 'antonine[site_button_colour]'
+			)
+		)
+	);
+	
+	$wp_customize->add_setting(
+		'antonine[site_button_text_colour]',
+		array(
+			'default' => '#ffffff',
+			'transport' => 'postMessage',
+			'sanitize_callback' => 'antonine_sanitize_colour',
+		)
+	);
+	
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'antonine[site_button_text_colour]',
+			array(
+				'label' => __('Site Button Text Colour','antonine'),
+				'section' => 'site_colours',
+				'settings' => 'antonine[site_button_text_colour]'
+			)
+		)
+	);
+	
+	$wp_customize->add_setting(
+		'antonine[pagination_background_colour]',
+		array(
+			'default' => '#000000',
+			'transport' => 'postMessage',
+			'sanitize_callback' => 'antonine_sanitize_colour',
+		)
+	);
+	
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'antonine[pagination_background_colour]',
+			array(
+				'label' => __('Pagination Background Colour','antonine'),
+				'section' => 'site_colours',
+				'settings' => 'antonine[pagination_background_colour]'
+			)
+		)
+	);
+	
+	$wp_customize->add_setting(
+		'antonine[pagination_link_colour]',
+		array(
+			'default' => '#FFFFFF',
+			'transport' => 'postMessage',
+			'sanitize_callback' => 'antonine_sanitize_colour',
+		)
+	);
+	
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'antonine[pagination_link_colour]',
+			array(
+				'label' => __('Pagination Link Colour','antonine'),
+				'section' => 'site_colours',
+				'settings' => 'antonine[pagination_link_colour]'
+			)
+		)
+	);
+	
+	$wp_customize->add_setting(
+		'antonine[shadow_colour]',
 		array(
 			'default' => '#aaaaaa',
 			'sanitize_callback' => 'antonine_sanitize_radio',
@@ -786,10 +697,10 @@ function antonine_customize_register_add_site_colours( $wp_customize ) {
 	);
 	 
 	$wp_customize->add_control(
-		'shadow_colour',
+		'antonine[shadow_colour]',
 		array(
 			'type' => 'radio',
-			'label' => 'Shadow Colour',
+			'label' => __('Shadow Colour','antonine'),
 			'section' => 'site_colours',
 			'choices' => array(
 				'#aaaaaa' => 'Black',
@@ -799,9 +710,9 @@ function antonine_customize_register_add_site_colours( $wp_customize ) {
 	);
 	
 	$wp_customize->add_setting(
-		'border_colour',
+		'antonine[border_colour]',
 		array(
-			'default' => '',
+			'default' => '#0000FF',
 			'transport' => 'postMessage',
 			'sanitize_callback' => 'antonine_sanitize_colour',
 		)
@@ -810,11 +721,11 @@ function antonine_customize_register_add_site_colours( $wp_customize ) {
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'border_colour',
+			'antonine[border_colour]',
 			array(
-				'label' => 'Border Colour',
+				'label' => __('Border Colour','antonine'),
 				'section' => 'site_colours',
-				'settings' => 'border_colour'
+				'settings' => 'antonine[border_colour]'
 			)
 		)
 	);
@@ -829,7 +740,7 @@ function antonine_customize_register_licence( $wp_customize ){
 	) );
 	
 	$wp_customize->add_setting(
-		'license',
+		'antonine[license]',
 		array(
 			'default' => 'on',
 			'sanitize_callback' => 'antonine_sanitize_radio',
@@ -837,20 +748,20 @@ function antonine_customize_register_licence( $wp_customize ){
 	);
 	 
 	$wp_customize->add_control(
-		'license',
+		'antonine[license]',
 		array(
 			'type' => 'radio',
-			'label' => 'Which Creative Commons License?',
+			'label' => __('Which Creative Commons License?','antonine'),
 			'section' => 'cc_licence',
 			'choices' => array(
-				'none' => 'No license',
-				'zero' => 'Creative Commons Zero',
-				'cc-by' => 'Creative Commons CC-BY',		
-				'cc-by-sa' => 'Creative Commons CC-BY-SA',		
-				'cc-by-nd' => 'Creative Commons CC-BY-ND',		
-				'cc-by-nc' => 'Creative Commons CC-BY-NC',		
-				'cc-by-nc-sa' => 'Creative Commons CC-BY-NC-SA',		
-				'cc-by-nc-nd' => 'Creative Commons CC-BY-NC-ND',		
+				'none' => __('No license','antonine'),
+				'zero' => __('Creative Commons Zero','antonine'),
+				'cc-by' => __('Creative Commons CC-BY','antonine'),		
+				'cc-by-sa' => __('Creative Commons CC-BY-SA','antonine'),		
+				'cc-by-nd' => __('Creative Commons CC-BY-ND','antonine'),		
+				'cc-by-nc' => __('Creative Commons CC-BY-NC','antonine'),		
+				'cc-by-nc-sa' => __('Creative Commons CC-BY-NC-SA','antonine'),		
+				'cc-by-nc-nd' => __('Creative Commons CC-BY-NC-ND','antonine'),		
 			),
 		)
 	);
@@ -877,10 +788,8 @@ function antonine_customize_register( $wp_customize ) {
 	antonine_customize_register_page_layout( $wp_customize );
 	antonine_customize_register_menu_layout( $wp_customize );
 	antonine_customize_register_scroll_layout( $wp_customize );
-	antonine_customize_register_fav_icon( $wp_customize );
 }
 add_action( 'customize_register', 'antonine_customize_register' );
-
 
 function antonine_customize_preview_js() {
 	wp_enqueue_script( 'antonine_customizer', get_template_directory_uri() . '/js/antonine_customiser.js', array( 'customize-preview' ), '20131205', true );

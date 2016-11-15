@@ -1,5 +1,5 @@
 <?php
-	if(get_theme_mod("scroll")=="on"){
+	if(get_theme_mod("antonine[scroll]","on")=="on"){
 ?>
 <div id="antoninetopscroll">
 	<h1>	

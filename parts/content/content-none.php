@@ -12,4 +12,4 @@
 		<p><?PHP echo __( 'Search again?', 'antonine' ); ?></p>
 		<?PHP get_search_form(); ?>
 	</div>
-</article><!-- #post-## -->
+</article>

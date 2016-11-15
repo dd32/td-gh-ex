@@ -10,4 +10,4 @@
 			}
 		}
 	?>
-</div><!-- .widget-area -->
+</div>

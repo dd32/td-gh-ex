@@ -16,10 +16,10 @@
 			echo substr($content,0,$excerpt_pos) . "...";
 		?>
 		</div>
-	</div><!-- .entry-content -->	
+	</div>
 	<div class="read-more-holder preview_link" target="<?PHP echo the_ID(); ?>">
 		<div class="entry-read-more home-align">
 			<?PHP echo __("Read more", "antonine"); ?>
 		</div>
 	</div>
-</article><!-- #post-## -->
+</article>
