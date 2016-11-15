@@ -101,3 +101,49 @@ article {
     @include margin(0);
     @include padding($base__spacing $base__spacing 0 $base__spacing);
 }
+
+/*-----------------------------
+# Home
+------------------------------*/
+.home {
+    .testimonials,
+    .portfolio {
+        display: inline-block;
+        text-align: center;
+        margin: $base__spacing;
+        padding: $base__spacing;
+        clear: both;
+        -webkit-box-shadow: 1px  2px 2px rgba(0, 0, 0, 0.05);
+        -moz-box-shadow: 1px  2px 2px  rgba(0, 0, 0, 0.05);
+        box-shadow: 0px  2px 2px rgba(0, 0, 0, 0.05);
+        .title {
+            background: #fafafa;
+            margin-top: -$base__spacing;
+            margin-left: -$base__spacing;
+            margin-right: -$base__spacing;
+            margin-bottom: $small__spacing;
+            padding: ($big__spacing - 10) $base__spacing;
+        }
+    }
+    .testimonials {
+        .ig-testimonials-page {
+            display: inline-block;
+            clear: both;
+            margin-top: $small__spacing;
+        }
+        .ig-testimonials {
+            text-align: left;
+            @include span-columns(6);
+            @include omega(2n);
+        }
+        .page-numbers {
+            display: none;
+        }
+    }
+    .portfolio {
+        .ig-portfolio-gallery {
+            display: inline-block;
+            margin-top: $small__spacing;
+        }
+    }
+}

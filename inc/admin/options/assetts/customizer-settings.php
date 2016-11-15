@@ -18,6 +18,12 @@ class IGthemes_Customizer {
           'description' => '', 
           'priority' => 10, 
         ) );
+        // HOME
+        $wp_customize->add_section('home-settings', array(
+            'title' => __('Home', 'base-wp'),
+            'panel' => 'igtheme_options',
+            'priority' => 5, 
+         ));
         // LAYOUT
         $wp_customize->add_section('layout-settings', array(
             'title' => __('Layout', 'base-wp'),
