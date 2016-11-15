@@ -34,7 +34,7 @@ if ( !function_exists( 'awaken_featured_posts' ) ) :
                                         <?php } ?>
 
                                         <div class="awaken-slider-details-container">
-                                            <a href="<?php the_permalink(); ?>" rel="bookmark"><h1 class="awaken-slider-title"><?php the_title(); ?></h1></a>
+                                            <a href="<?php the_permalink(); ?>" rel="bookmark"><h3 class="awaken-slider-title"><?php the_title(); ?></h3></a>
                                         </div>
                                     </div>
                                 </li>
@@ -78,7 +78,7 @@ if ( !function_exists( 'awaken_featured_posts' ) ) :
                             <?php if ( has_post_thumbnail() ) { ?>
                                 <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail( 'featured', array('title' => get_the_title()) ); ?></a>
                             <?php } else { ?>
-                                <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><img  src="<?php echo get_template_directory_uri(); ?>/images/featured.jpg" alt="<?php the_title(); ?>" /></a>
+                                <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/featured.jpg" alt="<?php the_title(); ?>" /></a>
                             <?php } ?>
                         </figure>
                         <div class="afp-title">

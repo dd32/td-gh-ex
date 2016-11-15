@@ -4,11 +4,11 @@ Theme URI: http://themezhut.com/themes/awaken
 Author: ThemezHut
 Author URI: http://themezhut.com/
 Description: Awaken WordPress theme is an elegant magazine/news WordPress theme. It has a magazine layout with two main widget areas. And the theme is featured with three post widgets to display posts in different styles. This theme consists with a responsive layout which is created using twitter bootstrap. Some of the main features of this theme are theme customizer, featured slider, ad widgets, youtube video widget and social media. Find more information about this theme at http://www.themezhut.com/themes/awaken. View the demonstration at http://www.themezhut.com/demo/awaken.
-Version: 2.0.8
+Version: 2.0.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: awaken
-Tags: grid-layout,right-sidebar,two-columns,custom-logo,custom-background,custom-menu,editor-style,featured-images,footer-widgets,full-width-template,sticky-post,theme-options,threaded-comments,translation-ready,rtl-language-support,entertainment,news,blog,education
+Tags: grid-layout,right-sidebar,two-columns,custom-logo,custom-background,custom-menu,editor-style,featured-images,footer-widgets,full-width-template,sticky-post,theme-options,threaded-comments,translation-ready,rtl-language-support,news,blog,entertainment
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -1199,11 +1199,6 @@ a:hover, a:focus, a:active {
   margin-left: 140px;
 }
 
-/* Search widget */
-.widget_search .search-submit {
-  display: none;
-}
-
 .awaken-block-post {
   margin-bottom: 40px;
 }
@@ -1608,7 +1603,18 @@ a:hover, a:focus, a:active {
   font-size: 14px;
   font-size: 1.4rem;
   padding: 1em 0;
+  color: #ccc;
 }
+
+.footer-site-info a {
+  color: #ffffff;
+  border-bottom: 1px solid #555;
+}
+
+.footer-site-info a:hover {
+  color: #fa5742;
+}
+
 .footer-site-info p {
   margin-bottom: 0;
 }
@@ -1633,6 +1639,53 @@ a:hover, a:focus, a:active {
   font-weight: 500;
   margin: 0 0 25px 0;
   text-transform: uppercase;
+}
+
+.search-form {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.search-form .search-field {
+  display: inline-block;
+  margin: 0;
+  width: 100%;
+  height: 45px;
+  padding: 10px 80px 10px 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+.search-form label {
+  display: block;
+}
+
+.search-form .search-submit {
+  height: 45px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: bold;
+  background: #fa5742;
+  color: #fff;
+}
+.search-form .search-submit:hover {
+  background: #3f3f3f;
 }
 
 /*--------------------------------------------------------------
@@ -1688,6 +1741,11 @@ a:hover, a:focus, a:active {
   text-align: right;
 }
 
+@media all and (max-width:768px) {
+  .footer-site-info .fr {
+    text-align: left;
+  }
+}
 /*--------------------------------------------------------------
 10.2 Posts and pages
 --------------------------------------------------------------*/

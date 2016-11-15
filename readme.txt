@@ -1,5 +1,5 @@
 ﻿Theme Name : Awaken
-Version    : 2.0.8
+Version    : 2.0.9
 Theme URL  : http://www.themezhut.com/themes/awaken
 Theme Documentation  : http://www.themezhut.com/awaken-theme-documentation
 License: GNU General Public License v2 or later
@@ -193,3 +193,8 @@ Changed widget post titles <h1> tags to <h3>
 Changed blog listing titles <h1> tags to <h2>
 Fixed undefined variable issue in magazine widgets.
 Added the previously removed theme section again to the customizer.
+
+- Version 2.0.9
+Changed slider h1 tags to h3.
+Passed fonts url to editor stylesheet.
+Added some stylings to the search form.
