@@ -285,6 +285,13 @@ if ( ! function_exists( 'ct_apex_social_array' ) ) {
 			'digg'          => 'apex_digg_profile',
 			'github'        => 'apex_github_profile',
 			'hacker-news'   => 'apex_hacker-news_profile',
+			'bandcamp'      => 'apex_bandcamp_profile',
+			'etsy'          => 'apex_etsy_profile',
+			'quora'         => 'apex_quora_profile',
+			'ravelry'       => 'apex_ravelry_profile',
+			'meetup'        => 'apex_meetup_profile',
+			'telegram'      => 'apex_telegram_profile',
+			'podcast'       => 'apex_podcast_profile',
 			'whatsapp'      => 'apex_whatsapp_profile',
 			'steam'         => 'apex_steam_profile',
 			'qq'            => 'apex_qq_profile',
@@ -624,3 +631,16 @@ if ( ! function_exists( ( 'ct_apex_allow_skype_protocol' ) ) ) {
 	}
 }
 add_filter( 'kses_allowed_protocols' , 'ct_apex_allow_skype_protocol' );
+
+// trigger theme switch on link click and send to Appearance menu
+function ct_apex_welcome_redirect() {
+
+	$welcome_url = add_query_arg(
+		array(
+			'page' => 'apex-options'
+		),
+		admin_url( 'themes.php' )
+	);
+	wp_redirect( esc_url( $welcome_url ) );
+}
+add_action( 'after_switch_theme', 'ct_apex_welcome_redirect' );
