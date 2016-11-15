@@ -842,28 +842,13 @@ Boxy_Kirki::add_panel( 'typography', array(
 		'description'    => __( 'General Settings', 'boxy'),
 		'panel'          => 'typography', // Not typically needed.
 	) );
-	Boxy_Kirki::add_field( 'boxy', array(
-		'settings' => 'custom_typography',
-		'label'    => __( 'Enable Custom Typography', 'boxy' ),
-		'description' => __('Save the Settings, and Reload this page to Configure the typography section','boxy'),
-		'section'  => 'typography_section',
-		'type'     => 'switch',
-		'choices' => array(
-			'on'  => esc_attr__( 'Enable', 'boxy' ),
-			'off' => esc_attr__( 'Disable', 'boxy' )
-		),
-		'tooltip' => __('Turn on to customize typography and turn off for default typography','boxy'),
-		'default'  => 'off',
-	) );
 
-$typography_setting = get_theme_mod('custom_typography',false );
-if( $typography_setting ) :
 
-        $body_font = get_theme_mod('body_family','PT Sans');		        
-	    $body_color = get_theme_mod( 'body_color','#3a3a3a' );   
-		$body_size = get_theme_mod( 'body_size','16');
-		$body_weight = get_theme_mod( 'body_weight','regular');
-		$body_weight == 'bold' ? $body_weight = '400':  $body_weight = 'regular';
+    $body_font = get_theme_mod('body_family','PT Sans');		        
+    $body_color = get_theme_mod( 'body_color','#3a3a3a' );    
+	$body_size = get_theme_mod( 'body_size','16');
+	$body_weight = get_theme_mod( 'body_weight','regular');
+	$body_weight == 'bold' ? $body_weight = '400':  $body_weight = 'regular';
 		
 
 	Boxy_Kirki::add_section( 'body_font', array(
@@ -872,6 +857,18 @@ if( $typography_setting ) :
 		'panel'          => 'typography', // Not typically needed.
 	) ); 
 
+    Boxy_Kirki::add_field( 'boxy', array(
+		'settings' => 'body_typography',
+		'label'    => __( 'Enable Custom body Settings', 'boxy' ),
+		'section'  => 'body_font',
+		'type'     => 'switch',
+		'choices' => array(
+			'on'  => esc_attr__( 'Enable', 'boxy' ),
+			'off' => esc_attr__( 'Disable', 'boxy' )
+		),
+		'tooltip' => __('Turn on to body typography and turn off for default typography','boxy'),
+		'default'  => get_theme_mod('custom_typography',false ),
+    ) );
 
 	Boxy_Kirki::add_field( 'boxy', array(
 		'settings' => 'body',
@@ -884,12 +881,19 @@ if( $typography_setting ) :
 			'font-size'      => $body_size.'px',
 			'line-height'    => '1.5',
 			'letter-spacing' => '0',
-			'color'          => $body_color,
+			'color'          => $body_color, 
 		),
 		'output'      => array(
 			array(
 				'element' => 'body',
 				//'suffix' => '!important',
+			),
+		),
+		'active_callback' => array(
+			array(
+				'setting'  => 'body_typography',
+				'operator' => '==',
+				'value'    => true,
 			),
 		),
 	) );
@@ -900,7 +904,19 @@ if( $typography_setting ) :
 		'description'    => __( 'Specify typography of H1, H2, H3, H4, H5, H6', 'boxy'),
 		'panel'          => 'typography', // Not typically needed.
 	) );
-	
+
+	Boxy_Kirki::add_field( 'boxy', array(
+		'settings' => 'heading_one_typography',
+		'label'    => __( 'Enable Custom H1 Settings', 'boxy' ),
+		'section'  => 'heading_section',
+		'type'     => 'switch',
+		'choices' => array(
+			'on'  => esc_attr__( 'Enable', 'boxy' ),
+			'off' => esc_attr__( 'Disable', 'boxy' )
+		),
+		'tooltip' => __('Turn on to H1 typography and turn off for default typography','boxy'),
+		'default'  => get_theme_mod('custom_typography',false ),
+    ) );
 
 	$h1_font = get_theme_mod('h1_family','Roboto Slab');
 	$h1_color = get_theme_mod( 'h1_color','#242424' );
@@ -926,8 +942,29 @@ if( $typography_setting ) :
 				'element' => 'h1',
 			),
 		),
+		'active_callback' => array(
+			array(
+				'setting'  => 'heading_one_typography',
+				'operator' => '==',
+				'value'    => true,
+			),
+		),
 		
 	) );
+
+	Boxy_Kirki::add_field( 'boxy', array(
+		'settings' => 'heading_two_typography',
+		'label'    => __( 'Enable Custom H2 Settings', 'boxy' ),
+		'section'  => 'heading_section',
+		'type'     => 'switch',
+		'choices' => array(
+			'on'  => esc_attr__( 'Enable', 'boxy' ),
+			'off' => esc_attr__( 'Disable', 'boxy' )
+		),
+		'tooltip' => __('Turn on to H2 typography and turn off for default typography','boxy'),
+		'default'  => get_theme_mod('custom_typography',false ),
+    ) );
+
 
 	$h2_font = get_theme_mod('h2_family','Roboto Slab');
 	$h2_color = get_theme_mod( 'h2_color','#242424' );
@@ -953,8 +990,29 @@ if( $typography_setting ) :
 				'element' => 'h2',
 			),
 		),
+		'active_callback' => array(
+			array(
+				'setting'  => 'heading_two_typography',
+				'operator' => '==',
+				'value'    => true,
+			),
+		),
 		
 	) );
+
+	Boxy_Kirki::add_field( 'boxy', array(
+		'settings' => 'heading_three_typography',
+		'label'    => __( 'Enable Custom H3 Settings', 'boxy' ),
+		'section'  => 'heading_section',
+		'type'     => 'switch',
+		'choices' => array(
+			'on'  => esc_attr__( 'Enable', 'boxy' ),
+			'off' => esc_attr__( 'Disable', 'boxy' )
+		),
+		'tooltip' => __('Turn on to H3 typography and turn off for default typography','boxy'),
+		'default'  => get_theme_mod('custom_typography',false ),
+    ) );
+
 
 	$h3_font = get_theme_mod('h3_family','Roboto Slab');
 	$h3_color = get_theme_mod( 'h3_color','#242424' );
@@ -980,8 +1038,29 @@ if( $typography_setting ) :
 				'element' => 'h3',
 			),
 		),
+		'active_callback' => array(
+			array(
+				'setting'  => 'heading_three_typography',
+				'operator' => '==',
+				'value'    => true,
+			),
+		),
 		
 	) );
+
+	Boxy_Kirki::add_field( 'boxy', array(
+		'settings' => 'heading_four_typography',
+		'label'    => __( 'Enable Custom H4 Settings', 'boxy' ),
+		'section'  => 'heading_section',
+		'type'     => 'switch',
+		'choices' => array(
+			'on'  => esc_attr__( 'Enable', 'boxy' ),
+			'off' => esc_attr__( 'Disable', 'boxy' )
+		),
+		'tooltip' => __('Turn on to H4 typography and turn off for default typography','boxy'),
+		'default'  => get_theme_mod('custom_typography',false ),
+    ) );
+
 
 	$h4_font = get_theme_mod('h4_family','Roboto Slab');
 	$h4_color = get_theme_mod( 'h4_color','#242424' );
@@ -1008,8 +1087,29 @@ if( $typography_setting ) :
 				'element' => 'h4',
 			),
 		),
+		'active_callback' => array(
+			array(
+				'setting'  => 'heading_four_typography',
+				'operator' => '==',
+				'value'    => true,
+			),
+		),
 		
 	) );
+
+	Boxy_Kirki::add_field( 'boxy', array(
+		'settings' => 'heading_five_typography',
+		'label'    => __( 'Enable Custom H5 Settings', 'boxy' ),
+		'section'  => 'heading_section',
+		'type'     => 'switch',
+		'choices' => array(
+			'on'  => esc_attr__( 'Enable', 'boxy' ),
+			'off' => esc_attr__( 'Disable', 'boxy' )
+		),
+		'tooltip' => __('Turn on to H5 typography and turn off for default typography','boxy'),
+		'default'  => get_theme_mod('custom_typography',false ),
+    ) );
+
 
     $h5_font = get_theme_mod('h5_family','Roboto Slab');
 	$h5_color = get_theme_mod( 'h5_color','#242424' );
@@ -1036,8 +1136,29 @@ if( $typography_setting ) :
 				'element' => 'h5',
 			),
 		),
+		'active_callback' => array(
+			array(
+				'setting'  => 'heading_five_typography',
+				'operator' => '==',
+				'value'    => true,
+			),
+		),
 		
 	) );
+
+	Boxy_Kirki::add_field( 'boxy', array(
+		'settings' => 'heading_six_typography',
+		'label'    => __( 'Enable Custom H6 Settings', 'boxy' ),
+		'section'  => 'heading_section',
+		'type'     => 'switch',
+		'choices' => array(
+			'on'  => esc_attr__( 'Enable', 'boxy' ),
+			'off' => esc_attr__( 'Disable', 'boxy' )
+		),
+		'tooltip' => __('Turn on to H6 typography and turn off for default typography','boxy'),
+		'default'  => get_theme_mod('custom_typography',false ),
+    ) );
+
 
 	$h6_font = get_theme_mod('h6_family','Roboto Slab');
 	$h6_color = get_theme_mod( 'h6_color','#242424' );
@@ -1064,6 +1185,13 @@ if( $typography_setting ) :
 				'element' => 'h6',
 			),
 		),
+		'active_callback' => array(
+			array(
+				'setting'  => 'heading_six_typography',
+				'operator' => '==',
+				'value'    => true,
+			),
+		),
 		
 	) );
 
@@ -1073,6 +1201,20 @@ if( $typography_setting ) :
 		'description'    => __( 'Specify Navigation font properties', 'boxy'),
 		'panel'          => 'typography', // Not typically needed.
 	) );
+
+    Boxy_Kirki::add_field( 'boxy', array(
+		'settings' => 'navigation_font_status',
+		'label'    => __( 'Enable Navigation Font Settings', 'boxy' ),
+		'section'  => 'navigation_section',
+		'type'     => 'switch',
+		'choices' => array(
+			'on'  => esc_attr__( 'Enable', 'boxy' ),
+			'off' => esc_attr__( 'Disable', 'boxy' )
+		),
+		'tooltip' => __('Turn on to Navigation Font typography and turn off for default typography','boxy'),
+		'default'  => get_theme_mod('custom_typography',false ),
+    ) );
+
 
 	Boxy_Kirki::add_field( 'boxy', array(
 		'settings' => 'navigation_font',
@@ -1092,8 +1234,14 @@ if( $typography_setting ) :
 				'element' => '.main-navigation a',
 			),
 		),
+		'active_callback' => array(
+			array(
+				'setting'  => 'navigation_font_status',
+				'operator' => '==',
+				'value'    => true,
+			),
+		),
 	) );
-endif; 
 
 
 // header panel //
