@@ -4,7 +4,7 @@ Theme URI: http://www.tenman.info/wp3/raindrops/
 Description: This theme can change freely fonts,layout,color scheme and header image for each post,page. The google fonts, you can use freely in the post more than 90percent of the fonts.Color scheme and layout, you can freely change from theme customizer.For more updates, please make sure to open the link of the changelog from the help tab of this theme page.Add new post, so also to help tab of edit post page has been described how to use tips, please visit. Supported languages Japanese - JAPAN (ja) French - FRANCE (fr_FR) Polish - POLAND (PL) (pl_PL) Portuguese - BRAZIL (pt_BR)
 Author: Tenman
 Author URI: http://www.tenman.info/wp3/
-Version: 1.441
+Version: 1.442
 Tags: one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, post-formats, featured-images, full-width-template, rtl-language-support, microformats
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -1544,6 +1544,7 @@ h2.footer-content,
     clear:both;
     text-align:center;
 }
+.postmetadata,
 .entry-meta{
     line-height:1.6;
     margin:1em 0 0;
@@ -3184,7 +3185,10 @@ div:not(.raindrops-empty-content) .entry-meta-default .raindrops-comment-link{
     background-repeat:no-repeat;
     display:inline-block;
     box-sizing:border-box;
-    margin-left:10px;
+    /**
+     * @1.442
+     * margin-left:10px;
+     */
 }
 .widget .icon-link-no-title,
 .widget .icon-post-format-notitle,
@@ -5500,9 +5504,9 @@ ul.rd-nowrap{
 }
 .topsidebar .eco-archive h3 + ul,
 .topsidebar .eco-archive h3{
-    display:inline-block;
-    width:80%;
+    display:block;
 }
+
 .topsidebar .eco-archive h3{
     width:5em;
 }
@@ -6287,7 +6291,10 @@ body.rd-primary-menu-responsive-active .raindrops-mobile-menu .open,
 .single .raindrops-empty-title .entry-title{
     margin:0;
     overflow:hidden;
-    height:10px;
+    /**
+     * @1.442
+     * height:10px;
+     */
 }
 .page .raindrops-empty-title .entry-content{
     margin-top:0;
@@ -6694,4 +6701,8 @@ article [data-mod="postit"]:before{
 .entry-meta .custom-taxsonomy a,
 .entry-meta .custom-taxsonomy{
     margin:0 .5em;
+}
+
+#doc5 .raindrops-no-keep-content-width .index > li{
+    padding:2em 0;
 }
