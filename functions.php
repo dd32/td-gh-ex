@@ -114,15 +114,48 @@ function beautytemple_widgets_init() {
 }
 add_action( 'widgets_init', 'beautytemple_widgets_init' );
 
+if ( ! function_exists( 'beautytemple_fonts_url' ) ) :
+/**
+ * Register Google fonts for Glutton.
+ *
+ * Create your own beautytemple_fonts_url() function to override in a child theme.
+ *
+ * @since Glutton 1.0.25
+ *
+ * @return string Google fonts URL for the theme.
+ */
+function beautytemple_fonts_url() {
+	$fonts_url = '';
+	$fonts     = array();
+	$subsets   = 'cyrillic,latin,latin-ext';
+	
+	/* translators: If there are characters in your language that are not supported by Dancing Script, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Dancing Script font: on or off', 'beautytemple' ) ) {
+		$fonts[] = 'Dancing Script:400,700';
+	}	
+	
+	/* translators: If there are characters in your language that are not supported by Lato, translate this to 'off'. Do not translate into your own language. */
+	if ( 'off' !== _x( 'on', 'Lato font: on or off', 'beautytemple' ) ) {
+		$fonts[] = 'Lato:100,100i,300,300i,400,400i,700,700i,900,900i';
+	}
+	if ( $fonts ) {
+		$fonts_url = add_query_arg( array(
+			'family' => urlencode( implode( '|', $fonts ) ),
+			'subset' => urlencode( $subsets ),
+		), 'https://fonts.googleapis.com/css' );
+	}
+	return $fonts_url;
+}
+
+endif;
+
 /**
  * Enqueue scripts and styles.
  */
 function beautytemple_scripts() {
 	wp_enqueue_style( 'beautytemple-style', get_stylesheet_uri() );
 	
-	wp_enqueue_style( 'beautytemple-dancing-script', esc_url('fonts.googleapis.com/css', 'https') . '?family=Dancing+Script:400,700', array(), '20151215', false);
-
-	wp_enqueue_style( 'beautytemple-lato', esc_url('fonts.googleapis.com/css', 'https') . '?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i', array(), '20151215', false);
+	wp_enqueue_style( 'beautytemple-fonts', beautytemple_fonts_url(), array(), null);  
 
 	wp_enqueue_script( 'jquery' );
 	
