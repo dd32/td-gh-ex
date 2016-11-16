@@ -1,15 +1,16 @@
+@charset "UTF-8";
 /**
  * Theme Name:  Make
  * Theme URI:   https://thethemefoundry.com/make/
  * Author:      The Theme Foundry
  * Author URI:  https://thethemefoundry.com
  * Description: Build a website that means business. With Make’s powerful drag and drop page builder and hundreds of Customizer options, you can effortlessly brand your site without touching a line of code. Add full-width banners, columns, and galleries to showcase your best work. The intuitive builder delivers clean, lean code — not shortcodes — so you can trust your content remains portable. Make lets you control page layout options, including sidebar display, on all your posts and pages. Choose from hundreds of Google Fonts and upload custom backgrounds everywhere. Built on a fully responsive grid, Make renders as beautifully on tablets and phone screens as it does on desktop. Make scales with your business and is fully compatible with popular plugins like WooCommerce, Gravity Forms, Contact Form 7, Jetpack, and others. For documentation on the page builder and getting started with Make, see: https://thethemefoundry.com/make-help/
- * Version:     1.7.1
+ * Version:     1.7.10
  * License:     GNU General Public License v2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: make
  * Domain Path: /languages/
- * Tags:        black, blue, green, gray, orange, red, white, yellow, dark, light, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, buddypress, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
+ * Tags:        one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, grid-layout, buddypress, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, footer-widgets, blog, e-commerce, education, entertainment, food-and-drink, holiday, news, photography, portfolio
  *
  * Make WordPress Theme, Copyright 2014-2016 The Theme Foundry
  * Make is distributed under the terms of the GNU GPL
@@ -400,8 +401,7 @@ h2,
 h3,
 h4,
 h5,
-h6,
-pre {
+h6 {
 	word-wrap: break-word;
 	word-break: break-word;
 }
@@ -696,13 +696,13 @@ a {
 
 /* Core */
 a.custom-logo-link {
-	display: block;
+	display: inline-block;
+	max-width: 100%;
 	margin-bottom: 11px;
 	margin-bottom: 1.1rem;
 }
 
 img.custom-logo {
-	width: 100%;
 	max-width: 100%;
 	height: auto;
 }
@@ -1121,6 +1121,11 @@ div.custom-logo a {
 	}
 }
 
+.site-navigation .menu .sub-menu li:last-child a,
+.site-navigation .nav-menu .sub-menu li:last-child a {
+	border-bottom: none;
+}
+
 .site-navigation .menu .sub-menu,
 .site-navigation .menu .children,
 .site-navigation .nav-menu .sub-menu,
@@ -1492,7 +1497,6 @@ div.custom-logo a {
 	color: inherit;
 	font-size: 12px;
 	font-size: 1.2rem;
-	font-weight: bold;
 }
 
 @media screen and (min-width: 800px) {
@@ -1511,17 +1515,6 @@ div.custom-logo a {
 .site-footer .site-info a:hover,
 .site-footer .site-info a a:hover {
 	text-decoration: none;
-}
-
-.site-footer .site-info .theme-by,
-.site-footer .site-info a .theme-by {
-	padding: 0 4px;
-	padding: 0 0.4rem;
-	font-weight: normal;
-	font-style: italic;
-	letter-spacing: 1px;
-	letter-spacing: 0.1rem;
-	text-transform: lowercase;
 }
 
 .footer-widget-container {
@@ -1610,15 +1603,20 @@ h6 {
 h1 a,
 a h1,
 h2 a,
-a h2,
+a
+  h2,
 h3 a,
-a h3,
+a
+  h3,
 h4 a,
-a h4,
+a
+  h4,
 h5 a,
-a h5,
+a
+  h5,
 h6 a,
-a h6 {
+a
+  h6 {
 	color: inherit;
 	text-decoration: none;
 }
@@ -1681,8 +1679,9 @@ blockquote p {
 }
 
 blockquote cite {
-	margin-bottom: 22px;
-	margin-bottom: 2.2rem;
+	display: block;
+	margin: 22px 0;
+	margin: 2.2rem 0;
 	font-size: 13px;
 	font-size: 1.3rem;
 	font-style: normal;
@@ -1753,9 +1752,6 @@ samp,
 var {
 	padding: 4px 6px;
 	padding: 0.4rem 0.6rem;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
 	background-color: #eaecee;
 	font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, monospace;
 }
@@ -1768,7 +1764,6 @@ pre {
 	padding: 33px;
 	padding: 3.3rem;
 	line-height: 1.7;
-	white-space: pre-wrap;
 }
 
 pre code {
@@ -1853,8 +1848,7 @@ address {
 }
 
 hr {
-	height: 1px;
-	margin-bottom: 22px;
+	margin: 44px 0;
 	border: 0;
 	border-top: 1px solid #eaecee;
 }
@@ -2144,7 +2138,7 @@ Notices / Alerts (_elements.scss)
 }
 
 .ttfmake-alert.ttfmake-important {
-	border: 1px solid #fff365;
+	border: 1px solid #fff366;
 	color: #f89e01;
 	background-color: #fffde5;
 }
@@ -2697,7 +2691,6 @@ div.wp-video-shortcode {
 	left: 16px;
 	left: 1.6rem;
 	color: #eaecee;
-	text-shadow: 1px 0 3px rgba(0, 0, 0, 0.15);
 	text-align: left;
 }
 
@@ -2804,6 +2797,13 @@ div.wp-video-shortcode {
 .builder-banner-section-title {
 	position: relative;
 	z-index: 2;
+}
+
+.search article.post,
+.search article.page {
+	margin: 22px 0;
+	padding: 22px 0;
+	border-bottom: 1px solid #eaecee;
 }
 
 
@@ -2924,7 +2924,6 @@ div.wp-video-shortcode {
 	padding: 11px 32px;
 	padding: 1.1rem 3.2rem;
 	color: #fff;
-	text-shadow: 1px 0 8px rgba(0, 0, 0, 0.15);
 	font-size: 15px;
 	font-size: 1.5rem;
 	line-height: 1.35;
@@ -3436,10 +3435,7 @@ div.wp-video-shortcode {
 	margin-bottom: 0.5rem;
 	padding: 8px;
 	padding: 0.8rem;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	background-color: #eaecee;
+	border: 1px solid #eaecee;
 	text-decoration: none;
 }
 
@@ -3475,6 +3471,10 @@ div.wp-video-shortcode {
 
 .widget_rss cite:before {
 	content: "\2013  ";
+}
+
+.widget_recent_entries .post-date {
+	display: block;
 }
 
 
@@ -3755,12 +3755,12 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	display: inline-block;
-	padding: 10px 14px;
-	padding: 1rem 1.4rem;
+	padding: 10px 18px;
+	padding: 1rem 1.8rem;
 	border: 0;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	border-radius: 100px;
 	color: #fff;
 	background: #171717;
 	font-size: 13px;

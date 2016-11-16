@@ -8,12 +8,14 @@ if ( ! isset( $this ) || ! $this instanceof MAKE_Style_ManagerInterface ) {
 	return;
 }
 
+$is_style_preview = isset( $_POST['make-preview'] );
+
 /**
  * Global
  */
 
 // Primary color
-if ( ! $this->thememod()->is_default( 'color-primary' ) ) {
+if ( $is_style_preview || ! $this->thememod()->is_default( 'color-primary' ) ) {
 	$color = $this->thememod()->get_value( 'color-primary' );
 	$this->css()->add( array(
 		'selectors'    => array(
@@ -61,7 +63,7 @@ if ( ! $this->thememod()->is_default( 'color-primary' ) ) {
 }
 
 // Secondary color
-if ( ! $this->thememod()->is_default( 'color-secondary' ) ) {
+if ( $is_style_preview || ! $this->thememod()->is_default( 'color-secondary' ) ) {
 	$color = $this->thememod()->get_value( 'color-secondary' );
 	$this->css()->add( array(
 		'selectors'    => array(
@@ -108,7 +110,6 @@ if ( ! $this->thememod()->is_default( 'color-secondary' ) ) {
 			'input[type="reset"].color-secondary-background',
 			'input[type="submit"].color-secondary-background',
 			'.sticky-post-label',
-			'.widget_tag_cloud a',
 		),
 		'declarations' => array(
 			'background-color' => $color
@@ -131,6 +132,8 @@ if ( ! $this->thememod()->is_default( 'color-secondary' ) ) {
 			'table th',
 			'table td',
 			'.header-layout-3 .site-navigation .menu',
+			'.widget_tag_cloud a',
+			'.widget_product_tag_cloud a',
 		),
 		'declarations' => array(
 			'border-color' => $color
@@ -151,6 +154,9 @@ if ( ! $this->thememod()->is_default( 'color-secondary' ) ) {
 		'selectors'    => array(
 			'.comment-body',
 			'.post',
+			'.page',
+			'.search article.post',
+			'.search article.page',
 			'.widget li',
 		),
 		'declarations' => array(
@@ -160,7 +166,7 @@ if ( ! $this->thememod()->is_default( 'color-secondary' ) ) {
 }
 
 // Text color
-if ( ! $this->thememod()->is_default( 'color-text' ) ) {
+if ( $is_style_preview || ! $this->thememod()->is_default( 'color-text' ) ) {
 	$color = $this->thememod()->get_value( 'color-text' );
 	$this->css()->add( array(
 		'selectors'    => array(
@@ -209,7 +215,7 @@ if ( ! $this->thememod()->is_default( 'color-text' ) ) {
 }
 
 // Detail color
-if ( ! $this->thememod()->is_default( 'color-detail' ) ) {
+if ( $is_style_preview || ! $this->thememod()->is_default( 'color-detail' ) ) {
 	$color = $this->thememod()->get_value( 'color-detail' );
 	$this->css()->add( array(
 		'selectors'    => array(
@@ -263,7 +269,7 @@ if ( ! $this->thememod()->is_default( 'color-detail' ) ) {
 }
 
 // Link Hover/Focus Color
-if ( ! $this->thememod()->is_default( 'color-primary-link' ) ) {
+if ( $is_style_preview || ! $this->thememod()->is_default( 'color-primary-link' ) ) {
 	$this->css()->add( array(
 		'selectors'    => array(
 			'a:hover',
@@ -278,7 +284,7 @@ if ( ! $this->thememod()->is_default( 'color-primary-link' ) ) {
 }
 
 // Button Text Color
-if ( ! $this->thememod()->is_default( 'color-button-text' ) ) {
+if ( $is_style_preview || ! $this->thememod()->is_default( 'color-button-text' ) ) {
 	$this->css()->add( array(
 		'selectors'    => array(
 			'button',
@@ -294,7 +300,7 @@ if ( ! $this->thememod()->is_default( 'color-button-text' ) ) {
 	) );
 }
 // Button Text Hover/Focus Color
-if ( ! $this->thememod()->is_default( 'color-button-text-hover' ) && $this->thememod()->get_value( 'color-button-text-hover' ) !== $this->thememod()->get_value( 'color-button-text' ) ) {
+if ( $is_style_preview || ( ! $this->thememod()->is_default( 'color-button-text-hover' ) && $this->thememod()->get_value( 'color-button-text-hover' ) !== $this->thememod()->get_value( 'color-button-text' ) ) ) {
 	$this->css()->add( array(
 		'selectors'    => array(
 			'button:hover', 'button:focus',
@@ -310,7 +316,7 @@ if ( ! $this->thememod()->is_default( 'color-button-text-hover' ) && $this->them
 	) );
 }
 // Button Background Color
-if ( ! $this->thememod()->is_default( 'color-button-background' ) ) {
+if ( $is_style_preview || ! $this->thememod()->is_default( 'color-button-background' ) ) {
 	$this->css()->add( array(
 		'selectors'    => array(
 			'button',
@@ -326,7 +332,7 @@ if ( ! $this->thememod()->is_default( 'color-button-background' ) ) {
 	) );
 }
 // Button Background Hover/Focus Color
-if ( ! $this->thememod()->is_default( 'color-button-background-hover' ) && $this->thememod()->get_value( 'color-button-background-hover' ) !== $this->thememod()->get_value( 'color-button-background' ) ) {
+if ( $is_style_preview || ( ! $this->thememod()->is_default( 'color-button-background-hover' ) && $this->thememod()->get_value( 'color-button-background-hover' ) !== $this->thememod()->get_value( 'color-button-background' ) ) ) {
 	$this->css()->add( array(
 		'selectors'    => array(
 			'button:hover', 'button:focus',
@@ -343,7 +349,7 @@ if ( ! $this->thememod()->is_default( 'color-button-background-hover' ) && $this
 }
 
 // Main background color
-if ( ! $this->thememod()->is_default( 'main-background-color' ) || ! $this->thememod()->is_default( 'main-background-color-opacity' ) ) {
+if ( $is_style_preview || ! $this->thememod()->is_default( 'main-background-color' ) || ! $this->thememod()->is_default( 'main-background-color-opacity' ) ) {
 	// Convert to RGBa
 	$color = $this->helper()->hex_to_rgb( $this->thememod()->get_value( 'main-background-color' ) ) . ', ' . $this->thememod()->get_value( 'main-background-color-opacity' );
 
@@ -363,7 +369,7 @@ if ( ! $this->thememod()->is_default( 'main-background-color' ) || ! $this->them
  */
 
 // Header text color
-if ( ! $this->thememod()->is_default( 'header-text-color' ) ) {
+if ( $is_style_preview || ! $this->thememod()->is_default( 'header-text-color' ) ) {
 	$this->css()->add( array(
 		'selectors'    => array(
 			'.site-header',
@@ -378,7 +384,7 @@ if ( ! $this->thememod()->is_default( 'header-text-color' ) ) {
 }
 
 // Header background color
-if ( ! $this->thememod()->is_default( 'header-background-color' ) || ! $this->thememod()->is_default( 'header-background-color-opacity' ) ) {
+if ( $is_style_preview || ! $this->thememod()->is_default( 'header-background-color' ) || ! $this->thememod()->is_default( 'header-background-color-opacity' ) ) {
 	// Convert to RGBa
 	$color = $this->helper()->hex_to_rgb( $this->thememod()->get_value( 'header-background-color' ) ) . ', ' . $this->thememod()->get_value( 'header-background-color-opacity' );
 
@@ -395,7 +401,7 @@ if ( ! $this->thememod()->is_default( 'header-background-color' ) || ! $this->th
  */
 
 // Site title
-if ( ! $this->thememod()->is_default( 'color-site-title' ) && $this->thememod()->get_value( 'header-text-color' ) !== $this->thememod()->get_value( 'color-site-title' ) ) {
+if ( $is_style_preview || ( ! $this->thememod()->is_default( 'color-site-title' ) && $this->thememod()->get_value( 'header-text-color' ) !== $this->thememod()->get_value( 'color-site-title' ) ) ) {
 	$this->css()->add( array(
 		'selectors'    => array(
 			'.site-header .site-title',
@@ -408,7 +414,7 @@ if ( ! $this->thememod()->is_default( 'color-site-title' ) && $this->thememod()-
 }
 
 // Tagline
-if ( ! $this->thememod()->is_default( 'color-site-tagline' ) && $this->thememod()->get_value( 'header-text-color' ) !== $this->thememod()->get_value( 'color-site-tagline' ) ) {
+if ( $is_style_preview || ( ! $this->thememod()->is_default( 'color-site-tagline' ) && $this->thememod()->get_value( 'header-text-color' ) !== $this->thememod()->get_value( 'color-site-tagline' ) ) ) {
 	$this->css()->add( array(
 		'selectors'    => array( '.site-header .site-description' ),
 		'declarations' => array(
@@ -422,7 +428,7 @@ if ( ! $this->thememod()->is_default( 'color-site-tagline' ) && $this->thememod(
  */
 
 // Menu Item Text
-if ( ! $this->thememod()->is_default( 'color-nav-text' ) ) {
+if ( $is_style_preview || ! $this->thememod()->is_default( 'color-nav-text' ) ) {
 	$this->css()->add( array(
 		'selectors'    => array( '.site-navigation .menu li a' ),
 		'declarations' => array(
@@ -432,7 +438,7 @@ if ( ! $this->thememod()->is_default( 'color-nav-text' ) ) {
 }
 
 // Menu Item Text hover
-if ( ! $this->thememod()->is_default( 'color-nav-text-hover' ) ) {
+if ( $is_style_preview || ! $this->thememod()->is_default( 'color-nav-text-hover' ) ) {
 	$this->css()->add( array(
 		'selectors'    => array(
 			'.site-navigation .menu li a:hover',
@@ -445,7 +451,7 @@ if ( ! $this->thememod()->is_default( 'color-nav-text-hover' ) ) {
 }
 
 // Sub-Menu Item Text
-if ( ! $this->thememod()->is_default( 'color-subnav-text' ) ) {
+if ( $is_style_preview || ! $this->thememod()->is_default( 'color-subnav-text' ) ) {
 	$this->css()->add( array(
 		'selectors'    => array(
 			'.site-navigation ul.menu ul a',
@@ -461,7 +467,7 @@ if ( ! $this->thememod()->is_default( 'color-subnav-text' ) ) {
 }
 
 // Sub-Menu Item Text hover
-if ( ! $this->thememod()->is_default( 'color-subnav-text-hover' ) ) {
+if ( $is_style_preview || ! $this->thememod()->is_default( 'color-subnav-text-hover' ) ) {
 	$this->css()->add( array(
 		'selectors'    => array(
 			'.site-navigation ul.menu ul a:hover',
@@ -477,7 +483,7 @@ if ( ! $this->thememod()->is_default( 'color-subnav-text-hover' ) ) {
 }
 
 // Sub-Menu Item Detail
-if ( ! $this->thememod()->is_default( 'color-subnav-detail' ) ) {
+if ( $is_style_preview || ! $this->thememod()->is_default( 'color-subnav-detail' ) ) {
 	$color = $this->thememod()->get_value( 'color-subnav-detail' );
 	$this->css()->add( array(
 		'selectors'    => array(
@@ -502,7 +508,7 @@ if ( ! $this->thememod()->is_default( 'color-subnav-detail' ) ) {
 }
 
 // Sub-Menu Item Background
-if ( ! $this->thememod()->is_default( 'color-subnav-background' ) || ! $this->thememod()->is_default( 'color-subnav-background-opacity' ) ) {
+if ( $is_style_preview || ! $this->thememod()->is_default( 'color-subnav-background' ) || ! $this->thememod()->is_default( 'color-subnav-background-opacity' ) ) {
 	// Convert to RGBa
 	$color = $this->helper()->hex_to_rgb( $this->thememod()->get_value( 'color-subnav-background' ) ) . ', ' . $this->thememod()->get_value( 'color-subnav-background-opacity' );
 
@@ -519,7 +525,7 @@ if ( ! $this->thememod()->is_default( 'color-subnav-background' ) || ! $this->th
 }
 
 // Sub-Menu Item Background hover
-if ( ! $this->thememod()->is_default( 'color-subnav-background-hover' ) || ! $this->thememod()->is_default( 'color-subnav-background-hover-opacity' ) ) {
+if ( $is_style_preview || ! $this->thememod()->is_default( 'color-subnav-background-hover' ) || ! $this->thememod()->is_default( 'color-subnav-background-hover-opacity' ) ) {
 	// Convert to RGBa
 	$color = $this->helper()->hex_to_rgb( $this->thememod()->get_value( 'color-subnav-background-hover' ) ) . ', ' . $this->thememod()->get_value( 'color-subnav-background-hover-opacity' );
 
@@ -538,7 +544,7 @@ if ( ! $this->thememod()->is_default( 'color-subnav-background-hover' ) || ! $th
 }
 
 // Current Item Background
-if ( ! $this->thememod()->is_default( 'color-nav-current-item-background' ) || ! $this->thememod()->is_default( 'color-nav-current-item-background-opacity' ) ) {
+if ( $is_style_preview || ! $this->thememod()->is_default( 'color-nav-current-item-background' ) || ! $this->thememod()->is_default( 'color-nav-current-item-background-opacity' ) ) {
 	// Convert to RGBa
 	$color = $this->helper()->hex_to_rgb( $this->thememod()->get_value( 'color-nav-current-item-background' ) ) . ', ' . $this->thememod()->get_value( 'color-nav-current-item-background-opacity' );
 
@@ -563,7 +569,7 @@ if ( ! $this->thememod()->is_default( 'color-nav-current-item-background' ) || !
  */
 
 // Header Bar text color
-if ( ! $this->thememod()->is_default( 'header-bar-text-color' ) ) {
+if ( $is_style_preview || ! $this->thememod()->is_default( 'header-bar-text-color' ) ) {
 	$this->css()->add( array(
 		'selectors'    => array(
 			'.header-bar',
@@ -577,7 +583,7 @@ if ( ! $this->thememod()->is_default( 'header-bar-text-color' ) ) {
 }
 
 // Header Bar link color
-if ( ! $this->thememod()->is_default( 'header-bar-link-color' ) ) {
+if ( $is_style_preview || ! $this->thememod()->is_default( 'header-bar-link-color' ) ) {
 	$this->css()->add( array(
 		'selectors'    => array(
 			'.header-bar a',
@@ -591,7 +597,7 @@ if ( ! $this->thememod()->is_default( 'header-bar-link-color' ) ) {
 }
 
 // Header Bar link hover color
-if ( ! $this->thememod()->is_default( 'header-bar-link-hover-color' ) ) {
+if ( $is_style_preview || ! $this->thememod()->is_default( 'header-bar-link-hover-color' ) ) {
 	$this->css()->add( array(
 		'selectors'    => array(
 			'.header-bar a:hover',
@@ -606,7 +612,7 @@ if ( ! $this->thememod()->is_default( 'header-bar-link-hover-color' ) ) {
 }
 
 // Header Bar border color
-if ( ! $this->thememod()->is_default( 'header-bar-border-color' ) ) {
+if ( $is_style_preview || ! $this->thememod()->is_default( 'header-bar-border-color' ) ) {
 	$this->css()->add( array(
 		'selectors'    => array(
 			'.header-bar',
@@ -621,7 +627,7 @@ if ( ! $this->thememod()->is_default( 'header-bar-border-color' ) ) {
 }
 
 // Header Bar background color
-if ( ! $this->thememod()->is_default( 'header-bar-background-color' ) || ! $this->thememod()->is_default( 'header-bar-background-color-opacity' ) ) {
+if ( $is_style_preview || ! $this->thememod()->is_default( 'header-bar-background-color' ) || ! $this->thememod()->is_default( 'header-bar-background-color-opacity' ) ) {
 	// Convert to RGBa
 	$color = $this->helper()->hex_to_rgb( $this->thememod()->get_value( 'header-bar-background-color' ) ) . ', ' . $this->thememod()->get_value( 'header-bar-background-color-opacity' );
 
@@ -638,7 +644,7 @@ if ( ! $this->thememod()->is_default( 'header-bar-background-color' ) || ! $this
  */
 
 // Sidebar widget title
-if ( ! $this->thememod()->is_default( 'color-widget-title-text' ) ) {
+if ( $is_style_preview || ! $this->thememod()->is_default( 'color-widget-title-text' ) ) {
 	$this->css()->add( array(
 		'selectors'    => array(
 			'.sidebar .widget-title',
@@ -653,7 +659,7 @@ if ( ! $this->thememod()->is_default( 'color-widget-title-text' ) ) {
 }
 
 // Sidebar widget body
-if ( ! $this->thememod()->is_default( 'color-widget-text' ) ) {
+if ( $is_style_preview || ! $this->thememod()->is_default( 'color-widget-text' ) ) {
 	$this->css()->add( array(
 		'selectors'    => array( '.sidebar .widget' ),
 		'declarations' => array(
@@ -663,7 +669,7 @@ if ( ! $this->thememod()->is_default( 'color-widget-text' ) ) {
 }
 
 // Sidebar link
-if ( ! $this->thememod()->is_default( 'color-widget-link' ) ) {
+if ( $is_style_preview || ! $this->thememod()->is_default( 'color-widget-link' ) ) {
 	$this->css()->add( array(
 		'selectors'    => array( '.sidebar a' ),
 		'declarations' => array(
@@ -673,7 +679,7 @@ if ( ! $this->thememod()->is_default( 'color-widget-link' ) ) {
 }
 
 // Sidebar link hover
-if ( ! $this->thememod()->is_default( 'color-widget-link-hover' ) ) {
+if ( $is_style_preview || ! $this->thememod()->is_default( 'color-widget-link-hover' ) ) {
 	$this->css()->add( array(
 		'selectors'    => array(
 			'.sidebar a:hover',
@@ -686,7 +692,7 @@ if ( ! $this->thememod()->is_default( 'color-widget-link-hover' ) ) {
 }
 
 // Sidebar widget border
-if ( ! $this->thememod()->is_default( 'color-widget-border' ) ) {
+if ( $is_style_preview || ! $this->thememod()->is_default( 'color-widget-border' ) ) {
 	$this->css()->add( array(
 		'selectors'    => array(
 			'.sidebar table',
@@ -705,7 +711,7 @@ if ( ! $this->thememod()->is_default( 'color-widget-border' ) ) {
  */
 
 // Footer text color
-if ( ! $this->thememod()->is_default( 'footer-text-color' ) ) {
+if ( $is_style_preview || ! $this->thememod()->is_default( 'footer-text-color' ) ) {
 	$this->css()->add( array(
 		'selectors'    => array(
 			'.site-footer',
@@ -718,7 +724,7 @@ if ( ! $this->thememod()->is_default( 'footer-text-color' ) ) {
 }
 
 // Footer link color
-if ( ! $this->thememod()->is_default( 'footer-link-color' ) ) {
+if ( $is_style_preview || ! $this->thememod()->is_default( 'footer-link-color' ) ) {
 	$this->css()->add( array(
 		'selectors'    => array( '.site-footer a' ),
 		'declarations' => array(
@@ -728,7 +734,7 @@ if ( ! $this->thememod()->is_default( 'footer-link-color' ) ) {
 }
 
 // Footer link hover color
-if ( ! $this->thememod()->is_default( 'footer-link-hover-color' ) || ! $this->thememod()->is_default( 'footer-link-color' ) ) {
+if ( $is_style_preview || ! $this->thememod()->is_default( 'footer-link-hover-color' ) || ! $this->thememod()->is_default( 'footer-link-color' ) ) {
 	$this->css()->add( array(
 		'selectors'    => array(
 			'.site-footer a:hover',
@@ -741,7 +747,7 @@ if ( ! $this->thememod()->is_default( 'footer-link-hover-color' ) || ! $this->th
 }
 
 // Footer border color
-if ( ! $this->thememod()->is_default( 'footer-border-color' ) ) {
+if ( $is_style_preview || ! $this->thememod()->is_default( 'footer-border-color' ) ) {
 	$this->css()->add( array(
 		'selectors'    => array( '.site-footer *:not(select)' ),
 		'declarations' => array(
@@ -751,7 +757,7 @@ if ( ! $this->thememod()->is_default( 'footer-border-color' ) ) {
 }
 
 // Footer background color
-if ( ! $this->thememod()->is_default( 'footer-background-color' ) || ! $this->thememod()->is_default( 'footer-background-color-opacity' ) ) {
+if ( $is_style_preview || ! $this->thememod()->is_default( 'footer-background-color' ) || ! $this->thememod()->is_default( 'footer-background-color-opacity' ) ) {
 	// Convert to RGBa
 	$color = $this->helper()->hex_to_rgb( $this->thememod()->get_value( 'footer-background-color' ) ) . ', ' . $this->thememod()->get_value( 'footer-background-color-opacity' );
 

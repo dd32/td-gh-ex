@@ -3,8 +3,8 @@
 Contributors: thethemefoundry
 Tags: black, blue, green, gray, orange, red, white, yellow, dark, light, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, buddypress, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
 
-Requires at least: 4.2
-Tested up to: 4.5.1
+Requires at least: 4.4
+Tested up to: 4.5.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,6 +25,42 @@ Build a website that means business. With Make’s powerful drag and drop page b
 Please see the Make documentation: https://thethemefoundry.com/make-help/
 
 == Changelog ==
+
+= 1.7.10 - November 16 2016 =
+* Bug fix: Unconsistent HTML entity decoding was causing random data loss.
+
+= 1.7.9 - October 26 2016 =
+* Bug fix: Previewing builder pages was corrupting sections data.
+
+= 1.7.8 - October 19 2016 =
+* Improved: Overcome server POST data cap. See: https://github.com/thethemefoundry/make/issues/264.
+* Bug fix: Drag handles for widgets in single widgetized columns were disappearing.
+
+= 1.7.7 - July 15 2016 =
+* Bug fix: The markup creating links in Gallery section items was broken.
+
+= 1.7.6 - July 13 2016 =
+* Improved: Minor stylesheet changes and enhancements. See the complete diff here: https://github.com/thethemefoundry/make/commit/3821a67298b484d142514f6f9bbcaade85cc0071#diff-8
+* New filter: `make_builder_get_gallery_item_onclick` modifies the onclick attribute of Gallery section items.
+
+= 1.7.5 - June 22 2016 =
+* Improved: Better integration with the WP Retina 2x plugin for improved retina logos.
+* Bug fix: Layout view algorithm was reverting to 'post' view when nothing matched.
+* Updated: The latest list of Google fonts.
+
+= 1.7.4 - June 7 2016 =
+* Changed: Make now only supports WordPress 4.4 and higher.
+* Bug fix: Current menu item font weight was not applied correctly.
+* Bug fix: Some style settings were not updated correctly in the Customizer preview pane.
+* New filter: `make_entry_thumbnail_size` modifies the image size used for post featured images.
+
+= 1.7.3 - May 23 2016 =
+* Bug fix: Display issue with the custom logo in Internet Explorer.
+* Changed: Wording changes in various parts of the UI.
+* Changed: Added notice that will appear for Make Plus users when they have an older version of the plugin installed.
+
+= 1.7.2 - May 11 2016 =
+* Bug fix: Display issues with the custom logo.
 
 = 1.7.1 - May 5 2016 =
 * Improved: Better detection for plugin integrations.
@@ -379,6 +415,9 @@ Please see the Make documentation: https://thethemefoundry.com/make-help/
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.7.7 =
+Fixed a bug that was causing Gallery section item links to not work.
 
 = 1.7.0 =
 Big under-the-hood changes to the code for improved efficiency and maintainability. Many functions and hooks have been deprecated.
