@@ -615,6 +615,10 @@ a {
     float: left;
     line-height: 48px;
     margin-right: 0; }
+    #site-navigation .stick-menu-logo a {
+      line-height: initial;
+      padding-top: 0;
+      padding-bottom: 0; }
     #site-navigation .stick-menu-logo img {
       width: 0;
       max-width: 150px;
@@ -687,7 +691,8 @@ a {
           border-bottom: 1px solid #f6f6f6;
           color: #333; } }
       #site-navigation .nav-menu > li.menu-item-has-children > ul li a:hover, #site-navigation .nav-menu > li.menu-item-has-children > ul li a:focus {
-        outline: none; }
+        outline: none;
+        color: #ff3d2e; }
     #site-navigation .nav-menu > li.menu-item-has-children > ul li:last-of-type a {
       border-bottom: none; }
 
@@ -1542,17 +1547,21 @@ a {
     display: inline-block;
     margin: 1px; }
 
-.customize-partial-edit-shortcuts-shown [id^='newsmag_widget_posts_carousel-'], .customize-partial-edit-shortcuts-shown [id^='newsmag_widget_posts_list_horizontal-'] {
+[id^='newsmag_widget_posts_carousel-'], [id^='newsmag_widget_posts_list_horizontal-'] {
   width: 100%;
   display: inline-block; }
-.customize-partial-edit-shortcuts-shown [id^='newsmag_banner-'] {
+
+[id^='newsmag_banner-'] {
   position: relative; }
-  .customize-partial-edit-shortcuts-shown [id^='newsmag_banner-'] .customize-partial-edit-shortcut {
+  [id^='newsmag_banner-'] .customize-partial-edit-shortcut {
     right: -10px;
     top: -30px; }
-.customize-partial-edit-shortcuts-shown [id^='newsmag_slider_widget-'] .customize-partial-edit-shortcut {
-  right: 0;
-  top: 0; }
+
+[id^='newsmag_slider_widget-'] {
+  position: relative; }
+  [id^='newsmag_slider_widget-'] .customize-partial-edit-shortcut {
+    right: 0;
+    top: 0; }
 
 .newsmag-post-meta > ul {
   list-style-type: none;
