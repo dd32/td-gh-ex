@@ -1,4 +1,4 @@
-<div id="widget-area" class="widget-area" role="complementary">
+<div id="widget-area" class="widget-area">
 	<?php
 		if(is_active_sidebar("sidebar-one")){
 			dynamic_sidebar("sidebar-one"); 

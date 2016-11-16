@@ -2,7 +2,7 @@
 	get_header(); 
 ?>
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main" tabindex="-1"><?PHP
+		<main id="main" class="site-main" tabindex="-1"><?PHP
 
 			get_template_part( 'parts/home/all_posts'); 
 		

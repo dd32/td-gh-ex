@@ -1,10 +1,10 @@
 <?php
 
 function antonine_licence(){
-	$license = esc_html(get_theme_mod("antonine[license]","none"));
+	$license = esc_html(get_theme_mod("antonine_license","none"));
 	$text = "";
 	if($license!="none"){
-		switch(get_theme_mod("license")){
+		switch($license){
 			case 'zero' : $text = __('Creative Commons Zero',"antonine"); $url = "https://creativecommons.org/publicdomain/zero/1.0/"; break;
 			case 'cc-by' : $text = __('Creative Commons CC-BY',"antonine"); $url = "https://creativecommons.org/licenses/by/4.0/";	break;	
 			case 'cc-by-sa' : $text = __('Creative Commons CC-BY-SA',"antonine"); $url = "https://creativecommons.org/licenses/by-sa/4.0/"; break;		
@@ -52,11 +52,13 @@ function antonine_get_categories_links($id){
 
 function antonine_author_meta() {
 
-	global $post;
-	?><div>
-		<h6 class='meta_label'><?PHP echo __('Author', 'antonine'); ?></h6><span property="author" typeof="Person"><a property="url" href="<?PHP echo get_author_posts_url($post->post_author); ?>"><span property="name"><?PHP echo get_the_author_meta("display_name"); ?></span></a></span>
-	</div>
-	<?PHP
+	if(get_theme_mod("antonine_author")=="on"){
+		global $post;
+		?><div>
+			<h6 class='meta_label'><?PHP echo __('Author', 'antonine'); ?> <span property="author" typeof="Person"><a property="url" href="<?PHP echo get_author_posts_url($post->post_author); ?>"><span property="name"><?PHP echo get_the_author_meta("display_name"); ?></span></a></span></h6>
+		</div>
+		<?PHP
+	}
 	
 }
 
@@ -64,17 +66,16 @@ function antonine_entry_meta() {
 
 	global $post;
 	?><div>
-		<h6 class='meta_label'><?PHP echo __('Categories', 'antonine'); ?></h6><span><?PHP echo implode(" / ", antonine_get_categories_links($post->ID)); ?></span>
+		<h6 class='meta_label'><?PHP echo __('Categories', 'antonine'); ?></h6><span>
+		<?PHP  
+			echo implode(" / ", antonine_get_categories_links($post->ID));
+		?>
+		</span>
 	</div>
 	<div>
 		<h6 class='meta_label'><?PHP echo __('Tags', 'antonine'); ?></h6><span><?PHP echo get_the_tag_list(" ", " / ", " "); ?></span>
 	</div>
-	<?PHP if(get_theme_mod("author")=="on"){ ?>
-	<div>
-		<h6 class='meta_label'><?PHP echo __('Author', 'antonine'); ?></h6><span><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a></span></h6>
-	</div>
 	<?PHP
-	}
 	
 }
 

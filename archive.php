@@ -14,7 +14,7 @@
 			?>
 			<p><?PHP echo __("Or Scroll down for more", 'antonine'); ?></p>
 		</div>
-		<main id="main" class="site-main" role="main"><?PHP
+		<main id="main" class="site-main"><?PHP
 
 			while ( have_posts() ) : the_post();
 

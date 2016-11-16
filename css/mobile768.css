@@ -146,12 +146,12 @@
 		width: 75%;
 	}
 
-	html #searchform{
+	html #sitesearchform{
 		padding:20px;
 		text-align:center
 	}
 
-	html #searchform form input[type=text]{
+	html #sitesearchform form input[type=text]{
 		font-size:16px;
 		margin: 5px 0px;
 	}

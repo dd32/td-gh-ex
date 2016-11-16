@@ -5,7 +5,7 @@
 	if(have_posts()){
 ?>	
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main"><?PHP
+		<main id="main" class="site-main"><?PHP
 
 			query_posts( $query_string . '&posts_per_page=-1' );
 
@@ -21,7 +21,7 @@
 <?PHP
 	}else{
 ?><div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+		<main id="main" class="site-main">
 			<div class="no-posts">
 				<?PHP
 					echo __("Sorry, nothing found. Try again?","antonine");

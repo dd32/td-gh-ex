@@ -6,7 +6,7 @@
 		<?PHP
 			get_template_part( 'parts/pagination/pagination' );
 		?>
-		<main id="main" class="site-main" role="main"><?PHP
+		<main id="main" class="site-main"><?PHP
 
 			while ( have_posts() ) : the_post();
 

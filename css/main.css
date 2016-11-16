@@ -587,8 +587,12 @@ footer.page-footer h1.pagination span.more{
 	margin-bottom: 1%;
 }
 
+#sitesearchform{
+	text-align:center;
+}
+
 #accessform form,
-#searchform form{
+#sitesearchform form{
 	width: 96%;
 }
 
@@ -605,7 +609,7 @@ footer.page-footer h1.pagination span.more{
 	/*padding: 0.2% 0%;*/
 }
 
-#searchform form input[type=text]{
+#sitesearchform form input[type=text]{
 	width: 53%;
 	height: 32px;
 	font-family: 'Josefin Sans', sans-serif;
@@ -615,7 +619,7 @@ footer.page-footer h1.pagination span.more{
 	border: none;
 }
 
-#searchform form input[type=submit]{
+#sitesearchform form input[type=submit]{
 	height: 53px;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 30px;
@@ -1023,7 +1027,7 @@ h6{
 	margin: 3px;
 }
 
-#searchform form input[type=text],
+#sitesearchform form input[type=text],
 #commentform input[type=text],
 #commentform input[type=email],
 #commentform input[type=url],
@@ -1147,3 +1151,7 @@ section.error-404 header.page-header{
 }	
 	
 .sticky{}
+
+.accessibility_hidden{
+	display:none;
+}

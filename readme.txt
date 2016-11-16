@@ -13,5 +13,4 @@ The menu options are:-
 3) Filters - a more advanced search / faceted search option
 4) Comments - a way to see recent comments from any page
 5) Widgets - a sidebar built into the home page (but not per say a sidebar)
-6) Accessibility - an option to change site colours and text size for end users
-7) Files - a way to see files uploaded to the site, allowing quick access to any files a user has uploaded
+6) Files - a way to see files uploaded to the site, allowing quick access to any files a user has uploaded

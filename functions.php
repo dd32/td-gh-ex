@@ -65,25 +65,16 @@ function antonine_scripts() {
 
 	wp_enqueue_style( 'antonine-style', get_template_directory_uri() . '/css/main.css' );
 	wp_enqueue_style( 'antonine-style-extra', admin_url('admin-ajax.php').'?action=antonine_custom_css');
-	wp_enqueue_style( 'antonine-style-custom', get_template_directory_uri() . '/css/custom.css' );
 	wp_enqueue_style( 'antonine-core-style', get_template_directory_uri() . '/css/wp_core.css' );
 	wp_enqueue_style( 'antonine-style-mobile-768', get_template_directory_uri() . '/css/mobile768.css' );
 	wp_enqueue_style( 'antonine-main-menu-style', get_template_directory_uri() . '/css/menu/main-menu.css' );
 	wp_enqueue_style( 'font-awesome', get_stylesheet_directory_uri() . '/css/font-awesome/font-awesome.min.css'); 
-	wp_enqueue_style( 'accessibility-spectrum-css', get_template_directory_uri() . '/css/spectrum/spectrum.css' );
-	wp_enqueue_style( 'basic-accessibility-style-css', get_template_directory_uri() . '/css/accessibility/style.css' );
-	wp_enqueue_style( 'jquery-slider-css', get_stylesheet_directory_uri() . '/css/jqueryslider/jqueryslider.css');
+	
 	wp_enqueue_style( 'google_font_dosis', '//fonts.googleapis.com/css?family=Dosis:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300&subset=latin,cyrillic-ext,latin-ext,cyrillic,greek-ext,vietnamese', FALSE);
 	wp_enqueue_style( 'google_font_josefin', '//fonts.googleapis.com/css?family=Josefin+Sans:400', FALSE);
 
 	if ( is_singular() ) wp_enqueue_script( "comment-reply" );
 
-	wp_enqueue_script( 'jquery-ui-slider', array( 'jquery' ), "", true );
-	wp_enqueue_script( 'jquery-color', array( 'jquery' ), "", true );
-	wp_enqueue_script( 'accessibility-spectrum-js', get_template_directory_uri() . '/js/spectrum/spectrum.js', array( 'jquery', 'jquery-ui-slider' ), "", true );
-	wp_enqueue_script( 'accessibility-script', get_template_directory_uri() . '/js/accessibility/accessibility.js', array( 'jquery' ), "", true );
-	wp_enqueue_script( 'jquery-cookie', get_template_directory_uri() . '/js/cookie/cookie.js', array( 'jquery' ), "", true );
-	
 	wp_enqueue_script( 'antonine-table-fix', get_template_directory_uri() . '/js/display/table_fix.js', array( 'jquery' ), "", true );
 	wp_enqueue_script( 'antonine-youtube', get_template_directory_uri() . '/js/display/youtube-fix.js', array( 'jquery' ), "", true );
 	wp_enqueue_script( 'antonine-search', get_template_directory_uri() . '/js/search/search-form.js', array( 'jquery' ), "", true );
@@ -188,46 +179,46 @@ function antonine_custom_css() {
 		?>
 			html,
 			#shareForm{
-			background-color: <?PHP echo esc_html(get_theme_mod('antonine[site_allsite_background_colour]', '#fefefe')); ?>;
-			color: <?PHP echo esc_html(get_theme_mod('antonine[site_alltext_colour]'), '#000000'); ?>;
+			background-color: <?PHP echo esc_html(get_theme_mod('antonine_site_allsite_background_colour', '#fefefe')); ?>;
+			color: <?PHP echo esc_html(get_theme_mod('antonine_site_alltext_colour'), '#000000'); ?>;
 		}
 		
 		.site-navigation ul li a{
-			color :  <?PHP echo esc_html(get_theme_mod('antonine[site_menu_text_colour]'),'#000000'); ?>;
+			color :  <?PHP echo esc_html(get_theme_mod('antonine_site_menu_text_colour'),'#000000'); ?>;
 		}
 
 		li.sub-menu{
-			background-color :  <?PHP echo esc_html(get_theme_mod('antonine[site_submenu_background_colour]','#000000')); ?>;
+			background-color :  <?PHP echo esc_html(get_theme_mod('antonine_site_submenu_background_colour','#000000')); ?>;
 		}
 		
 		.site-navigation li a:hover, 
 		.site-navigation li a:focus {
 			transition: background-color 0.5s ease;
-			color: <?PHP echo esc_html(get_theme_mod('antonine[site_menu_text_hover_colour]','#ff0000')); ?>;
+			color: <?PHP echo esc_html(get_theme_mod('antonine_site_menu_text_hover_colour','#ff0000')); ?>;
 		}
 		
 		.site-navigation li:hover, 
 		.site-navigation li:focus {
 			transition: background-color 0.5s ease;
-			background-color: <?PHP echo esc_html(get_theme_mod('antonine[site_menu_background_hover_colour]','#aaaaaa')); ?>;
+			background-color: <?PHP echo esc_html(get_theme_mod('antonine_site_menu_background_hover_colour','#aaaaaa')); ?>;
 		}
 		
 		.site-navigation ul li .current-menu-item a{
-			background: <?PHP echo esc_html(get_theme_mod('antonine[site_menu_background_current_colour]','#aaaaaa')); ?>;  
-			background-color: <?PHP echo esc_html(get_theme_mod('antonine[site_menu_background_current_colour]','#aaaaaa')); ?>;  
+			background: <?PHP echo esc_html(get_theme_mod('antonine_site_menu_background_current_colour','#aaaaaa')); ?>;  
+			background-color: <?PHP echo esc_html(get_theme_mod('antonine_site_menu_background_current_colour','#aaaaaa')); ?>;  
 		}
 		
 		<?PHP
-			$hex = antonine_hex2rgb(esc_html(get_theme_mod('antonine[pagination_background_colour]','#000000')));
+			$hex = antonine_hex2rgb(esc_html(get_theme_mod('antonine_pagination_background_colour','#000000')));
 		?>
 		
 		.pagination a{
 			background-color: rgba(<?PHP echo $hex[0] . "," . $hex[1] . "," . $hex[2]; ?>, 0.9); 
-			color: <?PHP echo esc_html(get_theme_mod('antonine[pagination_link_colour]','#ffffff')); ?>; 
+			color: <?PHP echo esc_html(get_theme_mod('antonine_pagination_link_colour','#ffffff')); ?>; 
 		}
 		
 		<?PHP
-			$hex = antonine_hex2rgb(esc_html(get_theme_mod('antonine[site_post_background_colour]','#ffffff')));
+			$hex = antonine_hex2rgb(esc_html(get_theme_mod('antonine_site_post_background_colour','#ffffff')));
 		?>
 	
 		article,
@@ -243,61 +234,61 @@ function antonine_custom_css() {
 		.single .links,
 		.page .links,
 		#gradient{
-			background-color: <?PHP echo esc_html(get_theme_mod("antonine[site_single_post_background_colour]",'#ffffff')); ?>;
+			background-color: <?PHP echo esc_html(get_theme_mod("antonine_site_single_post_background_colour",'#ffffff')); ?>;
 		}
 
 		#gradient{		
-			background: <?PHP echo esc_html(get_theme_mod('antonine[site_allsite_background_colour]','#ffffff')); ?>;
-			background: -webkit-linear-gradient(<?PHP echo esc_html(get_theme_mod('antonine[site_single_post_background_colour]','#ffffff')); ?>, <?PHP echo get_theme_mod('site_allsite_background_colour'); ?>); 
-			background: -o-linear-gradient(<?PHP echo esc_html(get_theme_mod('antonine[site_single_post_background_colour]','#ffffff')); ?>, <?PHP echo get_theme_mod('site_allsite_background_colour'); ?>); 
-			background: -moz-linear-gradient(<?PHP echo esc_html(get_theme_mod('antonine[site_single_post_background_colour]','#ffffff')); ?>, <?PHP echo get_theme_mod('site_allsite_background_colour'); ?>); 
-			background: linear-gradient(<?PHP echo esc_html(get_theme_mod('antonine[site_single_post_background_colour]','#ffffff')); ?>, <?PHP echo get_theme_mod('site_allsite_background_colour'); ?>); 
+			background: <?PHP echo esc_html(get_theme_mod('antonine_site_allsite_background_colour','#ffffff')); ?>;
+			background: -webkit-linear-gradient(<?PHP echo esc_html(get_theme_mod('antonine_site_single_post_background_colour','#ffffff')); ?>, <?PHP echo get_theme_mod('site_allsite_background_colour'); ?>); 
+			background: -o-linear-gradient(<?PHP echo esc_html(get_theme_mod('antonine_site_single_post_background_colour','#ffffff')); ?>, <?PHP echo get_theme_mod('site_allsite_background_colour'); ?>); 
+			background: -moz-linear-gradient(<?PHP echo esc_html(get_theme_mod('antonine_site_single_post_background_colour','#ffffff')); ?>, <?PHP echo get_theme_mod('site_allsite_background_colour'); ?>); 
+			background: linear-gradient(<?PHP echo esc_html(get_theme_mod('antonine_site_single_post_background_colour','#ffffff')); ?>, <?PHP echo get_theme_mod('site_allsite_background_colour'); ?>); 
 		}
 
 		a{
-			color: <?PHP echo esc_html(get_theme_mod('antonine[site_alllink_colour]','#550000')); ?>;
+			color: <?PHP echo esc_html(get_theme_mod('antonine_site_alllink_colour','#550000')); ?>;
 		}
 		
 		html a:hover,
 		html a:focus{
 			transition: background-color 0.5s ease;
-			color: <?PHP echo esc_html(get_theme_mod('antonine[site_alllink_hover_colour]','#ff0000')); ?>;
+			color: <?PHP echo esc_html(get_theme_mod('antonine_site_alllink_hover_colour','#ff0000')); ?>;
 		}
 		
 		header#masthead h1 a,
 		header#masthead p a{
-			color: <?PHP echo esc_html(get_theme_mod("antonine[site_title_colour]",'#555555')); ?>;
+			color: <?PHP echo esc_html(get_theme_mod("antonine_site_title_colour",'#555555')); ?>;
 		}
 		
 		header#masthead h1 a:hover,
 		header#masthead p a:hover{
 			transition: background-color 0.5s ease;
-			color: <?PHP echo esc_html(get_theme_mod('antonine[site_alllink_hover_colour]','#ff0000')); ?>;
+			color: <?PHP echo esc_html(get_theme_mod('antonine_site_alllink_hover_colour','#ff0000')); ?>;
 		}
 		
 		button,
 		input[type=submit]{
-			background-color:  <?PHP echo esc_html(get_theme_mod("antonine[site_button_colour]",'#000000')); ?>;
-			color:  <?PHP echo esc_html(get_theme_mod("antonine[site_button_text_colour]",'#ffffff')); ?>;
+			background-color:  <?PHP echo esc_html(get_theme_mod("antonine_site_button_colour",'#000000')); ?>;
+			color:  <?PHP echo esc_html(get_theme_mod("antonine_site_button_text_colour",'#ffffff')); ?>;
 		}
 		
 		article .entry-title{
-			color:  <?PHP echo esc_html(get_theme_mod("antonine[site_title_colour]",'#555555')); ?>;
+			color:  <?PHP echo esc_html(get_theme_mod("antonine_site_title_colour",'#555555')); ?>;
 		}
 		
 		.home article .content-holder,
 		.search article .content-holder,
 		.archive article .content-holder{
-			border-right: 1px solid  <?PHP echo esc_html(get_theme_mod("antonine[border_colour]",'#0000FF')); ?>;
-			border-left: 1px solid  <?PHP echo esc_html(get_theme_mod("antonine[border_colour]",'#0000FF')); ?>;
+			border-right: 1px solid  <?PHP echo esc_html(get_theme_mod("antonine_border_colour",'#0000FF')); ?>;
+			border-left: 1px solid  <?PHP echo esc_html(get_theme_mod("antonine_border_colour",'#0000FF')); ?>;
 		}
 		
 		<?PHP
-			$hex = antonine_hex2rgb(esc_html(get_theme_mod('antonine[shadow_colour]')));
+			$hex = antonine_hex2rgb(esc_html(get_theme_mod('antonine_shadow_colour')));
 		?>
 		
 		#shareForm{
-			border: 1px solid  <?PHP echo esc_html(get_theme_mod("antonine[site_alltext_colour]",'#000000')); ?>;
+			border: 1px solid  <?PHP echo esc_html(get_theme_mod("antonine_site_alltext_colour",'#000000')); ?>;
 			-webkit-box-shadow: 10px 10px 40px 0px rgba(<?PHP echo $hex[0] . "," . $hex[1] . "," . $hex[2]; ?>,0.55);
 			-moz-box-shadow: 10px 10px 40px 0px rgba(<?PHP echo $hex[0] . "," . $hex[1] . "," . $hex[2]; ?>,0.55);
 			box-shadow: 10px 10px 40px 0px rgba(<?PHP echo $hex[0] . "," . $hex[1] . "," . $hex[2]; ?>,0.55);
@@ -315,7 +306,7 @@ function antonine_custom_css() {
 
 		.page #main article .aside,
 		.single #main article .aside{
-			border:1px solid <?PHP echo esc_html(get_theme_mod('antonine[shadow_colour]')); ?>;
+			border:1px solid <?PHP echo esc_html(get_theme_mod('antonine_shadow_colour')); ?>;
 			-webkit-border-radius: 20px;
 			-moz-border-radius: 20px;
 			border-radius: 20px;
@@ -332,7 +323,6 @@ function antonine_comment_template( $comment_template ) {
 add_filter( "comments_template", "antonine_comment_template" );
 
 require get_template_directory() . '/inc/template-tags.php';
-require get_template_directory() . '/inc/social_media_headers.php';
 require get_template_directory() . '/inc/infinite_scroll.php';
 require get_template_directory() . '/inc/comments.php';
 require get_template_directory() . '/inc/files.php';

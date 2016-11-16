@@ -1,10 +1,10 @@
 <?php
-	if(get_theme_mod("antonine[scroll]","on")=="on"){
+	if(get_theme_mod("antonine_scroll","on")=="on"){
 ?>
 <div id="antoninetopscroll">
-	<h1>	
+	<p>	
 		<span class="fa fa-angle-double-up"></span>
-	</h1>
+	</p>
 </div>
 <?PHP
 	}
