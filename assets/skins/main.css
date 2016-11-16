@@ -269,6 +269,10 @@ a:hover {
   list-style: none;
   padding: 10px;
 }
+.slicknav_menu li .slicknav_arrow {
+  margin-left: 5px;
+  font-size: 10px;
+}
 @media screen and (max-width: 768px) {
   #site-navigation,
   #post-navigation,
@@ -476,6 +480,9 @@ body.blog #primary-home h2#page-title span:after {
 }
 body.blog #primary-home article {
   margin-bottom: 50px;
+}
+body.blog #primary-home article .featured-thumb {
+  text-align: center;
 }
 body.blog #primary-home article .post-format {
   position: absolute;

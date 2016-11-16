@@ -160,7 +160,7 @@ function attirant_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Home', 'attirant' ),
 		'id'            => 'sidebar-main',
-		'description'   => '',
+		'description'   => __('This Sidebar displays the sections of the Static Front Page. Only use AT-Slider, AT-Featured Area and AT-Recent Posts widgets in this sidebar.', 'attirant'),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title"><span>',

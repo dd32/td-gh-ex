@@ -648,51 +648,76 @@ function attirant_customize_register( $wp_customize ) {
 	
 	//---- Pro Settings ----//
 	
-	$wp_customize-> add_section(
-    'attirant_pro',
-    array(
-    	'title'			=> __('Attirant Plus','attirant'),
-    	'priority'		=> 21,
-    	)
-    );
-    
-    class MyCustom_Customize_Control extends WP_Customize_Control {    
-	    
-	    public $type = 'attirant-pro';
-	    
+	class attirant_Review_Control extends WP_Customize_Control {   
+		
+		public $type = 'attirant-options';
+		 
 	    public function render_content() {
 	        ?>
-	       		<label>
-<!--
-					<input type="checkbox" value="<?php echo esc_attr( $this->value() ); ?>" <?php $this->link(); checked( $this->value() ); ?> />
-					<?php echo esc_html( $this->label ); ?>
-					<?php if ( ! empty( $this->description ) ) : ?>
-						<span class="description customize-control-description"><?php echo $this->description; ?></span>
-					<?php endif; ?>
--->
-					<?php echo __('You can now upgrade to Attirant Plus and unlock the abundant potential of the theme with some amazing and useful features such as <br><br><b>Multiple Layouts</b><br><br><b>Featured Slider</b><br><br><b>WooCommerce Readiness</b><br><br><b>High Flexibility</b><br><br><b>Custom Fields</b><br><br>and much more.<br><br>Check the theme out for yourself <a href="http://www.divjot.co/product/attirant-plus">here</a><br><br><b>If you are enjoying the Lite version, kindly drop in a review ( I hope a good one )  <a href="https://www.wordpress.org/themes/attirant">here</a>.</b>', 'attirant'); ?>
-				</label>
+			<li><p class="rev-title"><?php _e('<i>If you liked the theme, spare a few minutes to Review Attirant Plus</i>', 'attirant'); ?></p><a class="button attirant_rev" href="https://www.wordpress.org/themes/attirant" target="_blank" title="<?php esc_attr_e('Rate the Theme', 'attirant'); ?>"><?php printf('Review attirant Theme', 'attirant'); ?></a></li>
+			<br>
+			<li><h2 class="fb-like-title"><?php _e('Like Divjot.Co on Facebook', 'attirant'); ?></h2><div class="fb-like" data-href="https://www.facebook.com/divjotco" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div></li>
+			<br>
+			<li><h2 class="twitter-title"><?php _e('Follow me on Twitter', 'attirant'); ?></h2><a class="twitter-follow-button" href="https://twitter.com/divjot911" data-size="large">Follow me on Twitter</a></li>
+			<br>
+			<li><h2 class="pro-title"><?php _e('<b>Enjoying the Theme?</b>', 'attirant'); ?></h2><a class="button attirant_pro" href="http://www.divjot.co/product/attirant-plus" target="_blank" title="<?php esc_attr_e('Attirant Plus', 'attirant'); ?>"><?php printf('Check out Attirant Plus', 'attirant'); ?></a></li>
+			
+			
+				<div id="fb-root"></div>
+				<script>(function(d, s, id) {
+				  var js, fjs = d.getElementsByTagName(s)[0];
+				  if (d.getElementById(id)) return;
+				  js = d.createElement(s); js.id = id;
+				  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+				  fjs.parentNode.insertBefore(js, fjs);
+				}(document, 'script', 'facebook-jssdk'));</script>
+				
+				<script>window.twttr = (function(d, s, id) {
+				  var js, fjs = d.getElementsByTagName(s)[0],
+				    t = window.twttr || {};
+				  if (d.getElementById(id)) return t;
+				  js = d.createElement(s);
+				  js.id = id;
+				  js.src = "https://platform.twitter.com/widgets.js";
+				  fjs.parentNode.insertBefore(js, fjs);
+				
+				  t._e = [];
+				  t.ready = function(f) {
+				    t._e.push(f);
+				  };
+				
+				  return t;
+				}(document, "script", "twitter-wjs"));</script>
+			
+					
 	        <?php
 	    }
 	}
-    
-    $wp_customize->add_setting(
-	'pro_hide',
-	array(
-		'default'			=> false,
-		'sanitize_callback'	=> 'attirant_sanitize_checkbox',
-		)
-	);
- 
-	$wp_customize-> add_control( new MyCustom_Customize_Control( $wp_customize,
-    'pro_hide',
+	
+	$wp_customize-> add_section(
+    'attirant_pro',
     array(
-    	'type'		=> 'attirant-pro',
-    	'label'		=> __('','attirant'),
-    	'section'	=> 'attirant_pro',
-    	'priority'	=> 1,
+    	'title'			=> __('Theme Links','attirant'),
+    	'priority'		=> 1,
     	)
-    ));
+    );
+    
+    $wp_customize-> add_setting(
+	    'attirant_review',
+		array(
+			'sanitize_callback'	=> 'esc_url_raw'
+		)
+    );
+    
+    $wp_customize->add_control(
+	    new attirant_Review_Control(
+		    $wp_customize,
+                'attirant_review', array(
+                'section' => 'attirant_pro',
+                'type' => 'attirant-options',
+            )
+	    )
+    );
 	
 	function attirant_sanitize_checkbox( $i ) {
 	    if ( $i == 1 ) {

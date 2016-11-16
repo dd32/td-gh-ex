@@ -3,7 +3,8 @@
 */
 
 #customize-theme-controls #accordion-section-attirant_pro .accordion-section-title {
-	color: #6fb624;
+	background: #6fb624;
+	color: white;
 		&:before {
 		position: relative;
 		content: "\f0a3";
@@ -11,4 +12,30 @@
 		top: 0;
 		margin-right: 10px;
 	}
+	&:after {
+		color: white;
+	}
+}
+
+#customize-theme-controls li h2.fb-like-title, #customize-theme-controls li h2.twitter-title, #customize-theme-controls li h2.pro-title {
+	font-family: "Muli", sans-serif;
+	font-weight: 300;
+	color: #555;
+	font-size: 15px;
+}
+
+#customize-theme-controls li a.attirant_rev {
+	margin-top: 5px;
+		&:before {
+		content: "\f005";
+		font-family: "FontAwesome";
+		color: #eccb15;
+		padding-right: 5px;
+	}
+}
+
+#customize-theme-controls li a.attirant_pro:before {
+	content: "\f06c";
+	font-family: "FontAwesome";
+	padding-right: 5px;
 }

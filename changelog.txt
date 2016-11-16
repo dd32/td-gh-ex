@@ -16,3 +16,9 @@ version 1.3
 
 	- Upgrade option added
 	- Minor bug fixes
+
+vERSION 1.4
+
+	- Update Font Awesome
+	- Fixed layout Bugs
+	- Other minor fixes
