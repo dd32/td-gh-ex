@@ -8,11 +8,11 @@ function bellini_header_logo(){ ?>
 			the_custom_logo();
 		else: ?>
 		<!-- Display the Sitename as Logo -->
-			<h1 class="site-title" itemprop="headline">
+			<p class="site-title" itemprop="headline">
 				<a itemprop="url" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 					<?php bloginfo( 'name' ); ?>
 				</a>
-			</h1>
+			</p>
 	<?php endif;
 		$description = get_bloginfo( 'description', 'display' );
 		if ( $description || is_customize_preview() ) : ?>

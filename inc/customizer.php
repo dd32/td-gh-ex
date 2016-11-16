@@ -216,7 +216,7 @@ textarea{
 	color:<?php echo $body_text_color;?>;
 }
 
-.site-branding h1{
+.site-branding{
 	font-family: <?php echo $logo_font_select;?>;
 }
 

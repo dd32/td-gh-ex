@@ -18,7 +18,7 @@ if(absint($bellini['bellini_footer_layout_type']) === 2) :
 		    		<?php printf( __( 'Proudly powered by %s', 'bellini' ), 'WordPress' ); ?>
 		    	</a>
 		    	<span class="sep"> | </span>
-		    	<a href="<?php echo esc_url('http://atlantisthemes.com'); ?>" rel="nofollow">
+		    	<a href="<?php echo esc_url('https://atlantisthemes.com'); ?>" rel="nofollow">
 					<?php printf( __( 'Theme: %1$s by Atlantis Themes', 'bellini' ), 'Bellini'); ?>
 				</a>
 			</div>

@@ -207,7 +207,7 @@ $wp_customize->add_section('bellini_link_color_section',array(
 	// Accent Color -- Settings
 	$wp_customize->add_setting( 'bellini[bellini_accent_color]' ,
 		array(
-	    'default' => '#E3F2FD',
+	    'default' => '#a5aaa8',
 	    'type' => 'option',
 	    'sanitize_callback' => 'sanitize_hex_color',
 	    'transport' => 'postMessage'

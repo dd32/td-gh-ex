@@ -169,7 +169,7 @@ function bellini_upsell_notice() {
 	 // Localize the script
 	 wp_localize_script('bellini-customizer-upsell', 'belliniL10n',
 	 array(
-		 'belliniURL'	=> esc_url( 'http://atlantisthemes.com' ),
+		 'belliniURL'	=> esc_url( 'https://atlantisthemes.com/bellini-feature-comparison/' ),
 		 'belliniLabel'	=> esc_html__( 'Upgrade To Pro', 'bellini' ),
 	 )
 	 );
@@ -185,7 +185,7 @@ function bellini_option_defaults() {
 		'title_text_color' 								=> '#000000',
 		'menu_text_color' 								=> '#000000',
 		'bellini_primary_color'							=> '#2196F3',
-		'bellini_accent_color'							=> '#E3F2FD',
+		'bellini_accent_color'							=> '#a5aaa8',
 		'button_background_color'						=> '#00B0FF',
 		'button_text_color'								=> '#ffffff',
 		'link_text_color'								=> '#000000',
