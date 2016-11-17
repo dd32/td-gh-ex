@@ -56,14 +56,15 @@
 jQuery(document).ready(function($) {
 	
 	/* customizing the drop down menu */
-	jQuery('div.nav-container > ul > li > a').append( '<span class="colorbar"></span>' );
-    jQuery('div.nav-container ul > li').hover(function() {
+	jQuery('.nav-container > ul > li > a').append( '<span class="colorbar"></span>' );
+    jQuery('.nav-container ul > li').hover(function() {
         jQuery(this).children('ul.children,ul.sub-menu').stop(true, true).slideDown("fast");
     }, function(){
         jQuery(this).children('ul.children,ul.sub-menu').slideUp("fast");
     });
 	
 	jQuery('.search-form').append( '<span class="searchico genericon genericon-search"></span>' );
+	jQuery('.searchform').append( '<span class="searchico genericon genericon-search"></span>' );	
 	
 	
 	/* initiating the slider 
@@ -281,6 +282,12 @@ jQuery(document).ready(function($) {
 	*/
 	var slidetimer = null;
 	var slidemove = 1;
+	var sliderscpeed = 6000;
+	
+	sliderscpeed = $(".ibanner").data("sliderspeed");
+	
+	//console.log("Speed : "+sliderscpeed);
+	
 	function startSetInterval() {
 		if(slidemove==1){
 		slidetimer = setInterval(function () {

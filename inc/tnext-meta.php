@@ -37,7 +37,7 @@ function itrans_register_meta_boxes( $meta_boxes )
 		'id' => 'heading',
 
 		// Meta box title - Will appear at the drag and drop handle bar. Required.
-		'title' => __( 'Page Heading Options', 'itrans' ),
+		'title' => __( 'Page Heading Options', 'i-transform' ),
 
 		// Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
 		'pages' => array( 'post', 'page' ),
@@ -55,7 +55,7 @@ function itrans_register_meta_boxes( $meta_boxes )
 		'fields' => array(
 			// Hide Title
 			array(
-				'name' => __( 'Hide Titlebar', 'itrans' ),
+				'name' => __( 'Hide Titlebar', 'i-transform' ),
 				'id'   => "{$prefix}hidetitle",
 				'type' => 'checkbox',
 				// Value can be 0 or 1
@@ -65,7 +65,7 @@ function itrans_register_meta_boxes( $meta_boxes )
 						
 			/**/	
 			array(
-				'name' => __( 'Show Default i-transform Slider', 'itrans' ),
+				'name' => __( 'Show Default i-transform Slider', 'i-transform' ),
 				'id'   => "{$prefix}show_slider",
 				'type' => 'checkbox',
 				// Value can be 0 or 1
@@ -75,7 +75,7 @@ function itrans_register_meta_boxes( $meta_boxes )
 				
 			// hide breadcrum
 			array(
-				'name' => __( 'Hide breadcrumb', 'itrans' ),
+				'name' => __( 'Hide breadcrumb', 'i-transform' ),
 				'id'   => "{$prefix}hide_breadcrumb",
 				'type' => 'checkbox',
 				// Value can be 0 or 1
@@ -85,14 +85,14 @@ function itrans_register_meta_boxes( $meta_boxes )
 			// Other Slider Shortcode
 			array(
 				// Field name - Will be used as label
-				'name'  => __( 'Other Slider Plugin Shortcode', 'itrans' ),
+				'name'  => __( 'Other Slider Plugin Shortcode', 'i-transform' ),
 				// Field ID, i.e. the meta key
 				'id'    => "{$prefix}other_slider",
 				// Field description (optional)
-				'desc'  => __( 'Enter a 3rd party slider shortcode, ex. meta slider, smart slider 2, wow slider, etc. <br />Recommended width 1632px or 100%', 'itrans' ),
+				'desc'  => __( 'Enter a 3rd party slider shortcode, ex. meta slider, smart slider 2, wow slider, etc. <br />Recommended width 1632px or 100%', 'i-transform' ),
 				'type'  => 'text',
 				// Default value (optional)
-				'std'   => __( '', 'itrans' ),
+				'std'   => __( '', 'i-transform' ),
 				// CLONES: Add to make the field cloneable (i.e. have multiple value)
 				//'clone' => true,
 				'class' => 'cust-ttl',
@@ -110,7 +110,7 @@ function itrans_register_meta_boxes( $meta_boxes )
 		'id' => 'portfoliometa',
 
 		// Meta box title - Will appear at the drag and drop handle bar. Required.
-		'title' => __( 'Portfolio Meta', 'ispirit' ),
+		'title' => __( 'Portfolio Meta', 'i-transform' ),
 
 		// Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
 		'pages' => array( 'portfolio' ),
@@ -131,21 +131,21 @@ function itrans_register_meta_boxes( $meta_boxes )
 			// ITEM DETAILS OPTIONS SECTION
 			array(
 				'type' => 'heading',
-				'name' => __( 'Portfolio Additinal Details', 'nx-admin' ),
+				'name' => __( 'Portfolio Additinal Details', 'i-transform' ),
 				'id'   => 'fake_id_pf1', // Not used but needed for plugin
 			),
 			// Slide duration
 			array(
-				'name'  => __( 'Subtitle', 'nx-admin' ),
+				'name'  => __( 'Subtitle', 'i-transform' ),
 				'id'    => "{$prefix}portfolio_subtitle",
-				'desc'  => __( 'Enter a subtitle for use within the portfolio item index (optional).', 'nx-admin' ),				
+				'desc'  => __( 'Enter a subtitle for use within the portfolio item index (optional).', 'i-transform' ),				
 				'type'  => 'text',
 			),
 			
 			array(
-				'name'  => __( 'Portfolio Link(External)', 'nx-admin' ),
+				'name'  => __( 'Portfolio Link(External)', 'i-transform' ),
 				'id'    => "{$prefix}portfolio_url",
-				'desc'  => __( 'Enter an external link for the item (optional) (NOTE: INCLUDE HTTP://).', 'nx-admin' ),				
+				'desc'  => __( 'Enter an external link for the item (optional) (NOTE: INCLUDE HTTP://).', 'i-transform' ),				
 				'type'  => 'text',
 			),
 
@@ -159,7 +159,7 @@ function itrans_register_meta_boxes( $meta_boxes )
 		'id' => 'pageoptions',
 
 		// Meta box title - Will appear at the drag and drop handle bar. Required.
-		'title' => __( 'Page Options', 'itrans' ),
+		'title' => __( 'Page Options', 'i-transform' ),
 
 		// Post types, accept custom post types as well - DEFAULT is array('post'). Optional.
 		'pages' => array( 'page' ),
@@ -176,7 +176,7 @@ function itrans_register_meta_boxes( $meta_boxes )
 		// List of meta fields
 		'fields' => array(
 			array(
-				'name' => __( 'Hide Title Text', 'itrans' ),
+				'name' => __( 'Hide Title Text', 'i-transform' ),
 				'id'   => "{$prefix}hide_title_text",
 				'type' => 'checkbox',
 				// Value can be 0 or 1

@@ -54,52 +54,36 @@ if ( ! isset( $content_width ) )
  * @return void
  */
 function itransform_setup() {
+	
 	/*
 	 * Makes i-transform available for translation.
 	 *
 	 * Translations can be added to the /languages/ directory.
 	 * If you're building a theme based on i-transform, use a find and
-	 * replace to change 'itransform' to the name of your theme in all
+	 * replace to change 'i-transform' to the name of your theme in all
 	 * template files.
 	 */
-	load_theme_textdomain( 'itransform', get_template_directory() . '/languages' );
-
+	load_theme_textdomain( 'i-transform', get_template_directory() . '/languages' );	
+	
 	/*
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, icons, and column width.
 	 */
-	add_editor_style( array( 'css/editor-style.css', 'fonts/genericons.css', itransform_fonts_url() ) );
-
-	// Adds RSS feed links to <head> for posts and comments.
-	add_theme_support( 'automatic-feed-links' );
-
-	/*
-	 * Switches default core markup for search form, comment form,
-	 * and comments to output valid HTML5.
-	 */
-	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );
-
-	/*
-	 * This theme supports all available post formats by default.
-	 * See http://codex.wordpress.org/Post_Formats
-	 */
-	add_theme_support( 'post-formats', array(
-		'aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video'
-	) );
-
+	add_editor_style( array( 'css/editor-style.css', 'fonts/genericons.css', itransform_fonts_url() ) );	
+	
 	// This theme uses wp_nav_menu() in one location.
-	register_nav_menu( 'primary', __( 'Navigation Menu', 'itransform' ) );
+	register_nav_menu( 'primary', __( 'Top Navigation Menu', 'i-transform' ) );	
 
+	// add title tag support since WordPress 4.1 
+	add_theme_support( 'title-tag' );	
+	
 	/*
 	 * This theme uses a custom image size for featured images, displayed on
 	 * "standard" posts and pages.
 	 */
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 604, 270, true );
+	set_post_thumbnail_size( 604, 270, true );	
 	
-	// add title tag support since WordPress 4.1 
-	add_theme_support( 'title-tag' );		
-
 	/*
 	 * additional Image sizes.
 	 */
@@ -109,11 +93,19 @@ function itransform_setup() {
 	
 	add_image_size( 'tx-medium', 600, 400, true ); //(cropped)
 	add_image_size( 'folio-silder', 1200, 480, true ); //(cropped)		
-
-	// This theme uses its own gallery styles.
-	add_filter( 'use_default_gallery_style', '__return_false' );
+	
+	
+	// Adds RSS feed links to <head> for posts and comments.
+	add_theme_support( 'automatic-feed-links' );
+	
+	/*
+	 * Switches default core markup for search form, comment form,
+	 * and comments to output valid HTML5.
+	 */
+	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list' ) );		
 }
 add_action( 'after_setup_theme', 'itransform_setup' );
+
 
 /**
  * Return the Google font stylesheet URL, if available.
@@ -133,13 +125,13 @@ function itransform_fonts_url() {
 	 * into your own language.
 	 */
 	 //fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700|Roboto:400,400italic,500italic,700italic'
-	$open_sans = _x( 'on', 'Open Sans font: on or off', 'itransform' );
+	$open_sans = _x( 'on', 'Open Sans font: on or off', 'i-transform' );
 
 	/* Translators: If there are characters in your language that are not
 	 * supported by Roboto, translate this to 'off'. Do not translate into your
 	 * own language.
 	 */
-	$roboto = _x( 'on', 'Roboto font: on or off', 'itransform' );
+	$roboto = _x( 'on', 'Roboto font: on or off', 'i-transform' );
 
 	if ( 'off' !== $open_sans || 'off' !== $roboto ) {
 		$font_families = array();
@@ -192,19 +184,19 @@ function itransform_scripts_styles() {
 	
 	// Loads JavaScript file with functionality specific to i-transform.
 	wp_enqueue_script( 'itransform-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '2013-07-18', true );
-	
+/*	
 	$sliderscpeed = "6000";
-	if(of_get_option('sliderspeed'))
+		
+	if( get_theme_mod('itrans_sliderspeed', of_get_option('sliderspeed')) )
 	{
-		$sliderscpeed = of_get_option('sliderspeed');
+		$sliderscpeed = get_theme_mod('itrans_sliderspeed', (of_get_option('sliderspeed'))/1000)*1000;
 	}
 
 	wp_localize_script( 'itransform-script', 'sliderscpeed', $sliderscpeed );	
+*/	
+	$color_scheme = get_theme_mod('primary_color', of_get_option('itrans_color_scheme'));
 	
-	
-	$color_scheme = of_get_option('itrans_color_scheme');
-	
-	$blog_layout = of_get_option('itrans_blog_layout');
+
 
 	// Add Source Sans Pro and Bitter fonts, used in the main stylesheet.
 	wp_enqueue_style( 'itransform-fonts', itransform_fonts_url(), array(), null );
@@ -213,68 +205,44 @@ function itransform_scripts_styles() {
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/fonts/genericons.css', array(), '2.09' );
 	
 	// Add Animate stle, used used for css animations.
-	wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/animate.min.css', array(), '2014-01-12' );
+	wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/animate.min.css', array(), '2015-01-12' );
 	
 	// Add Animate stle, used used for side menu.
-	wp_enqueue_style( 'side-menu', get_template_directory_uri() . '/css/jquery.sidr.dark.css', array(), '2014-01-12' );	
+	wp_enqueue_style( 'side-menu', get_template_directory_uri() . '/css/jquery.sidr.dark.css', array(), '2015-01-12' );	
 	
 	// Add Animate stle, used used for banner slider.
-	wp_enqueue_style( 'itrans-slider', get_template_directory_uri() . '/css/itrans-slider.css', array(), '2014-01-12' );
+	wp_enqueue_style( 'itrans-slider', get_template_directory_uri() . '/css/itrans-slider.css', array(), '2015-01-12' );
 
 	// Loads our main stylesheet.
-	wp_enqueue_style( 'itransform-style', get_stylesheet_uri(), array(), '2013-07-18' );
+	wp_enqueue_style( 'itransform-style', get_stylesheet_uri(), array(), '2016-09-26' );
 	
 	// color scheme files
-	wp_enqueue_style( 'itrans-color-scheme', get_template_directory_uri() . '/css/color_scheme/'.$color_scheme.'.css', array(), '2014-01-12' );	
-	
+	//wp_enqueue_style( 'itrans-color-scheme', get_template_directory_uri() . '/css/color_scheme/'.$color_scheme.'.css', array(), '2014-01-12' );	
+
 	// blog posts layout style
+	$blog_layout = get_theme_mod('blog_layout', of_get_option('itrans_blog_layout', 'onecol'));
 	if ( $blog_layout == 'twocol' ) {
-		wp_enqueue_style( 'itrans-blog-layout', get_template_directory_uri() . '/css/twocol-blog.css', array(), '2014-03-11' );	
+		wp_enqueue_style( 'itrans-blog-layout', get_template_directory_uri() . '/css/twocol-blog.css', array(), '2016-03-11' );	
 	}
 
 	// Loads the Internet Explorer specific stylesheet.
-	wp_enqueue_style( 'itransform-ie', get_template_directory_uri() . '/css/ie.css', array( 'itransform-style' ), '2013-07-18' );
+	wp_enqueue_style( 'itransform-ie', get_template_directory_uri() . '/css/ie.css', array( 'itransform-style' ), '2016-07-18' );
 	wp_style_add_data( 'itransform-ie', 'conditional', 'lt IE 9' );
 	
 	
-	wp_enqueue_style( 'itrans-extra-stylesheet', get_template_directory_uri() . '/css/extra-style.css', array(), '2014-03-11' );
-	$custom_css = htmlspecialchars_decode(of_get_option( 'itrans_extra_style'));
+	wp_enqueue_style( 'itrans-extra-stylesheet', get_template_directory_uri() . '/css/extra-style.css', array(), '2016-03-11' );
+	$custom_css = htmlspecialchars_decode(get_theme_mod('itrans_extra_style', of_get_option('itrans_extra_style')));
 	
-	if ( of_get_option( 'boxed_type') )
+	
+	if ( get_theme_mod('wide_layout', of_get_option('boxed_type', 0)) == 1 )
 	{
 		$custom_css .= " .site { max-width: 1200px; } ";
-		$bg_image_layout = "";
-		
-		if ( of_get_option( 'itrans_background') )
-		{
-			$custom_css .= " body { background-image: URL(".get_template_directory_uri() ."/images/pat".of_get_option( 'itrans_background').".png); } ";
-		}
-		
-		if ( of_get_option('itrans_bg_image') )
-		{
-			if ( of_get_option('itrans_bg_layout') )
-			{
-				$bg_layout = of_get_option('itrans_bg_layout');
-				if ( $bg_layout == "repeat" )
-				{
-					$bg_image_layout = " background-repeat: repeat; ";
-				} else if ( $bg_layout == "cover" )
-				{
-					$bg_image_layout = " background-size: cover; ";
-				}
-				
-				if ( of_get_option('itrans_fixed_bg') )
-				{
-					$bg_image_layout .= " background-attachment: fixed; ";
-				}
-			}
-			$custom_css .= " body { background-image: URL(".of_get_option('itrans_bg_image')."); ".$bg_image_layout." } ";
-		}
-	}
+	}	
 	
 	if ( $custom_css ) {
 		wp_add_inline_style( 'itrans-extra-stylesheet', $custom_css );
 	}
+	
 }
 add_action( 'wp_enqueue_scripts', 'itransform_scripts_styles' );
 
@@ -288,9 +256,9 @@ add_action( 'wp_enqueue_scripts', 'itransform_scripts_styles' );
  */
 function itransform_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Main Widget Area', 'itransform' ),
+		'name'          => __( 'Main Widget Area', 'i-transform' ),
 		'id'            => 'sidebar-1',
-		'description'   => __( 'Appears in the footer section of the site.', 'itransform' ),
+		'description'   => __( 'Appears in the footer section of the site.', 'i-transform' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -298,9 +266,9 @@ function itransform_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Main Sidebar Widget Area', 'itransform' ),
+		'name'          => __( 'Main Sidebar Widget Area', 'i-transform' ),
 		'id'            => 'sidebar-2',
-		'description'   => __( 'Appears on posts and pages in the sidebar.', 'itransform' ),
+		'description'   => __( 'Appears on posts and pages in the sidebar.', 'i-transform' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -334,13 +302,13 @@ function itransform_paging_nav() {
 			'current' => max( 1, get_query_var('paged') ),
 			'total' => $wp_query->max_num_pages,
 			'type' => 'list',
-			'prev_text' => '<span class="text">&laquo; ' . __( 'Previous', 'itransform' ) . '</span>',
-			'next_text' => '<span class="text">' . __( 'Next', 'itransform' ) . ' &raquo;</span>',
+			'prev_text' => '<span class="text">&laquo; ' . __( 'Previous', 'i-transform' ) . '</span>',
+			'next_text' => '<span class="text">' . __( 'Next', 'i-transform' ) . ' &raquo;</span>',
 			'add_args' => false					
 		);
 	?>				    
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'itransform' ); ?></h1>
+		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'i-transform' ); ?></h1>
 		<div class="nav-links">
             <div id="posts-nav" class="navigation">
 				<?php echo paginate_links( $args ); ?>
@@ -370,11 +338,11 @@ function itransform_post_nav() {
 		return;
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'itransform' ); ?></h1>
+		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'i-transform' ); ?></h1>
 		<div class="nav-links">
 
-			<?php previous_post_link( '%link', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', 'itransform' ) ); ?>
-			<?php next_post_link( '%link', _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link', 'itransform' ) ); ?>
+			<?php previous_post_link( '%link', _x( '<span class="meta-nav">&larr;</span> %title', 'Previous post link', 'i-transform' ) ); ?>
+			<?php next_post_link( '%link', _x( '%title <span class="meta-nav">&rarr;</span>', 'Next post link', 'i-transform' ) ); ?>
 
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -389,7 +357,7 @@ add_filter( 'body_class', 'twocol_blog_body_class' );
 function twocol_blog_body_class( $classes ) {
 
 	$blog_layout = 'onecol';
-	$blog_layout = of_get_option ('itrans_blog_layout');
+	$blog_layout = get_theme_mod('blog_layout', of_get_option('itrans_blog_layout', 'onecol'));
 	if ( $blog_layout == 'twocol' ) {
 		// add 'class-name' to the $classes array
 		$classes[] = 'twocol-blog';
@@ -417,19 +385,19 @@ if ( ! function_exists( 'itransform_entry_meta' ) ) :
  */
 function itransform_entry_meta() {
 	if ( is_sticky() && is_home() && ! is_paged() )
-		echo '<span class="featured-post">' . __( 'Sticky', 'itransform' ) . '</span>';
+		echo '<span class="featured-post">' . __( 'Sticky', 'i-transform' ) . '</span>';
 
 	if ( ! has_post_format( 'link' ) && 'post' == get_post_type() )
 		itransform_entry_date();
 
 	// Translators: used between list items, there is a space after the comma.
-	$categories_list = get_the_category_list( __( ', ', 'itransform' ) );
+	$categories_list = get_the_category_list( __( ', ', 'i-transform' ) );
 	if ( $categories_list ) {
 		echo '<span class="categories-links">' . $categories_list . '</span>';
 	}
 
 	// Translators: used between list items, there is a space after the comma.
-	$tag_list = get_the_tag_list( '', __( ', ', 'itransform' ) );
+	$tag_list = get_the_tag_list( '', __( ', ', 'i-transform' ) );
 	if ( $tag_list ) {
 		echo '<span class="tags-links">' . $tag_list . '</span>';
 	}
@@ -438,7 +406,7 @@ function itransform_entry_meta() {
 	if ( 'post' == get_post_type() ) {
 		printf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-			esc_attr( sprintf( __( 'View all posts by %s', 'itransform' ), get_the_author() ) ),
+			esc_attr( sprintf( __( 'View all posts by %s', 'i-transform' ), get_the_author() ) ),
 			get_the_author()
 		);
 	}
@@ -458,13 +426,13 @@ if ( ! function_exists( 'itransform_entry_date' ) ) :
  */
 function itransform_entry_date( $echo = true ) {
 	if ( has_post_format( array( 'chat', 'status' ) ) )
-		$format_prefix = _x( '%1$s on %2$s', '1: post format name. 2: date', 'itransform' );
+		$format_prefix = _x( '%1$s on %2$s', '1: post format name. 2: date', 'i-transform' );
 	else
 		$format_prefix = '%2$s';
 
 	$date = sprintf( '<span class="date"><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a></span>',
 		esc_url( get_permalink() ),
-		esc_attr( sprintf( __( 'Permalink to %s', 'itransform' ), the_title_attribute( 'echo=0' ) ) ),
+		esc_attr( sprintf( __( 'Permalink to %s', 'i-transform' ), the_title_attribute( 'echo=0' ) ) ),
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( sprintf( $format_prefix, get_post_format_string( get_post_format() ), get_the_date() ) )
 	);
@@ -657,7 +625,7 @@ require_once( get_template_directory() . '/inc/meta-box/meta-box.php' );
 /*-----------------------------------------------------------------------------------*/ 
 
 function itransform_excerpt_length($length) {
-	return 24;
+	return 36;
 }
 add_filter('excerpt_length', 'itransform_excerpt_length');
 
@@ -667,7 +635,7 @@ add_filter('excerpt_length', 'itransform_excerpt_length');
 /*-----------------------------------------------------------------------------------*/ 
 function itransform_excerpt_more($more) {
        global $post;
-	return '<a class="moretag" href="'. get_permalink($post->ID) . '">'. __( 'Read More...', 'itransform' ). '</a>';
+	return '<a class="moretag" href="'. get_permalink($post->ID) . '">'. __( 'Read More...', 'i-transform' ). '</a>';
 }
 add_filter('excerpt_more', 'itransform_excerpt_more');
 
@@ -684,8 +652,8 @@ define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
 require_once dirname( __FILE__ ) . '/inc/options-framework.php';
 
 
-add_action( 'init', 'jk_remove_wc_breadcrumbs' );
-function jk_remove_wc_breadcrumbs() {
+add_action( 'init', 'itransform_remove_wc_breadcrumbs' );
+function itransform_remove_wc_breadcrumbs() {
 	remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
 }
 
@@ -694,8 +662,8 @@ add_theme_support( 'woocommerce' );
 
 require_once dirname( __FILE__ ) . '/inc/class-tgm-plugin-activation.php';
 
-add_action( 'tgmpa_register', 'my_theme_register_required_plugins' );
-function my_theme_register_required_plugins() {
+add_action( 'tgmpa_register', 'itransform_theme_register_required_plugins' );
+function itransform_theme_register_required_plugins() {
 
     /**
 * Array of plugin arrays. Required keys are name and slug.
@@ -735,23 +703,23 @@ function my_theme_register_required_plugins() {
         'is_automatic' => false, // Automatically activate plugins after installation or not.
         'message' => '', // Message to output right before the plugins table.
         'strings' => array(
-            'page_title' => __( 'Install Required Plugins', 'tgmpa' ),
-            'menu_title' => __( 'Install Plugins', 'tgmpa' ),
-            'installing' => __( 'Installing Plugin: %s', 'tgmpa' ), // %s = plugin name.
-            'oops' => __( 'Something went wrong with the plugin API.', 'tgmpa' ),
-            'notice_can_install_required' => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.', 'tgmpa' ), // %1$s = plugin name(s).
-            'notice_can_install_recommended' => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.', 'tgmpa' ), // %1$s = plugin name(s).
-            'notice_cannot_install' => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.', 'tgmpa' ), // %1$s = plugin name(s).
-            'notice_can_activate_required' => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.', 'tgmpa' ), // %1$s = plugin name(s).
-            'notice_can_activate_recommended' => _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.', 'tgmpa' ), // %1$s = plugin name(s).
-            'notice_cannot_activate' => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.', 'tgmpa' ), // %1$s = plugin name(s).
-            'notice_ask_to_update' => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.', 'tgmpa' ), // %1$s = plugin name(s).
-            'notice_cannot_update' => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.', 'tgmpa' ), // %1$s = plugin name(s).
-            'install_link' => _n_noop( 'Begin installing plugin', 'Begin installing plugins', 'tgmpa' ),
-            'activate_link' => _n_noop( 'Begin activating plugin', 'Begin activating plugins', 'tgmpa' ),
-            'return' => __( 'Return to Required Plugins Installer', 'tgmpa' ),
-            'plugin_activated' => __( 'Plugin activated successfully.', 'tgmpa' ),
-            'complete' => __( 'All plugins installed and activated successfully. %s', 'tgmpa' ), // %s = dashboard link.
+            'page_title' => __( 'Install Required Plugins', 'i-transform' ),
+            'menu_title' => __( 'Install Plugins', 'i-transform' ),
+            'installing' => __( 'Installing Plugin: %s', 'i-transform' ), // %s = plugin name.
+            'oops' => __( 'Something went wrong with the plugin API.', 'i-transform' ),
+            'notice_can_install_required' => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.', 'i-transform' ), // %1$s = plugin name(s).
+            'notice_can_install_recommended' => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.', 'i-transform' ), // %1$s = plugin name(s).
+            'notice_cannot_install' => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.', 'i-transform' ), // %1$s = plugin name(s).
+            'notice_can_activate_required' => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.', 'i-transform' ), // %1$s = plugin name(s).
+            'notice_can_activate_recommended' => _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.', 'i-transform' ), // %1$s = plugin name(s).
+            'notice_cannot_activate' => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.', 'i-transform' ), // %1$s = plugin name(s).
+            'notice_ask_to_update' => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.', 'i-transform' ), // %1$s = plugin name(s).
+            'notice_cannot_update' => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.', 'i-transform' ), // %1$s = plugin name(s).
+            'install_link' => _n_noop( 'Begin installing plugin', 'Begin installing plugins', 'i-transform' ),
+            'activate_link' => _n_noop( 'Begin activating plugin', 'Begin activating plugins', 'i-transform' ),
+            'return' => __( 'Return to Required Plugins Installer', 'i-transform' ),
+            'plugin_activated' => __( 'Plugin activated successfully.', 'i-transform' ),
+            'complete' => __( 'All plugins installed and activated successfully. %s', 'i-transform' ), // %s = dashboard link.
             'nag_type' => 'updated' // Determines admin notice type - can only be 'updated', 'update-nag' or 'error'.
         )
     );
@@ -760,26 +728,33 @@ function my_theme_register_required_plugins() {
 
 }
 
-
-add_action('admin_notices', 'icraft_admin_notice');
-function icraft_admin_notice() {
+// i-transform admin notice
+add_action('admin_notices', 'itransform_admin_notice_3');
+function itransform_admin_notice_3() {
     global $current_user ;
         $user_id = $current_user->ID;
         /* Check that the user hasn't already clicked to ignore the message */
-    if ( ! get_user_meta($user_id, 'icraft_ignore_notice') ) {
+    if ( ! get_user_meta($user_id, 'itransform_ignore_notice_3') ) {
         echo '<div class="updated"><p><div style="line-height: 20px;">'; 
-        printf(__('Important : All the Theme Options in upcoming version (i-transform 2.1.2 and above) will be moved<br> to Customizer as per WordPress.org recommendation. Make sure you have PHP version 5.3 <br>or above and WordPress Version 4.0 or above before you upgarde. <br> <a href="%1$s">Dismiss this notice</a>', 'i-craft'), '?icraft_notice_ignore=0');
+        printf(__('Important : All the <b>theme options are moved to Customizer</b> as per WordPress.org recommendation. <br> Go to menu <b>&#8220;Appearance&#8221; &raquo; &#8220;Customize&#8221;</b> for all theme settings. <br> <a href="%1$s">Dismiss this notice</a>', 'i-transform'), '?itransform_notice_ignore2=0');
         echo "</div></p></div>";
     }
 }
 
-add_action('admin_init', 'icraft_notice_ignore');
-function icraft_notice_ignore() {
+add_action('admin_init', 'itransform_notice_ignore_3');
+function itransform_notice_ignore_3() {
     global $current_user;
 	$user_id = $current_user->ID;
     /* If user clicks to ignore the notice, add that to their user meta */
-	if ( isset($_GET['icraft_notice_ignore']) && '0' == $_GET['icraft_notice_ignore'] ) {
-    	add_user_meta($user_id, 'icraft_ignore_notice', 'true', true);
+	if ( isset($_GET['itransform_notice_ignore_3']) && '0' == $_GET['itransform_notice_ignore_3'] ) {
+    	add_user_meta($user_id, 'itransform_ignore_notice_3', 'true', true);
     }
 }
-?>
+
+
+/*-----------------------------------------------------------------------------------*/
+/*	Adding customizer with kirki 
+/*-----------------------------------------------------------------------------------*/ 
+include_once( dirname( __FILE__ ) . '/nx-customizer.php' );
+include_once( dirname( __FILE__ ) . '/inc/kirki/kirki.php' );
+include_once( dirname( __FILE__ ) . '/inc/nx-custom-style.php' );

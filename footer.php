@@ -16,15 +16,15 @@
 
 			<div class="site-info">
                 <div class="copyright">
-                	<?php esc_attr_e( 'Copyright &copy;', 'itransform' ); ?>  <?php bloginfo( 'name' ); ?>
+                	<?php esc_attr_e( 'Copyright &copy;', 'i-transform' ); ?>  <?php bloginfo( 'name' ); ?>
                 </div>            
             	<div class="credit-info">
-					<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'itransform' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'itransform' ); ?>">
-						<?php printf( __( 'Powered by %s', 'itransform' ), 'WordPress' ); ?>
+					<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'i-transform' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'i-transform' ); ?>">
+						<?php printf( __( 'Powered by %s', 'i-transform' ), 'WordPress' ); ?>
                     </a>
-                    <?php printf( __( ', Designed and Developed by', 'itransform' )); ?> 
-                    <a href="<?php echo esc_url( __( 'http://www.templatesnext.org/', 'itransform' ) ); ?>">
-                   		<?php printf( __( 'templatesnext', 'itransform' ) ); ?>
+                    <?php printf( __( ', Designed and Developed by', 'i-transform' )); ?> 
+                    <a href="<?php echo esc_url( __( 'http://www.templatesnext.org/', 'i-transform' ) ); ?>">
+                   		<?php printf( __( 'templatesnext', 'i-transform' ) ); ?>
                     </a>
                 </div>
 

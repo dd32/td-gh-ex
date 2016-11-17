@@ -9,12 +9,12 @@
  *
  * @link http://codex.wordpress.org/Template_Hierarchy
  *
- * @package WordPress
- * @subpackage i-transform
+ * @package i-transform
  * @since i-transform 1.0
  */
 
 get_header(); ?>
+
 	<?php $do_not_duplicate = array(); ?>
 	<div id="featured" class="featured-area clear">
 		<div id="ft-post" class="ft-post">

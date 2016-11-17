@@ -23,7 +23,8 @@ define( 'RWMB_CSS_URL', trailingslashit( RWMB_URL . 'css' ) );
 
 // Plugin paths, for including files
 if ( ! defined( 'RWMB_DIR' ) )
-	define( 'RWMB_DIR', trailingslashit( TEMPLATEPATH.'/inc/meta-box/' ) );
+	define( 'RWMB_DIR', trailingslashit( get_template_directory() . '/inc/meta-box/' ) );
+	//define( 'RWMB_DIR', trailingslashit( TEMPLATEPATH.'/inc/meta-box/' ) );
 define( 'RWMB_INC_DIR', trailingslashit( RWMB_DIR . 'inc' ) );
 define( 'RWMB_FIELDS_DIR', trailingslashit( RWMB_INC_DIR . 'fields' ) );
 

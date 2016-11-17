@@ -29,20 +29,20 @@ function optionsframework_options() {
 
 	// Test data
 	$test_array = array(
-		'one' => __('One', 'itransform'),
-		'two' => __('Two', 'itransform'),
-		'three' => __('Three', 'itransform'),
-		'four' => __('Four', 'itransform'),
-		'five' => __('Five', 'itransform')
+		'one' => __('One', 'i-transform'),
+		'two' => __('Two', 'i-transform'),
+		'three' => __('Three', 'i-transform'),
+		'four' => __('Four', 'i-transform'),
+		'five' => __('Five', 'i-transform')
 	);
 
 	// Multicheck Array
 	$multicheck_array = array(
-		'one' => __('French Toast', 'itransform'),
-		'two' => __('Pancake', 'itransform'),
-		'three' => __('Omelette', 'itransform'),
-		'four' => __('Crepe', 'itransform'),
-		'five' => __('Waffle', 'itransform')
+		'one' => __('French Toast', 'i-transform'),
+		'two' => __('Pancake', 'i-transform'),
+		'three' => __('Omelette', 'i-transform'),
+		'four' => __('Crepe', 'i-transform'),
+		'five' => __('Waffle', 'i-transform')
 	);
 
 	// Multicheck Defaults
@@ -102,12 +102,12 @@ function optionsframework_options() {
 	$options = array();
 
 	$options[] = array(
-		'name' => __('Basic Settings', 'itransform'),
+		'name' => __('Basic Settings', 'i-transform'),
 		'type' => 'heading');
 
 	$options[] = array(
-		'name' => __('Phone Number', 'itransform'),
-		'desc' => __('Phone number that appears on top bar.', 'itransform'),
+		'name' => __('Phone Number', 'i-transform'),
+		'desc' => __('Phone number that appears on top bar.', 'i-transform'),
 		'id' => 'top_bar_phone',
 		'std' => '',
 		'class' => 'mini',
@@ -115,8 +115,8 @@ function optionsframework_options() {
 		
 
 	$options[] = array(
-		'name' => __('Email Address', 'itransform'),
-		'desc' => __('Email Id that appears on top bar.', 'itransform'),
+		'name' => __('Email Address', 'i-transform'),
+		'desc' => __('Email Id that appears on top bar.', 'i-transform'),
 		'id' => 'top_bar_email',
 		'std' => '',
 		'class' => 'mini',
@@ -136,7 +136,7 @@ function optionsframework_options() {
 		"type" => "text");
 
 	$options[] = array(
-		'name' => __('Layout Options', 'itransform'),
+		'name' => __('Layout Options', 'i-transform'),
 		'type' => 'heading');
 		
 				
@@ -166,8 +166,8 @@ function optionsframework_options() {
 	);	
 		
 	$options[] = array(
-		'name' => __('Boxed Type', 'itransform'),
-		'desc' => __('Boxed Type layout at 1200px', 'itransform'),
+		'name' => __('Boxed Type', 'i-transform'),
+		'desc' => __('Boxed Type layout at 1200px', 'i-transform'),
 		'id' => 'boxed_type',
 		'std' => '',
 		'type' => 'checkbox');	
@@ -206,15 +206,15 @@ function optionsframework_options() {
 	);			
 
 	$options[] = array(
-		'name' => __('Fixed background image attachment', 'itransform'),
-		'desc' => __('Check if you want the background image to be fixed', 'itransform'),
+		'name' => __('Fixed background image attachment', 'i-transform'),
+		'desc' => __('Check if you want the background image to be fixed', 'i-transform'),
 		'id' => 'itrans_fixed_bg',
 		'std' => '',
 		'type' => 'checkbox');				
 	
 	$options[] = array(
-		'name' => __('Additional style', 'itransform'),
-		'desc' => __('add extra style(CSS) codes here', 'itransform'),
+		'name' => __('Additional style', 'i-transform'),
+		'desc' => __('add extra style(CSS) codes here', 'i-transform'),
 		'id' => 'itrans_extra_style',
 		'std' => '',
 		'type' => 'textarea');	
@@ -222,61 +222,61 @@ function optionsframework_options() {
 		
 				
 	$options[] = array(
-		'name' => __('Social Links ', 'itransform'),
+		'name' => __('Social Links ', 'i-transform'),
 		'type' => 'heading');
 		
 	$options[] = array(
-		'name' => __('Facebook', 'itransform'),
-		'desc' => __('', 'itransform'),
+		'name' => __('Facebook', 'i-transform'),
+		'desc' => __('', 'i-transform'),
 		'id' => 'itrans_social_facebook',
 		'std' => '',
 		'type' => 'text');
 		
 	$options[] = array(
-		'name' => __('Twitter', 'itransform'),
-		'desc' => __('', 'itransform'),
+		'name' => __('Twitter', 'i-transform'),
+		'desc' => __('', 'i-transform'),
 		'id' => 'itrans_social_twitter',
 		'std' => '',
 		'type' => 'text');
 		
 	$options[] = array(
-		'name' => __('Pinterest', 'itransform'),
-		'desc' => __('', 'itransform'),
+		'name' => __('Pinterest', 'i-transform'),
+		'desc' => __('', 'i-transform'),
 		'id' => 'itrans_social_pinterest',
 		'std' => '',
 		'type' => 'text');	
 		
 	$options[] = array(
-		'name' => __('Flickr', 'itransform'),
-		'desc' => __('', 'itransform'),
+		'name' => __('Flickr', 'i-transform'),
+		'desc' => __('', 'i-transform'),
 		'id' => 'itrans_social_flickr',
 		'std' => '',
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('RSS', 'itransform'),
-		'desc' => __('', 'itransform'),
+		'name' => __('RSS', 'i-transform'),
+		'desc' => __('', 'i-transform'),
 		'id' => 'itrans_social_feed',
 		'std' => '',
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('Instagram', 'itransform'),
-		'desc' => __('', 'itransform'),
+		'name' => __('Instagram', 'i-transform'),
+		'desc' => __('', 'i-transform'),
 		'id' => 'itrans_social_instagram',
 		'std' => '',
 		'type' => 'text');
 		
 	$options[] = array(
-		'name' => __('Google plus', 'itransform'),
-		'desc' => __('', 'itransform'),
+		'name' => __('Google plus', 'i-transform'),
+		'desc' => __('', 'i-transform'),
 		'id' => 'itrans_social_googleplus',
 		'std' => '',
 		'type' => 'text');
 		
 	$options[] = array(
-		'name' => __('YouTube', 'itransform'),
-		'desc' => __('', 'itransform'),
+		'name' => __('YouTube', 'i-transform'),
+		'desc' => __('', 'i-transform'),
 		'id' => 'itrans_social_youtube',
 		'std' => '',
 		'type' => 'text');		
@@ -284,84 +284,84 @@ function optionsframework_options() {
 		
 	/* Sliders */
 	$options[] = array(
-		'name' => __('Slider', 'itransform'),
+		'name' => __('Slider', 'i-transform'),
 		'type' => 'heading');
 		
 	$options[] = array(
-		'name' => __('Slide Duration', 'itransform'),
-		'desc' => __('slide visibility in milisecond ', 'itransform'),
+		'name' => __('Slide Duration', 'i-transform'),
+		'desc' => __('slide visibility in milisecond ', 'i-transform'),
 		'id' => 'sliderspeed',
 		'std' => '6000',
 		'class' => 'mini',
 		'type' => 'text');		
 
 	$options[] = array(
-		'name' => __('Slide1 Title', 'itransform'),
-		'desc' => __('', 'itransform'),
+		'name' => __('Slide1 Title', 'i-transform'),
+		'desc' => __('', 'i-transform'),
 		'id' => 'itrans_slide1_title',
 		'std' => '',
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('Slide1 Description', 'itransform'),
-		'desc' => __('', 'itransform'),
+		'name' => __('Slide1 Description', 'i-transform'),
+		'desc' => __('', 'i-transform'),
 		'id' => 'itrans_slide1_desc',
 		'std' => '',
 		'type' => 'textarea');
 
 	$options[] = array(
-		'name' => __('Slide1 Link text', 'itransform'),
-		'desc' => __('', 'itransform'),
+		'name' => __('Slide1 Link text', 'i-transform'),
+		'desc' => __('', 'i-transform'),
 		'id' => 'itrans_slide1_linktext',
 		'std' => '',
 		'type' => 'text');
 		
 	$options[] = array(
-		'name' => __('Slide1 Link URL', 'itransform'),
-		'desc' => __('', 'itransform'),
+		'name' => __('Slide1 Link URL', 'i-transform'),
+		'desc' => __('', 'i-transform'),
 		'id' => 'itrans_slide1_linkurl',
 		'std' => '',
 		'type' => 'text');		
 
 	$options[] = array(
-		'name' => __('Slide1 Image', 'itransform'),
-		'desc' => __('Ideal image size width: 564px and height: 280px', 'itransform'),
+		'name' => __('Slide1 Image', 'i-transform'),
+		'desc' => __('Ideal image size width: 564px and height: 280px', 'i-transform'),
 		'id' => 'itrans_slide1_image',
 		'std' => '',
 		'type' => 'upload');
 
 
 	$options[] = array(
-		'name' => __('Slide2 Title', 'itransform'),
-		'desc' => __('', 'itransform'),
+		'name' => __('Slide2 Title', 'i-transform'),
+		'desc' => __('', 'i-transform'),
 		'id' => 'itrans_slide2_title',
 		'std' => '',
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('Slide2 Description', 'itransform'),
-		'desc' => __('', 'itransform'),
+		'name' => __('Slide2 Description', 'i-transform'),
+		'desc' => __('', 'i-transform'),
 		'id' => 'itrans_slide2_desc',
 		'std' => '',
 		'type' => 'textarea');
 
 	$options[] = array(
-		'name' => __('Slide2 Link text', 'itransform'),
-		'desc' => __('', 'itransform'),
+		'name' => __('Slide2 Link text', 'i-transform'),
+		'desc' => __('', 'i-transform'),
 		'id' => 'itrans_slide2_linktext',
 		'std' => '',
 		'type' => 'text');
 		
 	$options[] = array(
-		'name' => __('Slide2 Link URL', 'itransform'),
-		'desc' => __('', 'itransform'),
+		'name' => __('Slide2 Link URL', 'i-transform'),
+		'desc' => __('', 'i-transform'),
 		'id' => 'itrans_slide2_linkurl',
 		'std' => '',
 		'type' => 'text');		
 
 	$options[] = array(
-		'name' => __('Slide2 Image', 'itransform'),
-		'desc' => __('Ideal image size width: 564px and height: 280px', 'itransform'),
+		'name' => __('Slide2 Image', 'i-transform'),
+		'desc' => __('Ideal image size width: 564px and height: 280px', 'i-transform'),
 		'id' => 'itrans_slide2_image',
 		'std' => '',
 		'type' => 'upload');
@@ -369,36 +369,36 @@ function optionsframework_options() {
 
 
 	$options[] = array(
-		'name' => __('Slide3 Title', 'itransform'),
-		'desc' => __('', 'itransform'),
+		'name' => __('Slide3 Title', 'i-transform'),
+		'desc' => __('', 'i-transform'),
 		'id' => 'itrans_slide3_title',
 		'std' => '',
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('Slide3 Description', 'itransform'),
-		'desc' => __('', 'itransform'),
+		'name' => __('Slide3 Description', 'i-transform'),
+		'desc' => __('', 'i-transform'),
 		'id' => 'itrans_slide3_desc',
 		'std' => '',
 		'type' => 'textarea');
 
 	$options[] = array(
-		'name' => __('Slide3 Link text', 'itransform'),
-		'desc' => __('', 'itransform'),
+		'name' => __('Slide3 Link text', 'i-transform'),
+		'desc' => __('', 'i-transform'),
 		'id' => 'itrans_slide3_linktext',
 		'std' => '',
 		'type' => 'text');
 		
 	$options[] = array(
-		'name' => __('Slide3 Link URL', 'itransform'),
-		'desc' => __('', 'itransform'),
+		'name' => __('Slide3 Link URL', 'i-transform'),
+		'desc' => __('', 'i-transform'),
 		'id' => 'itrans_slide3_linkurl',
 		'std' => '',
 		'type' => 'text');		
 
 	$options[] = array(
-		'name' => __('Slide3 Image', 'itransform'),
-		'desc' => __('Ideal image size width: 564px and height: 280px', 'itransform'),
+		'name' => __('Slide3 Image', 'i-transform'),
+		'desc' => __('Ideal image size width: 564px and height: 280px', 'i-transform'),
 		'id' => 'itrans_slide3_image',
 		'std' => '',
 		'type' => 'upload');
@@ -406,36 +406,36 @@ function optionsframework_options() {
 
 
 	$options[] = array(
-		'name' => __('Slide4 Title', 'itransform'),
-		'desc' => __('', 'itransform'),
+		'name' => __('Slide4 Title', 'i-transform'),
+		'desc' => __('', 'i-transform'),
 		'id' => 'itrans_slide4_title',
 		'std' => '',
 		'type' => 'text');
 
 	$options[] = array(
-		'name' => __('Slide4 Description', 'itransform'),
-		'desc' => __('', 'itransform'),
+		'name' => __('Slide4 Description', 'i-transform'),
+		'desc' => __('', 'i-transform'),
 		'id' => 'itrans_slide4_desc',
 		'std' => '',
 		'type' => 'textarea');
 
 	$options[] = array(
-		'name' => __('Slide4 Link text', 'itransform'),
-		'desc' => __('', 'itransform'),
+		'name' => __('Slide4 Link text', 'i-transform'),
+		'desc' => __('', 'i-transform'),
 		'id' => 'itrans_slide4_linktext',
 		'std' => '',
 		'type' => 'text');
 		
 	$options[] = array(
-		'name' => __('Slide4 Link URL', 'itransform'),
-		'desc' => __('', 'itransform'),
+		'name' => __('Slide4 Link URL', 'i-transform'),
+		'desc' => __('', 'i-transform'),
 		'id' => 'itrans_slide4_linkurl',
 		'std' => '',
 		'type' => 'text');		
 
 	$options[] = array(
-		'name' => __('Slide4 Image', 'itransform'),
-		'desc' => __('Ideal image size width: 564px and height: 280px', 'itransform'),
+		'name' => __('Slide4 Image', 'i-transform'),
+		'desc' => __('Ideal image size width: 564px and height: 280px', 'i-transform'),
 		'id' => 'itrans_slide4_image',
 		'std' => '',
 		'type' => 'upload');

@@ -10,13 +10,13 @@ class itransform_contact_widget extends WP_Widget {
 	 */
 	function itransform_contact_widget() {
 		/* Widget settings. */
-		$widget_ops = array( 'classname' => 'itransform_contact_widget', 'description' => __('Displays conatct info with icons', 'itransform') );
+		$widget_ops = array( 'classname' => 'itransform_contact_widget', 'description' => __('Displays conatct info with icons', 'i-transform') );
 
 		/* Widget control settings. */
 		$control_ops = array( 'width' => 250, 'height' => 350, 'id_base' => 'itransform_contact_widget' );
 
 		/* Create the widget. */
-		$this->WP_Widget( 'itransform_contact_widget', __('itransform: Contact widget', 'itransform'), $widget_ops, $control_ops );
+		$this->WP_Widget( 'itransform_contact_widget', __('itransform: Contact widget', 'i-transform'), $widget_ops, $control_ops );
 	}
 
 	/**
@@ -39,15 +39,15 @@ class itransform_contact_widget extends WP_Widget {
             <ul>
                 <li>
                     <i class="icon-home"></i>
-                    <b><?php _e('Address','itransform'); ?>:</b> <?php echo $address; ?>
+                    <b><?php _e('Address', 'i-transform'); ?>:</b> <?php echo $address; ?>
                 </li>
                 <li>
                     <i class="icon-phone"></i>
-                    <b><?php _e('Phone','itransform'); ?>:</b> <?php echo $phone; ?>
+                    <b><?php _e('Phone', 'i-transform'); ?>:</b> <?php echo $phone; ?>
                 </li>
                 <li>
                     <i class="icon-envelope-alt"></i>
-                    <b><?php _e('Email','itransform'); ?>:</b> <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
+                    <b><?php _e('Email', 'i-transform'); ?>:</b> <a href="mailto:<?php echo $email; ?>"><?php echo $email; ?></a>
                 </li>
             </ul>
         </div>
@@ -73,27 +73,27 @@ class itransform_contact_widget extends WP_Widget {
 	function form( $instance ) {
 
 		/* Set up some default widget settings. */
-		$defaults = array('title' => __('Contact','itransform'), 'address' => '', 'phone' => '', 'email' => '' );
+		$defaults = array('title' => __('Contact', 'i-transform'), 'address' => '', 'phone' => '', 'email' => '' );
 		$instance = wp_parse_args( (array) $instance, $defaults ); ?>
 		
 		<!-- Widget Title -->
 		<p>
-			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title','itransform') ?>:</label>
+			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title', 'i-transform') ?>:</label>
 			<input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $instance['title']; ?>" style="width:90%;" />
 		</p>
 		<!-- Addres -->
 		<p>
-			<label for="<?php echo $this->get_field_id( 'address' ); ?>"><?php _e('Address','itransform') ?>:</label>
+			<label for="<?php echo $this->get_field_id( 'address' ); ?>"><?php _e('Address', 'i-transform') ?>:</label>
 			<input id="<?php echo $this->get_field_id( 'address' ); ?>" name="<?php echo $this->get_field_name( 'address' ); ?>" value="<?php echo $instance['address']; ?>" style="width:90%;" />
 		</p>
 		<!-- Phone -->
 		<p>
-			<label for="<?php echo $this->get_field_id( 'phone' ); ?>"><?php _e('Phone','itransform') ?>:</label>
+			<label for="<?php echo $this->get_field_id( 'phone' ); ?>"><?php _e('Phone', 'i-transform') ?>:</label>
 			<input id="<?php echo $this->get_field_id( 'phone' ); ?>" name="<?php echo $this->get_field_name( 'phone' ); ?>" value="<?php echo $instance['phone']; ?>" style="width:90%;" />
 		</p>
 		<!-- Email -->
 		<p>
-			<label for="<?php echo $this->get_field_id( 'email' ); ?>"><?php _e('Email','itransform') ?>:</label>
+			<label for="<?php echo $this->get_field_id( 'email' ); ?>"><?php _e('Email', 'i-transform') ?>:</label>
 			<input id="<?php echo $this->get_field_id( 'email' ); ?>" name="<?php echo $this->get_field_name( 'email' ); ?>" value="<?php echo $instance['email']; ?>" style="width:90%;" />
 		</p>        
 	<?php

@@ -19,7 +19,7 @@
                     
 					<?php if ( comments_open() ) : ?>
                         <div class="comments-link">
-                            <?php comments_popup_link( '<span class="leave-reply">' . __( 'Leave a comment', 'itransform' ) . '</span>', __( 'One comment so far', 'itransform' ), __( 'View all % comments', 'itransform' ) ); ?>
+                            <?php comments_popup_link( '<span class="leave-reply">' . __( 'Leave a comment', 'i-transform' ) . '</span>', __( 'One comment so far', 'i-transform' ), __( 'View all % comments', 'i-transform' ) ); ?>
                         </div><!-- .comments-link -->
                     <?php endif; // comments_open() ?>
                                     
@@ -40,18 +40,18 @@
                             itransform_entry_date();
                     
                         // Translators: used between list items, there is a space after the comma.
-                        $categories_list = get_the_category_list( __( ', ', 'itransform' ) );
+                        $categories_list = get_the_category_list( __( ', ', 'i-transform' ) );
                         if ( $categories_list ) {
                             echo '<span class="categories-links">' . $categories_list . '</span>';
                         }
                     
                         // Translators: used between list items, there is a space after the comma.
-                        $tag_list = get_the_tag_list( '', __( ', ', 'itransform' ) );
+                        $tag_list = get_the_tag_list( '', __( ', ', 'i-transform' ) );
                         if ( $tag_list ) {
                             echo '<span class="tags-links">' . $tag_list . '</span>';
                         }
                     ?>	
-                    <?php edit_post_link( __( 'Edit', 'itransform' ), '<span class="edit-link">', '</span>' ); ?>
+                    <?php edit_post_link( __( 'Edit', 'i-transform' ), '<span class="edit-link">', '</span>' ); ?>
                 </div><!-- .entry-meta -->
             </header><!-- .entry-header -->
         

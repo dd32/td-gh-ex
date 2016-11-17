@@ -4,11 +4,11 @@ Theme URI: http://templatesnext.org/itrans/
 Author: templatesnext team
 Author URI: http://templatesnext.org/
 Description: A Responsive, flexible and powerful theme that comes with plugin "TemplatesNext Toolkit" giving you features like portfolios, testimonials, services, columns, custom blog pages, unlimited sliders, etc. The i-transform theme for WordPress is developed using a popular theme "Twenty Thirteen" giving you all the features of Twenty Thirteen plus several additional features like easy to use admin theme options, featured post section, 5 color schemes, multiple blog layouts, WooCommerce ready etc. Whether you are a first time user looking for a clean, simple and easy to use theme for blogging or looking for a powerful theme to build business sites; i-transform is the perfect theme for you.
-Version: 2.1.1
+Version: 3.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: black, red, green, purple, white, yellow, light, blue, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, sticky-post, theme-options, translation-ready
-Text Domain: itransform
+Tags: one-column, two-columns, right-sidebar, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, sticky-post, theme-options, translation-ready
+Text Domain: i-transform
 
 itransform WordPress Theme, Copyright 2014 WordPress.org
 itransform is distributed under the terms of the GNU GPL
@@ -1188,6 +1188,65 @@ ul.nav-container ul a:hover,
 	background: transparent;	
 }
 
+/* Serach Form Style ReWritten */
+
+.site-header .searchform {
+	position: absolute;
+	right: 20px;
+	bottom: 8px;
+}
+
+.site-header #s {
+	background: transparent;
+	border: none;
+	cursor: pointer;
+	height: 37px;
+	margin: 3px 0;
+	padding: 0 0 0 34px;
+	position: relative;
+	-webkit-transition: width 400ms ease, background 400ms ease;
+	transition:         width 400ms ease, background 400ms ease;
+	width: 0;
+	z-index: 10001;
+}
+
+.searchico {
+	display: none;
+}
+
+.site-header .searchico {
+	display: block;
+	position: absolute;
+	left: 4px;
+	top: 10px;
+	font-size: 24px;
+	z-index: 1001;
+	color: #999;
+}
+
+.site-header .searchico:before {
+	font-size: 24px;
+}
+
+.site-header #s:focus {
+	background-color: #fff;
+	border: 1px solid #e7e7e7;
+	cursor: text;
+	outline: 0;
+	width: 200px;
+	border-radius: 4px;
+	background: transparent;	
+}
+
+.site-header .topsearch #searchsubmit,
+.site-header .topsearch .searchsubmit {
+	display: none;
+}
+
+.site-header .navbar .topsearch .searchform {
+	bottom: auto;
+}
+
 /* Top bar transform */
 
 .site-header.fixeddiv {
@@ -1264,7 +1323,17 @@ div.headerinnerwrap {
 	bottom: auto;	
 }
 
+.site-header div.headerinnerwrap .searchform {
+	top: 32px;
+	bottom: auto;	
+}
+
 .site-header.fixeddiv div.headerinnerwrap .search-form {
+	top: 16px;
+	bottom: auto;	
+}
+
+.site-header.fixeddiv div.headerinnerwrap .searchform {
 	top: 16px;
 	bottom: auto;	
 }
@@ -3311,6 +3380,10 @@ footer.entry-meta {
 	display: none;
 }
 
+.search-form .searchsubmit {
+	display: none;
+}
+
 /* RSS Widget */
 .widget_rss .rss-date {
 	display: block;
@@ -3524,6 +3597,11 @@ footer.entry-meta {
 	width: 100%;
 }
 
+.site-footer form.searchform input#s {
+	margin-top: 16px;
+	width: 100%;
+}
+
 #wpstats {
 	display: block;
 	margin: -10px auto 0;
@@ -3655,16 +3733,34 @@ div.headerwrap .navbar {
 	bottom: auto;
 }
 
+.site-header .searchform {
+	position: relative;
+	right: auto;
+	bottom: auto;
+}
+
 .site-header div.headerinnerwrap .search-form {
+	top: auto;
+	bottom: auto;	
+}
+.site-header div.headerinnerwrap .searchform {
 	top: auto;
 	bottom: auto;	
 }
 
 .site-header.fixeddiv div.headerinnerwrap .search-form {
-	margin-top: -4px;
+	margin-top: -6px;
+}
+
+.site-header.fixeddiv div.headerinnerwrap .searchform {
+	margin-top: 0px;
 }
 
 .site-header.fixeddiv .search-form .search-field {
+	margin-top: 0px;
+}
+
+.site-header.fixeddiv .searchform #s {
 	margin-top: 0px;
 }
 
@@ -3748,6 +3844,26 @@ div.ibanner .da-img img {
 .tx-cta a.cta-button, 
 .tx-cta a.cta-button:visited {
 	background-color: #666;
+}
+
+
+.post .post-mainpart .entry-summary a.moretag {
+	display: block;
+	float: right;
+	clear: both;
+	background-color: #3787be;
+	color: #FFF;
+	padding: 6px 12px;
+	margin-top: 24px;
+	text-decoration: none;
+}
+
+.post .post-mainpart .entry-summary a.moretag:before {
+	display: block;
+	content: " ";
+	clear: both;
+	height: 0px;
+	width: 100%;
 }
 
 /**
@@ -4233,11 +4349,10 @@ div.ibanner .da-img img {
             box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
 
-.site
-{
+.site {
   	position:relative;
-	border-left: 1px solid #CCC;
-	border-right: 1px solid #CCC;
+	border-left: 1px solid rgba(255,255,255,0.6);
+	border-right: 1px solid rgba(255,255,255,0.6);
 }
 
 .site:before, 

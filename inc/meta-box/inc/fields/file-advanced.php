@@ -20,7 +20,7 @@ if ( ! class_exists( 'RWMB_File_Advanced_Field' ) )
 			wp_enqueue_media();
 			wp_enqueue_script( 'rwmb-file-advanced', RWMB_JS_URL . 'file-advanced.js', array( 'jquery', 'underscore' ), RWMB_VER, true );
 			wp_localize_script( 'rwmb-file-advanced', 'rwmbFileAdvanced', array(
-				'frameTitle' => __( 'Select Files', 'meta-box' ),
+				'frameTitle' => __( 'Select Files', 'i-transform' ),
 			) );
 		}
 
@@ -63,7 +63,7 @@ if ( ! class_exists( 'RWMB_File_Advanced_Field' ) )
 		 */
 		static function html( $meta, $field )
 		{
-			$i18n_title   = apply_filters( 'rwmb_file_advanced_select_string', _x( 'Select or Upload Files', 'file upload', 'meta-box' ), $field );
+			$i18n_title   = apply_filters( 'rwmb_file_advanced_select_string', _x( 'Select or Upload Files', 'file upload', 'i-transform' ), $field );
 			$attach_nonce = wp_create_nonce( "rwmb-attach-file_{$field['id']}" );
 
 			// Uploaded files
@@ -100,8 +100,8 @@ if ( ! class_exists( 'RWMB_File_Advanced_Field' ) )
 
 		static function print_templates()
 		{
-			$i18n_delete = apply_filters( 'rwmb_file_delete_string', _x( 'Delete', 'file upload', 'meta-box' ) );
-			$i18n_edit   = apply_filters( 'rwmb_file_edit_string', _x( 'Edit', 'file upload', 'meta-box' ) );
+			$i18n_delete = apply_filters( 'rwmb_file_delete_string', _x( 'Delete', 'file upload', 'i-transform' ) );
+			$i18n_edit   = apply_filters( 'rwmb_file_edit_string', _x( 'Edit', 'file upload', 'i-transform' ) );
 			?>
 			<script id="tmpl-rwmb-file-advanced" type="text/html">
 				<# _.each( attachments, function( attachment ) { #>

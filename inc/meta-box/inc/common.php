@@ -50,8 +50,8 @@ if ( ! class_exists( 'RWMB_Common' ) )
 		 */
 		public static function plugin_links( $links )
 		{
-			$links[] = '<a href="http://metabox.io/docs/">' . __( 'Documentation', 'meta-box' ) . '</a>';
-			$links[] = '<a href="http://metabox.io/plugins/">' . __( 'Extensions', 'meta-box' ) . '</a>';
+			$links[] = '<a href="http://metabox.io/docs/">' . __( 'Documentation', 'i-transform' ) . '</a>';
+			$links[] = '<a href="http://metabox.io/plugins/">' . __( 'Extensions', 'i-transform' ) . '</a>';
 			return $links;
 		}
 
