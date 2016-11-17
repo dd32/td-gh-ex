@@ -43,7 +43,7 @@ get_header(); ?>
 	 				echo '</div>';
 		else :
 			get_template_part( 'template-parts/content', 'none' );
-		endif; ?>
+		endif;
 		wp_reset_postdata(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
