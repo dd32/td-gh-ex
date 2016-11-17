@@ -10,7 +10,7 @@ get_header(); ?>
 
 	<?php while (have_posts()) : the_post(); ?>
 	<div class="entry-content">
-		<p><?php _e('Apologies, but no results were found. Perhaps searching will help find a related post.', 'maxflat'); ?></p>
+		<p><?php _e('Apologies, but no results were found. Perhaps searching will help find a related post.', 'maxflat-core'); ?></p>
 		<?php get_search_form(); ?>
 	</div>
 	<?php endwhile; // end of the loop. ?>

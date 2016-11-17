@@ -35,8 +35,8 @@ class Smart_Widget_Search extends Smart_Core_Widget {
 
 	function __construct() {
 
-		$widget_ops = array( 'classname' => 'maxflat_widget_search', 'description' => __( "A search form for your site", 'maxflat') );
-		parent::__construct( 'search', __( ucfirst('maxflat') .'Search', 'maxflat'), $widget_ops );
+		$widget_ops = array( 'classname' => 'maxflat_widget_search', 'description' => __( "A search form for your site", 'maxflat-core') );
+		parent::__construct( 'search', __( ucfirst('maxflat-core') .'Search', 'maxflat-core'), $widget_ops );
 	}
 
 	function widget( $args, $instance ) {
@@ -57,7 +57,7 @@ class Smart_Widget_Search extends Smart_Core_Widget {
 		$instance = wp_parse_args( (array) $instance, array( 'title' => '' ) );
 		$title    = $instance['title'];
 		?>
-	<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'maxflat'); ?>
+	<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'maxflat-core'); ?>
 		<input class="widefat"
 					 id="<?php echo $this->get_field_id( 'title' ); ?>"
 					 name="<?php echo $this->get_field_name( 'title' ); ?>"
@@ -86,8 +86,8 @@ class Smart_Widget_Recent_Posts extends Smart_Core_Widget {
 
 	function __construct() {
 
-		$widget_ops = array( 'classname' => 'maxflat_widget_recent_entries', 'description' => __( "The most recent posts on your site (extended contorls)", 'maxflat') );
-		parent::__construct( 'smartlib-recent-posts', __( ucfirst('maxflat') .' Extended Recent Posts', 'maxflat'), $widget_ops );
+		$widget_ops = array( 'classname' => 'maxflat_widget_recent_entries', 'description' => __( "The most recent posts on your site (extended contorls)", 'maxflat-core') );
+		parent::__construct( 'smartlib-recent-posts', __( ucfirst('maxflat-core') .' Extended Recent Posts', 'maxflat-core'), $widget_ops );
 		$this->alt_option_name = 'widget_recent_entries_MAXFLAT';
 
 
@@ -112,7 +112,7 @@ class Smart_Widget_Recent_Posts extends Smart_Core_Widget {
 */
 		extract( $args );
 
-		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? __( 'Recent Posts', 'maxflat') : $instance['title'], $instance, $this->id_base );
+		$title = apply_filters( 'widget_title', empty( $instance['title'] ) ? __( 'Recent Posts', 'maxflat-core') : $instance['title'], $instance, $this->id_base );
 		if ( empty( $instance['number'] ) || ! $number = absint( $instance['number'] ) )
 			$number = 10;
 		$show_date           = isset( $instance['show_date'] ) ? $instance['show_date'] : false;
@@ -192,32 +192,32 @@ class Smart_Widget_Recent_Posts extends Smart_Core_Widget {
 		$show_post_thumbnail = isset( $instance['show_post_thumbnail'] ) ? (bool) $instance['show_post_thumbnail'] : true;
 		$show_post_author    = isset( $instance['show_post_author'] ) ? (bool) $instance['show_post_author'] : true;
 		?>
-	<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'maxflat'); ?></label>
+	<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'maxflat-core'); ?></label>
 		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>"
 					 name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" /></p>
 
 	<p>
-		<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of posts to show:', 'maxflat'); ?></label>
+		<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of posts to show:', 'maxflat-core'); ?></label>
 		<input id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>"
 					 type="text" value="<?php echo $number; ?>" size="3" /></p>
 
 	<p><input class="checkbox" type="checkbox" <?php checked( $show_date ); ?>
 						id="<?php echo $this->get_field_id( 'show_date' ); ?>"
 						name="<?php echo $this->get_field_name( 'show_date' ); ?>" />
-		<label for="<?php echo $this->get_field_id( 'show_date' ); ?>"><?php _e( 'Display post date?', 'maxflat'); ?></label>
+		<label for="<?php echo $this->get_field_id( 'show_date' ); ?>"><?php _e( 'Display post date?', 'maxflat-core'); ?></label>
 	</p>
 
 	<p><input class="checkbox" type="checkbox" <?php checked( $show_post_thumbnail ); ?>
 						id="<?php echo $this->get_field_id( 'show_post_thumbnail' ); ?>"
-						name="<?php echo $this->get_field_name( 'show_post_thumbnail', 'maxflat'); ?>" />
+						name="<?php echo $this->get_field_name( 'show_post_thumbnail', 'maxflat-core'); ?>" />
 		<label
-				for="<?php echo $this->get_field_id( 'show_post_thumbnail' ); ?>"><?php _e( 'Display post thumbnail?', 'maxflat'); ?></label>
+				for="<?php echo $this->get_field_id( 'show_post_thumbnail' ); ?>"><?php _e( 'Display post thumbnail?', 'maxflat-core'); ?></label>
 	</p>
 
 	<p><input class="checkbox" type="checkbox" <?php checked( $show_post_author ); ?>
 						id="<?php echo $this->get_field_id( 'show_post_author' ); ?>"
 						name="<?php echo $this->get_field_name( 'show_post_author' ); ?>" />
-		<label for="<?php echo $this->get_field_id( 'show_post_author' ); ?>"><?php _e( 'Display post author?', 'maxflat'); ?></label>
+		<label for="<?php echo $this->get_field_id( 'show_post_author' ); ?>"><?php _e( 'Display post author?', 'maxflat-core'); ?></label>
 	</p>
 	<?php
 	}
@@ -235,8 +235,8 @@ class Smart_Widget_Recent_Posts extends Smart_Core_Widget {
 class Smart_Widget_One_Author extends Smart_Core_Widget {
 
 	function __construct() {
-		$widget_ops = array( 'classname' => 'maxflat_one_author', 'description' => __( "Short  info & avatar", 'maxflat') );
-		parent::__construct( 'maxflat_one-author', __( ucfirst('maxflat') .' One Author Profile', 'maxflat'), $widget_ops );
+		$widget_ops = array( 'classname' => 'maxflat_one_author', 'description' => __( "Short  info & avatar", 'maxflat-core') );
+		parent::__construct( 'maxflat_one-author', __( ucfirst('maxflat-core') .' One Author Profile', 'maxflat-core'), $widget_ops );
 		$this->alt_option_name = 'smartlib-one-author';
 
 
@@ -302,14 +302,14 @@ class Smart_Widget_One_Author extends Smart_Core_Widget {
 		}
 
 		?>
-	<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'maxflat'); ?>
+	<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'maxflat-core'); ?>
 		<input class="widefat"
 					 id="<?php echo $this->get_field_id( 'title' ); ?>"
 					 name="<?php echo $this->get_field_name( 'title' ); ?>"
 					 type="text"
 					 value="<?php echo $title; ?>" /></label>
 	</p>
-	<p><label for="<?php echo $this->get_field_id( 'user_id' ); ?>"><?php _e( 'Author Name:', 'maxflat'); ?>
+	<p><label for="<?php echo $this->get_field_id( 'user_id' ); ?>"><?php _e( 'Author Name:', 'maxflat-core'); ?>
 		<select id="<?php echo $this->get_field_id( 'user_id' ); ?>"
 						name="<?php echo $this->get_field_name( 'user_id' ); ?>" value="<?php echo $user_id; ?>">
 			<?php
@@ -325,7 +325,7 @@ class Smart_Widget_One_Author extends Smart_Core_Widget {
 			}
 			?>
 		</select></label></p>
-	<p><label for="<?php echo $this->get_field_id( 'size' ); ?>"><?php _e( 'Avatar Size:', 'maxflat'); ?>
+	<p><label for="<?php echo $this->get_field_id( 'size' ); ?>"><?php _e( 'Avatar Size:', 'maxflat-core'); ?>
 		<select id="<?php echo $this->get_field_id( 'size' ); ?>" name="<?php echo $this->get_field_name( 'size' ); ?>"
 						value="<?php echo $size; ?>">
 			<?php
@@ -354,8 +354,8 @@ class Smart_Widget_Social_Icons extends Smart_Core_Widget {
 	public $form_args;
 
 	function __construct() {
-		$widget_ops = array( 'classname' => 'maxflat_widget_social_icons', 'description' => __( "Add social profile icons", 'maxflat') );
-		parent::__construct( 'smartlib-social-icons', __( ucfirst('maxflat') .'  Social Icons', 'maxflat'), $widget_ops );
+		$widget_ops = array( 'classname' => 'maxflat_widget_social_icons', 'description' => __( "Add social profile icons", 'maxflat-core') );
+		parent::__construct( 'smartlib-social-icons', __( ucfirst('maxflat-core') .'  Social Icons', 'maxflat-core'), $widget_ops );
 		$this->alt_option_name = 'smartlib-social-icons';
 
 
@@ -418,39 +418,39 @@ class Smart_Widget_Social_Icons extends Smart_Core_Widget {
 		}
 
 		?>
-            <p>[<?php _e( 'Paste  your own links', 'maxflat'); ?>]</p>
+            <p>[<?php _e( 'Paste  your own links', 'maxflat-core'); ?>]</p>
 	<p>
-		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Short Title:', 'maxflat'); ?>
+		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Short Title:', 'maxflat-core'); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $form_values['title']; ?>" /></label>
 	<hr />
 	</p>
 
 	<p>
-		<label for="<?php echo $this->get_field_id( 'facebook' ); ?>"><?php _e( 'Facebook:', 'maxflat'); ?>
+		<label for="<?php echo $this->get_field_id( 'facebook' ); ?>"><?php _e( 'Facebook:', 'maxflat-core'); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'facebook' ); ?>" name="<?php echo $this->get_field_name( 'facebook' ); ?>" type="text" value="<?php echo $form_values['facebook']; ?>" /></label>
 	</p>
 
 	<p>
-		<label for="<?php echo $this->get_field_id( 'gplus' ); ?>"><?php _e( 'Google+:', 'maxflat'); ?>
+		<label for="<?php echo $this->get_field_id( 'gplus' ); ?>"><?php _e( 'Google+:', 'maxflat-core'); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'gplus' ); ?>" name="<?php echo $this->get_field_name( 'gplus' ); ?>" type="text" value="<?php echo $form_values['gplus']; ?>" /></label>
 	</p>
 
 	<p>
-		<label for="<?php echo $this->get_field_id( 'youtube' ); ?>"><?php _e( 'YouTube:', 'maxflat'); ?>
+		<label for="<?php echo $this->get_field_id( 'youtube' ); ?>"><?php _e( 'YouTube:', 'maxflat-core'); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'youtube' ); ?>" name="<?php echo $this->get_field_name( 'youtube' ); ?>" type="text" value="<?php echo $form_values['youtube']; ?>" /></label>
 	</p>
 
 	<p>
-		<label for="<?php echo $this->get_field_id( 'twitter' ); ?>"><?php _e( 'Twitter:', 'maxflat'); ?>
+		<label for="<?php echo $this->get_field_id( 'twitter' ); ?>"><?php _e( 'Twitter:', 'maxflat-core'); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'twitter' ); ?>" name="<?php echo $this->get_field_name( 'twitter' ); ?>" type="text" value="<?php echo $form_values['twitter']; ?>" /></label>
 	</p>
 
 	<p>
-		<label for="<?php echo $this->get_field_id( 'pinterest' ); ?>"><?php _e( 'Pinterest:', 'maxflat'); ?>
+		<label for="<?php echo $this->get_field_id( 'pinterest' ); ?>"><?php _e( 'Pinterest:', 'maxflat-core'); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'pinterest' ); ?>" name="<?php echo $this->get_field_name( 'pinterest' ); ?>" type="text" value="<?php echo $form_values['pinterest']; ?>" /></label>
 	</p>
 	<p>
-		<label for="<?php echo $this->get_field_id( 'linkedin' ); ?>"><?php _e( 'LinkedIn:', 'maxflat'); ?>
+		<label for="<?php echo $this->get_field_id( 'linkedin' ); ?>"><?php _e( 'LinkedIn:', 'maxflat-core'); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'linkedin' ); ?>" name="<?php echo $this->get_field_name( 'linkedin' ); ?>" type="text" value="<?php echo $form_values['linkedin']; ?>" /></label>
 	</p>
 
@@ -474,8 +474,8 @@ class Smart_Widget_Video extends Smart_Core_Widget {
 
 
 	function __construct() {
-		$widget_ops = array( 'classname' => 'smartlib-video_widget', 'description' => __( "Featured Video Widget", 'maxflat') );
-		parent::__construct( 'smartlib-video-widget', __( ucfirst('maxflat') .' Video Widget', 'maxflat'), $widget_ops );
+		$widget_ops = array( 'classname' => 'smartlib-video_widget', 'description' => __( "Featured Video Widget", 'maxflat-core') );
+		parent::__construct( 'smartlib-video-widget', __( ucfirst('maxflat-core') .' Video Widget', 'maxflat-core'), $widget_ops );
 		$this->alt_option_name = 'smartlib-video-widget';
 
 
@@ -555,22 +555,22 @@ class Smart_Widget_Video extends Smart_Core_Widget {
 
 		?>
 	<p>
-		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'maxflat'); ?>
+		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'maxflat-core'); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" /></label>
 	<hr />
 	</p>
 
 	<p>
-		<label for="<?php echo $this->get_field_id( 'embed_code' ); ?>"><?php _e( 'Embed code:', 'maxflat'); ?><br />
+		<label for="<?php echo $this->get_field_id( 'embed_code' ); ?>"><?php _e( 'Embed code:', 'maxflat-core'); ?><br />
 			<textarea id="<?php echo $this->get_field_id( 'embed_code' ); ?>" name="<?php echo $this->get_field_name( 'embed_code' ); ?>" rows="5" cols="40"><?php echo $embed_code; ?></textarea></label>
 	</p>
 	<p>
-		<label for="<?php echo $this->get_field_id( 'more_text' ); ?>"><?php _e( 'More text:', 'maxflat'); ?>
+		<label for="<?php echo $this->get_field_id( 'more_text' ); ?>"><?php _e( 'More text:', 'maxflat-core'); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'more_text' ); ?>" name="<?php echo $this->get_field_name( 'more_text' ); ?>" type="text" value="<?php echo $more_text; ?>" /></label>
 
 	</p>
 	<p>
-		<label for="<?php echo $this->get_field_id( 'link' ); ?>"><?php _e( 'Link:', 'maxflat'); ?>
+		<label for="<?php echo $this->get_field_id( 'link' ); ?>"><?php _e( 'Link:', 'maxflat-core'); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'link' ); ?>" name="<?php echo $this->get_field_name( 'link' ); ?>" type="text" value="<?php echo $link; ?>" /></label>
 
 	</p>
@@ -594,8 +594,8 @@ class Smart_Widget_Recent_Videos extends Smart_Core_Widget {
 
 
 	function __construct() {
-		$widget_ops = array( 'classname' => 'smartlib-video_widget', 'description' => __( "Displays last posts from the video post format", 'maxflat') );
-		parent::__construct( 'smartlib-recent-video-widget', __( ucfirst('maxflat') .'  Recent Video', 'maxflat'), $widget_ops );
+		$widget_ops = array( 'classname' => 'smartlib-video_widget', 'description' => __( "Displays last posts from the video post format", 'maxflat-core') );
+		parent::__construct( 'smartlib-recent-video-widget', __( ucfirst('maxflat-core') .'  Recent Video', 'maxflat-core'), $widget_ops );
 		$this->alt_option_name = 'smartlib-recent-videos-widget';
 
 
@@ -680,13 +680,13 @@ class Smart_Widget_Recent_Videos extends Smart_Core_Widget {
 
 		?>
 	<p>
-		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'maxflat'); ?>
+		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'maxflat-core'); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" /></label>
 
 	</p>
 
 	<p>
-		<label for="<?php echo $this->get_field_id( 'video_limit' ); ?>"><?php _e( 'Limit:', 'maxflat'); ?>
+		<label for="<?php echo $this->get_field_id( 'video_limit' ); ?>"><?php _e( 'Limit:', 'maxflat-core'); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'video_limit' ); ?>" name="<?php echo $this->get_field_name( 'video_limit' ); ?>" type="text" value="<?php echo $limit; ?>" /></label>
 
 	</p>
@@ -708,8 +708,8 @@ class Smart_Widget_Recent_Galleries extends Smart_Core_Widget{
 
 
 	function __construct() {
-		$widget_ops = array( 'classname' => 'maxflat_gallery_recent_widget', 'description' => __( "Displays last posts from the gallery post format", 'smartlib' ) );
-		parent::__construct( 'smartlib-recent-gallery-widget', __( ucfirst('maxflat') .'  Recent Galleries', 'maxflat'), $widget_ops );
+		$widget_ops = array( 'classname' => 'maxflat_gallery_recent_widget', 'description' => __( "Displays last posts from the gallery post format", 'maxflat-core' ) );
+		parent::__construct( 'smartlib-recent-gallery-widget', __( ucfirst('maxflat-core') .'  Recent Galleries', 'maxflat-core'), $widget_ops );
 		$this->alt_option_name = 'smartlib-gallery_recent_widget';
 
 
@@ -810,13 +810,13 @@ class Smart_Widget_Recent_Galleries extends Smart_Core_Widget{
 
 		?>
 	<p>
-		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'maxflat'); ?>
+		<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'maxflat-core'); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" /></label>
 
 	</p>
 
 	<p>
-		<label for="<?php echo $this->get_field_id( 'gallery_limit' ); ?>"><?php _e( 'Limit:', 'maxflat'); ?>
+		<label for="<?php echo $this->get_field_id( 'gallery_limit' ); ?>"><?php _e( 'Limit:', 'maxflat-core'); ?>
 			<input class="widefat" id="<?php echo $this->get_field_id( 'gallery_limit' ); ?>" name="<?php echo $this->get_field_name( 'gallery_limit' ); ?>" type="text" value="<?php echo $limit; ?>" /></label>
 
 	</p>
@@ -849,7 +849,7 @@ function maxflat_add_theme_widgets($old_theme, $WP_theme = null) {
 
 maxflat_pre_set_widget( 'sidebar-1', 'smartlib-social-icons',
     array(
-        'title' => __('Follow us','maxflat'),
+        'title' => __('Follow us','maxflat-core'),
        'gplus'  => 'https://plus.google.com/',
         'facebook' => 'https://www.facebook.com/',
 		'twitter'=> 'https://twitter.com/',
@@ -861,21 +861,21 @@ maxflat_pre_set_widget( 'sidebar-1', 'smartlib-social-icons',
 
 maxflat_pre_set_widget( 'sidebar-1', 'search',
     array(
-        'title' => __('Search Form','maxflat')
+        'title' => __('Search Form','maxflat-core')
 
     )
 );
 
 maxflat_pre_set_widget( 'sidebar-1', 'smartlib-recent-posts',
     array(
-        'title' => __('Last Articles','maxflat')
+        'title' => __('Last Articles','maxflat-core')
 
     )
 );
 
 maxflat_pre_set_widget( 'sidebar-1', 'smartlib-recent-gallery-widget',
     array(
-        'title' => __('Last Galeries','maxflat'),
+        'title' => __('Last Galeries','maxflat-core'),
          'gallery_limit' => 4,
     )
 );

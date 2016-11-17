@@ -16,7 +16,7 @@ get_header(); ?>
     ?>
 
     <header class="archive-header">
-        <h2 class="archive-title"><?php printf(__('Author Archives: %s', 'maxflat'), '<span class="vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta("ID"))) . '" title="' . esc_attr(get_the_author()) . '" rel="me">' . get_the_author() . '</a></span>'); ?></h2>
+        <h2 class="archive-title"><?php printf(__('Author Archives: %s', 'maxflat-core'), '<span class="vcard"><a class="url fn n" href="' . esc_url(get_author_posts_url(get_the_author_meta("ID"))) . '" title="' . esc_attr(get_the_author()) . '" rel="me">' . get_the_author() . '</a></span>'); ?></h2>
     </header><!-- .archive-header -->
 
     <?php
@@ -36,14 +36,14 @@ get_header(); ?>
 						$user_image = get_the_author_meta( 'maxflat_profile_image',get_the_author_meta( 'ID' ) );
 						if(!empty($user_image)){
 							?>
-							<img src="<?php echo $user_image ?>" alt="<?php printf( __( 'About %s', 'maxflat' ), get_the_author() ); ?>" />
+							<img src="<?php echo $user_image ?>" alt="<?php printf( __( 'About %s', 'maxflat-core' ), get_the_author() ); ?>" />
 							<?php
 						}else
 							echo get_avatar( get_the_author_meta( 'user_email' ), apply_filters( 'maxflat_author_bio_avatar_size', 68 ) ); ?>
 					</div>
             <!-- .author-avatar -->
             <div class="author-description">
-                <h2><?php printf(__('About %s', 'maxflat'), get_the_author()); ?></h2>
+                <h2><?php printf(__('About %s', 'maxflat-core'), get_the_author()); ?></h2>
 
                 <p><?php the_author_meta('description'); ?></p>
             </div>

@@ -44,7 +44,7 @@
 			<?php maxflat_searchmenu(); //display search menu ?>
 
 			<nav id="top-navigation" class="left show-for-large-up">
-				<a class="maxflat-wai-info maxflat-skip-link" href="#content" title="<?php esc_attr_e( 'Skip to content', 'maxflat' ); ?>"><?php _e( 'Skip to content', 'maxflat' ); ?></a>
+				<a class="maxflat-wai-info maxflat-skip-link" href="#content" title="<?php esc_attr_e( 'Skip to content', 'maxflat-core' ); ?>"><?php _e( 'Skip to content', 'maxflat-core' ); ?></a>
 				<?php
 				if ( has_nav_menu( 'top_pages' ) ) {
 					wp_nav_menu(array('theme_location' => 'top_pages', 'menu_class' => 'maxflat-menu maxflat-top-menu'));

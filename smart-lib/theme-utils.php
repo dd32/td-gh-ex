@@ -32,6 +32,23 @@ class __MAXFLAT{
 	}
 
 	/**
+	 * Check if menu icons is installed
+	 * @return bool
+	 */
+
+	static function if_menu_icons_is_installed(){
+
+		if(class_exists('Menu_Icons')){
+
+			return true;
+
+		}
+
+		return false;
+
+	}
+
+	/**
 	 *
 	 * return awesome icon class name from layout_project_class
 	 * @static

@@ -10,7 +10,7 @@ get_header(); ?>
     <?php if (have_posts()) : ?>
 
     <header class="page-header">
-        <h1 class="archive-title"><?php printf(__('Search Results for: %s', 'maxflat'), '<span>' . get_search_query() . '</span>'); ?></h1>
+        <h1 class="archive-title"><?php printf(__('Search Results for: %s', 'maxflat-core'), '<span>' . get_search_query() . '</span>'); ?></h1>
     </header>
 
 
@@ -26,11 +26,11 @@ get_header(); ?>
 
     <article id="post-0" class="post no-results not-found">
         <header class="entry-header">
-            <h2 class="entry-title"><?php _e('Nothing Found', 'maxflat'); ?></h2>
+            <h2 class="entry-title"><?php _e('Nothing Found', 'maxflat-core'); ?></h2>
         </header>
 
         <div class="entry-content">
-            <p><?php _e('Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'maxflat'); ?></p>
+            <p><?php _e('Sorry, but nothing matched your search criteria. Please try again with some different keywords.', 'maxflat-core'); ?></p>
             <?php get_search_form(); ?>
         </div>
         <!-- .entry-content -->

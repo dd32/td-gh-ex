@@ -13,7 +13,7 @@
             </div>
             <h2 class="entry-title">
                 <a href="<?php the_permalink(); ?>"
-                   title="<?php echo esc_attr(sprintf(__('Permalink to %s', 'maxflat'), the_title_attribute('echo=0'))); ?>"
+                   title="<?php echo esc_attr(sprintf(__('Permalink to %s', 'maxflat-core'), the_title_attribute('echo=0'))); ?>"
                    rel="bookmark"><?php the_title(); ?></a>
             </h2>
 					<?php maxflat_display_meta_post(); ?>
@@ -28,7 +28,7 @@
                 if ('' != get_the_post_thumbnail()) {
                     ?>
                    <div class="smartlib-thumbnail-outer"><?php maxflat_get_format_ico($post_format) ?><a href="<?php the_permalink(); ?>"
-																																										 title="<?php echo esc_attr(sprintf(__('Permalink to %s', 'maxflat'), the_title_attribute('echo=0'))); ?>"
+																																										 title="<?php echo esc_attr(sprintf(__('Permalink to %s', 'maxflat-core'), the_title_attribute('echo=0'))); ?>"
 																																										 ><?php the_post_thumbnail('medium-square'); ?></a></div>
 
                     <?php
@@ -38,7 +38,7 @@
 									?>
 
 									<div class="smartlib-thumbnail-outer"><?php maxflat_get_format_ico($post_format) ?><a href="<?php the_permalink(); ?>"
-																																												 title="<?php echo esc_attr(sprintf(__('Permalink to %s', 'maxflat'), the_title_attribute('echo=0'))); ?>"
+																																												 title="<?php echo esc_attr(sprintf(__('Permalink to %s', 'maxflat-core'), the_title_attribute('echo=0'))); ?>"
 											><?php echo $featured_image ?></a></div>
 
 									<?php
@@ -51,7 +51,7 @@
                     </div><!-- .entry-summary -->
                     <?php else : ?>
                     <div class="entry-content">
-										<?php the_content(__('Continue reading', 'maxflat') . ' <i class="fa fa-angle-right"></i>'); ?>
+										<?php the_content(__('Continue reading', 'maxflat-core') . ' <i class="fa fa-angle-right"></i>'); ?>
 										 </div><!-- .entry-content -->
                     <?php endif; ?>
             </div>

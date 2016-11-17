@@ -15,7 +15,7 @@ if (post_password_required())
     <h3 class="smartlib-comments-title">
         <span><?php echo maxflat_get_awesome_ico('comments') ?>
         <?php
-        printf(_n('1 comment', '%1$s comments', get_comments_number(), 'maxflat'),
+        printf(_n('1 comment', '%1$s comments', get_comments_number(), 'maxflat-core'),
             number_format_i18n(get_comments_number()));
         ?></span>
     </h3>
@@ -26,10 +26,10 @@ if (post_password_required())
 
     <?php if (get_comment_pages_count() > 1 && get_option('page_comments')) : // are there comments to navigate through ?>
         <nav id="comment-nav-below" class="navigation" role="navigation">
-            <h1 class="assistive-text section-heading"><?php _e('Comment navigation', 'maxflat'); ?></h1>
+            <h1 class="assistive-text section-heading"><?php _e('Comment navigation', 'maxflat-core'); ?></h1>
 
-            <div class="nav-previous"><?php previous_comments_link(__('&larr; Older Comments', 'maxflat')); ?></div>
-            <div class="nav-next"><?php next_comments_link(__('Newer Comments &rarr;', 'maxflat')); ?></div>
+            <div class="nav-previous"><?php previous_comments_link(__('&larr; Older Comments', 'maxflat-core')); ?></div>
+            <div class="nav-next"><?php next_comments_link(__('Newer Comments &rarr;', 'maxflat-core')); ?></div>
         </nav>
         <?php endif; // check for comment navigation ?>
 
@@ -38,7 +38,7 @@ if (post_password_required())
           * But we only want the note on posts and pages that had comments in the first place.
           */
     if (!comments_open() && get_comments_number()) : ?>
-        <p class="nocomments"><?php _e('Comments are closed.', 'maxflat'); ?></p>
+        <p class="nocomments"><?php _e('Comments are closed.', 'maxflat-core'); ?></p>
         <?php endif; ?>
 
     <?php endif; // have_comments() ?>

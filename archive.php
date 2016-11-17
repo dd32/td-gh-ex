@@ -15,12 +15,12 @@ get_header();
 	<header class="archive-header">
 		<h1 class="archive-title"><?php
 			if (is_day()) :
-				printf(__('Daily Archives: %s', 'maxflat'), '<span>' . get_the_date() . '</span>'); elseif (is_month()) :
-				printf(__('Monthly Archives: %s', 'maxflat'), '<span>' . get_the_date(_x('F Y', 'monthly archives date format', 'maxflat')) . '</span>');
+				printf(__('Daily Archives: %s', 'maxflat-core'), '<span>' . get_the_date() . '</span>'); elseif (is_month()) :
+				printf(__('Monthly Archives: %s', 'maxflat-core'), '<span>' . get_the_date(_x('F Y', 'monthly archives date format', 'maxflat-core')) . '</span>');
 			elseif (is_year()) :
-				printf(__('Yearly Archives: %s', 'maxflat'), '<span>' . get_the_date(_x('Y', 'yearly archives date format', 'maxflat')) . '</span>');
+				printf(__('Yearly Archives: %s', 'maxflat-core'), '<span>' . get_the_date(_x('Y', 'yearly archives date format', 'maxflat-core')) . '</span>');
 			else :
-				_e('Archives', 'maxflat');
+				_e('Archives', 'maxflat-core');
 			endif;
 			?></h1>
 

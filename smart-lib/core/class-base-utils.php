@@ -47,7 +47,7 @@ class Smart_Base_Utils{
 
 	    // Add a page number if necessary.
 	    if ($paged >= 2 || $page >= 2)
-	        $title = "$title $sep " . sprintf(__('Page %s', 'maxflat'), max($paged, $page));
+	        $title = "$title $sep " . sprintf(__('Page %s', 'maxflat-core'), max($paged, $page));
 
 	    return $title;
 	}

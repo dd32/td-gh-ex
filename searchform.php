@@ -3,10 +3,10 @@
 
 
         <input type="text" value="" name="s" class="search-content-input"
-               placeholder="<?php _e('Search', 'maxflat'); ?>">
+               placeholder="<?php _e('Search', 'maxflat-core'); ?>">
 
 
-        <input type="submit" class="searchsubmit-content" value="<?php _e('Search', 'maxflat'); ?>">
+        <input type="submit" class="searchsubmit-content" value="<?php _e('Search', 'maxflat-core'); ?>">
 
 
 </form>

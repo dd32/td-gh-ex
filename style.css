@@ -4,10 +4,10 @@ Theme URI: http://netbiel.pl/maxflat-core/
 Author: Peter Bielecki
 Author URI: http://netbiel.pl
 Description: Simple clean & responsive theme for blog or small magazine. Customize this theme with WordPress Customizer. Upload logo, change colors, modify all settings and see the preview in real-time before you save. MaxFlat is based on Zurb Foundation front-end framework.
-Version: 1.4.1
+Version: 1.5.0
 License:
 License URI:
-Tags:  flexible-header, full-width-template,  post-formats,  theme-options, translation-ready,  responsive-layout, light
+Tags:  flexible-header, full-width-template,  post-formats,  theme-options, translation-ready
 Text Domain: maxflat
 
 
@@ -378,9 +378,7 @@ dt {
 	margin: 10px auto;
 
 }
-.attachment-wide-image{
-  padding: 0 20px 20px 0;
-}
+
 caption {
 	padding: 4px 0px;
 }
@@ -635,9 +633,11 @@ td.label {
 	float: right;
 	background: #067670;
 	color: #fff;
-	padding: 3px 8px;
+	padding: 5px 10px;
 	clear: both;
-	font-size: 12px;
+	font-size: 13px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
 }
 .more-link i{
 	font-size: 15px;
@@ -802,9 +802,7 @@ blockquote p {
 	width: 228px;
 	height: 45px;
 	line-height: 45px;
-	margin-left: -14px;
-	text-align: center;
-  text-transform: uppercase;
+  	text-transform: uppercase;
 	color: #fff;
 	display: block;
 	overflow: hidden;
@@ -814,8 +812,7 @@ blockquote p {
 }
 
 .smartlib-site-logo:hover {
-	background: #212020;
-	color: #fff;
+	color: #e8e8e8;
 	text-decoration: none;
 }
 
@@ -873,15 +870,20 @@ blockquote p {
 	margin: 8px -15px 0px 0px;
 }
 
-.header-image {
-	margin-bottom: 20px;
+
+
+.frontpage-header a{
+	display: block;
+	margin-top: 30px;
 }
 
 .header-banner {
 	width: 98%;
 	height: 100px;
 	margin-bottom: 20px;
+	margin-top: 20px;
 	text-align: center;
+
 }
 
 /*expand area - toggle switch*/
@@ -923,10 +925,10 @@ blockquote p {
 .main-navigation,
 .widget_nav_menu div{
 	overflow: hidden;
-	background: #dde9e6;
 	max-width: 100%;
-	padding: 7px;
 	margin-bottom: 40px;
+	border-top: 1px solid #cededa;
+	
 }
 .main-navigation ul,
 .widget_nav_menu ul{
@@ -935,26 +937,30 @@ blockquote p {
 }
 .main-navigation li,
 .widget_nav_menu li{
-	text-transform: uppercase;
+
 	max-width: 100%;
+
+
 }
 .main-navigation li a,
 .widget_nav_menu li a{
-	font-size: 15px;
 
+	font-size: 14px;
 	color: #212020;
 	box-shadow: none;
-	border-bottom: 1px solid #00c3b9;
-	padding: 11px 20px 11px 25px;
+	padding: 11px 20px 11px 35px;
 	font-weight: 700;
 	position: relative;
 	display: block;
 	height: auto;
+	border-bottom: 1px solid #cededa;
 
 }
 
-.main-navigation ul > li a:before,
-.widget_nav_menu ul > li a:before{
+.main-navigation .maxflat-nav-menu > ul > li > a:before,
+.widget_nav_menu .maxflat-nav-menu > ul > li > a:before,
+.main-navigation .maxflat-nav-menu .menu > ul > li > a:before,
+.widget_nav_menu .maxflat-nav-menu .menu > ul > li > a:before{
 	font-family: FontAwesome;
 	content: "\f138";
 	display: inline-block;
@@ -963,7 +969,7 @@ blockquote p {
 	font-size: 19px;
 	position: absolute;
 	top: 9px;
-	left: 0px;
+	left: 10px;
 
 }
 .main-navigation li:last-child a,
@@ -977,10 +983,18 @@ blockquote p {
 
 }
 
+.main-navigation ul ul{
+
+	margin-left: 45px;
+
+}
+
 .main-navigation ul ul > li,
 .widget_nav_menu ul ul > li
 {
 	margin: 0px;
+	font-size: 14px;
+	font-weight: normal;
 }
 
 .main-navigation li a:hover, .main-navigation li a:focus, .main-navigation li.current-menu-item > a, .main-navigation li.current_page_item > a,
@@ -1016,13 +1030,16 @@ blockquote p {
 	clear: both;
 	float: none;
 	max-width: 100%;
+	margin-left: 40px;
 }
 .main-navigation  ul  li ul a,
 .widget_nav_menu  ul  li ul a
 {
 	border: none;
 	padding: 6px 5px;
-	font-size: 0.9em;
+	font-size: 12px;
+	position: relative;
+	font-weight: normal;
 }
 
 .main-navigation  ul  li ul li,
@@ -1031,18 +1048,14 @@ blockquote p {
 	position: relative;
 }
 
-.main-navigation  ul  li ul a:before,
-.widget_nav_menu  ul  li ul a:before
+.main-navigation .maxflat-nav-menu  > ul li ul a:before,
+.widget_nav_menu .maxflat-nav-menu  > ul li ul a:before
 {
-	content: "";
-	display: block;
-	border: 4px solid;
-	border-color: transparent transparent transparent #00c3b9;
-	float: left;
-	width: 0px;
-	position: absolute;
-	top: 0.65em;
-	left: -2px;
+	content: "- ";
+	display: inline-block;
+	padding-right: 5px;
+	margin-left: -10px;
+
 }
 .main-navigation  .sub-menu,
 .widget_nav_menu  .sub-menu
@@ -1106,13 +1119,12 @@ Top Navigation: top_pages theme location
 	transition: background 0.3s ease-out;
 }
 .maxflat-top-menu ul li ul,
-.maxflat-top-menu li ul
-{
-	width: 120%;
+.maxflat-top-menu li ul{
+
 	background: #9ea7ae;
 	padding-bottom: 5px;
 	position: absolute;
-	margin: 0 -20px 5px 0;
+
 	display: none;
 	left: 0;
 	z-index: 2;
@@ -1140,7 +1152,7 @@ Top Navigation: top_pages theme location
 }
 
 .maxflat-top-menu ul > li{
-    width: auto;
+	width: 100%;
 }
 
 .maxflat-top-menu ul li ul li a,
@@ -1156,6 +1168,7 @@ Top Navigation: top_pages theme location
 	transition: color 0 ease-in;
 	display: block;
 	font-size: 0.75em;
+	width: 100%;
 }
 
 
@@ -1462,19 +1475,19 @@ h3.entry-title{
 
 .smartlib-comments-link a {
 	width: 65px;
-  max-width: 100%;
+  	max-width: 100%;
 	display: block;
 	background: #00c3b9;
 	color: #fff;
 	font-size: 12px;
-	padding: 20px 3px 7px 3px;
+	padding: 25px 3px 7px 3px;
 	text-align: center;
 
 }
 .smartlib-comments-link i{
 	position: absolute;
-	top: 3px;
-	left: 30px;
+	top: 7px;
+	left: 25px;
 	color: #fff;
 }
 .smartlib-comments-link a:hover {
@@ -1605,6 +1618,7 @@ h3.entry-title{
 	position: relative;
 	font-size: 30px;
 	max-width: 100%;
+	width: 100%;
 }
 
 .smartlib-thumbnail-outer img {
@@ -2561,7 +2575,7 @@ margin-top: 5px;
 ----------------------------------------- */
 /*home page*/
 .site-description {
-	margin-bottom: 40px;
+	margin: 30px 0;
 
 }
 

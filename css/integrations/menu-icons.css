@@ -1,0 +1,15 @@
+.main-navigation .maxflat-menu-icons ul > li a:before,
+.widget_nav_menu .maxflat-menu-icons ul > li a:before{
+    display: none;
+}
+.maxflat-vertical-navigation .maxflat-menu-icons ul > li i{
+
+    display: inline-block;
+    color: #00c3b9;
+    font-weight: normal;
+    font-size: 1.4em!important;
+    position: absolute;
+    top: 17px;
+    left: 10px;
+
+}

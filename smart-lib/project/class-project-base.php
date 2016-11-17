@@ -4,8 +4,8 @@
 
 class Smart_Project_Base extends Smart_Base {
 
-	public static $project_domain = 'maxflat';
-	public $project_prefix = 'maxflat';
+	public static $project_domain = 'maxflat-core';
+	public $project_prefix = 'maxflat-core';
 	public $obj_widgets = array();
 	public $obj_admin_utils;
 	public $obj_layout;
@@ -70,6 +70,11 @@ class Smart_Project_Base extends Smart_Base {
 		'smartlib-structure'           => array(
 			'path'     => '/style.css',
 			'deps'     => array( 'smartlib-foundation' )
+		),
+
+		'smartlib-menu-icons'           => array(
+			'path'     => '/css/integrations/menu-icons.css',
+			'deps'     => array( 'menu-icons-extra' )
 		),
 	);
 

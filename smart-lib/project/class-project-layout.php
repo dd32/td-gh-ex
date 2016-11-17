@@ -271,15 +271,15 @@ class Smart_Project_Layout
                 the_category($sep);
             } elseif (is_archive() || is_single()) {
                 if (is_day()) {
-                    printf(__('%s', 'maxflat'), get_the_date());
+                    printf(__('%s', 'maxflat-core'), get_the_date());
                 } elseif (is_month()) {
-                    printf(__('%s', 'maxflat'), get_the_date(_x('F Y', 'monthly archives date format', 'maxflat')));
+                    printf(__('%s', 'maxflat-core'), get_the_date(_x('F Y', 'monthly archives date format', 'maxflat-core')));
                 }
                 elseif (is_year()) {
-                    printf(__('%s', 'maxflat'), get_the_date(_x('Y', 'yearly archives date format', 'maxflat')));
+                    printf(__('%s', 'maxflat-core'), get_the_date(_x('Y', 'yearly archives date format', 'maxflat-core')));
                 }
                 else {
-                    _e('Blog Archives', 'maxflat');
+                    _e('Blog Archives', 'maxflat-core');
                 }
             }
 
@@ -300,16 +300,34 @@ class Smart_Project_Layout
 
         <?php $header_image = get_header_image();
         $banner_header = stripslashes(get_theme_mod('banner_code_header'));
+        $banner_link = __MAXFLAT::option('top_banner_link');
+
+        $start_link = '';
+        $end_link = '';
+
+        if(strlen($banner_link)>0){
+            $start_link = '<a href="'.$banner_link.'" target="_blank">';
+            $end_link = '</a>';
+        }
+
+
         if (!empty($header_image)) : ?>
-            <a href="<?php echo esc_url(home_url('/')); ?>">
+            <?php echo $start_link ?>
                 <img src="<?php echo esc_url($header_image); ?>"
                      class="header-image"
                      width="<?php echo get_custom_header()->width; ?>"
                      height="<?php echo get_custom_header()->height; ?>"
-                     alt=""/></a>
+                     alt=""/>
+            <?php echo $end_link  ?>
             <?php elseif (!empty($banner_header)): ?>
             <div class="header-banner">
-                <?php echo $banner_header ?>
+
+                <?php
+
+                echo $banner_header;
+
+                ?>
+
             </div>
             <?php
         else: ?>
@@ -327,7 +345,7 @@ class Smart_Project_Layout
      */
     function category_line()
     {
-        return $categories_list = get_the_category_list(__(' ', 'maxflat'));
+        return $categories_list = get_the_category_list(__(' ', 'maxflat-core'));
 
     }
 
@@ -367,14 +385,14 @@ class Smart_Project_Layout
 
         if ($wp_query->max_num_pages > 1) : ?>
         <nav id="<?php echo $html_id; ?>" class="navigation" role="navigation">
-            <h3 class="assistive-text"><?php _e('Post navigation', 'maxflat'); ?></h3>
+            <h3 class="assistive-text"><?php _e('Post navigation', 'maxflat-core'); ?></h3>
             <?php
 
             if ($pagination_option == '1') {
                 ?>
                 <div class="smartlib-next-prev">
-                    <?php next_posts_link(__('&larr; Older posts', 'maxflat')); ?>
-                    <?php previous_posts_link(__('Newer posts &rarr;', 'maxflat')); ?>
+                    <?php next_posts_link(__('&larr; Older posts', 'maxflat-core')); ?>
+                    <?php previous_posts_link(__('Newer posts &rarr;', 'maxflat-core')); ?>
                 </div>
                 <?php
             } else {
@@ -430,11 +448,11 @@ class Smart_Project_Layout
 
         ?>
     <nav class="nav-single">
-        <h3 class="assistive-text"><?php _e('Post navigation', 'maxflat'); ?></h3>
+        <h3 class="assistive-text"><?php _e('Post navigation', 'maxflat-core'); ?></h3>
 
         <div class="smartlib-single-next-prev">
-            <?php previous_post_link('%link', _x('&larr; Previous post link', 'Previous post link', 'maxflat')); ?>
-            <?php next_post_link('%link', _x('Next post link &rarr;', 'Next post link', 'maxflat')); ?>
+            <?php previous_post_link('%link', _x('&larr; Previous post link', 'Previous post link', 'maxflat-core')); ?>
+            <?php next_post_link('%link', _x('Next post link &rarr;', 'Next post link', 'maxflat-core')); ?>
         </div>
     </nav><!-- .nav-single -->
     <?php
@@ -451,13 +469,13 @@ class Smart_Project_Layout
     function custom_wp_link_pages($args = '')
     {
         $defaults = array(
-            'before' => '<div id="post-pagination" class="pagination">' . __('Pages:', 'maxflat'),
+            'before' => '<div id="post-pagination" class="pagination">' . __('Pages:', 'maxflat-core'),
             'after' => '</div>',
             'text_before' => '',
             'text_after' => '',
             'next_or_number' => 'number',
-            'nextpagelink' => __('Next page', 'maxflat'),
-            'previouspagelink' => __('Previous page', 'maxflat'),
+            'nextpagelink' => __('Next page', 'maxflat-core'),
+            'previouspagelink' => __('Previous page', 'maxflat-core'),
             'pagelink' => '%',
             'echo' => 1
         );
@@ -529,7 +547,7 @@ class Smart_Project_Layout
                 // Display trackbacks differently than normal comments.
                 ?>
 	<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-		<p><?php _e('Pingback:', 'maxflat'); ?> <?php comment_author_link(); ?> <?php edit_comment_link(__('(Edit)', 'maxflat'), '<span class="edit-link">', '</span>'); ?></p>
+		<p><?php _e('Pingback:', 'maxflat-core'); ?> <?php comment_author_link(); ?> <?php edit_comment_link(__('(Edit)', 'maxflat-core'), '<span class="edit-link">', '</span>'); ?></p>
                     <?php
                 break;
             default :
@@ -551,30 +569,30 @@ class Smart_Project_Layout
                             printf('<cite class="fn">%1$s %2$s</cite>',
                                 get_comment_author_link(),
                                 // If current post author is also comment author, make it known visually.
-                                ($comment->user_id === $post->post_author) ? '<span> ' . __('Post author', 'maxflat') . '</span>' : ''
+                                ($comment->user_id === $post->post_author) ? '<span> ' . __('Post author', 'maxflat-core') . '</span>' : ''
                             );
                             printf('<a href="%1$s"><time datetime="%2$s">%3$s</time></a>',
                                 esc_url(get_comment_link($comment->comment_ID)),
                                 get_comment_time('c'),
                                 /* translators: 1: date, 2: time */
-                                sprintf(__('%1$s at %2$s', 'maxflat'), get_comment_date(), get_comment_time())
+                                sprintf(__('%1$s at %2$s', 'maxflat-core'), get_comment_date(), get_comment_time())
                             );
                             ?>
                         </header>
                         <!-- .comment-meta -->
 
                         <?php if ('0' == $comment->comment_approved) : ?>
-                        <p class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.', 'maxflat'); ?></p>
+                        <p class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.', 'maxflat-core'); ?></p>
                         <?php endif; ?>
 
                         <section class="comment-content comment">
                             <?php comment_text(); ?>
-                            <?php edit_comment_link(__('Edit', 'maxflat'), '<p class="edit-link">', '</p>'); ?>
+                            <?php edit_comment_link(__('Edit', 'maxflat-core'), '<p class="edit-link">', '</p>'); ?>
                         </section>
                         <!-- .comment-content -->
 
                         <div class="smartlib-comments-replay-button">
-                            <?php comment_reply_link(array_merge($args, array('reply_text' => __('Reply', 'maxflat'), 'depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
+                            <?php comment_reply_link(array_merge($args, array('reply_text' => __('Reply', 'maxflat-core'), 'depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
                         </div>
                         <!-- .reply -->
                     </article>
@@ -754,7 +772,7 @@ class Smart_Project_Layout
     {
         global $post;
         $label = 'pwbox-' . (empty($post->ID) ? rand() : $post->ID);
-        $o = '<form action="' . esc_url(site_url('wp-login.php?action=postpass', 'login_post')) . '" method="post" class="password-form"><div class="row"><div class="columns sixteen"><i class="icon-lock icon-left"></i>' . __("To view this protected post, enter the password below:", 'maxflat') . '</div><label for="' . $label . '" class="columns four mobile-four">' . __("Password:", 'maxflat') . ' </label><div class="columns eight mobile-four"><input name="post_password" id="' . $label . '" type="password" size="20" /></div><div class="columns four mobile-four"><input type="submit" name="Submit" value="' . esc_attr__("Submit", 'maxflat') . '" /></div>
+        $o = '<form action="' . esc_url(site_url('wp-login.php?action=postpass', 'login_post')) . '" method="post" class="password-form"><div class="row"><div class="columns sixteen"><i class="icon-lock icon-left"></i>' . __("To view this protected post, enter the password below:", 'maxflat-core') . '</div><label for="' . $label . '" class="columns four mobile-four">' . __("Password:", 'maxflat-core') . ' </label><div class="columns eight mobile-four"><input name="post_password" id="' . $label . '" type="password" size="20" /></div><div class="columns four mobile-four"><input type="submit" name="Submit" value="' . esc_attr__("Submit", 'maxflat-core') . '" /></div>
     </div></form>
     ';
         return $o;

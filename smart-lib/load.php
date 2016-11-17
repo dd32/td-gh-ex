@@ -8,6 +8,9 @@ define('SMART_STYLESHEET_DIRECTORY', get_stylesheet_directory_uri());
 define('SMART_ADMIN_DIRECTORY_URI', SMART_TEMPLATE_DIRECTORY_URI.'/admin');
 define('SMART_ADMIN_DIRECTORY', SMART_TEMPLATE_DIRECTORY.'/admin');
 
+/*LOAD TGM*/
+require(SMART_TEMPLATE_DIRECTORY .SMART_LIB_DIRECTORY. 'class-tgm-plugin-activation.php');
+
 require(SMART_TEMPLATE_DIRECTORY .SMART_LIB_DIRECTORY. 'theme-utils.php');
 // Load theme base class
 require(SMART_TEMPLATE_DIRECTORY .SMART_LIB_DIRECTORY. 'core/class-base.php');

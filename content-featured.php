@@ -11,7 +11,7 @@
 
             <h3 class="entry-title">
                 <a href="<?php the_permalink(); ?>"
-                   title="<?php echo esc_attr(sprintf(__('Permalink to %s', 'maxflat'), the_title_attribute('echo=0'))); ?>"
+                   title="<?php echo esc_attr(sprintf(__('Permalink to %s', 'maxflat-core'), the_title_attribute('echo=0'))); ?>"
                    rel="bookmark"><?php the_title(); ?></a>
             </h3>
 

@@ -326,18 +326,18 @@ class Smart_Project_Customizer{
 
 		//add section: logo
 		$wp_customize->add_section( 'project_section_logo', array(
-			'title'    => __( 'Logo', 'maxflat'),
+			'title'    => __( 'Logo', 'maxflat-core'),
 			'priority' => 20,
 		) );
 		//add section: breadcrumb
 		$wp_customize->add_section( $this->project_prefix.'_section_project_breadcrumb', array(
-			'title'    => __( 'Breadcrumb', 'maxflat'),
+			'title'    => __( 'Breadcrumb', 'maxflat-core'),
 			'priority' => 70,
 		) );
 
 		//add section: pagination
 		$wp_customize->add_section( $this->project_prefix.'_section_pagination_posts', array(
-			'title'    => __( 'Pagination', 'maxflat'),
+			'title'    => __( 'Pagination', 'maxflat-core'),
 			'priority' => 90,
 		) );
 
@@ -345,7 +345,7 @@ class Smart_Project_Customizer{
 		//add section: custom code
 
 		$wp_customize->add_section( '_section_project_custom_code', array(
-			'title'    => __( 'Custom Code', 'maxflat'),
+			'title'    => __( 'Custom Code', 'maxflat-core'),
 			'priority' => 80,
 		) );
 
@@ -359,7 +359,7 @@ class Smart_Project_Customizer{
 		) );
 
 		$wp_customize->add_control( self::$option_key . '_title_tagline_footer', array(
-			'label'      => __( 'Footer text', 'maxflat'),
+			'label'      => __( 'Footer text', 'maxflat-core'),
 			'section'    => 'title_tagline',
 			'settings'   => self::$option_key . '[title_tagline_footer]',
 			'type'       => 'text',
@@ -377,13 +377,13 @@ class Smart_Project_Customizer{
 
 
 		$wp_customize->add_control( self::$option_key . '_pagination_posts', array(
-			'label'      => __( 'Pagination', 'maxflat'),
+			'label'      => __( 'Pagination', 'maxflat-core'),
 			'section'    => $this->project_prefix.'_section_pagination_posts',
 			'settings'   => self::$option_key . '[project_pagination_posts]',
 			'type'       => 'radio',
 			'choices'    => array(
-				'1' => __( 'Older posts/Newer posts', 'maxflat'),
-				'2' => __( 'Paginate links', 'maxflat')
+				'1' => __( 'Older posts/Newer posts', 'maxflat-core'),
+				'2' => __( 'Paginate links', 'maxflat-core')
 			)
 
 		) );
@@ -398,7 +398,7 @@ class Smart_Project_Customizer{
 		) );
 
 		$wp_customize->add_control( self::$option_key . '_breadcrumb_separator', array(
-			'label'      => __( 'Separator', 'maxflat'),
+			'label'      => __( 'Separator', 'maxflat-core'),
 			'section'    => $this->project_prefix.'_section_project_breadcrumb',
 			'settings'   => self::$option_key . '[breadcrumb_separator]',
 			'type'       => 'text',
@@ -414,7 +414,7 @@ class Smart_Project_Customizer{
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, self::$option_key . '_main_font_color', array(
-			'label'    => __( 'Main Font Color', 'maxflat'),
+			'label'    => __( 'Main Font Color', 'maxflat-core'),
 			'section'  => 'colors',
 			'settings' => self::$option_key . '[main_font_color]',
 		) ) );
@@ -428,7 +428,7 @@ class Smart_Project_Customizer{
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, self::$option_key . '_header_color', array(
-			'label'    => __( 'Headers Text Color', 'maxflat'),
+			'label'    => __( 'Headers Text Color', 'maxflat-core'),
 			'section'  => 'colors',
 			'settings' => self::$option_key . '[header_color]',
 		) ) );
@@ -442,7 +442,7 @@ class Smart_Project_Customizer{
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, self::$option_key . '_sidebar_color', array(
-			'label'    => __( 'Sidebar Color', 'maxflat'),
+			'label'    => __( 'Sidebar Color', 'maxflat-core'),
 			'section'  => 'colors',
 			'settings' => self::$option_key . '[sidebar_color]',
 		) ) );
@@ -456,7 +456,7 @@ class Smart_Project_Customizer{
 		) );
 
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, self::$option_key . '_link_color', array(
-			'label'    => __( 'Link Color', 'maxflat'),
+			'label'    => __( 'Link Color', 'maxflat-core'),
 			'section'  => 'colors',
 			'settings' => self::$option_key . '[link_color]',
 		) ) );
@@ -474,7 +474,7 @@ class Smart_Project_Customizer{
 
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, self::$option_key . '_logo', array(
-			'label'    => __( 'Upload', 'maxflat'),
+			'label'    => __( 'Upload', 'maxflat-core'),
 			'section'  => 'project_section_logo',
 			'settings' => self::$option_key . '[project_logo]',
 		) ) );
@@ -490,7 +490,7 @@ class Smart_Project_Customizer{
 
 
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, self::$option_key . '_favicon', array(
-			'label'    => __( 'Upload favicon', 'maxflat'),
+			'label'    => __( 'Upload favicon', 'maxflat-core'),
 			'section'  => self::$option_key.'_section_project_logo',
 			'settings' => self::$option_key . '[project_favicon]',
 		) ) );
@@ -504,7 +504,7 @@ class Smart_Project_Customizer{
 		/*ADD PREMIUM SECTIONS*/
 		//add section: layout
 		$wp_customize->add_section( $this->project_prefix.'_section_project_layout', array(
-			'title'    => __( 'Layout', 'maxflat'),
+			'title'    => __( 'Layout', 'maxflat-core'),
 			'priority' => 40,
 		) );
 
@@ -519,15 +519,15 @@ class Smart_Project_Customizer{
 
 		$wp_customize->add_control( self::$option_key . '_project_layout', array(
 			'settings'   => self::$option_key . '[project_layout]',
-			'label'      => __( 'Layout variants:', 'maxflat'),
+			'label'      => __( 'Layout variants:', 'maxflat-core'),
 			'section'    => $this->project_prefix.'_section_project_layout',
 
 			'type'       => 'radio',
 			'choices'    => array(
-				'1' => __( 'Left menu & right sidebar', 'maxflat'),
-				'2' => __( 'Left sidebar & right menu', 'maxflat'),
-				'3' => __( 'Right sidebar without menu', 'maxflat'),
-				'4' => __( 'Left menu without sidebar', 'maxflat')
+				'1' => __( 'Left menu & right sidebar', 'maxflat-core'),
+				'2' => __( 'Left sidebar & right menu', 'maxflat-core'),
+				'3' => __( 'Right sidebar without menu', 'maxflat-core'),
+				'4' => __( 'Left menu without sidebar', 'maxflat-core')
 			)
 
 		) );
@@ -541,7 +541,7 @@ class Smart_Project_Customizer{
 		) );
 
 		$wp_customize->add_control( self::$option_key . '_project_fixed_topbar', array(
-			'label'      => __( 'Fixed Top Bar', 'maxflat'),
+			'label'      => __( 'Fixed Top Bar', 'maxflat-core'),
 			'section'    => $this->project_prefix.'_section_project_layout',
 			'settings'   => self::$option_key . '[project_fixed_topbar]',
 			'type'       => 'checkbox',
@@ -551,7 +551,7 @@ class Smart_Project_Customizer{
    */
 		//add section sidebar
 		$wp_customize->add_section( 'maxflat_section_project_sidebar_resize', array(
-			'title'    => __( 'Resize components', 'maxflat'),
+			'title'    => __( 'Resize components', 'maxflat-core'),
 			'priority' => 60,
 		) );
 
@@ -566,7 +566,7 @@ class Smart_Project_Customizer{
 
 		$wp_customize->add_control( new project_Customize_Range_Control( $wp_customize, 'maxflat_project_layout_width', array(
 			'settings' => self::$option_key . '[project_layout_width]',
-			'label'    => __( 'Layout Width ', 'maxflat'),
+			'label'    => __( 'Layout Width ', 'maxflat-core'),
 			'section'  => 'maxflat_section_project_sidebar_resize',
 			'type'     => 'text',
 
@@ -576,7 +576,7 @@ class Smart_Project_Customizer{
 
 		//add font section
 		$wp_customize->add_section( '_section_project_fonts', array(
-			'title'    => __( 'Typography options', 'maxflat'),
+			'title'    => __( 'Typography options', 'maxflat-core'),
 			'priority' => 90,
 		) );
 
@@ -588,7 +588,7 @@ class Smart_Project_Customizer{
 		) );
 
 		$wp_customize->add_control( self::$option_key . '_project_general_fonts', array(
-			'label'      => __( 'Primary font', 'maxflat'),
+			'label'      => __( 'Primary font', 'maxflat-core'),
 			'section'    =>'_section_project_fonts',
 			'settings'   => self::$option_key . '[project_fonts][project_general_fonts]',
 			'type'       => 'select',
@@ -604,7 +604,7 @@ class Smart_Project_Customizer{
 		) );
 
 		$wp_customize->add_control( self::$option_key . '_project_header_fonts', array(
-			'label'      => __( 'Top headers font', 'maxflat'),
+			'label'      => __( 'Top headers font', 'maxflat-core'),
 			'section'    => '_section_project_fonts',
 			'settings'   => self::$option_key . '[project_fonts][project_header_fonts]',
 			'type'       => 'select',
@@ -615,9 +615,27 @@ class Smart_Project_Customizer{
 
         //add section: social buttons
         $wp_customize->add_section( '_section_project_social_buttons', array(
-            'title'    => __( 'Social buttons', 'maxflat'),
+            'title'    => __( 'Social buttons', 'maxflat-core'),
             'priority' => 120,
         ) );
+
+		//Top header banner link
+
+		$wp_customize->add_setting(self::$option_key . '[top_banner_link]', array(
+
+			'type' => 'option',
+			'capability' => 'edit_theme_options',
+			'sanitize_callback' => array($this, 'sanitize_string')
+		));
+
+		$wp_customize->add_control(self::$option_key . '_top_banner_link', array(
+			'label' => __('Top banner link', 'maxflat-core'),
+			'section' => 'header_image',
+			'settings' => self::$option_key . '[top_banner_link]',
+			'type' => 'text',
+
+		));
+
 
 
 
@@ -630,7 +648,7 @@ class Smart_Project_Customizer{
 		) );
 
 		$wp_customize->add_control( self::$option_key . '_project_menu_fixed', array(
-			'label'      => __( 'Fixed vertical menu', 'maxflat'),
+			'label'      => __( 'Fixed vertical menu', 'maxflat-core'),
 			'section'    => 'nav',
 			'settings'   => self::$option_key . '[project_menu_fixed]',
 			'type'       => 'checkbox',
@@ -743,7 +761,7 @@ class Smart_Project_Customizer{
 
         $wp_customize->add_control( self::$option_key . '_social_button_facebook', array(
             'settings' => self::$option_key . '[social_button_facebook]',
-            'label'    => __( 'Facebook Like', 'maxflat'),
+            'label'    => __( 'Facebook Like', 'maxflat-core'),
             'section'  => $this->project_prefix.'_section_project_social_buttons',
             'type'     => 'checkbox',
         ) );
@@ -757,7 +775,7 @@ class Smart_Project_Customizer{
 
         $wp_customize->add_control( self::$option_key . '_social_button_twitter', array(
             'settings' => self::$option_key . '[social_button_twitter]',
-            'label'    => __( 'Twitter Button ', 'maxflat'),
+            'label'    => __( 'Twitter Button ', 'maxflat-core'),
             'section'  => $this->project_prefix.'_section_project_social_buttons',
             'type'     => 'checkbox',
         ) );
@@ -771,7 +789,7 @@ class Smart_Project_Customizer{
 
         $wp_customize->add_control( self::$option_key . '_social_button_gplus', array(
             'settings' => self::$option_key . '[social_button_gplus]',
-            'label'    => __( 'Google +1', 'maxflat'),
+            'label'    => __( 'Google +1', 'maxflat-core'),
             'section'  => $this->project_prefix.'_section_project_social_buttons',
             'type'     => 'checkbox',
         ) );
@@ -785,7 +803,7 @@ class Smart_Project_Customizer{
 
         $wp_customize->add_control( self::$option_key . '_social_button_pinterest', array(
             'settings' => self::$option_key . '[social_button_pinterest]',
-            'label'    => __( 'Pinterest', 'maxflat'),
+            'label'    => __( 'Pinterest', 'maxflat-core'),
             'section'  => $this->project_prefix.'_section_project_social_buttons',
             'type'     => 'checkbox',
         ) );
@@ -816,7 +834,7 @@ class Smart_Project_Customizer{
         ) );
 
         $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, self::$option_key . '_top_bar_outer_color', array(
-            'label'    => __( 'Top Bar Outer Color', 'maxflat'),
+            'label'    => __( 'Top Bar Outer Color', 'maxflat-core'),
             'section'  => 'colors',
             'settings' => self::$option_key . '[top_bar_outer_color]',
         ) ) );
@@ -829,7 +847,7 @@ class Smart_Project_Customizer{
         ) );
 
         $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, self::$option_key . '_top_bar_menu_color', array(
-            'label'    => __( 'Top Bar Menu Color', 'maxflat'),
+            'label'    => __( 'Top Bar Menu Color', 'maxflat-core'),
             'section'  => 'colors',
             'settings' => self::$option_key . '[top_bar_menu_color]',
         ) ) );
@@ -843,7 +861,7 @@ class Smart_Project_Customizer{
         ) );
 
         $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, self::$option_key . '_top_bar_menu_link_color', array(
-            'label'    => __( 'Top Bar Menu Link Color','maxflat'),
+            'label'    => __( 'Top Bar Menu Link Color','maxflat-core'),
             'section'  => 'colors',
             'settings' => self::$option_key . '[top_bar_menu_link_color]',
         ) ) );
@@ -856,7 +874,7 @@ class Smart_Project_Customizer{
         ) );
 
         $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, self::$option_key . '_top_bar_menu_link_background', array(
-            'label'    => __( 'Top Bar Menu Link Background', 'maxflat'),
+            'label'    => __( 'Top Bar Menu Link Background', 'maxflat-core'),
             'section'  => 'colors',
             'settings' => self::$option_key . '[top_bar_menu_link_background]',
         ) ) );
@@ -870,7 +888,7 @@ class Smart_Project_Customizer{
         ) );
 
         $wp_customize->add_control( new project_Customize_Range_Control( $wp_customize,'maxflat_project_sidebar_resize', array(
-            'label'      => __( 'Sidebar Width', 'maxflat'),
+            'label'      => __( 'Sidebar Width', 'maxflat-core'),
             'section'    => 'maxflat_section_project_sidebar_resize',
             'settings'   => self::$option_key . '[project_sidebar_resize]',
             'type'       => 'text',
@@ -885,7 +903,7 @@ class Smart_Project_Customizer{
         ) );
 
         $wp_customize->add_control( self::$option_key . '_project_menu_fonts', array(
-            'label'      => __( 'Top menu font', 'maxflat'),
+            'label'      => __( 'Top menu font', 'maxflat-core'),
             'section'    => '_section_project_fonts',
             'settings'   => self::$option_key . '[project_fonts][project_menu_fonts]',
             'type'       => 'select',
@@ -909,7 +927,7 @@ class Smart_Project_Customizer{
         ) );
 
         $wp_customize->add_control( new project_Customize_Textarea_Control( $wp_customize, self::$option_key . '_custom_code_header', array(
-            'label'      => __( 'Custom Scripts for Header [header.php]', 'maxflat'),
+            'label'      => __( 'Custom Scripts for Header [header.php]', 'maxflat-core'),
             'section'    => '_section_project_custom_code',
             'capability' => 'edit_theme_options',
             'settings'   => self::$option_key . '[custom_code_header]'
@@ -917,12 +935,13 @@ class Smart_Project_Customizer{
         ) ) );
 
         $wp_customize->add_control( new project_Customize_Textarea_Control( $wp_customize, self::$option_key . '_custom_code_footer', array(
-            'label'      => __( 'Custom Scripts for Footer [footer.php]', 'maxflat'),
+            'label'      => __( 'Custom Scripts for Footer [footer.php]', 'maxflat-core'),
             'section'    => '_section_project_custom_code',
             'capability' => 'edit_theme_options',
             'settings'   => self::$option_key . '[custom_code_footer]'
 
         ) ) );
+
 
     }
 
@@ -1101,7 +1120,7 @@ class project_Customize_Range_Control extends WP_Customize_Control {
             ?>
         <li id="maxflat_customize_layout_placeholder" class="maxflat_customize_layout_placeholder">
             <div class="smartlib-form-proversion-info-outer">
-                <div class="smartlib-form-proversion-info-inner"><a href="http://www.mojo-themes.com/item/maxflat-fully-responsive-flat-design-theme-for-blog-or-small-magazine/?r=netbiel" target="_blank" class="maxflat-proversion-link"><?php _e('Available in pro version &#187;', 'maxflat');?></a></div>
+                <div class="smartlib-form-proversion-info-inner"><a href="https://creativemarket.com/netbiel/220298-MaxFlat-Fully-Responsive-Theme?u=netbiel" target="_blank" class="maxflat-proversion-link"><?php _e('Available in pro version &#187;', 'maxflat-core');?></a></div>
                 <div class="smartlib-color-readonly-image"></div>
             </div>
         <?php

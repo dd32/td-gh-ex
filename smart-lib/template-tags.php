@@ -62,6 +62,16 @@ function maxflat_get_header(){
 	return __MAXFLAT::layout()->get_site_header();
 }
 
+function maxflat_menu_icons_class(){
+
+	if(__MAXFLAT::if_menu_icons_is_installed()){
+
+		echo 'maxflat-menu-icons';
+
+	}
+
+}
+
 /**
 Prints HTML category line
  */
@@ -251,9 +261,9 @@ function maxflat_searchform() {
 	<div class="row">
 		<div class="columns sixteen mobile-four">
 			<input id="search-input" type="text" name="s"
-						 placeholder="<?php _e( 'Search for ...',  'maxflat' ); ?>" value="">
+						 placeholder="<?php _e( 'Search for ...',  'maxflat-core' ); ?>" value="">
 			<input class="button" id="top-searchsubmit" type="submit"
-						 value="<?php _e( 'Search', 'maxflat' ); ?>">
+						 value="<?php _e( 'Search', 'maxflat-core' ); ?>">
 		</div>
 	</div>
 
@@ -287,7 +297,7 @@ function  maxflat_mobile_menu( $args = array() ) {
 		?>
 
 	<select id="menu-<?php echo $args['theme_location'] ?>" class="<?php echo $args['menu_class'] ?>">
-		<option value=""><?php _e( '- Select -', 'maxflat' ); ?></option>
+		<option value=""><?php _e( '- Select -', 'maxflat-core' ); ?></option>
 		<?php foreach ( $menu_item as $id => $data ) : ?>
 		<?php if ( $data['parent'] == true ) : ?>
 			<optgroup label="<?php echo $data['item']->title ?>">
@@ -390,7 +400,7 @@ function maxflat_get_related_post_box( $category, $post_ID, $display_post_limit,
 
 		?>
 	<section class="smartlib-related-posts">
-	    <h3><?php _e( 'Related posts', 'maxflat' ) ?></h3>
+	    <h3><?php _e( 'Related posts', 'maxflat-core' ) ?></h3>
 			<div class="smartlib-slider-container">
 				<ul class="smartlib-slides slider-list slides">
 					<?php
@@ -411,7 +421,7 @@ function maxflat_get_related_post_box( $category, $post_ID, $display_post_limit,
 								?>
 
 									<a href="<?php the_permalink(); ?>" class="smartlib-thumbnail-outer"
-										 title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'maxflat' ), the_title_attribute( 'echo=0' ) ) ); ?>"
+										 title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'maxflat-core' ), the_title_attribute( 'echo=0' ) ) ); ?>"
 											><?php maxflat_get_format_ico($post_format) ?><?php the_post_thumbnail( 'medium-image-thumb' ); ?></a>
 
 								<?php
@@ -424,7 +434,7 @@ function maxflat_get_related_post_box( $category, $post_ID, $display_post_limit,
 
 
 										<a href="<?php the_permalink(); ?>" class="smartlib-thumbnail-outer"
-											 title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'maxflat' ), the_title_attribute( 'echo=0' ) ) ); ?>"
+											 title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'maxflat-core' ), the_title_attribute( 'echo=0' ) ) ); ?>"
 												><?php maxflat_get_format_ico($post_format) ?><?php echo $featured_image ?></a>
 
 									<?php
@@ -541,7 +551,7 @@ function maxflat_display_meta_post($type='author'){
  */
 function maxflat_author_line(){
 	?>
-<span class="meta-label meta-publisher vcard"><?php _e('Published by: ', 'maxflat') ?> <?php the_author_posts_link(); ?> </span>
+<span class="meta-label meta-publisher vcard"><?php _e('Published by: ', 'maxflat-core') ?> <?php the_author_posts_link(); ?> </span>
 		<?php
 }
 
@@ -551,7 +561,7 @@ function maxflat_author_line(){
 function maxflat_entry_tags(){
 	?>
 <?php if ( has_tag() ): ?>
-	<div class="smartlib-tags-article"> <?php maxflat_get_awesome_ico('tag_icon')?> <?php the_tags( __( 'Tags: ', 'maxflat' ), '  ' ); ?></div>
+	<div class="smartlib-tags-article"> <?php maxflat_get_awesome_ico('tag_icon')?> <?php the_tags( __( 'Tags: ', 'maxflat-core' ), '  ' ); ?></div>
 	<?php endif ?>
 		<?php
 }
@@ -563,7 +573,7 @@ function maxflat_replay_link(){
 	?>
 <div class="smartlib-comments-link">
 	<?php if ( comments_open() && is_single() ) { ?>
-	<?php comments_popup_link( __( 'Comment', 'maxflat' ) .'<i class="'.maxflat_get_awesome_ico('comments').'"></i></span>', __( '1 Reply', 'maxflat' ), __( '% Replies', 'maxflat' ) ); ?>
+	<?php comments_popup_link( __( 'Comment', 'maxflat-core' ) .'<i class="'.maxflat_get_awesome_ico('comments').'"></i></span>', __( '1 Reply', 'maxflat-core' ), __( '% Replies', 'maxflat-core' ) ); ?>
 	<?php } ?>
 </div>
 		<?php

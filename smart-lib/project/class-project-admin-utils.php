@@ -7,7 +7,7 @@ class Smart_Project_Admin_Utils extends Smart_Base_Admin{
 
 	//customizer variables
 	public $customizer_project;
-	public $customizer_key = 'maxflat';//usually the same as the name of the project
+	public $customizer_key = 'maxflat-core';//usually the same as the name of the project
 	public $customizer_option_key = 'maxflat_theme_options';
 	public $project_prefix;
 	public $plugin_territory;
