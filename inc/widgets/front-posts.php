@@ -75,26 +75,26 @@ class advance_front_Posts extends WP_Widget {
        			</div><!--section head end-->
                        
            <?php endif; ?>
-           
-  				<div class="lay1 wow fadeInup"> 
- 					<?php   
-  						$paged = ( get_query_var('page') ) ? get_query_var('page') : 1;
-      					$args = array(
-										'posts_per_page'=>$count,
-										'cat' => $category,
-										'orderby' => 'post_date',
-										'order' => 'DESC',
-										'paged' => $paged);
-										
+           <?php   
+  	$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
-					  $wp_query_post_advance = new WP_Query($args);
-				   ?>
-            		
- 				<?php  if($wp_query_post_advance->have_posts()) {?>
-					<?php  while ($wp_query_post_advance->have_posts()) {								
-							$wp_query_post_advance->the_post();?>
-   
-              					<div class="matchhe post_warp large-4 medium-6 columns wow fadeInLeft page-delay ">
+    $advance_args=array(
+             'post_type' => 'post',
+             'posts_per_page'=>$count,
+			 'cat' => $category,
+			 'orderby' => 'ID',
+			 'order'=>'ASC',
+			 'paged' => $paged,
+             
+         );
+    $wp_query = new WP_Query($advance_args);
+
+			?>
+           <?php if ( $wp_query->have_posts() ) : ?>
+			
+						<?php /* Start the Loop */ ?>
+							<?php while ( $wp_query->have_posts() ) : $wp_query->the_post(); ?>
+<div class="matchhe post_warp large-4 medium-6 columns wow fadeInLeft page-delay  ">
                    					<div class="single_latest_news">
               
                   						<div class="latest_news_image">
@@ -125,23 +125,31 @@ class advance_front_Posts extends WP_Widget {
                    			  </div><!-- latest_news_desc-->
                  		</div>
                		</div>
-            	<?php } ?>
-            <?php } ?>
-            
-             <?php wp_reset_postdata(); ?>
-          <!-- pagination -->
-          <?php if ($wp_query_post_advance->max_num_pages > 1) { // check if the max number of pages is greater than 1  ?>
+                     <?php endwhile; ?>
 
-			<?php if(function_exists('wp_pagenavi')) :
-				else :?>
-					<div class="advance_nav">
-						<?php the_posts_pagination(  array('prev_text' => '&laquo;', 'next_text' => '&raquo;') );?> 
-					</div>
-		   <?php endif; ?>   
-        <?php } ?>   
-<!-- /pagination -->
+			 		 <!--PAGINATION -->
+                <div class="advance_nav">
+                    <?php
+                        global $wp_query;
 
-       </div>
+    					$big = 999999999; // need an unlikely integer
+
+   						 echo paginate_links( array(
+        					'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+        					'format' => '?paged=%#%',
+        					'current' => max( 1, get_query_var('paged') ),
+        					'total' => $wp_query->max_num_pages
+    					) );
+                    ?>
+                </div>
+            <!--PAGINATION END-->  
+
+				<?php else : ?>
+               
+			 <?php wp_reset_postdata(); ?>
+			
+		<?php endif; ?>
+
    </div>   
 </div> <!-- latest POST section-->
 		

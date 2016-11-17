@@ -166,7 +166,7 @@ jQuery(document).ready(function($){
 	  
 	
 /* PRO	 */	
-jQuery('#front-widget div:nth-child(5),#front-widget div:nth-child(6),#front-widget div:nth-child(7),#front-widget div:nth-child(8),#front-widget div:nth-child(9),#front-widget div:nth-child(10)').attr('style', 'display: none !important');
+
 
 
 

@@ -5,6 +5,7 @@
 
 require(get_template_directory() . '/inc/widgets/front-posts.php');
 require(get_template_directory() . '/inc/widgets/advance_welcome.php');
+require(get_template_directory() . '/inc/widgets/ourclient.php');
 
 if ( is_admin() ) {
 add_action('admin_enqueue_scripts', 'advance_widget_scripts');
@@ -39,6 +40,8 @@ function advancetheme_register_widgets() {
 
 		register_widget('advance_serviceblock');
 		register_widget('advance_welcome_widgets');
+		register_widget('advance_ourclient');
+		
 	
 	$advance_sidebars = array ( 'sidebar-frontpage' => 'sidebar-frontpage');
 	

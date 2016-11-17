@@ -231,7 +231,8 @@
 	
 	
 	@media (max-width: 992px) {
-	#site-title { text-align:center; float:none; padding-top:0px;} .social-advance { display:none;}
+	#site-title { text-align:center; float:none; padding-top:0px; width:100%;} .social-advance { display:none;}
+	#site-title p {line-height:2;}
 	
 	}
 	
