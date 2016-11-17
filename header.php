@@ -46,7 +46,7 @@
 					</div>
 
 					<div id="header-logo">
-						<?php fcorpo_show_website_logo_image_or_title(); ?>
+						<?php fcorpo_show_website_logo_image_and_title(); ?>
 					</div><!-- #header-logo -->
 
 					<nav id="navmain">

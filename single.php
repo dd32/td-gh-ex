@@ -35,20 +35,11 @@
 						'link_after'  => '</span>',
 					) );
 
-?>
-					<div class="post-links">
+					the_post_navigation( array(
 
-						<div class="left">
-							<?php previous_post_link(); ?>
-						</div><!-- .left -->
-						
-						<div class="right">
-							<?php next_post_link(); ?>
-						</div><!-- .right -->
-
-					</div><!-- .post-links -->
-
-		<?php
+                        'prev_text' => __( 'Prev Chapter: %title', 'fcorpo' ),
+                        'next_text' => __( 'Next Chapter: %title', 'fcorpo' ),
+                    ) );
 				
 				endwhile;
 	?>

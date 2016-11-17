@@ -1,4 +1,10 @@
-fCorpo 1.0.7, 2016-07-26
+fCorpo 1.0.9, 2016-11-17
+------------------------
+- add custom logo
+- add 3 footer column widgets
+- bug fixes
+
+fCorpo 1.0.8, 2016-07-26
 ------------------------
 - design improvements
 - add header top menu

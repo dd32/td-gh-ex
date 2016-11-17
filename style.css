@@ -1,12 +1,12 @@
-/*
+/*!
 Theme Name: fCorpo
 Description: fCorpo a perfect choice for your Corporate, Business, Company, Portfolio website or blog. The theme is Fully Responsive, Responsive Slider, Multi-Level Drop-Down Custom Menu, Admin Panel Options, W3C Markup Validated, Search Engine Optimized, Multiple Browsers, Page navigation, Threaded Comments, FontAwesome Icons, Custom Post Formats, and Translation Ready.
 Theme URI: https://tishonator.com/product/fcorpo
 Author: tishonator
 Author URI: https://tishonator.com
-Version: 1.0.8
+Version: 1.0.9
 Text Domain: fcorpo
-Tags: blog, news, two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, featured-images, post-formats, sticky-post, threaded-comments, translation-ready
+Tags: blog, news, two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, post-formats, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -163,6 +163,7 @@ ul {
 	box-shadow: 0 4px 2px -2px gray;
 }
 
+#header-main-fixed a h1,
 #header-main-fixed a {
 	color:#c3512f;
 }
@@ -460,6 +461,11 @@ article ul > li:before {
 	padding-top:0;
 }
 
+#header-logo > a.custom-logo-link,
+#header-logo #site-identity {
+    float:left;
+}
+
 article ul > li:before {
 	font-family:'FontAwesome';
 	content:"\f105";
@@ -506,6 +512,10 @@ article,
 #footer-main ul ul li {
 	border:none !important;
 	padding-bottom:0 !important;
+}
+
+#footer-main .post-date {
+	margin:0 0 0 14px;
 }
 
 .footer-social-widget li {
@@ -844,6 +854,30 @@ span > object {
 
 #sidebar select{
 	max-width:95%;
+}
+
+.nav-links {
+	padding-top:10px;
+}
+
+.nav-links .nav-previous {
+	float:left;
+}
+
+.nav-links .nav-previous:before {
+	font-family:'FontAwesome';
+	content:"\f100";
+	margin-right:5px;
+}
+
+.nav-links .nav-next {
+	float:right;
+}
+
+.nav-links .nav-next:after {
+	font-family:'FontAwesome';
+	content:"\f101";
+	margin-left:5px;
 }
 
 /* utilities classes */
@@ -1371,7 +1405,7 @@ img.wp-post-image {
 	margin-bottom:-2px;
 	font-weight:normal;
 	font-size:22px;
-	border-bottom:4px solid #cccccc;
+	border-bottom:4px solid #a81010;
 	color:#eeeeee;
 	letter-spacing:1px;
 	float:left;
@@ -1498,6 +1532,23 @@ img.wp-post-image {
 
 	.phone-and-email {
 		display:inline;
+	}
+
+	/* columns */
+	.col3a,
+	.col3b,
+	.col3c {
+		float:left;
+		width:30.6%;
+	}
+	
+	.col3a,
+	.col3b {
+		margin:0 3.5% 5px 0;
+	}
+	
+	.col3c {
+		margin:0 0 5px 0;
 	}
 	
 	#main-content,
@@ -1972,6 +2023,27 @@ img.wp-post-image {
 	#container .button {
 		padding:6px 8px;
 	}
+
+	/* columns */
+	.col3a,
+	.col3b,
+	.col3c {
+		float:left;
+		width:48%;
+	}
+
+	.col3a,
+	.col3c {
+		margin:0 4% 5px 0;
+	}
+
+	.col3b {
+		margin:0 0 5px 0;
+	}
+
+	.col3c {
+		clear:both;
+	}
 }
 
 /* Small Resolution */
@@ -2091,6 +2163,14 @@ img.wp-post-image {
 	#contact-form textarea {
 		width:96%;
 	}
+
+	.col3a,
+	.col3b,
+	.col3c {
+		float:none;
+		width:96%;
+		margin:0 2% 5px 2%;
+	}
 }
 
 /* Extra-Large Resolution */
@@ -2164,7 +2244,6 @@ img.wp-post-image {
 	position: relative;
 	z-index: 0;
 	border-top:2px solid #222222;
-	opacity:0.8;
 }
 .camera_wrap img {
 	max-width: none!important;

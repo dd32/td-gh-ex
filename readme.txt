@@ -2,9 +2,9 @@
 
 Contributors: tishonator
 Tags: blog, news, two-columns, right-sidebar, custom-background, custom-colors,
-custom-header, custom-menu, featured-images, post-formats, sticky-post, threaded-comments, translation-ready
+custom-header, custom-menu, featured-images, post-formats, threaded-comments, translation-ready
 Requires at least: 4.4.1
-Tested up to: 4.5.3
+Tested up to: 4.6.1
 
 == Description ==
 
