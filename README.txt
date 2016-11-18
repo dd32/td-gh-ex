@@ -80,5 +80,5 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
-#### 1.2.6
+#### 1.2.7
 * Initial release.

@@ -78,17 +78,16 @@
 
 .site-branding {
     float: left;
+    position: relative;
+    z-index: 11;
 }
 .site-branding a,
 .site-branding a img {
     display: block;
 }
 .site-header-main {
-    position: absolute;
-    bottom: 0;
-    right: 0;
+    float: right;
     z-index: 10;
-    margin: -42px 0 0;
 }
 .header-cart {
     float: right;

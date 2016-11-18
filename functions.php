@@ -5,7 +5,7 @@
  * @package Conica
  */
 
-define( 'CONICA_THEME_VERSION' , '1.2.6' );
+define( 'CONICA_THEME_VERSION' , '1.2.7' );
 
 // Get help / Premium Page
 require get_template_directory() . '/upgrade/upgrade.php';
