@@ -1,6 +1,6 @@
 <?PHP
-	$prev_link = get_previous_posts_link(__('&laquo; Older Entries'));
-	$next_link = get_next_posts_link(__('Newer Entries &raquo;'));
+	$prev_link = get_previous_posts_link();
+	$next_link = get_next_posts_link();
 	
 	$pagination = false;
 	
