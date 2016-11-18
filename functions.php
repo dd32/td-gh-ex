@@ -99,7 +99,16 @@ function antonine_scripts() {
 					);	
 
 	wp_enqueue_script( 'antonine-main-menu', get_template_directory_uri() . '/js/menus/main-menu.js', array( 'jquery' ), "", true );
+	
 	wp_enqueue_script( 'antonine-library', get_template_directory_uri() . '/js/display/antonine-library.js', array( 'jquery' ), "", true );
+	wp_localize_script( 'antonine-library', 'antonine_library', 
+																			array( 
+																					'noMorePosts' => __("No More Posts"),
+																				)
+					);
+	
+	
+	
 	if(!is_single() && !is_search()){
 		wp_enqueue_script( 'antonine-page-layout', get_template_directory_uri() . '/js/display/page-layout.js', array( 'jquery' ), "", true );
 	}
@@ -107,12 +116,9 @@ function antonine_scripts() {
 		wp_enqueue_script( 'antonine-search-page-layout', get_template_directory_uri() . '/js/display/search-page-layout.js', array( 'jquery' ), "", true );
 	}
 	wp_enqueue_script( 'antonine-front-page-menu', get_template_directory_uri() . '/js/display/front-page-menu.js', array( 'jquery' ), "", true );
-	if(get_theme_mod("share")=="on"){
-		wp_enqueue_script( 'antonine-front-page-share', get_template_directory_uri() . '/js/display/front-page-share.js', array( 'jquery' ), "", true );
-	}
+	
 	wp_enqueue_script( 'antonine-front-page-search', get_template_directory_uri() . '/js/display/front-page-search.js', array( 'jquery' ), "", true );
 	wp_enqueue_script( 'antonine-front-page-filter', get_template_directory_uri() . '/js/display/front-page-filter.js', array( 'jquery' ), "", true );
-	wp_enqueue_script( 'antonine-front-page-files', get_template_directory_uri() . '/js/display/front-page-files.js', array( 'jquery' ), "", true );
 	wp_enqueue_script( 'antonine-front-page-filter-change', get_template_directory_uri() . '/js/display/front-page-filter-change.js', array( 'jquery' ), "", true );
 	wp_localize_script( 'antonine-front-page-filter-change', 'antonine_filter', 
 																			array( 
@@ -141,7 +147,7 @@ function antonine_scripts() {
  
 	}
 	
-	if(get_theme_mod("scroll")=="on"){
+	if(get_theme_mod("antonine_scroll","on")=="on"){
 		wp_enqueue_script( 'antonine-scroll-top', get_template_directory_uri() . '/js/display/front-page-scroll-top.js', array( 'jquery' ), "", true );
 	}
 	
@@ -177,8 +183,8 @@ add_action( 'admin_init', 'antonine_add_editor_styles' );
 function antonine_custom_css() {
 		header("Content-type: text/css;");
 		?>
-			html,
-			#shareForm{
+		html,
+		#shareForm{
 			background-color: <?PHP echo esc_html(get_theme_mod('antonine_site_allsite_background_colour', '#fefefe')); ?>;
 			color: <?PHP echo esc_html(get_theme_mod('antonine_site_alltext_colour'), '#000000'); ?>;
 		}

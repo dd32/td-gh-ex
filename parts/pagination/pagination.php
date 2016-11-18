@@ -1,5 +1,18 @@
+<?PHP
+	$prev_link = get_previous_posts_link(__('&laquo; Older Entries'));
+	$next_link = get_next_posts_link(__('Newer Entries &raquo;'));
+	
+	$pagination = false;
+	
+	if ($prev_link || $next_link) {
+		$pagination = true;
+	}
+?>
 <div class="paginationNumbers">
-	<p><?PHP echo __("Choose from the list", 'antonine'); ?></p>
+	<?PHP if($pagination){
+		?><p><?PHP echo __("Choose from the list", 'antonine'); ?></p><?PHP
+		}
+	?>
 	<?PHP
 		the_posts_pagination( array(
 			'mid_size' => 2,
@@ -8,5 +21,5 @@
 			'next_text' => __( 'Next posts page', 'antonine' ),
 		) );
 	?>
-	<p><?PHP echo __("Or Scroll down for more", 'antonine'); ?></p>
+	<p><?PHP if($pagination){echo __("Or Scroll down for more", 'antonine');}?></p>
 </div>

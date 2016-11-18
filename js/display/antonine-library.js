@@ -48,7 +48,7 @@ function antonine_menu_slide_filter(items){
 		jQuery(article)
 			.fadeIn(600, function(){antonine_menu_slide_filter(items);});
 	}else{
-		jQuery('#scroll_bottom').html("All posts are shown");
+		jQuery('#scroll_bottom').html(antonine_library.noMorePosts);
 		scrolling = false;
 	}
 }

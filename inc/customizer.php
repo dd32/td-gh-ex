@@ -197,27 +197,6 @@ function antonine_customize_register_menu_layout( $wp_customize ){
 		)
 	);
 	
-	$wp_customize->add_setting(
-		'antonine_accessibility',
-		array(
-			'default' => 'on',
-			'sanitize_callback' => 'antonine_sanitize_radio',
-		)
-	);
-	 
-	$wp_customize->add_control(
-		'antonine_accessibility',
-		array(
-			'type' => 'radio',
-			'label' => __('Display accessibility','antonine'),
-			'section' => 'menu_layout',
-			'choices' => array(
-				'on' => 'On',
-				'off' => 'Off'		
-			),
-		)
-	);
-	
 }
 
 function antonine_customize_register_page_layout( $wp_customize ){
@@ -429,27 +408,6 @@ function antonine_customize_register_add_site_colours( $wp_customize ) {
 		'antonine_site_header_text_colour',
 		array(
 			'default' => '#000000',
-			'transport' => 'postMessage',
-			'sanitize_callback' => 'antonine_sanitize_colour',
-		)
-	);
-	
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			'antonine_site_header_text_colour',
-			array(
-				'label' => __('Site Header Text Colour','antonine'),
-				'section' => 'site_colours',
-				'settings' => 'antonine_site_header_text_colour'
-			)
-		)
-	);
-	
-	$wp_customize->add_setting(
-		'antonine_site_title_colour',
-		array(
-			'default' => '#ffaaaa',
 			'transport' => 'postMessage',
 			'sanitize_callback' => 'antonine_sanitize_colour',
 		)

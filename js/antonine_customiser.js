@@ -38,6 +38,15 @@
 		} );
 	} );
 	
+	api('antonine_site_single_post_background_colour', function( value ) {
+		console.log(value);
+		value.bind( function( to ) {
+			console.log(to);
+			jQuery( 'body.single article').css("background-color", to);
+			jQuery( 'body.single article').css("background", to);
+		} );
+	} );
+	
 	api('antonine_site_content_background_colour', function( value ) {
 		value.bind( function( to ) {
 			jQuery( '.page-footer h1 a').css("color", to);
@@ -132,26 +141,34 @@
 	
 	api('antonine_pagination_background_colour', function( value ) {
 		value.bind( function( to ) {
-			rgb = hexToRgb(to);
-			jQuery( '.page-footer h1 span' ).css( "background-color", "rgba(" + rgb.r + "," + rgb.g + "," + rgb.b + ",0.8)" );
-			jQuery( '.page-footer h1 a' ).css( "background-color", "rgba(" + rgb.r + "," + rgb.g + "," + rgb.b + ",0.8)" );
+			jQuery( 'html a.page-numbers' ).css( "background-color", to );
 		} );
 	} );
 	
 	api('antonine_pagination_link_colour', function( value ) {
 		value.bind( function( to ) {
-			jQuery( '.page-footer h1 a' ).css( "color", to );
-			jQuery( '.page-footer h1 span' ).css( "color", to );
+			jQuery( 'html a.page-numbers' ).css( "color", to );
+		} );
+	} );
+	
+	api('antonine_site_button_colour', function( value ) {
+		value.bind( function( to ) {
+			jQuery( 'html input[type=submit]' ).css( "background-color", to );
+		} );
+	} );
+	
+	api('antonine_site_button_text_colour', function( value ) {
+		value.bind( function( to ) {
+			jQuery( 'html input[type=submit]' ).css( "color", to );
+		} );
+	} );
+	
+	api('antonine_border_colour', function( value ) {
+		value.bind( function( to ) {
+			jQuery( 'html .home article .content-holder' ).css( "border-color", to );
+			jQuery( 'html .search article .content-holder' ).css( "border-color", to );
+			jQuery( 'html .archive article .content-holder' ).css( "border-color", to );
 		} );
 	} );
 
 } )( wp.customize );
-
-function hexToRgb(hex) {
-    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    return result ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16)
-    } : null;
-}
