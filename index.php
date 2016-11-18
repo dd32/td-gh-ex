@@ -9,7 +9,6 @@ get_header(); ?>
 	<div class="container">
 		<div class="blog-title">
 		    <h2><?php _e('BLOG','astrology'); ?></h2>
-		    <div class="breadCumbs"><?php custom_breadcrumbs(); ?></div>
 		</div>
 	</div>
 </section>

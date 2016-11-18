@@ -6,7 +6,7 @@ Astrology Theme by VaultThemes http://vaultthemes.com/
 Astrology is a premium quality WordPress theme for astrology blog. It is a modern looking classy WordPress theme which can even be used for almost all kinds of startup or already existing small or medium sized businesses. It is easily customizable through Customizer options. It is mobile friendly as it is built on top of Twitter bootstrap framework. It is search engine friendly too. The theme is supported by our professional team of designers and developers so feel free to use it and enjoy its awesome features.
 
 === Tags ===
-custom-colors, custom-background, custom-menu, featured-images, translation-ready
+one-column, two-columns, left-sidebar, grid-layout, custom-logo, custom-colors, custom-background, custom-menu, featured-images, translation-ready, blog, featured-image-header, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments
 
 == License ==
 License: GNU General Public License v3 or later
@@ -21,36 +21,30 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 ---------------------------------------------------------
 License and Copyrights for Resources used in this theme
 ---------------------------------------------------------
-
-i) Fontawesome Library 
-===========
-License URI:  http://fontawesome.io/license/
-Resource Name: fontawesome
-License Name: Open Font License (OFL) Version 4.6.3
-
-ii)Fonts
-===========
-https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i	
-They are under SIL Open Font.
-	
-iii)Bootstrap Library
+i)Bootstrap Library
 ===========
 we used are licensed under the Apache License v3.3.6
 Bootstrap - http://getbootstrap.com
 Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 
+ii) Fontawesome Library 
+===========
+License URI:  http://fontawesome.io/license/
+Resource Name: fontawesome
+License Name: Open Font License (OFL) Version 4.6.3
+
+iii)Fonts
+===========
+https://fonts.googleapis.com/css?family=Raleway:400,400i,500,500i,600,600i,700,700i	
+They are under SIL Open Font.
+
 ---------------------------------------------------------
 Images
 ---------------------------------------------------------
-i)
-	Resource URI: https://pixabay.com/en/horoscope-astrology-zodiac-aries-639126/
-	License: CC0 1.0
-	License URI: http://creativecommons.org/publicdomain/zero/1.0/deed.en 
+i)	URI: https://pixabay.com/en/black-sitting-scarf-locker-jeans-1146798/ - License: CC0
+ii)	URI: https://pixabay.com/en/businessman-suit-germany-black-1146791/ - License: CC0
+ii)	URI: https://pixabay.com/en/fractal-abstract-background-physics-1280084/ - License: CC0
 
-ii)
-	Resource URI: https://pixabay.com/en/ball-glass-about-reflection-625908/
-	License: CC0 1.0
-	License URI: http://creativecommons.org/publicdomain/zero/1.0/deed.en
 
 == Credits ==
 

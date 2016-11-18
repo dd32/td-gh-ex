@@ -8,3 +8,7 @@ ii) Changed menu style.
 Version 1.0.2 (14-11-2016)
 i)  Minor Changes.
 ii) Theme URI Changed.
+
+Version 1.0.3 (18-11-2016)
+i) Added masonary grid for blog page.
+ii) Screenshot changed.

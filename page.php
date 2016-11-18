@@ -15,8 +15,9 @@ get_header(); ?>
 </section>
 <section id="blog-innerpage-content">
     <div class="container">
-        <div class="row">               
-            <div class="col-xs-12 col-sm-12 col-md-9 pull-right">
+        <div class="row">
+            <?php get_sidebar(); ?>
+            <div class="col-xs-12 col-sm-12 col-md-9">
                 <div class="blog-single-inner-page">
                 	<?php
 					if ( have_posts() ) :
@@ -33,7 +34,6 @@ get_header(); ?>
 					endif; ?>         
 				</div>
             </div>
-             <?php get_sidebar(); ?>
         </div>
     </div>
 </section>

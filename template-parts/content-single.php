@@ -10,14 +10,14 @@
         <h2><?php the_title(); ?></h2>
         <ul>
             <li><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php echo __('By ', 'astrology').ucfirst(get_the_author()); ?></a></li>
-            <li> <?php echo __('Posted on','astrology').get_the_date(get_option('date_format')); ?></li>
+            <li> <?php echo __('Posted on ','astrology').get_the_date(get_option('date_format')); ?></li>
         </ul>
     </div>
     <?php if ( has_post_thumbnail() ) : ?> 
     <div class="blog-img">
-        <a href="<?php the_permalink(); ?>">
+        <p>
             <?php the_post_thumbnail('astrologyFeatureImage'); ?>
-        </a>
+        </p>
     </div>
     <?php endif; ?>    
     <?php the_content(); ?>

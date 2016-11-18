@@ -14,21 +14,21 @@
 <?php 
 	endif; 
 	$fields =  array(
-					'author' =>
-					'<div class="row"><div class="col-sm-5"><div class="group">' .
-					( $req ? '<span class="required"></span>' : '' ) .
-					'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
-					'" size="30" required/> <span class="highlight"></span><span class="bar"></span><label>Name</label></div></div>',
-					'email' =>
-					'<div class="col-sm-7"><div class="group">'.
-					( $req ? '<span class="required"></span>' : '' ) .
-					'<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
-					'" size="30" required/><span class="highlight"></span><span class="bar"></span><label>Email</label></div></div></div>',
-				);
+		'author' =>
+		'<div class="row"><div class="col-sm-5"><div class="group">' .
+		( $req ? '<span class="required"></span>' : '' ) .
+		'<input id="author" name="author" placeholder="Name" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
+		'" size="30" required/> <span class="highlight"></span></div></div>',
+		'email' =>
+		'<div class="col-sm-7"><div class="group">'.
+		( $req ? '<span class="required"></span>' : '' ) .
+		'<input id="email" name="email" placeholder="Email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+		'" size="30" required/><span class="highlight"></span></div></div></div>',
+	);
 
 	$commentBox = '<div class="row"><div class="col-sm-12"><div class="group">' .
-        '<textarea id="comment" name="comment" cols="20" rows="6" required></textarea>' .
-        '<span class="highlight"></span><span class="bar"></span><label>Message</label></div></div></div>';
+        '<textarea id="comment" name="comment" placeholder="Message" cols="20" rows="6" required></textarea>' .
+        '<span class="highlight"></span></div></div></div>';
 
 	comment_form( array(
 		'comment_field' => $commentBox,

@@ -29,7 +29,7 @@
                             if (!has_custom_logo()) { ?>
                                 <a href="<?php echo get_site_url(); ?>"><?php bloginfo( 'name' ); ?></a>
                             <?php } 
-                            else { ?> <a href="<?php echo get_site_url(); ?>"><img src="<?php echo $image[0]; ?>" class="custom-logo"></a> <?php } ?>
+                            else { ?> <a href="<?php echo get_site_url(); ?>"><img src="<?php echo $image; ?>" class="custom-logo"></a> <?php } ?>
                         </div>
                         <div id="box-top-mobile"></div>
                         <div class="menu">
@@ -37,16 +37,6 @@
                             <span class="menu-global menu-middle"></span>
                             <span class="menu-global menu-bottom"></span>
                         </div>
-                        <?php
-                            // if (has_nav_menu('primary')) {
-                            //     $iCoachProDefaults = array(
-                            //     'theme_location' => 'primary',
-                            //     'container' => 'none',
-                            //     'items_wrap' => '<ul id="primary-menu" class="menu nav-menu" aria-expanded="false">%3$s</ul>',
-                            // );
-                            //     wp_nav_menu($iCoachProDefaults);                                        
-                            // }
-                        ?>
                          <?php
                             if (has_nav_menu('primary')) {
                                 $astrologyDefaults = array(

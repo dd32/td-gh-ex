@@ -46,16 +46,16 @@
         </div>
     <!-- Row End -->
     <div class="row">
-        <div class="footer-socail-icon">
+        <div class="footer-social-icon">
             <ul>
                 <?php for($i=1; $i<=5; $i++) : 
-						if(get_theme_mod('socialIcon'. $i) != '' && get_theme_mod('socialLink'. $i) != '') : ?>
+					if((get_theme_mod('socialLink'. $i) != '')) : ?>
                         <li> 
                             <a href="<?php echo esc_url(get_theme_mod('socialLink'.$i)) ?>">
                                 <span class="fa <?php echo esc_attr(get_theme_mod('socialIcon'.$i)) ?>"></span>
                             </a>
                         </li>
-                <?php endif; ?>
+                    <?php endif; ?>
                 <?php endfor; ?>
             </ul>
         </div>
@@ -64,7 +64,7 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12">
             <div class="footer-copyrights">
-                <p><?php _e('Powered by','astrology'); ?> <a href="<?php echo esc_url('https://vaultthemes.com/astrology-wordpress-theme/'); ?>" target="_blank">Astrology WordPress Theme</a></p>
+                <p><?php _e('Powered by','astrology'); ?> <a href="<?php echo esc_url('https://vaultthemes.com/wordpress-themes/astrology/'); ?>" target="_blank"><?php _e('Astrology WordPress Theme','astrology'); ?></a></p>
             </div>
         </div>
     </div>
