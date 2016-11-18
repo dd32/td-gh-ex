@@ -33,9 +33,18 @@
 			<?php if (of_get_option( 'optimize_logo' )): ?>
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo of_get_option( 'optimize_logo' ); ?>" max-height="100px" max-width="470px" alt="<?php bloginfo( 'name' ); ?>"/></a>
       			<?php else : ?>        
-            <h1 class="site-title">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+            
+			<?php if ( is_front_page() && is_home() ) : ?>
+		<div class="site-branding">
+			<h1 itemprop="headline" class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+		</div><!-- .site-branding -->
+	<?php else : ?>		
+		<div class="site-branding">
+			<p itemprop="headline" class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+		</div><!-- .site-branding -->
+	<?php endif;   ?> 
           <?php endif; ?>
 		</div>		
 <div id="myban"> <?php if ( of_get_option('optimize_ad1') <> "" ) { echo of_get_option('optimize_ad1'); } ?></div>

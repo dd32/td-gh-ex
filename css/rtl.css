@@ -49,6 +49,7 @@ h2.entry-title,
 .readmore,
 #banner-top{
 	float: left !important;
+	clear: both; 
 }
 #navigation  ul li:hover ul ul{
 	    margin-top: 0 !important;

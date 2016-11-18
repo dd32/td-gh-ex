@@ -6,6 +6,8 @@ include_once('baztro.php');
 include_once('includes/installs.php');
 include_once('includes/core/core.php');
 include_once('includes/ltposts.php');
+include_once('includes/metaboxpage.php');
+include_once('includes/metaboxsingle.php');
 
 // Implement the Custom Header feature.
 require get_template_directory() . '/includes/custom-header.php';
