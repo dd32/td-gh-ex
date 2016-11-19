@@ -10,5 +10,9 @@ i)  Minor Changes.
 ii) Theme URI Changed.
 
 Version 1.0.3 (18-11-2016)
-i) Added masonary grid for blog page.
+i) Fixed CSS bugs.
 ii) Screenshot changed.
+
+Version 1.0.4 (19-11-2016)
+i) Fixed breadcumbs for archive pages.
+ii) Fixed menu styling for responsive layouts. 

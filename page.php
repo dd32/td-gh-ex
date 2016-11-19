@@ -15,9 +15,9 @@ get_header(); ?>
 </section>
 <section id="blog-innerpage-content">
     <div class="container">
-        <div class="row">
+        <div class="row responsiveLayout">
             <?php get_sidebar(); ?>
-            <div class="col-xs-12 col-sm-12 col-md-9">
+            <div class="col-xs-12 col-sm-12 col-md-9 sidebar">
                 <div class="blog-single-inner-page">
                 	<?php
 					if ( have_posts() ) :

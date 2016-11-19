@@ -4,9 +4,186 @@ Theme URI: https://vaultthemes.com/wordpress-themes/astrology/
 Author: VaultThemes
 Author URI: https://vaultthemes.com
 Description: Astrology is a premium quality WordPress theme for astrologers , pudits and religious gurus. It is a modern looking classy WordPress theme which can also be used for almost all kinds of individual consultants as it is easily customizable through WordPress Customizer options. It is mobile friendly as it is built on top of Twitter bootstrap framework. It is search engine friendly too. The theme is supported by our professional team of designers and developers so feel free to use it and enjoy its awesome features.
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: astrology
-Tags: one-column, two-columns, left-sidebar, grid-layout, custom-logo, custom-colors, custom-background, custom-menu, featured-images, translation-ready, blog, featured-image-header, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments
+Tags: one-column, two-columns,left-sidebar,grid-layout,custom-logo,custom-colors,custom-background,custom-menu,featured-images,translation-ready,blog,featured-image-header,footer-widgets,full-width-template,sticky-post,theme-options,threaded-comments
 */
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object,
+video {
+    margin-bottom: 1.75em;
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+p > embed,
+p > iframe,
+p > object,
+p > video {
+    margin-bottom: 0;
+}
+
+.entry-content .wp-audio-shortcode a,
+.entry-content .wp-playlist a {
+    box-shadow: none;
+}
+
+.wp-audio-shortcode,
+.wp-video,
+.wp-playlist.wp-audio-playlist {
+    margin-top: 0;
+    margin-bottom: 1.75em;
+}
+
+.wp-playlist.wp-audio-playlist {
+    padding-bottom: 0;
+}
+
+.wp-playlist .wp-playlist-tracks {
+    margin-top: 0;
+}
+
+.wp-playlist-item .wp-playlist-caption {
+    border-bottom: 0;
+    padding: 0.7142857143em 0;
+}
+
+.wp-playlist-item .wp-playlist-item-length {
+    top: 0.7142857143em;
+}
+
+
+/**
+ *Captions
+ */
+
+.wp-caption {
+    margin-bottom: 1.75em;
+    max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+    display: block;
+    margin: 0;
+}
+
+.wp-caption .wp-caption-text {
+    color: #686868;
+    font-size: 13px;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.6153846154;
+    padding-top: 0.5384615385em;
+}
+
+
+/**
+ *Galleries
+ */
+
+.gallery {
+    margin: 0 -1.1666667% 1.75em;
+}
+
+.gallery-item {
+    display: inline-block;
+    max-width: 33.33%;
+    padding: 0 1.1400652% 2.2801304%;
+    text-align: center;
+    vertical-align: top;
+    width: 100%;
+}
+
+.gallery-columns-1 .gallery-item {
+    max-width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+    max-width: 50%;
+}
+
+.gallery-columns-4 .gallery-item {
+    max-width: 25%;
+}
+
+.gallery-columns-5 .gallery-item {
+    max-width: 20%;
+}
+
+.gallery-columns-6 .gallery-item {
+    max-width: 16.66%;
+}
+
+.gallery-columns-7 .gallery-item {
+    max-width: 14.28%;
+}
+
+.gallery-columns-8 .gallery-item {
+    max-width: 12.5%;
+}
+
+.gallery-columns-9 .gallery-item {
+    max-width: 11.11%;
+}
+
+.gallery-icon img {
+    margin: 0 auto;
+}
+
+.gallery-caption {
+    color: #686868;
+    display: block;
+    font-size: 13px;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.6153846154;
+    padding-top: 0.5384615385em;
+}
+
+.gallery-columns-6 .gallery-caption,
+.gallery-columns-7 .gallery-caption,
+.gallery-columns-8 .gallery-caption,
+.gallery-columns-9 .gallery-caption {
+    display: none;
+}
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+.page-links span {
+    padding-right: 10px;
+}
+.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.alignright {
+    display: inline;
+    float: right;
+}
+.single-blog-social a[rel~='nofollow'] {
+    outline: 0em dotted transperant !important;
+    outline-offset: 0em;
+}
+.sticky .entry-date {
+    display: none;
+}
+.bypostauthor {}

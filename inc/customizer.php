@@ -178,7 +178,7 @@ function AstrologyCustomCss(){
 		.blog-content-left a:hover,#breadcrumbs .separator{ color : <?php echo $astrologyColorSectionPrimaryColor; ?>; }
 		.page-numbers.current, a.page-numbers:hover,.astrology-search-form .search-submit,
 		.leave-reply-form p.form-submit:hover, .leave-reply-form p.form-submit:focus, .leave-reply-form p.form-submit:active,button.search-submit,button, html input[type=button]:hover, input[type=reset]:hover, input[type=submit]:hover{ background : <?php echo $astrologyColorSectionPrimaryColor; ?>; }
-        input:focus,textarea:focus,#top-menu ul.offside.open{border-bottom-color: <?php echo $astrologyColorSectionPrimaryColor; ?>; }
+        input:focus,textarea:focus,#top-menu ul.offside.open,#top-menu ul.offside{border-bottom-color: <?php echo $astrologyColorSectionPrimaryColor; ?>; }
 		#top-menu > ul > li:hover > a, #top-menu ul li.active a{border-top-color : <?php echo $astrologyColorSectionPrimaryColor; ?>;}
 		#blog-innerpage-content .bloginner-content-part blockquote{ border-left : 5px solid <?php echo $astrologyColorSectionPrimaryColor; ?>; }
 		.search-form .screen-reader-text{ color : <?php echo $astrologyColorSectionPrimaryColor; ?>; }
