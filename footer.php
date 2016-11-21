@@ -30,7 +30,6 @@
 
 				<?php
 				//Menu Call
-
 				wp_nav_menu( array(
 					'theme_location'  => 'footer-menu-1',
 					'container_class' => 'footer-menu',
@@ -63,8 +62,9 @@
 </div>
 <!-- #page -->
 </div>
-<?php wp_footer(); ?>
 </div>
+<?php wp_footer(); ?>
+
 </body>
 
 </html>

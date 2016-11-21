@@ -21,7 +21,7 @@ $aza_buttons_type = get_theme_mod ('aza_header_buttons_type','normal_buttons');
 <?php wp_head(); ?>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" <?php body_class(); ?> dir="<?php if (is_rtl()) echo "rtl"; else echo "ltr"; ?>">
+<body <?php body_class(); ?>>
 <?php if($preloader_toggle) { ?>
 
 
@@ -101,7 +101,7 @@ $aza_buttons_type = get_theme_mod ('aza_header_buttons_type','normal_buttons');
 		<div class="overlay-layer-nav <?php if(!empty($fixedheader)) {echo esc_attr($fixedheader);} ?>">
 
             <!-- STICKY NAVIGATION -->
-            <div class="navbar navbar-inverse bs-docs-nav navbar-top sticky-navigation appear-on-scroll">
+            <div class="navbar navbar-inverse navbar-top sticky-navigation appear-on-scroll">
 				<!-- CONTAINER -->
                 <div class="container">
 

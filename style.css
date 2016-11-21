@@ -3,7 +3,7 @@ Theme Name: AZA Lite
 Author: Andrei Băicuș
 Author URI: https://profiles.wordpress.org/baicusandrei
 Description: AZA Lite is a perfect one-page WordPress theme for small businesses, freelancers and anyone who wishes to build a responsive, one-page, straightforward website in a matter of minutes. This highly customizable WordPress theme strives to give the end-user a really cozy feel and a great experience while carefully delivering important content and information. The fully customizable layered Parallax section is just stunning to look at and can be a great hook for anybody landing on your website. Have a great time using something that was carefully engineered for beautiful minds.
-Version: 1.0.7
+Version: 1.0.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: aza-lite
@@ -38,11 +38,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 	    3.1.2 ONLY LOGO
 	    3.1.3 INTRO
 	3.2 SECTION: COVER
-	3.3 SECTION: FEATURES
 	3.4 PARALLAX
   3.5 RIBBON
 	3.6 CLIENTS SECTION
-  3.7 TEAM SECTION
   3.8 BLOG SECTION
   3.9 CONTACT SECTION
   3.10 MAP SECTION
@@ -428,21 +426,6 @@ a:focus {
    1.3 MISC FIXES
 =============================================================================*/
 
-@-webkit-viewport {
-  width: device-width;
-}
-@-moz-viewport {
-  width: device-width;
-}
-@-ms-viewport {
-  width: device-width;
-}
-@-o-viewport {
-  width: device-width;
-}
-@viewport {
-  width: device-width;
-}
 .row.no-gutters[class^="col-"], .row.no-gutters[class*=" col-"] {
   padding-right: 0;
   padding-left: 0;
@@ -809,7 +792,6 @@ h1.site-title {
   font-size: 1.5rem;
   line-height: 1.5rem;
   margin-bottom: 5px;
-  margin-top: 12px;
   font-family: 'Montserrat';
   font-weight: 500;
 }
@@ -1118,6 +1100,8 @@ button.dropdown-toggle {
   overflow: visible;
 }
 .header-image {
+  padding-top: 200px;
+  min-height: 500px;
   z-index: 1;
   background-attachment: fixed;
 }
@@ -1154,14 +1138,14 @@ button.dropdown-toggle {
   border: 1px solid #191919;
   background-color: #272727;
 }
-button.btn-normal-header {
+a.btn-normal-header {
   font: 700 24px Montserrat;
   letter-spacing: 2px;
   transition: all 0.5s ease;
   padding: 10px 20px;
   margin: 0 10px 20px 10px;
 }
-button.btn-normal-header:hover, button.btn-normal-header:focus, button.btn-normal-header:active, .features-btn:hover, .features-btn:focus, .features-btn:active {
+a.btn-normal-header:hover, a.btn-normal-header:focus, a.btn-normal-header:active, .features-btn:hover, .features-btn:focus, .features-btn:active {
   background-color: #fff !important;
   color: #fc535f !important;
 }
@@ -1174,177 +1158,6 @@ button.btn-normal-header:hover, button.btn-normal-header:focus, button.btn-norma
   margin-bottom: 25%;
 }
 
-/*=============================================================================
-3.3 FEATURES
-=============================================================================*/
-
-.features-background {
-  background-color: #3d3d3d;
-  height: inherit;
-  padding: 80px 0;
-  -webkit-box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.75);
-}
-.features-content {
-  /*    margin-top: 40px;*/
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.features-content ul li {
-  margin-top: 50px;
-}
-.circle {
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  height: 75px;
-  width: 75px;
-  margin: 0 auto;
-}
-.features-content span {
-  font-size: 30px;
-  line-height: 84px;
-  color: #ffffff;
-}
-.features-content #fully-responsive {
-  background-color: #3399df;
-}
-.features-content #clean-design {
-  background-color: #f0b57c;
-}
-.features-content #perfect-showcase {
-  background-color: #4bb992;
-}
-.features-content #fully-customizable {
-  background-color: #8a74b9;
-}
-.device {
-  margin: 40px auto 40px auto;
-  -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
-  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
-}
-.features-name {
-  color: #ffffff;
-  font: 400 18px Montserrat;
-  margin-bottom: 20px;
-}
-.features-description {
-  width: 210px;
-  margin: 0 auto;
-  color: #aaaaaa;
-  font: 400 12px Roboto;
-  letter-spacing: 0.5px;
-}
-.features-separator {
-  height: 40px;
-}
-.features-btn-row {
-  text-align: center;
-  margin-top: 40px;
-}
-.features-btn {
-  color: #ffffff;
-  font: 700 24px Montserrat;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  background-color: #fc535f;
-  transition: all 0.5s ease;
-  padding: 10px;
-}
-
-#left-column, #right-column {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.zig-zag-bottom {
-  background: linear-gradient(45deg, transparent 20px, #3d3d3d 0), linear-gradient( -45deg, transparent 20px, #3d3d3d 0);
-  background-size: 20px 20px;
-  height: 20px;
-  position: absolute;
-  width: 100%;
-  z-index: 200;
-}
-.zig-zag-top {
-  background: linear-gradient(135deg, transparent 20px, #3d3d3d 0), linear-gradient( -135deg, transparent 20px, #3d3d3d 0);
-  background-size: 20px 20px;
-  height: 20px;
-  position: absolute;
-  margin-top: -20px;
-  width: 100%;
-  z-index: 200;
-}
-
-/*--PHONE---*/
-
-.device {
-  background-color: #fff;
-  border: 2px solid #eaeaea;
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  border-radius: 25px;
-  width: 167.5px;
-  height: 349.47px;
-  position: relative;
-}
-.sensor {
-  margin: 6px 0px 0px 80px;
-  width: 4px;
-  height: 4px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  background-color: #dad9d7;
-}
-.devicetop {
-  margin: 9px 0px 18px 54px;
-}
-.front-camera {
-  margin-top: 0px;
-  margin-right: 12px;
-  float: left;
-  width: 3px;
-  height: 3px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  background-color: #dad9d7;
-}
-.iphone-speaker {
-  float: left;
-  background-color: #dad9d7;
-  width: 25.75px;
-  height: 4px;
-  border: none;
-  border-radius: 25px;
-}
-.screen {
-  background-color: #333;
-  background-position: center;
-  background-size: cover;
-  margin: 0 auto 0;
-  border: none;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  width: 151px;
-  height: 268.91px;
-  margin-top: 30px;
-}
-.button {
-  margin: 5px auto;
-  background-color: #eaeaea;
-  width: 26px;
-  height: 26px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
-  border: 2px solid #dad9d7;
-  position: relative;
-}
 
 /*=============================================================================
 3.4 PARALLAX
@@ -1438,129 +1251,12 @@ button.btn-normal-header:hover, button.btn-normal-header:focus, button.btn-norma
   padding: 10px 0;
   letter-spacing: normal;
 }
-#ribbon button {
+#ribbon a {
   margin-top: 0;
   margin-bottom: 0;
 }
 .ribbon-row div {
   display: block;
-}
-
-/*=============================================================================
-3.7 TEAM SECTION
-=============================================================================*/
-
-#team {
-  padding: 80px 0 60px 0;
-  height: auto;
-  z-index: 300;
-}
-#team .team-p {
-  margin: 0;
-  color: #ededed;
-  font: 400 21px Roboto;
-}
-.team-row {
-  margin-top: 40px;
-  margin-bottom: 20px;
-}
-.team-row img {
-  margin: 0 auto;
-  transition: all 0.5s ease;
-}
-.team-row h4 {
-  font: 700 20px Montserrat;
-  text-align: center;
-  text-transform: uppercase;
-  margin: 0 0 20px 0;
-}
-#team > div >.team-row > div > p {
-  margin: 0;
-  color: #ededed;
-  font: 18px Roboto;
-  margin-bottom: 20px
-}
-#team > div > .team-row .team-member .team-member-image {
-  position: relative;
-  z-index: 0;
-  height: 260px;
-  width: 260px;
-  overflow: hidden;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-#team > div > .team-row .team-member {
-  float: none;
-  display: inline-block;
-  vertical-align: top;
-  font-size: 0px;
-  padding: 0;
-}
-#team .team-row p {
-  text-align: center;
-  margin: 0 auto;
-  color: #f0f0f0;
-  font: 400 18px Roboto;
-  text-transform: capitalize;
-}
-.separator-team {
-  width: 150px;
-  height: 1px;
-  background-color: #828084;
-  margin: 30px auto;
-}
-.team-picture {
-  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
-  position: relative;
-  height: auto;
-  width: auto;
-  z-index: 0;
-  display: inline-block;
-  overflow: hidden;
-}
-.team-picture-overlay {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  top: 5%;
-  bottom: 5%;
-  left: 5%;
-  right: 5%;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 17px 17px;
-  text-align: center;
-  opacity: 0;
-  transition: all 0.5s ease;
-}
-#team .team-row .team-picture-overlay > .team-description {
-  color: rgba(255, 255, 255, 0.6);
-  font-family: Roboto;
-  font-weight: 100;
-  font-size: 18px;
-  letter-spacing: .5px;
-  color: #dad9d7;
-  text-transform: none;
-}
-.team-picture:hover >img {
-  -webkit-transform: scale(1.05);
-  /* Safari and Chrome */
-  -moz-transform: scale(1.05);
-  /* Firefox */
-  -ms-transform: scale(1.05);
-  /* IE 9 */
-  -o-transform: scale(1.05);
-  /* Opera */
-  transform: scale(1.05);
-  transition: all 0.5s ease;
-}
-.team-picture:hover .team-picture-overlay {
-  opacity: 1;
-}
-#team button {
-  margin-top: 20px;
 }
 
 /*=============================================================================--------
@@ -1642,6 +1338,7 @@ section#contact p {
   background: rgba(255, 255, 255, 0.9);
 }
 #pirate-forms-contact-submit {
+  float: left;
   color: #ffffff;
   font: 700 24px Montserrat;
   text-transform: uppercase;

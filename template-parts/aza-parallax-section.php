@@ -6,7 +6,7 @@ PARALLAX SECTION
 
     <?php
 $parallax_image = get_theme_mod('aza_parallax_image', get_template_directory_uri() . '/images/parallax-image.png');
-$parallax_text = get_theme_mod ('aza_parallax_text', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Itaque hic ipse iam pridem est reiectus;');
+$parallax_text = get_theme_mod ('aza_parallax_text');
         ?>
 
 

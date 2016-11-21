@@ -1,43 +1,45 @@
-<!-- =========================
-PIRATE FORMS
-============================== -->
 <?php
+/**
+ * Contact Section
+ */
+
 $frontpage_contact_shortcode = get_theme_mod('frontpage_contact_shortcode');
-$heading = get_theme_mod('aza_contact_title', 'Contact');
-$subheading = get_theme_mod('aza_contact_subtitle', 'Message us');
+$heading = get_theme_mod('aza_contact_title');
+$subheading = get_theme_mod('aza_contact_subtitle');
 $separator_top = get_theme_mod('aza_separator_contact_top', '1');
+
 ?>
-
-
-
 <section id="contact">
-
-
-<div class="container">
-                <div class="row">
-                    <div class="col-lg-12 col-centered text-center">
-                        <?php
+    <div class="container">
+        <?php if( ! empty( $heading ) || ! empty( $subheading )) { ?>
+            <div class="row">
+                <div class="col-lg-12 col-centered text-center">
+                    <?php
                     if(!empty($heading)) {
                         echo '<h2>'.$heading.'</h2>';
+                    }
+
+                    if ($separator_top) {
+                        echo "<hr class='separator'/>";
+                    }
+
+                    if(!empty($subheading)) {
+                        echo '<p class = "team-p">'.$subheading.'</p>';
                     }?>
-                     <?php if ($separator_top) { echo "<hr class='separator'/>"; } ?>
-                     <?php
-                                if(!empty($subheading)) {
-                                echo '<p class = "team-p">'.$subheading.'</p>';
-                        }?>
-                    </div>
                 </div>
-<?php
- if( !empty($frontpage_contact_shortcode) ){
-?>
-<div class="row">
-  <div class="col-md-12 text-center">
-                <?php echo do_shortcode($frontpage_contact_shortcode);?>
-  </div>
-</div>
-        <!-- .container-fluid -->
-<?php
-     }
-?>
-</div>
+            </div>
+        <?php }
+
+        if( !empty($frontpage_contact_shortcode) ){
+
+            ?>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <?php echo do_shortcode( strip_tags( $frontpage_contact_shortcode ) );?>
+                </div>
+            </div>
+            <?php
+        }
+        ?>
+    </div>
 </section>
