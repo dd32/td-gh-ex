@@ -91,7 +91,12 @@ jQuery(document).ready( function(){
 																							jQuery(value)
 																								.css("left","0px");
 																							}
-																						);																				
+																						);		
+
+																				header = jQuery("header#masthead").html();
+																				
+																				jQuery("header#masthead").html(header + "<p class='filter_reset'><a href='" + antonine_filter.siteURL + "'>" + antonine_filter.resetFilter + "</a></p>")
+																		
 																				jQuery("#main")
 																					.fadeIn(200);
 																						

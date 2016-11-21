@@ -1,22 +1,5 @@
 <?php
 
-function antonine_url_origin( $s, $use_forwarded_host = false )
-{
-    $ssl      = ( ! empty( $s['HTTPS'] ) && $s['HTTPS'] == 'on' );
-    $sp       = strtolower( $s['SERVER_PROTOCOL'] );
-    $protocol = substr( $sp, 0, strpos( $sp, '/' ) ) . ( ( $ssl ) ? 's' : '' );
-    $port     = $s['SERVER_PORT'];
-    $port     = ( ( ! $ssl && $port=='80' ) || ( $ssl && $port=='443' ) ) ? '' : ':'.$port;
-    $host     = ( $use_forwarded_host && isset( $s['HTTP_X_FORWARDED_HOST'] ) ) ? $s['HTTP_X_FORWARDED_HOST'] : ( isset( $s['HTTP_HOST'] ) ? $s['HTTP_HOST'] : null );
-    $host     = isset( $host ) ? $host : $s['SERVER_NAME'] . $port;
-    return $protocol . '://' . $host;
-}
-
-function antonine_full_url( $s, $use_forwarded_host = false )
-{
-    return antonine_url_origin( $s, $use_forwarded_host ) . $s['REQUEST_URI'];
-}
-
 function antonine_setup() {
 
 	load_theme_textdomain( 'antonine', get_template_directory() . '/languages' );
@@ -75,10 +58,8 @@ function antonine_scripts() {
 
 	if ( is_singular() ) wp_enqueue_script( "comment-reply" );
 
-	wp_enqueue_script( 'antonine-table-fix', get_template_directory_uri() . '/js/display/table_fix.js', array( 'jquery' ), "", true );
 	wp_enqueue_script( 'antonine-youtube', get_template_directory_uri() . '/js/display/youtube-fix.js', array( 'jquery' ), "", true );
 	wp_enqueue_script( 'antonine-search', get_template_directory_uri() . '/js/search/search-form.js', array( 'jquery' ), "", true );
-	wp_enqueue_script( 'antonine-access-form', get_template_directory_uri() . '/js/display/front-page-access.js', array( 'jquery' ), "", true );
 	wp_enqueue_script( 'antonine-info', get_template_directory_uri() . '/js/display/front-page-info.js', array( 'jquery'), "", true );
 	
 	wp_enqueue_script( 'antonine-widgets', get_template_directory_uri() . '/js/display/front-page-widgets.js', array( 'jquery' ), "", true );
@@ -103,7 +84,7 @@ function antonine_scripts() {
 	wp_enqueue_script( 'antonine-library', get_template_directory_uri() . '/js/display/antonine-library.js', array( 'jquery' ), "", true );
 	wp_localize_script( 'antonine-library', 'antonine_library', 
 																			array( 
-																					'noMorePosts' => __("No More Posts", "antonine"),
+																					'noMorePosts' => __("No More Posts"),
 																				)
 					);
 	
@@ -123,6 +104,8 @@ function antonine_scripts() {
 	wp_localize_script( 'antonine-front-page-filter-change', 'antonine_filter', 
 																			array( 
 																					'ajaxURL' => $ajax_base . "/wp-admin/admin-ajax.php",
+																					'siteURL' => site_url(),
+																					'resetFilter' => __("Reset the filter", "antonine"),
 																					'nonce' => wp_create_nonce("antonine_filter")
 																				)
 					);

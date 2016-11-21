@@ -6,13 +6,9 @@
 	</header>	
 	<div class="content-holder">
 		<div class="entry-content-index home-align">
-		<?php
-			/* translators: %s: Name of current post */
+		<?phps
 			$content = get_the_excerpt();
-			$excerpt_pos = strpos($content,"[..---..]");
-			if($excerpt_pos===FALSE){
-				$excerpt_pos = 100;
-			}
+			$excerpt_pos = 20;
 			echo substr($content,0,$excerpt_pos) . "...";
 		?>
 		</div>

@@ -1155,3 +1155,11 @@ section.error-404 header.page-header{
 .accessibility_hidden{
 	display:none;
 }
+
+.single article table{
+	width: 100%;
+}
+
+.filter_reset{
+	font-size:20px;
+}	
