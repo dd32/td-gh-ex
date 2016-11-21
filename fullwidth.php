@@ -32,7 +32,7 @@ get_header(); ?>
 				<?php } ?>
 				<div class="clear"></div>
 				<div class="blog-post-title">
-					<div class="blog-post-title-wrapper">
+					<div class="blog-post-title-wrapper" style="width:100%";>
 						<?php the_content(); ?>
 					</div>
 				</div>	
