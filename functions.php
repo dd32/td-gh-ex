@@ -28,6 +28,7 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-client.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-footer-callout.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-template.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-emailcourse.php');
 	
 	// Appointment Info Page
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/appointment-info/welcome-screen.php');

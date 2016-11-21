@@ -46,8 +46,25 @@ font-size:14px !important;
   width: 54%;
   border-radius:2px;
 }
+.course{
+  background-color: #0d6db8;
+  border-color: #ef9c28;
+  color: #fff !important;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  padding: 13px 30px 14px 29px;
+  text-transform: uppercase;
+  width: 54%;
+  border-radius:2px;
+}
+
 .pro-box
 {display:block;text-align:center; margin-bottom: 0px;}
 .pro-vesrion 
 {text-align:center; margin-top:15px;}
 #customize-control-appointment_options-theme_color input {display:none;}
+
+#accordion-section-appointment_email_course_section h3{ font-size: 14px;font-weight: 700;}
