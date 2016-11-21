@@ -47,7 +47,7 @@ function itransform_ibanner_slider () {
 			$strret = '';
 			
 			$slide_speed = esc_attr( get_theme_mod('itrans_sliderspeed')*1000 );
-			$slide_title = esc_attr( get_theme_mod('itrans_slide'.$slideno.'_title', of_get_option ('itrans_slide'.$slideno.'_title', 'Multipurpose WordPress Theme')) );
+			$slide_title = esc_attr( get_theme_mod('itrans_slide'.$slideno.'_title', of_get_option ('itrans_slide'.$slideno.'_title', 'Multi-Purpose WP Theme')) );
 			$slide_desc = esc_attr( get_theme_mod('itrans_slide'.$slideno.'_desc', of_get_option ('itrans_slide'.$slideno.'_desc', 'To start setting up i-transform go to appearance &gt; Customize. Make sure you have installed recommended plugin &#34;TemplatesNext Toolkit&#34; by going appearance > install plugin.')) );
 			$slide_linktext = esc_attr( get_theme_mod('itrans_slide'.$slideno.'_linktext', of_get_option ('itrans_slide'.$slideno.'_linktext', 'Know More')) );
 			$slide_linkurl = esc_attr( get_theme_mod('itrans_slide'.$slideno.'_linkurl', of_get_option ('itrans_slide'.$slideno.'_linkurl', 'http://templatesnext.org/icraft/?page_id=783')) );			

@@ -183,7 +183,7 @@ function itransform_scripts_styles() {
 	wp_enqueue_script( 'imagesloaded', get_template_directory_uri() . '/js/imagesloaded.pkgd.min.js', array( 'jquery' ), '3.1.8', true );
 	
 	// Loads JavaScript file with functionality specific to i-transform.
-	wp_enqueue_script( 'itransform-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '2013-07-18', true );
+	wp_enqueue_script( 'itransform-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '2016-10-18', true );
 /*	
 	$sliderscpeed = "6000";
 		

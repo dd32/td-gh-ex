@@ -450,7 +450,7 @@ function itransform_custom_setting( $controls ) {
         'setting'  => 'itrans_slide1_title',
         'label'    => __( 'Slide1 Title', 'i-transform' ),
         'section'  => 'slide1',
-		'default'  => of_get_option('itrans_slide1_title', 'Multipurpose WordPress Theme'),			
+		'default'  => of_get_option('itrans_slide1_title', 'Multi-Purpose WP Theme'),			
         'priority' => 1,
     );
 	$controls[] = array(
