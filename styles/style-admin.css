@@ -28,6 +28,12 @@ background-size: 11.1%; /* This is at 6-columns -> just change this # */
   list-style: disc;
   margin-left: 36px;
 }
+#tracks-dashboard-wrap .welcome {
+  margin-top: 12px;
+  padding: 12px 24px 24px;
+  border: solid 1px #e5e5e5;
+  background: #E0FBFF;
+}
 #tracks-dashboard-wrap .content-licenses {
   border: none;
   padding: 0;
@@ -221,12 +227,6 @@ background-size: 11.1%; /* This is at 6-columns -> just change this # */
 .ct_tracks_video_preview_container.ajax-loading .loading {
   visibility: visible;
   opacity: 1;
-}
-@-ms-keyframes spin {
-  100% {
-    -ms-transform: rotate(360deg);
-        transform: rotate(360deg);
-  }
 }
 @-webkit-keyframes spin {
   100% {

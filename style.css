@@ -4,7 +4,7 @@ Theme URI: https://www.competethemes.com/tracks/
 Author: Compete Themes
 Author URI: https://www.competethemes.com
 Description: A bold, beautiful, and responsive theme. Tracks is perfect for personal blogs, magazines, and photography websites. It includes a logo uploader, social media icons, search bar, comment display controls, premium layouts and features, and more.  See our fully-setup live demo here: https://www.competethemes.com/tracks-live-demo/
-Version: 1.52
+Version: 1.53
 Tags: blog, photography, portfolio, one-column, custom-menu, editor-style, featured-image-header, featured-images, sticky-post, theme-options, threaded-comments, translation-ready
 Text Domain: tracks
 License: GNU General Public License v2 or later
@@ -56,8 +56,6 @@ background-size: 11.1%; /* This is at 6-columns -> just change this # */
 /*===== Basic Styles =====*/
 /* apply a natural box layout model to all elements */
 *, *:before, *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -385,11 +383,20 @@ a img {
   color: #ffffff;
 }
 
+.search .sticky {
+  background: white;
+}
+
 .blog .main,
 .archive .main,
 .search .main {
   width: 88.89%;
   max-width: 1280px;
+}
+.blog #breadcrumbs,
+.archive #breadcrumbs,
+.search #breadcrumbs {
+  width: 100%;
 }
 
 .entry {
@@ -409,12 +416,6 @@ a img {
 }
 #breadcrumbs a {
   color: #fff;
-}
-
-.blog #breadcrumbs,
-.archive #breadcrumbs,
-.search #breadcrumbs {
-  width: 100%;
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (orientation: landscape) {
@@ -508,11 +509,9 @@ a img {
   height: 100%;
   width: 100%;
   z-index: 19;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(26px, #222), color-stop(24px, transparent), color-stop(24px, transparent));
   background-image: -webkit-linear-gradient(#222 26px, transparent 24px, transparent 24px);
   background-image: linear-gradient(#222 26px, transparent 24px, transparent 24px);
-  -webkit-background-size: 1px 48px;
-          background-size: 1px 48px;
+  background-size: 1px 48px;
   /* this is a 24px baseline grid */
   text-align: center;
   -webkit-transition: all 0.3s ease-in-out;
@@ -715,7 +714,6 @@ a img {
     -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
             transition: opacity 0.3s ease, transform 0.3s ease;
     -webkit-transform: scale(0.95);
-        -ms-transform: scale(0.95);
             transform: scale(0.95);
   }
   .menu-unset > ul ul li,
@@ -729,7 +727,6 @@ a img {
     top: 24px;
     opacity: 1;
     -webkit-transform: scale(1);
-        -ms-transform: scale(1);
             transform: scale(1);
   }
   .menu-unset > ul ul a,
@@ -751,7 +748,6 @@ a img {
     top: 24px;
     opacity: 1;
     -webkit-transform: scale(1);
-        -ms-transform: scale(1);
             transform: scale(1);
   }
   .menu-unset > ul ul ul,
@@ -792,8 +788,7 @@ a img {
   height: 0;
   padding-bottom: 50%;
   background-position: 50%;
-  -webkit-background-size: cover cover;
-          background-size: cover;
+  background-size: cover;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   -webkit-transition: -webkit-transform 0.3s ease;
@@ -806,7 +801,6 @@ a img {
 }
 .zoom .featured-image-link:hover .featured-image, .zoom .featured-image-link:active .featured-image, .zoom .featured-image-link:focus .featured-image {
   -webkit-transform: scale(1.05);
-      -ms-transform: scale(1.05);
           transform: scale(1.05);
   -moz-transform: scale(1.05) rotate(0.02deg);
 }
@@ -874,7 +868,6 @@ a img {
 }
 .more-link:hover:after, .more-link:active:after, .more-link:focus:after {
   -webkit-transform: scaleX(1);
-      -ms-transform: scaleX(1);
           transform: scaleX(1);
 }
 .more-link:after {
@@ -890,7 +883,6 @@ a img {
   -webkit-transition: all 0.2s ease;
           transition: all 0.2s ease;
   -webkit-transform: scaleX(0);
-      -ms-transform: scaleX(0);
           transform: scaleX(0);
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
@@ -1902,7 +1894,6 @@ li.pingback:first-child {
 .secondary-toggle .toggle-secondary-navigation {
   opacity: 0.9;
   -webkit-transform: rotate(315deg);
-      -ms-transform: rotate(315deg);
           transform: rotate(315deg);
 }
 .secondary-toggle .menu-secondary-items {
@@ -1951,7 +1942,6 @@ li.pingback:first-child {
     background: #111;
     text-align: center;
     -webkit-transform: scale(0.95);
-        -ms-transform: scale(0.95);
             transform: scale(0.95);
     -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
             transition: opacity 0.3s ease, transform 0.3s ease;
@@ -1974,14 +1964,12 @@ li.pingback:first-child {
     top: 1.5em;
     opacity: 1;
     -webkit-transform: scale(1);
-        -ms-transform: scale(1);
             transform: scale(1);
   }
   .menu-secondary-items a:hover + ul, .menu-secondary-items a:active + ul, .menu-secondary-items a:focus + ul {
     top: 1.5em;
     opacity: 1;
     -webkit-transform: scale(1);
-        -ms-transform: scale(1);
             transform: scale(1);
   }
   .menu-secondary-items ul ul:hover {
@@ -2073,7 +2061,6 @@ li.pingback:first-child {
 
 .search-open .site-header .search-form {
   -webkit-transform: translateX(-100%);
-      -ms-transform: translateX(-100%);
           transform: translateX(-100%);
 }
 .search-open .site-header .search-form-container {
@@ -2141,7 +2128,6 @@ li.pingback:first-child {
 .search-open .site-header .social-media-icons {
   opacity: 0;
   -webkit-transform: translateX(12px);
-      -ms-transform: translateX(12px);
           transform: translateX(12px);
 }
 
@@ -2313,8 +2299,7 @@ li.pingback:first-child {
 }
 /* background image styles */
 .background-image-active .background-image {
-  -webkit-background-size: cover cover;
-          background-size: cover;
+  background-size: cover;
   background-position: 50%;
   position: fixed;
   z-index: -1;
@@ -2483,7 +2468,6 @@ li.pingback:first-child {
     position: relative;
     top: 50%;
     -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
             transform: translateY(-50%);
   }
 
@@ -2513,7 +2497,6 @@ li.pingback:first-child {
     position: relative;
     top: 0;
     -webkit-transform: none;
-        -ms-transform: none;
             transform: none;
   }
 }
