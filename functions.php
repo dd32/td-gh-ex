@@ -84,7 +84,7 @@ function antonine_scripts() {
 	wp_enqueue_script( 'antonine-library', get_template_directory_uri() . '/js/display/antonine-library.js', array( 'jquery' ), "", true );
 	wp_localize_script( 'antonine-library', 'antonine_library', 
 																			array( 
-																					'noMorePosts' => __("No More Posts"),
+																					'noMorePosts' => __("No More Posts", "antonine"),
 																				)
 					);
 	
