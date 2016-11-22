@@ -113,7 +113,7 @@ function silver_quantum_customize_register_setup($wp_customize) {
     $wp_customize->add_setting('post_layout', array(
         'default'           => 'default',
         'sanitize_callback' => 'silver_quantum_sanitize_layout',
-        'transport'         => 'postMessage'
+        'transport'         => 'refresh'
     ));
     
     $wp_customize->add_control(new Silver_Quantum_Control_Radio_Image($wp_customize, 'post_layout', array(
@@ -147,7 +147,7 @@ function silver_quantum_customize_register_setup($wp_customize) {
     $wp_customize->add_setting('page_layout', array(
         'default'           => 'default',
         'sanitize_callback' => 'silver_quantum_sanitize_layout',
-        'transport'         => 'postMessage'
+        'transport'         => 'refresh'
     ));
     
     $wp_customize->add_control(new Silver_Quantum_Control_Radio_Image($wp_customize, 'page_layout', array(
@@ -181,7 +181,7 @@ function silver_quantum_customize_register_setup($wp_customize) {
     $wp_customize->add_setting('custom_layout', array(
         'default'           => 'default',
         'sanitize_callback' => 'silver_quantum_sanitize_layout',
-        'transport'         => 'postMessage'
+        'transport'         => 'refresh'
     ));
     
     $wp_customize->add_control(new Silver_Quantum_Control_Radio_Image($wp_customize, 'custom_layout', array(

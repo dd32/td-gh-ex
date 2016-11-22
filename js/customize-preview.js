@@ -82,28 +82,4 @@ This custom-preview.js allows you to experience the changes live in the customiz
             });
         });
     });
-    
-	// This will update the Post Layout in Real Time in Customizer.
-	wp.customize('post_layout', function(value) {
-		value.bind(function(newVal) {
-			$('#post-layout').removeClass('default sidebar-left sidebar-right');
-			$('#post-layout').addClass(newVal);
-		});
-	});
-    
-	// This will update the Page Layout in Real Time in Customizer.
-	wp.customize('page_layout', function(value) {
-		value.bind(function(newVal) {
-			$('#page-layout').removeClass('default sidebar-left sidebar-right');
-			$('#page-layout').addClass(newVal);
-		});
-	});
-    
-	// This will update the Page Layout in Real Time in Customizer.
-	wp.customize('custom_layout', function(value) {
-		value.bind(function(newVal) {
-			$('#custom-layout').removeClass('default sidebar-left sidebar-right');
-			$('#custom-layout').addClass(newVal);
-		});
-	});
 })(jQuery);
