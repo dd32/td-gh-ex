@@ -208,3 +208,17 @@ function bellini_single_product_one_right(){
 function bellini_column_twelve(){
 	echo '<div class="col-sm-12">';
 }
+
+
+if (  ! function_exists( 'bellini_product_cat_class' ) ) {
+
+    function bellini_product_cat_class() {
+		global $bellini;
+        $classes[] = esc_attr($bellini['bellini_woo_shop_product_column']);
+        $classes[] = 'woo__cat equal-height';
+
+        return array_unique( array_filter( $classes ) );
+    }
+
+}
+add_filter( 'product_cat_class' , 'bellini_product_cat_class' );

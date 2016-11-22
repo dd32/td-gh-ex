@@ -43,14 +43,14 @@ woocommerce_sidebar
 ## Shop / Archive Pages - Pagination
 --------------------------------------------------------------*/
 
-if ( absint($bellini['bellini_woo_shop_product_pagination_layout']) === 1 ):
+if ( is_product() && absint($bellini['bellini_woo_shop_product_pagination_layout']) === 1 ):
 	remove_action( 'woocommerce_after_shop_loop',     		'woocommerce_pagination',                 	10 );
 	remove_action( 'woocommerce_before_shop_loop',    		'woocommerce_result_count',               	20 );
 	remove_action( 'woocommerce_before_shop_loop',    		'woocommerce_catalog_ordering',           	30 );
 	add_action( 'woocommerce_archive_description',     		'bellini_shop_archive_sorting_info',        20 );
 endif;
 
-if ( absint($bellini['bellini_woo_shop_product_pagination_layout']) === 2 ):
+if ( is_product() && absint($bellini['bellini_woo_shop_product_pagination_layout']) === 2 ):
 	remove_action( 'woocommerce_after_shop_loop',     		'woocommerce_pagination',                 	10 );
 	remove_action( 'woocommerce_before_shop_loop',    		'woocommerce_result_count',               	20 );
 	remove_action( 'woocommerce_before_shop_loop',    		'woocommerce_catalog_ordering',           	30 );
