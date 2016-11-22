@@ -58,28 +58,4 @@
 			});
 		});
 	});
-    
-	// This will update the Post Layout in Real Time in Customizer.
-	wp.customize('post_layout', function(value) {
-		value.bind(function(newVal) {
-			$('#post-layout').removeClass('full-width sidebar-left sidebar-right');
-			$('#post-layout').addClass(newVal);
-		});
-	});
-    
-	// This will update the Page Layout in Real Time in Customizer.
-	wp.customize('page_layout', function(value) {
-		value.bind(function(newVal) {
-			$('#page-layout').removeClass('full-width sidebar-left sidebar-right');
-			$('#page-layout').addClass(newVal);
-		});
-	});
-    
-	// This will update the Page Layout in Real Time in Customizer.
-	wp.customize('custom_layout', function(value) {
-		value.bind(function(newVal) {
-			$('#custom-layout').removeClass('full-width sidebar-left sidebar-right');
-			$('#custom-layout').addClass(newVal);
-		});
-	});
 } )( jQuery );

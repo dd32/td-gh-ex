@@ -113,7 +113,7 @@ function white_spektrum_customize_register_setup($wp_customize) {
     $wp_customize->add_setting('post_layout', array(
         'default'           => 'sidebar-right',
         'sanitize_callback' => 'white_spektrum_sanitize_layout',
-        'transport'         => 'postMessage'
+        'transport'         => 'refresh'
     ));
     
     $wp_customize->add_control(new White_Spektrum_Control_Radio_Image($wp_customize, 'post_layout', array(
@@ -147,7 +147,7 @@ function white_spektrum_customize_register_setup($wp_customize) {
     $wp_customize->add_setting('page_layout', array(
         'default'           => 'sidebar-right',
         'sanitize_callback' => 'white_spektrum_sanitize_layout',
-        'transport'         => 'postMessage'
+        'transport'         => 'refresh'
     ));
     
     $wp_customize->add_control(new White_Spektrum_Control_Radio_Image($wp_customize, 'page_layout', array(
@@ -181,7 +181,7 @@ function white_spektrum_customize_register_setup($wp_customize) {
     $wp_customize->add_setting('custom_layout', array(
         'default'           => 'sidebar-right',
         'sanitize_callback' => 'white_spektrum_sanitize_layout',
-        'transport'         => 'postMessage'
+        'transport'         => 'refresh'
     ));
     
     $wp_customize->add_control(new White_Spektrum_Control_Radio_Image($wp_customize, 'custom_layout', array(
