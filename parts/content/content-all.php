@@ -6,7 +6,7 @@
 	</header>	
 	<div class="content-holder">
 		<div class="entry-content-index home-align">
-		<?phps
+		<?php
 			$content = get_the_excerpt();
 			$excerpt_pos = 20;
 			echo substr($content,0,$excerpt_pos) . "...";
