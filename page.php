@@ -1,7 +1,7 @@
 <?php
 /*
 ================================================================================================
-Silver Quantum - single.php
+Silver Quantum - index.php
 ================================================================================================
 This is the most generic template file in a WordPress theme and is one of the two required files 
 for a theme (the other style.css). The index.php template file is flexible. It can be used to 
@@ -11,24 +11,31 @@ If you do not provide other template files, WordPress may have default files or 
 perform their jobs.
 
 @package        Silver Quantum WordPress Theme
-@copyright      Copyright (C) 2016. Benjamin Lu
+@copyright      Copyright (C) 2014. Benjamin Lu
 @license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
 @author         Benjamin Lu (http://lumiathemes.com/)
 ================================================================================================
 */
 ?>
 <?php get_header(); ?>
-    <div id="content-area" class="content-area">
-        <?php if (have_posts()) : ?>
-            <?php while (have_posts()) : the_post(); ?>
-                <?php get_template_part('template-parts/content', 'page'); ?>
-        <?php endwhile; ?>
+    <div id="page-layout" class="<?php echo esc_attr(get_theme_mod('page_layout', 'default')); ?>">
+        <div id="content-area" class="content-area">
+            <?php if (have_posts()) : ?>
+                <?php while (have_posts()) : the_post(); ?>
+                    <?php get_template_part('template-parts/content', 'page'); ?>
+            <?php endwhile; ?>
                 <div class="paging-navigation">
                     <?php the_posts_pagination(); ?>
                 </div>
-        <?php else : ?>
+            <?php else : ?>
                     <?php get_template_part('template-parts/content', 'none'); ?>
-        <?php endif; ?>
+            <?php endif; ?>
+        </div>
+        <?php if ('sidebar-left' == get_theme_mod('page_layout')) { ?>
+            <?php get_sidebar('page'); ?>
+        <?php } ?>
+        <?php if ('sidebar-right' == get_theme_mod('page_layout')) { ?>
+            <?php get_sidebar('page'); ?>
+        <?php } ?>
     </div>
-<?php get_sidebar('page'); ?>
 <?php get_footer(); ?>

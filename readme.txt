@@ -2,13 +2,13 @@ Silver Quantum WordPress Theme
 ================================================================================================
 Contributor: benlumia007
 Tags: custom-background, custom-header, right-sidebar
-Requres at least: 4.4
-Tested up to: 4.6
-Stable tag: 0.1.1
+Requres at least: 4.5
+Tested up to: 4.7
+Stable tag: 0.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Silver Quantum WordPress Theme, Copyright (C) 2016, Benjamin Lu
+Silver Quantum WordPress Theme, Copyright (C) 2014, Benjamin Lu
 Silver Quantum is distributed under the terms of the GNU GPL
 
 Silver Quantum is a standard design with responsive capability.
@@ -36,6 +36,12 @@ Customizer
 4. Header Image
    - Add Header Image
    - Remove Header Image (When removing a header image, the default image will display).
+5. Layouts Supports
+   - Post Layouts
+   - Page layouts
+   - Custom Layouts
+   - Archive Layouts
+   The Layout Supports gives the user the ability to change their layouts if they choose to do so.
 5. Static Front Page
    - Front Page
    - Blog
@@ -43,7 +49,8 @@ Customizer
 
 Description
 ================================================================================================
-Silver Quantum is a responsive WordPress theme.
+Silver Quantum is a responsive WordPress theme that allows you to change diffrent layouts with live experiences
+through the customizer.
 
 
 Frequently Asked Questions
@@ -53,103 +60,123 @@ Not Available At the Moment
 
 Changelog
 ================================================================================================
-Version: 0.3.1
-URL changes to secure connection under style.css
+Version: 0.3.4
+- Render CSS Change
+- Fixed Navigation CSS
+- Added Layouts for Posts, Pages and Custom Pages
+
+Version: 0.3.3 
+- Small Change
+
+Version: 0.3.2
+- Small Change
+
+Version: 0.3.1 
+- Small Change
 
 Version: 0.3.0
-Small Changes
+- Small Change
 
 Version: 0.2.9
-Added readme.txt
-Added more tags
+- Small Change
 
 Version: 0.2.8
-Now supports Responsive Theme with the same features.
+- Small Bugs
 
-Version: 0.2.1 - 0.2.7
-Minor Changes with minor styling. 
-Users were compalining about certain things. 
+Version: 0.2.7
+- Small Bugs
+
+Version: 0.2.6
+- Small Bugs
+
+Version: 0.2.5
+- Small Bugs
+
+Version: 0.2.4
+- Small Bugs
+
+Version: 0.2.3
+- Small Bugs
+
+Version: 0.2.2
+- Small Bugs
+
+Version: 0.2.1
+- Small Bugs
 
 Version: 0.2.0
-Minor Changes
+- Render and Fix Navigtion CSS for Smartphone and Tablet and Desktop Mode.
 
 Version: 0.1.9
-Minor Changes
+- Fixe Bugs
 
-Version: 0.1.8
-Minor Changes
-
-Version: 0.1.7
-Minor Changes
-
-Version: 0.1.6
-Minor Changes
+Version: 0.1.6 
+- Minor Change
 
 Version: 0.1.5
-Minor Changes.
+- Minor Fixed Bugs
 
 Version: 0.1.4
-Minor Changes
+- Minor Change
 
 Version: 0.1.3
-Minor Changes
+- Fixed Bugs
 
 Version: 0.1.2
-Minor Changes
+- Fixed Bugs
 
 Version: 0.1.1
-Updated and Fixed issues
+- Minor Fixed
 
-Version: 0.1.0
-Minor Changes by Reviewer
-
+Version: 0.1.0 
+- Render New CSS
 Version: 0.0.9
-Minor Changes
+- Fixed Bugs
 
 Version: 0.0.8
-Forgot to add code 
+- Minor CSS Changed
 
-Version: 0.0.7 
-Minor Changes
+Version: 0.0.7
+-Fixed Bugs
 
 Version: 0.0.6
-CSS breaking (fixed)
+- Fixed Bugs
 
 Version: 0.0.5
-Minor Changes
+- Rendered New CSS
 
 Version: 0.0.4
-Minor Changes
+- Initial Release
 
 Version: 0.0.3
-Readjust container width
-Change layout to fit what it was supposed to be. 
+- Fixed Bugs
+- Minor Changes
+- Add New Tags
 
 Version: 0.0.2
-Replace Footer Site Info with correct url and info
-Replace Screenshot Author and URL
+- Rendered New CSS
 
 Version: 0.0.1
-Initial Release
+- Initial Release
 
 
 Upgrade Notice
 ================================================================================================
-Since 0.2.8, Silver Quantum is now a Responsive Theme. I would strongly recommended that each
-users create a child theme based on this parent theme to avoid changes to your own styling. To
-learn more about Child themes, you can directly go here: https://codex.wordpress.org/Child_Themes
+Not Available At the Moment
 
 
 Resources
 ================================================================================================
-Screenshot
-Copyright and Licensed as CC0 
-By Ryan Schroeder (http://unsplash.com/post/82306482790/download-by-ryan-schroeder)
-
-Google Font
-Ubuntu 
-Dalton Maag (URL doesn't exist)
-
 Font Awesome by Dave Gandy - http://fontawesome.io
 Font Awesome licensed under SIL OFL 1.1 · Code licensed under MIT License
 Source: http://fortawesome.github.io/Font-Awesome/
+
+Merriweather Sans (Google Font)
+Designer: Sorkin Type
+License: Sil Open Font License
+Source: https://fonts.google.com/specimen/Merriweather+Sans
+
+Sanchez (Google Font)
+Designer: Daniel Hernandez
+License: Sil Open Font License
+Source: https://fonts.google.com/specimen/Sanchez

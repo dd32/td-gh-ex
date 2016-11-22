@@ -8,9 +8,9 @@ for a theme (the other footer.php). The header.php template file only displays t
 of this theme. This also displays the navigation menu as well or any extra features.
 
 @package        Silver Quantum WordPress Theme
-@copyright      Copyright (C) 2016. Benjamin Lu
+@copyright      Copyright (C) 2014. Benjamin Lu
 @license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
-@author         Benjamin Lu (http://luminathemes.com/)
+@author         Benjamin Lu (https://www.lumiathemes.com/)
 ================================================================================================
 */
 ?>
@@ -24,7 +24,7 @@ of this theme. This also displays the navigation menu as well or any extra featu
         <?php wp_head(); ?>
     </head>
 <body <?php body_class(); ?>>
-   <section id="top-nav" class="top-nav">
+    <section id="top-nav" class="top-nav">
         <nav id="site-navigation" class="primary-navigation">
             <button class="menu-toggle" aria-conrol="primary-menu" aria-expanded="false"><?php esc_html_e('Menu', 'silver-quantum'); ?></button>
             <?php
@@ -36,12 +36,23 @@ of this theme. This also displays the navigation menu as well or any extra featu
             ?>
         </nav>
     </section>
-    <div class="height"></div>
-    <section id="site-content" class="site-content cf">
-        <header id="site-header" class="site-header" style="background: url(<?php header_image(); ?>);">
-            <div id="site-branding" class="site-branding">
-                <h1 class="site-title"><a href=""><?php bloginfo('name'); ?></a></h1>
-                <h3 class="site-description"><?php bloginfo('description'); ?></h3>
+    <div id="height" class="height"></div>
+    <section id="site-container" class="site-container cf">
+        <?php if (get_header_image()) : ?>
+            <div id="site-header" class="site-header" style="background: url(<?php header_image(); ?>);">
+                <div id="site-branding" class="site-branding">
+                    <h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
+                    <h4 class="site-description"><?php bloginfo('description'); ?></h4>
+                </div>
             </div>
-        </header>
-        <div class="site-wrapper" class="site-wrapper">
+        <?php else : ?>
+        <div id="site-header" class="site-header">
+            <div id="site-branding" class="site-branding">
+                <div id="title-box" class="title-box">
+                    <h1 class="site-title"><a href="<?php esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a></h1>
+                    <h4 class="site-description"><?php bloginfo('description'); ?></h4>
+                </div>
+            </div>
+        </div>
+        <?php endif; ?>
+        <section id="site-content" class="site-content cf">

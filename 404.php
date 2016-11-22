@@ -1,19 +1,24 @@
 <?php
 /*
 ================================================================================================
-Silver Quantum - footer.php
+Silver Quantum - 404.php
 ================================================================================================
 This is the most generic template file in a WordPress theme and is one of the two required files 
-for a theme (the other header.php). The footer.php template file only displays the footer
-section of this theme.
+for a theme (the other style.css). The index.php template file is flexible. It can be used to 
+include all references to the header, content, widget, footer and any other pages created in 
+WordPress. Or it can be divided into modular template files, each taking on part of the workload. 
+If you do not provide other template files, WordPress may have default files or functions to 
+perform their jobs.
 
 @package        Silver Quantum WordPress Theme
-@copyright      Copyright (C) 2016. Benjamin Lu
+@copyright      Copyright (C) 2014. Benjamin Lu
 @license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
-@author         Benjamin Lu (http://lumiathemes.com/)
+@author         Benjamin Lu (https://www.lumiathemes.com/)
 ================================================================================================
 */
 ?>
 <?php get_header(); ?>
-    <?php get_template_part('template-parts/content', 'none'); ?>
+    <div id="content-area" class="content-area">
+        <?php get_template_part('template-parts/content', 'none'); ?>
+    </div>
 <?php get_footer(); ?>

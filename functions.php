@@ -9,7 +9,7 @@ functionality and features for this theme. The second file is the template-tags.
 the extra functions and features.
 
 @package        Silver Quantum WordPress Theme
-@copyright      Copyright (C) 2016. Benjamin Lu
+@copyright      Copyright (C) 2014. Benjamin Lu
 @license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
 @author         Benjamin Lu (http://lumiathemes.com/)
 ================================================================================================
@@ -33,7 +33,7 @@ Table of Content
 ================================================================================================
 */
 function silver_quantum_content_width_setup() {
-    $GLOBALS['content_width'] = apply_filters('silver_quantum_content_width_setup', 850);
+    $GLOBALS['content_width'] = apply_filters('silver_quantum_content_width_setup', 834);
 }
 add_action('after_setup_theme', 'silver_quantum_content_width_setup', 0);
 
@@ -47,14 +47,14 @@ function silver_quantum_enqueue_scripts_setup() {
     wp_enqueue_style('silver-quantum-style', get_stylesheet_uri());
     
     // Enable and Activate Font Awesome for Silver Quantum.
-    wp_enqueue_style('font-awesome', get_template_directory_uri() . '/extras/font-awesome/css/font-awesome.css', '20160601', true);
+    wp_enqueue_style('font-awesome', get_template_directory_uri() . '/extras/font-awesome/css/font-awesome.css', '06012014', true);
     
-    // Enable and activate Google Font (Ubuntu) for Silver Quantum.
-    wp_enqueue_style('silver-quantum-ubuntu', '//fonts.googleapis.com/css?family=Merriweather+Sans:400,400i,700,700i|Sanchez:400,400i');
+    // Enable and activate Google Font (Sanchez and Merriweather Sans) for Silver Quantum.
+    wp_enqueue_style('silver-quantum-local-fonts', get_template_directory_uri() . '/extras/fonts/custom-fonts.css', '11212014', true);
     
     // Enable and Activate Navigation JavaScript for Silver Quantum.
-    wp_enqueue_script('silver-quantum-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20160601', true);
-	wp_localize_script('silver-quantum-navigation', 'screenReaderText', array(
+    wp_enqueue_script('silver-quantum-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20140601', true);
+	wp_localize_script('silver-quantum-navigation', 'silverquantumscreenReaderText', array(
 		'expand'   => '<span class="screen-reader-text">' . __('expand child menu', 'silver-quantum') . '</span>',
 		'collapse' => '<span class="screen-reader-text">' . __('collapse child menu', 'silver-quantum') . '</span>',
 	));
@@ -85,13 +85,25 @@ function silver_quantum_theme_setup() {
         'caption'
     ));
     
-    // Enable and activate add theme support (custom background) for Silver Quantum.
+    // Enable and activate add theme support (Custom Background) for Silver Quantum.
     add_theme_support('custom-background', array(
-        'default' => 'cccccc',
+        'default-color' => '#cccccc',
     ));
+    
+    add_theme_support('post-thumbnails');
+    add_image_size('silver-quantum-banner', 1024, 300, true);
+    
     
     register_nav_menus(array(
         'primary-navigation'    => esc_html__('Primary Navigation', 'silver-quantum'),
+    ));
+    
+    register_default_headers(array(
+        'header-image' => array(
+        'url'           => '%s/images/header-image.jpg',
+        'thumbnail_url' => '%s/images/header-image.jpg',
+        'description'   => __( 'Header Image', 'silver-quantum' )
+        ),
     ));
 }
 add_action('after_setup_theme', 'silver_quantum_theme_setup');
@@ -130,6 +142,7 @@ function silver_quantum_register_sidebars_setup() {
     ));  
 }
 add_action('widgets_init', 'silver_quantum_register_sidebars_setup');
+
 /*
 ================================================================================================
  5.0 - Required Files

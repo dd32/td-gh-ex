@@ -11,24 +11,32 @@ If you do not provide other template files, WordPress may have default files or 
 perform their jobs.
 
 @package        Silver Quantum WordPress Theme
-@copyright      Copyright (C) 2016. Benjamin Lu
+@copyright      Copyright (C) 2014. Benjamin Lu
 @license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
 @author         Benjamin Lu (http://lumiathemes.com/)
 ================================================================================================
 */
 ?>
 <?php get_header(); ?>
-    <div id="content-area" class="content-area">
-        <?php if (have_posts()) : ?>
-            <?php while (have_posts()) : the_post(); ?>
-                <?php get_template_part('template-parts/content', get_post_format()); ?>
-        <?php endwhile; ?>
+    <div id="post-layout" class="<?php echo esc_attr(get_theme_mod('post_layout', 'default')); ?>">
+        <div id="content-area" class="content-area">
+            <?php if (have_posts()) : ?>
+                <?php while (have_posts()) : the_post(); ?>
+                    <?php get_template_part('template-parts/content', get_post_format()); ?>
+            <?php endwhile; ?>
                 <div class="paging-navigation">
                     <?php the_posts_pagination(); ?>
                 </div>
-        <?php else : ?>
+            <?php else : ?>
                     <?php get_template_part('template-parts/content', 'none'); ?>
-        <?php endif; ?>
+            <?php endif; ?>
+        </div>
+        <?php if ('sidebar-left' == get_theme_mod('post_layout')) { ?>
+            <?php get_sidebar(); ?>
+        <?php } ?>
+        <?php if ('sidebar-right' == get_theme_mod('post_layout')) { ?>
+            <?php get_sidebar(); ?>
+        <?php } ?>
     </div>
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
+

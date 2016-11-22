@@ -7,7 +7,7 @@ This is the most generic template file in a WordPress theme and is one of the re
 custom header image and styling for the header. 
 
 @package        Silver Quantum WordPress Theme
-@copyright      Copyright (C) 2016. Benjamin Lu
+@copyright      Copyright (C) 2014. Benjamin Lu
 @license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
 @author         Benjamin Lu (http://luminathemes.com/)
 ================================================================================================
@@ -30,11 +30,11 @@ Table of Content
 function silver_quantum_custom_header_setup() {
     $args = array(
         // Text color and image (empty to use none).
-        'default-text-color'     => '000000',
+        'default-text-color'     => 'ffffff',
         'default-image'          => get_template_directory_uri() . '/images/header-image.jpg',
 
         // Set height and width, with a maximum value for the width.
-        'height'                 => 317,
+        'height'                 => 300,
         'width'                  => 1024,
         'max-width'             =>  2000,
 
@@ -66,9 +66,15 @@ function silver_quantum_header_style() {
         }
 ?>
 	<style type="text/css">
-        .site-title a,
-        .site-description {
-            color: #<?php echo $text_color; ?>;
-        }
+	<?php if (!display_header_text()) : ?>
+            .site-branding {
+                display: none;
+            }
+	<?php else : ?>
+            .site-title a,
+            .site-description {
+                color: #<?php echo esc_html($text_color); ?>;
+            }
+	<?php endif; ?>
 	</style>
 <?php } ?>

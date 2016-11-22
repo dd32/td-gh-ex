@@ -3,11 +3,11 @@ Theme Name: Silver Quantum
 Theme URI: https://www.lumiathemes.com/portfolio/silver-quantum/
 Author: Benjamin Lu
 Author URI: https://www.lumiathemes.com/
-Description: This Silver Quantum is converted into a responsive theme with the same features such as a fixed top navigation so that when users scrolls down, the navigation stays in its place. It also comes with custom sidebar and full width without no sidebar. Custom Background and Header is available. 
-Version: 0.3.3
-License: Silver Quantum is distributed under the terms of the GNU GPL.
+Description: This Silver Quantum is converted into a responsive theme with the same features such as a fixed top navigation so that when users scrolls down, the navigation stays in its place. It also comes with custom sidebar and full width without no sidebar. Custom Background and Header is available.
+License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: custom-background, custom-header, one-column, right-sidebar, threaded-comments, translation-ready, two-columns
+Tags: one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, post-formats, rtl-language-support, sticky-post, threaded-comments, translation-ready
+Version: 0.3.4
 Text Domain: silver-quantum
 
 This theme, like WordPress, is licensed under the GPL.
@@ -44,10 +44,11 @@ Table of Content
 24.0 - Footer Area
 25.0 - Media Area (Captions)
 26.0 - Media Area (Galleries)
-27.0 - Media Queries (Mobile Small 320px)
-28.0 - Media Queries (Mobile Large 600px)
-29.0 - Media Queries (Tablet Small 768px)
-30.0 - Media Queries (Tablet Large 1024px)
+27.0 - Media Queries (Mobile Small 20em (320px))
+28.0 - Media Queries (Mobile Small 30em (480px))
+29.0 - Media Queries (Mobile Large 37.50em (600px))
+30.0 - Media Queries (Tablet Small 48em (768px))
+31.0 - Media Queries (Tablet Large 64em (1024px))
 ================================================================================================
 */
 
@@ -56,18 +57,27 @@ Table of Content
  1.0 - Normalize (Reset)
 ================================================================================================
 */
-/*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
+/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 
 /**
  * 1. Change the default font family in all browsers (opinionated).
- * 2. Prevent adjustments of font size after orientation changes in IE and iOS.
+ * 2. Correct the line height in all browsers.
+ * 3. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
  */
+
+/* Document
+   ========================================================================== */
 
 html {
   font-family: sans-serif; /* 1 */
-  -ms-text-size-adjust: 100%; /* 2 */
-  -webkit-text-size-adjust: 100%; /* 2 */
+  line-height: 1.15; /* 2 */
+  -ms-text-size-adjust: 100%; /* 3 */
+  -webkit-text-size-adjust: 100%; /* 3 */
 }
+
+/* Sections
+   ========================================================================== */
 
 /**
  * Remove the margin in all browsers (opinionated).
@@ -77,69 +87,73 @@ body {
   margin: 0;
 }
 
-/* HTML5 display definitions
-   ========================================================================== */
-
 /**
  * Add the correct display in IE 9-.
- * 1. Add the correct display in Edge, IE, and Firefox.
- * 2. Add the correct display in IE.
  */
 
 article,
 aside,
-details, /* 1 */
-figcaption,
-figure,
 footer,
 header,
-main, /* 2 */
-menu,
 nav,
-section,
-summary { /* 1 */
+section {
   display: block;
 }
 
 /**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+
+/**
  * Add the correct display in IE 9-.
- */
-
-audio,
-canvas,
-progress,
-video {
-  display: inline-block;
-}
-
-/**
- * Add the correct display in iOS 4-7.
- */
-
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-
-/**
- * Add the correct vertical alignment in Chrome, Firefox, and Opera.
- */
-
-progress {
-  vertical-align: baseline;
-}
-
-/**
- * Add the correct display in IE 10-.
  * 1. Add the correct display in IE.
  */
 
-template, /* 1 */
-[hidden] {
-  display: none;
+figcaption,
+figure,
+main { /* 1 */
+  display: block;
 }
 
-/* Links
+/**
+ * Add the correct margin in IE 8.
+ */
+
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
    ========================================================================== */
 
 /**
@@ -161,9 +175,6 @@ a:active,
 a:hover {
   outline-width: 0;
 }
-
-/* Text-level semantics
-   ========================================================================== */
 
 /**
  * 1. Remove the bottom border in Firefox 39-.
@@ -195,21 +206,23 @@ strong {
 }
 
 /**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
  * Add the correct font style in Android 4.3-.
  */
 
 dfn {
   font-style: italic;
-}
-
-/**
- * Correct the font size and margin on `h1` elements within `section` and
- * `article` contexts in Chrome, Firefox, and Safari.
- */
-
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
 }
 
 /**
@@ -254,6 +267,24 @@ sup {
    ========================================================================== */
 
 /**
+ * Add the correct display in IE 9-.
+ */
+
+audio,
+video {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
  * Remove the border on images inside links in IE 10-.
  */
 
@@ -269,63 +300,23 @@ svg:not(:root) {
   overflow: hidden;
 }
 
-/* Grouping content
-   ========================================================================== */
-
-/**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
-
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace, monospace; /* 1 */
-  font-size: 1em; /* 2 */
-}
-
-/**
- * Add the correct margin in IE 8.
- */
-
-figure {
-  margin: 0;
-}
-
-/**
- * 1. Add the correct box sizing in Firefox.
- * 2. Show the overflow in Edge and IE.
- */
-
-hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
-}
-
 /* Forms
    ========================================================================== */
 
 /**
- * 1. Change font properties to `inherit` in all browsers (opinionated).
+ * 1. Change the font styles in all browsers (opinionated).
  * 2. Remove the margin in Firefox and Safari.
  */
 
 button,
 input,
+optgroup,
 select,
 textarea {
-  font: inherit; /* 1 */
+  font-family: sans-serif; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
   margin: 0; /* 2 */
-}
-
-/**
- * Restore the font weight unset by the previous rule.
- */
-
-optgroup {
-  font-weight: bold;
 }
 
 /**
@@ -411,6 +402,16 @@ legend {
 }
 
 /**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+
+progress {
+  display: inline-block; /* 1 */
+  vertical-align: baseline; /* 2 */
+}
+
+/**
  * Remove the default vertical scrollbar in IE.
  */
 
@@ -449,21 +450,12 @@ textarea {
 }
 
 /**
- * Remove the inner padding and cancel buttons in Chrome and Safari on OS X.
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
  */
 
 [type="search"]::-webkit-search-cancel-button,
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
-}
-
-/**
- * Correct the text style of placeholders in Chrome, Edge, and Safari.
- */
-
-::-webkit-input-placeholder {
-  color: inherit;
-  opacity: 0.54;
 }
 
 /**
@@ -474,6 +466,57 @@ textarea {
 ::-webkit-file-upload-button {
   -webkit-appearance: button; /* 1 */
   font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+
+details, /* 1 */
+menu {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+
+summary {
+  display: list-item;
+}
+
+/* Scripting
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 9-.
+ */
+
+canvas {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in IE.
+ */
+
+template {
+  display: none;
+}
+
+/* Hidden
+   ========================================================================== */
+
+/**
+ * Add the correct display in IE 10-.
+ */
+
+[hidden] {
+  display: none;
 }
 
 /*
@@ -513,17 +556,85 @@ textarea {
  3.0 - Typography
 ================================================================================================
 */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after { 
+	box-sizing: inherit;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+}
+
+blockquote,
+q {
+	quotes: "" "";
+}
+
+blockquote {
+
+    font-family: 'Sanchez', serif;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+}
+
+blockquote::before {
+    content: "\f10d";
+    font-size: 24px;
+    font-family: 'FontAwesome';
+    position: absolute;
+    left: -1.1em;
+    color: #000000;;
+}
+
+blockquote::after {
+    content: "\f10e";
+    font-size: 24px;
+    font-family: 'FontAwesome';
+    position: absolute;
+    right: -1.1em;
+    top: 0;
+    color: #000000;;
+}
+
+blockquote cite {
+    font-size: 14px;
+}
+
+input[type="search"] {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.search-submit {
+    display: none;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+/*
+================================================================================================
+ 4.0 - Elements
+================================================================================================
+*/
 body {
-    background: #cccccc;
     font-family: 'Merriweather Sans', sans-serif;
 }
 
-h1,
-h2,
-h3,
-h4, 
-h5, 
-h6 {
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Sanchez', serif;
 }
 
@@ -582,78 +693,6 @@ ins {
 big {
 	font-size: 125%;
 }
-
-/*
-================================================================================================
- 4.0 - Elements
-================================================================================================
-*/
-html {
-    box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after { 
-	box-sizing: inherit;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-	content: "";
-}
-
-blockquote,
-q {
-	quotes: "" "";
-}
-
-blockquote {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 1.5em 2em 1.5em 2em;
-    position: relative;
-    text-align: center;
-}
-
-blockquote::before {
-    content: "\f10d";
-    font-size: 24px;
-    font-family: 'FontAwesome';
-    position: absolute;
-    left: -2em;
-    color: #000000;;
-}
-
-blockquote::after {
-    content: "\f10e";
-    font-size: 24px;
-    font-family: 'FontAwesome';
-    position: absolute;
-    right: -2em;
-    top: 0;
-    color: #000000;;
-}
-
-blockquote cite {
-    font-size: 14px;
-}
-
-input[type = "search"] {
-    box-sizing: border-box;
-    width: 100%;
-}
-
-.search-submit {
-    display: none;
-}
-
-img {
-    height: auto;
-    max-width: 100%;
-} 
 
 /*
 ================================================================================================
@@ -786,10 +825,6 @@ textarea {
     z-index: 100000;
 }
 
-#content[tabindex="-1"]:focus {
-	outline: 0;
-}
-
 /*
 ================================================================================================
  8.0 - Navigation (Links)
@@ -801,7 +836,7 @@ a {
 }
 
 a:hover {
-    color: #0099cc;
+    text-decoration: none;
 }
 
 /*
@@ -811,9 +846,7 @@ a:hover {
 */
 .top-nav {
     background: #666666;
-    border-bottom: 1px solid #ffffff;
-    margin-top: -3px;
-    min-height: 3.9em;
+    border-bottom: 2px solid #ffffff;
     position: fixed;
     width: 100%;
     z-index: 100;
@@ -990,10 +1023,6 @@ a:hover {
 	display: block;
 }
 
-.height {
-    height: 6em;
-}
-
 /*
 ================================================================================================
 10.0 - Navigation (Footer Navigation)
@@ -1012,31 +1041,38 @@ a:hover {
 ================================================================================================
 */
 .paging-navigation {
-    padding: 2em;
+    margin: 1.563em 0;
     text-align: center;
 }
 
-.paging-navigation ul {
-    margin: 0;
-    text-align: center;
+.paging-navigation .nav-links {
+    margin: 0.625em 0;
 }
 
-.paging-navigation li { display: inline; }
 
-a.page-numbers,
-span.page-numbers {
-    border: 1px solid #000000;
-     padding: 0.5em 1.2em;
-
+.pagination span,
+.pagination a {
+	border: 1px solid #cccccc;
+	padding: 3px 9px;
+	text-decoration: none;
 }
 
-.paging-navigation .current {
-    font-weight: bold;
+.pagination a:hover,
+.pagination a:focus {
+	color: #fff;
+	background-color: #777;
+	border-color: #777;
+}
+.pagination .current{
+	padding: 3px 9px;
+	color: #fff;
+	background-color: #777;
+	border: 1px #777 solid;
 }
 
 /*
 ================================================================================================
-13.0 - Navigation (Search Toggle
+13.0 - Navigation (Search Toggle)
 ================================================================================================
 */
 
@@ -1045,16 +1081,20 @@ span.page-numbers {
 14.0 - Basic Structure
 ================================================================================================
 */
-.site-content {
+.height {
+    height: 5em;
+}
+
+.site-container {
     background: #ffffff;
     border: 1px solid #999999;
     box-shadow: 0 0 10px 0;
     margin: 0 auto;
-    max-width: 1024px;
+    max-width: 64em;
 }
 
-.site-wrapper {
-    padding: 15px;
+.site-content {
+    padding: 1.125em;
 }
 
 /*
@@ -1063,12 +1103,11 @@ span.page-numbers {
 ================================================================================================
 */
 .site-header {
-    background: url(images/header-image.jpg) no-repeat;
-    padding: 3em;
+    height: 300px;
 }
 
 .site-branding {
-    padding: 3.3em 0;
+    padding: 7.5em;
     text-align: center;
 }
 
@@ -1078,23 +1117,22 @@ span.page-numbers {
     padding: 0;
 }
 
-.site-title::after {
-    border-bottom: 1px solid #cccccc;
-    content: "";
-    display: block;
-    margin: 0.5em auto;
-    width: 1.5em;
-}
-
-.site-title a {
+.site-title a,
+.site-description {
     color: #ffffff;
-    font-size: 1.4em;
     text-decoration: none;
 }
 
-.site-description {
-    color: #ffffff;
+.site-title a {
+    font-size: 1.125em;
 }
+
+.site-title a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
 
 /*
 ================================================================================================
@@ -1102,20 +1140,27 @@ span.page-numbers {
 ================================================================================================
 */
 .content-area {
-    float: left;
-    width: 70.42253521126761%;
+    margin: 0 auto;
+    width: 100%;
+    /* width: 65.4296875%; */
 }
 
-.content-area.full-width {
-    width: 100%;
+.sidebar-left .content-area {
+    float: right;
+    width: 65.4296875%
+}
+
+.sidebar-right .content-area {
+    float: left;
+    width: 65.4296875%
 }
 
 .post {
-    margin: 0 0 5em 0;
+    margin: 0 0 6em 0;
 }
 
 .entry-header {
-    text-align: center;
+
 }
 
 .entry-title {
@@ -1123,8 +1168,72 @@ span.page-numbers {
     padding: 0;
 }
 
-.entry-content {
-    margin: 2em 0;
+.entry-metadata {
+    background: #eeeeee;
+    margin: 1.250em 0;
+    padding: 1em;
+    text-align: center;
+}
+
+.entry-metadata .avatar {
+    border: 0.500em solid #cccccc;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+.entry-metadata .by-author {
+    display: block;
+    font-family: 'Sanchez', serif;
+    font-size: 1.250em;
+}
+
+.entry-metadata .published,
+.entry-metadata .entry-comments {
+    display: block;
+    font-size: 12px;
+}
+
+.entry-excerpt {
+    font-family: 'Sanchez', serif;
+    font-size: 1.188em;
+}
+
+
+
+.post-index-metadata {
+    font-size: 0.813em;
+}
+
+.continue-reading {
+	text-align: center;
+}
+
+.continue-reading a,
+.entry-content .continue-reading a {
+	display: inline-block;
+	margin: 1em auto;
+	padding: 16px 20px;
+	font-family: "Open Sans", sans-serif;
+	text-decoration: none;
+	border: 1px solid #c3c3c3;
+}
+
+.continue-reading a:hover,
+.continue-reading a:focus,
+.entry-content .continue-reading a:hover,
+.entry-content .continue-reading a:focus {
+	border-color: #000;
+	border-width: 1px;
+	box-shadow: none;
+}
+
+.continue-reading::after {
+	display: block;
+    content: "";
+    width: 7em;
+    border-bottom: 1px solid #c3c3c3;
+    margin: 40px auto 0;
 }
 
 .cat-link,
@@ -1143,16 +1252,14 @@ span.page-numbers {
     font-size: 12px;
 }
 
-.entry-footer {
-    padding: 0;
-    text-align: center;
+.sticky::before {
+    content: "Featured Post";
+    display: block;
 }
 
-.sticky {
-    
+.post-thumbniail-banner {
+    margin-bottom: 0.5em;
 }
-
-
 
 /*
 ================================================================================================
@@ -1207,7 +1314,7 @@ span.page-numbers {
 
 .comments-area p {
     font-size: 14px;
-    margin-left: 70px;
+    margin-left: 60px;
     margin-top: 20px;
 }
 
@@ -1268,6 +1375,7 @@ ol.children {
 
 .bypostauthor > .comment-body {
     background: #f0f0f0; 
+    border-left: 4px solid #cccccc;
     padding: 10px;
     position: relative;
 }
@@ -1322,7 +1430,7 @@ ol.children {
 
 #respond textarea#comment{
     height: 200px;
-    width: 99%;	
+    width: 100%;	
 }
 
 /*
@@ -1354,10 +1462,14 @@ ol.children {
 23.0 - Widget Area
 ================================================================================================
 */
-.widget-area {
+.sidebar-left .widget-area {
+    float: left;
+    width: 29.296875%;
+}
+
+.sidebar-right .widget-area {
     float: right;
-    width: 27.16297786720322%;
-    word-break: break-all;
+    width: 29.296875%;
 }
 
 .widget-area .search-submit,
@@ -1431,19 +1543,17 @@ input[type = "search"] {
 }
 
 #wp-calendar a {
-    color: #0000ff;
     font-style: italic;
-    font-weight: 400;
 }
 
 #wp-calendar caption {
-    font-weight: 400;
+    font-weight: 700;
     margin: 5px 0;
     text-align: center;
 }
 
 #wp-calendar #today {
-    font-weight: 400;
+    font-weight: 700;
 }
 
 #wp-calendar th {
@@ -1455,19 +1565,31 @@ input[type = "search"] {
     padding: 6px 0;
 }
 
-.textwidget {
-    margin: 10px 0;
-}
-
 /*
 ================================================================================================
 24.0 - Footer Area
 ================================================================================================
 */
 .site-footer {
-    margin: 1em auto 2em auto;
-    max-width: 1024px;
+    font-family: 'Sanchez', sans-serif;
+    margin: 0 auto;
+    max-width: 64em;
     text-align: center;
+}
+
+.site-info {
+    color: #ffffff;
+    font-size: 14px;
+    padding: 1em 0 1em 0;
+}
+
+.site-info a {
+    color: #1d1d1d;
+    text-decoration: none;
+}
+
+.site-info .site-description a {
+    font-size: 20px;
 }
 
 /*
@@ -1511,16 +1633,22 @@ input[type = "search"] {
 
 /*
 ================================================================================================
-27.0 - Media Queries (Mobile Small 320px)
+27.0 - Media Queries (Mobile Small 20em (320px))
 ================================================================================================
 */
 
 /*
 ================================================================================================
-28.0 - Media Queries (Mobile Large 600px)
+28.0 - Media Queries (Mobile Small 30em (480px))
 ================================================================================================
 */
-@media screen and (max-width: 600px) {
+
+/*
+================================================================================================
+29.0 - Media Queries (Mobile Large 37.50em (600px))
+================================================================================================
+*/
+@media screen and (max-width: 37.50em) {
     .menu-toggle,
     .primary-navigation.toggled ul {
         display: block;
@@ -1547,45 +1675,22 @@ input[type = "search"] {
         margin: 1em 1em 3.6em 1em;
     }
 
-    .content-area {
-        margin: 0;
+    .sidebar-right .content-area {
+        float: none;
         width: 100%;
     }
-}
-
-/*
-================================================================================================
-29.0 - Media Queries (Tablet Small 768px)
-================================================================================================
-*/
-@media screen and (min-width: 601px) and (max-width: 768px) {
-    .menu-toggle,
-    .primary-navigation.toggled ul {
-        display: block;
+    
+    .sidebar-left .content-area {
+        float: none;
+        width: 100%;
     }
     
-	.primary-navigation ul {
-		display: none;
-	}
-    
-    .primary-navigation.toggled {
-        padding: 0.1em;
+    .sidebar-right .widget-area {
+        float: none;
+        width: 100%;
     }
     
-    .nav-menu {
-        margin-bottom: 3.6em;
-    }
-    
-    .primary-navigation .nav-menu {
-        display: none;
-    }
-    
-    .primary-navigation.toggled .nav-menu {
-        display: block;
-        margin: 1em 1em 3.6em 1em;
-    }
-    
-    .content-area {
+    .sidebar-left .widget-area {
         float: none;
         width: 100%;
     }
@@ -1593,13 +1698,94 @@ input[type = "search"] {
 
 /*
 ================================================================================================
-30.0 - Media Queries (Tablet Large 1024px)
+30.0 - Media Queries (Tablet Small 48em (768px))
 ================================================================================================
 */
-@media screen and (min-width: 769px) {
-    
+@media screen and (max-width: 48em) {
+    .top-nav {
+        border-bottom: none;
+    }
+    .site-container {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+    }
+
     .primary-navigation {
         clear: none;
+    }
+    
+    .height {
+        height: 0;
+    }
+    
+    .menu-toggle,
+    .primary-navigation.toggled ul {
+        display: block;
+    }
+    
+	.primary-navigation ul {
+		display: none;
+	}
+    
+    .primary-navigation.toggled {
+        padding: 0.1em;
+    }
+    
+    .nav-menu {
+        margin-bottom: 3.6em;
+    }
+    
+    .primary-navigation .nav-menu {
+        display: none;
+    }
+    
+    .primary-navigation.toggled .nav-menu {
+        display: block;
+        margin: 1em 1em 3.6em 1em;
+    }
+
+    .sidebar-right .content-area {
+        float: none;
+        width: 100%;
+    }
+    
+    .sidebar-left .content-area {
+        float: none;
+        width: 100%;
+    }
+    
+    .sidebar-right .widget-area {
+        float: none;
+        width: 100%;
+    }
+    
+    .sidebar-left .widget-area {
+        float: none;
+        width: 100%;
+    }
+}
+
+/*
+================================================================================================
+31.0 - Media Queries (Tablet Large 64em (1024px))
+================================================================================================
+*/
+@media screen and (min-width: 769px) and (max-width: 1024px) {  
+    .site-container {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+    }
+
+    .primary-navigation {
+        clear: none;
+    }
+    
+    .height {
+        height: 3.750em;
     }
 	
 	/* Position the menu in the header */
@@ -1614,7 +1800,7 @@ input[type = "search"] {
     
 	.nav-menu {
 		padding: .4em;
-		background-color: transparent;
+		background: transparent;
         margin: 0;
     }
     
@@ -1663,6 +1849,14 @@ input[type = "search"] {
     .primary-navigation ul ul li a {
         color: #ffffff;
     }
+    
+    .primary-navigation a {
+        position: relative;
+        display: block;
+        padding: 0.5em 1em;
+        text-decoration: none;
+        line-height: 1.5em;
+    }
 	
 	/* Add an outline on hovered and focused menu items */
 	.primary-navigation a:hover,
@@ -1705,9 +1899,134 @@ input[type = "search"] {
 	
 	/* Simplify the drop-down toggle */
 	.dropdown-toggle {
-		top: 9px;
-		right: 10px;
+        right: 6px;
+        top: 5px;
+	}
+	
+	.dropdown-toggle::after {
+		line-height: 27px;
+		width: 27px;
+	}
+}
 
+@media screen and (min-width: 1025px) {    
+    .primary-navigation {
+        clear: none;
+    }
+	
+	/* Position the menu in the header */
+	.primary-navigation,
+	.primary-navigation.toggled {
+		position: relative;
+		min-height: 3.5em;
+		max-width: 100%;
+		margin: 0 auto;
+		padding: 0;
+	}
+    
+	.nav-menu {
+		padding: .4em;
+		background: transparent;
+        margin: 0;
+    }
+    
+    .nav-menu a {
+        color: #ffffff;
+    }
+    
+    .nav-menu a:hover {
+        color: #ffffff;
+    }
+	
+	.primary-navigation ul,
+	.primary-navigation.toggled ul {
+		max-height: none;
+		padding-left: 0;
+		text-align: center;
+        
+	}
+	
+	.primary-navigation.toggled ul {
+		overflow-y: visible;
+	}
+	
+	/* Display the menu items in a horizontal order */
+	.primary-navigation li {
+		display: inline-block;
+		border: none;
+	}
+	
+	/* Add an outline to the drop-down menus */
+	.primary-navigation ul ul {
+		outline: 1px solid #333;
+	}
+	
+	/* Left-align drop-down menu items */
+	.primary-navigation li li {
+		display: block;
+		text-align: left;
+	}
+	
+	.primary-navigation a,
+	.primary-navigation ul ul li:last-child a {
+		border-bottom: none;
+	}
+    
+    .primary-navigation ul ul li a {
+        color: #ffffff;
+    }
+    
+    .primary-navigation a {
+        position: relative;
+        display: block;
+        padding: 0.5em 1em;
+        text-decoration: none;
+        line-height: 1.5em;
+    }
+	
+	/* Add an outline on hovered and focused menu items */
+	.primary-navigation a:hover,
+	.primary-navigation a:focus {
+		background: transparent;
+		color: #ffffff;
+		text-decoration: underline;
+		outline: solid 1px #b3b3b3;
+	}
+	
+	/* Create hover and focus contrast on drop-down items */
+	.primary-navigation li li a:hover,
+	.primary-navigation li li a:focus {
+		background: #eee;
+		color: #000;
+		text-decoration: none;
+	}
+	
+	/* Position drop-down menus absolutely */
+	.primary-navigation ul ul.toggled-on {
+		position: absolute;
+		width: 17em;
+		display: block;
+		z-index: 10;
+        right: 0;
+		margin-left: 0;
+		background: #000;
+	}
+	
+	.primary-navigation ul ul ul.toggled-on {
+		right: 0;
+        padding-left: 1em;
+        position: relative;
+	}
+	
+	/* Indent 3rd level drop-down menus */
+	.primary-navigation ul ul ul a {
+		padding-left: 2em;
+	}
+	
+	/* Simplify the drop-down toggle */
+	.dropdown-toggle {
+        right: 6px;
+        top: 5px;
 	}
 	
 	.dropdown-toggle::after {

@@ -1,15 +1,15 @@
 /*
 ================================================================================================
-Silver Quantum - navigation.js
+Fervent - navigation.js
 ================================================================================================
 This is the most generic template file in a WordPress theme and is one of required files to hide
 and show the primary navigation for the Primary Navigation in different resolution and other
 features.
 
-@package        Silver Quantum WordPress Theme
-@copyright      Copyright (C) 2016. Benjamin Lu
+@package        Fervent WordPress Theme
+@copyright      Copyright (C) 2014. Benjamin Lu
 @license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
-@author         Benjamin Lu (http://luminathemes.com/)
+@author         Benjamin Lu (https://www.luminathemes.com/)
 ================================================================================================
 */
 ( function( $ ) {
@@ -89,7 +89,7 @@ features.
 
 	function initMainNavigation( container ) {
 		// Add dropdown toggle that display child menu items.
-		container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( '<button class="dropdown-toggle" aria-expanded="false">' + screenReaderText.expand + '</button>' );
+		container.find( '.menu-item-has-children > a, .page_item_has_children > a' ).after( '<button class="dropdown-toggle" aria-expanded="false">' + silverquantumscreenReaderText.expand + '</button>' );
 
 		// Toggle buttons and submenu items with active children menu items.
 		container.find( '.current-menu-ancestor > button' ).addClass( 'toggle-on' );
@@ -101,7 +101,7 @@ features.
 			_this.toggleClass( 'toggle-on' );
 			_this.next( '.children, .sub-menu' ).toggleClass( 'toggled-on' );
 			_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
-			_this.html( _this.html() === screenReaderText.expand ? screenReaderText.collapse : screenReaderText.expand );
+			_this.html( _this.html() === silverquantumscreenReaderText.expand ? silverquantumscreenReaderText.collapse : silverquantumscreenReaderText.expand );
 		} );
 	}
 	initMainNavigation( $( '.primary-navigation' ) );
