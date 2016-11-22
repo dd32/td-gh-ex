@@ -8,7 +8,7 @@ License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: custom-background, custom-colors, custom-header, left-sidebar, one-column, right-sidebar, two-columns, sticky-post, threaded-comments, theme-options, translation-ready
 Text Domain: white-spektrum
-Version: 0.1.9
+Version: 0.2.0
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -1109,14 +1109,6 @@ span.page-numbers {
     font-size: 1.250em;
 }
 
-.site-title::after {
-    border: 0.063em solid #cccccc;
-    content: "";
-    display: block;
-    margin: 20px auto;
-    width: 1.5em;
-}
-
 /*
 ================================================================================================
 16.0 - Content Area (Posts and Pages)
@@ -1957,7 +1949,7 @@ input[type = "search"] {
 		width: 17em;
 		display: block;
 		z-index: 10;
-        left: 9.7em;
+        right: 0;
 		margin-left: 0;
 		background: #000;
 	}

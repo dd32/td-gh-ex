@@ -3,8 +3,8 @@ White Spektrum WordPress Theme
 Contributor: benlumia007
 Tags: custom-background, custom-header, right-sidebar
 Requres at least: 4.5
-Tested up to: 4.6.1
-Stable tag: 0.0.1
+Tested up to: 4.7
+Stable tag: 0.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,23 +36,81 @@ Customizer
 4. Header Image
    - Add Header Image
    - Remove Header Image (When removing a header image, the default image will display).
-5. Static Front Page
+5. Layouts Supports
+   - Post Layouts
+   - Page layouts
+   - Custom Layouts
+   - Archive Layouts
+   The Layout Supports gives the user the ability to change their layouts if they choose to do so.
+6. Static Front Page
    - Front Page
    - Blog
 
 
 Description
 ================================================================================================
-White Spektrum is a responsive WordPress theme.
+White Spektrum is a fully responsive WordPress theme that looks great on smartphones and tablets. 
+Custom Background, Custom Header is now available so that you can choose more features for this theme. 
+This theme also supports new features that allows you to choose different layouts from blog layout, page 
+layout and custom layout if you choose to use sidebars or no sidebars.
 
 
 Frequently Asked Questions
 ================================================================================================
-Not Available At the Moment
+Why does the theme look slightly different form the original?
+As a developer, will need to keep up with the standard practice throughout the years active on 
+WordPress.org. I didn't know much about coding or standard when I started, but throughout the years,
+I have improved my understanding so that I can make this theme better. 
+
+
 
 
 Changelog
 ================================================================================================
+Version: 0.2.0
+- Render and Fix Navigtion CSS for Smartphone and Tablet and Desktop Mode.
+
+Version: 0.1.9
+- Fixe Bugs
+
+Version: 0.1.6 
+- Minor Change
+
+Version: 0.1.5
+- Minor Fixed Bugs
+
+Version: 0.1.4
+- Minor Change
+
+Version: 0.1.3
+- Fixed Bugs
+
+Version: 0.1.2
+- Fixed Bugs
+
+Version: 0.1.1
+- Minor Fixed
+
+Version: 0.1.0 
+- Render New CSS
+Version: 0.0.9
+- Fixed Bugs
+
+Version: 0.0.8
+- Minor CSS Changed
+
+Version: 0.0.7
+-Fixed Bugs
+
+Version: 0.0.6
+- Fixed Bugs
+
+Version: 0.0.5
+- Rendered New CSS
+
+Version: 0.0.4
+- Initial Release
+
 Version: 0.0.3
 - Fixed Bugs
 - Minor Changes

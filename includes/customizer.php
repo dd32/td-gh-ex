@@ -97,7 +97,6 @@ function white_spektrum_customize_register_setup($wp_customize) {
 	$wp_customize->get_setting('blogname')->transport         = 'postMessage';
 	$wp_customize->get_setting('blogdescription')->transport  = 'postMessage';
 	$wp_customize->get_setting('header_textcolor')->transport = 'postMessage';
-    $wp_customize->remove_control('display_header_text');
 
     // Enable and activate Post Layout for White Spektrum.
     $wp_customize->add_panel('general_layouts', array(
@@ -112,8 +111,9 @@ function white_spektrum_customize_register_setup($wp_customize) {
     ));
     
     $wp_customize->add_setting('post_layout', array(
-        'default'       => 'sidebar-right',
+        'default'           => 'sidebar-right',
         'sanitize_callback' => 'white_spektrum_sanitize_layout',
+        'transport'         => 'postMessage'
     ));
     
     $wp_customize->add_control(new White_Spektrum_Control_Radio_Image($wp_customize, 'post_layout', array(
@@ -145,8 +145,9 @@ function white_spektrum_customize_register_setup($wp_customize) {
     ));
     
     $wp_customize->add_setting('page_layout', array(
-        'default'       => 'sidebar-right',
+        'default'           => 'sidebar-right',
         'sanitize_callback' => 'white_spektrum_sanitize_layout',
+        'transport'         => 'postMessage'
     ));
     
     $wp_customize->add_control(new White_Spektrum_Control_Radio_Image($wp_customize, 'page_layout', array(
@@ -178,8 +179,9 @@ function white_spektrum_customize_register_setup($wp_customize) {
     ));
     
     $wp_customize->add_setting('custom_layout', array(
-        'default'       => 'sidebar-right',
+        'default'           => 'sidebar-right',
         'sanitize_callback' => 'white_spektrum_sanitize_layout',
+        'transport'         => 'postMessage'
     ));
     
     $wp_customize->add_control(new White_Spektrum_Control_Radio_Image($wp_customize, 'custom_layout', array(
@@ -286,6 +288,6 @@ add_action('wp_head', 'white_spektrum_custom_colors_css');
 */
 function white_spektrum_customize_preview_js() {
     // Enable and activate Customize Preview JavaScript for White Spektrum.
-    wp_enqueue_script('white-spektrum-customize-preview', get_template_directory_uri() . '/js/customize-preview.js', array('customize-preview'), '20161111', true);
+    wp_enqueue_script('white-spektrum-customize-preview', get_template_directory_uri() . '/js/customize-preview.js', array('jquery','customize-preview'), '11172014', true);
 }
 add_action('customize_preview_init', 'white_spektrum_customize_preview_js');

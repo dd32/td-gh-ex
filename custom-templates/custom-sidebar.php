@@ -19,7 +19,7 @@ perform their jobs.
 */
 ?>
 <?php get_header(); ?>
-    <div class="<?php echo esc_attr(get_theme_mod('custom_layout', 'sidebar-right')); ?>">
+    <div id="custom-layout" class="<?php echo esc_attr(get_theme_mod('custom_layout', 'sidebar-right')); ?>">
         <div id="content-area" class="content-area">
             <?php if (have_posts()) : ?>
                 <?php while (have_posts()) : the_post(); ?>
