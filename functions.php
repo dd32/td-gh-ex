@@ -88,7 +88,7 @@ function beyond_expectations_theme_setup() {
     
     // 
     add_theme_support('custom-background', array(
-        'default'    => 'ffffff',
+        'default-color'    => 'ffffff',
     ));
     
     add_theme_support('post-thumbnails');
