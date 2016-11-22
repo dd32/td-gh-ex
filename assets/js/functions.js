@@ -289,7 +289,9 @@ var THEMEVISION = THEMEVISION || {};
 		
 		customclasses: function(){
 			
-			$('a.comment-reply-link').append('<i class="fa fa-reply"></i>');
+			if( $('a').hasClass('comment-reply-link') ) {
+				$('a.comment-reply-link').append('<i class="fa fa-reply"></i>');
+			}
 			
 		},
 		
@@ -373,6 +375,7 @@ var THEMEVISION = THEMEVISION || {};
 						$topbar.hide();
 					}
 					
+					$header.addClass("shrinked");
 					$stickyHeader.addClass("sticky-header-shrink");
 					
 				}else{
@@ -383,6 +386,7 @@ var THEMEVISION = THEMEVISION || {};
 						$topbar.show();
 					}
 					
+					$header.removeClass("shrinked");
 					$stickyHeader.removeClass("sticky-header-shrink");
 				}
 

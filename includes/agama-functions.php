@@ -30,7 +30,9 @@ function agama_setup() {
 	// This theme supports a variety of post formats.
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote', 'status' ) );
 
-	register_nav_menu( 'top', __( 'Top Menu', 'agama' ) );
+	if( get_theme_mod( 'agama_header_style', '' ) !== 'transparent' ) {
+		register_nav_menu( 'top', __( 'Top Menu', 'agama' ) );
+	}
 	register_nav_menu( 'primary', __( 'Primary Menu', 'agama' ) );
 
 	/*
@@ -219,6 +221,47 @@ function agama_comment( $comment, $args, $depth ) {
 	endswitch; // end comment_type check
 }
 endif;
+
+/**
+ * Comment Form Fields
+ *
+ * @since 1.2.4
+ */
+add_filter( 'comment_form_default_fields', 'agama_comment_form_fields' );
+function agama_comment_form_fields( $fields ) {
+	
+	// Get the current commenter if available
+    $commenter = wp_get_current_commenter();
+	
+	// Core functionality
+    $req      = get_option( 'require_name_email' );
+    $aria_req = ( $req ? " aria-required='true'" : '' );
+    $html_req = ( $req ? " required='required'" : '' );
+	
+	$fields['author']	= '<div class="col-md-4"><label for="author">' . __( 'Name', 'agama' ) . '</label>' . ( $req ? '<span class="required">*</span>' : '' ) . '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" class="sm-form-control"' . $aria_req . ' /></div>';
+	$fields['email'] 	= '<div class="col-md-4"><label for="email">' . __( 'Email', 'agama' ) . '</label>' . ( $req ? '<span class="required">*</span>' : '' ) . '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" class="sm-form-control"' . $aria_req . ' /></div>';
+	$fields['url'] 		= '<div class="col-md-4"><label for="url">' . __( 'Website', 'agama' ) . '</label><input id="url" name="url" type="text" value="' . esc_url( $commenter['comment_author_url'] ) . '" class="sm-form-control" /></div>';
+	
+	return $fields;
+}
+
+/**
+ * Comment Form Defaults
+ *
+ * @since 1.2.4
+ */
+add_filter( 'comment_form_defaults', 'agama_comment_form_defaults' );
+function agama_comment_form_defaults( $defaults ) {
+	global $current_user;
+	
+	$defaults['logged_in_as'] 			= '<div class="col-md-12 logged-in-as">' . sprintf(	'%s <a href="%s">%s</a>. <a href="%s" title="%s">%s</a>', __('Logged in as', 'agama'), admin_url( 'profile.php' ), $current_user->display_name, wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) ), __('Log out of this account', 'agama'), __('Log out?', 'agama') ) . '</div>';
+	$defaults['comment_field'] 			= '<div class="col-md-12"><label for="comment">' . __( 'Comment', 'agama' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" class="sm-form-control"></textarea></div>';
+	$defaults['comment_notes_after'] 	= '<div class="col-md-12" style="margin-top: 15px; margin-bottom: 15px;">' . sprintf( '%s <abbr title="HyperText Markup Language">HTML</abbr> %s: %s', __( 'You may use these', 'agama' ), __( 'tags and attributes', 'agama' ), '<code>' . allowed_tags() . '</code>') . '</div>';
+	$defaults['title_reply']			= sprintf( '%s <span>%s</span>', __( 'Leave a', 'agama' ), __( 'Comment', 'agama' ) );
+	$defaults['class_submit']			= 'button button-3d button-large button-rounded';
+	
+	return $defaults;
+}
 
 if ( ! function_exists( 'agama_entry_meta' ) ) :
 /**

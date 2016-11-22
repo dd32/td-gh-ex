@@ -4,7 +4,7 @@
  Author: Jaroslav Svetlik
  Author URI: http://theme-vision.com/
  Description: Agama is a free Multi-Purpose WordPress theme. It’s perfect for web agency business, corporate business, personal and parallax business portfolio, photography sites and freelancer. Is built on BootStrap with parallax support, is responsive, clean, modern, flat and minimal. Agama is e-commerce (WooCommerce) Compatible, WPML, RTL, Retina-Ready, SEO Friendly and with parallax. 3 Superb header variations. Check demo: http://demo.theme-vision.com
- Version: 1.2.3
+ Version: 1.2.4
  License: GNU General Public License v2 or later
  License URI: http://www.gnu.org/licenses/gpl-2.0.html
  Tags: one-column, two-columns, right-sidebar, left-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, e-commerce, entertainment, news, photography
@@ -935,10 +935,7 @@ a:hover {
 	float: left;
 	position: relative;
 	height: 44px;
-	border-left: 1px solid #EEE;
 }
-.top-links ul li:first-child,
-.top-links ul ul li { border-left: 0 !important; }
 .top-links li > a {
 	display: block;
 	padding: 0 12px;
@@ -959,8 +956,6 @@ a:hover {
 	font-size: 14px;
 	margin: 0;
 }
-.top-links li:hover, 
-.top-links li.current_page_item { background-color: #EEE; }
 .top-links ul ul,
 .top-links ul div.top-link-section {
 	display: none;
@@ -1113,7 +1108,6 @@ body.sticky_header #main-wrapper {
 }
 .sticky-header {
 	position: relative;
-	background-color: #fff;
 	width: 100%;
 	margin: 0 auto;
 	-webkit-transition: height 0.4s;
@@ -1237,18 +1231,58 @@ a[rel="prev"] {
 	font-weight: 700;
 	text-transform: uppercase;
 }
+.top-links > ul > li.current-menu-item, 
+.top-links > div > ul > li.current-menu-item, 
+.top-links > ul > li.current_page_item, 
+.top-links > div > ul > li.current_page_item,
+#top-navigation > ul > li.current-menu-item,
+#top-navigation > div > ul > li.current-menu-item,
+#top-navigation > ul > li.current_page_item,
+#top-navigation > div > ul > li.current_page_item,
+header#masthead nav > div > ul > li.current-menu-item,
+header#masthead nav > ul > li.current-menu-item,
+header#masthead nav > div > ul > li.current_page_item,
+header#masthead nav > ul > li.current_page_item,
+header#masthead nav div ul li ul.sub-menu,
+header#masthead nav ul li ul.sub-menu {
+	border-bottom: 3px;
+	border-bottom-style: solid;
+}
+header#masthead nav div ul li ul.sub-menu li,
+header#masthead nav ul li ul.sub-menu li {
+	border-left: 3px solid transparent;
+	position: relative;
+}
+header#masthead nav div ul li ul.sub-menu li:hover,
+header#masthead nav ul li ul.sub-menu li:hover {
+	border-left: 3px;
+	border-left-style: solid;
+}
+header#masthead nav div ul li ul.sub-menu li ul.sub-menu,
+header#masthead nav ul li ul.sub-menu li ul.sub-menu {
+	-webkit-box-shadow: rgba(175, 175, 175, 0.74902) -2px 4px 15px -2px;
+    -moz-box-shadow: rgba(175, 175, 175, 0.74902) -2px 4px 15px -2px;
+    box-shadow: rgba(175, 175, 175, 0.74902) -2px 4px 15px -2px;
+}
+header#masthead nav div ul li ul.sub-menu li ul.sub-menu li,
+header#masthead nav ul li ul.sub-menu li ul.sub-menu li {
+	border-right: 3px solid transparent;
+	border-left: 0 none;
+}
+header#masthead nav div ul li ul.sub-menu li ul.sub-menu li:hover,
+header#masthead nav ul li ul.sub-menu li ul.sub-menu li:hover {
+	border-right: 3px;
+	border-right-style: solid;
+}
 
 /* = Sticky Header (V1 - V3) Navigation
  *------------------------------------------------------------- */
 .sticky-nav > li,
 .sticky-nav > ul > li {
-	border-right: 1px solid #ededed;
 	display: inline-block;
 	margin: 0 -4px 0 0;
 }
 .sticky-nav > li:last-child { border-right: 0; }
-.sticky-nav > ul > li.current_page_item,
-.sticky-nav > ul > li.current-menu-item { background-color: #EEE; }
 .sticky-nav > ul > li.current_page_item a,
 .sticky-nav > ul > li.current-menu-item a { color: #666; }
 .sticky-nav > li.current_page_item a { color: #6D6D6D; }
@@ -1256,10 +1290,6 @@ a[rel="prev"] {
 .sticky-nav > ul > li > a {
 	margin: 0;
 	padding: 0 25px;
-}
-.sticky-nav > li:first-child,
-.sticky-nav > ul > li:first-child {
-	border-left: 1px solid #ededed;
 }
 .sticky-nav > li.menu-item-has-children > a:after,
 .sticky-nav > ul > li.menu-item-has-children > a:after {
@@ -1319,7 +1349,6 @@ a[rel="prev"] {
 	top: -1px;
 	left: 100%;
 	position: absolute;
-	background-color: #fff;
 	float: left;
 }
 
@@ -1552,12 +1581,12 @@ a[rel="prev"] {
 	max-width: 1200px;
 	margin: 0 auto;
 }
-.top-navigation li {
-	margin-bottom: 24px;
-	margin-bottom: 1.714285714rem;
+.top-navigation > div > ul > li,
+.top-navigation > ul > li {
 	font-size: 12px;
 	font-size: 0.857142857rem;
 	line-height: 1.42857143;
+	margin: 0 40px 0 0;
 }
 .top-navigation a {
 	color: #5e5e5e;
@@ -1584,8 +1613,6 @@ a[rel="prev"] {
 	border-bottom: 1px solid #ededed;
 }
 .main-navigation li {
-	margin-top: 24px;
-	margin-top: 1.714285714rem;
 	font-size: 12px;
 	font-size: 0.857142857rem;
 	line-height: 1.42857143;
@@ -1879,9 +1906,6 @@ body.blog_grid.sidebar_left #infinite-loadmore {
 }
 .widget-area .widget a {
 	color: #757575;
-}
-.widget-area .widget a:hover {
-	color: #21759b;
 }
 .widget-area #s {
 	width: 53.66666666666%; /* define a width to avoid dropping a wider submit button */
@@ -2418,7 +2442,7 @@ img.aligncenter,
 	-moz-hyphens: auto;
 	hyphens: auto;
 }
-.article-wrapper {
+body:not(.single-post) .article-wrapper {
 	margin-bottom: 60px;
 	border-bottom: 1px dashed #e3e3e3;
 }
@@ -2472,7 +2496,7 @@ span.edit-link a {
 	font-weight: normal;
 }
 
-/* =Blog Layout - Small Thumbs
+/* = Blog Layout - Small Thumbs
 -------------------------------------------------------------- */
 .small-thumbs .entry-title h2 {
 	font-family: 'Raleway', sans-serif;
@@ -2745,6 +2769,14 @@ article.format-link .entry-content .single-line-meta a {
 .blog .grid-style .format-status .entry-content p,
 .blog .grid-style .format-status .entry-meta {
 	padding: 0 15px;
+}
+
+/* = Next | Prev - Posts Navigation Links
+-------------------------------------------------------------- */
+nav.nav-single {
+	margin-top: 50px;
+	padding-top: 50px;
+	border-top: 1px dashed #EEE;
 }
 
 /* =Comments List
@@ -3219,7 +3251,7 @@ img#wpstats {
 	.top-navigation li a:focus {
 		color: #000;
 	}
-	.top-navigation li {
+	.top-navigation > ul > li {
 		margin: 0 40px 0 0;
 		margin: 0 2.857142857rem 0 0;
 		position: relative;
@@ -3249,7 +3281,6 @@ img#wpstats {
 		width: inherit;
 	}
 	.top-navigation li ul li a {
-		background: #efefef;
 		border-bottom: 1px solid #ededed;
 		display: block;
 		font-size: 11px;
@@ -3263,7 +3294,6 @@ img#wpstats {
 	}
 	.top-navigation li ul li a:hover,
 	.top-navigation li ul li a:focus {
-		background: #e3e3e3;
 		color: #444;
 	}
 	.top-navigation .current-menu-item > a,
@@ -3313,7 +3343,8 @@ img#wpstats {
 	.main-navigation li a:focus {
 		color: #000;
 	}
-	.main-navigation li {
+	.main-navigation > div > ul > li,
+	.main-navigation > ul > li {
 		margin: 0 40px 0 0;
 		margin: 0 2.857142857rem 0 0;
 		position: relative;
@@ -3343,8 +3374,6 @@ img#wpstats {
 		width: inherit;
 	}
 	.main-navigation li ul li a {
-		background: #efefef;
-		border-bottom: 1px solid #ededed;
 		display: block;
 		font-size: 11px;
 		font-size: 0.785714286rem;
@@ -3357,7 +3386,6 @@ img#wpstats {
 	}
 	.main-navigation li ul li a:hover,
 	.main-navigation li ul li a:focus {
-		background: #e3e3e3;
 		color: #444;
 	}
 	.main-navigation .current-menu-item > a,

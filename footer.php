@@ -20,6 +20,7 @@
 		is_active_sidebar( 'footer-widget-3' ) || 
 		is_active_sidebar( 'footer-widget-4' )
 	  ): ?>
+	<!-- Footer Widgets Start -->
 	<div class="footer-widgets">
 		<div class="container">
 			
@@ -48,9 +49,10 @@
 			<?php endif; ?>
 			
 		</div>
-	</div><!-- .footer-widgets -->
+	</div><!-- Footer Widgets End -->
 	<?php endif; ?>
 	
+	<!-- Footer Start -->
 	<footer id="colophon" class="clear" role="contentinfo">
 		<div class="footer-sub-wrapper clear">
 			<div class="site-info col-md-6">
@@ -66,9 +68,9 @@
 			<?php endif; ?>
 			
 		</div>
-	</footer><!-- #colophon -->
+	</footer><!-- Footer End -->
 	
-</div><!-- .main-wrapper -->
+</div><!-- Main Wrapper End -->
 
 <?php if( get_theme_mod('agama_to_top', true) ): ?>
 	<?php echo sprintf( '<a id="%s"><i class="%s"></i></a>', 'toTop', 'fa fa-angle-up' ); ?>

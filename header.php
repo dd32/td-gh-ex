@@ -31,21 +31,22 @@
 
 <body <?php body_class('stretched'); ?>>
 
-<!-- Main Wrappe -->
+<!-- Main Wrapper Start -->
 <div id="main-wrapper">
-
+	
+	<!-- Header Start -->
 	<header id="masthead" class="site-header clearfix <?php Agama::header_class(); ?>" role="banner">
 		
 		<?php get_template_part( 'framework/headers' ); // Get headers ?>
 		
-		<!-- Header Image -->
+		<!-- Header Image Start -->
 		<?php if ( get_header_image() ) : ?>
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<img src="<?php esc_url( header_image() ); ?>" class="header-image" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
 		</a>
-		<?php endif; ?><!-- / Header Image -->
+		<?php endif; ?><!-- Header Image End -->
 		
-	</header><!-- #masthead -->
+	</header><!-- Header End -->
 	
 	<?php
 	#############################################################

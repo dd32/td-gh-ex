@@ -972,88 +972,159 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'section'		=> 'agama_styling_general_section',
 		'settings'		=> 'agama_primary_color',
 		'type'			=> 'color',
+		'output'		=> array(
+			array(
+				'element'	=> 'a:hover, .entry-title a:hover, .entry-meta a:hover, .entry-content a:hover, .comment-content a:hover, .single-line-meta a:hover, a.comment-reply-link:hover, a.comment-edit-link:hover, article header a:hover, .comments-title span, .comment-reply-title span, .widget a:hover, .comments-link a:hover, .entry-meta a:hover, .entry-header header a:hover, footer[role="contentinfo"] a:hover',
+				'property'	=> 'color'
+			),
+			array(
+				'element'	=> '.top-links > ul > li.current-menu-item, .top-links > div > ul > li.current-menu-item, .top-links > ul > li.current_page_item, .top-links > div > ul > li.current_page_item, #top-navigation > ul > li.current-menu-item, #top-navigation > ul > li.current_page_item, header#masthead nav > ul > li.current-menu-item, header#masthead nav > ul > li.current_page_item, header#masthead nav ul li ul.sub-menu, header#masthead nav > div > ul > li.current_page_item, header#masthead nav > div > ul > li.current-menu-item, header#masthead nav > div > ul > li > ul.sub-menu',
+				'property'	=> 'border-color'
+			),
+			array(
+				'element'	=> 'header#masthead nav ul li ul.sub-menu li:hover',
+				'property'	=> 'border-left-color'
+			),
+			array(
+				'element'	=> 'header#masthead nav ul li ul.sub-menu li ul.sub-menu li:hover',
+				'property'	=> 'border-right-color'
+			)
+		),
 		'default'		=> '#A2C605'
 	) );
-	Kirki::add_section( 'agama_styling_header_v1_section', array(
-		'title'			=> __( 'Header V1', 'agama' ),
-		'description'	=> __( 'Header V1 styling section.', 'agama' ),
+	Kirki::add_section( 'agama_styling_headers_general_section', array( 
+		'title'			=> __( 'Headers', 'agama' ),
+		'description'	=> __( 'Headers general section.', 'agama' ),
 		'capability'	=> 'edit_theme_options',
 		'panel'			=> 'agama_styling_panel'
 	) );
-	Kirki::add_field( 'agama_header_v1_bg_color', array(
+	Kirki::add_field( 'agama_header_logo_color', array( 
+		'label'			=> __( 'Logo Color', 'agama' ),
+		'description'	=> __( 'Select logo color.', 'agama' ),
+		'tooltip'		=> __( 'Work\'s only with textual logo.', 'agama' ),
+		'section'		=> 'agama_styling_headers_general_section',
+		'settings'		=> 'agama_header_logo_color',
+		'type'			=> 'color',
+		'output'		=> array(
+			array(
+				'element'	=> 'header.site-header h1 a, header.site-header .sticky-header h1 a',
+				'property'	=> 'color'
+			)
+		),
+		'default'		=> '#A2C605'
+	) );
+	Kirki::add_field( 'agama_header_logo_hover_color', array( 
+		'label'			=> __( 'Logo Hover Color', 'agama' ),
+		'description'	=> __( 'Select logo hover color.', 'agama' ),
+		'tooltip'		=> __( 'Work\'s only with textual logo.', 'agama' ),
+		'section'		=> 'agama_styling_headers_general_section',
+		'settings'		=> 'agama_header_logo_hover_color',
+		'type'			=> 'color',
+		'output'		=> array(
+			array(
+				'element'	=> 'header.site-header h1 a:hover, header.site-header .sticky-header h1 a:hover',
+				'property'	=> 'color'
+			),
+		),
+		'default'		=> '#000'
+	) );
+	Kirki::add_field( 'agama_header_bg_color', array(
 		'label'			=> __( 'Header BG Color', 'agama' ),
 		'description'	=> __( 'Select header background color.', 'agama' ),
-		'section'		=> 'agama_styling_header_v1_section',
-		'settings'		=> 'agama_header_v1_bg_color',
+		'tooltip'		=> __( 'Doesn\'t work with header V1 style.', 'agama' ),
+		'section'		=> 'agama_styling_headers_general_section',
+		'settings'		=> 'agama_header_bg_color',
 		'alpha'			=> true,
 		'type'			=> 'color',
 		'output'		=> array(
 			array(
-				'element'	=> '.header_v1 .sticky-header',
+				'element'	=> 'header#masthead',
+				'property'	=> 'background-color'
+			),
+			array(
+				'element'	=> 'header#masthead nav ul li ul',
 				'property'	=> 'background-color'
 			)
 		),
-		'default'		=> 'rgba( 255, 255, 255, .1 )'
+		'default'		=> 'rgba( 255, 255, 255, 1 )'
 	) );
-	Kirki::add_field( 'agama_header_v1_logo_color', array( 
-		'label'			=> __( 'Logo Color', 'agama' ),
-		'description'	=> __( 'Set header v1 logo color.', 'agama' ),
-		'section'		=> 'agama_styling_header_v1_section',
-		'settings'		=> 'agama_header_v1_logo_color',
+	Kirki::add_field( 'agama_header_shrink_bg_color', array(
+		'label'			=> __( 'Header Shrinked BG Color', 'agama' ),
+		'description'	=> __( 'Select header shrinked background color.', 'agama' ),
+		'tooltip'		=> __( 'Work\'s only with header V1 & V3.', 'agama' ),
+		'section'		=> 'agama_styling_headers_general_section',
+		'settings'		=> 'agama_header_shrink_bg_color',
+		'alpha'			=> true,
 		'type'			=> 'color',
 		'output'		=> array(
 			array(
-				'element'	=> '.header_v1 .site-header .sticky-header h1 a',
-				'property'	=> 'color'
+				'element'	=> 'header.shrinked .sticky-header',
+				'property'	=> 'background-color'
 			),
 			array(
-				'element'	=> '.header_v1 .site-header .sticky-header h2 a',
-				'property'	=> 'color'
+				'element'	=> 'header.shrinked nav ul li ul',
+				'property'	=> 'background-color',
+				'suffix'	=> '!important'
 			)
 		),
-		'default'		=> '#A2C605'
+		'default'		=> 'rgba(255, 255, 255, .9)'
 	) );
-	Kirki::add_field( 'agama_header_v1_logo_hover_color', array( 
-		'label'			=> __( 'Logo Hover Color', 'agama' ),
-		'description'	=> __( 'Set header v1 logo hover color.', 'agama' ),
-		'section'		=> 'agama_styling_header_v1_section',
-		'settings'		=> 'agama_header_v1_logo_hover_color',
+	Kirki::add_field( 'agama_header_border_color', array(
+		'label'			=> __( 'Header Borders Color', 'agama' ),
+		'description'	=> __( 'Select header borders color.', 'agama' ),
+		'section'		=> 'agama_styling_headers_general_section',
+		'settings'		=> 'agama_header_border_color',
+		'alpha'			=> true,
 		'type'			=> 'color',
 		'output'		=> array(
 			array(
-				'element'	=> '.header_v1 .site-header .sticky-header h1 a:hover',
-				'property'	=> 'color'
+				'element'	=> '#top-bar',
+				'property'	=> 'border-color'
 			),
 			array(
-				'element'	=> '.site-header .sticky-header h2 a:hover',
-				'property'	=> 'color'
+				'element'	=> '.main-navigation',
+				'property'	=> 'border-color'
+			),
+			array(
+				'element'	=> '.sticky-nav ul li ul li, .sticky-nav li ul li',
+				'property'	=> 'border-color'
+			),
+			array(
+				'element'	=> '.sticky-nav ul li ul li:last-child, .sticky-nav li ul li:last-child',
+				'property'	=> 'border-color'
 			)
 		),
-		'default'		=> '#000'
+		'default'		=> 'rgba(238, 238, 238, 1)'
 	) );
-	Kirki::add_field( 'agama_header_v1_nav_color', array(
+	Kirki::add_section( 'agama_styling_navigation_section', array(
+		'title'			=> __( 'Navigation', 'agama' ),
+		'description'	=> __( 'Navigation styling section.', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+		'panel'			=> 'agama_styling_panel'
+	) );
+	Kirki::add_field( 'agama_header_nav_color', array(
 		'label'			=> __( 'Navigation Color', 'agama' ),
-		'description'	=> __( 'Set header v1 navigation color.', 'agama' ),
-		'section'		=> 'agama_styling_header_v1_section',
-		'settings'		=> 'agama_header_v1_nav_color',
+		'description'	=> __( 'Set headers navigation color.', 'agama' ),
+		'section'		=> 'agama_styling_navigation_section',
+		'settings'		=> 'agama_header_nav_color',
 		'type'			=> 'color',
 		'output'		=> array(
 			array(
-				'element'	=> '.header_v1 .site-header .sticky-header nav a',
+				'element'	=> 'header#masthead nav ul li a',
 				'property'	=> 'color'
 			)
 		),
-		'default'		=> '#D8D8D8'
+		'default'		=> '#444'
 	) );
-	Kirki::add_field( 'agama_header_v1_nav_hover_color', array(
+	Kirki::add_field( 'agama_header_nav_hover_color', array(
 		'label'			=> __( 'Navigation Hover Color', 'agama' ),
-		'description'	=> __( 'Set header v1 navigation hover color.', 'agama' ),
-		'section'		=> 'agama_styling_header_v1_section',
-		'settings'		=> 'agama_header_v1_nav_hover_color',
+		'description'	=> __( 'Set headers navigation hover color.', 'agama' ),
+		'section'		=> 'agama_styling_navigation_section',
+		'settings'		=> 'agama_header_nav_hover_color',
 		'type'			=> 'color',
 		'output'		=> array(
 			array(
-				'element'	=> '.header_v1 .site-header .sticky-header nav a:hover',
+				'element'	=> 'header#masthead nav ul li a:hover',
 				'property'	=> 'color'
 			)
 		),
@@ -1893,25 +1964,7 @@ function agama_customize_css() { ?>
 		<?php echo esc_html( get_theme_mod( 'agama_custom_css', '' ) ); ?>
 	<?php endif; ?>
 	
-	a:hover,
-	.site-header h1 a:hover, 
-	.site-header h2 a:hover,
-	.list-style .entry-content .entry-title a:hover,
-	#posts .entry-meta a:hover,
-	.entry-content a:hover, .comment-content a:hover,
-	.entry-header .single-line-meta a:hover,
-	a.comment-reply-link:hover, 
-	a.comment-edit-link:hover,
-	.comments-area article header a:hover,
-	#comments .comments-title span,
-	#respond .comment-reply-title span,
-	.widget-area .widget a:hover,
-	.comments-link a:hover, 
-	.entry-meta a:hover,
-	.format-status .entry-header header a:hover,
-	footer[role="contentinfo"] a:hover {
-		color: <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#A2C605' ) ); ?>; 
-	}
+	
 	
 	#masthead .logo {
 		max-height: <?php echo esc_attr( get_theme_mod( 'agama_logo_max_height', '90' ) ); ?>px;
@@ -1998,14 +2051,7 @@ function agama_customize_css() { ?>
 	/* HEADER V1
 	 *********************************************************************************/
 	.header_v1 .sticky-header { position: fixed; box-shadow: none; -webkit-box-shadow: none; border-bottom: 2px solid rgba(255,255,255, .1); }
-	.header_v1 .sticky-header-shrink { background-color: rgba(255, 255, 255, .95); }
-	.header_v1 .site-header .sticky-header-shrink h1 a, .site-header .sticky-header-shrink h2 a { color: #000; }
-	.header_v1 .site-header .sticky-header-shrink nav a { color: #000; }
-	.header_v1 .sticky-nav > ul > li.current_page_item, .sticky-nav > ul > li.current-menu-item { background-color: transparent; }
-	.header_v1 .site-header .sticky-header nav ul.sub-menu a { color: #000; }
-	.header_v1 .sticky-nav > li:first-child, .sticky-nav > ul > li:first-child { border-left: 0 none; }
-	.header_v1 .sticky-nav > li, .sticky-nav > ul > li { border-right: 0 none; }
-	.header_v1 .sticky-header ul li ul { background-color: rgba(255, 255, 255, .95); }
+	.header_v1.shrinked .sticky-header { border-bottom: 0 none; }
 	<?php endif; ?>
 	
 	<?php if( get_theme_mod( 'agama_header_style', 'transparent' ) == 'sticky' && get_theme_mod( 'agama_top_navigation', true ) ): ?>
@@ -2037,13 +2083,6 @@ function agama_customize_css() { ?>
 		border-top-style: solid;
 	}
 	<?php endif; ?>
-	
-	.sticky-nav > li > ul {
-		border-top: 2px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#A2C605' ) ); ?>;
-	}
-	.sticky-nav > li > ul > li > ul {
-		border-right: 2px solid <?php echo esc_attr( get_theme_mod( 'agama_primary_color', '#A2C605' ) ); ?>;
-	}
 	
 	#page-title { background-color: <?php echo esc_attr( get_theme_mod( 'agama_breadcrumb_bg_color', '#F5F5F5' ) ); ?>; }
 	#page-title h1, .breadcrumb > .active { color: <?php echo esc_attr( get_theme_mod( 'agama_breadcrumb_text_color', '#444' ) ); ?>; }

@@ -2,6 +2,11 @@ Agama WordPress Theme, Copyright 2015 Theme-Vision.com
 Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
+= 1.2.4 November 22 2016 =
+* Fixed dashed lines issue when comments are disabled.
+* Minor styling fixes.
+* Minor coding fixes.
+
 = 1.2.3 July 25 2016 =
 * Minor theme updates.
 
