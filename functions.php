@@ -92,7 +92,7 @@ function barista_theme_setup() {
     
     // Enable and activate custom background for Barista.
     add_theme_support('custom-background', array(
-        'default'      => '999999',
+        'default-color'      => 'e6e3d4',
     ));
     
     // Enable and activate Feature Images for Barista.

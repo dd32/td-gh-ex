@@ -3,8 +3,8 @@ Barista WordPress Theme
 Contributor: benlumia007
 Tags: custom-background, custom-header, right-sidebar
 Requres at least: 4.5.3
-Tested up to: 4.6
-Stable tag: 0.1.1
+Tested up to: 4.7
+Stable tag: 0.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,6 +53,15 @@ Not Available At the Moment
 
 Changelog
 ================================================================================================
+Version: 2.4
+Fixed Layouts
+
+Version: 2.3
+Fixed Bugs
+
+Version: 2.2
+Minor Change
+
 Version: 2.1
 Major changes into Responsive.
 
