@@ -61,6 +61,11 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.02
+* Styling fix for mobile
+Premium: Added setting to select dark/light mobile menu colors
+Premium: Added setting to select custom mobile menu colors
+
 #### 1.3.01
 * Added hooks to the header
 * Changed block titles to always show on mobile
