@@ -68,6 +68,10 @@ View the settings under Appearance -> ALBAR Settings.
 
 == Changelog ==
 
+#### 1.7.6
+* Updated language .pot file
+* Added advice notice
+
 #### 1.7.5
 * Fix Hide/Show header Search setting
 * Added missing sanitization

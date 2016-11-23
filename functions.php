@@ -4,7 +4,7 @@
  *
  * @package Albar
  */
-define( 'KAIRA_THEME_VERSION' , '1.7.5' );
+define( 'KAIRA_THEME_VERSION' , '1.7.6' );
 
 // Is ONLY USED IF the user prompts for the premium update
 define( 'KAIRA_UPDATE_URL', 'https://updates.kairaweb.com/' );
@@ -370,3 +370,37 @@ function kaira_register_required_plugins() {
     tgmpa( $plugins, $config );
 }
 add_action( 'tgmpa_register', 'kaira_register_required_plugins' );
+
+/* Enque Admin CSS for Conica notice */
+function kaira_load_admin_notice_script() {
+    wp_enqueue_style( 'kaira-admin-notice-css', get_template_directory_uri() . '/settings/css/kaira-admin-notice.css' );
+}
+add_action( 'admin_enqueue_scripts', 'kaira_load_admin_notice_script' );
+
+/* Display the admin Conica Recommendation notice */
+function kaira_recommended_plugin_notice() {
+    global $current_user;
+    $user_id = $current_user->ID;
+    
+    if ( ! get_user_meta( $user_id, 'kaira_recommended_plugin_ignore_notice' ) ) {
+        echo '<div class="updated albar-conica-notice"><p>';
+        printf( __( '<a href="%1$s" class="albar-conica-notice-close"></a></p>', 'albar' ), '?kaira_recommended_plugin_nag_ignore=0' ); ?>
+            <?php printf( __( 'We\'ve rebuilt Albar and named it Conica, and turned it into a power theme. <a href="%1$s" target="_blank">Download and try Conica instead now</a> :)', 'albar' ), 'https://kairaweb.com/theme/conica/' ); ?>
+            <a href="<?php echo esc_url( 'https://kairaweb.com/theme/conica/' ); ?>" class="albar-conica-img" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/conica-screenshot.png" alt="<?php esc_attr_e( 'Try out Conica instead', 'albar' ); ?>" /></a>
+        <?php
+        echo '</p></div>';
+    }
+}
+add_action('admin_notices', 'kaira_recommended_plugin_notice');
+
+/* Dismiss notice */
+function kaira_recommended_plugin_nag_ignore() {
+    global $current_user;
+    $user_id = $current_user->ID;
+        
+    /* If user clicks to ignore the notice, add that to their user meta */
+    if ( isset($_GET['kaira_recommended_plugin_nag_ignore']) && '0' == $_GET['kaira_recommended_plugin_nag_ignore'] ) {
+        add_user_meta( $user_id, 'kaira_recommended_plugin_ignore_notice', 'true', true );
+    }
+}
+add_action('admin_init', 'kaira_recommended_plugin_nag_ignore');
