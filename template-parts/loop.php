@@ -29,7 +29,7 @@ if( have_posts() ):
 
 			<?php // Post thumbnail
 			if( has_post_thumbnail() && get_theme_mod('thumbnail_index', true) ): ?>
-				<a class="post-thumbnail" href="<?php esc_url( get_the_permalink() ); ?>" aria-hidden="true">
+				<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
 					<?php the_post_thumbnail( 'post-thumbnail', array( 'alt' => the_title_attribute( 'echo=0' ) ) ); ?>
 				</a>
 			<?php endif; ?>
@@ -47,7 +47,7 @@ if( have_posts() ):
 						
 						// Read more 
 						if( get_theme_mod('read_more', true) ): ?>
-							<a class="read-more" title="<?php esc_attr( the_title() ); ?>" href="<?php esc_url( get_the_permalink() ); ?>">
+							<a class="read-more" title="<?php esc_attr( the_title() ); ?>" href="<?php the_permalink(); ?>">
 								<?php _e( 'Read more', 'bidnis' ); ?>
 							</a>
 						<?php endif;

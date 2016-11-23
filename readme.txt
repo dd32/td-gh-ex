@@ -73,3 +73,6 @@ https://www.pexels.com/photo/mock-up-technology-laptop-apple-51171/
 - Replaced customized css styles being added to the header with wp_add_inline_style option
 - Fixed sticky post icon not showing
 - Added editor stylesheet
+
+1.1.2 - 2016.11.23
+- Fixed usage of get_the_permalink instead of the_permalink on .post-thumbnail and .read-more in template-parts/loop.php
