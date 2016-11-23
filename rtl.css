@@ -68,3 +68,15 @@ span.read-more i.fa-caret-right:before {
 .navigation.pagination .fa-angle-double-left:before {
 	content: "\f101";
 }
+aside ul.menu .indicatorBar {
+	right: inherit;
+	left: 0;
+	border-left-width: inherit;
+    border-left-style: inherit;
+	border-right-width: 1px;
+    border-right-style: solid;
+}
+aside ul.menu ul.sub-menu {
+    padding-left: inherit;
+	padding-right: 2em;
+}

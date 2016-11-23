@@ -4,7 +4,7 @@ Theme URI: http://crestaproject.com/downloads/annina/
 Author: Rizzo Andrea - CrestaProject.com
 Author URI: http://crestaproject.com
 Description: Annina is clean & fresh responsive WordPress Blog Theme, full width and masonry based, one main column e one sidebar column, unlimited colors and theme options by CrestaProject.com. Live demo http://crestaproject.com/demo/annina/
-Version: 1.4.2
+Version: 1.4.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: annina
@@ -950,6 +950,47 @@ a:active,
 .widget_archive li a, .widget_categories li a {
 	float: left;
 }
+/* Menu Widget */
+aside ul.menu ul.sub-menu {
+	display: none;
+	padding-left: 2em;
+}
+aside ul.menu li {
+	position: relative;
+	border-bottom-width: 0;
+    border-bottom-style: none;
+    border-bottom-color: transparent;
+    padding: 0;
+}
+aside ul.menu li a {
+	border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-color: rgba(0,0,0,.05);
+    padding: 0.5em 0;
+	display: block;
+	height: 41px;
+}
+aside ul.menu .indicatorBar {
+	position: absolute;
+    right: 0;
+    top: 0;
+    width: 41px;
+    height: 41px;
+    line-height: 41px;
+    text-align: center;
+	cursor: pointer;
+    font-family: 'FontAwesome';
+	font-size: 12px;
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-color: rgba(0,0,0,.05);
+}
+aside ul.menu .indicatorBar:before {
+	content: "\f107";
+}
+aside ul.menu .indicatorBar.yesOpenBar:before {
+	content: "\f106";
+}
 /*--------------------------------------------------------------
 10.0 Content
 --------------------------------------------------------------*/
@@ -1284,12 +1325,6 @@ aside ul li {
 }
 aside ul li:last-child {
 	border-bottom: 0px;
-}
-aside ul li ul.sub-menu, aside ul li ul.children {
-	padding-left: 5%;
-}
-aside ul li ul.sub-menu li, aside ul li ul.children li {
-	padding-top: 1em;
 }
 
 /*--------------------------------------------------------------

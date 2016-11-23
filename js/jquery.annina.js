@@ -74,6 +74,27 @@
 			});	
 			
 		/*-----------------------------------------------------------------------------------*/
+		/*  Menu Widget
+		/*-----------------------------------------------------------------------------------*/
+			if ( $( 'aside ul.menu' ).length ) {
+				$('aside ul.menu').find("li").each(function(){
+					if($(this).children("ul").length > 0){
+						$(this).append("<span class='indicatorBar'></span>");
+					}
+				});
+				$('aside ul.menu > li.menu-item-has-children .indicatorBar, .aside ul.menu > li.page_item_has_children .indicatorBar').click(function() {
+					$(this).parent().find('> ul.sub-menu, > ul.children').toggleClass('yesOpenBar');
+					$(this).toggleClass('yesOpenBar');
+					var $self = $(this).parent();
+					if($self.find('> ul.sub-menu, > ul.children').hasClass('yesOpenBar')) {
+						$self.find('> ul.sub-menu, > ul.children').slideDown(300);
+					} else {
+						$self.find('> ul.sub-menu, > ul.children').slideUp(200);
+					}
+				});
+			}
+			
+		/*-----------------------------------------------------------------------------------*/
 		/*  Detect Mobile Browser
 		/*-----------------------------------------------------------------------------------*/ 
 		if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
