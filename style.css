@@ -1,25 +1,16 @@
 /*
 THEME NAME: Afia
-DESCRIPTION: This theme has a traditional blog layout and is simple, flexible and light-weight.
+DESCRIPTION: Simple minimal & responsive theme.
 Theme URI:https://github.com/dominic-n/afia
 Text Domain:  afia
 TAGS: right-sidebar, custom-background, custom-menu, custom-header, editor-style, featured-images, light, threaded-comments, sticky-post
-VERSION: 1.2.3
+VERSION: 1.9.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 AUTHOR:DOMINIC_N
 */
 
-/*#content*/
 
-#content
-{
-position:relative;
-top:30px;
-left:10%;
-right:10%;
-width:80%;
-}
 .inline
 {
 display:inline;
@@ -52,7 +43,9 @@ left:170px;
 .site-title
 {
 display:inline;
-font-family:Algerian;
+font-size: 24px;
+    line-height: 1.042;
+    font-weight: 700;
 }
 .site-description
 {
@@ -75,40 +68,39 @@ width:10px;
 height:15px;
 width:20px;
 }
-#leftContent
-{
 
-position:relative;
-width:70%;
-padding-left:2%;
-}
 @media screen and(max-device-width: 1250px)
 {
-#content
-{
-position:relative;
-top:30px;
-left:10%;
-right:10%;
-width:80%;
-}
-#leftContent
-{
-position:relative;
-width:70%;
-padding-left:2%;
-}
+
+
 
 }
  .categ
 {
 color:green;
 }
-.linka, .linka a ,.site-title a 
+.linka, .linka a
 {
 text-decoration:none;
-color:green;
 }
+.navbar-default a {
+  color:#34495e;
+  font-family:sans-serif;
+}
+.navbar-default .navbar-header:hover a,
+.navbar-default .navbar-nav>li>a:hover,.navbar-default .navbar-brand:hover
+,
+.navbar-default .navbar-nav a:hover
+{
+  color: #1abc9c;
+  text-decoration: none;
+}
+.navbar-collapse, .menu {
+    box-shadow: none;
+    padding-right: 21px;
+    padding-left: 21px;
+}
+
 .linkb
 {
 text-decoration:none;
@@ -131,22 +123,18 @@ text-decoration:underline;
 text-transform:uppercase;
 }
 
-.header
+header.header
 {
-position:relative;
-left:5%;
-top:20px;
-width:90%;
+  background-color: #ecf0f1;
+}
+.navbar-collapse{
+  float: right;
+}
+.navbar-default{
+  width: 100%;
 }
 .footertext a{text-decoration:none;color:green;}
-#sideba
-{
-position:relative;
-width:25%;
-top:10px;
-left:1%;
-line-height: 2;
-}
+
 .recent-single-a, .categories a
 {
 text-decoration:none;
@@ -189,9 +177,10 @@ padding-top:5px;
 padding-bottom:5px;
 }
 #errall{padding-left:10%;}
-#sideba ul{list-style:none;}
+#sideba ul{list-style:none; padding-left:0px;}
+#sideba ul li{    padding: 10px 3px;}
 #sideba h3{text-align:center;}
-#sideba>div{padding:2%; background:#eeeeee; border-radius:5px; margin-bottom:5px;}
+#sideba>div{padding:2%; border-radius:5px; margin-bottom:15px;}
 .dotot
 {
 	display:inline-block;
@@ -207,7 +196,7 @@ color:green;
 text-decoration:none;
 text-transform:capitalize;
 color:black;
-font-family:Informal Roman,Copperplate Gothic Bold,Calibri;
+font-family:Calibri;
 }
 .idle:hover
 {
@@ -257,6 +246,20 @@ border-color:green;
 background:rgb(234,238,238);
 color:black;
 font-family:Calibri;
+}
+body{
+  line-height:0;
+  font-size:15px;
+  font-family:sans-serif;
+}
+#content{
+  margin-top: 15px;
+}
+#content,header.header{
+  line-height: 1.42857143;
+}
+.content-post{
+  line-height: 1.82857143;
 }
 .comment-body
 {
@@ -341,13 +344,16 @@ text-transform:capitalize;
 }
 #footba
 {
+position: relative;
+width:100%;
+word-wrap: break-word;
 bottom:0px;
-min-height:30px;
+padding:5px 2px;
+text-align: center;
 }
 .footertext
 {
 position:relative;
-left:300px;
 }
 .nav-links a
 {
@@ -396,9 +402,9 @@ dt {
     padding: 0 0 0.5em 0;
 	text-indent:30px;
   }
-  #leftContent ol li ol
+  .dotot ol li ol
   {list-style-type:upper-alpha;}
-  #leftContent ol li ol li ol{list-style-type:upper-roman}{}
+  .dotot ol li ol li ol{list-style-type:upper-roman}{}
   address {border-width:1px;border-radius:5px;background:#f9f9f9;text-decoration:italic; position:relative;left:30px;}
   abbr[title], acronym[title] {
      border-bottom-width: 0;
@@ -413,7 +419,7 @@ text-decoration: none;
 border-bottom: 1px dotted;
 }
  kbd {border-width:1px;border-radius:5px;background:#f9f9f9;text-decoration:italic;text-decoration:bold;color:green;} 
- #leftContent{-ms-word-break:break-word; word-wrap: break-word;}
+ .dotot{-ms-word-break:break-word; word-wrap: break-word;}
  q { quotes: '"' '"'; }
  sub,sup{color:green;}
  var{border-width:1px;border-radius:5px;background:#f9f9f9;text-decoration:italic;text-decoration:bold;color:red;}
@@ -421,9 +427,13 @@ border-bottom: 1px dotted;
     border-collapse: collapse;
 }
  table, th, td {
-   border-width: 1px ;
+   border-width: 0px ;
    border:solid;
    border-color:black;}
+   th,td{
+    padding:5px;
+   }
+   tr:nth-child(even) {background-color: #f2f2f2}
    thead {
     background-color: green;
     color: white;
@@ -468,7 +478,8 @@ left:5%;
 }
 .sticky
 {
-background: #f9f9f9;
+background: #e9e9e9;
+padding:10px 5px;
 }
 .sticky:before
 {
@@ -586,22 +597,235 @@ a img.aligncenter {
 .bypostauthor {
   background-color: #fcfcfc;
 }
-#menu {margin-bottom:20px;}
-.tes ul { display:block;padding:0px;
-    white-space:nowrap; margin:0px;}
-.tes * {list-style:none; margin:0px;}
-.tes>div>ul>li{float:left;}
-.tes>div>ul>li>.submenu{margin:0px;}
-.sub-menu {position:absolute;z-index:100;}
-.sub-menu .sub-menu{display:inline-block;}
-.sub-menu ul,.sub-menu li{display:block; margin:0px;}
-.menu-item-has-children > ul {visibility:hidden;}
-.menu-item-has-children:hover > .sub-menu {visibility:visible;}
-.tes a {margin-left:10px;margin-right:10px; color:green;
-text-transform:uppercase;
-    font:'Lucida Grande','Lucida Sans Unicode',Arial,Verdana,sans-serif;
-    letter-spacing:0.15em;
-    text-decoration:none;
-    }
-.tes li{height:42px; margin:0px; background:rgba(220,220,220,.9);text-align:center; line-height:42px;}
-.tes li:hover{background:rgba(220,120,20,.9);}
+header.header,ul.sub-menu,#leftContent,#sideba>div,.breadcrumbs span{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/****
+8***8***
+Menu
+***8***8
+****/
+#menu{
+left:30px;
+}
+#menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#menu ul li {
+  display: block;
+  position: relative;
+  float: left;
+  background:  #5FB6CC;
+  z-index:9999;
+}
+
+#menu li ul { display: none; min-width:100%; }
+
+#menu ul li a {
+  display: block;
+  padding: 1em;
+  text-decoration: none;
+  white-space: nowrap;
+  color: #fff;
+}
+
+#menu ul li a:hover { background: #d8dcd7; }
+#menu li.menu-item-has-children:hover>ul.sub-menu{
+  display: block;
+  position: absolute;
+}
+
+#menu li:hover li { float: none; }
+
+#menu li:hover a { background: #5FB6CC; }
+
+li:hover li a:hover { background: #2c3e50; }
+
+#menu li ul li { border-top: 0; }
+#menu ul ul ul {
+  left: 100%;
+  top: 0;
+}
+#menu ul:before,
+#menu ul:after {
+  content: " "; /* 1 */
+  display: table; /* 2 */
+}
+
+#menu ul:after { clear: both; }
+
+
+.abcen1
+{
+  padding-top:150px;
+}
+.h3_home{
+  margin-bottom: 60px;
+}
+/*pagination*/
+
+.nav-links {
+  display: inline-block;
+  padding-left: 0;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+
+.nav-links .page-numbers{
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42857143;
+  color: #337ab7;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+.nav-links:first-child {
+  margin-left: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+.nav-links:last-child{
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.nav-links a:hover
+.nav-links a:focus{
+  z-index: 2;
+  color: #23527c;
+  background-color: #eee;
+  border-color: #ddd;
+}
+.nav-links .current{
+  z-index: 3;
+  color: #fff;
+  cursor: default;
+  background-color: #337ab7;
+  border-color: #337ab7;
+}
+#sideba{
+  padding-left: 10px;
+}
+/*Breadcrumb*/
+.breadcrumbs { 
+  list-style: none; 
+  overflow: hidden; 
+  margin:10px 0px 20px;
+}
+.breadcrumbs a{
+  color:#1abc9c;
+}
+.breadcrumbs span.active{
+  color:white;
+}
+.breadcrumbs span {
+  text-decoration: none;
+  outline: none;
+  display: block;
+  float: left;
+  font-size: 16.9px;
+  font-family: serif,Calibri; 
+  line-height: 36px;
+  color: white;
+  /*need more margin on the left of links to accomodate the numbers*/
+  padding: 0 10px 0 60px;
+  background: #666;
+  background: linear-gradient(#666, #333);
+  position: relative;
+}
+/*since the first link does not have a triangle before it we can reduce the left padding to make it look consistent with other links*/
+.breadcrumbs span:first-child {
+  padding-left: 46px;
+  border-radius: 5px 0 0 5px; /*to match with the parent's radius*/
+}
+.breadcrumbs span:first-child:before {
+  left: 14px;
+}
+.breadcrumbs span:last-child {
+  border-radius: 0 5px 5px 0; /*this was to prevent glitches on hover*/
+  padding-right: 20px;
+}
+
+/*hover/active styles*/
+.breadcrumbs span.active, .breadcrumbs span:hover{
+  background: #333;
+  background: linear-gradient(#333, #000);
+}
+.breadcrumbs span.active:after, .breadcrumbs span:hover:after {
+  background: #333;
+  background: linear-gradient(135deg, #333, #000);
+}
+
+/*adding the arrows for the breadcrumbs using rotated pseudo elements*/
+.breadcrumbs span:after {
+  content: '';
+  position: absolute;
+  top: 0; 
+  right: -18px; /*half of square's length*/
+  /*same dimension as the line-height of .breadcrumbs a */
+  width: 36px; 
+  height: 36px;
+  /*as you see the rotated square takes a larger height. which makes it tough to position it properly. So we are going to scale it down so that the diagonals become equal to the line-height of the link. We scale it to 70.7% because if square's: 
+  length = 1; diagonal = (1^2 + 1^2)^0.5 = 1.414 (pythagoras theorem)
+  if diagonal required = 1; length = 1/1.414 = 0.707*/
+  transform: scale(0.707) rotate(45deg);
+  /*we need to prevent the arrows from getting buried under the next link*/
+  z-index: 1;
+  /*background same as links but the gradient will be rotated to compensate with the transform applied*/
+  background: #666;
+  background: linear-gradient(135deg, #666, #333);
+  /*stylish arrow design using box shadow*/
+  box-shadow: 
+    2px -2px 0 2px rgba(0, 0, 0, 0.4), 
+    3px -3px 0 2px rgba(255, 255, 255, 0.1);
+  /*
+    5px - for rounded arrows and 
+    50px - to prevent hover glitches on the border created using shadows*/
+  border-radius: 0 5px 0 50px;
+}
+/*we dont need an arrow after the last link*/
+.breadcrumbs span:last-child:after {
+  content: none;
+}
+#searchsubmit{
+  padding: 4px 10px;
+  background:#1e88cf;
+  color:white;
+  border:1px solid #1e88cf;
+  border-radius:3px;
+}
+#s{
+   padding: 4px 0px;
+  border:1px solid;
+  border-radius:3px;
+  width:60%;
+}
+#leftContent{
+  padding-bottom:30px;
+}
+.thumbnail.shortform{
+  width:20%;
+  padding:5px;
+  float:left;
+  margin:0px 5px 5px 0px;
+}
+.thumbnail.shortform img{
+  width:100%;
+  max-height:100px;
+  margin:0px;
+  left:0px;
+}
+.floatnone{
+  clear:both;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family:cursive,serif;
+}
+#leftContent a{
+  font-family:monospace;
+}

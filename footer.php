@@ -9,8 +9,9 @@
 <!--End of #leftContent-->
 </div>
 <!--Side bar inclusion-->
-<div id = "sideba" class="dotot">
+<div id = "sideba" class="dotot col-md-3">
 	<?php get_sidebar();?>
+</div>
 </div>
 <!--End of #content-->
 <br />
@@ -20,7 +21,7 @@
 <div id = "footba">
 <span class = "footertext">
 <?php 
-echo afia_echo_footer();
+echo  __('Theme powered by:','afia'). '<a href="https://WordPress.org"> WordPress</a>: &copy; <a href ="'.esc_url(home_url("/")).'">'. get_bloginfo( 'title' ) .'</a>';;
 
 ?>
 </span>

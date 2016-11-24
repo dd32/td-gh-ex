@@ -19,53 +19,68 @@ wp_head();
 ?>
 </head>
 <body <?php body_class(); ?>>
-<!--We create a div container for the #content -->
-<div id = "content">
+
 <header class="header">
-<?php if(esc_url( get_theme_mod( 'afia_upload_logo') ) ):?>
-<a href = "<?php echo esc_url( home_url( '/' ) );?>">
-<img src = "<?php echo esc_url( get_theme_mod( 'afia_upload_logo') ); ?>"/>
-</a>
-<?php else:?>
-        <h1 class="site-title">
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-        </h1>
-        <span class="site-description">
-<div class="inline">
-<?php  
-		afia_short_description();
-		?>
+<nav class = "navbar-default">
+<div class = "container-fluid">
+<div class = "navbar-header">
+<?php  if(get_theme_mod( 'custom_logo' )):?>
+	<span id = "logo" style="float:left;">
+	</span>
+	<?php endif;?>
+<i class ="fa fa-align-justify navbar-toggle"></i>
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="navbar-brand" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 </div>
-</span>
-<?php endif;?>
-<div class="inline">
-		<?php 
-		afia_logged_details();
-		?>
-</div>
-<div id ="menu">
-<div class = 'tes'>
 <?php
 $defaults = array(
 	'theme_location'  => 'primary',
 	'echo'            => true,
-	'fallback_cb'     => '',
 );
- wp_nav_menu($defaults ); ?>
+ ?>
+ <div id = "menu">
+	<?php wp_nav_menu($defaults ); ?>
+ </div>
 </div>
-</div>
-<br />
-<br />
+</nav>
+</header><!-- .header -->
+
 <?php 
-if(get_header_image() != ''){?>
+if(get_header_image() && (get_theme_mod('afia_show_header') || is_home() )){?>
 <div id = "header-img">
-<img src="<?php header_image(); ?>"  alt="" />
+	<div class="col-xs-12 text-center abcen1">
+	<?php  if(get_theme_mod( 'custom_logo' )):?>
+	<span id = "logo">
+	</span>
+	<?php endif;?>
+			<h1 class="h1_home"><?php _e(afia_sanitize_strip_slashes(get_theme_mod('afia_header_title','Afia')),'afia');?></h1>
+			<h3 class="h3_home"><?php _e(afia_sanitize_strip_slashes(get_theme_mod('afia_header_description','Clean & minimal Theme')),'afia');?></h3>
+			<a class ="space" href = "<?php echo(esc_url(get_theme_mod('afia_header_url','#')));?>"><button class = "btn btn-info"><?php _e(afia_sanitize_strip_slashes(get_theme_mod('afia_text_url','Check it out')),'afia');?></button></a>
+		</div>    
 </div>
+<script>
+jQuery(document).ready(function($){
+if($("#header-img").length)
+{
+	function x(){
+	$("#header-img").height($(window).height()+"px");
+	};
+	$(window).resize(x());
+	x();
+}
+});</script>
 <?php }?>
-</header><br /> <!-- .header -->
+<!--We create a div container for the #content -->
+<div id = "content" class = "<?php 
+$layout = afia_sanitize_layout(get_theme_mod('afia_sidebar_position','side-right'));
+if($layout == 'full-width')
+echo "container-fluid";
+else
+echo "container";
+?>">
+<div class = "row">
 <!--#leftContent-->
-<div id = "leftContent" class="dotot">
-<div class = "top-bar">
+<div id = "leftContent" class="dotot col-md-9">
+<div class = "breadcrumbs">
 <!--Top-bar class -->
 <?php afia_top_bar();?>
 </div>

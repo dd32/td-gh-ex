@@ -3,29 +3,20 @@
 /*-----------------------------------------------------------------------------------*/
 
 Theme Name      :   Afia
-Version         :   1.2.0
-Tested up to    :   WP 4.3
+Version         :   1.9.9
+Tested up to    :   WP 4.6.1
 Author          :   Dominic_N
 
 license         :   GNU General Public License v2.0
 License URI     :   http://www.gnu.org/licenses/gpl-2.0.html
 
 /*-----------------------------------------------------------------------------------*/
-/* About Author - Contact Details */
-/*-----------------------------------------------------------------------------------*/
-
-email       :   dominicnjoroge2@gmail.com
-skype       :   dominic.njoroge
-/*-----------------------------------------------------------------------------------*/
 /* Theme Features */
 /*-----------------------------------------------------------------------------------*/
 
 afia is a simple and responsive WordPress theme which is still under constant 
 maintenance and this version offer different customizing options, background color and image and also 
-custom header, it also support handheld devices tested on apple 6, samsung dual among others
-if you find any display issues on any handheld devices,
- just contact me email :   dominicnjoroge2@gmail.com
- with the details of the device.
+custom header.
 
 /*-----------------------------------------------------------------------------------*/
 /* Description of Theme */
@@ -65,20 +56,18 @@ fontawesome icon font, Copyright 2014 Dave Gandy
 Font Awesome licensed under SIL OFL 1.1 · Code licensed under MIT License
 Source: https://fortawesome.github.io/Font-Awesome/icons/
 
-pat.jpg image, Copyright 2015 Dominic_N
-pat.jpg licensed under the terms of the GNU GPL, Version 2 (or later)
-Source: http://postimg.org/image/grpjcek3z/
+Bootstrap, Copyright 2015 Twitter,
+released under the terms of the MIT license
+Source: https://getbootstrap.com/
 
 screenshot.png image, Copyright 2015 Dominic_N
 screenshot.png licensed under the terms of the GNU GPL, Version 2 (or later)
-Source: http://postimg.org/image/jn3v0smu5/
+Source: https://postimg.org/image/rargo5gvz/
 
-water-lake-mountains-sky.jpg image, Copyright pexels
-water-lake-mountains-sky.jpg is licensed under  Creative Commons Zero (CC0) license
-Source:https://www.pexels.com/photo/water-lake-mountains-sky-9458/
+header.jpg image, Copyright pexels
+header.jpg is licensed under  Creative Commons Zero (CC0) license
+Source:https://www.pexels.com/photo/bike-waves-of-sea-under-clouded-blue-sky-during-daytime-112367/
 
 html5shiv  Copyright (c) 2014 Alexander Farkas (aFarkas).
 Dual licensed under the MIT or GPL Version 2 licenses
 Homepage : https://remysharp.com/2009/01/07/html5-enabling-script
-
-

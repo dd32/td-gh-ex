@@ -11,10 +11,10 @@
  | <span class = "author"><i class="fa fa-user"></i> <span class = "linka"><?php the_author_posts_link();?></span></span>
 <hr />
 </header>
-<div id = "pos-ex" class = "content-post">
+<div id = "pos-ex" class = "content-post exceprt">
 <!-- featured image -->
     <?php if ( '' != get_the_post_thumbnail() ) { ?>
-      <div class="exc-featured-image thumbnail">
+      <div class="exc-featured-image thumbnail shortform">
           <?php the_post_thumbnail('featured-single'); ?>
       </div>
     <?php } ?>
@@ -30,7 +30,7 @@ endif;
 ?>
 </div>
 </div>
-<footer>
+<footer class="floatnone">
 <hr />
 <span class = "categ">
 <i class="fa fa-folder-o"></i> <span class = "linka"><?php echo the_category(', ');?></span>
