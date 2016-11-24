@@ -1,7 +1,7 @@
 APERTURE
-Theme Version: 1.1.7
+Theme Version: 1.1.8
 Author: Michael Van Den Berg 
-Author URL: http://michaelvandenberg.com/
+Author URL: https://michaelvandenberg.com/
 
 --------------------
 === Description ===
@@ -96,6 +96,17 @@ After installing and activating the Jetpack plugin follow these steps:
 --------------------
 === Changelog ===
 --------------------
+
+*
+* 1.1.8 / 24.11.2016
+* - Changed theme URI to: https://michaelvandenberg.com/themes/#aperture
+* - Removed title shim for sites older than WordPress 4.1.
+* - Updated the tags in style.scss and style.css.
+* - Added missing text domain in search-form.php.
+* - Escaped some stuff that needed to be escaped.
+* - Optimized screenshot.png (reduced file size by 75%).
+* - Removed the sass files from the (WordPress.org) distribution copy.
+* 
 
 *
 * 1.1.7 / 27.11.2015
