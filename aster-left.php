@@ -11,24 +11,20 @@ get_header(); ?>
 		</div>
 
 		<div class="col-md-8">
-				<?php while(have_posts()) : the_post(); ?>
+			<?php while(have_posts()) : the_post(); ?>
 
-					<?php get_template_part('content', 'page'); ?>
+				<?php get_template_part('content', 'page'); ?>
 
-					<?php if (!get_theme_mod('aster_page_comments')) : ?>
+					<?php
+					// If comments are open or we have at least one comment, load up the comment template
+					if ( comments_open() || get_comments_number() ) : ?>
+						<div class="comment-box">
+							<?php comments_template(); ?>
+						</div>
+					<?php endif;
+					?>
 
-						<?php
-						// If comments are open or we have at least one comment, load up the comment template
-						if ( comments_open() || get_comments_number() ) : ?>
-							<div class="comment-box">
-								<?php comments_template(); ?>
-							</div>
-						<?php endif;
-						?>
-
-					<?php endif; ?>
-
-				<?php endwhile; ?>
+			<?php endwhile; ?>
 		</div>
 
 	</div>

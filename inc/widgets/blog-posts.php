@@ -2,15 +2,13 @@
 
 add_action('widgets_init','register_aster_blog_posts_widget');
 
-function register_aster_blog_posts_widget()
-{
+function register_aster_blog_posts_widget() {
 	register_widget('Aster_Blog_Posts_Widget');
 }
 
 class Aster_Blog_Posts_Widget extends WP_Widget{
 
-	function Aster_Blog_Posts_Widget()
-	{
+	function Aster_Blog_Posts_Widget(){
 		parent::__construct( 'Aster_Blog_Posts_Widget', __('Aster Recent Posts', 'aster'), array('description' => __('Aster Recent posts widget to display recent posts', 'aster')));
 	}
 
@@ -19,8 +17,7 @@ class Aster_Blog_Posts_Widget extends WP_Widget{
 	 *				Front-end display of widget
 	 *-------------------------------------------------------*/
 
-	function widget($args, $instance)
-	{
+	function widget($args, $instance) {
 		extract($args);
 
 		$title 			= apply_filters('widget_title', $instance['title'] );
@@ -79,7 +76,7 @@ class Aster_Blog_Posts_Widget extends WP_Widget{
 
 					$output .='<div class="media-body">';
 					$output .= '<h3 class="entry-title"><a href="'.esc_url(get_permalink()).'">'. get_the_title() .'</a></h3>';
-					$output .= '<div class="entry-meta small">' . get_the_time() . ', ' . get_the_date('d M Y') . '</div>';
+					$output .= '<div class="entry-meta small">' . get_the_time() . ', ' . get_the_date() . '</div>';
 					$output .='</div>';
 
 				$output .='</div>';
@@ -97,20 +94,18 @@ class Aster_Blog_Posts_Widget extends WP_Widget{
 	}
 
 
-	function update( $new_instance, $old_instance )
-	{
+	function update( $new_instance, $old_instance ){
 		$instance = $old_instance;
 
 		$instance['title'] 			= strip_tags( $new_instance['title'] );
 		$instance['order_by'] 		= strip_tags( $new_instance['order_by'] );
-		$instance['count'] 			= strip_tags( $new_instance['count'] );
+		$instance['count'] 			= absint( $new_instance['count'] );
 
 		return $instance;
 	}
 
 
-	function form($instance)
-	{
+	function form($instance) {
 		$defaults = array( 
 			'title' 	=> __('Latest Posts', 'aster'),
 			'order_by' 	=> 'latest',

@@ -1,31 +1,26 @@
 <footer id="footer">
 	<div class="copy-right-text text-center">
-		<?php if(get_theme_mod('aster_footer_copyright')): ?>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<p><?php
-							$copyright = get_theme_mod('aster_footer_copyright');
-							$allowed_tags = array(
-								'strong' => array(),
-								'a' => array(
-									'href' => array(),
-									'title' => array()
-								)
-							);
-							echo wp_kses( $copyright, $allowed_tags ); ?></p>
-					</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<p><?php echo wp_kses_post( sprintf(
+							__( 'Copyright &copy; %s %s. All rights reserved.<br>Powered by %s. Developed by %s', 'aster' ),
+							date_i18n( __( 'Y', 'aster' ) ),
+							'<a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . esc_html( get_bloginfo( 'name' ) ) . '</a>',
+							'<a href="https://wordpress.org">WordPress</a>',
+							'<a href="http://rubelmiah.com">Rubel</a>'
+						) );
+						?></p>
 				</div>
 			</div>
-		<?php endif; ?>
+		</div>
 	</div><!-- /Copyright Text -->
 </footer><!-- /#Footer -->
 
-<?php if (!get_theme_mod('aster_back_to_top')): ?>
-    <div class="scroll-up">
-        <a href="#"><i class="fa fa-angle-up"></i></a>
-    </div>
-<?php endif; ?>
+
+<div class="scroll-up">
+    <a href="#"><i class="fa fa-angle-up"></i></a>
+</div>
 <!-- Scroll Up -->
 
 <?php wp_footer(); ?>

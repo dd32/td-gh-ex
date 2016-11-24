@@ -4,10 +4,10 @@
     Author: Rubel Miah
     Author URI: http://rubelmiah.com
     Description: Aster is one of the most Elegant, Trendy, Clean and Creative high-performance Responsive WordPress Blog Themes. If you want to create a smart blog within few minutes, Aster is the right choice. It will help you create and run a successful blog in a easiest way where you can tell your stories professionally. It highlights yours contents without distractions and enables users to read more easily. So publish your unique and fantastic stories about Personal, Travel, Lifestyle, Craft & Arts, Interior Designing, Inspirations, Food & Recipes, Business, Photos, Weddings and everyday moments from all over the world. It’s fully responsive so it adapts to your style as well as the device it’s viewed on. Aster is carefully crafted, it contains all these features a modern blogger needs. Complete control over the layout of your blog whenever you want.
-    Version: 1.3
+    Version: 1.4
     License: GNU General Public License v2 or later
     License URI: http://www.gnu.org/licenses/gpl-2.0.html
-    Tags: black, blue, gray, pink, purple, white, yellow, dark, light, two-columns, left-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-images, post-formats, sticky-post, translation-ready
+    Tags: two-columns, left-sidebar, custom-background, custom-menu, featured-images, sticky-post, translation-ready
     Text Domain: aster
 
 */
@@ -384,59 +384,6 @@ h1.entry-title a:hover {
     background-color: #fff;
 }
 
-/*----------------------
-    Gallery Post Slider
------------------------*/
-#blog-gallery-slider.carousel {
-    overflow: hidden;
-}
-
-#blog-gallery-slider .carousel-control.left,
-#blog-gallery-slider .carousel-control.right {
-    top: 50%;
-    left: -30px;
-    margin-top: -17px;
-    text-shadow: none;
-    transition: all .3s linear;
-    background-image: none;
-    display: block;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    color: #ffffff;
-    font-size: 18px;
-    line-height: 28px;
-    background-color: #222222;
-    opacity: 0.4;
-}
-
-#blog-gallery-slider .carousel-control.left:hover,
-#blog-gallery-slider .carousel-control.right:hover {
-    opacity: 1;
-    background-color: #ff6c6c;
-    color: #fff;
-}
-
-#blog-gallery-slider .carousel-control.right {
-    left: auto;
-    right: -30px;
-}
-
-#blog-gallery-slider.carousel:hover .carousel-control.left {
-    left: 10px;
-}
-
-#blog-gallery-slider.carousel:hover .carousel-control.right {
-    right: 10px;
-}
-
-#blog-gallery-slider .carousel-control .glyphicon-chevron-left,
-#blog-gallery-slider .carousel-control .glyphicon-chevron-right {
-    line-height: 80px;
-    top: 0;
-    left: 10px;
-}
-
 .post-thumb .img-caption {
     background-color: rgba(0, 0, 0, 0.5);
     color: #fff;
@@ -581,6 +528,7 @@ aside.widget {
     margin-top: 0;
     margin-bottom: 5px;
     font-size: 18px;
+    line-height: 22px;
 }
 
 .latest-posts .entry-title a {

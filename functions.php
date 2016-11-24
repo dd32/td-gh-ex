@@ -3,10 +3,10 @@
 //////////////////////////////////////////////////////////////////
 // Set Content Width
 //////////////////////////////////////////////////////////////////
-
-if ( ! isset( $content_width ) ) {
-	$content_width = 1170;
+function aster_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'aster_content_width', 840 );
 }
+add_action( 'after_setup_theme', 'aster_content_width', 0 );
 
 
 //////////////////////////////////////////////////////////////////
@@ -35,21 +35,18 @@ if ( ! function_exists( 'aster_theme_setup' ) ) :
 
 		// Switch default core markup for search form, comment form, and comments to output valid HTML5.
 		add_theme_support( 'html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
 			'gallery',
 			'caption',
 		) );
+
+		// Custom Logo
+		add_theme_support( 'custom-logo' );
 
 		// Set up the WordPress core custom background feature.
 		add_theme_support( 'custom-background', apply_filters( 'aster_custom_background_args', array(
 			'default-color' => 'ffffff',
 			'default-image' => '',
 		) ) );
-
-		// Post Formats
-		add_theme_support( 'post-formats', array( 'gallery', 'video', 'audio' ) );
 
 		// Post thumbnails
 		add_theme_support( 'post-thumbnails' );
@@ -61,16 +58,6 @@ endif; // aster_theme_setup
 
 add_action( 'after_setup_theme', 'aster_theme_setup' );
 
-
-// SoundCloud
-add_filter( 'oembed_fetch_url', 'aster_soundcloud_no_width', 10, 3 );
-function aster_soundcloud_no_width( $provider, $url, $args ) {
-	if ( 'soundcloud.com' == parse_url( $url, PHP_URL_HOST ) ) {
-		$provider = remove_query_arg( 'maxwidth', $provider );
-	}
-
-	return $provider;
-}
 
 
 //////////////////////////////////////////////////////////////////
@@ -89,6 +76,27 @@ if ( function_exists( 'register_sidebar' ) ) {
 	) );
 }
 
+//////////////////////////////////////////////////////////////////
+// Aster Fonts URL.
+//////////////////////////////////////////////////////////////////
+function aster_fonts_url() {
+	$fonts_url = '';
+	$fonts     = array();
+	$subsets   = 'latin,latin-ext';
+
+	if ( 'off' !== _x( 'on', 'Open Sans font: on or off', 'aster' ) ) {
+		$fonts[] = 'Open Sans:400,300,300italic,400italic,600,600italic,700,700italic';
+	}
+
+	if ( $fonts ) {
+		$fonts_url = add_query_arg( array(
+			'family' => urlencode( implode( '|', $fonts ) ),
+			'subset' => urlencode( $subsets ),
+		), 'https://fonts.googleapis.com/css' );
+	}
+	return $fonts_url;
+}
+
 
 //////////////////////////////////////////////////////////////////
 // Enqueue scripts and styles.
@@ -97,14 +105,14 @@ if ( function_exists( 'register_sidebar' ) ) {
 function aster_all_scripts_and_css() {
 
 	// CSS File
-	wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '3.3.6', 'all' );
-	wp_enqueue_style( 'font-awesome-css', get_template_directory_uri() . '/assets/css/font-awesome.min.css', array(), '4.4.0', 'all' );
-	wp_enqueue_style( 'slicknav-css', get_template_directory_uri() . '/assets/css/slicknav.css', array(), null );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css', array(), '3.3.6', 'all' );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css', array(), '4.4.0', 'all' );
+	wp_enqueue_style( 'slicknav', get_template_directory_uri() . '/assets/css/slicknav.css', array(), null );
 	wp_enqueue_style( 'aster-stylesheet', get_stylesheet_uri() );
 	wp_enqueue_style( 'aster-responsive', get_template_directory_uri() . '/assets/css/responsive.css', array(), null );
 
 	// Google Fonts
-	wp_enqueue_style( 'google-font-open-sans', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic', array(), null );
+	wp_enqueue_style( 'aster-google-fonts', aster_fonts_url(), array(), null );
 
 	// JS Files
 	wp_enqueue_script( 'jquery-bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array( 'jquery' ), '3.3.6', true );
@@ -123,7 +131,7 @@ add_action( 'wp_enqueue_scripts', 'aster_all_scripts_and_css' );
 
 
 //////////////////////////////////////////////////////////////////
-// Woocommerce support
+// WooCommerce support
 //////////////////////////////////////////////////////////////////
 
 add_action( 'after_setup_theme', 'aster_woocommerce_support' );
@@ -235,11 +243,6 @@ endif;
 // Include files
 //////////////////////////////////////////////////////////////////
 
-// Theme Customizer
-include( 'inc/customizer/customizer_settings.php' );
-include( 'inc/customizer/color_customize.php' );
-
-
 //Custom Widgets 
 require_once get_template_directory() . '/inc/widgets/blog-posts.php';
 require_once get_template_directory() . '/inc/widgets/social-icons.php';
@@ -247,6 +250,3 @@ require_once get_template_directory() . '/inc/widgets/about_widget.php';
 
 // Custom template tags for this theme.
 require_once get_template_directory() . '/inc/template-tags.php';
-
-
-

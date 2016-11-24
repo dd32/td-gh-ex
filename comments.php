@@ -49,8 +49,6 @@ if ( post_password_required() )
             'email'  => '<div class="col-md-4"><input id="email" name="email" type="text" placeholder="'. __( 'Email *', 'aster' ) .'" value="" size="30"' . $aria_req . '/></div>',
             'url'  => '<div class="col-md-4"><input id="url" name="url" type="text" placeholder="'. __( 'Website', 'aster' ) .'" value="" size="30"/></div>',
         );
-
-        
          
         $comments_args = array(
             'fields' =>  $fields,

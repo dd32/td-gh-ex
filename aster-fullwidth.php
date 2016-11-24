@@ -10,8 +10,6 @@
 
 				<?php get_template_part('content', 'page'); ?>
 
-				<?php if (!get_theme_mod('aster_page_comments')) : ?>
-
 					<?php
 					// If comments are open or we have at least one comment, load up the comment template
 					if ( comments_open() || get_comments_number() ) : ?>
@@ -20,8 +18,6 @@
 						</div>
 					<?php endif;
 					?>
-
-				<?php endif; ?>
 
 			<?php endwhile; ?>
 		</div>

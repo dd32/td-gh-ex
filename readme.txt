@@ -27,7 +27,7 @@ Aster is one of the most Elegant, Trendy, Clean and Creative high-performance Re
 * Underscores http://underscores.me (C) 2012-2015 Automattic, Inc., [GPLv2 or later]
 * Open Sans(Font) https://www.google.com/fonts/specimen/Open+Sans Apache License, version 2.0
 * Bootstrap http://getbootstrap.com (C) 2011-2015 Twitter, Inc. Code released under the MIT license.
-* Font Awesome https://fortawesome.github.io/Font-Awesome Font Awesome CSS, LESS, and Sass files are licensed under the MIT License
+* Font Awesome http://fontawesome.io/ MIT License
 * FitVids.JS http://fitvidsjs.com FitVids.JS WTFPL license
 * SmoothsCroll https://github.com/themicon/smoothscroll Licensed under the terms of the MIT license.
 * SlickNav https://github.com/ComputerWolf/SlickNav GPL license.

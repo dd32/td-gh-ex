@@ -47,7 +47,7 @@ class aster_about_widget extends WP_Widget {
 			<div class="about-widget">
 			
 			<?php if($image) : ?>
-			<img class="img-responsive" src="<?php echo esc_url($image); ?>" alt="<?php echo esc_html($title); ?>" />
+				<img class="img-responsive" src="<?php echo esc_url($image); ?>" alt="<?php echo esc_attr($title); ?>" />
 			<?php endif; ?>
 			
 			<?php if($description) : ?>
@@ -70,7 +70,7 @@ class aster_about_widget extends WP_Widget {
 
 		/* Strip tags for title and name to remove HTML (important for text inputs). */
 		$instance['title'] = strip_tags( $new_instance['title'] );
-		$instance['image'] = strip_tags( $new_instance['image'] );
+		$instance['image'] = esc_url_raw( $new_instance['image'] );
 		$instance['description'] = strip_tags( $new_instance['description'] );
 
 		return $instance;

@@ -1,6 +1,5 @@
 <?php
 
-
     //---------------------------------------------------------------------------
     // Social icons widget
     //---------------------------------------------------------------------------
@@ -18,7 +17,7 @@
 
         public function form($instance) {
 
-            $title = isset($instance['title']) ? esc_html($instance['title']) : '';
+            $title = isset($instance['title']) ? esc_attr($instance['title']) : '';
             $facebook      = (isset($instance[ 'facebook' ])) ? $instance[ 'facebook' ] : ''; 
             $twitter      = (isset($instance[ 'twitter' ])) ? $instance[ 'twitter' ] : ''; 
             $google      = (isset($instance[ 'google' ])) ? $instance[ 'google' ] : ''; 
@@ -30,37 +29,37 @@
             ?>
             
             <p>
-                <label for="<?php echo esc_html($this->get_field_id('title')); ?>"><?php _e('Title :', 'aster');
+                <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e('Title :', 'aster');
                     ?></label>
-                <input class="widefat" id="<?php echo esc_html($this->get_field_id('title')); ?>" name="<?php echo esc_html($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_html($title); ?>" />
+                <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
             </p>
             <p>
-                <label for="<?php echo esc_html($this->get_field_id('facebook')); ?>"><?php _e('Enter facebook URL:', 'aster');
+                <label for="<?php echo esc_attr($this->get_field_id('facebook')); ?>"><?php _e('Enter facebook URL:', 'aster');
                     ?></label>
                 <input class="widefat" id="<?php echo esc_html($this->get_field_id('facebook')); ?>" name="<?php echo esc_html($this->get_field_name('facebook')); ?>" type="text" value="<?php echo esc_url($facebook); ?>">
             </p>
             <p>
-                <label for="<?php echo esc_html($this->get_field_id('twitter')); ?>"><?php _e('Enter twitter URL:', 'aster'); ?></label>
+                <label for="<?php echo esc_attr($this->get_field_id('twitter')); ?>"><?php _e('Enter twitter URL:', 'aster'); ?></label>
                 <input class="widefat" id="<?php echo esc_html($this->get_field_id('twitter')); ?>" name="<?php echo esc_html($this->get_field_name('twitter')); ?>" type="text" value="<?php echo esc_url($twitter); ?>">
             </p>
             <p>
-                <label for="<?php echo esc_html($this->get_field_id('google')); ?>"><?php _e('Enter google URL:', 'aster'); ?></label>
+                <label for="<?php echo esc_attr($this->get_field_id('google')); ?>"><?php _e('Enter google URL:', 'aster'); ?></label>
                 <input class="widefat" id="<?php echo esc_html($this->get_field_id('google')); ?>" name="<?php echo esc_html($this->get_field_name('google')); ?>" type="text" value="<?php echo esc_url($google); ?>">
             </p>
             <p>
-                <label for="<?php echo esc_html($this->get_field_id('pinterest')); ?>"><?php _e('Enter pinterest URL:', 'aster'); ?></label>
+                <label for="<?php echo esc_attr($this->get_field_id('pinterest')); ?>"><?php _e('Enter pinterest URL:', 'aster'); ?></label>
                 <input class="widefat" id="<?php echo esc_html($this->get_field_id('pinterest')); ?>" name="<?php echo esc_html($this->get_field_name('pinterest')); ?>" type="text" value="<?php echo esc_url($pinterest); ?>">
             </p>
             <p>
-                <label for="<?php echo esc_html($this->get_field_id('dribbble')); ?>"><?php _e('Enter dribbble URL:', 'aster'); ?></label>
+                <label for="<?php echo esc_attr($this->get_field_id('dribbble')); ?>"><?php _e('Enter dribbble URL:', 'aster'); ?></label>
                 <input class="widefat" id="<?php echo esc_html($this->get_field_id('dribbble')); ?>" name="<?php echo esc_html($this->get_field_name('dribbble')); ?>" type="text" value="<?php echo esc_url($dribbble); ?>">
             </p>
             <p>
-                <label for="<?php echo esc_html($this->get_field_id('behance')); ?>"><?php _e('Enter behance URL:', 'aster'); ?></label>
+                <label for="<?php echo esc_attr($this->get_field_id('behance')); ?>"><?php _e('Enter behance URL:', 'aster'); ?></label>
                 <input class="widefat" id="<?php echo esc_html($this->get_field_id('behance')); ?>" name="<?php echo esc_html($this->get_field_name('behance')); ?>" type="text" value="<?php echo esc_url($behance); ?>">
             </p>
             <p>
-                <label for="<?php echo esc_html($this->get_field_id('youtube')); ?>"><?php _e('Enter youtube URL:', 'aster'); ?></label>
+                <label for="<?php echo esc_attr($this->get_field_id('youtube')); ?>"><?php _e('Enter youtube URL:', 'aster'); ?></label>
                 <input class="widefat" id="<?php echo esc_html($this->get_field_id('youtube')); ?>" name="<?php echo esc_html($this->get_field_name('youtube')); ?>" type="text" value="<?php echo esc_url($youtube); ?>">
             </p>
 
@@ -71,13 +70,13 @@
         {
             $instance                 = array();
             $instance['title'] = strip_tags($new_instance['title']);
-            $instance[ 'facebook' ]      = (!empty($new_instance[ 'facebook' ])) ? strip_tags($new_instance[ 'facebook' ]) : '';
-            $instance[ 'twitter' ]      = (!empty($new_instance[ 'twitter' ])) ? strip_tags($new_instance[ 'twitter' ]) : '';
-            $instance[ 'google' ]      = (!empty($new_instance[ 'google' ])) ? strip_tags($new_instance[ 'google' ]) : '';
-            $instance[ 'pinterest' ]      = (!empty($new_instance[ 'pinterest' ])) ? strip_tags($new_instance[ 'pinterest' ]) : '';
-            $instance[ 'dribbble' ]      = (!empty($new_instance[ 'dribbble' ])) ? strip_tags($new_instance[ 'dribbble' ]) : '';
-            $instance[ 'behance' ]      = (!empty($new_instance[ 'behance' ])) ? strip_tags($new_instance[ 'behance' ]) : '';
-            $instance[ 'youtube' ]      = (!empty($new_instance[ 'youtube' ])) ? strip_tags($new_instance[ 'youtube' ]) : '';
+            $instance[ 'facebook' ]      = (!empty($new_instance[ 'facebook' ])) ? esc_url_raw($new_instance[ 'facebook' ]) : '';
+            $instance[ 'twitter' ]      = (!empty($new_instance[ 'twitter' ])) ? esc_url_raw($new_instance[ 'twitter' ]) : '';
+            $instance[ 'google' ]      = (!empty($new_instance[ 'google' ])) ? esc_url_raw($new_instance[ 'google' ]) : '';
+            $instance[ 'pinterest' ]      = (!empty($new_instance[ 'pinterest' ])) ? esc_url_raw($new_instance[ 'pinterest' ]) : '';
+            $instance[ 'dribbble' ]      = (!empty($new_instance[ 'dribbble' ])) ? esc_url_raw($new_instance[ 'dribbble' ]) : '';
+            $instance[ 'behance' ]      = (!empty($new_instance[ 'behance' ])) ? esc_url_raw($new_instance[ 'behance' ]) : '';
+            $instance[ 'youtube' ]      = (!empty($new_instance[ 'youtube' ])) ? esc_url_raw($new_instance[ 'youtube' ]) : '';
 
             return $instance;
         }
@@ -141,11 +140,9 @@
 
     // register widgets
     if (!function_exists('aster_social_icon_register')) {
-        function aster_social_icon_register()
-        {
+        function aster_social_icon_register() {
             register_widget('aster_social_Widget');
         }
 
        add_action('widgets_init', 'aster_social_icon_register');
     }
-

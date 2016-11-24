@@ -11,21 +11,20 @@
 
 <body <?php body_class(); ?>>
 
-<?php if(!get_theme_mod('aster_preloader')) : ?>
 <div id="st-preloader">
 	<div id="pre-status">
 		<div class="preload-placeholder"></div>
 	</div>
 </div>
-<?php endif; ?>
 
 <header class="header">
 	<div class="header-top text-center">
-		<?php if(get_theme_mod('aster_logo')): ?>
+
+		<?php if(get_custom_logo()): ?>
 			<div class="main-logo">
-				<a href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo esc_url(get_theme_mod
-				('aster_logo'));
-					?>" alt="<?php echo esc_html(get_bloginfo('name')); ?>"></a>
+				<?php if ( function_exists( 'the_custom_logo' ) ) {
+					the_custom_logo();
+				}?>
 			</div><!-- /.main-logo -->
 		<?php else: ?>
 			<div class="text-logo">
