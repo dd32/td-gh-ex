@@ -12,9 +12,9 @@ get_template_part('index', 'bannerstrip');
 			<div class="col-md-12">			
 				<div class="error-404">
 					<h1>404</h1>
-					<h3><span class="txt-color"><?php echo __('Opps!','busi_prof'); ?></span> <?php echo __('Sorry the page not found','busi_prof'); ?></h3>
-					<p><?php echo __('We`re sorry, but the page you are looking for doesn`t exist.','busi_prof'); ?></p>
-					<div class="btn-wrap"><a href="<?php echo home_url();?>" class="btn-error btn-large"><?php echo __('Homepage','busi_prof'); ?></a></div>	
+					<h3><span class="txt-color"><?php echo __('Opps!','busiprof'); ?></span> <?php echo __('Sorry the page not found','busiprof'); ?></h3>
+					<p><?php echo __('We`re sorry, but the page you are looking for doesn`t exist.','busiprof'); ?></p>
+					<div class="btn-wrap"><a href="<?php echo home_url();?>" class="btn-error btn-large"><?php echo __('Homepage','busiprof'); ?></a></div>	
 				</div>
 			</div>
 		</div>

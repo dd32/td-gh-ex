@@ -6,7 +6,7 @@ function busiprof_footer_customization_customizer( $wp_customize ){
 	
 	/* footer copyright section */
 	$wp_customize->add_section( 'footer_copyright' , array(
-		'title'      => __('Footer Copyright', 'busi_prof'),
+		'title'      => __('Footer Copyright', 'busiprof'),
 		'priority'   => 126,
    	) );
 	
@@ -14,7 +14,7 @@ function busiprof_footer_customization_customizer( $wp_customize ){
 	
 		//Design By
 		$wp_customize->add_setting('busiprof_theme_options[footer_designedby]',array(
-			'default' => __('Webriti','busi_prof'),
+			'default' => __('Webriti','busiprof'),
 			'capability' => 'edit_theme_options',
 			'sanitize_callback' => 'sanitize_text_field',
 			'type' => 'option',
@@ -22,7 +22,7 @@ function busiprof_footer_customization_customizer( $wp_customize ){
 		
 		$wp_customize->add_control('busiprof_theme_options[footer_designedby]',array(
 		
-			'label' => __('Design By','busi_prof'),
+			'label' => __('Design By','busiprof'),
 			'section' => 'footer_copyright',
 			'type' => 'text',
 		));
@@ -32,14 +32,14 @@ function busiprof_footer_customization_customizer( $wp_customize ){
 		$wp_customize->add_setting('busiprof_theme_options[footer_url]',array(
 		
 			'sanitize_callback' => 'busiprof_copyright_sanitize_text',
-			'default' => __('http://www.webriti.com','busi_prof'),
+			'default' => __('http://www.webriti.com','busiprof'),
 			'type' => 'option',
 		));
 		
 		
 		$wp_customize->add_control('busiprof_theme_options[footer_url]',array(
 		
-			'label' => __('Footer URL','busi_prof'),
+			'label' => __('Footer URL','busiprof'),
 			'section' => 'footer_copyright',
 			'type' => 'text',
 		));
@@ -49,14 +49,14 @@ function busiprof_footer_customization_customizer( $wp_customize ){
 		$wp_customize->add_setting('busiprof_theme_options[busiprof_copy_rights_text]',array(
 		
 			'sanitize_callback' => 'busiprof_copyright_sanitize_text',
-			'default' => __('&copy; 2013. All Rights Reserved by ','busi_prof'),
+			'default' => __('&copy; 2013. All Rights Reserved by ','busiprof'),
 			'type' => 'option',
 		));
 		
 		
 		$wp_customize->add_control('busiprof_theme_options[busiprof_copy_rights_text]',array(
 		
-			'label' => __('Copyright Text','busi_prof'),
+			'label' => __('Copyright Text','busiprof'),
 			'section' => 'footer_copyright',
 			'type' => 'text',
 		));

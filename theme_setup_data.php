@@ -22,7 +22,7 @@ function theme_setup_data()
 			
 			'upload_image_favicon'=>'',
 			'home_banner_strip_enabled'=>'on',
-			'intro_tag_line' => __('Backend as a Service Plateform for Any App Developer','busi_prof'),
+			'intro_tag_line' => __('Backend as a Service Plateform for Any App Developer','busiprof'),
 			
 			'home_page_slider_enabled'=>'on',			
 			'home_service_section_enabled'=>'on',
@@ -35,10 +35,10 @@ function theme_setup_data()
 			
 			'home_banner_strip_enabled' => 'on',
 			'home_page_slider_enabled' => 'on',
-			'slider_head_title' =>__('Backend as a Service Plateform for Any App Developer','busi_prof'),//Slide Heading
+			'slider_head_title' =>__('Backend as a Service Plateform for Any App Developer','busiprof'),//Slide Heading
 			'slider_image'=>  $template_uri .'home_slide.jpg',//Slide Image
-			'caption_head' =>__('Busiprof With Responsive Design','busi_prof'),//Image Caption Heading
-			'caption_text' =>__('We are a group of passionate designers and developers who really love to create awesome wordPress themes with amazing support and ..','busi_prof'),//Caption detail
+			'caption_head' =>__('Busiprof With Responsive Design','busiprof'),//Image Caption Heading
+			'caption_text' =>__('We are a group of passionate designers and developers who really love to create awesome wordPress themes with amazing support and ..','busiprof'),//Caption detail
 			
 			//Slide Heading								
 			'animation' => 'slide',
@@ -49,8 +49,8 @@ function theme_setup_data()
 			'client_strip'=>'yes',
 			'client_strip_slide_speed'=>'2000',
 			'client_strip_total' =>4,
-			'client_title' => __('Meet Our Client&#39;s','busi_prof'),
-			'client_desc' => __('We provide best WordPress solutions for your business. Thanks to our framework you will get more happy customers.','busi_prof'),
+			'client_title' => __('Meet Our Client&#39;s','busiprof'),
+			'client_desc' => __('We provide best WordPress solutions for your business. Thanks to our framework you will get more happy customers.','busiprof'),
 			
 			'busiprof_custom_css' =>"",
 			
@@ -64,27 +64,27 @@ function theme_setup_data()
 			'footer_google_link' => '#',
 			'footer_skype_link' => '#',
 			
-			'protfolio_tag_line'=> __('Recent Portfolio ','busi_prof'),
-			'protfolio_description_tag' => __("Portfolio for select your column webdesign & auto adjust ",'busi_prof'),
+			'protfolio_tag_line'=> __('Recent Portfolio ','busiprof'),
+			'protfolio_description_tag' => __("Portfolio for select your column webdesign & auto adjust ",'busiprof'),
 								
 			'slider_readmore'=>'#',
 			
 			'enable_services' => 'on',
 			'service_list' => 4,
-			'service_tag_line'=>__('Awesome Services','busi_prof'),
-			'service_tag_desciption'=>__('We are a group of passionate designers and developers who really love to create awesome wordpress themes & support','busi_prof'),
+			'service_tag_line'=>__('Awesome Services','busiprof'),
+			'service_tag_desciption'=>__('We are a group of passionate designers and developers who really love to create awesome wordpress themes & support','busiprof'),
 			'read_more_btn_enabled' => 'on',
-			'service_readmore_button'=>__('More services','busi_prof'),
+			'service_readmore_button'=>__('More services','busiprof'),
 			'service_readmore_link'=>'#',
 			
 			'enable_projects' => 'on',
 			'portfolio_section_enabled' => 'on',
-			'home_project_heading_one'=>__('<b>Recent</b> Projects','busi_prof'),//Project Heading One
-			'project_tagline' => __('We are a group of passionate designers and developers who really love to create awesome wordpress themes & support','busi_prof'), //project tagline
+			'home_project_heading_one'=>__('<b>Recent</b> Projects','busiprof'),//Project Heading One
+			'project_tagline' => __('We are a group of passionate designers and developers who really love to create awesome wordpress themes & support','busiprof'), //project tagline
   				
 			'enable_services' => 'on',
-			'service_heading_one' =>__('<b>Awesome</b> Services','busi_prof'),//Service Heading One
-			'service_tagline'  => __('We are a group of passionate designers and developers who really love to create awesome wordpress themes & support','busi_prof'),//Service Tagline
+			'service_heading_one' =>__('<b>Awesome</b> Services','busiprof'),//Service Heading One
+			'service_tagline'  => __('We are a group of passionate designers and developers who really love to create awesome wordpress themes & support','busiprof'),//Service Tagline
 			
 			'service_image_one' => '',//Service Icon First
 			'service_image_two' => '',//Service Icon Second	
@@ -96,59 +96,59 @@ function theme_setup_data()
 			'service_icon_three' => 'fa-camera',
 			'service_icon_four' => 'fa-fighter-jet',
 			
-			'service_title_one' => __('Web Design','busi_prof'),//Service Title One
-			'service_title_two' =>__('Web Design','busi_prof'),//Service Title Two
-			'service_title_three' =>__('Web Design','busi_prof'),//Service Title Three
-			'service_title_four' =>__('Web Design','busi_prof'),//Service Title Four
+			'service_title_one' => __('Web Design','busiprof'),//Service Title One
+			'service_title_two' =>__('Web Design','busiprof'),//Service Title Two
+			'service_title_three' =>__('Web Design','busiprof'),//Service Title Three
+			'service_title_four' =>__('Web Design','busiprof'),//Service Title Four
 			
-			'service_text_one' =>__('We are a group of passionate designers and developers who really love to create awesome wordpress themes','busi_prof'),//Service Description One
-			'service_text_two' => __('We are a group of passionate designers and developers who really love to create awesome wordpress themes','busi_prof'),//Service Description Two
-			'service_text_three' => __('We are a group of passionate designers and developers who really love to create awesome wordpress themes','busi_prof'),//Service Description Three
-			'service_text_four' => __('We are a group of passionate designers and developers who really love to create awesome wordpress themes','busi_prof'),//Service Description Four
+			'service_text_one' =>__('We are a group of passionate designers and developers who really love to create awesome wordpress themes','busiprof'),//Service Description One
+			'service_text_two' => __('We are a group of passionate designers and developers who really love to create awesome wordpress themes','busiprof'),//Service Description Two
+			'service_text_three' => __('We are a group of passionate designers and developers who really love to create awesome wordpress themes','busiprof'),//Service Description Three
+			'service_text_four' => __('We are a group of passionate designers and developers who really love to create awesome wordpress themes','busiprof'),//Service Description Four
 			
 			'service_link_btn' => '#',//More Button Link
-			'service_button_value' => __('More Services','busi_prof'),
+			'service_button_value' => __('More Services','busiprof'),
 			
 			
-			'project_title_one' => __('Business Cards','busi_prof'), //project title one
+			'project_title_one' => __('Business Cards','busiprof'), //project title one
 			'project_thumb_one' =>$template_uri .'/rec_project.jpg', //project thumbnail one
-			'project_text_one'  => __('Graphic Design & Web Design','busi_prof'), //project text-description one
+			'project_text_one'  => __('Graphic Design & Web Design','busiprof'), //project text-description one
 			'project_one_url' => '#',
 			
-			'project_title_two' => __('Business Cards','busi_prof'), //project title two
+			'project_title_two' => __('Business Cards','busiprof'), //project title two
 			'project_thumb_two' =>$template_uri .'/rec_project2.jpg', //project thumbnail two
-			'project_text_two'  => __('Graphic Design & Web Design','busi_prof'), //project text-description two
+			'project_text_two'  => __('Graphic Design & Web Design','busiprof'), //project text-description two
 			'project_two_url' => '#',
 			
-			'project_title_three' => __('Business Cards','busi_prof'), //project title three
+			'project_title_three' => __('Business Cards','busiprof'), //project title three
 			'project_thumb_three' =>$template_uri .'/rec_project3.jpg', //project thumbnail three
-			'project_text_three'  => __('Graphic Design & Web Design','busi_prof'), //project text-description three
+			'project_text_three'  => __('Graphic Design & Web Design','busiprof'), //project text-description three
 			'project_three_url' => '#',
 			
-			'project_title_four' => __('Business Cards','busi_prof'), //project title three
+			'project_title_four' => __('Business Cards','busiprof'), //project title three
 			'project_thumb_four' =>$template_uri .'/rec_project4.jpg', //project thumbnail three
-			'project_text_four'  => __('Graphic Design & Web Design','busi_prof'), //project text-description three
+			'project_text_four'  => __('Graphic Design & Web Design','busiprof'), //project text-description three
 			'project_four_url' => '#',
 			
 			
 			
 			//Testimonials
-			'testimonials_title' =>__('<b>Our</b> Testimonials','busi_prof'), // Testimonials title 
-			'testimonials_text' =>__('We are a group of passionate designers & developers','busi_prof'), // Testimonials text  
+			'testimonials_title' =>__('<b>Our</b> Testimonials','busiprof'), // Testimonials title 
+			'testimonials_text' =>__('We are a group of passionate designers & developers','busiprof'), // Testimonials text  
   				
 			'testimonials_image_one' => $template_uri.'/testimonial.jpg', // Testimonials image 
-			'testimonials_text_one' => __('We are group of passionate designers and developers who really love to create awesome wordpress themes with amazing support & cooles video documentations...','busi_prof'), // Testimonials description
-			'testimonials_name_one' => __('Natalie Portman','busi_prof'), // Testimonials name
-			'testimonials_designation_one' => __('Sales & Marketing','busi_prof'), // testmonials designation
+			'testimonials_text_one' => __('We are group of passionate designers and developers who really love to create awesome wordpress themes with amazing support & cooles video documentations...','busiprof'), // Testimonials description
+			'testimonials_name_one' => __('Natalie Portman','busiprof'), // Testimonials name
+			'testimonials_designation_one' => __('Sales & Marketing','busiprof'), // testmonials designation
 			
 			'testimonials_image_two' => $template_uri.'/testimonial2.jpg',  // Testimonials image 
-			'testimonials_text_two' => __('We are group of passionate designers and developers who really love to create awesome wordpress themes with amazing support & cooles video documentations...','busi_prof'), // Testimonials description
-			'testimonials_name_two' => __('Natalie Portman','busi_prof'), // Testimonials name
-			'testimonials_designation_two' => __('Sales & Marketing','busi_prof'), // testmonials designation
-			'testimonial_tagline' => __('We are a group of passionate designers & developers','busi_prof'),
+			'testimonials_text_two' => __('We are group of passionate designers and developers who really love to create awesome wordpress themes with amazing support & cooles video documentations...','busiprof'), // Testimonials description
+			'testimonials_name_two' => __('Natalie Portman','busiprof'), // Testimonials name
+			'testimonials_designation_two' => __('Sales & Marketing','busiprof'), // testmonials designation
+			'testimonial_tagline' => __('We are a group of passionate designers & developers','busiprof'),
 			
-			'recent_blog_title' =>__('<b>Recent</b>Blog','busi_prof'),
-			'recent_blog_description' =>__('We are a group of passionate designers &amp; developers','busi_prof'),
+			'recent_blog_title' =>__('<b>Recent</b>Blog','busiprof'),
+			'recent_blog_description' =>__('We are a group of passionate designers &amp; developers','busiprof'),
 			
 			//contact page settings
 			'contact_address_1'=>'378 Kingston Court',

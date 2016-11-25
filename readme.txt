@@ -1,8 +1,6 @@
 BusiProf Theme README.
 
-A Free Blue colored Business Blog theme that supports Primary menu's , Primary sidebar,Four widgets area at the footer region  etc. 
-It has a perfect design that's great for any Business/Firms  Blogs who wants a new look for their site. Two beautifully designed page templates Home Page and Blog Page. 
-BusiProf supports featured slider managed from Theme Option Panel.
+Busiprof is a business WordPress theme.  Already thousands of users loving this theme because it is designed for multiple businesses like app landing page, product launching page, agency, freelancers, blog, startup, portfolio, corporate and any kind of business. The theme is developed using Bootstrap 3 framework that makes it friendly for all the devices like mobiles, tablets, laptops etc. In Busiprof Lite, you can easily set Info Bar Content, Featured Banner / Slide, Service with icon and image, Project with image, Testimonials, Latest News and 4 column widgetized footer. You will get various page templates are added one is Homepage and the second one is Full Width Page template. In the premium version, you will get slider, Info Bar Section, Service with icon and image, Filterable Portfolio, Testimonial, Latest News, Clients / Sponsor and 4 column widgetized footer. You will find various page templates like About, Service, Project, Blog, Contact and JetPack Gallery Support. The theme has support for various plugin like WPML, Polylang and WooCommerce. Just navigate to Appearance / Customize to start customizing. Check premium version theme demo at http://webriti.com/demo/wp/busiprof
 
 Author: Webriti
 
@@ -57,6 +55,11 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.7.5
+1. Update Font-awesome Library 4.7.0
+@version 1.7.4
+1. Text Domain Changed & Update POT file.
+2. Update theme Description.
 @version 1.7.3
 1. Update Font Awesome 4.6.1 to 4.6.3
 2. Add footer-widgets, featured-images, blog Tag, right-sidebar

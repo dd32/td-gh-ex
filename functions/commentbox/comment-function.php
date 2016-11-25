@@ -27,7 +27,7 @@ function busiprof_comment( $comment, $args, $depth ) {
 global $comment_data;
 
 //translations
-$leave_reply = $comment_data['translation_reply_to_coment'] ? $comment_data['translation_reply_to_coment'] : __('Reply','busi_prof');
+$leave_reply = $comment_data['translation_reply_to_coment'] ? $comment_data['translation_reply_to_coment'] : __('Reply','busiprof');
 ?>
 	<li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
 				
@@ -42,7 +42,7 @@ $leave_reply = $comment_data['translation_reply_to_coment'] ? $comment_data['tra
 						<a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>" class="datetime"><?php echo get_comment_date(); ?></a></h5>
                     <!-- /comment-meta -->
                     <?php if ( $comment->comment_approved == '0' ) : ?>
-					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'busi_prof' ); ?></em>
+					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'busiprof' ); ?></em>
 					<br />
 				<?php endif; ?>
     	                <p>

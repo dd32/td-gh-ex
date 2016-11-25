@@ -43,7 +43,7 @@
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
 	 */
-	load_theme_textdomain( 'busi_prof', get_template_directory() . '/lang' );
+	load_theme_textdomain( 'busiprof', get_template_directory() . '/lang' );
 	
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -61,7 +61,7 @@
 	
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'busi_prof' )
+		'primary' => __( 'Primary Menu', 'busiprof' )
 	) );
 	
 	

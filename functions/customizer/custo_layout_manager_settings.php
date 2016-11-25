@@ -7,7 +7,7 @@ function busiprof_home_page_manager_settings( $wp_customize ){
 	
 	array(
 	
-		'title'      => __('Manage Sections', 'busi_prof'),
+		'title'      => __('Manage Sections', 'busiprof'),
 		
 		'priority'   => 130,
 		
@@ -17,7 +17,7 @@ function busiprof_home_page_manager_settings( $wp_customize ){
 		//Layout Pro
 		class busiprof_Customize_section_upgrade extends WP_Customize_Control {
 			public function render_content() { ?>
-			<h3><?php _e('Want To Change Home page Layout section Than','busi_prof'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/busiprof' ); ?>" target="_blank"><?php _e(' Upgrade To Pro','busi_prof'); ?> </a>  
+			<h3><?php _e('Want To Change Home page Layout section Than','busiprof'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/busiprof' ); ?>" target="_blank"><?php _e(' Upgrade To Pro','busiprof'); ?> </a>  
 			<?php
 			}
 		}
@@ -32,7 +32,7 @@ function busiprof_home_page_manager_settings( $wp_customize ){
 			$wp_customize,
 			'layout_upgrade',
 				array(
-					'label'					=> __('Busiprof Upgrade','busi_prof'),
+					'label'					=> __('Busiprof Upgrade','busiprof'),
 					'section'				=> 'homepage_layout_manager_section',
 					'settings'				=> 'layout_upgrade',
 				)
@@ -47,7 +47,7 @@ function busiprof_home_page_manager_settings( $wp_customize ){
 
 			array(
 
-				'label'    => __( 'Section 1', 'busi_prof' ),
+				'label'    => __( 'Section 1', 'busiprof' ),
 
 				'section'  => 'homepage_layout_manager_section',
 
@@ -71,7 +71,7 @@ function busiprof_home_page_manager_settings( $wp_customize ){
 
 			array(
 
-				'label'    => __( 'Section 2', 'busi_prof' ),
+				'label'    => __( 'Section 2', 'busiprof' ),
 
 				'section'  => 'homepage_layout_manager_section',
 
@@ -93,7 +93,7 @@ function busiprof_home_page_manager_settings( $wp_customize ){
 
 			array(
 
-				'label'    => __( 'Section 3', 'busi_prof' ),
+				'label'    => __( 'Section 3', 'busiprof' ),
 
 				'section'  => 'homepage_layout_manager_section',
 
@@ -114,7 +114,7 @@ function busiprof_home_page_manager_settings( $wp_customize ){
 
 			array(
 
-				'label'    => __( 'Section 4', 'busi_prof' ),
+				'label'    => __( 'Section 4', 'busiprof' ),
 
 				'section'  => 'homepage_layout_manager_section',
 
@@ -135,7 +135,7 @@ function busiprof_home_page_manager_settings( $wp_customize ){
 
 			array(
 
-				'label'    => __( 'Section 5', 'busi_prof' ),
+				'label'    => __( 'Section 5', 'busiprof' ),
 
 				'section'  => 'homepage_layout_manager_section',
 

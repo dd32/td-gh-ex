@@ -8,16 +8,16 @@
  * @filesource     wp-content/themes/Busiprof/comment.php
 */	?>	
 	<?php if ( post_password_required() ) : ?>
-		<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'busi_prof' ); ?></p>
+		<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'busiprof' ); ?></p>
 	<?php return;endif;?>
          <?php if ( have_comments() ) : ?>		
          <div class="comments-area">	
-			<h3><?php _e('Comment','busi_prof');?> <span>(<?php echo get_comments_number();?>)</span></h3>
+			<h3><?php _e('Comment','busiprof');?> <span>(<?php echo get_comments_number();?>)</span></h3>
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :  ?>
 		<nav id="comment-nav-above">
-			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'busi_prof' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'busi_prof' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'busi_prof' ) ); ?></div>
+			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'busiprof' ); ?></h1>
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'busiprof' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'busiprof' ) ); ?></div>
 		</nav>
 		<?php endif;  ?>
 		<?php wp_list_comments( array( 'callback' => 'busiprof_comment' ) ); ?>
@@ -25,9 +25,9 @@
 		</div>
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below">
-			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'busi_prof' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'busi_prof' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'busi_prof' ) ); ?></div>
+			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'busiprof' ); ?></h1>
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'busiprof' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'busiprof' ) ); ?></div>
 		</nav>
 		<?php endif;  ?>
 		<?php
@@ -35,7 +35,7 @@
 	<?php endif; ?>   
 <?php if ('open' == $post->comment_status) : ?> 
 <?php if ( get_option('comment_registration') && !$user_ID ) : ?>
-<p><?php _e("You must be",'busi_prof')?> <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>"><?php _e("logged in",'busi_prof')?></a> <?php _e("to post a comment",'busi_prof')?></p>
+<p><?php _e("You must be",'busiprof')?> <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>"><?php _e("logged in",'busiprof')?></a> <?php _e("to post a comment",'busiprof')?></p>
 <?php else : ?>
 <div class="comment-form">
 	<div class="row">
@@ -51,11 +51,11 @@ add_filter('comment_form_default_fields','my_fields');
 	$defaults = array(
      'fields'               => apply_filters( 'comment_form_default_fields', $fields ),
 	'comment_field'        => '<div class="form-group col-xs-12"><textarea rows="5" id="comment" name="comment" type="text" placeholder="Message" rows="3"></textarea></div>',		
-	 'logged_in_as' => '<div class="col-xs-12"><p class="logged-in-as">' . __( "Logged in as ",'busi_prof' ).'<a href="'. admin_url( 'profile.php' ).'">'.$user_identity.'</a>'. '<a href="'. wp_logout_url( get_permalink() ).'" title="Log out of this account">'.__(" Log out?",'busi_prof').'</a>' . '</p></div>',
+	 'logged_in_as' => '<div class="col-xs-12"><p class="logged-in-as">' . __( "Logged in as ",'busiprof' ).'<a href="'. admin_url( 'profile.php' ).'">'.$user_identity.'</a>'. '<a href="'. wp_logout_url( get_permalink() ).'" title="Log out of this account">'.__(" Log out?",'busiprof').'</a>' . '</p></div>',
 	 'id_submit'            => 'submit_btn',
-	'label_submit'         =>__( 'Submit Now','busi_prof'),
+	'label_submit'         =>__( 'Submit Now','busiprof'),
 	'comment_notes_after'  => '',
-	 'title_reply'       => '<div class="col-xs-12"><h3 class="comment-title">' . __( 'Leave a Comment','busi_prof') .'</h3></div>',
+	 'title_reply'       => '<div class="col-xs-12"><h3 class="comment-title">' . __( 'Leave a Comment','busiprof') .'</h3></div>',
 	 'id_form'      => 'action'	
 	);
 comment_form($defaults);

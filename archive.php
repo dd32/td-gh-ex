@@ -14,19 +14,19 @@ get_header();
 				<div class="page-title">
 					<h2><?php if ( is_day() ) :
 			
-						  _e( "Daily Archives: ", 'busi_prof' ); echo (get_the_date()); 
+						  _e( "Daily Archives: ", 'busiprof' ); echo (get_the_date()); 
 						  
 						 elseif ( is_month() ) : 
 						 
-							 _e( "Monthly Archives: ", 'busi_prof' ); echo (get_the_date( 'F Y' )); 
+							 _e( "Monthly Archives: ", 'busiprof' ); echo (get_the_date( 'F Y' )); 
 							 
 						 elseif ( is_year() ) :
 						 
-						 _e( "Yearly Archives: ", 'busi_prof' );  echo (get_the_date( 'Y' )); 
+						 _e( "Yearly Archives: ", 'busiprof' );  echo (get_the_date( 'Y' )); 
 						 
 						else : 
 						
-							 _e( "Blog Archives: ", 'busi_prof' ); 	
+							 _e( "Blog Archives: ", 'busiprof' ); 	
 							 
 						 endif; 
 						 ?>
@@ -37,7 +37,7 @@ get_header();
 			<div class="col-md-6">
 				<div class="search_box">
 				<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-					<input type="text" id="appendedInputButton" class="search_input" placeholder=<?php _e( 'Search', 'busi_prof' ); ?> name="s">
+					<input type="text" id="appendedInputButton" class="search_input" placeholder=<?php _e( 'Search', 'busiprof' ); ?> name="s">
 					<input type="button" value="" class="search_btn">
 				</form>	
 				</div>
@@ -69,8 +69,8 @@ get_header();
 						<?php
 						// Previous/next page navigation.
 						the_posts_pagination( array(
-						'prev_text'          => __('Previous','busi_prof'),
-						'next_text'          => __('Next','busi_prof'),
+						'prev_text'          => __('Previous','busiprof'),
+						'next_text'          => __('Next','busiprof'),
 						'screen_reader_text' => ' ',
 						) ); ?>
 					</div>

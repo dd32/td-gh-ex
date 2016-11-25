@@ -11,14 +11,14 @@ get_header();
 		<div class="row">
 			<div class="col-md-6">
 				<div class="page-title">
-					<h2><?php  _e( "Tag  Archives:", 'busi_prof'); echo single_cat_title( '', false ); ?></h2>
+					<h2><?php  _e( "Tag  Archives:", 'busiprof'); echo single_cat_title( '', false ); ?></h2>
 					<p><?php bloginfo('description');?></p>
 				</div>
 			</div>
 			<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 			<div class="col-md-6">
 				<div class="search_box">
-					<input type="text" id="appendedInputButton" class="search_input" placeholder=<?php _e( 'Search', 'busi_prof' ); ?> name="s">
+					<input type="text" id="appendedInputButton" class="search_input" placeholder=<?php _e( 'Search', 'busiprof' ); ?> name="s">
 					<input type="button" value="" class="search_btn">
 				</div>
 			</div>
@@ -50,8 +50,8 @@ get_header();
 						<?php
 						// Previous/next page navigation.
 						the_posts_pagination( array(
-						'prev_text'          => __('Previous','busi_prof'),
-						'next_text'          => __('Next','busi_prof'),
+						'prev_text'          => __('Previous','busiprof'),
+						'next_text'          => __('Next','busiprof'),
 						'screen_reader_text' => ' ',
 						) ); ?>
 					</div>

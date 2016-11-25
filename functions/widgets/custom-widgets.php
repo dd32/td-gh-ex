@@ -4,9 +4,9 @@ function busiprof_widgets_init() {
 
 /*sidebar*/
 register_sidebar( array(
-		'name' => __( ' Sidebar', 'busi_prof' ),
+		'name' => __( ' Sidebar', 'busiprof' ),
 		'id' => 'sidebar-primary',
-		'description' => __( 'The primary widget area', 'busi_prof' ),
+		'description' => __( 'The primary widget area', 'busiprof' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
@@ -14,9 +14,9 @@ register_sidebar( array(
 	) );
 
 register_sidebar( array(
-		'name' => __( 'Footer Widget Area', 'busi_prof' ),
+		'name' => __( 'Footer Widget Area', 'busiprof' ),
 		'id' => 'footer-widget-area',
-		'description' => __( 'footer widget area', 'busi_prof' ),
+		'description' => __( 'footer widget area', 'busiprof' ),
 		'before_widget' => '<div class="col-md-3 col-sm-6">',
 		'after_widget' => '</div>',
 		'before_title' => '<aside class="widget"><h3 class="widget-title">',
@@ -24,9 +24,9 @@ register_sidebar( array(
 	) );
 	
 register_sidebar( array(
-	'name' => __( 'Woocommerce Sidebar', 'busi_prof' ),
+	'name' => __( 'Woocommerce Sidebar', 'busiprof' ),
 	'id' => 'woocommerce-1',
-	'description' => __( 'Woocommerce sidebar widget area', 'busi_prof' ),
+	'description' => __( 'Woocommerce sidebar widget area', 'busiprof' ),
 	'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 	'after_widget' => '</aside>',
 	'before_title' => '<h3 class="widget-title">',

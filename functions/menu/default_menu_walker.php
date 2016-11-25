@@ -20,7 +20,7 @@ function busiprof_fallback_page_menu( $args = array() ) {
 	// Show Home in the menu
 	if ( ! empty($args['show_home']) ) {
 		if ( true === $args['show_home'] || '1' === $args['show_home'] || 1 === $args['show_home'] )
-			$text = __('Home','busi_prof');
+			$text = __('Home','busiprof');
 		else
 			$text = $args['show_home'];
 		$class = '';

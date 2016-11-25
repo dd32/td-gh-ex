@@ -24,16 +24,16 @@ get_template_part('index', 'bannerstrip'); // banner strip
 						
 					endwhile;
 					else : ?>
-					<h2><?php _e( "Nothing Found", 'busi_prof' ); ?></h2>
-					<p><?php _e( "Sorry, but nothing matched your search criteria. Please try again with some different keywords.", 'busi_prof' ); ?>
+					<h2><?php _e( "Nothing Found", 'busiprof' ); ?></h2>
+					<p><?php _e( "Sorry, but nothing matched your search criteria. Please try again with some different keywords.", 'busiprof' ); ?>
 					</p>
 					<!-- Pagination -->			
 					<div class="paginations">
 						<?php
 						// Previous/next page navigation.
 						the_posts_pagination( array(
-						'prev_text'          => __('Previous','busi_prof'),
-						'next_text'          => __('Next','busi_prof'),
+						'prev_text'          => __('Previous','busiprof'),
+						'next_text'          => __('Next','busiprof'),
 						'screen_reader_text' => ' ',
 						) ); ?>
 					</div>

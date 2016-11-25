@@ -26,7 +26,7 @@
 			<div class="col-md-6">
 				<div class="search_box">
 					<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-					<input type="text" id="appendedInputButton" class="search_input" placeholder=<?php _e( 'Search', 'busi_prof' ); ?> name="s">
+					<input type="text" id="appendedInputButton" class="search_input" placeholder=<?php _e( 'Search', 'busiprof' ); ?> name="s">
 					<input type="button" value="" class="search_btn">
 				</form>
 				</div>

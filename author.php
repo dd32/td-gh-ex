@@ -19,7 +19,7 @@ get_header();
 			<div class="col-md-6">
 				<div class="search_box">
 				<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-					<input type="text" id="appendedInputButton" class="search_input" placeholder=<?php _e( 'Search', 'busi_prof' ); ?> name="s">
+					<input type="text" id="appendedInputButton" class="search_input" placeholder=<?php _e( 'Search', 'busiprof' ); ?> name="s">
 					<input type="button" value="" class="search_btn">
 				</form>	
 				</div>
@@ -51,8 +51,8 @@ get_header();
 						<?php
 						// Previous/next page navigation.
 						the_posts_pagination( array(
-						'prev_text'          => __('Previous','busi_prof'),
-						'next_text'          => __('Next','busi_prof'),
+						'prev_text'          => __('Previous','busiprof'),
+						'next_text'          => __('Next','busiprof'),
 						'screen_reader_text' => ' ',
 						) ); ?>
 					</div>

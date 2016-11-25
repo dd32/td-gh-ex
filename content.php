@@ -23,7 +23,7 @@
 		
 			<span class="entry-date"><a href="<?php the_permalink(); ?>"><time datetime=""><?php the_time('M j,Y');?></time></a></span>
 			
-			<span class="comments-link"><a href="<?php the_permalink(); ?>"><?php  comments_popup_link( __( 'Leave a comment', 'busi_prof' ) ); ?></a></span>
+			<span class="comments-link"><a href="<?php the_permalink(); ?>"><?php  comments_popup_link( __( 'Leave a comment', 'busiprof' ) ); ?></a></span>
 			
 			<?php if( get_the_tags() ) { ?>
 			<span class="tag-links"><a href="<?php the_permalink(); ?>"><?php the_tags('', ', ', ''); ?></a></span>
@@ -33,6 +33,6 @@
 		<a  href="<?php the_permalink(); ?>" class="post-thumbnail" ><?php the_post_thumbnail(); ?></a>
 	
 	<div class="entry-content">
-		<?php the_content( __('Read More','busi_prof') ); ?>
+		<?php the_content( __('Read More','busiprof') ); ?>
 	</div>
 </article>

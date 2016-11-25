@@ -5,12 +5,12 @@ function busiprof_general_settings( $wp_customize ){
 	$wp_customize->add_panel( 'general_settings', array(
 		'priority'       => 125,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('General Settings', 'busi_prof'),
+		'title'      => __('General Settings', 'busiprof'),
 	) );
 	
 	/* Front Page section */
 	$wp_customize->add_section( 'front_page_section' , array(
-		'title'      => __('Front Page', 'busi_prof'),
+		'title'      => __('Front Page', 'busiprof'),
 		'panel'  => 'general_settings',
 		'priority'   => 0,
    	) );
@@ -28,7 +28,7 @@ function busiprof_general_settings( $wp_customize ){
 		$wp_customize->add_control(
 			'busiprof_theme_options[front_page]', 
 			array(
-				'label'    => __( 'Enable Front Page', 'busi_prof' ),
+				'label'    => __( 'Enable Front Page', 'busiprof' ),
 				'section'  => 'front_page_section',
 				'type'     => 'radio',
 				'choices' => array(
@@ -39,7 +39,7 @@ function busiprof_general_settings( $wp_customize ){
 		
 	/* custom logo section */
 	$wp_customize->add_section( 'logo_section' , array(
-		'title'      => __('Custom Logo', 'busi_prof'),
+		'title'      => __('Custom Logo', 'busiprof'),
 		'panel'  => 'general_settings',
 		'priority'   => 1,
    	) );
@@ -47,7 +47,7 @@ function busiprof_general_settings( $wp_customize ){
 		// Logo
 		$wp_customize->add_setting( 'busiprof_theme_options[upload_image]',array('type' => 'option', 'sanitize_callback' => 'sanitize_text_field') );
 		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'busiprof_theme_options[upload_image]', array(
-			'label'    => __( 'Upload Logo', 'busi_prof' ),
+			'label'    => __( 'Upload Logo', 'busiprof' ),
 			'section'  => 'logo_section',
 			'settings' => 'busiprof_theme_options[upload_image]',
 		) ) );
@@ -56,7 +56,7 @@ function busiprof_general_settings( $wp_customize ){
 		$wp_customize->add_setting( 'busiprof_theme_options[width]', array( 'default' => 115 , 'type' => 'option','sanitize_callback' => 'sanitize_text_field'	) );
 		$wp_customize->add_control(	'busiprof_theme_options[width]', 
 			array(
-				'label'    => __( 'Width', 'busi_prof' ),
+				'label'    => __( 'Width', 'busiprof' ),
 				'section'  => 'logo_section',
 				'type'     => 'text',
 		));
@@ -65,14 +65,14 @@ function busiprof_general_settings( $wp_customize ){
 		$wp_customize->add_setting( 'busiprof_theme_options[height]', array( 'default' => 40 , 'type' => 'option','sanitize_callback' => 'sanitize_text_field' ) );
 		$wp_customize->add_control(	'busiprof_theme_options[height]', 
 			array(
-				'label'    => __( 'Height', 'busi_prof' ),
+				'label'    => __( 'Height', 'busiprof' ),
 				'section'  => 'logo_section',
 				'type'     => 'text',
 		));
 		
 	/* custom css section */
 	$wp_customize->add_section( 'custom_css_section' , array(
-		'title'      => __('Custom CSS', 'busi_prof'),
+		'title'      => __('Custom CSS', 'busiprof'),
 		'panel'  => 'general_settings',
 		'priority'   => 2,
    	) );
@@ -82,7 +82,7 @@ function busiprof_general_settings( $wp_customize ){
 		'sanitize_js_callback' => 'wp_filter_nohtml_kses', ) );
 		$wp_customize->add_control(	'busiprof_theme_options[busiprof_custom_css]', 
 			array(
-				'label'    => __( 'Custom CSS', 'busi_prof' ),
+				'label'    => __( 'Custom CSS', 'busiprof' ),
 				'section'  => 'custom_css_section',
 				'type'     => 'textarea',
 		));
@@ -90,7 +90,7 @@ function busiprof_general_settings( $wp_customize ){
 
 	/* footer section */
 	$wp_customize->add_section( 'footer_copy_section' , array(
-		'title'      => __('Copyright Text', 'busi_prof'),
+		'title'      => __('Copyright Text', 'busiprof'),
 		'panel'  => 'general_settings',
 		'priority'   => 3,
    	) );
@@ -99,7 +99,7 @@ function busiprof_general_settings( $wp_customize ){
 		$wp_customize->add_setting( 'busiprof_theme_options[footer_copyright_text]', array( 'default' => '<p>All Rights Reserved by BusiProf. Designed and Developed by <a href="'.esc_url('http://www.webriti.com').'" target="_blank">WordPress Theme</a>.</p> ' , 'type' => 'option', 'sanitize_callback' => 'busiprof_copyright_sanitize_text', ) );
 		$wp_customize->add_control(	'busiprof_theme_options[footer_copyright_text]', 
 			array(
-				'label'    => __( 'Footer Copyright Text', 'busi_prof' ),
+				'label'    => __( 'Footer Copyright Text', 'busiprof' ),
 				'section'  => 'footer_copy_section',
 				'type'     => 'textarea',
 		));
@@ -107,7 +107,7 @@ function busiprof_general_settings( $wp_customize ){
 	
 	/* social icon section */
 	$wp_customize->add_section( 'social_icons_section' , array(
-		'title'      => __('Social Icons', 'busi_prof'),
+		'title'      => __('Social Icons', 'busiprof'),
 		'panel'  => 'general_settings',
 		'priority'   => 4,
    	) );
@@ -115,7 +115,7 @@ function busiprof_general_settings( $wp_customize ){
 		//Layout Pro
 		class busiprof_Customize_social_icon_upgrade extends WP_Customize_Control {
 			public function render_content() { ?>
-			<h3><?php _e('Want To Add Social Icon Than','busi_prof'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/busiprof' ); ?>" target="_blank"><?php _e(' Upgrade To Pro','busi_prof'); ?> </a>  
+			<h3><?php _e('Want To Add Social Icon Than','busiprof'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/busiprof' ); ?>" target="_blank"><?php _e(' Upgrade To Pro','busiprof'); ?> </a>  
 			<?php
 			}
 		}
@@ -130,7 +130,7 @@ function busiprof_general_settings( $wp_customize ){
 			$wp_customize,
 			'social_icon_upgrade',
 				array(
-					'label'					=> __('Busiprof Upgrade','busi_prof'),
+					'label'					=> __('Busiprof Upgrade','busiprof'),
 					'section'				=> 'social_icons_section',
 					'settings'				=> 'social_icon_upgrade',
 				)
@@ -140,7 +140,7 @@ function busiprof_general_settings( $wp_customize ){
 		// Enable footer social icons
 		$wp_customize->add_setting( 'busiprof_theme_options[footer_social_media_enabled]' , array( 'default' =>'' , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
 		$wp_customize->add_control(	'busiprof_theme_options[footer_social_media_enabled]' , array(
-				'label'    => __( 'Enable Footer Soical Icons', 'busi_prof' ),
+				'label'    => __( 'Enable Footer Soical Icons', 'busiprof' ),
 				'section'  => 'social_icons_section',
 				'type'     => 'radio',
 				'choices' => array(
@@ -153,7 +153,7 @@ function busiprof_general_settings( $wp_customize ){
 		$wp_customize->add_setting( 'busiprof_theme_options[footer_twitter_link]', array( 'default' => 'https://twitter.com/' , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
 		$wp_customize->add_control(	'busiprof_theme_options[footer_twitter_link]', 
 			array(
-				'label'    => __( 'Twitter URL', 'busi_prof' ),
+				'label'    => __( 'Twitter URL', 'busiprof' ),
 				'section'  => 'social_icons_section',
 				'type'     => 'text',
 				'input_attrs' => array('disabled'=>'disabled'),
@@ -163,7 +163,7 @@ function busiprof_general_settings( $wp_customize ){
 		$wp_customize->add_setting( 'busiprof_theme_options[footer_facebook_link]', array( 'default' => 'https://facebook.com/' , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
 		$wp_customize->add_control(	'busiprof_theme_options[footer_facebook_link]', 
 			array(
-				'label'    => __( 'Facebook URL', 'busi_prof' ),
+				'label'    => __( 'Facebook URL', 'busiprof' ),
 				'section'  => 'social_icons_section',
 				'type'     => 'text',
 				'input_attrs' => array('disabled'=>'disabled'),
@@ -173,7 +173,7 @@ function busiprof_general_settings( $wp_customize ){
 		$wp_customize->add_setting( 'busiprof_theme_options[footer_linkedin_link]', array( 'default' => 'http://in.linkedin.com/' , 'type' => 'option', 'sanitize_callback' => 'sanitize_text_field' ) );
 		$wp_customize->add_control(	'busiprof_theme_options[footer_linkedin_link]', 
 			array(
-				'label'    => __( 'Linked In URL', 'busi_prof' ),
+				'label'    => __( 'Linked In URL', 'busiprof' ),
 				'section'  => 'social_icons_section',
 				'type'     => 'text',
 				'input_attrs' => array('disabled'=>'disabled'),

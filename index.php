@@ -23,8 +23,8 @@ get_template_part('index', 'bannerstrip');
 						<?php
 						// Previous/next page navigation.
 						the_posts_pagination( array(
-						'prev_text'          => __('Previous','busi_prof'),
-						'next_text'          => __('Next','busi_prof'),
+						'prev_text'          => __('Previous','busiprof'),
+						'next_text'          => __('Next','busiprof'),
 						'screen_reader_text' => ' ',
 						) ); ?>
 					</div>
