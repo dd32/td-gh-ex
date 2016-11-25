@@ -1,6 +1,4 @@
-﻿Rambo Theme README.
-
-Rambo is an ideal WordPress theme for those who wish to create an impressive web presence. Rambo is easy to use, provides everything you need to create great looking website. It is professional, smooth and sleek, with a clean modern layout, for almost any business types: agency, freelance, blog, startup, portfolio, corporate, firms, law firms, digital media agency , architecture firms, real estate firms, food , fashion etc etc. The theme is developed using Bootstrap 3 CSS framework that makes it friendly for all the modern devices like mobiles, tablets, laptops etc. In Rambo Lite, you can easily set Featured Banner, Services, Portfolio and 4 column widgetized footer. Page templates like Homepage, Full Width Page and Blog left sidebar template will be there. In the premium version, you will get caption Slider, Site Intro, unlimited Services, unlimited Projects, Latest News, Footer Callout, Wide & Boxed Layout, 5 predefined color schemes, feature for creating custom color scheme and Layout Manager. Page templates like About Us, Services, Portfolio, Contact Us etc are there. The theme supports popular plugins like WPML, Polylang, Contact Form 7, WP Google Maps and JetPack Gallery Extensions. Just navigate to Appearance > Customize to start customizing. Both the lite and premium version of Rambo themes are completely translated in Spanish Language. Check premium version theme demo at http://webriti.com/demo/wp/rambo
+﻿Rambo is an ideal WordPress theme for those who wish to create an impressive web presence. Rambo is easy to use, provides everything you need to create great looking website. It is professional, smooth and sleek, with a clean modern layout, for almost any business types: agency, freelance, blog, startup, portfolio, corporate, firms, law firms, digital media agency , architecture firms, real estate firms, food , fashion etc etc. The theme is developed using Bootstrap 3 CSS framework that makes it friendly for all the modern devices like mobiles, tablets, laptops etc. In Rambo Lite, you can easily set Featured Banner, Services, Portfolio and 4 column widgetized footer. Page templates like Homepage, Full Width Page and Blog left sidebar template will be there. In the premium version, you will get caption Slider, Site Intro, unlimited Services, unlimited Projects, Latest News, Footer Callout, Wide & Boxed Layout, 5 predefined color schemes, feature for creating custom color scheme and Layout Manager. Page templates like About Us, Services, Portfolio, Contact Us etc are there. The theme supports popular plugins like WPML, Polylang, Contact Form 7, WP Google Maps and JetPack Gallery Extensions. Just navigate to Appearance / Customize to start customizing. Both the lite and premium version of Rambo themes are completely translated in Spanish Language. Check premium version theme demo at http://webriti.com/demo/wp/rambo
 
 Author: Webriti
 
@@ -102,7 +100,7 @@ Rambo WordPress Theme bundles the following third-party resources:
 * Font Awesome http://fontawesome.github.io/Font-Awesome/
  * Font License
     Applies to all desktop and webfont files in the following directory: font-awesome/fonts/.
-    License: SIL OFL 1.1
+    License: SIL OFL 4.7.0
     URL: http://scripts.sil.org/OFL
  * Code License
     Applies to all CSS and LESS files in the following directories: font-awesome/css/, font-awesome/less/, and font-awesome/scss/.
@@ -134,6 +132,9 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
+@version 1.5.4
+1. Update Theme Description.
+2. Update font awesome library 4.7.0
 @version 1.5.3
 1. Add Theme Info Detail Page.
 @version 1.5.2
