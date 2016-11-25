@@ -1,8 +1,6 @@
-Corpbiz.
+Corpbiz Readme
 
-A Premium multi colored Business Blog theme that supports Primary menu's , Primary sidebar,Four widgets area at the footer region  etc. 
-It has a perfect design that's great for any Business/Firms  Blogs who wants a new look for their site. Three page templates Home ,Blog and Contact Page. 
-Theme supports featured slider managed from Theme Option Panel.
+Corpbiz Theme is very powerful yet easy to use and customize. This theme is a creative responsive WordPress theme for many purposes. Already thousands of users loving this theme because it is designed for multiple businesses like startup, agency, freelance, blog, startup, portfolio, education, corporate and any kind of business. The theme is developed using Bootstrap 3 CSS framework that makes it friendly for all the devices like mobiles, tablets, laptops etc. In Corpbiz Lite, you can easily set Featured Banner / Slide, Site Info Content, Service, Portfolio, Latest News and 3 column widgetized footer. You will get various page templates like Homepage, Full Width Page and Blog Left Sidebar template. In the premium version, you will get Caption Slider, Site Info, Services, Project Slider, Portfolio’s, Clients / Sponsor, Theme Support Section, Latest News, Footer Callout and 3 Columns Footer. You will find various page templates like About, Service, Portfolio, Contact, Blog and Well styled Core Gallery. The theme has support for various plugin like WPML, Polylang and JetPack Gallery Extensions. Just navigate to Appearance / Customize to start customizing. Check premium version theme demo at http://webriti.com/demo/wp/corpbiz
 
 Author: Webriti.
 Theme Homepage Url:http://webriti.com/demo/wp/corpbiz/
@@ -85,6 +83,8 @@ Source: http://fontawesome.io
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version 1.6.5
+1. Update Theme Description.
 @Version 1.6.4
 1. Update Font Awesome Icon. 
 2. Add Title Tag Support.
