@@ -90,6 +90,10 @@ blockquote { border-left: 5px solid #f22853; }
 	color: #fff;
 }
 
+.woocommerce .product-name a, span.woocommerce-Price-amount.amount {
+    color: #626668;
+}
+
 .woocommerce .woocommerce-error {
 	border-top-color: #d61841;
 }

@@ -1,7 +1,4 @@
-Spasalon Theme README.
-
-Beautifully designed WordPress theme  that supports Custom Menu's , Primary Sidebar, Four Widgets area at the footer region,Post Meta etc. 
-It has a pixel perfect design that's great for any beauty salon, health related websites who wants a new look for their site. Three page templates Blog, Full Widht Page and Contact Page. 
+SpaSalon is a Full Responsive Multi-Purpose Theme suitable for spa, salons, beauty, care, girly, hair, health, hospitality, massage, medical, parlor, physiotherapy, wellness, yoga, health blog  and for any type of business's. Spasalon is a fast, lightweight, mobile responsive WordPress theme built with speed, SEO and usability in mind. Theme has 9 widget ready areas which helps you in creating any type of site, support for drop-down menus, in built core widgets and contact form 7 styling support. Create your website exactly the way you want it using the Customizer and see your changes take place right in front of you before publishing. Create an effective online shop presence since theme have a support for very famous plugin, WooCommerce. Separate Woocommerce Sidebar added in the shop pages so that you can add different set of widgets from default templates. Premium version of Spasalon Theme supports Contact Form 7 and Google Maps plugin, offers you more number of widget ready areas, built in core widgets like Team Widget, Services Widget, Product Slider Widget etc, number of predefined template like about us , contact us, portfolio etc and even you can customize the layouts of sidebars on Business Template without adding a single line of code. Navigate to Appearance / Customize to start customizing. 
 
 Spasalon has very creatively designed home page.
 Author: Priyanshu Mittal, Shahid Mansuri, Vibhor Purandare, hari maliya and Akhilesh Nagar.
@@ -90,7 +87,7 @@ Project Images : CCO by kerdkanno
 
 
 Font Awesome...
-Font Awesome 4.6.3 by @davegandy - http://fontawesome.io - @fontawesome
+Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
 License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
 Source: http://fontawesome.io
 
@@ -106,6 +103,11 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank you!
 
 ============================Change Log================================
+@Version 1.7.6
+1.Update Theme Description.
+2.Update Font-awesome library 4.7.0
+@Version 1.7.5
+1.Solved Styling issue.
 @Version 1.7.4
 1. Update Theme Info Detail :- Jetpack gallery Support info.
 @Version 1.7.3
