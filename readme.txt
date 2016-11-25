@@ -1,8 +1,6 @@
-ElitePress
+ElitePress Readme
 
-A Premium multi colored Business Blog theme that supports Primary menu's , Primary sidebar,Four widgets area at the footer region  etc. 
-It has a perfect design that's great for any Business/Firms  Blogs who wants a new look for their site. Three page templates Home ,Blog and Contact Page. 
-Theme supports featured slider managed from Theme Option Panel.
+ElitePress WordPress theme is developed for corporate business. It provides you simple and elegant look. Already thousands of users loving this theme because it is designed for multiple businesses like digital agency, freelancers, blogger, startup, portfolio, corporate and any kind of business. The theme is developed using Bootstrap 3 CSS framework that makes it friendly for all the devices like mobiles, tablets, laptops etc. In ElitePress Lite, you can easily set Social Media and Contact Info in Header, Slider, Callout, Services, Portfolios and 3 column widgetized footer. Couple of page templates are added one is Homepage and the second one is  full width page template. In the premium version, you will get boxed layout with background patterns, 7 predefined color schemes, feature for creating your custom color scheme, an eye-catching Slider, Services, Testimonials, Portfolio, Clients/ Sponsors, Blog Layouts, Layout Manager and Latest News. You will get Various page templates  like About, Service, Portfolio, Blog and Contact Us. The theme has supports for popular  plugins like WPML, Polylang and JetPack Gallery Extensions. Just navigate to Appearance / Customize to start customizing. Check premium version theme demo at http://webriti.com/demo/wp/elitepress
 
 Author: Priyanshu Mittal
 Theme Homepage Url:http://webriti.com/demo/wp/elitepress/
@@ -58,6 +56,9 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.6
+1. Update Theme Description.
+2. Change Screenshot Image.
 @version 1.5
 1. Update Font awesome icon 4.5.0 to 4.6.3
 2. Add Title Tag Support.
