@@ -18,13 +18,12 @@ function promaxpage_build_meta_box( $post ){
 	// retrieve the _food_promaxpagemeta current value
 	$current_promaxpagemeta = get_post_meta( $post->ID, '_food_promaxpagemeta', true );
 	
-	
-	
-	
+	$upgradetopro = 'Layout Select for current page only - for website layout please choose from theme options <a href="' . esc_url('http://www.insertcart.com/product/promax-wordpress-theme/','promax') . '" target="_blank">' . esc_attr__( 'Get ProMax Pro', 'promax' ) . '</a>';
+
 	?>
 	<div class='inside'>
 
-		<h4><?php _e( 'Current page layout - for website layout please choose from theme options', 'promax' ); ?></h4>
+		<h4><?php echo $upgradetopro; ?></h4>
 		<p>
 			<input type="radio" name="promaxpagemeta" value="rsd" <?php checked( $current_promaxpagemeta, 'rsd' ); ?> /> <?php _e('Right Sidebar - Default','promax'); ?><br />
 			<input type="radio" name="promaxpagemeta" value="ls" <?php checked( $current_promaxpagemeta, 'ls' ); ?> /> <?php _e('Left Sidebar','promax'); ?><br/>

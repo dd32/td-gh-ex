@@ -2,10 +2,10 @@
 Theme Name: ProMax
 Theme URI: http://www.insertcart.com/product/promax-wordpress-theme/
 Description: ProMax Theme is best WordPress theme design for personal and business uses with full features and SEO Optimize.This WordPress Theme can easily adapts on your mobile and desktop or any other device. Theme comes with lots of customization and connect social media like Facebook, Google+, twitter, YouTube and Adsense ready It supports all the awesome WordPress features completely free theme for blogging. Now theme support WooCommerce plugin demo http://demo.baztro.com/promax 
-Version: 1.6.71
+Version: 1.7
 Author: InsertCart.com
 Author URI: http://www.insertcart.com/
-Tags: custom-menu, custom-header, custom-background, one-column, two-columns, right-sidebar, theme-options, threaded-comments, sticky-post, translation-ready, editor-style, featured-images, rtl-language-support, footer-widgets, blog, e-commerce, photography, news
+Tags: custom-menu, custom-header, custom-background, custom-colors, one-column, two-columns, right-sidebar, theme-options, threaded-comments, translation-ready, featured-images, footer-widgets, e-commerce, sticky-post, blog, photography, news, entertainment, featured-image-header, rtl-language-support, grid-layout, post-formats, buddypress, portfolio 
 Text Domain: promax
 License: GNU General Public License v2
 License URI: license.txt
@@ -72,7 +72,8 @@ body {
     font: 500 13px/23px 'open_sansregular', sans-serif;
     color: #555;
     text-align: left;
-    word-break: break-all;
+    word-wrap: break-word;
+	overflow-wrap: break-word;
     margin: auto !important;
     background: #FFF;
 }
@@ -910,14 +911,22 @@ ul.catnav li a {
     display: inline;
     margin: 0;
     margin-top: 10px;
-    width: 480px;
     overflow: hidden;
 }
 
 #header #logo img {
     margin-left: 0;
 }
-
+p.site-title,
+h1.site-title
+{
+	font-size: 2rem;
+	    padding: 0px 0px;
+    margin-bottom: 0;
+}
+p.site-description{
+	font-size: 1.4rem;
+}
 #banner-top a {
     color: #fff;
 }
@@ -1035,9 +1044,6 @@ h1.entry-title.featured{
 }
 
 .thumbnail img {
-    width: 100% !important;
-    max-width: 100% !important;
-    height: 190px;
     padding: 0px 0px 10px 0px;
 }
 
@@ -1497,12 +1503,14 @@ h2.entry-title {
 }
 
 .authmt {
-    padding-left: 3px;
-    font-size: 12px;
     position: absolute;
     margin-top: -50px;
     background-color: rgba(0, 0, 0, 0.6);
-    color: #FFF;
+    padding: 0px 6px;
+}
+.authmt a, div#metad a {
+    text-transform: uppercase;
+    font-size: 10px;
 }
 
 #metad {
@@ -1516,21 +1524,21 @@ h2.entry-title {
     padding: 6px;
 }
 
-.auth {
-    font-weight: bold;
-}
 
-.authmt::before,
-.auth::before {
-    content: "\f017";
-    font: normal normal normal 14px/1 FontAwesome;
-    padding: 3px;
+.authmt a {
+    color: #fff;
 }
-
-.author::before {
-    content: "\f007";
-    font: normal normal normal 14px/1 FontAwesome;
-    padding: 6px;
+.author a::before{
+	content: "\f007";
+	font: normal normal normal 14px/1 FontAwesome;
+	padding: 6px;
+	    font-size: 11px;
+}
+span.meta-date a::before{
+	content: "\f017";
+	font: normal normal normal 14px/1 FontAwesome;
+	padding: 3px;
+	    font-size: 11px;
 }
 
 #metad > span > span.auth > span.author.vcard > span {
@@ -1967,7 +1975,16 @@ table#wp-calendar td {
 
 
 /* ===================== comments ===================== */
-
+h2.comments-title {
+    font-size: 21px !important;
+    padding: 13px 0px;
+}
+h2.comments-title:before{
+    content: "\f086";
+    font: normal normal normal 14px/1 FontAwesome;
+    padding: 5px;
+    font-size: 20px;
+}
 a.comment-reply-link::before {
     content: "\f112";
     font-family: FontAwesome;

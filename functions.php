@@ -7,6 +7,7 @@ include_once('includes/installs.php');
 include_once('includes/core/core.php');
 include_once('includes/metaboxpage.php');
 include_once('includes/metaboxsingle.php');
+include_once('includes/template-tags.php');
 
 // Implement the Custom Header feature.
 require get_template_directory() . '/includes/custom-header.php';
@@ -76,22 +77,7 @@ $files = get_children('post_parent='.get_the_ID().'&post_type=attachment
   endif;
 }
 
-function promax_post_meta_data() {
-	printf( __( '%2$s  %4$s', 'promax' ),
-	'meta-prep meta-prep-author posted', 
-	sprintf( '<span itemprop="datePublished" class="timestamp updated">%3$s</span>',
-		esc_url( get_permalink() ),
-		esc_attr( get_the_time() ),
-		esc_html( get_the_date() )
-	),
-	'byline',
-	sprintf( '<span class="author vcard" itemprop="author" itemtype="http://schema.org/Person"><span class="fn">%3$s</span></span>',
-		get_author_posts_url( get_the_author_meta( 'ID' ) ),
-		sprintf( esc_attr__( 'View all posts by %s', 'promax' ), get_the_author() ),
-		esc_attr( get_the_author() )
-		)
-	);
-}
+
 
 	
 function promax_theme_setup() { 
@@ -123,6 +109,13 @@ global $content_width;
  				'footer-menu' => __('Footer Menu', 'promax'),
 				)		
 		);
+		// Set up the WordPress core custom logo feature.
+		add_theme_support( 'custom-logo', apply_filters( 'promax_custom_logo_args', array(
+			'height' => 80,
+			'width' => 460,
+			'flex-height' => true,
+			'flex-width' => true,
+		) ) );
 		// Setup the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'promax_custom_background_args', array(
 		'default-color' => '#ffffff',
@@ -132,19 +125,7 @@ global $content_width;
 		
 	add_action( 'after_setup_theme', 'promax_theme_setup' );
 	
-	
- function promax_search_form( $form ) {
-	$form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
-	<div><label class="screen-reader-text" for="s">' . __( 'Search for:','promax' ) . '</label>
-	<input type="text" placeholder="'. esc_attr__( 'Search..','promax' ) .'" value="' . get_search_query() . '" name="s" id="s" />
-	<input type="submit" id="searchsubmit" value="'. esc_attr__( 'Go','promax' ) .'" />
-	</div>
-	</form>';
 
-	return $form;
-}
-
-add_filter( 'get_search_form', 'promax_search_form' );
 
 /* Excerpt ********************************************/
 

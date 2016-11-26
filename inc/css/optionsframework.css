@@ -1,4 +1,19 @@
 /* Options Framework Admin Styles */
+
+.metabox-holder.goto {
+    float: left;
+    margin-left: 20px;
+	width:30%;
+}
+.metabox-holder.goto h3 {
+    background: #585858;
+    color: #fff;
+}
+#optionsframework {
+    width: 65%;
+    float: left;	
+    background:#fff;
+}
 #optionsframework .section{line-height: 1.4;}
 .basicsettings-tab::before{
     content: "\f102";

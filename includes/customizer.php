@@ -14,9 +14,66 @@ function promax_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'background_color' )->transport = 'postMessage';
-        
-      $wp_customize->remove_section("background_image");
-                        
+
+     
+// Theme important links started
+   class promax_Important_Links extends WP_Customize_Control {
+
+      public $type = "promax-important-links";
+
+      public function render_content() {
+      
+		 echo '<ul><b>
+			<li>' . esc_attr__( '* Fully Mobile Responsive', 'promax' ) . '</li>
+			<li>' . esc_attr__( '* Dedicated Option Panel', 'promax' ) . '</li>
+			<li>' . esc_attr__( '* Customize Theme Color', 'promax' ) . '</li>
+			<li>' . esc_attr__( '* WooCommerce & bbPress Support', 'promax' ) . '</li>
+			<li>' . esc_attr__( '* SEO Optimized', 'promax' ) . '</li>
+			<li>' . esc_attr__( '* Control Individual Meta Option like: Category, date, Author, Tags etc. ', 'promax' ) . '</li>
+			<li>' . esc_attr__( '* Full Support', 'promax' ) . '</li>
+			<li>' . esc_attr__( '* Google Fonts', 'promax' ) . '</li>
+			<li>' . esc_attr__( '* Theme Color Customization', 'promax' ) . '</li>
+			<li>' . esc_attr__( '* Custom CSS', 'promax' ) . '</li>
+			<li>' . esc_attr__( '* Website Layout', 'promax' ) . '</li>
+			<li>' . esc_attr__( '* Select Number of Columns', 'promax' ) . '</li>
+			<li>' . esc_attr__( '* Website Width Control', 'promax' ) . '</li>
+			</b></ul>
+		 ';
+         $important_links = array(
+		 
+            'theme-info' => array(
+               'link' => esc_url('http://www.insertcart.com/product/promax-wordpress-theme/'),
+               'text' => __('promax Pro', 'promax'),
+            ),
+            'support' => array(
+               'link' => esc_url('http://www.insertcart.com/contact-us/'),
+               'text' => __('Contact us', 'promax'),
+            ),         
+			'Documentation' => array(
+               'link' => esc_url('http://www.insertcart.com/promax-theme-setup-guide-and-documentation/'),
+               'text' => __('Documentation', 'promax'),
+            ),			 
+         );
+         foreach ($important_links as $important_link) {
+            echo '<p><a target="_blank" href="' . $important_link['link'] . '" >' . esc_attr($important_link['text']) . ' </a></p>';
+         }
+               }
+
+   }
+      $wp_customize->add_section('promax_important_links', array(
+      'priority' => 1,
+      'title' => __('Upgrade to Pro', 'promax'),
+   ));
+
+   $wp_customize->add_setting('promax_important_links', array(
+      'capability' => 'edit_theme_options',
+      'sanitize_callback' => 'promax_links_sanitize'
+   ));
+
+   $wp_customize->add_control(new promax_Important_Links($wp_customize, 'important_links', array(
+      'section' => 'promax_important_links',
+      'settings' => 'promax_important_links'
+   )));	 
   
 $wp_customize->add_section( 'promax_responsive' , 
         array(
