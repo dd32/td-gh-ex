@@ -278,7 +278,49 @@ function ascreen_get_share_url()
 	</div>
 	<?php	
 }
+/**
+ * Convert Hex Code to RGB   #FFFFFF -> 255 255 255
+ * @param  string $hex Color Hex Code
+ * @return array       RGB values
+ 
+ ascreen_hex2rgb( '#FFFFFF')
+ */
+function ascreen_hex2rgb( $hex )
+{
+	if ( strpos( $hex,'rgb' ) !== FALSE )
+	{
+		$rgb_part = strstr( $hex, '(' );
+		$rgb_part = trim($rgb_part, '(' );
+		$rgb_part = rtrim($rgb_part, ')' );
+		$rgb_part = explode( ',', $rgb_part );
+		
+		$rgb = array($rgb_part[0], $rgb_part[1], $rgb_part[2], $rgb_part[3]);
+		
+	}
+	elseif( $hex == 'transparent' )
+	{
+		$rgb = array( '255', '255', '255', '0' );
+	}
+	else
+	{
+		$hex = str_replace( '#', '', $hex );	
+		if( strlen( $hex ) == 3 )
+		{
+			$r = hexdec( substr( $hex, 0, 1 ) . substr( $hex, 0, 1 ) );
+			$g = hexdec( substr( $hex, 1, 1 ) . substr( $hex, 1, 1 ) );
+			$b = hexdec( substr( $hex, 2, 1 ) . substr( $hex, 2, 1 ) );
+		}
+		else
+		{
+			$r = hexdec( substr( $hex, 0, 2 ) );
+			$g = hexdec( substr( $hex, 2, 2 ) );
+			$b = hexdec( substr( $hex, 4, 2 ) );
+		}
+		$rgb = array( $r, $g, $b );
+	}
 
+	return $rgb; // returns an array with the rgb values
+}
 
 // Generating Live CSS
 function ascreen_customize_css()
@@ -296,13 +338,18 @@ function ascreen_customize_css()
 			$mods = get_theme_mods();
 			//print_r($mods);
 		
-			$fixed_header = !empty($mods['ascreen_option']['fixed_header']) ? $mods['ascreen_option']['fixed_header']:1;
-			$box_header_center = !empty($mods['ascreen_option']['box_header_center']) ? $mods['ascreen_option']['box_header_center']:0;		
-			$enable_home_section = !empty($mods['ascreen_option']['enable_home_section']) ? $mods['ascreen_option']['enable_home_section']:'0';	
+			//echo $fixed_header = !empty($mods['ascreen_option']['fixed_header']) ? $mods['ascreen_option']['fixed_header']:1;
+			$fixed_header = $mods['ascreen_option']['fixed_header'];
+			//echo '-----';
+			//$box_header_center = !empty($mods['ascreen_option']['box_header_center']) ? $mods['ascreen_option']['box_header_center']:0;		
+			//$enable_home_section = !empty($mods['ascreen_option']['enable_home_section']) ? $mods['ascreen_option']['enable_home_section']:'0';	
 			
-			if( $fixed_header == 0)
+			$box_header_center = $mods['ascreen_option']['box_header_center'];		
+			$enable_home_section =  $mods['ascreen_option']['enable_home_section'];				
+			
+			if( $fixed_header !=1)
 			{
-				$ascreen_custom_css .= "#header{position: inherit;}.blog-content{padding-top:30px;}";
+				$ascreen_custom_css .= "#header{position: inherit;}.blog-content{padding-top:30px;}.admin_bar_fix {margin-top:0;}";
 			}
 			if($enable_home_section == '1'){
 				$ascreen_custom_css .= ".blog-content{padding-top:50px;}";
@@ -315,11 +362,40 @@ function ascreen_customize_css()
 			
 			if ( 'blank' != get_header_textcolor() && '' != get_header_textcolor() )
 			{
-				$header_textcolor  =  ' color:#' . get_header_textcolor() . ';';
+				$header_textcolor  =  ' color:#'.get_header_textcolor().';';
 				
 				$ascreen_custom_css .=  '#logo .blogdescription,#logo .blogname {'.esc_attr($header_textcolor).'}';
+				
+				$rbg_t = ascreen_hex2rgb( '#'.get_header_textcolor() );
+				
+				$ascreen_custom_css .=  '#logo .blogdescription,#logo .blogname {'.esc_attr($header_textcolor).'}';
+ 				$ascreen_custom_css .=  '.header-nav>ul>li>a, .header-nav .btn>a,.header-nav > button{'.esc_attr($header_textcolor).'}';
+ 				$ascreen_custom_css .=  '.header-nav>button#header-nav-btn {
+											color: '.esc_attr($header_textcolor).'
+											border: #'.get_header_textcolor().' 1px solid;
+											box-shadow: 0 0 4px rgba('.$rbg_t[0].','.$rbg_t[1].','.$rbg_t[2].',0.4);
+										
+										}
+										.header-nav>button:hover{
+											background-color: rgba('.$rbg_t[0].','.$rbg_t[1].','.$rbg_t[2].',0.1);
+										}';				
+													
+				$ascreen_custom_css .=  '.header-nav>ul>li>a:hover, .header-nav .btn a:hover,.header-nav .sub-menu>li>a:hover{color:'.get_header_textcolor().';}';
+				
+ 				$ascreen_custom_css .=  '.header-nav .btn>a{border:#'.get_header_textcolor().' 1px solid;}';					
+ 									
+				
  
-			}				
+			}
+			if(!is_home() ){
+				
+				$ascreen_custom_css .=  '#header {  position: inherit;}.blog-content {  padding-top: 20px;}.admin_bar_fix {margin-top:0;}';	
+				
+				}	
+				
+			if(has_custom_logo() ){ $ascreen_custom_css .=  '@media screen and (max-width: 850px){ .ascreen_logo_text{ display:none;} }';}	
+				
+							
 			$ascreen_custom_css .="body{ background-color: #f7f8f8; }";
 			
 

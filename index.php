@@ -248,11 +248,11 @@ section#ascreen_video .section_title{ font-size:1.5em;}
 
 
 <style>
-section.ascreen_section_8 .section_title{font-family: "Microsoft YaHei", "Open Sans", "PingFangSC-Light", Arial, "Hiragino Sans GB","STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;font-size:36px;font-weight:normal;color:#666666;}
+section.ascreen_section_8 .section_title{font-family: "Microsoft YaHei", "Open Sans", "PingFangSC-Light", Arial, "Hiragino Sans GB","STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;font-size:36px;font-weight:normal;color:#99999;}
 section.ascreen_section_8 .section_title{text-align:center ;}
 
 	section.ascreen_section_8 .section_content,section.ascreen_section_8 p.section_text,
-	section.ascreen_section_8 p{font-family: "Microsoft YaHei", "Open Sans", "PingFangSC-Light", Arial, "Hiragino Sans GB","STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;font-size:14px;font-weight:normal;color:#666666;}
+	section.ascreen_section_8 p{font-family: "Microsoft YaHei", "Open Sans", "PingFangSC-Light", Arial, "Hiragino Sans GB","STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;font-size:14px;font-weight:normal;color:#999999;}
 section.ascreen_section_8 .section_content{text-align:center; }
 section.ascreen_section_8 {background-image:url(<?php echo get_template_directory_uri();?>/images/contact-us.png);background-repeat: repeat;background-position: top left;background-attachment: scroll;background-color:rgba(255,255,255,1); background-size: 100% auto;padding:50px 0;
 }
@@ -296,7 +296,8 @@ input:invalid {
 .noticesuccess {
     color:#009F00;
 }
-#submit{ color:#000;}
+#submit{ color:#ffffff;}
+
 </style>
 <section id="ascreen_contact" class="ascreen_section ascreen_contact ascreen_section_8 ">
 	<div  id="contact_us" class="section_content ">

@@ -1,5 +1,9 @@
 
 == Changelog ==
+Version 1.2.2  2016.11.26
+* fix footer and fixed header
+* fix some problem
+
 Version 1.2.1  2016.11.7
 * fix some problem
 * add plugin recommend
