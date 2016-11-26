@@ -6,6 +6,11 @@ Enigma
 
 CHANGE-LOG:
 
+@Version: 2.7 [26/11/2016]
+1. FA library.
+2. More social icon added in header and footer.
+
+
 @Version: 2.6 [14/09/2016]
 1.	Plugin Recommandation.
 2.  Minor Fix.

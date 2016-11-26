@@ -61,6 +61,9 @@
 			'youtube_link' =>"#",
 			'instagram' =>"#",
 			'gplus' =>"#",
+			'vk_link' =>"#",
+			'qq_link' => "#",
+			'whatsapp_link' => "#",
 			
 			'email_id' => 'example@mymail.com',
 			'phone_no' => '0159753586',

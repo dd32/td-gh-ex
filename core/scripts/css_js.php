@@ -8,7 +8,7 @@
                 wp_enqueue_style('media-responsive', get_template_directory_uri() . '/css/media-responsive.css');
                 wp_enqueue_style('animations', get_template_directory_uri() . '/css/animations.css');
                 wp_enqueue_style('theme-animtae', get_template_directory_uri() . '/css/theme-animtae.css');
-                wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/font-awesome-4.3.0/css/font-awesome.css');              
+                wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/font-awesome-4.7.0/css/font-awesome.css');              
                 wp_enqueue_style('OpenSansRegular','//fonts.googleapis.com/css?family=Open+Sans');
                 wp_enqueue_style('OpenSansBold','//fonts.googleapis.com/css?family=Open+Sans:700');
                 wp_enqueue_style('OpenSansSemiBold','//fonts.googleapis.com/css?family=Open+Sans:600');
