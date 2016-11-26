@@ -83,10 +83,49 @@ if (!function_exists('suevafree_get_archive_title')) {
 
 	function suevafree_get_archive_title() {
 		
-		if ( get_the_archive_title() && ( get_the_archive_title() <> 'Archives' ) ) :
-		
-			return get_the_archive_title();
-		
+		if ( is_category() ) {
+			$title = sprintf( esc_html__( 'Category: %s', 'suevafree' ), single_cat_title( '', false ) );
+		} elseif ( is_tag() ) {
+			$title = sprintf( esc_html__( 'Tag: %s', 'suevafree' ), single_tag_title( '', false ) );
+		} elseif ( is_author() ) {
+			$title = sprintf( esc_html__( 'Author: %s', 'suevafree' ), '<span class="vcard">' . get_the_author() . '</span>' );
+		} elseif ( is_year() ) {
+			$title = sprintf( esc_html__( 'Year: %s', 'suevafree' ), get_the_date( esc_html_x( 'Y', 'yearly archives date format', 'suevafree' ) ) );
+		} elseif ( is_month() ) {
+			$title = sprintf( esc_html__( 'Month: %s', 'suevafree' ), get_the_date( esc_html_x( 'F Y', 'monthly archives date format', 'suevafree' ) ) );
+		} elseif ( is_day() ) {
+			$title = sprintf( esc_html__( 'Day: %s', 'suevafree' ), get_the_date( esc_html_x( 'F j, Y', 'daily archives date format', 'suevafree' ) ) );
+		} elseif ( is_tax( 'post_format' ) ) {
+			if ( is_tax( 'post_format', 'post-format-aside' ) ) {
+				$title = esc_html_x( 'Asides', 'post format archive title', 'suevafree' );
+			} elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) {
+				$title = esc_html_x( 'Galleries', 'post format archive title', 'suevafree' );
+			} elseif ( is_tax( 'post_format', 'post-format-image' ) ) {
+				$title = esc_html_x( 'Images', 'post format archive title', 'suevafree' );
+			} elseif ( is_tax( 'post_format', 'post-format-video' ) ) {
+				$title = esc_html_x( 'Videos', 'post format archive title', 'suevafree' );
+			} elseif ( is_tax( 'post_format', 'post-format-quote' ) ) {
+				$title = esc_html_x( 'Quotes', 'post format archive title', 'suevafree' );
+			} elseif ( is_tax( 'post_format', 'post-format-link' ) ) {
+				$title = esc_html_x( 'Links', 'post format archive title', 'suevafree' );
+			} elseif ( is_tax( 'post_format', 'post-format-status' ) ) {
+				$title = esc_html_x( 'Statuses', 'post format archive title', 'suevafree' );
+			} elseif ( is_tax( 'post_format', 'post-format-audio' ) ) {
+				$title = esc_html_x( 'Audio', 'post format archive title', 'suevafree' );
+			} elseif ( is_tax( 'post_format', 'post-format-chat' ) ) {
+				$title = esc_html_x( 'Chats', 'post format archive title', 'suevafree' );
+			}
+		} elseif ( is_post_type_archive() ) {
+			$title = sprintf( esc_html__( 'Archives: %s', 'suevafree' ), post_type_archive_title( '', false ) );
+		} elseif ( is_tax() ) {
+			$tax = get_taxonomy( get_queried_object()->taxonomy );
+			$title = sprintf( esc_html__( '%1$s: %2$s', 'suevafree' ), $tax->labels->singular_name, single_term_title( '', false ) );
+		}
+	
+		if ( isset($title) )  :
+			return $title;
+		else:
+			return false;
 		endif;
 	
 	}
@@ -179,7 +218,7 @@ if (!function_exists('suevafree_require')) {
 	
 		if (isset($folder)) : 
 	
-			if ( ( !suevafree_setting('suevafree_loadsystem') ) || ( suevafree_setting('suevafree_loadsystem') == "mode_a" ) ) {
+			if ( !suevafree_setting('suevafree_loadsystem') || suevafree_setting('suevafree_loadsystem') == "mode_a" ) {
 		
 				$dir = dirname(dirname(__FILE__)) . $folder ;  
 				
@@ -187,14 +226,14 @@ if (!function_exists('suevafree_require')) {
 				  
 				foreach ($files as $key => $value) {  
 
-					if ( !in_array($value,array(".DS_Store",".","..")) ) { 
-						
-						if ( !is_dir( $dir . $value) ) { 
+					if ( !in_array($value,array(".DS_Store",".","..") ) && !strstr( $value, '._' ) ) { 
 							
+						if ( !is_dir( $dir . $value) ) { 
+								
 							require_once $dir . $value;
-						
+							
 						} 
-					
+						
 					} 
 
 				}  
@@ -231,7 +270,7 @@ if (!function_exists('suevafree_enqueue_script')) {
 	
 		if (isset($folder)) : 
 	
-			if ( ( !suevafree_setting('suevafree_loadsystem') ) || ( suevafree_setting('suevafree_loadsystem') == "mode_a" ) ) {
+			if ( !suevafree_setting('suevafree_loadsystem') || suevafree_setting('suevafree_loadsystem') == "mode_a" ) {
 		
 				$dir = dirname(dirname(__FILE__)) . $folder ;  
 				
@@ -239,14 +278,14 @@ if (!function_exists('suevafree_enqueue_script')) {
 				  
 				foreach ($files as $key => $value) {  
 
-					if ( !in_array($value,array(".DS_Store",".","..")) ) { 
-						
-						if ( !is_dir( $dir . $value) ) { 
+					if ( !in_array($value,array(".DS_Store",".","..") ) && !strstr( $value, '._' ) ) { 
 							
-							wp_enqueue_script( str_replace('.js','',$value), get_template_directory_uri() . $folder . "/" . $value , array('jquery'), FALSE, TRUE ); 
-						
+						if ( !is_dir( $dir . $value ) && strstr ( $value, 'js' )) { 
+								
+							wp_enqueue_script( 'suevafree-' . str_replace('.js','',$value), get_template_directory_uri() . $folder . "/" . $value , array('jquery'), FALSE, TRUE ); 
+							
 						} 
-					
+						
 					} 
 
 				}  
@@ -259,7 +298,7 @@ if (!function_exists('suevafree_enqueue_script')) {
 				   
 					if ( ( strlen($filename) > 2 ) && ( $filename <> ".DS_Store" ) ) {
 						
-						wp_enqueue_script( str_replace('.js','',$filename), get_template_directory_uri() . $folder . "/" . $filename , array('jquery'), FALSE, TRUE ); 
+						wp_enqueue_script( 'suevafree-' . str_replace('.js','',$filename), get_template_directory_uri() . $folder . "/" . $filename , array('jquery'), FALSE, TRUE ); 
 					
 					}
 					
@@ -283,7 +322,7 @@ if (!function_exists('suevafree_enqueue_style')) {
 	
 		if (isset($folder)) : 
 	
-			if ( ( !suevafree_setting('suevafree_loadsystem') ) || ( suevafree_setting('suevafree_loadsystem') == "mode_a" ) ) {
+			if ( !suevafree_setting('suevafree_loadsystem') || suevafree_setting('suevafree_loadsystem') == "mode_a" ) {
 			
 				$dir = dirname(dirname(__FILE__)) . $folder ;  
 				
@@ -291,14 +330,14 @@ if (!function_exists('suevafree_enqueue_style')) {
 				  
 				foreach ($files as $key => $value) {  
 
-					if ( !in_array($value,array(".DS_Store",".","..")) ) { 
-						
-						if ( !is_dir( $dir . $value) ) { 
+					if ( !in_array($value,array(".DS_Store",".","..") ) && !strstr( $value, '._' ) ) { 
 							
-							wp_enqueue_style( str_replace('.css','',$value), get_template_directory_uri() . $folder . "/" . $value ); 
-						
+						if ( !is_dir( $dir . $value ) && strstr ( $value, 'css' )) { 
+							
+							wp_enqueue_style( 'suevafree-' . str_replace('.css','',$value), get_template_directory_uri() . $folder . "/" . $value ); 
+							
 						} 
-					
+						
 					} 
 
 				}  
@@ -311,7 +350,7 @@ if (!function_exists('suevafree_enqueue_style')) {
 				   
 					if ( ( strlen($filename) > 2 ) && ( $filename <> ".DS_Store" ) ) {
 						
-						wp_enqueue_style( str_replace('.css','',$filename), get_template_directory_uri() . $folder . "/" . $filename ); 
+						wp_enqueue_style( 'suevafree-' . str_replace('.css','',$filename), get_template_directory_uri() . $folder . "/" . $filename ); 
 				
 					}
 				

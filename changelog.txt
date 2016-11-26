@@ -1,5 +1,9 @@
 SuevaFree Changelog
 
+- Version 2.2.6 - Released: 26.11.2016
+
+-- Edit : Code optimized.
+
 - Version 2.2.5 - Released: 29.10.2016
 
 -- Edit : Code optimized.
