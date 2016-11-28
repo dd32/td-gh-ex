@@ -1,5 +1,5 @@
 ﻿/*
-/*
+/* 
 Theme Name: Advance
 Theme URI: http://www.imonthemes.com/advance-lite
 Author: Imon Themes
@@ -12,7 +12,7 @@ Domain Path: /languages/
 Description: Advance is a clean responsive WordPress theme. It is specially designed for Business, and general corporate website.  It comes with the necessary feature for your website such as a business, personal, blog, portfolio etc.It is fully responsive and thus, looks stunning on all screen types: desktop, notebook, tablet and smartphones.
 
 
-Version: 1.1.7
+Version: 1.1.8
 
 Tags: featured-images,front-page-post-form, sticky-post, threaded-comments,blog,entertainment,food-and-drink
 
@@ -108,6 +108,7 @@ padding-left: 5%;
     position: relative;
    padding-top: 35px;
    float: right;
+   width:70%;
 }
 #menu_wrap .search-toggle {margin-left: 15px;}
 

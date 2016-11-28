@@ -43,6 +43,9 @@ $customizer_url = admin_url() . 'customize.php' ;
                  <i class="fa fa-shopping-cart fa-4x" aria-hidden="true"></i>
                     <p><?php _e('Upgrade to Pro for Unlock all Features','advance'); ?></p>
                     <a href="<?php echo esc_url('http://www.imonthemes.com/advance-pro/');?>" target="_blank" ><?php _e('Upgrade to Pro','advance'); ?></a>
+                    
+                     <p><?php _e('Imoport demo content','advance'); ?></p>
+                    <a href="<?php echo esc_url('http://advance.imonthemes.com/docs/');?>" target="_blank" ><?php _e('Demo Content','advance'); ?></a>
                 </div>
 
                 
