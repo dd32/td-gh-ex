@@ -44,7 +44,7 @@ get_header(); ?>
                 <h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
 				<div class="content-ver-sep"> </div>	
 				<div class="entrytext"><?php the_post_thumbnail('thumbnail'); ?>
-  <?php socialia_content(); ?>
+  <?php d5socialia_content(); ?>
 				</div>
 				<div class="clear"> </div>
                 <div class="up-bottom-border">

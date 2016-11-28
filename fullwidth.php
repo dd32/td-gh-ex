@@ -6,9 +6,7 @@
 	Based on the Simplest D5 Framework for WordPress
 	Since Socialia 2.0
 */
-?>
-
-<?php get_header(); ?>
+get_header(); ?>
 
 
 <div id="content-full">

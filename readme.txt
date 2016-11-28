@@ -1,7 +1,7 @@
 ----------------------------------
 Socialia Theme
 ----------------------------------
-Version: 	3.1
+Version: 	3.2
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
