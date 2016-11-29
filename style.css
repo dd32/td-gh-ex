@@ -4,7 +4,7 @@ Theme URI: http://reduxthemes.com/themes/undedicated/
 Author: ReduxThemes.com
 Author URI: http://reduxthemes.com
 Description: A clean and simple theme with focus on typography & content, and incorporates responsive design and menu.
-Version: 2.0.5
+Version: 2.0.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: undedicated
@@ -1583,7 +1583,7 @@ nav {
 		font-weight: 500;
 		margin: 0 auto;
 		overflow: hidden;
-		padding: 20px;
+		padding: 0;
 		text-align: center;
 		visibility: visible;
 	}
