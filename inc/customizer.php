@@ -654,13 +654,15 @@ function attirant_customize_register( $wp_customize ) {
 		 
 	    public function render_content() {
 	        ?>
+	        <li><h2 class="dvt-title"><?php _e('<i>Check out more of the Awesome WordPress Themes at Divjot.Co </i>', 'attirant'); ?></p><a class="button attirant_dvt" href="http://www.divjot.co" target="_blank" title="<?php esc_attr_e('Divjot.Co', 'attirant'); ?>"><?php printf('Divjot.Co', 'attirant'); ?></a></li>
+			<br>
 			<li><p class="rev-title"><?php _e('<i>If you liked the theme, spare a few minutes to Review Attirant Plus</i>', 'attirant'); ?></p><a class="button attirant_rev" href="https://www.wordpress.org/themes/attirant" target="_blank" title="<?php esc_attr_e('Rate the Theme', 'attirant'); ?>"><?php printf('Review attirant Theme', 'attirant'); ?></a></li>
 			<br>
 			<li><h2 class="fb-like-title"><?php _e('Like Divjot.Co on Facebook', 'attirant'); ?></h2><div class="fb-like" data-href="https://www.facebook.com/divjotco" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div></li>
 			<br>
 			<li><h2 class="twitter-title"><?php _e('Follow me on Twitter', 'attirant'); ?></h2><a class="twitter-follow-button" href="https://twitter.com/divjot911" data-size="large">Follow me on Twitter</a></li>
 			<br>
-			<li><h2 class="pro-title"><?php _e('<b>Enjoying the Theme?</b>', 'attirant'); ?></h2><a class="button attirant_pro" href="http://www.divjot.co/product/attirant-plus" target="_blank" title="<?php esc_attr_e('Attirant Plus', 'attirant'); ?>"><?php printf('Check out Attirant Plus', 'attirant'); ?></a></li>
+			<li><h2 class="pro-title"><?php _e('<b>Enjoying the Theme? Upgrade to Attirant Plus and enjoy much much more of the awesomeness of Attirant</b>', 'attirant'); ?></h2><a class="button attirant_pro" href="http://www.divjot.co/product/attirant-plus" target="_blank" title="<?php esc_attr_e('Attirant Plus', 'attirant'); ?>"><?php printf('Check out Attirant Plus', 'attirant'); ?></a></li>
 			
 			
 				<div id="fb-root"></div>

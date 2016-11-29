@@ -459,24 +459,7 @@ body.blog #primary-home h2#page-title {
 }
 body.blog #primary-home h2#page-title span {
   position: relative;
-}
-body.blog #primary-home h2#page-title span:before {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 3px;
-  background: black;
-  left: -25px;
-  top: 17px;
-}
-body.blog #primary-home h2#page-title span:after {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 3px;
-  background: black;
-  right: -25px;
-  top: 17px;
+  letter-spacing: 3px;
 }
 body.blog #primary-home article {
   margin-bottom: 50px;
@@ -517,6 +500,12 @@ body.blog #primary-home article .post-format:after {
 body.blog #primary-home article .blog-entry-title {
   margin-top: 30px;
   padding-top: 30px;
+}
+@media screen and (max-width: 992px) {
+  body.blog #primary-home article .blog-entry-title {
+    padding-top: 0px;
+    margin-bottom: 60px;
+  }
 }
 body.blog #primary-home article .blog-entry-title h2.entry-title {
   text-align: center;

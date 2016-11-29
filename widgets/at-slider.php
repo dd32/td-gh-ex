@@ -17,7 +17,7 @@ add_action( 'widgets_init', function(){
 */
 
 /**
- * Adds sk_facebook widget.
+ * Adds at_slider widget.
  */
 class at_slider extends WP_Widget {
 
@@ -51,6 +51,7 @@ class at_slider extends WP_Widget {
                 }
 				
 				get_template_part('slider');
+				
                
                 echo $args['after_widget'];
                

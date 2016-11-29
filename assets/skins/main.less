@@ -493,24 +493,7 @@ body.blog {
 			margin: 50px auto;
 			span {
 				position: relative;
-				&:before {
-					content: "";
-					position: absolute;
-					width: 20px;
-					height: 3px;
-					background: black;
-					left: -25px;
-					top: 17px;
-				}
-				&:after {
-					content: "";
-					position: absolute;
-					width: 20px;
-					height: 3px;
-					background: black;
-					right: -25px;
-					top: 17px;
-				}
+				letter-spacing: 3px;
 			}
 		}
 		article {
@@ -551,6 +534,10 @@ body.blog {
 			.blog-entry-title {
 				margin-top: 30px;
 				padding-top: 30px;
+				@media screen and ( max-width: 992px ) {
+					padding-top: 0px;
+					margin-bottom: 60px;
+				}
 				h2.entry-title {
 					text-align: center;
 					font-family: "Muli", sans-serif;
