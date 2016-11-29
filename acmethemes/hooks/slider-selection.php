@@ -147,10 +147,12 @@ if ( !function_exists('acmephoto_feature_slider') ) :
             <div
                 class="feature-slider cycle-slideshow"
                 data-cycle-fx = 'tileBlind'
+                data-cycle-log="false"
                 data-cycle-speed = 1000
                 data-cycle-pause-on-hover = true
                 data-cycle-timeout = 2000
                 data-cycle-slides = '.item'
+                
             >
                 <!-- prev/next links -->
                 <div class="owl-prev cycle-prev"><i class="fa fa-angle-left"></i></div>

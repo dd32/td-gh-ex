@@ -18,30 +18,32 @@ if( !has_post_thumbnail() ){
 	if( has_post_thumbnail() ){
 		?>
 		<div class="single-feat clearfix">
-			<figure class="single-thumb single-thumb-full">
-				<?php
-				$thumbnail = 'full';
-				the_post_thumbnail( $thumbnail );
-				?>
-			</figure>
-			<div class="singe-content-wrapper">
-				<div class="at-overlay">
-					<div class="acme-col-2">
-						<div class="entry-data">
-							<?php if ( 'post' === get_post_type() ) : ?>
-								<div class="entry-meta">
-									<?php acmephoto_posted_on( 1, 1 ); ?>
-								</div><!-- .entry-meta -->
-							<?php endif; ?>
+			<div class="at-hover-fixed">
+				<figure class="single-thumb single-thumb-full">
+					<?php
+					$thumbnail = 'full';
+					the_post_thumbnail( $thumbnail );
+					?>
+				</figure>
+				<div class="singe-content-wrapper">
+					<div class="at-overlay">
+						<div class="acme-col-2">
+							<div class="entry-data">
+								<?php if ( 'post' === get_post_type() ) : ?>
+									<div class="entry-meta">
+										<?php acmephoto_posted_on( 1, 1 ); ?>
+									</div><!-- .entry-meta -->
+								<?php endif; ?>
+							</div>
+						</div>
+						<div class="acme-col-2 float-right">
+							<footer class="entry-footer">
+								<?php acmephoto_entry_footer(1, 0, 1, 0); ?>
+							</footer><!-- .entry-footer -->
 						</div>
 					</div>
-					<div class="acme-col-2 float-right">
-						<footer class="entry-footer">
-							<?php acmephoto_entry_footer(1, 0, 1, 0); ?>
-						</footer><!-- .entry-footer -->
-					</div>
 				</div>
-			</div>
+			</div><!--.at-hover-fixed-->
 		</div><!-- .single-feat-->
 	<?php
 	}

@@ -7,6 +7,12 @@
  */
 
 /*
+* file for upgrade to pro
+*/
+$acmephoto_custom_controls_file_path = acmephoto_file_directory('acmethemes/customizer/customizer-pro/class-customize.php');
+require $acmephoto_custom_controls_file_path;
+
+/*
 * file for customizer core functions
 */
 $acmephoto_custom_controls_file_path = acmephoto_file_directory('acmethemes/customizer/customizer-core.php');
