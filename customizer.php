@@ -987,6 +987,52 @@ $wp_customize->add_section(
 		'section'    => 'social_section',
 		'settings'   => 'enigma_options[instagram]'
 	) );
+	/*extra icons added 2.7.1*/
+	$wp_customize->add_setting(
+	'enigma_options[vk_link]',
+		array(
+		'default'=>esc_attr($wl_theme_options['vk_link']),
+		'type'=>'option',
+		'sanitize_callback'=>'esc_url_raw',
+		'capability'=>'edit_theme_options'
+		)
+	);
+		$wp_customize->add_control( 'vk_link', array(
+		'label'        => __( 'VK', 'enigma' ),
+		'type'=>'url',
+		'section'    => 'social_section',
+		'settings'   => 'enigma_options[vk_link]'
+	) );
+	$wp_customize->add_setting(
+	'enigma_options[qq_link]',
+		array(
+		'default'=>esc_attr($wl_theme_options['qq_link']),
+		'type'=>'option',
+		'sanitize_callback'=>'esc_url_raw',
+		'capability'=>'edit_theme_options'
+		)
+	);
+		$wp_customize->add_control( 'qq_link', array(
+		'label'        => __( 'QQ', 'enigma' ),
+		'type'=>'url',
+		'section'    => 'social_section',
+		'settings'   => 'enigma_options[qq_link]'
+	) );
+	$wp_customize->add_setting(
+	'enigma_options[whatsapp_link]',
+		array(
+		'default'=>esc_attr($wl_theme_options['whatsapp_link']),
+		'type'=>'option',
+		'sanitize_callback'=>'esc_url_raw',
+		'capability'=>'edit_theme_options'
+		)
+	);
+		$wp_customize->add_control( 'whatsapp_link', array(
+		'label'        => __( 'WhatsApp', 'enigma' ),
+		'type'=>'url',
+		'section'    => 'social_section',
+		'settings'   => 'enigma_options[whatsapp_link]'
+	) );
 	/* Footer callout */
 	$wp_customize->add_section('callout_section',array(
 	'title'=>__("Footer Call-Out Options",'enigma'),

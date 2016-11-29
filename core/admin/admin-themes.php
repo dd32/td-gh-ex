@@ -73,6 +73,64 @@ if (!function_exists('enigmadisplay_theme_info_page')) {
 		<div class="row p_plugin blog_gallery">
 			<div class="col-xs-12 col-sm-4 col-md-5 p_plugin_pic">
 				<div class="img-thumbnail">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/corporal.jpg" class="img-responsive" alt=""/>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-5 col-md-5 p_plugin_desc">
+				<div class="row p-box">
+					<h2><a href="">Corporal- Ultimate Multi-Purpose WordPress Theme</a></h2>
+						<p><strong>Tags: </strong>clean, responsive, portfolio, blog, e-commerce, Business,
+						WordPress, Corporate, dark, real estate, shop, restaurant, ele…</p>
+						<div>
+						<p><strong>Description: </strong>
+						Corporal Premium  is a responsive and fully customizable template for Business and Multi-purpose theme.
+						The Theme has You can use it for your business, portfolio, blogging or any type of site.Custom menus to 
+						choose the menu in Primary Location that is in Header area of the site. </div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-3 col-md-2 p_plugin_pic">
+				<div class="price">
+					<span class="currency">USD</span>
+					<span class="price-number">$<span>25</span></span>
+				</div>
+				<div class="btn-group-vertical">
+					<a class="btn btn-primary btn-lg" href="http://demo.weblizar.com/corporal-premium/">Demo</a>
+					<a class="btn btn-success btn-lg" href="https://weblizar.com/corporal-premium">Buy Now</a>
+				</div>			
+			</div>
+		</div>
+		<div class="row p_plugin blog_gallery">
+			<div class="col-xs-12 col-sm-4 col-md-5 p_plugin_pic">
+				<div class="img-thumbnail">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/explora.jpg" class="img-responsive" alt=""/>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-5 col-md-5 p_plugin_desc">
+				<div class="row p-box">
+					<h2><a href="">Explora- Ultimate Multi-Purpose WordPress Theme</a></h2>
+						<p><strong>Tags: </strong>clean, responsive, portfolio, blog, e-commerce, Business,
+						WordPress, Corporate, dark, real estate, shop, restaurant, ele…</p>
+						<div>
+						<p><strong>Description: </strong>
+						Explora Premium is a multi-purpose responsive theme coded & designed with a lot of care and love. You can use it
+						for your business, portfolio, blogging or any type of site. </div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-3 col-md-2 p_plugin_pic">
+				<div class="price">
+					<span class="currency">USD</span>
+					<span class="price-number">$<span>25</span></span>
+				</div>
+				<div class="btn-group-vertical">
+					<a class="btn btn-primary btn-lg" href="http://demo.weblizar.com/explora-premium/">Demo</a>
+					<a class="btn btn-success btn-lg" href="https://weblizar.com/explora-premium">Buy Now</a>
+				</div>			
+			</div>
+		</div>
+			
+		<div class="row p_plugin blog_gallery">
+			<div class="col-xs-12 col-sm-4 col-md-5 p_plugin_pic">
+				<div class="img-thumbnail">
 					<img src="<?php echo get_template_directory_uri(); ?>/images/BeautySpa.jpg" class="img-responsive" alt=""/>
 				</div>
 			</div>
@@ -241,36 +299,6 @@ if (!function_exists('enigmadisplay_theme_info_page')) {
 				</div>
 			</div>
 		</div>
-		
-		<div class="row p_plugin blog_gallery">
-			<div class="col-xs-12 col-sm-4 col-md-5 p_plugin_pic">
-				<div class="img-thumbnail">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/Incredible.jpg" class="img-responsive" alt=""/>
-				</div>
-			</div>
-			<div class="col-xs-12 col-sm-5 col-md-5 p_plugin_desc">
-				<div class="row p-box">
-					<h2><a href="">Incridible- Ultimate Multi-Purpose WordPress Theme</a></h2>
-						<p><strong>Tags: </strong>clean, responsive, portfolio, blog, e-commerce, Business,
-						WordPress, Corporate, dark, real estate, shop, restaurant, ele…</p>
-						<div>
-						<p><strong>Description: </strong>
-						Incredible is an incredibly superfine multipurpose responsive theme coded & designed with a lot of care and love. Incredible is Responsive and flexible based on BOOTSTRAP CSS framework.</p>
-						</div>
-				</div>
-			</div>
-			
-			<div class="col-xs-12 col-sm-3 col-md-2 p_plugin_pic">
-				<div class="price">
-					<span class="currency">USD</span>
-					<span class="price-number">$<span>19</span></span>
-				</div>
-				<div class="btn-group-vertical">
-					<a class="btn btn-primary btn-lg" href="https://weblizar.com/themes/incredible-premium-theme/">Detail</a>
-					<a class="btn btn-success btn-lg" href="https://weblizar.com/themes/incredible-premium-theme/">Buy Now</a>
-				</div>
-			</div>
-		</div>
 	
 		<div class="row p_plugin blog_gallery">
 			<div class="col-xs-12 col-sm-4 col-md-5 p_plugin_pic">
@@ -301,34 +329,6 @@ if (!function_exists('enigmadisplay_theme_info_page')) {
 			</div>
 		</div>
 	
-		<div class="row p_plugin blog_gallery">
-			<div class="col-xs-12 col-sm-4 col-md-5 p_plugin_pic">
-				<div class="img-thumbnail">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/Green lantern.jpg" class="img-responsive" alt=""/>
-				</div>
-			</div>
-			<div class="col-xs-12 col-sm-5 col-md-5 p_plugin_desc">
-				<div class="row p-box">
-					<h2><a href="">Green Lantern- Ultimate Multi-Purpose WordPress Theme</a></h2>
-						<p><strong>Tags: </strong>clean, responsive, portfolio, blog, e-commerce, Business,
-						WordPress, Corporate, dark, real estate, shop, restaurant, ele…</p>
-						<div>
-						<p><strong>Description: </strong>
-						A Responsive WordPress Theme for Business & Corporate Sector’s . Clean And Eye Catching Design with Crisp Look..</p>
-						</div>
-				</div>
-			</div>
-			<div class="col-xs-12 col-sm-3 col-md-2 p_plugin_pic">
-				<div class="price">
-					<span class="currency">USD</span>
-					<span class="price-number">$<span>29</span></span>
-				</div>
-				<div class="btn-group-vertical">
-					<a class="btn btn-primary btn-lg" href="https://weblizar.com/themes/green-lantern-premium-theme/">Detail</a>
-					<a class="btn btn-success btn-lg" href="https://weblizar.com/themes/green-lantern-premium-theme/">Buy Now</a>
-				</div>
-			</div>
-		</div>
 		<div class="row p_plugin blog_gallery">
 			<div class="col-xs-12 col-sm-4 col-md-5 p_plugin_pic">
 				<div class="img-thumbnail">
@@ -367,6 +367,78 @@ if (!function_exists('enigmadisplay_theme_info_page')) {
 				<h1 class="section-title">WordPress Plugins</h1>
 			</div>
 		</div>
+		
+		<div class="row p_plugin blog_gallery">
+			<div class="col-xs-12 col-sm-4 col-md-5 p_plugin_pic">
+				<div class="img-thumbnail">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/Search-Engine-Optimizer-new.jpg" class="img-responsive" alt="Coming-Soon-Page"/>
+					
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-5 col-md-5 p_plugin_desc">
+				<div class="row p-box">
+					<h2><a href="">SEO Image Optimizer Pro </a></h2>
+						<p><strong>Features: </strong>
+						<ul>
+						<li>WooCommerce Product Images SEO</li>
+						<li>Auto Fill Title & Alt Tag</li>
+						<li>Custom Title & Alt Tag</li>
+						<li>Featured Images SEO</li>
+						<li>Magical Reset</li>
+						<li>Delimiter Removal</li>
+						<li>Image Compression</li>
+						<li>Site Speed Up</li>
+						</ul>
+						</p>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-3 col-md-2 p_plugin_pic">
+				<div class="price">
+					<span class="currency">USD</span>
+					<span class="price-number"><span>$11</span></span>
+				</div>
+				<div class="btn-group-vertical">
+					<a target="_blank" class="btn btn-primary btn-lg" href="http://demo.weblizar.com/seo-image-optimizer-pro/">Demo</a>
+					<a class="btn btn-success btn-lg" href="https://weblizar.com/seo-image-optimizer-pro">Buy Now</a> 
+				</div>			
+			</div>
+		</div>
+		<div class="row p_plugin blog_gallery">
+			<div class="col-xs-12 col-sm-4 col-md-5 p_plugin_pic">
+				<div class="img-thumbnail">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/newsletter.png" class="img-responsive" alt="Coming-Soon-Page"/>
+					
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-5 col-md-5 p_plugin_desc">
+				<div class="row p-box">
+					<h2><a href="">Newsletter Subscription Form Pro </a></h2>
+						<p><strong>Features: </strong>
+						<ul>
+						<li>Multiple Pro Template</li>
+						<li>News Letter Subscription</li>
+						<li>Download Subscriber List</li>
+						<li>Auto & Manual Notification</li>
+						<li>Major Browser Compatible</li>
+						<li>Multi Site and Multilingual</li>
+						<li>Customized Form</li>
+						<li>Forms shotcode</li>
+						</ul>
+						</p>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-3 col-md-2 p_plugin_pic">
+				<div class="price">
+					<span class="currency">USD</span>
+					<span class="price-number"><span>$7</span></span>
+				</div>
+				<div class="btn-group-vertical">
+					<a target="_blank" class="btn btn-primary btn-lg" href="http://demo.weblizar.com/newsletter-subscription-form-pro/">Demo</a>
+					<a class="btn btn-success btn-lg" href="https://weblizar.com/newsletter-subscription-form-pro">Buy Now</a> 
+				</div>			
+			</div>
+		</div>
+		
 		<div class="row p_plugin blog_gallery">
 			<div class="col-xs-12 col-sm-4 col-md-5 p_plugin_pic">
 				<div class="img-thumbnail">
@@ -593,102 +665,6 @@ if (!function_exists('enigmadisplay_theme_info_page')) {
 				<div class="btn-group-vertical">
 					<a class="btn btn-primary btn-lg" href="http://demo.weblizar.com/responsive-portfolio-pro/">Demo</a>
 					<a class="btn btn-success btn-lg" href="https://weblizar.com/plugins/responsive-portfolio-pro/">Buy Now</a>
-				</div>			
-			</div>
-		</div>
-		<div class="row p_plugin blog_gallery">
-			<div class="col-xs-12 col-sm-4 col-md-5 p_plugin_pic">
-				<div class="img-thumbnail">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/lightbox-pro.jpg" class="img-responsive" alt=""/>
-				</div>
-			</div>
-			<div class="col-xs-12 col-sm-5 col-md-5 p_plugin_desc">
-				<div class="row p-box">
-					<h2><a href="">Lightbox Slider Pro- A Complete Lightbox Gallery Plugin</a></h2>
-						<p><strong>Features: </strong>
-						<ul>
-						<li>Gallery Layout</li>
-						<li>Hover Color</li>
-						<li>Hover Color Opacity</li>
-						<li>Caption Font Style</li>
-						</li>Light Box</li>
-						<li>All Gallery Shortcode</li>
-						<li>Single Gallery Shortcode, and many more..</li>
-						</ul>
-						</p>
-				</div>
-			</div>
-			<div class="col-xs-12 col-sm-3 col-md-2 p_plugin_pic">
-				<div class="price">
-					<span class="currency">USD</span>
-					<span class="price-number">$<span>12</span></span>
-				</div>
-				<div class="btn-group-vertical">
-					<a class="btn btn-primary btn-lg" href="http://demo.weblizar.com/lightbox-slider-pro-demo/">Demo</a>
-					<a class="btn btn-success btn-lg" href="https://weblizar.com/plugins/lightbox-slider-pro/">Buy Now</a>
-				</div>			
-			</div>
-		</div>
-		<div class="row p_plugin blog_gallery">
-			<div class="col-xs-12 col-sm-4 col-md-5 p_plugin_pic">
-				<div class="img-thumbnail">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/responsive-photo-pro.jpg" class="img-responsive" alt=""/>
-				</div>
-			</div>
-			<div class="col-xs-12 col-sm-5 col-md-5 p_plugin_desc">
-				<div class="row p-box">
-					<h2><a href="">Responsive Photo Gallery Pro- A Highly Animated Image Gallery Plugin</a></h2>
-						<p><strong>Features: </strong>
-						<ul>
-						<li>Number of Lightbox Styles</li>
-						<li>Drag and Drop image Position</li>
-						<li>Multiple Image uploader</li>
-						<li>Shortcode Button on post or page</li>
-						<li>Unique settings for each gallery</li>
-						<li>Hide/Show gallery Title and label and so on..</li>
-						</ul>
-						</p>
-				</div>
-			</div>
-			<div class="col-xs-12 col-sm-3 col-md-2 p_plugin_pic">
-				<div class="price">
-					<span class="currency">USD</span>
-					<span class="price-number">$<span>10</span></span>
-				</div>
-				<div class="btn-group-vertical">
-					<a class="btn btn-primary btn-lg" href="http://demo.weblizar.com/responsive-photo-gallery-pro/">Demo</a>
-					<a class="btn btn-success btn-lg" href="https://weblizar.com/plugins/responsive-photo-gallery-pro/">Buy Now</a>
-				</div>			
-			</div>
-		</div>
-		<div class="row p_plugin blog_gallery">
-			<div class="col-xs-12 col-sm-4 col-md-5 p_plugin_pic">
-				<div class="img-thumbnail">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/recent-post-pro.jpg" class="img-responsive" alt=""/>
-				</div>
-			</div>
-			<div class="col-xs-12 col-sm-5 col-md-5 p_plugin_desc">
-				<div class="row p-box">
-					<h2><a href="">Recent Related Post And Page WordPress Plugin- Fully Responsive Plugin For WordPress Blog</a></h2>
-						<p><strong>Features: </strong>
-						<ul>
-						<li>Multiple Template</li>
-						<li>select feature image</li>
-						<li>8 Border style</li>
-						<li>8 post Status, 2 Post Type</li>
-						<li>500+ Google Font for Template and many more..</li>
-						</ul>
-						</p>
-				</div>
-			</div>
-			<div class="col-xs-12 col-sm-3 col-md-2 p_plugin_pic">
-				<div class="price">
-					<span class="currency">USD</span>
-					<span class="price-number">$<span>10</span></span>
-				</div>
-				<div class="btn-group-vertical">
-					<a class="btn btn-primary btn-lg" href="http://demo.weblizar.com/recent-related-post-and-page-pro/">Demo</a>
-					<a class="btn btn-success btn-lg" href="https://weblizar.com/plugins/recent-related-post-and-page-pro/">Buy Now</a>
 				</div>			
 			</div>
 		</div>
