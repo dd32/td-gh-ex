@@ -56,7 +56,7 @@
 				ob_end_clean();
 				$response->data = $buffer;
 				echo json_encode($response);
-				
+				wp_reset_postdata();
 			}
 			else
 			{

@@ -6,7 +6,7 @@
 		<?php
 		while ( have_posts() ) : the_post();
 		
-			if(get_post_format()!=""){
+			if(has_post_format()){
 				get_template_part( 'parts/content/content-' .  get_post_format() );
 			}else{
 				get_template_part( 'parts/content/content-standard' );
@@ -19,7 +19,7 @@
 
 				?><div class="linkslower">
 					<div class="linkprevious"><?PHP previous_post_link() ?></div><div class="linknext"><?PHP next_post_link() ?></div>
-					<div class="linkhome"><a href="<?PHP echo site_url() ?>"><?PHP echo get_bloginfo('name'); ?> <?PHP echo __("home", "antonine"); ?></a></div>
+					<div class="linkhome"><a href="<?PHP echo esc_url(home_url('/')); ?>"><?PHP echo get_bloginfo('name'); ?> <?PHP echo __("home", "antonine"); ?></a></div>
 				</div><?PHP
 			
 			endif;

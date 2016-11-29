@@ -10,9 +10,8 @@
 
 	<div class="entry-content link">
 		<?PHP
-			$content = get_the_content();
+			echo get_the_content();
 		?>
-		<iframe width="100%" height="1000" src="<?php echo $content; ?>"></iframe>
 	</div>
 	
 	<footer class="entry-footer">

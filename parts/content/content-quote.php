@@ -9,10 +9,9 @@
 	</header>
 
 	<div class="entry-content quote">
-		<?PHP
-			$content = get_the_content();
-		?>
-		<blockquote>"<?php echo $content; ?>"</blockquote>
+		<blockquote><?PHP
+			the_content();
+		?></blockquote>
 	</div>
 	
 	<footer class="entry-footer">

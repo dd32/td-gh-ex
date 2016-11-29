@@ -7,8 +7,8 @@
 	<div class="content-holder">
 		<div class="entry-content-index home-align">
 		<?php
-			$content = get_the_excerpt();
-			$excerpt_pos = 20;
+			$content = trim(strip_tags(get_the_content()));
+			$excerpt_pos = 30;
 			echo substr($content,0,$excerpt_pos) . "...";
 		?>
 		</div>

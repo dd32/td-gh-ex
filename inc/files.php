@@ -23,7 +23,7 @@
 				foreach ( $query->posts as $file ) {
 					echo "<div>";
 					if(strpos($file->post_mime_type,"image")!==FALSE){
-						echo "<img aria-hidden='false' alt=" . $file->post_title . " src='" . $file->guid . "' />";
+						echo "<img aria-hidden='false' alt=" . $file->post_title . " src='" . wp_get_attachment_url($file->ID) . "' />";
 					}else{
 						echo "<img aria-hidden='false' alt=" . $file->post_title . " src='" . get_template_directory_uri() . "/img/filethumb.png' />";
 					}

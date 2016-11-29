@@ -1,6 +1,5 @@
 <?php
 	get_header(); 
-	global $wp_query;
 ?>	
 	<div id="primary" class="content-area">
 		<?PHP

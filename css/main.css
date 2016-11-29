@@ -1163,3 +1163,12 @@ section.error-404 header.page-header{
 .filter_reset{
 	font-size:20px;
 }	
+
+.search-results .page p.entry-title{
+	font-size: 25px;
+}
+
+.search-results .page header,
+.search-results .page .content-holder{
+	margin: 0%;
+}

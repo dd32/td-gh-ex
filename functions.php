@@ -306,6 +306,14 @@ function antonine_custom_css() {
 add_action('wp_ajax_antonine_custom_css', 'antonine_custom_css');
 add_action('wp_ajax_nopriv_antonine_custom_css', 'antonine_custom_css');
 
+function antonine_search_extend($query){
+	if(is_search()){
+		$query->query_vars['posts_per_page']=-1;
+	}
+	return $query;
+}
+add_action("pre_get_posts","antonine_search_extend");
+
 function antonine_comment_template( $comment_template ) {
      return dirname(__FILE__) . '/parts/comments/comments.php';
 }

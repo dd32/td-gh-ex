@@ -10,9 +10,8 @@
 
 	<div class="entry-content image">
 		<?PHP
-			$content = get_the_content();
+			the_content();
 		?>
-		<?php echo $content; ?>
 	</div>
 	
 	<script type="text/javascript">

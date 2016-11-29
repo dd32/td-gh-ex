@@ -5,7 +5,7 @@
 	<footer class="entry-footer">
 		<?php antonine_entry_meta(); ?>
 		<?php edit_post_link( __( 'Edit', 'antonine' ), '<span class="edit-link">', '</span>' ); ?>
-	</footer><!-- .entry-footer -->
+	</footer>
 <?PHP
 	if ( comments_open() || get_comments_number() ) :
 		echo get_template_part( 'parts/comments/comments' );
