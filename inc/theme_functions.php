@@ -86,7 +86,7 @@ function bidnis_phone_email(){ ?>
 		<?php endif; ?>
 
 		<?php if( get_theme_mod('email') ): ?>
-			<a class="bidnis-email" href="mailto:<?php echo esc_url( get_theme_mod('email') ); ?>" target="_top"><?php echo esc_html( get_theme_mod('email') ); ?></a>
+			<a class="bidnis-email" href="mailto:<?php echo esc_attr( get_theme_mod('email') ); ?>" target="_top"><?php echo esc_html( get_theme_mod('email') ); ?></a>
 		<?php endif; ?>
 	</div>
 

@@ -4,7 +4,7 @@
 	Author: Kniffen Technologies
 	Author URI: http://knifftech.net
 	Description: Bidnis as the name suggests ia a theme designed for business, consultant and corporate related websites.
-	Version: 1.1.2
+	Version: 1.1.3
 	License: GNU General Public License v3
 	License URI: http://www.gnu.org/licenses/gpl-3.0.html  
 	Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-images, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
@@ -606,7 +606,6 @@ textarea,
 select {
   max-width: 90%;
   max-width: -webkit-calc( 100% - 10px);
-  max-width: -moz-calc( 100% - 10px);
   max-width: calc( 100% - 10px);
 }
 
@@ -668,7 +667,6 @@ button,
 .nav-next a,
 .page-numbers:not(.dots) {
   -webkit-transition: .3s ease-in-out;
-  -moz-transition: .3s ease-in-out;
   -o-transition: .3s ease-in-out;
   transition: .3s ease-in-out;
   text-decoration: none !important;
@@ -756,7 +754,6 @@ button,
 
 .pagination > a {
   -webkit-transition: .3s ease-in-out;
-  -moz-transition: .3s ease-in-out;
   -o-transition: .3s ease-in-out;
   transition: .3s ease-in-out;
 }
@@ -880,7 +877,6 @@ img {
   display: inline-block;
   width: 100%;
   width: -webkit-calc(33.33% - 1rem);
-  width: -moz-calc(33.33% - 1rem);
   width: calc(33.33% - 1rem);
   border: 1px solid #ffd200;
 }
@@ -896,56 +892,47 @@ img {
 
 .gallery-columns-2 .gallery-item {
   width: -webkit-calc(50% - 1rem);
-  width: -moz-calc(50% - 1rem);
   width: calc(50% - 1rem);
 }
 
 .gallery-columns-3 .gallery-item {
   width: -webkit-calc(33.33% - 1rem);
-  width: -moz-calc(33.33% - 1rem);
   width: calc(33.33% - 1rem);
 }
 
 .gallery-columns-4 .gallery-item {
   width: -webkit-calc(25% - 1rem);
-  width: -moz-calc(25% - 1rem);
   width: calc(25% - 1rem);
 }
 
 .gallery-columns-5 .gallery-item {
   width: -webkit-calc(20% - 1rem);
-  width: -moz-calc(20% - 1rem);
   width: calc(20% - 1rem);
 }
 
 .gallery-columns-6 .gallery-item {
   width: -webkit-calc(16.66% - 1rem);
-  width: -moz-calc(16.66% - 1rem);
   width: calc(16.66% - 1rem);
 }
 
 .gallery-columns-7 .gallery-item {
   width: -webkit-calc(14.28% - 1rem);
-  width: -moz-calc(14.28% - 1rem);
   width: calc(14.28% - 1rem);
 }
 
 .gallery-columns-8 .gallery-item {
   width: -webkit-calc(12.5% - 1rem);
-  width: -moz-calc(12.5% - 1rem);
   width: calc(12.5% - 1rem);
 }
 
 .gallery-columns-9 .gallery-item {
   width: -webkit-calc(11.11% - 1rem);
-  width: -moz-calc(11.11% - 1rem);
   width: calc(11.11% - 1rem);
 }
 
 @media (max-width: 768px) {
   .gallery .gallery-item {
     width: -webkit-calc(50% - 1rem);
-    width: -moz-calc(50% - 1rem);
     width: calc(50% - 1rem);
   }
 }
@@ -1162,7 +1149,6 @@ img {
   padding: 10px 20px;
   margin-top: 20px;
   -webkit-transition: .3s ease-in-out;
-  -moz-transition: .3s ease-in-out;
   -o-transition: .3s ease-in-out;
   transition: .3s ease-in-out;
 }

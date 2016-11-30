@@ -76,3 +76,6 @@ https://www.pexels.com/photo/mock-up-technology-laptop-apple-51171/
 
 1.1.2 - 2016.11.23
 - Fixed usage of get_the_permalink instead of the_permalink on .post-thumbnail and .read-more in template-parts/loop.php
+
+1.1.3 - 2016.11.30
+- Fixed e-mail in header not linked properly
