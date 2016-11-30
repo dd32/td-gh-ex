@@ -2,15 +2,15 @@
 Theme Name: SemPress
 Theme URI: https://github.com/pfefferle/SemPress
 Author: Matthias Pfefferle
-Author URI: http://notizblog.org/projects/sempress/
+Author URI: http://notiz.blog/projects/sempress/
 Description: SemPress is an extremely lightweight, responsive theme designed to show off your posts, quotes, and images. SemPress supports multiple post formats, widgets, and the option to upload a custom header or background image. The theme is based on HTML5 mixed with microformats, microformats v2 and microdata (Schema.org).
-Version: 1.5.2
+Version: 1.5.5
 License: GNU General Public License Version 3
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: white, gray, light, black, custom-menu, custom-colors, custom-header, custom-background, sticky-post, microformats, rtl-language-support, translation-ready, full-width-template, post-formats, threaded-comments, fluid-layout, right-sidebar, responsive-layout, accessibility-ready, two-columns, one-column, editor-style, featured-images, theme-options
 Text Domain: sempress
 
-This theme is based on the toolbox theme (http://wordpress.org/extend/themes/toolbox)
+This theme is based on the toolbox theme (http://wordpress.org/themes/toolbox)
 and, like WordPress, licensed under the GPL.
 
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -167,6 +167,11 @@ h1 {
   display: block;
   clear: both;
   margin-top: 60px;
+}
+#branding .custom-logo-link {
+  float: left;
+  clear: both;
+  margin-left: -70px;
 }
 
 #site-image {
@@ -709,12 +714,6 @@ body.single #content .post, body.single #content .page, body.page #content .post
   color: #21759B;
 }
 
-/* Gallery Posts */
-.format-gallery .gallery-thumb {
-  float: left;
-  margin: 0 1em 0 0;
-}
-
 /* Custom Post Types */
 .format-aside:before,
 .format-video:before,
@@ -888,7 +887,10 @@ img.size-thumbnail,
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
-.wp-caption .wp-caption-text, .gallery-caption, .entry-caption {
+.wp-caption .wp-caption-text,
+.gallery-caption,
+.entry-caption,
+.entry-media figcaption {
   padding: 0px;
   margin: 0px;
   text-align: center;
@@ -954,6 +956,18 @@ div.aligncenter, .gallery {
 
 .entry-meta .avatar {
   display: none;
+}
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+.gallery-item {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  margin: 0 0 1em;
+  padding: .5em;
+  width: 30%;
 }
 
 /* =Forms
@@ -1395,6 +1409,9 @@ ol.commentlist {
   }
   body #content, .single-column #content, .multi-column #content {
     margin: 0;
+  }
+  body .custom-logo-link, .single-column .custom-logo-link, .multi-column .custom-logo-link {
+    display: none;
   }
   body .post:before, body .error404:before, body .sticky:before, .single-column .post:before, .single-column .error404:before, .single-column .sticky:before, .multi-column .post:before, .multi-column .error404:before, .multi-column .sticky:before {
     content: none;
