@@ -10,12 +10,12 @@
 //	ADD CUSTOM HOOKS
 //----------------------------------------------------------------------------------
 
-// Used at top if header.php
+// Used at top of header.php
 function thinkup_hook_header() { 
 	do_action('thinkup_hook_header');
 }
 
-// Used at top if header.php within the body tag
+// Used at top of header.php within the body tag
 function thinkup_bodystyle() { 
 	do_action('thinkup_bodystyle');
 }
@@ -56,11 +56,11 @@ $thinkup_general_breadcrumbdelimeter = thinkup_var ( 'thinkup_general_breadcrumb
 		$delimiter = '<span class="delimiter">/</span>';
 	}
 	else if ( ! empty( $thinkup_general_breadcrumbdelimeter ) ) {
-		$delimiter = '<span class="delimiter"> ' . $thinkup_general_breadcrumbdelimeter . ' </span>';
+		$delimiter = '<span class="delimiter"> ' . esc_html( $thinkup_general_breadcrumbdelimeter ) . ' </span>';
 	}
 
 	$delimiter_inner   =   '<span class="delimiter_core"> &bull; </span>';
-	$main              =   'Home';
+	$main              =   __( 'Home', 'lan-thinkupthemes' );
 	$maxLength         =   30;
 
 	// Archive variables
@@ -99,14 +99,14 @@ $thinkup_general_breadcrumbdelimeter = thinkup_var ( 'thinkup_general_breadcrumb
 		} elseif ( is_tag() ) {
 			_e( 'Posts Tagged: ', 'lan-thinkupthemes' ) . single_tag_title("", false) . '"';
 		} elseif ( is_day()) {
-			echo '<a href="' . $url_year . '">' . $arc_year . '</a> ' . $delimiter . ' ';
-			echo '<a href="' . $url_month . '">' . $arc_month . '</a> ' . $delimiter . $arc_day . ' (' . $arc_day_full . ')';
+			echo '<a href="' . esc_url( $url_year ) . '">' . $arc_year . '</a> ' . $delimiter . ' ';
+			echo '<a href="' . esc_url( $url_month ) . '">' . $arc_month . '</a> ' . $delimiter . $arc_day . ' (' . $arc_day_full . ')';
 		} elseif ( is_month() ) {
-			echo '<a href="' . $url_year . '">' . $arc_year . '</a> ' . $delimiter . $arc_month;
+			echo '<a href="' . esc_url( $url_year ) . '">' . $arc_year . '</a> ' . $delimiter . $arc_month;
 		} elseif ( is_year() ) {
 			echo $arc_year;
 		} elseif ( is_search() ) {
-			_e( 'Search Results for: ', 'lan-thinkupthemes' ) . get_search_query() . '"';
+			_e( 'Search Results for: ', 'lan-thinkupthemes' ) . esc_html( get_search_query() ) . '"';
 		} elseif ( is_page() && !$post->post_parent ) {
 			echo get_the_title();
 		} elseif ( is_page() && $post->post_parent ) {
@@ -121,7 +121,7 @@ $thinkup_general_breadcrumbdelimeter = thinkup_var ( 'thinkup_general_breadcrumb
 		} elseif ( is_author() ) {
 			global $author;
 			$user_info = get_userdata($author);
-			_e( 'Archived Article(s) by Author: ', 'lan-thinkupthemes' ) . $user_info->display_name ;
+			_e( 'Archived Article(s) by Author: ', 'lan-thinkupthemes' ) . esc_html( $user_info->display_name );
 		} elseif ( is_404() ) {
 			_e( 'Error 404 - Not Found.', 'lan-thinkupthemes' );
 		} elseif ( is_post_type_archive( $portfolio )	) {
@@ -155,19 +155,19 @@ global $wp_query;
 		echo '<ul class="pag">';
 		
 			if($paged > 2 && $paged > $range+1 && $showitems < $pages) 
-				echo '<li class="pag-first"><a href="' . get_pagenum_link(1). '">&laquo;</a></li>';
+				echo '<li class="pag-first"><a href="' . esc_url( get_pagenum_link(1) ) . '">&laquo;</a></li>';
 			if($paged > 1 && $showitems < $pages) 
-				echo '<li class="pag-previous"><a href="' . get_pagenum_link($paged - 1). '">&lsaquo; ' . __( 'Prev', 'lan-thinkupthemes' ) . '</a></li>';
+				echo '<li class="pag-previous"><a href="' . esc_url( get_pagenum_link($paged - 1) ) . '">&lsaquo; ' . __( 'Prev', 'lan-thinkupthemes' ) . '</a></li>';
 			for ($i=1; $i <= $pages; $i++) {
 				if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems )) {
-					echo ($paged == $i)? '<li class="current"><span>' . $i . '</span></li>':'<li><a href="' . get_pagenum_link($i) . '">'. $i . '</a></li>';
+					echo ($paged == $i)? '<li class="current"><span>' . $i . '</span></li>':'<li><a href="' . esc_url( get_pagenum_link($i) ) . '">'. $i . '</a></li>';
 				}
 			}
 
 			if ($paged < $pages && $showitems < $pages) 
-				echo '<li class="pag-next"><a href="' . get_pagenum_link($paged + 1) . '">' . __( 'Next', 'lan-thinkupthemes' ) . ' &rsaquo;</a></li>';
+				echo '<li class="pag-next"><a href="' . esc_url( get_pagenum_link($paged + 1) ) . '">' . __( 'Next', 'lan-thinkupthemes' ) . ' &rsaquo;</a></li>';
 			if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) 
-				echo '<li class="pag-last" ><a href="' . get_pagenum_link($pages) . '">&raquo;</a></li>';
+				echo '<li class="pag-last" ><a href="' . esc_url( get_pagenum_link($pages) ) . '">&raquo;</a></li>';
 		echo '</ul>';
      }
 }
