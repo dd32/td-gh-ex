@@ -43,7 +43,7 @@ global $post;
 	} else if ( is_single() ) {
 		printf( __( '%s', 'renden' ), get_the_title() );
 	} else if ( is_search() ) {
-		printf( __( 'Search Results: %s', 'renden' ), get_search_query() );
+		printf( __( 'Search Results: %s', 'renden' ), esc_html( get_search_query() ) );
 	} else if ( is_404() ) {
 		printf( __( 'Page Not Found', 'renden' ) );
 	} else if ( is_category() ) {
@@ -149,7 +149,7 @@ global $thinkup_general_breadcrumbdelimeter;
 				}
 			}
 		} elseif (is_category()) {
-			$output .= '<span class="breadcrumbs-cat">' . __( 'Archive Category: ', 'renden' ) . '</span>' . get_category_parents($cat, true, '') ;
+			$output .= '<span class="breadcrumbs-cat">' . __( 'Archive Category: ', 'renden' ) . '</span>' . esc_html( single_cat_title("", false) );
 		} elseif ( is_tag() ) {
 			$output .= '<span class="breadcrumbs-tag">' . __( 'Posts Tagged: ', 'renden' ) . '</span>' . single_tag_title("", false);
 		} elseif ( is_day()) {
@@ -160,7 +160,7 @@ global $thinkup_general_breadcrumbdelimeter;
 		} elseif ( is_year() ) {
 			$output .=  $arc_year;
 		} elseif ( is_search() ) {
-			$output .= __( 'Search Results for: ', 'renden' ) . get_search_query() . '"';
+			$output .= __( 'Search Results for: ', 'renden' ) . esc_html( get_search_query() ) . '"';
 		} elseif ( is_page() && !$post->post_parent ) {
 			$output .=  get_the_title();
 		} elseif ( is_page() && $post->post_parent ) {
@@ -175,7 +175,7 @@ global $thinkup_general_breadcrumbdelimeter;
 		} elseif ( is_author() ) {
 			global $author;
 			$user_info = get_userdata($author);
-			$output .= __( 'Archived Article(s) by Author: ', 'renden' ) . $user_info->display_name ;
+			$output .= __( 'Archived Article(s) by Author: ', 'renden' ) . esc_html( $user_info->display_name );
 		} elseif ( is_404() ) {
 			$output .= __( 'Error 404 - Not Found.', 'renden' );
 		} elseif( is_tax() ) {

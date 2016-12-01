@@ -93,13 +93,16 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.2.17
+- Updated: Improved escaping of outputs in 00.theme-setup.php.
+
 Version 1.2.16
 - New:     Function thinkup_photon_exception() added to ensure theme theme bundled transparent.png image displays correctly when Jetpack Photon is activated.
 
 Version 1.2.15
 - Updated: Logo alt tag now translation ready.
-- Updated: Improved ecaping of outputs in 00.theme-setup.php.
-- Updated: Improved ecaping of outputs in 01.general-settings.php.
+- Updated: Improved escaping of outputs in 00.theme-setup.php.
+- Updated: Improved escaping of outputs in 01.general-settings.php.
 - Updated: Redux migration script removed as all users are highly likely to have already migrated.
 
 Version 1.2.14
