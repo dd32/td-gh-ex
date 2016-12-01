@@ -95,7 +95,7 @@ global $thinkup_general_breadcrumbdelimeter;
 		} elseif ( is_year() ) {
 			echo $arc_year;
 		} elseif ( is_search() ) {
-			_e( 'Search Results for: ', 'lan-thinkupthemes' ) . get_search_query() . '"';
+			_e( 'Search Results for: ', 'lan-thinkupthemes' ) . esc_html( get_search_query() ) . '"';
 		} elseif ( is_page() && !$post->post_parent ) {
 			echo get_the_title();
 		} elseif ( is_page() && $post->post_parent ) {
@@ -110,7 +110,7 @@ global $thinkup_general_breadcrumbdelimeter;
 		} elseif ( is_author() ) {
 			global $author;
 			$user_info = get_userdata($author);
-			_e( 'Archived Article(s) by Author: ', 'lan-thinkupthemes' ) . $user_info->display_name ;
+			_e( 'Archived Article(s) by Author: ', 'lan-thinkupthemes' ) . esc_html( $user_info->display_name );
 		} elseif ( is_404() ) {
 			_e( 'Error 404 - Not Found.', 'lan-thinkupthemes' );
 		}
