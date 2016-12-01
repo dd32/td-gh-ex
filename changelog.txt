@@ -1,5 +1,10 @@
 == Change Log ==
 
+Version 4.5.3
+* Bug Fixed: Reset Options in customizer updated
+* Updated: Upgrade Button in customizer with respect to trt decision
+* Updated: Custom CSS to Additional CSS( Core Support ) for WP version 4.7
+
 Version 4.5.2
 * Added: Turkish translation tr_TR.po and tr_TR.mo
 * Code Optimization

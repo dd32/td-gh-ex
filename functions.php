@@ -68,7 +68,7 @@ if ( ! function_exists( 'catchbox_template_redirect' ) ) :
 		elseif ( is_page_template( 'page-disable-sidebar.php' ) ) {
 			$GLOBALS['content_width'] = 660; /* pixels */
 		}
-		elseif ( $layout == 'content-onecolumn' || is_page_template( 'page-onecolumn.php' ) ) {
+		elseif ( 'content-onecolumn' == $layout || is_page_template( 'page-onecolumn.php' ) ) {
 			$GLOBALS['content_width'] = 620; /* pixels */
 		}
 	}
@@ -259,81 +259,6 @@ if ( ! function_exists( 'catchbox_get_theme_layout' ) ) :
 		return $layout;
 	}
 endif; //catchbox_get_theme_layout
-
-
-/**
- * Migrate Logo to New WordPress core Custom Logo
- *
- *
- * Runs if version number saved in theme_mod "logo_version" doesn't match current theme version.
- */
-function catchbox_logo_migrate() {
-	$ver = get_theme_mod( 'logo_version', false );
-
-	// Return if update has already been run
-	if ( version_compare( $ver, '3.6' ) >= 0 ) {
-		return;
-	}
-
-	// If a logo has been set previously, update to use logo feature introduced in WordPress 4.5
-	if ( function_exists( 'the_custom_logo' ) ) {
-		$header_image = get_header_image();
-
-		if ( ! empty( $header_image ) ) {
-			// Since previous logo was stored a URL, convert it to an attachment ID
-			$logo = attachment_url_to_postid( $header_image );
-
-			if ( is_int( $logo ) ) {
-				set_theme_mod( 'custom_logo', $logo );
-			}
-		}
-
-		//Remove header image previously set as logo
-		set_theme_mod( 'header_image', '' );
-
-		set_theme_mod( 'header_image_data', array() );
-
-  		// Update to match logo_version so that script is not executed continously
-		set_theme_mod( 'logo_version', '3.6' );
-	}
-}
-add_action( 'after_setup_theme', 'catchbox_logo_migrate' );
-
-
-/**
- * Migrate Custom Favicon to WordPress core Site Icon
- *
- * Runs if version number saved in theme_mod "site_icon_version" doesn't match current theme version.
- */
-function catchbox_site_icon_migrate() {
-	$ver = get_theme_mod( 'site_icon_version', false );
-
-	//Return if update has already been run
-	if ( version_compare( $ver, '3.6' ) >= 0 ) {
-		return;
-	}
-
-	/**
-	 * Get Theme Options Values
-	 */
-	$options = catchbox_get_theme_options();
-
-   	// If a logo has been set previously, update to use logo feature introduced in WordPress 4.5
-	if ( function_exists( 'has_site_icon' ) ) {
-		if ( isset( $options['fav_icon'] ) && '' != $options['fav_icon'] ) {
-			// Since previous logo was stored a URL, convert it to an attachment ID
-			$site_icon = attachment_url_to_postid( $options['fav_icon'] );
-
-			if ( is_int( $site_icon ) ) {
-				update_option( 'site_icon', $site_icon );
-			}
-		}
-
-	  	// Update to match site_icon_version so that script is not executed continously
-		set_theme_mod( 'site_icon_version', '3.6' );
-	}
-}
-add_action( 'after_setup_theme', 'catchbox_site_icon_migrate' );
 
 
 /**
@@ -620,13 +545,13 @@ function catchbox_body_classes( $classes ) {
 
 	$layout = catchbox_get_theme_layout();
 
-	if ( $layout == 'right-sidebar' && !is_page_template( 'page-disable-sidebar.php' ) && !is_page_template( 'page-fullwidth.php' )  && !is_page_template( 'page-onecolumn.php' ) ) {
+	if ( 'right-sidebar' == $layout && !is_page_template( 'page-disable-sidebar.php' ) && !is_page_template( 'page-fullwidth.php' )  && !is_page_template( 'page-onecolumn.php' ) ) {
 		$classes[] = 'right-sidebar';
 	}
-	elseif ( $layout == 'left-sidebar' && !is_page_template( 'page-disable-sidebar.php' ) && !is_page_template( 'page-fullwidth.php' )  && !is_page_template( 'page-onecolumn.php' ) ) {
+	elseif ( 'left-sidebar' == $layout && !is_page_template( 'page-disable-sidebar.php' ) && !is_page_template( 'page-fullwidth.php' )  && !is_page_template( 'page-onecolumn.php' ) ) {
 		$classes[] = 'left-sidebar';
 	}
-	elseif ( $layout == 'no-sidebar-one-column' || is_page_template( 'page-onecolumn.php' ) && !is_page_template( 'page-disable-sidebar.php' ) && !is_page_template( 'page-fullwidth.php' ) ) {
+	elseif ( 'no-sidebar-one-column' == $layout || is_page_template( 'page-onecolumn.php' ) && !is_page_template( 'page-disable-sidebar.php' ) && !is_page_template( 'page-fullwidth.php' ) ) {
 		$classes[] = 'no-sidebar one-column';
 	}
 	elseif ( is_page_template( 'page-disable-sidebar.php' ) || is_attachment() ) {
@@ -671,7 +596,7 @@ function catchbox_post_id_column( $post_columns ) {
 add_filter( 'manage_posts_columns', 'catchbox_post_id_column' );
 
 function catchbox_posts_id_column( $col, $val ) {
-	if ( $col == 'postid' ) echo $val;
+	if ( 'postid' == $col ) echo $val;
 }
 add_action( 'manage_posts_custom_column', 'catchbox_posts_id_column', 10, 2 );
 
@@ -1149,18 +1074,19 @@ function catchbox_enqueue_color_scheme() {
 	$options = catchbox_get_theme_options();
 	$color_scheme = $options['color_scheme'];
 
-	if ( 'dark' == $color_scheme )
+	if ( 'dark' == $color_scheme ) {
 		wp_enqueue_style( 'dark', get_template_directory_uri() . '/colors/dark.css', array( 'catchbox-style' ), null );
-	elseif ( 'blue' == $color_scheme )
+	} elseif ( 'blue' == $color_scheme ) {
 		wp_enqueue_style( 'blue', get_template_directory_uri() . '/colors/blue.css', array( 'catchbox-style' ), null );
-	elseif ( 'green' == $color_scheme )
+	} elseif ( 'green' == $color_scheme ) {
 		wp_enqueue_style( 'green', get_template_directory_uri() . '/colors/green.css', array( 'catchbox-style' ), null );
-	elseif ( 'red' == $color_scheme )
+	} elseif ( 'red' == $color_scheme ) {
 		wp_enqueue_style( 'red', get_template_directory_uri() . '/colors/red.css', array( 'catchbox-style' ), null );
-	elseif ( 'brown' == $color_scheme )
+	} elseif ( 'brown' == $color_scheme ) {
 		wp_enqueue_style( 'brown', get_template_directory_uri() . '/colors/brown.css', array( 'catchbox-style' ), null );
-	elseif ( 'orange' == $color_scheme )
+	} elseif ( 'orange' == $color_scheme ) {
 		wp_enqueue_style( 'orange', get_template_directory_uri() . '/colors/orange.css', array( 'catchbox-style' ), null );
+	}
 
 	do_action( 'catchbox_enqueue_color_scheme', $color_scheme );
 }
@@ -1170,8 +1096,17 @@ add_action( 'wp_enqueue_scripts', 'catchbox_enqueue_color_scheme' );
  * Hooks the css to head section
  *
  * @since Catch Box 1.0
+ *
+ * @remove when WordPress version 5.0 is released
  */
 function catchbox_inline_css() {
+	/**
+      * Bail if WP version >=4.7 as we have migrated this option to core
+	*/
+	if ( function_exists( 'wp_update_custom_css_post' ) ) {
+		return;
+    }
+
     $options = catchbox_get_theme_options();
 	if ( !empty( $options['custom_css'] ) ) {
 		echo '<!-- '.get_bloginfo('name').' Custom CSS Styles -->' . "\n";
@@ -1265,29 +1200,146 @@ function catchbox_print_link_color_style() {
 }
 add_action( 'wp_head', 'catchbox_print_link_color_style' );
 
+
+
+
+
+/**
+ * Migrate Logo to New WordPress core Custom Logo
+ *
+ *
+ * Runs if version number saved in theme_mod "logo_version" doesn't match current theme version.
+ */
+function catchbox_logo_migrate() {
+	$ver = get_theme_mod( 'logo_version', false );
+
+	// Return if update has already been run
+	if ( version_compare( $ver, '3.6' ) >= 0 ) {
+		return;
+	}
+
+	// If a logo has been set previously, update to use logo feature introduced in WordPress 4.5
+	if ( function_exists( 'the_custom_logo' ) ) {
+		$header_image = get_header_image();
+
+		if ( ! empty( $header_image ) ) {
+			// Since previous logo was stored a URL, convert it to an attachment ID
+			$logo = attachment_url_to_postid( $header_image );
+
+			if ( is_int( $logo ) ) {
+				set_theme_mod( 'custom_logo', $logo );
+			}
+		}
+
+		//Remove header image previously set as logo
+		set_theme_mod( 'header_image', '' );
+
+		set_theme_mod( 'header_image_data', array() );
+
+  		// Update to match logo_version so that script is not executed continously
+		set_theme_mod( 'logo_version', '3.6' );
+	}
+}
+add_action( 'after_setup_theme', 'catchbox_logo_migrate' );
+
+
+/**
+ * Migrate Custom Favicon to WordPress core Site Icon
+ *
+ * Runs if version number saved in theme_mod "site_icon_version" doesn't match current theme version.
+ */
+function catchbox_site_icon_migrate() {
+	$ver = get_theme_mod( 'site_icon_version', false );
+
+	//Return if update has already been run
+	if ( version_compare( $ver, '3.6' ) >= 0 ) {
+		return;
+	}
+
+	/**
+	 * Get Theme Options Values
+	 */
+	$options = catchbox_get_theme_options();
+
+   	// If a logo has been set previously, update to use logo feature introduced in WordPress 4.5
+	if ( function_exists( 'has_site_icon' ) ) {
+		if ( isset( $options['fav_icon'] ) && '' != $options['fav_icon'] ) {
+			// Since previous logo was stored a URL, convert it to an attachment ID
+			$site_icon = attachment_url_to_postid( $options['fav_icon'] );
+
+			if ( is_int( $site_icon ) ) {
+				update_option( 'site_icon', $site_icon );
+			}
+		}
+
+	  	// Update to match site_icon_version so that script is not executed continously
+		set_theme_mod( 'site_icon_version', '3.6' );
+	}
+}
+add_action( 'after_setup_theme', 'catchbox_site_icon_migrate' );
+
+
+/**
+ * Migrate Custom CSS to WordPress core Custom CSS
+ *
+ * Runs if version number saved in theme_mod "custom_css_version" doesn't match current theme version.
+ */
+function catchbox_custom_css_migrate(){
+	$ver = get_theme_mod( 'custom_css_version', false );
+
+	// Return if update has already been run
+	if ( version_compare( $ver, '4.7' ) >= 0 ) {
+		return;
+	}
+
+	if ( function_exists( 'wp_update_custom_css_post' ) ) {
+	    // Migrate any existing theme CSS to the core option added in WordPress 4.7.
+
+	    /**
+		 * Get Theme Options Values
+		 */
+		$options = catchbox_get_theme_options();
+
+	    if ( '' != $options['custom_css'] ) {
+			$core_css = wp_get_custom_css(); // Preserve any CSS already added to the core option.
+			$return   = wp_update_custom_css_post( $core_css . $options['custom_css'] );
+
+	        if ( ! is_wp_error( $return ) ) {
+	            // Remove the old theme_mod, so that the CSS is stored in only one place moving forward.
+	            unset( $options['custom_css'] );
+	            update_option( 'catchbox_theme_options', $options );
+
+	            // Update to match custom_css_version so that script is not executed continously
+				set_theme_mod( 'custom_css_version', '4.7' );
+	        }
+	    }
+	}
+}
+add_action( 'after_setup_theme', 'catchbox_custom_css_migrate' );
+
 // Load up our theme default options and related codes.
-require get_template_directory() . '/inc/default-options.php';
+require trailingslashit( get_template_directory() ) . 'inc/default-options.php';
 
 // Load transients/cache fliushing functions
-require get_template_directory() . '/inc/invalidate-caches.php';
+require trailingslashit( get_template_directory() ) . 'inc/invalidate-caches.php';
 
 // Load up our theme options page and related code.
-require get_template_directory() . '/inc/theme-options.php';
+require trailingslashit( get_template_directory() ) . 'inc/theme-options.php';
 
 //Custom Header
-require get_template_directory() . '/inc/custom-header.php';
+require trailingslashit( get_template_directory() ) . 'inc/custom-header.php';
 
 //Custom Menus
-require get_template_directory() . '/inc/catchbox-menus.php';
+require trailingslashit( get_template_directory() ) . 'inc/catchbox-menus.php';
 
 //Custom Metabox
-require get_template_directory() . '/inc/catchbox-metabox.php';
+require trailingslashit( get_template_directory() ) . 'inc/catchbox-metabox.php';
 
 //Customizer Options
-require get_template_directory() . '/inc/customizer/customizer.php' ;
+require trailingslashit( get_template_directory() ) . 'inc/customizer/customizer.php' ;
 
 // Load up Widgets and Sidebars
-require get_template_directory() . '/inc/widgets.php';
+require trailingslashit( get_template_directory() ) . 'inc/widgets.php';
 
 // Load Catch Box Sliders
-require get_template_directory() . '/inc/catchbox-sliders.php';
+require trailingslashit( get_template_directory() ) . 'inc/catchbox-sliders.php';

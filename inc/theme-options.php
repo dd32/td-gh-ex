@@ -159,13 +159,16 @@ function catchbox_theme_options_init() {
 		'general' // Settings section. Same as the first argument in the add_settings_section() above
 	);
 
-	add_settings_field(
-		'custom_css', // Unique identifier for the settings section
-		__( 'Custom CSS Styles', 'catch-box' ), // Setting field label
-		'catchbox_settings_field_custom_css', // Function that renders the settings field
-		'theme_options', // Menu slug, used to uniquely identify the page; see catchbox_theme_options_add_page()
-		'general' // Settings section. Same as the first argument in the add_settings_section() above
-	);
+	// @remove if block when WP 5.0 is released
+	if ( ! function_exists( 'wp_update_custom_css_post' ) ) {
+		add_settings_field(
+			'custom_css', // Unique identifier for the settings section
+			__( 'Custom CSS Styles', 'catch-box' ), // Setting field label
+			'catchbox_settings_field_custom_css', // Function that renders the settings field
+			'theme_options', // Menu slug, used to uniquely identify the page; see catchbox_theme_options_add_page()
+			'general' // Settings section. Same as the first argument in the add_settings_section() above
+		);
+	}
 
 	add_settings_field(
 		'disable_scrollup', // Unique identifier for the settings section
@@ -409,9 +412,18 @@ function catchbox_settings_field_enable_menus() {
  * Renders the Custom CSS styles setting fields
  *
  * @since Catch Box 1.0
+ *
+ * @remove when WordPress version 5.0 is released
  */
 function catchbox_settings_field_custom_css() {
-	$options = catchbox_get_theme_options();
+	/**
+      * Bail if WP version >=4.7 as we have migrated this option to core
+	*/
+	if ( function_exists( 'wp_update_custom_css_post' ) ) {
+		return;
+    }
+
+    $options = catchbox_get_theme_options();
 	?>
      <textarea id="custom-css" cols="90" rows="12" name="catchbox_theme_options[custom_css]"><?php if (!empty($options['custom_css'] ) )echo esc_attr($options['custom_css']); ?></textarea> <br />
      <?php _e('CSS Tutorial from W3Schools.', 'catch-box'); ?> <a class="button" href="<?php echo esc_url( __( 'http://www.w3schools.com/css/default.asp','catch-box' ) ); ?>" title="<?php esc_attr_e( 'CSS Tutorial', 'catch-box' ); ?>"><?php _e( 'Click Here to Read', 'catch-box' );?></a>
@@ -886,6 +898,10 @@ function catchbox_theme_options_render_page() {
 function catchbox_theme_options_validate( $input ) {
 	$options_validated = $defaults = catchbox_get_default_theme_options();
 
+	if( $options_validated['reset_all_settings'] == "1" ) {
+        return $defaults;
+    }
+
 	// favicon url
 	if ( isset( $input['fav_icon'] ) )
 		$options_validated['fav_icon'] = esc_url_raw($input['fav_icon']);
@@ -947,7 +963,8 @@ function catchbox_theme_options_validate( $input ) {
 		$options_validated[ 'enable_menus' ] = $input[ 'enable_menus' ];
 
 	// Custom CSS
-	if ( isset( $input['custom_css'] ) )
+	// @remove whne WP 5.0 is released
+	if ( ! function_exists( 'wp_update_custom_css_post' ) && isset( $input['custom_css'] ) )
 		$options_validated['custom_css'] = wp_kses_stripslashes($input['custom_css']);
 
 	// data validation for scroll up
