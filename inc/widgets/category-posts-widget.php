@@ -130,9 +130,8 @@ class Arouse_Sidebar_Posts extends WP_Widget {
 						</div>
 					</div><!-- .ar-cat-post -->
 			<?php endwhile; ?>
+			<?php wp_reset_postdata(); ?>
 		<?php endif; ?>
-		
-		<?php wp_reset_postdata(); ?>
         
         </div><!-- .arouse-category-posts -->
 

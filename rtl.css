@@ -10,8 +10,8 @@ https://codex.wordpress.org/Right_to_Left_Language_Support
 */
 
 body {
-	direction: rtl;
-	unicode-bidi: embed;
+  direction: rtl;
+  unicode-bidi: embed;
 }
 
 th {
@@ -31,15 +31,25 @@ dd {
   margin: 0 0 1.5em 1.5em;
 }
 
+.site-logo {
+    float: right;
+    margin-left: 10px;
+}
+
+.site-title-text {
+    float: right;
+    margin-right: 5px;
+}
+
 .brand-container {
-	float: right;
-	margin: 0 0 20px 20px;
+  float: right;
+  margin: 0 0 20px 20px;
 }
 
 .mainnav-container {
-	float: left;
-	padding-right: 0;
-	padding-left: 40px;
+  float: left;
+  padding-right: 0;
+  padding-left: 40px;
 }
 
 .arouse-search-button-icon {
@@ -50,8 +60,8 @@ dd {
 }
 
 .arouse-search-box-container {
-	left: 0;
-    right: auto;
+  left: 0;
+  right: auto;
 }
 
 #arouse-search-form input[type="text"] {
@@ -80,7 +90,7 @@ dd {
 
 .main-navigation .menu-item-has-children > a:after, 
 .main-navigation .page_item_has_children > a:after {
-	content: none;
+  content: none;
 }
 
 .main-navigation .menu-item-has-children > a:before, 
@@ -95,7 +105,7 @@ dd {
 
 .main-navigation .menu-item-has-children .menu-item-has-children > a:after, 
 .main-navigation .page_item_has_children .menu-item-has-children > a:after {
-	content: none;
+  content: none;
 }
 
 .main-navigation .menu-item-has-children .menu-item-has-children > a:before, 
@@ -106,6 +116,16 @@ dd {
     font-family: FontAwesome;
     font-size: 12px;
     margin: 2px 10px 0 0;
+}
+
+#arouse-nav-button {
+    left: 0;
+    right: auto;
+}
+
+.arouse-responsive-mainnav li ul {
+    margin-right: 2em;
+    margin-left: 0;
 }
 
 .search-form .search-submit {
@@ -178,11 +198,11 @@ dd {
 }
 
 .rtl .ar-rtl-content {
-	float: right;
+  float: right;
 }
 
 .rtl .ar-rtl-sidebar {
-	float: left;
+  float: left;
 }
 
 .byline,
@@ -202,13 +222,13 @@ dd {
 
 .flex-direction-nav .flex-next {
   right: auto;
-  left: 15px;
+  left: 0;
   text-align: left;
 }
 
 .flex-direction-nav .flex-prev {
     left: auto;
-    right: 15px;
+    right: 0;
 }
 
 .flex-direction-nav a:before {
@@ -217,8 +237,13 @@ dd {
 
 .flexslider:hover .flex-direction-nav .flex-next {
     right: auto;
-    left: 15px;
+    left: 0;
     text-align: left;
+}
+
+.flexslider:hover .flex-direction-nav .flex-prev {
+    right: 0;
+    left: auto;
 }
 
 .flex-direction-nav a.flex-next:before {
@@ -228,10 +253,8 @@ dd {
 @media screen and (max-width: 860px) {
   .flex-direction-nav .flex-prev {
     left: auto;
-    right: 10px;
   }
   .flex-direction-nav .flex-next {
     right: auto;
-    left: 10px;
   }
 }

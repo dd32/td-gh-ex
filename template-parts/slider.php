@@ -14,7 +14,13 @@ $slider_posts = new WP_Query( array(
     <section class="slider">
         <div class="flexslider">
             <ul class="slides">
-                <?php while( $slider_posts->have_posts() ) : $slider_posts->the_post(); ?>
+                <?php 
+
+                if ( $slider_posts->have_posts() ) :
+                
+                    while( $slider_posts->have_posts() ) : $slider_posts->the_post(); 
+
+                ?>
                     
                     <li>
                         <a href="<?php the_permalink(); ?>" rel="bookmark">
@@ -37,7 +43,14 @@ $slider_posts = new WP_Query( array(
                         </a>
                     </li>
 
-                <?php endwhile; ?>
+                <?php 
+
+                    endwhile;
+                    wp_reset_postdata();
+                
+                endif;
+
+                ?>
             </ul>
         </div>
     </section>

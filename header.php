@@ -35,10 +35,8 @@
 				</div>
 
 				<div class="site-title-text">
-					<?php if ( get_theme_mod( 'site_title', true ) ) : ?>
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-						<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-					<?php endif; ?>
+					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 				</div>
 			</div><!-- .site-branding -->
 		</div><!-- .brand-container -->

@@ -106,7 +106,6 @@ html[xmlns] .flexslider .slides {
   text-decoration: none;
   display: block;
   font-size: 0;
-  /* width: 50px; */
   height: 70px;
   line-height: 70px;
   text-align: center;
@@ -262,10 +261,17 @@ html[xmlns] .flexslider .slides {
 @media screen and (max-width: 860px) {
   .flex-direction-nav .flex-prev {
     opacity: 1;
-    left: 10px;
   }
   .flex-direction-nav .flex-next {
     opacity: 1;
-    right: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .flex-direction-nav a {
+    padding: 0 15px;
+  }
+  .flex-direction-nav a:before {
+    font-size: 30px;
   }
 }

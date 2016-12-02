@@ -1,10 +1,10 @@
 === Arouse ===
 
-Tags: grid-layout,right-sidebar,two-columns,custom-logo,custom-background,custom-menu,editor-style,featured-images,footer-widgets,full-width-template,sticky-post,theme-options,threaded-comments,translation-ready,news,blog
+Tags: grid-layout,right-sidebar,two-columns,custom-logo,custom-background,custom-menu,editor-style,featured-images,footer-widgets,full-width-template,theme-options,threaded-comments,translation-ready,news,blog,entertainment
 
 Requires at least: 4.0
 Tested up to: 4.6.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -43,6 +43,11 @@ Arouse includes support for Infinite Scroll in Jetpack.
 * Added some license information to the readme.txt
 * Added translations files.
 
+= 1.0.2 - Dec 02 2016 =
+* Added wp_reset_postdata() for slider.
+* Fixed title and description issue.
+* Fixed some RTL issues.
+
 == Credits ==
 
 * Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
@@ -70,7 +75,7 @@ Resources packed within the theme.
   Bootstrap is Licensed under the MIT License. https://github.com/twbs/bootstrap/blob/master/LICENSE.
 * FlexSlider by woothemes.
   FlexSlider is Licensed under the GPLv2 license. http://www.gnu.org/licenses/gpl-2.0.html
-* HTML5 Shiv @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed
+* HTML5 Shiv @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed - https://github.com/aFarkas/html5shiv/blob/master/MIT%20and%20GPL2%20licenses.md
 * Respond.js by Scott Jehl Licensed under MIT - https://github.com/scottjehl/Respond/blob/master/LICENSE-MIT
 * Other custom js files are our own creation and is licensed under the same license as this theme. 
 
