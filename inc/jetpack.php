@@ -16,9 +16,10 @@
 function arouse_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support( 'infinite-scroll', array(
-		'container' => 'main',
-		'render'    => 'arouse_infinite_scroll_render',
-		'footer'    => 'page',
+		'container' 		=> 'main',
+		'render'    		=> 'arouse_infinite_scroll_render',
+		'footer'    		=> 'page',
+		'footer_widgets'	=> true,
 	) );
 
 	// Add theme support for Responsive Videos.

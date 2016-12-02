@@ -13,58 +13,11 @@
 function arouse_customize_register( $wp_customize ) {
 
 	require( get_template_directory() . '/inc/customizer/custom-controls/control-category-dropdown.php' );
+	require( get_template_directory() . '/inc/customizer/custom-controls/control-custom-content.php' );
 
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
-	$wp_customize->get_section( 'background_image' )->panel 	= 'arouse_styling';
-    $wp_customize->get_section( 'colors' )->panel 				= 'arouse_styling';
-
-
-	// Logo image
-    $wp_customize->add_setting(
-        'site_logo',
-        array(
-            'sanitize_callback' => 'arouse_sanitize_image'
-        ) 
-    ); 
-    $wp_customize->add_control(
-        new WP_Customize_Image_Control(
-            $wp_customize,
-            'site_logo',
-            array(
-                'label'         => __( 'Site Logo', 'arouse' ),
-                'section'       => 'title_tagline',
-                'settings'      => 'site_logo',
-                'description' 	=> __( 'Upload a logo for your website. Recommended height for your logo is 135px.', 'arouse' ),
-            )
-        )
-    );
-
-    // Logo, title and description chooser
-    $wp_customize->add_setting(
-        'site_title_option',
-        array (
-            'default'           => 'text-only',
-            'sanitize_callback' => 'arouse_sanitize_select',
-            'transport'         => 'refresh'
-        )
-    );
-    $wp_customize->add_control(
-        'site_title_option',
-        array(
-            'label'     	=> __( 'Display site title / logo.', 'arouse' ),
-            'section'   	=> 'title_tagline',
-            'type'      	=> 'radio',
-            'description'	=> __( 'Choose your preferred option.', 'arouse' ),
-            'choices'   => array (
-                'text-only' 	=> __( 'Display site title and description only.', 'arouse' ),
-                'logo-only'     => __( 'Display site logo image only.', 'arouse' ),
-                'text-logo'		=> __( 'Display both site title and logo image.', 'arouse' ),
-                'display-none'	=> __( 'Display none', 'arouse' )
-            )
-        )
-    );
 
     /**
      * Slider Settings section.
@@ -133,7 +86,7 @@ function arouse_customize_register( $wp_customize ) {
     $wp_customize->add_section( 
     	'arouse_featured_section', 
     	array(
-			'title' => __( 'Featured Pages', 'arouse' ),
+			'title' => __( 'Featured Content', 'arouse' ),
 			'description' => __( 'Use this section to setup the featured pages that are just below the slider.', 'arouse' ),
 			'panel' => 'arouse_home_settings'
 		) 
@@ -156,6 +109,28 @@ function arouse_customize_register( $wp_customize ) {
 	);	
 
     $wp_customize->add_setting(
+        'featured_content_type',
+        array (
+            'default'           => 'posts',
+            'sanitize_callback' => 'arouse_sanitize_select',
+            'transport'         => 'refresh'
+        )
+    );
+    $wp_customize->add_control(
+        'featured_content_type',
+        array(
+            'label'     		=> __( 'Featured Content Type', 'arouse' ),
+            'section'   		=> 'arouse_featured_section',
+            'type'      		=> 'radio',
+            'description'		=> __( 'Select the featured content type.', 'arouse' ),
+            'choices'   => array (
+                'pages' 	=> __( 'Pages + Featured Images.', 'arouse' ),
+                'posts'  	=> __( 'Posts + Featured Images.', 'arouse' )
+            )
+        )
+    );	
+
+    $wp_customize->add_setting(
 		'display_page_titles',
 		array(
 			'default'			=> true,
@@ -167,7 +142,8 @@ function arouse_customize_register( $wp_customize ) {
 		array(
 			'section'		=> 'arouse_featured_section',
 			'type'			=> 'checkbox',
-			'label'			=> __( 'Display page titles?', 'arouse' )
+			'label'			=> __( 'Display page titles?', 'arouse' ),
+			'active_callback'	=> 'arouse_featured_content_choice_callback'
 		)
 	);	
 
@@ -186,11 +162,50 @@ function arouse_customize_register( $wp_customize ) {
 	        array(
 	            'label'         => sprintf( __( 'Select page %d.', 'arouse' ), $i ),
 	            'section'       => 'arouse_featured_section',
-	            'type'          => 'dropdown-pages'
+	            'type'          => 'dropdown-pages',
+	            'active_callback'	=> 'arouse_featured_content_choice_callback'
 	        ) 
 	    );	
 
 	}
+
+	$wp_customize->add_setting(
+		'fcontent_category',
+		array(
+			'default'			=> '',
+			'sanitize_callback'	=> 'arouse_sanitize_category_dropdown'
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Category_Control( 
+			$wp_customize,
+			'fcontent_category', 
+			array(
+			    'label'   			=> __( 'Select the category for featured posts.', 'arouse' ),
+			    'description'		=> __( 'You can leave this empty to display latest posts.', 'arouse' ),
+			    'section' 			=> 'arouse_featured_section',
+			    'active_callback'	=> 'arouse_featured_content_choice_callback'
+			) 
+		) 
+	);	
+
+    $wp_customize->add_setting(
+		'display_fpost_titles',
+		array(
+			'default'			=> true,
+			'sanitize_callback'	=> 'arouse_sanitize_checkbox'
+		)
+	);
+    $wp_customize->add_control(
+		'display_fpost_titles',
+		array(
+			'section'			=> 'arouse_featured_section',
+			'type'				=> 'checkbox',
+			'label'				=> __( 'Display post titles?', 'arouse' ),
+			'active_callback'	=> 'arouse_featured_content_choice_callback'
+		)
+	);	
 
 	/* Theme Options */
     $wp_customize->add_section( 
@@ -242,49 +257,91 @@ function arouse_customize_register( $wp_customize ) {
 		)
 	);
 
-	/**
-     * Styling Options.
-     */
-	$wp_customize->add_panel( 
-		'arouse_styling', 
-		array(
-			'title' 		=> __( 'Site Styling', 'arouse' ),
-			'description' 	=> __( 'Use this section to setup the homepage slider and featured posts.', 'arouse' ),
-			'priority' 		=> 33, 
-		) 
-	);
-
-	/**
-     * Custom CSS section
-     */
     $wp_customize->add_section( 
-    	'arouse_custom_css', 
+    	'arouse_theme_info', 
     	array(
-			'title' 		=> __( 'Custom CSS', 'arouse' ),
-			'panel' 		=> 'arouse_styling',
-			'priority'		=> 50
+			'title' 		=> __( 'Arouse Theme Info', 'arouse' ),
+			'priority'		=> 125
 		) 
 	);
 
-	$wp_customize->add_setting(
-		'custom_css',
+	$wp_customize->add_setting( 
+		'arouse_documentation_link', 
 		array(
-			'default'			=> '',
-			'type'				=> 'theme_mod',
-			'capability'		=> 'edit_theme_options',
-			'sanitize_callback'	=> 'arouse_sanitize_css'
-		)
+			'sanitize_callback'	=> 'arouse_sanitize_html'
+		) 
 	);
-	$wp_customize->add_control(
-		'custom_css',
+
+	$wp_customize->add_control( 
+		new Arouse_Custom_Content( 
+			$wp_customize, 
+			'arouse_documentation_link', 
+			array(
+				'section' 		=> 'arouse_theme_info',
+				'label' 		=> __( 'Arouse Documentation', 'arouse' ),
+				'content' 		=> __( '<a class="button" href="http://themezhut.com/arouse-wordpress-theme-documentation/" target="_blank">Read the documentation.</a></p>', 'arouse' ) . '</p>',
+			) 
+		) 
+	);	
+
+	$wp_customize->add_setting( 
+		'arouse_demo_link', 
 		array(
-			'settings'		=> 'custom_css',
-			'section'		=> 'arouse_custom_css',
-			'type'			=> 'textarea',
-			'label'			=> __( 'Custom CSS', 'arouse' ),
-			'description'	=> __( 'Define custom CSS be used for your site. Do not enclose in script tags.', 'arouse' ),
-		)
+			'sanitize_callback'	=> 'arouse_sanitize_html'
+		) 
 	);
+
+	$wp_customize->add_control( 
+		new Arouse_Custom_Content( 
+			$wp_customize, 
+			'arouse_demo_link', 
+			array(
+				'section' 		=> 'arouse_theme_info',
+				'label' 		=> __( 'Arouse Demo', 'arouse' ),
+				'content' 		=> __( '<a class="button" href="http://themezhut.com/demo/arouse/" target="_blank">See the demo.</a></p>', 'arouse' ) . '</p>',
+			) 
+		) 
+	);
+
+	$wp_customize->add_setting( 
+		'arouse_pro_details', 
+		array(
+			'sanitize_callback'	=> 'arouse_sanitize_html'
+		) 
+	);
+
+	$wp_customize->add_control( 
+		new Arouse_Custom_Content( 
+			$wp_customize, 
+			'arouse_pro_details', 
+			array(
+				'section' 		=> 'arouse_theme_info',
+				'label' 		=> __( 'Arouse Pro Details', 'arouse' ),
+				'content' 		=> __( '<a class="button" href="http://themezhut.com/themes/arouse-pro/" target="_blank">Arouse Pro Details.</a></p>', 'arouse' ) . '</p>',
+			) 
+		) 
+	);		
+
+
+	$wp_customize->add_setting( 
+		'arouse_pro_demo_link', 
+		array(
+			'sanitize_callback'	=> 'arouse_sanitize_html'
+		) 
+	);
+
+	$wp_customize->add_control( 
+		new Arouse_Custom_Content( 
+			$wp_customize, 
+			'arouse_pro_demo_link', 
+			array(
+				'section' 		=> 'arouse_theme_info',
+				'label' 		=> __( 'Arouse Pro Demo', 'arouse' ),
+				'content' 		=> __( '<a class="button" href="http://themezhut.com/demo/arouse-pro/" target="_blank">Arouse Pro Demo.</a></p>', 'arouse' ) . '</p>',
+			) 
+		) 
+	);
+
 }
 add_action( 'customize_register', 'arouse_customize_register' );
 
@@ -414,3 +471,31 @@ function arouse_customize_preview_js() {
 	wp_enqueue_script( 'arouse_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', 'arouse_customize_preview_js' );
+
+
+function arouse_featured_content_choice_callback( $control ) {
+    $radio_setting = $control->manager->get_setting('featured_content_type')->value();
+    $control_id = $control->id;
+
+    for ( $i = 1; $i <= 3; $i++ ) {
+    	if ( $control_id == 'featured_article_'. $i && $radio_setting == 'pages' ) return true;
+    }
+     
+    if ( $control_id == 'display_page_titles'  && $radio_setting == 'pages' ) return true;
+    if ( $control_id == 'display_fpost_titles'  && $radio_setting == 'posts' ) return true;
+    if ( $control_id == 'fcontent_category' && $radio_setting == 'posts' ) return true;
+
+    return false;
+    
+}
+
+/**
+ * Enqueue the customizer stylesheet.
+ */
+function arouse_enqueue_customizer_stylesheets() {
+
+    wp_register_style( 'arouse-customizer-css', get_template_directory_uri() . '/inc/customizer/assets/customizer.css', NULL, NULL, 'all' );
+    wp_enqueue_style( 'arouse-customizer-css' );
+
+}
+add_action( 'customize_controls_print_styles', 'arouse_enqueue_customizer_stylesheets' );

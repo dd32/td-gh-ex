@@ -11,11 +11,11 @@
 get_header();
 
 if ( get_theme_mod( 'display_slider', true )  && ! is_paged() ) {
-	get_template_part('template-parts/slider');
+	get_template_part( 'template-parts/slider' );
 }
 
 if ( get_theme_mod( 'display_featured_section', true ) && ! is_paged() ) {
-	get_template_part('template-parts/featured', 'content');
+	get_template_part( 'template-parts/featured', 'content' );
 }
 
 ?>

@@ -120,9 +120,7 @@ class Arouse_Sidebar_Posts extends WP_Widget {
 						<div class="ar-cat-thumb">
 							<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>">	
 								<?php if ( has_post_thumbnail() ) { ?>
-									<?php the_post_thumbnail( 'thumbnail', array('title' => get_the_title()) ); ?>
-								<?php } else { ?>
-									<img src="<?php echo get_template_directory_uri(); ?>/images/mini-thumbnail-default.jpg" alt="<?php the_title(); ?>" />
+									<?php the_post_thumbnail( 'arouse-featured-thumbnail', array('title' => get_the_title()) ); ?>
 								<?php } ?>
 							</a>
 						</div>

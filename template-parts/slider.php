@@ -17,10 +17,11 @@ $slider_posts = new WP_Query( array(
                 <?php while( $slider_posts->have_posts() ) : $slider_posts->the_post(); ?>
                     
                     <li>
+                        <a href="<?php the_permalink(); ?>" rel="bookmark">
                         <div class="arouse-slider-container">
                         	<div class="overlay"></div>
                             <?php if ( has_post_thumbnail() ) { ?>
-                                <?php the_post_thumbnail( 'featured-slider' ); ?>
+                                <?php the_post_thumbnail( 'arouse-featured-slider' ); ?>
                             <?php } else { ?>
                                 <img src="<?php echo get_template_directory_uri() . '/images/slide.jpg' ?>">
                             <?php } ?>
@@ -33,6 +34,7 @@ $slider_posts = new WP_Query( array(
                             </div>
 
                         </div>
+                        </a>
                     </li>
 
                 <?php endwhile; ?>

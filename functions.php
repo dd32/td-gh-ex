@@ -41,8 +41,10 @@ function arouse_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 	 */
 	add_theme_support( 'post-thumbnails' );
-	add_image_size( 'featured', 700, 510, true );
-	add_image_size( 'featured-slider', 1070, 500, true );
+	add_image_size( 'arouse-featured', 330, 240, true );
+	add_image_size( 'arouse-featured-slider', 1070, 500, true );
+	add_image_size( 'arouse-featured-single', 700, 510, true );
+	add_image_size( 'arouse-featured-thumbnail', 100, 80, true );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
@@ -67,21 +69,43 @@ function arouse_setup() {
 		'default-image' => '',
 	) ) );
 
-	/**
-	 * Set the content width in pixels, based on the theme's design and stylesheet.
-	 *
-	 * Priority 0 to make it available to lower priority callbacks.
-	 *
-	 * @global int $content_width
-	 */
-	function arouse_content_width() {
-		$GLOBALS['content_width'] = apply_filters( 'arouse_content_width', 700 );
-	}
-	add_action( 'after_setup_theme', 'arouse_content_width', 0 );
+	add_theme_support( 'custom-logo', array(
+		'height'      => 95,
+		'width'       => 200,
+		'flex-height' => true,
+		'flex-width'  => true,
+		'header-text' => array( 'site-title', 'site-description' ),
+	) );
+
+	add_editor_style( array( 'css/editor-style.css', arouse_fonts_url() ) );
 
 }
 endif;
 add_action( 'after_setup_theme', 'arouse_setup' );
+
+/**
+ * Custom Logo
+ */
+
+function arouse_the_custom_logo() {
+	
+	if ( function_exists( 'the_custom_logo' ) ) {
+		the_custom_logo();
+	}
+
+}
+
+/**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+function arouse_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'arouse_content_width', 700 );
+}
+add_action( 'after_setup_theme', 'arouse_content_width', 0 );
 
 /**
  * Register widget area.
@@ -95,8 +119,8 @@ function arouse_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', 'arouse' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Footer Left Sidebar', 'arouse' ),
@@ -104,8 +128,8 @@ function arouse_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="footer-widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h3 class="footer-widget-title">',
+		'after_title'   => '</h3>',
 	) );	
 	register_sidebar( array(
 		'name'          => __( 'Footer Mid Sidebar', 'arouse' ),
@@ -113,8 +137,8 @@ function arouse_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="footer-widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h3 class="footer-widget-title">',
+		'after_title'   => '</h3>',
 	) );	
 	register_sidebar( array(
 		'name'          => __( 'Footer Right Sidebar', 'arouse' ),
@@ -122,8 +146,8 @@ function arouse_widgets_init() {
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="footer-widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h3 class="footer-widget-title">',
+		'after_title'   => '</h3>',
 	) );	
 }
 add_action( 'widgets_init', 'arouse_widgets_init' );
@@ -167,19 +191,19 @@ function arouse_fonts_url() {
     $fonts_url = '';
  
     /* Translators: If there are characters in your language that are not
-    * supported by Lora, translate this to 'off'. Do not translate
+    * supported by Open Sans, translate this to 'off'. Do not translate
     * into your own language.
     */
     $open_sans = _x( 'on', 'Open Sans font: on or off', 'arouse' );
 
     /* Translators: If there are characters in your language that are not
-    * supported by Open Sans, translate this to 'off'. Do not translate
+    * supported by Montserrat, translate this to 'off'. Do not translate
     * into your own language.
     */
     $montserrat = _x( 'on', 'Montserrat font: on or off', 'arouse' );
  
     /* Translators: If there are characters in your language that are not
-    * supported by Open Sans, translate this to 'off'. Do not translate
+    * supported by Lora, translate this to 'off'. Do not translate
     * into your own language.
     */
     $lora = _x( 'on', 'Lora font: on or off', 'arouse' );
@@ -196,7 +220,7 @@ function arouse_fonts_url() {
         }
  
         if ( 'off' !== $lora ) {
-            $font_families[] = 'Lora:400,700';
+            $font_families[] = 'Lora:400,400italic,700';
         }
  
         $query_args = array(
@@ -218,18 +242,12 @@ function arouse_font_styles() {
 add_action( 'wp_enqueue_scripts', 'arouse_font_styles' );
 
 /**
- * This function Contains All The scripts that Will be Loaded in the Theme Header.
- */
-function arouse_initialize_header() {
-	
-	//CSS Begins
-	echo "<style>";
-		echo get_theme_mod( 'custom_css', '' );	
-	echo "</style>";
-	//CSS Ends
-	
+* Enqueue arouse options panel custom css.
+*/
+function arouse_option_panel_style() {
+	wp_enqueue_style( 'admin_css', get_template_directory_uri() . '/css/admin.css', false );
 }
-add_action('wp_head', 'arouse_initialize_header');
+add_action( 'admin_enqueue_scripts', 'arouse_option_panel_style' );
 
 /**
 * Custom excerpt length.
@@ -240,14 +258,9 @@ function arouse_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'arouse_excerpt_length', 999 );
 
 /**
- * Implement the homepage slider.
+ * Theme info page.
  */
-//require get_template_directory() . '/inc/slider.php';
-
-/**
- * Implement the Custom Header feature.
- */
-//require get_template_directory() . '/inc/custom-header.php';
+require get_template_directory() . '/inc/theme-info.php';
 
 /**
  * Custom template tags for this theme.

@@ -30,7 +30,7 @@
 
 	<?php if ( get_theme_mod( 'show_article_featured_image', true ) ) : ?>
 		<div class="article-featured-image">
-			<?php the_post_thumbnail( 'featured' ); ?>
+			<?php the_post_thumbnail( 'arouse-featured-single' ); ?>
 		</div>
 	<?php endif; ?>
 	<div class="entry-content">

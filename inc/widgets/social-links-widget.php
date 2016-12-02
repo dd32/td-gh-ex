@@ -32,6 +32,7 @@ class Arouse_Social_Media_Widget extends WP_Widget {
 		?>
 
 		<div class="arouse-social-links">
+			<div class="ar-social-links-inner">
 			<?php if ( ! empty( $instance['facebook_url'] ) ) : ?>
 				<a href="<?php echo esc_url( $instance['facebook_url'] ) ?>"><div class="facebook social-icon"><i class="fa fa-facebook"></i></div></a>
 			<?php endif; ?>
@@ -67,6 +68,7 @@ class Arouse_Social_Media_Widget extends WP_Widget {
 			<?php if ( ! empty( $instance['email_address'] ) ) : ?>
 				<a href="<?php echo esc_url( $instance['email_address'] ) ?>"><div class="email social-icon"><i class="fa fa-envelope"></i></div></a>
 			<?php endif; ?>
+			</div>
 		</div>
 
 		<?php
