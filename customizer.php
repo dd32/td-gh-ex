@@ -1023,7 +1023,7 @@ $wp_customize->add_section(
 		array(
 		'default'=>esc_attr($wl_theme_options['whatsapp_link']),
 		'type'=>'option',
-		'sanitize_callback'=>'esc_url_raw',
+		'sanitize_callback'=>'esc_attr',
 		'capability'=>'edit_theme_options'
 		)
 	);
