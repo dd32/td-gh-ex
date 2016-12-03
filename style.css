@@ -4,7 +4,7 @@ Theme URI: http://themezhut.com/themes/arouse
 Author: ThemezHut
 Author URI: http://themezhut.com
 Description: Arouse is a smart, clean and well coded WordPress theme built for bloggers. This theme can be used for any subject like Technology, Travel, Entertainment, Food and Drink, Holiday, News, etc. You can easily setup your site from theme customizer. Built with bootstrap to display your site responsively on any type of monitors, tabs and mobile phones.
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: arouse
@@ -1224,16 +1224,13 @@ a:hover, a:active {
 }
 
 .ar-cat-thumb {
-  width: 100px;
-  height: 80px;
   float: left;
-  margin-right: -130px;
-  background: #ccc;
+  margin-right: 30px;
+  background: #eeeeee;
 }
 
 .ar-cat-details {
-  float: left;
-  margin-left: 130px;
+  overflow: hidden;
 }
 
 .ar-cat-title {
@@ -1255,6 +1252,7 @@ a:hover, a:active {
   font-size: 12px;
   font-size: 1.2rem;
   color: #a5a5a5;
+  margin-bottom: 0;
 }
 
 /*--------------------------------------------------------------
@@ -1287,7 +1285,6 @@ a:hover, a:active {
 .brand-container {
   float: left;
   max-width: 100%;
-  margin: 0 20px 20px 0;
 }
 @media (max-width: 992px) {
   .brand-container {
@@ -1297,7 +1294,7 @@ a:hover, a:active {
 
 .mainnav-container {
   float: right;
-  margin: 22px 0 15px 0;
+  margin: 22px 0 15px 20px;
   position: relative;
   padding-right: 40px;
 }
@@ -1327,6 +1324,12 @@ a:hover, a:active {
 .site-title a:hover {
   color: #a58e78;
 }
+@media all and (max-width: 480px) {
+  .site-title {
+    font-size: 24px;
+    font-size: 2.4rem;
+  }
+}
 
 .site-description {
   color: #a58e78;
@@ -1342,7 +1345,6 @@ a:hover, a:active {
 }
 .site-logo img {
   max-width: 100%;
-  max-height: 135px;
 }
 
 .site-title-text {

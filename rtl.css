@@ -34,22 +34,32 @@ dd {
 .site-logo {
     float: right;
     margin-left: 10px;
+    margin-right: 0;
 }
 
 .site-title-text {
     float: right;
     margin-right: 5px;
+    margin-left: 0;
 }
 
 .brand-container {
   float: right;
-  margin: 0 0 20px 20px;
+}
+
+@media all and (max-width: 992px) {
+  .brand-container {
+    margin-right: 0;
+    margin-left: 60px;
+  }
 }
 
 .mainnav-container {
   float: left;
   padding-right: 0;
   padding-left: 40px;
+  margin-left: 0;
+  margin-right: 20px;
 }
 
 .arouse-search-button-icon {
@@ -137,16 +147,10 @@ dd {
     padding: 10px 10px 10px 80px;
 }
 
-.ar-cat-details {
-    float: right;
-    margin-left: 0;
-    margin-right: 130px;
-}
-
 .ar-cat-thumb {
     float: right;
     margin-right: 0;
-    margin-left: -130px;
+    margin-left: 30px;
 }
 
 .arouse-post-grid {

@@ -4,7 +4,7 @@ Tags: grid-layout,right-sidebar,two-columns,custom-logo,custom-background,custom
 
 Requires at least: 4.0
 Tested up to: 4.6.1
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -47,6 +47,10 @@ Arouse includes support for Infinite Scroll in Jetpack.
 * Added wp_reset_postdata() for slider.
 * Fixed title and description issue.
 * Fixed some RTL issues.
+
+= 1.0.3 - Dec 04 2016 =
+* Fixed some styling issues.
+* Fixed some styling issues in rtl.css
 
 == Credits ==
 
