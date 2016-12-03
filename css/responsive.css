@@ -489,7 +489,7 @@
 	#primary .min_slider {
     	width: 440px;
 	}
-	.newsletter-widget p {
+	.tnp-widget .tnp-field {
 		width: auto;
 	}
 	#colophon .widget_posts {

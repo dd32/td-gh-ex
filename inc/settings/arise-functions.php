@@ -50,7 +50,7 @@ add_filter('excerpt_more', 'arise_continue_reading');
 
 /***************** USED CLASS FOR BODY TAGS ******************************/
 function arise_body_class($classes) {
-	global $arise_site_layout, $arise_content_layout;
+	global $arise_site_layout, $arise_content_layout, $post;
 	$arise_settings = arise_get_theme_options();
 	if ($post) {
 		$layout = get_post_meta($post->ID, 'arise_sidebarlayout', true);

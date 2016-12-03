@@ -1,4 +1,8 @@
 == CHANGE LOG ==
+= 2.1.2.5 =
+	- Fix - Undefined variable: post added
+	- Fix - Newsletter css modified
+
 = 2.1.2.4 =
 	- Fix - Text domain name by mistake uploaded fixed
 

@@ -61,6 +61,7 @@ class arise_portfolio_widget extends WP_Widget {
 	}
 
 	function widget($args, $instance) {
+		global $post;
 		$arise_settings = arise_get_theme_options();
 		extract($args);
 		extract($instance);

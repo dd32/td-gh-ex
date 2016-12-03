@@ -4,7 +4,7 @@ Theme URI: http://themefreesia.com/themes/arise
 Author: Theme Freesia
 Author URI: http://themefreesia.com
 Description: Arise is a Responsive Multi-Purpose Business WordPress Theme, Designed and Developed by Theme Freesia. This theme supports popular plugins like Breadcrumb NavXT, WP-PageNavi, Contact Form 7, Jetpack by WordPress.com, Polylang, WPML Compatible, Newsletter, bbPress and wooCommerce. It is also translation ready and currently translated in French language. It is also easily customizable with lots of theme options using Customizer. It consists contact us template, gallery template and many widgets and sidebar. Get free support at http://themefreesia.com/support-forum/ and View demo site at http://demo.themefreesia.com/arise
-Version: 2.1.2.4
+Version: 2.1.2.5
 Text Domain: arise
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -3179,18 +3179,18 @@ ul.next-prev li.active, ul.next-prev li:hover {
 	padding: 0;
 	color: #666;
 }
-.newsletter-widget {
+.tnp-widget {
 	margin: 0 auto;
 } 
-.newsletter-widget .newsletter-email {
+.tnp-widget .tnp-email {
 	height: 40px;
 	background-color: #1a1a1a;
 	border: 1px solid #242424;
 	border-radius: 0;
 	width: 100%;
 }
-.newsletter-widget input[type="email"],
-.newsletter-widget input[type="submit"] {
+.tnp-widget input[type="email"],
+.tnp-widget input[type="submit"] {
 	margin: 0;
 	outline: none;
 	box-shadow: none;
@@ -3198,27 +3198,30 @@ ul.next-prev li.active, ul.next-prev li:hover {
 		-moz-box-shadow:    none;  /* Firefox 3.5 - 3.6 */
 	box-shadow:         	none;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
 }
-.newsletter-widget input[type="submit"] {
+.tnp-widget input[type="submit"] {
 	padding: 0 10px;
 }
-.newsletter-widget input[type="email"]:focus {
+.tnp-widget input[type="email"]:focus {
 	border: 1px solid #444;
 }
-.newsletter-widget p {
+.tnp-widget .tnp-field {
 	margin: 10px 0 ;
 	padding: 0 5px;
 	display: inline-block;
 	width: 25%;
 	vertical-align: top;
 }
+.tnp-field.tnp-field-button {
+	margin-top: 32px;
+}
 #secondary .widget_newsletterwidget {
 	margin-bottom: 50px;
 }
-#colophon .newsletter-widget p,
-#secondary .newsletter-widget p {
+#colophon .tnp-widget .tnp-field,
+#secondary .tnp-widget .tnp-field {
 	width: 80%;
 }
-.newsletter-widget .newsletter-submit {
+.tnp-widget .tnp-submit {
 	background-color: #1d1d1d;
 	border: 1px solid #1d1d1d;
 	color: #666;
@@ -3227,7 +3230,7 @@ ul.next-prev li.active, ul.next-prev li:hover {
 	border-radius: 0;
 	width: 100%;
 }
-.newsletter-widget .newsletter-submit:hover {
+.tnp-widget .tnp-submit:hover {
 	background-color: #2b9b9b;
 	border: 1px solid #2b9b9b;
 	color: #fff;
