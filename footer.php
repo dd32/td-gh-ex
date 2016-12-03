@@ -30,19 +30,12 @@
         <div class="ftr-bottom">
           <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 pull-left">
-          
-            <a href="<?php echo home_url(); ?>" class="ftr-logo">
-           <?php if(get_theme_mod('footer_logo_upload_chk',true)): 
-		          if(get_theme_mod('footer_logo_upload')):  ?>
-        <img src="<?php echo esc_url(get_theme_mod('footer_logo_upload')); ?>" alt="<?php bloginfo('name'); ?>"/>
-           <?php  else : bloginfo('name');  endif; ?>
-           
-          <?php else: bloginfo('name'); endif; ?></a>
+            <a href="<?php echo esc_url(home_url('/')); ?>" class="ftr-logo"> <?php bloginfo('name');  ?></a>
            </div>
            <?php if(get_theme_mod('footer_copyright_bar',true)){ ?>
             <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12 pull-right">
                 <?php if(get_theme_mod('copyright')): ?>
-	     <p class="copyright"><?php echo get_theme_mod('copyright'); ?></p>
+	     <p class="copyright"><?php echo do_shortcode(get_theme_mod('copyright' , __('', 'backyard'))); ?></p>
              <?php else : ?>
              <p class="copyright"><?php $footertext = '[copyright] [the-year] [site-name] [theme-credit]';
         		$footertext = str_replace('[copyright]','&copy;',$footertext);

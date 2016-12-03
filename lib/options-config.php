@@ -37,20 +37,7 @@
 			'default' => 1,
 			'sanitize_callback' => 'backyard_boolean',
 						),
-						'footer_logo_upload_chk' => array(
-			                  'type' => 'checkbox',
-			                  'label' => __('Footer Logo Option', 'backyard'),
-			                  'default' => 1,
-			                  'sanitize_callback' => 'backyard_boolean',
-						),
-                                                 
-                                                 'footer_logo_upload' => array(
-			                            'type' => 'image',
-			                            'label' => __('Footer Logo Upload', 'backyard'),
-			                            'sanitize_callback' => 'esc_url_raw',
-						), 
-                    
-                                                 'footer_copyright_bar' => array(
+						'footer_copyright_bar' => array(
 			                            'type' => 'checkbox',
 			                            'label' => __('Footer Copyright Bar', 'backyard'),
 			                            'default' => 1,
@@ -168,4 +155,4 @@ if (!function_exists('backyard_allowhtml_string')) {
 
     }
 }
-
+?>

@@ -47,4 +47,44 @@ function backyard_social_media_link() {
   }
 }   
 endif;
+// get from session your URL variable and add it to item
+add_filter('woocommerce_get_cart_item_from_session', 'cart_item_from_session', 99, 3);
+function cart_item_from_session( $data, $values, $key ) {
+    $data['url'] = isset( $values['url'] ) ? $values['url'] : '';
+    return $data;
+}
+
+// this one does the same as woocommerce_update_cart_action() in plugins\woocommerce\woocommerce-functions.php
+// but with your URL variable
+// this might not be the best way but it works
+add_action( 'init', 'update_cart_action', 9);
+function update_cart_action() {
+    global $woocommerce;
+    if ( ( ! empty( $_POST['update_cart'] ) || ! empty( $_POST['proceed'] ) ) && $woocommerce->verify_nonce('cart')) {
+        $cart_totals = isset( $_POST['cart'] ) ? $_POST['cart'] : '';
+        if ( sizeof( $woocommerce->cart->get_cart() ) > 0 ) {
+            foreach ( $woocommerce->cart->get_cart() as $cart_item_key => $values ) {
+                if ( isset( $cart_totals[ $cart_item_key ]['url'] ) ) {
+                    $woocommerce->cart->cart_contents[ $cart_item_key ]['url'] = $cart_totals[ $cart_item_key ]['url'];
+                }
+            }
+        }
+    }
+}
+
+// this is in Order summary. It show Url variable under product name. Same place where Variations are shown.
+add_filter( 'woocommerce_get_item_data', 'item_data', 10, 2 );
+function item_data( $data, $cart_item ) {
+	print_r($cart_item);
+    if ( isset( $cart_item['url'] ) ) {
+        $data['url'] = array('name' => 'Url', 'value' => $cart_item['url']);
+    }
+    return $data;
+}
+
+// this adds Url as meta in Order for item
+add_action ('woocommerce_add_order_item_meta', 'add_item_meta', 10, 2);
+function add_item_meta( $item_id, $values ) {
+    woocommerce_add_order_item_meta( $item_id, 'Url', $values['url'] );
+}
 ?>

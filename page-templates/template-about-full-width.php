@@ -13,6 +13,7 @@ get_header();
         <main id="main" class="site-main wow fadeInUp">
           <?php the_content(); ?>
           </main>
+          <?php wp_link_pages(array('before'=>'<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'backyard' ).'</span>', 'after'=> '</div>','link_before' => '<span>','link_after'  => '</span>',)); ?>
           <?php endif; ?>
         </div>
       </div>

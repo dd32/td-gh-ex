@@ -11,24 +11,20 @@ function backyard_breadcrumbs(){
 	$text['tag']      = 'Posts Tagged "%s"'; // text for a tag page
 	$text['author']   = 'Articles Posted by %s'; // text for an author page
 	$text['404']      = 'Error 404'; // text for the 404 page
-
 	$showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
 	$showOnHome  = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
 	$delimiter   = '<span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>'; // delimiter between crumbs
 	$before      = '<span class="current">'; // tag before the current crumb
 	$after       = '</span>'; // tag after the current crumb
 	/* === END OF OPTIONS === */
-
 	global $post;
-	$homeLink = home_url('') . '/';
+	$homeLink = esc_url(home_url('/'));
 	$linkBefore = '<span typeof="v:Breadcrumb">';
 	$linkAfter = '</span>';
 	$linkAttr = ' rel="v:url" property="v:title"';
 	$link = $linkBefore . '<a' . $linkAttr . ' href="%1$s">%2$s</a>' . $linkAfter;
 
 	if (is_front_page()) {
-
-		///echo '<div id="crumbs"><a href="' . $homeLink . '">' . $text['home'] . '</a></div>';
 
 	}elseif( is_home() ){ $blog_page_id = get_option('page_for_posts'); echo '<div id="crumbs" xmlns:v="http://rdf.data-vocabulary.org/#">' . sprintf($link, $homeLink, $text['home']) . $delimiter." ".get_page($blog_page_id)->post_title;} else {
 
@@ -97,7 +93,7 @@ function backyard_breadcrumbs(){
 			$cats = str_replace('<a', $linkBefore . '<a' . $linkAttr, $cats);
 			$cats = str_replace('</a>', '</a>' . $linkAfter, $cats);
 			echo $cats;
-			printf($link, get_permalink($parent), $parent->post_title);
+			printf($link, esc_url(get_permalink($parent)), $parent->post_title);
 			if ($showCurrent == 1) echo $delimiter . $before . get_the_title() . $after;
 
 		} elseif ( is_page() && !$post->post_parent ) {
@@ -108,7 +104,7 @@ function backyard_breadcrumbs(){
 			$breadcrumbs = array();
 			while ($parent_id) {
 				$page = get_page($parent_id);
-				$breadcrumbs[] = sprintf($link, get_permalink($page->ID), get_the_title($page->ID));
+				$breadcrumbs[] = sprintf($link, esc_url(get_permalink($page->ID)), get_the_title($page->ID));
 				$parent_id  = $page->post_parent;
 			}
 			$breadcrumbs = array_reverse($breadcrumbs);

@@ -1,39 +1,25 @@
 <?php
-	/**
-	 * A Wrapper Class for WP Customizer API
-	 *
-	 * Also, adds custom controls for Customizer by extending it.
-	 */
-
+/* Wrapper Class for WP Customizer API */
 if( ! class_exists('Backyard_Customizer_API_Wrapper') ) {
 	class Backyard_Customizer_API_Wrapper {
-
 		private static $_instance;
-
 		// Holds Panels of Customizer Options
 		// TODO: Have to test without Panels
 		protected $panels = array();
-
 		//
 		protected $_root_sections = array();
-
 		// Holds Sections of Customizer Options
 		protected $sections = array();
-
 		// Holds Fields of Customizer Options 
 		// one section at a moment
 		protected $fields = array();
-
 		// Default capability to edit options
 		protected $_capability = 'edit_theme_options';
-
 		// Since we need serialized theme options
 		// We're overriding default theme_mod type with 'options'
 		protected $_type = 'theme_mod';
-
 		// Version
 		private $_version = '1.0.0';
-
 		// Holds unique slugs for settings and controls
 		protected $_panel_id;
 		protected $_section_id;
@@ -268,3 +254,4 @@ if( ! class_exists('Backyard_Customizer_API_Wrapper') ) {
 		}
 	}
 }
+?>

@@ -7,12 +7,9 @@ get_header();
    get_template_part('template-parts/home/home', 'slider');
   }
  ?>   
-   <section id="content">
-   
+<section id="content">
  <section class="container paddingtop">
-
       <div class="row">
-
        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
           <main id="main" class="site-main">
            <?php 
@@ -23,19 +20,12 @@ get_header();
            ?>
             <!--post-->
            <?php endwhile; ?>
-            <nav class="pagination wow fadeInUp">
-               <div class="alignleft pull-left"> <?php previous_posts_link(__('&laquo; Older Posts','backyard')); // display newer posts link ?></div>
-               <div class="alignright pull-right"> <?php echo next_posts_link(__('New Posts &raquo;','backyard'), $the_query->max_num_pages);?></div>
-             </nav>
           <?php endif; wp_reset_postdata(); ?>
           </main>
         </div>
-         
        <?php get_sidebar(); ?>
-      
       </div>
     </section>
-   
-  </section>
-  <!--content-->
-  <?php get_footer(); ?>
+</section>
+<!--content-->
+<?php get_footer(); ?>

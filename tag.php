@@ -19,9 +19,7 @@
           <?php endif; ?>
           </main>
         </div>
-         
         <?php get_sidebar(); ?>
-      
       </div>
     </section>
 </section>
