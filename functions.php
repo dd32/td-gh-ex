@@ -119,6 +119,18 @@ endif; // ayaspirit_setup
 add_action( 'after_setup_theme', 'ayaspirit_setup' );
 
 /**
+ * Sanitization callback for 'checkbox' type controls. This callback sanitizes `$checked`
+ * as a boolean value, either TRUE or FALSE.
+ *
+ * @param bool $checked Whether the checkbox is checked.
+ * @return bool Whether the checkbox is checked.
+ */
+function ayaspirit_sanitize_checkbox( $checked ) {
+	// Boolean check.
+	return ( ( isset( $checked ) && true == $checked ) ? true : false );
+}
+
+/**
  * Register theme settings in the customizer
  */
 function ayaspirit_customize_register( $wp_customize ) {
@@ -139,7 +151,7 @@ function ayaspirit_customize_register( $wp_customize ) {
 			'ayaspirit_slider_display',
 			array(
 					'default'           => 0,
-					'sanitize_callback' => 'esc_attr',
+					'sanitize_callback' => 'ayaspirit_sanitize_checkbox',
 			)
 	);
 
@@ -152,29 +164,6 @@ function ayaspirit_customize_register( $wp_customize ) {
 							)
 						)
 	);
-
-	for ( $i = 1; $i <= 5; ++$i ) {
-
-		$slideImageId = 'ayaspirit_slide'.$i.'_image';
-		$defaultSliderImagePath = get_template_directory_uri().'/images/slider/'.$i.'.jpg';
-
-		// Add slide background image
-		$wp_customize->add_setting( $slideImageId,
-			array(
-				'default' => $defaultSliderImagePath,
-	    		'sanitize_callback' => 'esc_url_raw'
-			)
-		);
-
-	    $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $slideImageId,
-				array(
-					'label'   	 => sprintf( __( 'Slide #%s Image', 'ayaspirit' ), $i ),
-					'section' 	 => 'ayaspirit_slider_section',
-					'settings'   => $slideImageId,
-				) 
-			)
-		);
-	}
 
 	/**
 	 * Add Footer Section
@@ -227,17 +216,17 @@ function ayaspirit_load_scripts() {
 	}
 	
 	// Load Utilities JS Script
-	wp_enqueue_script( 'ayaspirit-js', get_template_directory_uri() . '/js/utilities.js', array( 'jquery' ) );
+	wp_enqueue_script( 'ayaspirit-utilities', get_template_directory_uri() . '/js/utilities.js', array( 'jquery' ) );
 
 	// Load Slider JS Script
-	wp_enqueue_script( 'modernizr.custom.79639', get_template_directory_uri() . '/js/modernizr.custom.79639.min.js',
+	wp_enqueue_script( 'modernizr-custom-79639', get_template_directory_uri() . '/js/modernizr.custom.79639.min.js',
 		array( 'jquery' ) );
 
-	wp_enqueue_script( 'jquery.ba-cond.min', get_template_directory_uri() . '/js/jquery.ba-cond.min.js',
-		array( 'modernizr.custom.79639' ) );
+	wp_enqueue_script( 'jquery-ba-cond', get_template_directory_uri() . '/js/jquery.ba-cond.min.js',
+		array( 'modernizr-custom-79639' ) );
 
-	wp_enqueue_script( 'jquery.slitslider', get_template_directory_uri() . '/js/jquery.slitslider.js',
-		array( 'jquery.ba-cond.min' ) );
+	wp_enqueue_script( 'jquery-slitslider', get_template_directory_uri() . '/js/jquery.slitslider.js',
+		array( 'jquery-ba-cond' ) );
 }
 
 add_action( 'wp_enqueue_scripts', 'ayaspirit_load_scripts' );
@@ -331,76 +320,49 @@ add_action( 'widgets_init', 'ayaspirit_widgets_init' );
  */
 function ayaspirit_display_slider() {
 
-	if ( ! ayaspirit_slider_has_images() ) {
-
-		return;
-	}
-
-	$numberOfSlides = 0;
 ?>
 	<div id="slider" class="sl-slider-wrapper">
 		<div class="sl-slider">
-			<?php for ( $i = 1; $i <= 5; ++$i ) {
+<?php
+			$args = array( 'numberposts' => '5',
+					   	   'post_status'=>'publish',
+						 );
+			$recent_posts = wp_get_recent_posts( $args );
 
-				$defaultSlideImage = get_template_directory_uri().'/images/slider/' . $i .'.jpg';
-				$slideImage = get_theme_mod( 'ayaspirit_slide'.$i.'_image', $defaultSlideImage );
+			for ( $i = 0; $i < 5; ++$i ) {
 
-				if ( $slideImage != '' ) : ?>
+				$recent = $recent_posts[ $i ];
 
-					<?php ++$numberOfSlides; ?>
-					
-					<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
-						<div class="sl-slide-inner">
-							<div class="bg-img bg-img-<?php echo esc_attr($i); ?>"
-									style="background-image: url(<?php echo esc_url($slideImage); ?>);">
-							</div>
-						</div><!-- .sl-slide-inner -->
-					</div><!-- .sl-slide -->
-			<?php
-				endif;
-			} ?>
+				/**
+				 *	If post has thumbnail image we display it as slide image
+				 *  else we display the default slider image
+				 */
+				$slideImageURL = has_post_thumbnail( $recent['ID'] ) ?
+								wp_get_attachment_url( get_post_thumbnail_id( $recent['ID'] ) )
+							: get_template_directory_uri().'/images/slider/' . ($i + 1) . '.jpg';
+?>
+				<div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25"
+					 data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+					<div class="sl-slide-inner">
+						<div class="bg-img bg-img-<?php echo esc_attr($i); ?>"
+								style="background-image: url(<?php echo esc_url($slideImageURL); ?>);">
+						</div>
+					</div><!-- .sl-slide-inner -->
+				</div><!-- .sl-slide -->
+<?php 		
+			}
+?>
 		</div><!-- .sl-slider -->
 
 		<nav id="nav-dots" class="nav-dots">
-			<?php for ($i = 0; $i < $numberOfSlides; ++$i) { ?>
+			<?php for ($i = 0; $i < 5; ++$i) { ?>
 
-				<?php if ($i == 0 ) : ?>
-
-						<span class="nav-dot-current"></span>
-
-				<?php else : ?>
-
-						<span></span>
-
-				<?php endif; ?>
+				<span <?php if ($i == 0) : echo 'class="nav-dot-current"'; endif; ?>></span>
 
 			<?php } ?>
 		</nav>
-
 	</div><!-- .sl-slider-wrapper -->
 <?php
-}
-
-/**
- * Checks if slider has at least one image
- */
-function ayaspirit_slider_has_images() {
-
-	$result = false;
-
-	for ( $i = 1; $i <= 5; ++$i ) {
-
-		$defaultSlideImage = get_template_directory_uri().'/images/slider/' . $i .'.jpg';
-		$slideImage = get_theme_mod( 'ayaspirit_slide'.$i.'_image', $defaultSlideImage );
-
-		if ( $slideImage != '' ) {
-
-			$result = true;
-			break;
-		}
-	}
-
-	return $result;
 }
 
 function ayaspirit_header_style() {
@@ -420,7 +382,7 @@ function ayaspirit_header_style() {
     <style type="text/css">
         <?php if ( has_header_image() ) : ?>
 
-                #header-main-fixed {background-image: url("<?php echo esc_attr( $headerImage ); ?>");}
+                #header-main-fixed {background-image: url("<?php echo esc_url( $headerImage ); ?>");}
 
         <?php endif; ?>
 
