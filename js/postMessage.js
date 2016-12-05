@@ -60,8 +60,12 @@
     // add custom CSS to its own style element
     body.append('<style id="style-inline-custom-css" type="text/css">' + customCSS + '</style>');
 
+    var setting = 'custom_css';
+    if ( panel.find('#sub-accordion-section-custom_css').length ) {
+        setting = 'custom_css[apex]';
+    }
     // Custom CSS
-    wp.customize( 'custom_css', function( value ) {
+    wp.customize( setting, function( value ) {
         value.bind( function( to ) {
             $('#style-inline-custom-css').remove();
             if ( to != '' ) {
@@ -74,7 +78,12 @@
     // Social Media Icons
 
     // get all controls for social sites
-    var socialSites = panel.find('#accordion-section-ct_apex_social_media_icons').find('.customize-control-title');
+    var socialSites = panel.find('#sub-accordion-section-ct_apex_social_media_icons').find('.customize-control-title');
+    var WPVersion = 4.7;
+    if ( socialSites.length == false ) {
+        socialSites = panel.find('#accordion-section-ct_apex_social_media_icons').find('.customize-control-title');
+        WPVersion = 4.6;
+    }
 
     // instantiate array
     var socialSitesArray = [];
@@ -114,7 +123,11 @@
                 socialMediaIcons.empty();
 
                 // replace all at once to preserve order
-                panel.find('#accordion-section-ct_apex_social_media_icons').find('input').each(function() {
+                var selector = panel.find('#sub-accordion-section-ct_apex_social_media_icons').find('input');
+                if ( WPVersion != 4.7 ) {
+                    selector = panel.find('#accordion-section-ct_apex_social_media_icons').find('input')
+                }
+                selector.each(function() {
 
                     // if the icon has a URL
                     if( $(this).val().length > 0 ) {

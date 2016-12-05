@@ -285,6 +285,7 @@ if ( ! function_exists( 'ct_apex_social_array' ) ) {
 			'digg'          => 'apex_digg_profile',
 			'github'        => 'apex_github_profile',
 			'hacker-news'   => 'apex_hacker-news_profile',
+			'snapchat'      => 'apex_snapchat_profile',
 			'bandcamp'      => 'apex_bandcamp_profile',
 			'etsy'          => 'apex_etsy_profile',
 			'quora'         => 'apex_quora_profile',
@@ -478,11 +479,20 @@ if ( ! function_exists( ( 'ct_apex_delete_settings_notice' ) ) ) {
 	function ct_apex_delete_settings_notice() {
 
 		if ( isset( $_GET['apex_status'] ) ) {
-			?>
-			<div class="updated">
-				<p><?php _e( 'Customizer settings deleted', 'apex' ); ?>.</p>
-			</div>
-			<?php
+
+			if ( $_GET['apex_status'] == 'deleted' ) {
+				?>
+				<div class="updated">
+					<p><?php _e( 'Customizer settings deleted.', 'apex' ); ?></p>
+				</div>
+				<?php
+			} else if ( $_GET['apex_status'] == 'activated' ) {
+				?>
+				<div class="updated">
+					<p><?php _e( 'Apex successfully activated!', 'apex' ); ?></p>
+				</div>
+				<?php
+			}
 		}
 	}
 }
@@ -556,7 +566,11 @@ if ( ! function_exists( ( 'ct_apex_svg_output' ) ) ) {
 if ( ! function_exists( ( 'ct_apex_custom_css_output' ) ) ) {
 	function ct_apex_custom_css_output() {
 
-		$custom_css = get_theme_mod( 'custom_css' );
+		if ( function_exists( 'wp_get_custom_css' ) ) {
+			$custom_css = wp_get_custom_css();
+		} else {
+			$custom_css = get_theme_mod( 'custom_css' );
+		}
 
 		if ( $custom_css ) {
 			$custom_css = ct_apex_sanitize_css( $custom_css );
@@ -637,10 +651,16 @@ function ct_apex_welcome_redirect() {
 
 	$welcome_url = add_query_arg(
 		array(
-			'page' => 'apex-options'
+			'page'        => 'apex-options',
+			'apex_status' => 'activated'
 		),
 		admin_url( 'themes.php' )
 	);
-	wp_redirect( esc_url( $welcome_url ) );
+	wp_safe_redirect( esc_url_raw( $welcome_url ) );
 }
 add_action( 'after_switch_theme', 'ct_apex_welcome_redirect' );
+
+if ( function_exists( 'ct_apex_pro_plugin_updater' ) ) {
+	remove_action( 'admin_init', 'ct_apex_pro_plugin_updater', 0 );
+	add_action( 'admin_init', 'ct_apex_pro_plugin_updater', 0 );
+}
