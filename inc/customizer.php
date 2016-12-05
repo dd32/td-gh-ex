@@ -49,14 +49,15 @@ function unlimited_add_customizer_content( $wp_customize ) {
 	class ct_unlimited_pro_ad extends WP_Customize_Control {
 		public function render_content() {
 			$link = 'https://www.competethemes.com/unlimited-pro/';
+			echo "<a href='" . $link . "' target='_blank'><img src='" . get_template_directory_uri() . "/assets/images/unlimited-pro.png' srcset='" . get_template_directory_uri() . "/assets/images/unlimited-pro-2x.png 2x' /></a>";
 			echo "<p class='bold'>" . sprintf( __('<a target="_blank" href="%s">Unlimited Pro</a> is the plugin that makes advanced customization simple - and fun too!', 'unlimited'), $link) . "</p>";
+			echo "<p>" . __('Unlimited Pro adds the following features to Unlimited:', 'unlimited') . "</p>";
 			echo "<ul>
-					<li>" . __('6 New Layouts', 'unlimited') . "</li>
-					<li>" . __('Custom Colors', 'unlimited') . "</li>
-					<li>" . __('Flexible Header Image', 'unlimited') . "</li>
-					<li>" . __('+ 9 more features', 'unlimited') . "</li>
+					<li>" . __('6 new layouts', 'unlimited') . "</li>
+					<li>" . __('Custom colors', 'unlimited') . "</li>
+					<li>" . __('New fonts', 'unlimited') . "</li>
+					<li>" . __('+ 11 more features', 'unlimited') . "</li>
 				  </ul>";
-			echo "<p>" . __('View our gallery of screenshots and videos now to see if Unlimited Pro is right for your site.', 'unlimited') . "</p>";
 			echo "<p class='button-wrapper'><a target=\"_blank\" class='unlimited-pro-button' href='" . $link . "'>" . __('View Unlimited Pro', 'unlimited') . "</a></p>";
 		}
 	}
@@ -333,23 +334,36 @@ function unlimited_add_customizer_content( $wp_customize ) {
 
 	/***** Custom CSS *****/
 
-	// section
-	$wp_customize->add_section( 'unlimited_custom_css', array(
-		'title'    => __( 'Custom CSS', 'unlimited' ),
-		'priority' => 80
-	) );
-	// setting
-	$wp_customize->add_setting( 'custom_css', array(
-		'sanitize_callback' => 'ct_unlimited_sanitize_css',
-		'transport'         => 'postMessage'
-	) );
-	// control
-	$wp_customize->add_control( 'custom_css', array(
-		'type'     => 'textarea',
-		'label'    => __( 'Add Custom CSS Here:', 'unlimited' ),
-		'section'  => 'unlimited_custom_css',
-		'settings' => 'custom_css'
-	) );
+	if ( function_exists( 'wp_update_custom_css_post' ) ) {
+		// Migrate any existing theme CSS to the core option added in WordPress 4.7.
+		$css = get_theme_mod( 'custom_css' );
+		if ( $css ) {
+			$core_css = wp_get_custom_css(); // Preserve any CSS already added to the core option.
+			$return = wp_update_custom_css_post( $core_css . $css );
+			if ( ! is_wp_error( $return ) ) {
+				// Remove the old theme_mod, so that the CSS is stored in only one place moving forward.
+				remove_theme_mod( 'custom_css' );
+			}
+		}
+	} else {
+		// section
+		$wp_customize->add_section( 'unlimited_custom_css', array(
+			'title'    => __( 'Custom CSS', 'unlimited' ),
+			'priority' => 80
+		) );
+		// setting
+		$wp_customize->add_setting( 'custom_css', array(
+			'sanitize_callback' => 'ct_unlimited_sanitize_css',
+			'transport'         => 'postMessage'
+		) );
+		// control
+		$wp_customize->add_control( 'custom_css', array(
+			'type'     => 'textarea',
+			'label'    => __( 'Add Custom CSS Here:', 'unlimited' ),
+			'section'  => 'unlimited_custom_css',
+			'settings' => 'custom_css'
+		) );
+	}
 
 }
 

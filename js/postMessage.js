@@ -49,7 +49,7 @@
         } );
     } );
 
-    var socialSites = ['twitter', 'facebook', 'google-plus', 'pinterest', 'linkedin', 'youtube', 'vimeo', 'tumblr', 'instagram', 'flickr', 'dribbble', 'rss', 'reddit', 'soundcloud', 'spotify', 'vine', 'yahoo', 'behance', 'codepen', 'delicious', 'stumbleupon', 'deviantart', 'digg', 'github', 'hacker-news', 'foursquare', 'slack', 'slideshare', 'skype', 'whatsapp', 'qq', 'wechat', 'xing', '500px', 'steam', 'vk', 'paypal', 'weibo', 'tencent-weibo', 'email', 'email_form' ];
+    var socialSites = ['twitter', 'facebook', 'google-plus', 'pinterest', 'linkedin', 'youtube', 'vimeo', 'tumblr', 'instagram', 'flickr', 'dribbble', 'rss', 'reddit', 'soundcloud', 'spotify', 'vine', 'yahoo', 'behance', 'codepen', 'delicious', 'stumbleupon', 'deviantart', 'digg', 'github', 'hacker-news', 'snapchat', 'bandcamp', 'etsy', 'quora', 'ravelry', 'meetup', 'telegram', 'podcast', 'foursquare', 'slack', 'slideshare', 'skype', 'whatsapp', 'qq', 'wechat', 'xing', '500px', 'steam', 'vk', 'paypal', 'weibo', 'tencent-weibo', 'email', 'email_form' ];
 
     // for each social site setting
     for ( var site in socialSites ) {
@@ -76,8 +76,14 @@
                 // icons that should use a special square icon
                 var squareIcons = ['linkedin', 'twitter', 'vimeo', 'youtube', 'pinterest', 'reddit', 'tumblr', 'steam', 'xing', 'github', 'google-plus', 'behance', 'facebook'];
 
+                var selector = panel.find('#sub-accordion-section-unlimited_social_media_icons').find('input');
+
+                if ( selector.length == false ) {
+                    selector = panel.find('#accordion-section-unlimited_social_media_icons').find('input')
+                }
+
                 // for each social icon input in customizer
-                $('html', window.parent.document).find('#accordion-section-unlimited_social_media_icons').find('input').each(function() {
+                $('html', window.parent.document).find(selector).each(function() {
 
                     if( $(this).val().length > 0 ) {
 
@@ -155,8 +161,13 @@
     // put custom CSS in its own style element
     body.append('<style id="style-inline-custom-css" type="text/css">' + customCSS + '</style>');
 
+    var setting = 'custom_css';
+    if ( panel.find('#sub-accordion-section-custom_css').length ) {
+        setting = 'custom_css[unlimited]';
+    }
+
     // Custom CSS
-    wp.customize( 'custom_css', function( value ) {
+    wp.customize( setting, function( value ) {
         value.bind( function( to ) {
             $('#style-inline-custom-css').remove();
             if ( to != '' ) {

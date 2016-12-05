@@ -282,6 +282,14 @@ if ( ! function_exists( 'unlimited_social_array' ) ) {
 			'digg'          => 'unlimited_digg_profile',
 			'github'        => 'unlimited_github_profile',
 			'hacker-news'   => 'unlimited_hacker-news_profile',
+			'snapchat'      => 'unlimited_snapchat_profile',
+			'bandcamp'      => 'unlimited_bandcamp_profile',
+			'etsy'          => 'unlimited_etsy_profile',
+			'quora'         => 'unlimited_quora_profile',
+			'ravelry'       => 'unlimited_ravelry_profile',
+			'meetup'        => 'unlimited_meetup_profile',
+			'telegram'      => 'unlimited_telegram_profile',
+			'podcast'       => 'unlimited_podcast_profile',
 			'foursquare'    => 'unlimited_foursquare_profile',
 			'slack'         => 'unlimited_slack_profile',
 			'slideshare'    => 'unlimited_slideshare_profile',
@@ -462,7 +470,11 @@ add_filter( 'post_class', 'unlimited_post_class' );
 if ( ! function_exists( 'unlimited_custom_css_output' ) ) {
 	function unlimited_custom_css_output() {
 
-		$custom_css = get_theme_mod( 'custom_css' );
+		if ( function_exists( 'wp_get_custom_css' ) ) {
+			$custom_css = wp_get_custom_css();
+		} else {
+			$custom_css = get_theme_mod( 'custom_css' );
+		}
 
 		if ( $custom_css ) {
 			$custom_css = ct_unlimited_sanitize_css( $custom_css );
@@ -535,11 +547,20 @@ if ( ! function_exists( 'unlimited_delete_settings_notice' ) ) {
 	function unlimited_delete_settings_notice() {
 
 		if ( isset( $_GET['unlimited_status'] ) ) {
-			?>
-			<div class="updated">
-				<p><?php _e( 'Customizer settings deleted', 'unlimited' ); ?>.</p>
-			</div>
-			<?php
+
+			if ( $_GET['unlimited_status'] == 'deleted' ) {
+				?>
+				<div class="updated">
+					<p><?php _e( 'Customizer settings deleted.', 'unlimited' ); ?></p>
+				</div>
+				<?php
+			} else if ( $_GET['unlimited_status'] == 'activated' ) {
+				?>
+				<div class="updated">
+					<p><?php _e( 'Unlimited successfully activated!', 'unlimited' ); ?></p>
+				</div>
+				<?php
+			}
 		}
 	}
 }
@@ -625,3 +646,17 @@ if ( ! function_exists( 'ct_unlimited_nav_dropdown_buttons' ) ) {
 	}
 }
 add_filter( 'walker_nav_menu_start_el', 'ct_unlimited_nav_dropdown_buttons', 10, 4 );
+
+// trigger theme switch on link click and send to Appearance menu
+function ct_unlimited_welcome_redirect() {
+
+	$welcome_url = add_query_arg(
+		array(
+			'page'             => 'unlimited-options',
+			'unlimited_status' => 'activated',
+		),
+		admin_url( 'themes.php' )
+	);
+	wp_safe_redirect( esc_url_raw( $welcome_url ) );
+}
+add_action( 'after_switch_theme', 'ct_unlimited_welcome_redirect' );
