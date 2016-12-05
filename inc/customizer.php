@@ -65,7 +65,7 @@ function ct_tracks_add_customizer_content( $wp_customize ) {
 	class ct_tracks_pro_ad extends WP_Customize_Control {
 		public function render_content() {
 			$link = 'https://www.competethemes.com/tracks-pro/';
-			echo "<a href='" . $link . "' target='_blank'><img src='" . get_template_directory_uri() . "/assets/images/tracks-pro.png' /></a>";
+			echo "<a href='" . $link . "' target='_blank'><img src='" . get_template_directory_uri() . "/assets/images/tracks-pro.png' srcset='" . get_template_directory_uri() . "/assets/images/tracks-pro-2x.png 2x' /></a>";
 			echo "<p class='bold'>" . sprintf( __('<a target="_blank" href="%s">Tracks Pro</a> is the plugin that makes advanced customization simple - and fun too!', 'tracks'), $link) . "</p>";
 			echo "<p>" . __('Tracks Pro adds the following features to Tracks:', 'tracks') . "</p>";
 			echo "<ul>
@@ -84,7 +84,7 @@ function ct_tracks_add_customizer_content( $wp_customize ) {
 	if ( !function_exists( 'ct_tracks_pro_init' ) ) {
 		// section
 		$wp_customize->add_section( 'ct_tracks_pro', array(
-			'title'    => __( 'Customize More', 'tracks' ),
+			'title'    => __( 'Tracks Pro', 'tracks' ),
 			'priority' => 1
 		) );
 		// Upload - setting
@@ -395,23 +395,36 @@ function ct_tracks_add_customizer_content( $wp_customize ) {
 
 	/***** Custom CSS *****/
 
-	// section
-	$wp_customize->add_section( 'ct-custom-css', array(
-		'title'    => __( 'Custom CSS', 'tracks' ),
-		'priority' => 80
-	) );
-	// setting
-	$wp_customize->add_setting( 'ct_tracks_custom_css_setting', array(
-		'sanitize_callback' => 'ct_tracks_sanitize_css',
-		'transport'         => 'postMessage'
-	) );
-	// control
-	$wp_customize->add_control( 'ct_tracks_custom_css_setting', array(
-		'type'     => 'textarea',
-		'label'    => __( 'Add Custom CSS Here:', 'tracks' ),
-		'section'  => 'ct-custom-css',
-		'settings' => 'ct_tracks_custom_css_setting'
-	) );
+	if ( function_exists( 'wp_update_custom_css_post' ) ) {
+		// Migrate any existing theme CSS to the core option added in WordPress 4.7.
+		$css = get_theme_mod( 'ct_tracks_custom_css_setting' );
+		if ( $css ) {
+			$core_css = wp_get_custom_css(); // Preserve any CSS already added to the core option.
+			$return = wp_update_custom_css_post( $core_css . $css );
+			if ( ! is_wp_error( $return ) ) {
+				// Remove the old theme_mod, so that the CSS is stored in only one place moving forward.
+				remove_theme_mod( 'ct_tracks_custom_css_setting' );
+			}
+		}
+	} else {
+		// section
+		$wp_customize->add_section( 'ct-custom-css', array(
+			'title'    => __( 'Custom CSS', 'tracks' ),
+			'priority' => 80
+		) );
+		// setting
+		$wp_customize->add_setting( 'ct_tracks_custom_css_setting', array(
+			'sanitize_callback' => 'ct_tracks_sanitize_css',
+			'transport'         => 'postMessage'
+		) );
+		// control
+		$wp_customize->add_control( 'ct_tracks_custom_css_setting', array(
+			'type'     => 'textarea',
+			'label'    => __( 'Add Custom CSS Here:', 'tracks' ),
+			'section'  => 'ct-custom-css',
+			'settings' => 'ct_tracks_custom_css_setting'
+		) );
+	}
 
 	/***** Premium Layout *****/
 
