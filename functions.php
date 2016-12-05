@@ -374,7 +374,11 @@ add_action( 'wp_enqueue_scripts', 'ct_ignite_logo_size_css', 20 );
 if ( ! function_exists( 'ct_ignite_custom_css_output' ) ) {
 	function ct_ignite_custom_css_output() {
 
-		$custom_css = get_theme_mod( 'ct_ignite_custom_css_setting' );
+		if ( function_exists( 'wp_get_custom_css' ) ) {
+			$custom_css = wp_get_custom_css();
+		} else {
+			$custom_css = get_theme_mod( 'ct_ignite_custom_css_setting' );
+		}
 
 		if ( $custom_css ) {
 			$custom_css = ct_ignite_sanitize_css( $custom_css );
@@ -539,6 +543,7 @@ if ( ! function_exists( 'ct_ignite_customizer_social_media_array' ) ) {
 			'steam',
 			'vk',
 			'academia',
+			'snapchat',
 			'bandcamp',
 			'etsy',
 			'quora',
@@ -638,10 +643,28 @@ function ct_ignite_welcome_redirect() {
 
 	$welcome_url = add_query_arg(
 		array(
-			'page' => 'ignite-options'
+			'page'          => 'ignite-options',
+			'ignite_status' => 'activated'
 		),
 		admin_url( 'themes.php' )
 	);
-	wp_redirect( esc_url( $welcome_url ) );
+	wp_safe_redirect( esc_url_raw( $welcome_url ) );
 }
 add_action( 'after_switch_theme', 'ct_ignite_welcome_redirect' );
+
+if ( ! function_exists( ( 'ct_ignite_settings_notice' ) ) ) {
+	function ct_ignite_settings_notice() {
+
+		if ( isset( $_GET['ignite_status'] ) ) {
+
+			if ( $_GET['ignite_status'] == 'activated' ) {
+				?>
+				<div class="updated">
+					<p><?php _e( 'Ignite successfully activated!', 'ignite' ); ?></p>
+				</div>
+				<?php
+			}
+		}
+	}
+}
+add_action( 'admin_notices', 'ct_ignite_settings_notice' );
