@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Innovation Lite\n"
-"POT-Creation-Date: 2016-09-29 09:48+0600\n"
+"POT-Creation-Date: 2016-12-06 01:38+0600\n"
 "PO-Revision-Date: 2015-10-29 02:02+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -15,8 +15,8 @@ msgstr ""
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
-"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
-"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
@@ -122,7 +122,7 @@ msgstr ""
 msgid "Comments are Closed"
 msgstr ""
 
-#: fullwidth.php:19 page.php:20 single.php:20
+#: fullwidth.php:17 page.php:20 single.php:20
 msgid "Pages"
 msgstr ""
 
@@ -162,11 +162,11 @@ msgstr ""
 msgid "Footer Area Four"
 msgstr ""
 
-#: header.php:61 inc/customize.php:44
+#: header.php:58 inc/customize.php:44
 msgid " Title | Welcome to D5 Socialia Theme, Visit D5 Creation for Details"
 msgstr ""
 
-#: header.php:61
+#: header.php:58
 msgid ""
 "D5 Socialia is a WordPress Theme which is Ideal for Social Organizations, "
 "NGOs, CBOs, Environmental Organizations, Societies, Climate Change Related "

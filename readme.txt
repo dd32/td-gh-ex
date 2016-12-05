@@ -1,7 +1,7 @@
 ----------------------------------
 Socialia Theme
 ----------------------------------
-Version: 	3.2
+Version: 	3.3
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
@@ -35,6 +35,10 @@ html5.js: MIT/GPL2 Licensed, https://github.com/aFarkas/html5shiv
 jquery.skitter.js: Dual licensed under the MIT or GPL Version 2 licenses, http://thiagosf.net
 
 jquery.easing.1.3.js:   Open source under the BSD License, http://gsgd.co.uk/sandbox/jquery/easing/
+
+Version 3.3
+====================================
+- Minor Read More Text Issue Correction
  
 Version 3.0
 ====================================

@@ -103,13 +103,13 @@ function d5socialia_setup() {
 	
 	function d5socialia_excerpt_more($more) {
     global $post;
-	return '<a href="'. get_permalink($post->ID) . '" class="read-more">' . _e('Read More ...','d5-socialia') . '</a>';
+	return '<a href="'. get_permalink($post->ID) . '" class="read-more">' . __('Read More ...','d5-socialia') . '</a>';
 	}
 	add_filter('excerpt_more', 'd5socialia_excerpt_more');
 
 // Content Type Showing
 	function d5socialia_content() {
-	the_content('<span class="read-more">' . _e('Read More ...','d5-socialia') . '</span>');
+	the_content('<span class="read-more">' . __('Read More ...','d5-socialia') . '</span>');
 	}
 
 //	Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link
