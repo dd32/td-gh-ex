@@ -55,6 +55,30 @@ function antonine_menu_slide_filter(items){
 
 function antonine_article_align(){
 
+	jQuery( "article.status-publish" )
+		.each(
+			function(index,value){
+				jQuery(value)
+					.height((jQuery(window).height()/4));
+			}
+		);
+
+	jQuery( "footer#colophon" )
+		.each(
+			function(index,value){
+				jQuery(value)
+					.height((jQuery(window).height()/4));
+			}
+		);	
+
+	jQuery( "article.status-publish .content-holder" )
+		.each(
+			function(index,value){
+				jQuery(value)
+					.height(jQuery(value).parent().height());
+			}
+		);
+
 	jQuery( "article .home-align" )
 		.each(
 			function(index,value){
@@ -96,6 +120,30 @@ function antonine_article_align(){
 }
 
 function antonine_search_align(){
+
+	jQuery( "article.status-publish" )
+		.each(
+			function(index,value){
+				jQuery(value)
+					.height((jQuery(window).height()/4));
+			}
+		);
+
+	jQuery( "footer#colophon" )
+		.each(
+			function(index,value){
+				jQuery(value)
+					.height((jQuery(window).height()/4));
+			}
+		);	
+
+	jQuery( "article.status-publish .content-holder" )
+		.each(
+			function(index,value){
+				jQuery(value)
+					.height(jQuery(value).parent().height());
+			}
+		);
 
 	jQuery( "article .home-align" )
 		.each(

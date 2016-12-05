@@ -112,6 +112,8 @@ function antonine_scripts() {
 		
 	if(!is_single()){
 		wp_enqueue_script( 'antonine-front-page-resize', get_template_directory_uri() . '/js/display/front-page-resize.js', array( 'jquery' ), "", true );
+		
+		if(!is_search()){
 		wp_enqueue_script( 'antonine-front-page-scroll', get_template_directory_uri() . '/js/display/front-page-scroll.js', array( 'jquery' ), "", true );
 		wp_localize_script( 'antonine-front-page-scroll', 'antonine_scroll', 
 																				array( 
@@ -119,7 +121,7 @@ function antonine_scripts() {
 																						'nonce' => wp_create_nonce("antonine_scroll")
 																					)
 						);
-						
+		}				
 		wp_enqueue_script( 'antonine-front-page-preview', get_template_directory_uri() . '/js/display/front-page-preview.js', array( 'jquery' ), "", true );
 		wp_localize_script( 'antonine-front-page-preview', 'antonine_preview', 
 																				array( 

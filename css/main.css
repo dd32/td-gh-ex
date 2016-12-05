@@ -284,12 +284,12 @@ div#previewHolderContent{
 .home article,
 .search article,
 .archive article{
-	overflow: hidden;
-    position: relative;
-    width: 80%;
+	position: relative;
+    	width: 80%;
 	margin: 1% 10%;
-    color:#000;
+    	color:#000;
 	min-height: 150px;
+	overflow: hidden;
 }
 
 .home article,
@@ -317,16 +317,18 @@ div#previewHolderContent{
 .archive article .entry-header{
 	width: 20%;
 	display: table-cell;
-    vertical-align: middle;
+    	vertical-align: middle;
 	float:left; 
 	text-align:center;
 	height: 100%;
+	min-height: 150px;
 }
 
 .home article .content-holder,
 .search article .content-holder,
 .archive article .content-holder {
     height: 100%;
+    min-height: 150px;
     width: 55%;
     display: table;
     padding: 5px;
@@ -383,6 +385,7 @@ div#previewHolderContent{
 .search article.content_preview .entry-content-index,
 .archive article.content_preview .entry-content-index{
     margin: 20px;
+	min-height: 150px;
 }
 
 .home article.content_preview .title-holder,
@@ -428,6 +431,7 @@ div#previewHolderContent{
     	width: 20%;
 	text-align:center;
 	padding: 5px;
+	min-height:150px;
 }
 
 #commentsSpace,
@@ -1171,4 +1175,12 @@ section.error-404 header.page-header{
 .search-results .page header,
 .search-results .page .content-holder{
 	margin: 0%;
+}
+
+footer#colophon{
+	height: 100px;
+}
+
+div.content-holder div{
+	word-break: break-word;
 }
