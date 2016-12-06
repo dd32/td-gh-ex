@@ -6,9 +6,9 @@
         <div class="profile-heading">
             <h3><?php the_author_posts_link(); ?></h3>
         </div>
-        <div class="website-link"><?php echo esc_url(the_author_meta('user_url')); ?></div>
+        <div class="website-link"><?php the_author_meta('user_url'); ?></div>
         <div class="author-description">
-            <?php echo esc_html(the_author_meta('description')); ?>
+            <?php the_author_meta('description'); ?>
         </div>
     </div>
 </div><!-- .user-profile -->

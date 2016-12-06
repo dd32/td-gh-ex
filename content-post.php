@@ -3,7 +3,7 @@
 
         <?php if(has_post_thumbnail()) : ?>
             <div class="thumbnails">
-                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('aster-post-thumbnails', array('class' => 'post-thumbnail img-responsive')); ?></a>
+                <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('aster-post-thumbnails', array('class' => 'post-thumbnail img-responsive')); ?></a>
             </div>
         <?php endif; ?>
 

@@ -6,9 +6,9 @@
 
 if ( ! function_exists( 'aster_post_tag_list' ) ) {
 	function aster_post_tag_list() {
-		$tags_list = get_the_tag_list( '', __( ', ', 'aster' ) );
+		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'aster' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'aster' ) . '</span>', $tags_list );
+			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'aster' ) . '</span>', $tags_list );
 		}
 
 	}
@@ -45,37 +45,6 @@ if ( ! function_exists( 'aster_posted_on' ) ) {
 					?></span>
 			</li>
 		</ul>
-		<?php
-	}
-}
-
-
-//----------------------------------------------------------------------
-//  Single Post navigation link. <- Previous post  |   Next Post ->
-//----------------------------------------------------------------------
-
-if ( ! function_exists( 'aster_post_navigation' ) ) {
-
-	function aster_post_navigation() {
-		// Don't print empty markup if there's nowhere to navigate.
-		$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
-		$next     = get_adjacent_post( false, '', false );
-
-		if ( ! $next && ! $previous ) {
-			return;
-		}
-		?>
-		<nav class="next-previous-post clearfix" role="navigation">
-			<!-- Previous Post -->
-			<div class="previous-post pull-left">
-				<?php previous_post_link( '<div class="nav-previous">%link</div>', __( '<i class="fa fa-angle-left"></i> Previous Post', 'aster' ) ); ?>
-			</div>
-
-			<!-- Next Post -->
-			<div class="next-post pull-right text-right">
-				<?php next_post_link( '<div class="nav-next">%link</div>', __( 'Next Post <i class="fa fa-angle-right"></i>', 'aster' ) ); ?>
-			</div>
-		</nav><!-- .navigation -->
 		<?php
 	}
 }

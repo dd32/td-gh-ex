@@ -31,6 +31,5 @@ Aster is one of the most Elegant, Trendy, Clean and Creative high-performance Re
 * FitVids.JS http://fitvidsjs.com FitVids.JS WTFPL license
 * SmoothsCroll https://github.com/themicon/smoothscroll Licensed under the terms of the MIT license.
 * SlickNav https://github.com/ComputerWolf/SlickNav GPL license.
-* Photos https://www.pexels.com Creative Commons Zero (CC0) license.
-
-
+* Photos https://pixabay.com/en/users/rubelmiah-812017/ Creative Commons Zero (CC0) license.
+* About Me Photo Creative Commons Zero (CC0) license.

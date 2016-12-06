@@ -24,7 +24,7 @@
 							<div class="next-previous-posts">
 								<?php the_posts_navigation(
 									array(
-										'prev_text' => __( '<div class="text-left"><i class="fa fa-angle-left"></i> Older posts</div>', 'aster' ),
+										'prev_text' => __( '<div class="text-left"><i class="fa fa-angle-left"></i>	Older posts</div>', 'aster' ),
 										'next_text' => __( '<div class="text-right">Newer posts <i class="fa fa-angle-right"></i></div>', 'aster' ),
 									)
 								) ?>

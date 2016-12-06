@@ -1,15 +1,19 @@
 <?php
 
-add_action('widgets_init','register_aster_blog_posts_widget');
+add_action('widgets_init','aster_register_blog_posts_widget');
 
-function register_aster_blog_posts_widget() {
+function aster_register_blog_posts_widget() {
 	register_widget('Aster_Blog_Posts_Widget');
 }
 
 class Aster_Blog_Posts_Widget extends WP_Widget{
 
-	function Aster_Blog_Posts_Widget(){
-		parent::__construct( 'Aster_Blog_Posts_Widget', __('Aster Recent Posts', 'aster'), array('description' => __('Aster Recent posts widget to display recent posts', 'aster')));
+	public function __construct() {
+		parent::__construct(
+			'aster_blog_posts_base_widget', // Base ID
+			esc_html__('Aster Recent Posts', 'aster'), // Name
+			array('description' => esc_html__('Aster Recent posts widget to display recent posts', 'aster'),) // Args
+		);
 	}
 
 
@@ -17,12 +21,11 @@ class Aster_Blog_Posts_Widget extends WP_Widget{
 	 *				Front-end display of widget
 	 *-------------------------------------------------------*/
 
-	function widget($args, $instance) {
+	public	function widget($args, $instance) {
 		extract($args);
 
 		$title 			= apply_filters('widget_title', $instance['title'] );
 		$count 			= $instance['count'];
-		$order_by 		= $instance['order_by'];
 		
 		echo $before_widget;
 
@@ -33,37 +36,15 @@ class Aster_Blog_Posts_Widget extends WP_Widget{
 
 		global $post;
 
-		if ( $order_by == 'latest' ) {
-
-			$args = array( 
-				'posts_per_page' => $count,
-				'order' => 'DESC'
-				);
-
-		} else if ( $order_by == 'popular' ) {
-
-			$args = array( 
-				'orderby' => 'meta_value_num',
-				'meta_key' => 'post_views_count',
-				'posts_per_page' => $count,
-				'order' => 'DESC'
-				);
-
-		} else {
-
-			$args = array( 
-				'orderby' => 'comment_count',
-				'order' => 'DESC',
-				'posts_per_page' => $count
-				);
-
-		}
-
+		$args = array(
+			'posts_per_page' => $count,
+			'order' => 'DESC'
+		);
 
 		$posts = get_posts( $args );
 
 		if(count($posts)>0){
-			$output .='<div class="latest-posts ' . $order_by . '">';
+			$output .='<div class="latest-posts">';
 
 			foreach ($posts as $post): setup_postdata($post);
 				$output .='<div class="media">';
@@ -94,60 +75,32 @@ class Aster_Blog_Posts_Widget extends WP_Widget{
 	}
 
 
-	function update( $new_instance, $old_instance ){
+	public	function update( $new_instance, $old_instance ){
 		$instance = $old_instance;
 
-		$instance['title'] 			= strip_tags( $new_instance['title'] );
-		$instance['order_by'] 		= strip_tags( $new_instance['order_by'] );
+		$instance['title'] 			= sanitize_text_field( $new_instance['title'] );
 		$instance['count'] 			= absint( $new_instance['count'] );
 
 		return $instance;
 	}
 
 
-	function form($instance) {
+	public	function form($instance) {
 		$defaults = array( 
-			'title' 	=> __('Latest Posts', 'aster'),
-			'order_by' 	=> 'latest',
+			'title' 	=> esc_html__('Latest Posts', 'aster'),
 			'count' 	=> 5
 		);
 		$instance = wp_parse_args( (array) $instance, $defaults );
 	?>
 		<p>
-			<label for="<?php echo esc_html($this->get_field_id( 'title' )); ?>"><?php _e('Widget Title', 'aster');
+			<label for="<?php echo esc_html($this->get_field_id( 'title' )); ?>"><?php esc_html_e('Widget Title', 'aster');
 				?></label>
-			<input id="<?php echo esc_html($this->get_field_id( 'title' )); ?>" name="<?php echo esc_html($this->get_field_name('title')); ?>" value="<?php echo esc_html($instance['title']); ?>" style="width:100%;" />
+			<input class="widefat" id="<?php echo esc_html($this->get_field_id( 'title' )); ?>" name="<?php echo esc_html($this->get_field_name('title')); ?>" value="<?php echo esc_html($instance['title']); ?>" />
 		</p>
 
 		<p>
-			<label for="<?php echo esc_attr($this->get_field_id( 'order_by' )); ?>"><?php _e('Ordered By', 'aster'); ?></label>
-			<?php 
-				$options = array(
-					'popular' 	=> __('Popular', 'aster'),
-					'latest' 	=> __('Latest', 'aster'),
-					'comments'	=> __('Most Commented', 'aster')
-					);
-				if(isset($instance['order_by'])) $order_by = $instance['order_by'];
-			?>
-			<select class="widefat" id="<?php echo esc_attr($this->get_field_id( 'order_by' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'order_by' )); ?>">
-				<?php
-				$op = '<option value="%s"%s>%s</option>';
-
-				foreach ($options as $key=>$value ) {
-
-					if ($order_by === $key) {
-			            printf($op, $key, ' selected="selected"', $value);
-			        } else {
-			            printf($op, $key, '', $value);
-			        }
-			    }
-				?>
-			</select>
-		</p>
-
-		<p>
-			<label for="<?php echo esc_attr($this->get_field_id( 'count' )); ?>"><?php _e('Count', 'aster'); ?></label>
-			<input id="<?php echo esc_attr($this->get_field_id( 'count' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'count')); ?>" value="<?php echo absint($instance['count']); ?>" style="width:100%;" />
+			<label for="<?php echo esc_attr($this->get_field_id( 'count' )); ?>"><?php esc_html_e('Count', 'aster'); ?></label>
+			<input class="widefat" id="<?php echo esc_attr($this->get_field_id( 'count' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'count')); ?>" value="<?php echo absint($instance['count']); ?>" />
 		</p>
 
 	<?php

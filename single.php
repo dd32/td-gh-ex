@@ -1,36 +1,39 @@
 <?php get_header(); ?>
 
-    <div class="container main-content">
-        <div class="row">
-            <div class="col-md-8">
-                <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
+<div class="container main-content">
+	<div class="row">
+		<div class="col-md-8">
+			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-                    <?php get_template_part('content', 'single'); ?>
+				<?php get_template_part( 'content', 'single' ); ?>
 
-                    <?php get_template_part( 'user-profile' ); ?>
+				<?php get_template_part( 'user-profile' ); ?>
 
-                    <?php aster_post_navigation(); ?>
+				<?php the_post_navigation( array(
+					'prev_text' => __( '<i class="fa fa-angle-left"></i> Previous Post', 'aster' ),
+					'next_text' => __( 'Next Post <i class="fa fa-angle-right"></i>', 'aster' ),
+				) ); ?>
 
-                    <?php
-                    // If comments are open or we have at least one comment, load up the comment template
-                    if ( comments_open() || get_comments_number() ) : ?>
-                        <div class="comment-box">
-                            <?php comments_template(); ?>
-                        </div>
-                    <?php endif; ?>
+				<?php
+				// If comments are open or we have at least one comment, load up the comment template
+				if ( comments_open() || get_comments_number() ) : ?>
+					<div class="comment-box">
+						<?php comments_template(); ?>
+					</div>
+				<?php endif; ?>
 
-                <?php endwhile; ?>
+			<?php endwhile; ?>
 
-                <?php else : ?>
+			<?php else : ?>
 
-                    <?php get_template_part( 'content', 'none' ); ?>
+				<?php get_template_part( 'content', 'none' ); ?>
 
-                <?php endif; ?>
-            </div>
+			<?php endif; ?>
+		</div>
 
-            <?php get_sidebar(); ?>
+		<?php get_sidebar(); ?>
 
-        </div>
-    </div>
+	</div>
+</div>
 
 <?php get_footer(); ?>
