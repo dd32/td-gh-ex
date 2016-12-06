@@ -41,6 +41,11 @@ one-column, left-sidebar, responsive-layout, custom-background, custom-menu, cus
 3. Log into your WP admin panel and click on the Design tab. Now click on the Zenzero theme to activate it.
 
 == Changelog ==
+= Version 1.3.9 =
+* Updated Smooth Scroll to 1.4.6 Version
+* Enlarged sidebar of 20px
+* Minor bug fixes
+
 = Version 1.3.8 =
 * Updated FontAwesome to 4.7.0 Version
 * Updated Smooth Scroll to 1.4.5 Version

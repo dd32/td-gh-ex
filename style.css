@@ -4,7 +4,7 @@ Theme URI: http://crestaproject.com/downloads/zenzero/
 Author: Rizzo Andrea - CrestaProject.com
 Author URI: http://crestaproject.com
 Description: Zenzero is a modern and Minimal WordPress Theme with generous white space and large legible fonts, one main column e one sidebar column, unlimited colors and theme options by CrestaProject.com. Live demo http://crestaproject.com/demo/zenzero/
-Version: 1.3.8
+Version: 1.3.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: zenzero
@@ -1167,14 +1167,14 @@ body.admin-bar #secondary {
 	padding: 3em 1em;
 	position: fixed;	
 	top: 0;
-	width: 280px;
+	width: 300px;
 	background: #292929;
 	color: #727272;
 	height: 100%;
 	overflow-y: auto;
 	overflow-x: hidden;
 	min-height: 100%;
-	left: -280px;
+	left: -300px;
 	opacity: 0;
 	-o-transition: left .3s ease-in-out;
 	-moz-transition: left .3s ease-in-out;
@@ -1182,7 +1182,7 @@ body.admin-bar #secondary {
 	transition: left .3s ease-in-out;
 }
 #secondary.loaded {
-	left:-280px;
+	left:-300px;
 	opacity: 1;
 }
 body.menu-opened #secondary {
@@ -1191,10 +1191,10 @@ body.menu-opened #secondary {
 }
 body.menu-opened #page {
 	z-index: 2;
-	left: 280px;
+	left: 300px;
 }
 body.menu-opened .showSide, body.menu-opened .showSearch, body.menu-opened #toTop {
-	left: 280px;
+	left: 300px;
 }
 .showSide, .showSearch {
 	position: fixed;
@@ -1706,6 +1706,16 @@ object {
 	h6 {font-size: 8px;}
 	body, button, input, select, textarea {
 		line-height: 1.8;
+	}
+	#secondary {
+		width: 280px;
+		left: -280px;
+	}
+	#secondary.loaded {
+		left:-280px;
+	}
+	body.menu-opened .showSide, body.menu-opened .showSearch, body.menu-opened #toTop, body.menu-opened #page {
+		left: 280px;
 	}
 }
 @media all and (max-width: 479px) {
