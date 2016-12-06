@@ -1,10 +1,10 @@
 /*
 Theme Name: Figure/Ground
 Theme URI: http://themes.halsey.co/figureground
-Author: Halsey Themes
+Author: Nick Halsey
 Author URI: http://themes.halsey.co/
 Description: Figure/Ground is a bold blogging theme that transforms your site into a dynamic, visually stimulating canvas of abstract shapes and content. Meticulously designed on a 64-pixel square grid with a 16-pixel sub-grid, Figure/Ground features comprehensive customization options including the ability to customize every color and an alternate "Circular" mode that makes things more curvy. Your content flows down the center of the page, blending into the background animation in an alternating sequence, before coming to the widgetized footer. A fixed header features space for a small site icon, a search bar, and a togglable menu and social menu. From its bold design to its out-of-the-box functionality and easy customization, Figure/Ground is sure to make your site memorable!
-Version: 1.1
+Version: 1.2
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: figureground
@@ -2245,6 +2245,10 @@ aside.widget:nth-child(even) a:focus {
 	display: none;
 }
 
+.widget .search-field {
+	width: calc(100% - 8px);
+}
+
 /* Footer */
 #colophon {
 	margin-top: 60px;
@@ -2427,4 +2431,16 @@ aside.widget:nth-child(even) a:focus {
 		float: left;
 	}
 
+}
+
+/* Customize Preview */
+.site-title a.customize-partial-refreshing,
+.site-description.customize-partial-refreshing,
+.site-info.customize-partial-refreshing {
+	opacity: 1; /* Don't show visible selective refresh indicator, as values are loosely updated in JS initially. */
+}
+
+.customize-partial-edit-shortcut-blogname {
+	margin-left: 24px; /* Don't cut off the site title shortcut or cover up the site title itself, put the icon below it. */
+	margin-top: 32px;
 }

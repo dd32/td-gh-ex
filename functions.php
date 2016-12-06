@@ -86,10 +86,48 @@ function figureground_setup() {
 	);
 	add_theme_support( 'custom-header', $defaults );
 
-	/*
+	/**
 	 * Allow widgets to be previewed faster in the customizer with selective refresh.
 	 */
 	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	/*
+	 * Add theme support for starter content.
+	 */
+	add_theme_support( 'starter-content', array(
+		// No widgets by default for simplicity.
+		'posts' => array(
+			'about',
+			'contact',
+		),
+
+		'options' => array(
+			'show_on_front' => 'posts',
+		),
+
+		'nav_menus' => array(
+			'primary' => array(
+				'name' => __( 'Primary Menu', 'figureground' ),
+				'items' => array(
+					'link_home' => array( // The core `page_home` item is wrong. See https://core.trac.wordpress.org/ticket/39104.
+						'title' => __( 'Home', 'figureground' ),
+						'url' => get_home_url(),
+					),
+					'page_about',
+					'page_contact',
+				),
+			),
+			'social' => array(
+				'name' => __( 'Social Links Menu', 'figureground' ),
+				'items' => array(
+					'link_facebook',
+					'link_twitter',
+					'link_youtube',
+					'link_email',
+				),
+			),
+		),
+	) );
 }
 endif; // figureground_setup
 add_action( 'after_setup_theme', 'figureground_setup' );

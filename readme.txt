@@ -2,8 +2,8 @@
 Contributors: celloexpressions
 Tags: one-column, flexible-header, custom-colors, custom-header, custom-menu, editor-style, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog
 Requires at least: 4.5
-Tested up to: 4.6
-Stable tag: 1.1
+Tested up to: 4.7
+Stable tag: 1.2
 Description: Figure/Ground is a bold blogging theme featuring a dynamic animation and extensive customization options. 
 License: GPLv2
 
@@ -77,6 +77,12 @@ Genericons are licensed under the terms of the GNU GPL, Version 2 (or later)
 Source: http://genericons.com
 
 == Changelog ==
+
+= 1.2 =
+* Add support for visible edit shortcuts in the customizer for site title and tagline and footer options by adding support for Selective Refresh in addition to instant JS-based previewing.
+* Add support for starter content in the customizer for fresh sites, with WordPress 4.7.
+* Fix checkbox sanitization in the customizer.
+
 = 1.1 =
 * All options in the customizer are now instantly live-previewed with postMessage.
 * Add support for selective refresh in the customizer for widgets, and generated colors.

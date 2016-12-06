@@ -30,13 +30,13 @@ function figureground_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'powered_by_wp' , array(
 		'default'	        => true,
 		'transport'         => 'postMessage',
-		'sanitize_callback' => 'figreground_sanitize_checkbox',
+		'sanitize_callback' => 'figureground_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_setting( 'theme_meta' , array(
 		'default'	        => false,
 		'transport'         => 'postMessage',
-		'sanitize_callback' => 'figreground_sanitize_checkbox',
+		'sanitize_callback' => 'figureground_sanitize_checkbox',
 	) );
 
 	$wp_customize->add_control( 'copy_name', array(
@@ -208,6 +208,21 @@ function figureground_customize_register( $wp_customize ) {
 		'settings'        => array( 'fg_color_light', 'fg_color_dark', 'accent_color_light', 'accent_color_dark' ),
 		'render_callback' => 'figureground_generate_colors_css',
 	) );
+
+	// Add selective refresh support for the title and tagline, and the footer options.
+	$wp_customize->selective_refresh->add_partial( 'blogname', array(
+	    'selector' => '.site-title a',
+	    'render_callback' => 'figureground_customize_partial_blogname',
+	) );
+	$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
+	    'selector' => '.site-description',
+	    'render_callback' => 'figureground_customize_partial_blogdescription',
+	) );
+	$wp_customize->selective_refresh->add_partial( 'footer_credits', array(
+	    'selector' => '.site-info',
+		'settings' => array( 'copy_name', 'powered_by_wp', 'theme_meta' ),
+	    'render_callback' => 'figureground_footer_credits',
+	) );
 }
 add_action( 'customize_register', 'figureground_customize_register' );
 
@@ -319,3 +334,28 @@ function figureground_customizer_body_class( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'figureground_customizer_body_class' );
+
+
+/**
+ * Render the site title for the selective refresh partial.
+ *
+ * @since Figure/Ground 1.2
+ * @see figureground_customize_register()
+ *
+ * @return void
+ */
+function figureground_customize_partial_blogname() {
+	bloginfo( 'name' );
+}
+
+/**
+ * Render the site tagline for the selective refresh partial.
+ *
+ * @since Figure/Ground 1.2
+ * @see figureground_customize_register()
+ *
+ * @return void
+ */
+function figureground_customize_partial_blogdescription() {
+	bloginfo( 'description' );
+}
