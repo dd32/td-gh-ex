@@ -4,7 +4,7 @@ Theme URI: http://themezhut.com/themes/arouse
 Author: ThemezHut
 Author URI: http://themezhut.com
 Description: Arouse is a smart, clean and well coded WordPress theme built for bloggers. This theme can be used for any subject like Technology, Travel, Entertainment, Food and Drink, Holiday, News, etc. You can easily setup your site from theme customizer. Built with bootstrap to display your site responsively on any type of monitors, tabs and mobile phones.
-Version: 1.0.3
+Version: 1.0.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: arouse
@@ -1190,7 +1190,7 @@ a:hover, a:active {
   color: #fff;
 }
 .arouse-social-links a:hover {
-  color: #fff;
+  color: #fff !important;
 }
 .arouse-social-links .social-icon {
   width: 35px;
@@ -1205,6 +1205,7 @@ a:hover, a:active {
 }
 .arouse-social-links .social-icon:hover {
   background: #333;
+  color: #ffffff;
 }
 
 .ar-social-links-inner {
@@ -1423,22 +1424,6 @@ a:hover, a:active {
   opacity: 0.4;
 }
 
-/*.outer {
-    display: table;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-}
-
-.middle {
-    display: table-cell;
-    vertical-align: middle;
-}
-
-.inner {
-    margin-left: auto;
-    margin-right: auto; 
-}*/
 .arouse-slider-container {
   position: relative;
 }
@@ -1642,13 +1627,6 @@ a:hover, a:active {
   margin-bottom: 60px;
   display: inline-block;
   vertical-align: top;
-  /*@media (min-width: 768px) and (max-width: 992px) {
-  	width: 360px;
-  	margin-right: 40px;
-  }*/
-  /*.byline, .posted-on, .comments-link {
-  	margin-right: 10px;
-  }*/
 }
 @media (max-width: 768px) {
   .arouse-post-grid {
@@ -2026,7 +2004,6 @@ article.page {
 
 .comment-list > li:after,
 .comment-list .children > li:before {
-  background: url(images/dotted-line.png) repeat left top;
   background-size: 4px 4px;
   content: "";
   display: block;

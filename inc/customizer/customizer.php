@@ -72,23 +72,15 @@ function arouse_customize_register( $wp_customize ) {
 
 
     /**
-     * Home Settings section.
+     * Featured Content section.
      */
-    $wp_customize->add_panel( 
-		'arouse_home_settings', 
-		array(
-			'title' => __( 'Front Page Settings', 'arouse' ),
-			'description' => __( 'Use this panel to set your home page settings', 'arouse' ),
-			'priority' => 31, 
-		) 
-	);
 
     $wp_customize->add_section( 
     	'arouse_featured_section', 
     	array(
-			'title' => __( 'Featured Content', 'arouse' ),
-			'description' => __( 'Use this section to setup the featured pages that are just below the slider.', 'arouse' ),
-			'panel' => 'arouse_home_settings'
+			'title' 		=> __( 'Featured Content', 'arouse' ),
+			'description' 	=> __( 'Use this section to setup the three featured content boxes that are just below the slider.', 'arouse' ),
+			'priority'		=> 31
 		) 
 	);	
 
@@ -104,7 +96,7 @@ function arouse_customize_register( $wp_customize ) {
 		array(
 			'section'		=> 'arouse_featured_section',
 			'type'			=> 'checkbox',
-			'label'			=> __( 'Display featured pages section?', 'arouse' )
+			'label'			=> __( 'Display featured content section?', 'arouse' )
 		)
 	);	
 
@@ -238,6 +230,47 @@ function arouse_customize_register( $wp_customize ) {
             )
         )
     );	
+
+    /* Colors */
+	$wp_customize->add_setting(
+		'arouse_primary_color',
+		array(
+			'default'			=> '#a58e78',
+			'sanitize_callback'	=> 'arouse_sanitize_hex_color'
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'arouse_primary_color',
+			array(
+				'section'		=> 'colors',
+				'label'			=> __( 'Primary Color', 'arouse' ),
+				'description'	=> __( 'Primary color applies to menu items, links, buttons, etc.', 'arouse' )
+			)
+		)
+	);    
+
+	$wp_customize->add_setting(
+		'arouse_category_link_color',
+		array(
+			'default'			=> '#a58e78',
+			'sanitize_callback'	=> 'arouse_sanitize_hex_color'
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'arouse_category_link_color',
+			array(
+				'section'		=> 'colors',
+				'label'			=> __( 'Category Link Color', 'arouse' ),
+				'description'	=> __( 'Pick a color for article category links.', 'arouse' )
+			)
+		)
+	);   
 
     
    	$wp_customize->add_setting(
@@ -404,19 +437,6 @@ function arouse_sanitize_html( $html ) {
 }
 
 /**
- * CSS sanitization.
- * 
- * @see wp_strip_all_tags() https://developer.wordpress.org/reference/functions/wp_strip_all_tags/
- *
- * @param string $css CSS to sanitize.
- * @return string Sanitized CSS.
- */
-function arouse_sanitize_css( $css ) {
-	return wp_strip_all_tags( $css );
-}
-
-
-/**
  * URL sanitization.
  * 
  * @see esc_url_raw() https://developer.wordpress.org/reference/functions/esc_url_raw/
@@ -461,6 +481,24 @@ function arouse_sanitize_select( $input, $setting ) {
 	
 	// If the input is a valid key, return it; otherwise, return the default.
 	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
+}
+
+/**
+ * HEX Color sanitization
+ *
+ * @see sanitize_hex_color() https://developer.wordpress.org/reference/functions/sanitize_hex_color/
+ * @link sanitize_hex_color_no_hash() https://developer.wordpress.org/reference/functions/sanitize_hex_color_no_hash/
+ *
+ * @param string               $hex_color HEX color to sanitize.
+ * @param WP_Customize_Setting $setting   Setting instance.
+ * @return string The sanitized hex color if not empty; otherwise, the setting default.
+ */
+function arouse_sanitize_hex_color( $hex_color, $setting ) {
+	// Sanitize $input as a hex value without the hash prefix.
+	$hex_color = sanitize_hex_color( $hex_color );
+	
+	// If $input is a valid hex value, return it; otherwise, return the default.
+	return ( ! empty( $hex_color ) ? $hex_color : $setting->default );
 }
 
 

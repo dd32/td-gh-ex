@@ -51,3 +51,96 @@ function arouse_excerpt_more() {
 	return '&hellip; ';
 }
 add_filter( 'excerpt_more', 'arouse_excerpt_more' );
+
+
+/**
+ * Hooks custom css into the head.
+ */
+function arouse_custom_styles() {
+	
+	$arouse_custom_styles = "";
+
+	$primary_color = get_theme_mod( 'arouse_primary_color', '#a58e78' );
+
+	if ( $primary_color != '#a58e78' ) {
+
+		$arouse_custom_styles .= '
+			button,
+			input[type="button"],
+			input[type="reset"],
+			input[type="submit"] {
+				background: '. $primary_color .';
+			}
+			.main-navigation a:hover {
+				color: '. $primary_color .';
+			}
+			.main-navigation .current_page_item > a,
+			.main-navigation .current-menu-item > a,
+			.main-navigation .current_page_ancestor > a,
+			.main-navigation .current-menu-ancestor > a {
+				color: '. $primary_color .';
+			}
+			#arouse-search-form input[type="submit"] {
+				background-color: '. $primary_color .';
+			}
+			.nav-links .current {
+				background: '. $primary_color .';
+			}
+			.widget-area a:hover {
+				color: '. $primary_color .';
+			}
+			.search-form .search-submit {
+				background: '. $primary_color .';
+			}
+			.widget_tag_cloud .tagcloud a {
+				background: '. $primary_color .';
+			}
+			.widget_tag_cloud .tagcloud a:hover {
+				color: #ffffff;
+			}	
+			.ar-cat-title a:hover {
+				color: '. $primary_color .';
+			}		
+			.site-title a:hover {
+				color: '. $primary_color .';
+			}
+			.site-description {
+				color: '. $primary_color .';
+			}
+			.arouse-post-list .entry-title a:hover,
+			.arouse-post-list .search-entry-title a:hover,
+			.arouse-post-grid .entry-title a:hover,
+			.arouse-post-grid .search-entry-title a:hover {
+				color: '. $primary_color .';
+			}
+			.comment-author .fn,
+			.comment-author .url,
+			.comment-reply-link,
+			.comment-reply-login {
+				color: '. $primary_color .';
+			}';
+
+	}
+
+	$category_link_color = get_theme_mod( 'arouse_category_link_color', '#a58e78' );
+
+	if ( $category_link_color != '#a58e78' ) {
+		$arouse_custom_styles .= '
+			.arouse-entry-category a {
+				color: '. $category_link_color .';
+			}
+			.arouse-post-list .cat-links a,
+			.arouse-post-grid .cat-links a {
+				color: '. $category_link_color .';
+			}	
+		';
+	}
+
+	if ( ! empty( $arouse_custom_styles ) ) { ?>
+		<style type="text/css">
+			<?php echo preg_replace( '/\s+/', ' ', $arouse_custom_styles ); ?>
+		</style>
+	<?php }
+
+}
+add_action( 'wp_head', 'arouse_custom_styles' );

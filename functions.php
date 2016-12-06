@@ -84,18 +84,6 @@ endif;
 add_action( 'after_setup_theme', 'arouse_setup' );
 
 /**
- * Custom Logo
- */
-
-function arouse_the_custom_logo() {
-	
-	if ( function_exists( 'the_custom_logo' ) ) {
-		the_custom_logo();
-	}
-
-}
-
-/**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
  * Priority 0 to make it available to lower priority callbacks.
@@ -156,7 +144,7 @@ add_action( 'widgets_init', 'arouse_widgets_init' );
  * Enqueue scripts and styles.
  */
 function arouse_scripts() {
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), '3.3.6', false );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '3.3.6', false );
 
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.6.3' );
 
@@ -256,6 +244,15 @@ function arouse_excerpt_length( $length ) {
 	return 30;
 }
 add_filter( 'excerpt_length', 'arouse_excerpt_length', 999 );
+
+/**
+ * Custom Logo
+ */
+function arouse_the_custom_logo() {
+	if ( function_exists( 'the_custom_logo' ) ) {
+		the_custom_logo();
+	}
+}
 
 /**
  * Theme info page.

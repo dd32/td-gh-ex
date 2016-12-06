@@ -1,10 +1,9 @@
 === Arouse ===
 
 Tags: grid-layout,right-sidebar,two-columns,custom-logo,custom-background,custom-menu,editor-style,featured-images,footer-widgets,full-width-template,theme-options,threaded-comments,translation-ready,news,blog,entertainment
-
 Requires at least: 4.0
 Tested up to: 4.6.1
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -51,6 +50,14 @@ Arouse includes support for Infinite Scroll in Jetpack.
 = 1.0.3 - Dec 04 2016 =
 * Fixed some styling issues.
 * Fixed some styling issues in rtl.css
+
+= 1.0.4 - Dec 06 2016 =
+* Removed arouse_sanitize_css() function from customizer.php since it has been not used.
+* Added primary color support.
+* Changed some panel and section arrangements in customizer.
+* Removed unwanted stylings from style.css
+* Edited translation files.
+
 
 == Credits ==
 
