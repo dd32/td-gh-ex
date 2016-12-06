@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-30 19:09+0200\n"
-"PO-Revision-Date: 2016-09-30 19:11+0200\n"
+"POT-Creation-Date: 2016-12-06 17:28+0100\n"
+"PO-Revision-Date: 2016-12-06 17:31+0100\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
 "Language: it_IT\n"
@@ -26,15 +26,15 @@ msgstr "Contenuto mancante"
 msgid "Sorry, no posts matched your criteria"
 msgstr "Spiacente, nessun articolo risponde ai criteri di ricerca impostati."
 
-#: comments.php:5 core/templates/post-info.php:28
+#: comments.php:5 core/templates/post-info.php:32
 msgid "No comments"
 msgstr "Nessun commento"
 
-#: comments.php:5 core/templates/post-info.php:28
+#: comments.php:5 core/templates/post-info.php:32
 msgid "comment"
 msgstr "commento"
 
-#: comments.php:5 core/templates/post-info.php:28
+#: comments.php:5 core/templates/post-info.php:32
 msgid "comments"
 msgstr "commenti"
 
@@ -84,14 +84,14 @@ msgstr ""
 #: core/admin/customize/customize.php:17 core/admin/customize/customize.php:188
 #: core/admin/customize/customize.php:204
 #: core/admin/customize/customize.php:220
-#: core/admin/customize/customize.php:652
+#: core/admin/customize/customize.php:696
 msgid "No"
 msgstr "No"
 
 #: core/admin/customize/customize.php:18 core/admin/customize/customize.php:189
 #: core/admin/customize/customize.php:205
 #: core/admin/customize/customize.php:221
-#: core/admin/customize/customize.php:653
+#: core/admin/customize/customize.php:697
 msgid "Yes"
 msgstr "Si"
 
@@ -455,243 +455,283 @@ msgstr ""
 "pulsante."
 
 #: core/admin/customize/customize.php:492
+msgid "Slack Url"
+msgstr "Url Slack"
+
+#: core/admin/customize/customize.php:493
+msgid "Insert Slack Url (leave empty if you want to hide the button)"
+msgstr ""
+"Inserisci l’url di Slack, lascia il campo vuoto per non visualizzare il "
+"pulsante."
+
+#: core/admin/customize/customize.php:503
 msgid "Myspace Url"
 msgstr "Url Myspace"
 
-#: core/admin/customize/customize.php:493
+#: core/admin/customize/customize.php:504
 msgid "Insert Myspace Url (leave empty if you want to hide the button)"
 msgstr ""
 "Inserisci l’url di Myspace, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:503
+#: core/admin/customize/customize.php:514
 msgid "Pinterest Url"
 msgstr "Url Pinterest"
 
-#: core/admin/customize/customize.php:504
+#: core/admin/customize/customize.php:515
 msgid "Insert Pinterest Url (leave empty if you want to hide the button)"
 msgstr ""
 "Inserisci l’url di Pinterest, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:514
+#: core/admin/customize/customize.php:525
 msgid "Tumblr Url"
 msgstr "Url Tumblr"
 
-#: core/admin/customize/customize.php:515
+#: core/admin/customize/customize.php:526
 msgid "Insert Tumblr Url (leave empty if you want to hide the button)"
 msgstr ""
 "Inserisci l’url di Tumblr, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:525
+#: core/admin/customize/customize.php:536
+msgid "Soundcloud Url"
+msgstr "Url Soundcloud"
+
+#: core/admin/customize/customize.php:537
+msgid "Insert Soundcloud Url (leave empty if you want to hide the button)"
+msgstr ""
+"Inserisci l’url di Soundcloud, lascia il campo vuoto per non visualizzare il "
+"pulsante."
+
+#: core/admin/customize/customize.php:547
+msgid "Spotify Url"
+msgstr "Url Spotify"
+
+#: core/admin/customize/customize.php:548
+msgid "Insert Spotify Url (leave empty if you want to hide the button)"
+msgstr ""
+"Inserisci l’url di Spotify, lascia il campo vuoto per non visualizzare il "
+"pulsante."
+
+#: core/admin/customize/customize.php:558
 msgid "Youtube Url"
 msgstr "Url Youtube"
 
-#: core/admin/customize/customize.php:526
+#: core/admin/customize/customize.php:559
 msgid "Insert Youtube Url (leave empty if you want to hide the button)"
 msgstr ""
 "Inserisci l’url di YouTube, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:536
+#: core/admin/customize/customize.php:569
 msgid "Vimeo Url"
 msgstr "Url Vimeo"
 
-#: core/admin/customize/customize.php:537
+#: core/admin/customize/customize.php:570
 msgid "Insert Vimeo Url (leave empty if you want to hide the button)"
 msgstr ""
 "Inserisci l’url di Vimeo, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:547
+#: core/admin/customize/customize.php:580
+msgid "VK Url"
+msgstr "Url VK"
+
+#: core/admin/customize/customize.php:581
+msgid "Insert VK Url (leave empty if you want to hide the button)"
+msgstr ""
+"Inserisci l’url di VK, lascia il campo vuoto per non visualizzare il "
+"pulsante."
+
+#: core/admin/customize/customize.php:591
 msgid "Instagram Url"
 msgstr "Url Instagram"
 
-#: core/admin/customize/customize.php:548
+#: core/admin/customize/customize.php:592
 msgid "Insert Instagram Url (leave empty if you want to hide the button)"
 msgstr ""
 "Inserisci l’url di Instagram, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:558
+#: core/admin/customize/customize.php:602
 msgid "Deviantart Url"
 msgstr "Url Deviantart"
 
-#: core/admin/customize/customize.php:559
+#: core/admin/customize/customize.php:603
 msgid "Insert Deviantart Url (leave empty if you want to hide the button)"
 msgstr ""
 "Inserire l’url di Deviantart (lasciare vuoto se si desidera nascondere il "
 "pulsante)"
 
-#: core/admin/customize/customize.php:569
+#: core/admin/customize/customize.php:613
 msgid "Github Url"
 msgstr " Url Github"
 
-#: core/admin/customize/customize.php:570
+#: core/admin/customize/customize.php:614
 msgid "Insert Github Url (leave empty if you want to hide the button)"
 msgstr ""
 "Inserisci l’url di Github, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:580
+#: core/admin/customize/customize.php:624
 msgid "Xing Url"
 msgstr "Url Xing"
 
-#: core/admin/customize/customize.php:581
+#: core/admin/customize/customize.php:625
 msgid "Insert Xing Url (leave empty if you want to hide the button)"
 msgstr "Inserire l’url di Xing (lasciare vuoto per nascondere il pulsante)."
 
-#: core/admin/customize/customize.php:591
+#: core/admin/customize/customize.php:635
 msgid "Dribbble Url"
 msgstr "Url Dribbble"
 
-#: core/admin/customize/customize.php:592
+#: core/admin/customize/customize.php:636
 msgid "Insert Dribbble Url (leave empty if you want to hide the button)"
 msgstr ""
 "Inserire l’url di Dribbble (lasciare vuoto se si desidera nascondere il "
 "pulsante)"
 
-#: core/admin/customize/customize.php:602
+#: core/admin/customize/customize.php:646
 msgid "Dropbox Url"
 msgstr "Url Dropbox"
 
-#: core/admin/customize/customize.php:603
+#: core/admin/customize/customize.php:647
 msgid "Insert Dropbox Url (leave empty if you want to hide the button)"
 msgstr ""
 "Inserire url di Dropbox (lasciare vuoto se si desidera nascondere il "
 "pulsante)"
 
-#: core/admin/customize/customize.php:613
+#: core/admin/customize/customize.php:657
 msgid "Whatsapp Number"
 msgstr "Numero WhatsApp"
 
-#: core/admin/customize/customize.php:614
+#: core/admin/customize/customize.php:658
 msgid "Insert Whatsapp number (leave empty if you want to hide the button)"
 msgstr ""
 "Inserisci il numero WhatsApp, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:624
+#: core/admin/customize/customize.php:668
 msgid "Skype Url"
 msgstr "Url Skype"
 
-#: core/admin/customize/customize.php:625
+#: core/admin/customize/customize.php:669
 msgid "Insert Skype ID (leave empty if you want to hide the button)"
 msgstr ""
 "Inserisci l’url di Skype, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:635
+#: core/admin/customize/customize.php:679
 msgid "Email Address"
 msgstr "Indirizzo email"
 
-#: core/admin/customize/customize.php:636
+#: core/admin/customize/customize.php:680
 msgid "Insert Email Address (leave empty if you want to hide the button)"
 msgstr ""
 "Inserire indirizzo Email (lasciare vuoto se si desidera nascondere il "
 "pulsante)"
 
-#: core/admin/customize/customize.php:646
+#: core/admin/customize/customize.php:690
 msgid "Feed Rss Button"
 msgstr "Pulsante Feed Rss"
 
-#: core/admin/customize/customize.php:647
+#: core/admin/customize/customize.php:691
 msgid "Do you want to display the Feed Rss button?"
 msgstr "Vuoi visualizzare il pulsante dei Feed Rss?"
 
-#: core/admin/customize/customize.php:664
-#: core/admin/customize/customize.php:665
+#: core/admin/customize/customize.php:708
+#: core/admin/customize/customize.php:709
 msgid "Typography"
 msgstr "Tipografia"
 
-#: core/admin/customize/customize.php:676
+#: core/admin/customize/customize.php:720
 msgid "Logo"
 msgstr "Logo"
 
-#: core/admin/customize/customize.php:686
-#: core/admin/customize/customize.php:720
-#: core/admin/customize/customize.php:743
+#: core/admin/customize/customize.php:730
+#: core/admin/customize/customize.php:764
+#: core/admin/customize/customize.php:787
 msgid "Font size"
 msgstr "Grandezza del font"
 
-#: core/admin/customize/customize.php:687
+#: core/admin/customize/customize.php:731
 msgid "Insert a size, for logo font (For example, 60px) "
 msgstr "Inserisci una grandezza, per il logo (Ad esempio, 60px)"
 
-#: core/admin/customize/customize.php:697
+#: core/admin/customize/customize.php:741
 msgid "Description font size"
 msgstr "Grandezza per la descrizione del logo"
 
-#: core/admin/customize/customize.php:698
+#: core/admin/customize/customize.php:742
 msgid "Insert a size, for logo description (For example, 14px) "
 msgstr "Seleziona una grandezza per la descrizione del logo (Ad esempio, 14px)"
 
-#: core/admin/customize/customize.php:710
+#: core/admin/customize/customize.php:754
 msgid "Menu"
 msgstr "Menu"
 
-#: core/admin/customize/customize.php:721
+#: core/admin/customize/customize.php:765
 msgid "Insert a size, for menu font (For example, 14px) "
 msgstr "Inserisci una grandezza, per il menu (Ad esempio, 14px)"
 
-#: core/admin/customize/customize.php:733
+#: core/admin/customize/customize.php:777
 msgid "Content"
 msgstr "Contenuto"
 
-#: core/admin/customize/customize.php:744
+#: core/admin/customize/customize.php:788
 msgid "Insert a size, for content font (For example, 14px) "
 msgstr "Inserisci una grandezza, per il font del contenuto (ad esempio, 14px)"
 
-#: core/admin/customize/customize.php:757
+#: core/admin/customize/customize.php:801
 msgid "Headlines"
 msgstr "Titoli"
 
-#: core/admin/customize/customize.php:767
+#: core/admin/customize/customize.php:811
 msgid "H1 headline"
 msgstr "Elementi H1"
 
-#: core/admin/customize/customize.php:768
+#: core/admin/customize/customize.php:812
 msgid "Insert a size, for for H1 elements (For example, 24px) "
 msgstr "Inserisci una grandezza, per i titoli H1 (Ad esempio, 24px)"
 
-#: core/admin/customize/customize.php:778
+#: core/admin/customize/customize.php:822
 msgid "H2 headline"
 msgstr "Elementi H2"
 
-#: core/admin/customize/customize.php:779
+#: core/admin/customize/customize.php:823
 msgid "Insert a size, for for H2 elements (For example, 22px) "
 msgstr "Inserisci una grandezza, per i titoli H2 (Ad esempio, 22px)"
 
-#: core/admin/customize/customize.php:789
+#: core/admin/customize/customize.php:833
 msgid "H3 headline"
 msgstr "Elementi H3"
 
-#: core/admin/customize/customize.php:790
+#: core/admin/customize/customize.php:834
 msgid "Insert a size, for for H3 elements (For example, 20px) "
 msgstr "Inserisci una grandezza, per i titoli H3 (Ad esempio, 20px)"
 
-#: core/admin/customize/customize.php:800
+#: core/admin/customize/customize.php:844
 msgid "H4 headline"
 msgstr "\"\"Elementi H4"
 
-#: core/admin/customize/customize.php:801
+#: core/admin/customize/customize.php:845
 msgid "Insert a size, for for H4 elements (For example, 18px) "
 msgstr "Inserisci una grandezza, per i titoli H4 (Ad esempio, 18px)"
 
-#: core/admin/customize/customize.php:811
+#: core/admin/customize/customize.php:855
 msgid "H5 headline"
 msgstr "Elementi H5"
 
-#: core/admin/customize/customize.php:812
+#: core/admin/customize/customize.php:856
 msgid "Insert a size, for for H5 elements (For example, 16px) "
 msgstr "Inserisci una grandezza, per i titoli H5 (Ad esempio, 16px)"
 
-#: core/admin/customize/customize.php:822
+#: core/admin/customize/customize.php:866
 msgid "H6 headline"
 msgstr "Elementi H6"
 
-#: core/admin/customize/customize.php:823
+#: core/admin/customize/customize.php:867
 msgid "Insert a size, for for H6 elements (For example, 14px) "
 msgstr "Inserisci una grandezza, per i titoli H6 (Ad esempio, 14px)"
 
@@ -807,45 +847,20 @@ msgstr ""
 "Fonts, barre laterali illimitate, sezione Portfolio e molto altro."
 
 #: core/includes/class-notice.php:59
-#: core/includes/class-plugin-activation.php:372
 msgid "Dismiss this notice"
 msgstr "Nascondi questo avviso"
 
-#: core/includes/class-plugin-activation.php:301
-msgid "Install Required Plugins"
-msgstr "Installa i plugins necessari."
-
-#: core/includes/class-plugin-activation.php:302
-msgid "Install Plugins"
-msgstr "Installa plugins"
-
-#: core/includes/class-plugin-activation.php:303
-#, php-format
-msgid "Installing Plugin: %s"
-msgstr "Installazione plugin: %s"
-
-#: core/includes/class-plugin-activation.php:304
-msgid "Something went wrong with the plugin API."
-msgstr "Qualcosa è andato storto con le API del plugin."
-
-#: core/includes/class-plugin-activation.php:306
+#: core/includes/class-plugin-activation.php:341
 #, php-format
 msgid "This theme requires the following plugin: %1$s."
 msgstr "Questo tema richiede il seguente plugin: %1$s."
 
-#: core/includes/class-plugin-activation.php:311
+#: core/includes/class-plugin-activation.php:347
 #, php-format
 msgid "This theme recommends the following plugin: %1$s."
 msgstr "Questo tema raccomanda il seguente plugin: %1$s."
 
-#: core/includes/class-plugin-activation.php:316
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to install the %1$s "
-"plugin."
-msgstr "Spiacente, ma non hai i permessi per installare il %1$s plugin."
-
-#: core/includes/class-plugin-activation.php:321
+#: core/includes/class-plugin-activation.php:353
 #, php-format
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
@@ -854,291 +869,66 @@ msgstr ""
 "I seguenti plugin richiedono l’aggiornamento alla versione più recente per "
 "assicurare la massima compatibilità con questo tema: %1$s."
 
-#: core/includes/class-plugin-activation.php:326
+#: core/includes/class-plugin-activation.php:359
 #, php-format
 msgid "There is an update available for: %1$s."
 msgstr "È disponibile un nuovo aggiornamento per:  %1$s."
 
-#: core/includes/class-plugin-activation.php:331
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to update the %1$s plugin."
-msgstr "Spiacente, ma non hai i permessi per aggiornare il %1$s plugin."
-
-#: core/includes/class-plugin-activation.php:336
+#: core/includes/class-plugin-activation.php:365
 #, php-format
 msgid "The following required plugin is currently inactive: %1$s."
 msgstr "Il seguente plugin richiesto è attualmente non attivo: %1$s."
 
-#: core/includes/class-plugin-activation.php:341
+#: core/includes/class-plugin-activation.php:371
 #, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgstr "Il seguente plugin raccomandato è attualmente non attivo: %1$s."
 
-#: core/includes/class-plugin-activation.php:346
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to activate the %1$s "
-"plugin."
-msgstr "Spiacente, ma non hai i permessi per attivare il %1$s plugin."
-
-#: core/includes/class-plugin-activation.php:351
+#: core/includes/class-plugin-activation.php:376
 msgid "Begin installing plugin"
 msgstr "Inizia l’installazione del plugin."
 
-#: core/includes/class-plugin-activation.php:356
+#: core/includes/class-plugin-activation.php:381
 msgid "Begin updating plugin"
 msgstr "Inizia l’aggiornamento del plugin."
 
-#: core/includes/class-plugin-activation.php:361
+#: core/includes/class-plugin-activation.php:386
 msgid "Begin activating plugin"
 msgstr "Inizia l’attivazione del plugin."
 
-#: core/includes/class-plugin-activation.php:365
-msgid "Return to Required Plugins Installer"
-msgstr "Ritorna all’installatore dei plugin richiesti."
-
-#: core/includes/class-plugin-activation.php:366
-msgid "Return to the dashboard"
-msgstr "Ritorna alla dashboard."
-
-#: core/includes/class-plugin-activation.php:367
-#: core/includes/class-plugin-activation.php:2959
-msgid "Plugin activated successfully."
-msgstr "Plugin attivato con successo."
-
-#: core/includes/class-plugin-activation.php:368
-#: core/includes/class-plugin-activation.php:2787
-msgid "The following plugin was activated successfully:"
-msgid_plural "The following plugins were activated successfully:"
-msgstr[0] "Il seguente plugin è stato attivato con successo:"
-msgstr[1] "Il seguente plugin è stato attivato con successo:"
-
-#: core/includes/class-plugin-activation.php:369
-#, php-format
-msgid "No action taken. Plugin %1$s was already active."
-msgstr "Nessuna risposta. Il plugin %1$s era già stato attivato."
-
-#: core/includes/class-plugin-activation.php:370
-#, php-format
-msgid ""
-"Plugin not activated. A higher version of %s is needed for this theme. "
-"Please update the plugin."
-msgstr ""
-"Plugin non attivato. Una versione più recente di %s è richiesta per questo "
-"tema. Si prega di aggiornare il plugin."
-
-#: core/includes/class-plugin-activation.php:371
-#, php-format
-msgid "All plugins installed and activated successfully. %1$s"
-msgstr "Tutti i plugins installati ed attivati con successo. %1$s"
-
-#: core/includes/class-plugin-activation.php:373
-msgid "Please contact the administrator of this site for help."
-msgstr ""
-"Si prega di contattare l’amministratore di questo sito per richiedere "
-"assistenza."
-
-#: core/includes/class-plugin-activation.php:2122
-msgid "Required"
-msgstr "Richiesto"
-
-#: core/includes/class-plugin-activation.php:2125
-msgid "Recommended"
-msgstr "Raccomandato"
-
-#: core/includes/class-plugin-activation.php:2141
-msgid "WordPress Repository"
-msgstr "Repository WordPress"
-
-#: core/includes/class-plugin-activation.php:2144
-msgid "External Source"
-msgstr "Risorse esterne"
-
-#: core/includes/class-plugin-activation.php:2147
-msgid "Pre-Packaged"
-msgstr "Preconfezionato."
-
-#: core/includes/class-plugin-activation.php:2164
-msgid "Not Installed"
-msgstr "Non installato."
-
-#: core/includes/class-plugin-activation.php:2168
-msgid "Installed But Not Activated"
-msgstr "Installato ma non attivato."
-
-#: core/includes/class-plugin-activation.php:2170
-msgid "Active"
-msgstr "Attivo"
-
-#: core/includes/class-plugin-activation.php:2176
-msgid "Required Update not Available"
-msgstr "L’aggiornamento richiesto non è disponibile."
-
-#: core/includes/class-plugin-activation.php:2179
-msgid "Requires Update"
-msgstr "È richiesto l’aggiornamento."
-
-#: core/includes/class-plugin-activation.php:2182
-msgid "Update recommended"
-msgstr "Aggiornamento raccomandato"
-
-#: core/includes/class-plugin-activation.php:2238
+#: core/includes/class-plugin-activation.php:2402
 #, php-format
 msgid "To Install <span class=\"count\">(%s)</span>"
 msgid_plural "To Install <span class=\"count\">(%s)</span>"
 msgstr[0] "Per installare <span class=“count”>(%s)</span>"
 msgstr[1] "Per installare <span class=“count”>(%s)</span>"
 
-#: core/includes/class-plugin-activation.php:2241
+#: core/includes/class-plugin-activation.php:2406
 #, php-format
 msgid "Update Available <span class=\"count\">(%s)</span>"
 msgid_plural "Update Available <span class=\"count\">(%s)</span>"
 msgstr[0] "Aggiornamento disponibile <span class=“count”>(%s)</span>"
 msgstr[1] "Aggiornamento disponibile <span class=“count”>(%s)</span>"
 
-#: core/includes/class-plugin-activation.php:2244
+#: core/includes/class-plugin-activation.php:2410
 #, php-format
 msgid "To Activate <span class=\"count\">(%s)</span>"
 msgid_plural "To Activate <span class=\"count\">(%s)</span>"
 msgstr[0] "Per attivare <span class=“count”>(%s)</span>"
 msgstr[1] "Per attivare <span class=“count”>(%s)</span>"
 
-#: core/includes/class-plugin-activation.php:2334
-msgid "Installed version:"
-msgstr "Versione installata:"
-
-#: core/includes/class-plugin-activation.php:2342
-msgid "Minimum required version:"
-msgstr "Versione minima richiesta:"
-
-#: core/includes/class-plugin-activation.php:2354
-msgid "Available version:"
-msgstr "Versione disponibile"
-
-#: core/includes/class-plugin-activation.php:2377
-#, php-format
-msgid ""
-"No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
-"Dashboard</a>"
-msgstr ""
-"Nessun plugin da installare, aggiornare o attivare. <a href=“%1$s”>Ritorna "
-"alla dashboard</a>"
-
-#: core/includes/class-plugin-activation.php:2391
-msgid "Plugin"
-msgstr "Plugin"
-
-#: core/includes/class-plugin-activation.php:2392
-msgid "Source"
-msgstr "Fonte"
-
-#: core/includes/class-plugin-activation.php:2393
-msgid "Type"
-msgstr "Tipo"
-
-#: core/includes/class-plugin-activation.php:2397
-msgid "Version"
-msgstr "Versione"
-
-#: core/includes/class-plugin-activation.php:2398
-msgid "Status"
-msgstr "Stato"
-
-#: core/includes/class-plugin-activation.php:2558
-msgid "Install"
-msgstr "Installa"
-
-#: core/includes/class-plugin-activation.php:2564
-msgid "Update"
-msgstr "Aggiornamento"
-
-#: core/includes/class-plugin-activation.php:2567
-msgid "Activate"
-msgstr "Attivare"
-
-#: core/includes/class-plugin-activation.php:2598
-msgid "No plugins were selected to be installed. No action taken."
-msgstr "Nessun plugin selezionato per essere installato. Nessuna risposta."
-
-#: core/includes/class-plugin-activation.php:2600
-msgid "No plugins were selected to be updated. No action taken."
-msgstr "Nessun plugin selezionato per essere aggiornato. Nessuna risposta."
-
-#: core/includes/class-plugin-activation.php:2636
-msgid "No plugins are available to be installed at this time."
-msgstr "Nessun plugin è disponibile per essere installato in questo momento."
-
-#: core/includes/class-plugin-activation.php:2638
-msgid "No plugins are available to be updated at this time."
-msgstr "Nessun plugin è disponibile per essere aggiornato in questo momento."
-
-#: core/includes/class-plugin-activation.php:2958
-msgid "Plugin activation failed."
-msgstr "Installazione plugin fallita."
-
-#: core/includes/class-plugin-activation.php:3288
-#, php-format
-msgid "Updating Plugin %1$s (%2$d/%3$d)"
-msgstr "Aggiornamento plugin %1$s (%2$d/%3$d)"
-
-#: core/includes/class-plugin-activation.php:3290
-#, php-format
-msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-msgstr ""
-"Si è verificato un errore durante l’installazione %1$s: <strong>%2$s</"
-"strong>."
-
-#: core/includes/class-plugin-activation.php:3291
-#, php-format
-msgid "The installation of %1$s failed."
-msgstr "L’installazione di %1$s è fallita."
-
-#: core/includes/class-plugin-activation.php:3295
-msgid ""
-"The installation and activation process is starting. This process may take a "
-"while on some hosts, so please be patient."
-msgstr ""
-"Il processo d’installazione ed attivazione è partito. Questo processo può "
-"richiedere del tempo su alcuni hosting, si prega di attendere."
-
-#: core/includes/class-plugin-activation.php:3296
-#, php-format
-msgid "%1$s installed and activated successfully."
-msgstr "%1$s installato ed attivato con successo."
-
-#: core/includes/class-plugin-activation.php:3297
-msgid "All installations and activations have been completed."
-msgstr "Tutte le installazioni e le attivazione sono state completate."
-
-#: core/includes/class-plugin-activation.php:3298
-#, php-format
-msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-msgstr "Installazione ed attivazione plugin %1$s (%2$d/%3$d)"
-
-#: core/includes/class-plugin-activation.php:3301
-msgid ""
-"The installation process is starting. This process may take a while on some "
-"hosts, so please be patient."
-msgstr ""
-"Il processo d’installazione è partito. Questo processo può richiedere del "
-"tempo su alcuni hosting, si prega di attendere."
-
-#: core/includes/class-plugin-activation.php:3303
-msgid "All installations have been completed."
-msgstr "Tutte le installazioni sono state completate."
-
-#: core/includes/class-plugin-activation.php:3304
-#, php-format
-msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr "Installazione plugin %1$s (%2$d/%3$d)"
+#: core/includes/class-plugin-activation.php:2962
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] "Il seguente plugin è stato attivato con successo:"
+msgstr[1] "Il seguente plugin è stato attivato con successo:"
 
 #: core/main.php:56
 #, php-format
 msgid "Page %s"
 msgstr "Page %s"
 
-#: core/main.php:356
+#: core/main.php:395
 msgid "Article"
 msgstr "Articolo"
 
@@ -1516,6 +1306,190 @@ msgstr "Informazioni aggiuntive"
 #: woocommerce/single-product/up-sells.php:47
 msgid "You may also like&hellip;"
 msgstr "Ti potrebbe anche interessare&hellip;"
+
+#~ msgid "Install Required Plugins"
+#~ msgstr "Installa i plugins necessari."
+
+#~ msgid "Install Plugins"
+#~ msgstr "Installa plugins"
+
+#~ msgid "Installing Plugin: %s"
+#~ msgstr "Installazione plugin: %s"
+
+#~ msgid "Something went wrong with the plugin API."
+#~ msgstr "Qualcosa è andato storto con le API del plugin."
+
+#~ msgid ""
+#~ "Sorry, but you do not have the correct permissions to install the %1$s "
+#~ "plugin."
+#~ msgstr "Spiacente, ma non hai i permessi per installare il %1$s plugin."
+
+#~ msgid ""
+#~ "Sorry, but you do not have the correct permissions to update the %1$s "
+#~ "plugin."
+#~ msgstr "Spiacente, ma non hai i permessi per aggiornare il %1$s plugin."
+
+#~ msgid ""
+#~ "Sorry, but you do not have the correct permissions to activate the %1$s "
+#~ "plugin."
+#~ msgstr "Spiacente, ma non hai i permessi per attivare il %1$s plugin."
+
+#~ msgid "Return to Required Plugins Installer"
+#~ msgstr "Ritorna all’installatore dei plugin richiesti."
+
+#~ msgid "Return to the dashboard"
+#~ msgstr "Ritorna alla dashboard."
+
+#~ msgid "Plugin activated successfully."
+#~ msgstr "Plugin attivato con successo."
+
+#~ msgid "No action taken. Plugin %1$s was already active."
+#~ msgstr "Nessuna risposta. Il plugin %1$s era già stato attivato."
+
+#~ msgid ""
+#~ "Plugin not activated. A higher version of %s is needed for this theme. "
+#~ "Please update the plugin."
+#~ msgstr ""
+#~ "Plugin non attivato. Una versione più recente di %s è richiesta per "
+#~ "questo tema. Si prega di aggiornare il plugin."
+
+#~ msgid "All plugins installed and activated successfully. %1$s"
+#~ msgstr "Tutti i plugins installati ed attivati con successo. %1$s"
+
+#~ msgid "Please contact the administrator of this site for help."
+#~ msgstr ""
+#~ "Si prega di contattare l’amministratore di questo sito per richiedere "
+#~ "assistenza."
+
+#~ msgid "Required"
+#~ msgstr "Richiesto"
+
+#~ msgid "Recommended"
+#~ msgstr "Raccomandato"
+
+#~ msgid "WordPress Repository"
+#~ msgstr "Repository WordPress"
+
+#~ msgid "External Source"
+#~ msgstr "Risorse esterne"
+
+#~ msgid "Pre-Packaged"
+#~ msgstr "Preconfezionato."
+
+#~ msgid "Not Installed"
+#~ msgstr "Non installato."
+
+#~ msgid "Installed But Not Activated"
+#~ msgstr "Installato ma non attivato."
+
+#~ msgid "Active"
+#~ msgstr "Attivo"
+
+#~ msgid "Required Update not Available"
+#~ msgstr "L’aggiornamento richiesto non è disponibile."
+
+#~ msgid "Requires Update"
+#~ msgstr "È richiesto l’aggiornamento."
+
+#~ msgid "Update recommended"
+#~ msgstr "Aggiornamento raccomandato"
+
+#~ msgid "Installed version:"
+#~ msgstr "Versione installata:"
+
+#~ msgid "Minimum required version:"
+#~ msgstr "Versione minima richiesta:"
+
+#~ msgid "Available version:"
+#~ msgstr "Versione disponibile"
+
+#~ msgid ""
+#~ "No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
+#~ "Dashboard</a>"
+#~ msgstr ""
+#~ "Nessun plugin da installare, aggiornare o attivare. <a "
+#~ "href=“%1$s”>Ritorna alla dashboard</a>"
+
+#~ msgid "Plugin"
+#~ msgstr "Plugin"
+
+#~ msgid "Source"
+#~ msgstr "Fonte"
+
+#~ msgid "Type"
+#~ msgstr "Tipo"
+
+#~ msgid "Version"
+#~ msgstr "Versione"
+
+#~ msgid "Status"
+#~ msgstr "Stato"
+
+#~ msgid "Install"
+#~ msgstr "Installa"
+
+#~ msgid "Update"
+#~ msgstr "Aggiornamento"
+
+#~ msgid "Activate"
+#~ msgstr "Attivare"
+
+#~ msgid "No plugins were selected to be installed. No action taken."
+#~ msgstr "Nessun plugin selezionato per essere installato. Nessuna risposta."
+
+#~ msgid "No plugins were selected to be updated. No action taken."
+#~ msgstr "Nessun plugin selezionato per essere aggiornato. Nessuna risposta."
+
+#~ msgid "No plugins are available to be installed at this time."
+#~ msgstr ""
+#~ "Nessun plugin è disponibile per essere installato in questo momento."
+
+#~ msgid "No plugins are available to be updated at this time."
+#~ msgstr ""
+#~ "Nessun plugin è disponibile per essere aggiornato in questo momento."
+
+#~ msgid "Plugin activation failed."
+#~ msgstr "Installazione plugin fallita."
+
+#~ msgid "Updating Plugin %1$s (%2$d/%3$d)"
+#~ msgstr "Aggiornamento plugin %1$s (%2$d/%3$d)"
+
+#~ msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+#~ msgstr ""
+#~ "Si è verificato un errore durante l’installazione %1$s: <strong>%2$s</"
+#~ "strong>."
+
+#~ msgid "The installation of %1$s failed."
+#~ msgstr "L’installazione di %1$s è fallita."
+
+#~ msgid ""
+#~ "The installation and activation process is starting. This process may "
+#~ "take a while on some hosts, so please be patient."
+#~ msgstr ""
+#~ "Il processo d’installazione ed attivazione è partito. Questo processo può "
+#~ "richiedere del tempo su alcuni hosting, si prega di attendere."
+
+#~ msgid "%1$s installed and activated successfully."
+#~ msgstr "%1$s installato ed attivato con successo."
+
+#~ msgid "All installations and activations have been completed."
+#~ msgstr "Tutte le installazioni e le attivazione sono state completate."
+
+#~ msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+#~ msgstr "Installazione ed attivazione plugin %1$s (%2$d/%3$d)"
+
+#~ msgid ""
+#~ "The installation process is starting. This process may take a while on "
+#~ "some hosts, so please be patient."
+#~ msgstr ""
+#~ "Il processo d’installazione è partito. Questo processo può richiedere del "
+#~ "tempo su alcuni hosting, si prega di attendere."
+
+#~ msgid "All installations have been completed."
+#~ msgstr "Tutte le installazioni sono state completate."
+
+#~ msgid "Installing Plugin %1$s (%2$d/%3$d)"
+#~ msgstr "Installazione plugin %1$s (%2$d/%3$d)"
 
 #~ msgid ""
 #~ "Sorry, it seems that there are no payment methods which support adding a "

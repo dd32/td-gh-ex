@@ -1,5 +1,10 @@
 SuevaFree Changelog
 
+- Version 2.2.7 - Released: 06.12.2016
+
+-- Added : Soundcloud, Spotify, Slack and VK social icons.
+-- Updated : Font Awesome icon pack.
+
 - Version 2.2.6 - Released: 26.11.2016
 
 -- Edit : Code optimized.

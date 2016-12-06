@@ -489,6 +489,17 @@ if (!function_exists('suevafree_customize_panel_function')) {
 
 			array( 
 
+				"label" => __( "Slack Url","suevafree"),
+				"description" => __( "Insert Slack Url (leave empty if you want to hide the button)","suevafree"),
+				"id" => "suevafree_footer_slack_button",
+				"type" => "url",
+				"section" => "footer_section",
+				"std" => "",
+
+			),
+
+			array( 
+
 				"label" => __( "Myspace Url","suevafree"),
 				"description" => __( "Insert Myspace Url (leave empty if you want to hide the button)","suevafree"),
 				"id" => "suevafree_footer_myspace_button",
@@ -522,6 +533,28 @@ if (!function_exists('suevafree_customize_panel_function')) {
 
 			array( 
 
+				"label" => __( "Soundcloud Url","suevafree"),
+				"description" => __( "Insert Soundcloud Url (leave empty if you want to hide the button)","suevafree"),
+				"id" => "suevafree_footer_soundcloud_button",
+				"type" => "url",
+				"section" => "footer_section",
+				"std" => "",
+
+			),
+
+			array( 
+
+				"label" => __( "Spotify Url","suevafree"),
+				"description" => __( "Insert Spotify Url (leave empty if you want to hide the button)","suevafree"),
+				"id" => "suevafree_footer_spotify_button",
+				"type" => "url",
+				"section" => "footer_section",
+				"std" => "",
+
+			),
+
+			array( 
+
 				"label" => __( "Youtube Url","suevafree"),
 				"description" => __( "Insert Youtube Url (leave empty if you want to hide the button)","suevafree"),
 				"id" => "suevafree_footer_youtube_button",
@@ -536,6 +569,17 @@ if (!function_exists('suevafree_customize_panel_function')) {
 				"label" => __( "Vimeo Url","suevafree"),
 				"description" => __( "Insert Vimeo Url (leave empty if you want to hide the button)","suevafree"),
 				"id" => "suevafree_footer_vimeo_button",
+				"type" => "url",
+				"section" => "footer_section",
+				"std" => "",
+
+			),
+
+			array( 
+
+				"label" => __( "VK Url","suevafree"),
+				"description" => __( "Insert VK Url (leave empty if you want to hide the button)","suevafree"),
+				"id" => "suevafree_footer_vk_button",
 				"type" => "url",
 				"section" => "footer_section",
 				"std" => "",
