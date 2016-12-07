@@ -38,7 +38,7 @@ function fullframe_customize_register( $wp_customize ) {
 	$defaults = fullframe_get_default_theme_options();
 
 	//Custom Controls
-	require get_template_directory() . '/inc/customizer-includes/fullframe-customizer-custom-controls.php';
+	require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/fullframe-customizer-custom-controls.php';
 
 	//@remove Remove this block when WordPress 4.8 is released
 	if ( ! function_exists( 'has_custom_logo' ) ) {
@@ -127,19 +127,19 @@ function fullframe_customize_register( $wp_customize ) {
 	//End Color Scheme
 
 	// Header Options (added to Header section in Theme Customizer)
-	require get_template_directory() . '/inc/customizer-includes/fullframe-customizer-header-options.php';
+	require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/fullframe-customizer-header-options.php';
 
 	//Theme Options
-	require get_template_directory() . '/inc/customizer-includes/fullframe-customizer-theme-options.php';
+	require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/fullframe-customizer-theme-options.php';
 
 	//Featured Content Setting
-	require get_template_directory() . '/inc/customizer-includes/fullframe-customizer-featured-content-setting.php';
+	require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/fullframe-customizer-featured-content-setting.php';
 
 	//Featured Slider
-	require get_template_directory() . '/inc/customizer-includes/fullframe-customizer-featured-slider.php';
+	require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/fullframe-customizer-featured-slider.php';
 
 	//Social Links
-	require get_template_directory() . '/inc/customizer-includes/fullframe-customizer-social-icons.php';
+	require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/fullframe-customizer-social-icons.php';
 
 	// Reset all settings to default
 	$wp_customize->add_section( 'fullframe_reset_all_settings', array(
@@ -211,15 +211,11 @@ function fullframe_customize_scripts() {
 	wp_enqueue_script( 'fullframe_customizer_custom', get_template_directory_uri() . '/js/fullframe-customizer-custom-scripts.min.js', array( 'jquery' ), '20131028', true );
 
 	$fullframe_data = array(
-							'upgrade_link' 				=> esc_url( 'https://catchthemes.com/themes/full-frame/' ),
-							'upgrade_text'	 			=> esc_html__( 'Upgrade To Pro &raquo;', 'full-frame' ),
-							'reset_message'        => esc_html__( 'Refresh the customizer page after saving to view reset effects', 'full-frame' )
-		);
+		'reset_message'        => esc_html__( 'Refresh the customizer page after saving to view reset effects', 'full-frame' )
+	);
 
 	//Add Upgrade Button and old WordPress message via localized script
 	wp_localize_script( 'fullframe_customizer_custom', 'fullframe_data', $fullframe_data );
-
-	wp_enqueue_style( 'fullframe_customizer_custom', get_template_directory_uri() . '/css/fullframe-customizer.css');
 }
 add_action( 'customize_controls_enqueue_scripts', 'fullframe_customize_scripts');
 
@@ -241,7 +237,10 @@ add_action( 'customize_save_after', 'fullframe_reset_data' );
 
 
 //Active callbacks for customizer
-require get_template_directory() . '/inc/customizer-includes/fullframe-customizer-active-callbacks.php';
+require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/fullframe-customizer-active-callbacks.php';
 
 //Sanitize functions for customizer
-require get_template_directory() . '/inc/customizer-includes/fullframe-customizer-sanitize-functions.php';
+require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/fullframe-customizer-sanitize-functions.php';
+
+// Add Upgrade to Pro Button.
+require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/upgrade-button/class-customize.php';

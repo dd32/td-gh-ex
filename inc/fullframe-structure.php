@@ -4,7 +4,7 @@
  *
  * @package Catch Themes
  * @subpackage Full Frame
- * @since Full Frame 1.0 
+ * @since Full Frame 1.0
  */
 
 if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
@@ -43,9 +43,6 @@ if ( ! function_exists( 'fullframe_head' ) ) :
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<link rel="profile" href="http://gmpg.org/xfn/11">
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-		<!--[if lt IE 9]>
-			<script src="<?php echo get_template_directory_uri(); ?>/js/html5.min.js"></script>
-		<![endif]-->
 		<?php
 	}
 endif;
@@ -246,7 +243,7 @@ function fullframe_header_right() { ?>
 			</div>
 		</section>
 	</aside><!-- .sidebar .header-sidebar .widget-area -->
-<?php	
+<?php
 }
 endif;
 add_action( 'fullframe_header', 'fullframe_header_right', 60 );

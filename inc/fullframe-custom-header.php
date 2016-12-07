@@ -284,7 +284,7 @@ if ( ! function_exists( 'fullframe_featured_image' ) ) :
 
 			echo '<!-- refreshing cache -->';
 
-			if ( $header_image != '' ) {
+			if ( '' != $header_image  ) {
 
 				// Header Image Link and Target
 				if ( !empty( $options[ 'featured_header_image_url' ] ) ) {
@@ -455,23 +455,23 @@ if ( ! function_exists( 'fullframe_featured_overall_image' ) ) :
 			//Individual Page/Post Image Setting
 			$individual_featured_image = get_post_meta( $post->ID, 'fullframe-header-image', true );
 
-			if ( $individual_featured_image == 'disable' || ( $individual_featured_image == 'default' && $enableheaderimage == 'disable' ) ) {
+			if ( 'disable' == $individual_featured_image  || ( 'default' == $individual_featured_image  && 'disable' == $enableheaderimage  ) ) {
 				echo '<!-- Page/Post Disable Header Image -->';
 				return;
 			}
-			elseif ( $individual_featured_image == 'enable' && $enableheaderimage == 'disabled' ) {
+			elseif ( 'enable' == $individual_featured_image  && 'disabled' == $enableheaderimage  ) {
 				fullframe_featured_page_post_image();
 			}
 		}
 
 		// Check Homepage
-		if ( $enableheaderimage == 'homepage' ) {
+		if ( 'homepage' == $enableheaderimage  ) {
 			if ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) {
 				fullframe_featured_image();
 			}
 		}
 		// Check Excluding Homepage
-		if ( $enableheaderimage == 'exclude-home' ) {
+		if ( 'exclude-home' == $enableheaderimage  ) {
 			if ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) {
 				return false;
 			}
@@ -479,7 +479,7 @@ if ( ! function_exists( 'fullframe_featured_overall_image' ) ) :
 				fullframe_featured_image();
 			}
 		}
-		elseif ( $enableheaderimage == 'exclude-home-page-post' ) {
+		elseif ( 'exclude-home-page-post' == $enableheaderimage  ) {
 			if ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) {
 				return false;
 			}
@@ -491,11 +491,11 @@ if ( ! function_exists( 'fullframe_featured_overall_image' ) ) :
 			}
 		}
 		// Check Entire Site
-		elseif ( $enableheaderimage == 'entire-site' ) {
+		elseif ( 'entire-site' == $enableheaderimage  ) {
 			fullframe_featured_image();
 		}
 		// Check Entire Site (Post/Page)
-		elseif ( $enableheaderimage == 'entire-site-page-post' ) {
+		elseif ( 'entire-site-page-post' == $enableheaderimage  ) {
 			if ( is_page() || is_single() ) {
 				fullframe_featured_page_post_image();
 			}
@@ -504,7 +504,7 @@ if ( ! function_exists( 'fullframe_featured_overall_image' ) ) :
 			}
 		}
 		// Check Page/Post
-		elseif ( $enableheaderimage == 'pages-posts' ) {
+		elseif ( 'pages-posts' == $enableheaderimage  ) {
 			if ( is_page() || is_single() ) {
 				fullframe_featured_page_post_image();
 			}

@@ -34,7 +34,7 @@ function fullframe_sanitize_checkbox( $checked ) {
  * @since Full Frame 1.9
  */
 function fullframe_sanitize_custom_css( $input ) {
-	if ( $input != '' ) {
+	if ( '' != $input  ) {
         $input = str_replace( '<=', '&lt;=', $input );
 
         $input = wp_kses_split( $input, array(), array() );
@@ -110,7 +110,7 @@ function fullframe_sanitize_page( $input ) {
  * @since Full Frame 1.9
  */
 function fullframe_sanitize_category_list( $input ) {
-	if ( $input != '' ) {
+	if ( '' != $input  ) {
 		$args = array(
 						'type'			=> 'post',
 						'child_of'      => 0,

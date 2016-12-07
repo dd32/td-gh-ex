@@ -38,7 +38,7 @@ function fullframe_featured_slider() {
 	$page_on_front = get_option('page_on_front') ;
 	$page_for_posts = get_option('page_for_posts');
 
-	if ( $enableslider == 'entire-site' || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && $enableslider == 'homepage' ) ) {
+	if ( 'entire-site' == $enableslider  || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && 'homepage' == $enableslider  ) ) {
 		if( ( !$fullframe_featured_slider = get_transient( 'fullframe_featured_slider' ) ) ) {
 			echo '<!-- refreshing cache -->';
 
@@ -65,10 +65,10 @@ function fullframe_featured_slider() {
 	    					<div class="cycle-pager"></div>';
 
 							// Select Slider
-							if ( $sliderselect == 'demo-featured-slider' && function_exists( 'fullframe_demo_slider' ) ) {
+							if ( 'demo-featured-slider' == $sliderselect  && function_exists( 'fullframe_demo_slider' ) ) {
 								$fullframe_featured_slider .=  fullframe_demo_slider( $options );
 							}
-							elseif ( $sliderselect == 'featured-page-slider' && function_exists( 'fullframe_page_slider' ) ) {
+							elseif ( 'featured-page-slider' == $sliderselect  && function_exists( 'fullframe_page_slider' ) ) {
 								$fullframe_featured_slider .=  fullframe_page_slider( $options );
 							}
 

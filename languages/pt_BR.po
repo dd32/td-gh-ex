@@ -3,10 +3,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Full Frame\n"
-"Report-Msgid-Bugs-To: https://catchthemes.com/support-forum/forum/catch-"
-"responsive-free/\n"
-"POT-Creation-Date: 2016-10-05 13:02+0545\n"
-"PO-Revision-Date: 2016-10-05 13:02+0545\n"
+"Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
+"POT-Creation-Date: 2016-12-07 16:49-0500\n"
+"PO-Revision-Date: 2016-12-07 16:49-0500\n"
 "Last-Translator: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language-Team: Valdir Trombini <valdirtrombini@hotmail.com>\n"
 "Language: pt_BR\n"
@@ -33,76 +32,6 @@ msgstr ""
 "Parece que nada foi encontrado que se relacione com sua pesquisa. Como sugestão, "
 "tente um dos links abaixo ou faça uma nova pesquisa, com novo termo, semelhante, "
 "seja a solução?"
-
-#: ../archive.php:30
-#, php-format
-msgid "Author: %s"
-msgstr "Autor: %s"
-
-#: ../archive.php:33
-#, php-format
-msgid "Day: %s"
-msgstr "Dia: %s"
-
-#: ../archive.php:36
-#, php-format
-msgid "Month: %s"
-msgstr "Mês: %s"
-
-#: ../archive.php:36
-msgctxt "monthly archives date format"
-msgid "F Y"
-msgstr "F Y"
-
-#: ../archive.php:39
-#, php-format
-msgid "Year: %s"
-msgstr "Ano: %s"
-
-#: ../archive.php:39
-msgctxt "yearly archives date format"
-msgid "Y"
-msgstr "Y"
-
-#: ../archive.php:42
-msgid "Asides"
-msgstr "Lados"
-
-#: ../archive.php:45
-msgid "Galleries"
-msgstr "Galerias"
-
-#: ../archive.php:48
-msgid "Images"
-msgstr "Imagens"
-
-#: ../archive.php:51
-msgid "Videos"
-msgstr "Vídeos"
-
-#: ../archive.php:54
-msgid "Quotes"
-msgstr "Citações"
-
-#: ../archive.php:57
-msgid "Links"
-msgstr "Links"
-
-#: ../archive.php:60
-msgid "Statuses"
-msgstr "Status"
-
-#: ../archive.php:63
-msgid "Audios"
-msgstr "Audios"
-
-#: ../archive.php:66
-msgid "Chats"
-msgstr "Salas de bate-papo (Chats)"
-
-#: ../archive.php:69 ../sidebar.php:53
-msgid "Archives"
-msgstr "Arquivos"
 
 #: ../comments.php:27
 #, php-format
@@ -161,8 +90,8 @@ msgstr ""
 msgid "Pages:"
 msgstr "Páginas: "
 
-#: ../content-page.php:35 ../inc/fullframe-core.php:632
-#: ../inc/fullframe-core.php:651 ../inc/fullframe-core.php:777
+#: ../content-page.php:35 ../inc/fullframe-core.php:636
+#: ../inc/fullframe-core.php:655 ../inc/fullframe-core.php:781
 msgid "Edit"
 msgstr "Editar"
 
@@ -362,7 +291,7 @@ msgid "Featured Header Image Link URL"
 msgstr "Atribuindo um link de destino para a imagem do cabeçalho (URL)"
 
 #: ../inc/customizer-includes/fullframe-customizer-header-options.php:91
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:433
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:439
 msgid "Check to Open Link in New Window/Tab"
 msgstr "Marque aqui para abrir o link em uma nova janela/aba"
 
@@ -428,37 +357,37 @@ msgstr ""
 msgid "Separator between Breadcrumbs"
 msgstr "Separador indicativo que é usado no caminho de navegação"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:80
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:85
 msgid "Custom/Inline CSS"
 msgstr "Personalizar o CSS em linha"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:83
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:88
 msgid "Custom CSS Options"
 msgstr "Opções de personalização do CSS"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:93
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:98
 msgid "Enter Custom CSS"
 msgstr "Coloque aqui a sua folha de estilo CSS personalizado!"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:105
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:111
 msgid "Excerpt Options"
 msgstr "Opções do resumo do post (Excerpt)"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:115
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:121
 msgid "Excerpt length. Default is 40 words"
 msgstr "Extensão do resumo (tag Mais).<br />O padrão é 40 palavras."
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:122
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:128
 msgid "Excerpt Length (words)"
 msgstr ""
 "Quantidade de palavras que serão usadas para apresentar o resumo da postagem, em "
 "páginas que usarem esse recurso. (exemplo: home, categorias, etc...)"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:136
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:142
 msgid "Read More Text"
 msgstr "Texto &hellip; Continue lendo&hellip; &rarr;"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:145
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:151
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on the "
 "front page"
@@ -466,27 +395,27 @@ msgstr ""
 "Somente as postagens que pertencem às categorias selecionadas aqui, serão "
 "exibidos na primeira página."
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:148
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:154
 msgid "Homepage / Frontpage Options"
 msgstr "Opções da Homepage/Frontpage"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:158
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:164
 msgid "Select Categories"
 msgstr "Selecionar as categorias do Slider Show"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:169
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:175
 msgid "Remove Icon images to disable."
 msgstr "Remova a imagem do ícone para desativar."
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:172
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:178
 msgid "Icon Options"
 msgstr "Opções para os ícones"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:183
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:189
 msgid "Select/Add Favicon"
 msgstr "Adicionar/Mudar - Favicon"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:194
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:200
 msgid ""
 "Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px "
 "height, which will support High Resolution Devices like iPad Retina."
@@ -495,37 +424,37 @@ msgstr ""
 "144px e altura 144px, que irá suportar dispositivos de alta resolução, como iPad "
 "de Retina."
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:195
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:201
 msgid "Select/Add Web Clip Icon"
 msgstr "Adicionar/Mudar Web Clip Icone"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:207
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:213
 msgid "Logo Icon is displayed in Primary Menu"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:208
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:214
 msgid "Select/Add Logo Icon"
 msgstr "Adicionar/Mudar -  Logo Icon"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:219
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:225
 #: ../inc/fullframe-metabox.php:92
 msgid "Layout Options"
 msgstr "Opções da disposição e apresentação do Website (Layout)"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:236
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:242
 msgid "Default Layout"
 msgstr "Escolha o layout padrão global"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:256
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:262
 msgid "Archive Content Layout"
 msgstr "Layout de conteúdo do arquivo da postagem"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:276
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:282
 #: ../inc/fullframe-metabox.php:94
 msgid "Single Page/Post Image Layout "
 msgstr "Layout da imagem única em página/postagem"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:287
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:293
 #, php-format
 msgid ""
 "Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</a>."
@@ -536,7 +465,7 @@ msgstr ""
 "<br/>Opção de rolagem infinita requer <a target=\"_blank\" href=\"%s\">Plugin "
 "JetPack</a> com módulo de rolagem infinita habilitado."
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:294
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:300
 #, php-format
 msgid ""
 "Infinite Scroll Options requires <a target=\"_blank\" href=\"%s\">JetPack "
@@ -545,78 +474,78 @@ msgstr ""
 "Opção de rolagem infinita requer <a target=\"_blank\" href=\"%s\">Plugin "
 "JetPack</a> com o módulo de rolagem infinita habilitado."
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:305
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:311
 #, php-format
 msgid ""
 "Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</a>."
 msgstr ""
 "Opção numérica requer <a target=\"_blank\" href=\"%s\">Plugin WP-PageNavi</a>."
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:316
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:322
 msgid "Pagination Options"
 msgstr "Opções de paginação"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:333
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:339
 msgid "Pagination type"
 msgstr "Tipo de paginação"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:342
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:348
 msgid "To disable the fields, simply leave them empty."
 msgstr "Para desativar os campos, basta deixá-los vazio."
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:345
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:351
 msgid "Promotion Headline Options"
 msgstr "Opções da frase de apresentação da manchete"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:362
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:368
 msgid "Enable Promotion Headline on"
 msgstr "Habilitar a promoção da manchete"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:376
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:382
 msgid "Appropriate Words: 10"
 msgstr "Quantidade de palavras apropriada é: 10"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:377
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:383
 msgid "Promotion Headline Text"
 msgstr "Texto da promoção da manchete"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:390
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:396
 msgid "Appropriate Words: 15"
 msgstr "Quantidade de palavras apropriada é: 15"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:391
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:397
 msgid "Promotion Subheadline Text"
 msgstr "O texto do subtítulo da promoção da manchete"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:404
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:410
 msgid "Appropriate Words: 3"
 msgstr "Quantidade de palavras apropriada é: 3"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:405
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:411
 msgid "Promotion Headline Button Text "
 msgstr "Texto no botão da promoção da manchete"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:419
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:425
 msgid "Promotion Headline Link"
 msgstr "Link vinculado a promoção da manchete"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:445
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:451
 msgid "Scrollup Options"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:455
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:461
 msgid "Check to disable Scroll Up"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:464
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:470
 msgid "Change default placeholder text in Search."
 msgstr "Alterar o texto do espaço reservado padrão no campo Pesquisar."
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:467
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:473
 msgid "Search Options"
 msgstr "Opções do campo Pesquisar&hellip;"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:477
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:483
 msgid "Default Display Text in Search"
 msgstr ""
 "Exibição do texto padrão no campo Pesquisar, que faz a busca interna no Website/"
@@ -672,12 +601,16 @@ msgstr ""
 msgid "Important Links"
 msgstr "Links que são muito importantes"
 
-#: ../inc/customizer-includes/fullframe-customizer.php:215
-msgid "Upgrade To Pro &raquo;"
-msgstr "Upgrade -Tema Catch Responsive Pro &raquo;"
-
-#: ../inc/customizer-includes/fullframe-customizer.php:216
+#: ../inc/customizer-includes/fullframe-customizer.php:214
 msgid "Refresh the customizer page after saving to view reset effects"
+msgstr ""
+
+#: ../inc/customizer-includes/upgrade-button/class-customize.php:76
+msgid "Full Frame Pro"
+msgstr "Full Frame Pro"
+
+#: ../inc/customizer-includes/upgrade-button/class-customize.php:77
+msgid "Upgrade Now"
 msgstr ""
 
 #: ../inc/fullframe-breadcrumb.php:57
@@ -717,97 +650,97 @@ msgstr "Página %s"
 msgid "Primary Menu"
 msgstr "Menu principal"
 
-#: ../inc/fullframe-core.php:598
+#: ../inc/fullframe-core.php:602
 msgid "Post navigation"
 msgstr "Navegação das postagens"
 
-#: ../inc/fullframe-core.php:632
+#: ../inc/fullframe-core.php:636
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: ../inc/fullframe-core.php:642
+#: ../inc/fullframe-core.php:646
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"says\">disse: </span>"
 
-#: ../inc/fullframe-core.php:648
+#: ../inc/fullframe-core.php:652
 #, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr "Direitos Autorais &copy; %1$s - %2$s. Todos os direitos reservados &reg;."
 
-#: ../inc/fullframe-core.php:655
+#: ../inc/fullframe-core.php:659
 msgid "Your comment is awaiting moderation."
 msgstr ""
 "<strong>Seu Comentário está aguardando a nossa moderação. Obrigado por Comentar!"
 "</strong>"
 
-#: ../inc/fullframe-core.php:758
+#: ../inc/fullframe-core.php:762
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
 msgstr "<span class=\"screen-reader-text\">Publicado em</span>"
 
-#: ../inc/fullframe-core.php:765
+#: ../inc/fullframe-core.php:769
 msgctxt "Used before post author name."
 msgid "<span class=\"screen-reader-text\">Author</span>"
 msgstr "<span class=\"screen-reader-text\">Autor: </span>"
 
-#: ../inc/fullframe-core.php:773
+#: ../inc/fullframe-core.php:777
 msgid "Leave a comment"
 msgstr "Deixe um Comentário!"
 
-#: ../inc/fullframe-core.php:773
+#: ../inc/fullframe-core.php:777
 msgid "1 Comment"
 msgstr "1 Comentário &darr;"
 
-#: ../inc/fullframe-core.php:773
+#: ../inc/fullframe-core.php:777
 msgid "% Comments"
 msgstr "% Comentários &darr;"
 
-#: ../inc/fullframe-core.php:794 ../inc/fullframe-core.php:802
+#: ../inc/fullframe-core.php:798 ../inc/fullframe-core.php:806
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ", "
 
-#: ../inc/fullframe-core.php:797
+#: ../inc/fullframe-core.php:801
 msgctxt "Used before category names."
 msgid "<span class=\"screen-reader-text\">Categories</span>"
 msgstr "<span class=\"screen-reader-text\">Categorias: </span>"
 
-#: ../inc/fullframe-core.php:805
+#: ../inc/fullframe-core.php:809
 msgctxt "Used before tag names."
 msgid "<span class=\"screen-reader-text\">Tags</span>"
 msgstr "<span class=\"screen-reader-text\">Tags: </span>"
 
-#: ../inc/fullframe-core.php:948
+#: ../inc/fullframe-core.php:952
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: ../inc/fullframe-core.php:1411
+#: ../inc/fullframe-core.php:1415
 msgid "Scroll Up"
 msgstr "Efeito rolar a página para cima"
 
-#: ../inc/fullframe-core.php:1429
+#: ../inc/fullframe-core.php:1433
 msgid "Posted on"
 msgstr "Postada na"
 
-#: ../inc/fullframe-core.php:1430
+#: ../inc/fullframe-core.php:1434
 msgid "By"
 msgstr "Por: "
 
-#: ../inc/fullframe-core.php:1471
+#: ../inc/fullframe-core.php:1475
 msgid "Next &rarr;"
 msgstr "Próximo &rarr;"
 
-#: ../inc/fullframe-core.php:1472
+#: ../inc/fullframe-core.php:1476
 msgid "Next post:"
 msgstr "Próxima postagem:"
 
-#: ../inc/fullframe-core.php:1474
+#: ../inc/fullframe-core.php:1478
 msgid "&larr; Previous"
 msgstr "&larr;  Anterior"
 
-#: ../inc/fullframe-core.php:1475
+#: ../inc/fullframe-core.php:1479
 msgid "Previous post:"
 msgstr "Postagem anterior:"
 
@@ -1289,6 +1222,64 @@ msgstr ""
 "Por padrão ele irá carregar os widgets Pesquisar e Arquivos, conforme mostrado "
 "abaixo. Você pode adicionar widget para esta área, visitando o seu <a href=\"%s"
 "\">Painel Widgets</a> que irá substituir os widgets padrão."
+
+#: ../sidebar.php:53
+msgid "Archives"
+msgstr "Arquivos"
+
+#, fuzzy
+#~ msgid "Full Frame"
+#~ msgstr "Imagem completa"
+
+#~ msgid "Upgrade To Pro &raquo;"
+#~ msgstr "Upgrade -Tema Catch Responsive Pro &raquo;"
+
+#~ msgid "Author: %s"
+#~ msgstr "Autor: %s"
+
+#~ msgid "Day: %s"
+#~ msgstr "Dia: %s"
+
+#~ msgid "Month: %s"
+#~ msgstr "Mês: %s"
+
+#~ msgid "Year: %s"
+#~ msgstr "Ano: %s"
+
+#~ msgid "Asides"
+#~ msgstr "Lados"
+
+#~ msgid "Galleries"
+#~ msgstr "Galerias"
+
+#~ msgid "Images"
+#~ msgstr "Imagens"
+
+#~ msgid "Videos"
+#~ msgstr "Vídeos"
+
+#~ msgid "Quotes"
+#~ msgstr "Citações"
+
+#~ msgid "Links"
+#~ msgstr "Links"
+
+#~ msgid "Statuses"
+#~ msgstr "Status"
+
+#~ msgid "Audios"
+#~ msgstr "Audios"
+
+#~ msgid "Chats"
+#~ msgstr "Salas de bate-papo (Chats)"
+
+#~ msgctxt "monthly archives date format"
+#~ msgid "F Y"
+#~ msgstr "F Y"
+
+#~ msgctxt "yearly archives date format"
+#~ msgid "Y"
+#~ msgstr "Y"
 
 #~ msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 #~ msgstr "<span class=\"meta-nav\">&larr;</span> Postagens mais antigas"

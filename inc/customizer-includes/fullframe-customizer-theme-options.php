@@ -75,28 +75,34 @@ if ( ! defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	);
    	// Breadcrumb Option End
 
-   	// Custom CSS Option
-	$wp_customize->add_section( 'fullframe_custom_css', array(
-		'description'	=> esc_html__( 'Custom/Inline CSS', 'full-frame'),
-		'panel'  		=> 'fullframe_theme_options',
-		'priority' 		=> 203,
-		'title'    		=> esc_html__( 'Custom CSS Options', 'full-frame' ),
-	) );
+	/**
+	 *  Remove Custom CSS option from WordPress 4.7 onwards
+	 *  //@remove Remove if block and custom_css when WordPress 5.0 is released
+	 */
+	if ( !function_exists( 'wp_update_custom_css_post' ) ) {
+	   	// Custom CSS Option
+		$wp_customize->add_section( 'fullframe_custom_css', array(
+			'description'	=> esc_html__( 'Custom/Inline CSS', 'full-frame'),
+			'panel'  		=> 'fullframe_theme_options',
+			'priority' 		=> 203,
+			'title'    		=> esc_html__( 'Custom CSS Options', 'full-frame' ),
+		) );
 
-	$wp_customize->add_setting( 'fullframe_theme_options[custom_css]', array(
-		'capability'		=> 'edit_theme_options',
-		'default'			=> $defaults['custom_css'],
-		'sanitize_callback' => 'fullframe_sanitize_custom_css',
-	) );
+		$wp_customize->add_setting( 'fullframe_theme_options[custom_css]', array(
+			'capability'		=> 'edit_theme_options',
+			'default'			=> $defaults['custom_css'],
+			'sanitize_callback' => 'fullframe_sanitize_custom_css',
+		) );
 
-	$wp_customize->add_control( 'fullframe_theme_options[custom_css]', array(
-			'label'		=> esc_html__( 'Enter Custom CSS', 'full-frame' ),
-	        'priority'	=> 1,
-			'section'   => 'fullframe_custom_css',
-	        'settings'  => 'fullframe_theme_options[custom_css]',
-			'type'		=> 'textarea',
-	) );
-   	// Custom CSS End
+		$wp_customize->add_control( 'fullframe_theme_options[custom_css]', array(
+				'label'		=> esc_html__( 'Enter Custom CSS', 'full-frame' ),
+		        'priority'	=> 1,
+				'section'   => 'fullframe_custom_css',
+		        'settings'  => 'fullframe_theme_options[custom_css]',
+				'type'		=> 'textarea',
+		) );
+	   	// Custom CSS End
+	}
 
    	// Excerpt Options
 	$wp_customize->add_section( 'fullframe_excerpt_options', array(

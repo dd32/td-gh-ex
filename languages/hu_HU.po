@@ -3,10 +3,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Full Frame\n"
-"Report-Msgid-Bugs-To: https://catchthemes.com/support-forum/forum/catch-base-"
-"free/\n"
-"POT-Creation-Date: 2016-10-05 13:02+0545\n"
-"PO-Revision-Date: 2016-10-05 13:02+0545\n"
+"Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
+"POT-Creation-Date: 2016-12-07 16:49-0500\n"
+"PO-Revision-Date: 2016-12-07 16:49-0500\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: hu_HU\n"
@@ -33,76 +32,6 @@ msgid ""
 msgstr ""
 "Úgy tűnik, ezen a helyen nem található semmi. Próbálja meg az alábbi linkeket "
 "vagy a keresést."
-
-#: ../archive.php:30
-#, php-format
-msgid "Author: %s"
-msgstr "Szerző: %s"
-
-#: ../archive.php:33
-#, php-format
-msgid "Day: %s"
-msgstr "Nap: %s"
-
-#: ../archive.php:36
-#, php-format
-msgid "Month: %s"
-msgstr "Hónap: %s"
-
-#: ../archive.php:36
-msgctxt "monthly archives date format"
-msgid "F Y"
-msgstr "Y. F"
-
-#: ../archive.php:39
-#, php-format
-msgid "Year: %s"
-msgstr "Év: %s"
-
-#: ../archive.php:39
-msgctxt "yearly archives date format"
-msgid "Y"
-msgstr "Y"
-
-#: ../archive.php:42
-msgid "Asides"
-msgstr "Közbevetések"
-
-#: ../archive.php:45
-msgid "Galleries"
-msgstr "Galériák"
-
-#: ../archive.php:48
-msgid "Images"
-msgstr "Képek"
-
-#: ../archive.php:51
-msgid "Videos"
-msgstr "Videók"
-
-#: ../archive.php:54
-msgid "Quotes"
-msgstr "Idézetek"
-
-#: ../archive.php:57
-msgid "Links"
-msgstr "Hivatkozások"
-
-#: ../archive.php:60
-msgid "Statuses"
-msgstr "Állapot üzenetek"
-
-#: ../archive.php:63
-msgid "Audios"
-msgstr "Hangok"
-
-#: ../archive.php:66
-msgid "Chats"
-msgstr "Beszélgetés naplók"
-
-#: ../archive.php:69 ../sidebar.php:53
-msgid "Archives"
-msgstr "Archívum"
 
 #: ../comments.php:27
 #, php-format
@@ -154,8 +83,8 @@ msgstr "Úgy tűnik, nem található a kért anyag. Talán a kereső segíthet."
 msgid "Pages:"
 msgstr "Oldalak:"
 
-#: ../content-page.php:35 ../inc/fullframe-core.php:632
-#: ../inc/fullframe-core.php:651 ../inc/fullframe-core.php:777
+#: ../content-page.php:35 ../inc/fullframe-core.php:636
+#: ../inc/fullframe-core.php:655 ../inc/fullframe-core.php:781
 msgid "Edit"
 msgstr "Szerkesztés"
 
@@ -347,7 +276,7 @@ msgid "Featured Header Image Link URL"
 msgstr "Fejrész kiemelt kép URL címe"
 
 #: ../inc/customizer-includes/fullframe-customizer-header-options.php:91
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:433
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:439
 msgid "Check to Open Link in New Window/Tab"
 msgstr "Hivatkozás megnyitása új ablakon/fülön"
 
@@ -402,35 +331,35 @@ msgstr "Breadcrumb engedélyezése a honlapon"
 msgid "Separator between Breadcrumbs"
 msgstr "Elválasztójel"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:80
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:85
 msgid "Custom/Inline CSS"
 msgstr "Egyéni CSS"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:83
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:88
 msgid "Custom CSS Options"
 msgstr "Egyéni CSS opciók"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:93
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:98
 msgid "Enter Custom CSS"
 msgstr "Egyéni CSS megadása"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:105
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:111
 msgid "Excerpt Options"
 msgstr "Kivonat tulajdonságai"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:115
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:121
 msgid "Excerpt length. Default is 40 words"
 msgstr "Kivonat hossza. Alapértelmezett a 40 szó"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:122
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:128
 msgid "Excerpt Length (words)"
 msgstr "Kivonat hossza (szavak száma)"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:136
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:142
 msgid "Read More Text"
 msgstr "Tovább ..."
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:145
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:151
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on the "
 "front page"
@@ -438,27 +367,27 @@ msgstr ""
 "Csak az itt kiválasztott kategóriába tartozó hozzászólások jelennek meg a "
 "címlapon"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:148
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:154
 msgid "Homepage / Frontpage Options"
 msgstr "Kezdőoldal / Főoldal tulajdonságai"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:158
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:164
 msgid "Select Categories"
 msgstr "Kategória választása"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:169
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:175
 msgid "Remove Icon images to disable."
 msgstr "Távolítsa el az Ikonokat a kikapcsoláshoz"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:172
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:178
 msgid "Icon Options"
 msgstr "Ikon tulajdonságok"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:183
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:189
 msgid "Select/Add Favicon"
 msgstr "Honlap ikon kiválasztása / hozzáadása"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:194
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:200
 msgid ""
 "Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height 144px "
 "height, which will support High Resolution Devices like iPad Retina."
@@ -466,37 +395,37 @@ msgstr ""
 "Web Clip Icon Apple eszközökhöz. Ajánlott méret: 144px x 144px, amely támogatja "
 "a nagy felbontású készülékeket, mint pl. iPad Retina."
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:195
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:201
 msgid "Select/Add Web Clip Icon"
 msgstr "Web Clip ikon kiválasztása / hozzáadása"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:207
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:213
 msgid "Logo Icon is displayed in Primary Menu"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:208
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:214
 msgid "Select/Add Logo Icon"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:219
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:225
 #: ../inc/fullframe-metabox.php:92
 msgid "Layout Options"
 msgstr "Oldalelrendezés"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:236
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:242
 msgid "Default Layout"
 msgstr "Alapértelmezett elrendezés"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:256
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:262
 msgid "Archive Content Layout"
 msgstr "Archív tartalom elrendezése"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:276
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:282
 #: ../inc/fullframe-metabox.php:94
 msgid "Single Page/Post Image Layout "
 msgstr "Aloldal / Hozzászólás kép elrendezés"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:287
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:293
 #, php-format
 msgid ""
 "Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</a>."
@@ -508,7 +437,7 @@ msgstr ""
 "\">JetPack Plugin</a> szükséges, és engedélyezni kell benne az Infinite Scroll "
 "modult."
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:294
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:300
 #, php-format
 msgid ""
 "Infinite Scroll Options requires <a target=\"_blank\" href=\"%s\">JetPack "
@@ -517,7 +446,7 @@ msgstr ""
 "A végtelen scrollozáshoz a <a target=\"_blank\" href=\"%s\">JetPack Plugin</a> "
 "szükséges, és engedélyezni kell benne az Infinite Scroll modult."
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:305
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:311
 #, php-format
 msgid ""
 "Numeric Option requires <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</a>."
@@ -525,71 +454,71 @@ msgstr ""
 "Az oldalszámozás a <a target=\"_blank\" href=\"%s\">WP-PageNavi Plugin</a>-t "
 "igényli."
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:316
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:322
 msgid "Pagination Options"
 msgstr "Oldalszámozás tulajdonságai"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:333
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:339
 msgid "Pagination type"
 msgstr "Oldalszámozás típusa"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:342
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:348
 msgid "To disable the fields, simply leave them empty."
 msgstr "A mezők letiltásához egyszerűen csak hagyja őket üresen."
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:345
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:351
 msgid "Promotion Headline Options"
 msgstr "Promóciós főcím tulajdonságai"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:362
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:368
 msgid "Enable Promotion Headline on"
 msgstr "Promóciós főcím engedélyezése"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:376
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:382
 msgid "Appropriate Words: 10"
 msgstr "Megfelelő szavak: 10"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:377
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:383
 msgid "Promotion Headline Text"
 msgstr "Promóciós főcím szövege"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:390
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:396
 msgid "Appropriate Words: 15"
 msgstr "Megfelelő szavak: 15"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:391
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:397
 msgid "Promotion Subheadline Text"
 msgstr "Promóciós alcím szövege"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:404
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:410
 msgid "Appropriate Words: 3"
 msgstr "Megfelelő szavak: 3"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:405
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:411
 msgid "Promotion Headline Button Text "
 msgstr "Promóciós főcím gomb  szövege"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:419
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:425
 msgid "Promotion Headline Link"
 msgstr "Promóciós főcím linkje"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:445
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:451
 msgid "Scrollup Options"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:455
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:461
 msgid "Check to disable Scroll Up"
 msgstr ""
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:464
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:470
 msgid "Change default placeholder text in Search."
 msgstr "Keresésben megjelenő alap szöveg megváltoztatása."
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:467
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:473
 msgid "Search Options"
 msgstr "Keresés opciók"
 
-#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:477
+#: ../inc/customizer-includes/fullframe-customizer-theme-options.php:483
 msgid "Default Display Text in Search"
 msgstr "Keresésben megjelenő alap szöveg"
 
@@ -634,12 +563,16 @@ msgstr "Minden beállítás visszaállítása az alapértékre"
 msgid "Important Links"
 msgstr "Fontos hivatkozások"
 
-#: ../inc/customizer-includes/fullframe-customizer.php:215
-msgid "Upgrade To Pro &raquo;"
-msgstr "Frissítés Pro Verzióra"
-
-#: ../inc/customizer-includes/fullframe-customizer.php:216
+#: ../inc/customizer-includes/fullframe-customizer.php:214
 msgid "Refresh the customizer page after saving to view reset effects"
+msgstr ""
+
+#: ../inc/customizer-includes/upgrade-button/class-customize.php:76
+msgid "Full Frame Pro"
+msgstr "Full Frame Pro"
+
+#: ../inc/customizer-includes/upgrade-button/class-customize.php:77
+msgid "Upgrade Now"
 msgstr ""
 
 #: ../inc/fullframe-breadcrumb.php:57
@@ -679,95 +612,95 @@ msgstr "Oldal %s"
 msgid "Primary Menu"
 msgstr "Elsődleges menü"
 
-#: ../inc/fullframe-core.php:598
+#: ../inc/fullframe-core.php:602
 msgid "Post navigation"
 msgstr "Bejegyzés navigáció"
 
-#: ../inc/fullframe-core.php:632
+#: ../inc/fullframe-core.php:636
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: ../inc/fullframe-core.php:642
+#: ../inc/fullframe-core.php:646
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"says\">szerint:</span>"
 
-#: ../inc/fullframe-core.php:648
+#: ../inc/fullframe-core.php:652
 #, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr "%1$s a %2$s-ből"
 
-#: ../inc/fullframe-core.php:655
+#: ../inc/fullframe-core.php:659
 msgid "Your comment is awaiting moderation."
 msgstr "A hozzászólása moderálásra vár."
 
-#: ../inc/fullframe-core.php:758
+#: ../inc/fullframe-core.php:762
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
 msgstr "<span class=\"screen-reader-text\">Közzétéve</span>"
 
-#: ../inc/fullframe-core.php:765
+#: ../inc/fullframe-core.php:769
 msgctxt "Used before post author name."
 msgid "<span class=\"screen-reader-text\">Author</span>"
 msgstr "<span class=\"screen-reader-text\">Szerző</span>"
 
-#: ../inc/fullframe-core.php:773
+#: ../inc/fullframe-core.php:777
 msgid "Leave a comment"
 msgstr "Szóljon hozzá!"
 
-#: ../inc/fullframe-core.php:773
+#: ../inc/fullframe-core.php:777
 msgid "1 Comment"
 msgstr "1 hozzászólás"
 
-#: ../inc/fullframe-core.php:773
+#: ../inc/fullframe-core.php:777
 msgid "% Comments"
 msgstr "% hozzászólás"
 
-#: ../inc/fullframe-core.php:794 ../inc/fullframe-core.php:802
+#: ../inc/fullframe-core.php:798 ../inc/fullframe-core.php:806
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ","
 
-#: ../inc/fullframe-core.php:797
+#: ../inc/fullframe-core.php:801
 msgctxt "Used before category names."
 msgid "<span class=\"screen-reader-text\">Categories</span>"
 msgstr "<span class=\"screen-reader-text\">Kategóriák</span>"
 
-#: ../inc/fullframe-core.php:805
+#: ../inc/fullframe-core.php:809
 msgctxt "Used before tag names."
 msgid "<span class=\"screen-reader-text\">Tags</span>"
 msgstr "<span class=\"screen-reader-text\">Címkék</span>"
 
-#: ../inc/fullframe-core.php:948
+#: ../inc/fullframe-core.php:952
 #, php-format
 msgid "%s"
 msgstr "%s"
 
-#: ../inc/fullframe-core.php:1411
+#: ../inc/fullframe-core.php:1415
 msgid "Scroll Up"
 msgstr "Felfelé görgetés"
 
-#: ../inc/fullframe-core.php:1429
+#: ../inc/fullframe-core.php:1433
 msgid "Posted on"
 msgstr "Közzétéve"
 
-#: ../inc/fullframe-core.php:1430
+#: ../inc/fullframe-core.php:1434
 msgid "By"
 msgstr "Írta:"
 
-#: ../inc/fullframe-core.php:1471
+#: ../inc/fullframe-core.php:1475
 msgid "Next &rarr;"
 msgstr "Következő &rarr;"
 
-#: ../inc/fullframe-core.php:1472
+#: ../inc/fullframe-core.php:1476
 msgid "Next post:"
 msgstr "Következő bejegyzés"
 
-#: ../inc/fullframe-core.php:1474
+#: ../inc/fullframe-core.php:1478
 msgid "&larr; Previous"
 msgstr "&larr; Előző"
 
-#: ../inc/fullframe-core.php:1475
+#: ../inc/fullframe-core.php:1479
 msgid "Previous post:"
 msgstr "Előző bejegyzés"
 
@@ -1248,6 +1181,64 @@ msgstr ""
 "Alapértelmezésben a Keresés és az Archívum widget fog megjelenni. Felvehet "
 "widgeteket erre a területre, ha ellátogat a <a href=\"%s\">Widget Panel</a> "
 "oldalra, amelyel lecserélheti az alapértelmezett widgeteket."
+
+#: ../sidebar.php:53
+msgid "Archives"
+msgstr "Archívum"
+
+#, fuzzy
+#~ msgid "Full Frame"
+#~ msgstr "Teljes kép"
+
+#~ msgid "Upgrade To Pro &raquo;"
+#~ msgstr "Frissítés Pro Verzióra"
+
+#~ msgid "Author: %s"
+#~ msgstr "Szerző: %s"
+
+#~ msgid "Day: %s"
+#~ msgstr "Nap: %s"
+
+#~ msgid "Month: %s"
+#~ msgstr "Hónap: %s"
+
+#~ msgid "Year: %s"
+#~ msgstr "Év: %s"
+
+#~ msgid "Asides"
+#~ msgstr "Közbevetések"
+
+#~ msgid "Galleries"
+#~ msgstr "Galériák"
+
+#~ msgid "Images"
+#~ msgstr "Képek"
+
+#~ msgid "Videos"
+#~ msgstr "Videók"
+
+#~ msgid "Quotes"
+#~ msgstr "Idézetek"
+
+#~ msgid "Links"
+#~ msgstr "Hivatkozások"
+
+#~ msgid "Statuses"
+#~ msgstr "Állapot üzenetek"
+
+#~ msgid "Audios"
+#~ msgstr "Hangok"
+
+#~ msgid "Chats"
+#~ msgstr "Beszélgetés naplók"
+
+#~ msgctxt "monthly archives date format"
+#~ msgid "F Y"
+#~ msgstr "Y. F"
+
+#~ msgctxt "yearly archives date format"
+#~ msgid "Y"
+#~ msgstr "Y"
 
 #~ msgid "Secondary Menu"
 #~ msgstr "Másodlagos menü"

@@ -40,7 +40,7 @@ function fullframe_featured_content_display() {
 
 	// Get Page ID outside Loop
 	$page_id = $wp_query->get_queried_object_id();
-	if ( $enablecontent == 'entire-site' || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && $enablecontent == 'homepage' ) ) {
+	if ( 'entire-site' == $enablecontent  || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && 'homepage' == $enablecontent  ) ) {
 		if( ( !$fullframe_featured_content = get_transient( 'fullframe_featured_content_display' ) ) ) {
 			$layouts 	 = $options ['featured_content_layout'];
 			$headline 	 = $options ['featured_content_headline'];
@@ -52,12 +52,12 @@ function fullframe_featured_content_display() {
 				$classes = $layouts ;
 			}
 
-			if( $contentselect == 'demo-featured-content' ) {
+			if( 'demo-featured-content' == $contentselect  ) {
 				$classes 		.= ' demo-featured-content' ;
 				$headline 		= esc_html__( 'Featured Content', 'full-frame' );
 				$subheadline 	= esc_html__( 'Here you can showcase the x number of Featured Content. You can edit this Headline, Subheadline and Feaured Content from "Appearance -> Customize -> Featured Content Options".', 'full-frame' );
 			}
-			elseif ( $contentselect == 'featured-page-content' ) {
+			elseif ( 'featured-page-content' == $contentselect  ) {
 				$classes .= ' featured-page-content' ;
 			}
 
@@ -109,10 +109,10 @@ function fullframe_featured_content_display() {
 							 }
 
 								// Select content
-								if ( $contentselect == 'demo-featured-content'  && function_exists( 'fullframe_demo_content' ) ) {
+								if ( 'demo-featured-content' == $contentselect   && function_exists( 'fullframe_demo_content' ) ) {
 									$fullframe_featured_content .= fullframe_demo_content( $options );
 								}
-								elseif ( $contentselect == 'featured-page-content' && function_exists( 'fullframe_page_content' ) ) {
+								elseif ( 'featured-page-content' == $contentselect  && function_exists( 'fullframe_page_content' ) ) {
 									$fullframe_featured_content .= fullframe_page_content( $options );
 								}
 

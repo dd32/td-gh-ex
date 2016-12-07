@@ -8,17 +8,17 @@
  *
  * @package Catch Themes
  * @subpackage Full Frame
- * @since Full Frame 1.0 
+ * @since Full Frame 1.0
  */
 
 //define theme version
 if ( !defined( 'FULLFRAME_THEME_VERSION' ) ) {
 	$theme_data = wp_get_theme();
-	
+
 	define ( 'FULLFRAME_THEME_VERSION', $theme_data->get( 'Version' ) );
 }
 
 /**
  * Implement the core functions
  */
-require get_template_directory() . '/inc/fullframe-core.php';
+require trailingslashit( get_template_directory() ) . 'inc/fullframe-core.php';
