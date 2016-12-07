@@ -58,8 +58,7 @@ function catchbox_sliders() {
 
 	$postperpage = $options[ 'slider_qty' ];
 	if ( isset( $options[ 'featured_slider' ] ) ) {
-		//In customizer, all values are returned but with empty, this rectifies the issue in customizer
-		$slider_array = array_filter( $options[ 'featured_slider' ] );
+		$slider_array = ( array ) $options[ 'featured_slider' ];
 
 		if ( ( !$catchbox_sliders = get_transient( 'catchbox_sliders' ) ) && !empty( $slider_array ) ) {
 			echo '<!-- refreshing cache -->';

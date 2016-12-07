@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2016-12-01 13:59-0500\n"
-"PO-Revision-Date: 2016-12-01 13:59-0500\n"
+"POT-Creation-Date: 2016-12-07 14:33-0500\n"
+"PO-Revision-Date: 2016-12-07 14:33-0500\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchinternet.com>\n"
 "Language: hr\n"
@@ -113,7 +113,7 @@ msgstr "Komentari su zatvoreni."
 #: ../content-gallery.php:15 ../content-gallery.php:46 ../content-image.php:14
 #: ../content-link.php:15 ../content-quote.php:13 ../content-status.php:14
 #: ../content.php:14 ../content.php:17 ../content.php:45
-#: ../inc/catchbox-sliders.php:83
+#: ../inc/catchbox-sliders.php:82
 #, php-format
 msgid "Permalink to %s"
 msgstr "Permalink za %s"
