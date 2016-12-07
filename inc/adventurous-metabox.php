@@ -127,10 +127,10 @@ function adventurous_meta_options() {
                     <?php
                     foreach ($sidebar_layout as $field) {
                         $metalayout = get_post_meta( $post->ID, $field['id'], true );
-                        if(empty( $metalayout ) ){
+                        if (empty( $metalayout ) ){
                             $metalayout='default';
                         }
-                        if( $field['thumbnail']==' ' ): ?>
+                        if ( $field['thumbnail']==' ' ): ?>
                                 <label class="description">
                                     <input type="radio" name="<?php echo $field['id']; ?>" value="<?php echo $field['value']; ?>" <?php checked( $field['value'], $metalayout ); ?>/>&nbsp;&nbsp;<?php echo $field['label']; ?>
                                 </label>

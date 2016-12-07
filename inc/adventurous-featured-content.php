@@ -4,24 +4,24 @@
  *
  * @uses adventurous_main action to add it in the header
  */
-function adventurous_default_featured_content() { 
-	//delete_transient( 'adventurous_default_featured_content' ); 
-	
+function adventurous_default_featured_content() {
+	//delete_transient( 'adventurous_default_featured_content' );
+
 	// Getting data from Theme Options
 	global $adventurous_options_settings;
    	$options = $adventurous_options_settings;
 	$layouts = $options [ 'homepage_featured_layout' ];
-	
-	if ( !$adventurous_default_featured_content = get_transient( 'adventurous_default_featured_content' ) ) {	
-	
-		//Checking Layout 
-		if ( $layouts == 'four-columns' ) {
+
+	if ( !$adventurous_default_featured_content = get_transient( 'adventurous_default_featured_content' ) ) {
+
+		//Checking Layout
+		if ( 'four-columns' == $layouts ) {
 			$classes = "layout-four";
-		} 
-		else { 
-			$classes = "layout-three"; 
 		}
-			
+		else {
+			$classes = "layout-three";
+		}
+
 		$adventurous_default_featured_content = '
 		<div id="featured-post" class="' . $classes . '">
 			<section class="container" >
@@ -45,9 +45,9 @@ function adventurous_default_featured_content() {
 							<div class="entry-content">
 								Chocolate bar tiramisu chocolate cake jelly-o cotton candy. Apple pie bear claw jelly-o tootsie roll chocolate halvah jujubes jujubes biscuit.
 							</div>
-						</div><!-- .entry-container -->			
+						</div><!-- .entry-container -->
 					</article>
-		
+
 					<article id="featured-post-2" class="post hentry post-demo">
 						<figure class="featured-homepage-image">
 							<a href="#" title="Rhino Nepal National Park">
@@ -63,9 +63,9 @@ function adventurous_default_featured_content() {
 							<div class="entry-content">
 								Chocolate cake sweet pie chocolate bar. Danish tart cookie topping tootsie roll pie tart jujubes donut. Dragee bear claw tootsie roll chocolate cake.
 							</div>
-						</div><!-- .entry-container -->			
+						</div><!-- .entry-container -->
 					</article>
-					
+
 					<article id="featured-post-3" class="post hentry post-demo">
 						<figure class="featured-homepage-image">
 							<a href="#" title="Nepal Yak Tibetan">
@@ -79,12 +79,12 @@ function adventurous_default_featured_content() {
 								</h1>
 							</header>
 							<div class="entry-content">
-								Marshmallow cotton candy candy cotton candy cake apple pie. Jelly-o donut cotton candy. Cheesecake ice cream chupa chups fruitcake jelly-o marshmallow. 
-								
+								Marshmallow cotton candy candy cotton candy cake apple pie. Jelly-o donut cotton candy. Cheesecake ice cream chupa chups fruitcake jelly-o marshmallow.
+
 							</div>
-						</div><!-- .entry-container -->			
+						</div><!-- .entry-container -->
 					</article>
-					
+
 					<article id="featured-post-4" class="post hentry post-demo">
 						<figure class="featured-homepage-image">
 							<a href="#" title="White Water Rafting">
@@ -98,9 +98,9 @@ function adventurous_default_featured_content() {
 								</h1>
 							</header>
 							<div class="entry-content">
-								Marshmallow chocolate muffin gingerbread chupa chups carrot cake wafer cheesecake. Pudding chocolate cake lollipop lollipop tootsie roll jelly souffle bonbon sugar plum. 
+								Marshmallow chocolate muffin gingerbread chupa chups carrot cake wafer cheesecake. Pudding chocolate cake lollipop lollipop tootsie roll jelly souffle bonbon sugar plum.
 							</div>
-						</div><!-- .entry-container -->			
+						</div><!-- .entry-container -->
 					</article>
 				</div><!-- .featued-content-wrap -->
 			</section><!-- .container -->
@@ -120,9 +120,9 @@ if ( ! function_exists( 'adventurous_homepage_featured_content' ) ) :
  * @uses adventurous_main action to add it in the header
  * @since Adventurous 1.0
  */
-function adventurous_homepage_featured_content() { 
+function adventurous_homepage_featured_content() {
 	//delete_transient( 'adventurous_homepage_featured_content' );
-	
+
 	// Getting data from Theme Options
 	global $adventurous_options_settings;
    	$options = $adventurous_options_settings;
@@ -130,20 +130,20 @@ function adventurous_homepage_featured_content() {
 	$headline = $options [ 'homepage_featured_headline' ];
 	$subheadline = $options [ 'homepage_featured_subheadline' ];
 	$layouts = $options [ 'homepage_featured_layout' ];
-		
+
 	if ( !$adventurous_homepage_featured_content = get_transient( 'adventurous_homepage_featured_content' ) ) {
-		
-		//Checking Layout 
-		if ( $layouts == 'four-columns' ) {
+
+		//Checking Layout
+		if ( 'four-columns' == $layouts ) {
 			$classes = "layout-four";
-		} 
-		else { 
-			$classes = "layout-three"; 
 		}
-			
-		//Checking headline and subheadline	
+		else {
+			$classes = "layout-three";
+		}
+
+		//Checking headline and subheadline
 		$adventurous_homepage_featured_content = '<div id="featured-post" class="' . $classes . '"><section class="container" >';
-			
+
 			if ( !empty( $headline ) || !empty( $subheadline ) ) {
 				$adventurous_homepage_featured_content .= '<div id="featured-heading">';
 				if ( !empty( $headline ) ) {
@@ -153,21 +153,21 @@ function adventurous_homepage_featured_content() {
 					$adventurous_homepage_featured_content .= '<p>' . $subheadline . '</p>';
 				}
 				$adventurous_homepage_featured_content .= '</div><!-- #featured-heading -->';
-			}		
-		
+			}
+
 		//Checking Featured Content Details
 		if ( !empty( $options[ 'homepage_featured_image' ] ) || !empty( $options[ 'homepage_featured_title' ] ) || !empty( $options[ 'homepage_featured_content' ] ) ) {
 
 			$adventurous_homepage_featured_content .= '<div class="featued-content-wrap">';
-			
+
 				for ( $i = 1; $i <= $quantity; $i++ ) {
-					
+
 					if ( !empty ( $options[ 'homepage_featured_base' ][ $i ] ) ) {
 						$target = '_blank';
 					} else {
 						$target = '_self';
 					}
-					
+
 					//Checking Link
 					if ( !empty ( $options[ 'homepage_featured_url' ][ $i ] ) ) {
 						//support qTranslate plugin
@@ -180,14 +180,14 @@ function adventurous_homepage_featured_content() {
 					} else {
 						$link = '#';
 					}
-						
+
 					//Checking Title
 					if ( !empty ( $options[ 'homepage_featured_title' ][ $i ] ) ) {
 						$title = $options[ 'homepage_featured_title' ][ $i ];
 					} else {
 						$title = '';
-					}			
-					
+					}
+
 					if ( !empty ( $options[ 'homepage_featured_title' ][ $i ] ) || !empty ( $options[ 'homepage_featured_content' ][ $i ] ) || !empty ( $options[ 'homepage_featured_image' ][ $i ] ) ) {
 						$adventurous_homepage_featured_content .= '
 						<article id="featured-post-'.$i.'" class="post hentry">';
@@ -197,13 +197,13 @@ function adventurous_homepage_featured_content() {
 									<a title="'.$title.'" href="'.$link.'" target="'.$target.'">
 										<img src="'.$options[ 'homepage_featured_image' ][ $i ].'" class="wp-post-image" alt="'.$title.'" title="'.$title.'">
 									</a>
-								</figure>';  
+								</figure>';
 							}
 							if ( !empty ( $options[ 'homepage_featured_title' ][ $i ] ) || !empty ( $options[ 'homepage_featured_content' ][ $i ] ) ) {
 								$adventurous_homepage_featured_content .= '
 								<div class="entry-container">';
-								
-									if ( !empty ( $options[ 'homepage_featured_title' ][ $i ] ) ) { 
+
+									if ( !empty ( $options[ 'homepage_featured_title' ][ $i ] ) ) {
 										$adventurous_homepage_featured_content .= '
 										<header class="entry-header">
 											<h1 class="entry-title">
@@ -211,31 +211,31 @@ function adventurous_homepage_featured_content() {
 											</h1>
 										</header>';
 									}
-									if ( !empty ( $options[ 'homepage_featured_content' ][ $i ] ) ) { 
+									if ( !empty ( $options[ 'homepage_featured_content' ][ $i ] ) ) {
 										$adventurous_homepage_featured_content .= '
 										<div class="entry-content">
 											' . $options[ 'homepage_featured_content' ][ $i ] . '
 										</div>';
 									}
 								$adventurous_homepage_featured_content .= '
-								</div><!-- .entry-container -->';	
+								</div><!-- .entry-container -->';
 							}
-						$adventurous_homepage_featured_content .= '			
-						</article><!-- .slides -->'; 	
+						$adventurous_homepage_featured_content .= '
+						</article><!-- .slides -->';
 					}
-			
+
 				}
-				
+
 			$adventurous_homepage_featured_content .= '</div><!-- .featued-content-wrap -->';
-			
+
 		}
-			
-		$adventurous_homepage_featured_content .= '</section><!-- .container --></div><!-- #featured-post -->';	
-		
-		
-		echo $adventurous_homepage_featured_content;	
+
+		$adventurous_homepage_featured_content .= '</section><!-- .container --></div><!-- #featured-post -->';
+
+
+		echo $adventurous_homepage_featured_content;
 	}
-	
+
 }
 endif; // adventurous_homepage_featured_content
 
@@ -244,28 +244,28 @@ endif; // adventurous_homepage_featured_content
  * Homepage Featured Content
  *
  */
-function adventurous_homepage_featured_display() { 
+function adventurous_homepage_featured_display() {
 	global $post, $wp_query, $adventurous_options_settings;
-	
+
 	// Getting data from Theme Options
    	$options = $adventurous_options_settings;
 	$enablefeatured = $options[ 'enable-featured' ];
-	
+
 	// Front page displays in Reading Settings
 	$page_on_front = get_option('page_on_front') ;
-	$page_for_posts = get_option('page_for_posts'); 
+	$page_for_posts = get_option('page_for_posts');
 
 	// Get Page ID outside Loop
 	$page_id = $wp_query->get_queried_object_id();
-	
-	if ( ( $enablefeatured == 'allpage' ) || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && $enablefeatured == 'homepage' ) ) {
+
+	if ( ( 'allpage' == $enablefeatured ) || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && 'homepage' == $enablefeatured ) ) {
 		if  ( !empty( $options[ 'homepage_featured_headline' ] ) || !empty( $options[ 'homepage_featured_subheadline' ] ) || !empty( $options[ 'homepage_featured_image' ] ) || !empty( $options[ 'homepage_featured_title' ] ) || !empty( $options[ 'homepage_featured_content' ] ) ) {
 			adventurous_homepage_featured_content();
 		} else {
 			adventurous_default_featured_content();
 		}
 	}
-	
-} // adventurous_homepage_featured_content	
+
+} // adventurous_homepage_featured_content
 
 add_action( 'adventurous_before_main', 'adventurous_homepage_featured_display', 80 );

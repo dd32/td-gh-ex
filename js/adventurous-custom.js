@@ -1,5 +1,5 @@
 // Adventurous Custom Scripts
-jQuery(document).ready(function() {	
+jQuery(document).ready(function() {
 
 	// Menu
 	adventurous_mobile_menu( jQuery('#header-right ul.menu'), jQuery('#header-mobile-menu .mobile-nav'), 'header-mobile-menu-block', 'mobile-menu' );
@@ -26,7 +26,7 @@ jQuery(document).ready(function() {
 		append_to.find('a').click( function(event){
 			event.stopPropagation();
 		} );
-	}		
+	}
 
 
 	// Header Search show hide
@@ -45,19 +45,19 @@ jQuery(document).ready(function() {
 			jQueryform.toggleClass( 'displaynone' );
 		} );
 	} );
-		
-	
-	// Fixed Header 
-	
+
+
+	// Fixed Header
+
 	var stickyNavTop = jQuery('#masthead').offset().top;
-	 
+
 	var stickyNav = function(){
 		var scrollTop = jQuery(window).scrollTop();
-	      
-		if (scrollTop > stickyNavTop) { 
+
+		if (scrollTop > stickyNavTop) {
 		    jQuery('#masthead').addClass('fixed-header');
 		} else {
-		    jQuery('#masthead').removeClass('fixed-header'); 
+		    jQuery('#masthead').removeClass('fixed-header');
 		}
 	};
 
@@ -68,7 +68,7 @@ jQuery(document).ready(function() {
 	});
 
 	// Scroll Up
-	jQuery("#scrollup").hide();	
+	jQuery("#scrollup").hide();
 	jQuery(function () {
 		jQuery(window).scroll(function () {
 			if (jQuery(this).scrollTop() > 100) {

@@ -20,7 +20,7 @@ if ( !is_active_sidebar( 'adventurous_woocommerce_sidebar' ) && ( class_exists( 
 	$adventurous_layout = 'no-sidebar';
 }
 
-if ( $adventurous_layout == 'left-sidebar' || $adventurous_layout == 'right-sidebar' ) {
+if ( 'left-sidebar' == $adventurous_layout || 'right-sidebar' == $adventurous_layout ) {
 	//Getting Ready to load data from Theme Options Panel
 	global $post, $wp_query;
 

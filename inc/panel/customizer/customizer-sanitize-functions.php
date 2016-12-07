@@ -31,7 +31,7 @@ function adventurous_sanitize_checkbox( $input ) {
  * @since Adventurous 1.4
  */
 function adventurous_sanitize_custom_css( $input ) {
-	if ( $input != '' ) {
+	if ( '' != $input ) {
         $input = str_replace( '<=', '&lt;=', $input );
 
         $input = wp_kses_split( $input, array(), array() );
@@ -105,7 +105,7 @@ function adventurous_sanitize_post_id( $input ) {
  * @since Adventurous 1.4
  */
 function adventurous_sanitize_category_list( $input ) {
-	if ( $input != '' ) {
+	if ( '' != $input ) {
 		$args = array(
 						'type'			=> 'post',
 						'child_of'      => 0,
@@ -197,112 +197,4 @@ function adventurous_sanitize_select( $input, $setting ) {
 
 	// If the input is a valid key, return it; otherwise, return the default.
 	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
-}
-
-
-/**
- * Reset all settings to default
- * @param  $input entered value
- * @return sanitized output
- *
- * @since Adventurous 1.4
- */
-function adventurous_reset_all_settings( $input ) {
-	if ( $input == 1 ) {
-        // Delete all theme options
-        delete_option('adventurous_options' );
-
-        // Flush out all transients	on reset
-        adventurous_themeoption_invalidate_caches();
-    }
-    else {
-        return '0';
-    }
-}
-
-
-/**
- * Dummy Sanitizaition function as it contains no value to be sanitized
- *
- * @since Adventurous 1.4
- */
-function adventurous_sanitize_important_link() {
-	return false;
-}
-
-
-/**
- * Reset featured image
- * @param  $input entered value
- * @return nothing
- *
- * @since Adventurous 1.4
- */
-function adventurous_sanitize_reset_featured_image( $input ) {
-	//Reset Header Featured Image Options
-	if( $input == 1 ) {
-		global $adventurous_options_settings, $adventurous_options_defaults;
-
-    	$options = $adventurous_options_settings;
-
-		$defaults = $adventurous_options_defaults;
-
-		$options[ 'enable_featured_header_image' ] 	= $defaults[ 'enable_featured_header_image' ];
-		$options[ 'page_featured_image' ] 			= $defaults[ 'page_featured_image' ];
-		$options[ 'featured_header_image' ] 		= remove_theme_mod( 'header_image' );
-		$options[ 'featured_header_image_alt' ] 	= $defaults[ 'featured_header_image_alt' ];
-		$options[ 'featured_header_image_url' ] 	= $defaults[ 'featured_header_image_url' ];
-		$options[ 'featured_header_image_base' ] 	= $defaults[ 'featured_header_image_base' ];
-
-		update_option( 'adventurous_options', $options );
-	}
-}
-
-
-/**
- * Reset layout
- * @param  $input entered value
- * @return nothing
- *
- * @since Adventurous 1.4
- */
-function adventurous_sanitize_reset_layout( $input ) {
-	//Reset Header Featured Image Options
-	if( $input == 1 ) {
-		global $adventurous_options_settings, $adventurous_options_defaults;
-
-    	$options = $adventurous_options_settings;
-
-		$defaults = $adventurous_options_defaults;
-
-		$options[ 'sidebar_layout' ] = $defaults[ 'sidebar_layout' ];
-		$options[ 'content_layout' ] = $defaults[ 'content_layout' ];
-		$options[ 'featured_image' ] = $defaults[ 'featured_image' ];
-
-		update_option( 'adventurous_options', $options );
-	}
-}
-
-
-/**
- * Reset more tag
- * @param  $input entered value
- * @return nothing
- *
- * @since Adventurous 1.4
- */
-function adventurous_sanitize_reset_moretag( $input ) {
-	//Reset Header Featured Image Options
-	if( $input == 1 ) {
-		global $adventurous_options_settings, $adventurous_options_defaults;
-
-    	$options = $adventurous_options_settings;
-
-		$defaults = $adventurous_options_defaults;
-
-		$options[ 'more_tag_text' ]	= $defaults[ 'more_tag_text' ];
-		$options[ 'excerpt_length' ]= $defaults[ 'excerpt_length' ];
-
-		update_option( 'adventurous_options', $options );
-	}
 }

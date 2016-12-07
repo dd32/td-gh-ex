@@ -41,7 +41,7 @@ function adventurous_scripts() {
 	/**
 	 * Loads up Responsive Video Script
 	 */
-	wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/js/fitvids.min.js', array( 'jquery' ), '20140317', true );
+	wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/js/fitvids.min.js', array( 'jquery' ), '20140317', true );
 
 	/**
 	 * Loads up jQuery Custom Scripts
@@ -69,7 +69,7 @@ function adventurous_scripts() {
 	 * Loads up adventurous-slider and jquery-cycle set up as dependent on adventurous-slider
 	 */
 	$enableslider = $options[ 'enable_slider' ];
-	if ( ( $enableslider == 'enable-slider-allpage' ) || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && $enableslider == 'enable-slider-homepage' ) ) {
+	if ( ( 'enable-slider-allpage' == $enableslider ) || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && 'enable-slider-homepage' == $enableslider ) ) {
 		wp_enqueue_script( 'adventurous-slider', get_template_directory_uri() . '/js/adventurous-slider.js', array( 'jquery-cycle' ), '20140317', true );
 	}
 
@@ -81,7 +81,7 @@ function adventurous_scripts() {
 	 * Browser Specific Enqueue Script
 	 */
 	$adventurous_ua = strtolower($_SERVER['HTTP_USER_AGENT']);
-	if(preg_match('/(?i)msie [1-8]/',$adventurous_ua)) {
+	if (preg_match('/(?i)msie [1-8]/',$adventurous_ua)) {
 	 	wp_enqueue_script( 'selectivizr', get_template_directory_uri() . '/js/selectivizr.min.js', array( 'jquery' ), '20130114', false );
 		wp_enqueue_style( 'adventurous-iecss', get_template_directory_uri() . '/css/ie.css' );
 	}
@@ -122,7 +122,7 @@ function adventurous_favicon() {
 		return;
 	}
 
-	if( ( !$adventurous_favicon = get_transient( 'adventurous_favicon' ) ) ) {
+	if ( ( !$adventurous_favicon = get_transient( 'adventurous_favicon' ) ) ) {
 		global $adventurous_options_settings;
    		$options = $adventurous_options_settings;
 
@@ -164,7 +164,7 @@ function adventurous_content_image() {
 	// Get Page ID outside Loop
 	$page_id = $wp_query->get_queried_object_id();
 
-	if( $post) {
+	if ( $post) {
  		if ( is_attachment() ) {
 			$parent = $post->post_parent;
 			$individual_featured_image = get_post_meta( $parent,'adventurous-featured-image', true );
@@ -173,7 +173,7 @@ function adventurous_content_image() {
 		}
 	}
 
-	if( empty( $individual_featured_image ) || ( !is_page() && !is_single() ) ) {
+	if ( empty( $individual_featured_image ) || ( !is_page() && !is_single() ) ) {
 		$individual_featured_image='default';
 	}
 
@@ -183,17 +183,17 @@ function adventurous_content_image() {
 
 	$featured_image = $options['featured_image'];
 
-	if ( ( $individual_featured_image == 'disable' || '' == get_the_post_thumbnail() || ( $individual_featured_image=='default' && $featured_image == 'disable') ) ) {
+	if ( ( 'disable' == $individual_featured_image || '' == get_the_post_thumbnail() || ( $individual_featured_image=='default' && 'disable' == $featured_image) ) ) {
 		return false;
 	}
 	else { ?>
 		<figure class="featured-image">
             <a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'adventurous' ), the_title_attribute( 'echo=0' ) ) ); ?>">
                 <?php
-				if ( ( is_front_page() && $featured_image == 'featured' ) ||  $individual_featured_image == 'featured' || ( $individual_featured_image=='default' && $featured_image == 'featured' ) ) {
+				if ( ( is_front_page() && 'featured' == $featured_image ) ||  'featured' == $individual_featured_image || ( $individual_featured_image=='default' && 'featured' == $featured_image ) ) {
                      the_post_thumbnail( 'featured' );
                 }
-				elseif ( ( is_front_page() && $featured_image == 'slider' ) || $individual_featured_image == 'slider' || ( $individual_featured_image=='default' && $featured_image == 'slider' ) ) {
+				elseif ( ( is_front_page() && 'slider' == $featured_image ) || 'slider' == $individual_featured_image || ( $individual_featured_image=='default' && 'slider' == $featured_image ) ) {
 					the_post_thumbnail( 'slider' );
 				}
 				else {
@@ -211,28 +211,36 @@ endif; //adventurous_content_image
  * Hooks the Custom Inline CSS to head section
  *
  * @since Adventurous 1.0
+ * @remove when WordPress version 5.0 is released
  */
 function adventurous_inline_css() {
+	/**
+	 * Bail if WP version >=4.7 as we have migrated this option to core
+	 */
+	if ( function_exists( 'wp_update_custom_css_post' ) ) {
+		return;
+	}
+
 	//delete_transient( 'adventurous_inline_css' );
 
-	if ( ( !$adventurous_inline_css = get_transient( 'adventurous_inline_css' ) ) ) {
+	if ( ( !$output = get_transient( 'adventurous_inline_css' ) ) ) {
 		// Getting data from Theme Options
 		global $adventurous_options_settings, $adventurous_options_defaults;
    		$options = $adventurous_options_settings;
-		$defaults = $adventurous_options_defaults;
 
 		if ( !empty( $options[ 'custom_css' ] ) )  {
 
-			$adventurous_inline_css	.= '<!-- '.get_bloginfo('name').' Custom CSS Styles -->' . "\n";
-	        $adventurous_inline_css .= '<style type="text/css" media="screen">' . "\n";
-			$adventurous_inline_css .=  $options['custom_css'] . "\n";
-			$adventurous_inline_css .= '</style>' . "\n";
+			$output	.= '<!-- '.get_bloginfo('name').' Custom CSS Styles -->' . "\n";
+	        $output .= '<style type="text/css" media="screen">' . "\n";
+			$output .=  $options['custom_css'] . "\n";
+			$output .= '</style>' . "\n";
 
 		}
 
-	set_transient( 'adventurous_inline_css', $adventurous_inline_css, 86940 );
+		set_transient( 'adventurous_inline_css', $output, 86940 );
 	}
-	echo $adventurous_inline_css;
+
+	echo $output;
 }
 add_action('wp_head', 'adventurous_inline_css');
 
@@ -346,10 +354,10 @@ function adventurous_body_classes( $classes ) {
 	$classes[] = adventurous_get_theme_layout();
 
 	$current_content_layout = $options['content_layout'];
-	if( $current_content_layout == 'full' ) {
+	if ( 'full' == $current_content_layout ) {
 		$classes[] = 'content-full';
 	}
-	elseif ( $current_content_layout == 'excerpt' ) {
+	elseif ( 'excerpt' == $current_content_layout ) {
 		$classes[] = 'content-excerpt';
 	}
 
@@ -608,12 +616,12 @@ function adventurous_alter_home( $query ){
     $cats = $options[ 'front_page_category' ];
 
     if ( $options[ 'exclude_slider_post'] != "0" && !empty( $options[ 'featured_slider' ] ) ) {
-		if( $query->is_main_query() && $query->is_home() ) {
+		if ( $query->is_main_query() && $query->is_home() ) {
 			$query->query_vars['post__not_in'] = $options[ 'featured_slider' ];
 		}
 	}
 	if ( !in_array( '0', $cats ) ) {
-		if( $query->is_main_query() && $query->is_home() ) {
+		if ( $query->is_main_query() && $query->is_home() ) {
 			$query->query_vars['category__in'] = $options[ 'front_page_category' ];
 		}
 	}
@@ -671,15 +679,15 @@ function adventurous_social_networks() {
 						$options[ 'social_meetup' ]
 					);
 	$flag = 0;
-	if( !empty( $elements ) ) {
+	if ( !empty( $elements ) ) {
 		foreach( $elements as $option) {
-			if( !empty( $option ) ) {
+			if ( !empty( $option ) ) {
 				$flag = 1;
 			}
 			else {
 				$flag = 0;
 			}
-			if( $flag == 1 ) {
+			if ( $flag == 1 ) {
 				break;
 			}
 		}
@@ -869,7 +877,7 @@ add_filter( 'manage_posts_columns', 'adventurous_post_id_column' );
 add_filter( 'manage_pages_columns', 'adventurous_post_id_column' );
 
 function adventurous_posts_id_column( $col, $val ) {
-	if( $col == 'postid' ) echo $val;
+	if ( 'postid' == $col ) echo $val;
 }
 add_action( 'manage_posts_custom_column', 'adventurous_posts_id_column', 10, 2 );
 add_action( 'manage_pages_custom_column', 'adventurous_posts_id_column', 10, 2 );
@@ -926,7 +934,7 @@ function adventurous_web_clip() {
 		return;
 	}
 
-	if( ( !$adventurous_web_clip = get_transient( 'adventurous_web_clip' ) ) ) {
+	if ( ( !$adventurous_web_clip = get_transient( 'adventurous_web_clip' ) ) ) {
 
 		// get the data value from theme options
 		global $adventurous_options_settings;

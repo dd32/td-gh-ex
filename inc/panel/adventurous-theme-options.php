@@ -154,7 +154,7 @@ function adventurous_theme_options_do_page() {
                                     	<?php _e( 'Fav Icon URL:', 'adventurous' ); ?>
                                     </div>
                                     <div class="col col-2">
-                                    	<?php if ( !empty ( $options[ 'fav_icon' ] ) ) { ?>
+                                    	<?php if ( !empty ( $options['fav_icon'] ) ) { ?>
                                             <input class="upload-url" size="65" type="text" name="adventurous_options[fav_icon]" value="<?php echo esc_url( $options [ 'fav_icon' ] ); ?>" />
                                         <?php } else { ?>
                                             <input class="upload-url" size="65" type="text" name="adventurous_options[fav_icon]" value="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" alt="fav" />
@@ -168,8 +168,8 @@ function adventurous_theme_options_do_page() {
                                     </div>
                                     <div class="col col-2">
                             			<?php
-    										if ( !empty( $options[ 'fav_icon' ] ) ) {
-    											echo '<img src="'.esc_url( $options[ 'fav_icon' ] ).'" alt="fav" />';
+    										if ( !empty( $options['fav_icon'] ) ) {
+    											echo '<img src="'.esc_url( $options['fav_icon'] ).'" alt="fav" />';
     										} else {
     											echo '<img src="'. get_template_directory_uri().'/images/favicon.ico" alt="fav" />';
     										}
@@ -199,7 +199,7 @@ function adventurous_theme_options_do_page() {
                                     	<?php _e( 'Web Clip Icon URL:', 'adventurous' ); ?>
                                     </div>
                                     <div class="col col-2">
-                            			<?php if ( !empty ( $options[ 'web_clip' ] ) ) { ?>
+                            			<?php if ( !empty ( $options['web_clip'] ) ) { ?>
                                             <input class="upload-url" size="65" type="text" name="adventurous_options[web_clip]" value="<?php echo esc_url( $options [ 'web_clip' ] ); ?>" class="upload" />
                                         <?php } else { ?>
                                             <input size="65" type="text" name="adventurous_options[web_clip]" value="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png" alt="fav" />
@@ -213,8 +213,8 @@ function adventurous_theme_options_do_page() {
                                     </div>
                                     <div class="col col-2">
     									<?php
-    									if ( !empty( $options[ 'web_clip' ] ) ) {
-    										echo '<img src="'.esc_url( $options[ 'web_clip' ] ).'" alt="Web Clip Icon" />';
+    									if ( !empty( $options['web_clip'] ) ) {
+    										echo '<img src="'.esc_url( $options['web_clip'] ).'" alt="Web Clip Icon" />';
     									} else {
     										echo '<img src="'. get_template_directory_uri().'/images/apple-touch-icon.png" alt="Web Clip Icon" />';
     									}
@@ -281,7 +281,7 @@ function adventurous_theme_options_do_page() {
                                     	<?php _e( 'Logo url', 'adventurous' ); ?>
                                     </div>
                                     <div class="col col-2">
-                                    	<?php  if ( !empty ( $options[ 'featured_logo_header' ] ) ) { ?>
+                                    	<?php  if ( !empty ( $options['featured_logo_header'] ) ) { ?>
                                         	<input  class="upload-url" size="65" type="text" name="adventurous_options[featured_logo_header]" value="<?php echo esc_url ( $options [ 'featured_logo_header' ]); ?>" class="upload" />
                                     	<?php
     									}
@@ -297,8 +297,8 @@ function adventurous_theme_options_do_page() {
                                     </div>
                                     <div class="col col-2">
     									<?php
-    									if ( !empty( $options[ 'featured_logo_header' ] ) ) {
-    										echo '<img src="'.esc_url( $options[ 'featured_logo_header' ] ).'" alt="Logo" />';
+    									if ( !empty( $options['featured_logo_header'] ) ) {
+    										echo '<img src="'.esc_url( $options['featured_logo_header'] ).'" alt="Logo" />';
     									} else {
     										echo '<img src="'. get_template_directory_uri().'/images/logo.png" alt="Logo" />';
     									}
@@ -439,12 +439,11 @@ function adventurous_theme_options_do_page() {
                           	</div><!-- .row -->
                             <div class="row">
                             	<div class="col col-1">
-                                	<?php if( $options[ 'reset_featured_image' ] == "1" ) { $options[ 'reset_featured_image' ] = "0"; } ?>
                                 	<?php _e( 'Reset Header Featured Image Options?', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
                                 	<input type='hidden' value='0' name='adventurous_options[reset_featured_image]'>
-                                    <input type="checkbox" id="headerlogo" name="adventurous_options[reset_featured_image]" value="1" <?php checked( '1', $options['reset_featured_image'] ); ?> /> <?php _e('Check to reset', 'adventurous'); ?>
+                                    <input type="checkbox" id="headerlogo" name="adventurous_options[reset_featured_image]" value="1" /> <?php _e('Check to reset', 'adventurous'); ?>
                               	</div>
                           	</div><!-- .row -->
                             <div class="row">
@@ -514,7 +513,7 @@ function adventurous_theme_options_do_page() {
                                     <p><small><?php _e( 'The appropriate length for Headine is around 10 words.', 'adventurous' ); ?></small></p>
                                 </div>
                                 <div class="col col-2">
-                                	<textarea class="textarea input-bg" name="adventurous_options[homepage_headline]" cols="70" rows="3"><?php echo esc_textarea( $options[ 'homepage_headline' ] ); ?></textarea>
+                                	<textarea class="textarea input-bg" name="adventurous_options[homepage_headline]" cols="70" rows="3"><?php echo esc_textarea( $options['homepage_headline'] ); ?></textarea>
                              	</div>
                           	</div><!-- .row -->
                         	<div class="row">
@@ -523,7 +522,7 @@ function adventurous_theme_options_do_page() {
                                     <p><small><?php _e( 'The appropriate length for Headine is around 15 words.', 'adventurous' ); ?></small></p>
                                 </div>
                                 <div class="col col-2">
-                                	<textarea class="textarea input-bg" name="adventurous_options[homepage_subheadline]" cols="70" rows="3"><?php echo esc_textarea( $options[ 'homepage_subheadline' ] ); ?></textarea>
+                                	<textarea class="textarea input-bg" name="adventurous_options[homepage_subheadline]" cols="70" rows="3"><?php echo esc_textarea( $options['homepage_subheadline'] ); ?></textarea>
                              	</div>
                           	</div><!-- .row -->
                         	<div class="row">
@@ -532,7 +531,7 @@ function adventurous_theme_options_do_page() {
                                     <p><small><?php _e( 'The appropriate length for Headine is around 3 words.', 'adventurous' ); ?></small></p>
                                 </div>
                                 <div class="col col-2">
-                                	<input type="text" size="45" name="adventurous_options[homepage_headline_button]" value="<?php echo esc_attr( $options[ 'homepage_headline_button' ] ); ?>" />
+                                	<input type="text" size="45" name="adventurous_options[homepage_headline_button]" value="<?php echo esc_attr( $options['homepage_headline_button'] ); ?>" />
                              	</div>
                           	</div><!-- .row -->
                         	<div class="row">
@@ -540,7 +539,7 @@ function adventurous_theme_options_do_page() {
                                 	<?php _e( 'Button Link', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                	<input type="text" size="70" name="adventurous_options[homepage_headline_url]" value="<?php echo esc_url( $options[ 'homepage_headline_url' ] ); ?>" />
+                                	<input type="text" size="70" name="adventurous_options[homepage_headline_url]" value="<?php echo esc_url( $options['homepage_headline_url'] ); ?>" />
                              	</div>
                           	</div><!-- .row -->
                         	<div class="row">
@@ -615,8 +614,8 @@ function adventurous_theme_options_do_page() {
                                         <option value="0" <?php if ( empty( $options['front_page_category'] ) ) { echo 'selected="selected"'; } ?>><?php _e( '--Disabled--', 'adventurous' ); ?></option>
                                         <?php /* Get the list of categories */
                                             $categories = get_categories();
-                                            if( empty( $options[ 'front_page_category' ] ) ) {
-                                                $options[ 'front_page_category' ] = array();
+                                            if( empty( $options['front_page_category'] ) ) {
+                                                $options['front_page_category'] = array();
                                             }
                                             foreach ( $categories as $category) :
                                         ?>
@@ -672,12 +671,11 @@ function adventurous_theme_options_do_page() {
                             </div><!-- .row -->
                             <div class="row">
                             	<div class="col col-header">
-                                	<?php if( $options[ 'reset_layout' ] == "1" ) { $options[ 'reset_layout' ] = "0"; } ?>
                                 	<?php _e( 'Reset Layout?', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-options">
                                 	<input type='hidden' value='0' name='adventurous_options[reset_layout]'>
-                                    <input type="checkbox" id="headerlogo" name="adventurous_options[reset_layout]" value="1" <?php checked( '1', $options['reset_layout'] ); ?> /> <?php _e('Check to reset', 'adventurous'); ?>
+                                    <input type="checkbox" id="headerlogo" name="adventurous_options[reset_layout]" value="1" /> <?php _e('Check to reset', 'adventurous'); ?>
                               	</div>
                           	</div><!-- .row -->
                             <div class="row">
@@ -711,7 +709,7 @@ function adventurous_theme_options_do_page() {
                                 	<?php _e( 'More Tag Text', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                	<input type="text" size="45" name="adventurous_options[more_tag_text]" value="<?php echo esc_attr( $options[ 'more_tag_text' ] ); ?>" />
+                                	<input type="text" size="45" name="adventurous_options[more_tag_text]" value="<?php echo esc_attr( $options['more_tag_text'] ); ?>" />
                              	</div>
                           	</div><!-- .row -->
                         	<div class="row">
@@ -719,17 +717,16 @@ function adventurous_theme_options_do_page() {
                                 	<?php _e( 'Excerpt length(words)', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                	<input type="text" size="3" name="adventurous_options[excerpt_length]" value="<?php echo intval( $options[ 'excerpt_length' ] ); ?>" />
+                                	<input type="text" size="3" name="adventurous_options[excerpt_length]" value="<?php echo intval( $options['excerpt_length'] ); ?>" />
                              	</div>
                           	</div><!-- .row -->
                             <div class="row">
                             	<div class="col col-1">
-                                	<?php if( $options[ 'reset_moretag' ] == "1" ) { $options[ 'reset_moretag' ] = "0"; } ?>
                                 	<?php _e( 'Reset Excerpt?', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
                                 	<input type='hidden' value='0' name='adventurous_options[reset_moretag]'>
-                                    <input type="checkbox" id="headerlogo" name="adventurous_options[reset_moretag]" value="1" <?php checked( '1', $options['reset_moretag'] ); ?> /> <?php _e('Check to reset', 'adventurous'); ?>
+                                    <input type="checkbox" id="headerlogo" name="adventurous_options[reset_moretag]" value="1" /> <?php _e('Check to reset', 'adventurous'); ?>
                               	</div>
                           	</div><!-- .row -->
                             <div class="row">
@@ -738,30 +735,37 @@ function adventurous_theme_options_do_page() {
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->
 
-                    <div id="custom-css" class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Custom CSS', 'adventurous' ); ?></a></h3>
-                        <div class="option-content inside">
-                        	<div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Enter your custom CSS styles.', 'adventurous' ); ?>
-                                </div>
-                                <div class="col col-2">
-                                	<textarea name="adventurous_options[custom_css]" id="custom-css" cols="80" rows="10"><?php echo esc_attr( $options[ 'custom_css' ] ); ?></textarea>
-                            	</div>
-                          	</div><!-- .row -->
-                        	<div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'CSS Tutorial from W3Schools.', 'adventurous' ); ?>
-                                </div>
-                                <div class="col col-2">
-                                	<a class="button" href="<?php echo esc_url( __( 'http://www.w3schools.com/css/default.asp','adventurous' ) ); ?>" title="<?php esc_attr_e( 'CSS Tutorial', 'adventurous' ); ?>" target="_blank"><?php _e( 'Click Here to Read', 'adventurous' );?></a>
-                            	</div>
-                          	</div><!-- .row -->
-                            <div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'adventurous' ); ?>" />
-                          	</div><!-- .row -->
-                        </div><!-- .option-content -->
-                    </div><!-- .option-container -->
+                    <?php
+                    // @remove if block when WP 5.0 is released
+                    if ( ! function_exists( 'wp_update_custom_css_post' ) ) {
+                    ?>
+                        <div id="custom-css" class="option-container">
+                            <h3 class="option-toggle"><a href="#"><?php _e( 'Custom CSS', 'adventurous' ); ?></a></h3>
+                            <div class="option-content inside">
+                            	<div class="row">
+                                	<div class="col col-1">
+                                    	<?php _e( 'Enter your custom CSS styles.', 'adventurous' ); ?>
+                                    </div>
+                                    <div class="col col-2">
+                                    	<textarea name="adventurous_options[custom_css]" id="custom-css" cols="80" rows="10"><?php echo esc_attr( $options['custom_css'] ); ?></textarea>
+                                	</div>
+                              	</div><!-- .row -->
+                            	<div class="row">
+                                	<div class="col col-1">
+                                    	<?php _e( 'CSS Tutorial from W3Schools.', 'adventurous' ); ?>
+                                    </div>
+                                    <div class="col col-2">
+                                    	<a class="button" href="<?php echo esc_url( __( 'http://www.w3schools.com/css/default.asp','adventurous' ) ); ?>" title="<?php esc_attr_e( 'CSS Tutorial', 'adventurous' ); ?>" target="_blank"><?php _e( 'Click Here to Read', 'adventurous' );?></a>
+                                	</div>
+                              	</div><!-- .row -->
+                                <div class="row">
+                                	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'adventurous' ); ?>" />
+                              	</div><!-- .row -->
+                            </div><!-- .option-content -->
+                        </div><!-- .option-container -->
+                    <?php
+                    }
+                    ?>
 
                     <div id="scrollup" class="option-container">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Scroll Up', 'adventurous' ); ?></a></h3>
@@ -814,7 +818,7 @@ function adventurous_theme_options_do_page() {
                                     <p><small><?php _e( 'Leave empty if you want to remove headline.', 'adventurous' ); ?></small></p>
                                 </div>
                                 <div class="col col-2">
-                                	<textarea class="textarea input-bg" name="adventurous_options[homepage_featured_headline]" cols="70" rows="3"><?php echo esc_textarea( $options[ 'homepage_featured_headline' ] ); ?></textarea>
+                                	<textarea class="textarea input-bg" name="adventurous_options[homepage_featured_headline]" cols="70" rows="3"><?php echo esc_textarea( $options['homepage_featured_headline'] ); ?></textarea>
                              	</div>
                           	</div><!-- .row -->
                             <div class="row">
@@ -823,7 +827,7 @@ function adventurous_theme_options_do_page() {
                                     <p><small><?php _e( 'Leave empty if you want to remove Subheadline', 'adventurous' ); ?></small></p>
                                 </div>
                                 <div class="col col-2">
-                                	<textarea class="textarea input-bg" name="adventurous_options[homepage_featured_subheadline]" cols="70" rows="3"><?php echo esc_textarea( $options[ 'homepage_featured_subheadline' ] ); ?></textarea>
+                                	<textarea class="textarea input-bg" name="adventurous_options[homepage_featured_subheadline]" cols="70" rows="3"><?php echo esc_textarea( $options['homepage_featured_subheadline'] ); ?></textarea>
                              	</div>
                           	</div><!-- .row -->
                             <div class="row">
@@ -831,7 +835,7 @@ function adventurous_theme_options_do_page() {
                                 	<?php _e( 'Number of Featured Content', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                	<input type="text" size="2" name="adventurous_options[homepage_featured_qty]" value="<?php echo intval( $options[ 'homepage_featured_qty' ] ); ?>" size="2" />
+                                	<input type="text" size="2" name="adventurous_options[homepage_featured_qty]" value="<?php echo intval( $options['homepage_featured_qty'] ); ?>" size="2" />
                              	</div>
                           	</div><!-- .row -->
                             <div class="row">
@@ -863,7 +867,7 @@ function adventurous_theme_options_do_page() {
                         <div class="option-content inside">
 
 
-							<?php for ( $i = 1; $i <= $options[ 'homepage_featured_qty' ]; $i++ ): ?>
+							<?php for ( $i = 1; $i <= $options['homepage_featured_qty']; $i++ ): ?>
                                 <div class="repeat-content-wrap">
                                     <h2 class="title"><?php printf( esc_attr__( 'Featured Content #%s', 'adventurous' ), $i ); ?></h2>
                                     <div class="row">
@@ -871,7 +875,7 @@ function adventurous_theme_options_do_page() {
                                             <?php _e( 'Image', 'adventurous' ); ?>
                                         </div>
                                         <div class="col col-2">
-                                            <input class="upload-url" size="70" type="text" name="adventurous_options[homepage_featured_image][<?php echo $i; ?>]" value="<?php if( array_key_exists( 'homepage_featured_image', $options ) && array_key_exists( $i, $options[ 'homepage_featured_image' ] ) ) echo esc_url( $options[ 'homepage_featured_image' ][ $i ] ); ?>" />
+                                            <input class="upload-url" size="70" type="text" name="adventurous_options[homepage_featured_image][<?php echo $i; ?>]" value="<?php if( array_key_exists( 'homepage_featured_image', $options ) && array_key_exists( $i, $options['homepage_featured_image'] ) ) echo esc_url( $options['homepage_featured_image'][ $i ] ); ?>" />
                                             <input ref="<?php esc_attr_e( 'Insert Image','adventurous' );?>" class="adventurous_upload_image button" name="wsl-image-add" type="button" value="<?php esc_attr_e( 'Change Image','adventurous' );?>" />
                                         </div>
                                     </div><!-- .row -->
@@ -880,7 +884,7 @@ function adventurous_theme_options_do_page() {
                                             <?php _e( 'Link URL', 'adventurous' ); ?>
                                         </div>
                                         <div class="col col-2">
-                                            <input type="text" size="70" name="adventurous_options[homepage_featured_url][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'homepage_featured_url', $options ) && array_key_exists( $i, $options[ 'homepage_featured_url' ] ) ) echo esc_url( $options[ 'homepage_featured_url' ][ $i ] ); ?>" /> <?php _e( 'Add in the Target URL for the content', 'adventurous' ); ?>
+                                            <input type="text" size="70" name="adventurous_options[homepage_featured_url][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'homepage_featured_url', $options ) && array_key_exists( $i, $options['homepage_featured_url'] ) ) echo esc_url( $options['homepage_featured_url'][ $i ] ); ?>" /> <?php _e( 'Add in the Target URL for the content', 'adventurous' ); ?>
                                         </div>
                                     </div><!-- .row -->
                                     <div class="row">
@@ -889,7 +893,7 @@ function adventurous_theme_options_do_page() {
                                         </div>
                                         <div class="col col-2">
                                             <input type='hidden' value='0' name='adventurous_options[homepage_featured_base][<?php echo absint( $i ); ?>]'>
-                                            <input type="checkbox" name="adventurous_options[homepage_featured_base][<?php echo absint( $i ); ?>]" value="1" <?php if( array_key_exists( 'homepage_featured_base', $options ) && array_key_exists( $i, $options[ 'homepage_featured_base' ] ) ) checked( '1', $options[ 'homepage_featured_base' ][ $i ] ); ?> /> <?php _e( 'Check to open in new window', 'adventurous' ); ?>
+                                            <input type="checkbox" name="adventurous_options[homepage_featured_base][<?php echo absint( $i ); ?>]" value="1" <?php if( array_key_exists( 'homepage_featured_base', $options ) && array_key_exists( $i, $options['homepage_featured_base'] ) ) checked( '1', $options['homepage_featured_base'][ $i ] ); ?> /> <?php _e( 'Check to open in new window', 'adventurous' ); ?>
                                         </div>
                                     </div><!-- .row -->
                                     <div class="row">
@@ -897,7 +901,7 @@ function adventurous_theme_options_do_page() {
                                             <?php _e( 'Title', 'adventurous' ); ?>
                                         </div>
                                         <div class="col col-2">
-                                            <input type="text" size="70" name="adventurous_options[homepage_featured_title][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'homepage_featured_title', $options ) && array_key_exists( $i, $options[ 'homepage_featured_title' ] ) ) echo esc_attr( $options[ 'homepage_featured_title' ][ $i ] ); ?>" /> <?php _e( 'Leave empty if you want to remove title', 'adventurous' ); ?>
+                                            <input type="text" size="70" name="adventurous_options[homepage_featured_title][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'homepage_featured_title', $options ) && array_key_exists( $i, $options['homepage_featured_title'] ) ) echo esc_attr( $options['homepage_featured_title'][ $i ] ); ?>" /> <?php _e( 'Leave empty if you want to remove title', 'adventurous' ); ?>
                                         </div>
                                     </div><!-- .row -->
                                     <div class="row">
@@ -906,7 +910,7 @@ function adventurous_theme_options_do_page() {
                                              <p><small><?php _e( 'The appropriate length for Content is around 10 words.', 'adventurous' ); ?></small></p>
                                         </div>
                                         <div class="col col-2">
-                                            <textarea class="textarea input-bg" name="adventurous_options[homepage_featured_content][<?php echo absint( $i ); ?>]" cols="70" rows="3"><?php if( array_key_exists( 'homepage_featured_content', $options ) && array_key_exists( $i, $options[ 'homepage_featured_content' ] ) ) echo esc_html( $options[ 'homepage_featured_content' ][ $i ] ); ?></textarea>
+                                            <textarea class="textarea input-bg" name="adventurous_options[homepage_featured_content][<?php echo absint( $i ); ?>]" cols="70" rows="3"><?php if( array_key_exists( 'homepage_featured_content', $options ) && array_key_exists( $i, $options['homepage_featured_content'] ) ) echo esc_html( $options['homepage_featured_content'][ $i ] ); ?></textarea>
                                         </div>
                                     </div><!-- .row -->
                                 </div><!-- .repeat-content-wrap -->
@@ -978,7 +982,7 @@ function adventurous_theme_options_do_page() {
                                 	<?php _e( 'Number of Slides', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                	<input type="text" name="adventurous_options[slider_qty]" value="<?php echo intval( $options[ 'slider_qty' ] ); ?>" size="2" />
+                                	<input type="text" name="adventurous_options[slider_qty]" value="<?php echo intval( $options['slider_qty'] ); ?>" size="2" />
                              	</div>
                           	</div><!-- .row -->
                          	<div class="row">
@@ -1006,7 +1010,7 @@ function adventurous_theme_options_do_page() {
                                 	<?php _e( 'Transition Delay', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" name="adventurous_options[transition_delay]" value="<?php echo intval( $options[ 'transition_delay' ] ); ?>" size="2" />
+                                    <input type="text" name="adventurous_options[transition_delay]" value="<?php echo intval( $options['transition_delay'] ); ?>" size="2" />
                          			<span class="description"><?php _e( 'second(s)', 'adventurous' ); ?></span>
                              	</div>
                           	</div><!-- .row -->
@@ -1015,7 +1019,7 @@ function adventurous_theme_options_do_page() {
                                 	<?php _e( 'Transition Length', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" name="adventurous_options[transition_duration]" value="<?php echo intval( $options[ 'transition_duration' ] ); ?>" size="2" />
+                                    <input type="text" name="adventurous_options[transition_duration]" value="<?php echo intval( $options['transition_duration'] ); ?>" size="2" />
                                  	<span class="description"><?php _e( 'second(s)', 'adventurous' ); ?></span>
                              	</div>
                           	</div><!-- .row -->
@@ -1038,15 +1042,15 @@ function adventurous_theme_options_do_page() {
                                     <input type="checkbox" id="headerlogo" name="adventurous_options[exclude_slider_post]" value="1" <?php checked( '1', $options['exclude_slider_post'] ); ?> /> <?php _e('Check to exclude', 'adventurous'); ?>
                              	</div>
                           	</div><!-- .row -->
-                            <?php for ( $i = 1; $i <= $options[ 'slider_qty' ]; $i++ ): ?>
+                            <?php for ( $i = 1; $i <= $options['slider_qty']; $i++ ): ?>
                                 <div class="repeat-content-wrap">
                                     <div class="row">
                                         <div class="col col-1">
                                             <?php printf( esc_attr__( 'Featured Post Slider #%s', 'adventurous' ), $i ); ?>
                                         </div>
                                         <div class="col col-2">
-                                            <input type="text" name="adventurous_options[featured_slider][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'featured_slider', $options ) && array_key_exists( $i, $options[ 'featured_slider' ] ) ) echo absint( $options[ 'featured_slider' ][ $i ] ); ?>" />
-                                        <a href="<?php bloginfo ( 'url' );?>/wp-admin/post.php?post=<?php if( array_key_exists ( 'featured_slider', $options ) && array_key_exists ( $i, $options[ 'featured_slider' ] ) ) echo absint( $options[ 'featured_slider' ][ $i ] ); ?>&action=edit" class="button" title="<?php esc_attr_e('Click Here To Edit', 'adventurous' ); ?>" target="_blank"><?php _e( 'Click Here To Edit', 'adventurous' ); ?></a>
+                                            <input type="text" name="adventurous_options[featured_slider][<?php echo absint( $i ); ?>]" value="<?php if( array_key_exists( 'featured_slider', $options ) && array_key_exists( $i, $options['featured_slider'] ) ) echo absint( $options['featured_slider'][ $i ] ); ?>" />
+                                        <a href="<?php bloginfo ( 'url' );?>/wp-admin/post.php?post=<?php if( array_key_exists ( 'featured_slider', $options ) && array_key_exists ( $i, $options['featured_slider'] ) ) echo absint( $options['featured_slider'][ $i ] ); ?>&action=edit" class="button" title="<?php esc_attr_e('Click Here To Edit', 'adventurous' ); ?>" target="_blank"><?php _e( 'Click Here To Edit', 'adventurous' ); ?></a>
                                         </div>
                                     </div><!-- .row -->
                                 </div><!-- .repeat-content-wrap -->
@@ -1072,8 +1076,8 @@ function adventurous_theme_options_do_page() {
                                     <select name="adventurous_options[slider_category][]" id="frontpage_posts_cats" multiple="multiple" class="select-multiple">
                                         <option value="0" <?php if ( empty( $options['slider_category'] ) ) { selected( true, true ); } ?>><?php _e( '--Disabled--', 'adventurous' ); ?></option>
                                         <?php /* Get the list of categories */
-                                            if( empty( $options[ 'slider_category' ] ) ) {
-                                                $options[ 'slider_category' ] = array();
+                                            if( empty( $options['slider_category'] ) ) {
+                                                $options['slider_category'] = array();
                                             }
                                             $categories = get_categories();
                                             foreach ( $categories as $category) :
@@ -1106,7 +1110,7 @@ function adventurous_theme_options_do_page() {
                                     <?php _e( 'Facebook', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="adventurous_options[social_facebook]" value="<?php echo esc_url( $options[ 'social_facebook' ] ); ?>" />
+                                    <input type="text" size="45" name="adventurous_options[social_facebook]" value="<?php echo esc_url( $options['social_facebook'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1138,7 +1142,7 @@ function adventurous_theme_options_do_page() {
                                     <?php _e( 'Youtube', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="adventurous_options[social_youtube]" value="<?php echo esc_url( $options[ 'social_youtube' ] ); ?>" />
+                                    <input type="text" size="45" name="adventurous_options[social_youtube]" value="<?php echo esc_url( $options['social_youtube'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1146,7 +1150,7 @@ function adventurous_theme_options_do_page() {
                                     <?php _e( 'Vimeo', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="adventurous_options[social_vimeo]" value="<?php echo esc_url( $options[ 'social_vimeo' ] ); ?>" />
+                                    <input type="text" size="45" name="adventurous_options[social_vimeo]" value="<?php echo esc_url( $options['social_vimeo'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
 							<div class="row">
@@ -1170,7 +1174,7 @@ function adventurous_theme_options_do_page() {
                                     <?php _e( 'Foursquare', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="adventurous_options[social_foursquare]" value="<?php echo esc_url( $options[ 'social_foursquare' ] ); ?>" />
+                                    <input type="text" size="45" name="adventurous_options[social_foursquare]" value="<?php echo esc_url( $options['social_foursquare'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1178,7 +1182,7 @@ function adventurous_theme_options_do_page() {
                                     <?php _e( 'Flickr', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="adventurous_options[social_flickr]" value="<?php echo esc_url( $options[ 'social_flickr' ] ); ?>" />
+                                    <input type="text" size="45" name="adventurous_options[social_flickr]" value="<?php echo esc_url( $options['social_flickr'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1186,7 +1190,7 @@ function adventurous_theme_options_do_page() {
                                     <?php _e( 'Tumblr', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="adventurous_options[social_tumblr]" value="<?php echo esc_url( $options[ 'social_tumblr' ] ); ?>" />
+                                    <input type="text" size="45" name="adventurous_options[social_tumblr]" value="<?php echo esc_url( $options['social_tumblr'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1194,7 +1198,7 @@ function adventurous_theme_options_do_page() {
                                     <?php _e( 'deviantART', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="adventurous_options[social_deviantart]" value="<?php echo esc_url( $options[ 'social_deviantart' ] ); ?>" />
+                                    <input type="text" size="45" name="adventurous_options[social_deviantart]" value="<?php echo esc_url( $options['social_deviantart'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1202,7 +1206,7 @@ function adventurous_theme_options_do_page() {
                                     <?php _e( 'Dribbble', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="adventurous_options[social_dribbble]" value="<?php echo esc_url( $options[ 'social_dribbble' ] ); ?>" />
+                                    <input type="text" size="45" name="adventurous_options[social_dribbble]" value="<?php echo esc_url( $options['social_dribbble'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1210,7 +1214,7 @@ function adventurous_theme_options_do_page() {
                                     <?php _e( 'MySpace', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="adventurous_options[social_myspace]" value="<?php echo esc_url( $options[ 'social_myspace' ] ); ?>" />
+                                    <input type="text" size="45" name="adventurous_options[social_myspace]" value="<?php echo esc_url( $options['social_myspace'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1218,7 +1222,7 @@ function adventurous_theme_options_do_page() {
                                     <?php _e( 'WordPress', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="adventurous_options[social_wordpress]" value="<?php echo esc_url( $options[ 'social_wordpress' ] ); ?>" />
+                                    <input type="text" size="45" name="adventurous_options[social_wordpress]" value="<?php echo esc_url( $options['social_wordpress'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1226,7 +1230,7 @@ function adventurous_theme_options_do_page() {
                                     <?php _e( 'RSS', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="adventurous_options[social_rss]" value="<?php echo esc_url( $options[ 'social_rss' ] ); ?>" />
+                                    <input type="text" size="45" name="adventurous_options[social_rss]" value="<?php echo esc_url( $options['social_rss'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1234,7 +1238,7 @@ function adventurous_theme_options_do_page() {
                                     <?php _e( 'Delicious', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="adventurous_options[social_delicious]" value="<?php echo esc_url( $options[ 'social_delicious' ] ); ?>" />
+                                    <input type="text" size="45" name="adventurous_options[social_delicious]" value="<?php echo esc_url( $options['social_delicious'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1242,7 +1246,7 @@ function adventurous_theme_options_do_page() {
                                     <?php _e( 'Last.fm', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="adventurous_options[social_lastfm]" value="<?php echo esc_url( $options[ 'social_lastfm' ] ); ?>" />
+                                    <input type="text" size="45" name="adventurous_options[social_lastfm]" value="<?php echo esc_url( $options['social_lastfm'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1250,7 +1254,7 @@ function adventurous_theme_options_do_page() {
                                     <?php _e( 'Instagram', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="adventurous_options[social_instagram]" value="<?php echo esc_url( $options[ 'social_instagram' ] ); ?>" />
+                                    <input type="text" size="45" name="adventurous_options[social_instagram]" value="<?php echo esc_url( $options['social_instagram'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1258,7 +1262,7 @@ function adventurous_theme_options_do_page() {
                                     <?php _e( 'GitHub', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="adventurous_options[social_github]" value="<?php echo esc_url( $options[ 'social_github' ] ); ?>" />
+                                    <input type="text" size="45" name="adventurous_options[social_github]" value="<?php echo esc_url( $options['social_github'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1274,7 +1278,7 @@ function adventurous_theme_options_do_page() {
                                     <?php _e( 'My World', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="adventurous_options[social_myworld]" value="<?php echo esc_url( $options[ 'social_myworld' ] ); ?>" />
+                                    <input type="text" size="45" name="adventurous_options[social_myworld]" value="<?php echo esc_url( $options['social_myworld'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1282,7 +1286,7 @@ function adventurous_theme_options_do_page() {
                                     <?php _e( 'Odnoklassniki', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="adventurous_options[social_odnoklassniki]" value="<?php echo esc_url( $options[ 'social_odnoklassniki' ] ); ?>" />
+                                    <input type="text" size="45" name="adventurous_options[social_odnoklassniki]" value="<?php echo esc_url( $options['social_odnoklassniki'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1290,7 +1294,7 @@ function adventurous_theme_options_do_page() {
                                     <?php _e( 'Goodreads', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="adventurous_options[social_goodreads]" value="<?php echo esc_url( $options[ 'social_goodreads' ] ); ?>" />
+                                    <input type="text" size="45" name="adventurous_options[social_goodreads]" value="<?php echo esc_url( $options['social_goodreads'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1298,7 +1302,7 @@ function adventurous_theme_options_do_page() {
                                     <?php _e( 'Skype', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="adventurous_options[social_skype]" value="<?php echo esc_attr( $options[ 'social_skype' ] ); ?>" />
+                                    <input type="text" size="45" name="adventurous_options[social_skype]" value="<?php echo esc_attr( $options['social_skype'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1306,7 +1310,7 @@ function adventurous_theme_options_do_page() {
                                     <?php _e( 'Soundcloud', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="adventurous_options[social_soundcloud]" value="<?php echo esc_url( $options[ 'social_soundcloud' ] ); ?>" />
+                                    <input type="text" size="45" name="adventurous_options[social_soundcloud]" value="<?php echo esc_url( $options['social_soundcloud'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1314,7 +1318,7 @@ function adventurous_theme_options_do_page() {
                                     <?php _e( 'Email', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="adventurous_options[social_email]" value="<?php echo sanitize_email( $options[ 'social_email' ] ); ?>" />
+                                    <input type="text" size="45" name="adventurous_options[social_email]" value="<?php echo sanitize_email( $options['social_email'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1322,7 +1326,7 @@ function adventurous_theme_options_do_page() {
                                     <?php _e( 'Contact', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="adventurous_options[social_contact]" value="<?php echo esc_url( $options[ 'social_contact' ] ); ?>" />
+                                    <input type="text" size="45" name="adventurous_options[social_contact]" value="<?php echo esc_url( $options['social_contact'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1330,7 +1334,7 @@ function adventurous_theme_options_do_page() {
                                     <?php _e( 'Xing', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="adventurous_options[social_xing]" value="<?php echo esc_url( $options[ 'social_xing' ] ); ?>" />
+                                    <input type="text" size="45" name="adventurous_options[social_xing]" value="<?php echo esc_url( $options['social_xing'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1338,7 +1342,7 @@ function adventurous_theme_options_do_page() {
                                     <?php _e( 'Meetup', 'adventurous' ); ?>
                                 </div>
                                 <div class="col col-2">
-                                    <input type="text" size="45" name="adventurous_options[social_meetup]" value="<?php echo esc_url( $options[ 'social_meetup' ] ); ?>" />
+                                    <input type="text" size="45" name="adventurous_options[social_meetup]" value="<?php echo esc_url( $options['social_meetup'] ); ?>" />
                                 </div>
                             </div><!-- .row -->
                             <div class="row">
@@ -1371,102 +1375,102 @@ function adventurous_theme_options_validate( $options ) {
     $input = array();
     $input = $options;
 
-	// Data Validation for Favicon
-	if ( isset( $input[ 'fav_icon' ] ) ) {
-		$input_validated[ 'fav_icon' ] = esc_url_raw( $input[ 'fav_icon' ] );
+	if( 1 == $input['reset_all_settings'] ) {
+        return $defaults;
+    }
+
+    // Data Validation for Favicon
+	if ( isset( $input['fav_icon'] ) ) {
+		$input_validated['fav_icon'] = esc_url_raw( $input['fav_icon'] );
 	}
 	if ( isset( $input['remove_favicon'] ) ) {
 		// Our checkbox value is either 0 or 1
-		$input_validated[ 'remove_favicon' ] = $input[ 'remove_favicon' ];
+		$input_validated['remove_favicon'] = $input['remove_favicon'];
 	}
 
 	// Data Validation for web clip icon
-	if ( isset( $input[ 'web_clip' ] ) ) {
-		$input_validated[ 'web_clip' ] = esc_url_raw( $input[ 'web_clip' ] );
+	if ( isset( $input['web_clip'] ) ) {
+		$input_validated['web_clip'] = esc_url_raw( $input['web_clip'] );
 	}
 	if ( isset( $input['remove_web_clip'] ) ) {
 		// Our checkbox value is either 0 or 1
-		$input_validated[ 'remove_web_clip' ] = $input[ 'remove_web_clip' ];
+		$input_validated['remove_web_clip'] = $input['remove_web_clip'];
 	}
 
 	// Data Validation for Logo
 	if ( isset( $input['remove_header_logo'] ) ) {
 		// Our checkbox value is either 0 or 1
-		$input_validated[ 'remove_header_logo' ] = $input[ 'remove_header_logo' ];
+		$input_validated['remove_header_logo'] = $input['remove_header_logo'];
 	}
-	if ( isset( $input[ 'featured_logo_header' ] ) ) {
-		$input_validated[ 'featured_logo_header' ] = esc_url_raw( $input[ 'featured_logo_header' ] );
+	if ( isset( $input['featured_logo_header'] ) ) {
+		$input_validated['featured_logo_header'] = esc_url_raw( $input['featured_logo_header'] );
 	}
 
 	// Data Validation for Promotion
 	if ( isset( $input['enable_promotion'] ) ) {
-		$input_validated[ 'enable_promotion' ] = $input[ 'enable_promotion' ];
+		$input_validated['enable_promotion'] = $input['enable_promotion'];
 	}
-	if( isset( $input[ 'homepage_headline' ] ) ) {
-		$input_validated['homepage_headline'] =  wp_kses_post( $input[ 'homepage_headline' ] );
+	if( isset( $input['homepage_headline'] ) ) {
+		$input_validated['homepage_headline'] =  wp_kses_post( $input['homepage_headline'] );
 	}
-	if( isset( $input[ 'homepage_subheadline' ] ) ) {
-		$input_validated['homepage_subheadline'] =  wp_kses_post( $input[ 'homepage_subheadline' ] );
+	if( isset( $input['homepage_subheadline'] ) ) {
+		$input_validated['homepage_subheadline'] =  wp_kses_post( $input['homepage_subheadline'] );
 	}
-	if( isset( $input[ 'homepage_headline_button' ] ) ) {
-		$input_validated['homepage_headline_button'] =  sanitize_text_field( $input[ 'homepage_headline_button' ] );
+	if( isset( $input['homepage_headline_button'] ) ) {
+		$input_validated['homepage_headline_button'] =  sanitize_text_field( $input['homepage_headline_button'] );
 	}
-	if( isset( $input[ 'homepage_headline_url' ] ) ) {
-		$input_validated['homepage_headline_url'] =  esc_url_raw( $input[ 'homepage_headline_url' ] );
+	if( isset( $input['homepage_headline_url'] ) ) {
+		$input_validated['homepage_headline_url'] =  esc_url_raw( $input['homepage_headline_url'] );
 	}
-	if ( isset( $input[ 'homepage_headline_target' ] ) ) {
-		$input_validated[ 'homepage_headline_target' ] = $input[ 'homepage_headline_target' ];
+	if ( isset( $input['homepage_headline_target'] ) ) {
+		$input_validated['homepage_headline_target'] = $input['homepage_headline_target'];
 	}
-	if ( isset( $input[ 'disable_homepage_headline' ] ) ) {
-		$input_validated[ 'disable_homepage_headline' ] = $input[ 'disable_homepage_headline' ];
+	if ( isset( $input['disable_homepage_headline'] ) ) {
+		$input_validated['disable_homepage_headline'] = $input['disable_homepage_headline'];
 	}
-	if ( isset( $input[ 'disable_homepage_subheadline' ] ) ) {
-		$input_validated[ 'disable_homepage_subheadline' ] = $input[ 'disable_homepage_subheadline' ];
+	if ( isset( $input['disable_homepage_subheadline'] ) ) {
+		$input_validated['disable_homepage_subheadline'] = $input['disable_homepage_subheadline'];
 	}
-	if ( isset( $input[ 'disable_homepage_button' ] ) ) {
-		$input_validated[ 'disable_homepage_button' ] = $input[ 'disable_homepage_button' ];
+	if ( isset( $input['disable_homepage_button'] ) ) {
+		$input_validated['disable_homepage_button'] = $input['disable_homepage_button'];
 	}
 
 	// Data Validation for Header Sidebar
-	if ( isset( $input[ 'disable_header_right_sidebar' ] ) ) {
-		$input_validated[ 'disable_header_right_sidebar' ] = $input[ 'disable_header_right_sidebar' ];
+	if ( isset( $input['disable_header_right_sidebar'] ) ) {
+		$input_validated['disable_header_right_sidebar'] = $input['disable_header_right_sidebar'];
 	}
 
 	// Data validation for Large Header Image
-	if ( isset( $input[ 'enable_featured_header_image' ] ) ) {
-		$input_validated[ 'enable_featured_header_image' ] = $input[ 'enable_featured_header_image' ];
+	if ( isset( $input['enable_featured_header_image'] ) ) {
+		$input_validated['enable_featured_header_image'] = $input['enable_featured_header_image'];
 	}
 	if ( isset( $input['page_featured_image'] ) ) {
-		$input_validated[ 'page_featured_image' ] = $input[ 'page_featured_image' ];
+		$input_validated['page_featured_image'] = $input['page_featured_image'];
 	}
-	if ( isset( $input[ 'featured_header_image' ] ) ) {
-		$input_validated[ 'featured_header_image' ] = esc_url_raw( $input[ 'featured_header_image' ] );
+	if ( isset( $input['featured_header_image'] ) ) {
+		$input_validated['featured_header_image'] = esc_url_raw( $input['featured_header_image'] );
 	}
-	if ( isset( $input[ 'featured_header_image_alt' ] ) ) {
-		$input_validated[ 'featured_header_image_alt' ] = sanitize_text_field( $input[ 'featured_header_image_alt' ] );
+	if ( isset( $input['featured_header_image_alt'] ) ) {
+		$input_validated['featured_header_image_alt'] = sanitize_text_field( $input['featured_header_image_alt'] );
 	}
-	if ( isset( $input[ 'featured_header_image_url' ] ) ) {
-		$input_validated[ 'featured_header_image_url' ] = esc_url_raw( $input[ 'featured_header_image_url' ] );
+	if ( isset( $input['featured_header_image_url'] ) ) {
+		$input_validated['featured_header_image_url'] = esc_url_raw( $input['featured_header_image_url'] );
 	}
 	if ( isset( $input['featured_header_image_base'] ) ) {
 		// Our checkbox value is either 0 or 1
-		$input_validated[ 'featured_header_image_base' ] = $input[ 'featured_header_image_base' ];
-	}
-
-	if ( isset( $input['reset_featured_image'] ) ) {
-		// Our checkbox value is either 0 or 1
-		$input_validated[ 'reset_featured_image' ] = $input[ 'reset_featured_image' ];
+		$input_validated['featured_header_image_base'] = $input['featured_header_image_base'];
 	}
 
 	//Reset Header Featured Image Options
-	if( $input[ 'reset_featured_image' ] == 1 ) {
-		$input_validated[ 'enable_featured_header_image' ] = $defaults[ 'enable_featured_header_image' ];
-		$input_validated[ 'page_featured_image' ] = $defaults[ 'page_featured_image' ];
-		$input_validated[ 'featured_header_image' ] = $defaults[ 'featured_header_image' ];
-		$input_validated[ 'featured_header_image_alt' ] = $defaults[ 'featured_header_image_alt' ];
-		$input_validated[ 'featured_header_image_url' ] = $defaults[ 'featured_header_image_url' ];
-		$input_validated[ 'featured_header_image_base' ] = $defaults[ 'featured_header_image_base' ];
-	}
+	if( 1 == $input['reset_featured_image'] ) {
+        $input_validated['enable_featured_header_image'] = $defaults['enable_featured_header_image'];
+        $input_validated['page_featured_image']          = $defaults['page_featured_image'];
+        $input_validated['featured_header_image']        = $defaults['featured_header_image'];
+        $input_validated['featured_header_image_alt']    = $defaults['featured_header_image_alt'];
+        $input_validated['featured_header_image_url']    = $defaults['featured_header_image_url'];
+        $input_validated['featured_header_image_base']   = $defaults['featured_header_image_base'];
+        $input_validated['reset_featured_image']         = 0;
+    }
 
 	// Data Validation for Custom CSS Style
 	if ( isset( $input['custom_css'] ) ) {
@@ -1478,61 +1482,61 @@ function adventurous_theme_options_validate( $options ) {
 		$input_validated[ 'enable-featured' ] = $input[ 'enable-featured' ];
 	}
 	if ( isset( $input['disable_slider_text'] ) ) {
-   		$input_validated[ 'disable_slider_text' ] = $input[ 'disable_slider_text' ];
+   		$input_validated['disable_slider_text'] = $input['disable_slider_text'];
 
     }
-	if( isset( $input[ 'homepage_featured_headline' ] ) ) {
-		$input_validated['homepage_featured_headline'] =  sanitize_text_field( $input[ 'homepage_featured_headline' ] );
+	if( isset( $input['homepage_featured_headline'] ) ) {
+		$input_validated['homepage_featured_headline'] =  sanitize_text_field( $input['homepage_featured_headline'] );
 	}
-	if( isset( $input[ 'homepage_featured_subheadline' ] ) ) {
-		$input_validated['homepage_featured_subheadline'] =  sanitize_text_field( $input[ 'homepage_featured_subheadline' ] );
+	if( isset( $input['homepage_featured_subheadline'] ) ) {
+		$input_validated['homepage_featured_subheadline'] =  sanitize_text_field( $input['homepage_featured_subheadline'] );
 	}
-	if ( isset( $input[ 'homepage_featured_image' ] ) ) {
-		$input_validated[ 'homepage_featured_image' ] = array();
+	if ( isset( $input['homepage_featured_image'] ) ) {
+		$input_validated['homepage_featured_image'] = array();
 	}
-	if ( isset( $input[ 'homepage_featured_url' ] ) ) {
-		$input_validated[ 'homepage_featured_url' ] = array();
+	if ( isset( $input['homepage_featured_url'] ) ) {
+		$input_validated['homepage_featured_url'] = array();
 	}
-	if ( isset( $input[ 'homepage_featured_base' ] ) ) {
-		$input_validated[ 'homepage_featured_base' ] = array();
+	if ( isset( $input['homepage_featured_base'] ) ) {
+		$input_validated['homepage_featured_base'] = array();
 	}
-	if ( isset( $input[ 'homepage_featured_title' ] ) ) {
-		$input_validated[ 'homepage_featured_title' ] = array();
+	if ( isset( $input['homepage_featured_title'] ) ) {
+		$input_validated['homepage_featured_title'] = array();
 	}
-	if ( isset( $input[ 'homepage_featured_content' ] ) ) {
-		$input_validated[ 'homepage_featured_content' ] = array();
+	if ( isset( $input['homepage_featured_content'] ) ) {
+		$input_validated['homepage_featured_content'] = array();
 	}
-	if( isset( $input[ 'homepage_featured_layout' ] ) ) {
-		$input_validated[ 'homepage_featured_layout' ] = $input[ 'homepage_featured_layout' ];
+	if( isset( $input['homepage_featured_layout'] ) ) {
+		$input_validated['homepage_featured_layout'] = $input['homepage_featured_layout'];
 	}
-	if ( isset( $input[ 'homepage_featured_qty' ] ) ) {
-		$input_validated[ 'homepage_featured_qty' ] = absint( $input[ 'homepage_featured_qty' ] );
+	if ( isset( $input['homepage_featured_qty'] ) ) {
+		$input_validated['homepage_featured_qty'] = absint( $input['homepage_featured_qty'] );
 		for ( $i = 1; $i <= $input [ 'homepage_featured_qty' ]; $i++ ) {
-			if ( !empty( $input[ 'homepage_featured_image' ][ $i ] ) ) {
-				$input_validated[ 'homepage_featured_image' ][ $i ] = esc_url_raw($input[ 'homepage_featured_image' ][ $i ] );
+			if ( !empty( $input['homepage_featured_image'][ $i ] ) ) {
+				$input_validated['homepage_featured_image'][ $i ] = esc_url_raw($input['homepage_featured_image'][ $i ] );
 			}
-			if ( !empty( $input[ 'homepage_featured_url' ][ $i ] ) ) {
+			if ( !empty( $input['homepage_featured_url'][ $i ] ) ) {
 				$input_validated[ 'homepage_featured_url'][ $i ] = esc_url_raw($input[ 'homepage_featured_url'][ $i ]);
 			}
-			if ( !empty( $input[ 'homepage_featured_base' ][ $i ] ) ) {
+			if ( !empty( $input['homepage_featured_base'][ $i ] ) ) {
 				$input_validated[ 'homepage_featured_base'][ $i ] = $input[ 'homepage_featured_base'][ $i ];
 			}
-			if ( !empty( $input[ 'homepage_featured_title' ][ $i ] ) ) {
+			if ( !empty( $input['homepage_featured_title'][ $i ] ) ) {
 				$input_validated[ 'homepage_featured_title'][ $i ] = sanitize_text_field($input[ 'homepage_featured_title'][ $i ]);
 			}
-			if ( !empty( $input[ 'homepage_featured_content' ][ $i ] ) ) {
+			if ( !empty( $input['homepage_featured_content'][ $i ] ) ) {
 				$input_validated[ 'homepage_featured_content'][ $i ] = wp_kses_stripslashes($input[ 'homepage_featured_content'][ $i ]);
 			}
 		}
 	}
 
 	// Data Validation for Homepage
-	if ( isset( $input[ 'enable_posts_home' ] ) ) {
-		$input_validated[ 'enable_posts_home' ] = $input[ 'enable_posts_home' ];
+	if ( isset( $input['enable_posts_home'] ) ) {
+		$input_validated['enable_posts_home'] = $input['enable_posts_home'];
 	}
     if ( isset( $input['exclude_slider_post'] ) ) {
         // Our checkbox value is either 0 or 1
-   		$input_validated[ 'exclude_slider_post' ] = $input[ 'exclude_slider_post' ];
+   		$input_validated['exclude_slider_post'] = $input['exclude_slider_post'];
 
     }
 	// Front page posts categories
@@ -1541,197 +1545,191 @@ function adventurous_theme_options_validate( $options ) {
     }
 
 	// data validation for Slider Type
-	if( isset( $input[ 'select_slider_type' ] ) ) {
-		$input_validated[ 'select_slider_type' ] = $input[ 'select_slider_type' ];
+	if( isset( $input['select_slider_type'] ) ) {
+		$input_validated['select_slider_type'] = $input['select_slider_type'];
 	}
 	// data validation for Enable Slider
-	if( isset( $input[ 'enable_slider' ] ) ) {
-		$input_validated[ 'enable_slider' ] = $input[ 'enable_slider' ];
+	if( isset( $input['enable_slider'] ) ) {
+		$input_validated['enable_slider'] = $input['enable_slider'];
 	}
     // data validation for number of slides
-	if ( isset( $input[ 'slider_qty' ] ) ) {
-		$input_validated[ 'slider_qty' ] = absint( $input[ 'slider_qty' ] ) ? $input [ 'slider_qty' ] : 4;
+	if ( isset( $input['slider_qty'] ) ) {
+		$input_validated['slider_qty'] = absint( $input['slider_qty'] ) ? $input [ 'slider_qty' ] : 4;
 	}
     // data validation for transition effect
-    if( isset( $input[ 'transition_effect' ] ) ) {
+    if( isset( $input['transition_effect'] ) ) {
         $input_validated['transition_effect'] = wp_filter_nohtml_kses( $input['transition_effect'] );
     }
     // data validation for transition delay
-	if ( isset( $input[ 'transition_delay' ] ) ) {
-		$input_validated[ 'transition_delay' ] = absint( $input[ 'transition_delay' ] ) ? $input [ 'transition_delay' ] : 4;
+	if ( isset( $input['transition_delay'] ) ) {
+		$input_validated['transition_delay'] = absint( $input['transition_delay'] ) ? $input [ 'transition_delay' ] : 4;
 	}
     // data validation for transition length
-	if ( isset( $input[ 'transition_duration' ] ) ) {
-		$input_validated[ 'transition_duration' ] = absint( $input[ 'transition_duration' ] ) ? $input [ 'transition_duration' ] : 1;
+	if ( isset( $input['transition_duration'] ) ) {
+		$input_validated['transition_duration'] = absint( $input['transition_duration'] ) ? $input [ 'transition_duration' ] : 1;
 	}
 
 	// data validation for Featured Post Slider
-	if ( isset( $input[ 'featured_slider' ] ) ) {
-		$input_validated[ 'featured_slider' ] = array();
+	if ( isset( $input['featured_slider'] ) ) {
+		$input_validated['featured_slider'] = array();
 	}
- 	if ( isset( $input[ 'slider_qty' ] ) )	{
+ 	if ( isset( $input['slider_qty'] ) )	{
 		for ( $i = 1; $i <= $input [ 'slider_qty' ]; $i++ ) {
-			if ( !empty( $input[ 'featured_slider' ][ $i ] ) && intval( $input[ 'featured_slider' ][ $i ] ) ) {
-				$input_validated[ 'featured_slider' ][ $i ] = absint($input[ 'featured_slider' ][ $i ] );
+			if ( !empty( $input['featured_slider'][ $i ] ) && intval( $input['featured_slider'][ $i ] ) ) {
+				$input_validated['featured_slider'][ $i ] = absint($input['featured_slider'][ $i ] );
 			}
 		}
 	}
 
 	//Featured Category Slider
 	if ( isset( $input['slider_category'] ) ) {
-		$input_validated[ 'slider_category' ] = $input[ 'slider_category' ];
+		$input_validated['slider_category'] = $input['slider_category'];
 	}
 
     // Data Validation for Disable Scroll Up
     if ( isset( $input['disable_scrollup'] ) ) {
         // Our checkbox value is either 0 or 1
-        $input_validated[ 'disable_scrollup' ] = $input[ 'disable_scrollup' ];
+        $input_validated['disable_scrollup'] = $input['disable_scrollup'];
     }
 
 	// data validation for Social Icons
-	if( isset( $input[ 'social_facebook' ] ) ) {
-		$input_validated[ 'social_facebook' ] = esc_url_raw( $input[ 'social_facebook' ] );
+	if( isset( $input['social_facebook'] ) ) {
+		$input_validated['social_facebook'] = esc_url_raw( $input['social_facebook'] );
 	}
-	if( isset( $input[ 'social_twitter' ] ) ) {
-		$input_validated[ 'social_twitter' ] = esc_url_raw( $input[ 'social_twitter' ] );
+	if( isset( $input['social_twitter'] ) ) {
+		$input_validated['social_twitter'] = esc_url_raw( $input['social_twitter'] );
 	}
-	if( isset( $input[ 'social_googleplus' ] ) ) {
-		$input_validated[ 'social_googleplus' ] = esc_url_raw( $input[ 'social_googleplus' ] );
+	if( isset( $input['social_googleplus'] ) ) {
+		$input_validated['social_googleplus'] = esc_url_raw( $input['social_googleplus'] );
 	}
-	if( isset( $input[ 'social_pinterest' ] ) ) {
-		$input_validated[ 'social_pinterest' ] = esc_url_raw( $input[ 'social_pinterest' ] );
+	if( isset( $input['social_pinterest'] ) ) {
+		$input_validated['social_pinterest'] = esc_url_raw( $input['social_pinterest'] );
 	}
-	if( isset( $input[ 'social_youtube' ] ) ) {
-		$input_validated[ 'social_youtube' ] = esc_url_raw( $input[ 'social_youtube' ] );
+	if( isset( $input['social_youtube'] ) ) {
+		$input_validated['social_youtube'] = esc_url_raw( $input['social_youtube'] );
 	}
-	if( isset( $input[ 'social_vimeo' ] ) ) {
-		$input_validated[ 'social_vimeo' ] = esc_url_raw( $input[ 'social_vimeo' ] );
+	if( isset( $input['social_vimeo'] ) ) {
+		$input_validated['social_vimeo'] = esc_url_raw( $input['social_vimeo'] );
 	}
-	if( isset( $input[ 'social_linkedin' ] ) ) {
-		$input_validated[ 'social_linkedin' ] = esc_url_raw( $input[ 'social_linkedin' ] );
+	if( isset( $input['social_linkedin'] ) ) {
+		$input_validated['social_linkedin'] = esc_url_raw( $input['social_linkedin'] );
 	}
-	if( isset( $input[ 'social_slideshare' ] ) ) {
-		$input_validated[ 'social_slideshare' ] = esc_url_raw( $input[ 'social_slideshare' ] );
+	if( isset( $input['social_slideshare'] ) ) {
+		$input_validated['social_slideshare'] = esc_url_raw( $input['social_slideshare'] );
 	}
-	if( isset( $input[ 'social_foursquare' ] ) ) {
-		$input_validated[ 'social_foursquare' ] = esc_url_raw( $input[ 'social_foursquare' ] );
+	if( isset( $input['social_foursquare'] ) ) {
+		$input_validated['social_foursquare'] = esc_url_raw( $input['social_foursquare'] );
 	}
-	if( isset( $input[ 'social_flickr' ] ) ) {
-		$input_validated[ 'social_flickr' ] = esc_url_raw( $input[ 'social_flickr' ] );
+	if( isset( $input['social_flickr'] ) ) {
+		$input_validated['social_flickr'] = esc_url_raw( $input['social_flickr'] );
 	}
-	if( isset( $input[ 'social_tumblr' ] ) ) {
-		$input_validated[ 'social_tumblr' ] = esc_url_raw( $input[ 'social_tumblr' ] );
+	if( isset( $input['social_tumblr'] ) ) {
+		$input_validated['social_tumblr'] = esc_url_raw( $input['social_tumblr'] );
 	}
-	if( isset( $input[ 'social_deviantart' ] ) ) {
-		$input_validated[ 'social_deviantart' ] = esc_url_raw( $input[ 'social_deviantart' ] );
+	if( isset( $input['social_deviantart'] ) ) {
+		$input_validated['social_deviantart'] = esc_url_raw( $input['social_deviantart'] );
 	}
-	if( isset( $input[ 'social_dribbble' ] ) ) {
-		$input_validated[ 'social_dribbble' ] = esc_url_raw( $input[ 'social_dribbble' ] );
+	if( isset( $input['social_dribbble'] ) ) {
+		$input_validated['social_dribbble'] = esc_url_raw( $input['social_dribbble'] );
 	}
-	if( isset( $input[ 'social_myspace' ] ) ) {
-		$input_validated[ 'social_myspace' ] = esc_url_raw( $input[ 'social_myspace' ] );
+	if( isset( $input['social_myspace'] ) ) {
+		$input_validated['social_myspace'] = esc_url_raw( $input['social_myspace'] );
 	}
-	if( isset( $input[ 'social_wordpress' ] ) ) {
-		$input_validated[ 'social_wordpress' ] = esc_url_raw( $input[ 'social_wordpress' ] );
+	if( isset( $input['social_wordpress'] ) ) {
+		$input_validated['social_wordpress'] = esc_url_raw( $input['social_wordpress'] );
 	}
-	if( isset( $input[ 'social_rss' ] ) ) {
-		$input_validated[ 'social_rss' ] = esc_url_raw( $input[ 'social_rss' ] );
+	if( isset( $input['social_rss'] ) ) {
+		$input_validated['social_rss'] = esc_url_raw( $input['social_rss'] );
 	}
-	if( isset( $input[ 'social_delicious' ] ) ) {
-		$input_validated[ 'social_delicious' ] = esc_url_raw( $input[ 'social_delicious' ] );
+	if( isset( $input['social_delicious'] ) ) {
+		$input_validated['social_delicious'] = esc_url_raw( $input['social_delicious'] );
 	}
-	if( isset( $input[ 'social_lastfm' ] ) ) {
-		$input_validated[ 'social_lastfm' ] = esc_url_raw( $input[ 'social_lastfm' ] );
+	if( isset( $input['social_lastfm'] ) ) {
+		$input_validated['social_lastfm'] = esc_url_raw( $input['social_lastfm'] );
 	}
-	if( isset( $input[ 'social_instagram' ] ) ) {
-		$input_validated[ 'social_instagram' ] = esc_url_raw( $input[ 'social_instagram' ] );
+	if( isset( $input['social_instagram'] ) ) {
+		$input_validated['social_instagram'] = esc_url_raw( $input['social_instagram'] );
 	}
-	if( isset( $input[ 'social_github' ] ) ) {
-		$input_validated[ 'social_github' ] = esc_url_raw( $input[ 'social_github' ] );
+	if( isset( $input['social_github'] ) ) {
+		$input_validated['social_github'] = esc_url_raw( $input['social_github'] );
 	}
-	if( isset( $input[ 'social_vkontakte' ] ) ) {
-		$input_validated[ 'social_vkontakte' ] = esc_url_raw( $input[ 'social_vkontakte' ] );
+	if( isset( $input['social_vkontakte'] ) ) {
+		$input_validated['social_vkontakte'] = esc_url_raw( $input['social_vkontakte'] );
 	}
-	if( isset( $input[ 'social_myworld' ] ) ) {
-		$input_validated[ 'social_myworld' ] = esc_url_raw( $input[ 'social_myworld' ] );
+	if( isset( $input['social_myworld'] ) ) {
+		$input_validated['social_myworld'] = esc_url_raw( $input['social_myworld'] );
 	}
-	if( isset( $input[ 'social_odnoklassniki' ] ) ) {
-		$input_validated[ 'social_odnoklassniki' ] = esc_url_raw( $input[ 'social_odnoklassniki' ] );
+	if( isset( $input['social_odnoklassniki'] ) ) {
+		$input_validated['social_odnoklassniki'] = esc_url_raw( $input['social_odnoklassniki'] );
 	}
-	if( isset( $input[ 'social_goodreads' ] ) ) {
-		$input_validated[ 'social_goodreads' ] = esc_url_raw( $input[ 'social_goodreads' ] );
+	if( isset( $input['social_goodreads'] ) ) {
+		$input_validated['social_goodreads'] = esc_url_raw( $input['social_goodreads'] );
 	}
-	if( isset( $input[ 'social_skype' ] ) ) {
-		$input_validated[ 'social_skype' ] = sanitize_text_field( $input[ 'social_skype' ] );
+	if( isset( $input['social_skype'] ) ) {
+		$input_validated['social_skype'] = sanitize_text_field( $input['social_skype'] );
 	}
-	if( isset( $input[ 'social_soundcloud' ] ) ) {
-		$input_validated[ 'social_soundcloud' ] = esc_url_raw( $input[ 'social_soundcloud' ] );
+	if( isset( $input['social_soundcloud'] ) ) {
+		$input_validated['social_soundcloud'] = esc_url_raw( $input['social_soundcloud'] );
 	}
-	if( isset( $input[ 'social_email' ] ) ) {
-		$input_validated[ 'social_email' ] = sanitize_email( $input[ 'social_email' ] );
+	if( isset( $input['social_email'] ) ) {
+		$input_validated['social_email'] = sanitize_email( $input['social_email'] );
 	}
-	if( isset( $input[ 'social_contact' ] ) ) {
-		$input_validated[ 'social_contact' ] = esc_url_raw( $input[ 'social_contact' ] );
+	if( isset( $input['social_contact'] ) ) {
+		$input_validated['social_contact'] = esc_url_raw( $input['social_contact'] );
 	}
-	if( isset( $input[ 'social_xing' ] ) ) {
-		$input_validated[ 'social_xing' ] = esc_url_raw( $input[ 'social_xing' ] );
+	if( isset( $input['social_xing'] ) ) {
+		$input_validated['social_xing'] = esc_url_raw( $input['social_xing'] );
 	}
-    if( isset( $input[ 'social_meetup' ] ) ) {
-        $input_validated[ 'social_meetup' ] = esc_url_raw( $input[ 'social_meetup' ] );
+    if( isset( $input['social_meetup'] ) ) {
+        $input_validated['social_meetup'] = esc_url_raw( $input['social_meetup'] );
     }
 
     // Layout settings verification
-	if( isset( $input[ 'sidebar_layout' ] ) ) {
-		$input_validated[ 'sidebar_layout' ] = $input[ 'sidebar_layout' ];
+	if( isset( $input['sidebar_layout'] ) ) {
+		$input_validated['sidebar_layout'] = $input['sidebar_layout'];
 	}
-	if( isset( $input[ 'content_layout' ] ) ) {
-		$input_validated[ 'content_layout' ] = $input[ 'content_layout' ];
+	if( isset( $input['content_layout'] ) ) {
+		$input_validated['content_layout'] = $input['content_layout'];
 	}
 
 	//data validation for more text
-    if( isset( $input[ 'more_tag_text' ] ) ) {
-        $input_validated[ 'more_tag_text' ] = sanitize_text_field ( $input[ 'more_tag_text' ] );
+    if( isset( $input['more_tag_text'] ) ) {
+        $input_validated['more_tag_text'] = sanitize_text_field ( $input['more_tag_text'] );
     }
     //data validation for excerpt length
-    if ( isset( $input[ 'excerpt_length' ] ) ) {
-        $input_validated[ 'excerpt_length' ] = absint( $input[ 'excerpt_length' ] );
+    if ( isset( $input['excerpt_length'] ) ) {
+        $input_validated['excerpt_length'] = absint( $input['excerpt_length'] );
     }
-	if ( isset( $input['reset_moretag'] ) ) {
-		// Our checkbox value is either 0 or 1
-		$input_validated[ 'reset_moretag' ] = $input[ 'reset_moretag' ];
-	}
 
 	//Reset More Tag
-	if( $input[ 'reset_moretag' ] == 1 ) {
-		$input_validated[ 'more_tag_text' ] = $defaults[ 'more_tag_text' ];
-		$input_validated[ 'excerpt_length' ] = $defaults[ 'excerpt_length' ];
+	if( 1 == $input['reset_moretag'] ) {
+        $input_validated['more_tag_text']  = $defaults['more_tag_text'];
+        $input_validated['excerpt_length'] = $defaults['excerpt_length'];
+        $input_validated['reset_moretag']  = 0;
 	}
 
 
-    if( isset( $input[ 'search_display_text' ] ) ) {
-        $input_validated[ 'search_display_text' ] = sanitize_text_field( $input[ 'search_display_text' ] );
+    if( isset( $input['search_display_text'] ) ) {
+        $input_validated['search_display_text'] = sanitize_text_field( $input['search_display_text'] );
     }
 
 	// Data Validation for Featured Image
 	if ( isset( $input['featured_image'] ) ) {
-		$input_validated[ 'featured_image' ] = $input[ 'featured_image' ];
-	}
-
-	if ( isset( $input['reset_layout'] ) ) {
-		// Our checkbox value is either 0 or 1
-		$input_validated[ 'reset_layout' ] = $input[ 'reset_layout' ];
+		$input_validated['featured_image'] = $input['featured_image'];
 	}
 
 	//Reset Layout
-	if( $input[ 'reset_layout' ] == 1 ) {
-		$input_validated[ 'sidebar_layout' ] = $defaults[ 'sidebar_layout' ];
-		$input_validated[ 'content_layout' ] = $defaults[ 'content_layout' ];
-		$input_validated[ 'featured_image' ] = $defaults[ 'featured_image' ];
+	if( 1 == $input['reset_layout'] ) {
+        $input_validated['sidebar_layout'] = $defaults['sidebar_layout'];
+        $input_validated['content_layout'] = $defaults['content_layout'];
+        $input_validated['featured_image'] = $defaults['featured_image'];
+        $input_validated['reset_layout']   = 0;
 	}
 
 	//Reset Footer
-	if ( $input[ 'reset_footer' ] == 1 ) {
-		$input_validated[ 'footer_code' ] = $defaults[ 'footer_code' ];
+    if ( 1 == $input['reset_footer'] ) {
+		$input_validated['footer_code'] = $defaults['footer_code'];
+        $input_validated['reset_footer'] = 0;
 	}
 
 	//Clearing the theme option cache

@@ -3,8 +3,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Adventurous\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-23 14:30+0545\n"
+"Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
+"POT-Creation-Date: 2016-12-07 14:16-0500\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Dan Frolec <dan@frolec.cz>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -39,40 +39,6 @@ msgstr "Nejčastější Kategorie"
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
 msgstr "Podívej se do měsíčních archivů. %1$s"
-
-#: ../archive.php:23
-#, php-format
-msgid "Category Archives: %s"
-msgstr "Archiv kategorií %s"
-
-#: ../archive.php:26
-#, php-format
-msgid "Tag Archives: %s"
-msgstr "Archiv štítků %s"
-
-#: ../archive.php:33
-#, php-format
-msgid "Author Archives: %s"
-msgstr "Archiv autora %s"
-
-#: ../archive.php:41
-#, php-format
-msgid "Daily Archives: %s"
-msgstr "Denní archiv %s"
-
-#: ../archive.php:44
-#, php-format
-msgid "Monthly Archives: %s"
-msgstr "Měsíční archiv %s"
-
-#: ../archive.php:47
-#, php-format
-msgid "Yearly Archives: %s"
-msgstr "Roční archiv %s"
-
-#: ../archive.php:50 ../sidebar.php:64
-msgid "Archives"
-msgstr "Archiv"
 
 #: ../comments.php:33
 #, php-format
@@ -180,8 +146,7 @@ msgstr[2] "Tato galerie obsahuje <a %1$s>%2$s fotografií</a>."
 msgid "All Image Posts"
 msgstr "Všechny obrazové příspěvky"
 
-#: ../content-image.php:24 ../inc/panel/adventurous-theme-options.php:871
-#: ../inc/panel/customizer/customizer.php:1228
+#: ../content-image.php:24 ../inc/panel/adventurous-theme-options.php:875
 msgid "Image"
 msgstr "Obrázek"
 
@@ -300,178 +265,153 @@ msgstr "Highway"
 msgid "Buddha"
 msgstr "Buddha"
 
-#: ../inc/adventurous-functions.php:696
+#: ../inc/adventurous-functions.php:704
 #: ../inc/panel/adventurous-theme-options.php:108
-#: ../inc/panel/adventurous-theme-options.php:1106
-#: ../inc/panel/customizer/customizer.php:670
+#: ../inc/panel/adventurous-theme-options.php:1110
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../inc/adventurous-functions.php:701
+#: ../inc/adventurous-functions.php:709
 #: ../inc/panel/adventurous-theme-options.php:109
-#: ../inc/panel/adventurous-theme-options.php:1114
-#: ../inc/panel/customizer/customizer.php:680
+#: ../inc/panel/adventurous-theme-options.php:1118
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../inc/adventurous-functions.php:706
-#: ../inc/panel/adventurous-theme-options.php:1122
-#: ../inc/panel/customizer/customizer.php:690
+#: ../inc/adventurous-functions.php:714
+#: ../inc/panel/adventurous-theme-options.php:1126
 msgid "Google+"
 msgstr "Google+"
 
-#: ../inc/adventurous-functions.php:711
-#: ../inc/panel/customizer/customizer.php:730
+#: ../inc/adventurous-functions.php:719
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: ../inc/adventurous-functions.php:716
-#: ../inc/panel/adventurous-theme-options.php:1130
-#: ../inc/panel/customizer/customizer.php:700
+#: ../inc/adventurous-functions.php:724
+#: ../inc/panel/adventurous-theme-options.php:1134
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../inc/adventurous-functions.php:721
+#: ../inc/adventurous-functions.php:729
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ../inc/adventurous-functions.php:726
-#: ../inc/panel/adventurous-theme-options.php:1146
-#: ../inc/panel/customizer/customizer.php:720
+#: ../inc/adventurous-functions.php:734
+#: ../inc/panel/adventurous-theme-options.php:1150
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../inc/adventurous-functions.php:731
+#: ../inc/adventurous-functions.php:739
 msgid "SlideShare"
 msgstr "SlideShare"
 
-#: ../inc/adventurous-functions.php:736
+#: ../inc/adventurous-functions.php:744
 msgid "FourSquare"
 msgstr "FourSquare"
 
-#: ../inc/adventurous-functions.php:741
-#: ../inc/panel/adventurous-theme-options.php:1178
-#: ../inc/panel/customizer/customizer.php:760
+#: ../inc/adventurous-functions.php:749
+#: ../inc/panel/adventurous-theme-options.php:1182
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/adventurous-functions.php:746
-#: ../inc/panel/adventurous-theme-options.php:1186
-#: ../inc/panel/customizer/customizer.php:770
+#: ../inc/adventurous-functions.php:754
+#: ../inc/panel/adventurous-theme-options.php:1190
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/adventurous-functions.php:751
-#: ../inc/panel/adventurous-theme-options.php:1194
-#: ../inc/panel/customizer/customizer.php:780
+#: ../inc/adventurous-functions.php:759
+#: ../inc/panel/adventurous-theme-options.php:1198
 msgid "deviantART"
 msgstr "deviantART"
 
-#: ../inc/adventurous-functions.php:756
-#: ../inc/panel/adventurous-theme-options.php:1202
-#: ../inc/panel/customizer/customizer.php:790
+#: ../inc/adventurous-functions.php:764
+#: ../inc/panel/adventurous-theme-options.php:1206
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/adventurous-functions.php:761
-#: ../inc/panel/adventurous-theme-options.php:1210
-#: ../inc/panel/customizer/customizer.php:800
+#: ../inc/adventurous-functions.php:769
+#: ../inc/panel/adventurous-theme-options.php:1214
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../inc/adventurous-functions.php:766
-#: ../inc/panel/adventurous-theme-options.php:1218
-#: ../inc/panel/customizer/customizer.php:810
+#: ../inc/adventurous-functions.php:774
+#: ../inc/panel/adventurous-theme-options.php:1222
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../inc/adventurous-functions.php:771
-#: ../inc/panel/adventurous-theme-options.php:1226
-#: ../inc/panel/customizer/customizer.php:820
+#: ../inc/adventurous-functions.php:779
+#: ../inc/panel/adventurous-theme-options.php:1230
 msgid "RSS"
 msgstr "RSS"
 
-#: ../inc/adventurous-functions.php:776
-#: ../inc/panel/adventurous-theme-options.php:1234
-#: ../inc/panel/customizer/customizer.php:830
+#: ../inc/adventurous-functions.php:784
+#: ../inc/panel/adventurous-theme-options.php:1238
 msgid "Delicious"
 msgstr "Delicious"
 
-#: ../inc/adventurous-functions.php:781
-#: ../inc/panel/adventurous-theme-options.php:1242
-#: ../inc/panel/customizer/customizer.php:840
+#: ../inc/adventurous-functions.php:789
+#: ../inc/panel/adventurous-theme-options.php:1246
 msgid "Last.fm"
 msgstr "Last.fm"
 
-#: ../inc/adventurous-functions.php:786
-#: ../inc/panel/adventurous-theme-options.php:1250
-#: ../inc/panel/customizer/customizer.php:850
+#: ../inc/adventurous-functions.php:794
+#: ../inc/panel/adventurous-theme-options.php:1254
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/adventurous-functions.php:791
-#: ../inc/panel/adventurous-theme-options.php:1258
-#: ../inc/panel/customizer/customizer.php:860
+#: ../inc/adventurous-functions.php:799
+#: ../inc/panel/adventurous-theme-options.php:1262
 msgid "GitHub"
 msgstr "GitHub"
 
-#: ../inc/adventurous-functions.php:796
-#: ../inc/panel/adventurous-theme-options.php:1266
-#: ../inc/panel/customizer/customizer.php:870
+#: ../inc/adventurous-functions.php:804
+#: ../inc/panel/adventurous-theme-options.php:1270
 msgid "Vkontakte"
 msgstr "Vkontakte"
 
-#: ../inc/adventurous-functions.php:801
-#: ../inc/panel/adventurous-theme-options.php:1274
-#: ../inc/panel/customizer/customizer.php:880
+#: ../inc/adventurous-functions.php:809
+#: ../inc/panel/adventurous-theme-options.php:1278
 msgid "My World"
 msgstr "My World"
 
-#: ../inc/adventurous-functions.php:806
-#: ../inc/panel/adventurous-theme-options.php:1282
-#: ../inc/panel/customizer/customizer.php:890
+#: ../inc/adventurous-functions.php:814
+#: ../inc/panel/adventurous-theme-options.php:1286
 msgid "Odnoklassniki"
 msgstr "Odnoklassniki"
 
-#: ../inc/adventurous-functions.php:811
+#: ../inc/adventurous-functions.php:819
 msgid "GoodReads"
 msgstr "GoodReads"
 
-#: ../inc/adventurous-functions.php:816
-#: ../inc/panel/adventurous-theme-options.php:1298
-#: ../inc/panel/customizer/customizer.php:910
+#: ../inc/adventurous-functions.php:824
+#: ../inc/panel/adventurous-theme-options.php:1302
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/adventurous-functions.php:821
+#: ../inc/adventurous-functions.php:829
 msgid "SoundCloud"
 msgstr "SoundCloud"
 
-#: ../inc/adventurous-functions.php:826
-#: ../inc/panel/adventurous-theme-options.php:1314
-#: ../inc/panel/customizer/customizer.php:930
+#: ../inc/adventurous-functions.php:834
+#: ../inc/panel/adventurous-theme-options.php:1318
 msgid "Email"
 msgstr "Email"
 
-#: ../inc/adventurous-functions.php:831
-#: ../inc/panel/adventurous-theme-options.php:1322
-#: ../inc/panel/customizer/customizer.php:940
+#: ../inc/adventurous-functions.php:839
+#: ../inc/panel/adventurous-theme-options.php:1326
 msgid "Contact"
 msgstr "Kontakt"
 
-#: ../inc/adventurous-functions.php:836
-#: ../inc/panel/adventurous-theme-options.php:1330
-#: ../inc/panel/customizer/customizer.php:950
+#: ../inc/adventurous-functions.php:844
+#: ../inc/panel/adventurous-theme-options.php:1334
 msgid "Xing"
 msgstr "Xing"
 
-#: ../inc/adventurous-functions.php:841
-#: ../inc/panel/adventurous-theme-options.php:1338
-#: ../inc/panel/customizer/customizer.php:960
+#: ../inc/adventurous-functions.php:849
+#: ../inc/panel/adventurous-theme-options.php:1342
 msgid "Meetup"
 msgstr "Meetup"
 
-#: ../inc/adventurous-functions.php:863
+#: ../inc/adventurous-functions.php:871
 msgid "ID"
 msgstr "ID"
 
@@ -504,9 +444,9 @@ msgstr "Zapnout"
 #: ../inc/panel/adventurous-theme-options-defaults.php:250
 #: ../inc/panel/adventurous-theme-options-defaults.php:297
 #: ../inc/panel/adventurous-theme-options.php:364
-#: ../inc/panel/adventurous-theme-options.php:507
-#: ../inc/panel/adventurous-theme-options.php:807
-#: ../inc/panel/adventurous-theme-options.php:963
+#: ../inc/panel/adventurous-theme-options.php:506
+#: ../inc/panel/adventurous-theme-options.php:811
+#: ../inc/panel/adventurous-theme-options.php:967
 msgid "Disable"
 msgstr "Vypnout"
 
@@ -531,7 +471,7 @@ msgstr "Bez lišty"
 #: ../inc/panel/adventurous-theme-options-defaults.php:201
 #: ../inc/panel/adventurous-theme-options-defaults.php:217
 #: ../inc/panel/adventurous-theme-options.php:382
-#: ../inc/panel/adventurous-theme-options.php:465
+#: ../inc/panel/adventurous-theme-options.php:464
 msgid "Featured Image"
 msgstr "Vybraný obrázek"
 
@@ -539,7 +479,7 @@ msgstr "Vybraný obrázek"
 #: ../inc/panel/adventurous-theme-options-defaults.php:199
 #: ../inc/panel/adventurous-theme-options-defaults.php:215
 #: ../inc/panel/adventurous-theme-options.php:374
-#: ../inc/panel/adventurous-theme-options.php:469
+#: ../inc/panel/adventurous-theme-options.php:468
 msgid "Full Image"
 msgstr "Celý obrázek"
 
@@ -547,13 +487,13 @@ msgstr "Celý obrázek"
 #: ../inc/panel/adventurous-theme-options-defaults.php:200
 #: ../inc/panel/adventurous-theme-options-defaults.php:216
 #: ../inc/panel/adventurous-theme-options.php:378
-#: ../inc/panel/adventurous-theme-options.php:473
+#: ../inc/panel/adventurous-theme-options.php:472
 msgid "Slider Image"
 msgstr "Obrázek slideru"
 
 #: ../inc/adventurous-metabox.php:106
 #: ../inc/panel/adventurous-theme-options-defaults.php:218
-#: ../inc/panel/adventurous-theme-options.php:477
+#: ../inc/panel/adventurous-theme-options.php:476
 msgid "Disable Image"
 msgstr "Vypnout obrázek"
 
@@ -567,8 +507,7 @@ msgid "Header Featured Image Options"
 msgstr "Nastavení vybraného obrázku hlavičky"
 
 #: ../inc/adventurous-metabox.php:181
-#: ../inc/panel/adventurous-theme-options.php:457
-#: ../inc/panel/customizer/customizer.php:53
+#: ../inc/panel/adventurous-theme-options.php:456
 msgid "Content Featured Image Options"
 msgstr "Nastavení vybraného obrázku obsahu"
 
@@ -779,17 +718,17 @@ msgid "Search &hellip;"
 msgstr "Hledat &hellip;"
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:99
-#: ../inc/panel/adventurous-theme-options.php:1796
+#: ../inc/panel/adventurous-theme-options.php:1794
 msgid "Copyright"
 msgstr "Copyright"
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:99
-#: ../inc/panel/adventurous-theme-options.php:1796
+#: ../inc/panel/adventurous-theme-options.php:1794
 msgid "All Rights Reserved"
 msgstr "Všechna práva vyhrazena"
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:99
-#: ../inc/panel/adventurous-theme-options.php:1796
+#: ../inc/panel/adventurous-theme-options.php:1794
 msgid "Adventurous Theme by"
 msgstr "Adventurous šablona od"
 
@@ -820,12 +759,12 @@ msgid "Light (Black)"
 msgstr "Světlá (černá)"
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:165
-#: ../inc/panel/adventurous-theme-options.php:844
+#: ../inc/panel/adventurous-theme-options.php:848
 msgid "3 Columns"
 msgstr "3 sloupce"
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:166
-#: ../inc/panel/adventurous-theme-options.php:849
+#: ../inc/panel/adventurous-theme-options.php:853
 msgid "4 Columns"
 msgstr "4 sloupce"
 
@@ -833,9 +772,9 @@ msgstr "4 sloupce"
 #: ../inc/panel/adventurous-theme-options-defaults.php:248
 #: ../inc/panel/adventurous-theme-options-defaults.php:295
 #: ../inc/panel/adventurous-theme-options.php:339
-#: ../inc/panel/adventurous-theme-options.php:497
-#: ../inc/panel/adventurous-theme-options.php:799
-#: ../inc/panel/adventurous-theme-options.php:955
+#: ../inc/panel/adventurous-theme-options.php:496
+#: ../inc/panel/adventurous-theme-options.php:803
+#: ../inc/panel/adventurous-theme-options.php:959
 msgid "Homepage"
 msgstr "Hlavní strana"
 
@@ -848,9 +787,9 @@ msgstr "Vyloučit z hlavní strany"
 #: ../inc/panel/adventurous-theme-options-defaults.php:249
 #: ../inc/panel/adventurous-theme-options-defaults.php:296
 #: ../inc/panel/adventurous-theme-options.php:349
-#: ../inc/panel/adventurous-theme-options.php:502
-#: ../inc/panel/adventurous-theme-options.php:803
-#: ../inc/panel/adventurous-theme-options.php:959
+#: ../inc/panel/adventurous-theme-options.php:501
+#: ../inc/panel/adventurous-theme-options.php:807
+#: ../inc/panel/adventurous-theme-options.php:963
 msgid "Entire Site"
 msgstr "Celý web"
 
@@ -865,106 +804,104 @@ msgid "Pages & Posts"
 msgstr "Strany & Příspěvky"
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:232
-#: ../inc/panel/adventurous-theme-options.php:645
+#: ../inc/panel/adventurous-theme-options.php:644
 msgid "Right Sidebar"
 msgstr "Pravá lišta"
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:233
-#: ../inc/panel/adventurous-theme-options.php:650
+#: ../inc/panel/adventurous-theme-options.php:649
 msgid "Left Sidebar"
 msgstr "Levá lišta"
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:234
-#: ../inc/panel/adventurous-theme-options.php:655
+#: ../inc/panel/adventurous-theme-options.php:654
 msgid "No Sidebar"
 msgstr "Žádná lišta"
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:264
-#: ../inc/panel/adventurous-theme-options.php:665
-#: ../inc/panel/customizer/customizer.php:383
+#: ../inc/panel/adventurous-theme-options.php:664
 msgid "Full Content Display"
 msgstr "Zobrazit celý obsah"
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:265
-#: ../inc/panel/adventurous-theme-options.php:669
+#: ../inc/panel/adventurous-theme-options.php:668
 msgid "Excerpt/Blog Display"
 msgstr "Zobrazit zkrácený/blog"
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:279
-#: ../inc/panel/adventurous-theme-options.php:934
+#: ../inc/panel/adventurous-theme-options.php:938
 msgid "Demo Slider"
 msgstr "Demo běhoun"
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:280
-#: ../inc/panel/adventurous-theme-options.php:938
+#: ../inc/panel/adventurous-theme-options.php:942
 msgid "Post Slider"
 msgstr "Slider příspěvků"
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:281
-#: ../inc/panel/adventurous-theme-options.php:943
+#: ../inc/panel/adventurous-theme-options.php:947
 msgid "Category Slider"
 msgstr "Slider kategorií"
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:311
-#: ../inc/panel/adventurous-theme-options.php:990
+#: ../inc/panel/adventurous-theme-options.php:994
 msgid "fade"
 msgstr "zamlžit"
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:312
-#: ../inc/panel/adventurous-theme-options.php:991
+#: ../inc/panel/adventurous-theme-options.php:995
 msgid "wipe"
 msgstr "setřít"
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:313
 #: ../inc/panel/adventurous-theme-options-defaults.php:315
-#: ../inc/panel/adventurous-theme-options.php:992
+#: ../inc/panel/adventurous-theme-options.php:996
 msgid "scrollUp"
 msgstr "rolovatNahoru"
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:314
-#: ../inc/panel/adventurous-theme-options.php:993
+#: ../inc/panel/adventurous-theme-options.php:997
 msgid "scrollDown"
 msgstr "rolovatDolu"
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:316
-#: ../inc/panel/adventurous-theme-options.php:994
+#: ../inc/panel/adventurous-theme-options.php:998
 msgid "scrollLeft"
 msgstr "rolovatDoleva"
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:317
-#: ../inc/panel/adventurous-theme-options.php:995
+#: ../inc/panel/adventurous-theme-options.php:999
 msgid "scrollRight"
 msgstr "rolovatDoprava"
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:318
-#: ../inc/panel/adventurous-theme-options.php:996
+#: ../inc/panel/adventurous-theme-options.php:1000
 msgid "blindX"
 msgstr "slepéX"
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:319
-#: ../inc/panel/adventurous-theme-options.php:997
+#: ../inc/panel/adventurous-theme-options.php:1001
 msgid "blindY"
 msgstr "slepéY"
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:320
-#: ../inc/panel/adventurous-theme-options.php:998
+#: ../inc/panel/adventurous-theme-options.php:1002
 msgid "blindZ"
 msgstr "slepéZ"
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:321
-#: ../inc/panel/adventurous-theme-options.php:999
+#: ../inc/panel/adventurous-theme-options.php:1003
 msgid "cover"
 msgstr "pokrýt"
 
 #: ../inc/panel/adventurous-theme-options-defaults.php:322
-#: ../inc/panel/adventurous-theme-options.php:1000
+#: ../inc/panel/adventurous-theme-options.php:1004
 msgid "shuffle"
 msgstr "zamíchat"
 
 #: ../inc/panel/adventurous-theme-options.php:44
 #: ../inc/panel/adventurous-theme-options.php:45
 #: ../inc/panel/adventurous-theme-options.php:125
-#: ../inc/panel/customizer/customizer.php:33
 msgid "Theme Options"
 msgstr "Nastavení šablony"
 
@@ -1057,24 +994,18 @@ msgstr ""
 "Customizer %2$s."
 
 #: ../inc/panel/adventurous-theme-options.php:126
-#: ../inc/panel/customizer/customizer.php:96
-#: ../inc/panel/customizer/customizer.php:97
 msgid "Featured Content"
 msgstr "Oblíbený obsah"
 
 #: ../inc/panel/adventurous-theme-options.php:127
-#: ../inc/panel/customizer/customizer.php:109
-#: ../inc/panel/customizer/customizer.php:110
 msgid "Featured Slider"
 msgstr "Oblíbený slider"
 
 #: ../inc/panel/adventurous-theme-options.php:128
-#: ../inc/panel/customizer/customizer.php:122
 msgid "Social Links"
 msgstr "Linky sociálních sítí"
 
 #: ../inc/panel/adventurous-theme-options.php:141
-#: ../inc/panel/customizer/customizer.php:38
 msgid "Favicon"
 msgstr "Favicon"
 
@@ -1085,11 +1016,11 @@ msgstr "Vypnout Favicon?"
 #: ../inc/panel/adventurous-theme-options.php:149
 #: ../inc/panel/adventurous-theme-options.php:194
 #: ../inc/panel/adventurous-theme-options.php:276
-#: ../inc/panel/adventurous-theme-options.php:561
-#: ../inc/panel/adventurous-theme-options.php:570
-#: ../inc/panel/adventurous-theme-options.php:579
-#: ../inc/panel/adventurous-theme-options.php:775
-#: ../inc/panel/adventurous-theme-options.php:973
+#: ../inc/panel/adventurous-theme-options.php:560
+#: ../inc/panel/adventurous-theme-options.php:569
+#: ../inc/panel/adventurous-theme-options.php:578
+#: ../inc/panel/adventurous-theme-options.php:779
+#: ../inc/panel/adventurous-theme-options.php:977
 msgid "Check to disable"
 msgstr "Zaškrtni pro vypnutí"
 
@@ -1116,21 +1047,21 @@ msgstr "Náhled"
 #: ../inc/panel/adventurous-theme-options.php:228
 #: ../inc/panel/adventurous-theme-options.php:257
 #: ../inc/panel/adventurous-theme-options.php:323
-#: ../inc/panel/adventurous-theme-options.php:451
-#: ../inc/panel/adventurous-theme-options.php:482
-#: ../inc/panel/adventurous-theme-options.php:583
-#: ../inc/panel/adventurous-theme-options.php:630
-#: ../inc/panel/adventurous-theme-options.php:684
-#: ../inc/panel/adventurous-theme-options.php:701
-#: ../inc/panel/adventurous-theme-options.php:736
-#: ../inc/panel/adventurous-theme-options.php:761
-#: ../inc/panel/adventurous-theme-options.php:779
-#: ../inc/panel/adventurous-theme-options.php:855
-#: ../inc/panel/adventurous-theme-options.php:915
-#: ../inc/panel/adventurous-theme-options.php:1023
-#: ../inc/panel/adventurous-theme-options.php:1058
-#: ../inc/panel/adventurous-theme-options.php:1091
-#: ../inc/panel/adventurous-theme-options.php:1345
+#: ../inc/panel/adventurous-theme-options.php:450
+#: ../inc/panel/adventurous-theme-options.php:481
+#: ../inc/panel/adventurous-theme-options.php:582
+#: ../inc/panel/adventurous-theme-options.php:629
+#: ../inc/panel/adventurous-theme-options.php:682
+#: ../inc/panel/adventurous-theme-options.php:699
+#: ../inc/panel/adventurous-theme-options.php:733
+#: ../inc/panel/adventurous-theme-options.php:762
+#: ../inc/panel/adventurous-theme-options.php:783
+#: ../inc/panel/adventurous-theme-options.php:859
+#: ../inc/panel/adventurous-theme-options.php:919
+#: ../inc/panel/adventurous-theme-options.php:1027
+#: ../inc/panel/adventurous-theme-options.php:1062
+#: ../inc/panel/adventurous-theme-options.php:1095
+#: ../inc/panel/adventurous-theme-options.php:1349
 msgid "Save Changes"
 msgstr "Uložit změny"
 
@@ -1194,7 +1125,6 @@ msgid "Click to Manage Menu Locations"
 msgstr "Klikni pro úpravu Lokací Menu"
 
 #: ../inc/panel/adventurous-theme-options.php:263
-#: ../inc/panel/customizer/customizer.php:48
 msgid "Header Options"
 msgstr "Nastavení Záhlaví"
 
@@ -1219,17 +1149,15 @@ msgid "Disable Header Right Section?"
 msgstr "Vypnout pravou část hlavičky?"
 
 #: ../inc/panel/adventurous-theme-options.php:319
-#: ../inc/panel/adventurous-theme-options.php:597
+#: ../inc/panel/adventurous-theme-options.php:596
 msgid "Check to Disable"
 msgstr "Vypnout"
 
 #: ../inc/panel/adventurous-theme-options.php:334
-#: ../inc/panel/customizer/customizer.php:172
 msgid "Enable Featured Header Image"
 msgstr "Nastavit vybraný obrázek hlavičky"
 
 #: ../inc/panel/adventurous-theme-options.php:370
-#: ../inc/panel/customizer/customizer.php:182
 msgid "Page/Post Featured Image Size"
 msgstr "Velikost vybraného obrázku na stránce / v příspěvku "
 
@@ -1258,122 +1186,112 @@ msgid "There is no Header Image"
 msgstr "Žádný obrázek hlavičky"
 
 #: ../inc/panel/adventurous-theme-options.php:417
-#: ../inc/panel/customizer/customizer.php:192
 msgid "Featured Header Image Alt/Title Tag"
 msgstr "Vybraný obrázek hlavičky - Alt/titulní štítek"
 
 #: ../inc/panel/adventurous-theme-options.php:425
-#: ../inc/panel/customizer/customizer.php:201
 msgid "Featured Header Image Link URL"
 msgstr "Vybraný obrázek hlavičky - link URL"
 
 #: ../inc/panel/adventurous-theme-options.php:433
-#: ../inc/panel/adventurous-theme-options.php:888
-#: ../inc/panel/customizer/customizer.php:1270
+#: ../inc/panel/adventurous-theme-options.php:892
 msgid "Target. Open Link in New Window?"
 msgstr "Cíl. Otevřít link v novém okně?"
 
 #: ../inc/panel/adventurous-theme-options.php:437
-#: ../inc/panel/adventurous-theme-options.php:552
-#: ../inc/panel/adventurous-theme-options.php:892
+#: ../inc/panel/adventurous-theme-options.php:551
+#: ../inc/panel/adventurous-theme-options.php:896
 msgid "Check to open in new window"
 msgstr "Otevřít link v novém okně"
 
-#: ../inc/panel/adventurous-theme-options.php:443
+#: ../inc/panel/adventurous-theme-options.php:442
 msgid "Reset Header Featured Image Options?"
 msgstr "Resetovat nastavení vybraného obrázku hlavičky?"
 
-#: ../inc/panel/adventurous-theme-options.php:447
-#: ../inc/panel/adventurous-theme-options.php:680
-#: ../inc/panel/adventurous-theme-options.php:732
+#: ../inc/panel/adventurous-theme-options.php:446
+#: ../inc/panel/adventurous-theme-options.php:678
+#: ../inc/panel/adventurous-theme-options.php:729
 msgid "Check to reset"
 msgstr "Resetovat"
 
-#: ../inc/panel/adventurous-theme-options.php:461
-#: ../inc/panel/customizer/customizer.php:359
+#: ../inc/panel/adventurous-theme-options.php:460
 msgid "Content Featured Image Size"
 msgstr "Velikost vybraného obrázku obsahu"
 
-#: ../inc/panel/adventurous-theme-options.php:488
-#: ../inc/panel/customizer/customizer.php:58
+#: ../inc/panel/adventurous-theme-options.php:487
 msgid "Promotion Headline Options"
 msgstr "Nastavení promočního titulku"
 
-#: ../inc/panel/adventurous-theme-options.php:492
-#: ../inc/panel/customizer/customizer.php:244
+#: ../inc/panel/adventurous-theme-options.php:491
 msgid "Enable Promotion"
 msgstr "Zvolit promoci"
 
-#: ../inc/panel/adventurous-theme-options.php:513
-#: ../inc/panel/customizer/customizer.php:255
+#: ../inc/panel/adventurous-theme-options.php:512
 msgid "Headline Text"
 msgstr "Text titulku"
 
-#: ../inc/panel/adventurous-theme-options.php:514
+#: ../inc/panel/adventurous-theme-options.php:513
 msgid "The appropriate length for Headine is around 10 words."
 msgstr "Vhodná délka textu pro titulek je okolo 10 slov."
 
-#: ../inc/panel/adventurous-theme-options.php:522
-#: ../inc/panel/customizer/customizer.php:265
+#: ../inc/panel/adventurous-theme-options.php:521
 msgid "Subheadline Text"
 msgstr "Text podtitulku"
 
-#: ../inc/panel/adventurous-theme-options.php:523
+#: ../inc/panel/adventurous-theme-options.php:522
 msgid "The appropriate length for Headine is around 15 words."
 msgstr "Vhodná délka textu pro titulek je okolo 15 slov."
 
-#: ../inc/panel/adventurous-theme-options.php:531
+#: ../inc/panel/adventurous-theme-options.php:530
 msgid "Button Text"
 msgstr "Text tlačítka"
 
-#: ../inc/panel/adventurous-theme-options.php:532
+#: ../inc/panel/adventurous-theme-options.php:531
 msgid "The appropriate length for Headine is around 3 words."
 msgstr "Vhodná délka textu pro titulek je okolo 3 slov."
 
-#: ../inc/panel/adventurous-theme-options.php:540
-#: ../inc/panel/customizer/customizer.php:285
+#: ../inc/panel/adventurous-theme-options.php:539
 msgid "Button Link"
 msgstr "Link tlačítka"
 
-#: ../inc/panel/adventurous-theme-options.php:548
+#: ../inc/panel/adventurous-theme-options.php:547
 msgid "Target. Open Link in New Window? "
 msgstr "Cíl. Otevřít link v novém okně?"
 
-#: ../inc/panel/adventurous-theme-options.php:557
+#: ../inc/panel/adventurous-theme-options.php:556
 msgid "Disable Headline?"
 msgstr "Vypnout titulek?"
 
-#: ../inc/panel/adventurous-theme-options.php:566
+#: ../inc/panel/adventurous-theme-options.php:565
 msgid "Disable Subheadline?"
 msgstr "Vypnout podtitulek?"
 
-#: ../inc/panel/adventurous-theme-options.php:575
+#: ../inc/panel/adventurous-theme-options.php:574
 msgid "Disable Button?"
 msgstr "Vypnout tlačítko?"
 
-#: ../inc/panel/adventurous-theme-options.php:589
+#: ../inc/panel/adventurous-theme-options.php:588
 msgid "Homepage / Frontpage Settings"
 msgstr "Nastavení domovské / titulní strany"
 
-#: ../inc/panel/adventurous-theme-options.php:593
+#: ../inc/panel/adventurous-theme-options.php:592
 msgid "Disable Latest Posts?"
 msgstr "Vypnout poslední příspěvky?"
 
-#: ../inc/panel/adventurous-theme-options.php:602
+#: ../inc/panel/adventurous-theme-options.php:601
 msgid "Add Page instead of Latest Posts"
 msgstr "Přidat stranu místo posledních příspěvků"
 
-#: ../inc/panel/adventurous-theme-options.php:605
+#: ../inc/panel/adventurous-theme-options.php:604
 msgid "Click Here to Set Static Front Page Instead of Latest Posts"
 msgstr ""
 "Klikni zde pro nastavení statické titulní strany místo posledních příspěvků"
 
-#: ../inc/panel/adventurous-theme-options.php:610
-#: ../inc/panel/customizer/customizer.php:347
+#: ../inc/panel/adventurous-theme-options.php:609
 msgid "Homepage posts categories:"
 msgstr "Domovská strana kategorie:"
 
-#: ../inc/panel/adventurous-theme-options.php:611
+#: ../inc/panel/adventurous-theme-options.php:610
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page."
@@ -1381,263 +1299,235 @@ msgstr ""
 "Pouze příspěvky, které patří do vybraných kategorií budou zobrazeny na "
 "titulní straně."
 
-#: ../inc/panel/adventurous-theme-options.php:615
-#: ../inc/panel/adventurous-theme-options.php:1073
+#: ../inc/panel/adventurous-theme-options.php:614
+#: ../inc/panel/adventurous-theme-options.php:1077
 msgid "--Disabled--"
 msgstr "—Vypnuto—"
 
-#: ../inc/panel/adventurous-theme-options.php:626
-#: ../inc/panel/adventurous-theme-options.php:1084
+#: ../inc/panel/adventurous-theme-options.php:625
+#: ../inc/panel/adventurous-theme-options.php:1088
 msgid "You may select multiple categories by holding down the CTRL key."
 msgstr "Je možné vybrat více kategorií pomocí tlačítka CTRL."
 
-#: ../inc/panel/adventurous-theme-options.php:636
-#: ../inc/panel/customizer/customizer.php:68
+#: ../inc/panel/adventurous-theme-options.php:635
 msgid "Layout Options"
 msgstr "Nastavení uspořádání"
 
-#: ../inc/panel/adventurous-theme-options.php:640
-#: ../inc/panel/customizer/customizer.php:372
+#: ../inc/panel/adventurous-theme-options.php:639
 msgid "Sidebar Layout Options"
 msgstr "Nastavení postranní lišty"
 
-#: ../inc/panel/adventurous-theme-options.php:661
+#: ../inc/panel/adventurous-theme-options.php:660
 msgid "Content Layout"
 msgstr "Uspořádání obsahu"
 
-#: ../inc/panel/adventurous-theme-options.php:676
+#: ../inc/panel/adventurous-theme-options.php:674
 msgid "Reset Layout?"
 msgstr "Resetovat uspořádání?"
 
-#: ../inc/panel/adventurous-theme-options.php:690
-#: ../inc/panel/customizer/customizer.php:73
+#: ../inc/panel/adventurous-theme-options.php:688
 msgid "Search Text Settings"
 msgstr "Nastavení hledání textu"
 
-#: ../inc/panel/adventurous-theme-options.php:694
-#: ../inc/panel/customizer/customizer.php:406
+#: ../inc/panel/adventurous-theme-options.php:692
 msgid "Default Display Text in Search"
 msgstr "Standardní zobrazení textu v hledání"
 
-#: ../inc/panel/adventurous-theme-options.php:707
-#: ../inc/panel/customizer/customizer.php:78
+#: ../inc/panel/adventurous-theme-options.php:705
 msgid "Excerpt / More Tag Settings"
 msgstr "Nastavení štítku pro výňatek / více"
 
-#: ../inc/panel/adventurous-theme-options.php:711
-#: ../inc/panel/customizer/customizer.php:418
+#: ../inc/panel/adventurous-theme-options.php:709
 msgid "More Tag Text"
 msgstr "Text štítku více"
 
-#: ../inc/panel/adventurous-theme-options.php:719
-#: ../inc/panel/customizer/customizer.php:428
+#: ../inc/panel/adventurous-theme-options.php:717
 msgid "Excerpt length(words)"
 msgstr "Délka výňatku (počet slov)"
 
-#: ../inc/panel/adventurous-theme-options.php:728
+#: ../inc/panel/adventurous-theme-options.php:725
 msgid "Reset Excerpt?"
 msgstr "Resetovat výňatek?"
 
-#: ../inc/panel/adventurous-theme-options.php:742
-#: ../inc/panel/customizer/customizer.php:88
+#: ../inc/panel/adventurous-theme-options.php:743
 msgid "Custom CSS"
 msgstr "Uživatelská CSS"
 
-#: ../inc/panel/adventurous-theme-options.php:746
+#: ../inc/panel/adventurous-theme-options.php:747
 msgid "Enter your custom CSS styles."
 msgstr "Vložit vlastní uživatelské CSS styly."
 
-#: ../inc/panel/adventurous-theme-options.php:754
+#: ../inc/panel/adventurous-theme-options.php:755
 msgid "CSS Tutorial from W3Schools."
 msgstr "CSS návod od W3Schools."
 
-#: ../inc/panel/adventurous-theme-options.php:757
+#: ../inc/panel/adventurous-theme-options.php:758
 msgid "http://www.w3schools.com/css/default.asp"
 msgstr "http://www.w3schools.com/css/default.asp"
 
-#: ../inc/panel/adventurous-theme-options.php:757
+#: ../inc/panel/adventurous-theme-options.php:758
 msgid "CSS Tutorial"
 msgstr "CSS návod"
 
-#: ../inc/panel/adventurous-theme-options.php:757
+#: ../inc/panel/adventurous-theme-options.php:758
 msgid "Click Here to Read"
 msgstr "Klikni zde pro čtení"
 
-#: ../inc/panel/adventurous-theme-options.php:767
-#: ../inc/panel/customizer/customizer.php:83
+#: ../inc/panel/adventurous-theme-options.php:771
 msgid "Scroll Up"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:771
+#: ../inc/panel/adventurous-theme-options.php:775
 msgid "Disable Scroll Up?"
 msgstr ""
 
-#: ../inc/panel/adventurous-theme-options.php:790
+#: ../inc/panel/adventurous-theme-options.php:794
 msgid "Featured Settings"
 msgstr "Vybraná nastavení"
 
-#: ../inc/panel/adventurous-theme-options.php:794
-#: ../inc/panel/customizer/customizer.php:480
+#: ../inc/panel/adventurous-theme-options.php:798
 msgid "Enable Featured Content"
 msgstr "Nastavit vybraný obsah"
 
-#: ../inc/panel/adventurous-theme-options.php:813
-#: ../inc/panel/customizer/customizer.php:491
+#: ../inc/panel/adventurous-theme-options.php:817
 msgid "Featured Content Headline Text"
 msgstr "Text hlavičky vybraného obsahu"
 
-#: ../inc/panel/adventurous-theme-options.php:814
+#: ../inc/panel/adventurous-theme-options.php:818
 msgid "Leave empty if you want to remove headline."
 msgstr "Ponechat prázdné pro odstranění titulku."
 
-#: ../inc/panel/adventurous-theme-options.php:822
+#: ../inc/panel/adventurous-theme-options.php:826
 msgid "Featured Content Subheadline Text"
 msgstr "Text podtitulku vybraného obsahu"
 
-#: ../inc/panel/adventurous-theme-options.php:823
-#: ../inc/panel/customizer/customizer.php:503
+#: ../inc/panel/adventurous-theme-options.php:827
 msgid "Leave empty if you want to remove Subheadline"
 msgstr "Ponechat prázdné pro odstranění podtitulku."
 
-#: ../inc/panel/adventurous-theme-options.php:831
-#: ../inc/panel/customizer/customizer.php:514
+#: ../inc/panel/adventurous-theme-options.php:835
 msgid "Number of Featured Content"
 msgstr "Počet vybraného obsahu"
 
-#: ../inc/panel/adventurous-theme-options.php:839
-#: ../inc/panel/customizer/customizer.php:531
+#: ../inc/panel/adventurous-theme-options.php:843
 msgid "Featured Content Layout"
 msgstr "Uspořádání vybraného obsahu"
 
-#: ../inc/panel/adventurous-theme-options.php:862
+#: ../inc/panel/adventurous-theme-options.php:866
 msgid "Featured Content Options"
 msgstr "Nastavení vybraného obsahu"
 
-#: ../inc/panel/adventurous-theme-options.php:868
-#: ../inc/panel/customizer/customizer.php:1206
+#: ../inc/panel/adventurous-theme-options.php:872
 #, php-format
 msgid "Featured Content #%s"
 msgstr "Vybraný obsah #%s"
 
-#: ../inc/panel/adventurous-theme-options.php:875
+#: ../inc/panel/adventurous-theme-options.php:879
 msgid "Insert Image"
 msgstr "Vložit obrázek"
 
-#: ../inc/panel/adventurous-theme-options.php:875
+#: ../inc/panel/adventurous-theme-options.php:879
 msgid "Change Image"
 msgstr "Změnit obrázek"
 
-#: ../inc/panel/adventurous-theme-options.php:880
-#: ../inc/panel/customizer/customizer.php:1249
+#: ../inc/panel/adventurous-theme-options.php:884
 msgid "Link URL"
 msgstr "Link URL"
 
-#: ../inc/panel/adventurous-theme-options.php:883
+#: ../inc/panel/adventurous-theme-options.php:887
 msgid "Add in the Target URL for the content"
 msgstr "Vložit cílový URL pro obsah"
 
-#: ../inc/panel/adventurous-theme-options.php:897
-#: ../inc/panel/customizer/customizer.php:1291
+#: ../inc/panel/adventurous-theme-options.php:901
 msgid "Title"
 msgstr "Název"
 
-#: ../inc/panel/adventurous-theme-options.php:900
-#: ../inc/panel/customizer/customizer.php:1294
+#: ../inc/panel/adventurous-theme-options.php:904
 msgid "Leave empty if you want to remove title"
 msgstr "Ponechat prázdné pro odstranění názvu"
 
-#: ../inc/panel/adventurous-theme-options.php:905
-#: ../inc/panel/customizer/customizer.php:1313
+#: ../inc/panel/adventurous-theme-options.php:909
 msgid "Content"
 msgstr "Obsah"
 
-#: ../inc/panel/adventurous-theme-options.php:906
+#: ../inc/panel/adventurous-theme-options.php:910
 msgid "The appropriate length for Content is around 10 words."
 msgstr "Vhodná délka textu pro Obsah je okolo 10 slov."
 
-#: ../inc/panel/adventurous-theme-options.php:925
-#: ../inc/panel/customizer/customizer.php:114
+#: ../inc/panel/adventurous-theme-options.php:929
 msgid "Slider Options"
 msgstr "Nastavení slideru"
 
-#: ../inc/panel/adventurous-theme-options.php:929
-#: ../inc/panel/customizer/customizer.php:602
+#: ../inc/panel/adventurous-theme-options.php:933
 msgid "Select Slider Type"
 msgstr "Vybrat typ slideru"
 
-#: ../inc/panel/adventurous-theme-options.php:950
-#: ../inc/panel/customizer/customizer.php:545
+#: ../inc/panel/adventurous-theme-options.php:954
 msgid "Enable Slider"
 msgstr "Zapnout slider"
 
-#: ../inc/panel/adventurous-theme-options.php:969
+#: ../inc/panel/adventurous-theme-options.php:973
 msgid "Disable Text in Slider?"
 msgstr "Vypnout text v slideru?"
 
-#: ../inc/panel/adventurous-theme-options.php:978
-#: ../inc/panel/customizer/customizer.php:614
+#: ../inc/panel/adventurous-theme-options.php:982
 msgid "Number of Slides"
 msgstr "Počet rotací slideru"
 
-#: ../inc/panel/adventurous-theme-options.php:986
+#: ../inc/panel/adventurous-theme-options.php:990
 msgid "Transition Effect:"
 msgstr "Přechodový efekt:"
 
-#: ../inc/panel/adventurous-theme-options.php:1006
-#: ../inc/panel/customizer/customizer.php:568
+#: ../inc/panel/adventurous-theme-options.php:1010
 msgid "Transition Delay"
 msgstr "Zpoždění přechodu"
 
-#: ../inc/panel/adventurous-theme-options.php:1010
-#: ../inc/panel/adventurous-theme-options.php:1019
+#: ../inc/panel/adventurous-theme-options.php:1014
+#: ../inc/panel/adventurous-theme-options.php:1023
 msgid "second(s)"
 msgstr "vteřin"
 
-#: ../inc/panel/adventurous-theme-options.php:1015
-#: ../inc/panel/customizer/customizer.php:585
+#: ../inc/panel/adventurous-theme-options.php:1019
 msgid "Transition Length"
 msgstr "Délka přechodu"
 
-#: ../inc/panel/adventurous-theme-options.php:1030
+#: ../inc/panel/adventurous-theme-options.php:1034
 msgid "Featured Post Slider Options"
 msgstr "Nastavení Slideru Vybraný Příspěvek"
 
-#: ../inc/panel/adventurous-theme-options.php:1034
+#: ../inc/panel/adventurous-theme-options.php:1038
 msgid "Exclude Slider post from Homepage posts?"
 msgstr "Vynechat Slider příspěvků z příspěvků na domovské straně?"
 
-#: ../inc/panel/adventurous-theme-options.php:1038
+#: ../inc/panel/adventurous-theme-options.php:1042
 msgid "Check to exclude"
 msgstr "Vynechat"
 
-#: ../inc/panel/adventurous-theme-options.php:1045
-#: ../inc/panel/customizer/customizer.php:1338
+#: ../inc/panel/adventurous-theme-options.php:1049
 #, php-format
 msgid "Featured Post Slider #%s"
 msgstr "Slider Vybraný Příspěvek #%s"
 
-#: ../inc/panel/adventurous-theme-options.php:1049
+#: ../inc/panel/adventurous-theme-options.php:1053
 msgid "Click Here To Edit"
 msgstr "Upravit"
 
-#: ../inc/panel/adventurous-theme-options.php:1055
+#: ../inc/panel/adventurous-theme-options.php:1059
 msgid ""
 "Note: Here You can put your Post IDs which displays on Homepage as slider."
 msgstr ""
 "Pozn: tady je možné zadat ID Příspěvků, které se zobrazují na domovské "
 "straně jako slider. "
 
-#: ../inc/panel/adventurous-theme-options.php:1064
+#: ../inc/panel/adventurous-theme-options.php:1068
 msgid "Featured Category Slider Options"
 msgstr "Nastavení Slideru Vybraná Kategorie"
 
-#: ../inc/panel/adventurous-theme-options.php:1068
-#: ../inc/panel/customizer/customizer.php:657
+#: ../inc/panel/adventurous-theme-options.php:1072
 msgid "Select Slider Categories"
 msgstr "Vybrat Slider Kategorií"
 
-#: ../inc/panel/adventurous-theme-options.php:1069
-#: ../inc/panel/customizer/customizer.php:658
+#: ../inc/panel/adventurous-theme-options.php:1073
 msgid ""
 "Use this only is you want to display posts from Specific Categories in "
 "Featured Slider"
@@ -1645,7 +1535,7 @@ msgstr ""
 "Použít pouze pro zobrazení příspěvků z Vybraných Kategorií ve Vybraném "
 "Slideru"
 
-#: ../inc/panel/adventurous-theme-options.php:1088
+#: ../inc/panel/adventurous-theme-options.php:1092
 msgid ""
 "Note: Here you can select the categories from which latest posts will "
 "display on Featured Slider."
@@ -1653,36 +1543,31 @@ msgstr ""
 "Pozn: Tady je možné vybrat kategorie, z nichž se budou zobrazovat příspěvky "
 "ve Vybraném Slideru."
 
-#: ../inc/panel/adventurous-theme-options.php:1102
+#: ../inc/panel/adventurous-theme-options.php:1106
 msgid "Predefine Social Icons"
 msgstr "Předdefinovat Ikony Sociálních sítí"
 
-#: ../inc/panel/adventurous-theme-options.php:1138
-#: ../inc/panel/customizer/customizer.php:710
+#: ../inc/panel/adventurous-theme-options.php:1142
 msgid "Youtube"
 msgstr "Youtube"
 
-#: ../inc/panel/adventurous-theme-options.php:1154
+#: ../inc/panel/adventurous-theme-options.php:1158
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: ../inc/panel/adventurous-theme-options.php:1162
-#: ../inc/panel/customizer/customizer.php:740
+#: ../inc/panel/adventurous-theme-options.php:1166
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: ../inc/panel/adventurous-theme-options.php:1170
-#: ../inc/panel/customizer/customizer.php:750
+#: ../inc/panel/adventurous-theme-options.php:1174
 msgid "Foursquare"
 msgstr "Foursquare"
 
-#: ../inc/panel/adventurous-theme-options.php:1290
-#: ../inc/panel/customizer/customizer.php:900
+#: ../inc/panel/adventurous-theme-options.php:1294
 msgid "Goodreads"
 msgstr "Goodreads"
 
-#: ../inc/panel/adventurous-theme-options.php:1306
-#: ../inc/panel/customizer/customizer.php:920
+#: ../inc/panel/adventurous-theme-options.php:1310
 msgid "Soundcloud"
 msgstr "Soundcloud"
 
@@ -1704,199 +1589,6 @@ msgstr "Changelog"
 #: ../inc/panel/customizer/customizer-custom-controls.php:76
 msgid "Review"
 msgstr "Review"
-
-#: ../inc/panel/customizer/customizer.php:34
-msgid "Basic theme Options"
-msgstr "Základní nastavení Šablony"
-
-#: ../inc/panel/customizer/customizer.php:43
-msgid "Webclip Icon Options"
-msgstr "Nastavení Ikony Webclipu"
-
-#: ../inc/panel/customizer/customizer.php:44
-msgid ""
-"Web Clip Icon for Apple devices. Recommended Size - Width 144px and Height "
-"144px height, which will support High Resolution Devices like iPad Retina"
-msgstr ""
-"Web Clip Ikona pro Apple přístroje. Doporučená velikost - šířka 144px a "
-"výška 144px, která bude podporovat přístroje s vysokým rozlišením jako iPad "
-"Retina"
-
-#: ../inc/panel/customizer/customizer.php:63
-msgid "Homepage/Frontpage Settings"
-msgstr "Nastavení Domovské / Titulní strany"
-
-#: ../inc/panel/customizer/customizer.php:101
-msgid "Featured Content Settings"
-msgstr "Nastavení Vybraného Obsahu"
-
-#: ../inc/panel/customizer/customizer.php:123
-msgid "Add your social links here"
-msgstr "Přidat své linky na sociální sítě"
-
-#: ../inc/panel/customizer/customizer.php:127
-msgid "Predefined Social Icons"
-msgstr "Předdefinované Ikony Sociálních sítí"
-
-#: ../inc/panel/customizer/customizer.php:210
-msgid "Check to Open Link in New Tab/Window"
-msgstr "Otevřít link v novém okně?"
-
-#: ../inc/panel/customizer/customizer.php:219
-msgid "Check to Reset Header Featured Image Options"
-msgstr "Resetovat Nastavení Vybraného obrázku Hlavičky"
-
-#: ../inc/panel/customizer/customizer.php:220
-#: ../inc/panel/customizer/customizer.php:395
-#: ../inc/panel/customizer/customizer.php:445
-#: ../inc/panel/customizer/customizer.php:645
-msgid "Please refresh the customizer after saving if reset option is used"
-msgstr "Prosím obnovit “customizer” po uložení, pokud byl proveden reset"
-
-#: ../inc/panel/customizer/customizer.php:231
-msgid "Check to Disable Header Right Sidebar"
-msgstr "Vypnout Hlavičku Pravé Lišty"
-
-#: ../inc/panel/customizer/customizer.php:256
-#: ../inc/panel/customizer/customizer.php:1316
-msgid "Appropriate Words: 10"
-msgstr "Vhodný počet slov: 10"
-
-#: ../inc/panel/customizer/customizer.php:266
-msgid "Appropriate Words: 15"
-msgstr "Vhodný počet slov: 15"
-
-#: ../inc/panel/customizer/customizer.php:275
-msgid "Button Text "
-msgstr "Text Tlačítka"
-
-#: ../inc/panel/customizer/customizer.php:276
-msgid "Appropriate Words: 3"
-msgstr "Vhodný počet slov: 3"
-
-#: ../inc/panel/customizer/customizer.php:286
-msgid "Add link for your homepage headline button"
-msgstr "Vložit link pro tlačítko domovské stránky"
-
-#: ../inc/panel/customizer/customizer.php:295
-msgid "Check to Open Link in New Window/Tab? "
-msgstr "Otevřít link v novém okně?"
-
-#: ../inc/panel/customizer/customizer.php:305
-msgid "Check to Disable Homepage Headline"
-msgstr "Vypnout Titulek na Domovské straně"
-
-#: ../inc/panel/customizer/customizer.php:315
-msgid "Check to Disable Homepage Subheadline"
-msgstr "Vypnout Podtitulek na Domovské straně"
-
-#: ../inc/panel/customizer/customizer.php:325
-msgid "Check to Disable Homepage Button"
-msgstr "Vypnout Tlačítko Domovské strany"
-
-#: ../inc/panel/customizer/customizer.php:337
-msgid "Check to Disable Latest Posts"
-msgstr "Vypnout Poslední Příspěvky"
-
-#: ../inc/panel/customizer/customizer.php:348
-msgid ""
-"Only posts that belong to the categories selected here will be displayed on "
-"the front page"
-msgstr ""
-"Pouze příspěvky, které patří do vybraných kategorií budou zobrazeny na "
-"titulní straně."
-
-#: ../inc/panel/customizer/customizer.php:394
-msgid "Check to Reset Layout"
-msgstr "Resetovat Uspořádání"
-
-#: ../inc/panel/customizer/customizer.php:444
-msgid "Check to Reset Excerpt"
-msgstr "Resetovat Výňatky"
-
-#: ../inc/panel/customizer/customizer.php:456
-msgid "Check to disable scroll up"
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:468
-msgid "Enter your custom CSS styles"
-msgstr "Vložit vlastní uživatelské CSS styly"
-
-#: ../inc/panel/customizer/customizer.php:492
-msgid "Leave empty if you want to remove headline"
-msgstr "Ponechat prázdné pro odstranění titulku"
-
-#: ../inc/panel/customizer/customizer.php:502
-msgid "Featured Content Subheadline Text "
-msgstr "Text Podtitulku Vybraného Obsahu"
-
-#: ../inc/panel/customizer/customizer.php:556
-msgid "Transition Effect"
-msgstr "Přechodový efekt"
-
-#: ../inc/panel/customizer/customizer.php:615
-msgid ""
-"Customizer page needs to be refreshed after saving if number of slides is "
-"changed"
-msgstr ""
-"Customizer strana musí být obnovena po uložení pokud byl změněn počet rotací"
-
-#: ../inc/panel/customizer/customizer.php:631
-msgid "Check to disable slider text"
-msgstr ""
-
-#: ../inc/panel/customizer/customizer.php:644
-msgid "Check to Exclude Slider posts from Homepage posts"
-msgstr "Vynechat Slider Příspěvky z Příspěvků na Domovské straně"
-
-#: ../inc/panel/customizer/customizer.php:976
-msgid "Check to Disable Favicon"
-msgstr "Vypnout Favicon"
-
-#: ../inc/panel/customizer/customizer.php:986
-msgid "Fav Icon"
-msgstr "Fav Icon"
-
-#: ../inc/panel/customizer/customizer.php:998
-msgid "Check to Disable Web Clip Icon"
-msgstr "Vypnout Ikonu Webclipu"
-
-#: ../inc/panel/customizer/customizer.php:1008
-msgid "Web Clip Icon"
-msgstr "Ikona Webclipu"
-
-#: ../inc/panel/customizer/customizer.php:1026
-msgid "Logo"
-msgstr "Logo"
-
-#: ../inc/panel/customizer/customizer.php:1036
-msgid "Check to Disable Logo"
-msgstr "Vypnout Logo"
-
-#: ../inc/panel/customizer/customizer.php:1353
-msgid ""
-"Caution: Reset all settings to default. Refresh the page after save to view "
-"full effects."
-msgstr ""
-"Pozor: Resetovat všechna nastavení na výchozí. Po uložení je nutno obnovit "
-"stranu pro zobrazení všech změn."
-
-#: ../inc/panel/customizer/customizer.php:1355
-msgid "Reset all settings"
-msgstr "Reset všech nastavení"
-
-#: ../inc/panel/customizer/customizer.php:1365
-msgid "Check to reset all settings to default"
-msgstr "Zaškrtni pro nastavení na výchozí hodnoty"
-
-#: ../inc/panel/customizer/customizer.php:1375
-#: ../inc/panel/customizer/customizer.php:1386
-msgid "Important Links"
-msgstr "Důležité linky"
-
-#: ../inc/panel/customizer/customizer.php:1424
-msgid "Upgrade To Pro &raquo;"
-msgstr "Upgrade na Pro &raquo;"
 
 #: ../no-results.php:15
 msgid "Nothing Found"
@@ -1937,5 +1629,180 @@ msgstr "Hledat"
 msgid "%s"
 msgstr "%s"
 
+#: ../sidebar.php:64
+msgid "Archives"
+msgstr "Archiv"
+
+#~ msgid "Basic theme Options"
+#~ msgstr "Základní nastavení Šablony"
+
+#~ msgid "Webclip Icon Options"
+#~ msgstr "Nastavení Ikony Webclipu"
+
+#~ msgid ""
+#~ "Web Clip Icon for Apple devices. Recommended Size - Width 144px and "
+#~ "Height 144px height, which will support High Resolution Devices like iPad "
+#~ "Retina"
+#~ msgstr ""
+#~ "Web Clip Ikona pro Apple přístroje. Doporučená velikost - šířka 144px a "
+#~ "výška 144px, která bude podporovat přístroje s vysokým rozlišením jako "
+#~ "iPad Retina"
+
+#~ msgid "Homepage/Frontpage Settings"
+#~ msgstr "Nastavení Domovské / Titulní strany"
+
+#~ msgid "Featured Content Settings"
+#~ msgstr "Nastavení Vybraného Obsahu"
+
+#~ msgid "Add your social links here"
+#~ msgstr "Přidat své linky na sociální sítě"
+
+#~ msgid "Predefined Social Icons"
+#~ msgstr "Předdefinované Ikony Sociálních sítí"
+
+#~ msgid "Check to Open Link in New Tab/Window"
+#~ msgstr "Otevřít link v novém okně?"
+
+#~ msgid "Check to Reset Header Featured Image Options"
+#~ msgstr "Resetovat Nastavení Vybraného obrázku Hlavičky"
+
+#~ msgid "Please refresh the customizer after saving if reset option is used"
+#~ msgstr "Prosím obnovit “customizer” po uložení, pokud byl proveden reset"
+
+#~ msgid "Check to Disable Header Right Sidebar"
+#~ msgstr "Vypnout Hlavičku Pravé Lišty"
+
+#~ msgid "Appropriate Words: 10"
+#~ msgstr "Vhodný počet slov: 10"
+
+#~ msgid "Appropriate Words: 15"
+#~ msgstr "Vhodný počet slov: 15"
+
+#~ msgid "Button Text "
+#~ msgstr "Text Tlačítka"
+
+#~ msgid "Appropriate Words: 3"
+#~ msgstr "Vhodný počet slov: 3"
+
+#~ msgid "Add link for your homepage headline button"
+#~ msgstr "Vložit link pro tlačítko domovské stránky"
+
+#~ msgid "Check to Open Link in New Window/Tab? "
+#~ msgstr "Otevřít link v novém okně?"
+
+#~ msgid "Check to Disable Homepage Headline"
+#~ msgstr "Vypnout Titulek na Domovské straně"
+
+#~ msgid "Check to Disable Homepage Subheadline"
+#~ msgstr "Vypnout Podtitulek na Domovské straně"
+
+#~ msgid "Check to Disable Homepage Button"
+#~ msgstr "Vypnout Tlačítko Domovské strany"
+
+#~ msgid "Check to Disable Latest Posts"
+#~ msgstr "Vypnout Poslední Příspěvky"
+
+#~ msgid ""
+#~ "Only posts that belong to the categories selected here will be displayed "
+#~ "on the front page"
+#~ msgstr ""
+#~ "Pouze příspěvky, které patří do vybraných kategorií budou zobrazeny na "
+#~ "titulní straně."
+
+#~ msgid "Check to Reset Layout"
+#~ msgstr "Resetovat Uspořádání"
+
+#~ msgid "Check to Reset Excerpt"
+#~ msgstr "Resetovat Výňatky"
+
+#~ msgid "Enter your custom CSS styles"
+#~ msgstr "Vložit vlastní uživatelské CSS styly"
+
+#~ msgid "Leave empty if you want to remove headline"
+#~ msgstr "Ponechat prázdné pro odstranění titulku"
+
+#~ msgid "Featured Content Subheadline Text "
+#~ msgstr "Text Podtitulku Vybraného Obsahu"
+
+#~ msgid "Transition Effect"
+#~ msgstr "Přechodový efekt"
+
+#~ msgid ""
+#~ "Customizer page needs to be refreshed after saving if number of slides is "
+#~ "changed"
+#~ msgstr ""
+#~ "Customizer strana musí být obnovena po uložení pokud byl změněn počet "
+#~ "rotací"
+
+#~ msgid "Check to Exclude Slider posts from Homepage posts"
+#~ msgstr "Vynechat Slider Příspěvky z Příspěvků na Domovské straně"
+
+#~ msgid "Check to Disable Favicon"
+#~ msgstr "Vypnout Favicon"
+
+#~ msgid "Fav Icon"
+#~ msgstr "Fav Icon"
+
+#~ msgid "Check to Disable Web Clip Icon"
+#~ msgstr "Vypnout Ikonu Webclipu"
+
+#~ msgid "Web Clip Icon"
+#~ msgstr "Ikona Webclipu"
+
+#~ msgid "Logo"
+#~ msgstr "Logo"
+
+#~ msgid "Check to Disable Logo"
+#~ msgstr "Vypnout Logo"
+
+#~ msgid ""
+#~ "Caution: Reset all settings to default. Refresh the page after save to "
+#~ "view full effects."
+#~ msgstr ""
+#~ "Pozor: Resetovat všechna nastavení na výchozí. Po uložení je nutno "
+#~ "obnovit stranu pro zobrazení všech změn."
+
+#~ msgid "Reset all settings"
+#~ msgstr "Reset všech nastavení"
+
+#~ msgid "Check to reset all settings to default"
+#~ msgstr "Zaškrtni pro nastavení na výchozí hodnoty"
+
+#~ msgid "Important Links"
+#~ msgstr "Důležité linky"
+
+#, fuzzy
+#~ msgid "Adventurous Pro"
+#~ msgstr "Adventurous"
+
 #~ msgid "Adventurous"
 #~ msgstr "Adventurous"
+
+#, fuzzy
+#~ msgid "https://catchthemes.com/themes/adventurous"
+#~ msgstr "https://catchthemes.com/themes/adventurous-pro/"
+
+#, fuzzy
+#~ msgid "Refresh the customizer page after saving to view reset effects"
+#~ msgstr "Prosím obnovit “customizer” po uložení, pokud byl proveden reset"
+
+#~ msgid "Category Archives: %s"
+#~ msgstr "Archiv kategorií %s"
+
+#~ msgid "Tag Archives: %s"
+#~ msgstr "Archiv štítků %s"
+
+#~ msgid "Author Archives: %s"
+#~ msgstr "Archiv autora %s"
+
+#~ msgid "Daily Archives: %s"
+#~ msgstr "Denní archiv %s"
+
+#~ msgid "Monthly Archives: %s"
+#~ msgstr "Měsíční archiv %s"
+
+#~ msgid "Yearly Archives: %s"
+#~ msgstr "Roční archiv %s"
+
+#~ msgid "Upgrade To Pro &raquo;"
+#~ msgstr "Upgrade na Pro &raquo;"

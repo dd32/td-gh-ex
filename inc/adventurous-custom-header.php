@@ -249,13 +249,13 @@ function adventurous_header_image() {
 		// Check Logo
 		if ( function_exists( 'has_custom_logo' ) ) {
 			$sitedetails = 'logo-enable logo-left';
-			
+
 			if ( has_custom_logo() ) {
 				$adventurous_header_logo = '
 				<div id="site-logo">'. get_custom_logo() . '</div><!-- #site-logo -->';
 			}
 		}
-		else if ( empty( $options['remove_header_logo'] ) ) {
+		elseif ( empty( $options['remove_header_logo'] ) ) {
 
 			$sitedetails = 'logo-enable logo-left';
 
@@ -428,10 +428,10 @@ function adventurous_featured_page_post_image() {
 			}
 
 			echo $linkopen;
-				if ( $featured_image == 'featured' ) {
+				if ( 'featured' == $featured_image ) {
 					echo get_the_post_thumbnail($post->ID, 'featured', array('id' => 'main-feat-img'));
 				}
-				elseif ( $featured_image == 'slider' ) {
+				elseif ( 'slider' == $featured_image ) {
 					echo get_the_post_thumbnail($post->ID, 'slider', array('id' => 'main-feat-img'));
 				}
 				else {
@@ -475,23 +475,23 @@ function adventurous_featured_overall_image() {
 		//Individual Page/Post Image Setting
 		$individual_featured_image = get_post_meta( $post->ID, 'adventurous-header-image', true );
 
-		if ( $individual_featured_image == 'disable' || ( $individual_featured_image == 'default' && $enableheaderimage == 'disable' ) ) {
+		if ( 'disable' == $individual_featured_image || ( 'default' == $individual_featured_image && 'disable' == $enableheaderimage ) ) {
 			echo '<!-- Page/Post Disable Header Image -->';
 			return;
 		}
-		elseif ( $individual_featured_image == 'enable' && $enableheaderimage == 'disable' ) {
+		elseif ( 'enable' == $individual_featured_image && 'disable' == $enableheaderimage ) {
 			adventurous_featured_page_post_image();
 		}
 	}
 
 	// Check Homepage
-	if ( $enableheaderimage == 'homepage' ) {
+	if ( 'homepage' == $enableheaderimage ) {
 		if ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) {
 			adventurous_featured_image();
 		}
 	}
 	// Check Excluding Homepage
-	if ( $enableheaderimage == 'excludehome' ) {
+	if ( 'excludehome' == $enableheaderimage ) {
 		if ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) {
 			return false;
 		}
@@ -500,11 +500,11 @@ function adventurous_featured_overall_image() {
 		}
 	}
 	// Check Entire Site
-	elseif ( $enableheaderimage == 'allpage' ) {
+	elseif ( 'allpage' == $enableheaderimage ) {
 		adventurous_featured_image();
 	}
 	// Check Entire Site (Post/Page)
-	elseif ( $enableheaderimage == 'postpage' ) {
+	elseif ( 'postpage' == $enableheaderimage ) {
 		if ( is_page() || is_single() ) {
 			adventurous_featured_page_post_image();
 		}
@@ -513,7 +513,7 @@ function adventurous_featured_overall_image() {
 		}
 	}
 	// Check Page/Post
-	elseif ( $enableheaderimage == 'pagespostes' ) {
+	elseif ( 'pagespostes' == $enableheaderimage ) {
 		if ( is_page() || is_single() ) {
 			adventurous_featured_page_post_image();
 		}
