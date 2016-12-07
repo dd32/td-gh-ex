@@ -59,7 +59,7 @@ function catcheverest_custom_header_setup() {
 		'admin-preview-callback' => 'catcheverest_admin_header_image',
 	);
 
-	if( function_exists( 'has_custom_logo' ) ) {
+	if ( function_exists( 'has_custom_logo' ) ) {
 		/* Previously, custom header was being used as logo, but with implementation of custom logo
 		 * from WordPress version 4.5 onwards, we have migrated custom header to custom logo
 		 * and Our custom field for header to core custom header
@@ -224,7 +224,7 @@ function catcheverest_featured_image() {
    	$options = $catcheverest_options_settings;
 	$enableheaderimage =  $options[ 'enable_featured_header_image' ];
 
-	if ( $enableheaderimage == 'allpage' || ( $enableheaderimage == 'homepage' && ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) ) ) {
+	if ( 'allpage' == $enableheaderimage || ( 'homepage' == $enableheaderimage && ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) ) ) {
 		$header_image = get_header_image();
 
 		if ( ! empty( $header_image ) ){

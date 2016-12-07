@@ -377,29 +377,36 @@ function catcheverest_theme_options_do_page() {
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->
 
-                    <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Custom CSS', 'catch-everest' ); ?></a></h3>
-                        <div class="option-content inside">
-                            <table class="form-table">
-                                <tbody>
-                                    <tr>
-                                        <th scope="row"><?php _e( 'Enter your custom CSS styles.', 'catch-everest' ); ?></th>
-                                        <td>
-                                            <textarea name="catcheverest_options[custom_css]" id="custom-css" cols="90" rows="12"><?php echo esc_attr( $options[ 'custom_css' ] ); ?></textarea>
-                                        </td>
-                                    </tr>
+                    <?php
+                    // @remove if block when WP 5.0 is released
+                    if ( ! function_exists( 'wp_update_custom_css_post' ) ) {
+                    ?>
+                        <div class="option-container">
+                            <h3 class="option-toggle"><a href="#"><?php _e( 'Custom CSS', 'catch-everest' ); ?></a></h3>
+                            <div class="option-content inside">
+                                <table class="form-table">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row"><?php _e( 'Enter your custom CSS styles.', 'catch-everest' ); ?></th>
+                                            <td>
+                                                <textarea name="catcheverest_options[custom_css]" id="custom-css" cols="90" rows="12"><?php echo esc_attr( $options[ 'custom_css' ] ); ?></textarea>
+                                            </td>
+                                        </tr>
 
-                                    <tr>
-                                        <th scope="row"><?php _e( 'CSS Tutorial from W3Schools.', 'catch-everest' ); ?></th>
-                                        <td>
-                                            <a class="button" href="<?php echo esc_url( __( 'http://www.w3schools.com/css/default.asp','catch-everest' ) ); ?>" title="<?php esc_attr_e( 'CSS Tutorial', 'catch-everest' ); ?>" target="_blank"><?php _e( 'Click Here to Read', 'catch-everest' );?></a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catch-everest' ); ?>" /></p>
-                        </div><!-- .option-content -->
-                    </div><!-- .option-container -->
+                                        <tr>
+                                            <th scope="row"><?php _e( 'CSS Tutorial from W3Schools.', 'catch-everest' ); ?></th>
+                                            <td>
+                                                <a class="button" href="<?php echo esc_url( __( 'http://www.w3schools.com/css/default.asp','catch-everest' ) ); ?>" title="<?php esc_attr_e( 'CSS Tutorial', 'catch-everest' ); ?>" target="_blank"><?php _e( 'Click Here to Read', 'catch-everest' );?></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catch-everest' ); ?>" /></p>
+                            </div><!-- .option-content -->
+                        </div><!-- .option-container -->
+                    <?php
+                    }
+                    ?>
 
                     <div class="option-container">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Scroll Up', 'catch-everest' ); ?></a></h3>
@@ -884,6 +891,10 @@ function catcheverest_theme_options_validate( $options ) {
     global $catcheverest_options_defaults;
     $defaults = $catcheverest_options_defaults;
 
+    if( "1" == $options['reset_all_settings'] ) {
+        return $defaults;
+    }
+
     $input = array();
     $input = $options;
 
@@ -934,7 +945,8 @@ function catcheverest_theme_options_validate( $options ) {
 
 
     // Data Validation for Custom CSS Style
-    if ( isset( $input['custom_css'] ) ) {
+    // @remove if block when WP 5.0 is released
+    if ( ! function_exists( 'wp_update_custom_css_post' )  && isset( $input['custom_css'] ) ) {
         $input_validated['custom_css'] = wp_kses_stripslashes($input['custom_css']);
     }
 
@@ -1187,6 +1199,7 @@ function catcheverest_theme_options_validate( $options ) {
 
         $input_validated[ 'sidebar_layout' ] = $defaults[ 'sidebar_layout' ];
         $input_validated[ 'content_layout' ] = $defaults[ 'content_layout' ];
+        $input_validated[ 'reset_layout' ]   = "0";
     }
 
     //data validation for excerpt length

@@ -23,7 +23,7 @@ function catcheverest_customize_register( $wp_customize ) {
 	$defaults = $catcheverest_options_defaults;
 
 	//Custom Controls
-	require get_template_directory() . '/inc/panel/customizer/customizer-custom-controls.php';
+	require trailingslashit( get_template_directory() ) . 'inc/panel/customizer/customizer-custom-controls.php';
 
 	$theme_slug = 'catcheverest_';
 
@@ -352,9 +352,10 @@ function catcheverest_customize_register( $wp_customize ) {
 			'title' 		=> __( 'Check to Reset Layout', 'catch-everest' ),
 			'description'	=> __( 'Please refresh the customizer after saving if reset option is used', 'catch-everest' ),
 			'field_type' 	=> 'checkbox',
-			'sanitize' 		=> 'catcheverest_sanitize_reset_layout',
+			'sanitize' 		=> 'catcheverest_sanitize_checkbox',
 			'panel' 		=> 'theme_options',
 			'section' 		=> 'layout_options',
+			'transport'		=> 'postMessage',
 			'default' 		=> $defaults['reset_layout']
 		),
 
@@ -367,7 +368,7 @@ function catcheverest_customize_register( $wp_customize ) {
 			'sanitize' 		=> 'catcheverest_sanitize_custom_css',
 			'panel' 		=> 'theme_options',
 			'section' 		=> 'custom_css',
-			'default' 		=> $defaults['homepage_headline']
+			'default' 		=> $defaults['custom_css']
 		),
 
 		//Update Notifier
@@ -941,6 +942,11 @@ function catcheverest_customize_register( $wp_customize ) {
 		$settings_parameters = array_merge( $settings_parameters, $settings_site_icon);
 	}
 
+	//@remove Remove if block and custom_css from $settings_paramater when WordPress 5.0 is released
+	if( function_exists( 'wp_update_custom_css_post' ) ) {
+		unset( $settings_parameters['custom_css'] );
+	}
+
 	foreach ( $settings_parameters as $option ) {
 		if( 'image' == $option['field_type'] ) {
 			$wp_customize->add_setting(
@@ -972,6 +978,7 @@ function catcheverest_customize_register( $wp_customize ) {
 			);
 		}
 		else if ('checkbox' == $option['field_type'] ) {
+			$transport = isset($option['transport'])?$option['transport']:'refresh';
 			$wp_customize->add_setting(
 				// $id
 				$theme_slug . 'options[' . $option['id'] . ']',
@@ -979,7 +986,9 @@ function catcheverest_customize_register( $wp_customize ) {
 				array(
 					'type'				=> 'option',
 					'sanitize_callback'	=> $option['sanitize'],
-					'default'			=> $option['default'],				)
+					'default'			=> $option['default'],
+					'transport'			=> $transport,
+									)
 			);
 
 			$params = array(
@@ -1253,7 +1262,8 @@ function catcheverest_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'catcheverest_options[reset_all_settings]', array(
 		'capability'		=> 'edit_theme_options',
-		'sanitize_callback' => 'catcheverest_reset_all_settings',
+		'sanitize_callback' => 'catcheverest_sanitize_checkbox',
+		'type'				=> 'option',
 		'transport'			=> 'postMessage',
 	) );
 
@@ -1275,7 +1285,7 @@ function catcheverest_customize_register( $wp_customize ) {
 	 * Has dummy Sanitizaition function as it contains no value to be sanitized
 	 */
 	$wp_customize->add_setting( 'important_links', array(
-		'sanitize_callback'	=> 'catcheverest_sanitize_important_link',
+		'sanitize_callback'	=> 'sanitize_text_field',
 	) );
 
 	$wp_customize->add_control( new CatchEverest_Important_Links( $wp_customize, 'important_links', array(
@@ -1313,25 +1323,27 @@ add_action( 'customize_save', 'catcheverest_customize_preview' );
  * @since Catch Everest 1.4
  */
 function catcheverest_customize_scripts() {
-	wp_register_script( 'catcheverest_customizer_custom', get_template_directory_uri() . '/inc/panel/js/customizer-custom-scripts.js', array( 'jquery' ), '20140108', true );
+	wp_enqueue_script( 'catcheverest_customizer_custom', get_template_directory_uri() . '/inc/panel/js/customizer-custom-scripts.js', array( 'jquery' ), '20140108', true );
 
-    $catcheverest_misc_links = array(
-							'upgrade_link' 				=> esc_url( 'https://catchthemes.com/themes/catch-everest-pro/' ),
-							'upgrade_text'	 			=> __( 'Upgrade To Pro &raquo;', 'catch-everest' ),
-		);
+	$catcheverest_data = array(
+		'reset_message' => esc_html__( 'Refresh the customizer page after saving to view reset effects', 'catch-everest' ),
+		'reset_options' => array(
+			'catcheverest_options[reset_layout]',
+			'catcheverest_options[reset_all_settings]',
+		)
+	);
 
-    //Add More Theme Options Button
-    wp_localize_script( 'catcheverest_customizer_custom', 'catcheverest_misc_links', $catcheverest_misc_links );
-
-    wp_enqueue_script( 'catcheverest_customizer_custom' );
-
-    wp_enqueue_style( 'catcheverest_customizer_custom', get_template_directory_uri() . '/inc/panel/catcheverest-customizer.css');
+	// Send reset message as object to custom customizer js
+	wp_localize_script( 'catcheverest_customizer_custom', 'catcheverest_data', $catcheverest_data );
 }
 add_action( 'customize_controls_enqueue_scripts', 'catcheverest_customize_scripts' );
 
 
 //Active callbacks for customizer
-require get_template_directory() . '/inc/panel/customizer/customizer-active-callbacks.php';
+require trailingslashit( get_template_directory() ) . 'inc/panel/customizer/customizer-active-callbacks.php';
 
 //Sanitize functions for customizer
-require get_template_directory() . '/inc/panel/customizer/customizer-sanitize-functions.php';
+require trailingslashit( get_template_directory() ) . 'inc/panel/customizer/customizer-sanitize-functions.php';
+
+// Add Upgrade to Pro Button.
+require trailingslashit( get_template_directory() ) . 'inc/panel/customizer/upgrade-button/class-customize.php';

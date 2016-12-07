@@ -16,7 +16,7 @@ do_action( 'catcheverest_before_secondary' );
 
 $catcheverest_layout = catcheverest_get_theme_layout();
 
-if ( $catcheverest_layout == 'left-sidebar' || $catcheverest_layout == 'right-sidebar' ) {
+if ( 'left-sidebar' == $catcheverest_layout || 'right-sidebar' == $catcheverest_layout ) {
 	?>
 
 	<div id="secondary" class="widget-area" role="complementary">

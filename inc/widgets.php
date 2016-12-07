@@ -5,11 +5,11 @@
  * @since Catch Everest 1.0
  */
 function catcheverest_widgets_init() {
-	
+
 	// Register Custom Widgets
 	register_widget( 'catcheverest_social_widget' );
 	register_widget( 'catcheverest_adspace_widget' );
-	
+
 	register_sidebar( array(
 		'name' => __( 'Main Sidebar', 'catch-everest' ),
 		'id' => 'sidebar-1',
@@ -19,7 +19,7 @@ function catcheverest_widgets_init() {
 		'before_title' => '<h1 class="widget-title">',
 		'after_title' => '</h1>',
 	) );
-	
+
 	//Footer One Sidebar
 	register_sidebar( array(
 		'name' => __( 'Footer Area One', 'catch-everest' ),
@@ -51,8 +51,8 @@ function catcheverest_widgets_init() {
 		'after_widget' => '</aside>',
 		'before_title' => '<h1 class="widget-title">',
 		'after_title' => '</h1>',
-	) );		
-	
+	) );
+
 }
 add_action( 'widgets_init', 'catcheverest_widgets_init' );
 
@@ -66,7 +66,7 @@ add_action( 'widgets_init', 'catcheverest_widgets_init' );
  * @since Catch Everest 1.0
  */
 class catcheverest_social_widget extends WP_Widget {
-	
+
 	/**
 	 * Register widget with WordPress.
 	 */
@@ -92,10 +92,10 @@ class catcheverest_social_widget extends WP_Widget {
         </p>
         <?php
 	}
-	
+
 	/**
-	 * update the particular instant  
-	 * 
+	 * update the particular instant
+	 *
 	 * This function should check that $new_instance is set correctly.
 	 * The newly calculated value of $instance should be returned.
 	 * If "false" is returned, the instance won't be saved/updated.
@@ -107,13 +107,13 @@ class catcheverest_social_widget extends WP_Widget {
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 		$instance['title'] = strip_tags($new_instance['title']);
-		
+
 		return $instance;
-	}	
-	
+	}
+
 	/**
 	 * Displays the Widget in the front-end.
-	 * 
+	 *
 	 * $args Display arguments including before_title, after_title, before_widget, and after_widget.
 	 * $instance The settings for the particular instance of the widget
 	 */
@@ -121,14 +121,14 @@ class catcheverest_social_widget extends WP_Widget {
 		extract( $args );
 		extract( $instance );
 		$title = !empty( $instance['title'] ) ? $instance[ 'title' ] : '';
-			
+
 		echo $before_widget;
-		if ( $title != '' ) {
+		if ( '' != $title ) {
 			echo $before_title . apply_filters( 'widget_title', $title, $instance, $this->id_base ) . $after_title;
-		} 
+		}
 
 		catcheverest_social_networks();
-		
+
 		echo $after_widget;
 	}
 
@@ -145,7 +145,7 @@ class catcheverest_social_widget extends WP_Widget {
  * @since Catch Everest 1.0
  */
 class catcheverest_adspace_widget extends WP_Widget {
-	
+
 	/**
 	 * Register widget with WordPress.
 	 */
@@ -191,17 +191,17 @@ class catcheverest_adspace_widget extends WP_Widget {
         </p>
 		<p>
 			<input class="checkbox" type="checkbox" <?php echo $target; ?> id="<?php echo $this->get_field_id('target'); ?>" name="<?php echo $this->get_field_name('target'); ?>" /> <label for="<?php echo $this->get_field_id('target'); ?>"><?php _e( 'Open Link in New Window', 'catch-everest' ); ?></label>
-		</p>        
+		</p>
         <p>
             <label for="<?php echo $this->get_field_id('alt'); ?>"><?php _e('Alt text:','catch-everest'); ?></label>
             <input type="text" name="<?php echo $this->get_field_name('alt'); ?>" value="<?php echo $alt; ?>" class="widefat" id="<?php echo $this->get_field_id('alt'); ?>" />
         </p>
         <?php
 	}
-	
+
 	/**
-	 * update the particular instant  
-	 * 
+	 * update the particular instant
+	 *
 	 * This function should check that $new_instance is set correctly.
 	 * The newly calculated value of $instance should be returned.
 	 * If "false" is returned, the instance won't be saved/updated.
@@ -218,13 +218,13 @@ class catcheverest_adspace_widget extends WP_Widget {
 		$instance['href'] = esc_url_raw($new_instance['href']);
 		$instance[ 'target' ] = isset( $new_instance[ 'target' ] ) ? 1 : 0;
 		$instance['alt'] = sanitize_text_field($new_instance['alt']);
-		
+
 		return $instance;
-	}	
-	
+	}
+
 	/**
 	 * Displays the Widget in the front-end.
-	 * 
+	 *
 	 * $args Display arguments including before_title, after_title, before_widget, and after_widget.
 	 * $instance The settings for the particular instance of the widget
 	 */
@@ -239,20 +239,20 @@ class catcheverest_adspace_widget extends WP_Widget {
 		$alt = !empty( $instance['alt'] ) ? $instance[ 'alt' ] : '';
 
 		if ( $target == "true" ) :
-			$base = '_blank'; 	
+			$base = '_blank';
 		else:
-			$base = '_self'; 	
-		endif;	
-			
-		echo $before_widget;
-		if ( $title != '' ) {
-			echo $before_title . apply_filters( 'widget_title', $title, $instance, $this->id_base ) . $after_title;
-		} 
+			$base = '_self';
+		endif;
 
-		if ( $adcode != '' ) {
+		echo $before_widget;
+		if ( '' != $title ) {
+			echo $before_title . apply_filters( 'widget_title', $title, $instance, $this->id_base ) . $after_title;
+		}
+
+		if ( '' != $adcode ) {
 			echo $adcode;
 		}
-		elseif ( $image != '' ) {
+		elseif ( '' != $image ) {
         	echo '<a href="'.$href.'" target="'.$base.'"><img src="'. $image.'" alt="'.$alt.'" /></a>';
 		}
 		else {
