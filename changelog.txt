@@ -1,4 +1,12 @@
-== Change log ==
+== Change Log ==
+
+= 1.7 =
+* Removed: HTML script loading from catchbase_head() function and added it as wp_enqueue_script() in catchbase_head() function
+* Updated: fitvids handle to 'jquery-fitvids', sidr handle to 'jquery-sidr'
+* Updated: Used the_archive_title() and the_archive_description() in archive.php
+* Updated: Upgrade Button in customizer with respect to trt decision
+* Updated: Custom CSS to Additional CSS( Core Support ) for WP version 4.7
+* Code Optimization
 
 = 1.6.2 =
 * Updated: Reset all settings compatibility with WordPress v4.6

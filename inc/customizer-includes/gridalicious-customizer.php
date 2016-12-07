@@ -38,7 +38,7 @@ function gridalicious_customize_register( $wp_customize ) {
 	$defaults = gridalicious_get_default_theme_options();
 
 	//Custom Controls
-	require get_template_directory() . '/inc/customizer-includes/gridalicious-customizer-custom-controls.php';
+	require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/gridalicious-customizer-custom-controls.php';
 
 	//@remove Remove this block when WordPress 4.8 is released
 	if ( ! function_exists( 'has_custom_logo' ) ) {
@@ -126,19 +126,19 @@ function gridalicious_customize_register( $wp_customize ) {
 	//End Color Scheme
 
 	// Header Options (added to Header section in Theme Customizer)
-	require get_template_directory() . '/inc/customizer-includes/gridalicious-customizer-header-options.php';
+	require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/gridalicious-customizer-header-options.php';
 
 	//Theme Options
-	require get_template_directory() . '/inc/customizer-includes/gridalicious-customizer-theme-options.php';
+	require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/gridalicious-customizer-theme-options.php';
 
 	//Featured Content Setting
-	require get_template_directory() . '/inc/customizer-includes/gridalicious-customizer-featured-content-setting.php';
+	require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/gridalicious-customizer-featured-content-setting.php';
 
 	//Featured Grid Content
-	require get_template_directory() . '/inc/customizer-includes/gridalicious-customizer-featured-grid-content.php';
+	require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/gridalicious-customizer-featured-grid-content.php';
 
 	//Social Links
-	require get_template_directory() . '/inc/customizer-includes/gridalicious-customizer-social-icons.php';
+	require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/gridalicious-customizer-social-icons.php';
 
 	// Reset all settings to default
 	$wp_customize->add_section( 'gridalicious_reset_all_settings', array(
@@ -209,17 +209,11 @@ add_action( 'customize_preview_init', 'gridalicious_customize_preview' );
 function gridalicious_customize_scripts() {
 	wp_enqueue_script( 'gridalicious_customizer_custom', get_template_directory_uri() . '/js/gridalicious-customizer-custom-scripts.min.js', array( 'jquery' ), '20131028', true );
 
-	$gridalicious_misc_links = array(
-							'upgrade_link'	=> esc_url( 'https://catchthemes.com/themes/gridalicious-pro/' ),
-							'upgrade_text'	=> __( 'Upgrade To Pro &raquo;', 'gridalicious' ),
-						);
+	$gridalicious_data = array(
+		'reset_message'	=> esc_html__( 'Refresh the customizer page after saving to view reset effects', 'gridalicious' )
+	);
 
-	$gridalicious_misc_links['reset_message'] = esc_html__( 'Refresh the customizer page after saving to view reset effects', 'gridalicious' );
-
-	//Add Upgrade Button
-	wp_localize_script( 'gridalicious_customizer_custom', 'gridalicious_misc_links', $gridalicious_misc_links );
-
-	wp_enqueue_style( 'gridalicious_customizer_custom', get_template_directory_uri() . '/css/gridalicious-customizer.css');
+	wp_localize_script( 'gridalicious_customizer_custom', 'gridalicious_data', $gridalicious_data );
 }
 add_action( 'customize_controls_enqueue_scripts', 'gridalicious_customize_scripts');
 
@@ -241,8 +235,11 @@ function gridalicious_reset_data() {
 add_action( 'customize_save_after', 'gridalicious_reset_data' );
 
 //Active callbacks for customizer
-require get_template_directory() . '/inc/customizer-includes/gridalicions-customizer-active-callbacks.php';
+require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/gridalicions-customizer-active-callbacks.php';
 
 
 //Sanitize functions for customizer
-require get_template_directory() . '/inc/customizer-includes/gridalicions-customizer-sanitize-functions.php';
+require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/gridalicions-customizer-sanitize-functions.php';
+
+// Add Upgrade to Pro Button.
+require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/upgrade-button/class-customize.php';

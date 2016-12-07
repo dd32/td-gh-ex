@@ -21,16 +21,16 @@ if( ! function_exists( 'gridalicious_is_grid_content_active' ) ) :
 	*/
 	function gridalicious_is_grid_content_active( $control ) {
 		global $wp_query;
-		
+
 		$page_id = $wp_query->get_queried_object_id();
 
 		// Front page display in Reading Settings
-		$page_for_posts = get_option('page_for_posts'); 
+		$page_for_posts = get_option('page_for_posts');
 
 		$enable = $control->manager->get_setting( 'gridalicious_theme_options[featured_grid_content_option]' )->value();
 
 		//return true only if previwed page on customizer matches the type of grid_content option selected
-		return ( $enable == 'entire-site' || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && $enable == 'homepage' ) );
+		return ( 'entire-site' == $enable  || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && 'homepage' == $enable  ) );
 	}
 endif;
 
@@ -43,18 +43,18 @@ if( ! function_exists( 'gridalicious_is_demo_grid_content_inactive' ) ) :
 	*/
 	function gridalicious_is_demo_grid_content_inactive( $control ) {
 		global $wp_query;
-		
+
 		$page_id = $wp_query->get_queried_object_id();
 
 		// Front page display in Reading Settings
-		$page_for_posts = get_option('page_for_posts'); 
+		$page_for_posts = get_option('page_for_posts');
 
 		$enable	= $control->manager->get_setting( 'gridalicious_theme_options[featured_grid_content_option]' )->value();
 
 		$type 	= $control->manager->get_setting( 'gridalicious_theme_options[featured_grid_content_type]' )->value();
 
 		//return true only if previwed page on customizer matches the type of grid_content option selected and is not demo grid_content
-		return ( ( $enable == 'entire-site' || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && $enable == 'homepage' ) ) && !( 'demo-featured-grid_content' == $type ) );
+		return ( ( 'entire-site' == $enable  || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && 'homepage' == $enable  ) ) && !( 'demo-featured-grid_content' == $type ) );
 	}
 endif;
 
@@ -67,16 +67,16 @@ if( ! function_exists( 'gridalicious_is_featured_content_active' ) ) :
 	*/
 	function gridalicious_is_featured_content_active( $control ) {
 		global $wp_query;
-		
+
 		$page_id = $wp_query->get_queried_object_id();
 
 		// Front page display in Reading Settings
-		$page_for_posts = get_option('page_for_posts'); 
+		$page_for_posts = get_option('page_for_posts');
 
 		$enable = $control->manager->get_setting( 'gridalicious_theme_options[featured_content_option]' )->value();
 
 		//return true only if previwed page on customizer matches the type of content option selected
-		return ( $enable == 'entire-site' || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && $enable == 'homepage' ) );
+		return ( 'entire-site' == $enable  || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && 'homepage' == $enable  ) );
 	}
 endif;
 
@@ -89,17 +89,17 @@ if( ! function_exists( 'gridalicious_is_demo_featured_content_inactive' ) ) :
 	*/
 	function gridalicious_is_demo_featured_content_inactive( $control ) {
 		global $wp_query;
-		
+
 		$page_id = $wp_query->get_queried_object_id();
 
 		// Front page display in Reading Settings
-		$page_for_posts = get_option('page_for_posts'); 
+		$page_for_posts = get_option('page_for_posts');
 
 		$enable 	= $control->manager->get_setting( 'gridalicious_theme_options[featured_content_option]' )->value();
 
 		$type 	= $control->manager->get_setting( 'gridalicious_theme_options[featured_content_type]' )->value();
 
 		//return true only if previwed page on customizer matches the type of content option selected and is not demo content
-		return ( ( $enable == 'entire-site' || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && $enable == 'homepage' ) ) && !( 'demo-featured-content' == $type ) );
+		return ( ( 'entire-site' == $enable  || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && 'homepage' == $enable  ) ) && !( 'demo-featured-content' == $type ) );
 	}
 endif;

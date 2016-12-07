@@ -4,7 +4,7 @@
  *
  * @package Catch Themes
  * @subpackage Gridalicious
- * @since Gridalicious 0.1 
+ * @since Gridalicious 0.1
  */
 
 if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
@@ -43,10 +43,6 @@ if ( ! function_exists( 'gridalicious_head' ) ) :
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<link rel="profile" href="http://gmpg.org/xfn/11">
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-		<?php if ( ! function_exists( '_wp_render_title_tag' ) ) : ?><title><?php wp_title( '|', true, 'right' ); ?></title><?php endif; ?>	
-		<!--[if lt IE 9]>
-			<script src="<?php echo get_template_directory_uri(); ?>/js/html5.min.js"></script>
-		<![endif]-->
 		<?php
 	}
 endif;
@@ -169,7 +165,7 @@ endif;
 if ( ! function_exists( 'gridalicious_content_sidebar_wrap_end' ) ) :
 	/**
 	 * End div id #content_sidebar_wrap
-	 * 
+	 *
 	 * @since Gridalicious 0.1
 	 */
 	function gridalicious_content_sidebar_wrap_end() {
@@ -183,7 +179,7 @@ endif;
 if ( ! function_exists( 'gridalicious_sidebar_secondary' ) ) :
 	/**
 	 * Secondary Sidebar
-	 * 
+	 *
 	 * @since Gridalicious 0.1
 	 */
 	function gridalicious_sidebar_secondary() {
@@ -249,10 +245,10 @@ function gridalicious_header_right() { ?>
 					<?php echo $gridalicious_social_icons; ?>
 				</div><!-- .widget-wrap -->
 			</section><!-- #header-right-social-icons -->
-		<?php 
-		} ?>		
-	</aside><!-- .sidebar .header-sidebar .widget-area -->	
-<?php	
+		<?php
+		} ?>
+	</aside><!-- .sidebar .header-sidebar .widget-area -->
+<?php
 }
 endif;
 add_action( 'gridalicious_header', 'gridalicious_header_right', 60 );

@@ -8,17 +8,17 @@
  *
  * @package Catch Themes
  * @subpackage Gridalicious
- * @since Gridalicious 0.1 
+ * @since Gridalicious 0.1
  */
 
 //define theme version
 if ( !defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 	$theme_data = wp_get_theme();
-	
+
 	define ( 'GRIDALICIOUS_THEME_VERSION', $theme_data->get( 'Version' ) );
 }
 
 /**
  * Implement the core functions
  */
-require get_template_directory() . '/inc/gridalicious-core.php';
+require trailingslashit( get_template_directory() ) . 'inc/gridalicious-core.php';

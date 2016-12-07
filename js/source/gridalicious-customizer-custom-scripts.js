@@ -2,12 +2,7 @@
  * Theme Customizer custom scripts
  * Control of show/hide events on feature grid_content type selection
  */
-(function($) {
-    $('.preview-notice').prepend('<span id="gridalicious_upgrade"><a target="_blank" class="button btn-upgrade" href="' + gridalicious_misc_links.upgrade_link + '">' + gridalicious_misc_links.upgrade_text + '</a></span>');
-    jQuery('#customize-info .btn-upgrade, .misc_links').click(function(event) {
-        event.stopPropagation();
-    });
-    
+(function($) {    
     /* 
      * Color scheme change
      */
@@ -35,7 +30,7 @@
                     code,
                     {
                         type: 'info',
-                        message: gridalicious_misc_links.reset_message
+                        message: gridalicious_data.reset_message
                     }
                 ) );
             } else {

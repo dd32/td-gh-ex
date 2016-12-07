@@ -4,7 +4,7 @@
  *
  * @package Catch Themes
  * @subpackage Gridalicious Pro
- * @since Gridalicious 0.1 
+ * @since Gridalicious 0.1
  */
 
 if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
@@ -35,28 +35,28 @@ function gridalicious_featured_grid_content() {
 
 	// Front page displays in Reading Settings
 	$page_on_front = get_option('page_on_front') ;
-	$page_for_posts = get_option('page_for_posts'); 
- 
-	if ( $enablegrid_content == 'entire-site' || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && $enablegrid_content == 'homepage' ) ) {
+	$page_for_posts = get_option('page_for_posts');
+
+	if ( 'entire-site' == $enablegrid_content  || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && 'homepage' == $enablegrid_content  ) ) {
 		if( ( !$gridalicious_featured_grid_content = get_transient( 'gridalicious_featured_grid_content' ) ) ) {
 			echo '<!-- refreshing cache -->';
-		
+
 			$gridalicious_featured_grid_content = '
 				<section id="featured-grid-content" class="'. $grid_contentselect .'">
 					<div class="wrapper">';
 
 							// Select Grid Content
-							if ( $grid_contentselect == 'demo-featured-grid-content' && function_exists( 'gridalicious_demo_grid_content' ) ) {
+							if ( 'demo-featured-grid-content' == $grid_contentselect  && function_exists( 'gridalicious_demo_grid_content' ) ) {
 								$gridalicious_featured_grid_content .=  gridalicious_demo_grid_content();
 							}
-							elseif ( $grid_contentselect == 'featured-page-grid-content' && function_exists( 'gridalicious_page_grid_content' ) ) {
+							elseif ( 'featured-page-grid-content' == $grid_contentselect  && function_exists( 'gridalicious_page_grid_content' ) ) {
 								$gridalicious_featured_grid_content .=  gridalicious_page_grid_content( $options );
 							}
- 
+
 			$gridalicious_featured_grid_content .= '
 					</div><!-- .wrapper -->
 				</section><!-- #feature-grid-content -->';
-			
+
 			set_transient( 'gridalicious_featured_grid_content', $gridalicious_featured_grid_content, 86940 );
 		}
 		echo $gridalicious_featured_grid_content;
@@ -85,8 +85,8 @@ function gridalicious_demo_grid_content() {
 											<span class="more">
 												Read More ...
 											</span>
-										</span><!-- .vcenter --> 
-									</div><!-- .caption --> 
+										</span><!-- .vcenter -->
+									</div><!-- .caption -->
 								</a><!-- .grid-box -->
 
 								<a class="grid-box" title="Grid Content Image 2" href="'. esc_url( home_url( '/' ) ) .'">
@@ -98,10 +98,10 @@ function gridalicious_demo_grid_content() {
 											</span>
 											<span class="more">
 												Read More ...
-											</span> 
-										</span><!-- .vcenter --> 
-									</div><!-- .caption --> 
-								</a><!-- .grid-box --> 
+											</span>
+										</span><!-- .vcenter -->
+									</div><!-- .caption -->
+								</a><!-- .grid-box -->
 
 								<a class="grid-box" title="Grid Content Image 3" href="'. esc_url( home_url( '/' ) ) .'">
 									<img src="' . get_template_directory_uri() . '/images/gallery/grid-800x450-3.jpg" class="wp-post-image" alt="Grid Content Image 3" title="Grid Content Image 3">
@@ -112,9 +112,9 @@ function gridalicious_demo_grid_content() {
 											</span>
 											<span class="more">
 												Read More ...
-											</span> 
-										</span><!-- .vcenter --> 
-									</div><!-- .caption --> 
+											</span>
+										</span><!-- .vcenter -->
+									</div><!-- .caption -->
 								</a><!-- .grid-box -->';
 	return $gridalicious_demo_grid_content;
 }
@@ -131,7 +131,7 @@ if ( ! function_exists( 'gridalicious_page_grid_content' ) ) :
  */
 function gridalicious_page_grid_content( $options ) {
 	$quantity		= $options['featured_grid_content_number'];
-	
+
 	global $post;
 
     $gridalicious_page_grid_content = '';
@@ -155,35 +155,35 @@ function gridalicious_page_grid_content( $options ) {
 			'post__in'			=> $page_list,
 			'orderby' 			=> 'post__in'
 		));
-		
-		$i=1; 
-		
+
+		$i=1;
+
 		while ( $get_featured_posts->have_posts() ) {
 
-			$get_featured_posts->the_post();			
-			
+			$get_featured_posts->the_post();
+
 			$title_attribute = the_title_attribute( array( 'before' => __( 'Permalink to:', 'gridalicious' ), 'echo' => false ) );
-			
+
 			$classes = 'page pageid-' . $post->ID;
 
 			if ( 1 == $i ) {
-				$classes .= ' first'; 
+				$classes .= ' first';
 			}
 			else if ( 1 == $i%3 ) {
 				$classes .= ' first-cols';
 			}
 
-			$gridalicious_page_grid_content .= 
+			$gridalicious_page_grid_content .=
 			'<a class="grid-box '. $classes .'" title="' . the_title_attribute( array( 'before' => __( 'Permalink to:', 'gridalicious' ), 'echo' => false ) ) . '" href="' . esc_url( get_permalink() ) . '">';
-				
+
 			if ( has_post_thumbnail() ) {
 				$gridalicious_page_grid_content .= get_the_post_thumbnail( $post->ID, 'gridalicious-featured-grid', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class'	=> 'pngfix' ) );
 			}
 			else {
 				//Default value if there is no first image
-				$gridalicious_image = 
+				$gridalicious_image =
 					'<img class="no-image pngfix" src="'.get_template_directory_uri().'/images/gallery/no-featured-image-1200x514.jpg" />';
-				
+
 				//Get the first image in page, returns false if there is no image
 				$gridalicious_first_image = gridalicious_get_first_image( $post->ID, 'medium', array( 'title' => esc_attr( $title_attribute ), 'alt' => esc_attr( $title_attribute ), 'class' => 'pngfix' ) );
 
@@ -195,10 +195,10 @@ function gridalicious_page_grid_content( $options ) {
 				$gridalicious_page_grid_content .= $gridalicious_image;
 			}
 
-			$gridalicious_page_grid_content .= '				
+			$gridalicious_page_grid_content .= '
 				<div class="caption">
 					<span class="vcenter">
-						<span class="entry-title"> 
+						<span class="entry-title">
 							' . the_title('', '', false) . '
 						</span>
 						<span class="more">';
@@ -206,11 +206,11 @@ function gridalicious_page_grid_content( $options ) {
 						$gridalicious_page_grid_content .=  $options['excerpt_more_text'];
 
 				$gridalicious_page_grid_content .= '
-						</span><!-- .more --> 
-					</span><!-- .vcenter --> 
-				</div><!-- .caption --> 
+						</span><!-- .more -->
+					</span><!-- .vcenter -->
+				</div><!-- .caption -->
 			</a><!-- .grid-box -->';
-			
+
 			$i++;
 		}
 

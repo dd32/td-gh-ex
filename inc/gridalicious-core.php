@@ -196,18 +196,18 @@ function gridalicious_scripts() {
 	wp_enqueue_style( 'gridalicious-responsive', get_template_directory_uri() . '/css/responsive.css' );
 
 	//Responsive Menu
-	wp_enqueue_script('sidr', get_template_directory_uri() . '/js/jquery.sidr.min.js', array('jquery'), '2.2.1.1 - 2016-03-04', false );
+	wp_enqueue_script( 'jquery-sidr', get_template_directory_uri() . '/js/jquery.sidr.min.js', array('jquery'), '2.2.1.1 - 2016-03-04', false );
 
-	wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/js/fitvids.min.js', array( 'jquery' ), '1.1', true );
+	wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/js/fitvids.min.js', array( 'jquery' ), '1.1', true );
 
 	/**
 	 * Loads default sidr color scheme styles(Does not require handle prefix)
 	 */
 	if ( isset( $options['color_scheme'] ) && ( 'dark' == $options['color_scheme'] ) ) {
-		wp_enqueue_style( 'sidr', get_template_directory_uri() . '/css/jquery.sidr.dark.min.css', false, '2.1.0' );
+		wp_enqueue_style( 'jquery-sidr', get_template_directory_uri() . '/css/jquery.sidr.dark.min.css', false, '2.1.0' );
 	}
 	else if ( isset( $options['color_scheme'] ) && ( 'light' == $options['color_scheme'] ) ) {
-		wp_enqueue_style( 'sidr', get_template_directory_uri() . '/css/jquery.sidr.light.min.css', false, '2.1.0' );
+		wp_enqueue_style( 'jquery-sidr', get_template_directory_uri() . '/css/jquery.sidr.light.min.css', false, '2.1.0' );
 	}
 
 	/**
@@ -221,6 +221,10 @@ function gridalicious_scripts() {
 	 * Enqueue custom script for gridalicious.
 	 */
 	wp_enqueue_script( 'gridalicious-custom-scripts', get_template_directory_uri() . '/js/gridalicious-custom-scripts.min.js', array( 'jquery' ), null );
+
+	// Load the html5 shiv.
+	wp_enqueue_script( 'gridalicious-html5', get_template_directory_uri() . '/js/html5.min.js', array(), '3.7.3' );
+	wp_script_add_data( 'gridalicious-html5', 'conditional', 'lt IE 9' );
 }
 add_action( 'wp_enqueue_scripts', 'gridalicious_scripts' );
 
@@ -249,66 +253,66 @@ add_action( 'admin_print_scripts-page.php', 'gridalicious_enqueue_metabox_script
 /**
  * Default Options.
  */
-require get_template_directory() . '/inc/gridalicious-default-options.php';
+require trailingslashit( get_template_directory() ) . 'inc/gridalicious-default-options.php';
 
 /**
  * Custom Header.
  */
-require get_template_directory() . '/inc/gridalicious-custom-header.php';
+require trailingslashit( get_template_directory() ) . 'inc/gridalicious-custom-header.php';
 
 
 /**
  * Structure for gridalicious
  */
-require get_template_directory() . '/inc/gridalicious-structure.php';
+require trailingslashit( get_template_directory() ) . 'inc/gridalicious-structure.php';
 
 
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer-includes/gridalicious-customizer.php';
+require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/gridalicious-customizer.php';
 
 
 /**
  * Custom Menus
  */
-require get_template_directory() . '/inc/gridalicious-menus.php';
+require trailingslashit( get_template_directory() ) . 'inc/gridalicious-menus.php';
 
 
 /**
  * Load Featured Grid file.
  */
-require get_template_directory() . '/inc/gridalicious-featured-grid-content.php';
+require trailingslashit( get_template_directory() ) . 'inc/gridalicious-featured-grid-content.php';
 
 
 /**
  * Load Featured Content.
  */
-require get_template_directory() . '/inc/gridalicious-featured-content.php';
+require trailingslashit( get_template_directory() ) . 'inc/gridalicious-featured-content.php';
 
 
 /**
  * Load Breadcrumb file.
  */
-require get_template_directory() . '/inc/gridalicious-breadcrumb.php';
+require trailingslashit( get_template_directory() ) . 'inc/gridalicious-breadcrumb.php';
 
 
 /**
  * Load Widgets and Sidebars
  */
-require get_template_directory() . '/inc/gridalicious-widgets.php';
+require trailingslashit( get_template_directory() ) . 'inc/gridalicious-widgets.php';
 
 
 /**
  * Load Social Icons
  */
-require get_template_directory() . '/inc/gridalicious-social-icons.php';
+require trailingslashit( get_template_directory() ) . 'inc/gridalicious-social-icons.php';
 
 
 /**
  * Load Metaboxes
  */
-require get_template_directory() . '/inc/gridalicious-metabox.php';
+require trailingslashit( get_template_directory() ) . 'inc/gridalicious-metabox.php';
 
 
 /**
@@ -1196,7 +1200,7 @@ if ( ! function_exists( 'gridalicious_single_content_image' ) ) :
 			$individual_featured_image = 'default';
 		}
 
-		if ( ( $individual_featured_image == 'disable' || '' == get_the_post_thumbnail() || ( $individual_featured_image=='default' && $featured_image == 'disabled') ) ) {
+		if ( ( 'disable' == $individual_featured_image  || '' == get_the_post_thumbnail() || ( $individual_featured_image=='default' && 'disabled' == $featured_image ) ) ) {
 			echo '<!-- Page/Post Single Image Disabled or No Image set in Post Thumbnail -->';
 			return false;
 		}
@@ -1213,7 +1217,7 @@ if ( ! function_exists( 'gridalicious_single_content_image' ) ) :
 			?>
 			<figure class="featured-image <?php echo $class; ?>">
                 <?php
-				if ( $individual_featured_image == 'featured' || ( $individual_featured_image=='default' && $featured_image == 'featured' ) ) {
+				if ( 'featured' == $individual_featured_image  || ( $individual_featured_image=='default' && 'featured' == $featured_image  ) ) {
                      the_post_thumbnail( 'gridalicious-featured' );
                 }
                 else {
@@ -1282,7 +1286,7 @@ if ( ! function_exists( 'gridalicious_promotion_headline' ) ) :
 		// Get Page ID outside Loop
 		$page_id = $wp_query->get_queried_object_id();
 
-		 if ( ( "" != $promotion_headline || "" != $promotion_subheadline || "" != $promotion_headline_url ) && ( $enablepromotion == 'entire-site' || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && $enablepromotion == 'homepage' ) ) ) {
+		 if ( ( "" != $promotion_headline || "" != $promotion_subheadline || "" != $promotion_headline_url ) && ( 'entire-site' == $enablepromotion  || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && 'homepage' == $enablepromotion  ) ) ) {
 
 			if ( !$gridalicious_promotion_headline = get_transient( 'gridalicious_promotion_headline' ) ) {
 
@@ -1557,3 +1561,41 @@ function gridalicious_site_icon_migrate() {
 	}
 }
 add_action( 'after_setup_theme', 'gridalicious_site_icon_migrate' );
+
+
+/**
+ * Migrate Custom CSS to WordPress core Custom CSS
+ *
+ * Runs if version number saved in theme_mod "custom_css_version" doesn't match current theme version.
+ */
+function gridalicious_custom_css_migrate(){
+	$ver = get_theme_mod( 'custom_css_version', false );
+
+	// Return if update has already been run
+	if ( version_compare( $ver, '4.7' ) >= 0 ) {
+		return;
+	}
+	
+	if ( function_exists( 'wp_update_custom_css_post' ) ) {
+	    // Migrate any existing theme CSS to the core option added in WordPress 4.7.
+	    
+	    /**
+		 * Get Theme Options Values
+		 */
+	    $options = gridalicious_get_theme_options();
+
+	    if ( '' != $options['custom_css'] ) {
+			$core_css = wp_get_custom_css(); // Preserve any CSS already added to the core option.
+			$return   = wp_update_custom_css_post( $core_css . $options['custom_css'] );
+	        if ( ! is_wp_error( $return ) ) {
+	            // Remove the old theme_mod, so that the CSS is stored in only one place moving forward.
+	            unset( $options['custom_css'] );
+	            set_theme_mod( 'gridalicious_theme_options', $options );
+
+	            // Update to match custom_css_version so that script is not executed continously
+				set_theme_mod( 'custom_css_version', '4.7' );
+	        }
+	    }
+	}
+}
+add_action( 'after_setup_theme', 'gridalicious_custom_css_migrate' );

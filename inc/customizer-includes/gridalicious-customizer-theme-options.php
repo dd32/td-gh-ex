@@ -75,28 +75,34 @@ if ( ! defined( 'GRIDALICIOUS_THEME_VERSION' ) ) {
 	);
    	// Breadcrumb Option End
 
-   	// Custom CSS Option
-	$wp_customize->add_section( 'gridalicious_custom_css', array(
-		'description'	=> __( 'Custom/Inline CSS', 'gridalicious'),
-		'panel'  		=> 'gridalicious_theme_options',
-		'priority' 		=> 203,
-		'title'    		=> __( 'Custom CSS Options', 'gridalicious' ),
-	) );
+	/**
+	 *  Remove Custom CSS option from WordPress 4.7 onwards
+	 *  //@remove Remove if block and custom_css when WordPress 5.0 is released
+	 */
+	if ( !function_exists( 'wp_update_custom_css_post' ) ) {
+	   	// Custom CSS Option
+		$wp_customize->add_section( 'gridalicious_custom_css', array(
+			'description'	=> __( 'Custom/Inline CSS', 'gridalicious'),
+			'panel'  		=> 'gridalicious_theme_options',
+			'priority' 		=> 203,
+			'title'    		=> __( 'Custom CSS Options', 'gridalicious' ),
+		) );
 
-	$wp_customize->add_setting( 'gridalicious_theme_options[custom_css]', array(
-		'capability'		=> 'edit_theme_options',
-		'default'			=> $defaults['custom_css'],
-		'sanitize_callback' => 'gridalicious_sanitize_custom_css',
-	) );
+		$wp_customize->add_setting( 'gridalicious_theme_options[custom_css]', array(
+			'capability'		=> 'edit_theme_options',
+			'default'			=> $defaults['custom_css'],
+			'sanitize_callback' => 'gridalicious_sanitize_custom_css',
+		) );
 
-	$wp_customize->add_control( 'gridalicious_theme_options[custom_css]', array(
-			'label'		=> __( 'Enter Custom CSS', 'gridalicious' ),
-	        'priority'	=> 1,
-			'section'   => 'gridalicious_custom_css',
-	        'settings'  => 'gridalicious_theme_options[custom_css]',
-			'type'		=> 'textarea',
-	) );
-   	// Custom CSS End
+		$wp_customize->add_control( 'gridalicious_theme_options[custom_css]', array(
+				'label'		=> __( 'Enter Custom CSS', 'gridalicious' ),
+		        'priority'	=> 1,
+				'section'   => 'gridalicious_custom_css',
+		        'settings'  => 'gridalicious_theme_options[custom_css]',
+				'type'		=> 'textarea',
+		) );
+	   	// Custom CSS End
+	}
 
    	// Excerpt Options
 	$wp_customize->add_section( 'gridalicious_excerpt_options', array(
