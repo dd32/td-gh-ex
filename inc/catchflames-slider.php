@@ -76,7 +76,7 @@ function catchflames_page_sliders() {
    	$options = $catchflames_options_settings;
 
 
-	if( ( !$catchflames_page_sliders = get_transient( 'catchflames_page_sliders' ) ) && !empty( $options[ 'featured_slider_page' ] ) ) {
+	if ( ( !$catchflames_page_sliders = get_transient( 'catchflames_page_sliders' ) ) && !empty( $options[ 'featured_slider_page' ] ) ) {
 		echo '<!-- refreshing cache -->';
 
 		$imagesize = 'featured-slider-normal';
@@ -128,7 +128,7 @@ function catchflames_page_sliders() {
 										<a title="Permalink to '.the_title('','',false).'" href="' . get_permalink() . '">'.the_title( '<span>','</span>', false ).'</a>
 									</h1>
 								</header>';
-								if( $excerpt !='') {
+								if ( $excerpt !='') {
 									$catchflames_page_sliders .= '<div class="entry-content">'. $excerpt.'</div>';
 								}
 								$catchflames_page_sliders .= '
@@ -167,8 +167,8 @@ function catchflames_slider_display() {
 	// Get Page ID outside Loop
 	$page_id = $wp_query->get_queried_object_id();
 
-	if ( ( $enableslider == 'enable-slider-allpage' ) || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && $enableslider == 'enable-slider-homepage' ) ) :
-		if (  $slidertype == 'page-slider' ) {
+	if ( ( 'enable-slider-allpage' == $enableslider ) || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && 'enable-slider-homepage' == $enableslider ) ) :
+		if (  'page-slider' == $slidertype ) {
 			if ( !empty( $options[ 'featured_slider_page' ] ) && function_exists( 'catchflames_page_sliders' ) ) {
 				catchflames_page_sliders();
 			}

@@ -629,30 +629,37 @@ function catchflames_theme_options_do_page() {
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->
 
-					<div id="custom-css" class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Custom CSS', 'catch-flames' ); ?></a></h3>
-                        <div class="option-content inside">
-                        	<div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Enter your custom CSS styles.', 'catch-flames' ); ?>
-                                </div>
-                                <div class="col col-2">
-                                	<textarea name="catchflames_options[custom_css]" id="custom-css" cols="90" rows="12"><?php echo esc_attr( $options[ 'custom_css' ] ); ?></textarea>
-                            	</div>
-                          	</div><!-- .row -->
-                        	<div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'CSS Tutorial from W3Schools.', 'catch-flames' ); ?>
-                                </div>
-                                <div class="col col-2">
-                                	<a class="button" href="<?php echo esc_url( __( 'http://www.w3schools.com/css/default.asp','catch-flames' ) ); ?>" title="<?php esc_attr_e( 'CSS Tutorial', 'catch-flames' ); ?>" target="_blank"><?php _e( 'Click Here to Read', 'catch-flames' );?></a>
-                            	</div>
-                          	</div><!-- .row -->
-                            <div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-flames' ); ?>" />
-                          	</div><!-- .row -->
-                        </div><!-- .option-content -->
-                    </div><!-- .option-container -->
+					<?php
+                    // @remove if block when WP 5.0 is released
+                    if ( ! function_exists( 'wp_update_custom_css_post' ) ) {
+                    ?>
+                        <div id="custom-css" class="option-container">
+                            <h3 class="option-toggle"><a href="#"><?php _e( 'Custom CSS', 'catch-flames' ); ?></a></h3>
+                            <div class="option-content inside">
+                            	<div class="row">
+                                	<div class="col col-1">
+                                    	<?php _e( 'Enter your custom CSS styles.', 'catch-flames' ); ?>
+                                    </div>
+                                    <div class="col col-2">
+                                    	<textarea name="catchflames_options[custom_css]" id="custom-css" cols="90" rows="12"><?php echo esc_attr( $options[ 'custom_css' ] ); ?></textarea>
+                                	</div>
+                              	</div><!-- .row -->
+                            	<div class="row">
+                                	<div class="col col-1">
+                                    	<?php _e( 'CSS Tutorial from W3Schools.', 'catch-flames' ); ?>
+                                    </div>
+                                    <div class="col col-2">
+                                    	<a class="button" href="<?php echo esc_url( __( 'http://www.w3schools.com/css/default.asp','catch-flames' ) ); ?>" title="<?php esc_attr_e( 'CSS Tutorial', 'catch-flames' ); ?>" target="_blank"><?php _e( 'Click Here to Read', 'catch-flames' );?></a>
+                                	</div>
+                              	</div><!-- .row -->
+                                <div class="row">
+                                	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-flames' ); ?>" />
+                              	</div><!-- .row -->
+                            </div><!-- .option-content -->
+                        </div><!-- .option-container -->
+                     <?php
+                    }
+                    ?>
 
                     <div id="scrollup" class="option-container">
                     	<h3 class="option-toggle"><a href="#"><?php _e( 'Scroll Up', 'catch-flames' ); ?></a></h3>
@@ -1214,6 +1221,30 @@ function catchflames_theme_options_do_page() {
                         </div><!-- .row -->
                         <div class="row">
                             <div class="col col-1">
+                                <?php _e( 'Meetup', 'catch-flames' ); ?>
+                            </div>
+                            <div class="col col-2">
+                                <input type="text" size="45" name="catchflames_options[social_meetup]" value="<?php echo esc_url( $options[ 'social_meetup' ] ); ?>" />
+                            </div>
+                        </div><!-- .row -->
+                        <div class="row">
+                            <div class="col col-1">
+                                <?php _e( 'Goodreads', 'catch-flames' ); ?>
+                            </div>
+                            <div class="col col-2">
+                                <input type="text" size="45" name="catchflames_options[social_goodreads]" value="<?php echo esc_url( $options[ 'social_goodreads' ] ); ?>" />
+                            </div>
+                        </div><!-- .row -->
+                        <div class="row">
+                            <div class="col col-1">
+                                <?php _e( 'github', 'catch-flames' ); ?>
+                            </div>
+                            <div class="col col-2">
+                                <input type="text" size="45" name="catchflames_options[social_github]" value="<?php echo esc_url( $options[ 'social_github' ] ); ?>" />
+                            </div>
+                        </div><!-- .row -->
+                        <div class="row">
+                            <div class="col col-1">
                                 <?php _e( 'Enable SpecificFeeds?', 'catch-flames' ); ?>
                             </div>
                             <div class="col col-2">
@@ -1247,6 +1278,10 @@ function catchflames_theme_options_validate( $options ) {
 
 	global $catchflames_options_defaults;
 	$defaults = $catchflames_options_defaults;
+
+    if( "1" == $options['reset_all_settings'] ) {
+        return $defaults;
+    }
 
 	$fonts = catchflames_available_fonts();
 	$units = array( 'px', 'pt', 'em', '%' );
@@ -1344,9 +1379,10 @@ function catchflames_theme_options_validate( $options ) {
 		$input_validated[ 'reset_header_image' ] = $input[ 'reset_header_image' ];
 
 		if ( $input['reset_header_image'] == '1' ) {
-			$input_validated[ 'enable_featured_header_image' ] = $defaults[ 'enable_featured_header_image' ];
-			$input_validated[ 'featured_header_image_alt' ] = $defaults[ 'featured_header_image_alt' ];
-			$input_validated[ 'featured_header_image_url' ] = $defaults[ 'featured_header_image_url' ];
+            $input_validated[ 'enable_featured_header_image' ] = $defaults[ 'enable_featured_header_image' ];
+            $input_validated[ 'featured_header_image_alt' ]    = $defaults[ 'featured_header_image_alt' ];
+            $input_validated[ 'featured_header_image_url' ]    = $defaults[ 'featured_header_image_url' ];
+            $input_validated[ 'reset_header_image' ]           = "0";
 		}
 	}
 
@@ -1375,16 +1411,18 @@ function catchflames_theme_options_validate( $options ) {
 		$input_validated[ 'reset_sidebar_layout' ] = $input[ 'reset_sidebar_layout' ];
 
 		if ( $input['reset_sidebar_layout'] == 1 ) {
-			$input_validated[ 'sidebar_layout' ] = $defaults[ 'sidebar_layout' ];
-			$input_validated[ 'content_layout' ] = $defaults[ 'content_layout' ];
+            $input_validated[ 'sidebar_layout' ]       = $defaults[ 'sidebar_layout' ];
+            $input_validated[ 'content_layout' ]       = $defaults[ 'content_layout' ];
+            $input_validated[ 'reset_sidebar_layout' ] = "0";
 		}
 	}
 
 
-	// data validation for Custom CSS Style
-	if ( isset( $input['custom_css'] ) ) {
-		$input_validated['custom_css'] = wp_kses_stripslashes($input['custom_css']);
-	}
+	// Data Validation for Custom CSS Style
+    // @remove if block when WP 5.0 is released
+    if ( ! function_exists( 'wp_update_custom_css_post' )  && isset( $input['custom_css'] ) ) {
+        $input_validated['custom_css'] = wp_kses_stripslashes($input['custom_css']);
+    }
 
 	// data validation for Homepage/Frontpage posts categories
     if ( isset( $input['front_page_category' ] ) ) {
@@ -1400,15 +1438,16 @@ function catchflames_theme_options_validate( $options ) {
         $input_validated[ 'excerpt_length' ] = absint( $input[ 'excerpt_length' ] ) ? $input [ 'excerpt_length' ] : 30;
     }
    //data validation for reset more
-	if ( isset( $input['reset_more_tag'] ) ) {
+	if ( isset( $input['reset_moretag'] ) ) {
 		// Our checkbox value is either 0 or 1
-		$input_validated[ 'reset_more_tag' ] = $input[ 'reset_more_tag' ];
+		$input_validated[ 'reset_moretag' ] = $input[ 'reset_moretag' ];
 
-		if( $input['reset_more_tag'] == 1 ) {
-			global $catchflames_options_defaults;
-			$defaults = $catchflames_options_defaults;
-			$input_validated[ 'more_tag_text' ] = $defaults[ 'more_tag_text' ];
-			$input_validated[ 'excerpt_length' ] = $defaults[ 'excerpt_length' ];
+		if( $input['reset_moretag'] == 1 ) {
+            global $catchflames_options_defaults;
+            $defaults                            = $catchflames_options_defaults;
+            $input_validated[ 'more_tag_text' ]  = $defaults[ 'more_tag_text' ];
+            $input_validated[ 'excerpt_length' ] = $defaults[ 'excerpt_length' ];
+            $input_validated[ 'reset_moretag' ] = "0";
 		}
 	}
 
@@ -1619,6 +1658,15 @@ function catchflames_theme_options_validate( $options ) {
 	if( isset( $input[ 'social_xing' ] ) ) {
 		$input_validated[ 'social_xing' ] = esc_url_raw( $input[ 'social_xing' ] );
 	}
+    if( isset( $input[ 'social_meetup' ] ) ) {
+        $input_validated[ 'social_meetup' ] = esc_url_raw( $input[ 'social_meetup' ] );
+    }
+    if( isset( $input[ 'social_goodreads' ] ) ) {
+        $input_validated[ 'social_goodreads' ] = esc_url_raw( $input[ 'social_goodreads' ] );
+    }
+    if( isset( $input[ 'social_github' ] ) ) {
+        $input_validated[ 'social_github' ] = esc_url_raw( $input[ 'social_github' ] );
+    }
 	if ( isset( $input['enable_specificfeeds'] ) ) {
 		// Our checkbox value is either 0 or 1
 		$input_validated[ 'enable_specificfeeds' ] = $input[ 'enable_specificfeeds' ];

@@ -23,7 +23,7 @@ function catchflames_customize_register( $wp_customize ) {
 	$defaults = $catchflames_options_defaults;
 
 	//Custom Controls
-	require get_template_directory() . '/inc/panel/customizer/customizer-custom-controls.php';
+	require trailingslashit( get_template_directory() ) . 'inc/panel/customizer/customizer-custom-controls.php';
 
 	$theme_slug = 'catchflames_';
 
@@ -354,8 +354,9 @@ function catchflames_customize_register( $wp_customize ) {
 			'title' 		=> __( 'Check to Reset Header Featured Image Options', 'catch-flames' ),
 			'description'	=> __( 'Please refresh the customizer after saving if reset option is used', 'catch-flames' ),
 			'field_type' 	=> 'checkbox',
-			'sanitize' 		=> 'catchflames_sanitize_reset_header_image',
+			'sanitize' 		=> 'catchflames_sanitize_checkbox',
 			'section' 		=> 'header_image',
+			'transport'		=> 'postMessage',
 			'default' 		=> $defaults['reset_sidebar_layout']
 		),
 
@@ -399,9 +400,10 @@ function catchflames_customize_register( $wp_customize ) {
 			'title' 		=> __( 'Check to Reset Layout', 'catch-flames' ),
 			'description'	=> __( 'Please refresh the customizer after saving if reset option is used', 'catch-flames' ),
 			'field_type' 	=> 'checkbox',
-			'sanitize' 		=> 'catchflames_sanitize_reset_layout',
+			'sanitize' 		=> 'catchflames_sanitize_checkbox',
 			'panel' 		=> 'theme_options',
 			'section' 		=> 'layout_options',
+			'transport'		=> 'postMessage',
 			'default' 		=> $defaults['reset_sidebar_layout']
 		),
 
@@ -449,9 +451,10 @@ function catchflames_customize_register( $wp_customize ) {
 			'title' 		=> __( 'Check to Reset Excerpt', 'catch-flames' ),
 			'description'	=> __( 'Please refresh the customizer after saving if reset option is used', 'catch-flames' ),
 			'field_type' 	=> 'checkbox',
-			'sanitize' 		=> 'catchflames_sanitize_reset_moretag',
+			'sanitize' 		=> 'catchflames_sanitize_checkbox',
 			'panel' 		=> 'theme_options',
 			'section' 		=> 'excerpt_more_tag_settings',
+			'transport'		=> 'postMessage',
 			'default' 		=> ''
 		),
 
@@ -830,6 +833,36 @@ function catchflames_customize_register( $wp_customize ) {
 			'section' 			=> 'social_links',
 			'default' 			=> $defaults['enable_specificfeeds'],
 		),
+		'social_meetup' => array(
+			'id' 			=> 'social_meetup',
+			'title' 		=> __( 'Meetup', 'catch-flames' ),
+			'description'	=> '',
+			'field_type' 	=> 'url',
+			'sanitize' 		=> 'esc_url_raw',
+			'panel' 		=> 'social_links',
+			'section' 		=> 'social_links',
+			'default' 		=> $defaults['social_meetup']
+		),
+		'social_goodreads' => array(
+			'id' 			=> 'social_goodreads',
+			'title' 		=> __( 'Goodreads', 'catch-flames' ),
+			'description'	=> '',
+			'field_type' 	=> 'url',
+			'sanitize' 		=> 'esc_url_raw',
+			'panel' 		=> 'social_links',
+			'section' 		=> 'social_links',
+			'default' 		=> $defaults['social_goodreads']
+		),
+		'social_github' => array(
+			'id' 			=> 'social_github',
+			'title' 		=> __( 'github', 'catch-flames' ),
+			'description'	=> '',
+			'field_type' 	=> 'url',
+			'sanitize' 		=> 'esc_url_raw',
+			'panel' 		=> 'social_links',
+			'section' 		=> 'social_links',
+			'default' 		=> $defaults['social_github']
+		),
 	);
 
 	//Merge Featured Content Options to settings parameter
@@ -1007,6 +1040,11 @@ function catchflames_customize_register( $wp_customize ) {
 		$settings_parameters = array_merge( $settings_parameters, $settings_logo);
 	}
 
+	//@remove Remove if block and custom_css from $settings_paramater when WordPress 5.0 is released
+	if( function_exists( 'wp_update_custom_css_post' ) ) {
+		unset( $settings_parameters['custom_css'] );
+	}
+
 	foreach ( $settings_parameters as $option ) {
 		if( 'image' == $option['field_type'] ) {
 			$wp_customize->add_setting(
@@ -1032,6 +1070,7 @@ function catchflames_customize_register( $wp_customize ) {
 			);
 		}
 		else if ('checkbox' == $option['field_type'] ) {
+			$transport = isset($option['transport'])?$option['transport']:'refresh';
 			$wp_customize->add_setting(
 				// $id
 				$theme_slug . 'options[' . $option['id'] . ']',
@@ -1039,7 +1078,8 @@ function catchflames_customize_register( $wp_customize ) {
 				array(
 					'type'				=> 'option',
 					'sanitize_callback'	=> $option['sanitize'],
-					'default'			=> $option['default'],				)
+					'default'			=> $option['default'],
+					'transport'			=> $transport,				)
 			);
 
 			$params = array(
@@ -1207,7 +1247,8 @@ function catchflames_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'catchflames_options[reset_all_settings]', array(
 		'capability'		=> 'edit_theme_options',
-		'sanitize_callback' => 'catchflames_reset_all_settings',
+		'sanitize_callback' => 'catchflames_sanitize_checkbox',
+		'type'				=> 'option',
 		'transport'			=> 'postMessage',
 	) );
 
@@ -1229,7 +1270,7 @@ function catchflames_customize_register( $wp_customize ) {
 	 * Has dummy Sanitizaition function as it contains no value to be sanitized
 	 */
 	$wp_customize->add_setting( 'important_links', array(
-		'sanitize_callback'	=> 'catchflames_sanitize_important_link',
+		'sanitize_callback'	=> 'sanitize_text_field',
 	) );
 
 	$wp_customize->add_control( new Catchflames_Important_Links( $wp_customize, 'important_links', array(
@@ -1267,24 +1308,28 @@ add_action( 'customize_save', 'catchflames_customize_preview' );
  * @since Catch Flames 2.7
  */
 function catchflames_customize_scripts() {
-	wp_register_script( 'catchflames_customizer_custom', get_template_directory_uri() . '/inc/panel/customizer-custom-scripts.js', array( 'jquery' ), '20140108', true );
+	wp_enqueue_script( 'catchflames_customizer_custom', get_template_directory_uri() . '/inc/panel/customizer-custom-scripts.js', array( 'jquery' ), '20140108', true );
 
-    $catchflames_misc_links = array(
-							'upgrade_link' 				=> esc_url( 'https://catchthemes.com/themes/catch-flames-pro/' ),
-							'upgrade_text'	 			=> __( 'Upgrade To Pro &raquo;', 'catch-flames' ),
-		);
+	$catchflames_data = array(
+		'reset_message' => esc_html__( 'Refresh the customizer page after saving to view reset effects', 'catch-flames' ),
+		'reset_options' => array(
+			'catchflames_options[reset_header_image]',
+			'catchflames_options[reset_sidebar_layout]',
+			'catchflames_options[reset_moretag]',
+			'catchflames_options[reset_all_settings]',
+		)
+	);
 
-    //Add More Theme Options Button
-    wp_localize_script( 'catchflames_customizer_custom', 'catchflames_misc_links', $catchflames_misc_links );
-
-    wp_enqueue_script( 'catchflames_customizer_custom' );
-
-    wp_enqueue_style( 'catchflames_customizer_custom', get_template_directory_uri() . '/inc/panel/catchflames-customizer.css');
+	// Send reset message as object to custom customizer js
+	wp_localize_script( 'catchflames_customizer_custom', 'catchflames_data', $catchflames_data );
 }
 add_action( 'customize_controls_enqueue_scripts', 'catchflames_customize_scripts' );
 
 //Active callbacks for customizer
-require get_template_directory() . '/inc/panel/customizer/customizer-active-callbacks.php';
+require trailingslashit( get_template_directory() ) . 'inc/panel/customizer/customizer-active-callbacks.php';
 
 //Sanitize functions for customizer
-require get_template_directory() . '/inc/panel/customizer/customizer-sanitize-functions.php';
+require trailingslashit( get_template_directory() ) . 'inc/panel/customizer/customizer-sanitize-functions.php';
+
+//Upgrade To Pro button
+require trailingslashit( get_template_directory() ) . 'inc/panel/customizer/upgrade-button/class-customize.php';

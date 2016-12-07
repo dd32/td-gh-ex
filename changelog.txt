@@ -1,14 +1,21 @@
 == Change log ==
 
+Version 3.2
+* Added: Meetup, Goodreads and Github social icons
+* Bug Fixed: Reset Options in customizer updated
+* Updated: Used the_archive_title() in archive.php
+* Updated: IE specific script loading
+* Updated: fitvids handle to 'jquery-fitvids', sidr handle to 'jquery-sidr'
+* Updated: Upgrade Button in customizer with respect to trt decision
+* Updated: Custom CSS to Additional CSS( Core Support ) for WP version 4.7
+* Code Optimization
+
 Version 3.1
-* Bug Fixed: Content Width issue when selecting layout from metabox
-* Bug Fixed: Error select_slider_layout fixed(removed)
-* Fixed: Slider type and Content type priority issue
-* Fixed: ID column display issue in mobile devices
-* Updated: All instances of http://catchthemes.com changed to https://catchthemes.com
+* Bug Fixed: Slider type and Content type priority issue
 * Bug Fixed: white space issue
 * Bug Fixed: Content Width issue when selecting layout from metabox
-* Fixed: ID column display issue in mobile devices
+* Bug Fixed: Error select_slider_layout fixed(removed)
+* Bug Fixed: ID column display issue in mobile devices
 * Updated: Instagram logo
 * Updated: All instances of http://catchthemes.com changed to https://catchthemes.com
 * Updated: Tags in styles.css header

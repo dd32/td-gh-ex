@@ -17,17 +17,7 @@ get_header(); ?>
 			<?php if ( have_posts() ) : ?>
 
 				<header class="page-header">
-					<h1 class="page-title">
-						<?php if ( is_day() ) : ?>
-							<?php printf( __( 'Daily Archives: %s', 'catch-flames' ), '<span>' . get_the_date() . '</span>' ); ?>
-						<?php elseif ( is_month() ) : ?>
-							<?php printf( __( 'Monthly Archives: %s', 'catch-flames' ), '<span>' . get_the_date( _x( 'F Y', 'monthly archives date format', 'catch-flames' ) ) . '</span>' ); ?>
-						<?php elseif ( is_year() ) : ?>
-							<?php printf( __( 'Yearly Archives: %s', 'catch-flames' ), '<span>' . get_the_date( _x( 'Y', 'yearly archives date format', 'catch-flames' ) ) . '</span>' ); ?>
-						<?php else : ?>
-							<?php _e( 'Blog Archives', 'catch-flames' ); ?>
-						<?php endif; ?>
-					</h1>
+					<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
 				</header>
 
 				<?php /* Start the Loop */ ?>

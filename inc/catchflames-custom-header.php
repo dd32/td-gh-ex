@@ -93,11 +93,11 @@ function catchflames_header_style() {
 	<?php endif; ?>
 	<?php
 	// Site Title Hover Color
-	if( ( $defaults[ 'title_hover_color' ] != $options[ 'title_hover_color' ] ) || ( $defaults[ 'title_hover_color' ] != $options[ 'title_hover_color' ] ) ) {
+	if ( ( $defaults[ 'title_hover_color' ] != $options[ 'title_hover_color' ] ) || ( $defaults[ 'title_hover_color' ] != $options[ 'title_hover_color' ] ) ) {
 		echo "#site-title a:hover, #site-title a:focus, #site-title a:active { color: " .  $options[ 'title_hover_color' ] ."; }". "\n";
 	}
 	// Site Tagline Color
-	if( ( $defaults[ 'tagline_color' ] != $options[ 'tagline_color' ] ) || ( $defaults[ 'tagline_color' ] != $options[ 'tagline_color' ] ) ) {
+	if ( ( $defaults[ 'tagline_color' ] != $options[ 'tagline_color' ] ) || ( $defaults[ 'tagline_color' ] != $options[ 'tagline_color' ] ) ) {
 		echo "#site-description { color: " .  $options[ 'tagline_color' ] ."; }". "\n";
 	}
 	?>
@@ -160,11 +160,11 @@ function catchflames_admin_header_style() {
 	<?php endif; ?>
 	<?php
 	// Site Title Hover Color
-	if( ( $defaults[ 'title_hover_color' ] != $options[ 'title_hover_color' ] ) || ( $defaults[ 'title_hover_color' ] != $options[ 'title_hover_color' ] ) ) {
+	if ( ( $defaults[ 'title_hover_color' ] != $options[ 'title_hover_color' ] ) || ( $defaults[ 'title_hover_color' ] != $options[ 'title_hover_color' ] ) ) {
 		echo "#site-title a:hover, #site-title a:focus, #site-title a:active { color: " .  $options[ 'title_hover_color' ] ."; }". "\n";
 	}
 	// Site Tagline Color
-	if( ( $defaults[ 'tagline_color' ] != $options[ 'tagline_color' ] ) || ( $defaults[ 'tagline_color' ] != $options[ 'tagline_color' ] ) ) {
+	if ( ( $defaults[ 'tagline_color' ] != $options[ 'tagline_color' ] ) || ( $defaults[ 'tagline_color' ] != $options[ 'tagline_color' ] ) ) {
 		echo "#site-description { color: " .  $options[ 'tagline_color' ] ."; }". "\n";
 	}
 	?>
@@ -190,7 +190,7 @@ function catchflames_admin_header_image() { ?>
 		<?php
 		$color = get_header_textcolor();
 		$image = get_header_image();
-		if ( $color && $color != 'blank' )
+		if ( $color && 'blank' != $color )
 			$style = ' style="color:#' . $color . '"';
 		else
 			$style = ' style="display:none"';
@@ -249,8 +249,8 @@ function catchflames_logo() {
 				<div id="site-logo" class="' . esc_attr( $classses ) . '">' . get_custom_logo() . '</div><!-- #site-logo -->';
 			}
 		}
-		else if ( empty( $options[ 'remove_header_logo' ] ) ) {
-			//@remove else if block when WP v4.8 is released
+		elseif ( empty( $options[ 'remove_header_logo' ] ) ) {
+			//@remove elseif block when WP v4.8 is released
 			$text_color   = get_header_textcolor();
 
 			if ( 'blank' == $text_color ) {
@@ -438,11 +438,11 @@ function catchflames_featured_page_post_image() {
 	// Get Page ID outside Loop
 	$page_id = $wp_query->get_queried_object_id();
 
-	if ( $enableheaderimage == 'disable' ) {
+	if ( 'disable' == $enableheaderimage ) {
 		echo '<!-- Page/Post Disable Header Image -->';
 	}
 	elseif ( is_home() || is_archive() ) {
-		if ( $enableheaderimage == 'postpage' ) {
+		if ( 'postpage' == $enableheaderimage ) {
 			catchflames_featured_image();
 		}
 		else {
@@ -484,13 +484,13 @@ function catchflames_featured_overall_image() {
 	$page_id = $wp_query->get_queried_object_id();
 
 	// Check Homepage
-	if ( $enableheaderimage == 'homepage' ) {
+	if ( 'homepage' == $enableheaderimage ) {
 		if ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) {
 			catchflames_featured_image();
 		}
 	}
 	// Check Excluding Homepage
-	if ( $enableheaderimage == 'excludehome' ) {
+	if ( 'excludehome' == $enableheaderimage ) {
 		if ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) {
 			return false;
 		}
@@ -499,11 +499,11 @@ function catchflames_featured_overall_image() {
 		}
 	}
 	// Check Entire Site
-	elseif ( $enableheaderimage == 'allpage' ) {
+	elseif ( 'allpage' == $enableheaderimage ) {
 		catchflames_featured_image();
 	}
 	// Check Entire Site (Post/Page)
-	elseif ( $enableheaderimage == 'postpage' ) {
+	elseif ( 'postpage' == $enableheaderimage ) {
 		if ( is_page() || is_single() ) {
 			catchflames_featured_page_post_image();
 		}
@@ -512,7 +512,7 @@ function catchflames_featured_overall_image() {
 		}
 	}
 	// Check Page/Post
-	elseif ( $enableheaderimage == 'pagespostes' ) {
+	elseif ( 'pagespostes' == $enableheaderimage ) {
 		if ( is_page() || is_single() ) {
 			catchflames_featured_page_post_image();
 		}

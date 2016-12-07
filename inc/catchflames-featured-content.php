@@ -7,7 +7,7 @@
  * @since Catch Flames 3.0
  */
 
-if( !function_exists( 'catchflames_featured_content_display' ) ) :
+if ( !function_exists( 'catchflames_featured_content_display' ) ) :
 /**
 * Add Featured content.
 *
@@ -31,8 +31,8 @@ function catchflames_featured_content_display() {
 
 	// Get Page ID outside Loop
 	$page_id = $wp_query->get_queried_object_id();
-	if ( $enablecontent == 'entire-site' || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && $enablecontent == 'homepage' ) ) {
-		if ( $contentselect == 'featured-widget-content' ) {
+	if ( 'entire-site' == $enablecontent || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && 'homepage' == $enablecontent ) ) {
+		if ( 'featured-widget-content' == $contentselect ) {
 			get_sidebar( 'featured-widget-content' );
 		}
 		else {
@@ -47,12 +47,12 @@ function catchflames_featured_content_display() {
 					$classes = $layouts ;
 				}
 
-				if ( $contentselect == 'demo-featured-content' ) {
+				if ( 'demo-featured-content' == $contentselect ) {
 					$classes 	.= ' demo-featured-content' ;
 					$headline 		= __( 'Featured Content', 'catch-flames' );
 					$subheadline 	= __( 'Here you can showcase the x number of Featured Content. You can edit this Headline, Subheadline and Feaured Content from "Appearance -> Customize -> Featured Content Options".', 'catch-flames' );
 				}
-				elseif ( $contentselect == 'featured-page-content' ) {
+				elseif ( 'featured-page-content' == $contentselect ) {
 					$classes .= ' featured-page-content' ;
 				}
 
@@ -79,10 +79,10 @@ function catchflames_featured_content_display() {
 							$catchflames_featured_content .='
 							<div class="featured-content-wrap">';
 								// Select content
-								if ( $contentselect == 'demo-featured-content' && function_exists( 'catchflames_demo_content' ) ) {
+								if ( 'demo-featured-content' == $contentselect && function_exists( 'catchflames_demo_content' ) ) {
 									$catchflames_featured_content .= catchflames_demo_content( $options );
 								}
-								elseif ( $contentselect == 'featured-page-content' && function_exists( 'catchflames_page_content' ) ) {
+								elseif ( 'featured-page-content' == $contentselect && function_exists( 'catchflames_page_content' ) ) {
 									$catchflames_featured_content .= catchflames_page_content( $options );
 								}
 
@@ -176,7 +176,7 @@ function catchflames_demo_content( $options ) {
 			</div><!-- .entry-container -->
 		</article>';
 
-	if( 'layout-four' == $options ['featured_content_layout'] || 'layout-two' == $options ['featured_content_layout'] ) {
+	if ( 'layout-four' == $options ['featured_content_layout'] || 'layout-two' == $options ['featured_content_layout'] ) {
 		$catchflames_demo_content .= '
 		<article id="featured-post-4" class="post hentry post-demo">
 			<figure class="featured-content-image">
@@ -209,7 +209,7 @@ function catchflames_page_content( $options ) {
 
 	$quantity 		= $options [ 'featured_content_number' ];
 
-	$show_content	= isset( $options['featured_content_show'] ) ? $options['featured_content_show'] : 'excerpt';
+	$show_content	= $options['featured_content_show'];
 
 	$number_of_page = 0; 		// for number of pages
 
@@ -219,7 +219,7 @@ function catchflames_page_content( $options ) {
 
 	//Get valid pages
 	for( $i = 1; $i <= $quantity; $i++ ){
-		if( isset ( $options['featured_content_page'][ $i ] ) && $options['featured_content_page'][ $i ] > 0 ){
+		if ( isset ( $options['featured_content_page'][ $i ] ) && $options['featured_content_page'][ $i ] > 0 ){
 			$number_of_page++;
 
 			$page_list	=	array_merge( $page_list, array( $options['featured_content_page'][ $i ] ) );
@@ -297,7 +297,7 @@ function catchflames_get_first_image( $postID, $size, $attr ) {
 
 	$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', get_post_field('post_content', $postID ) , $matches);
 
-	if( isset( $matches [1] [0] ) ) {
+	if ( isset( $matches [1] [0] ) ) {
 		//Get first image
 		$first_img = $matches [1] [0];
 

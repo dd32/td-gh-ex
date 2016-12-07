@@ -75,7 +75,7 @@
             </div><!-- .entry-content -->
             <?php endif; ?>
 
-            <?php if ( $current_content_layout != 'excerpt-thumbnail' ) : ?>
+            <?php if ( 'excerpt-thumbnail' != $current_content_layout ) : ?>
                 <footer class="entry-meta">
                     <?php $show_sep = false; ?>
                     <?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
