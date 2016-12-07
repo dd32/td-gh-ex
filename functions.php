@@ -7,7 +7,7 @@
  * @license GPL 2.0
  */
 
-define('SITEORIGIN_THEME_VERSION', '1.5.7');
+define('SITEORIGIN_THEME_VERSION', '1.5.8');
 define('SITEORIGIN_THEME_JS_PREFIX', '.min');
 
 // Load the new settings framework
@@ -68,8 +68,18 @@ function vantage_setup() {
 		'primary' => __( 'Primary Menu', 'vantage' ),
 	) );
 
-	// Enable support for Post Formats
-	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
+	/*
+	 * Enable support for Post Formats.
+	 * See https://developer.wordpress.org/themes/functionality/post-formats/
+	 */
+	add_theme_support( 'post-formats', array(
+		'aside',
+		'gallery',
+		'link',
+		'image',
+		'quote',
+		'video',
+	) );	
 
 	// We support WooCommerce
 	add_theme_support('woocommerce');
@@ -463,6 +473,15 @@ function vantage_post_class_filter($classes){
 	if( has_post_thumbnail() && !is_singular() ) {
 		$classes[] = 'post-with-thumbnail';
 		$classes[] = 'post-with-thumbnail-' . siteorigin_setting( 'blog_featured_image_type' );
+	}
+	
+	// Resolves structured data issue in core. See https://core.trac.wordpress.org/ticket/28482
+	if( is_page() ){
+		$class_key = array_search( 'hentry', $classes );
+
+		if( $class_key !== false) {
+			unset( $classes[ $class_key ] );
+		}
 	}
 
 	$classes = array_unique($classes);

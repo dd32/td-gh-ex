@@ -120,16 +120,16 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: content-page.php:30, content-single.php:39, content.php:49, templates/template-full-notitle.php:27
+#: content-gallery.php:52, content-image.php:43, content-video.php:43, content.php:30
+msgid "Permalink to %s"
+msgstr ""
+
+#: content-gallery.php:66, content-image.php:57, content-page.php:30, content-single.php:39, content-video.php:58, content.php:49, templates/template-full-notitle.php:27
 msgid "Pages:"
 msgstr ""
 
-#: content-single.php:59
+#: content-gallery.php:86, content-image.php:77, content-single.php:59, content-video.php:78
 msgid "Add author biographical info."
-msgstr ""
-
-#: content.php:30
-msgid "Permalink to %s"
 msgstr ""
 
 #: content.php:47, inc/settings.php:375, inc/template-tags.php:514, loops/loop-circleicon.php:22, loops/loop-grid.php:24
@@ -204,59 +204,59 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:246, inc/customizer.php:36
+#: functions.php:256, inc/customizer.php:36
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:248
+#: functions.php:258
 msgid "Displays to the right or left of the content area."
 msgstr ""
 
-#: functions.php:257
+#: functions.php:267
 msgid "Shop"
 msgstr ""
 
-#: functions.php:259
+#: functions.php:269
 msgid "Displays on WooCommerce pages."
 msgstr ""
 
-#: functions.php:268, inc/customizer.php:40
+#: functions.php:278, inc/customizer.php:40
 msgid "Footer"
 msgstr ""
 
-#: functions.php:270
+#: functions.php:280
 msgid "Displays below the content area."
 msgstr ""
 
-#: functions.php:278
+#: functions.php:288
 msgid "Header"
 msgstr ""
 
-#: functions.php:280
+#: functions.php:290
 msgid "Displays to the right of the logo."
 msgstr ""
 
-#: functions.php:288
+#: functions.php:298
 msgid "Masthead"
 msgstr ""
 
-#: functions.php:290
+#: functions.php:300
 msgid "Replaces the logo and header widget area."
 msgstr ""
 
-#: functions.php:385
+#: functions.php:395
 msgid "Back To Top"
 msgstr ""
 
-#: functions.php:576
+#: functions.php:595
 msgid "SiteOrigin Page Builder"
 msgstr ""
 
-#: functions.php:581
+#: functions.php:600
 msgid "SiteOrigin Widgets Bundle"
 msgstr ""
 
-#: functions.php:586
+#: functions.php:605
 msgid "SiteOrigin CSS"
 msgstr ""
 
