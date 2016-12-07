@@ -7,40 +7,36 @@
  */
  if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 ?>
-<section class="content-area no-results not-found">
+<section class="no-results not-found">
 
-	<main id="main" class="site-main" role="main">
+	<div class="text-center error-box">
 
-		<div class="text-center error-box">
+		<h1><?php esc_html_e( 'Nothing Found', 'asterion' ); ?></h1>
+	
+		<div class="row">
 
-			<h1><?php esc_html_e( 'Nothing Found', 'asterion' ); ?></h1>
-		
-			<div class="row">
+			<div class="col-md-12 col-md-offset-2">
 
-				<div class="col-md-8 col-md-offset-2">
+				<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
-					<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
+					<p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'asterion' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
 
-						<p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'asterion' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
+				<?php elseif ( is_search() ) : ?>
 
-					<?php elseif ( is_search() ) : ?>
+					<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'asterion' ); ?></p>
+					<?php get_search_form(); ?>
 
-						<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'asterion' ); ?></p>
-						<?php get_search_form(); ?>
+				<?php else : ?>
 
-					<?php else : ?>
+					<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'asterion' ); ?></p>
+					<?php get_search_form(); ?>
 
-						<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'asterion' ); ?></p>
-						<?php get_search_form(); ?>
+				<?php endif; ?>
 
-					<?php endif; ?>
-
-				</div>
-					
 			</div>
-
+				
 		</div>
 
-	</main>
+	</div>
 
 </section> <!-- /.content-box -->

@@ -6,9 +6,14 @@
  *	@subpackage asterion
  */
 
-	$asterion = asterion()->customizer;
-	$title = get_theme_mod( 'asterion_portfolio_title', esc_html__('Portfolio','asterion') );
-	$text = get_theme_mod( 'asterion_portfolio_text', esc_html__('Our portfolio is the best way to show our work, you can see here a big range of our work. Check them all and you will find what you are looking for.','asterion') );
+	if( current_user_can( 'edit_theme_options' ) ) {
+		$title = get_theme_mod( 'asterion_portfolio_title', esc_html__('Portfolio','asterion') );
+		$text = get_theme_mod( 'asterion_portfolio_text', esc_html__('Our portfolio is the best way to show our work, you can see here a big range of our work. Check them all and you will find what you are looking for.','asterion') );
+	} else {
+		$title = get_theme_mod( 'asterion_portfolio_title' );
+		$text = get_theme_mod( 'asterion_portfolio_text' );
+	}
+
 	$count = get_theme_mod( 'asterion_portfolio_count', 6 );
 
 	$jetpack_portfolio_args = array (
@@ -25,11 +30,13 @@
 
 	$bg_color = get_theme_mod('asterion_portfolio_bg_color', '#ffffff');
 	$text_color = get_theme_mod('asterion_portfolio_text_color', 0);
+	$hover_effect = get_theme_mod('asterion_portfolio_image_hover_effect', 'bubba');
+	$overlay_color = get_theme_mod('asterion_portfolio_image_overlay_color', '#1a1a1a');
 
 ?>
 <?php if( $title != "" || $text != "" || $jetpack_portfolio_query->have_posts() ) : ?>
 	<section id="portfolio" class="ot-section <?php echo esc_attr(( $text_color == 1 ) ? 'text-light' : 'text-dark'); ?>" style="background-color:<?php echo esc_attr( $bg_color );?>">
-		<div class="container">
+		<div class="ot-container">
 			<?php if( $title || $text) { ?>
 				<div class="row">
 					<div class="col-lg-12 text-center">
@@ -51,7 +58,7 @@
 					<?php while( $jetpack_portfolio_query->have_posts() ): $jetpack_portfolio_query->the_post(); ?>
 
 						<div class="ot-portfolio-item">
-							<figure class="effect-bubba">
+							<figure class="effect-<?php echo esc_attr($hover_effect);?>" style="background-color: <?php echo esc_attr($overlay_color);?>;">
 								<?php the_post_thumbnail( 'asterion-portfolio' ); ?>
 								<figcaption>
 

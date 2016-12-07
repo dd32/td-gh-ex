@@ -34,8 +34,10 @@
 			require_once ASTERION_INC_PATH . 'customizer-sections/testimonials.php';
 			// Team section options
 			require_once ASTERION_INC_PATH . 'customizer-sections/team.php';
+			// Latest posts section options
+			require_once ASTERION_INC_PATH . 'customizer-sections/latest-posts.php';
 			// Contact section options
-			require_once ASTERION_INC_PATH . 'customizer-sections/contact.php';
+			require_once ASTERION_INC_PATH . 'customizer-sections/contact-us.php';
 			// General section options
 			require_once ASTERION_INC_PATH . 'customizer-sections/general.php';
 			// Header section options

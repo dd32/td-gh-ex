@@ -25,7 +25,7 @@ $wp_customize->add_setting( $prefix . '_portfolio_show',
     array(
         'sanitize_callback' => array( asterion()->customizer, 'sanitize_checkbox' ),
         'default'           => 1,
-        'transport'         => 'postMessage'
+        //'transport'         => 'postMessage'
     )
 );
 $wp_customize->add_control(
@@ -57,7 +57,12 @@ $wp_customize->add_control(
         'active_callback'   => array( asterion()->customizer, 'jetpack_portfolio_active_callback' )
     )
 );
-
+$wp_customize->selective_refresh->add_partial( $prefix . '_portfolio_title', 
+    array(
+        'selector'            => '#portfolio .section-title',
+        'container_inclusive' => true,
+    ) 
+);
 // Text
 $wp_customize->add_setting( $prefix .'_portfolio_text',
     array(
@@ -95,6 +100,48 @@ $wp_customize->add_control(
         'active_callback'   => array( asterion()->customizer, 'jetpack_portfolio_active_callback' )
     )
 );
+
+
+//image hover effect
+$wp_customize->add_setting( $prefix .'_portfolio_image_hover_effect',
+    array(
+        'sanitize_callback' => 'esc_attr',
+        'default'           => 'bubba',
+        'transport'         => 'postMessage'
+    )
+);
+
+$wp_customize->add_control(
+    $prefix .'_portfolio_image_hover_effect',
+    array(
+        'label'         => esc_html__( 'Image hover effect', 'asterion' ),
+        'type'          => 'select',
+        'section'       => $section_id,
+        'priority'      => 4,
+        'choices'       => array(
+            'bubba'     => esc_html__( 'Bubba', 'asterion' ),
+            'apollo'    => esc_html__( 'Apollo', 'asterion' ),
+            'milo'      => esc_html__( 'Milo', 'asterion' ),
+            'jazz'      => esc_html__( 'Jazz', 'asterion' ),
+            'goliath'   => esc_html__( 'Goliath', 'asterion' ),
+        )
+    )
+);
+
+// hover background color
+$wp_customize->add_setting( $prefix . '_portfolio_image_overlay_color', array(
+    'sanitize_callback' => 'sanitize_hex_color',
+    'default'           => '#1a1a1a',
+    'transport'         => 'postMessage'
+) );
+$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $prefix . '_portfolio_image_overlay_color', 
+    array(
+        'label'       => esc_html__( 'Image overlay', 'asterion' ),
+        'section'     => $section_id,
+        'settings'    => $prefix . '_portfolio_image_overlay_color',
+        'priority'    => 5,
+    ) 
+) );
 
 // background color
 $wp_customize->add_setting( $prefix . '_portfolio_bg_color', array(

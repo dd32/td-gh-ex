@@ -15,14 +15,20 @@
 		$parallax_class = false; 
 	}
 
-	if ( get_theme_mod('asterion_intro_image_overlay') ) {
+	if ( get_theme_mod('asterion_intro_image_overlay', true ) ) {
 		$overlay_class = " dark-overlay"; 
 	} else { 
 		$overlay_class = false; 
 	}
 
 	$intro_image_show = get_theme_mod( 'asterion_intro_image_show', true );
+	$menu_position = get_theme_mod( 'asterion_menu_position', 1 );
 
+	if ( get_theme_mod( 'asterion_menu_style', 2 ) == 2 ) {
+		$menu_style = 'ot-light-text'; 
+	} else { 
+		$menu_style = "ot-dark-text"; 
+	}
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -39,21 +45,20 @@
 
 	<body <?php body_class(); ?>>
 
-		<header id="header" class="<?php echo esc_attr( ( is_front_page() ) ? 'intro-image': 'intro-blog' ); ?> <?php echo esc_attr( $parallax_class ); ?>" style="background-image: url(' <?php echo esc_url( ( is_front_page() ) ? $intro_image : ( ! get_header_image() ) ? $intro_image : get_header_image() ); ?>');">
+		<!-- Off-canvas wrap -->
+	    <div class="asterion-offcanvas-wrap">
+	        <div class="close"><i class="fa fa-close" aria-hidden="true"></i></div>
+	        <div class="asterion-offcanvas-nav"></div>
+	    </div><!-- end .asterion-offcanvas-wrap -->
+		<header id="header" class="<?php echo esc_attr( ( is_front_page() ) ? 'intro-image': 'intro-blog' ); ?> <?php echo esc_attr( $parallax_class ); ?> <?php echo esc_attr( $menu_style ); ?>" style="background-image: url(' <?php echo esc_url( ( is_front_page() ) ? $intro_image : ( ! get_header_image() ) ? $intro_image : get_header_image() ); ?>');">
 
-			<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-				<div class="container">
+			<div class="navbar<?php echo ( $menu_position == "1" ) ? ' navbar-fixed-top' : false ; ?>">
+				<div class="ot-container">
 
+			        <!-- Toggle menu -->
+                    <span class="site-navigation-toggle"><i class="fa fa-bars" aria-hidden="true"></i></span>
 					<!-- Brand and toggle get grouped for better mobile display --> 
 					<div class="navbar-header"> 
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"> 
-							<span class="sr-only">
-								<?php esc_html_e("Toggle navigation", 'asterion');?>
-							</span> 
-							<span class="icon-bar"></span> 
-							<span class="icon-bar"></span> 
-							<span class="icon-bar"></span> 
-						</button>
 
 						<?php
 							// Try to retrieve the Custom Logo
@@ -76,35 +81,45 @@
 						<?php endif;?>
 					</div> 
 
+					<!-- Site navigation -->
+					<div class="asterion-primary-nav">
+						<?php 
+							/* display the WordPress Main Menu if available */
+							if ( has_nav_menu( 'main-menu' ) ) : 
+								$args =	array(
+											'menu'              => 'main-menu',
+											'theme_location'    => 'main-menu',
+											'depth'             => 2,
+											'container'         => 'nav',
+											'container_class'   => 'asterion-navigation nav',
+											'menu_class'        => 'menu menu-right',
+											'walker'            => new Asterion_Nav_Walker()
+										);
 
-					<?php 
-						/* display the WordPress Main Menu if available */
-						if ( has_nav_menu( 'main-menu' ) ) : 
-							$args =	array(
-										'menu'              => 'main-menu',
-										'theme_location'    => 'main-menu',
-										'depth'             => 2,
-										'container'         => 'div',
-										'container_class'   => 'collapse navbar-collapse navbar-ex1-collapse',
-										'menu_class'        => 'nav navbar-nav navbar-right',
-										'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-										'walker'            => new wp_bootstrap_navwalker()
-									);
-
-							wp_nav_menu($args);
-
-						endif;
-					?>
+								wp_nav_menu($args);
+							else:
+								?>
+									<nav class="asterion-navigation nav">
+										<ul class="menu menu-right">
+											<li><a href=""><?php esc_html_e("Please set up the menu", 'asterion');?></a></li>
+										</ul>
+									</div> 
+								<?php
+							endif;
+						?>
+					</div>
 				</div>
-			</nav>
+			</div>
 			
 			
 			<div class="slider-container<?php echo esc_attr( $overlay_class ); ?>">
-				<?php if( is_front_page() && $intro_image_show ) : ?>
+				<?php if( is_front_page() && get_option( 'show_on_front' ) == "page" && $intro_image_show ) : ?>
 					<?php get_template_part( 'sections/intro-image' ); ?>
 				<?php endif; ?>
 			</div>
 			
 		</header>
 
-		<div id="content" class="site-content">
+		<div class="ot-page-wrapper">
+			<div id="content" class="site-content">
+			

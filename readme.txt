@@ -1,9 +1,9 @@
 ﻿== ABOUT THEME == 
 
 Theme Name : Asterion
-Version    : 1.0.0
-Theme URL  : http://www.orange-themes.com/asterion-wordpress-theme/
-Theme Documentation  : http://www.orange-themes.com/asterion-wordpress-theme-documentation/
+Version    : 1.0.1
+Theme URL  : http://www.orange-themes.com/asterion/
+Theme Documentation  : http://www.orange-themes.com/asterion-documentation/
 
 Author:     Orange Themes
 Author URL: http://www.orange-themes.com/
@@ -29,10 +29,9 @@ Asterion WordPress Theme bundles the following third-party resources:
   Font License: SIL OFL 1.1
   Code License: MIT License
   http://fontawesome.io/license/
-* Bootstrap by twitter.
-  Bootstrap is Licensed under the MIT License. https://github.com/twbs/bootstrap/blob/master/LICENSE.
-* WP-Bootstrap-NavWalker licensed under the GPLv2 license. http://www.gnu.org/licenses/gpl-2.0.html
-* Other custom js files are our own creation and is licensed under the same license as this theme. 
+* Slick Slider by Ken Wheeler. http://kenwheeler.github.io/slick/
+  Slick Slider is Licensed under the MIT license. https://github.com/kenwheeler/slick/blob/master/LICENSE
+* All other custom js files are our own creation and is licensed under the same license as this theme. 
 * Images on screenshot.
   - by Valentin Gautier
     from: https://unsplash.com/photos/Lr9edXqJeVk
@@ -63,4 +62,7 @@ Hit Save.
 
 ==== THEME CHANGELOG ====
 
-coming soon
+= 1.0.1 =
+* Initial release
+= 1.0.0 =
+* Initial release

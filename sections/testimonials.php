@@ -6,8 +6,14 @@
  *	@subpackage asterion
  */
 
-	$title = get_theme_mod( 'asterion_testimonials_title', esc_html__('Testimonials','asterion') );
-	$text = get_theme_mod( 'asterion_testimonials_text', esc_html__('Mida sit una namet, cons uectetur adipiscing adon elit.','asterion') );
+	if( current_user_can( 'edit_theme_options' ) ) {
+		$title = get_theme_mod( 'asterion_testimonials_title', esc_html__('Testimonials','asterion') );
+		$text = get_theme_mod( 'asterion_testimonials_text', esc_html__('Mida sit una namet, cons uectetur adipiscing adon elit.','asterion') );
+	} else {
+		$title = get_theme_mod( 'asterion_testimonials_title' );
+		$text = get_theme_mod( 'asterion_testimonials_text' );
+	}
+
 	$count = get_theme_mod( 'asterion_testimonials_count', 6 );
 
 	$jetpack_testimonials_args = array (
@@ -27,7 +33,7 @@
 ?>
 <?php if( $title != "" || $text != "" || $jetpack_testimonials_query->have_posts() ) : ?>
 	<section id="testimonials" class="ot-section <?php echo esc_attr(( $text_color == 1 ) ? 'text-light' : 'text-dark'); ?>" style="background-color:<?php echo esc_attr( $bg_color );?>">
-		<div class="container">
+		<div class="ot-container">
 			<?php if( $title || $text) { ?>
 				<div class="row">
 					<div class="col-lg-12 text-center">

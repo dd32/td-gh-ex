@@ -25,7 +25,7 @@ $wp_customize->add_setting( $prefix . '_about_show',
     array(
         'sanitize_callback' => array( asterion()->customizer, 'sanitize_checkbox' ),
         'default'           => 1,
-        'transport'         => 'postMessage'
+        //'transport'         => 'postMessage'
     )
 );
 $wp_customize->add_control(
@@ -37,6 +37,7 @@ $wp_customize->add_control(
         'priority'  => 1
     )
 );
+
 
 // Title
 $wp_customize->add_setting( $prefix .'_about_title',
@@ -55,7 +56,12 @@ $wp_customize->add_control(
         'priority'      => 2
     )
 );
-
+$wp_customize->selective_refresh->add_partial( $prefix . '_about_title', 
+    array(
+        'selector'            => '#about .section-title',
+        'container_inclusive' => true,
+    ) 
+);
 // Text
 $wp_customize->add_setting( $prefix .'_about_text',
     array(
@@ -74,6 +80,60 @@ $wp_customize->add_control(
         'type'          => 'textarea'
     )
 );
+
+
+// facebook
+$wp_customize->add_setting( $prefix .'_about_facebook',
+    array(
+        'sanitize_callback' => 'esc_url',
+        //'transport'         => 'postMessage'
+    )
+);
+$wp_customize->add_control(
+    $prefix .'_about_facebook',
+    array(
+        'label'         => esc_html__( 'Facebook', 'asterion' ),
+        'description'   => esc_html__( 'Facebook Account Link', 'asterion'),
+        'section'       => $section_id,
+        'priority'      => 3,
+    )
+);
+
+
+// twitter
+$wp_customize->add_setting( $prefix .'_about_twitter',
+    array(
+        'sanitize_callback' => 'esc_url',
+        //'transport'         => 'postMessage'
+    )
+);
+$wp_customize->add_control(
+    $prefix .'_about_twitter',
+    array(
+        'label'         => esc_html__( 'Twitter', 'asterion' ),
+        'description'   => esc_html__( 'Twitter Account Link', 'asterion'),
+        'section'       => $section_id,
+        'priority'      => 3,
+    )
+);
+
+// linkedin
+$wp_customize->add_setting( $prefix .'_about_linkedin',
+    array(
+        'sanitize_callback' => 'esc_url',
+        //'transport'         => 'postMessage'
+    )
+);
+$wp_customize->add_control(
+    $prefix .'_about_linkedin',
+    array(
+        'label'         => esc_html__( 'Linkedin', 'asterion' ),
+        'description'   => esc_html__( 'Linkedin Account Link', 'asterion'),
+        'section'       => $section_id,
+        'priority'      => 3,
+    )
+);
+
 
 // background color
 $wp_customize->add_setting( $prefix . '_about_bg_color', array(

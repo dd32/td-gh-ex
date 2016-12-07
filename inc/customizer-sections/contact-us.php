@@ -38,11 +38,11 @@ $wp_customize->add_section( $section_id,
 
 
 // Show this section
-$wp_customize->add_setting( $prefix . '_contact_show',
+$wp_customize->add_setting( $prefix . '_contact_us_show',
     array(
         'sanitize_callback' => array( asterion()->customizer, 'sanitize_checkbox' ),
         'default'           => 1,
-        'transport'         => 'postMessage'
+        //'transport'         => 'postMessage'
     )
 );
 $wp_customize->add_control(
@@ -72,7 +72,12 @@ $wp_customize->add_control(
         'priority'      => 2
     )
 );
-
+$wp_customize->selective_refresh->add_partial( $prefix . '_contact_title', 
+    array(
+        'selector'            => '#contact .section-title',
+        'container_inclusive' => true,
+    ) 
+);
 // Text
 $wp_customize->add_setting( $prefix .'_contact_text',
     array(
@@ -95,7 +100,7 @@ $wp_customize->add_control(
 // background color
 $wp_customize->add_setting( $prefix . '_contact_bg_color', array(
     'sanitize_callback' => 'sanitize_hex_color',
-    'default'           => '#333231',
+    'default'           => '#ffffff',
     'transport'         => 'postMessage'
 ) );
 $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $prefix . '_contact_bg_color', array(
@@ -111,7 +116,7 @@ $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $pref
 $wp_customize->add_setting( $prefix . '_contact_text_color',
     array(
         'sanitize_callback' => array( asterion()->customizer, 'sanitize_checkbox' ),
-        'default'           => 1,
+        'default'           => 0,
         'transport'         => 'postMessage'
     )
 );
@@ -141,7 +146,7 @@ $wp_customize->add_section( $section_id_2,
 );
 
 
-// Address itle
+// Address title
 $wp_customize->add_setting( $prefix .'_contact_address_title',
     array(
         'sanitize_callback' => array( asterion()->customizer, 'sanitize_html' ),
@@ -158,7 +163,12 @@ $wp_customize->add_control(
         'priority'      => 2
     )
 );
-
+$wp_customize->selective_refresh->add_partial( $prefix . '_contact_address_title', 
+    array(
+        'selector'            => '#contact .address-details',
+        'container_inclusive' => true,
+    ) 
+);
 // Address
 $wp_customize->add_setting( $prefix .'_contact_address',
     array(

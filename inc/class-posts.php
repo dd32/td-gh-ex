@@ -24,7 +24,13 @@
 
 				<div class="blog-post-image">
 					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-						<?php the_post_thumbnail( 'asterion-single-thumbnail' ); ?>
+						<?php 
+							if( is_active_sidebar( 'blog-sidebar' ) && !is_page_template('page-templates/no-sidebar.php') ) {
+								the_post_thumbnail( 'asterion-single-thumbnail' ); 
+							} else {
+								the_post_thumbnail( 'asterion-single-thumbnail-full' ); 
+							}
+						?>
 					</a>
 				</div>
 				
@@ -32,7 +38,13 @@
 
 				<div class="blog-post-image">
 					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-						<?php the_post_thumbnail( 'asterion-blog-thumbnail' ); ?>
+						<?php 
+							if( is_active_sidebar( 'blog-sidebar' ) ) {
+								the_post_thumbnail( 'asterion-blog-thumbnail' ); 
+							} else {
+								the_post_thumbnail( 'asterion-blog-thumbnaill-full' ); 
+							}
+						?>
 					</a>
 				</div>
 			
@@ -66,7 +78,7 @@
 
 			$_terms = "";
 
-			if( $term_count > 0 ) {
+			if( $term_count > 0 && !empty($terms)) {
 				foreach ( $terms as $term ) {
 
 					$_terms.= esc_html($term->name);

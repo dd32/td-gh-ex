@@ -37,130 +37,39 @@ $wp_customize->add_section( $section_id_2,
     )
 );
 
-//first section
-$wp_customize->add_setting( $prefix .'_section_order_1',
-    array(
-        'sanitize_callback' => 'esc_attr',
-        'default'           => 1
-    )
-);
 
-$wp_customize->add_control(
-    $prefix .'_section_order_1',
-    array(
-        'label'         => esc_html__( 'First section', 'asterion' ),
-        'description'   => esc_html__( 'Select what section you would like see first on the front page.', 'asterion' ),
-        'type'          => 'select',
-        'section'       => $section_id_2,
-        'choices'       => array(
-            1   => esc_html__( 'Features', 'asterion' ),
-            2   => esc_html__( 'Portfolio', 'asterion' ),
-            3   => esc_html__( 'Testimonials', 'asterion' ),
-            4   => esc_html__( 'About', 'asterion' ),
-            5   => esc_html__( 'Contact us', 'asterion' )
+
+$section_order = asterion()->home->section_order();
+$sections = asterion()->home->sections();
+//update the array key 
+foreach ($sections as $key => $section) {
+    $_sections[$key+1] = $section;
+}
+
+$sections = $_sections;
+
+foreach ( $section_order as $key => $section) {
+
+
+    $wp_customize->add_setting( $prefix .'_section_order_'.$key,
+        array(
+            'sanitize_callback' => 'esc_attr',
+            'default'           => $key
         )
-    )
-);
+    );
 
-//second section
-$wp_customize->add_setting( $prefix .'_section_order_2',
-    array(
-        'sanitize_callback' => 'esc_attr',
-        'default'           => 2
-    )
-);
-
-$wp_customize->add_control(
-    $prefix .'_section_order_2',
-    array(
-        'label'         => esc_html__( 'Second section', 'asterion' ),
-        'description'   => esc_html__( 'Select what section you would like see second on the front page.', 'asterion' ),
-        'type'          => 'select',
-        'section'       => $section_id_2,
-        'choices'       => array(
-            1   => esc_html__( 'Features', 'asterion' ),
-            2   => esc_html__( 'Portfolio', 'asterion' ),
-            3   => esc_html__( 'Testimonials', 'asterion' ),
-            4   => esc_html__( 'About', 'asterion' ),
-            5   => esc_html__( 'Contact us', 'asterion' )
+    $wp_customize->add_control(
+        $prefix .'_section_order_'.$key,
+        array(
+            'label'         => sprintf( '%s %s', $section[1]." ", esc_html__( 'section', 'asterion' ) ),
+            'description'   => sprintf( '%s %s %s', esc_html__( 'Select what section you would like see', 'asterion' )," ".strtolower($section[1])." ", esc_html__( 'on the front page.', 'asterion' ) ),
+            'type'          => 'select',
+            'section'       => $section_id_2,
+            'choices'       => $sections
         )
-    )
-);
+    );
 
-//third section
-$wp_customize->add_setting( $prefix .'_section_order_3',
-    array(
-        'sanitize_callback' => 'esc_attr',
-        'default'           => 3
-    )
-);
-
-$wp_customize->add_control(
-    $prefix .'_section_order_3',
-    array(
-        'label'         => esc_html__( 'Third section', 'asterion' ),
-        'description'   => esc_html__( 'Select what section you would like see third on the front page.', 'asterion' ),
-        'type'          => 'select',
-        'section'       => $section_id_2,
-        'choices'       => array(
-            1   => esc_html__( 'Features', 'asterion' ),
-            2   => esc_html__( 'Portfolio', 'asterion' ),
-            3   => esc_html__( 'Testimonials', 'asterion' ),
-            4   => esc_html__( 'About', 'asterion' ),
-            5   => esc_html__( 'Contact us', 'asterion' )
-        )
-    )
-);
-
-//forth section
-$wp_customize->add_setting( $prefix .'_section_order_4',
-    array(
-        'sanitize_callback' => 'esc_attr',
-        'default'           => 4
-    )
-);
-
-$wp_customize->add_control(
-    $prefix .'_section_order_4',
-    array(
-        'label'         => esc_html__( 'Forth section', 'asterion' ),
-        'description'   => esc_html__( 'Select what section you would like see forth on the front page.', 'asterion' ),
-        'type'          => 'select',
-        'section'       => $section_id_2,
-        'choices'       => array(
-            1   => esc_html__( 'Features', 'asterion' ),
-            2   => esc_html__( 'Portfolio', 'asterion' ),
-            3   => esc_html__( 'Testimonials', 'asterion' ),
-            4   => esc_html__( 'About', 'asterion' ),
-            5   => esc_html__( 'Contact us', 'asterion' )
-        )
-    )
-);
-
-//fifth section
-$wp_customize->add_setting( $prefix .'_section_order_5',
-    array(
-        'sanitize_callback' => 'esc_attr',
-        'default'           => 5
-    )
-);
-
-$wp_customize->add_control(
-    $prefix .'_section_order_5',
-    array(
-        'label'         => esc_html__( 'Fifth section', 'asterion' ),
-        'description'   => esc_html__( 'Select what section you would like see fifth on the front page.', 'asterion' ),
-        'type'          => 'select',
-        'section'       => $section_id_2,
-        'choices'       => array(
-            1   => esc_html__( 'Features', 'asterion' ),
-            2   => esc_html__( 'Portfolio', 'asterion' ),
-            3   => esc_html__( 'Testimonials', 'asterion' ),
-            4   => esc_html__( 'About', 'asterion' ),
-            5   => esc_html__( 'Contact us', 'asterion' )
-        )
-    )
-);
+}
 
 
 
@@ -197,7 +106,12 @@ $wp_customize->add_control(
         'priority'      => 1
     )
 );
-
+$wp_customize->selective_refresh->add_partial( $prefix . '_copyright', 
+    array(
+        'selector'            => '.ot-footer .ot-copyright',
+        'container_inclusive' => true,
+    ) 
+);
 
 /***********************************************/
 /****************** COLORS  *****************/

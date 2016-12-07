@@ -25,7 +25,7 @@ $wp_customize->add_setting( $prefix . '_testimonials_show',
     array(
         'sanitize_callback' => array( asterion()->customizer, 'sanitize_checkbox' ),
         'default'           => 1,
-        'transport'         => 'postMessage'
+        //'transport'         => 'postMessage'
     )
 );
 $wp_customize->add_control(
@@ -57,7 +57,12 @@ $wp_customize->add_control(
         'active_callback' => array( asterion()->customizer, 'jetpack_testimonials_active_callback' ),
     )
 );
-
+$wp_customize->selective_refresh->add_partial( $prefix . '_testimonials_title', 
+    array(
+        'selector'            => '#testimonials .section-title',
+        'container_inclusive' => true,
+    ) 
+);
 // Text
 $wp_customize->add_setting( $prefix .'_testimonials_text',
     array(
@@ -99,7 +104,7 @@ $wp_customize->add_control(
 // background color
 $wp_customize->add_setting( $prefix . '_testimonials_bg_color', array(
     'sanitize_callback' => 'sanitize_hex_color',
-    'default'           => '#ffffff',
+    'default'           => '#f2f1f7',
     'transport'         => 'postMessage'
 ) );
 $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $prefix . '_testimonials_bg_color', 

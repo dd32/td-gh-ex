@@ -24,11 +24,14 @@
 	    public $posts;
 	    public $home;
 	    public $customizer;
+	    public $panel;
+	    public $tgmpa;
 
 
 		private function __construct() {
 			//load all scripts
 			add_action( 'wp_enqueue_scripts',  array( $this, 'enqueue_scripts' ) );
+
 
 			//register all theme sidebars
 			add_action( 'widgets_init',  array( $this, 'register_sidebars' ) );
@@ -45,11 +48,16 @@
 			//register all theme plugins
 			add_action( 'tgmpa_register', array($this,'register_required_plugins') );
 
+			// Add specific CSS class by filter
+			add_filter( 'body_class', array( $this, 'body_class') );
+
+
 			// Instantiate secondary classes
 			$this->posts = new Asterion_Posts();
 			$this->home = new Asterion_Home();
 			$this->customizer = new Asterion_Customizer();
-
+			$this->panel = new Asterion_Backend_panel();
+			$this->tgmpa = new TGM_Plugin_Activation();
 
 		}
 
@@ -99,8 +107,8 @@
 			 *
 			 */
 			add_theme_support( 'custom-logo', array(
-				'height'      => 34,
-				'width'       => 240,
+				'height'      => 46,
+				'width'       => 280,
 				'flex-height' => true,
 			) );
 
@@ -113,9 +121,12 @@
 			add_theme_support( 'post-thumbnails' );
 			set_post_thumbnail_size( 1200, 9999 );
 			add_image_size( 'asterion-single-thumbnail', 750, 550, true );
+			add_image_size( 'asterion-single-thumbnail-full', 1140, 660, true );
+			add_image_size( 'asterion-blog-thumbnaill-full', 1140, 660, true );
 			add_image_size( 'asterion-blog-thumbnail', 750, 500, true );
-			add_image_size( 'asterion-portfolio', 387, 258, true );
+			add_image_size( 'asterion-portfolio', 774, 516, true );
 			add_image_size( 'asterion-testimonials', 90, 90, true );
+			add_image_size( 'asterion-latest-posts-front', 712, 474, true );
 
 
 			// This theme uses wp_nav_menu() in two locations.
@@ -173,7 +184,18 @@
 
 
 			//add_theme_support( 'custom-background', array('default-color'	=> '#f1f1f1',) );
+
+			//enable jetpack custom post types
+			if( get_option('jetpack_ot_theme_adjust') != 1 ) {
+				update_option('jetpack_portfolio', 1);
+				update_option('jetpack_testimonial', 1);
+				update_option('jetpack_ot_theme_adjust', 1);
+			}
+
+
+			 add_theme_support( 'customize-selective-refresh-widgets' );
 		}
+
 
 
 		/**
@@ -182,7 +204,6 @@
 		public function enqueue_scripts() {
 			
 			// Add Bootstrap default CSS
-			wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css' );
 			wp_enqueue_style( 'slick', get_template_directory_uri().'/css/slick.css' );
 			wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/css/font-awesome.css' );
 			wp_enqueue_style( 'asterion-main-style', get_template_directory_uri().'/css/main-style.css' );
@@ -195,7 +216,6 @@
 
 			// Add JS Files
 			wp_enqueue_script('jquery');
-			wp_enqueue_script( 'bootstrap', get_template_directory_uri().'/js/bootstrap.min.js', array('jquery') );
 			wp_enqueue_script( 'appear-js', get_template_directory_uri() . '/js/jquery.appear.js', array('jquery') );
 			wp_enqueue_script( 'sticky-js', get_template_directory_uri() . '/js/jquery.sticky.js', array('jquery') );
 			wp_enqueue_script( 'slick-slider', get_template_directory_uri() . '/js/slick.min.js', array('jquery') );
@@ -207,6 +227,51 @@
 			}
 	
 
+		}
+
+		/**
+		 * Add body class
+		 *
+		 * @return body $classes array
+		 */
+		function body_class($classes) {
+
+			if( is_front_page() ) {
+				$classes[] = "no-sidebar";	
+			} else if( is_home() ) {
+				if( !is_active_sidebar('blog-sidebar') ) {
+					$classes[] = "no-sidebar";	
+				}
+			} else if( is_single() && get_post_type() == "post" ) {
+				if( !is_active_sidebar('blog-sidebar') ) {
+					$classes[] = "no-sidebar";	
+				}
+			} else if( is_singular() && get_post_type() == "page" ) {
+				if( !is_active_sidebar('page-sidebar') ) {
+					$classes[] = "no-sidebar";	
+				}	
+			} else if( is_singular() ) {
+				if( !is_active_sidebar('sidebar-1') ) {
+					$classes[] = "no-sidebar";	
+				}
+			}
+
+
+			if( is_404() ) {
+				$classes[] = "no-sidebar";	
+			}
+			
+
+			if( is_page_template('page-templates/no-sidebar.php') || is_page_template('page-templates/clean-page.php') ) {
+				$classes[] = "no-sidebar";	
+			}
+			if( is_page_template('page-templates/left-sidebar.php') ) {
+				$classes[] = "left-sidebar";	
+			}
+
+
+			// return the $classes array
+			return $classes;
 		}
 
 		/**
@@ -222,39 +287,41 @@
 		* theme required plugins
 		*/
 		function required_plugins() {
-			$theme_dir = trailingslashit( get_template_directory() );
 
 			$plugins = array(
 
 
 				array(
-					'name'     				=> 'Orange Themes Custom Widgets', // The plugin name
-					'slug'     				=> 'orange-themes-widgets', // The plugin slug (typically the folder name)
+					'name'     				=> esc_html__( 'Orange Themes Custom Widgets', 'asterion' ), // The plugin name
+					'slug'     				=> 'orange-themes-custom-widgets', // The plugin slug (typically the folder name)
 					'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
 					'version' 				=> '1.0.0', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
 					'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
 					'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
 					'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
+					'is_callable'        	=> true,
 				),
 
 				array(
-					'name'     				=> 'Contact Form 7', // The plugin name
+					'name'     				=> esc_html__( 'Contact Form 7', 'asterion' ), // The plugin name
 					'slug'     				=> 'contact-form-7', // The plugin slug (typically the folder name)
 					'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
 					'version' 				=> '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
 					'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
 					'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
 					'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
+					'is_callable'        	=> true,
 				),	
 			
 				array(
-					'name'     				=> 'JetPack', // The plugin name
+					'name'     				=> esc_html__( 'JetPack', 'asterion' ), // The plugin name
 					'slug'     				=> 'jetpack', // The plugin slug (typically the folder name)
 					'required' 				=> false, // If false, the plugin is only 'recommended' instead of required
 					'version' 				=> '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
 					'force_activation' 		=> false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
 					'force_deactivation' 	=> false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
 					'external_url' 			=> '', // If set, overrides default API URL and points to an external URL
+					'is_callable'        	=> true,
 				),	
 			
 
@@ -388,7 +455,7 @@
 		* Register all sidebars
 		*/
 		public function register_sidebars() {
-	        
+			
 	        register_sidebar( 
 	            array(
 	                'name' => esc_html__( 'Sidebar', 'asterion' ),
@@ -400,32 +467,6 @@
 					'after_title'  => '</span></h2>',
 	            )
 	        );
-
-
-			register_sidebar( 
-				array(
-					'name'          => esc_html__( 'Blog Sidebar', 'asterion' ),
-					'id'            => 'blog-sidebar',
-					'description'   => esc_html__( 'Main blog widgets section', 'asterion' ),
-	                'before_widget' => '<div id="%1$s" class="ot-widget widget %2$s">',
-	                'after_widget' => '</div>',
-					'before_title' => '<h2 class="ot-widget-title"><span>',
-					'after_title'  => '</span></h2>',
-				) 
-			);
-
-
-			register_sidebar( 
-				array(
-					'name'          => esc_html__( 'Page Sidebar', 'asterion' ),
-					'id'            => 'page-sidebar',
-					'description'   => esc_html__( 'Page widgets section', 'asterion' ),
-	                'before_widget' => '<div id="%1$s" class="ot-widget widget %2$s">',
-	                'after_widget' => '</div>',
-					'before_title' => '<h2 class="ot-widget-title"><span>',
-					'after_widget'  => '</span></h2>',
-				) 
-			);
 
 			//front page sidebars 
 			register_sidebar( 
@@ -450,6 +491,34 @@
 					'after_title'  => '</span></h2>',
 				) 
 			);
+
+
+			register_sidebar( 
+				array(
+					'name'          => esc_html__( 'Blog Sidebar', 'asterion' ),
+					'id'            => 'blog-sidebar',
+					'description'   => esc_html__( 'Main blog widgets section', 'asterion' ),
+	                'before_widget' => '<div id="%1$s" class="ot-widget widget %2$s">',
+	                'after_widget' => '</div>',
+					'before_title' => '<h2 class="ot-widget-title"><span>',
+					'after_title'  => '</span></h2>',
+				) 
+			);
+
+
+			register_sidebar( 
+				array(
+					'name'          => esc_html__( 'Page Sidebar', 'asterion' ),
+					'id'            => 'page-sidebar',
+					'description'   => esc_html__( 'Page widgets section', 'asterion' ),
+	                'before_widget' => '<div id="%1$s" class="ot-widget widget %2$s">',
+	                'after_widget' => '</div>',
+					'before_title' => '<h2 class="ot-widget-title"><span>',
+					'after_title'  => '</span></h2>',
+				) 
+			);
+
+
 
 
 	
@@ -489,7 +558,7 @@
 
 			.post-navigation .nav-links a:hover { color: <?php echo esc_attr($hover_color);?>; }
 
-			.mz-sidebar .widget ul li a:hover { color: <?php echo esc_attr($hover_color);?>; }
+			.ot-sidebar .widget ul li a:hover { color: <?php echo esc_attr($hover_color);?>; }
 
 		<?php
 			$custom_css = ob_get_contents();

@@ -25,7 +25,7 @@ $wp_customize->add_setting( $prefix . '_counters_show',
     array(
         'sanitize_callback' => array( asterion()->customizer, 'sanitize_checkbox' ),
         'default'           => 1,
-        'transport'         => 'postMessage'
+        //'transport'         => 'postMessage'
     )
 );
 $wp_customize->add_control(
@@ -36,6 +36,13 @@ $wp_customize->add_control(
         'section'   => $section_id,
         'priority'  => 1
     )
+);
+
+$wp_customize->selective_refresh->add_partial( $prefix . '_counters_show', 
+    array(
+        'selector'            => '#counters .ot-container',
+        'container_inclusive' => true,
+    ) 
 );
 
 // Title 1
@@ -54,6 +61,7 @@ $wp_customize->add_control(
         'priority'      => 2,
     )
 );
+
 
 // counter count 1
 $wp_customize->add_setting( $prefix .'_counters_count_1',

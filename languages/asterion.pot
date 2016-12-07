@@ -1,0 +1,1580 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Asterion\n"
+"POT-Creation-Date: 2016-12-05 15:14+0200\n"
+"PO-Revision-Date: 2016-12-05 15:14+0200\n"
+"Last-Translator: Orange Themes <support@orange-themes.com>\n"
+"Language-Team: Orange Themes <support@orange-themes.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;_e;__;esc_html_e;esc_html__;"
+"esc_attr__;esc_attr_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: ./..\n"
+
+#: ../404.php:19
+msgid "Page not found"
+msgstr ""
+
+#: ../archive.php:28 ../front-page.php:35 ../index.php:35 ../search.php:28
+msgid "Previous page"
+msgstr ""
+
+#: ../archive.php:29 ../front-page.php:36 ../index.php:36 ../search.php:29
+msgid "Next page"
+msgstr ""
+
+#: ../comments.php:32 ../comments.php:50
+msgid "Comment navigation"
+msgstr ""
+
+#: ../comments.php:33 ../comments.php:51
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: ../comments.php:34 ../comments.php:52
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: ../comments.php:57
+msgid "Comments are closed."
+msgstr ""
+
+#: ../footer.php:12 ../footer.php:25 ../inc/customizer-sections/general.php:96
+#, php-format
+msgid "&copy; Copyright %s. All Rights Reserved."
+msgstr ""
+
+#: ../footer.php:26
+msgid "Theme:"
+msgstr ""
+
+#: ../footer.php:26 ../inc/class-backend-panel.php:420
+msgid "Asterion"
+msgstr ""
+
+#: ../footer.php:26
+msgid "by Orange Themes"
+msgstr ""
+
+#: ../header.php:104
+msgid "Please set up the menu"
+msgstr ""
+
+#: ../searchform.php:13
+msgid "Search for:"
+msgstr ""
+
+#: ../single.php:36
+msgid "Post navigation"
+msgstr ""
+
+#: ../single.php:41
+msgid "<div class=\"meta-nav\"><span>Published In</span>%title</div>"
+msgstr ""
+
+#: ../single.php:43
+msgid ""
+"<div class=\"meta-nav meta-nav-left\"><span>Previous Post</span>%title</div>"
+msgstr ""
+
+#: ../single.php:44
+msgid ""
+"<div class=\"meta-nav meta-nav-right\"><span>Next Post</span>%title</div>"
+msgstr ""
+
+#: ../inc/class-asterion.php:131 ../inc/customizer-sections/header.php:205
+msgid "Main Menu"
+msgstr ""
+
+#: ../inc/class-asterion.php:241
+msgid "Orange Themes Custom Widgets"
+msgstr ""
+
+#: ../inc/class-asterion.php:252
+msgid "Contact Form 7"
+msgstr ""
+
+#: ../inc/class-asterion.php:263
+msgid "JetPack"
+msgstr ""
+
+#: ../inc/class-asterion.php:322 ../inc/class-tgm-plugin-activation.php:327
+msgid "Install Required Plugins"
+msgstr ""
+
+#: ../inc/class-asterion.php:323 ../inc/class-tgm-plugin-activation.php:328
+msgid "Install Plugins"
+msgstr ""
+
+#: ../inc/class-asterion.php:324 ../inc/class-tgm-plugin-activation.php:330
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: ../inc/class-asterion.php:325 ../inc/class-tgm-plugin-activation.php:333
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: ../inc/class-asterion.php:386 ../inc/class-tgm-plugin-activation.php:385
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: ../inc/class-asterion.php:387 ../inc/class-tgm-plugin-activation.php:387
+#: ../inc/class-tgm-plugin-activation.php:3159
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: ../inc/class-asterion.php:388 ../inc/class-tgm-plugin-activation.php:388
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#: ../inc/class-asterion.php:389 ../inc/class-tgm-plugin-activation.php:390
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: ../inc/class-asterion.php:390 ../inc/class-tgm-plugin-activation.php:392
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#: ../inc/class-asterion.php:391 ../inc/class-tgm-plugin-activation.php:394
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: ../inc/class-asterion.php:392 ../inc/class-tgm-plugin-activation.php:397
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: ../inc/class-asterion.php:407
+msgid "Sidebar"
+msgstr ""
+
+#: ../inc/class-asterion.php:409
+msgid "Main homepage widgets section"
+msgstr ""
+
+#: ../inc/class-asterion.php:420
+msgid "Features Sidebar"
+msgstr ""
+
+#: ../inc/class-asterion.php:422
+msgid "Front page features panel widgets section"
+msgstr ""
+
+#: ../inc/class-asterion.php:431
+msgid "Team Sidebar"
+msgstr ""
+
+#: ../inc/class-asterion.php:433
+msgid "Front page team panel widgets section"
+msgstr ""
+
+#: ../inc/class-asterion.php:444
+msgid "Blog Sidebar"
+msgstr ""
+
+#: ../inc/class-asterion.php:446
+msgid "Main blog widgets section"
+msgstr ""
+
+#: ../inc/class-asterion.php:457
+msgid "Page Sidebar"
+msgstr ""
+
+#: ../inc/class-asterion.php:459
+msgid "Page widgets section"
+msgstr ""
+
+#: ../inc/class-backend-panel.php:173
+msgid "Cheating?"
+msgstr ""
+
+#: ../inc/class-backend-panel.php:175
+msgid "You have already imported the front page content!"
+msgstr ""
+
+#: ../inc/class-backend-panel.php:177 ../inc/backend/demo-content.php:17
+msgid "Set up front page in"
+msgstr ""
+
+#: ../inc/class-backend-panel.php:177 ../inc/backend/demo-content.php:17
+msgid "Settings"
+msgstr ""
+
+#: ../inc/class-backend-panel.php:177 ../inc/backend/demo-content.php:17
+msgid "Reading"
+msgstr ""
+
+#: ../inc/class-backend-panel.php:177 ../inc/backend/demo-content.php:17
+msgid "Front page displays"
+msgstr ""
+
+#: ../inc/class-backend-panel.php:269
+msgid "Asterion Dashboard"
+msgstr ""
+
+#: ../inc/class-backend-panel.php:357
+msgid "Need Help?"
+msgstr ""
+
+#: ../inc/class-backend-panel.php:362
+msgid "Theme Demo"
+msgstr ""
+
+#: ../inc/class-backend-panel.php:367
+msgid "Send us Feedback"
+msgstr ""
+
+#: ../inc/class-home.php:15 ../inc/customizer-sections/about.php:45
+#: ../sections/about.php:12
+msgid "About"
+msgstr ""
+
+#: ../inc/class-home.php:16 ../inc/customizer-sections/features.php:45
+#: ../sections/features.php:9
+msgid "Features"
+msgstr ""
+
+#: ../inc/class-home.php:17 ../inc/customizer-sections/portfolio.php:46
+#: ../sections/portfolio.php:10
+msgid "Portfolio"
+msgstr ""
+
+#: ../inc/class-home.php:18
+msgid "Counters"
+msgstr ""
+
+#: ../inc/class-home.php:19 ../inc/customizer-sections/testimonials.php:46
+#: ../sections/testimonials.php:10
+msgid "Testimonials"
+msgstr ""
+
+#: ../inc/class-home.php:20 ../inc/customizer-sections/latest-posts.php:45
+#: ../sections/latest-posts.php:10
+msgid "Latest Posts"
+msgstr ""
+
+#: ../inc/class-home.php:21 ../inc/customizer-sections/counters.php:115
+#: ../inc/customizer-sections/team.php:45 ../sections/counters.php:20
+#: ../sections/team.php:10
+msgid "Team"
+msgstr ""
+
+#: ../inc/class-home.php:22 ../inc/customizer-sections/contact-us.php:19
+msgid "Contact us"
+msgstr ""
+
+#: ../inc/class-home.php:47
+msgid "First"
+msgstr ""
+
+#: ../inc/class-home.php:50
+msgid "Second"
+msgstr ""
+
+#: ../inc/class-home.php:53
+msgid "Third"
+msgstr ""
+
+#: ../inc/class-home.php:56
+msgid "Forth"
+msgstr ""
+
+#: ../inc/class-home.php:59
+msgid "Fifth"
+msgstr ""
+
+#: ../inc/class-home.php:62
+msgid "Sixth"
+msgstr ""
+
+#: ../inc/class-home.php:65
+msgid "Seventh"
+msgstr ""
+
+#: ../inc/class-home.php:68
+msgid "Eight"
+msgstr ""
+
+#: ../inc/class-home.php:71
+msgid "Ninth"
+msgstr ""
+
+#: ../inc/class-home.php:74
+msgid "Tenth"
+msgstr ""
+
+#: ../inc/class-posts.php:113 ../template-parts/content-page.php:42
+#: ../template-parts/content-single.php:60
+msgid "Pages:"
+msgstr ""
+
+#: ../inc/class-posts.php:117 ../template-parts/content-page.php:46
+#: ../template-parts/content-single.php:64
+msgid "Page"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:332
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:386
+#: ../inc/class-tgm-plugin-activation.php:827
+#: ../inc/class-tgm-plugin-activation.php:2533
+#: ../inc/class-tgm-plugin-activation.php:3580
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:395
+msgid "Dismiss this notice"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:396
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:522
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:523
+msgid "Update Required"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:934
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:934
+#: ../inc/class-tgm-plugin-activation.php:937
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:937
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:1982
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2273
+msgid "Required"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2276
+msgid "Recommended"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2292
+msgid "WordPress Repository"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2295
+msgid "External Source"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2298
+msgid "Pre-Packaged"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2315
+msgid "Not Installed"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2319
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2321
+msgid "Active"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2327
+msgid "Required Update not Available"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2330
+msgid "Requires Update"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2333
+msgid "Update recommended"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2490
+msgid "Installed version:"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2498
+msgid "Minimum required version:"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2510
+msgid "Available version:"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2533
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2547
+msgid "Plugin"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2548
+msgid "Source"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2549
+msgid "Type"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2553
+msgid "Version"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2554
+msgid "Status"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2603
+#, php-format
+msgid "Install %2$s"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2608
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2614
+#, php-format
+msgid "Activate %2$s"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2684
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2717
+msgid "Install"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2723
+msgid "Update"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2726
+msgid "Activate"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2757
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2759
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2800
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2802
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2908
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:2934
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:3158
+msgid "Plugin activation failed."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:3498
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:3501
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:3503
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:3507
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:3509
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:3509
+#: ../inc/class-tgm-plugin-activation.php:3517
+msgid "Show Details"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:3509
+#: ../inc/class-tgm-plugin-activation.php:3517
+msgid "Hide Details"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:3510
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:3512
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:3515
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:3517
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:3518
+msgid "All installations have been completed."
+msgstr ""
+
+#: ../inc/class-tgm-plugin-activation.php:3520
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: ../inc/custom-controls.php:32
+msgid "No contact forms found"
+msgstr ""
+
+#: ../inc/custom-controls.php:48
+msgid "Select a contact form"
+msgstr ""
+
+#: ../inc/backend/changelog.php:6
+msgid "Changelog"
+msgstr ""
+
+#: ../inc/backend/demo-content.php:5
+msgid "Error"
+msgstr ""
+
+#: ../inc/backend/demo-content.php:6
+msgid "Something went wrong..."
+msgstr ""
+
+#: ../inc/backend/demo-content.php:12 ../inc/backend/demo-content.php:29
+msgid "Import front page settings"
+msgstr ""
+
+#: ../inc/backend/demo-content.php:14
+msgid ""
+"Here you can easy import the front page settings, so it would look like our "
+"demo page."
+msgstr ""
+
+#: ../inc/backend/demo-content.php:15
+msgid ""
+"Before importing these settings, please make sure that you have done these "
+"steps:"
+msgstr ""
+
+#: ../inc/backend/demo-content.php:18
+msgid "Install and activate all"
+msgstr ""
+
+#: ../inc/backend/demo-content.php:18
+msgid "recomended plugins"
+msgstr ""
+
+#: ../inc/backend/demo-content.php:19
+msgid "Enable JetPack custom post types - Portfolio and Testimonials"
+msgstr ""
+
+#: ../inc/backend/demo-content.php:25 ../inc/backend/demo-content.php:41
+msgid "Importing..."
+msgstr ""
+
+#: ../inc/backend/demo-content.php:25 ../inc/backend/demo-content.php:41
+msgid "Imported"
+msgstr ""
+
+#: ../inc/backend/demo-content.php:25
+msgid "Import Front Page"
+msgstr ""
+
+#: ../inc/backend/demo-content.php:31
+msgid "Front page settings are aleady imported."
+msgstr ""
+
+#: ../inc/backend/demo-content.php:32
+msgid ""
+"Isn't it good enought? Then feel free to download also the post, portfolio "
+"and testimonial demo content here: "
+msgstr ""
+
+#: ../inc/backend/demo-content.php:32
+msgid "Download"
+msgstr ""
+
+#: ../inc/backend/demo-content.php:32
+msgid ""
+"Import it using the default WordPress importer plugin, and make sure you "
+"have connected to the JetPack plugin."
+msgstr ""
+
+#: ../inc/backend/demo-content.php:39
+msgid "Import sidebar widgets"
+msgstr ""
+
+#: ../inc/backend/demo-content.php:40
+msgid ""
+"Here you can easy import all page sidebar widgets, including front page "
+"widgets."
+msgstr ""
+
+#: ../inc/backend/demo-content.php:41
+msgid "Import Widgets"
+msgstr ""
+
+#: ../inc/backend/demo-content.php:47
+msgid "Reset theme settings"
+msgstr ""
+
+#: ../inc/backend/demo-content.php:48
+msgid "Use this if you want ro reset all theme custom settings."
+msgstr ""
+
+#: ../inc/backend/demo-content.php:50
+msgid "Reseting..."
+msgstr ""
+
+#: ../inc/backend/demo-content.php:50
+msgid "Reseted"
+msgstr ""
+
+#: ../inc/backend/demo-content.php:51
+msgid "Reset"
+msgstr ""
+
+#: ../inc/backend/demo-content.php:65
+msgid "Demo"
+msgstr ""
+
+#: ../inc/backend/getting-started.php:7
+msgid "Welcome to Asterion!"
+msgstr ""
+
+#: ../inc/backend/getting-started.php:9
+msgid "Our most popular free one page WordPress theme, Asterion!"
+msgstr ""
+
+#: ../inc/backend/getting-started.php:10
+msgid ""
+"We want to make sure you have the best experience using Asterion and that is "
+"why we gathered here all the necessary information for you. We hope you will "
+"enjoy using Asterion, as much as we enjoy creating great products."
+msgstr ""
+
+#: ../inc/backend/getting-started.php:17
+msgid "Getting started"
+msgstr ""
+
+#: ../inc/backend/getting-started.php:19
+msgid ""
+"You need help to setup and configure this theme? We got you covered with an "
+"extensive theme documentation on our website."
+msgstr ""
+
+#: ../inc/backend/getting-started.php:20
+msgid "View Documentation"
+msgstr ""
+
+#: ../inc/backend/getting-started.php:22
+msgid "Customize everything in a single place."
+msgstr ""
+
+#: ../inc/backend/getting-started.php:23
+msgid ""
+"Using the WordPress Customizer you can easily customize every aspect of the "
+"theme."
+msgstr ""
+
+#: ../inc/backend/getting-started.php:24
+msgid "Go to Customizer"
+msgstr ""
+
+#: ../inc/backend/getting-started.php:40
+msgid "Getting Started"
+msgstr ""
+
+#: ../inc/customizer-sections/about.php:16
+msgid "About Section"
+msgstr ""
+
+#: ../inc/customizer-sections/about.php:17
+#: ../inc/customizer-sections/contact-us.php:20
+msgid "Change about section information here."
+msgstr ""
+
+#: ../inc/customizer-sections/about.php:35
+#: ../inc/customizer-sections/contact-us.php:52
+#: ../inc/customizer-sections/counters.php:35
+#: ../inc/customizer-sections/features.php:35
+#: ../inc/customizer-sections/latest-posts.php:35
+#: ../inc/customizer-sections/portfolio.php:35
+#: ../inc/customizer-sections/team.php:35
+#: ../inc/customizer-sections/testimonials.php:35
+msgid "Show this section?"
+msgstr ""
+
+#: ../inc/customizer-sections/about.php:52
+#: ../inc/customizer-sections/contact-us.php:69
+#: ../inc/customizer-sections/contact-us.php:155
+#: ../inc/customizer-sections/contact-us.php:194
+#: ../inc/customizer-sections/features.php:52
+#: ../inc/customizer-sections/latest-posts.php:52
+#: ../inc/customizer-sections/portfolio.php:53
+#: ../inc/customizer-sections/team.php:52
+#: ../inc/customizer-sections/testimonials.php:53
+msgid "Title"
+msgstr ""
+
+#: ../inc/customizer-sections/about.php:53
+#: ../inc/customizer-sections/contact-us.php:70
+#: ../inc/customizer-sections/contact-us.php:156
+#: ../inc/customizer-sections/contact-us.php:195
+#: ../inc/customizer-sections/features.php:53
+#: ../inc/customizer-sections/latest-posts.php:53
+#: ../inc/customizer-sections/portfolio.php:54
+#: ../inc/customizer-sections/team.php:53
+#: ../inc/customizer-sections/testimonials.php:54
+msgid "Add the title for this section."
+msgstr ""
+
+#: ../inc/customizer-sections/about.php:63
+#: ../inc/customizer-sections/latest-posts.php:63
+#: ../inc/customizer-sections/team.php:63 ../sections/about.php:13
+#: ../sections/latest-posts.php:11 ../sections/team.php:11
+msgid ""
+"All the Lorem Ipsum generators on the Internet tend to repeat predefined "
+"chunks as necessary, making this the first true generator on the Internet."
+msgstr ""
+
+#: ../inc/customizer-sections/about.php:70
+#: ../inc/customizer-sections/contact-us.php:87
+#: ../inc/customizer-sections/features.php:70
+#: ../inc/customizer-sections/latest-posts.php:70
+#: ../inc/customizer-sections/portfolio.php:72
+#: ../inc/customizer-sections/team.php:70
+#: ../inc/customizer-sections/testimonials.php:72
+msgid "Text"
+msgstr ""
+
+#: ../inc/customizer-sections/about.php:71
+#: ../inc/customizer-sections/contact-us.php:88
+#: ../inc/customizer-sections/contact-us.php:174
+#: ../inc/customizer-sections/features.php:71
+#: ../inc/customizer-sections/latest-posts.php:71
+#: ../inc/customizer-sections/portfolio.php:73
+#: ../inc/customizer-sections/team.php:71
+#: ../inc/customizer-sections/testimonials.php:73
+msgid "Add the content for this section."
+msgstr ""
+
+#: ../inc/customizer-sections/about.php:89 ../sections/about.php:44
+msgid "Facebook"
+msgstr ""
+
+#: ../inc/customizer-sections/about.php:90
+msgid "Facebook Account Link"
+msgstr ""
+
+#: ../inc/customizer-sections/about.php:105 ../sections/about.php:49
+msgid "Twitter"
+msgstr ""
+
+#: ../inc/customizer-sections/about.php:106
+msgid "Twitter Account Link"
+msgstr ""
+
+#: ../inc/customizer-sections/about.php:121
+msgid "Linkedin"
+msgstr ""
+
+#: ../inc/customizer-sections/about.php:122
+msgid "Linkedin Account Link"
+msgstr ""
+
+#: ../inc/customizer-sections/about.php:135
+#: ../inc/customizer-sections/contact-us.php:102
+#: ../inc/customizer-sections/counters.php:273
+#: ../inc/customizer-sections/features.php:86
+#: ../inc/customizer-sections/latest-posts.php:145
+#: ../inc/customizer-sections/portfolio.php:149
+#: ../inc/customizer-sections/team.php:85
+#: ../inc/customizer-sections/testimonials.php:107
+msgid "Background color"
+msgstr ""
+
+#: ../inc/customizer-sections/about.php:136
+msgid "About section background color"
+msgstr ""
+
+#: ../inc/customizer-sections/about.php:155
+#: ../inc/customizer-sections/contact-us.php:122
+#: ../inc/customizer-sections/counters.php:293
+#: ../inc/customizer-sections/features.php:106
+#: ../inc/customizer-sections/latest-posts.php:165
+#: ../inc/customizer-sections/portfolio.php:170
+#: ../inc/customizer-sections/team.php:105
+#: ../inc/customizer-sections/testimonials.php:129
+msgid "Light text?"
+msgstr ""
+
+#: ../inc/customizer-sections/about.php:156
+#: ../inc/customizer-sections/contact-us.php:123
+#: ../inc/customizer-sections/counters.php:294
+#: ../inc/customizer-sections/features.php:107
+#: ../inc/customizer-sections/latest-posts.php:166
+#: ../inc/customizer-sections/portfolio.php:171
+#: ../inc/customizer-sections/team.php:106
+#: ../inc/customizer-sections/testimonials.php:130
+msgid "Choose text color scheme, light or dark"
+msgstr ""
+
+#: ../inc/customizer-sections/blog.php:20
+msgid "Blog Settings"
+msgstr ""
+
+#: ../inc/customizer-sections/blog.php:21
+msgid "Customize blog page here."
+msgstr ""
+
+#: ../inc/customizer-sections/blog.php:33
+msgid "Single Post"
+msgstr ""
+
+#: ../inc/customizer-sections/blog.php:34
+msgid "Change single post settings"
+msgstr ""
+
+#: ../inc/customizer-sections/blog.php:53
+msgid "Show image in single post page?"
+msgstr ""
+
+#: ../inc/customizer-sections/blog.php:71
+msgid "Show date in single post page?"
+msgstr ""
+
+#: ../inc/customizer-sections/blog.php:89
+msgid "Show post author in single post page?"
+msgstr ""
+
+#: ../inc/customizer-sections/blog.php:107
+msgid "Show post tags in single post page?"
+msgstr ""
+
+#: ../inc/customizer-sections/blog.php:125
+msgid "Show post categories in single post page?"
+msgstr ""
+
+#: ../inc/customizer-sections/blog.php:139
+msgid "Blog Listing"
+msgstr ""
+
+#: ../inc/customizer-sections/blog.php:140
+msgid "Change blog listing settings"
+msgstr ""
+
+#: ../inc/customizer-sections/blog.php:159
+msgid "Show post image in blog listing page?"
+msgstr ""
+
+#: ../inc/customizer-sections/blog.php:177
+msgid "Show post date in blog listing page?"
+msgstr ""
+
+#: ../inc/customizer-sections/blog.php:195
+msgid "Show post comment count in blog listing page?"
+msgstr ""
+
+#: ../inc/customizer-sections/blog.php:213
+msgid "Show blog post categories in blog listing page?"
+msgstr ""
+
+#: ../inc/customizer-sections/contact-us.php:32
+msgid "General Data"
+msgstr ""
+
+#: ../inc/customizer-sections/contact-us.php:33
+#: ../inc/customizer-sections/contact-us.php:138
+msgid "Change contact section information here."
+msgstr ""
+
+#: ../inc/customizer-sections/contact-us.php:62 ../sections/contact-us.php:10
+msgid "Contact Us"
+msgstr ""
+
+#: ../inc/customizer-sections/contact-us.php:80 ../sections/contact-us.php:11
+msgid ""
+"If you have some Questions or need Help! Please Contact Us! We make Cool and "
+"Clean Design for your Business"
+msgstr ""
+
+#: ../inc/customizer-sections/contact-us.php:103
+msgid "Contact section background color"
+msgstr ""
+
+#: ../inc/customizer-sections/contact-us.php:137
+msgid "Contact Details"
+msgstr ""
+
+#: ../inc/customizer-sections/contact-us.php:148 ../sections/contact-us.php:12
+msgid "Our Business Office"
+msgstr ""
+
+#: ../inc/customizer-sections/contact-us.php:166 ../sections/contact-us.php:13
+msgid ""
+"34522 Street, Barcelona 442 &#13;&#10;Spain, New Building North, 25th Floor"
+msgstr ""
+
+#: ../inc/customizer-sections/contact-us.php:173
+msgid "Address"
+msgstr ""
+
+#: ../inc/customizer-sections/contact-us.php:187 ../sections/contact-us.php:14
+msgid "Contacts"
+msgstr ""
+
+#: ../inc/customizer-sections/contact-us.php:205 ../sections/contact-us.php:15
+msgid "+101 377 655 22127"
+msgstr ""
+
+#: ../inc/customizer-sections/contact-us.php:212
+msgid "Phone"
+msgstr ""
+
+#: ../inc/customizer-sections/contact-us.php:213
+msgid "Add a phone number."
+msgstr ""
+
+#: ../inc/customizer-sections/contact-us.php:223 ../sections/contact-us.php:16
+msgid "mail@yourcompany.com"
+msgstr ""
+
+#: ../inc/customizer-sections/contact-us.php:230
+msgid "Email"
+msgstr ""
+
+#: ../inc/customizer-sections/contact-us.php:231
+msgid "Add a email address."
+msgstr ""
+
+#: ../inc/customizer-sections/contact-us.php:249
+msgid "Select a contact form to display it in the contact section"
+msgstr ""
+
+#: ../inc/customizer-sections/contact-us.php:270
+msgid "Install Contact From 7"
+msgstr ""
+
+#: ../inc/customizer-sections/contact-us.php:271
+#: ../inc/customizer-sections/portfolio.php:194
+#: ../inc/customizer-sections/testimonials.php:152
+msgid "This option requires "
+msgstr ""
+
+#: ../inc/customizer-sections/contact-us.php:271
+msgid ", please install it to enable this option."
+msgstr ""
+
+#: ../inc/customizer-sections/counters.php:16
+msgid "Counters Section"
+msgstr ""
+
+#: ../inc/customizer-sections/counters.php:17
+msgid "Change counters section information here."
+msgstr ""
+
+#: ../inc/customizer-sections/counters.php:45 ../sections/counters.php:18
+msgid "Awards"
+msgstr ""
+
+#: ../inc/customizer-sections/counters.php:52
+msgid "First Counter Title"
+msgstr ""
+
+#: ../inc/customizer-sections/counters.php:69
+msgid "First Counter Count"
+msgstr ""
+
+#: ../inc/customizer-sections/counters.php:70
+#: ../inc/customizer-sections/counters.php:105
+#: ../inc/customizer-sections/counters.php:140
+#: ../inc/customizer-sections/counters.php:175
+msgid "Add a number to the counter"
+msgstr ""
+
+#: ../inc/customizer-sections/counters.php:80 ../sections/counters.php:19
+msgid "Clients"
+msgstr ""
+
+#: ../inc/customizer-sections/counters.php:87
+msgid "Second Counter Title"
+msgstr ""
+
+#: ../inc/customizer-sections/counters.php:104
+msgid "Second Counter Count"
+msgstr ""
+
+#: ../inc/customizer-sections/counters.php:122
+msgid "Third Counter Title"
+msgstr ""
+
+#: ../inc/customizer-sections/counters.php:139
+msgid "Third Counter Count"
+msgstr ""
+
+#: ../inc/customizer-sections/counters.php:150 ../sections/counters.php:21
+msgid "Projects"
+msgstr ""
+
+#: ../inc/customizer-sections/counters.php:157
+msgid "Forth Counter Title"
+msgstr ""
+
+#: ../inc/customizer-sections/counters.php:174
+msgid "Forth Counter Count"
+msgstr ""
+
+#: ../inc/customizer-sections/counters.php:193
+msgid "Background Type"
+msgstr ""
+
+#: ../inc/customizer-sections/counters.php:198
+msgid "Image"
+msgstr ""
+
+#: ../inc/customizer-sections/counters.php:199
+msgid "Color"
+msgstr ""
+
+#: ../inc/customizer-sections/counters.php:217
+msgid "Background image"
+msgstr ""
+
+#: ../inc/customizer-sections/counters.php:237
+msgid "Enable background image parallax effect?"
+msgstr ""
+
+#: ../inc/customizer-sections/counters.php:255
+msgid "Enable background image overlay?"
+msgstr ""
+
+#: ../inc/customizer-sections/counters.php:274
+msgid "Counters section background color"
+msgstr ""
+
+#: ../inc/customizer-sections/features.php:16
+msgid "Features Section"
+msgstr ""
+
+#: ../inc/customizer-sections/features.php:17
+msgid "Change features section information here."
+msgstr ""
+
+#: ../inc/customizer-sections/features.php:63 ../sections/features.php:10
+msgid ""
+"A creative agency based on Candy Land, ready to boost your business with "
+"some beautifull templates. Orange Themes Agency is one of the best in town "
+"see more you will be amazed."
+msgstr ""
+
+#: ../inc/customizer-sections/features.php:87
+msgid "Features section background color"
+msgstr ""
+
+#: ../inc/customizer-sections/general.php:21
+msgid "General Settings"
+msgstr ""
+
+#: ../inc/customizer-sections/general.php:22
+msgid ""
+"Theme general options like header and footer settings, copyright information "
+"etc."
+msgstr ""
+
+#: ../inc/customizer-sections/general.php:34
+msgid "Section Order"
+msgstr ""
+
+#: ../inc/customizer-sections/general.php:35
+msgid "Reorder the front page sections."
+msgstr ""
+
+#: ../inc/customizer-sections/general.php:64
+msgid "section"
+msgstr ""
+
+#: ../inc/customizer-sections/general.php:65
+msgid "Select what section you would like see"
+msgstr ""
+
+#: ../inc/customizer-sections/general.php:65
+msgid "on the front page."
+msgstr ""
+
+#: ../inc/customizer-sections/general.php:84
+#: ../inc/customizer-sections/general.php:103
+msgid "Copyright"
+msgstr ""
+
+#: ../inc/customizer-sections/general.php:85
+msgid "Change copyright here."
+msgstr ""
+
+#: ../inc/customizer-sections/general.php:104
+msgid "Add your copyright message here."
+msgstr ""
+
+#: ../inc/customizer-sections/general.php:119
+msgid "Colors"
+msgstr ""
+
+#: ../inc/customizer-sections/general.php:120
+msgid "Customize theme colors here."
+msgstr ""
+
+#: ../inc/customizer-sections/general.php:137
+msgid "Accent Color"
+msgstr ""
+
+#: ../inc/customizer-sections/general.php:138
+msgid "Theme accent colors"
+msgstr ""
+
+#: ../inc/customizer-sections/general.php:154
+msgid "Hover Color"
+msgstr ""
+
+#: ../inc/customizer-sections/general.php:155
+msgid "Theme hover colors"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:22
+msgid "Header Settings"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:23
+msgid "Theme header options like front page, blog and archive page images"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:36
+msgid "Front Page Header"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:37
+msgid "Front page header information here."
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:51
+msgid "Header image"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:52
+msgid "Header intro image"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:71
+msgid "Enable parallax effect?"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:89
+msgid "Enable image overlay?"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:100 ../sections/intro-image.php:10
+msgid "Welcome To Orange Themes!"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:107
+msgid "First title for header image"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:117 ../sections/intro-image.php:11
+msgid "YOUR FAVORITE SOURCE OF FREE BOOTSTRAP THEMES"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:124
+msgid "Second title for header image"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:134 ../sections/intro-image.php:12
+msgid "Tell me more"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:141
+msgid "Button title"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:151
+msgid "#"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:158
+msgid "Button URL"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:176
+msgid "Open link in new tab?"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:191
+msgid "Blog/Archive Header Settings"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:192
+msgid "Blog/Archive header image."
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:206
+msgid "Menu color settings"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:222
+msgid "Main Menu Style"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:227
+msgid "Dark Menu"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:228
+msgid "Light Menu"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:245
+msgid "Main Menu Position"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:250
+msgid "Sticky Menu"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:251
+msgid "Fixed Menu"
+msgstr ""
+
+#: ../inc/customizer-sections/header.php:260
+msgid "Blog Archive Header Image"
+msgstr ""
+
+#: ../inc/customizer-sections/latest-posts.php:16
+msgid "Latest Posts Section"
+msgstr ""
+
+#: ../inc/customizer-sections/latest-posts.php:17
+msgid "Change latest posts section information here."
+msgstr ""
+
+#: ../inc/customizer-sections/latest-posts.php:88
+#: ../inc/customizer-sections/portfolio.php:91
+#: ../inc/customizer-sections/testimonials.php:91
+msgid "Post Count"
+msgstr ""
+
+#: ../inc/customizer-sections/latest-posts.php:93
+msgid "3 Posts"
+msgstr ""
+
+#: ../inc/customizer-sections/latest-posts.php:94
+msgid "4 Posts"
+msgstr ""
+
+#: ../inc/customizer-sections/latest-posts.php:110
+msgid "Post Offset"
+msgstr ""
+
+#: ../inc/customizer-sections/latest-posts.php:111
+msgid "Post listing offset, the listing will start from the post you entered."
+msgstr ""
+
+#: ../inc/customizer-sections/latest-posts.php:125
+msgid "Post Images"
+msgstr ""
+
+#: ../inc/customizer-sections/latest-posts.php:130
+msgid "Show Images"
+msgstr ""
+
+#: ../inc/customizer-sections/latest-posts.php:131
+msgid "Hide Images"
+msgstr ""
+
+#: ../inc/customizer-sections/latest-posts.php:146
+msgid "Latest posts section background color"
+msgstr ""
+
+#: ../inc/customizer-sections/portfolio.php:16
+msgid "Portfolio Section"
+msgstr ""
+
+#: ../inc/customizer-sections/portfolio.php:17
+msgid "Change portfolio section information here."
+msgstr ""
+
+#: ../inc/customizer-sections/portfolio.php:65 ../sections/portfolio.php:11
+msgid ""
+"Our portfolio is the best way to show our work, you can see here a big range "
+"of our work. Check them all and you will find what you are looking for."
+msgstr ""
+
+#: ../inc/customizer-sections/portfolio.php:92
+#: ../inc/customizer-sections/testimonials.php:92
+msgid "Add the number of posts to show in this section."
+msgstr ""
+
+#: ../inc/customizer-sections/portfolio.php:112
+msgid "Image hover effect"
+msgstr ""
+
+#: ../inc/customizer-sections/portfolio.php:117
+msgid "Bubba"
+msgstr ""
+
+#: ../inc/customizer-sections/portfolio.php:118
+msgid "Apollo"
+msgstr ""
+
+#: ../inc/customizer-sections/portfolio.php:119
+msgid "Milo"
+msgstr ""
+
+#: ../inc/customizer-sections/portfolio.php:120
+msgid "Jazz"
+msgstr ""
+
+#: ../inc/customizer-sections/portfolio.php:121
+msgid "Goliath"
+msgstr ""
+
+#: ../inc/customizer-sections/portfolio.php:134
+msgid "Image overlay"
+msgstr ""
+
+#: ../inc/customizer-sections/portfolio.php:150
+msgid "Portfolio section background color"
+msgstr ""
+
+#: ../inc/customizer-sections/portfolio.php:193
+#: ../inc/customizer-sections/testimonials.php:151
+msgid "Install JetPack"
+msgstr ""
+
+#: ../inc/customizer-sections/portfolio.php:194
+msgid ""
+", please install it and enable Custom Post Type: Portfolio to enable this "
+"option."
+msgstr ""
+
+#: ../inc/customizer-sections/team.php:16
+msgid "Team Section"
+msgstr ""
+
+#: ../inc/customizer-sections/team.php:17
+msgid "Change team section information here."
+msgstr ""
+
+#: ../inc/customizer-sections/team.php:86
+msgid "Team section background color"
+msgstr ""
+
+#: ../inc/customizer-sections/testimonials.php:16
+msgid "Testimonials Section"
+msgstr ""
+
+#: ../inc/customizer-sections/testimonials.php:17
+msgid "Change testimonials section information here."
+msgstr ""
+
+#: ../inc/customizer-sections/testimonials.php:65
+#: ../sections/testimonials.php:11
+msgid "Mida sit una namet, cons uectetur adipiscing adon elit."
+msgstr ""
+
+#: ../inc/customizer-sections/testimonials.php:108
+msgid "Testimonials section background color"
+msgstr ""
+
+#: ../inc/customizer-sections/testimonials.php:152
+msgid ""
+", please install it and enable Custom Post Type: Testimonials to enable this "
+"option."
+msgstr ""
+
+#: ../sections/about.php:54
+msgid "LinkedIn"
+msgstr ""
+
+#: ../sections/features.php:53
+msgid "WEB DEVELOPMENT"
+msgstr ""
+
+#: ../sections/features.php:53
+msgid ""
+"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis"
+msgstr ""
+
+#: ../sections/features.php:54
+msgid "VISUALISATION"
+msgstr ""
+
+#: ../sections/features.php:54
+msgid ""
+"Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus "
+"saepe"
+msgstr ""
+
+#: ../sections/features.php:55
+msgid "UI/UX DESIGN"
+msgstr ""
+
+#: ../sections/features.php:55
+msgid "Itaque earum rerum hic tenetur a sapiente, ut aut reiciendis maiores"
+msgstr ""
+
+#: ../sections/features.php:56 ../sections/team.php:55
+msgid "PHOTOGRAPHY"
+msgstr ""
+
+#: ../sections/features.php:56
+msgid "Accusamus et iusto odio dignissimos ducimus qui blanditiis"
+msgstr ""
+
+#: ../sections/latest-posts.php:106 ../sections/latest-posts.php:107
+msgid "Read more"
+msgstr ""
+
+#: ../sections/latest-posts.php:117
+msgid "No posts were found"
+msgstr ""
+
+#: ../sections/team.php:54
+msgid "TOM BEKERS"
+msgstr ""
+
+#: ../sections/team.php:54
+msgid "CEO & WEB DESIGN"
+msgstr ""
+
+#: ../sections/team.php:54
+msgid ""
+"Mida sit una namet, cons uectetur adipiscing adon elit. Aliquam vitae barasa "
+"droma."
+msgstr ""
+
+#: ../sections/team.php:55
+msgid "LINA GOSATA"
+msgstr ""
+
+#: ../sections/team.php:55
+msgid ""
+"Worsa dona namet, cons uectetur dipiscing adon elit. Aliquam vitae fringilla "
+"unda mir."
+msgstr ""
+
+#: ../sections/team.php:56
+msgid "JOHN BEKERS"
+msgstr ""
+
+#: ../sections/team.php:56
+msgid "MARKETING"
+msgstr ""
+
+#: ../sections/team.php:56
+msgid ""
+"Dolor sit don namet, cons uectetur beriscing adon elit. Aliquam vitae "
+"fringilla unda."
+msgstr ""
+
+#: ../template-parts/content-none.php:16
+msgid "Nothing Found"
+msgstr ""
+
+#: ../template-parts/content-none.php:24
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: ../template-parts/content-none.php:28
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: ../template-parts/content-none.php:33
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: ../template-parts/content-page.php:29
+#: ../template-parts/content-single.php:46
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: ../template-parts/content.php:29
+msgid "Leave a comment"
+msgstr ""
+
+#: ../template-parts/content.php:29
+msgid "1 Comment"
+msgstr ""
+
+#: ../template-parts/content.php:29
+msgid "% Comments"
+msgstr ""
+
+#: ../template-parts/content.php:59
+msgid "Continue Reading"
+msgstr ""

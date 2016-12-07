@@ -6,16 +6,24 @@
  *	@subpackage asterion
  */
 
-	$title_1 = get_theme_mod('asterion_header_title_1',esc_html__( 'Welcome To Orange Themes!', 'asterion' ));
-	$title_2 = get_theme_mod('asterion_header_title_2',esc_html__( 'YOUR FAVORITE SOURCE OF FREE BOOTSTRAP THEMES', 'asterion' ));
-	$button_title = get_theme_mod('asterion_header_button_title',esc_html__('Tell me more','asterion'));
+	if( current_user_can( 'edit_theme_options' ) ) {
+		$title_1 = get_theme_mod('asterion_header_title_1',esc_html__( 'Welcome To Orange Themes!', 'asterion' ));
+		$title_2 = get_theme_mod('asterion_header_title_2',esc_html__( 'YOUR FAVORITE SOURCE OF FREE BOOTSTRAP THEMES', 'asterion' ));
+		$button_title = get_theme_mod('asterion_header_button_title',esc_html__('Tell me more','asterion'));
+	} else {
+		$title_1 = get_theme_mod('asterion_header_title_1', get_the_title());
+		$title_2 = get_theme_mod('asterion_header_title_2');
+		$button_title = get_theme_mod('asterion_header_button_title');
+	}
+
+
 	$button_url = get_theme_mod('asterion_header_button_url', "#");
 	$button_target = get_theme_mod('asterion_header_button_target', 1);
 
 ?>
 
 
-	<div class="container">
+	<div class="ot-container">
 		<div class="intro-text">
 			<?php if( $title_1 ) { ?>
 				<h3 class="intro-lead-in">

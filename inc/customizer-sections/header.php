@@ -7,6 +7,7 @@ $panel_id = $prefix.'_header_section';
 // Set section id
 $section_id = $prefix.'_main_header_section';
 $section_id_2 = $prefix.'_blog_header_section';
+$section_id_3 = $prefix.'_header_menu';
 
 
 /***********************************************/
@@ -53,7 +54,12 @@ $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $pref
     'settings'    => $prefix . '_intro_image',
     'priority'    => 1,
 ) ) );
-
+$wp_customize->selective_refresh->add_partial( $prefix . '_intro_image', 
+    array(
+        'selector'            => '#header .intro-text',
+        'container_inclusive' => true,
+    ) 
+);
 
 // Parallax effect
 $wp_customize->add_setting( $prefix . '_intro_image_parallax',
@@ -191,6 +197,66 @@ $wp_customize->add_section( $section_id_2,
         'description'       => esc_html__( 'Blog/Archive header image.', 'asterion' ),
         'panel'             => $panel_id
     )
+);
+
+/***********************************************/
+/************ HEADER MENU SETTINGS  ************/
+/***********************************************/
+
+$wp_customize->add_section( $section_id_3,
+    array(
+        'priority'          => 3,
+        'theme_supports'    => '',
+        'title'             => esc_html__( 'Main Menu', 'asterion' ),
+        'description'       => esc_html__( 'Menu color settings', 'asterion' ),
+        'panel'             => $panel_id
+    )
+);
+
+
+// Menu style
+$wp_customize->add_setting( $prefix . '_menu_style', 
+    array(
+        'sanitize_callback' => array( asterion()->customizer, 'sanitize_radio' ),
+        'default'           => 2,
+        'transport'         => 'postMessage'
+    ) 
+);
+$wp_customize->add_control( $prefix . '_menu_style', 
+    array(
+        'label'     => esc_html__( 'Main Menu Style', 'asterion' ),
+        'section'   => $section_id_3,
+        'settings'  => $prefix . '_menu_style',
+        'type'      => 'radio',
+        'choices'   => array(
+                1   => esc_html__( 'Dark Menu', 'asterion' ),
+                2   => esc_html__( 'Light Menu', 'asterion' )
+            ),
+        'priority'  => 1
+    ) 
+);
+
+
+// Menu position
+$wp_customize->add_setting( $prefix . '_menu_position', 
+    array(
+        'sanitize_callback' => array( asterion()->customizer, 'sanitize_radio' ),
+        'default'           => 1,
+        'transport'         => 'postMessage'
+    ) 
+);
+$wp_customize->add_control( $prefix . '_menu_position', 
+    array(
+        'label'     => esc_html__( 'Main Menu Position', 'asterion' ),
+        'section'   => $section_id_3,
+        'settings'  => $prefix . '_menu_position',
+        'type'      => 'radio',
+        'choices'   => array(
+                1   => esc_html__( 'Sticky Menu', 'asterion' ),
+                2   => esc_html__( 'Fixed Menu', 'asterion' )
+            ),
+        'priority'  => 1
+    ) 
 );
 
 

@@ -55,6 +55,13 @@ $wp_customize->add_control(
         'priority'  => 1
     )
 );
+$wp_customize->selective_refresh->add_partial( $prefix . '_single_post_image', 
+    array(
+        'selector'            => '.single-post .blog-post-image',
+        'container_inclusive' => true,
+    ) 
+);
+
 
 // date in single post
 $wp_customize->add_setting( $prefix . '_single_post_date',
@@ -72,6 +79,12 @@ $wp_customize->add_control(
         'section'   => $section_id,
         'priority'  => 2
     )
+);
+$wp_customize->selective_refresh->add_partial( $prefix . '_single_post_date', 
+    array(
+        'selector'            => '.single-post .post-date',
+        'container_inclusive' => true,
+    ) 
 );
 
 // author in single post
@@ -92,6 +105,7 @@ $wp_customize->add_control(
     )
 );
 
+
 // tags in single post
 $wp_customize->add_setting( $prefix . '_single_post_tags',
     array(
@@ -109,7 +123,12 @@ $wp_customize->add_control(
         'priority'  => 4
     )
 );
-
+$wp_customize->selective_refresh->add_partial( $prefix . '_single_post_tags', 
+    array(
+        'selector'            => '.single-post .mz-entry-tags',
+        'container_inclusive' => true,
+    ) 
+);
 // categories in single post
 $wp_customize->add_setting( $prefix . '_single_post_cat',
     array(
@@ -161,6 +180,12 @@ $wp_customize->add_control(
         'priority'  => 1
     )
 );
+$wp_customize->selective_refresh->add_partial( $prefix . '_blog_post_image', 
+    array(
+        'selector'            => '.blog #primary .blog-post-image',
+        'container_inclusive' => true,
+    ) 
+);
 
 // date in single post
 $wp_customize->add_setting( $prefix . '_blog_post_date',
@@ -179,6 +204,13 @@ $wp_customize->add_control(
         'priority'  => 2
     )
 );
+$wp_customize->selective_refresh->add_partial( $prefix . '_blog_post_date', 
+    array(
+        'selector'            => '.blog #primary .post-meta',
+        'container_inclusive' => true,
+    ) 
+);
+
 
 // author in single post
 $wp_customize->add_setting( $prefix . '_blog_post_comment',

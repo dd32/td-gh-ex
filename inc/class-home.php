@@ -8,33 +8,86 @@
 
 	    }
 
+
+		function sections() {
+
+	    	$sections = array(
+	    		esc_html__( 'About', 'asterion' ),
+	    		esc_html__( 'Features', 'asterion' ),
+	    		esc_html__( 'Portfolio', 'asterion' ),
+	    		esc_html__( 'Counters', 'asterion' ),
+	    		esc_html__( 'Testimonials', 'asterion' ),
+	    		esc_html__( 'Latest Posts', 'asterion' ),
+	    		esc_html__( 'Team', 'asterion' ),
+	    		esc_html__( 'Contact us', 'asterion' )
+	    	);
+
+	    	return $sections;
+	    }
+
+	    function section_order() {
+
+	    	$sections = $this->sections();
+
+	    	$section_order = array();
+
+	    	foreach( $sections as $key => $section) {
+	    		$section_order[$key+1][0] = $section;	
+	    		$section_order[$key+1][1] = $this->number_to_word($key+1);	
+	    	}
+
+	    	return $section_order;
+
+	    }
+
+
+	    function number_to_word( $nr ) {
+	    	switch ( $nr ) {
+	    		case '1':
+	    			return esc_html__( 'First', 'asterion' );
+	    			break;
+	    		case '2':
+	    			return esc_html__( 'Second', 'asterion' );
+	    			break;
+	    		case '3':
+	    			return esc_html__( 'Third', 'asterion' );
+	    			break;
+	    		case '4':
+	    			return esc_html__( 'Forth', 'asterion' );
+	    			break;
+	    		case '5':
+	    			return esc_html__( 'Fifth', 'asterion' );
+	    			break;
+	    		case '6':
+	    			return esc_html__( 'Sixth', 'asterion' );
+	    			break;
+	    		case '7':
+	    			return esc_html__( 'Seventh', 'asterion' );
+	    			break;
+	    		case '8':
+	    			return esc_html__( 'Eight', 'asterion' );
+	    			break;
+	    		case '9':
+	    			return esc_html__( 'Ninth', 'asterion' );
+	    			break;
+	    		case '10':
+	    			return esc_html__( 'Tenth', 'asterion' );
+	    			break;
+	    	}
+	    }
+
+
 	    function section( $val ) {
+	    	$sections = $this->section_order();
 
-	        $features = get_theme_mod( 'asterion_features_show', 1 );
-	        $portfolio = get_theme_mod( 'asterion_portfolio_show', 1 );
-	        $about = get_theme_mod( 'asterion_about_show', 1 );
-	        $counters = get_theme_mod( 'asterion_counters_show', 1 );
-	        $testimonials = get_theme_mod( 'asterion_testimonials_show', 1 );
-	        $team = get_theme_mod( 'asterion_team_show', 1 );
-	        $contact = get_theme_mod( 'asterion_contact_show', 1 );
-	        
-	        if( $val == 1 && $features == 1 ) {
-	            get_template_part( 'sections/features' );
-	        } elseif( $val == 2 && $portfolio == 1 ) {
-	            get_template_part( 'sections/portfolio' );
-	        } elseif( $val == 3 && $about == 1 ) {
-	            get_template_part( 'sections/about' );
-	        } elseif( $val == 4 && $counters == 1 ) {
-	            get_template_part( 'sections/counters' );
-	        } elseif( $val == 5 && $testimonials == 1 ) {
-	            get_template_part( 'sections/testimonials' );
-	        } elseif( $val == 6 && $team == 1 ) {
-	            get_template_part( 'sections/team' );
-	        } elseif( $val == 7 && $contact == 1 ) {
-	            get_template_part( 'sections/contact' ); 
-	        }
+	    	foreach ( $sections as $key => $section) {
 
+	    		$_section = get_theme_mod( 'asterion_'.strtolower(str_replace( ' ', '_', $section[0] )).'_show', 1 );
 
+	    		if( $val == $key && $_section == 1 ) {
+	    			get_template_part( 'sections/'.strtolower(str_replace( ' ', '-', $section[0] )) );
+	    		}
+	    	}
 
 	    }
 

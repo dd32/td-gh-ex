@@ -1,18 +1,11 @@
-// Sticky header menu
-jQuery(window).scroll(function() {
-	var heightTop = jQuery(".navbar").height();
-	var heightWpadminbar = jQuery("#wpadminbar").height();
-	if (jQuery(this).scrollTop() > heightTop + heightWpadminbar){
-		jQuery(".navbar").addClass("navbar-shrink");
-	} else {
-		jQuery(".navbar").removeClass("navbar-shrink");
-	}
-});
 
-jQuery(function($) {   
+jQuery(function($) {  
 	$('.stats-bar').appear();
+
 	$('.stats-bar').on('appear', function() {
+		
 		var fx = function fx() {
+
 			$(".stat-number").each(function (i, el) {
 					var data = parseInt(this.dataset.n, 10);
 					var props = {
@@ -35,22 +28,22 @@ jQuery(function($) {
 					}
 				});
 			});
+			
+
 		};
 
 		var reset = function reset() {
-			console.log($(this).scrollTop())
-			if ($(this).scrollTop() > 90) {
-				$(this).off("scroll");
-				fx()
+	        if (typeof executed == 'undefined') {
+				executed = true;
+				if ($(this).scrollTop() > 90) {
+					
+					fx()
+				}
 			}
 		};
 
 		$(window).on("scroll", reset);
 	});
-});
-
-jQuery(function($) {
-  "use strict";
 
 	// hide #back-top first
 	$("#back-top").hide();
@@ -72,13 +65,50 @@ jQuery(function($) {
 		}
 	});
 
+	// Sticky header menu
+	function sticky_header() {
+		var heightWpadminbar = $("#wpadminbar").height();
 
-$('.testimonials-slider').slick({
-	autoplay: false,
-	autoplaySpeed: 2000,
-	dots: true,
-	arrows: false,
-});
+		if ($(this).scrollTop() > heightWpadminbar){
+			$(".navbar").addClass("navbar-shrink");
+		} else {
+			$(".navbar").removeClass("navbar-shrink");
+		}
+
+	}
+ 	
+	$(window).scroll(function() {
+		sticky_header();
+	});
+
+	sticky_header();
+
+	$('.testimonials-slider').slick({
+		autoplay: false,
+		autoplaySpeed: 2000,
+		dots: true,
+		arrows: false,
+	});
 
 
+
+    // Clone elements to offcanvas
+    jQuery(".asterion-primary-nav nav").clone().appendTo(".asterion-offcanvas-nav");
+
+    // Toggle mobile nav
+    jQuery(".site-navigation-toggle, .asterion-offcanvas-wrap .close").on("click", function () {
+        jQuery(".asterion-offcanvas-wrap").toggleClass("active");
+   });
+
+    // Off-canvas menu sub-menus
+    jQuery(".asterion-offcanvas-nav .menu-item-has-children a").on("click", function () {
+        event.stopPropagation();
+        location.href = this.href;
+    });
+    jQuery(".asterion-offcanvas-nav .menu-item-has-children").on("click", function () {
+        jQuery(this).children("ul").toggle();
+        jQuery(".asterion-offcanvas-nav nav").resize();
+        jQuery(this).toggleClass("show-sub-menu");
+        return false;
+    }); 
 });

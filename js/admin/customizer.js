@@ -4,7 +4,7 @@
  * Contains handlers to make Theme Customizer preview reload changes asynchronously.
  */
 ( function( $ ) {
-
+	"use strict";
 	/***********************************************/
 	/******************  Features  *****************/
 	/***********************************************/
@@ -89,6 +89,22 @@
 		value.bind( function( to ) {
 
 			$( '#portfolio .section-title p' ).html( to );
+		} );
+	} );
+
+	// image hover effect
+	wp.customize( 'asterion_portfolio_image_hover_effect', function( value ) {
+		value.bind( function( to ) {
+
+			$( '#portfolio .ot-portfolio-item figure' ).attr( 'class', 'effect-'+to );
+		} );
+	} );
+
+	// image overlay
+	wp.customize( 'asterion_portfolio_image_overlay_color', function( value ) {
+		value.bind( function( to ) {
+
+			$( '#portfolio .ot-portfolio-item figure' ).css( 'background-color', to );
 		} );
 	} );
 
@@ -230,6 +246,75 @@
 	} );
 
 	/***********************************************/
+	/****************  Latest Posts  ***************/
+	/***********************************************/
+
+	// Show this section
+	wp.customize( 'asterion_latest_posts_show', function( value ) {
+		value.bind( function( to ) {
+			if( to == false ) {
+				$( '#latest-posts' ).addClass( 'customizer-display-none' );
+			} else if( to == true ) {
+				$( '#latest-posts' ).removeClass( 'customizer-display-none' );
+			}
+		} );
+	} );
+
+	// Title
+	wp.customize( 'asterion_latest_posts_title', function( value ) {
+		value.bind( function( to ) {
+
+			$( '#latest-posts .section-title h2' ).html( to );
+		} );
+	} );
+
+	// Text
+	wp.customize( 'asterion_latest_posts_text', function( value ) {
+		value.bind( function( to ) {
+
+			$( '#latest-posts .section-title p' ).html( to );
+		} );
+	} );
+
+
+	// section color
+	wp.customize( 'asterion_latest_posts_bg_color', function( value ) {
+		value.bind( function( to ) {
+			if( to !== false ) {
+				$( '#latest-posts' ).css( 'background-color', to );	
+			} else {
+				$( '#latest-posts' ).css( 'background-color', '#ffffff' );	
+			}
+			
+		} );
+	} );
+
+	// check bg color
+	wp.customize( 'asterion_latest_posts_bg_color', function( value ) {
+		value.bind( function( to ) {
+			if( to == "#fff" || to == "#ffffff") {
+				$( '#latest-posts' ).addClass( 'ot-bg-white' );
+			} else {
+				$( '#latest-posts' ).removeClass( 'ot-bg-white' );
+			}
+			
+		} );
+	} );
+
+
+	// section text color
+	wp.customize( 'asterion_latest_posts_text_color', function( value ) {
+		value.bind( function( to ) {
+			if( to != false ) {
+				$( '#latest-posts' ).addClass( 'text-light' ).removeClass( 'text-dark' );
+			} else {
+				$( '#latest-posts' ).addClass( 'text-dark' ).removeClass( 'text-light' );
+			}
+		} );
+	} );
+
+
+	/***********************************************/
 	/******************  About  *****************/
 	/***********************************************/
 
@@ -259,6 +344,7 @@
 			$( '#about .section-title p' ).html( to );
 		} );
 	} );
+
 
 
 	// section color
@@ -390,7 +476,7 @@
 	wp.customize( 'asterion_copyright', function( value ) {
 		value.bind( function( to ) {
 
-			$( '.mz-footer .ot-copyright' ).html( to );
+			$( '.ot-footer .ot-copyright' ).html( to );
 		} );
 	} );
 
@@ -567,6 +653,29 @@
 
 			} else if( to == true ) {
 				$( '.blog .ot-post-comments' ).show();
+
+			}
+		} );
+	} );
+
+	// main menu style
+	wp.customize( 'asterion_menu_style', function( value ) {
+		value.bind( function( to ) {
+			if( to == 2 ) {
+				$( 'header' ).addClass('ot-light-text').removeClass('ot-dark-text');
+			} else {
+				$( 'header' ).addClass('ot-dark-text').removeClass('ot-light-text');
+
+			}
+		} );
+	} );
+	// main menu position
+	wp.customize( 'asterion_menu_position', function( value ) {
+		value.bind( function( to ) {
+			if( to == 2 ) {
+				$( '#header .navbar' ).removeClass('navbar-fixed-top');
+			} else {
+				$( '#header .navbar' ).addClass('navbar-fixed-top');
 
 			}
 		} );

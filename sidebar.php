@@ -7,7 +7,7 @@
  */
 ?>
 <?php if ( is_active_sidebar( 'sidebar-1' )  ) : ?>
-	<div class="col-md-4 mz-sidebar">
+	<aside class="sidebar ot-sidebar">
 		<?php dynamic_sidebar( 'sidebar-1' ); ?>
-	</div>
+	</aside>
 <?php endif; ?>
