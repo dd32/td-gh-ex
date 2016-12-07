@@ -10,7 +10,7 @@
 //	ADD CUSTOM HOOKS
 //----------------------------------------------------------------------------------
 
-// Used at top if header.php
+// Used at top of header.php
 function thinkup_hook_header() { 
 	do_action('thinkup_hook_header');
 }
@@ -43,7 +43,7 @@ global $post;
 	} else if ( is_single() ) {
 		printf( __( '%s', 'renden' ), get_the_title() );
 	} else if ( is_search() ) {
-		printf( __( 'Search Results: %s', 'renden' ), get_search_query() );
+		printf( __( 'Search Results: %s', 'renden' ), esc_html( get_search_query() ) );
 	} else if ( is_404() ) {
 		printf( __( 'Page Not Found', 'renden' ) );
 	} else if ( is_category() ) {
@@ -94,7 +94,7 @@ global $thinkup_general_breadcrumbdelimeter;
 	if ( empty( $thinkup_general_breadcrumbdelimeter ) ) {
 		$delimiter = '<span class="delimiter">/</span>';
 	} else if ( ! empty( $thinkup_general_breadcrumbdelimeter ) ) {
-		$delimiter = '<span class="delimiter"> ' . $thinkup_general_breadcrumbdelimeter . ' </span>';
+		$delimiter = '<span class="delimiter"> ' . esc_html( $thinkup_general_breadcrumbdelimeter ) . ' </span>';
 	}
 
 	$delimiter_inner   =   '<span class="delimiter_core"> &bull; </span>';
@@ -116,7 +116,7 @@ global $thinkup_general_breadcrumbdelimeter;
 		$output .= '<div id="breadcrumbs"><div id="breadcrumbs-core">';
 		global $post, $cat;
 		$homeLink = home_url( '/' );
-		$output .= '<a href="' . $homeLink . '">' . $main . '</a>' . $delimiter;    
+		$output .= '<a href="' . esc_url( $homeLink ) . '">' . esc_html( $main ) . '</a>' . $delimiter;    
 
 		/* Display breadcrumbs for single post */
 		if ( is_single() ) {
@@ -136,9 +136,9 @@ global $thinkup_general_breadcrumbdelimeter;
 					$count_loop++;
 
 					if ( $count_loop < $count_categories ) {
-						$output .= '<a href="'.get_category_link($category->term_id ).'">'.$category->cat_name.'</a>' . $delimiter_inner; 
+						$output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->cat_name ) . '</a>' . $delimiter_inner; 
 					} else {
-						$output .= '<a href="'.get_category_link($category->term_id ).'">'.$category->cat_name.'</a>'; 
+						$output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->cat_name ) . '</a>'; 
 					}
 				}
 				
@@ -149,18 +149,18 @@ global $thinkup_general_breadcrumbdelimeter;
 				}
 			}
 		} elseif (is_category()) {
-			$output .= '<span class="breadcrumbs-cat">' . __( 'Archive Category: ', 'renden' ) . '</span>' . get_category_parents($cat, true, '') ;
+			$output .= '<span class="breadcrumbs-cat">' . __( 'Archive Category: ', 'renden' ) . '</span>' . esc_html( single_cat_title("", false) );
 		} elseif ( is_tag() ) {
 			$output .= '<span class="breadcrumbs-tag">' . __( 'Posts Tagged: ', 'renden' ) . '</span>' . single_tag_title("", false);
 		} elseif ( is_day()) {
-			$output .=  '<a href="' . $url_year . '">' . $arc_year . '</a> ' . $delimiter . ' ';
-			$output .=  '<a href="' . $url_month . '">' . $arc_month . '</a> ' . $delimiter . $arc_day . ' (' . $arc_day_full . ')';
+			$output .=  '<a href="' . esc_url( $url_year ) . '">' . $arc_year . '</a> ' . $delimiter . ' ';
+			$output .=  '<a href="' . esc_url( $url_month ) . '">' . $arc_month . '</a> ' . $delimiter . $arc_day . ' (' . $arc_day_full . ')';
 		} elseif ( is_month() ) {
-			$output .=  '<a href="' . $url_year . '">' . $arc_year . '</a> ' . $delimiter . $arc_month;
+			$output .=  '<a href="' . esc_url( $url_year ) . '">' . $arc_year . '</a> ' . $delimiter . $arc_month;
 		} elseif ( is_year() ) {
 			$output .=  $arc_year;
 		} elseif ( is_search() ) {
-			$output .= __( 'Search Results for: ', 'renden' ) . get_search_query() . '"';
+			$output .= __( 'Search Results for: ', 'renden' ) . esc_html( get_search_query() ) . '"';
 		} elseif ( is_page() && !$post->post_parent ) {
 			$output .=  get_the_title();
 		} elseif ( is_page() && $post->post_parent ) {
@@ -169,13 +169,13 @@ global $thinkup_general_breadcrumbdelimeter;
 			foreach( $post_array as $key=>$postid ){
 				$post_ids = get_post( $postid );
 				$title = $post_ids->post_title;
-				$output  .= '<a href="' . get_permalink($post_ids) . '">' . $title . '</a>' . $delimiter;
+				$output  .= '<a href="' . esc_url( get_permalink( $post_ids ) ) . '">' . esc_html( $title ) . '</a>' . $delimiter;
 			}
 			$output .= get_the_title();
 		} elseif ( is_author() ) {
 			global $author;
 			$user_info = get_userdata($author);
-			$output .= __( 'Archived Article(s) by Author: ', 'renden' ) . $user_info->display_name ;
+			$output .= __( 'Archived Article(s) by Author: ', 'renden' ) . esc_html( $user_info->display_name );
 		} elseif ( is_404() ) {
 			$output .= __( 'Error 404 - Not Found.', 'renden' );
 		} elseif( is_tax() ) {
@@ -244,9 +244,9 @@ if ( $paged == 1 ) {
 			echo $pag_before;
 	
 			if($paged > 2 && $paged > $range+1 && $showitems < $pages)
-				echo '<li class="pag-first"><a href="' . get_pagenum_link(1). '"><i class="fa fa-angle-double-left"></i></a></li>';
+				echo '<li class="pag-first"><a href="' . esc_url( get_pagenum_link(1) ) . '"><i class="fa fa-angle-double-left"></i></a></li>';
 			if($paged > 1 && $showitems < $pages) 
-				echo '<li class="pag-previous"><a href="' . get_pagenum_link($paged - 1). '"><i class="fa fa-angle-left"></i></a></li>';
+				echo '<li class="pag-previous"><a href="' . esc_url( get_pagenum_link($paged - 1) ) . '"><i class="fa fa-angle-left"></i></a></li>';
 
 			for ($i=1; $i <= $pages; $i++) {
 				if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems )) {
@@ -255,15 +255,15 @@ if ( $paged == 1 ) {
 							echo '<li class="current"><span>' . $i . '</span></li>'; 
 						echo $pag_after;
 					} else {
-						echo '<li><a href="' . get_pagenum_link($i) . '">'. $i . '</a></li>';
+						echo '<li><a href="' . esc_url( get_pagenum_link($i) ) . '">' . $i . '</a></li>';
 					}
 				}
 			}
 
 			if ($paged < $pages && $showitems < $pages)
-				echo '<li class="pag-next"><a href="' . get_pagenum_link($paged + 1) . '"><i class="fa fa-angle-right"></i></a></li>';
+				echo '<li class="pag-next"><a href="' . esc_url( get_pagenum_link($paged + 1) ) . '"><i class="fa fa-angle-right"></i></a></li>';
 			if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) 
-				echo '<li class="pag-last" ><a href="' . get_pagenum_link($pages) . '"><i class="fa fa-angle-double-right"></i></a></li>';
+				echo '<li class="pag-last" ><a href="' . esc_url( get_pagenum_link($pages) ) . '"><i class="fa fa-angle-double-right"></i></a></li>';
 
 			echo $pag_close;
 			echo $pag_clear;
@@ -367,8 +367,7 @@ function thinkup_check_currentpage() {
 	}
 	$pageURL .= "://";
 	if ($_SERVER["SERVER_PORT"] != "80") {
-//		$pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
-		$pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"]; // Monitor how this works for users on https sites.
+		$pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
 	} else {
 		$pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
 	}
@@ -393,8 +392,7 @@ function thinkup_check_ishome() {
 	}
 	$pageURL .= "://";
 	if ($_SERVER["SERVER_PORT"] != "80") {
-//		$pageURL .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
-		$pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"]; // Monitor how this works for users on https sites.
+		$pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
 	} else {
 		$pageURL .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
 	}
@@ -494,8 +492,13 @@ function thinkup_comments_returnstring( $zero = false, $one = false, $more = fal
 
 function thinkup_input_menuclass( $ulclass ) {
 
+	// Add menu class to list
 	$ulclass = preg_replace( '/<ul>/', '<ul class="menu">', $ulclass, 1 );
 	$ulclass = str_replace( 'children', 'sub-menu', $ulclass );
+
+	// Remove div wrapper
+	$ulclass = str_replace( '<div class="menu">', '', $ulclass );
+	$ulclass = str_replace( '</div>', '', $ulclass );
 
 	return preg_replace('/<div (.*)>(.*)<\/div>/iU', '$2', $ulclass );
 }
@@ -601,39 +604,14 @@ add_action( 'wp_enqueue_scripts', 'thinkup_googlefonts_scripts' );
 
 
 //----------------------------------------------------------------------------------
-//	MIGRATION OF REDUX GLOBAL VARIABLE IN PREPARATION FOR CUSTOMIZER SUPPORT - $redux -> $thinkup_redux_variables 
+//	FIX JETPACK PHOTON IMAGE LOAD ISSUE - DISABLE CACHING FOR SPECIFIC IMAGES 
 //----------------------------------------------------------------------------------
 
-function thinkup_migrate_redux_option() {
-
-	// try to get the new option
-	$thinkup_redux_migrate   = get_option('thinkup_redux_migrate');
-	$thinkup_redux_variables = get_option('thinkup_redux_variables');
-
-	if ($thinkup_redux_variables && isset($thinkup_redux_variables['migrated']) && $thinkup_redux_variables['migrated'] == 1) {
-		return;
-	}
-
-	// else add the new option
-	else {
-
-		$redux_option = get_option('redux');
-
-		// Only migrate if not already migrated
-		if ( $thinkup_redux_migrate != 1 ) {
-
-
-			// Check if migration was already performed with old migration script
-			if ( $redux_option['migrated'] !== 1 ) {
-
-				// set the migrated	flag
-				update_option('thinkup_redux_migrate', 1);
-				update_option('thinkup_redux_variables',$redux_option);
-			}
-		}
-	}	
+function thinkup_photon_exception( $val, $src, $tag ) {
+        if ( $src == get_template_directory_uri() . '/images/transparent.png' ) {
+                return true;
+        }
+        return $val;
 }
-add_action('init','thinkup_migrate_redux_option');
+add_filter( 'jetpack_photon_skip_image', 'thinkup_photon_exception', 10, 3 );
 
-
-?>

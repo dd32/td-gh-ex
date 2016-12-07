@@ -7,7 +7,7 @@
  */
 (function( $ ){
   $.fn.serializeForm = function() {
-alert( 'test000' );
+
     // don't do anything if we didn't get any elements
     if ( this.length < 1) { 
       return false; 

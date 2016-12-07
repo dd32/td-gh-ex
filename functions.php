@@ -16,6 +16,7 @@ if ( ! isset( $content_width ) )
 	// Add Redux Framework
 	require_once( get_template_directory() . '/admin/main/framework.php' );
 	require_once( get_template_directory() . '/admin/main/options.php' );
+	require_once( get_template_directory() . '/admin/main-extensions/extensions-init.php' );
 
 	// Add Notice Informing Users Theme Options Have Moved To Customizer
 	require_once( get_template_directory() . '/admin/main/customizer_migration_notice/customizer_migration_notice.php' );
@@ -53,8 +54,10 @@ if ( ! function_exists( 'thinkup_themesetup' ) ) {
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'post-formats', array( 'gallery', 'image', 'video', 'audio', 'status', 'quote', 'link', 'chat' ) );
-		add_theme_support( 'custom-background' );
 		add_theme_support( 'title-tag' );
+
+		// Add support for custom background
+		add_theme_support( 'custom-background' );
 
 		// Add support for custom header
 		$args = apply_filters( 'custom-header', array( 'height' => 200, 'width'  => 1600 ) );
@@ -64,9 +67,9 @@ if ( ! function_exists( 'thinkup_themesetup' ) ) {
 		add_theme_support( 'woocommerce' );
 
 		// Register theme menu's.
-		register_nav_menus( array( 'pre_header_menu' => 'Pre Header Menu', ) );
-		register_nav_menus( array( 'header_menu' => 'Primary Header Menu', ) );
-		register_nav_menus( array( 'sub_footer_menu' => 'Footer Menu', ) );
+		register_nav_menus( array( 'pre_header_menu' => __( 'Pre Header Menu', 'renden' ) ) );
+		register_nav_menus( array( 'header_menu'     => __( 'Primary Header Menu', 'renden' ) ) );
+		register_nav_menus( array( 'sub_footer_menu' => __( 'Footer Menu', 'renden' ) ) );
 	}
 }
 add_action( 'after_setup_theme', 'thinkup_themesetup' );
@@ -87,7 +90,7 @@ function thinkup_frontscripts() {
 	wp_enqueue_style( 'thinkup-bootstrap', get_template_directory_uri() . '/lib/extentions/bootstrap/css/bootstrap.css', '', '2.3.2' );
 	wp_enqueue_style( 'thinkup-prettyPhoto', get_template_directory_uri() . '/lib/extentions/prettyPhoto/css/prettyPhoto.css', '', '3.1.6' );
 	wp_enqueue_style( 'thinkup-shortcodes', get_template_directory_uri() . '/styles/style-shortcodes.css', '', '1.1' );
-	wp_enqueue_style( 'thinkup-style', get_stylesheet_uri(), '', '1.2.9' );
+	wp_enqueue_style( 'thinkup-style', get_stylesheet_uri(), '', '1.3.0' );
 
 	// Add Font Packages.
 	wp_enqueue_style( 'dashicons' );
@@ -103,8 +106,8 @@ function thinkup_frontscripts() {
 	// Register Retina script - Enqueued in 01.general-settings.php
 	wp_register_script( 'thinkup-retina', get_template_directory_uri() . '/lib/scripts/retina.js', array( 'jquery' ), '0.0.2', '', true );
 
-	// Add Masonry scripts to Blog & Testimonials pag
-	if ( thinkup_check_isblog() ) {
+	// Add Masonry script to all archive pages
+	if ( thinkup_check_isblog() or is_page_template( 'template-blog.php' ) or is_archive() ) {
 		wp_enqueue_script( 'masonry' );
 	}
 

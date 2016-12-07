@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Renden\n"
-"POT-Creation-Date: 2016-01-01 22:05+0000\n"
-"PO-Revision-Date: 2016-01-01 22:05+0000\n"
+"POT-Creation-Date: 2016-06-01 15:54+0100\n"
+"PO-Revision-Date: 2016-06-01 15:54+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 1.8.8\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -20,36 +20,36 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: admin/main/core/enqueue.php:451
+#: admin/main/core/enqueue.php:449
 #: admin/main/inc/extensions/customizer/extension_customizer.php:685
 msgid "You have changes that are not saved. Would you like to save them now?"
 msgstr ""
 
-#: admin/main/core/enqueue.php:459
+#: admin/main/core/enqueue.php:457
 #: admin/main/inc/extensions/customizer/extension_customizer.php:686
 msgid "Are you sure? Resetting will lose all custom values."
 msgstr ""
 
-#: admin/main/core/enqueue.php:467
+#: admin/main/core/enqueue.php:465
 msgid "Are you sure? Resetting will lose all custom values in this section."
 msgstr ""
 
-#: admin/main/core/enqueue.php:475
+#: admin/main/core/enqueue.php:473
 #: admin/main/inc/extensions/customizer/extension_customizer.php:687
 msgid ""
 "Your current options will be replaced with the values of this preset. Would "
 "you like to proceed?"
 msgstr ""
 
-#: admin/main/core/enqueue.php:482
+#: admin/main/core/enqueue.php:480
 msgid "Please Wait"
 msgstr ""
 
-#: admin/main/core/enqueue.php:493
+#: admin/main/core/enqueue.php:491
 msgid "There was an error saving. Here is the result of your action:"
 msgstr ""
 
-#: admin/main/core/enqueue.php:494
+#: admin/main/core/enqueue.php:492
 msgid ""
 "There was a problem with your action. Please try again or reload the page."
 msgstr ""
@@ -106,23 +106,23 @@ msgstr ""
 msgid "Options"
 msgstr ""
 
-#: admin/main/framework.php:2405
+#: admin/main/framework.php:2404
 msgid "Enable"
 msgstr ""
 
-#: admin/main/framework.php:2410
+#: admin/main/framework.php:2409
 msgid "Disable"
 msgstr ""
 
-#: admin/main/framework.php:2416
+#: admin/main/framework.php:2415
 msgid "moving the mouse over"
 msgstr ""
 
-#: admin/main/framework.php:2418
+#: admin/main/framework.php:2417
 msgid "clicking"
 msgstr ""
 
-#: admin/main/framework.php:2422
+#: admin/main/framework.php:2421
 #, php-format
 msgid ""
 "Hints are tooltips that popup when %d the hint icon, offering addition "
@@ -130,19 +130,19 @@ msgid ""
 "the link below."
 msgstr ""
 
-#: admin/main/framework.php:2427
+#: admin/main/framework.php:2426
 msgid "Hints"
 msgstr ""
 
-#: admin/main/framework.php:2554
+#: admin/main/framework.php:2553
 msgid "Default"
 msgstr ""
 
-#: admin/main/framework.php:3426
+#: admin/main/framework.php:3425
 msgid "Invalid security credential, please reload the page and try again."
 msgstr ""
 
-#: admin/main/framework.php:3513
+#: admin/main/framework.php:3512
 msgid "Your panel has no fields. Nothing to save."
 msgstr ""
 
@@ -1019,7 +1019,7 @@ msgid ""
 msgstr ""
 
 #: admin/main/options.php:703
-msgid "Homepage (Content)"
+msgid "Homepage (Featured)"
 msgstr ""
 
 #: admin/main/options.php:704
@@ -1646,69 +1646,69 @@ msgstr ""
 msgid "Permalink to %s"
 msgstr ""
 
-#: admin/main/options/05.blog.php:170
+#: admin/main/options/05.blog.php:169
 msgid "Sticky"
 msgstr ""
 
-#: admin/main/options/05.blog.php:178
+#: admin/main/options/05.blog.php:177
 #, php-format
 msgid ""
 "<span class=\"date\"><a href=\"%1$s\" title=\"%2$s\"><time datetime=\"%3$s\">"
 "%4$s</time></a></span>"
 msgstr ""
 
-#: admin/main/options/05.blog.php:192
+#: admin/main/options/05.blog.php:191
 msgid ""
 "<i class=\"fa fa-comments\"></i><span class=\"comment-count\">0</span> <span "
 "class=\"comment-text\">Comments</span>"
 msgstr ""
 
-#: admin/main/options/05.blog.php:192
+#: admin/main/options/05.blog.php:191
 msgid ""
 "<i class=\"fa fa-comments\"></i><span class=\"comment-count\">1</span> <span "
 "class=\"comment-text\">Comment</span>"
 msgstr ""
 
-#: admin/main/options/05.blog.php:192
+#: admin/main/options/05.blog.php:191
 msgid ""
 "<i class=\"fa fa-comments\"></i><span class=\"comment-count\">%</span> <span "
 "class=\"comment-text\">Comments</span>"
 msgstr ""
 
-#: admin/main/options/05.blog.php:200 admin/main/options/05.blog.php:211
+#: admin/main/options/05.blog.php:199 admin/main/options/05.blog.php:210
 msgid ", "
 msgstr ""
 
-#: admin/main/options/05.blog.php:204 admin/main/options/05.blog.php:215
+#: admin/main/options/05.blog.php:203 admin/main/options/05.blog.php:214
 #, php-format
 msgid "%1$s"
 msgstr ""
 
-#: admin/main/options/05.blog.php:222
+#: admin/main/options/05.blog.php:221
 #, php-format
 msgid ""
 "<span class=\"author\"><a href=\"%1$s\" title=\"%2$s\" rel=\"author\">%3$s</"
 "a></span>"
 msgstr ""
 
-#: admin/main/options/05.blog.php:224
+#: admin/main/options/05.blog.php:223
 #, php-format
 msgid "View all posts by %s"
 msgstr ""
 
-#: admin/main/options/05.blog.php:242
+#: admin/main/options/05.blog.php:241
 msgid "READ MORE"
 msgstr ""
 
-#: admin/main/options/05.blog.php:422
+#: admin/main/options/05.blog.php:421
 msgid "Pingback:"
 msgstr ""
 
-#: admin/main/options/05.blog.php:422 admin/main/options/05.blog.php:446
+#: admin/main/options/05.blog.php:421 admin/main/options/05.blog.php:445
 msgid "Edit"
 msgstr ""
 
-#: admin/main/options/05.blog.php:436
+#: admin/main/options/05.blog.php:435
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
@@ -1794,28 +1794,40 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: comments.php:65
+#: comments.php:68
 msgid "Submit Now"
 msgstr ""
 
-#: comments.php:66
+#: comments.php:69
 msgid "Leave a comment"
 msgstr ""
 
-#: comments.php:70
+#: comments.php:73
 msgid "Your Message"
 msgstr ""
 
-#: comments.php:75
+#: comments.php:78
 msgid "Your Name (Required)"
 msgstr ""
 
-#: comments.php:79
+#: comments.php:82
 msgid "Your Email (Required)"
 msgstr ""
 
-#: comments.php:83
+#: comments.php:86
 msgid "Your Website"
+msgstr ""
+
+#: functions.php:69
+msgid "Pre Header Menu"
+msgstr ""
+
+#: functions.php:70
+msgid "Primary Header Menu"
+msgstr ""
+
+#: functions.php:71
+msgid "Footer Menu"
 msgstr ""
 
 #: image.php:18
@@ -1830,7 +1842,7 @@ msgstr ""
 msgid "Return to "
 msgstr ""
 
-#: image.php:75 template-archive.php:11 template-sitemap.php:11
+#: image.php:74 template-archive.php:11 template-sitemap.php:11
 msgid "Pages"
 msgstr ""
 
