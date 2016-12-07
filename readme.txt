@@ -98,6 +98,34 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.8.0
+- Updated: Fully compatible with WordPress v4.7.
+
+Version 1.7.16
+- Updated: Improved escaping of outputs in 01.general-settings.php.
+- Updated: "Home" text now translation ready in breadcumb function.
+
+Version 1.7.15
+- New:     Function thinkup_photon_exception() added to ensure theme theme bundled transparent.png image displays correctly when Jetpack Photon is activated.
+
+Version 1.7.14
+- Updated: Improved escaping of outputs in 01.general-settings.php.
+- Updated: Function "Walker_Nav_Menu_Responsive" renamed to "thinkup_nav_menu_responsive".
+- Updated: Redux migration script removed as all users are highly likely to have already migrated.
+
+Version 1.7.13
+- Updated: Font Awesome library updated to latest version v4.6.3. Ensures all icons in FA library are available to use.
+
+Version 1.7.12
+- Fixed:   Custom Redux extensions now load correctly. Issue introduced in previous version where extensions did not load is now corrected.
+
+Version 1.7.11
+- Fixed:   Custom Redux extensions now moved to folder main-extensions to ensure compatibility with Redux plugin. Ensures plugin and theme can be used without conflicting.
+- Updated: "ReduxFramework::$_url . 'assets/img/layout" changed to "trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout"
+
+Version 1.7.10
+- Fixed:   ThinkUpSlider now checks to see if any slide is assigned, rather than just the first slide. Corrects issue where deleting slides resulted in issues.
+
 Version 1.7.9
 - Fixed:   Checkbox field saves as as "off" when unticked.
 - Fixed:   Switch field saves as as "off" when switched off.

@@ -16,6 +16,7 @@ if ( ! isset( $content_width ) )
 	// Add Redux Framework
 	require_once( get_template_directory() . '/admin/main/framework.php' );
 	require_once( get_template_directory() . '/admin/main/options.php' );
+	require_once( get_template_directory() . '/admin/main-extensions/extensions-init.php' );
 
 	// Add Notice Informing Users Theme Options Have Moved To Customizer
 	require_once( get_template_directory() . '/admin/main/customizer_migration_notice/customizer_migration_notice.php' );
@@ -108,7 +109,7 @@ function thinkup_frontscripts() {
 
 	// Add theme stylesheets.
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/lib/extentions/bootstrap/css/bootstrap.min.css', '', '2.3.2' );
-	wp_enqueue_style( 'style', get_stylesheet_uri(), '', '1.7.9' );
+	wp_enqueue_style( 'style', get_stylesheet_uri(), '', '1.8.0' );
 	wp_enqueue_style( 'shortcodes', get_template_directory_uri() . '/styles/style-shortcodes.css', '', '1.1' );
 
 	// Add Font Packages.
