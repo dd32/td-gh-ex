@@ -16,7 +16,7 @@ do_action( 'catchbase_before_secondary' );
 $catchbase_layout = catchbase_get_theme_layout();
 
 //Bail early if no sidebar layout is selected
-if( 'no-sidebar' == $catchbase_layout || 'no-sidebar-one-column' == $catchbase_layout || 'no-sidebar-full-width' == $catchbase_layout ) {
+if ( 'no-sidebar' == $catchbase_layout || 'no-sidebar-one-column' == $catchbase_layout || 'no-sidebar-full-width' == $catchbase_layout ) {
 	return;
 }
 

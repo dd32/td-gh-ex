@@ -14,7 +14,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 }
 
 
-if( !function_exists( 'catchbase_featured_slider' ) ) :
+if ( !function_exists( 'catchbase_featured_slider' ) ) :
 /**
  * Add slider.
  *
@@ -38,8 +38,8 @@ function catchbase_featured_slider() {
 	$page_on_front = get_option('page_on_front') ;
 	$page_for_posts = get_option('page_for_posts');
 
-	if ( $enableslider == 'entire-site' || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && $enableslider == 'homepage' ) ) {
-		if( ( !$catchbase_featured_slider = get_transient( 'catchbase_featured_slider' ) ) ) {
+	if ( 'entire-site' == $enableslider || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && 'homepage' == $enableslider ) ) {
+		if ( ( !$catchbase_featured_slider = get_transient( 'catchbase_featured_slider' ) ) ) {
 			echo '<!-- refreshing cache -->';
 
 			$catchbase_featured_slider = '
@@ -65,10 +65,10 @@ function catchbase_featured_slider() {
 	    					<div class="cycle-pager"></div>';
 
 							// Select Slider
-							if ( $sliderselect == 'demo-featured-slider' && function_exists( 'catchbase_demo_slider' ) ) {
+							if ( 'demo-featured-slider' == $sliderselect && function_exists( 'catchbase_demo_slider' ) ) {
 								$catchbase_featured_slider .=  catchbase_demo_slider( $options );
 							}
-							elseif ( $sliderselect == 'featured-page-slider' && function_exists( 'catchbase_page_slider' ) ) {
+							elseif ( 'featured-page-slider' == $sliderselect && function_exists( 'catchbase_page_slider' ) ) {
 								$catchbase_featured_slider .=  catchbase_page_slider( $options );
 							}
 
@@ -156,7 +156,7 @@ function catchbase_page_slider( $options ) {
 
 	//Get number of valid pages
 	for( $i = 1; $i <= $quantity; $i++ ){
-		if( isset ( $options['featured_slider_page_' . $i] ) && $options['featured_slider_page_' . $i] > 0 ){
+		if ( isset ( $options['featured_slider_page_' . $i] ) && $options['featured_slider_page_' . $i] > 0 ){
 			$number_of_page++;
 
 			$page_list	=	array_merge( $page_list, array( $options['featured_slider_page_' . $i] ) );
@@ -217,7 +217,7 @@ function catchbase_page_slider( $options ) {
 						</h1>
 						<div class="assistive-text">'.catchbase_page_post_meta().'</div>
 					</header>';
-					if( $excerpt !='') {
+					if ( $excerpt !='') {
 						$output .= '<div class="entry-content">'. $excerpt.'</div>';
 					}
 					$output .= '

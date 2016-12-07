@@ -8,17 +8,17 @@
  *
  * @package Catch Themes
  * @subpackage Catch Base
- * @since Catch Base 1.0 
+ * @since Catch Base 1.0
  */
 
 //define theme version
 if ( !defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	$theme_data = wp_get_theme();
-	
+
 	define ( 'CATCHBASE_THEME_VERSION', $theme_data->get( 'Version' ) );
 }
 
 /**
  * Implement the core functions
  */
-require get_template_directory() . '/inc/catchbase-core.php';
+require trailingslashit( get_template_directory() ) . 'inc/catchbase-core.php';

@@ -43,9 +43,6 @@ if ( ! function_exists( 'catchbase_head' ) ) :
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<link rel="profile" href="http://gmpg.org/xfn/11">
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-		<!--[if lt IE 9]>
-			<script src="<?php echo get_template_directory_uri(); ?>/js/html5.min.js"></script>
-		<![endif]-->
 		<?php
 	}
 endif;
@@ -199,7 +196,7 @@ if ( ! function_exists( 'catchbase_layout_condition_check' ) ) :
 	 */
 	function catchbase_layout_condition_check() {
 		$layout = catchbase_get_theme_layout();
-		if ( $layout == 'three-columns' || ( $layout=='default' && ( $themeoption_layout == 'three-columns' ) ) ){
+		if ( 'three-columns' == $layout || ( $layout=='default' && ( 'three-columns' == $themeoption_layout ) ) ){
 			add_action( 'catchbase_after_content', 'catchbase_content_sidebar_wrap_end', 10 );
 
 			add_action( 'catchbase_after_content', 'catchbase_sidebar_secondary', 20 );

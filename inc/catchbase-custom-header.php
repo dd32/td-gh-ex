@@ -32,7 +32,7 @@ if ( ! function_exists( 'catchbase_custom_header' ) ) :
 			$default_header_color = catchbase_get_default_theme_options();
 			$default_header_color = $default_header_color['header_textcolor'];
 		}
-		else if ( 'dark' == $options['color_scheme'] ) {
+		elseif ( 'dark' == $options['color_scheme'] ) {
 			$default_header_color = catchbase_default_dark_color_options();
 			$default_header_color = $default_header_color['header_textcolor'];
 		}
@@ -216,8 +216,8 @@ if ( ! function_exists( 'catchbase_site_branding' ) ) :
 				<div id="site-logo">'. get_custom_logo() . '</div><!-- #site-logo -->';
 			}
 		}
-		else if ( '' != $options['logo'] && !$options['logo_disable'] ) {
-			//@remove Remove this else if block when WordPress 4.8 is released
+		elseif ( '' != $options['logo'] && !$options['logo_disable'] ) {
+			//@remove Remove this elseif block when WordPress 4.8 is released
 			$catchbase_site_logo = '
 			<div id="site-logo">
 				<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" rel="home">
@@ -252,8 +252,8 @@ if ( ! function_exists( 'catchbase_site_branding' ) ) :
 				}
 			}
 		}
-		else if ( '' != $options['logo'] && !$options['logo_disable'] ) {
-			//@remove Remove this else if block when WordPress 4.8 is released
+		elseif ( '' != $options['logo'] && !$options['logo_disable'] ) {
+			//@remove Remove this elseif block when WordPress 4.8 is released
 			if ( ! $options['move_title_tagline'] && 'blank' != $text_color ) {
 				$catchbase_site_branding  = '<div id="site-branding" class="logo-left">';
 				$catchbase_site_branding .= $catchbase_site_logo;
@@ -298,7 +298,7 @@ if ( ! function_exists( 'catchbase_featured_image' ) ) :
 
 			echo '<!-- refreshing cache -->';
 
-			if ( $header_image != '' ) {
+			if ( '' != $header_image ) {
 
 				// Header Image Link and Target
 				if ( !empty( $options[ 'featured_header_image_url' ] ) ) {
@@ -378,7 +378,7 @@ if ( ! function_exists( 'catchbase_featured_page_post_image' ) ) :
 			$header_page_id = $post->ID;
 		}
 
-		if( has_post_thumbnail( $header_page_id ) ) {
+		if ( has_post_thumbnail( $header_page_id ) ) {
 		   	$options					= catchbase_get_theme_options();
 			$featured_header_image_url	= $options['featured_header_image_url'];
 			$featured_header_image_base	= $options['featured_header_image_base'];
@@ -418,7 +418,7 @@ if ( ! function_exists( 'catchbase_featured_page_post_image' ) ) :
 			if ( 'slider' ==  $featured_image_size ) {
 				$feat_image = get_the_post_thumbnail( $post->ID, 'catchbase-slider', array('id' => 'main-feat-img'));
 			}
-			else if ( 'full' ==  $featured_image_size ) {
+			elseif ( 'full' ==  $featured_image_size ) {
 				$feat_image = get_the_post_thumbnail( $post->ID, 'full', array('id' => 'main-feat-img'));
 			}
 			else {
@@ -469,23 +469,23 @@ if ( ! function_exists( 'catchbase_featured_overall_image' ) ) :
 			//Individual Page/Post Image Setting
 			$individual_featured_image = get_post_meta( $post->ID, 'catchbase-header-image', true );
 
-			if ( $individual_featured_image == 'disable' || ( $individual_featured_image == 'default' && $enableheaderimage == 'disable' ) ) {
+			if ( 'disable' == $individual_featured_image || ( 'default' == $individual_featured_image && 'disable' == $enableheaderimage ) ) {
 				echo '<!-- Page/Post Disable Header Image -->';
 				return;
 			}
-			elseif ( $individual_featured_image == 'enable' && $enableheaderimage == 'disabled' ) {
+			elseif ( 'enable' == $individual_featured_image && 'disabled' == $enableheaderimage ) {
 				catchbase_featured_page_post_image();
 			}
 		}
 
 		// Check Homepage
-		if ( $enableheaderimage == 'homepage' ) {
+		if ( 'homepage' == $enableheaderimage ) {
 			if ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) {
 				catchbase_featured_image();
 			}
 		}
 		// Check Excluding Homepage
-		if ( $enableheaderimage == 'exclude-home' ) {
+		if ( 'exclude-home' == $enableheaderimage ) {
 			if ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) {
 				return false;
 			}
@@ -493,7 +493,7 @@ if ( ! function_exists( 'catchbase_featured_overall_image' ) ) :
 				catchbase_featured_image();
 			}
 		}
-		elseif ( $enableheaderimage == 'exclude-home-page-post' ) {
+		elseif ( 'exclude-home-page-post' == $enableheaderimage ) {
 			if ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) {
 				return false;
 			}
@@ -505,11 +505,11 @@ if ( ! function_exists( 'catchbase_featured_overall_image' ) ) :
 			}
 		}
 		// Check Entire Site
-		elseif ( $enableheaderimage == 'entire-site' ) {
+		elseif ( 'entire-site' == $enableheaderimage ) {
 			catchbase_featured_image();
 		}
 		// Check Entire Site (Post/Page)
-		elseif ( $enableheaderimage == 'entire-site-page-post' ) {
+		elseif ( 'entire-site-page-post' == $enableheaderimage ) {
 			if ( is_page() || is_single() ) {
 				catchbase_featured_page_post_image();
 			}
@@ -518,7 +518,7 @@ if ( ! function_exists( 'catchbase_featured_overall_image' ) ) :
 			}
 		}
 		// Check Page/Post
-		elseif ( $enableheaderimage == 'pages-posts' ) {
+		elseif ( 'pages-posts' == $enableheaderimage ) {
 			if ( is_page() || is_single() ) {
 				catchbase_featured_page_post_image();
 			}

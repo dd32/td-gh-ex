@@ -14,7 +14,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 }
 
 
-if( !function_exists( 'catchbase_featured_content_display' ) ) :
+if ( !function_exists( 'catchbase_featured_content_display' ) ) :
 /**
 * Add Featured content.
 *
@@ -39,8 +39,8 @@ function catchbase_featured_content_display() {
 
 	// Get Page ID outside Loop
 	$page_id = $wp_query->get_queried_object_id();
-	if ( $enablecontent == 'entire-site' || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && $enablecontent == 'homepage' ) ) {
-		if( ( !$catchbase_featured_content = get_transient( 'catchbase_featured_content_display' ) ) ) {
+	if ( 'entire-site' == $enablecontent || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && 'homepage' == $enablecontent ) ) {
+		if ( ( !$catchbase_featured_content = get_transient( 'catchbase_featured_content_display' ) ) ) {
 			$layouts 	 = $options ['featured_content_layout'];
 			$headline 	 = $options ['featured_content_headline'];
 			$subheadline = $options ['featured_content_subheadline'];
@@ -51,12 +51,12 @@ function catchbase_featured_content_display() {
 				$classes = $layouts ;
 			}
 
-			if( $contentselect == 'demo-featured-content' ) {
+			if ( 'demo-featured-content' == $contentselect ) {
 				$classes 		.= ' demo-featured-content' ;
 				$headline 		= __( 'Featured Content', 'catch-base' );
 				$subheadline 	= __( 'Here you can showcase the x number of Featured Content. You can edit this Headline, Subheadline and Feaured Content from "Appearance -> Customize -> Featured Content Options".', 'catch-base' );
 			}
-			elseif ( $contentselect == 'featured-page-content' ) {
+			elseif ( 'featured-page-content' == $contentselect ) {
 				$classes .= ' featured-page-content' ;
 			}
 
@@ -90,10 +90,10 @@ function catchbase_featured_content_display() {
 						<div class="featured-content-wrap">';
 
 							// Select content
-							if ( $contentselect == 'demo-featured-content'  && function_exists( 'catchbase_demo_content' ) ) {
+							if ( 'demo-featured-content' == $contentselect  && function_exists( 'catchbase_demo_content' ) ) {
 								$catchbase_featured_content .= catchbase_demo_content( $options );
 							}
-							elseif ( $contentselect == 'featured-page-content' && function_exists( 'catchbase_page_content' ) ) {
+							elseif ( 'featured-page-content' == $contentselect && function_exists( 'catchbase_page_content' ) ) {
 								$catchbase_featured_content .= catchbase_page_content( $options );
 							}
 
@@ -200,7 +200,7 @@ function catchbase_demo_content( $options ) {
 			</div><!-- .entry-container -->
 		</article>';
 
-	if( 'layout-four' == $options ['featured_content_layout']) {
+	if ( 'layout-four' == $options ['featured_content_layout']) {
 		$catchbase_demo_content .= '
 		<article id="featured-post-4" class="post hentry post-demo">
 			<figure class="featured-content-image">
@@ -249,7 +249,7 @@ function catchbase_page_content( $options ) {
 
 	//Get valid pages
 	for( $i = 1; $i <= $quantity; $i++ ){
-		if( isset ( $options['featured_content_page_' . $i] ) && $options['featured_content_page_' . $i] > 0 ){
+		if ( isset ( $options['featured_content_page_' . $i] ) && $options['featured_content_page_' . $i] > 0 ){
 			$number_of_page++;
 
 			$page_list	=	array_merge( $page_list, array( $options['featured_content_page_' . $i] ) );

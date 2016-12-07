@@ -21,7 +21,7 @@ if ( ! function_exists( 'catchbase_get_social_icons' ) ) :
  * @since Catch Base 1.0
  */
 function catchbase_get_social_icons(){
-	if( ( !$output = get_transient( 'catchbase_social_icons' ) ) ) {
+	if ( ( !$output = get_transient( 'catchbase_social_icons' ) ) ) {
 		$output	= '';
 
 		$options 	= catchbase_get_theme_options(); // Get options
@@ -30,16 +30,16 @@ function catchbase_get_social_icons(){
 		$pre_def_social_icons 	=	catchbase_get_social_icons_list();
 
 		foreach ( $pre_def_social_icons as $key => $item ) {
-			if( isset( $options[ $key ] ) && '' != $options[ $key ] ) {
+			if ( isset( $options[ $key ] ) && '' != $options[ $key ] ) {
 				$value = $options[ $key ];
 
 				if ( 'email_link' == $key  ) {
 					$output .= '<a class="genericon_parent genericon genericon-'. sanitize_key( $item['genericon_class'] ) .'" target="_blank" title="'. esc_attr__( 'Email', 'catch-base') . '" href="mailto:'. antispambot( sanitize_email( $value ) ) .'"><span class="screen-reader-text">'. __( 'Email', 'catch-base') . '</span> </a>';
 				}
-				else if ( 'skype_link' == $key  ) {
+				elseif ( 'skype_link' == $key  ) {
 					$output .= '<a class="genericon_parent genericon genericon-'. sanitize_key( $item['genericon_class'] ) .'" target="_blank" title="'. esc_attr( $item['label'] ) . '" href="'. esc_attr( $value ) .'"><span class="screen-reader-text">'. esc_attr( $item['label'] ). '</span> </a>';
 				}
-				else if ( 'phone_link' == $key || 'handset_link' == $key ) {
+				elseif ( 'phone_link' == $key || 'handset_link' == $key ) {
 					$output .= '<a class="genericon_parent genericon genericon-'. sanitize_key( $item['genericon_class'] ) .'" target="_blank" title="'. esc_attr( $item['label'] ) . '" href="tel:' . preg_replace( '/\s+/', '', esc_attr( $value ) ) . '"><span class="screen-reader-text">'. esc_attr( $item['label'] ) . '</span> </a>';
 				}
 				else {

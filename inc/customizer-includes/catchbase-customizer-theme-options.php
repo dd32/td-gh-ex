@@ -76,28 +76,33 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	);
    	// Breadcrumb Option End
 
-   	// Custom CSS Option
-	$wp_customize->add_section( 'catchbase_custom_css', array(
-		'description'	=> __( 'Custom/Inline CSS', 'catch-base'),
-		'panel'  		=> 'catchbase_theme_options',
-		'priority' 		=> 203,
-		'title'    		=> __( 'Custom CSS Options', 'catch-base' ),
-	) );
+	/**
+	 * Do not show Custom CSS option from WordPress 4.7 onwards
+	 */
+	if ( !function_exists( 'wp_update_custom_css_post' ) ) {
+	   	// Custom CSS Option
+		$wp_customize->add_section( 'catchbase_custom_css', array(
+			'description'	=> __( 'Custom/Inline CSS', 'catch-base'),
+			'panel'  		=> 'catchbase_theme_options',
+			'priority' 		=> 203,
+			'title'    		=> __( 'Custom CSS Options', 'catch-base' ),
+		) );
 
-	$wp_customize->add_setting( 'catchbase_theme_options[custom_css]', array(
-		'capability'		=> 'edit_theme_options',
-		'default'			=> $defaults['custom_css'],
-		'sanitize_callback' => 'catchbase_sanitize_custom_css',
-	) );
+		$wp_customize->add_setting( 'catchbase_theme_options[custom_css]', array(
+			'capability'		=> 'edit_theme_options',
+			'default'			=> $defaults['custom_css'],
+			'sanitize_callback' => 'catchbase_sanitize_custom_css',
+		) );
 
-	$wp_customize->add_control( 'catchbase_theme_options[custom_css]', array(
-			'label'		=> __( 'Enter Custom CSS', 'catch-base' ),
-	        'priority'	=> 1,
-			'section'   => 'catchbase_custom_css',
-	        'settings'  => 'catchbase_theme_options[custom_css]',
-			'type'		=> 'textarea',
-	) );
-   	// Custom CSS End
+		$wp_customize->add_control( 'catchbase_theme_options[custom_css]', array(
+				'label'		=> __( 'Enter Custom CSS', 'catch-base' ),
+		        'priority'	=> 1,
+				'section'   => 'catchbase_custom_css',
+		        'settings'  => 'catchbase_theme_options[custom_css]',
+				'type'		=> 'textarea',
+		) );
+	   	// Custom CSS End
+	}
 
    	// Excerpt Options
 	$wp_customize->add_section( 'catchbase_excerpt_options', array(
@@ -289,7 +294,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	/**
 	* Check if navigation type is numeric and if Wp-PageNavi Plugin is enabled
 	*/
-	else if ( 'numeric' == $pagination_type ) {
+	elseif ( 'numeric' == $pagination_type ) {
 		if ( !function_exists( 'wp_pagenavi' ) ) {
 			$catchbase_navigation_description = sprintf( __( 'Numeric Option requires <a target="_blank" href="%s">WP-PageNavi Plugin</a>.', 'catch-base' ), esc_url( 'https://wordpress.org/plugins/wp-pagenavi' ) );
 		}

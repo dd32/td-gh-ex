@@ -23,15 +23,15 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
  * @since Catch Base 1.0
  */
 function catchbase_customize_register( $wp_customize ) {
-	$wp_customize->get_setting( 'blogname' )->transport			= 'postMessage';
+	$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
 
 	/**
 	  * Set priority of blogname (Site Title) to 1.
 	  *  Strangly, if more than two options is added, Site title is moved below Tagline. This rectifies this issue.
 	  */
-	$wp_customize->get_control( 'blogname' )->priority			= 1;
+	$wp_customize->get_control( 'blogname' )->priority          = 1;
 
-	$wp_customize->get_setting( 'blogdescription' )->transport	= 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 
 	$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
 
@@ -40,7 +40,7 @@ function catchbase_customize_register( $wp_customize ) {
 	$defaults = catchbase_get_default_theme_options();
 
 	//Custom Controls
-	require get_template_directory() . '/inc/customizer-includes/catchbase-customizer-custom-controls.php';
+	require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/catchbase-customizer-custom-controls.php';
 
 	//@remove Remove this block when WordPress 4.8 is released
 	if ( ! function_exists( 'has_custom_logo' ) ) {
@@ -132,19 +132,19 @@ function catchbase_customize_register( $wp_customize ) {
 	//End Color Scheme
 
 	// Header Options (added to Header section in Theme Customizer)
-	require get_template_directory() . '/inc/customizer-includes/catchbase-customizer-header-options.php';
+	require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/catchbase-customizer-header-options.php';
 
 	//Theme Options
-	require get_template_directory() . '/inc/customizer-includes/catchbase-customizer-theme-options.php';
+	require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/catchbase-customizer-theme-options.php';
 
 	//Featured Content Setting
-	require get_template_directory() . '/inc/customizer-includes/catchbase-customizer-featured-content-setting.php';
+	require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/catchbase-customizer-featured-content-setting.php';
 
 	//Featured Slider
-	require get_template_directory() . '/inc/customizer-includes/catchbase-customizer-featured-slider.php';
+	require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/catchbase-customizer-featured-slider.php';
 
 	//Social Links
-	require get_template_directory() . '/inc/customizer-includes/catchbase-customizer-social-icons.php';
+	require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/catchbase-customizer-social-icons.php';
 
 	// Reset all settings to default
 	$wp_customize->add_section( 'catchbase_reset_all_settings', array(
@@ -156,7 +156,7 @@ function catchbase_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'catchbase_theme_options[reset_all_settings]', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['reset_all_settings'],
-		'sanitize_callback' => 'catchbase_reset_all_settings',
+		'sanitize_callback' => 'catchbase_sanitize_checkbox',
 		'transport'			=> 'postMessage',
 	) );
 
@@ -178,7 +178,7 @@ function catchbase_customize_register( $wp_customize ) {
 	 * Has dummy Sanitizaition function as it contains no value to be sanitized
 	 */
 	$wp_customize->add_setting( 'important_links', array(
-		'sanitize_callback'	=> 'catchbase_sanitize_important_link',
+		'sanitize_callback'	=> 'sanitize_text_field',
 	) );
 
 	$wp_customize->add_control( new Catchbase_Important_Links( $wp_customize, 'important_links', array(
@@ -222,19 +222,11 @@ add_action( 'customize_preview_init', 'catchbase_customize_preview' );
 function catchbase_customize_scripts() {
 	wp_enqueue_script( 'catchbase_customizer_custom', get_template_directory_uri() . '/js/catchbase-customizer-custom-scripts.min.js', array( 'customize-controls', 'iris', 'underscore', 'wp-util' ), '20150630', true );
 
-	$catchbase_misc_links = array(
-							'upgrade_link' 				=> esc_url( 'https://catchthemes.com/themes/catch-base-pro/' ),
-							'upgrade_text'	 			=> __( 'Upgrade To Pro &raquo;', 'catch-base' ),
-							'WP_version'				=> get_bloginfo( 'version' ),
-							'old_version_message'		=> __( 'Some settings might be missing or disorganized in this version of WordPress. So we suggest you to upgrade to version 4.0 or better.', 'catch-base' )
-		);
+	$catchbase_misc_links['color_list']    = catchbase_color_list();
+	$catchbase_misc_links['reset_message'] = esc_html__( 'Refresh the customizer page after saving to view reset effects', 'catch-base' );
 
-	$catchbase_misc_links['color_list'] = catchbase_color_list();
-
-	//Add Upgrade Button, old WordPress message and color list via localized script
+	// Add reset message and color list via localized script
 	wp_localize_script( 'catchbase_customizer_custom', 'catchbase_misc_links', $catchbase_misc_links );
-
-	wp_enqueue_style( 'catchbase_customizer_custom', get_template_directory_uri() . '/css/catchbase-customizer.css');
 }
 add_action( 'customize_controls_enqueue_scripts', 'catchbase_customize_scripts');
 
@@ -258,9 +250,28 @@ function catchbase_color_list() {
 	return $catchbase_color_list;
 }
 
+/**
+ * Function to reset date with respect to condition
+ */
+function catchbase_reset_data() {
+	$options  = catchbase_get_theme_options();
+    if ( $options['reset_all_settings'] ) {
+    	remove_theme_mods();
+
+        // Flush out all transients	on reset
+        catchbase_flush_transients();
+
+        return;
+    }
+}
+add_action( 'customize_save_after', 'catchbase_reset_data' );
+
 
 //Active callbacks for customizer
-require get_template_directory() . '/inc/customizer-includes/catchbase-customizer-active-callbacks.php';
+require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/catchbase-customizer-active-callbacks.php';
 
 //Sanitize functions for customizer
-require get_template_directory() . '/inc/customizer-includes/catchbase-customizer-sanitize-functions.php';
+require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/catchbase-customizer-sanitize-functions.php';
+
+// Add Upgrade button
+require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/upgrade-button/class-customize.php';

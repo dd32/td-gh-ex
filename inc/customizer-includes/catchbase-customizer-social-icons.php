@@ -30,7 +30,7 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 	$catchbase_social_icons 	=	catchbase_get_social_icons_list();
 
 	foreach ( $catchbase_social_icons as $key => $value ){
-		if( 'skype_link' == $key ){
+		if ( 'skype_link' == $key ){
 			$wp_customize->add_setting( 'catchbase_theme_options['. $key .']', array(
 					'capability'		=> 'edit_theme_options',
 					'sanitize_callback' => 'esc_attr',
@@ -45,13 +45,13 @@ if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
 			) );
 		}
 		else {
-			if( 'email_link' == $key ){
+			if ( 'email_link' == $key ){
 				$wp_customize->add_setting( 'catchbase_theme_options['. $key .']', array(
 						'capability'		=> 'edit_theme_options',
 						'sanitize_callback' => 'sanitize_email',
 					) );
 			}
-			else if( 'handset_link' == $key || 'phone_link' == $key ){
+			elseif ( 'handset_link' == $key || 'phone_link' == $key ){
 				$wp_customize->add_setting( 'catchbase_theme_options['. $key .']', array(
 						'capability'		=> 'edit_theme_options',
 						'sanitize_callback' => 'sanitize_text_field',

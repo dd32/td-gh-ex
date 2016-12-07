@@ -2,28 +2,27 @@
  * Theme Customizer custom scripts
  * Control of show/hide events for Customizer
  */
-(function($) {
-
-    //Message if WordPress version is less tham 4.0
-    if (parseInt(catchbase_misc_links.WP_version) < 4) {
-        $('.preview-notice').prepend('<span style="font-weight:bold;">' + catchbase_misc_links.old_version_message + '</span>');
-        jQuery('#customize-info .btn-upgrade, .misc_links').click(function(event) {
-            event.stopPropagation();
-        });
-    }
-
-    //Add Upgrade Button,Theme instruction, Support Forum, Changelog, Donate link, Review, Facebook, Twitter, Google+, Pinterest links 
-    $('.preview-notice').prepend('<span id="catchbase_upgrade"><a target="_blank" class="button btn-upgrade" href="' + catchbase_misc_links.upgrade_link + '">' + catchbase_misc_links.upgrade_text + '</a></span>');
-    jQuery('#customize-info .btn-upgrade, .misc_links').click(function(event) {
-        event.stopPropagation();
-    });     
-})(jQuery);
-
 
 /**
  * Add a listener to the Color Scheme control to update other color controls to new values/defaults.
  */
 ( function( api ) {
+    wp.customize( 'catchbase_theme_options[reset_all_settings]', function( setting ) {
+        setting.bind( function( value ) {
+            var code = 'needs_refresh';
+            if ( value ) {
+                setting.notifications.add( code, new wp.customize.Notification(
+                    code,
+                    {
+                        type: 'info',
+                        message: catchbase_misc_links.reset_message
+                    }
+                ) );
+            } else {
+                setting.notifications.remove( code );
+            }
+        } );
+    } );
     api.controlConstructor.radio = api.Control.extend( {
         ready: function() {
             if ( 'catchbase_theme_options[color_scheme]' === this.id ) {

@@ -115,7 +115,7 @@ if ( ! function_exists( 'catchbase_setup' ) ) :
 			$default_bg_color = catchbase_get_default_theme_options();
 			$default_bg_color = $default_bg_color['background_color'];
 		}
-		else if ( 'dark' == $options['color_scheme'] ) {
+		elseif ( 'dark' == $options['color_scheme'] ) {
 			$default_bg_color = catchbase_default_dark_color_options();
 			$default_bg_color = $default_bg_color['background_color'];
 		}
@@ -152,14 +152,14 @@ if ( ! function_exists( 'catchbase_setup' ) ) :
 		 */
 		$pagination_type	= $options['pagination_type'];
 
-		if( 'infinite-scroll-click' == $pagination_type ) {
+		if ( 'infinite-scroll-click' == $pagination_type ) {
 			add_theme_support( 'infinite-scroll', array(
 				'type'		=> 'click',
 				'container' => 'main',
 				'footer'    => 'page'
 			) );
 		}
-		else if ( 'infinite-scroll-scroll' == $pagination_type ) {
+		elseif ( 'infinite-scroll-scroll' == $pagination_type ) {
 			//Override infinite scroll disable scroll option
 	        update_option('infinite_scroll', true);
 
@@ -214,25 +214,25 @@ function catchbase_scripts() {
 	wp_enqueue_style( 'catchbase-responsive', get_template_directory_uri() . '/css/responsive.css' );
 
 	//Responsive Menu
-	wp_enqueue_script( 'sidr', get_template_directory_uri() . '/js/jquery.sidr.min.js', array('jquery'), '2.2.1.1', false );
+	wp_enqueue_script( 'jquery-sidr', get_template_directory_uri() . '/js/jquery.sidr.min.js', array('jquery'), '2.2.1.1', false );
 
-	wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/js/fitvids.min.js', array( 'jquery' ), '1.1', true );
+	wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/js/fitvids.min.js', array( 'jquery' ), '1.1', true );
 
 	/**
 	 * Loads default sidr color scheme styles(Does not require handle prefix)
 	 */
 	if ( isset( $options['color_scheme'] ) && ( 'dark' == $options['color_scheme'] ) ) {
-		wp_enqueue_style( 'sidr', get_template_directory_uri() . '/css/jquery.sidr.dark.min.css', false, '2.1.0' );
+		wp_enqueue_style( 'jquery-sidr', get_template_directory_uri() . '/css/jquery.sidr.dark.min.css', false, '2.1.0' );
 	}
-	else if ( isset( $options['color_scheme'] ) && ( 'light' == $options['color_scheme'] ) ) {
-		wp_enqueue_style( 'sidr', get_template_directory_uri() . '/css/jquery.sidr.light.min.css', false, '2.1.0' );
+	elseif ( isset( $options['color_scheme'] ) && ( 'light' == $options['color_scheme'] ) ) {
+		wp_enqueue_style( 'jquery-sidr', get_template_directory_uri() . '/css/jquery.sidr.light.min.css', false, '2.1.0' );
 	}
 
 
 	/**
 	 * Loads up Cycle JS
 	 */
-	if( $options['featured_slider_option'] != 'disabled' ) {
+	if ( $options['featured_slider_option'] != 'disabled' ) {
 		wp_register_script( 'jquery.cycle2', get_template_directory_uri() . '/js/jquery.cycle/jquery.cycle2.min.js', array( 'jquery' ), '2.1.5', true );
 
 		/**
@@ -243,15 +243,15 @@ function catchbase_scripts() {
 			wp_enqueue_script( 'jquery.cycle2.scrollVert', get_template_directory_uri() . '/js/jquery.cycle/jquery.cycle2.scrollVert.min.js', array( 'jquery.cycle2' ), '20140128', true );
 		}
 		// Flip transition plugin addition
-		else if ( 'flipHorz' ==  $options['featured_slide_transition_effect'] || 'flipVert' ==  $options['featured_slide_transition_effect'] ){
+		elseif ( 'flipHorz' ==  $options['featured_slide_transition_effect'] || 'flipVert' ==  $options['featured_slide_transition_effect'] ){
 			wp_enqueue_script( 'jquery.cycle2.flip', get_template_directory_uri() . '/js/jquery.cycle/jquery.cycle2.flip.min.js', array( 'jquery.cycle2' ), '20140128', true );
 		}
 		// Shuffle transition plugin addition
-		else if ( 'tileSlide' ==  $options['featured_slide_transition_effect'] || 'tileBlind' ==  $options['featured_slide_transition_effect'] ){
+		elseif ( 'tileSlide' ==  $options['featured_slide_transition_effect'] || 'tileBlind' ==  $options['featured_slide_transition_effect'] ){
 			wp_enqueue_script( 'jquery.cycle2.tile', get_template_directory_uri() . '/js/jquery.cycle/jquery.cycle2.tile.min.js', array( 'jquery.cycle2' ), '20140128', true );
 		}
 		// Shuffle transition plugin addition
-		else if ( 'shuffle' ==  $options['featured_slide_transition_effect'] ){
+		elseif ( 'shuffle' ==  $options['featured_slide_transition_effect'] ){
 			wp_enqueue_script( 'jquery.cycle2.shuffle', get_template_directory_uri() . '/js/jquery.cycle/jquery.cycle2.shuffle.min.js', array( 'jquery.cycle2' ), '20140128 ', true );
 		}
 		else {
@@ -270,6 +270,10 @@ function catchbase_scripts() {
 	 * Enqueue custom script for catchbase.
 	 */
 	wp_enqueue_script( 'catchbase-custom-scripts', get_template_directory_uri() . '/js/catchbase-custom-scripts.min.js', array( 'jquery' ), null );
+
+	// Load the html5 shiv.
+	wp_enqueue_script( 'catchbase-html5', get_template_directory_uri() . '/js/html5.min.js', array(), '3.7.3' );
+	wp_script_add_data( 'catchbase-html5', 'conditional', 'lt IE 9' );
 }
 add_action( 'wp_enqueue_scripts', 'catchbase_scripts' );
 
@@ -298,66 +302,66 @@ add_action( 'admin_print_scripts-page.php', 'catchbase_enqueue_metabox_scripts',
 /**
  * Default Options.
  */
-require get_template_directory() . '/inc/catchbase-default-options.php';
+require trailingslashit( get_template_directory() ) . 'inc/catchbase-default-options.php';
 
 /**
  * Custom Header.
  */
-require get_template_directory() . '/inc/catchbase-custom-header.php';
+require trailingslashit( get_template_directory() ) . 'inc/catchbase-custom-header.php';
 
 
 /**
  * Structure for catchbase
  */
-require get_template_directory() . '/inc/catchbase-structure.php';
+require trailingslashit( get_template_directory() ) . 'inc/catchbase-structure.php';
 
 
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer-includes/catchbase-customizer.php';
+require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/catchbase-customizer.php';
 
 
 /**
  * Custom Menus
  */
-require get_template_directory() . '/inc/catchbase-menus.php';
+require trailingslashit( get_template_directory() ) . 'inc/catchbase-menus.php';
 
 
 /**
  * Load Slider file.
  */
-require get_template_directory() . '/inc/catchbase-featured-slider.php';
+require trailingslashit( get_template_directory() ) . 'inc/catchbase-featured-slider.php';
 
 
 /**
  * Load Featured Content.
  */
-require get_template_directory() . '/inc/catchbase-featured-content.php';
+require trailingslashit( get_template_directory() ) . 'inc/catchbase-featured-content.php';
 
 
 /**
  * Load Breadcrumb file.
  */
-require get_template_directory() . '/inc/catchbase-breadcrumb.php';
+require trailingslashit( get_template_directory() ) . 'inc/catchbase-breadcrumb.php';
 
 
 /**
  * Load Widgets and Sidebars
  */
-require get_template_directory() . '/inc/catchbase-widgets.php';
+require trailingslashit( get_template_directory() ) . 'inc/catchbase-widgets.php';
 
 
 /**
  * Load Social Icons
  */
-require get_template_directory() . '/inc/catchbase-social-icons.php';
+require trailingslashit( get_template_directory() ) . 'inc/catchbase-social-icons.php';
 
 
 /**
  * Load Metaboxes
  */
-require get_template_directory() . '/inc/catchbase-metabox.php';
+require trailingslashit( get_template_directory() ) . 'inc/catchbase-metabox.php';
 
 
 /**
@@ -472,7 +476,7 @@ if ( ! function_exists( 'catchbase_favicon' ) ) :
 			return;
 		}
 
-		if( ( !$catchbase_favicon = get_transient( 'catchbase_favicon' ) ) ) {
+		if ( ( !$catchbase_favicon = get_transient( 'catchbase_favicon' ) ) ) {
 			$options 	= catchbase_get_theme_options();
 
 			echo '<!-- refreshing cache -->';
@@ -517,7 +521,7 @@ if ( ! function_exists( 'catchbase_web_clip' ) ) :
 			return;
 		}
 
-		if( ( !$catchbase_web_clip = get_transient( 'catchbase_web_clip' ) ) ) {
+		if ( ( !$catchbase_web_clip = get_transient( 'catchbase_web_clip' ) ) ) {
 			$options 	= catchbase_get_theme_options();
 
 			echo '<!-- refreshing cache -->';
@@ -559,7 +563,7 @@ if ( ! function_exists( 'catchbase_custom_css' ) ) :
 			}
 
 			//Custom CSS Option
-			if( !empty( $options[ 'custom_css' ] ) ) {
+			if ( !empty( $options[ 'custom_css' ] ) ) {
 				$catchbase_custom_css	.=  $options['custom_css'] . "\n";
 			}
 
@@ -1088,7 +1092,7 @@ if ( ! function_exists( 'catchbase_body_classes' ) ) :
 		}
 
 		$current_content_layout = $options['content_layout'];
-		if( "" != $current_content_layout ) {
+		if ( "" != $current_content_layout ) {
 			$classes[] = $current_content_layout;
 		}
 
@@ -1172,7 +1176,7 @@ if ( ! function_exists( 'catchbase_get_theme_layout' ) ) :
 		if ( $page_id == $page_for_posts || $page_id == $page_on_front ) {
 	        $id = $page_id;
 	    }
-	    else if ( is_singular() ) {
+	    elseif ( is_singular() ) {
 	 		if ( is_attachment() ) {
 				$id = $post->post_parent;
 			}
@@ -1252,7 +1256,7 @@ if ( ! function_exists( 'catchbase_single_content_image' ) ) :
 		// Get Page ID outside Loop
 		$page_id = $wp_query->get_queried_object_id();
 
-		if( $post ) {
+		if ( $post ) {
 	 		if ( is_attachment() ) {
 				$parent = $post->post_parent;
 				$individual_featured_image = get_post_meta( $parent,'catchbase-featured-image', true );
@@ -1261,11 +1265,11 @@ if ( ! function_exists( 'catchbase_single_content_image' ) ) :
 			}
 		}
 
-		if( empty( $individual_featured_image ) || ( !is_page() && !is_single() ) ) {
+		if ( empty( $individual_featured_image ) || ( !is_page() && !is_single() ) ) {
 			$individual_featured_image = 'default';
 		}
 
-		if ( ( $individual_featured_image == 'disable' || '' == get_the_post_thumbnail() || ( $individual_featured_image=='default' && $featured_image == 'disabled') ) ) {
+		if ( ( 'disable' == $individual_featured_image || '' == get_the_post_thumbnail() || ( $individual_featured_image=='default' && 'disabled' == $featured_image) ) ) {
 			echo '<!-- Page/Post Single Image Disabled or No Image set in Post Thumbnail -->';
 			return false;
 		}
@@ -1282,13 +1286,13 @@ if ( ! function_exists( 'catchbase_single_content_image' ) ) :
 			?>
 			<figure class="featured-image <?php echo $class; ?>">
                 <?php
-				if ( $individual_featured_image == 'large' || ( $individual_featured_image=='default' && $featured_image == 'large' ) ) {
+				if ( 'large' == $individual_featured_image || ( $individual_featured_image=='default' && 'large' == $featured_image ) ) {
                      the_post_thumbnail( 'catchbase-large' );
                 }
-                elseif ( $individual_featured_image == 'medium' || ( $individual_featured_image=='default' && $featured_image == 'medium' ) ) {
+                elseif ( 'medium' == $individual_featured_image || ( $individual_featured_image=='default' && 'medium' == $featured_image ) ) {
 					the_post_thumbnail( 'catchbase-medium' );
 				}
-				elseif ( $individual_featured_image == 'slider-image-size' || ( $individual_featured_image=='default' && $featured_image == 'slider-image-size' ) ) {
+				elseif ( 'slider-image-size' == $individual_featured_image || ( $individual_featured_image=='default' && 'slider-image-size' == $featured_image ) ) {
 					the_post_thumbnail( 'catchbase-slider' );
 				}
 				else {
@@ -1357,7 +1361,7 @@ if ( ! function_exists( 'catchbase_promotion_headline' ) ) :
 		// Get Page ID outside Loop
 		$page_id = $wp_query->get_queried_object_id();
 
-		 if ( ( "" != $promotion_headline || "" != $promotion_subheadline || "" != $promotion_headline_url ) && ( $enablepromotion == 'entire-site' || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && $enablepromotion == 'homepage' ) ) ) {
+		 if ( ( "" != $promotion_headline || "" != $promotion_subheadline || "" != $promotion_headline_url ) && ( 'entire-site' == $enablepromotion || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && 'homepage' == $enablepromotion ) ) ) {
 
 			if ( !$catchbase_promotion_headline = get_transient( 'catchbase_promotion_headline' ) ) {
 
@@ -1459,7 +1463,7 @@ function catchbase_get_first_image( $postID, $size, $attr ) {
 
 	$output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', get_post_field('post_content', $postID ) , $matches);
 
-	if( isset( $matches [1] [0] ) ) {
+	if ( isset( $matches [1] [0] ) ) {
 		//Get first image
 		$first_img = $matches [1] [0];
 
@@ -1526,7 +1530,7 @@ if ( ! function_exists( 'catchbase_alter_home' ) ) :
 	    $cats = $options[ 'front_page_category' ];
 
 		if ( is_array( $cats ) && !in_array( '0', $cats ) ) {
-			if( $query->is_main_query() && $query->is_home() ) {
+			if ( $query->is_main_query() && $query->is_home() ) {
 				$query->query_vars['category__in'] = $options[ 'front_page_category' ];
 			}
 		}
@@ -1582,7 +1586,7 @@ function catchbase_logo_migrate() {
 
 	// If a logo has been set previously, update to use logo feature introduced in WordPress 4.5
 	if ( function_exists( 'the_custom_logo' ) ) {
-		if( isset( $options['logo'] ) && '' != $options['logo'] ) {
+		if ( isset( $options['logo'] ) && '' != $options['logo'] ) {
 			// Since previous logo was stored a URL, convert it to an attachment ID
 			$logo = attachment_url_to_postid( $options['logo'] );
 
@@ -1633,3 +1637,41 @@ function catchbase_site_icon_migrate() {
 	}
 }
 add_action( 'after_setup_theme', 'catchbase_site_icon_migrate' );
+
+
+/**
+ * Migrate Custom CSS to WordPress core Custom CSS
+ *
+ * Runs if version number saved in theme_mod "custom_css_version" doesn't match current theme version.
+ */
+function catchbase_custom_css_migrate(){
+	$ver = get_theme_mod( 'custom_css_version', false );
+
+	// Return if update has already been run
+	if ( version_compare( $ver, '4.7' ) >= 0 ) {
+		return;
+	}
+	
+	if ( function_exists( 'wp_update_custom_css_post' ) ) {
+	    // Migrate any existing theme CSS to the core option added in WordPress 4.7.
+	    
+	    /**
+		 * Get Theme Options Values
+		 */
+	    $options = catchbase_get_theme_options();
+
+	    if ( '' != $options['custom_css'] ) {
+			$core_css = wp_get_custom_css(); // Preserve any CSS already added to the core option.
+			$return   = wp_update_custom_css_post( $core_css . $options['custom_css'] );
+	        if ( ! is_wp_error( $return ) ) {
+	            // Remove the old theme_mod, so that the CSS is stored in only one place moving forward.
+	            unset( $options['custom_css'] );
+	            set_theme_mod( 'catchbase_theme_options', $options );
+
+	            // Update to match custom_css_version so that script is not executed continously
+				set_theme_mod( 'custom_css_version', '4.7' );
+	        }
+	    }
+	}
+}
+add_action( 'after_setup_theme', 'catchbase_custom_css_migrate' );
