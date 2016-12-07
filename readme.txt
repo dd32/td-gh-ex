@@ -1,11 +1,11 @@
 === Athena ===
 
 Contributors: smartcat,automattic
-Tags: black, blue, green, pink, red, yellow, dark, light, full-width-template, threaded-comments, responsive-layout, left-sidebar, featured-images, right-sidebar, one-column, two-columns, three-columns, custom-colors, featured-image-header, front-page-post-form, theme-options, translation-ready, photoblogging
+Tags: one-column,two-columns,three-columns,left-sidebar,right-sidebar,grid-layout,custom-colors,custom-logo,featured-images,footer-widgets,full-width-template,theme-options,translation-ready,portfolio,e-commerce,entertainment
 
 Requires at least: 4.0
-Tested up to: 4.4.2
-Stable tag: 1.0.7
+Tested up to: 4.7
+Stable tag: 1.0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -59,6 +59,14 @@ Fix to TGMPA bug resulting from namechange
 Added option allowing users to remove the Icon Callouts
 Added option allowing users to add a URL for the Icon Callouts
 Slider buttons now hide when the text is left empty
+
+= 1.0.8 - 
+Bug fixes
+
+= 1.0.9 - 
+Remove Customizer custom CSS
+Update tags
+
 
 == Credits ==
 
