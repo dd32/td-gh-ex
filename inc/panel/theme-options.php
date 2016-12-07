@@ -848,30 +848,37 @@ function catchkathmandu_theme_options_do_page() {
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->
 
-                    <div id="custom-css" class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Custom CSS', 'catch-kathmandu' ); ?></a></h3>
-                        <div class="option-content inside">
-                        	<div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'Enter your custom CSS styles.', 'catch-kathmandu' ); ?>
-                                </div>
-                                <div class="col col-2">
-                                	<textarea name="catchkathmandu_options[custom_css]" id="custom-css" cols="80" rows="10"><?php echo esc_attr( $options[ 'custom_css' ] ); ?></textarea>
-                            	</div>
-                          	</div><!-- .row -->
-                        	<div class="row">
-                            	<div class="col col-1">
-                                	<?php _e( 'CSS Tutorial from W3Schools.', 'catch-kathmandu' ); ?>
-                                </div>
-                                <div class="col col-2">
-                                	<a class="button" href="<?php echo esc_url( __( 'http://www.w3schools.com/css/default.asp','catch-kathmandu' ) ); ?>" title="<?php esc_attr_e( 'CSS Tutorial', 'catch-kathmandu' ); ?>" target="_blank"><?php _e( 'Click Here to Read', 'catch-kathmandu' );?></a>
-                            	</div>
-                          	</div><!-- .row -->
-                            <div class="row">
-                            	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-kathmandu' ); ?>" />
-                          	</div><!-- .row -->
-                        </div><!-- .option-content -->
-                    </div><!-- .option-container -->
+                    <?php
+                    // @remove if block when WP 5.0 is released
+                    if ( ! function_exists( 'wp_update_custom_css_post' ) ) {
+                    ?>
+                        <div id="custom-css" class="option-container">
+                            <h3 class="option-toggle"><a href="#"><?php _e( 'Custom CSS', 'catch-kathmandu' ); ?></a></h3>
+                            <div class="option-content inside">
+                            	<div class="row">
+                                	<div class="col col-1">
+                                    	<?php _e( 'Enter your custom CSS styles.', 'catch-kathmandu' ); ?>
+                                    </div>
+                                    <div class="col col-2">
+                                    	<textarea name="catchkathmandu_options[custom_css]" id="custom-css" cols="80" rows="10"><?php echo esc_attr( $options[ 'custom_css' ] ); ?></textarea>
+                                	</div>
+                              	</div><!-- .row -->
+                            	<div class="row">
+                                	<div class="col col-1">
+                                    	<?php _e( 'CSS Tutorial from W3Schools.', 'catch-kathmandu' ); ?>
+                                    </div>
+                                    <div class="col col-2">
+                                    	<a class="button" href="<?php echo esc_url( __( 'http://www.w3schools.com/css/default.asp','catch-kathmandu' ) ); ?>" title="<?php esc_attr_e( 'CSS Tutorial', 'catch-kathmandu' ); ?>" target="_blank"><?php _e( 'Click Here to Read', 'catch-kathmandu' );?></a>
+                                	</div>
+                              	</div><!-- .row -->
+                                <div class="row">
+                                	<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-kathmandu' ); ?>" />
+                              	</div><!-- .row -->
+                            </div><!-- .option-content -->
+                        </div><!-- .option-container -->
+                    <?php
+                    }
+                    ?>
 
                     <div id="scrollup" class="option-container">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Scroll Up', 'catch-kathmandu' ); ?></a></h3>
@@ -1356,6 +1363,10 @@ function catchkathmandu_theme_options_validate( $options ) {
 
 	$defaults = $catchkathmandu_options_defaults;
 
+    if ( "1" == $options['reset_all_settings'] ) {
+        return $defaults;
+    }
+
     $input = array();
     $input = $options;
 
@@ -1444,12 +1455,13 @@ function catchkathmandu_theme_options_validate( $options ) {
 
 	//Reset Header Featured Image Options
 	if( $input[ 'reset_featured_image' ] == 1 ) {
-		$input_validated[ 'enable_featured_header_image' ] = $defaults[ 'enable_featured_header_image' ];
-		$input_validated[ 'page_featured_image' ] = $defaults[ 'page_featured_image' ];
-		$input_validated[ 'featured_header_image' ] = $defaults[ 'featured_header_image' ];
-		$input_validated[ 'featured_header_image_alt' ] = $defaults[ 'featured_header_image_alt' ];
-		$input_validated[ 'featured_header_image_url' ] = $defaults[ 'featured_header_image_url' ];
-		$input_validated[ 'featured_header_image_base' ] = $defaults[ 'featured_header_image_base' ];
+        $input_validated[ 'enable_featured_header_image' ] = $defaults[ 'enable_featured_header_image' ];
+        $input_validated[ 'page_featured_image' ]          = $defaults[ 'page_featured_image' ];
+        $input_validated[ 'featured_header_image' ]        = $defaults[ 'featured_header_image' ];
+        $input_validated[ 'featured_header_image_alt' ]    = $defaults[ 'featured_header_image_alt' ];
+        $input_validated[ 'featured_header_image_url' ]    = $defaults[ 'featured_header_image_url' ];
+        $input_validated[ 'featured_header_image_base' ]   = $defaults[ 'featured_header_image_base' ];
+        $input_validated[ 'reset_featured_image' ]         = "0";
 	}
 
 	// data validation for Color Scheme
@@ -1459,9 +1471,10 @@ function catchkathmandu_theme_options_validate( $options ) {
 	}
 
 	// Data Validation for Custom CSS Style
-	if ( isset( $input['custom_css'] ) ) {
-		$input_validated['custom_css'] = wp_kses_stripslashes($input['custom_css']);
-	}
+    // @remove if block when WP 5.0 is released
+    if ( ! function_exists( 'wp_update_custom_css_post' )  && isset( $input['custom_css'] ) ) {
+        $input_validated['custom_css'] = wp_kses_stripslashes($input['custom_css']);
+    }
 
     // data validation for disable scroll up
     if ( isset( $input['disable_scrollup'] ) ) {
@@ -1750,8 +1763,9 @@ function catchkathmandu_theme_options_validate( $options ) {
 
 	//Reset Color Options
 	if( $input[ 'reset_moretag' ] == 1 ) {
-		$input_validated[ 'more_tag_text' ] = $defaults[ 'more_tag_text' ];
-		$input_validated[ 'excerpt_length' ] = $defaults[ 'excerpt_length' ];
+        $input_validated[ 'more_tag_text' ]  = $defaults[ 'more_tag_text' ];
+        $input_validated[ 'excerpt_length' ] = $defaults[ 'excerpt_length' ];
+        $input_validated[ 'reset_moretag' ]  = "0";
 	}
 
 
@@ -1771,9 +1785,10 @@ function catchkathmandu_theme_options_validate( $options ) {
 
 	//Reset Color Options
 	if( $input[ 'reset_layout' ] == 1 ) {
-		$input_validated[ 'sidebar_layout' ] = $defaults[ 'sidebar_layout' ];
-		$input_validated[ 'content_layout' ] = $defaults[ 'content_layout' ];
-		$input_validated[ 'featured_image' ] = $defaults[ 'featured_image' ];
+        $input_validated[ 'sidebar_layout' ] = $defaults[ 'sidebar_layout' ];
+        $input_validated[ 'content_layout' ] = $defaults[ 'content_layout' ];
+        $input_validated[ 'featured_image' ] = $defaults[ 'featured_image' ];
+        $input_validated[ 'reset_layout' ]   = "0";
 	}
 
 

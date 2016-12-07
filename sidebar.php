@@ -16,7 +16,7 @@ do_action( 'catchkathmandu_before_secondary' );
 
 $layout = catchkathmandu_get_theme_layout();
 
-if ( $layout == 'left-sidebar' || $layout == 'right-sidebar' ) { ?>
+if ( 'left-sidebar' == $layout  || 'right-sidebar' == $layout  ) { ?>
 	<div id="secondary" class="widget-area" role="complementary">
 		<?php
 		/**

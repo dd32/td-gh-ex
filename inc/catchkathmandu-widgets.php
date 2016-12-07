@@ -8,7 +8,7 @@ function catchkathmandu_widgets_init() {
 
 	// Register Custom Widgets
 	register_widget( 'catchkathmandu_social_widget' );
-	
+
 	//Main Sidebar
 	register_sidebar( array(
 		'name' => __( 'Main Sidebar', 'catch-kathmandu' ),
@@ -18,8 +18,8 @@ function catchkathmandu_widgets_init() {
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
-	) );	
-	
+	) );
+
 	//Header Right Sidebar
 	register_sidebar( array(
 		'name' => __( 'Header Right Sidebar', 'catch-kathmandu' ),
@@ -29,8 +29,8 @@ function catchkathmandu_widgets_init() {
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
-	) );	
-	
+	) );
+
 	//Footer One Sidebar
 	register_sidebar( array(
 		'name' => __( 'Footer Area One', 'catch-kathmandu' ),
@@ -62,8 +62,8 @@ function catchkathmandu_widgets_init() {
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
-	) );	
-	
+	) );
+
 	//Footer Four Sidebar
 	register_sidebar( array(
 		'name' => __( 'Footer Area Four', 'catch-kathmandu' ),
@@ -73,8 +73,8 @@ function catchkathmandu_widgets_init() {
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
-	) );			
-	
+	) );
+
 }
 add_action( 'widgets_init', 'catchkathmandu_widgets_init' );
 
@@ -89,7 +89,7 @@ add_action( 'widgets_init', 'catchkathmandu_widgets_init' );
  * @since Catch Kathmandu 1.0
  */
 class catchkathmandu_social_widget extends WP_Widget {
-	
+
 	/**
 	 * Register widget with WordPress.
 	 */
@@ -115,10 +115,10 @@ class catchkathmandu_social_widget extends WP_Widget {
         </p>
         <?php
 	}
-	
+
 	/**
-	 * update the particular instant  
-	 * 
+	 * update the particular instant
+	 *
 	 * This function should check that $new_instance is set correctly.
 	 * The newly calculated value of $instance should be returned.
 	 * If "false" is returned, the instance won't be saved/updated.
@@ -130,13 +130,13 @@ class catchkathmandu_social_widget extends WP_Widget {
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 		$instance['title'] = strip_tags($new_instance['title']);
-		
+
 		return $instance;
-	}	
-	
+	}
+
 	/**
 	 * Displays the Widget in the front-end.
-	 * 
+	 *
 	 * $args Display arguments including before_title, after_title, before_widget, and after_widget.
 	 * $instance The settings for the particular instance of the widget
 	 */
@@ -144,14 +144,14 @@ class catchkathmandu_social_widget extends WP_Widget {
 		extract( $args );
 		extract( $instance );
 		$title = !empty( $instance['title'] ) ? $instance[ 'title' ] : '';
-			
+
 		echo $before_widget;
-		if ( $title != '' ) {
+		if ( '' != $title  ) {
 			echo $before_title . apply_filters( 'widget_title', $title, $instance, $this->id_base ) . $after_title;
-		} 
+		}
 
 		catchkathmandu_social_networks();
-		
+
 		echo $after_widget;
 	}
 

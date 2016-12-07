@@ -23,7 +23,7 @@ function catchkathmandu_customize_register( $wp_customize ) {
 	$defaults = $catchkathmandu_options_defaults;
 
 	//Custom Controls
-	require get_template_directory() . '/inc/panel/customizer/customizer-custom-controls.php';
+	require trailingslashit( get_template_directory() ) . 'inc/panel/customizer/customizer-custom-controls.php';
 
 	// Color Scheme added to built in section
 	$wp_customize->add_setting( 'catchkathmandu_options[color_scheme]', array(
@@ -432,9 +432,10 @@ function catchkathmandu_customize_register( $wp_customize ) {
 			'title' 		=> __( 'Check to Reset Layout', 'catch-kathmandu' ),
 			'description'	=> __( 'Please refresh the customizer after saving if reset option is used', 'catch-kathmandu' ),
 			'field_type' 	=> 'checkbox',
-			'sanitize' 		=> 'catchkathmandu_sanitize_reset_layout',
+			'sanitize' 		=> 'catchkathmandu_sanitize_checkbox',
 			'panel' 		=> 'theme_options',
 			'section' 		=> 'layout_options',
+			'transport'		=> 'postMessage',
 			'default' 		=> $defaults['reset_layout']
 		),
 
@@ -482,9 +483,10 @@ function catchkathmandu_customize_register( $wp_customize ) {
 			'title' 		=> __( 'Check to Reset Excerpt', 'catch-kathmandu' ),
 			'description'	=> __( 'Please refresh the customizer after saving if reset option is used', 'catch-kathmandu' ),
 			'field_type' 	=> 'checkbox',
-			'sanitize' 		=> 'catchkathmandu_sanitize_reset_moretag',
+			'sanitize' 		=> 'catchkathmandu_sanitize_checkbox',
 			'panel' 		=> 'theme_options',
 			'section' 		=> 'excerpt_more_tag_settings',
+			'transport'		=> 'postMessage',
 			'default' 		=> $defaults['reset_moretag']
 		),
 
@@ -509,7 +511,7 @@ function catchkathmandu_customize_register( $wp_customize ) {
 			'sanitize' 		=> 'catchkathmandu_sanitize_custom_css',
 			'panel' 		=> 'theme_options',
 			'section' 		=> 'custom_css',
-			'default' 		=> $defaults['homepage_headline']
+			'default' 		=> $defaults['custom_css']
 		),
 
 		//Scroll Up
@@ -1034,9 +1036,10 @@ function catchkathmandu_customize_register( $wp_customize ) {
 			'title' 		=> __( 'Check to Reset Header Featured Image Options', 'catch-kathmandu' ),
 			'description'	=> __( 'Please refresh the customizer after saving if reset option is used', 'catch-kathmandu' ),
 			'field_type' 	=> 'checkbox',
-			'sanitize' 		=> 'catchkathmandu_sanitize_reset_featured_image',
+			'sanitize' 		=> 'catchkathmandu_sanitize_checkbox',
 			'panel' 		=> 'theme_options',
 			'section' 		=> 'header_featured_image_options',
+			'transport'		=> 'postMessage',
 			'default' 		=> $defaults['reset_featured_image']
 		),
 		);
@@ -1103,9 +1106,10 @@ function catchkathmandu_customize_register( $wp_customize ) {
 				'title' 		=> __( 'Check to Reset Header Featured Image Options', 'catch-kathmandu' ),
 				'description'	=> __( 'Please refresh the customizer after saving if reset option is used', 'catch-kathmandu' ),
 				'field_type' 	=> 'checkbox',
-				'sanitize' 		=> 'catchkathmandu_sanitize_reset_featured_image',
+				'sanitize' 		=> 'catchkathmandu_sanitize_checkbox',
 				'panel' 		=> 'theme_options',
 				'section' 		=> 'header_image',
+				'transport'		=> 'postMessage',
 				'default' 		=> $defaults['reset_featured_image']
 			),
 		);
@@ -1162,6 +1166,11 @@ function catchkathmandu_customize_register( $wp_customize ) {
 		$settings_parameters = array_merge( $settings_parameters, $settings_site_icon);
 	}
 
+	//@remove Remove if block and custom_css from $settings_paramater when WordPress 5.0 is released
+	if( function_exists( 'wp_update_custom_css_post' ) ) {
+		unset( $settings_parameters['custom_css'] );
+	}
+
 	foreach ( $settings_parameters as $option ) {
 		$section = $option['section'];
 
@@ -1193,6 +1202,7 @@ function catchkathmandu_customize_register( $wp_customize ) {
 			);
 		}
 		else if ('checkbox' == $option['field_type'] ) {
+			$transport = isset( $option['transport'] ) ? $option['transport'] : 'refresh';
 			$wp_customize->add_setting(
 				// $id
 				$theme_slug . 'options[' . $option['id'] . ']',
@@ -1201,6 +1211,7 @@ function catchkathmandu_customize_register( $wp_customize ) {
 					'type'              => 'option',
 					'sanitize_callback' => $option['sanitize'],
 					'default'           => $option['default'],
+					'transport'         => $transport
 				)
 			);
 
@@ -1464,7 +1475,8 @@ function catchkathmandu_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'catchkathmandu_options[reset_all_settings]', array(
 		'capability'		=> 'edit_theme_options',
-		'sanitize_callback' => 'catchkathmandu_reset_all_settings',
+		'sanitize_callback' => 'catchkathmandu_sanitize_checkbox',
+		'type'				=> 'option',
 		'transport'			=> 'postMessage',
 	) );
 
@@ -1486,7 +1498,7 @@ function catchkathmandu_customize_register( $wp_customize ) {
 	 * Has dummy Sanitizaition function as it contains no value to be sanitized
 	 */
 	$wp_customize->add_setting( 'important_links', array(
-		'sanitize_callback'	=> 'catchkathmandu_sanitize_important_link',
+		'sanitize_callback'	=> 'sanitize_text_field',
 	) );
 
 	$wp_customize->add_control( new Catchkathmandu_Important_Links( $wp_customize, 'important_links', array(
@@ -1524,25 +1536,29 @@ add_action( 'customize_save', 'catchkathmandu_customize_preview' );
  * @since Catch Kathmandu 3.4
  */
 function catchkathmandu_customize_scripts() {
-	wp_register_script( 'catchkathmandu_customizer_custom', get_template_directory_uri() . '/inc/panel/js/customizer-custom-scripts.js', array( 'jquery' ), '20140108', true );
+	wp_enqueue_script( 'catchkathmandu_customizer_custom', get_template_directory_uri() . '/inc/panel/js/customizer-custom-scripts.js', array( 'jquery' ), '20140108', true );
 
-    $catchkathmandu_misc_links = array(
-							'upgrade_link' 				=> esc_url( 'https://catchthemes.com/themes/catch-kathmandu-pro/' ),
-							'upgrade_text'	 			=> __( 'Upgrade To Pro &raquo;', 'catch-kathmandu' ),
-		);
+    $catchkathmandu_data = array(
+		'reset_message' => esc_html__( 'Refresh the customizer page after saving to view reset effects', 'catch-kathmandu' ),
+		'reset_options' => array(
+			'catchkathmandu_options[reset_featured_image]',
+			'catchkathmandu_options[reset_layout]',
+			'catchkathmandu_options[reset_moretag]',
+			'catchkathmandu_options[reset_all_settings]',
+		)
+	);
 
-    //Add More Theme Options Button
-    wp_localize_script( 'catchkathmandu_customizer_custom', 'catchkathmandu_misc_links', $catchkathmandu_misc_links );
-
-    wp_enqueue_script( 'catchkathmandu_customizer_custom' );
-
-    wp_enqueue_style( 'catchkathmandu_customizer_custom', get_template_directory_uri() . '/inc/panel/catchkathmandu-customizer.css');
+	// Send reset message as object to custom customizer js
+	wp_localize_script( 'catchkathmandu_customizer_custom', 'catchkathmandu_data', $catchkathmandu_data );
 }
 add_action( 'customize_controls_enqueue_scripts', 'catchkathmandu_customize_scripts' );
 
 
 //Active callbacks for customizer
-require get_template_directory() . '/inc/panel/customizer/customizer-active-callbacks.php';
+require trailingslashit( get_template_directory() ) . 'inc/panel/customizer/customizer-active-callbacks.php';
 
 //Sanitize functions for customizer
-require get_template_directory() . '/inc/panel/customizer/customizer-sanitize-functions.php';
+require trailingslashit( get_template_directory() ) . 'inc/panel/customizer/customizer-sanitize-functions.php';
+
+//Sanitize functions for customizer
+require trailingslashit( get_template_directory() ) . 'inc/panel/customizer/upgrade-button/class-customize.php';

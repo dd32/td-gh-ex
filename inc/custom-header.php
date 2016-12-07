@@ -57,7 +57,7 @@ function catchkathmandu_custom_header_setup() {
 		'admin-preview-callback' => 'catchkathmandu_header_image',
 	);
 
-	if( function_exists( 'has_custom_logo' ) ) {
+	if ( function_exists( 'has_custom_logo' ) ) {
 		/* Previously, custom header was being used as logo, but with implementation of custom logo
 		 * from WordPress version 4.5 onwards, we have migrated custom header to custom logo
 		 * and Our custom field for header to core custom header
@@ -253,8 +253,8 @@ function catchkathmandu_header_image() {
 		$header_image = get_header_image();
 
 		//Checking Logo/Header Image
-		if( function_exists( 'has_custom_logo' ) ) :
-			if( has_custom_logo() ) :
+		if ( function_exists( 'has_custom_logo' ) ) :
+			if ( has_custom_logo() ) :
 				$logoenable = 'logo-enable';
 
 				$logoenable = 'logo-enable logo-left';
