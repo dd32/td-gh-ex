@@ -29,7 +29,7 @@ function create_sanitize_checkbox( $checked ) {
  * @since  Create 2.1
  */
 function create_sanitize_custom_css( $input ) {
-	if ( $input != '' ) {
+	if ( '' != $input  ) {
         $input = str_replace( '<=', '&lt;=', $input );
 
         $input = wp_kses_split( $input, array(), array() );
@@ -103,7 +103,7 @@ function create_sanitize_page( $input ) {
  * @since Create 2.1
  */
 function create_sanitize_category_list( $input ) {
-	if ( $input != '' ) {
+	if ( '' != $input  ) {
 		$args = array(
 						'type'			=> 'post',
 						'child_of'      => 0,
@@ -198,32 +198,6 @@ function create_sanitize_select( $input, $setting ) {
 }
 
 /**
- * Sanitizes and Make options default for font family options
- * @param  $input entered value
- * @return sanitized output
- *
- * @since  Create 1.0
- */
-function create_reset_typography( $input ) {
-    if ( $input == 1 ) {
-    	$font_family_options	=	array(
-										'title_font',
-										'body_font',
-										'tagline_font',
-										'content_title_font',
-										'content_font',
-										'headings_font',
-									);
-
-		foreach ( $font_family_options as $font_family_option ) {
-			 remove_theme_mod( $font_family_option );
-		}
-    }
-
-    return '';
-}
-
-/**
  * Sanitizes footer code
  * @param  $input entered value
  * @return sanitized output
@@ -232,48 +206,4 @@ function create_reset_typography( $input ) {
  */
 function create_sanitize_footer_code( $input ) {
 	return ( stripslashes( wp_filter_post_kses( addslashes ( $input ) ) ) );
-}
-
-/**
- * Sanitizes and Make options default for footer editor options
- * @param  $input entered value
- * @return sanitized output
- *
- * @since  Create 1.0
- */
-function create_sanitize_reset_footer_content( $input ) {
-    if ( $input == '1' ) {
-    	//Reset Footer Editor Options
-        set_theme_mod( 'footer_left_content', create_get_default_theme_options( 'footer_left_content' ) );
-    	set_theme_mod( 'footer_right_content', create_get_default_theme_options( 'footer_right_content' ) );
-    }
-
-    return '';
-}
-
-/**
- * Dummy Sanitizaition function as it contains no value to be sanitized
- */
-function create_sanitize_important_link() {
-	return false;
-}
-
-/**
- * Reset all settings to default
- * @param  $input entered value
- * @return sanitized output
- *
- * @since  Create 2.1
- */
-function create_reset_all_settings( $input ) {
-	if ( $input == 1 ) {
-		//Remove all set values
-		remove_theme_mods();
-
-        // Flush out all transients
-        //create_flush_transients();
-    }
-    else {
-        return '';
-    }
 }

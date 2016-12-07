@@ -3,11 +3,6 @@
  * Control of show/hide events on feature slider type selection
  */
 (function($) {
-    //Add Upgrade Button,Theme instruction, Support Forum, Changelog, Donate link, Review, Facebook, Twitter, Google+, Pinterest links 
-    $('.preview-notice').prepend('<span id="create_upgrade"><a target="_blank" class="button btn-upgrade" href="' + create_misc_links.upgrade_link + '">' + create_misc_links.upgrade_text + '</a></span>');
-    jQuery('#customize-info .btn-upgrade, .misc_links').click(function(event) {
-        event.stopPropagation();
-    });
 
     /*
      * For Feature Slider on featured_slider_type click event
@@ -46,3 +41,22 @@
         }
     });
 })(jQuery);
+
+( function( api ) {
+    wp.customize( 'reset_all_settings', function( setting ) {
+        setting.bind( function( value ) {
+            var code = 'needs_refresh';
+            if ( value ) {
+                setting.notifications.add( code, new wp.customize.Notification(
+                    code,
+                    {
+                        type: 'info',
+                        message: create_data.reset_message
+                    }
+                ) );
+            } else {
+                setting.notifications.remove( code );
+            }
+        } );
+    } );
+} )( wp.customize );

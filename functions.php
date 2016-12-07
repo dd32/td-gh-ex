@@ -274,44 +274,83 @@ add_action( 'admin_print_scripts-appearance_page_custom-header', 'create_admin_f
 /**
  * Include Default Options for Create
  */
-require get_template_directory() . '/inc/default-options.php';
+require trailingslashit( get_template_directory() ) . 'inc/default-options.php';
 
 /**
  * Implement the Custom Header feature.
  */
-require get_template_directory() . '/inc/custom-header.php';
+require trailingslashit( get_template_directory() ) . 'inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
  */
-require get_template_directory() . '/inc/template-tags.php';
+require trailingslashit( get_template_directory() ) . 'inc/template-tags.php';
 
 /**
  * Custom functions that act independently of the theme templates.
  */
-require get_template_directory() . '/inc/extras.php';
+require trailingslashit( get_template_directory() ) . 'inc/extras.php';
 
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+require trailingslashit( get_template_directory() ) . 'inc/customizer.php';
 
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/structure.php';
+require trailingslashit( get_template_directory() ) . 'inc/structure.php';
 
 /**
  * Load Jetpack compatibility file.
  */
-require get_template_directory() . '/inc/jetpack.php';
+require trailingslashit( get_template_directory() ) . 'inc/jetpack.php';
 
 /**
  * Include featured slider
  */
-require get_template_directory() . '/inc/featured-slider.php';
+require trailingslashit( get_template_directory() ) . 'inc/featured-slider.php';
 
 /**
  * Include Metaboxes
  */
-require get_template_directory() . '/inc/metabox.php';
+require trailingslashit( get_template_directory() ) . 'inc/metabox.php';
+
+
+/**
+ * Migrate Custom CSS to WordPress core Custom CSS
+ *
+ * Runs if version number saved in theme_mod "custom_css_version" doesn't match current theme version.
+ */
+function create_custom_css_migrate(){
+	$ver = get_theme_mod( 'custom_css_version', false );
+
+	// Return if update has already been run
+	if ( version_compare( $ver, '4.7' ) >= 0 ) {
+		return;
+	}
+	
+	if ( function_exists( 'wp_update_custom_css_post' ) ) {
+	    // Migrate any existing theme CSS to the core option added in WordPress 4.7.
+	    
+	    /**
+		 * Get Theme Options Values
+		 */
+		$defaults 				= create_get_default_theme_options();
+
+		$options['custom_css'] 	= get_theme_mod( 'custom_css', $defaults['custom_css'] );
+
+	    if ( '' != $options['custom_css'] ) {
+			$core_css = wp_get_custom_css(); // Preserve any CSS already added to the core option.
+			$return   = wp_update_custom_css_post( $core_css . $options['custom_css'] );
+	        if ( ! is_wp_error( $return ) ) {
+	            // Remove the old theme_mod, so that the CSS is stored in only one place moving forward.
+	            remove_theme_mod( 'custom_css' );
+
+	            // Update to match custom_css_version so that script is not executed continously
+				set_theme_mod( 'custom_css_version', '4.7' );
+	        }
+	    }
+	}
+}
+add_action( 'after_setup_theme', 'create_custom_css_migrate' );

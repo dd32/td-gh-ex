@@ -280,7 +280,7 @@ if ( ! function_exists( 'create_single_content_image' ) ) :
 
 		$featured_image = get_theme_mod( 'single_post_image_layout', create_get_default_theme_options( 'single_post_image_layout' ) );
 
-		if ( ( $individual_featured_image == 'disable' || '' == get_the_post_thumbnail() || ( $individual_featured_image=='default' && $featured_image == 'disable') ) ) {
+		if ( ( 'disable' == $individual_featured_image  || '' == get_the_post_thumbnail() || ( $individual_featured_image=='default' && 'disable' == $featured_image ) ) ) {
 			return false;
 		}
 		else {
@@ -293,10 +293,10 @@ if ( ! function_exists( 'create_single_content_image' ) ) :
 			?>
 			<div class="entry-thumbnail <?php echo $image_class; ?>">
                 <?php
-				if ( $individual_featured_image == 'featured-image' || ( $individual_featured_image=='default' && $featured_image == 'featured-image' ) ) {
+				if ( 'featured-image' == $individual_featured_image  || ( $individual_featured_image=='default' && 'featured-image' == $featured_image  ) ) {
 					the_post_thumbnail( 'create-single' );
 				}
-                elseif ( $individual_featured_image == 'large' || ( $individual_featured_image=='default' && $featured_image == 'large' ) ) {
+                elseif ( 'large' == $individual_featured_image  || ( $individual_featured_image=='default' && 'large' == $featured_image  ) ) {
                      the_post_thumbnail( 'large' );
                 }
 				else {

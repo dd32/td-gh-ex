@@ -18,10 +18,10 @@ function create_customize_register( $wp_customize ) {
 	$defaults = create_get_default_theme_options();
 
 	//Theme Options
-	require get_template_directory() . '/inc/customizer-includes/customizer-theme-options.php';
+	require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/customizer-theme-options.php';
 
 	//Featured Slider
-	require get_template_directory() . '/inc/customizer-includes/customizer-featured-slider-options.php';
+	require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/customizer-featured-slider-options.php';
 
     // Reset all settings to default
 	$wp_customize->add_section( 'create_reset_all_settings', array(
@@ -33,7 +33,7 @@ function create_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'reset_all_settings', array(
 		'capability'		=> 'edit_theme_options',
 		'default'			=> $defaults['reset_all_settings'],
-		'sanitize_callback' => 'create_reset_all_settings',
+		'sanitize_callback' => 'create_sanitize_checkbox',
 		'transport'			=> 'postMessage',
 	) );
 
@@ -104,7 +104,7 @@ function create_customize_register( $wp_customize ) {
 	 * Has dummy Sanitizaition function as it contains no value to be sanitized
 	 */
 	$wp_customize->add_setting( 'important_links', array(
-		'sanitize_callback'	=> 'create_sanitize_important_link',
+		'sanitize_callback'	=> 'sanitize_text_field',
 	) );
 
 	$wp_customize->add_control( new CreateImportantLinks( $wp_customize, 'important_links', array(
@@ -133,24 +133,33 @@ add_action( 'customize_preview_init', 'create_customize_preview_js' );
  * @since Create 1.2
  */
 function create_customize_scripts() {
-	wp_register_script( 'create_customizer_custom', get_template_directory_uri() . '/js/customizer-custom-scripts.js', array( 'jquery' ), '20131028', true );
+	wp_enqueue_script( 'create_customizer_custom', get_template_directory_uri() . '/js/customizer-custom-scripts.js', array( 'jquery' ), '20131028', true );
 
-	$create_misc_links = array(
-							'upgrade_link' 				=> esc_url( 'https://catchthemes.com/themes/create-pro/' ),
-							'upgrade_text'	 			=> __( 'Upgrade To Pro &raquo;', 'create' ),
-						);
+	$create_data = array(
+		'reset_message' => esc_html__( 'Refresh the customizer page after saving to view reset effects', 'create' )
+	);
 
-	//Add Upgrade Button via localized script
-	wp_localize_script( 'create_customizer_custom', 'create_misc_links', $create_misc_links );
-
-	wp_enqueue_script( 'create_customizer_custom' );
-
-	wp_enqueue_style( 'create_customizer_custom', get_template_directory_uri() . '/css/customizer.css');
+	wp_localize_script( 'create_customizer_custom', 'create_misc_links', $create_data );
 }
 add_action( 'customize_controls_print_footer_scripts', 'create_customize_scripts' );
 
+/**
+ * Function to reset date with respect to condition
+ */
+function create_reset_data() {
+	if ( get_theme_mod( 'reset_all_settings' ) ) {
+    	remove_theme_mods();
+
+        return;
+    }
+}
+add_action( 'customize_save_after', 'create_reset_data' );
+
 //Sanitize callback functions for customizer
-require get_template_directory() . '/inc/customizer-includes/customizer-sanitize-functions.php';
+require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/customizer-sanitize-functions.php';
 
 //Active callbacks for customizer
-require get_template_directory() . '/inc/customizer-includes/customizer-active-callbacks.php';
+require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/customizer-active-callbacks.php';
+
+// Add Upgrade to Pro Button.
+require trailingslashit( get_template_directory() ) . 'inc/customizer-includes/upgrade-button/class-customize.php';

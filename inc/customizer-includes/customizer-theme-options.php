@@ -13,28 +13,34 @@
 	    'title'    		 => __( 'Theme Options', 'create' ),
 	) );
 
-   	// Custom CSS Option
-	$wp_customize->add_section( 'create_custom_css', array(
-		'description'	=> __( 'Custom/Inline CSS', 'create'),
-		'panel'  		=> 'create_theme_options',
-		'priority' 		=> 203,
-		'title'    		=> __( 'Custom CSS Options', 'create' ),
-	) );
+	/**
+	 *  Remove Custom CSS option from WordPress 4.7 onwards
+	 *  //@remove Remove if block and custom_css when WordPress 5.0 is released
+	 */
+	if ( !function_exists( 'wp_update_custom_css_post' ) ) {
+	   	// Custom CSS Option
+		$wp_customize->add_section( 'create_custom_css', array(
+			'description'	=> __( 'Custom/Inline CSS', 'create'),
+			'panel'  		=> 'create_theme_options',
+			'priority' 		=> 203,
+			'title'    		=> __( 'Custom CSS Options', 'create' ),
+		) );
 
-	$wp_customize->add_setting( 'custom_css', array(
-		'capability'		=> 'edit_theme_options',
-		'default'			=> $defaults['custom_css'],
-		'sanitize_callback' => 'create_sanitize_custom_css',
-	) );
+		$wp_customize->add_setting( 'custom_css', array(
+			'capability'		=> 'edit_theme_options',
+			'default'			=> $defaults['custom_css'],
+			'sanitize_callback' => 'create_sanitize_custom_css',
+		) );
 
-	$wp_customize->add_control( 'custom_css', array(
-			'label'		=> __( 'Enter Custom CSS', 'create' ),
-	        'priority'	=> 1,
-			'section'   => 'create_custom_css',
-	        'settings'  => 'custom_css',
-			'type'		=> 'textarea',
-	) ) ;
-   	// Custom CSS End
+		$wp_customize->add_control( 'custom_css', array(
+				'label'		=> __( 'Enter Custom CSS', 'create' ),
+		        'priority'	=> 1,
+				'section'   => 'create_custom_css',
+		        'settings'  => 'custom_css',
+				'type'		=> 'textarea',
+		) ) ;
+	   	// Custom CSS End
+	}
 
    	// Excerpt Options
 	$wp_customize->add_section( 'create_excerpt_options', array(

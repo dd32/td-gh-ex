@@ -2,43 +2,41 @@
 # This file is distributed under the GNU General Public License v3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Create\n"
-"Report-Msgid-Bugs-To: https://catchthemes.com/support-forum/forum/create-"
-"free/\n"
-"POT-Creation-Date: 2016-10-28 22:22+0545\n"
-"PO-Revision-Date: 2016-10-28 22:22+0545\n"
+"Project-Id-Version: Create 2.3.2\n"
+"Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
+"POT-Creation-Date: 2016-12-07 16:36-0500\n"
+"PO-Revision-Date: 2016-12-07 16:36-0500\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.7.1\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__;"
-"_nx:1,2,4c;esc_html__\n"
+"X-Poedit-KeywordsList: __;_e;_x;esc_html_e;esc_html__;esc_attr_e;esc_attr__;"
+"_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;"
+"__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-SourceCharset: utf-8\n"
 "X-Poedit-Basepath: .\n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: \n"
 "X-Poedit-SearchPath-0: ..\n"
 
-# @ create
 #: ../404.php:15
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-# @ create
 #: ../404.php:19
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
 
-# @ create
 #: ../404.php:27
 msgid "Most Used Categories"
 msgstr ""
 
-# @ create
 #. translators: %1$s: smiley
 #: ../404.php:44
 #, php-format
@@ -53,119 +51,97 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-# @ create
 #: ../comments.php:35 ../comments.php:52
 msgid "Comment navigation"
 msgstr ""
 
-# @ create
 #: ../comments.php:36 ../comments.php:53
 msgid "&larr; Older Comments"
 msgstr ""
 
-# @ create
 #: ../comments.php:37 ../comments.php:54
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-# @ create
 #: ../comments.php:64
 msgid "Comments are closed."
 msgstr ""
 
-# @ create
 #: ../content-none.php:13
 msgid "Nothing Found"
 msgstr ""
 
-# @ create
 #: ../content-none.php:19
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-# @ create
 #: ../content-none.php:23
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-# @ create
 #: ../content-none.php:28
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
 
-# @ create
 #: ../content-page.php:20 ../content-single.php:23 ../content.php:39
 msgid "Pages:"
 msgstr ""
 
-# @ create
 #: ../content-page.php:27 ../inc/template-tags.php:144
 msgid "Edit"
 msgstr ""
 
-# @ create
 #: ../content.php:34
 #, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-# @ create
 #: ../functions.php:63
 msgid "Primary Menu"
 msgstr ""
 
-# @ create
 #: ../functions.php:64
 msgid "Social Menu"
 msgstr ""
 
-# @ create
 #: ../functions.php:123
 msgid "Sidebar"
 msgstr ""
 
-# @ create
 #: ../functions.php:125
 msgid "Main sidebar that appears on the left."
 msgstr ""
 
-# @ create
 #: ../functions.php:133
 msgid "Intro Widget"
 msgstr ""
 
-# @ create
 #: ../functions.php:135
 msgid "Additional widget that appears only on your default homepage."
 msgstr ""
 
-# @ create
 #: ../functions.php:154
 msgid "Your Name"
 msgstr ""
 
-# @ create
 #: ../functions.php:155
 msgid "E-mail"
 msgstr ""
 
-# @ create
 #: ../functions.php:156
 msgid "Website"
 msgstr ""
 
-# @ create
 #: ../functions.php:157
 msgid "Your Comment"
 msgstr ""
 
-# @ create
 #: ../functions.php:259
 msgctxt "Google font: on or off"
 msgid "on"
@@ -226,109 +202,117 @@ msgstr ""
 msgid "Theme Options"
 msgstr ""
 
-#: ../inc/customizer-includes/customizer-theme-options.php:18
+#: ../inc/customizer-includes/customizer-theme-options.php:23
 msgid "Custom/Inline CSS"
 msgstr ""
 
-#: ../inc/customizer-includes/customizer-theme-options.php:21
+#: ../inc/customizer-includes/customizer-theme-options.php:26
 msgid "Custom CSS Options"
 msgstr ""
 
-#: ../inc/customizer-includes/customizer-theme-options.php:31
+#: ../inc/customizer-includes/customizer-theme-options.php:36
 msgid "Enter Custom CSS"
 msgstr ""
 
-#: ../inc/customizer-includes/customizer-theme-options.php:43
+#: ../inc/customizer-includes/customizer-theme-options.php:49
 msgid "Excerpt Options"
 msgstr ""
 
-#: ../inc/customizer-includes/customizer-theme-options.php:53
+#: ../inc/customizer-includes/customizer-theme-options.php:59
 msgid "Excerpt length. Default is 40 words"
 msgstr ""
 
-#: ../inc/customizer-includes/customizer-theme-options.php:60
+#: ../inc/customizer-includes/customizer-theme-options.php:66
 msgid "Excerpt Length (words)"
 msgstr ""
 
-#: ../inc/customizer-includes/customizer-theme-options.php:74
+#: ../inc/customizer-includes/customizer-theme-options.php:80
 msgid "Read More Text"
 msgstr ""
 
-#: ../inc/customizer-includes/customizer-theme-options.php:106
+#: ../inc/customizer-includes/customizer-theme-options.php:112
 msgid ""
 "Hold down the Ctrl (windows) / Command (Mac) button to select multiple "
 "options."
 msgstr ""
 
-#: ../inc/customizer-includes/customizer-theme-options.php:112
+#: ../inc/customizer-includes/customizer-theme-options.php:118
 msgid ""
 "Only posts that belong to the categories selected here will be displayed on "
 "the front page"
 msgstr ""
 
-#: ../inc/customizer-includes/customizer-theme-options.php:115
+#: ../inc/customizer-includes/customizer-theme-options.php:121
 msgid "Homepage / Frontpage Options"
 msgstr ""
 
-#: ../inc/customizer-includes/customizer-theme-options.php:125
+#: ../inc/customizer-includes/customizer-theme-options.php:131
 msgid "Select Categories"
 msgstr ""
 
-#: ../inc/customizer-includes/customizer-theme-options.php:139
+#: ../inc/customizer-includes/customizer-theme-options.php:145
 #: ../inc/metabox.php:85
 msgid "Layout Options"
 msgstr ""
 
-#: ../inc/customizer-includes/customizer-theme-options.php:156
+#: ../inc/customizer-includes/customizer-theme-options.php:162
 msgid "Frontpage Posts Layout"
 msgstr ""
 
-#: ../inc/customizer-includes/customizer-theme-options.php:175
+#: ../inc/customizer-includes/customizer-theme-options.php:181
 msgid "Default Layout"
 msgstr ""
 
-#: ../inc/customizer-includes/customizer-theme-options.php:201
+#: ../inc/customizer-includes/customizer-theme-options.php:207
 msgid "Archive Content Layout"
 msgstr ""
 
-#: ../inc/customizer-includes/customizer-theme-options.php:221
+#: ../inc/customizer-includes/customizer-theme-options.php:227
 #: ../inc/metabox.php:87
 msgid "Single Page/Post Image Layout "
 msgstr ""
 
-#: ../inc/customizer-includes/customizer-theme-options.php:239
+#: ../inc/customizer-includes/customizer-theme-options.php:245
 #, php-format
 msgid ""
 "Infinite Scroll Options requires <a target=\"_blank\" href=\"%s\">JetPack "
 "Plugin</a> with Infinite Scroll module Enabled."
 msgstr ""
 
-#: ../inc/customizer-includes/customizer-theme-options.php:247
+#: ../inc/customizer-includes/customizer-theme-options.php:253
 msgid "Pagination Options"
 msgstr ""
 
-#: ../inc/customizer-includes/customizer-theme-options.php:264
+#: ../inc/customizer-includes/customizer-theme-options.php:270
 msgid "Pagination type"
 msgstr ""
 
-#: ../inc/customizer-includes/customizer-theme-options.php:275
+#: ../inc/customizer-includes/customizer-theme-options.php:281
 msgid "Scrollup Options"
 msgstr ""
 
-#: ../inc/customizer-includes/customizer-theme-options.php:285
+#: ../inc/customizer-includes/customizer-theme-options.php:291
 msgid "Check to disable Scroll Up"
 msgstr ""
 
-#: ../inc/customizer-includes/customizer-theme-options.php:294
+#: ../inc/customizer-includes/customizer-theme-options.php:300
 msgid "Change default placeholder text in Search."
 msgstr ""
 
-#: ../inc/customizer-includes/customizer-theme-options.php:297
+#: ../inc/customizer-includes/customizer-theme-options.php:303
 msgid "Search Options"
 msgstr ""
 
-#: ../inc/customizer-includes/customizer-theme-options.php:307
+#: ../inc/customizer-includes/customizer-theme-options.php:313
 msgid "Default Display Text in Search"
+msgstr ""
+
+#: ../inc/customizer-includes/upgrade-button/class-customize.php:76
+msgid "Create Pro"
+msgstr ""
+
+#: ../inc/customizer-includes/upgrade-button/class-customize.php:77
+msgid "Upgrade Now"
 msgstr ""
 
 #: ../inc/customizer.php:28
@@ -385,8 +369,8 @@ msgstr ""
 msgid "Important Links"
 msgstr ""
 
-#: ../inc/customizer.php:140
-msgid "Upgrade To Pro &raquo;"
+#: ../inc/customizer.php:139
+msgid "Refresh the customizer page after saving to view reset effects"
 msgstr ""
 
 #: ../inc/default-options.php:32
@@ -574,12 +558,10 @@ msgstr ""
 msgid "Create Options"
 msgstr ""
 
-# @ create
 #: ../inc/structure.php:55
 msgid "Skip to content"
 msgstr ""
 
-# @ create
 #: ../inc/structure.php:120
 msgid "Menu"
 msgstr ""
@@ -607,212 +589,176 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-# @ create
 #: ../inc/template-tags.php:41
 msgid "Posts navigation"
 msgstr ""
 
-# @ create
 #: ../inc/template-tags.php:45
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-# @ create
 #: ../inc/template-tags.php:49
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-# @ create
 #: ../inc/template-tags.php:74
 msgid "Post navigation"
 msgstr ""
 
-# @ create
 #: ../inc/template-tags.php:77
 msgctxt "Previous post link"
 msgid "<span class=\"meta-nav\">&larr;</span>&nbsp;%title"
 msgstr ""
 
-# @ create
 #: ../inc/template-tags.php:78
 msgctxt "Next post link"
 msgid "%title&nbsp;<span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-# @ create
 #: ../inc/template-tags.php:104
 #, php-format
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr ""
 
-# @ create
 #: ../inc/template-tags.php:109
 #, php-format
 msgctxt "post author"
 msgid "by %s"
 msgstr ""
 
-# @ create
 #. translators: used between list items, there is a space after the comma
 #: ../inc/template-tags.php:126 ../inc/template-tags.php:132
 msgid ", "
 msgstr ""
 
-# @ create
 #: ../inc/template-tags.php:128
 #, php-format
 msgid "Posted in %1$s"
 msgstr ""
 
-# @ create
 #: ../inc/template-tags.php:134
 #, php-format
 msgid "Tagged %1$s"
 msgstr ""
 
-# @ create
 #: ../inc/template-tags.php:140
 msgid "Leave a comment"
 msgstr ""
 
-# @ create
 #: ../inc/template-tags.php:140
 msgid "1 Comment"
 msgstr ""
 
-# @ create
 #: ../inc/template-tags.php:140
 msgid "% Comments"
 msgstr ""
 
-# @ create
 #: ../inc/template-tags.php:161
 #, php-format
 msgid "Category: %s"
 msgstr ""
 
-# @ create
 #: ../inc/template-tags.php:163
 #, php-format
 msgid "Tag: %s"
 msgstr ""
 
-# @ create
 #: ../inc/template-tags.php:165
 #, php-format
 msgid "Author: %s"
 msgstr ""
 
-# @ create
 #: ../inc/template-tags.php:167
 #, php-format
 msgid "Year: %s"
 msgstr ""
 
-# @ create
 #: ../inc/template-tags.php:167
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-# @ create
 #: ../inc/template-tags.php:169
 #, php-format
 msgid "Month: %s"
 msgstr ""
 
-# @ create
 #: ../inc/template-tags.php:169
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
-# @ create
 #: ../inc/template-tags.php:171
 #, php-format
 msgid "Day: %s"
 msgstr ""
 
-# @ create
 #: ../inc/template-tags.php:171
 msgctxt "daily archives date format"
 msgid "F j, Y"
 msgstr ""
 
-# @ create
 #: ../inc/template-tags.php:173
 msgctxt "post format archive title"
 msgid "Asides"
 msgstr ""
 
-# @ create
 #: ../inc/template-tags.php:175
 msgctxt "post format archive title"
 msgid "Galleries"
 msgstr ""
 
-# @ create
 #: ../inc/template-tags.php:177
 msgctxt "post format archive title"
 msgid "Images"
 msgstr ""
 
-# @ create
 #: ../inc/template-tags.php:179
 msgctxt "post format archive title"
 msgid "Videos"
 msgstr ""
 
-# @ create
 #: ../inc/template-tags.php:181
 msgctxt "post format archive title"
 msgid "Quotes"
 msgstr ""
 
-# @ create
 #: ../inc/template-tags.php:183
 msgctxt "post format archive title"
 msgid "Links"
 msgstr ""
 
-# @ create
 #: ../inc/template-tags.php:185
 msgctxt "post format archive title"
 msgid "Statuses"
 msgstr ""
 
-# @ create
 #: ../inc/template-tags.php:187
 msgctxt "post format archive title"
 msgid "Audio"
 msgstr ""
 
-# @ create
 #: ../inc/template-tags.php:189
 msgctxt "post format archive title"
 msgid "Chats"
 msgstr ""
 
-# @ create
 #: ../inc/template-tags.php:191
 #, php-format
 msgid "Archives: %s"
 msgstr ""
 
-# @ create
 #. translators: 1: Taxonomy singular name, 2: Current taxonomy term
 #: ../inc/template-tags.php:195
 #, php-format
 msgid "%1$s: %2$s"
 msgstr ""
 
-# @ create
 #: ../inc/template-tags.php:197 ../sidebar.php:23
 msgid "Archives"
 msgstr ""
 
-# @ create
 #: ../search.php:16
 #, php-format
 msgid "Search Results for: %s"

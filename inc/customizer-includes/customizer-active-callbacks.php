@@ -24,7 +24,7 @@ if( ! function_exists( 'create_is_slider_active' ) ) :
 		$enable = $control->manager->get_setting( 'featured_slider_option' )->value();
 
 		//return true only if previwed page on customizer matches the type of slider option selected
-		return ( $enable == 'entire-site' || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && $enable == 'homepage' ) );
+		return ( 'entire-site' == $enable  || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && 'homepage' == $enable  ) );
 	}
 endif;
 
@@ -48,6 +48,6 @@ if( ! function_exists( 'create_is_demo_slider_inactive' ) ) :
 		$type 	= $control->manager->get_setting( 'featured_slider_type' )->value();
 
 		//return true only if previwed page on customizer matches the type of slider option selected and is not demo slider
-		return ( ( $enable == 'entire-site' || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && $enable == 'homepage' ) ) && !( 'demo-featured-slider' == $type ) );
+		return ( ( 'entire-site' == $enable  || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && 'homepage' == $enable  ) ) && !( 'demo-featured-slider' == $type ) );
 	}
 endif;
