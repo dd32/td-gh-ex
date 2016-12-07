@@ -54,8 +54,38 @@ if ( ! function_exists( 'aaron_setup' ) ) {
 		 */
 		add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
 
+		add_theme_support( 'customize-selective-refresh-widgets' );
+
+		add_theme_support( 'starter-content', array(
+			'nav_menus' => array(
+				'social' => array(
+					'name' 	=> __( 'Social Menu', 'aaron' ),
+					'items' => array(
+						'link_facebook',
+						'link_twitter',
+						'link_instagram',
+						'link_email',
+					),
+				),
+			),
+			'options' => array(
+				'show_on_front' => 'posts',
+			),
+			'widgets' => array(
+				'sidebar-front' => array(
+					'search',
+					'recent-posts',
+					'recent-comments',
+				),
+				// This sidebar is visible in the footer.
+				'sidebar-2' => array(
+					'text_about',
+					'text_business_info',
+				),
+			),
+		) );
 	}
-}
+}  // End if().
 add_action( 'after_setup_theme', 'aaron_setup' );
 
 
@@ -73,7 +103,6 @@ if ( ! get_theme_mod( 'aaron_hide_search' ) ) {
 	}
 	add_filter( 'wp_nav_menu_items','aaron_menu_search', 10, 2 );
 }
-
 
 /**
 * Aaron_hide_title
@@ -189,6 +218,11 @@ if ( ! function_exists( 'aaron_fonts_url' ) ) {
  * Enqueue scripts and styles.
  */
 function aaron_scripts() {
+	 /* If using a child theme, auto-load the parent theme style. */
+	if ( is_child_theme() ) {
+		wp_enqueue_style( 'parent-style', trailingslashit( get_template_directory_uri() ) . 'style.css' );
+	}
+
 	wp_enqueue_style( 'aaron-style', get_stylesheet_uri(), array( 'dashicons' ) );
 	wp_enqueue_style( 'aaron-fonts', aaron_fonts_url(), array(), null );
 	wp_enqueue_style( 'open-sans' );
@@ -205,10 +239,6 @@ function aaron_scripts() {
 		wp_enqueue_script( 'aaron-grid', get_template_directory_uri() . '/js/grid.js', array(), true );
 	}
 
-	 /* If using a child theme, auto-load the parent theme style. */
-	if ( is_child_theme() ) {
-		wp_enqueue_style( 'parent-style', trailingslashit( get_template_directory_uri() ) . 'style.css' );
-	}
 }
 add_action( 'wp_enqueue_scripts', 'aaron_scripts' );
 
@@ -259,17 +289,15 @@ require get_template_directory() . '/inc/metabox.php';
  */
 require get_template_directory() . '/documentation.php';
 
-
 /* Add a title to posts that are missing titles */
 add_filter( 'the_title', 'aaron_post_title' );
 function aaron_post_title( $title ) {
-	if ( $title === '' ) {
+	if ( '' === $title ) {
 		return __( '(Untitled)', 'aaron' );
 	} else {
 		return $title;
 	}
 }
-
 
 add_filter( 'body_class', 'aaron_classes' );
 function aaron_classes( $classes ) {
@@ -315,10 +343,8 @@ function aaron_customize_css() {
 	<?php
 	}
 
-	echo ".site-title,
-		.site-title a {
-		  	color:#" . esc_attr( get_header_textcolor() ) . ";
-		  }\n";
+	echo '.site-title,
+		.site-title a {	color:#' . esc_attr( get_header_textcolor() ) . "; }\n";
 
 	// If the site title text color is black, turn off the text shadow, or the text will be too blurry.
 	if ( get_header_textcolor() === '000000' ) {
@@ -327,7 +353,7 @@ function aaron_customize_css() {
 
 	// Call to Action text color.
 	if ( get_theme_mod( 'aaron_action_color' ) ) {
-		echo "#action, #action a { color:" . esc_attr( get_theme_mod( 'aaron_action_color', '#ffffff' ) ) . "; }\n";
+		echo '#action, #action a { color:' . esc_attr( get_theme_mod( 'aaron_action_color', '#ffffff' ) ) . "; }\n";
 	}
 
 	// If the Call to action text color is black, turn off the text shadow, or the text will be too blurry.
@@ -337,7 +363,7 @@ function aaron_customize_css() {
 
 	// Call to Action background color.
 	if ( get_theme_mod( 'aaron_action_bgcolor' ) ) {
-		echo "#action, #action a { background:#" . esc_attr( get_theme_mod( 'aaron_action_bgcolor', 'none' ) ) . "; }\n";
+		echo '#action, #action a { background:#' . esc_attr( get_theme_mod( 'aaron_action_bgcolor', 'none' ) ) . "; }\n";
 	}
 
 	// Change UPPERCASE to Capitalized Text Instead.
@@ -357,7 +383,7 @@ function aaron_customize_css() {
 			.comment-reply-title,
 			.featured-headline,
 			.testimonial-entry-title,
-			.featured-post h2 { text-transform:' . esc_attr( get_theme_mod( 'aaron_caps' ) ) . '; }\n';
+			.featured-post h2 { text-transform:' . esc_attr( get_theme_mod( 'aaron_caps' ) ) . "; }\n";
 	}
 
 	// Font setting.
@@ -404,20 +430,20 @@ function aaron_customize_css() {
 
 	// No tagline or call to action is visible, lets add some padding inside the header.
 	if ( is_singular() && aaron_get_meta( 'aaron_show_header' ) && aaron_get_meta( 'aaron_hide_tagline' ) && aaron_get_meta( 'aaron_hide_action_meta' )
-		|| is_singular() && aaron_get_meta( 'aaron_show_header' ) && bloginfo( 'description' )=='' && aaron_get_meta( 'aaron_hide_action_meta' ) 
-		|| is_home() && aaron_get_meta( 'aaron_show_header' ) && aaron_get_meta('aaron_hide_tagline') && aaron_get_meta( 'aaron_hide_action_meta' ) && ! is_front_page()
-		|| is_home() && aaron_get_meta( 'aaron_show_header' ) && bloginfo( 'description' )=='' && aaron_get_meta( 'aaron_hide_action_meta' ) && ! is_front_page() ) {
+		|| is_singular() && aaron_get_meta( 'aaron_show_header' ) && bloginfo( 'description' ) == '' && aaron_get_meta( 'aaron_hide_action_meta' )
+		|| is_home() && aaron_get_meta( 'aaron_show_header' ) && aaron_get_meta( 'aaron_hide_tagline' ) && aaron_get_meta( 'aaron_hide_action_meta' )
+		&& ! is_front_page() || is_home() && aaron_get_meta( 'aaron_show_header' ) && bloginfo( 'description' ) == '' && aaron_get_meta( 'aaron_hide_action_meta' ) && ! is_front_page() ) {
 		echo ".site-branding {padding-bottom: 45px;}\n";
 	}
 
 	// When combining a post or page with a header, reduce the space between the header and the content.
-	if ( is_singular() && aaron_get_meta( 'aaron_show_header') ) {
+	if ( is_singular() && aaron_get_meta( 'aaron_show_header' ) ) {
 		echo ".page .site-content,\n
 			.single .site-content {margin-top: 45px;}\n";
 	}
 
 	if ( get_theme_mod( 'aaron_width' ) ) {
-		echo ".site-content {width: " . esc_attr( get_theme_mod( 'aaron_width' ) ) . "%; margin-left: auto; margin-right: auto;}\n";
+		echo '.site-content {width: ' . esc_attr( get_theme_mod( 'aaron_width' ) ) . "%; margin-left: auto; margin-right: auto;}\n";
 	}
 
 	if ( get_theme_mod( 'aaron_unstick' ) ) {
@@ -432,3 +458,65 @@ function aaron_customize_css() {
 	echo '</style>';
 }
 add_action( 'wp_head', 'aaron_customize_css' );
+
+
+if ( ! function_exists( 'aaron_top_sections' ) ) {
+
+	function aaron_top_sections() {
+		/* The front page sections should not display on the blog listing page. */
+		if ( is_front_page() && is_home() ) {
+			if ( get_theme_mod( 'aaron_top_section1' ) || get_theme_mod( 'aaron_top_section2' ) || get_theme_mod( 'aaron_top_section3' ) ) {
+				$args = array(
+					'post_type' => 'page',
+					'orderby' => 'post__in',
+					'post__in' => array(
+						get_theme_mod( 'aaron_top_section1' ),
+						get_theme_mod( 'aaron_top_section2' ),
+						get_theme_mod( 'aaron_top_section3' ),
+					),
+				);
+
+				$top_section_query = new WP_Query( $args );
+
+		     	if ( $top_section_query->have_posts() ) {
+		     		while ( $top_section_query->have_posts() ) : $top_section_query->the_post();
+						get_template_part( 'content', 'top' );
+					endwhile;
+					wp_reset_postdata();
+				}
+			}
+		}
+	}
+}
+
+if ( ! function_exists( 'aaron_bottom_sections' ) ) {
+	function aaron_bottom_sections() {
+		/*
+		* We have finished printing the latest posts. Check if there are bottom section pages to show:
+		* The front page sections should not display on the blog listing page.
+		*/
+		if ( is_front_page() && is_home() ) {
+			if ( get_theme_mod( 'aaron_bottom_section1' ) or get_theme_mod( 'aaron_bottom_section2' ) or get_theme_mod( 'aaron_bottom_section3' ) ) {
+
+				$args = array(
+					'post_type' => 'page',
+					'orderby' => 'post__in',
+					'post__in' => array(
+						get_theme_mod( 'aaron_bottom_section1' ),
+						get_theme_mod( 'aaron_bottom_section2' ),
+						get_theme_mod( 'aaron_bottom_section3' ),
+						),
+				);
+
+	     		$bottom_section_query = new WP_Query( $args );
+
+	     		if ( $bottom_section_query->have_posts() ) {
+		     		while ( $bottom_section_query->have_posts() ) : $bottom_section_query->the_post();
+						get_template_part( 'content', 'bottom' );
+					endwhile;
+					wp_reset_postdata();
+				}
+			}
+		}
+	}
+}

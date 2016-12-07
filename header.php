@@ -25,7 +25,8 @@
 	if ( has_nav_menu( 'header' )  ) {
 	?>
 		<nav id="site-navigation" class="main-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-			<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><span class="screen-reader-text"><?php esc_html_e( 'Main Menu', 'aaron' ); ?></span></button>
+			<button class="menu-toggle" aria-controls="menu" aria-expanded="false">
+			<span class="screen-reader-text"><?php esc_html_e( 'Main Menu', 'aaron' ); ?></span></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'header', 'fallback_cb' => false, 'depth' => 2, 'container' => false ) ); ?>
 		</nav><!-- #site-navigation -->
 	<?php

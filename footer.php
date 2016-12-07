@@ -36,15 +36,21 @@
 		}
 		?>
 		<div class="site-info">
-			<?php
-			if ( is_active_sidebar( 'sidebar-copyright' ) ) { ?>
-				<div class="widget-area" role="complementary"> <?php dynamic_sidebar( 'sidebar-copyright' ); ?></div><!-- #secondary -->
-			<?php
-			}
-			?>
-		<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'aaron' ) ); ?>" class="credit"><?php printf( esc_html__( 'Proudly powered by %s', 'aaron' ), 'WordPress' ); ?></a>
-		<span class="sep"> | </span>
-		<a href="<?php echo esc_url( 'http://wptema.se/aaron' ); ?>" rel="nofollow"><?php printf( esc_html__( 'Theme: %1$s by Carolina', 'aaron' ), 'Aaron' ); ?></a>
+		<?php
+		if ( is_active_sidebar( 'sidebar-copyright' ) ) { ?>
+			<div class="widget-area" role="complementary"> <?php dynamic_sidebar( 'sidebar-copyright' ); ?></div><!-- #secondary -->
+		<?php
+		}
+
+		if ( ! get_theme_mod( 'aaron_hide_credits' ) ) {	?>
+			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'aaron' ) ); ?>" class="credit">
+			<?php printf( esc_html__( 'Proudly powered by %s', 'aaron' ), 'WordPress' ); ?></a>
+			<span class="sep"> | </span>
+			<a href="<?php echo esc_url( 'http://wptema.se/aaron' ); ?>" rel="nofollow">
+			<?php printf( esc_html__( 'Theme: %1$s by Carolina', 'aaron' ), 'Aaron' ); ?></a>
+		<?php
+		}
+		?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
