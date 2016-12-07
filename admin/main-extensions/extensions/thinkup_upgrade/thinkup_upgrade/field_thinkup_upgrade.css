@@ -23,6 +23,11 @@ body.wp-customizer .wp-full-overlay-sidebar .wp-full-overlay-header {
 	height: 100px !important;
 }
 
+/* Remove spacing above Change tab hover color */
+#customize-theme-controls .control-section-themes > .accordion-section-title {
+	margin-bottom: 0 !important;
+	border: none !important;
+}
 
 /* ----------------------------------------------------------------------------------------------------------
 	1. UPGRADE NOW - TAB
@@ -40,6 +45,7 @@ body.wp-customizer .wp-full-overlay-sidebar .wp-full-overlay-header {
 #customize-theme-controls #accordion-section-thinkup_section_upgrade.control-panel.control-panel-redux h3.accordion-section-title:focus {
     color: #fff !important;
     background: #0067CE !important;
+    border-color: #0067CE !important;
 }
 #customize-theme-controls #accordion-section-thinkup_section_upgrade.control-section.control-section-redux > h3.accordion-section-title:after,
 #customize-theme-controls #accordion-section-thinkup_section_upgrade.control-section.control-section-redux:hover > h3.accordion-section-title:after,

@@ -127,6 +127,59 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.4.0
+- Updated: Fully compatible with WordPress v4.7.
+
+Version 1.3.19
+- Updated: Improved escaping of outputs in 00.theme-setup.php.
+
+Version 1.3.18
+- New:     Function thinkup_photon_exception() added to ensure theme theme bundled transparent.png image displays correctly when Jetpack Photon is activated.
+
+Version 1.3.17
+- Fixed:   Function thinkup_input_sliderpage() removed from header.php. Caused Fatal issue with version previous version.
+
+Version 1.3.16
+- Updated: Logo alt tag now translation ready.
+- Updated: Improved escaping of outputs in 02.homepage.php.
+- Updated: Function thinkup_input_sliderpage() removed as it's not being used in the theme.
+
+Version 1.3.15
+- Fixed:   prettyPhoto.js now fully compatible with https sites.
+- Updated: Font Awesome library updated to latest version v4.6.3. Ensures all icons in FA library are available to use.
+
+Version 1.3.14
+- Updated: Improved validation in a number of files in the main theme folder.
+- Updated: 08.special-pages.php removed and 404 page content added directly to 404.php.
+- Updated: thinkup_Walker_Nav_Menu_Responsive() renamed to thinkup_nav_menu_responsive().
+
+Version 1.3.13
+- Fixed:   Custom Redux extensions now moved to folder main-extensions to ensure compatibility with Redux plugin. Ensures plugin and theme can be used without conflicting.
+- Updated: "ReduxFramework::$_url . 'assets/img/layout" changed to "trailingslashit( get_template_directory_uri() ) . 'admin/main/assets/img/layout"
+
+Version 1.3.12
+- Fixed:   ThinkUpSlider now checks to see if any slide is assigned, rather than just the first slide. Corrects issue where deleting slides resulted in issues.
+
+Version 1.3.11
+- Updated: Font Awesome library updates to prevent conflicts with latest version.
+
+Version 1.3.10
+- Fixed:   Checkbox field saves as as "off" when unticked.
+- Fixed:   Switch field saves as as "off" when switched off.
+- Fixed:   Full post content on blog archive pages only displayed if explicitly set by user in theme options.
+- Fixed:   Masonry script now output on all archive pages. Fixes issue where masonry layout didn't work on category and tags pages.
+- Updated: Links in breadcrumb function sanitized.
+- Updated: thinkup_input_wptitle() outputs at start of wp_head().
+- Updated: style-shortcodes.css updated to be consistent with all themes.
+- Updated: Link to gmpg.org in header.php now compatible with https sites.
+- Updated: All references to textdomain 'themecheck' changed to 'redux-framework'.
+- Updated: Links to widgets page changed from /wp-admin/widgets.php to esc_url( admin_url( 'widgets.php' ) ).
+- Updated: Homepage (Content) section renamed to Homepage (Featured) to make it clear that the section is intended for minimal content.
+- Updated: Theme tags updated to reflect new tags. Old rags will be removed once WP v4.6 is released and users can no longer filter with old tags.
+- Removed: alert( 'test000' ); removed from jquery.serializeForm.js.
+- Removed: //alert( 'test11-22' ); removed from extension_customizer.min.js.
+- Removed: Deregistered redux scripts removed for compliance with .org requirements 'wpb_ace' and 'jquerySelect2'.
+
 Version 1.3.9
 - Fixed:   Post content displayed on main blog page can be set by user using core WordPress <!--more--> tag.
 - Updated: Logo image width set to "auto".

@@ -17,7 +17,7 @@ global $thinkup_general_sitedescription;
 
 	if ( $thinkup_general_logoswitch == "option1" ) {
 		if ( ! empty( $thinkup_general_logolink ) ) {
-			echo '<img src="' . $thinkup_general_logolink . '" alt="Logo">';
+			echo '<img src="' . $thinkup_general_logolink . '" alt="' . esc_attr__( 'Logo', 'lan-thinkupthemes' ) . '">';
 		} 
 	} else if ( $thinkup_general_logoswitch == "option2" or empty( $thinkup_general_logoswitch ) ) {
 		if ( empty( $thinkup_general_sitetitle ) ) {
@@ -53,7 +53,7 @@ function thinkup_custom_favicon() {
 global $thinkup_general_faviconlink;
 
 	if ( ! empty( $thinkup_general_faviconlink ) ) {
-		echo '<link rel="Shortcut Icon" type="image/x-icon" href="' . $thinkup_general_faviconlink . '" />';
+		echo '<link rel="Shortcut Icon" type="image/x-icon" href="' . esc_url( $thinkup_general_faviconlink ) . '" />';
 	}	
 }
 add_action('wp_head', 'thinkup_custom_favicon');
@@ -362,7 +362,7 @@ function thinkup_custom_intro() {
 ---------------------------------------------------------------------------------- */
 
 /* http://wordpress.stackexchange.com/questions/40753/add-parent-class-to-parent-menu-items */
-class thinkup_Walker_Nav_Menu_Responsive extends Walker_Nav_Menu{
+class thinkup_nav_menu_responsive extends Walker_Nav_Menu{
 
     public function start_el(&$output, $item, $depth = 0, $args=array(), $id = 0){
 
@@ -394,7 +394,7 @@ global $thinkup_general_fixedlayoutswitch;
 			'container_id'    => 'header-responsive-inner', 
 			'menu_class'      => '', 
 			'theme_location'  => 'header_menu', 
-			'walker'          => new thinkup_Walker_Nav_Menu_Responsive(), 
+			'walker'          => new thinkup_nav_menu_responsive(), 
 			'fallback_cb'     => 'thinkup_input_responsivefall',
 		);
 
@@ -433,11 +433,6 @@ add_action( 'body_class', 'thinkup_input_responsiveclass');
 
 
 /* ----------------------------------------------------------------------------------
-	Enable Boxed Layout - PREMIUM FEATURE
----------------------------------------------------------------------------------- */
-
-
-/* ----------------------------------------------------------------------------------
 	Enable Breadcrumbs
 ---------------------------------------------------------------------------------- */
 
@@ -463,17 +458,6 @@ $_thinkup_meta_breadcrumbs = get_post_meta( $post->ID, '_thinkup_meta_breadcrumb
 
 
 /* ----------------------------------------------------------------------------------
-	Enable Comments on Pages
----------------------------------------------------------------------------------- */
-
-/* Code can be found in blog.php under heading ALLOW USER COMMENTS */
-
-/* ----------------------------------------------------------------------------------
-	Google Analytics Code - PREMIUM FEATURE
----------------------------------------------------------------------------------- */
-
-
-/* ----------------------------------------------------------------------------------
 	Custom CSS
 ---------------------------------------------------------------------------------- */
 
@@ -486,12 +470,12 @@ $_thinkup_meta_customcss = get_post_meta( $post->ID, '_thinkup_meta_customcss', 
 
 	if ( ! empty( $thinkup_general_customcss ) ) {
 		echo 	"\n" .'<style type="text/css">' . "\n",
-				esc_html( $thinkup_general_customcss ) . "\n",
+				wp_kses_post( $thinkup_general_customcss ) . "\n",
 				'</style>' . "\n";
 	}
 	if ( ! is_front_page() and ! empty( $_thinkup_meta_customcss ) ) {
 		echo 	"\n" .'<style type="text/css">' . "\n",
-				$_thinkup_meta_customcss . "\n",
+				wp_kses_post( $_thinkup_meta_customcss ) . "\n",
 				'</style>' . "\n";
 	}
 }

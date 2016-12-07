@@ -23,23 +23,28 @@
 				$( target_control ).removeClass( 'thinkup-width-950' );
 				$( target_preview ).removeClass( 'thinkup-width-950' );
 
-				// Remove width classes
+				// Add width classes
 				$( target_control ).addClass( 'thinkup-width-450' );
 				$( target_preview ).addClass( 'thinkup-width-450' );
 			});
 
 
-			// Remove width classed WordPress v4.3+
-			$( 'body.wp-customizer #accordion-panel-thinkup_theme_options > ul > li > .customize-panel-back' || '.control-panel-back' ).click(function(e){ 
+			// Remove width classes WordPress v4.3+
+			$( 'body.wp-customizer [id*="panel-thinkup_theme_options"] .accordion-section > button, body.wp-customizer [id*="section-thinkup_section_upgrade"] .customize-section-title > button' ).click(function(e){ 
 
 				var target_control = '#customize-controls';
 				var target_preview = '#customize-preview';
 
 				$( target_control ).removeClass( 'thinkup-width-450' );
 				$( target_preview ).removeClass( 'thinkup-width-450' );
+
+				// Remove width classes for upgrade section
+				$( target_control ).removeClass( 'thinkup-width-950' );
+				$( target_preview ).removeClass( 'thinkup-width-950' );
+
 			});
 
-			// Remove width classed WordPress pre v4.3
+			// Remove width classes WordPress pre v4.3
 			$( 'body.wp-customizer #customize-header-actions > .primary-actions > .control-panel-back' ).click(function(e){ 
 
 				var target_control = '#customize-controls';

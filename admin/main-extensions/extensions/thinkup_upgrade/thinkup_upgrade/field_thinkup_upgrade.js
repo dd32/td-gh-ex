@@ -24,15 +24,15 @@
 				$( target_control ).addClass( 'thinkup-width-950' );
 			});
 
-			// Remove width classed WordPress v4.3+
-			$('body.wp-customizer #accordion-section-thinkup_section_upgrade .customize-section-back' ).click(function(e){ 
+			// Remove width classes WordPress v4.3+
+			$( 'body.wp-customizer [id*="panel-thinkup_theme_options"] .accordion-section > button, body.wp-customizer [id*="section-thinkup_section_upgrade"] .customize-section-title > button' ).click(function(e){ 
 
 				var target_control = '#customize-controls';
 				
 				$( target_control ).removeClass( 'thinkup-width-950' );
 			});
 
-			// Remove width classed WordPress pre v4.3
+			// Remove width classes WordPress pre v4.3
 			$( 'body.wp-customizer #customize-header-actions .primary-actions > .control-panel-back' ).click(function(e){ 
 
 				var target_control = '#customize-controls';
