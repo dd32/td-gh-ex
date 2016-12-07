@@ -12,7 +12,7 @@
 	global $catchevolution_options_settings;
     $options = $catchevolution_options_settings;
 	$layout = $options[ 'sidebar_layout' ];
-	if ( $layout == 'no-sidebar-full-width' ) {
+	if ( 'no-sidebar-full-width' == $layout ) {
 		$imagesize = "featured-slider-larger";
 	}
 	else {

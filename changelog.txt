@@ -1,5 +1,9 @@
 == Change Log ==
 
+2.9.1
+* Updated: Custom CSS to Additional CSS( Core Support ) for WP version 4.7
+* Code Optimization
+
 2.9
 * Bug Fixed: Image size with border
 * Bug Fixed: Reset Options in customizer updated

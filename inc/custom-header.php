@@ -170,7 +170,7 @@ function catchevolution_admin_header_image() { ?>
 		<?php
 		$color = get_header_textcolor();
 		$image = get_header_image();
-		if ( $color && $color != 'blank' )
+		if ( $color && 'blank' != $color )
 			$style = ' style="color:#' . $color . '"';
 		else
 			$style = ' style="display:none"';

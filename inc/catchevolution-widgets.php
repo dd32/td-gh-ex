@@ -202,14 +202,14 @@ class catchevolution_adwidget extends WP_Widget {
 		endif;
 
 		echo $before_widget;
-		if ( $title != '' ) {
+		if ( '' != $title ) {
 			echo $before_title . apply_filters( 'widget_title', $title, $instance, $this->id_base ) . $after_title;
 		}
 		else {
 			echo '<span class="paddingtop"></span>';
 		}
 
-		if ( $adcode != '' ) {
+		if ( '' != $adcode ) {
 			echo $adcode;
 		}
 		else {
@@ -288,7 +288,7 @@ class catchevolution_social_search_widget extends WP_Widget {
 		$title = !empty( $instance['title'] ) ? $instance[ 'title' ] : '';
 
 		echo $before_widget;
-		if ( $title != '' ) {
+		if ( '' != $title ) {
 			echo $before_title . apply_filters( 'widget_title', $title, $instance, $this->id_base ) . $after_title;
 		}
 
@@ -367,7 +367,7 @@ class catchevolution_social_widget extends WP_Widget {
 		$title = !empty( $instance['title'] ) ? $instance[ 'title' ] : '';
 
 		echo $before_widget;
-		if ( $title != '' ) {
+		if ( '' != $title ) {
 			echo $before_title . apply_filters( 'widget_title', $title, $instance, $this->id_base ) . $after_title;
 		}
 

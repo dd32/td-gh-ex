@@ -548,29 +548,36 @@ function catchevolution_theme_options_do_page() {
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->
 
-                    <div class="option-container">
-                        <h3 class="option-toggle"><a href="#"><?php _e( 'Custom CSS', 'catch-evolution' ); ?></a></h3>
-                        <div class="option-content inside">
-                            <table class="form-table">
-                                <tbody>
-                                    <tr>
-                                        <th scope="row"><?php _e( 'Enter your custom CSS styles.', 'catch-evolution' ); ?></th>
-                                        <td>
-                                            <textarea name="catchevolution_options[custom_css]" id="custom-css" cols="90" rows="12"><?php echo esc_attr( $options[ 'custom_css' ] ); ?></textarea>
-                                        </td>
-                                    </tr>
+                    <?php
+                    // @remove if block when WP 5.0 is released
+                    if ( ! function_exists( 'wp_update_custom_css_post' ) ) {
+                    ?>
+                        <div class="option-container">
+                            <h3 class="option-toggle"><a href="#"><?php _e( 'Custom CSS', 'catch-evolution' ); ?></a></h3>
+                            <div class="option-content inside">
+                                <table class="form-table">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row"><?php _e( 'Enter your custom CSS styles.', 'catch-evolution' ); ?></th>
+                                            <td>
+                                                <textarea name="catchevolution_options[custom_css]" id="custom-css" cols="90" rows="12"><?php echo esc_attr( $options[ 'custom_css' ] ); ?></textarea>
+                                            </td>
+                                        </tr>
 
-                                    <tr>
-                                        <th scope="row"><?php _e( 'CSS Tutorial from W3Schools.', 'catch-evolution' ); ?></th>
-                                        <td>
-                                            <a class="button" href="<?php echo esc_url( __( 'http://www.w3schools.com/css/default.asp','catch-evolution' ) ); ?>" title="<?php esc_attr_e( 'CSS Tutorial', 'catch-evolution' ); ?>" target="_blank"><?php _e( 'Click Here to Read', 'catch-evolution' );?></a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save Changes', 'catch-evolution' ); ?>" /></p>
-                        </div><!-- .option-content -->
-                    </div><!-- .option-container -->
+                                        <tr>
+                                            <th scope="row"><?php _e( 'CSS Tutorial from W3Schools.', 'catch-evolution' ); ?></th>
+                                            <td>
+                                                <a class="button" href="<?php echo esc_url( __( 'http://www.w3schools.com/css/default.asp','catch-evolution' ) ); ?>" title="<?php esc_attr_e( 'CSS Tutorial', 'catch-evolution' ); ?>" target="_blank"><?php _e( 'Click Here to Read', 'catch-evolution' );?></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'catch-evolution' ); ?>" /></p>
+                            </div><!-- .option-content -->
+                        </div><!-- .option-container -->
+                    <?php
+                    }
+                    ?>
 
                 </div> <!-- #designsettings -->
 
@@ -999,10 +1006,11 @@ function catchevolution_theme_options_validate( $options ) {
 		$input_validated['feed_url'] = esc_url_raw($input['feed_url']);
 	}
 
-	// data validation for Custom CSS Style
-	if ( isset( $input['custom_css'] ) ) {
-		$input_validated['custom_css'] = wp_kses_stripslashes($input['custom_css']);
-	}
+	// Data Validation for Custom CSS Style
+    // @remove if block when WP 5.0 is released
+    if ( ! function_exists( 'wp_update_custom_css_post' )  && isset( $input['custom_css'] ) ) {
+        $input_validated['custom_css'] = wp_kses_stripslashes($input['custom_css']);
+    }
 
     if ( isset( $input['exclude_slider_post'] ) ) {
         // Our checkbox value is either 0 or 1

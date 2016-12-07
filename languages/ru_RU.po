@@ -1,7 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catch Evolution\n"
-"POT-Creation-Date: 2016-10-21 18:13+0545\n"
+"Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
+"POT-Creation-Date: 2016-12-07 14:43-0500\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -113,7 +114,7 @@ msgstr "Комментарии закрыты."
 #: ../content-gallery.php:16 ../content-gallery.php:48 ../content-image.php:15
 #: ../content-link.php:16 ../content-page.php:13 ../content-quote.php:14
 #: ../content-status.php:15 ../content.php:27 ../content.php:31
-#: ../content.php:63 ../inc/catchevolution-functions.php:608
+#: ../content.php:63 ../inc/catchevolution-functions.php:607
 #, php-format
 msgid "Permalink to %s"
 msgstr "Постоянная ссылка на %s"
@@ -162,8 +163,8 @@ msgstr "Страницы:"
 #: ../content-gallery.php:96 ../content-image.php:73 ../content-link.php:50
 #: ../content-page.php:27 ../content-quote.php:79 ../content-single.php:64
 #: ../content-status.php:51 ../content.php:120 ../image.php:97
-#: ../inc/catchevolution-functions.php:361
-#: ../inc/catchevolution-functions.php:389
+#: ../inc/catchevolution-functions.php:360
+#: ../inc/catchevolution-functions.php:388
 msgid "Edit"
 msgstr "Редактировать"
 
@@ -224,7 +225,7 @@ msgid "Image"
 msgstr "изображение"
 
 #: ../content-image.php:26 ../content.php:75
-#: ../inc/catchevolution-functions.php:219
+#: ../inc/catchevolution-functions.php:218
 #, php-format
 msgid "%s"
 msgstr "%s"
@@ -242,7 +243,7 @@ msgstr ""
 "\"sep\"> автор </span> <span class=\"author VCard\"><a class=\"url fn n\" "
 "href=\"%4$s\" title=\"%5$s\" rel=\"автор\">%6$s</a></span></span>"
 
-#: ../content-image.php:44 ../inc/catchevolution-functions.php:438
+#: ../content-image.php:44 ../inc/catchevolution-functions.php:437
 #, php-format
 msgid "View all posts by %s"
 msgstr "Просмотреть все статьи %s"
@@ -340,43 +341,43 @@ msgstr ""
 "\">%4$s &times; %5$s</a> в <a href=\"%6$s\" title=\"Вернуться к %7$s\" rel="
 "\"gallery\">%8$s</a>"
 
-#: ../inc/catchevolution-functions.php:274 ../single.php:15
+#: ../inc/catchevolution-functions.php:273 ../single.php:15
 msgid "Post navigation"
 msgstr "Навигация по статьям"
 
-#: ../inc/catchevolution-functions.php:282
+#: ../inc/catchevolution-functions.php:281
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> Предыдущие статьи"
 
-#: ../inc/catchevolution-functions.php:283
+#: ../inc/catchevolution-functions.php:282
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Новые статьи <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../inc/catchevolution-functions.php:361
+#: ../inc/catchevolution-functions.php:360
 msgid "Pingback:"
 msgstr "Pingback:"
 
 #. translators: 1: comment author, 2: date and time
-#: ../inc/catchevolution-functions.php:378
+#: ../inc/catchevolution-functions.php:377
 #, php-format
 msgid "%1$s on %2$s <span class=\"says\">said:</span>"
 msgstr "%1$s в %2$s <span class=\"говорит\">cказал :</span>"
 
 #. translators: 1: date, 2: time
-#: ../inc/catchevolution-functions.php:384
+#: ../inc/catchevolution-functions.php:383
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s к %2$s"
 
-#: ../inc/catchevolution-functions.php:393
+#: ../inc/catchevolution-functions.php:392
 msgid "Your comment is awaiting moderation."
 msgstr "Ваш комментарий ожидает модерации."
 
-#: ../inc/catchevolution-functions.php:402
+#: ../inc/catchevolution-functions.php:401
 msgid "Reply <span>&darr;</span>"
 msgstr "Ответ <span>&darr;</span>"
 
-#: ../inc/catchevolution-functions.php:432
+#: ../inc/catchevolution-functions.php:431
 #, php-format
 msgid ""
 "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel="
@@ -391,173 +392,173 @@ msgstr ""
 "<span class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s"
 "\" rel=\"author\">%7$s</a></span></span>"
 
-#: ../inc/catchevolution-functions.php:504
+#: ../inc/catchevolution-functions.php:503
 msgid "ID"
 msgstr "ID"
 
-#: ../inc/catchevolution-functions.php:782
+#: ../inc/catchevolution-functions.php:781
 msgid "Name"
 msgstr "Имя"
 
-#: ../inc/catchevolution-functions.php:784
-#: ../inc/catchevolution-functions.php:993
-#: ../inc/catchevolution-functions.php:1197
+#: ../inc/catchevolution-functions.php:783
+#: ../inc/catchevolution-functions.php:992
+#: ../inc/catchevolution-functions.php:1196
 #: ../inc/panel/customizer/customizer.php:653
-#: ../inc/panel/theme-options.php:790
+#: ../inc/panel/theme-options.php:797
 msgid "Email"
 msgstr "E-mail"
 
-#: ../inc/catchevolution-functions.php:898
-#: ../inc/catchevolution-functions.php:1102
+#: ../inc/catchevolution-functions.php:897
+#: ../inc/catchevolution-functions.php:1101
 #: ../inc/panel/customizer/customizer.php:463
-#: ../inc/panel/theme-options.php:107 ../inc/panel/theme-options.php:694
+#: ../inc/panel/theme-options.php:107 ../inc/panel/theme-options.php:701
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../inc/catchevolution-functions.php:903
-#: ../inc/catchevolution-functions.php:1107
+#: ../inc/catchevolution-functions.php:902
+#: ../inc/catchevolution-functions.php:1106
 #: ../inc/panel/customizer/customizer.php:473
-#: ../inc/panel/theme-options.php:108 ../inc/panel/theme-options.php:699
+#: ../inc/panel/theme-options.php:108 ../inc/panel/theme-options.php:706
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../inc/catchevolution-functions.php:908
-#: ../inc/catchevolution-functions.php:1112
+#: ../inc/catchevolution-functions.php:907
+#: ../inc/catchevolution-functions.php:1111
 #: ../inc/panel/customizer/customizer.php:483
-#: ../inc/panel/theme-options.php:704
+#: ../inc/panel/theme-options.php:711
 msgid "Google+"
 msgstr "Google+"
 
-#: ../inc/catchevolution-functions.php:913
-#: ../inc/catchevolution-functions.php:1117 ../inc/panel/theme-options.php:725
+#: ../inc/catchevolution-functions.php:912
+#: ../inc/catchevolution-functions.php:1116 ../inc/panel/theme-options.php:732
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: ../inc/catchevolution-functions.php:918
-#: ../inc/catchevolution-functions.php:1122
+#: ../inc/catchevolution-functions.php:917
+#: ../inc/catchevolution-functions.php:1121
 #: ../inc/panel/customizer/customizer.php:493
-#: ../inc/panel/theme-options.php:709
+#: ../inc/panel/theme-options.php:716
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../inc/catchevolution-functions.php:923
-#: ../inc/catchevolution-functions.php:1127
+#: ../inc/catchevolution-functions.php:922
+#: ../inc/catchevolution-functions.php:1126
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ../inc/catchevolution-functions.php:928
-#: ../inc/catchevolution-functions.php:1132
+#: ../inc/catchevolution-functions.php:927
+#: ../inc/catchevolution-functions.php:1131
 #: ../inc/panel/customizer/customizer.php:513
-#: ../inc/panel/theme-options.php:719
+#: ../inc/panel/theme-options.php:726
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../inc/catchevolution-functions.php:933
-#: ../inc/catchevolution-functions.php:1137
+#: ../inc/catchevolution-functions.php:932
+#: ../inc/catchevolution-functions.php:1136
 #: ../inc/panel/customizer/customizer.php:533
-#: ../inc/panel/theme-options.php:730
+#: ../inc/panel/theme-options.php:737
 msgid "AIM"
 msgstr "AIM"
 
-#: ../inc/catchevolution-functions.php:938
-#: ../inc/catchevolution-functions.php:1142
+#: ../inc/catchevolution-functions.php:937
+#: ../inc/catchevolution-functions.php:1141
 #: ../inc/panel/customizer/customizer.php:543
-#: ../inc/panel/theme-options.php:735
+#: ../inc/panel/theme-options.php:742
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../inc/catchevolution-functions.php:943
-#: ../inc/catchevolution-functions.php:1147
+#: ../inc/catchevolution-functions.php:942
+#: ../inc/catchevolution-functions.php:1146
 #: ../inc/panel/customizer/customizer.php:553
-#: ../inc/panel/theme-options.php:740
+#: ../inc/panel/theme-options.php:747
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../inc/catchevolution-functions.php:948
-#: ../inc/catchevolution-functions.php:1152
+#: ../inc/catchevolution-functions.php:947
+#: ../inc/catchevolution-functions.php:1151
 #: ../inc/panel/customizer/customizer.php:563
-#: ../inc/panel/theme-options.php:745
+#: ../inc/panel/theme-options.php:752
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../inc/catchevolution-functions.php:953
-#: ../inc/catchevolution-functions.php:1157
+#: ../inc/catchevolution-functions.php:952
+#: ../inc/catchevolution-functions.php:1156
 #: ../inc/panel/customizer/customizer.php:573
-#: ../inc/panel/theme-options.php:750
+#: ../inc/panel/theme-options.php:757
 msgid "deviantART"
 msgstr "deviantART"
 
-#: ../inc/catchevolution-functions.php:958
-#: ../inc/catchevolution-functions.php:1162
+#: ../inc/catchevolution-functions.php:957
+#: ../inc/catchevolution-functions.php:1161
 #: ../inc/panel/customizer/customizer.php:583
-#: ../inc/panel/theme-options.php:755
+#: ../inc/panel/theme-options.php:762
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../inc/catchevolution-functions.php:963
-#: ../inc/catchevolution-functions.php:1167
+#: ../inc/catchevolution-functions.php:962
+#: ../inc/catchevolution-functions.php:1166
 #: ../inc/panel/customizer/customizer.php:593
-#: ../inc/panel/theme-options.php:760
+#: ../inc/panel/theme-options.php:767
 msgid "WordPress"
 msgstr "WordPress"
 
-#: ../inc/catchevolution-functions.php:968
-#: ../inc/catchevolution-functions.php:1172
+#: ../inc/catchevolution-functions.php:967
+#: ../inc/catchevolution-functions.php:1171
 #: ../inc/panel/customizer/customizer.php:603
-#: ../inc/panel/theme-options.php:765
+#: ../inc/panel/theme-options.php:772
 msgid "RSS"
 msgstr "RSS"
 
-#: ../inc/catchevolution-functions.php:973
-#: ../inc/catchevolution-functions.php:1177
+#: ../inc/catchevolution-functions.php:972
+#: ../inc/catchevolution-functions.php:1176
 #: ../inc/panel/customizer/customizer.php:613
-#: ../inc/panel/theme-options.php:770
+#: ../inc/panel/theme-options.php:777
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: ../inc/catchevolution-functions.php:978
-#: ../inc/catchevolution-functions.php:1182
+#: ../inc/catchevolution-functions.php:977
+#: ../inc/catchevolution-functions.php:1181
 #: ../inc/panel/customizer/customizer.php:623
-#: ../inc/panel/theme-options.php:775
+#: ../inc/panel/theme-options.php:782
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../inc/catchevolution-functions.php:983
-#: ../inc/catchevolution-functions.php:1187
+#: ../inc/catchevolution-functions.php:982
+#: ../inc/catchevolution-functions.php:1186
 #: ../inc/panel/customizer/customizer.php:633
-#: ../inc/panel/theme-options.php:780
+#: ../inc/panel/theme-options.php:787
 msgid "Skype"
 msgstr "Skype"
 
-#: ../inc/catchevolution-functions.php:988
-#: ../inc/catchevolution-functions.php:1192
+#: ../inc/catchevolution-functions.php:987
+#: ../inc/catchevolution-functions.php:1191
 #: ../inc/panel/customizer/customizer.php:643
-#: ../inc/panel/theme-options.php:785
+#: ../inc/panel/theme-options.php:792
 msgid "Soundcloud"
 msgstr "Soundcloud"
 
-#: ../inc/catchevolution-functions.php:998
-#: ../inc/catchevolution-functions.php:1202
+#: ../inc/catchevolution-functions.php:997
+#: ../inc/catchevolution-functions.php:1201
 #: ../inc/panel/customizer/customizer.php:663
-#: ../inc/panel/theme-options.php:795
+#: ../inc/panel/theme-options.php:802
 msgid "Contact"
 msgstr "Contact"
 
-#: ../inc/catchevolution-functions.php:1003
-#: ../inc/catchevolution-functions.php:1207
+#: ../inc/catchevolution-functions.php:1002
+#: ../inc/catchevolution-functions.php:1206
 #: ../inc/panel/customizer/customizer.php:673
-#: ../inc/panel/theme-options.php:800
+#: ../inc/panel/theme-options.php:807
 msgid "Xing"
 msgstr "Xing"
 
-#: ../inc/catchevolution-functions.php:1008
-#: ../inc/catchevolution-functions.php:1212
+#: ../inc/catchevolution-functions.php:1007
+#: ../inc/catchevolution-functions.php:1211
 #: ../inc/panel/customizer/customizer.php:683
-#: ../inc/panel/theme-options.php:805
+#: ../inc/panel/theme-options.php:812
 msgid "Meetup"
 msgstr "Meetup"
 
-#: ../inc/catchevolution-functions.php:1341
+#: ../inc/catchevolution-functions.php:1340
 msgid "Footer menu"
 msgstr "Footer menu"
 
@@ -730,68 +731,68 @@ msgid "Homepage"
 msgstr ""
 
 #: ../inc/panel/catchevolution-themeoptions-defaults.php:135
-#: ../inc/panel/theme-options.php:592
+#: ../inc/panel/theme-options.php:599
 msgid "Entire Site"
 msgstr "Entire Site"
 
 #: ../inc/panel/catchevolution-themeoptions-defaults.php:136
-#: ../inc/panel/theme-options.php:596
+#: ../inc/panel/theme-options.php:603
 msgid "Disable"
 msgstr "Disable"
 
 #: ../inc/panel/catchevolution-themeoptions-defaults.php:150
-#: ../inc/panel/theme-options.php:611
+#: ../inc/panel/theme-options.php:618
 msgid "fade"
 msgstr "мягкий"
 
 #: ../inc/panel/catchevolution-themeoptions-defaults.php:151
-#: ../inc/panel/theme-options.php:612
+#: ../inc/panel/theme-options.php:619
 msgid "wipe"
 msgstr "перекрытие"
 
 #: ../inc/panel/catchevolution-themeoptions-defaults.php:152
 #: ../inc/panel/catchevolution-themeoptions-defaults.php:154
-#: ../inc/panel/theme-options.php:613
+#: ../inc/panel/theme-options.php:620
 msgid "scrollUp"
 msgstr "прокрутка вверх"
 
 #: ../inc/panel/catchevolution-themeoptions-defaults.php:153
-#: ../inc/panel/theme-options.php:614
+#: ../inc/panel/theme-options.php:621
 msgid "scrollDown"
 msgstr "прокрутка вниз"
 
 #: ../inc/panel/catchevolution-themeoptions-defaults.php:155
-#: ../inc/panel/theme-options.php:615
+#: ../inc/panel/theme-options.php:622
 msgid "scrollLeft"
 msgstr "прокрутка влево"
 
 #: ../inc/panel/catchevolution-themeoptions-defaults.php:156
-#: ../inc/panel/theme-options.php:616
+#: ../inc/panel/theme-options.php:623
 msgid "scrollRight"
 msgstr "прокрутка вправо"
 
 #: ../inc/panel/catchevolution-themeoptions-defaults.php:157
-#: ../inc/panel/theme-options.php:617
+#: ../inc/panel/theme-options.php:624
 msgid "blindX"
 msgstr "blindX"
 
 #: ../inc/panel/catchevolution-themeoptions-defaults.php:158
-#: ../inc/panel/theme-options.php:618
+#: ../inc/panel/theme-options.php:625
 msgid "blindY"
 msgstr "blindY"
 
 #: ../inc/panel/catchevolution-themeoptions-defaults.php:159
-#: ../inc/panel/theme-options.php:619
+#: ../inc/panel/theme-options.php:626
 msgid "blindZ"
 msgstr "blindZ"
 
 #: ../inc/panel/catchevolution-themeoptions-defaults.php:160
-#: ../inc/panel/theme-options.php:620
+#: ../inc/panel/theme-options.php:627
 msgid "cover"
 msgstr "перекрытие"
 
 #: ../inc/panel/catchevolution-themeoptions-defaults.php:161
-#: ../inc/panel/theme-options.php:621
+#: ../inc/panel/theme-options.php:628
 msgid "shuffle"
 msgstr "случайно"
 
@@ -876,7 +877,7 @@ msgid "Feed Redirect"
 msgstr "Feed Redirect"
 
 #: ../inc/panel/customizer/customizer.php:80
-#: ../inc/panel/theme-options.php:552
+#: ../inc/panel/theme-options.php:556
 msgid "Custom CSS"
 msgstr "Custom CSS"
 
@@ -887,7 +888,7 @@ msgid "Featured Post Slider"
 msgstr "Featured Post Slider"
 
 #: ../inc/panel/customizer/customizer.php:93
-#: ../inc/panel/theme-options.php:580
+#: ../inc/panel/theme-options.php:587
 msgid "Slider Options"
 msgstr "Параметры слайд-шоу"
 
@@ -1008,7 +1009,7 @@ msgid "Enable Slider"
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:382
-#: ../inc/panel/theme-options.php:601
+#: ../inc/panel/theme-options.php:608
 msgid "Number of Slides"
 msgstr "Количество слайдов"
 
@@ -1023,12 +1024,12 @@ msgid "Transition Effect"
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:409
-#: ../inc/panel/theme-options.php:626
+#: ../inc/panel/theme-options.php:633
 msgid "Transition Delay"
 msgstr "Задержка перехода"
 
 #: ../inc/panel/customizer/customizer.php:425
-#: ../inc/panel/theme-options.php:633
+#: ../inc/panel/theme-options.php:640
 msgid "Transition Length"
 msgstr "Длительность перехода"
 
@@ -1041,7 +1042,7 @@ msgid "Check to Enable Social Icons in Footer"
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:503
-#: ../inc/panel/theme-options.php:714
+#: ../inc/panel/theme-options.php:721
 msgid "Youtube"
 msgstr "Youtube"
 
@@ -1050,7 +1051,7 @@ msgid "LinkedIn"
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:695
-#: ../inc/panel/theme-options.php:823
+#: ../inc/panel/theme-options.php:830
 msgid "Code to display on Header"
 msgstr "Code to display on Header"
 
@@ -1060,7 +1061,7 @@ msgid ""
 msgstr ""
 
 #: ../inc/panel/customizer/customizer.php:706
-#: ../inc/panel/theme-options.php:832
+#: ../inc/panel/theme-options.php:839
 msgid "Code to display on Footer"
 msgstr "Code to display on Footer"
 
@@ -1093,27 +1094,27 @@ msgstr ""
 msgid "Logo"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:955
+#: ../inc/panel/customizer/customizer.php:960
 #, php-format
 msgid "Featured Post Slider #%s"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:969
+#: ../inc/panel/customizer/customizer.php:974
 msgid ""
 "Caution: Reset all settings to default. Refresh the page after save to view "
 "full effects."
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:971
+#: ../inc/panel/customizer/customizer.php:976
 msgid "Reset all settings"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:982
+#: ../inc/panel/customizer/customizer.php:987
 msgid "Check to reset all settings to default"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:992
-#: ../inc/panel/customizer/customizer.php:1003
+#: ../inc/panel/customizer/customizer.php:997
+#: ../inc/panel/customizer/customizer.php:1008
 msgid "Important Links"
 msgstr ""
 
@@ -1130,7 +1131,7 @@ msgid "https://catchthemes.com/"
 msgstr "https://catchthemes.com/"
 
 #: ../inc/panel/theme-options.php:92 ../inc/panel/theme-options.php:93
-#: ../inc/panel/theme-options.php:1202
+#: ../inc/panel/theme-options.php:1210
 msgid "Catch Themes"
 msgstr "Catch Themes"
 
@@ -1233,9 +1234,8 @@ msgstr "Preview: "
 #: ../inc/panel/theme-options.php:303 ../inc/panel/theme-options.php:413
 #: ../inc/panel/theme-options.php:469 ../inc/panel/theme-options.php:503
 #: ../inc/panel/theme-options.php:529 ../inc/panel/theme-options.php:547
-#: ../inc/panel/theme-options.php:571 ../inc/panel/theme-options.php:641
-#: ../inc/panel/theme-options.php:672 ../inc/panel/theme-options.php:811
-#: ../inc/panel/theme-options.php:844
+#: ../inc/panel/theme-options.php:648 ../inc/panel/theme-options.php:679
+#: ../inc/panel/theme-options.php:818 ../inc/panel/theme-options.php:851
 msgid "Save Changes"
 msgstr "Save Changes"
 
@@ -1378,6 +1378,7 @@ msgid "Disable Primary & Secondary Menu?"
 msgstr "Disable Primary & Secondary Menu?"
 
 #: ../inc/panel/theme-options.php:344 ../inc/panel/theme-options.php:362
+#: ../inc/panel/theme-options.php:575
 msgid "Save"
 msgstr "Сохранить"
 
@@ -1449,51 +1450,51 @@ msgstr "Feed Redirect URL"
 msgid "Add in the Feedburner URL"
 msgstr "Add in the Feedburner URL"
 
-#: ../inc/panel/theme-options.php:557
+#: ../inc/panel/theme-options.php:561
 msgid "Enter your custom CSS styles."
 msgstr "Enter your custom CSS styles."
 
-#: ../inc/panel/theme-options.php:564
+#: ../inc/panel/theme-options.php:568
 msgid "CSS Tutorial from W3Schools."
 msgstr "CSS учебник."
 
-#: ../inc/panel/theme-options.php:566
+#: ../inc/panel/theme-options.php:570
 msgid "http://www.w3schools.com/css/default.asp"
 msgstr "http://www.w3schools.com/css/default.asp"
 
-#: ../inc/panel/theme-options.php:566
+#: ../inc/panel/theme-options.php:570
 msgid "CSS Tutorial"
 msgstr "Учебник CSS"
 
-#: ../inc/panel/theme-options.php:566
+#: ../inc/panel/theme-options.php:570
 msgid "Click Here to Read"
 msgstr "Нажмите здесь, чтобы прочитать"
 
-#: ../inc/panel/theme-options.php:584
+#: ../inc/panel/theme-options.php:591
 msgid "Enable Sidebar"
 msgstr "Enable Sidebar"
 
-#: ../inc/panel/theme-options.php:588
+#: ../inc/panel/theme-options.php:595
 msgid "Homepage / Frontpage"
 msgstr "Homepage / Frontpage"
 
-#: ../inc/panel/theme-options.php:607
+#: ../inc/panel/theme-options.php:614
 msgid "Transition Effect:"
 msgstr "Эффект перехода:"
 
-#: ../inc/panel/theme-options.php:629 ../inc/panel/theme-options.php:636
+#: ../inc/panel/theme-options.php:636 ../inc/panel/theme-options.php:643
 msgid "second(s)"
 msgstr "секунд"
 
-#: ../inc/panel/theme-options.php:646
+#: ../inc/panel/theme-options.php:653
 msgid "Featured Post Slider Options"
 msgstr "Featured Post Slider Options"
 
-#: ../inc/panel/theme-options.php:650 ../inc/panel/theme-options.php:652
+#: ../inc/panel/theme-options.php:657 ../inc/panel/theme-options.php:659
 msgid "Post Slider Tutorial"
 msgstr "Post Slider Tutorial"
 
-#: ../inc/panel/theme-options.php:652
+#: ../inc/panel/theme-options.php:659
 msgid ""
 "https://catchthemes.com/blog/videos-blog/video-series-adding-featured-post-"
 "slider/"
@@ -1501,53 +1502,53 @@ msgstr ""
 "https://catchthemes.com/blog/videos-blog/video-series-adding-featured-post-"
 "slider/"
 
-#: ../inc/panel/theme-options.php:652
+#: ../inc/panel/theme-options.php:659
 msgid "Click Here to Read Post Slider Tutorial"
 msgstr "Click Here to Read Post Slider Tutorial"
 
-#: ../inc/panel/theme-options.php:656
+#: ../inc/panel/theme-options.php:663
 msgid "Exclude Slider post from Homepage posts?"
 msgstr "Exclude Slider post from Homepage posts?"
 
-#: ../inc/panel/theme-options.php:658
+#: ../inc/panel/theme-options.php:665
 msgid "Check to exclude"
 msgstr "Check to exclude"
 
-#: ../inc/panel/theme-options.php:663
+#: ../inc/panel/theme-options.php:670
 msgid "Featured Slider Post #"
 msgstr "Featured Slider Post #"
 
-#: ../inc/panel/theme-options.php:665
+#: ../inc/panel/theme-options.php:672
 msgid "Click Here To Edit"
 msgstr "Нажмите здесь, чтобы редактировать"
 
-#: ../inc/panel/theme-options.php:671
+#: ../inc/panel/theme-options.php:678
 msgid ""
 "Note: Here You can put your Post IDs which displays on Homepage as slider."
 msgstr ""
 "Note: Here You can put your Post IDs which displays on Homepage as slider."
 
-#: ../inc/panel/theme-options.php:683
+#: ../inc/panel/theme-options.php:690
 msgid "Enable Social Icons in Header Right Sidebar?"
 msgstr "Enable Social Icons in Header Right Sidebar?"
 
-#: ../inc/panel/theme-options.php:685
+#: ../inc/panel/theme-options.php:692
 msgid "Just add Catch Evolution Social Widget in Header Right Sidebar"
 msgstr "Just add Catch Evolution Social Widget in Header Right Sidebar"
 
-#: ../inc/panel/theme-options.php:689
+#: ../inc/panel/theme-options.php:696
 msgid "Enable Social Icons in Footer?"
 msgstr "Enable Social Icons in Footer?"
 
-#: ../inc/panel/theme-options.php:691
+#: ../inc/panel/theme-options.php:698
 msgid "Check to enable"
 msgstr "Check to enable"
 
-#: ../inc/panel/theme-options.php:818
+#: ../inc/panel/theme-options.php:825
 msgid "Header and Footer Codes"
 msgstr "Header and Footer Codes"
 
-#: ../inc/panel/theme-options.php:829
+#: ../inc/panel/theme-options.php:836
 msgid ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
@@ -1555,7 +1556,7 @@ msgstr ""
 "Note: Here you can put scripts from Google, Facebook etc. which will load on "
 "Header"
 
-#: ../inc/panel/theme-options.php:839
+#: ../inc/panel/theme-options.php:846
 msgid ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"
@@ -1563,19 +1564,19 @@ msgstr ""
 "Note: Here you can put scripts from Google, Facebook, Add This etc. which "
 "will load on footer"
 
-#: ../inc/panel/theme-options.php:1170
+#: ../inc/panel/theme-options.php:1178
 msgid "Y"
 msgstr "Y"
 
-#: ../inc/panel/theme-options.php:1191
+#: ../inc/panel/theme-options.php:1199
 msgid "Theme: Catch Evolution by "
 msgstr "Theme: Catch Evolution by "
 
-#: ../inc/panel/theme-options.php:1213
+#: ../inc/panel/theme-options.php:1221
 msgid "Copyright"
 msgstr "Copyright"
 
-#: ../inc/panel/theme-options.php:1213
+#: ../inc/panel/theme-options.php:1221
 msgid "All Rights Reserved"
 msgstr "All Rights Reserved"
 
@@ -1608,6 +1609,29 @@ msgstr "Далее <span class=\"meta-nav\">&rarr;</span>"
 #, php-format
 msgid "Tag Archives: %s"
 msgstr "Архивы ключевых слов: %s"
+
+#, fuzzy
+#~ msgid "Catch Evolution Pro"
+#~ msgstr "Catch Evolution"
+
+#~ msgid "Catch Evolution"
+#~ msgstr "Catch Evolution"
+
+#, fuzzy
+#~ msgid "https://catchthemes.com/themes/catch-evolution"
+#~ msgstr "https://catchthemes.com/themes/catch-evolution-pro/"
+
+#, fuzzy
+#~ msgid "https://catchthemes.com"
+#~ msgstr "https://catchthemes.com/"
+
+#, fuzzy
+#~ msgid "Disable Sidebar Template"
+#~ msgstr "Disable Site Title?"
+
+#, fuzzy
+#~ msgid "Three Columns Template"
+#~ msgstr "Three Columns"
 
 #~ msgid "Daily Archives: %s"
 #~ msgstr "Архив за день: %s"
@@ -1660,9 +1684,6 @@ msgstr "Архивы ключевых слов: %s"
 
 #~ msgid "F Y"
 #~ msgstr "F Y"
-
-#~ msgid "Catch Evolution"
-#~ msgstr "Catch Evolution"
 
 #~ msgid "Webmaster Tools"
 #~ msgstr "Webmaster Tools"

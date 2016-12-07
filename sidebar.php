@@ -20,7 +20,7 @@ if ( !is_active_sidebar( 'catchevolution_woocommerce_sidebar' ) && ( class_exist
 }
 
 
-if ( $catchevolution_layout == 'left-sidebar' || $catchevolution_layout == 'right-sidebar' || $catchevolution_layout == 'three-columns' ) {
+if ( 'left-sidebar' == $catchevolution_layout || 'right-sidebar' == $catchevolution_layout || 'three-columns' == $catchevolution_layout ) {
 	?>
     <div id="secondary" class="widget-area" role="complementary">
 		<?php

@@ -362,6 +362,47 @@ function catchevolution_site_icon_migrate() {
 }
 add_action( 'after_setup_theme', 'catchevolution_site_icon_migrate' );
 
+
+/**
+ * Migrate Custom CSS to WordPress core Custom CSS
+ *
+ * Runs if version number saved in theme_mod "custom_css_version" doesn't match current theme version.
+ */
+function catchevolution_custom_css_migrate(){
+	$ver = get_theme_mod( 'custom_css_version', false );
+
+	// Return if update has already been run
+	if ( version_compare( $ver, '4.7' ) >= 0 ) {
+		return;
+	}
+
+	if ( function_exists( 'wp_update_custom_css_post' ) ) {
+	    // Migrate any existing theme CSS to the core option added in WordPress 4.7.
+
+	    /**
+		 * Get Theme Options Values
+		 */
+		global $catchevolution_options_settings;
+	   	$options = $catchevolution_options_settings;
+
+	    if ( '' != $options['custom_css'] ) {
+			$core_css = wp_get_custom_css(); // Preserve any CSS already added to the core option.
+			$return   = wp_update_custom_css_post( $core_css . $options['custom_css'] );
+
+	        if ( ! is_wp_error( $return ) ) {
+	            // Remove the old theme_mod, so that the CSS is stored in only one place moving forward.
+	            unset( $options['custom_css'] );
+	            update_option( 'catchevolution_options', $options );
+
+	            // Update to match custom_css_version so that script is not executed continously
+				set_theme_mod( 'custom_css_version', '4.7' );
+	        }
+	    }
+	}
+}
+add_action( 'after_setup_theme', 'catchevolution_custom_css_migrate' );
+
+
 /**
  * Customizer Options
  */

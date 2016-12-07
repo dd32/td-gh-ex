@@ -23,7 +23,7 @@ function catchevolution_customize_register( $wp_customize ) {
 	$defaults = $catchevolution_options_defaults;
 
 	//Custom Controls
-	require get_template_directory() . '/inc/panel/customizer/customizer-custom-controls.php';
+	require trailingslashit( get_template_directory() ) . 'inc/panel/customizer/customizer-custom-controls.php';
 
 	$theme_slug = 'catchevolution_';
 
@@ -793,6 +793,11 @@ function catchevolution_customize_register( $wp_customize ) {
 		$settings_parameters = array_merge( $settings_parameters, $settings_logo);
 	}
 
+	//@remove Remove if block and custom_css from $settings_paramater when WordPress 5.0 is released
+	if( function_exists( 'wp_update_custom_css_post' ) ) {
+		unset( $settings_parameters['custom_css'] );
+	}
+
 	foreach ( $settings_parameters as $option ) {
 		$transport = isset( $option['transport'] ) ? $option['transport'] : 'refresh';
 
@@ -1050,10 +1055,10 @@ function catchevolution_customize_scripts() {
 add_action( 'customize_controls_enqueue_scripts', 'catchevolution_customize_scripts' );
 
 //Active callbacks for customizer
-require get_template_directory() . '/inc/panel/customizer/customizer-active-callbacks.php';
+require trailingslashit( get_template_directory() ) . 'inc/panel/customizer/customizer-active-callbacks.php';
 
 //Sanitize functions for customizer
-require get_template_directory() . '/inc/panel/customizer/customizer-sanitize-functions.php';
+require trailingslashit( get_template_directory() ) . 'inc/panel/customizer/customizer-sanitize-functions.php';
 
 // Add Upgrade to Pro Button.
 require_once( trailingslashit( get_template_directory() ) . '/inc/panel/customizer/upgrade-button/class-customize.php' );

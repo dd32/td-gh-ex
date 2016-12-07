@@ -15,7 +15,7 @@ do_action( 'catchevolution_before_third' );
 
 	$catchevolution_layout = catchevolution_get_theme_layout();
 
-if ( $catchevolution_layout == 'three-columns' || is_page_template( 'page-three-columns.php' ) || $catchevolution_layout == 'three-columns-sidebar' || is_page_template( 'page-three-columns-sidebar.php' ) ) : ?>
+if ( 'three-columns' == $catchevolution_layout || is_page_template( 'page-three-columns.php' ) || 'three-columns-sidebar' == $catchevolution_layout || is_page_template( 'page-three-columns-sidebar.php' ) ) : ?>
     <div id="third" class="widget-area sidebar-three-columns" role="complementary">
 		<?php
 		/**

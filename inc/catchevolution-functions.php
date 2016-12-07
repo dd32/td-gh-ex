@@ -27,7 +27,7 @@ function catchevolution_scripts_method() {
 	wp_register_script( 'jquery-cycle', get_template_directory_uri() . '/js/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
 
 	// Slider JS load loop
-	if ( ( $enableslider == 'enable-slider-allpage' ) || ( ( is_front_page() || ( is_home() && $page_id != $page_for_posts ) ) && $enableslider == 'enable-slider-homepage' ) ) {
+	if ( ( 'enable-slider-allpage' == $enableslider ) || ( ( is_front_page() || ( is_home() && $page_id != $page_for_posts ) ) && 'enable-slider-homepage' == $enableslider ) ) {
 		wp_enqueue_script( 'catchevolution-slider', get_template_directory_uri() . '/js/catchevolution.slider.js', array( 'jquery-cycle' ), '1.0', true );
 	}
 
@@ -160,31 +160,30 @@ add_action( 'wp_enqueue_scripts', 'catchevolution_enqueue_color_scheme' );
 function catchevolution_inline_css() {
 	//delete_transient( 'catchevolution_inline_css' );
 
-	global $catchevolution_options_settings, $catchevolution_options_defaults;
-	$options = $catchevolution_options_settings;
-	$defaults = $catchevolution_options_defaults;
-
-	if ( ( !$catchevolution_inline_css = get_transient( 'catchevolution_inline_css' ) ) && ( !empty( $options[ 'disable_header' ] ) || !empty( $options[ 'custom_css' ] ) ) ) {
+	if ( ( !$output = get_transient( 'catchevolution_inline_css' ) ) && ( !empty( $options[ 'disable_header' ] ) || !empty( $options[ 'custom_css' ] ) ) ) {
 		echo '<!-- refreshing cache -->' . "\n";
 
-		$catchevolution_inline_css = '<!-- '.get_bloginfo('name').' inline CSS Styles -->' . "\n";
-		$catchevolution_inline_css	.= '<style type="text/css" media="screen">' . "\n";
+		global $catchevolution_options_settings, $catchevolution_options_defaults;
+		$options = $catchevolution_options_settings;
+
+		$output = '<!-- '.get_bloginfo('name').' inline CSS Styles -->' . "\n";
+		$output	.= '<style type="text/css" media="screen">' . "\n";
 
 		//Disable Header
 		if ( !empty( $options[ 'disable_header' ] ) ) {
-			$catchevolution_inline_css	.=  "#branding { display: none; }" . "\n";
+			$output	.=  "#branding { display: none; }" . "\n";
 		}
 
 		//Custom CSS Option
 		if ( !empty( $options[ 'custom_css' ] ) ) {
-			$catchevolution_inline_css	.=  $options['custom_css'] . "\n";
+			$output	.=  $options['custom_css'] . "\n";
 		}
 
-		$catchevolution_inline_css	.= '</style>' . "\n";
+		$output	.= '</style>' . "\n";
 
-		set_transient( 'catchevolution_inline_css', $catchevolution_inline_css, 86940 );
+		set_transient( 'catchevolution_inline_css', $output, 86940 );
 	}
-	echo $catchevolution_inline_css;
+	echo $output;
 }
 add_action('wp_head', 'catchevolution_inline_css');
 
@@ -468,22 +467,22 @@ function catchevolution_body_classes( $classes ) {
 	$layout = catchevolution_get_theme_layout();
 
 
-	if ( $layout == 'three-columns' || is_page_template( 'page-three-columns.php' ) ) {
+	if ( 'three-columns' == $layout || is_page_template( 'page-three-columns.php' ) ) {
 		$classes[] = 'three-columns';
 	}
-	elseif ( $layout == 'no-sidebar' || is_page_template( 'page-disable-sidebar.php' ) ) {
+	elseif ( 'no-sidebar' == $layout || is_page_template( 'page-disable-sidebar.php' ) ) {
 		$classes[] = 'no-sidebar';
 	}
-	elseif ( $layout == 'no-sidebar-one-column' || is_page_template( 'page-onecolumn.php' ) ) {
+	elseif ( 'no-sidebar-one-column' == $layout || is_page_template( 'page-onecolumn.php' ) ) {
 		$classes[] = 'no-sidebar one-column';
 	}
-	elseif ( $layout == 'no-sidebar-full-width' || is_page_template( 'page-fullwidth.php' ) ) {
+	elseif ( 'no-sidebar-full-width' == $layout || is_page_template( 'page-fullwidth.php' ) ) {
 		$classes[] = 'no-sidebar full-width';
 	}
-	elseif ( $layout == 'left-sidebar' ) {
+	elseif ( 'left-sidebar' == $layout ) {
 		$classes[] = 'left-sidebar';
 	}
-	elseif ( $layout == 'right-sidebar' ) {
+	elseif ( 'right-sidebar' == $layout ) {
 		$classes[] = 'right-sidebar';
 	}
 
@@ -510,7 +509,7 @@ add_filter( 'manage_posts_columns', 'catchevolution_post_id_column' );
 
 
 function catchevolution_posts_id_column( $col, $val ) {
-	if ( $col == 'postid' ) echo $val;
+	if ( 'postid' == $col ) echo $val;
 }
 add_action( 'manage_posts_custom_column', 'catchevolution_posts_id_column', 10, 2 );
 
@@ -684,7 +683,7 @@ function catchevolution_slider_display() {
 	// Get Page ID outside Loop
 	$page_id = $wp_query->get_queried_object_id();
 
-	if ( ( $enableslider == 'enable-slider-allpage' ) || ( ( is_front_page() || ( is_home() && $page_id != $page_for_posts ) ) && $enableslider == 'enable-slider-homepage' ) ) :
+	if ( ( 'enable-slider-allpage' == $enableslider ) || ( ( is_front_page() || ( is_home() && $page_id != $page_for_posts ) ) && 'enable-slider-homepage' == $enableslider ) ) :
 
 		// Select Slider
 		if ( !empty( $featuredslider ) ) {
