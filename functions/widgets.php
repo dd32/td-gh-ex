@@ -3,35 +3,35 @@
  * Register sidebars and widget areas.
  */
 function simplecatch_widgets_init() {
-	
+
 	register_widget( 'CustomTagWidget' );
 	register_widget( 'simplecatch_social_widget' );
 	register_widget( 'simplecatch_adspace_widget' );
-	
-	register_sidebar( array( 
+
+	register_sidebar( array(
 		'name'          => __( 'sidebar', 'simple-catch' ),
 		'id'            => 'sidebar',
 		'description'   => __( 'sidebar', 'simple-catch' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3>',
-		'after_title'   => '</h3><hr/>' 
-	) ); 
-	
+		'after_title'   => '</h3><hr/>'
+	) );
+
  }
 add_action( 'widgets_init', 'simplecatch_widgets_init' );
 
 
-/** 
+/**
  * Extends class wp_widget
- * 
+ *
  * Creates a function CustomTagWidget
  * $widget_ops option array passed to wp_register_sidebar_widget().
  * $control_ops option array passed to wp_register_widget_control().
  * $name, Name for this widget which appear on widget bar.
  */
 class CustomTagWidget extends WP_Widget {
-		
+
 	/**
 	 * Register widget with WordPress.
 	 */
@@ -42,35 +42,35 @@ class CustomTagWidget extends WP_Widget {
 			array( 'description' => __( 'Displays Custom Tag Cloud designed for Simple Catch Theme', 'simple-catch' ) ) // Args
 		);
 	}
-		
+
 	/**
 	 * Displays the Widget in the front-end.
-	 * 
+	 *
 	 * $args Display arguments including before_title, after_title, before_widget, and after_widget.
 	 * $instance The settings for the particular instance of the widget
 	 */
 	function widget( $args, $instance ) {
 		extract( $args );
 		extract( $instance );
-		
+
 		$title = !empty( $instance['title'] ) ? $instance[ 'title' ] : 'Tags';
-			
+
 		echo $before_widget;
-	
+
 		if ( $title ):
 			echo $before_title . $title . $after_title;
 		endif;
-		
+
 		if ( function_exists( 'simplecatch_custom_tag_cloud' ) ):
 			simplecatch_custom_tag_cloud();
 		endif;
-		
+
 		echo $after_widget;
 	}
-		
+
 	/**
-	 * update the particular instant  
-	 * 
+	 * update the particular instant
+	 *
 	 * This function should check that $new_instance is set correctly.
 	 * The newly calculated value of $instance should be returned.
 	 * If "false" is returned, the instance won't be saved/updated.
@@ -82,10 +82,10 @@ class CustomTagWidget extends WP_Widget {
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 		$instance['title'] = strip_tags($new_instance['title']);
-		
+
 		return $instance;
-	}	
-		
+	}
+
 	/**
 	 * Creates the form for the widget in the back-end which includes the Title , adcode, image, alt
 	 * $instance Current settings
@@ -93,21 +93,21 @@ class CustomTagWidget extends WP_Widget {
 	function form($instance) {
 		$instance = wp_parse_args( ( array ) $instance, array( 'title'=>'Tags' ) );
 		$title = esc_attr( $instance[ 'title' ] );
-		
+
 		/**
 		 * Constructs title attributes  for use in form() field
 		 * @return string Name attribute for $field_name
 		 */
-		echo '<p><label for="' . $this->get_field_id( 'title' ) . '">' . 'Title:' . '</label><input class="widefat" id="' . 
+		echo '<p><label for="' . $this->get_field_id( 'title' ) . '">' . 'Title:' . '</label><input class="widefat" id="' .
 		$this->get_field_id( 'title' ) . '" name="' .       $this->get_field_name( 'title' ) . '" type="text" value="' . $title . '" /> </p>';
-				
+
 	}
 }// end CustomTagWidget class
 
 
-/** 
+/**
  * Extends class wp_widget
- * 
+ *
  * Creates a function simplecatch_social_widget
  * $widget_ops option array passed to wp_register_sidebar_widget().
  * $control_ops option array passed to wp_register_widget_control().
@@ -125,35 +125,35 @@ class simplecatch_social_widget extends WP_Widget {
 			array( 'description' => __( 'Displays Social Icons added from Theme Options Panel', 'simple-catch' ) ) // Args
 		);
 	}
-	
+
 	/**
 	 * Displays the Widget in the front-end.
-	 * 
+	 *
 	 * $args Display arguments including before_title, after_title, before_widget, and after_widget.
 	 * $instance The settings for the particular instance of the widget
 	 */
 	function widget( $args, $instance ) {
 		extract( $args );
 		extract( $instance );
-		
+
 		$title = !empty( $instance['title'] ) ? $instance[ 'title' ] : '';
-	
+
 		echo $before_widget;
-		
-		if ( $title != '' ) {
+
+		if ( '' != $title  ) {
 			echo $before_title . apply_filters( 'widget_title', $title, $instance, $this->id_base ) . $after_title;
-		} 
-		
+		}
+
 		if ( function_exists( 'simplecatch_headersocialnetworks' ) ):
 			simplecatch_headersocialnetworks();
 		endif;
-		
+
 		echo $after_widget;
 	}
-	
+
 	/**
-	 * update the particular instant  
-	 * 
+	 * update the particular instant
+	 *
 	 * This function should check that $new_instance is set correctly.
 	 * The newly calculated value of $instance should be returned.
 	 * If "false" is returned, the instance won't be saved/updated.
@@ -165,10 +165,10 @@ class simplecatch_social_widget extends WP_Widget {
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 		$instance['title'] = strip_tags($new_instance['title']);
-		
+
 		return $instance;
-	}	
-		
+	}
+
 	/**
 	 * Creates the form for the widget in the back-end which includes the Title , adcode, image, alt
 	 * $instance Current settings
@@ -176,14 +176,14 @@ class simplecatch_social_widget extends WP_Widget {
 	function form($instance) {
 		$instance = wp_parse_args( ( array ) $instance, array( 'title'=>'' ) );
 		$title = esc_attr( $instance[ 'title' ] );
-		
+
 		/**
 		 * Constructs title attributes  for use in form() field
 		 * @return string Name attribute for $field_name
 		 */
-		echo '<p><label for="' . $this->get_field_id( 'title' ) . '">' . 'Title:' . '</label><input class="widefat" id="' . 
+		echo '<p><label for="' . $this->get_field_id( 'title' ) . '">' . 'Title:' . '</label><input class="widefat" id="' .
 		$this->get_field_id( 'title' ) . '" name="' .       $this->get_field_name( 'title' ) . '" type="text" value="' . $title . '" /> </p>';
-				
+
 	}
 }// end simplecatch_social_widget class
 
@@ -198,7 +198,7 @@ class simplecatch_social_widget extends WP_Widget {
  * @since Simple Catch 2.6.4
  */
 class simplecatch_adspace_widget extends WP_Widget {
-	
+
 	/**
 	 * Register widget with WordPress.
 	 */
@@ -244,17 +244,17 @@ class simplecatch_adspace_widget extends WP_Widget {
         </p>
 		<p>
 			<input class="checkbox" type="checkbox" <?php echo $target; ?> id="<?php echo $this->get_field_id('target'); ?>" name="<?php echo $this->get_field_name('target'); ?>" /> <label for="<?php echo $this->get_field_id('target'); ?>"><?php _e( 'Open Link in New Window', 'simple-catch' ); ?></label>
-		</p>        
+		</p>
         <p>
             <label for="<?php echo $this->get_field_id('alt'); ?>"><?php _e('Alt text:','simple-catch'); ?></label>
             <input type="text" name="<?php echo $this->get_field_name('alt'); ?>" value="<?php echo $alt; ?>" class="widefat" id="<?php echo $this->get_field_id('alt'); ?>" />
         </p>
         <?php
 	}
-	
+
 	/**
-	 * update the particular instant  
-	 * 
+	 * update the particular instant
+	 *
 	 * This function should check that $new_instance is set correctly.
 	 * The newly calculated value of $instance should be returned.
 	 * If "false" is returned, the instance won't be saved/updated.
@@ -271,13 +271,13 @@ class simplecatch_adspace_widget extends WP_Widget {
 		$instance['href'] = esc_url_raw($new_instance['href']);
 		$instance[ 'target' ] = isset( $new_instance[ 'target' ] ) ? 1 : 0;
 		$instance['alt'] = sanitize_text_field($new_instance['alt']);
-		
+
 		return $instance;
-	}	
-	
+	}
+
 	/**
 	 * Displays the Widget in the front-end.
-	 * 
+	 *
 	 * $args Display arguments including before_title, after_title, before_widget, and after_widget.
 	 * $instance The settings for the particular instance of the widget
 	 */
@@ -292,20 +292,20 @@ class simplecatch_adspace_widget extends WP_Widget {
 		$alt = !empty( $instance['alt'] ) ? $instance[ 'alt' ] : '';
 
 		if ( $target == "true" ) :
-			$base = '_blank'; 	
+			$base = '_blank';
 		else:
-			$base = '_self'; 	
-		endif;	
-			
-		echo $before_widget;
-		if ( $title != '' ) {
-			echo $before_title . apply_filters( 'widget_title', $title, $instance, $this->id_base ) . $after_title;
-		} 
+			$base = '_self';
+		endif;
 
-		if ( $adcode != '' ) {
+		echo $before_widget;
+		if ( '' != $title  ) {
+			echo $before_title . apply_filters( 'widget_title', $title, $instance, $this->id_base ) . $after_title;
+		}
+
+		if ( '' != $adcode  ) {
 			echo $adcode;
 		}
-		elseif ( $image != '' ) {
+		elseif ( '' != $image  ) {
         	echo '<a href="'.$href.'" target="'.$base.'"><img src="'. $image.'" alt="'.$alt.'" /></a>';
 		}
 		else {

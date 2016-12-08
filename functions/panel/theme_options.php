@@ -542,6 +542,11 @@ function simplecatch_theme_options_do_page() {
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->
 
+                    <?php
+                    // @remove if block when WP 5.0 is released
+                    if ( ! function_exists( 'wp_update_custom_css_post' ) ) {
+                    ?>
+
                     <div class="option-container">
                         <h3 class="option-toggle"><a href="#"><?php _e( 'Custom CSS', 'simple-catch' ); ?></a></h3>
                         <div class="option-content inside">
@@ -565,6 +570,10 @@ function simplecatch_theme_options_do_page() {
                             <p class="submit"><input type="submit" class="button-primary" value="<?php esc_attr_e( 'Save', 'simple-catch' ); ?>" /></p>
                         </div><!-- .option-content -->
                     </div><!-- .option-container -->
+
+                    <?php
+                    }
+                    ?>
 
                 </div> <!-- #themeoptions -->
 
@@ -846,6 +855,14 @@ function simplecatch_theme_options_do_page() {
 function simplecatch_theme_options_validate( $options ) {
 	global $simplecatch_options_settings;
     $input_validated = $simplecatch_options_settings;
+
+    global $simplecatch_options_defaults;
+    $defaults = $simplecatch_options_defaults;
+
+    if ( "1" == $options['reset_all_settings'] ) {
+        return $defaults;
+    }
+
     $input = array();
     $input = $options;
 
@@ -920,16 +937,15 @@ function simplecatch_theme_options_validate( $options ) {
 
 	//Reset Color Options
 	if( $input[ 'reset_color' ] == 1 ) {
-		global $simplecatch_options_defaults;
-		$defaults = $simplecatch_options_defaults;
-
-		$input_validated[ 'color_scheme' ] = $defaults[ 'color_scheme' ];
-		$input_validated[ 'heading_color' ] = $defaults[ 'heading_color' ];
-		$input_validated[ 'meta_color' ] = $defaults[ 'meta_color' ];
-		$input_validated[ 'text_color' ] = $defaults[ 'text_color' ];
-		$input_validated[ 'link_color' ] = $defaults[ 'link_color' ];
-		$input_validated[ 'widget_heading_color' ] = $defaults[ 'widget_heading_color' ];
-		$input_validated[ 'widget_text_color' ] = $defaults[ 'widget_text_color' ];
+        
+        $input_validated[ 'color_scheme' ]         = $defaults[ 'color_scheme' ];
+        $input_validated[ 'heading_color' ]        = $defaults[ 'heading_color' ];
+        $input_validated[ 'meta_color' ]           = $defaults[ 'meta_color' ];
+        $input_validated[ 'text_color' ]           = $defaults[ 'text_color' ];
+        $input_validated[ 'link_color' ]           = $defaults[ 'link_color' ];
+        $input_validated[ 'widget_heading_color' ] = $defaults[ 'widget_heading_color' ];
+        $input_validated[ 'widget_text_color' ]    = $defaults[ 'widget_text_color' ];
+        $input_validated[ 'reset_color' ]          = "0";
 	}
 
     if ( isset( $input['exclude_slider_post'] ) ) {

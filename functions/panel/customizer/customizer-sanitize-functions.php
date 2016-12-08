@@ -31,7 +31,7 @@ function simplecatch_sanitize_checkbox( $input ) {
  * @since Simple Catch 3.0
  */
 function simplecatch_sanitize_custom_css( $input ) {
-	if ( $input != '' ) {
+	if ( '' != $input  ) {
         $input = str_replace( '<=', '&lt;=', $input );
 
         $input = wp_kses_split( $input, array(), array() );
@@ -105,7 +105,7 @@ function simplecatch_sanitize_post_id( $input ) {
  * @since Simple Catch 3.0
  */
 function simplecatch_sanitize_category_list( $input ) {
-	if ( $input != '' ) {
+	if ( '' != $input  ) {
 		$args = array(
 						'type'			=> 'post',
 						'child_of'      => 0,
@@ -197,72 +197,4 @@ function simplecatch_sanitize_select( $input, $setting ) {
 
 	// If the input is a valid key, return it; otherwise, return the default.
 	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
-}
-
-
-/**
- * Reset all settings to default
- * @param  $input entered value
- * @return sanitized output
- *
- * @since Simple Catch 3.0
- */
-function simplecatch_reset_all_settings( $input ) {
-	if ( $input == 1 ) {
-        // Delete all theme options
-        delete_option('simplecatch_options' );
-
-        // Flush out all transients	on reset
-        simplecatch_themeoption_invalidate_caches();
-    }
-    else {
-        return "0";
-    }
-}
-
-
-/**
- * Dummy Sanitizaition function as it contains no value to be sanitized
- *
- * @since Simple Catch 3.0
- */
-function simplecatch_sanitize_important_link() {
-	return false;
-}
-
-/**
- * Reset colors
- * @param  $input entered value
- * @return nothing
- *
- * @since Simple Catch 3.0
- */
-function simplecatch_sanitize_reset_color( $input ) {
-	//Reset Header Featured Image Options
-	if( $input == 1 ) {
-		global $simplecatch_options_settings, $simplecatch_options_defaults;
-
-    	$options = $simplecatch_options_settings;
-
-		$defaults = $simplecatch_options_defaults;
-
-		//Reset Header Text Color
-		set_theme_mod( 'header_textcolor', '#444' );
-
-		//Reset Background Color
-		set_theme_mod( 'background_color', '' );
-
-		$options[ 'color_scheme' ] 			= $defaults[ 'color_scheme' ];
-		$options[ 'heading_color' ] 		= $defaults[ 'heading_color' ];
-		$options[ 'meta_color' ] 			= $defaults[ 'meta_color' ];
-		$options[ 'text_color' ] 			= $defaults[ 'text_color' ];
-		$options[ 'link_color' ] 			= $defaults[ 'link_color' ];
-		$options[ 'widget_heading_color' ] 	= $defaults[ 'widget_heading_color' ];
-		$options[ 'widget_text_color' ] 	= $defaults[ 'widget_text_color' ];
-
-		update_option( 'simplecatch_options', $options );
-	}
-	else {
-        return "0";
-    }
 }

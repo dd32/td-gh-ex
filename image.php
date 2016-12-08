@@ -7,28 +7,28 @@
  * @since Simple Catch 1.0
  */
 ?>
-<?php get_header();  
+<?php get_header();
 
 	//Getting Global setting and meta layout Settings
 	global $simplecatch_options_settings;
     $options = $simplecatch_options_settings;
-	$themeoption_layout = $options['sidebar_layout'];	
-	
+	$themeoption_layout = $options['sidebar_layout'];
+
 	$parent = $post->post_parent;
 	$layout = get_post_meta( $parent,'simplecatch-sidebarlayout', true );
-	
+
 	if( empty( $layout ) ) {
 		$layout='default';
 	}
 ?>
-	
+
     <div id="main" class="layout-978">
-		<?php 
-			if ( $layout == 'no-sidebar' || ( $layout=='default' && $themeoption_layout == 'no-sidebar') ) {
+		<?php
+			if ( 'no-sidebar' == $layout  || ( $layout=='default' && 'no-sidebar' == $themeoption_layout ) ) {
 				echo '<div id="content" class="col8">';
 			}
-			elseif ( $layout == 'left-sidebar' || ( $layout=='default' && $themeoption_layout == 'left-sidebar') ) {
-				get_sidebar(); 
+			elseif ( 'left-sidebar' == $layout  || ( $layout=='default' && 'left-sidebar' == $themeoption_layout ) ) {
+				get_sidebar();
 				echo '<div id="content" class="col8">';
 			}
 			else {
@@ -36,13 +36,13 @@
 			}
 		?>
 
-		
+
 		<?php while ( have_posts() ) : the_post(); ?>
 				<div <?php post_class(); ?>>
 					<h2 class="entry-title"><a href="<?php echo get_permalink( $post->post_parent ); ?>" title="<?php esc_attr( printf( 'Return to %s', get_the_title( $post->post_parent ) ) ); ?>"><?php printf( '%s', get_the_title( $post->post_parent ) ); ?></a>: <span class="img-title"><?php the_title(); ?></span></h2>
 
                     <ul class="post-by">
-                        <li class="no-padding-left"><a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>" 
+                        <li class="no-padding-left"><a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>"
                             title="<?php echo esc_attr( get_the_author_meta( 'display_name' ) ); ?>"><?php _e( 'By', 'simple-catch' ); ?>&nbsp;<?php the_author_meta( 'display_name' );?></a></li>
                         <li><?php $simplecatch_date_format = get_option( 'date_format' ); the_time( $simplecatch_date_format ); ?></li>
                         <li><?php comments_popup_link( __( 'No Comments', 'simple-catch' ), __( '1 Comment', 'simple-catch' ), __( '% Comments', 'simple-catch' ) ); ?></li>
@@ -90,38 +90,38 @@
 
 							<div class="entry-description">
 								<?php the_content(); ?>
-								<?php wp_link_pages(array( 
+								<?php wp_link_pages(array(
 									'before'			=> '<div class="pagination">',
 									'after' 			=> '</div>',
 									'link_before' 		=> '<span>',
 									'link_after'       	=> '</span>',
 									'pagelink' 			=> '%',
-									'echo' 				=> 1 
+									'echo' 				=> 1
 								) );?>
-                                
+
 							</div><!-- .entry-description -->
 
 					</div><!-- .entry-content -->
-					<ul id="nav-image" class="default-wp-page">            
+					<ul id="nav-image" class="default-wp-page">
 						<li class="previous"><?php previous_image_link( false, __( 'Previous Image' , 'simple-catch' ) ); ?></li>
 						<li class="next"><?php next_image_link( false, __( 'Next Image' , 'simple-catch' ) ); ?></li>
 					</ul><!-- #nav-image -->
 				</div><!-- .post -->
 
         <?php endwhile; ?>
-                                           
+
         	<div class="row-end"></div>
-                    
-        	<?php comments_template(); ?> 
-         
+
+        	<?php comments_template(); ?>
+
     </div><!-- #content -->
-        
-	<?php 
-	if ( $layout == 'right-sidebar' || ( $layout=='default' && $themeoption_layout == 'right-sidebar') ) {	
-		get_sidebar(); 
+
+	<?php
+	if ( 'right-sidebar' == $layout  || ( $layout=='default' && 'right-sidebar' == $themeoption_layout ) ) {
+		get_sidebar();
 	}
 	?>
-             
+
 </div><!-- #main -->
-    
+
 <?php get_footer(); ?>

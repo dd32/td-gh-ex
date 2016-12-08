@@ -23,7 +23,7 @@ function simplecatch_customize_register( $wp_customize ) {
 	$defaults = $simplecatch_options_defaults;
 
 	//Custom Controls
-	require get_template_directory() . '/functions/panel/customizer/customizer-custom-controls.php';
+	require trailingslashit( get_template_directory() ) . 'functions/panel/customizer/customizer-custom-controls.php';
 
 	$theme_slug = 'simplecatch_';
 
@@ -261,7 +261,8 @@ function simplecatch_customize_register( $wp_customize ) {
 			'title' 		=> __( 'Check to Reset Color', 'simple-catch' ),
 			'description'	=> __( 'Please refresh the customizer after saving if reset option is used', 'simple-catch' ),
 			'field_type' 	=> 'checkbox',
-			'sanitize' 		=> 'simplecatch_sanitize_reset_color',
+			'sanitize' 		=> 'simplecatch_sanitize_checkbox',
+			'transport'		=> 'postMessage',
 			'section' 		=> 'colors',
 			'default' 		=> $defaults['reset_color']
 		),
@@ -787,6 +788,11 @@ function simplecatch_customize_register( $wp_customize ) {
 		$settings_parameters = array_merge( $settings_parameters, $settings_favicon);
 	}
 
+	//@remove Remove if block and custom_css from $settings_paramater when WordPress 5.0 is released
+	if( function_exists( 'wp_update_custom_css_post' ) ) {
+		unset( $settings_parameters['custom_css'] );
+	}
+
 	foreach ( $settings_parameters as $option ) {
 		if( 'image' == $option['field_type'] ) {
 			$wp_customize->add_setting(
@@ -824,6 +830,7 @@ function simplecatch_customize_register( $wp_customize ) {
 			);
 		}
 		else if ('checkbox' == $option['field_type'] ) {
+			$transport = isset( $option['transport'] ) ? $option['transport'] : 'refresh';
 			$wp_customize->add_setting(
 				// $id
 				$theme_slug . 'options[' . $option['id'] . ']',
@@ -831,7 +838,8 @@ function simplecatch_customize_register( $wp_customize ) {
 				array(
 					'type'				=> 'option',
 					'sanitize_callback'	=> $option['sanitize'],
-					'default'			=> $option['default'],				)
+					'default'			=> $option['default'],
+					'transport'			=> $transport				)
 			);
 
 			$params = array(
@@ -974,7 +982,8 @@ function simplecatch_customize_register( $wp_customize ) {
 
 	$wp_customize->add_setting( 'simplecatch_options[reset_all_settings]', array(
 		'capability'		=> 'edit_theme_options',
-		'sanitize_callback' => 'simplecatch_reset_all_settings',
+		'sanitize_callback' => 'simplecatch_sanitize_checkbox',
+		'type'				=> 'option',
 		'transport'			=> 'postMessage',
 	) );
 
@@ -996,7 +1005,7 @@ function simplecatch_customize_register( $wp_customize ) {
 	 * Has dummy Sanitizaition function as it contains no value to be sanitized
 	 */
 	$wp_customize->add_setting( 'important_links', array(
-		'sanitize_callback'	=> 'simplecatch_sanitize_important_link',
+		'sanitize_callback'	=> 'sanitize_text_field',
 	) );
 
 	$wp_customize->add_control( new Simple_Catch_Important_Links( $wp_customize, 'important_links', array(
@@ -1034,25 +1043,28 @@ add_action( 'customize_save', 'simplecatch_customize_preview' );
  * @since Simple Catch 1.4
  */
 function simplecatch_customize_scripts() {
-	wp_register_script( 'simplecatch_customizer_custom', get_template_directory_uri() . '/functions/panel/customizer-custom-scripts.js', array( 'jquery' ), '20140108', true );
+	wp_enqueue_script( 'simplecatch_customizer_custom', get_template_directory_uri() . '/functions/panel/customizer-custom-scripts.js', array( 'jquery' ), '20140108', true );
 
-    $simplecatch_misc_links = array(
-							'upgrade_link' 				=> esc_url( 'https://catchthemes.com/themes/simple-catch-pro/' ),
-							'upgrade_text'	 			=> __( 'Upgrade To Pro &raquo;', 'simple-catch' ),
-		);
 
-    //Add More Theme Options Button
-    wp_localize_script( 'simplecatch_customizer_custom', 'simplecatch_misc_links', $simplecatch_misc_links );
+    $simplecatch_data = array(
+		'reset_message' => esc_html__( 'Refresh the customizer page after saving to view reset effects', 'simple-catch' ),
+		'reset_options' => array(
+			'simplecatch_options[reset_color]',
+			'simplecatch_options[reset_all_settings]',
+		)
+	);
 
-    wp_enqueue_script( 'simplecatch_customizer_custom' );
-
-    wp_enqueue_style( 'simplecatch_customizer_custom', get_template_directory_uri() . '/functions/panel/customizer.css');
+	// Send reset message as object to custom customizer js
+	wp_localize_script( 'simplecatch_customizer_custom', 'simplecatch_data', $simplecatch_data );
 }
 add_action( 'customize_controls_enqueue_scripts', 'simplecatch_customize_scripts' );
 
 
 //Active callbacks for customizer
-require get_template_directory() . '/functions/panel/customizer/customizer-active-callbacks.php';
+require trailingslashit( get_template_directory() ) . 'functions/panel/customizer/customizer-active-callbacks.php';
 
 //Sanitize functions for customizer
-require get_template_directory() . '/functions/panel/customizer/customizer-sanitize-functions.php';
+require trailingslashit( get_template_directory() ) . 'functions/panel/customizer/customizer-sanitize-functions.php';
+
+//Add Upgrade To Pro button
+require trailingslashit( get_template_directory() ) . 'functions/panel/customizer/upgrade-button/class-customize.php';

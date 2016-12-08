@@ -1,5 +1,11 @@
 == Changelog ==
 
+Version 3.4
+* Bug Fixed: Reset Options in customizer updated
+* Updated: Upgrade Button in customizer with respect to trt decision
+* Updated: Custom CSS to Additional CSS( Core Support ) for WP version 4.7
+* Code Optimization
+
 Version 3.3.1
 * Bug Fixed: white space issue
 * Bug Fixed: ID column display issue in mobile devices

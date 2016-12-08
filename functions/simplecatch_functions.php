@@ -715,49 +715,45 @@ add_action('wp_footer', 'simplecatch_footercode');
 function simplecatch_inline_css() {
 	//delete_transient( 'simplecatch_inline_css' );
 
-	if ( ( !$simplecatch_inline_css = get_transient( 'simplecatch_inline_css' ) ) ) {
+	if ( ! $output = get_transient( 'simplecatch_inline_css' ) ) {
 		global $simplecatch_options_settings, $simplecatch_options_defaults;
         $options = $simplecatch_options_settings;
 		$defaults = $simplecatch_options_defaults;
 
-		if( $options[ 'reset_color' ] == "0" || !empty( $options[ 'custom_css' ] ) ) {
-
-			$simplecatch_inline_css	= '<!-- '.get_bloginfo('name').' Custom CSS Styles -->' . "\n";
-	        $simplecatch_inline_css .= '<style type="text/css" media="screen">' . "\n";
-
-			if( $defaults[ 'text_color' ] != $options[ 'text_color' ] ) {
-				$simplecatch_inline_css	.=  "#main { color: ".  $options[ 'text_color' ] ."; }". "\n";
-			}
-			if( $defaults[ 'link_color' ] != $options[ 'link_color' ] ) {
-				$simplecatch_inline_css	.=  "#main a { color: ".  $options[ 'link_color' ] ."; }". "\n";
-			}
-			if( $defaults[ 'heading_color' ] != $options[ 'heading_color' ] ) {
-				$simplecatch_inline_css	.=  "#main h1 a, #main h2 a, #main h3 a, #main h4 a, #main h5 a, #main h6 a { color: ".  $options[ 'heading_color' ] ."; }". "\n";
-			}
-			if( $defaults[ 'meta_color' ] != $options[ 'meta_color' ] ) {
-				$simplecatch_inline_css	.=  "#main #content ul.post-by li, #main #content ul.post-by li a { color: ".  $options[ 'meta_color' ] ."; }". "\n";
-			}
-			if( $defaults[ 'widget_heading_color' ] != $options[ 'widget_heading_color' ] ) {
-				$simplecatch_inline_css	.=  "#sidebar h3, #sidebar h4, #sidebar h5 { color: ".  $options[ 'widget_heading_color' ] ."; }". "\n";
-			}
-			if( $defaults[ 'widget_text_color' ] != $options[ 'widget_text_color' ] ) {
-				$simplecatch_inline_css	.=  "#sidebar, #sidebar p, #sidebar a, #sidebar ul li a, #sidebar ol li a { color: ".  $options[ 'widget_text_color' ] ."; }". "\n";
-			}
-
-			//Custom CSS Option
-			if( !empty( $options[ 'custom_css' ] ) ) {
-				$simplecatch_inline_css .=  $options['custom_css'] . "\n";
-			}
-
-			$simplecatch_inline_css .= '</style>' . "\n";
-
+		if( $defaults[ 'text_color' ] != $options[ 'text_color' ] ) {
+			$output	.=  "#main { color: ".  esc_attr( $options[ 'text_color' ] ) ."; }". "\n";
+		}
+		if( $defaults[ 'link_color' ] != $options[ 'link_color' ] ) {
+			$output	.=  "#main a { color: ".  esc_attr( $options[ 'link_color' ] ) ."; }". "\n";
+		}
+		if( $defaults[ 'heading_color' ] != $options[ 'heading_color' ] ) {
+			$output	.=  "#main h1 a, #main h2 a, #main h3 a, #main h4 a, #main h5 a, #main h6 a { color: ".  esc_attr( $options[ 'heading_color' ] ) ."; }". "\n";
 		}
 
-	set_transient( 'simplecatch_inline_css', $simplecatch_inline_css, 86940 );
+		if( $defaults[ 'meta_color' ] != $options[ 'meta_color' ] ) {
+			$output	.=  "#main #content ul.post-by li, #main #content ul.post-by li a { color: ".  esc_attr( $options[ 'meta_color' ] ) ."; }". "\n";
+		}
+		if( $defaults[ 'widget_heading_color' ] != $options[ 'widget_heading_color' ] ) {
+			$output	.=  "#sidebar h3, #sidebar h4, #sidebar h5 { color: ".  esc_attr( $options[ 'widget_heading_color' ] ) ."; }". "\n";
+		}
+		if( $defaults[ 'widget_text_color' ] != $options[ 'widget_text_color' ] ) {
+			$output	.=  "#sidebar, #sidebar p, #sidebar a, #sidebar ul li a, #sidebar ol li a { color: ".  esc_attr( $options[ 'widget_text_color' ] ) ."; }". "\n";
+		}
+
+		//Custom CSS Option
+		if( !empty( $options[ 'custom_css' ] ) ) {
+			$output .=  $options['custom_css'] . "\n";
+		}
+
+		 if ( '' != $output ) {
+			$output = '<style type="text/css" media="screen" rel="CT Custom CSS">' . "\n" . $output . '</style>' . "\n";
+		}
+
+		set_transient( 'simplecatch_inline_css', $output, 86940 );
 	}
-	echo $simplecatch_inline_css;
+	echo $output;
 }
-add_action('wp_head', 'simplecatch_inline_css');
+add_action( 'wp_head', 'simplecatch_inline_css', 101 );
 
 
 /*
@@ -859,7 +855,7 @@ function simplecatch_class_names($classes) {
 
 	$themeoption_layout = $options['sidebar_layout'];
 
-	if( ( $layout == 'no-sidebar' || ( $layout=='default' && $themeoption_layout == 'no-sidebar') ) ){
+	if( ( 'no-sidebar' == $layout  || ( $layout=='default' && 'no-sidebar' == $themeoption_layout ) ) ){
 		$classes[] = 'no-sidebar';
 	}
 
@@ -887,13 +883,13 @@ function simplecatch_content() {
 
 		$themeoption_layout = $options['sidebar_layout'];
 
-		if( $themeoption_layout == 'left-sidebar' ) {
+		if( 'left-sidebar' == $themeoption_layout  ) {
 			get_template_part( 'content-sidebar','left' );
 		}
-		elseif( $themeoption_layout == 'right-sidebar' ) {
+		elseif( 'right-sidebar' == $themeoption_layout  ) {
 			get_template_part( 'content-sidebar','right' );
 		}
-		elseif( $themeoption_layout == 'no-sidebar-full-width' ) {
+		elseif( 'no-sidebar-full-width' == $themeoption_layout  ) {
 			get_template_part( 'content-sidebar','full' );
 		}
 		else {
@@ -906,7 +902,7 @@ function simplecatch_content() {
 	elseif( $layout=='right-sidebar' ) {
 		get_template_part( 'content-sidebar','right' );
 	}
-	elseif( $layout == 'no-sidebar-full-width' ) {
+	elseif( 'no-sidebar-full-width' == $layout  ) {
 		get_template_part( 'content-sidebar','full' );
 	}
 	else{
@@ -986,14 +982,14 @@ function simplecatch_display_div() {
 
 	$themeoption_layout = $options['sidebar_layout'];
 
-	if( $themeoption_layout == 'left-sidebar' ) {
+	if( 'left-sidebar' == $themeoption_layout  ) {
 		get_sidebar();
 		echo '<div id="content" class="col8">';
 	}
-	elseif( $themeoption_layout == 'right-sidebar' ) {
+	elseif( 'right-sidebar' == $themeoption_layout  ) {
 		echo '<div id="content" class="col8 no-margin-left">';
 	}
-	elseif( $themeoption_layout == 'no-sidebar-full-width' ) {
+	elseif( 'no-sidebar-full-width' == $themeoption_layout  ) {
 		echo '<div id="content" class="col12">';
 	}
 	else {
@@ -1078,7 +1074,7 @@ function simplecatch_post_id_column( $post_columns ) {
 add_filter( 'manage_posts_columns', 'simplecatch_post_id_column' );
 
 function simplecatch_posts_id_column( $col, $val ) {
-	if( $col == 'postid' ) echo $val;
+	if( 'postid' == $col  ) echo $val;
 }
 add_action( 'manage_posts_custom_column', 'simplecatch_posts_id_column', 10, 2 );
 

@@ -8,58 +8,58 @@
  */
 ?>
 
-<?php if ( have_posts() ) : 
-	while( have_posts() ):the_post(); 
+<?php if ( have_posts() ) :
+	while( have_posts() ):the_post();
 		global $simplecatch_options_settings;
 		$options = $simplecatch_options_settings;
 		$themeoption_layout = $options[ 'sidebar_layout' ];
-?>	
-            
+?>
+
 		<div <?php post_class(); ?> >
-        	
-			<?php //If category has thumbnail it displays thumbnail and excerpt of content else excerpt only 
+
+			<?php //If category has thumbnail it displays thumbnail and excerpt of content else excerpt only
 			if ( has_post_thumbnail() ) : ?>
 				<div class="col3 post-img">
 					<a href="<?php the_permalink(); ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'simple-catch' ), the_title_attribute( 'echo=0' ) ); ?>"><?php the_post_thumbnail( 'featured' ); ?></a>
-				</div> <!-- .col3 -->  
-				
-				<?php if( $themeoption_layout == 'no-sidebar-full-width' ) {
-					echo '<div class="col9">'; 
+				</div> <!-- .col3 -->
+
+				<?php if( 'no-sidebar-full-width' == $themeoption_layout  ) {
+					echo '<div class="col9">';
 				}
 				else {
 					echo '<div class="col5">';
 				}
 			else :
-				 if( $themeoption_layout == 'no-sidebar-full-width' ) {
-					echo '<div class="col12">'; 
+				 if( 'no-sidebar-full-width' == $themeoption_layout  ) {
+					echo '<div class="col12">';
 				}
 				else {
 					echo '<div class="col8">';
 				}
-			endif; ?> 
-            
+			endif; ?>
+
                 <h2 class="entry-title"><a href="<?php the_permalink() ?>" title="<?php printf( esc_attr__( 'Permalink to %s', 'simple-catch' ), the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark" ><?php the_title(); ?></a></h2>
-    
+
                 <ul class="post-by">
                     <li class="no-padding-left"><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>" title="<?php echo esc_attr(get_the_author_meta( 'display_name' ) ); ?>"><?php _e( 'By', 'simple-catch' ); ?>&nbsp;<?php the_author_meta( 'display_name' );?></a></li>
                     <li><?php $simplecatch_date_format = get_option( 'date_format' ); the_time( $simplecatch_date_format ); ?></li>
                     <li class="last"><?php comments_popup_link( __( 'No Comments', 'simple-catch' ), __( '1 Comment', 'simple-catch' ), __( '% Comments', 'simple-catch' ) ); ?></li>
                 </ul>
-            
+
 				<?php the_excerpt(); ?>
-         
-      		</div>   
-                         
+
+      		</div>
+
         	<div class="row-end"></div>
-            
+
     </div><!-- .post -->
-    
+
     <hr />
-                    
+
 	<?php endwhile; ?>
-	
+
 	<?php simplecatch_content_nav( 'nav-below' ); ?>
-                 			
+
 <?php else : ?>
 
     <div class="post">

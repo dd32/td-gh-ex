@@ -1,12 +1,21 @@
-/**
- * Theme Customizer custom scripts
- * Control of show/hide events on feature slider type selection
- */
 (function($) {
-    //Add More Theme Options Button
-    $('.preview-notice').prepend('<span id="simplecatch_upgrade"><a target="_blank" class="button btn-upgrade" href="' + simplecatch_misc_links.upgrade_link + '">' + simplecatch_misc_links.upgrade_text + '</a></span>');
-    jQuery('#customize-info .btn-upgrade, .misc_links').click(function(event) {
-        event.stopPropagation();
+    $.each( simplecatch_data.reset_options, function( index, value ) {
+        wp.customize( value, function( setting ) {
+            setting.bind( function( setting_value ) {
+                var code = 'needs_refresh';
+                if ( setting_value ) {
+                    setting.notifications.add( code, new wp.customize.Notification(
+                        code,
+                        {
+                            type: 'info',
+                            message: simplecatch_data.reset_message
+                        }
+                    ) );
+                } else {
+                    setting.notifications.remove( code );
+                }
+            } );
+        } );
     });
 })(jQuery);
 
@@ -16,11 +25,11 @@ jQuery( document ).ready( function() {
         'change',
         function() {
         	checkbox_value = "0";
-            
+
             if ( jQuery( this ).is(":checked") ) {
             	checkbox_value = "1";
             }
-            
+
             jQuery( this ).parents( '.customize-control' ).find( 'input[type="hidden"]' ).val( checkbox_value ).trigger( 'change' );
         }
     );

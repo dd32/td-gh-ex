@@ -9,21 +9,21 @@
  * @subpackage Simple_Catch
  * @since Simple Catch 1.0
  */
- 
-get_header(); 
-	
+
+get_header();
+
 	if ( function_exists( 'simplecatch_display_div' ) ) {
 		$themeoption_layout = simplecatch_display_div();
 	}
     get_template_part( 'content' ); ?>
-        
+
 	</div><!-- #content -->
-            
-	<?php 
-    if ( $themeoption_layout == 'right-sidebar' ) {
-        get_sidebar(); 
+
+	<?php
+    if ( 'right-sidebar' == $themeoption_layout  ) {
+        get_sidebar();
     }?>
-            
-	</div><!-- #main --> 
-        
+
+	</div><!-- #main -->
+
 <?php get_footer(); ?>
