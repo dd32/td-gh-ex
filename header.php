@@ -80,8 +80,7 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 <noscript><p style="border:1px solid red;font-size:14px;background-color:pink;padding:5px;margin-left:auto;margin-right:auto;max-width:640px;text-align:center;">
 <?php _e('JAVASCRIPT IS DISABLED. Please enable JavaScript on your browser to best view this site.', 'weaver-xtreme' /*adm*/); ?></p></noscript><!-- displayed only if JavaScript disabled -->
 <?php
-
-
+	do_action('weaverxplus_action','body_top');	// mostly for the loading screen
 
 	if ( false && WEAVERX_DEV_MODE ) {
 		if (is_customize_preview())
@@ -92,7 +91,7 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 
 	weaverx_area_div( 'wrapper' );
 
-	weaverx_inject_area('fixedtop');	// inject fixed top
+	weaverx_inject_area('fixedtop','wvrx-fixedtop');	// inject fixed top
 
 
 	/* header layout:
@@ -107,6 +106,7 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 	 */
 
 	$hdr_class = ( weaverx_is_checked_page_opt('_pp_hide_header') ) ? 'hide' : '';
+	$hdr_class .= weaverx_getopt_default('header_image_render','header-as-img') . ' ';
 
 	weaverx_clear_both('preheader');
 	weaverx_inject_area('preheader');	// inject pre-header HTML
@@ -121,14 +121,13 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 	weaverx_header_widget_area( 'top' );           // show header widget area if set to this position
 
 	$title =  apply_filters('weaverx_site_title', esc_html(get_bloginfo( 'name', 'display' ) ) );
-?>
 
 
-<header id="branding" role="banner">
-<?php
+	echo '<header id="branding" role="banner">' . "\n";
 
 	/* ======== SITE LOGO and TITLE ======== */
-	if ( weaverx_getopt('title_over_image') )
+	if (weaverx_getopt('title_over_image')
+		&& (weaverx_getopt_default('header_image_render','header-as-img') == 'header-as-img' || weaverx_getopt('header_image_html_plus_bg')) )
 		echo '<div id="title-over-image">' . "\n";
 
 	$h_class = '';
@@ -138,24 +137,43 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 		$lead = ' ';
 	}
 
+	$t_class = '';
+	if ( weaverx_getopt('site_title_add_class') != 'hide-none')
+		$t_class .= ' ' . weaverx_getopt('site_title_add_class');
 
-
-	if ( weaverx_getopt('site_title_add_class') != 'hide-none') {
-		$t_class = weaverx_getopt('site_title_add_class');
-		echo "    <div id=\"title-tagline\" class=\"clearfix {$t_class}\" >\n";
-	} else {
-		echo "    <div id=\"title-tagline\" class=\"clearfix\" >\n";
+	if ( weaverx_getopt('expand_site_title') ) {
+		$t_class .= ' wvrx-expand-full';
 	}
-	weaverx_the_custom_logo();
+
+	echo "    <div id='title-tagline' class='clearfix{$t_class}'>\n";
 
 	$logo = weaverx_getopt( '_site_logo' );
+
 	$hide_logo = weaverx_getopt( '_hide_site_logo' );
+
+	$wp_logo = weaverx_get_wp_custom_logo();
+	if ( $wp_logo ) {
+		$hide_wp_logo = weaverx_getopt('hide_wp_site_logo');
+		$wp_logo = str_replace('custom-logo-link', 'custom-logo-link ' . $hide_wp_logo, $wp_logo);		// fixup hide
+	}
+
+	$title_text = $title;
+
+	if ( strlen($wp_logo) > 0 )	{								// there is a logo - what to do...
+		if ( weaverx_getopt('wplogo_for_title') ) {
+			$title_text = '<img class="site-title-logo" src="' . weaverx_get_wp_custom_logo_url() . '" alt="' . $title .'" />';
+
+		} else {
+			echo "\n    {$wp_logo}\n";
+		}
+	}
 
 ?>
 		<h1 id="site-title"<?php echo weaverx_title_class( 'site_title', false, $h_class ); ?>><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo $title; ?>" rel="home">
-		<?php echo $title; ?></a></h1>
+		<?php echo $title_text; ?></a></h1>
 
-		<?php /* ======== SEARCH BOX ======== */
+		<?php
+		/* ======== SEARCH BOX ======== */
 		$hide_search = weaverx_getopt( 'header_search_hide');
 		if ( $hide_search != 'hide' ) { ?>
 			<div id="header-search" class="<?php echo $hide_search; ?>"><?php get_search_form(); ?></div><?php
@@ -166,8 +184,10 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 
 		?>
 		<h2 id="site-tagline" class="<?php echo $hide_tag; ?>"><span<?php echo weaverx_title_class('tagline'); ?>><?php echo $tagline; ?></span></h2>
+		<?php if ( $logo ) { ?>
 		<div id="site-logo" class="site-logo <?php echo $hide_logo; ?>"><?php echo $logo; ?></div>
-		<?php get_template_part( 'templates/menu', 'header-mini' ); ?>
+		<?php }
+		get_template_part( 'templates/menu', 'header-mini' ); ?>
 
 	</div><!-- /.title-tagline -->
 
@@ -181,65 +201,101 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 
 
 	/* ======== HEADER IMAGE ======== */
-	global $weaverx_header;
 
 	if ( !( weaverx_is_checked_page_opt('_pp_hide_header_image') && !is_search() ) ) { // don't bother if hide per page
 
 		$h_hide = weaverx_getopt_default('hide_header_image', 'hide-none');
 
 		// really hide - don't need to have device download the image
-		$really_hide = ( $h_hide == 'hide' || ( weaverx_getopt('hide_header_image_front') && is_front_page() )) ;
+		$really_hide = ( $h_hide == 'hide' || ( weaverx_getopt('hide_header_image_front') && is_front_page() ) ) ;
 
-		if ( $h_hide == 'hide-none' || $h_hide == 'hide')
-			$h_hide = ' class="header-image"';
-		else
-			$h_hide = ' class="header-image ' . $h_hide . '"';
+		$img_class = 'header-image ';
+		if ( $h_hide != 'hide-none' && $h_hide != 'hide')
+			$img_class .= $h_hide . ' ';
+
+		if ( weaverx_getopt_expand('expand_header-image'))
+			$img_class .= 'wvrx-expand-full ';
 
 		if (weaverx_getopt('header_image_add_class') != '') {
-			$h_hide = str_replace('"header-image','"header-image ' . weaverx_getopt('header_image_add_class'), $h_hide);
+			$img_class .= weaverx_getopt('header_image_add_class') . ' ';
 		}
+
+		// Weaver Xtreme supports 4 kinds of header "images". -- added for Version 3.0
+		//   First is the standard image set by the WP Header option
+		//   Second is a replacement from a Featured Image - pages or post single page
+		//   Third is as a BG image for either of the above images
+		//   Fourth is replacing the image by arbitrary HTML - like a shortcode for a slider. This one does not do BG.
+
+		$hdr_type = weaverx_get_header_image($hdr, $hdr_bg, $hdr_html);		// get the header image/content: img, bg-img, html replacement
 
 
 		if (  ! $really_hide  ) {
 
-			echo("<div id=\"header-image\"" . $h_hide . ">\n");
+			//$h_hide = str_replace('"header-image', '"header-image header-image-type-' . $hdr_type, $h_hide_class);
+			$img_class .= 'header-image-type-' . $hdr_type;
 
-			global $weaverx_header;
-			/* Check if this is a post or page, if it has a thumbnail,  and if it's a big one */
-			$page_type = ( is_single() ) ? 'post' : 'page';
-			if (    $GLOBALS['weaverx_page_who'] == 'blog'
-				||  $GLOBALS['weaverx_page_is_archive']
-				||  !weaverx_fi( $page_type, 'header-image' ) ) {
-				$hdr = get_header_image();
-				if ($hdr) {
-					// wp customizer preview hack for WP 4.4 beta, might go away for 4.4 release
-					$url = get_template_directory_uri();
-					$url = str_replace(array('http://', 'https://'),'', $url);
-					$hdr = str_replace('%s', $url, $hdr);		// 4.4 preview breaks this
-					$hdr = str_replace(array('http://', 'https://'),'//', $hdr);
+			echo '<div id="header-image" class="' . $img_class . '">';
 
-					if ( weaverx_getopt('link_site_image') ) { ?>
-<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+			if ($hdr_html) {
+				echo do_shortcode($hdr_html);	// output the html
+			} elseif ($hdr && !$hdr_bg) {	// fi or std
+
+				$hdr = str_replace(array('http://', 'https://'),'//', $hdr);
+
+				if ( weaverx_getopt('link_site_image') ) {
+					?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 <?php 				}
-					$width = weaverx_getopt_default('theme_width_int',940);
-					$custom_header_sizes = apply_filters( 'weaverx_custom_header_sizes', "(max-width: {$width}px) 100vw, 1920px" );
-					if ( weaverx_getopt('header_actual_size') || stripos($hdr, '.gif') !== false ) { ?>
-<img src="<?php echo $hdr ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
-					<?php } else {
-				?>
-<img src="<?php echo $hdr; ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( get_custom_header()->attachment_id ) ); ?>" sizes="<?php echo esc_attr( $custom_header_sizes ); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /> <?php
-					}
-					weaverx_e_opt('link_site_image',"\n</a>");	/* need to close link */
-				} else {
-					echo '<div class="clear-header-image" style="clear:both"></div>'; // needs a clear if not an img
-				}
+
+				$width = weaverx_getopt_default('theme_width_int',WEAVERX_THEME_WIDTH);
+				$custom_header_sizes = apply_filters( 'weaverx_custom_header_sizes', "(max-width: {$width}px) 100vw, 1920px" );
+
+				if ($hdr_type == 'std')
+					$hdr_id = get_custom_header();
+
+				if ($hdr_type == 'fi' || !isset($hdr_id->attachment_id) || !$hdr_id->attachment_id ) {		// must be a standard Weaver header or FI header so get_custom_header doesn't have sizes info
+						?><img src="<?php echo $hdr; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+<?php
+				}  elseif ( weaverx_getopt('header_actual_size') || stripos($hdr, '.gif') !== false ) {
+
+					?><img src="<?php echo $hdr ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+<?php
+				} else {		// have a header from the media library
+
+						?><img src="<?php echo $hdr; ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( get_custom_header()->attachment_id ) ); ?>" sizes="<?php echo esc_attr( $custom_header_sizes ); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+<?php				}
+
+				weaverx_e_opt('link_site_image',"</a>");	/* need to close link */
+
+			} else {			// there is no header image
+				echo '<div class="clear-header-image" style="clear:both"></div>'; // needs a clear if not an img
 			}
 
 			echo("\n</div><!-- #header-image -->\n");
-		} // ! $really_hide
-	} /* end hide-header-image */
+		}  // ! $really_hide
 
-	if (weaverx_getopt('title_over_image') )
+		if ( $hdr_bg ) { // have to emit background-image url... this will be Plus only.
+
+			$style = "<style type='text/css'>";
+
+			if ($h_hide != 'hide')
+				$style .= "#header{background-image:url({$hdr_bg});}";
+
+			// handle hide on devices
+
+			if (strpos($h_hide, 's-hide')!==false)
+				$style .= '.is-phone #header{background-image:none;}';
+			if (strpos($h_hide, 'm-hide')!==false)
+				$style .= '.is-tablet #header{background-image:none;}';
+			if (strpos($h_hide, 'l-hide')!==false)
+				$style .= '.is-desktop #header{background-image:none;}';
+			echo $style . "</style>\n";
+
+		}
+
+	} /* end hide-header-image - but account for header-as-bg image to make it render better - unless showing both the html and bg */
+
+	if (weaverx_getopt('title_over_image')
+		&& (weaverx_getopt_default('header_image_render','header-as-img') == 'header-as-img' || weaverx_getopt('header_image_html_plus_bg')) )
 		echo '</div><!--/#title-over-image -->' . "\n";
 
 	weaverx_header_widget_area( 'after_header' );           // show header widget area if set to this position
@@ -254,6 +310,9 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 		echo '<div id="header-html" style="display:inline;"></div>';		// need the area there for customizer live preview
 	} else if ( $extra != '' && $hide != 'hide' ) {
 		$c_class = weaverx_area_class('header_html', 'not-pad', '-none', 'margin-none' );
+
+		if (weaverx_getopt_expand('expand_header-html')) $c_class .= ' wvrx-expand-full';
+
 		?>
 		<div id="header-html" class="<?php echo $c_class;?>">
 			<?php echo  do_shortcode($extra) ; ?>

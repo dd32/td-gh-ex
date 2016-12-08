@@ -12,6 +12,7 @@ function weaverx_customizer_define_visibility_sections( $sections ) {
 	/**
 	 * General
 	 */
+if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if advanced, int
 	$visibility_sections['visibility-global-vis'] = array(
 		'panel'   => $panel,
 		'title'   => __( 'Global Visibility', 'weaver-xtreme' ),
@@ -40,6 +41,7 @@ function weaverx_customizer_define_visibility_sections( $sections ) {
 	/**
 	 * Site Header
 	 */
+
 	$visibility_sections['visibility-header'] = array(
 		'panel'   => $panel,
 		'title'   => __( 'Header Area', 'weaver-xtreme' ),
@@ -126,7 +128,7 @@ function weaverx_customizer_define_visibility_sections( $sections ) {
 				'weaverx_cz_choices_hide',	'hide-none', 'refresh'
 			),
 
-			'm_primary_hide_right' => weaverx_cz_select_plus(
+			'm_primary_hide_right' => weaverx_cz_select(
 				__( 'Hide Primary Menu Right HTML', 'weaver-xtreme' ),
 				'',
 				'weaverx_cz_choices_hide',	'hide-none', 'refresh'
@@ -553,13 +555,25 @@ function weaverx_customizer_define_visibility_sections( $sections ) {
 
 			'_hide_poweredby' => weaverx_cz_checkbox_refresh(
 				__( 'Hide Powered By tag', 'weaver-xtreme' ),
-				__( 'Hide the "Proudly powered by" notice in the footer. &diams;', 'weaver-xtreme' )
+				__( 'Hide the WordPress Logo link/notice in the footer. &diams;', 'weaver-xtreme' )
 			),
 
 
 
 		),
 	);
+} else {
+	$visibility_sections['vis-panel'] = array(
+		'panel'   => $panel,
+		'title'   => __( 'Visibility Options', 'weaver-xtreme' ),
+		'options' => array(
+
+			'vis-beginner-heading' => weaverx_cz_heading( __( 'Advanced and Intermediate Visibility', 'weaver-xtreme' ),
+				__( 'With the Advanced and Intermediate Level Interface Levels, you can define control visibility for many items, including visibility by device.', 'weaver-xtreme' )),
+			)
+		);
+
+}
 
 	/**
 	 * Filter the definitions for the controls in the Color Scheme panel of the Customizer.

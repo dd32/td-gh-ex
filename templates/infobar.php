@@ -78,4 +78,6 @@ if (weaverx_getopt('infobar_hide') != 'hide' && !weaverx_is_checked_page_opt('_p
 <?php
 } // show info bar
 
+do_action('weaverxplus_action','after_infobar');	// X-Plus widget area
+
 ?>

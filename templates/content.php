@@ -17,7 +17,8 @@ $do_excerpt = weaverx_do_excerpt();
 
 $me = ($do_excerpt) ? 'post_excerpt' : 'post_full';
 
-weaverx_fi( $me, 'post-before' );
+
+weaverx_fi( $me, 'post-pre' );
 
 // ------------------------------------------------- COMPACT POSTS ---------------------------------------
 

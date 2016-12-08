@@ -53,7 +53,7 @@ function weaverx_setup() {
 	// Set the content width based on the theme's design and stylesheet.
 
 	if ( ! isset( $content_width ) )
-		$content_width = 705;   // 940 * .75 - default for content with a sidebar
+		$content_width = (int)(WEAVERX_THEME_WIDTH * .75);   // 1100 * .75 - default for content with a sidebar
 
 
 	/* Make Weaver Xtreme available for translation.
@@ -64,11 +64,8 @@ function weaverx_setup() {
 
 	load_theme_textdomain('weaver-xtreme' , get_template_directory() . '/languages' );		// now theme's translations as fallback
 
-	// This theme styles the visual editor with editor-style.css to match the theme style.
-	add_editor_style();
-	//add_editor_style( str_replace( ',', '%2C', 'https://fonts.googleapis.com/css?family=Alegreya+Sans:400,700,400italic,700italic|Alegreya:400,700,700italic,400italic|Roboto:400,400italic,700,700italic|Roboto+Condensed:400,700|Roboto+Slab:400,700|Source+Sans+Pro:400,400italic,700,700italic|Source+Serif+Pro:400,700|Handlee|Inconsolata&subset=latin-ext,latin,cyrillic,greek' ) );
 
-	add_editor_style( str_replace( ',', '%2C', "https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic|Open+Sans+Condensed:300,700|Alegreya:400,400italic,700,700italic|Alegreya+Sans:400,400italic,700,700italic|Droid+Sans:400,700|Droid+Serif:400,400italic,700,700italic|Exo+2:400,700|Lato:400,400italic,700,700italic|Lora:400,400italic,700,700italic|Arvo:400,700,400italic,700italic|Roboto:400,400italic,700,700italic|Roboto+Condensed:400,700|Roboto+Slab:400,700|Archivo+Black|Source+Sans+Pro:400,400italic,700,700italic|Source+Serif+Pro:400,700|Vollkorn:400,400italic,700,700italic|Arimo:400,700|Tinos:400,400italic,700,700italic|Roboto+Mono:400,700|Inconsolata|Handlee|Ultra&subset=latin,latin-ext"  ) );
+	add_editor_style( WEAVERX_GOOGLE_FONTS_URL );	// from settings.php - in %7C format
 
 
 	// Add default posts and comments RSS feed links to <head>.
@@ -99,11 +96,9 @@ function weaverx_setup() {
 
 	weaverx_init_opts('functions');
 
-	$width = weaverx_getopt_default('theme_width_int',940);
+	$width = weaverx_getopt_default('theme_width_int',WEAVERX_THEME_WIDTH);
 
-	$height = weaverx_getopt('header_image_height_int');
-	if (!$height)
-		$height = 188;          // now that everything is responsive, we can just set this to an arbitrary height.
+	$height = weaverx_getopt_default('header_image_height_int',188);		// now that everything is responsive, we can just set this to an arbitrary height.
 
 		// Enable support for custom logo.
 
@@ -113,10 +108,8 @@ function weaverx_setup() {
 		'flex-height' => true,
 	) );
 
-
-	global $weaverx_header;
 	$weaverx_header = array(
-		'default-image' => '%s/assets/images/headers/maroon-bells.jpg',
+		'default-image' => '%s/assets/images/headers/beckwith-mtn.jpg',
 		'random-default' => true,
 		'width' => $width,
 		'height' => $height,
@@ -171,13 +164,6 @@ function weaverx_init_opts($who='') {
 		weaverx_get_default_settings();
 	}
 
-	//$mods = get_theme_mods();
-	//foreach ($mods as $name => $val) {
-	//	if ( strpos($name, 'wcz_', 0) !== false) {
-			// add to settings, and if not in customizer, and then save settings
-	//	}
-	//}
-
 	do_action('weaverx_init_opts');
 }
 }
@@ -194,7 +180,14 @@ function weaverx_register_header_images() {
 		'thumbnail_url' => '%s/assets/images/headers/maroon-bells-thumbnail.jpg',
 		/* translators: header image description */
 		'description' => __( 'Maroon Bells', 'weaver-xtreme' /*adm*/)
+		),
+	'beckwith-mtn' => array(
+		'url' => '%s/assets/images/headers/beckwith-mtn.jpg',
+		'thumbnail_url' => '%s/assets/images/headers/beckwith-mtn-thumbnail.jpg',
+		/* translators: header image description */
+		'description' => __( 'Colorado Autumn', 'weaver-xtreme' /*adm*/)
 		)
+
 	) );
 }
 }
@@ -207,11 +200,11 @@ if ( ! function_exists( 'weaverx_admin_header_style' ) ) {
  * @since Weaver Xtreme 1.0
  */
 function weaverx_admin_header_style() {
-	global $weaverx_header;
 ?>
 	<style type="text/css">
 	#headimg img {
-		width: <?php echo $weaverx_header['width']; ?>px;
+		width: <?php echo weaverx_getopt_default('theme_width_int',WEAVERX_THEME_WIDTH);
+; ?>px;
 		height: auto;
 		width: 100%;
 	}
@@ -393,10 +386,14 @@ function weaverx_enqueue_scripts() {	// action definition
 	$altsw = weaverx_getopt('mobile_alt_switch');
 	if ($useSM == '0' || $altsw < 10 )
 		$altsw = '767';
+	$altLabel = weaverx_getopt('mobile_alt_label');
 
 	$local = array(
 		'useSmartMenus' => $useSM,
-		'menuAltswitch' => $altsw
+		'menuAltswitch' => $altsw,
+		'mobileAltLabel' => $altLabel,
+		'primaryScroll' => weaverx_getopt('m_primary_fixedtop'),
+		'secondaryScroll' => weaverx_getopt('m_secondary_fixedtop')
 	);
 
 	wp_localize_script('weaverxJSLib', 'wvrxOpts', $local );
@@ -422,7 +419,11 @@ require_once(get_template_directory() . '/includes/lib-layout.php'); 	    // con
 require_once(get_template_directory() . '/includes/lib-runtime.php');	    // standard runtime library
 require_once(get_template_directory() . '/includes/filters.php');	        // other filter and action definitions
 
-require_once(get_template_directory() . WEAVERX_ADMIN_DIR . '/load-admin-core.php');	// load admin files
+if (is_user_logged_in() ) {
+	require_once(get_template_directory() . WEAVERX_ADMIN_DIR . '/load-admin-core.php');	// load admin files
+	require_once( trailingslashit( get_template_directory() ) . 'admin/customizer/trt-customize-pro/trt-customize-pro-top.php' );
+
+}
 
 do_action('weaver_xtreme_load_admin');		// now load the tradtional admin from plugin if loaded, otherwise basic info
 do_action('weaver_xtreme_load_customizer');	// load the customizer based option inteface.
@@ -523,9 +524,7 @@ function weaverx_render_infinite_scroll() {
 
 }
 
-
-/*
- *	Support for Woo Commerece
+ /*	Support for Woo Commerece
  */
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);

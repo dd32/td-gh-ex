@@ -11,39 +11,16 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 
 	// global settings
 
+if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if advanced, int
+
 	$spacing_sections['spacing-global'] = array(
 		'panel'   => $panel,
 		'title'   => __( 'Global Spacing Options', 'weaver-xtreme' ),
-		'description' => 'Set some global settings that affect spacing, width, and alignment.',
+		'description' => 'Set global settings that affect spacing, width, and alignment.',
 		'options' => array(
 
-			'theme_width_int'     => array(
-				'setting' => array(
-					'sanitize_callback' => 'weaverx_cz_sanitize_int',
-					'transport' => 'postMessage',
-					'default' => 940
-				),
-				'control' => array(
-					'control_type' => 'WeaverX_Range_Control',
-					'label'   => __( 'Theme Width (px)', 'weaver-xtreme' ),
-					'description' => __('This options sets the maximum width of your site. Your site will automatically display responsively on tablets and phones. You can manually set the value to 9999 for full screen width, or to any other value you want. Widths less than 768px may give unexpected results on mobile devices. Weaver Xtreme can not create a fixed-width site.', 'weaver-xtreme'),
-					'type'  => 'range',
-					'input_attrs' => array(
-						'min'  => 770,
-						'max'  => 3200,
-						'step' => 10,
-					),
-				),
-			),
-
-			'spacing-line-1' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'type'  => 'line',
-				),
-			),
-
-
+			'space-site-width' => weaverx_cz_group_title( __( 'Site Width', 'weaver-xtreme' ),
+				__('The global <strong>Site Width</strong> setting is found on the <em>Layout -> Site Width</em> menu.', 'weaver-xtreme')),
 
 			'smart_margin_int'     => array(
 				'setting' => array(
@@ -199,14 +176,14 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'container_max_width_int'     => array(
-				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 2000	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
 					'control_type' => WEAVERX_PLUS_RANGE_CONTROL,
 					'label'   => __( 'Container Area Max Width (px)', 'weaver-xtreme' ). WEAVERX_PLUS_ICON,
-					'description' => __('This advanced option allows you to set a maximum width for this area. This is not commonly used, but can make interesting designs, especially if you center align the area.', 'weaver-xtreme'),
+					'description' => __('This advanced option allows you to set a maximum width for this area. This is not commonly used, but can make interesting designs, especially if you center align the area. Use 0 for no Max Width.', 'weaver-xtreme'),
 					'type'  => 'range',
 					'input_attrs' => array(
-						'min'  => 480,
+						'min'  => 0,
 						'max'  =>  4000,
 						'step' => 5,
 					),
@@ -315,6 +292,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 	 * Site Header
 	 *
 	 */
+
 	$hdr_width_transport = weaverx_getopt_checked('header_extend_width') ? 'refresh' : 'postMessage';
 	$hdr_refresh = weaverx_getopt_checked('header_extend_width') ? WEAVERX_REFRESH_ICON : '';
 	$spacing_sections['spacing-header'] = array(
@@ -342,14 +320,14 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 		'header_max_width_int'     => array(
-				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 2000	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
 					'control_type' => WEAVERX_PLUS_RANGE_CONTROL,
 					'label'   => __( 'Header Area Max Width (px)', 'weaver-xtreme' ). WEAVERX_PLUS_ICON,
-					'description' => __('This advanced option allows you to set a maximum width for this area. This is not commonly used, but can make interesting designs, especially if you center align the area.', 'weaver-xtreme'),
+					'description' => __('This advanced option allows you to set a maximum width for this area. This is not commonly used, but can make interesting designs, especially if you center align the area.  Use 0 for no Max Width.', 'weaver-xtreme'),
 					'type'  => 'range',
 					'input_attrs' => array(
-						'min'  => 480,
+						'min'  => 0,
 						'max'  =>  4000,
 						'step' => 5,
 					),
@@ -458,7 +436,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 				'control' => array(
 					'label' => __( 'Move Title/Tagline over Image', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'description' => __('Move the Title, Tagline, Search, Logo/HTML and Mini Menu over the Header Image.',
+					'description' => __('Move the Title, Tagline, Search, Logo/HTML and Mini Menu over the Header Image. NOTE: Best to not use with Header Image as BG Image.',
 										'weaver-xtreme'),
 					'type'  => 'checkbox',
 				),
@@ -552,6 +530,37 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 					'input_attrs' => array(
 						'min'  => 10,
 						'max'  =>  100,
+						'step' => 1,
+					),
+				),
+			),
+
+
+
+		'title_tagline_xy_T'     => array(
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
+				),
+				'control' => array(
+					'control_type' => 'WeaverX_Range_Control',
+					'label'   => __( 'Title/Tagline Top Padding (px)', 'weaver-xtreme' ),
+					'type'  => 'range',
+					'input_attrs' => array(
+						'min'  => 0,
+						'max'  => 250,
+						'step' => 1,
+					),
+				),
+			),
+			'title_tagline_xy_B'     => array(
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
+				),
+				'control' => array(
+					'control_type' => 'WeaverX_Range_Control',
+					'label'   => __( 'Title/Tagline Bottom Padding (px)', 'weaver-xtreme' ),
+					'type'  => 'range',
+					'input_attrs' => array(
+						'min'  => 0,
+						'max'  => 250,
 						'step' => 1,
 					),
 				),
@@ -800,9 +809,6 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 
-
-
-
 		),
 	);
 
@@ -810,6 +816,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 	/**
 	 * Main Menu
 	 */
+
 	$spacing_sections['spacing-menus'] = array(
 		'panel'   => $panel,
 		'title'   => __( 'Menus', 'weaver-xtreme' ),
@@ -825,23 +832,6 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				'weaverx_cz_choices_align_menu', 'float-left'
 			),
 
-
-
-			'm_primary_menu_pad_dec'     => array(
-				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'refresh',	'default' => 0.6
-				),
-				'control' => array(
-					'control_type' => 'WeaverX_Range_Control',
-					'label'   => __( 'Desktop Menu Vertical Padding (em)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'description'   => __( 'Add vertical padding to Desktop menu bar and submenus.', 'weaver-xtreme' ),
-					'type'  => 'range',
-					'input_attrs' => array(
-						'min'  => 0,
-						'max'  => 10,
-						'step' => .1,
-					),
-				),
-			),
 
 			'm_primary_top_margin_dec'     => array(
 				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
@@ -905,6 +895,28 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 
+			'm_primary_menu_bar_pad_dec'     => array(
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'refresh',	'default' => 0
+				),
+				'control' => array(
+					'control_type' => 'WeaverX_Range_Control',
+					'label'   => __( 'Desktop Menu Bar Padding', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'description'   => __( 'Add padding to menu bar top and bottom for Desktop devices.', 'weaver-xtreme' ),
+					'type'  => 'range',
+					'input_attrs' => array(
+						'min'  => 0,
+						'max'  => 10,
+						'step' => .1,
+					),
+				),
+			),
+
+
+			'm_p_deprecated'=> weaverx_cz_heading(
+				__( 'Desktop Menu Item Vertical Padding ', 'weaver-xtreme' ),
+				__( 'Option deprecated. Use previous option instead. It is still available in the Legacy Option interface.' , 'weaver-xtreme')
+			),
+
 			'spacing-pm-line1' => weaverx_cz_line(),
 
 
@@ -918,21 +930,8 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				'weaverx_cz_choices_align_menu',	'float-left'
 			),
 
-			'm_secondary_menu_pad_dec'     => array(
-				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'refresh',	'default' => 0.6
-				),
-				'control' => array(
-					'control_type' => 'WeaverX_Range_Control',
-					'label'   => __( 'Desktop Menu Vertical Padding (em)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'description'   => __( 'Add vertical padding to Desktop menu bar and submenus.', 'weaver-xtreme' ),
-					'type'  => 'range',
-					'input_attrs' => array(
-						'min'  => 0,
-						'max'  => 10,
-						'step' => .1,
-					),
-				),
-			),
+
+
 			'm_secondary_top_margin_dec'     => array(
 				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
@@ -993,6 +992,26 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 					),
 				),
 			),
+			'm_secondary_menu_bar_pad_dec'     => array(
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'refresh',	'default' => 0
+				),
+				'control' => array(
+					'control_type' => 'WeaverX_Range_Control',
+					'label'   => __( 'Desktop Menu Bar Padding', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'description'   => __( 'Add padding to menu bar top and bottom for Desktop devices.', 'weaver-xtreme' ),
+					'type'  => 'range',
+					'input_attrs' => array(
+						'min'  => 0,
+						'max'  => 10,
+						'step' => .1,
+					),
+				),
+			),
+			'm_sec_deprecated'=> weaverx_cz_heading(
+				__( 'Desktop Menu Item Vertical Padding ', 'weaver-xtreme' ),
+				__( 'Option deprecated. Use previous option instead. It is still available in the Legacy Option interface.' , 'weaver-xtreme')
+			),
+
 
 
 			'spacing-mm-heading' => weaverx_cz_group_title(
@@ -1033,22 +1052,6 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 			),
 
 
-
-			'm_extra_menu_pad_dec'     => array(
-				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'refresh',	'default' => 0.6
-				),
-				'control' => array(
-					'control_type' => 'WeaverX_Range_Control',
-					'label'   => __( 'Desktop Menu Vertical Padding (em)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'description'   => __( 'Add vertical padding to Desktop menu bar and submenus.', 'weaver-xtreme' ),
-					'type'  => 'range',
-					'input_attrs' => array(
-						'min'  => 0,
-						'max'  => 10,
-						'step' => .1,
-					),
-				),
-			),
 			'm_extra_top_margin_dec'     => array(
 				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
 				),
@@ -1460,7 +1463,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'post_margin_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 15
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -2142,14 +2145,14 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 		'footer_max_width_int'     => array(
-				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 2000	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0	),
 				'control' => array(
 					'control_type' => WEAVERX_PLUS_RANGE_CONTROL,
 					'label'   => __( 'Footer Area Max Width (px)', 'weaver-xtreme' ). WEAVERX_PLUS_ICON,
-					'description' => __('This advanced option allows you to set a maximum width for this area. This is not commonly used, but can make interesting designs, especially if you center align the area.', 'weaver-xtreme'),
+					'description' => __('This advanced option allows you to set a maximum width for this area. This is not commonly used, but can make interesting designs, especially if you center align the area.  Use 0 for no Max Width.', 'weaver-xtreme'),
 					'type'  => 'range',
 					'input_attrs' => array(
-						'min'  => 480,
+						'min'  => 0,
 						'max'  =>  4000,
 						'step' => 5,
 					),
@@ -2276,7 +2279,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 
 
 			'footer_sb_padding_T'     => array(
-				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 0	),
+				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 8	),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
 					'label'   => __( 'Top Padding (px)', 'weaver-xtreme' ),
@@ -2289,7 +2292,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'footer_sb_padding_B'     => array(
-				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 8
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -2303,7 +2306,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'footer_sb_padding_L'     => array(
-				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 8
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -2317,7 +2320,7 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 				),
 			),
 			'footer_sb_padding_R'     => array(
-				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 0
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage',	'default' => 8
 				),
 				'control' => array(
 					'control_type' => 'WeaverX_Range_Control',
@@ -2487,163 +2490,18 @@ function weaverx_customizer_define_spacing_sections( $sections ) {
 		),
 	);
 
-	$spacing_sections['spacing-fullwidth'] = array(
+
+} else {
+	$spacing_sections['spacing_beginner'] = array(
 		'panel'   => $panel,
-		'title'   => __( 'Full Width Site', 'weaver-xtreme' ),
-		'description' => __('Weaver Xtreme features several options specifically designed to create exciting full width site designs. Although one could logically place these options in other panels, putting most of them all here is easier. The overall site width is still on the <em>Spacing &rarr; Global Spacing<em> panel. <strong>You likely want to change the default site width.</strong> Using the options available here, the strategy is to confine you content to a reasonable width, perhaps 1600 or 1900. Then you can extend attribute to the full screen width without making your content area too wide. You can also get interesting effects by adjusting the widths of each of these sections on the <em>Spacing</em> panel. Just play with these options to see how they all work together! And remember, your site will always automatically adjust to mobile devices.', 'weaver-xtreme'),
+		'title'   => __( 'Beginner Level Spacing', 'weaver-xtreme' ),
 		'options' => array(
+			'space-beginner-names2' => weaverx_cz_group_title( __( 'Spacing Options', 'weaver-xtreme' ),
+				__( 'The Advanced and Intermediate Level Spacing options include options for controlling spacing, widths, and algnments for Global items (including the theme width), Wrapping Areas, Header Area, Menus, Info Bar, Content, Post Specific, Sidebars and Widget Areas, Individual Widgets, Footer Area, and creating full width sites.', 'weaver-xtreme' )),
+			)
+		);
 
-			'general-full-header' => weaverx_cz_group_title( __( 'Site Header Area', 'weaver-xtreme' ),
-				__('The Header Area contains the Menus, the Header Widget Area, the Site Image, and the Header HTML Area.',	'weaver-xtreme')),
-
-			'general-full-header-width' => weaverx_cz_heading( __( 'Header Area Width', 'weaver-xtreme' ),
-				__('You might want to adjust the Header Area width and alignment on the <em>Spacing &rarr; Site Header Spacing</em> panel.', 'weaver-xtreme')),
-
-			'general-full-line-1' => array(	'control' => array(	'control_type' => 'WeaverX_Misc_Control', 'type'  => 'line' )),
-
-			'header_extend_width'=> array(
-				'setting' => array(
-				),
-				'control' => array(
-					'label' => __( 'Header Full Width BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'description' => __('Extend all BG Attributes to full screen width. The area content retains it own width in the Theme Width width. Use this option for the Container, Header, and Footer "full width" site layouts. <strong style="background-color:yellow;"><large>IMPORTANT TIP:</large></strong> This option interacts with the area width and padding settings - we suggest that you "Save and Publish", and then <em>Refresh</em> this page in your browser to completely reload the Customizer.', 'weaver-xtreme'),
-					'type'  => 'checkbox',
-				),
-			),
-
-			'general-full-header-or-' => weaverx_cz_heading( __( '** OR **', 'weaver-xtreme' )),
-
-			'header_extend_bgcolor'   => array(
-				'setting' => array(
-					'sanitize_callback' => WEAVERX_CZ_SANITIZE_COLOR,
-					'default' => weaverx_cz_getopt('header_extend_bgcolor'),
-					'transport' => 'refresh' // can't do the #container:before required
-				),
-				'control' => array(
-					'control_type' => WEAVERX_PLUS_COLOR_CONTROL,
-					'label'        => __( 'Header Full-width BG Color', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-					'description'  => __( 'Extend this BG color to full theme width on Desktop View. Menu Bars, Container and Footer have same option. Unlike the "Full Screen Width BG Attributes" on the Spacing panel, this option extends just this BG color, and allows different BG colors for the area. You can use only one of the "Attributes" vs. "Color" option.', 'weaver-xtreme' ),
-				),
-			),
-			'general-full-line-1a' => array(	'control' => array(	'control_type' => 'WeaverX_Misc_Control', 'type'  => 'line' )),
-
-
-
-			'm_primary_extend_width'=> array(
-				'setting' => array(
-				),
-				'control' => array(
-					'label' => __( 'Primary Menu Full Width', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'description' => __('Extend all Primary Menu Bar BG Attributes to full width. Overrides Full-width BG color.', 'weaver-xtreme'),
-					'type'  => 'checkbox',
-				),
-			),
-			'general-full-header-or-2' => weaverx_cz_heading( __( '** OR **', 'weaver-xtreme' )),
-
-			'm_primary_extend_bgcolor'   => array(
-				'setting' => array(
-					'sanitize_callback' => WEAVERX_CZ_SANITIZE_COLOR,
-					'default' => weaverx_cz_getopt('m_primary_extend_bgcolor'),
-					'transport' => 'refresh' // can't do the #container:before required
-				),
-				'control' => array(
-					'control_type' => WEAVERX_PLUS_COLOR_CONTROL,
-					'label'        => __( 'Primary Menu Full-width BG color', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-					'description'  => __( 'Extend this BG color to full theme width on Desktop View. Menu Bars, Container and Footer have same option. Unlike the "Full Screen Width BG Attributes" on the Spacing panel, this option extends just this BG color, and allows different BG colors for the area.', 'weaver-xtreme' ),
-				),
-			),
-			'general-full-line-3' => array(	'control' => array(	'control_type' => 'WeaverX_Misc_Control', 'type'  => 'line' )),
-			'm_secondary_extend_width'=> array(
-				'setting' => array(
-				),
-				'control' => array(
-					'label' => __( 'Secondary Menu Full Width', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'description' => __('Extend all BG Attributes to full width. Overrides Full-width BG color.', 'weaver-xtreme'),
-					'type'  => 'checkbox',
-				),
-			),
-			'general-full-header-or-2a' => weaverx_cz_heading( __( '** OR **', 'weaver-xtreme' )),
-
-			'm_secondary_extend_bgcolor'   => array(
-				'setting' => array(
-					'sanitize_callback' => WEAVERX_CZ_SANITIZE_COLOR,
-					'default' => weaverx_cz_getopt('m_secondary_extend_bgcolor'),
-					'transport' => 'refresh' // can't do the #container:before required
-				),
-				'control' => array(
-					'control_type' => WEAVERX_PLUS_COLOR_CONTROL,
-					'label'        => __( 'Secondary Menu Full-width BG color', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-					'description'  => __( 'Extend this BG color to full theme width on Desktop View. Menu Bars, Container and Footer have same option. Unlike the "Full Screen Width BG Attributes" on the Spacing panel, this option extends just this BG color, and allows different BG colors for the area.', 'weaver-xtreme' ),
-				),
-			),
-			'general-full-line-4' => array(	'control' => array(	'control_type' => 'WeaverX_Misc_Control', 'type'  => 'line' )),
-
-			'general-full-container' => weaverx_cz_group_title( __( 'Site Container Area', 'weaver-xtreme' ),
-				__('The Container Area contains the main content area, plus the primary, secondary, top, and bottom widget areas.',	'weaver-xtreme')),
-
-			'general-full-containerx-width' => weaverx_cz_heading( __( 'Container Area Width', 'weaver-xtreme' ),
-				__('You might want to adjust the Container Area width and alignment on the <em>Spacing &rarr; Wrapping Areas</em> panel.', 'weaver-xtreme')),
-
-			'container_extend_width'=> array(
-				'setting' => array(
-				),
-				'control' => array(
-					'label' => __( 'Container Full Width BG Attributes', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'description' => __('Extend all Container BG Attributes to full screen width. The area content retains it own width in the Theme Width width. Use this option for the Container, Header, and Footer "full width" site layouts.  <strong style="background-color:yellow;"><large>IMPORTANT TIP:</large></strong> This option interacts with the area width and padding settings - we suggest that you "Save and Publish", and then <em>Refresh</em> this page in your browser to completely reload the Customizer.', 'weaver-xtreme'),
-					'type'  => 'checkbox',
-				),
-			),
-			'general-full-header-or-3' => weaverx_cz_heading( __( '** OR **', 'weaver-xtreme' )),
-
-			'container_extend_bgcolor'   => array(
-				'setting' => array(
-					'sanitize_callback' => WEAVERX_CZ_SANITIZE_COLOR,
-					'default' => weaverx_cz_getopt('container_extend_bgcolor'),
-					'transport' => 'refresh' // can't do the #container:before required
-				),
-				'control' => array(
-					'control_type' => WEAVERX_PLUS_COLOR_CONTROL,
-					'label'        => __( 'Container Full-width BG color', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-					'description'  => __( 'Extend this BG color to full theme width on Desktop View. Menu Bars, Header, Container and Footer have same option. Unlike the "Full Screen Width BG Attributes" on the Spacing panel, this option extends just this BG color, and allows different BG colors for the area.', 'weaver-xtreme' ),
-				),
-			),
-			'general-full-line-5' => array(	'control' => array(	'control_type' => 'WeaverX_Misc_Control', 'type'  => 'line' )),
-
-
-
-			'general-full-footer' => weaverx_cz_group_title( __( 'Site Footer Area', 'weaver-xtreme' ),
-				__('The Footer Area contains the Footer Widget Area, the Footer HTML Area, the copyright line.', 'weaver-xtreme')),
-
-			'general-full-footerx-width' => weaverx_cz_heading( __( 'Footer Area Width', 'weaver-xtreme' ),
-				__('You might want to adjust the Footer Area width and alignment on the <em>Spacing &rarr; Footer Area Spacing</em> panel.', 'weaver-xtreme')),
-
-			'footer_extend_width'=> array(
-				'setting' => array(
-				),
-				'control' => array(
-					'label' => __( 'Footer Full Screen Width', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
-					'description' => __('Extend all Footer BG Attributes to full screen width. The area content retains it own width in the Theme Width width. Use this option for the Container, Header, and Footer "full width" site layouts.  <strong style="background-color:yellow;"><large>IMPORTANT TIP:</large></strong> This option interacts with the area width and padding settings - we suggest that you "Save and Publish", and then <em>Refresh</em> this page in your browser to completely reload the Customizer.', 'weaver-xtreme'),
-					'type'  => 'checkbox',
-				),
-			),
-			'general-full-header-or-4' => weaverx_cz_heading(  __( '** OR **', 'weaver-xtreme' )),
-
-			'footer_extend_bgcolor'   => array(
-				'setting' => array(
-					'sanitize_callback' => WEAVERX_CZ_SANITIZE_COLOR,
-					'default' => weaverx_cz_getopt('footer_extend_bgcolor'),
-					'transport' => 'refresh' // can't do the #container:before required
-				),
-				'control' => array(
-					'control_type' => WEAVERX_PLUS_COLOR_CONTROL,
-					'label'        => __( 'Footer Full-width BG color', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-					'description'  => __( 'Extend this BG color to full theme width on Desktop View. Menu Bars, Header, Container and Footer have same option. Unlike the "Full Screen Width BG Attributes" on the Spacing panel, this option extends just this BG color, and allows different BG colors for the area.', 'weaver-xtreme' ),
-				),
-			),
-
-
-		)
-	);
+}
 
 	/**
 	 * Filter the definitions for the controls in the Color Scheme panel of the Customizer.

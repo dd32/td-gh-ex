@@ -5,11 +5,11 @@ msgstr ""
 "Project-Id-Version: Weaver X\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Last-Translator: Bruce <weavertheme@gmail.com>\n"
+"Last-Translator: Bruce <weaver@weavertheme.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Language: de_DE\n"
-"X-Generator: Poedit 1.6.7\n"
+"X-Generator: Poedit 1.8.8\n"
 
 #. Text in function
 #: weaver-ii-pro/functions.php:2080
@@ -420,7 +420,7 @@ msgstr "vorheriger Artikel"
 #. Text in function
 #: weaver-ii-pro/footer.php:55
 msgid "Proudly powered by %s"
-msgstr "Proudly powered by %s"
+msgstr "Stolz präsentiert von %s"
 
 #. Text in function
 #: weaver-ii-pro/content-quote.php:17

@@ -15,10 +15,10 @@ var names = [
 		'header_bgcolor=#header',
 
 		'site_title_color=.wrapper #site-title a,.site-title a',
-		'site_title_bgcolor=#site-title,.site-title',
+		'site_title_bgcolor=.wrapper #site-title a,.wrapper .site-title a',
 
-		'tagline_color=#site-tagline,.site-tagline',
-		'tagline_bgcolor=#site-tagline,.site-tagline',
+		'tagline_color=#site-tagline > span,.site-tagline > span',
+		'tagline_bgcolor=#site-tagline > span,.site-tagline > span',
 
 		'header_sb_color=#header-widget-area,.widget-area-header',
 		'header_sb_bgcolor=#header-widget-area,.widget-area-header',

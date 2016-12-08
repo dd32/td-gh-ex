@@ -33,20 +33,36 @@ if (weaverx_getopt( 'm_secondary_hide') != 'hide' && has_nav_menu( $menu )  && !
 
 	if ( $use_smart ) {							// ==================  SMART MENUS
 		$hamburger = apply_filters('weaverx_mobile_menu_name',weaverx_getopt('m_secondary_hamburger'));
-		if ( $hamburger == '' )
-			$hamburger = '<span class="genericon genericon-menu"></span>';
+		if ( $hamburger == '' ) {
+			$alt = weaverx_getopt('mobile_alt_label');
+			if ( $alt == '')
+				$hamburger = '<span class="genericon genericon-menu"></span>';
+			else
+				$hamburger = '<span class="menu-toggle-menu">' . $alt . '</span>';
+		}
 		$left = '<span href="" class="wvrx-menu-button">' . "{$hamburger}</span>{$left}";
 	}
 	$menu_class = apply_filters('weaverx_menu_class', 'weaverx-theme-menu wvrx-menu menu-hover', 'secondary');
 
 	$align = weaverx_getopt( 'm_secondary_align' );
 
-	if ($align == 'center') {
-		$menu_class .= ' wvrx-center-menu';
-	} else if ( $align == 'right' ) {
-		$menu_class .= ' menu-alignright';
-	} else {
-		$menu_class .= ' menu-alignleft';
+	switch ($align) {		// add classes for alignment and fixed top
+		case 'left':
+			$menu_class .= ' menu-alignleft';
+			break;
+		case 'center':
+			$menu_class .= ' wvrx-center-menu';
+			break;
+		case 'right':
+			$menu_class .= ' menu-alignright';
+			break;
+
+		default:
+			$menu_class .= ' menu-alignleft';
+	}
+
+	if (  weaverx_getopt('m_secondary_fixedtop') == 'fixed-top' ) {
+		$class .= ' wvrx-fixedtop';
 	}
 
 	if ( weaverx_getopt ('m_secondary_move') )

@@ -18,27 +18,35 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
 /* Version Information */
 
-define ('WEAVERX_VERSION','2.1.3');
+define ('WEAVERX_VERSION','3.0');
 define ('WEAVERX_VERSION_ID', 100);
 define ('WEAVERX_THEMENAME', 'Weaver Xtreme');
 define ('WEAVERX_THEMEVERSION', WEAVERX_THEMENAME . ' ' . WEAVERX_VERSION);
 define ('WEAVERX_MIN_WPVERSION','4.5');
 
+define('WEAVERX_LEVEL_BEGINNER', 1);
+define('WEAVERX_LEVEL_INTERMEDIATE', 5);
+define('WEAVERX_LEVEL_ADVANCED', 10);
+
+define('WEAVERX_THEME_WIDTH', 1100);	/* manually fix in style-weaverx.css */
+
 define ('WEAVERX_DEV_MODE', false);
+define ('WEAVERX_PHP_MEMORY_LIMIT', 128);
 
 if ( WEAVERX_DEV_MODE )
 	define ('WEAVERX_DEFAULT_THEME_FILE', 'none');
 else
-	define ('WEAVERX_DEFAULT_THEME_FILE', '/subthemes/plain.wxt');
+	define ('WEAVERX_DEFAULT_THEME_FILE', '/subthemes/go-basic.wxt');
+define ('WEAVERX_DEFAULT_THEME','go-basic');
 
 
 /* utility definitions - should not be edited */
-define ('WEAVERX_GOOGLE_FONTS', "<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic|Open+Sans+Condensed:300,700|Alegreya:400,400italic,700,700italic|Alegreya+Sans:400,400italic,700,700italic|Droid+Sans:400,700|Droid+Serif:400,400italic,700,700italic|Exo+2:400,700|Lato:400,400italic,700,700italic|Lora:400,400italic,700,700italic|Arvo:400,700,400italic,700italic|Roboto:400,400italic,700,700italic|Roboto+Condensed:400,700|Roboto+Slab:400,700|Archivo+Black|Source+Sans+Pro:400,400italic,700,700italic|Source+Serif+Pro:400,700|Vollkorn:400,400italic,700,700italic|Arimo:400,700|Tinos:400,400italic,700,700italic|Roboto+Mono:400,700|Inconsolata|Handlee|Ultra&subset=latin,latin-ext' rel='stylesheet' type='text/css'>");
+/* This is also used in functions.php for add_editor_style */
+define ('WEAVERX_GOOGLE_FONTS_URL',"https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic%7COpen+Sans+Condensed:300,700%7CAlegreya:400,400italic,700,700italic%7CAlegreya+Sans:400,400italic,700,700italic%7CDroid+Sans:400,700%7CDroid+Serif:400,400italic,700,700italic%7CExo+2:400,700%7CLato:400,400italic,700,700italic%7CLora:400,400italic,700,700italic%7CArvo:400,700,400italic,700italic%7CRoboto:400,400italic,700,700italic%7CRoboto+Condensed:400,700%7CRoboto+Slab:400,700%7CArchivo+Black%7CSource+Sans+Pro:400,400italic,700,700italic%7CSource+Serif+Pro:400,700%7CVollkorn:400,400italic,700,700italic%7CArimo:400,700%7CTinos:400,400italic,700,700italic%7CRoboto+Mono:400,700%7CInconsolata%7CHandlee%7CUltra&subset=latin,latin-ext");
 
-
+define ('WEAVERX_GOOGLE_FONTS', "<link href='" . WEAVERX_GOOGLE_FONTS_URL . "' rel='stylesheet' type='text/css'>");
 
 define ('WEAVERX_ADMIN_DIR', '/admin/admin-core');
-define ('WEAVERX_DEFAULT_THEME','plain');
-define ('WEAVERX_SLUG', 'weaver-xtreme');
+
 define ('WEAVERX_MINIFY','.min');	// dev: '', production: '.min'
 ?>

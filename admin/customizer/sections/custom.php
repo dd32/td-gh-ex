@@ -9,6 +9,26 @@ if ( ! function_exists( 'weaverx_customizer_define_custom_sections' ) ) :
 function weaverx_customizer_define_custom_sections( $sections ) {
 	$panel = 'weaverx_custom';
 	$custom_sections = array();
+	global $wp_customize;
+
+	/**
+	 * Additional CSS - from WP
+	 */
+
+	$section_id   = 'custom_css';
+	$section      = $wp_customize->get_section( $section_id );
+
+	// Bail if the section isn't registered
+	if ( is_object( $section ) ) {
+
+		$section->panel = $panel;	// Move Static Front Page section to General panel
+		$section->title = __('Additional CSS - WP Setting', 'weaver-xtreme');
+		$section->priority = 12000;	// Set Static Front Page section priority
+		$cur_des = $section->description;
+		$section->description = __('This is the new WordPress Additional CSS option. We recommend the Weaver Xtreme Global Custom CSS or per area CSS unless you have specific Custom CSS that applies to your site for any theme. ', 'weaver-xtreme') . '<br />' . $cur_des;
+	}
+
+if ( weaverx_options_level() == WEAVERX_LEVEL_ADVANCED ) {		// show if advanced
 
 	$custom_sections['custom-help'] = array(
 		'panel'   => $panel,
@@ -21,7 +41,7 @@ function weaverx_customizer_define_custom_sections( $sections ) {
 
 		),
 	);
-
+}
 
 	/**
 	 * Global Site Custom CSS
@@ -54,6 +74,7 @@ function weaverx_customizer_define_custom_sections( $sections ) {
 	/**
 	 * Wrapping
 	 */
+if ( weaverx_options_level() == WEAVERX_LEVEL_ADVANCED ) {		// show if advancedif ( weaverx_options_level() == WEAVERX_LEVEL_ADVANCED ) {		// show if advanced
 	$custom_sections['custom-wrapping'] = array(
 		'panel'   => $panel,
 		'title'   => __( 'Wrapping Areas', 'weaver-xtreme' ),
@@ -408,7 +429,7 @@ function weaverx_customizer_define_custom_sections( $sections ) {
 		),
 	);
 
-
+}
 	/**
 	 * Filter the definitions for the controls in the Color Scheme panel of the Customizer.
 	 *

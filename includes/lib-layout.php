@@ -8,7 +8,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
 
 // determine classes for areas
-function weaverx_inject_area( $name ) {
+function weaverx_inject_area( $name, $extra_class = '') {
 	$area_name = '' . $name . '_insert';
 	$hide_front = 'hide_front_' . $name;
 	$hide_rest = 'hide_rest_' . $name;
@@ -19,10 +19,11 @@ function weaverx_inject_area( $name ) {
 		return;
 
 	$idinj = 'inject_' . $name;
-	$add_class = 'weaverx_inject_area';		// give them all this wrapping class
+	$add_class = "weaverx_inject_area {$extra_class}";		// give them all this wrapping class
 	$more_class = weaverx_getopt('inject_add_class_' . $name);
 	if ($more_class)
 		$add_class .= " {$more_class}";
+	$add_class = rtrim($add_class);
 
 	$html = apply_filters('weaverx_inject_area', weaverx_getopt($area_name), $name);
 	$per_page_code = apply_filters('weaverx_inject_area', weaverx_get_per_page_value($name), $name);	/* per page values */
@@ -143,10 +144,16 @@ function weaverx_area_class( $area, $p_default = 'pad', $sides = '', $margin = '
 		$class .= ' widget-eq';
 	}
 
-	// extend bg color
+	// extend bg
 
 	if ( weaverx_getopt( $area . '_extend_width') ) {
 		$class .= ' wvrx-fullwidth';
+	}
+
+	// expand area
+
+	if ( weaverx_getopt_expand( 'expand_' . $area ) ) {
+		$class .= ' wvrx-expand-full';
 	}
 
 	// add classes
@@ -326,6 +333,10 @@ function weaverx_menu_class( $who, $no_hide = false ) {
 		$class .= ' ' . $val;
 	}
 
+	// expand
+
+	if (weaverx_getopt_expand('expand_' . $who))
+		$class .= ' wvrx-expand-full';
 
 	// add classes - !important - do these LAST so will override other classes
 	$val = weaverx_getopt( $who . '_add_class' );
@@ -590,7 +601,7 @@ function weaverx_sb_precontent( $who ) {
 
 
 // >>>>> weaverx_sb_postcontent <<<<<
-function weaverx_sb_postcontent($who) {
+function weaverx_sb_postcontent($who, $hide_sitewide = false) {
 
 	weaverx_clear_both('sb-postcontent-' . $who);
 
@@ -622,7 +633,8 @@ function weaverx_sb_postcontent($who) {
 		}
 	} // end not hide bottom per page
 
-	weaverx_put_widgetarea('sitewide-bottom-widget-area', $class, 'bottom');		// sitewide bottom
+	if ( !$hide_sitewide )
+		weaverx_put_widgetarea('sitewide-bottom-widget-area', $class, 'bottom');		// sitewide bottom
 
 	weaverx_clear_both('sitewide-bottom-widget-area');
 }
@@ -851,8 +863,9 @@ function weaverx_has_widgetarea( $area_name ) {
 
 	$area = apply_filters('weaverx_replace_widget_area',$area_name);
 
-	if (weaverx_is_checked_page_opt('_pp_' . $area_name))
+	if (weaverx_is_checked_page_opt('_pp_' . $area_name)) {
 		return false;		// hide area option checked
+	}
 
 	if (is_active_sidebar($area))
 		return true;

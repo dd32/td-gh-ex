@@ -1,83 +1,82 @@
-//MENU Version 1.1
+//MENU Version 3.0
 //Bug fixes and added resize arrow buttons for the customizer
-
 //Below the onlclick open function for Sections, uncollapses if collapsed, switches to customize if in preview mode on small screens
 function wvrxSelectOptions(optionPanel) {
-	if (jQuery('.wp-full-overlay').hasClass('collapsed')) { //if customizer is collapsed, expand before loading panel. !!Check if API method exist
-		jQuery('.wp-full-overlay').removeClass('collapsed');
-		jQuery('.wp-full-overlay').addClass('expanded');
-	};
-	if (jQuery('.wp-full-overlay').hasClass('preview-only')) { //if customizer in Preview only, swicth to Customize before loading panel. !!Check if API method exist
-		jQuery('.wp-full-overlay').removeClass('preview-only');
-	};
+    if (jQuery('.wp-full-overlay').hasClass('collapsed')) { //if customizer is collapsed, expand before loading panel. !!Check if API method exist
+        jQuery('.wp-full-overlay').removeClass('collapsed');
+        jQuery('.wp-full-overlay').addClass('expanded');
+    };
+    if (jQuery('.wp-full-overlay').hasClass('preview-only')) { //if customizer in Preview only, swicth to Customize before loading panel. !!Check if API method exist
+        jQuery('.wp-full-overlay').removeClass('preview-only');
+    };
 
-	jQuery('.accordion-section.current-panel').css('width','300px');	// hack for Customizer's bad width calculation
-	wp.customize.section(optionPanel).focus();   //Open the clicked section
-	if (wvrxCM.wp_vers == '4.4') {
-		jQuery('.accordion-section-content').css('margin-top','0px');	// Hack for WP 4.4 (at least up to Beta 4)
-	}
+    jQuery('.accordion-section.current-panel').css('width', '300px'); // hack for Customizer's bad width calculation
+    wp.customize.section(optionPanel).focus(); //Open the clicked section
+    if (wvrxCM.wp_vers == '4.4') {
+        jQuery('.accordion-section-content').css('margin-top', '0px'); // Hack for WP 4.4 (at least up to Beta 4)
+    }
 
-	jQuery('#wx-jumpmenu').css('display','none');  //Close the Menu
-	jQuery('.accordion-section').css('width','');	// clean the hack for Customizer's bad width calculation
+    jQuery('#wx-jumpmenu').css('display', 'none'); //Close the Menu
+    jQuery('.accordion-section').css('width', ''); // clean the hack for Customizer's bad width calculation
 };
 
 //Below the onlclick open function for Panels, uncollapses if collapsed, switches to customize if in preview mode on small screens
 function wvrxSelectPanel(tabPanel) {
-	if (jQuery('.wp-full-overlay').hasClass('collapsed')) {  //if customizer is collapsed, expand before loading panel. !!Check if API method exist
-		jQuery('.wp-full-overlay').removeClass('collapsed');
-		jQuery('.wp-full-overlay').addClass('expanded');
-	};
-	if (jQuery('.wp-full-overlay').hasClass('preview-only')) { //if customizer in Preview only, swicth to Customize before loading panel. !!Check if API method exist
-		jQuery('.wp-full-overlay').removeClass('preview-only');
-	};
+    if (jQuery('.wp-full-overlay').hasClass('collapsed')) { //if customizer is collapsed, expand before loading panel. !!Check if API method exist
+        jQuery('.wp-full-overlay').removeClass('collapsed');
+        jQuery('.wp-full-overlay').addClass('expanded');
+    };
+    if (jQuery('.wp-full-overlay').hasClass('preview-only')) { //if customizer in Preview only, swicth to Customize before loading panel. !!Check if API method exist
+        jQuery('.wp-full-overlay').removeClass('preview-only');
+    };
 
-	wp.customize.panel(tabPanel).focus();   //Open the clicked panel
+    wp.customize.panel(tabPanel).focus(); //Open the clicked panel
 
-	jQuery('#wx-jumpmenu').css('display','none');   //Close the Menu
+    jQuery('#wx-jumpmenu').css('display', 'none'); //Close the Menu
 };
 
 //Below the function to open jumpmenu on hover with a delay
-function wvrxjumpmenuOpen(){
-function wvrxOpen() {
-//Check if the mouse is still over when the delay expires
-	if(jQuery('#wx-jump').is(":hover")) {
-	jQuery('#wx-jumpmenu').css('display','block');
-	};
-};
-setTimeout (wvrxOpen,500);
+function wvrxjumpmenuOpen() {
+    function wvrxOpen() {
+        //Check if the mouse is still over when the delay expires
+        if (jQuery('#wx-jump').is(":hover")) {
+            jQuery('#wx-jumpmenu').css('display', 'block');
+        };
+    };
+    setTimeout(wvrxOpen, 500);
 };
 
-function wvrxjumpmenuClose(){
-//For some weird reason, if we dont delay the close, the menu closes when we move from the button to the actual menu Probably a discontinuity issue in the hover
-function wvrxClose() {
-	if(jQuery('#wx-jump').is(":hover") == false) {
-	jQuery('#wx-jumpmenu').css('display','none');
-	};
-};
-setTimeout (wvrxClose,700);
+function wvrxjumpmenuClose() {
+    //For some weird reason, if we dont delay the close, the menu closes when we move from the button to the actual menu Probably a discontinuity issue in the hover
+    function wvrxClose() {
+        if (jQuery('#wx-jump').is(":hover") == false) {
+            jQuery('#wx-jumpmenu').css('display', 'none');
+        };
+    };
+    setTimeout(wvrxClose, 700);
 };
 
 //Below the function for the buttons allowing to enlarge or reduce the width of the customizer
 function wvrxGrow() {
-	jQuery('.wp-full-overlay-sidebar').css('width','400px');
-	jQuery('.wp-full-overlay.expanded').css('margin-left','400px');
-	jQuery('#wx-resize .wx-shrink').css('display','inline');  //show the left (Shrink) arrow
-	jQuery('#wx-resize .wx-grow').css('display','none');      //Hide the right (Grow) arrow
-	if(jQuery('body.rtl').length ){
-		jQuery('.wp-full-overlay.expanded').css('margin-left','0px');
-		jQuery('.wp-full-overlay.expanded').css('margin-right','400px');
-	};
+    jQuery('.wp-full-overlay-sidebar').css('width', '400px');
+    jQuery('.wp-full-overlay.expanded').css('margin-left', '400px');
+    jQuery('#wx-resize .wx-shrink').css('display', 'inline'); //show the left (Shrink) arrow
+    jQuery('#wx-resize .wx-grow').css('display', 'none'); //Hide the right (Grow) arrow
+    if (jQuery('body.rtl').length) {
+        jQuery('.wp-full-overlay.expanded').css('margin-left', '0px');
+        jQuery('.wp-full-overlay.expanded').css('margin-right', '400px');
+    };
 };
 
 function wvrxShrink() {
-	jQuery('.wp-full-overlay-sidebar').css('width','300px');
-	jQuery('.wp-full-overlay.expanded').css('margin-left','300px');
-	jQuery('#wx-resize .wx-shrink').css('display','none');    //Hide the Left (Shrink) Arrow
-	jQuery('#wx-resize .wx-grow').css('display','inline');    //Show the Right (Grow) Arrow
-	if(jQuery('body.rtl').length ){
-		jQuery('.wp-full-overlay.expanded').css('margin-left','0px');
-		jQuery('.wp-full-overlay.expanded').css('margin-right','300px');
-	};
+    jQuery('.wp-full-overlay-sidebar').css('width', '300px');
+    jQuery('.wp-full-overlay.expanded').css('margin-left', '300px');
+    jQuery('#wx-resize .wx-shrink').css('display', 'none'); //Hide the Left (Shrink) Arrow
+    jQuery('#wx-resize .wx-grow').css('display', 'inline'); //Show the Right (Grow) Arrow
+    if (jQuery('body.rtl').length) {
+        jQuery('.wp-full-overlay.expanded').css('margin-left', '0px');
+        jQuery('.wp-full-overlay.expanded').css('margin-right', '300px');
+    };
 };
 
 /* function wvrxRefresh() {
@@ -92,7 +91,7 @@ function wvrxShrink() {
 //The section below adds the Menu HTML at the top of the body to place a Menu item on the Top bar
 
 jQuery(".customize-panel-description").append(" \
-<a target='_blank' href='" + wvrxCM.helpURL + "'><strong>" + wvrxCM.cust_help +"</strong></a>");
+<a target='_blank' href='" + wvrxCM.helpURL + "'><strong>" + wvrxCM.cust_help + "</strong></a>");
 
 jQuery("#customize-header-actions").prepend(" \
 <div id='wx-loading'>&nbsp;" + wvrxCM.loadingMsg + "</div> \
@@ -110,15 +109,15 @@ jQuery("#customize-header-actions").prepend(" \
 		<li class='wx-tabs'>" + wvrxCM.global_opts + "<span class=\"wx-tabarrow dashicons dashicons-arrow-right-alt2\"></span> <!- +++ Global Options +++ ->\
 			<ul class='wx-submenu wx-global-options'> \
 				<li class='wx-tabs wx-tab-title'>" + wvrxCM.what + "</li> \
-				<li onclick=\"wvrxSelectOptions('weaverx_typo-global');\" class='wx-subtab'><span class=\"dashicons dashicons-editor-textcolor\"></span> " + wvrxCM.global + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_typo-global');\" class='wx-subtab'><span class=\"dashicons dashicons-editor-textcolor\"></span> " + wvrxCM.global_typo + "</li> \
 				<li onclick=\"wvrxSelectOptions('weaverx_spacing-global');\" class='wx-subtab'><span class=\"dashicons dashicons-align-center\"></span> " + wvrxCM.global_spacing + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_layout-fullwidth');\" class='wx-subtab'><span class=\"dashicons dashicons-align-center\"></span> " + wvrxCM.site_widths + "</li> \
 				<li onclick=\"wvrxSelectOptions('weaverx_custom-global');\" class='wx-subtab'><span style=\"color:#298cba;font-weight:bold;\">&nbsp;{&nbsp;}&nbsp;</span> " + wvrxCM.global_css + "</li> \
 				<li onclick=\"wvrxSelectOptions('weaverx_visibility-global-vis');\" class='wx-subtab'><span class=\"dashicons dashicons-visibility\"></span> " + wvrxCM.global_vis + "</li> \
 				<li onclick=\"wvrxSelectOptions('weaverx_images-global');\" class='wx-subtab'><span class=\"dashicons dashicons-format-image\"></span> " + wvrxCM.images + "</li> \
 				<li onclick=\"wvrxSelectOptions('weaverx_images-background');\" class='wx-subtab'><span class=\"dashicons dashicons-format-image\"></span> " + wvrxCM.background + "</li> \
 				<li onclick=\"wvrxSelectOptions('weaverx_content-head');\" class='wx-subtab'><span class=\"dashicons dashicons-editor-code\"></span> " + wvrxCM.head_sec + "</li> \
 				<li onclick=\"wvrxSelectOptions('weaverx_custom-links');\" class='wx-subtab'><span class=\"dashicons dashicons-editor-code\"></span> " + wvrxCM.links + "</li> \
-				<li onclick=\"wvrxSelectOptions('weaverx_spacing-fullwidth');\" class='wx-subtab'><span class=\"dashicons dashicons-align-center\"></span> " + wvrxCM.fullwidth + "</li> \
 			</ul> \
 		</li> \
 		<li class='wx-tabs'>" + wvrxCM.wrapping + "<span class=\"wx-tabarrow dashicons dashicons-arrow-right-alt2\"></span> <!- +++ Wrapping Areas +++ -> \
@@ -277,10 +276,67 @@ jQuery("#customize-header-actions").prepend(" \
 				<li class='wx-tabs wx-tab-title'>" + wvrxCM.where + "</li> \
 				<li onclick=\"wvrxSelectOptions('title_tagline');\" class='wx-subtab'>" + wvrxCM.tagline + "</li> \
 				<li onclick=\"wvrxSelectOptions('static_front_page');\" class='wx-subtab'>" + wvrxCM.front_page + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_general_options_level');\" class='wx-subtab'>" + wvrxCM.options_level + "</li> \
 				<li onclick=\"wvrxSelectOptions('weaverx_general_admin');\" class='wx-subtab'>" + wvrxCM.general_admin + "</li> \
 				<li onclick=\"wvrxSelectOptions('weaverx_general_save_settings');\" class='wx-subtab'>" + wvrxCM.save_settings + "</li> \
 				<li onclick=\"wvrxSelectOptions('weaverx_general_restore_settings');\" class='wx-subtab'>" + wvrxCM.restore_settings + "</li> \
 				<li onclick=\"wvrxSelectOptions('weaverx_general_saverestore');\" class='wx-subtab'>" + wvrxCM.general_saverestore + "</li> \
+			</ul> \
+		</li> \
+		<!- +++ Layout +++ -> \
+		<li onclick=\"wvrxSelectPanel( 'weaverx_layout' );\" class='wx-tabs'><span class=\"dashicons dashicons-editor-table\"></span> " + wvrxCM.layout + "<span class=\"wx-tabarrow dashicons dashicons-arrow-right-alt2\"></span> \
+			<ul class='wx-submenu wx-layout'> \
+				<li class='wx-tabs wx-tab-title'>" + wvrxCM.where + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_layout-fullwidth');\" class='wx-subtab'>" + wvrxCM.site_widths + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_layout-header');\" class='wx-subtab'>" + wvrxCM.header + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_layout-menus');\" class='wx-subtab'>" + wvrxCM.menus + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_layout-content');\" class='wx-subtab'>" + wvrxCM.content + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_layout-post-specific');\" class='wx-subtab'>" + wvrxCM.post_specific + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_layout-sidebars');\" class='wx-subtab'>" + wvrxCM.sidebars + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_layout-footer');\" class='wx-subtab'>" + wvrxCM.footer + "</li> \
+			</ul> \
+		</li> \
+		<!- +++ Typography +++ -> \
+		<li onclick=\"wvrxSelectPanel( 'weaverx_typography' );\" class='wx-tabs'><span class=\"dashicons dashicons-editor-textcolor\"></span> " + wvrxCM.typography + "<span class=\"wx-tabarrow dashicons dashicons-arrow-right-alt2\"></span> \
+			<ul class='wx-submenu wx-typo'> \
+				<li class='wx-tabs wx-tab-title'>" + wvrxCM.where + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_typo-global');\" class='wx-subtab'>" + wvrxCM.global_typo + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_typo-wrapping');\" class='wx-subtab'>" + wvrxCM.wrapping + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_typo-header');\" class='wx-subtab'>" + wvrxCM.header + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_typo-menus');\" class='wx-subtab'>" + wvrxCM.menus + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_typo-info-bar');\" class='wx-subtab'>" + wvrxCM.info_bar + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_typo-content');\" class='wx-subtab'>" + wvrxCM.content + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_typo-post-specific');\" class='wx-subtab'>" + wvrxCM.post_specific + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_typo-sidebars');\" class='wx-subtab'>" + wvrxCM.sidebars + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_typo-widgets');\" class='wx-subtab'>" + wvrxCM.widgets + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_typo-footer');\" class='wx-subtab'>" + wvrxCM.footer + "</li> \
+			</ul> \
+		</li> \
+		<!- +++ Images +++ -> \
+		<li onclick=\"wvrxSelectPanel( 'weaverx_images' );\" class='wx-tabs'><span class=\"dashicons dashicons-format-image\"></span> " + wvrxCM.images + "<span class=\"wx-tabarrow dashicons dashicons-arrow-right-alt2\"></span> \
+			<ul class='wx-submenu wx-images'> \
+				<li class='wx-tabs wx-tab-title'>" + wvrxCM.where + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_images-wrapping');\" class='wx-subtab'>" + wvrxCM.wrapping + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_images-header');\" class='wx-subtab'>" + wvrxCM.header + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_images-content');\" class='wx-subtab'>" + wvrxCM.content + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_images-post-specific');\" class='wx-subtab'>" + wvrxCM.post_specific + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_images-background');\" class='wx-subtab'>" + wvrxCM.background + "</li> \
+				<li onclick=\"wvrxSelectOptions('header_image');\" class='wx-subtab'>" + wvrxCM.header_image + "</li> \
+				<li onclick=\"wvrxSelectOptions('background_image');\" class='wx-subtab'>" + wvrxCM.background_image + "</li> \
+			</ul> \
+		</li> \
+		<!- +++ Visibility +++ -> \
+		<li onclick=\"wvrxSelectPanel( 'weaverx_visibility' );\" class='wx-tabs'><span class=\"dashicons dashicons-visibility\"></span> " + wvrxCM.visibility + "<span class=\"wx-tabarrow dashicons dashicons-arrow-right-alt2\"></span> \
+			<ul class='wx-submenu wx-visibility'> \
+				<li class='wx-tabs wx-tab-title'>" + wvrxCM.where + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_visibility-global-vis');\" class='wx-subtab'>" + wvrxCM.global_vis + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_visibility-header');\" class='wx-subtab'>" + wvrxCM.header + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_visibility-menus');\" class='wx-subtab'>" + wvrxCM.menus + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_visibility-info-bar');\" class='wx-subtab'>" + wvrxCM.info_bar + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_visibility-content');\" class='wx-subtab'>" + wvrxCM.content + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_visibility-post-specific');\" class='wx-subtab'>" + wvrxCM.post_specific + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_visibility-sidebars');\" class='wx-subtab'>" + wvrxCM.sidebars + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_visibility-footer');\" class='wx-subtab'>" + wvrxCM.footer + "</li> \
 			</ul> \
 		</li> \
 		<!- +++ Colors +++ -> \
@@ -313,14 +369,13 @@ jQuery("#customize-header-actions").prepend(" \
 				<li onclick=\"wvrxSelectOptions('weaverx_spacing-sidebars');\" class='wx-subtab'>" + wvrxCM.sidebars + "</li> \
 				<li onclick=\"wvrxSelectOptions('weaverx_spacing-widgets');\" class='wx-subtab'>" + wvrxCM.widgets + "</li> \
 				<li onclick=\"wvrxSelectOptions('weaverx_spacing-footer');\" class='wx-subtab'>" + wvrxCM.footer + "</li> \
-				<li onclick=\"wvrxSelectOptions('weaverx_spacing-fullwidth');\" class='wx-subtab'>" + wvrxCM.fullwidth + "</li> \
 			</ul> \
 		</li> \
 		<!- +++ Style - Borders, etc. +++ -> \
 		<li onclick=\"wvrxSelectPanel( 'weaverx_style' );\" class='wx-tabs'><span class=\"dashicons dashicons-grid-view\"></span> " + wvrxCM.style + "<span class=\"wx-tabarrow dashicons dashicons-arrow-right-alt2\"></span> \
 			<ul class='wx-submenu wx-style'> \
 				<li class='wx-tabs wx-tab-title'>" + wvrxCM.where + "</li> \
-				<li onclick=\"wvrxSelectOptions('weaverx_style-global');\" class='wx-subtab'>" + wvrxCM.global + "</li> \
+				<li onclick=\"wvrxSelectOptions('weaverx_style-global');\" class='wx-subtab'>" + wvrxCM.global_style + "</li> \
 				<li onclick=\"wvrxSelectOptions('weaverx_style-wrapping');\" class='wx-subtab'>" + wvrxCM.wrapping + "</li> \
 				<li onclick=\"wvrxSelectOptions('weaverx_style-header');\" class='wx-subtab'>" + wvrxCM.header + "</li> \
 				<li onclick=\"wvrxSelectOptions('weaverx_style-menus');\" class='wx-subtab'>" + wvrxCM.menus + "</li> \
@@ -330,61 +385,6 @@ jQuery("#customize-header-actions").prepend(" \
 				<li onclick=\"wvrxSelectOptions('weaverx_style-sidebars');\" class='wx-subtab'>" + wvrxCM.sidebars + "</li> \
 				<li onclick=\"wvrxSelectOptions('weaverx_style-widgets');\" class='wx-subtab'>" + wvrxCM.widgets + "</li> \
 				<li onclick=\"wvrxSelectOptions('weaverx_style-footer');\" class='wx-subtab'>" + wvrxCM.footer + "</li> \
-			</ul> \
-		</li> \
-		<!- +++ Typography +++ -> \
-		<li onclick=\"wvrxSelectPanel( 'weaverx_typography' );\" class='wx-tabs'><span class=\"dashicons dashicons-editor-textcolor\"></span> " + wvrxCM.typography + "<span class=\"wx-tabarrow dashicons dashicons-arrow-right-alt2\"></span> \
-			<ul class='wx-submenu wx-typo'> \
-				<li class='wx-tabs wx-tab-title'>" + wvrxCM.where + "</li> \
-				<li onclick=\"wvrxSelectOptions('weaverx_typo-global');\" class='wx-subtab'>" + wvrxCM.global + "</li> \
-				<li onclick=\"wvrxSelectOptions('weaverx_typo-wrapping');\" class='wx-subtab'>" + wvrxCM.wrapping + "</li> \
-				<li onclick=\"wvrxSelectOptions('weaverx_typo-header');\" class='wx-subtab'>" + wvrxCM.header + "</li> \
-				<li onclick=\"wvrxSelectOptions('weaverx_typo-menus');\" class='wx-subtab'>" + wvrxCM.menus + "</li> \
-				<li onclick=\"wvrxSelectOptions('weaverx_typo-info-bar');\" class='wx-subtab'>" + wvrxCM.info_bar + "</li> \
-				<li onclick=\"wvrxSelectOptions('weaverx_typo-content');\" class='wx-subtab'>" + wvrxCM.content + "</li> \
-				<li onclick=\"wvrxSelectOptions('weaverx_typo-post-specific');\" class='wx-subtab'>" + wvrxCM.post_specific + "</li> \
-				<li onclick=\"wvrxSelectOptions('weaverx_typo-sidebars');\" class='wx-subtab'>" + wvrxCM.sidebars + "</li> \
-				<li onclick=\"wvrxSelectOptions('weaverx_typo-widgets');\" class='wx-subtab'>" + wvrxCM.widgets + "</li> \
-				<li onclick=\"wvrxSelectOptions('weaverx_typo-footer');\" class='wx-subtab'>" + wvrxCM.footer + "</li> \
-			</ul> \
-		</li> \
-		<!- +++ Visibility +++ -> \
-		<li onclick=\"wvrxSelectPanel( 'weaverx_visibility' );\" class='wx-tabs'><span class=\"dashicons dashicons-visibility\"></span> " + wvrxCM.visibility + "<span class=\"wx-tabarrow dashicons dashicons-arrow-right-alt2\"></span> \
-			<ul class='wx-submenu wx-visibility'> \
-				<li class='wx-tabs wx-tab-title'>" + wvrxCM.where + "</li> \
-				<li onclick=\"wvrxSelectOptions('weaverx_visibility-global-vis');\" class='wx-subtab'>" + wvrxCM.global_vis + "</li> \
-				<li onclick=\"wvrxSelectOptions('weaverx_visibility-header');\" class='wx-subtab'>" + wvrxCM.header + "</li> \
-				<li onclick=\"wvrxSelectOptions('weaverx_visibility-menus');\" class='wx-subtab'>" + wvrxCM.menus + "</li> \
-				<li onclick=\"wvrxSelectOptions('weaverx_visibility-info-bar');\" class='wx-subtab'>" + wvrxCM.info_bar + "</li> \
-				<li onclick=\"wvrxSelectOptions('weaverx_visibility-content');\" class='wx-subtab'>" + wvrxCM.content + "</li> \
-				<li onclick=\"wvrxSelectOptions('weaverx_visibility-post-specific');\" class='wx-subtab'>" + wvrxCM.post_specific + "</li> \
-				<li onclick=\"wvrxSelectOptions('weaverx_visibility-sidebars');\" class='wx-subtab'>" + wvrxCM.sidebars + "</li> \
-				<li onclick=\"wvrxSelectOptions('weaverx_visibility-footer');\" class='wx-subtab'>" + wvrxCM.footer + "</li> \
-			</ul> \
-		</li> \
-		<!- +++ Layout +++ -> \
-		<li onclick=\"wvrxSelectPanel( 'weaverx_layout' );\" class='wx-tabs'><span class=\"dashicons dashicons-editor-table\"></span> " + wvrxCM.layout + "<span class=\"wx-tabarrow dashicons dashicons-arrow-right-alt2\"></span> \
-			<ul class='wx-submenu wx-layout'> \
-				<li class='wx-tabs wx-tab-title'>" + wvrxCM.where + "</li> \
-				<li onclick=\"wvrxSelectOptions('weaverx_layout-header');\" class='wx-subtab'>" + wvrxCM.header + "</li> \
-				<li onclick=\"wvrxSelectOptions('weaverx_layout-menus');\" class='wx-subtab'>" + wvrxCM.menus + "</li> \
-				<li onclick=\"wvrxSelectOptions('weaverx_layout-content');\" class='wx-subtab'>" + wvrxCM.content + "</li> \
-				<li onclick=\"wvrxSelectOptions('weaverx_layout-post-specific');\" class='wx-subtab'>" + wvrxCM.post_specific + "</li> \
-				<li onclick=\"wvrxSelectOptions('weaverx_layout-sidebars');\" class='wx-subtab'>" + wvrxCM.sidebars + "</li> \
-				<li onclick=\"wvrxSelectOptions('weaverx_layout-footer');\" class='wx-subtab'>" + wvrxCM.footer + "</li> \
-			</ul> \
-		</li> \
-		<!- +++ Images +++ -> \
-		<li onclick=\"wvrxSelectPanel( 'weaverx_images' );\" class='wx-tabs'><span class=\"dashicons dashicons-format-image\"></span> " + wvrxCM.images + "<span class=\"wx-tabarrow dashicons dashicons-arrow-right-alt2\"></span> \
-			<ul class='wx-submenu wx-images'> \
-				<li class='wx-tabs wx-tab-title'>" + wvrxCM.where + "</li> \
-				<li onclick=\"wvrxSelectOptions('weaverx_images-wrapping');\" class='wx-subtab'>" + wvrxCM.wrapping + "</li> \
-				<li onclick=\"wvrxSelectOptions('weaverx_images-header');\" class='wx-subtab'>" + wvrxCM.header + "</li> \
-				<li onclick=\"wvrxSelectOptions('weaverx_images-content');\" class='wx-subtab'>" + wvrxCM.content + "</li> \
-				<li onclick=\"wvrxSelectOptions('weaverx_images-post-specific');\" class='wx-subtab'>" + wvrxCM.post_specific + "</li> \
-				<li onclick=\"wvrxSelectOptions('weaverx_images-background');\" class='wx-subtab'>" + wvrxCM.background + "</li> \
-				<li onclick=\"wvrxSelectOptions('header_image');\" class='wx-subtab'>" + wvrxCM.header_image + "</li> \
-				<li onclick=\"wvrxSelectOptions('background_image');\" class='wx-subtab'>" + wvrxCM.background_image + "</li> \
 			</ul> \
 		</li> \
 		<!- +++ Added Content +++ -> \
@@ -430,17 +430,21 @@ jQuery("#customize-header-actions").prepend(" \
 </div>");
 //This allows people to click and drag the button to a differnt location (good in preview mode) except on touch device where it interferes with the hover/touch
 jQuery(function() {
-var weaverx_isTouch = ("ontouchstart" in window)
-		|| (navigator.MaxTouchPoints > 0)
-		|| (navigator.msMaxTouchPoints > 0);
-		if( weaverx_isTouch == false ) {
-		jQuery( "#wx-jump" ).draggable();
-		}
+    var weaverx_isTouch = ("ontouchstart" in window) ||
+        (navigator.MaxTouchPoints > 0) ||
+        (navigator.msMaxTouchPoints > 0);
+    if (weaverx_isTouch == false) {
+        jQuery("#wx-jump").draggable();
+    }
 });
 
 //Moving the Preview / customize toggle button to make space for the menu icon
-jQuery('.customize-controls-preview-toggle').css('left','110px');
-if(jQuery('body.rtl').length ){
-	jQuery('.customize-controls-preview-toggle').css('left','');
-	jQuery('.customize-controls-preview-toggle').css('right','110px');
+jQuery('.customize-controls-preview-toggle').css('left', '110px');
+if (jQuery('body.rtl').length) {
+    jQuery('.customize-controls-preview-toggle').css('left', '');
+    jQuery('.customize-controls-preview-toggle').css('right', '110px');
+};
+
+if (jQuery(window).outerWidth() > 1500) {
+    wvrxGrow();
 };

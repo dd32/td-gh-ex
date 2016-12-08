@@ -1,4 +1,6 @@
-/* Style for wx-jump Menu with integrated RTL rules */
+/* Style for wx-jump Menu with integrated RTL rules
+ * Version 3.0
+ */
 
 /*change outline of wx-jump menu button when over the preview area*/
 .wp-full-overlay.collapsed #wx-jump > span.dashicons-menu {
@@ -127,8 +129,9 @@ body.rtl #wx-jump {
 }
 
 #wx-jump .wx-tabs:hover {
-	padding-top:13px;
-	padding-bottom:14px;
+	padding-top:13.5px;
+	padding-bottom:13.5px;
+	height:54px; /* test*/
 }
 
 /*default menu titles styling*/
@@ -142,6 +145,7 @@ body.rtl #wx-jump {
 	border-bottom:2px solid grey;
 	box-sizing:border-box;
 	padding:0px !important;
+	height:27px; /*test*/
 }
 
 #wx-jump .wx-tab-title#wx-what-title,
@@ -251,14 +255,19 @@ body.rtl .wx-submenu {
 	top:-244px;
 }
 
-#wx-jump .wx-layout {
-	top:-1px;
+#wx-jump .wx-color {
+	top:-82px;
 }
 
-
-#wx-jump .wx-visibility,
-#wx-jump .wx-spacing {
+#wx-jump .wx-visibility {
 	top:-28px;
+}
+
+#wx-jump .wx-spacing {
+	top:-109px;
+}
+#wx-jump .wx-style {
+	top:-136px;
 }
 
 #wx-jump .wx-content-area {
@@ -269,10 +278,7 @@ body.rtl .wx-submenu {
 #wx-jump .wx-sidebars {
 	top:-55px;
 }
-#wx-jump .wx-footer {
-	top:-109px;
-}
-
+#wx-jump .wx-footer,
 #wx-jump .wx-wordpress {
 	top:-109px;
 }
@@ -292,6 +298,7 @@ body.rtl .wx-submenu {
 	line-height:25px;
 	color:black;
 	text-align:left; /*rtl review*/
+	height:27px; /* test*/
 }
 body.rtl #wx-jump .wx-tabs,
 body.rtl #wx-jump .wx-subtab {

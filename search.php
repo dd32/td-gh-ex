@@ -48,7 +48,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
 	<article id="post-0" class="post no-results not-found">
 		<header class="entry-header">
-			<h1 class="page-title content-title title-search"><?php echo __( 'Nothing Found','weaver-xtreme'); ?></h1>
+			<h1 class="page-title content-title entry-title title-search"><?php echo __( 'Nothing Found','weaver-xtreme'); ?></h1>
 		</header><!-- .entry-header -->
 
 		<?php

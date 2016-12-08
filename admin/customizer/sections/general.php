@@ -10,7 +10,7 @@ function weaverx_customizer_define_general_sections( $sections ) {
 	global $wp_customize;
 
 	/**
-	 * Site Title & Tagline
+	 * Site Title & Tagline (Site Identity now)
 	 *
 	 * This is a built-in section.
 	 */
@@ -25,10 +25,10 @@ function weaverx_customizer_define_general_sections( $sections ) {
 	$section->priority = 10;
 
 	// Reset priorities on Site Title control
-	$wp_customize->get_control( 'blogname' )->priority = 12;
+	//$wp_customize->get_control( 'blogname' )->priority = 12;
 
 	// Reset priorities on Tagline control
-	$wp_customize->get_control( 'blogdescription' )->priority = 14;
+	//$wp_customize->get_control( 'blogdescription' )->priority = 14;
 
 	/**
 	 * Static Front Page
@@ -47,6 +47,28 @@ function weaverx_customizer_define_general_sections( $sections ) {
 
 
 	// add our own stuff....
+
+	$general_sections['general_options_level'] = array(
+		'panel'   => $panel,
+		'title'   => __( 'Set Options Interface Level', 'weaver-xtreme' ),
+		'options' => array(
+
+			'set_option_level' => array(
+				'setting' => array(
+					'transport' => 'postMessage'
+				),
+				'control' => array(
+					'control_type' => 'WeaverX_Set_Customizer_Level',
+					'label' => __( 'Set Customizer Options Interface Level', 'weaver-xtreme' ),
+					'description' => __('You can change the expertise level of the Customizer Interface. This can simplify and speed up the interface depending on your level of experience with Weaver Xtreme.', 'weaver-xtreme'),
+				),
+			),
+		)
+
+	);
+
+if ( weaverx_options_level() == WEAVERX_LEVEL_ADVANCED ) {		// show if advanced
+
 
 	$general_sections['general_admin'] = array(
 		'panel'   => $panel,
@@ -190,8 +212,20 @@ theme file for sharing with others, or for you own identification.', 'weaver-xtr
 
 		),
 	);
+} else {		// int/beg levels
+
+	$general_sections['general_admin'] = array(
+		'panel'   => $panel,
+		'title'   => __( 'Admin', 'weaver-xtreme' ),
+		'options' => array(
+			'general_admin-names2' => weaverx_cz_group_title( __( 'Admin Options (Advanced Level)', 'weaver-xtreme' ),
+				__( 'The Advanced Level Admin options include options for: Inline CSS, Print Page, SiteMap, Donations, Editor styling, Multisite, and Theme Name.', 'weaver-xtreme' )),
+			)
+		);
+}
 
 
+if ( weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if advanced, int
 	$general_sections['general_save_settings'] = array(
 		'panel'   => $panel,
 		'title'   => __( 'Save Settings', 'weaver-xtreme' ),
@@ -213,7 +247,18 @@ asking if you want to leave this page or stay. If you leave, you will not save t
 
 		)
 	);
+} else {	// beg level
+	$general_sections['general_admin'] = array(
+		'panel'   => $panel,
+		'title'   => __( 'Save Settings', 'weaver-xtreme' ),
+		'options' => array(
+			'general_admin-names3' => weaverx_cz_group_title( __( 'Save Settings (Advanced, Intermediate Levels)', 'weaver-xtreme' ),
+				__( 'The Advanced and Intermediate Level Save Settings options allow you to save your settings to your computer.', 'weaver-xtreme' )),
+			)
+		);
+}
 
+if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if advanced, int
 	$general_sections['general_restore_settings'] = array(
 		'panel'   => $panel,
 		'title'   => __( 'Restore Settings', 'weaver-xtreme' ),
@@ -238,6 +283,16 @@ Select a theme <em>.wxt</em>, backup <em>.wxb</em>, or full settings <em>.wxall<
 
 		)
 	);
+	} else {	// beg level
+	$general_sections['general_admin'] = array(
+		'panel'   => $panel,
+		'title'   => __( 'Restore Settings', 'weaver-xtreme' ),
+		'options' => array(
+			'general_admin-names4' => weaverx_cz_group_title( __( 'Restore Settings (Advanced, Intermediate Levels)', 'weaver-xtreme' ),
+				__( 'The Advanced and Intermediate Level Save Settings options allow you to restore your settings from your computer.', 'weaver-xtreme' )),
+			)
+		);
+}
 
 
 	$general_sections['general_saverestore'] = array(

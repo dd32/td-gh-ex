@@ -93,13 +93,12 @@ function weaverx_sapi_form_top($group, $form_name='') {
 
 function weaverx_sapi_form_bottom($form_name='end of form') {
 	// customizer only, keep values, preserve values, save values, not legacy (search terms for these kinds of settings)
-	$non_sapi = array(		// non-sapi elements in the db
+	$non_sapi = apply_filters('weaverx_non_sapi_options',array(		// non-sapi elements in the db
 		'weaverx_version_id', 'style_version',
 		'theme_filename', 'addon_name', '_hide_theme_thumbs', 'last_option',
 		'font_set_vietnamese', 'font_set_cryllic', 'font_set_greek', 'font_set_hebrew',
-		'font_word_spacing_global_dec', 'font_letter_spacing_global_dec'
-
-	);
+		'font_word_spacing_global_dec', 'font_letter_spacing_global_dec',
+		'_options_level', '_PHP_warning_displayed'));
 
 	/*	The following code allows the SAPI to save the non-sapi values. If you don't do this here,
 		then the values will be set to false, and be lost! SAPI is not tolerant of submitting a form
@@ -369,8 +368,10 @@ function weaverx_end_of_section($who = '') {
 	$name = weaverx_getopt('themename');
 	if ( ! $name )
 		$name = __('Please set theme name on the Advanced Options &rarr; Admin Options tab.', 'weaver-xtreme' /*adm*/);
+	$local_mem_lim = ini_get('memory_limit');
+	$server_mem_lim = get_cfg_var('memory_limit');
 
-	printf(__("%s %s | Options Version: %s | Subtheme: %s\n", 'weaver-xtreme' /*adm*/),WEAVERX_THEMENAME, WEAVERX_VERSION, weaverx_getopt('style_version'), $name);
+	printf(__("%s %s | Options Version: %s | Subtheme: %s | PHP Memory Limit: Local - %s / Server - %s\n", 'weaver-xtreme' /*adm*/),WEAVERX_THEMENAME, WEAVERX_VERSION, weaverx_getopt('style_version'), $name, $local_mem_lim, $server_mem_lim);
 
 	$last = weaverx_getopt('last_option');
 	if ($last != 'Weaver Xtreme') // check for case of limited PHP $_POST values
@@ -428,7 +429,7 @@ function weaverx_clear_messages() {
 	do_action('weaverx_check_licenses');
 
 ?>
-	<span class="submit"><input type="submit" name="weaverx_clear_messages" value="<?php _e('Clear Messages', 'weaver-xtreme' /*adm*/); ?>"/></span>
+	<span class="submit"><input class="button-primary" type="submit" name="weaverx_clear_messages" value="<?php _e('Clear Messages', 'weaver-xtreme' /*adm*/); ?>"/></span>
 	<?php weaverx_nonce_field('weaverx_clear_messages'); ?>
 </form> <!-- resetweaverx_form -->
 <?php
@@ -480,6 +481,14 @@ function weaverx_error_msg($msg) {
 		'</strong></p></div>';
 }
 
+function weaverx_check_support_plugin_version() {
+	if ( function_exists('wvrx_ts_installed') ) {
+		if ( defined('WVRX_TS_VERSION') && version_compare( WVRX_TS_VERSION, '2.95', '<' ) ) {
+			weaverx_alert( sprintf(__('           ***** CRITICAL WARNING ******\r\n\r\nYou have an old version of the Weaver Xtreme Theme Support plugin Installed (%s).\r\n\r\nIt is VERY IMPORTANT that you update to the latest version from the WordPress Plugins Update notice! Your site may not display properly with the old version.\r\n\r\nThis notice will continue to appear until you update the Weaver Xtreme Support plugin.', 'weaver-xtreme'), WVRX_TS_VERSION));
+		}
+	}
+}
+
 //----------- need in main theme
 function weaverx_check_version() {
 
@@ -502,7 +511,7 @@ function weaverx_check_version() {
 	if ( defined('WEAVER_XPLUS_VERSION') ) {
 		if ( WEAVER_XPLUS_VERSION == '2.1' || WEAVER_XPLUS_VERSION == '2.1.1')
 			weaverx_error_msg('IMPORTANT NOTICE! You are using <em>Weaver Xtreme Plus Version ' . WEAVER_XPLUS_VERSION .
-			'. This version requires a <em>Manual Update</em>. Please click to see the <a href="http://shop.weavertheme.com/weaver-xtreme-plus-2-1-to-2-1-1-manual-update/" target="_blank">Update Instructions</a>.');
+			'. This version requires a <em>Manual Update</em>. Please click to see the <a href="//shop.weavertheme.com/weaver-xtreme-plus-2-1-to-2-1-1-manual-update/" target="_blank">Update Instructions</a>.');
 	}
 
 
@@ -603,5 +612,16 @@ function weaverx_elink( $href, $title, $label, $before='', $after='') {
 
  }
  add_filter('weaverx_add_font_family','weaverx_2_add_fonts');
+
+if (!function_exists('weaverx_options_level')) :
+function weaverx_options_level() {	// current options level value
+	global $wp_customize;
+
+	if ( isset($wp_customize) && !$wp_customize->is_theme_active() )
+		return  WEAVERX_LEVEL_BEGINNER;
+	else
+		return get_theme_mod('_options_level','');
+}
+endif;
 
 ?>

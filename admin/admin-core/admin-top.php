@@ -43,6 +43,8 @@ function weaverx_do_admin() {
 	//weaverx_check_theme();
 	weaverx_clear_messages();
 
+	weaverx_check_support_plugin_version();
+
 	weaverx_check_version();           // check version RSS
 
 	weaverx_clear_both();
@@ -166,8 +168,15 @@ function weaverx_admin_page_process_options() {
 
 	if (  !$processed && isset($_GET['settings-updated']) && $_GET['settings-updated'] == 'true' ) {
 		add_settings_error('weaverx_settings', 'settings_updated', __('Saved', 'weaver-xtreme' /*adm*/), 'updated');
-		$vers = weaverx_getopt('style_version');
-		weaverx_setopt('style_version', $vers + 1 );
+		$vers = weaverx_getopt('style_version') + 1;
+		weaverx_setopt('style_version', $vers );
+		if ( ! WEAVERX_DEV_MODE ) {
+		  $themename = weaverx_getopt('themename');
+			if ( strpos($themename,'-V-') === false )		// fixup theme name
+			  $themename .= '-V-';
+		  $themename = rtrim($themename, '0..9');
+		  weaverx_setopt('themename', $themename . $vers );
+		}
 	}
 
 	 weaverx_save_opts('Weaver Xtreme Admin');			/* FINALLY - SAVE ALL OPTIONS AND UPDATE CURRENT CSS FILE */

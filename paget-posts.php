@@ -38,6 +38,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 	weaverx_inject_area( 'precontent' );
 
 	weaverx_sb_precontent('blog');
+	$hide_bottom_sb = weaverx_is_checked_page_opt('_pp_sitewide-bottom-widget-area');	// gotta use the PwP page ID, not the last post's ID
 
 	weaverx_post_count_clear(); the_post();
 
@@ -232,7 +233,8 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 	}
 		// every thing done, so allow comments?
 		// comments_template( '', true );
-		weaverx_sb_postcontent('blog');
+
+		weaverx_sb_postcontent('blog', $hide_bottom_sb);
 ?>
 
 		</div><!-- #content -->

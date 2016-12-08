@@ -87,6 +87,19 @@ textarea {
 	margin:0 5px 0 0;
 }
 
+.custom-logo-link {
+	display: 		block;
+	float:			right;
+	margin-left:	2em;
+	margin-right:	1%;
+}
+
+#site-title img.site-title-logo {
+	height:	auto;
+	padding-left:	1%;
+}
+
+
 
 /* =Menu
 -------------------------------------------------------------- */
@@ -353,6 +366,28 @@ textarea {
 
 .widget-horiz {
 	float: right;
+}
+
+.widget-smart-rm aside,
+.m-widget-smart-rm aside,
+.is-mobile .m-widget-smart-rm aside,
+.ie8 .smart-rm {                    /* modern browsers use nth-of-type rules below */
+	margin-left:    1%;
+	margin-right:   0;
+}
+
+@media (min-width:581px) and (max-width:767px) { /* =small tablets ========================================================= */
+.widget-area.m-widget-cols-2 aside:nth-of-type(2n) {margin-left:0;}
+}
+@media (min-width:768px) {   /* =desktop and large (iPad) tablets =========================================================== */
+.widget-cols-2 aside:nth-of-type(2n) {margin-left:0;}
+.widget-cols-3 aside:nth-of-type(3n) {margin-left:0;}
+.widget-cols-4 aside:nth-of-type(4n) {margin-left:0;}
+.widget-cols-5 aside:nth-of-type(5n) {margin-left:0;}
+.widget-cols-6 aside:nth-of-type(6n) {margin-left:0;}
+.widget-cols-7 aside:nth-of-type(7n) {margin-left:0;}
+.widget-cols-8 aside:nth-of-type(8n) {margin-left:0;}
+
 }
 
 /* =Comments

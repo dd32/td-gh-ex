@@ -31,7 +31,6 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 					} else {
 						$archive = post_type_archive_title('', false);
 					} ?>
-
 					<header class="page-header">
 						<?php
 						weaverx_archive_title( $archive, 'archive');

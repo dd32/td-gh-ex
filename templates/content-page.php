@@ -8,7 +8,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
  * @since Weaver Xtreme 1.0
  */
 
-weaverx_fi( 'page', 'post-before' );
+weaverx_fi( 'page', 'post-pre' );
 $pclass = 'content-page';
 $cols  = weaverx_get_per_page_value('_pp_page_cols');
 if ($cols == '')

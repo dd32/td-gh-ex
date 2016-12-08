@@ -18,6 +18,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 		$title = '<span class="title-tag-label">' . sprintf( $tt, '</span><span class="archive-info">'
 															. single_tag_title( '', false ) . '</span>' );
 		weaverx_archive_title( $title, 'tag' );
+		// the_archive_title( '<h1 class="page-title archive-title entry-title title">', '</h1>' );
 
 		$tag_description = tag_description();
 		if ( ! empty( $tag_description ) )

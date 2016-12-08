@@ -105,8 +105,19 @@ Also includes advanced features to manage your content such as post and page rev
 </ul>
 
 </div><div style="clear:both;"></div>
-
+<hr />
 <?php
+$local_mem_lim = ini_get('memory_limit');
+$server_mem_lim = get_cfg_var('memory_limit');
+$server_mem_lim = str_ireplace('M','', $server_mem_lim);
+if ( $server_mem_lim < 128 && !weaverx_getopt('_disable_customizer') 	&& !weaverx_getopt('_ignore_PHP_memory')) {
+
+	echo sprintf(__('<h3>Warning! Your WP host server has only %s of PHP Memory.</h3>
+<p>Depending on your WordPress configuration, this could cause settings made in the Customizer to <em>NOT</em> be saved and applied to your live site. Weaver Xtreme recommends at least 128M of PHP memory for the Customizer to work properly. <em>Please verify that settings you make in the Customizer are being applied to your live site.</em></p><h4>HOW TO FIX THIS PROBLEM</h4>
+<ul><li><strong>If your Customizer Settings do not save properly:</strong> Contact your site hosting company your hosting company to increase your PHP memory to 128M. This also may be an option on your hosting control panel. After you increase the PHP, please verify Customizer options are being saved.</li>
+<li><strong>You do not need to or want to increase PHP Memory:</strong> Install the <em>Weaver Xtreme Theme Support Plugin</em> and check either the <em>Disable Weaver Xtreme Customizer Interface</em> option or the <em>Ignore Customizer PHP Minimum Memory</em> on the <em>Advanced Options : Admin Options</em> tab.', 'weaver-xtreme'), $server_mem_lim . 'M');
+}
+do_action('weaverx_more_help');
 }
 
 ?>

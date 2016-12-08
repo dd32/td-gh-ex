@@ -14,6 +14,7 @@ function weaverx_customizer_define_typography_sections( $sections ) {
 	/**
 	 * Global
 	 */
+if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if advanced, int
 	$typography_sections['typo-global'] = array(
 		'panel'   => $panel,
 		'title'   => __('Global Typography Options', 'weaver-xtreme'),
@@ -93,9 +94,9 @@ function weaverx_customizer_define_typography_sections( $sections ) {
 					'description'   => __( 'Font Size for Custom Font Size A on the Font Size selection options.', 'weaver-xtreme' ),
 					'type'  => 'range',
 					'input_attrs' => array(
-						'min'  => .5,
+						'min'  => 0,
 						'max'  => 20,
-						'step' => .5,
+						'step' => .1,
 					),
 				),
 			),
@@ -109,9 +110,9 @@ function weaverx_customizer_define_typography_sections( $sections ) {
 					'description'   => __( 'Font Size for Custom Font Size B on the Font Size selection options.', 'weaver-xtreme' ),
 					'type'  => 'range',
 					'input_attrs' => array(
-						'min'  => .5,
+						'min'  => 0,
 						'max'  => 20,
-						'step' => .5,
+						'step' => .1,
 					),
 				),
 			),
@@ -252,7 +253,7 @@ weaverx_help_link('font-demo.html', __('Examples of supported fonts', 'weaver-xt
 	);
 
 	$new_opts = weaverx_cz_add_link_fonts('link', __('Global Links', 'weaver-xtreme'),
-		__('Global default for link typography (not including menus and titles). Set Bold, Italic, and Underline by setting those options for specific areas rather than globally to have more control.', 'weaver-xtreme'));
+		__('Global default for link typography (not including menus and titles). Set Bold, Italic, and Underline by setting those options for specific areas rather than globally to have more control.', 'weaver-xtreme'), 'refresh');
 	$typography_sections['typo-links']['options'] = array_merge( $typography_sections['typo-links']['options'],  $new_opts);
 
 	$new_opts = weaverx_cz_add_link_fonts('ibarlink', __('Info Bar Links', 'weaver-xtreme'),
@@ -505,6 +506,41 @@ weaverx_help_link('font-demo.html', __('Examples of supported fonts', 'weaver-xt
 
 	$new_opts = weaverx_cz_add_fonts('footer_html', __('Footer HTML', 'weaver-xtreme'), '', 'postMessage');
 	$typography_sections['typo-footer']['options'] = array_merge( $typography_sections['typo-footer']['options'],  $new_opts);
+
+} else {
+	$typography_sections['typo-global'] = array(
+		'panel'   => $panel,
+		'title'   => __('Global Typography Options', 'weaver-xtreme'),
+		'description' => __('Advanced Options: Set base font values: Base font size, base line height, and more. The Font Size options for other areas are all derived from these base sizes.', 'weaver-xtreme'),
+		'options' => array(
+			'typo-int-title' => weaverx_cz_group_title(__('Intermediate / Beginner Fonts', 'weaver-xtreme'),
+				__('Weaver Xtreme integrates a selected set of Google Font families. For the Intermediate and Beginner Level, you can use the Wrapping Areas menu to set the main font used for your site. The Advanced Level allows you to set fonts for many individual elements.', 'weaver-xtreme')),
+
+
+			)
+		);
+
+	$typography_sections['typo-wrapping'] = array(
+		'panel'   => $panel,
+		'title'   => __( 'Wrapping Areas', 'weaver-xtreme' ),
+		'description' => __('Set font and other typography attributes. Add new fonts from the <em>Appearance &rarr; Weaver Xtreme Admin &rarr; Main Options &rarr; Fonts &amp; Custom</em> panel. Use Site Colors to set colors.', 'weaver-xtreme'),
+		'options' => array(
+			'typo-heading-global' => array(
+
+			),
+		),
+	);
+
+	$new_opts = weaverx_cz_add_fonts('wrapper', __('Site Wrapper &amp; Container Fonts', 'weaver-xtreme'),
+		__('Default (wrapper) typography for site. Set font attributes here that will apply to the entire site. To override other items, set typography for individual items on other panels. (The inherited default Font Family is Open Sans.)', 'weaver-xtreme'), 'postMessage');
+	$typography_sections['typo-wrapping']['options'] = array_merge( $typography_sections['typo-wrapping']['options'],  $new_opts);
+
+	$new_opts = weaverx_cz_add_fonts('container', __('Container Fonts', 'weaver-xtreme'),
+						 __('Container typography for site. Wraps content and sidebars.', 'weaver-xtreme'), 'postMessage');
+	$typography_sections['typo-wrapping']['options'] = array_merge( $typography_sections['typo-wrapping']['options'],  $new_opts);
+
+
+}
 
 	/**
 	 * Filter the definitions for the controls in the Color Scheme panel of the Customizer.

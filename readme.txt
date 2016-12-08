@@ -8,8 +8,8 @@ fixed-width, three-columns, two-columns, black, blue, brown, green, orange, red,
 translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1016 Bruce E Wampler
 Requires at least: 4.2
-Tested up to: 4.5
-Stable tag: 2.1
+Tested up to: 4.7
+Stable tag: 3.0
 
 == Description ==
 
@@ -296,3 +296,56 @@ with testing and feature suggestions.
 * Fix: generated css for archive title had gotten corrupted, fixed
 * Tweak: Print view now shows footer copyright notice
 * New: Option to show widget areas and full colophon on print view
+
+= Version 3.0 =
+* New: Full Width Sites: Expand Areas alternative to existing Extend BG Attributes
+* New: Featured Image Locations: Banner, Full Width BG Images: tiled, cover, parallax
+* New: Per Post FI Layout for individual Posts (requires Theme Support Plugin)
+* New: Checkbox for Fixed-Top Menus and Header Area with auto top margin for wrapper/content
+* New: HTML as replacement for Header Image: allows easy slide show in header creation with shortcode
+* New: Customizer Options interface level - Beginner, Intermediate, Advanced
+* New: Weaver System Info on Help tab (req: Theme Support Plugin)
+* New: Minimum Server / PHP Memory check for Customizer
+* New: Replace Site Title text with WP Custom Logo image, with height options
+* New: Add WP Custom Logo to Left end of Primary Menu, with height options
+* New: Alternate for Mobile Menu Hamburger
+* New: Check for PHP Memory limit for Customizer Interface
+* New: Render Header Image as a BG image, including Parallax (requires Xtreme Plus)
+* New: New default subtheme, plus other new and revised subthemes
+* New: Underline on link hover
+* New: Menu Bar top/bottom padding
+* New: Adjust for Admin Bar on top of front-end view for logged in users
+* New: Add Right HTML to Primary Menu now supported by free version. Left and other Rights still need XPlus
+* New: Automatic vertical margins for Fixed Top and Bottom options
+* New: Top/Bottom padding for Title/Tagline area
+* New: New menus for Full Width Site
+* New: Alternate cursor shape for placeholder menus
+* New: Faster CSS based Extend BG Attributes (vs. JavaScript handling)
+* New: Compatibility with WP 4.7 - specifically with Customizer and new WP Additional CSS option
+* Change: Reorderd Customizer Top Level menus
+* Change: Menu Bar Item top/bottom padding deprecated
+* Change: Removed 15 of previous subthemes - they are available for download on weavertheme.com
+* Change: force Weaver Stylesheets to load after most plugins, makes in-line and XPlus style file work same
+* Change: Default theme width changed from 940px to 1100px in keeping with the times
+* Change: Changed minimum Customizer Max Width to 0 for header, container, and footer
+* Change: #wrapper area changed from box-sizing:content-box to box-sizing:border-box. This may affect custom CSS for the pre-wrapper area.
+* Tweak: Moved Extend BG options to below BG color option in Legacy Interface.
+* Tweak: made increment .1em for Custom Font Size A/B in Customizer view
+* Tweak: left margin for ordered lists - will work for up to 99 items now
+* Tweak: Fixed styling on some submit buttons in Customizer and Legacy option interface
+* Tweak: Descriptions of Full Width option
+* Tweak: Fullwidth code in weaverxjslib-end
+* Tweak: | to %2C for Google fonts
+* Tweak: Added some .entry-title classes to keep Google happy
+* Tweak: Recognize when WP Admin Bar is at top
+* Tweak: Automatically show overflow for widgets with Extra Menus (X-Plus)
+* Tweak: Optimized custom widget layout CSS (X-Plus)
+* Fix: Missing .wrapper in site-title color rule - affected [ site_title ]
+* Fix: Styling for default [ gallery ]
+* Fix: Header, Footer custom widget area widths
+* Fix: BG color on Tagline
+* Fix: No smart margins option was not working on widget areas
+* Fix: no img size info available for a Weaver default header image
+* Fix: Outdated handling of RSS title due to WP deprecated function
+* Fix: Posts default bottom margin changed to 15px from 1.5em, Customizer/Legacy interface default values fixed
+* Fix: Page with Posts Per Page Hide Bottom Sitewide Widget Area option fixed

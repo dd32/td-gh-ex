@@ -7,6 +7,8 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
  * @subpackage Weaver X
  * @since Weaver Xtreme 1.0
  */
+
+ weaverx_fi( 'page', 'post-pre' );
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class('content-page'); ?>>
 <?php

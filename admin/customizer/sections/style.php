@@ -12,7 +12,7 @@ function weaverx_customizer_define_style_sections( $sections ) {
 define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 
 	// global settings
-
+if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if advanced, int
 	$style_sections['style-global'] = array(
 		'panel'   => $panel,
 		'title'   => __( 'Global Style Options', 'weaver-xtreme' ),
@@ -346,8 +346,11 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 				'weaverx_cz_choices_pointer',	'pointer', 'refresh'
 			),
 
-
-
+			'mobile_alt_label' =>  weaverx_cz_textarea(__( 'Mobile Menu "Hamburger" Label', 'weaver-xtreme' ),
+				'',
+				'1',
+				__('Alternative label for the default mobile "Hamburger" icon. HTML allowed: &lt;span&gt; or &lt;img&gt; suggested.', 'weaver-xtreme'),
+				'refresh')
 
 		),
 	);
@@ -392,7 +395,7 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 		);
 
 	} else {
-		$new_opts = weaverx_cz_add_plus_message('spacing_menus', __('Extra Menu', 'weaver-xtreme'),
+		$new_opts = weaverx_cz_add_plus_message('style_menus', __('Extra Menu', 'weaver-xtreme'),
 			__('Add extra menus with <strong>Weaver Xtreme Plus</strong>.', 'weaver-xtreme'));
 	}
 	// add stub or extra menu options
@@ -496,7 +499,7 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 
 		'weaverx_tables' => weaverx_cz_select(
 				__( 'Table Style', 'weaver-xtreme' ) ,
-				__( 'Style used for tables in content. <span style="font-weigiht:bold;color:red;">WARNING!</span> Tables are inherently non-responsive, and <em>do not</em> work well for mobile devices. We advise you to avoid using tables.', 'weaver-xtreme' ),
+				__( 'Style used for tables in content. <span style="font-weight:bold;color:red;">WARNING!</span> Tables are inherently non-responsive, and <em>do not</em> work well for mobile devices. We advise you to avoid using tables.', 'weaver-xtreme' ),
 				'weaverx_cz_choices_tables',	'default', 'refresh'
 			),
 
@@ -869,6 +872,17 @@ define('WEAVERX_ROUNDED_TRANSPORT', 'postMessage');
 
 		),
 	);
+} else {
+	$style_sections['style_beginner'] = array(
+		'panel'   => $panel,
+		'title'   => __( 'Beginner Level Style', 'weaver-xtreme' ),
+		'options' => array(
+			'style-beginner-names2' => weaverx_cz_group_title( __( 'Style Options', 'weaver-xtreme' ),
+				__( 'The Advanced and Intermediate Level Style options include options for adding borders, shadows, and rounded corners to Global items, Wrapping Areas, Header Area, Menus, Info Bar, Content, Post Specific, Sidebars and Widget Areas, Individual Widgets, and the Footer Area.', 'weaver-xtreme' )),
+			)
+		);
+
+}
 
 	/**
 	 * Filter the definitions for the controls in the Color Scheme panel of the Customizer.

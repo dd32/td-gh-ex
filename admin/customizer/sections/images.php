@@ -21,6 +21,7 @@ function weaverx_customizer_define_image_sections( $sections ) {
 	/**
 	 * General
 	 */
+if (  weaverx_options_level() >= WEAVERX_LEVEL_INTERMEDIATE ) {		// show if advanced, int
 	$image_sections['images-global'] = array(
 		'panel'   => $panel,
 		'title'   => __( 'Global Image Settings', 'weaver-xtreme' ),
@@ -88,8 +89,6 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 
 
 			'caption_color_css'  =>   weaverx_cz_css(__( 'Custom CSS for Captions.', 'weaver-xtreme' )),
-
-
 		),
 	);
 
@@ -97,11 +96,15 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 	/**
 	 * Site Header
 	 */
+
+	$logo_html = weaverx_get_logo_html();
+
 	$image_sections['images-header'] = array(
 		'panel'   => $panel,
 		'title'   => __( 'Header Area', 'weaver-xtreme' ),
 		'options' => array(
-		'images-heading-header' => weaverx_cz_heading( __( 'Site Header', 'weaver-xtreme' )),
+		'images-heading-header' => weaverx_cz_group_title( __( 'Site Header Image', 'weaver-xtreme' ),
+				__('You can set the header image on the <em>Header Banner Images (WP Settings)</em> menu, one level up from here, on the <em>Images</em> sub-menu.', 'weaver-xtreme') ),
 
 		'header_image_max_width_dec'     => array(
 				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 100.0	),
@@ -146,6 +149,63 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 				),
 			),
 
+		'header_image_render' => weaverx_cz_is_old_plus()
+			? weaverx_cz_heading(__( 'Header Image Rendering', 'weaver-xtreme' ) . ' ( WX+ V3 )',
+					__('"Render Header Image as BG Image" requires Weaver Xtreme Plus V2.90 or later.', 'weaver-xtreme'))
+			: weaverx_cz_select_plus(
+				__( 'Header Image Rendering', 'weaver-xtreme' ),
+				__('How to render header image: as img in header or as header area bg image. When rendered as a BG image, other options such as moving Title/Tagline or having image link to home page are not meaningful. Optionally, use <em>Suggested Header Image Height</em> above to control BG image height.', 'weaver-xtreme' /*adm*/),
+				'weaverx_cz_choices_render_header',	'header-as-img', 'refresh'
+			),
+
+
+		'header_image_html_text' => weaverx_cz_html_textarea(__( 'Image HTML Replacement', 'weaver-xtreme' ),
+				__( 'Replace Header image with arbitrary HTML. Useful for slider shortcodes in place of image. FI as Header Image has priority over HTML replacement. Extreme Plus also supports this option on a Per Page/Post basis.', 'weaver-xtreme' ),
+				'1', 'refresh'),
+
+		'header_image_html_home_only' => weaverx_cz_checkbox_refresh( __( 'Show Replacement only on Front Page', 'weaver-xtreme' ),
+				__( 'Check to use the Image HTML Replacement only on your Front/Home page. Extreme Plus support Per Page/Post control.', 'weaver-xtreme')),
+
+		'header_image_html_plus_bg' => weaverx_cz_is_old_plus()
+			? weaverx_cz_heading(__( 'Also show BG Header Image', 'weaver-xtreme' ) . ' ( WX+ V3 )',
+					__('"Also show BG Header Image" requires Weaver Xtreme Plus V2.90 or later.', 'weaver-xtreme'))
+			: weaverx_cz_checkbox( __( 'Also show BG Header Image', 'weaver-xtreme' ),
+			__( 'If you have Image HTML Replacement defined - including Per Page/Post - and also have have set the standard Header Image to display as a BG image, then show <em>both</em> the BG image and the replacement HTML.', 'weaver-xtreme' ), 'plus','refresh'),
+
+		'images-heading-header-logo' => weaverx_cz_group_title( __( 'Site Logo', 'weaver-xtreme' ),
+				__('You can set the Site Logo on the <em>Customize : General Options : Site Identity</em> menu.', 'weaver-xtreme')
+				. $logo_html),
+
+
+		'hide_wp_site_logo' => weaverx_cz_select(
+				__( 'Hide Site Logo', 'weaver-xtreme' ),
+				__( 'IMPORTANT! This option only applies to the Site Logo when used in the Header. It does NOT apply to the Site Logo on the Menu, nor as the replacement for the Site Title.','weaver-xtreme'),
+				'weaverx_cz_choices_hide',	'hide-none', 'refresh'
+			),
+
+		'wplogo_for_title' => weaverx_cz_checkbox_refresh( __( 'Replace Title with Site Logo', 'weaver-xtreme' ),
+				__( 'Replace the Site Title text with the WP Custom Logo Image', 'weaver-xtreme')),
+
+		'header_logo_height_dec'     => array(
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'refresh',	'default' => 32
+				),
+				'control' => array(
+					'control_type' => 'WeaverX_Range_Control',
+					'label'   => __( 'Logo as Title Replacement Height (px)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'description'   => __( 'Set height of Logo on Menu. Will interact with padding. (Default: 32px)', 'weaver-xtreme' ),
+					'type'  => 'range',
+					'input_attrs' => array(
+						'min'  => 10,
+						'max'  => 200,
+						'step' => 1,
+					),
+				),
+			),
+
+
+
+		'images-heading-other' => weaverx_cz_group_title( __( 'Related Settings', 'weaver-xtreme' )),
+
 		'images-heading-srch' => weaverx_cz_heading(
 				__( 'Search Box Icon', 'weaver-xtreme' ),
 				__( 'The icon used in search boxes can be changed in the <em>Colors &rarr; Content</em> section.', 'weaver-xtreme' )
@@ -173,6 +233,9 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 
 			'images-content-heading' => weaverx_cz_heading( __( 'General Image Settings', 'weaver-xtreme' ),
 				__( 'General image settings found on the <em>Global Image Settings</em> panel.', 'weaver-xtreme' )),
+
+			'images-pgextendbg-heading' => weaverx_cz_heading( __( 'Full Width Featured Image BG', 'weaver-xtreme' ),
+				__( 'Check the <em>Content Full Width BG Attributes</em> option on the <em>Spacing, Width, Alignment -> Full Width Site</em> menu to get full width Featured Image BG.', 'weaver-xtreme' )),
 
 			'images-content-FI' => weaverx_cz_group_title( __( 'Featured Image - Pages', 'weaver-xtreme' ),
 					__( 'Display of Page Featured Images', 'weaver-xtreme' )),
@@ -227,7 +290,7 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 		'title'   => __( 'Post Specific', 'weaver-xtreme' ),
 		'description' => __('Post Specific Images - override Content Images.', 'weaver-xtreme'),
 		'options' => array(
-			'images-postspecific-heading' => weaverx_cz_heading( __( 'General Image Settings', 'weaver-xtreme' ),
+			'images-postspecific-heading' => weaverx_cz_group_title( __( 'General Image Settings', 'weaver-xtreme' ),
 				__( 'General image settings found on the <em>Site Wrapper &amp; Container</em> panel.', 'weaver-xtreme' )),
 
 
@@ -245,6 +308,9 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 					),
 				),
 			),
+
+			'images-extendbg-heading' => weaverx_cz_heading( __( 'Full Width Featured Image BG', 'weaver-xtreme' ),
+				__( 'Check the <em>Extend Width BG Attributes for all Posts</em> option on the <em>Spacing, Width, Alignment -> Full Width Site</em> menu to get full width Featured Image BG.', 'weaver-xtreme' )),
 
 			'images-content-FI-full' => weaverx_cz_group_title( __( 'Featured Image - Full Blog Posts', 'weaver-xtreme' ),
 				__( 'Display of Post Featured Images when Post is displayed as a Full Post.', 'weaver-xtreme' )),
@@ -423,14 +489,14 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 					'type'  => 'HTML',
 					'description' => '<small>' .
 					__('Use the <em>Additional CSS</em> option to specify additional background CSS options, each ending with a semi-colon (;).
-Valid options include: background-position, background-size, background-origin, background-clip, and background-attachment. Useful example: <code>background-size: 100% auto;</code> - makes bg image full width of container, height depends on container. See this <a href="http://www.w3schools.com/cssref/css3_pr_background.asp" title="background CSS" target="_blank">W3 Schools page</a> for more information about background styling.' ,
+Valid options include: background-position, background-size, background-origin, background-clip, and background-attachment. Useful example: <code>background-size: 100% auto;</code> - makes bg image full width of container, height depends on container. See this <a href="//www.w3schools.com/cssref/css3_pr_background.asp" title="background CSS" target="_blank">W3 Schools page</a> for more information about background styling.' ,
 					   'weaver-xtreme') . '</small>'
 				),
 			),
 
 		),
 	);
-if (true) {
+
 
 	$new_opts = weaverx_cz_add_image('body', __('Site BG Image', 'weaver-xtreme'),
 		__('Background image for entire site (body)', 'weaver-xtreme'));
@@ -477,6 +543,18 @@ if (true) {
 	$new_opts = weaverx_cz_add_image('footer', __('Footer BG Image', 'weaver-xtreme'),
 		__('Background image for Footer area (#colophon)', 'weaver-xtreme'));
 	$image_sections['images-background']['options'] = array_merge( $image_sections['images-background']['options'],  $new_opts);
+
+} else {
+	$image_sections['images-global'] = array(
+		'panel'   => $panel,
+		'title'   => __( 'Image Settings', 'weaver-xtreme'),
+		'options' => array(
+			'images-heading-global' => weaverx_cz_group_title( __( 'Advanced / Intermediate Image Settings', 'weaver-xtreme' ),
+				__( 'The Intermediate and Advanced Levels include options for setting Image attributes, including placement of Featured Images, Header image attributes, background images, image borders and sizes, and more.', 'weaver-xtreme' )),
+			)
+		);
+
+
 
 }
 

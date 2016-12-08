@@ -61,8 +61,17 @@ function weaverx_page_menu( $args = array() ) {
 	$menu .= str_replace( array( "\r", "\n", "\t" ), '', wp_list_pages( $list_args) );
 
 
-	$left = weaverx_getopt('m_primary' . '_html_left');
-	$right = weaverx_getopt('m_primary' . '_html_right');
+	$left = weaverx_getopt('m_primary_html_left');
+	$right = weaverx_getopt('m_primary_html_right');
+
+	if ( weaverx_getopt('m_primary_logo_left') ) {
+		$custom_logo_url = weaverx_get_wp_custom_logo_url();
+		// We have a logo. Logo is go.
+		if ( $custom_logo_url ) {
+				//weaverx_alert('custom logo:' . $custom_logo_url);
+				$left = '<img class="custom-logo-on-menu" src="' . $custom_logo_url . '" />' . $left;
+		}
+	}
 
 	if ( $left ) {
 		$hide = ' ' . weaverx_getopt('m_primary_hide_left');
@@ -71,8 +80,13 @@ function weaverx_page_menu( $args = array() ) {
 
 	if ( weaverx_getopt('use_smartmenus')  && function_exists('weaverxplus_plugin_installed')) {
 		$hamburger = apply_filters('weaverx_mobile_menu_name',weaverx_getopt('m_primary_hamburger'));
-		if ( $hamburger == '' )
-			$hamburger = '<span class="genericon genericon-menu"></span>';
+		if ( $hamburger == '' ) {
+			$alt = weaverx_getopt('mobile_alt_label');
+			if ( $alt == '')
+				$hamburger = '<span class="genericon genericon-menu"></span>';
+			else
+				$hamburger = '<span class="menu-toggle-menu">' . $alt . '</span>';
+		}
 		$left = '<span href="" class="wvrx-menu-button">' . "{$hamburger}</span>{$left}";
 	}
 
@@ -235,17 +249,7 @@ function weaverx_comment_form_defaults( $defaults ) {		// filter definition
 //--
 
 
-// =============================== >>>weaver FILTER: weaverx_get_wp_title_rss <<< ================================
-add_filter('get_wp_title_rss', 'weaverx_get_wp_title_rss',10,1);
-
-function weaverx_get_wp_title_rss($title) {		// filter definition
-	/* need to fix our add a | blog name to wp_title */
-	$ft = str_replace(' | ','',$title);
-	return str_replace(get_bloginfo('name'),'',$ft);
-}
-//--
-
-
+// removed RSS filter - V 4.2
 
 // =============================== >>> FILTER: weaverx_xtra_type_filter <<< ================================
 add_filter('weaverx_xtra_type', 'weaverx_xtra_type_filter');
@@ -354,7 +358,7 @@ function weaverx_mce_css($default_style) {
 	// Build the overrides
 	$put = '?mce=1';	// cheap way to start with ?
 
-	if ( ( $twidth = weaverx_getopt_default( 'theme_width_int', 940 ) ) ) {
+	if ( ( $twidth = weaverx_getopt_default( 'theme_width_int', WEAVERX_THEME_WIDTH ) ) ) {
 	/*  figure out a good width - we will please most of the users, most of the time
 		We're going to assume that mostly people will use the default layout -
 		we can't actually tell if the editor will be for a page or a post at this point.

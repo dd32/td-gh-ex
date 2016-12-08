@@ -31,14 +31,6 @@ function weaverx_generate_wphead() {
 			weaverx_echo_css( $css );
 		}
 		echo("\n</style> <!-- end of main options style section -->\n");
-	} else { // include generated file
-		$vers = weaverx_getopt('style_version');
-		if (!$vers)
-			$vers = '1';
-		else
-			$vers = sprintf("%d",$vers);
-		wp_enqueue_style('weaverxp-style-sheet',weaverx_get_css_url(),array('weaver-root-style-sheet'),$vers);
-		wp_enqueue_style('weaverxp-style-sheet');
 	}
 
    /* now head options */

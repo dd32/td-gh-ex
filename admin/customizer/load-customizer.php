@@ -6,7 +6,11 @@
  * Some custom Customizer control classes inspired by
  */
 
-if (!weaverx_getopt('_disable_customizer')) {
+global $wp_customize;
+
+if (isset( $wp_customize ) && !weaverx_getopt('_disable_customizer')) {
+
+
 
 	add_action( 'customize_register', 'weaverx_add_customizer_content' );
 	add_action( 'customize_controls_enqueue_scripts','weaverx_enqueue_customizer_scripts');
@@ -15,9 +19,12 @@ if (!weaverx_getopt('_disable_customizer')) {
 	add_action( 'customize_register', 'WeaverX_Save_WX_Settings::process_save', 999999 );
 	add_action( 'customize_register', 'WeaverX_Restore_WX_Settings::process_restore', 999999 );
 	add_action( 'customize_register', 'WeaverX_Load_WX_Subtheme::process_load_theme', 999999 );
+	add_action( 'customize_register', 'WeaverX_Set_Customizer_Level::process_set_level', 999999 );
 
 
-
+function weaverx_customizer_loaded_action() {
+	return;
+}
 
 
 function weaverx_add_customizer_content( $wp_customize ) {
@@ -35,6 +42,7 @@ function weaverx_add_customizer_content( $wp_customize ) {
 	require_once( dirname( __FILE__ ) . '/alpha-color-picker/alpha-color-picker.php' );
 	require_once( dirname( __FILE__ ) . '/save-restore/save-restore.php' );
 	require_once( dirname( __FILE__ ) . '/lib-controls.php' );
+
 
 	weaverx_customizer_add_panels( $wp_customize );
 	weaverx_customizer_add_sections( $wp_customize );
@@ -54,14 +62,14 @@ function weaverx_cz_customize_order($wp_customize) {
 		$wp_customize->add_panel( 'widgets' );
 
 	$wp_customize->get_panel( 'widgets' )->priority 	= 11900;
-	$wp_customize->get_panel( 'widgets' )->title 		= __( 'Active Widget Areas', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON;
+	$wp_customize->get_panel( 'widgets' )->title 		= __( 'Active Widget Areas (WP)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON;
 
 	// Re-prioritize and rename the Menus panel
 	if ( ! isset( $wp_customize->get_panel( 'nav_menus' )->priority ) )
 		$wp_customize->add_panel( 'nav_menus' );
 
 	$wp_customize->get_panel( 'nav_menus' )->priority 	= 11910;
-	$wp_customize->get_panel( 'nav_menus' )->title 		= __( 'Custom Menus Content', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON;
+	$wp_customize->get_panel( 'nav_menus' )->title 		= __( 'Custom Menus Content (WP)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON;
 
 	// Move and rename Background Color control to Global section of Color panel
 	$wp_customize->get_control( 'background_color' )->section =  'weaverx_color-wrapping';
@@ -77,14 +85,55 @@ function weaverx_customize_preview_js() {
 
 	WeaverX_Restore_WX_Settings::controls_print_scripts();
 
-	$cur_vers = weaverx_wp_version();
 
-	if (version_compare($cur_vers, '4.4', '<')) {
-		$msgpost = __('The Site Preview window will refresh <em>much</em> faster after you update to WordPress 4.4.','weaver-xtreme');
+	/* now in XPlus menu item
+	 $cur_vers = weaverx_wp_version();
+	$msgpost = '';
+
+	if (version_compare($cur_vers, '4.5', '<')) {
+		$msgpost = __('The Site Preview window will refresh <em>much</em> faster after you update to the latest WP version.','weaver-xtreme');
 
 		$content = "<script>jQuery('#customize-info').append('<div style=\"text-align: center;border-bottom: solid 1px #eee;display: block; font-size: 100%;padding: 9px 0;color: white;background: #298cba;\"> {$msgpost}</div>');</script>";
 		echo $content;
+	} else {
+		$level = weaverx_options_level();
+
+		if ($level == 0) {	// not set yet...
+			$content = "<script>jQuery('#customize-info').append('<div style=\"text-align:center;border-bottom: solid 1px #eee;display: block; font-size: 100%;padding: 10px 8px;color:yellow;background:red;\"><strong>Please set the <em style=\"text-decoration:underline;cursor:pointer;\" onclick=\"wvrxSelectOptions(\'weaverx_general_options_level\');\">Options Interface Level</em></div>');</script>";
+		} else {
+			switch ($level) {
+				case WEAVERX_LEVEL_ADVANCED:
+					$msgpost .= '<em style="background-color:black;color:white;padding:3px;">' . __('Advanced','weaver-xtreme') . '</em>';
+					break;
+				case WEAVERX_LEVEL_INTERMEDIATE:
+					$msgpost .= '<em style="background-color:blue;color:white;padding:3px;">' . __('Intermediate', 'weaver-xtreme') . '</em>';
+					break;
+				case WEAVERX_LEVEL_BEGINNER:
+				default:
+					$msgpost .= '<em style="background-color:green;color:white;padding:3px;">' . __('Beginner', 'weaver-xtreme') . '</em>';
+					break;
+
+			}
+
+			//$link .= '<span style="float:right;"><a style="color:white;font-weight:bold;text-decoration:underline;" href="//shop.weavertheme.com" target="_blank" title="' . __('Add over 100 new features to Weaver Xtreme with the Xtreme Plus plugin!', 'weaver-xtreme') . '">' . __('Get Xtreme Plus', 'weaver-xtreme') . '</a></span>';
+
+			$content = "<script>jQuery('#customize-info').append('<div style=\"text-align:center;border-bottom: solid 1px #eee;display: block; font-size: 80%;padding: 2px 4px;color:white;background:#298cba;margin-bottom:-18px;\"><strong><span style=\"cursor:pointer;\" onclick=\"wvrxSelectOptions(\'weaverx_general_options_level\');\">Interface Level: {$msgpost}</span></div>');</script>";
+
+		}
+
+
+		echo $content;
+
 	}
+	*/
+
+	weaverx_check_customizer_memory();
+	weaverx_check_support_plugin_version();
+
+	if ( weaverx_options_level() < 1) {		// show if not set
+		weaverx_alert(__('Thank you for using Weaver Xtreme Version 3!\r\n\r\n        IMPORTANT NOTE  -- New Theme Feature\r\n\r\nThis theme now has 3 Customizer Option Interface Levels: Beginner, Intermediate, and Advanced.   If you are just getting started, using the Beginner Level can simplify the learning curve.\r\n\r\nAfter the Customizer loads, please open the **General Options / Admin** panel, and then the **Set Options Interface Level** panel, and select an Interface Level.\r\n\r\nThis message will continue to be displayed until you select a level.', 'weaver-xtreme'));
+	}
+
 }
 add_action('customize_controls_print_footer_scripts', 'weaverx_customize_preview_js');
 
@@ -107,7 +156,6 @@ function weaverx_enqueue_customizer_scripts(){
 		'1.3.0'
 	);
 
-//define('CUSTOMIZER_MENU','Customizer-Menu-9');
 define('CUSTOMIZER_MENU','customizer-menu');
 
 
@@ -167,6 +215,7 @@ define('CUSTOMIZER_MENU','customizer-menu');
 		'general' => __('General Options, Admin', 'weaver-xtreme'),
 		'tagline' => __('Site Identity', 'weaver-xtreme'),
 		'front_page' => __('Static Front Page', 'weaver-xtreme'),
+		'options_level' => __('Options Interface Level','weaver-xtreme'),
 		'general_admin' => __('Admin', 'weaver-xtreme'),
 		'save_settings' => __('Save Settings', 'weaver-xtreme'),
 		'restore_settings' => __('Restore Settings', 'weaver-xtreme'),
@@ -186,11 +235,12 @@ define('CUSTOMIZER_MENU','customizer-menu');
 		'footer' => __('Footer Area', 'weaver-xtreme'),
 
 		'spacing' => __('Spacing, Widths,+', 'weaver-xtreme'),
-		'fullwidth' => __('Full Width', 'weaver-xtreme'),
+		'site_widths' => __('Site Widths', 'weaver-xtreme'),
 
 
 		'style' => __('Style - Borders, etc.', 'weaver-xtreme'),
-		'global' => __('Global Options', 'weaver-xtreme'),
+		'global_typo' => __('Global Typography', 'weaver-xtreme'),
+		'global_style' => __('Global Style', 'weaver-xtreme'),
 
 		'typography' => __('Typography', 'weaver-xtreme'),
 
@@ -276,26 +326,27 @@ function weaverx_customizer_get_panels() {
 		'general'           => array( 'title' => __( 'General Options &amp; Admin', 'weaver-xtreme' ), 'priority' => 10200,
 				'description'    => __( "General settings: Site Identity, Static Front Page, Admin Options, Help" , 'weaver-xtreme' )),
 
-		'site-colors'      	=> array( 'title' => __( 'Colors', 'weaver-xtreme' ), 'priority' => 10300,
-				'description'    => __( "Specify all colors used on site - both text and backgroud colors. <strong>TIP:</strong> Clicking <em>Default</em> on the color picker will restore the original color set when you loaded the Customizer." , 'weaver-xtreme' )),
+		'layout'       	 		=> array( 'title' => __( 'Layout', 'weaver-xtreme' ), 'priority' => 10300,
+				'description'    => __( "Layout controls the overall look of your site. This includes the site width, full width layout option, sidebar layout, and more." , 'weaver-xtreme' )  ),
 
-		'spacing'       	 	=> array( 'title' => __( 'Spacing, Widths, Alignment', 'weaver-xtreme' ), 'priority' => 10400,
-				'description'    => __( "Set margins, padding, spacing, heights, and widths." , 'weaver-xtreme' ) ),
-
-		'style'        		=> array( 'title' => __( 'Style (borders, etc.)', 'weaver-xtreme' ), 'priority' => 10500,
-				'description'    => __( "Style: borders, shadows, rounded corners, list bullet style, icons. (Important note: using rounded corners usually requires specifying a BG color or border.)" , 'weaver-xtreme' ) ),
-
-		'typography'        => array( 'title' => __( 'Typography', 'weaver-xtreme' ), 'priority' => 10600,
+		'typography'        => array( 'title' => __( 'Typography', 'weaver-xtreme' ), 'priority' => 10400,
 				'description'    => __( "Typography: font family, font size, bold, italic." , 'weaver-xtreme' )),
 
-		'visibility'       	 => array( 'title' => __( 'Visibility', 'weaver-xtreme' ), 'priority' => 10700,
+		'images'			=> array( 'title' => __( 'Images', 'weaver-xtreme' ), 'priority' => 10500,
+				'description'    => __( "Image Options: borders, placement, Featured Images, Header Images, Background Images." , 'weaver-xtreme' )  ),
+
+		'visibility'       	 => array( 'title' => __( 'Visibility', 'weaver-xtreme' ), 'priority' => 10600,
 				'description'    => __( "Specify visibility - hide various elements on various devices (desktop, tablets, phones)." , 'weaver-xtreme' )  ),
 
-		'layout'       	 		=> array( 'title' => __( 'Layout', 'weaver-xtreme' ), 'priority' => 10800,
-				'description'    => __( "Specify element layout - sidebars, etc." , 'weaver-xtreme' )  ),
+		'site-colors'      	=> array( 'title' => __( 'Colors', 'weaver-xtreme' ), 'priority' => 10700,
+				'description'    => __( "Specify all colors used on site - both text and backgroud colors. <strong>TIP:</strong> Clicking <em>Default</em> on the color picker will restore the original color set when you loaded the Customizer." , 'weaver-xtreme' )),
 
-		'images'			=> array( 'title' => __( 'Images', 'weaver-xtreme' ), 'priority' => 10900,
-				'description'    => __( "Image Options: borders, placement, Featured Images, Header Images, Background Images." , 'weaver-xtreme' )  ),
+		'spacing'       	 	=> array( 'title' => __( 'Spacing, Widths, Alignment', 'weaver-xtreme' ), 'priority' => 10800,
+				'description'    => __( "Set margins, padding, spacing, heights, and widths." , 'weaver-xtreme' ) ),
+
+		'style'        		=> array( 'title' => __( 'Style (borders, etc.)', 'weaver-xtreme' ), 'priority' => 10900,
+				'description'    => __( "Style: borders, shadows, rounded corners, list bullet style, icons. (Important note: using rounded corners usually requires specifying a BG color or border.)" , 'weaver-xtreme' ) ),
+
 
 		'content'			=> array( 'title' => __( 'Added Content (HTML Areas...)', 'weaver-xtreme' ), 'priority' => 11000,
 				'description'    => __( "Specify added content: Define added content for HTML areas." , 'weaver-xtreme' )  ),
@@ -330,6 +381,7 @@ if ( ! function_exists( 'weaverx_customizer_add_panels' ) ) :
  */
 function weaverx_customizer_add_panels( $wp_customize ) {
 	$theme_prefix = 'weaverx_';
+
 
 	// Get panel definitions
 	$panels = weaverx_customizer_get_panels();
@@ -581,13 +633,20 @@ endif;
 
 // lib
 
-function weaverx_cz_is_plus() {
+function weaverx_cz_is_old_plus() {
 	if (function_exists('weaverxplus_plugin_installed')) {
-		return true;
+		return version_compare( WEAVER_XPLUS_VERSION, '2.90', '<');
 	} else {
-		return false ;
+		return false;
 	}
+
 }
+
+function weaverx_cz_is_plus( ) {
+	return function_exists('weaverxplus_plugin_installed');
+}
+
+
 function weaverx_cz_cache_opts() {
 	if (!isset($GLOBALS['weaverx_cz_cache']))
 		$GLOBALS['weaverx_cz_cache'] = array();
@@ -632,58 +691,6 @@ function weaverx_cz_getopt($opt) {
 	}
 	$val = $GLOBALS['weaverx_cz_cache'][$opt];
 	return $val ? $val : '';
-}
-
-
-//----------------------- customizer defines
-define('WEAVERX_COLOR_CONTROL', 'Customize_Alpha_Color_Control'); //'WP_Customize_Color_Control');
-define('WEAVERX_COLOR_TRANSPORT', 'postMessage'); // 'postMessage');
-define('WEAVERX_SELECT_CONTROL', 'WeaverX_Select_Control');
-
-
-define('WEAVERX_REFRESH_ICON', ' &#8635;');	// add "recycle" icon for options that refresh instead of postMessage
-
-	$cur_vers = weaverx_wp_version();
-
-	if (version_compare($cur_vers, '4.4', '<')) {	// simply takes too long in 4.3 to call all the sanitizers
-		define('WEAVERX_DEFAULT_SANITIZE', null);
-		define('WEAVERX_CZ_SANITIZE_COLOR', null);
-		define('WEAVERX_CHOICE_SANITIZE', '_nosan');
-
-	} else {
-		define('WEAVERX_DEFAULT_SANITIZE', 'weaverx_default_sanitize');
-		define('WEAVERX_CZ_SANITIZE_COLOR', 'weaverx_cz_sanitize_color');
-		define('WEAVERX_CHOICE_SANITIZE', '_sanitize');
-	}
-
-
-
-if (weaverx_cz_is_plus()) {
-
-define('WEAVERX_PLUS_ICON', ' &#8901;+&#8901;');
-define('WEAVERX_PLUS_COLOR_CONTROL', WEAVERX_COLOR_CONTROL);
-
-define('WEAVERX_PLUS_SELECT_CONTROL', 'WeaverX_Select_Control');
-define('WEAVERX_PLUS_CHECKBOX_CONTROL', null);
-define('WEAVERX_PLUS_TEXT_CONTROL', null);
-define('WEAVERX_PLUS_TEXTAREA_CONTROL', 'WeaverX_Textarea_Control');
-
-define('WEAVERX_PLUS_RANGE_CONTROL', 'WeaverX_Range_Control');
-define('WEAVERX_PLUS_IMAGE_CONTROL', 'WP_Customize_Image_Control');
-define('WEAVERX_PLUS_MISC_CONTROL', 'WeaverX_Misc_Control');
-
-
-} else {	// plus not active
-
-define('WEAVERX_PLUS_ICON', ' ( WX+ )');
-define('WEAVERX_PLUS_COLOR_CONTROL', 'WeaverX_XPlus_Control');
-define('WEAVERX_PLUS_SELECT_CONTROL', 'WeaverX_XPlus_Control');
-define('WEAVERX_PLUS_CHECKBOX_CONTROL', 'WeaverX_XPlus_Control');
-define('WEAVERX_PLUS_TEXT_CONTROL', 'WeaverX_XPlus_Control');
-define('WEAVERX_PLUS_TEXTAREA_CONTROL', 'WeaverX_XPlus_Control');
-define('WEAVERX_PLUS_RANGE_CONTROL', 'WeaverX_XPlus_Control');
-define('WEAVERX_PLUS_IMAGE_CONTROL', 'WeaverX_XPlus_Control');
-define('WEAVERX_PLUS_MISC_CONTROL', 'WeaverX_XPlus_Control');
 }
 
 } // disable customizer?

@@ -9,6 +9,9 @@
 			$( 'input[name=wvrx_restore]' ).on( 'click', WVRXsr._import );
 			$( 'input[name=wvrx_save_xplus]' ).on( 'click', WVRXsr._exportxplus );
 			$( 'input[name=wvrx_select_subtheme]' ).on( 'click', WVRXsr._loadtheme );
+			$( 'input[name=wvrx_cust_level_beginner]' ).on( 'click', WVRXsr._levelbeg );
+			$( 'input[name=wvrx_cust_level_intermediate]' ).on( 'click', WVRXsr._levelint );
+			$( 'input[name=wvrx_cust_level_advanced]' ).on( 'click', WVRXsr._leveladv );
 		},
 
 		_export: function()
@@ -24,6 +27,21 @@
 		_exportxplus: function()
 		{
 			window.location.href = WVRXConfig.customizerURL + '?wvrx_save_xplus=' + WVRXConfig.exportNonce;
+		},
+
+		_levelbeg: function()
+		{
+			window.location.href = WVRXConfig.customizerURL + '?wvrx_cust_level_beginner=' + WVRXConfig.exportNonce;
+		},
+
+		_levelint: function()
+		{
+			window.location.href = WVRXConfig.customizerURL + '?wvrx_cust_level_intermediate=' + WVRXConfig.exportNonce;
+		},
+
+		_leveladv: function()
+		{
+			window.location.href = WVRXConfig.customizerURL + '?wvrx_cust_level_advanced=' + WVRXConfig.exportNonce;
 		},
 
 		_import: function()

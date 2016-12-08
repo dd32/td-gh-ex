@@ -205,17 +205,37 @@ function weaverx_edit_link($echo = 'echo') {
 }
 //--
 
-if ( ! function_exists( 'twentysixteen_the_custom_logo' ) ) {
+if ( ! function_exists( 'weaverx_get_wp_custom_logo' ) ) {
 /**
  * Displays the optional custom logo.
  *
  * Does nothing if the custom logo is not available.
  *
  */
-function weaverx_the_custom_logo() {
+function weaverx_get_wp_custom_logo( ) {
 	if ( function_exists( 'the_custom_logo' ) ) {
-		the_custom_logo();
+		return get_custom_logo();
 	}
+	return '';
+}
+}
+
+if ( ! function_exists( 'weaverx_get_wp_custom_logo_url' ) ) {
+/**
+ * Displays the optional custom logo.
+ *
+ * Does nothing if the custom logo is not available.
+ *
+ */
+function weaverx_get_wp_custom_logo_url( $size = 'full' ) {
+
+	$custom_logo_id = get_theme_mod( 'custom_logo' );
+	$image = '';
+
+	// We have a logo. Logo is go.
+	if ( $custom_logo_id )
+		$image = wp_get_attachment_image_url( $custom_logo_id, $size );
+	return $image;
 }
 }
 
@@ -274,7 +294,7 @@ function weaverx_not_found_search($file_name) {
 ?>
 	<article id="post-0" class="post no-results not-found">
 	<header class="page-header">
-		<h1 class="page-title title-search"><?php echo __( 'Nothing Found','weaver-xtreme'); ?></h1>
+		<h1 class="page-title entry-title title-search"><?php echo __( 'Nothing Found','weaver-xtreme'); ?></h1>
 	</header><!-- .page-header -->
 
 	<div class="entry-content clearfix">
@@ -590,7 +610,7 @@ function weaverx_archive_title( $title = '', $type, $extra = '') {
 	if ( ! $title )
 		$title = the_title( '', '', false );
 ?>
-	<h1 class="page-title archive-title title-<?php echo $type . $extra; ?>"><span<?php echo weaverx_title_class( 'archive_title' ) . '>' . $title;?></span></h1>
+	<h1 class="page-title archive-title entry-title title-<?php echo $type . $extra; ?>"><span<?php echo weaverx_title_class( 'archive_title' ) . '>' . $title;?></span></h1>
 <?php
 }
 }
@@ -608,7 +628,7 @@ function weaverx_page_title( $title = '') {
 ?>
 	<header class="page-header">
 	<?php weaverx_fi( 'page', 'title-before'); ?>
-	<h1<?php echo weaverx_title_class( 'page_title', false, 'page-title') . '>' . $title;?></h1>
+	<h1<?php echo weaverx_title_class( 'page_title', false, 'page-title entry-title') . '>' . $title;?></h1>
 	</header><!-- .page-header -->
 <?php
 	}
@@ -640,8 +660,9 @@ function weaverx_single_title( $title = '' ) {
 if ( ! function_exists( 'weaverx_fi' ) ) {
 function weaverx_fi( $who, $where ) {
 	// Emit Featured Image depending on settings and who and where called from
+	// $who includes: post, page, post_excerpt,post_ful
 
-
+//echo "\n<!-- ***************************** weaverx_fi: who: {$who} where: {$where} *************************** -->\n"; // @@@@@@@@@@@@@
 	$hide = weaverx_getopt( $who . '_fi_hide');
 
 	if (  $hide == 'hide' || weaverx_t_get( 'hide_featured_image' ) || ! has_post_thumbnail() ) // hide all or no FI
@@ -665,28 +686,78 @@ function weaverx_fi( $who, $where ) {
 	if ( !$show ) {
 		if ( $who == 'page') // || $who == 'post_full')
 			$show = weaverx_get_per_page_value( '_pp_fi_location');
-		else if ( $GLOBALS['weaverx_page_who'] == 'single' )
+		else if ( isset($GLOBALS['weaverx_page_who']) &&  $GLOBALS['weaverx_page_who'] == 'single' )
 			$show = weaverx_get_per_post_value( '_pp_fi_location');
+		else {
+			$show = weaverx_get_per_post_value( '_pp_post_fi_location');
+		}
 	}
+
 
 	if ( !$show )
 		$show = weaverx_getopt( $who . '_fi_location' );    // 'page' or 'post'
 	else if ( $show == 'hide' )
 		return false;
 
-	$show_post = ( $who == 'post' ) && ( $show == $where);
+
+	if ( $where == 'post-pre' && strpos ($show, 'post-bg') !== false ) {	// showing a BG image
+		$before = '<style type="text/css">';
+		$after = '</style>';
+		$image = wp_get_attachment_image_src( get_post_thumbnail_id( ), 'full' );        // (url, width, height)
+		$hdr = $image[0];
+		$hdr_height = $image[2];
+		$hdr_width = $image[1];
+
+		// wp customizer preview hack for WP 4.4 beta, might go away for 4.4 release
+		$url = get_template_directory_uri();
+		$url = str_replace(array('http://', 'https://'),'', $url);
+		$hdr = str_replace('%s', $url, $hdr);		// 4.4 preview breaks this
+		$hdr = str_replace(array('http://', 'https://'),'//', $hdr);
+		if ($who == 'page' )
+			$selector = '#container';
+		else if ( $who == 'post' && $where == 'post-pre') {
+			$selector = '#post-' . get_the_ID() . '{background-color:transparent;}' . '#container';
+		}
+		else
+			$selector = '#post-' . get_the_ID();
+
+
+		switch ($show) {
+			case 'post-bg-parallax':
+				$style = "background:url({$hdr}) no-repeat center center fixed;background-position:50% 50%; -webkit-background-size:cover;
+background-attachment:fixed;-moz-background-size:cover;-o-background-size:cover;background-size:cover;background-color:transparent;box-sizing:border-box;";  // parallax
+				break;
+			case 'post-bg':
+				$style = "background:url({$hdr}) repeat;background-color:transparent;"; // tile vertically
+				break;
+			case 'post-bg-cover':		// cover - responsive
+				$style = "background:url({$hdr}); -webkit-background-size:cover;background-repeat:no-repeat;background-position:center center;
+-moz-background-size:cover;-o-background-size:cover;background-size:cover;background-color:transparent;box-sizing:border-box;"; // cover
+				break;
+			default:		// no others
+				break;
+		}
+
+		echo "{$before}{$selector}{ {$style} }{$after}\n";
+
+
+		return true;
+	} // end as bg image
+
+	//weaverx_alert('in fi - who: ' . $who . ' where: ' . $where . ' show: ' . $show);
+
 
 	//$align = ($where == 'title_featured') ? 'fi-alignleft' : weaverx_getopt_default( $who . '_fi_align' , 'fi-alignleft');
 
 	$align = weaverx_getopt_default( $who . '_fi_align' , 'fi-alignleft');
 
 	$before = '';
-	if ( $where == 'post-before' ) {
+	if ( $where == 'post-pre' ) {
 		$align .= '-pb';    // need to be able to fixup alignment for small devices
 		$before = '<div class="clear-post-before" style="clear:both;"></div>';
 	}
 
-	$fi_class = 'featured-image fi-' . $who . '-' . $where . ' ' . $hide . ' ' . $align; // construct fi class
+	$fi_class = 'featured-image fi-' . $who . '-' . $where . ' fi-' . $show . ' ' . $hide . ' ' . $align; // construct fi class
 
 	$attr = array('class' => $fi_class );
 
@@ -696,36 +767,18 @@ function weaverx_fi( $who, $where ) {
 	if ( $w )
 		$attr['style'] = 'width:' . $w . '%';
 
-	if ( $show == $where || $show_post ) {
+		//weaverx_alert('in fi - who: ' . $who . ' where: ' . $where . ' show: ' . $show);
+
+	if ( $show == $where || ($show == 'post-before' && $where == 'post-pre') || ($show == 'title-banner' && $where == 'title-before') ) {
+
 		if ( $show == 'header-image' ) {			// special case : header replacement area
 
 			$image = wp_get_attachment_image_src( get_post_thumbnail_id( ), 'full' );        // (url, width, height)
-			$hdr = $image[0];
-			$hdr_height = $image[2];
-			$hdr_width = $image[1];
-
-			// wp customizer preview hack for WP 4.4 beta, might go away for 4.4 release
-			$url = get_template_directory_uri();
-			$url = str_replace(array('http://', 'https://'),'', $url);
-			$hdr = str_replace('%s', $url, $hdr);		// 4.4 preview breaks this
-			$hdr = str_replace(array('http://', 'https://'),'//', $hdr);
-
-			if ( weaverx_getopt('link_site_image') ) { ?>
-<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-<?php }
-			$width = weaverx_getopt_default('theme_width_int',940);
-			$custom_header_sizes = apply_filters( 'weaverx_custom_header_sizes', "(max-width: {$width}px) 100vw, 1920px" );
-			if (weaverx_getopt('header_actual_size') || stripos($hdr, '.gif') !== false ) { ?>
-<img src="<?php echo $hdr ?>" width="<?php echo $hdr_width; ?>" height="<?php echo $hdr_height; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
-			<?php } else {
-		?>
-<img src="<?php echo $hdr; ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( get_post_thumbnail_id( ) ) ); ?>" sizes="<?php echo esc_attr( $custom_header_sizes ); ?>" width="<?php echo $hdr_width; ?>" height="<?php echo $hdr_height; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /> <?php
-			}
-			weaverx_e_opt('link_site_image',"\n</a>");	/* need to close link */
-
-
-			return true;
+			if (!$image)
+				return false;
+			return $image[0];				// let the header code handle the details...
 		}
+
 
 		$size = weaverx_getopt_default( $who . '_fi_size', 'thumbnail' );
 		// weaverx_debug_comment('FI who:' . $who . ' FI size:' . $size);
@@ -742,7 +795,9 @@ function weaverx_fi( $who, $where ) {
 			echo "\n{$before}<a class=\"wvrx-fi-link\" href=\"{$href}\">";
 			the_post_thumbnail( $size, $attr );
 			echo "</a>\n";
-			return true;
+			if ( $show == 'title-banner' )
+				echo '<div style="clear:both;"></div>';
+			return false;
 		}
 	}
 	return false;

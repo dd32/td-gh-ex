@@ -33,7 +33,7 @@ based on WHERE you want to make the customizations. Remember: <strong style="col
 <h4>First Level Options: WHAT to Set - Option Categories</h4>
         <p>The first level of Weaver Xtreme Customizer menus is organized around different categories of options that reflect different collections of related options. For example, all the Color settings are found on a single, top-level option panel called &quot;Colors&quot;. The other top level option panels represent similar groups of options:</p>
         <ul>
-          <li><strong>&#9656; Colors</strong> - Specify all colors used on site - both text and backgroud colors. </li>
+          <li><strong>&#9656; Colors</strong> - Specify all colors used on site - both text and background colors. </li>
           <li><strong>&#9656; Spacing, Widths, Alignment</strong> - Set margins, padding, spacing, heights, widths, and alignment.</li>
           <li><strong>&#9656; Style</strong> -  Set borders, shadows, rounded corners, list bullet style, icons.</li>
           <li><strong>&#9656; Typography</strong> - Set font family, font size, bold, italic, default base font information.</li>

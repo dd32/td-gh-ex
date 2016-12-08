@@ -10,6 +10,7 @@ function weaverx_customizer_define_content_sections( $sections ) {
 	$content_sections = array();
 
 		// <head> section
+if ( weaverx_options_level() == WEAVERX_LEVEL_ADVANCED ) {		// show if advanced
 
 	$content_sections['content-head'] = array(
 		'panel'   => $panel,
@@ -83,10 +84,11 @@ If your code doesn\'t seem to do anything, you probably have a PHP error. See th
 	/**
 	 * Main Menu
 	 */
+	$logo_html = weaverx_get_logo_html();
 	$content_sections['content-menus'] = array(
 		'panel'   => $panel,
 		'title'   => __( 'Menus', 'weaver-xtreme' ),
-		'description' => __( 'Set content for Menus.', 'weaver-xtreme' ),
+		'description' => __( 'Set added content for Menus.', 'weaver-xtreme' ),
 		'options' => array(
 			'content-mm-heading' => weaverx_cz_group_title( __( 'Primary Menu', 'weaver-xtreme' )),
 
@@ -99,7 +101,30 @@ If your code doesn\'t seem to do anything, you probably have a PHP error. See th
 			'm_primary_html_right' =>  weaverx_cz_textarea(__( 'Right HTML', 'weaver-xtreme' ),
 				'',
 				'1', __('Any HTML, including shortcodes.', 'weaver-xtreme'),
-				'postMessage', true),
+				'postMessage', false),	// only primary right is in free version
+
+			'm_primary_logo_left'  =>  weaverx_cz_checkbox_refresh(
+					__( 'Add Site Logo to Left', 'weaver-xtreme' ),
+					__('Add the Site Logo to the primary menu. Add custom CSS for <em>.custom-logo-on-menu</em> to style. (Use Customize : Site Identity to set Site Logo.)', 'weaver-xtreme') . $logo_html
+				),
+
+			'm_primary_logo_height_dec'     => array(
+				'setting' => array( 'sanitize_callback' => 'weaverx_cz_sanitize_float', 'transport' => 'refresh',	'default' => 0
+				),
+				'control' => array(
+					'control_type' => 'WeaverX_Range_Control',
+					'label'   => __( 'Logo on Menu Bar Height (em)', 'weaver-xtreme' ) . WEAVERX_REFRESH_ICON,
+					'description'   => __( 'Set height of Logo on Menu. Will interact with padding. Default 0 uses current line height.', 'weaver-xtreme' ) ,
+					'type'  => 'range',
+					'input_attrs' => array(
+						'min'  => 0,
+						'max'  => 10,
+						'step' => .1,
+					),
+				),
+			),
+
+
 
 
 			'content-sm-heading' => weaverx_cz_group_title( __( 'Secondary Menu', 'weaver-xtreme' ),
@@ -368,14 +393,22 @@ are open for the page, this area will include the class <em>.postcomments-commen
 	$content_sections['content-injection']['options'] = array_merge( $content_sections['content-injection']['options'],  $new_opts);
 
 
+} else {
+	$content_sections['content-head'] = array(
+		'panel'   => $panel,
+		'title'   => __( 'Add Content', 'weaver-xtreme' ),
 
-	/**
-	 * Filter the definitions for the controls in the Color Scheme panel of the Customizer.
-	 *
-	 * @since 1.3.0.
-	 *
-	 * @param array    $content_sections    The array of definitions.
-	 */
+		'options' => array(
+
+			'content-headsec-heading' => weaverx_cz_heading( __( 'Advanced Level Add Content', 'weaver-xtreme' ),
+				__( 'With the Advanced Level Interface, you can define HTML content for various areas, including the &lt;HEAD&gt;, Header, Menus, Posts, Sidebars, Footer, and other general HTML areas.', 'weaver-xtreme' )),
+			)
+		);
+
+}
+
+
+
 	$content_sections = apply_filters( 'weaverx_customizer_content_sections', $content_sections );
 
 	// Merge with master array

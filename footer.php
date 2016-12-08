@@ -47,10 +47,12 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
 		$date = getdate();
 		$year = $date['year'];
-		?>
-		<div id="site-ig-wrap">
-		<span id="site-info">
-		<?php
+		if (weaverx_getopt_expand('expand_site-ig-wrap'))
+			echo '<div id="site-ig-wrap" class="wvrx-expand-full">';
+		else
+			echo '<div id="site-ig-wrap">';
+		echo '<span id="site-info">' . "\n";
+
 		$cp = weaverx_getopt('copyright');
 		if (strlen($cp) > 0) {
 			if ($cp != '&nbsp;')	// really leave nothing if specify blank
@@ -62,10 +64,11 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 		?>
 		</span> <!-- #site-info -->
 		<?php
+		/* <a href="<?php echo esc_url( __( '//wordpress.org/','weaver-xtreme') ); ?>" title="wordpress.org" target="_blank" rel="nofollow"><?php printf( __( 'Proudly powered by %s','weaver-xtreme'), 'WordPress' ); ?></a> */
 		if (! weaverx_getopt('_hide_poweredby')) { ?>
 			<span id="site-generator">
-			<a href="<?php echo esc_url( __( '//wordpress.org/','weaver-xtreme') ); ?>" title="wordpress.org" target="_blank" rel="nofollow"><?php printf( __( 'Proudly powered by %s','weaver-xtreme'), 'WordPress' ); ?></a> -
-			<?php echo(WEAVERX_THEMENAME); ?> by <?php weaverx_site(''); ?>WeaverTheme</a>
+			<a href="<?php echo esc_url( __( '//wordpress.org/','weaver-xtreme') ); ?>" title="<?php _e('Proudly powered by WordPress','weaver-xtreme'); ?>" target="_blank" rel="nofollow"><span style="font-size:120%;padding-top:2px;" class="genericon genericon-wordpress"></span></a> -
+			<?php weaverx_site(''); _e('Weaver Xtreme Theme', 'weaver-xtreme'); ?></a>
 		</span> <!-- #site-generator -->
 		<?php
 		}
@@ -135,7 +138,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 		'top' => (weaverx_getopt('top_eq_widgets')) ? '1' : '0',        // '.widget-area-top',
 		'bottom' => (weaverx_getopt('bottom_eq_widgets')) ? '1' : '0',     // '.widget-area-bottom',
 		'header_sb' => (weaverx_getopt('header_sb_eq_widgets')) ? '1' : '0',  // '#header-widget-area',
-		'footer_sb' => (weaverx_getopt('footer_sb_eq_widgets')) ? '1' : '0'   // '#footer-widget-area'
+		'footer_sb' => (weaverx_getopt('footer_sb_eq_widgets')) ? '1' : '0',   // '#footer-widget-area',
 	);
 
 	wp_localize_script('weaverxJSLibEnd', 'wvrxEndOpts', $local );      // in footer.php because don't know the values yet in functions.php

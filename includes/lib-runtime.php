@@ -34,9 +34,9 @@ function weaverx_getopt($opt) {
 	weaverx_opt_cache();
 
 	if (!isset($weaverx_opts_cache[$opt])) {	// handles changes to data structure
-		//if (strpos($opt, '_width_int') > 0 ) weaverx_alert('WIDTH LOOKUP FALSE ' . $opt . '= getopt:false');
 		return false;
 	}
+
 	return $weaverx_opts_cache[$opt];
 }
 
@@ -66,6 +66,34 @@ function weaverx_getopt_checked($opt) {
 	if (!$weaverx_opts_cache[$opt]) return false;
 	return true;
 }
+
+function weaverx_getopt_expand($opt) {
+	// special case for 'expand_' options to account for nested options
+	global $weaverx_opts_cache;
+
+	weaverx_opt_cache();
+
+	if (!isset($weaverx_opts_cache[$opt])) {	// handles changes to data structure
+		return false;
+	}
+	// check nested options
+	$val = $weaverx_opts_cache[$opt];
+	if ( !$val )
+		return $val;						// if false, then doesn't matter
+
+	if ( in_array($opt, array('expand_header-image', 'expand_branding', 'expand_header-widget-area', 'expand_header-html',
+					'expand_m_primary', 'expand_m_secondary', 'expand_m_extra')) )
+		return !( isset($weaverx_opts_cache['expand_header']) && $weaverx_opts_cache['expand_header'] );
+
+    if ( $opt == 'expand_infobar')
+		return ! (isset($weaverx_opts_cache['expand_container']) && $weaverx_opts_cache['expand_container'] );
+
+	if ( in_array($opt, array('expand_footer_sb', 'expand_footer_html', 'expand_site-ig-wrap') ) )
+		return ! (isset($weaverx_opts_cache['expand_footer']) && $weaverx_opts_cache['expand_footer'] );
+
+	return $val;
+}
+
 
 function weaverx_opt_cache() {
 	// load the options cache - only weaverx_settings in basic version
@@ -176,8 +204,11 @@ function weaverx_e_notopt($opt,$str) {
 
 
 // # PER PAGE OPTIONS =========================================================
-function weaverx_get_per_page_value($name) {
+function weaverx_get_per_page_value($name, $pwp = false) {
 	global $weaverx_cur_page_ID;
+
+	if ( !$pwp && is_home() ) return false;	// don't fetch per POST options from default blog page - blog page ends up with ID of 1st post...
+
 	return get_post_meta($weaverx_cur_page_ID,$name,true);
 	//return get_post_meta(get_the_ID(),$name,true);
 
@@ -197,6 +228,11 @@ function weaverx_is_checked_post_opt($meta_name) {
 function weaverx_is_checked_page_opt($meta_name) {
 	// the standard is to check options to hide things
 	global $weaverx_cur_page_ID;
+
+	if ( is_home() ) return false;	// don't fetch per POST options from default blog page - blog page ends up with ID of 1st post...
+
+	//if ( ( is_archive() ) || ( is_author() ) || ( is_category() ) || ( is_home() ) || ( is_single() ) || ( is_tag() ) || ( is_search() ) )
+	//	return false;
 
 	$val = get_post_meta($weaverx_cur_page_ID,$meta_name,true);  // retrieve meta value
 	if (!empty($val)) return true;		// value exists - 'on'
@@ -428,6 +464,39 @@ function weaverx_echo_css( $css ) {
 }
 
 // # MISC ==============================================================
+
+function weaverx_get_header_image(&$hdr, &$hdr_bg, &$hdr_html ) {
+	// get the header image or html and the type: std, fi, html
+	// return image/html in $hdr, the bg header in $hdr_bg
+	// priority: per page/post, html replacement, standard image
+
+	$page_type = ( is_single() ) ? 'post' : 'page';
+	$hdr_bg = '';
+	$hdr_html = '';
+	$hdr_type = 'fi';			// only relevant for what kind of extra header info it is possible to get
+
+	$hdr = weaverx_fi( $page_type, 'header-image' );
+
+	if ( !$hdr ) {
+		$hdr = get_header_image();		// get the url of the standard header image
+		$hdr_type = 'std';
+	}
+
+	$hdr_html = weaverx_get_per_page_value('_pp_header_image_html_text');
+	if (!$hdr_html) {
+		$hdr_html = weaverx_getopt('header_image_html_text');
+		if ( $hdr_html && weaverx_getopt('header_image_html_home_only') && !is_front_page())	// only on global, not per page/post
+				$hdr_html = '';		// make empty so will pickup the standard header
+	}
+
+	if ( weaverx_getopt_default('header_image_render','header-as-img') != 'header-as-img' ) {
+		$hdr_bg = $hdr;		// must be the image
+		if ($hdr_html && !weaverx_getopt('header_image_html_plus_bg'))	// have BOTH slider and bg image?
+				$hdr_bg = '';
+	}
+	return $hdr_type;
+}
+
 function weaverx_header_widget_area( $where_now ) {	// header.php support
 	// 'top' => 'Top of Header'
 	// 'after_header' => 'After Header Image'
@@ -435,8 +504,13 @@ function weaverx_header_widget_area( $where_now ) {	// header.php support
 	// 'after_menu' => 'After Main Menu'
 
 	$sb_position = weaverx_getopt_default('header_sb_position', 'top');
-	if ( $sb_position == $where_now && weaverx_has_widgetarea('header-widget-area') ) {
+	if ( $sb_position == $where_now  && weaverx_has_widgetarea('header-widget-area') ) {
+
 		$p_class = weaverx_area_class('header_sb', 'notpad', '-none', 'margin-none');
+
+		if ( weaverx_getopt('expand_header-widget-area') && !weaverx_getopt('expand_header') ) $p_class .= ' wvrx-expand-full';
+		if ( weaverx_getopt('header_sb_fixedtop') ) $p_class .= ' wvrx-fixedtop';
+
 		//weaverx_clear_both('header_sb');
 		weaverx_put_widgetarea('header-widget-area', $p_class, 'header');
 		if (weaverx_getopt('header_sb_align') == 'float-right')
@@ -553,7 +627,15 @@ function weaverx_post_class($hidecount = false) {
 	if ($weaverx_sticky)	// For page with posts - re-ordering sticky posts
 		$postclass = 'post-area sticky ';
 	else
-		$postclass = 'post-area  ';
+		$postclass = 'post-area ';
+
+	if (has_post_thumbnail()) {
+		$fi = weaverx_get_per_post_value( '_pp_post_fi_location');
+		if ( !$fi )
+			$fi = weaverx_getopt( 'post_fi_location' );
+
+		$postclass.= "post-fi-{$fi} ";
+	}
 
 	if ($weaverx_cur_post_count != 0 && !$hidecount)
 		$postclass .= 'post-' . (($weaverx_cur_post_count % 2) ? 'odd' : 'even') . ' post-order-' . $weaverx_cur_post_count
@@ -619,7 +701,6 @@ function weaverx_help_link($link, $info, $alt_label = '', $echo = true) {
 function weaverx_html_br() {
 	echo ' <br /> ';
 }
-
 
 
 function weaverx_compact_post() {
@@ -1147,16 +1228,16 @@ function weaverx_t_clear_all() {
 function weaverx_masonry($act = false) {
 	global $weaverx_cur_template;
 
-	$is_pt = false;
+	$is_pwp = false;
 
 	if (strpos($weaverx_cur_template,'paget-posts.php') !== false) {
-		$is_pt = true;
+		$is_pwp = true;
 	}
-	if (is_singular() && ! $is_pt) {	// don't emit anything for non-blog pages
+	if (is_singular() && ! $is_pwp) {	// don't emit anything for non-blog pages
 		return false;
 	}
 
-	$usem = weaverx_get_per_page_value('_pp_pwp_masonry');	// per page to override...
+	$usem = weaverx_get_per_page_value('_pp_pwp_masonry', $is_pwp);	// per page to override...
 	if ($usem < 2)
 		$usem = weaverx_getopt('masonry_cols');
 	if ($usem < 2) {

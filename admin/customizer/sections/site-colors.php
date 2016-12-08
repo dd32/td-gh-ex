@@ -53,18 +53,6 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 				__( 'Container BG Color', 'weaver-xtreme' ) ),
 
 
-			'flow_color'=> array(
-				'setting' => array (
-					'transport' => 'refresh'
-				),
-				'control' => array(
-					'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,
-					'label' => __( 'Flow Color to Bottom', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
-					'description' => __('If checked, Content and Sidebar bg colors will flow to bottom of the Container (that is, equal heights). You must provide background colors for the Content and Sidebars or the default bg color will be used.', 'weaver-xtreme'),
-					'type'  => 'checkbox',
-				),
-			),
-
 			'color-border-heading' => array(
 				'control' => array(
 					'control_type' => 'WeaverX_Misc_Control','type'  => 'line',
@@ -284,7 +272,7 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 				__('Clickable mobile open submenu arrow BG. Contrasting BG color required for proper user interface. <em>Not used by SmartMenus</em>. (Default: rgba(255,255,255,0.2)', 'weaver-xtreme'), 'refresh' ),
 
 
-			'm_primary_html_color'   => weaverx_cz_coloropt_plus(
+			'm_primary_html_color'   => weaverx_cz_coloropt(
 				'm_primary_html_color',
 				__('HTML: Text Color', 'weaver-xtreme'),
 				__('Text Color for Left/Right Menu Bar HTML.', 'weaver-xtreme')
@@ -771,6 +759,18 @@ function weaverx_customizer_define_colorscheme_sections( $sections ) {
 					'control_type' => WEAVERX_COLOR_CONTROL,
 					'label'        => __('Secondary Widget Area BG Color', 'weaver-xtreme'),
 					'description'  => ''
+				),
+			),
+
+			'flow_color'=> array(
+				'setting' => array (
+					'transport' => 'refresh'
+				),
+				'control' => array(
+					'control_type' => WEAVERX_PLUS_CHECKBOX_CONTROL,
+					'label' => __( 'Flow Color to Bottom', 'weaver-xtreme' ) . WEAVERX_PLUS_ICON . WEAVERX_REFRESH_ICON,
+					'description' => __('If checked, Content and Sidebar bg colors will flow to bottom of the Container (that is, equal heights). You must provide background colors for the Content and Sidebars or the default bg color will be used.', 'weaver-xtreme'),
+					'type'  => 'checkbox',
 				),
 			),
 

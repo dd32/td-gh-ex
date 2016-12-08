@@ -27,12 +27,12 @@ class WeaverX_Save_WX_Settings extends WP_Customize_Control {
 (Full settings backup, including those marked with &diams;. Does <strong>NOT</strong> include Weaver Xtreme Plus settings.) <em>File:</em>', 'weaver-xtreme' /*adm*/); ?>
 <strong>weaverx-backup-settings<?php echo $a_pro;?>.wxb</strong><br /><br />
 
-		<input type="button" class="button" name="wvrx_save_all" value="<?php esc_attr_e( 'Save ALL Weaver Xtreme Settings', 'weaver-xtreme' ); ?>" />
+		<input type="button" class="button-primary" name="wvrx_save_all" value="<?php esc_attr_e( 'Save ALL Weaver Xtreme Settings', 'weaver-xtreme' ); ?>" />
 		<br/><br />
 
 <?php _e('<strong><em>Save only theme related</em></strong> current settings to file on your computer. <em>File: </em>', 'weaver-xtreme'); ?>
 	<strong>weaverx-theme-settings<?php echo $a_pro;?>.wxt</strong><br /><br />
-		<input type="button" class="button" name="wvrx_save" value="<?php esc_attr_e( 'Save THEME RELATED Settings', 'weaver-xtreme' ); ?>" />
+		<input type="button" class="button-primary" name="wvrx_save" value="<?php esc_attr_e( 'Save THEME RELATED Settings', 'weaver-xtreme' ); ?>" />
 		<br />
 
 <?php
@@ -46,7 +46,7 @@ The previous Save buttons do <em>not</em> include advanced <em>Weaver Xtreme Plu
 	_e('<strong>Save ALL Settings</strong> - Basic Weaver Xtreme, X-Plus, X-Plus Shortcodes, including &diams;, &star;, and &starf;.', 'weaver-xtreme' /*adm*/)?>
 </p><p><strong>File: weaverx-settings-(timestamp).wxall</strong></p>
 
-		<input type="button" class="button" name="wvrx_save_xplus" value="<?php esc_attr_e( 'Save ALL Settings, including Xtreme Plus', 'weaver-xtreme' ); ?>" />
+		<input type="button" class="button-primary" name="wvrx_save_xplus" value="<?php esc_attr_e( 'Save ALL Settings, including Xtreme Plus', 'weaver-xtreme' ); ?>" />
 <?php
 	}
 
@@ -204,7 +204,7 @@ class WeaverX_Restore_WX_Settings extends WP_Customize_Control {
 	<?php wp_nonce_field( 'wvrx_restore', 'wvrx-settings-restore' ); ?>
 </div>
 <div class="wvrx-uploading"><?php _e( 'Uploading...', 'weaver-xtreme' ); ?></div>
-<input type="button" class="button" name="wvrx_restore" value="<?php esc_attr_e( 'Upload theme/backup/wxall settings', 'weaver-xtreme' ); ?>" />
+<input type="button" class="button-primary" name="wvrx_restore" value="<?php esc_attr_e( 'Upload theme/backup/wxall settings', 'weaver-xtreme' ); ?>" />
 <?php
 	if (weaverx_cz_is_plus()) {
 		echo '<p>&nbsp;</p><hr /><p>';
@@ -422,7 +422,7 @@ You may need to check your folder permissions or other server settings.', 'weave
 
 		// Config
 		wp_localize_script( 'wvrx-js', 'WVRXConfig', array(
-			'customizerURL'	  => admin_url( 'customize.php' ),
+			'customizerURL'	  => admin_url( 'customize.php?return=%2Fwp-admin%2F' ),
 			'exportNonce'	  => wp_create_nonce( 'wvrx-settings-saving' )
 		));
 
@@ -464,6 +464,7 @@ class WeaverX_Load_WX_Subtheme extends WP_Customize_Control {
 		$theme_list = array(
 			'ajax', 		'antique-ivory', 	'appalachian-spring', 	'black-and-white',
 			'blank', 		'blue', 			'full-width-dark', 		'full-width-light',
+			'go-basic',		'go-blue',			'go-green',				'go-midnight',
 			'ivory-drive', 	'kitchen-sink', 	'magazine', 			'pioneer',
 			'plain', 		'plain-full-width',	'suburban',				'tan-and-gray',
 			'the-grays',	'transparent-dark',	'transparent-light',	'xenic'
@@ -471,7 +472,7 @@ class WeaverX_Load_WX_Subtheme extends WP_Customize_Control {
 
 ?>
 	<div class="wvrx-settings-load-subtheme">
-		<input type="button" class="button" name="wvrx_select_subtheme" value="<?php esc_attr_e( 'Set to Selected Subtheme', 'weaver-xtreme' ); ?>" />
+		<input class="button-primary" type="button" name="wvrx_select_subtheme" value="<?php esc_attr_e( 'Set to Selected Subtheme', 'weaver-xtreme' ); ?>" />
 		<p class="description customize-control-description"><strong>Click "Set to Selected Subtheme" to pick new selected subtheme.</strong> Selecting a subtheme will <em>reset</em> all existing theme settings. Site settings (&diams;) will not be changed.</p>
 <?php
 	$thumbs = weaverx_relative_url('/subthemes/');
@@ -479,11 +480,11 @@ class WeaverX_Load_WX_Subtheme extends WP_Customize_Control {
 	foreach ($theme_list as $addon) {
 		$name = ucwords(str_replace('-',' ',$addon));
 ?>
-	<div style="float:left; width:130px;font-size:80%;">
+	<div style="float:left; width:48%;margin-right:2%;font-size:80%;">
 		<label><input type="radio" name="subtheme_picked"
 <?php	    echo 'value="' . $addon . '" /><strong>' . $name . '</strong><br />';
 		if (!weaverx_getopt('_hide_theme_thumbs')) {
-			echo '<img style="border: 1px solid gray; margin: 5px 0px 7px 0px;" src="' . esc_url($thumbs . $addon . '.jpg') . '" width="120px"  alt="thumb" /></label></div>' . "\n";
+			echo '<img style="border: 1px solid gray; margin: 5px 0px 7px 0px;" src="' . esc_url($thumbs . $addon . '.jpg') . '" alt="thumb" /></label></div>' . "\n";
 		} else {
 			echo "</label></div>\n";
 		}
@@ -492,7 +493,7 @@ class WeaverX_Load_WX_Subtheme extends WP_Customize_Control {
 	wp_nonce_field( 'wvrx_select_subtheme', 'wvrx-upload-subtheme' ); ?>
 </div>
 <div class="wvrx-uploading"><?php _e( 'Uploading...', 'weaver-xtreme' ); ?></div>
-<input type="button" class="button" name="wvrx_select_subtheme" value="<?php esc_attr_e( 'Set to Selected Subtheme', 'weaver-xtreme' ); ?>" />
+<input type="button" class="button-primary" name="wvrx_select_subtheme" value="<?php esc_attr_e( 'Set to Selected Subtheme', 'weaver-xtreme' ); ?>" />
 
 <p style="font-weight:bold;">
 	<?php	_e( 'Please remember: these subthemes are only starting points!
@@ -648,7 +649,7 @@ You can change colors, sidebar layouts, font family and sizes, borders, spacing 
 
 		// Config
 		wp_localize_script( 'wvrx-js', 'WVRXConfig', array(
-			'customizerURL'	  => admin_url( 'customize.php' ),
+			'customizerURL'	  => admin_url( 'customize.php?return=%2Fwp-admin%2F' ),
 			'exportNonce'	  => wp_create_nonce( 'wvrx-settings-saving' )
 		));
 
@@ -668,5 +669,123 @@ You can change colors, sidebar layouts, font family and sizes, borders, spacing 
 }
 
 
+endif;
+
+if ( class_exists( 'WP_Customize_Control' ) && !class_exists( 'WeaverX_Set_Customizer_Level' ) ) :
+/**
+ * Class WeaverX_Save_Settings
+ *
+ * Save Weaver Xtreme Settings
+ *
+ */
+class WeaverX_Set_Customizer_Level extends WP_Customize_Control {
+
+	public $description = '';
+	public $code;
+
+	public function render_content() {
+
+		$a_pro = (weaverx_cz_is_plus()) ? '-plus' : '';
+
+		echo '<span class="customize-control-title">' . esc_html( $this->label ) . '</span>';
+		if ( '' !== $this->description) {
+			echo '<span class="description customize-control-description">' . $this->description . '</span>';
+		}
+
+		echo '<span class="description customize-control-description">';
+		echo '<h3>' . __('Current Level', 'weaver-xtreme') . '</h3><p>';
+
+		$level = weaverx_options_level();
+
+		switch ($level) {
+
+			case WEAVERX_LEVEL_INTERMEDIATE:
+				echo '<span style="background-color:blue;color:white;padding:3px;">';
+				_e('Intermediate', 'weaver-xtreme');
+				break;
+
+			case WEAVERX_LEVEL_ADVANCED:
+				echo '<span style="background-color:black;color:white;padding:3px;">';
+				_e('Advanced','weaver-xtreme');
+				break;
+
+			case WEAVERX_LEVEL_BEGINNER:
+			default:
+				echo '<span style="background-color:green;color:white;padding:3px;">';
+			    _e('Beginner', 'weaver-xtreme');
+				break;
+		}
+		echo '</span>';
+		if ($level == 0) _e(' - Default. Please select one of the settings below.', 'weaver-xtreme');
+		?>
+		</p>
+		<?php echo '<h3>' . __('Select Customizer Interface Level', 'weaver-xtreme') . '</h3><p>'; // customizer only?>
+		Please click one of the button to set the Options Interface Level.</p><p>
+
+		<input style="background-color:green;color:white;" type="button" class="button" name="wvrx_cust_level_beginner" value="<?php esc_attr_e( 'Beginner', 'weaver-xtreme' ); ?>" />
+		&nbsp; Easiest level. Only basic Admin, Color, Typography, and Layout options. These options will be enough for many users.
+		<br/><br />
+		<input style="background-color:blue;color:white;" type="button" class="button" name="wvrx_cust_level_intermediate" value="<?php esc_attr_e( 'Intermediate', 'weaver-xtreme' ); ?>" />
+		&nbsp; More options than Beginner. Adds Spacing, Style, all Typography, Visibility, all Layout, Images, Global Custom CSS to the Beginner Level.
+		<br/><br />
+		<input style="background-color:black;color:white;" type="button" class="button" name="wvrx_cust_level_advanced" value="<?php esc_attr_e( 'Advanced', 'weaver-xtreme' ); ?>" />
+		&nbsp; This level was the default in previous theme versions. It provides all options, including Added Content, full Custom CSS, and Admin.
+		</p>
+<?php
+	}
+
+	static public function process_set_level( $wp_customize )
+	{
+		if ( current_user_can( 'edit_theme_options' ) ) {
+			if ( isset( $_REQUEST['wvrx_cust_level_beginner'] ) ) {
+				unset($_POST['wvrx_cust_level_beginner']);
+				unset($_REQUEST['wvrx_cust_level_beginner']);
+				set_theme_mod('_options_level', 1);
+				wp_redirect( home_url('/wp-admin/customize.php?return=%2Fwp-admin%2F') );
+				//weaverx_alert('BEGINNER');
+			}
+			if ( isset( $_REQUEST['wvrx_cust_level_intermediate'] ) ) {
+				unset($_POST['wvrx_cust_level_intermediate']);
+				unset($_REQUEST['wvrx_cust_level_intermediate']);
+				set_theme_mod('_options_level', 5);
+				//weaverx_alert('INTERMEDIATE');
+				wp_redirect( home_url('/wp-admin/customize.php?return=%2Fwp-admin%2F') );
+			}
+			if ( isset( $_REQUEST['wvrx_cust_level_advanced'] ) ) {
+				unset($_POST['wvrx_cust_level_advanced']);
+				unset($_REQUEST['wvrx_cust_level_advanced']);
+				set_theme_mod('_options_level', 10);
+				//weaverx_alert('ADVANCED');
+				wp_redirect( home_url('/wp-admin/customize.php?return=%2Fwp-admin%2F') );
+			}
+			// now reload customizer to top level.
+		}
+	}
+
+
+	static public function enqueue_scripts()
+	{
+		// Register
+		wp_register_style( 'wvrx-sr-css', get_template_directory_uri().'/admin/customizer/save-restore/save-restore'.WEAVERX_MINIFY.'.css', array(), WEAVERX_VERSION );
+		wp_register_script( 'wvrx-sr-js', get_template_directory_uri().'/admin/customizer/save-restore/save-restore'.WEAVERX_MINIFY.'.js', array( 'jquery' ), WEAVERX_VERSION, true );
+
+		// Localize
+		wp_localize_script( 'wvrx-sr-js', 'WVRXl10n', array(
+			'emptyImport'	=> __( 'Please select options interface level.', 'weaver-xtreme' )
+		));
+
+		// Config
+		wp_localize_script( 'wvrx-sr-js', 'WVRXConfig', array(
+			'customizerURL'	  => admin_url( 'customize.php' ),
+			'exportNonce'	  => wp_create_nonce( 'wvrx-settings-level' )
+		));
+
+		// Enqueue
+		wp_enqueue_style( 'wvrx-sr-css' );
+		wp_enqueue_script( 'wvrx-sr-js' );
+
+	}
+
+}
 endif;
 ?>
