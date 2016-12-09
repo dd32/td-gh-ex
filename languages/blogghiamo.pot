@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Blogghiamo\n"
-"POT-Creation-Date: 2016-07-11 10:34+0100\n"
-"PO-Revision-Date: 2016-07-11 10:34+0100\n"
+"POT-Creation-Date: 2016-12-09 14:16+0100\n"
+"PO-Revision-Date: 2016-12-09 14:16+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -257,67 +257,67 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: header.php:21
+#: header.php:20
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:57
+#: header.php:56
 msgid "Facebook"
 msgstr ""
 
-#: header.php:61
+#: header.php:60
 msgid "Twitter"
 msgstr ""
 
-#: header.php:65
+#: header.php:64
 msgid "Google Plus"
 msgstr ""
 
-#: header.php:69
+#: header.php:68
 msgid "Linkedin"
 msgstr ""
 
-#: header.php:73
+#: header.php:72
 msgid "Instagram"
 msgstr ""
 
-#: header.php:77
+#: header.php:76
 msgid "YouTube"
 msgstr ""
 
-#: header.php:81
+#: header.php:80
 msgid "Pinterest"
 msgstr ""
 
-#: header.php:85 header.php:101
+#: header.php:84 header.php:100
 msgid "Tumblr"
 msgstr ""
 
-#: header.php:89
+#: header.php:88
 msgid "VK"
 msgstr ""
 
-#: header.php:93
+#: header.php:92
 msgid "GitHub"
 msgstr ""
 
-#: header.php:97
+#: header.php:96
 msgid "Vine"
 msgstr ""
 
-#: header.php:101
+#: header.php:100
 msgid "Email"
 msgstr ""
 
-#: header.php:116
+#: header.php:115
 msgid "Search for:"
 msgstr ""
 
-#: header.php:117
+#: header.php:116
 msgid "Type here and hit enter..."
 msgstr ""
 
-#: header.php:124
+#: header.php:123
 msgid "Menu"
 msgstr ""
 
@@ -656,17 +656,17 @@ msgstr ""
 msgid "More features? Upgrade to PRO"
 msgstr ""
 
-#: inc/customizer.php:38
-msgid "Demo PRO version"
-msgstr ""
-
-#: inc/customizer.php:39
-msgid "Get PRO Version"
-msgstr ""
-
 #: inc/extras.php:64
 #, php-format
 msgid "Page %s"
+msgstr ""
+
+#: inc/pro-button/class-customize.php:77
+msgid "Blogghiamo PRO Theme"
+msgstr ""
+
+#: inc/pro-button/class-customize.php:78
+msgid "Go Pro"
 msgstr ""
 
 #: inc/template-tags.php:21

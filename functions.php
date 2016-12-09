@@ -152,3 +152,8 @@ require get_template_directory() . '/inc/blogghiamo-dynamic.php';
 if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/blogghiamo-admin-page.php';
 }
+
+/**
+ * Load PRO Button in the customizer
+ */
+require_once( trailingslashit( get_template_directory() ) . 'inc/pro-button/class-customize.php' );
