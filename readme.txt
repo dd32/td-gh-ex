@@ -131,3 +131,7 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, cust
 = Version 1.6.7 =
 * Update FontAwesome to 4.7.0v
 * Minor bug fixes
+
+= Version 1.6.8 =
+* Updated PRO Version button
+* Minor bug fixes

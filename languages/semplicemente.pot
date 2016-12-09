@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Semplicemente\n"
-"POT-Creation-Date: 2016-07-12 10:53+0100\n"
-"PO-Revision-Date: 2016-07-12 10:53+0100\n"
+"POT-Creation-Date: 2016-12-09 11:31+0100\n"
+"PO-Revision-Date: 2016-12-09 11:31+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -264,43 +264,43 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: header.php:55
+#: header.php:54
 msgid "Facebook"
 msgstr ""
 
-#: header.php:59
+#: header.php:58
 msgid "Twitter"
 msgstr ""
 
-#: header.php:63
+#: header.php:62
 msgid "Google Plus"
 msgstr ""
 
-#: header.php:67
+#: header.php:66
 msgid "Linkedin"
 msgstr ""
 
-#: header.php:71
+#: header.php:70
 msgid "Instagram"
 msgstr ""
 
-#: header.php:75
+#: header.php:74
 msgid "YouTube"
 msgstr ""
 
-#: header.php:79
+#: header.php:78
 msgid "Pinterest"
 msgstr ""
 
-#: header.php:83
+#: header.php:82
 msgid "Tumblr"
 msgstr ""
 
-#: header.php:87
+#: header.php:86
 msgid "VK"
 msgstr ""
 
-#: header.php:103
+#: header.php:102
 msgid "Menu"
 msgstr ""
 
@@ -504,17 +504,17 @@ msgstr ""
 msgid "More Information"
 msgstr ""
 
-#: inc/customizer.php:44
-msgid "Demo PRO version"
-msgstr ""
-
-#: inc/customizer.php:45
-msgid "Get PRO Version"
-msgstr ""
-
 #: inc/extras.php:64
 #, php-format
 msgid "Page %s"
+msgstr ""
+
+#: inc/pro-button/class-customize.php:77
+msgid "Semplicemente PRO Theme"
+msgstr ""
+
+#: inc/pro-button/class-customize.php:78
+msgid "Go Pro"
 msgstr ""
 
 #: inc/semplicemente-dynamic.php:21
