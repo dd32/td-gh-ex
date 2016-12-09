@@ -7,9 +7,9 @@ Tags: custom-header, custom-colors, custom-background, custom-menu, theme-option
 fixed-width, three-columns, two-columns, black, blue, brown, green, orange, red, tan, dark, white, light,
 translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1016 Bruce E Wampler
-Requires at least: 4.2
+Requires at least: 4.5
 Tested up to: 4.7
-Stable tag: 3.0
+Stable tag: 3.0.3
 
 == Description ==
 
@@ -350,6 +350,9 @@ with testing and feature suggestions.
 * Fix: Posts default bottom margin changed to 15px from 1.5em, Customizer/Legacy interface default values fixed
 * Fix: Page with Posts Per Page Hide Bottom Sitewide Widget Area option fixed
 
-= Version 3.0 =
+= Version 3.0.3 =
 * Tweak: IE8 fixed top margin
 * Fix: Per Page options
+* Fix: Visual Editor was loading slowly because of Google Fonts issue
+* Fix: Visual Editor was failing to show theme font family settings correctly
+* Fix: Per Page Hide Header

@@ -64,8 +64,10 @@ function weaverx_setup() {
 
 	load_theme_textdomain('weaver-xtreme' , get_template_directory() . '/languages' );		// now theme's translations as fallback
 
+	add_editor_style();	// editor-style
+	add_editor_style( WEAVERX_GOOGLE_FONTS_URL );
 
-	add_editor_style( WEAVERX_GOOGLE_FONTS_URL );	// from settings.php - in %7C format
+	//add_editor_style( WEAVERX_GOOGLE_FONTS_URL );	// from settings.php - in %7C format
 
 
 	// Add default posts and comments RSS feed links to <head>.
@@ -103,7 +105,7 @@ function weaverx_setup() {
 		// Enable support for custom logo.
 
 	add_theme_support( 'custom-logo', array(
-		'height'      => $height,
+		'height'      => 600,
 		'width'       => $width,
 		'flex-height' => true,
 	) );

@@ -436,13 +436,12 @@ function weaverx_mce_css($default_style) {
 
 
 
-	$val = weaverx_getopt_default('content_font_family', 'default');
-	if ( $val == 'default' )
-		$val = weaverx_getopt_default('container_font_family', 'default' );
-	if ( $val == 'default' )
+	$val = weaverx_getopt_default('content_font_family', 'inherit');
+	if ( $val == 'inherit' )
+		$val = weaverx_getopt_default('container_font_family', 'inherit' );
+	if ( $val == 'inherit' )
 		$val = weaverx_getopt('wrapper_font_family');
-	if ( $val != 'default' ) {    	// found a font {
-
+	if ( $val != 'inherit' ) {    	// found a font {
 		// these are not translatable - the values are used to define the actual font definition
 
 		$fonts = array(

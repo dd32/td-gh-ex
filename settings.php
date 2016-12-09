@@ -18,7 +18,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
 /* Version Information */
 
-define ('WEAVERX_VERSION','3.0.2');
+define ('WEAVERX_VERSION','3.0.3');
 define ('WEAVERX_VERSION_ID', 100);
 define ('WEAVERX_THEMENAME', 'Weaver Xtreme');
 define ('WEAVERX_THEMEVERSION', WEAVERX_THEMENAME . ' ' . WEAVERX_VERSION);
@@ -41,8 +41,8 @@ define ('WEAVERX_DEFAULT_THEME','go-basic');
 
 
 /* utility definitions - should not be edited */
-/* This is also used in functions.php for add_editor_style */
-define ('WEAVERX_GOOGLE_FONTS_URL',"https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic%7COpen+Sans+Condensed:300,700%7CAlegreya:400,400italic,700,700italic%7CAlegreya+Sans:400,400italic,700,700italic%7CDroid+Sans:400,700%7CDroid+Serif:400,400italic,700,700italic%7CExo+2:400,700%7CLato:400,400italic,700,700italic%7CLora:400,400italic,700,700italic%7CArvo:400,700,400italic,700italic%7CRoboto:400,400italic,700,700italic%7CRoboto+Condensed:400,700%7CRoboto+Slab:400,700%7CArchivo+Black%7CSource+Sans+Pro:400,400italic,700,700italic%7CSource+Serif+Pro:400,700%7CVollkorn:400,400italic,700,700italic%7CArimo:400,700%7CTinos:400,400italic,700,700italic%7CRoboto+Mono:400,700%7CInconsolata%7CHandlee%7CUltra&subset=latin,latin-ext");
+/* This is also used in functions.php for add_editor_style (note: no , and no | - use %2C and %7C */
+define ('WEAVERX_GOOGLE_FONTS_URL',"https://fonts.googleapis.com/css?family=Open+Sans:400%2C700%2C700italic%2C400italic%7COpen+Sans+Condensed:300%2C700%7CAlegreya:400%2C400italic%2C700%2C700italic%7CAlegreya+Sans:400%2C400italic%2C700%2C700italic%7CDroid+Sans:400%2C700%7CDroid+Serif:400%2C400italic%2C700%2C700italic%7CExo+2:400%2C700%7CLato:400%2C400italic%2C700%2C700italic%7CLora:400%2C400italic%2C700%2C700italic%7CArvo:400%2C700%2C400italic%2C700italic%7CRoboto:400%2C400italic%2C700%2C700italic%7CRoboto+Condensed:400%2C700%7CRoboto+Slab:400%2C700%7CArchivo+Black%7CSource+Sans+Pro:400%2C400italic%2C700%2C700italic%7CSource+Serif+Pro:400%2C700%7CVollkorn:400%2C400italic%2C700%2C700italic%7CArimo:400%2C700%7CTinos:400%2C400italic%2C700%2C700italic%7CRoboto+Mono:400%2C700%7CInconsolata%7CHandlee%7CUltra&subset=latin%2Clatin-ext");
 
 define ('WEAVERX_GOOGLE_FONTS', "<link href='" . WEAVERX_GOOGLE_FONTS_URL . "' rel='stylesheet' type='text/css'>");
 

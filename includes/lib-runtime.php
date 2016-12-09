@@ -218,6 +218,7 @@ function weaverx_get_per_page_value($name) {
 
 function weaverx_is_checked_page_opt($meta_name) {
 	// the standard is to check options to hide things
+
 	global $weaverx_cur_page_ID;
 	if ( !$weaverx_cur_page_ID)
 		return false;
@@ -227,6 +228,7 @@ function weaverx_is_checked_page_opt($meta_name) {
 	//	return false;
 
 	$val = get_post_meta($weaverx_cur_page_ID,$meta_name,true);  // retrieve meta value
+
 	if (!empty($val)) return true;		// value exists - 'on'
 	return false;
 }

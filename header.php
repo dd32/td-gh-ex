@@ -105,7 +105,7 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 	 *    #bottom-menu
 	 */
 
-	$hdr_class = ( weaverx_is_checked_page_opt('_pp_hide_header') ) ? 'hide' : '';
+	$hdr_class = ( weaverx_is_checked_page_opt('_pp_hide_header') ) ? 'hide ' : '';
 	$hdr_class .= weaverx_getopt_default('header_image_render','header-as-img') . ' ';
 
 	weaverx_clear_both('preheader');
