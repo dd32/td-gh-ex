@@ -521,13 +521,13 @@ You can change colors, sidebar layouts, font family and sizes, borders, spacing 
 		if ( ! wp_verify_nonce( $_REQUEST['wvrx-upload-subtheme'], 'wvrx_select_subtheme' ) ) {
 			unset($_POST['wvrx-upload-subtheme']);
 			unset($_REQUEST['wvrx-upload-subtheme']);
-			weaverx_alert('invalid nonce upload');
+			weaverx_alert(__('Invalid security token for upload.','weaver-xtreme'));
 			return;
 		}
 		unset($_POST['wvrx-upload-subtheme']);
 		unset($_REQUEST['wvrx-upload-subtheme']);
 		if (!isset($_POST['subtheme_picked'])) {
-			weaverx_alert('Please select a subtheme to upload.');
+			weaverx_alert(__('Please select a subtheme to upload.','weaver-xtreme'));
 			return;
 		}
 		$theme = weaverx_filter_textarea($_POST['subtheme_picked']);

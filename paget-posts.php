@@ -38,7 +38,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 	weaverx_inject_area( 'precontent' );
 
 	weaverx_sb_precontent('blog');
-	$hide_bottom_sb = weaverx_is_checked_page_opt('_pp_sitewide-bottom-widget-area');	// gotta use the PwP page ID, not the last post's ID
+	$hide_bottom_sb = weaverx_is_checked_page_opt('_pp_sitewide-bottom-widget-area', true);	// gotta use the PwP page ID, not the last post's ID
 
 	weaverx_post_count_clear(); the_post();
 
@@ -49,7 +49,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 	if ($paged == 1) {	// only show on the first page
 		// If we have content for this page, let's display it.
 		if (get_the_content() != '' ||
-			(get_the_title() != '' && !weaverx_is_checked_page_opt('_pp_hide_page_title')) ) {
+			(get_the_title() != '' && !weaverx_is_checked_page_opt('_pp_hide_page_title', true)) ) {
 			get_template_part( 'templates/content', 'page' );
 		} else {
 			weaverx_edit_link();
@@ -90,7 +90,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 		'paged' => $paged
 	);
 
-	$filter = weaverx_get_per_page_value( '_pp_post_filter' );      // ATW Show Posts filter
+	$filter = weaverx_get_per_page_value( '_pp_post_filter');      // ATW Show Posts filter
 	if ( function_exists( 'atw_showposts_installed' ) && $filter != '') {
 		$params = atw_posts_get_filter_params( $filter );
 		if ($params != '') {        // they specified a $filter arg, so use it and wipe out anything else...

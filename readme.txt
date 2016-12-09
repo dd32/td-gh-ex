@@ -349,3 +349,7 @@ with testing and feature suggestions.
 * Fix: Outdated handling of RSS title due to WP deprecated function
 * Fix: Posts default bottom margin changed to 15px from 1.5em, Customizer/Legacy interface default values fixed
 * Fix: Page with Posts Per Page Hide Bottom Sitewide Widget Area option fixed
+
+= Version 3.0 =
+* Tweak: IE8 fixed top margin
+* Fix: Per Page options

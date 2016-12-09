@@ -461,12 +461,14 @@ function weaverx_text_class( $who, $class_only = true ) {
 // ================================= sidebars ======================================
 
 // >>>>> weaverx_sb_layout <<<<<
-function weaverx_sb_layout( $who ) {
+function weaverx_sb_layout( $who, $is_index = false ) {
 	// get sb layout for page-like content: 'layout_default', 'layout_page', 'layout_blog', 'layout_single'
 	//
 	// possible values: 'right', 'right-top', 'left', 'left-top', 'split', 'split-top', 'one-column'
 
-	$per_page = weaverx_get_per_page_value('_pp_page_layout');
+	$per_page = $is_index ? '' : weaverx_get_per_page_value('_pp_page_layout');
+
+	//if ($who == 'blog') weaverx_alert('sb-layout blog: ' . $per_page);
 
 	if ( $who == '404' ) $who = 'search';   // sigh - they are the same layout
 
@@ -498,9 +500,15 @@ function weaverx_sb_layout_archive( $who ) {
 
 
 	if ( $layout == 'default' ) {
-		$layout = weaverx_getopt( 'layout_default_archive' );
-		if ( !$layout )
-			$layout = 'one-column';  // fallback
+		if ($who == 'blog') {
+			$layout = weaverx_getopt( 'layout_default' );
+			if ( !$layout )
+				$layout = 'right';  // fallback
+		} else {
+			$layout = weaverx_getopt( 'layout_default_archive' );
+			if ( !$layout )
+				$layout = 'one-column';  // fallback
+		}
 	}
 
 	return $layout;

@@ -204,14 +204,31 @@ function weaverx_e_notopt($opt,$str) {
 
 
 // # PER PAGE OPTIONS =========================================================
-function weaverx_get_per_page_value($name, $pwp = false) {
+function weaverx_get_per_page_value($name) {
 	global $weaverx_cur_page_ID;
 
-	if ( !$pwp && is_home() ) return false;	// don't fetch per POST options from default blog page - blog page ends up with ID of 1st post...
+	if ( !$weaverx_cur_page_ID )
+		return false;
+
+	//$template = get_page_template();
+	//if (strpos($template,'paget-posts') === false) weaverx_alert('page:' . $template);
 
 	return get_post_meta($weaverx_cur_page_ID,$name,true);
-	//return get_post_meta(get_the_ID(),$name,true);
+}
 
+function weaverx_is_checked_page_opt($meta_name) {
+	// the standard is to check options to hide things
+	global $weaverx_cur_page_ID;
+	if ( !$weaverx_cur_page_ID)
+		return false;
+
+
+	//if ( ( is_archive() ) || ( is_author() ) || ( is_category() ) || ( is_home() ) || ( is_single() ) || ( is_tag() ) || ( is_search() ) )
+	//	return false;
+
+	$val = get_post_meta($weaverx_cur_page_ID,$meta_name,true);  // retrieve meta value
+	if (!empty($val)) return true;		// value exists - 'on'
+	return false;
 }
 
 function weaverx_get_per_post_value($meta_name) {
@@ -221,20 +238,6 @@ function weaverx_get_per_post_value($meta_name) {
 function weaverx_is_checked_post_opt($meta_name) {
 	// the standard is to check options to hide things
 	$val = get_post_meta(get_the_ID(),$meta_name,true);  // retrieve meta value
-	if (!empty($val)) return true;		// value exists - 'on'
-	return false;
-}
-
-function weaverx_is_checked_page_opt($meta_name) {
-	// the standard is to check options to hide things
-	global $weaverx_cur_page_ID;
-
-	if ( is_home() ) return false;	// don't fetch per POST options from default blog page - blog page ends up with ID of 1st post...
-
-	//if ( ( is_archive() ) || ( is_author() ) || ( is_category() ) || ( is_home() ) || ( is_single() ) || ( is_tag() ) || ( is_search() ) )
-	//	return false;
-
-	$val = get_post_meta($weaverx_cur_page_ID,$meta_name,true);  // retrieve meta value
 	if (!empty($val)) return true;		// value exists - 'on'
 	return false;
 }
@@ -1237,7 +1240,7 @@ function weaverx_masonry($act = false) {
 		return false;
 	}
 
-	$usem = weaverx_get_per_page_value('_pp_pwp_masonry', $is_pwp);	// per page to override...
+	$usem = weaverx_get_per_page_value('_pp_pwp_masonry');	// per page to override...
 	if ($usem < 2)
 		$usem = weaverx_getopt('masonry_cols');
 	if ($usem < 2) {

@@ -1087,7 +1087,7 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 				}
 
 				//==============================================================  POST SPECIFIC RULES  =========================================================
-				$pre_css .= "{$no_sdb}{$vals['sel']}{box-sizing:border-box !important;}\n"; //*** Needs to be in pre-css to work below site width width area padding
+				$pre_css .= "{$no_sdb}{$vals['sel']}{box-sizing:border-box;}\n"; //*** Needs to be in pre-css to work below site width width area padding
 
 				//--- EXPAND & EXTEND COMMON RULES ---
 				// pre_css General width Rules for ALL. Adds margins rules for padding bug fix. Need calc around margin for post mix of % and px

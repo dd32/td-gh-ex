@@ -9,8 +9,9 @@ function weaverx_generate_wphead() {
 
 	global $post;
 	$weaverx_cur_page_ID = 0;	// need this for 404 page when this is not valid
-	if (is_object($post))
+	if (is_object($post) )
 		$weaverx_cur_page_ID = get_the_ID();	// we're on a page now, so set the post id for the rest of the session
+
 
 	printf("\n<!-- This site is using %s %s (%s) subtheme: %s -->\n",WEAVERX_THEMENAME, WEAVERX_VERSION, weaverx_getopt('style_version'), weaverx_getopt('themename'));
 
