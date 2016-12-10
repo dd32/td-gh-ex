@@ -48,7 +48,7 @@ function app_landing_page_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 
-	if( is_newsletter_activated() ){
+	if( app_landing_page_newsletter_activated() ){
 		 register_sidebar( array(
 			'name'          => esc_html__( 'Subscription Widget', 'app-landing-page' ),
 			'id'            => 'bottom-widget',

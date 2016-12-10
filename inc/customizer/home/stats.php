@@ -11,21 +11,18 @@ global $app_landing_page_options_pages;
     
 /* Option Date Year */   
 $app_landing_page_options_years = array();
-$app_landing_page_options_years[''] = __( 'Choose Year', 'app-landing-page' );
 for( $x=1; $x<=5; $x++){
  $app_landing_page_options_years[$x] = date( 'Y' ) + $x - 1;
 }
 
 /* Option Date Day */   
 $app_landing_page_options_days_odd = array();
-$app_landing_page_options_days_odd[''] = __( 'Choose Day', 'app-landing-page' );
 for( $x = 1; $x <= 31; $x++ ){
     $app_landing_page_options_days_odd[$x] = $x;
 }
 
 /* Option Date Day */   
 $app_landing_page_options_days_even = array();
-$app_landing_page_options_days_even[''] = __( 'Choose Day', 'app-landing-page' );
 for( $x = 1; $x <= 30; $x++ ){
     $app_landing_page_options_days_even[$x] = $x;
 }
@@ -33,7 +30,6 @@ for( $x = 1; $x <= 30; $x++ ){
 
 /* Option Date Day */   
 $app_landing_page_options_days_leap = array();
-$app_landing_page_options_days_leap[''] = __( 'Choose Day', 'app-landing-page' );
 for( $x = 1; $x <= 29 ; $x++ ){
     $app_landing_page_options_days_leap[$x] = $x;
 }
@@ -41,7 +37,6 @@ for( $x = 1; $x <= 29 ; $x++ ){
 
 /* Option Date Day */   
 $app_landing_page_options_days_noleap = array();
-$app_landing_page_options_days_noleap[''] = __( 'Choose Day', 'app-landing-page' );
 for( $x = 1; $x <= 28; $x++ ){
     $app_landing_page_options_days_noleap[$x] = $x;
 }
@@ -99,7 +94,7 @@ for( $x = 1; $x <= 28; $x++ ){
     $wp_customize->add_setting(
         'app_landing_page_date_year',
         array(
-            'default' => '',
+            'default' =>'1',
             'sanitize_callback' => 'app_landing_page_sanitize_select',
         )
     );
@@ -119,7 +114,7 @@ for( $x = 1; $x <= 28; $x++ ){
     $wp_customize->add_setting(
         'app_landing_page_date_month',
         array(
-            'default' => '',
+            'default' => date( 'm' ),
             'sanitize_callback' => 'app_landing_page_sanitize_select',
         )
     );
@@ -151,7 +146,7 @@ for( $x = 1; $x <= 28; $x++ ){
     $wp_customize->add_setting(
         'app_landing_page_date_day_odd',
         array(
-            'default' => '',
+            'default' => date("j"),
             'sanitize_callback' => 'app_landing_page_sanitize_select',
 
         )
@@ -172,7 +167,7 @@ for( $x = 1; $x <= 28; $x++ ){
     $wp_customize->add_setting(
         'app_landing_page_date_day_even',
         array(
-            'default' => '',
+            'default' => date("j"),
             'sanitize_callback' => 'app_landing_page_sanitize_select',
 
         )
@@ -193,7 +188,7 @@ for( $x = 1; $x <= 28; $x++ ){
     $wp_customize->add_setting(
         'app_landing_page_date_day_leap',
         array(
-            'default' => '',
+            'default' => date("j"),
             'sanitize_callback' => 'app_landing_page_sanitize_select',
 
         )
@@ -214,7 +209,7 @@ for( $x = 1; $x <= 28; $x++ ){
     $wp_customize->add_setting(
         'app_landing_page_date_day_noleap',
         array(
-            'default' => '',
+            'default' => date("j"),
             'sanitize_callback' => 'app_landing_page_sanitize_select',
 
         )

@@ -4,7 +4,7 @@ Theme URI: https://raratheme.com/wordpress-themes/app-landing-page/
 Author: Rara Theme 
 Author URI: http://raratheme.com
 Description: App Landing Page is a WordPress theme from Rara Theme (http://raratheme.com/). It will help you to showcase your latest app in a creative and appealing way. The theme offers several features to delight your audience with app snapshots, video demo, links to download from Apple Store and Google Store. The theme is mobile responsive and translation ready. Get free support here: http://raratheme.com/support-forum/ and check demo here: http://raratheme.com/previews/?theme=app-landing-page
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: app-landing-page
@@ -1268,11 +1268,6 @@ object {
 
 .features .col .text:hover .title{color: #2a89d2;}
 
-/*.features .col .text:hover .icon-holder{
-	background: #2a89d2;
-	color: #fff;
-}*/
-
 /*vedio section style*/
 .vedio{
 	background: #f8f8f8;
@@ -1496,12 +1491,6 @@ object {
 	color: #333;
 	margin: 0 0 9px;
 }
-
-/*.section-5 .col:hover .icon-holder,
-.section-5 .col:focus .icon-holder{
-	color: #fff;
-	background: #2a89d2;
-}*/
 
 .section-5 .col:hover .text-holder .title,
 .section-5 .col:focus .text-holder .title{color: #2a89d2;}

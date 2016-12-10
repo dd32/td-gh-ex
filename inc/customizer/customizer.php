@@ -13,7 +13,7 @@
 
 $app_landing_page_sections = array( 'banner' , 'featured', 'features', 'vedio', 'intro', 'service', 'stats', 'subscribe', 'social' );
 
-$app_landing_page_settings = array( 'default', 'home', 'breadcrumb', 'custom' );
+$app_landing_page_settings = array( 'default', 'home', 'breadcrumb' );
 
 /* Option list of all post */	
 $app_landing_page_options_posts = array();
@@ -27,8 +27,8 @@ foreach ( $app_landing_page_options_posts_obj as $posts ) {
 $app_landing_page_options_pages = array();
 $app_landing_page_options_pages_obj = get_pages('posts_per_page=-1');
 $app_landing_page_options_pages[''] = __( 'Choose Page', 'app-landing-page' );
-foreach ( $app_landing_page_options_pages_obj as $pages ) {
-    $app_landing_page_options_pages[$pages->ID] = $pages->post_title;
+foreach ( $app_landing_page_options_pages_obj as $pg ) {
+    $app_landing_page_options_pages[$pg->ID] = $pg->post_title;
 }
 
 /* Option list of all categories */
@@ -70,7 +70,7 @@ function app_landing_page_customize_preview_js() {
 }
 add_action( 'customize_preview_init', 'app_landing_page_customize_preview_js' );
 
-
+if(app_landing_page_newsletter_activated()){
 /** 
  * Registering and enqueuing scripts/stylesheets for Customizer controls.
  */ 
@@ -80,3 +80,4 @@ function app_landing_page_customizer_js() {
 
 add_action( 'customize_controls_enqueue_scripts', 'app_landing_page_customizer_js' );
 
+}

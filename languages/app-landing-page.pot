@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: _s 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2016-09-30 09:58+0000\n"
+"POT-Creation-Date: 2016-12-07 07:01+0000\n"
 "POT-Revision-Date: Wed May 11 2016 14:55:55 GMT+0545 (Nepal Standard Time)\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
@@ -34,6 +34,7 @@ msgid ""
 msgstr ""
 
 #: comments.php:31
+#, php-format
 msgctxt "comments title"
 msgid "1 Comment"
 msgid_plural "%1$s Comments"
@@ -77,6 +78,7 @@ msgid "Leave a Reply"
 msgstr ""
 
 #: comments.php:105
+#, php-format
 msgid "Leave a Reply to %s"
 msgstr ""
 
@@ -93,10 +95,12 @@ msgid "Comment"
 msgstr ""
 
 #: comments.php:116
+#, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr ""
 
 #: comments.php:122
+#, php-format
 msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
 "this account\">Log out?</a>"
@@ -115,17 +119,20 @@ msgid "Primary"
 msgstr ""
 
 #: inc/extras.php:30
+#, php-format
 msgctxt "post date"
 msgid "%s"
 msgstr ""
 
 #: inc/extras.php:49
+#, php-format
 msgctxt "post author"
 msgid "By %s"
 msgstr ""
 
 #. translators: %s: post title
 #: inc/extras.php:62
+#, php-format
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
@@ -134,17 +141,20 @@ msgstr ""
 msgid ", "
 msgstr ""
 
-#: inc/extras.php:71 inc/extras.php:77 inc/widgets/widget-popular-post.php:74 
+#: inc/extras.php:71 inc/extras.php:77 inc/widgets/widget-popular-post.php:74
 #: inc/widgets/widget-recent-post.php:71 inc/widgets/widget-recent-post.php:71
+#, php-format
 msgid "%1$s"
 msgstr ""
 
 #. translators: %s: Name of current post
 #: inc/extras.php:95 template-parts/content-page.php:38
+#, php-format
 msgid "Edit %s"
 msgstr ""
 
 #: inc/extras.php:161
+#, php-format
 msgid "<b class=\"fn\">%s</b>"
 msgstr ""
 
@@ -158,6 +168,7 @@ msgstr ""
 
 #. translators: 1: date, 2: time
 #: inc/extras.php:171
+#, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
@@ -210,11 +221,13 @@ msgid "Page"
 msgstr ""
 
 #: inc/template-functions.php:239
+#, php-format
 msgid "%s Search Results for "
 msgstr ""
 
-#: inc/template-functions.php:240
-msgid "\"%s\""
+#: inc/template-functions.php:240 inc/template-functions.php:471
+#, php-format
+msgid "%s"
 msgstr ""
 
 #: inc/template-functions.php:241
@@ -242,10 +255,6 @@ msgid ".&nbsp;"
 msgstr ""
 
 #: inc/template-functions.php:471
-msgid "%s"
-msgstr ""
-
-#: inc/template-functions.php:471
 msgid "http://raratheme.com/wordpress-themes/app-landing-page/"
 msgstr ""
 
@@ -254,6 +263,7 @@ msgid "App Landing Page By Rara Theme. "
 msgstr ""
 
 #: inc/template-functions.php:472
+#, php-format
 msgid "Powered by %s"
 msgstr ""
 
@@ -269,15 +279,15 @@ msgstr ""
 msgid "Download Now"
 msgstr ""
 
-#: sections/banner.php:13 sections/service.php:21 sections/stats.php:10 
-#: sections/vedio.php:10 inc/customizer/home/banner.php:137 
-#: inc/customizer/home/service.php:250 inc/customizer/home/stats.php:256 
+#: sections/banner.php:13 sections/service.php:21 sections/stats.php:10
+#: sections/vedio.php:10 inc/customizer/home/banner.php:137
+#: inc/customizer/home/service.php:250 inc/customizer/home/stats.php:251
 #: inc/customizer/home/vedio.php:99
 msgid "#"
 msgstr ""
 
-#: sections/service.php:20 sections/stats.php:9 sections/vedio.php:11 
-#: inc/customizer/home/service.php:232 inc/customizer/home/stats.php:238 
+#: sections/service.php:20 sections/stats.php:9 sections/vedio.php:11
+#: inc/customizer/home/service.php:232 inc/customizer/home/stats.php:233
 #: inc/customizer/home/vedio.php:81
 msgid "Download Button"
 msgstr ""
@@ -303,6 +313,7 @@ msgid "Nothing Found"
 msgstr ""
 
 #: template-parts/content-none.php:21
+#, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
@@ -323,14 +334,15 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: template-parts/content-search.php:28 template-parts/content.php:44 
-#: inc/widgets/widget-featured-post.php:95 
+#: template-parts/content-search.php:28 template-parts/content.php:44
+#: inc/widgets/widget-featured-post.php:95
 #: inc/widgets/widget-featured-post.php:135
 msgid "Read More"
 msgstr ""
 
 #. translators: %s: Name of current post.
 #: template-parts/content.php:28
+#, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
@@ -352,18 +364,6 @@ msgstr ""
 
 #: inc/customizer/breadcrumb.php:87
 msgid "Breadcrumb Separator"
-msgstr ""
-
-#: inc/customizer/custom.php:14
-msgid "Custom CSS Settings"
-msgstr ""
-
-#: inc/customizer/custom.php:32
-msgid "Custom Css"
-msgstr ""
-
-#: inc/customizer/custom.php:34
-msgid "Put your custom CSS"
 msgstr ""
 
 #: inc/customizer/customizer.php:21
@@ -415,8 +415,8 @@ msgstr ""
 msgid "Read More Text"
 msgstr ""
 
-#: inc/widgets/widget-featured-post.php:116 
-#: inc/widgets/widget-popular-post.php:119 
+#: inc/widgets/widget-featured-post.php:116
+#: inc/widgets/widget-popular-post.php:119
 #: inc/widgets/widget-recent-post.php:115
 msgid "Show Post Thumbnail"
 msgstr ""
@@ -430,18 +430,18 @@ msgstr ""
 msgid "A Popular Post Widget"
 msgstr ""
 
-#: inc/widgets/widget-popular-post.php:108 
-#: inc/widgets/widget-recent-post.php:104 
+#: inc/widgets/widget-popular-post.php:108
+#: inc/widgets/widget-recent-post.php:104
 #: inc/widgets/widget-social-links.php:92
 msgid "Title"
 msgstr ""
 
-#: inc/widgets/widget-popular-post.php:113 
+#: inc/widgets/widget-popular-post.php:113
 #: inc/widgets/widget-recent-post.php:109
 msgid "Number of Posts"
 msgstr ""
 
-#: inc/widgets/widget-popular-post.php:124 
+#: inc/widgets/widget-popular-post.php:124
 #: inc/widgets/widget-recent-post.php:120
 msgid "Show Post Date"
 msgstr ""
@@ -464,22 +464,22 @@ msgstr ""
 msgid "A Social Links Widget"
 msgstr ""
 
-#: inc/widgets/widget-social-links.php:54 
+#: inc/widgets/widget-social-links.php:54
 #: inc/widgets/widget-social-links.php:97 inc/customizer/home/social.php:51
 msgid "Facebook"
 msgstr ""
 
-#: inc/widgets/widget-social-links.php:56 
+#: inc/widgets/widget-social-links.php:56
 #: inc/widgets/widget-social-links.php:102 inc/customizer/home/social.php:124
 msgid "Instagram"
 msgstr ""
 
-#: inc/widgets/widget-social-links.php:58 
+#: inc/widgets/widget-social-links.php:58
 #: inc/widgets/widget-social-links.php:107 inc/customizer/home/social.php:70
 msgid "Twitter"
 msgstr ""
 
-#: inc/widgets/widget-social-links.php:60 
+#: inc/widgets/widget-social-links.php:60
 #: inc/widgets/widget-social-links.php:112 inc/customizer/home/social.php:88
 msgid "Pinterest"
 msgstr ""
@@ -488,7 +488,7 @@ msgstr ""
 msgid "Linkedin"
 msgstr ""
 
-#: inc/widgets/widget-social-links.php:64 
+#: inc/widgets/widget-social-links.php:64
 #: inc/widgets/widget-social-links.php:122 inc/customizer/home/social.php:142
 msgid "YouTube"
 msgstr ""
@@ -545,13 +545,13 @@ msgstr ""
 msgid "Banner Button Two Url"
 msgstr ""
 
-#: inc/customizer/home/banner.php:127 inc/customizer/home/service.php:240 
-#: inc/customizer/home/stats.php:246 inc/customizer/home/vedio.php:89
+#: inc/customizer/home/banner.php:127 inc/customizer/home/service.php:240
+#: inc/customizer/home/stats.php:241 inc/customizer/home/vedio.php:89
 msgid "Download Button Text"
 msgstr ""
 
-#: inc/customizer/home/banner.php:145 inc/customizer/home/service.php:258 
-#: inc/customizer/home/stats.php:264 inc/customizer/home/vedio.php:107
+#: inc/customizer/home/banner.php:145 inc/customizer/home/service.php:258
+#: inc/customizer/home/stats.php:259 inc/customizer/home/vedio.php:107
 msgid "Download Button Url"
 msgstr ""
 
@@ -679,37 +679,28 @@ msgstr ""
 msgid "Enable Social Links"
 msgstr ""
 
-#: inc/customizer/home/stats.php:14
-msgid "Choose Year"
-msgstr ""
-
-#: inc/customizer/home/stats.php:21 inc/customizer/home/stats.php:28 
-#: inc/customizer/home/stats.php:36 inc/customizer/home/stats.php:44
-msgid "Choose Day"
-msgstr ""
-
-#: inc/customizer/home/stats.php:54
+#: inc/customizer/home/stats.php:49
 msgid "Stat Counter Section"
 msgstr ""
 
-#: inc/customizer/home/stats.php:72
+#: inc/customizer/home/stats.php:67
 msgid "Enable Stat Counter Section"
 msgstr ""
 
-#: inc/customizer/home/stats.php:90
+#: inc/customizer/home/stats.php:85
 msgid "Select Page"
 msgstr ""
 
-#: inc/customizer/home/stats.php:110
+#: inc/customizer/home/stats.php:105
 msgid "Select Year"
 msgstr ""
 
-#: inc/customizer/home/stats.php:130
+#: inc/customizer/home/stats.php:125
 msgid "Select Month"
 msgstr ""
 
-#: inc/customizer/home/stats.php:163 inc/customizer/home/stats.php:184 
-#: inc/customizer/home/stats.php:205 inc/customizer/home/stats.php:226
+#: inc/customizer/home/stats.php:158 inc/customizer/home/stats.php:179
+#: inc/customizer/home/stats.php:200 inc/customizer/home/stats.php:221
 msgid "Select Day"
 msgstr ""
 

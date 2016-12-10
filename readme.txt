@@ -1,7 +1,7 @@
 === App Landing Page ===
 
 Author: Rara Theme (http://raratheme.com)
-Tags: Tags: white, light, two-columns, right-sidebar, responsive-layout, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, front-page-post-form, post-formats, sticky-post, threaded-comments, translation-ready, theme-options
+Tags: two-columns, right-sidebar, responsive-layout, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, front-page-post-form, post-formats, sticky-post, threaded-comments, translation-ready, theme-options
 
 Requires at least: 4.6
 Tested up to: 4.6.1
@@ -151,12 +151,15 @@ Unless otherwise specified, all the theme files, scripts and images are licensed
 
 
 External resources linked to the theme.
-1) http://fontawesome.io/
-2) https://www.google.com/fonts/specimen/Lato
 
-# Images
+-- Fonts --
+Lato Font by Google Font https://fonts.google.com/specimen/Lato
+Font Awesome https://fortawesome.github.io/Font-Awesome/, (C) Dave Gandy, http://fontawesome.io/license/
+
+-- Images --
 All images are under Creative Commons Public Domain deed CC0.
 https://pixabay.com/en/girl-woman-hand-hands-holding-791389/
+https://www.pexels.com/photo/person-woman-hand-apple-3627/
 http://www.freepik.com/free-vector/m-letter-logo-template_840925.htm#term=logo&page=1&position=4
 http://www.freepik.com/free-vector/a-abstract-logo-design_822546.htm
 http://www.freepik.com/free-vector/logo-made-with-abstract-outlined-shape_842827.htm
@@ -165,19 +168,15 @@ http://www.freepik.com/free-vector/logo-with-abstract-s_825161.htm
 http://www.freepik.com/free-vector/real-estate-logo-template_761503.htm
 
 
-# JS
+-- JS --
 All the JS are licensed under GPLv2 or later
 
-1) equal-height: http://brm.io/jquery-match-height/
-2) nice-scroll: http://nicescroll.areaaperta.com/
-3) https://github.com/matthieua/WOW
-4) https://www.berriart.com/sidr/
-5) http://hilios.github.io/jQuery.countdown/
-
+jquery-match-height.js, http://brm.io/jquery-match-height, (C), MIT License, https://github.com/liabru/jquery-match-height/blob/master/LICENSE
+jquery.nicescroll.js, https://github.com/inuyaksa/jquery.nicescroll  (C) 2015 InuYaksa, MIT License, https://github.com/inuyaksa/jquery.nicescroll/blob/master/MIT.LICENSE
+jquery.sidr.js, https://github.com/artberri/sidr, (C) 2013 Alberto Varela, MIT License, https://github.com/artberri/sidr/blob/master/LICENSE
+jquery.countdown.js, http://hilios.github.io/jQuery.countdown/, (C) 2015 Edson Hilios, https://github.com/hilios/jQuery.countdown/blob/master/LICENSE.md
 
 * Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-
-
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2015 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
 
 

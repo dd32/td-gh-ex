@@ -15,7 +15,7 @@ $instagram = get_theme_mod( 'app_landing_page_instagram' );
 $youtube = get_theme_mod( 'app_landing_page_youtube' );
 
 
-if( ( is_newsletter_activated() && is_active_sidebar( 'bottom-widget' ) && $subscribe_section ) || ( $social && ( $facebook || $twitter || $pinterest || $linkedin || $instagram || $youtube ) ) ) {
+if( ( app_landing_page_newsletter_activated() && is_active_sidebar( 'bottom-widget' ) && $subscribe_section ) || ( $social && ( $facebook || $twitter || $pinterest || $linkedin || $instagram || $youtube ) ) ) {
 	?>
 	<section class="stay-tuned">
 		<div class="container">	

@@ -18,7 +18,9 @@ jQuery(document).ready(function($){
         target: null,
         remove: false
     });
-
+    
+    /* Date Picker */
+    $( "#datepicker" ).datepicker();
 
 	$('#responsive-menu-button').sidr({
     	name: 'sidr-main',
@@ -40,6 +42,7 @@ jQuery(document).ready(function($){
 	$('#seconds').countdown(date_in, function(event) {
   		$(this).html(event.strftime('%S'));
 	});
+	
 	//Event CountDown------------
 	new WOW().init();
 

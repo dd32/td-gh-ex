@@ -212,11 +212,11 @@ function app_landing_page_sidebar_layout(){
 }
 endif;
   
-if( ! function_exists( 'is_newsletter_activated' ) ) :
+if( ! function_exists( 'app_landing_page_newsletter_activated' ) ) :
 /**
  * Query Newsletter activation
  */
-function is_newsletter_activated(){
+function app_landing_page_newsletter_activated(){
     return class_exists( 'newsletter' ) ? true : false;
 }
 endif;

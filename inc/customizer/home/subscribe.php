@@ -14,7 +14,7 @@ function app_landing_page_customize_register_subscribe( $wp_customize ) {
             'title' => __( 'Subscription Settings', 'app-landing-page' ),
             'priority' => 80,
             'panel' => 'app_landing_page_home_page_settings',
-            'active_callback' => 'is_newsletter_activated',
+            'active_callback' => 'app_landing_page_newsletter_activated',
         )
     );
     

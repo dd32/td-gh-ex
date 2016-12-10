@@ -44,12 +44,6 @@ add_filter( 'body_class', 'app_landing_page_body_classes' );
 add_filter( 'comment_form_fields', 'app_landing_page_move_comment_field_to_bottom' );
 
 /**
- * Custom CSS
- * @see app_landing_page_custom_css
-*/
-add_action( 'wp_head', 'app_landing_page_custom_css', 100 );
-
-/**
  * @see app_landing_page_excerpt_more
  * @see app_landing_page_excerpt_length
 */

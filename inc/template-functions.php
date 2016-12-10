@@ -237,7 +237,7 @@ function app_landing_page_page_header(){
                         <?php
                             if( is_search() ){ 
                                 printf( esc_html__( '%s Search Results for ','app-landing-page' ), $wp_query->found_posts ); 
-                                printf( esc_html__( '"%s"', 'app-landing-page' ), get_search_query() ); }
+                                printf( esc_html__( '%s', 'app-landing-page' ), get_search_query() ); }
                             elseif( is_404() ){ esc_html_e( '404 - Page Not Found ' ,'app-landing-page' ); } 
                             elseif( is_page() ){ the_title(); }
                             elseif( is_archive() ){ the_archive_title(); }

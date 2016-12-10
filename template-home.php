@@ -17,5 +17,5 @@ get_header();
         	get_template_part( 'sections/' . esc_attr( $section ) );
         }
     }
-  
+
 get_footer();
