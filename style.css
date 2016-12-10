@@ -1,23 +1,14 @@
 /*
 Theme Name: Beka
-Theme URI: http://fancythemes.com/themes/beka/
+Theme URI: https://fancythemes.com/themes/beka/
 Author: FancyThemes
-Author URI: http://fancythemes.com/
-Description: Description
-Version: 1.1.0
+Author URI: https://fancythemes.com/
+Description: Beka is a WordPress theme for news website or blog, neatly designed, well coded, and more importantly easy to use. The theme comes with a responsive design and easy to use customization options that are available via WordPress Theme Customizer.
+Version: 1.1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: beka
 Tags: three-columns, two-columns, custom-colors, custom-logo, custom-menu, featured-images, theme-options, blog, news
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-
-beka is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
 
 /*--------------------------------------------------------------
@@ -42,6 +33,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Media
 	## Captions
 	## Galleries
+# Responsiveness
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -360,6 +352,7 @@ body {
 	background: #fdfdfd; /* Fallback for when there is no custom background color defined. */
     color: #7e838b;
     font-family: 'Georgia';
+    word-wrap: break-word;
 }
 
 blockquote:before,
@@ -453,7 +446,7 @@ input[type="submit"] {
 	font-size: 12px;
 	font-size: 0.75rem;
 	line-height: 1;
-	padding: .6em 1em .4em;
+	padding: 0.6em 1em;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
@@ -494,7 +487,7 @@ textarea {
 	color: #666;
 	border: 1px solid #ccc;
 	border-radius: 3px;
-	padding: 3px;
+	padding: 1px 3px 4px;
 }
 
 select {
@@ -1024,17 +1017,20 @@ a:active {
 .hentry {
 	margin: 0 0 1.5em;
 }
-.post{
+.post,
+.search-results .page {
     width: 47.8%;
     margin-bottom:60px;
     margin-right:4.4%;
     float: left;
     border-bottom: 1px solid #F5F5F5;
 }
-.post:nth-child(2n+1) {
+.post:nth-child(2n+1),
+.search-results .page:nth-child(2n+1) {
     margin-right: 0;
 }
-.post:nth-last-of-type(-n+2) {
+.post:nth-last-of-type(-n+2),
+.search-results .page:nth-last-of-type(-n+2) {
     border-bottom: none;
 }
 .first_post {
@@ -1245,13 +1241,18 @@ a:active {
     float: left;
 }
 .author-social {
-    float: right;
+    margin-top: 15px;
 }
 .author-social span {
     margin-right: 15px;
 }
 .author-social span:last-child {
     margin-right: 0;
+}
+
+.author-box .author-social {
+	float: right;
+	margin-top: 0;
 }
 /*--------------------------------------------------------------
 ## Comments
@@ -1296,7 +1297,8 @@ a:active {
 .comment .fn {
     display: block;
 }
-.comment .fn a {
+.comment .fn a,
+.comment .fn strong {
     color: #2b333e;
     font-size: 20px;
     font-weight: 400
@@ -1475,4 +1477,57 @@ object {
 
 .gallery-caption {
 	display: block;
+}
+
+/*--------------------------------------------------------------
+# Responsiveness
+--------------------------------------------------------------*/
+@media screen and (max-width: 1200px) {
+    body{
+        width: 100%;
+    }
+    .site-content,.site-header,.container,
+    .site-footer .site-info,.site{
+        width: 96%;
+        margin: 0 auto;
+    }
+}
+@media screen and (max-width: 1080px) {
+    .post{
+        max-width: 96%;
+    }
+    .tabs-widget .thumbnail {
+        float: none;
+    }
+}
+@media screen and (max-width: 768px) {
+    .content-area {
+        width: 100%;
+        padding-right: 0;
+    }
+    .site-content .widget-area {
+        float: left;
+        clear: left;
+    }
+    .site-content::before {
+        background: none;
+    }
+}
+@media screen and (max-width: 768px) {
+    .post {
+        width: 100%;
+        margin-right: 0;
+        max-width: 360px;
+        margin-right: auto;
+        margin-left: auto;
+        float: none;
+    }
+    .post:nth-child(2n+1) {
+        margin-right: auto;
+    }
+    .site-content .widget-area{
+        max-width: 264px;
+        width: 100%;
+    }
+
 }

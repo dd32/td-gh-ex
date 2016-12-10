@@ -8,54 +8,55 @@
  * E.g., it puts together the home page when no home.php file exists.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package beka
  */
 
 get_header(); ?>
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
-		<?php
-		if ( have_posts() ) :
-
-			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main" role="main">
 
 			<?php
-			endif;
-            $post_count = '';
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
-           
-                if ( $post_count == 0) {
-                    global $first_post;
-                        $first_post = true;                
-                    } else {
-                        $first_post = false;
-                    }
+			if ( have_posts() ) :
 
-                    /*
-                     * Include the Post-Format-specific template for the content.
-                     * If you want to override this in a child theme, then include a file
-                     * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-                     */
-                    get_template_part( 'template-parts/content', get_post_format() );
-                $post_count++;
-			endwhile;
+				if ( is_home() && ! is_front_page() ) : ?>
+                    <header>
+                        <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+                    </header>
+					<?php
+				endif;
 
-			the_posts_navigation();
+				$post_count = 0;
 
-		else :
+				/* Start the Loop */
+				while ( have_posts() ) : the_post();
 
-			get_template_part( 'template-parts/content', 'none' );
+					if ( $post_count === 0 ) :
+						global $first_post;
 
-		endif; ?>
+						$first_post = true;
+					else :
+						$first_post = false;
+					endif;
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+					/**
+					 * Include the Post-Format-specific template for the content.
+					 * If you want to override this in a child theme, then include a file
+					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+					 */
+					get_template_part( 'template-parts/content', get_post_format() );
+
+					$post_count ++;
+				endwhile;
+
+				the_posts_navigation();
+
+			else :
+
+				get_template_part( 'template-parts/content', 'none' );
+
+			endif; ?>
+
+        </main>
+    </div>
 
 <?php
 get_sidebar();

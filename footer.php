@@ -5,22 +5,36 @@
  * Contains the closing of the #content div and all content after.
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package beka
  */
-
 ?>
 
-	</div><!-- #content -->
+	</div>
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<?php printf( esc_html__( 'Copyright &#169; 2016 AWESOMEBLOGDESIGN. All Right Reserved', 'beka' )); ?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+			<?php
+			/* translators: 1. Site name 2. Current Year 3. WordPress Link 4. FancyThemes Link */
+			echo apply_filters( 'beka_footer_credit', sprintf(
+				__( '&copy; %1$s %2$d. Powered by %3$s &amp; %4$s', 'beka' ),
+				get_bloginfo( 'name' ),
+				date( 'Y' ),
+				sprintf(
+					'<a href="%1$s" title="%2$s">%3$s</a>',
+					'https://wordpress.org/',
+					esc_attr__( 'WordPress', 'beka' ),
+					esc_html__( 'WordPress', 'beka' )
+				),
+				sprintf(
+					'<a href="%1$s" title="%2$s">%3$s</a>',
+					'https://fancythemes.com/',
+					esc_attr__( 'FancyThemes', 'beka' ),
+					esc_html__( 'FancyThemes', 'beka' )
+				)
+			) ); ?>
+		</div>
+	</footer>
+</div>
 
 <?php wp_footer(); ?>
-
 </body>
 </html>
