@@ -70,12 +70,12 @@ if ( $bellini['bellini_menu_layout'] == 'hamburger' ):?>
 			</nav><!-- #site-navigation -->
 			<?php }else{ ?>
 
-			<nav id="site-navigation" class="main-navigation" aria-label="site links" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-					<?php esc_html_e( 'Menu', 'bellini' ); ?>
+			<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="site links" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+				<button class="menu-toggle" aria-controls="top-menu" aria-expanded="false">
+					<?php esc_html_e( 'Menu', 'affinity' ); ?>
 				</button>
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-			</nav>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+			</nav><!-- #site-navigation -->
 
 			<?php }
 			endif;
@@ -240,21 +240,21 @@ function bellini_core_header(){
 	if ( $bellini['bellini_header_menu_layout'] === 1 ):
 
 		if ( $bellini['bellini_menu_layout'] == 'hamburger' ):?>
-			<div class="site-branding col-md-6 col-xs-8"><?php bellini_header_logo();?></div>
-			<div class="col-md-6 col-xs-4 text-right"><?php bellini_header_menu();?></div>
+			<div class="site-branding col-md-6"><?php bellini_header_logo();?></div>
+			<div class="col-md-6 text-right"><?php bellini_header_menu();?></div>
 		<?php else:?>
-			<div class="site-branding col-md-4 col-xs-12"><?php bellini_header_logo();?></div>
-			<div class="col-md-8 col-xs-12 text-right"><?php bellini_header_menu();?></div>
+			<div class="site-branding col-md-4 col-xs-8"><?php bellini_header_logo();?></div>
+			<div class="col-md-8 col-xs-4 text-right"><?php bellini_header_menu();?></div>
 		<?php endif; ?>
 	<?php endif; ?>
 
 	<?php if ( $bellini['bellini_header_menu_layout'] === 2 ):
 			if ( $bellini['bellini_menu_layout'] == 'hamburger' ):?>
-				<div class="col-md-6 col-xs-4"><?php bellini_header_menu();?></div>
-				<div class="site-branding col-md-6 col-xs-8 text-right"><?php bellini_header_logo();?></div>
+				<div class="col-md-6"><?php bellini_header_menu();?></div>
+				<div class="site-branding col-md-6 text-right"><?php bellini_header_logo();?></div>
 			<?php else:?>
-				<div class="col-md-8 col-xs-12 "><?php bellini_header_menu();?></div>
-				<div class="site-branding col-md-4 col-xs-12 text-right"><?php bellini_header_logo();?></div>
+				<div class="col-md-8"><?php bellini_header_menu();?></div>
+				<div class="site-branding col-md-4 text-right"><?php bellini_header_logo();?></div>
 		<?php endif; ?>
 	<?php endif; ?>
 

@@ -68,15 +68,6 @@ jQuery(document).ready(function () {
         jQuery('body').removeClass('scrolling');
     }
 
-    // Superfish Menu Enhancement
-    jQuery('ul.nav-menu').superfish({
-                delay:       1000,
-                animation:   {opacity:'show',height:'show'},
-                speed:       'fast',
-                autoArrows:  true,
-                dropShadows: false
-    });
-
     var menuSub = jQuery('.menu-item-has-children');
      menuSub.hover(function () {
         jQuery(this).find( '.sub-menu' ).toggleClass('delay--hover');

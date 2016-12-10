@@ -93,7 +93,7 @@ function bellini_post_tag() {
     // Hide category and tag text for pages.
     if ( 'post' === get_post_type() ) {
         /* translators: used between list items, there is a space after the comma */
-        $tags_list = get_the_tag_list( '', esc_html__( ' ', 'bellini' ) );
+        $tags_list = get_the_tag_list( '', esc_html__( ',', 'bellini' ) );
         if ( $tags_list ) {
             printf( '<span class="post-meta__tag__item" rel="category tag">' . esc_html__( '%1$s', 'bellini' ) . '</span>', $tags_list ); // WPCS: XSS OK.
         }
@@ -103,16 +103,14 @@ function bellini_post_tag() {
 /**
 * Prints Post published date
 */
-function bellini_published_on() {
-    $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-    if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-        $time_string ='<time class="entry-date published" datetime="%1$s" itemprop="datePublished">%2$s</time><time class="updated" datetime="%3$s" itemprop="dateModified">%4$s</time>';
-    }
-    $time_string = sprintf( $time_string,esc_attr( get_the_date( 'c' ) ),esc_html( get_the_date() ),esc_attr( get_the_modified_date( 'c' ) ),esc_html( get_the_modified_date() ));
-    $posted_on = sprintf(esc_html_x( '%s', 'post date', 'bellini' ),'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>');
-
-    echo '<span class="post-meta__time">' . $posted_on . '</span>';
-}
+function bellini_published_on() { ?>
+    <span class="post-meta__time">
+      <span itemprop="datePublished" content="<?php echo get_the_date(get_option('date_format')); ?>">
+        <?php echo get_the_date(get_option('date_format'));?>
+      </span>
+      <meta itemprop="dateModified" content="<?php the_modified_time(get_option('date_format'));?>">
+    </span>
+<?php }
 
 /**
 * Prints the total comment of a post
@@ -234,7 +232,10 @@ function bellini_pagination() {
     if($bellini['bellini_blog_pagination_type'] == 2):
         // Numeric Pagination
         echo '<div class="col-xs-12">';
-        the_posts_pagination();
+        the_posts_pagination(array(
+            'prev_text' =>'<i class="fa fa-angle-left" aria-hidden="true"></i>',
+            'next_text' =>'<i class="fa fa-angle-right" aria-hidden="true"></i>',
+          ));
         echo '</div>';
     endif;
     if($bellini['bellini_blog_pagination_type'] == 3):

@@ -11,16 +11,20 @@
 global $bellini;
 ?>
 </div><!-- #content -->
+
+
+<footer id="colophon" class="site-footer container-fluid" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+
 <?php if ( is_active_sidebar( 'sidebar-footer' ) ):?>
-    <div id="secondary" class="widget-area__footer" role="complementary">
+    <aside id="secondary" class="widget-area__footer" role="complementary">
     <div class="bellini__canvas">
     <div class="row">
         <?php dynamic_sidebar( 'sidebar-footer' ); ?>
     </div>
     </div>
-    </div><!-- #secondary -->
+    </aside><!-- #secondary -->
 <?php endif;?>
-<footer id="colophon" class="site-footer container-fluid" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
+
 <div class="bellini__canvas">
 <div class="row">
 	<?php bellini_core_footer_layout();?>

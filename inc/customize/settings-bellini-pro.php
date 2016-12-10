@@ -25,9 +25,9 @@ $bellini_frontpage_section_pro_conversion 				= sprintf( __( 'You are missing ou
 <li>Advanced Customization</li>
 <li>Full WooCommerce Compatibility</li>
 <li>Shortcodes &amp; Widgets</li>
-</ul><a target="_blank" href="%s">Upgrade To Pro</a> to unlock all features.', 'bellini' ), esc_url( 'https://atlantisthemes.com/bellini-feature-comparison/' ));
+</ul><a target="_blank" href="%s">Upgrade To Pro</a> to unlock all features.', 'bellini' ), esc_url( 'https://atlantisthemes.com/' ));
 
-$bellini_frontpage_section_pro_conversion_one 				= sprintf( __( '</br><a target="_blank" href="%s" class="lite__pro--customizer">Upgrade To Pro</a>', 'bellini' ), esc_url( 'https://atlantisthemes.com/bellini-feature-comparison/' ));
+$bellini_frontpage_section_pro_conversion_one 				= sprintf( __( '</br><a target="_blank" href="%s" class="lite__pro--customizer">Upgrade To Pro</a>', 'bellini' ), esc_url( 'https://atlantisthemes.com' ));
 /*--------------------------------------------------------------
 ## Frontpage Sections
 --------------------------------------------------------------*/

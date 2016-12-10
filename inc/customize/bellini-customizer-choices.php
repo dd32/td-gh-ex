@@ -1950,4 +1950,6 @@ if ( 'logo-ral' == esc_attr($bellini['bellini_logo_typography_font']) ):
 endif;
 }
 
-add_action('wp_enqueue_scripts', 'bellini_logo_font_script');
+if (!has_custom_logo()){
+    add_action('wp_enqueue_scripts', 'bellini_logo_font_script');
+}

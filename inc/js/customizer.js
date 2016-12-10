@@ -12,7 +12,7 @@
 		bellini_accent_color_text 		= $('.breadcrumb_last,.single.post-meta,.single.post-meta a,.post-meta__category a,.comment-reply-link,.comment__author,.blog-post__meta .post-meta__time,.post-meta__author,.comment-edit-link'),
 		bellini_title_color 			= $('.element-title,.element-title--post,.element-title--main,.single-page__title,.single-post__title'),
 		bellini_menu_color 				= $('.main-navigation a,.main-navigation ul ul a'),
-		bellini_other_color 			= $('.page-numbers.current,.hamburger-inner,.hamburger-inner::before,.hamburger-inner::after,.hamburger__site-title,.main-navigation ul ul,.product-featured__title h1:after,.product-featured__title--l2 h1:after,.product-featured__title--l3 h1:after'),
+		bellini_other_color 			= $('.hamburger-inner,.hamburger-inner::before,.hamburger-inner::after,.hamburger__site-title,.main-navigation ul ul,.product-featured__title h1:after,.product-featured__title--l2 h1:after,.product-featured__title--l3 h1:after'),
 		bellini_button_color_background = $('.comment-form input[type=submit],.site-search form input[type=submit],.button--secondary'),
 		bellini_button_color_text 		= $('.button--secondary a,.comment-form input[type=submit]'),
 		woocommerce_product_card 		= $('.front__product-featured__right--2,.front__product-featured__text,.woo__info__sorting,.product-card__inner,.product-card__inner--l3,.product-card__inner--l4,.front__product-featured__right--3'),

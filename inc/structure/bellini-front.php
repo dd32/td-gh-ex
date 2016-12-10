@@ -414,11 +414,13 @@ function bellini_frontpage_text_field_shortcode(){
 	<section class="front-text-field">
 	<div class="bellini__canvas">
 	<div class="row">
+	<div class="col-md-12">
 	<?php
 		if (!empty($bellini['bellini_frontpage_textarea_section_field'])):
 			echo do_shortcode( wp_kses_post($bellini['bellini_frontpage_textarea_section_field']));
 		endif;
 	?>
+	</div>
 	</div>
 	</div>
 	</section>
