@@ -743,28 +743,30 @@ function bhumi_customizer( $wp_customize ) {
 		'section'    => 'footer_section',
 		'settings'   => 'bhumi_options[developed_by_link]'
 	) );
-
-	$wp_customize->add_section('custom_css',array(
-	'title'=>__("Add CSS",'bhumi'),
-	'panel'=>'bhumi_theme_option',
-	'capability'=>'edit_theme_options',
-    'priority' => 35
-	));
-	$wp_customize->add_setting(
-	'bhumi_options[custom_css]',
-		array(
-		'default'=>'',
-		'type'=>'option',
+	$version_wp = get_bloginfo('version');
+	if($version_wp < 4.7){
+		$wp_customize->add_section('custom_css',array(
+		'title'=>__("Add CSS",'bhumi'),
+		'panel'=>'bhumi_theme_option',
 		'capability'=>'edit_theme_options',
-		'sanitize_callback'=>'esc_js'
-		)
-	);
-	$wp_customize->add_control( 'custom_css', array(
-		'label'        => __( 'Add CSS', 'bhumi' ),
-		'type'=>'textarea',
-		'section'    => 'custom_css',
-		'settings'   => 'bhumi_options[custom_css]'
-	) );
+	    'priority' => 35
+		));
+		$wp_customize->add_setting(
+		'bhumi_options[custom_css]',
+			array(
+			'default'=>'',
+			'type'=>'option',
+			'capability'=>'edit_theme_options',
+			'sanitize_callback'=>'esc_js'
+			)
+		);
+		$wp_customize->add_control( 'custom_css', array(
+			'label'        => __( 'Add CSS', 'bhumi' ),
+			'type'=>'textarea',
+			'section'    => 'custom_css',
+			'settings'   => 'bhumi_options[custom_css]'
+		) );
+	}
 }
 function bhumi_sanitize_text( $input ) {
     return wp_kses_post( force_balance_tags( $input ) );

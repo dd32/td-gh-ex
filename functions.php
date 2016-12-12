@@ -326,3 +326,12 @@ function bhumi_excerpt_length( $length ) {
 	return $blog_excerpt_length;
 }
 add_filter( 'excerpt_length', 'bhumi_excerpt_length', 999 );
+
+if ( function_exists( 'wp_update_custom_css_post' ) ) {
+	$cpm_theme_options = bhumi_get_options();
+	$custom_css = $cpm_theme_options['custom_css'];
+    $core_css = wp_get_custom_css();
+    if ( !empty($custom_css) && empty($core_css) ) {
+        $return = wp_update_custom_css_post( $core_css . $custom_css );
+    }
+}

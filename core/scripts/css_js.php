@@ -67,7 +67,13 @@ function bhumi_scripts()
                 wp_enqueue_style('bhumi_font_awesome', BHUMI_TEMPLATE_DIR_URI . '/assets/css/font-awesome-4.3.0/css/font-awesome.css');
                  wp_enqueue_style( 'bhumi_style', get_stylesheet_uri());
                  $cpm_theme_options = bhumi_get_options();
-                 $bhumi_custom_css = $cpm_theme_options['custom_css'];
+                 $version_wp = get_bloginfo('version');
+                 if($version_wp < 4.7){
+                    $bhumi_custom_css = $cpm_theme_options['custom_css'];
+                }
+                else{
+                    $bhumi_custom_css = "";
+                }
                  $site_bg_color = $cpm_theme_options['site_color'];
                  $custom_css = "
 
@@ -394,8 +400,7 @@ function bhumi_scripts()
                         background: $site_bg_color;
                         opacity: 0.8;
                     }
-
-                        $bhumi_custom_css;
+                    $bhumi_custom_css;
                         ";
                 wp_add_inline_style( 'bhumi_style', $custom_css );
 
