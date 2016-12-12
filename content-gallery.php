@@ -13,7 +13,7 @@
 	<div class="entry-container post-format">
     
         <header class="entry-header">
-            <h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'catch-everest' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+            <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
             <h2 class="entry-format"><a href="<?php echo get_post_format_link( 'Gallery' ); ?>" title="<?php _e( 'All Gallery Posts', 'catch-everest' ); ?>"><?php _e( 'Gallery', 'catch-everest' ); ?></a></h2>
         </header><!-- .entry-header -->  
     

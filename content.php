@@ -11,7 +11,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 	<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
-        <div class="featured-post"><?php _e( 'Featured post', 'catch-everest' ); ?></div>
+        <div class="featured-post"><?php _e( 'Featured', 'catch-everest' ); ?></div>
     <?php endif; ?>
 
     <?php if ( has_post_thumbnail() ):?>
@@ -25,7 +25,8 @@
     <div class="entry-container">
 
 		<header class="entry-header">
-    		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'catch-everest' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
+    		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+            
 			<?php if ( 'post' == get_post_type() ) : ?>
                 <div class="entry-meta">
                     <?php catcheverest_header_meta(); ?>

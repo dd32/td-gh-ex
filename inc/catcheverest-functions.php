@@ -139,6 +139,18 @@ function catcheverest_inline_css() {
 add_action('wp_head', 'catcheverest_inline_css');
 
 
+if ( ! function_exists( 'catcheverest_skip_content' ) ) :
+/**
+ * Display Featured Header Image
+ */
+function catcheverest_skip_content() { ?>
+	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'catch-everest' ); ?></a>
+<?php 	
+} // catcheverest_skip_content
+endif;
+add_action( 'catcheverest_before_header', 'catcheverest_skip_content', 5 );
+
+
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
  *
@@ -378,8 +390,17 @@ function catcheverest_header_left() { ?>
                 echo '<div id="hgroup">';
             } // end check for removed header image ?>
 
-                <h1 id="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-                <h2 id="site-description"><?php bloginfo( 'description' ); ?></h2>
+				<?php if ( is_front_page() && is_home() ) : ?>
+					<h1 id="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<?php else : ?>
+					<p id="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<?php endif;
+
+				$description = get_bloginfo( 'description', 'display' );
+				if ( $description || is_customize_preview() ) : ?>
+					<p id="site-description"><?php echo $description; ?></p>
+				<?php endif; ?>
+
             </div><!-- #hgroup -->
         </div><!-- #header-left -->
 
@@ -412,8 +433,7 @@ add_action( 'catcheverest_hgroup_wrap', 'catcheverest_header_right', 15 );
 function catcheverest_header_menu() { ?>
 	<div id="header-menu">
         <nav id="access" role="navigation">
-            <h2 class="assistive-text"><?php _e( 'Primary Menu', 'catch-everest' ); ?></h2>
-            <div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'catch-everest' ); ?>"><?php _e( 'Skip to content', 'catch-everest' ); ?></a></div>
+            <a class="screen-reader-text"><?php _e( 'Primary Menu', 'catch-everest' ); ?></a>
             <?php
                 if ( has_nav_menu( 'primary' ) ) {
                     $catcheverest_primary_menu = array(
@@ -683,7 +703,7 @@ add_action( 'catcheverest_before_main', 'catcheverest_homepage_headline', 10 );
  * @uses catcheverest_before_main action to add it in the header
  */
 function catcheverest_default_featured_content() {
-	//delete_transient( 'catcheverest_default_featured_content' );
+	delete_transient( 'catcheverest_default_featured_content' );
 
 	// Getting data from Theme Options
 	global $catcheverest_options_settings;
@@ -692,8 +712,11 @@ function catcheverest_default_featured_content() {
 
 	if ( $disable_homepage_featured == "0" ) {
 		if ( !$catcheverest_default_featured_content = get_transient( 'catcheverest_default_featured_content' ) ) {
+
+			$classes = "layout-three";
+
 			$catcheverest_default_featured_content = '
-			<section id="featured-post">
+			<section id="featured-post" class="' . $classes . '">
 				<article class="post hentry first">
 					<figure class="featured-homepage-image">
 						<a href="#" title="Nepal Prayer Wheels">
@@ -761,7 +784,7 @@ if ( ! function_exists( 'catcheverest_homepage_featured_content' ) ) :
  * @uses catcheverest_before_main action to add it in the header
  */
 function catcheverest_homepage_featured_content() {
-	//delete_transient( 'catcheverest_homepage_featured_content' );
+	delete_transient( 'catcheverest_homepage_featured_content' );
 
 	// Getting data from Theme Options
 	global $catcheverest_options_settings;
@@ -776,7 +799,9 @@ function catcheverest_homepage_featured_content() {
 
 			echo '<!-- refreshing cache -->';
 
-			$catcheverest_homepage_featured_content = '<section id="featured-post">';
+			$parentclasses = "layout-three";
+
+			$catcheverest_homepage_featured_content = '<section id="featured-post" class="' . $parentclasses . '">';
 
 			if ( !empty( $headline ) ) {
 				$catcheverest_homepage_featured_content .= '<h1 id="feature-heading" class="entry-title">' . sprintf( __( '%s', 'catch-everest' ) , $headline ) . '</h1>';

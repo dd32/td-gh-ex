@@ -47,7 +47,7 @@ function catcheverest_content_nav( $nav_id ) {
 
 	?>
 	<nav role="navigation" id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
-		<h1 class="assistive-text"><?php _e( 'Post navigation', 'catch-everest' ); ?></h1>
+		<a class="screen-reader-text"><?php _e( 'Post navigation', 'catch-everest' ); ?></a>
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
 
@@ -108,7 +108,7 @@ function catcheverest_content_query_nav( $nav_id ) {
 
 	?>
 	<nav role="navigation" id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
-		<h1 class="assistive-text"><?php _e( 'Post navigation', 'catch-everest' ); ?></h1>
+		<a class="screen-reader-text"><?php _e( 'Post navigation', 'catch-everest' ); ?></a>
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
 
