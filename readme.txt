@@ -3,8 +3,8 @@
 Contributors: Iceable
 Tags: one-column, two-columns, right-sidebar, grid-layout, custom-header, custom-menu, footer-widgets, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, entertainment, news
 Requires at least: 4.1
-Tested up to: 4.6.1
-Stable tag: 1.2.7
+Tested up to: 4.7
+Stable tag: 1.2.8
 
 == ABOUT WORTEX LITE ==
 
@@ -55,6 +55,11 @@ If you have translated this theme into your own language and are willing to shar
 Your translation files will be added to the next update. Don't forget to leave your name, email address and/or website link so credits can be given to you!
 
 == CHANGELOG ==
+
+= 1.2.8 =
+December 12th, 2016
+* Now using get_theme_file_uri() to register stylesheets and javascripts for WordPress 4.7
+* Tested with WordPress 4.7
 
 = 1.2.7 =
 November 14th, 2016
