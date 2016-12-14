@@ -90,10 +90,8 @@
 	<style type="text/css">
 	.site-title a, 
 	.site-title a:active, 
-	.site-title a:hover {
-	
-	color: #<?php echo get_header_textcolor(); ?>;
-	}
+	.site-title a:hover { color: #<?php echo get_header_textcolor(); ?>; }
+	</style>
 			
 <?php 
 	

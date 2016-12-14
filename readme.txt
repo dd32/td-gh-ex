@@ -1,7 +1,7 @@
 ----------------------------------
 SunRain
 ----------------------------------
-Version: 	1.7
+Version: 	1.8
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
@@ -27,6 +27,10 @@ All other files and images are Licensed under GPL and Copyright to D5 Creation
 Special Instruction:
 ====================
 You Can Change/Set the Front Page Elements from Appearance > Customize
+
+Version 1.8
+--------------------
+- Fixed minor styling issue
 
 Version 1.5
 --------------------
