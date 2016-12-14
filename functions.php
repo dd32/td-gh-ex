@@ -153,3 +153,8 @@ require get_template_directory() . '/inc/annina-dynamic.php';
 if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/annina-admin-page.php';
 }
+
+/**
+ * Load PRO Button in the customizer
+ */
+require_once( trailingslashit( get_template_directory() ) . 'inc/pro-button/class-customize.php' );
