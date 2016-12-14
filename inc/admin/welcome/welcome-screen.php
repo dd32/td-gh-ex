@@ -16,7 +16,7 @@ class IGthemes_Welcome {
 
         add_action( 'igthemes_welcome', array( $this, 'igthemes_welcome_tabs' ), 10 );
         add_action( 'igthemes_welcome', array( $this, 'igthemes_welcome_getting_started' ), 20 );
-        add_action( 'igthemes_welcome', array( $this, 'igthemes_welcome_wp_resources' ), 30 );
+        add_action( 'igthemes_welcome', array( $this, 'igthemes_welcome_system_info' ), 30 );
     } // end constructor
 
     /**
@@ -93,10 +93,10 @@ class IGthemes_Welcome {
         require_once( get_template_directory() . '/inc/admin/welcome/sections/getting-started.php' );
     }
     /**
-     * Welcome screen free resource
+     * Welcome screen system-info
      */
-    public function igthemes_welcome_wp_resources() {
-        require_once( get_template_directory() . '/inc/admin/welcome/sections/wp-resources.php' );
+    public function igthemes_welcome_system_info() {
+        require_once( get_template_directory() . '/inc/admin/welcome/sections/system-info.php' );
     }
 
 }

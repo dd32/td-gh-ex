@@ -55,25 +55,33 @@ class IGthemes_Customizer {
             'panel' => 'igtheme_options',
             'priority' => 60, 
         ));
-        // SHOP
-        $wp_customize->add_section('shop-settings', array(
-            'title' => esc_html__('Shop', 'basic-shop'),
-            'panel' => 'igtheme_options',
-            'priority' => 70,
-        ));
-        // ADVANCED
-        $wp_customize->add_section('advanced-settings', array(
-            'title' => esc_html__('Advanced', 'basic-shop'),
-            'panel' => 'igtheme_options',
-            'priority' => 80,
-        ));
+        /*****************************************************************
+        * PREMIUM
+        ******************************************************************/
+        if ( apply_filters( 'igthemes_customizer_more', true ) ) {
 
-        //PREMIUM OPTIONS
-        include dirname( __FILE__ ) . '/customizer-premium.php';
-        //THEME IPTIONS
-        include dirname( __FILE__ ) . '/customizer-options.php';
-        //END
-    }
+            $wp_customize->add_section( 'upgrade_premium' , array(
+                'title'      		=> __( 'More Options', 'basic-shop' ),
+                'panel'             => 'igtheme_options',
+                'priority'   		=> 1,
+            ) );
+
+            $wp_customize->add_setting( 'upgrade_premium', array(
+                'default'    		=> null,
+                'sanitize_callback' => 'igthemes_sanitize_text',
+            ) );
+
+            $wp_customize->add_control( new IGthemes_More_Control( $wp_customize, 'upgrade_premium', array(
+                'label'    			=> __( 'Looking for more options?', 'basic-shop' ),
+                'section'  			=> 'upgrade_premium',
+                'settings' 			=> 'upgrade_premium',
+                'priority' 			=> 1,
+            ) ) );
+        }
+            //THEME IPTIONS
+            include dirname( __FILE__ ) . '/customizer-options.php';
+            //END
+        }
 
     /*+++++++++++++++++++++++++++++++++++++++++++++
     CUSTOM CONTROL CSS
@@ -149,7 +157,7 @@ class IGthemes_Customizer {
             margin: 10px 16px;
         }
         </style>
-        <?php
+        <?php 
     }
     /*+++++++++++++++++++++++++++++++++++++++++++++
     CUSTOMIZER PRINT CSS
@@ -272,7 +280,7 @@ class IGthemes_Customizer {
                 color: '. get_theme_mod('body_link_hover', $body_link_hover) .';
             }
             ';
-            wp_add_inline_style( 'custom-style', $style );
+            wp_add_inline_style( 'custom-style',  wp_kses( $style, array( "\'", '\"' ) ) );
         }//end custom css
 //END OF CLASS
 }

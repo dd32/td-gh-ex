@@ -126,30 +126,6 @@
 /*****************************************************************
 * HEADER SETTINGS
 ******************************************************************/
-//Header layout
-    $wp_customize->add_setting('header-layout', array(
-        'default'    		=> null,
-        'sanitize_callback' => null,
-    ));
-    $wp_customize->add_control( new IGthemes_Heading( $wp_customize, 'header-layout', array(
-        'label' => esc_html__('Layout', 'basic-shop'),
-        'description' => esc_html__('', 'basic-shop'),
-        'section' => 'header-settings',
-        'settings' => 'header-layout',
-        'priority'   => 1,
-    ) ) );
-//Header menu
-    $wp_customize->add_setting('header-menu', array(
-        'default'    		=> null,
-        'sanitize_callback' => null,
-    ));
-    $wp_customize->add_control( new IGthemes_Heading( $wp_customize, 'header-menu', array(
-        'label' => esc_html__('Menu', 'basic-shop'),
-        'description' => esc_html__('', 'basic-shop'),
-        'section' => 'header-settings',
-        'settings' => 'header-menu',
-        'priority'   => 3,
-    ) ) );
 //Header Colors
     $wp_customize->add_setting('header-colors', array(
         'default'    		=> null,
@@ -335,30 +311,6 @@
                 'settings' => 'body_link_hover',
             )
     ));
-    //Fonts Family
-    $wp_customize->add_setting('font-family', array(
-        'default'    		=> null,
-        'sanitize_callback' => null,
-    ));
-    $wp_customize->add_control( new IGthemes_Heading( $wp_customize, 'font-family', array(
-        'label' => esc_html__('Font family', 'basic-shop'),
-        'description' => esc_html__('', 'basic-shop'),
-        'section' => 'typography-settings',
-        'settings' => 'font-family',
-        'priority' => 5
-    ) ) ); 
-    //Font Size
-    $wp_customize->add_setting('font-size', array(
-        'default'    		=> null,
-        'sanitize_callback' => null,
-    ));
-    $wp_customize->add_control( new IGthemes_Heading( $wp_customize, 'font-size', array(
-        'label' => esc_html__('Font size', 'basic-shop'),
-        'description' => esc_html__('', 'basic-shop'),
-        'section' => 'typography-settings',
-        'settings' => 'font-size',
-        'priority' => 9
-    ) ) ); 
 /*****************************************************************
 * BUTTONS SETTINGS
 ******************************************************************/
@@ -566,25 +518,13 @@
                 'settings' => 'footer_link_hover',
             )
     ));
-    //Footer Colors
-    $wp_customize->add_setting('footer-content', array(
-        'default'    		=> null,
-        'sanitize_callback' => null,
-    ));
-    $wp_customize->add_control( new IGthemes_Heading( $wp_customize, 'footer-content', array(
-        'label' => esc_html__('Footer content', 'basic-shop'),
-        'description' => esc_html__('', 'basic-shop'),
-        'section' => 'footer-settings',
-        'settings' => 'footer-content',
-        'priority' => 6
-    ) ) );
 /*****************************************************************
 * SOCIAL SETTINGS
 ******************************************************************/
 //facebook
     $wp_customize->add_setting('facebook_url', array(
         'sanitize_callback' => 'igthemes_sanitize_url',
-        'default' => 'https://www.facebook.com/iograficathemes'
+        'default' => ''
     ));
     $wp_customize->add_control('facebook_url', array(
         'label' => esc_html__('Facebook url', 'basic-shop'),
@@ -596,7 +536,7 @@
     $wp_customize->add_setting('twitter_url', array(
         
         'sanitize_callback' => 'igthemes_sanitize_url',
-        'default' => 'https://twitter.com/iograficathemes'
+        'default' => ''
     ));
     $wp_customize->add_control('twitter_url', array(
         'label' => esc_html__('Twitter url', 'basic-shop'),
@@ -608,7 +548,7 @@
     $wp_customize->add_setting('google_url', array(
         
         'sanitize_callback' => 'igthemes_sanitize_url',
-        'default' => 'https://plus.google.com/+Iograficathemes'
+        'default' => ''
     ));
     $wp_customize->add_control('google_url', array(
         'label' => esc_html__('Google plus url', 'basic-shop'),
@@ -682,42 +622,3 @@
         'section' => 'social-settings',
         'settings' => 'youtube_url',
     ));
-/*****************************************************************
-* SHOP SETTINGS
-******************************************************************/
-    //Shop layout
-    $wp_customize->add_setting('shop-layout', array(
-        'default'    		=> null,
-        'sanitize_callback' => 'igthemes_sanitize_text',
-    ));
-    $wp_customize->add_control( new IGthemes_Heading( $wp_customize, 'shop-layout', array(
-        'label' => esc_html__('Layout', 'basic-shop'),
-        'description' => esc_html__('', 'basic-shop'),
-        'section' => 'shop-settings',
-        'settings' => 'shop-layout',
-        'priority'   => 1
-    ) ) );
-    //Shop header
-    $wp_customize->add_setting('shop-header', array(
-        'default'    		=> null,
-        'sanitize_callback' => 'igthemes_sanitize_text',
-    ));
-    $wp_customize->add_control( new IGthemes_Heading( $wp_customize, 'shop-header', array(
-        'label' => esc_html__('Menu', 'basic-shop'),
-        'description' => esc_html__('', 'basic-shop'),
-        'section' => 'shop-settings',
-        'settings' => 'shop-header',
-        'priority'   => 4
-    ) ) );
-    //Shop buttons
-    $wp_customize->add_setting('shop-buttons', array(
-        'default'    		=> null,
-        'sanitize_callback' => 'igthemes_sanitize_text',
-    ));
-    $wp_customize->add_control( new IGthemes_Heading( $wp_customize, 'shop-buttons', array(
-        'label' => esc_html__('Buttons', 'basic-shop'),
-        'description' => esc_html__('', 'basic-shop'),
-        'section' => 'shop-settings',
-        'settings' => 'shop-buttons',
-        'priority'   => 6
-    ) ) );

@@ -36,10 +36,6 @@ function igthemes_sanitize_textarea( $input ) {
     $output = wp_kses (force_balance_tags($input, $allowedposttags ));
     return $output;
 }
-// CSS sanitization callback.
-function igthemes_sanitize_css( $input  ) {
-	return wp_strip_all_tags( $input  );
-}
 // Sanitization choices
 function igthemes_sanitize_choices( $input, $setting ) {
 	// Ensure input is a slug.

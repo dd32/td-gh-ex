@@ -50,14 +50,15 @@ class IGthemes_More_Control extends WP_Customize_Control {
             <p>
                 <?php esc_html_e( 'Basic Shop Premium expands the already powerful free version of this theme and gives access to our priority support service.', 'basic-shop' ); ?>
             <ul>
-                <li><?php esc_html_e( 'All options enabled', 'basic-shop' ); ?></li>
+                <li><?php esc_html_e( 'More advanced options', 'basic-shop' ); ?></li>
+                <li><?php esc_html_e( 'New shop options', 'basic-shop' ); ?></li>
                 <li><?php esc_html_e( 'Custom widgets', 'basic-shop' ); ?></li>
                 <li><?php esc_html_e( 'Custom page and post settings', 'basic-shop' ); ?></li>
                 <li><?php esc_html_e( 'Premium support', 'basic-shop' ); ?></li>
                 <li><?php esc_html_e( 'Money back guarantee', 'basic-shop' ); ?></li>
             </ul>
-            <a href="<?php echo esc_url( 'http://www.iograficathemes.com/downloads/basic-shop-premium' ); ?>" target="_blank" class="button-upgrade">
-                <?php esc_html_e('upgrade to premium', 'basic-shop'); ?>
+            <a href="<?php echo esc_url( 'http://www.iograficathemes.com/downloads/basic-shop' ); ?>" target="_blank" class="button-upgrade">
+                <?php esc_html_e('view premium version', 'basic-shop'); ?>
             </a>
             </p>
             <span class="customize-control-title"><?php esc_html_e( 'Enjoying the theme?', 'basic-shop' ); ?></span>
@@ -81,9 +82,7 @@ class IGthemes_Only_Premium extends WP_Customize_Control {
             <?php endif; ?>
             <span class="customize-control-description">
                 <?php echo esc_html( $this->description ); ?>
-                <a href="<?php echo esc_url('http://www.iograficathemes.com/downloads/basic-shop-premium/'); ?>">
                     <?php esc_html_e( ' - only premium', 'basic-shop' ); ?>
-                </a>
             </span>
         <?php
     }

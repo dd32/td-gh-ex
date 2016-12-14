@@ -4,7 +4,7 @@ Contributors: iografica
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, footer-widgets, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
 Requires at least: 4.0
 Tested up to: 4.4.2
-Stable tag: 1.02
+Stable tag: 1.03
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,6 +28,7 @@ Basic Shop includes support for Infinite Scroll in Jetpack.
 
 ## Credits
 
+* Basic Shop Theme, copyright 2016 Iografica Themes.
 * This theme, like WordPress, is licensed under the GPL 2.0.
 * This theme was built using _s.(http://underscores.me) that is licensed under GPL license.
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2015 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
@@ -49,3 +50,6 @@ All Javascript is located in /js/ with license headers where appropriate.
 ** 1.02 **
 * Updated framework
 * Rebuilt theme with new options.
+
+** 1.03 **
+* Fixed some issues.
