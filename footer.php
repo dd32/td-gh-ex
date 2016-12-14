@@ -15,9 +15,9 @@
 			<?php
 			/* translators: 1. Site name 2. Current Year 3. WordPress Link 4. FancyThemes Link */
 			echo apply_filters( 'beka_footer_credit', sprintf(
-				__( '&copy; %1$s %2$d. Powered by %3$s &amp; %4$s', 'beka' ),
+				__( '&copy; %1$s %2$s. Powered by %3$s &amp; %4$s', 'beka' ),
 				get_bloginfo( 'name' ),
-				date( 'Y' ),
+				date_i18n( esc_html__( 'Y', 'beka' ) ),
 				sprintf(
 					'<a href="%1$s" title="%2$s">%3$s</a>',
 					'https://wordpress.org/',
