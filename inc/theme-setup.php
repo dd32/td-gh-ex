@@ -57,8 +57,9 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			                    'primary' => esc_html__( 'Primary', 'newsmag' ),
-			                    'social'  => esc_html__( 'Social', 'newsmag' ),
+			                    'primary'   => esc_html__( 'Primary', 'newsmag' ),
+			                    'social'    => esc_html__( 'Social', 'newsmag' ),
+			                    'copyright' => esc_html__( 'Copyright', 'newsmag' )
 		                    ) );
 
 		/*
@@ -96,8 +97,8 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 		 * Add support for the custom logo functionality
 		 */
 		add_theme_support( 'custom-logo', array(
-			'height'     => 45,
-			'width'      => 150,
+			'height'     => 90,
+			'width'      => 300,
 			'flex-width' => true,
 		) );
 
@@ -115,7 +116,10 @@ if ( ! function_exists( 'newsmag_setup' ) ) :
 
 			$newsmag_recommended_plugins = array(
 				'kiwi-social-share'           => array( 'recommended' => false ),
-				'force-regenerate-thumbnails' => array( 'recommended' => true )
+				'force-regenerate-thumbnails' => array( 'recommended' => true ),
+				'wp-product-review'           => array( 'recommended' => false ),
+				'pirate-forms'                => array( 'recommended' => false ),
+				'visualizer'                  => array( 'recommended' => false )
 			);
 			/*
 			 * id - unique id; required

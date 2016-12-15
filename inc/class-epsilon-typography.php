@@ -135,17 +135,19 @@ if ( ! class_exists( 'Epsilon_Typography' ) ) {
 				$args = $args['font-family'];
 			}
 
-			if ( $args === 'Select font' ) {
+			$defaults = array( 'Select font', 'Theme default', 'default_font', 'Lato' );
+			if ( in_array( $args, $defaults ) ) {
 				return false;
 			}
 
 			$font = $this->google_fonts( $args );
 
-			if ( $font->family === 'Select font' ) {
+			if ( in_array( $args, $defaults ) ) {
 				$this->font_imports = false;
 			}
 
 			$this->font_imports[] = $font->import;
+
 			return true;
 		}
 
@@ -156,7 +158,7 @@ if ( ! class_exists( 'Epsilon_Typography' ) ) {
 		 */
 		public function generate_css( $options ) {
 			$css      = '';
-			$defaults = array( 'Select font', 'initial' );
+			$defaults = array( 'Select font', 'Theme default', 'initial', 'default_font' );
 
 			$css .= $options['selectors'] . '{' . "\n";
 			foreach ( $options['json'] as $property => $value ) {
@@ -190,7 +192,6 @@ if ( ! class_exists( 'Epsilon_Typography' ) ) {
 
 			if ( $css !== '' ) {
 				$this->font_imports = array_unique( $this->font_imports );
-
 				foreach ( $this->font_imports as $font ) {
 					if ( $font !== NULL ) {
 						$fonts .= '@import url("https://fonts.googleapis.com/css?family=' . $font . '");' . "\n";
@@ -245,5 +246,35 @@ if ( ! class_exists( 'Epsilon_Typography' ) ) {
 		 */
 		echo $typography->generate_css( $args );
 		wp_die();
+	}
+
+	add_action( 'wp_ajax_epsilon_retrieve_font_weights', 'epsilon_retrieve_font_weights' );
+	add_action( 'wp_ajax_nopriv_epsilon_retrieve_font_weights', 'epsilon_retrieve_font_weights' );
+	function epsilon_retrieve_font_weights() {
+		if ( empty( $_POST ) || empty( $_POST['args'] ) || $_POST['action'] !== 'epsilon_retrieve_font_weights' ) {
+			wp_die();
+		}
+
+		global $wp_filesystem;
+		if ( empty( $wp_filesystem ) ) {
+			require_once( ABSPATH . '/wp-admin/includes/file.php' );
+			WP_Filesystem();
+		}
+
+		$path   = get_template_directory() . '/inc/customizer/epsilon-framework/assets/data/gfonts.json';
+		$gfonts = $wp_filesystem->get_contents( $path );
+		$gfonts = json_decode( $gfonts );
+		$return = array();
+
+		$family   = $gfonts->{$_POST['args']};
+		$return[] = array( 'text' => __( 'Theme default', 'newsmag' ), 'value' => 'initial' );
+
+		foreach ( $family->variants as $weight ) {
+			$return[] = array( 'text' => $weight, 'value' => $weight );
+		}
+
+		echo json_encode( $return );
+		wp_die();
+
 	}
 }

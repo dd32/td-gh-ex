@@ -78,6 +78,7 @@
     box-shadow: inset 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
     width: 42px;
     height: 22px;
+    cursor: pointer;
 }
 
 .widget-content .ui-slider {
@@ -382,6 +383,10 @@ ul.macho-upsell-requirements {
     position: absolute;
     bottom: 9px;
     left: 25px;
+}
+
+.mte-number-field .unit.go-right {
+    left: 35px;
 }
 
 textarea.mte-typography-input {

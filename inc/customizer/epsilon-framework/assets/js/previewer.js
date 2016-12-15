@@ -63,17 +63,13 @@
 
 		wp.customize.selectiveRefresh.bind('widget-updated', function (placement) {
 			switch ( placement.widgetIdParts.idBase ) {
-				case 'newsmag_widget_posts_carousel':
-					Newsmag.initOwlCarousel($);
-					break;
 				case 'newsmag_slider_widget':
-					Newsmag.initMainSlider($);
-					break;
-
-				default:
-					return false;
+					MachoThemes.initMainSlider($);
 					break;
 			}
+			MachoThemes.initBlazyLoad($);
+			MachoThemes.initStyleSelects($);
 		});
 	});
+
 })(jQuery);

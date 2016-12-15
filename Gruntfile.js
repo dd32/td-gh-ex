@@ -1,213 +1,250 @@
 'use strict';
-module.exports = function(grunt){
+module.exports = function (grunt) {
 
-    // load all tasks
-    require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
+	// load all tasks
+	require('load-grunt-tasks')(grunt, { scope: 'devDependencies' });
 
-    grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
-        makepot: {
-            target: {
-                options: {
-                    domainPath: '/languages/',    // Where to save the POT file.
-                    potFilename: '<%= pkg.name %>.pot',   // Name of the POT file.
-                    potHeaders: {
-                        poedit: true,                 // Includes common Poedit headers.
-                        'x-poedit-keywordslist': true // Include a list of all possible gettext functions.
-                    },                                // Headers to add to the generated POT file.
-                    processPot: function( pot, options ) {
-                        pot.headers['report-msgid-bugs-to'] = 'https://www.machothemes.com/';
-                        pot.headers['language-team'] = 'Macho Themes <support@machothemes.com>';
-                        pot.headers['last-translator'] = 'Macho Themes <support@machothemes.com>';
-                        pot.headers['language-team'] = 'Macho Themes <support@machothemes.com>';
-                        return pot;
-                    },
-                    updateTimestamp: true,             // Whether the POT-Creation-Date should be updated without other changes.
-                    type: 'wp-theme',  // Type of project (wp-plugin or wp-theme).
+	grunt.initConfig({
+		pkg          : grunt.file.readJSON('package.json'),
+		makepot      : {
+			target: {
+				options: {
+					domainPath     : '/languages/',
+					potFilename    : '<%= pkg.name %>.pot',
+					potHeaders     : {
+						poedit                 : true,
+						'x-poedit-keywordslist': true
+					},
+					processPot     : function (pot, options) {
+						pot.headers[ 'report-msgid-bugs-to' ] = 'https://www.machothemes.com/';
+						pot.headers[ 'language-team' ] = 'Macho Themes <office@machothemes.com>';
+						pot.headers[ 'last-translator' ] = 'Macho Themes <office@machothemes.com>';
+						pot.headers[ 'language-team' ] = 'Macho Themes <office@machothemes.com>';
+						return pot;
+					},
+					updateTimestamp: true,
+					type           : 'wp-theme'
 
-                }
-            }
-        },
-        clean: {
-            init: {
-                src: ['build/']
-            },
-            build: {
-                src: [
-                    'build/*',
-                    '!build/<%= pkg.name %>.zip'
-                ]
-            },
-            cssmin: {
-                src: ['layout/css/*.min.css']
-            },
-            jsmin: {
-                src: [
-                    'layout/js/*.min.js',
-                    'layout/js/*.min.js.map',
-                    'layout/js/**/*.min.js',
-                    'layout/js/**/*.min.js.map'
-                ]
-            }
-        },
-        copy: {
-            readme: {
-                src: 'readme.md',
-                dest: 'build/readme.txt'
-            },
-            build: {
-                expand: true,
-                src: ['**', '!node_modules/**', '!build/**', '!readme.md', '!Gruntfile.js', '!package.json', '!nbproject/**' ],
-                dest: 'build/'
-            }
-        },
+				}
+			}
+		},
+		addtextdomain: {
+			target: {
+				options: {
+					updateDomains: true,
+					textdomain   : '<%= pkg.name %>'
+				},
+				files  : {
+					src: [
+						'*.php',
+						'!node_modules/**'
+					]
+				}
+			}
+		},
 
-        compress: {
-            build: {
-                options: {
-                    pretty: true,                           // Pretty print file sizes when logging.
-                    archive: 'build/<%= pkg.name %>.zip'
-                },
-                expand: true,
-                cwd: 'build/',
-                src: ['**/*'],
-                dest: '<%= pkg.name %>/'
-            }
-        },
+		clean: {
+			init  : {
+				src: [ 'build/' ]
+			},
+			build : {
+				src: [
+					'build/*',
+					'!build/<%= pkg.name %>.zip'
+				]
+			},
+			cssmin: {
+				src: [ 'layout/css/*.min.css' ]
+			},
+			jsmin : {
+				src: [
+					'layout/js/*.min.js',
+					'layout/js/*.min.js.map',
+					'layout/js/**/*.min.js',
+					'layout/js/**/*.min.js.map'
+				]
+			}
+		},
+		copy : {
+			readme: {
+				src : 'readme.md',
+				dest: 'build/readme.txt'
+			},
+			build : {
+				expand: true,
+				src   : [ '**', '!node_modules/**', '!build/**', '!readme.md', '!Gruntfile.js', '!package.json', '!nbproject/**' ],
+				dest  : 'build/'
+			}
+		},
 
-        uglify: {
-            options: {
-                sourceMap: true,
-                compress: true,
-            },
-            dynamic_mappings: {
-                files: [
-                    {
-                        expand: true,     // Enable dynamic expansion.
-                        cwd: 'layout/js/',      // Src matches are relative to this path.
-                        src: ['**/*.js'], // Actual pattern(s) to match.
-                        dest: 'layout/js/',   // Destination path prefix.
-                        ext: '.min.js',   // Dest filepaths will have this extension.
-                        extDot: 'first'   // Extensions in filenames begin after the first dot
-                    },
-                ],
-            },
-        },
+		compress: {
+			build: {
+				options: {
+					pretty : true,
+					archive: 'build/<%= pkg.name %>.zip'
+				},
+				expand : true,
+				cwd    : 'build/',
+				src    : [ '**/*' ],
+				dest   : '<%= pkg.name %>/'
+			}
+		},
 
-        checktextdomain: {
-            standard: {
-                options:{
-                    text_domain: [ 'newsmag'], //Specify allowed domain(s)
-                    create_report_file: "true",
-                    keywords: [ //List keyword specifications
-                        '__:1,2d',
-                        '_e:1,2d',
-                        '_x:1,2c,3d',
-                        'esc_html__:1,2d',
-                        'esc_html_e:1,2d',
-                        'esc_html_x:1,2c,3d',
-                        'esc_attr__:1,2d',
-                        'esc_attr_e:1,2d',
-                        'esc_attr_x:1,2c,3d',
-                        '_ex:1,2c,3d',
-                        '_n:1,2,4d',
-                        '_nx:1,2,4c,5d',
-                        '_n_noop:1,2,3d',
-                        '_nx_noop:1,2,3c,4d'
-                    ]
-                },
-                files: [{
-                    src: [
-                        '**/*.php',
-                        '!**/node_modules/**',
-                        '!**/framework/updater/**',
-                        '!**/framework/importer/**',
-                        '!**/framework/plugins/**',
-                    ], //all php
-                    expand: true,
-                }],
-            }
-        },
+		uglify: {
+			macho: {
+				options: {
+					sourceMap    : false,
+					sourceMapName: 'sourceMap.map'
+				},
+				src    : [ 'assets/vendors/machothemes/**/*.js', '!assets/vendors/machothemes/machothemes.min.js' ],
+				dest   : 'assets/vendors/machothemes/machothemes.min.js'
+			}
+		},
 
-        imagemin: {
-            jpg: {
-                options: {
-                    progressive: true
-                },
-            },
-            png: {
-                options: {
-                    optimizationLevel: 7
-                },
-            },
-            dynamic: {
-                files: [{
-                    expand: true,
-                    cwd: 'layout/images/',
-                    src: ['**/*.{png,jpg,gif}'],
-                    dest: 'layout/images/'
-                }]
-            }
-        },
-        
-        cssmin: {
-            target: {
-                files: [{
-                    expand: true,
-                    cwd: 'layout/css',
-                    src: ['*.css', '!*.min.css'],
-                    dest: 'layout/css',
-                    ext: '.min.css'
-                }]
-            }
-        }
+		checktextdomain: {
+			standard: {
+				options: {
+					text_domain       : [ 'newsmag' ], //Specify allowed domain(s)
+					create_report_file: "true",
+					keywords          : [ //List keyword specifications
+						'__:1,2d',
+						'_e:1,2d',
+						'_x:1,2c,3d',
+						'esc_html__:1,2d',
+						'esc_html_e:1,2d',
+						'esc_html_x:1,2c,3d',
+						'esc_attr__:1,2d',
+						'esc_attr_e:1,2d',
+						'esc_attr_x:1,2c,3d',
+						'_ex:1,2c,3d',
+						'_n:1,2,4d',
+						'_nx:1,2,4c,5d',
+						'_n_noop:1,2,3d',
+						'_nx_noop:1,2,3c,4d'
+					]
+				},
+				files  : [ {
+					src   : [
+						'**/*.php',
+						'!**/node_modules/**',
+						'!**/framework/**'
+					], //all php
+					expand: true
+				} ]
+			}
+		},
+
+		imagemin: {
+			jpg    : {
+				options: {
+					progressive: true
+				}
+			},
+			png    : {
+				options: {
+					optimizationLevel: 7
+				}
+			},
+			dynamic: {
+				files: [ {
+					expand: true,
+					cwd   : 'assets/images/',
+					src   : [ '**/*.{png,jpg,gif}' ],
+					dest  : 'assets/images/'
+				} ]
+			}
+		},
+
+		cssmin: {
+			target: {
+				files: [ {
+					expand: true,
+					cwd   : 'assets/css',
+					src   : [ '*.css', '!*.min.css' ],
+					dest  : 'assets/css',
+					ext   : '.min.css'
+				} ]
+			}
+		}
 
 
-    });
+	});
 
-    grunt.registerTask('default', []);
+	grunt.config('watch', {
+		js: {
+			files  : 'assets/vendors/machothemes/**/*.js',
+			tasks  : [ 'uglify' ],
+			options: {
+				spawn: false
+			}
+		}
+	});
+	grunt.event.on('watch', function (action, filepath) {
+		// Determine task based on filepath
+		var get_ext = function (path) {
+			var ret = '';
+			var i = path.lastIndexOf('.');
+			if ( -1 !== i && i <= path.length ) {
+				ret = path.substr(i + 1);
+			}
+			return ret;
+		};
+		switch ( get_ext(filepath) ) {
+				// PHP
+			case 'php' :
+				grunt.config('paths.php.files', [ filepath ]);
+				break;
+				// JavaScript
+			case 'js' :
+				grunt.config('paths.js.files', [ filepath ]);
+				break;
+		}
+	});
 
-    // Build .pot file
-    grunt.registerTask( 'buildpot', [
-        'makepot'
-    ]);
+	grunt.registerTask('default', []);
 
-    // Check Missing Text Domain Strings
-    grunt.registerTask( 'textdomain', [
-        'checktextdomain'
-    ]);
+	// Build .pot file
+	grunt.registerTask('buildpot', [
+		'makepot'
+	]);
 
-    // Minify Images
-    grunt.registerTask( 'minimg', [
-        'imagemin:dynamic'
-    ]);
+	// Check Missing Text Domain Strings
+	grunt.registerTask('textdomain', [
+		'checktextdomain'
+	]);
 
-    // Minify CSS
-    grunt.registerTask( 'mincss', [
-        'clean:cssmin',
-        'cssmin'
-    ]);
+	// Minify Images
+	grunt.registerTask('minimg', [
+		'imagemin:dynamic'
+	]);
 
-    // Minify JS
-    grunt.registerTask( 'minjs', [
-        'clean:jsmin',
-        'uglify'
-    ]);
+	// Minify CSS
+	grunt.registerTask('mincss', [
+		'clean:cssmin',
+		'cssmin'
+	]);
 
-    // Task to minify all static resources
-    grunt.registerTask( 'allmin', [
-        'minimg',
-        'mincss',
-        'minjs'
-    ]);
+	// Minify JS
+	grunt.registerTask('minjs', [
+		'clean:jsmin',
+		'uglify'
+	]);
 
-    // Build task
-    grunt.registerTask( 'build-archive', [
-        // 'makepot',
-        'allmin',
-        'clean:init',
-        'copy',
-        'compress:build',
-        'clean:build'
-    ]);
+	// Task to minify all static resources
+	grunt.registerTask('allmin', [
+		'minimg',
+		'mincss',
+		'minjs'
+	]);
+
+	// Build task
+	grunt.registerTask('build-archive', [
+		'allmin',
+		'clean:init',
+		'copy',
+		'compress:build',
+		'clean:build'
+	]);
+
+	grunt.registerTask('watch_all', [ 'watch:js' ]);
 };

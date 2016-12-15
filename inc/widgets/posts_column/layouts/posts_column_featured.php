@@ -10,18 +10,21 @@ if ( $posts->have_posts() ):
 				if ( has_post_thumbnail() ) {
 					$image = get_the_post_thumbnail( get_the_ID(), 'newsmag-post-horizontal' );
 				}
-				$new_image    = apply_filters( 'newsmag_widget_image', $image );
-				$allowed_tags = array( 'img'      => array(
-					'data-original' => true,
-					'srcset'        => true,
-					'sizes'         => true,
-					'src'           => true,
-					'class'         => true,
-					'alt'           => true,
-					'width'         => true,
-					'height'        => true
-				),
-				                       'noscript' => array()
+				$image_obj    = array( 'id' => get_the_ID(), 'image' => $image );
+				$new_image    = apply_filters( 'newsmag_widget_image', $image_obj );
+				$allowed_tags = array(
+					'img'      => array(
+						'data-srcset' => true,
+						'data-src'    => true,
+						'srcset'      => true,
+						'sizes'       => true,
+						'src'         => true,
+						'class'       => true,
+						'alt'         => true,
+						'width'       => true,
+						'height'      => true
+					),
+					'noscript' => array()
 				);
 				?>
 				<div class="newsmag-post-box-a posts-column-layout">
@@ -55,26 +58,29 @@ if ( $posts->have_posts() ):
 							</a>
 						<?php } ?>
 					</div>
-					<p><?php echo wp_trim_words( get_the_content(), 20, ' <a href="' . esc_url( get_the_permalink() ) . '">…</a>' ) ?></p>
+					<p><?php echo wp_kses_post( wp_trim_words( strip_shortcodes( get_the_content() ), 20, ' <a href="' . esc_url( get_the_permalink() ) . '">…</a>' ) ) ?></p>
 				</div>
 				<?php
 			} else {
-				$image = '<img class="attachment-newsmag-recent-post-big size-newsmag-recent-post-big wp-post-image" alt="" src="' . esc_url_raw( get_template_directory_uri() . '/assets/images/picture_placeholder_list.jpg' ) . '" />';
+				$image = '<img class="attachment-newsmag-recent-post-big size-newsmag-recent-post-big wp-post-image" alt="" src="' . get_template_directory_uri() . '/assets/images/picture_placeholder_list.jpg" />';
 				if ( has_post_thumbnail() ) {
 					$image = get_the_post_thumbnail( get_the_ID(), 'newsmag-recent-post-list-image' );
 				}
-				$new_image    = apply_filters( 'newsmag_widget_image', $image );
-				$allowed_tags = array( 'img'      => array(
-					'data-original' => true,
-					'srcset'        => true,
-					'sizes'         => true,
-					'src'           => true,
-					'class'         => true,
-					'alt'           => true,
-					'width'         => true,
-					'height'        => true
-				),
-				                       'noscript' => array()
+				$image_obj    = array( 'id' => get_the_ID(), 'image' => $image );
+				$new_image    = apply_filters( 'newsmag_widget_image', $image_obj );
+				$allowed_tags = array(
+					'img'      => array(
+						'data-src'    => true,
+						'data-srcset' => true,
+						'srcset'      => true,
+						'sizes'       => true,
+						'src'         => true,
+						'class'       => true,
+						'alt'         => true,
+						'width'       => true,
+						'height'      => true
+					),
+					'noscript' => array()
 				);
 
 				?>
