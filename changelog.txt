@@ -5,10 +5,11 @@ V1.0.1 - 2014-11-18 Select Menu Bugfix
 V1.0.2 - 2014-11-18 Insert Spacer in Author Info
 V1.0.3 - 2014-11-27 Post Pagination Translation String Fix
 V1.0.4 - 2015-01-05 Change Next / Previous Post Buttons, Top Menu Removed, Update Translation
-					
+				
 					By Demand of the WordPress Theme Review Team: 
 					- Top widget made none repeatable in post lists - advertising banner can not be repeated anymore - to change back, move <?php get_sidebar ( 'top' ); ?> in index.php, category.php, tag.php, search.php author.php archive.php two lines down into #contentcontainer div.
 					- Fly Out Menu layout issues can not be recreated (Theme Unit Tests being used, see screenshot), please communicate.
+					
 V1.0.5 - 2015-01-05 Clean up functions.php
 V1.0.6 - 2015-01-07 Remove unused meta tag, New Screenshot, Icon Menu Elements will only be shown if icon-* css classes have been set up, Comment Container Fix
 V1.0.7 - 2015-01-13 Load it into the array of an enqueue to ensure dependency, Change javascripts for long versions.
@@ -19,3 +20,4 @@ V1.1.0 - 2015-02-19 changed text domain to minimum-minimal, defined text domain 
 V1.1.1 - 2015-02-19 Created Template part dropdowns and included it in archives, internationalized search.php line 43/44 placeholder and title, rwp function renamed into minimumminimaloptions
 V1.2.0 - 2016-03-16 'section' => 'title_tagline' enabled and Logo settings moved there, title-tag support added, exchanged screenshot for 1200x9000px version
 V1.2.1 - 2016-03-16 changelog version corrected
+V1.2.2 - 2016-12-15 Custom Logo support added; minimum_minimal_powered_by function added, added the following tags to style.css: one-column, custom-colors, custom-logo, featured-images, footer-widgets, blog

@@ -9,6 +9,9 @@ function minimum_minimal_setup() {
     // Adds RSS feed links to <head> for posts and comments.
     add_theme_support('automatic-feed-links');
     
+	// Custom Logo
+	add_theme_support( 'custom-logo');
+    
     // Post formats.
     add_theme_support('post-formats', array(
         'aside',
@@ -97,8 +100,12 @@ function minimum_minimal_scripts_styles() {
 add_action('wp_enqueue_scripts', 'minimum_minimal_scripts_styles');
 
 
+// function to show the footer info, copyright information
 
-
+function minimum_minimal_powered_by() {
+	global $minimum_minimal_powered_by;
+	  printf( esc_html__( 'Design by %1$s Powered by %2$s', 'minimum-minimal' ) , '<a href="https://richwp.com.com/" target="_blank">RichWP</a>', '<a href="http://wordpress.org/" target="_blank">WordPress</a>');
+}
 
 // Prevent Video Resizing
 if (!isset($content_width))
@@ -120,7 +127,6 @@ add_action('admin_menu', 'minimum_minimal_add_admin');
 if (!function_exists('minimumminimaloptions')):
     function minimumminimaloptions($name) {
         $default_theme_options = array(
-            'logo' => '',
             'color1' => '#5359ad',
             'color2' => '#3f448c',
             'copyright' => '&copy; ' . date('Y') . ' <a href="' . home_url() . '">' . get_bloginfo('name') . '</a>'
@@ -150,22 +156,7 @@ function minimum_minimal_customize_register($wp_customize) {
         'settings' => 'blogdescription',
         'priority' => 10
     ));
-    
-    $wp_customize->add_setting('minimumminimaloptions[logo]', array(
-        'default' => minimumminimaloptions('logo'),
-        'sanitize_callback' => 'esc_url_raw',
-        'type' => 'option',
-        'capability' => 'edit_theme_options'
-    ));
-    
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'logo', array(
-        'label' => __('Logo Image', 'minimum-minimal'),
-        'section' => 'title_tagline',
-        'settings' => 'minimumminimaloptions[logo]',
-        'priority' => 20
-    )));
-    
-    
+        
     $wp_customize->add_section('minimumminimaloptions_colors', array(
         'title' => __('Colors', 'minimum-minimal'),
         'priority' => 100

@@ -18,9 +18,9 @@
 		</ul>
 		
 		<div id="logo" class="headerelements <?php $logo = minimumminimaloptions('logo'); if (!empty($logo)) { ?>imagelogo<?php } ?>">
-				<?php if (!empty($logo)) { ?>
-				<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) );?> - <?php bloginfo( 'description' ); ?>"><img src="<?php echo esc_url(minimumminimaloptions('logo')); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?> - <?php bloginfo( 'description' ); ?>"/></a>
-				<?php } else { ?> 
+				<?php if (function_exists( 'the_custom_logo' ) && has_custom_logo()) { 
+					the_custom_logo();
+					} else { ?> 
 				<a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) );?> - <?php bloginfo( 'description' ); ?>">
 				 <h1 id="sitetitle" class="headerelements"><?php echo esc_attr( get_bloginfo( 'name', 'display' ) );?></h1> 
 				</a>

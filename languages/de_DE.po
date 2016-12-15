@@ -2,14 +2,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: RichWP Favorite\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Wed Jul 09 2014 10:50:10 GMT+0200 (CEST)\n"
-"PO-Revision-Date: Thu Feb 19 2015 15:48:28 GMT+0100 (CET)\n"
+"POT-Creation-Date: 2016-12-15 19:46+0000\n"
+"PO-Revision-Date: 2016-12-15 19:46+0000\n"
 "Last-Translator: felix <felix@richwp.com>\n"
-"Language-Team: \n"
-"Language: German\n"
+"Language-Team: German\n"
+"Language: de-DE\n"
 "Plural-Forms: nplurals=2; plural=n != 1\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Basepath: .\n"
@@ -22,159 +22,144 @@ msgstr ""
 "X-Generator: Loco - https://localise.biz/\n"
 "X-Loco-Target-Locale: de_DE"
 
+#. Text in function
+#: minimum-minimal/functions.php:294
+msgid "Design by %1$s Powered by %2$s"
+msgstr "Design by %1$s Powered by %2$s"
+
 #. Text in echo
-#: minimumminimal/content-status.php:6
-#: minimumminimal/loop-aside.php:4
-#: minimumminimal/loop-link.php:4
-#: minimumminimal/loop-status.php:4
+#: minimum-minimal/loop-aside.php:4 minimum-minimal/content-status.php:6
+#: minimum-minimal/loop-link.php:4 minimum-minimal/loop-status.php:4
 msgid " ago"
 msgstr " "
 
 #. Text in echo
-#: minimumminimal/404.php:14
+#: minimum-minimal/404.php:14
 msgid ""
 "\"The secret of happiness, you see, is not found in seeking more, but in "
 "developing the capacity to enjoy less.\""
 msgstr "\"Weniger ist manchmal mehr!\""
 
 #. Text in function
-#: minimumminimal/loop-quote.php:5
-#: minimumminimal/loop-aside.php:8
-#: minimumminimal/loop-link.php:8
-#: minimumminimal/loop-status.php:8
+#: minimum-minimal/loop-aside.php:8 minimum-minimal/loop-link.php:8
+#: minimum-minimal/loop-status.php:8 minimum-minimal/loop-quote.php:5
 msgid "% Comments"
 msgstr "% Kommentare"
 
 #. Text in function
-#: minimumminimal/page-subpages.php:59
+#: minimum-minimal/page-subpages.php:59
 msgid "&laquo; Older Posts"
 msgstr "&laquo; Ältere Kommentare"
 
 #. Text in function
-#: minimumminimal/content.php:43
+#: minimum-minimal/content.php:43
 msgid "&laquo; Previous"
 msgstr "&laquo; Vorheriger Artikel"
 
 #. Text in function
-#: minimumminimal/functions.php:329
+#: minimum-minimal/functions.php:294
 msgid "2. Lead Color"
 msgstr "2. Hauptfarbe"
 
 #. Text in echo
-#: minimumminimal/404.php:8
+#: minimum-minimal/404.php:8
 msgid "404 Error"
 msgstr "404 Error"
 
 #. Text in echo
-#: minimumminimal/content.php:23
-#: minimumminimal/content-chat.php:23
-#: minimumminimal/content-audio.php:23
-#: minimumminimal/content-video.php:23
-#: minimumminimal/content-gallery.php:23
-#: minimumminimal/content-image.php:23
+#: minimum-minimal/content-image.php:23 minimum-minimal/content-gallery.php:23
+#: minimum-minimal/content-chat.php:23 minimum-minimal/content-video.php:23
+#: minimum-minimal/content-audio.php:23 minimum-minimal/content.php:23
 msgid "About"
 msgstr "Über "
 
 #. Text in function
-#: minimumminimal/dropdowns.php:6
+#: minimum-minimal/dropdowns.php:6
 msgid "Categories"
 msgstr "Kategorien"
 
 #. Text in function
-#: minimumminimal/functions.php:329
+#: minimum-minimal/functions.php:294
 msgid "Colors"
 msgstr "Farben"
 
 #. Text in echo
-#: minimumminimal/functions.php:371
+#: minimum-minimal/functions.php:336
 msgid "Comment navigation"
 msgstr "Kommentar navigation"
 
 #. Text in echo
-#: minimumminimal/comments.php:38
+#: minimum-minimal/comments.php:38
 msgid "Comments are closed."
 msgstr "Kommentarfunktion ist ausgeschaltet."
 
 #. Text in function
-#: minimumminimal/functions.php:329
+#: minimum-minimal/functions.php:294
 msgid "Copyright Notice in Footer"
 msgstr "Copyright Vermerk in der Fußzeile"
 
 #. Text in function
-#: minimumminimal/functions.php:329
+#: minimum-minimal/functions.php:294
 msgid "Fly Out Menu"
 msgstr "Seitenmenü"
 
 #. Text in function
-#: minimumminimal/functions.php:329
+#: minimum-minimal/functions.php:294
 msgid "Footer Navigation"
 msgstr "Fußzeilen Navigation"
 
 #. Text in function
-#: minimumminimal/functions.php:329
+#: minimum-minimal/functions.php:294
 msgid "Icon Menu"
 msgstr "Icon Menü"
 
 #. Text in function
-#: minimumminimal/functions.php:329
+#: minimum-minimal/functions.php:294
 msgid "Lead Color"
 msgstr "Hauptfarbe"
 
 #. Text in function
-#: minimumminimal/loop-quote.php:5
-#: minimumminimal/loop-aside.php:8
-#: minimumminimal/loop-link.php:8
-#: minimumminimal/loop-status.php:8
+#: minimum-minimal/loop-aside.php:8 minimum-minimal/loop-link.php:8
+#: minimum-minimal/loop-status.php:8 minimum-minimal/loop-quote.php:5
 msgid "Leave a comment"
 msgstr "Hinterlasse einen Kommentar"
 
 #. Text in function
-#: minimumminimal/tag.php:38
-#: minimumminimal/category.php:37
-#: minimumminimal/search.php:46
-#: minimumminimal/index.php:41
-#: minimumminimal/author.php:36
-#: minimumminimal/archive.php:37
+#: minimum-minimal/index.php:41 minimum-minimal/tag.php:38
+#: minimum-minimal/author.php:36 minimum-minimal/archive.php:37
+#: minimum-minimal/search.php:46 minimum-minimal/category.php:37
 msgid "Load More Posts"
 msgstr "Mehr Artikel Laden"
 
 #. Text in function
-#: minimumminimal/functions.php:329
-msgid "Logo Image"
-msgstr "Logo Bilddatein"
-
-#. Text in function
-#: minimumminimal/functions.php:329
+#: minimum-minimal/functions.php:294
 msgid "Minimum Minimal Options"
 msgstr "Minimum Minimal Optionen"
 
 #. Text in function
-#: minimumminimal/functions.php:329
+#: minimum-minimal/functions.php:294
 msgid "Misc."
 msgstr "Sonstiges"
 
 #. Text in function
-#: minimumminimal/functions.php:373
+#: minimum-minimal/functions.php:338
 msgid "Newer Comments"
 msgstr "Neue Kommentare"
 
 #. Text in function
-#: minimumminimal/page-subpages.php:62
+#: minimum-minimal/page-subpages.php:62
 msgid "Newer Posts &raquo;"
 msgstr "Neuere Artikel &raquo;"
 
 #. Text in function
-#: minimumminimal/content.php:42
+#: minimum-minimal/content.php:42
 msgid "Next &raquo;"
 msgstr "Nächster Artikel &raquo;"
 
 #. Text in echo
-#: minimumminimal/tag.php:22
-#: minimumminimal/category.php:21
-#: minimumminimal/search.php:22
-#: minimumminimal/index.php:24
-#: minimumminimal/author.php:21
-#: minimumminimal/archive.php:21
+#: minimum-minimal/index.php:24 minimum-minimal/tag.php:22
+#: minimum-minimal/author.php:21 minimum-minimal/archive.php:21
+#: minimum-minimal/search.php:22 minimum-minimal/category.php:21
 msgid ""
 "Nothing matched your search criteria. Please try searching again with some "
 "different keywords."
@@ -183,112 +168,94 @@ msgstr ""
 "nocheinmal mit einem anderen Suchbegriff."
 
 #. Text in function
-#: minimumminimal/functions.php:373
+#: minimum-minimal/functions.php:338
 msgid "Older Comments"
 msgstr "Ältere Kommentare"
 
 #. Text in function
-#: minimumminimal/loop-quote.php:5
-#: minimumminimal/loop-aside.php:8
-#: minimumminimal/loop-link.php:8
-#: minimumminimal/loop-status.php:8
+#: minimum-minimal/loop-aside.php:8 minimum-minimal/loop-link.php:8
+#: minimum-minimal/loop-status.php:8 minimum-minimal/loop-quote.php:5
 msgid "One Comment"
 msgstr "Ein Kommentar"
 
 #. Text in function
-#: minimumminimal/functions.php:329
-#, c-format
-msgid "Page %s"
-msgstr "Seite %s"
-
-#. Text in function
-#: minimumminimal/content.php:30
+#: minimum-minimal/content.php:30
 msgid "Pages:"
 msgstr "Seiten:"
 
 #. Text in function
-#: minimumminimal/page-subpages.php:31
-#: minimumminimal/loop.php:9
-#, c-format
+#: minimum-minimal/page-subpages.php:31 minimum-minimal/loop.php:9
 msgid "Permalink to %s"
 msgstr "Permalink zu %s"
 
 #. Text in function
-#: minimumminimal/functions.php:329
+#: minimum-minimal/functions.php:294
 msgid "Read More"
 msgstr "Weiterlesen"
 
 #. Text in function
-#: minimumminimal/functions.php:329
+#: minimum-minimal/functions.php:294
 msgid "Read More ..."
 msgstr "Weiterlesen ..."
 
 #. Text in echo
-#: minimumminimal/header.php:36
+#: minimum-minimal/header.php:35
 msgid "Search"
 msgstr "Suche"
 
 #. Text in echo
-#: minimumminimal/search.php:26
+#: minimum-minimal/search.php:26
 msgid "Search for ..."
 msgstr "Suche ..."
 
 #. Text in echo
-#: minimumminimal/search.php:25
-#: minimumminimal/search.php:26
+#: minimum-minimal/search.php:25 minimum-minimal/search.php:26
 msgid "Search for:"
 msgstr "Suche:"
 
 #. Text in function
-#: minimumminimal/functions.php:329
+#: minimum-minimal/functions.php:294
 msgid "Select Menu"
 msgstr "Drop Down Select Menü"
 
 #. Text in echo
-#: minimumminimal/page-subpages.php:47
+#: minimum-minimal/page-subpages.php:47
 msgid "Set up some subpages by assigning this page as the parent."
 msgstr "Füge dieser Seite ein paar Unterseiten hinzu."
 
 #. Text in function
-#: minimumminimal/functions.php:329
+#: minimum-minimal/functions.php:294
 msgid "Site Title"
 msgstr "Seitentitel"
 
 #. Text in echo
-#: minimumminimal/page-subpages.php:44
+#: minimum-minimal/page-subpages.php:44
 msgid "Sorry, no Subpages have been found!"
 msgstr "Sorry, keine Unterseiten konnten gefunden werden."
 
 #. Text in echo
-#: minimumminimal/tag.php:19
-#: minimumminimal/category.php:18
-#: minimumminimal/search.php:19
-#: minimumminimal/index.php:21
-#: minimumminimal/404.php:12
-#: minimumminimal/author.php:18
-#: minimumminimal/archive.php:18
+#: minimum-minimal/index.php:21 minimum-minimal/404.php:12
+#: minimum-minimal/tag.php:19 minimum-minimal/author.php:18
+#: minimum-minimal/archive.php:18 minimum-minimal/search.php:19
+#: minimum-minimal/category.php:18
 msgid "Sorry, nothing was found!"
 msgstr "Sorry, es ist nichts gefunden worden!"
 
 #. Text in function
-#: minimumminimal/functions.php:329
+#: minimum-minimal/functions.php:294
 msgid "Tagline"
 msgstr "Untertitel"
 
 #. Text in function
-#: minimumminimal/content.php:37
-#: minimumminimal/content-chat.php:30
-#: minimumminimal/content-link.php:8
-#: minimumminimal/content-status.php:11
-#: minimumminimal/content-audio.php:30
-#: minimumminimal/content-video.php:30
-#: minimumminimal/content-gallery.php:30
-#: minimumminimal/content-image.php:30
+#: minimum-minimal/content-link.php:8 minimum-minimal/content-image.php:30
+#: minimum-minimal/content-gallery.php:30 minimum-minimal/content-chat.php:30
+#: minimum-minimal/content-video.php:30 minimum-minimal/content-status.php:11
+#: minimum-minimal/content-audio.php:30 minimum-minimal/content.php:37
 msgid "Tags: "
 msgstr "Schlagworte: "
 
 #. Text in function
-#: minimumminimal/functions.php:329
+#: minimum-minimal/functions.php:294
 msgid ""
 "The Footer widget area is perfect for additional copyright information or "
 "listing your network or partner logos. It will be displayed on the bottom of "
@@ -298,7 +265,7 @@ msgstr ""
 "Copzrightinformationen oder zum Auflisten von Partnerwebsites, etc...\n"
 
 #. Text in function
-#: minimumminimal/functions.php:329
+#: minimum-minimal/functions.php:294
 msgid ""
 "The Top widget area is perfect for sign up forms or banner ads. It will be "
 "displayed at the Top of all Postlists and Post detail pages."
@@ -306,37 +273,23 @@ msgstr ""
 "Die Top Widgetbereich eignet sich hervorragend für Werbebanner. Sie wird auf "
 "allen Artikellistenseiten und Artikeldetailseiten angezeigt."
 
-#. Text in function
-#: minimumminimal/functions.php:329
-msgid "Title & Logo"
-msgstr "Titel / Logo"
-
 #. Text in echo
-#: minimumminimal/content.php:26
-#: minimumminimal/content-chat.php:26
-#: minimumminimal/content-audio.php:26
-#: minimumminimal/content-video.php:26
-#: minimumminimal/content-gallery.php:26
-#: minimumminimal/content-image.php:26
+#: minimum-minimal/content-image.php:26 minimum-minimal/content-gallery.php:26
+#: minimum-minimal/content-chat.php:26 minimum-minimal/content-video.php:26
+#: minimum-minimal/content-audio.php:26 minimum-minimal/content.php:26
 msgid "View all posts by"
 msgstr "Alle Artikel von"
 
 #. Text in function
-#: minimumminimal/content.php:26
-#: minimumminimal/content-chat.php:26
-#: minimumminimal/content-status.php:6
-#: minimumminimal/loop-aside.php:4
-#: minimumminimal/content-audio.php:26
-#: minimumminimal/content-video.php:26
-#: minimumminimal/content-gallery.php:26
-#: minimumminimal/loop-link.php:4
-#: minimumminimal/loop-status.php:4
-#: minimumminimal/content-image.php:26
-#, c-format
+#: minimum-minimal/loop-aside.php:4 minimum-minimal/content-image.php:26
+#: minimum-minimal/content-gallery.php:26 minimum-minimal/content-chat.php:26
+#: minimum-minimal/content-video.php:26 minimum-minimal/content-status.php:6
+#: minimum-minimal/content-audio.php:26 minimum-minimal/loop-link.php:4
+#: minimum-minimal/content.php:26 minimum-minimal/loop-status.php:4
 msgid "View all posts by %s"
 msgstr "Alle Artikel von %s"
 
 #. Text in echo
-#: minimumminimal/404.php:14
+#: minimum-minimal/404.php:14
 msgid "~ <i>Socrates</i>"
 msgstr "~ <i>Sokrates</i>"
