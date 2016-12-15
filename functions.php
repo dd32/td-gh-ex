@@ -104,7 +104,7 @@ add_action('wp_enqueue_scripts', 'minimum_minimal_scripts_styles');
 
 function minimum_minimal_powered_by() {
 	global $minimum_minimal_powered_by;
-	  printf( esc_html__( 'Design by %1$s Powered by %2$s', 'minimum-minimal' ) , '<a href="https://richwp.com.com/" target="_blank">RichWP</a>', '<a href="http://wordpress.org/" target="_blank">WordPress</a>');
+	  printf( esc_html__( 'Design by %1$s Powered by %2$s', 'minimum-minimal' ) , '<a href="https://richwp.com/" target="_blank">RichWP</a>', '<a href="http://wordpress.org/" target="_blank">WordPress</a>');
 }
 
 // Prevent Video Resizing
