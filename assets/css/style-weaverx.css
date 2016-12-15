@@ -1346,7 +1346,7 @@ ul.wvrx-menu {
 	display:		none;
 	top:			100%;
 	left:			0;
-	z-index:		999;
+	z-index:		2001;
 	text-align:		left;
 }
 
@@ -2623,7 +2623,7 @@ ol.trackbacklist {
 .wvrx-menu-container.shadow-tr,
 .wvrx-menu-container.shadow-tl {    /* make shadows on top for menus */
 	position:			relative;
-	z-index:			999;
+	z-index:			11000;
 }
 
 #nav-secondary .wvrx-menu-container.shadow-1,
@@ -2634,7 +2634,7 @@ ol.trackbacklist {
 #nav-secondary .wvrx-menu-container.shadow-lb,
 #nav-secondary .wvrx-menu-container.shadow-tr,
 #nav-secondary .wvrx-menu-container.shadow-tl {    /* make shadows on top for menus */
-	z-index:			1000;
+	z-index:			11001;
 }
 
 
@@ -2721,7 +2721,7 @@ ol.trackbacklist {
 	text-decoration:		none;
 	padding:				0 5px;
 	margin-left:			8px;
-	z-index:				10000;
+	z-index:				11000;
 }
 
 .edit-link a:before {
@@ -3111,8 +3111,12 @@ ins {
 #nav-primary .wvrx-fixedtop { z-index: 10006 !important; }
 #header-widget-area.wvrx-fixedtop { z-index: 10005 !important; }
 
+.menu-primary,
+.menu-extra {
+	z-index:		2000;
+}
 .menu-secondary {
-	z-index:		10000;
+	z-index:		2001;
 	position:		relative;
 }
 

@@ -9,7 +9,7 @@ translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1016 Bruce E Wampler
 Requires at least: 4.5
 Tested up to: 4.7
-Stable tag: 3.0.3
+Stable tag: 3.0.4
 
 == Description ==
 
@@ -356,3 +356,6 @@ with testing and feature suggestions.
 * Fix: Visual Editor was loading slowly because of Google Fonts issue
 * Fix: Visual Editor was failing to show theme font family settings correctly
 * Fix: Per Page Hide Header
+
+= Version 3.0.4 =
+* Fix: Menus z-index
