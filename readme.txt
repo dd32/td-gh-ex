@@ -1,10 +1,10 @@
 === Bunny ===
 Contributors: Carolina NYmark
-Tags: threaded-comments, custom-menu, sticky-post, translation-ready, one-column, two-columns, editor-style, featured-images, theme-options, right-sidebar,blog
+Tags: threaded-comments, custom-menu, sticky-post, translation-ready, one-column, two-columns, editor-style, featured-images, theme-options, right-sidebar, blog
 License: MIT
 License URI: http://opensource.org/licenses/MIT
 
-Copyright 2014-2016 Carolina Nymark
+Copyright 2014-2017 Carolina Nymark
 
 = Description ==
 Fluffy friendly and cute! 'Bunny' is an animated theme suitable for pet lovers and kids. -Just one click in the theme customizer turns Bunny into the Easter bunny! 
@@ -31,6 +31,16 @@ Set a small number for a high arc, and high number for a low arc.
 
 
 == Changelog ==
+
+= 1.7 2016-12-15 =
+Fixed a problem where the bat would show instead of "Rudolf" in the christmas setting.
+Updated the checkbox sanitization callback in the customizer and added support for selective refresh.
+Updated the responsive widths in the css.
+Moved the remaining javascript into their own .js files and enqueued them.
+Made the site title clickable.
+Removed an unused image.
+
+
 
 = 1.6 2016-10-26 =
 Updated the styling of the menu. Moved the mobile menu below the site title.
@@ -85,6 +95,11 @@ Moved the arc javascript output to the footer.
 
 Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
+
+Checkbox sanitization
+Copyright (c) 2015, WordPress Theme Review Team
+http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
+https://github.com/WPTRT/code-examples/blob/master/customizer/sanitization-callbacks.php
 
 Fonts
 Open Sans Condensed is released under Apache License, version 2.0.

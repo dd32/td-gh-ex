@@ -38,6 +38,8 @@ function bunny_setup() {
 	register_nav_menus( array( 'header' => __( 'Header Navigation', 'bunny' ) ) );
 
 	add_editor_style();
+
+	add_theme_support( 'customize-selective-refresh-widgets' );
 }
 add_action( 'after_setup_theme', 'bunny_setup' );
 
@@ -88,11 +90,25 @@ function bunny_fonts_styles() {
 	if ( ! get_theme_mod( 'bunny_animation' ) ) {
 		wp_enqueue_script( 'spritely', get_template_directory_uri() . '/inc/spritely.js', array( 'jquery' ) );
 		wp_enqueue_style( 'bunny-clouds', get_template_directory_uri() . '/inc/clouds.css' );
+		wp_enqueue_script( 'bunny-animation', get_template_directory_uri() . '/inc/bunnyanimation.js', array( 'jquery' ) );
 	}
 
 	if ( ! get_theme_mod( 'bunny_disable_arc' ) ) {
 		// Prefixed, since changes where made to the script. The file also includes Lettering.js.
 		wp_enqueue_script( 'bunny-circletype', get_template_directory_uri() . '/inc/circletype.js', array( 'jquery' ) );
+		wp_enqueue_script( 'bunny-circletype-helper', get_template_directory_uri() . '/inc/circletype_helper.js', array( 'jquery' ) );
+
+		$array = array(
+			'headline' => esc_attr( get_theme_mod( 'bunny_title_arc_size','400' ) ),
+			'tagine' => esc_attr( get_theme_mod( 'bunny_tagline_arc_size','400' ) ),
+		);
+		wp_localize_script( 'bunny-circletype-helper', 'bunny_text_radius', $array );
+
+		// Make the title clickable (return home). Includes a trailing slash in circletype.js.
+		$link = array(
+			'homelink' => esc_url( get_home_url() ),
+			);
+		wp_localize_script( 'bunny-circletype', 'bunny_link', $link );
 	}
 
 	wp_enqueue_script( 'bunny-js', get_template_directory_uri() . '/inc/bunny.js', array( 'jquery' ) );
@@ -114,36 +130,14 @@ function bunny_fonts_styles() {
 	} elseif ( get_theme_mod( 'bunny_spooky' ) ) {
 		wp_enqueue_style( 'bunny-spooky', get_template_directory_uri() . '/inc/spooky.css' );
 	}
+
 }
 add_action( 'wp_enqueue_scripts', 'bunny_fonts_styles' );
-
-/**
- * Add the javascript needed for the Bunny animation and the Site Title arc.
- */
-function bunny_js() {
-	?>
-	<script type="text/javascript">
-	<?php if ( ! get_theme_mod( 'bunny_animation' ) ) {?>
-			jQuery(document).ready(function($) {
-				$('#kaninf').sprite({fps: 1.8, no_of_frames: 8, speed: 1});
-			});			
-	<?php }?>
-	
-	<?php if ( ! get_theme_mod( 'bunny_disable_arc' ) ) {?>	
-		jQuery(document).ready(function($) {
-			$('#headline').circleType({radius:<?php echo esc_attr( get_theme_mod( 'bunny_title_arc_size','400' ) )?>});
-			$('#tagline').circleType({radius:<?php echo esc_attr( get_theme_mod( 'bunny_tagline_arc_size','400' ) )?>});
-		}); 
-	<?php }?>
-	 </script>
-<?php
-}
-add_action( 'wp_footer', 'bunny_js' );
 
 
 function bunny_css() {
 	echo '<style type="text/css">
-	.site-title, .site-description { color: #' . esc_attr( get_header_textcolor() ) . ';}';
+	.site-title, .site-title a, .site-description, .site-description a{ color: #' . esc_attr( get_header_textcolor() ) . '; text-decoration:none;}';
 
 	if ( ! has_nav_menu( 'header' ) ) {
 		echo '.site-title {margin-top: 6px;}';
@@ -152,7 +146,7 @@ function bunny_css() {
 	if ( get_theme_mod( 'bunny_hide' ) ) {
 		echo '#wrapper{margin: 40px auto auto auto;}
 		#main{position: relative; overflow: auto; float: none; margin: 0 auto;}
-		#footer{position: relative; overflow: auto; float:n one; margin-top: 40px;}
+		#footer{position: relative; overflow: auto; float: none; margin-top: 40px;}
 		@media screen and (max-width: 840px){
 			#wrapper{margin-top: 40px; margin-left: 1%;}
 			.kaninsmall{display: none;}

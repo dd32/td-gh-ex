@@ -39,7 +39,7 @@
 		<h1 class="site-title" id="headline"><?php bloginfo( 'name' ); ?></h1>
 	<?php
 	}
-	if ( get_bloginfo( 'description' ) && display_header_text()) {
+	if ( get_bloginfo( 'description' ) && display_header_text() ) {
 	?>
 		<h2 class="site-description" id="tagline"><?php bloginfo( 'description' ); ?></h2>
 	<?php

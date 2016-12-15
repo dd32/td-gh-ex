@@ -4,12 +4,12 @@ Theme URI: http://wptema.se/bunny/
 Author: Carolina Nymark
 Author URI: http://wptema.se/
 Description: Fluffy friendly and cute! 'Bunny' is an animated theme suitable for pet lovers and kids. -Just one click in the theme customizer turns Bunny into the Easter bunny! You can also chose the Christmas or Halloween design or hide the images. The theme is responsive and translation ready with one custom menu, two optional widget areas, sticky posts and threaded comments.
-Version: 1.6
+Version: 1.7
 Tags:threaded-comments, custom-menu, sticky-post, translation-ready, one-column, two-columns, editor-style, featured-images, theme-options, right-sidebar, blog
 Text Domain: bunny
 License: MIT
 License URI: http://opensource.org/licenses/MIT
-Copyright 2014-2016 Carolina Nymark
+Copyright 2014-2017 Carolina Nymark
 */
 
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
@@ -550,7 +550,7 @@ a:focus {
 }
 
 #wrapper {
-	margin: 40px auto 0 460px; /* Make room for the bunny image. */
+	margin: 40px auto 0 450px; /* Make room for the bunny image. */
 	padding-bottom:40px;
 	width: 70%;
 	position: relative;
@@ -562,7 +562,7 @@ a:focus {
 	display: inline-block;
 	vertical-align: top;
 	margin: 0 auto;
-	width: 75%;	
+	width: 70%;	
 	background: #fff; 
 	border-radius: 40px;
 	border: 5px solid #e9e9e9;
@@ -572,7 +572,7 @@ a:focus {
 	display: inline-block;
 	vertical-align: top;
 	margin-left: 20px;
-	width: 23%;	
+	width: 25%;	
 	background: #fff; 
 	border-radius: 40px;
 	border: 5px solid #e9e9e9;
@@ -581,7 +581,7 @@ a:focus {
 /*Add cuteness*/
 .far-clouds {
 	position: absolute;
-	top: 4%;
+	top: 8%;
     background: transparent url(images/cloud1.png) 500px 94px repeat-x fixed;
 	z-index: 1;
 	width: 100%;
@@ -591,7 +591,7 @@ a:focus {
 
 .near-clouds {
 	position: absolute;
-	top: 9%;
+	top: 12%;
     background: transparent url(images/cloud2.png)0px 63px repeat-x fixed;
 	z-index: 2;
 	width: 100%;
@@ -600,17 +600,9 @@ a:focus {
 	padding: 0;
 }
 
-.has-menu #far-clouds{
-	top:7%;
-}
-
-.has-menu #near-clouds{
-	top:11%;
-}
-
 .sol {
-	position: fixed;
-    top: 10%;
+	position: absolute;
+    top: 13%;
     left: 10%;
     width: 140px;
     height: 130px;
@@ -817,7 +809,7 @@ a:focus {
 	clear: both;
 	overflow: hidden;
 	min-height: 45px;
-	margin: 5 0 0 0;
+	margin: 5px 0 0 0;
 	padding: 0 2em 2em 2em;
 	border-bottom: 2px dashed #ccc;
 }
@@ -1509,11 +1501,11 @@ table#wp-calendar,
 }
 
 #wp-calendar th{
-	padding: 5px;
+	padding: 3px;
 }
 
 #wp-calendar td{
-	padding: 5px; 
+	padding: 3px; 
 	border: 1px solid #e9e9e9; 
 	text-align: center;
 }
@@ -1566,7 +1558,7 @@ option {
 	display:inline-block;
 	vertical-align:top;
 	margin:40px auto;
-	width:75%;
+	width:70%;
 	clear:both;	
 	background:#fff; 
 	border-radius:40px;
@@ -1631,19 +1623,10 @@ option {
 	display: none;
 }
 
-@media screen and (max-width:1750px){
-	#sidebar{
- 		width:75%;
- 		margin: 40px auto 0 auto;
- 	}
 
- 	#sidebar .widget,
- 	#footer .widget{
- 		width:45%;
- 	}
-}
+/*480, 600, 840, 960, 1280, 1440, and 1600dp.*/
 
-@media screen and (max-width:1600px){
+@media screen and (max-width:1280px){
 	#wrapper{
 		width: 57%;
 	}
@@ -1675,7 +1658,7 @@ option {
 }
 
 
-@media screen and (max-width:1200px){
+@media screen and (max-width:960px){
 	#header-menu{
 		display: none;
 	}

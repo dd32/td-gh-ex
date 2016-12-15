@@ -141,6 +141,27 @@ function bunny_customizer( $wp_customize ) {
 		)
 	);
 
+	$wp_customize->selective_refresh->add_partial( 'bunny_meta', array(
+		'selector' => '.meta',
+		'container_inclusive' => true,
+		'render_callback' => 'bunny_meta',
+	) );
+
+	$wp_customize->selective_refresh->add_partial( 'blogname', array(
+		'selector' => '.site-title',
+		'render_callback' => get_bloginfo( 'name' ),
+	) );
+
+	$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
+	    'selector' => '.site-description',
+	    'render_callback' => get_bloginfo( 'description' ),
+	) );
+
+	$wp_customize->selective_refresh->add_partial( 'the_custom_logo', array(
+	    'selector' => '.custom-logo-link',
+	    'render_callback' => get_custom_logo(),
+	) );
+
 }
 add_action( 'customize_register', 'bunny_customizer' );
 
@@ -149,10 +170,16 @@ function bunny_sanitize_arc_value( $value ) {
 	return ( 0 < $value ) ? $value : null;
 }
 
-function bunny_sanitize_checkbox( $input ) {
-	if ( $input == 1 ) {
-		return 1;
-	} else {
-		return '';
-	}
+/**
+ * Checkbox sanitization callback, from https://github.com/WPTRT/code-examples/blob/master/customizer/sanitization-callbacks.php
+ *
+ * Sanitization callback for 'checkbox' type controls. This callback sanitizes `$checked`
+ * as a boolean value, either TRUE or FALSE.
+ *
+ * @param bool $checked Whether the checkbox is checked.
+ * @return bool Whether the checkbox is checked.
+ */
+function bunny_sanitize_checkbox( $checked ) {
+	// Boolean check.
+	return ( ( isset( $checked ) && true == $checked ) ? true : false );
 }

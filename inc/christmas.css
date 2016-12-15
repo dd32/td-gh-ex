@@ -35,7 +35,7 @@ body{
     height: 160px;
     overflow: hidden;
     z-index:-3;/*Display behind the clouds*/
-    background: transparent url(../images/bat.png)no-repeat;
+    background: transparent url(../images/rudolf.png)no-repeat;
 }
 
 .far-clouds {
@@ -44,7 +44,7 @@ body{
 	 opacity: 0.7;
 }
 .near-clouds {
-    background: transparent url(../images/cloud2.png)0px 63px repeat-x fixed;
+    background: transparent url(../images/cloud2.png) 0px 73px repeat-x fixed;
 	z-index: -1;
 	opacity: 0.7;
 }
