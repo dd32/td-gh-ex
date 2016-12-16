@@ -24,8 +24,8 @@ function bakes_and_cakes_customize_register( $wp_customize ) {
     $options_pages = array();
     $options_pages_obj = get_posts('posts_per_page=-1&post_type=page');
     $options_pages[''] = __( 'Choose Page', 'bakes-and-cakes' );
-    foreach ( $options_pages_obj as $pages ) {
-        $options_pages[$pages->ID] = $pages->post_title; 
+    foreach ( $options_pages_obj as $bac_pages ) {
+        $options_pages[$bac_pages->ID] = $bac_pages->post_title; 
     }
     
     if( bakes_and_cakes_is_woocommerce_activated() ){
@@ -950,34 +950,6 @@ function bakes_and_cakes_customize_register( $wp_customize ) {
             'type' => 'text',
             ));
 
-    /* Map Section */
-    $wp_customize-> add_section(
-        'bakes_and_cakes_map_settings',
-        array(
-            'title'=> __('Google Map Section','bakes-and-cakes'),
-            'priority'=> 30,
-            'panel'=> 'bakes_and_cakes_home_page_settings'
-            )
-        );
-
-
-    $wp_customize->add_setting(
-        'bakes_and_cakes_map_section_content',
-        array(
-            'default'=> '',
-            'sanitize_callback' => 'bakes_and_cakes_sanitize_iframe',
-            )
-        );
-    $wp_customize-> add_control(
-        'bakes_and_cakes_map_section_content',
-        array(
-              'label' => __('Google Map Iframe','bakes-and-cakes'),
-              'section' => 'bakes_and_cakes_map_settings', 
-              'type' => 'textarea',
-            ));
-
-
-
     /** Slider Settings */
     $wp_customize->add_section(
         'bakes_and_cakes_slider_settings',
@@ -1172,81 +1144,7 @@ function bakes_and_cakes_customize_register( $wp_customize ) {
             'choices' => $bakes_and_cakes_option_categories,
         )
     );
-    /** Slider Settings Ends */
-    
-    if( bakes_and_cakes_is_contact_form_activated() ){
-
-    $wp_customize->add_section(
-        'bakes_and_cakes_contact_form_settings',
-        array(
-            'title' => __( 'Contact Form Setting', 'bakes-and-cakes' ),
-            'priority' => 20,
-            'capability' => 'edit_theme_options',
-        )
-    );
-    
-    $wp_customize->add_setting(
-        'bakes_and_cakes_contact_form_title',
-        array(
-            'default'=> '',
-            'sanitize_callback'=> 'bakes_and_cakes_sanitize_nohtml'
-            )
-        );
-    $wp_customize-> add_control(
-        'bakes_and_cakes_contact_form_title',
-        array(
-              'label' => __('Contact Form Title','bakes-and-cakes'),
-              'section' => 'bakes_and_cakes_contact_form_settings', 
-              'type' => 'text',
-            ));
-
-    $wp_customize->add_setting(
-        'bakes_and_cakes_contact_form',
-        array(
-            'default' => '',
-            'sanitize_callback' => 'wp_kses_post',
-            )
-    );
-    
-    $wp_customize->add_control( 
-        'bakes_and_cakes_contact_form',
-        array(
-            'label' => __( 'Contact Form', 'bakes-and-cakes' ),
-            'section' => 'bakes_and_cakes_contact_form_settings',
-            'description' => __( 'Enter the Contact Form Shortcode. Ex. [contact-form-7 id="186" title="Google contact"]', 'bakes-and-cakes' ),
-            'type' => 'textarea',
-        )
-     );
-    }
-        /** Custom CSS*/
-    $wp_customize->add_section(
-        'bakes_and_cakes_custom_settings',
-        array(
-            'title' => __( 'Custom CSS Settings', 'bakes-and-cakes' ),
-            'priority' => 50,
-            'capability' => 'edit_theme_options',
-        )
-    );
-    
-    $wp_customize->add_setting(
-        'bakes_and_cakes_custom_css',
-        array(
-            'default' => '',
-            'capability'        => 'edit_theme_options',
-            'sanitize_callback' => 'bakes_and_cakes_sanitize_css'
-            )
-    );
-    
-    $wp_customize->add_control(
-        'bakes_and_cakes_custom_css',
-        array(
-            'label' => __( 'Custom Css', 'bakes-and-cakes' ),
-            'section' => 'bakes_and_cakes_custom_settings',
-            'description' => __( 'Put your custom CSS', 'bakes-and-cakes' ),
-            'type' => 'textarea',
-        )
-    );
-    /** Custom CSS Ends */
+    /** Slider Settings Ends */     
  
 
     /**
@@ -1303,9 +1201,6 @@ function bakes_and_cakes_customize_register( $wp_customize ) {
         return ( $file['ext'] ? $image : $setting->default );
     }
     
-    function bakes_and_cakes_sanitize_css( $css ){
-        return wp_strip_all_tags( $css );
-    }
     
 }
 add_action( 'customize_register', 'bakes_and_cakes_customize_register' );

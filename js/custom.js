@@ -5,7 +5,7 @@ jQuery(document).ready(function ($) {
     if( bakes_and_cakes_data.auto == '1' ){
         var slider_auto = true;
     }else{
-        slider_auto = false;
+        var slider_auto = false;
     }
     
     if( bakes_and_cakes_data.loop == '1' ){
@@ -17,7 +17,7 @@ jQuery(document).ready(function ($) {
     if( bakes_and_cakes_data.pager == '1' ){
         var slider_control = true;
     }else{
-        slider_control = false;
+        var slider_control = false;
     }
             
    /** Home Page Slider */

@@ -374,8 +374,6 @@ if( ! function_exists( 'bakes_and_cakes_footer_top' ) ) :
  *  
 */
 function bakes_and_cakes_footer_top(){
-    $contact_title     = get_theme_mod('bakes_and_cakes_contact_form_title');
-    $contact_forms     = get_theme_mod('bakes_and_cakes_contact_form');
     ?>
     <div class="footer-t">
         <div class="row">
@@ -386,23 +384,16 @@ function bakes_and_cakes_footer_top(){
                         dynamic_sidebar('footer-first');
                     } ?>
                 </div>
-                <div class="col center">    
-                    <?php if( bakes_and_cakes_is_contact_form_activated() && $contact_forms) { ?>                  
-                        <section class="widget widget_contact_form">    
-                            <div class="form-holder"> 
-                                <div class="contact-form">
-                                    <?php if($contact_title) { ?>     
-                                    <h2 class="main-title"><?php echo esc_html( $contact_title ); ?></h2>
-                                    <?php }         
-                                    echo do_shortcode( $contact_forms ); ?>
-                                </div>
-                            </div> 
-                        </section>
-                    <?php } else{
-                            if (is_active_sidebar('footer-second')) {
-                                dynamic_sidebar('footer-second');
-                            }
-                        }?>
+                <div class="col center">   
+                    <section class="widget widget_contact_form">    
+                        <div class="form-holder"> 
+                            <?php     
+                                if (is_active_sidebar('footer-second')) {
+                                    dynamic_sidebar('footer-second');
+                                }
+                            ?>
+                        </div>
+                    </section>
                 </div>
                 <div class="col">
                     <?php if (is_active_sidebar('footer-third')) {
@@ -434,7 +425,7 @@ function bakes_and_cakes_footer_info(){
         </span>
         <a href="<?php echo esc_url( 'http://raratheme.com/wordpress-themes/bakes-and-cakes/' ); ?>" rel="author" target="_blank">
             <?php echo esc_html__( 'Bakes and Cakes by Rara Theme.', 'bakes-and-cakes' ); ?>
-        </a>.
+        </a>
         <?php printf(esc_html__('Powered by %s', 'bakes-and-cakes'), '<a href="' . esc_url(__('https://wordpress.org/', 'bakes-and-cakes')) . '">WordPress.</a>'); ?>
     </div><!-- .site-info -->
 <?php

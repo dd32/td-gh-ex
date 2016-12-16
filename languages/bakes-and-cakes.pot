@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-30 11:58+0000\n"
+"POT-Creation-Date: 2016-12-16 11:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -80,6 +80,7 @@ msgid "Leave a Reply"
 msgstr ""
 
 #: comments.php:97
+#, php-format
 msgid "Leave a Reply to %s"
 msgstr ""
 
@@ -96,10 +97,12 @@ msgid "Comment"
 msgstr ""
 
 #: comments.php:107
+#, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
 msgstr ""
 
 #: comments.php:113
+#, php-format
 msgid ""
 "Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of "
 "this account\">Log out?</a>"
@@ -111,27 +114,32 @@ msgid ""
 "Required fields are marked *</span></p>"
 msgstr ""
 
-#: functions.php:57
+#: functions.php:60
 msgid "Primary"
 msgstr ""
 
-#: functions.php:174
+#: functions.php:163
 msgid "Right Sidebar"
 msgstr ""
 
-#: functions.php:184
+#: functions.php:173
+msgid "Google Map Widget"
+msgstr ""
+
+#: functions.php:183
 msgid "Footer First"
 msgstr ""
 
-#: functions.php:194
+#: functions.php:193
 msgid "Footer Second"
 msgstr ""
 
-#: functions.php:204
+#: functions.php:203
 msgid "Footer Third"
 msgstr ""
 
 #: search.php:19
+#, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
@@ -159,27 +167,28 @@ msgstr ""
 msgid "Error 404"
 msgstr ""
 
-#: inc/custom-functions.php:243 inc/customizer.php:1143
+#: inc/custom-functions.php:243 inc/customizer.php:1115
 msgid "Continue Reading"
 msgstr ""
 
-#: inc/custom-functions.php:430
+#: inc/custom-functions.php:421
 msgid "&copy;"
 msgstr ""
 
-#: inc/custom-functions.php:433
+#: inc/custom-functions.php:424
 msgid "All Rights Reserved."
 msgstr ""
 
-#: inc/custom-functions.php:436
+#: inc/custom-functions.php:427
 msgid "Bakes and Cakes by Rara Theme."
 msgstr ""
 
-#: inc/custom-functions.php:438
+#: inc/custom-functions.php:429
+#, php-format
 msgid "Powered by %s"
 msgstr ""
 
-#: inc/custom-functions.php:438
+#: inc/custom-functions.php:429
 msgid "https://wordpress.org/"
 msgstr ""
 
@@ -243,7 +252,7 @@ msgstr ""
 msgid "Enable About us Section"
 msgstr ""
 
-#: inc/customizer.php:214 inc/customizer.php:260 inc/customizer.php:696 
+#: inc/customizer.php:214 inc/customizer.php:260 inc/customizer.php:696
 #: inc/customizer.php:782 inc/customizer.php:846 inc/customizer.php:893
 msgid "Select Page"
 msgstr ""
@@ -381,93 +390,104 @@ msgid "Enable promotional Block Section"
 msgstr ""
 
 #: inc/customizer.php:957
-msgid "Google Map Section"
-msgstr ""
-
-#: inc/customizer.php:974
-msgid "Google Map Iframe"
-msgstr ""
-
-#: inc/customizer.php:985
 msgid "Slider Settings"
 msgstr ""
 
-#: inc/customizer.php:1003
+#: inc/customizer.php:975
 msgid "Enable Home Page Slider"
 msgstr ""
 
-#: inc/customizer.php:1021
+#: inc/customizer.php:993
 msgid "Enable Slider Auto Transition"
 msgstr ""
 
-#: inc/customizer.php:1039
+#: inc/customizer.php:1011
 msgid "Enable Slider Loop"
 msgstr ""
 
-#: inc/customizer.php:1057
+#: inc/customizer.php:1029
 msgid "Enable Slider Control"
 msgstr ""
 
-#: inc/customizer.php:1075
+#: inc/customizer.php:1047
 msgid "Enable Slider Caption"
 msgstr ""
 
-#: inc/customizer.php:1093
+#: inc/customizer.php:1065
 msgid "Choose Slider Animation"
 msgstr ""
 
-#: inc/customizer.php:1097
+#: inc/customizer.php:1069
 msgid "Fade"
 msgstr ""
 
-#: inc/customizer.php:1098
+#: inc/customizer.php:1070
 msgid "Slide"
 msgstr ""
 
-#: inc/customizer.php:1115
+#: inc/customizer.php:1087
 msgid "Slider Speed"
 msgstr ""
 
-#: inc/customizer.php:1133
+#: inc/customizer.php:1105
 msgid "Animation Speed"
 msgstr ""
 
-#: inc/customizer.php:1151
+#: inc/customizer.php:1123
 msgid "Readmore Text"
 msgstr ""
 
-#: inc/customizer.php:1169
+#: inc/customizer.php:1141
 msgid "Choose Slider Category"
 msgstr ""
 
-#: inc/customizer.php:1182
-msgid "Contact Form Setting"
+#: inc/info.php:11
+msgid "Information Links"
 msgstr ""
 
-#: inc/customizer.php:1198
-msgid "Contact Form Title"
+#: inc/info.php:21
+msgid "Need help?"
 msgstr ""
 
-#: inc/customizer.php:1214
-msgid "Contact Form"
+#: inc/info.php:22
+msgid "View demo"
 msgstr ""
 
-#: inc/customizer.php:1216
-msgid ""
-"Enter the Contact Form Shortcode. Ex. [contact-form-7 id=\"186\" "
-"title=\"Google contact\"]"
+#: inc/info.php:22 inc/info.php:23 inc/info.php:24 inc/info.php:25
+#: inc/info.php:26 inc/info.php:27
+msgid "here"
 msgstr ""
 
-#: inc/customizer.php:1225
-msgid "Custom CSS Settings"
+#: inc/info.php:23
+msgid "View documentation"
 msgstr ""
 
-#: inc/customizer.php:1243
-msgid "Custom Css"
+#: inc/info.php:24
+msgid "Theme info"
 msgstr ""
 
-#: inc/customizer.php:1245
-msgid "Put your custom CSS"
+#: inc/info.php:25
+msgid "Support ticket"
+msgstr ""
+
+#: inc/info.php:26
+msgid "Rate this theme"
+msgstr ""
+
+#: inc/info.php:27
+msgid "More WordPress Themes"
+msgstr ""
+
+#: inc/info.php:31
+msgid "About Bakes and Cakes"
+msgstr ""
+
+#: inc/info.php:152
+msgid "Pro Available"
+msgstr ""
+
+#: inc/info.php:154
+msgid "VIEW PRO THEME"
 msgstr ""
 
 #. $id
@@ -488,11 +508,13 @@ msgid "Choose Sidebar Template"
 msgstr ""
 
 #: inc/template-tags.php:24
+#, php-format
 msgctxt "post date"
 msgid " %s"
 msgstr ""
 
 #: inc/template-tags.php:29
+#, php-format
 msgctxt "post author"
 msgid " %s"
 msgstr ""
@@ -503,16 +525,19 @@ msgid ", "
 msgstr ""
 
 #: inc/template-tags.php:37
+#, php-format
 msgid " %1$s"
 msgstr ""
 
 #: inc/template-tags.php:53
+#, php-format
 msgid " %1$s "
 msgstr ""
 
 #. translators: %s: Name of current post
 #. translators: %s: Name of current post
 #: inc/template-tags.php:60 template-parts/content-page.php:40
+#, php-format
 msgid "Edit %s"
 msgstr ""
 
@@ -525,17 +550,18 @@ msgstr ""
 msgid "A Popular Post Widget"
 msgstr ""
 
-#: inc/widget-popular-post.php:40 inc/widget-popular-post.php:96 
+#: inc/widget-popular-post.php:40 inc/widget-popular-post.php:96
 #: inc/widget-popular-post.php:139
 msgid "Most Viewed"
 msgstr ""
 
-#: inc/widget-popular-post.php:71 inc/widget-popular-post.php:72 
+#: inc/widget-popular-post.php:71 inc/widget-popular-post.php:72
 #: inc/widget-recent-post.php:74 inc/widget-recent-post.php:75
+#, php-format
 msgid "%1$s"
 msgstr ""
 
-#: inc/widget-popular-post.php:104 inc/widget-recent-post.php:109 
+#: inc/widget-popular-post.php:104 inc/widget-recent-post.php:109
 #: inc/widget-social-links.php:97
 msgid "Title"
 msgstr ""
@@ -561,7 +587,7 @@ msgstr ""
 msgid "A Recent Post Widget"
 msgstr ""
 
-#: inc/widget-recent-post.php:40 inc/widget-recent-post.php:101 
+#: inc/widget-recent-post.php:40 inc/widget-recent-post.php:101
 #: inc/widget-recent-post.php:143
 msgid "Recent Posts"
 msgstr ""
@@ -575,7 +601,7 @@ msgstr ""
 msgid "A Social Links Widget"
 msgstr ""
 
-#: inc/widget-social-links.php:39 inc/widget-social-links.php:85 
+#: inc/widget-social-links.php:39 inc/widget-social-links.php:85
 #: inc/widget-social-links.php:151
 msgid "Social Media"
 msgstr ""
@@ -633,6 +659,7 @@ msgid "Nothing Found"
 msgstr ""
 
 #: template-parts/content-none.php:21
+#, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
@@ -655,6 +682,7 @@ msgstr ""
 
 #. translators: %s: Name of current post.
 #: template-parts/content.php:42 template-parts/content.php:51
+#, php-format
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 

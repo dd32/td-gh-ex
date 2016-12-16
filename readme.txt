@@ -5,8 +5,8 @@ Tags: translation-ready, custom-background, theme-options, custom-menu, post-for
 
 
 Requires at least: 4.0
-Tested up to: 4.3.1
-Stable tag: 1.0.5
+Tested up to: 4.7
+Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -136,30 +136,10 @@ Bakes and Cakes an elegant WordPress theme suitable for bakery business. It is r
     6. Click Save and Publish.
 
 9. Google Map Section
-    1. Go to Appearance> Customize> Homepage Settings> Google Map Section
+    1. Go to Appearance> Customize> Homepage Settings> Google Map Widget
+    2. Add Text Widget 
     2. Enter Google Map Iframe 
     3. Click Save and Publish.
-
-10. Contact Form Setting 
-     For the Contact form to appear as in the demo, you must first install and activate the Contact Form 7. To learn about how to install plugin read the Installing Plugin. For configuring the Plugin read the plugin documentation .
-
-    1. Go to Appearance> Customize> Contact Form Settings 
-    2. Enter Contact Form Title. 
-    3. Enter Contact Form Short Code
-    4. Click Save and Publish.
-
-    Generating Shortcode for the Contact Form  :
-
-    For the Contact form to appear as in the demo, you must first install and activate the Contact Form Seven.  To learn about how to install plugin read the Installing Pluglin.
-
-    1. Go to Dashboard> Contact> Add New
-        Keep the default content or edit the code to suit your idea of your contact form .
-    2. Click Save.
-    3. Copy the shortcode that appear below the Contact Form Name and paste it in the Contact Section Contact Form from Appearance>Customize>Contact Section settings
-     ( Configure other setting according to Contact Form 7 Documentation. )
-    4. Click Save & Publish.
-
-    Note: The above instructions just deals with the design and appearance of the contact form on the theme. You still need to configure your settings following Contact Form 7 Documentation  
 
 11. Breadcrumb Settings
     1. Go to Appearance>Customizer>Breadcrumb Settings
@@ -169,13 +149,7 @@ Bakes and Cakes an elegant WordPress theme suitable for bakery business. It is r
     5. Enter Breadcrumb Separator
     6. Click Save & Publish 
 
-12. Custom CSS Settings
-    1. Go to Appearance >Customize>Custom CSS settings.
-    2. Enter the required custom CSS. For example, to change the body font size to 17 Pixels:
-        body{font-size: 17px}
-    3. Click Save & Publish.
-
-13. Slider Settings
+12. Slider Settings
       Activate Slider
         1. Go to Appearance >Customize>Slider Settings.
         2. Check Enable Home Page Slider to show the featured slider the homepage. 
@@ -209,8 +183,7 @@ External resources linked to the theme.
     * Niconne Font by through Google Font 
     https://www.google.com/fonts/specimen/Niconne 
     
-    *Font Awesome 
-    http://fontawesome.io/
+    * Font Awesome https://fortawesome.github.io/Font-Awesome/, (C) Dave Gandy, http://fontawesome.io/license/
 
 
 # Images
@@ -223,16 +196,18 @@ https://pixabay.com/en/dessert-fruit-cake-plate-cherry-978665/
 https://pixabay.com/en/easter-easter-cakes-cookie-cutter-100171/
 
 
-
-
 # JS
-All the JS are licensed under GPLv2 or later
 
-flexslider.woothemes.com/ 
-http://sachinchoolur.github.io/lightslider/ 
-https://css-tricks.com/examples/EqualHeightsInRows/ 
-https://www.berriart.com/sidr/
-https://jqueryui.com/tabs/
+jquery.flexslider.js, http://www.woothemes.com/flexslider/ - Copyright (c) 2015 WooThemes, http://www.gnu.org/licenses/gpl-2.0.html
+
+lightslider.js, https://github.com/sachinchoolur/lightslider, (C) Sachin, MIT, http://opensource.org/licenses/MIT
+
+
+sameheight.js, https://css-tricks.com/examples/EqualHeightsInRows/ ,   licensed under GPLv2 or later
+
+jquery.sidr.js, https://github.com/artberri/sidr, (C) 2013 Alberto Varela, MIT License, https://github.com/artberri/sidr/blob/master/LICENSE
+
+https://jqueryui.com/tabs/ ,licensed under GPLv2 or later
 
 
 * Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
@@ -254,6 +229,11 @@ Bakes and Cakes WordPress Theme is distributed under the terms of the GPLv2 or l
    GNU General Public License for more details.
 
 == Changelog ==
+    1.0.6
+    * Google map section changed into Google map widgets. 
+    * Contact form section removed. 
+    * Fixed issues mentioned in theme trac.
+
     1.0.5
     *  Fixed escaping and prefix issues.
     *  Fixed other bugs.

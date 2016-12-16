@@ -5,7 +5,7 @@
  * @package Bakes And Cakes
  */
 
-$blog_page   = get_theme_mod('rara_academic_popular_courses_page');
+$blog_page   = get_theme_mod('bakes_and_cakes_blog_page');
             
     echo '<div class="container">';
     if($blog_page){

@@ -26,11 +26,11 @@ get_header();
         </section>
     <?php
     }
-	$iframe = get_theme_mod( 'bakes_and_cakes_map_section_content' );
-    if( $iframe ){
-    echo '<div class="map">';
-    echo  bakes_and_cakes_sanitize_iframe( $iframe );
-    echo '</div>';
+	
+    if (is_active_sidebar('google-map')) {
+        echo '<div class="map">';
+        dynamic_sidebar('google-map');
+        echo '</div>';
     }
 
 get_footer();
