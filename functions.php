@@ -433,6 +433,26 @@ function astrid_footer_credits() {
 }
 add_action( 'astrid_footer', 'astrid_footer_credits' );
 
+function astrid_remove_page_template() {
+
+	if ( !function_exists('astrid_pro_load_widgets') ) {
+
+	    global $pagenow;
+	    if ( in_array( $pagenow, array( 'post-new.php', 'post.php') ) && get_post_type() == 'page' ) { ?>
+	        <script type="text/javascript">
+	            (function($){
+	                $(document).ready(function(){
+	                    $('#page_template option[value="single-event.php"]').remove();
+	                    $('#page_template option[value="single-pricing.php"]').remove();                    
+	                })
+	            })(jQuery)
+	        </script>
+	    <?php 
+	    }
+	}
+}
+add_action('admin_footer', 'astrid_remove_page_template', 10);
+
 /**
  * Implement the Custom Header feature.
  */
