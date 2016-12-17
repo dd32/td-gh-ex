@@ -32,19 +32,29 @@ function admiral_customize_register_options( $wp_customize ) {
 		'description'    => admiral_customize_theme_links(),
 	) );
 
-	// Add postMessage support for site title and description.
-	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-
 	// Change default background section.
 	$wp_customize->get_control( 'background_color' )->section   = 'background_image';
 	$wp_customize->get_section( 'background_image' )->title     = esc_html__( 'Background', 'admiral' );
+
+	// Add postMessage support for site title and description.
+	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+
+	// Add selective refresh for site title and description.
+	$wp_customize->selective_refresh->add_partial( 'blogname', array(
+		'selector'        => '.site-title a',
+		'render_callback' => 'admiral_customize_partial_blogname',
+	) );
+	$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
+		'selector'        => '.site-description',
+		'render_callback' => 'admiral_customize_partial_blogdescription',
+	) );
 
 	// Add Display Site Title Setting.
 	$wp_customize->add_setting( 'admiral_theme_options[site_title]', array(
 		'default'           => true,
 		'type'           	=> 'option',
-		'transport'         => 'refresh',
+		'transport'         => 'postMessage',
 		'sanitize_callback' => 'admiral_sanitize_checkbox',
 		)
 	);
@@ -61,7 +71,7 @@ function admiral_customize_register_options( $wp_customize ) {
 	$wp_customize->add_setting( 'admiral_theme_options[site_description]', array(
 		'default'           => true,
 		'type'           	=> 'option',
-		'transport'         => 'refresh',
+		'transport'         => 'postMessage',
 		'sanitize_callback' => 'admiral_sanitize_checkbox',
 		)
 	);
@@ -79,10 +89,26 @@ add_action( 'customize_register', 'admiral_customize_register_options' );
 
 
 /**
+ * Render the site title for the selective refresh partial.
+ */
+function admiral_customize_partial_blogname() {
+	bloginfo( 'name' );
+}
+
+
+/**
+ * Render the site tagline for the selective refresh partial.
+ */
+function admiral_customize_partial_blogdescription() {
+	bloginfo( 'description' );
+}
+
+
+/**
  * Embed JS file to make Theme Customizer preview reload changes asynchronously.
  */
 function admiral_customize_preview_js() {
-	wp_enqueue_script( 'admiral-customizer-preview', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151202', true );
+	wp_enqueue_script( 'admiral-customizer-preview', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20161214', true );
 }
 add_action( 'customize_preview_init', 'admiral_customize_preview_js' );
 
@@ -91,7 +117,7 @@ add_action( 'customize_preview_init', 'admiral_customize_preview_js' );
  * Embed CSS styles for the theme options in the Customizer
  */
 function admiral_customize_preview_css() {
-	wp_enqueue_style( 'admiral-customizer-css', get_template_directory_uri() . '/css/customizer.css', array(), '20160915' );
+	wp_enqueue_style( 'admiral-customizer-css', get_template_directory_uri() . '/css/customizer.css', array(), '20161214' );
 }
 add_action( 'customize_controls_print_styles', 'admiral_customize_preview_css' );
 
@@ -114,7 +140,7 @@ function admiral_customize_theme_links() {
 			</p>
 
 			<p>
-				<a href="http://preview.themezee.com/admiral/?utm_source=theme-info&utm_medium=textlink&utm_campaign=admiral&utm_content=demo" target="_blank">
+				<a href="http://preview.themezee.com/?demo=admiral&utm_source=customizer&utm_campaign=admiral" target="_blank">
 					<?php esc_html_e( 'Theme Demo', 'admiral' ); ?>
 				</a>
 			</p>
