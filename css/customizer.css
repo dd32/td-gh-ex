@@ -10,6 +10,10 @@
 	margin-bottom: 4px;
 }
 
+#customize-control-beetle_theme_options-site_description {
+	margin-bottom: 16px;
+}
+
 #customize-control-beetle_theme_options-post_layout_archives,
 #customize-control-beetle_theme_options-post_layout_single,
 #customize-control-beetle_theme_options-latest_posts_title,
@@ -39,12 +43,12 @@
 	margin-bottom: 4px;
 }
 
-#accordion-panel-beetle_options_panel .customize-info .customize-help-toggle {
+#customize-theme-controls [id$=accordion-panel-beetle_options_panel] .customize-info .customize-help-toggle {
 	top: 24px;
 	right: 4px;
 }
 
-#accordion-panel-beetle_options_panel .customize-info .customize-help-toggle::before {
+#customize-theme-controls [id$=accordion-panel-beetle_options_panel] .customize-info .customize-help-toggle::before {
 	content: "\f333";
 	color: #a0a5aa;
 	font-size: 28px;
@@ -53,14 +57,14 @@
 	top: 0;
 }
 
-#accordion-panel-beetle_options_panel .customize-info .customize-help-toggle[aria-expanded="true"]::before {
+#customize-theme-controls [id$=accordion-panel-beetle_options_panel] .customize-info .customize-help-toggle[aria-expanded="true"]::before {
 	content: "\f335";
 }
 
-#accordion-panel-beetle_options_panel .customize-info .customize-help-toggle:hover::before {
+#customize-theme-controls [id$=accordion-panel-beetle_options_panel] .customize-info .customize-help-toggle:hover::before {
 	color: #72777c;
 }
 
-#accordion-panel-beetle_options_panel .customize-info .customize-help-toggle:focus::before {
+#customize-theme-controls [id$=accordion-panel-beetle_options_panel] .customize-info .customize-help-toggle:focus::before {
 	box-shadow: none;
 }
