@@ -41,6 +41,9 @@ $("a[data-gal^='prettyPhoto']").prettyPhoto({animationSpeed:'slow',slideshow:fal
 	  }
 	}
 });
+$(document).ready(function(){
+	$('form input, form textarea, form select:not(#billing_country)').addClass('form-control');
+});
 
 /* Slider */
 var Page = (function() {
@@ -48,6 +51,8 @@ var Page = (function() {
 	var $navArrows = $( '#nav-arrows' ),
 		$nav = $( '#nav-dots > span' ),
 		slitslider = $( '#slider' ).slitslider( {
+			autoplay : true,
+			speed : 1500,
 			onBeforeChange : function( slide, pos ) {
 
 				$nav.removeClass( 'nav-dot-current' );

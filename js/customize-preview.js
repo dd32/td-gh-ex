@@ -1,9 +1,45 @@
 (function ($) {
-   	wp.customize('awada_theme_options[upload_image_logo]', function (value) {
+	// Site title and description.
+	wp.customize( 'blogname', function( value ) {
+		value.bind( function( to ) {
+			$( '#alogo' ).text( to );
+		});
+	});
+	wp.customize( 'blogdescription', function( value ) {
+		value.bind( function( to ) {
+			$( '.site-description' ).text( to );
+		});
+	});
+	wp.customize('custom_logo', function (value) {
         value.bind(function (to) {
-            $('img#logoimg').attr('src', to);
+            $('.custom-logo').attr('src', to);
         });
     });
+	// Header text color.
+	wp.customize( 'header_textcolor', function( value ) {
+		value.bind( function( to ) { alert(to)
+			if ( 'blank' === to ) {
+				$( '.site-title, .site-description' ).css({
+					clip: 'rect(1px, 1px, 1px, 1px)',
+					position: 'absolute'
+				});
+				// Add class for different logo styles if title and description are hidden.
+				$( 'body' ).addClass( 'title-tagline-hidden' );
+			} else {
+
+				$( '.site-title, .site-description' ).css({
+					clip: 'auto',
+					position: 'relative'
+				});
+				$( '.site-title, .site-description' ).css({
+					color: to
+				});
+				// Add class for different logo styles if title and description are visible.
+				$( 'body' ).removeClass( 'title-tagline-hidden' );
+			}
+		});
+	});
+
     wp.customize('awada_theme_options[logo_layout]', function (value) {
         value.bind(function (to) {
             $('#logo').css('float', to);
@@ -184,41 +220,7 @@
                 $('#topbar-social-links').show();
         });
     });
-	wp.customize('awada_theme_options[social_facebook_link]', function (value) {
-        value.bind(function (to) {
-            $('#facebook').attr('href', to);
-        });
-    });
-	wp.customize('awada_theme_options[social_twitter_link]', function (value) {
-        value.bind(function (to) {
-            $('#twitter').attr('href', to);
-        });
-    });
-	wp.customize('awada_theme_options[social_dribbble_link]', function (value) {
-        value.bind(function (to) {
-            $('#dribbble').attr('href', to);
-        });
-    });
-	wp.customize('awada_theme_options[social_linkedin_link]', function (value) {
-        value.bind(function (to) {
-            $('#linkedin').attr('href', to);
-        });
-    });
-	wp.customize('awada_theme_options[social_youtube_link]', function (value) {
-        value.bind(function (to) {
-            $('#youtube').attr('href', to);
-        });
-    });
-	wp.customize('awada_theme_options[social_google_plus_link]', function (value) {
-        value.bind(function (to) {
-            $('#googleplus').attr('href', to);
-        });
-    });
-	wp.customize('awada_theme_options[social_skype_link]', function (value) {
-        value.bind(function (to) {
-            $('#skype').attr('href', to);
-        });
-    });
+	
 	//Copyright
 	wp.customize('awada_theme_options[copyright_text_footer]', function (value) {
         value.bind(function (to) {

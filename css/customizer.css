@@ -1,4 +1,7 @@
 /*Cutomizer CSS*/
+#slider .customize-partial-edit-shortcut button{
+	left:0px;
+}
 #accordion-section-awada_pro h3.accordion-section-title{
 
 	background: #31a3dd;
@@ -39,6 +42,9 @@
 }
 .upsell-btn-bottom{
   margin-top:20px;
+}
+.upsell-btn > a{
+	text-decoration:none;
 }
 .upsell-btn > a.btn.btn-success.btn {
     padding: 10px;

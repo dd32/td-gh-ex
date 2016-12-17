@@ -1,11 +1,11 @@
 /*
 	Theme Name: Awada
 	Theme URI: http://demo.webhuntinfotech.com/demo?theme=awada
-	Description: Awada – Responsive Multi-Purpose (HTML5 / CSS3) Theme for (Desktop, tablet, mobile phone…). Awada is Created with Twitter Bootstrap 3.3.1 Framework. Awada is a great design idea for website of Creative Corporate, Corporation, Company Profile, Personal Portfolio, Wedding, Events and more … Create Outstanding Website or Blog in Minutes!. Awesome Design, Unique Concepts, Scalable Responsive, Amazing flexibility. Awada has static and fixed header feature. it’s developed with lots of care and love. theme has two, three, four footer layout feature. We focused on usability across various devices, starting with smart phones.it is compatible with various devices. Awada is a Cross-Browser Compatible theme that works on All leading web browsers. Awada is easy to use and user friendly theme. Awada has boxed and full-width layout feature. powerful but simple Awada theme content customized through customizer. It has a /typography control feature for change the styling of the theme. to make your site attractive it has two widget sections first for “sidebar widget section” and second for “Footer widget section” where you can show you widgets. To make your website in two column use sidebar widget section. to set custom menu in header set primary location and for the footer section set secondary section. we added social media links to added your social links. It boasts of more than 7-8 beautifully designed page templates , Home, Blog and Default Page Template(page with right sidebar), Page Full-Width, Page Left Sidebar etc. Awada theme has more advanced feature to make your site awesome like: you can change header top bar color. you can also changed header color styling. Theme compatible with woo-commerce. Kyam is a fully woo-commerce tested theme you just add woo-commerce plugin and product and its other required contents. Awada is translation ready theme with WPML compatible & Many More…..
-	Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, grid-layout, footer-widgets, blog, e-commerce, news, photography, portfolio
+	Description: Awada – Responsive Multi-Purpose WordPres Theme . Awada is Created with Twitter Bootstrap 3.3.1 Framework. Awada is a great design idea for website of Creative Corporate, Corporation, Company Profile, Personal Portfolio, Wedding, Events and more … . Theme Features: Static and fixed header, 2,3, and 4 column footer layout, 3 color schemes, boxed and full-width layout, three widget sections first for “Left Sidebar”, “Right Sidebar”  and “Footer widget Area”, typography control feature for change the styling of the theme, WooCommerce Compatible, Translation ready and many more... Awada is a Cross-Browser Compatible theme that works on All leading web browsers.
+	Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-menu, custom-logo, featured-image-header, flexible-header, rtl-language-support,custom-colors, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, grid-layout, footer-widgets, blog, e-commerce, news, photography, portfolio
 	Author: WebHunt Infotech
 	Author URI: http://www.webhuntinfotech.com/
-	Version: 1.4
+	Version: 1.5
 	License: GNU General Public License v3 or later
 	License URI: http://www.gnu.org/licenses/gpl.html
 	Text Domain: awada
@@ -49,7 +49,7 @@ h6{
 	font-size: 13px;  	
 }
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{
-	color:#222222 !important;
+	color:#222222;
 	text-decoration:none !important; 
 }
 a { 
@@ -242,10 +242,67 @@ TOPBAR & HEADER
 	border-bottom:1px solid #f2f2f2;
 	font-family: 'PT Sans',sans-serif;
 }
+/* 14-DES-2016 */
+.nav:not(.top-social) .fa {
+    float: right;
+	margin: 3px 2px;
+}
+span.topbar-contact-email {
+    display: inline-block;
+}
+.site-title {
+    clear: none;
+    font-size: 24px;
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: 0.08em;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+@media screen and (min-width: 48em){
+	.site-title {
+		font-size: 36px;
+		font-size: 2.25rem;
+	}
+	
+}
+@media (min-width: 768px){
+	.top-social {
+		float: left;
+		margin: 0;
+	}
+	.top-social li{
+		float: left;
+	}
+	
+}
+@media (max-width: 767px){
+	h1.site-title{
+		position:absolute;
+	}
+	.top-social {
+		display: inline-flex;
+		text-align:center;
+		margin: 0 auto;
+	}
+	.topbar-social-links{
+		float:none !important;
+		text-align:center;
+	}
+}
 .topbar-social-links {
 	padding:0;
 	display:block; 
 	overflow:hidden
+}
+.top-social li a{
+	font-size:18px;
+}
+.top-social li a:hover{
+	background-color:transparent;
 }
 .topbar-social-links span a {
 	font-size:18px;
@@ -340,7 +397,7 @@ FOOTER SECTION STYLES
 }   
 .footer-area-menu li{ 
 	line-height:12px;
-	float:left;
+	float:right;
 	padding:0 7px; 
 }
 .footer-area-menu li a {
@@ -1117,6 +1174,9 @@ pre {
 /* Header Menu Left Align */
 @media (min-width: 768px){
 .navbar-right {
+    float: right !important;
+}
+.navbar-left {
     float: left !important;
 }
 }
@@ -1413,9 +1473,7 @@ p#callout_description {
 #sidebar .widget ul li {
     padding: 0px 20px;
 }
-#sidebar .widget > ul > li.cat-item > a:hover, #sidebar .widget > ul.cat_list_widget > li > a:hover {
-	color: #fff;
-}
+
 #sidebar .tagcloud {
     padding: 5px 20px;
 }
@@ -1543,11 +1601,86 @@ a.readmore{
 #sidebar .widget ul li {
     padding: 0px 20px;
 }
-#sidebar .widget > ul > li.cat-item > a:hover, #sidebar .widget > ul.cat_list_widget > li > a:hover {
+#sidebar .widget:not(.widget_product_categories) > ul > li.cat-item > a:hover, #sidebar .widget > ul.cat_list_widget > li > a:hover {
 	color: #fff;
 }
 #sidebar .tagcloud {
     padding: 5px 20px;
+}
+#shop_features div#review_form_wrapper,
+#shop_features #tabdescription {
+    padding: 10px;
+}
+.related.products h2,.up-sells.upsells h2{
+	padding-bottom:8px;
+	border-bottom:1px solid #eee;
+}
+.up-sells.upsells h2:before{
+	content:'\f004';
+	font-family:FontAwesome;
+	margin-right:7px;
+}
+.related.products h2:before{
+	content:'\f291';
+	font-family:FontAwesome;
+	margin-right:7px;
+}
+.widget input#woocommerce-product-search-field {
+    width: 55%;
+    padding: 2px 0;
+    margin: 19px 18px 0;
+}
+#sidebar .widget_product_search .title{
+	margin-bottom: 0px;
+}
+#sidebar .woocommerce ul.cart_list li img, .woocommerce ul.product_list_widget li img{
+	float: left;
+    margin-right: 19px;
+    width: 45px;
+}
+#sidebar .woocommerce.widget_shopping_cart .total{
+	padding: 4px 16px 0;
+}
+#sidebar .woocommerce.widget_shopping_cart .total span.woocommerce-Price-amount.amount {
+    margin-left: 37px;
+}
+#sidebar .woocommerce.widget_shopping_cart .buttons{
+	padding: 0 16px;
+}
+.woocommerce .widget_price_filter .ui-slider{
+	margin-left: 1.5em;
+    margin-right: 1.5em;
+}
+.woocommerce .widget_price_filter .price_slider_amount{
+	padding: 0px 17px;
+}
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product{
+	width: 23%;
+	margin: 0 1.8% 3.992em 0;
+	border: 1px solid #eee;
+	padding: 7px;
+}
+.woocommerce ul.products li.product .star-rating{
+	margin:0 auto;
+}
+
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product,
+.woocommerce ul.products:not(.list) li.product h3{
+	text-align:center;
+}
+.woocommerce ul.products:not(.list) li.product .button {
+    margin-top: 0em;
+}
+
+.dcjq-icon:before{
+	content:'\f067';
+	font-family:FontAwesome;
+	float:right;
+}
+.dcjq-icon.less:before{
+	content:'\f068';
+	font-family:FontAwesome;
+	float:right;
 }
 /* Sidebar Multi Widget */
 #sidebar #tabbed_widget .tab-content {

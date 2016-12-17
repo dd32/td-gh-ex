@@ -47,7 +47,7 @@ $col = 12 / (int)$awada_theme_options['home_service_column']; ?>
 					}
 					if($awada_theme_options['service_icon_' . $j] != ""){ ?>
 					<a href="<?php echo esc_url($service_url); ?>">
-					<div class="service-icon-square  <?php if($i==2){ echo 'active'; } ?>">
+					<div id="service_box_<?php echo $j; ?>"class="service-icon-square  <?php if($i==2){ echo 'active'; } ?>">
 						<i id="service_icon_<?php echo $j; ?>" class="<?php echo esc_attr($awada_theme_options['service_icon_' . $j]); ?>"></i>
 					</div><!-- end service icon -->
 					</a>

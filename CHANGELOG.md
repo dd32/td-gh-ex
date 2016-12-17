@@ -1,3 +1,17 @@
+###Version 1.5 [17-DEC-2016]
+* WordPress 4.7 compatible.
+* WordPres selective-refresh apprach added.
+* Starter Content will help you to customize site according to your need.
+* 2 new color schemes added.
+* Woocommerce shop page re-design
+* Woocommerce widgets styling
+* Social Menu added. (You can add unlimited social icon in topbar)
+* Parent menu now can be click.
+* Navigation Arrow added in Menu.
+* RTL Support added.
+* FontAwesome Updated packag added.
+* Kirki Plugin updated version added.
+* Screenshot Updated.
 ###Version 1.4
 * Image stretch issue fixed.
 ###Version 1.3

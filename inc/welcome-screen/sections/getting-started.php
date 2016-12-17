@@ -39,6 +39,16 @@ $Awada_lite = wp_get_theme( 'awada' );
 		<h4><?php esc_html_e( 'Gallery in Blog Posts', 'awada' ); ?></h4>
 		<p><?php esc_html_e( 'If you want to use more than one images in your post or want to make gallery images in your post. This can be accomplished by following the documention below.', 'awada' ); ?></p>
 		<p><a href="http://demo.webhuntinfotech.com/blog/2016/01/11/add-gallery-posts-in-matrix-or-kyma-theme/" class="button" target="_blank"><?php esc_html_e( 'View how to do this', 'awada' ); ?></a></p>
+		
+		<hr />
+	
+		<h4><?php esc_html_e( 'How To Setup Social Menu', 'awada' ); ?></h4>
+		<p><?php _e( "Goto <b>Appearance >> Menus</b>, Create new menu name it whatever you want like <i><b>social-menu</b></i>. Now Click on <b>Custom Link</b> tab on left side. Put your Social media URL in URL field like <b>https://www.facebook.com/webhuntinfotech/</b>. in <b>Link Text</b> field enter social media name <b>facebook</b>, now click on <b>Add to Menu</b> button. Check <b>Social Links Menu</b> checkbox and Click on <b>Save Menu</b>. That's it now facebook social icon will appear on topbar of your site. Similarly you can add others social media like twitter, skype, dribbble, linkedin etc.
+		If you have any query ask for support at https://wordpress.org/support/theme/awada.
+		Thanks", 'awada' ); ?></p>
+		<p><a href="https://wordpress.org/support/theme/awada" class="button" target="_blank"><?php esc_html_e( 'Ask for Suport', 'awada' ); ?></a></p>
+		
+
 	</div>
 
 	<div class="awada-tab-pane-half">
@@ -55,6 +65,7 @@ $Awada_lite = wp_get_theme( 'awada' );
 
 	</div>
 
-	<div class="awada-lite-clear"></div>
+	
+	
 
 </div>

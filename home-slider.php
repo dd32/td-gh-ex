@@ -18,15 +18,15 @@ if($awada_theme_options['home_slider_enabled']==1){ ?>
 				</div>
 		<?php $j++; //endif;
 		} } else {
-			$slider_title = array(__('Corporate Theme', 'awada'), __('Responsive Theme', 'awada'), __('Business Theme', 'awada'));
+			$slider_title = array(__('Highly Customizable', 'awada'), __('Responsive Theme', 'awada'), __('Corporate Theme', 'awada'));
 			for($j=1 ; $j<=3 ; $j++){
 			if ($j % 2 == 0){	$orientation = 'horizontal';	}
 				else{	$orientation = 'vertical';	} ?>
 					<div class="sl-slide" data-orientation="<?php echo $orientation; ?>" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
 						<div class="sl-slide-inner">
-							<img class="img-responsive bg-img" src="<?php echo get_template_directory_uri(); ?>/images/slider/slider<?php echo $j; ?>.jpg">
+							<img class="img-responsive bg-img" src="<?php echo get_template_directory_uri(); ?>/images/slider/s<?php echo $j; ?>.jpg">
 							<h2><?php echo esc_attr($slider_title[$j-1]); ?></h2>
-							<blockquote><p><?php _e('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut fringilla nibh.', 'awada'); ?></p></blockquote>
+							<blockquote><p><?php _e('Lorem ipsum dolor sit amet, consectetur.', 'awada'); ?></p></blockquote>
 						</div>
 					</div>
 		<?php } $j=3;

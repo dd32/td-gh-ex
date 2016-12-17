@@ -4,7 +4,95 @@ function awada_customizer_preview_js()
     wp_enqueue_script('custom_css_preview', get_template_directory_uri() . '/js/customize-preview.js', array('customize-preview', 'jquery'));
 }
 add_action('customize_preview_init', 'awada_customizer_preview_js');
+/* Modifying existing controls */
+add_action( 'customize_register', function( $wp_customize ) {
+    $wp_customize->get_setting( 'blogname' )->transport          = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport   = 'postMessage';
+	$wp_customize->get_setting( 'custom_logo' )->transport          = 'postMessage';
+	$wp_customize->get_setting( 'header_textcolor' )->transport  = 'postMessage';
+	
 
+
+	$wp_customize->selective_refresh->add_partial( 'blogname', array(
+		'selector' => '#alogo',
+		'render_callback' => function(){
+			bloginfo( 'name' );
+		},
+	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
+		'selector' => '.site-description',
+		'render_callback' => function(){
+			bloginfo( 'description' );
+		},
+	) );
+} );
+function awada_render_footer_copyright(){
+	$awada_theme_options = awada_theme_options();
+	echo '<div class="footer_copy_text">
+		<p><span id="copyright_text">'.esc_attr($awada_theme_options['footer_copyright']).'</span><span id="developed_by_text"> '.esc_attr($awada_theme_options['developed_by_text']).' </span><a id="copyright_link" href="'. esc_url($awada_theme_options['developed_by_link']).'"><span id="copyright_link_text">'.esc_attr($awada_theme_options['developed_by_link_text']).'</span></a></p>
+	</div>';
+}
+function awada_partial_refresh_callout_title(){
+	$awada_theme_options = awada_theme_options();
+	echo '<h2 id="callout_title">'.$awada_theme_options['home_callout_title'].'</h2>';
+}
+function awada_partial_refresh_callout_desc(){
+	$awada_theme_options = awada_theme_options();
+	echo '<p id="callout_description" class="lead">'.$awada_theme_options['home_callout_description'].'</p>';
+}
+function awada_partial_refresh_callout_btn(){
+	$awada_theme_options = awada_theme_options();
+	echo '<a id="callout_link" class="btn btn-dark btn-lg btn-shadow" href="'.$awada_theme_options['callout_btn_link'].'" target="_blank"><span class="intro_text">'.$awada_theme_options['callout_btn_text'].'</span></a>';
+}
+function awada_partial_refresh_blog_title(){
+	$awada_theme_options = awada_theme_options();
+	echo '<h2 id="blog_heading">'.$awada_theme_options['home_blog_title'].'</h2>';
+}
+function awada_partial_refresh_blog_desc(){
+	$awada_theme_options = awada_theme_options();
+	echo '<p id="blog_description">'.$awada_theme_options['home_blog_description'].'</p>';
+}
+function awada_partial_refresh_service_head(){
+	$awada_theme_options = awada_theme_options();
+	echo '<h2 id="home_service_title">'.$awada_theme_options['home_service_title'].'</h2>';
+}
+function awada_partial_refresh_service_desc(){
+	$awada_theme_options = awada_theme_options();
+	echo '<p id="home_service_description">'.$awada_theme_options['home_service_description'].'</p>';
+}
+function awada_partial_refresh_service_icon($i){
+	$act='';
+	if($i==2){ $act = 'active'; }
+	$awada_theme_options = awada_theme_options();
+	$out = '<div id="service_box_'.$i.'" class="service-icon-square  '.$act.'">';
+	$out.= '<i id="service_icon_'.esc_attr($i).'" class="'.esc_attr($awada_theme_options['service_icon_'.$i]).'"></i>';
+	$out.='</div>';
+	echo $out;
+}
+function awada_partial_refresh_service_title($i){
+	$awada_theme_options = awada_theme_options();
+	echo $out = '<h3 id="service_title_'.esc_attr($i).'" >'.esc_attr($awada_theme_options['service_title_'.$i]).'</h3>';
+}
+function awada_partial_refresh_service_text($i){
+	$awada_theme_options = awada_theme_options();
+	echo $out = '<p id="service_description_'.esc_attr($i).'" >'.esc_attr($awada_theme_options['service_text_'.$i]).'</p>';
+	
+}
+function awada_partial_refresh_service_link($i){
+	$awada_theme_options = awada_theme_options();
+	echo $out = '<a id="service_link_'.esc_attr($i).'" class="readmore" href="'.esc_attr($awada_theme_options['service_link_'.$i]).'">'.__('Read More', 'awada').'</a>';
+}
+function awada_render_contact_email(){
+	$awada_theme_options = awada_theme_options();
+	$out = '<i class="fa fa-envelope"></i> <a href="mailto:'.$awada_theme_options['contact_email'].'">'.$awada_theme_options['contact_email'].'</a>';
+	return $out;
+}
+function awada_render_contact_phone(){
+	$awada_theme_options = awada_theme_options();
+	$out = '<i class="fa fa-phone-square"></i> '.$awada_theme_options['contact_phone'];
+	return $out;
+}
 if(!function_exists('awada_get_post_select')):
 	function awada_get_post_select() {
 	$all_posts = wp_count_posts('post')->publish;
@@ -111,7 +199,7 @@ Kirki::add_field('awada_theme', array(
     'sanitize_callback' => 'awada_sanitize_color',
     'output'            => array(
         array(
-            'element'  => '.navbar-default .navbar-brand, #awada-header .navbar-nav > li > a, .dropdown-menu > li > a',
+            'element'  => '.navbar-default .navbar-brand, #awada-header .navbar-nav > li > a, .dropdown-menu > li > a,.site-title a, .site-description',
             'property' => 'color',
         ),
     ),
@@ -126,12 +214,42 @@ Kirki::add_section('general_sec', array(
     'capability'  => 'edit_theme_options',
 ));
 
+Kirki::add_field( 'awada_theme', array(
+    'type'        => 'preset',
+    'settings'    => 'color_scheme',
+    'label'       => __( 'Color Scheme', 'awada' ),
+    'section'     => 'general_sec',
+    'default'     => 'green.css',
+    'priority'    => 10,
+    'multiple'    => 3,
+    'choices'     => array(
+        'default.css' => array(
+            'label'    => __('Default','awada'),
+            'settings' => array(
+                'awada_theme_options[header_topbar_bg_color]' => '#31a3dd',
+            ),
+        ),
+		'green.css' => array(
+            'label'    => __('Green','awada'),
+            'settings' => array(
+                'awada_theme_options[header_topbar_bg_color]' => '#33a568',
+            ),
+        ),
+		'DonJuan.css' => array(
+            'label'    => __('Coffee','awada'),
+            'settings' => array(
+                'awada_theme_options[header_topbar_bg_color]' => '#5C4B51',
+            ),
+        ),
+        
+    ),
+) );
 Kirki::add_field('awada_theme', array(
     'settings'          => 'logo_top_spacing',
     'label'             => __('Logo Top Spacing', 'awada'),
-    'section'           => 'general_sec',
+    'section'           => 'title_tagline',
     'type'              => 'slider',
-    'priority'          => 10,
+    'priority'          => 40,
     'default'           => 0,
     'choices'           => array(
         'max'  => 50,
@@ -146,40 +264,14 @@ Kirki::add_field('awada_theme', array(
             'units'    => 'px',
         ),
 		array(
-            'element'  => '#awada-header .navbar-brand',
+            'element'  => '#awada-header .site-branding-text',
             'property' => 'margin-top',
             'units'    => 'px',
         ),
     ),
     'sanitize_callback' => 'awada_sanitize_number',
 ));
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'logo_bottom_spacing',
-    'label'             => __('Logo Bottom Spacing', 'awada'),
-    'section'           => 'general_sec',
-    'type'              => 'slider',
-    'priority'          => 10,
-    'default'           => 0,
-    'choices'           => array(
-        'max'  => 50,
-        'min'  => -50,
-        'step' => 1,
-    ),
-    'transport'         => 'auto',
-    'output'            => array(
-        array(
-            'element'  => '#awada-header .dropmenu img',
-            'property' => 'margin-bottom',
-            'units'    => 'px',
-        ),
-		array(
-            'element'  => '#awada-header .navbar-brand',
-            'property' => 'margin-bottom',
-            'units'    => 'px',
-        ),
-    ),
-    'sanitize_callback' => 'awada_sanitize_number',
-));
+
 Kirki::add_field('awada_theme', array(
     'settings' => 'custom_css',
     'label' => __('Custom Css Editor', 'awada'),
@@ -213,7 +305,8 @@ Kirki::add_field('awada_theme', array(
     'section'     => 'typography_sec',
     'default'     => array(
         'font-style'  => array('bold', 'italic'),
-        'font-family' => 'Courgette',
+        'font-family' => 'Eagle Lake',
+		'font-size'   => '28px',
     ),
     'priority'    => 10,
     'choices'     => array(
@@ -223,9 +316,10 @@ Kirki::add_field('awada_theme', array(
         'line-height' => true,
         'font-weight' => true,
     ),
+    
     'output'      => array(
         array(
-            'element' => '#awada-header .navbar-brand p',
+            'element' => '#awada-header .site-branding-text p,#awada-header .site-branding-text h1',
         ),
     ),
 ));
@@ -444,6 +538,7 @@ Kirki::add_field('awada_theme', array(
     'choices'           => $posts,
     'multiple'          => 4,
     'sanitize_callback' => 'awada_sanitize_selected',
+	
 ));
 
 /* Service Options */
@@ -462,6 +557,13 @@ Kirki::add_field('awada_theme', array(
     'transport'         => 'postMessage',
     'default'           => $awada_theme_options['home_service_title'],
     'sanitize_callback' => 'awada_sanitize_text',
+	'partial_refresh' => array(
+        'home_service_title' => array(
+            'selector'            => '#home_service_title',
+			'container_inclusive' => true,
+            'render_callback'     => 'awada_partial_refresh_service_head'
+        ),
+    )
 ));
 Kirki::add_field('awada_theme', array(
     'settings'          => 'home_service_description',
@@ -472,6 +574,13 @@ Kirki::add_field('awada_theme', array(
     'transport'         => 'postMessage',
     'default'           => $awada_theme_options['home_service_description'],
     'sanitize_callback' => 'awada_sanitize_textarea',
+	'partial_refresh' => array(
+        'home_service_description' => array(
+            'selector'            => '#home_service_description',
+			'container_inclusive' => true,
+            'render_callback'     => 'awada_partial_refresh_service_desc',
+        ),
+    )
 ));
 Kirki::add_field('awada_theme', array(
     'settings'          => 'home_service_column',
@@ -487,169 +596,90 @@ Kirki::add_field('awada_theme', array(
     ),
     'sanitize_callback' => 'awada_sanitize_number',
 ));
+for($i=1;$i<=4;$i++){
+	$num = array(1=>'One', 2=>'Two', 3=>'Three',4=>'Four');
 Kirki::add_field('awada_theme', array(
-    'settings'          => 'service_icon_1',
-    'label'             => __('Service One Icon', 'awada'),
+    'settings'          => 'service_icon_'.$i,
+    'label'             => sprintf(__('Service %s Icon','awada'), $num[$i]),
     'section'           => 'service_sec',
     'type'              => 'text',
     'priority'          => 10,
     'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['service_icon_1'],
+    'default'           => $awada_theme_options['service_icon_'.$i],
     'sanitize_callback' => 'awada_sanitize_text',
+	'partial_refresh' => array(
+        'service_icon_'.$i => array(
+            'selector'            => '#service_box_'.$i,
+			'container_inclusive' => true,
+            'render_callback'     => function() use($i){
+					awada_partial_refresh_service_icon($i);
+			},
+        ),
+    )
+	
 ));
 Kirki::add_field('awada_theme', array(
-    'settings'          => 'service_title_1',
-    'label'             => __('Service One Title', 'awada'),
+    'settings'          => 'service_title_'.$i,
+    'label'             => sprintf(__('Service %s Title','awada'), $num[$i]),
     'section'           => 'service_sec',
     'type'              => 'text',
     'priority'          => 10,
     'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['service_title_1'],
+    'default'           => $awada_theme_options['service_title_'.$i],
     'sanitize_callback' => 'awada_sanitize_text',
+	'partial_refresh' => array(
+        'service_title_'.$i => array(
+            'selector'            => '#service_title_'.$i,
+			'container_inclusive' => true,
+            'render_callback'     => function() use($i){
+					awada_partial_refresh_service_title($i);
+			},
+        ),
+    )
+	
 ));
 Kirki::add_field('awada_theme', array(
-    'settings'          => 'service_text_1',
-    'label'             => __('Service One Description', 'awada'),
+    'settings'          => 'service_text_'.$i,
+    'label'             => sprintf(__('Service %s Description','awada'), $num[$i]),
     'section'           => 'service_sec',
     'type'              => 'textarea',
     'priority'          => 10,
     'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['service_text_1'],
+    'default'           => $awada_theme_options['service_text_'.$i],
     'sanitize_callback' => 'awada_sanitize_textarea',
+	'partial_refresh' => array(
+        'service_text_'.$i => array(
+            'selector'            => '#service_text_'.$i,
+			'container_inclusive' => true,
+            'render_callback'     => function() use($i){
+					awada_partial_refresh_service_text($i);
+			},
+        ),
+    )
+	
 ));
 Kirki::add_field('awada_theme', array(
-    'settings'          => 'service_link_1',
-    'label'             => __('Service One URL', 'awada'),
+    'settings'          => 'service_link_'.$i,
+    'label'             => sprintf(__('Service %s URL','awada'), $num[$i]),
     'section'           => 'service_sec',
     'type'              => 'text',
     'priority'          => 10,
     'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['service_link_1'],
+    'default'           => $awada_theme_options['service_link_'.$i],
     'sanitize_callback' => 'esc_url',
+	'partial_refresh' => array(
+        'service_link_'.$i => array(
+            'selector'            => '#service_link_'.$i,
+			'container_inclusive' => true,
+            'render_callback'     => function() use($i){
+					awada_partial_refresh_service_link($i);
+			},
+        ),
+    )
+	
 ));
-/* Service 2 */
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'service_icon_2',
-    'label'             => __('Service Two Icon', 'awada'),
-    'section'           => 'service_sec',
-    'type'              => 'text',
-    'priority'          => 10,
-    'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['service_icon_2'],
-    'sanitize_callback' => 'awada_sanitize_text',
-));
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'service_title_2',
-    'label'             => __('Service Two Title', 'awada'),
-    'section'           => 'service_sec',
-    'type'              => 'text',
-    'priority'          => 10,
-    'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['service_title_2'],
-    'sanitize_callback' => 'awada_sanitize_text',
-));
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'service_text_2',
-    'label'             => __('Service Two Description', 'awada'),
-    'section'           => 'service_sec',
-    'type'              => 'textarea',
-    'priority'          => 10,
-    'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['service_text_2'],
-    'sanitize_callback' => 'awada_sanitize_textarea',
-));
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'service_link_2',
-    'label'             => __('Service Two URL', 'awada'),
-    'section'           => 'service_sec',
-    'type'              => 'url',
-    'priority'          => 10,
-    'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['service_link_2'],
-    'sanitize_callback' => 'esc_url',
-));
-/* Service 3 */
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'service_icon_3',
-    'label'             => __('Service Three Icon', 'awada'),
-    'section'           => 'service_sec',
-    'type'              => 'text',
-    'priority'          => 10,
-    'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['service_icon_3'],
-    'sanitize_callback' => 'awada_sanitize_text',
-));
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'service_title_3',
-    'label'             => __('Service Three Title', 'awada'),
-    'section'           => 'service_sec',
-    'type'              => 'text',
-    'priority'          => 10,
-    'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['service_title_3'],
-    'sanitize_callback' => 'awada_sanitize_text',
-));
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'service_text_3',
-    'label'             => __('Service Three Description', 'awada'),
-    'section'           => 'service_sec',
-    'type'              => 'textarea',
-    'priority'          => 10,
-    'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['service_text_3'],
-    'sanitize_callback' => 'awada_sanitize_textarea',
-));
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'service_link_3',
-    'label'             => __('Service Three URL', 'awada'),
-    'section'           => 'service_sec',
-    'type'              => 'url',
-    'priority'          => 10,
-    'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['service_link_3'],
-    'sanitize_callback' => 'esc_url',
-));
-/* Service 4 */
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'service_icon_4',
-    'label'             => __('Service Four Icon', 'awada'),
-    'section'           => 'service_sec',
-    'type'              => 'text',
-    'priority'          => 10,
-    'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['service_icon_4'],
-    'sanitize_callback' => 'awada_sanitize_text',
-));
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'service_title_4',
-    'label'             => __('Service Four Title', 'awada'),
-    'section'           => 'service_sec',
-    'type'              => 'text',
-    'priority'          => 10,
-    'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['service_title_4'],
-    'sanitize_callback' => 'awada_sanitize_text',
-));
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'service_text_4',
-    'label'             => __('Service Four Description', 'awada'),
-    'section'           => 'service_sec',
-    'type'              => 'textarea',
-    'priority'          => 10,
-    'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['service_text_4'],
-    'sanitize_callback' => 'awada_sanitize_textarea',
-));
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'service_link_4',
-    'label'             => __('Service Four URL', 'awada'),
-    'section'           => 'service_sec',
-    'type'              => 'url',
-    'priority'          => 10,
-    'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['service_link_4'],
-    'sanitize_callback' => 'esc_url',
-));
+}
+
 /* Portfolio */
 Kirki::add_section('portfolio_sec', array(
     'title'      => __('Portfolio Options', 'awada'),
@@ -683,6 +713,13 @@ Kirki::add_field('awada_theme', array(
     'transport'         => 'postMessage',
     'default'           => $awada_theme_options['home_blog_title'],
     'sanitize_callback' => 'awada_sanitize_text',
+	'partial_refresh' => array(
+        'home_blog_title' => array(
+            'selector'            => '#blog_heading',
+			'container_inclusive' => true,
+            'render_callback'     => 'awada_partial_refresh_blog_title'
+        ),
+    )
 ));
 Kirki::add_field('awada_theme', array(
     'settings'          => 'home_blog_description',
@@ -693,6 +730,13 @@ Kirki::add_field('awada_theme', array(
     'transport'         => 'postMessage',
     'default'           => $awada_theme_options['home_blog_description'],
     'sanitize_callback' => 'awada_sanitize_textarea',
+	'partial_refresh' => array(
+        'home_blog_description' => array(
+            'selector'            => '#blog_description',
+			'container_inclusive' => true,
+            'render_callback'     => 'awada_partial_refresh_blog_desc'
+        ),
+    )
 ));
 $categories = get_categories( array(
 	'orderby' => 'name',
@@ -754,6 +798,13 @@ Kirki::add_field('awada_theme', array(
     'transport'         => 'postMessage',
     'default'           => $awada_theme_options['home_callout_title'],
     'sanitize_callback' => 'awada_sanitize_text',
+	'partial_refresh' => array(
+        'home_callout_title' => array(
+            'selector'            => '#callout_title',
+			'container_inclusive' => true,
+            'render_callback'     => 'awada_partial_refresh_callout_title'
+        ),
+    )
 ));
 
 Kirki::add_field('awada_theme', array(
@@ -765,6 +816,13 @@ Kirki::add_field('awada_theme', array(
     'transport'         => 'postMessage',
     'default'           => $awada_theme_options['home_callout_description'],
     'sanitize_callback' => 'awada_sanitize_textarea',
+	'partial_refresh' => array(
+        'home_callout_description' => array(
+            'selector'            => '#callout_description',
+			'container_inclusive' => true,
+            'render_callback'     => 'awada_partial_refresh_callout_desc'
+        ),
+    )
 ));
 Kirki::add_field('awada_theme', array(
     'settings'          => 'callout_btn_text',
@@ -775,6 +833,13 @@ Kirki::add_field('awada_theme', array(
     'transport'         => 'postMessage',
     'default'           => $awada_theme_options['callout_btn_text'],
     'sanitize_callback' => 'awada_sanitize_text',
+	'partial_refresh' => array(
+        'callout_btn_text' => array(
+            'selector'            => '#callout_link',
+			'container_inclusive' => true,
+            'render_callback'     => 'awada_partial_refresh_callout_btn'
+        ),
+    )
 ));
 
 Kirki::add_field('awada_theme', array(
@@ -786,6 +851,13 @@ Kirki::add_field('awada_theme', array(
     'transport'         => 'postMessage',
     'default'           => $awada_theme_options['callout_btn_link'],
     'sanitize_callback' => 'esc_url',
+	'partial_refresh' => array(
+        'callout_btn_link' => array(
+            'selector'            => '#callout_link',
+			'container_inclusive' => true,
+            'render_callback'     => 'awada_partial_refresh_callout_btn'
+        ),
+    )
 ));
 /* Social Options */
 Kirki::add_section('social_sec', array(
@@ -814,6 +886,12 @@ Kirki::add_field('awada_theme', array(
 	'transport'         => 'postMessage',
     'default'           => $awada_theme_options['contact_email'],
     'sanitize_callback' => 'sanitize_email',
+	'partial_refresh' => array(
+    'contact_email' => array(
+        'selector'        => '.topbar-contact-email',
+        'render_callback' => 'awada_render_contact_email',
+    )
+),
 ));
 Kirki::add_field('awada_theme', array(
     'settings'          => 'contact_phone',
@@ -824,6 +902,12 @@ Kirki::add_field('awada_theme', array(
 	'transport'         => 'postMessage',
     'default'           => $awada_theme_options['contact_phone'],
     'sanitize_callback' => 'awada_sanitize_text',
+	'partial_refresh' => array(
+		'contact_phone' => array(
+			'selector'        => '.topbar-contact-phone',
+			'render_callback' => 'awada_render_contact_phone',
+		)
+	),
 ));
 Kirki::add_field('awada_theme', array(
     'settings'          => 'social_media_header',
@@ -957,6 +1041,13 @@ Kirki::add_field('awada_theme', array(
 	'transport'         => 'postMessage',
     'default'           => $awada_theme_options['footer_copyright'],
     'sanitize_callback' => 'awada_sanitize_text',
+	'partial_refresh' =>array(
+		'footer_copyright' => array(
+			'selector'        => '.footer_copy_text',
+			'container_inclusive' => true,
+			'render_callback' => 'awada_render_footer_copyright',
+		)
+	)
 ));
 Kirki::add_field('awada_theme', array(
     'settings'          => 'developed_by_text',
@@ -967,6 +1058,13 @@ Kirki::add_field('awada_theme', array(
 	'transport'         => 'postMessage',
     'default'           => $awada_theme_options['developed_by_text'],
     'sanitize_callback' => 'awada_sanitize_text',
+	'partial_refresh' =>array(
+		'developed_by_text' => array(
+			'selector'        => '.footer_copy_text',
+			'container_inclusive' => true,
+			'render_callback' => 'awada_render_footer_copyright',
+		)
+	)
 ));
 Kirki::add_field('awada_theme', array(
     'settings'          => 'developed_by_link_text',
@@ -977,6 +1075,13 @@ Kirki::add_field('awada_theme', array(
 	'transport'         => 'postMessage',
     'default'           => $awada_theme_options['developed_by_link_text'],
     'sanitize_callback' => 'awada_sanitize_text',
+	'partial_refresh' =>array(
+		'developed_by_link_text' => array(
+			'selector'        => '.footer_copy_text',
+			'container_inclusive' => true,
+			'render_callback' => 'awada_render_footer_copyright',
+		)
+	)
 ));
 Kirki::add_field('awada_theme', array(
     'settings'          => 'developed_by_link',
@@ -987,6 +1092,13 @@ Kirki::add_field('awada_theme', array(
 	'transport'         => 'postMessage',
     'default'           => $awada_theme_options['developed_by_link'],
     'sanitize_callback' => 'esc_url',
+	'partial_refresh' =>array(
+		'developed_by_link' => array(
+			'selector'        => '.footer_copy_text',
+			'container_inclusive' => true,
+			'render_callback' => 'awada_render_footer_copyright',
+		)
+	)
 ));
 Kirki::add_field('awada_theme', array(
     'settings'          => 'footer_background_color',
@@ -1109,7 +1221,7 @@ function awada_sanitize_number($value)
 }
 function awada_sanitize_selected($value)
 {
-    if ($value[0] == '') {
+    if (isset($value[0]) && $value[0] == '') {
         return $value = '';
     } else {
         return wp_kses_post($value);
@@ -1144,14 +1256,12 @@ function awada_sanitize_textarea($value)
 {
     return wp_kses_post(force_balance_tags($value));
 }
-
 function awada_customize_register_active( $wp_customize ) {
 	$awada_theme_options = awada_theme_options();
 	if ($awada_theme_options['site_layout'] != 'boxed') {
 		$wp_customize->remove_section('background_image');
 	}
 	$wp_customize->remove_control('header_textcolor');
-	
 	wp_enqueue_style('customizercustom_css',get_template_directory_uri().'/css/customizer.css');
     
 	$wp_customize->add_section( 'awada_pro' , array(

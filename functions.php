@@ -10,6 +10,7 @@ require get_template_directory() . '/functions/custom/contact-widgets.php';
 require get_template_directory() . '/functions/custom/recent-posts.php';
 require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 include get_template_directory() . '/inc/welcome-screen/welcome-screen.php';
+require_once get_template_directory() . '/inc/functions.php';
 require_once dirname(__FILE__) . '/default_options.php';
 
 if (!class_exists('Kirki')) {
@@ -44,12 +45,27 @@ function awada_theme_setup()
     add_theme_support('post-thumbnails');
     load_theme_textdomain('awada', get_template_directory() . '/lang');
     // This theme uses wp_nav_menu() in one location.
-    register_nav_menu('primary', __('Primary Menu', 'awada'));
-    register_nav_menu('secondary', __('Secondary Menu', 'awada'));
+	register_nav_menus( array(
+		'primary'    => __( 'Primary menu', 'awada' ),
+		'secondary' => __( 'Footer Menu', 'awada' ),
+		'social' => __( 'Social Links Menu', 'awada' ),
+	) );
     // theme support
-    $args = array('default-color' => '#ffffff',);
+	// Add theme support for selective refresh for widgets.
+	add_theme_support( 'customize-selective-refresh-widgets' );
+    $args = array('default-color' => '#ffffff','default-image' => '',);
+	$args1 = array(
+		'flex-width'    => true,
+		'width'         => 1350,
+		'flex-height'    => true,
+		'height'        => 60,
+		'default-image' => '',
+		'header-text-color'=>'blue',
+		'header-text' => true,
+	);
+	add_editor_style( 'css/editor-style.css' );
     add_theme_support('custom-background', $args);
-    add_theme_support('custom-header');
+    add_theme_support('custom-header',$args1);
     add_theme_support('automatic-feed-links');
     add_theme_support('woocommerce');
     add_theme_support('title-tag');
@@ -59,6 +75,97 @@ function awada_theme_setup()
 		'flex-height' => true,
 		'flex-width'  => true,
 	) );
+	/*
+     * Switch default core markup for search form, comment form, and comments
+     * to output valid HTML5.
+     */
+    add_theme_support( 'html5', array(
+        'search-form',
+        'comment-form',
+        'comment-list',
+        'gallery',
+        'caption',
+    ) );
+	add_theme_support( 'starter-content', array(
+	 
+		'posts' => array(
+			'home' => array(
+				'template'	=> 'home-page.php',
+			),
+			'about' => array(
+				'thumbnail' => '{{image-sandwich}}',
+			),
+			'contact' => array(
+				'thumbnail' => '{{image-espresso}}',
+			),
+			'blog' => array(
+				'thumbnail' => '{{image-coffee}}',
+			)
+		),
+		
+		'options' => array(
+			'awada_theme_options[portfolio_home]'=>1,
+			'show_on_front' => 'page',
+			'page_on_front' => '{{home}}',
+			'page_for_posts' => '{{blog}}',
+		),
+		'widgets' => array(
+			'sidebar-widget' => array(
+				'search',
+				'text_business_info',
+				'text_about',
+				'category',
+				'tags',
+			),
+
+			'footer-widget' => array(
+				'text_business_info',
+				'text_about',
+				'meta',
+				'search',
+			),
+		),
+
+		'nav_menus' => array(
+			'primary-sidebar' => array(
+				'name' => __( 'Primary Menu', 'awada' ),
+				'items' => array(
+					'page_home',
+					'page_about',
+					'page_blog',
+					'page_contact',
+				),
+			),
+			'secondary-sidebar' => array(
+				'name' => __( 'Primary Menu', 'awada' ),
+				'items' => array(
+					'page_home',
+					'page_about',
+					'page_blog',
+					'page_contact',
+				),
+			),
+			'footer-widget' => array(
+				'name' => __( 'Footer Menu', 'awada' ),
+				'items' => array(
+					'page_home',
+					'page_about',
+					'page_blog',
+					'page_contact',
+				),
+			),
+			'social' => array(
+				'name' => __( 'Social Links Menu', 'awada' ),
+				'items' => array(
+					'link_yelp',
+					'link_facebook',
+					'link_twitter',
+					'link_instagram',
+					'link_email',
+				),
+			),
+		),
+	) );
 	add_image_size('awada_home_slider_bg_image', 1600, 499, true);
 	add_image_size('awada_blog_full_thumb', 1090, 515, true);
     add_image_size('awada_blog_sidebar_thumb', 805, 350, true);
@@ -66,6 +173,7 @@ function awada_theme_setup()
 	add_image_size('awada_blog_home_thumb', 330, 206, true);
 	add_image_size('awada_recent_widget_thumb', 120, 77, true);
 }
+
 // Read more tag to formatting in blog page
 function awada_content_more($read_more)
 {
@@ -90,8 +198,8 @@ function awada_widget()
 	register_sidebar(array(
         'name' => __('Primary Sidebar Widget Area', 'awada'),
         'id' => 'primary-sidebar',
-        'description' => __('Primary sidebar widget area', 'awada'),
-        'before_widget' => '<div class="widget">',
+        'description' => __('Right sidebar widget area', 'awada'),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div>',
         'before_title' => '<div class="title"><h2>',
         'after_title' => '</h2></div>'
@@ -99,8 +207,8 @@ function awada_widget()
 	register_sidebar(array(
         'name' => __('Secondary Sidebar Widget Area', 'awada'),
         'id' => 'secondary-sidebar',
-        'description' => __('Secondary sidebar widget area', 'awada'),
-        'before_widget' => '<div class="widget">',
+        'description' => __('Left sidebar widget area', 'awada'),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div>',
         'before_title' => '<div class="title"><h3>',
         'after_title' => '</h3></div>'
@@ -109,7 +217,7 @@ function awada_widget()
         'name' => __('Footer Widget Area', 'awada'),
         'id' => 'footer-widget',
         'description' => __('Footer widget area', 'awada'),
-        'before_widget' => '<div class="col-lg-' . $col . ' col-md-' . $col . ' col-sm-6 col-xs-12"><div class="widget">',
+        'before_widget' => '<div class="col-lg-' . $col . ' col-md-' . $col . ' col-sm-6 col-xs-12"><div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div></div>',
         'before_title' => '<div class="title"><h3>',
         'after_title' => '</h3></div>',
@@ -245,7 +353,9 @@ function awada_enqueue_style()
     $awada_theme_options = awada_theme_options();
     wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.css');
 	wp_enqueue_style('awada', get_stylesheet_uri());
-    wp_enqueue_style('color-scheme', get_template_directory_uri() . '/css/default.css');
+	if($awada_theme_options['color_scheme']!=''){
+			wp_enqueue_style('color-scheme', get_template_directory_uri() . '/css/skins/'.$awada_theme_options['color_scheme']);
+	}
     wp_enqueue_style('animate', get_template_directory_uri() . '/css/animate.css');
 	wp_enqueue_style('owl-carousel', get_template_directory_uri() . '/css/owl-carousel.css');
 	wp_enqueue_style('prettyPhoto', get_template_directory_uri() . '/css/prettyPhoto.css');
@@ -274,8 +384,21 @@ function awada_enqueue_in_footer()
 	
 	wp_enqueue_script('jquery.prettyPhoto', get_template_directory_uri() . '/js/jquery.prettyPhoto.js');
 	wp_enqueue_script('jquery.fitvids', get_template_directory_uri() . '/js/jquery.fitvids.js');
-
 	wp_enqueue_script('custom-js', get_template_directory_uri() . '/js/custom.js');
+	if(class_exists('WooCommerce')){
+		if(is_shop() || is_cart() || is_product() || is_checkout() || is_product_category()){
+			wp_enqueue_script('jquery.dcjqaccordion', get_template_directory_uri() . '/js/jquery.dcjqaccordion.js', array('jquery'));
+			$dcjq ='  jQuery(".product-categories").dcAccordion({
+					saveState: false,
+					autoExpand: true,
+					showCount: true,
+				});
+			jQuery(".dcjq-icon").click(function(){
+				jQuery(this).toggleClass("less");
+			});';
+			wp_add_inline_script('jquery.dcjqaccordion',$dcjq);
+		}
+	}
 	// Support for HTML5
 	//[if lt IE 9]
 	wp_enqueue_script('html5-shiv', get_template_directory_uri() . '/js/html5_shiv.js');
@@ -302,7 +425,22 @@ function awada_enqueue_in_footer()
     )
     );
 }
+// Migrate any existing theme CSS to the core option added in WordPress 4.7.
+if ( function_exists( 'wp_get_custom_css' ) && class_exists('Kirki') ) {
+	  $fields = Kirki::$fields;
+		$fields['awada_theme_options[custom_css]']['description']=__("This field will no longer work. Since WordPress 4.7 has it's own Custom CSS Editor we recommed you to put all your custom CSS in that field","awada");
 
+		$fields['awada_theme_options[custom_css]']['tooltip']=__("This field will no longer work. Since WordPress 4.7 has it's own Custom CSs Editor we recommed you to put all your custom CSS in that field.","awada");
+		Kirki::$fields = $fields;
+}else{
+	add_action('wp_head','awada_custom_css');
+	function awada_custom_css(){
+		$awada_theme_options = awada_theme_options();
+		if($awada_theme_options['custom_css']!=""){?>
+			<style type="text/css"><?php echo ($awada_theme_options['custom_css']); ?></style>
+		<?php }
+	}
+}
 // Comment Function
 function awada_comments($comments, $args, $depth)
 {
@@ -345,18 +483,23 @@ remove_action('woocommerce_before_main_content', 'woocommerce_output_content_wra
 remove_action('woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
 add_action('woocommerce_before_main_content', 'awada_theme_wrapper_start', 10);
 add_action('woocommerce_after_main_content', 'awada_theme_wrapper_end', 10);
-function awada_theme_wrapper_start()
-{
-    get_template_part('breadcrumbs');
+function awada_theme_wrapper_start(){	
+$awada_theme_options = awada_theme_options();
+$layout = $awada_theme_options['page_layout'];
+if($layout=='fullwidth'){$class='col-lg-12 col-md-12 col-sm-12 col-xs-12';}else{$class='col-lg-9 col-md-9 col-sm-12 col-xs-12';}
+   // get_template_part('breadcrumbs');
     echo '<section class="blog-wrapper">
-            <div class="container">
-               <div class="shop_wrapper col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="container">';
+		if($layout=='leftsidebar'){get_sidebar();}
+           echo '<div class="shop_wrapper '.$class.'">
                   <div class="general_row">';
 }
-function awada_theme_wrapper_end()
-{
+function awada_theme_wrapper_end(){
+	$awada_theme_options = awada_theme_options();
+	$layout = $awada_theme_options['page_layout'];
     echo '</div>
 			</div>';
+			if($layout=='rightsidebar'){get_sidebar();};
     echo '</div>
 		</section>';
 }
@@ -381,6 +524,16 @@ function awada_register_required_plugins()
             'slug'     => 'social-media-gallery', // The plugin slug (typically the folder name).
             'required' => false, // If false, the plugin is only 'recommended' instead of required.
         ),
+		 array(
+            'name'     => 'YITH WooCommerce Zoom Magnifier', // The plugin name.
+            'slug'     => 'yith-woocommerce-zoom-magnifier', // The plugin slug (typically the folder name).
+            'required' => false, // If false, the plugin is only 'recommended' instead of required.
+        ),
+		array(
+            'name'     => 'WooCommerce Grid / List toggle', // The plugin name.
+            'slug'     => 'woocommerce-grid-list-toggle', // The plugin slug (typically the folder name).
+            'required' => false, // If false, the plugin is only 'recommended' instead of required.
+        ),
     );
     $config = array(
         'id'           => 'awada', // Unique ID for hashing notices for multiple instances of Awada.
@@ -392,7 +545,7 @@ function awada_register_required_plugins()
         'dismissable'  => true, // If false, a user cannot dismiss the nag message.
         'dismiss_msg'  => '', // If 'dismissable' is false, this message will be output at top of nag.
         'is_automatic' => false, // Automatically activate plugins after installation or not.
-        'message'      => '', // Message to output right before the plugins table.
+        'message'      => 'If you are using this theme for e-commerce purpose install these plugins for better user experience.', // Message to output right before the plugins table.
     );
     awada($plugins, $config);
 }

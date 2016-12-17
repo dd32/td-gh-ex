@@ -5,6 +5,7 @@ function awada_theme_options()
     $awada_theme_options = array(
         '_frontpage' => 1,
         'site_layout' => '',
+		'color_scheme'=>'default.css',
         'logo_layout' => 'left',
 		'blog_layout' => 'rightsidebar',
         'post_layout' => 'rightsidebar',

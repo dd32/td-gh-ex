@@ -30,34 +30,27 @@ if ($awada_theme_options['site_layout'] == 'boxed') {
 				<?php } ?>
 			</div><!-- end topbar-contact -->
 		</div><!-- end columns -->
-		<?php } if ($awada_theme_options['social_media_header']) { ?>
+		<?php } if ($awada_theme_options['social_media_header'] && has_nav_menu('social')) { ?>
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" id="topbar-social-links">
 			<div class="topbar-social-links">
-				<?php if ($awada_theme_options['social_facebook_link'] != '') { ?>
-				<span class="social-end"><a id="facebook" href="<?php echo esc_url($awada_theme_options['social_facebook_link']); ?>" target="_blank"><i class="fa fa-facebook"></i></a></span>
-				<?php } if ($awada_theme_options['social_google_plus_link'] != '') { ?>
-				<span class="social-end"><a id="googleplus" href="<?php echo esc_url($awada_theme_options['social_google_plus_link']); ?>" target="_blank"><i class="fa fa-google-plus"></i></a></span>
-				<?php } if ($awada_theme_options['social_twitter_link'] != '') { ?>
-				<span class="social-end"><a id="twitter" href="<?php echo esc_url($awada_theme_options['social_twitter_link']); ?>" target="_blank"><i class="fa fa-twitter"></i></a></span>
-				<?php } if ($awada_theme_options['social_youtube_link'] != '') { ?>
-				<span class="social-end"><a id="youtube" href="<?php echo esc_url($awada_theme_options['social_youtube_link']); ?>" target="_blank"><i class="fa fa-youtube"></i></a></span>
-				<?php } if ($awada_theme_options['social_linkedin_link'] != '') { ?>
-				<span class="social-end"><a id="linkedin" href="<?php echo esc_url($awada_theme_options['social_linkedin_link']); ?>" target="_blank"><i class="fa fa-linkedin"></i></a></span>
-				<?php } if ($awada_theme_options['social_dribbble_link'] != '') { ?>
-				<span class="social-end"><a id="dribbble" href="<?php echo esc_url($awada_theme_options['social_dribbble_link']); ?>" target="_blank"><i class="fa fa-dribbble"></i></a></span>
-				<?php } if ($awada_theme_options['social_skype_link'] != '') { ?>
-				<span class="social-end"><a id="skype" href="<?php echo esc_url($awada_theme_options['social_skype_link']); ?>" target="_blank"><i class="fa fa-skype"></i></a></span>
-				<?php } ?>
+				<?php wp_nav_menu(array(
+						'theme_location' => 'social',
+						'menu_class' => 'nav navbar-nav top-social',
+						'depth'          => 1,
+						'link_before'    => '<span class="screen-reader-text">',
+						'link_after'     => '</span>' . awada_get_icon( array( 'icon' => 'chain' ) ),
+						)); ?>
+				
 			</div><!-- end social icons -->
 		</div><!-- end columns -->
 		<?php } ?>
 	</div><!-- end container -->
 </div><!-- end topbar -->
 <?php } ?>
-<header id="awada-header" style="<?php if (get_header_image()) : ?> background-image:url('<?php header_image();?>'); <?php endif; ?>" class="navi_menu <?php if($awada_theme_options['headersticky']=='1'){ echo 'awada-header-fixed'; } ?>">
+<header id="awada-header" style="<?php if (get_header_image()) : ?> background: url('<?php header_image();?>'); <?php endif; ?>" class="navi_menu <?php if($awada_theme_options['headersticky']=='1'){ echo 'awada-header-fixed'; } ?>">
 	<span id="header_shadow"></span>
 	<div class="container">
-		<nav class="navbar dropmenu navbar-default">
+		<nav class="navbar dropmenu navbar-default" <?php if(get_header_image()!=""){echo 'style="background:transparent";';};?>>
 			<div class="navbar-header">
 				<button type="button" data-toggle="collapse" data-target="#navbar-collapse-1" class="navbar-toggle">
 					<span class="icon-bar"></span>
@@ -67,15 +60,21 @@ if ($awada_theme_options['site_layout'] == 'boxed') {
 					<?php if ( function_exists( 'the_custom_logo' )) {
 						the_custom_logo();
 					} ?>
-					<a id="alogo" href="<?php echo esc_url(home_url('/')); ?>" class="navbar-brand"><?php
-						$header_text = display_header_text();
-						if($header_text){ ?>
-							<p id="logo_text_id"><?php echo get_bloginfo('name'); ?> </p><?php
-						} ?>
-					</a>	
+				<div class="site-branding-text">
+			<?php if ( is_front_page() ) : ?>
+				<h1 class="site-title"><a id="alogo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<?php else : ?>
+				<p class="site-title" id="logo_text_id"><a id="alogo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+			<?php endif; ?>
+
+			<?php $description = get_bloginfo( 'description', 'display' );
+				if ( $description || is_customize_preview() ) : ?>
+					<p class="site-description"><?php echo $description; ?></p>
+				<?php endif; ?>
+		</div><!-- .site-branding-text -->					
 			</div><!-- end navbar-header -->
 			
-			<div id="navbar-collapse-1" class="navbar-collapse collapse navbar-right <?php if ($awada_theme_options['logo_layout']=='right'){ echo 'style="float:right;"'; } ?>">
+			<div id="navbar-collapse-1" class="navbar-collapse collapse navbar-<?php echo is_rtl() ? 'right' :'left'; if ($awada_theme_options['logo_layout']=='right'){ echo 'style="float:right;"'; } ?>">
 					<?php wp_nav_menu(array(
 								'theme_location' => 'primary',
 								'menu_class' => 'nav navbar-nav',

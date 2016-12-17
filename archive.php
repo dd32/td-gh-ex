@@ -2,15 +2,7 @@
 <section class="post-wrapper-top section-shadow clearfix">
 	<div class="container">
 		<div class="col-lg-12">
-			<h2><?php if (is_day()):
-                printf(__('Daily Archives: %s', 'awada'), '<span>' . get_the_date() . '</span>');
-            elseif (is_month()) :
-                printf(__('Monthly Archives: %s', 'awada'), '<span>' . get_the_date(_x('F Y', 'monthly archives date format', 'awada')) . '</span>');
-            elseif (is_year()) :
-                printf(__('Yearly Archives: %s', 'awada'), '<span>' . get_the_date(_x('Y', 'yearly archives date format', 'awada')) . '</span>');
-            else :
-                _e('Archives', 'awada');
-            endif; ?></h2>
+			<h2><?php the_archive_title(); ?></h2>
 			<?php awada_breadcrumbs(); ?>
 		</div>
 	</div>

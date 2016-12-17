@@ -9,7 +9,7 @@ $col = 12 / (int)$awada_theme_options['footer_layout']; ?>
 		dynamic_sidebar('footer-widget');
 		} else {
 			$args = array(
-				'before_widget' => '<div class="col-lg-' . $col . ' col-md-' . $col . ' col-sm-6 col-xs-12"><div class="widget">',
+				'before_widget' => '<div class="col-lg-' . $col . ' col-md-' . $col . ' col-sm-6 col-xs-12"><div id="%1$s" class="widget">',
 				'after_widget' => '</div></div>',
 				'before_title' => '<div class="title"><h3>',
 				'after_title' => '</h3></div>',
@@ -30,7 +30,7 @@ $col = 12 / (int)$awada_theme_options['footer_layout']; ?>
 				<p><span id="copyright_text"><?php echo esc_attr($awada_theme_options['footer_copyright']); ?> </span><span id="developed_by_text"> <?php echo esc_attr($awada_theme_options['developed_by_text']); ?> </span><a id="copyright_link" href="<?php echo esc_url($awada_theme_options['developed_by_link']); ?>"><span id="copyright_link_text"><?php echo esc_attr($awada_theme_options['developed_by_link_text']); ?></span></a></p>
 			</div><!-- end footer copyright text -->
 		</div><!-- end widget -->
-		<?php } if ($awada_theme_options['footer_menu_enabled']==1) { ?>
+		<?php } if ($awada_theme_options['footer_menu_enabled']==1 && has_nav_menu('secondary')) { ?>
 		<div id="copyright_menu" class="col-lg-7 col-md-6 col-sm-12 clearfix">
 			<div class="footer-area-menu">
 				<?php wp_nav_menu(array(

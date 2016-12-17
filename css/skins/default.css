@@ -67,10 +67,46 @@ a.readmore,
 }
 
 /* Sidebar Widget */
-#sidebar .widget > ul > li.cat-item > a:hover, #sidebar .widget > ul.cat_list_widget > li > a:hover, #sidebar .widget > ul > li.page_item > a:hover, #sidebar .widget > div.menu-header-menu-container > ul.menu > li.menu-item > a:hover{
+#sidebar .widget:not(.widget_product_categories) > ul > li.cat-item > a:hover, #sidebar .widget > ul.cat_list_widget > li > a:hover, #sidebar .widget > ul > li.page_item > a:hover, #sidebar .widget > div.menu-header-menu-container > ul.menu > li.menu-item > a:hover{
 	background-color: #31a3dd !important;
 }
 
+/* wocommerce */
+.woocommerce div.product form.cart .button {
+    background: #31a3dd;
+}
+.woocommerce .woocommerce-product-rating .star-rating {
+    color: #31a3dd;
+}
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce span.onsale{
+	background-color: #31a3dd;
+}
+.woocommerce div.product p.price, .woocommerce div.product span.price {
+    color: #31a3dd;
+}
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button{
+	background-color: #31a3dd;
+	color:#fff;
+}
+.woocommerce .woocommerce-message {
+    border-top-color: #31a3dd;
+}
+.woocommerce .woocommerce-message:before {
+    color: #31a3dd;
+}
+.woocommerce .woocommerce-info {
+    border-top-color: #31a3dd;
+}
+.woocommerce .woocommerce-info:before {
+    color: #31a3dd;
+}
+.woocommerce .widget_price_filter .ui-slider .ui-slider-range,
+.woocommerce .widget_price_filter .ui-slider .ui-slider-handle{
+	background-color: #31a3dd;
+}
+.woocommerce .widget_price_filter .price_slider_wrapper .ui-widget-content{
+	background-color: #125a80;
+}
 /* Search Box */
 #two-sidebar .form-control:hover,
 #sidebar .form-control:hover {

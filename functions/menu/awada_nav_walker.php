@@ -34,11 +34,12 @@ class awada_nav_walker extends Walker_Nav_Menu
         $attributes .= !empty($item->xfn) ? ' rel="' . esc_attr($item->xfn) . '"' : '';
         $attributes .= !empty($item->url) ? ' href="' . esc_attr($item->url) . '"' : '';
         $attributes .= ($args->has_children && !in_array('dropdown-submenu', $classes)) 	    ? ' data-toggle="dropdown" data-target="#" class="dropdown-toggle"' : '';
-
+		$site_dir = is_rtl() ? 'left': 'right' ;
         $item_output = $args->before;
         $item_output .= '<a' . $attributes . '>';
         $item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
-        $item_output .= ($args->has_children && $depth == 0) ? '<div class="arrow-up"></div></a>' : '</a>';
+		$item_output .= in_array('dropdown-submenu', $classes) ? '<i class="fa fa-angle-'.$site_dir.'"></i></a>' : '';
+        $item_output .= ($args->has_children && $depth == 0) ? '<i class="fa fa-angle-down"></i></a>' : '</a>';
         $item_output .= $args->after;
 
         $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);

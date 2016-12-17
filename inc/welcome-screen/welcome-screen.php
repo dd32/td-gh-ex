@@ -6,19 +6,12 @@ if (!defined('ABSPATH')) {
     exit;
 }
 if (!class_exists('Awada_Welcome')) {
-require_once(dirname(__FILE__) . '/sections/class.webhunt_filesystem.php');
 class Awada_Welcome {
-	public $filesystem = null;
-	public static $_upload_dir;
 	public $admin_notices = array();
 	/**
 	 * Constructor for the welcome screen
 	 */
 	public function __construct() {
-		$this->filesystem = new webhunt_Filesystem ($this);
-
-		//set webhunt upload folder
-		$this->set_webhunt_content();
 		
 		// Display admin notices
 		add_action('admin_notices', array($this, 'adminNotices'), 99);
@@ -46,29 +39,8 @@ class Awada_Welcome {
 		/* ajax callback for dismissable required actions */
 		add_action( 'wp_ajax_Awada_lite_dismiss_required_action', array( $this, 'Awada_lite_dismiss_required_action_callback') );
 		add_action( 'wp_ajax_nopriv_Awada_lite_dismiss_required_action', array($this, 'Awada_lite_dismiss_required_action_callback') );
-		if (!isset ($GLOBALS['webhunt_notice_check'])) {
-			include_once 'sections/newsflash.php';
-
-			$params = array(
-				'dir_name' => 'notice',
-				'server_file' => 'http://www.webhuntinfotech.com/wp-content/uploads/webhunt/awada_notice.json',
-				'interval' => 3,
-				'cookie_id' => 'awada_rocks',
-			);
-
-			new WebHuntNewsflash($this, $params);
-			$GLOBALS['webhunt_notice_check'] = 1;
-		}
 	}
-	
-	private function set_webhunt_content()
-	{
-		$upload_dir = wp_upload_dir();
-		self::$_upload_dir = $upload_dir['basedir'] . '/webhunt/';
-		if (!is_dir(self::$_upload_dir)) {
-			$this->filesystem->execute('mkdir', self::$_upload_dir);
-		}
-	}
+
 	
 	/**
 	 * Creates the dashboard page
