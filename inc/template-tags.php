@@ -7,108 +7,117 @@
  *
  */
 
- 
-if ( ! function_exists( 'rubine_site_logo' ) ): 
-/**
+
+if ( ! function_exists( 'rubine_site_logo' ) ) :
+	/**
  * Displays the site logo in the header area
  */
-function rubine_site_logo() {
+	function rubine_site_logo() {
 
-	if ( function_exists( 'the_custom_logo' ) ) {
-		
-		the_custom_logo();
-	
-	} 
-	
-}
+		if ( function_exists( 'the_custom_logo' ) ) {
+
+			the_custom_logo();
+
+		}
+
+	}
 endif;
 
 
-if ( ! function_exists( 'rubine_site_title' ) ): 
-/**
+if ( ! function_exists( 'rubine_site_title' ) ) :
+	/**
  * Displays the site title in the header area
  */
-function rubine_site_title() {
-	
-	// Get theme options from database
-	$theme_options = rubine_theme_options();	
-	
-	// Return early if site title is deactivated
-	if( false == $theme_options['site_title'] ) {
-		return;
+	function rubine_site_title() {
+
+		if ( is_home() ) : ?>
+
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+
+		<?php else : ?>
+
+            <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+
+	    <?php endif;
 	}
-	
-	if ( is_home() ) : ?>
-		
-		<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-	
-	<?php else : ?>
-		
-		<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-	
-	<?php endif; 
-	
-}
+endif;
+
+
+if ( ! function_exists( 'rubine_site_description' ) ) :
+	/**
+	 * Displays the site description in the header area
+	 */
+	function rubine_site_description() {
+
+		$description = get_bloginfo( 'description', 'display' ); /* WPCS: xss ok. */
+
+		if ( $description || is_customize_preview() ) : ?>
+
+			<p class="site-description"><?php echo $description; ?></p>
+
+		<?php
+		endif;
+	}
 endif;
 
 
 // Display Custom Header
-if ( ! function_exists( 'rubine_display_custom_header' ) ):
-	
+if ( ! function_exists( 'rubine_display_custom_header' ) ) :
+
 	function rubine_display_custom_header() {
-		
+
 		// Get theme options from database
 		$theme_options = rubine_theme_options();
-		
+
 		// Hide header image on front page
 		if ( true == $theme_options['custom_header_hide'] and is_front_page() ) {
 			return;
 		}
-			
+
 		// Check if page is displayed and featured header image is used
-		if( is_page() && has_post_thumbnail() ) : ?>
-			
+		if ( is_page() && has_post_thumbnail() ) : ?>
+
 			<div id="custom-header-image" class="container featured-header-image">
-				<?php the_post_thumbnail('featured-header-image'); ?>
+				<?php the_post_thumbnail( 'featured-header-image' ); ?>
 			</div>
-		
+
 		<?php
 		// Check if there is a custom header image
-		elseif( get_header_image() ) : ?>
-			
+		elseif ( get_header_image() ) : ?>
+
 			<div id="custom-header-image" class="container">
-				
+
 				<?php // Check if custom header image is linked
-				if( $theme_options['custom_header_link'] <> '' ) : ?>
-				
+				if ( $theme_options['custom_header_link'] <> '' ) : ?>
+
 					<a href="<?php echo esc_url( $theme_options['custom_header_link'] ); ?>">
 						<img src="<?php header_image(); ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( get_custom_header()->attachment_id, 'full' ) ); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
 					</a>
-					
+
 				<?php else : ?>
-				
+
 					<img src="<?php header_image(); ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( get_custom_header()->attachment_id, 'full' ) ); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-					
+
 				<?php endif; ?>
-				
+
 			</div>
-		
-		<?php 
+
+		<?php
 		endif;
 	}
-	
+
 endif;
 
 
 // Display Subtitle
 function rubine_display_subtitle() {
-	
+
 	if ( function_exists( 'the_subtitle' ) ) :
-		
+
 		the_subtitle( '<p class="subtitle">', '</p>' );
-	
+
 	endif;
-	
+
 }
 
 
@@ -116,36 +125,36 @@ function rubine_display_subtitle() {
 if ( ! function_exists( 'rubine_display_postmeta' ) ) :
 
 	function rubine_display_postmeta() {
-		
+
 		// Get Theme Options from Database
 		$theme_options = rubine_theme_options();
 
 		// Display Date unless user has deactivated it via settings
 		if ( true == $theme_options['meta_date'] ) :
-		
+
 			rubine_meta_date();
-					
-		endif; 
-		
+
+		endif;
+
 		// Display Author unless user has deactivated it via settings
-		if ( true == $theme_options['meta_author'] ) :	
-		
+		if ( true == $theme_options['meta_author'] ) :
+
 			rubine_meta_author();
-		
-		endif; 
-		
+
+		endif;
+
 		// Display Author unless user has deactivated it via settings
 		if ( true == $theme_options['meta_category'] ) :
-		
+
 			rubine_meta_categories();
-		
+
 		endif;
-		
+
 		// Display Comments
 		if ( comments_open() ) :
-			
+
 			rubine_meta_comments();
-			
+
 		endif;
 
 	}
@@ -154,8 +163,8 @@ endif;
 
 
 // Display Post Date
-function rubine_meta_date() { 
-	
+function rubine_meta_date() {
+
 	$time_string = sprintf( '<a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date published updated" datetime="%3$s">%4$s</time></a>',
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
@@ -168,50 +177,52 @@ function rubine_meta_date() {
 
 
 // Display Post Author
-function rubine_meta_author() {  
-	
-	$author_string = sprintf( '<a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a>', 
+function rubine_meta_author() {
+
+	$author_string = sprintf( '<a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a>',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 		esc_attr( sprintf( esc_html__( 'View all posts by %s', 'rubine-lite' ), get_the_author() ) ),
 		esc_html( get_the_author() )
 	);
-	
+
 	echo '<span class="meta-author author vcard"> ' . $author_string . '</span>';
 
 }
 
 
 // Display Post Categories
-function rubine_meta_categories() { ?>		
-			
+function rubine_meta_categories() {
+	?>
+
 	<span class="meta-category">
-		<?php echo get_the_category_list(', '); ?>
+		<?php echo get_the_category_list( ', ' ); ?>
 	</span>
-			
+
 <?php
 }
 
 
 // Display Post Meta Comments
-function rubine_meta_comments() { ?>		
-		
+function rubine_meta_comments() {
+	?>
+
 	<span class="meta-comments">
 		<?php comments_popup_link( esc_html__( 'Leave a comment', 'rubine-lite' ), esc_html__( 'One comment', 'rubine-lite' ), esc_html__( '% comments', 'rubine-lite' ) ); ?>
 	</span>
-			
+
 <?php
 }
 
 // Display Post Thumbnail on single posts
 function rubine_display_thumbnail_single() {
-	
+
 	// Get Theme Options from Database
 	$theme_options = rubine_theme_options();
-	
-	// Display Post Thumbnail if activated
-	if ( isset($theme_options['post_thumbnails_single']) and $theme_options['post_thumbnails_single'] == true ) :
 
-		the_post_thumbnail('post-thumbnail', array('class' => 'alignleft'));
+	// Display Post Thumbnail if activated
+	if ( isset( $theme_options['post_thumbnails_single'] ) and $theme_options['post_thumbnails_single'] == true ) :
+
+		the_post_thumbnail( 'post-thumbnail', array( 'class' => 'alignleft' ) );
 
 	endif;
 
@@ -219,109 +230,110 @@ function rubine_display_thumbnail_single() {
 
 
 // Display Post Tags
-if ( ! function_exists( 'rubine_display_post_tags' ) ):
-	
+if ( ! function_exists( 'rubine_display_post_tags' ) ) :
+
 	function rubine_display_post_tags() {
-		
+
 		// Get Theme Options from Database
 		$theme_options = rubine_theme_options();
 
 		// Display Date unless user has deactivated it via settings
-		if ( isset($theme_options['meta_tags']) and $theme_options['meta_tags'] == true ) :
-		
-			$tag_list = get_the_tag_list('<ul><li>','</li><li>','</li></ul>');
-			
-			if ( $tag_list ) : 
+		if ( isset( $theme_options['meta_tags'] ) and $theme_options['meta_tags'] == true ) :
+
+			$tag_list = get_the_tag_list( '<ul><li>','</li><li>','</li></ul>' );
+
+			if ( $tag_list ) :
 
 				echo $tag_list;
-			
-			endif; 	
-			
+
+			endif;
+
 		endif;
-		
+
 	}
-	
+
 endif;
 
 
 // Display Single Post Navigation
-if ( ! function_exists( 'rubine_display_post_navigation' ) ):
-	
-	function rubine_display_post_navigation() { 
-		
+if ( ! function_exists( 'rubine_display_post_navigation' ) ) :
+
+	function rubine_display_post_navigation() {
+
 		// Get Theme Options from Database
 		$theme_options = rubine_theme_options();
-		
+
 		if ( true == $theme_options['post_navigation'] ) {
 
 			the_post_navigation( array( 'prev_text' => '&laquo; %title', 'next_text' => '%title &raquo;' ) );
-			
+
 		}
 	}
-	
+
 endif;
 
 
 // Display ThemeZee Related Posts plugin
-if ( ! function_exists( 'rubine_display_related_posts' ) ):
-	
-	function rubine_display_related_posts() { 
-		
+if ( ! function_exists( 'rubine_display_related_posts' ) ) :
+
+	function rubine_display_related_posts() {
+
 		if ( function_exists( 'themezee_related_posts' ) ) {
 
-			themezee_related_posts( array( 
+			themezee_related_posts( array(
 				'class' => 'related-posts widget clearfix',
 				'before_title' => '<h2 class="widgettitle related-posts-title"><span>',
-				'after_title' => '</span></h2>'
+				'after_title' => '</span></h2>',
 			) );
-			
+
 		}
 	}
-	
+
 endif;
 
-	
+
 // Display Content Pagination
-if ( ! function_exists( 'rubine_display_pagination' ) ):
-	
-	function rubine_display_pagination() { 
-		
+if ( ! function_exists( 'rubine_display_pagination' ) ) :
+
+	function rubine_display_pagination() {
+
 		global $wp_query;
 
 		$big = 999999999; // need an unlikely integer
-		
+
 		 $paginate_links = paginate_links( array(
 				'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-				'format' => '?paged=%#%',				
+				'format' => '?paged=%#%',
 				'current' => max( 1, get_query_var( 'paged' ) ),
 				'total' => $wp_query->max_num_pages,
 				'next_text' => '&raquo;',
 				'prev_text' => '&laquo',
-				'add_args' => false
-			) );
+				'add_args' => false,
+		 ) );
 
-		// Display the pagination if more than one page is found
-		if ( $paginate_links ) : ?>
-				
-			<div class="post-pagination clearfix">
-				<?php echo $paginate_links; ?>
-			</div>
-		
-		<?php
+		 // Display the pagination if more than one page is found
+		 if ( $paginate_links ) : ?>
+
+			  <div class="post-pagination clearfix">
+					<?php echo $paginate_links; ?>
+			  </div>
+
+			<?php
 		endif;
-		
+
 	}
-	
+
 endif;
 
 
 // Display Footer Text
 add_action( 'rubine_footer_text', 'rubine_display_footer_text' );
 
-function rubine_display_footer_text() { ?>
+function rubine_display_footer_text() {
+	?>
 
 	<span class="credit-link">
-		<?php printf( esc_html__( 'Powered by %1$s and %2$s.', 'rubine-lite' ), 
+		<?php printf( esc_html__( 'Powered by %1$s and %2$s.', 'rubine-lite' ),
 			'<a href="http://wordpress.org" title="WordPress">WordPress</a>',
 			'<a href="https://themezee.com/themes/rubine/" title="Rubine WordPress Theme">Rubine</a>'
 		); ?>
@@ -335,7 +347,7 @@ function rubine_display_footer_text() { ?>
 function rubine_display_social_icons() {
 
 	// Check if there is a social_icons menu
-	if( has_nav_menu( 'social' ) ) :
+	if ( has_nav_menu( 'social' ) ) :
 
 		// Display Social Icons Menu
 		wp_nav_menu( array(
@@ -348,11 +360,11 @@ function rubine_display_social_icons() {
 			'after' => '',
 			'link_before' => '<span class="screen-reader-text">',
 			'link_after' => '</span>',
-			'depth' => 1
+			'depth' => 1,
 			)
 		);
 
-	else: // Display Hint how to configure Social Icons ?>
+	else : // Display Hint how to configure Social Icons ?>
 
 		<p class="social-icons-hint">
 			<?php esc_html_e( 'Please go to Appearance &#8594; Menus and create a new custom menu with custom links to all your social networks. Then click on "Manage Locations" tab and assign your created menu to the "Social Icons" location.', 'rubine-lite' ); ?>
@@ -365,50 +377,50 @@ function rubine_display_social_icons() {
 
 // Custom Template for comments and pingbacks.
 if ( ! function_exists( 'rubine_list_comments' ) ) :
-	
-function rubine_list_comments($comment, $args, $depth) {
 
-	$GLOBALS['comment'] = $comment;
+	function rubine_list_comments( $comment, $args, $depth ) {
 
-	if( $comment->comment_type == 'pingback' or $comment->comment_type == 'trackback' ) : ?>
+		$GLOBALS['comment'] = $comment;
 
-		<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-			<div class="comment-body">
-				<?php esc_html_e( 'Pingback:', 'rubine-lite' ); ?> <?php comment_author_link(); ?>
-				<?php edit_comment_link( esc_html__( '(Edit)', 'rubine-lite' ), '<span class="edit-link">', '</span>' ); ?>
-			</div>
+		if ( $comment->comment_type == 'pingback' or $comment->comment_type == 'trackback' ) : ?>
 
-	<?php else : ?>
+			<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+				<div class="comment-body">
+					<?php esc_html_e( 'Pingback:', 'rubine-lite' ); ?> <?php comment_author_link(); ?>
+					<?php edit_comment_link( esc_html__( '(Edit)', 'rubine-lite' ), '<span class="edit-link">', '</span>' ); ?>
+				</div>
+
+		<?php else : ?>
 
 		<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
 
 			<div class="comment-body clearfix">
-			
+
 				<div class="comment-meta clearfix">
 
 					<div class="comment-author vcard">
 						<?php echo get_avatar( $comment, 75 ); ?>
-						<?php printf('<span class="fn">%s</span>', get_comment_author_link()) ?>
+						<?php printf( '<span class="fn">%s</span>', get_comment_author_link() ) ?>
 					</div>
-					
+
 					<div class="commentmetadata">
 						<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php echo get_comment_date(); ?></a>
 						<p><?php echo get_comment_time(); ?></p>
-						<?php edit_comment_link( esc_html__( '(Edit)', 'rubine-lite' ),'  ','') ?>
+						<?php edit_comment_link( esc_html__( '(Edit)', 'rubine-lite' ),'  ','' ) ?>
 					</div>
-				
+
 				</div>
-			
+
 				<div class="comment-content">
 
 					<div class="comment-entry clearfix">
 						<?php comment_text(); ?>
-						
-						<?php if ($comment->comment_approved == '0') : ?>
+
+						<?php if ( $comment->comment_approved == '0' ) : ?>
 							<p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.', 'rubine-lite' ); ?></p>
 						<?php endif; ?>
-						
-						<?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+
+						<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ) ?>
 					</div>
 
 				</div>
@@ -417,6 +429,6 @@ function rubine_list_comments($comment, $args, $depth) {
 <?php
 	endif;
 
-}
-	
+	}
+
 endif;

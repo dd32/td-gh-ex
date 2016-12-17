@@ -45,7 +45,7 @@ function rubine_theme_info_page() {
 		<div class="important-links clearfix">
 			<p><strong><?php esc_html_e( 'Theme Links', 'rubine-lite' ); ?>:</strong>
 				<a href="<?php echo esc_url( __( 'https://themezee.com/themes/rubine/', 'rubine-lite' ) . '?utm_source=theme-info&utm_medium=textlink&utm_campaign=rubine&utm_content=theme-page' ); ?>" target="_blank"><?php esc_html_e( 'Theme Page', 'rubine-lite' ); ?></a>
-				<a href="http://preview.themezee.com/rubine/?utm_source=theme-info&utm_medium=textlink&utm_campaign=rubine&utm_content=demo" target="_blank"><?php esc_html_e( 'Theme Demo', 'rubine-lite' ); ?></a>
+				<a href="http://preview.themezee.com/?demo=rubine&utm_source=theme-info&utm_campaign=rubine" target="_blank"><?php esc_html_e( 'Theme Demo', 'rubine-lite' ); ?></a>
 				<a href="<?php echo esc_url( __( 'https://themezee.com/docs/rubine-documentation/', 'rubine-lite' ) . '?utm_source=theme-info&utm_medium=textlink&utm_campaign=rubine&utm_content=documentation' ); ?>" target="_blank"><?php esc_html_e( 'Theme Documentation', 'rubine-lite' ); ?></a>
 				<a href="<?php echo esc_url( __( 'https://wordpress.org/support/theme/rubine-lite/reviews/?filter=5', 'rubine-lite' ) ); ?>" target="_blank"><?php esc_html_e( 'Rate this theme', 'rubine-lite' ); ?></a>
 			</p>
@@ -80,7 +80,7 @@ function rubine_theme_info_page() {
 							<?php printf( esc_html__( '%s makes use of the Customizer for all theme settings. Click on "Customize Theme" to open the Customizer now.', 'rubine-lite' ), $theme->get( 'Name' ) ); ?>
 						</p>
 						<p>
-							<a href="<?php echo admin_url( 'customize.php' ); ?>" class="button button-primary"><?php esc_html_e( 'Customize Theme', 'rubine-lite' ); ?></a>
+							<a href="<?php echo wp_customize_url(); ?>" class="button button-primary"><?php esc_html_e( 'Customize Theme', 'rubine-lite' ); ?></a>
 						</p>
 					</div>
 
@@ -130,7 +130,7 @@ function rubine_theme_info_page() {
 							<?php esc_html_e( 'Extend the functionality of your WordPress website with our free and easy to use plugins.', 'rubine-lite' ); ?>
 						</p>
 						<p>
-							<a href="<?php echo admin_url( 'plugin-install.php?tab=search&type=author&s=themezee' ); ?>" class="button button-secondary">
+							<a href="<?php echo esc_url( admin_url( 'plugin-install.php?tab=search&type=author&s=themezee' ) ); ?>" class="button button-secondary">
 								<?php esc_html_e( 'Install Plugins', 'rubine-lite' ); ?>
 							</a>
 						</p>
@@ -172,7 +172,7 @@ function rubine_theme_info_page_css( $hook ) {
 	}
 
 	// Embed theme info css style.
-	wp_enqueue_style( 'rubine-lite-theme-info-css', get_template_directory_uri() .'/css/theme-info.css' );
+	wp_enqueue_style( 'rubine-lite-theme-info-css', get_template_directory_uri() . '/css/theme-info.css' );
 
 }
 add_action( 'admin_enqueue_scripts', 'rubine_theme_info_page_css' );
