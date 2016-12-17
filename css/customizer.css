@@ -7,6 +7,10 @@
     margin-bottom: 4px;
 }
 
+#customize-control-courage_theme_options-header_tagline {
+	margin-bottom: 16px;
+}
+
 #customize-control-courage_control_slider_activated,
 #customize-control-courage_control_excerpt_text_headline,
 #customize-control-courage_control_postmeta_headline,
@@ -38,12 +42,12 @@
 	margin-bottom: 4px;
 }
 
-#accordion-panel-courage_options_panel .customize-info .customize-help-toggle {
+#customize-theme-controls [id$=accordion-panel-courage_options_panel] .customize-info .customize-help-toggle {
 	top: 24px;
 	right: 4px;
 }
 
-#accordion-panel-courage_options_panel .customize-info .customize-help-toggle::before {
+#customize-theme-controls [id$=accordion-panel-courage_options_panel] .customize-info .customize-help-toggle::before {
 	content: "\f333";
 	color: #a0a5aa;
 	font-size: 28px;
@@ -52,14 +56,14 @@
 	top: 0;
 }
 
-#accordion-panel-courage_options_panel .customize-info .customize-help-toggle[aria-expanded="true"]::before {
+#customize-theme-controls [id$=accordion-panel-courage_options_panel] .customize-info .customize-help-toggle[aria-expanded="true"]::before {
 	content: "\f335";
 }
 
-#accordion-panel-courage_options_panel .customize-info .customize-help-toggle:hover::before {
+#customize-theme-controls [id$=accordion-panel-courage_options_panel] .customize-info .customize-help-toggle:hover::before {
 	color: #72777c;
 }
 
-#accordion-panel-courage_options_panel .customize-info .customize-help-toggle:focus::before {
+#customize-theme-controls [id$=accordion-panel-courage_options_panel] .customize-info .customize-help-toggle:focus::before {
 	box-shadow: none;
 }
