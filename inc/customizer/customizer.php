@@ -30,19 +30,29 @@ function dynamicnews_customize_register_options( $wp_customize ) {
 		'description'    => dynamicnews_customize_theme_links(),
 	) );
 
-	// Add postMessage support for site title and description.
-	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
-
 	// Change default background section
-	$wp_customize->get_control( 'background_color' )->section   = 'background_image';
-	$wp_customize->get_section( 'background_image' )->title     = esc_html__( 'Background', 'dynamic-news-lite' );
+	$wp_customize->get_control( 'background_color' )->section = 'background_image';
+	$wp_customize->get_section( 'background_image' )->title   = esc_html__( 'Background', 'dynamic-news-lite' );
 
-	// Add Display Site Title Setting
+	// Add postMessage support for site title and description.
+	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
+
+	// Add selective refresh for site title and description.
+	$wp_customize->selective_refresh->add_partial( 'blogname', array(
+		'selector'        => '.site-title a',
+		'render_callback' => 'dynamicnews_customize_partial_blogname',
+	) );
+	$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
+		'selector'        => '.site-description',
+		'render_callback' => 'dynamicnews_customize_partial_blogdescription',
+	) );
+
+	// Add Display Site Title Setting.
 	$wp_customize->add_setting( 'dynamicnews_theme_options[site_title]', array(
 		'default'           => true,
 		'type'           	=> 'option',
-		'transport'         => 'refresh',
+		'transport'         => 'postMessage',
 		'sanitize_callback' => 'dynamicnews_sanitize_checkbox',
 		)
 	);
@@ -55,16 +65,16 @@ function dynamicnews_customize_register_options( $wp_customize ) {
 		)
 	);
 
-	// Add Header Tagline option
+	// Add Display Tagline Setting.
 	$wp_customize->add_setting( 'dynamicnews_theme_options[header_tagline]', array(
 		'default'           => false,
 		'type'           	=> 'option',
-		'transport'         => 'refresh',
+		'transport'         => 'postMessage',
 		'sanitize_callback' => 'dynamicnews_sanitize_checkbox',
 		)
 	);
-	$wp_customize->add_control( 'dynamicnews_control_header_tagline', array(
-		'label'    => esc_html__( 'Display Tagline below site title.', 'dynamic-news-lite' ),
+	$wp_customize->add_control( 'dynamicnews_theme_options[header_tagline]', array(
+		'label'    => esc_html__( 'Display Tagline', 'dynamic-news-lite' ),
 		'section'  => 'title_tagline',
 		'settings' => 'dynamicnews_theme_options[header_tagline]',
 		'type'     => 'checkbox',
@@ -109,11 +119,27 @@ function dynamicnews_customize_register_options( $wp_customize ) {
 }
 
 
+/**
+ * Render the site title for the selective refresh partial.
+ */
+function dynamicnews_customize_partial_blogname() {
+	bloginfo( 'name' );
+}
+
+
+/**
+ * Render the site tagline for the selective refresh partial.
+ */
+function dynamicnews_customize_partial_blogdescription() {
+	bloginfo( 'description' );
+}
+
+
 // Embed JS file to make Theme Customizer preview reload changes asynchronously.
 add_action( 'customize_preview_init', 'dynamicnews_customize_preview_js' );
 
 function dynamicnews_customize_preview_js() {
-	wp_enqueue_script( 'dynamicnewslite-customizer-preview', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151202', true );
+	wp_enqueue_script( 'dynamicnewslite-customizer-preview', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20161214', true );
 }
 
 
@@ -121,7 +147,7 @@ function dynamicnews_customize_preview_js() {
 add_action( 'customize_controls_print_styles', 'dynamicnews_customize_preview_css' );
 
 function dynamicnews_customize_preview_css() {
-	wp_enqueue_style( 'dynamicnewslite-customizer-css', get_template_directory_uri() . '/css/customizer.css', array(), '20160915' );
+	wp_enqueue_style( 'dynamicnewslite-customizer-css', get_template_directory_uri() . '/css/customizer.css', array(), '20161214' );
 
 }
 
@@ -144,7 +170,7 @@ function dynamicnews_customize_theme_links() {
 			</p>
 
 			<p>
-				<a href="http://preview.themezee.com/dynamicnews/?utm_source=theme-info&utm_medium=textlink&utm_campaign=dynamicnews&utm_content=demo" target="_blank">
+				<a href="http://preview.themezee.com/?demo=dynamicnews&utm_source=customizer&utm_campaign=dynamicnews" target="_blank">
 					<?php esc_html_e( 'Theme Demo', 'dynamic-news-lite' ); ?>
 				</a>
 			</p>
