@@ -163,9 +163,9 @@ require_once(get_template_directory() . '/SketchBoard/functions/admin-init.php')
 //---------------------------------------------------------------------
 /* Theme Required Plugins
 /*---------------------------------------------------------------------------*/
-if ( !defined( 'ADVERTICA_REQUIRED_PLUGINS' ) ) {
-	define( 'ADVERTICA_REQUIRED_PLUGINS', trailingslashit(get_theme_root()) . 'advertica-lite/includes/plugins' );
-}
-include_once('includes/skt-required-plugins.php');
+// if ( !defined( 'ADVERTICA_REQUIRED_PLUGINS' ) ) {
+// 	define( 'ADVERTICA_REQUIRED_PLUGINS', trailingslashit(get_theme_root()) . 'advertica-lite/includes/plugins' );
+// }
+// include_once('includes/skt-required-plugins.php');
 
 ?>

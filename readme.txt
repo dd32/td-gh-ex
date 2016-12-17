@@ -89,6 +89,9 @@ Read the following blog for more https://sketchthemes.com/blog/effective-steps-t
 
 == Changelog ==
 
+= 1.0.11 =
+* Removed unused files.
+
 = 1.0.10 =
 * WP 4.6.1 Compatible.
 * Updated Font Awesome.
