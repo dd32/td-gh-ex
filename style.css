@@ -3,7 +3,7 @@ Theme Name: Bellini
 Theme URI: https://atlantisthemes.com/
 Author: Pangolin
 Description: Bellini is the perfect theme for creating a eCommerce store or shop. Responsive & flexible layout built with Bootstrap. Customize anything like Google Fonts, Color, Layout, logo upload, full-screen slider, header image and much more.Built with SEO in mind and has Structured Data (Schema) implemented. If you are looking for a beautiful theme with out of the box SEO compatibility & responsiveness, look no further! Check out the live demo at http://demo.atlantisthemes.com/front-page/
-Version: 1.38.3
+Version: 1.38.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bellini
@@ -46,19 +46,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Typography
 --------------------------------------------------------------*/
 
-body,
-button,
-input,
-select,
-textarea {
-    font-family: sans-serif;
-    line-height: 1.5;
-}
-
 p {
     margin-bottom: 0;
     padding: 0 0 .8125em 0;
-    font-weight: normal;
 }
 
 dfn,
@@ -113,25 +103,15 @@ big {
 --------------------------------------------------------------*/
 
 html {
-    box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    -moz-osx-font-smoothing: grayscale
 }
 
-html, body {
+body,html {
     text-rendering: optimizeSpeed;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-*:before,
-*:after {
-    box-sizing: border-box;
+    text-size-adjust: 100%
 }
 
 body {
@@ -147,7 +127,40 @@ body {
     -o-font-feature-settings: 'liga' 1,'kern';
     -ms-font-feature-settings: 'liga' 1,'kern';
     -webkit-font-feature-settings: 'liga' 1,'kern';
-    font-feature-settings: 'liga' 1,'kern';
+    font-feature-settings: 'liga' 1,'kern'
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+    display: block
+}
+
+audio,
+canvas,
+progress,
+video {
+    display: inline-block;
+    vertical-align: baseline
+}
+
+* {
+    box-sizing: border-box;
+}
+
+*:before,
+*:after {
+    box-sizing: border-box;
 }
 
 blockquote:before,
@@ -206,6 +219,26 @@ img {
     image-rendering: -webkit-optimize-contrast;
     image-rendering: -webkit-crisp-edges;
     image-rendering: crisp-edges;
+}
+
+@-moz-viewport {
+    width: device-width
+}
+
+@-ms-viewport {
+    width: device-width
+}
+
+@-o-viewport {
+    width: device-width
+}
+
+@-webkit-viewport {
+    width: device-width
+}
+
+@viewport {
+    width: device-width
 }
 
 /*--------------------------------------------------------------
@@ -1356,8 +1389,8 @@ h6 {
 .front__product-featured,
 .front-blog,
 .front-text-field {
-    padding-top: 2%;
-    padding-bottom: 3%;
+    padding-top: 5em;
+    padding-bottom: 3em;
     display: block;
     background-position: center center;
     background-repeat: no-repeat;
@@ -1990,6 +2023,7 @@ Hamburger Menu
     position: relative;
     line-height: 1em;
     padding-top: .75rem;
+    padding-left: 0;
 }
 
 .page-header {
@@ -2782,7 +2816,7 @@ a.page-numbers .fa-angle-right {font-size:2.6em; float:right; margin-top:-.4em;}
     display: block;
     list-style: none;
     margin: 0 0 -1.3em;
-    padding: 0;
+    padding: .8em 0 0 0;
   }
   .main-navigation ul ul {
     background-color: white;
@@ -2948,4 +2982,18 @@ a.page-numbers .fa-angle-right {font-size:2.6em; float:right; margin-top:-.4em;}
     z-index: 9999;
     transition: 0.3s;
   }
+}
+
+.navigation.pagination {
+    margin-bottom: 1.5em;
+}
+
+.scrollToTop:hover{transform: scale(.9);}
+
+.feature-block__content h3 a,
+.front-product-category__card__inner a,
+.featured__review__rating a,
+.contact__phone__icon a,
+#footer-nav li a{
+    color: inherit;
 }

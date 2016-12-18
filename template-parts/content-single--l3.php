@@ -13,7 +13,11 @@ global $bellini;
 <div class="container--card-content clearfix">
 <div class="text-center"><?php bellini_edit_content(); ?></div>
 <header class="single-post__header--l3">
-	<?php bellini_category(); ?>
+	<?php
+		if($bellini['bellini_show_post_meta'] == true):
+			bellini_category();
+		endif;
+	?>
 	<div class="post__header__inner">
 	<?php the_title( '<h1 class="element-title element-title--post single-post__title--l3" itemprop="name headline">', '</h1>' ); ?>
 
@@ -42,9 +46,15 @@ global $bellini;
 			) );
 		?>
 </div><!-- .entry-content -->
-<footer class="single-post__footer--l3">
-	<?php bellini_post_tag(); ?>
-</footer><!-- .entry-footer -->
+
+<?php
+if($bellini['bellini_show_post_meta'] == true): ?>
+	<footer class="single-post__footer--l3">
+		<?php bellini_post_tag(); ?>
+	</footer><!-- .entry-footer -->
+<?php endif
+;?>
+
 	<?php the_post_navigation();?>
 	<?php
 		// If comments are open or we have at least one comment, load up the comment template.

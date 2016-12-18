@@ -197,7 +197,7 @@ $bellini_custom_code_css							= esc_attr($bellini['bellini_custom_css']);
 
 // CSS Classes
 $primary_color_text 			= ".bellini-social__link a span,.scrollToTop";
-$primary_color_background 		= ".hamburger-inner,.hamburger-inner::before,.hamburger-inner::after,.hamburger__site-title,.main-navigation ul ul,.product-featured__title h1:after,.product-featured__title--l2 h1:after,.product-featured__title--l3 h1:after";
+$primary_color_background 		= ".hamburger-inner,.hamburger-inner::before,.hamburger-inner::after,.hamburger__site-title,.product-featured__title h1:after,.product-featured__title--l2 h1:after,.product-featured__title--l3 h1:after";
 
 $bellini_meta_color_text 		= ".comments-link a,.post-meta__time,.breadcrumb_last,.single.post-meta,.single.post-meta a,.post-meta__category a,.comment-reply-link,.comment__author,.blog-post__meta .post-meta__time,.post-meta__author,.comment-edit-link";
 $bellini_meta_color_background 	= ".main-navigation li a:before,.post-meta__tag__item a:before";
@@ -252,9 +252,7 @@ textarea{
 <?php echo $bellini_meta_color_text;?>{color: <?php echo $bellini_accent_color; ?>;}
 <?php echo $bellini_meta_color_background;?>{background-color: <?php echo $bellini_accent_color; ?>;}
 
-.main-navigation a:hover{
-    border-bottom:2px solid <?php echo $bellini_primary_color; ?>;
-}
+.current-menu-item a,.main-navigation a:hover{color:<?php echo $bellini_primary_color; ?> !important;}
 
 a{color: <?php echo $link_text_color; ?>;}
 a:hover,a:focus,a:active{color: <?php echo $link_hover_color; ?>;}

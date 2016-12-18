@@ -243,8 +243,8 @@ function bellini_core_header(){
 			<div class="site-branding col-md-6"><?php bellini_header_logo();?></div>
 			<div class="col-md-6 text-right"><?php bellini_header_menu();?></div>
 		<?php else:?>
-			<div class="site-branding col-md-4 col-xs-8"><?php bellini_header_logo();?></div>
-			<div class="col-md-8 col-xs-4 text-right"><?php bellini_header_menu();?></div>
+			<div class="site-branding col-md-4"><?php bellini_header_logo();?></div>
+			<div class="col-md-8 text-right"><?php bellini_header_menu();?></div>
 		<?php endif; ?>
 	<?php endif; ?>
 
