@@ -72,7 +72,7 @@ if ( $bellini['bellini_menu_layout'] == 'hamburger' ):?>
 
 			<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="site links" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 				<button class="menu-toggle" aria-controls="top-menu" aria-expanded="false">
-					<?php esc_html_e( 'Menu', 'affinity' ); ?>
+					<?php esc_html_e( 'Menu', 'bellini' ); ?>
 				</button>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 			</nav><!-- #site-navigation -->
