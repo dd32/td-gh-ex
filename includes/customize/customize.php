@@ -482,7 +482,7 @@ function acool_customize_register( $wp_customize ) {
 		$wp_customize->add_control( 'ct_acool[homepage_contact_us_h1]', array(
 			'label'		=> __( 'Homepage Contact Us Title:', 'acool' ),
 			'section'	=> 'ct_homepage_contact_us',
-			'settings'	=> 'ct_acool[homepage_contact_ust_h1]',
+			'settings'	=> 'ct_acool[homepage_contact_us_h1]',
 			'type'		=> 'text',
 		) );
 	

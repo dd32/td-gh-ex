@@ -49,13 +49,13 @@ function acool_custom_scripts()
 	global $is_IE;
 	$theme_info = wp_get_theme();
 	
-	wp_enqueue_style('font-awesome',  get_template_directory_uri() .'/css/font-awesome.min.css', false, '4.5.0', false);
-	wp_enqueue_style('bootstrap',  get_template_directory_uri() .'/css/bootstrap.min.css', false, '3.3.5', false);	
+	wp_enqueue_style('font-awesome-css',  get_template_directory_uri() .'/css/font-awesome.min.css', false, '4.5.0', false);
+	wp_enqueue_style('bootstrap-css',  get_template_directory_uri() .'/css/bootstrap.min.css', false, '3.3.5', false);	
 	wp_enqueue_style('acool-main', get_stylesheet_uri(), array(), $theme_info->get( 'Version' ) );	
 		
 	//js
 
-	wp_enqueue_script('bootstrap', get_template_directory_uri().'/js/bootstrap.min.js', array( 'jquery' ), '3.3.5', false );	
+	wp_enqueue_script('bootstrap-js', get_template_directory_uri().'/js/bootstrap.min.js', array( 'jquery' ), '3.3.5', false );	
 	if(acool_get_option( 'ct_acool','enable_query_loader',0))
 	{
 		wp_enqueue_script( 'queryloader2', get_template_directory_uri().'/js/queryloader2.min.js', array( 'jquery' ), '', false );
@@ -63,10 +63,11 @@ function acool_custom_scripts()
 	}
 	$fixed_header  =  acool_get_option( 'ct_acool','fixed_header',1);	
 
-	if($fixed_header && !is_front_page() || ($fixed_header && is_home()) ){
-		wp_enqueue_script( 'acool-fixed-header', get_template_directory_uri().'/js/fixed-header.js', array( 'jquery' ), '', false );
-	}	
-	else if($fixed_header && is_front_page() ){		
+	//if($fixed_header && !is_front_page() || ($fixed_header && is_home()) ){
+		//wp_enqueue_script( 'acool-fixed-header', get_template_directory_uri().'/js/fixed-header.js', array( 'jquery' ), '', false );
+	//}	
+	//else if($fixed_header && is_home() ){	
+	if($fixed_header && is_home() ){		
 		wp_enqueue_script( 'acool-fixed-header2', get_template_directory_uri().'/js/fixed-header2.js', array( 'jquery' ), '', false );		
 	}
 	
@@ -153,7 +154,7 @@ function acool_customize_css()
 			echo $header_bgcolor;		
 			if($header_bgcolor == '#ffffff') 
 			{
-				$acool_custom_css  .= '.ct_header_class{border-bottom-width: 1px;border-bottom-style: solid;	border-bottom-color:#F0F0F0;}';	
+				$acool_custom_css  .= '.ct_header_class{border-bottom-width: 1px;border-bottom-style: solid;	border-bottom-color:#8e8a8a;}';	
 			}
 			else
 			{
@@ -219,7 +220,9 @@ function acool_customize_css()
 				$acool_custom_css  .=  '.post a:hover,.page a:hover{color: #0c8432;text-decoration: none;}';
 			}
 
-
+			$acool_custom_css  .=  '@media screen and (max-width:900px){.fixed {position: inherit;}	}';
+			
+			
 			$acool_custom_css   = esc_html($acool_custom_css);
 			
 			$acool_custom_css   = str_replace('&gt;','>',$acool_custom_css);			

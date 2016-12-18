@@ -180,20 +180,7 @@ jQuery(document).ready(function($){
 	);//$('.fact').animateNumber(
 			
 
-	// progress bar
-	$('.progress-bar').waypoint(function()
-		{			
-			$(".progress-bar").each(function(){
-				var percent = $(this).data("percent");	
-				var progressBarWidth = percent * $(".col-md-9").width() / 100;
-				$(this).animate({ width: progressBarWidth }, 50);
-			});
-		},	
-		{
-		  offset: '90%',
-		  triggerOnce: true
-		}
-	);	
+
 
 	// adjust hight
 	//alert('---222---');
@@ -220,16 +207,16 @@ jQuery(document).ready(function($){
 
 //return top
 	window.onscroll=function(){ 
-		if ($(document).scrollTop() > 200) 
+		if (jQuery(document).scrollTop() > 200) 
 		{ 
-			$(".gotopdiv").css({display:"block"});
+			jQuery(".gotopdiv").css({display:"block"});
 		}else{ 
-			$(".gotopdiv").css({display:"none"});	
+			jQuery(".gotopdiv").css({display:"none"});	
 		} 
 	}
 
 	function goTop(){
-		$('html,body').animate({'scrollTop':0},600);
+		jQuery('html,body').animate({'scrollTop':0},600);
 	}
 	//return top end	
 

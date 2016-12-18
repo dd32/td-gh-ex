@@ -8,5 +8,4 @@ require_once( $template_directory . '/includes/theme-setup.php' );
 require_once( $template_directory . '/includes/customize/customize.php' );
 require_once( $template_directory . '/includes/widgets.php');
 require_once( $template_directory . '/includes/custom-functions.php' );
-require_once( $template_directory . '/includes/tgm-plugin.php' );
 ?>

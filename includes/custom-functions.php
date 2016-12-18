@@ -52,13 +52,10 @@ function acool_customize_scripts() {
 							'old_version_message'		=> __( 'Some settings might be missing or disorganized in this version of WordPress. So we suggest you to upgrade to version 4.0 or better.', 'acool' )
 		);
 
-		wp_localize_script( 'acool_customizer_custom', 'clean_box_misc_links', $clean_box_misc_links );
-
-	
-
 	wp_enqueue_style( 'acool_customizer_custom_css', get_template_directory_uri() . '/css/customizer.css');
 }
 add_action( 'customize_controls_enqueue_scripts', 'acool_customize_scripts');
+
 
 /**
  * Gets option value from the single theme option, stored as an array in the database
