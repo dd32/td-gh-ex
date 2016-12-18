@@ -9,7 +9,7 @@ Tags: two-columns, right-sidebar, custom-background,Theme-Options, custom-colors
 
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Version:      1.2.2
+Version:      1.2.3
 */
 @charset "utf-8";
 
@@ -585,11 +585,15 @@ input,button{-webkit-appearance:none}
 	
 	
 
-	#header{padding:12px 0 12px 0;background-color:rgba(255,255,255,0.2);min-height: 55px;}	
+	#header{padding:6px 0;background-color:rgba(255,255,255,0.2);min-height: 55px;}	
+	
+	
 	#header-nav-btn{display:block}
 	
 	.header-nav{position:static}
-	.header-nav>button{color:#00c8f2;font-size:34px; border:#00c8f2 1px solid;    box-shadow: 0 0 4px rgba(0,200,242,0.4); background:transparent;cursor:pointer;outline:none; font-size:24px; padding:7px 7px 2px 7px; margin:0 20px 0 0;border-radius:3px;}
+	.header-nav>button{color:#00c8f2;font-size:34px; border:#00c8f2 1px solid;    box-shadow: 0 0 4px rgba(0,200,242,0.4); background:transparent;cursor:pointer;outline:none; font-size:22px; padding: 4px 4px 0px 4px; margin:0 20px 0 0;border-radius:3px;}
+	
+	.ascreen_logo img{ width:40px; height:40px;}
 	
 	.header-nav>button:hover{
 		background-color: rgba(0,200,242,0.1);
@@ -717,7 +721,7 @@ input,button{-webkit-appearance:none}
 }
 /**------- media end-------***/
 
-#logo{ font-size:28px; margin-top:0px;}
+#logo{ font-size:28px; margin-top:0px;    margin-bottom: 0;}
 .copyright a{ color:#AFB8CF;}
 .copyright a:hover{color: #7685ac;}
 .form-submit #submit{ cursor:pointer;}

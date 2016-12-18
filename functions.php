@@ -371,7 +371,7 @@ function ascreen_customize_css()
 				$ascreen_custom_css .=  '#logo .blogdescription,#logo .blogname {'.esc_attr($header_textcolor).'}';
  				$ascreen_custom_css .=  '.header-nav>ul>li>a, .header-nav .btn>a,.header-nav > button{'.esc_attr($header_textcolor).'}';
  				$ascreen_custom_css .=  '.header-nav>button#header-nav-btn {
-											color: '.esc_attr($header_textcolor).'
+											'.esc_attr($header_textcolor).'
 											border: #'.get_header_textcolor().' 1px solid;
 											box-shadow: 0 0 4px rgba('.$rbg_t[0].','.$rbg_t[1].','.$rbg_t[2].',0.4);
 										

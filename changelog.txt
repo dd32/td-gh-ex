@@ -1,5 +1,9 @@
 
 == Changelog ==
+Version 1.2.3  2016.12.18
+* fix header display£¨mobile phone£©
+* fix some problem
+
 Version 1.2.2  2016.11.26
 * fix footer and fixed header
 * fix some problem
