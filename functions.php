@@ -421,14 +421,6 @@ add_filter('comment_form_defaults','wpb_disable_comment_email');
 
 
 /**
- * Add Support for WPML, qTranslate X & Polylang Plugin
- */
-if ( defined( 'ICL_SITEPRESS_VERSION' ) || defined( 'QTX_VERSION' ) || class_exists( 'Polylang' ) ) {
-	require trailingslashit( get_template_directory() ) . 'functions/simplecatch-wpml.php';
-}
-
-
-/**
  * Migrate Custom CSS to WordPress core Custom CSS
  *
  * Runs if version number saved in theme_mod "custom_css_version" doesn't match current theme version.

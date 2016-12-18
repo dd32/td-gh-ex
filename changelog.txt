@@ -1,5 +1,8 @@
 == Changelog ==
 
+Version 3.4.1
+* Bug Fixed: Fatal error when WPML, qtranslate, polylang, etc plugins installed (Reported By: agu5ka)
+
 Version 3.4
 * Bug Fixed: Reset Options in customizer updated
 * Updated: Upgrade Button in customizer with respect to trt decision
