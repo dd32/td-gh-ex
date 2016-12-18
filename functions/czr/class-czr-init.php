@@ -25,14 +25,14 @@ if ( ! class_exists( 'HU_customize' ) ) :
       if( ! defined( 'CZR_DYN_WIDGETS_SECTION' ) )      define( 'CZR_DYN_WIDGETS_SECTION' , 'dyn_widgets_section' );
 
       //add control class
-      add_action( 'customize_register'                        , array( $this , 'hu_augment_customizer' ),10,1);
+      add_action( 'customize_register'                       , array( $this , 'hu_augment_customizer' ),10,1);
 
       //add the customizer built with the builder below
       add_action( 'customize_register'                       , array( $this , 'hu_customize_register' ), 20, 1 );
       //add the customizer built with the builder below
       add_action( 'customize_register'                       , array( $this , 'hu_schedule_register_sidebar_section' ), 1000, 1 );
       //modify some WP built-in settings / controls / sections
-      add_action( 'customize_register'                       , array( $this , 'hu_alter_wp_customizer_settings' ), 30, 1 );
+      add_action( 'customize_register'                       , array( $this , 'hu_alter_wp_customizer_settings' ), 1000, 1 );
 
       //Partial refreshs
       add_action( 'customize_register'                       , array( $this,  'hu_register_partials' ) );
@@ -59,7 +59,9 @@ if ( ! class_exists( 'HU_customize' ) ) :
     }
 
 
-
+    /* ------------------------------------------------------------------------- *
+     *  DEPRECATED OPTIONS
+    /* ------------------------------------------------------------------------- */
     //hook : customize_save_after
     //When the users modifies the header_image, check if the old option exists and remove it if needed
     function hu_clean_deprecated_options( $manager_inst ) {
@@ -113,6 +115,12 @@ if ( ! class_exists( 'HU_customize' ) ) :
     }
 
 
+
+
+
+    /* ------------------------------------------------------------------------- *
+     *  AUGMENT CUSTOMIZER SERVER SIDE
+    /* ------------------------------------------------------------------------- */
     /**
     * Augments wp customize controls and settings classes
     * @package Hueman
@@ -130,6 +138,8 @@ if ( ! class_exists( 'HU_customize' ) ) :
 
         'controls/class-upload-control.php',
 
+        'panels/class-panels.php',
+
         'sections/class-widgets-section.php',
 
         'settings/class-settings.php'
@@ -141,25 +151,58 @@ if ( ! class_exists( 'HU_customize' ) ) :
       //Registered types are eligible to be rendered via JS and created dynamically.
       if ( class_exists('HU_Customize_Cropped_Image_Control') )
         $manager -> register_control_type( 'HU_Customize_Cropped_Image_Control' );
+
+      if ( class_exists('HU_Customize_Panels') )
+        $manager -> register_panel_type( 'HU_Customize_Panels');
     }
 
 
+
+
+
+    /* ------------------------------------------------------------------------- *
+     *  PARTIALS
+    /* ------------------------------------------------------------------------- */
     //hook : customize_register
     function hu_register_partials( WP_Customize_Manager $wp_customize ) {
         //Bail if selective refresh is not available (old versions) or disabled (for skope for example)
         if ( ! isset( $wp_customize->selective_refresh ) || ! hu_is_partial_refreshed_on() ) {
             return;
         }
-
         $wp_customize->selective_refresh->add_partial( 'social_links', array(
             'selector' => '.social-links',
             'settings' => array( 'hu_theme_options[social-links]' ),
             'render_callback' => 'hu_print_social_links',
             //'type' => 'my_partial'
         ) );
+
+        $wp_customize->selective_refresh->add_partial( 'header_image', array(
+            'selector' => '#header-image-wrap',
+            'settings' => array( 'header_image' ),
+            'render_callback' => 'hu_render_header_image',
+            //'type' => 'my_partial'
+        ) );
+
+        $wp_customize->selective_refresh->add_partial( 'site_title', array(
+            'selector' => '.site-title',
+            'settings' => array( 'blogname' ),
+            'render_callback' => 'hu_do_render_logo_site_tite',
+            //'type' => 'my_partial'
+        ) );
+        $wp_customize->selective_refresh->add_partial( 'site_description', array(
+            'selector' => '.site-description',
+            'settings' => array( 'blodescription' ),
+            'render_callback' => 'hu_render_blog_description',
+            //'type' => 'my_partial'
+        ) );
     }
 
 
+
+
+    /* ------------------------------------------------------------------------- *
+     *  LOAD MODULES AND INPUTS TEMPLATES
+    /* ------------------------------------------------------------------------- */
     function hu_load_tmpl() {
       $_tmpl = array(
         'tmpl/modules/all-modules-tmpl.php',
@@ -183,6 +226,189 @@ if ( ! class_exists( 'HU_customize' ) ) :
       locate_template( 'functions/czr/modules/modules-resources.php' , $load = true, $require_once = true );
     }
 
+
+
+
+    /* ------------------------------------------------------------------------- *
+     *  MODIFY SETTINGS, CONTROLS, SECTIONS, PANELS SERVER SIDE
+    /* ------------------------------------------------------------------------- */
+    /*
+    * Since the WP_Customize_Manager::$controls and $settings are protected properties, one way to alter them is to use the get_setting and get_control methods
+    * Another way is to remove the control and add it back as an instance of a custom class and with new properties
+    * and set new property values
+    * hook : hu_customize_register:30
+    * @return void()
+    */
+    function hu_alter_wp_customizer_settings( $wp_customize ) {
+      //SOME SETTINGS TRANSPORT
+      if ( is_object( $wp_customize -> get_setting( 'blogname' ) ) ) {
+        $wp_customize -> get_setting( 'blogname' )->transport = 'postMessage';
+      }
+      if ( is_object( $wp_customize -> get_setting( 'blogdescription' ) ) ) {
+        $wp_customize -> get_setting( 'blogdescription' )->transport = 'postMessage';
+      }
+
+      //ONLY IF SELECTIVE REFRESH IS SUPPORTED
+      if ( isset( $wp_customize->selective_refresh ) && is_object( $wp_customize -> get_setting( 'header_image' ) ) ) {
+        $wp_customize -> get_setting( 'header_image' )->transport = 'postMessage';
+      }
+      if ( isset( $wp_customize->selective_refresh ) && is_object( $wp_customize -> get_setting( 'header_image_data' ) ) ) {
+        $wp_customize -> get_setting( 'header_image_data' )->transport = 'postMessage';
+      }
+
+      //MOVE WP FRONT PAGE SECTION TO CONTENT PANEL
+      if ( is_object( $wp_customize -> get_section( 'static_front_page' ) ) ) {
+        $wp_customize -> get_section( 'static_front_page' ) -> panel = '';//'hu-content-panel';
+        $wp_customize -> get_section( 'static_front_page' ) -> title = __( 'Front Page Content', 'hueman' );
+        $wp_customize -> get_section( 'static_front_page' ) -> priority = 10;
+        $wp_customize -> get_section( 'static_front_page' ) -> active_callback = 'hu_is_home';
+      }
+
+      //CHANGE THE STATIC FRONT PAGE WP CONTROLS
+      if ( is_object( $wp_customize -> get_control( 'show_on_front' ) ) ) {
+        $wp_customize -> get_control( 'show_on_front' ) -> type = 'select';
+        $wp_customize -> get_control( 'show_on_front' ) -> choices = array(
+            '__nothing__'   => __( 'Don\'t show any posts or page' , 'hueman'),
+            'posts'   => __( 'Your latest posts' , 'hueman'),
+            'page'    => __( 'A static page' , 'hueman'  )
+        );
+      }
+
+
+      //IF WP VERSION >= 4.3 AND SITE_ICON SETTING EXISTS
+      //=> REMOVE OLD FAV ICON CONTROL
+      //=> CHANGE SITE ICON DEFAULT WP SECTION TO LOGO SECTION
+      global $wp_version;
+      if ( version_compare( $wp_version, '4.3', '>=' ) && is_object( $wp_customize -> get_control( 'site_icon' ) ) ) {
+        $hu_option_group = HU_THEME_OPTIONS;
+        $wp_customize -> remove_control( "{$hu_option_group}[favicon]" );
+        //note : the setting is kept because used in the customizer js api to handle the transition between Hueman favicon to WP site icon.
+        $wp_customize -> get_control( 'site_icon' ) -> section = 'title_tagline';
+
+        //add a favicon title after the logo upload
+        //@todo : update the callback
+        //add_action( '__after_setting_control' , array( $this , 'hu_add_favicon_title') );
+      }//end ALTER SITE ICON
+
+
+      //CHANGE MENUS PROPERTIES
+      // $locations    = get_registered_nav_menus();
+      // $menus        = wp_get_nav_menus();
+      // $choices      = array( '' => __( '&mdash; Select &mdash;', 'hueman' ) );
+      // foreach ( $menus as $menu ) {
+      //   $choices[ $menu->term_id ] = wp_html_excerpt( $menu->name, 40, '&hellip;' );
+      // }
+      // $_priorities  = array(
+      //   'topbar' => 10,
+      //   'header' => 20,
+      //   'footer' => 30
+      // );
+
+      // //WP only adds the menu(s) settings and controls if the user has created at least one menu.
+      // //1) if no menus yet, we still want to display the menu picker + add a notice with a link to the admin menu creation panel
+      // //=> add_setting and add_control for each menu location. Check if they are set first by security
+      // //2) if user has already created a menu, the settings are already created, we just need to update the controls.
+      // $_priority = 0;
+      // //assign new priorities to the menus controls
+      // foreach ( $locations as $location => $description ) {
+      //   $menu_setting_id = "nav_menu_locations[{$location}]";
+
+      //   //create the settings if they don't exist
+      //   //=> in the condition, make sure that the setting has really not been created yet (maybe over secured)
+      //   if ( ! $menus && ! is_object( $wp_customize->get_setting($menu_setting_id ) ) ) {
+      //     $wp_customize -> add_setting( $menu_setting_id, array(
+      //       'sanitize_callback' => 'absint',
+      //       'theme_supports'    => 'menus',
+      //     ) );
+      //   }
+
+      //   //remove the controls if they exists
+      //   if ( is_object( $wp_customize->get_control( $menu_setting_id ) ) ) {
+      //     $wp_customize -> remove_control( $menu_setting_id );
+      //   }
+
+      //   //replace the controls by our custom controls
+      //   $_control_properties = array(
+      //     'label'   => $description,
+      //     'section' => 'menu_locations',
+      //     'title'   => "main" == $location ? __( 'Assign menus to locations' , 'hueman') : false,
+      //     'type'    => 'select',
+      //     'choices' => $choices,
+      //     'priority' => isset($_priorities[$location]) ? $_priorities[$location] : $_priority
+      //   );
+
+      //   //add a notice property if no menu created yet.
+      //   if ( ! $menus ) {
+      //     //adapt the nav section description for v4.3 (menu in the customizer from now on)
+      //     $_create_menu_link =  version_compare( $GLOBALS['wp_version'], '4.3', '<' ) ? admin_url('nav-menus.php') : "javascript:wp.customize.section('nav').container.find('.customize-section-back').trigger('click'); wp.customize.panel('nav_menus').focus();";
+      //     $_control_properties['notice'] = sprintf( __("You haven't created any menu yet. %s or check the %s to learn more about menus.", "hueman"),
+      //       sprintf( '<strong><a href="%1$s" title="%2$s">%2$s</a></strong>', $_create_menu_link, __("Create a new menu now" , "hueman") ),
+      //       sprintf( '<a href="%1$s" title="%2$s" target="_blank">%2$s</a>', esc_url('codex.wordpress.org/WordPress_Menu_User_Guide'),  __("WordPress documentation" , "hueman") )
+      //     );
+      //   }
+
+      //   $wp_customize -> add_control( new HU_controls( $wp_customize, $menu_setting_id, $_control_properties ) );
+
+      //   $_priority = $_priority + 10;
+      // }//foreach
+
+
+      //MOVE THE HEADER IMAGE CONTROL INTO THE HEADER DESIGN SECTION
+      if ( is_object( $wp_customize -> get_control( 'header_image' ) ) ) {
+        $wp_customize -> get_control( 'header_image' ) -> section = 'header_design_sec';
+        $wp_customize -> get_control( 'header_image' ) -> priority = 100;
+      }
+
+      //CHANGE THE CUSTOM LOGO PRIORITY
+      //check if custom_logo is registered first for backward compatibility => custom_logo was introduced in WP 4.5.
+      if ( is_object( $wp_customize->get_control( 'custom_logo' ) ) ) {
+        $wp_customize -> get_control( 'custom_logo' ) -> priority = 7;
+      }
+
+      //The selective refresh support will be added later to the custom logo
+      if ( isset( $wp_customize->selective_refresh ) && is_object($wp_customize->get_setting( 'custom_logo' ) ) ) {
+        $wp_customize -> selective_refresh -> remove_partial( 'custom_logo' );
+        $wp_customize -> get_setting( 'custom_logo' ) -> transport = 'refresh';
+      }
+
+      //MOVE THE CUSTOM CSS SECTION (introduced in 4.7) INTO THE GLOBAL SETTINGS PANEL
+      if ( is_object( $wp_customize->get_section( 'custom_css' ) ) ) {
+        $wp_customize -> get_section( 'custom_css' ) -> panel = 'hu-advanced-panel';
+        $wp_customize -> get_section( 'custom_css' ) -> priority = 40;
+      }
+
+      //CHANGE CUSTOM_CSS DEFAULT
+      $custom_css_setting_id = sprintf( 'custom_css[%s]', get_stylesheet() );
+      if ( is_object( $wp_customize->get_setting( $custom_css_setting_id ) ) ) {
+        $original = $wp_customize->get_setting( $custom_css_setting_id )->default;
+        $new_def = sprintf( "%s\n%s\n%s\n*/",
+            substr( $original, 0, strlen($original) - 2),
+            __( "Use this field to test small chunks of CSS code. For important CSS customizations, it is recommended to modify the style.css file of a child theme." , 'hueman' ),
+            'http' . esc_url( '//codex.wordpress.org/Child_Themes' )
+        );
+        $wp_customize->get_setting( $custom_css_setting_id )->default = $new_def;
+      }
+    }//end of hu_alter_wp_customizer_settings()
+
+
+    /*
+    * hook : '__after_setting_control' (declared in class-controls-settings.php)
+    * Display a title for the favicon control, after the logo
+    */
+    function hu_add_favicon_title($set_id) {
+      printf( '<h3 class="czr-hueman-title">%s</h3>', __( 'SITE ICON' , 'hueman') );
+    }
+
+
+
+
+
+
+
+
+    /* ------------------------------------------------------------------------- *
+     *  WIDGETS SPECIFICS
+    /* ------------------------------------------------------------------------- */
     //updates the names of the built-in widget zones for users who installed the theme before v3.1.2
     function hu_update_widget_database_option() {
       if ( ! hu_user_started_before_version('3.1.2') )
@@ -204,141 +430,6 @@ if ( ! class_exists( 'HU_customize' ) ) :
 
       update_option('hu_theme_options', $_options );
     }
-
-
-
-
-
-
-    /*
-    * Since the WP_Customize_Manager::$controls and $settings are protected properties, one way to alter them is to use the get_setting and get_control methods
-    * Another way is to remove the control and add it back as an instance of a custom class and with new properties
-    * and set new property values
-    * hook : hu_customize_register:30
-    * @return void()
-    */
-    function hu_alter_wp_customizer_settings( $wp_customize ) {
-      //CHANGE BLOGNAME AND BLOGDESCRIPTION TRANSPORT
-      $wp_customize -> get_setting( 'blogname' )->transport = 'postMessage';
-      $wp_customize -> get_setting( 'blogdescription' )->transport = 'postMessage';
-
-      //MOVE WP FRONT PAGE SECTION TO CONTENT PANEL
-      $wp_customize -> get_section( 'static_front_page' ) -> panel = 'hu-content-panel';
-      $wp_customize -> get_section( 'static_front_page' ) -> title = __( 'Front Page Content', 'hueman' );
-      $wp_customize -> get_section( 'static_front_page' ) -> priority = 5;
-      $wp_customize -> get_section( 'static_front_page' ) -> active_callback = 'hu_is_home';
-
-      //CHANGE THE STATIC FRONT PAGE WP CONTROLS
-      $wp_customize -> get_control( 'show_on_front' ) -> type = 'select';
-      $wp_customize -> get_control( 'show_on_front' ) -> choices = array(
-          '__nothing__'   => __( 'Don\'t show any posts or page' , 'hueman'),
-          'posts'   => __( 'Your latest posts' , 'hueman'),
-          'page'    => __( 'A static page' , 'hueman'  )
-      );
-
-
-      //IF WP VERSION >= 4.3 AND SITE_ICON SETTING EXISTS
-      //=> REMOVE OLD FAV ICON CONTROL
-      //=> CHANGE SITE ICON DEFAULT WP SECTION TO LOGO SECTION
-      global $wp_version;
-      if ( version_compare( $wp_version, '4.3', '>=' ) && is_object( $wp_customize -> get_control( 'site_icon' ) ) ) {
-        $hu_option_group = HU_THEME_OPTIONS;
-        $wp_customize -> remove_control( "{$hu_option_group}[favicon]" );
-        //note : the setting is kept because used in the customizer js api to handle the transition between Hueman favicon to WP site icon.
-        $wp_customize -> get_control( 'site_icon' ) -> section = 'title_tagline';
-
-        //add a favicon title after the logo upload
-        //@todo : update the callback
-        //add_action( '__after_setting_control' , array( $this , 'hu_add_favicon_title') );
-      }//end ALTER SITE ICON
-
-
-      //CHANGE MENUS PROPERTIES
-      $locations    = get_registered_nav_menus();
-      $menus        = wp_get_nav_menus();
-      $choices      = array( '' => __( '&mdash; Select &mdash;', 'hueman' ) );
-      foreach ( $menus as $menu ) {
-        $choices[ $menu->term_id ] = wp_html_excerpt( $menu->name, 40, '&hellip;' );
-      }
-      $_priorities  = array(
-        'topbar' => 10,
-        'header' => 20,
-        'footer' => 30
-      );
-
-      //WP only adds the menu(s) settings and controls if the user has created at least one menu.
-      //1) if no menus yet, we still want to display the menu picker + add a notice with a link to the admin menu creation panel
-      //=> add_setting and add_control for each menu location. Check if they are set first by security
-      //2) if user has already created a menu, the settings are already created, we just need to update the controls.
-      $_priority = 0;
-      //assign new priorities to the menus controls
-      foreach ( $locations as $location => $description ) {
-        $menu_setting_id = "nav_menu_locations[{$location}]";
-
-        //create the settings if they don't exist
-        //=> in the condition, make sure that the setting has really not been created yet (maybe over secured)
-        if ( ! $menus && ! is_object( $wp_customize->get_setting($menu_setting_id ) ) ) {
-          $wp_customize -> add_setting( $menu_setting_id, array(
-            'sanitize_callback' => 'absint',
-            'theme_supports'    => 'menus',
-          ) );
-        }
-
-        //remove the controls if they exists
-        if ( is_object( $wp_customize->get_control( $menu_setting_id ) ) ) {
-          $wp_customize -> remove_control( $menu_setting_id );
-        }
-
-        //replace the controls by our custom controls
-        $_control_properties = array(
-          'label'   => $description,
-          'section' => 'nav',
-          'title'   => "main" == $location ? __( 'Assign menus to locations' , 'hueman') : false,
-          'type'    => 'select',
-          'choices' => $choices,
-          'priority' => isset($_priorities[$location]) ? $_priorities[$location] : $_priority
-        );
-
-        //add a notice property if no menu created yet.
-        if ( ! $menus ) {
-          //adapt the nav section description for v4.3 (menu in the customizer from now on)
-          $_create_menu_link =  version_compare( $GLOBALS['wp_version'], '4.3', '<' ) ? admin_url('nav-menus.php') : "javascript:wp.customize.section('nav').container.find('.customize-section-back').trigger('click'); wp.customize.panel('nav_menus').focus();";
-          $_control_properties['notice'] = sprintf( __("You haven't created any menu yet. %s or check the %s to learn more about menus.", "hueman"),
-            sprintf( '<strong><a href="%1$s" title="%2$s">%2$s</a></strong>', $_create_menu_link, __("Create a new menu now" , "hueman") ),
-            sprintf( '<a href="%1$s" title="%2$s" target="_blank">%2$s</a>', esc_url('codex.wordpress.org/WordPress_Menu_User_Guide'),  __("WordPress documentation" , "hueman") )
-          );
-        }
-
-        $wp_customize -> add_control( new HU_controls( $wp_customize, $menu_setting_id, $_control_properties ) );
-
-        $_priority = $_priority + 10;
-      }//foreach
-
-
-      //MOVE THE HEADER IMAGE CONTROL INTO THE HEADER DESIGN SECTION
-      $wp_customize -> get_control( 'header_image' ) -> section = 'header_design_sec';
-      $wp_customize -> get_control( 'header_image' ) -> priority = 100;
-
-      //CHANGE THE CUSTOM LOGO PRIORITY
-      $wp_customize -> get_control( 'custom_logo' ) -> priority = 7;
-
-      //The selective refresh support will be added later to the custom logo
-      if ( isset( $wp_customize->selective_refresh ) && is_object($wp_customize->get_setting( 'custom_logo' ) ) ) {
-        $wp_customize -> selective_refresh -> remove_partial( 'custom_logo' );
-        $wp_customize -> get_setting( 'custom_logo' ) -> transport = 'refresh';
-      }
-    }//end of hu_alter_wp_customizer_settings()
-
-
-    /*
-    * hook : '__after_setting_control' (declared in class-controls-settings.php)
-    * Display a title for the favicon control, after the logo
-    */
-    function hu_add_favicon_title($set_id) {
-      printf( '<h3 class="czr-hueman-title">%s</h3>', __( 'SITE ICON' , 'hueman') );
-    }
-
-
 
     /**
      * Why this ?
@@ -373,7 +464,6 @@ if ( ! class_exists( 'HU_customize' ) ) :
           )
         )
       );
-
 
       //$this->hu_customize_register( $wp_customize );
       if ( is_admin() ) {
@@ -427,6 +517,17 @@ if ( ! class_exists( 'HU_customize' ) ) :
     }
 
 
+
+
+
+
+
+
+
+
+    /* ------------------------------------------------------------------------- *
+     *  FACTORY
+    /* ------------------------------------------------------------------------- */
     /**
     * Generates customizer sections, settings and controls
     * @package Hueman
@@ -451,11 +552,13 @@ if ( ! class_exists( 'HU_customize' ) ) :
     function hu_customize_arguments() {
       $args = array(
           'panels' => array(
-                'title' ,
+                'title',
+                'czr_subtitle',
                 'description',
                 'priority' ,
                 'theme_supports',
-                'capability'
+                'capability',
+                'type'
           ),
           'sections' => array(
                 'title' ,
@@ -533,7 +636,7 @@ if ( ! class_exists( 'HU_customize' ) ) :
           foreach( $args['panels'] as $p_set) {
             $panel_options[$p_set] = isset( $p_options[$p_set]) ?  $p_options[$p_set] : null;
           }
-          $wp_customize -> add_panel( $p_key, $panel_options );
+          $wp_customize -> add_panel( new HU_Customize_Panels( $wp_customize, $p_key, $panel_options ) );
         }
       }
 
@@ -676,6 +779,16 @@ if ( ! class_exists( 'HU_customize' ) ) :
 
 
 
+
+
+
+
+
+
+
+    /* ------------------------------------------------------------------------- *
+     *  HELPERS
+    /* ------------------------------------------------------------------------- */
     function hu_get_controls_css_attr() {
       return apply_filters('controls_css_attr',
           array(

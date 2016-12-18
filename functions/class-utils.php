@@ -18,6 +18,7 @@ if ( ! class_exists( 'HU_utils' ) ) :
     public $options;//not used in customizer context only
     public $is_customizing;
     public $hu_options_prefixes;
+    public static $_theme_setting_list;
 
     function __construct () {
       self::$inst =& $this;
@@ -28,8 +29,10 @@ if ( ! class_exists( 'HU_utils' ) ) :
         $this -> hu_init_properties();
       } else {
         add_action( 'after_setup_theme'       , array( $this , 'hu_init_properties') );
-
       }
+
+      //IMPORTANT : this callback needs to be ran AFTER hu_init_properties.
+      add_action( 'after_setup_theme', array( $this, 'hu_cache_theme_setting_list' ), 100 );
 
       //Various WP filters for
       //content
@@ -75,6 +78,23 @@ if ( ! class_exists( 'HU_utils' ) ) :
     }
 
 
+    /* ------------------------------------------------------------------------- *
+     *  CACHE THE LIST OF THEME SETTINGS ONLY
+    /* ------------------------------------------------------------------------- */
+    //Fired in __construct()
+    //Note : the 'sidebar-areas' setting is not listed in that list because registered specifically
+    function hu_cache_theme_setting_list() {
+        if ( is_array(self::$_theme_setting_list) && ! empty( self::$_theme_setting_list ) )
+          return;
+        $_settings_map = HU_utils_settings_map::$instance -> hu_get_customizer_map( null, 'add_setting_control' );
+        $_settings = array();
+        foreach ( $_settings_map as $_id => $data ) {
+            $_settings[] = $_id;
+        }
+        //$default_options = HU_utils::$inst -> hu_get_default_options();
+        self::$_theme_setting_list = $_settings;
+    }
+
 
     /***************************
     * ON WP_HEAD
@@ -83,7 +103,7 @@ if ( ! class_exists( 'HU_utils' ) ) :
     * hook : wp_head
     */
     function hu_wp_filters() {
-      if ( apply_filters( 'hu_img_smart_load_enabled', hu_is_checked('smart_load_img') ) ) {
+      if ( apply_filters( 'hu_img_smart_load_enabled', ! hu_is_ajax() && hu_is_checked('smart_load_img') ) ) {
           add_filter( 'the_content'                       , array( $this , 'hu_parse_imgs' ), PHP_INT_MAX );
           add_filter( 'hu_post_thumbnail_html'            , array( $this , 'hu_parse_imgs' ) );
       }
@@ -187,18 +207,17 @@ if ( ! class_exists( 'HU_utils' ) ) :
         return apply_filters( 'hu_default_options', $def_options );
 
       //Always update/generate the default option when (OR) :
-      // 1) user is logged in
+      // 1) current user can edit theme options
       // 2) they are not defined
       // 3) theme version not defined
       // 4) versions are different
-      if ( is_user_logged_in() || empty($def_options) || ! isset($def_options['ver']) || 0 != version_compare( $def_options['ver'] , HUEMAN_VER ) ) {
+      if ( current_user_can('edit_theme_options') || empty($def_options) || ! isset($def_options['ver']) || 0 != version_compare( $def_options['ver'] , HUEMAN_VER ) ) {
         $def_options          = $this -> hu_generate_default_options( HU_utils_settings_map::$instance -> hu_get_customizer_map( $get_default_option = 'true' ) , HU_THEME_OPTIONS );
         //Adds the version in default
         $def_options['ver']   =  HUEMAN_VER;
 
-        $_db_opts['defaults'] = $def_options;
-        //writes the new value in db
-        update_option( HU_THEME_OPTIONS , $_db_opts );
+        //writes the new value in db (merging raw options with the new defaults )
+        $this -> hu_set_option( 'defaults', $def_options, HU_THEME_OPTIONS );
       }
       return apply_filters( 'hu_default_options', $def_options );
     }
@@ -253,7 +272,7 @@ if ( ! class_exists( 'HU_utils' ) ) :
         }
 
         //assign false value if does not exist, just like WP does
-        $_single_opt    = isset($__options[$option_name]) ? $__options[$option_name] : false;
+        $_single_opt    = isset( $__options[$option_name] ) ? $__options[$option_name] : false;
 
         //allow ctx filtering globally
         $_single_opt = apply_filters( "hu_opt" , $_single_opt , $option_name , $option_group, $_default_val );
@@ -291,6 +310,11 @@ if ( ! class_exists( 'HU_utils' ) ) :
     function hu_set_option( $option_name , $option_value, $option_group = null ) {
       $option_group           = is_null($option_group) ? HU_THEME_OPTIONS : $option_group;
       $_options               = $this -> hu_get_theme_options( $option_group );
+
+      //Get raw to :
+      //avoid filtering
+      //avoid merging with defaults
+      $_options               = hu_get_raw_option( $option_group );
       $_options[$option_name] = $option_value;
 
       update_option( $option_group, $_options );
@@ -322,73 +346,5 @@ if ( ! class_exists( 'HU_utils' ) ) :
       $this -> db_options = false === get_option( $opt_group ) ? array() : (array)get_option( $opt_group );
       return $this -> db_options;
     }
-
-
-
-    /***************************
-    * SKOPE
-    ****************************/
-    /**
-    * Boolean helper
-    * @return bool
-    */
-    function hu_is_option_skoped( $opt_name ) {
-      return ! in_array( $opt_name, $this -> hu_get_skope_excluded_options() );
-    }
-
-
-    /**
-    * Helper : define a set of options not skoped
-    * @return array()
-    */
-    function hu_get_skope_excluded_options() {
-      return apply_filters(
-        'hu_get_skope_excluded_options',
-        array_merge(
-          array(
-            //hueman design option
-            'favicon',
-            'dynamic-styles',
-            'post-comments',
-            'page-comments',
-            'layout-home',
-            'layout-single',
-            'layout-archive',
-            'layout-archive-category',
-            'layout-search',
-            'layout-404',
-            'layout-page',
-            'sidebar-areas',
-
-            //wp built-ins
-            'show_on_front',
-            'page_on_front',
-            'page_for_posts'
-          ),
-          $this -> hu_get_protected_options()
-        )
-      );
-    }
-
-
-    /**
-    * Helper : define a set protected options. Never reset typically.
-    * @return array() of opt name
-    */
-    function hu_get_protected_options() {
-      return apply_filters(
-          'hu_protected_options',
-          array( 'defaults', 'ver', 'has_been_copied', 'last_update_notice', 'last_update_notice_pro' )
-      );
-    }
-
-    /**
-    * Boolean helper
-    * @return bool
-    */
-    function hu_is_option_protected( $opt_name ) {
-      return in_array( $opt_name, $this -> hu_get_protected_options() );
-    }
-
   }//end of class
 endif;

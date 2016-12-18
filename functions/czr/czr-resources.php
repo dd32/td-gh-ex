@@ -1,14 +1,14 @@
 <?php
 
 //control scripts and style
-add_action( 'customize_controls_enqueue_scripts'        ,  'hu_customize_controls_js_css' );
+add_action( 'customize_controls_enqueue_scripts'        , 'hu_customize_controls_js_css', 10 );
 //preview scripts
 //set with priority 20 to be fired after hu_customize_store_db_opt in HU_utils
 add_action( 'customize_preview_init'                    , 'hu_customize_preview_js', 20 );
 //exports some wp_query informations. Updated on each preview refresh.
 add_action( 'customize_preview_init'                    , 'hu_add_preview_footer_action', 20 );
-//Add the visibilities
-add_action( 'customize_controls_print_footer_scripts'   , 'hu_extend_visibilities', 10 );
+//Add the control dependencies
+add_action( 'customize_controls_print_footer_scripts'   , 'hu_extend_ctrl_dependencies', 10 );
 
 //hook : customize_preview_init
 function hu_customize_preview_js() {
@@ -25,7 +25,7 @@ function hu_customize_preview_js() {
   //localizes
   wp_localize_script(
         'hu-customizer-preview',
-        'HUPreviewParams',
+        'CZRPreviewParams',
         apply_filters('hu_js_customizer_preview_params' ,
           array(
             'themeFolder'     => get_template_directory_uri(),
@@ -86,7 +86,9 @@ function hu_customize_controls_js_css() {
           'faviconOptionName' => 'favicon',
           'css_attr' => HU_customize::$instance -> hu_get_controls_css_attr(),
           'translatedStrings' => hu_get_translated_strings(),
-          'isDevMode' => ( defined('WP_DEBUG') && true === WP_DEBUG ) || ( defined('TC_DEV') && true === TC_DEV )
+          'isDevMode' => ( defined('WP_DEBUG') && true === WP_DEBUG ) || ( defined('TC_DEV') && true === TC_DEV ),
+          'isThemeSwitchOn' => isset( $_GET['theme']),
+          'themeSettingList' => HU_utils::$_theme_setting_list
       )
     )
   );
@@ -228,7 +230,7 @@ function hu_add_customize_preview_data() {
 
 
 //hook : 'customize_controls_enqueue_scripts':10
-function hu_extend_visibilities() {
+function hu_extend_ctrl_dependencies() {
   $_header_img_notice = sprintf( __( "When the %s, this element will not be displayed in your header.", 'hueman'),
       sprintf('<a href="%1$s" title="%2$s">%2$s</a>',
         "javascript:wp.customize.section(\'header_design_sec\').focus();",
@@ -241,8 +243,14 @@ function hu_extend_visibilities() {
         __('blog design panel', 'hueman')
       )
   );
+  $_header_menu_notice = sprintf( __( "The menu currently displayed in your header is a default page menu, you can disable it in the %s.", 'hueman'),
+      sprintf('<a href="%1$s" title="%2$s">%2$s</a>',
+        "javascript:wp.customize.section(\'header_menu_sec\').focus();",
+        __('Header Panel', 'hueman')
+      )
+  );
   ?>
-  <script id="control-visibilities" type="text/javascript">
+  <script id="control-dependencies" type="text/javascript">
     (function (api, $, _) {
       //@return boolean
       var _is_checked = function( to ) {
@@ -250,8 +258,8 @@ function hu_extend_visibilities() {
       };
       //when a dominus object define both visibility and action callbacks, the visibility can return 'unchanged' for non relevant servi
       //=> when getting the visibility result, the 'unchanged' value will always be checked and resumed to the servus control current active() state
-      api.CZR_visibilities.prototype.dominiDeps = _.extend(
-            api.CZR_visibilities.prototype.dominiDeps,
+      api.CZR_ctrlDependencies.prototype.dominiDeps = _.extend(
+            api.CZR_ctrlDependencies.prototype.dominiDeps,
             [
                 {
                         dominus : 'show_on_front',
@@ -360,7 +368,8 @@ function hu_extend_visibilities() {
                               'color-header',
                               'color-header-menu',
                               'image-border-radius',
-                              'body-background'
+                              'body-background',
+                              'color-footer'
                         ],
                         visibility : function ( to ) {
                               return _is_checked(to);
@@ -403,6 +412,83 @@ function hu_extend_visibilities() {
                   }
             ]//dominiDeps {}
       );//_.extend()
+
+
+      //add a notice in the Menus panel to easily disable the default page menu in the header
+      <?php if ( ! is_multisite() ) : //no default menu for multisite installs ?>
+        api.when('nav_menu_locations[header]', function( header_menu_loc_settting ) {
+              //bail for old version of WP
+              if ( ! _.has( api, 'section' ) || ! _.has( api, 'panel') )
+                return;
+
+              var _notice_selector = 'hu-menu-notice',
+                  _toggle_menu_notice = function( show ) {
+                    var $menu_panel_content = api.panel('nav_menus').container.find('.control-panel-content'),
+                        notice_rendered = 0 !== $menu_panel_content.find( '.' + _notice_selector ).length,
+                        _html = '<p class="description customize-control-description ' + _notice_selector +'"><?php echo $_header_menu_notice; ?></p>',
+                        _render_notice = function() {
+                              //defer the rendering when all sections of this panel have been embedded
+                              $.when.apply(
+                                    null,
+                                    ( function() {
+                                          var _promises = [];
+                                          //build the promises array
+                                          api.section.each( function( _sec ){
+                                                if ( 'nav_menus' == _sec.panel() ) {
+                                                      _promises.push( _sec.deferred.embedded );
+                                                }
+                                          });
+                                          return _promises;
+                                    })
+                                    )
+                              .then( function() {
+                                    $menu_panel_content.append( _html );
+                              });
+                        },
+                        _toggle_notice = function() {
+                              if ( ! notice_rendered ) {
+                                _render_notice();
+                              };
+                              $('.' + _notice_selector, $menu_panel_content).toggle( show );
+                        };
+
+                    //bail if the menu panel is still not yet rendered
+                    if ( ! $menu_panel_content.length )
+                      return;
+
+                    if ( api.topics && api.topics.ready && api.topics.ready.fired() ) {
+                          _toggle_notice();
+                    } else {
+                          api.bind('ready', _toggle_notice );
+                    }
+              };//_toggle_menu_notice
+
+              //API based toggling : maybe toggle the notice when nav_menu panel has been registered AND embedded
+              api.panel.when('nav_menus', function( panel_instance ){
+                    panel_instance.deferred.embedded.then( function() {
+                          _toggle_menu_notice( 0 == header_menu_loc_settting() );
+                    });
+              });
+
+              //User action based toggling : Maybe toggle the notice when user changes the related settings
+              api.bind('ready', function() {
+                    //bail if the [default-menu-header] has been removed
+                    if ( ! api.has('hu_theme_options[default-menu-header]') )
+                      return;
+
+                    //react to header menu location changes
+                    header_menu_loc_settting.bind( function( to, from ) {
+                          _toggle_menu_notice( 0 == to && _is_checked( api('hu_theme_options[default-menu-header]')() ) );
+                    } );
+                    //react to hu_theme_options[default-menu-header]
+                    api('hu_theme_options[default-menu-header]').bind( function( to ) {
+                          _toggle_menu_notice( _is_checked( to ) && 0 == header_menu_loc_settting() );
+                    });
+              });
+
+        });
+      <?php endif; ?>
+
     }) ( wp.customize, jQuery, _);
   </script>
   <?php

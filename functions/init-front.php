@@ -8,10 +8,11 @@
 /* ------------------------------------ */
 if ( ! function_exists( 'hu_layout_class' ) ) {
 
+  //$default = 'col-3cm' set in setting map
   function hu_layout_class() {
     // Default layout
     $layout = 'col-3cm';
-    $default = 'col-3cm';
+    $has_post_meta = false;
 
     // Check for page/post specific layout
     if ( is_page() || is_single() ) {
@@ -21,26 +22,29 @@ if ( ! function_exists( 'hu_layout_class' ) ) {
       // Get meta
       $meta = get_post_meta($post->ID,'_layout',true);
       // Get if set and not set to inherit
-      if ( isset($meta) && !empty($meta) && $meta != 'inherit' ) { $layout = $meta; }
+      if ( isset($meta) && !empty($meta) && $meta != 'inherit' ) {
+        $layout = $meta;
+        $has_post_meta = true;
+      }
       // Else check for page-global / single-global
-      elseif ( is_single() && ( hu_get_option('layout-single') !='inherit' ) ) $layout = hu_get_option('layout-single',''.$default.'');
-      elseif ( is_page() && ( hu_get_option('layout-page') !='inherit' ) ) $layout = hu_get_option('layout-page',''.$default.'');
+      elseif ( is_single() && ( hu_get_option('layout-single') !='inherit' ) ) $layout = hu_get_option( 'layout-single' );
+      elseif ( is_page() && ( hu_get_option('layout-page') !='inherit' ) ) $layout = hu_get_option( 'layout-page' );
       // Else get global option
-      else $layout = hu_get_option('layout-global',''.$default.'');
+      else $layout = hu_get_option( 'layout-global' );
     }
 
     // Set layout based on page
-    elseif ( is_home() && ( hu_get_option('layout-home') !='inherit' ) ) $layout = hu_get_option('layout-home',''.$default.'');
-    elseif ( is_category() && ( hu_get_option('layout-archive-category') !='inherit' ) ) $layout = hu_get_option('layout-archive-category',''.$default.'');
-    elseif ( is_archive() && ( hu_get_option('layout-archive') !='inherit' ) ) $layout = hu_get_option('layout-archive',''.$default.'');
-    elseif ( is_search() && ( hu_get_option('layout-search') !='inherit' ) ) $layout = hu_get_option('layout-search',''.$default.'');
-    elseif ( is_404() && ( hu_get_option('layout-404') !='inherit' ) ) $layout = hu_get_option('layout-404',''.$default.'');
+    elseif ( is_home() && ( hu_get_option('layout-home') !='inherit' ) ) $layout = hu_get_option( 'layout-home' );
+    elseif ( is_category() && ( hu_get_option('layout-archive-category') !='inherit' ) ) $layout = hu_get_option( 'layout-archive-category' );
+    elseif ( is_archive() && ( hu_get_option('layout-archive') !='inherit' ) ) $layout = hu_get_option( 'layout-archive' );
+    elseif ( is_search() && ( hu_get_option('layout-search') !='inherit' ) ) $layout = hu_get_option( 'layout-search' );
+    elseif ( is_404() && ( hu_get_option('layout-404') !='inherit' ) ) $layout = hu_get_option( 'layout-404' );
 
     // Global option
-    else $layout = hu_get_option('layout-global',''.$default.'');
+    else $layout = hu_get_option('layout-global' );
 
     // Return layout class
-    return $layout;
+    return apply_filters( 'hu_layout_class', $layout, $has_post_meta );
   }
 
 }
@@ -107,89 +111,6 @@ if ( ! function_exists('hu_print_widgets_in_location') ) {
 }//endif
 
 
-//@param $sidebars_widgets = wp_get_sidebars_widgets()
-//@param $_zone_id = id of the widget zone, ex : primary
-function hu_maybe_print_default_widgets( $sidebars_widgets, $_zone_id ) {
-    //stop here is the zone id has already been populated with widgets
-    if ( array_key_exists( $_zone_id, $sidebars_widgets ) && is_array( $sidebars_widgets[$_zone_id] ) && ! empty($sidebars_widgets[$_zone_id] ) )
-      return;
-
-    //we only want to print default widgets in primary and secondary sidebars
-    if ( ! in_array( $_zone_id, array( 'primary', 'secondary', 'footer-1', 'footer-2', 'footer-3') ) )
-      return;
-
-    $_widgets_to_print = array();
-    switch ($_zone_id) {
-      case 'primary':
-        $_widgets_to_print[] = array(
-          'AlxPosts' => array(
-            'args' => array('before_title' => sprintf('<h3 class="widget-title">%s</h3>', __( 'Discover', 'hueman') ) )
-          )
-        );
-      break;
-      case 'secondary':
-        $_widgets_to_print[] = array(
-          'AlxTabs' => array(
-            'args' => array('before_title' => sprintf('<h3 class="widget-title">%s</h3>', __( 'Recommended', 'hueman') ) )
-          )
-        );
-      break;
-      case 'footer-1':
-        $_widgets_to_print[] = array(
-          'WP_Widget_Recent_Posts' => array(
-            'instance' => array(
-              'title' => __( 'RECENT POSTS', 'hueman'),
-              'number' => 4
-            ),
-            'args' => array(
-              //'before_title' => sprintf('<h3 class="widget-title">%s</h3>', __( 'Recent Posts', 'hueman') )
-            )
-          )
-        );
-      break;
-      case 'footer-2':
-        $_widgets_to_print[] = array(
-          'WP_Widget_Recent_Comments' => array(
-            'instance' => array(
-              'title' => __( 'RECENT COMMENTS', 'hueman'),
-              'number' => 4
-            ),
-            'args' => array(
-              //'before_title' => sprintf('<h3 class="widget-title">%s</h3>', __( 'Recent Posts', 'hueman') )
-            )
-          )
-        );
-      break;
-      case 'footer-3':
-        $_widgets_to_print[] = array(
-          'AlxTabs' => array(
-            'instance' => array(
-              'recent_enable'   => 0,
-              'comments_enable'   => 0,
-              'tags_enable'     => 0,
-              'popular_num' => 2,
-            ),
-            'args' => array('before_title' => sprintf('<h3 class="widget-title"><strong>%s</strong></h3>', __( 'HIGHLIGHTS', 'hueman') ) )
-          )
-        );
-      break;
-    }
-    if ( empty($_widgets_to_print) )
-      return;
-
-    //find the widget instance ids
-    $_wgt_instances = array();
-
-    foreach ( $_widgets_to_print as $_wgt ) {
-      foreach (  $_wgt as $_class => $params ) {
-          if ( class_exists( $_class) ) {
-            $_instance = isset( $params['instance'] ) ? $params['instance'] : array();
-            $_args = isset( $params['args'] ) ? $params['args'] : array();
-            the_widget( $_class, $_instance, $_args );
-          }
-      }
-    }
-}
 
 
 //the job of this function is to print a dynamic widget zone if exists
@@ -201,10 +122,8 @@ function hu_print_dynamic_sidebars( $_id, $location ) {
   }
 
   $sidebars_widgets = wp_get_sidebars_widgets();
-  if ( hu_isprevdem() )
-    hu_maybe_print_default_widgets( $sidebars_widgets, $_id );
 
-  if ( hu_is_customize_preview_frame() ) {
+  if ( hu_is_customize_preview_frame() && ! hu_isprevdem() ) {
     //is there a meta setting overriding the customizer ?
     if ( false != hu_get_singular_meta_widget_zone($location) ) {
       printf('<div class="widget"><div class="hu-placeholder-widget"><h3>%1$s<br/><span class="zone-name">"%2$s"</span> %3$s</h3><br/><p>%4$s</p></div></div>',
@@ -223,8 +142,10 @@ function hu_print_dynamic_sidebars( $_id, $location ) {
     }
   }//end if customizing
 
+  do_action('__before_print_dynamic_sidebar', $sidebars_widgets, $_id );
+
   //print it
-  dynamic_sidebar($_id);
+  dynamic_sidebar( $_id );
 }
 
 
@@ -256,35 +177,72 @@ if ( ! function_exists( 'hu_print_social_links' ) ) {
   }
 }
 
-
-
-/*  Site name/logo
+/*  Header image callback
 /* ------------------------------------ */
-if ( ! function_exists( 'hu_site_title' ) ) {
-
-  function hu_site_title() {
-    // Text or image?
-    // Since v3.2.4, uses the WP 'custom_logo' theme mod option. Set with a filter.
-    if ( apply_filters( 'hu_display_header_logo', hu_is_checked('display-header-logo') && false != hu_get_img_src_from_option( 'custom-logo' ) ) ) {
-      $logo_src = apply_filters( 'hu_header_logo_src' , hu_get_img_src_from_option( 'custom-logo' ) );
-      $logo_title = '<img src="'. $logo_src . '" alt="' .get_bloginfo('name'). '">';
-    } else {
-      $logo_title = get_bloginfo('name');
-    }
-
-    $link = '<a class="custom-logo-link" href="'.home_url('/').'" rel="home">'.$logo_title.'</a>';
-
-    if ( hu_is_home() ) {
-      $sitename = '<h1 class="site-title">'.$link.'</h1>'."\n";
-    } else {
-      $sitename = '<p class="site-title">'.$link.'</p>'."\n";
-    }
-
-    return apply_filters('hu_logo_title', $sitename, $logo_title );
+if ( ! function_exists( 'hu_render_header_image' ) ) {
+  function hu_render_header_image( $_header_img_src = null ) {
+    echo sprintf('<a href="%1$s" rel="home"><img class="site-image" src="%2$s" alt="%3$s"></a>',
+        home_url('/'),
+        get_header_image(),
+        get_bloginfo('name')
+    );
   }
-
 }
 
+/*  Site name/logo and tagline callbacks
+/* ------------------------------------ */
+if ( ! function_exists( 'hu_print_logo_or_title' ) ) {
+  function hu_print_logo_or_title( $echo = true ) {
+    ob_start();
+    if ( hu_is_home() ) {
+      ?>
+        <h1 class="site-title"><?php hu_do_render_logo_site_tite() ?></h1>
+      <?php
+    } else {
+      ?>
+        <p class="site-title"><?php hu_do_render_logo_site_tite() ?></p>
+      <?php
+    }
+    $html = ob_get_contents();
+    if ($html) ob_end_clean();
+    if ( $echo )
+      echo apply_filters('hu_logo_title', $html );
+    else
+      return apply_filters('hu_logo_title', $html );
+  }
+}
+
+if ( ! function_exists( 'hu_do_render_logo_site_tite' ) ) {
+  function hu_do_render_logo_site_tite() {
+      // Text or image?
+      // Since v3.2.4, uses the WP 'custom_logo' theme mod option. Set with a filter.
+      if ( apply_filters( 'hu_display_header_logo', hu_is_checked('display-header-logo') && false != hu_get_img_src_from_option( 'custom-logo' ) ) ) {
+          $logo_src = apply_filters( 'hu_header_logo_src' , hu_get_img_src_from_option( 'custom-logo' ) );
+          $logo_title = '<img src="'. $logo_src . '" alt="' .get_bloginfo('name'). '">';
+      } else {
+          $logo_title = get_bloginfo('name');
+      }
+
+      printf( '<a class="custom-logo-link" href="%1$s" rel="home">%2$s</a>',
+          home_url('/'),
+          $logo_title
+      );
+  }
+}
+
+if ( ! function_exists( 'hu_render_blog_description' ) ) {
+  function hu_render_blog_description() {
+      echo bloginfo( 'description' );
+  }
+}
+
+/*  Retro compat function for child theme users
+/* ------------------------------------ */
+if ( ! function_exists( 'hu_site_title' ) ) {
+  function hu_site_title() {
+      return hu_print_logo_or_title( false );
+  }
+}
 
 /*  Page title
 /* ------------------------------------ */
@@ -520,26 +478,20 @@ if ( ! function_exists( 'hu_get_featured_post_ids' ) ) {
 *  + an animated svg icon
 *  the src property can be filtered
 /* ------------------------------------ */
-if ( ! function_exists( 'hu_print_placeholder_thumb' ) ) {
+if ( ! function_exists( 'hu_get_placeholder_thumb' ) ) {
 
-  function hu_print_placeholder_thumb( $_size = 'thumb-medium' ) {
+  function hu_get_placeholder_thumb( $_requested_size = 'thumb-medium' ) {
     $_unique_id = uniqid();
     $filter = false;
     $_sizes = array( 'thumb-medium', 'thumb-small', 'thumb-standard' );
-    if ( ! in_array($_size, $_sizes) )
-      $_size = 'thumb-medium';
+    if ( ! in_array($_requested_size, $_sizes) )
+      $_requested_size = 'thumb-medium';
     //default $img_src
-    $_img_src = get_template_directory_uri() . "/assets/front/img/{$_size}.png";
+    $_img_src = get_template_directory_uri() . "/assets/front/img/{$_requested_size}.png";
 
     if ( apply_filters( 'hu-use-svg-thumb-placeholder', true ) ) {
-        if ( hu_isprevdem() ) {
-          $_img_src = hu_get_prevdem_img_src( $_size );
-          $filter = '<span class="filter-placeholder"></span>';
-        } else {
-          $_size = $_size . '-empty';
-          $_img_src = get_template_directory_uri() . "/assets/front/img/{$_size}.png";
-        }
-
+        $_size = $_requested_size . '-empty';
+        $_img_src = get_template_directory_uri() . "/assets/front/img/{$_size}.png";
         $_svg_height = in_array($_size, array( 'thumb-medium', 'thumb-standard' ) ) ? 100 : 60;
         ?>
         <svg class="hu-svg-placeholder <?php echo $_size; ?>" id="<?php echo $_unique_id; ?>" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M928 832q0-14-9-23t-23-9q-66 0-113 47t-47 113q0 14 9 23t23 9 23-9 9-23q0-40 28-68t68-28q14 0 23-9t9-23zm224 130q0 106-75 181t-181 75-181-75-75-181 75-181 181-75 181 75 75 181zm-1024 574h1536v-128h-1536v128zm1152-574q0-159-112.5-271.5t-271.5-112.5-271.5 112.5-112.5 271.5 112.5 271.5 271.5 112.5 271.5-112.5 112.5-271.5zm-1024-642h384v-128h-384v128zm-128 192h1536v-256h-828l-64 128h-644v128zm1664-256v1280q0 53-37.5 90.5t-90.5 37.5h-1536q-53 0-90.5-37.5t-37.5-90.5v-1280q0-53 37.5-90.5t90.5-37.5h1536q53 0 90.5 37.5t37.5 90.5z"/></svg>
@@ -556,84 +508,21 @@ if ( ! function_exists( 'hu_print_placeholder_thumb' ) ) {
         <?php
     }
 
-    //make sure we did not last the img_src
+    $_img_src = apply_filters( 'hu_placeholder_thumb_src', $_img_src, $_requested_size );
+    $filter = apply_filters( 'hu_placeholder_thumb_filter', false );
+
+    //make sure we did not lose the img_src
     if ( false == $_img_src )
-      $_img_src = get_template_directory_uri() . "/assets/front/img/{$_size}.png";
+      $_img_src = get_template_directory_uri() . "/assets/front/img/{$_requested_size}.png";
 
     printf( ' %1$s<img class="hu-img-placeholder" src="%2$s" alt="%3$s" data-hu-post-id="%4$s" />',
       false !== $filter ? $filter : '',
-      apply_filters( 'hu_placeholder_thumb_src' , $_img_src ),
+      $_img_src,
       get_the_title(),
       $_unique_id
     );
   }
 }
-
-
-
-/* Placeholder thumb helper
-*  @return a random img src string
-*  Can be recursive if a specific img size is not found
-/* ------------------------------------ */
-function hu_get_prevdem_img_src( $_size = 'thumb-medium', $i = 0 ) {
-    //prevent infinite loop
-    if ( 10 == $i ) {
-      return;
-    }
-    $sizes_suffix_map = array(
-        'thumb-small'     => '160x160',
-        'thumb-medium'    => '520x245',
-        'thumb-standard'  => '320x320'
-    );
-    $requested_size = isset( $sizes_suffix_map[$_size] ) ? $sizes_suffix_map[$_size] : '520x245';
-    $path = HU_BASE . 'assets/front/img/demo/';
-    //Build or re-build the global dem img array
-    if ( ! isset( $GLOBALS['prevdem_img'] ) || empty( $GLOBALS['prevdem_img'] ) ) {
-        if ( is_dir( $path ) ) {
-          $imgs = scandir( $path );
-        }
-        $candidates = array();
-        if ( ! $imgs )
-          return array();
-
-        foreach ( $imgs as $img ) {
-          if ( '.' === $img[0] || is_dir( $path . $img ) ) {
-            continue;
-          }
-          $candidates[] = $img;
-        }
-        $GLOBALS['prevdem_img'] = $candidates;
-    }
-    $candidates = $GLOBALS['prevdem_img'];
-    //get a random image name
-    $rand_key = array_rand($candidates);
-    $img_name = $candidates[ $rand_key ];
-    //extract img prefix
-    $img_prefix_expl = explode( '-', $img_name );
-    $img_prefix = $img_prefix_expl[0];
-
-    $requested_size_img_name = "{$img_prefix}-{$requested_size}.jpg";
-    //if file does not exists, reset the global and recursively call it again
-    if ( ! file_exists( $path . $requested_size_img_name ) ) {
-      unset( $GLOBALS['prevdem_img'] );
-      $i++;
-      return hu_get_prevdem_img_src( $_size, $i );
-    }
-    //unset all sizes of the img found and update the global
-    $new_candidates = $candidates;
-    foreach ( $candidates as $_key => $_img ) {
-      if ( substr( $_img , 0, strlen( "{$img_prefix}-" ) ) == "{$img_prefix}-" ) {
-        unset( $new_candidates[$_key] );
-      }
-    }
-    $GLOBALS['prevdem_img'] = $new_candidates;
-    return get_template_directory_uri() . '/assets/front/img/demo/' . $requested_size_img_name;
-}
-
-
-
-
-
 
 
 

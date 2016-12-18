@@ -1,6 +1,6 @@
 <?php
 
-//do not remove this
+//Do not remove this
 load_template( get_template_directory() . '/functions/init-core.php' );
 
 /**
