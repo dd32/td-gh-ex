@@ -114,7 +114,7 @@ class Zenzero_Admin {
 			<div class="welcome-description-wrap">
 				<div class="about-text"><?php echo $theme->display( 'Description' ); ?>
 				<p class="cresta-actions">
-					<a href="<?php echo esc_url( 'http://crestaproject.com/downloads/zenzero/' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Theme Info', 'zenzero' ); ?></a>
+					<a href="<?php echo esc_url( 'https://crestaproject.com/downloads/zenzero/' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Theme Info', 'zenzero' ); ?></a>
 
 					<a href="<?php echo esc_url( apply_filters( 'zenzero_pro_theme_url', 'http://crestaproject.com/demo/zenzero/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Demo', 'zenzero' ); ?></a>
 
@@ -186,7 +186,7 @@ class Zenzero_Admin {
 					<div class="col">
 						<h3><?php esc_html_e( 'Need more features?', 'zenzero' ); ?></h3>
 						<p><?php esc_html_e( 'Upgrade to PRO version for more exciting features.', 'zenzero' ) ?></p>
-						<p><a target="_blank" href="<?php echo esc_url( 'http://crestaproject.com/downloads/zenzero/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Info about PRO version', 'zenzero' ); ?></a></p>
+						<p><a target="_blank" href="<?php echo esc_url( 'https://crestaproject.com/downloads/zenzero/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Info about PRO version', 'zenzero' ); ?></a></p>
 					</div>
 
 					<div class="col">
@@ -375,7 +375,7 @@ class Zenzero_Admin {
 						<td></td>
 						<td class="btn-wrapper">
 							<a href="<?php echo esc_url( apply_filters( 'zenzero_pro_theme_url', 'http://crestaproject.com/demo/zenzero-pro/' ) ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'View PRO version demo', 'zenzero' ); ?></a>
-							<a href="<?php echo esc_url( apply_filters( 'zenzero_pro_theme_url', 'http://crestaproject.com/downloads/zenzero/' ) ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'More Information', 'zenzero' ); ?></a>
+							<a href="<?php echo esc_url( apply_filters( 'zenzero_pro_theme_url', 'https://crestaproject.com/downloads/zenzero/' ) ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'More Information', 'zenzero' ); ?></a>
 						</td>
 					</tr>
 				</tbody>

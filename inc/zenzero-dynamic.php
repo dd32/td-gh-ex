@@ -224,7 +224,7 @@ function zenzero_color_primary_register( $wp_customize ) {
 				<a style="margin: 10px;" target="_blank" href="http://crestaproject.com/demo/zenzero-pro/" class="button button-secondary">
 					<?php _e('Watch the demo', 'zenzero'); ?>
 				</a>
-				<a style="margin: 10px;" target="_blank" href="http://crestaproject.com/downloads/zenzero/" class="button button-secondary">
+				<a style="margin: 10px;" target="_blank" href="https://crestaproject.com/downloads/zenzero/" class="button button-secondary">
 					<?php _e('Get Zenzero PRO Theme', 'zenzero'); ?>
 				</a>
 			</p>
