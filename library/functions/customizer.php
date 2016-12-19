@@ -4,13 +4,13 @@
  * @subpackage Attitude
  * @since Attitude 3.0
  */
+if ( ! class_exists( 'WP_Customize_Section' ) ) {
+	return null;
+}
 function attitude_textarea_register($wp_customize){
 	class Attitude_Customize_Attitude_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-		<div class="theme-info"> 
-			<a title="<?php esc_attr_e( 'Donate', 'attitude' ); ?>" href="<?php echo esc_url( 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=BRLCCUGP2ACYN' ); ?>" target="_blank">
-			<?php _e( 'Donate', 'attitude' ); ?>
-			</a>
+		<div class="theme-info">
 			<a title="<?php esc_attr_e( 'Review Attitude', 'attitude' ); ?>" href="<?php echo esc_url( 'http://wordpress.org/support/view/theme-reviews/attitude' ); ?>" target="_blank">
 			<?php _e( 'Rate Attitude', 'attitude' ); ?>
 			</a>
@@ -24,14 +24,6 @@ function attitude_textarea_register($wp_customize){
 			<?php _e( 'View Demo', 'attitude' ); ?>
 			</a>
 		</div>
-		<?php
-		}
-	}
-	class Attitude_Customize_Attitude_upgrade_to_pro extends WP_Customize_Control {
-		public function render_content() { ?>
-			<a href="<?php echo esc_url( 'http://themehorse.com/themes/attitude-pro/' ); ?>" title="<?php esc_attr_e( 'Upgrade to Attitude Pro', 'attitude' ); ?>" target="_blank">
-			<?php _e( 'Upgrade to Attitude Pro', 'attitude' ); ?>
-			</a><?php _e('to get more aditional features like (Advanced Slider, Color Options, Typography Options and many more.)','attitude');?>
 		<?php
 		}
 	}
@@ -61,6 +53,77 @@ function attitude_textarea_register($wp_customize){
 		}
 	}
 }
+/**
+ * Upsell customizer section.
+ *
+ * @since  1.0.0
+ * @access public
+ */
+class Attitude_Customize_Section_Upsell extends WP_Customize_Section {
+
+	/**
+	 * The type of customize section being rendered.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @var    string
+	 */
+	public $type = 'upsell';
+
+	/**
+	 * Custom button text to output.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @var    string
+	 */
+	public $pro_text = '';
+
+	/**
+	 * Custom pro button URL.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @var    string
+	 */
+	public $pro_url = '';
+
+	/**
+	 * Add custom parameters to pass to the JS via JSON.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public function json() {
+		$json = parent::json();
+
+		$json['pro_text'] = $this->pro_text;
+		$json['pro_url']  = esc_url( $this->pro_url );
+
+		return $json;
+	}
+
+	/**
+	 * Outputs the Underscore.js template.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	protected function render_template() { ?>
+
+		<li id="accordion-section-{{ data.id }}" class="accordion-section control-section control-section-{{ data.type }} cannot-expand">
+			<h3 class="accordion-section-title">
+				{{ data.title }}
+
+				<# if ( data.pro_text && data.pro_url ) { #>
+					<a href="{{ data.pro_url }}" class="upgrade-to-pro" target="_blank">{{ data.pro_text }}</a>
+				<# } #>
+			</h3>
+		</li>
+	<?php }
+}
 
 function attitude_customize_register($wp_customize){
 	$wp_customize->add_panel( 'attitude_design_options_panel', array(
@@ -83,29 +146,8 @@ function attitude_customize_register($wp_customize){
 	global $options, $array_of_default_settings;
 	$options = wp_parse_args(  get_option( 'attitude_theme_options', array() ), attitude_get_option_defaults());
 /********************Attitude Upgrade ******************************************/
-	$wp_customize->add_section('attitude_upgrade_to_pro', array(
-		'title'					=> __('What is new on Attitude Pro?', 'attitude'),
-		'priority'				=> 0.5,
-	));
-	$wp_customize->add_setting( 'attitude_theme_settings[attitude_upgrade_to_pro]', array(
-		'default'				=> false,
-		'capability'			=> 'edit_theme_options',
-		'sanitize_callback'	=> 'wp_filter_nohtml_kses',
-	));
-	$wp_customize->add_control(
-		new Attitude_Customize_Attitude_upgrade_to_pro(
-		$wp_customize,
-		'attitude_upgrade_to_pro',
-			array(
-				'label'					=> __('Attitude Upgrade','attitude'),
-				'section'				=> 'attitude_upgrade_to_pro',
-				'settings'				=> 'attitude_theme_settings[attitude_upgrade_to_pro]',
-			)
-		)
-	);
 	$wp_customize->add_section('attitude_upgrade', array(
 		'title'					=> __('Attitude Support', 'attitude'),
-		'description'			=> __('Hey! Buy us a beer and we shall come with new features and update.','attitude'),
 		'priority'				=> 1,
 	));
 	$wp_customize->add_setting( 'attitude_theme_options[attitude_upgrade]', array(
@@ -662,52 +704,45 @@ function attitude_sanitize_delay_transition( $input ) {
 	return $input;
 	}
 }
+function attitude_customizer_control_scripts() {
 
-function customize_styles_attitude_upgrade( $input ) { ?>
-	<style type="text/css">
-		#customize-theme-controls #accordion-section-attitude_upgrade_to_pro .accordion-section-title:after {
-			color: #fff;
-		}
-		#customize-theme-controls #accordion-section-attitude_upgrade_to_pro .accordion-section-title {
-			background-color: rgba(142, 181, 76, 0.9);
-			color: #fff;
-			border: 0 none;
-		}
-		#customize-theme-controls #accordion-section-attitude_upgrade_to_pro .accordion-section-title:hover {
-			background-color: rgba(142, 181, 76, 1);
-		}
-		#customize-theme-controls #accordion-section-attitude_upgrade a {
-			padding: 5px 0;
-			display: block;
-		}
-		#customize-theme-controls #accordion-section-attitude_upgrade_to_pro a {
-			color: rgba(142, 181, 76, 1);
-		}
-		#customize-theme-controls #accordion-section-attitude_upgrade_to_pro a:hover {
-			text-decoration: underline;
-		}
-	</style>
-<?php }
-function attitude_upgrade_notice() {
-	// Enqueue the script
 	wp_enqueue_script(
-		'attitude-upgrade-pro',
+		'attitude-customize-controls',
 		get_template_directory_uri() . '/library/js/attitude_customizer.js',
 		array(), '3.0',
 		true
 	);
-	// Localize the script
-	wp_localize_script(
-		'attitude-upgrade-pro',
-		'attitudeproupgrade',
-		array(
-			'attitudeprourl'		=> esc_url( 'http://themehorse.com/themes/attitude-pro/' ),
-			'attitudeprolabel'	=> __( 'Upgrade to Attitude Pro', 'attitude' ),
+
+	wp_enqueue_style( 'attitude-customize-controls',
+	 get_template_directory_uri() . '/library/css/customize-controls.css' );
+
+}
+
+add_action( 'customize_controls_enqueue_scripts', 'attitude_customizer_control_scripts', 0 );
+
+
+function attitude_customize_custom_sections( $wp_customize ) {
+
+	// Register custom section types.
+	$wp_customize->register_section_type( 'Attitude_Customize_Section_Upsell' );
+
+	// Register sections.
+	$wp_customize->add_section(
+		new Attitude_Customize_Section_Upsell(
+			$wp_customize,
+			'theme_upsell',
+			array(
+				'title'    => esc_html__( 'Attitude Pro', 'attitude' ),
+				'pro_text' => esc_html__( 'Upgrade to Pro', 'attitude' ),
+				'pro_url'  => 'http://themehorse.com/themes/attitude-pro',
+				'priority' => 1,
+			)
 		)
 	);
+
 }
-add_action( 'customize_controls_enqueue_scripts', 'attitude_upgrade_notice' );
+
+add_action( 'customize_register', 'attitude_customize_custom_sections');
 add_action('customize_register', 'attitude_textarea_register');
 add_action('customize_register', 'attitude_customize_register');
-add_action( 'customize_controls_print_styles', 'customize_styles_attitude_upgrade');
 ?>

@@ -1,4 +1,9 @@
 == Change Log ==
+= 3.0.8 =
+* Tweak - Inject JS removed from the top of the customizer and added in panel
+* Fix - Deprecated message fixed for new PHP7 version
+* Fix - Deprecated header image code removed
+
 = 3.0.7 =
 * Fix - Frontpage Category issue fixed
 * Fix - Widgets Upload button issue fixed

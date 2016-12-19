@@ -88,7 +88,7 @@ function attitude_widgets_init() {
  * $name, Name for this widget which appear on widget bar.
  */
 class attitude_custom_tag_widget extends WP_Widget {
-	function attitude_custom_tag_widget() {
+	function __construct() {
 		$widget_ops = array( 'classname' => 'widget_custom-tagcloud', 'description' => __( 'Displays Custom Tag Cloud', 'attitude' ) );
 		$control_ops = array('width' => 200, 'height' => 250);
 		parent::__construct( false, $name = __( 'Theme Horse: Custom Tag Cloud', 'attitude' ), $widget_ops, $control_ops );
@@ -156,7 +156,7 @@ class attitude_custom_tag_widget extends WP_Widget {
  * i.e. Name, description and control options.
  */
  class attitude_service_widget extends WP_Widget {
- 	function attitude_service_widget() {
+ 	function __construct() {
  		$widget_ops = array( 'classname' => 'widget_service', 'description' => __( 'Display Services( Business Layout )', 'attitude' ) );
 		$control_ops = array( 'width' => 200, 'height' =>250 ); 
 		parent::__construct( false, $name = __( 'Theme Horse: Services', 'attitude' ), $widget_ops, $control_ops);
@@ -260,7 +260,7 @@ class attitude_custom_tag_widget extends WP_Widget {
  * i.e. Name, description and control options.
  */
  class attitude_recent_work_widget extends WP_Widget {
- 	function attitude_recent_work_widget() {
+ 	function __construct() {
  		$widget_ops = array( 'classname' => 'widget_recent_work', 'description' => __( 'Use this widget to show recent work, portfolio or any pages as your wish ( Business Layout )', 'attitude' ) );
 		$control_ops = array( 'width' => 200, 'height' =>250 ); 
 		parent::__construct( false, $name = __( 'Theme Horse: Featured Widget', 'attitude' ), $widget_ops, $control_ops);
@@ -370,7 +370,7 @@ class attitude_custom_tag_widget extends WP_Widget {
  */
 class attitude_Widget_Testimonial extends WP_Widget {
 
-	function attitude_Widget_Testimonial() {
+	function __construct() {
  		$widget_ops = array( 'classname' => 'widget_testimonial', 'description' => __( 'Display Testimonial( Business Layout )', 'attitude' ) );
 		$control_ops = array( 'width' => 200, 'height' =>250 ); 
 		parent::__construct( false, $name = __( 'Theme Horse: Testimonial', 'attitude' ), $widget_ops, $control_ops);
@@ -436,7 +436,7 @@ class attitude_Widget_Testimonial extends WP_Widget {
  * i.e. Primay Promotional Box, Secondary Promotional Box, Redirect Button Text and Redirect Button Link
  */
 class attitude_promobox_widget extends WP_Widget {
-	function attitude_promobox_widget() {
+	function __construct() {
 		$widget_ops  = array('classname' => 'widget_promotional_bar', 'description' => __('Display PromoBox ( Business Layout )', 'attitude'));
 		$control_ops = array('width'     => 200, 'height'     => 250);
 		parent::__construct(false, $name = __('Theme Horse: PromoBox', 'attitude'), $widget_ops, $control_ops);
