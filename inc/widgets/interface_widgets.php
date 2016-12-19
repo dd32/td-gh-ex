@@ -128,7 +128,7 @@ function interface_widgets_init() {
  * $name, Name for this widget which appear on widget bar.
  */
 class interface_custom_tag_widget extends WP_Widget {
-	function interface_custom_tag_widget() {
+	function __construct() {
 		$widget_ops = array( 'classname' => 'widget_custom-tagcloud', 'description' => __( 'Displays Custom Tag Cloud', 'interface' ) );
 		$control_ops = array('width' => 200, 'height' => 250);
 		parent::__construct( false, $name = __( 'Theme Horse: Custom Tag Cloud', 'interface' ), $widget_ops, $control_ops );
@@ -198,7 +198,7 @@ class interface_custom_tag_widget extends WP_Widget {
  * i.e. Name, description and control options.
  */
  class interface_service_widget extends WP_Widget {
- 	function interface_service_widget() {
+ 	function __construct() {
  		$widget_ops = array( 'classname' => 'widget_service', 'description' => __( 'Display Services( Business Layout )', 'interface' ) );
 		$control_ops = array( 'width' => 200, 'height' =>250 ); 
 		parent::__construct( false, $name = __( 'Theme Horse: Services', 'interface' ), $widget_ops, $control_ops);
@@ -307,7 +307,7 @@ class interface_custom_tag_widget extends WP_Widget {
  * i.e. Home Page PromoBox1, Home Page PromoBox2, Redirect Button Text and Redirect Button Link
  */
  class interface_promobox_widget extends WP_Widget {
- 	function interface_promobox_widget() {
+ 	function __construct() {
  		$widget_ops = array( 'classname' => 'widget_promotional_bar clearfix', 'description' => __( 'Display PromoBox( Business Layout )', 'interface' ) );
 		$control_ops = array( 'width' => 200, 'height' =>250 ); 
 		parent::__construct( false, $name = __( 'Theme Horse: PromoBox', 'interface' ), $widget_ops, $control_ops);
@@ -377,7 +377,7 @@ class interface_custom_tag_widget extends WP_Widget {
  * i.e. Name, description and control options.
  */
  class interface_recent_work_widget extends WP_Widget {
- 	function interface_recent_work_widget() {
+ 	function __construct() {
  		$widget_ops = array( 'classname' => 'widget_recent_work', 'description' => __( 'Use this widget to show recent work, portfolio or any pages as your wish ( Business Layout )', 'interface' ) );
 		$control_ops = array( 'width' => 200, 'height' =>250 ); 
 		parent::__construct( false, $name = __( 'Theme Horse: Featured Recent Work', 'interface' ), $widget_ops, $control_ops);
@@ -526,7 +526,7 @@ class interface_custom_tag_widget extends WP_Widget {
  */
 class interface_Widget_Testimonial extends WP_Widget {
 
-	function interface_Widget_Testimonial() {
+	function __construct() {
  		$widget_ops = array( 'classname' => 'widget_testimonial', 'description' => __( 'Display Testimonial( Business Layout )recommendation size (168 * 168)', 'interface' ) );
 		$control_ops = array( 'width' => 200, 'height' =>250 ); 
 		parent::__construct( false, $name = __( 'Theme Horse: Testimonial', 'interface' ), $widget_ops, $control_ops);
@@ -694,7 +694,7 @@ class interface_Widget_Testimonial extends WP_Widget {
 /*********************************************************************************************************/
 class interface_featured_image_widget extends WP_Widget {
 
-	function interface_featured_image_widget() {
+	function __construct() {
 		$widget_ops = array( 'classname' => 'widget_ourclients', 'description' => __( 'Use to show your clients logos or any thing.', 'interface') );
 		$control_ops = array('width' => 200, 'height' => 250);
 		parent::__construct( false, $name='Theme Horse: Featured Image', $widget_ops, $control_ops );
