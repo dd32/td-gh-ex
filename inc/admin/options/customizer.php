@@ -40,4 +40,3 @@ add_action( 'customize_preview_init', 'igthemes_customize_preview_js' );
 require dirname( __FILE__ ) . '/assetts/customizer-settings.php';
 require dirname( __FILE__ ) . '/assetts/customizer-custom-controls.php';
 require dirname( __FILE__ ) . '/assetts/customizer-sanitization.php';
-require dirname( __FILE__ ) . '/assetts/customizer-reset.php';

@@ -16,7 +16,6 @@ class IGthemes_Welcome {
 
         add_action( 'igthemes_welcome', array( $this, 'igthemes_welcome_tabs' ), 10 );
         add_action( 'igthemes_welcome', array( $this, 'igthemes_welcome_getting_started' ), 20 );
-        add_action( 'igthemes_welcome', array( $this, 'igthemes_welcome_system_info' ), 30 );
     } // end constructor
 
     /**
@@ -92,13 +91,6 @@ class IGthemes_Welcome {
     public function igthemes_welcome_getting_started() {
         require_once( get_template_directory() . '/inc/admin/welcome/sections/getting-started.php' );
     }
-    /**
-     * Welcome screen system-info
-     */
-    public function igthemes_welcome_system_info() {
-        require_once( get_template_directory() . '/inc/admin/welcome/sections/system-info.php' );
-    }
-
 }
 
 $GLOBALS['IGthemes_Welcome'] = new IGthemes_Welcome();

@@ -11,5 +11,4 @@
 <p><?php esc_html_e( 'Here you can read the documentation and know how to get the most out of your new theme.', 'basic-shop' ); ?></p>
 <h2 class="igthemes-nav-tab nav-tab-wrapper">
     <a href="#getting_started" class="nav-tab nav-tab-active"><?php esc_html_e( 'Getting Started', 'basic-shop' ); ?></a>
-    <a href="#system_info" class="nav-tab"><?php esc_html_e( 'System Info', 'basic-shop' ); ?></a>
 </h2>
