@@ -6,7 +6,10 @@
  * @subpackage arise
  * @since arise 1.0
  */
-
+/********************* Set Default Value if not set ***********************************/
+	if ( !get_theme_mod('arise_theme_options') ) {
+		set_theme_mod( 'arise_theme_options', arise_get_option_defaults_values() );
+	}
 /********************* arise RESPONSIVE AND CUSTOM CSS OPTIONS ***********************************/
 function arise_resp_and_custom_css() {
 	$arise_settings = arise_get_theme_options();
@@ -15,18 +18,13 @@ function arise_resp_and_custom_css() {
 	<?php } else{ ?>
 	<meta name="viewport" content="width=1070" />
 	<?php  }
-	if (!empty($arise_settings['arise_custom_css']) || $arise_settings['arise_slider_header_line'] == 1){
+	if ($arise_settings['arise_slider_header_line'] == 1){
 		$arise_internal_css = '<!-- Custom CSS -->'."\n";
 		$arise_internal_css .= '<style type="text/css" media="screen">'."\n";
-		if (!empty($arise_settings['arise_custom_css']) ) {
-			$arise_internal_css .= $arise_settings['arise_custom_css']."\n";
-		}
-		if($arise_settings['arise_slider_header_line'] == 1){
 			$arise_internal_css .= 
 			'.header-line {
 				height: 0px;
 			}';
-		}
 		$arise_internal_css .= '</style>'."\n";
 	}
 	if (isset($arise_internal_css)) {
@@ -106,22 +104,6 @@ function arise_body_class($classes) {
 	return $classes;
 }
 add_filter('body_class', 'arise_body_class');
-
-/********************** SCRIPTS FOR DONATE/ UPGRADE BUTTON ******************************/
-function arise_customize_scripts() {
-	if(!class_exists('Arise_Plus_Features')){
-	wp_enqueue_script( 'arise_customizer_custom', get_template_directory_uri() . '/inc/js/customizer-custom-scripts.js', array( 'jquery' ), '20140108', true );
-
-	$arise_upgrade_links = array(
-							'upgrade_link'              => esc_url('http://themefreesia.com/themes/arise'),
-							'upgrade_text'              => __( 'Upgrade to Pro', 'arise' ),
-							);
-		wp_localize_script( 'arise_customizer_custom', 'arise_upgrade_links', $arise_upgrade_links );
-		wp_enqueue_script( 'arise_customizer_custom' );
-	wp_enqueue_style( 'arise_customizer_custom', get_template_directory_uri() . '/inc/js/arise-customizer.css');wp_enqueue_script( 'arise_customizer_custom' );
-	}
-}
-add_action( 'customize_controls_print_scripts', 'arise_customize_scripts');
 
 /**************************** SOCIAL MENU *********************************************/
 function arise_social_links() {
@@ -260,4 +242,25 @@ function arise_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'arise_scripts' );
+
+/*************************** Importing Custom CSS to the core option added in WordPress 4.7. ****************************************/
+function arise_custom_css_migrate(){
+$ver = get_theme_mod( 'custom_css_version', false );
+	if ( version_compare( $ver, '4.7' ) >= 0 ) {
+		return;
+	}
+	if ( function_exists( 'wp_update_custom_css_post' ) ) {
+		$arise_settings = arise_get_theme_options();
+		if ( $arise_settings['arise_custom_css'] != '' ) {
+			$arise_core_css = wp_get_custom_css(); // Preserve css which is added from core
+			$return   = wp_update_custom_css_post( $arise_core_css . $arise_settings['arise_custom_css'] );
+			if ( ! is_wp_error( $return ) ) {
+				unset( $arise_settings['arise_custom_css'] );
+				set_theme_mod( 'arise_theme_options', $arise_settings );
+				set_theme_mod( 'custom_css_version', '4.7' );
+			}
+		}
+	}
+}
+add_action( 'after_setup_theme', 'arise_custom_css_migrate' );
 ?>

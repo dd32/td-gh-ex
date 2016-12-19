@@ -1,5 +1,5 @@
 == Arise ==
-Arise is a Responsive Multi-Purpose Business WordPress Theme, Designed and Developed by Theme Freesia. This theme supports popular plugins like Breadcrumb NavXT, WP-PageNavi, Contact Form 7, Jetpack by WordPress.com, Polylang, WPML Compatible, Newsletter, bbPress and wooCommerce. It is also translation ready and currently translated in French language. It is also easily customizable with lots of theme options using Customizer. It consists contact us template, gallery template and many widgets and sidebar. Get free support at http://themefreesia.com/support-forum/ and View demo site at http://demo.themefreesia.com/arise
+Arise is a Responsive Multi-Purpose Business WordPress Theme, Designed and Developed by Theme Freesia. This theme supports popular plugins like Breadcrumb NavXT, WP-PageNavi, Contact Form 7, Jetpack by WordPress.com, Polylang, WPML Compatible, Newsletter, bbPress and wooCommerce. It is also translation ready and currently translated in French language. It is also easily customizable with lots of theme options using Customizer. It consists contact us template, gallery template and many widgets and sidebar. Get free support at https://themefreesia.com/support-forum/ and View demo site at http://demo.themefreesia.com/arise
 
 Contributors: ThemeFreesia Team
 
@@ -58,16 +58,16 @@ All the theme files and other un-specified scripts are licensed under GNU Genera
 == Arise Info ==
 
 	- About Theme -
-	http://themefreesia.com/themes/arise
+	https://themefreesia.com/themes/arise
 
 	- Theme Demo -
 	http://demo.themefreesia.com/arise
 
 	- Theme Instruction -
-	http://themefreesia.com/theme-instruction/arise
+	https://themefreesia.com/theme-instruction/arise
 
 	- Free Support -
-	http://themefreesia.com/support-forum/
+	https://themefreesia.com/support-forum/
 
 =================================================================================
 == Menus ==

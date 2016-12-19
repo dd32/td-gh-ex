@@ -1,4 +1,10 @@
 == CHANGE LOG ==
+
+= 2.1.2.6 =
+	- Update - Upgrade to Pro button removed from top of customizer and added on section
+	- Updated - Custom CSS added to support core for WP version 4.7
+	- Fix - http to https path changed
+
 = 2.1.2.5 =
 	- Fix - Undefined variable: post added
 	- Fix - Newsletter css modified

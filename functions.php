@@ -132,10 +132,10 @@ if(!class_exists('Arise_Plus_Features')){
 			<a title="<?php esc_attr_e( 'Review Arise', 'arise' ); ?>" href="<?php echo esc_url( 'https://wordpress.org/support/view/theme-reviews/arise/' ); ?>" target="_blank" id="about_arise">
 			<?php _e( 'Review Arise', 'arise' ); ?>
 			</a><br/>
-			<a href="<?php echo esc_url( 'http://themefreesia.com/theme-instruction/arise/' ); ?>" title="<?php esc_attr_e( 'Theme Instructions', 'arise' ); ?>" target="_blank" id="about_arise">
+			<a href="<?php echo esc_url( 'https://themefreesia.com/theme-instruction/arise/' ); ?>" title="<?php esc_attr_e( 'Theme Instructions', 'arise' ); ?>" target="_blank" id="about_arise">
 			<?php _e( 'Theme Instructions', 'arise' ); ?>
 			</a><br/>
-			<a href="<?php echo esc_url( 'http://themefreesia.com/support-forum/' ); ?>" title="<?php esc_attr_e( 'Forum', 'arise' ); ?>" target="_blank" id="about_arise">
+			<a href="<?php echo esc_url( 'https://themefreesia.com/support-forum/' ); ?>" title="<?php esc_attr_e( 'Forum', 'arise' ); ?>" target="_blank" id="about_arise">
 			<?php _e( 'Forum', 'arise' ); ?>
 			</a><br/>
 			<a href="<?php echo esc_url( 'http://demo.themefreesia.com/arise/' ); ?>" title="<?php esc_attr_e( 'View Demo', 'arise' ); ?>" target="_blank" id="about_arise">
@@ -149,7 +149,7 @@ if(!class_exists('Arise_Plus_Features')){
 	}
 	$wp_customize->add_section('arise_upgrade_links', array(
 		'title'					=> __('About Arise', 'arise'),
-		'priority'				=> 1,
+		'priority'				=> 2,
 	));
 	$wp_customize->add_setting( 'arise_upgrade_links', array(
 		'default'				=> false,
@@ -175,6 +175,19 @@ if(!class_exists('Arise_Plus_Features')){
 
 add_action( 'customize_register', 'arise_customize_register' );
 add_action( 'customize_preview_init', 'arise_customize_preview_js' );
+if(!class_exists('Arise_Plus_Features')){
+	// Add Upgrade to Pro Button.
+	require_once( trailingslashit( get_template_directory() ) . 'inc/upgrade-plus/class-customize.php' );
+}
+/**************************************************************************************/
+function arise_hide_previous_custom_css( $wp_customize ) { 
+	// Bail if not WP 4.7. 
+	if ( ! function_exists( 'wp_get_custom_css_post' ) ) { 
+		return; 
+	} 
+		$wp_customize->remove_control( 'arise_theme_options[arise_custom_css]' ); 
+} 
+add_action( 'customize_register', 'arise_hide_previous_custom_css'); 
 /**************************************************************************************/
 
 // Add Post Class Clearfix
