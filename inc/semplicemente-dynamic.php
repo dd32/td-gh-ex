@@ -166,7 +166,7 @@ function semplicemente_custom_settings_register( $wp_customize ) {
 				<a style="margin: 10px;" target="_blank" href="http://crestaproject.com/demo/semplicemente-pro/" class="button button-secondary">
 					<?php _e('Watch the demo', 'semplicemente'); ?>
 				</a>
-				<a style="margin: 10px;" target="_blank" href="http://crestaproject.com/downloads/semplicemente/" class="button button-secondary">
+				<a style="margin: 10px;" target="_blank" href="https://crestaproject.com/downloads/semplicemente/" class="button button-secondary">
 					<?php _e('Get Semplicemente PRO Theme', 'semplicemente'); ?>
 				</a>
 			</p>

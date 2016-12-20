@@ -114,7 +114,7 @@ class Semplicemente_Admin {
 			<div class="welcome-description-wrap">
 				<div class="about-text"><?php echo $theme->display( 'Description' ); ?>
 				<p class="cresta-actions">
-					<a href="<?php echo esc_url( 'http://crestaproject.com/downloads/semplicemente/' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Theme Info', 'semplicemente' ); ?></a>
+					<a href="<?php echo esc_url( 'https://crestaproject.com/downloads/semplicemente/' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Theme Info', 'semplicemente' ); ?></a>
 
 					<a href="<?php echo esc_url( apply_filters( 'semplicemente_pro_theme_url', 'http://crestaproject.com/demo/semplicemente/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Demo', 'semplicemente' ); ?></a>
 
@@ -186,7 +186,7 @@ class Semplicemente_Admin {
 					<div class="col">
 						<h3><?php esc_html_e( 'Need more features?', 'semplicemente' ); ?></h3>
 						<p><?php esc_html_e( 'Upgrade to PRO version for more exciting features.', 'semplicemente' ) ?></p>
-						<p><a target="_blank" href="<?php echo esc_url( 'http://crestaproject.com/downloads/semplicemente/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Info about PRO version', 'semplicemente' ); ?></a></p>
+						<p><a target="_blank" href="<?php echo esc_url( 'https://crestaproject.com/downloads/semplicemente/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Info about PRO version', 'semplicemente' ); ?></a></p>
 					</div>
 
 					<div class="col">
@@ -370,7 +370,7 @@ class Semplicemente_Admin {
 						<td></td>
 						<td class="btn-wrapper">
 							<a href="<?php echo esc_url( apply_filters( 'semplicemente_pro_theme_url', 'http://crestaproject.com/demo/semplicemente-pro/' ) ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'View PRO version demo', 'semplicemente' ); ?></a>
-							<a href="<?php echo esc_url( apply_filters( 'semplicemente_pro_theme_url', 'http://crestaproject.com/downloads/semplicemente/' ) ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'More Information', 'semplicemente' ); ?></a>
+							<a href="<?php echo esc_url( apply_filters( 'semplicemente_pro_theme_url', 'https://crestaproject.com/downloads/semplicemente/' ) ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'More Information', 'semplicemente' ); ?></a>
 						</td>
 					</tr>
 				</tbody>
