@@ -3,50 +3,6 @@
  *  This file is loaded when hu_isprevdem() === true
 /* ------------------------------------------------------------------------- */
 /* ------------------------------------------------------------------------- *
- *  Smart Loading
-/* ------------------------------------------------------------------------- */
-add_filter( 'hu_opt_smart_load_img', '__return_true' );
-
-/* ------------------------------------------------------------------------- *
- *  Colors
-/* ------------------------------------------------------------------------- */
-add_action( 'wp', 'hu_set_color_filters');
-function hu_set_color_filters() {
-    $colors = array(
-        'color-topbar',
-        'color-header',
-        'color-header-menu',
-        'color-mobile-menu',
-        'color-1',
-        'color-2'
-    );
-    foreach ( $colors as $opt ) {
-        add_filter( "hu_opt_{$opt}", 'hu_set_color' );
-    }
-}
-
-function hu_set_color( $color ) {
-    switch ( current_filter() ) {
-        case 'hu_opt_color-topbar':
-          return '#121d30';//since v3.3.8
-          break;
-        case 'hu_opt_color-header':
-        case 'hu_opt_color-header-menu':
-        case 'hu_opt_color-mobile-menu':
-          return '#454e5c';//since v3.3.8
-          break;
-        case 'hu_opt_color-1':
-          return '#16cfc1';//since v3.3.8
-          break;
-        case 'hu_opt_color-2':
-          return '#efb93f';//since v3.3.8
-          break;
-    }
-    return $color;
-}
-
-
-/* ------------------------------------------------------------------------- *
  *  Footer Widgets
 /* ------------------------------------------------------------------------- */
 //print demo widgets in the footer
@@ -220,30 +176,20 @@ function hu_maybe_print_prevdem_widgets( $sidebars_widgets, $_zone_id ) {
 }
 
 /* ------------------------------------------------------------------------- *
- *  Nav Menus =>
- *  Header : assign page menu
- *  Topnav : show and assign the page menu to topbar
+ *  Nav Menu
 /* ------------------------------------------------------------------------- */
-add_filter( 'hu_has_nav_menu', 'hu_set_pd_menu' );
-function hu_set_pd_menu( $location ) {
-    switch( $location ) {
-        case 'footer' :
-        case 'topbar' :
-            return true;
-        break;
-        case 'header' :
-            return has_nav_menu( $location );
-        break;
+add_filter('hu_has_nav_menu', 'hu_display_prevdem_footer_menu', 10, 2 );
+function hu_display_prevdem_footer_menu( $bool, $_location ) {
+    switch ($_location) {
+      case 'header':
+        $bool = true;
+      break;
+      case 'footer':
+        $bool = true;
+      break;
     }
+    return $bool;
 }
-add_filter( 'hu_opt_default-menu-header', '__return_true' );
-add_filter( 'hu_mobile_menu_fallback_cb', 'hu_set_fb_page_menu');
-add_filter( 'hu_topbar_menu_fallback_cb', 'hu_set_fb_page_menu' );
-function hu_set_fb_page_menu() {
-  return 'hu_page_menu';
-}
-
-
 
 /* ------------------------------------------------------------------------- *
  *  Header and Footer Logo
@@ -252,8 +198,6 @@ add_filter('hu_display_header_logo', '__return_true');
 add_filter('hu_header_logo_src', 'hu_prevdem_logo' );
 add_filter('hu_footer_logo_src', 'hu_prevdem_logo' );
 function hu_prevdem_logo( $_src ) {
-  if ( hu_is_customizing() )
-    return $_src;
   $logo_path = 'assets/front/img/demo/logo/logo.png';
   if ( file_exists( HU_BASE . $logo_path ) )
     return get_template_directory_uri() . '/' . $logo_path;
@@ -319,8 +263,6 @@ function hu_prevdem_socials() {
 /* ------------------------------------------------------------------------- */
 add_filter('option_show_on_front', 'hu_prevdem_fp_content', 9999 );
 add_filter('pre_option_show_on_front', 'hu_prevdem_fp_content', 9999 );
-function hu_prevdem_fp_content( $val ) {
-    if ( hu_is_customizing() )
-      return $val;
+function hu_prevdem_fp_content() {
     return 'posts';
 }

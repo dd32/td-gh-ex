@@ -18,10 +18,6 @@ if ( ! class_exists( 'HU_controls' ) ) :
       public $min;
       public $icon;
 
-      public $ubq_section;
-
-      static $enqueued_resources;
-
       public function render_content()  {
         do_action( '__before_setting_control' , $this -> id );
 
@@ -189,11 +185,6 @@ if ( ! class_exists( 'HU_controls' ) ) :
    *
    */
     public function enqueue() {
-        if ( ! empty( self::$enqueued_resources ) )
-          return;
-
-        self::$enqueued_resources = true;
-
         wp_enqueue_script( 'wp-color-picker' );
         wp_enqueue_style( 'wp-color-picker' );
 
@@ -214,19 +205,6 @@ if ( ! class_exists( 'HU_controls' ) ) :
           HUEMAN_VER,
           $media = 'all'
         );
-    }
-
-    /**
-    * Refresh the parameters passed to the JavaScript via JSON.
-    *
-    *
-    * @Override
-    * @see WP_Customize_Control::to_json()
-    */
-    public function to_json() {
-        parent::to_json();
-        if ( is_array( $this->ubq_section ) && array_key_exists( 'section', $this->ubq_section ) )
-          $this->json['ubq_section'] = $this->ubq_section;
     }
   }//end of class
 endif;

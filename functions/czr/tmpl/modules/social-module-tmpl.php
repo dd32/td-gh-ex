@@ -1,7 +1,8 @@
 <?php
-add_action( 'customize_controls_print_footer_scripts', 'hu_print_social_tmpls' , 1 );
+add_action( 'customize_controls_print_footer_scripts', 'hu_print_social_pre_add_view_template' , 1 );
+add_action( 'customize_controls_print_footer_scripts', 'hu_print_social_item_content_template' , 1 );
 
-function hu_print_social_tmpls() {
+function hu_print_social_pre_add_view_template() {
   $css_attr = HU_customize::$instance -> css_attr;
   ?>
 
@@ -20,15 +21,21 @@ function hu_print_social_tmpls() {
       <span class="czr-notice"><?php _e('Enter the full url of your social profile (must be valid url).', 'hueman'); ?></span>
     </div>
   </script>
+  <?php
+}
 
-  <script type="text/html" id="tmpl-czr-module-social-mod-opt">
-    <div class="<?php echo $css_attr['sub_set_wrapper']; ?>" data-input-type="number" data-transport="postMessage">
-      <div class="customize-control-title"><?php _e('Size in px', 'hueman'); ?></div>
-      <div class="czr-input">
-        <input data-type="social-size" type="number" step="1" min="5" value="{{ data['social-size'] }}" />
-      </div>
-    </div>
-  </script>
+
+
+
+
+function hu_print_social_item_content_template() {
+  $css_attr = HU_customize::$instance -> css_attr;
+    //the following template is a "sub view"
+    //it's rendered :
+    //1) on customizer start, depending on what is fetched from the db
+    //2) dynamically when designing from the customizer
+    //data looks like : { id : 'sidebar-one', title : 'A Title One' }
+  ?>
 
   <script type="text/html" id="tmpl-czr-module-social-item-content">
     <!-- <div class="czr-sub-set">
@@ -59,8 +66,8 @@ function hu_print_social_tmpls() {
       <span class="czr-notice"><?php _e('This is the text displayed on mouse over.', 'hueman'); ?></span>
     </div>
 
-    <div class="<?php echo $css_attr['sub_set_wrapper']; ?> width-100" data-input-type="color" data-transport="postMessage">
-      <div class="customize-control-title width-100"><?php _e('Icon color', 'hueman'); ?> <i><?php _e('default:', 'hueman'); ?> rgba(255,255,255,0.7)</i></div>
+    <div class="<?php echo $css_attr['sub_set_wrapper']; ?> width-100" data-input-type="color">
+      <div class="customize-control-title"><?php _e('Icon color', 'hueman'); ?></div>
       <div class="czr-input">
         <input data-type="social-color" type="text" value="{{ data['social-color'] }}"></input>
       </div>

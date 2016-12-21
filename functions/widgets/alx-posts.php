@@ -60,21 +60,19 @@ class AlxPosts extends WP_Widget {
 ?>
 
 	<?php
-		$posts = new WP_Query( apply_filters( 'hu_posts_widget_query_args', array(
-  			'post_type'				=> array( 'post' ),
-  			'showposts'				=> $instance['posts_num'],
-  			'cat'					=> $instance['posts_cat_id'],
-  			'ignore_sticky_posts'	=> true,
-  			'orderby'				=> $instance['posts_orderby'],
-  			'order'					=> 'dsc',
-  			'date_query' => array(
-    				array(
-    					'after' => $instance['posts_time'],
-    				)
-  			)
-		) ) );
-
-    $date_format = apply_filters( 'hu_posts_widget_date_format', 'j M, Y' );
+		$posts = new WP_Query( array(
+			'post_type'				=> array( 'post' ),
+			'showposts'				=> $instance['posts_num'],
+			'cat'					=> $instance['posts_cat_id'],
+			'ignore_sticky_posts'	=> true,
+			'orderby'				=> $instance['posts_orderby'],
+			'order'					=> 'dsc',
+			'date_query' => array(
+				array(
+					'after' => $instance['posts_time'],
+				),
+			),
+		) );
 	?>
 
 	<ul class="alx-posts group <?php if($instance['posts_thumb']) { echo 'thumbs-enabled'; } ?>">
@@ -95,7 +93,7 @@ class AlxPosts extends WP_Widget {
 			<div class="post-item-inner group">
 				<?php if($instance['posts_category']) { ?><p class="post-item-category"><?php the_category(' / '); ?></p><?php } ?>
 				<p class="post-item-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></p>
-				<?php if($instance['posts_date']) { ?><p class="post-item-date"><?php the_time( $date_format ); ?></p><?php } ?>
+				<?php if($instance['posts_date']) { ?><p class="post-item-date"><?php the_time('j M, Y'); ?></p><?php } ?>
 			</div>
 
 		</li>
