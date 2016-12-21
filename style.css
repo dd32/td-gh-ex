@@ -4,7 +4,7 @@ Theme URI: http://themezhut.com/themes/awaken
 Author: ThemezHut
 Author URI: http://themezhut.com/
 Description: Awaken WordPress theme is an elegant magazine/news WordPress theme. It has a magazine layout with two main widget areas. And the theme is featured with three post widgets to display posts in different styles. This theme consists with a responsive layout which is created using twitter bootstrap. Some of the main features of this theme are theme customizer, featured slider, ad widgets, youtube video widget and social media. Find more information about this theme at http://www.themezhut.com/themes/awaken. View the demonstration at http://www.themezhut.com/demo/awaken.
-Version: 2.0.9
+Version: 2.1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: awaken
@@ -1360,6 +1360,28 @@ a:hover, a:focus, a:active {
   }
 }
 
+.awaken-slide-holder {
+  position: relative;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;  
+}
+
+.awaken-slide-holder:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 58.51063829787234%;
+}
+
+.awaken-slide-holder > .awaken-slide-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 #progress {
   position: absolute;
   bottom: 0;
@@ -1464,6 +1486,25 @@ a:hover, a:focus, a:active {
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+.afpi-holder {
+  position: relative;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;    
+}
+.afpi-holder:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 56.70103092783505%;
+}
+.afpi-holder > .afp-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 .afp-title a {
   color: #f5f5f5;
@@ -1835,7 +1876,7 @@ a:hover, a:focus, a:active {
   font-weight: 500;
   height: 40px;
   line-height: 40px;
-  margin: 0 0 0.1em 0;
+  margin: 0 0 1px 0;
   padding: 0 1.2em;
   text-transform: uppercase;
   word-wrap: break-word;

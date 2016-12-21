@@ -1,6 +1,31 @@
 <?php
 
 /**
+ * Gets the link of the featured image. If empty return default images. Use within the loop.
+ * @param string $thumbnail_size Thumbnail size of the image.
+ * @return string/bool
+ */
+
+function awaken_get_image_url( $thumbnail_size ) {
+    
+    $thumb_id           = get_post_thumbnail_id();
+    $thumb_url_array    = wp_get_attachment_image_src($thumb_id, $thumbnail_size, false);
+
+    if( $thumb_url_array == true ) {
+        $thumbnail_url = $thumb_url_array[0];
+    } elseif ( $thumbnail_size === "featured-slider" ) {
+        $thumbnail_url = get_template_directory_uri() . '/images/slide.jpg';
+    } elseif ( $thumbnail_size === "featured" ) {
+        $thumbnail_url = get_template_directory_uri() . '/images/featured.jpg';     
+    } else {
+        $thumbnail_url = get_template_directory_uri() . '/images/slide.jpg';
+    }
+
+    return $thumbnail_url;
+
+}
+
+/**
  * Custom slider and the featured posts for the theme.
  */
 
@@ -27,15 +52,13 @@ if ( !function_exists( 'awaken_featured_posts' ) ) :
 
                                 <li>
                                     <div class="awaken-slider-container">
-                                        <?php if ( has_post_thumbnail() ) { ?>
-                                            <?php the_post_thumbnail( 'featured-slider' ); ?>
-                                        <?php } else { ?>
-                                            <img src="<?php echo get_template_directory_uri() . '/images/slide.jpg' ?>">
-                                        <?php } ?>
-
-                                        <div class="awaken-slider-details-container">
-                                            <a href="<?php the_permalink(); ?>" rel="bookmark"><h3 class="awaken-slider-title"><?php the_title(); ?></h3></a>
-                                        </div>
+                                        <div class="awaken-slide-holder" style="background: url(<?php echo esc_url( awaken_get_image_url('featured-slider') ); ?>);">
+                                            <div class="awaken-slide-content">
+                                                <div class="awaken-slider-details-container">
+                                                    <a href="<?php the_permalink(); ?>" rel="bookmark"><h3 class="awaken-slider-title"><?php the_title(); ?></h3></a>
+                                                </div>
+                                            </div><!-- .awaken-slide-content -->
+                                        </div><!--.awaken-slide-holder-->
                                     </div>
                                 </li>
 
@@ -74,17 +97,14 @@ if ( !function_exists( 'awaken_featured_posts' ) ) :
                 while( $fposts->have_posts() ) : $fposts->the_post(); ?>
 
                     <div class="afp">
-                        <figure class="afp-thumbnail">
-                            <?php if ( has_post_thumbnail() ) { ?>
-                                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail( 'featured', array('title' => get_the_title()) ); ?></a>
-                            <?php } else { ?>
-                                <a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/featured.jpg" alt="<?php the_title(); ?>" /></a>
-                            <?php } ?>
-                        </figure>
-                        <div class="afp-title">
-                            <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
-                        </div>
-                    </div>
+                        <div class="afpi-holder" style="background: url(<?php echo esc_url( awaken_get_image_url( 'featured' ) ); ?>);">
+                            <div class="afp-content">
+                                <div class="afp-title">
+                                    <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
+                                </div>
+                            </div><!-- .afp-content -->
+                        </div><!-- .afpi-holder -->
+                    </div><!-- .afp -->
 
                 <?php endwhile; ?>
 
