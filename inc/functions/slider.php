@@ -1,31 +1,6 @@
 <?php
 
 /**
- * Gets the link of the featured image. If empty return default images. Use within the loop.
- * @param string $thumbnail_size Thumbnail size of the image.
- * @return string/bool
- */
-
-function awaken_get_image_url( $thumbnail_size ) {
-    
-    $thumb_id           = get_post_thumbnail_id();
-    $thumb_url_array    = wp_get_attachment_image_src($thumb_id, $thumbnail_size, false);
-
-    if( $thumb_url_array == true ) {
-        $thumbnail_url = $thumb_url_array[0];
-    } elseif ( $thumbnail_size === "featured-slider" ) {
-        $thumbnail_url = get_template_directory_uri() . '/images/slide.jpg';
-    } elseif ( $thumbnail_size === "featured" ) {
-        $thumbnail_url = get_template_directory_uri() . '/images/featured.jpg';     
-    } else {
-        $thumbnail_url = get_template_directory_uri() . '/images/slide.jpg';
-    }
-
-    return $thumbnail_url;
-
-}
-
-/**
  * Custom slider and the featured posts for the theme.
  */
 
@@ -52,7 +27,16 @@ if ( !function_exists( 'awaken_featured_posts' ) ) :
 
                                 <li>
                                     <div class="awaken-slider-container">
-                                        <div class="awaken-slide-holder" style="background: url(<?php echo esc_url( awaken_get_image_url('featured-slider') ); ?>);">
+                                        <?php
+                                            if ( has_post_thumbnail() ) {
+                                                $thumb_id           = get_post_thumbnail_id();
+                                                $thumb_url_array    = wp_get_attachment_image_src($thumb_id, 'featured-slider', true);
+                                                $featured_image_url = $thumb_url_array[0]; 
+                                            } else {
+                                                $featured_image_url = get_template_directory_uri() . '/images/slide.jpg';
+                                            }
+                                        ?>
+                                        <div class="awaken-slide-holder" style="background: url(<?php echo $featured_image_url; ?>);">
                                             <div class="awaken-slide-content">
                                                 <div class="awaken-slider-details-container">
                                                     <a href="<?php the_permalink(); ?>" rel="bookmark"><h3 class="awaken-slider-title"><?php the_title(); ?></h3></a>
@@ -97,7 +81,16 @@ if ( !function_exists( 'awaken_featured_posts' ) ) :
                 while( $fposts->have_posts() ) : $fposts->the_post(); ?>
 
                     <div class="afp">
-                        <div class="afpi-holder" style="background: url(<?php echo esc_url( awaken_get_image_url( 'featured' ) ); ?>);">
+                        <?php
+                            if ( has_post_thumbnail() ) {
+                                $thumb_id           = get_post_thumbnail_id();
+                                $thumb_url_array    = wp_get_attachment_image_src($thumb_id, 'featured', true);
+                                $featured_image_url = $thumb_url_array[0]; 
+                            } else {
+                                $featured_image_url = get_template_directory_uri() . '/images/featured.jpg';
+                            }
+                        ?>                    
+                        <div class="afpi-holder" style="background: url(<?php echo $featured_image_url; ?>);">
                             <div class="afp-content">
                                 <div class="afp-title">
                                     <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>

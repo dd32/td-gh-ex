@@ -1,5 +1,5 @@
 ﻿Theme Name : Awaken
-Version    : 2.1.0
+Version    : 2.1.1
 Theme URL  : http://www.themezhut.com/themes/awaken
 Theme Documentation  : http://www.themezhut.com/awaken-theme-documentation
 License: GNU General Public License v2 or later
@@ -201,3 +201,6 @@ Added some stylings to the search form.
 
 - Version 2.1.0
 Fine tuned the slider.
+
+- Version 2.1.1
+Quick fix for the slider issue.
