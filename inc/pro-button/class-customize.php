@@ -75,8 +75,8 @@ final class Blogghiamo_Updgrade_Pro_Button {
 				array(
 					'priority' => 1,
 					'title'    => esc_html__( 'Blogghiamo PRO Theme', 'blogghiamo' ),
-					'pro_text' => esc_html__( 'Go Pro',         'blogghiamo' ),
-					'pro_url'  => 'http://crestaproject.com/downloads/blogghiamo/'
+					'pro_text' => esc_html__( 'More Info',         'blogghiamo' ),
+					'pro_url'  => 'https://crestaproject.com/downloads/blogghiamo/'
 				)
 			)
 		);

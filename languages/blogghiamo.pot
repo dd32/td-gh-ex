@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Blogghiamo\n"
-"POT-Creation-Date: 2016-12-09 14:16+0100\n"
-"PO-Revision-Date: 2016-12-09 14:16+0100\n"
+"POT-Creation-Date: 2016-12-21 12:21+0100\n"
+"PO-Revision-Date: 2016-12-21 12:21+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -666,7 +666,7 @@ msgid "Blogghiamo PRO Theme"
 msgstr ""
 
 #: inc/pro-button/class-customize.php:78
-msgid "Go Pro"
+msgid "More Info"
 msgstr ""
 
 #: inc/template-tags.php:21

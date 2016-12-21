@@ -167,3 +167,6 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-background, 
 * Updated PRO Version button
 * Updated SmoothScroll to 1.4.6 Version
 * Minor bug fixes
+
+= Version 1.4.9 =
+* Minor bug fixes
