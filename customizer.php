@@ -3,13 +3,16 @@ add_action( 'customize_register', 'weblizar_gl_customizer' );
 
 function weblizar_gl_customizer( $wp_customize ) {
 	wp_enqueue_style('customizr', WL_TEMPLATE_DIR_URI .'/css/customizr.css');
+	wp_enqueue_style('snow-css',  get_template_directory_uri() .'/css/snow.css');?>
+	<div id="snow"><?php
 	$ImageUrl1 = esc_url(get_template_directory_uri() ."/images/1.png");
 	$ImageUrl2 = esc_url(get_template_directory_uri() ."/images/2.png");
 	$ImageUrl3 = esc_url(get_template_directory_uri() ."/images/3.png");
 	$port['1'] = esc_url(get_template_directory_uri() ."/images/portfolio1.png");
 	$port['2'] = esc_url(get_template_directory_uri() ."/images/portfolio2.png");
 	$port['3'] = esc_url(get_template_directory_uri() ."/images/portfolio3.png");
-	$port['4'] = esc_url(get_template_directory_uri() ."/images/portfolio4.png");
+	$port['4'] = esc_url(get_template_directory_uri() ."/images/portfolio4.png"); 
+	
 	
 	/* Genral section */
 	$wp_customize->add_panel( 'enigma_theme_option', array(
@@ -45,6 +48,16 @@ $wp_customize->add_section(
 	) );
 	
 	$wp_customize->add_setting(
+		'enigma_options[upload__header_image]',
+		array(
+			'type'    => 'option',
+			'default'=>$wl_theme_options['upload__header_image'],
+			'sanitize_callback'=>'esc_url_raw',
+			'capability'        => 'edit_theme_options',
+		)
+	);
+	
+	$wp_customize->add_setting(
 		'enigma_options[upload_image_logo]',
 		array(
 			'type'    => 'option',
@@ -62,6 +75,7 @@ $wp_customize->add_section(
 			'capability'        => 'edit_theme_options'
 		)
 	);
+	
 	$wp_customize->add_setting(
 		'enigma_options[width]',
 		array(
@@ -71,7 +85,13 @@ $wp_customize->add_section(
 			'capability'        => 'edit_theme_options',
 		)
 	);
-
+	
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'enigma_upload_image', array(
+		'label'        => __( 'Header Image', 'enigma' ),
+		'section'    => 'general_sec',
+		'settings'   => 'enigma_options[upload__header_image]',
+	) ) );
+	
 	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'enigma_upload_image_logo', array(
 		'label'        => __( 'Website Logo', 'enigma' ),
 		'section'    => 'general_sec',
@@ -541,7 +561,7 @@ $wp_customize->add_section(
 		$wp_customize->add_control('enigma_options[service_1_icons]',
         array(
 			'label'        => __( 'Service Icon One', 'enigma' ),
-			'description'=>__('<a href="http://fontawesome.bootstrapcheatsheets.com">FontAwesome Icons</a>','enigma'),
+			'description'=>__('<a href="http://fontawesome.io/icons/">FontAwesome Icons</a>','enigma'),
             'section'  => 'service_section',
 			'type'=>'text',
 			'settings'   => 'enigma_options[service_1_icons]'
@@ -578,7 +598,7 @@ $wp_customize->add_section(
 		$wp_customize->add_control( 'enigma_options[service_2_icons]',
         array(
 			'label'        => __( 'Service Icon Two', 'enigma' ),
-			'description'=>__('<a href="http://fontawesome.bootstrapcheatsheets.com">FontAwesome Icons</a>','enigma'),
+			'description'=>__('<a href="http://fontawesome.io/icons/">FontAwesome Icons</a>','enigma'),
             'section'  => 'service_section',
 			'type'=>'text',
 			'settings'   => 'enigma_options[service_2_icons]'
@@ -612,7 +632,7 @@ $wp_customize->add_section(
 	$wp_customize->add_control('enigma_options[service_3_icons]',
         array(
 			'label'        => __( 'Service Icon Three', 'enigma' ),
-			'description'=>__('<a href="http://fontawesome.bootstrapcheatsheets.com">FontAwesome Icons</a>','enigma'),
+			'description'=>__('<a href="http://fontawesome.io/icons/">FontAwesome Icons</a>','enigma'),
             'section'  => 'service_section',
 			'type'=>'text',
 			'settings'   => 'enigma_options[service_3_icons]'
@@ -1200,8 +1220,9 @@ $wp_customize->add_section(
 				'section'  => 'enigma_more',
 				'settings' => 'enigma_more',
 				'priority' => 1,
-			) ) );
-		
+			) ) ); ?>
+			</div>
+<?php		
 }
 function enigma_sanitize_text( $input ) {
     return wp_kses_post( force_balance_tags( $input ) );
@@ -1242,6 +1263,7 @@ class More_Enigma_Control extends WP_Customize_Control {
 	*/
 	public function render_content() {
 		?>
+		
 		<label style="overflow: hidden; zoom: 1;">
 			<div class="col-md-2 col-sm-6 upsell-btn">					
 					<a style="margin-bottom:20px;margin-left:20px;" href="http://weblizar.com/themes/enigma-premium/" target="blank" class="btn btn-success btn"><?php _e('Upgrade to Enigma Premium','enigma'); ?> </a>

@@ -5,6 +5,12 @@ Consider weblizar PRE-Fix for function-name and as a slug of the Theme Enigma.
 Enigma
 
 CHANGE-LOG:
+
+@Version: 2.8 [22/12/2016]
+1. Custom-header image added.
+2. FontAwesome library updated version 4.7.0
+3. Snow effect added
+
 @Version: 2.7.2 [02/12/2016]
 Minor Update in Social Icons [whatsapp link]
 

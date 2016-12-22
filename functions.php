@@ -23,7 +23,8 @@
 	$ImageUrl6 = esc_url(get_template_directory_uri() ."/images/portfolio3.png");
 	$ImageUrl7 = esc_url(get_template_directory_uri() ."/images/portfolio4.png");
 	$wl_theme_options=array(
-			//Logo and Fevicon header			
+			//Logo and Fevicon header	
+			'upload__header_image'=>'',
 			'upload_image_logo'=>'',
 			'height'=>'55',
 			'width'=>'150',
@@ -125,6 +126,16 @@
     );    
 	}
 	
+	$args = array(
+	'flex-width'    => true,
+	'width'         => 2000,
+	'flex-height'    => true,
+	'height'        => 100,
+	'default-image' => get_template_directory_uri() . '/images/header-bg.jpg',
+);
+add_theme_support( 'custom-header', $args );
+
+	
 	/*After Theme Setup*/
 	add_action( 'after_setup_theme', 'weblizar_head_setup' ); 	
 	function weblizar_head_setup()
@@ -139,6 +150,7 @@
 		add_image_size('wl_page_thumb',730,350,true);	
 		add_image_size('blog_2c_thumb',570,350,true);
 		add_theme_support( 'title-tag' );
+		
 		// Load text domain for translation-ready
 		load_theme_textdomain( 'enigma', WL_TEMPLATE_DIR_CORE . '/lang' );	
 		
@@ -149,6 +161,22 @@
 		$args = array('default-color' => '000000',);
 		add_theme_support( 'custom-background', $args); 
 		add_theme_support( 'automatic-feed-links');
+		$defaults = array(
+	'default-image'          => '',
+	'width'                  => 0,
+	'height'                 => 0,
+	'flex-height'            => false,
+	'flex-width'             => false,
+	'uploads'                => true,
+	'random-default'         => false,
+	'header-text'            => true,
+	'default-text-color'     => '',
+	'wp-head-callback'       => '',
+	'admin-head-callback'    => '',
+	'admin-preview-callback' => '',
+);
+add_theme_support( 'custom-header', $defaults );
+		
 		
 		/*
 		 * This theme styles the visual editor to resemble the theme style,
@@ -366,7 +394,15 @@
 if (is_admin()) {
 	require_once('core/admin/admin-themes.php');
 	
-}	
+}
+/*
+global $wp_version;
+	if ( version_compare( $wp_version, '3.4', '>=' ) ) :
+		add_theme_support( 'custom-header' );
+	else :
+		add_custom_image_header( $wp_head_callback, $admin_head_callback );
+	endif;
+	*/
 
 //Plugin Recommend
 add_action('tgmpa_register','enigma_plugin_recommend');

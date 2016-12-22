@@ -21,7 +21,8 @@
 <body <?php body_class(); ?>>
 <div>
 	<!-- Header Section -->
-	<div class="header_section" >
+	<div class="header_section hd_cover" >		
+		<img style="position: absolute;" class="hd-img" src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" /> 
 		<div class="container" >
 			<!-- Logo & Contact Info -->
 			<div class="row ">
@@ -72,6 +73,7 @@
 			</div>
 			<!-- /Logo & Contact Info -->
 		</div>	
+		
 	</div>	
 	<!-- /Header Section -->
 	<!-- Navigation  menus -->
