@@ -25,11 +25,35 @@ get_header( 'shop' ); ?>
 		do_action( 'woocommerce_before_main_content' );
 	?>
 
-		<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
+		<?php 
+		
+			if ( apply_filters( 'woocommerce_show_page_title', true ) ) : 
+		
+				if ( suevafree_setting('suevafree_view_woocommerce_title') == 'on' ) : 
+		
+		?>
 
-			<h1 class="title"><?php woocommerce_page_title(); ?></h1>
+                    <div class="post-article category">
+                    
+                        <h1 class="title"><?php woocommerce_page_title(); ?></h1>
+                
+                    </div>
 
-		<?php endif; ?>
+		<?php
+		
+				else: 
+		
+		?>
+
+                    <h1 class="title"><?php woocommerce_page_title(); ?></h1>
+
+		<?php
+		
+				endif; 
+			
+			endif; 	
+		
+		?>
 
 		<?php do_action( 'woocommerce_archive_description' ); ?>
 

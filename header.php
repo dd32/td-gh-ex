@@ -4,8 +4,6 @@
    
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 
-<link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" media="screen" />
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.2, user-scalable=yes" />
 
 <?php wp_head(); ?>
@@ -14,43 +12,4 @@
 
 <body <?php body_class(); ?>>
 
-<div id="wrapper">
-
-    <header class="header container" >
-    
-        <div class="row">
-        
-            <div class="col-md-12" >
-            
-                <div id="logo">
-                        
-                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name') ?>">
-                            
-                        <?php 
-                        
-                            if ( suevafree_setting('suevafree_custom_logo')) :
-                                echo "<img src='".suevafree_setting('suevafree_custom_logo')."' alt='logo'>"; 
-                            else: 
-                                bloginfo('name');
-                                echo "<span>".get_bloginfo('description')."</span>";
-                            endif; 
-                            
-                        ?>
-                                
-                    </a>
-
-					<?php echo suevafree_header_cart(); ?>
-
-                </div>
-    
-                <nav id="mainmenu" class="<?php echo suevafree_setting('suevafree_menu_layout'); ?>">
-                
-                    <?php wp_nav_menu( array('theme_location' => 'main-menu', 'container' => 'false','depth' => 3  )); ?>
-                    
-                </nav>    
-                            
-            </div>
-            
-        </div>
-    
-    </header>
+<?php do_action( 'suevafree_' . suevafree_setting( 'suevafree_header_layout', 'header_layout_1'), 'main-menu' ); ?>

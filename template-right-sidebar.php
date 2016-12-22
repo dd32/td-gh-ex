@@ -1,57 +1,49 @@
 <?php 
 
 	/* Template Name: Right Sidebar */
-	get_header(); 
+	
+	get_header();
+	do_action( 'suevafree_top_sidebar', 'top-sidebar-area');
+	do_action( 'suevafree_header_sidebar', 'header-sidebar-area');
 
 ?>
 
-<!-- start content -->
-
-<div class="container">
-    
-    <div class="row" >
-    
-        <div class="post-container col-md-8 right-sidebar" >
-            
-            <?php while ( have_posts() ) : the_post(); ?>
-            
-                <?php if ( has_post_thumbnail() ) : ?>
-                        
-                    <div class="pin-container">
-                        <?php the_post_thumbnail('blog'); ?>
-                    </div>
-                        
-                <?php endif; ?>
-                    
-                <div class="post-article">
-                
-                    <h1 class="title"><?php the_title(); ?></h1>
-                    
-                    <div class="line"></div>
+<div class="container content">
+	
+    <div class="row">
+       
+        <div class="col-md-8 right-sidebar" >
+        	
+            <div class="row">
+        
+                <div <?php post_class(); ?> >
                 
                     <?php 
-                        
-                        the_content();  
-                        wp_link_pages(); 
-                        comments_template();
-                        
-                    ?>
-    
-                </div>
-                
-            	<div style="clear:both"></div>
+					
+						while ( have_posts() ) : the_post();
+						
+							do_action('suevafree_postformat');
+							wp_link_pages(array('before' => '<div class="suevafree-pagination">', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>') );
+						
+						endwhile;
+						
+					?>
             
-        </div>
+                </div>
         
-        <?php 
-			
-			do_action('suevafree_side_sidebar', 'sidebar-area');
-			endwhile;
-			
-		?>
-           
+			</div>
+        
+        </div>
+
+		<?php do_action('suevafree_side_sidebar', 'side-sidebar-area' ); ?>
+
     </div>
     
 </div>
 
-<?php get_footer(); ?>
+<?php 
+
+	do_action( 'suevafree_full_sidebar', 'full-sidebar-area');
+	get_footer(); 
+	
+?>

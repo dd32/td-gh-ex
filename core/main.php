@@ -3,7 +3,7 @@
 /**
  * Wp in Progress
  * 
- * @theme Suevafree
+ * @package Wordpress
  *
  * This source file is subject to the GNU GENERAL PUBLIC LICENSE (GPL 3.0)
  * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
@@ -47,21 +47,21 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) {
 			return $title;
 	
 		$title .= get_bloginfo( 'name' );
-	
 		$site_description = get_bloginfo( 'description', 'display' );
+		
 		if ( $site_description && ( is_home() || is_front_page() ) )
 			$title = "$title $sep $site_description";
-	
-		if ( $paged >= 2 || $page >= 2 )
-			$title = "$title $sep " . sprintf( __( 'Page %s', 'suevafree' ), max( $paged, $page ) );
-	
+		
+		if ( $paged >= 2 || $page >= 2 )	
+			$title = "$title $sep " . sprintf( esc_html__( 'Page %s', 'suevafree' ), max( $paged, $page ) );
+
 		return $title;
 		
 	}
 
 	add_filter( 'wp_title', 'suevafree_title', 10, 2 );
 
-	function suevafree_addtitle() {
+	function suevafree_add_title() {
 		
 ?>
 
@@ -71,7 +71,25 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) {
 
 	}
 
-	add_action( 'wp_head', 'suevafree_addtitle' );
+	add_action( 'wp_head', 'suevafree_add_title' );
+
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* IS SINGLE */
+/*-----------------------------------------------------------------------------------*/ 
+
+if (!function_exists('suevafree_is_single')) {
+
+	function suevafree_is_single() {
+		
+		if ( is_single() || is_page() || is_singular('portfolio') ) :
+		
+			return true;
+		
+		endif;
+	
+	}
 
 }
 
@@ -79,7 +97,7 @@ if ( ! function_exists( '_wp_render_title_tag' ) ) {
 /* GET ARCHIVE TITLE */
 /*-----------------------------------------------------------------------------------*/ 
 
-if (!function_exists('suevafree_get_archive_title')) {
+if (!function_exists('suevafree_get_the_archive_title')) {
 
 	function suevafree_get_archive_title() {
 		
@@ -127,25 +145,7 @@ if (!function_exists('suevafree_get_archive_title')) {
 		else:
 			return false;
 		endif;
-	
-	}
-
-}
-
-/*-----------------------------------------------------------------------------------*/
-/* IS SINGLE */
-/*-----------------------------------------------------------------------------------*/ 
-
-if (!function_exists('suevafree_is_single')) {
-
-	function suevafree_is_single() {
 		
-		if ( is_single() || is_page() ) :
-		
-			return true;
-		
-		endif;
-	
 	}
 
 }
@@ -156,20 +156,20 @@ if (!function_exists('suevafree_is_single')) {
 
 if (!function_exists('suevafree_setting')) {
 
-	function suevafree_setting($id) {
-
+	function suevafree_setting($id, $default = '' ) {
+	
 		$suevafree_setting = get_theme_mod($id);
-			
-		if ( isset($suevafree_setting) ) :
-			
+		
+		if($suevafree_setting):
+		
 			return $suevafree_setting;
-			
+		
 		else:
 		
-			return false;
-	
-		endif;
+			return $default;
 		
+		endif;
+	
 	}
 
 }
@@ -179,31 +179,33 @@ if (!function_exists('suevafree_setting')) {
 /*-----------------------------------------------------------------------------------*/ 
 
 if (!function_exists('suevafree_postmeta')) {
-	
-	function suevafree_postmeta($id) {
+
+	function suevafree_postmeta( $id, $default = '' ) {
 	
 		global $post, $wp_query;
 		
-		$content_ID = $post->ID;
-	
-		if( suevafree_is_woocommerce_active('is_shop') ) {
+		if (suevafree_is_woocommerce_active('is_shop')) :
 	
 			$content_ID = get_option('woocommerce_shop_page_id');
 	
-		}
+		else :
+	
+			$content_ID = $post->ID;
+	
+		endif;
 
 		$val = get_post_meta( $content_ID , $id, TRUE);
 		
-		if(isset($val)) {
+		if ( !empty($val) ) :
 			
 			return $val;
 			
-		} else {
+		else:
 				
-			return '';
+			return $default;
 			
-		}
-
+		endif;
+		
 	}
 
 }
@@ -217,42 +219,25 @@ if (!function_exists('suevafree_require')) {
 	function suevafree_require($folder) {
 	
 		if (isset($folder)) : 
-	
-			if ( !suevafree_setting('suevafree_loadsystem') || suevafree_setting('suevafree_loadsystem') == "mode_a" ) {
 		
-				$dir = dirname(dirname(__FILE__)) . $folder ;  
+			$dir = get_template_directory() . $folder ;  
 				
-				$files = scandir($dir);  
+			$files = scandir($dir);  
 				  
-				foreach ($files as $key => $value) {  
+			foreach ($files as $key => $value) {  
 
-					if ( !in_array($value,array(".DS_Store",".","..") ) && !strstr( $value, '._' ) ) { 
+				if ( !in_array($value,array(".DS_Store",".","..") ) && !strstr( $value, '._' ) ) { 
+						
+					if ( !is_dir( $dir . $value) ) { 
 							
-						if ( !is_dir( $dir . $value) ) { 
-								
-							require_once $dir . $value;
-							
-						} 
+						require_once $dir . $value;
 						
 					} 
+					
+				} 
 
-				}  
-			
-			} else if ( suevafree_setting('suevafree_loadsystem') == "mode_b" ) {
-	
-				$dh  = opendir(get_template_directory().$folder);
+			}  
 				
-				while (false !== ($filename = readdir($dh))) {
-				   
-					if ( ( strlen($filename) > 2 ) && ( $filename <> ".DS_Store" ) ) {
-					
-						require_once get_template_directory()."/".$folder.$filename;
-					
-					}
-			
-				}
-			
-			}
 		
 		endif;
 		
@@ -268,44 +253,26 @@ if (!function_exists('suevafree_enqueue_script')) {
 
 	function suevafree_enqueue_script($folder) {
 	
-		if (isset($folder)) : 
+		if ( isset($folder) ) : 
 	
-			if ( !suevafree_setting('suevafree_loadsystem') || suevafree_setting('suevafree_loadsystem') == "mode_a" ) {
-		
-				$dir = dirname(dirname(__FILE__)) . $folder ;  
+			$dir = get_template_directory() . $folder ;  
 				
-				$files = scandir($dir);  
+			$files = scandir($dir);  
 				  
-				foreach ($files as $key => $value) {  
+			foreach ($files as $key => $value) {  
 
-					if ( !in_array($value,array(".DS_Store",".","..") ) && !strstr( $value, '._' ) ) { 
+				if ( !in_array($value,array(".DS_Store",".","..") ) && !strstr( $value, '._' ) ) { 
+						
+					if ( !is_dir( $dir . $value ) && strstr ( $value, 'js' )) { 
 							
-						if ( !is_dir( $dir . $value ) && strstr ( $value, 'js' )) { 
-								
-							wp_enqueue_script( 'suevafree-' . str_replace('.js','',$value), get_template_directory_uri() . $folder . "/" . $value , array('jquery'), FALSE, TRUE ); 
-							
-						} 
+						wp_enqueue_script( 'suevafree-' . str_replace('.js','',$value), get_template_directory_uri() . $folder . "/" . $value , array('jquery'), FALSE, TRUE ); 
 						
 					} 
-
-				}  
-
-			} else if ( suevafree_setting('suevafree_loadsystem') == "mode_b" ) {
-	
-				$dh  = opendir(get_template_directory().$folder);
-				
-				while (false !== ($filename = readdir($dh))) {
-				   
-					if ( ( strlen($filename) > 2 ) && ( $filename <> ".DS_Store" ) ) {
-						
-						wp_enqueue_script( 'suevafree-' . str_replace('.js','',$filename), get_template_directory_uri() . $folder . "/" . $filename , array('jquery'), FALSE, TRUE ); 
 					
-					}
-					
-				}
-		
-			}
-			
+				} 
+
+			}  
+
 		endif;
 	
 	}
@@ -322,42 +289,24 @@ if (!function_exists('suevafree_enqueue_style')) {
 	
 		if (isset($folder)) : 
 	
-			if ( !suevafree_setting('suevafree_loadsystem') || suevafree_setting('suevafree_loadsystem') == "mode_a" ) {
-			
-				$dir = dirname(dirname(__FILE__)) . $folder ;  
+			$dir = get_template_directory() . $folder ;  
 				
-				$files = scandir($dir);  
+			$files = scandir($dir);  
 				  
-				foreach ($files as $key => $value) {  
+			foreach ($files as $key => $value) {  
 
-					if ( !in_array($value,array(".DS_Store",".","..") ) && !strstr( $value, '._' ) ) { 
-							
-						if ( !is_dir( $dir . $value ) && strstr ( $value, 'css' )) { 
-							
-							wp_enqueue_style( 'suevafree-' . str_replace('.css','',$value), get_template_directory_uri() . $folder . "/" . $value ); 
-							
-						} 
+				if ( !in_array($value,array(".DS_Store",".","..") ) && !strstr( $value, '._' ) ) { 
+						
+					if ( !is_dir( $dir . $value ) && strstr ( $value, 'css' )) { 
+						
+						wp_enqueue_style( 'suevafree-' . str_replace('.css','',$value), get_template_directory_uri() . $folder . "/" . $value ); 
 						
 					} 
+					
+				} 
 
-				}  
+			}  
 			
-			} else if ( suevafree_setting('suevafree_loadsystem') == "mode_b" ) {
-	
-				$dh  = opendir(get_template_directory().$folder);
-				
-				while (false !== ($filename = readdir($dh))) {
-				   
-					if ( ( strlen($filename) > 2 ) && ( $filename <> ".DS_Store" ) ) {
-						
-						wp_enqueue_style( 'suevafree-' . str_replace('.css','',$filename), get_template_directory_uri() . $folder . "/" . $filename ); 
-				
-					}
-				
-				}
-			
-			}
-		
 		endif;
 	
 	}
@@ -365,45 +314,106 @@ if (!function_exists('suevafree_enqueue_style')) {
 }
 
 /*-----------------------------------------------------------------------------------*/
-/* POST ICON */
+/*RESPONSIVE EMBED */
 /*-----------------------------------------------------------------------------------*/ 
 
-if (!function_exists('suevafree_posticon')) {
-
-	function suevafree_posticon() {
+if (!function_exists('suevafree_embed_html')) {
 	
-		$icons = array (
-		
-			"video" => "fa fa-film" , 
-			"gallery" => "fa fa-camera" , 
-			"audio" => "fa fa-music" , 
-			"chat" => "fa fa-users", 
-			"status" => "fa fa-keyboard-o", 
-			"image" => "fa fa-file-image-o", 
-			"quote" => "fa fa-quote-left", 
-			"link" => "fa fa-external-link", 
-			"aside" => "fa fa-file-text-o", 
-		
-		);
-	
-		if (get_post_format()) { 
-		
-			$icon = '<span class="entry-'.get_post_format().'"><i class="'.$icons[get_post_format()].'"></i>'.ucfirst(strtolower(get_post_format())).'</span>'; 
-		
-		} else {
-		
-			$icon = '<span class="entry-standard"><i class="fa fa-pencil-square-o"></i>'.__( "Article","suevafree").'</span>'; 
-		
-		}
-	
-		return $icon;
-		
+	function suevafree_embed_html( $html ) {
+		return '<div class="embed-container">' . $html . '</div>';
 	}
+	 
+	add_filter( 'embed_oembed_html', 'suevafree_embed_html', 10, 3 );
+	add_filter( 'video_embed_html', 'suevafree_embed_html' );
+	
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* BODY CLASSES */
+/*-----------------------------------------------------------------------------------*/ 
+
+if (!function_exists('suevafree_body_classes_function')) {
+
+	function suevafree_body_classes_function($classes) {
+
+		global $wp_customize;
+
+		if ( isset( $wp_customize ) ) :
+
+			$classes[] = 'customizer_active';
+				
+		endif;
+
+		if ( suevafree_setting('suevafree_menu_layout') == "menubar" ) :
+				
+			$classes[] = 'menubar';
+	
+		endif;
+
+		if ( suevafree_setting('suevafree_header_layout') == "header_layout_2" ) :
+				
+			$classes[] = 'scroll_header';
+	
+		endif;
+
+		if ( suevafree_setting('suevafree_view_footer') == "off" ) :
+				
+			$classes[] = 'hide_footer';
+	
+		endif;
+
+		if ( suevafree_setting('suevafree_readmore_layout') == "sneak" ) :
+				
+			$classes[] = 'sneak_button';
+	
+		endif;
+
+		if ( suevafree_setting('suevafree_body_layout') == "minimal" ) :
+				
+			$classes[] = 'minimal_layout';
+	
+		endif;
+		
+		if ( suevafree_setting('suevafree_footer_layout') == "footer_layout_2" ) :
+				
+			$classes[] = 'footer_layout_2';
+	
+		endif;
+		
+		if ( suevafree_setting('suevafree_thumb_triangle') == "on" ) :
+				
+			$classes[] = 'thumb_triangle_off';
+	
+		endif;
+
+		if ( suevafree_setting('suevafree_thumb_hover') == "on" ) :
+				
+			$classes[] = 'thumb_hover_off';
+	
+		endif;
+		
+		if ( suevafree_setting('suevafree_nicescroll') == "on" ) :
+				
+			$classes[] = 'nicescroll';
+	
+		endif;
+		
+		if ( suevafree_setting('suevafree_disable_box_shadow') == "on" ) :
+				
+			$classes[] = 'disable_box_shadow';
+	
+		endif;
+		
+		return $classes;
+	
+	}
+	
+	add_filter('body_class', 'suevafree_body_classes_function');
 
 }
 
 /*-----------------------------------------------------------------------------------*/
-/* POST CLASS */
+/* POST CLASSES */
 /*-----------------------------------------------------------------------------------*/   
 
 if (!function_exists('suevafree_post_class')) {
@@ -455,7 +465,7 @@ if (!function_exists('suevafree_post_class')) {
 
 		} else if ( suevafree_is_single() && suevafree_is_woocommerce_active('is_cart') ) {
 		
-			$classes[] = 'woocommerce_cart_page';
+			$classes[] = 'post-container col-md-12 woocommerce_cart_page';
 
 		} else if ( suevafree_is_single() && !suevafree_is_woocommerce_active('is_product') ) {
 
@@ -476,48 +486,24 @@ if (!function_exists('suevafree_post_class')) {
 }
 
 /*-----------------------------------------------------------------------------------*/
-/* Body class */
-/*-----------------------------------------------------------------------------------*/   
-
-if (!function_exists('suevafree_body_class')) {
-	
-	function suevafree_body_class($classes) {
-	
-		$classes[] = 'custombody';
-		
-		if ( suevafree_setting('suevafree_body_layout') == "minimal" ) :
-
-			$classes[] = 'minimal_layout';
-
-		endif;
-			
-		return $classes;
-		
-	}
-	
-	add_filter('body_class', 'suevafree_body_class');
-	
-}
-
-/*-----------------------------------------------------------------------------------*/
 /* Content template */
 /*-----------------------------------------------------------------------------------*/ 
 
 if (!function_exists('suevafree_template')) {
-	
+
 	function suevafree_template($id) {
 	
 		$template = array ( 
 		
 			"full" => "col-md-12" , 
 			"left-sidebar" => "col-md-8" , 
-			"right-sidebar" => "col-md-8" 
+			"right-sidebar" => "col-md-8"
 		
 		);
 	
 		$span = $template["right-sidebar"];
 		$sidebar =  "right-sidebar";
-	
+
 		if ( suevafree_is_woocommerce_active('is_woocommerce') && ( suevafree_is_woocommerce_active('is_product_category') || suevafree_is_woocommerce_active('is_product_tag') ) && suevafree_setting('suevafree_woocommerce_category_layout') ) {
 		
 			$span = $template[suevafree_setting('suevafree_woocommerce_category_layout')];
@@ -525,51 +511,82 @@ if (!function_exists('suevafree_template')) {
 
 		} else if ( suevafree_is_woocommerce_active('is_woocommerce') && is_search() && suevafree_postmeta('suevafree_template') ) {
 					
-			$span = $template[suevafree_postmeta('suevafree_template')];
-			$sidebar =  suevafree_postmeta('suevafree_template');
+			$span = $template[esc_attr(suevafree_postmeta('suevafree_template'))];
+			$sidebar =  esc_attr(suevafree_postmeta('suevafree_template'));
 	
-		} else if ( ( is_page() || is_single() || suevafree_is_woocommerce_active('is_shop') ) && suevafree_postmeta('suevafree_template') ) {
+		} else if ( ( is_single() || suevafree_is_woocommerce_active('is_shop') ) && suevafree_postmeta('suevafree_template') ) {
 					
-			$span = $template[suevafree_postmeta('suevafree_template')];
-			$sidebar =  suevafree_postmeta('suevafree_template');
+			$span = $template[esc_attr(suevafree_postmeta('suevafree_template'))];
+			$sidebar =  esc_attr(suevafree_postmeta('suevafree_template'));
 
-		} else if ( ! suevafree_is_woocommerce_active('is_woocommerce') && ( is_archive() ) && suevafree_setting('suevafree_category_layout') ) {
+		} else if ( ! suevafree_is_woocommerce_active('is_woocommerce') && ( is_category() || is_tag() || is_month() ) && suevafree_setting('suevafree_category_layout') ) {
 
-			$span = $template[suevafree_setting('suevafree_category_layout')];
-			$sidebar =  suevafree_setting('suevafree_category_layout');
+			$span = $template[esc_attr(suevafree_setting('suevafree_category_layout'))];
+			$sidebar =  esc_attr(suevafree_setting('suevafree_category_layout'));
 						
 		} else if ( is_home() && suevafree_setting('suevafree_home') ) {
 					
-			$span = $template[suevafree_setting('suevafree_home')];
-			$sidebar =  suevafree_setting('suevafree_home');
+			$span = $template[esc_attr(suevafree_setting('suevafree_home'))];
+			$sidebar =  esc_attr(suevafree_setting('suevafree_home'));
 
 		} else if ( ! suevafree_is_woocommerce_active('is_woocommerce') && is_search() && suevafree_setting('suevafree_search_layout') ) {
 
-			$span = $template[suevafree_setting('suevafree_search_layout')];
-			$sidebar =  suevafree_setting('suevafree_search_layout');
+			$span = $template[esc_attr(suevafree_setting('suevafree_search_layout'))];
+			$sidebar =  esc_attr(suevafree_setting('suevafree_search_layout'));
 						
 		}
-		
+
 		return ${$id};
 		
 	}
-	
+
 }
 
 /*-----------------------------------------------------------------------------------*/
-/* Excerpt */
+/* SIDEBAR */
 /*-----------------------------------------------------------------------------------*/ 
 
-if (!function_exists('suevafree_hide_excerpt_more')) {
+if (!function_exists('suevafree_sidebar_list')) {
+
+	function suevafree_sidebar_list( $sidebar_type) {
 	
-	function suevafree_hide_excerpt_more() {
-	
-		return '';
-	
+		$suevafree_sidebars = get_option(suevafree_themename());
+
+		if ( $sidebar_type == "side" || $sidebar_type == "onepage" ) :
+
+			$default = array( $sidebar_type."-sidebar-area" => "Default" );
+
+		else:
+
+			$default = array("none" => "None", $sidebar_type."-sidebar-area" => "Default");
+
+		endif;
+		
+		return $default;
+		
 	}
-	
-	add_filter('the_content_more_link', 'suevafree_hide_excerpt_more');
-	add_filter('excerpt_more', 'suevafree_hide_excerpt_more');
+
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* GET PAGED */
+/*-----------------------------------------------------------------------------------*/ 
+
+if (!function_exists('suevafree_paged')) {
+
+	function suevafree_paged() {
+		
+		if ( get_query_var('paged') ) {
+			$paged = get_query_var('paged');
+		} elseif ( get_query_var('page') ) {
+			$paged = get_query_var('page');
+		} else {
+			$paged = 1;
+		}
+		
+		return $paged;
+		
+	}
 
 }
 
@@ -586,8 +603,23 @@ if (!function_exists('suevafree_prettyPhoto')) {
 		else
 			return $html;
 	}
-	
+
 	add_filter( 'wp_get_attachment_link', 'suevafree_prettyPhoto', 10, 6);
+
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* Excerpt more */
+/*-----------------------------------------------------------------------------------*/
+
+if (!function_exists('suevafree_hide_excerpt_more')) {
+
+	function suevafree_hide_excerpt_more() {
+		return '';
+	}
+
+	add_filter('the_content_more_link', 'suevafree_hide_excerpt_more');
+	add_filter('excerpt_more', 'suevafree_hide_excerpt_more');
 
 }
 
@@ -598,63 +630,81 @@ if (!function_exists('suevafree_prettyPhoto')) {
 if (!function_exists('suevafree_remove_category_list_rel')) {
 
 	function suevafree_remove_category_list_rel($output) {
-		
 		$output = str_replace('rel="category"', '', $output);
 		return $output;
-		
 	}
-	
+
 	add_filter('wp_list_categories', 'suevafree_remove_category_list_rel');
 	add_filter('the_category', 'suevafree_remove_category_list_rel');
-	
+
 }
 
 /*-----------------------------------------------------------------------------------*/
 /* Remove thumbnail dimensions */
 /*-----------------------------------------------------------------------------------*/ 
 
-if (!function_exists('suevafree_thumb_size')) {
+if (!function_exists('suevafree_remove_thumbnail_dimensions')) {
 
-	function suevafree_thumb_size( $html, $post_id, $post_image_id ) {
+	function suevafree_remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
+	
 		$html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
 		return $html;
-	}
 	
-	add_filter( 'post_thumbnail_html', 'suevafree_thumb_size', 10, 3 );
+	}
+
+	add_filter( 'post_thumbnail_html', 'suevafree_remove_thumbnail_dimensions', 10, 3 );
 
 }
-
+  
 /*-----------------------------------------------------------------------------------*/
 /* Remove css gallery */
 /*-----------------------------------------------------------------------------------*/ 
 
-if (!function_exists('suevafree_gallery_style')) {
+if (!function_exists('suevafree_my_gallery_style')) {
 
-	function suevafree_gallery_style() {
-		
+	function suevafree_my_gallery_style() {
 		return "<div class='gallery'>";
-	
 	}
-	
-	add_filter( 'gallery_style', 'suevafree_gallery_style', 99 );
-	
+
+	add_filter( 'gallery_style', 'suevafree_my_gallery_style', 99 );
+
 }
 
 /*-----------------------------------------------------------------------------------*/
-/* RESPONSIVE EMBED */
+/* POST ICON */
 /*-----------------------------------------------------------------------------------*/ 
 
-if (!function_exists('suevafree_embed_html')) {
-	
-	function suevafree_embed_html( $html ) {
-		return '<div class="embed-container">' . $html . '</div>';
-	}
-	 
-	add_filter( 'embed_oembed_html', 'suevafree_embed_html', 10, 3 );
-	add_filter( 'video_embed_html', 'suevafree_embed_html' );
-	
-}
+if (!function_exists('suevafree_posticon')) {
 
+	function suevafree_posticon() {
+	
+		$icons = array ( 
+			"video" => "fa fa-play" , 
+			"gallery" => "fa fa-camera" , 
+			"audio" => "fa fa-volume-up" , 
+			"chat" => "fa fa-users", 
+			"status" => "fa fa-keyboard-o", 
+			"image" => "fa fa-picture-o" ,
+			"quote" => "fa fa-quote-left", 
+			"link" => "fa fa-external-link", 
+			"aside" => "fa fa-file-text-o", 
+		);
+	
+		if ( get_post_format() ) { 
+		
+			$icon = '<span class="post-icon"><i class="'.$icons[get_post_format()].'"></i><span>' . ucfirst( strtolower( get_post_format() )) . '</span></span>'; 
+		
+		} else {
+		
+			$icon = '<span class="post-icon"><i class="fa fa-pencil-square-o"></i><span>' . esc_html__( "Article","suevafree") . '</span></span>'; 
+		
+		}
+
+		return $icon;
+	
+	}
+
+}
 
 /*-----------------------------------------------------------------------------------*/
 /* THUMBNAIL WIDTH */
@@ -666,7 +716,7 @@ if (!function_exists('suevafree_get_width')) {
 		
 		if (suevafree_setting('suevafree_screen3')):
 		
-			return suevafree_setting('suevafree_screen3');
+			return esc_attr(suevafree_setting('suevafree_screen3'));
 		
 		else:
 		
@@ -688,11 +738,11 @@ if (!function_exists('suevafree_get_thumbs')) {
 		
 		if (suevafree_setting('suevafree_'.$type.'_thumbinal')):
 		
-			return suevafree_setting('suevafree_'.$type.'_thumbinal');
+			return esc_attr(suevafree_setting('suevafree_'.$type.'_thumbinal'));
 		
 		else:
 		
-			return "429";
+			return "600";
 		
 		endif;
 	
@@ -701,6 +751,52 @@ if (!function_exists('suevafree_get_thumbs')) {
 }
 
 /*-----------------------------------------------------------------------------------*/
+/* WIDGETS WITHOUT PADDING */
+/*-----------------------------------------------------------------------------------*/   
+
+if (!function_exists('suevafree_widget_class')) {
+
+	function suevafree_widget_class( $params ) {
+		
+		$name = $params[0]['widget_name'];
+		$id = $params[0]['id'];
+
+		/*-----------------------------------------------------------------------------------*/
+		/* SIDE SIDEBAR AREA */
+		/*-----------------------------------------------------------------------------------*/   
+
+		if ( in_array( $id, array("side-sidebar-area", "home-sidebar-area", "category-sidebar-area", "search-sidebar-area")) && suevafree_setting('suevafree_sidebar_layout') == "sneak" )
+			$params[0]['before_widget'] = preg_replace( '/class="widget-box/', 'class="post-article', $params[0]['before_widget'], 1 );
+
+		/*-----------------------------------------------------------------------------------*/
+		/* NO PADDING */
+		/*-----------------------------------------------------------------------------------*/   
+
+		$check = array(
+		
+			"Instagram Slider",
+			"SuevaFree Call To Action",
+			"SuevaFree Team Slideshow",
+			"SuevaFree Testimonial Slideshow",
+			"SuevaFree News Slideshow",
+			"SuevaFree Services Widget",
+			"SuevaFree Contact Form Widget",
+			"SuevaFree Counter Widget"
+			
+		);
+
+		if ( in_array( $name, $check ) )
+			$params[0]['before_widget'] = preg_replace( '/class="post-article/', 'class="no-padding', $params[0]['before_widget'], 1 );
+
+		return $params;
+		
+	}
+
+	add_filter( 'dynamic_sidebar_params', 'suevafree_widget_class' );
+
+}
+
+/*-----------------------------------------------------------------------------------*/ 
 /* STYLES AND SCRIPTS */
 /*-----------------------------------------------------------------------------------*/ 
 
@@ -708,33 +804,42 @@ if (!function_exists('suevafree_scripts_styles')) {
 
 	function suevafree_scripts_styles() {
 	
+		wp_enqueue_style( 'suevafree_style', get_stylesheet_uri(), array() );
+
 		suevafree_enqueue_style('/assets/css');
 
-		if ( get_theme_mod('suevafree_skin') ):
-	
+		$fonts_args = array(
+			'family' =>	str_replace('|', '%7C','Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic|Raleway:400,800,900,700,600,500,300,200,100|Allura'),
+			'subset' =>	'latin,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext,cyrillic'
+		);
+		
+		wp_enqueue_style( 'suevafree_google_fonts', add_query_arg ( $fonts_args, "https://fonts.googleapis.com/css" ), array(), null );
+
+		$header_layout = suevafree_setting( 'suevafree_header_layout', 'header_layout_1');
+		wp_enqueue_style( 'suevafree-' . $header_layout , get_template_directory_uri() . '/assets/css/header/' . $header_layout . '.css' ); 
+
+		if ( get_theme_mod('suevafree_skin') ) 
 			wp_enqueue_style( 'suevafree-' . get_theme_mod('suevafree_skin') , get_template_directory_uri() . '/assets/skins/' . get_theme_mod('suevafree_skin') . '.css' ); 
 		
-		endif;
-
-		wp_enqueue_style( 'suevafree-google-fonts', '//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic|Raleway:400,800,900,700,600,500,300,200,100|Allura&subset=latin,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext,cyrillic' );
-
-		suevafree_enqueue_script('/assets/js');
-
-		if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
-	
 		wp_enqueue_script( "jquery-ui-core", array('jquery'));
 		wp_enqueue_script( "jquery-ui-tabs", array('jquery'));
 		wp_enqueue_script( "masonry", array('jquery') );
 
-		wp_enqueue_script  ( 'suevafree-html5', get_template_directory_uri().'/assets/scripts/html5.js');
+		suevafree_enqueue_script('/assets/js');
+	
+		if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
+		
+		wp_enqueue_script('jquery');
+		 
+		wp_enqueue_script ( 'suevafree-html5', get_template_directory_uri().'/assets/scripts/html5.js');
 		wp_script_add_data ( 'suevafree-html5', 'conditional', 'IE 8' );
 		
-		wp_enqueue_script  ( 'suevafree-selectivizr', get_template_directory_uri().'/assets/scripts/selectivizr-min.js');
+		wp_enqueue_script ( 'suevafree-selectivizr', get_template_directory_uri().'/assets/scripts/selectivizr-min.js');
 		wp_script_add_data ( 'suevafree-selectivizr', 'conditional', 'IE 8' );
 
 	}
-	
-	add_action( 'wp_enqueue_scripts', 'suevafree_scripts_styles', 11 );
+
+	add_action( 'wp_enqueue_scripts', 'suevafree_scripts_styles' );
 
 }
 
@@ -747,42 +852,61 @@ if (!function_exists('suevafree_setup')) {
 	function suevafree_setup() {
 		
 		global $content_width;
-		
-		if ( ! isset( $content_width ) ) :
-		
-			$content_width = 940;
-		
-		endif;
 
-		load_theme_textdomain('suevafree', get_template_directory() . '/languages');
-		register_nav_menu( 'main-menu', 'Main menu' );
+		if ( ! isset( $content_width ) )
+			$content_width = suevafree_get_width();
+		
+		load_theme_textdomain( 'suevafree', get_template_directory() . '/languages');
+	
+		add_filter('widget_text', 'do_shortcode');
 
-		add_theme_support( 'post-formats', array( 'aside','gallery','quote','video','audio','link','status','chat','image' ) );
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'woocommerce' );
+
 		add_theme_support( 'title-tag' );
-	
-		add_image_size( 'blog', suevafree_get_width(), suevafree_get_thumbs('blog'), TRUE ); 
-	
+
 		add_theme_support( 'custom-background', array(
 			'default-color' => 'f3f3f3',
-		));
+		) );
 
-		$require_array = array (
-			"/core/includes/",
-			"/core/admin/customize/",
-			"/core/functions/",
-			"/core/post-formats/",
-			"/core/templates/",
-			"/core/metaboxes/",
+		add_theme_support( 'custom-header', array( 
+			'default-image' => get_template_directory_uri() . '/assets/images/background/header.jpg'
+		) );
+
+		add_theme_support( 'post-formats', 
+			
+			array( 
+				'aside',
+				'gallery',
+				'quote',
+				'video',
+				'audio',
+				'link',
+				'status',
+				'chat',
+				'image'
+			)
+		
 		);
 		
-		foreach ( $require_array as $require_file ) {	
-		
-			suevafree_require($require_file);
-		
-		}
+		add_image_size( 'suevafree_blog_thumbnail', suevafree_get_width(), suevafree_get_thumbs('blog'), TRUE ); 
+		add_image_size( 'suevafree_large', 449,304, TRUE ); 
+		add_image_size( 'suevafree_medium', 290,220, TRUE ); 
+		add_image_size( 'suevafree_small', 211,150, TRUE ); 
+
+		register_nav_menu( 'main-menu', 'Main menu' );
+		register_nav_menu( 'one-page-menu', 'One Page menu' );
+
+		suevafree_require('/core/post-formats/');
+		suevafree_require('/core/templates/header/');
+		suevafree_require('/core/templates/content/');
+		suevafree_require('/core/templates/sidebar/');
+		suevafree_require('/core/templates/footer/');
+		suevafree_require('/core/includes/');
+		suevafree_require('/core/admin/customize/');
+		suevafree_require('/core/functions/');
+		suevafree_require('/core/metaboxes/');
 
 	}
 

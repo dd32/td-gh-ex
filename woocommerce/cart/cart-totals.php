@@ -16,14 +16,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<?php do_action( 'woocommerce_before_cart_totals' ); ?>
 
-	<h2 class="title"><?php _e( 'Cart Totals', 'suevafree' ); ?></h2>
-
-    <div class="line"></div>
+	<h2 class="title"><?php esc_html_e( 'Cart Totals', 'suevafree' ); ?></h2>
 
 	<table cellspacing="0">
 
 		<tr class="cart-subtotal">
-			<th><?php _e( 'Subtotal', 'suevafree' ); ?></th>
+			<th><?php esc_html_e( 'Subtotal', 'suevafree' ); ?></th>
 			<td><?php wc_cart_totals_subtotal_html(); ?></td>
 		</tr>
 
@@ -45,7 +43,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php elseif ( WC()->cart->needs_shipping() ) : ?>
 
 			<tr class="shipping">
-				<th><?php _e( 'Shipping', 'suevafree' ); ?></th>
+				<th><?php esc_html_e( 'Shipping', 'suevafree' ); ?></th>
 				<td><?php woocommerce_shipping_calculator(); ?></td>
 			</tr>
 
@@ -77,22 +75,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php do_action( 'woocommerce_cart_totals_before_order_total' ); ?>
 
 		<tr class="order-total">
-			<th><?php _e( 'Total', 'suevafree' ); ?></th>
+			<th><?php esc_html_e( 'Total', 'suevafree' ); ?></th>
 			<td><?php wc_cart_totals_order_total_html(); ?></td>
 		</tr>
 
 		<?php do_action( 'woocommerce_cart_totals_after_order_total' ); ?>
-
+        
 	</table>
 
 	<?php if ( WC()->cart->get_cart_tax() ) : ?>
 		<p><small><?php
 
 			$estimated_text = WC()->customer->is_customer_outside_base() && ! WC()->customer->has_calculated_shipping()
-				? sprintf( ' ' . __( ' (taxes estimated for %s)', 'suevafree' ), WC()->countries->estimated_for_prefix() . __( WC()->countries->countries[ WC()->countries->get_base_country() ], 'suevafree' ) )
+				? sprintf( ' ' . esc_html__( ' (taxes estimated for %s)', 'suevafree' ), '' . WC()->countries->estimated_for_prefix() . esc_html__( WC()->countries->countries[ WC()->countries->get_base_country() . '' ], 'suevafree' ) )
 				: '';
 
-			printf( __( 'Note: Shipping and taxes are estimated%s and will be updated during checkout based on your billing and shipping information.', 'suevafree' ), $estimated_text );
+			printf( esc_html__( 'Note: Shipping and taxes are estimated%s and will be updated during checkout based on your billing and shipping information.', 'suevafree' ), $estimated_text );
 
 		?></small></p>
 	
@@ -100,8 +98,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 	<div class="wc-proceed-to-checkout">
        
-        <input type="submit" class="btn btn-flat update_cart" name="update_cart" value="<?php _e( 'Update Shopping Cart', 'suevafree' ); ?>" />
-        <input type="submit" class="checkout-button btn btn-alternative" name="proceed" value="<?php _e( 'Proceed to Checkout', 'suevafree' ); ?>" />
+        <input type="submit" class="btn btn-flat update_cart" name="update_cart" value="<?php esc_html_e( 'Update Shopping Cart', 'suevafree' ); ?>" />
+        <input type="submit" class="checkout-button btn btn-alternative" name="proceed" value="<?php esc_html_e( 'Proceed to Checkout', 'suevafree' ); ?>" />
 
 	</div>
 

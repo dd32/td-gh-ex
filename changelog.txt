@@ -1,5 +1,35 @@
 SuevaFree Changelog
 
+- Version 3.0.0 - Released: 22.12.2016
+
+-- Important : Each child theme (Including Sneak Lite and Polar Lite)  must be adapted.
+-- Important : Many features of SuevaFree theme (like shortcodes, custom widget) were moved under SuevaFree Essential Kit plugin.
+-- Important : You must enable SuevaFree Essential Kit plugin (Available on WordPress.org), after the installation.
+-- Added: One Page section.
+-- Added: Videotutorial to manage the one page section.
+-- Added: New optional layout for Link, Aside and Quote posts.
+-- Added: 4 new header layouts.
+-- Added: 1 new footer layout.
+-- Added: 1 new layout for post details.
+-- Added: Team, Service and Testimonial section.
+-- Added: Call to action widget.
+-- Added: Testimonials widget.
+-- Added: Team widget.
+-- Added: Service widget.
+-- Added: Contact Form 7 widget.
+-- Added: Counter widget.
+-- Added: Counter shortcode.
+-- Added: Top sidebar area (Full width).
+-- Added: Full bottom sidebar area (Full width).
+-- Added: Nicescroll feature.
+-- Added: Option to remove the featured image rotation, at hover.
+-- Added: Option to remove the white triange on featured image.
+-- Added: Option to disable the post informations.
+-- Added: Titles weight and text transform for the titles and menus.
+-- Updated: WooCoomerce templates.
+-- Updated : Font Awesome icon pack.
+-- Edit  : Code optimized.
+
 - Version 2.2.7 - Released: 06.12.2016
 
 -- Added : Soundcloud, Spotify, Slack and VK social icons.

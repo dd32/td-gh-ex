@@ -25,9 +25,7 @@ do_action( 'woocommerce_before_cart' ); ?>
         
         	<div class="woocommerce_cart_details">
         
-                <h2 class="title"> <?php _e('Cart','suevafree');?> </h2>
-                
-                <div class="line"></div>
+                <h2 class="title"> <?php esc_html_e('Cart','suevafree');?> </h2>
                 
                 <?php do_action( 'woocommerce_before_cart_table' ); ?>
                 
@@ -36,10 +34,10 @@ do_action( 'woocommerce_before_cart' ); ?>
                         <tr>
                             <th class="product-remove">&nbsp;</th>
                             <th class="product-thumbnail">&nbsp;</th>
-                            <th class="product-name"><?php _e( 'Product', 'suevafree' ); ?></th>
-                            <th class="product-price"><?php _e( 'Price', 'suevafree' ); ?></th>
-                            <th class="product-quantity"><?php _e( 'Quantity', 'suevafree' ); ?></th>
-                            <th class="product-subtotal"><?php _e( 'Total', 'suevafree' ); ?></th>
+                            <th class="product-name"><?php esc_html_e( 'Product', 'suevafree' ); ?></th>
+                            <th class="product-price"><?php esc_html_e( 'Price', 'suevafree' ); ?></th>
+                            <th class="product-quantity"><?php esc_html_e( 'Quantity', 'suevafree' ); ?></th>
+                            <th class="product-subtotal"><?php esc_html_e( 'Total', 'suevafree' ); ?></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -56,7 +54,7 @@ do_action( 'woocommerce_before_cart' ); ?>
                 
                                     <td class="product-remove">
                                         <?php
-                                            echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf( '<a href="%s" class="remove" title="%s">&times;</a>', esc_url( WC()->cart->get_remove_url( $cart_item_key ) ), __( 'Remove this item', 'suevafree' ) ), $cart_item_key );
+                                            echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf( '<a href="%s" class="remove" title="%s">&times;</a>', esc_url( WC()->cart->get_remove_url( $cart_item_key ) ), esc_html__( 'Remove this item', 'suevafree' ) ), $cart_item_key );
                                         ?>
                                     </td>
                 
@@ -65,7 +63,7 @@ do_action( 'woocommerce_before_cart' ); ?>
                                             $thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
                 
                                             if ( ! $_product->is_visible() ) {
-                                                echo $thumbnail;
+                                                echo esc_url($thumbnail);
                                             } else {
                                                 printf( '<a href="%s">%s</a>', esc_url( $_product->get_permalink( $cart_item ) ), $thumbnail );
                                             }
@@ -132,7 +130,7 @@ do_action( 'woocommerce_before_cart' ); ?>
                                     
                                     <div class="coupon">
                 
-                                        <label for="coupon_code"><?php _e( 'Coupon', 'suevafree' ); ?>:</label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php _e( 'Coupon code', 'suevafree' ); ?>" /> <input type="submit" class="button" name="apply_coupon" value="<?php _e( 'Apply Coupon', 'suevafree' ); ?>" />
+                                        <label for="coupon_code"><?php esc_html_e( 'Coupon', 'suevafree' ); ?>:</label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_html_e( 'Coupon code', 'suevafree' ); ?>" /> <input type="submit" class="button" name="apply_coupon" value="<?php esc_html_e( 'Apply Coupon', 'suevafree' ); ?>" />
                 
                                         <?php do_action( 'woocommerce_cart_coupon' ); ?>
                                         
@@ -152,11 +150,7 @@ do_action( 'woocommerce_before_cart' ); ?>
                     </tbody>
                 </table>
                 
-                <?php 
-				
-					do_action( 'woocommerce_after_cart_table' );
-					
-				?>
+                <?php do_action( 'woocommerce_after_cart_table' ); ?>
                 
             </div>
         

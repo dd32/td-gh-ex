@@ -1,7 +1,10 @@
-li#accordion-section-suevafree-customize-info h3.accordion-section-title, 
-li#accordion-section-suevafree-customize-info h3.accordion-section-title:focus,
-li#accordion-section-suevafree-customize-info h3.accordion-section-title:hover { 
-	background-color: #ec7063 !important; 
+#customize-controls #accordion-section-suevafree-customize-info.control-section .accordion-section-title, 
+#customize-controls #accordion-section-suevafree-customize-info.control-section .accordion-section-title:focus, 
+#customize-controls #accordion-section-suevafree-customize-info.control-section .accordion-section-title:hover, 
+#customize-controls #accordion-section-suevafree-customize-info.control-section.open .accordion-section-title, 
+#customize-controls #accordion-section-suevafree-customize-info.control-section:hover>.accordion-section-title { 
+	background-color: #ec7063 !important;
+    border-left-color: #d54e21;
 	color: #fff !important;
 }
 
@@ -29,6 +32,7 @@ a.demobutton {
 	visibility:visible;
 	border: none !important;
 	outline: none !important;
+	text-decoration:none
 }
 
 a.getpremium {

@@ -1,17 +1,17 @@
 <?php get_header(); ?>
 
-<div class="container" style="position:relative">
-
-	<div class="row">
+<div class="container content">
+	
+    <div class="row">
 		
         <div class="post-container col-md-12">
 
-			<div class="post-article">
+			<article class="post-article">
             
-				<h1><?php _e( 'Not found','suevafree'); ?> </h1>
-				<p><?php _e( 'Sorry, no posts matched your criteria','suevafree'); ?> </p>
+				<h1><?php esc_html_e( 'Not found','suevafree'); ?> </h1>
+				<p><?php esc_html_e( 'Sorry, no posts matched your criteria','suevafree'); ?> </p>
  
-			</div>
+			</article>
 
     	</div>
 		

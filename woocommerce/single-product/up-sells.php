@@ -44,7 +44,7 @@ if ( $products->have_posts() ) : ?>
 
 	<div class="upsells products">
 
-		<h2><?php _e( 'You may also like&hellip;', 'suevafree' ) ?></h2>
+		<h2><?php esc_html_e( 'You may also like&hellip;', 'suevafree' ) ?></h2>
 
 		<?php woocommerce_product_loop_start(); ?>
 

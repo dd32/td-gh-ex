@@ -1,6 +1,5 @@
 <?php
 
-
 /**
  * Register the required plugins for this theme.
  *
@@ -23,14 +22,28 @@ if (!function_exists('suevafree_required_plugins')) {
 		$plugins = array(
 
 			array(
-				'name'      => 'WIP Custom Login',
-				'slug'      => 'wip-custom-login',
+				'name'               => 'SuevaFree Essential Kit',
+				'slug'               => 'suevafree-essential-kit', 
+				'required'           => true,
+				'force_activation'   => true,
+				'force_deactivation' => false,
+			),
+			
+			array(
+				'name'      => 'Contact Form 7',
+				'slug'      => 'contact-form-7',
 				'required'  => false,
 			),
 	
 			array(
-				'name'      => 'WIP WooCarousel Lite',
-				'slug'      => 'wip-woocarousel-lite',
+				'name'      => 'WooCommerce',
+				'slug'      => 'woocommerce',
+				'required'  => false,
+			),
+	
+			array(
+				'name'      => 'Widget Importer & Exporter',
+				'slug'      => 'widget-importer-exporter',
 				'required'  => false,
 			),
 	
@@ -39,17 +52,28 @@ if (!function_exists('suevafree_required_plugins')) {
 				'slug'      => 'regenerate-thumbnails',
 				'required'  => false,
 			),
+
+			array(
+				'name'      => 'Instagram Slider Widget',
+				'slug'      => 'instagram-slider-widget',
+				'required'  => false,
+			),
+
+			array(
+				'name'      => 'WIP Custom Login',
+				'slug'      => 'wip-custom-login',
+				'required'  => false,
+			),
+
+			array(
+				'name'      => 'WIP WooCarousel Lite',
+				'slug'      => 'wip-woocarousel-lite',
+				'required'  => false,
+			),
+
+		);
 	
-		);
-
-		$config = array(
-			
-			'menu'         => 'suevafree-install-plugins', 
-			'parent_slug'  => 'themes.php',
-
-		);
-
-		tgmpa( $plugins, $config );
+		tgmpa( $plugins );
 	}
 	
 	add_action( 'tgmpa_register', 'suevafree_required_plugins' );

@@ -38,12 +38,9 @@ if ( ! empty( $tabs ) ) : ?>
 			</div>
 
 		<?php endforeach; ?>
+        
 	</div>
-
-<?php 
-
-	endif;				
-	
-?>
+    
+<?php endif;	 ?>
 
 	<div class="clear"></div>

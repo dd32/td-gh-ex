@@ -1,66 +1,52 @@
-    <footer id="footer">
+<?php if ( !suevafree_setting('suevafree_view_footer') || suevafree_setting('suevafree_view_footer') == "on" ) : ?>
     
+    <footer id="footer">
+
+		<?php do_action( 'suevafree_bottom_sidebar' ); ?>
+
         <div class="container">
-        
-            <?php if ( is_active_sidebar('bottom-sidebar-area') ) : ?>
-            
-                <!-- FOOTER WIDGET BEGINS -->
-                
-                    <section class="row widget">
-                        <?php dynamic_sidebar('bottom-sidebar-area') ?>
-                    </section>
-                    
-                <!-- FOOTER WIDGET END -->
-                
-            <?php endif; ?>
     
              <div class="row copyright" >
-               
-                <div class="col-md-6" >
                 
-                    <p>
-                        <?php if (suevafree_setting('suevafree_copyright_text')): ?>
-                           <?php echo esc_html(suevafree_setting('suevafree_copyright_text')); ?>
-                        <?php else: ?>
-                          <?php _e('Copyright','suevafree'); ?> <?php echo get_bloginfo("name"); ?> <?php echo date("Y"); ?> 
-                        <?php endif; ?> 
-                        | <?php _e('Theme by','suevafree'); ?> <a href="<?php echo esc_url('https://www.themeinprogress.com/'); ?>" target="_blank">Theme in Progress</a> |
-                        <a href="<?php echo esc_url( 'http://wordpress.org/'); ?>" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'suevafree' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'suevafree' ), 'WordPress' ); ?></a>
+                <div class="col-md-5" >
+                
+					<?php do_action('suevafree_copyright'); ?>
+				
+                </div>
+            
+            	<?php if ( !suevafree_setting('suevafree_footer_social_buttons') || suevafree_setting('suevafree_footer_social_buttons') == "on" ) : ?>
+                
+                    <div class="col-md-7" >
         
-                    </p>
-                    
-                </div>
-                
-                <div class="col-md-6" >
-                
-                    <!-- start social -->
-                    
-                    <div class="socials">
-                    
-                        <?php do_action('suevafree_socials'); ?>
-                   
+                        <div class="social-buttons">
+                        
+                            <?php do_action( 'suevafree_socials' ); ?>
+                        
+                        </div>
+                        
                     </div>
-                    
-                    <!-- end social -->
     
-                </div>
-                
+				<?php endif; ?>
+
             </div>
             
         </div>
-        
-    </footer>
     
+    </footer>
+
+<?php endif; ?>
+
 </div>
 
-    <?php if ( (!suevafree_setting('suevafree_view_back_to_top') ) || ( suevafree_setting('suevafree_view_back_to_top') == "on" ) ): ?>
-    
-        <div id="back-to-top"> <i class="fa fa-chevron-up"></i> </div>
-	
-    <?php endif; ?>
-    
+<?php 
 
-<?php wp_footer() ?>   
+	if ( !suevafree_setting('suevafree_view_back_to_top') || suevafree_setting('suevafree_view_back_to_top') == "on" )
+		
+		echo '<div id="back-to-top" class="back-to-top"><i class="fa fa-chevron-up"></i></div>';
+
+	wp_footer(); 
+	
+?>   
 
 </body>
 

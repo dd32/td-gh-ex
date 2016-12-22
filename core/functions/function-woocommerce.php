@@ -8,6 +8,28 @@
 remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display');
 remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
 
+remove_action( 'woocommerce_before_shop_loop_item', 'woocommerce_template_loop_product_link_open', 10 );
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5 );
+
+
+if ( suevafree_setting ('suevafree_woocommerce_cross_sell_cart') == "on" ) :
+	
+	add_action( 'woocommerce_after_cart', 'woocommerce_cross_sell_display' );
+	
+endif;
+	
+if ( suevafree_setting ('suevafree_woocommerce_related_products') == "off" ) :
+	
+	remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+	
+endif;
+
+if ( suevafree_setting ('suevafree_woocommerce_upsell_products') == "off" ) :
+	
+	remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15);
+	
+endif;
+
 /*-----------------------------------------------------------------------------------*/
 /* Woocommerce remove breadcrumbs */
 /*-----------------------------------------------------------------------------------*/ 
@@ -36,13 +58,11 @@ if ( ! function_exists( 'suevafree_header_cart' ) ) {
 		
 	?>
 
-            <section class="header-cart">
+            <div class="header-cart">
             
-                <a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart','suevafree' ); ?>">
-                    
+                <a class="cart-contents" href="<?php echo esc_url(WC()->cart->get_cart_url()); ?>" title="<?php esc_attr_e( 'View your shopping cart','suevafree' ); ?>">
                     <i class="fa fa-shopping-cart"></i>
-					<span class="cart-count"><?php echo sprintf ( _n( '%d', '%d', WC()->cart->cart_contents_count ), WC()->cart->cart_contents_count ); ?></span>  
-
+					<span class="cart-count"><?php echo sprintf ( _n( '%d', '%d', WC()->cart->cart_contents_count, 'suevafree' ), WC()->cart->cart_contents_count ); ?></span>  
                 </a>
                             
                 <div class="header-cart-widget">
@@ -51,7 +71,7 @@ if ( ! function_exists( 'suevafree_header_cart' ) ) {
                 
                 </div>
                 
-            </section>
+            </div>
     
 	<?php
 
@@ -68,11 +88,9 @@ if ( ! function_exists( 'suevafree_cart_link_fragment' ) ) {
 		ob_start();
 
 ?>
-		<a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart','suevafree' ); ?>">
-            
+		<a class="cart-contents" href="<?php echo esc_url(WC()->cart->get_cart_url()); ?>" title="<?php esc_attr_e( 'View your shopping cart','suevafree' ); ?>">
             <i class="fa fa-shopping-cart"></i>
-			<span class="cart-count"><?php echo sprintf ( _n( '%d', '%d', WC()->cart->cart_contents_count ), WC()->cart->cart_contents_count ); ?></span>  
-
+			<span class="cart-count"><?php echo sprintf ( _n( '%d', '%d', WC()->cart->cart_contents_count, 'suevafree' ), WC()->cart->cart_contents_count ); ?></span>  
 		</a>
         
 <?php
@@ -88,7 +106,7 @@ if ( ! function_exists( 'suevafree_cart_link_fragment' ) ) {
 }
 
 /*-----------------------------------------------------------------------------------*/
-/* Woocommerce template */
+/* Woocommerce before content */
 /*-----------------------------------------------------------------------------------*/ 
 
 if (!function_exists('suevafree_woocommerce_before_main_content')) {
@@ -105,6 +123,9 @@ if (!function_exists('suevafree_woocommerce_before_main_content')) {
 	
 		}
 
+		do_action( 'suevafree_top_sidebar', 'top-sidebar-area');
+		do_action( 'suevafree_header_sidebar', 'header-sidebar-area');
+		
 ?>
 	
 	<div class="container">
@@ -122,7 +143,7 @@ if (!function_exists('suevafree_woocommerce_before_main_content')) {
 }
 
 /*-----------------------------------------------------------------------------------*/
-/* Woocommerce template */
+/* Woocommerce after content */
 /*-----------------------------------------------------------------------------------*/ 
 
 if (!function_exists('suevafree_woocommerce_after_main_content')) {
@@ -135,7 +156,7 @@ if (!function_exists('suevafree_woocommerce_after_main_content')) {
 			
 				if ( suevafree_template('span') == "col-md-8" ) :
 
-					do_action('suevafree_side_sidebar', 'sidebar-area');
+					do_action('suevafree_side_sidebar', 'side-sidebar-area' );
 					
 				endif;
 				
@@ -146,6 +167,8 @@ if (!function_exists('suevafree_woocommerce_after_main_content')) {
 	</div>
 
 <?php
+
+		do_action( 'suevafree_full_sidebar', 'full-sidebar-area');
 
 	}
 	
