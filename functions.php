@@ -172,7 +172,7 @@ function bakes_and_cakes_widgets_init() {
 	register_sidebar(array(
 		'name' => esc_html__('Google Map Widget', 'bakes-and-cakes'),
 		'id' => 'google-map',
-		'description' => 'Widget for Google map section( Use Text widget for Google Map ).',
+		'description' => __( 'Widget for Google map section( Use Text widget for Google Map ).','bakes-and-cakes'),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget' => '</section>',
 		'before_title' => '<h2 class="widget-title">',
@@ -192,7 +192,7 @@ function bakes_and_cakes_widgets_init() {
 	register_sidebar(array(
 		'name' => esc_html__('Footer Second', 'bakes-and-cakes'),
 		'id' => 'footer-second',
-		'description' => 'Here you can use text widget to display Contact Form.',
+		'description' => __( 'Here you can use text widget to display Contact Form.','bakes-and-cakes'),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget' => '</section>',
 		'before_title' => '<h2 class="widget-title">',
@@ -305,7 +305,7 @@ if ( ! function_exists( 'bakes_and_cakes_excerpt_length' ) ) :
 	* Changes the default 55 character in excerpt 
 	*/
 	function bakes_and_cakes_excerpt_length( $length ) {
-		return 400;
+		return 50;
 	}
 
 endif;

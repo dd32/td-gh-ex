@@ -1,20 +1,19 @@
 === Bakes and Cakes ===
 Author: Rara Theme (http://raratheme.com)
 
-Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
+Tags: blog, one-column, two-columns, right-sidebar, footer-widgets, custom-background, custom-menu, featured-image-header, featured-images, post-formats, threaded-comments, translation-ready, full-width-template, theme-options, food-and-drink, e-commerce, custom-colors, custom-logo    
 
 
 Requires at least: 4.0
 Tested up to: 4.7
-Stable tag: 1.0.6
+Stable tag: 1.0.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Description ==
 
-Bakes and Cakes an elegant WordPress theme suitable for bakery business. It is responsive and displays your website nicely in mobile and tablet devices. Bakes and Cakes is built using HTML5 and CSS3 . The theme is translation ready.
-
+Bakes and Cakes is a beautifully designed WordPress theme for Bakery website. The theme is SEO friendly with optimized codes, which make it easy for your site to rank on Google and other search engines. Bakes and Cakes comes with several features to make user-friendly, interactive and visually stunning website. It has various useful section such as testimonial section, Product section, about section, team section, banner, and Call to action section etc.  The theme is Woocommerce compatible. The theme is rigorously tested and optimized for speed and faster page load time and has a secure and clean code. The theme is also translation ready. Designed with visitor engagement in mind, Bakes and Cakes helps you to easily and intuitively create professional and appealing websites for your bakery, restaurant and cafe. Check the demo at https://raratheme.com/preview/bakes-and-cakes/ , documentation at https://raratheme.com/documentation/bakes-cakes/ and get support at http://raratheme.com/support-ticket/
 
 == Installation ==
         
@@ -229,6 +228,12 @@ Bakes and Cakes WordPress Theme is distributed under the terms of the GPLv2 or l
    GNU General Public License for more details.
 
 == Changelog ==
+    1.0.8
+    * Fixed blog excerpt length.
+
+    1.0.7
+    * Fixed Some minor issues.
+
     1.0.6
     * Google map section changed into Google map widgets. 
     * Contact form section removed. 
