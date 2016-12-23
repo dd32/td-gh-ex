@@ -1,10 +1,10 @@
-/*!
+/*
 Theme Name: Basic Shop
 Theme URI: http://www.iograficathemes.com/downloads/basic-shop/
 Author: iografica
 Author URI: http://www.iograficathemes.com
-Description: A basic and solid WordPress ecommerce theme
-Version: 1.04
+Description: Basic Shop is the perfect theme for your next blog or ecommerce project. There are several layout & color options to personalise your site, multiple widget regions, a responsive design and much more. Basic Shop is ecommerce (WooCommerce and Easy Digital Downloads) ready and fully integrated with the most popular free plugins for WordPress like Beaver Page Builder, Yoast Seo, JetPack, Contact Form 7, Elementor and many more.
+Version: 1.05
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: basic-shop
@@ -1453,7 +1453,7 @@ a {
       .main-navigation ul li a {
         display: block;
         margin: 0;
-        padding: 14px; }
+        padding: 24px 14px; }
     .main-navigation ul ul {
       padding: 0;
       -moz-box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.1);
@@ -1464,7 +1464,8 @@ a {
       .main-navigation ul ul li {
         border: none; }
         .main-navigation ul ul li a {
-          width: 200px; }
+          width: 200px;
+          padding: 14px; }
   .menu-toggle {
     display: none; }
   .main-navigation ul {
@@ -1488,7 +1489,7 @@ a {
         .main-navigation ul li a {
           display: block;
           margin: 0;
-          padding: 14px 0; }
+          padding: 24px 0; }
       .main-navigation ul ul {
         margin: 0;
         padding: 0; }
@@ -1614,7 +1615,7 @@ a {
     margin-right: 2.35765%;
     width: 48.82117%;
     margin-right: 0;
-    padding: 24px 0; }
+    padding: 0; }
     .main-navigation.inline:last-child {
       margin-right: 0; }
     .main-navigation.inline ul {
@@ -1623,6 +1624,9 @@ a {
       .main-navigation.inline ul li.focus > ul {
         left: auto;
         right: 0; }
+      .main-navigation.inline ul a {
+        padding-top: 40px;
+        padding-bottom: 40px; }
       .main-navigation.inline ul ul {
         float: right;
         position: absolute;
@@ -1638,6 +1642,9 @@ a {
             right: 100%;
             width: 100%;
             top: 0; }
+          .main-navigation.inline ul ul li a {
+            padding-top: 14px;
+            padding-bottom: 14px; }
         .main-navigation.inline ul ul .menu-item-has-children > a:after {
           font-family: 'simple-line-icons';
           content: "\e605";
@@ -1662,7 +1669,7 @@ a {
     display: block;
     margin-right: 2.35765%;
     width: 100%;
-    padding: 0; }
+    padding: 14px 24px; }
     .header-nav.inline:last-child {
       margin-right: 0; }
     .header-nav.inline ul {
@@ -1673,7 +1680,7 @@ a {
         display: inline-block; }
         .header-nav.inline ul li a {
           display: block;
-          padding: 0 14px 0 0; } }
+          padding: 14px 14px 14px 0; } }
 
 /*--------------------------------------------------------------
 ## Pagination

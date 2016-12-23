@@ -51,14 +51,15 @@ class IGthemes_More_Control extends WP_Customize_Control {
                 <?php esc_html_e( 'Basic Shop Premium expands the already powerful free version of this theme and gives access to our priority support service.', 'basic-shop' ); ?>
             <ul>
                 <li><?php esc_html_e( 'More advanced options', 'basic-shop' ); ?></li>
-                <li><?php esc_html_e( 'New shop options', 'basic-shop' ); ?></li>
+                <li><?php esc_html_e( 'New fonts', 'basic-shop' ); ?></li>
+                <li><?php esc_html_e( 'Shop customizer', 'basic-shop' ); ?></li>
                 <li><?php esc_html_e( 'Custom widgets', 'basic-shop' ); ?></li>
-                <li><?php esc_html_e( 'Custom page and post settings', 'basic-shop' ); ?></li>
+                <li><?php esc_html_e( 'New post and page settings', 'basic-shop' ); ?></li>
                 <li><?php esc_html_e( 'Premium support', 'basic-shop' ); ?></li>
                 <li><?php esc_html_e( 'Money back guarantee', 'basic-shop' ); ?></li>
             </ul>
             <a href="<?php echo esc_url( 'http://www.iograficathemes.com/downloads/basic-shop' ); ?>" target="_blank" class="button-upgrade">
-                <?php esc_html_e('view premium version', 'basic-shop'); ?>
+                <?php esc_html_e('upgrade to premium', 'basic-shop'); ?>
             </a>
             </p>
             <span class="customize-control-title"><?php esc_html_e( 'Enjoying the theme?', 'basic-shop' ); ?></span>
@@ -67,23 +68,6 @@ class IGthemes_More_Control extends WP_Customize_Control {
                 <?php printf( esc_html__( 'Why not leave us a review on %sWordPress.org%s?  We\'d really appreciate it!', 'basic-shop' ), '<a href="https://wordpress.org/themes/basic-shop">', '</a>' ); ?>
             </p>
 
-        <?php
-    }
-}
-/**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*
- * ONLY PREMIUM CONTROL
-**+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-class IGthemes_Only_Premium extends WP_Customize_Control {
-    
-    //Render the content on the theme customizer page
-    public function render_content() { ?>
-            <?php if ( ! empty( $this->label ) ) : ?>
-                <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-            <?php endif; ?>
-            <span class="customize-control-description">
-                <?php echo esc_html( $this->description ); ?>
-                    <?php esc_html_e( ' - only premium', 'basic-shop' ); ?>
-            </span>
         <?php
     }
 }
@@ -99,7 +83,7 @@ class IGthemes_Heading extends WP_Customize_Control {
             <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
         <?php endif; ?>
         <?php if ( ! empty( $this->description ) ) : ?>
-            <span class="customize-control-description"><?php echo esc_html( $this->description );  ?></span>
+            <span class="customize-control-description"><?php esc_html( $this->description ); ?></span>
         <?php endif; ?>
     <?php
     }

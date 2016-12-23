@@ -17,12 +17,10 @@ if ( ! function_exists( 'basic_shop_setup' ) ) :
  */
 function basic_shop_setup() {
     /*
-     * Make theme available for translation.
-     * Translations can be filed in the /languages/ directory.
-     * If you're building a theme based on Basic Shop, use a find and replace
-     * to change 'basic-shop' to the name of your theme in all the template files.
-     */
-    load_theme_textdomain( 'basic-shop', get_template_directory() . '/languages' );
+	 * Make theme available for translation.
+	 * Translations can be filed at WordPress.org. See: https://translate.wordpress.org/projects/wp-themes/basic-shop
+	 */
+	load_theme_textdomain( 'basic-shop' );
 
     // Add default posts and comments RSS feed links to head.
     add_theme_support( 'automatic-feed-links' );
@@ -185,7 +183,6 @@ require get_template_directory() . '/inc/admin/welcome/welcome-screen.php';
  */
 require get_template_directory() . '/inc/render/template-functions.php';
 require get_template_directory() . '/inc/render/template-tags.php';
-require get_template_directory() . '/inc/render/template-dynamic-css.php';
 require get_template_directory() . '/inc/render/extras.php';
 //structure
 require get_template_directory() . '/inc/render/structure/header.php';
@@ -196,7 +193,6 @@ require get_template_directory() . '/inc/render/structure/post.php';
 require get_template_directory() . '/inc/render/structure/page.php';
 //plugins
 require get_template_directory() . '/inc/plugins/jetpack/jetpack-funtions.php';
-require get_template_directory() . '/inc/plugins/beaver-builder/bbuilder-functions.php';
 
 /*----------------------------------------------------------------------
 # EDD SUPPORT

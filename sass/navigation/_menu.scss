@@ -14,7 +14,7 @@
             a {
                 display: block;
                 @include margin(0);
-                @include padding($small__spacing);
+                @include padding($base__spacing $small__spacing);
             }
 	    }
         li:hover > a,
@@ -33,15 +33,16 @@
                 border:none;
                 a {
 				    width: 200px;
+                    @include padding($small__spacing);
                 }
 			}
 		    //children
         }
     }
-        .current_page_item > a,
-        .current-menu-item > a,
-        .current_page_ancestor > a,
-        .current-menu-ancestor > a {
+    .current_page_item > a,
+    .current-menu-item > a,
+    .current_page_ancestor > a,
+    .current-menu-ancestor > a {
         }
     }
     .menu-toggle {
@@ -70,7 +71,7 @@
                 a {
                     display: block;
                     @include margin(0);
-                    @include padding($small__spacing 0);
+                    @include padding($base__spacing 0);
                 }
             }
             //second level

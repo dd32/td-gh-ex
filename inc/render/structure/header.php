@@ -3,8 +3,7 @@
  * HEADER
 -----------------------------------------------------------------*/
 add_action( 'igthemes_header', 'igthemes_header_navigation', 10 );
-add_action( 'igthemes_header', 'igthemes_site_branding', 20 );
-add_action( 'igthemes_header', 'igthemes_main_navigation', 30 );
+add_action( 'igthemes_header', 'igthemes_main_navigation', 20 );
 
 // SITE TITLE
 if ( ! function_exists( 'igthemes_site_title' ) ) {
@@ -53,12 +52,17 @@ if ( ! function_exists( 'igthemes_site_branding' ) ) {
 if ( ! function_exists( 'igthemes_main_navigation' ) ) {
     //start function
     function igthemes_main_navigation() { ?>
+    <div class="header-brandnav <?php echo apply_filters('igthemes-header-class', 'inline') ;?>">
+        <div class="brandnav-content">
+    <?php igthemes_site_branding() ; ?>
     <nav id="site-navigation" class="main-navigation <?php echo apply_filters('igthemes-header-class', 'inline') ;?>" role="navigation">
         <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
             <?php esc_html_e( 'Menu', 'basic-shop' ); ?>
         </button>
         <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
     </nav><!-- #site-navigation -->
+            </div>
+    </div>
 <?php  }
 }
 // HEADER NAVIGATION
