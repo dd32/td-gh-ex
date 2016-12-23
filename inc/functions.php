@@ -619,12 +619,10 @@ function accelerate_site_icon_migrate() {
 		update_option( 'site_icon', $customizer_site_icon_id );
 		// Set the transfer as complete.
 		update_option( 'accelerate_site_icon_transfer', 1 );
-		// Delete the old favicon theme_mod option.
-		delete_option( 'accelerate', 'accelerate_favicon' );
 	}
 }
 
-add_action( 'after_setup_theme', 'accelerate_site_icon_migrate' );
+//add_action( 'after_setup_theme', 'accelerate_site_icon_migrate' );
 
 /**
  * Function to transfer the Header Logo added in Customizer Options of theme to Site Logo in Site Identity section
