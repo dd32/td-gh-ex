@@ -89,7 +89,7 @@ function accelerate_customize_register($wp_customize) {
       'panel' => 'accelerate_header_options'
    ));
 
-   if ( !function_exists( 'the_custom_logo' ) || ( accelerate_options( 'accelerate_header_logo_image', '' ) != '') ) {
+   if ( ! function_exists('the_custom_logo') ) {
       $wp_customize->add_setting($accelerate_themename.'[accelerate_header_logo_image]', array(
          'default' => '',
          'type' => 'option',
@@ -395,91 +395,95 @@ function accelerate_customize_register($wp_customize) {
       'settings' => $accelerate_themename.'[accelerate_primary_color]'
    )));
 
-   // Custom CSS setting
-   class Accelerate_Custom_CSS_Control extends WP_Customize_Control {
+	// Custom CSS setting
+	if ( ! function_exists( 'wp_update_custom_css_post' ) ) {
+		class Accelerate_Custom_CSS_Control extends WP_Customize_Control {
 
-      public $type = 'custom_css';
+			public $type = 'custom_css';
 
-      public function render_content() {
-      ?>
-         <label>
-            <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-            <textarea rows="5" style="width:100%;" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
-         </label>
-      <?php
-      }
+			public function render_content() {
+			?>
+			<label>
+				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+				<textarea rows="5" style="width:100%;" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
+			</label>
+			<?php
+			}
 
-   }
+		}
 
-   $wp_customize->add_section('accelerate_custom_css_setting', array(
-      'priority' => 7,
-      'title' => __('Custom CSS', 'accelerate'),
-      'panel' => 'accelerate_design_options'
-   ));
+		$wp_customize->add_section('accelerate_custom_css_setting', array(
+			'priority' => 7,
+			'title' => __('Custom CSS', 'accelerate'),
+			'panel' => 'accelerate_design_options'
+		));
 
-   $wp_customize->add_setting($accelerate_themename.'[accelerate_custom_css]', array(
-      'default' => '',
-      'type' => 'option',
-      'capability' => 'edit_theme_options',
-      'sanitize_callback' => 'wp_filter_nohtml_kses',
-      'sanitize_js_callback' => 'wp_filter_nohtml_kses'
-   ));
+		$wp_customize->add_setting($accelerate_themename.'[accelerate_custom_css]', array(
+			'default' => '',
+			'type' => 'option',
+			'capability' => 'edit_theme_options',
+			'sanitize_callback' => 'wp_filter_nohtml_kses',
+			'sanitize_js_callback' => 'wp_filter_nohtml_kses'
+		));
 
-   $wp_customize->add_control(new Accelerate_Custom_CSS_Control($wp_customize, $accelerate_themename.'[accelerate_custom_css]', array(
-      'label' => __('Write your custom css.', 'accelerate'),
-      'section' => 'accelerate_custom_css_setting',
-      'settings' => $accelerate_themename.'[accelerate_custom_css]'
-   )));
-   // End of Design Options
+		$wp_customize->add_control(new Accelerate_Custom_CSS_Control($wp_customize, $accelerate_themename.'[accelerate_custom_css]', array(
+			'label' => __('Write your custom css.', 'accelerate'),
+			'section' => 'accelerate_custom_css_setting',
+			'settings' => $accelerate_themename.'[accelerate_custom_css]'
+		)));
+	}
+	// End of Design Options
 
-   // Start of the Additional Options
-   $wp_customize->add_panel('accelerate_additional_options', array(
-      'capabitity' => 'edit_theme_options',
-      'priority' => 510,
-      'title' => __('Additional', 'accelerate')
-   ));
+	if ( ! function_exists( 'has_site_icon' ) ) {
+		// Start of the Additional Options
+		$wp_customize->add_panel('accelerate_additional_options', array(
+			'capabitity' => 'edit_theme_options',
+			'priority' => 510,
+			'title' => __('Additional', 'accelerate')
+		));
 
-   // favicon activate option
-   $wp_customize->add_section('accelerate_additional_activate_section', array(
-      'priority' => 1,
-      'title' => __('Activate favicon', 'accelerate'),
-      'panel' => 'accelerate_additional_options'
-   ));
+		// favicon activate option
+		$wp_customize->add_section('accelerate_additional_activate_section', array(
+			'priority' => 1,
+			'title' => __('Activate favicon', 'accelerate'),
+			'panel' => 'accelerate_additional_options'
+		));
 
-   $wp_customize->add_setting($accelerate_themename.'[accelerate_activate_favicon]', array(
-      'default' => 0,
-      'type' => 'option',
-      'capability' => 'edit_theme_options',
-      'sanitize_callback' => 'accelerate_checkbox_sanitize'
-   ));
+		$wp_customize->add_setting($accelerate_themename.'[accelerate_activate_favicon]', array(
+			'default' => 0,
+			'type' => 'option',
+			'capability' => 'edit_theme_options',
+			'sanitize_callback' => 'accelerate_checkbox_sanitize'
+		));
 
-   $wp_customize->add_control($accelerate_themename.'[accelerate_activate_favicon]', array(
-      'type' => 'checkbox',
-      'label' => __('Check to activate favicon. Upload fav icon from below option', 'accelerate'),
-      'section' => 'accelerate_additional_activate_section',
-      'settings' => $accelerate_themename.'[accelerate_activate_favicon]'
-   ));
+		$wp_customize->add_control($accelerate_themename.'[accelerate_activate_favicon]', array(
+			'type' => 'checkbox',
+			'label' => __('Check to activate favicon. Upload fav icon from below option', 'accelerate'),
+			'section' => 'accelerate_additional_activate_section',
+			'settings' => $accelerate_themename.'[accelerate_activate_favicon]'
+		));
 
-   // favicon upload option
-   $wp_customize->add_section('accelerate_favicon_upload_section',array(
-      'priority' => 2,
-      'title' => __('Upload favicon', 'accelerate'),
-      'panel' => 'accelerate_additional_options'
-   ));
+		// favicon upload option
+		$wp_customize->add_section('accelerate_favicon_upload_section',array(
+			'priority' => 2,
+			'title' => __('Upload favicon', 'accelerate'),
+			'panel' => 'accelerate_additional_options'
+		));
 
-   $wp_customize->add_setting($accelerate_themename.'[accelerate_favicon]', array(
-      'default' => 0,
-      'type' => 'option',
-      'capability' => 'edit_theme_options',
-      'sanitize_callback' => 'esc_url_raw'
-   ));
+		$wp_customize->add_setting($accelerate_themename.'[accelerate_favicon]', array(
+			'default' => 0,
+			'type' => 'option',
+			'capability' => 'edit_theme_options',
+			'sanitize_callback' => 'esc_url_raw'
+		));
 
-   $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, $accelerate_themename.'[accelerate_favicon]', array(
-      'label' => __('Upload favicon for your site.', 'accelerate'),
-      'section' => 'accelerate_favicon_upload_section',
-      'settings' => $accelerate_themename.'[accelerate_favicon]'
-   )));
-   // End of Additional Options
+		$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, $accelerate_themename.'[accelerate_favicon]', array(
+			'label' => __('Upload favicon for your site.', 'accelerate'),
+			'section' => 'accelerate_favicon_upload_section',
+			'settings' => $accelerate_themename.'[accelerate_favicon]'
+		)));
+		// End of Additional Options
+	}
 
    // Adding Text Area Control For Use In Customizer
    class Accelerate_Text_Area_Control extends WP_Customize_Control {

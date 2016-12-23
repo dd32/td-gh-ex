@@ -63,12 +63,10 @@ function accelerate_scripts_styles_method() {
 	wp_enqueue_script( 'accelerate-navigation', ACCELERATE_JS_URL . '/navigation.js', array( 'jquery' ), false, true );
 	wp_enqueue_script( 'accelerate-custom', ACCELERATE_JS_URL. '/accelerate-custom.js', array( 'jquery' ) );
 
-	wp_enqueue_style( 'accelerate-fontawesome', get_template_directory_uri().'/fontawesome/css/font-awesome.css', array(), '4.3.0' );
+	wp_enqueue_style( 'accelerate-fontawesome', get_template_directory_uri().'/fontawesome/css/font-awesome.css', array(), '4.7.0' );
 
-   $accelerate_user_agent = strtolower($_SERVER['HTTP_USER_AGENT']);
-	if(preg_match('/(?i)msie [1-8]/',$accelerate_user_agent)) {
-		wp_enqueue_script( 'html5', ACCELERATE_JS_URL . '/html5shiv.min.js', true );
-	}
+	wp_enqueue_script( 'html5shiv', ACCELERATE_JS_URL.'/html5shiv.js', array(), '3.7.3', false );
+	wp_script_add_data( 'html5shiv', 'conditional', 'lte IE 8' );
 }
 
 /****************************************************************************************/
@@ -314,6 +312,7 @@ endif;
 
 /****************************************************************************************/
 
+
 add_action( 'admin_head', 'accelerate_favicon' );
 add_action( 'wp_head', 'accelerate_favicon' );
 /**
@@ -323,7 +322,7 @@ function accelerate_favicon() {
 	if ( accelerate_options( 'accelerate_activate_favicon', '0' ) == '1' ) {
 		$accelerate_favicon = accelerate_options( 'accelerate_favicon', '' );
 		$accelerate_favicon_output = '';
-		if ( !empty( $accelerate_favicon ) ) {
+		if ( ! function_exists( 'has_site_icon' ) || ( ! empty( $accelerate_favicon ) && ! has_site_icon() ) ) {
 			$accelerate_favicon_output .= '<link rel="shortcut icon" href="'.esc_url( $accelerate_favicon ).'" type="image/x-icon" />';
 		}
 		echo $accelerate_favicon_output;
@@ -381,8 +380,8 @@ function accelerate_custom_css() {
 		<?php
 	}
 
-	$accelerate_custom_css = accelerate_options( 'accelerate_custom_css', '' );
-	if( !empty( $accelerate_custom_css ) ) {
+	$accelerate_custom_css = accelerate_options( 'accelerate_custom_css' );
+	if( $accelerate_custom_css && ! function_exists( 'wp_update_custom_css_post' ) ) {
 		?>
 		<style type="text/css"><?php echo $accelerate_custom_css; ?></style>
 		<?php
@@ -575,4 +574,80 @@ function accelerate_wrapper_start() {
 function accelerate_wrapper_end() {
   echo '</div>';
 }
-?>
+
+/**
+ * Migrate any existing theme CSS codes added in Customize Options to the core option added in WordPress 4.7
+ */
+function accelerate_custom_css_migrate() {
+	if ( function_exists( 'wp_update_custom_css_post' ) ) {
+		$custom_css = accelerate_options( 'accelerate_custom_css' );
+		if ( $custom_css ) {
+			$core_css = wp_get_custom_css(); // Preserve any CSS already added to the core option.
+			$return = wp_update_custom_css_post( $core_css . $custom_css );
+
+			if ( ! is_wp_error( $return ) ) {
+
+				$theme_options = get_option( 'accelerate' );
+
+				// Remove the old theme_mod, so that the CSS is stored in only one place moving forward.
+				foreach ( $theme_options as $option_key => $option_value ) {
+					if ( in_array( $option_key, array( 'accelerate_custom_css' ) ) ) {
+						unset( $theme_options[ $option_key ] );
+					}
+				}
+				// Finally, update accelerate theme options.
+				update_option( 'accelerate', $theme_options );
+			}
+		}
+	}
+}
+
+add_action( 'after_setup_theme', 'accelerate_custom_css_migrate' );
+
+/**
+* Function to transfer the favicon added in Customizer Options of theme to Site Icon in Site Identity section
+*/
+function accelerate_site_icon_migrate() {
+	if ( get_option( 'accelerate_site_icon_transfer' ) ) {
+		return;
+	}
+
+	$image_url = accelerate_options( 'accelerate_favicon', '' );
+
+	if ( ! has_site_icon() && ! empty( $image_url ) ) {
+		$customizer_site_icon_id = attachment_url_to_postid( $image_url );
+		update_option( 'site_icon', $customizer_site_icon_id );
+		// Set the transfer as complete.
+		update_option( 'accelerate_site_icon_transfer', 1 );
+		// Delete the old favicon theme_mod option.
+		delete_option( 'accelerate', 'accelerate_favicon' );
+	}
+}
+
+add_action( 'after_setup_theme', 'accelerate_site_icon_migrate' );
+
+/**
+ * Function to transfer the Header Logo added in Customizer Options of theme to Site Logo in Site Identity section
+ */
+function accelerate_site_logo_migrate() {
+	if ( function_exists( 'the_custom_logo' ) && ! has_custom_logo( $blog_id = 0 ) ) {
+		$logo_url = accelerate_options( 'accelerate_header_logo_image' );
+
+		if ( $logo_url ) {
+			$customizer_site_logo_id = attachment_url_to_postid( $logo_url );
+			set_theme_mod( 'custom_logo', $customizer_site_logo_id );
+
+			// Delete the old Site Logo theme_mod option.
+			$theme_options = get_option( 'accelerate' );
+
+			if ( isset( $theme_options[ 'accelerate_header_logo_image' ] ) ) {
+				unset( $theme_options[ 'accelerate_header_logo_image' ] );
+			}
+
+			// Finally, update accelerate theme options.
+			update_option( 'accelerate', $theme_options );
+		}
+	}
+}
+
+add_action( 'after_setup_theme', 'accelerate_site_logo_migrate' );
