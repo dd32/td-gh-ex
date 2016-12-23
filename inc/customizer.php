@@ -9,58 +9,57 @@
 
 function spacious_customize_register($wp_customize) {
 
-   // Theme important links started
-   class Spacious_Important_Links extends WP_Customize_Control {
+	// Theme important links started
+	class Spacious_Important_Links extends WP_Customize_Control {
 
-      public $type = "spacious-important-links";
+		public $type = "spacious-important-links";
 
-      public function render_content() {
-         //Add Theme instruction, Support Forum, Demo Link, Rating Link
-         $important_links = array(
-            'view-pro' => array(
-               'link' => esc_url('http://themegrill.com/themes/spacious-pro/'),
-               'text' => esc_html__('View Pro', 'spacious'),
-            ),
-            'theme-info' => array(
-               'link' => esc_url('http://themegrill.com/themes/spacious/'),
-               'text' => esc_html__('Theme Info', 'spacious'),
-            ),
-            'support' => array(
-               'link' => esc_url('http://themegrill.com/support-forum/'),
-               'text' => esc_html__('Support Forum', 'spacious'),
-            ),
-            'documentation' => array(
-               'link' => esc_url('http://docs.themegrill.com/spacious/'),
-               'text' => esc_html__('Documentation', 'spacious'),
-            ),
-            'demo' => array(
-               'link' => esc_url('http://demo.themegrill.com/spacious/'),
-               'text' => esc_html__('View Demo', 'spacious'),
-            ),
-            'rating' => array(
-               'link' => esc_url('http://wordpress.org/support/view/theme-reviews/spacious?filter=5'),
-               'text' => esc_html__('Rate this theme', 'spacious'),
-            ),
-         );
-         foreach ($important_links as $important_link) {
-            echo '<p><a target="_blank" href="' . $important_link['link'] . '" >' . esc_attr($important_link['text']) . ' </a></p>';
-         }
+		public function render_content() {
+			// Add Theme instruction, Support Forum, Demo Link, Rating Link
+			$important_links = array(
+				'view-pro' => array(
+					'link' => esc_url('http://themegrill.com/themes/spacious-pro/'),
+					'text' => esc_html__('View Pro', 'spacious'),
+				),
+				'theme-info' => array(
+					'link' => esc_url('http://themegrill.com/themes/spacious/'),
+					'text' => esc_html__('Theme Info', 'spacious'),
+				),
+				'support' => array(
+					'link' => esc_url('http://themegrill.com/support-forum/'),
+					'text' => esc_html__('Support Forum', 'spacious'),
+				),
+				'documentation' => array(
+					'link' => esc_url('http://docs.themegrill.com/spacious/'),
+					'text' => esc_html__('Documentation', 'spacious'),
+				),
+				'demo' => array(
+					'link' => esc_url('http://demo.themegrill.com/spacious/'),
+					'text' => esc_html__('View Demo', 'spacious'),
+				),
+				'rating' => array(
+					'link' => esc_url('http://wordpress.org/support/view/theme-reviews/spacious?filter=5'),
+					'text' => esc_html__('Rate this theme', 'spacious'),
+				),
+			);
 
-      }
+			foreach ( $important_links as $important_link ) {
+				echo '<p><a target="_blank" href="' . $important_link['link'] . '" >' . esc_attr( $important_link['text'] ) . ' </a></p>';
+			}
+		}
+	}
 
-   }
-
-   $wp_customize->add_section('spacious_important_links', array(
-      'priority' => 1,
-      'title' => __('Spacious Important Links', 'spacious'),
-   ));
+	$wp_customize->add_section( 'spacious_important_links', array(
+		'priority' => 1,
+		'title' => __( 'Spacious Important Links', 'spacious' ),
+	) );
 
    /**
     * This setting has the dummy Sanitization function as it contains no value to be sanitized
     */
    $wp_customize->add_setting('spacious_important_links', array(
       'capability' => 'edit_theme_options',
-      'sanitize_callback' => 'spacious_links_sanitize'
+      'sanitize_callback' => 'spacious_false_sanitize'
    ));
 
    $wp_customize->add_control(new Spacious_Important_Links($wp_customize, 'important_links', array(
@@ -90,18 +89,21 @@ function spacious_customize_register($wp_customize) {
       'panel' => 'spacious_header_options'
    ));
 
-   $wp_customize->add_setting($spacious_themename.'[spacious_header_logo_image]', array(
-      'default' => '',
-      'type' => 'option',
-      'capability' => 'edit_theme_options',
-      'sanitize_callback' => 'esc_url_raw'
-   ));
+	if ( ! function_exists( 'the_custom_logo' ) ) {
+	   $wp_customize->add_setting($spacious_themename.'[spacious_header_logo_image]', array(
+	    	'default' => '',
+	      	'type' => 'option',
+	      	'capability' => 'edit_theme_options',
+	      	'sanitize_callback' => 'esc_url_raw'
+	   	));
 
-   $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, $spacious_themename.'[spacious_header_logo_image]', array(
-      'label' => __('Upload logo for your header. Recommended image size is 100 X 100 pixels.', 'spacious'),
-      'section' => 'spacious_header_logo',
-      'setting' => $spacious_themename.'[spacious_header_logo_image]'
-   )));
+   		$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, $spacious_themename.'[spacious_header_logo_image]', array(
+      		'label' => __('Upload logo for your header. Recommended image size is 100 X 100 pixels.', 'spacious'),
+      		'description' => sprintf(__( '%sInfo:%s This option will be removed in upcoming update. Please go to Site Identity section to upload the theme logo.', 'spacious'  ), '<strong>', '</strong>'),
+      		'section' => 'spacious_header_logo',
+      		'setting' => $spacious_themename.'[spacious_header_logo_image]'
+   		)));
+	}
 
    // Header logo and text display type option
    $wp_customize->add_section('spacious_show_option', array(
@@ -400,6 +402,7 @@ function spacious_customize_register($wp_customize) {
       )
    )));
 
+if ( ! function_exists( 'wp_update_custom_css_post' ) ) {
    // Custom CSS setting
    class spacious_Custom_CSS_Control extends WP_Customize_Control {
 
@@ -435,56 +438,59 @@ function spacious_customize_register($wp_customize) {
       'section' => 'spacious_custom_css_setting',
       'settings' => $spacious_themename.'[spacious_custom_css]'
    )));
+  }
    // End of Design Options
 
-   // Start of the Additional Options
-   $wp_customize->add_panel('spacious_additional_options', array(
-      'capabitity' => 'edit_theme_options',
-      'priority' => 510,
-      'title' => __('Additional', 'spacious')
-   ));
+	if ( ! function_exists( 'has_site_icon' ) || ( ! has_site_icon() && ( spacious_options( 'spacious_favicon', '' ) != '' ) ) ) {
+	    // Start of the Additional Options
+	    $wp_customize->add_panel('spacious_additional_options', array(
+	      'capabitity' => 'edit_theme_options',
+	      'priority' => 510,
+	      'title' => __('Additional', 'spacious')
+	    ));
 
-   // Favicon activate option
-   $wp_customize->add_section('spacious_additional_activate_section', array(
-      'priority' => 1,
-      'title' => __('Activate favicon', 'spacious'),
-      'panel' => 'spacious_additional_options'
-   ));
+	    // Favicon activate option
+	    $wp_customize->add_section('spacious_additional_activate_section', array(
+	      'priority' => 1,
+	      'title' => __('Activate favicon', 'spacious'),
+	      'panel' => 'spacious_additional_options'
+	    ));
 
-   $wp_customize->add_setting($spacious_themename.'[spacious_activate_favicon]', array(
-      'default' => 0,
-      'type' => 'option',
-      'capability' => 'edit_theme_options',
-      'sanitize_callback' => 'spacious_checkbox_sanitize'
-   ));
+	    $wp_customize->add_setting($spacious_themename.'[spacious_activate_favicon]', array(
+	      'default' => 0,
+	      'type' => 'option',
+	      'capability' => 'edit_theme_options',
+	      'sanitize_callback' => 'spacious_checkbox_sanitize'
+	    ));
 
-   $wp_customize->add_control($spacious_themename.'[spacious_activate_favicon]', array(
-      'type' => 'checkbox',
-      'label' => __('Check to activate favicon. Upload fav icon from below option', 'spacious'),
-      'section' => 'spacious_additional_activate_section',
-      'settings' => $spacious_themename.'[spacious_activate_favicon]'
-   ));
+	    $wp_customize->add_control($spacious_themename.'[spacious_activate_favicon]', array(
+	      'type' => 'checkbox',
+	      'label' => __('Check to activate favicon. Upload fav icon from below option', 'spacious'),
+	      'section' => 'spacious_additional_activate_section',
+	      'settings' => $spacious_themename.'[spacious_activate_favicon]'
+	    ));
 
-   // Fav icon upload option
-   $wp_customize->add_section('spacious_favicon_upload_section',array(
-      'priority' => 2,
-      'title' => __('Upload favicon', 'spacious'),
-      'panel' => 'spacious_additional_options'
-   ));
+	    // Fav icon upload option
+	    $wp_customize->add_section('spacious_favicon_upload_section',array(
+	      'priority' => 2,
+	      'title' => __('Upload favicon', 'spacious'),
+	      'panel' => 'spacious_additional_options'
+	    ));
 
-   $wp_customize->add_setting($spacious_themename.'[spacious_favicon]', array(
-      'default' => 0,
-      'type' => 'option',
-      'capability' => 'edit_theme_options',
-      'sanitize_callback' => 'esc_url_raw'
-   ));
+	    $wp_customize->add_setting($spacious_themename.'[spacious_favicon]', array(
+	      'default' => 0,
+	      'type' => 'option',
+	      'capability' => 'edit_theme_options',
+	      'sanitize_callback' => 'esc_url_raw'
+	    ));
 
-   $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, $spacious_themename.'[spacious_favicon]', array(
-      'label' => __('Upload favicon for your site.', 'spacious'),
-      'section' => 'spacious_favicon_upload_section',
-      'settings' => $spacious_themename.'[spacious_favicon]'
-   )));
-   // End of Additional Options
+	    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, $spacious_themename.'[spacious_favicon]', array(
+	      'label' => __('Upload favicon for your site.', 'spacious'),
+	      'section' => 'spacious_favicon_upload_section',
+	      'settings' => $spacious_themename.'[spacious_favicon]'
+	    )));
+	    // End of Additional Options
+	}
 
    // Adding Text Area Control For Use In Customizer
    class Spacious_Text_Area_Control extends WP_Customize_Control {
@@ -499,7 +505,6 @@ function spacious_customize_register($wp_customize) {
          </label>
       <?php
       }
-
    }
 
    // Start of the Slider Options
@@ -669,11 +674,9 @@ function spacious_customize_register($wp_customize) {
       return $input;
    }
 
-   // sanitization of links
-   function spacious_links_sanitize() {
+   function spacious_false_sanitize() {
       return false;
    }
-
 }
 add_action('customize_register', 'spacious_customize_register');
 
