@@ -127,6 +127,10 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	Changelog
 -----------------------------------------------------------------------------
 
+Version 1.4.1
+- Updated: Improved escaping in framwork.php.
+- Updated: Unused code removed from extension_customizer.php.
+
 Version 1.4.0
 - Updated: Fully compatible with WordPress v4.7.
 
