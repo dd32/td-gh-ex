@@ -50,7 +50,13 @@ function radiate_body_classes( $classes ) {
 		$classes[] = 'group-blog';
 	}
 
-	if( get_theme_mod( 'radiate_responsive_menu_style', '1' == '1' ) ) {
+	// New Menu Design
+	if ( get_theme_mod( 'radiate_new_menu_enable', '0' ) == 1) {
+		$classes[] = 'full-width-menu';
+	}
+
+	// Better Responsive Menu Design
+	if ( get_theme_mod( 'radiate_responsive_menu_style', '0' ) == 1) {
 		$classes[] = 'better-responsive-menu';
 	}
 
@@ -137,3 +143,23 @@ function radiate_wrapper_start() {
 function radiate_wrapper_end() {
   echo '</div>';
 }
+
+/**
+ * Migrate any existing theme CSS codes added in Customize Options to the core option added in WordPress 4.7
+ */
+function radiate_custom_css_migrate() {
+
+	if ( function_exists( 'wp_update_custom_css_post' ) ) {
+		$custom_css = get_theme_mod( 'radiate_custom_css' );
+		if ( $custom_css ) {
+			$core_css = wp_get_custom_css(); // Preserve any CSS already added to the core option.
+			$return = wp_update_custom_css_post( $core_css . $custom_css );
+			if ( ! is_wp_error( $return ) ) {
+				// Remove the old theme_mod, so that the CSS is stored in only one place moving forward.
+				remove_theme_mod( 'radiate_custom_css' );
+			}
+		}
+	}
+
+}
+add_action( 'after_setup_theme', 'radiate_custom_css_migrate' );

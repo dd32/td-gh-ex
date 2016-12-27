@@ -39,3 +39,9 @@ function header_image_effect() {
 	var scrollPosition = jQuery(window).scrollTop();
 	jQuery('#parallax-bg').css('top', (0 - (scrollPosition * 0.2)) + 'px');
 }
+
+jQuery(document).ready(function() {
+    jQuery('.better-responsive-menu  #site-navigation .menu-toggle').click(function() {
+      jQuery('.better-responsive-menu  #site-navigation .menu-primary-container > ul,.better-responsive-menu  #site-navigation .menu > ul').slideToggle('slow');
+    });
+});
