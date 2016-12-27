@@ -17,9 +17,9 @@ function freedom_customize_register($wp_customize) {
       public function render_content() {
          //Add Theme instruction, Support Forum, Demo Link, Rating Link
          $important_links = array(
-            'upgrade' => array(
-               'link' => esc_url('http://themegrill.com/themes/freedom-pro/'),
-               'text' => __('Upgrade to Pro', 'freedom'),
+            'theme-info' => array(
+               'link' => esc_url('http://themegrill.com/themes/freedom/'),
+               'text' => __('Theme Info', 'freedom'),
             ),
             'support' => array(
                'link' => esc_url('http://themegrill.com/support-forum/'),
@@ -32,7 +32,11 @@ function freedom_customize_register($wp_customize) {
             'demo' => array(
                'link' => esc_url('http://demo.themegrill.com/freedom/'),
                'text' => __('View Demo', 'freedom'),
-            )
+            ),
+            'rating' => array(
+               'link' => esc_url('http://wordpress.org/support/view/theme-reviews/freedom?filter=5'),
+               'text' => __('Rate this theme', 'freedom'),
+            ),
          );
          foreach ($important_links as $important_link) {
             echo '<p><a target="_blank" href="' . $important_link['link'] . '" >' . esc_attr($important_link['text']) . ' </a></p>';
@@ -42,8 +46,8 @@ function freedom_customize_register($wp_customize) {
    }
 
    $wp_customize->add_section('freedom_important_links', array(
-      'priority' => 700,
-      'title' => __('Freedom', 'freedom'),
+      'priority' => 1,
+      'title' => __('Freedom Important Links', 'freedom'),
    ));
 
    /**
@@ -75,18 +79,21 @@ function freedom_customize_register($wp_customize) {
       'panel' => 'freedom_header_options'
    ));
 
-   $wp_customize->add_setting('freedom_header_logo_image', array(
-      'default' => '',
-      'capability' => 'edit_theme_options',
-      'sanitize_callback' => 'esc_url_raw'
-   ));
+	if ( !function_exists('the_custom_logo') || ( get_theme_mod('freedom_header_logo_image', '') != '' ) ) {
+		$wp_customize->add_setting('freedom_header_logo_image', array(
+		  'default' => '',
+		  'capability' => 'edit_theme_options',
+		  'sanitize_callback' => 'esc_url_raw'
+		));
 
-   $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'freedom_header_logo_image', array(
-      'label' => __('Upload logo for your header.', 'freedom'),
-      'section' => 'freedom_header_logo',
-      'setting' => 'freedom_header_logo_image'
-   )));
+		$wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'freedom_header_logo_image', array(
+		  'label' => __('Upload logo for your header.', 'freedom'),
+		  'description' => sprintf(__( '%sInfo:%s This option will be removed in upcoming update. Please go to Site Identity section to upload the theme logo.', 'freedom'  ), '<strong>', '</strong>'),
 
+		  'section' => 'freedom_header_logo',
+		  'setting' => 'freedom_header_logo_image'
+		)));
+	}
    // Header logo and text display type option
    $wp_customize->add_section('freedom_show_option', array(
       'priority' => 2,
@@ -111,6 +118,25 @@ function freedom_customize_register($wp_customize) {
          'none' => __('Disable', 'freedom')
       )
    ));
+
+   // New Responsive Menu
+   $wp_customize->add_section('freedom_new_menu_style', array(
+      'priority' => 3,
+      'title' => esc_html__('Responsive Menu Style', 'freedom'),
+      'panel' => 'freedom_header_options'
+   ));
+   $wp_customize->add_setting('freedom_new_menu', array(
+      'default' => 0,
+      'capability' => 'edit_theme_options',
+      'sanitize_callback' => 'freedom_checkbox_sanitize'
+   ));
+   $wp_customize->add_control('freedom_new_menu', array(
+      'type' => 'checkbox',
+      'label' => esc_html__('Switch to new responsive menu', 'freedom'),
+      'section' => 'freedom_new_menu_style',
+      'settings' => 'freedom_new_menu'
+   ));
+
    // End of Header Options
 
    // Start of the Design Options
@@ -347,41 +373,44 @@ function freedom_customize_register($wp_customize) {
       'settings' => 'freedom_primary_color'
    )));
 
-   // Custom CSS setting
-   class Freedom_Custom_CSS_Control extends WP_Customize_Control {
+	if ( ! function_exists( 'wp_update_custom_css_post' ) ) {
+		// Custom CSS setting
+		class Freedom_Custom_CSS_Control extends WP_Customize_Control {
 
-      public $type = 'custom_css';
+			public $type = 'custom_css';
 
-      public function render_content() {
-      ?>
-         <label>
-            <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-            <textarea rows="5" style="width:100%;" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
-         </label>
-      <?php
-      }
+			public function render_content() {
+			?>
+				<label>
+				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+				<textarea rows="5" style="width:100%;" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
+				</label>
+			<?php
+			}
 
-   }
+		}
 
-   $wp_customize->add_section('freedom_custom_css_setting', array(
-      'priority' => 9,
-      'title' => __('Custom CSS', 'freedom'),
-      'panel' => 'freedom_design_options'
-   ));
+		$wp_customize->add_section('freedom_custom_css_setting', array(
+			'priority' => 9,
+			'title' => __('Custom CSS', 'freedom'),
+			'panel' => 'freedom_design_options'
+		));
 
-   $wp_customize->add_setting('freedom_custom_css', array(
-      'default' => '',
-      'capability' => 'edit_theme_options',
-      'sanitize_callback' => 'wp_filter_nohtml_kses',
-      'sanitize_js_callback' => 'wp_filter_nohtml_kses'
-   ));
+		$wp_customize->add_setting('freedom_custom_css', array(
+			'default' => '',
+			'capability' => 'edit_theme_options',
+			'sanitize_callback' => 'wp_filter_nohtml_kses',
+			'sanitize_js_callback' => 'wp_filter_nohtml_kses'
+		));
 
-   $wp_customize->add_control(new Freedom_Custom_CSS_Control($wp_customize, 'freedom_custom_css', array(
-      'label' => __('Write your custom css.', 'freedom'),
-      'section' => 'freedom_custom_css_setting',
-      'settings' => 'freedom_custom_css'
-   )));
-   // End of Design Options
+		$wp_customize->add_control(new Freedom_Custom_CSS_Control($wp_customize, 'freedom_custom_css', array(
+			'label' => __('Write your custom css.', 'freedom'),
+			'section' => 'freedom_custom_css_setting',
+			'settings' => 'freedom_custom_css'
+		)));
+
+	}
+	// End of Design Options
 
    // Adding Text Area Control For Use In Customizer
    class Freedom_Text_Area_Control extends WP_Customize_Control {
@@ -557,10 +586,47 @@ function freedom_customizer_js() {
 
    wp_localize_script( 'freedom_customizer_script', 'freedom_customizer_obj', array(
 
-      'info' => __( 'Theme Info', 'freedom' ),
       'pro' => __('View PRO version','freedom')
 
    ) );
 }
 add_action( 'customize_controls_enqueue_scripts', 'freedom_customizer_js' );
+
+/*
+ * Custom Scripts
+ */
+add_action( 'customize_controls_print_footer_scripts', 'freedom_customizer_custom_scripts' );
+
+function freedom_customizer_custom_scripts() { ?>
+<style>
+	/* Theme Instructions Panel CSS */
+	li#accordion-section-freedom_important_links h3.accordion-section-title, li#accordion-section-freedom_important_links h3.accordion-section-title:focus { background-color: #46C9BE !important; color: #fff !important; }
+	li#accordion-section-freedom_important_links h3.accordion-section-title:hover { background-color: #46C9BE !important; color: #fff !important; }
+	li#accordion-section-freedom_important_links h3.accordion-section-title:after { color: #fff !important; }
+	/* Upsell button CSS */
+	.themegrill-pro-info,
+	.customize-control-freedom-important-links a {
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8fc800+0,8fc800+100;Green+Flat+%232 */
+		background: #008EC2;
+		color: #fff;
+		display: block;
+		margin: 15px 0 0;
+		padding: 5px 0;
+		text-align: center;
+		font-weight: 600;
+	}
+
+	.customize-control-freedom-important-links a{
+		padding: 8px 0;
+	}
+
+	.themegrill-pro-info:hover,
+	.customize-control-freedom-important-links a:hover {
+		color: #ffffff;
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#006e2e+0,006e2e+100;Green+Flat+%233 */
+		background:#2380BA;
+	}
+</style>
+<?php
+}
 ?>

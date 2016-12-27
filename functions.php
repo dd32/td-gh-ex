@@ -63,6 +63,12 @@ function freedom_setup() {
    // Supporting title tag via add_theme_support (since WordPress 4.1)
    add_theme_support( 'title-tag' );
 
+   // Adds the support for the Custom Logo introduced in WordPress 4.5
+	add_theme_support( 'custom-logo', array(
+		'flex-width' => true,
+		'flex-height' => true,
+	));
+
 	// Registering navigation menu.
 	register_nav_menu( 'primary', 'Primary Menu' );
 
@@ -80,6 +86,9 @@ function freedom_setup() {
 
 	// Adding excerpt option box for pages as well
 	add_post_type_support( 'page', 'excerpt' );
+
+	// Added WooCommerce support.
+   	add_theme_support( 'woocommerce' );
 
    /*
     * Switch default core markup for search form, comment form, and comments
@@ -173,23 +182,14 @@ require_once( FREEDOM_ADMIN_DIR . '/meta-boxes.php' );
 /** Load Widgets and Widgetized Area */
 require_once( FREEDOM_WIDGETS_DIR . '/widgets.php' );
 
-/*
- * Adding Admin Menu for theme options
+/**
+ * Assign the Esteem version to a variable.
  */
-add_action( 'admin_menu', 'freedom_theme_options_menu' );
-function freedom_theme_options_menu() {
-   add_theme_page( 'Theme Options', 'Theme Options', 'manage_options', 'freedom-theme-options', 'freedom_theme_options' );
-}
+$theme            = wp_get_theme( 'freedom' );
+$freedom_version = $theme['Version'];
 
-function freedom_theme_options() {
-   if ( !current_user_can( 'manage_options' ) )  {
-      wp_die( __( 'You do not have sufficient permissions to access this page.', 'freedom' ) );
-   } ?>
-   <h1 class="freedom-theme-options"><?php _e( 'Theme Options', 'freedom' ); ?></h1>
-   <?php
-   printf( __('<p style="font-size: 16px; max-width: 800px";>As our themes are hosted on WordPress repository, we need to follow the WordPress theme guidelines and as per the new guiedlines we have migrated all our Theme Options to Customizer.</p><p style="font-size: 16px; max-width: 800px";>We too think this is a better move in the long run. All the options are unchanged, it is just that they are moved to customizer. So, please use this <a href="%1$s">link</a> to customize your site. If you have any issues then do let us know via our <a href="%2$s">Contact form</a></p>', 'freedom'),
-      esc_url(admin_url( 'customize.php' ) ),
-      esc_url('http://themegrill.com/contact/')
-   );
+/* Calling in the admin area for the Welcome Page */
+if ( is_admin() ) {
+  require get_template_directory() . '/inc/admin/class-freedom-admin.php';
 }
 ?>
