@@ -7,7 +7,8 @@
 .woocommerce button.button, 
 .woocommerce input.button,
 .woocommerce .wc-proceed-to-checkout input,
-.button,
+span.button,
+.post-article span.button,
 .wpcf7-form input[type=submit] ,
 .comment-form input[type=submit] ,
 .contact-form input[type=submit] {
@@ -49,7 +50,8 @@
 .woocommerce button.button:hover, 
 .woocommerce input.button:hover,
 .woocommerce .wc-proceed-to-checkout input:hover,
-.button:hover,
+span.button:hover,
+.post-article span.button:hover,
 .wpcf7-form input[type=submit]:hover ,
 .comment-form input[type=submit]:hover ,
 .contact-form input[type=submit]:hover {

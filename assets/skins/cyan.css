@@ -1,17 +1,21 @@
-.::-moz-selection {
-    background-color: #48c2ae;
-}
-::selection {
-    background-color: #48c2ae;
-}
-
 .header-cart-widget{
     border-top-color: #48c2ae;
 }
+
 .header-cart-widget:before {
     border-bottom-color: #48c2ae;
 }
 
+#back-to-top i.open, 
+#back-to-top i:hover,
+#footer,
+#footer .widget,
+.post-article blockquote,
+span.button,
+.post-article span.button,
+.wpcf7-form input[type=submit],
+.comment-form input[type=submit],
+.contact-form input[type=submit],
 .woocommerce #respond input#submit.alt, 
 .woocommerce a.button.alt, 
 .woocommerce button.button.alt, 
@@ -20,8 +24,7 @@
 .woocommerce #respond input#submit, 
 .woocommerce button.button, 
 .woocommerce input.button,
-.woocommerce .wc-proceed-to-checkout input,
-.button {
+.woocommerce .wc-proceed-to-checkout input {
 	border-color:#48c2ae;
 }
 
@@ -32,24 +35,13 @@
 .woocommerce nav.woocommerce-pagination ul li a:hover,
 #back-to-top i.open, 
 #back-to-top i:hover,
-nav#mainmenu ul li a:hover,
-nav#mainmenu li:hover > a,
-nav#mainmenu ul li.current-menu-item > a, 
-nav#mainmenu ul li.current_page_item > a, 
-nav#mainmenu ul li.current-menu-parent > a, 
-nav#mainmenu ul li.current_page_ancestor > a, 
-nav#mainmenu ul li.current-menu-ancestor > a, 
 .post-container .link:hover,
 .post-container .quote:hover,
 .post-container .link a:hover,
 .wp-pagenavi a:hover,
 .wp-pagenavi span.current,
 .wip-pagination span,
-.wip-pagination a span:hover,
-.skills .views.active,
-.skills .views:hover,
-.filter li:hover,
-.filter li.active {
+.wip-pagination a span:hover {
     background-color: #48c2ae;
 }
 
@@ -73,53 +65,12 @@ nav#mainmenu ul li.current-menu-ancestor > a,
 .woocommerce input.button,
 .woocommerce .wc-proceed-to-checkout input,
 .copyright a,
-nav#mainmenu ul li a:hover,
-nav#mainmenu li:hover > a,
-nav#mainmenu ul li.current-menu-item > a,
-nav#mainmenu ul li.current_page_item > a,
-nav#mainmenu ul li.current-menu-parent > a,
-nav#mainmenu ul li.current_page_ancestor > a,
-nav#mainmenu ul li.current-menu-ancestor > a ,
-.button,
+span.button,
+.post-article span.button,
 .wpcf7-form input[type=submit],
 .comment-form input[type=submit],
 .contact-form input[type=submit] {
     color: #48c2ae;
-}
-
-nav#mainmenu ul ul {
-    border-top-color: #48c2ae;
-}
-
-nav#mainmenu ul ul:before {
-    border-bottom-color: #48c2ae;
-}
-
-nav#mainmenu ul ul li ul {
-    border-top-color: #48c2ae;
-}
-
-
-nav#mainmenu ul ul li a:hover, 
-nav#mainmenu ul ul li:hover > a,
-nav#mainmenu ul ul li.current-menu-item > a,
-nav#mainmenu ul ul li.current_page_item > a, 
-nav#mainmenu ul ul li.current-menu-parent > a, 
-nav#mainmenu ul ul li.current_post_ancestor > a, 
-nav#mainmenu ul ul li.current_page_ancestor > a, 
-nav#mainmenu ul ul li.current-menu-ancestor > a,
-#sidebar .tagcloud a,
-#footer .tagcloud a {
-    background-color: #48c2ae;
-}
-
-nav#mainmenu ul ul li a:hover,
-nav#mainmenu ul ul li.current-menu-item > a,
-nav#mainmenu ul ul li.current_page_item > a,
-nav#mainmenu ul ul li.current_page_ancestor > a,
-nav#mainmenu ul ul li.current_page_ancestor > a,
-nav#mainmenu ul ul li.current-menu-ancestor > a {
-    border-top-color: #48c2ae;
 }
 
 .woocommerce div.product .woocommerce-tabs ul.tabs li.active ,
@@ -140,10 +91,12 @@ nav#mainmenu ul ul li.current-menu-ancestor > a {
 .woocommerce button.button:hover, 
 .woocommerce input.button:hover,
 .woocommerce .wc-proceed-to-checkout input:hover,
-.button:hover,
+span.button:hover,
+.post-article span.button:hover,
 #sidebar .tagcloud a:hover,
 #footer .tagcloud a:hover,
-.button:hover,
+span.button:hover,
+.post-article span.button:hover,
 .wpcf7-form input[type=submit]:hover,
 .comment-form input[type=submit]:hover,
 .contact-form input[type=submit]:hover {
@@ -162,7 +115,8 @@ nav#mainmenu ul ul li.current-menu-ancestor > a {
 .woocommerce button.button:hover, 
 .woocommerce input.button:hover,
 .woocommerce .wc-proceed-to-checkout input:hover,
-.button:hover,
+span.button:hover,
+.post-article span.button:hover,
 .wpcf7-form input[type=submit]:hover,
 .comment-form input[type=submit]:hover,
 .contact-form input[type=submit]:hover {
@@ -182,18 +136,6 @@ a:hover,
 .post-container .title a:hover,
 #logo a:hover {
     color: #48c2ae;
-}
-
-#back-to-top i.open, 
-#back-to-top i:hover,
-#footer,
-#footer .widget,
-.post-article blockquote,
-.button,
-.wpcf7-form input[type=submit],
-.comment-form input[type=submit],
-.contact-form input[type=submit] {
-    border-color: #48c2ae;
 }
 
 #footer .title,
