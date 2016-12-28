@@ -37,20 +37,30 @@ if ( $featured_content_type == 'pages' ) {
 							<a href="<?php the_permalink(); ?>" rel="bookmark">
 							<div class="arouse-fpage-block">
 								
-								<?php 
-									if ( has_post_thumbnail() ) {
-										the_post_thumbnail('arouse-featured');  
-									} else {
-										echo '<img src="' . get_template_directory_uri() . '/images/featured-default.jpg">';									
-									} 
-								?>
+	                            <?php if ( has_post_thumbnail() ) { 
 
-								<?php if ( get_theme_mod( 'display_page_titles', true ) ) : ?>
-									<div class="overlay"></div>
-									<div class="arouse-fpage-title">
-										<h3><?php the_title(); ?></h3>
-									</div>
-								<?php endif; ?>
+	                                $thumb_id           = get_post_thumbnail_id();
+	                                $thumb_url_array    = wp_get_attachment_image_src( $thumb_id, 'arouse-featured' );
+	                                $featured_image_url = $thumb_url_array[0]; 
+
+	                                ?>
+	                                <div class="arouse-fpage-holder" style="background: url(<?php echo esc_url( $featured_image_url ); ?>);">
+	                            <?php } else { ?>
+	                                <div class="arouse-fpage-holder" style="background: url(<?php echo get_template_directory_uri() . '/images/featured-default.jpg' ?>);">
+	                            <?php } ?>	
+
+	                            		<div class="arouse-fpage-content">	
+
+											<?php if ( get_theme_mod( 'display_page_titles', true ) ) : ?>
+												<div class="overlay"></div>
+												<div class="arouse-fpage-title">
+													<h3><?php the_title(); ?></h3>
+												</div>
+											<?php endif; ?>
+
+										</div><!-- .arouse-fpage-content -->
+
+									</div><!-- .arouse-fpage-holder -->
 
 							</div><!-- .arouse-fpage-block -->
 							</a>
@@ -74,7 +84,6 @@ if ( $featured_content_type == 'pages' ) {
 		array (
 			'cat'					=> $fcontent_category,
 			'posts_per_page'		=> 3,
-			'post_type'				=> 'post',
 			'ignore_sticky_posts'	=> true
 		)
 	);
@@ -93,21 +102,31 @@ if ( $featured_content_type == 'pages' ) {
 						<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
 							<a href="<?php the_permalink(); ?>" rel="bookmark">
 							<div class="arouse-fpost-block">
-								
-								<?php 
-									if ( has_post_thumbnail() ) {
-										the_post_thumbnail('arouse-featured');  
-									} else {
-										echo '<img src="' . get_template_directory_uri() . '/images/featured-default.jpg">';									
-									} 
-								?>
 
-								<?php if ( get_theme_mod( 'display_fpost_titles', true ) ) : ?>
-									<div class="overlay"></div>
-									<div class="arouse-fpost-title">
-										<h3><?php the_title(); ?></h3>
-									</div>
-								<?php endif; ?>
+	                            <?php if ( has_post_thumbnail() ) { 
+
+	                                $thumb_id           = get_post_thumbnail_id();
+	                                $thumb_url_array    = wp_get_attachment_image_src( $thumb_id, 'arouse-featured' );
+	                                $featured_image_url = $thumb_url_array[0]; 
+
+	                                ?>
+	                                <div class="arouse-fpost-holder" style="background: url(<?php echo esc_url( $featured_image_url ); ?>);">
+	                            <?php } else { ?>
+	                                <div class="arouse-fpost-holder" style="background: url(<?php echo get_template_directory_uri() . '/images/featured-default.jpg' ?>);">
+	                            <?php } ?>	
+
+	                            		<div class="arouse-fpost-content">							
+
+										<?php if ( get_theme_mod( 'display_fpost_titles', true ) ) : ?>
+											<div class="overlay"></div>
+											<div class="arouse-fpost-title">
+												<h3><?php the_title(); ?></h3>
+											</div>
+										<?php endif; ?>
+
+										</div><!-- .arouse-fpost-content -->
+
+									</div><!-- .arouse-fpost-holder -->
 
 							</div><!-- .arouse-fpost-block -->
 							</a>

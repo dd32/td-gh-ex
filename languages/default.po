@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: arouse.1.0.4\n"
-"POT-Creation-Date: 2016-12-05 15:01+0530\n"
-"PO-Revision-Date: 2016-12-05 15:01+0530\n"
+"Project-Id-Version: arouse.1.0.5\n"
+"POT-Creation-Date: 2016-12-28 10:46+0530\n"
+"PO-Revision-Date: 2016-12-28 10:47+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -67,27 +67,31 @@ msgstr ""
 msgid "Primary"
 msgstr ""
 
-#: functions.php:117
+#: functions.php:110
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:119
+#: functions.php:112
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:126
+#: functions.php:119
+msgid "Shop Page Sidebar"
+msgstr ""
+
+#: functions.php:128
 msgid "Footer Left Sidebar"
 msgstr ""
 
-#: functions.php:135
+#: functions.php:137
 msgid "Footer Mid Sidebar"
 msgstr ""
 
-#: functions.php:144
+#: functions.php:146
 msgid "Footer Right Sidebar"
 msgstr ""
 
-#: functions.php:197 functions.php:203 functions.php:209
+#: functions.php:199 functions.php:205 functions.php:211
 msgid "on"
 msgstr ""
 
@@ -166,7 +170,9 @@ msgid "Slider"
 msgstr ""
 
 #: inc/customizer/customizer.php:29
-msgid "Use this section to setup the homepage slider."
+msgid ""
+"Use this section to setup the homepage slider. Featured images of the posts "
+"of the selected category will be displayed as slider images."
 msgstr ""
 
 #: inc/customizer/customizer.php:48
@@ -271,7 +277,7 @@ msgid "Pick a color for article category links."
 msgstr ""
 
 #: inc/customizer/customizer.php:289
-msgid "Display featured image on single post article ?"
+msgid "Display featured image on single post article?"
 msgstr ""
 
 #: inc/customizer/customizer.php:296

@@ -2,8 +2,8 @@
 
 Tags: grid-layout,right-sidebar,two-columns,custom-logo,custom-background,custom-menu,editor-style,featured-images,footer-widgets,full-width-template,theme-options,threaded-comments,translation-ready,news,blog,entertainment
 Requires at least: 4.0
-Tested up to: 4.6.1
-Stable tag: 1.0.4
+Tested up to: 4.7
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,7 +26,7 @@ Read the documentation at http://themezhut.com/arouse-wordpress-theme-documentat
 
 = Does this theme support any plugins? =
 
-Arouse includes support for Infinite Scroll in Jetpack.
+Arouse supports woocommerce plugin.
 
 == Changelog ==
 
@@ -57,6 +57,16 @@ Arouse includes support for Infinite Scroll in Jetpack.
 * Changed some panel and section arrangements in customizer.
 * Removed unwanted stylings from style.css
 * Edited translation files.
+
+= 1.0.5 - Dec 20 2016 =
+* Changed Screenshot of the theme.
+* Updated image copyright information.
+* Removed by default slider appearance on homepage.
+* Removed by default featured content appearance on homepage.
+* Changed slider.
+* Changed featured content.
+* Added woocommerce support.
+* Updated translation file.
 
 
 == Credits ==
@@ -91,16 +101,16 @@ Resources packed within the theme.
 * Other custom js files are our own creation and is licensed under the same license as this theme. 
 
 Images used in the screenshot.png 
-Image 1 : https://pixabay.com/en/hipster-wander-photographer-photo-865295/
+Image 1 : https://pixabay.com/en/fashion-glasses-go-pro-female-1478810/
 License : Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
 
-Image 2 : https://pixabay.com/en/vw-camper-volkswagen-vw-car-336606/
+Image 2 : https://pixabay.com/en/woman-fashion-female-young-1245922/
 License : Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
 
-Image 3 : https://pixabay.com/en/girl-summer-sun-stroll-sunset-380621/
+Image 3 : https://pixabay.com/en/cream-puff-pastries-bake-1694337/
 License : Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
 
-Image 4 : https://pixabay.com/en/taxi-cab-taxicab-taxi-cab-new-york-238478/
+Image 4 : https://pixabay.com/en/music-headphones-listening-head-791631/
 License : Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
 
 All other resources and theme elements are licensed under the [GNU GPL](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 or later.

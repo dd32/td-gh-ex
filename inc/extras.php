@@ -52,6 +52,46 @@ function arouse_excerpt_more() {
 }
 add_filter( 'excerpt_more', 'arouse_excerpt_more' );
 
+/**
+ * WooCommerce Support
+ */
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+
+add_action('woocommerce_before_main_content', 'arouse_woocommerce_before_main_content', 10);
+add_action('woocommerce_after_main_content', 'arouse_woocommerce_after_main_content', 10);
+
+function arouse_woocommerce_before_main_content() {
+	echo '<div class="container">';
+
+	if ( is_active_sidebar( 'arouse-woocommerce-sidebar' ) ) {
+		echo '<div class="row"><div class="col-xs-12 col-sm-12 col-md-8">';
+	}
+}
+
+function arouse_woocommerce_after_main_content() {
+	
+	echo '</div><!-- .container -->';
+
+	if ( ! is_active_sidebar( 'arouse-woocommerce-sidebar' ) ) {
+		return;
+	}
+
+	?>
+
+	<div class="col-xs-12 col-sm-6 col-md-4">
+		<aside id="secondary" class="widget-area" role="complementary">
+			<?php dynamic_sidebar( 'arouse-woocommerce-sidebar' ); ?>
+		</aside><!-- #secondary -->
+	</div>
+
+	<?php
+
+	echo '</div><!-- .bootstrap-cols --></div><!-- .row -->';
+
+}
+
 
 /**
  * Hooks custom css into the head.
@@ -117,6 +157,31 @@ function arouse_custom_styles() {
 			.comment-author .url,
 			.comment-reply-link,
 			.comment-reply-login {
+				color: '. $primary_color .';
+			}
+			.woocommerce ul.products li.product .star-rating {
+				color: '. $primary_color .';
+			}
+			.woocommerce ul.products li.product h3:hover {
+				color: '. $primary_color .';
+			}
+			.woocommerce-product-search input[type="submit"] {
+				background: '. $primary_color .';
+			}			
+			.woocommerce #respond input#submit,
+			.woocommerce a.button,
+			.woocommerce button.button,
+			.woocommerce input.button {
+				background: '. $primary_color .';
+			}
+			.woocommerce nav.woocommerce-pagination ul li span.current {
+				background: '. $primary_color .';
+			}	
+			.woocommerce .star-rating span {
+				color: '. $primary_color .';
+			}	
+			.woocommerce .posted_in a,
+			a.woocommerce-review-link {
 				color: '. $primary_color .';
 			}';
 

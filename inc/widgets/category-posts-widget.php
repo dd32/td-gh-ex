@@ -117,13 +117,13 @@ class Arouse_Sidebar_Posts extends WP_Widget {
 		<?php if( $latest_posts -> have_posts() ) : ?>	
 			<?php while ( $latest_posts -> have_posts() ) : $latest_posts -> the_post(); ?>
 					<div class="ar-cat-post">
-						<div class="ar-cat-thumb">
-							<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>">	
-								<?php if ( has_post_thumbnail() ) { ?>
+						<?php if ( has_post_thumbnail() ) { ?>
+							<div class="ar-cat-thumb">
+								<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>">	
 									<?php the_post_thumbnail( 'arouse-featured-thumbnail', array('title' => get_the_title()) ); ?>
-								<?php } ?>
-							</a>
-						</div>
+								</a>
+							</div>
+						<?php } ?>
 						<div class="ar-cat-details">
 							<?php the_title( sprintf( '<h3 class="ar-cat-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
 							<p class="ar-cat-meta"><?php the_time('F j, Y'); ?></p>

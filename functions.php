@@ -69,6 +69,7 @@ function arouse_setup() {
 		'default-image' => '',
 	) ) );
 
+	// Declare custom logo support.
 	add_theme_support( 'custom-logo', array(
 		'height'      => 95,
 		'width'       => 200,
@@ -77,7 +78,11 @@ function arouse_setup() {
 		'header-text' => array( 'site-title', 'site-description' ),
 	) );
 
+	// Add editor style.
 	add_editor_style( array( 'css/editor-style.css', arouse_fonts_url() ) );
+
+	// Declare WooCommerce support.
+	add_theme_support( 'woocommerce' );
 
 }
 endif;
@@ -110,6 +115,15 @@ function arouse_widgets_init() {
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
+	register_sidebar( array(
+		'name'          => __( 'Shop Page Sidebar', 'arouse' ),
+		'id'            => 'arouse-woocommerce-sidebar',
+		'description'   => '',
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );	
 	register_sidebar( array(
 		'name'          => __( 'Footer Left Sidebar', 'arouse' ),
 		'id'            => 'footer-left',
@@ -144,7 +158,7 @@ add_action( 'widgets_init', 'arouse_widgets_init' );
  * Enqueue scripts and styles.
  */
 function arouse_scripts() {
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '3.3.6', false );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), '3.3.6', false );
 
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.6.3' );
 

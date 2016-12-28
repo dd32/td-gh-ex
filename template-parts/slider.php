@@ -25,21 +25,33 @@ $slider_posts = new WP_Query( array(
                     <li>
                         <a href="<?php the_permalink(); ?>" rel="bookmark">
                         <div class="arouse-slider-container">
-                        	<div class="overlay"></div>
-                            <?php if ( has_post_thumbnail() ) { ?>
-                                <?php the_post_thumbnail( 'arouse-featured-slider' ); ?>
+                        
+                            <?php if ( has_post_thumbnail() ) { 
+
+                                $thumb_id           = get_post_thumbnail_id();
+                                $thumb_url_array    = wp_get_attachment_image_src( $thumb_id, 'arouse-featured-slider' );
+                                $featured_image_url = $thumb_url_array[0]; 
+
+                                ?>
+                                <div class="arouse-slide-holder" style="background: url(<?php echo esc_url( $featured_image_url ); ?>);">
                             <?php } else { ?>
-                                <img src="<?php echo get_template_directory_uri() . '/images/slide.jpg' ?>">
+                                <div class="arouse-slide-holder" style="background: url(<?php echo get_template_directory_uri() . '/images/slide.jpg' ?>);">
                             <?php } ?>
 
+                                    <div class="arouse-slide-content">
+                                    <div class="overlay"></div>
 
-                            <div class="arouse-slider-details">
-                            	<?php arouse_category_list(); ?>
-                                <a href="<?php the_permalink(); ?>" rel="bookmark"><h3 class="arouse-slider-title"><?php the_title(); ?></h3></a>
-                                <span class="divider"></span>
-                            </div>
+                                        <div class="arouse-slider-details">
+                                            <?php arouse_category_list(); ?>
+                                            <a href="<?php the_permalink(); ?>" rel="bookmark"><h3 class="arouse-slider-title"><?php the_title(); ?></h3></a>
+                                            <span class="divider"></span>
+                                        </div><!-- .arouse-slider-details -->
 
-                        </div>
+                                    </div><!-- .arouse-slide-content -->
+
+                                </div><!-- .arouse-slide-holder -->
+
+                        </div><!-- .arouse-slider-container -->
                         </a>
                     </li>
 
@@ -52,6 +64,6 @@ $slider_posts = new WP_Query( array(
 
                 ?>
             </ul>
-        </div>
-    </section>
+        </div><!-- .flexslider -->
+    </section><!-- .slider -->
 </div><!-- .arouse-slider -->

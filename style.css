@@ -4,11 +4,11 @@ Theme URI: http://themezhut.com/themes/arouse
 Author: ThemezHut
 Author URI: http://themezhut.com
 Description: Arouse is a smart, clean and well coded WordPress theme built for bloggers. This theme can be used for any subject like Technology, Travel, Entertainment, Food and Drink, Holiday, News, etc. You can easily setup your site from theme customizer. Built with bootstrap to display your site responsively on any type of monitors, tabs and mobile phones.
-Version: 1.0.4
+Version: 1.0.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: arouse
-Tags: grid-layout,right-sidebar,two-columns,custom-logo,custom-background,custom-menu,editor-style,featured-images,footer-widgets,full-width-template,theme-options,threaded-comments,translation-ready,news,blog,entertainment
+Tags: grid-layout,right-sidebar,two-columns,custom-logo,custom-background,custom-menu,editor-style,featured-images,footer-widgets,full-width-template,theme-options,threaded-comments,translation-ready,news,e-commerce,blog,entertainment
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -1037,6 +1037,10 @@ a:hover, a:active {
 .widget-area a:hover {
   color: #a58e78;
 }
+.widget-area select {
+  width: 100%;
+  padding: 8px;
+}
 
 .widget_recent_entries ul, .widget_recent_entries ol,
 .widget_pages ul,
@@ -1202,6 +1206,11 @@ a:hover, a:active {
   font-size: 16px;
   margin: 5px;
   border-radius: 30px;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 .arouse-social-links .social-icon:hover {
   background: #333;
@@ -1225,6 +1234,8 @@ a:hover, a:active {
 }
 
 .ar-cat-thumb {
+  width: 100px;
+  height: 80px;
   float: left;
   margin-right: 30px;
   background: #eeeeee;
@@ -1427,20 +1438,27 @@ a:hover, a:active {
 .arouse-slider-container {
   position: relative;
 }
-@media (min-width: 768px) {
-  .arouse-slider-container {
-    min-height: 330px;
-  }
+
+.arouse-slide-holder {
+  position: relative;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
 }
-@media (min-width: 992px) {
-  .arouse-slider-container {
-    min-height: 430px;
-  }
+
+.arouse-slide-holder:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 46.72897196261682%;
 }
-@media (min-width: 1200px) {
-  .arouse-slider-container {
-    min-height: 500px;
-  }
+
+.arouse-slide-holder > .arouse-slide-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .arouse-slider-details {
@@ -1452,6 +1470,7 @@ a:hover, a:active {
   -moz-transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   text-align: center;
+  color: #fff;
 }
 .arouse-slider-details a {
   color: #fff;
@@ -1831,6 +1850,28 @@ article.page {
   opacity: 0.5;
 }
 
+.arouse-fpage-holder {
+  position: relative;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.arouse-fpage-holder:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 72.72727272727273%;
+}
+
+.arouse-fpage-holder > .arouse-fpage-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 .arouse-fpage-title {
   position: absolute;
   top: 50%;
@@ -1879,6 +1920,28 @@ article.page {
 }
 .arouse-fpost-block img {
   width: 100%;
+}
+
+.arouse-fpost-holder {
+  position: relative;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.arouse-fpost-holder:before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: 72.72727272727273%;
+}
+
+.arouse-fpost-holder > .arouse-fpost-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .arouse-fpost-title {
@@ -2327,4 +2390,306 @@ object {
 
 .gallery-caption {
   display: block;
+}
+
+/*--------------------------------------------------------------
+## WooCommerce Stylings
+--------------------------------------------------------------*/
+.woocommerce .page-title {
+  margin: 30px 0;
+}
+
+.woocommerce ul.products li.product,
+.woocommerce-page ul.products li.product {
+  text-align: center;
+}
+
+.woocommerce ul.products li.product .star-rating {
+  color: #a58e78;
+}
+
+.woocommerce ul.products li.product h3 {
+  color: #222222;
+  margin-bottom: 1em;
+}
+.woocommerce ul.products li.product h3:hover {
+  color: #a58e78;
+}
+
+.woocommerce .products .star-rating {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.woocommerce .woocommerce-ordering {
+  margin: 0 0 30px;
+}
+
+.woocommerce .woocommerce-result-count {
+  margin: 10px 0 20px;
+}
+
+.woocommerce select {
+  padding: 8px;
+}
+
+.woocommerce-product-search {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-weight: bold;
+}
+
+.woocommerce-product-search .search-field {
+  display: inline-block;
+  margin: 0;
+  width: 100%;
+  height: 45px;
+  padding: 10px 80px 10px 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+.woocommerce-product-search input[type="submit"]:hover {
+  background: #333333;
+}
+
+.woocommerce-product-search input[type="submit"]:focus {
+  outline: none;
+}
+
+.woocommerce-product-search input[type="submit"] {
+  height: 45px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: bold;
+  background: #a58e78;
+  color: #fff;
+}
+
+.woocommerce ul.products li.product .button {
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.woocommerce #respond input#submit,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button {
+  border: none;
+  background: #a58e78;
+  color: #ffffff;
+  font-size: 12px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  line-height: 1.5;
+  padding: 8px 15px;
+  border-radius: 0;
+}
+
+.woocommerce #respond input#submit:hover,
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce input.button:hover {
+  background: #222;
+  color: #ffffff;
+}
+
+.woocommerce ul.cart_list li,
+.woocommerce ul.product_list_widget li {
+  padding: 10px 0;
+}
+
+.woocommerce .widget_shopping_cart .cart_list li,
+.woocommerce.widget_shopping_cart .cart_list li {
+  margin-top: 10px;
+}
+
+.woocommerce ul.cart_list li img,
+.woocommerce ul.product_list_widget li img {
+  margin-top: 2px;
+  width: 50px;
+}
+
+.woocommerce .widget_shopping_cart .total,
+.woocommerce.widget_shopping_cart .total {
+  padding: 10px 0 0;
+}
+
+/* WC WIDGETS */
+/* Layered Nav */
+.woocommerce-pagination {
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+
+.woocommerce .widget_layered_nav ul li {
+  padding: 8px 0;
+}
+
+/* Average Rating Widget */
+.woocommerce .widget_rating_filter ul li {
+  padding: 8px 0;
+}
+
+/* Woocommerce Pagination */
+.woocommerce nav.woocommerce-pagination ul {
+  border: none;
+}
+
+.woocommerce nav.woocommerce-pagination ul li a,
+.woocommerce nav.woocommerce-pagination ul li span {
+  margin: 0 2px;
+  padding: 10px 15px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.woocommerce nav.woocommerce-pagination ul li a {
+  background: #333333;
+}
+.woocommerce nav.woocommerce-pagination ul li a:focus {
+  background: #888888;
+  color: #ffffff;
+}
+.woocommerce nav.woocommerce-pagination ul li a:hover {
+  background: #888888;
+  color: #ffffff;
+}
+
+.woocommerce nav.woocommerce-pagination ul li span.current {
+  background: #a58e78;
+  color: #ffffff;
+}
+
+.woocommerce nav.woocommerce-pagination ul li {
+  border-right: none;
+}
+
+.woocommerce .page-numbers {
+  background-color: transparent;
+}
+
+/* Woocommerce Product Page */
+.woocommerce .entry-summary {
+  margin-top: 0;
+}
+
+.woocommerce div.product .product_title {
+  margin-bottom: 20px;
+}
+
+.woocommerce .cart input[type="number"] {
+  padding: 0;
+  line-height: 32px;
+  color: #222222;
+  font-weight: bold;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+  border: 1px solid #eeeeee;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs:before {
+  border-bottom: 1px solid #eeeeee;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li:after {
+  box-shadow: -2px 2px 0 #eeeeee;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li:before {
+  box-shadow: -2px 2px 0 #eeeeee;
+}
+
+.woocommerce #reviews #comments ol.commentlist li .comment-text {
+  border: 1px solid #eeeeee;
+}
+
+.woocommerce .star-rating span {
+  color: #a58e78;
+}
+
+.woocommerce div.product .woocommerce-product-rating {
+  margin-bottom: 20px;
+}
+
+.woocommerce div.product p.price,
+.woocommerce div.product span.price {
+  font-size: 15px;
+  font-size: 1.5rem;
+}
+
+.woocommerce .posted_in a,
+a.woocommerce-review-link {
+  color: #a58e78;
+}
+.woocommerce .posted_in a:hover,
+a.woocommerce-review-link:hover {
+  color: #222222;
+}
+
+.woocommerce div.product p.price,
+.woocommerce div.product span.price {
+  color: #3f3f3f;
+}
+
+.woocommerce div.product .woocommerce-tabs .panel {
+  margin: 10px 0 40px;
+  padding: 10px 0 20px;
+}
+.woocommerce div.product .woocommerce-tabs .panel h2 {
+  margin-top: 0;
+}
+
+.woocommerce #reviews #comments ol.commentlist li {
+  margin: 0 0 30px;
+}
+
+.woocommerce #reviews #comments ol.commentlist li .comment-text {
+  margin: 0 0 0 70px;
+  padding: 20px 20px 10px;
+  border-radius: 0;
+}
+
+.woocommerce #reviews #comments ol.commentlist li img.avatar {
+  width: 50px;
+  background: #eeeeee;
+  border: 1px solid #eeeeee;
+  padding: 0;
+}
+
+.woocommerce #reviews h3 {
+  margin: 20px 0;
+}
+
+.woocommerce #review_form .stars {
+  margin-bottom: 0;
+}
+
+.woocommerce #review_form #respond p {
+  margin: 0 0 25px;
+}
+
+.select2-container .select2-choice {
+  border: 1px solid #eee;
+  border-radius: 0;
 }

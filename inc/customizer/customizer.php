@@ -26,7 +26,7 @@ function arouse_customize_register( $wp_customize ) {
     	'arouse_slider', 
     	array(
 			'title' => __( 'Slider', 'arouse' ),
-			'description' => __( 'Use this section to setup the homepage slider.', 'arouse' ),
+			'description' => __( 'Use this section to setup the homepage slider. Featured images of the posts of the selected category will be displayed as slider images.', 'arouse' ),
 			'priority' => 30,
 		) 
 	);
@@ -35,7 +35,7 @@ function arouse_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
 		'display_slider',
 		array(
-			'default'			=> true,
+			'default'			=> false,
 			'sanitize_callback'	=> 'arouse_sanitize_checkbox'
 		)
 	);
@@ -87,7 +87,7 @@ function arouse_customize_register( $wp_customize ) {
     $wp_customize->add_setting(
 		'display_featured_section',
 		array(
-			'default'			=> true,
+			'default'			=> false,
 			'sanitize_callback'	=> 'arouse_sanitize_checkbox'
 		)
 	);
@@ -286,7 +286,7 @@ function arouse_customize_register( $wp_customize ) {
 			'settings'		=> 'show_article_featured_image',
 			'section'		=> 'arouse_theme_options',
 			'type'			=> 'checkbox',
-			'label'			=> __( 'Display featured image on single post article ?', 'arouse' )
+			'label'			=> __( 'Display featured image on single post article?', 'arouse' )
 		)
 	);
 
@@ -294,7 +294,7 @@ function arouse_customize_register( $wp_customize ) {
     	'arouse_theme_info', 
     	array(
 			'title' 		=> __( 'Arouse Theme Info', 'arouse' ),
-			'priority'		=> 125
+			'priority'		=> 160
 		) 
 	);
 
