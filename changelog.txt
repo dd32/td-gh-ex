@@ -1,4 +1,31 @@
 Changelog -----------------------------------
+version:1.448
+
+Overview of Changes
+	Restore the changes to minimize the impact on existing users.
+		"raindrops_page_width" to 'doc3',
+		"raindrops_featured_image_recent_post_count" to 3,
+		"raindrops_featured_image_singular" to "show",
+		"raindrops_place_of_site_title" to "above"
+		"raindrops_style_type" to 'dark'
+
+	If you do not set the widget, please set the sidebar widget.
+
+	Modified Attachment PDF in multibyte lang, Not URL encoded.
+	Fixed Child Theme body class rd-col-(1-3) works improperly.
+	Fixed Add On The event calendar error
+
+Files Modified
+	modified:   functions.php
+	modified:   lib/alias_functions.php
+	modified:   lib/vars.php
+	modified:   plugins/plugins-presentation.php
+	modified:   style.css
+
+Description of Code Changes
+	please see https://themes.trac.wordpress.org/changeset?old_path=raindrops/1.447&new_path=raindrops/1.448
+-----------------------------------------------Changelog -----------------------------------
+Changelog -----------------------------------
 version:1.447
 
 Overview of Changes
