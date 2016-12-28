@@ -13,7 +13,7 @@ if ( ! function_exists( 'hu_setup' ) ) {
 
   function hu_setup() {
      // Load theme languages
-    load_theme_textdomain( HU_THEME_TEXT_DOM, get_stylesheet_directory().'/languages' );
+    load_theme_textdomain( 'hueman', get_stylesheet_directory().'/languages' );
 
     // Enable header image
     // the header image is stored as a theme mod option
@@ -77,27 +77,22 @@ if ( ! function_exists( 'hu_setup' ) ) {
     add_theme_support( 'post-thumbnails' );
     // Enable post format support
     add_theme_support( 'post-formats', array( 'audio', 'aside', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video' ) );
+    // Declare WooCommerce support
+    add_theme_support( 'woocommerce' );
     // Add theme support for selective refresh for widgets.
-    // Only add if the link manager is not enabled
-    // cf WP core ticket #39451
-    if ( ! get_option( 'link_manager_enabled' ) ) {
-      add_theme_support( 'customize-selective-refresh-widgets' );
-    }
+    add_theme_support( 'customize-selective-refresh-widgets' );
 
     // Thumbnail sizes
     add_image_size( 'thumb-small', 160, 160, true );
     add_image_size( 'thumb-standard', 320, 320, true );
     add_image_size( 'thumb-medium', 520, 245, true );
     add_image_size( 'thumb-large', 720, 340, true );
-    add_image_size( 'thumb-xlarge', 980, 450, true );
-    add_image_size( 'thumb-xxlarge', 1320, 500, true );
 
     // Custom menu areas
     register_nav_menus( array(
-      'topbar' => __( 'Topbar', 'hueman' ),
-      'mobile' => __( 'Mobile. You can set a specific menu for mobile devices. If not set, the theme will use the menu assigned to the Topbar, or the Header.', 'hueman' ),
-      'header' => __( 'Header', 'hueman' ),
-      'footer' => __( 'Footer', 'hueman' )
+      'topbar' => 'Topbar',
+      'header' => 'Header',
+      'footer' => 'Footer',
     ) );
   }
 

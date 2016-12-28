@@ -15,11 +15,6 @@ function hu_set_plugins_supported() {
   add_theme_support( 'buddy-press' );
   add_theme_support( 'uris' );///Ultimate Responsive Image Slider
   add_theme_support( 'the-events-calendar' );///Ultimate Responsive Image Slider
-  add_theme_support( 'woocommerce' );///WooCoomerce
-  add_theme_support( 'wc-product-gallery-zoom' );
-  add_theme_support( 'wc-product-gallery-lightbox' );
-  add_theme_support( 'wc-product-gallery-slider' );
-  add_theme_support( 'wp-pagenavi' );///WP PageNavi
 }
 
 
@@ -46,14 +41,6 @@ function hu_plugins_compatibility() {
   /* The Events Calendar */
   if ( current_theme_supports( 'the-events-calendar' ) && hu_is_plugin_active('the-events-calendar/the-events-calendar.php') )
     hu_set_the_events_calendar_compat();
-
-  /* Woocommerce */
-  if ( current_theme_supports( 'woocommerce' ) && hu_is_plugin_active('woocommerce/woocommerce.php') )
-    hu_set_woocommerce_compat();
-
-  /* WP PageNavi */
-  if ( current_theme_supports( 'wp-pagenavi' ) && hu_is_plugin_active('wp-pagenavi/wp-pagenavi.php') )
-    hu_set_wp_pagenavi_compat();
 }
 
 
@@ -164,190 +151,6 @@ function hu_set_the_events_calendar_compat() {
 
 
 /**
-* The Events Calendar compat hooks
-*/
-function hu_set_woocommerce_compat() {
-  //Wrappers
-  remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-  remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
-  add_action('woocommerce_before_main_content', 'hu_theme_wrapper_start', 10);
-  add_action('woocommerce_after_main_content', 'hu_theme_wrapper_end', 10);
-
-  //show hu custom single post meta boxes in product post type
-  add_filter( 'hu_custom_meta_boxes_post_options_in', 'hu_add_woocommerce_custom_meta_boxes_in_product');
-  if ( ! function_exists('hu_add_woocommerce_custom_meta_boxes_in_product') ) {
-    function hu_add_woocommerce_custom_meta_boxes_in_product( $array ) {
-      if ( is_array( $array ) && post_type_exists( 'product' ) )
-        array_push( $array, 'product' );
-      return $array;
-    }
-  }
-
-
-  if ( apply_filters( 'hu_wc_basic_support', false ) ) {
-    return;
-  }
-
-
-
-  //do not show default shop title, we'll do it
-  add_filter( 'woocommerce_show_page_title', '__return_false' );
-
-  add_filter( 'hu_in_wrapper_page_title', 'hu_print_woocommerce_page_title' );
-  if ( ! function_exists('hu_print_woocommerce_page_title') ) {
-    function hu_print_woocommerce_page_title( $title ) {
-      if ( function_exists('is_woocommerce') && is_woocommerce() && function_exists('woocommerce_page_title') ) {
-      ?>
-        <div class="page-title pad group">
-          <?php if ( is_single() ):
-                  global $product;
-                  if ( isset($product) ) :
-                    $review_enabled = get_option( 'woocommerce_enable_review_rating' ) !== 'no';
-                    $review_count   = $review_enabled ? $product->get_review_count() : '';
-                    $product_id     = method_exists( $product, 'get_id' ) ? $product->get_id() : $product->id;
-                    $categories     = function_exists( 'wc_get_product_category_list' ) ? wc_get_product_category_list( $product_id, '<span>/</span>' ) : $product->get_categories( '<span>/</span>' );
-          ?>
-            <ul class="meta-single group">
-              <li class="category category_products"><?php echo $categories ?></li>
-              <?php if ( comments_open() && ( hu_is_checked( 'comment-count' ) ) && $review_enabled ): ?>
-                <li class="comments rewiews"><a href="#reviews" class="woocommerce-review-link" rel="nofollow"><i class="far fa-star"></i><?php echo $review_count ? '<span itemprop="reviewCount" class="count">'.$review_count.'</span>' : '' ?></a></li>
-              <?php endif /*comments_open*/ ?>
-            </ul>
-            <?php endif /*isset( $product )*/ ?>
-          <?php else: ?>
-            <h1><?php woocommerce_page_title() ?></h1>
-          <?php endif ?>
-        </div><!--/.page-title-->
-      <?php
-      }
-    }
-  }
-
-  add_filter( 'hu_in_wrapper_container_class', 'hu_add_woocommerce_context' );
-  if ( ! function_exists( 'hu_add_woocommerce_context' ) ) {
-    function hu_add_woocommerce_context( $classes ) {
-      if ( function_exists('is_woocommerce') && is_woocommerce() ) {
-        array_push( $classes, 'woocommerce' );
-      }
-      return $classes;
-    }
-  }
-
-  //add icons to the tab titles
-  foreach ( array( 'description', 'additional_information', 'reviews' ) as $filter_key ) {
-    add_filter("woocommerce_product_{$filter_key}_tab_title", "hu_wc_{$filter_key}_tab_title" );
-  }
-
-  if ( ! function_exists( 'hu_wc_description_tab_title' ) ) {
-    function hu_wc_description_tab_title( $title ){
-      return '<i class="fas fa-pencil-alt"></i>' . $title;
-    }
-  }
-  if ( ! function_exists( 'hu_wc_additional_information_tab_title' ) ) {
-    function hu_wc_additional_information_tab_title( $title ){
-      return '<i class="fas fa-info"></i>' . $title;
-    }
-  }
-  if ( ! function_exists( 'hu_wc_reviews_tab_title' ) ) {
-    function hu_wc_reviews_tab_title( $title ) {
-      if ( apply_filters( 'hu_wc_experimental_reviews_tab_title', true ) ) {
-        global $product;
-        if ( isset( $product ) ) {
-          $review_count         = isset( $product ) ? $product->get_review_count() : '';
-          $review_count_search  = !empty($review_count) ? "($review_count)" : '';
-          $review_count_replace = !empty($review_count) ? "<span>$review_count</span>" : '';
-
-          $title                = trim( str_replace($review_count_search, '', $title) ) . $review_count_replace;
-        }
-      }
-      return '<i class="fas fa-star"></i>' . $title;
-    }
-  }
-
-  //add specific dynamic style selectors
-  foreach ( array(
-    'primary_color_color',
-    'primary_color_background_color',
-    'primary_color_border_bottom_color',
-    'secondary_color_background_color',
-    )  as $filter_key ) {
-    add_filter( "hu_dynamic_{$filter_key}_prop_selectors", "hu_wc_{$filter_key}_prop_selectors" );
-  }
-
-  if ( ! function_exists( 'hu_wc_primary_color_color_prop_selectors' ) ) {
-    /*
-    * @param array $selectors
-    * return array $selectors
-    */
-    function hu_wc_primary_color_color_prop_selectors( $selectors ) {
-      array_push( $selectors, '.entry.woocommerce div.product .woocommerce-tabs ul.tabs li.active a' );
-      return $selectors;
-    }
-  }
-
-  if ( ! function_exists( 'hu_wc_primary_color_background_color_prop_selectors' ) ) {
-    /*
-    * @param array $selectors
-    * return array $selectors
-    */
-    function hu_wc_primary_color_background_color_prop_selectors( $selectors ) {
-      array_push( $selectors,
-        '.themeform .woocommerce #respond input#submit.alt',
-        '.themeform .woocommerce a.button.alt',
-        '.themeform .woocommerce button.button.alt',
-        '.themeform .woocommerce input.button.alt'
-      );
-      return $selectors;
-    }
-  }
-
-  if ( ! function_exists( 'hu_wc_primary_color_border_bottom_color_prop_selectors' ) ) {
-    /*
-    * @param array $selectors
-    * return array $selectors
-    */
-    function hu_wc_primary_color_border_bottom_color_prop_selectors( $selectors ) {
-      array_push( $selectors, '.entry.woocommerce div.product .woocommerce-tabs ul.tabs li.active a' );
-      return $selectors;
-    }
-  }
-
-  if ( ! function_exists( 'hu_wc_secondary_color_background_color_prop_selectors' ) ) {
-    /*
-    * @param array $selectors
-    * return array $selectors
-    */
-    function hu_wc_secondary_color_background_color_prop_selectors( $selectors ) {
-      array_push( $selectors,
-        '.themeform .woocommerce #respond input#submit',
-        '.themeform .woocommerce a.button',
-        '.themeform .woocommerce button.button',
-        '.themeform .woocommerce input.button'
-      );
-      return $selectors;
-    }
-  }
-
-}
-
-
-/**
-* WP PageNavi compat hoks
-*/
-function hu_set_wp_pagenavi_compat() {
-  /*  WP-PageNavi support - @devinsays (via GitHub)
-  /* ------------------------------------ */
-  if ( ! function_exists( 'hu_deregister_wp_pagenavi_style' ) ) {
-    function hu_deregister_wp_pagenavi_style() {
-      wp_deregister_style( 'wp-pagenavi' );
-    }
-  }
-  add_action( 'wp_print_styles', 'hu_deregister_wp_pagenavi_style', 100 );
-}
-
-
-
-/**
 * HELPER
 * Check whether the plugin is active by checking the active_plugins list.
 * copy of is_plugin_active declared in wp-admin/includes/plugin.php
@@ -380,22 +183,7 @@ function hu_is_plugin_active_for_network( $plugin ) {
   return false;
 }
 
-/*
-/*  Theme's wrappers (used by WooCommerce e.g.)
-/* ------------------------------------ */
-function hu_theme_wrapper_start() {
-  echo '<section class="content">';
-  if ( $page_title = apply_filters( 'hu_in_wrapper_page_title', '' ) )
-    echo $page_title;
-  echo '<div class="pad themeform">';
-  printf( '<div class="%s">', implode(' ', apply_filters( 'hu_in_wrapper_container_class', array('group', 'entry' ) ) ) );
-}
 
-function hu_theme_wrapper_end() {
-  echo '</div>';
-  echo '</div>';
-  echo '</section>';
-}
 
 
 
@@ -412,14 +200,11 @@ function hu_wfc_selector_title( $_list) {
 
   $_hu_list = array(
             'top_menu_items'          => __( 'Top-Menu items' , 'hueman' ),
-            'slider_title'            => __( 'Slider title', 'hueman' ),
-            'slider_subtitle'         => __( 'Slider subtitle', 'hueman' ),
-            'slider_button'           => __( 'Slider button', 'hueman' ),
-            //'marketing'               => __( 'Featured Pages', 'hueman' ),
+            'marketing'               => __( 'Featured Pages', 'hueman' ),
             'single_post_title'       => __( 'Single Post titles' , 'hueman' ),
             'single_page_title'       => __( 'Single Page titles' , 'hueman' ),
-            'post_content'            => __( 'Post/Page content' , 'hueman' ),
-            'post_excerpt'            => __( 'Post/Page excerpt' , 'hueman' ),
+            'post_content'            => __( 'Post content' , 'hueman' ),
+            'post_excerpt'            => __( 'Post excerpt' , 'hueman' ),
             'post_lists'              => __( 'Lists in post/pages' , 'hueman' ),
             'single_category_meta'    => __( 'Single Post Categories meta' , 'hueman' ),
             'single_tag'              => __( 'Single Post tags' , 'hueman' ),
@@ -428,26 +213,64 @@ function hu_wfc_selector_title( $_list) {
             'postlist_category_meta'  => __( 'Post list category meta' , 'hueman' ),
             'single_tags'             => __( 'Single post tags' , 'hueman' ),
             'comment_meta'            => __( 'Comments metas' , 'hueman' ),
+            'sidebars_social_links'   => __( 'Sidebar Social Links' , 'hueman' ),
             'sidebars_top'            => __( 'Sidebar Top Boxes' , 'hueman' ),
             'footer_social_links'     => __( 'Footer Social Links', 'hueman' )
   );
 
   return array_merge( $_list, $_hu_list );
 }
-/*
-* Do not add specific FP zone for the moment
-*/
-//add_filter( 'tc_font_customizer_zone_map', 'hu_wfc_zone_map' );
+
+add_filter( 'tc_font_customizer_zone_map', 'hu_wfc_zone_map' );
 function hu_wfc_zone_map( $zone_map ) {
-
-
   $_hu_zone_map = array(
     'marketing'     => array('full-layout'  , __( 'Featured pages' , 'hueman' ))
   );
   return array_merge( $zone_map, $_hu_zone_map );
-
 }
 
+/*
+* Add self-hosted Font among the WFC WebSafe ones (maybe WFC should have a specific section?!)
+*/
+add_filter( 'tc_font_customizer_cfonts' , 'add_hu_fonts_to_list' );
+function add_hu_fonts_to_list( $original_list ) {
+  $_fonts = array(
+      array( 'name' => 'Titillium,Arial,sans-serif' ,'subsets'=> array() ),
+  );
+
+  return array_merge( $_fonts , $original_list);
+}
+
+
+/*
+* Add/Merge theme specific default selector properties
+*/
+add_filter('tc_selector_properties' , 'hu_selector_properties' );
+function hu_selector_properties( $selector_properties ){
+  $hu_selector_properties     = array(
+              'zone'            => null,
+              'selector'        => null,
+              'not'             => null,
+              'subset'          => null,
+              'font-family'     => 'Titillium,Arial,sans-serif',
+              'font-weight'     => 'normal',
+              'font-style'      => null,
+              'color'           => '#666',
+              'color-hover'     => 'main',
+              'font-size'       => "16px",
+              'line-height'     => "1.5em",
+              'text-align'      => 'inherit',
+              'text-decoration' => 'none',
+              'text-transform'  => 'none',
+              'letter-spacing'  => 0,
+              'static-effect'   => 'none',
+              'icon'            => false,
+              'important'       => false,
+              'title'           => false //used for custom selectors
+  );
+  return array_merge( $selector_properties, $hu_selector_properties );
+}
+/*End WFC Compatibility */
 
 /* FPU Compatibility code */
 /*

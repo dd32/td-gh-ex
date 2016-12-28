@@ -22,39 +22,54 @@ add_action( 'admin_enqueue_scripts', 'hu_post_formats_script');
  *  Loads and instanciates admin pages related classes
 /* ------------------------------------------------------------------------- */
 if ( is_admin() && ! hu_is_customizing() ) {
-    if ( ! defined( 'HU_IS_PRO' ) || ! HU_IS_PRO ) {
-        //Update notice
-        load_template( get_template_directory() . '/functions/admin/class-admin-update-notification.php' );
-        new HU_admin_update_notification;
-    }
-    if ( hu_is_checked('about-page') ) {
-      load_template( get_template_directory() . '/functions/admin/class-admin-page.php' );
-      new HU_admin_page;
-    }
+  //Update notice
+  load_template( get_template_directory() . '/functions/admin/class-admin-update-notification.php' );
+  new HU_admin_update_notification;
+  if ( hu_is_checked('about-page') ) {
+    load_template( get_template_directory() . '/functions/admin/class-admin-page.php' );
+    new HU_admin_page;
+  }
 }
 
 add_action( 'admin_init' , 'hu_admin_style' );
-
+add_action( 'wp_before_admin_bar_render', 'hu_add_help_button' );
 
 function hu_admin_style() {
   wp_enqueue_style(
     'hu-admincss',
     sprintf('%1$sassets/admin/css/hu_admin.css' , HU_BASE_URL ),
     array(),
-    ( defined('WP_DEBUG') && true === WP_DEBUG ) ? time() : HUEMAN_VER
+    HUEMAN_VER
   );
 }
+
+
+function hu_add_help_button() {
+   if ( ! current_user_can( 'edit_theme_options' ) || ! hu_is_checked('help-button') || ! hu_is_checked('about-page') )
+    return;
+  global $wp_admin_bar;
+  $wp_admin_bar->add_menu( array(
+     'parent' => 'top-secondary', // Off on the right side
+     'id' => 'tc-hueman-help' ,
+     'title' =>  __( 'Help' , 'hueman' ),
+     'href' => admin_url( 'themes.php?page=welcome.php&help=true' ),
+     'meta'   => array(
+        'title'  => __( 'Need help with the Hueman theme ? Click here!', 'hueman' ),
+      ),
+   ));
+}
+
 
 
 /* ------------------------------------------------------------------------- *
  *  Loads Required Plugin Class and Setup
 /* ------------------------------------------------------------------------- */
-if ( ! HU_IS_PRO_ADDONS && ! HU_IS_PRO && is_admin() && ! hu_is_customizing() ) {
-    /**
-    * Include the TGM_Plugin_Activation class.
-    */
-    load_template( get_template_directory() . '/functions/admin/class-tgm-plugin-activation.php' );
-    add_action( 'tgmpa_register', 'hu_register_required_plugins' );
+if ( is_admin() && ! hu_is_customizing() ) {
+  /**
+  * Include the TGM_Plugin_Activation class.
+  */
+  load_template( get_template_directory() . '/functions/admin/class-tgm-plugin-activation.php' );
+  add_action( 'tgmpa_register', 'hu_register_required_plugins' );
 }
 
 
@@ -149,14 +164,7 @@ function hu_register_required_plugins() {
 /* ------------------------------------------------------------------------- *
  *  Initialize the meta boxes.
 /* ------------------------------------------------------------------------- */
-//Managing plugins on jetpack's wordpress.com dashboard fix
-//https://github.com/presscustomizr/hueman/issues/541
-//For some reason admin_init is fired but is_admin() returns false
-//so some required OT admin files are not loaded:
-//see OT_Loader::admin_includes() : it returns if not is_admin()
-if ( is_admin() ) {
-    add_action( 'admin_init', 'hu_custom_meta_boxes' );
-}
+add_action( 'admin_init', 'hu_custom_meta_boxes' );
 
 function hu_custom_meta_boxes() {
 
@@ -199,7 +207,7 @@ function hu_custom_meta_boxes() {
       'id'          => 'post-options',
       'title'       => 'Post Options',
       'desc'        => '',
-      'pages'       => apply_filters( 'hu_custom_meta_boxes_post_options_in', array( 'post') ),
+      'pages'       => array( 'post' ),
       'context'     => 'normal',
       'priority'    => 'high',
       'fields'      => array(
@@ -430,89 +438,4 @@ function hu_custom_meta_boxes() {
     ot_register_meta_box( $post_format_quote );
     ot_register_meta_box( $post_format_video );
     ot_register_meta_box( $post_options );
-}
-
-
-if ( is_admin() && ! hu_is_customizing() ) {
-    add_action( 'after_setup_theme' , 'hu_add_editor_style' );
-    //@return void()
-    //hook : after_setup_theme
-    function hu_add_editor_style() {
-        //we need only the relative path, otherwise get_editor_stylesheets() will treat this as external CSS
-        //which means:
-        //a) child-themes cannot override it
-        //b) no check on the file existence will be made (producing the rtl error, for instance : https://github.com/presscustomizr/customizr/issues/926)
-        $_stylesheets = array(
-            'assets/admin/css/editor-style.css',
-            //hu_get_front_style_url(),
-            //get_stylesheet_uri()
-        );
-        $gfont_src = hu_maybe_add_gfonts_to_editor();
-        if ( apply_filters( 'hu_add_user_fonts_to_editor' , false != $gfont_src ) )
-          $_stylesheets = array_merge( $_stylesheets , $gfont_src );
-
-        add_editor_style( $_stylesheets );
-    }
-
-
-    /*
-    * @return css string
-    *
-    */
-    function hu_maybe_add_gfonts_to_editor() {
-      $user_font     = hu_get_option( 'font' );
-      $gfamily       = hu_get_fonts( array( 'font_id' => $user_font, 'request' => 'src' ) );//'Source+Sans+Pro:400,300italic,300,400italic,600&subset=latin,latin-ext',
-      //bail here if self hosted font (titilium) of web font
-      if ( ( empty( $gfamily ) || ! is_string( $gfamily ) ) )
-        return;
-
-      //Commas in a URL need to be encoded before the string can be passed to add_editor_style.
-      return array(
-        str_replace(
-          ',',
-          '%2C',
-          sprintf( '//fonts.googleapis.com/css?family=%s', $gfamily )
-        )
-      );
-    }
-}
-
-add_filter( 'tiny_mce_before_init'  , 'hu_user_defined_tinymce_css' );
-
-/**
-* Extend TinyMCE config with a setup function.
-* See http://www.tinymce.com/wiki.php/API3:event.tinymce.Editor.onInit
-* http://wordpress.stackexchange.com/questions/120831/how-to-add-custom-css-theme-option-to-tinymce
-* @package Customizr
-* @since Customizr 3.2.11
-*
-*/
-function hu_user_defined_tinymce_css( $init ) {
-  if ( ! apply_filters( 'hu_add_custom_fonts_to_editor' , true ) )
-    return $init;
-
-  if ( 'tinymce' != wp_default_editor() )
-    return $init;
-
-  //some plugins fire tiny mce editor in the customizer
-  //in this case, the CZR_resource class has to be loaded
-  // if ( ! class_exists('CZR_resources') || ! is_object(CZR_resources::$instance) ) {
-  //   CZR___::$instance -> czr_fn_req_once( 'inc/czr-init.php' );
-  //   new CZR_resources();
-  // }
-
-  // google / web fonts style
-  $user_font    = hu_get_option( 'font' );
-  $family       = hu_get_fonts( array( 'font_id' => $user_font, 'request' => 'family' ) );//'"Raleway", Arial, sans-serif'
-  $family       = ( empty( $family ) || ! is_string( $family ) ) ? "'Titillium Web', Arial, sans-serif" : $family;
-
-  //maybe add rtl class
-  $_mce_body_context = is_rtl() ? 'mce-content-body.rtl' : 'mce-content-body';
-
-  //fonts
-  $_css = "body.{$_mce_body_context}{ font-family : {$family}; }\n";
-
-  $init['content_style'] = trim( preg_replace('/\s+/', ' ', $_css ) );
-
-  return $init;
 }
