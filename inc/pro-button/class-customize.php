@@ -74,9 +74,9 @@ final class Annina_Updgrade_Pro_Button {
 				'cresta_annina_buy_pro',
 				array(
 					'priority' => 1,
-					'title'    => esc_html__( 'Annina PRO Version', 'annina' ),
-					'pro_text' => esc_html__( 'Go Pro',         'annina' ),
-					'pro_url'  => 'http://crestaproject.com/downloads/annina/'
+					'title'    => esc_html__( 'Annina PRO Theme', 'annina' ),
+					'pro_text' => esc_html__( 'More Info',         'annina' ),
+					'pro_url'  => 'https://crestaproject.com/downloads/annina/'
 				)
 			)
 		);

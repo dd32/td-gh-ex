@@ -12,8 +12,8 @@
 		<div class="site-info content-annina-title annDouble smallPart">
 			<div class="text-copy">
 			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'annina' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'annina' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'annina' ), 'Annina Free', '<a target="_blank" href="http://crestaproject.com/downloads/annina/" rel="nofollow" title="CrestaProject">CrestaProject</a>' ); ?>
+			<span class="sep"> | </span>			
+			<?php printf( __( 'Theme: %1$s by %2$s.', 'annina' ), '<a target="_blank" href="https://crestaproject.com/downloads/annina/" rel="nofollow" title="Annina Theme">Annina Free</a>', 'CrestaProject WordPress Themes' ); ?>
 			</div>
 			<div id="toTop"><i class="fa fa-angle-up fa-lg"></i></div>
 		</div><!-- .site-info -->

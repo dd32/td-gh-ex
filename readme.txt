@@ -48,6 +48,9 @@ two-columns, right-sidebar, responsive-layout, custom-background, custom-menu, c
 3. Log into your WP admin panel and click on the Design tab. Now click on the Annina theme to activate it.
 
 == Changelog ==
+= Version 1.4.5 =
+* Minor bug fixes
+
 = Version 1.4.4 =
 * Updated PRO Version button
 * Updated SmoothScroll to 1.4.6 Version
