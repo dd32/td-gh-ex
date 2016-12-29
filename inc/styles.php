@@ -23,8 +23,6 @@ function astrid_custom_styles($custom) {
 
 	$custom = '';
 
-
-
 	//Menu style
 	$sticky_menu = get_theme_mod('sticky_menu','sticky');
 	if ($sticky_menu == 'static') {
@@ -39,7 +37,7 @@ function astrid_custom_styles($custom) {
 	if ($menu_style == 'centered') {
 		$custom .= ".site-header .container { display: block;}"."\n";
 		$custom .= ".site-branding { width: 100%; text-align: center;margin-bottom:15px;padding-top:15px;}"."\n";
-		$custom .= ".main-navigation { width: 100%;float: none;}"."\n";
+		$custom .= ".main-navigation { width: 100%;float: none; clear:both;}"."\n";
 		$custom .= ".main-navigation ul { float: none;text-align:center;}"."\n";
 		$custom .= ".main-navigation li { float: none; display: inline-block;}"."\n";
 		$custom .= ".main-navigation ul ul li { display: block; text-align: left;}"."\n";
@@ -62,6 +60,7 @@ function astrid_custom_styles($custom) {
 	$menu_bg    = get_theme_mod( 'menu_bg', '#202529' );
 	$menu_rgba 	= astrid_hex2rgba($menu_bg, 0.9);
 	$custom .= ".site-header,.site-header.header-scrolled { background-color:" . esc_attr($menu_rgba) . "}"."\n";
+	$custom .= "@media only screen and (max-width: 1024px) { .site-header.has-header,.site-header.has-video,.site-header.has-single,.site-header.has-shortcode { background-color:" . esc_attr($menu_rgba) . "} }"."\n";
 
 	$body_text = get_theme_mod( 'body_text_color', '#656D6D' );
 	$custom .= "body, .widget-area .widget, .widget-area .widget a { color:" . esc_attr($body_text) . "}"."\n";
@@ -74,7 +73,7 @@ function astrid_custom_styles($custom) {
 	$body_fonts 	= get_theme_mod('body_font_family', 'font-family: \'Open Sans\', sans-serif;');
 	$headings_fonts = get_theme_mod('headings_font_family', 'font-family: \'Josefin Sans\', sans-serif;');
 	$custom 		.= "body {" . wp_kses_post($body_fonts) . "}"."\n";
-	$custom 		.= "h1, h2, h3, h4, h5, h6, .fact .fact-number, .fact .fact-name {" . wp_kses_post($headings_fonts) . "}"."\n";
+	$custom 		.= "h1, h2, h3, h4, h5, h6, .fact .fact-number, .fact .fact-name, .site-title {" . wp_kses_post($headings_fonts) . "}"."\n";
 
     $site_title_size = get_theme_mod( 'site_title_size', '36' );
     $custom .= ".site-title { font-size:" . intval($site_title_size) . "px; }"."\n";

@@ -58,6 +58,7 @@ function astrid_customize_register( $wp_customize ) {
             'description' => __('Select the header type for your front page', 'astrid'),
             'choices' => array(
                 'image'     => __('Image', 'astrid'),
+                'video'     => __('Video', 'astrid'),
                 'nothing'   => __('Only menu', 'astrid')
             ),
         )
@@ -79,6 +80,7 @@ function astrid_customize_register( $wp_customize ) {
             'description' => __('Select the header type for all pages except the front page', 'astrid'),
             'choices' => array(
                 'image'     => __('Image', 'astrid'),
+                'video'     => __('Video', 'astrid'),               
                 'nothing'   => __('Only menu', 'astrid')
             ),
         )
@@ -859,7 +861,7 @@ add_action( 'customize_register', 'astrid_customize_register' );
  */
 //Header type
 function astrid_sanitize_header( $input ) {
-    if ( in_array( $input, array( 'image', 'shortcode', 'nothing' ), true ) ) {
+    if ( in_array( $input, array( 'image', 'shortcode', 'video', 'nothing' ), true ) ) {
         return $input;
     }
 }

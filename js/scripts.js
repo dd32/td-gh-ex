@@ -4,24 +4,24 @@ jQuery(function($) {
 	$('.sub-menu').hide();
 	$('.main-navigation .children').hide();
 
-	if ( matchMedia( 'only screen and (min-width: 1024px)' ).matches ) {
-		$('.menu-item').hover( 
-			function() {
-				$(this).children('.sub-menu').fadeIn().addClass('submenu-visible');
-			}, 
-			function() {
-				$(this).children('.sub-menu').fadeOut().removeClass('submenu-visible');
-			}
-		);
-		$('.main-navigation li').hover( 
-			function() {
-				$(this).children('.main-navigation .children').fadeIn().addClass('submenu-visible');
-			}, 
-			function() {
-				$(this).children('.main-navigation .children').fadeOut().removeClass('submenu-visible');
-			}
-		);	
-	}
+		if ( matchMedia( 'only screen and (min-width: 1280px)' ).matches ) {
+			$('.menu-item').hover( 
+				function() {
+					$(this).children('.sub-menu').fadeIn().addClass('submenu-visible');
+				}, 
+				function() {
+					$(this).children('.sub-menu').fadeOut().removeClass('submenu-visible');
+				}
+			);
+			$('.main-navigation li').hover( 
+				function() {
+					$(this).children('.main-navigation .children').fadeIn().addClass('submenu-visible');
+				}, 
+				function() {
+					$(this).children('.main-navigation .children').fadeOut().removeClass('submenu-visible');
+				}
+			);	
+		}
 });
 
 //Open social links in a new tab
@@ -32,6 +32,26 @@ jQuery(function($) {
 //Fit Vids
 jQuery(function($) {
     $("body").fitVids();  
+});
+
+//Video header
+jQuery(function($) {
+    var testMobile;
+    var isMobile = {
+        iOS: function() {
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        },
+    };
+
+    testMobile = isMobile.iOS(); 
+	$(window).on('ready load', function () {
+		$('#wp-custom-header').fitVids();
+			
+		if (testMobile != null) {
+			$('#wp-custom-header-video-button').css('opacity', '0');
+			$('#wp-custom-header-video').prop('controls',true); 
+		}	
+	});
 });
 
 //Menu bar
@@ -114,7 +134,7 @@ jQuery(function($) {
 		$(window).on('load resize', function() {
 			var currMenuType = 'desktop';
 
-			if ( matchMedia( 'only screen and (max-width: 1024px)' ).matches ) {
+			if ( matchMedia( 'only screen and (max-width: 1280px)' ).matches ) {
 				currMenuType = 'mobile';
 			}
 

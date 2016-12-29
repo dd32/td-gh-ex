@@ -25,9 +25,22 @@ function astrid_custom_header_setup() {
 		'default-image'          => get_template_directory_uri() . '/images/header.jpg',
 		'default-text-color'     => '000000',
 		'width'                  => 1920,
-		'height'                 => 800,
+		'height'                 => 1080,
+		'video'					 => true,
+		'video-active-callback'  => '',	
 		'flex-height'            => true,
 		'wp-head-callback'       => '',
 	) ) );
 }
 add_action( 'after_setup_theme', 'astrid_custom_header_setup' );
+
+/**
+ * Video header settings
+ */
+function astrid_video_settings( $settings ) {
+	$settings['minWidth'] 		= '200';
+	$settings['minHeight'] 		= '200';	
+	
+	return $settings;
+}
+add_filter( 'header_video_settings', 'astrid_video_settings' );

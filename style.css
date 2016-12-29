@@ -4,7 +4,7 @@ Theme URI: http://athemes.com/theme/astrid
 Author: aThemes
 Author URI: http://athemes.com
 Description: Astrid can help you to quickly create an awesome business website. All the features you need are waiting for you in this business theme: color options, fonts, full width header image, custom widgets, blog options and many other interesting and useful options.
-Version: 1.12
+Version: 1.13
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: astrid
@@ -354,6 +354,8 @@ select {
 	font-size: 20px;
 	text-align: center;
 	cursor: pointer;
+	padding: 10px;
+	margin-left: 10px;
 }
 .btn-submenu:before {
 	content: "\f107";
@@ -374,6 +376,7 @@ select {
 #mainnav-mobi a {
 	padding-left: 15px;
 	padding-right: 15px;
+	width: auto;
 }
 #mainnav-mobi li {
 	display: block;
@@ -1455,6 +1458,8 @@ section.at-3-col {
 .site-title {
 	font-size: 36px;
 	margin: 0;
+	letter-spacing: 1px;
+	line-height: 1.1;
 }
 .site-title a,
 .site-title a:hover {
@@ -1551,7 +1556,8 @@ body.page-template-page_widgetized {
 	transition: all 0.5s;	
 	border-bottom: 1px solid rgba(255,255,255,0.1);
 }
-.site-header.has-header {
+.site-header.has-header,
+.site-header.has-video {
 	background-color: transparent;
 }
 .site-header.header-scrolled {
@@ -2070,9 +2076,42 @@ body.page-template-page_widgetized {
 .woocommerce div.product form.cart .variations td.label {
     padding-top: 20px;
 }
+/* Core video
+-------------------------------------------------------------- */
+.wp-custom-header video {
+	display: block;
+	height: auto;
+	max-width: 100%;
+	width: 100%;
+}
+.wp-custom-header iframe {
+	vertical-align: top;
+}
+
+.wp-custom-header {
+	position: relative;
+}
+.wp-custom-header .wp-custom-header-video-button {
+	position: absolute;
+	bottom: 30px;
+	right: 30px;
+}
+
+.wp-custom-header .wp-custom-header-video-button:focus {
+	outline: none;
+}
 /*--------------------------------------------------------------
 ## Responsive
 --------------------------------------------------------------*/
+@media only screen and (max-width: 1280px) {
+	.main-navigation {
+		display: none;
+	}	
+	.mobile-nav,
+	.btn-menu {
+		display: block;
+	}	
+}
 @media only screen and (max-width: 1199px) {
 	.woocommerce .content-area {
 		width: 610px;
@@ -2122,8 +2161,7 @@ body.page-template-page_widgetized {
 		display: none;
 	}	
 	.mobile-nav,
-	.small-header,
-	.btn-menu {
+	.small-header {
 		display: block;
 	}
 	.site-header .container {
@@ -2137,6 +2175,8 @@ body.page-template-page_widgetized {
 		text-align: center;
 		width: 100%;
 	}
+	.site-header.has-single,
+	.site-header.has-video,
 	.site-header.has-header {
 		position: relative;
 		background-color: #202529;
@@ -2301,6 +2341,9 @@ body.page-template-page_widgetized {
 		width: 100%;
 		margin-bottom: 30px;
 	}
+	.fluid-width-video-wrapper + #wp-custom-header-video-button {
+		display: none;
+	}		
 }
 @media only screen and (max-width: 500px) {
 	.project {

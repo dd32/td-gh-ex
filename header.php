@@ -43,7 +43,8 @@
 		</div>
 	</header><!-- #masthead -->
 
-	<?php if ( astrid_has_header() == 'has-header' ) : ?>
+	<?php $astrid_has_header = astrid_has_header(); ?>
+	<?php if ( $astrid_has_header == 'has-header' ) : ?>
 	<div class="header-image">
 		<?php astrid_header_text(); ?>
 		<img class="large-header" src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" alt="<?php bloginfo('name'); ?>">
@@ -56,11 +57,16 @@
 		<img class="small-header" src="<?php header_image(); ?>" width="1024" alt="<?php bloginfo('name'); ?>">
 		<?php endif; ?>
 	</div>
-	<?php elseif ( astrid_has_header() == 'has-shortcode' ) : ?>
+	<?php elseif ( $astrid_has_header == 'has-shortcode' ) : ?>
 	<div class="shortcode-area">
 		<?php $shortcode = get_theme_mod('astrid_shortcode'); ?>
 		<?php echo do_shortcode(wp_kses_post($shortcode)); ?>
 	</div>
+	<?php elseif ( $astrid_has_header == 'has-video' ) : ?>
+		<?php the_custom_header_markup(); ?>
+	<?php elseif ( $astrid_has_header == 'has-single' ) : ?>
+		<?php $single_toggle = get_post_meta( $post->ID, '_astrid_single_header_shortcode', true ); ?>
+		<?php echo do_shortcode(wp_kses_post($single_toggle)); ?>
 	<?php else : ?>
 	<div class="header-clone"></div>
 	<?php endif; ?>	
