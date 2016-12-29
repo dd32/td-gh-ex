@@ -23,7 +23,11 @@ get_header(); ?>
 			'orderby' => 'date',
 			'order' => 'DESC',
 			'paged' => $paged,
-			);
+		);
+
+		if(has_filter('bellini_template_blog_args')) {
+			$args = apply_filters('bellini_template_blog_args', $args);
+		}
 
 		$wp_query = null;
 		$wp_query = new WP_Query();

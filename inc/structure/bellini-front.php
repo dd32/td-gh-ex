@@ -1,6 +1,4 @@
 <?php
-
-
 /*--------------------------------------------------------------
 ## Bellini Hero Image
 --------------------------------------------------------------*/
@@ -155,6 +153,10 @@ if($bellini['bellini_show_frontpage_woo_products_featured'] == true) :
 		'no_found_rows' => true,
 	);
 
+	if(has_filter('bellini_front_featured_product_args')) {
+		$args = apply_filters('bellini_front_featured_product_args', $args);
+	}
+
 	// Set the Loop Arguments
 	$loop = new WP_Query( $args );
 
@@ -265,6 +267,10 @@ if($bellini['bellini_show_frontpage_woo_products'] == true) :
 			'product_cat' => esc_html( $bellini['bellini_woo_category_selector']),
 		);
 
+		if(has_filter('bellini_front_woo_product_args')) {
+			$args = apply_filters('bellini_front_woo_product_args', $args);
+		}
+
 
 		$loop = new WP_Query( $args );
 		if ( $loop->have_posts() ) { ?>
@@ -340,7 +346,11 @@ if($bellini['bellini_show_frontpage_blog_posts'] == true) : ?>
 			'posts_per_page' 	=> 6,
 			'orderby' 			=> 'date',
 			'order' 			=> 'DESC',
-			);
+		);
+
+		if(has_filter('bellini_front_blog_post_args')) {
+			$args = apply_filters('bellini_front_blog_post_args', $args);
+		}
 
 		$loop = new WP_Query( $args );
 		if ( $loop->have_posts() ) {

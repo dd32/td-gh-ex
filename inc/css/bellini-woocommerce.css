@@ -419,7 +419,7 @@
 }
 
 .front__product-featured__text {
-    padding: 3% 5%;
+    padding: 2em 1em;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     background-color: #fff;
@@ -914,9 +914,9 @@
     width: 100%;
 }
 
-.woocommerce div.product .woocommerce-tabs .panel{padding:1.4em .9em;}
+.woocommerce div.product .woocommerce-tabs .panel{padding:1em;}
 
-.woocommerce-Tabs-panel--reviews #comments{width:55%; float:left; padding:1.5em 2em 1em .5em;}
+.woocommerce-Tabs-panel--reviews #comments{width:55%; float:left; padding:1em;}
 .woocommerce-Tabs-panel--reviews #review_form_wrapper{width:45%; float:left; padding:2.5em .5em 1em 2em;}
 
 .woocommerce .widget_shopping_cart .cart_list li,
@@ -934,6 +934,10 @@
 }
 
 @media all and (max-width:500px){
+
+    .woocommerce #reviews #comments ol.commentlist {padding:0;}
+    .woocommerce div.product .woocommerce-tabs .panel{padding:.5em;}
+    ul.single-item--featured.slick-initialized.slick-slider {padding: 0;}
 
 table.shop_table_responsive tbody th,
 table.shop_table_responsive thead {
@@ -1085,3 +1089,6 @@ mark.count {
 .woocommerce nav.woocommerce-pagination ul li span{
     padding:.5em 1em;
 }
+
+.woocommerce-Reviews-title{padding-bottom: .5em;}
+.woocommerce div.product .woocommerce-tabs ul.tabs {margin: 0;}

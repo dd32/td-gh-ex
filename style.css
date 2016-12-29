@@ -4,7 +4,7 @@ Theme URI: https://atlantisthemes.com/
 Author: Pangolin
 Author URI: https://twitter.com/ti_asif
 Description: Bellini is the perfect theme for creating a eCommerce store or shop. Responsive & flexible layout built with Bootstrap. Customize anything like Google Fonts, Color, Layout, logo upload, full-screen slider, header image and much more.Built with SEO in mind and has Structured Data (Schema) implemented. If you are looking for a beautiful theme with out of the box SEO compatibility & responsiveness, look no further! Check out the live demo at http://demo.atlantisthemes.com/front-page/
-Version: 1.38.6
+Version: 1.38.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bellini
@@ -849,15 +849,10 @@ object {
 /*--------------------------------------------------------------
 ## Title
 --------------------------------------------------------------*/
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-top: 0;
-  margin-bottom: .5rem;
-  clear: both;
+h1,h2,h3,h4,h5,h6 {
+    margin-top: .8em;
+    margin-bottom: .8em;
+    clear: both;
 }
 
 .element-title {
@@ -1258,8 +1253,8 @@ h6 {
 }
 
 .single-post__body {
-    margin-top: 1%;
-    padding-top: 2%;
+    margin-top: 2em;
+    padding-top: 1em;
     padding-bottom: 4%;
     border-top: 1px solid rgba(0,0,0,.1);
     word-break: break-word;
@@ -1450,9 +1445,7 @@ h6 {
 .slider__cta--one,
 .slider__cta--two {
     display: inline-block;
-    margin-top: 4%;
-    padding: 1.5% 10%;
-    text-transform: uppercase;
+    padding: 1.5% 5%;
     transition: all .3s linear;
     border-radius: 4px;
     margin:0 .6em;
@@ -2050,7 +2043,7 @@ Hamburger Menu
     display: block;
     position: relative;
     margin: 0 0 1.5em;
-    padding: 0 10% 10% 10%;
+    padding:10%;
     border-radius: .125em;
     overflow: hidden;
     -ms-border-radius: .125em;
@@ -2443,12 +2436,13 @@ Hamburger Menu
     padding-top:0;
 }
 
-
+#primary-menu {margin-top: 1em;}
 
 /* Media Queries
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
     @media(max-width:550px) {
+    #primary-menu{padding:0;}
     .site-branding {text-align: center;}
     .menu-toggle {margin: 0 auto !important;}
     .single-post__header{width: 100%;}
@@ -2457,6 +2451,7 @@ Hamburger Menu
         margin-top: 1.5em;
         background-color: transparent;
     }
+    .sub-menu {padding-left: .1rem;}
 
     .bellini__canvas {padding: 2.5rem;}
     .widget-area--right,

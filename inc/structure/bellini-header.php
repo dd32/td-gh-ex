@@ -240,28 +240,28 @@ function bellini_core_header(){
 	if ( $bellini['bellini_header_menu_layout'] === 1 ):
 
 		if ( $bellini['bellini_menu_layout'] == 'hamburger' ):?>
-			<div class="site-branding col-md-6"><?php bellini_header_logo();?></div>
-			<div class="col-md-6 text-right"><?php bellini_header_menu();?></div>
+			<div class="site-branding col-md-6 header--one__logo"><?php bellini_header_logo();?></div>
+			<div class="col-md-6 text-right header--one__menu"><?php bellini_header_menu();?></div>
 		<?php else:?>
-			<div class="site-branding col-md-4"><?php bellini_header_logo();?></div>
-			<div class="col-md-8 text-right"><?php bellini_header_menu();?></div>
+			<div class="site-branding col-md-4 header--one__logo"><?php bellini_header_logo();?></div>
+			<div class="col-md-8 text-right header--one__menu"><?php bellini_header_menu();?></div>
 		<?php endif; ?>
 	<?php endif; ?>
 
 	<?php if ( $bellini['bellini_header_menu_layout'] === 2 ):
 			if ( $bellini['bellini_menu_layout'] == 'hamburger' ):?>
-				<div class="col-md-6"><?php bellini_header_menu();?></div>
-				<div class="site-branding col-md-6 text-right"><?php bellini_header_logo();?></div>
+				<div class="col-md-6 header--two__menu"><?php bellini_header_menu();?></div>
+				<div class="site-branding col-md-6 text-right header--two__logo"><?php bellini_header_logo();?></div>
 			<?php else:?>
-				<div class="col-md-8"><?php bellini_header_menu();?></div>
-				<div class="site-branding col-md-4 text-right"><?php bellini_header_logo();?></div>
+				<div class="col-md-8 header--two__menu"><?php bellini_header_menu();?></div>
+				<div class="site-branding col-md-4 text-right header--two__logo"><?php bellini_header_logo();?></div>
 		<?php endif; ?>
 	<?php endif; ?>
 
 	<?php if ( $bellini['bellini_header_menu_layout'] === 3 ): ?>
-		<div class="site-branding col-md-2"><?php bellini_header_logo();?></div>
-		<div class="col-md-8 text-center"><?php bellini_header_menu();?></div>
-		<div class="col-md-2"><?php bellini_other_header_items();?></div>
+		<div class="site-branding col-md-2 header--three__logo"><?php bellini_header_logo();?></div>
+		<div class="col-md-8 text-center header--three__menu"><?php bellini_header_menu();?></div>
+		<div class="col-md-2 header--three__other"><?php bellini_other_header_items();?></div>
 	<?php endif; ?>
 
 <?php }

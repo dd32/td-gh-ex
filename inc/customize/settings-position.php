@@ -217,7 +217,7 @@
 			    'priority'   	=> 2,
 			    'type'       	=> 'radio',
 					'choices'    => array(
-						'header__general'   => esc_html__( 'General', 'bellini' ),
+						'header__general'   => esc_html__( 'Colored', 'bellini' ),
 						'header__trans'  	=> esc_html__( 'Transparent', 'bellini' ),
 					),
 			)
