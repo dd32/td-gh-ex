@@ -4,7 +4,7 @@ Theme URI: http://www.tenman.info/wp3/raindrops/
 Description: This theme can change freely fonts,layout,color scheme and header image for each post,page. The google fonts, you can use freely in the post more than 90percent of the fonts.Color scheme and layout, you can freely change from theme customizer.For more updates, please make sure to open the link of the changelog from the help tab of this theme page.Add new post, so also to help tab of edit post page has been described how to use tips, please visit. Supported languages Japanese - JAPAN (ja) French - FRANCE (fr_FR) Polish - POLAND (PL) (pl_PL) Portuguese - BRAZIL (pt_BR)
 Author: Tenman
 Author URI: http://www.tenman.info/wp3/
-Version: 1.448
+Version: 1.449
 Tags: one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, post-formats, featured-images, full-width-template, rtl-language-support, microformats
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -624,6 +624,7 @@ pre,
 .hentry embed,
 ul.archive,
 ul.index,
+.calendar_wrap,
 #calendar_wrap,
 .wp-caption,
 .format-status ul.categoryblog *,
@@ -1828,7 +1829,18 @@ ul.index li .edit {
     list-style-type:none;
     min-height:2em;
     margin:0 0 0 0;
-    padding:.5em 0 0 .5em;
+    padding:.5em 0 0 .4em;
+}
+.rd-type-minimal .widget_archive li,
+.rd-type-minimal .widget_archive li{
+    letter-spacing:-.03em;
+
+}
+.rd-type-minimal li.widget_archive ul li a,
+.rd-type-minimal li.widget_archive ul li a{
+    margin-top:0;
+    padding-top:0;
+    padding-bottom:0;
 }
 .topsidebar ul li ul li{
     padding:0;
@@ -2103,18 +2115,21 @@ br.clearfix {
 .vevent {
     padding:1em;
 }
-
+.calendar_wrap,
 #calendar_wrap{
     text-align:center;
     margin-left:0.15384615384em;
 }
+.calendar_wrap table,
 #calendar_wrap table{
     margin:0 auto;
 }
+.calendar_wrap a,
 #calendar_wrap a{
     margin:0;
     padding:0;
 }
+
 #wp-calendar caption{
     margin:1em 0;
     text-align:center;
@@ -2124,12 +2139,15 @@ br.clearfix {
     text-decoration:underline;
     white-space:nowrap;
 }
+
 #wp-calendar tfoot td{
     border:none;
 }
+
 #wp-calendar tfoot #prev{
     text-align:left;
 }
+.calendar_wrap td,
 #calendar_wrap td{
     position:static;
     text-align:center;
@@ -2138,6 +2156,7 @@ br.clearfix {
     overflow-wrap: normal;
 
 }
+#ft .calendar_wrap td,
 #ft #calendar_wrap td{
     position:static;
     text-align:center;
