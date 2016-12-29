@@ -32,6 +32,8 @@
 			'blog_count'=>'3',
 			'upload_image_favicon'=>'',			
 			'custom_css'=>'',
+
+			'slider_image_speed' => '',
 			'slide_image_1' => $ImageUrl,
 			'slide_title_1' => __('Slide Title', 'enigma' ),
 			'slide_desc_1' => __('Lorem Ipsum is simply dummy text of the printing', 'enigma' ),

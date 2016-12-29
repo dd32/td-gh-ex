@@ -151,6 +151,32 @@ $wp_customize->add_section(
 			'active_callback' => 'is_front_page',
         )
     );
+
+
+
+    //
+
+		$wp_customize->add_setting(
+		'enigma_options[slider_image_speed]',
+		array(
+			'type'    => 'option',
+			'default'=>$wl_theme_options['slider_image_speed'],
+			'sanitize_callback'=>'enigma_sanitize_text',
+			'capability'        => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control( 'enigma_slider_speed', array(
+		'label'        => __( 'Slider Speed Option', 'enigma' ),
+		'description' => 'Value will be in milliseconds',
+		'type'=>'text',
+		'section'    => 'slider_sec',
+		'settings'   => 'enigma_options[slider_image_speed]',
+	) );
+
+
+    //
+
+
 	$wp_customize->add_setting(
 		'enigma_options[slide_image_1]',
 		array(

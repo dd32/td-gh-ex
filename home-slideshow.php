@@ -2,7 +2,24 @@
     ================================================== -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner">
-	  <?php $wl_theme_options = weblizar_get_options(); $j=1;
+	  <?php $wl_theme_options = weblizar_get_options(); 
+$wl_theme_options['slider_image_speed'];
+	  if($wl_theme_options['slider_image_speed']!='')
+	{
+		
+	echo '<script type="text/javascript">
+		jQuery(document ).ready(function( $ ) {
+		jQuery("#myCarousel" ).carousel({
+			interval:'.$wl_theme_options['slider_image_speed'].'
+
+		    });
+	   });
+	</script>';
+	 
+	} 
+
+
+	  $j=1;
 			for($i=1; $i<=3; $i++){  ?>
 			<?php if($wl_theme_options['slide_image_'.$i]!='') { 
               			?>

@@ -5,6 +5,8 @@ Consider weblizar PRE-Fix for function-name and as a slug of the Theme Enigma.
 Enigma
 
 CHANGE-LOG:
+@Version: 2.8.1 [29/12/2016]
+1. Slider interval added.
 
 @Version: 2.8 [22/12/2016]
 1. Custom-header image added.
