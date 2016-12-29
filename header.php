@@ -12,20 +12,16 @@ $top_mag_options = get_option( 'topmag_theme_options' );
 <html class="ie ie8" <?php language_attributes(); ?>>
 <![endif]-->
 <!--[if !(IE 7) | !(IE 8)  ]><!-->
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?> class="no-js no-svg">
 <!--<![endif]-->
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width">
-<title>
-<?php wp_title(); ?>
-</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php if(!empty($top_mag_options['favicon'])) { ?>
 <link rel="shortcut icon" href="<?php echo esc_url($top_mag_options['favicon']);?>">
-<?php } ?>
-<?php wp_head(); ?>
+<?php }  
+wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>

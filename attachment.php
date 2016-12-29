@@ -18,7 +18,7 @@ get_header(); ?>
     <div class="col-md-12 singleblog-img no-padding singleblog-contan">
       <?php $top_mag_featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' ); 
 			 if($top_mag_featured_image[0] != '') { ?>
-      <img src="<?php echo esc_url($top_mag_featured_image[0]); ?>" width="<?php echo $top_mag_featured_image[1]; ?>" height="<?php echo $top_mag_featured_image[2]; ?>" alt="<?php echo get_the_title(); ?>" class="img-responsive" />
+      <?php the_post_thumbnail( 'topmagthumbnailimage', array( 'alt' => get_the_title(), 'class' => 'img-responsive') ); ?>
       <div class="caption-wrap-topimg">
         <div class="caption-date"><span><?php echo get_the_date('d M'); ?></span></div>
         <div class="caption-time"><i class="fa fa-clock-o"></i> <?php echo get_the_date('g:i'); ?></div>

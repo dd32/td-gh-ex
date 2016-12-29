@@ -94,10 +94,10 @@ function top_mag_framework_page(){
       </div>
       <div class="right-box-bg"></div>
       <div class="postbox left-box"> 
-        <!--======================== F I N A L - - T H E M E - - O P T I O N ===================-->
+        <!--F I N A L - - T H E M E - - O P T I O N -->
           <?php settings_fields( 'top_mag_options' );  
 		$top_mag_options = get_option( 'topmag_theme_options' ); ?>
-          <!-------------- First group ----------------->
+          <!-- First group -->
           <div id="options-group-1" class="group faster-inner-tabs">
             <div class="section theme-tabs theme-colors theme-fonts">
             	<a href="javascript:void(0)" class="heading faster-inner-tab active"><?php _e('Display Breaking News','top-mag') ?></a>
@@ -166,7 +166,7 @@ function top_mag_framework_page(){
               </div>
             </div>
           </div>          
-          <!-------------- Second group ----------------->
+          <!-- Second group -->
           <div id="options-group-2" class="group faster-inner-tabs">   
             <div id="section-footertext2" class="section theme-tabs">
             	<a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('Copyright Text','top-mag') ?></a>
@@ -178,13 +178,12 @@ function top_mag_framework_page(){
               </div>
             </div>
           </div>          
-          <!-------------- Third group ----------------->
+          <!-- Third group -->
           <div id="options-group-3" class="group faster-inner-tabs">            
             <div class="section theme-tabs theme-email">
             	<a class="heading faster-inner-tab active" href="javascript:void(0)"><?php _e('Select Post Slider Category','top-mag') ?></a>
               <div class="faster-inner-tab-group active">
               	<div class="ft-control">
-                <div class="explain"><?php _e('Select Post Slider Category','top-mag') ?></div>
                 <?php $top_mag_terms = get_terms('category'); ?>
                 <select class="of-input" name="topmag_theme_options[post-slider-category]">
                     
@@ -272,7 +271,7 @@ function top_mag_framework_page(){
               </div>
             </div>
           </div>    
-          <!-------------- Fourth group ----------------->
+          <!-- Fourth group -->
           <div id="options-group-4" class="group faster-inner-tabs">  
 			  <div class="section theme-tabs theme-colors theme-fonts">
             	<a href="javascript:void(0)" class="heading faster-inner-tab active"><?php _e('Settings of Top Banner header (Right Hand Side of the Logo)','top-mag') ?></a>
@@ -305,15 +304,15 @@ function top_mag_framework_page(){
               </div>
             </div> 
 		  </div>
-          <!-------------- Fifth group ----------------->
+          <!-- Fifth group -->
           <div id="options-group-5" class="group faster-inner-tabs">            
 			<div class="topmagtheme-pro-header">
               <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/theme-logo.png" class="topmagtheme-pro-logo" />
-              <a href="http://fasterthemes.com/checkout/get_checkout_details?theme=TopMag" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/buy-now.png" class="topmagtheme-pro-buynow" /></a>
+              <a href="http://fasterthemes.com/wordpress-themes/topmag" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/buy-now.png" class="topmagtheme-pro-buynow" /></a>
               </div>
           	<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/pro_features.jpg" />
           </div>   
-        <!--======================== F I N A L - - T H E M E - - O P T I O N S ===================--> 
+        <!--F I N A L - - T H E M E - - O P T I O N S --> 
       </div>
      </div>
 	</div>

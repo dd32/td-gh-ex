@@ -1,4 +1,4 @@
-<?php 
+  <?php 
 /**
  * Template Name: Slider Home Page
 **/
@@ -65,7 +65,7 @@ $top_mag_options = get_option( 'topmag_theme_options' );
             <div class="blog-post">
               <div class="ImageWrapper chrome-fix">
 			  	<?php if($top_mag_featured_image[0] != '')  { ?>
-                	<img src="<?php echo esc_url($top_mag_featured_image[0]); ?>" width="<?php echo $top_mag_featured_image[1]; ?>" height="<?php echo $top_mag_featured_image[2]; ?>" alt="<?php echo get_the_title(); ?>" class="img-responsive" />
+                 <?php the_post_thumbnail( 'topmagthumbnailimage', array( 'alt' => get_the_title(), 'class' => 'img-responsive') ); ?>	
                 <?php } else { ?>    
                 	<img src="<?php echo get_template_directory_uri(); ?>/images/no-image.png" width="320" height="221" alt="<?php echo get_the_title(); ?>" class="img-responsive" />
                 <?php } ?>    
@@ -116,7 +116,7 @@ $top_mag_options = get_option( 'topmag_theme_options' );
         <div class="news-list-col1 no-padding">
           <div class="ImageWrapper chrome-fix"> 
             <?php if($top_mag_featured_image[0] != '')  { ?>
-                	<img src="<?php echo esc_url($top_mag_featured_image[0]); ?>" width="<?php echo $top_mag_featured_image[1]; ?>" height="<?php echo $top_mag_featured_image[2]; ?>" alt="<?php echo get_the_title(); ?>" class="img-responsive" />
+                	<?php the_post_thumbnail( 'topmagthumbnailimage', array( 'alt' => get_the_title(), 'class' => 'img-responsive') ); ?>
 			<?php } else { ?>    
                 <img src="<?php echo get_template_directory_uri(); ?>/images/no-image.png" alt="No image" width="320" height="221" class="img-responsive" />
             <?php } ?>  

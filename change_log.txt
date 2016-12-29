@@ -52,3 +52,6 @@ Version 1.4.6 (18th Dec 2014)
 i) Set the folder in load_theme_textdomain.
 ii) Enqueued respond.min.js
 iii) Fix css issue
+
+Version 1.5 (29th Dec 2014)
+i) Misc Changes.

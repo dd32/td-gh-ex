@@ -4,12 +4,12 @@ Theme URI: http://fasterthemes.com/wordpress-themes/topmag
 Author: FasterThemes
 Author URI: http://fasterthemes.com/
 Description: Top Mag is a premium style Magazine WordPress theme. It Includes ample of options to manage general settings, logo etc and is highly customizable. It's based on Twitter Bootstrap framework and hence it is fully responsive on desktop and mobile screens. Home page posts can be easily managed through theme options in admin panel. Owl and jssor Sliders are used on the home page for touch friendly sliders.
-Version: 1.4.6
+Version: 1.5
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Top Mag Theme, Copyright 2014 fasterthemes.com
 Top Mag is distributed under the terms of the GNU GPL
-Tags: red, right-sidebar, one-column, two-columns, responsive-layout, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments , translation-ready
+Tags: right-sidebar, one-column, two-columns, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments , translation-ready
 Text Domain: top-mag
 This theme, like WordPress, is licensed under the FasterThemes.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -24,7 +24,7 @@ Responsive design(Bootstrap), Theme Options, Custom Menu, custom header, custom 
 
 == Tags ==
 
-red, right-sidebar, one-column, two-columns, responsive-layout, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments
+right-sidebar, one-column, two-columns, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments , translation-ready
 
 == Installation ==
 
@@ -104,13 +104,10 @@ owl.carousel.min.js - (https://github.com/OwlFonk/OwlCarousel/blob/master/LICENS
 viii) Images
 ============
 
-http://pixabay.com/en/ferrari-monte-carlo-auto-190036/  - Public Domain CC0 License
-http://pixabay.com/en/filter-catalyst-hands-technology-980/  - Public Domain CC0 License
-http://pixabay.com/en/men-match-competition-fighting-89800/ - Public Domain CC0 License
-http://pixabay.com/en/iphone-mobile-phone-app-hand-phone-204774/  - Public Domain CC0 License
-http://pixabay.com/en/new-york-city-brooklyn-bridge-19219/ - Public Domain CC0 License
-http://pixabay.com/en/volleyball-women-s-sports-90896/ - Public Domain CC0 License
-http://pixabay.com/en/girl-red-human-lady-people-woman-200883/ - Public Domain CC0 License
+https://pixabay.com/en/dawn-dusk-landscape-mountain-1853513/  - Public Domain CC0 License
+https://pixabay.com/en/maldives-holiday-sea-water-island-1532172/  - Public Domain CC0 License
+https://pixabay.com/en/picnic-outdoors-family-friends-1208229/ - Public Domain CC0 License
+http://pixabay.com/en/new-york-city-brooklyn-bridge-19219/  - Public Domain CC0 License
  
 Icons - http://www.fasterthemes.com
 License: General Public License (GPL)

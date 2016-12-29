@@ -15,7 +15,7 @@ get_header(); ?>
     <div class="col-md-12 no-padding blogpost-border">
       <div class="blogpost-col1 no-padding">
         <?php if($top_mag_featured_image[0] != '') { ?>
-        <img src="<?php echo esc_url($top_mag_featured_image[0]); ?>" width="<?php echo $top_mag_featured_image[1]; ?>" height="<?php echo $top_mag_featured_image[2]; ?>" alt="<?php echo get_the_title(); ?>" class="img-responsive single-post-image" />
+        <?php the_post_thumbnail( 'topmagthumbnailimage', array( 'alt' => get_the_title(), 'class' => 'img-responsive') ); ?>
         <?php } else { ?>
         <img src="<?php echo get_template_directory_uri(); ?>/images/no-image.png" width="320" height="221" alt="<?php echo get_the_title(); ?>" class="img-responsive single-post-image" />
         <?php } ?>

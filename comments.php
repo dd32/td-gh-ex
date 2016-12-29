@@ -5,7 +5,6 @@
 if ( post_password_required() )
 	return;
 ?>
-
 <div class="clearfix"></div>
 <div id="comments" class="comments-area">
   <?php if ( have_comments() ) : 	?>
@@ -17,4 +16,3 @@ if ( post_password_required() )
   <?php endif; // have_comments() ?>
   <?php comment_form(); ?>
 </div>
-<!-- #comments .comments-area -->

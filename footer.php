@@ -27,8 +27,7 @@
 			}
 				
 				
-				printf( __( 'Powered by %1$s and %2$s.', 'top-mag' ), '<a href="http://wordpress.org" target="_blank">WordPress</a>',
-				'<a href="http://fasterthemes.com/wordpress-themes/topmag" target="_blank">Top Mag</a>' ); 
+				printf( __( 'Powered by %1$s ', 'top-mag' ), '<a href="http://fasterthemes.com/wordpress-themes/topmag" target="_blank">Top Magazine WordPress Theme</a>' ); 
 				
 		?></p>
     </div>
@@ -36,4 +35,5 @@
 </footer>
 </div>
 <?php wp_footer(); ?>
-</body></html>
+</body>
+</html>

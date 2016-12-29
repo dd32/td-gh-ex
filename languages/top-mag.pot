@@ -1,7 +1,8 @@
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Top Mag V1.4.5\n"
-"POT-Creation-Date: 2014-12-17 16:48+0530\n"
+"POT-Creation-Date: 2016-12-29 19:09+0530\n"
 "PO-Revision-Date: 2014-12-17 16:49+0530\n"
 "Last-Translator: FasterThemes <support@fasterthemes.com>\n"
 "Language-Team: FasterThemes <support@fasterthemes.com>\n"
@@ -9,8 +10,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.10\n"
-"X-Poedit-Basepath: ../\n"
+"X-Generator: Poedit 1.8.11\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
@@ -49,16 +50,16 @@ msgstr ""
 msgid "Category Archives"
 msgstr ""
 
-#: comments.php:12
+#: comments.php:11
 msgid " Comments"
 msgstr ""
 
-#: footer.php:28
+#: footer.php:30
 #, php-format
-msgid "Powered by %1$s and %2$s."
+msgid "Powered by %1$s "
 msgstr ""
 
-#: functions.php:27
+#: functions.php:31
 msgid "Header menu"
 msgstr ""
 
@@ -443,15 +444,19 @@ msgstr ""
 msgid "BREAKING NEWS"
 msgstr ""
 
-#: header.php:71
+#: header.php:35
+msgid "site logo"
+msgstr ""
+
+#: header.php:64
 msgid "Toggle navigation"
 msgstr ""
 
-#: page-templates/home-slider.php:47
+#: page-templates/home-slider.php:49
 msgid "Recent Posts"
 msgstr ""
 
-#: page-templates/home-slider.php:95
+#: page-templates/home-slider.php:97
 msgid "All Posts"
 msgstr ""
 
@@ -463,166 +468,152 @@ msgstr ""
 msgid "Tag"
 msgstr ""
 
-#: theme-options/topmagtheme.php:36
+#: theme-options/topmagtheme.php:47
 msgid "topmagtheme Options"
 msgstr ""
 
-#: theme-options/topmagtheme.php:37 theme-options/topmagtheme.php:66
+#: theme-options/topmagtheme.php:48 theme-options/topmagtheme.php:77
 msgid "Theme Options"
 msgstr ""
 
-#: theme-options/topmagtheme.php:67 theme-options/topmagtheme.php:311
+#: theme-options/topmagtheme.php:78 theme-options/topmagtheme.php:321
 msgid "Save Options"
 msgstr ""
 
-#: theme-options/topmagtheme.php:76
+#: theme-options/topmagtheme.php:87
 msgid "Header Settings"
 msgstr ""
 
-#: theme-options/topmagtheme.php:77
+#: theme-options/topmagtheme.php:88
 msgid "Footer Settings"
 msgstr ""
 
-#: theme-options/topmagtheme.php:78
+#: theme-options/topmagtheme.php:89
 msgid "Home Page Settings"
 msgstr ""
 
-#: theme-options/topmagtheme.php:79
+#: theme-options/topmagtheme.php:90
 msgid "Banner Settings"
 msgstr ""
 
-#: theme-options/topmagtheme.php:80
+#: theme-options/topmagtheme.php:91
 msgid "PRO Theme Features"
 msgstr ""
 
-#: theme-options/topmagtheme.php:92
+#: theme-options/topmagtheme.php:103
 msgid "Display Breaking News"
 msgstr ""
 
-#: theme-options/topmagtheme.php:97
+#: theme-options/topmagtheme.php:108
 msgid "Please check checkbox to display Breaking News."
 msgstr ""
 
-#: theme-options/topmagtheme.php:103
+#: theme-options/topmagtheme.php:114
 msgid "Select Breaking News Category"
 msgstr ""
 
-#: theme-options/topmagtheme.php:106
+#: theme-options/topmagtheme.php:117
 msgid "Please Select Category for Breaking News."
 msgstr ""
 
-#: theme-options/topmagtheme.php:109 theme-options/topmagtheme.php:241
+#: theme-options/topmagtheme.php:120 theme-options/topmagtheme.php:251
 msgid "Select Category"
 msgstr ""
 
-#: theme-options/topmagtheme.php:118
+#: theme-options/topmagtheme.php:129
 msgid "Site Logo"
 msgstr ""
 
-#: theme-options/topmagtheme.php:122 theme-options/topmagtheme.php:148
-#: theme-options/topmagtheme.php:286
+#: theme-options/topmagtheme.php:133 theme-options/topmagtheme.php:159
+#: theme-options/topmagtheme.php:296
 msgid "No file chosen"
 msgstr ""
 
-#: theme-options/topmagtheme.php:123 theme-options/topmagtheme.php:149
-#: theme-options/topmagtheme.php:287
+#: theme-options/topmagtheme.php:134 theme-options/topmagtheme.php:160
+#: theme-options/topmagtheme.php:297
 msgid "Upload"
 msgstr ""
 
-#: theme-options/topmagtheme.php:132
+#: theme-options/topmagtheme.php:143
 msgid "Display Tagline"
 msgstr ""
 
-#: theme-options/topmagtheme.php:137
+#: theme-options/topmagtheme.php:148
 msgid "Please check checkbox to display tagline in header."
 msgstr ""
 
-#: theme-options/topmagtheme.php:143
+#: theme-options/topmagtheme.php:154
 msgid "Favicon"
 msgstr ""
 
-#: theme-options/topmagtheme.php:145
+#: theme-options/topmagtheme.php:156
 msgid "Size of favicon should be exactly 32x32px for best results."
 msgstr ""
 
-#: theme-options/topmagtheme.php:161
+#: theme-options/topmagtheme.php:172
 msgid "Copyright Text"
 msgstr ""
 
-#: theme-options/topmagtheme.php:164
+#: theme-options/topmagtheme.php:175
 msgid ""
 "Some text regarding copyright of your site, you would like to display in the "
 "footer."
 msgstr ""
 
-#: theme-options/topmagtheme.php:173 theme-options/topmagtheme.php:176
+#: theme-options/topmagtheme.php:184
 msgid "Select Post Slider Category"
 msgstr ""
 
-#: theme-options/topmagtheme.php:221
+#: theme-options/topmagtheme.php:231
 msgid "Select recent post slider number"
 msgstr ""
 
-#: theme-options/topmagtheme.php:224 theme-options/topmagtheme.php:253
+#: theme-options/topmagtheme.php:234 theme-options/topmagtheme.php:263
 msgid "Please select number of post"
 msgstr ""
 
-#: theme-options/topmagtheme.php:226 theme-options/topmagtheme.php:255
+#: theme-options/topmagtheme.php:236 theme-options/topmagtheme.php:265
 msgid "select number"
 msgstr ""
 
-#: theme-options/topmagtheme.php:235
+#: theme-options/topmagtheme.php:245
 msgid "Select post category"
 msgstr ""
 
-#: theme-options/topmagtheme.php:238
+#: theme-options/topmagtheme.php:248
 msgid "Please select category for post slider."
 msgstr ""
 
-#: theme-options/topmagtheme.php:250
+#: theme-options/topmagtheme.php:260
 msgid "Select category post number"
 msgstr ""
 
-#: theme-options/topmagtheme.php:267
+#: theme-options/topmagtheme.php:277
 msgid "Settings of Top Banner header (Right Hand Side of the Logo)"
 msgstr ""
 
-#: theme-options/topmagtheme.php:272
+#: theme-options/topmagtheme.php:282
 msgid ""
 "Please check this checkbox if you want to display banner in the right hand "
 "side of the logo."
 msgstr ""
 
-#: theme-options/topmagtheme.php:278
+#: theme-options/topmagtheme.php:288
 msgid "HTML Code for the Banner ad"
 msgstr ""
 
-#: theme-options/topmagtheme.php:283
+#: theme-options/topmagtheme.php:293
 msgid "OR"
 msgstr ""
 
-#: theme-options/topmagtheme.php:284
+#: theme-options/topmagtheme.php:294
 msgid "Image upload for the Banner ad (860px x 90px)"
 msgstr ""
 
-#: theme-options/topmagtheme.php:292
+#: theme-options/topmagtheme.php:302
 msgid "Banner Link"
 msgstr ""
 
-#: theme-options/topmagtheme.php:316
+#: theme-options/topmagtheme.php:326
 msgid "Options saved successfully."
-msgstr ""
-
-#: theme-options/topmagtheme.php:318
-msgid "Subscribe with us"
-msgstr ""
-
-#: theme-options/topmagtheme.php:319
-msgid ""
-"Join our mailing list and we'll keep you updated on new themes as they're "
-"released and our exclusive special offers. "
-msgstr ""
-
-#: theme-options/topmagtheme.php:321
-msgid "Click here to join."
 msgstr ""
