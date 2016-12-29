@@ -3,7 +3,7 @@
  * HEADER
 -----------------------------------------------------------------*/
 add_action( 'igthemes_header', 'igthemes_header_navigation', 10 );
-add_action( 'igthemes_header', 'igthemes_main_navigation', 20 );
+add_action( 'igthemes_header', 'igthemes_site_branding', 20 );
 
 // SITE TITLE
 if ( ! function_exists( 'igthemes_site_title' ) ) {
@@ -14,7 +14,6 @@ if ( ! function_exists( 'igthemes_site_title' ) ) {
         }
     }
 }
-add_action( 'igthemes_site_branding', 'igthemes_site_title', 10 );
 // SITE DESCRIPTION
 if ( ! function_exists( 'igthemes_site_description' ) ) {
     //start
@@ -24,7 +23,6 @@ if ( ! function_exists( 'igthemes_site_description' ) ) {
         }
     }
 }
-//add_action( 'igthemes_site_branding', 'igthemes_site_description', 10 );
 
 // SITE LOGO
 if ( ! function_exists( 'igthemes_site_logo' ) ) {
@@ -37,39 +35,39 @@ if ( ! function_exists( 'igthemes_site_logo' ) ) {
         }
     }
 }
-add_action( 'igthemes_site_branding', 'igthemes_site_logo', 10 );
-
-// BRANDING
+// SITE BRANDING
 if ( ! function_exists( 'igthemes_site_branding' ) ) {
-    //start
+    //start function
     function igthemes_site_branding() { 
-        echo '<div class="site-branding '. apply_filters('igthemes-header-class', 'inline') . '">';
-            do_action( 'igthemes_site_branding');
-        echo '</div>';
-    }
+    ?>
+    <div id="site-branding" class="site-branding" >
+        <?php 
+            igthemes_site_title();
+            igthemes_site_logo();
+            igthemes_main_navigation();
+        ?>
+    </div><!-- #site-branding -->
+<?php  }
 }
+
 // MAIN NAVIGATION
 if ( ! function_exists( 'igthemes_main_navigation' ) ) {
     //start function
-    function igthemes_main_navigation() { ?>
-    <div class="header-brandnav <?php echo apply_filters('igthemes-header-class', 'inline') ;?>">
-        <div class="brandnav-content">
-    <?php igthemes_site_branding() ; ?>
-    <nav id="site-navigation" class="main-navigation <?php echo apply_filters('igthemes-header-class', 'inline') ;?>" role="navigation">
+    function igthemes_main_navigation() { 
+    ?>
+    <nav id="site-navigation" class="main-navigation" role="navigation">
         <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
             <?php esc_html_e( 'Menu', 'basic-shop' ); ?>
         </button>
         <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
     </nav><!-- #site-navigation -->
-            </div>
-    </div>
 <?php  }
 }
 // HEADER NAVIGATION
 if ( ! function_exists( 'igthemes_header_navigation' ) ) {
     //start function
     function igthemes_header_navigation() { ?>
-    <nav id="header-navigation" class="header-nav <?php echo apply_filters('igthemes-header-class', 'inline') ;?>" role="navigation">
+    <nav id="header-navigation" class="header-nav" role="navigation">
         <?php wp_nav_menu( array( 'theme_location' => 'header-menu', 'menu_id' => 'header-menu', 'fallback_cb' => false ) ); ?>
     </nav><!-- #site-navigation -->
 <?php  }

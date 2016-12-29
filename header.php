@@ -24,7 +24,7 @@
     <a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'basic-shop' ); ?></a>
 
     <header id="masthead" class="site-header" <?php apply_filters('igthemes_header_image_filter', 'igthemes_header_image' ); ?> role="banner">
-        <div class="header-content">
+        <div class="header-content <?php echo apply_filters('igthemes-header-class', 'inline') ;?>">
             <?php
             /**
              * Functions hooked in to igthemes_before_content

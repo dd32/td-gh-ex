@@ -127,11 +127,11 @@ function igthemes_add_customizer_css() {
         $bg_color =  get_theme_mod('background_color', $background_color);
 
         $style = '
-        .header-brandnav,
         .main-navigation,
+        .site-branding,
         .site-header {
             background:'. get_theme_mod( 'header_background_color', $header_background_color ) .';
-            border-bottom:1px solid '. igthemes_color_brightness(get_theme_mod('header_background_color', $header_background_color ),-15) .';
+            border-color: '. igthemes_color_brightness(get_theme_mod('header_background_color', $header_background_color ),-15) .';
         }
         .site-description {
             color:'. get_theme_mod( 'header_text_color', $header_text_color ) .';

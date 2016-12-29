@@ -1,5 +1,5 @@
 .wp-caption {
-    @include margin(0);
+    @include margin($small__spacing null);
     @include padding(0);
 	max-width: 100%;
 
@@ -9,7 +9,7 @@
 
 	.wp-caption-text {
         @include margin(0);
-        @include padding(0);
+        @include padding($small__spacing);
 	}
 }
 

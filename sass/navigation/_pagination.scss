@@ -11,7 +11,7 @@
 	.nav-previous {
 		float: left;
 		width: 50%;
-        &:before {
+        a:before {
             font-family: 'simple-line-icons';
             content: '\e605';
             margin-right: 10px;
@@ -24,7 +24,7 @@
 		float: right;
 		text-align: right;
 		width: 50%;
-        &:after {
+        a:after {
             font-family: 'simple-line-icons';
             content: '\e606';
             margin-left: 10px;
@@ -59,3 +59,23 @@ ul.page-numbers {
         }
     }
 }
+//pages pagination
+.page-links {
+    border: 1px solid $color__gray;
+    display: inline-block;
+    .page-links-title,
+    .num {
+        float: left;
+        text-decoration: none;
+        @include padding($small__spacing/2 $small__spacing);
+        border-left: 1px solid $color__gray;
+        background: rgba(255,255,255,.1);
+    }
+    .page-links-title {
+        @extend  .num;
+        border-left: none;
+        background: $color__light-gray;
+        
+    }
+}
+
