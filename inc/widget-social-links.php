@@ -9,7 +9,8 @@ function bakes_and_cakes_register_social_links_widget() {
     register_widget( 'bakes_and_cakes_Social_Links' );
 }
 add_action( 'widgets_init', 'bakes_and_cakes_register_social_links_widget' );
- 
+
+if( !class_exists( 'bakes_and_cakes_Social_Links' ) ):
  /**
  * Adds bakes_and_cakes_Social_Links widget.
  */
@@ -160,3 +161,5 @@ class bakes_and_cakes_Social_Links extends WP_Widget {
 	}
 
 } // class bakes_and_cakes_Social_Links 
+
+endif;

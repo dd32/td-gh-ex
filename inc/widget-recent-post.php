@@ -10,7 +10,8 @@ function bakes_and_cakes_register_recent_post_widget() {
     register_widget( 'bakes_and_cakes_Recent_Post' );
 }
 add_action( 'widgets_init', 'bakes_and_cakes_register_recent_post_widget' );
- 
+
+if( !class_exists( 'bakes_and_cakes_Recent_Post' ) ):
  /**
  * Adds Foo_Widget widget.
  */
@@ -148,5 +149,7 @@ class bakes_and_cakes_Recent_Post extends WP_Widget {
 	}
 
 } // class Bakes_and_cakes_Recent_Post 
+
+endif;
 
 

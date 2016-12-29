@@ -10,7 +10,8 @@ function bakes_and_cakes_register_popular_post_widget() {
     register_widget( 'bakes_and_cakes_Popular_Post' );
 }
 add_action( 'widgets_init', 'bakes_and_cakes_register_popular_post_widget' );
- 
+
+if( !class_exists( 'bakes_and_cakes_Popular_Post' ) ):
  /**
  * Adds bakes_and_cakes_Popular_Post widget.
  */
@@ -146,3 +147,4 @@ class bakes_and_cakes_Popular_Post extends WP_Widget {
 	}
 
 } // class bakes_and_cakes_Popular_Post 
+endif;
