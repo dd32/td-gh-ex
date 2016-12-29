@@ -14,7 +14,7 @@ http://www.opensource.org/licenses/gpl-license.php
 
 Feel free to use as you please. I would be very pleased if you could keep the Auther-link in the footer. Thanks and enjoy.
 
-Appoinment supports Custom Menu, Widgets and 
+Appointment supports Custom Menu, Widgets and 
 the following extra features:
 
  - Pre-installed menu and content colors
@@ -94,6 +94,8 @@ Source: http://fontawesome.io
 
 # --- EOF --- #
 ============================Change Log================================
+@Version 2.5.6
+1. Updated Strings
 @Version 2.5.5
 1. Update Font-awesome Library 4.7.0
 2. Add Email Course Tab in Customizer setting.

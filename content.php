@@ -9,7 +9,7 @@
 				<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 				<?php		
 				// call editor content of post/page	
-				the_content( __( 'Read More' , 'appointment' ) );
+				the_content( __('Read More', 'appointment' ) );
 				wp_link_pages( );
 			   ?>
 		</div>

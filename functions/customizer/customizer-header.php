@@ -6,11 +6,11 @@ $wp_customize->remove_control('header_textcolor');
 	$wp_customize->add_panel( 'header_options', array(
 		'priority'       => 450,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Header Settings', 'appointment'),
+		'title'      => __('Header settings', 'appointment'),
 	) );
 	
    	$wp_customize->add_section( 'header_image' , array(
-		'title'      => __('Custom Header Settings', 'appointment'),
+		'title'      => __('Custom header settings', 'appointment'),
 		'panel'  => 'header_options',
 		'priority'   => 200,
    	) );
@@ -22,7 +22,7 @@ $wp_customize->remove_control('header_textcolor');
 		'type' => 'option',
     ));
     $wp_customize->add_control('appointment_options[header_one_name]', array(
-        'label'   => __('Header Headline :', 'appointment'),
+        'label'   => __('Header Headline', 'appointment'),
         'section' => 'header_image',
         'type'    => 'text',
 		'priority'   => 140,
@@ -35,7 +35,7 @@ $wp_customize->remove_control('header_textcolor');
 		'type' => 'option',
     ));
     $wp_customize->add_control( 'appointment_options[header_one_text]', array(
-        'label'   => __('Header Text :', 'appointment'),
+        'label'   => __('Header Text', 'appointment'),
         'section' => 'header_image',
         'type'    => 'text',
 		'priority'   => 140,
@@ -43,7 +43,7 @@ $wp_customize->remove_control('header_textcolor');
 	
 	//Header logo setting
 	$wp_customize->add_section( 'header_logo' , array(
-		'title'      => __('Header Logo setting', 'appointment'),
+		'title'      => __('Header logo settings', 'appointment'),
 		'panel'  => 'header_options',
 		'priority'   => 400,
    	) );
@@ -80,7 +80,7 @@ $wp_customize->remove_control('header_textcolor');
     'appointment_options[text_title]',
     array(
         'type' => 'checkbox',
-        'label' => __('Enable/Disabe Logo','appointment'),
+        'label' => __('Enable/Disable Logo','appointment'),
         'section' => 'header_logo',
 		'priority'   => 100,
     )
@@ -173,7 +173,7 @@ $wp_customize->remove_control('header_textcolor');
 	$wp_customize->add_section(
         'header_social_icon',
         array(
-            'title' => 'Social Link ',
+            'title' => 'Social links',
            'priority'    => 600,
 			'panel' => 'header_options',
         )
@@ -193,7 +193,7 @@ $wp_customize->remove_control('header_textcolor');
 	$wp_customize->add_control(
     'appointment_options[header_social_media_enabled]',
     array(
-        'label' => __('Hide Social icons','appointment'),
+        'label' => __('Hide Header Social icons','appointment'),
         'section' => 'header_social_icon',
         'type' => 'checkbox',
     )
@@ -232,7 +232,7 @@ $wp_customize->remove_control('header_textcolor');
     'appointment_options[facebook_media_enabled]',
     array(
         'type' => 'checkbox',
-        'label' => __('Open Link New tab/window','appointment'),
+        'label' => __('Open link in new tab','appointment'),
         'section' => 'header_social_icon',
 		'disabled' => 'disabled',
     )
@@ -271,7 +271,7 @@ $wp_customize->remove_control('header_textcolor');
     'appointment_options[twitter_media_enabled]',
     array(
         'type' => 'checkbox',
-        'label' => __('Open Link New tab/window','appointment'),
+        'label' => __('Open link in new tab','appointment'),
         'section' => 'header_social_icon',
     )
 );
@@ -289,7 +289,7 @@ $wp_customize->remove_control('header_textcolor');
 	$wp_customize->add_control(
     'appointment_options[social_media_linkedin_link]',
     array(
-        'label' => __('Linkdin URL','appointment'),
+        'label' => __('LinkedIn URL','appointment'),
         'section' => 'header_social_icon',
         'type' => 'text',
     )
@@ -307,13 +307,13 @@ $wp_customize->remove_control('header_textcolor');
     	'appointment_options[linkedin_media_enabled]',
     array(
         'type' => 'checkbox',
-        'label' => __('Open Link New tab/window','appointment'),
+        'label' => __('Open link in new tab','appointment'),
         'section' => 'header_social_icon',
     )
 );
 	//Custom css
 	$wp_customize->add_section( 'custom_css' , array(
-		'title'      => __('Custom css', 'appointment'),
+		'title'      => __('Custom CSS', 'appointment'),
 		'panel'  => 'header_options',
 		'priority'   => 100,
    	) );
@@ -326,7 +326,7 @@ $wp_customize->remove_control('header_textcolor');
 		'type'=> 'option',
     ));
     $wp_customize->add_control( 'appointment_options[webrit_custom_css]', array(
-        'label'   => __('Custom css snippet:', 'appointment'),
+        'label'   => __('Custom CSS', 'appointment'),
         'section' => 'custom_css',
         'type' => 'textarea',
 		'priority'   => 100,

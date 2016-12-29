@@ -18,7 +18,7 @@
 	
 	<div class="col-md-6">
 	<div class="appointment-tab-pane-half">
-		<h4><?php esc_html_e( '2. Assign Homepage as Front Page Displays.', 'appointment' ); ?></h4>
+		<h4><?php esc_html_e( '2. Assign Homepage as Front Page Displays.','appointment' ); ?></h4>
 		<p><?php esc_html_e( 'If you want to show Homepage as Front Page? You need to set the Homepage as static page as shown in the snapshot below. Now go to custmizer and start configuring the sections in  Business Template. Hope you will find this theme useful', 'appointment' ); ?></p>
 		<hr>
 	</div>

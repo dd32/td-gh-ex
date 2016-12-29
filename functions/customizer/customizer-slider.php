@@ -2,7 +2,7 @@
 function appointment_slider_customizer( $wp_customize ) {
 class appointment_Customize_slider_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php _e('Want different varition of slides just like our premium version than','appointment'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/appointment' ); ?>" target="_blank"><?php _e(' Upgrade To Pro','appointment'); ?> </a>  
+        <h3><?php _e('Want different varition of slides just like our premium version than','appointment'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/appointment' ); ?>" target="_blank"> <?php _e('Upgrade to pro','appointment'); ?> </a>  
 		<?php
 		}
 	}
@@ -11,13 +11,13 @@ class appointment_Customize_slider_upgrade extends WP_Customize_Control {
 	$wp_customize->add_panel( 'appointment_slider_setting', array(
 		'priority'       => 500,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Slider  Settings', 'appointment'),
+		'title'      => __('Slider settings', 'appointment'),
 	) );
 	
 	$wp_customize->add_section(
         'slider_section_settings',
         array(
-            'title' => __('Featured Slider Settings','appointment'),
+            'title' => __('Featured slider settings','appointment'),
             'description' => '',
 			'panel'  => 'appointment_slider_setting',)
     );
@@ -36,7 +36,7 @@ class appointment_Customize_slider_upgrade extends WP_Customize_Control {
 	$wp_customize->add_control(
     'appointment_options[home_banner_enabled]',
     array(
-        'label' => __('Hide Home slider','appointment'),
+        'label' => __('Hide slider from homepage','appointment'),
         'section' => 'slider_section_settings',
         'type' => 'checkbox',
     )
@@ -57,11 +57,11 @@ $wp_customize->add_control(
     'appointment_options[slider_radio]',
     array(
         'type' => 'radio',
-        'label' => __('Select Slider type','appointment'),
+        'label' => __('Select slider type','appointment'),
         'section' => 'slider_section_settings',
         'choices' => array(
-            'demo' => __('Demo Slider','appointment'),
-            'category' => __('Category Slider','appointment'),
+            'demo' => __('Demo slider','appointment'),
+            'category' => __('Category slider','appointment'),
         ),
     )
 );	
@@ -79,7 +79,7 @@ $wp_customize->add_control(
 		)
 	);	
 	$wp_customize->add_control( new Category_Dropdown_Custom_Control( $wp_customize, 'appointment_options[slider_select_category]', array(
-    'label'   => __('Select Category for Slider','appointment'),
+    'label'   => __('Select category for slider','appointment'),
     'section' => 'slider_section_settings',
     'settings'   =>  'appointment_options[slider_select_category]',
 	) ) );	
@@ -101,9 +101,9 @@ $wp_customize->add_control(
     'appointment_options[slider_options]',
     array(
         'type' => 'select',
-        'label' => __('Select slider Animation','appointment'),
+        'label' => __('Select slider animation','appointment'),
         'section' => 'slider_section_settings',
-		 'choices' => array('slide'=>__('slide', 'appointment'), 'carousel-fade'=>__('Fade', 'appointment')),
+		 'choices' => array('slide'=>__('slide', 'appointment'), 'carousel-fade'=>__('fade', 'appointment')),
 		));
 		
 	
@@ -112,7 +112,7 @@ $wp_customize->add_control(
 	$wp_customize->add_setting(
     'appointment_options[slider_transition_delay]',
     array(
-        'default' => __('2000','appointment'),
+        'default' => '2000',
 		'type' => 'option',
 		'sanitize_callback' => 'sanitize_text_field',
     ));
@@ -121,7 +121,7 @@ $wp_customize->add_control(
     'appointment_options[slider_transition_delay]',
     array(
         'type' => 'text',
-        'label' => __('Input slide Duration','appointment'),
+        'label' => __('Input slide duration','appointment'),
         'section' => 'slider_section_settings',
 		
 		));
@@ -130,7 +130,7 @@ $wp_customize->add_control(
 	$wp_customize->add_setting(
     'appointment_options[featured_slider_post]',
     array(
-        'default' => __('','appointment'),
+        'default' => '',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     )
@@ -140,7 +140,7 @@ $wp_customize->add_control(
     'appointment_options[featured_slider_post]',
     array(
         'type' => 'text',
-        'label' => __('Input Number of slides','appointment'),
+        'label' => __('Input number of slides','appointment'),
         'section' => 'slider_section_settings',)
 		);
 	
@@ -154,7 +154,7 @@ $wp_customize->add_control(
 		$wp_customize,
 		'appointment_options[slider_upgrade]',
 			array(
-				'label'					=> __('Appointment Upgrade','appointment'),
+				'label'					=> __('Appointment upgrade','appointment'),
 				'section'				=> 'slider_section_settings',
 				'settings'				=> 'appointment_options[slider_upgrade]',
 			)

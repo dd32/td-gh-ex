@@ -32,7 +32,7 @@
 			<div class="appointment-child-theme-details">
 				<?php if ( 'appointment-blue' != $current_theme['Name'] ) { ?>
 					<div class="theme-details">
-						<span class="theme-name">Appointment Blue</span>
+						<span class="theme-name"><?php echo 'Appointment Blue'; ?></span>
 						<span class="theme-btn">
 						<a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-theme&theme=appointment-blue' ), 'install-theme_appointment-blue' ) ); ?>" class="button button-primary"><?php printf( __( 'Install %s now', 'appointment' ), '<span class="screen-reader-text">appointment-blue</span>' ); ?></a>
 						<a class="button button-secondary" target="_blank" href="https://wp-themes.com/appointment-blue"><?php esc_html_e( 'Live Preview','appointment'); ?></a>
@@ -57,13 +57,13 @@
 			<div class="appointment-child-theme-image-container">
 				<img src="<?php echo esc_url( get_template_directory_uri() ) . '/functions/appointment-info/img/appointment-green.png'; ?>" alt="<?php esc_html_e( 'appointment Green Child Theme', 'appointment' ); ?>" />
 				<div class="appointment-child-theme-description">
-					<h2><?php esc_html_e( 'appointment Green', 'appointment' ); ?></h2>
+					<h2><?php esc_html_e('appointment Green', 'appointment' ); ?></h2>
 				</div>
 			</div>
 			<div class="appointment-child-theme-details">
 				<?php if ( 'appointment-green' != $current_theme['Name'] ) { ?>
 					<div class="theme-details">
-						<span class="theme-name">Appointment Green</span>
+						<span class="theme-name"><?php echo 'Appointment Green'; ?></span>
 						<span class="theme-btn">
 						<a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-theme&theme=appointment-green' ), 'install-theme_appointment-green' ) ); ?>" class="button button-primary"><?php printf( __( 'Install %s now', 'appointment' ), '<span class="screen-reader-text">appointment green</span>' ); ?></a>
 						<a class="button button-secondary" target="_blank" href="https://wp-themes.com/appointment-green"><?php esc_html_e( 'Live Preview','appointment'); ?></a>
@@ -95,7 +95,7 @@
 				<div class="appointment-child-theme-details">
 					<?php if ( 'appointment red' != $current_theme['Name'] ) { ?>
 						<div class="theme-details">
-							<span class="theme-name">Appointment Red</span>
+							<span class="theme-name"><?php echo 'Appointment Red'; ?></span>
 							<span class="theme-btn">
 							<a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-theme&theme=appointment-red' ), 'install-theme_appointment-red' ) ); ?>" class="button button-primary"><?php printf( __( 'Install %s now', 'appointment' ), '<span class="screen-reader-text">appointment red</span>' ); ?></a>
 							<a class="button button-secondary" target="_blank" href="https://wp-themes.com/appointment-red"><?php esc_html_e( 'Live Preview','appointment'); ?></a>
@@ -127,7 +127,7 @@
 				<div class="appointment-child-theme-details">
 					<?php if ( 'mandy' != $current_theme['Name'] ) { ?>
 						<div class="theme-details">
-							<span class="theme-name">Mandy</span>
+							<span class="theme-name"><?php echo 'Mandy'; ?></span>
 							<span class="theme-btn">
 							<a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-theme&theme=mandy' ), 'install-theme_mandy' ) ); ?>" class="button button-primary"><?php printf( __( 'Install %s now', 'appointment' ), '<span class="screen-reader-text">Mandy</span>' ); ?></a>
 							<a class="button button-secondary" target="_blank" href="https://wp-themes.com/mandy"><?php esc_html_e( 'Live Preview','appointment'); ?></a>

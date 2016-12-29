@@ -2,7 +2,7 @@
 function appointment_client_customizer( $wp_customize ) {
 class appointment_Customize_client_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php _e('Want to add Client Image and Link than','appointment'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/appointment' ); ?>" target="_blank"><?php _e(' Upgrade To Pro','appointment'); ?> </a>  
+        <h3><?php _e('Want to add client image and link than','appointment'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/appointment' ); ?>" target="_blank"><?php _e('Upgrade to pro','appointment'); ?> </a>  
 		<?php
 		}
 	}
@@ -12,13 +12,13 @@ class appointment_Customize_client_upgrade extends WP_Customize_Control {
 	$wp_customize->add_panel( 'appointment_client_setting', array(
 		'priority'       => 800,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Client Settings', 'appointment'),
+		'title'      => __('Client settings', 'appointment'),
 	) );
 	
 	$wp_customize->add_section(
         'client_section_settings',
         array(
-            'title' => __('Client section Heading','appointment'),
+            'title' => __('Section Heading','appointment'),
 			'panel'  => 'appointment_client_setting',)
     );
 	
@@ -32,7 +32,7 @@ class appointment_Customize_client_upgrade extends WP_Customize_Control {
 		$wp_customize,
 		'appointment_options[cleint_upgrade]',
 			array(
-				'label'					=> __('Appointment Upgrade','appointment'),
+				'label'					=> __('Appointment upgrade','appointment'),
 				'section'				=> 'client_section_settings',
 				'settings'				=> 'appointment_options[cleint_upgrade]',
 			)

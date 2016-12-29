@@ -14,7 +14,7 @@ get_template_part('index','banner'); ?>
 		while(have_posts()) { the_post();
 		get_template_part('content',''); ?>
 				<!--Blog Author-->
-				<div class="comment-title"><h3><?php _e('About the Author','appointment'); ?></h3></div>
+				<div class="comment-title"><h3><?php _e('About the author','appointment'); ?></h3></div>
 				<div class="blog-author">
 					<div class="media">
 						<div class="pull-left">

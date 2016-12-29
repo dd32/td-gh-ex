@@ -2,8 +2,7 @@
 function appointment_footer_callout_customizer( $wp_customize ) {
 class appointment_Customize_callout_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php _e('Want to add Footer Callout Content than','appointment'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/appointment' ); ?>" target="_blank"><?php _e(' Upgrade To Pro','appointment'); ?> </a>  
-		<?php
+        <h3><?php echo sprintf (__("Want to add footer callout content than <a href='http://www.webriti.com/appointment' target='_blank'> Upgrade to pro</a>","appointment"));  
 		}
 	}
 
@@ -12,14 +11,14 @@ class appointment_Customize_callout_upgrade extends WP_Customize_Control {
 	$wp_customize->add_panel( 'appointment_footer_callout_setting', array(
 		'priority'       => 820,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Footer CallOut Settings', 'appointment'),
+		'title'      => __('Footer callout settings', 'appointment'),
 	) );
 	
 	//Contact Information Setting
 	$wp_customize->add_section(
         'footer_callout_settings',
         array(
-            'title' => __('Footer Callout Settings','appointment'),
+            'title' => __('Footer callout settings','appointment'),
 			'panel'  => 'appointment_footer_callout_setting',)
     );
 	
@@ -33,7 +32,7 @@ class appointment_Customize_callout_upgrade extends WP_Customize_Control {
 		$wp_customize,
 		'appointment_options[callout_upgrade]',
 			array(
-				'label'					=> __('Appointment Upgrade','appointment'),
+				'label'					=> __('Appointment upgrade','appointment'),
 				'section'				=> 'footer_callout_settings',
 				'settings'				=> 'appointment_options[callout_upgrade]',
 			)
@@ -45,14 +44,14 @@ class appointment_Customize_callout_upgrade extends WP_Customize_Control {
 	$wp_customize->add_setting(
     'appointment_options[front_contact_title]',
     array(
-        'default' => __('Footer callout Info','appointment'),
+        'default' => __('Stay in touch with us','appointment'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
 		)
 	);	
 	$wp_customize->add_control( 'appointment_options[front_contact_title]',array(
-    'label'   => __('Footer Callout Title','appointment'),
+    'label'   => __('Callout Header','appointment'),
     'section' => 'footer_callout_settings',
 	 'type' => 'text',
 	  'input_attrs' => array('disabled' => 'disabled')
@@ -68,7 +67,7 @@ class appointment_Customize_callout_upgrade extends WP_Customize_Control {
     ));
 	
 	$wp_customize->add_control('appointment_options[contact_one_icon]', array(
-        'label'   => __('Footer Callout Call Icon', 'appointment'),
+        'label'   => __('Icon', 'appointment'),
         'section' => 'footer_callout_settings',
         'type'    => 'text',
 		 'input_attrs' => array('disabled' => 'disabled')
@@ -86,7 +85,7 @@ class appointment_Customize_callout_upgrade extends WP_Customize_Control {
 	$wp_customize->add_control(
     'appointment_options[front_contact1_title]',
     array(
-        'label' => __('Footer Callout call Title','appointment'),
+        'label' => __('Title','appointment'),
         'section' => 'footer_callout_settings',
         'type' => 'text',
 		 'input_attrs' => array('disabled' => 'disabled')
@@ -96,7 +95,7 @@ class appointment_Customize_callout_upgrade extends WP_Customize_Control {
 	$wp_customize->add_setting(
     'appointment_options[front_contact1_val]',
     array(
-        'default' => __('+82 334 843 52','appointment'),
+        'default' => '+82 334 843 52',
 		 'capability'     => 'edit_theme_options',
 		 'sanitize_callback' => 'sanitize_text_field',
 		 'type' => 'option',
@@ -105,7 +104,7 @@ class appointment_Customize_callout_upgrade extends WP_Customize_Control {
 	$wp_customize->add_control(
     'appointment_options[front_contact1_val]',
     array(
-        'label' => __('Footer Callout Description','appointment'),
+        'label' => __('Description','appointment'),
         'section' => 'footer_callout_settings',
         'type' => 'text',
 		'input_attrs' => array('disabled' => 'disabled')		
@@ -123,7 +122,7 @@ class appointment_Customize_callout_upgrade extends WP_Customize_Control {
     ));
 	
 	$wp_customize->add_control( 'appointment_options[contact_two_icon]', array(
-        'label'   => __('Footer Callout Time icon', 'appointment'),
+        'label'   => __('Icon', 'appointment'),
         'section' => 'footer_callout_settings',
         'type'    => 'text',
 		 'input_attrs' => array('disabled' => 'disabled')
@@ -142,7 +141,7 @@ class appointment_Customize_callout_upgrade extends WP_Customize_Control {
 	$wp_customize->add_control(
     'appointment_options[front_contact2_title]',
     array(
-        'label' => __('Footer Callout Time Title','appointment'),
+        'label' => __('Title','appointment'),
         'section' => 'footer_callout_settings',
         'type' => 'text',
 		 'input_attrs' => array('disabled' => 'disabled')
@@ -161,7 +160,7 @@ class appointment_Customize_callout_upgrade extends WP_Customize_Control {
 	$wp_customize->add_control(
     'appointment_options[front_contact2_val]',
     array(
-        'label' => __('Footer Callout Time Description','appointment'),
+        'label' => __('Description','appointment'),
         'section' => 'footer_callout_settings',
         'type' => 'text',	
 		 'input_attrs' => array('disabled' => 'disabled')
@@ -179,7 +178,7 @@ class appointment_Customize_callout_upgrade extends WP_Customize_Control {
     ));
 	
 	$wp_customize->add_control( 'appointment_options[contact_three_icon]', array(
-        'label'   => __('Footer Callout E-Mail icon', 'appointment'),
+        'label'   => __('Icon', 'appointment'),
         'section' => 'footer_callout_settings',
         'type'    => 'text',
 		 'input_attrs' => array('disabled' => 'disabled')
@@ -188,7 +187,7 @@ class appointment_Customize_callout_upgrade extends WP_Customize_Control {
 	$wp_customize->add_setting(
     'appointment_options[front_contact3_title]',
     array(
-        'default' => __('Drop us an mail','appointment'),
+        'default' => __('Drop us a mail','appointment'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
@@ -197,7 +196,7 @@ class appointment_Customize_callout_upgrade extends WP_Customize_Control {
 	$wp_customize->add_control(
     'appointment_options[front_contact3_title]',
     array(
-        'label' => __('Footer Callout E-Mail Title','appointment'),
+        'label' => __('Title','appointment'),
         'section' => 'footer_callout_settings',
         'type' => 'text',
 		 'input_attrs' => array('disabled' => 'disabled')
@@ -207,7 +206,7 @@ class appointment_Customize_callout_upgrade extends WP_Customize_Control {
 	$wp_customize->add_setting(
     'appointment_options[front_contact3_val]',
     array(
-        'default' => __('info@yoursupport.com','appointment'),
+        'default' =>  'info@yoursupport.com',
 		 'capability'     => 'edit_theme_options',
 		 'sanitize_callback' => 'sanitize_text_field',
 		 'type' => 'option',
@@ -216,7 +215,7 @@ class appointment_Customize_callout_upgrade extends WP_Customize_Control {
 	$wp_customize->add_control(
     'appointment_options[front_contact3_val]',
     array(
-        'label' => __('Footer Callout E-Mail Description','appointment'),
+        'label' => __('Description','appointment'),
         'section' => 'footer_callout_settings',
         'type' => 'text',	
 		 'input_attrs' => array('disabled' => 'disabled')

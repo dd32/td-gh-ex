@@ -6,7 +6,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6">
-					<div class="page-title"><h1><?php printf( __( 'Tag Archives: %s', 'appointment' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?></h1></div>
+					<div class="page-title"><h1><?php printf( __('Tag Archive','appointment' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?></h1></div>
 				</div>
 				<div class="col-md-6">
 					<ul class="page-breadcrumb">

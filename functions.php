@@ -54,7 +54,7 @@
 				 add_theme_support( 'custom-header', $header_args );
     add_theme_support( 'post-thumbnails' ); //supports featured image
 	// Register primary menu 
-    register_nav_menu( 'primary', __( 'Primary Menu', 'appointment' ) );
+    register_nav_menu( 'primary', __('Primary Menu', 'appointment' ) );
 	
 	//Add Theme Support Title Tag
 	add_theme_support( "title-tag" );
@@ -65,7 +65,7 @@
     if ( ! isset( $content_width ) ) $content_width = 900;
 	require_once('theme_setup_data.php');
 	}
-// set appoinment page title       
+// set appointment page title       
 function appointment_title( $title, $sep )
 {	
     global $paged, $page;
@@ -92,10 +92,10 @@ function appointment_add_gravatar_class($class) {
     return $class;
 }
 function appointment_add_to_author_profile( $contactmethods ) {
-		$contactmethods['facebook_profile'] = __('Facebook Profile URL','appointment');
-		$contactmethods['twitter_profile'] = __('Twitter Profile URL','appointment');
-		$contactmethods['linkedin_profile'] = __('Linkedin Profile URL','appointment');
-		$contactmethods['google_profile'] = __('Google Profile URL','appointment');
+		$contactmethods['facebook_profile'] = __('Facebook URL','appointment');
+		$contactmethods['twitter_profile'] = __('Twitter URL','appointment');
+		$contactmethods['linkedin_profile'] = __('LinkedIn URL','appointment');
+		$contactmethods['google_profile'] = __('GooglePlus URL','appointment');
 		return $contactmethods;
 		}
 		add_filter( 'user_contactmethods', 'appointment_add_to_author_profile', 10, 1);
@@ -111,8 +111,8 @@ function appointment_add_to_author_profile( $contactmethods ) {
 		if($original_len>155) {
 		$output = $output;
 		return  '<div class="slide-text-bg2">' .'<span>'.$output.'</span>'.'</div>'.
-	                       '<div class="slide-btn-area-sm"><a href="' . get_permalink() . '" class="slide-btn-sm">'.__("
-						   Read more","appointment").'</a></div>';
+	                       '<div class="slide-btn-area-sm"><a href="' . get_permalink() . '" class="slide-btn-sm">'
+						   .__("Read More","appointment").'</a></div>';
 		}
 		else
 		{ return '<div class="slide-text-bg2">' .'<span>'.$output.'</span>'.'</div>'; }   
@@ -129,7 +129,7 @@ function appointment_add_to_author_profile( $contactmethods ) {
 		$len=strlen($excerpt);	 
 		if($original_len>275) {
 		$excerpt = $excerpt;
-		return $excerpt . '<div class="blog-btn-area-sm"><a href="' . get_permalink() . '" class="blog-btn-sm">Read More</a></div>';
+		return $excerpt . '<div class="blog-btn-area-sm"><a href="' . get_permalink() . '" class="blog-btn-sm">'.__("Read More","appointment").'</a></div>';
 		}
 		else
 		{ return $excerpt; }

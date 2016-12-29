@@ -4,14 +4,13 @@
 	$wp_customize->add_panel( 'appointment_copyright_setting', array(
 		'priority'       => 700,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Footer Copyright Settings', 'appointment'),
+		'title'      => __('Footer copyright settings', 'appointment'),
 	) );
 	
 	$wp_customize->add_section(
         'copyright_section_one',
         array(
-            'title' => __('Footer Copyright Settings','appointment'),
-            'description' => __('This is a Footer section.','appointment'),
+            'title' => __('Footer copyright settings','appointment'),
             'priority' => 35,
 			'panel' => 'appointment_copyright_setting',
         )
@@ -54,7 +53,7 @@ $wp_customize->add_control(
 	$wp_customize->add_section(
         'copyright_social_icon',
         array(
-            'title' => __('Social Link ','appointment'),
+            'title' => __('Social Link','appointment'),
            'priority' => 45,
 			'panel' => 'appointment_copyright_setting',
         )
@@ -75,7 +74,7 @@ $wp_customize->add_control(
 	$wp_customize->add_control(
     'appointment_options[footer_social_media_enabled]',
     array(
-        'label' => __('Hide Footer Social Icons','appointment'),
+        'label' => __('Hide footer social icons','appointment'),
         'section' => 'copyright_social_icon',
         'type' => 'checkbox',
     )
@@ -111,7 +110,7 @@ $wp_customize->add_control(
     'appointment_options[footer_facebook_media_enabled]',
     array(
         'type' => 'checkbox',
-        'label' => __('Open Link New tab/window','appointment'),
+        'label' => __('Open link in new tab','appointment'),
         'section' => 'copyright_social_icon',
     )
 );
@@ -147,7 +146,7 @@ $wp_customize->add_control(
     'appointment_options[footer_twitter_media_enabled]',
     array(
         'type' => 'checkbox',
-        'label' => __('Open Link New tab/window','appointment'),
+        'label' => __('Open link in new tab','appointment'),
         'section' => 'copyright_social_icon',
     )
 );
@@ -165,7 +164,7 @@ $wp_customize->add_control(
 	$wp_customize->add_control(
     'appointment_options[footer_social_media_linkedin_link]',
     array(
-        'label' => __('Linkdin URL','appointment'),
+        'label' => __('LinkedIn URL','appointment'),
         'section' => 'copyright_social_icon',
         'type' => 'text',
     )
@@ -182,7 +181,7 @@ $wp_customize->add_control(
     'appointment_options[footer_linkedin_media_enabled]',
     array(
         'type' => 'checkbox',
-        'label' => __('Open Link New tab/window','appointment'),
+        'label' => __('Open link in new tab','appointment'),
         'section' => 'copyright_social_icon',
     )
 );
@@ -201,7 +200,7 @@ $wp_customize->add_control(
 	$wp_customize->add_control(
     'appointment_options[footer_social_media_googleplus_link]',
     array(
-        'label' => __('Google-plus URL','appointment'),
+        'label' => __('GooglePlus URL','appointment'),
         'section' => 'copyright_social_icon',
         'type' => 'text',
     )
@@ -218,7 +217,7 @@ $wp_customize->add_control(
     'appointment_options[footer_googleplus_media_enabled]',
     array(
         'type' => 'checkbox',
-        'label' => __('Open Link New tab/window','appointment'),
+        'label' => __('Open link in new tab','appointment'),
         'section' => 'copyright_social_icon',
     )
 );
@@ -254,7 +253,7 @@ $wp_customize->add_control(
     'appointment_options[footer_skype_media_enabled]',
     array(
         'type' => 'checkbox',
-        'label' => __('Open Link New tab/window','appointment'),
+        'label' => __('Open link in new tab','appointment'),
         'section' => 'copyright_social_icon',
     )
 );

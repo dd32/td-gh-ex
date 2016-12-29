@@ -2,8 +2,7 @@
 function appointment_testimonial_customizer( $wp_customize ) {
 class appointment_Customize_testimonial_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php _e('Want to add Testimonial than','appointment'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/appointment' ); ?>" target="_blank"><?php _e(' Upgrade To Pro','appointment'); ?></a>  
-		<?php
+        <h3><?php echo sprintf(__("Want to add testimonial than <a href='http://www.webriti.com/appointment' target='_blank'> Upgrade to pro</a>","appointment"));
 		}
 	}
 
@@ -11,13 +10,13 @@ class appointment_Customize_testimonial_upgrade extends WP_Customize_Control {
 	$wp_customize->add_panel( 'appointment_test_setting', array(
 		'priority'       => 850,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Testimonial Settings', 'appointment'),
+		'title'      => __('Testimonial settings', 'appointment'),
 	) );
 	
 	$wp_customize->add_section(
         'test_section_settings',
         array(
-            'title' => __('Home Testimonial Settings','appointment'),
+            'title' => __('Homepage testimonial settings','appointment'),
             'description' => '',
 			'panel'  => 'appointment_test_setting',)
     );
@@ -33,7 +32,7 @@ class appointment_Customize_testimonial_upgrade extends WP_Customize_Control {
 		$wp_customize,
 		'appointment_options[testimonial_upgrade]',
 			array(
-				'label'					=> __('Appointement Upgrade','appointment'),
+				'label'					=> __('Appointement upgrade','appointment'),
 				'section'				=> 'test_section_settings',
 				'settings'				=> 'appointment_options[testimonial_upgrade]',
 			)
@@ -44,14 +43,14 @@ class appointment_Customize_testimonial_upgrade extends WP_Customize_Control {
 	$wp_customize->add_setting(
     'appointment_options[testimonial_title]',
     array(
-        'default' => __('What Our Clients Say','appointment'),
+        'default' => __('What our clients says','appointment'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
 		)
 	);	
 	$wp_customize->add_control( 'appointment_options[testimonial_title]',array(
-    'label'   => __('Testimonial Title','appointment'),
+    'label'   => __('Title','appointment'),
     'section' => 'test_section_settings',
 	 'type' => 'text','input_attrs' => array('disabled' => 'disabled'))  );	
 	 
@@ -59,14 +58,14 @@ class appointment_Customize_testimonial_upgrade extends WP_Customize_Control {
 	 $wp_customize->add_setting(
     'appointment_options[testimonial_description]',
     array(
-        'default' => __('Read what customers are saying.','appointment'),
+        'default' => __('Read what customers are saying','appointment'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
 		)
 	);	
 	$wp_customize->add_control( 'appointment_options[testimonial_description]',array(
-    'label'   => __('Testimonial Description','appointment'),
+    'label'   => __('Description','appointment'),
     'section' => 'test_section_settings',
 	 'type' => 'text', 
 	 'input_attrs' => array('disabled' => 'disabled')
@@ -89,9 +88,9 @@ class appointment_Customize_testimonial_upgrade extends WP_Customize_Control {
     'appointment_options[testi_slide_type]',
     array(
         'type' => 'select',
-        'label' => __('Select Testimonial Animation','appointment'),
+        'label' => __('Animation','appointment'),
         'section' => 'test_section_settings',
-		 'choices' => array('slide'=>__('slide', 'appointment'), 'carousel-fade'=>__('Fade', 'appointment')),
+		 'choices' => array('slide'=>__('slide', 'appointment'), 'carousel-fade'=>__('fade', 'appointment')),
 		));
 	 
 	 
@@ -102,7 +101,7 @@ class appointment_Customize_testimonial_upgrade extends WP_Customize_Control {
 	$wp_customize->add_setting(
     'appointment_options[testi_transition_delay]',
     array(
-        'default' => __('2000','appointment'),
+        'default' =>  '2000',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option'
     )
@@ -112,8 +111,8 @@ class appointment_Customize_testimonial_upgrade extends WP_Customize_Control {
     'appointment_options[testi_transition_delay]',
     array(
         'type' => 'text',
-		'description' => __('If you choose Transction Delay 2000 that means 2 second','appointment'),
-        'label' => __('Input Testimonial Duration','appointment'),
+		'description' => __('If the transition-delay value is 2000 that means 2 seconds.','appointment'),
+        'label' => __('Duration','appointment'),
         'section' => 'test_section_settings','input_attrs' => array('disabled' => 'disabled')
 		
 		));
@@ -127,7 +126,7 @@ class appointment_Customize_testimonial_upgrade extends WP_Customize_Control {
     */
     public function render_content() {
     ?>
-    <a href="#" class="button"><?php _e( 'Click Here To add Testimonial', 'appointment' ); ?></a>
+    <a href="#" class="button"><?php _e( 'Click here to add testimonial','appointment' ); ?></a>
     <?php
     }
 }
@@ -140,11 +139,10 @@ $wp_customize->add_setting(
     )	
 );
 $wp_customize->add_control( new WP_testmonial_Customize_Control( $wp_customize, 'testimonial', array(	
-		'label' => __('Discover Appointment Pro','appointment'),
-        'section' => 'test_section_settings',
+		'section' => 'test_section_settings',
     ))
 );
 	
 		}
-	add_action( 'customize_register', 'appointment_testimonial_customizer' );
-	?>
+add_action( 'customize_register', 'appointment_testimonial_customizer' );
+?>

@@ -4,7 +4,6 @@
  */
 ?>
 <div id="free_pro" class="appointment-tab-pane appointment-fre-pro">
-
 	<div class="row pricing1">
 		<div class="col-md-12">
 			<div class="col-md-4 padding0">
@@ -94,8 +93,8 @@
 					</header>
 					
 					<ul class="feature">
-						<li style="font-size:16px; line-height:25px; padding:28px">Slider [Unlimited Slides], Widget Area Below Slider, Service [6 Service], Callout Section, Latest News </li>
-						<li style="font-size:16px; line-height:25px; padding:28px">Home Page Template and Full Width Page Template </li>
+						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e("Slider [Unlimited Slides], Widget Area Below Slider, Service [6 Service], Callout Section, Latest News","appointment"); ?> </li>
+						<li style="font-size:16px; line-height:25px; padding:28px"><?php _e('Home Page Template and Full Width Page Template','appointment'); ?> </li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
 						<li><span class="dashicons-before dashicons-no-alt red"></span></li>
 						<li><span class="dashicons-before dashicons-no-alt red"></span></li>
@@ -106,7 +105,7 @@
 						<li><span class="dashicons-before dashicons-no-alt red"></span></li>
 						<li><span class="dashicons-before dashicons-no-alt red"></span></li>
 						<li><span class="dashicons-before dashicons-no-alt red"></span></li>
-						<li style="font-size:16px; line-height:80px; padding:15px;"><a href="https://wordpress.org/support/theme/appointment" target="_blank" > WordPress Support Forum</a></li>
+						<li style="font-size:16px; line-height:80px; padding:15px;"><a href="https://wordpress.org/support/theme/appointment" target="_blank" > <?php _e('WordPress Support Forum','appointment'); ?></a></li>
 						
 					</ul><!-- /.features -->
 					
@@ -118,12 +117,13 @@
 				<div class="plan text-center border-right">
 					
 					<header>
-						<h2><?php echo __('Appointment Pro','appointment'); ?></h2>
+						<h2><?php echo _e('Appointment Pro','appointment'); ?></h2>
 					</header>
 					
 					<ul class="feature">
-						<li style="font-size:16px; line-height:25px; padding:19px">Top Header, Slider [Unlimited Slides], Service [Unlimited Services], Callout, Portfolio [Unlimited Projects], Latest News,  Client, Testimonial and Custom Widget</li>
-						<li style="font-size:16px; line-height:25px; padding:18px">About, Service, Portfolio, Blog Left & Right Sidebar, Blog Full Width, Page Full Width, Contact Page and many more.</li>
+						<li style="font-size:16px; line-height:25px; padding:19px"><?php "Top Header, Slider [Unlimited Slides], Service [Unlimited Services], Callout, Portfolio [Unlimited Projects], Latest News,  Client, Testimonial and Custom Widget","appointment"); ?></li>
+						<li style="font-size:16px; line-height:25px; padding:18px">
+						<?php _e("About, Service, Portfolio, Blog Left & Right Sidebar, Blog Full Width, Page Full Width, Contact Page and many more.","appointment"); ?></li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
@@ -134,7 +134,7 @@
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
-						<li style="font-size:16px; line-height:80px; padding:15px;"><a href="http://webriti.com/support/categories/appointment" target="_blank">Webriti Support Forum</a></li>
+						<li style="font-size:16px; line-height:80px; padding:15px;"><a href="http://webriti.com/support/categories/appointment" target="_blank"><?php _e('Webriti Support Forum','appointment'); ?></a></li>
 						
 					</ul><!-- /.features -->
 					
@@ -152,5 +152,4 @@
 			
 		</div>
 	</div><!-- /.row -->
-	
 </div>

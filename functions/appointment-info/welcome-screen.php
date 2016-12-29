@@ -54,7 +54,7 @@ class appointment_screen {
 		?>
 			<div class="updated notice is-dismissible">
 				<p><?php echo sprintf( esc_html__( 'Welcome! Thank you for choosing appointment Lite! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'appointment' ), '<a href="' . esc_url( admin_url( 'themes.php?page=appointment-info' ) ) . '">', '</a>' ); ?></p>
-				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=appointment-info' ) ); ?>" class="button" style="text-decoration: none;"><?php _e( 'Get started with appointment Lite', 'appointment' ); ?></a></p>
+				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=appointment-info' ) ); ?>" class="button" style="text-decoration: none;"><?php _e( 'Get started with appointment lite', 'appointment' ); ?></a></p>
 			</div>
 		<?php
 	}

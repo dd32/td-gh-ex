@@ -8,12 +8,12 @@
 			<!-- Blog Area -->
 			<div class="<?php appointment_post_layout_class(); ?>" >
 			<?php if ( have_posts() ) : ?>
-				<h2><?php printf( __( "Search Results for: %s", 'appointment' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
+				<h2><?php printf( __( "Search Results for", 'appointment' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
 					<?php while ( have_posts() ) : the_post(); ?>
 				<?php get_template_part('content','')?>
 				<?php endwhile; ?>
 				<?php else : ?>
-				<h2><?php _e( "Nothing Found", 'appointment' ); ?></h2>
+				<h2><?php _e( "Nothing Found",'appointment' ); ?></h2>
 			<div class="">
 			<p><?php _e( "Sorry, but nothing matched your search criteria. Please try again with some different keywords.", 'appointment' ); ?>
 			</p>

@@ -44,7 +44,7 @@
 				<?php if(!empty($instance['description'])) { ?>
 				<h4><?php echo $instance['description']; ?></h4>
 				<?php } else { ?> 
-				<h4><?php echo __('+82 334 843 52','appointment'); ?></h4>
+				<h4><?php echo '+82 334 843 52'; ?></h4>
 				<?php } ?>
 			</div>
 		</div>
@@ -60,37 +60,36 @@
 	$title = $instance[ 'title' ];
 	}
 	else {
-	$title = __( 'Have a question? Call us now', 'appointment' );
+	$title = __('Have a question? Call us now','appointment' );
 	}
 	if ( isset( $instance[ 'fa_icon' ])){
 	$fa_icon = $instance[ 'fa_icon' ];
 	}
 	else {
-	$fa_icon = __( 'fa fa-phone', 'appointment' );
+	$fa_icon =  'fa fa-phone';
 	}
 	if ( isset( $instance[ 'description' ])){
 	$description = $instance[ 'description' ];
 	}
 	else {
-	$description = __( '+82 334 843 52', 'appointment' );
+	$description = '+82 334 843 52';
 	}
 
 	// Widget admin form
 	?>
 	
-	<h4 for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:','appointment' ); ?></h4>
+	<h4 for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title','appointment' ); ?></h4>
 	<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php if($title) echo esc_attr( $title ); else _e( 'Have a question? Call us now', 'appointment' );?>" />
 	
-	<h4 for="<?php echo $this->get_field_id( 'fa_icon' ); ?>"><?php _e( 'Fontawesome icon:','appointment' ); ?></h4>
-	<input class="widefat" id="<?php echo $this->get_field_id( 'fa_icon' ); ?>" name="<?php echo $this->get_field_name( 'fa_icon' ); ?>" type="text" value="<?php if($fa_icon) echo esc_attr( $fa_icon ); else _e( 'fa fa-phone', 'appointment' );?>" />
-	<span><?php _e('Link to get fa-icon ','appointment'); ?><a href="<?php esc_url('http://fortawesome.github.io/Font-Awesome/icons/','appointment');?>" target="_blank" ><?php _e('fa-icon','appointment'); ?></a></span>
+	<h4 for="<?php echo $this->get_field_id( 'fa_icon' ); ?>"><?php _e('Fontawesome icon','appointment' ); ?></h4>
+	<input class="widefat" id="<?php echo $this->get_field_id( 'fa_icon' ); ?>" name="<?php echo $this->get_field_name( 'fa_icon' ); ?>" type="text" value="<?php if($fa_icon) echo esc_attr( $fa_icon ); else echo 'fa fa-phone';?>" />
+	<span><?php _e('Link to get fa-icon','appointment'); ?><a href="<?php echo 'http://fortawesome.github.io/Font-Awesome/icons/';?>" target="_blank" ><?php echo 'fa-icon'; ?></a></span>
 	
-	<h4 for="<?php echo $this->get_field_id( 'description' ); ?>"><?php _e( 'Description:','appointment' ); ?></h4>
-	<input class="widefat" id="<?php echo $this->get_field_id( 'description' ); ?>" name="<?php echo $this->get_field_name( 'description' ); ?>" type="text" value="<?php if($description) echo esc_attr($description); else _e( '+82 334 843 52', 'appointment' );?>" /><br><br>
+	<h4 for="<?php echo $this->get_field_id( 'description' ); ?>"><?php _e('Description','appointment' ); ?></h4>
+	<input class="widefat" id="<?php echo $this->get_field_id( 'description' ); ?>" name="<?php echo $this->get_field_name( 'description' ); ?>" type="text" value="<?php if($description) echo esc_attr($description); else '+82 334 843 52';?>" /><br><br>
 	
 	<?php
     }
-	     
 	// Updating widget replacing old instances with new
 	public function update( $new_instance, $old_instance ) {
 	

@@ -5,13 +5,13 @@ function appointment_news_customizer( $wp_customize ) {
 	$wp_customize->add_panel( 'appointment_news_setting', array(
 		'priority'       => 600,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Latest News Settings', 'appointment'),
+		'title'      => __('Latest news settings', 'appointment'),
 	) );
 	
 	$wp_customize->add_section(
         'news_section_settings',
         array(
-            'title' => __('Home Latest News Settings','appointment'),
+            'title' => __('Latest news settings','appointment'),
             'description' => '',
 			'panel'  => 'appointment_news_setting',)
     );
@@ -31,7 +31,7 @@ function appointment_news_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     'appointment_options[home_blog_enabled]',
     array(
-        'label' => __('Hide Home Index News Section','appointment'),
+        'label' => __('Hide news section from homepage','appointment'),
         'section' => 'news_section_settings',
         'type' => 'checkbox',
     )
@@ -50,7 +50,7 @@ function appointment_news_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     'appointment_options[home_meta_section_settings]',
     array(
-        'label' => __('Hide Blog Meta From Home Page News Section , Blog Pages, Archives Pages Etc.','appointment'),
+        'label' => __('Hide post meta from news section','appointment'),
         'section' => 'news_section_settings',
         'type' => 'checkbox',
     )
@@ -60,14 +60,14 @@ function appointment_news_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
     'appointment_options[blog_heading]',
     array(
-        'default' => __('Latest News','appointment'),
+        'default' => __('Latest news','appointment'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'appointment_news_sanitize_html',
 		'type' => 'option',
 		)
 	);	
 	$wp_customize->add_control( 'appointment_options[blog_heading]',array(
-    'label'   => __('Latest News title','appointment'),
+    'label'   => __('Title','appointment'),
     'section' => 'news_section_settings',
 	 'type' => 'text',)  );	
 	 
@@ -75,14 +75,14 @@ function appointment_news_customizer( $wp_customize ) {
 	 $wp_customize->add_setting(
     'appointment_options[blog_description]',
     array(
-        'default' => __('Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupid non proident, sunt in culpa qui official deserunt mollit anim id est laborum.','appointment'),
+        'default' => 'Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupid non proident, sunt in culpa qui official deserunt mollit anim id est laborum.',
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'appointment_news_sanitize_html',
 		'type' => 'option',
 		)
 	);	
 	$wp_customize->add_control( 'appointment_options[blog_description]',array(
-    'label'   => __('Latest News Description','appointment'),
+    'label'   => __('Description','appointment'),
     'section' => 'news_section_settings',
 	 'type' => 'text',)  );	
 	 
@@ -99,7 +99,7 @@ function appointment_news_customizer( $wp_customize ) {
 		)
 	);	
 	$wp_customize->add_control( new Category_Dropdown_Custom_Control( $wp_customize, 'appointment_options[blog_selected_category_id]', array(
-    'label'   => __('Select Category for Latest News','appointment'),
+    'label'   => __('Select category for latest news','appointment'),
     'section' => 'news_section_settings',
     'settings'   => 'appointment_options[blog_selected_category_id]',
 	) ) );
@@ -110,7 +110,7 @@ function appointment_news_customizer( $wp_customize ) {
     'appointment_options[post_display_count]',
     array(
 		'type' => 'option',
-        'default' => __('4','appointment'),
+        'default' => 4,
 		'sanitize_callback' => 'sanitize_text_field',
     )
 	);
@@ -121,7 +121,7 @@ function appointment_news_customizer( $wp_customize ) {
         'type' => 'select',
         'label' => __('Select Number of Post','appointment'),
         'section' => 'news_section_settings',
-		 'choices' => array('2'=>__('2', 'appointment'), '4'=>__('4', 'appointment'), '6' => __('6','appointment'), '8' => __('8','appointment'),'10'=> __('10','appointment'), '12'=> __('12','appointment'),'14'=> __('14','appointment'), '16' =>__('16','appointment')),
+		 'choices' => array(2=>2, 4=>4, 6=>6, 8=>8, 10=>10, 12=>12, 14=>14, 16=>16),
 		));
 		
 	function appointment_news_sanitize_html( $input ) {

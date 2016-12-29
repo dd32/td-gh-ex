@@ -5,12 +5,12 @@ function appointment_service_customizer( $wp_customize ) {
 $wp_customize->add_panel( 'appointment_service_options', array(
 		'priority'       => 500,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Service Settings', 'appointment'),
+		'title'      => __('Service settings', 'appointment'),
 	) );
 
 	
 	$wp_customize->add_section( 'service_section_head' , array(
-		'title'      => __('Service Heading ', 'appointment'),
+		'title'      => __('Section Heading','appointment'),
 		'panel'  => 'appointment_service_options',
 		'priority'   => 50,
    	) );
@@ -30,7 +30,7 @@ $wp_customize->add_panel( 'appointment_service_options', array(
 	$wp_customize->add_control(
     'appointment_options[service_section_enabled]',
     array(
-        'label' => __('Hide Home Service Section','appointment'),
+        'label' => __('Hide service section from homepage','appointment'),
         'section' => 'service_section_head',
         'type' => 'checkbox',
     )
@@ -39,7 +39,7 @@ $wp_customize->add_panel( 'appointment_service_options', array(
 	$wp_customize->add_setting(
     'appointment_options[service_title]',
     array(
-        'default' => __('Our Services','appointment'),
+        'default' => __('Our services','appointment'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'appointment_service_sanitize_html',
 		'type' => 'option'
@@ -48,7 +48,7 @@ $wp_customize->add_panel( 'appointment_service_options', array(
 	$wp_customize->add_control(
     'appointment_options[service_title]',
     array(
-        'label' => __('Service Title','appointment'),
+        'label' => __('Title','appointment'),
         'section' => 'service_section_head',
         'type' => 'text',
     )
@@ -57,7 +57,7 @@ $wp_customize->add_panel( 'appointment_service_options', array(
 	$wp_customize->add_setting(
     'appointment_options[service_description]',
     array(
-        'default' => __('Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupid non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','appointment'),
+        'default' => 'Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupid non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
 		'sanitize_callback' => 'appointment_service_sanitize_html',
 		'type' => 'option'
     )	
@@ -65,7 +65,7 @@ $wp_customize->add_panel( 'appointment_service_options', array(
 	$wp_customize->add_control(
     'appointment_options[service_description]',
     array(
-        'label' => __('Service Description','appointment'),
+        'label' => __('Description','appointment'),
         'section' => 'service_section_head',
         'type' => 'text',
 		'sanitize_callback' => 'appointment_service_sanitize_html',
@@ -74,7 +74,7 @@ $wp_customize->add_panel( 'appointment_service_options', array(
 	
 //service section one
 	$wp_customize->add_section( 'service_section_one' , array(
-		'title'      => __('Service Section one', 'appointment'),
+		'title'      => __('Service section one', 'appointment'),
 		'panel'  => 'appointment_service_options',
 		'priority'   => 100,
 		'sanitize_callback' => 'sanitize_text_field',
@@ -88,7 +88,7 @@ $wp_customize->add_panel( 'appointment_service_options', array(
     ));
 	
 	$wp_customize->add_control( 'appointment_options[service_one_icon]', array(
-        'label'   => __('Service icon', 'appointment'),
+        'label'   => __('Icon', 'appointment'),
 		'style' => 'background-color: red',
         'section' => 'service_section_one',
         'type'    => 'text',
@@ -97,7 +97,7 @@ $wp_customize->add_panel( 'appointment_service_options', array(
 	$wp_customize->add_setting(
     'appointment_options[service_one_title]',
     array(
-        'default' => __('Easy to Use','appointment'),
+        'default' => __('Easy to use','appointment'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'appointment_service_sanitize_html',
 		'type' => 'option'
@@ -106,7 +106,7 @@ $wp_customize->add_panel( 'appointment_service_options', array(
 	$wp_customize->add_control(
     'appointment_options[service_one_title]',
     array(
-        'label' => __('Title one','appointment'),
+        'label' => __('Title','appointment'),
         'section' => 'service_section_one',
         'type' => 'text',
     )
@@ -115,7 +115,7 @@ $wp_customize->add_panel( 'appointment_service_options', array(
 	$wp_customize->add_setting(
     'appointment_options[service_one_description]',
     array(
-        'default' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consec tetur adipisicing elit dignissim dapib tumst.','appointment'),
+        'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consec tetur adipisicing elit dignissim dapib tumst',
 		 'capability'     => 'edit_theme_options',
 		 'sanitize_callback' => 'appointment_service_sanitize_html',
 		 'type' => 'option'
@@ -124,7 +124,7 @@ $wp_customize->add_panel( 'appointment_service_options', array(
 	$wp_customize->add_control(
     'appointment_options[service_one_description]',
     array(
-        'label' => __('Description One','appointment'),
+        'label' => __('Description','appointment'),
         'section' => 'service_section_one',
         'type' => 'text',	
     )
@@ -132,7 +132,7 @@ $wp_customize->add_panel( 'appointment_service_options', array(
 //Second service
 
 $wp_customize->add_section( 'service_section_two' , array(
-		'title'      => __('Service Section Two', 'appointment'),
+		'title'      => __('Service section two', 'appointment'),
 		'panel'  => 'appointment_service_options',
 		'priority'   => 200,
    	) );
@@ -151,7 +151,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     'appointment_options[service_two_icon]',
     array(
-        'label' => __('Icon Two Like: fa-group','appointment'),
+        'label' => __('Icon','appointment'),
         'section' => 'service_section_two',
         'type' => 'text',
     )
@@ -160,7 +160,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
     'appointment_options[service_two_title]',
     array(
-        'default' => __('Easy to Use','appointment'),
+        'default' => __('Easy to use','appointment'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'appointment_service_sanitize_html',
 		'type' => 'option',
@@ -169,7 +169,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     'appointment_options[service_two_title]',
     array(
-        'label' => __('Title two' ,'appointment'),
+        'label' => __('Title' ,'appointment'),
         'section' => 'service_section_two',
         'type' => 'text',
     )
@@ -178,7 +178,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
     'appointment_options[service_two_description]',
     array(
-        'default' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consec tetur adipisicing elit dignissim dapib tumst.','appointment'),
+        'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consec tetur adipisicing elit dignissim dapib tumst.',
 		 'capability'     => 'edit_theme_options',
 		 'sanitize_callback' => 'appointment_service_sanitize_html',
 		 'type' => 'option',
@@ -187,14 +187,14 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 		'appointment_options[service_two_description]',
 		array(
-        'label' => __('Description two','appointment'),
+        'label' => __('Description','appointment'),
         'section' => 'service_section_two',
         'type' => 'text',
     )
 );
 //Third Service section
 $wp_customize->add_section( 'service_section_three' , array(
-		'title'      => __('Service Section Three', 'appointment'),
+		'title'      => __('Service section three', 'appointment'),
 		'panel'  => 'appointment_service_options',
 		'priority'   => 300,
    	) );
@@ -213,7 +213,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 'appointment_options[service_three_icon]',
     array(
-        'label' => __('Icon three  Like: fa-group','appointment'),
+        'label' => __('Icon','appointment'),
         'section' => 'service_section_three',
         'type' => 'text',
 		
@@ -223,7 +223,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
     'appointment_options[service_three_title]',
     array(
-        'default' => __('Easy to Use','appointment'),
+        'default' => __('Easy to use','appointment'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'appointment_service_sanitize_html',
 		'type' =>'option',
@@ -232,7 +232,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     'appointment_options[service_three_title]',
     array(
-        'label' => __('Title three','appointment'),
+        'label' => __('Title','appointment'),
         'section' => 'service_section_three',
         'type' => 'text',
     )
@@ -241,7 +241,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
     'appointment_options[service_three_description]',
     array(
-        'default' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consec tetur adipisicing elit dignissim dapib tumst.','appointment'),
+        'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consec tetur adipisicing elit dignissim dapib tumst.',
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'appointment_service_sanitize_html',
 		'type' =>'option',
@@ -250,7 +250,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     'appointment_options[service_three_description]',
     array(
-        'label' => __('Description three','appointment'),
+        'label' => __('Description','appointment'),
         'section' => 'service_section_three',
         'type' => 'text',
     )
@@ -258,7 +258,7 @@ $wp_customize->add_control(
 //Four Service section
 
 $wp_customize->add_section( 'service_section_four' , array(
-		'title'      => __('Service Section Four', 'appointment'),
+		'title'      => __('Service section four', 'appointment'),
 		'panel'  => 'appointment_service_options',
 		'priority'   => 400,
    	) );
@@ -275,7 +275,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     'appointment_options[service_four_icon]',
     array(
-        'label' => __('Icon Four  Like: fa-group','appointment'),
+        'label' => __('Icon','appointment'),
         'section' => 'service_section_four',
         'type' => 'text',
     )
@@ -284,7 +284,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
     'appointment_options[service_four_title]',
     array(
-        'default' => __('Easy to Use','appointment'),
+        'default' => __('Easy to use','appointment'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'appointment_service_sanitize_html',
 		'type' => 'option'
@@ -293,7 +293,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     'appointment_options[service_four_title]',
     array(
-        'label' => __('Title four','appointment'),
+        'label' => __('Title','appointment'),
         'section' => 'service_section_four',
         'type' => 'text',
     )
@@ -302,7 +302,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
    'appointment_options[service_four_description]',
     array(
-        'default' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consec tetur adipisicing elit dignissim dapib tumst.','appointment'),
+        'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consec tetur adipisicing elit dignissim dapib tumst.',
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'appointment_service_sanitize_html',
 		'type' => 'option'
@@ -311,7 +311,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     'appointment_options[service_four_description]',
     array(
-        'label' => __('Description four','appointment'),
+        'label' => __('Description','appointment'),
         'section' => 'service_section_four',
         'type' => 'text',
 		'sanitize_callback' => 'sanitize_text_field',
@@ -319,7 +319,7 @@ $wp_customize->add_control(
 );
 //Five service section
 $wp_customize->add_section( 'service_section_five' , array(
-		'title'      => __('Service Section Five', 'appointment'),
+		'title'      => __('Service section five', 'appointment'),
 		'panel'  => 'appointment_service_options',
 		'priority'   => 500,
    	) );
@@ -337,7 +337,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     'appointment_options[service_five_icon]',
     array(
-        'label' => __('Icon five Like: fa-group','appointment'),
+        'label' => __('Icon','appointment'),
         'section' => 'service_section_five',
         'type' => 'text',
     )
@@ -346,7 +346,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
     'appointment_options[service_five_title]',
     array(
-        'default' => __('Easy to Use','appointment'),
+        'default' => __('Easy to use','appointment'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'appointment_service_sanitize_html',
 		'type' => 'option',
@@ -355,7 +355,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     'appointment_options[service_five_title]',
     array(
-        'label' => __('Title five','appointment'),
+        'label' => __('Title','appointment'),
         'section' => 'service_section_five',
         'type' => 'text',
 		
@@ -365,7 +365,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
     'appointment_options[service_five_description]',
     array(
-        'default' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consec tetur adipisicing elit dignissim dapib tumst.','appointment'),
+        'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consec tetur adipisicing elit dignissim dapib tumst.',
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'appointment_service_sanitize_html',
 		'type' => 'option'
@@ -374,14 +374,14 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     'appointment_options[service_five_description]',
     array(
-        'label' => __('Description five','appointment'),
+        'label' => __('Description','appointment'),
         'section' => 'service_section_five',
         'type' => 'text',
     )
 );
 //Six service section
 $wp_customize->add_section( 'service_section_six' , array(
-		'title'      => __('Service Section Six', 'appointment'),
+		'title'      => __('Service section six', 'appointment'),
 		'panel'  => 'appointment_service_options',
 		'priority'   => 600,
 		
@@ -400,7 +400,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     'appointment_options[service_six_icon]',
     array(
-        'label' => __('Icon six Like: fa-group','appointment'),
+        'label' => __('Icon','appointment'),
         'section' => 'service_section_six',
         'type' => 'text',
     )
@@ -409,7 +409,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
     'appointment_options[service_six_title]',
     array(
-        'default' => __('Easy to Use','appointment'),
+        'default' => __('Easy to use','appointment'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'appointment_service_sanitize_html',
 		'type' => 'option',
@@ -418,7 +418,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     'appointment_options[service_six_title]',
     array(
-        'label' => __('Title six','appointment'),
+        'label' => __('Title','appointment'),
         'section' => 'service_section_six',
         'type' => 'text',
 		
@@ -428,7 +428,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
     'appointment_options[service_six_description]',
     array(
-        'default' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consec tetur adipisicing elit dignissim dapib tumst.','appointment'),
+        'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consec tetur adipisicing elit dignissim dapib tumst.',
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'appointment_service_sanitize_html',
 		'type' => 'option',
@@ -437,7 +437,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     'appointment_options[service_six_description]',
     array(
-        'label' => __('Description six','appointment'),
+        'label' => __('Description','appointment'),
         'section' => 'service_section_six',
         'type' => 'text',
     )
@@ -450,7 +450,7 @@ class WP_service_Customize_Control extends WP_Customize_Control {
     public function render_content() {
     ?>
       <div class="pro-box">
-		<a href="<?php echo esc_url( __('http://webriti.com/appointment/', 'appointment'));?>" target="_blank" class="button button-primary" id="review_pro"><?php _e( 'Add more service get the Pro','appointment' ); ?></a>
+		<a href="<?php echo 'http://webriti.com/appointment/';?>" target="_blank" class="button button-primary" id="review_pro"><?php _e('Add more service get the pro','appointment' ); ?></a>
 	 
 	<div>
     <?php
@@ -458,7 +458,7 @@ class WP_service_Customize_Control extends WP_Customize_Control {
 }
 //Pro service section
 $wp_customize->add_section( 'service_section_pro' , array(
-		'title'      => __('Add More service', 'appointment'),
+		'title'      => __('Add more service', 'appointment'),
 		'panel'  => 'appointment_service_options',
 		'priority'   => 700,
    	) );
@@ -473,8 +473,7 @@ $wp_customize->add_setting(
     )	
 );
 $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'appointment_options[service_pro]', array(	
-		'label' => __('Discover Appointment Pro','appointment'),
-        'section' => 'service_section_pro',
+		'section' => 'service_section_pro',
 		'setting' => 'appointment_options[service_pro]',
     ))
 );

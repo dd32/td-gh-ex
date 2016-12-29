@@ -9,8 +9,8 @@ public $type = 'new_menu';
        
 	   {
 	   ?>
-	   <h3><?php _e('Want To Use Below Predefined Themes Colors then','appointment'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/appointment' ); ?>" target="_blank"><?php _e(' Upgrade To Pro','appointment'); ?> </a>
-	   <h3><?php _e('Predefined Colors','appointment'); ?></h3>
+	   <h3><?php _e('Want to use below predefined themes colors then','appointment'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/appointment' ); ?>" target="_blank"><?php _e('Upgrade to pro','appointment'); ?> </a>
+	   <h3><?php _e('Predefined colors','appointment'); ?></h3>
 		<?php
 		  $name = '_customize-color-radio-' . $this->id; 
 		  foreach($this->choices as $key => $value ) {
@@ -37,7 +37,7 @@ public $type = 'new_menu';
 }
 	/* Theme Style settings */
 	$wp_customize->add_section( 'theme_style' , array(
-		'title'      => __('Theme Style Setting', 'appointment'),
+		'title'      => __('Theme style settings', 'appointment'),
 		'priority'   => 900,
    	) );
 	
@@ -51,7 +51,7 @@ public $type = 'new_menu';
     ));
 	$wp_customize->add_control(new WP_color_Customize_Control($wp_customize,'appointment_options[theme_color]',
 	array(
-        'label'   => __('Predefined Colors', 'appointment'),
+        'label'   => __('Predefined colors', 'appointment'),
         'section' => 'theme_style',
 		'type' => 'radio',
 		'settings' => 'appointment_options[theme_color]',	
@@ -86,7 +86,7 @@ public $type = 'new_menu';
 	$wp_customize->add_control(
     'appointment_options[link_color_enable]',
     array(
-        'label' => __('Skin Color Enable','appointment'),
+        'label' => __('Enable custom color skin','appointment'),
         'section' => 'theme_style',
         'type' => 'checkbox',
     )
@@ -105,7 +105,7 @@ public $type = 'new_menu';
 	$wp_customize, 
 	'appointment_options[link_color]', 
 	array(
-		'label'      => __( 'Skin Color', 'appointment' ),
+		'label'      => __( 'Skin color', 'appointment' ),
 		'section'    => 'theme_style',
 		'settings'   => 'appointment_options[link_color]',
 		'input_attrs'=>array(
