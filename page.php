@@ -1,40 +1,30 @@
 <?php get_header(); ?>
 	<!-- BEGIN PAGE -->
 	<div id="page">
-	<?php if (of_get_option('promax_latest' ) =='1' ) {load_template(get_template_directory() . '/includes/ltposts.php'); } ?>
+	<?php if (of_get_option('promax_latest' ) =='1' ) {
+		get_template_part( 'includes/ltposts' );
+		} ?>
     <div id="page-inner" class="clearfix">
 		<div id="pagecont"><?php promax_breadcrumbs(); ?>
-			<?php if(have_posts()) : ?><?php while(have_posts())  : the_post(); ?>
-					<div id="pagepost-<?php the_ID(); ?>" class="pagepost clearfix">					
-						<h1 class="entry-title"><?php the_title(); ?></h1>
-						<div id="metad"><span class="postmeta_box">
-		<?php get_template_part('/includes/postmeta'); ?><?php edit_post_link(
-		sprintf(
-			/* translators: %s: Name of current post */
-			esc_html__( 'Edit %s', 'promax' ),
-			the_title( '<span class="screen-reader-text">"', '"</span>', false )
-		),
-		'<span class="edit-link">',
-		'</span>'
-	); ?>
-	</span></div>							<div class="entry" class="clearfix">
-																
-								<?php the_content(); ?>
-								<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'promax' ), 'after' => '</div>' ) ); ?>
-							</div> <!-- end div .entry -->
-								<div class="gap"></div><?php if (of_get_option('promax_author' ) =='1' ) {load_template(get_template_directory() . '/includes/author.php'); } ?>
-<?php if ( !dynamic_sidebar('aftersinglepage') ) :  endif; ?>
-									<div class="comments">
-								<?php comments_template(); ?>
-							</div> <!-- end div .comments -->
-					</div> <!-- end div .post -->
+		
+		<main id="main" class="site-main" role="main">
+		<?php
+		// Start the loop.
+		while ( have_posts() ) : the_post();
 
-			<?php endwhile; ?>
-			<?php else : ?>
-				<div class="post">
-					<h3><?php _e('404 Error&#58; Not Found', 'promax'); ?></h3>
-				</div>
-			<?php endif; ?>
+			// Include the page content template.
+			get_template_part( 'template-parts/content', 'page' );
+
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) {
+				comments_template();
+			}
+
+			// End of the loop.
+		endwhile;
+		?>
+
+	</main><!-- .site-main -->
 			  <div id="footerads">
 <?php if ( of_get_option('promax_ad1') <> "" ) { echo stripslashes(of_get_option('promax_ad1')); } ?>
 </div>    										

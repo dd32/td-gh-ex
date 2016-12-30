@@ -65,7 +65,7 @@ function promax_post_meta_data() {
 		esc_html( get_the_date() )
 	),
 	'byline',
-	sprintf( '<span class="author vcard" itemprop="author" itemtype="http://schema.org/Person"><span class="fn">%3$s</span></span>',
+	sprintf( '<span class="author vcard"><span class="fn">%3$s</span></span>',
 		get_author_posts_url( get_the_author_meta( 'ID' ) ),
 		sprintf( esc_attr__( 'View all posts by %s', 'promax' ), get_the_author() ),
 		esc_attr( get_the_author() )
@@ -191,3 +191,27 @@ function promax_search_form( $form ) {
 }
 
 add_filter( 'get_search_form', 'promax_search_form' );
+
+
+if ( ! function_exists( 'promax_excerpt_org' ) ) :
+	/**
+	 * Displays the optional excerpt.
+	 *
+	 * Wraps the excerpt in a div element.
+	 *
+	 * Create your own promax_excerpt_org() function to override in a child theme.
+	 *
+	 * @since Promax 1.0
+	 *
+	 * @param string $class Optional. Class string of the div element. Defaults to 'entry-summary'.
+	 */
+	function promax_excerpt_org( $class = 'entry-summary' ) {
+		$class = esc_attr( $class );
+
+		if ( has_excerpt() || is_search() ) : ?>
+			<div class="<?php echo $class; ?>">
+				<?php the_excerpt(); ?>
+			</div><!-- .<?php echo $class; ?> -->
+		<?php endif;
+	}
+endif;

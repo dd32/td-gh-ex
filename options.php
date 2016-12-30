@@ -17,13 +17,13 @@ function optionscheck_display_sidebar() { ?>
                 <div class="inside">
 			<ol>
 				<li><?php _e('To Change Logo, Background Color, Header Image, Title Tagline','promax'); ?> <b>Go to 
-				<a href="<?php echo esc_url(__(admin_url( 'customize.php' ))); ?>" target="_blank"><?php echo esc_attr__( 'Customizer', 'digital' ); ?></a></b>
+				<a href="<?php echo esc_url(__(admin_url( 'customize.php' ))); ?>" target="_blank"><?php echo esc_attr__( 'Customizer', 'promax' ); ?></a></b>
 				</li>
 				<li>
-				<?php _e('Add Widget and put ads codes in different area in website','promax'); ?> <b>Go to <a href="<?php echo esc_url(__(admin_url( 'widgets.php' ))); ?>" target="_blank"><?php echo esc_attr__( 'Widget Settings', 'digital' ); ?></a></b>	
+				<?php _e('Add Widget and put ads codes in different area in website','promax'); ?> <b>Go to <a href="<?php echo esc_url(__(admin_url( 'widgets.php' ))); ?>" target="_blank"><?php echo esc_attr__( 'Widget Settings', 'promax' ); ?></a></b>	
 				</li>
 				<li>
-			<?php _e('Google Fonts Change and Live Set from Customize > Google Fonts','promax'); ?> <b>Go to <a href="<?php echo esc_url(__(admin_url( 'customize.php' ))); ?>" target="_blank"><?php echo esc_attr__( 'customizer', 'digital' ); ?></a></b>	
+			<?php _e('Google Fonts Change and Live Set from Customize > Google Fonts','promax'); ?> <b>Go to <a href="<?php echo esc_url(__(admin_url( 'customize.php' ))); ?>" target="_blank"><?php echo esc_attr__( 'customizer', 'promax' ); ?></a></b>	
 				</li>
 			</ol>
                     <p><?php _e('Here are some more option related to basic theme setup.','promax'); ?></p>
