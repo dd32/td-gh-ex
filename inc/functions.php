@@ -582,12 +582,15 @@ function accelerate_custom_css_migrate() {
 	if ( function_exists( 'wp_update_custom_css_post' ) ) {
 		$custom_css = accelerate_options( 'accelerate_custom_css' );
 		if ( $custom_css ) {
+			// assigning theme name
+			$themename = get_option( 'stylesheet' );
+			$themename = preg_replace("/\W/", "_", strtolower( $themename ) );
 			$core_css = wp_get_custom_css(); // Preserve any CSS already added to the core option.
 			$return = wp_update_custom_css_post( $core_css . $custom_css );
 
 			if ( ! is_wp_error( $return ) ) {
 
-				$theme_options = get_option( 'accelerate' );
+				$theme_options = get_option( $themename );
 
 				// Remove the old theme_mod, so that the CSS is stored in only one place moving forward.
 				foreach ( $theme_options as $option_key => $option_value ) {
@@ -596,7 +599,7 @@ function accelerate_custom_css_migrate() {
 					}
 				}
 				// Finally, update accelerate theme options.
-				update_option( 'accelerate', $theme_options );
+				update_option( $themename, $theme_options );
 			}
 		}
 	}
@@ -605,24 +608,42 @@ function accelerate_custom_css_migrate() {
 add_action( 'after_setup_theme', 'accelerate_custom_css_migrate' );
 
 /**
-* Function to transfer the favicon added in Customizer Options of theme to Site Icon in Site Identity section
-*/
+ * Function to transfer the favicon added in Customizer Options of theme to Site Icon in Site Identity section
+ */
 function accelerate_site_icon_migrate() {
-	if ( get_option( 'accelerate_site_icon_transfer' ) ) {
-		return;
-	}
+    if ( get_option( 'accelerate_site_icon_transfer' ) ) {
+        return;
+    }
 
-	$image_url = accelerate_options( 'accelerate_favicon', '' );
+    $accelerate_favicon = accelerate_options( 'accelerate_favicon', 0 );
 
-	if ( ! has_site_icon() && ! empty( $image_url ) ) {
-		$customizer_site_icon_id = attachment_url_to_postid( $image_url );
-		update_option( 'site_icon', $customizer_site_icon_id );
-		// Set the transfer as complete.
-		update_option( 'accelerate_site_icon_transfer', 1 );
-	}
+    // Migrate accelerate site icon.
+    if ( function_exists( 'has_site_icon' ) && ( ! empty( $accelerate_favicon ) && ! has_site_icon() ) ) {
+		// assigning theme name
+		$themename = get_option( 'stylesheet' );
+		$themename = preg_replace("/\W/", "_", strtolower( $themename ) );
+        $theme_options = get_option( $themename );
+        $attachment_id = attachment_url_to_postid( $accelerate_favicon );
+
+        // Update site icon transfer options.
+        if ( $theme_options && $attachment_id ) {
+            update_option( 'site_icon', $attachment_id );
+            update_option( 'accelerate_site_icon_transfer', 1 );
+
+            // Remove old favicon options.
+            foreach ( $theme_options as $option_key => $option_value ) {
+                if ( in_array( $option_key, array( 'accelerate_favicon', 'accelerate_activate_favicon' ) ) ) {
+                    unset( $theme_options[ $option_key ] );
+                }
+            }
+        }
+
+        // Finally, update accelerate theme options.
+        update_option( $themename, $theme_options );
+    }
 }
 
-//add_action( 'after_setup_theme', 'accelerate_site_icon_migrate' );
+add_action( 'after_setup_theme', 'accelerate_site_icon_migrate' );
 
 /**
  * Function to transfer the Header Logo added in Customizer Options of theme to Site Logo in Site Identity section
@@ -632,18 +653,21 @@ function accelerate_site_logo_migrate() {
 		$logo_url = accelerate_options( 'accelerate_header_logo_image' );
 
 		if ( $logo_url ) {
+			// assigning theme name
+			$themename = get_option( 'stylesheet' );
+			$themename = preg_replace("/\W/", "_", strtolower( $themename ) );
 			$customizer_site_logo_id = attachment_url_to_postid( $logo_url );
 			set_theme_mod( 'custom_logo', $customizer_site_logo_id );
 
 			// Delete the old Site Logo theme_mod option.
-			$theme_options = get_option( 'accelerate' );
+			$theme_options = get_option( $themename );
 
 			if ( isset( $theme_options[ 'accelerate_header_logo_image' ] ) ) {
 				unset( $theme_options[ 'accelerate_header_logo_image' ] );
 			}
 
 			// Finally, update accelerate theme options.
-			update_option( 'accelerate', $theme_options );
+			update_option( $themename, $theme_options );
 		}
 	}
 }
