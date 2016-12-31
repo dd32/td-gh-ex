@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header();?>
 <section class="inner-page-bg">
   <div class="container">
     <div class="row">
@@ -21,7 +21,9 @@
           <div class="content-area" id="primary">
             <div id="main" class="site-main">
              <?php if (have_posts()): ?>
-              <?php while(have_posts()): the_post(); get_template_part('content', get_post_format()); endwhile; ?>    
+              <?php while(have_posts()): the_post(); 
+              
+              get_template_part('template-parts/content', get_post_format() ); endwhile; ?>    
 
             <nav>
             <ul class="pagination wow fadeInUp">
@@ -29,7 +31,7 @@
             <li class="next"><?php next_posts_link(__('&raquo;', 'abaya')); ?></li>
             </ul>
            </nav>
-           <?php else : get_template_part('content', 'none'); ?>
+           <?php else : get_template_part('template-parts/content', 'none'); ?>
             <?php endif; ?>  
             </div><!--main-->
           </div><!--primary-->

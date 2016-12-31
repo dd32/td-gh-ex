@@ -21,7 +21,7 @@
           <div class="content-area" id="primary">
             <div id="main" class="site-main">
              <?php if (have_posts()): ?>
-              <?php while(have_posts()): the_post(); get_template_part('content', get_post_format()); endwhile; ?>    
+              <?php while(have_posts()): the_post(); get_template_part('template-parts/content', get_post_format()); endwhile; ?>    
 
             <nav>
             <ul class="pagination wow fadeInUp">
@@ -29,7 +29,7 @@
             <li class="next"><?php next_posts_link(__('&raquo;', 'abaya')); ?></li>
             </ul>
            </nav>
-           <?php else : get_template_part('content', 'none'); endif; ?>
+           <?php else : get_template_part('template-parts/content', 'none'); endif; ?>
            
             </div><!--main-->
           </div><!--primary-->

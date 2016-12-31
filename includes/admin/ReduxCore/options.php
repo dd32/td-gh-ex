@@ -269,7 +269,87 @@
                         'subtitle' => esc_html__('If you dont want to use header text below header top menu then put text here ', 'abaya'),
                         'default'=>'',
                     ),
-
+					 array(
+                        'id'          => 'logo_text_color',
+                        'type'        => 'color', 
+                        'customizer'  => true,
+                        'transparent' => false,
+                        'title'       => esc_html__('Logo Text Color', 'abaya'),
+                        'subtitle'    => esc_html__('Selecting a logo text color will display best combination of colours for your header', 'abaya'),
+                    ),
+					array(
+                        'id'          => 'logo_tagline_text_color',
+                        'type'        => 'color', 
+                        'customizer'  => true,
+                        'transparent' => false,
+                        'title'       => esc_html__('Logo Tagline Text Color', 'abaya'),
+                        'subtitle'    => esc_html__('Selecting a logo text color will display best combination of colours for your header', 'abaya'),
+                    ),
+					array(
+     'id'       => 'select_background',
+     'type'     => 'radio',
+     'title'    => esc_html__('Header Background', 'abaya'), 
+     'subtitle' => esc_html__('Select whether you want Image as the header background or color', 'abaya'),
+	 'class'     => 'select_style',
+       'options'  => array(
+         '1' => 'Background Image', 
+         '2' => 'Background Color', 
+      ),
+     'default' => '1'
+ ),	
+ 
+ array(
+ 'id'=>'header_bg_image',
+ 'type' => 'media', 
+ 'url'=> true,
+ 'customizer' => true,
+ 'title' => esc_html__('Header Background Image', 'abaya'),
+ 'subtitle' => esc_html__('Upload or enter direct path to header background image (recommended size 200 x 150px)', 'abaya'),
+ 'readonly'=>false,
+ 'required' => array('select_background','=','1')
+ ),
+  array(
+ 'id'=>'header_bg_color',
+ 'type' => 'color', 
+ 'url'=> true,
+ 'customizer' => true,
+'transparent' => false,
+  'title' => esc_html__('Header Background Color', 'abaya'),
+ 'subtitle' => esc_html__('Choose header background color', 'abaya'),
+ 'required' => array('select_background','!=','1')
+ ),
+ array(
+ 'id'=>'top_bar_color',
+ 'type' => 'color', 
+ 'url'=> true,
+ 'customizer' => true,
+'transparent' => false,
+  'title' => esc_html__('Header Topbar Background Color', 'abaya'),
+ 'subtitle' => esc_html__('Choose Header Topbar Background color', 'abaya'),
+ 'required' => array('select_background','!=','1')
+ ),
+ array(
+ 'id'=>'theme_color',
+ 'type' => 'color', 
+  'customizer' => true,
+'transparent' => false,
+  'title' => esc_html__('Theme Color', 'abaya'),
+ 'subtitle' => esc_html__('Selecting a theme color will display best combination of colours for your theme', 'abaya'),
+		  ),
+ 	 array(
+    'id'       => 'body_background',
+    'type'     => 'background',
+	  'customizer' => true,
+'transparent' => false,
+    'title'    => esc_html__('Body Background', 'abaya'),
+    'subtitle' => esc_html__('', 'abaya'),
+    'desc'     => esc_html__('This is the description field, again good for additional info.', 'abaya'),
+    'default'  => array(
+     'background-color' => '#fff',
+     )
+	 ),
+ 
+ 
         )
     ) );
     Redux::setSection( $opt_name, array(

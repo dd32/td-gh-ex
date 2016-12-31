@@ -1,4 +1,4 @@
-<footer>
+<footer class="footer">
   <section class="container">
     <div class="row">
     <?php if (is_active_sidebar('footer_1') ) { ?>
@@ -37,7 +37,7 @@
           <p><?php
 		  global $abaya_option; if(isset($abaya_option['copyright']) && $abaya_option['copyright']!='')
 		  {
-			  echo $abaya_option['copyright'];
+			  echo esc_html($abaya_option['copyright']);
 			  
 		  }else {$footertext = '[copyright] [the-year] [site-name] [theme-credit]';
         		$footertext = str_replace('[copyright]','&copy;',$footertext);
