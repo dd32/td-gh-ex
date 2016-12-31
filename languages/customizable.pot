@@ -1,7 +1,8 @@
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Customizable V2.1.2\n"
-"POT-Creation-Date: 2014-11-29 18:32+0530\n"
+"POT-Creation-Date: 2016-12-31 13:33-0800\n"
 "PO-Revision-Date: 2014-11-29 18:33+0530\n"
 "Last-Translator: FasterThemes <support@fasterthemes.com>\n"
 "Language-Team: FasterThemes <support@fasterthemes.com>\n"
@@ -9,8 +10,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.10\n"
-"X-Poedit-Basepath: ../\n"
+"X-Generator: Poedit 1.8.8\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
@@ -42,13 +43,13 @@ msgstr ""
 msgid "Archives"
 msgstr ""
 
-#: archive.php:39 author.php:30 category.php:28 index.php:28 search.php:31
+#: archive.php:39 author.php:30 category.php:28 index.php:28 search.php:30
 #: tag.php:28
 msgid "READ MORE"
 msgstr ""
 
 #: archive.php:58 author.php:50 category.php:48 index.php:48
-#: page-template/frontpage.php:106 page.php:41 search.php:51 tag.php:49
+#: page-template/frontpage.php:106 page.php:41 search.php:48 tag.php:49
 msgid "no posts found"
 msgstr ""
 
@@ -171,19 +172,14 @@ msgstr ""
 msgid "View all posts by %s"
 msgstr ""
 
-#: functions.php:369 functions.php:371 functions.php:377
+#: functions.php:370 functions.php:372
 #, php-format
-msgid "Posted in : %1$s  on %3$s by : %4$s Comments: "
+msgid "Posted in : %1$s  on %3$s by : %4$s "
 msgstr ""
 
-#: functions.php:373 functions.php:381
+#: functions.php:374
 #, php-format
-msgid "Posted on : %3$s by : %4$s"
-msgstr ""
-
-#: functions.php:379
-#, php-format
-msgid "Posted in : %1$s  on %3$s by : %4$s Comments:"
+msgid "Posted on : %3$s by : %4$s "
 msgstr ""
 
 #: inc/class-tgm-plugin-activation.php:41 inc/tgm-plugins.php:28
@@ -487,23 +483,23 @@ msgstr ""
 msgid "customize Social Link"
 msgstr ""
 
-#: inc/social-custom-widget.php:34
+#: inc/social-custom-widget.php:33
 msgid "Widget Title"
 msgstr ""
 
-#: inc/social-custom-widget.php:41
+#: inc/social-custom-widget.php:40
 msgid "Facebook"
 msgstr ""
 
-#: inc/social-custom-widget.php:48
+#: inc/social-custom-widget.php:47
 msgid "Twitter"
 msgstr ""
 
-#: inc/social-custom-widget.php:55
+#: inc/social-custom-widget.php:54
 msgid "Pinterest"
 msgstr ""
 
-#: inc/social-custom-widget.php:62
+#: inc/social-custom-widget.php:61
 msgid "Google+"
 msgstr ""
 
@@ -536,7 +532,7 @@ msgstr ""
 msgid "no posts found "
 msgstr ""
 
-#: search.php:12
+#: search.php:11
 msgid "Search Results for"
 msgstr ""
 
@@ -708,18 +704,4 @@ msgstr ""
 
 #: theme-options/fasterthemes.php:291
 msgid "Options saved successfully."
-msgstr ""
-
-#: theme-options/fasterthemes.php:294
-msgid "Subscribe with us"
-msgstr ""
-
-#: theme-options/fasterthemes.php:295
-msgid ""
-"Join our mailing list and we'll keep you updated on new themes as they're "
-"released and our exclusive special offers. "
-msgstr ""
-
-#: theme-options/fasterthemes.php:297
-msgid "Click here to join."
 msgstr ""

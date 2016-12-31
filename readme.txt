@@ -5,10 +5,10 @@ Theme URI: http://fasterthemes.com/wordpress-themes/customizable
 Author: FasterThemes
 Author URI: http://fasterthemes.com/
 Description: Customizable is a WordPress responsive cooperate theme based on Twitter bootstrap framework which can be used for personal or corporate websites. Customizable is a free WordPress theme with premium functionality and design. Customizable Pro version is a paid version which has several other options like 6 color schemes, different page templates, more Google Fonts options etc.   
-Version: 2.1.3
+Version: 2.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: right-sidebar, one-column, two-columns, fluid-layout, responsive-layout, full-width-template, theme-options, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, post-formats, sticky-post, translation-ready
+Tags: right-sidebar, one-column, two-columns, full-width-template, theme-options, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, post-formats, sticky-post, translation-ready
 Text Domain: customizable
 This theme, like WordPress, is licensed under the FasterThemes.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -23,7 +23,7 @@ Responsive design(Bootstrap), Theme Options, Custom Widgets, Custom Menu, suppor
 
 == Tags ==
 
-right-sidebar, one-column, two-columns, fluid-layout, responsive-layout, full-width-template, theme-options, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, post-formats, sticky-post, translation-ready
+right-sidebar, one-column, two-columns, full-width-template, theme-options, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, post-formats, sticky-post, translation-ready
 
 == Installation ==
 
@@ -33,7 +33,7 @@ right-sidebar, one-column, two-columns, fluid-layout, responsive-layout, full-wi
 
  = Select "Install" tab and click on the "Upload" link.
 
- = Select "theme.zip" and click on "Install Now" button.
+ = Select "customizable.zip" and click on "Install Now" button.
 
  = In case of errors, use an alternate method.
 
@@ -66,14 +66,14 @@ right-sidebar, one-column, two-columns, fluid-layout, responsive-layout, full-wi
  
 	 
 == Copyright ==
-Customizable, Copyright 2014 www.fasterthemes.com
+Customizable, Copyright 2017 www.fasterthemes.com
 Customizable is distributed under the terms of the GNU GPL
 
 Customizable is built with the following resources: 
 
 Scripts:
 Options Framework Theme -  For the Administration Panel, we have used our own custom options panel.
-License: GNU General Public License v2
+License: GNU General Public License v3
 
 respond.min js  - http://www.fasterthemes.com
 License: MIT/GPL2

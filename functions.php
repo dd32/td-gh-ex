@@ -17,7 +17,7 @@ function customizable_setup() {
 
 	// Add RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
-
+	add_theme_support( 'title-tag' );
 	// Enable support for Post Thumbnails, and declare two sizes.
 	add_theme_support( 'post-thumbnails' );
 	add_image_size( 'customizable-full-width', 1038, 576, true );
@@ -363,25 +363,17 @@ function customizable_entry_meta() {
 		esc_attr( sprintf( __( 'View all posts by %s', 'customizable' ), get_the_author() ) ),
 		get_the_author()
 	);
+    
 
-	if(get_comments_number() > 0){
+	
 		if ( $customizable_tag_list ) {
-			$customizable_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s Comments: '.get_comments_number().' ', 'customizable' );
+			$customizable_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s ', 'customizable' );
 		} elseif ( $customizable_category_list ) {
-			$customizable_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s Comments: '.get_comments_number().' ', 'customizable' );
+			$customizable_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s ', 'customizable' );
 		} else {
-			$multishop_utility_text = __( 'Posted on : %3$s by : %4$s'.get_comments_number(). 'customizable' );
-		}
-	}else{
-		if ( $customizable_tag_list ) {
-			$customizable_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s Comments: ', 'customizable' );
-		} elseif ( $customizable_category_list ) {
-			$customizable_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s Comments:', 'customizable' );
-		} else {
-			$multishop_utility_text = __( 'Posted on : %3$s by : %4$s', 'customizable' );
-		}
-	}
-
+			$customizable_utility_text = __( 'Posted on : %3$s by : %4$s ', 'customizable' );
+		}		
+	
 	printf(
 		$customizable_utility_text,
 		$customizable_category_list,

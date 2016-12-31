@@ -125,5 +125,4 @@ jQuery("#form-option").submit(function(e)
 	
 	e.preventDefault(); //STOP default action
 	});
-});	
-
+});

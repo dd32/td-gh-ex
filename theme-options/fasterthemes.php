@@ -87,10 +87,10 @@ function fastertheme_framework_page(){
       </div>
       <div class="right-box-bg"></div>
       <div class="postbox left-box"> 
-        <!--======================== F I N A L - - T H E M E - - O P T I O N ===================-->
+        <!-- F I N A L - - T H E M E - - O P T I O N -->
           <?php settings_fields( 'ft_options' );  
 		$customizable_options = get_option( 'faster_theme_options' ); ?>
-            <!-------------- First group ----------------->
+            <!-- First group -->
             <div id="options-group-1" class="group faster-inner-tabs">
                 <div class="section theme-tabs theme-logo">
                 <a class="heading faster-inner-tab active" href="javascript:void(0)"><?php _e('Site Logo','customizable') ?></a>
@@ -137,7 +137,7 @@ function fastertheme_framework_page(){
               </div>
             </div>
             </div>          
-          <!-------------- Second group ----------------->
+          <!-- Second group -->
           <div id="options-group-2" class="group faster-inner-tabs">
           <h3><?php _e('Slider','customizable') ?></h3>   
           <?php for($customizable_i=1; $customizable_i <= 5 ;$customizable_i++ ):?> 
@@ -266,15 +266,15 @@ function fastertheme_framework_page(){
               </div>
             </div>         
           </div>          
-          <!-------------- Third group ----------------->
+          <!-- Third group -->
           <div id="options-group-3" class="group faster-inner-tabs fasterthemes-pro-image"> 
           <div class="fasterthemes-pro-header">
               <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/theme-logo.png" class="fasterthemes-pro-logo" />
-              <a href="http://fasterthemes.com/checkout/get_checkout_details?theme=Customizable" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/buy-now.png" class="fasterthemes-pro-buynow" /></a>
+              <a href="http://fasterthemes.com/wordpress-themes/Customizable" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/buy-now.png" class="fasterthemes-pro-buynow" /></a>
               </div>
           	<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/pro-featured.png" />           
           </div>    
-        <!--======================== F I N A L - - T H E M E - - O P T I O N S ===================--> 
+        <!-- F I N A L - - T H E M E - - O P T I O N S --> 
       </div>
      </div>
 	</div>
@@ -289,17 +289,4 @@ function fastertheme_framework_page(){
     </form>    
 </div>
 <div class="save-options"><h2><?php _e('Options saved successfully.','customizable') ?></h2></div>
-<div class="newsletter"> 
-  <!-- Begin MailChimp Signup Form -->
-  <h1><?php _e('Subscribe with us','customizable'); ?></h1>
-       <p><?php _e("Join our mailing list and we'll keep you updated on new themes as they're released and our exclusive special offers. ","customizable"); ?>
-          
-        <a href="http://fasterthemes.com/freethemesubscribers/" target="_blank"><?php _e('Click here to join.','customizable'); ?></a>
-        
-       </p> 
-  <!--End mc_embed_signup--> 
-</div>
-
-
-
 <?php } ?>

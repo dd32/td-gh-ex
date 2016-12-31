@@ -4,7 +4,6 @@
  *
 */ 
 get_header();?>
-
 <section>
   <div class="customize-breadcrumb">
     <div class="container customize-container">
@@ -31,7 +30,6 @@ get_header();?>
           <a class="read-more" href="<?php echo get_permalink();?>"><?php _e('READ MORE','customizable') ?></a> </div>
       </article>
       <?php endwhile;?>
-
         <!--Pagination Start-->
         <?php if(function_exists('faster_pagination')) { ?> 
             <?php faster_pagination();?>
@@ -44,7 +42,6 @@ get_header();?>
         <?php } ?>
         <?php }//is plugin active ?>
 		<!--Pagination End-->
-
       <?php
 		   else : 
 		   ?>
