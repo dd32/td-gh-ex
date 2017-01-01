@@ -4,11 +4,11 @@ Theme URI: http://themezhut.com/themes/arouse
 Author: ThemezHut
 Author URI: http://themezhut.com
 Description: Arouse is a smart, clean and well coded WordPress theme built for bloggers. This theme can be used for any subject like Technology, Travel, Entertainment, Food and Drink, Holiday, News, etc. You can easily setup your site from theme customizer. Built with bootstrap to display your site responsively on any type of monitors, tabs and mobile phones.
-Version: 1.0.5
+Version: 1.0.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: arouse
-Tags: grid-layout,right-sidebar,two-columns,custom-logo,custom-background,custom-menu,editor-style,featured-images,footer-widgets,full-width-template,theme-options,threaded-comments,translation-ready,news,e-commerce,blog,entertainment
+Tags: grid-layout,right-sidebar,two-columns,custom-logo,custom-background,custom-menu,editor-style,featured-images,footer-widgets,full-width-template,theme-options,threaded-comments,translation-ready,news,blog,e-commerce,entertainment
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -2011,6 +2011,15 @@ article.page {
   background: #ffffff;
 }
 
+.error404 .content-area {
+  padding-bottom: 80px;
+}
+
+@media all and (min-width: 768px) {
+  .error404 .search-form {
+    width: 50%;
+  }
+}
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
@@ -2692,4 +2701,8 @@ a.woocommerce-review-link:hover {
 .select2-container .select2-choice {
   border: 1px solid #eee;
   border-radius: 0;
+}
+
+.woocommerce .widget_price_filter .ui-slider {
+  margin-top: 5px;
 }
