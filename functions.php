@@ -80,6 +80,7 @@ function redpro_setup() {
 	register_nav_menus( array(
 		'primary'   => __( 'Main Menu', 'redpro' ),		
 	) );
+	add_theme_support( "title-tag" );
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -187,9 +188,7 @@ function redpro_entry_meta() {
 		$author
 	);
 }
-
 endif;
-
 /**********************************/
 function redpro_special_nav_class( $classes, $item )
 {
@@ -294,8 +293,7 @@ function redpro_comment( $comment, $args, $depth ) {
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
 		case 'trackback' :
-		// Display trackbacks differently than normal comments.
-	?>
+		// Display trackbacks differently than normal comments. ?>
 <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
   <p>
     <?php _e( 'Pingback:', 'redpro' ); ?>
@@ -303,30 +301,22 @@ function redpro_comment( $comment, $args, $depth ) {
     <?php edit_comment_link( __( '(Edit)', 'redpro' ), '<span class="edit-link">', '</span>' ); ?>
   </p>
 </li>
-<?php
-			break;
-		default :
-		// Proceed with normal comments.
-		if($comment->comment_approved==1)
-		{
-		global $post;
-	?>
+<?php break;
+	default :
+	// Proceed with normal comments.
+	if($comment->comment_approved==1) {
+	global $post; ?>
 <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
   <article id="comment-<?php comment_ID(); ?>" class="comment col-md-12 margin-top-bottom">
     <figure class="avtar"> <a href="#"><?php echo get_avatar( get_the_author_meta(), '80'); ?></a> </figure>
     <div class="txt-holder">
       <?php
-                            printf( '<b class="fn">%1$s',
-                                get_comment_author_link(),
-                                ( $comment->user_id === $post->post_author ) ? '<span>' . __( 'Post author ', 'redpro' ) . '</span>' : ''
-                            );
-						?>
-      <?php
-                            
-                            echo ' '.get_comment_date().'</b>';
-							echo '<a href="#" class="reply pull-right">'.comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'redpro' ), 'after' => '', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ).'</a>';
-							
-                        ?>
+            printf( '<b class="fn">%1$s',
+                get_comment_author_link(),
+                ( $comment->user_id === $post->post_author ) ? '<span>' . __( 'Post author ', 'redpro' ) . '</span>' : ''
+            );
+            echo ' '.get_comment_date().'</b>';
+			echo '<a href="#" class="reply pull-right">'.comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'redpro' ), 'after' => '', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ).'</a>'; ?>
       <div class="comment-content comment">
         <?php comment_text(); ?>
       </div>
@@ -335,8 +325,7 @@ function redpro_comment( $comment, $args, $depth ) {
     <!-- .txt-holder --> 
   </article>
   <!-- #comment-## -->
-  <?php
-		}
+  <?php }
 		break;
 	endswitch; // end comment_type check
 }
@@ -353,8 +342,6 @@ $new_markup= preg_replace('/<ul/', '<ul class="navbar-right menu-ommune"', $new_
 return $new_markup; } //}
 add_filter('wp_page_menu', 'redpro_add_menuid');
 
-
-
 add_filter( 'comment_form_default_fields', 'redpro_comment_placeholders' );
 /**
 * Change default fields, add placeholder and change type attributes.
@@ -362,8 +349,7 @@ add_filter( 'comment_form_default_fields', 'redpro_comment_placeholders' );
 * @param array $fields
 * @return array
 */
-function redpro_comment_placeholders( $fields )
-{
+function redpro_comment_placeholders( $fields ) {
 $fields['author'] = str_replace(
 '<input',
 '<input placeholder="'
@@ -393,8 +379,7 @@ $fields['email']
 return $fields;
 }
 add_filter( 'comment_form_defaults', 'redpro_textarea_insert' );
-function redpro_textarea_insert( $fields )
-{
+function redpro_textarea_insert( $fields ) {
 $fields['comment_field'] = str_replace(
 '</textarea>',
 ''. _x(
@@ -406,4 +391,4 @@ $fields['comment_field'] = str_replace(
 $fields['comment_field']
 );
 return $fields;
-}
+} ?>

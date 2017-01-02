@@ -104,3 +104,6 @@ Version	4.0.1 (17th Nov 2014)
 Version 4.0.2(18th Dec 2014)
 	i) Made theme translation-ready!
     ii) Fix css issue
+
+Version 4.0.3 (02 Jan 2017)
+    i) Minor fixes.

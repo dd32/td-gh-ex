@@ -2,8 +2,7 @@
 /*
  * Template Name: Left Sidebar
 */
-get_header();
-?>
+get_header(); ?>
 <div class="page-title">
   <div class="container">
     <div class="row">
@@ -36,32 +35,21 @@ get_header();
           <?php 
 			$feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
 			if($feat_image!="")
-			{
-			?>
+			{ ?>
           <figure class="feature-thumbnail-large"> <a href="<?php echo $feat_image;?>"> <img src="<?php echo $feat_image;?>" class="img-responsive" alt="<?php echo get_the_title();?>" /> </a> </figure>
-          <?php
-		  }
-		  ?>
+          <?php } ?>
           <div class="post-content">
             <?php the_content(); ?>
           </div>
-          
           <!--end / post-content--> 
-          
         </article>
         <?php endwhile; ?>
-        
         <!--end / article-->
-        
         <?php comments_template( '', true ); ?>
       </div>
-      
       <!--end / main--> 
-      
     </div>
   </div>
-  
-  <!-- /container --> 
-  
+  <!-- /container -->
 </div>
 <?php get_footer(); ?>

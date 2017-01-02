@@ -3,7 +3,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6  col-sm-6 ">
-          <h1><?php _e('404 Page','redpro') ?></h1>
+          <h1><?php _e('404 Page','redpro'); ?></h1>
       </div>
       <div class="col-md-6  col-sm-6 ">
         <ol class="breadcrumb  pull-right">
@@ -34,7 +34,6 @@
       </div>
     </div>
   </div>
-  
   <!-- /container --> 
 </div>
 <?php get_footer(); ?>

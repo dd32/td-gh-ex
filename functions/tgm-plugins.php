@@ -13,8 +13,7 @@ function redpro_theme_register_plugins() {
             'required'  => false,
         ),
     );
-
-    /*  Array of configuration settings. Amend each line as needed. */
+    /* Array of configuration settings. Amend each line as needed. */
     $config = array(
         'id'           => 'redpro',                 // Unique ID for hashing notices for multiple instances of TGMPA.
         'default_path' => '',                      // Default absolute path to pre-packaged plugins.
@@ -46,4 +45,4 @@ function redpro_theme_register_plugins() {
         )
     );
     redpro( $plugins, $config );
-}
+} ?>

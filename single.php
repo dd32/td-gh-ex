@@ -39,16 +39,12 @@
                 </div>
               <?php redpro_entry_meta(); ?>
               <div class="clear-fix"></div>
-			  <?php the_tags(); ?>
+			       <?php the_tags(); ?>
             </div>
-              
-              <!--end / post-meta--> 
-              
+              <!--end / post-meta-->
             </div>
             <figure class="feature-thumbnail-large">
-              <?php 
-			   the_post_thumbnail();
-			  ?>
+              <?php the_post_thumbnail(); ?>
             </figure>
             <div class="post-content">
               <?php the_content(); 
@@ -57,8 +53,7 @@
 					'after'       => '</div>',
 					'link_before' => '<span>',
 					'link_after'  => '</span>',
-				) );
-			?>
+				) ); ?>
             </div>
             <!--end / post-content-->
           </div>
@@ -67,13 +62,11 @@
       </div>
       <!--end / main-->
       <?php endwhile; // end of the loop. ?>
-      				
       <div class="col-md-3 col-md-offset-1 sidebar">
       	<?php get_sidebar(); ?>
       </div>
     </div>
   </div>
-  
   <!-- /container --> 
 </div>
 <?php get_footer(); ?>

@@ -53,8 +53,7 @@ function redpro_header_style() {
 	<style type="text/css" id="redpro-header-css">
 	<?php
 		// Has the text been hidden?
-		if ( ! display_header_text() ) :
-	?>
+		if ( ! display_header_text() ) : ?>
 		.site-title,
 		.site-description {
 			clip: rect(1px 1px 1px 1px); /* IE7 */
@@ -63,8 +62,7 @@ function redpro_header_style() {
 		}
 	<?php
 		// If the user has set a custom color for the text, use that.
-		elseif ( $text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) :
-	?>
+		elseif ( $text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) : ?>
 		.site-title a {
 			color: #<?php echo esc_attr( $text_color ); ?>;
 		}
@@ -81,8 +79,7 @@ if ( ! function_exists( 'redpro_admin_header_style' ) ) :
  *
  * @see redpro_custom_header_setup()
  */
-function redpro_admin_header_style() {
-?>
+function redpro_admin_header_style() { ?>
 	<style type="text/css" id="redpro-admin-header-css">
 	.appearance_page_custom-header #headimg {
 		background-color: #000;
@@ -114,8 +111,7 @@ if ( ! function_exists( 'redpro_admin_header_image' ) ) :
  *
  * @see redpro_custom_header_setup()
  */
-function redpro_admin_header_image() {
-?>
+function redpro_admin_header_image() { ?>
 	<div id="headimg">
 		<?php if ( get_header_image() ) : ?>
 		<img src="<?php header_image(); ?>" alt="">
@@ -124,4 +120,4 @@ function redpro_admin_header_image() {
 	</div>
 <?php
 }
-endif; // redpro_admin_header_image
+endif; // redpro_admin_header_image ?>

@@ -3,10 +3,8 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title><?php wp_title( '|', true, 'right' ); ?></title>
 <?php $options = get_option( 'faster_theme_options' ); 
-if(!empty($options['fevicon'])) {
-?>
+if(!empty($options['fevicon'])) { ?>
 <link rel="shortcut icon" href="<?php echo esc_url_raw($options['fevicon']);?>">
 <?php } ?>
 <!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -29,30 +27,27 @@ if(!empty($options['fevicon'])) {
 			 bloginfo('name');
 		 }else{
            echo  "<img src='".esc_url_raw($options['logo'])."' class='img-responsive'/>";
-		 }?>
+		 } ?>
         </a> </div>
-      <?php 
-			$defaults = array(
-					'theme_location'  => 'primary',
-					'container'       => 'div',
-					'container_class' => '',
-					'container_id'    => '',
-					'menu_class'      => '',
-					'menu_id'         => '',
-					'echo'            => true,
-					'fallback_cb'     => 'wp_page_menu',
-					'before'          => '',
-					'after'           => '',
-					'link_before'     => '',
-					'link_after'      => '',
-					'items_wrap'      => '<ul id="menu" class="navbar-right menu-ommune">%3$s</ul>',
-					'depth'           => 0,
-					'walker'          => ''
-					);
+      <?php $defaults = array(
+			'theme_location'  => 'primary',
+			'container'       => 'div',
+			'container_class' => '',
+			'container_id'    => '',
+			'menu_class'      => '',
+			'menu_id'         => '',
+			'echo'            => true,
+			'fallback_cb'     => 'wp_page_menu',
+			'before'          => '',
+			'after'           => '',
+			'link_before'     => '',
+			'link_after'      => '',
+			'items_wrap'      => '<ul id="menu" class="navbar-right menu-ommune">%3$s</ul>',
+			'depth'           => 0,
+			'walker'          => ''
+			);
 			wp_nav_menu($defaults); ?>
-      
-      <!--/.navbar-collapse --> 
-      
+      <!--/.navbar-collapse -->
     </div>
   </div> 
   <!--end / nav--> 

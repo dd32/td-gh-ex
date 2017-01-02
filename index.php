@@ -5,7 +5,7 @@
       <div class="col-md-6  col-sm-6 ">
         <p class="redpro-post-title"><?php _e('Blog ','redpro'); echo " : "; ?>
           <span class="redpro-post-subtitle">
-          <?php redpro_title() ?>
+          <?php redpro_title(); ?>
           </span></p>
       </div>
       <div class="col-md-6  col-sm-6 ">
@@ -59,7 +59,6 @@
       </div>
     </div>
   </div>
-  
   <!-- /container --> 
 </div>
 <?php get_footer(); ?>

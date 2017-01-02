@@ -38,23 +38,17 @@ get_header(); ?>
           <div class="post-content">
             <?php the_content(); ?>
           </div>
-          
           <!--end / post-content--> 
-          
         </article>
         <?php endwhile; // end of the loop. ?>
         <?php comments_template( '', true ); ?>
       </div>
-      
       <!--end / main-->
-      
       <div class="col-md-3 col-md-offset-1 sidebar">
         <?php get_sidebar(); ?>
       </div>
     </div>
   </div>
-  
   <!-- /container --> 
-  
 </div>
 <?php get_footer(); ?>

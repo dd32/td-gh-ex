@@ -1,7 +1,6 @@
 <?php 
 get_header(); 
-$options = get_option( 'faster_theme_options' );
-?>
+$options = get_option( 'faster_theme_options' ); ?>
 <div class="main-container">
   <div class="container"> 
     <!-- Example row of columns -->
@@ -21,8 +20,6 @@ $options = get_option( 'faster_theme_options' );
 	 } else {
 		 echo '<div class="col-md-8 main">';
 	 }
-	?>
-      <?php 
 	  $post_per_page = get_option('posts_per_page');
 	  $args = array( 'posts_per_page'  => $post_per_page, 
 		'orderby'      => 'post_date', 
@@ -31,8 +28,7 @@ $options = get_option( 'faster_theme_options' );
 		'paged' => $paged,
 		'post_status'    => 'publish'	
       );
-	$query = new WP_Query($args);
-	?>
+	$query = new WP_Query($args); ?>
       <?php if ($query->have_posts() ) : ?>
       <?php while ($query->have_posts()) : $query->the_post(); ?>
       <article class="post">
@@ -40,7 +36,6 @@ $options = get_option( 'faster_theme_options' );
         <div class="post-meta">
           <div class="post-date"> <span class="day"><?php echo get_the_time('d'); ?></span> <span class="month"><?php echo get_the_time('M'); ?></span> </div>
           <!--end / post-date-->
-          
           <div class="post-meta-author">
             <div class="post-author-name">
               <h5><a href="<?php the_permalink(); ?>">
@@ -49,26 +44,18 @@ $options = get_option( 'faster_theme_options' );
              </div>
               <?php redpro_entry_meta(); ?>
               <div class="clear-fix"></div>
-			  <?php the_tags(); ?>
+			      <?php the_tags(); ?>
             </div>
-          
           <!--end / post-meta--> 
-          
         </div>
-        
         <figure class="feature-thumbnail-large">
-          <?php 
-			$id = get_the_ID();
+          <?php $id = get_the_ID();
 			$feat_image = wp_get_attachment_url(get_post_thumbnail_id($id)); 
 			if($feat_image!='')
-			{
-			?>
-          <a href="<?php echo $feat_image ?>"> <img src="<?php echo $feat_image ?>" class="img-responsive" alt="<?php echo get_the_title();?>" /> </a>
-          <?php 
-			 } 
-			 ?>
+			{ ?>
+      <a href="<?php echo $feat_image ?>"> <img src="<?php echo $feat_image ?>" class="img-responsive" alt="<?php echo get_the_title();?>" /> </a>
+      <?php } ?>
         </figure>
-        
         <div class="post-content">
           <?php the_excerpt(); ?>
         </div>
@@ -95,8 +82,7 @@ $options = get_option( 'faster_theme_options' );
 		echo '<div class="col-md-3 col-md-offset-1 sidebar">';
 	  	get_sidebar();
 	  	echo '</div>';
-	  } 
-	  ?>
+	  } ?>
   </div>
 </div>
 <?php get_footer(); ?>

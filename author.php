@@ -14,8 +14,8 @@ get_header(); ?>
       </div>
       <div class="col-md-6  col-sm-6 ">
         <ol class="breadcrumb  pull-right">
-          <li><a href="<?php echo site_url();?>"><?php _e('Home','redpro') ?></a></li>
-          <li class="active"><a href="<?php echo site_url().'/author/'.get_the_author();?>"><?php echo get_the_author();?></a></li>
+          <li><a href="<?php echo site_url();?>"><?php _e('Home','redpro'); ?></a></li>
+          <li class="active"><a href="<?php echo site_url().'/author/'.get_the_author();?>"><?php echo get_the_author(); ?></a></li>
         </ol>
       </div>
     </div>
@@ -27,8 +27,8 @@ get_header(); ?>
     <!-- Example row of columns -->
     <div class="row">
       <div class="col-md-8 main">
-        <?php if (have_posts() ) : ?>
-        <?php while (have_posts()) : the_post(); ?>
+        <?php if (have_posts() ) :
+          while (have_posts()) : the_post(); ?>
         <article class="post">
           <h2 class="post-title"><a href="#"></a> </h2>
           <div class="post-meta">
@@ -41,7 +41,7 @@ get_header(); ?>
                </div>
               <?php redpro_entry_meta(); ?>
               <div class="clear-fix"></div>
-			  <?php the_tags(); ?>
+			       <?php the_tags(); ?>
             </div>
             <!--end / post-meta--> 
             
@@ -50,7 +50,7 @@ get_header(); ?>
             <?php $id = get_the_ID();
 				  $feat_image = wp_get_attachment_url(get_post_thumbnail_id($id)); 
 				  if($feat_image!="") { ?>
-            <a href="<?php echo $feat_image ?>"> <img src="<?php echo $feat_image ?>" class="img-responsive" alt="<?php echo get_the_title();?>" /> </a>
+            <a href="<?php the_permalink(); ?>"> <img src="<?php echo $feat_image ?>" class="img-responsive" alt="<?php echo get_the_title(); ?>" /></a>
             <?php } ?>
           </figure>
           <div class="post-content">
@@ -63,17 +63,17 @@ get_header(); ?>
         <!--end / article--> 
      
         <!--Pagination Start-->
-        <?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); ?>
-        <?php if(is_plugin_active('faster-pagination/ft-pagination.php')) {?>
-            <?php faster_pagination();?>
-        <?php }else { ?>
-        <?php if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
+        <?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+          if(is_plugin_active('faster-pagination/ft-pagination.php')) {
+            faster_pagination();
+          }else {
+          if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
           <nav class="redpro-nav">
                 <span class="redpro-nav-previous"><?php previous_posts_link(); ?></span>
                 <span class="redpro-nav-next"><?php next_posts_link(); ?></span>
 			</nav>
-        <?php } ?>
-        <?php }//is plugin active ?>
+        <?php }
+          }//is plugin active ?>
         <!--Pagination End-->
       </div>
       <!--end / main-->
@@ -82,7 +82,6 @@ get_header(); ?>
       </div>
     </div>
   </div>
-  
   <!-- /container --> 
 </div>
 <?php get_footer(); ?>
