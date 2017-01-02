@@ -2,8 +2,7 @@
 /**
  * The Header template for our theme
  */
-  $foodrecipes_options = get_option( 'foodrecipes_theme_options' );
-?>
+$foodrecipes_options = get_option( 'foodrecipes_theme_options' ); ?>
 <!DOCTYPE html>
 <!--[if IE 7]>
 <html class="ie ie7" <?php language_attributes(); ?>>
@@ -17,9 +16,6 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width">
-<title>
-<?php wp_title( '|', true, 'right' ); ?>
-</title>
 <?php if(!empty($foodrecipes_options['favicon'])) { ?>
 <link rel="shortcut icon" href="<?php echo esc_url($foodrecipes_options['favicon']);?>">
 <?php } ?>
@@ -41,15 +37,15 @@
         <?php if(empty($foodrecipes_options['logo'])){ ?>
         <h1 class="foodrecipes-site-title"><?php echo get_bloginfo('name'); ?></h1>
         <?php }else{
-                               echo  "<img src='".esc_url($foodrecipes_options['logo'])."' class='img-responsive'/>";
-                             }?>
+          echo  "<img src='".esc_url($foodrecipes_options['logo'])."' class='img-responsive'/>";
+        } ?>
         </a> </div>
       <div class="col-md-3 no-padding-right foodrecipes-social-icon-right ">
         <ul class="foodrecipes-social list-inline pull-right">
-          <?php if(!empty($foodrecipes_options['fburl'])) {?>
+          <?php if(!empty($foodrecipes_options['fburl'])) { ?>
           <li><a href="<?php echo esc_url($foodrecipes_options['fburl']); ?>"><i class="fa fa-facebook"></i></a></li>
           <?php } ?>
-          <?php if(!empty($foodrecipes_options['twitter'])) {?>
+          <?php if(!empty($foodrecipes_options['twitter'])) { ?>
           <li><a href="<?php echo esc_url($foodrecipes_options['twitter']); ?>"><i class="fa fa-twitter"></i></a></li>
           <?php } ?>
           <?php if(!empty($foodrecipes_options['googleplus'])) { ?>
@@ -64,7 +60,7 @@
         </ul>
       </div>
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle navbar-toggle-top" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only"><?php _e('Toggle navigation','foodrecipes'); ?></span> <span class="icon-bar foodrecipes-icon-color"></span> <span class="icon-bar foodrecipes-icon-color"></span> <span class="icon-bar foodrecipes-icon-color"></span> </button>
+        <button type="button" class="navbar-toggle navbar-toggle-top" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only"><?php _e('Toggle navigation','food-recipes'); ?></span> <span class="icon-bar foodrecipes-icon-color"></span> <span class="icon-bar foodrecipes-icon-color"></span> <span class="icon-bar foodrecipes-icon-color"></span> </button>
       </div>
       <?php 
 			$foodrecipes_defaults = array(

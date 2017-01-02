@@ -38,26 +38,26 @@
         public function init() {
             // Load class strings.
             $this->strings = array(
-                'page_title'                     => __( 'Install Required Plugins', 'foodrecipes' ),
-                'menu_title'                     => __( 'Install Plugins', 'foodrecipes' ),
-                'installing'                     => __( 'Installing Plugin: %s', 'foodrecipes' ),
-                'oops'                           => __( 'Something went wrong.', 'foodrecipes' ),
-                'notice_can_install_required'    => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.', 'foodrecipes' ),
-                'notice_can_install_recommended' => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.', 'foodrecipes' ),
-                'notice_cannot_install'          => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.', 'foodrecipes' ),
-                'notice_can_activate_required'   => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.', 'foodrecipes' ),
-                'notice_can_activate_recommended'=> _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.', 'foodrecipes' ),
-                'notice_cannot_activate'         => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.', 'foodrecipes' ),
-                'notice_ask_to_update'           => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.', 'foodrecipes' ),
-                'notice_cannot_update'           => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.', 'foodrecipes' ),
-                'install_link'                   => _n_noop( 'Begin installing plugin', 'Begin installing plugins', 'foodrecipes' ),
-                'activate_link'                  => _n_noop( 'Begin activating plugin', 'Begin activating plugins', 'foodrecipes' ),
-                'return'                         => __( 'Return to Required Plugins Installer', 'foodrecipes' ),
-                'dashboard'                      => __( 'Return to the dashboard', 'foodrecipes' ),
-                'plugin_activated'               => __( 'Plugin activated successfully.', 'foodrecipes' ),
-                'activated_successfully'         => __( 'The following plugin was activated successfully:', 'foodrecipes' ),
-                'complete'                       => __( 'All plugins installed and activated successfully. %1$s', 'foodrecipes' ),
-                'dismiss'                        => __( 'Dismiss this notice', 'foodrecipes' ),
+                'page_title'                     => __( 'Install Required Plugins', 'food-recipes' ),
+                'menu_title'                     => __( 'Install Plugins', 'food-recipes' ),
+                'installing'                     => __( 'Installing Plugin: %s', 'food-recipes' ),
+                'oops'                           => __( 'Something went wrong.', 'food-recipes' ),
+                'notice_can_install_required'    => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.', 'food-recipes' ),
+                'notice_can_install_recommended' => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.', 'food-recipes' ),
+                'notice_cannot_install'          => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.', 'food-recipes' ),
+                'notice_can_activate_required'   => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.', 'food-recipes' ),
+                'notice_can_activate_recommended'=> _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.', 'food-recipes' ),
+                'notice_cannot_activate'         => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.', 'food-recipes' ),
+                'notice_ask_to_update'           => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.', 'food-recipes' ),
+                'notice_cannot_update'           => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.', 'food-recipes' ),
+                'install_link'                   => _n_noop( 'Begin installing plugin', 'Begin installing plugins', 'food-recipes' ),
+                'activate_link'                  => _n_noop( 'Begin activating plugin', 'Begin activating plugins', 'food-recipes' ),
+                'return'                         => __( 'Return to Required Plugins Installer', 'food-recipes' ),
+                'dashboard'                      => __( 'Return to the dashboard', 'food-recipes' ),
+                'plugin_activated'               => __( 'Plugin activated successfully.', 'food-recipes' ),
+                'activated_successfully'         => __( 'The following plugin was activated successfully:', 'food-recipes' ),
+                'complete'                       => __( 'All plugins installed and activated successfully. %1$s', 'food-recipes' ),
+                'dismiss'                        => __( 'Dismiss this notice', 'food-recipes' ),
             );
             do_action( 'foodrecipes_register' );
             // After this point, the plugins should be registered and the configuration set.
@@ -243,7 +243,7 @@
                 $complete = array_filter( $complete );
                 // All plugins are active, so we display the complete string and hide the plugin menu.
                 if ( empty( $complete ) ) {
-                    echo '<p>' .  sprintf( $this->strings['complete'], '<a href="' . admin_url() . '" title="' . __( 'Return to the Dashboard', 'foodrecipes' ) . '">' . __( 'Return to the Dashboard', 'foodrecipes' ) . '</a>' ) . '</p>';
+                    echo '<p>' .  sprintf( $this->strings['complete'], '<a href="' . admin_url() . '" title="' . __( 'Return to the Dashboard', 'food-recipes' ) . '">' . __( 'Return to the Dashboard', 'food-recipes' ) . '</a>' ) . '</p>';
                     echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
                 } return true;
             }
@@ -361,11 +361,11 @@
                         } }
                     $last_plugin = array_pop( $plugin_groups ); // Pop off last name to prep for readability.
                     $imploded    = empty( $plugin_groups ) ? '<em>' . $last_plugin . '</em>' : '<em>' . ( implode( ', ', $plugin_groups ) . '</em> and <em>' . $last_plugin . '</em>' );
-                    $rendered .= '<p>' . sprintf( translate_nooped_plural( $this->strings[$type], $count, 'foodrecipes' ), $imploded, $count ) . '</p>';
+                    $rendered .= '<p>' . sprintf( translate_nooped_plural( $this->strings[$type], $count, 'food-recipes' ), $imploded, $count ) . '</p>';
                 }
                 // Setup variables to determine if action links are needed.
-                $show_install_link  = $install_link ? '<a href="' . add_query_arg( 'page', $this->menu, admin_url( 'themes.php' ) ) . '">' . translate_nooped_plural( $this->strings['install_link'], $install_link_count, 'foodrecipes' ) . '</a>' : '';
-                $show_activate_link = $activate_link ? '<a href="' . add_query_arg( 'page', $this->menu, admin_url( 'themes.php' ) ) . '">' . translate_nooped_plural( $this->strings['activate_link'], $activate_link_count, 'foodrecipes' ) . '</a>'  : '';
+                $show_install_link  = $install_link ? '<a href="' . add_query_arg( 'page', $this->menu, admin_url( 'themes.php' ) ) . '">' . translate_nooped_plural( $this->strings['install_link'], $install_link_count, 'food-recipes' ) . '</a>' : '';
+                $show_activate_link = $activate_link ? '<a href="' . add_query_arg( 'page', $this->menu, admin_url( 'themes.php' ) ) . '">' . translate_nooped_plural( $this->strings['activate_link'], $activate_link_count, 'food-recipes' ) . '</a>'  : '';
                 // Define all of the action links.
                 $action_links = apply_filters(
                     'foodrecipes_notice_action_links',
@@ -545,18 +545,18 @@ if ( ! class_exists( 'foodrecipesPA_List_Table' ) ) {
                 if ( ! empty( $plugin['source'] ) ) {
                     // The plugin must be from a private repository.
                     if ( preg_match( '|^http(s)?://|', $plugin['source'] ) ) {
-                        $table_data[$i]['source'] = __( 'Private Repository', 'foodrecipes' );
+                        $table_data[$i]['source'] = __( 'Private Repository', 'food-recipes' );
                     // The plugin is pre-packaged with the theme.
                     } else {
-                        $table_data[$i]['source'] = __( 'Pre-Packaged', 'foodrecipes' );
+                        $table_data[$i]['source'] = __( 'Pre-Packaged', 'food-recipes' );
                     } } else {
-                    $table_data[$i]['source'] = __( 'WordPress Repository', 'foodrecipes' );
+                    $table_data[$i]['source'] = __( 'WordPress Repository', 'food-recipes' );
                 }
-                $table_data[$i]['type'] = isset( $plugin['required'] ) && $plugin['required'] ? __( 'Required', 'foodrecipes' ) : __( 'Recommended', 'foodrecipes' );
+                $table_data[$i]['type'] = isset( $plugin['required'] ) && $plugin['required'] ? __( 'Required', 'food-recipes' ) : __( 'Recommended', 'food-recipes' );
                 if ( ! isset( $installed_plugins[$plugin['file_path']] ) ) {
-                    $table_data[$i]['status'] = sprintf( '%1$s', __( 'Not Installed', 'foodrecipes' ) );
+                    $table_data[$i]['status'] = sprintf( '%1$s', __( 'Not Installed', 'food-recipes' ) );
                 } elseif ( is_plugin_inactive( $plugin['file_path'] ) ) {
-                    $table_data[$i]['status'] = sprintf( '%1$s', __( 'Installed But Not Activated', 'foodrecipes' ) );
+                    $table_data[$i]['status'] = sprintf( '%1$s', __( 'Installed But Not Activated', 'food-recipes' ) );
                 }
                 $table_data[$i]['file_path'] = $plugin['file_path'];
                 $table_data[$i]['url']       = isset( $plugin['source'] ) ? $plugin['source'] : 'repo';
@@ -602,7 +602,7 @@ if ( ! class_exists( 'foodrecipesPA_List_Table' ) ) {
             if ( ! isset( $installed_plugins[$item['file_path']] ) ) {
                 $actions = array(
                     'install' => sprintf(
-                        '<a href="%1$s" title="' . __( 'Install', 'foodrecipes' ) . ' %2$s">' . __( 'Install', 'foodrecipes' ) . '</a>',
+                        '<a href="%1$s" title="' . __( 'Install', 'food-recipes' ) . ' %2$s">' . __( 'Install', 'food-recipes' ) . '</a>',
                         wp_nonce_url(
                             add_query_arg(
                                 array(
@@ -620,7 +620,7 @@ if ( ! class_exists( 'foodrecipesPA_List_Table' ) ) {
             elseif ( is_plugin_inactive( $item['file_path'] ) ) {
                 $actions = array(
                     'activate' => sprintf(
-                        '<a href="%1$s" title="' . __( 'Activate', 'foodrecipes' ) . ' %2$s">' . __( 'Activate', 'foodrecipes' ) . '</a>',
+                        '<a href="%1$s" title="' . __( 'Activate', 'food-recipes' ) . ' %2$s">' . __( 'Activate', 'food-recipes' ) . '</a>',
                         add_query_arg(
                             array(
                                 'page'                 => foodrecipes_Plugin_Activation::$instance->menu,
@@ -644,24 +644,24 @@ if ( ! class_exists( 'foodrecipesPA_List_Table' ) ) {
         
         public function no_items() 
 		{
-			_e('No plugins to install or activate','foodrecipes'); echo ".<a href='admin_url()'>".__('Return to the Dashboard','foodrecipes')."</a>";
+			_e('No plugins to install or activate','food-recipes'); echo ".<a href='admin_url()'>".__('Return to the Dashboard','food-recipes')."</a>";
 			echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
 		}
         /* Output all the column information within the table.*/
         public function get_columns() {
             $columns = array(
                 'cb'     => '<input type="checkbox" />',
-                'plugin' => __( 'Plugin', 'foodrecipes' ),
-                'source' => __( 'Source', 'foodrecipes' ),
-                'type'   => __( 'Type', 'foodrecipes' ),
-                'status' => __( 'Status', 'foodrecipes' )
+                'plugin' => __( 'Plugin', 'food-recipes' ),
+                'source' => __( 'Source', 'food-recipes' ),
+                'type'   => __( 'Type', 'food-recipes' ),
+                'status' => __( 'Status', 'food-recipes' )
             ); return $columns;
         }
         /* Defines all types of bulk actions for handling*/
         public function get_bulk_actions() {
             $actions = array(
-                'foodrecipes-bulk-install'  => __( 'Install', 'foodrecipes' ),
-                'foodrecipes-bulk-activate' => __( 'Activate', 'foodrecipes' ),
+                'foodrecipes-bulk-install'  => __( 'Install', 'food-recipes' ),
+                'foodrecipes-bulk-activate' => __( 'Activate', 'food-recipes' ),
             );
             return $actions;
         }
@@ -726,7 +726,7 @@ if ( ! class_exists( 'foodrecipesPA_List_Table' ) ) {
                 }
                 // No need to proceed further if we have no plugins to install.
                 if ( empty( $plugin_installs ) ) {
-                    echo '<div id="message" class="error"><p>' . __( 'No plugins are available to be installed at this time.', 'foodrecipes' ) . '</p></div>';
+                    echo '<div id="message" class="error"><p>' . __( 'No plugins are available to be installed at this time.', 'food-recipes' ) . '</p></div>';
                     return false;
                 }
                 // Reset array indexes in case we removed already installed plugins.
@@ -807,7 +807,7 @@ if ( ! class_exists( 'foodrecipesPA_List_Table' ) ) {
                 } }
                 // Return early if there are no plugins to activate.
                 if ( empty( $plugins_to_activate ) ) {
-                    echo '<div id="message" class="error"><p>' . __( 'No plugins are available to be activated at this time.', 'foodrecipes' ) . '</p></div>';
+                    echo '<div id="message" class="error"><p>' . __( 'No plugins are available to be activated at this time.', 'food-recipes' ) . '</p></div>';
                     return false;
                 }
                 $plugins      = array();
@@ -824,7 +824,7 @@ if ( ! class_exists( 'foodrecipesPA_List_Table' ) ) {
                 if ( is_wp_error( $activate ) ) {
                     echo '<div id="message" class="error"><p>' . $activate->get_error_message() . '</p></div>';
                 } else {
-                    printf( '<div id="message" class="updated"><p>%1$s %2$s.</p></div>', _n( 'The following plugin was activated successfully:', 'The following plugins were activated successfully:', $count, 'foodrecipes' ), $imploded );
+                    printf( '<div id="message" class="updated"><p>%1$s %2$s.</p></div>', _n( 'The following plugin was activated successfully:', 'The following plugins were activated successfully:', $count, 'food-recipes' ), $imploded );
                 }
                 // Update recently activated plugins option.
                 $recent = (array) get_option( 'recently_activated' );
@@ -998,17 +998,17 @@ function foodrecipes_load_bulk_installer() {
                 }
                 /* Sets the correct install strings for the installer skin to use. */
                 public function install_strings() {
-                    $this->strings['no_package']          = __( 'Install package not available.', 'foodrecipes' );
-                    $this->strings['downloading_package'] = printf( __('Downloading install package from %1$s %s %1$s', 'foodrecipes'),'<span class="code">', '</span>&#8230;');
-                    $this->strings['unpack_package']      = __( 'Unpacking the package&#8230;', 'foodrecipes' );
-                    $this->strings['installing_package']  = __( 'Installing the plugin&#8230;', 'foodrecipes' );
-                    $this->strings['process_failed']      = __( 'Plugin install failed.', 'foodrecipes' );
-                    $this->strings['process_success']     = __( 'Plugin installed successfully.', 'foodrecipes' );
+                    $this->strings['no_package']          = __( 'Install package not available.', 'food-recipes' );
+                    $this->strings['downloading_package'] = printf( __('Downloading install package from %1$s %s %1$s', 'food-recipes'),'<span class="code">', '</span>&#8230;');
+                    $this->strings['unpack_package']      = __( 'Unpacking the package&#8230;', 'food-recipes' );
+                    $this->strings['installing_package']  = __( 'Installing the plugin&#8230;', 'food-recipes' );
+                    $this->strings['process_failed']      = __( 'Plugin install failed.', 'food-recipes' );
+                    $this->strings['process_success']     = __( 'Plugin installed successfully.', 'food-recipes' );
                 }
                 /* Sets the correct activation strings for the installer skin to use.*/
                 public function activate_strings() {
-                    $this->strings['activation_failed']  = __( 'Plugin activation failed.', 'foodrecipes' );
-                    $this->strings['activation_success'] = __( 'Plugin activated successfully.', 'foodrecipes' );
+                    $this->strings['activation_failed']  = __( 'Plugin activation failed.', 'food-recipes' );
+                    $this->strings['activation_success'] = __( 'Plugin activated successfully.', 'food-recipes' );
                 }
                 /* Grabs the plugin file from an installed plugin.*/
                 public function plugin_info() {
@@ -1047,19 +1047,19 @@ function foodrecipes_load_bulk_installer() {
                 public function add_strings() {
                     // Automatic activation strings.
                     if ( foodrecipes_Plugin_Activation::$instance->is_automatic ) {
-                        $this->upgrader->strings['skin_upgrade_start']        = __( 'The installation and activation process is starting. This process may take a while on some hosts, so please be patient.', 'foodrecipes' );
-                        $this->upgrader->strings['skin_update_successful']    = __( '%1$s installed and activated successfully.', 'foodrecipes' ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details', 'foodrecipes' ) . '</span><span class="hidden">' . __( 'Hide Details', 'foodrecipes' ) . '</span>.</a>';
-                        $this->upgrader->strings['skin_upgrade_end']          = __( 'All installations and activations have been completed.', 'foodrecipes' );
-                        $this->upgrader->strings['skin_before_update_header'] = __( 'Installing and Activating Plugin %1$s (%2$d/%3$d)', 'foodrecipes' );
+                        $this->upgrader->strings['skin_upgrade_start']        = __( 'The installation and activation process is starting. This process may take a while on some hosts, so please be patient.', 'food-recipes' );
+                        $this->upgrader->strings['skin_update_successful']    = __( '%1$s installed and activated successfully.', 'food-recipes' ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details', 'food-recipes' ) . '</span><span class="hidden">' . __( 'Hide Details', 'food-recipes' ) . '</span>.</a>';
+                        $this->upgrader->strings['skin_upgrade_end']          = __( 'All installations and activations have been completed.', 'food-recipes' );
+                        $this->upgrader->strings['skin_before_update_header'] = __( 'Installing and Activating Plugin %1$s (%2$d/%3$d)', 'food-recipes' );
                     }
                     // Default installation strings.
                     else {
-                        $this->upgrader->strings['skin_upgrade_start']        = __( 'The installation process is starting. This process may take a while on some hosts, so please be patient.', 'foodrecipes' );
-                        $this->upgrader->strings['skin_update_failed_error']  = __( 'An error occurred while installing %1$s: %2$s.', 'foodrecipes' );
-                        $this->upgrader->strings['skin_update_failed']        = __( 'The installation of %1$s failed.', 'foodrecipes' );
-                        $this->upgrader->strings['skin_update_successful']    = __( '%1$s installed successfully.', 'foodrecipes' ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details', 'foodrecipes' ) . '</span><span class="hidden">' . __( 'Hide Details', 'foodrecipes' ) . '</span>.</a>';
-                        $this->upgrader->strings['skin_upgrade_end']          = __( 'All installations have been completed.', 'foodrecipes' );
-                        $this->upgrader->strings['skin_before_update_header'] = __( 'Installing Plugin %1$s (%2$d/%3$d)', 'foodrecipes' );
+                        $this->upgrader->strings['skin_upgrade_start']        = __( 'The installation process is starting. This process may take a while on some hosts, so please be patient.', 'food-recipes' );
+                        $this->upgrader->strings['skin_update_failed_error']  = __( 'An error occurred while installing %1$s: %2$s.', 'food-recipes' );
+                        $this->upgrader->strings['skin_update_failed']        = __( 'The installation of %1$s failed.', 'food-recipes' );
+                        $this->upgrader->strings['skin_update_successful']    = __( '%1$s installed successfully.', 'food-recipes' ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details', 'food-recipes' ) . '</span><span class="hidden">' . __( 'Hide Details', 'food-recipes' ) . '</span>.</a>';
+                        $this->upgrader->strings['skin_upgrade_end']          = __( 'All installations have been completed.', 'food-recipes' );
+                        $this->upgrader->strings['skin_before_update_header'] = __( 'Installing Plugin %1$s (%2$d/%3$d)', 'food-recipes' );
                     }
                 }
                 /* Outputs the header strings and necessary JS before each plugin installation. */
@@ -1114,7 +1114,7 @@ function foodrecipes_load_bulk_installer() {
                     $complete = array_filter( $complete );
                     // All plugins are active, so we display the complete string and hide the menu to protect users.
                     if ( empty( $complete ) ) {
-                        echo '<p>' .  sprintf( foodrecipes_Plugin_Activation::$instance->strings['complete'], '<a href="' . admin_url() . '" title="' . __( 'Return to the Dashboard', 'foodrecipes' ) . '">' . __( 'Return to the Dashboard', 'foodrecipes' ) . '</a>' ) . '</p>';
+                        echo '<p>' .  sprintf( foodrecipes_Plugin_Activation::$instance->strings['complete'], '<a href="' . admin_url() . '" title="' . __( 'Return to the Dashboard', 'food-recipes' ) . '">' . __( 'Return to the Dashboard', 'food-recipes' ) . '</a>' ) . '</p>';
                         echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
                     } }
                 /* Flush header output buffer. */

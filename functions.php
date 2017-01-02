@@ -12,7 +12,7 @@ function foodrecipes_setup() {
 	/*
 	 * Make foodrecipes theme available for translation.
 	 */
-	load_theme_textdomain( 'foodrecipes', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'food-recipes', get_template_directory() . '/languages' );
 	// This theme styles the visual editor to resemble the theme style.
 	add_editor_style( array( 'css/editor-style.css', foodrecipes_font_url() ) );
 	// Add RSS feed links to <head> for posts and comments.
@@ -21,10 +21,10 @@ function foodrecipes_setup() {
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 672, 372, true );
 	add_image_size( 'foodrecipes-full-width', 1038, 576, true );
-	
+	add_theme_support( "title-tag" );
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
-		'primary'   => __( 'Top primary menu', 'foodrecipes' ),
+		'primary'   => __( 'Top primary menu', 'food-recipes' ),
 	) );
 
 	/*
@@ -91,7 +91,7 @@ function foodrecipes_font_url() {
 	 * Translators: If there are characters in your language that are not supported
 	 * by Lato, translate this to 'off'. Do not translate into your own language.
 	 */
-	if ( 'off' !== _x( 'on', 'Lato font: on or off', 'foodrecipes' ) ) {
+	if ( 'off' !== _x( 'on', 'Lato font: on or off', 'food-recipes' ) ) {
 		$foodrecipes_font_url = add_query_arg( 'family', urlencode( 'Lato:300,400,700,900,300italic,400italic,700italic' ), "//fonts.googleapis.com/css" );
 	}
 	return $foodrecipes_font_url;
@@ -114,7 +114,7 @@ function foodrecipes_wp_title( $title, $sep ) {
 	}
 	// Add a page number if necessary.
 	if ( $paged >= 2 || $page >= 2 ) {
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'foodrecipes' ), max( $paged, $page ) );
+		$title = "$title $sep " . sprintf( __( 'Page %s', 'food-recipes' ), max( $paged, $page ) );
 	}
 	return $title;
 }
@@ -123,9 +123,9 @@ add_filter( 'wp_title', 'foodrecipes_wp_title', 10, 2 );
 /*********** Register Sidebar **************/
 function foodrecipes_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Primary Sidebar', 'foodrecipes' ),
+		'name'          => __( 'Primary Sidebar', 'food-recipes' ),
 		'id'            => 'sidebar-1',
-		'description'   => __( 'Main sidebar that appears on the left.', 'foodrecipes' ),
+		'description'   => __( 'Main sidebar that appears on the left.', 'food-recipes' ),
 		'before_widget' => '<aside id="%1$s" class="widget blog-categories %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -154,7 +154,7 @@ add_action('wp_enqueue_scripts', 'foodrecipes_enqueue');
 function foodrecipes_custom_breadcrumbs() {
   $foodrecipes_showonhome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
   $foodrecipes_delimiter = '/'; // delimiter between crumbs
-  $foodrecipes_home = __('Home','foodrecipes'); // text for the 'Home' link
+  $foodrecipes_home = __('Home','food-recipes'); // text for the 'Home' link
   $foodrecipes_showCurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
   $foodrecipes_before = '<span>'; // tag before the current crumb
   $foodrecipes_after = '</span>'; // tag after the current crumb
@@ -173,10 +173,10 @@ function foodrecipes_custom_breadcrumbs() {
     if ( is_category() ) {
       $foodrecipes_thisCat = get_category(get_query_var('cat'), false);
       if ($foodrecipes_thisCat->parent != 0) echo get_category_parents($foodrecipes_thisCat->parent, TRUE, ' ' . $foodrecipes_delimiter . ' ');
-      echo $foodrecipes_before . __('Archive by category','foodrecipes'). ' "'. single_cat_title('', false) . '"' . $foodrecipes_after;
+      echo $foodrecipes_before . __('Archive by category','food-recipes'). ' "'. single_cat_title('', false) . '"' . $foodrecipes_after;
 
     } elseif ( is_search() ) {
-      echo $foodrecipes_before . __('Search results for','foodrecipes') .' "'. get_search_query() . '"' . $foodrecipes_after;
+      echo $foodrecipes_before . __('Search results for','food-recipes') .' "'. get_search_query() . '"' . $foodrecipes_after;
 
     } elseif ( is_day() ) {
       echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $foodrecipes_delimiter . ' ';
@@ -234,20 +234,20 @@ function foodrecipes_custom_breadcrumbs() {
       if ($foodrecipes_showCurrent == 1) echo ' ' . $foodrecipes_delimiter . ' ' . $foodrecipes_before . get_the_title() . $foodrecipes_after;
 
     } elseif ( is_tag() ) {
-      echo $foodrecipes_before . __('Posts tagged','foodrecipes').' "' . single_tag_title('', false) . '"' . $foodrecipes_after;
+      echo $foodrecipes_before . __('Posts tagged','food-recipes').' "' . single_tag_title('', false) . '"' . $foodrecipes_after;
 
     } elseif ( is_author() ) {
        global $author;
       $foodrecipes_userdata = get_userdata($author);
-      echo $foodrecipes_before . __('Articles posted by','foodrecipes').' '. $foodrecipes_userdata->display_name . $foodrecipes_after;
+      echo $foodrecipes_before . __('Articles posted by','food-recipes').' '. $foodrecipes_userdata->display_name . $foodrecipes_after;
 
     } elseif ( is_404() ) {
-      echo $foodrecipes_before . __('Error 404','foodrecipes') . $foodrecipes_after;
+      echo $foodrecipes_before . __('Error 404','food-recipes') . $foodrecipes_after;
     }
 
     if ( get_query_var('paged') ) {
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
-      echo __('Page','foodrecipes') . ' ' . get_query_var('paged');
+      echo __('Page','food-recipes') . ' ' . get_query_var('paged');
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
     }
 
@@ -263,9 +263,9 @@ function foodrecipes_custom_breadcrumbs() {
  **/
 function foodrecipes_entry_meta() {
 
-	$foodrecipes_category_list = get_the_category_list( ', ', 'foodrecipes' );
+	$foodrecipes_category_list = get_the_category_list( ', ', 'food-recipes' );
 
-	$foodrecipes_tag_list = get_the_tag_list(', ', 'foodrecipes' );
+	$foodrecipes_tag_list = get_the_tag_list(', ', 'food-recipes' );
 
 	$foodrecipes_date = sprintf( '<a href="%1$s" title="%2$s" ><time datetime="%3$s">%4$s</time></a>',
 		esc_url( get_permalink() ),
@@ -276,31 +276,31 @@ function foodrecipes_entry_meta() {
 
 	$foodrecipes_author = sprintf( '<span><a href="%1$s" title="%2$s" >%3$s</a></span>',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'foodrecipes' ), get_the_author() ) ),
+		esc_attr( sprintf( __( 'View all posts by %s', 'food-recipes' ), get_the_author() ) ),
 		get_the_author()
 	);
 if(get_comments_number() > 0 ) {
 
 	if ( $foodrecipes_tag_list ) {
-			$foodrecipes_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s', 'foodrecipes' );
-			echo __('Comments','foodrecipes'). ' : ' .get_comments_number().' ';
+			$foodrecipes_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s', 'food-recipes' );
+			echo __('Comments','food-recipes'). ' : ' .get_comments_number().' ';
 		} elseif ( $foodrecipes_category_list ) {
-			$foodrecipes_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s', 'foodrecipes' );
-			echo __('Comments','foodrecipes'). ' : ' .get_comments_number().' ';
+			$foodrecipes_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s', 'food-recipes' );
+			echo __('Comments','food-recipes'). ' : ' .get_comments_number().' ';
 		} else {
-			$foodrecipes_utility_text = __( 'Posted on : %3$s by : %4$s', 'foodrecipes' );
-			echo __('Comments','foodrecipes'). ' : ' .get_comments_number().' ';
+			$foodrecipes_utility_text = __( 'Posted on : %3$s by : %4$s', 'food-recipes' );
+			echo __('Comments','food-recipes'). ' : ' .get_comments_number().' ';
 		}
 	
 	
 	
 } else {
 	if ( $foodrecipes_tag_list ) {
-			$foodrecipes_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s', 'foodrecipes' );
+			$foodrecipes_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s', 'food-recipes' );
 		} elseif ( $foodrecipes_category_list ) {
-			$foodrecipes_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s', 'foodrecipes' );
+			$foodrecipes_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s', 'food-recipes' );
 		} else {
-			$foodrecipes_utility_text = __( 'Posted on : %3$s by : %4$s', 'foodrecipes' );
+			$foodrecipes_utility_text = __( 'Posted on : %3$s by : %4$s', 'food-recipes' );
 		}
 }
 
@@ -334,9 +334,9 @@ function foodrecipes_comment( $comment, $foodrecipes_args, $depth ) {
 	?>
 <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
   <p>
-    <?php _e( 'Pingback:', 'foodrecipes' ); ?>
+    <?php _e( 'Pingback:', 'food-recipes' ); ?>
     <?php comment_author_link(); ?>
-    <?php edit_comment_link( __( 'Edit', 'foodrecipes' ), '<span class="edit-link">', '</span>' ); ?>
+    <?php edit_comment_link( __( 'Edit', 'food-recipes' ), '<span class="edit-link">', '</span>' ); ?>
   </p>
 </li>
 <?php
@@ -354,7 +354,7 @@ function foodrecipes_comment( $comment, $foodrecipes_args, $depth ) {
       <?php
                             printf( '<b class="fn">%1$s'.'</b>',
                                 get_comment_author_link(),
-                                ( $comment->user_id === $post->post_author ) ? '<span>' . __( 'Post author ', 'foodrecipes' ) . '</span>' : '' 
+                                ( $comment->user_id === $post->post_author ) ? '<span>' . __( 'Post author ', 'food-recipes' ) . '</span>' : '' 
                             ); 
 						?>
     </div>
@@ -364,7 +364,7 @@ function foodrecipes_comment( $comment, $foodrecipes_args, $depth ) {
     </div>
     <div class="foodrecipes-comment-reply-link">
       <?php
-                    echo '<a href="#" class="reply pull-right">'.comment_reply_link( array_merge( $foodrecipes_args, array( 'reply_text' => __( 'Reply', 'foodrecipes' ), 'after' => '', 'depth' => $depth, 'max_depth' => $foodrecipes_args['max_depth'] ) ) ).'</a>';
+                    echo '<a href="#" class="reply pull-right">'.comment_reply_link( array_merge( $foodrecipes_args, array( 'reply_text' => __( 'Reply', 'food-recipes' ), 'after' => '', 'depth' => $depth, 'max_depth' => $foodrecipes_args['max_depth'] ) ) ).'</a>';
                      ?>
     </div>
     <div class="foodrecipes-comment-hr"></div>
@@ -384,6 +384,6 @@ endif;
  * Replace Excerpt [...] with Read More
 **/
 function foodrecipes_read_more( ) {
-return ' <br /><a class="more" href="'. get_permalink( get_the_ID() ) . '">'.__('Read more ','foodrecipes').'</a>';
+return ' <br /><a class="more" href="'. get_permalink( get_the_ID() ) . '">'.__('Read more ','food-recipes').'</a>';
  }
 add_filter( 'excerpt_more', 'foodrecipes_read_more' ); 

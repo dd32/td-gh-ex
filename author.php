@@ -9,7 +9,7 @@ get_header(); ?>
     <div class="row">
       <div class="col-md-6  col-sm-6 ">
         
-     <p class="foodrecipes-post-title"><?php _e('Author','foodrecipes'); echo __('All post by','foodrecipes')." : " .  get_the_author(); ?></p>
+     <p class="foodrecipes-post-title"><?php _e('Author','food-recipes'); echo __('All post by','food-recipes')." : " .  get_the_author(); ?></p>
       </div>
       <div class="col-md-6  col-sm-6 ">
         <ol class="archive-breadcrumb  pull-right">
@@ -36,7 +36,7 @@ get_header(); ?>
                 <?php 
                         $foodrecipes_feature_img_url = wp_get_attachment_url(get_post_thumbnail_id(get_the_ID())); 
                         if($foodrecipes_feature_img_url!="") { ?>
-                <img src="<?php echo esc_url($foodrecipes_feature_img_url); ?>" class="img-responsive" alt="<?php echo get_the_title();?>">
+                <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($foodrecipes_feature_img_url); ?>" class="img-responsive" alt="<?php echo get_the_title();?>"></a>
                 <?php } ?>
               </figure>
               <?php foodrecipes_entry_meta(); ?>

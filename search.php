@@ -3,13 +3,11 @@
 * search page template
 */
 get_header(); ?>
-
 <div class="page-title">
   <div class="container">
     <div class="row">
       <div class="col-md-6  col-sm-6 ">
-        
-        <p class="foodrecipes-post-title"><?php _e('Search Results for','foodrecipes'); echo " : " .  get_search_query(); ?></p>
+        <p class="foodrecipes-post-title"><?php _e('Search Results for','food-recipes'); echo " : " .  get_search_query(); ?></p>
       </div>
       <div class="col-md-6  col-sm-6 ">
         <ol class="archive-breadcrumb  pull-right">
@@ -33,10 +31,9 @@ get_header(); ?>
                 <?php the_title(); ?>
                 </a></h1>
               <figure class="feature-thumbnail-large">
-                <?php 
-                        $foodrecipes_feat_image = wp_get_attachment_url(get_post_thumbnail_id(get_the_ID())); 
-                        if($foodrecipes_feat_image!="") { ?>
-                <img src="<?php echo esc_url($foodrecipes_feat_image); ?>" class="img-responsive" alt="<?php echo get_the_title();?>" />
+                <?php $foodrecipes_feat_image = wp_get_attachment_url(get_post_thumbnail_id(get_the_ID())); 
+                  if($foodrecipes_feat_image!="") { ?>
+                <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($foodrecipes_feat_image); ?>" class="img-responsive" alt="<?php echo get_the_title();?>" /></a>
                 <?php } ?>
               </figure>
               <?php foodrecipes_entry_meta(); ?>
@@ -50,7 +47,6 @@ get_header(); ?>
           <?php endwhile; ?>
           <?php endif; ?>
         </div>
-        
         <!--Pagination Start-->
         <?php if(function_exists('faster_pagination')) { ?> 
             <nav class="col-md-12 foodrecipes-box-paging"> 
@@ -68,7 +64,6 @@ get_header(); ?>
         <?php } ?>
         <?php }//is plugin active ?>
         <!--Pagination End-->
-        
       </div>
       <!-- side-menu -->
         <?php get_sidebar(); ?>

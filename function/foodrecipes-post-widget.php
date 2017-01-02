@@ -8,8 +8,8 @@ function foodrecipes_randompostwidget()
 {
 $foodrecipes_widget_ops = array(
 								 'classname' => 'foodrecipes_randompostwidget',
-								 'description' => __('Displays a random post with thumbnail','foodrecipes'));
-parent::__construct('foodrecipes_randompostwidget', __('Random Post and Thumbnail','foodrecipes'), $foodrecipes_widget_ops);
+								 'description' => __('Displays a random post with thumbnail','food-recipes'));
+parent::__construct('foodrecipes_randompostwidget', __('Random Post and Thumbnail','food-recipes'), $foodrecipes_widget_ops);
 }
 
 function form($foodrecipes_instance)

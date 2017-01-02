@@ -36,7 +36,7 @@ get_header();
             <?php if ( get_comments_number() > 0 ) : ?>
             <div class="foodrecipes-inner-blog-text" >
               <h6>
-                <?php comments_number( __('NO COMMENT','foodrecipes'), __('1 COMMENT','foodrecipes'),__('%s COMMENTS','foodrecipes')  ); ?>
+                <?php comments_number( __('NO COMMENT','food-recipes'), __('1 COMMENT','food-recipes'),__('%s COMMENTS','food-recipes')  ); ?>
               </h6>
             </div>
             <?php endif; ?>

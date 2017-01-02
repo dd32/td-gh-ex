@@ -3,18 +3,16 @@
 * category page template
 */
 get_header(); ?>
-<?php
-	  	$foodrecipes_categories = get_the_category();
+<?php $foodrecipes_categories = get_the_category();
 		$foodrecipes_category_name = $foodrecipes_categories[0]->name;
-		$foodrecipes_category_id = $foodrecipes_categories[0]->cat_ID;
-	  ?>
+		$foodrecipes_category_id = $foodrecipes_categories[0]->cat_ID; ?>
 
 <div class="page-title">
   <div class="container">
     <div class="row">
       <div class="col-md-6  col-sm-6 ">
 
-        <p class="foodrecipes-post-title"><?php _e('Category','foodrecipes'); echo " : " .  $foodrecipes_category_name; ?></p>
+        <p class="foodrecipes-post-title"><?php _e('Category','food-recipes'); echo " : " .  $foodrecipes_category_name; ?></p>
       </div>
       <div class="col-md-6  col-sm-6 ">
         <ol class="archive-breadcrumb  pull-right">
@@ -41,7 +39,7 @@ get_header(); ?>
                 <?php 
                         $foodrecipes_feat_image = wp_get_attachment_url(get_post_thumbnail_id(get_the_ID())); 
                         if($foodrecipes_feat_image!="") { ?>
-                <img src="<?php echo esc_url($foodrecipes_feat_image); ?>" class="img-responsive" alt="<?php echo get_the_title();?>" />
+                <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($foodrecipes_feat_image); ?>" class="img-responsive" alt="<?php echo get_the_title();?>" /></a>
                 <?php } ?>
               </figure>
               <?php foodrecipes_entry_meta(); ?>
@@ -75,7 +73,7 @@ get_header(); ?>
         <!--Pagination End-->
         
       </div>
-        <?php get_sidebar()  ?>
+      <?php get_sidebar(); ?>
   </div>
 </div>
 </div>

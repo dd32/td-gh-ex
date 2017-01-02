@@ -10,7 +10,7 @@ get_header(); ?>
       <div class="col-md-6  col-sm-6 ">
 		  
         <?php if ( have_posts() ) : 
-	 		?><p class="foodrecipes-post-title"><?php _e('Archives','foodrecipes'); echo " : " .  get_the_date('M-Y'); ?></p><?php
+	 		?><p class="foodrecipes-post-title"><?php _e('Archives','food-recipes'); echo " : " .  get_the_date('M-Y'); ?></p><?php
 		endif; ?>
      
       </div>
@@ -39,7 +39,7 @@ get_header(); ?>
                 <?php 
                         $foodrecipes_feature_img_url = wp_get_attachment_url(get_post_thumbnail_id(get_the_ID())); 
                         if($foodrecipes_feature_img_url!="") { ?>
-                <img src="<?php echo esc_url($foodrecipes_feature_img_url); ?>" class="img-responsive" alt="<?php echo get_the_title();?>">
+                <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($foodrecipes_feature_img_url); ?>" class="img-responsive" alt="<?php echo get_the_title();?>"></a>
                 <?php } ?>
               </figure>
               <?php foodrecipes_entry_meta(); ?>

@@ -2,9 +2,7 @@
 /*
 * single post template
 */
-get_header(); 
-?>
-
+get_header(); ?>
 <div class="page-title">
   <div class="container">
     <div class="row">
@@ -31,26 +29,24 @@ get_header();
                   <div><img src="<?php echo esc_url($foodrecipes_feature_img_url); ?>"></div>
                   <?php } ?>
                   <?php foodrecipes_entry_meta(); ?>
-                 
                   <?php the_tags(); ?>
                   <p>
                     <?php the_content();
                         wp_link_pages( array(
-                                'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'foodrecipes' ) . '</span>',
-                                'after'       => '</div>',
-                                'link_before' => '<span>',
-                                'link_after'  => '</span>',
-                            ) );
-                     ?>
+                          'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'food-recipes' ) . '</span>',
+                          'after'       => '</div>',
+                          'link_before' => '<span>',
+                          'link_after'  => '</span>',
+                        ) ); ?>
                   </p>
                 </div>
                 <?php if ( get_comments_number() > 0 ) : ?>
                 <div class="foodrecipes-inner-blog-text" >
                   <h6>
-                    <?php comments_number( __('NO COMMENT','foodrecipes'), __('1 COMMENT','foodrecipes'),__('%s COMMENTS','foodrecipes')  ); ?>
+                    <?php comments_number( __('NO COMMENT','food-recipes'), __('1 COMMENT','food-recipes'),__('%s COMMENTS','food-recipes')  ); ?>
                   </h6>
                 </div>
-                <?php  endif; ?>
+                <?php endif; ?>
                 <div class="foodrecipes-comment-form">
                   <?php comments_template( '', true ); ?>
                 </div>
@@ -65,9 +61,8 @@ get_header();
             </span> </nav>
         </div>
         <?php endwhile; ?>
-        
         <!-- side-menu -->
-          <?php get_sidebar(); ?>
+        <?php get_sidebar(); ?>
         <!-- side-menu --> 
       </div>
     </div>

@@ -16,35 +16,36 @@ if ( get_query_var('paged') ) { $paged = get_query_var('paged'); }
                     'order'            => 'DESC',
                     'post_type'        => 'post',
                     'post_status'      => 'publish',
-					'paged'			  => $paged
+					          'paged'			  => $paged
                 );
             $foodrecipes_posts = new WP_Query( $foodrecipes_args );
            	
             while ( $foodrecipes_posts->have_posts() ) {
             $foodrecipes_posts->the_post();
             
-            $foodrecipes_feature_img_url = wp_get_attachment_url(get_post_thumbnail_id(get_the_id()));
-        ?>
+            $foodrecipes_feature_img_url = wp_get_attachment_url(get_post_thumbnail_id(get_the_id())); ?>
         <div class="col-md-6 box masonry-brick foodrecipes-post-box-margin no-padding">
           <div class="article">
            <div class="foodrecipes-post-box">
             <div class="foodrecipes-post-box-img">
-              <?php if($foodrecipes_feature_img_url == "") {?>
+              <?php if($foodrecipes_feature_img_url == "") { ?>
               <img src="<?php echo esc_url(get_template_directory_uri().'/images/no-image.jpg'); ?>" class="img-responsive">
               <?php } else { ?>
               <img src="<?php echo esc_url($foodrecipes_feature_img_url); ?>">
               <?php } ?>
-              <div class="foodrecipes-post-box-hover">
-                <div class="foodrecipes-post-box-hover-center">
-                  <div class="foodrecipes-post-box-hover-center1"> <a href="<?php the_permalink(); ?>"><i class="foodrecipes-zoom-icon"></i></a> </div>
+              <a href="<?php the_permalink(); ?>">
+                <div class="foodrecipes-post-box-hover">
+                  <div class="foodrecipes-post-box-hover-center">
+                    <div class="foodrecipes-post-box-hover-center1"><i class="foodrecipes-zoom-icon"></i></div>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
             <div class="clearfix"></div>
             <div class="foodrecipes-box-name">
               <h6><?php echo get_the_date("j F, Y"); ?></h6>
               <div class="foodrecipes-title"> <a href="<?php the_permalink(); ?>"><?php echo get_the_title(); ?></a> </div>
-              <div class="foodrecipes-hr"><?php _e('Post By:','foodrecipes') ?>  <span class="foodrecipes-postby-color"><a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>"> <?php echo get_the_author(); ?></a></span><?php if ( get_comments_number() > 0 ) : ?> <?php _e('Comments:','foodrecipes') ?> <span class="foodrecipes-postby-color"><?php echo get_comments_number(); ?></span><?php endif; ?> </div>
+              <div class="foodrecipes-hr"><?php _e('Post By:','food-recipes') ?>  <span class="foodrecipes-postby-color"><a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>"> <?php echo get_the_author(); ?></a></span><?php if ( get_comments_number() > 0 ) : ?> <?php _e('Comments:','food-recipes') ?> <span class="foodrecipes-postby-color"><?php echo get_comments_number(); ?></span><?php endif; ?> </div>
             </div>
           </div>
           </div>
@@ -72,9 +73,7 @@ if ( get_query_var('paged') ) { $paged = get_query_var('paged'); }
         <?php } ?>
         <?php }//is plugin active ?>
         <!--Pagination End-->
-        
     </div>
-
       <?php get_sidebar() ?>
   </div>
 </div>

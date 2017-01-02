@@ -3,12 +3,11 @@
 * tag page template
 */
  get_header(); ?>
-
 <div class="page-title">
   <div class="container">
     <div class="row">
       <div class="col-md-6  col-sm-6 ">
-      <p class="foodrecipes-post-title"><?php _e('Tag','foodrecipes'); echo " : " .  single_tag_title( '', false ); ?></p>
+      <p class="foodrecipes-post-title"><?php _e('Tag','food-recipes'); echo " : " .  single_tag_title( '', false ); ?></p>
       </div>
       <div class="col-md-6  col-sm-6 ">
         <ol class="archive-breadcrumb  pull-right">
@@ -32,10 +31,9 @@
               <?php the_title(); ?>
               </a></h1>
             <figure class="feature-thumbnail-large">
-              <?php 
-                        $foodrecipes_feat_image = wp_get_attachment_url(get_post_thumbnail_id(get_the_ID())); 
-                        if($foodrecipes_feat_image!="") { ?>
-              <img src="<?php echo esc_url($foodrecipes_feat_image); ?>" class="img-responsive" alt="<?php echo get_the_title();?>" />
+              <?php $foodrecipes_feat_image = wp_get_attachment_url(get_post_thumbnail_id(get_the_ID()));
+                if($foodrecipes_feat_image!="") { ?>
+              <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url($foodrecipes_feat_image); ?>" class="img-responsive" alt="<?php echo get_the_title(); ?>" /></a>
               <?php } ?>
             </figure>
             <?php foodrecipes_entry_meta(); ?>
@@ -67,7 +65,6 @@
         <?php } ?>
         <?php }//is plugin active ?>
         <!--Pagination End-->
-        
     </div>
     <!-- side-menu -->
       <?php get_sidebar(); ?>
