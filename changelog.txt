@@ -1,4 +1,7 @@
 == CHANGE LOG ==
+= 3.0.5 =
+- Update - Theme Tags Updated
+
 = 3.0.4 =
  - Tweak - Inject JS removed from the top of the customizer and added in panel
  - Fix - Deprecated message fixed for new PHP7 version
