@@ -2,7 +2,7 @@
 /*
 * WooCommerce page template
 */
-get_header();  ?>
+get_header(); ?>
 <section class="section-main" style="<?php if (!empty($a1_options['fixed-top-menu'])){ ?>margin-top:93px; <?php } ?>">
   <div class="col-md-12 a1-breadcrumb">
     <div class="container a1-container">

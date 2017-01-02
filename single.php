@@ -25,13 +25,13 @@ get_header(); ?>
            <?php if(!isset($a1_options['hide-meta-info-single']) || empty($a1_options['hide-meta-info-single'])){ ?>
            <div class="blog-info"> 
           	<ul>
-            	<?php a1_entry_meta();  ?>
+            	<?php a1_entry_meta(); ?>
           	</ul>
           </div>
           <?php } ?>
           <div class="blog-inner"> 
              <?php $a1_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID())); 
-              if(!empty($a1_image)) :?>
+              if(!empty($a1_image)) : ?>
             <img src="<?php echo esc_url( $a1_image ); ?>" class="img-responsive" alt="<?php echo get_the_title(); ?>">
              <?php endif; ?>
             <div class="blog-content">
@@ -41,8 +41,7 @@ get_header(); ?>
                     'after'       => '</div>',
                     'link_before' => '<span>',
                     'link_after'  => '</span>',
-                    ) );             
-             ?>
+                    ) ); ?>
             </div>
           </div>
         </div>

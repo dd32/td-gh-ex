@@ -2,8 +2,7 @@
 /*
  * Main Template File.
  */
-get_header(); 
-?>
+get_header(); ?>
 <!--section part start-->
 <section class="section-main" style="<?php if (!empty($a1_options['fixed-top-menu'])){ ?>margin-top:93px; <?php } ?>">
   <div class="col-md-12 a1-breadcrumb" >
@@ -24,18 +23,17 @@ get_header();
         <div class="blog-post"> 
           <div class="blog-inner"> 
           <?php $a1_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID())); 
-              if(!empty($a1_image)) :?>
+              if(!empty($a1_image)) : ?>
             <img src="<?php echo esc_url( $a1_image ); ?>" width="770" height="330" class="img-responsive" alt="<?php echo get_the_title(); ?>">
              <?php endif; ?>
             <div class="blog-content">
               <?php the_content();
-			wp_link_pages( array(
-		            'before'      => '<div class="col-md-6 col-xs-6 no-padding-lr prev-next-btn">' . __( 'Pages', 'a1' ) . ':',
-		            'after'       => '</div>',
-		            'link_before' => '<span>',
-		            'link_after'  => '</span>',
-		            ) );
- 		?>
+              			wp_link_pages( array(
+              		            'before'      => '<div class="col-md-6 col-xs-6 no-padding-lr prev-next-btn">' . __( 'Pages', 'a1' ) . ':',
+              		            'after'       => '</div>',
+              		            'link_before' => '<span>',
+              		            'link_after'  => '</span>',
+		            ) ); ?>
              </div>
           </div>
         </div>

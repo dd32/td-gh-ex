@@ -31,7 +31,7 @@ get_header(); ?>
          <div class="blog-inner"> 
          <?php $a1_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID())); 
              if(!empty($a1_image)) :?>
-           <img src="<?php echo esc_url( $a1_image ); ?>" class="img-responsive" alt="<?php echo get_the_title(); ?>">
+           <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url( $a1_image ); ?>" class="img-responsive" alt="<?php echo get_the_title(); ?>"></a>
             <?php endif; ?>
            <div class="blog-content">
              <?php the_excerpt(); ?>

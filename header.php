@@ -35,8 +35,8 @@ global $a1_options;
                         <div class="col-md-6 col-sm-6 location-part  no-padding-lr">
                             <?php if (!empty($a1_options['phone'])): ?>
                                 <p><i class="fa fa-phone"></i><?php echo esc_attr($a1_options['phone']); ?></p>
-                            <?php endif; ?>
-                            <?php if (!empty($a1_options['email'])): ?>
+                            <?php endif;
+                                if (!empty($a1_options['email'])): ?>
                                 <p class="top-header-email"><i class="fa fa-envelope-o"></i><a href="mailto:<?php echo esc_attr($a1_options['email']); ?>"><?php echo esc_attr($a1_options['email']); ?></a></p>
                             <?php endif; ?>
                         </div>
@@ -60,15 +60,14 @@ global $a1_options;
                             <?php else: ?>
                                 <?php echo get_bloginfo('name'); ?>        
                             <?php endif; ?>        
-                        </a> </div>
+                        </a></div>
                     <div class="col-md-10 no-padding-lr">
                         <nav class="a1-nav">
                             <div class="navbar-header">
                                 <button type="button" class="navbar-toggle navbar-toggle-top sort-menu-icon collapsed" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only"><?php _e('Toggle navigation', 'a1'); ?></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
                             </div>
                             <div class="navbar-collapse collapse no-padding-lr">           
-                                <?php
-                                $a1_defaults = array(
+                                <?php $a1_defaults = array(
                                     'theme_location' => 'primary',
                                     'container' => 'div',
                                     'container_class' => '',
@@ -83,14 +82,12 @@ global $a1_options;
                                     'link_after' => '',
                                     'items_wrap' => '<ul class="a1-menu">%3$s</ul>',
                                     'depth' => 0,
-                                    'walker' => ''
-                                );
-                                wp_nav_menu($a1_defaults);
-                                ?>          
+                                    'walker' => '' );
+                                    wp_nav_menu($a1_defaults); ?>
                             </div>
                         </nav>
                     </div>
                 </div>
             </div>
         </header>
-        <!--header part end--> 
+        <!--header part end-->

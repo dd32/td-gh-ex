@@ -20,7 +20,7 @@ get_header(); ?>
           <?php if(!isset($a1_options['hide-meta-info-archieve-pages']) || empty($a1_options['hide-meta-info-archieve-pages'])){ ?>
            <div class="blog-info"> 
             <ul>
-              <?php a1_entry_meta();  ?>
+              <?php a1_entry_meta(); ?>
             </ul>
           </div>
           <?php } ?>

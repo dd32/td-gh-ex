@@ -3,8 +3,7 @@
  * Main Template File.
  */
 get_header(); 
-global $a1_options;
-?>
+global $a1_options; ?>
 <!--section part start-->
 <section class="section-main" style="<?php if (!empty($a1_options['fixed-top-menu'])){ ?>margin-top:93px; <?php } ?>">
  <div class="col-md-12 a1-breadcrumb" >
@@ -45,9 +44,9 @@ global $a1_options;
         <?php endwhile; ?> 
        
        <!--Pagination Start-->
-       <?php if(function_exists('faster_pagination')) {?>
+       <?php if(function_exists('faster_pagination')) { ?>
         <div class="col-md-12 a1-pagination no-padding">
-             <?php faster_pagination('','2');?>
+             <?php faster_pagination('','2'); ?>
         </div>
        <?php }else { ?>
        <?php if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
@@ -57,8 +56,8 @@ global $a1_options;
          <li><?php next_posts_link(); ?></li>
        </ul>
        </div>
-       <?php } ?>
-       <?php } ?>
+       <?php }
+        } ?>
        <!--Pagination End-->
      </div>
      <!--sidebar start-->

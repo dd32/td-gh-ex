@@ -298,8 +298,7 @@ function a1_framework_page() {
                                         <textarea name="a1_theme_options[footer-content]" rows="6" id="footer-content" class="of-input"><?php
                                             if (!empty($a1_options['footer-content'])) {
                                                 echo esc_attr($a1_options['footer-content']);
-                                            }
-                                            ?></textarea>
+                                            } ?></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -332,30 +331,26 @@ function a1_framework_page() {
                                                 if (!empty($a1_options['slider-img-' . $a1_i])) {
                                                     echo "<img src='" . esc_url($a1_options['slider-img-' . $a1_i]) . "' /><a class='remove-image'>";
                                                     echo "</a>";
-                                                }
-                                                ?>
+                                                } ?>
                                             </div>
                                         </div>
                                         <div class="ft-control">
                                             <input type="text" placeholder="<?php _e('Slide Caption', 'a1'); ?>" id="slidecaption-<?php echo $a1_i; ?>" class="of-input" name="a1_theme_options[slidecaption-<?php echo $a1_i; ?>]" size="32"  value="<?php
                                             if (!empty($a1_options['slidecaption-' . $a1_i])) {
                                                 echo esc_attr($a1_options['slidecaption-' . $a1_i]);
-                                            }
-                                            ?>">
+                                            } ?>">
                                         </div>
                                         <div class="ft-control">
                                             <input type="text" placeholder="<?php _e('Slide Button Text', 'a1'); ?>" id="slidebuttontext-<?php echo $a1_i; ?>" class="of-input" name="a1_theme_options[slidebuttontext-<?php echo $a1_i; ?>]" size="32"  value="<?php
                                             if (!empty($a1_options['slidebuttontext-' . $a1_i])) {
                                                 echo esc_attr($a1_options['slidebuttontext-' . $a1_i]);
-                                            }
-                                            ?>">
+                                            } ?>">
                                         </div>
                                         <div class="ft-control">
                                             <input type="text" placeholder="<?php _e('Slide Button Link', 'a1'); ?>" id="slidebuttonlink-<?php echo $a1_i; ?>" class="of-input" name="a1_theme_options[slidebuttonlink-<?php echo $a1_i; ?>]" size="32"  value="<?php
                                             if (!empty($a1_options['slidebuttonlink-' . $a1_i])) {
                                                 echo esc_url($a1_options['slidebuttonlink-' . $a1_i]);
-                                            }
-                                            ?>">
+                                            } ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -376,8 +371,7 @@ function a1_framework_page() {
                                         <input id="coretitle" class="of-input" name="a1_theme_options[coretitle]" type="text" size="50" value="<?php
                                         if (!empty($a1_options['coretitle'])) {
                                             echo esc_attr($a1_options['coretitle']);
-                                        }
-                                        ?>" />
+                                        } ?>" />
                                     </div>
                                 </div>
                             </div>
@@ -388,8 +382,7 @@ function a1_framework_page() {
                                         <textarea name="a1_theme_options[corecaption]" rows="6" id="corecaption1" class="of-input"><?php
                                             if (!empty($a1_options['corecaption'])) {
                                                 echo esc_attr($a1_options['corecaption']);
-                                            }
-                                            ?>
+                                            } ?>
                                         </textarea>
                                     </div>
                                 </div>
@@ -398,21 +391,18 @@ function a1_framework_page() {
                                 <div class="section theme-tabs theme-slider-img"> <a class="heading a1-inner-tab" href="javascript:void(0)"><?php _e('Tab', 'a1'); ?> <?php echo $a1_section_i; ?></a>
                                     <div class="a1-inner-tab-group">
                                         <div class="ft-control">
-<p> <?php _e('Size of the icon should be 43px X 28px','a1'); ?> </p>
+                                            <p><?php _e('Size of the icon should be 43px X 28px','a1'); ?></p>
                                             <input id="first-image-<?php echo $a1_section_i; ?>" class="upload" type="text" name="a1_theme_options[home-icon-<?php echo $a1_section_i; ?>]" value="<?php
                                             if (!empty($a1_options['home-icon-' . $a1_section_i])) {
                                                 echo esc_url($a1_options['home-icon-' . $a1_section_i]);
-                                            }
-                                            ?>" placeholder="<?php _e('No file chosen', 'a1'); ?>" />
-<input id="upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload', 'a1'); ?>" />
+                                            } ?>" placeholder="<?php _e('No file chosen', 'a1'); ?>" />
+                                            <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload', 'a1'); ?>" />
                                             <div class="screenshot" id="first-img-<?php echo $a1_section_i; ?>">
                                                 <?php
                                                 if (!empty($a1_options['home-icon-' . $a1_section_i])) {
                                                     echo "<img src='" . esc_url($a1_options['home-icon-' . $a1_section_i]) . "' /><a class='remove-image'>";
                                                     echo "</a>";
-                                                }
-                                                ?> 
-
+                                                } ?>
                                             </div>
                                         </div>
                                         <div class="ft-control">
@@ -420,28 +410,22 @@ function a1_framework_page() {
                                             <input type="text" placeholder="<?php _e('Enter title here', 'a1'); ?>" id="title-<?php echo $a1_section_i; ?>" class="of-input" name="a1_theme_options[section-title-<?php echo $a1_section_i; ?>]" size="32"  value="<?php
                                             if (!empty($a1_options['section-title-' . $a1_section_i])) {
                                                 echo esc_attr($a1_options['section-title-' . $a1_section_i]);
-                                            }
-                                            ?>">
+                                            } ?>">
                                         </div>
                                         <div class="ft-control">
                                             <div class="explain"><?php _e('Enter core features tab content for home template , you would like to display in the Home Page', 'a1'); ?>.</div>
                                             <textarea name="a1_theme_options[section-content-<?php echo $a1_section_i; ?>]" rows="6" id="content-<?php echo $a1_section_i; ?>" placeholder="<?php _e('Enter Content here', 'a1'); ?>" class="of-input"><?php
                                                 if (!empty($a1_options['section-content-' . $a1_section_i])) {
                                                     echo esc_attr($a1_options['section-content-' . $a1_section_i]);
-                                                }
-                                                ?>
+                                                } ?>
                                             </textarea>
                                         </div>
-
-<div class="ft-control">
+                                        <div class="ft-control">
                                             <input type="text" placeholder="<?php _e('Link to this section', 'a1'); ?>" id="coresectionlink-<?php echo $a1_section_i; ?>" class="of-input" name="a1_theme_options[coresectionlink-<?php echo $a1_section_i; ?>]" size="32"  value="<?php
                                             if (!empty($a1_options['coresectionlink-' . $a1_section_i])) {
                                                 echo esc_url($a1_options['coresectionlink-' . $a1_section_i]);
-                                            }
-                                            ?>">
+                                            } ?>">
                                         </div>
-
-
                                     </div>
                                 </div>
                             <?php endfor; ?>
@@ -461,8 +445,7 @@ function a1_framework_page() {
                                         <input id="producttitle" class="of-input" name="a1_theme_options[producttitle]" type="text" size="50" value="<?php
                                         if (!empty($a1_options['producttitle'])) {
                                             echo esc_attr($a1_options['producttitle']);
-                                        }
-                                        ?>" />
+                                        } ?>" />
                                     </div>
                                 </div>
                             </div>
@@ -473,8 +456,7 @@ function a1_framework_page() {
                                         <textarea name="a1_theme_options[productcaption]" rows="6" id="productcaption1" class="of-input"><?php
                                             if (!empty($a1_options['productcaption'])) {
                                                 echo esc_attr($a1_options['productcaption']);
-                                            }
-                                            ?>
+                                            } ?>
                                         </textarea>
                                     </div>
                                 </div>
@@ -487,8 +469,7 @@ function a1_framework_page() {
                                         $a1_content = $a1_options['productcontent'];
                                         $a1_editor_id = 'productcontent';
                                         $a1_settings = array('textarea_name' => 'a1_theme_options[productcontent]', 'textarea_rows' => 25);
-                                        wp_editor($a1_content, $a1_editor_id, $a1_settings);
-                                        ?>
+                                        wp_editor($a1_content, $a1_editor_id, $a1_settings); ?>
                                     </div>
                                 </div>
                             </div>
@@ -499,8 +480,7 @@ function a1_framework_page() {
                                         <input id="product-form-email" class="of-input" name="a1_theme_options[product-form-email]" type="text" size="50" value="<?php
                                         if (!empty($a1_options['product-form-email'])) {
                                             echo sanitize_email($a1_options['product-form-email']);
-                                        }
-                                        ?>" />
+                                        } ?>" />
                                     </div>
                                 </div>
                             </div>
@@ -532,8 +512,7 @@ function a1_framework_page() {
                                         <textarea name="a1_theme_options[get-touch-caption]" rows="6" id="get-touch-caption1" class="of-input"><?php
                                             if (!empty($a1_options['get-touch-caption'])) {
                                                 echo esc_attr($a1_options['get-touch-caption']);
-                                            }
-                                            ?>
+                                            } ?>
                                         </textarea>
                                     </div>
                                 </div>
@@ -544,16 +523,14 @@ function a1_framework_page() {
                                         <input id="get-touch-logo-img" class="upload" type="text" name="a1_theme_options[get-touch-logo]" value="<?php
                                         if (!empty($a1_options['get-touch-logo'])) {
                                             echo esc_url($a1_options['get-touch-logo']);
-                                        }
-                                        ?>" placeholder="<?php _e('No file chosen', 'a1'); ?>" />
+                                        } ?>" placeholder="<?php _e('No file chosen', 'a1'); ?>" />
                                         <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload', 'a1'); ?>" />
                                         <div class="screenshot" id="get-touch-logo-image">
                                             <?php
                                             if (!empty($a1_options['get-touch-logo'])) {
                                                 echo "<img src='" . esc_url($a1_options['get-touch-logo']) . "' /><a class='remove-image'>";
                                                 echo "</a>";
-                                            }
-                                            ?>
+                                            } ?>
                                         </div>
                                     </div>
                                 </div>
@@ -565,8 +542,7 @@ function a1_framework_page() {
                                         <input id="contactus-now-text" class="of-input" name="a1_theme_options[contactus-now-text]" type="text" size="50" value="<?php
                                         if (!empty($a1_options['contactus-now-text'])) {
                                             echo esc_attr($a1_options['contactus-now-text']);
-                                        }
-                                        ?>" />
+                                        } ?>" />
                                     </div>
                                 </div>
                             </div>
@@ -577,8 +553,7 @@ function a1_framework_page() {
                                         <input type="text" class="of-input" size="50" name="a1_theme_options[get-touch-page]" value="<?php
                                         if (!empty($a1_options['get-touch-page'])) {
                                             echo $a1_options['get-touch-page'];
-                                        }
-                                        ?>" />
+                                        } ?>" />
                                     </div>
                                 </div>
                             </div>
@@ -591,8 +566,7 @@ function a1_framework_page() {
                                         <input type="text" id="blogtitle" class="of-input" name="a1_theme_options[blogtitle]" size="32"  value="<?php
                                         if (!empty($a1_options['blogtitle'])) {
                                             echo esc_attr($a1_options['blogtitle']);
-                                        }
-                                        ?>">
+                                        } ?>">
                                     </div>
                                 </div>
                             </div>
@@ -603,8 +577,7 @@ function a1_framework_page() {
                                         <input id="entry-meta-by" class="of-input" name="a1_theme_options[entry-meta-by]" type="text" size="50" value="<?php
                                         if (!empty($a1_options['entry-meta-by'])) {
                                             echo esc_attr($a1_options['entry-meta-by']);
-                                        }
-                                        ?>" />
+                                        } ?>" />
                                     </div>
                                 </div>
                             </div>
@@ -615,8 +588,7 @@ function a1_framework_page() {
                                         <input id="entry-meta-in" class="of-input" name="a1_theme_options[entry-meta-in]" type="text" size="50" value="<?php
                                         if (!empty($a1_options['entry-meta-in'])) {
                                             echo esc_attr($a1_options['entry-meta-in']);
-                                        }
-                                        ?>" />
+                                        } ?>" />
                                     </div>
                                 </div>
                             </div>
@@ -627,8 +599,7 @@ function a1_framework_page() {
                                         <input id="entry-meta-on" class="of-input" name="a1_theme_options[entry-meta-on]" type="text" size="50" value="<?php
                                         if (!empty($a1_options['entry-meta-on'])) {
                                             echo esc_attr($a1_options['entry-meta-on']);
-                                        }
-                                        ?>" />
+                                        } ?>" />
                                     </div>
                                 </div>
                             </div>
@@ -639,8 +610,7 @@ function a1_framework_page() {
                                         <input id="entry-meta-comments" class="of-input" name="a1_theme_options[entry-meta-comments]" type="text" size="50" value="<?php
                                         if (!empty($a1_options['entry-meta-comments'])) {
                                             echo esc_attr($a1_options['entry-meta-comments']);
-                                        }
-                                        ?>" />
+                                        } ?>" />
                                     </div>
                                 </div>
                             </div>
@@ -651,8 +621,7 @@ function a1_framework_page() {
                                         <input id="entry-meta-tags" class="of-input" name="a1_theme_options[entry-meta-tags]" type="text" size="50" value="<?php
                                         if (!empty($a1_options['entry-meta-tags'])) {
                                             echo esc_attr($a1_options['entry-meta-tags']);
-                                        }
-                                        ?>" />
+                                        } ?>" />
                                     </div>
                                 </div>
                             </div>

@@ -25,29 +25,29 @@ get_header(); ?>
          <?php if(!isset($a1_options['hide-meta-info-archieve-pages']) || empty($a1_options['hide-meta-info-archieve-pages'])){ ?>
            <div class="blog-info"> 
             <ul>
-              <?php a1_entry_meta();  ?>
+              <?php a1_entry_meta(); ?>
             </ul>
           </div>
           <?php } ?>
          <div class="blog-inner"> 
          <?php $a1_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID())); 
-             if(!empty($a1_image)) :?>
-           <img src="<?php echo esc_url( $a1_image ); ?>" class="img-responsive" alt="<?php echo get_the_title(); ?>">
+            if(!empty($a1_image)) :?>
+           <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url( $a1_image ); ?>" class="img-responsive" alt="<?php echo get_the_title(); ?>"></a>
             <?php endif; ?>
            <div class="blog-content">
              <?php the_excerpt(); ?>
               </div>
          </div>
        </div>
-        <?php endwhile;?>
-          <?php else :?>
-       <p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords', 'a1' ); ?>.</p>
+        <?php endwhile;
+          else : ?>
+       <p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'a1' ); ?></p>
 	<?php get_search_form(); ?>
-	<?php endif;?>
+	<?php endif; ?>
        <!--Pagination Start-->
-       <?php if(function_exists('faster_pagination')) {?>
+       <?php if(function_exists('faster_pagination')) { ?>
         <div class="col-md-12 a1-pagination no-padding">
-             <?php faster_pagination('','2');?>
+             <?php faster_pagination('','2'); ?>
         </div>
        <?php }else { ?>
        <?php if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
