@@ -2,8 +2,7 @@
 /**
  * Attechment template file
 **/
-get_header(); 
-?>
+get_header(); ?>
 <div class="generator-single-blog section-main">
   <div class=" container-generator container">
     <h1><?php the_title(); ?></h1>
@@ -25,7 +24,7 @@ get_header();
         </div>
         <div class="col-md-2 comments-icon"> 
           <!--<img src="images/comment-icon.png" />--> 
-          <i class="fa fa-comments"></i> <?php comments_number( '0', '1', '%' ); ?> </div>
+          <i class="fa fa-comments"></i><?php comments_number( '0', '1', '%' ); ?></div>
       </div>
       <div class="col-md-12 breadcrumb">
       	  <?php generator_entry_meta(); ?>
@@ -36,11 +35,9 @@ get_header();
       <div class="col-md-12 generator-post-content no-padding">
         <a href="<?php echo wp_get_attachment_url($post->ID); ?>">
 							      							      
-							      <?php 
-							      	$generator_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' ); 
-							       
+							      <?php $generator_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' ); 
 								      if ($generator_image) : ?>
-								          <img src="<?php echo $generator_image[0]; ?>" alt="" />
+								        <img src="<?php echo $generator_image[0]; ?>" alt="" />
 								      <?php endif; ?>
 							      
 							      </a>

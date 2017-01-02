@@ -3,8 +3,8 @@
  * The Header template for our theme
  */
  $generator_options = get_option( 'faster_theme_options' );
-# print_r($generator_options);
-?><!DOCTYPE html>
+# print_r($generator_options); ?>
+<!DOCTYPE html>
 <!--[if IE 7]>
 <html class="ie ie7" <?php language_attributes(); ?>>
 <![endif]-->
@@ -17,7 +17,6 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width">
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
     <?php if(!empty($generator_options['favicon'])) { ?>
@@ -48,7 +47,7 @@
         </div>
         <div class="col-md-4 no-padding center-search ">
            <form method="get" id="searchform" action="<?php  echo home_url(); ?>/">
-                <input type="text" value="<?php the_search_query(); ?>" class="search-box" name="s" id="s"  placeholder="<?php _e('generator','Search the site') ?>" />
+                <input type="text" value="<?php the_search_query(); ?>" class="search-box" name="s" id="s"  placeholder="<?php _e('Search the site','generator'); ?>" />
                 <input type="submit" id="searchsubmit" value="" class="search-button" />
             </form>
            </div>
@@ -67,8 +66,7 @@
         <div class="navbar-header">
           <button type="button" class="navbar-toggle navbar-toggle-top sort-menu-icon" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only"><?php _e('Toggle navigation','generator') ?></span> <span class="icon-bar icon-color"></span> <span class="icon-bar icon-color"></span> <span class="icon-bar icon-color"></span> </button>
         </div>
-         <?php
-			$generator_defaults = array(
+         <?php $generator_defaults = array(
 							'theme_location'  => 'primary',
 							'container'       => 'div',
 							'container_class' => 'navbar-collapse collapse no-padding pull-right',

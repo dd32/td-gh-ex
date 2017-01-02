@@ -1,7 +1,8 @@
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Generator V2.2.1\n"
-"POT-Creation-Date: 2014-12-04 17:04+0530\n"
+"POT-Creation-Date: 2017-01-02 19:02+0530\n"
 "PO-Revision-Date: 2014-12-04 17:05+0530\n"
 "Last-Translator: FasterThemes <support@fasterthemes.com>\n"
 "Language-Team: FasterThemes <support@fasterthemes.com>\n"
@@ -9,8 +10,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.10\n"
-"X-Poedit-Basepath: ../\n"
+"X-Generator: Poedit 1.8.11\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
@@ -18,15 +19,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: 404.php:10
+#: 404.php:9
 msgid "Epic 404 - Article Not Found"
 msgstr ""
 
-#: 404.php:11
+#: 404.php:10
 msgid "This is embarrassing. We could not find what you were looking for."
 msgstr ""
 
-#: 404.php:13
+#: 404.php:12
 msgid ""
 "Whatever you were looking for was not found, but maybe try looking again or "
 "search using the form below."
@@ -36,20 +37,20 @@ msgstr ""
 msgid "Archives"
 msgstr ""
 
-#: archive.php:46 author.php:41 category.php:45 index.php:47 search.php:40
-#: tag.php:44
+#: archive.php:46 author.php:40 category.php:44 index.php:46 search.php:40
+#: tag.php:43
 msgid "READ MORE"
 msgstr ""
 
-#: author.php:10
+#: author.php:9
 msgid "Author : All posts by "
 msgstr ""
 
-#: category.php:13 theme-options/fasterthemes.php:257
+#: category.php:12 theme-options/fasterthemes.php:248
 msgid "Category"
 msgstr ""
 
-#: comments.php:19
+#: comments.php:18
 #, php-format
 msgid "One thought on  %2$s"
 msgid_plural "%1$s thoughts on  %2$s"
@@ -58,7 +59,7 @@ msgstr[1] ""
 
 #: footer.php:17
 #, php-format
-msgid "Powered by %1$s and %2$s."
+msgid "Powered by %1$s."
 msgstr ""
 
 #: functions.php:27
@@ -484,19 +485,19 @@ msgstr ""
 msgid "Reply"
 msgstr ""
 
-#: header.php:51
-msgid "generator"
+#: header.php:50
+msgid "Search the site"
 msgstr ""
 
-#: header.php:68
+#: header.php:67
 msgid "Toggle navigation"
 msgstr ""
 
-#: page-template/frontpage.php:47
+#: page-template/frontpage.php:44
 msgid "Recent Posts"
 msgstr ""
 
-#: page-template/frontpage.php:83
+#: page-template/frontpage.php:80
 msgid "No posts found"
 msgstr ""
 
@@ -504,11 +505,11 @@ msgstr ""
 msgid "Search Results for"
 msgstr ""
 
-#: single.php:41
+#: single.php:40
 msgid "Pages:"
 msgstr ""
 
-#: tag.php:11
+#: tag.php:10
 msgid "Tag"
 msgstr ""
 
@@ -516,222 +517,208 @@ msgstr ""
 msgid "FasterThemes Options"
 msgstr ""
 
-#: theme-options/fasterthemes.php:48 theme-options/fasterthemes.php:76
+#: theme-options/fasterthemes.php:48 theme-options/fasterthemes.php:73
 msgid "Theme Options"
 msgstr ""
 
-#: theme-options/fasterthemes.php:77 theme-options/fasterthemes.php:368
+#: theme-options/fasterthemes.php:74 theme-options/fasterthemes.php:356
 msgid "Save Options"
 msgstr ""
 
-#: theme-options/fasterthemes.php:86
+#: theme-options/fasterthemes.php:83
 msgid "Basic Settings"
 msgstr ""
 
-#: theme-options/fasterthemes.php:87
+#: theme-options/fasterthemes.php:84
 msgid "Home Page Settings"
 msgstr ""
 
-#: theme-options/fasterthemes.php:88
+#: theme-options/fasterthemes.php:85
 msgid "Social Settings"
 msgstr ""
 
-#: theme-options/fasterthemes.php:89
+#: theme-options/fasterthemes.php:86
 msgid "PRO Theme Features"
 msgstr ""
 
-#: theme-options/fasterthemes.php:105
+#: theme-options/fasterthemes.php:99
 msgid "Site Logo"
 msgstr ""
 
-#: theme-options/fasterthemes.php:109 theme-options/fasterthemes.php:127
-#: theme-options/fasterthemes.php:179 theme-options/fasterthemes.php:223
+#: theme-options/fasterthemes.php:103 theme-options/fasterthemes.php:121
+#: theme-options/fasterthemes.php:172 theme-options/fasterthemes.php:216
 msgid "No file chosen"
 msgstr ""
 
-#: theme-options/fasterthemes.php:110 theme-options/fasterthemes.php:128
-#: theme-options/fasterthemes.php:180 theme-options/fasterthemes.php:224
+#: theme-options/fasterthemes.php:104 theme-options/fasterthemes.php:122
+#: theme-options/fasterthemes.php:173 theme-options/fasterthemes.php:217
 msgid "Upload"
 msgstr ""
 
-#: theme-options/fasterthemes.php:114 theme-options/fasterthemes.php:132
-#: theme-options/fasterthemes.php:184 theme-options/fasterthemes.php:228
+#: theme-options/fasterthemes.php:108 theme-options/fasterthemes.php:126
+#: theme-options/fasterthemes.php:177 theme-options/fasterthemes.php:221
 msgid "Remove"
 msgstr ""
 
-#: theme-options/fasterthemes.php:122
+#: theme-options/fasterthemes.php:116
 msgid "Favicon"
 msgstr ""
 
-#: theme-options/fasterthemes.php:124
+#: theme-options/fasterthemes.php:118
 msgid "Size of favicon should be exactly 32x32px for best results."
 msgstr ""
 
-#: theme-options/fasterthemes.php:140
+#: theme-options/fasterthemes.php:133
 msgid "Copyright Text"
 msgstr ""
 
-#: theme-options/fasterthemes.php:143
+#: theme-options/fasterthemes.php:136
 msgid ""
 "Some text regarding copyright of your site, you would like to display in the "
 "footer."
 msgstr ""
 
-#: theme-options/fasterthemes.php:150
+#: theme-options/fasterthemes.php:143
 msgid "Email"
 msgstr ""
 
-#: theme-options/fasterthemes.php:153
+#: theme-options/fasterthemes.php:146
 msgid ""
 "Enter e-mail id for your site , you would like to display in the Top Header."
 msgstr ""
 
-#: theme-options/fasterthemes.php:160
+#: theme-options/fasterthemes.php:153
 msgid "Phone"
 msgstr ""
 
-#: theme-options/fasterthemes.php:163
+#: theme-options/fasterthemes.php:156
 msgid ""
 "Enter phone number for your site , you would like to display in the Top "
 "Header."
 msgstr ""
 
-#: theme-options/fasterthemes.php:172
+#: theme-options/fasterthemes.php:165
 msgid "Banner Slider"
 msgstr ""
 
-#: theme-options/fasterthemes.php:175
+#: theme-options/fasterthemes.php:168
 msgid "Slider"
 msgstr ""
 
-#: theme-options/fasterthemes.php:197
+#: theme-options/fasterthemes.php:190
 msgid "Title Bar"
 msgstr ""
 
-#: theme-options/fasterthemes.php:199
+#: theme-options/fasterthemes.php:192
 msgid "Title"
 msgstr ""
 
-#: theme-options/fasterthemes.php:202
+#: theme-options/fasterthemes.php:195
 msgid ""
 "Enter home page title for your site , you would like to display in the Home "
 "Page."
 msgstr ""
 
-#: theme-options/fasterthemes.php:208
+#: theme-options/fasterthemes.php:201
 msgid "Short Description"
 msgstr ""
 
-#: theme-options/fasterthemes.php:211
+#: theme-options/fasterthemes.php:204
 msgid ""
 "Enter home content for your site , you would like to display in the Home "
 "Page."
 msgstr ""
 
-#: theme-options/fasterthemes.php:216
+#: theme-options/fasterthemes.php:209
 msgid "First Section"
 msgstr ""
 
-#: theme-options/fasterthemes.php:219
+#: theme-options/fasterthemes.php:212
 msgid "Tab"
 msgstr ""
 
-#: theme-options/fasterthemes.php:234
+#: theme-options/fasterthemes.php:227
 msgid ""
 "Enter section title for your home template , you would like to display in "
 "the Home Page."
 msgstr ""
 
-#: theme-options/fasterthemes.php:235
+#: theme-options/fasterthemes.php:228
 msgid "Enter title here"
 msgstr ""
 
-#: theme-options/fasterthemes.php:238
+#: theme-options/fasterthemes.php:231
 msgid ""
 "Enter section content for home template , you would like to display in the "
 "Home Page."
 msgstr ""
 
-#: theme-options/fasterthemes.php:239
+#: theme-options/fasterthemes.php:232
 msgid "Enter Content here"
 msgstr ""
 
-#: theme-options/fasterthemes.php:246
+#: theme-options/fasterthemes.php:237
 msgid "Second Section"
 msgstr ""
 
-#: theme-options/fasterthemes.php:248
+#: theme-options/fasterthemes.php:239
 msgid "Recent Post Title"
 msgstr ""
 
-#: theme-options/fasterthemes.php:251
+#: theme-options/fasterthemes.php:242
 msgid ""
 "Enter recent post title for your site , you would like to display in the "
 "Home Page."
 msgstr ""
 
-#: theme-options/fasterthemes.php:261
+#: theme-options/fasterthemes.php:252
 msgid "Select Category"
 msgstr ""
 
-#: theme-options/fasterthemes.php:304
+#: theme-options/fasterthemes.php:294
 msgid "Facebook"
 msgstr ""
 
-#: theme-options/fasterthemes.php:307
+#: theme-options/fasterthemes.php:297
 msgid "Facebook profile or page URL "
 msgstr ""
 
-#: theme-options/fasterthemes.php:313
+#: theme-options/fasterthemes.php:303
 msgid "Twitter"
 msgstr ""
 
-#: theme-options/fasterthemes.php:316
+#: theme-options/fasterthemes.php:306
 msgid "Twitter profile or page URL i.e. "
 msgstr ""
 
-#: theme-options/fasterthemes.php:322
+#: theme-options/fasterthemes.php:312
 msgid "Dribbble"
 msgstr ""
 
-#: theme-options/fasterthemes.php:325
+#: theme-options/fasterthemes.php:315
 msgid "Dribbble profile or page URL i.e."
 msgstr ""
 
-#: theme-options/fasterthemes.php:332
+#: theme-options/fasterthemes.php:321
 msgid "Linkedin"
 msgstr ""
 
-#: theme-options/fasterthemes.php:335
+#: theme-options/fasterthemes.php:324
 msgid "Linkedin profile or page URL i.e. "
 msgstr ""
 
-#: theme-options/fasterthemes.php:341
+#: theme-options/fasterthemes.php:330
 msgid "RSS"
 msgstr ""
 
-#: theme-options/fasterthemes.php:344
+#: theme-options/fasterthemes.php:333
 msgid "RSS profile or page URL i.e. "
 msgstr ""
 
-#: theme-options/fasterthemes.php:365
+#: theme-options/fasterthemes.php:353
 msgid "fasterthemes.com"
 msgstr ""
 
-#: theme-options/fasterthemes.php:373
+#: theme-options/fasterthemes.php:361
 msgid "Options saved successfully"
-msgstr ""
-
-#: theme-options/fasterthemes.php:375
-msgid "Subscribe with us"
-msgstr ""
-
-#: theme-options/fasterthemes.php:376
-msgid ""
-"Join our mailing list and we'll keep you updated on new themes as they're "
-"released and our exclusive special offers. "
-msgstr ""
-
-#: theme-options/fasterthemes.php:378
-msgid "Click here to join."
 msgstr ""

@@ -2,24 +2,21 @@
 /*
 * Template Name: Home Page
 */
-?>
-<?php get_header(); 
-$generator_options = get_option( 'faster_theme_options' );
-?>
-
+get_header(); 
+$generator_options = get_option( 'faster_theme_options' ); ?>
 <div class="callbacks_container">
   <ul class="rslides" id="slider4">
-    <?php for($generator_loop=1 ; $generator_loop <5 ; $generator_loop++):?>
-    <?php if(!empty($generator_options['slider-img-'.$generator_loop])){ ?>
+    <?php for($generator_loop=1 ; $generator_loop <5 ; $generator_loop++):
+    if(!empty($generator_options['slider-img-'.$generator_loop])){ ?>
     <li>
-      <?php if(!empty($generator_options['slidelink-'.$generator_loop])) {?>
+      <?php if(!empty($generator_options['slidelink-'.$generator_loop])) { ?>
       <a href="<?php echo esc_url($generator_options['slidelink-'.$generator_loop]);?>" target="_blank"><img src="<?php echo $generator_options['slider-img-'.$generator_loop]; ?>" alt="" /></a>
       <?php }else{?>
       <img src="<?php echo esc_url($generator_options['slider-img-'.$generator_loop]); ?>" alt="" />
       <?php } ?>
     </li>
-    <?php } ?>
-    <?php endfor;?>
+    <?php } 
+    endfor;?>
   </ul>
 </div>
 <div class="generator-single-blog section-main front-main">
@@ -80,11 +77,10 @@ $generator_query=new $wp_query($generator_args); ?>
         <?php } ?>
       </div>
       <?php } else { ?>
-	  <p><?php _e('No posts found','generator') ?></p> 
+	  <p><?php _e('No posts found','generator'); ?></p> 
 	  <?php } ?>
     </div>
   </div>
    <?php  } ?>	
 </div>
-
 <?php  get_footer(); ?>

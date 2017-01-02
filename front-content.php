@@ -1,7 +1,7 @@
 <?php $generator_options = get_option( 'faster_theme_options' ); ?>
 <div class="col-md-12 generator-post no-padding">
-<?php for($generator_section_i=1; $generator_section_i <=4 ;$generator_section_i++ ):?>  
-<?php if(empty($generator_options['home-icon-'.$generator_section_i]) && empty($generator_options['section-title-'.$generator_section_i]) && empty($generator_options['section-content-'.$generator_section_i])) { continue; }	?>
+<?php for($generator_section_i=1; $generator_section_i <=4 ;$generator_section_i++ ): 
+	if(empty($generator_options['home-icon-'.$generator_section_i]) && empty($generator_options['section-title-'.$generator_section_i]) && empty($generator_options['section-content-'.$generator_section_i])) { continue; }	?>
 <div class="col-md-3 generator-sidebar">
 <aside class="sidebar-widget widget widget_generator_widget" id="generator_widget-3">
 <?php if(!empty($generator_options['home-icon-'.$generator_section_i])) { ?>

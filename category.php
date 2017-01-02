@@ -5,8 +5,7 @@
 get_header(); 
 	$generator_categories = get_the_category();
 	$generator_category_name = $generator_categories[0]->name;
-	$generator_category_id = $generator_categories[0]->cat_ID;
-?>
+	$generator_category_id = $generator_categories[0]->cat_ID; ?>
 <div class="generator-single-blog section-main">
   <div class=" container-generator container">     
 	<h1>
@@ -22,8 +21,8 @@ get_header();
 <div class="container container-generator">
   <div class="col-md-12 generator-post no-padding">
     <div class="col-md-8 no-padding-left"> 
-      <?php while ( have_posts() ) : the_post(); ?>
-      <?php $generator_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>
+      <?php while ( have_posts() ) : the_post();
+        $generator_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>
        <div class="blog-post-list">
         <div class="col-md-12 no-padding">
           <div class="col-md-10 no-padding">
@@ -39,25 +38,24 @@ get_header();
         </div>
         
         <div class="col-md-12 generator-post-content no-padding">
-	     <?php $generator_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>
-         <?php if($generator_image != "") { ?><img src="<?php echo $generator_image; ?>" class="img-responsive generator-featured-image" /><?php } ?>
-          <?php the_excerpt(); ?>
+	     <?php $generator_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) );
+        if($generator_image != "") { ?><a href="<?php the_permalink(); ?>"><img src="<?php echo $generator_image; ?>" class="img-responsive generator-featured-image" /></a><?php }
+          the_excerpt(); ?>
           <a href="<?php echo get_permalink(); ?>" class="generator-readmore"><button class="blog-readmore-button"><?php _e('READ MORE','generator') ?></button></a>
         </div>
       </div>
-      <?php endwhile; ?> 
-     
+      <?php endwhile; ?>     
 		<!--Pagination Start-->
-        <?php   if (function_exists('faster_pagination') ) {?>
-            <?php faster_pagination();?>
-        <?php }else { ?>
-        <?php if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
+        <?php if (function_exists('faster_pagination') ) {
+            faster_pagination();
+        }else {
+        if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
         <div class="col-md-12 generator-default-pagination">
             <span class="generator-previous-link"><?php previous_posts_link(); ?></span>
             <span class="generator-next-link"><?php next_posts_link(); ?></span>
         </div>
-        <?php } ?>
-        <?php }//is plugin active ?>
+        <?php }
+        }//is plugin active ?>
 		<!--Pagination End-->
 
     </div>

@@ -65,3 +65,6 @@ Version 2.2.1 (04 Dec 2014)
 
 Version 2.2.2 (12 Dec 2014)
     i) Fixed CSS issue.
+
+Version 2.2.3 (02 Jan 2017)
+    i) Minor fixes.

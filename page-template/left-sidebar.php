@@ -2,8 +2,7 @@
 /**
  * Template Name: Left Sidebar
 **/
-get_header();
-?>
+get_header(); ?>
 <div class="generator-single-blog section-main">
   <div class=" container-generator container">
     <h1><?php the_title(); ?></h1>
@@ -25,8 +24,8 @@ get_header();
               <h2 class="generator-page-title"><?php the_title(); ?></h2>
             </div>
           <div class="col-md-12 generator-post-content no-padding">
-            <?php if($generator_image != "") { ?><img src="<?php echo $generator_image; ?>" class="img-responsive generator-featured-image" /><?php } ?>
-            <?php the_content(); ?>
+            <?php if($generator_image != "") { ?><img src="<?php echo $generator_image; ?>" class="img-responsive generator-featured-image" /><?php }  
+            the_content(); ?>
           </div>
           <?php endwhile; ?> 
           <div class="col-md-12 generator-post-comment no-padding">
@@ -36,5 +35,4 @@ get_header();
       </div>
     </div>
   </div>
-
 <?php get_footer(); ?>

@@ -9,16 +9,14 @@
  * return early without loading the comments.
  */
 if ( post_password_required() )
-	return;
-?>
+	return; ?>
 <div class="clearfix"></div>
 <div id="comments" class="comments-area">
-	<?php if ( have_comments() ) : 	?>
+	<?php if ( have_comments() ) : ?>
     <h1 class="comments-title">
 		<?php
 			printf( _n( 'One thought on  %2$s', '%1$s thoughts on  %2$s', get_comments_number(), 'generator' ),
-				number_format_i18n( get_comments_number() ), get_the_title() );
-		?>
+				number_format_i18n( get_comments_number() ), get_the_title() ); ?>
 	</h1>
     <ul>
     <?php	

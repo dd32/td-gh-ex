@@ -2,8 +2,7 @@
 /**
  * Single Post template file
 **/
-get_header(); 
-?>
+get_header(); ?>
 
 <div class="generator-single-blog section-main">
   <div class=" container-generator container">
@@ -18,8 +17,8 @@ get_header();
 <div class="container container-generator">
   <div class="col-md-12 generator-post no-padding">
     <div id="post-<?php the_ID(); ?>" <?php post_class("col-md-8 no-padding-left"); ?>> 
-      <?php while ( have_posts() ) : the_post(); ?>
-      <?php $generator_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>
+      <?php while ( have_posts() ) : the_post();
+        $generator_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>
       <div class="col-md-12 no-padding">
         <div class="col-md-10 no-padding">
           <h2 class="generator-head-title"><?php the_title(); ?></h2>
@@ -35,8 +34,8 @@ get_header();
         </ol>
       </div>
       <div class="col-md-12 generator-post-content no-padding">
-        <?php if($generator_image != "") { ?><img src="<?php echo $generator_image; ?>" class="img-responsive generator-featured-image" /><?php } ?>
-		<?php the_content();
+        <?php if($generator_image != "") { ?><img src="<?php echo $generator_image; ?>" class="img-responsive generator-featured-image" /><?php }
+		    the_content();
 				wp_link_pages( array(
 							'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'generator' ) . '</span>',
 							'after'       => '</div>',

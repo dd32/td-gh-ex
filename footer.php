@@ -14,7 +14,7 @@
 			  }
 		?>
 		<span class='generator-poweredby'>
-		<?php printf( __( 'Powered by %1$s and %2$s.', 'generator' ), '<a href="http://wordpress.org" target="_blank">WordPress</a>', '<a href="http://fasterthemes.com/wordpress-themes/generator" target="_blank">Generator</a>' ); ?>
+		<?php printf( __( 'Powered by %1$s.', 'generator' ), '<a href="http://fasterthemes.com/wordpress-themes/generator" target="_blank">Generator WordPress Theme</a>' ); ?>
 		</span>
       </div>
     </div>

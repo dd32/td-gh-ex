@@ -2,8 +2,7 @@
 /**
  * Author Page template file
 **/
-get_header(); 
-?>
+get_header(); ?>
 <div class="generator-single-blog section-main">
   <div class=" container-generator container">
     
@@ -35,25 +34,25 @@ get_header();
         </div>
         
         <div class="col-md-12 generator-post-content no-padding">
-	     <?php $generator_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>
-         <?php if($generator_image != "") { ?><img src="<?php echo $generator_image; ?>" class="img-responsive generator-featured-image" /><?php } ?>
-          <?php the_excerpt(); ?>
+	     <?php $generator_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) );
+         if($generator_image != "") { ?><a href="<?php the_permalink(); ?>"><img src="<?php echo $generator_image; ?>" class="img-responsive generator-featured-image" /></a><?php }
+          the_excerpt(); ?>
           <a href="<?php echo get_permalink(); ?>" class="generator-readmore"><button class="blog-readmore-button"><?php _e('READ MORE','generator') ?></button></a>
         </div>
       </div>
       <?php endwhile; ?> 
      
 		<!--Pagination Start-->
-        <?php   if (function_exists('faster_pagination') ) {?>
-            <?php faster_pagination();?>
-        <?php }else { ?>
-        <?php if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
+        <?php   if (function_exists('faster_pagination') ) {
+          faster_pagination();
+        }else {
+        if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
         <div class="col-md-12 generator-default-pagination">
             <span class="generator-previous-link"><?php previous_posts_link(); ?></span>
             <span class="generator-next-link"><?php next_posts_link(); ?></span>
         </div>
-        <?php } ?>
-        <?php }//is plugin active ?>
+        <?php }
+          }//is plugin active ?>
 		<!--Pagination End-->
 
     </div>
