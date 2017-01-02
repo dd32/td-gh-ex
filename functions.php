@@ -101,7 +101,8 @@ function zenzero_scripts() {
 	wp_register_style( 'zenzero-googlefonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), null );
 	wp_enqueue_style( 'zenzero-googlefonts' );
 
-	wp_enqueue_script( 'zenzero-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'zenzero-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'zenzero-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	wp_enqueue_script( 'zenzero-custom', get_template_directory_uri() . '/js/jquery.zenzero.js', array('jquery'), '1.0', true );
 	wp_enqueue_script( 'zenzero-smoothScroll', get_template_directory_uri() . '/js/SmoothScroll.min.js', array('jquery'), '1.0', true );
 	

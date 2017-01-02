@@ -66,9 +66,9 @@ if ( post_password_required() ) {
 	$aria_req = ( $req ? " aria-required='true'" : '' );
 
 	$fields =  array(
-		'author' => '<p class="comment-form-author"><input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" ' . $aria_req . ' placeholder="' . __( 'Name *'  , 'zenzero' ) . '"/></p>',
-		'email'  => '<p class="comment-form-email"><input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" ' . $aria_req . ' placeholder="' . __( 'Email *'  , 'zenzero' ) . '"/></p>',
-		'url'    => '<p class="comment-form-url"><input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="' . __( 'Website'  , 'zenzero' ) . '"/></p>',
+		'author' => '<p class="comment-form-author"><input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" ' . $aria_req . ' placeholder="' . esc_attr__( 'Name *'  , 'zenzero' ) . '"/></p>',
+		'email'  => '<p class="comment-form-email"><input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" ' . $aria_req . ' placeholder="' . esc_attr__( 'Email *'  , 'zenzero' ) . '"/></p>',
+		'url'    => '<p class="comment-form-url"><input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="' . esc_attr__( 'Website'  , 'zenzero' ) . '"/></p>',
 	);
 	$required_text = __(' Required fields are marked ', 'zenzero').' <span class="required">*</span>';
 	?>
@@ -81,7 +81,7 @@ if ( post_password_required() ) {
 		'title_reply_to' => __( 'Leave a Reply to %s'  , 'zenzero' ),
 		'cancel_reply_link' => __( 'Cancel reply'  , 'zenzero' ) . '<i class="fa fa-times spaceLeft"></i>',
 		'label_submit' => __( 'Post Comment'  , 'zenzero' ),
-		'comment_field' => '<div class="clear"></div><p class="comment-form-comment"><textarea id="comment" name="comment" rows="8" aria-required="true" placeholder="' . __( 'Comment *'  , 'zenzero' ) . '"></textarea></p>',
+		'comment_field' => '<div class="clear"></div><p class="comment-form-comment"><textarea id="comment" name="comment" rows="8" aria-required="true" placeholder="' . esc_attr__( 'Comment *'  , 'zenzero' ) . '"></textarea></p>',
 	)); 
 	?>
 

@@ -74,8 +74,8 @@ final class Zenzero_Updgrade_Pro_Button {
 				'cresta_zenzero_buy_pro',
 				array(
 					'priority' => 1,
-					'title'    => esc_html__( 'Zenzero PRO Version', 'zenzero' ),
-					'pro_text' => esc_html__( 'Go Pro',         'zenzero' ),
+					'title'    => esc_html__( 'Zenzero PRO Theme', 'zenzero' ),
+					'pro_text' => esc_html__( 'More Info',         'zenzero' ),
 					'pro_url'  => 'https://crestaproject.com/downloads/zenzero/'
 				)
 			)

@@ -79,7 +79,7 @@ function zenzero_color_primary_register( $wp_customize ) {
 	=====================================================
 	*/
 	$wp_customize->add_section( 'cresta_zenzero_options', array(
-	     'title'    => esc_attr__( 'Zenzero Theme Options', 'zenzero' ),
+	     'title'    => esc_html__( 'Zenzero Theme Options', 'zenzero' ),
 	     'priority' => 50,
 	) );
 	
