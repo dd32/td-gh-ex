@@ -12,7 +12,8 @@
 $class = "";
 if ($awada_theme_options['site_layout'] == 'boxed') {
     $class .= ' boxed ';
-} ?>
+} 
+?>
 <body <?php body_class($class); ?>>
 <?php if ($awada_theme_options['site_layout'] == 'boxed') { ?>
 <div id="wrapper" class="container">

@@ -134,7 +134,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'colors',
     'type'              => 'color',
     'priority'          => 9,
-    'default'           => '#31a3dd',
+    'default'           => '#33a568',
     'sanitize_callback' => 'awada_sanitize_color',
     'output'            => array(
         array(
@@ -210,7 +210,7 @@ Kirki::add_section('general_sec', array(
     'title'       => __('General Options', 'awada'),
     'description' => __('Here you can change basic settings of your site', 'awada'),
     'panel'       => 'awada_option_panel',
-    'priority'    => 160,
+    'priority'    => 158,
     'capability'  => 'edit_theme_options',
 ));
 
@@ -319,7 +319,33 @@ Kirki::add_field('awada_theme', array(
     
     'output'      => array(
         array(
-            'element' => '#awada-header .site-branding-text p,#awada-header .site-branding-text h1',
+            'element' => '#awada-header .site-branding-text h1, #awada-header .site-branding-text p.site-title',
+        ),
+    ),
+));
+Kirki::add_field('awada_theme', array(
+    'type'        => 'typography',
+    'settings'    => 'logo_sub_font',
+    'label'       => __('Logo Subtitle/Description Font Style', 'awada'),
+    'description' => __('Change logo Subtitle/Description font family and font style.', 'awada'),
+    'section'     => 'typography_sec',
+    'default'     => array(
+        'font-style'  => array('bold', 'italic'),
+        'font-family' => 'Eagle Lake',
+		'font-size'   => '14px',
+    ),
+    'priority'    => 10,
+    'choices'     => array(
+        'font-style'  => true,
+        'font-family' => true,
+        'font-size'   => true,
+        'line-height' => true,
+        'font-weight' => true,
+    ),
+    
+    'output'      => array(
+        array(
+            'element' => '#awada-header .site-branding-text p.site-description',
         ),
     ),
 ));
@@ -863,7 +889,7 @@ Kirki::add_field('awada_theme', array(
 Kirki::add_section('social_sec', array(
     'title'      => __('Contact and Social Options', 'awada'),
     'panel'      => 'awada_option_panel',
-    'priority'   => 160,
+    'priority'   => 159,
     'capability' => 'edit_theme_options',
 ));
 Kirki::add_field('awada_theme', array(
@@ -911,8 +937,8 @@ Kirki::add_field('awada_theme', array(
 ));
 Kirki::add_field('awada_theme', array(
     'settings'          => 'social_media_header',
-    'label'             => __('Enable Social Icon', 'awada'),
-    'description'       => __('Show/Hide social icons in header', 'awada'),
+    'label'             => __('Show/Hide Social Icon in Topbar', 'awada'),
+    'description'       => sprintf(__('Check out %s page to setup social menu icon in topbar', 'awada'),'<a href="'.admin_url('themes.php?page=awada-welcome').'" target="_blank">About Awada</a>'),
     'section'           => 'social_sec',
     'type'              => 'switch',
     'priority'          => 10,
@@ -920,81 +946,7 @@ Kirki::add_field('awada_theme', array(
     'default'           => $awada_theme_options['social_media_header'],
     'sanitize_callback' => 'awada_sanitize_checkbox',
 ));
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'social_facebook_link',
-    'label'             => __('Facebook Profile URL', 'awada'),
-    'section'           => 'social_sec',
-    'type'              => 'url',
-    'priority'          => 10,
-	'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['social_facebook_link'],
-    'sanitize_callback' => 'esc_url',
-));
 
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'social_twitter_link',
-    'label'             => __('Twitter Profile URL', 'awada'),
-    'section'           => 'social_sec',
-    'type'              => 'url',
-    'priority'          => 10,
-	'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['social_twitter_link'],
-    'sanitize_callback' => 'esc_url',
-));
-
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'social_google_plus_link',
-    'label'             => __('Google+ Profile URL', 'awada'),
-    'section'           => 'social_sec',
-    'type'              => 'url',
-    'priority'          => 10,
-	'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['social_google_plus_link'],
-    'sanitize_callback' => 'esc_url',
-));
-
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'social_skype_link',
-    'label'             => __('Skype ID', 'awada'),
-    'section'           => 'social_sec',
-    'type'              => 'text',
-    'priority'          => 10,
-	'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['social_skype_link'],
-    'sanitize_callback' => 'awada_sanitize_text',
-));
-
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'social_youtube_link',
-    'label'             => __('YouTube URL', 'awada'),
-    'section'           => 'social_sec',
-    'type'              => 'url',
-    'priority'          => 10,
-	'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['social_youtube_link'],
-    'sanitize_callback' => 'esc_url',
-));
-
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'social_dribbble_link',
-    'label'             => __('Dribbble URL', 'awada'),
-    'section'           => 'social_sec',
-    'type'              => 'url',
-    'priority'          => 10,
-	'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['social_dribbble_link'],
-    'sanitize_callback' => 'esc_url',
-));
-Kirki::add_field('awada_theme', array(
-    'settings'          => 'social_linkedin_link',
-    'label'             => __('Linkedin URL', 'awada'),
-    'section'           => 'social_sec',
-    'type'              => 'url',
-    'priority'          => 10,
-	'transport'         => 'postMessage',
-    'default'           => $awada_theme_options['social_linkedin_link'],
-    'sanitize_callback' => 'esc_url',
-));
 /* footer options */
 Kirki::add_section('footer_sec', array(
     'title'      => __('Footer & Copyright Options', 'awada'),
@@ -1124,7 +1076,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'footer_sec',
     'type'              => 'color',
     'priority'          => 10,
-    'default'           => '#31a3dd',
+    'default'           => '#33a568',
     'sanitize_callback' => 'awada_sanitize_color',
     'output'            => array(
         array(
@@ -1141,7 +1093,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'footer_sec',
     'type'              => 'color',
     'priority'          => 10,
-    'default'           => '#31a3dd',
+    'default'           => '#33a568',
     'sanitize_callback' => 'awada_sanitize_color',
     'output'            => array(
         array(

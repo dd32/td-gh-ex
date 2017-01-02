@@ -46,7 +46,7 @@ $Awada_lite = wp_get_theme( 'awada' );
 		<p><?php _e( "Goto <b>Appearance >> Menus</b>, Create new menu name it whatever you want like <i><b>social-menu</b></i>. Now Click on <b>Custom Link</b> tab on left side. Put your Social media URL in URL field like <b>https://www.facebook.com/webhuntinfotech/</b>. in <b>Link Text</b> field enter social media name <b>facebook</b>, now click on <b>Add to Menu</b> button. Check <b>Social Links Menu</b> checkbox and Click on <b>Save Menu</b>. That's it now facebook social icon will appear on topbar of your site. Similarly you can add others social media like twitter, skype, dribbble, linkedin etc.
 		If you have any query ask for support at https://wordpress.org/support/theme/awada.
 		Thanks", 'awada' ); ?></p>
-		<p><a href="https://wordpress.org/support/theme/awada" class="button" target="_blank"><?php esc_html_e( 'Ask for Suport', 'awada' ); ?></a></p>
+		<p><a href="https://wordpress.org/support/theme/awada" class="button" target="_blank"><?php esc_html_e( 'Ask for Support', 'awada' ); ?></a></p>
 		
 
 	</div>

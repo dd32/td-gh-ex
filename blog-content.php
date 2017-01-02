@@ -33,7 +33,7 @@
 	</div><!-- end blog-header -->
 	<?php } ?>
 	<div class="blog-desc">
-		<?php if(is_page() || is_singular()) { the_content(); } else { the_excerpt(); } ?>
+		<?php if(is_page() || is_singular() || is_home()) { the_content(); } else { the_excerpt(); } ?>
 	</div><!-- end blog-desc -->
 </div><!-- end blog-carousel -->
 <?php if(!is_page()){ ?>

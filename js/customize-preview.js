@@ -220,14 +220,31 @@
                 $('#topbar-social-links').show();
         });
     });
-	
-	//Copyright
-	wp.customize('awada_theme_options[copyright_text_footer]', function (value) {
+	//footer widget menu
+	wp.customize('awada_theme_options[show_footer_widget]', function (value) {
         value.bind(function (to) {
             if (!to)
-                $('#copyright_section').hide();
+                $('#awada_footer_area').hide();
             else
-                $('#copyright_section').show();
+                $('#awada_footer_area').show();
+        });
+    });
+	//footer menu
+	wp.customize('awada_theme_options[footer_menu_enabled]', function (value) {
+        value.bind(function (to) {
+            if (!to)
+                $('.footer-area-menu').hide();
+            else
+                $('.footer-area-menu').show();
+        });
+    });
+	//Copyright
+	wp.customize('awada_theme_options[copyright_text_enabled]', function (value) {
+        value.bind(function (to) {
+            if (!to)
+                $('.footer_copy_text').hide();
+            else
+                $('.footer_copy_text').show();
         });
     });
 	wp.customize('awada_theme_options[footer_copyright]', function (value) {

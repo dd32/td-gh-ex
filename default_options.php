@@ -14,6 +14,7 @@ function awada_theme_options()
         'topbar' => 1,
         'headersticky' => 1,
         'custom_css' => '',
+		'color_scheme' => 'green.css',
 		//Slider Settings:
         'home_slider_enabled' => 1,
 		// Service
