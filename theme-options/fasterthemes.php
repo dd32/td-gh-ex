@@ -50,8 +50,8 @@ add_action('admin_enqueue_scripts', 'medium_framework_load_scripts');
 
 function medium_framework_menu_settings() {
   $medium_menu = array(
-      'page_title' => __('medium Options', 'medium_framework'),
-      'menu_title' => __('Theme Options', 'medium_framework'),
+      'page_title' => __('medium Options', 'medium'),
+      'menu_title' => __('Theme Options', 'medium'),
       'capability' => 'edit_theme_options',
       'menu_slug' => 'medium_framework',
       'callback' => 'medium_framework_page'

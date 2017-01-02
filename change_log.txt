@@ -45,3 +45,6 @@ iii) rename enscroll.min.js to enscroll.js
 
 Version 1.2.5 (18-12-2014)
 i) enqueue script header set. function.php 
+
+Version 1.2.6 (02-01-2017)
+i) Minor fixes.

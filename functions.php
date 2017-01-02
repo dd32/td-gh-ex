@@ -45,6 +45,7 @@ function medium_setup() {
 		'featured_content_filter' => 'medium_get_featured_posts',
 		'max_posts' => 6,
 	) );
+	add_theme_support( "title-tag" );
 	// This theme uses its own gallery styles.
 	add_filter( 'use_default_gallery_style', '__return_false' );
 }
@@ -264,7 +265,7 @@ function medium_comment( $comment, $args, $depth ) {
 				<div class="comment-metadata">
            <?php
 		   		printf( '%1$s ',get_comment_author_link(),( $comment->user_id === $post->post_author ) ? '<span>' . __( 'Post author ', 'medium' ) . '</span>' : '');
-				printf( _n('%1$s', get_comment_date('F j, Y'), 'medium' ), get_comment_date(), get_comment_time() );
+				printf( __('%1$s', get_comment_date(), 'medium' ), get_comment_date(), get_comment_time() );
 				
 				echo comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply', 'medium' ), 'after' => '', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ));
 				

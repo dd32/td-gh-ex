@@ -1,8 +1,8 @@
 <?php
 /*
  * Header For medium Theme.
- */
-?><!DOCTYPE html>
+ */ ?>
+ <!DOCTYPE html>
 <!--[if IE 7]>
 <html class="ie ie7" <?php language_attributes(); ?>>
 <![endif]-->
@@ -15,11 +15,9 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width">
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">	
 	<?php wp_head(); ?>
-
 </head>
 
 <body <?php body_class(); ?>>
@@ -63,8 +61,7 @@
         		<a href="<?php echo esc_url(site_url()); ?>"><?php echo get_bloginfo('name'); ?></a>
             <?php } else { ?>
                 <a href="<?php echo esc_url(site_url()); ?>"><img src="<?php echo esc_url($medium_options['logo']); ?>" alt="<?php echo esc_attr(get_bloginfo('name')); ?>" class="logo-center img-responsive" /></a>
-            <?php }
-            ?>
+            <?php } ?>
               </div>
            </div>
        

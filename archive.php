@@ -17,8 +17,7 @@ get_header();
             _e('Monthly Archives','medium'); echo ": ". get_the_date('Y');
         else :
             _e( 'Archives', 'medium' );
-        endif;
-        ?></h2>
+        endif; ?></h2>
     </div>
    	<div class="container blog-container">	
         <div class="blog-post" id="content">
@@ -33,20 +32,18 @@ get_header();
 			else{
 				$medium_class = 'col-md-5 col-sm-5 post-box';
 				$medium_featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'medium-blog-small',0 );				
-			}
-				?>	 
+			} ?>	 
                 <div  id="post-<?php the_ID(); ?>" <?php post_class($medium_class); ?>>
                     <div class="blog-left">
                     	<?php
 							if(!empty($medium_featured_image[0])) {
 								echo '<a href="'. esc_url(get_permalink()).'"><img src="'. esc_url($medium_featured_image[0]).'" class="img-responsive" alt="'.esc_attr(get_the_title()).'" /></a>';
-								}
-						?>
+								} ?>
                         <div class="block-content">
                             <a href="<?php echo  esc_url(get_permalink());?>" class="block-title"><?php echo get_the_title(); ?></a>
                             <div class="block-details"> 
                                 <ul>
-                                    <?php medium_entry_meta();?> 
+                                    <?php medium_entry_meta(); ?> 
                                 </ul>
                              </div>
                             <a href="<?php echo  esc_url(get_permalink());?>" class="read-more"><?php _e('Read More...','medium'); ?></a>
@@ -62,13 +59,12 @@ get_header();
 				if (function_exists('faster_pagination')) {
     				faster_pagination();
 				}
-				else{?>
+				else{ ?>
 					<div class="col-md-12 medium-pagination-single">
                         <span class="medium-previous-link"><?php previous_posts_link('&laquo; '.__('Previous','medium')); ?></span>
                         <span class="medium-next-link"><?php next_posts_link(__('Next','medium').' &raquo;'); ?></span>
-      				</div><?php
-				}
-		 	?>
+      				</div>
+                    <?php } ?>
             </div>
         </div>    
     </div>   

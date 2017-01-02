@@ -1,7 +1,8 @@
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Medium V1.2.1\n"
-"POT-Creation-Date: 2014-11-29 18:39+0530\n"
+"POT-Creation-Date: 2017-01-02 19:02+0530\n"
 "PO-Revision-Date: 2014-11-29 18:40+0530\n"
 "Last-Translator: FasterThemes <support@fasterthemes.com>\n"
 "Language-Team: FasterThemes <support@fasterthemes.com>\n"
@@ -9,8 +10,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.10\n"
-"X-Poedit-Basepath: ../\n"
+"X-Generator: Poedit 1.8.11\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
@@ -18,15 +19,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: 404.php:12
+#: 404.php:11
 msgid "Epic 404 - Article Not Found"
 msgstr ""
 
-#: 404.php:13
+#: 404.php:12
 msgid "This is embarassing. We can't find what you were looking for."
 msgstr ""
 
-#: 404.php:15
+#: 404.php:14
 msgid ""
 "Whatever you were looking for was not found, but maybe try looking again or "
 "search using the form below."
@@ -44,32 +45,32 @@ msgstr ""
 msgid "Archives"
 msgstr ""
 
-#: archive.php:52 author.php:41 category.php:41 index.php:48 search.php:41
-#: tag.php:41
+#: archive.php:49 author.php:38 category.php:38 index.php:43 search.php:38
+#: tag.php:38
 msgid "Read More..."
 msgstr ""
 
-#: archive.php:67 author.php:56 category.php:56 index.php:64 search.php:56
-#: single.php:52 tag.php:56
+#: archive.php:64 author.php:53 category.php:53 index.php:59 search.php:53
+#: single.php:43 tag.php:53
 msgid "Previous"
 msgstr ""
 
-#: archive.php:68 author.php:57 category.php:57 index.php:65 search.php:57
-#: single.php:54 tag.php:57
+#: archive.php:65 author.php:54 category.php:54 index.php:60 search.php:54
+#: single.php:45 tag.php:54
 msgid "Next"
 msgstr ""
 
-#: author.php:10
+#: author.php:9
 #, php-format
 msgid "All posts by : %s"
 msgstr ""
 
-#: category.php:10
+#: category.php:9
 #, php-format
 msgid "Category : %s"
 msgstr ""
 
-#: comments.php:17
+#: comments.php:16
 #, php-format
 msgid "One thought on - %2$s"
 msgid_plural "%1$s thoughts on - %2$s"
@@ -80,67 +81,72 @@ msgstr[1] ""
 msgid "Connect With Me"
 msgstr ""
 
-#: footer.php:37
+#: footer.php:35
 #, php-format
-msgid "Powered by %1$s and %2$s."
+msgid "Powered by %1$s."
 msgstr ""
 
 #: functions.php:31
 msgid "Header Menu"
 msgstr ""
 
-#: functions.php:85
+#: functions.php:86
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: functions.php:101
+#: functions.php:102
 msgctxt "Istok Web: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:167
+#: functions.php:175
 msgid "Not found"
 msgstr ""
 
-#: functions.php:187
+#: functions.php:196
 msgid "Posted in "
 msgstr ""
 
-#: functions.php:190
+#: functions.php:200
 msgid " Tags"
 msgstr ""
 
-#: functions.php:192
+#: functions.php:202
 msgid "On"
 msgstr ""
 
-#: functions.php:195
+#: functions.php:205
 msgid "By"
 msgstr ""
 
-#: functions.php:197
+#: functions.php:207
 #, php-format
 msgid "View all posts by %s"
 msgstr ""
 
-#: functions.php:202
+#: functions.php:212
 msgid "Comments"
 msgstr ""
 
-#: functions.php:237
+#: functions.php:247
 msgid "Pingback:"
 msgstr ""
 
-#: functions.php:239
+#: functions.php:249
 msgid "(Edit)"
 msgstr ""
 
-#: functions.php:257
+#: functions.php:267
 msgid "Post author "
 msgstr ""
 
-#: functions.php:260
+#: functions.php:268
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#: functions.php:270
 msgid "Reply"
 msgstr ""
 
@@ -453,160 +459,142 @@ msgstr ""
 msgid "All plugins installed and activated successfully. %s"
 msgstr ""
 
-#: header.php:78
+#: header.php:75
 msgid "Search"
 msgstr ""
 
-#: header.php:88
+#: header.php:85
 msgid "No results found..."
 msgstr ""
 
-#: index.php:14
+#: index.php:13
 msgid "Blog"
 msgstr ""
 
-#: page.php:38 single.php:37
+#: page.php:33 single.php:32
 msgid "Pages:"
 msgstr ""
 
-#: search.php:10
+#: search.php:9
 #, php-format
 msgid "Search Results for : %s"
 msgstr ""
 
-#: tag.php:10
+#: tag.php:9
 #, php-format
 msgid "Tag : %s"
 msgstr ""
 
-#: theme-options/fasterthemes.php:51
+#: theme-options/fasterthemes.php:53
 msgid "medium Options"
 msgstr ""
 
-#: theme-options/fasterthemes.php:52 theme-options/fasterthemes.php:83
+#: theme-options/fasterthemes.php:54 theme-options/fasterthemes.php:88
 msgid "Theme Options"
 msgstr ""
 
-#: theme-options/fasterthemes.php:87
+#: theme-options/fasterthemes.php:91
 msgid "Save Options"
 msgstr ""
 
-#: theme-options/fasterthemes.php:97
+#: theme-options/fasterthemes.php:101
 msgid "Header Settings"
 msgstr ""
 
-#: theme-options/fasterthemes.php:98
+#: theme-options/fasterthemes.php:102
 msgid "Footer Settings"
 msgstr ""
 
-#: theme-options/fasterthemes.php:113
+#: theme-options/fasterthemes.php:118
 msgid "Site Logo"
 msgstr ""
 
-#: theme-options/fasterthemes.php:115
+#: theme-options/fasterthemes.php:120
 msgid "Size of logo should be exactly 260x75px for best results."
 msgstr ""
 
-#: theme-options/fasterthemes.php:118 theme-options/fasterthemes.php:135
+#: theme-options/fasterthemes.php:125 theme-options/fasterthemes.php:146
 msgid "No file chosen"
 msgstr ""
 
-#: theme-options/fasterthemes.php:121 theme-options/fasterthemes.php:138
+#: theme-options/fasterthemes.php:129 theme-options/fasterthemes.php:150
 msgid "Remove"
 msgstr ""
 
-#: theme-options/fasterthemes.php:130
+#: theme-options/fasterthemes.php:139
 msgid "Favicon"
 msgstr ""
 
-#: theme-options/fasterthemes.php:132
+#: theme-options/fasterthemes.php:141
 msgid "Size of favicon should be exactly 32x32px for best results."
 msgstr ""
 
-#: theme-options/fasterthemes.php:146
+#: theme-options/fasterthemes.php:159
 msgid "Search Text"
 msgstr ""
 
-#: theme-options/fasterthemes.php:149
+#: theme-options/fasterthemes.php:162
 msgid "Search text display in the search popup."
 msgstr ""
 
-#: theme-options/fasterthemes.php:150
+#: theme-options/fasterthemes.php:165
 msgid "i.e. Find Portfolio,Blog and contact"
 msgstr ""
 
-#: theme-options/fasterthemes.php:157
+#: theme-options/fasterthemes.php:172
 msgid "Blog Title"
 msgstr ""
 
-#: theme-options/fasterthemes.php:160
+#: theme-options/fasterthemes.php:175
 msgid "Blog title display in the blog page."
 msgstr ""
 
-#: theme-options/fasterthemes.php:161
-msgid "Footer Settings i.e. Blog"
+#: theme-options/fasterthemes.php:178
+msgid "i.e. Blog"
 msgstr ""
 
-#: theme-options/fasterthemes.php:171
+#: theme-options/fasterthemes.php:188
 msgid "Copyright Text"
 msgstr ""
 
-#: theme-options/fasterthemes.php:174
+#: theme-options/fasterthemes.php:191
 msgid ""
 "Some text regarding copyright of your site, you would like to display in the "
 "footer."
 msgstr ""
 
-#: theme-options/fasterthemes.php:181
+#: theme-options/fasterthemes.php:200
 msgid "Social Media"
 msgstr ""
 
-#: theme-options/fasterthemes.php:184
+#: theme-options/fasterthemes.php:203
 msgid "Social Media Message"
 msgstr ""
 
-#: theme-options/fasterthemes.php:185
+#: theme-options/fasterthemes.php:206
 msgid "i.e. Connect With Me"
 msgstr ""
 
-#: theme-options/fasterthemes.php:188
+#: theme-options/fasterthemes.php:209
 msgid "Facebook profile"
 msgstr ""
 
-#: theme-options/fasterthemes.php:192
+#: theme-options/fasterthemes.php:215
 msgid "Twitter profile"
 msgstr ""
 
-#: theme-options/fasterthemes.php:196
+#: theme-options/fasterthemes.php:221
 msgid "Google Plus profile"
 msgstr ""
 
-#: theme-options/fasterthemes.php:200
+#: theme-options/fasterthemes.php:227
 msgid "Linkedin profile"
 msgstr ""
 
-#: theme-options/fasterthemes.php:217
-msgid "fasterthemes.com"
-msgstr ""
-
-#: theme-options/fasterthemes.php:220
+#: theme-options/fasterthemes.php:246
 msgid "Save options"
 msgstr ""
 
-#: theme-options/fasterthemes.php:225
+#: theme-options/fasterthemes.php:251
 msgid "Options saved successfully."
-msgstr ""
-
-#: theme-options/fasterthemes.php:228
-msgid "Subscribe with us"
-msgstr ""
-
-#: theme-options/fasterthemes.php:229
-msgid ""
-"Join our mailing list and we'll keep you updated on new themes as they're "
-"released and our exclusive special offers. "
-msgstr ""
-
-#: theme-options/fasterthemes.php:231
-msgid "Click here to join."
 msgstr ""
