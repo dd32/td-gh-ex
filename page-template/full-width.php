@@ -2,8 +2,7 @@
 /*
  * Template Name: Full Width
  */
-get_header();
-?>
+get_header(); ?>
 <section>
     <!--website-breadcrumbs-->
     <div class="col-md-12 bread-row">
@@ -15,7 +14,7 @@ get_header();
 <?php if (function_exists('jobile_custom_breadcrumbs')) {
     jobile_custom_breadcrumbs();
 } ?>
-	    </div>    
+	    </div>
 	</div>
     </div>
     <!--breadcrumbs end-->
@@ -33,14 +32,12 @@ get_header();
 			    wp_link_pages(array(
 				'before' => '<div class="page-links">' . __('Pages:', 'jobile'),
 				'after' => '</div>',
-			    ));
-			    ?>
+			    )); ?>
     <?php $jobile_feature_image = wp_get_attachment_url(get_post_thumbnail_id(get_the_id()));
-    if ($jobile_feature_image) {
-	?>
-				<img src="<?php echo esc_url($jobile_feature_image); ?>" class="img-responsive" />
-		    <?php } ?>
-    		    </div>
+    if ($jobile_feature_image) { ?>
+		<img src="<?php echo esc_url($jobile_feature_image); ?>" class="img-responsive" />
+	<?php } ?>
+    		</div>
     		</div>
     	    </article>
     <?php if (comments_open($post->ID)) { ?>

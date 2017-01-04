@@ -1,6 +1,5 @@
 <?php
 require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
-
 add_action( 'jobile_register', 'jobile_theme_register_plugins' );
 /* Register the required plugins for this theme. */
 function jobile_theme_register_plugins() {
@@ -18,7 +17,6 @@ function jobile_theme_register_plugins() {
             'required'  => false,
         ),
     );
-
     /*  Array of configuration settings. Amend each line as needed. */
     $config = array(
         'id'           => 'jobile',                 // Unique ID for hashing notices for multiple instances of TGMPA.
@@ -51,4 +49,4 @@ function jobile_theme_register_plugins() {
         )
     );
     jobile( $plugins, $config );
-}
+} ?>

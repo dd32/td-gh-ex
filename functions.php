@@ -63,8 +63,6 @@ function jobile_font_url() {
 
     return $jobile_font_url;
 }
-
-
 /*
  * Register widget areas.
  */
@@ -162,7 +160,6 @@ function jobile_category_tag_meta($list) {
     $list = str_replace('rel="category tag"', 'rel="category tag" class="person-post"', $list);
     return $list;
 }
-
 add_filter('the_category', 'jobile_category_meta');
 
 function jobile_category_meta($list_category) {
@@ -173,16 +170,13 @@ function jobile_category_meta($list_category) {
 /*
  * jobile Breadcrumbs
  */
-
 function jobile_custom_breadcrumbs() {
-
     $jobile_showonhome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
     $jobile_delimiter = '/'; // jobile_delimiter between crumbs
     $jobile_home = __('Home', 'jobile'); // text for the 'Home' link
     $jobile_showcurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
     $jobile_before = ' '; // tag before the current crumb
     $jobile_after = ' '; // tag after the current crumb
-
     global $post;
     $jobile_homelink = esc_url(home_url());
 
@@ -191,7 +185,6 @@ function jobile_custom_breadcrumbs() {
 	if ($jobile_showonhome == 1)
 	    echo '<div id="crumbs" class="font-14 color-fff conter-text jobile-breadcrumb"><a href="' . $jobile_homelink . '">' . $jobile_home . '</a></div>';
     } else {
-
 	echo '<div id="crumbs" class="font-14 color-fff conter-text jobile-breadcrumb"><a href="' . $jobile_homelink . '">' . $jobile_home . '</a> ' . $jobile_delimiter . ' ';
 
 	if (is_category()) {
@@ -274,20 +267,16 @@ function jobile_custom_breadcrumbs() {
 	    if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author())
 		echo ')';
 	}
-
 	echo '</div>';
     }
 } // end jobile_custom_breadcrumbs()
 /*
  * thumbnail list
  */
-
 function jobile_thumbnail_image($content) {
-
     if (has_post_thumbnail())
 	return the_post_thumbnail('thumbnail');
 }
-
 /**
  * excerpt function
  */
@@ -296,7 +285,6 @@ function jobile_customize_excerpt_more($more) {
 }
 
 add_filter('excerpt_more', 'jobile_customize_excerpt_more');
-
 function jobile_excerpt_length($length) {
     return (is_front_page()) ? 25 : 25;
 }
@@ -306,7 +294,6 @@ add_filter('excerpt_length', 'jobile_excerpt_length', 999);
 if (!function_exists('is_plugin_inactive')) {
     require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
 }
-
 function jobile_image_validation($jobile_imge_url) {
     $jobile_filetype = wp_check_filetype($jobile_imge_url);
 
@@ -317,4 +304,4 @@ function jobile_image_validation($jobile_imge_url) {
     } else {
 	return '';
     }
-}
+} ?>

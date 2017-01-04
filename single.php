@@ -2,8 +2,7 @@
 /*
  * Single Post Template File.
  */
-get_header();
-?>
+get_header(); ?>
 <section>
     <!--website-breadcrumbs-->
     <div class="col-md-12 bread-row">
@@ -28,7 +27,7 @@ get_header();
     		    <article class="clearfix">
     			<div class="col-md-12 top-pagination no-padding-lr clearfix">
     			    <div class="col-md-6 col-xs-6 no-padding-lr">
-					<a href="<?php echo esc_url(home_url('/')); ?>"><?php _e('Back to Listings', 'jobile') ?></a>
+					<a href="<?php echo esc_url(home_url('/')); ?>"><?php _e('Back to Listings', 'jobile'); ?></a>
     			    </div>
     			    <div class="col-md-6 col-xs-6 no-padding-lr prev-next-btn">
     <?php previous_post_link('%link', __('Previous', 'jobile'), TRUE); ?>
@@ -57,31 +56,28 @@ get_header();
                                         </div>
     				    <div class="col-md-12 no-padding-lr">    
                                             <div class="job-btn-group late-job-btn clearfix">
-					<?php echo get_the_category_list(', ', 'jobile'); ?>
-                                                <span class="jobile-tag-list"><?php echo get_the_tag_list( '', __( ' ', 'jobile' ) );?></span>
+                                                <?php echo get_the_category_list(', ', 'jobile'); ?>
+                                                <span class="jobile-tag-list"><?php echo get_the_tag_list( '', __( ' ', 'jobile' ) ); ?></span>
                                             </div>
-    				    </div>
+                                        </div>
                                     </div>
                                     <div class="article-row2 profile-title">
-					<?php
-					the_content();
+					<?php the_content();
 					wp_link_pages(array(
 					    'before' => '<div class="col-md-6 col-xs-6 no-padding-lr prev-next-btn">' . __('Pages:', 'jobile') . '',
 					    'after' => '</div>',
 					    'link_before' => '<span>',
 					    'link_after' => '</span>',
-					));
-					?>
-                                    </div>
+					)); ?>
+                </div>
     			    </div>
     		    </article>
     <?php if (comments_open($post->ID)) { ?>
-			    <div class="col-md-12 no-padding-lr article-content">
+		<div class="col-md-12 no-padding-lr article-content">
 	<?php comments_template(); ?>
-			    </div>
+		</div>
     <?php } ?>
-    		</div>
-    	    </div>
+    	</div> </div>
 <?php endwhile; ?>
 	</div>
     </div>

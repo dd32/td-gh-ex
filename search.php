@@ -2,27 +2,22 @@
 /*
  * Search Template File.
  */
-get_header();
-?>
+get_header(); ?>
 <section>
     <!--website-breadcrumbs-->
     <div class="col-md-12 bread-row">
 	<div class="container jobile-container">
 	    <div class="col-md-6 no-padding-lr bread-left">
-		<h2><?php
-		    _e('Search Results for', 'jobile');
-		    echo ' : ' . get_search_query();
-		    ?>
+		<h2><?php _e('Search Results for', 'jobile');
+		    echo ' : ' . get_search_query(); ?>
 
 		</h2>
 	    </div>
 	    <div class="col-md-6 no-padding-lr">
 		<ol class="breadcrumb site-breadcumb">
-		    <li><?php
-			if (function_exists('jobile_custom_breadcrumbs')) {
+		    <li><?php if (function_exists('jobile_custom_breadcrumbs')) {
 			    jobile_custom_breadcrumbs();
-			}
-			?></li>
+			} ?></li>
 		</ol>
 	    </div>    
 	</div>
@@ -34,18 +29,16 @@ get_header();
 			<?php get_sidebar(); ?>
 		<div class="col-md-8">
 		    <article class="clearfix">
-<?php while (have_posts()) : the_post(); ?>
+                <?php while (have_posts()) : the_post(); ?>
     			<div class="col-md-12 no-padding-lr sear-result-column">
     			    <div class="latest-job article-row1">
     				<div class="col-md-2 no-padding-lr resp-grid1 box-sadow">
 					<?php $jobile_blog_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()), 'jobile-blog-image');
-					if ($jobile_blog_image[0] != '') {
-					    ?>
+					if ($jobile_blog_image[0] != '') { ?>
 					    <img src="<?php echo esc_url($jobile_blog_image[0]); ?>" width="<?php echo $jobile_blog_image[1]; ?>" height="<?php echo $jobile_blog_image[2]; ?>" alt="<?php the_title(); ?>" />
-					    <?php } else {
-					    ?>
+					    <?php } else { ?>
 					    <img src="<?php echo get_template_directory_uri() ?>/images/no-image.jpg" width="100" height="86" />
-    <?php } ?>	
+                        <?php } ?>
     				</div>
     				<div class="col-md-10 no-padding-lr">
     				    <div class="col-md-8 col-sm-8 col-xs-8 no-padding-lr job-status resp-grid1 job-status-3">
@@ -68,11 +61,7 @@ get_header();
     			</div> 
 			    <?php endwhile; ?>
 			<div class="col-md-12 no-padding-lr avilab-row2 padding-0">
-<?php
-if (function_exists('faster_pagination')) {
-    faster_pagination('', 1);
-} else {
-    ?>
+                <?php if (function_exists('faster_pagination')) { faster_pagination('', 1); } else { ?>
     			    <div class="col-md-12 no-padding-lr right-pagination">
     				<ul>
     				    <li><?php previous_posts_link(); ?></li>

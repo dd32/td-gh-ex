@@ -5,7 +5,7 @@ Jobile Theme by FasterThemes http://fasterthemes.com/
 Jobile is a lightweight, fast, clean and super flexible bootstrap based responsive theme for your job portal website. With this theme you can create your own careers / openings website for your business. Jobile theme can also be used to create classified ads, blog , business or personal websites also. Jobile has got theme options to manage general settings and also custom widget to manage social icons and text areas in the footer.
 
 === Tags ===
-two-columns, responsive-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments
+two-columns, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments
 
 == License ==
 License: GNU General Public License v3 or later
@@ -100,4 +100,3 @@ TGM Plugin license and link
 
  license -  http://opensource.org/licenses/gpl-2.0.php GPL v2 or later
  link    -  https://github.com/thomasgriffin/TGM-Plugin-Activation
-

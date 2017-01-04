@@ -2,8 +2,8 @@
 /*
  * Header For Jobile Theme.
  */
-$jobile_options = get_option('jobile_theme_options');
-?><!DOCTYPE html>
+$jobile_options = get_option('jobile_theme_options'); ?>
+<!DOCTYPE html>
 <!--[if IE 7]>
 <html class="ie ie7" <?php language_attributes(); ?>>
 <![endif]-->
@@ -40,14 +40,14 @@ $jobile_options = get_option('jobile_theme_options');
 		</div>
 		<div class="col-md-8 col-xs-12 no-padding-lr">
 		    <nav class="jobile-nav jobile-nav2">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle navbar-toggle-top sort-menu-icon jobile-btn collapsed" data-toggle="collapse" data-target=".navbar-collapse"> 
-				<span class="sr-only"><?php _e('Menu', 'jobile') ?></span> 
+                <div class="navbar-header">
+				<button type="button" class="navbar-toggle navbar-toggle-top sort-menu-icon jobile-btn collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only"><?php _e('Menu', 'jobile'); ?></span> 
 				<span class="icon-bar"></span> 
 				<span class="icon-bar"></span> 
 				<span class="icon-bar"></span>
-                            </button>
-                        </div>
+				</button>
+				</div>
 			<?php
 			$jobile_defaults = array(
 				    'theme_location' => 'primary',
@@ -55,9 +55,7 @@ $jobile_options = get_option('jobile_theme_options');
 				    'container_class' => 'navbar-collapse collapse no-padding-lr',
 				    'echo' => true,
 				    'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>');
-
-			wp_nav_menu($jobile_defaults);
-			?>
+			wp_nav_menu($jobile_defaults); ?>
 		    </nav>
 		</div>                       
 	    </div>

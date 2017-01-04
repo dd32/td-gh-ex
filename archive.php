@@ -8,12 +8,14 @@ get_header(); ?>
         <div class="col-md-12 bread-row">
             <div class="container jobile-container">
             	<div class="col-md-6 no-padding-lr bread-left">
-                   <h2><?php if ( have_posts() ) : _e( 'Archives', 'jobile' ); echo ' : ' . get_the_date('M-Y');
-		endif; ?></h2>
+                   <h2>
+                        <?php if ( have_posts() ) : _e( 'Archives', 'jobile' ); echo ' : ' . get_the_date('M-Y');
+                            endif; ?>
+                    </h2>
                 </div>
                 <div class="col-md-6 no-padding-lr">
                		<ol class="breadcrumb site-breadcumb">
-                      <li><?php if(function_exists('jobile_custom_breadcrumbs')) { jobile_custom_breadcrumbs(); } ?></li>
+                        <li><?php if(function_exists('jobile_custom_breadcrumbs')) { jobile_custom_breadcrumbs(); } ?></li>
                 	</ol>
                 </div>    
             </div>
@@ -35,8 +37,8 @@ get_header(); ?>
 						<img src="<?php echo esc_url($jobile_blog_image[0]); ?>" width="<?php echo $jobile_blog_image[1]; ?>" height="<?php echo $jobile_blog_image[2]; ?>" alt="<?php the_title(); ?>" />
 						    <?php
 					    } else { ?>
-											<img src="<?php echo get_template_directory_uri() ?>/images/no-image.jpg" width="100" height="86" alt="" />
-										 <?php } ?>	
+									<img src="<?php echo get_template_directory_uri() ?>/images/no-image.jpg" width="100" height="86" alt="" />
+								 <?php } ?>
                                     </div>
                                     <div class="col-md-10 no-padding-lr">
                                    		<div class="col-md-8 col-sm-8 col-xs-8 no-padding-lr job-status resp-grid1 job-status-3">
@@ -48,11 +50,11 @@ get_header(); ?>
                                     	<div class="col-md-12 no-padding-lr">    
                                         <div class="job-btn-group late-job-btn clearfix">
                                             <?php echo get_the_category_list( __( ', ', 'jobile' ), '', '' ); ?>
-                                            <span class="jobile-tag-list"><?php echo get_the_tag_list( '', __( ' ', 'jobile' ) );?></span>
+                                            <span class="jobile-tag-list"><?php echo get_the_tag_list( '', __( ' ', 'jobile' ) ); ?></span>
                                         </div>
                                      </div>
                                         <div class="col-md-12 no-padding-lr">
-                                    <div class="result-btm-text"><?php the_excerpt(); ?> <a href="<?php echo  esc_url(get_permalink()); ?>" class="color-068587"><?php _e('Read More','jobile') ?></a></div>
+                                    <div class="result-btm-text"><?php the_excerpt(); ?><a href="<?php echo  esc_url(get_permalink()); ?>" class="color-068587"><?php _e('Read More','jobile'); ?></a></div>
                                     </div>
                                     </div>
                                 </div>

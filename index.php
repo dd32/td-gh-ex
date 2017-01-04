@@ -3,8 +3,7 @@
  * Main Template File.
  */
 get_header();
-$jobile_options = get_option('jobile_theme_options');
-?>
+$jobile_options = get_option('jobile_theme_options'); ?>
 <section>
 
     <div class="col-md-12 bread-row">
@@ -21,8 +20,7 @@ $jobile_options = get_option('jobile_theme_options');
 			if ($paged > 1) {
 			    echo '/';
 			    _e('Page', 'jobile') . $paged;
-			}
-			?>
+			} ?>
 		    </li>	
 		</ol>
 	    </div>    
@@ -36,19 +34,15 @@ $jobile_options = get_option('jobile_theme_options');
 		<div class="col-md-8">
 		    <article class="clearfix">
 			<div class="col-md-12 no-padding-lr ">
-			    <?php
-			    if (is_plugin_active('wp-google-maps/wpGoogleMaps.php')) {
+			    <?php if (is_plugin_active('wp-google-maps/wpGoogleMaps.php')) {
 				echo do_shortcode('[wpgmza id="1"]');
-			    }
-			    ?>
+			    } ?>
 			</div>
 
 			<div class="col-md-12 no-padding-lr avilab-row2">
-			    <?php
-			    if (function_exists('faster_pagination')) {
+			    <?php if (function_exists('faster_pagination')) {
 				faster_pagination('', 1);
-			    } else {
-				?>
+			    } else { ?>
     			    <div class="col-md-12 no-padding-lr right-pagination">
     				<ul>
     				    <li><?php previous_posts_link(); ?></li>
@@ -65,9 +59,7 @@ $jobile_options = get_option('jobile_theme_options');
 					    $jobile_blog_image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_id() ), 'jobile-blog-image' );
 					    if ($jobile_blog_image[0] != '') {?>
 						<img src="<?php echo esc_url($jobile_blog_image[0]); ?>" width="<?php echo $jobile_blog_image[1]; ?>" height="<?php echo $jobile_blog_image[2]; ?>" alt="<?php the_title(); ?>" />
-						    <?php
-					    } else {
-						?>
+						    <?php } else { ?>
 	    				    <img src="<?php echo get_template_directory_uri() ?>/images/no-image.jpg" width="100" height="86" />
 					    <?php } ?>	
 					</div>
@@ -90,23 +82,18 @@ $jobile_options = get_option('jobile_theme_options');
 					</div>
 				    </div>
 				</div> 
-			    <?php
-			    endwhile;
-			endif;
-			?>
+			    <?php endwhile; endif; ?>
 			<div class="col-md-12 no-padding-lr avilab-row2 padding-0">
-			    <?php
-			    if (function_exists('faster_pagination')) {
+			    <?php if (function_exists('faster_pagination')) {
 				faster_pagination('', 1);
-			    } else {
-				?>
+			    } else { ?>
     			    <div class="col-md-12 no-padding-lr right-pagination">
     				<ul>
     				    <li><?php previous_posts_link(); ?></li>
     				    <li><?php next_posts_link(); ?></li>
     				</ul>
     			    </div>
-<?php } ?>     
+    			    <?php } ?>
 			</div>
 		    </article>
 		</div>

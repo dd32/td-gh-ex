@@ -8,7 +8,7 @@ class jobile_image_widget extends WP_Widget {
     function jobile_image_widget() {
         $jobile_widget_ops = array( 'classname' => 'jobile_image', 'description' => __('A widget that displays the image and description.', 'jobile') );      
         $jobile_control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'jobile-image-widget' );       
-        $this->WP_Widget( 'jobile-image-widget', __('Jobile Image Description', 'jobile'), $jobile_widget_ops, $jobile_control_ops );
+        parent::__construct( 'jobile-image-widget', __('Jobile Image Description', 'jobile'), $jobile_widget_ops, $jobile_control_ops );
     }  
     function widget( $jobile_image_args, $jobile_image_instance ) {
         extract( $jobile_image_args );
@@ -17,10 +17,9 @@ class jobile_image_widget extends WP_Widget {
 		$jobile_image_image = $jobile_image_instance['image'];
         echo $before_widget;
         //Display widget
-?> 
-      
+?>   
 <img src="<?php if($jobile_image_instance['image']) { echo esc_url($jobile_image_instance['image']); } else { echo get_template_directory_uri().'/images/default-user.png'; } ?>"  class="img-responsive" width="87" height="23" alt="logo">
-<p><?php _e($jobile_image_instance['content'],'jobile'); ?></p>
+<p><?php echo $jobile_image_instance['content']; ?></p>
  
 <?php echo $after_widget; }
     //Update the widget   
@@ -40,6 +39,6 @@ class jobile_image_widget extends WP_Widget {
     </p>
     <p>
         <label for="<?php echo $this->get_field_id( 'content' ); ?>"><?php _e('Content:','jobile') ?></label>
-        <textarea id="<?php echo $this->get_field_id( 'content' ); ?>" name="<?php echo $this->get_field_name( 'content' ); ?>" style="width:100%;"><?php if(!empty($jobile_image_instance['content'])) { _e($jobile_image_instance['content'],'jobile'); } ?></textarea>
+        <textarea id="<?php echo $this->get_field_id( 'content' ); ?>" name="<?php echo $this->get_field_name( 'content' ); ?>" style="width:100%;"><?php if(!empty($jobile_image_instance['content'])) { echo $jobile_image_instance['content']; } ?></textarea>
     </p>  
 <?php }} ?>

@@ -2,8 +2,7 @@
 /*
  * Page Template File.
  */
-get_header();
-?>
+get_header(); ?>
 <section>
     <!--website-breadcrumbs-->
     <div class="col-md-12 bread-row">
@@ -31,21 +30,16 @@ get_header();
     				<h4 class="jobile-page-title"><?php the_title(); ?></h4>
     			    </div>
     			    <div class="article-row2 profile-title">
-				    <?php
-				    the_content();
+				    <?php the_content();
 				    wp_link_pages(array(
 					'before' => '<div class="page-links">' . __('Pages:', 'jobile'),
 					'after' => '</div>',
-				    ));
-				    ?>
+				    )); ?>
 				
-    <?php 
-     $jobile_blog_image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_id() ), 'large' );
-					    if ($jobile_blog_image[0] != '') {?>
-						<img src="<?php echo esc_url($jobile_blog_image[0]); ?>" width="<?php echo $jobile_blog_image[1]; ?>" height="<?php echo $jobile_blog_image[2]; ?>" alt="<?php the_title(); ?>" />
-						    <?php
-					    }
-     ?>
+    <?php $jobile_blog_image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_id() ), 'large' );
+					    if ($jobile_blog_image[0] != '') { ?>
+				<img src="<?php echo esc_url($jobile_blog_image[0]); ?>" width="<?php echo $jobile_blog_image[1]; ?>" height="<?php echo $jobile_blog_image[2]; ?>" alt="<?php the_title(); ?>" />
+				    <?php } ?>
     			    </div>
     			</div>
     		    </article>

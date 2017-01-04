@@ -3,8 +3,7 @@
  * The template for displaying Comments.
  */
 if ( post_password_required() )
-	return;
-?>
+	return; ?>
 <div class="clearfix"></div>
 <div id="comments" class="comments-area">
 	<?php if ( have_comments() ) : 	?>
@@ -12,9 +11,9 @@ if ( post_password_required() )
             <h2><span class="recent-posts-title"><?php echo get_comments_number(). __('Comments','jobile'); ?></span></h2>
          </div>
         <ul class="jobile-comment-list">
-        <?php wp_list_comments( array(  'short_ping' => true, 'style' => 'ul' ) );	 ?>
+            <?php wp_list_comments( array(  'short_ping' => true, 'style' => 'ul' ) ); ?>
         </ul>
-       <?php paginate_comments_links(); ?>     
-	<?php endif; // have_comments() ?>
-	<?php comment_form(); ?>
+       <?php paginate_comments_links();
+	       endif; // have_comments()
+	       comment_form(); ?>
 </div><!-- #comments .comments-area -->
