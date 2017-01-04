@@ -12,7 +12,6 @@ function besty_theme_register_plugins() {
             'required'  => false,
         ),
     );
-
     /*  Array of configuration settings. Amend each line as needed. */
     $config = array(
         'id'           => 'besty',                 // Unique ID for hashing notices for multiple instances of TGMPA.
@@ -45,4 +44,4 @@ function besty_theme_register_plugins() {
         )
     );
     besty( $plugins, $config );
-}
+} ?>

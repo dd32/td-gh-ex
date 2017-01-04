@@ -2,8 +2,7 @@
 /*
  * besty Enqueue css and js files
 */
-function besty_enqueue()
-{
+function besty_enqueue() {
 	//wp_enqueue_style('besty-istok-web-font','//fonts.googleapis.com/css?family=Istok+Web',array(),'','');
 	// Add istok web font, used in the main stylesheet.
 	wp_enqueue_style( 'besty-istok-web', besty_font_url(), array(), null );
@@ -27,7 +26,4 @@ function besty_enqueue()
 	}
 	if ( is_singular() ) wp_enqueue_script( "comment-reply" ); 
 }
-add_action('wp_enqueue_scripts', 'besty_enqueue');
-
-
- 
+add_action('wp_enqueue_scripts', 'besty_enqueue'); ?>

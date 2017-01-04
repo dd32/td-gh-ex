@@ -12,7 +12,7 @@ function besty_setup() {
 	/*	
 	 * Make besty theme available for translation.
 	 */
-	load_theme_textdomain( 'besty' );
+	load_theme_textdomain( 'besty', get_template_directory() . '/languages' );
 	// This theme styles the visual editor to resemble the theme style.
 	add_editor_style( array( 'css/editor-style.css', besty_font_url() ) );
 	// Add RSS feed links to <head> for posts and comments.
@@ -20,7 +20,8 @@ function besty_setup() {
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 672, 372, true );
 	add_image_size( 'besty-full-width', 1038, 576, true );
-	add_image_size( 'besty-thumbnail', 374, 254, true );	   
+	add_image_size( 'besty-thumbnail', 374, 254, true );
+	add_theme_support( "title-tag" );
 	register_nav_menus( array(
 		'primary'   => __( 'Top primary menu', 'besty' ),
 	) );
@@ -73,8 +74,7 @@ function besty_comment( $comment, $args, $depth ) {
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
 		case 'trackback' :
-		// Display trackbacks differently than normal comments.
-			?>
+		// Display trackbacks differently than normal comments. ?>
 			<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
 				<p>
 				<?php _e('Pingback:', 'besty' ); ?>
@@ -88,10 +88,8 @@ function besty_comment( $comment, $args, $depth ) {
 		// Proceed with normal comments.
 		if($comment->comment_approved==1)
 		{
-			global $post;
-		?>
-			<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); 
-			?>">
+			global $post; ?>
+			<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
 			<article id="comment-<?php comment_ID(); ?>">
 			<figure class="comment-author"><?php echo get_avatar( get_the_author_meta('ID'), '41'); ?></figure>
 			<div class="comment-content">
@@ -217,4 +215,4 @@ require get_template_directory() . '/theme-options/besty.php';
 require get_template_directory() . '/functions/custom-header.php';
 
 /*** TGM ***/
-require get_template_directory() . '/functions/tgm-plugins.php';
+require get_template_directory() . '/functions/tgm-plugins.php'; ?>
