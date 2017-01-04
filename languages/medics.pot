@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Medics V1.6\n"
-"POT-Creation-Date: 2015-08-28 11:09+0530\n"
+"POT-Creation-Date: 2017-01-04 12:31+0530\n"
 "PO-Revision-Date: 2014-12-15 14:14+0530\n"
 "Last-Translator: FasterThemes <support@fasterthemes.com>\n"
 "Language-Team: FasterThemes <support@fasterthemes.com>\n"
@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.3\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -19,46 +19,39 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: 404.php:11
+#: 404.php:9
 msgid "Epic 404 - Article Not Found"
 msgstr ""
 
-#: 404.php:12
+#: 404.php:10
 msgid "This is embarassing. We can't find what you were looking for."
 msgstr ""
 
-#: 404.php:14
+#: 404.php:12
 msgid ""
 "Whatever you were looking for was not found, but maybe try looking again or "
 "search using the form below."
 msgstr ""
 
-#: archive.php:10
+#: archive.php:8
 msgid "Archives"
 msgstr ""
 
-#: author.php:10
+#: author.php:8
 msgid "Author"
 msgstr ""
 
-#: author.php:10
+#: author.php:8
 msgid "All posts by"
 msgstr ""
 
-#: category.php:10 theme-options/medicstheme.php:238
+#: category.php:8 theme-options/medicstheme.php:231
 msgid "Category"
 msgstr ""
 
-#: comments.php:20
+#: footer.php:29
 #, php-format
-msgid "One thought on %2$s "
-msgid_plural "%1$s COMMENTS "
-msgstr[0] ""
-msgstr[1] ""
-
-#: footer.php:31
-#, php-format
-msgid "Powered by %1$s and %2$s."
+msgid "Powered by %1$s."
 msgstr ""
 
 #: functions.php:26
@@ -102,15 +95,15 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#: functions/class-tgm-plugin-activation.php:41 functions/tgm-plugins.php:27
+#: functions/class-tgm-plugin-activation.php:41 functions/tgm-plugins.php:26
 msgid "Install Required Plugins"
 msgstr ""
 
-#: functions/class-tgm-plugin-activation.php:42 functions/tgm-plugins.php:28
+#: functions/class-tgm-plugin-activation.php:42 functions/tgm-plugins.php:27
 msgid "Install Plugins"
 msgstr ""
 
-#: functions/class-tgm-plugin-activation.php:43 functions/tgm-plugins.php:29
+#: functions/class-tgm-plugin-activation.php:43 functions/tgm-plugins.php:28
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
@@ -119,21 +112,21 @@ msgstr ""
 msgid "Something went wrong."
 msgstr ""
 
-#: functions/class-tgm-plugin-activation.php:45 functions/tgm-plugins.php:31
+#: functions/class-tgm-plugin-activation.php:45 functions/tgm-plugins.php:30
 #, php-format
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/class-tgm-plugin-activation.php:46 functions/tgm-plugins.php:32
+#: functions/class-tgm-plugin-activation.php:46 functions/tgm-plugins.php:31
 #, php-format
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/class-tgm-plugin-activation.php:47 functions/tgm-plugins.php:33
+#: functions/class-tgm-plugin-activation.php:47 functions/tgm-plugins.php:32
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to install the %s plugin. "
@@ -146,21 +139,21 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/class-tgm-plugin-activation.php:48 functions/tgm-plugins.php:34
+#: functions/class-tgm-plugin-activation.php:48 functions/tgm-plugins.php:33
 #, php-format
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/class-tgm-plugin-activation.php:49 functions/tgm-plugins.php:35
+#: functions/class-tgm-plugin-activation.php:49 functions/tgm-plugins.php:34
 #, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/class-tgm-plugin-activation.php:50 functions/tgm-plugins.php:36
+#: functions/class-tgm-plugin-activation.php:50 functions/tgm-plugins.php:35
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to activate the %s "
@@ -173,7 +166,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/class-tgm-plugin-activation.php:51 functions/tgm-plugins.php:37
+#: functions/class-tgm-plugin-activation.php:51 functions/tgm-plugins.php:36
 #, php-format
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
@@ -184,7 +177,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/class-tgm-plugin-activation.php:52 functions/tgm-plugins.php:38
+#: functions/class-tgm-plugin-activation.php:52 functions/tgm-plugins.php:37
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to update the %s plugin. "
@@ -197,19 +190,19 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/class-tgm-plugin-activation.php:53 functions/tgm-plugins.php:39
+#: functions/class-tgm-plugin-activation.php:53 functions/tgm-plugins.php:38
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/class-tgm-plugin-activation.php:54 functions/tgm-plugins.php:40
+#: functions/class-tgm-plugin-activation.php:54 functions/tgm-plugins.php:39
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/class-tgm-plugin-activation.php:55 functions/tgm-plugins.php:41
+#: functions/class-tgm-plugin-activation.php:55 functions/tgm-plugins.php:40
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
@@ -218,7 +211,7 @@ msgid "Return to the dashboard"
 msgstr ""
 
 #: functions/class-tgm-plugin-activation.php:57
-#: functions/class-tgm-plugin-activation.php:1009 functions/tgm-plugins.php:42
+#: functions/class-tgm-plugin-activation.php:1009 functions/tgm-plugins.php:41
 msgid "Plugin activated successfully."
 msgstr ""
 
@@ -404,19 +397,19 @@ msgctxt "header image description"
 msgid "Circle"
 msgstr ""
 
-#: functions/recent-post-widget.php:9
+#: functions/recent-post-widget.php:7
 msgid "Displays a recent post with thumbnail"
 msgstr ""
 
-#: functions/recent-post-widget.php:10
+#: functions/recent-post-widget.php:8
 msgid "Medics Recent Post"
 msgstr ""
 
-#: functions/recent-post-widget.php:20
+#: functions/recent-post-widget.php:17
 msgid "Title:"
 msgstr ""
 
-#: functions/recent-post-widget.php:24
+#: functions/recent-post-widget.php:21
 msgid "Number of post to show:"
 msgstr ""
 
@@ -424,314 +417,300 @@ msgstr ""
 msgid "Faster Pagination"
 msgstr ""
 
-#: functions/tgm-plugins.php:30
+#: functions/tgm-plugins.php:29
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: functions/tgm-plugins.php:43
+#: functions/tgm-plugins.php:42
 #, php-format
 msgid "All plugins installed and activated successfully. %s"
 msgstr ""
 
-#: functions/theme-default-setup.php:30
+#: functions/theme-default-setup.php:27
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: functions/theme-default-setup.php:57
+#: functions/theme-default-setup.php:51
 msgid "Main Sidebar"
 msgstr ""
 
-#: functions/theme-default-setup.php:59
+#: functions/theme-default-setup.php:53
 msgid "Main sidebar that appears on the left."
 msgstr ""
 
-#: functions/theme-default-setup.php:66
+#: functions/theme-default-setup.php:60
 msgid "Footer Area One"
 msgstr ""
 
-#: functions/theme-default-setup.php:68
+#: functions/theme-default-setup.php:62
 msgid "Footer Area One that appears on footer."
 msgstr ""
 
-#: functions/theme-default-setup.php:76
+#: functions/theme-default-setup.php:69
 msgid "Footer Area Two"
 msgstr ""
 
-#: functions/theme-default-setup.php:78
+#: functions/theme-default-setup.php:71
 msgid "Footer Area Two that appears on footer."
 msgstr ""
 
-#: functions/theme-default-setup.php:86
+#: functions/theme-default-setup.php:78
 msgid "Footer Area Three"
 msgstr ""
 
-#: functions/theme-default-setup.php:88
+#: functions/theme-default-setup.php:80
 msgid "Footer Area Three that appears on footer."
 msgstr ""
 
-#: functions/theme-default-setup.php:96
+#: functions/theme-default-setup.php:87
 msgid "Footer Area Four"
 msgstr ""
 
-#: functions/theme-default-setup.php:98
+#: functions/theme-default-setup.php:89
 msgid "Footer Area Four that appears on footer."
 msgstr ""
 
-#: functions/theme-default-setup.php:127
+#: functions/theme-default-setup.php:113
 #, php-format
 msgid "View all posts by %s"
 msgstr ""
 
-#: functions/theme-default-setup.php:135 functions/theme-default-setup.php:137
+#: functions/theme-default-setup.php:117 functions/theme-default-setup.php:119
 #, php-format
 msgid "Posted in : %1$s  on %3$s by : %4$s"
 msgstr ""
 
-#: functions/theme-default-setup.php:139
+#: functions/theme-default-setup.php:121
 #, php-format
 msgid "Posted on : %3$s by : %4$s"
 msgstr ""
 
-#: functions/theme-default-setup.php:170
+#: functions/theme-default-setup.php:147
 msgid "Pingback:"
 msgstr ""
 
-#: functions/theme-default-setup.php:172
+#: functions/theme-default-setup.php:149
 msgid "Edit"
 msgstr ""
 
-#: functions/theme-default-setup.php:190
+#: functions/theme-default-setup.php:164
 msgid "Post author "
 msgstr ""
 
-#: functions/theme-default-setup.php:195
+#: functions/theme-default-setup.php:167
 msgid "Reply"
 msgstr ""
 
-#: functions/theme-default-setup.php:214
+#: functions/theme-default-setup.php:181
 msgid "Continue Reading"
 msgstr ""
 
-#: page-template/frontpage.php:56
+#: page-template/frontpage.php:51
 msgid "FROM THE BLOG"
 msgstr ""
 
-#: page-template/frontpage.php:103
+#: page-template/frontpage.php:93
 msgid "no posts found"
 msgstr ""
 
-#: page-template/frontpage.php:119
+#: page-template/frontpage.php:108
 msgid "Download"
 msgstr ""
 
-#: page-template/full-width.php:46 page-template/left-sidebar.php:49
-#: page.php:39 single.php:44
+#: page-template/full-width.php:39 page-template/left-sidebar.php:44
+#: page.php:36 single.php:40
 msgid "Pages:"
 msgstr ""
 
-#: search.php:10
+#: search.php:8
 msgid "Search Results for"
 msgstr ""
 
-#: tag.php:10
+#: tag.php:8
 msgid "Tag"
 msgstr ""
 
-#: theme-options/medicstheme.php:53
+#: theme-options/medicstheme.php:50
 msgid "Medics Options"
 msgstr ""
 
-#: theme-options/medicstheme.php:54 theme-options/medicstheme.php:83
+#: theme-options/medicstheme.php:51 theme-options/medicstheme.php:76
 msgid "Theme Options"
 msgstr ""
 
-#: theme-options/medicstheme.php:84 theme-options/medicstheme.php:299
+#: theme-options/medicstheme.php:77 theme-options/medicstheme.php:291
 msgid "Save Options"
 msgstr ""
 
-#: theme-options/medicstheme.php:93
+#: theme-options/medicstheme.php:85
 msgid "Basic Settings"
 msgstr ""
 
-#: theme-options/medicstheme.php:94
+#: theme-options/medicstheme.php:86
 msgid "Social Settings"
 msgstr ""
 
-#: theme-options/medicstheme.php:95
+#: theme-options/medicstheme.php:87
 msgid "Home Page Settings"
 msgstr ""
 
-#: theme-options/medicstheme.php:96
+#: theme-options/medicstheme.php:88
 msgid "PRO Theme Features"
 msgstr ""
 
-#: theme-options/medicstheme.php:108
+#: theme-options/medicstheme.php:100
 msgid "Site Logo"
 msgstr ""
 
-#: theme-options/medicstheme.php:111
+#: theme-options/medicstheme.php:103
 msgid "No file chosen"
 msgstr ""
 
-#: theme-options/medicstheme.php:112 theme-options/medicstheme.php:212
+#: theme-options/medicstheme.php:104 theme-options/medicstheme.php:205
 msgid "Upload"
 msgstr ""
 
-#: theme-options/medicstheme.php:120
+#: theme-options/medicstheme.php:112
 msgid "Copyright Text"
 msgstr ""
 
-#: theme-options/medicstheme.php:123
+#: theme-options/medicstheme.php:115
 msgid ""
 "Some text regarding copyright of your site, you would like to display in the "
 "footer."
 msgstr ""
 
-#: theme-options/medicstheme.php:129
+#: theme-options/medicstheme.php:121
 msgid "E-mail"
 msgstr ""
 
-#: theme-options/medicstheme.php:132
+#: theme-options/medicstheme.php:124
 msgid ""
 "Enter e-mail id for your site , you would like to display in the Top Header."
 msgstr ""
 
-#: theme-options/medicstheme.php:138
+#: theme-options/medicstheme.php:130
 msgid "Phone"
 msgstr ""
 
-#: theme-options/medicstheme.php:141
+#: theme-options/medicstheme.php:133
 msgid ""
 "Enter phone number for your site , you would like to display in the Top "
 "Header."
 msgstr ""
 
-#: theme-options/medicstheme.php:147
+#: theme-options/medicstheme.php:139
 msgid "Phone Title"
 msgstr ""
 
-#: theme-options/medicstheme.php:150
+#: theme-options/medicstheme.php:142
 msgid ""
 "Enter title to display before phone number , you would like to display in "
 "the Top Header."
 msgstr ""
 
-#: theme-options/medicstheme.php:159
+#: theme-options/medicstheme.php:151
 msgid "Facebook"
 msgstr ""
 
-#: theme-options/medicstheme.php:162
+#: theme-options/medicstheme.php:154
 msgid "Facebook profile or page URL i.e. "
 msgstr ""
 
-#: theme-options/medicstheme.php:167
+#: theme-options/medicstheme.php:160
 msgid "Twitter"
 msgstr ""
 
-#: theme-options/medicstheme.php:170
+#: theme-options/medicstheme.php:163
 msgid "Twitter profile or page URL i.e."
 msgstr ""
 
-#: theme-options/medicstheme.php:176
+#: theme-options/medicstheme.php:169
 msgid "Google +"
 msgstr ""
 
-#: theme-options/medicstheme.php:179
+#: theme-options/medicstheme.php:172
 msgid "Google plus profile or page URL i.e."
 msgstr ""
 
-#: theme-options/medicstheme.php:189 theme-options/medicstheme.php:219
+#: theme-options/medicstheme.php:182 theme-options/medicstheme.php:212
 msgid "Title"
 msgstr ""
 
-#: theme-options/medicstheme.php:192
+#: theme-options/medicstheme.php:185
 msgid ""
 "Enter home page title for your site , you would like to display in the Home "
 "Page."
 msgstr ""
 
-#: theme-options/medicstheme.php:198
+#: theme-options/medicstheme.php:191
 msgid "Short Description"
 msgstr ""
 
-#: theme-options/medicstheme.php:201
+#: theme-options/medicstheme.php:194
 msgid ""
 "Enter home content for your site , you would like to display in the Home "
 "Page."
 msgstr ""
 
-#: theme-options/medicstheme.php:205
+#: theme-options/medicstheme.php:198
 msgid "First Section"
 msgstr ""
 
-#: theme-options/medicstheme.php:208
+#: theme-options/medicstheme.php:201
 msgid "Tab"
 msgstr ""
 
-#: theme-options/medicstheme.php:218 theme-options/medicstheme.php:222
+#: theme-options/medicstheme.php:211 theme-options/medicstheme.php:215
 msgid "Enter"
 msgstr ""
 
-#: theme-options/medicstheme.php:218 theme-options/medicstheme.php:222
+#: theme-options/medicstheme.php:211 theme-options/medicstheme.php:215
 msgid ""
 " Section title for your home template , you would like to display in the "
 "Home Page."
 msgstr ""
 
-#: theme-options/medicstheme.php:227
+#: theme-options/medicstheme.php:220
 msgid "Post Settings"
 msgstr ""
 
-#: theme-options/medicstheme.php:229
+#: theme-options/medicstheme.php:222
 msgid "Home Blog Title"
 msgstr ""
 
-#: theme-options/medicstheme.php:232
+#: theme-options/medicstheme.php:225
 msgid ""
 "Enter Blog title for your site , you would like to display in Home page."
 msgstr ""
 
-#: theme-options/medicstheme.php:241
+#: theme-options/medicstheme.php:234
 msgid "Please select category to display post on Home page."
 msgstr ""
 
-#: theme-options/medicstheme.php:243
+#: theme-options/medicstheme.php:236
 msgid "Select Category"
 msgstr ""
 
-#: theme-options/medicstheme.php:265
+#: theme-options/medicstheme.php:257
 msgid "Download Settings"
 msgstr ""
 
-#: theme-options/medicstheme.php:267
+#: theme-options/medicstheme.php:259
 msgid "Download Text"
 msgstr ""
 
-#: theme-options/medicstheme.php:270
+#: theme-options/medicstheme.php:262
 msgid ""
 "Enter Download Link for your site , you would like to display in the Home "
 "Page."
 msgstr ""
 
-#: theme-options/medicstheme.php:276
+#: theme-options/medicstheme.php:268
 msgid "Home Download Link"
 msgstr ""
 
-#: theme-options/medicstheme.php:304
+#: theme-options/medicstheme.php:296
 msgid "Options saved successfully."
-msgstr ""
-
-#: theme-options/medicstheme.php:307
-msgid "Subscribe with us"
-msgstr ""
-
-#: theme-options/medicstheme.php:308
-msgid ""
-"Join our mailing list and we'll keep you updated on new themes as they're "
-"released and our exclusive special offers. "
-msgstr ""
-
-#: theme-options/medicstheme.php:308
-msgid "Click here to join"
 msgstr ""

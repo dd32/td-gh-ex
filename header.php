@@ -2,8 +2,7 @@
 /**
  * The Header template for our theme
  */
- $medics_options = get_option( 'medics_theme_options' );
-?>
+ $medics_options = get_option( 'medics_theme_options' ); ?>
 <!DOCTYPE html>
 <!--[if IE 7]>
 <html class="ie ie7" <?php language_attributes(); ?>>
@@ -16,14 +15,10 @@
 <!--<![endif]-->
 <!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/respond.min.js"></script>
-	<![endif]-->
-
+<![endif]-->
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width">
-<title>
-<?php wp_title( '|', true, 'right' ); ?>
-</title>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php wp_head(); ?>
@@ -50,11 +45,11 @@
           <ul class="list-inline no-padding">
             <?php if(!empty($medics_options['fburl'])){ ?>
             <li><a href="<?php echo esc_url($medics_options['fburl']);?>"><i class="fa fa-facebook"></i></a></li>
-            <?php } ?>
-            <?php if(!empty($medics_options['twitter'])){ ?>
+            <?php }
+            if(!empty($medics_options['twitter'])){ ?>
             <li><a href="<?php echo esc_url($medics_options['twitter']);?>"><i class="fa fa-twitter"></i></a></li>
-            <?php } ?>
-            <?php if(!empty($medics_options['googleplus'])){ ?>
+            <?php }
+            if(!empty($medics_options['googleplus'])){ ?>
             <li><a href="<?php echo esc_url($medics_options['googleplus']);?>"><i class="fa fa-google-plus"></i></a></li>
             <?php } ?>
           </ul>
@@ -77,8 +72,7 @@
         <div class="navbar-header">
           <button type="button" class="navbar-toggle navbar-toggle-top sort-menu-icon" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only"></span> <span class="icon-bar icon-color"></span> <span class="icon-bar icon-color"></span> <span class="icon-bar icon-color"></span> </button>
         </div>
-        <?php
-			$medics_defaults = array(
+        <?php $medics_defaults = array(
 							'theme_location'  => 'primary',
 							'container'       => 'div',
 							'container_class' => 'navbar-collapse collapse pull-right no-padding',

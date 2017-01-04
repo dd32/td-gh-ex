@@ -2,9 +2,7 @@
 /**
  * Template Name: Left Sidebar
 **/
-get_header();
-?>
-
+get_header(); ?>
 <div class="medics-single-blog section-main header-blog">
   <div class=" container-medics container">
     <h1><span>
@@ -28,33 +26,29 @@ get_header();
           <?php 
 			if($medics_image){
 				echo'<img src="'.esc_url($medics_image).'" class="img-responsive medics-featured-image" alt="'.get_the_title().'">';
-			}
-		  ?> 
-		
-          <h1>
-            <?php the_title(); ?>
-          </h1>
+			} ?>
+        <h1>
+          <?php the_title(); ?>
+        </h1>
           <div class="dr-name-icon">
-            <?php medics_entry_meta(); ?>
-            <?php if(get_the_tags() != '') { ?>
+            <?php medics_entry_meta();
+            if(get_the_tags() != '') { ?>
             <i class="fa fa-tags"></i> <span>
             <?php the_tags('<li>', '</li>, <li>', '</li>'); ?>
             </span>
             <?php } ?>
           </div>
           <p>
-            <?php the_content(); ?>
-			<?php
-				wp_link_pages( array(
+          <?php the_content();
+          wp_link_pages( array(
 					'before' => '<div class="page-links">' . __( 'Pages:', 'medics' ),
 					'after' => '</div>',
-				) );
-			?>	
+				) ); ?>
           </p>
         </div>
       </div>
-      <?php endwhile; ?>
-      <?php  comments_template( '', true ); ?>
+      <?php endwhile;
+      comments_template( '', true ); ?>
     </div>
   </div>
 </div>

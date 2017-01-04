@@ -2,9 +2,7 @@
 /**
  * Main Page template file
 **/
-get_header(); 
-?>
-
+get_header(); ?>
 <div class="medics-single-blog section-main header-blog">
   <div class=" container-medics container">
     <h1> <span>
@@ -27,8 +25,7 @@ get_header();
           <?php 
 			if($medics_image){
 				echo'<img src="'.esc_url($medics_image).'" class="img-responsive medics-featured-image" alt="'.get_the_title().'">';
-			}
-		?>
+			} ?>
           <h1>
             <?php the_title(); ?>
           </h1>
@@ -38,15 +35,14 @@ get_header();
 				wp_link_pages( array(
 					'before' => '<div class="page-links">' . __( 'Pages:', 'medics' ),
 					'after' => '</div>',
-				) );
-			?>
+				) ); ?>
           </div>
         </div>
       </div>
       <?php  comments_template( '', true ); ?>
     </div>
-    <?php endwhile; ?>
-    <?php get_sidebar(); ?>
+    <?php endwhile;
+      get_sidebar(); ?>
   </div>
 </div>
 <?php get_footer(); ?>

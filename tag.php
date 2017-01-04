@@ -2,9 +2,7 @@
 /**
  * Tag Page template file
 **/
-get_header(); 
-?>
-
+get_header(); ?>
 <div class="medics-single-blog section-main header-blog">
   <div class=" container-medics container">
     <h1><?php _e('Tag', 'medics'); echo " : <span>" .single_tag_title( '', false )  . ' ' ; ?></h1>
@@ -30,8 +28,7 @@ get_header();
         <?php 
 			if($medics_image){
 				echo'<img src="'.esc_url($medics_image).'" class="img-responsive medics-featured-image" alt="'.get_the_title().'">';
-			}
-		?>
+			} ?>
         <h1><a href="<?php echo get_permalink(); ?>" class="medics-link">
           <?php the_title(); ?>
           </a></h1>
@@ -47,8 +44,8 @@ get_header();
           <?php the_excerpt(); ?>
         </div>
       </div>
-      <?php endwhile; ?>
-      <?php if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
+      <?php endwhile;
+      if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
       <div class="col-md-12 medics-default-pagination"><?php if(function_exists('faster_pagination')) { faster_pagination('',1); } else { ?> 
 		  <span class="medics-previous-link">
         <?php previous_posts_link(); ?>

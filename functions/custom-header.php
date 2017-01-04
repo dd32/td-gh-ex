@@ -33,7 +33,6 @@ function medics_custom_header_setup() {
 	) );
 }
 add_action( 'after_setup_theme', 'medics_custom_header_setup' );
-
 /**
  * Loads our special font CSS files.
  */
@@ -49,17 +48,14 @@ add_action( 'admin_print_styles-appearance_page_custom-header', 'medics_custom_h
 function medics_header_style() {
 	$medics_header_image = get_header_image();
 	$medics_text_color   = get_header_textcolor();
-
 	// If no custom options for text are set, let's bail.
 	if ( empty( $medics_header_image ) && $medics_text_color == get_theme_support( 'custom-header', 'default-text-color' ) )
 		return;
 
-	// If we get this far, we have custom styles.
-	?>
+	// If we get this far, we have custom styles. ?>
 	<style type="text/css" id="medics-header-css">
 	<?php
-		if ( ! empty( $medics_header_image ) ) :
-	?>
+		if ( ! empty( $medics_header_image ) ) : ?>
 		.site-header {
 			background: url(<?php header_image(); ?>) no-repeat scroll top;
 			background-size: 750px auto;
@@ -68,8 +64,7 @@ function medics_header_style() {
 		endif;
 
 		// Has the text been hidden?
-		if ( ! display_header_text() ) :
-	?>
+		if ( ! display_header_text() ) : ?>
 		.site-title,
 		.site-description {
 			position: absolute;
@@ -77,8 +72,7 @@ function medics_header_style() {
 			clip: rect(1px, 1px, 1px, 1px);
 		}
 	<?php
-			if ( empty( $medics_header_image ) ) :
-	?>
+			if ( empty( $medics_header_image ) ) : ?>
 		.site-header .home-link {
 			min-height: 0;
 		}
@@ -86,8 +80,7 @@ function medics_header_style() {
 			endif;
 
 		// If the user has set a custom color for the text, use that.
-		elseif ( $medics_text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) :
-	?>
+		elseif ( $medics_text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) : ?>
 		.site-title,
 		.site-description {
 			color: #<?php echo esc_attr( $medics_text_color ); ?>;
@@ -101,8 +94,7 @@ function medics_header_style() {
  * Styles the header image displayed on the Appearance > Header admin panel.
  */
 function medics_admin_header_style() {
-	$medics_header_image = get_header_image();
-?>
+	$medics_header_image = get_header_image(); ?>
 	<style type="text/css" id="medics-admin-header-css">
 	.appearance_page_custom-header #headimg {
 		border: none;
@@ -162,8 +154,7 @@ function medics_admin_header_style() {
 /*
  * Outputs markup to be displayed on the Appearance > Header admin panel.
  */
-function medics_admin_header_image() {
-	?>
+function medics_admin_header_image() { ?>
 	<div id="headimg" style="background: url(<?php header_image(); ?>) no-repeat scroll top; background-size: 750px auto;">
 		<?php $medics_style = ' style="color:#' . get_header_textcolor() . ';"'; ?>
 		<div class="home-link">
@@ -171,4 +162,4 @@ function medics_admin_header_image() {
 			<h2 id="desc" class="displaying-header-text"<?php echo $medics_style; ?>><?php bloginfo( 'description' ); ?></h2>
 		</div>
 	</div>
-<?php }
+<?php } ?>

@@ -8,9 +8,9 @@ Description: Medics is a lightweight, faster, clean, super flexible and bootstra
 Version: 1.4
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Medics Theme, Copyright 2014 fasterthemes.com
+Medics Theme, Copyright 2017 fasterthemes.com
 Medics is distributed under the terms of the GNU GPL
-Tags: blue, light, right-sidebar, left-sidebar, responsive-layout, theme-options, three-columns, custom-menu, featured-image-header, full-width-template, sticky-post, threaded-comments, custom-background, custom-header, editor-style, featured-images, translation-ready
+Tags: right-sidebar, left-sidebar, theme-options, three-columns, custom-menu, featured-image-header, full-width-template, sticky-post, threaded-comments, custom-background, custom-header, editor-style, featured-images, translation-ready
 Text Domain: medics
 This theme, like WordPress, is licensed under the FasterThemes.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -25,7 +25,7 @@ Responsive design(Bootstrap), Theme Options, Custom Menu, supports social media,
 
 == Tags ==
 
-blue, light, right-sidebar, left-sidebar, responsive-layout, theme-options, fluid-layout, three-columns, custom-menu, featured-image-header, full-width-template, sticky-post, threaded-comments, custom-background, custom-header, editor-style, featured-images
+right-sidebar, left-sidebar, theme-options, three-columns, custom-menu, featured-image-header, full-width-template, sticky-post, threaded-comments, custom-background, custom-header, editor-style, featured-images, translation-ready
 
 == Installation ==
 

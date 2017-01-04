@@ -106,4 +106,4 @@ function medics_custom_breadcrumbs() {
     echo '</div>';
 
   }
-} // end medics_custom_breadcrumbs()
+} // end medics_custom_breadcrumbs() ?>

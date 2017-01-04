@@ -17,4 +17,4 @@ function medics_enqueue()
 	
 	if ( is_singular() ) wp_enqueue_script( "comment-reply" ); 
 }
-add_action('wp_enqueue_scripts', 'medics_enqueue');
+add_action('wp_enqueue_scripts', 'medics_enqueue'); ?>

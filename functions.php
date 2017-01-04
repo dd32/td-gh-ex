@@ -20,7 +20,7 @@ function medics_setup() {
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 672, 372, true );
 	add_image_size( 'medics-full-width', 1038, 576, true );
-
+	add_theme_support( "title-tag" );
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
 		'primary'   => __( 'Top primary menu', 'medics' ),
@@ -83,4 +83,4 @@ require get_template_directory() . '/functions/breadcrumbs.php';
 require get_template_directory() . '/functions/custom-header.php';
 
 /*** TGM ***/
-require get_template_directory() . '/functions/tgm-plugins.php';
+require get_template_directory() . '/functions/tgm-plugins.php'; ?>

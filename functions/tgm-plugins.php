@@ -12,7 +12,6 @@ function medics_theme_register_plugins() {
             'required'  => false,
         ),
     );
-
     /*  Array of configuration settings. Amend each line as needed. */
     $config = array(
         'id'           => 'medics',                 // Unique ID for hashing notices for multiple instances of TGMPA.
@@ -45,4 +44,4 @@ function medics_theme_register_plugins() {
         )
     );
     medics( $plugins, $config );
-}
+} ?>

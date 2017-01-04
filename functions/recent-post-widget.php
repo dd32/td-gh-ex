@@ -2,10 +2,8 @@
 /* 
  *	Medics Recent post widget	
  */
-class medics_randompostwidget extends WP_Widget
-{
-function medics_randompostwidget()
-{
+class medics_randompostwidget extends WP_Widget {
+function __construct() {
 $medics_widget_ops = array('classname' => 'medics_recentpostwidget', 'description' => __('Displays a recent post with thumbnail','medics') );
 parent::__construct('medics_recentpostwidget', __('Medics Recent Post','medics'), $medics_widget_ops);
 }
@@ -14,8 +12,7 @@ function form($medics_instance)
 {
 $medics_instance = wp_parse_args( (array) $medics_instance, array( 'title' => '' ) );
 $medics_instance['title'];
-if(!empty($medics_instance['post_number'])) { $medics_instance['post_number']; } 
-?>
+if(!empty($medics_instance['post_number'])) { $medics_instance['post_number']; } ?>
         <p>
             <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:', 'medics'); ?></label>
             <input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php if(!empty($medics_instance['title'])) { echo $medics_instance['title']; } ?>" style="width:100%;" />
@@ -26,7 +23,6 @@ if(!empty($medics_instance['post_number'])) { $medics_instance['post_number']; }
         </p>
 <?php
 }
-
 function update($medics_new_instance, $medics_old_instance)
 {
 $medics_instance = $medics_old_instance;
@@ -45,8 +41,7 @@ $medics_title = empty($medics_instance['title']) ? ' ' : apply_filters('widget_t
 if (!empty($medics_title))
 echo $before_title . $medics_title . $after_title;;
 
-//widget code here
-?>
+//widget code here ?>
 <div class="medics-custom-widget">
 <?php
 $medics_args = array(
@@ -57,9 +52,7 @@ $medics_args = array(
 	'post_status'      => 'publish'
 );
 $medics_single_post = new WP_Query( $medics_args );
-
-while ( $medics_single_post->have_posts() ) { $medics_single_post->the_post();
-?>
+while ( $medics_single_post->have_posts() ) { $medics_single_post->the_post(); ?>
 <div class="footer-single-post col-md-12 no-padding">
     <div class="recent-col-1"> 
     <?php 
@@ -74,7 +67,6 @@ while ( $medics_single_post->have_posts() ) { $medics_single_post->the_post();
     	<h6><a href="<?php echo get_permalink(); ?>" class="recent-post-title-link"><?php the_title(); ?></a></h6>
     </div>
     <p><?php the_excerpt(); ?></p>
-    
   	<div class="recent-blog-count">
       	<div><i class="fa fa-user"></i><a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>"><?php echo get_the_author(); ?></a> </div> 
         <div><i class="fa fa-calendar"></i><?php echo get_the_date("M j, Y "); ?> </div> 
@@ -87,5 +79,4 @@ while ( $medics_single_post->have_posts() ) { $medics_single_post->the_post();
 echo $after_widget;
 }
 }
-add_action( 'widgets_init', create_function('', 'return register_widget("medics_randompostwidget");') );
-?>
+add_action( 'widgets_init', create_function('', 'return register_widget("medics_randompostwidget");') ); ?>
