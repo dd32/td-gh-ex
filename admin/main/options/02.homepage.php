@@ -31,7 +31,7 @@ $slider_toggle           = NULL;
 			}
 		}
 
-		if ( ( current_user_can( 'edit_theme_options' ) and empty( $thinkup_homepage_sliderswitch ) ) or $thinkup_homepage_sliderswitch == 'option1' ) {
+		if ( empty( $thinkup_homepage_sliderswitch ) or $thinkup_homepage_sliderswitch == 'option1' ) {
 
 			if ( empty( $thinkup_homepage_sliderpresetwidth ) or $thinkup_homepage_sliderpresetwidth == '1' ) {
 				$thinkup_class_fullwidth = ' full-width';
@@ -91,6 +91,7 @@ $slider_toggle           = NULL;
 // Add ThinkUpSlider Height - Homepage
 function thinkup_input_sliderhomeheight() {
 global $thinkup_homepage_sliderswitch;
+global $thinkup_homepage_sliderpresetwidth;
 global $thinkup_homepage_sliderpresetheight;
 
 	if ( empty( $thinkup_homepage_sliderpresetheight ) ) $thinkup_homepage_sliderpresetheight = '350';
@@ -127,9 +128,9 @@ global $thinkup_homepage_section3_desc;
 global $thinkup_homepage_section3_link;
 
 	// Set default values for icons
-	if ( empty( $thinkup_homepage_section1_icon ) ) $thinkup_homepage_section1_icon = 'el el-icon-ok';
-	if ( empty( $thinkup_homepage_section2_icon ) ) $thinkup_homepage_section2_icon = 'el el-icon-gift';
-	if ( empty( $thinkup_homepage_section3_icon ) ) $thinkup_homepage_section3_icon = 'el el-icon-star-empty';
+	if ( empty( $thinkup_homepage_section1_icon ) ) $thinkup_homepage_section1_icon = 'icon-ok';
+	if ( empty( $thinkup_homepage_section2_icon ) ) $thinkup_homepage_section2_icon = 'icon-gift';
+	if ( empty( $thinkup_homepage_section3_icon ) ) $thinkup_homepage_section3_icon = 'icon-star-empty';
 
 	// Update selected icon for Elusive Icon v2
 	if ( strpos( $thinkup_homepage_section1_icon, 'el-icon-' ) !== false) $thinkup_homepage_section1_icon = str_replace( 'el-icon-', 'el el-', $thinkup_homepage_section1_icon );
@@ -158,7 +159,7 @@ global $thinkup_homepage_section3_link;
 
 
 	if ( is_front_page() ) {
-		if ( ( current_user_can( 'edit_theme_options' ) and empty( $thinkup_homepage_sectionswitch ) ) or $thinkup_homepage_sectionswitch == '1' ) {
+		if ( empty( $thinkup_homepage_sectionswitch ) or $thinkup_homepage_sectionswitch == '1' ) {
 
 		echo '<div id="section-home"><div id="section-home-inner">';
 
