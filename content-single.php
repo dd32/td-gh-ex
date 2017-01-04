@@ -27,7 +27,7 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'storto' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'storto' ),
 				'after'  => '</div>',
 			) );
 		?>
@@ -65,6 +65,6 @@
 			);
 		?>
 
-		<?php edit_post_link( __( 'Edit', 'storto' ), '<span class="edit-link"><i class="fa fa-pencil-square-o spaceRight"></i>', '</span>' ); ?>
+		<?php edit_post_link( esc_html__( 'Edit', 'storto' ), '<span class="edit-link"><i class="fa fa-pencil-square-o spaceRight"></i>', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

@@ -55,7 +55,7 @@ function storto_custom_settings_register( $wp_customize ) {
 	=====================================================
 	*/
 	$wp_customize->add_section( 'cresta_social_icons', array(
-	     'title'    => esc_attr__( 'Social Icons', 'storto' ),
+	     'title'    => esc_html__( 'Social Icons', 'storto' ),
 	     'priority' => 50,
 	) );
 	
@@ -153,37 +153,37 @@ function storto_custom_settings_register( $wp_customize ) {
         public function render_content() {  ?>
         	<p class="storto-upgrade-title">
         		<span class="customize-control-title">
-					<h3 style="text-align:center;"><div class="dashicons dashicons-megaphone"></div> <?php _e('Get Gigante WP Theme for only', 'storto'); ?> 24,90&euro;</h3>
+					<h3 style="text-align:center;"><div class="dashicons dashicons-megaphone"></div> <?php esc_html_e('Get Gigante WP Theme for only', 'storto'); ?> 24,90&euro;</h3>
         		</span>
         	</p>
 			<p style="text-align:center;" class="storto-upgrade-button">
 				<a style="margin: 10px;" target="_blank" href="http://crestaproject.com/demo/gigante/" class="button button-secondary">
-					<?php _e('Watch the demo', 'storto'); ?>
+					<?php esc_html_e('Watch the demo', 'storto'); ?>
 				</a>
-				<a style="margin: 10px;" target="_blank" href="http://crestaproject.com/downloads/gigante/" class="button button-secondary">
-					<?php _e('Get Gigante Theme', 'storto'); ?>
+				<a style="margin: 10px;" target="_blank" href="https://crestaproject.com/downloads/gigante/" class="button button-secondary">
+					<?php esc_html_e('Get Gigante Theme', 'storto'); ?>
 				</a>
 			</p>
 			<ul>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Advanced Theme Options', 'storto'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Logo Upload', 'storto'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Choose sidebar position', 'storto'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Font switcher', 'storto'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Loading Page', 'storto'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Unlimited Colors and Skin', 'storto'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Post views counter', 'storto'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Post format', 'storto'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('7 Shortcodes', 'storto'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('12 Exclusive Widgets', 'storto'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Related Posts Box', 'storto'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Information About Author Box', 'storto'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('And much more...', 'storto'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('Advanced Theme Options', 'storto'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('Logo Upload', 'storto'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('Choose sidebar position', 'storto'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('Font switcher', 'storto'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('Loading Page', 'storto'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('Unlimited Colors and Skin', 'storto'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('Post views counter', 'storto'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('Post format', 'storto'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('7 Shortcodes', 'storto'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('12 Exclusive Widgets', 'storto'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('Related Posts Box', 'storto'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('Information About Author Box', 'storto'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('And much more...', 'storto'); ?></b></li>
 			<ul><?php
         }
     }
 	
 	$wp_customize->add_section( 'cresta_upgrade_pro', array(
-	     'title'    => __( 'More features? Upgrade to PRO', 'storto' ),
+	     'title'    => esc_html__( 'More features? Upgrade to PRO', 'storto' ),
 	     'priority' => 999,
 	));
 	
@@ -238,14 +238,14 @@ function storto_custom_css_styles() {
 	input[type="datetime-local"]:focus,
 	input[type="color"]:focus,
 	textarea:focus {
-		color: <?php echo esc_attr($color_primary); ?>;
+		color: <?php echo esc_html($color_primary); ?>;
 	}
 	<?php endif; ?>
 	
 	<?php if (!empty($color_link)) : ?>
 	blockquote {
-		border-left: 5px solid <?php echo esc_attr($color_link); ?>;
-		border-right: 2px solid <?php echo esc_attr($color_link); ?>;
+		border-left: 5px solid <?php echo esc_html($color_link); ?>;
+		border-right: 2px solid <?php echo esc_html($color_link); ?>;
 	}
 	button:hover,
 	input[type="button"]:hover,
@@ -271,10 +271,10 @@ function storto_custom_css_styles() {
 	.readMoreLink a:hover, 
 	.dataBottom a:hover,
 	#toTop:hover	{
-		border: 1px solid <?php echo esc_attr($color_link); ?>;
+		border: 1px solid <?php echo esc_html($color_link); ?>;
 	}
 	a, a:hover, a:focus, a:active, .main-navigation ul li .indicator, .content-area .sticky:before {
-		color: <?php echo esc_attr($color_link); ?>;
+		color: <?php echo esc_html($color_link); ?>;
 	}
 	<?php endif; ?>
 	

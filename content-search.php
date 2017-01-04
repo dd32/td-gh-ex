@@ -36,7 +36,7 @@
 	<footer class="entry-footer">
 		<?php edit_post_link( __( 'Edit', 'storto' ), '<span class="edit-link"><i class="fa fa-pencil-square-o spaceRight"></i>', '</span>' ); ?>
 		<div class="readMoreLink">
-			<a href="<?php echo esc_url(get_permalink()); ?>"><?php _e('Read More', 'storto') ?><i class="fa spaceLeft fa-angle-double-right"></i></a>
+			<a href="<?php echo esc_url(get_permalink()); ?>"><?php esc_html_e('Read More', 'storto') ?><i class="fa spaceLeft fa-angle-double-right"></i></a>
 		</div>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

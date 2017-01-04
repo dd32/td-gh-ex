@@ -1,5 +1,5 @@
 = Storto =
-* by the CrestaProject team, http://crestaproject.com/
+* by the CrestaProject team, https://crestaproject.com/
 
 == ABOUT Storto ==
 Storto is a simple and modern WordPress Theme  useful for blog or personal page.
@@ -122,3 +122,8 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, cust
 
 = Version 1.4.3 =
 * Updated FontAwesome to 4.7.0v
+
+= Version 1.4.4 =
+* Updated Sticky Sidebar script to 1.6.0v
+* Fixed some strings with escaping
+* Minor bug fixes

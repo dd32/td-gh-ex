@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Storto\n"
-"POT-Creation-Date: 2016-04-18 11:05+0100\n"
-"PO-Revision-Date: 2016-04-18 11:05+0100\n"
+"POT-Creation-Date: 2017-01-04 13:24+0100\n"
+"PO-Revision-Date: 2017-01-04 13:24+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -242,16 +242,16 @@ msgstr ""
 msgid "Read More"
 msgstr ""
 
-#: footer.php:20
-msgid "http://wordpress.org/"
+#: footer.php:13
+msgid "https://wordpress.org/"
 msgstr ""
 
-#: footer.php:20
+#: footer.php:13
 #, php-format
 msgid "Proudly powered by %s"
 msgstr ""
 
-#: footer.php:22
+#: footer.php:15
 #, php-format
 msgid "Theme: %1$s by %2$s."
 msgstr ""
@@ -264,61 +264,61 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: header.php:53
+#: header.php:52
 msgid "Facebook"
 msgstr ""
 
-#: header.php:56
+#: header.php:55
 msgid "Twitter"
 msgstr ""
 
-#: header.php:59
+#: header.php:58
 msgid "Google Plus"
 msgstr ""
 
-#: header.php:62
+#: header.php:61
 msgid "Linkedin"
 msgstr ""
 
-#: header.php:65
+#: header.php:64
 msgid "Instagram"
 msgstr ""
 
-#: header.php:68
+#: header.php:67
 msgid "YouTube"
 msgstr ""
 
-#: header.php:71
+#: header.php:70
 msgid "Pinterest"
 msgstr ""
 
-#: header.php:74
+#: header.php:73
 msgid "Tumblr"
 msgstr ""
 
-#: header.php:77
+#: header.php:76
 msgid "VK"
 msgstr ""
 
-#: header.php:86
+#: header.php:85
 msgid "Type and hit enter..."
 msgstr ""
 
-#: header.php:91
+#: header.php:90
 msgid "Select a page..."
-msgstr ""
-
-#: inc/customizer.php:38
-msgid "Demo Gigante Theme"
-msgstr ""
-
-#: inc/customizer.php:39 inc/storto-dynamic.php:164
-msgid "Get Gigante Theme"
 msgstr ""
 
 #: inc/extras.php:64
 #, php-format
 msgid "Page %s"
+msgstr ""
+
+#: inc/pro-button/class-customize.php:77
+msgid "Gigante Theme"
+msgstr ""
+
+#: inc/pro-button/class-customize.php:78
+msgid "More Info"
 msgstr ""
 
 #: inc/storto-dynamic.php:21
@@ -379,6 +379,10 @@ msgstr ""
 
 #: inc/storto-dynamic.php:161
 msgid "Watch the demo"
+msgstr ""
+
+#: inc/storto-dynamic.php:164
+msgid "Get Gigante Theme"
 msgstr ""
 
 #: inc/storto-dynamic.php:168

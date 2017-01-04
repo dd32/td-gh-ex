@@ -10,16 +10,9 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info smallPart">
-			<?php
-				$name = get_bloginfo('name');
-				$url = home_url('/');
-				$year = date('Y');
-			?>
-			&copy; <?php echo $year ?> <a href="<?php echo esc_url($url); ?>"><?php echo $name ?></a>
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'storto' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'storto' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'storto' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'storto' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'storto' ), 'Storto', '<a target="_blank" title="CrestaProject" href="http://crestaproject.com/downloads/storto/" rel="nofollow">CrestaProject WordPress Themes</a>' ); ?>
+			<?php printf( __( 'Theme: %1$s by %2$s.', 'storto' ), '<a target="_blank" href="https://crestaproject.com/downloads/storto/" rel="nofollow" title="Storto Theme">Storto</a>', 'CrestaProject WordPress Themes' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 	

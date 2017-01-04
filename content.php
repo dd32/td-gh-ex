@@ -29,16 +29,16 @@
 		<?php the_excerpt(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'storto' ),
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'storto' ),
 				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer smallPart">
-		<?php edit_post_link( __( 'Edit', 'storto' ), '<span class="edit-link"><i class="fa fa-pencil-square-o spaceRight"></i>', '</span>' ); ?>
+		<?php edit_post_link( esc_html__( 'Edit', 'storto' ), '<span class="edit-link"><i class="fa fa-pencil-square-o spaceRight"></i>', '</span>' ); ?>
 		<div class="readMoreLink">
-			<a href="<?php echo esc_url(get_permalink()); ?>"><?php _e('Read More', 'storto') ?><i class="fa spaceLeft fa-angle-double-right"></i></a>
+			<a href="<?php echo esc_url(get_permalink()); ?>"><?php esc_html_e('Read More', 'storto') ?><i class="fa spaceLeft fa-angle-double-right"></i></a>
 		</div>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
