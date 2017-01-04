@@ -51,39 +51,39 @@
 			<div class="socialLine">
 			
 				<?php if (!empty($facebookURL)) : ?>
-					<a href="<?php echo esc_url($facebookURL); ?>" title="<?php esc_attr_e( 'Facebook', 'semplicemente' ); ?>"><i class="fa fa-facebook spaceLeftDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Facebook', 'semplicemente' ); ?></span></i></a>
+					<a href="<?php echo esc_url($facebookURL); ?>" title="<?php esc_attr_e( 'Facebook', 'semplicemente' ); ?>"><i class="fa fa-facebook spaceLeftDouble"><span class="screen-reader-text"><?php esc_html_e( 'Facebook', 'semplicemente' ); ?></span></i></a>
 				<?php endif; ?>
 						
 				<?php if (!empty($twitterURL)) : ?>
-					<a href="<?php echo esc_url($twitterURL); ?>" title="<?php esc_attr_e( 'Twitter', 'semplicemente' ); ?>"><i class="fa fa-twitter spaceLeftDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Twitter', 'semplicemente' ); ?></span></i></a>
+					<a href="<?php echo esc_url($twitterURL); ?>" title="<?php esc_attr_e( 'Twitter', 'semplicemente' ); ?>"><i class="fa fa-twitter spaceLeftDouble"><span class="screen-reader-text"><?php esc_html_e( 'Twitter', 'semplicemente' ); ?></span></i></a>
 				<?php endif; ?>
 						
 				<?php if (!empty($googleplusURL)) : ?>
-					<a href="<?php echo esc_url($googleplusURL); ?>" title="<?php esc_attr_e( 'Google Plus', 'semplicemente' ); ?>"><i class="fa fa-google-plus spaceLeftDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Google Plus', 'semplicemente' ); ?></span></i></a>
+					<a href="<?php echo esc_url($googleplusURL); ?>" title="<?php esc_attr_e( 'Google Plus', 'semplicemente' ); ?>"><i class="fa fa-google-plus spaceLeftDouble"><span class="screen-reader-text"><?php esc_html_e( 'Google Plus', 'semplicemente' ); ?></span></i></a>
 				<?php endif; ?>
 						
 				<?php if (!empty($linkedinURL)) : ?>
-					<a href="<?php echo esc_url($linkedinURL); ?>" title="<?php esc_attr_e( 'Linkedin', 'semplicemente' ); ?>"><i class="fa fa-linkedin spaceLeftDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Linkedin', 'semplicemente' ); ?></span></i></a>
+					<a href="<?php echo esc_url($linkedinURL); ?>" title="<?php esc_attr_e( 'Linkedin', 'semplicemente' ); ?>"><i class="fa fa-linkedin spaceLeftDouble"><span class="screen-reader-text"><?php esc_html_e( 'Linkedin', 'semplicemente' ); ?></span></i></a>
 				<?php endif; ?>
 						
 				<?php if (!empty($instagramURL)) : ?>
-					<a href="<?php echo esc_url($instagramURL); ?>" title="<?php esc_attr_e( 'Instagram', 'semplicemente' ); ?>"><i class="fa fa-instagram spaceLeftDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Instagram', 'semplicemente' ); ?></span></i></a>
+					<a href="<?php echo esc_url($instagramURL); ?>" title="<?php esc_attr_e( 'Instagram', 'semplicemente' ); ?>"><i class="fa fa-instagram spaceLeftDouble"><span class="screen-reader-text"><?php esc_html_e( 'Instagram', 'semplicemente' ); ?></span></i></a>
 				<?php endif; ?>
 						
 				<?php if (!empty($youtubeURL)) : ?>
-					<a href="<?php echo esc_url($youtubeURL); ?>" title="<?php esc_attr_e( 'YouTube', 'semplicemente' ); ?>"><i class="fa fa-youtube spaceLeftDouble"><span class="screen-reader-text"><?php esc_attr_e( 'YouTube', 'semplicemente' ); ?></span></i></a>
+					<a href="<?php echo esc_url($youtubeURL); ?>" title="<?php esc_attr_e( 'YouTube', 'semplicemente' ); ?>"><i class="fa fa-youtube spaceLeftDouble"><span class="screen-reader-text"><?php esc_html_e( 'YouTube', 'semplicemente' ); ?></span></i></a>
 				<?php endif; ?>
 						
 				<?php if (!empty($pinterestURL)) : ?>
-					<a href="<?php echo esc_url($pinterestURL); ?>" title="<?php esc_attr_e( 'Pinterest', 'semplicemente' ); ?>"><i class="fa fa-pinterest spaceLeftDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Pinterest', 'semplicemente' ); ?></span></i></a>
+					<a href="<?php echo esc_url($pinterestURL); ?>" title="<?php esc_attr_e( 'Pinterest', 'semplicemente' ); ?>"><i class="fa fa-pinterest spaceLeftDouble"><span class="screen-reader-text"><?php esc_html_e( 'Pinterest', 'semplicemente' ); ?></span></i></a>
 				<?php endif; ?>
 				
 				<?php if (!empty($tumblrURL)) : ?>
-					<a href="<?php echo esc_url($tumblrURL); ?>" title="<?php esc_attr_e( 'Tumblr', 'semplicemente' ); ?>"><i class="fa fa-tumblr spaceLeftDouble"><span class="screen-reader-text"><?php esc_attr_e( 'Tumblr', 'semplicemente' ); ?></span></i></a>
+					<a href="<?php echo esc_url($tumblrURL); ?>" title="<?php esc_attr_e( 'Tumblr', 'semplicemente' ); ?>"><i class="fa fa-tumblr spaceLeftDouble"><span class="screen-reader-text"><?php esc_html_e( 'Tumblr', 'semplicemente' ); ?></span></i></a>
 				<?php endif; ?>
 						
 				<?php if (!empty($vkURL)) : ?>
-					<a href="<?php echo esc_url($vkURL); ?>" title="<?php esc_attr_e( 'VK', 'semplicemente' ); ?>"><i class="fa fa-vk spaceLeftDouble"><span class="screen-reader-text"><?php esc_attr_e( 'VK', 'semplicemente' ); ?></span></i></a>
+					<a href="<?php echo esc_url($vkURL); ?>" title="<?php esc_attr_e( 'VK', 'semplicemente' ); ?>"><i class="fa fa-vk spaceLeftDouble"><span class="screen-reader-text"><?php esc_html_e( 'VK', 'semplicemente' ); ?></span></i></a>
 				<?php endif; ?>
 				
 				<?php if ( $hideSearch == 1 ) : ?>
@@ -99,7 +99,7 @@
 		</div>
 		
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle"><?php _e( 'Menu', 'semplicemente' ); ?><i class="fa fa-align-justify"></i></button>
+			<button class="menu-toggle"><?php esc_html_e( 'Menu', 'semplicemente' ); ?><i class="fa fa-align-justify"></i></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->

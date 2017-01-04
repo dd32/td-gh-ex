@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Semplicemente\n"
-"POT-Creation-Date: 2016-12-20 13:59+0100\n"
-"PO-Revision-Date: 2016-12-20 13:59+0100\n"
+"POT-Creation-Date: 2017-01-04 12:09+0100\n"
+"PO-Revision-Date: 2017-01-04 12:09+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -242,16 +242,16 @@ msgstr ""
 msgid "Read More"
 msgstr ""
 
-#: footer.php:22
-msgid "http://wordpress.org/"
+#: footer.php:15
+msgid "https://wordpress.org/"
 msgstr ""
 
-#: footer.php:22
+#: footer.php:15
 #, php-format
 msgid "Proudly powered by %s"
 msgstr ""
 
-#: footer.php:24
+#: footer.php:17
 #, php-format
 msgid "Theme: %1$s by %2$s."
 msgstr ""
@@ -431,6 +431,7 @@ msgid "Semplicemente"
 msgstr ""
 
 #: inc/admin/semplicemente-admin-page.php:294
+#: inc/pro-button/class-customize.php:77
 msgid "Semplicemente PRO"
 msgstr ""
 
@@ -509,12 +510,8 @@ msgstr ""
 msgid "Page %s"
 msgstr ""
 
-#: inc/pro-button/class-customize.php:77
-msgid "Semplicemente PRO Theme"
-msgstr ""
-
 #: inc/pro-button/class-customize.php:78
-msgid "Go Pro"
+msgid "More Info"
 msgstr ""
 
 #: inc/semplicemente-dynamic.php:21

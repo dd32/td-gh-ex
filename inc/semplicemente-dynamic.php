@@ -61,7 +61,7 @@ function semplicemente_custom_settings_register( $wp_customize ) {
 	=====================================================
 	*/
 	$wp_customize->add_section( 'cresta_semplicemente_options', array(
-	     'title'    => esc_attr__( 'Semplicemente Theme Options', 'semplicemente' ),
+	     'title'    => esc_html__( 'Semplicemente Theme Options', 'semplicemente' ),
 	     'priority' => 50,
 	) );
 	
@@ -159,37 +159,37 @@ function semplicemente_custom_settings_register( $wp_customize ) {
         public function render_content() {  ?>
         	<p class="semplicemente-upgrade-title">
         		<span class="customize-control-title">
-					<h3 style="text-align:center;"><div class="dashicons dashicons-megaphone"></div> <?php _e('Get Semplicemente PRO WP Theme for only', 'semplicemente'); ?> 16,90&euro;</h3>
+					<h3 style="text-align:center;"><div class="dashicons dashicons-megaphone"></div> <?php esc_html_e('Get Semplicemente PRO WP Theme for only', 'semplicemente'); ?> 16,90&euro;</h3>
         		</span>
         	</p>
 			<p style="text-align:center;" class="semplicemente-upgrade-button">
 				<a style="margin: 10px;" target="_blank" href="http://crestaproject.com/demo/semplicemente-pro/" class="button button-secondary">
-					<?php _e('Watch the demo', 'semplicemente'); ?>
+					<?php esc_html_e('Watch the demo', 'semplicemente'); ?>
 				</a>
 				<a style="margin: 10px;" target="_blank" href="https://crestaproject.com/downloads/semplicemente/" class="button button-secondary">
-					<?php _e('Get Semplicemente PRO Theme', 'semplicemente'); ?>
+					<?php esc_html_e('Get Semplicemente PRO Theme', 'semplicemente'); ?>
 				</a>
 			</p>
 			<ul>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Advanced Theme Options', 'semplicemente'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Logo Upload', 'semplicemente'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Choose sidebar position', 'semplicemente'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Font switcher', 'semplicemente'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Loading Page', 'semplicemente'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Unlimited Colors and Skin', 'semplicemente'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Post views counter', 'semplicemente'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Post format', 'semplicemente'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('7 Shortcodes', 'semplicemente'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('12 Exclusive Widgets', 'semplicemente'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Related Posts Box', 'semplicemente'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Information About Author Box', 'semplicemente'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('And much more...', 'semplicemente'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('Advanced Theme Options', 'semplicemente'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('Logo Upload', 'semplicemente'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('Choose sidebar position', 'semplicemente'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('Font switcher', 'semplicemente'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('Loading Page', 'semplicemente'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('Unlimited Colors and Skin', 'semplicemente'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('Post views counter', 'semplicemente'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('Post format', 'semplicemente'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('7 Shortcodes', 'semplicemente'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('12 Exclusive Widgets', 'semplicemente'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('Related Posts Box', 'semplicemente'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('Information About Author Box', 'semplicemente'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('And much more...', 'semplicemente'); ?></b></li>
 			<ul><?php
         }
     }
 	
 	$wp_customize->add_section( 'cresta_upgrade_pro', array(
-	     'title'    => __( 'More features? Upgrade to PRO', 'semplicemente' ),
+	     'title'    => esc_html__( 'More features? Upgrade to PRO', 'semplicemente' ),
 	     'priority' => 999,
 	));
 	
@@ -232,30 +232,30 @@ function semplicemente_custom_css_styles() {
 	input,
 	select,
 	textarea {
-		color: <?php echo esc_attr($color_primary); ?>;
+		color: <?php echo esc_html($color_primary); ?>;
 	}
 	<?php endif; ?>
 	
 	<?php if (!empty($color_link)) : ?>
 	h1, h2, h3, h4, h5, h6, a {
-		color: <?php echo esc_attr($color_link); ?>;
+		color: <?php echo esc_html($color_link); ?>;
 	}
 	<?php endif; ?>
 	
 	<?php if (!empty($color_secondary)) : ?>
 	a:hover, a:focus, a:active, .entry-meta i, .top-search.active {
-		color: <?php echo esc_attr($color_secondary); ?>;
+		color: <?php echo esc_html($color_secondary); ?>;
 	}
 	.widget-title h3 {
-		border-bottom: 1px solid <?php echo esc_attr($color_secondary); ?>;
+		border-bottom: 1px solid <?php echo esc_html($color_secondary); ?>;
 	}
 	.sticky {
-		border: 3px solid <?php echo esc_attr($color_secondary); ?>;
+		border: 3px solid <?php echo esc_html($color_secondary); ?>;
 	}
 	
 	blockquote {
-		border-left: 5px solid <?php echo esc_attr($color_secondary); ?>;
-		border-right: 2px solid <?php echo esc_attr($color_secondary); ?>;
+		border-left: 5px solid <?php echo esc_html($color_secondary); ?>;
+		border-right: 2px solid <?php echo esc_html($color_secondary); ?>;
 	}
 	
 	button,
@@ -264,7 +264,7 @@ function semplicemente_custom_css_styles() {
 	input[type="submit"],
 	.dataBottom a, 
 	.readMoreLink {
-		border: 1px solid <?php echo esc_attr($color_secondary); ?>;
+		border: 1px solid <?php echo esc_html($color_secondary); ?>;
 	}
 	
 	button:hover,
@@ -285,7 +285,7 @@ function semplicemente_custom_css_styles() {
 	.menu-toggle,
 	.main-navigation.toggled .nav-menu,
 	.main-navigation.toggled .nav-menu ul	{
-		background: <?php echo esc_attr($color_secondary); ?>;
+		background: <?php echo esc_html($color_secondary); ?>;
 	}
 	<?php endif; ?>
 	

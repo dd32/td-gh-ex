@@ -138,3 +138,7 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, cust
 
 = Version 1.6.9 =
 * Minor bug fixes
+
+= Version 1.7.0 =
+* Fixed some strings with escaping
+* Minor bug fixes

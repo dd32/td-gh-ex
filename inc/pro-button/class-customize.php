@@ -74,8 +74,8 @@ final class Semplicemente_Updgrade_Pro_Button {
 				'cresta_semplicemente_buy_pro',
 				array(
 					'priority' => 9,
-					'title'    => esc_html__( 'Semplicemente PRO Theme', 'semplicemente' ),
-					'pro_text' => esc_html__( 'Go Pro',         'semplicemente' ),
+					'title'    => esc_html__( 'Semplicemente PRO', 'semplicemente' ),
+					'pro_text' => esc_html__( 'More Info',         'semplicemente' ),
 					'pro_url'  => 'https://crestaproject.com/downloads/semplicemente/'
 				)
 			)
