@@ -60,7 +60,7 @@ function multishop_widgets_init() {
 add_action( 'widgets_init', 'multishop_widgets_init' );
 
 function multishop_entry_meta() {
-	$multishop_category_list = get_the_category_list( __( ', ', ' ' ) );
+	$multishop_category_list = get_the_category_list();
 	$multishop_tag_list = get_the_tag_list('<i class="fa fa-tag"></i> ',', ',' ');
 	$multishop_date = sprintf( '<time datetime="%1$s">%2$s</time>',
 		esc_attr( get_the_date( 'c' ) ),
@@ -73,12 +73,13 @@ function multishop_entry_meta() {
 	);
 
 	if ( $multishop_tag_list ) {
-		$multishop_utility_text = __( '<div class="multishop-tags"> Posted in  %1$s  <i class="fa fa-calendar"></i> %3$s  <i class="fa fa-user"></i>  %4$s  %2$s  <i class="fa fa-comments"></i>  '.get_comments_number(). '</div>', 'multishop' );
-	} elseif ( $multishop_category_list ) {
-		$multishop_utility_text = __( '<div class="multishop-tags"> Posted in  %1$s  <i class="fa fa-calendar"></i> %3$s  <i class="fa fa-user"></i>  %4$s  %2$s  <i class="fa fa-comments"></i>  '.get_comments_number().'</div>', 'multishop' );
-	} else {
-		$multishop_utility_text = __( '<div class="multishop-tags"> Posted <i class="fa fa-calendar"></i>  %3$s <i class="fa fa-user"></i>  %4$s  %2$s  <i class="fa fa-comments"></i>  '.get_comments_number(). '</div>', 'multishop' );
-	}
+			$multishop_utility_text = __( '<div class="multishop-tags"><i class="fa fa-calendar"></i> %3$s <i class="fa fa-user"></i> %4$s </div>', 'multishop' );
+		} elseif ( $multishop_category_list ) {
+			$multishop_utility_text = __( '<div class="multishop-tags"><i class="fa fa-calendar"></i> %3$s <i class="fa fa-user"></i> %4$s </div>', 'multishop' );
+		} else {
+			$multishop_utility_text = __( '<div class="multishop-tags"><i class="fa fa-calendar"></i> %3$s <i class="fa fa-user"></i> %4$s </div>', 'multishop' );
+		}	
+
 
 	printf(
 		$multishop_utility_text,
@@ -105,8 +106,7 @@ if ( ! function_exists('is_plugin_inactive')) {
       require_once( ABSPATH . '/wp-admin/includes/plugin.php' );
 }
 
-function multishop_pagination() {
-?>
+function multishop_pagination() { ?>
 <div class="col-md-12 multishop-default-pagination ">
 			<?php 
 				if(is_single()){
@@ -116,11 +116,11 @@ function multishop_pagination() {
 				) );
 				}else{	
 					the_posts_pagination( array(
-						'prev_text'          => __( '<<' ),
-						'next_text'          => __( '>>' ),
+						'prev_text'          => '<<' ,
+						'next_text'          => '>>',
 						'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'multishop' ) . ' </span>',
 					) ); 
 				}
 			?>
 </div>
-<?php }
+<?php } ?>

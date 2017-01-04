@@ -17,7 +17,6 @@ function ft_options_validate($input)
 		$input['text-section-'.$multishop_section_i] = sanitize_text_field( $input['text-section-'.$multishop_section_i]);
 		$input['discount-section-'.$multishop_section_i] = sanitize_text_field( $input['discount-section-'.$multishop_section_i]);
 	 endfor;
-
     return $input;
 }
 function multishop_image_validation($multishop_imge_url){
@@ -40,12 +39,12 @@ function fasterthemes_framework_load_scripts($hook){
 }
 function fasterthemes_framework_menu_settings() {
 	$multishop_menu = array(
-				'page_title' => __( 'FasterThemes Options', 'fastertheme_framework'),
-				'menu_title' => __('Theme Options', 'fastertheme_framework'),
-				'capability' => 'edit_theme_options',
-				'menu_slug' => 'fasterthemes_framework',
-				'callback' => 'fastertheme_framework_page'
-				);
+		'page_title' => __( 'FasterThemes Options', 'multishop'),
+		'menu_title' => __('Theme Options', 'multishop'),
+		'capability' => 'edit_theme_options',
+		'menu_slug' => 'fasterthemes_framework',
+		'callback' => 'fastertheme_framework_page'
+	);
 	return apply_filters( 'fasterthemes_framework_menu', $multishop_menu );
 }
 add_action( 'admin_menu', 'theme_options_add_page' ); 
@@ -57,19 +56,16 @@ function theme_options_add_page() {
 function fastertheme_framework_page(){ 
 		global $select_options; 
 		if ( ! isset( $_REQUEST['settings-updated'] ) ) 
-		$_REQUEST['settings-updated'] = false;				
-?>
+		$_REQUEST['settings-updated'] = false; ?>
 <div class="fasterthemes-themes">
 	<form method="post" action="options.php" id="form-option" class="theme_option_ft">
   <div class="fasterthemes-header">
     <div class="logo">
-      <?php
-		$multishop_image=get_template_directory_uri().'/theme-options/images/logo.png';
-		echo "<a href='http://fasterthemes.com' target='_blank'><img src='".$multishop_image."' alt='".__('FasterThemes','multishop')."' /></a>";
-		?>
+    <?php $multishop_image=get_template_directory_uri().'/theme-options/images/logo.png';
+		echo "<a href='http://fasterthemes.com' target='_blank'><img src='".$multishop_image."' alt='".__('FasterThemes','multishop')."' /></a>"; ?>
     </div>
     <div class="header-right">
-		<h1> <?php _e( 'Theme Options', 'multishop' ) ?> </h1>
+		<h1><?php _e( 'Theme Options', 'multishop' ); ?></h1>
 		<div class='btn-save'><input type='submit' class='button-primary' value='<?php _e('Save Options','multishop'); ?>' /></div>
 	</div>
 
@@ -92,7 +88,7 @@ function fastertheme_framework_page(){
           <?php settings_fields( 'ft_options' );  
 		$multishop_options = get_option( 'multishop_theme_options' ); ?>
      
-          <!-------------- First group ----------------->
+          <!--  First group  -->
           
           <div id="options-group-1" class="group faster-inner-tabs">
           	<div class="section theme-tabs theme-logo">
@@ -135,7 +131,7 @@ function fastertheme_framework_page(){
             </div>            
           </div>             
 		 	
-          <!-------------- Second group ----------------->
+          <!--  Second group  -->
           <div id="options-group-2" class="group faster-inner-tabs">            
             <div id="section-facebook" class="section theme-tabs">
             	<a class="heading faster-inner-tab active" href="javascript:void(0)"><?php _e('Facebook','multishop'); ?></a>
@@ -165,14 +161,12 @@ function fastertheme_framework_page(){
               </div>
             </div>
           </div>   
-          <!-------------- Third group ----------------->
+          <!--  Third group  -->
 	        <div id="options-group-3" class="group faster-inner-tabs">
-				
-				
           <!-- section-1 -->
           <?php for($multishop_section_i=1; $multishop_section_i <=3 ;$multishop_section_i++ ): ?>
           <div id="section-1" class="section theme-tabs">
-			<a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('section-'.$multishop_section_i.'  (Preferred size : 200px * 200px)','multishop'); ?></a>
+			<a class="heading faster-inner-tab" href="javascript:void(0)"><?php echo 'section-'.$multishop_section_i.' (Preferred size : 200px * 200px)'; ?></a>
 			<div class="faster-inner-tab-group">
               <div class="controls">
                 <input id="image_section<?php echo $multishop_section_i; ?>" class="upload" type="text" name="multishop_theme_options[img-section-<?php echo $multishop_section_i; ?>]" value="<?php if(!empty($multishop_options['img-section-'.$multishop_section_i])) { echo $multishop_options['img-section-'.$multishop_section_i]; } ?>" placeholder="<?php _e('No file chosen','multishop'); ?>" />
@@ -191,23 +185,21 @@ function fastertheme_framework_page(){
           </div> 
           <?php endfor; ?>
         </div>
-		  
 		   <div id="options-group-4" class="group faster-inner-tabs fasterthemes-pro-image">
           	<div class="fasterthemes-pro-header">
               <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/multishop_logopro_features.png" class="fasterthemes-pro-logo" />
-              <a href="http://fasterthemes.com/checkout/get_checkout_details?theme=multishop" target="_blank">
+              <a href="http://fasterthemes.com/wordpress-themes/multishop" target="_blank">
 			  <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/buy-now.png" class="fasterthemes-pro-buynow" /></a>
               </div>
           	<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/multishop_pro_features.png" />
-          </div> 	
-        
-        <!--======================== F I N A L - - T H E M E - - O P T I O N S ===================--> 
+          </div>
+        <!--  F I N A L - - T H E M E - - O P T I O N S  --> 
       </div>
      </div>
 	</div>
 	<div class="fasterthemes-footer">
       	<ul>
-            <li class="btn-save"><input type="submit" class="button-primary" value="<?php _e('Save Options','multishop'); ?>" /></li>
+          <li class="btn-save"><input type="submit" class="button-primary" value="<?php _e('Save Options','multishop'); ?>" /></li>
         </ul>
     </div>
     </form>    

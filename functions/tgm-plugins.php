@@ -46,4 +46,4 @@ function multishop_theme_register_plugins() {
         )
     );
     multishop( $plugins, $config );
-}
+} ?>

@@ -2,8 +2,7 @@
 /**
  * Tag Page template file
 **/
-get_header(); 
-?>
+get_header(); ?>
 <div class="clearfix"></div>
 <div class="col-md-12 site-title clearfix">
   <div class="multishop-container multishop-breadcrumb">
@@ -18,8 +17,7 @@ get_header();
     <?php while ( have_posts() ) : the_post(); 
 			get_template_part( 'content', get_post_format() );
 		 endwhile; 
-			multishop_pagination();	
-		 ?>
+			multishop_pagination();	?>
   </div>
   <?php  get_sidebar(); ?>
 </div>

@@ -61,7 +61,6 @@ function multishop_font_url() {
 	}
 	return $multishop_font_url;
 }
-
 add_filter( 'comment_form_default_fields', 'multishop_comment_placeholders' );
 /**
 * Change default fields, add placeholder and change type attributes.
@@ -69,8 +68,7 @@ add_filter( 'comment_form_default_fields', 'multishop_comment_placeholders' );
 * @param array $fields
 * @return array
 */
-function multishop_comment_placeholders( $fields )
-{
+function multishop_comment_placeholders( $fields ) {
 	$fields['author'] = str_replace(
 	'<input',
 	'<input placeholder="'
@@ -141,24 +139,17 @@ function multishop_sort_by_page($count) {
 }
  
 add_filter('loop_shop_per_page','multishop_sort_by_page');
-
 /*** Enqueue css and js files ***/
 require get_template_directory() . '/functions/enqueue-files.php';
-
 /*** Theme Default Setup ***/
 require get_template_directory() . '/functions/theme-default-setup.php';
-
 //multishop theme theme option
 require get_template_directory() . '/theme-options/fasterthemes.php';
-
 /*** Recent Post Widget ***/
 require get_template_directory() . '/functions/recent-post-widget.php';
-
 /*** Breadcrumbs ***/
 require get_template_directory() . '/functions/breadcrumbs.php';
-
 /*** Custom Header ***/
 require get_template_directory() . '/functions/custom-header.php';
-
 /*** TGM ***/
-require get_template_directory() . '/functions/tgm-plugins.php';
+require get_template_directory() . '/functions/tgm-plugins.php'; ?>

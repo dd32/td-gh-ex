@@ -2,8 +2,7 @@
 /**
  * The Header template for our theme
  */
- $multishop_options = get_option( 'multishop_theme_options' );
-?>
+ $multishop_options = get_option( 'multishop_theme_options' ); ?>
 <!DOCTYPE html>
 <!--[if IE 7]>
 <html class="ie ie7" <?php language_attributes(); ?>>
@@ -84,6 +83,4 @@
       </div>
     </div>
   </div>
-    
 </header>
-<!-- END HEADER -->

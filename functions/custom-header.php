@@ -17,7 +17,6 @@ function multishop_custom_header_setup() {
 		'admin-head-callback'    => 'multishop_admin_header_style',
 		'admin-preview-callback' => 'multishop_admin_header_image',
 	);
-
 	add_theme_support( 'custom-header', $multishop_args );
 
 	/*
@@ -54,12 +53,9 @@ function multishop_header_style() {
 	if ( empty( $multishop_header_image ) && $multishop_text_color == get_theme_support( 'custom-header', 'default-text-color' ) )
 		return;
 
-	// If we get this far, we have custom styles.
-	?>
+	// If we get this far, we have custom styles. ?>
 	<style type="text/css" id="multishop-header-css">
-	<?php
-		if ( ! empty( $multishop_header_image ) ) :
-	?>
+	<?php if ( ! empty( $multishop_header_image ) ) : ?>
 		.site-header {
 			background: url(<?php header_image(); ?>) no-repeat scroll top;
 			background-size: 750px auto;
@@ -68,26 +64,20 @@ function multishop_header_style() {
 		endif;
 
 		// Has the text been hidden?
-		if ( ! display_header_text() ) :
-	?>
+		if ( ! display_header_text() ) : ?>
 		.site-title,
 		.site-description {
 			position: absolute;
 			clip: rect(1px 1px 1px 1px); /* IE7 */
 			clip: rect(1px, 1px, 1px, 1px);
 		}
-	<?php
-			if ( empty( $multishop_header_image ) ) :
-	?>
+	<?php if ( empty( $multishop_header_image ) ) : ?>
 		.site-header .home-link {
 			min-height: 0;
 		}
-	<?php
-			endif;
-
+	<?php endif;
 		// If the user has set a custom color for the text, use that.
-		elseif ( $multishop_text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) :
-	?>
+		elseif ( $multishop_text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) : ?>
 		.site-title,
 		.site-description {
 			color: #<?php echo esc_attr( $multishop_text_color ); ?>;
@@ -101,8 +91,7 @@ function multishop_header_style() {
  * Styles the header image displayed on the Appearance > Header admin panel.
  */
 function multishop_admin_header_style() {
-	$multishop_header_image = get_header_image();
-?>
+	$multishop_header_image = get_header_image(); ?>
 	<style type="text/css" id="multishop-admin-header-css">
 	.appearance_page_custom-header #headimg {
 		border: none;
@@ -162,8 +151,7 @@ if ( ! function_exists( 'multishop_admin_header_image' ) ) :
 /*
  * Outputs markup to be displayed on the Appearance > Header admin panel.
  */
-function multishop_admin_header_image() {
-	?>
+function multishop_admin_header_image() { ?>
 	<div id="headimg" style="background: url(<?php header_image(); ?>) no-repeat scroll top; background-size: 750px auto;">
 		<?php $multishop_style = ' style="color:#' . get_header_textcolor() . ';"'; ?>
 		<div class="home-link">
@@ -173,5 +161,4 @@ function multishop_admin_header_image() {
 		</div>
 	</div>
 <?php }
-
-endif; // multishop_admin_header_image
+endif; // multishop_admin_header_image ?>

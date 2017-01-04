@@ -154,7 +154,7 @@
             } ?>
 
 <div class="multishop wrap">
-  <h2><?php _e(esc_html( get_admin_page_title() ), 'multishop'); ?></h2>
+  <h2><?php (esc_html( get_admin_page_title() )); ?></h2>
   <?php $plugin_table->prepare_items(); ?>
   <?php if ( isset( $this->message ) ) {
                     echo( wp_kses_post( $this->message ));
@@ -165,7 +165,7 @@
   </form>
 </div>
 <?php
-        }
+}
         /* Installs a plugin or activates a plugin depending on the hover */
         protected function do_plugin_install() {
             // All plugin information will be stored in an array for processing.

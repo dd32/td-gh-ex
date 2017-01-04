@@ -17,7 +17,7 @@ get_header(); ?>
     <div class="col-md-12">
       <article class="article-left multishop-found">
         <h1 class="page-title"><?php _e( 'Not Found', 'multishop' ); ?></h1>
-        <h2><?php _e( 'This is somewhat embarrassing, isn&rsquo;t it?', 'multishop' ); ?></h2>
+        <h2><?php _e( 'This is somewhat embarrassing, what do you think?', 'multishop' ); ?></h2>
         <p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'multishop' ); ?></p>
         <div>
           <?php get_search_form(); ?>
@@ -28,5 +28,4 @@ get_header(); ?>
 </section>
 <div class="clearfix"></div>
 <!--section end-->
-
 <?php get_footer(); ?>

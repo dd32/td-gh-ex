@@ -2,9 +2,7 @@
 /**
  * Single Post template file
 **/
-get_header(); 
-?>
-
+get_header(); ?>
 <div class="clearfix"> </div>
 <div class="col-md-12 site-title">
   <div class="multishop-container multishop-breadcrumb">
@@ -14,20 +12,16 @@ get_header();
     </ol>
   </div>
 </div>
-
 <div class="multishop-container row">
   <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="col-md-9 clearfix">
 		<?php while ( have_posts() ) : the_post(); 
 				get_template_part( 'content', get_post_format() ); 
 			  endwhile;
-			  
-			  comments_template( '', true );  
-		 
-			  multishop_pagination();  
-		 ?>
+			  comments_template( '', true );
+			  multishop_pagination(); ?>
     </div>
-    <?php  get_sidebar(); ?>
+    <?php get_sidebar(); ?>
   </div>
 </div>
 <?php get_footer(); ?>

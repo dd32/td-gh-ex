@@ -2,9 +2,7 @@
 /**
  * Search Page template file
 **/
-get_header(); 
-?>
-
+get_header(); ?>
 <div class="clearfix"></div>
 <div class="col-md-12 site-title clearfix">
   <div class="multishop-container multishop-breadcrumb">
@@ -14,23 +12,18 @@ get_header();
     </ol>
   </div>
 </div>
-
 <div class="multishop-container row">
   <div class="col-md-9">
 	 <?php if ( have_posts() ) : 
-				while ( have_posts() ) : the_post(); 
+				while ( have_posts() ) : the_post();
 					get_template_part( 'content', get_post_format() );
-				endwhile;  
-		  else : ?>	  
+				endwhile;
+		  else : ?>
 		<div>
-			<?php echo	'<h3>' . __('Sorry, but nothing matched your search terms. Please try again with some different keywords.','impressive') . '</h3>';
+			<?php echo	'<h3>' . __('Sorry, but nothing matched your search terms. Please try again with some different keywords.','multishop') . '</h3>';
 			 get_search_form(); ?>
 		</div>	 
-	<?php endif; 
-	
-		  multishop_pagination();	
-     ?>
-     
+	<?php endif; multishop_pagination(); ?>
   </div>
   <?php  get_sidebar(); ?>
 </div>

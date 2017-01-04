@@ -2,7 +2,6 @@
 /**
  * The Template for displaying all single products.
  */
-
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 get_header( 'shop' ); ?>
 <div class="clearfix"></div>
@@ -21,16 +20,13 @@ get_header( 'shop' ); ?>
         <?php while ( have_posts() ) : the_post(); ?>
         <div class="col-md-5 no-padding-lr">
           <div class=" product-images"> <?php echo get_the_post_thumbnail( $post->ID, apply_filters( 'single_product_large_thumbnail_size', 'shop_single' ) ) ?> </div>
-          <?php
-					global $post, $product, $woocommerce;
+          <?php global $post, $product, $woocommerce;
 					$attachment_ids = $product->get_gallery_attachment_ids();
-					if ( $attachment_ids ) {  ?>
+					if ( $attachment_ids ) { ?>
           <div class="col-md-12 no-padding-lr clearfix"> <a class="product-small progallery">
-            <?php
-						$loop = 0;
+            <?php $loop = 0;
 						$columns = apply_filters( 'woocommerce_product_thumbnails_columns', 3 );
-						foreach ( $attachment_ids as $attachment_id ) 
-						{
+						foreach ( $attachment_ids as $attachment_id ) {
 							$classes = array( 'zoom' );
 							if ( $loop == 0 || $loop % $columns == 0 )
 								$classes[] = 'first';
@@ -47,7 +43,7 @@ get_header( 'shop' ); ?>
 							$loop++;
 						 } ?>
             </a> </div>
-          <?php }?>
+          <?php } ?>
         </div>
         <div class="col-md-7">
           <div class="product-details">
@@ -64,22 +60,17 @@ get_header( 'shop' ); ?>
             <?php
 							// Availability
 							$availability = $product->get_availability();
-
 							if ( $availability['availability'] )
 							echo apply_filters( 'woocommerce_stock_html', '<p class="stock ' . esc_attr( $availability['class'] ) . '">' . esc_html( $availability['availability'] ) . '</p>', $availability['availability'] );
 							else
-							echo "<p>".__('Out Stock','multishop')."</p>";
-							?>
-            <span><?php echo $product->get_price_html(); ?></span> </div>
+							echo "<p>".__('Out Stock','multishop')."</p>"; ?>
+            <span><?php echo $product->get_price_html(); ?></span></div>
           <div class="product-count">
-            <?php
-			if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
-			global $product;
-    	  ?>
+            <?php if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+              global $product; ?>
             <?php if ( ! $product->is_in_stock() ) : ?>
             <a href="<?php echo apply_filters( 'out_of_stock_add_to_cart_url', get_permalink( $product->id ) ); ?>" class="button"><?php echo apply_filters( 'out_of_stock_add_to_cart_text', __( 'Read More', 'multishop' ) ); ?></a>
-            <?php else : ?>
-            <?php
+            <?php else :
 								$link = array(
 									'url'   => '',
 									'label' => '',
@@ -109,8 +100,7 @@ get_header( 'shop' ); ?>
 						$link['label']  = apply_filters( 'not_purchasable_text', __( 'Read More', 'multishop' ) );
 					}break;
 				}
-				if ( $product->product_type == 'simple' ) {
-   			  ?>
+				if ( $product->product_type == 'simple' ) { ?>
             <form action="<?php echo esc_url( $product->add_to_cart_url() ); ?>" class="cart" method="post" enctype='multipart/form-data'>
               <?php woocommerce_quantity_input(); ?>
               <button type="submit" class="single-add-cart">
@@ -120,8 +110,7 @@ get_header( 'shop' ); ?>
             <?php } else {
 									echo apply_filters( 'woocommerce_loop_add_to_cart_link', sprintf('<a href="%s" rel="nofollow" data-product_id="%s" data-product_sku="%s" class="%s button product_type_%s">%s</a>', esc_url( $link['url'] ), esc_attr( $product->id ), esc_attr( $product->get_sku() ), esc_attr( $link['class'] ), esc_attr( $product->product_type ), esc_html( $link['label'] ) ), $product, $link );
 								}
-							?>
-            <?php endif; ?>
+                endif; ?>
           </div>
         </div>
         <?php endwhile; // end of the loop. ?>
@@ -136,16 +125,16 @@ get_header( 'shop' ); ?>
           <div class="resp-tabs-container">
             <div>
               <p>
-                <?php while ( have_posts() ) : the_post(); ?>
-                <?php the_content(); ?>
-                <?php endwhile;?>
+                <?php while ( have_posts() ) : the_post();
+                  the_content();
+                  endwhile; ?>
               </p>
             </div>
             <div>
               <?php if ( comments_open() ) { ?>
               <li><a href="#">
-                <?php _e('Reviews', 'multishop'); ?>
-                <?php echo comments_number(' (0)', ' (1)', ' (%)'); ?></a>
+                <?php _e('Reviews', 'multishop');
+                  echo comments_number(' (0)', ' (1)', ' (%)'); ?></a>
                 <section>
                   <?php comments_template(); ?>
                 </section>
@@ -156,11 +145,9 @@ get_header( 'shop' ); ?>
         </div>
       </div>
     </div>
-    <?php  get_sidebar(); ?>
+    <?php get_sidebar(); ?>
   </div>
   <div class="clearfix"></div>
 </section>
-<?php
-		do_action( 'woocommerce_after_main_content' );
-	?>
-<?php get_footer( 'shop' ); ?>
+<?php do_action( 'woocommerce_after_main_content' );
+  get_footer( 'shop' ); ?>

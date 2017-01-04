@@ -5,9 +5,9 @@ Multishop Theme by FasterThemes http://fasterthemes.com/
 Multishop is a twitter bootstrap based responsive theme mainly designed for WooCommerce based e-commerce websites. But this can be used for developing business or personal websites as well as it contains all the features which a standard WordPress theme should have. As Multishop theme is built on top of Twitter Bootstrap framework so your website will be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, theme-options etc in order to get it customized as per your need. Pro version of this theme is also available which has several awesome options like Color options, Font Options , Google Analytics inbuilt code panel, Slider options, more speed optimized code for faster loading and a lot more options to worth having them.
 
 === Tags ===
-left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments , translation-ready
+left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, sticky-post, theme-options, threaded-comments , translation-ready
 
-Version: 1.2
+Version: 1.3
 
 == License ==
 License: GNU General Public License v3 or later
@@ -89,10 +89,10 @@ http://pixabay.com/en/beauty-woman-flowered-hat-cap-354565/  - Public Domain CC0
 http://pixabay.com/en/sunglasses-glasses-fashion-style-384567/  - Public Domain CC0 License
 http://pixabay.com/en/neckties-cravats-ties-fashion-210347/  - Public Domain CC0 License
 http://pixabay.com/en/car-fashion-hand-style-watch-407165/  - Public Domain CC0 License
-http://pixabay.com/en/display-dummy-women-dresses-business-275886/  - Public Domain CC0 License
-http://pixabay.com/en/bag-leather-handbags-shopping-21068/  - Public Domain CC0 License
-http://pixabay.com/en/pants-shop-store-hanger-bearing-268653/  - Public Domain CC0 License
-http://pixabay.com/en/shirts-exhibition-shop-shopping-428598/  - Public Domain CC0 License
+https://pixabay.com/en/jeans-pants-clothing-blue-564089/  - Public Domain CC0 License
+https://pixabay.com/en/jeans-ripped-jeans-legs-dummy-shop-1725615/  - Public Domain CC0 License
+https://pixabay.com/en/person-jeans-fashion-style-shirt-1148941/  - Public Domain CC0 License
+https://pixabay.com/en/feet-legs-standing-waiting-crossed-349687/  - Public Domain CC0 License
 
 Icons - http://www.fasterthemes.com
 License: General Public License (GPL)

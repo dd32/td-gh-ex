@@ -3,8 +3,7 @@
 * Template Name:Home Page
 */
 get_header();
-$multishop_options = get_option( 'multishop_theme_options' );
-?>
+$multishop_options = get_option( 'multishop_theme_options' ); ?>
 <div class="clearfix"></div>
   <!-- HOME BANNER -->
  <div class="multishop-home-banner">
@@ -17,7 +16,6 @@ $multishop_options = get_option( 'multishop_theme_options' );
   </div>
   </div>  
   <!-- END HOME BANNER -->
-  
 <section>
   <div class="container multishop-container">
     <div class="row multishop-home-section">
@@ -32,12 +30,12 @@ $multishop_options = get_option( 'multishop_theme_options' );
               <div class="WhiteRounded">
                 <h2>
                   <?php if(!empty($multishop_options['text-section-1'])) { ?>
-                  <?php echo esc_attr($multishop_options['text-section-1']);?>
+                  <?php echo esc_attr($multishop_options['text-section-1']); ?>
                   <?php } ?>
                 </h2>
                 <p>
                   <?php if(!empty($multishop_options['discount-section-1'])) { ?>
-                  <?php echo esc_attr($multishop_options['discount-section-1']);?>
+                  <?php echo esc_attr($multishop_options['discount-section-1']); ?>
                   <?php } ?>
                 </p>
               </div>
@@ -61,7 +59,7 @@ $multishop_options = get_option( 'multishop_theme_options' );
                 </h2>
                 <p>
                   <?php if(!empty($multishop_options['discount-section-2'])) { ?>
-                  <?php echo esc_attr($multishop_options['discount-section-2']);?>
+                  <?php echo esc_attr($multishop_options['discount-section-2']); ?>
                   <?php } ?>
                 </p>
               </div>
@@ -94,7 +92,6 @@ $multishop_options = get_option( 'multishop_theme_options' );
         </div>
       </div>
     </div>
-
     <?php    
     if (is_plugin_active('woocommerce/woocommerce.php')) {
     ?>
@@ -105,8 +102,7 @@ $multishop_options = get_option( 'multishop_theme_options' );
       <div class="col-md-12 next-prev-button"> <span id="prev2" class="prev black-box prev3"></span> <span id="next2" class="next black-box next3"></span> </div>
       <div class="clearfix"></div>
       <div class="inner-row" id="top-product">
-        <?php
-					  $args = array(
+        <?php $args = array(
 							'post_type' => 'product',
 							'stock' => 1,
 							'posts_per_page' => 9,
@@ -124,22 +120,16 @@ $multishop_options = get_option( 'multishop_theme_options' );
               <h5>
                 <?php esc_attr(the_title()); ?>
               </h5>
-              
               <div class="product-button"> <a id="id-<?php the_id(); ?>" href="<?php echo esc_url(get_permalink()); ?>" class="details-button"><?php _e('DETAILS','multishop') ?></a> <a href="<?php echo esc_url( $product->add_to_cart_url() ); ?>" class="addtocart-button"><?php _e('ADD TO CART','multishop'); ?></a> </div>
             </div>
           </div>
         </div>
-        <?php
-						endwhile; 
+        <?php endwhile;
 						wp_reset_query(); // Remember to reset
-						remove_filter( 'posts_clauses', array( $woocommerce->query, 'order_by_rating_post_clauses' ) );
-						?>
+						remove_filter( 'posts_clauses', array( $woocommerce->query, 'order_by_rating_post_clauses' ) ); ?>
       </div>
     </div>
-
-    <?php
-    }
-    ?>
+    <?php } ?>
   </div>
 </section>
 <?php get_footer(); ?>

@@ -3,7 +3,6 @@
  * multishop Breadcrumbs
 */
 function multishop_custom_breadcrumbs() {
-
   $multishop_showonhome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
   $multishop_delimiter = '/'; // multishop_delimiter between crumbs
   $multishop_home = __('Home','multishop'); // text for the 'Home' link
@@ -21,15 +20,10 @@ function multishop_custom_breadcrumbs() {
   } else {
 
    echo '<div id="crumbs" class="conter-text multishop-breadcrumb"><a href="'.$multishop_homelink.'">'.$multishop_home.'</a>'.$multishop_delimiter;
-   
-
     if ( is_category() ) {
       $multishop_thisCat = get_category(get_query_var('cat'), false);
       if ($multishop_thisCat->parent != 0) echo get_category_parents($multishop_thisCat->parent, TRUE, ' ' . $multishop_delimiter . ' ');      
       printf(__('%1$s Archive by category %2$s','multishop'),$multishop_before,$multishop_after);
-      
-      
-
     } elseif ( is_search() ) {
       
     printf(__('%1$s Search results for "%2$s" %3$s','multishop'),$multishop_before,get_search_query(),$multishop_after);     
@@ -64,7 +58,6 @@ function multishop_custom_breadcrumbs() {
 	if ( function_exists('is_post_type_archive') && is_post_type_archive() && get_post_type()) {
 	    $multishop_post_type = get_post_type_object(get_post_type());
 	    printf(__('%1$s %2$s %3$s','multishop'),$multishop_before, $multishop_post_type->labels->singular_name, $multishop_after);
-	    
 	}
 
     } elseif ( is_attachment() ) {
@@ -103,14 +96,11 @@ function multishop_custom_breadcrumbs() {
     } elseif ( is_404() ) {      
       printf(__('%1$s Error 404 %1$s','multishop'),$multishop_before,$multishop_after);
     }
-
     if ( get_query_var('paged') ) {
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
       echo __('Page','multishop') . ' ' . get_query_var('paged');
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
     }
-
     echo '</div>';
-
   }
-} // end multishop_custom_breadcrumbs()
+} // end multishop_custom_breadcrumbs() ?>

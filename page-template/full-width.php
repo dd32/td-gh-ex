@@ -2,8 +2,7 @@
 /**
  * Template Name: Full Width
 **/
-get_header();
-?>
+get_header(); ?>
 <div class="clearfix"></div>
 <div class="col-md-12 site-title">
   <div class="multishop-container multishop-breadcrumb">
@@ -13,7 +12,6 @@ get_header();
     </ol>
   </div>
 </div>
-
 <div class="multishop-container">
 	<div class="col-md-12">
 		<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
