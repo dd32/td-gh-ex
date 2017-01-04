@@ -203,9 +203,9 @@ if ( ! empty( $post->ID ) ) {
 		if ( $_thinkup_meta_layout == 'option2' ) {
 			echo '';
 		} else if ( $_thinkup_meta_layout == 'option3' ) {
-			wp_enqueue_style ( 'thinkup-sidebarleft' );
+			wp_enqueue_style ( 'sidebarleft' );
 		} else if ( $_thinkup_meta_layout == 'option4' ) {
-			wp_enqueue_style ( 'thinkup-sidebarright' );
+			wp_enqueue_style ( 'sidebarright' );
 		}
 	}
 }
