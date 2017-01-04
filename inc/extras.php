@@ -24,7 +24,7 @@ function arouse_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
-	$display_slider = get_theme_mod( 'display_slider', true );
+	$display_slider = get_theme_mod( 'display_slider', false );
 	if ( $display_slider == true && is_home() && ! is_paged() ) { $classes[] = 'slider-active'; }
 	
 	if ( $display_slider == true && is_page_template( 'template-slider.php' ) ) { $classes[] = 'slider-active'; }

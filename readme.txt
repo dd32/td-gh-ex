@@ -3,7 +3,7 @@
 Tags: grid-layout,right-sidebar,two-columns,custom-logo,custom-background,custom-menu,editor-style,featured-images,footer-widgets,full-width-template,theme-options,threaded-comments,translation-ready,news,blog,entertainment
 Requires at least: 4.0
 Tested up to: 4.7
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -71,6 +71,11 @@ Arouse supports woocommerce plugin.
 = 1.0.6 - Jan 1 2017 =
 * Fixed some styling issues in 404.php file.
 
+= 1.0.7 - Jan 4 2017 =
+* Changed screenshot.
+* Updated Image licenses.
+* Fixed a small issue in extras.php 
+
 
 == Credits ==
 
@@ -107,13 +112,13 @@ Images used in the screenshot.png
 Image 1 : https://pixabay.com/en/fashion-glasses-go-pro-female-1478810/
 License : Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
 
-Image 2 : https://pixabay.com/en/woman-fashion-female-young-1245922/
+Image 2 : https://pixabay.com/en/engagement-couple-romance-bike-1718244/
 License : Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
 
-Image 3 : https://pixabay.com/en/cream-puff-pastries-bake-1694337/
+Image 3 : https://pixabay.com/en/food-restaurant-menu-asia-dinner-1050813/
 License : Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
 
-Image 4 : https://pixabay.com/en/music-headphones-listening-head-791631/
+Image 4 : https://pixabay.com/en/leisure-man-muscles-pool-swimming-1869744/
 License : Distributed under the terms of the CC0 License (https://creativecommons.org/publicdomain/zero/1.0/)
 
 All other resources and theme elements are licensed under the [GNU GPL](http://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 or later.
