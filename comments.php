@@ -62,23 +62,23 @@
 			'comment_notes_after' => '',
 			'comment_field' =>  
 				'<p class="comment-form-comment">' .
-				'<label for="comment">' . __( 'Comment', 'lan-thinkupthemes' ) . '</label>' .
+				'<label for="comment">Comment</label>' .
 				'<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true">' .
 				'</textarea></p>',
 			'fields' => apply_filters( 'comment_form_default_fields', array (
 				'author' =>
 					'<p class="comment-form-author one_third">' .
-					'<label for="author">' . __( 'Name', 'lan-thinkupthemes' ) . ' <span class="required">*</span></label>' .
+					'<label for="author">Name <span class="required">*</span></label>' .
 					'<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
 					'" size="30"' . $aria_req . ' /></p>',
 				'email' =>
 					'<p class="comment-form-email one_third">' .
-					'<label for="email">' . __( 'Email', 'lan-thinkupthemes' ) . ' <span class="required">*</span></label>' .
+					'<label for="email">Email <span class="required">*</span></label>' .
 					'<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
 					'" size="30"' . $aria_req . ' /></p>',
 				'url' =>
 					'<p class="comment-form-url one_third last">' .
-					'<label for="url">' . __( 'Website', 'lan-thinkupthemes' ) . '</label>' .
+					'<label for="url">Website</label>' .
 					'<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
 					'" size="30" /></p>'
 			) ),

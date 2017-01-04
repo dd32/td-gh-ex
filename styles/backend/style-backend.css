@@ -23,8 +23,7 @@
 	HIDE REDUX PROMOTIONAL MESSAGE
 ---------------------------------------------------- */
 
-[id*="redux_blast_"].redux-notice,
-.is-dismissible.redux-notice {
+[id*="redux_blast_"].redux-notice {
 	display: none !important;
 }
 
