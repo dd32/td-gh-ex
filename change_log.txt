@@ -99,3 +99,6 @@ Version 2.2.3 (20th Aug 2015)
 
 Version 2.3 (19th March 2016)
     i) Fixed Small Bugs
+
+Version 2.4 (04th Jan 2017)
+    i) Fixed Small Bugs

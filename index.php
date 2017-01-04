@@ -20,8 +20,7 @@ get_header(); ?>
       <section class="post_content clearfix" itemprop="articleBody">
         <?php the_content(); ?>
       </section>
-      <!-- end article section --> 
-      
+      <!-- end article section -->
     </article>
     <!-- end article -->
     <?php endwhile; ?>
@@ -42,9 +41,7 @@ get_header(); ?>
     <?php endif; ?>
   </div>
   <!-- end #main -->
-  
   <?php  get_sidebar(); // sidebar 1 ?>
 </div>
 <!-- end #content -->
-<?php get_footer();
-?>
+<?php get_footer(); ?>

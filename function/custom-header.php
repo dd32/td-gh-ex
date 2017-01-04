@@ -1,8 +1,6 @@
 <?php
 /**
  * Implemention of Custom Header 
- */
-/**
  * Set up the WordPress core custom header settings.
  *
  */
@@ -44,13 +42,11 @@ function mywiki_header_style() {
 	// If no custom color for text is set, let's bail.
 	if ( display_header_text() && $mywiki_text_color === get_theme_support( 'custom-header', 'default-text-color' ) )
 		return;
-	// If we get this far, we have custom styles.
-	?>
+	// If we get this far, we have custom styles. ?>
 	<style type="text/css" id="mywiki-header-css">
 	<?php
 		// Has the text been hidden?
-		if ( ! display_header_text() ) :
-	?>
+		if ( ! display_header_text() ) : ?>
 		.site-title,
 		.site-description {
 			clip: rect(1px 1px 1px 1px); /* IE7 */
@@ -59,15 +55,13 @@ function mywiki_header_style() {
 		}
 	<?php
 		// If the user has set a custom color for the text, use that.
-		elseif ( $mywiki_text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) :
-	?>
+		elseif ( $mywiki_text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) : ?>
 		.site-title a {
 			color: #<?php echo esc_attr( $mywiki_text_color ); ?>;
 		}
 	<?php endif; ?>
 	</style>
-	<?php
-}
+	<?php }
 endif; // mywiki_header_style
 if ( ! function_exists( 'mywiki_admin_header_style' ) ) :
 /**
@@ -75,8 +69,7 @@ if ( ! function_exists( 'mywiki_admin_header_style' ) ) :
  *
  * @see mywiki_custom_header_setup()
  */
-function mywiki_admin_header_style() {
-?>
+function mywiki_admin_header_style() { ?>
 	<style type="text/css" id="mywiki-admin-header-css">
 	.appearance_page_custom-header #headimg {
 		background-color: #000;
@@ -107,8 +100,7 @@ if ( ! function_exists( 'mywiki_admin_header_image' ) ) :
  *
  * @see mywiki_custom_header_setup()
  */
-function mywiki_admin_header_image() {
-?>
+function mywiki_admin_header_image() { ?>
 	<div id="headimg">
 		<?php if ( get_header_image() ) : ?>
 		<img src="<?php header_image(); ?>" alt="">
@@ -117,4 +109,4 @@ function mywiki_admin_header_image() {
 	</div>
 <?php
 }
-endif; // mywiki_admin_header_image
+endif; // mywiki_admin_header_image ?>

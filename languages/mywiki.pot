@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: MyWiki\n"
-"POT-Creation-Date: 2016-03-19 13:14+0530\n"
+"POT-Creation-Date: 2017-01-04 17:59+0530\n"
 "PO-Revision-Date: 2014-12-05 12:04+0530\n"
 "Last-Translator: FasterThemes <support@fasterthemes.com>\n"
 "Language-Team: FasterThemes <support@fasterthemes.com>\n"
@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -19,41 +19,41 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: 404.php:11
+#: 404.php:7
 msgid "Epic 404 - Article Not Found"
 msgstr ""
 
-#: 404.php:12
+#: 404.php:8
 msgid "This is embarassing. We can't find what you were looking for."
 msgstr ""
 
-#: 404.php:20
+#: 404.php:12
 msgid ""
 "Whatever you were looking for was not found, but maybe try looking again or "
 "search using the form below."
 msgstr ""
 
-#: archive.php:10
+#: archive.php:9
 msgid "Archives"
 msgstr ""
 
-#: attachment.php:14
+#: attachment.php:8
 msgid "Posted"
 msgstr ""
 
-#: attachment.php:14
+#: attachment.php:8
 msgid "by"
 msgstr ""
 
-#: attachment.php:14
+#: attachment.php:8
 msgid "filed under"
 msgstr ""
 
-#: attachment.php:44 index.php:32
+#: attachment.php:27 index.php:31
 msgid "Not Found"
 msgstr ""
 
-#: attachment.php:47 index.php:37
+#: attachment.php:30 index.php:36
 msgid "Sorry, but the requested resource was not found on this site."
 msgstr ""
 
@@ -65,30 +65,30 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: comments.php:20
+#: comments.php:16
 #, php-format
 msgid "One thought on - %2$s"
 msgid_plural "%1$s thoughts on - %2$s"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:31
+#: comments.php:24
 msgid "LEAVE A COMMENT"
 msgstr ""
 
-#: comments.php:32
+#: comments.php:25
 msgid "Submit Comment"
 msgstr ""
 
-#: comments.php:36
+#: comments.php:29
 msgid "Your Name"
 msgstr ""
 
-#: comments.php:40
+#: comments.php:33
 msgid "E-Mail"
 msgstr ""
 
-#: comments.php:44
+#: comments.php:37
 msgid "Comment"
 msgstr ""
 
@@ -96,154 +96,154 @@ msgstr ""
 msgid "Follow Us :"
 msgstr ""
 
-#: footer.php:38
+#: footer.php:37
 #, php-format
-msgid "Powered by %1$s and My%2$s."
+msgid "Powered by %1$s."
 msgstr ""
 
-#: functions.php:67
+#: functions.php:63
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: functions.php:91
+#: functions.php:85
 #, php-format
 msgid "View all posts by %s"
 msgstr ""
 
-#: functions.php:95 functions.php:97
+#: functions.php:89 functions.php:91
 #, php-format
 msgid "Posted %3$s by %4$s & filed under %1$s Comments: "
 msgstr ""
 
-#: functions.php:99
+#: functions.php:93
 #, php-format
 msgid "Posted %3$s by %4$s Comments:"
 msgstr ""
 
-#: functions.php:123
+#: functions.php:117
 msgid "The Main Menu"
 msgstr ""
 
-#: functions.php:124
+#: functions.php:118
 msgid "Footer Links"
 msgstr ""
 
-#: functions.php:130
+#: functions.php:124
 msgid "Categories"
 msgstr ""
 
-#: functions.php:158 functions.php:159
+#: functions.php:151 functions.php:152
 msgid "Category Widget"
 msgstr ""
 
-#: functions.php:162
+#: functions.php:155
 msgid "Category Widget Shows Category"
 msgstr ""
 
-#: functions.php:175
+#: functions.php:167
 msgid "Displays most popular posts by comment count"
 msgstr ""
 
-#: functions.php:181
+#: functions.php:173
 msgid "Popular Posts"
 msgstr ""
 
-#: functions.php:230 functions.php:290
+#: functions.php:219 functions.php:274
 msgid "Title"
 msgstr ""
 
-#: functions.php:234 functions.php:294
+#: functions.php:223 functions.php:278
 msgid "Number of Posts"
 msgstr ""
 
-#: functions.php:238
+#: functions.php:227
 msgid "Posted in the past X days"
 msgstr ""
 
-#: functions.php:241
+#: functions.php:230
 msgid "Use 0 for no time limit."
 msgstr ""
 
-#: functions.php:249
+#: functions.php:237
 msgid "Displays most recent posts by post count"
 msgstr ""
 
-#: functions.php:255
+#: functions.php:243
 msgid "Recent Posts"
 msgstr ""
 
-#: functions.php:302
+#: functions.php:286
 msgid "Main Sidebar"
 msgstr ""
 
-#: functions.php:303
+#: functions.php:287
 msgid "Used on every page."
 msgstr ""
 
-#: functions.php:311
+#: functions.php:295
 msgid "Footer Content Area 1"
 msgstr ""
 
-#: functions.php:312 functions.php:321 functions.php:330
+#: functions.php:296 functions.php:305 functions.php:314
 msgid "Used on Footer."
 msgstr ""
 
-#: functions.php:320
+#: functions.php:304
 msgid "Footer Content Area 2"
 msgstr ""
 
-#: functions.php:329
+#: functions.php:313
 msgid "Footer Content Area 3"
 msgstr ""
 
-#: functions.php:349
+#: functions.php:332
 msgid "Home"
 msgstr ""
 
-#: functions.php:368
+#: functions.php:345
 msgid "Archive by category "
 msgstr ""
 
-#: functions.php:371
+#: functions.php:347
 msgid "Search results for "
 msgstr ""
 
-#: functions.php:429
+#: functions.php:396
 msgid "Posts tagged "
 msgstr ""
 
-#: functions.php:434
+#: functions.php:400
 msgid "Articles posted by "
 msgstr ""
 
-#: functions.php:437
+#: functions.php:403
 msgid "Error 404 "
 msgstr ""
 
-#: functions.php:507
+#: functions.php:468
 #, php-format
 msgid "%s says:"
 msgstr ""
 
-#: functions.php:512
+#: functions.php:473
 #, php-format
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: functions.php:515
+#: functions.php:476
 msgid "Edit"
 msgstr ""
 
-#: functions.php:543
+#: functions.php:501
 msgid "read more..."
 msgstr ""
 
-#: functions.php:543
+#: functions.php:501
 msgid "Read more"
 msgstr ""
 
-#: header.php:69
+#: header.php:67
 msgid "Have a Question? Write here and press enter"
 msgstr ""
 
@@ -251,15 +251,15 @@ msgstr ""
 msgid "Tags"
 msgstr ""
 
-#: search.php:9
+#: search.php:8
 msgid "Search"
 msgstr ""
 
-#: tag.php:11
+#: tag.php:9
 msgid "Tag"
 msgstr ""
 
-#: template-wiki.php:12
+#: template-wiki.php:11
 msgid "Article Categories"
 msgstr ""
 
@@ -267,102 +267,102 @@ msgstr ""
 msgid "FasterThemes Options"
 msgstr ""
 
-#: theme-options/fasterthemes.php:31 theme-options/fasterthemes.php:58
+#: theme-options/fasterthemes.php:31 theme-options/fasterthemes.php:56
 msgid "Theme Options"
 msgstr ""
 
-#: theme-options/fasterthemes.php:60
+#: theme-options/fasterthemes.php:58
 msgid "Save Options"
 msgstr ""
 
-#: theme-options/fasterthemes.php:69
+#: theme-options/fasterthemes.php:67
 msgid "Basic Settings"
 msgstr ""
 
-#: theme-options/fasterthemes.php:70
+#: theme-options/fasterthemes.php:68
 msgid "Social Settings"
 msgstr ""
 
-#: theme-options/fasterthemes.php:71
+#: theme-options/fasterthemes.php:69
 msgid "PRO Theme Features"
 msgstr ""
 
-#: theme-options/fasterthemes.php:84
+#: theme-options/fasterthemes.php:81
 msgid "Site Logo"
 msgstr ""
 
-#: theme-options/fasterthemes.php:86
+#: theme-options/fasterthemes.php:83
 msgid ""
 "Size of logo should be exactly 117x43px for best results. Leave blank to use "
 "text heading."
 msgstr ""
 
-#: theme-options/fasterthemes.php:88 theme-options/fasterthemes.php:102
+#: theme-options/fasterthemes.php:85 theme-options/fasterthemes.php:98
 msgid "No file chosen"
 msgstr ""
 
-#: theme-options/fasterthemes.php:89 theme-options/fasterthemes.php:103
+#: theme-options/fasterthemes.php:86 theme-options/fasterthemes.php:99
 msgid "Upload"
 msgstr ""
 
-#: theme-options/fasterthemes.php:97
+#: theme-options/fasterthemes.php:94
 msgid "Favicon"
 msgstr ""
 
-#: theme-options/fasterthemes.php:99
+#: theme-options/fasterthemes.php:96
 msgid "Size of favicon should be exactly 32x32px for best results."
 msgstr ""
 
-#: theme-options/fasterthemes.php:112 theme-options/fasterthemes.php:116
+#: theme-options/fasterthemes.php:107 theme-options/fasterthemes.php:111
 msgid "Copyright Text"
 msgstr ""
 
-#: theme-options/fasterthemes.php:115
+#: theme-options/fasterthemes.php:110
 msgid ""
 "Some text regarding copyright of your site, you would like to display in the "
 "footer."
 msgstr ""
 
-#: theme-options/fasterthemes.php:124
+#: theme-options/fasterthemes.php:119
 msgid "Facebook"
 msgstr ""
 
-#: theme-options/fasterthemes.php:127
+#: theme-options/fasterthemes.php:122
 msgid "Facebook profile or page URL i.e."
 msgstr ""
 
-#: theme-options/fasterthemes.php:133
+#: theme-options/fasterthemes.php:128
 msgid "Twitter"
 msgstr ""
 
-#: theme-options/fasterthemes.php:136
+#: theme-options/fasterthemes.php:131
 msgid "Twitter profile or page URL i.e."
 msgstr ""
 
-#: theme-options/fasterthemes.php:142
+#: theme-options/fasterthemes.php:137
 msgid "Google Plus"
 msgstr ""
 
-#: theme-options/fasterthemes.php:145
+#: theme-options/fasterthemes.php:140
 msgid "Google Plus profile or page URL i.e."
 msgstr ""
 
-#: theme-options/fasterthemes.php:152
+#: theme-options/fasterthemes.php:146
 msgid "Linkedin"
 msgstr ""
 
-#: theme-options/fasterthemes.php:155
+#: theme-options/fasterthemes.php:149
 msgid "Linkedin profile or page URL i.e."
 msgstr ""
 
-#: theme-options/fasterthemes.php:175
+#: theme-options/fasterthemes.php:169
 msgid "fasterthemes.com"
 msgstr ""
 
-#: theme-options/fasterthemes.php:178
+#: theme-options/fasterthemes.php:172
 msgid "Save options"
 msgstr ""
 
-#: theme-options/fasterthemes.php:183
+#: theme-options/fasterthemes.php:177
 msgid "Options saved successfully."
 msgstr ""

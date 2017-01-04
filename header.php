@@ -27,9 +27,7 @@ $mywiki_options = get_option( 'faster_theme_options' );
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
               <a class="navbar-brand logo" id="logo" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php if(!empty($mywiki_options['logo'])) { echo '<img src='.esc_url($mywiki_options['logo']).'  height="101" width="250" alt="logo" />'; } else { echo'<p><span class="header-text">'.bloginfo("name").'</span></p>'; } ?></a>
             </div>
-            
-            <!-- end .navbar-header --> 
-            
+            <!-- end .navbar-header -->
           </nav>
         </div>
         <div class="navbar-collapse collapse top-menu">
@@ -51,11 +49,11 @@ $mywiki_options = get_option( 'faster_theme_options' );
 					'depth'           => 0,
 					'walker'          => ''
 					);
-			wp_nav_menu( $mywiki_defaults );?>
+			wp_nav_menu( $mywiki_defaults ); ?>
         </div>
-        <!-- end .nav-container --> 
+        <!-- end .nav-container -->
       </div>
-      <!-- end #navcont --> 
+      <!-- end #navcont -->
     </div>
     <!-- end .navbar --> 
   </div>

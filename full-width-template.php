@@ -14,12 +14,10 @@ get_header()?>
           <?php if (function_exists('mywiki_custom_breadcrumbs')) mywiki_custom_breadcrumbs(); ?>
       </header>
       <!-- end article header -->
-      
       <section class="post_content clearfix" itemprop="articleBody">
         <?php the_content(); ?>
       </section>
       <!-- end article section -->
-      
     </article>
     <!-- end article -->
     <?php endwhile; ?>

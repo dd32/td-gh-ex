@@ -4,8 +4,8 @@ Theme URI: http://fasterthemes.com/wordpress-themes/mywiki
 Description: MyWiki is simple, lightweight and faster WordPress Theme for individuals and companies to manage their Knowledgebase or Wiki or FAQs. It is a mobile responsive theme based on Twitter bootstrap framework. It's a translation ready theme and is available in English as well as Spanish languages.
 Author: FasterThemes
 Author URI: http://fasterthemes.com/
-Tags: responsive-layout, custom-background, custom-menu, full-width-template, theme-options, right-sidebar, featured-images, post-formats, sticky-post, editor-style , translation-ready
-version: 2.3
+Tags: custom-background, custom-menu, full-width-template, theme-options, right-sidebar, featured-images, post-formats, sticky-post, editor-style , translation-ready
+version: 2.4
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: mywiki
@@ -21,7 +21,7 @@ Responsive design(Bootstrap), Theme Options, Custom Widgets, Custom Menu, suppor
 
 == Tags ==
 
-Social link and ajax search functionality theme.
+custom-background, custom-menu, full-width-template, theme-options, right-sidebar, featured-images, post-formats, sticky-post, editor-style , translation-ready
 
 == Installation ==
 

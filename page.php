@@ -1,4 +1,4 @@
-<?php get_header()?>
+<?php get_header() ?>
 <div id="content" class="clearfix">
   <div id="main" class="col-sm-8 clearfix" role="main">
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -10,12 +10,10 @@
           <?php if (function_exists('mywiki_custom_breadcrumbs')) mywiki_custom_breadcrumbs(); ?>
       </header>
       <!-- end article header -->
-      
       <section class="post_content clearfix" itemprop="articleBody">
         <?php the_content(); ?>
       </section>
       <!-- end article section -->
-      
     </article>
     <!-- end article -->
     <?php endwhile; ?>
@@ -23,7 +21,6 @@
     <?php comments_template( '', true ); ?>
   </div>
   <!-- end #main -->
-  
   <?php  get_sidebar(); // sidebar 1 ?>
 </div>
 <!-- end #content -->

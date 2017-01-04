@@ -49,13 +49,11 @@ function mywiki_framework_page(){
 	<form method="post" action="options.php" id="form-option" class="theme_option_ft">
   <div class="fasterthemes-header">
     <div class="logo">
-       <?php
-		$mywiki_image=get_template_directory_uri().'/theme-options/images/logo.png';
-		echo "<a href='http://fasterthemes.com' target='_blank'><img src='".$mywiki_image."' alt='FasterThemes' /></a>";
-		?>
+       <?php $mywiki_image=get_template_directory_uri().'/theme-options/images/logo.png';
+		echo "<a href='http://fasterthemes.com' target='_blank'><img src='".$mywiki_image."' alt='FasterThemes' /></a>"; ?>
     </div>
     <div class="header-right">
-			<h1><?php _e('Theme Options','mywiki');?></h1>
+			<h1><?php _e('Theme Options','mywiki'); ?></h1>
 			<div class='btn-save'>
 				<input type='submit' class='button-primary' value='<?php _e('Save Options','mywiki') ?>' />
 			</div>
@@ -74,19 +72,18 @@ function mywiki_framework_page(){
       </div>
       <div class="right-box-bg"></div>
       <div class="postbox left-box"> 
-        <!--======================== F I N A L - - T H E M E - - O P T I O N ===================-->
+        <!-- F I N A L - - T H E M E - - O P T I O N -->
           <?php settings_fields( 'mywiki_options' );  
 		$mywiki_options = get_option( 'faster_theme_options' ); ?>
-     
           <!-- First group -->
           <div id="options-group-1" class="group faster-inner-tabs">
           	<div class="section theme-tabs theme-logo">
             <a class="heading faster-inner-tab active" href="javascript:void(0)"><?php _e('Site Logo','mywiki'); ?></a>
             <div class="faster-inner-tab-group active">
-            	<div class="explain"><?php _e('Size of logo should be exactly 117x43px for best results. Leave blank to use text heading.', 'mywiki') ?></div>
+            	<div class="explain"><?php _e('Size of logo should be exactly 117x43px for best results. Leave blank to use text heading.', 'mywiki'); ?></div>
               	<div class="ft-control">
-                <input id="logo-img" class="upload" type="text" name="faster_theme_options[logo]" value="<?php if(!empty($mywiki_options['logo'])) { echo esc_url($mywiki_options['logo']); } ?>" placeholder="<?php _e('No file chosen', 'mywiki') ?>" />
-                <input id="upload_image_button1" class="upload-button button" type="button" value="<?php _e('Upload','mywiki') ?>" />
+                <input id="logo-img" class="upload" type="text" name="faster_theme_options[logo]" value="<?php if(!empty($mywiki_options['logo'])) { echo esc_url($mywiki_options['logo']); } ?>" placeholder="<?php _e('No file chosen', 'mywiki'); ?>" />
+                <input id="upload_image_button1" class="upload-button button" type="button" value="<?php _e('Upload','mywiki'); ?>" />
                 <div class="screenshot" id="logo-image">
                   <?php if(!empty($mywiki_options['logo'])) { echo "<img src='".esc_url($mywiki_options['logo'])."' /><a class='remove-image'>Remove</a>"; } ?>
                 </div>
@@ -98,14 +95,12 @@ function mywiki_framework_page(){
               <div class="faster-inner-tab-group">
               	<div class="explain"><?php _e('Size of favicon should be exactly 32x32px for best results.','mywiki'); ?></div>
                 <div class="ft-control">
-                  <input id="favicon-img" class="upload" type="text" name="faster_theme_options[favicon]" 
-                            value="<?php if(!empty($mywiki_options['favicon'])) { echo esc_url($mywiki_options['favicon']); } ?>" placeholder="<?php _e('No file chosen', 'mywiki') ?>" />
-                  <input id="upload_image_button11" class="upload-button button" type="button" value="<?php _e('Upload','mywiki') ?>" />
+                  <input id="favicon-img" class="upload" type="text" name="faster_theme_options[favicon]" value="<?php if(!empty($mywiki_options['favicon'])) { echo esc_url($mywiki_options['favicon']); } ?>" placeholder="<?php _e('No file chosen', 'mywiki') ?>" />
+                  <input id="upload_image_button11" class="upload-button button" type="button" value="<?php _e('Upload','mywiki'); ?>" />
                   <div class="screenshot" id="favicon-image">
                     <?php  if(!empty($mywiki_options['favicon'])) { echo "<img src='".esc_url($mywiki_options['favicon'])."' /><a class='remove-image'>Remove</a>"; } ?>
                   </div>
                 </div>
-                
               </div>
             </div>
             <div id="section-footertext2" class="section theme-tabs">
@@ -147,12 +142,11 @@ function mywiki_framework_page(){
                 </div>                
               </div>
             </div>
-            
             <div id="section-linkedin" class="section theme-tabs">
             	<a class="heading faster-inner-tab" href="javascript:void(0)"><?php _e('Linkedin','mywiki'); ?></a>
               <div class="faster-inner-tab-group">
               	<div class="ft-control">
-              		<div class="explain"><?php _e('Linkedin profile or page URL i.e.','mywiki'); ?> https://www.linkedin.com/username/</div>                
+              		<div class="explain"><?php _e('Linkedin profile or page URL i.e.','mywiki'); ?> https://www.linkedin.com/username/</div>
                   	<input id="pintrest" class="of-input" name="faster_theme_options[linkedin]" type="text" size="30" value="<?php if(!empty($mywiki_options['linkedin'])) { echo esc_url($mywiki_options['linkedin']); } ?>" />
                 </div>                
               </div>
@@ -172,7 +166,7 @@ function mywiki_framework_page(){
 	</div>
 	<div class="fasterthemes-footer">
       	<ul>
-        	<li>&copy; <a href="http://fasterthemes.com" target="_blank"><?php _e('fasterthemes.com','mywiki') ?></a></li>
+        	<li>&copy; <a href="http://fasterthemes.com" target="_blank"><?php _e('fasterthemes.com','mywiki'); ?></a></li>
             <li><a href="https://www.facebook.com/faster.themes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/fb.png"/> </a></li>
             <li><a href="https://twitter.com/FasterThemes" target="_blank"> <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/tw.png"/> </a></li>
             <li class="btn-save"><input type="submit" class="button-primary" value="<?php _e('Save options', 'mywiki') ?>" /></li>

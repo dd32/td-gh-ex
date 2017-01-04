@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-
 <div id="content" class="clearfix">
   <div id="main" class="col-sm-8 clearfix" role="main">
     <div id="home-main" class="home-main home mywiki-post">
@@ -32,33 +31,29 @@
                </div> 
               </header>
               <!-- end article header -->
-              
               <section class="post_content">
-                <?php the_content(); ?>
-                <?php if(wp_get_attachment_url( get_post_thumbnail_id($post->ID) )!= ''){ ?>
+                <?php the_content();
+                if(wp_get_attachment_url( get_post_thumbnail_id($post->ID) )!= ''){ ?>
                 <figure class="single_cat_image"> <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>" /> </figure>
-                <?php } ?>
-                <?php wp_link_pages(); ?>
+                <?php }
+                wp_link_pages(); ?>
               </section>
-              <!-- end article section --> 
-              
+              <!-- end article section -->
             </article>
         </header>
       </article>
       <!-- end article -->
-      <?php endwhile; ?>
-      <?php endif; ?>
-       <nav class="mywiki-nav">
-                <span class="mywiki-nav-previous"><?php previous_post_link( '%link', '<span>'.'<< </span> %title' ); ?></span>
-                <span class="mywiki-nav-next"><?php next_post_link( '%link', '%title <span>'.'>> </span>' ); ?></span>
-		</nav>
+      <?php endwhile;
+      endif; ?>
+      <nav class="mywiki-nav">
+          <span class="mywiki-nav-previous"><?php previous_post_link( '%link', '<span>'.'<< </span> %title' ); ?></span>
+          <span class="mywiki-nav-next"><?php next_post_link( '%link', '%title <span>'.'>> </span>' ); ?></span>
+		  </nav>
     </div>
 	<?php comments_template( '', true ); ?>
   </div>
   <!-- end #main -->
-  
   <?php get_sidebar(); // sidebar 1 ?>
 </div>
 <!-- end #content -->
-
 <?php get_footer(); ?>

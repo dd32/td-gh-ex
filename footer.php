@@ -9,11 +9,11 @@
          </div>
          <div class="col-md-4">
 		  <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer2') ) : ?>
-          <?php endif; ?>
+        <?php endif; ?>
 		</div>
         <div class="col-md-4">
 		  <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer3') ) : ?>
-          <?php endif; ?>
+        <?php endif; ?>
 		</div>
     </div>
         <nav class="footer-menu-nav">
@@ -32,16 +32,13 @@
         </ul>
     </nav>
     <p class="attribution">
-	<?php 
-		if(!empty($mywiki_options['footertext']))
-			echo esc_attr($mywiki_options['footertext']).' ';
-		printf( __( 'Powered by %1$s and My%2$s.', 'mywiki' ), '<a href="http://wordpress.org" target="_blank">WordPress</a>', '<a href="http://fasterthemes.com/wordpress-themes/mywiki" target="_blank">Wiki WordPress Theme</a>' );
-	?> 
+	<?php if(!empty($mywiki_options['footertext']))
+    echo esc_attr($mywiki_options['footertext']).' ';
+    printf( __( 'Powered by %1$s.', 'mywiki' ),'<a href="http://fasterthemes.com/wordpress-themes/mywiki" target="_blank">Wiki WordPress Theme</a>' ); ?>
 </footer>
     </p>
   </div>
-  <!-- end #inner-footer --> 
- 
+  <!-- end #inner-footer -->
 <!-- end footer -->
 <!-- end #maincont .container --> 
 <?php wp_footer(); // js scripts are inserted using this function ?>
