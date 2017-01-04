@@ -4,10 +4,12 @@ Theme URI: http://fasterthemes.com/wordpress-themes/Laurels
 Author: FasterThemes
 Author URI: http://fasterthemes.com/
 Description: Laurels is a lightweight, faster, clean, super flexible and bootstrap based responsive theme for business or personal websites. Laurels Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, theme-options etc in order to get it customized as per your needs.
-Version: 1.1.1
+Version: 1.1.10
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments , translation-ready
+Laurels Theme, Copyright 2017 fasterthemes.com
+Laurels is distributed under the terms of the GNU GPL
+Tags: left-sidebar, right-sidebar, custom-background, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments , translation-ready
 Text Domain: laurels
 
 This theme, like WordPress, is licensed under the GPL.
@@ -33,6 +35,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 .breadcrumb.blog-breadcumb > a {
     color: #535353;
+    display: inline-block;
+    margin-right: 5px;
 }
 .breadcrumb.blog-breadcumb > a:hover {
     color: #12bbd5;
@@ -152,6 +156,9 @@ a {
 .carousel-inner .item > img {
     height: 390px !important;
     width: 100%;
+}
+.item img{
+    margin: 0 auto;
 }
 .center-block .row_img img{
     height: 189px;

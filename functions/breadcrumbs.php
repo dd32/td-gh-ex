@@ -6,7 +6,7 @@ function laurels_custom_breadcrumbs() {
 
   $laurels_showonhome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
   $laurels_delimiter = '/'; // laurels_delimiter between crumbs
-  $laurels_home = 'Home'; // text for the 'Home' link
+  $laurels_home = __('Home','laurels'); // text for the 'Home' link
   $laurels_showcurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
   $laurels_before = ' '; // tag before the current crumb
   $laurels_after = ' '; // tag after the current crumb
@@ -102,8 +102,6 @@ function laurels_custom_breadcrumbs() {
       echo __('Page','laurels') . ' ' . get_query_var('paged');
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
     }
-
     echo '</div>';
-
   }
-} // end laurels_custom_breadcrumbs()
+} // end laurels_custom_breadcrumbs() ?>

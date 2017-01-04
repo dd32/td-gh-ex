@@ -4,7 +4,6 @@
  */
 if ( ! function_exists( 'laurels_setup' ) ) :
 function laurels_setup() {
-	
 	global $content_width;
 	if ( ! isset( $content_width ) ) {
 		$content_width = 770;
@@ -12,27 +11,25 @@ function laurels_setup() {
 	/*
 	 * Make laurels theme available for translation.
 	 */
-	load_theme_textdomain( 'laurels' );
+	load_theme_textdomain( 'laurels', get_template_directory() . '/languages' );
 	// This theme styles the visual editor to resemble the theme style.
 	add_editor_style( array( 'css/editor-style.css', laurels_font_url() ) );
-	// Add RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
-	// This theme uses wp_nav_menu() in two locations.
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 672, 372, true );
 	add_image_size( 'laurels-full-width', 1038, 576, true );
 	add_image_size( 'laurels-home-thumbnail-image', 311, 186, true );
 	add_image_size( 'laurels-home-latestpost-thumbnails',130,80, true );
-
+	add_theme_support( "title-tag" );
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
 		'primary'   => __( 'Header Menu', 'laurels' ),
 	) );
 	/*
 	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
+	 * to output valid html5shiv.
 	 */
-	add_theme_support( 'html5', array(
+	add_theme_support( 'html5shiv', array(
 		'search-form', 'comment-form', 'comment-list',
 	) );
 	add_theme_support( 'custom-background', apply_filters( 'laurels_custom_background_args', array(
@@ -46,7 +43,6 @@ function laurels_setup() {
 	// This theme uses its own gallery styles.
 	add_filter( 'use_default_gallery_style', '__return_false' );
 }
-
 endif; // laurels_setup
 add_action( 'after_setup_theme', 'laurels_setup' );
 
@@ -135,8 +131,6 @@ function laurels_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'laurels_widgets_init' );
-
-
 add_filter( 'comment_form_default_fields', 'laurels_comment_placeholders' );
 /**
  * Change default fields, add placeholder and change type attributes.
@@ -156,7 +150,7 @@ function laurels_comment_placeholders( $fields )
             . _x(
                 'First Name',
                 'comment form placeholder',
-                'theme_text_domain'
+                'laurels'
                 )
             . '"',
         $fields['author']
@@ -167,7 +161,7 @@ function laurels_comment_placeholders( $fields )
             . _x(
                 'Email Id',
                 'comment form placeholder',
-                'theme_text_domain'
+                'laurels'
                 )
             . '"',
         $fields['email']
@@ -183,7 +177,7 @@ function laurels_textarea_insert( $fields )
             ''. _x(
                 'Comment',
                 'comment form placeholder',
-                'theme_text_domain'
+                'laurels'
                 )
             . ''. '</textarea>',
             $fields['comment_field']
@@ -191,15 +185,13 @@ function laurels_textarea_insert( $fields )
     return $fields;
 }
 
-
-/*
- * Enqueue scripts and styles for the front end.
- */
-function laurels_scripts() {
-	wp_enqueue_style( 'laurels-lato', laurels_font_url(), array(), null );
+// add ie conditional html5 shim to header
+function laurels_add_ie_html5_shim () {
+	echo '<!--[if lt IE 9]>';
+	echo '<script src="' . get_template_directory_uri() . '/js/html5shiv.js"></script>';
+	echo '<![endif]-->';
 }
-add_action( 'wp_enqueue_scripts', 'laurels_scripts' );	
-
+add_action('wp_head', 'laurels_add_ie_html5_shim'); 
 /*** Enqueue css and js files ***/
 require get_template_directory() . '/functions/enqueue-files.php';
 
@@ -216,4 +208,4 @@ require get_template_directory() . '/functions/breadcrumbs.php';
 require get_template_directory() . '/functions/recent-post-widget.php';
 
 /*** TGM ***/
-require get_template_directory() . '/functions/tgm-plugins.php';
+require get_template_directory() . '/functions/tgm-plugins.php'; ?>

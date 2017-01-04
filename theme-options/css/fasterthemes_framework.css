@@ -319,7 +319,7 @@
     width: auto;
 }
 .fasterthemes-pro-image img {
-	max-width:100%;
+	max-width:75%;
 	height:auto;
 }
 .fasterthemes-pro-header {
@@ -336,30 +336,6 @@ margin-bottom: 15px;
     float:right;
 	width:190px;
 	margin:0px 40px 0px 0px;
-}
-/* MailChimp Form Embed Code - Classic - 08/17/2011 */
-.newsletter {
-    clear: both;
-    display: table;
-    float: right;
-    margin-right: 15%;
-    width: 60%;
-}
-.newsletter h1 {
-	border-bottom: 1px solid;
-    color: rgb(53, 75, 88);
-    display: table;
-    padding-bottom: 5px;
-}
-.newsletter > p {
-    color: rgb(53, 75, 88);
-    font-size: 16px;
-}
-.newsletter a {
-    color: rgb(53, 75, 88);
-}
-.newsletter a:hover {
-    color: #212121;
 }
 .faster-inner-tabs h3 {
     border-bottom: 1px solid #ccc;
@@ -400,9 +376,6 @@ margin-bottom: 15px;
 	.left-box,
 	.fasterthemes-themes textarea{
 		width:95.5%;
-	}
-	#mc_embed_signup{
-		width:80%;
 	}
 	.right-box .nav-tab-wrapper ul li .nav-tab-active:after{
 		border:none;

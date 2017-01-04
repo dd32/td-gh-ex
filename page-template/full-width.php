@@ -17,8 +17,8 @@ get_header(); ?>
     <div class="container webpage-container">
     	<article class="blog-article">        
 	  <div id="post-<?php the_ID(); ?>" <?php post_class("col-md-12 col-sm-12 no-padding"); ?>> 
-      <?php while ( have_posts() ) : the_post(); ?>
-      <?php $laurels_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>
+      <?php while ( have_posts() ) : the_post();
+        $laurels_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>
                 <div class="blog">                
                     <?php if(!empty($laurels_image)) { ?>
 						<div class="blog-rightsidebar-img">
@@ -38,16 +38,16 @@ get_header(); ?>
                         </div>
                         <div class="blog-content">
                             <?php the_content(); 
-									wp_link_pages( array(
-										'before' => '<div class="page-links">' . __( 'Pages:', 'laurels' ),
-										'after' => '</div>',
-									) ); ?>
+								wp_link_pages( array(
+									'before' => '<div class="page-links">' . __( 'Pages:', 'laurels' ),
+									'after' => '</div>',
+								) ); ?>
                         </div>
                     </div>
                 </div> 
           <?php endwhile; ?>       
                 <div class="comments">
-					 <?php  comments_template( '', true ); ?>
+					<?php  comments_template( '', true ); ?>
                 </div>              
             </div>    
     	</article>

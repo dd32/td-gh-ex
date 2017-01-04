@@ -1,6 +1,5 @@
 <?php
 require get_template_directory() . '/functions/class-tgm-plugin-activation.php';
-
 add_action( 'laurels_register', 'laurels_theme_register_plugins' );
 /* Register the required plugins for this theme. */
 function laurels_theme_register_plugins() {
@@ -8,7 +7,7 @@ function laurels_theme_register_plugins() {
     $laurels_plugins = array(
         // This is an example of how to include a plugin from the WordPress Plugin Repository.
          array(
-            'name'      => __('Faster Pagination'),
+            'name'      => __('Faster Pagination','laurels'),
             'slug'      => 'faster-pagination',
             'required'  => false,
         ),

@@ -2,8 +2,7 @@
 /*
  * Main Template File.
  */
-get_header(); 
-?>
+get_header(); ?>
 <section>	
     <div class="container webpage-container">
     	<article class="blog-article">        
@@ -21,22 +20,19 @@ get_header();
                                <?php laurels_entry_meta(); ?>   
                             </div>
                          </div>
-
-<?php $laurels_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>
+                         <?php $laurels_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>
 					<?php if(!empty($laurels_image)) { ?>
 						<div class="blog-rightsidebar-img">
 							<img src="<?php echo esc_url($laurels_image); ?>" class="img-responsive" alt="<?php the_title(); ?>" />
 						</div>
                     <?php } ?>
-                      
                         <div class="blog-content">
                             <?php the_excerpt(); ?>
                         </div>
                     </div>
                 </div>	
 		<?php endwhile; endif; // end of the loop. ?>
-		<!--Pagination Start-->
-        <?php   if (function_exists('faster_pagination') ) {?>
+        <?php   if (function_exists('faster_pagination') ) { ?>
             <?php faster_pagination('','1');?>
         <?php }else { ?>
         <?php if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
@@ -46,7 +42,6 @@ get_header();
         </div>
         <?php } ?>
         <?php } ?>
-		<!--Pagination End-->
       </div>
             <?php get_sidebar(); ?>
     	</article>

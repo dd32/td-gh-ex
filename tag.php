@@ -7,7 +7,7 @@ get_header(); ?>
     <div class="laurels_menu_bg">
     	<div class="webpage-container container">
        	<div class="laurels_menu">
-     	<h1><?php  _e( 'Tags', 'laurels' ); echo ' : '. single_tag_title( '', false ) ?></h1>
+     	<h1><?php  _e( 'Tags', 'laurels' ); echo ' : '. single_tag_title( '', false ); ?></h1>
             <div class="breadcrumb site-breadcumb">
 				<?php if (function_exists('laurels_custom_breadcrumbs')) laurels_custom_breadcrumbs(); ?>
             </div>
@@ -17,10 +17,9 @@ get_header(); ?>
     <div class="container webpage-container">
     	<article class="blog-article">        
             <div class="col-md-9 col-sm-8 blog-page">
-		  <?php while ( have_posts() ) : the_post(); ?>
-          <?php $laurels_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>
-                <div class="blog">                
-		 			
+		  <?php while ( have_posts() ) : the_post();
+            $laurels_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>
+                <div class="blog">
                     <div class="blog-data">
                         <div class="blog-date text-center">
                             <h2 class="color_txt"> <?php echo get_the_date('d'); ?></h2>
@@ -43,18 +42,16 @@ get_header(); ?>
                     </div>
                 </div>	
      <?php endwhile; ?> 
-     <!--Pagination Start-->
-        <?php   if (function_exists('faster_pagination') ) {?>
-            <?php faster_pagination('','1');?>
-        <?php }else { ?>
-        <?php if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
+        <?php   if (function_exists('faster_pagination') ) {
+            faster_pagination('','1');
+        }else {
+            if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
         <div class="col-md-12 laurels-default-pagination">
             <span class="laurels-previous-link"><?php previous_posts_link(); ?></span>
             <span class="laurels-next-link"><?php next_posts_link(); ?></span>
         </div>
-        <?php } ?>
-        <?php } ?>
-		<!--Pagination End-->
+        <?php }
+        } ?>
             </div>
             <?php get_sidebar(); ?>
     	</article>
