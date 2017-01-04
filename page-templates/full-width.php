@@ -2,9 +2,7 @@
 /*
 Template Name: Full Width
 */
-get_header(); 
-?>
-
+get_header(); ?>
 <section class="section-main back-img-aboutus">
   <div class="container">
     <div class="col-md-12 no-padding-left img-banner-aboutus">
@@ -13,11 +11,9 @@ get_header();
     </div>
   </div>
 </section>
- 
 <div class="container blog-background booster-page no-padding">
 <?php while ( have_posts() ) : the_post(); ?>
 	<div class="col-md-12 no-padding">
-	
  <?php $booster_feature_img = wp_get_attachment_url(get_post_thumbnail_id(get_the_id())); ?>
     	<div class="blog">
         	<?php if(!empty($booster_feature_img)){ ?>
@@ -25,15 +21,12 @@ get_header();
             <?php } ?>
             <h1 class="blog-title"><?php echo get_the_title(); ?></h1>
             <p class="blog-text">
-                <?php the_content(); ?>
+              <?php the_content(); ?>
             </p>
-            
             <div class="blog-hr"></div>
         </div>
-        
 <?php comments_template( '', true ); ?>
-    </div> 
-
-<?php endwhile; ?> 
-       </div>
+</div>
+<?php endwhile; ?>
+</div>
 <?php get_footer(); ?>

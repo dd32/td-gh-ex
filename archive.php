@@ -1,12 +1,10 @@
-<?php 
-get_header(); ?> 
+<?php get_header(); ?>
 <div class="page-title">
   <div class="container">
     <div class="row">
       <div class="col-md-6  col-sm-6 no-padding">
         <?php if ( have_posts() ) : ?>      
 	 		 <p class="booster-post-title"><?php if ( have_posts() ) : _e('Archives','booster'); echo " : ". get_the_date('M-Y'); endif;?></p>
-	 		
 		<?php endif; ?>
       </div>
       <div class="col-md-6 col-sm-6 no-padding">
@@ -21,8 +19,8 @@ get_header(); ?>
   <div class="container no-padding-left"> 
     <div class="row">
       <div class="col-md-8 booster-post main">
-        <?php if (have_posts() ) : ?>
-        <?php while (have_posts()) : the_post(); ?>
+        <?php if (have_posts() ) :
+        while (have_posts()) : the_post(); ?>
         <article class="post clearfix">
           <div class="post-meta">
             <div class="post-meta-author">
@@ -31,9 +29,8 @@ get_header(); ?>
                </div>
               <?php booster_entry_meta(); ?>
               <div class="clear-fix"></div>
-			  <?php the_tags(); ?>
+              <?php the_tags(); ?>
             </div>
-            
           </div>
            <?php $booster_feature_img = wp_get_attachment_url(get_post_thumbnail_id(get_the_ID()));
 		   		 if($booster_feature_img != '') { ?>
@@ -41,27 +38,24 @@ get_header(); ?>
            <?php } ?>
           <div class="post-content">
             <?php the_excerpt(); ?>
-            
           </div>
-         
         </article>
           <div class="blog-hr-archive"></div> 
-        <?php endwhile; ?>
-        <?php endif; ?>
+        <?php endwhile;
+          endif; ?>
 	<!--Pagination Start-->
-		<?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); ?>
-        <?php if(is_plugin_active('faster-pagination/ft-pagination.php')) {?>
-            <?php faster_pagination();?>
-        <?php }else { ?>
-        <?php if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
+		<?php include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+          if(is_plugin_active('faster-pagination/ft-pagination.php')) {
+            faster_pagination();
+          }else {
+          if(get_option('posts_per_page ') < $wp_query->found_posts) { ?>
         <nav class="booster-nav">
-                <span class="booster-nav-previous"><?php previous_posts_link(); ?></span>
-                <span class="booster-nav-next"><?php next_posts_link(); ?></span>
-		</nav>
-        <?php } ?>
-        <?php }//is plugin active ?>
-		<!--Pagination End-->        
-        
+          <span class="booster-nav-previous"><?php previous_posts_link(); ?></span>
+          <span class="booster-nav-next"><?php next_posts_link(); ?></span>
+        </nav>
+        <?php }
+        }//is plugin active ?>
+		<!--Pagination End-->
       </div>
       <div class="col-md-4  blog-col-2 main-sidebar">
       	<?php get_sidebar(); ?>

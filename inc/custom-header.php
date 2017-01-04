@@ -1,9 +1,6 @@
 <?php
 /**
  * Implemention of Custom Header 
- */
-
-/**
  * Set up the WordPress core custom header settings.
  *
  */
@@ -48,13 +45,11 @@ function booster_header_style() {
 	if ( display_header_text() && $text_color === get_theme_support( 'custom-header', 'default-text-color' ) )
 		return;
 
-	// If we get this far, we have custom styles.
-	?>
+	// If we get this far, we have custom styles. ?>
 	<style type="text/css" id="booster-header-css">
 	<?php
 		// Has the text been hidden?
-		if ( ! display_header_text() ) :
-	?>
+		if ( ! display_header_text() ) : ?>
 		.site-title,
 		.site-description {
 			clip: rect(1px 1px 1px 1px); /* IE7 */
@@ -63,8 +58,7 @@ function booster_header_style() {
 		}
 	<?php
 		// If the user has set a custom color for the text, use that.
-		elseif ( $text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) :
-	?>
+		elseif ( $text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) : ?>
 		.site-title a {
 			color: #<?php echo esc_attr( $text_color ); ?>;
 		}
@@ -73,16 +67,13 @@ function booster_header_style() {
 	<?php
 }
 endif; // booster_header_style
-
-
 if ( ! function_exists( 'booster_admin_header_style' ) ) :
 /**
  * Style the header image displayed on the Appearance > Header screen.
  *
  * @see booster_custom_header_setup()
  */
-function booster_admin_header_style() {
-?>
+function booster_admin_header_style() { ?>
 	<style type="text/css" id="booster-admin-header-css">
 	.appearance_page_custom-header #headimg {
 		background-color: #000;
@@ -114,8 +105,7 @@ if ( ! function_exists( 'booster_admin_header_image' ) ) :
  *
  * @see booster_custom_header_setup()
  */
-function booster_admin_header_image() {
-?>
+function booster_admin_header_image() { ?>
 	<div id="headimg">
 		<?php if ( get_header_image() ) : ?>
 		<img src="<?php header_image(); ?>" alt="">
@@ -124,4 +114,4 @@ function booster_admin_header_image() {
 	</div>
 <?php
 }
-endif; // booster_admin_header_image
+endif; // booster_admin_header_image ?>

@@ -11,7 +11,6 @@ get_header(); ?>
     </div>
   </div>
 </section>
- 
 <div class="container blog-background booster-page no-padding">
 <?php while ( have_posts() ) : the_post(); ?>
 	<div class="col-md-8 no-padding-left">
@@ -22,7 +21,7 @@ get_header(); ?>
             <?php } ?>
             <h1 class="blog-title"><?php echo get_the_title(); ?></h1>
             <p class="blog-text">
-                <?php the_content(); ?>
+              <?php the_content(); ?>
             </p>
             <div class="blog-hr"></div>
         </div>
@@ -31,9 +30,7 @@ get_header(); ?>
 <?php endwhile; ?> 
 <!-- right sidebar -->
        <div class="col-md-4 blog-col-2 main-sidebar">
-		   <?php 
-            get_sidebar();
-           ?> 
+		   <?php get_sidebar(); ?>
   	   </div>
        </div>
 <?php get_footer(); ?>

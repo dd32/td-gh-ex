@@ -7,8 +7,8 @@ Description: Booster is a clean minimal and responsive WordPress theme well suit
 and any other creative websites and blogs. Developed using Bootstrap 3 that makes it mobile and tablets friendly.
 social icon integration etc. Booster incorporates latest web standards such as HTML5 and CSS3 and is SEO friendly. 
 It has loads of Theme Options to manage home page content, Social media pages etc. Booster is a free WordPress theme with premium functionality and design.
-Tags: Blue, right-sidebar, one-column, two-columns, fluid-layout, responsive-layout, theme-options, full-width-template, sticky-post, post-formats, featured-images, custom-background, custom-header, custom-menu, editor-style, translation-ready
-version:  1.06 
+Tags: Right-sidebar, one-column, two-columns, theme-options, full-width-template, sticky-post, post-formats, featured-images, custom-background, custom-header, custom-menu, editor-style, translation-ready
+version: 2.0
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 This theme, like WordPress, is licensed under the FasterThemes.
@@ -29,7 +29,7 @@ Responsive design(Bootstrap), Theme Options, Custom Menu, supports social media.
 
 == Tags ==
 
-Blue, right-sidebar, one-column, two-columns, fluid-layout, responsive-layout,full-width,theme-options
+Right-sidebar, one-column, two-columns, theme-options, full-width-template, sticky-post, post-formats, featured-images, custom-background, custom-header, custom-menu, editor-style, translation-ready
 
 == Installation ==
 
@@ -96,4 +96,3 @@ TGM Plugin license and link
 
  license -  http://opensource.org/licenses/gpl-2.0.php GPL v2 or later
  link    -  https://github.com/thomasgriffin/TGM-Plugin-Activation
-	

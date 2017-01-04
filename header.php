@@ -2,8 +2,8 @@
 /**
  * The Header template for our theme
  */
- $booster_options = get_option( 'faster_theme_options' );
-?><!DOCTYPE html>
+ $booster_options = get_option( 'faster_theme_options' ); ?>
+ <!DOCTYPE html>
 <!--[if IE 7]>
 <html class="ie ie7" <?php language_attributes(); ?>>
 <![endif]-->
@@ -16,7 +16,6 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width">
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
     <?php if(!empty($booster_options['fevicon'])) { ?>
@@ -51,13 +50,11 @@
                         <span class="icon-bar"></span>
 					</button>
 				</div>
-                <div class="clearfix"></div>
+        <div class="clearfix"></div>
 		</div>
-      
       <div class="col-md-7 no-padding text-left-menu">
         <div class="navbar-collapse collapse padding-menu">
-        <?php 
-			$booster_args = array(
+        <?php $booster_args = array(
 					'theme_location'  => 'primary',
 					'menu'            => '',
 					'container'       => 'div',
@@ -74,9 +71,7 @@
 					'depth'           => 0,
 					'walker'            => ''
 				   );   
-				   wp_nav_menu( $booster_args );	  
-		?>
-
+				   wp_nav_menu( $booster_args ); ?>
         </div>
         <div class="clearfix"></div>
       </div>
@@ -88,11 +83,8 @@
             <li><?php if(!empty($booster_options['linkedin'])) { ?><a href="<?php echo esc_url($booster_options['linkedin']); ?>"><img class="sp" src="<?php echo get_template_directory_uri();?>/images/in.png" alt="" /></a><?php } ?></li>         
           </ul>
         </div>
- 
         <div class="clearfix"></div>
-      </div>      
-
+      </div>
     </div>
   </div>
-      
 </header>

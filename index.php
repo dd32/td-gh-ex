@@ -4,21 +4,16 @@
  */
 $booster_options = get_option( 'faster_theme_options' );
 get_header(); ?>
-
-
 <div class="separator"></div>
-
 <section class="section-main booster-slider-setion">
   <div class="col-md-12 no-padding"> 
-
 <!--========================= Carousel ========================= -->
 <?php 
 if(!empty($booster_options['first-slider-image']) || !empty($booster_options['second-slider-image']) || !empty($booster_options['third-slider-image']) || !empty($booster_options['forth-slider-image']) || !empty($booster_options['fifth-slider-image']) ) {
 $booster_slider = array(0 => esc_url($booster_options['first-slider-image']),1 => esc_url($booster_options['second-slider-image']),2 => esc_url($booster_options['third-slider-image']),3 => esc_url($booster_options['forth-slider-image']),4 => esc_url($booster_options['fifth-slider-image']));
 $booster_link = array(0 => esc_url($booster_options['first-slider-link']), 1 => esc_url($booster_options['second-slider-link']),2 => esc_url($booster_options['third-slider-link']),3 => esc_url($booster_options['forth-slider-link']),4 => esc_url($booster_options['fifth-slider-link']));										
 $booster_value = array_filter($booster_slider);
-?>
-<?php if(!empty($booster_value)) { ?>
+if(!empty($booster_value)) { ?>
 <div id="myCarousel" class="carousel slide col-md-12 no-padding-left subscribe-box" data-ride="carousel"> 
   <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -41,9 +36,8 @@ $booster_value = array_filter($booster_slider);
   		<a class="right carousel-control banner-nav-bg" href="#myCarousel" data-slide="next"><span class="banner-nav-right sprite"></span></a> 
     </div>
 <?php }} ?>  
-<!-- /.carousel --> 
- 
-    </div>
+<!-- /.carousel -->
+</div>
 </section>
 <section class="section-main back-img">
   <div class="container">
@@ -59,8 +53,7 @@ $booster_value = array_filter($booster_slider);
 <section class="section-main container no-padding">
   <h2 class="font-color-text"><?php _e("Latest Posts", "booster"); ?></h2>
   <div class="col-md-12 no-padding-left padding-br">
-    <?php     
-	$booster_args1 = array(
+    <?php $booster_args1 = array(
             'order'            => 'DESC',
             'post_type'        => 'post',
             'post_status'      => 'publish',
@@ -69,9 +62,7 @@ $booster_value = array_filter($booster_slider);
     $booster_posts = new WP_Query( $booster_args1 );
     while ( $booster_posts->have_posts() ) {
     $booster_posts->the_post();
-	$booster_feature_img = wp_get_attachment_url(get_post_thumbnail_id(get_the_id()));
-	?>
-
+	$booster_feature_img = wp_get_attachment_url(get_post_thumbnail_id(get_the_id())); ?>
     <div class="col-md-3 clear-data no-padding-left">
       <div class="img-laft"> 
       <?php if($booster_feature_img) { ?>
@@ -87,13 +78,13 @@ $booster_value = array_filter($booster_slider);
 		<?php echo get_the_excerpt(); ?></p>
 		</div>
     </div>
-	<?php }	 ?>
+	<?php }	?>
   </div>
 </section>
 <div class="separator"></div>
 <section class="section-main container no-padding">
   <div class="col-md-12 no-padding-left">
-    <div class="col-lg-5 img-banner1"><?php  if(!empty($booster_options['why-chooseus-image'])) { ?><img src="<?php echo esc_url($booster_options['why-chooseus-image']); ?>" alt="" class="img-responsive why-chooseus-image"  /><?php } ?></div>
+    <div class="col-lg-5 img-banner1"><?php if(!empty($booster_options['why-chooseus-image'])) { ?><img src="<?php echo esc_url($booster_options['why-chooseus-image']); ?>" alt="" class="img-responsive why-chooseus-image"  /><?php } ?></div>
     <div class="col-lg-7 font-type-roboto why-chooseus-content">
       <h2 class="font-color-text"><?php if(!empty($booster_options['why-chooseus-title'])) { echo wp_filter_nohtml_kses($booster_options['why-chooseus-title']); } ?></h2>
       <p class="sp"><?php if(!empty($booster_options['why-chooseus-content'])) { echo wp_filter_nohtml_kses($booster_options['why-chooseus-content']); } ?></p>

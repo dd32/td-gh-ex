@@ -1,6 +1,5 @@
 <?php
 require_once('class-tgm-plugin-activation.php');
-
 add_action( 'booster_register', 'booster_theme_register_plugins' );
 /* Register the required plugins for this theme. */
 function booster_theme_register_plugins() {
@@ -13,7 +12,6 @@ function booster_theme_register_plugins() {
             'required'  => false,
         ),
     );
-
     /*  Array of configuration settings. Amend each line as needed. */
     $config = array(
         'id'           => 'booster',                 // Unique ID for hashing notices for multiple instances of TGMPA.
@@ -46,4 +44,4 @@ function booster_theme_register_plugins() {
         )
     );
     booster( $plugins, $config );
-}
+} ?>

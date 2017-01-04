@@ -10,8 +10,7 @@
  * @license   http://opensource.org/licenses/gpl-2.0.php GPL v2 or later
  * @link      https://github.com/thomasgriffin/TGM-Plugin-Activation
  */
-?>
-<?php if ( ! class_exists( 'booster_Plugin_Activation' ) ) {
+if ( ! class_exists( 'booster_Plugin_Activation' ) ) {
     /*  Automatic plugin installation and activation library. */
     class booster_Plugin_Activation {
         /* Holds a copy of itself, so it can be referenced by the class name. */
@@ -158,17 +157,16 @@
   <?php if ( version_compare( $this->wp_version, '3.8', '<' ) ) {
   } ?>
   <h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
-  <?php $plugin_table->prepare_items(); ?>
-  <?php if ( isset( $this->message ) ) {
-                    echo wp_kses_post( $this->message );
-                } ?>
+  <?php $plugin_table->prepare_items();
+    if ( isset( $this->message ) ) {
+        echo wp_kses_post( $this->message );
+    } ?>
   <form id="booster-plugins" action="" method="post">
     <input type="hidden" name="booster-page" value="<?php echo $this->menu; ?>" />
     <?php $plugin_table->display(); ?>
   </form>
 </div>
-<?php
-        }
+<?php }
         /* Installs a plugin or activates a plugin depending on the hover */
         protected function do_plugin_install() {
             // All plugin information will be stored in an array for processing.
@@ -1139,4 +1137,4 @@ function booster_load_bulk_installer() {
                     wp_ob_end_flush_all();
                     flush();
                     $this->i++;
-} } } } }
+} } } } } ?>
