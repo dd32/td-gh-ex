@@ -49,17 +49,11 @@ function besty_entry_meta() {
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date('d M, Y') )
 	);
-	
-	
-	
 	$besty_author = sprintf( '<li>'.__('Post By','besty').' : <a href="%1$s" title="%2$s" >%3$s</a></li>',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 		esc_attr( sprintf( __( 'View all posts by %s', 'besty' ), get_the_author() ) ),
 		get_the_author()
 	);
-	
-	
-	
 	if(comments_open()) { 
 		if(get_comments_number()>=1)
 			$besty_comments = '<li>'. __('Comments','besty') .' : '.get_comments_number().'</li>';
@@ -75,4 +69,4 @@ function besty_entry_meta() {
 		$besty_tag_list,
 		$besty_category_list
 	);
-}
+} ?>

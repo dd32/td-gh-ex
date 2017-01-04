@@ -1,8 +1,6 @@
 <?php
 /**
  * Implemention of Custom Header 
- */
-/**
  * Set up the WordPress core custom header settings.
  *
  */
@@ -44,23 +42,18 @@ function besty_header_style() {
 	// If no custom color for text is set, let's bail.
 	if ( display_header_text() && $besty_text_color === get_theme_support( 'custom-header', 'default-text-color' ) )
 		return;
-	// If we get this far, we have custom styles.
-	?>
+	// If we get this far, we have custom styles. ?>
 	<style type="text/css" id="besty-header-css">
-	<?php
-		// Has the text been hidden?
-		if ( ! display_header_text() ) :
-	?>
+	<?php // Has the text been hidden?
+		if ( ! display_header_text() ) : ?>
 		.site-title,
 		.site-description {
 			clip: rect(1px 1px 1px 1px); /* IE7 */
 			clip: rect(1px, 1px, 1px, 1px);
 			position: absolute;
 		}
-	<?php
-		// If the user has set a custom color for the text, use that.
-		elseif ( $besty_text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) :
-	?>
+	<?php // If the user has set a custom color for the text, use that.
+		elseif ( $besty_text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) : ?>
 		.site-title a {
 			color: #<?php echo esc_attr( $besty_text_color ); ?>;
 		}
@@ -75,8 +68,7 @@ if ( ! function_exists( 'besty_admin_header_style' ) ) :
  *
  * @see besty_custom_header_setup()
  */
-function besty_admin_header_style() {
-?>
+function besty_admin_header_style() { ?>
 	<style type="text/css" id="besty-admin-header-css">
 	.appearance_page_custom-header #headimg {
 		background-color: #000;
@@ -107,14 +99,12 @@ if ( ! function_exists( 'besty_admin_header_image' ) ) :
  *
  * @see besty_custom_header_setup()
  */
-function besty_admin_header_image() {
-?>
+function besty_admin_header_image() { ?>
 	<div id="headimg">
 		<?php if ( get_header_image() ) : ?>
 		<img src="<?php header_image(); ?>" alt="">
 		<?php endif; ?>
 		<h1 class="displaying-header-text"><a id="name"<?php echo sprintf( ' style="color:#%s;"', get_header_textcolor() ); ?> onclick="return false;" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 	</div>
-<?php
-}
-endif; // besty_admin_header_image
+<?php }
+endif; // besty_admin_header_image ?>

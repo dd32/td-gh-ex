@@ -7,18 +7,14 @@
  */
 if ( post_password_required() ) {
 	return;
-}
-?>
+} ?>
 <div id="comments" class="besty-comments">
 	<?php if ( have_comments() ) : ?>
     <h2 class="besty-comments-titel"><?php _e('Comments','besty'); ?></h2>
     <ul class="comment-list">
     	<?php wp_list_comments( array( 'callback' => 'besty_comment', 'style' => 'ul', 'short_ping' => true) ); ?>
     </ul>
-    <?php 
-	paginate_comments_links();
+    <?php paginate_comments_links();
 	endif; // have_comments()
-	
-	comment_form();
-	?>    
+	comment_form(); ?>
 </div> <!-- #comments -->

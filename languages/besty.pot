@@ -1,7 +1,8 @@
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Besty V1.3.9\n"
-"POT-Creation-Date: 2014-12-09 20:20+0530\n"
+"POT-Creation-Date: 2017-01-04 12:52+0530\n"
 "PO-Revision-Date: 2014-12-09 20:21+0530\n"
 "Last-Translator: FasterThemes <support@fasterthemes.com>\n"
 "Language-Team: FasterThemes <support@fasterthemes.com>\n"
@@ -9,8 +10,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.10\n"
-"X-Poedit-Basepath: ../\n"
+"X-Generator: Poedit 1.8.11\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
@@ -18,63 +19,63 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: 404.php:11
+#: 404.php:10
 msgid "Epic 404 - Article Not Found"
 msgstr ""
 
-#: 404.php:12
+#: 404.php:11
 msgid "This is embarassing. We can't find what you were looking for."
 msgstr ""
 
-#: 404.php:14
+#: 404.php:13
 msgid ""
 "Whatever you were looking for was not found, but maybe try looking again or "
 "search using the form below."
 msgstr ""
 
-#: archive.php:14
+#: archive.php:12
 msgid "Daily Archives"
 msgstr ""
 
-#: archive.php:16 archive.php:18
+#: archive.php:14 archive.php:16
 msgid "Monthly Archives"
 msgstr ""
 
-#: archive.php:20
+#: archive.php:18
 msgid "Archives"
 msgstr ""
 
-#: archive.php:48 author.php:35 category.php:35 index.php:32 search.php:36
-#: tag.php:35
+#: archive.php:41 author.php:30 category.php:30 index.php:27 search.php:31
+#: tag.php:29
 msgid "Previous"
 msgstr ""
 
-#: archive.php:49 author.php:36 category.php:36 index.php:33 search.php:37
-#: tag.php:36
+#: archive.php:42 author.php:31 category.php:31 index.php:28 search.php:32
+#: tag.php:30
 msgid "Next"
 msgstr ""
 
-#: author.php:10
+#: author.php:9
 msgid "Author "
 msgstr ""
 
-#: author.php:10
+#: author.php:9
 msgid "All posts by "
 msgstr ""
 
-#: category.php:10
+#: category.php:9
 msgid "Category "
 msgstr ""
 
-#: comments.php:14 functions/theme-default-setup.php:65
+#: comments.php:13 functions/theme-default-setup.php:59
 msgid "Comments"
 msgstr ""
 
-#: functions.php:25
+#: functions.php:26
 msgid "Top primary menu"
 msgstr ""
 
-#: functions.php:56
+#: functions.php:57
 msgctxt "Istok Web: on or off"
 msgid "on"
 msgstr ""
@@ -87,30 +88,30 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: functions.php:99
+#: functions.php:97
 msgid "Post author"
 msgstr ""
 
-#: functions.php:121
+#: functions.php:119
 msgid "Main Sidebar"
 msgstr ""
 
-#: functions.php:156
+#: functions.php:154
 msgctxt "comment form placeholder"
 msgid "First Name"
 msgstr ""
 
-#: functions.php:167
+#: functions.php:165
 msgctxt "comment form placeholder"
 msgid "Email Id"
 msgstr ""
 
-#: functions.php:179
+#: functions.php:177
 msgctxt "comment form placeholder"
 msgid "Website"
 msgstr ""
 
-#: functions.php:195
+#: functions.php:193
 msgctxt "comment form placeholder"
 msgid "Comment"
 msgstr ""
@@ -123,23 +124,23 @@ msgstr ""
 msgid "Besty Latest Post"
 msgstr ""
 
-#: functions/besty-latest-posts.php:92
+#: functions/besty-latest-posts.php:79
 msgid "Besty Posts"
 msgstr ""
 
-#: functions/besty-latest-posts.php:107
+#: functions/besty-latest-posts.php:93
 msgid "Number of posts to show"
 msgstr ""
 
-#: functions/class-tgm-plugin-activation.php:41 functions/tgm-plugins.php:27
+#: functions/class-tgm-plugin-activation.php:41 functions/tgm-plugins.php:26
 msgid "Install Required Plugins"
 msgstr ""
 
-#: functions/class-tgm-plugin-activation.php:42 functions/tgm-plugins.php:28
+#: functions/class-tgm-plugin-activation.php:42 functions/tgm-plugins.php:27
 msgid "Install Plugins"
 msgstr ""
 
-#: functions/class-tgm-plugin-activation.php:43 functions/tgm-plugins.php:29
+#: functions/class-tgm-plugin-activation.php:43 functions/tgm-plugins.php:28
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
@@ -148,21 +149,21 @@ msgstr ""
 msgid "Something went wrong."
 msgstr ""
 
-#: functions/class-tgm-plugin-activation.php:45 functions/tgm-plugins.php:31
+#: functions/class-tgm-plugin-activation.php:45 functions/tgm-plugins.php:30
 #, php-format
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/class-tgm-plugin-activation.php:46 functions/tgm-plugins.php:32
+#: functions/class-tgm-plugin-activation.php:46 functions/tgm-plugins.php:31
 #, php-format
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/class-tgm-plugin-activation.php:47 functions/tgm-plugins.php:33
+#: functions/class-tgm-plugin-activation.php:47 functions/tgm-plugins.php:32
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to install the %s plugin. "
@@ -175,21 +176,21 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/class-tgm-plugin-activation.php:48 functions/tgm-plugins.php:34
+#: functions/class-tgm-plugin-activation.php:48 functions/tgm-plugins.php:33
 #, php-format
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/class-tgm-plugin-activation.php:49 functions/tgm-plugins.php:35
+#: functions/class-tgm-plugin-activation.php:49 functions/tgm-plugins.php:34
 #, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/class-tgm-plugin-activation.php:50 functions/tgm-plugins.php:36
+#: functions/class-tgm-plugin-activation.php:50 functions/tgm-plugins.php:35
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to activate the %s "
@@ -202,7 +203,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/class-tgm-plugin-activation.php:51 functions/tgm-plugins.php:37
+#: functions/class-tgm-plugin-activation.php:51 functions/tgm-plugins.php:36
 #, php-format
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
@@ -213,7 +214,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/class-tgm-plugin-activation.php:52 functions/tgm-plugins.php:38
+#: functions/class-tgm-plugin-activation.php:52 functions/tgm-plugins.php:37
 #, php-format
 msgid ""
 "Sorry, but you do not have the correct permissions to update the %s plugin. "
@@ -226,19 +227,19 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/class-tgm-plugin-activation.php:53 functions/tgm-plugins.php:39
+#: functions/class-tgm-plugin-activation.php:53 functions/tgm-plugins.php:38
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/class-tgm-plugin-activation.php:54 functions/tgm-plugins.php:40
+#: functions/class-tgm-plugin-activation.php:54 functions/tgm-plugins.php:39
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: functions/class-tgm-plugin-activation.php:55 functions/tgm-plugins.php:41
+#: functions/class-tgm-plugin-activation.php:55 functions/tgm-plugins.php:40
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
@@ -247,7 +248,7 @@ msgid "Return to the dashboard"
 msgstr ""
 
 #: functions/class-tgm-plugin-activation.php:57
-#: functions/class-tgm-plugin-activation.php:1005 functions/tgm-plugins.php:42
+#: functions/class-tgm-plugin-activation.php:1005 functions/tgm-plugins.php:41
 msgid "Plugin activated successfully."
 msgstr ""
 
@@ -427,11 +428,11 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: functions/tgm-plugins.php:30
+#: functions/tgm-plugins.php:29
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: functions/tgm-plugins.php:43
+#: functions/tgm-plugins.php:42
 #, php-format
 msgid "All plugins installed and activated successfully. %s"
 msgstr ""
@@ -449,151 +450,137 @@ msgstr ""
 msgid " Tags "
 msgstr ""
 
-#: functions/theme-default-setup.php:55
+#: functions/theme-default-setup.php:52
 msgid "Post By"
 msgstr ""
 
-#: functions/theme-default-setup.php:57
+#: functions/theme-default-setup.php:54
 #, php-format
 msgid "View all posts by %s"
 msgstr ""
 
-#: header.php:99
+#: header.php:92
 #, php-format
-msgid "Powered by %1$s and %2$s."
+msgid "Powered by <br /> %1$s."
 msgstr ""
 
-#: page.php:23 single.php:25
+#: page.php:18 single.php:21
 msgid "Pages:"
 msgstr ""
 
-#: search.php:11
+#: search.php:10
 msgid "Search Results for"
 msgstr ""
 
-#: tag.php:10
+#: tag.php:9
 msgid "Tags"
 msgstr ""
 
-#: theme-options/besty.php:47
+#: theme-options/besty.php:46
 msgid "Besty Options"
 msgstr ""
 
-#: theme-options/besty.php:48 theme-options/besty.php:76
+#: theme-options/besty.php:47 theme-options/besty.php:71
 msgid "Theme Options"
 msgstr ""
 
-#: theme-options/besty.php:77 theme-options/besty.php:167
+#: theme-options/besty.php:72 theme-options/besty.php:163
 msgid "Save Options"
 msgstr ""
 
-#: theme-options/besty.php:85
+#: theme-options/besty.php:80
 msgid "Basic Settings"
 msgstr ""
 
-#: theme-options/besty.php:86
+#: theme-options/besty.php:81
 msgid "Social Settings"
 msgstr ""
 
-#: theme-options/besty.php:87
+#: theme-options/besty.php:82
 msgid "Home Page Settings"
 msgstr ""
 
-#: theme-options/besty.php:100
+#: theme-options/besty.php:83
+msgid "PRO Theme Features"
+msgstr ""
+
+#: theme-options/besty.php:96
 msgid "Site Logo"
 msgstr ""
 
-#: theme-options/besty.php:103 theme-options/besty.php:117
-#: theme-options/besty.php:190
+#: theme-options/besty.php:99 theme-options/besty.php:113
+#: theme-options/besty.php:186
 msgid "No file chosen"
 msgstr ""
 
-#: theme-options/besty.php:112
+#: theme-options/besty.php:108
 msgid "Favicon"
 msgstr ""
 
-#: theme-options/besty.php:114
+#: theme-options/besty.php:110
 msgid "Size of favicon should be exactly 32x32px for best results."
 msgstr ""
 
-#: theme-options/besty.php:127
+#: theme-options/besty.php:123
 msgid "Copyright Text"
 msgstr ""
 
-#: theme-options/besty.php:130
+#: theme-options/besty.php:126
 msgid ""
 "Some text regarding copyright of your site, you would like to display in the "
 "footer."
 msgstr ""
 
-#: theme-options/besty.php:140
+#: theme-options/besty.php:136
 msgid "Facebook"
 msgstr ""
 
-#: theme-options/besty.php:143
+#: theme-options/besty.php:139
 msgid "Facebook profile or page URL i.e."
 msgstr ""
 
-#: theme-options/besty.php:149
+#: theme-options/besty.php:145
 msgid "Twitter"
 msgstr ""
 
-#: theme-options/besty.php:152
+#: theme-options/besty.php:148
 msgid "Twitter profile or page URL i.e."
 msgstr ""
 
-#: theme-options/besty.php:158
+#: theme-options/besty.php:154
 msgid "Linkedin"
 msgstr ""
 
-#: theme-options/besty.php:161
+#: theme-options/besty.php:157
 msgid "Linkedin profile or page URL i.e."
 msgstr ""
 
-#: theme-options/besty.php:170
+#: theme-options/besty.php:166
 msgid "Googleplus profile or page URL i.e."
 msgstr ""
 
-#: theme-options/besty.php:179
+#: theme-options/besty.php:175
 msgid "Welcome Title"
 msgstr ""
 
-#: theme-options/besty.php:182
+#: theme-options/besty.php:178
 msgid ""
 "Enter recent welcome title for your site , you would like to display in the "
 "Home Page."
 msgstr ""
 
-#: theme-options/besty.php:187
+#: theme-options/besty.php:183
 msgid "Welcome Image"
 msgstr ""
 
-#: theme-options/besty.php:199
+#: theme-options/besty.php:195
 msgid "Welcome Details"
 msgstr ""
 
-#: theme-options/besty.php:220
-msgid "fasterthemes.com"
-msgstr ""
-
-#: theme-options/besty.php:223
+#: theme-options/besty.php:222
 msgid "Save options"
 msgstr ""
 
-#: theme-options/besty.php:228
+#: theme-options/besty.php:227
 msgid "Options saved successfully."
-msgstr ""
-
-#: theme-options/besty.php:230
-msgid "Subscribe with us"
-msgstr ""
-
-#: theme-options/besty.php:231
-msgid ""
-"Join our mailing list and we'll keep you updated on new themes as they're "
-"released and our exclusive special offers. "
-msgstr ""
-
-#: theme-options/besty.php:233
-msgid "Click here to join."
 msgstr ""
