@@ -31,8 +31,8 @@ if( ! function_exists( 'admin_aedificator_enqueue_styles' ) ) {
 function aedificator_guide() { 
 ?>
 <div class="wrapper-info">
-	<div class="aedifcator-box" style="margin: 0 100px 0 0;">
-   		<div style="border-bottom: 1px solid #ccc; font-size: 21px; font-weight: bold; padding: 40px 0 20px;">
+	<div class="aedifcator-box">
+   		<div class="aedifcator-box-title">
 			<?php esc_attr_e('About Aedificator Theme', 'aedificator'); ?>
 		</div>
 		<p><?php esc_attr_e('Aedificator is an awesome theme with fully responsive and compatible with newest version of WordPress, is easy to customizable, SEO Optimizable, Fast loading and an awesome panel options. Aedificator Theme is perfect for a construction business, but also for various other business or personal blog, The customization of this theme is very easy.','aedificator'); ?></p>
