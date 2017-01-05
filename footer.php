@@ -1,4 +1,3 @@
-
 <?php $impressive_options = get_option( 'impressive_theme_options' ); ?>
         <footer>
             <div class="footer-bg">
@@ -34,7 +33,7 @@
 					    <p class="color-text"><?php echo esc_attr($impressive_options['footertext']);?></p>
 					    <p>
 						<?php
-						 printf( __( 'Powered by %1$s and %2$s.', 'impressive' ), '<a href="https://wordpress.org/" target="_blank">WordPress</a>', '<a href="http://fruitthemes.com/wordpress-themes/impressive" target="_blank">Impressive</a>' );
+						 printf( __( 'Powered by %1$s.', 'impressive' ), '<a href="http://fruitthemes.com/wordpress-themes/impressive" target="_blank">Impressive WordPress Theme</a>' );
 						 ?>
 						 </p>
                     </div>

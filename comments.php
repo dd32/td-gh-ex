@@ -19,7 +19,7 @@ if (post_password_required())
         <ol class="comments-box clearfix ">
         <?php wp_list_comments(array('avatar_size' => 80, 'style' => 'ol', 'short_ping' => true,)); ?>
         </ol>
-        <?php  paginate_comments_links(); ?> 
-    <?php endif; ?>
-<?php  comment_form(); ?>
+        <?php  paginate_comments_links(); 
+        endif;
+        comment_form(); ?>
 </div>

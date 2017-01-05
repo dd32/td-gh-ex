@@ -60,8 +60,8 @@ function impressive_framework_load_scripts(){
 add_action( 'admin_enqueue_scripts', 'impressive_framework_load_scripts' );
 function impressive_framework_menu_settings() {
 	$impressive_menu = array(
-				'page_title' => __( 'Theme Options', 'impressive_framework'),
-				'menu_title' => __('Theme Options', 'impressive_framework'),
+				'page_title' => __( 'Theme Options', 'impressive'),
+				'menu_title' => __('Theme Options', 'impressive'),
 				'capability' => 'edit_theme_options',
 				'menu_slug' => 'impressive_framework',
 				'callback' => 'impressive_framework_page'
@@ -112,11 +112,11 @@ function impressive_framework_page(){
       </div>
       <div class="right-box-bg"></div>
       <div class="postbox left-box"> 
-        <!--======================== F I N A L - - T H E M E - - O P T I O N ===================-->
+        <!-- F I N A L - - T H E M E - - O P T I O N -->
           <?php settings_fields( 'impressive_option' );  
 			$impressive_options = get_option( 'impressive_theme_options' );
 		 ?>
-          <!-------------- Basic Settings group ----------------->
+          <!-- Basic Settings group -->
           <div id="options-group-1" class="group theme-option-inner-tabs">   
 			<div class="section theme-tabs theme-logo">
             <a class="heading theme-option-inner-tab active" href="javascript:void(0)"><?php _e('Site Logo (Recommended Size : 600px * 100px)','impressive'); ?></a>
@@ -161,7 +161,7 @@ function impressive_framework_page(){
               </div>
             </div>
           </div>          
-          <!-------------- Header Settings group ----------------->
+          <!-- Header Settings group -->
           <div id="options-group-5" class="group theme-option-inner-tabs">
 			 <div class="theme-tabs theme-fonts">
 				<div style="display: block;">
@@ -185,7 +185,7 @@ function impressive_framework_page(){
               </div>
             </div>
 		</div>
-          <!-------------- Footer Settings group ----------------->
+          <!-- Footer Settings group -->
           <div id="options-group-4" class="group theme-option-inner-tabs">
 			<div class="theme-tabs theme-hide-check">
 				<div style="display: block;">
@@ -213,7 +213,7 @@ function impressive_framework_page(){
               </div>
             </div>
 		</div>
-          <!-------------- Home Page Settings group ----------------->
+          <!-- Home Page Settings group -->
           <div id="options-group-2" class="group theme-option-inner-tabs">
 		 <h3><?php _e('Title Bar','impressive'); ?></h3>		  
 		 <div class="section theme-tabs theme-logo">
@@ -322,7 +322,7 @@ function impressive_framework_page(){
               </div>
          </div>
            </div>
-          <!-------------- Social Settings group ----------------->
+          <!-- Social Settings group -->
           <div id="options-group-3" class="group theme-option-inner-tabs">            
             <div id="section-facebook" class="section theme-tabs">
             	<a class="heading theme-option-inner-tab active" href="javascript:void(0)"><?php _e('Facebook','impressive'); ?></a>
@@ -360,7 +360,7 @@ function impressive_framework_page(){
               </div>
             </div>
           </div>
-		  <!-------------- Contact page Settings group ----------------->
+		  <!-- Contact page Settings group -->
           <div id="options-group-6" class="group theme-option-inner-tabs">       
 			<div id="section-contact-info-title" class="section theme-tabs">
             	<a class="heading theme-option-inner-tab" href="javascript:void(0)"><?php _e('Contact Info Title','impressive'); ?></a>
@@ -429,7 +429,7 @@ function impressive_framework_page(){
           	<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/impressive_pro_features.jpg" />
 		  </div> 
 			
-       <!--======================== F I N A L - - T H E M E - - O P T I O N S ===================--> 
+       <!-- F I N A L - - T H E M E - - O P T I O N S --> 
       </div>
      </div>
 	</div>

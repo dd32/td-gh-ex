@@ -105,4 +105,4 @@ function impressive_custom_breadcrumbs() {
     echo '</li>';
 
   }
-} 
+}

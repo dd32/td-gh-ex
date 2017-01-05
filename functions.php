@@ -87,4 +87,3 @@ require get_template_directory() . '/functions/breadcrumbs.php';
 
 /*** Theme Option ***/
 require get_template_directory() . '/theme-options/theme-options.php';
-

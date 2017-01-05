@@ -8,8 +8,7 @@ Impressive is a lightweight, clean, super flexible and bootstrap based responsiv
 
 === Tags ===
 
-black, left-sidebar, right-sidebar, fluid-layout, responsive-layout, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, custom-background, custom-colors, custom-header, sticky-post
-
+left-sidebar, right-sidebar, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, custom-background, custom-colors, custom-header, sticky-post
 
 == License ==
 
@@ -17,7 +16,7 @@ License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 == Copyright ==
-Impressive Theme, Copyright 2014 fruitthemes.com
+Impressive Theme, Copyright 2017 fruitthemes.com
 Impressive is distributed under the terms of the GNU GPL
 
 == Features ==
@@ -102,4 +101,3 @@ Image
 ---------------------------------------------------------
 
 	i). http://pixabay.com/en/skyscraper-city-night-urban-503324/  - Public Domain CC0 License 
-	

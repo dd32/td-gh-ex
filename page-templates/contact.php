@@ -16,7 +16,7 @@ $impressive_options = get_option( 'impressive_theme_options' );
         <div class="row contact-page">       
             <?php while (have_posts()) : the_post(); ?>
                 <div class="col-md-8 col-sm-6 contact-form">
-                    <?php the_content(); ?> 
+                    <?php the_content(); ?>
                 </div>
             <?php endwhile; ?>	
             <div class="col-md-4 col-sm-6">
@@ -38,17 +38,16 @@ $impressive_options = get_option( 'impressive_theme_options' );
                         <ul> 
 							<?php if (!empty($impressive_options['contact-telephone'])) {  ?>
 								<li><p><?php _e('Telephone  ','impressive'); ?></p> :<span>  <?php echo esc_attr($impressive_options['contact-telephone']) ?></span></li>         
-                            <?php  } ?>  
-                            <?php if (!empty($impressive_options['contact-fax'])) {  ?>               
-								<li><p><?php _e('Fax  ','','impressive'); ?></p>:<span> <?php echo esc_attr($impressive_options['contact-fax']) ?></span></li>
-                            <?php } ?>
-                            <?php if (!empty($impressive_options['contact-email'])) {  ?>
+                            <?php  } 
+                             if (!empty($impressive_options['contact-fax'])) {  ?>               
+								<li><p><?php _e('Fax  ','impressive'); ?></p>:<span> <?php echo esc_attr($impressive_options['contact-fax']) ?></span></li>
+                            <?php } 
+                             if (!empty($impressive_options['contact-email'])) {  ?>
 								<li><p><?php _e('E-Mail  ','impressive'); ?> </p>:<span> <?php echo sanitize_email($impressive_options['contact-email']) ?></span></li>
-                            <?php } ?>
-                            <?php if (!empty($impressive_options['contact-web'])) {  ?>
+                            <?php } 
+                            if (!empty($impressive_options['contact-web'])) {  ?>
 								<li><p><?php _e('Website  ','impressive'); ?></p>:<span> <a href="<?php echo esc_url($impressive_options['contact-web']) ?>"><?php echo esc_url($impressive_options['contact-web']) ?></a></span></li>
-                            <?php } ?>
-                            <?php if (!empty($impressive_options['contact-address'])) {  ?>
+                            <?php } if (!empty($impressive_options['contact-address'])) {  ?>
 								<li><p><?php _e('Address  ','impressive'); ?></p>:<span>  <?php echo esc_attr($impressive_options['contact-address']) ?></span></li>
                             <?php } ?>
                         </ul>

@@ -15,8 +15,8 @@
           <div class="blog-data">
               <a href="<?php echo esc_url( get_permalink() ); ?>" class="work-title"><?php the_title();?></a>
               <div class="our-blog-details">
-				<?php impressive_entry_meta(); ?>              				
-				<?php the_excerpt(); ?>                             
+				<?php impressive_entry_meta(); 
+				the_excerpt(); ?>                             
 			  </div>	
           </div>
         </div>               

@@ -153,20 +153,20 @@ $impressive_options = get_option('impressive_theme_options');
                                             <ul>
                                                 <?php if (!empty($impressive_options['fburl'])) { ?>
                                                     <li> <a href="<?php echo esc_url($impressive_options['fburl']); ?>"> <span class="fa fa-facebook"></span> </a> </li>
-                                                <?php } ?>
-                                                <?php if (!empty($impressive_options['twitter'])) { ?>
+                                                <?php } 
+                                                if (!empty($impressive_options['twitter'])) { ?>
                                                     <li> <a href="<?php echo esc_url($impressive_options['twitter']); ?>"> <span class="fa fa-twitter"></span> </a> </li>
-                                                <?php } ?>
-                                                <?php if (!empty($impressive_options['youtube'])) { ?>
+                                                <?php } 
+                                                if (!empty($impressive_options['youtube'])) { ?>
                                                     <li> <a href="<?php echo esc_url($impressive_options['youtube']); ?>"> <span class="fa fa-youtube"></span> </a> </li>
-                                                <?php } ?>
-                                                <?php if (!empty($impressive_options['rss'])) { ?>
+                                                <?php } 
+                                                if (!empty($impressive_options['rss'])) { ?>
                                                     <li> <a href="<?php echo esc_url($impressive_options['rss']); ?>"> <span class="fa fa-rss"></span> </a> </li>
                                                 <?php } ?>
                                             </ul>
                                         </div>
-                                    <?php } ?>
-                                <?php endif; ?> 
+                                    <?php } 
+                                    endif; ?> 
                             </div>
                         </div>
                     </div>
