@@ -6,9 +6,7 @@
 	Based on the Simplest D5 Framework for WordPress
 	Since Awesome 1.0
 */
-?>
-
-<?php get_header(); if ( 'posts' != get_option( 'show_on_front' ) ) { ?>
+get_header(); if ( 'posts' != get_option( 'show_on_front' ) ) { ?>
 <?php get_template_part( 'slide' ); ?>
 <div id="about-us-box-item">
 	<div class="box90 about-us-part" >

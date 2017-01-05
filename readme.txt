@@ -1,7 +1,7 @@
 ----------------------------------
 Awesome
 ----------------------------------
-Version: 	1.2.3
+Version: 	1.2.4
 Developer: 	D5 Creation
 Author URI: 	http://d5creation.com
 
@@ -49,6 +49,10 @@ Instructions:
 
 Changelog
 ============
+
+Version 1.2.4
+______________
+- Code Cleanup
 
 Version 1.2.3
 ______________

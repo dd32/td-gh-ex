@@ -5,10 +5,7 @@
 	Based on the Simplest D5 Framework for WordPress
 	Since Awesome 1.0
 */
-
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />

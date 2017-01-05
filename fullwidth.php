@@ -6,9 +6,7 @@
 	Based on the Simplest D5 Framework for WordPress
 	Since Awesome 1.0
 */
-?>
-
-<?php get_header(); ?>
+get_header(); ?>
 <div id="container">
 <div id="content-full">
 <?php get_template_part( 'post-content' ); ?>
