@@ -102,6 +102,8 @@ function arouse_custom_styles() {
 
 	$primary_color = get_theme_mod( 'arouse_primary_color', '#a58e78' );
 
+	$primary_color = esc_attr( $primary_color );
+
 	if ( $primary_color != '#a58e78' ) {
 
 		$arouse_custom_styles .= '
@@ -189,6 +191,8 @@ function arouse_custom_styles() {
 
 	$category_link_color = get_theme_mod( 'arouse_category_link_color', '#a58e78' );
 
+	$category_link_color = esc_attr( $category_link_color );
+
 	if ( $category_link_color != '#a58e78' ) {
 		$arouse_custom_styles .= '
 			.arouse-entry-category a {
@@ -203,7 +207,7 @@ function arouse_custom_styles() {
 
 	if ( ! empty( $arouse_custom_styles ) ) { ?>
 		<style type="text/css">
-			<?php echo esc_attr( $arouse_custom_styles ); ?>
+			<?php echo $arouse_custom_styles; ?>
 		</style>
 	<?php }
 
