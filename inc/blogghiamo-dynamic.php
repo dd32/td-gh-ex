@@ -73,7 +73,7 @@ function blogghiamo_color_primary_register( $wp_customize ) {
 	=====================================================
 	*/
 	$wp_customize->add_section( 'cresta_blogghiamo_options', array(
-	     'title'    => esc_attr__( 'Blogghiamo Theme Options', 'blogghiamo' ),
+	     'title'    => esc_html__( 'Blogghiamo Theme Options', 'blogghiamo' ),
 	     'priority' => 50,
 	) );
 	
@@ -238,40 +238,40 @@ function blogghiamo_color_primary_register( $wp_customize ) {
         public function render_content() {  ?>
         	<p class="blogghiamo-upgrade-title">
         		<span class="customize-control-title">
-					<h3 style="text-align:center;"><div class="dashicons dashicons-megaphone"></div> <?php _e('Get Blogghiamo PRO WP Theme for only', 'blogghiamo'); ?> 24,90&euro;</h3>
+					<h3 style="text-align:center;"><div class="dashicons dashicons-megaphone"></div> <?php esc_html_e('Get Blogghiamo PRO WP Theme for only', 'blogghiamo'); ?> 24,90&euro;</h3>
         		</span>
         	</p>
 			<p style="text-align:center;" class="blogghiamo-upgrade-button">
 				<a style="margin: 10px;" target="_blank" href="http://crestaproject.com/demo/blogghiamo-pro/" class="button button-secondary">
-					<?php _e('Watch the demo', 'blogghiamo'); ?>
+					<?php esc_html_e('Watch the demo', 'blogghiamo'); ?>
 				</a>
-				<a style="margin: 10px;" target="_blank" href="http://crestaproject.com/downloads/blogghiamo/" class="button button-secondary">
-					<?php _e('Get Blogghiamo PRO Theme', 'blogghiamo'); ?>
+				<a style="margin: 10px;" target="_blank" href="https://crestaproject.com/downloads/blogghiamo/" class="button button-secondary">
+					<?php esc_html_e('Get Blogghiamo PRO Theme', 'blogghiamo'); ?>
 				</a>
 			</p>
 			<ul>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Advanced Theme Options', 'blogghiamo' ); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Logo Upload', 'blogghiamo' ); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Font switcher', 'blogghiamo' ); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Loading Page', 'blogghiamo' ); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Unlimited Colors and Skin', 'blogghiamo' ); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Beautiful Slider', 'blogghiamo' ); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Breaking News', 'blogghiamo' ); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Post views counter', 'blogghiamo' ); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Breadcrumb', 'blogghiamo' ); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Post format', 'blogghiamo' ); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( '7 Shortcodes', 'blogghiamo' ); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( '12 Exclusive Widgets', 'blogghiamo' ); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Related Posts Box', 'blogghiamo' ); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Information About Author Box', 'blogghiamo' ); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'Advertising System', 'blogghiamo' ); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e( 'And much more...', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e( 'Advanced Theme Options', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e( 'Logo Upload', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e( 'Font switcher', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e( 'Loading Page', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e( 'Unlimited Colors and Skin', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e( 'Beautiful Slider', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e( 'Breaking News', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e( 'Post views counter', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e( 'Breadcrumb', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e( 'Post format', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e( '7 Shortcodes', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e( '12 Exclusive Widgets', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e( 'Related Posts Box', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e( 'Information About Author Box', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e( 'Advertising System', 'blogghiamo' ); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e( 'And much more...', 'blogghiamo' ); ?></b></li>
 			<ul><?php
         }
     }
 	
 	$wp_customize->add_section( 'cresta_upgrade_pro', array(
-	     'title'    => __( 'More features? Upgrade to PRO', 'blogghiamo' ),
+	     'title'    => esc_html__( 'More features? Upgrade to PRO', 'blogghiamo' ),
 	     'priority' => 999,
 	));
 	
@@ -323,10 +323,10 @@ function blogghiamo_custom_css_styles() {
 	textarea,
 	a,
 	.menu-toggle {
-		color: <?php echo esc_attr($text_color_first); ?>;
+		color: <?php echo esc_html($text_color_first); ?>;
 	}
 	.navigation.pagination .nav-links span.current {
-		background: <?php echo esc_attr($text_color_first); ?>;
+		background: <?php echo esc_html($text_color_first); ?>;
 	}
 	<?php endif; ?>
 	
@@ -346,11 +346,11 @@ function blogghiamo_custom_css_styles() {
 	.menu-toggle:hover,
 	.menu-toggle:focus,
 	.navigation.pagination .nav-links span.current	{
-		color: <?php echo esc_attr($box_color_second); ?>;
+		color: <?php echo esc_html($box_color_second); ?>;
 	}
 	@media screen and (max-width: 1024px) {
 		.main-navigation ul li .indicator {
-			color: <?php echo esc_attr($box_color_second); ?>;
+			color: <?php echo esc_html($box_color_second); ?>;
 		}
 	}
 	.theTop, footer.site-footer, .hentry, .widget, .comments-area, #toTop, .paging-navigation .nav-links a, .page-header, #disqus_thread, .navigation.pagination .nav-links > a,
@@ -359,10 +359,10 @@ function blogghiamo_custom_css_styles() {
 	.entry-content,
 	.entry-summary,
 	.menu-toggle {
-		background: <?php echo esc_attr($box_color_second); ?>;
+		background: <?php echo esc_html($box_color_second); ?>;
 	}
 	.site-title {
-		text-shadow: 4px 3px 0px <?php echo esc_attr($box_color_second); ?>, 9px 8px 0px rgba(0, 0, 0, 0.1);
+		text-shadow: 4px 3px 0px <?php echo esc_html($box_color_second); ?>, 9px 8px 0px rgba(0, 0, 0, 0.1);
 	}
 	<?php endif; ?>
 	
@@ -378,7 +378,7 @@ function blogghiamo_custom_css_styles() {
 	.edit-link a, .tagcloud a,
 	#comments .reply,
 	.menu-toggle:focus, .menu-toggle:hover {
-		background: <?php echo esc_attr($special_color_third); ?>;
+		background: <?php echo esc_html($special_color_third); ?>;
 	}
 	button:hover,
 	input[type="button"]:hover,
@@ -391,11 +391,11 @@ function blogghiamo_custom_css_styles() {
 	.top-search.active,
 	.edit-link a:hover, .tagcloud a:hover,
 	.page-links a span {
-		color: <?php echo esc_attr($special_color_third); ?>;
+		color: <?php echo esc_html($special_color_third); ?>;
 	}
 	blockquote {
-		border-left: 5px solid <?php echo esc_attr($special_color_third); ?>;
-		border-right: 2px solid <?php echo esc_attr($special_color_third); ?>;
+		border-left: 5px solid <?php echo esc_html($special_color_third); ?>;
+		border-right: 2px solid <?php echo esc_html($special_color_third); ?>;
 	}
 	button:hover,
 	input[type="button"]:hover,
@@ -420,10 +420,10 @@ function blogghiamo_custom_css_styles() {
 	.post-navigation .meta-nav:hover,
 	#wp-calendar tbody td#today,
 	.edit-link a:hover, .tagcloud a:hover	{
-		border: 1px solid <?php echo esc_attr($special_color_third); ?>;
+		border: 1px solid <?php echo esc_html($special_color_third); ?>;
 	}
 	.widget-title:before, .theShareSpace:before {
-		border-top: 1.5em solid <?php echo esc_attr($special_color_third); ?>;
+		border-top: 1.5em solid <?php echo esc_html($special_color_third); ?>;
 	}
 	<?php endif; ?>
 	

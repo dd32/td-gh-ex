@@ -18,15 +18,15 @@ function blogghiamo_paging_nav() {
 	}
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h2 class="screen-reader-text"><?php _e( 'Posts navigation', 'blogghiamo' ); ?></h2>
+		<h2 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', 'blogghiamo' ); ?></h2>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous" title="<?php _e( 'Older Posts', 'blogghiamo' ); ?>"><?php next_posts_link( '<i class="fa fa-lg fa-angle-left"></i>' ); ?></div>
+			<div class="nav-previous" title="<?php esc_html_e( 'Older Posts', 'blogghiamo' ); ?>"><?php next_posts_link( '<i class="fa fa-lg fa-angle-left"></i>' ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next" title="<?php _e( 'Newer Posts', 'blogghiamo' ); ?>"><?php previous_posts_link( '<i class="fa fa-lg fa-angle-right"></i>' ); ?></div>
+			<div class="nav-next" title="<?php esc_html_e( 'Newer Posts', 'blogghiamo' ); ?>"><?php previous_posts_link( '<i class="fa fa-lg fa-angle-right"></i>' ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -49,11 +49,11 @@ function blogghiamo_post_nav() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h2 class="screen-reader-text"><?php _e( 'Post navigation', 'blogghiamo' ); ?></h2>
+		<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'blogghiamo' ); ?></h2>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', '<div class="meta-nav" title="%title" aria-hidden="true"><i class="fa fa-angle-left spaceRight"></i><span>' . __( 'Previous Post', 'blogghiamo' ) . '</span></div> ' . '<span class="screen-reader-text">' . __( 'Previous post:', 'blogghiamo' ) . '</span> ' );
-				next_post_link( '<div class="nav-next">%link</div>', '<div class="meta-nav" title="%title" aria-hidden="true"><span>' . __( 'Next Post', 'blogghiamo' ) . '</span><i class="fa fa-angle-right spaceLeft"></i></div> ' . '<span class="screen-reader-text">' . __( 'Next Post:', 'blogghiamo' ) . '</span> ' );
+				previous_post_link( '<div class="nav-previous">%link</div>', '<div class="meta-nav" title="%title" aria-hidden="true"><i class="fa fa-angle-left spaceRight"></i><span>' . esc_html__( 'Previous Post', 'blogghiamo' ) . '</span></div> ' . '<span class="screen-reader-text">' . esc_html__( 'Previous post:', 'blogghiamo' ) . '</span> ' );
+				next_post_link( '<div class="nav-next">%link</div>', '<div class="meta-nav" title="%title" aria-hidden="true"><span>' . esc_html__( 'Next Post', 'blogghiamo' ) . '</span><i class="fa fa-angle-right spaceLeft"></i></div> ' . '<span class="screen-reader-text">' . esc_html__( 'Next Post:', 'blogghiamo' ) . '</span> ' );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -119,7 +119,7 @@ function blogghiamo_entry_footer() {
 		}
 	}
 
-	edit_post_link( __( 'Edit', 'blogghiamo' ), '<span class="edit-link"><i class="fa fa-wrench spaceRight" aria-hidden="true"></i>', '</span>' );
+	edit_post_link( esc_html__( 'Edit', 'blogghiamo' ), '<span class="edit-link"><i class="fa fa-wrench spaceRight" aria-hidden="true"></i>', '</span>' );
 }
 endif;
 

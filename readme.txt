@@ -170,3 +170,7 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-background, 
 
 = Version 1.4.9 =
 * Minor bug fixes
+
+= Version 1.5.0 =
+* Fixed a lot of bugs related to the strings escaping
+* Minor bug fixes

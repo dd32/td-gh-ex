@@ -12,16 +12,9 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info smallPart">
-			<?php
-				$name = get_bloginfo('name');
-				$url = home_url('/');
-				$year = date('Y');
-			?>
-			&copy; <?php echo $year ?> <a href="<?php echo esc_url($url); ?>"><?php echo $name ?></a>
+			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'blogghiamo' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'blogghiamo' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'blogghiamo' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'blogghiamo' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'blogghiamo' ), '<a title="Blogghiamo Theme" target="_blank" href="https://crestaproject.com/downloads/blogghiamo/" rel="nofollow">Blogghiamo</a>', 'CrestaProject WordPress Themes' ); ?>
+			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'blogghiamo' ), '<a title="Blogghiamo Theme" target="_blank" href="https://crestaproject.com/downloads/blogghiamo/" rel="nofollow">Blogghiamo</a>', 'CrestaProject WordPress Themes' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
