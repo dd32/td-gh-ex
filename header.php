@@ -2,8 +2,8 @@
 /**
  * The Header template for our theme
  */
-$advent_options = get_option('advent_theme_options');
-?><!DOCTYPE html>
+$advent_options = get_option('advent_theme_options'); ?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">	
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -15,14 +15,13 @@ $advent_options = get_option('advent_theme_options');
         <![endif]-->
         <?php if (!empty($advent_options['favicon'])) { ?>
             <link rel="shortcut icon" href="<?php echo esc_url($advent_options['favicon']); ?>">
-        <?php } ?>
-        <?php wp_head(); ?>
+        <?php }
+        wp_head(); ?>
        
     </head>
     <body <?php body_class(); ?>>
         <?php /* start condition for only home page */
-        if (is_page_template('page-template/front-page.php')) {
-            ?> 
+        if (is_page_template('page-template/front-page.php')) { ?> 
 		<div class="header_bg">
                 <span class="mask-overlay"></span>
                 <div class="webpage-container">
@@ -33,8 +32,7 @@ $advent_options = get_option('advent_theme_options');
                                     <?php if (!empty($advent_options['headertop-logo'])) { 
 										 $advent_image = esc_url($advent_options['headertop-logo']); 
 										 $advent_id = advent_get_image_id($advent_image);
-										 $advent_image = wp_get_attachment_image_src($advent_id, 'headertop-logo');
-									?>
+										 $advent_image = wp_get_attachment_image_src($advent_id, 'headertop-logo'); ?>
 										<img class="img-circle img-responsive" alt="<?php echo esc_attr($advent_options['headertop-logo']); ?>" src="<?php echo esc_url($advent_image[0]); ?>" width="<?php echo $advent_image[1]; ?>" height="<?php echo $advent_image[2]; ?>">
                                 <?php } ?>
                                 </div>
@@ -50,7 +48,7 @@ $advent_options = get_option('advent_theme_options');
                         <div class="col-sm-5 col-md-6 mobile">                
                             <img src="<?php echo esc_url($advent_options['headertop-img']); ?>" class="img-responsive" alt="<?php echo esc_attr(get_the_title()); ?>">             
                         </div>
-    <?php } ?>
+                        <?php } ?>
                 </div>
             </div>
 <?php } /* end condition for only home page */ ?>   
@@ -68,29 +66,25 @@ $advent_options = get_option('advent_theme_options');
 										<p class="site-description"><?php bloginfo( 'description' ); ?></p>
 									  </div>
                                 <?php } else { 
-										$advent_options_image = getimagesize($advent_options['logo']) ;	
-									?>
+										$advent_options_image = getimagesize($advent_options['logo']) ; ?>
                                     <a href="<?php echo esc_url(home_url('/')); ?>">
                                     <img alt="<?php _e('logo', 'advent') ?>" src="<?php echo esc_url($advent_options['logo']); ?>" height= "<?php echo $advent_options_image[1]; ?>" width="<?php echo $advent_options_image[0]; ?>" class="img-responsive" >
                                     </a>
                                     <?php } ?>
-                                    
-                                    
                                 <div class="navbar-header res-nav-header toggle-respon">
-<?php if (has_nav_menu('primary')) { ?>
+                                    <?php if (has_nav_menu('primary')) { ?>
                                         <button type="button" class="navbar-toggle menu_toggle" data-toggle="collapse" data-target=".navbar-collapse">
                                             <span class="sr-only"></span>
                                             <span class="icon-bar"></span>
                                             <span class="icon-bar"></span>
                                             <span class="icon-bar"></span>
                                         </button>
-<?php } ?>
+                                        <?php } ?>
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-10">
-                            <?php
-                            $advent_defaults = array(
+                            <?php $advent_defaults = array(
                                 'theme_location' => 'primary',
                                 'container' => 'div',
                                 'container_class' => 'collapse navbar-collapse main_menu no-padding',
@@ -107,17 +101,16 @@ $advent_options = get_option('advent_theme_options');
                             );
                             if (has_nav_menu('primary')) {
                                 wp_nav_menu($advent_defaults);
-                            } 
-                            ?>       
+                            } ?>       
                         </div>               
                     </div>
                 </div>
-            </div>      
-<?php if (get_header_image()) { ?>
+            </div>
+            <?php if (get_header_image()) { ?>
                 <div class="custom-header-img">
                     <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
                         <img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
                     </a>
                 </div>
-<?php } ?>   
+                <?php } ?>
         </header>

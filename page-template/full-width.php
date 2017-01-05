@@ -2,8 +2,7 @@
 /**
  * Template Name: Full Width
  * */
-get_header();
-?>
+get_header(); ?>
 <section>
     <!--Breadcrumb  Part Start-->
     <div class="breadcumb-bg">
@@ -24,10 +23,9 @@ get_header();
         <div class="blog-main">
             <div class="col-md-12">
                 <div class="blog-details single">
-                    <?php while (have_posts()) : the_post(); ?>
-
-                        <?php $advent_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()), 'full'); ?>
-                        <?php if ($advent_image[0] != "") { ?>
+                    <?php while (have_posts()) : the_post();
+                        $advent_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()), 'full');
+                        if ($advent_image[0] != "") { ?>
                             <div class="blog-img">
                                 <img src="<?php echo esc_url($advent_image[0]); ?>" width="<?php echo $advent_image[1]; ?>" height="<?php echo $advent_image[2]; ?>" alt="<?php echo get_the_title(); ?>" class="img-responsive" />
                             </div>
@@ -40,10 +38,9 @@ get_header();
                                     'after' => '</div>',
                                     'link_before' => '<span>',
                                     'link_after' => '</span>',
-                                ));
-                                ?>
+                                )); ?>
                         </div>
-                <?php endwhile; ?> 
+                <?php endwhile; ?>
                 </div>
 <?php comments_template('', true); ?>
             </div>
@@ -52,4 +49,3 @@ get_header();
     <!-- Full Width Template End-->
 </section>
 <?php get_footer(); ?>
-

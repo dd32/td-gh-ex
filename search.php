@@ -2,8 +2,7 @@
 /*
  * Search Template File
  */
-get_header();
-?>
+get_header(); ?>
 <section>
     <!--Breadcrumb  Part Start-->
     <div class="breadcumb-bg">
@@ -22,52 +21,42 @@ echo ' : ' . get_search_query(); ?></h1>
     <!--Breadcrumb Part End-->
     <!-- Blog start -->
     <div class="webpage-container">
-        <div class="blog-main">
-
-
+        <div class="blog-main"> 
             <div class="col-md-9 col-sm-8">
-                <?php if (have_posts()) : ?>
-    <?php while (have_posts()) : the_post(); ?>
+                <?php if (have_posts()) :
+                while (have_posts()) : the_post(); ?>
                         <div class="blog-details ">
                             <div class="blog-head">
                                 <a href="<?php echo esc_url(get_permalink()); ?>"><?php echo get_the_title(); ?></a>
                                 <ul><?php advent_entry_meta(); ?></ul>
                             </div>
-                           
-                                
-                                <?php if ( has_post_thumbnail() ) : ?>
-							<?php the_post_thumbnail( 'large', array( 'alt' => get_the_title(), 'class' => 'img-responsive') ); ?>
-						<?php endif; ?> 
-                                 
+                                <?php if ( has_post_thumbnail() ) :
+                                the_post_thumbnail( 'large', array( 'alt' => get_the_title(), 'class' => 'img-responsive') );
+                                endif; ?>
                             <div class="blog-info">
-        <?php the_excerpt(); ?>
+                                <?php the_excerpt(); ?>
                             </div>
                         </div>
                     <?php endwhile; ?>
-<?php else : ?>
-                    <p><?php _e('Sorry, but nothing matched your search terms. Please try again with some different keywords', 'advent'); ?>.</p> 
-
+                <?php else : ?>
+                    <p><?php _e('Sorry, but nothing matched your search terms. Please try again with some different keywords', 'advent'); ?>.</p>
                     <div class="row">
                         <div class="col-sm-12 search-formmain">
     <?php get_search_form(); ?>
                         </div>
-
                     </div>
-<?php endif; ?>
+                <?php endif; ?>
                 <div class="post-pagination col-md-12 no-padding">
                     <div class="page-links">
-                        <?php
-                        // Previous/next page navigation.
+                        <?php // Previous/next page navigation.
                         the_posts_pagination(array(
                             'prev_text' => __('Previous', 'advent'),
                             'next_text' => '&nbsp;&nbsp;' . __(' Next', 'advent')
-                        ));
-                        ?></div>
+                        )); ?></div>
                 </div>
             </div>	
 <?php get_sidebar(); ?>
         </div>
-
     </div>
 </div>
 <!-- Blog End -->

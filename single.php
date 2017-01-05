@@ -2,8 +2,7 @@
 /**
  * Single Post template file
  * */
-get_header();
-?>
+get_header(); ?>
 <section>
     <!--Breadcrumb  Part Start-->
     <div class="breadcumb-bg">
@@ -33,15 +32,13 @@ get_header();
 							<?php the_post_thumbnail( 'large', array( 'alt' => get_the_title(), 'class' => 'img-responsive') ); ?>
 						<?php endif; ?> 
                         <div class="blog-info">
-                            <?php
-                                the_content();
+                            <?php the_content();
                                 wp_link_pages(array(
                                     'before' => '<div class="page-links"><span class="page-links-title">' . __('Pages:', 'advent') . '</span>',
                                     'after' => '</div>',
                                     'link_before' => '<span>',
                                     'link_after' => '</span>',
-                                ));
-                                ?>
+                                )); ?>
                         </div>
 <?php endwhile; ?> 
                 </div>
@@ -61,10 +58,3 @@ get_header();
     <!-- Post Detail Part End -->
 </section>
 <?php get_footer(); ?>
-
-
-
-
-
-
-

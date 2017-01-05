@@ -3,7 +3,6 @@
 function advent_options_init() {
     register_setting('advent_options', 'advent_theme_options', 'advent_options_validate');
 }
-
 add_action('admin_init', 'advent_options_init');
 
 function advent_options_validate($input) {
@@ -37,7 +36,6 @@ function advent_options_validate($input) {
     endfor;
     return $input;
 }
-
 /* Validation for uploaded image */
 
 function advent_image_validation($advent_imge_url) {
@@ -83,21 +81,18 @@ function advent_add_page() {
 function advent_framework_page() {
     global $select_options;
     if (!isset($_REQUEST['settings-updated']))
-        $_REQUEST['settings-updated'] = false;
-    ?>
+        $_REQUEST['settings-updated'] = false; ?>
     <div class="themeoptions-themes">
         <form method="post" action="options.php" id="form-option" class="theme_option_ft">
             <div class="themeoptions-header">
                 <div class="logo">
     <?php
     $advent_image = get_template_directory_uri() . '/theme-options/images/dashboard-logo.png';
-    echo "<a href='http://fruitthemes.com/' target='_blank'><img src='" . $advent_image . "' alt='" . __('FruitThemes', 'advent') . "' /></a>";
-    ?>
+    echo "<a href='http://fruitthemes.com/' target='_blank'><img src='" . $advent_image . "' alt='" . __('FruitThemes', 'advent') . "' /></a>"; ?>
                 </div>
                 <div class="header-right">
     <?php
-    echo "<div class='btn-save'><input type='submit' class='button-primary' value='" . __('Save Options', 'advent') . "' /></div>";
-    ?>
+    echo "<div class='btn-save'><input type='submit' class='button-primary' value='" . __('Save Options', 'advent') . "' /></div>"; ?>
                 </div>
             </div>
             <div class="themeoptions-details">
@@ -117,13 +112,11 @@ function advent_framework_page() {
                     </div>
                     <div class="right-box-bg"></div>
                     <div class="postbox left-box"> 
-                        <!--======================== F I N A L - - T H E M E - - O P T I O N ===================-->
-    <?php
-    settings_fields('advent_options');
-    $advent_options = get_option('advent_theme_options');
-    ?>
+                        <!-- F I N A L - - T H E M E - - O P T I O N -->
+    <?php settings_fields('advent_options');
+    $advent_options = get_option('advent_theme_options'); ?>
 
-				<!-------------- Header group ----------------->
+				<!-- Header group  -->
 				<div id="options-group-1" class="group themeoptions-tabs">   
 					<div class="section theme-tabs theme-logo">
 						<a class="heading themeoptions-inner-tab active" href="javascript:void(0)"><?php _e('Site Logo (Recommended Size : 135px * 33px)', 'advent'); ?></a>
@@ -153,9 +146,8 @@ echo esc_attr($advent_options['logo']);
 									} ?>" placeholder="<?php _e('No file chosen', 'advent'); ?>" />
 								<input id="upload_image_button1" class="upload-button button" type="button" value="<?php _e('Upload', 'advent'); ?>" />
 								<div class="screenshot" id="favicon-image">
-<?php if (!empty($advent_options['favicon'])) {
-echo "<img src='" . esc_url($advent_options['favicon']) . "' /><a class='remove-image'></a>";
-} ?>
+									<?php if (!empty($advent_options['favicon'])) {
+									echo "<img src='" . esc_url($advent_options['favicon']) . "' /><a class='remove-image'></a>"; } ?>
 								</div>
 							</div>
 						</div>
@@ -172,7 +164,7 @@ echo esc_attr($advent_options['footertext']);
 						</div>
 					</div>
 				</div>          
-				<!-------------- Home Page group ----------------->
+				<!-- Home Page group -->
 				<div id="options-group-2" class="group themeoptions-tabs">
 					<h3><?php _e('Top Header', 'advent'); ?></h3>
 					<div id="top-heading" class="section theme-tabs">
@@ -180,9 +172,7 @@ echo esc_attr($advent_options['footertext']);
 						<div class="themeoptions-inner-tab-group">
 							<div class="ft-control">
 								<div class="explain"><?php _e('Enter home page heading for your top header, you would like to display in the Home Page.', 'advent'); ?></div>                
-								<input maxlength="40" id="topheading" class="of-input" name="advent_theme_options[topheading]"  type="text" size="50" value="<?php if (!empty($advent_options['topheading'])) {
-echo esc_attr($advent_options['topheading']);
-} ?>" />
+								<input maxlength="40" id="topheading" class="of-input" name="advent_theme_options[topheading]"  type="text" size="50" value="<?php if (!empty($advent_options['topheading'])) { echo esc_attr($advent_options['topheading']); } ?>" />
 							</div>                
 						</div>
 					</div>
@@ -197,8 +187,7 @@ echo esc_attr($advent_options['headertop-logo']);
 								<input id="upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload', 'advent'); ?>" />
 								<div class="screenshot" id="headertop-logo">
 <?php if (!empty($advent_options['headertop-logo'])) {
-echo "<img src='" . esc_url($advent_options['headertop-logo']) . "' /><a class='remove-image'></a>";
-} ?>
+echo "<img src='" . esc_url($advent_options['headertop-logo']) . "' /><a class='remove-image'></a>"; } ?>
 								</div>
 							</div>
 						</div>
@@ -214,16 +203,11 @@ echo esc_attr($advent_options['headertop-img']);
 								<input id="upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload', 'advent'); ?>" />
 								<div class="screenshot" id="headertop-img">
 <?php if (!empty($advent_options['headertop-img'])) {
-echo "<img src='" . esc_url($advent_options['headertop-img']) . "' /><a class='remove-image'></a>";
-} ?>
+echo "<img src='" . esc_url($advent_options['headertop-img']) . "' /><a class='remove-image'></a>"; } ?>
 								</div>
 							</div>
 						</div>
 					</div>
-
-
-
-
 					<div id="headertop-bg" class="section theme-tabs">
 						<a class="heading themeoptions-inner-tab" href="javascript:void(0)"><?php _e('Backgroung Image (Recommended Size : 1350px * 667px)', 'advent'); ?></a>
 						<div class="themeoptions-inner-tab-group">
@@ -235,8 +219,7 @@ echo "<img src='" . esc_url($advent_options['headertop-img']) . "' /><a class='r
 								<input id="upload_image_button" class="upload-button button" type="button" value="<?php _e('Upload', 'advent'); ?>" />
 								<div class="screenshot" id="headertop-bg">
 <?php if (!empty($advent_options['headertop-bg'])) {
-echo "<img src='" . esc_url($advent_options['headertop-bg']) . "' /><a class='remove-image'></a>";
-} ?>
+echo "<img src='" . esc_url($advent_options['headertop-bg']) . "' /><a class='remove-image'></a>"; } ?>
 								</div>
 							</div>
 						</div>
@@ -248,8 +231,7 @@ echo "<img src='" . esc_url($advent_options['headertop-bg']) . "' /><a class='re
 							<div class="ft-control">
 								<div class="explain"><?php _e('Enter home page title for your site , you would like to display in the Home Page.', 'advent'); ?></div>                
 								<input maxlength="100" id="title" class="of-input" name="advent_theme_options[home-title]"  type="text" size="50" value="<?php if (!empty($advent_options['home-title'])) {
-echo esc_attr($advent_options['home-title']);
-} ?>" />
+echo esc_attr($advent_options['home-title']); } ?>" />
 							</div>                
 						</div>
 					</div>
@@ -258,9 +240,7 @@ echo esc_attr($advent_options['home-title']);
 						<div class="themeoptions-inner-tab-group">
 							<div class="ft-control">
 								<div class="explain"><?php _e('Enter home content for your site , you would like to display in the Home Page.', 'advent'); ?></div>
-								<textarea maxlength="600" name="advent_theme_options[home-content]" rows="6" id="home-content1" class="of-input"><?php if (!empty($advent_options['home-content'])) {
-echo esc_attr($advent_options['home-content']);
-} ?></textarea>
+								<textarea maxlength="600" name="advent_theme_options[home-content]" rows="6" id="home-content1" class="of-input"><?php if (!empty($advent_options['home-content'])) { echo esc_attr($advent_options['home-content']); } ?></textarea>
 							</div>                
 						</div>
 					</div>
@@ -397,14 +377,13 @@ $advent_option = '<option value="' . $advent_category->term_id . '" ' . $advent_
 $advent_option .= $advent_category->cat_name;
 $advent_option .= '</option>';
 echo $advent_option;
-}
-?>
+} ?>
 								</select>
 							</div>                
 						</div>
 					</div>
 				</div>    
-				<!-------------- Social group ----------------->
+				<!-- Social group -->
 				<div id="options-group-3" class="group themeoptions-tabs">
 					<div id="section-email" class="section theme-tabs">
 						<a class="heading themeoptions-inner-tab" href="javascript:void(0)"><?php _e('Email', 'advent'); ?></a>
@@ -459,9 +438,8 @@ echo esc_attr($advent_options['pinterest']);
 							<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/advent-buy-now.png" class="advent-pro-buynow" /></a>
 					  </div>
 					<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/advent_pro_features.png" />
-				  </div> 
-						
-                        <!--======================== F I N A L - - T H E M E - - O P T I O N S ===================--> 
+				  </div>
+                        <!-- F I N A L - - T H E M E - - O P T I O N S --> 
                     </div>
                 </div>
             </div>
@@ -472,5 +450,4 @@ echo esc_attr($advent_options['pinterest']);
             </div>
         </form>    
     </div>
-
 <?php } ?>

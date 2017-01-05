@@ -1,9 +1,7 @@
 <?php
 /**
  * Implemention of Custom Header 
- */
-
-/**
+ *
  * Set up the WordPress core custom header settings.
  *
  */
@@ -50,13 +48,11 @@ if (!function_exists('advent_header_style')) :
         if (display_header_text() && $advent_text_color === get_theme_support('custom-header', 'default-text-color'))
             return;
 
-        // If we get this far, we have custom styles.
-        ?>
+        // If we get this far, we have custom styles. ?>
         <style type="text/css" id="advent-header-css">
         <?php
         // Has the text been hidden?
-        if (!display_header_text()) :
-            ?>
+        if (!display_header_text()) : ?>
                 .home-link,
                 .logo p {
                     clip: rect(1px 1px 1px 1px); /* IE7 */
@@ -75,19 +71,14 @@ if (!function_exists('advent_header_style')) :
         </style>
         <?php
     }
-
 endif; // advent_header_style
-
-
 if (!function_exists('advent_admin_header_style')) :
-
     /**
      * Style the header image displayed on the Appearance > Header screen.
      *
      * @see advent_custom_header_setup()
      */
-    function advent_admin_header_style() {
-        ?>
+    function advent_admin_header_style() { ?>
         <style type="text/css" id="advent-admin-header-css">
             .appearance_page_custom-header #headimg {
                 background-color: #000;
@@ -111,9 +102,7 @@ if (!function_exists('advent_admin_header_style')) :
         </style>
         <?php
     }
-
 endif; // advent_admin_header_style
-
 if (!function_exists('advent_admin_header_image')) :
 
     /**
@@ -131,6 +120,4 @@ if (!function_exists('advent_admin_header_image')) :
         </div>
         <?php
     }
-
-
-endif; // advent_admin_header_image
+endif; // advent_admin_header_image ?>

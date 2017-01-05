@@ -33,3 +33,6 @@ Version 1.0.6
 i) 	 Remove the fix logo height and width.
 ii)	 Fixed css issue
 iii) fixed customize header image. 
+
+Version 1.0.7 (05 Jan 2017)
+i) Minor fixes.

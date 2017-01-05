@@ -4,19 +4,15 @@
  * Advent  Breadcrumbs
  */
 global $advent_options;
-
 function advent_custom_breadcrumbs() {
-
     $advent_showonhome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
     $advent_delimiter = '/'; // advent_delimiter between crumbs
     $advent_home = __('Home', 'advent'); // text for the 'Home' link
     $advent_showcurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
     $advent_before = ' '; // tag before the current crumb
     $advent_after = ' '; // tag after the current crumb
-
     global $post;
     $advent_homelink = esc_url(home_url());
-
     if (is_home() || is_front_page()) {
 
         if ($advent_showonhome == 1)
@@ -105,10 +101,7 @@ function advent_custom_breadcrumbs() {
             if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author())
                 echo ')';
         }
-
         echo '</li></ol>';
     }
 }
-
-// end advent_custom_breadcrumbs()
-?>
+// end advent_custom_breadcrumbs() ?>

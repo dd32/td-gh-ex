@@ -9,14 +9,12 @@ function advent_setup() {
 	if ( ! isset( $content_width ) ) {
 		$content_width = 870;
 	}
-	
 	// Make advent theme available for translation.
 	load_theme_textdomain( 'advent', get_template_directory() . '/languages' );
-	
-        // This theme styles the visual editor to resemble the theme style.
+    // This theme styles the visual editor to resemble the theme style.
 	add_editor_style( array( 'css/editor-style.css', advent_font_url() ) );
 	
-        // Add RSS feed links to <head> for posts and comments.
+    // Add RSS feed links to <head> for posts and comments.
 	add_theme_support( 'automatic-feed-links' );
 	
         // Featured image
@@ -24,7 +22,6 @@ function advent_setup() {
 	set_post_thumbnail_size( 672, 372, true );
 	add_image_size( 'advent-full-width', 1038, 576, true );
 	add_image_size('headertop-logo', 155, 155, true);
-
 	
 	register_nav_menus( array(
 		'primary'   => __( 'Top primary menu', 'advent' ),
@@ -55,12 +52,7 @@ function advent_setup() {
 	
 	// This theme uses its own gallery styles.       
 	add_filter('use_default_gallery_style', '__return_false'); 
-	add_editor_style('css/editor-style.css');	
-	
-	
-        
-	
-        
+	add_editor_style('css/editor-style.css');
 	// Add support for featured content.
 	add_theme_support( 'featured-content', array(
 		'featured_content_filter' => 'advent_get_featured_posts',
@@ -75,7 +67,6 @@ function advent_setup() {
 
     /* height width automaticly adjust for home slider */
     add_image_size( 'advent-home-thumbnail-image', 250, 180, true );
-        
 }
 endif; // advent_setup
 add_action( 'after_setup_theme', 'advent_setup' );
@@ -106,22 +97,17 @@ function advent_header_bg()
 		echo $advent_header_bg_img;
 	}	
 }
-
-
 /* Set size of characher in excerpt */
 function advent_excerpt_length( $length ) {
 	return 63;
 }
 add_filter( 'excerpt_length', 'advent_excerpt_length', 999 );
-
 /* readmore button if more content */
 function advent_excerpt_more() {
    return '...</p><div class="read-more"><a href="' . get_permalink() . '" class="read-button">'.__('Read more','advent').'</a></div>';
 
 }
 add_filter("excerpt_more", "advent_excerpt_more");
-
-
 /*
  * Comments placeholder function
  * 
@@ -197,7 +183,4 @@ require_once('functions/theme-default-setup.php');
 /*** Breadcrumbs ***/
 require_once('functions/breadcrumbs.php');
 /*** Custom Header ***/
-require_once('functions/custom-header.php');
-
-
-
+require_once('functions/custom-header.php'); ?>

@@ -2,8 +2,7 @@
 /**
  * Main Page template file
 **/
-get_header(); 
-?>
+get_header(); ?>
 <section>
 	<!--Breadcrumb  Part Start-->
 	<div class="breadcumb-bg">
@@ -24,11 +23,10 @@ get_header();
 		<div class="blog-main">
 		<div class="col-md-9 col-sm-8">
 			<div class="blog-details single">
-				 <?php while ( have_posts() ) : the_post(); ?>
-				
-                         <?php if ( has_post_thumbnail() ) : ?>
-							<?php the_post_thumbnail( 'large', array( 'alt' => get_the_title(), 'class' => 'img-responsive') ); ?>
-						<?php endif; ?> 
+				 <?php while ( have_posts() ) : the_post();
+				 	if ( has_post_thumbnail() ) :
+				 		the_post_thumbnail( 'large', array( 'alt' => get_the_title(), 'class' => 'img-responsive') );
+				 	endif; ?> 
 				<div class="blog-info">
 					<p><?php the_content();
 					wp_link_pages( array(
@@ -36,8 +34,7 @@ get_header();
 							'after'       => '</div>',
 							'link_before' => '<span>',
 							'link_after'  => '</span>',
-						) );
-					 ?></p>
+						) ); ?></p>
 				</div>
 				 <?php endwhile; ?> 
 			</div>
@@ -49,4 +46,3 @@ get_header();
 	<!-- Blog End -->
 </section>
 <?php get_footer(); ?>
-

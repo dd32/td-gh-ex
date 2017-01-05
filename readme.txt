@@ -5,7 +5,7 @@ Advent Theme by FruitThemes http://fruitthemes.com/
 Advent is a lightweight, clean, super flexible and bootstrap based responsive theme for business or personal websites. Advent Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, theme-options etc in order to get it customized as per your needs.
 
 === Tags ===
-left-sidebar, right-sidebar, responsive-layout, custom-background, red, custom-header, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments , translation-ready, custom-header
+left-sidebar, right-sidebar, custom-background, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments , translation-ready, custom-header
 
 == License ==
 Resource URI: http://underscores.me/
@@ -15,7 +15,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 
 == Copyright ==
-Advent WordPress Theme, Copyright 2014 fruitthemes.com
+Advent WordPress Theme, Copyright 2017 fruitthemes.com
 Advent is distributed under the terms of the GNU GPL
 
 

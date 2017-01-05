@@ -2,8 +2,7 @@
 /**
  * 404 page template file
  * */
-get_header();
-?>
+get_header(); ?>
 <section>
     <!--Breadcrumb  Part Start-->
     <div class="breadcumb-bg">
