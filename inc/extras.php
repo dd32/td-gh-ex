@@ -203,7 +203,7 @@ function arouse_custom_styles() {
 
 	if ( ! empty( $arouse_custom_styles ) ) { ?>
 		<style type="text/css">
-			<?php echo preg_replace( '/\s+/', ' ', $arouse_custom_styles ); ?>
+			<?php echo esc_attr( $arouse_custom_styles ); ?>
 		</style>
 	<?php }
 

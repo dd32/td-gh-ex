@@ -312,7 +312,7 @@ function arouse_customize_register( $wp_customize ) {
 			array(
 				'section' 		=> 'arouse_theme_info',
 				'label' 		=> __( 'Arouse Documentation', 'arouse' ),
-				'content' 		=> __( '<a class="button" href="http://themezhut.com/arouse-wordpress-theme-documentation/" target="_blank">Read the documentation.</a></p>', 'arouse' ) . '</p>',
+				'content' 		=> __( '<a class="button" href="http://themezhut.com/arouse-wordpress-theme-documentation/" target="_blank">Read the documentation.</a>', 'arouse' ),
 			) 
 		) 
 	);	
@@ -331,7 +331,7 @@ function arouse_customize_register( $wp_customize ) {
 			array(
 				'section' 		=> 'arouse_theme_info',
 				'label' 		=> __( 'Arouse Demo', 'arouse' ),
-				'content' 		=> __( '<a class="button" href="http://themezhut.com/demo/arouse/" target="_blank">See the demo.</a></p>', 'arouse' ) . '</p>',
+				'content' 		=> __( '<a class="button" href="http://themezhut.com/demo/arouse/" target="_blank">See the demo.</a>', 'arouse' ),
 			) 
 		) 
 	);
@@ -350,7 +350,7 @@ function arouse_customize_register( $wp_customize ) {
 			array(
 				'section' 		=> 'arouse_theme_info',
 				'label' 		=> __( 'Arouse Pro Details', 'arouse' ),
-				'content' 		=> __( '<a class="button" href="http://themezhut.com/themes/arouse-pro/" target="_blank">Arouse Pro Details.</a></p>', 'arouse' ) . '</p>',
+				'content' 		=> __( '<a class="button" href="http://themezhut.com/themes/arouse-pro/" target="_blank">Arouse Pro Details.</a>', 'arouse' ),
 			) 
 		) 
 	);		
@@ -370,7 +370,7 @@ function arouse_customize_register( $wp_customize ) {
 			array(
 				'section' 		=> 'arouse_theme_info',
 				'label' 		=> __( 'Arouse Pro Demo', 'arouse' ),
-				'content' 		=> __( '<a class="button" href="http://themezhut.com/demo/arouse-pro/" target="_blank">Arouse Pro Demo.</a></p>', 'arouse' ) . '</p>',
+				'content' 		=> __( '<a class="button" href="http://themezhut.com/demo/arouse-pro/" target="_blank">Arouse Pro Demo.</a>', 'arouse' ),
 			) 
 		) 
 	);

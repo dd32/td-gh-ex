@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: arouse.1.0.5\n"
-"POT-Creation-Date: 2016-12-28 10:46+0530\n"
-"PO-Revision-Date: 2016-12-28 10:47+0530\n"
+"Project-Id-Version: arouse.1.0.8\n"
+"POT-Creation-Date: 2017-01-05 20:32+0530\n"
+"PO-Revision-Date: 2017-01-05 20:32+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -11,26 +11,14 @@ msgstr ""
 "X-Generator: Poedit 1.5.7\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_attr_e;esc_html__;_x\n"
 "X-Poedit-Basepath: .\n"
-"X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: 404.php:17
+#: 404.php:19
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: 404.php:21
-msgid ""
-"It looks like nothing was found at this location. Maybe try one of the links "
-"below or a search?"
-msgstr ""
-
-#: 404.php:33
-msgid "Most Used Categories"
-msgstr ""
-
-#: 404.php:51
-#, php-format
-msgid "Try looking in the monthly archives. %1$s"
+#: 404.php:23
+msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr ""
 
 #: comments.php:40 comments.php:62
@@ -139,30 +127,6 @@ msgstr ""
 
 #: inc/template-tags.php:64
 msgid ", "
-msgstr ""
-
-#: inc/theme-info.php:40
-msgid "View Demo"
-msgstr ""
-
-#: inc/theme-info.php:44
-msgid "Documentation"
-msgstr ""
-
-#: inc/theme-info.php:48
-msgid "Get Support"
-msgstr ""
-
-#: inc/theme-info.php:52
-msgid "Customize Site"
-msgstr ""
-
-#: inc/theme-info.php:56
-msgid "Arouse Pro"
-msgstr ""
-
-#: inc/theme-info.php:60 inc/customizer/customizer.php:372
-msgid "Arouse Pro Demo"
 msgstr ""
 
 #: inc/customizer/customizer.php:28
@@ -291,7 +255,7 @@ msgstr ""
 #: inc/customizer/customizer.php:315
 msgid ""
 "<a class=\"button\" href=\"http://themezhut.com/arouse-wordpress-theme-"
-"documentation/\" target=\"_blank\">Read the documentation.</a></p>"
+"documentation/\" target=\"_blank\">Read the documentation.</a>"
 msgstr ""
 
 #: inc/customizer/customizer.php:333
@@ -301,7 +265,7 @@ msgstr ""
 #: inc/customizer/customizer.php:334
 msgid ""
 "<a class=\"button\" href=\"http://themezhut.com/demo/arouse/\" target="
-"\"_blank\">See the demo.</a></p>"
+"\"_blank\">See the demo.</a>"
 msgstr ""
 
 #: inc/customizer/customizer.php:352
@@ -311,13 +275,17 @@ msgstr ""
 #: inc/customizer/customizer.php:353
 msgid ""
 "<a class=\"button\" href=\"http://themezhut.com/themes/arouse-pro/\" target="
-"\"_blank\">Arouse Pro Details.</a></p>"
+"\"_blank\">Arouse Pro Details.</a>"
+msgstr ""
+
+#: inc/customizer/customizer.php:372
+msgid "Arouse Pro Demo"
 msgstr ""
 
 #: inc/customizer/customizer.php:373
 msgid ""
 "<a class=\"button\" href=\"http://themezhut.com/demo/arouse-pro/\" target="
-"\"_blank\">Arouse Pro Demo.</a></p>"
+"\"_blank\">Arouse Pro Demo.</a>"
 msgstr ""
 
 #: inc/customizer/custom-controls/control-category-dropdown.php:13

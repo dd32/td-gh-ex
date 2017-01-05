@@ -3,7 +3,7 @@
 Tags: grid-layout,right-sidebar,two-columns,custom-logo,custom-background,custom-menu,editor-style,featured-images,footer-widgets,full-width-template,theme-options,threaded-comments,translation-ready,news,blog,entertainment
 Requires at least: 4.0
 Tested up to: 4.7
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -75,6 +75,13 @@ Arouse supports woocommerce plugin.
 * Changed screenshot.
 * Updated Image licenses.
 * Fixed a small issue in extras.php 
+
+= 1.0.8 - Jan 5 2017 =
+* Removed entertainment theme tag from the style.css file
+* Removed theme-info.php, admin.css files and related functions.
+* Fixed escaping issue in category-posts-widget.php
+* escaped custom styles output in arouse_custom_styles() function.
+* Removed default.po and default.mo files and added arouse.pot file
 
 
 == Credits ==

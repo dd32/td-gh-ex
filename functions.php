@@ -244,14 +244,6 @@ function arouse_font_styles() {
 add_action( 'wp_enqueue_scripts', 'arouse_font_styles' );
 
 /**
-* Enqueue arouse options panel custom css.
-*/
-function arouse_option_panel_style() {
-	wp_enqueue_style( 'admin_css', get_template_directory_uri() . '/css/admin.css', false );
-}
-add_action( 'admin_enqueue_scripts', 'arouse_option_panel_style' );
-
-/**
 * Custom excerpt length.
 */
 function arouse_excerpt_length( $length ) {
@@ -267,11 +259,6 @@ function arouse_the_custom_logo() {
 		the_custom_logo();
 	}
 }
-
-/**
- * Theme info page.
- */
-require get_template_directory() . '/inc/theme-info.php';
 
 /**
  * Custom template tags for this theme.
