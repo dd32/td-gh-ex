@@ -23,14 +23,13 @@ get_header(); ?>
             </div>
         </div>
     </div>
-    </div>    
-
+    </div>
     <div class="deserve-container">       
         <div class="col-md-9 col-sm-8  dblog">        
         <?php while ( have_posts() ) : the_post(); ?>
         <div class="blog-box">
-			<?php $deserve_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()),'large'); ?>
-			<?php if($deserve_image[0] != "") { ?>
+			<?php $deserve_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()),'large'); 
+			if($deserve_image[0] != "") { ?>
 				<a href="<?php echo get_permalink(); ?>">
 				<img src="<?php echo esc_url($deserve_image[0]); ?>" width="<?php echo $deserve_image[1]; ?>" height="<?php echo $deserve_image[2]; ?>"  alt="<?php the_title(); ?>" class="img-responsive" />
 				</a>
@@ -48,8 +47,7 @@ get_header(); ?>
          <?php endwhile;  ?>     
             <div class="gallery-pagination blog-pagination">
                 <ul>
-						
-						<li class="link_pagination" >
+                <li class="link_pagination" >
 					<?php deserve_pagination(); ?>
 				</li>
                 </ul>
@@ -58,5 +56,4 @@ get_header(); ?>
     <?php get_sidebar(); ?> 
     </div>
 </section>
-
 <?php get_footer(); ?>

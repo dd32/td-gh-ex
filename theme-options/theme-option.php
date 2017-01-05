@@ -65,8 +65,8 @@ function deserve_framework_load_scripts(){
 add_action( 'admin_enqueue_scripts', 'deserve_framework_load_scripts' );
 function deserve_framework_menu_settings() {
 	$deserve_menu = array(
-				'page_title' => __( 'Deserve Options', 'deserve_framework'),
-				'menu_title' => __('Theme Options', 'deserve_framework'),
+				'page_title' => __( 'Deserve Options', 'deserve'),
+				'menu_title' => __('Theme Options', 'deserve'),
 				'capability' => 'edit_theme_options',
 				'menu_slug' => 'deserve_framework',
 				'callback' => 'deserve_framework_page'
@@ -119,12 +119,12 @@ function deserve_framework_page(){
       </div>
       <div class="right-box-bg"></div>
       <div class="postbox left-box"> 
-        <!--======================== F I N A L - - T H E M E - - O P T I O N ===================-->
+        <!-- F I N A L - - T H E M E - - O P T I O N -->
           <?php settings_fields( 'deserve_options' );  
 		$deserve_options = get_option( 'deserve_theme_options' );
 		 ?>
         
-            <!-------------- Header group ----------------->
+            <!-- Header group -->
           <div id="options-group-1" class="group theme-option-inner-tabs">   
                  
           	<div class="section theme-tabs theme-logo">
@@ -174,7 +174,7 @@ function deserve_framework_page(){
             </div>
                         
           </div>          
-          <!-------------- Home Page group ----------------->
+          <!-- Home Page group -->
           <div id="options-group-2" class="group theme-option-inner-tabs">
           <h3><?php _e('Banner Slider','deserve'); ?></h3>
 			<?php for($deserve_i=1; $deserve_i <=5 ;$deserve_i++ ):?> 
@@ -274,7 +274,7 @@ function deserve_framework_page(){
           
           
           </div>    
-          <!-------------- Social group ----------------->
+          <!-- Social group -->
           <div id="options-group-3" class="group theme-option-inner-tabs">            
             <div id="section-facebook" class="section theme-tabs">
             	<a class="heading theme-option-inner-tab active" href="javascript:void(0)"><?php _e('Facebook','deserve'); ?></a>
@@ -316,7 +316,7 @@ function deserve_framework_page(){
             
             
           </div>
-          <!-------------- Social group ----------------->    
+          <!-- Social group -->    
            <div id="options-group-4" class="group theme-option-inner-tabs deserve-pro-image">  
 			<div class="deserve-pro-header">
               <img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/deserve_logopro_features.png" class="deserve-pro-logo" />
@@ -325,8 +325,7 @@ function deserve_framework_page(){
               </div>
           	<img src="<?php echo get_template_directory_uri(); ?>/theme-options/images/deserve_pro_features.png" />
 		  </div>       
-         
-        <!--======================== F I N A L - - T H E M E - - O P T I O N S ===================--> 
+        <!-- F I N A L - - T H E M E - - O P T I O N S --> 
       </div>
      </div>
 	</div>
@@ -337,6 +336,4 @@ function deserve_framework_page(){
     </div>
     </form>    
 </div>
-
-
 <?php } ?>

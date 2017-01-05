@@ -26,3 +26,6 @@ Version 1.0.6
 Version 1.0.7
 	i)	Add home page first section title link.
 	ii)	Fixed css issue.
+
+Version 1.1 (05 Jan 2017)
+	i)	Misc Changes.

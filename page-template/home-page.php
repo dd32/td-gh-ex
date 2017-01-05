@@ -77,15 +77,12 @@ get_header();
         $deserve_image = esc_url($deserve_options['home-icon-' . $deserve_l]);
         $deserve_id = deserve_get_image_id_by_url($deserve_image);
         $deserve_image = wp_get_attachment_image_src($deserve_id, 'deserve-home-tab-size');
-        ?>
-        
+        ?>        
                     <div class="col-md-4 col-sm-6 col-sm-offset-3 col-md-offset-0">
-                        <div class="process-detail">
-                            
+                        <div class="process-detail">                            
                                 <div class="round-image">
                                     <img alt="<?php echo $deserve_l; ?>" class="img-circle" src="<?php echo $deserve_image[0]; ?>" width="<?php echo $deserve_image[1]; ?>" height="<?php echo $deserve_image[2]; ?>">			
-                                </div>
-                           
+                                </div>                           
                             <div class="process">
 								<?php if(!empty($deserve_options['section-link-' . $deserve_l])) { ?>
 								<a href="<?php echo esc_url($deserve_options['section-link-' . $deserve_l]) ?>" >
@@ -93,31 +90,22 @@ get_header();
                                 </a>
                                 <?php } else { ?>
 								<h2><?php if (!empty($deserve_options['section-title-' . $deserve_l])) echo sanitize_text_field($deserve_options['section-title-' . $deserve_l]); ?></h2>
-								<?php } ?>	
-                                
+								<?php } ?>
                                 <p><?php if (!empty($deserve_options['section-content-' . $deserve_l])) echo sanitize_text_field($deserve_options['section-content-' . $deserve_l]); ?></p>
                             </div>
                         </div>
                     </div>
-		
         <?php
     endif;
 endfor;
 ?>
-
-
-
-
         </div>
-     
-   
     </div>
     <hr class="bottom-border">
     <?php
     endif;
 endfor;
 ?>
-
     <div class="container deserve-container latest-blog">
 		  <?php if (!empty($deserve_options['shome-title'])) { ?>
         <div class="title">
@@ -148,53 +136,28 @@ endfor;
                         'compare' => 'EXISTS'
                     ),
                  )
-
             );
             $deserve_query = new WP_Query($deserve_args);
-           
             ?>
-<?php if ($deserve_query->have_posts()) : while ($deserve_query->have_posts()) : $deserve_query->the_post(); ?>    	
-
-        <?php $deserve_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()), 'deserve-latest-post'); ?>
-
-        <?php if ($deserve_image[0] != "") { ?>
-         
-
+<?php if ($deserve_query->have_posts()) : while ($deserve_query->have_posts()) : $deserve_query->the_post();
+        $deserve_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()), 'deserve-latest-post'); 
+        if ($deserve_image[0] != "") { ?>
                         <div class="col-md-3 col-sm-6">
-
-
                             <div class="blog-image"> 
-
                                 <a href="<?php echo get_permalink(); ?>">
                                     <img src="<?php echo esc_url($deserve_image[0]); ?>" width="<?php echo $deserve_image[1]; ?>" height="<?php echo $deserve_image[2]; ?>" class="img-responsive" alt="<?php the_title(); ?>"/>
                                 </a> 
-
                             </div>
                             <div class="blog-data col-md-12 no-padding"> <a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
                                 <ul>
-
-            <?php deserve_entry_meta(); ?>
-
+                                <?php deserve_entry_meta(); ?>
                                 </ul>
-
                             </div>
                         </div>
-
         <?php } ?>
-
     <?php endwhile;
 endif; ?>
-
-
-
-
         </div>
     </div>
-
-
 </section>
-
-
-
-
 <?php get_footer(); ?>

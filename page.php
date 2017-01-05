@@ -1,12 +1,10 @@
-<?php 
+<?php
+
 /*
  * Page Template File.
  */
 get_header(); ?>
-
-
 <section>
-
     <div class="breadcumb-bg">
 	<div class="deserve-container container">
     	<div class="site-breadcumb">
@@ -22,49 +20,26 @@ get_header(); ?>
 			  </div>
         </div>
     </div>
-    </div>    
-
-    <div class="deserve-container">       
-        <div class="col-md-9 col-sm-8  dblog"> 
-        
+    </div>
+    <div class="deserve-container">
+        <div class="col-md-9 col-sm-8  dblog">
         <?php while ( have_posts() ) : the_post(); ?>
-             
             <div class="blog-box">
-          
-            	<?php $deserve_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()),'large'); ?>
-
-            	 <?php if($deserve_image[0] != "") { ?>
-
-					<img src="<?php echo esc_url($deserve_image[0]); ?>" width="<?php echo $deserve_image[1]; ?>" height="<?php echo $deserve_image[2]; ?>"  alt="<?php the_title(); ?>" class="img-responsive" />
-		
+            	<?php $deserve_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()),'large');
+         	      if($deserve_image[0] != "") { ?>
+            	<img src="<?php echo esc_url($deserve_image[0]); ?>" width="<?php echo $deserve_image[1]; ?>" height="<?php echo $deserve_image[2]; ?>"  alt="<?php the_title(); ?>" class="img-responsive" />
                 <?php } ?>
-                
                 <div class="post-data">
-					
                     <h2 class="single-page-title"><?php the_title(); ?></h2>
-                   
                     <?php  the_content(); ?>
-
-                </div>             
-            </div>			
-	
-			      <?php endwhile; ?> 
-			
-			
+                </div>
+            </div>
+        <?php endwhile; ?>
 			<div class="comments-article">
 				 <?php comments_template(); ?>
 			</div>
-
         </div>
-		
-      
-       
-       <?php get_sidebar(); ?>  
-    
-    
+       <?php get_sidebar(); ?>
     </div>
-
 </section>
-
-
 <?php get_footer(); ?>

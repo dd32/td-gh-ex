@@ -16,20 +16,15 @@ function deserve_setup() {
 	// This theme styles the visual editor to resemble the theme style.
 	add_editor_style( array( 'css/editor-style.css', deserve_font_url() ) );
 	// Add RSS feed links to <head> for posts and comments.
-	add_theme_support( 'automatic-feed-links' );
-	
+	add_theme_support( 'automatic-feed-links' );	
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 672, 372, true );
 	add_image_size( 'deserve-latest-post', 270, 212, true );	
 	add_image_size( 'deserve-latest-post-widget', 100, 100, true );	
 	add_image_size( 'deserve-home-tab-size', 94, 93, true );
 	add_image_size( 'deserve-footer-logo-size', 161, 38, true );
-	
-	
-	
 	/* title tag */
 	 add_theme_support( 'title-tag' );
-
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
 		'primary'   => __( 'Header Menu', 'deserve' ),
@@ -57,7 +52,6 @@ function deserve_setup() {
 
 endif; // deserve_setup
 add_action( 'after_setup_theme', 'deserve_setup' );
-
 /*
  * Register Istok Web Google font for deserve.
  */
@@ -70,9 +64,6 @@ function deserve_font_url() {
 
 	return $deserve_font_url;
 }
-
-
-
 /*
  * Register widget areas.
  */
@@ -129,28 +120,16 @@ function deserve_widgets_init() {
 	;
 }
 add_action( 'widgets_init', 'deserve_widgets_init' );
-
-
-
-
-
-
 /*** Enqueue css and js files ***/
 require_once('functions/enqueue-files.php');
-
 /*** Theme Option ***/
 require_once('theme-options/theme-option.php');
-
 /*** Custom Header ***/
 require_once('functions/custom-header.php');
-
-
 /**
  * Add default menu style if menu is not set from the backend.
  * 
- */
- 
- 
+ */ 
 function deserve_add_menuid ($page_markup) {
 preg_match('/^<div class=\"([a-z0-9-_]+)\">/i', $page_markup, $deserve_matches);
 $deserve_divclass = '';
@@ -161,49 +140,31 @@ $deserve_new_markup = str_replace($deserve_toreplace,$deserve_replace, $page_mar
 $deserve_new_markup= preg_replace('/<ul/', '<ul class="nav"', $deserve_new_markup);
 return $deserve_new_markup; }
 add_filter('wp_page_menu', 'deserve_add_menuid');
-
-
-
-
-
-
 add_action( 'widgets_init', 'deserve_widget' );
-
 function deserve_widget() {
     register_widget( 'deserve_info_widget' );
 }
-
 class deserve_info_widget extends WP_Widget {
-
-    function deserve_info_widget() {
-        $deserve_widget_ops = array( 'classname' => 'deserve_info', 'description' => __('A widget that displays content, image and social links. ', 'deserve_info') );
-       
-        $deserve_control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'deserve-info-widget' );
-       
-        $this->WP_Widget( 'deserve-info-widget', __('Deserve Author Information', 'deserve_info'), $deserve_widget_ops, $deserve_control_ops );
+    public function __construct() {
+        $deserve_widget_ops = array( 'classname' => 'deserve_info', 'description' => __('A widget that displays content, image and social links. ', 'deserve') );       
+        $deserve_control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'deserve-info-widget' );       
+        parent::__construct( 'deserve-info-widget', __('Deserve Author Information', 'deserve'), $deserve_widget_ops, $deserve_control_ops );
     }
    
     function widget( $deserve_args, $deserve_instance ) {
         extract( $deserve_args );
-
         //Our variables from the widget settings.
         $deserve_name = $deserve_instance['content'];
 		$deserve_image = $deserve_instance['image'];
-
         echo $before_widget;
-
         //Display widget
 ?>       
-  <?php if (!empty($deserve_instance['content']) || !empty($deserve_instance['image']) || !empty($deserve_instance['facebook']) || !empty($deserve_instance['twitter']) || !empty($deserve_instance['linkedin']) || !empty($deserve_instance['google']) )   { ?>
-  
-
+  <?php if (!empty($deserve_instance['content']) || !empty($deserve_instance['image']) || !empty($deserve_instance['facebook']) || !empty($deserve_instance['twitter']) || !empty($deserve_instance['linkedin']) || !empty($deserve_instance['google']) )   { ?>  
   <ul>
     <li class="deserve-widget-author">
 		<?php
-		if(!empty($deserve_instance['image'])){ ?>
-		
-		<div class="logo-footer">
-			
+		if(!empty($deserve_instance['image'])){ ?>		
+		<div class="logo-footer">			
 					<?php
 					if(!empty($deserve_instance['image']))
 					{
@@ -230,21 +191,18 @@ class deserve_info_widget extends WP_Widget {
 				    <li>
 						<a target="_blank" class="social facebook-icon" href="<?php echo esc_url($deserve_instance['facebook']); ?>">	<i class="fa fa-facebook-square fa-2x"></i></a>
 					</li>
-					 <?php } ?>
-					
-					<?php if(!empty($deserve_instance['twitter'])) { ?>
+					 <?php } 
+					 if(!empty($deserve_instance['twitter'])) { ?>
 					<li>
 						<a target="_blank" class="social twitter-icon" href="<?php echo esc_url($deserve_instance['twitter']); ?>">   <i class="fa fa-twitter-square fa-2x"></i></a>
 					</li>
-					<?php } ?>
-					
-					<?php if(!empty($deserve_instance['linkedin'])) { ?>
+					<?php } 
+					 if(!empty($deserve_instance['linkedin'])) { ?>
 					<li>
 						<a target="_blank" class="social linkedin-icon" href="<?php echo esc_url($deserve_instance['linkedin']); ?>"><i class="fa fa-linkedin-square fa-2x"></i></a>
 					</li>
-					<?php } ?>
-					
-					<?php if(!empty($deserve_instance['google'])) { ?>
+					<?php } 
+					if(!empty($deserve_instance['google'])) { ?>
 					<li>
 						<a target="_blank" class="social googleplus-icon" href="<?php echo esc_url($deserve_instance['google']); ?>"><i class="fa fa-google-plus-square fa-2x"></i></a>
 					</li>
@@ -262,26 +220,19 @@ class deserve_info_widget extends WP_Widget {
    
     function update( $deserve_new_instance, $deserve_old_instance ) {
         $deserve_instance = $deserve_old_instance;
-
         //Strip tags from title and name to remove HTML
       
         $deserve_instance['content'] = sanitize_text_field(strip_tags( $deserve_new_instance['content'] ));
 		$deserve_instance['image'] = deserve_image_validation(esc_url_raw(strip_tags( $deserve_new_instance['image'] )));
-		
-		
         $deserve_instance['facebook'] = esc_url_raw(strip_tags( $deserve_new_instance['facebook'] ));
         $deserve_instance['twitter'] = esc_url_raw(strip_tags( $deserve_new_instance['twitter'] ));
 		$deserve_instance['linkedin'] = esc_url_raw(strip_tags( $deserve_new_instance['linkedin'] ));
 		$deserve_instance['google'] = esc_url_raw(strip_tags( $deserve_new_instance['google'] ));
-
         return $deserve_instance;
     }
-
-   
     function form( $deserve_instance ) {
 ?>
-
-        <p>
+      <p>
             <label for="<?php echo $this->get_field_id( 'content' ); ?>"><?php _e('Content:', 'deserve'); ?></label>
             <textarea id="<?php echo $this->get_field_id( 'content' ); ?>" name="<?php echo $this->get_field_name( 'content' ); ?>" class="author-input"><?php if(!empty($deserve_instance['content'])) { echo sanitize_text_field($deserve_instance['content']); } ?></textarea>
         </p>
@@ -289,8 +240,7 @@ class deserve_info_widget extends WP_Widget {
         <label for="<?php echo $this->get_field_id( 'image' ); ?>"><?php _e('Image:', 'deserve'); ?></label>
         <input id="<?php echo $this->get_field_id( 'image' ); ?>"  type="text" class="upload author-input" name="<?php echo $this->get_field_name( 'image' ); ?>" value="<?php if(!empty($deserve_instance['image'])) { echo esc_url($deserve_instance['image']); } ?>" placeholder="<?php _e('No file chosen','deserve'); ?>"  />
 		<?php if(!empty($deserve_instance['image'])) { ?><img src="<?php echo esc_url($deserve_instance['image']); ?>" class="author-img" /><?php } ?>
-        <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e( 'Upload', 'deserve' ); ?>" />
-          
+        <input id="upload_image_button" class="upload-button button" type="button" value="<?php _e( 'Upload', 'deserve' ); ?>" />          
         </p>
         
         <p>
@@ -316,7 +266,6 @@ class deserve_info_widget extends WP_Widget {
     <?php
     }
 }
-
 // READ MORE
 function deserve_change_excerpt_more( $more ) {
     return '... <div class="read-more"><a href="' . get_permalink() . '">'.__('Read More','deserve').'</a></div>';
@@ -327,23 +276,18 @@ function deserve_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'deserve_excerpt_length', 999 );
 
-
 /* CUSTOM POST WIDGET FOR LATEST POST */
-
 add_action( 'widgets_init', 'deserve_widget_post' );
-
 function deserve_widget_post() {
     register_widget( 'LatestPostWidget' );
 }
-
 class LatestPostWidget extends WP_Widget
 {
-function LatestPostWidget()
+public function __construct()
 {
 $deserve_lp_widget_ops = array('classname' => 'LatestPostWidget', 'description' => 'Displays a Latest post with thumbnail' );
-$this->WP_Widget('LatestPostWidget', 'Deserve Latest Post', $deserve_lp_widget_ops);
+parent::__construct('LatestPostWidget', 'Deserve Latest Post', $deserve_lp_widget_ops);
 }
-
 function form($deserve_lp_instance)
 {
 $deserve_lp_instance = wp_parse_args( (array) $deserve_lp_instance, array( 'title' => '' ) );
@@ -358,7 +302,6 @@ $deserve_lp_show_date = isset( $deserve_lp_instance['show_date'] ) ? (bool) $des
  <label for="<?php echo $this->get_field_id( 'show_date' ); ?>"><?php _e( 'Display post date?', 'deserve' ); ?></label></p>
 <?php
 }
-
 function update($deserve_lp_new_instance, $deserve_lp_old_instance)
 {
   $deserve_lp_instance = $deserve_lp_old_instance;
@@ -369,22 +312,16 @@ function update($deserve_lp_new_instance, $deserve_lp_old_instance)
 		return $deserve_lp_instance;
 
 }
-
 function widget($args, $deserve_lp_instance)
 {
 extract($args, EXTR_SKIP);
-
 echo $before_widget;
 $deserve_lp_title = empty($deserve_lp_instance['title']) ? ' ' : apply_filters('widget_title', $deserve_lp_instance['title']);
-
 if (!empty($deserve_lp_title))
 echo $before_title . $deserve_lp_title . $after_title;;
   $deserve_lp_show_date = isset( $deserve_lp_instance['show_date'] ) ? $deserve_lp_instance['show_date'] : false;
   $deserve_lp_number = ( ! empty( $deserve_lp_instance['number'] ) ) ? absint( $deserve_lp_instance['number'] ) : 10;
-
-
 $query = new WP_Query( apply_filters( 'widget_posts_args', array( 'posts_per_page' => $deserve_lp_number, 'no_found_rows' => true, 'post_status' => 'publish', 'ignore_sticky_posts' => true ) ) );
-
 		if ($query->have_posts()) :
 			while ( $query->have_posts() ) : $query->the_post(); ?>
          
@@ -417,44 +354,29 @@ $query = new WP_Query( apply_filters( 'widget_posts_args', array( 'posts_per_pag
 							<?php endif; ?>
 					</div>
 				</div>
-                
-          
-       <?php endwhile; endif; // end of the loop.
+			<?php endwhile; endif; // end of the loop.
 
 echo $after_widget;
 }
-
 }
 add_action( 'widgets_init', create_function('', 'return register_widget("LatestPostWidget");') );
-
-
-
-
 /* Deserve Entry Meta  */
-
 /*
  * deserve Set up post entry meta.
  *
  * Meta information for current post: categories, tags, permalink, author, and date.
  */
 function deserve_entry_meta() {
-
 	$deserve_categories_list = get_the_category_list(',','');
-	
 	$deserve_tag_list = get_the_tag_list('', ',' );
-	
 	$deserve_author= get_the_author();
-	
 	$deserve_author_url= esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) );
-	
 	$deserve_comments = wp_count_comments(get_the_ID()); 	
-	
 	$deserve_date = sprintf( '<time datetime="%1$s">%2$s</time>',
 		sanitize_text_field( get_the_date( 'c' ) ),
 		esc_html( get_the_date() )
 	);
 ?>	
-	
                 <li><?php _e('By ', 'deserve'); ?><a href="<?php echo $deserve_author_url; ?>" rel="tag"><?php echo $deserve_author; ?></a></li>
                   <?php if(!empty($deserve_categories_list)) { ?><li><?php _e('In ', 'deserve'); ?><?php echo $deserve_categories_list; ?></li><?php } ?>
                 <li><?php _e('Posted On ', 'deserve'); ?><?php echo $deserve_date; ?></li>
@@ -463,18 +385,8 @@ function deserve_entry_meta() {
 		
 <?php 	
 }
-
-
 /*** Breadcrumbs ***/
 require_once('functions/breadcrumbs.php');
-
-
-
-
-
-
-
-
 add_filter( 'comment_form_default_fields', 'deserve_comment_placeholders' );
 /**
  * Change default fields, add placeholder and change type attributes.
@@ -522,11 +434,6 @@ function deserve_comment_placeholders( $deserve_fields )
         $deserve_fields['url']
         
     );
-    
-    
-  
-    
-
     return $deserve_fields;
 }
 add_filter( 'comment_form_defaults', 'deserve_textarea_insert' );
@@ -544,16 +451,12 @@ function deserve_textarea_insert( $deserve_fields )
         );
     return $deserve_fields;
 }
-
-
-
 function deserve_get_image_id_by_url($image_url) {
     global $wpdb;
     $dserve_prefix = $wpdb->prefix;
     $deserve_attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM " . $dserve_prefix . "posts" . " WHERE guid='%s';", $image_url ));
     return $deserve_attachment[0];
 }
-
 function deserve_pagination()
 {
 	if(is_single()){
@@ -569,12 +472,3 @@ function deserve_pagination()
 			) );						
 	}
 }
-
-
-
-
-
-
-
-
-

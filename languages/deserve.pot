@@ -1,7 +1,8 @@
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Deserve V1.0.7\n"
-"POT-Creation-Date: 2015-01-16 11:09+0530\n"
+"POT-Creation-Date: 2017-01-05 15:54+0530\n"
 "PO-Revision-Date: 2015-01-16 11:11+0530\n"
 "Last-Translator: FruitThemes <info@fruitthemes.com>\n"
 "Language-Team: FruitThemes <info@fruitthemes.com>\n"
@@ -9,8 +10,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.3\n"
-"X-Poedit-Basepath: ../\n"
+"X-Generator: Poedit 1.8.11\n"
+"X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
@@ -19,200 +20,195 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: 404.php:16
+#: 404.php:12
 msgid "404 - Article Not Found"
 msgstr ""
 
-#: 404.php:36
+#: 404.php:28
 msgid "Epic 404 - Article Not Found"
 msgstr ""
 
-#: 404.php:37
+#: 404.php:29
 msgid "This is embarassing. We can't find what you were looking for."
 msgstr ""
 
-#: 404.php:39
+#: 404.php:31
 msgid ""
 "Whatever you were looking for was not found, but maybe try looking again or "
 "search using the form below."
 msgstr ""
 
-#: author.php:15
+#: author.php:12
 #, php-format
 msgid "Author : %s"
 msgstr ""
 
-#: category.php:15
+#: category.php:13
 #, php-format
 msgid "Category : %s"
 msgstr ""
 
-#: comments.php:10 functions.php:488
+#: comments.php:8 functions.php:384
 msgid "1 comment"
 msgstr ""
 
-#: comments.php:10 functions.php:488
+#: comments.php:8 functions.php:384
 #, php-format
 msgid "% comments"
 msgstr ""
 
-#: footer.php:29
+#: footer.php:23
 #, php-format
-msgid "Powered by %1$s and %2$s."
+msgid "Powered by %1$s."
 msgstr ""
 
-#: functions.php:35
+#: functions.php:30
 msgid "Header Menu"
 msgstr ""
 
-#: functions.php:36
+#: functions.php:31
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:67
+#: functions.php:61
 msgctxt "Istok Web font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:95
-#, php-format
-msgid "Page %s"
-msgstr ""
-
-#: functions.php:107
+#: functions.php:72
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:109
+#: functions.php:74
 msgid "Main sidebar that appears on the right."
 msgstr ""
 
-#: functions.php:117
+#: functions.php:82
 msgid "Footer Area One"
 msgstr ""
 
-#: functions.php:119
+#: functions.php:84
 msgid "Footer area one that appears on the footer."
 msgstr ""
 
-#: functions.php:127
+#: functions.php:92
 msgid "Footer Area Two"
 msgstr ""
 
-#: functions.php:129
+#: functions.php:94
 msgid "Footer area two that appears on the footer."
 msgstr ""
 
-#: functions.php:137
+#: functions.php:102
 msgid "Footer Area Three"
 msgstr ""
 
-#: functions.php:139
+#: functions.php:104
 msgid "Footer area three that appears on the footer."
 msgstr ""
 
-#: functions.php:147
+#: functions.php:112
 msgid "Footer area four"
 msgstr ""
 
-#: functions.php:149
+#: functions.php:114
 msgid "Footer area four that appears on the footer."
 msgstr ""
 
-#: functions.php:205
+#: functions.php:149
 msgid "A widget that displays content, image and social links. "
 msgstr ""
 
-#: functions.php:209
+#: functions.php:151
 msgid "Deserve Author Information"
 msgstr ""
 
-#: functions.php:241
+#: functions.php:176
 msgid "footer-logo"
 msgstr ""
 
-#: functions.php:311
+#: functions.php:236
 msgid "Content:"
 msgstr ""
 
-#: functions.php:315
+#: functions.php:240
 msgid "Image:"
 msgstr ""
 
-#: functions.php:316 theme-options/theme-option.php:133
-#: theme-options/theme-option.php:184 theme-options/theme-option.php:225
+#: functions.php:241 theme-options/theme-option.php:135
+#: theme-options/theme-option.php:186 theme-options/theme-option.php:227
 msgid "No file chosen"
 msgstr ""
 
-#: functions.php:318 theme-options/theme-option.php:134
-#: theme-options/theme-option.php:185 theme-options/theme-option.php:226
+#: functions.php:243 theme-options/theme-option.php:136
+#: theme-options/theme-option.php:187 theme-options/theme-option.php:228
 msgid "Upload"
 msgstr ""
 
-#: functions.php:323
+#: functions.php:247
 msgid "Facebook url:"
 msgstr ""
 
-#: functions.php:329
+#: functions.php:253
 msgid "Twitter url:"
 msgstr ""
 
-#: functions.php:333
+#: functions.php:257
 msgid "Linkedin url:"
 msgstr ""
 
-#: functions.php:337
+#: functions.php:261
 msgid "Google+ url:"
 msgstr ""
 
-#: functions.php:348
+#: functions.php:271
 msgid "Read More"
 msgstr ""
 
-#: functions.php:380
+#: functions.php:298
 msgid "Title:"
 msgstr ""
 
-#: functions.php:381
+#: functions.php:299
 msgid "Number of posts to show:"
 msgstr ""
 
-#: functions.php:384
+#: functions.php:302
 msgid "Display post date?"
 msgstr ""
 
-#: functions.php:442 functions.php:484
+#: functions.php:353 functions.php:380
 msgid "By "
 msgstr ""
 
-#: functions.php:485
+#: functions.php:381
 msgid "In "
 msgstr ""
 
-#: functions.php:486
+#: functions.php:382
 msgid "Posted On "
 msgstr ""
 
-#: functions.php:487
+#: functions.php:383
 msgid "Tags "
 msgstr ""
 
-#: functions.php:518
+#: functions.php:404
 msgctxt "comment form placeholder"
 msgid "Name"
 msgstr ""
 
-#: functions.php:529
+#: functions.php:415
 msgctxt "comment form placeholder"
 msgid "Email"
 msgstr ""
 
-#: functions.php:543
+#: functions.php:429
 msgctxt "comment form placeholder"
 msgid "Website"
 msgstr ""
 
-#: functions.php:564
+#: functions.php:445
 msgctxt "comment form placeholder"
 msgid "Message"
 msgstr ""
@@ -245,211 +241,221 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#: header.php:97
+#: header.php:81
 msgid "logo"
 msgstr ""
 
-#: header.php:142
+#: header.php:120
 msgid "customheader"
 msgstr ""
 
-#: search.php:15
+#: search.php:13
 #, php-format
 msgid "Search Results for : %s"
 msgstr ""
 
-#: search.php:76
+#: search.php:51
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: tag.php:15
+#: tag.php:13
 #, php-format
 msgid "Tag : %s"
 msgstr ""
 
-#: theme-options/theme-option.php:67
+#: theme-options/theme-option.php:68
 msgid "Deserve Options"
 msgstr ""
 
-#: theme-options/theme-option.php:68
+#: theme-options/theme-option.php:69 theme-options/theme-option.php:109
 msgid "Theme Options"
 msgstr ""
 
-#: theme-options/theme-option.php:99 theme-options/theme-option.php:319
+#: theme-options/theme-option.php:100 theme-options/theme-option.php:334
 msgid "Save Options"
 msgstr ""
 
-#: theme-options/theme-option.php:108
-msgid "theme options"
-msgstr ""
-
-#: theme-options/theme-option.php:111
+#: theme-options/theme-option.php:112
 msgid "Basic Settings"
 msgstr ""
 
-#: theme-options/theme-option.php:112
+#: theme-options/theme-option.php:113
 msgid "Home Page Settings"
 msgstr ""
 
-#: theme-options/theme-option.php:113
+#: theme-options/theme-option.php:114
 msgid "Social Settings"
 msgstr ""
 
-#: theme-options/theme-option.php:129
+#: theme-options/theme-option.php:115
+msgid "PRO Theme Features"
+msgstr ""
+
+#: theme-options/theme-option.php:131
 msgid "Site Logo (Recommended Size : 169px * 40px)"
 msgstr ""
 
-#: theme-options/theme-option.php:145
+#: theme-options/theme-option.php:147
 msgid "Copyright Text"
 msgstr ""
 
-#: theme-options/theme-option.php:148
+#: theme-options/theme-option.php:150
 msgid ""
 "Some text regarding copyright of your site, you would like to display in the "
 "footer."
 msgstr ""
 
-#: theme-options/theme-option.php:155
+#: theme-options/theme-option.php:157
 msgid "Email"
 msgstr ""
 
-#: theme-options/theme-option.php:158
+#: theme-options/theme-option.php:160
 msgid ""
 "Enter e-mail id for your site , you would like to display in the top header."
 msgstr ""
 
-#: theme-options/theme-option.php:165
+#: theme-options/theme-option.php:167
 msgid "Phone"
 msgstr ""
 
-#: theme-options/theme-option.php:168
+#: theme-options/theme-option.php:170
 msgid ""
 "Enter phone number for your site , you would like to display in the top "
 "header."
 msgstr ""
 
-#: theme-options/theme-option.php:177
+#: theme-options/theme-option.php:179
 msgid "Banner Slider"
 msgstr ""
 
-#: theme-options/theme-option.php:180
+#: theme-options/theme-option.php:182
 msgid "Slider"
 msgstr ""
 
-#: theme-options/theme-option.php:180
+#: theme-options/theme-option.php:182
 msgid " (Recommended Size : 1350px * 350px)"
 msgstr ""
 
-#: theme-options/theme-option.php:192
+#: theme-options/theme-option.php:194
 msgid "Slide"
 msgstr ""
 
-#: theme-options/theme-option.php:192
+#: theme-options/theme-option.php:194
 msgid "Content"
 msgstr ""
 
-#: theme-options/theme-option.php:199
+#: theme-options/theme-option.php:201
 msgid "First Section Title Bar"
 msgstr ""
 
-#: theme-options/theme-option.php:201 theme-options/theme-option.php:247
+#: theme-options/theme-option.php:203 theme-options/theme-option.php:255
 msgid "Title"
 msgstr ""
 
-#: theme-options/theme-option.php:204
+#: theme-options/theme-option.php:206
 msgid ""
 "Enter home page title for your site , you would like to display in the home "
 "page."
 msgstr ""
 
-#: theme-options/theme-option.php:210 theme-options/theme-option.php:256
+#: theme-options/theme-option.php:212 theme-options/theme-option.php:264
 msgid "Short Description"
 msgstr ""
 
-#: theme-options/theme-option.php:213
+#: theme-options/theme-option.php:215
 msgid ""
 "Enter home content for your site , you would like to display in the home "
 "page."
 msgstr ""
 
-#: theme-options/theme-option.php:218
+#: theme-options/theme-option.php:220
 msgid "First Section"
 msgstr ""
 
-#: theme-options/theme-option.php:221
+#: theme-options/theme-option.php:223
 msgid "Tab"
 msgstr ""
 
-#: theme-options/theme-option.php:221
+#: theme-options/theme-option.php:223
 msgid " (Recommended Size : 94px * 93px)"
 msgstr ""
 
-#: theme-options/theme-option.php:233
+#: theme-options/theme-option.php:235
 msgid ""
 "Enter section title for your home template , you would like to display in "
 "the home page."
 msgstr ""
 
-#: theme-options/theme-option.php:234
+#: theme-options/theme-option.php:236
 msgid "Enter title here"
 msgstr ""
 
-#: theme-options/theme-option.php:237
+#: theme-options/theme-option.php:239
 msgid ""
 "Enter section content for home template , you would like to display in the "
 "home page."
 msgstr ""
 
-#: theme-options/theme-option.php:238
+#: theme-options/theme-option.php:240
 msgid "Enter Content here"
 msgstr ""
 
 #: theme-options/theme-option.php:245
+msgid ""
+"Enter section link for your home template , you would like to display in the "
+"home page."
+msgstr ""
+
+#: theme-options/theme-option.php:246
+msgid "Enter Link here"
+msgstr ""
+
+#: theme-options/theme-option.php:253
 msgid "Second Section Title Bar"
 msgstr ""
 
-#: theme-options/theme-option.php:250
+#: theme-options/theme-option.php:258
 msgid ""
 "Enter home page title for your site , you would like to display in the Home "
 "Page."
 msgstr ""
 
-#: theme-options/theme-option.php:259
+#: theme-options/theme-option.php:267
 msgid ""
 "Enter home content for your site , you would like to display in the Home "
 "Page."
 msgstr ""
 
-#: theme-options/theme-option.php:272
+#: theme-options/theme-option.php:280
 msgid "Facebook"
 msgstr ""
 
-#: theme-options/theme-option.php:275
+#: theme-options/theme-option.php:283
 msgid "Facebook profile or page URL i.e."
 msgstr ""
 
-#: theme-options/theme-option.php:281
+#: theme-options/theme-option.php:289
 msgid "Twitter"
 msgstr ""
 
-#: theme-options/theme-option.php:284
+#: theme-options/theme-option.php:292
 msgid "Twitter profile or page URL i.e."
 msgstr ""
 
-#: theme-options/theme-option.php:290
+#: theme-options/theme-option.php:298
 msgid "Google+"
 msgstr ""
 
-#: theme-options/theme-option.php:293
+#: theme-options/theme-option.php:301
 msgid "gplus profile or page URL i.e."
 msgstr ""
 
-#: theme-options/theme-option.php:300
+#: theme-options/theme-option.php:308
 msgid "Skype"
 msgstr ""
 
-#: theme-options/theme-option.php:303
+#: theme-options/theme-option.php:311
 msgid "skype profile or page URL i.e."
 msgstr ""

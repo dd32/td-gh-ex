@@ -2,9 +2,8 @@
 /*
  * Header For Deserve Theme.
  */
-  $deserve_options = get_option( 'deserve_theme_options' );
-  
-?><!DOCTYPE html>
+$deserve_options = get_option( 'deserve_theme_options' ); ?>
+<!DOCTYPE html>
 <!--[if IE 7]>
 <html class="ie ie7" <?php language_attributes(); ?>>
 <![endif]-->
@@ -16,8 +15,7 @@
 <!--<![endif]-->
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width">
-	
+	<meta name="viewport" content="width=device-width">	
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<!--[if lt IE 9]>
@@ -25,9 +23,7 @@
 	<![endif]-->
 	<?php wp_head(); ?>
 </head>
-
 <body <?php body_class(); ?>>
-
 <header>    
     <div class="menubar">
     	<div class="deserve-container clearfix">
@@ -36,20 +32,14 @@
                     <ul>
 						<?php if(!empty($deserve_options['phone'])) { ?> 
                         <li>
-							<i class="fa fa-phone"></i> <?php echo esc_attr($deserve_options['phone']);?>
-							
+							<i class="fa fa-phone"></i> <?php echo esc_attr($deserve_options['phone']);?>							
 						</li>
-						<?php } ?>
-						
-						<?php if(!empty($deserve_options['email'])) { ?> 
+						<?php }
+						if(!empty($deserve_options['email'])) { ?> 
 						<li>
 							<i class="fa fa-envelope"></i> <?php echo esc_attr($deserve_options['email']);?>
-							
 						</li>
 						<?php } ?>
-					
-                       
-    
                     </ul>
                 </div>
             </div>
@@ -60,27 +50,22 @@
                         <li>
 							<a href="<?php echo esc_url($deserve_options['fburl']);?>"><i class="fa fa-facebook"></i></a>
 						</li>
-						<?php } ?>
-						
-						 <?php if(!empty($deserve_options['twitter'])){ ?> 
-						  <li>					
+						<?php } 
+						 if(!empty($deserve_options['twitter'])) { ?> 
+						<li>					
 							<a href="<?php echo esc_url($deserve_options['twitter']);?>"><i class="fa fa-twitter"></i></a>
 						</li>
-						<?php } ?>
-						
-						 <?php if(!empty($deserve_options['gplus'])){ ?>
+						<?php }
+						if(!empty($deserve_options['gplus'])){ ?>
 						  <li>						
 							<a href="<?php echo esc_url($deserve_options['gplus']);?>"><i class="fa fa-google-plus"></i></a>						
 						</li>
-						<?php } ?>
-                       
-                       	<?php if(!empty($deserve_options['skype'])){ ?>
+						<?php } 
+						if(!empty($deserve_options['skype'])){ ?>
                        	  <li>					
 							<a href="<?php echo esc_url($deserve_options['skype']);?>"><i class="fa fa-skype"></i></a>						
 						</li>
                        <?php } ?>
-                       
-                       
                     </ul>
                 </div>
             </div>
@@ -90,14 +75,11 @@
     	<div class="deserve-container clearfix">
             <div class="col-md-2">
             	<div  class="site-logo">
-					
 				<?php if(empty($deserve_options['logo'])) { ?>
         		<h4 class="deserve-site-name"><a href="<?php echo esc_url(home_url('/')); ?>"><?php echo get_bloginfo('name'); ?></a></h4>
 				<?php } else { ?>
         		<a href="<?php echo esc_url(home_url('/')); ?>"><img src="<?php echo esc_url($deserve_options['logo']); ?>" alt="<?php _e('logo','deserve') ?>" class="img-responsive" /></a>
-				<?php } ?> 
-            
-                	
+				<?php } ?>
                     <div class="navbar-header res-nav-header toggle-respon">
                         <button type="button" class="navbar-toggle toggle-menu" data-toggle="collapse" data-target=".navbar-collapse">
                            <span class="sr-only"></span>
@@ -110,7 +92,6 @@
             </div>
             <div class="col-md-10">
                 <div class="header-menu">             
-                   
                     <?php
 			$deserve_defaults = array(
 							'theme_location'  => 'primary',
@@ -130,12 +111,9 @@
 							'walker'          => ''
 						);
 			wp_nav_menu($deserve_defaults); ?>
-                   
-                              
                 </div>
             </div>
         </div>
-    
          <?php if(get_header_image()){ ?>
         <div class="custom-header-img">
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" >
@@ -143,7 +121,5 @@
         </a>
         </div>
     <?php } ?>
-    
     </div>
-    
 </header>

@@ -47,8 +47,7 @@
 
 			// Finally, open the modal.
 			frame.open();
-		}
-        
+		}        
 		function deserve_remove_file(selector) {
 			selector.find('.remove-image').hide();
 			selector.find('.upload').val('');
@@ -63,19 +62,12 @@
 			selector.find('.upload-button').live('click', function() {
 				deserve_add_file(event, $(this).parents('.section'));
 			});
-		}
-		
+		}		
 		$('.remove-image, .remove-file').live('click', function() {
 			deserve_remove_file( $(this).parents('.section') );
-        });
-        
+        });        
         $('.upload-button').live('click', function( event ) {
         	deserve_add_file(event, $(this).parents('.section'));
-        });
-        
-    });
-	
+        });        
+    });	
 })(jQuery);
-
-
- 
