@@ -7,3 +7,36 @@ version 1.0.1
    3) Set sanitization in all pages.
    4) Set customizer option like Display Header Text,background color.
    5) Set image validation in theme-options.php
+
+version 1.0.2
+	1) Fixed issue in getintouch.php
+	2) Escape variable in popularpost.php, breadcrumbs.php, .content.php, page.php, single.php, fullwidth.php, left-sidebar.php.
+	3) Remove post-format support.
+	4) Fixed Scrolling issue.
+
+version 1.0.3
+	1) Fixed issue of customization
+	2) add tgm for slider and contact form 7
+
+version 1.0.4
+	1) Fixed fatal error in functions.php
+
+version 1.0.5
+	1) Remove unnecesssary code.
+
+Version 1.0.6
+	1) Fixed all the issues as per your suggestion
+
+Version 1.0.7
+	1) Removed the featured Post content from the fuctions.php
+	2) Removed the contact Settings from the theme-customizer.php
+	3) Add the documentation of theme Customization settings in the readme.txt as theme Customizer name.
+
+Version 1.0.8
+	1) Fixed all the issues
+
+Version 1.0.9
+	1) remove media js file and used wordpress default
+
+Version 1.0.10 (05 Jan 2017)
+	1) Minor fixes.

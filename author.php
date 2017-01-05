@@ -15,29 +15,21 @@ get_header(); ?>
                     </div>  
                 </div>
             </div>
-            <!--Breadcrumb End-->   
-  
-    <div class="avocation-container  container"> 
+            <!--Breadcrumb End-->
+			<div class="avocation-container  container"> 
                 <div class="blog-wrap">
                     <div class="row">
                         <div class="blog-page col-md-8 col-sm-8">                        
-                          
-                           <?php get_template_part( 'content', get_post_format() ); ?>
-                          
-                
+                           <?php get_template_part( 'content' ); ?>
                             <div class="site-pagination">
-                                <?php avocation_pagination();?>			
+                                <?php avocation_pagination(); ?>			
                             </div>
                         </div>
-                        <?php get_sidebar();?>
-                            
+                        <?php get_sidebar(); ?>
                         </div>
                     </div>
                 </div>
             </div>
             <!--Our-Blog End-->
-            
         </section>
- 
 <?php get_footer(); ?>
-

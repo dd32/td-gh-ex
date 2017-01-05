@@ -2,8 +2,7 @@
 /**
  * The category template file
 **/
-get_header(); 
-?>
+get_header(); ?>
 <section>
 	  <!--Breadcrumb Start-->
             <div class="breadcrumb-bg">
@@ -20,23 +19,16 @@ get_header();
                 <div class="blog-wrap">
                     <div class="row">
                         <div class="blog-page col-md-8 col-sm-8">                        
-                          
-                           <?php get_template_part( 'content', get_post_format() ); ?>
-                          
-                
+                           <?php get_template_part( 'content'); ?>
                             <div class="site-pagination">
                                 <?php avocation_pagination();?>			
                             </div>
                         </div>
                         <?php get_sidebar();?>
-                            
                         </div>
                     </div>
                 </div>
             </div>
             <!--Our-Blog End-->
-            
         </section>
-      
 <?php get_footer(); ?>
-
