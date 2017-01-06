@@ -200,28 +200,30 @@ jQuery.noConflict()(function($){
    =============================================== */
 
 	$('.suevafree-vertical-menu ul > li').each(function(){
-    	if( $('ul', this).length > 0 ) {
-        $(this).children('a').append('<span class="sf-sub-indicator"> <i class="fa fa-plus"></i> </span>').removeAttr("href"); }
-	}); 
-
-	$('.suevafree-vertical-menu ul > li ul').click(function(e){
-		e.stopPropagation();
-    })
-	
-    .filter(':not(:first)')
-    .hide();
-    
-	$('.suevafree-vertical-menu ul > li, .suevafree-vertical-menu ul > li > ul > li').click(function(){
-
-		var selfClick = $(this).find('ul:first').is(':visible');
-		
-		if(!selfClick) {
-		  
-		  $(this).parent().find('> li ul:visible').slideToggle('low');
+    	
+		if( $('ul', this).length > 0 ) {
+        
+			$(this).children('a').append('<span class="sf-sub-indicator"> <i class="fa fa-plus"></i> </span>'); 
 		
 		}
-		
-		$(this).find('ul:first').stop(true, true).slideToggle();
+	
+	});
+    
+	$('.suevafree-vertical-menu ul > li .sf-sub-indicator, .suevafree-vertical-menu ul > li > ul > li .sf-sub-indicator ').click(function(e){
+
+		e.preventDefault();
+
+		if($(this).closest('a').next('ul.sub-menu').css('display') === 'none' ) {	
+
+			$(this).html('<i class="fa fa-times"></i>');
+			
+		} else {	
+			
+			$(this).html('<i class="fa fa-plus"></i>');
+			
+		}
+			
+		$(this).closest('a').next('ul.sub-menu').stop(true,false).slideToggle('slow');
 
 	});
 
