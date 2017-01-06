@@ -1,5 +1,9 @@
 SuevaFree Changelog
 
+- Version 3.0.2 - Released: 06.01.2017
+
+-- Fixed : Color scheme issue.
+
 - Version 3.0.1 - Released: 06.01.2017
 
 -- Optimized : Vertical menu on mobile version and header 5 layout.
