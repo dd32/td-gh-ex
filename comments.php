@@ -6,8 +6,8 @@
 * and the comment form.
 *
 * @package WordPress
-* @subpackage Twenty_Fifteen
-* @since Twenty Fifteen 1.0
+* @subpackage abaya
+* @since abaya 1.0
 */
 
 /*

@@ -59,7 +59,7 @@ add_filter('pre_google_web_fonts', 'abaya_additional_fonts');
 function abaya_scripts() {
 	wp_enqueue_script('bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array('jquery'),'',true); 
 	wp_enqueue_script('modernizr', get_template_directory_uri() . '/js/modernizr.js', array(),true ); 
-	wp_enqueue_script('jquery_animateSlider_js', get_template_directory_uri() . '/js/jquery.animateSlider.js', array('jquery'),'',true); 
+	wp_enqueue_script('animateSlider', get_template_directory_uri() . '/js/jquery.animateSlider.js', array('jquery'),'',true); 
 	wp_enqueue_script('flexslider', get_template_directory_uri() . '/js/flexslider.js', array('jquery'),'',true);
 	wp_enqueue_script('comment-reply');
 	wp_enqueue_style('bootstrap', get_template_directory_uri().'/css/bootstrap.css');
@@ -76,9 +76,7 @@ function abaya_scripts() {
 	wp_enqueue_script('abaya-respond', get_template_directory_uri().'/js/respond.js', array(), '1.4.2' );
 	wp_script_add_data('abaya-respond', 'conditional', 'lt IE 8');
 	wp_enqueue_style('abaya-google-fonts', abaya_google_web_fonts_url(), array(), null, 'all' );  
-    wp_register_script('custum_js', get_template_directory_uri().'/js/custom.js', array(),'',true);
-    wp_enqueue_script('custum_js');
-	
+    wp_enqueue_script('abaya-custom', get_template_directory_uri().'/js/custom.js', array(),'',true);
 }
 add_action('wp_enqueue_scripts', 'abaya_scripts');
 ?>

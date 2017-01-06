@@ -1,4 +1,12 @@
-<?php get_header();
+<?php
+/**
+ * The template for displaying all single posts
+ *
+ * @package abaya
+ * @since abaya 1.0
+ */
+ 
+ get_header();
 if(is_home() && get_option('page_for_posts')): $blog_page_id = get_option('page_for_posts'); $post_page_title=get_page($blog_page_id)->post_title; else : $blog_page_id=get_option('page_on_front'); $post_page_title=''.__('Blog', 'abaya'); endif;
 ?> 
 <section class="inner-page-bg">
@@ -9,7 +17,7 @@ if(is_home() && get_option('page_for_posts')): $blog_page_id = get_option('page_
           <h1 class="title"><?php echo $post_page_title;  ?></h1>
         </div><!--header-->
         <div class="breadcrumbs">
-           <?php woocommerce_breadcrumb(); ?><!--crumbs-->
+           <?php abaya_breadcrumbs(); ?><!--crumbs-->
         </div><!--breadcrumbs-->
       </div><!--col-->
     </div><!--row-->

@@ -1,4 +1,16 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying Tag pages
+ *
+ * Used to display archive-type pages for posts in a tag.
+ *
+ * @link http://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package abaya
+ * @since abaya 1.0
+ */
+ 
+ get_header(); ?>
 <section class="inner-page-bg">
   <div class="container">
     <div class="row">

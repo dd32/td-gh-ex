@@ -18,7 +18,7 @@ function abaya_breadcrumbs(){
 	/* === END OF OPTIONS === */
 
 	global $post;
-	$homeLink = home_url('url') . '/';
+	$homeLink = home_url('');
 	$linkBefore = '<li>';
 	$linkAfter = '</li>';
 	$linkAttr = ' rel="v:url" property="v:title"';

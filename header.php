@@ -1,51 +1,36 @@
+<?php
+/**
+ * The Header template for our theme
+ *
+ * Displays all of the <head> section and everything up till <body>
+ *
+ * @package abaya
+ * @since abaya 1.0
+ */
+?>
 <!DOCTYPE html>
-
 <html <?php language_attributes(); ?>>
-
 <head>
-
 <meta charset="<?php bloginfo('charset'); ?>" />
-
 <meta <?php language_attributes(); ?>>
-
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-
 <?php wp_head(); ?>
-
 </head>
-
 <body <?php body_class(); ?>>
-
 <header class="header">
-
   <section class="header_top">
-
     <section class="container">
-
       <?php global $abaya_option; wp_nav_menu( array( 'theme_location'=>'header-top-menu','menu_class'=>'top_nav')); ?>
-
     </section>
-
     <!--container--> 
-
   </section>
-
   <!--header_top-->
-
-  
-
   <section class="container">
-
     <div id="logo"><a href="<?php echo esc_url(home_url()); ?>">
-
     <?php
-
 	if(isset($abaya_option['logo']['url']) && $abaya_option['logo']['url']!='') { echo '<img src="'.esc_url($abaya_option['logo']['url']).'"  alt="">';}else { ?>
 
     <h1 class="brand-title"> <?php bloginfo('name'); ?></h1>

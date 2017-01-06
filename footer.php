@@ -1,3 +1,14 @@
+<?php
+/**
+ * The template for displaying the footer
+ *
+ * Contains footer content and the closing of the #main and #page div elements.
+ *
+ * @package abaya
+ * @since abaya 1.0
+ */
+?>
+
 <footer class="footer">
   <section class="container">
     <div class="row">

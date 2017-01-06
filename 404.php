@@ -1,4 +1,11 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying 404 pages (Not Found)
+ *
+ * @package abaya
+ * @since abaya 1.0
+ */
+ get_header(); ?>
 <section class="inner-page-bg">
   <div class="container">
     <div class="row">

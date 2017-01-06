@@ -1,4 +1,12 @@
-<?php get_header();?>
+<?php
+/**
+ * The template for displaying Search Results pages
+ *
+ * @package abaya
+ * @since abaya 1.0
+ */
+
+ get_header();?>
 <section class="inner-page-bg">
   <div class="container">
     <div class="row">

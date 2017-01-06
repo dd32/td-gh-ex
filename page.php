@@ -1,4 +1,16 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying all pages
+ *
+ * This is the template that displays all pages by default.
+ * Please note that this is the WordPress construct of pages and that other
+ * 'pages' on your WordPress site will use a different template.
+ *
+ * @package abaya
+ * @since abaya 1.0
+ */
+ 
+ get_header(); ?>
 <section class="inner-page-bg">
   <div class="container">
     <div class="row">
