@@ -1,0 +1,20 @@
+/*This is for IE*/
+
+.site-branding .container{
+	padding:50px 15px;
+}
+.site-branding{
+	min-height:inherit;
+}
+.featured-articles .article-list li {
+    width: 40%;
+}
+img{
+	height:auto;
+	width:100%;
+}
+.slide-post-details{
+	background: #000000;
+	width:100%;
+	display:block;
+}
