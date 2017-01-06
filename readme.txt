@@ -1,12 +1,14 @@
 Appointment Green is the child theme of Appointment theme. Give it a try you will love it
 
 === Description ===
-A Business theme which is ideal for creating a corporate / business website. Appointment Green theme is a child theme of appointment which has several sections such as slider, services , widget area, etc etc. The green of this theme makes your site looks clean and elegant. Appointment Green theme comes with Spanish translation. Other translations / locals yet to come.
+A Business theme which is ideal for creating a corporate / business website. Appointment Green theme is a child theme of appointment which has several sections such as slider, services , widget area, etc etc. The green of this theme makes your site looks clean and elegant. Appointment Green theme comes with various locales.
 
 === Support ===
 For any ideas, support and feedback you can access the theme forum.
 
 == Version ==
+= 1.0.6 =
+1. Update theme description.
 = 1.0.5 =
 1. Added Spanish Locale
 = 1.0.4 =
