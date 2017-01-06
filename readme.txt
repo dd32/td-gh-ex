@@ -94,6 +94,9 @@ Source: http://fontawesome.io
 
 # --- EOF --- #
 ============================Change Log================================
+@Version 2.5.7
+1. Fixed String updated issue.
+2. Update theme description.
 @Version 2.5.6
 1. Updated Strings
 @Version 2.5.5

@@ -121,7 +121,7 @@
 					</header>
 					
 					<ul class="feature">
-						<li style="font-size:16px; line-height:25px; padding:19px"><?php "Top Header, Slider [Unlimited Slides], Service [Unlimited Services], Callout, Portfolio [Unlimited Projects], Latest News,  Client, Testimonial and Custom Widget","appointment"); ?></li>
+						<li style="font-size:16px; line-height:25px; padding:19px"><?php _e("Top Header, Slider [Unlimited Slides], Service [Unlimited Services], Callout, Portfolio [Unlimited Projects], Latest News,  Client, Testimonial and Custom Widget","appointment"); ?></li>
 						<li style="font-size:16px; line-height:25px; padding:18px">
 						<?php _e("About, Service, Portfolio, Blog Left & Right Sidebar, Blog Full Width, Page Full Width, Contact Page and many more.","appointment"); ?></li>
 						<li><span class="dashicons-before dashicons-yes green"></span></li>
