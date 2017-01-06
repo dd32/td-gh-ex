@@ -4,7 +4,7 @@ jQuery(function($) {
 	$('.sub-menu').hide();
 	$('.main-navigation .children').hide();
 
-		if ( matchMedia( 'only screen and (min-width: 1280px)' ).matches ) {
+		if ( matchMedia( 'only screen and (min-width: 1024px)' ).matches ) {
 			$('.menu-item').hover( 
 				function() {
 					$(this).children('.sub-menu').fadeIn().addClass('submenu-visible');
@@ -134,7 +134,7 @@ jQuery(function($) {
 		$(window).on('load resize', function() {
 			var currMenuType = 'desktop';
 
-			if ( matchMedia( 'only screen and (max-width: 1280px)' ).matches ) {
+			if ( matchMedia( 'only screen and (max-width: 1024px)' ).matches ) {
 				currMenuType = 'mobile';
 			}
 
