@@ -267,13 +267,13 @@ add_action('wp_enqueue_scripts', 'bakes_and_cakes_scripts');
 
 if ( is_admin() ) : // Load only if we are viewing an admin page
 
-	function rara_academic_admin_scripts() {
+	function bakes_and_cakes_admin_scripts() {
 		
 		wp_enqueue_style( 'bakes-and-cakes-admin-style',get_template_directory_uri().'/inc/css/admin.css', '1.0', 'screen' );
 	    
 	}
 
-add_action( 'admin_enqueue_scripts', 'rara_academic_admin_scripts' );
+add_action( 'admin_enqueue_scripts', 'bakes_and_cakes_admin_scripts' );
 
 endif;
 

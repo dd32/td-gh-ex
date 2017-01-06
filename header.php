@@ -38,6 +38,13 @@
     				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
     			<?php endif; ?>
     		</div><!-- .site-branding -->
+        <div id="mobile-header">
+          <a id="responsive-menu-button" href="#sidr-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+        </div>
 			</div>
 		</div>
 
