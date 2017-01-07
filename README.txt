@@ -61,6 +61,10 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.03
+* Fix navigation custom color hover css
+* Fix breadcrumb styling on mobile
+
 #### 1.3.02
 * Styling fix for mobile
 Premium: Added setting to select dark/light mobile menu colors

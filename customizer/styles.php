@@ -58,7 +58,7 @@ function customizer_library_kaira_build_styles() {
                 .main-navigation li.current_page_parent > a,
                 .main-navigation li.current-menu-ancestor > a,
                 .main-navigation li.current_page_ancestor > a,
-                .main-navigation a:hover,
+                .main-navigation li a:hover,
                 .main-navigation ul ul li a:hover,
                 .main-navigation button,
                 .header-menu-button,
