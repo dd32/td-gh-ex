@@ -1425,7 +1425,12 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'description'	=> __( 'Add custom footer copyright.', 'agama' ),
 		'section'		=> 'agama_footer_section',
 		'settings'		=> 'agama_footer_copyright',
-		'type'			=> 'editor',
+		'type'			=> 'code',
+		'choices'		=> array(
+			'language'	=> 'html',
+			'theme'		=> 'monokai',
+			'height'	=> '250'
+		),
 		'default'		=> ''
 	) );
 ###################################################################################

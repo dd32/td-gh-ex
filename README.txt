@@ -2,6 +2,10 @@ Agama WordPress Theme, Copyright 2015 Theme-Vision.com
 Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
+= 1.2.5 Januar 07 2016 =
+* Updated kirki framework to latest stable version.
+* Updated FontAwesome to latest stable version.
+
 = 1.2.4 November 22 2016 =
 * Fixed dashed lines issue when comments are disabled.
 * Minor styling fixes.
@@ -175,7 +179,7 @@ Agama is distributed under the terms of the GNU GPL2
  
  Images used in Screenshot are licensed under Creative Commons Zero License:
 
- * CAIO - https://www.pexels.com/u/caio/ - https://www.pexels.com/photo/books-notebook-macbook-table-56759/ - CC0 1.0 License
+ * Philipp Henzler - https://unsplash.com/@philipphenzler - https://unsplash.com/photos/dgE3lWVyDh8 - CC0 1.0 License
  
  Unless otherwise specified, all the theme files, scripts and images
  are licensed under GNU General Public License version 2, see file license.txt.
