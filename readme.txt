@@ -1,18 +1,19 @@
 === fGymm ===
 Contributors: tishonator
 Tags: entertainment, two-columns, right-sidebar, custom-logo, custom-background,
-custom-header, custom-menu, featured-images, post-formats, threaded-comments,
-translation-ready, sticky-post, theme-options, footer-widgets
+custom-header, custom-menu, featured-images, threaded-comments, translation-ready,
+sticky-post, theme-options, footer-widgets, full-width-template, front-page-post-form
 Requires at least: 4.5.0
 Tested up to: 4.6.1
 
 == Description ==
 
-fGymm is a Fully Responsive Gym and Fitness WordPress Theme designed for health and fitness clubs,
-CrossFit programs, fitness professionals, personal trainers, etc. Features include built-in Homepage Slider,
+fGymm is a Fully Responsive Gym and Fitness WordPress Theme designed for health and fitness clubs, 
+CrossFit programs, fitness professionals, personal trainers, etc. Features include built-in Homepage Slider, 
 Multi-level Drop-down Menu, W3C markup validated, Search Engine Optimized, Header and Footer Social
 Icons (Facebook, Google+, Twitter, LinkedIn, Instagram, Tumblr, YouTube, Pinterest, VK, Flickr, Vine),
-Sidebar and 3 Footer Widget Areas, Multiple Browsers Support, Translation Ready and much more.
+Sidebar and 3 Footer Widget Areas, 3 Homepage widget areas, Full-Width Template, Multiple Browsers Support, 
+Translation Ready and much more.
 
 == Installation ==
 
@@ -59,6 +60,12 @@ The exceptions to this license are as follows:
 * images/slider/2.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: http://pixabay.com/en/dumbbells-rack-weights-iron-gym-32815/
 *
 * images/slider/3.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: http://pixabay.com/en/active-activity-ball-exercise-18975/
+*
+* screenshot.png (column image 1) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/jeans-with-high-waist-buy-moscow-1741465/
+*
+* screenshot.png (column image 2) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/woman-fitness-strength-1758622/
+*
+* screenshot.png (column image 3) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/weights-lifting-power-female-gym-869225/
 *
 * js/camera.min.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
 * js/camera.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php

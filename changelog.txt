@@ -1,3 +1,8 @@
+fGymm 1.6.1, 2017-01-07
+------------------------
+- add full-width page template
+- add 3 homepage widget areas
+
 fGymm 1.6.0, 2016-11-06
 ------------------------
 - add custom logo

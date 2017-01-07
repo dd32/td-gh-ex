@@ -3,6 +3,8 @@
 <?php if ( is_front_page() ) : ?>
 
 		<?php fgymm_display_slider(); ?>
+
+		<?php get_sidebar('home'); ?>
 	
 	<?php endif; ?>
 

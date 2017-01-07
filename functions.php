@@ -127,6 +127,40 @@ function fgymm_widgets_init() {
 						'after_title'	 =>  '</h3><div class="sidebar-after-title"></div>',
 					) );
 
+	/**
+	 * Add Homepage Columns Widget areas
+	 */
+	register_sidebar( array (
+							'name'			 =>  __( 'Homepage Column #1', 'fgymm' ),
+							'id' 			 =>  'homepage-column-1-widget-area',
+							'description'	 =>  __( 'The Homepage Column #1 widget area', 'fgymm' ),
+							'before_widget'  =>  '',
+							'after_widget'	 =>  '',
+							'before_title'	 =>  '<h2 class="sidebar-title">',
+							'after_title'	 =>  '</h2><div class="sidebar-after-title"></div>',
+						) );
+						
+	register_sidebar( array (
+							'name'			 =>  __( 'Homepage Column #2', 'fgymm' ),
+							'id' 			 =>  'homepage-column-2-widget-area',
+							'description'	 =>  __( 'The Homepage Column #2 widget area', 'fgymm' ),
+							'before_widget'  =>  '',
+							'after_widget'	 =>  '',
+							'before_title'	 =>  '<h2 class="sidebar-title">',
+							'after_title'	 =>  '</h2><div class="sidebar-after-title"></div>',
+						) );
+
+	register_sidebar( array (
+							'name'			 =>  __( 'Homepage Column #3', 'fgymm' ),
+							'id' 			 =>  'homepage-column-3-widget-area',
+							'description'	 =>  __( 'The Homepage Column #3 widget area', 'fgymm' ),
+							'before_widget'  =>  '',
+							'after_widget'	 =>  '',
+							'before_title'	 =>  '<h2 class="sidebar-title">',
+							'after_title'	 =>  '</h2><div class="sidebar-after-title"></div>',
+						) );
+
+
 	// Register Footer Column #1
 	register_sidebar( array (
 							'name'			 =>  __( 'Footer Column #1', 'fgymm' ),
@@ -741,7 +775,7 @@ function fgymm_header_style() {
     <style type="text/css">
         <?php if ( has_header_image() ) : ?>
 
-                #header-main-fixed {background-image: url("<?php echo esc_attr( $headerImage ); ?>");}
+                #header-main-fixed {background-image: url("<?php echo esc_url( $headerImage ); ?>");}
 
         <?php endif; ?>
 
