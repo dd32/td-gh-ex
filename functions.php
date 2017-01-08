@@ -87,7 +87,7 @@ add_action( 'after_setup_theme', 'annina_setup' );
  */
 function annina_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'annina' ),
+		'name'          => esc_html__( 'Sidebar', 'annina' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="content-annina widget %2$s">',

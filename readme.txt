@@ -1,5 +1,5 @@
 = Annina Free =
-* by the CrestaProject team, http://crestaproject.com/
+* by the CrestaProject team, https://crestaproject.com/
 
 == ABOUT Annina Free ==
 Annina is clean & fresh responsive WordPress Blog Theme, full width and masonry based, one main column e one sidebar column, unlimited colors and theme options.
@@ -48,6 +48,10 @@ two-columns, right-sidebar, responsive-layout, custom-background, custom-menu, c
 3. Log into your WP admin panel and click on the Design tab. Now click on the Annina theme to activate it.
 
 == Changelog ==
+= Version 1.4.6 =
+* Fixed a lot of strings escaping
+* Minor bug fixes
+
 = Version 1.4.5 =
 * Minor bug fixes
 

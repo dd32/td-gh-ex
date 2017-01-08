@@ -27,7 +27,7 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links"><i class="fa fa-files-o spaceRight"></i>' . __( 'Pages:', 'annina' ),
+				'before' => '<div class="page-links"><i class="fa fa-files-o spaceRight"></i>' . esc_html__( 'Pages:', 'annina' ),
 				'after'  => '</div>',
 				'link_before'      => '<span>',
 				'link_after'       => '</span>',

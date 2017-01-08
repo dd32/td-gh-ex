@@ -36,14 +36,14 @@ if ( post_password_required() ) {
 					'style'      => 'ol',
 					'short_ping' => true,
 					'avatar_size' => '70',
-					'reply_text'        =>  '<span class="smallPart">' .__( 'Reply'  , 'annina' ),
+					'reply_text'        =>  '<span class="smallPart">' .esc_html__( 'Reply'  , 'annina' ),
 				) );
 			?>
 		</ol><!-- .comment-list -->
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below" class="comment-navigation" role="navigation">
-			<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'annina' ); ?></h1>
+			<h1 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'annina' ); ?></h1>
 			<div class="nav-previous"><?php previous_comments_link ( '<i class="fa fa-angle-left"></i>' ); ?></div>
 			<div class="nav-next"><?php next_comments_link ( '<i class="fa fa-angle-right"></i>' ); ?></div>
 		</nav><!-- #comment-nav-below -->
@@ -55,7 +55,7 @@ if ( post_password_required() ) {
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-		<p class="no-comments"><?php _e( 'Comments are closed.', 'annina' ); ?></p>
+		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'annina' ); ?></p>
 	<?php endif; ?>
 
 	<?php
@@ -64,9 +64,9 @@ if ( post_password_required() ) {
 	$aria_req = ( $req ? " aria-required='true'" : '' );
 
 	$fields =  array(
-		'author' => '<p class="comment-form-author"><input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" ' . $aria_req . ' placeholder="' . __( 'Name *'  , 'annina' ) . '"/></p>',
-		'email'  => '<p class="comment-form-email"><input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" ' . $aria_req . ' placeholder="' . __( 'Email *'  , 'annina' ) . '"/></p>',
-		'url'    => '<p class="comment-form-url"><input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="' . __( 'Website'  , 'annina' ) . '"/></p>',
+		'author' => '<p class="comment-form-author"><input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" ' . $aria_req . ' placeholder="' . esc_attr__( 'Name *'  , 'annina' ) . '"/></p>',
+		'email'  => '<p class="comment-form-email"><input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" ' . $aria_req . ' placeholder="' . esc_attr__( 'Email *'  , 'annina' ) . '"/></p>',
+		'url'    => '<p class="comment-form-url"><input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="' . esc_attr__( 'Website'  , 'annina' ) . '"/></p>',
 	);
 	$required_text = __(' Required fields are marked ', 'annina').' <span class="required">*</span>';
 	?>
@@ -79,7 +79,7 @@ if ( post_password_required() ) {
 		'title_reply_to' => __( 'Leave a Reply to %s'  , 'annina' ),
 		'cancel_reply_link' => __( 'Cancel reply'  , 'annina' ) . '<i class="fa fa-times spaceLeft"></i>',
 		'label_submit' => __( 'Post Comment'  , 'annina' ),
-		'comment_field' => '<div class="clear"></div><p class="comment-form-comment"><textarea id="comment" name="comment" rows="8" aria-required="true" placeholder="' . __( 'Comment *'  , 'annina' ) . '"></textarea></p>'
+		'comment_field' => '<div class="clear"></div><p class="comment-form-comment"><textarea id="comment" name="comment" rows="8" aria-required="true" placeholder="' . esc_attr__( 'Comment *'  , 'annina' ) . '"></textarea></p>'
 	)); 
 	?>
 

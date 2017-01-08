@@ -25,7 +25,7 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links"><i class="fa fa-files-o spaceRight"></i>' . __( 'Pages:', 'annina' ),
+				'before' => '<div class="page-links"><i class="fa fa-files-o spaceRight"></i>' . esc_html__( 'Pages:', 'annina' ),
 				'after'  => '</div>',
 				'link_before'      => '<span>',
 				'link_after'       => '</span>',
@@ -36,7 +36,7 @@
 	<div style="display:none" class="vcard author"><a class="url fn n" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>"><?php echo esc_html( get_the_author() ); ?></a></div>
 
 	<footer class="entry-footer smallPart">
-		<?php edit_post_link( __( 'Edit', 'annina' ), '<span class="edit-link"><i class="fa fa-wrench spaceRight"></i>', '</span>' ); ?>
+		<?php edit_post_link( esc_html__( 'Edit', 'annina' ), '<span class="edit-link"><i class="fa fa-wrench spaceRight"></i>', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 	</div><!-- .content-annina -->
 </article><!-- #post-## -->

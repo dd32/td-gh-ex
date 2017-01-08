@@ -87,7 +87,7 @@ function annina_color_primary_register( $wp_customize ) {
 	=====================================================
 	*/
 	$wp_customize->add_section( 'cresta_annina_options', array(
-	     'title'    => esc_attr__( 'Annina Theme Options', 'annina' ),
+	     'title'    => esc_html__( 'Annina Theme Options', 'annina' ),
 	     'priority' => 50,
 	) );
 	
@@ -219,38 +219,38 @@ function annina_color_primary_register( $wp_customize ) {
         public function render_content() {  ?>
         	<p class="annina-upgrade-title">
         		<span class="customize-control-title">
-					<h3 style="text-align:center;"><div class="dashicons dashicons-megaphone"></div> <?php _e('Get Annina PRO WP Theme for only', 'annina'); ?> 24,90&euro;</h3>
+					<h3 style="text-align:center;"><div class="dashicons dashicons-megaphone"></div> <?php esc_html_e('Get Annina PRO WP Theme for only', 'annina'); ?> 24,90&euro;</h3>
         		</span>
         	</p>
 			<p style="text-align:center;" class="annina-upgrade-button">
 				<a style="margin: 10px;" target="_blank" href="http://crestaproject.com/demo/annina-pro/" class="button button-secondary">
-					<?php _e('Watch the demo', 'annina'); ?>
+					<?php esc_html_e('Watch the demo', 'annina'); ?>
 				</a>
-				<a style="margin: 10px;" target="_blank" href="http://crestaproject.com/downloads/annina/" class="button button-secondary">
-					<?php _e('Get Annina PRO Theme', 'annina'); ?>
+				<a style="margin: 10px;" target="_blank" href="https://crestaproject.com/downloads/annina/" class="button button-secondary">
+					<?php esc_html_e('Get Annina PRO Theme', 'annina'); ?>
 				</a>
 			</p>
 			<ul>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Advanced Theme Options', 'annina'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Logo Upload', 'annina'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Choose sidebar position', 'annina'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Font switcher', 'annina'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Loading Page', 'annina'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Unlimited Colors and Skin', 'annina'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Post views counter', 'annina'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Post format', 'annina'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('7 Shortcodes', 'annina'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('12 Exclusive Widgets', 'annina'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Related Posts Box', 'annina'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Information About Author Box', 'annina'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('Sticky Sidebar', 'annina'); ?></b></li>
-				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php _e('And much more...', 'annina'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('Advanced Theme Options', 'annina'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('Logo Upload', 'annina'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('Choose sidebar position', 'annina'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('Font switcher', 'annina'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('Loading Page', 'annina'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('Unlimited Colors and Skin', 'annina'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('Post views counter', 'annina'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('Post format', 'annina'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('7 Shortcodes', 'annina'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('12 Exclusive Widgets', 'annina'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('Related Posts Box', 'annina'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('Information About Author Box', 'annina'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('Sticky Sidebar', 'annina'); ?></b></li>
+				<li><div class="dashicons dashicons-yes" style="color: #1fa67a;"></div><b><?php esc_html_e('And much more...', 'annina'); ?></b></li>
 			<ul><?php
         }
     }
 	
 	$wp_customize->add_section( 'cresta_upgrade_pro', array(
-	     'title'    => __( 'More features? Upgrade to PRO', 'annina' ),
+	     'title'    => esc_html__( 'More features? Upgrade to PRO', 'annina' ),
 	     'priority' => 999,
 	));
 	
@@ -307,20 +307,20 @@ function annina_custom_css_styles() {
 	a:focus,
 	a:active,
 	.entry-title a	{
-		color: <?php echo esc_attr($text_color_first); ?>;
+		color: <?php echo esc_html($text_color_first); ?>;
 	}
 	<?php endif; ?>
 	
 	<?php if (!empty($header_background_fourth) && $header_background_fourth != '#222222' ) : ?>
 	.site-header {
-		background: <?php echo esc_attr($header_background_fourth); ?>;
+		background: <?php echo esc_html($header_background_fourth); ?>;
 	}
 	<?php endif; ?>
 	
 	<?php if (!empty($box_color_second) && $box_color_second != '#ffffff' ) : ?>
 	<?php list($r, $g, $b) = sscanf($box_color_second, '#%02x%02x%02x'); ?>
 	#search-full {
-		background: rgba(<?php echo esc_attr($r).', '.esc_attr($g).', '.esc_attr($b); ?>, 0.9);
+		background: rgba(<?php echo esc_html($r).', '.esc_html($g).', '.esc_html($b); ?>, 0.9);
 	}
 	button,
 	input[type="button"],
@@ -342,7 +342,7 @@ function annina_custom_css_styles() {
 	.content-annina-title,
 	.tagcloud a,
 	.navigation.pagination .nav-links .page-numbers {
-		color: <?php echo esc_attr($box_color_second); ?>;
+		color: <?php echo esc_html($box_color_second); ?>;
 	}
 	.post-navigation .meta-nav:hover, 
 	.paging-navigation .meta-nav:hover,
@@ -350,7 +350,7 @@ function annina_custom_css_styles() {
 	#disqus_thread,
 	.navigation.pagination .nav-links a.page-numbers:hover,
 	.navigation.pagination .nav-links .page-numbers.current {
-		background: <?php echo esc_attr($box_color_second); ?>;
+		background: <?php echo esc_html($box_color_second); ?>;
 	}
 	<?php endif; ?>
 	
@@ -367,7 +367,7 @@ function annina_custom_css_styles() {
 	.content-annina-title,
 	.tagcloud a,
 	.navigation.pagination .nav-links .page-numbers {
-		background: <?php echo esc_attr($special_color_third); ?>;
+		background: <?php echo esc_html($special_color_third); ?>;
 	}
 	blockquote::before,
 	button:hover:not(.menu-toggle),
@@ -395,7 +395,7 @@ function annina_custom_css_styles() {
 	.sticky:before,
 	.navigation.pagination .nav-links a.page-numbers:hover,
 	.navigation.pagination .nav-links .page-numbers.current {
-		color: <?php echo esc_attr($special_color_third); ?>;
+		color: <?php echo esc_html($special_color_third); ?>;
 	}
 	button:hover:not(.menu-toggle),
 	input[type="button"]:hover,
@@ -407,11 +407,11 @@ function annina_custom_css_styles() {
 	.tagcloud a:hover,
 	.navigation.pagination .nav-links a.page-numbers:hover,
 	.navigation.pagination .nav-links .page-numbers.current {
-		border: 1px solid <?php echo esc_attr($special_color_third); ?>;
+		border: 1px solid <?php echo esc_html($special_color_third); ?>;
 	}
 	blockquote {
-		border-left: 4px solid <?php echo esc_attr($special_color_third); ?>;
-		border-right: 2px solid <?php echo esc_attr($special_color_third); ?>;
+		border-left: 4px solid <?php echo esc_html($special_color_third); ?>;
+		border-right: 2px solid <?php echo esc_html($special_color_third); ?>;
 	}
 	.main-navigation ul li:hover > a, 
 	.main-navigation li a:focus, 
@@ -423,10 +423,10 @@ function annina_custom_css_styles() {
 	.main-navigation ul > li:hover .indicator, 
 	.main-navigation li.current-menu-parent .indicator, 
 	.main-navigation li.current-menu-item .indicator {
-		border-left: 2px solid <?php echo esc_attr($special_color_third); ?>;
+		border-left: 2px solid <?php echo esc_html($special_color_third); ?>;
 	}
 	.widget-title h3 {
-		border-bottom: 2px solid <?php echo esc_attr($special_color_third); ?>;
+		border-bottom: 2px solid <?php echo esc_html($special_color_third); ?>;
 	}
 	<?php endif; ?>
 	

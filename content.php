@@ -41,8 +41,8 @@
 	</div><!-- .entry-summary -->
 
 	<footer class="entry-footer smallPart annCenter">
-		<span class="read-more"><a href="<?php echo esc_url(get_permalink()); ?>"><?php _e('Read More', 'annina') ?></a><i class="fa spaceLeft fa-caret-right"></i></span>
-		<?php edit_post_link( __( 'Edit', 'annina' ), '<span class="edit-link floatLeft"><i class="fa fa-wrench spaceRight"></i>', '</span>' ); ?>
+		<span class="read-more"><a href="<?php echo esc_url(get_permalink()); ?>"><?php esc_html_e('Read More', 'annina') ?></a><i class="fa spaceLeft fa-caret-right"></i></span>
+		<?php edit_post_link( esc_html__( 'Edit', 'annina' ), '<span class="edit-link floatLeft"><i class="fa fa-wrench spaceRight"></i>', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 	</div><!-- .content-annina -->
 </article><!-- #post-## -->

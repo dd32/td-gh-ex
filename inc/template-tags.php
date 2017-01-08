@@ -18,15 +18,15 @@ function annina_paging_nav() {
 	}
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'annina' ); ?></h1>
+		<h1 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', 'annina' ); ?></h1>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( '<div class="meta-nav"><i class="fa fa-angle-left spaceRight"></i><span>'. __('Older Posts', 'annina') .'</span></div>' ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( '<div class="meta-nav"><i class="fa fa-angle-left spaceRight"></i><span>'. esc_html__('Older Posts', 'annina') .'</span></div>' ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( '<div class="meta-nav"><span>'. __('Newer Posts', 'annina') .'</span><i class="fa fa-angle-right spaceLeft"></i></div>' ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( '<div class="meta-nav"><span>'. esc_html__('Newer Posts', 'annina') .'</span><i class="fa fa-angle-right spaceLeft"></i></div>' ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -49,11 +49,11 @@ function annina_post_nav() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'annina' ); ?></h1>
+		<h1 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'annina' ); ?></h1>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', '<div class="meta-nav" title="%title" aria-hidden="true"><i class="fa fa-angle-left spaceRight"></i><span>' . __( 'Previous Post', 'annina' ) . '</span></div> ' . '<span class="screen-reader-text">' . __( 'Previous post:', 'annina' ) . '</span> ' );
-				next_post_link( '<div class="nav-next">%link</div>', '<div class="meta-nav" title="%title" aria-hidden="true"><span>' . __( 'Next Post', 'annina' ) . '</span><i class="fa fa-angle-right spaceLeft"></i></div> ' . '<span class="screen-reader-text">' . __( 'Next Post:', 'annina' ) . '</span> ' );
+				previous_post_link( '<div class="nav-previous">%link</div>', '<div class="meta-nav" title="%title" aria-hidden="true"><i class="fa fa-angle-left spaceRight"></i><span>' . esc_html__( 'Previous Post', 'annina' ) . '</span></div> ' . '<span class="screen-reader-text">' . esc_html__( 'Previous post:', 'annina' ) . '</span> ' );
+				next_post_link( '<div class="nav-next">%link</div>', '<div class="meta-nav" title="%title" aria-hidden="true"><span>' . esc_html__( 'Next Post', 'annina' ) . '</span><i class="fa fa-angle-right spaceLeft"></i></div> ' . '<span class="screen-reader-text">' . esc_html__( 'Next Post:', 'annina' ) . '</span> ' );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -100,7 +100,7 @@ function annina_posted_on() {
 	
 	if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) {
 		echo '<span class="comments-link"><i class="fa fa-comments-o spaceLeftRight"></i>';
-		comments_popup_link( __( 'No Comments', 'annina' ), __( '1 Comment', 'annina' ), __( '% Comments', 'annina' ) );
+		comments_popup_link( esc_html__( 'No Comments', 'annina' ), esc_html__( '1 Comment', 'annina' ), esc_html__( '% Comments', 'annina' ) );
 		echo '</span>';
 	}
 
@@ -120,7 +120,7 @@ function annina_entry_footer() {
 			printf( '<span class="tags-links">' . __( '<i class="fa fa-tags spaceRight"></i>%1$s', 'annina' ) . '</span>', $tags_list );
 		}
 	}
-	edit_post_link( __( 'Edit', 'annina' ), '<span class="edit-link"><i class="fa fa-wrench spaceRight"></i>', '</span>' );
+	edit_post_link( esc_html__( 'Edit', 'annina' ), '<span class="edit-link"><i class="fa fa-wrench spaceRight"></i>', '</span>' );
 }
 endif;
 
