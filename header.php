@@ -83,7 +83,7 @@
 		<?php endif; ?>
 
 		<nav id="site-navigation" class="main-navigation smallPart" role="navigation">
-			<button class="menu-toggle"><?php _e( 'Main Menu', 'zenzero' ); ?><i class="fa fa-align-justify"></i></button>
+			<button class="menu-toggle"><?php esc_html_e( 'Main Menu', 'zenzero' ); ?><i class="fa fa-align-justify"></i></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->

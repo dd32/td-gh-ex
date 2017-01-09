@@ -1,5 +1,5 @@
 = Zenzero Free =
-* by the CrestaProject team, http://crestaproject.com/
+* by the CrestaProject team, https://crestaproject.com/
 
 == ABOUT Zenzero Free ==
 Zenzero is a modern and Minimal WordPress Theme with generous white space and large legible fonts, one main column e one sidebar column, unlimited colors and theme options.
@@ -41,6 +41,10 @@ one-column, left-sidebar, responsive-layout, custom-background, custom-menu, cus
 3. Log into your WP admin panel and click on the Design tab. Now click on the Zenzero theme to activate it.
 
 == Changelog ==
+= Version 1.4.2 =
+* Fixed a lot of strings escaping
+* Minor bug fixes
+
 = Version 1.4.1 =
 * Updated navigation script
 * Minor bug fixes

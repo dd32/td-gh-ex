@@ -51,7 +51,7 @@ function zenzero_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'zenzero' ),
+		'primary' => esc_html__( 'Primary Menu', 'zenzero' ),
 	) );
 
 	/*
@@ -78,7 +78,7 @@ add_action( 'after_setup_theme', 'zenzero_setup' );
  */
 function zenzero_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'zenzero' ),
+		'name'          => esc_html__( 'Sidebar', 'zenzero' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',

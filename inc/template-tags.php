@@ -18,7 +18,7 @@ function zenzero_paging_nav() {
 	}
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h2 class="screen-reader-text"><?php _e( 'Posts navigation', 'zenzero' ); ?></h2>
+		<h2 class="screen-reader-text"><?php esc_html_e( 'Posts navigation', 'zenzero' ); ?></h2>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
@@ -49,11 +49,11 @@ function zenzero_post_nav() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h2 class="screen-reader-text"><?php _e( 'Post navigation', 'zenzero' ); ?></h2>
+		<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'zenzero' ); ?></h2>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', '<i class="fa prevNext fa-lg fa-angle-left"></i> <div class="meta-nav" aria-hidden="true"><small>' . __( 'Previous Post', 'zenzero' ) . '</small> ' . '<span class="smallPart">%title</span></div><span class="screen-reader-text">' . __( 'Previous post link', 'zenzero' ) . '</span> ' );
-				next_post_link( '<div class="nav-next">%link</div>', '<div class="meta-nav" aria-hidden="true"><small>' . __( 'Next Post', 'zenzero' ) . '</small><span class="smallPart">%title</span></div> <i class="fa prevNext fa-lg fa-angle-right"></i> ' . '<span class="screen-reader-text">' . __( 'Next Post link', 'zenzero' ) . '</span> ' );
+				previous_post_link( '<div class="nav-previous">%link</div>', '<i class="fa prevNext fa-lg fa-angle-left"></i> <div class="meta-nav" aria-hidden="true"><small>' . esc_html__( 'Previous Post', 'zenzero' ) . '</small> ' . '<span class="smallPart">%title</span></div><span class="screen-reader-text">' . esc_html__( 'Previous post link', 'zenzero' ) . '</span> ' );
+				next_post_link( '<div class="nav-next">%link</div>', '<div class="meta-nav" aria-hidden="true"><small>' . esc_html__( 'Next Post', 'zenzero' ) . '</small><span class="smallPart">%title</span></div> <i class="fa prevNext fa-lg fa-angle-right"></i> ' . '<span class="screen-reader-text">' . esc_html__( 'Next Post link', 'zenzero' ) . '</span> ' );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -99,7 +99,7 @@ function zenzero_posted_on() {
 	
 	if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) {
 		echo '<span class="comments-link"><i class="fa fa-comments-o spaceLeftRight"></i>';
-		comments_popup_link( __( 'Leave a comment', 'zenzero' ), __( '1 Comment', 'zenzero' ), __( '% Comments', 'zenzero' ) );
+		comments_popup_link( esc_html__( 'Leave a comment', 'zenzero' ), esc_html__( '1 Comment', 'zenzero' ), esc_html__( '% Comments', 'zenzero' ) );
 		echo '</span>';
 	}
 
@@ -119,7 +119,7 @@ function zenzero_entry_footer() {
 		}
 	}
 
-	edit_post_link( __( 'Edit', 'zenzero' ), '<span class="edit-link"><i class="fa fa-wrench spaceRight"></i>', '</span>' );
+	edit_post_link( esc_html__( 'Edit', 'zenzero' ), '<span class="edit-link"><i class="fa fa-wrench spaceRight"></i>', '</span>' );
 }
 endif;
 

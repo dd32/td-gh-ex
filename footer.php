@@ -12,9 +12,9 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info smallPart">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'zenzero' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'zenzero' ), 'WordPress' ); ?></a>
+			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'zenzero' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'zenzero' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'zenzero' ), '<a target="_blank" href="https://crestaproject.com/downloads/zenzero/" rel="nofollow" title="Zenzero Theme">Zenzero</a>', 'CrestaProject' ); ?>
+			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'zenzero' ), '<a target="_blank" href="https://crestaproject.com/downloads/zenzero/" rel="nofollow" title="Zenzero Theme">Zenzero</a>', 'CrestaProject' ); ?>
 		</div><!-- .site-info -->
 		<div class="site-social smallPart">
 			<?php 
