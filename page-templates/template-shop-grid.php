@@ -4,10 +4,10 @@
  *
  * Description: A page template build to display your shop on the homepage
  *
- * @package WordPress
- * @subpackage Abacus
+ * @package Abacus
  * @since Abacus 1.0
  */
+ 
 $abacus_default_theme_options = abacus_default_theme_options();
 get_header(); ?>
 

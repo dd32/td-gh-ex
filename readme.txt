@@ -1,6 +1,6 @@
 = Abacus =
 
-* Created by Alphabet Themes - http://alphabetthemes.com/
+* Created by Alphabet Themes - https://alphabetthemes.com/
 
 == ABOUT ABACUS ==
 
@@ -18,7 +18,7 @@ https://alphabetthemes.com/downloads/abc-premium-features/
 
 == COPYRIGHT ==
 
-Abacus WordPress Theme, Copyright 2016 Bavotasan Web Development Inc.
+Abacus WordPress Theme, Copyright 2017 Bavotasan Web Development Inc.
 Abacus is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
@@ -34,7 +34,7 @@ GNU General Public License for more details.
 Abacus Theme bundles the following third-party resources:
 
 Font Awesome, Copyright Dave Gandy
-License: MIT license
+License: MIT license, SIL Open Font license
 Source: http://fortawesome.github.io/Font-Awesome/
 
 Roboto Font, Copyright Christian Robertson & Google Fonts
@@ -42,16 +42,31 @@ License: SIL Open Font license
 Source: https://www.google.com/fonts/specimen/Roboto
 
 Header image, Copyright Bavotasan Web Development Inc.
-License: CC0
+License: CC0 1.0
 
-Screenshot images, Copyright Daniel Nanescu
-License: CC0
-Source: http://www.splitshire.com/beautiful-girl-white-t-shirt/
-Source: http://www.splitshire.com/elegance/
-Source: http://www.splitshire.com/vintage-elegance/
-Source: http://www.splitshire.com/vintage-barber-tools/
+Screenshot images, Copyright Unsplash
+License: CC0 1.0
+Source: https://unsplash.com/?photo=pFqrYbhIAXs
+Source: https://unsplash.com/?photo=88tNht2G1k4
+Source: https://unsplash.com/?photo=ryVaXaOJO2Q
+Source: https://unsplash.com/?photo=o14nNEbLa-s
+
+TRT Customizer Pro, Copyright Justin Tadlock
+License: GNU GPL, version 2 or later
+Source: https://github.com/justintadlock/trt-customizer-pro
 
 == CHANGELOG ==
+
+01/09/2017 v1.0.7
+* Fixed date function for internationalization
+* Removed background customizer setting
+* Removed header image from blog page
+* Updated custom header code
+* Updated screenshot
+* Updated about CSS and link
+* Updated copyright and version
+* Updated package info
+* Updated images and licenses
 
 10/23/2016 v1.0.6
 * Fixed missing echoes

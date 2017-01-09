@@ -4,10 +4,10 @@
  *
  * Displays all of the <head> section and everything up till <main>
  *
- * @package WordPress
- * @subpackage Abacus
+ * @package Abacus
  * @since Abacus 1.0
  */
+ 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>

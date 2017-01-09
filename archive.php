@@ -10,10 +10,10 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package WordPress
- * @subpackage Abacus
+ * @package Abacus
  * @since Abacus 1.0
  */
+ 
 get_header(); ?>
 
 	<div class="container">

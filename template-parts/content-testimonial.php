@@ -2,10 +2,10 @@
 /**
  * The template used for displaying testimonials.
  *
- * @package WordPress
- * @subpackage Abacus
+ * @package Abacus
  * @since Abacus 1.0
  */
+ 
 $abacus_default_theme_options = abacus_default_theme_options();
 ?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class( 'cols cols-2' ); ?>>

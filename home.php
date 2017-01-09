@@ -2,13 +2,13 @@
 /**
  * The front page template file.
  *
- * @package WordPress
- * @subpackage Abacus
+ * @package Abacus
  * @since Abacus 1.0
  */
+ 
 get_header(); ?>
 
-	<?php if ( has_header_image() ) : ?>
+	<?php if ( has_header_image() && is_front_page() ) : ?>
 		<div class="parallax">
 			<div class="header-img"></div>
 			<?php if ( is_active_sidebar( 'jumbo-headline' ) ) { ?>

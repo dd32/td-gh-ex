@@ -4,10 +4,10 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package WordPress
- * @subpackage Abacus
+ * @package Abacus
  * @since Abacus 1.0
  */
+ 
 function abacus_login_register_menu() {
 	?>
 	<ul class="pull-left">
@@ -114,9 +114,10 @@ function abacus_word_count() {
 
 add_filter( 'pre_get_posts', 'abacus_search' );
 function abacus_search( $query ) {
-	if ( ! is_admin() && $query->is_search && $query->is_main_query() )
+	if ( ! is_admin() && $query->is_search && $query->is_main_query() ) {
 		$query->set( 'post_type', array( 'post' ) );
-
+	}
+	
     return $query;
 }
 

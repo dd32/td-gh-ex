@@ -2,20 +2,21 @@
 /**
  * The template for displaying Search Results pages.
  *
- * @package WordPress
- * @subpackage Abacus
+ * @package Abacus
  * @since Abacus 1.0
  */
+ 
 get_header(); ?>
 
 	<div class="container">
 		<div class="row">
 			<section id="primary" class="cols">
 			    <?php
-				   $search_post_type = ( isset( $_GET['search_post_type'] ) ) ? $_GET['search_post_type'] : '';
+				$search_post_type = ( isset( $_GET['search_post_type'] ) ) ? esc_attr( $_GET['search_post_type'] ) : '';
+				$search_query = ( isset( $_GET['s'] ) ) ? esc_attr( $_GET['s'] ) : '';
 				if ( abacus_woocommerce_activated() && 'post' != $search_post_type ) {
 					$args = array(
-						's' => esc_attr( $_GET['s'] ),
+						's' => $search_query,
 						'post_type' => 'product',
 						'posts_per_page' => 12
 					);

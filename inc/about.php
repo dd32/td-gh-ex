@@ -2,10 +2,10 @@
 /**
  * The about admin page.
  *
- * @package WordPress
- * @subpackage Abacus
+ * @package Abacus
  * @since Abacus 1.0
  */
+ 
 class Abacus_Documentation {
 	public function __construct() {
 		add_action( 'admin_menu', array( $this, 'admin_menu' ), 1 );
@@ -119,7 +119,7 @@ class Abacus_Documentation {
 					<p><?php printf( __( 'If you&rsquo;ve purchased a license from Alphabet Themes, you can access our %1$ssupport form%2$s to ask any questions you might have about one of our themes or plugins.', 'abacus' ), '<a href="' . esc_url( $abc_url ) . '/my-account/#tab_support" target="_blank">', '</a>' ); ?></p>
 
 					<h4><?php printf( __( 'Are you enjoying %s?', 'abacus' ), ABACUS_THEME_NAME ); ?></h4>
-					<p><?php printf( __( 'Why not leave a review on %1$sWordPress.org%2$s? We&rsquo;d really appreciate it! %3$s', 'abacus' ), '<a href="https://wordpress.org/themes/' . get_option( 'template' ) . '" target="_blank">', '</a>', convert_smilies( ';)' ) ); ?> </p>
+					<p><?php printf( __( 'Why not leave a review on %1$sWordPress.org%2$s? We&rsquo;d really appreciate it! %3$s', 'abacus' ), '<a href="https://wordpress.org/support/theme/' . get_option( 'template' ) . '/reviews" target="_blank">', '</a>', convert_smilies( ';)' ) ); ?> </p>
 				</div>
 			</div>
 			<?php

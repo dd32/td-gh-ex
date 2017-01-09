@@ -3,10 +3,10 @@
  * Jetpack Compatibility File
  * See: https://jetpack.me/
  *
- * @package WordPress
- * @subpackage Abacus
+ * @package Abacus
  * @since Abacus 1.0
  */
+ 
 function abacus_front_page_render() {
 	while ( have_posts() ) : the_post();
 		if ( 'product' == get_post_type() ) {

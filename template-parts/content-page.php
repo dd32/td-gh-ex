@@ -2,10 +2,10 @@
 /**
  * The template for displaying pages
  *
- * @package WordPress
- * @subpackage Abacus
+ * @package Abacus
  * @since Abacus 1.0
  */
+ 
 ?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 

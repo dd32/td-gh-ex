@@ -4,6 +4,10 @@
 	right: 0;
 }
 
+.theme-badge img {
+	border: 0;
+}
+
 .about-wrap .point-releases {
 	border: 0;
 	margin: 20px 0 0;
@@ -38,7 +42,6 @@
 
 .feature-section.three-col {
 	border: 0;
-	overflow: hidden;
 }
 
 .feature-section.three-col h4.no-top {

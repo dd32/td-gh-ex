@@ -2,10 +2,10 @@
 /**
  * The template for displaying a "No posts found" message.
  *
- * @package WordPress
- * @subpackage Abacus
+ * @package Abacus
  * @since Abacus 1.0
  */
+ 
 ?>
 	<article class="no-results not-found">
    	   	<h1 class="entry-title page-header"><?php _e( 'Nothing found', 'abacus' ); ?></h1>

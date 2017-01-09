@@ -4,10 +4,10 @@
  *
  * Used for both single and front-page/index/archive/search.
  *
- * @package WordPress
- * @subpackage Abacus
+ * @package Abacus
  * @since Abacus 1.0
  */
+ 
 ?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 

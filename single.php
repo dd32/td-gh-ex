@@ -2,10 +2,10 @@
 /**
  * The template for displaying all single posts and attachments
  *
- * @package WordPress
- * @subpackage Abacus
+ * @package Abacus
  * @since Abacus 1.0
  */
+ 
 get_header(); ?>
 
 	<div class="container">

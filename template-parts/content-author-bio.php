@@ -2,10 +2,10 @@
 /**
  * The template for displaying author bio.
  *
- * @package WordPress
- * @subpackage Abacus
+ * @package Abacus
  * @since Abacus 1.0
  */
+ 
 ?>
 
 	<div class="author-info">

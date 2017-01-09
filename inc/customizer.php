@@ -2,10 +2,10 @@
 /**
  * The Customizer.
  *
- * @package WordPress
- * @subpackage Abacus
+ * @package Abacus
  * @since Abacus 1.0
  */
+ 
 function abacus_default_theme_options() {
 	//delete_option( 'theme_mods_abacus' );
 	return array(
@@ -74,7 +74,6 @@ class Abacus_Customizer {
 		$abacus_default_theme_options = abacus_default_theme_options();
 
 		$wp_customize->get_setting( 'site_icon' )->transport = 'refresh';
-		$wp_customize->remove_section( 'background_image' );
 
 		## Layout section
 		$wp_customize->add_section( 'abc_layout', array(

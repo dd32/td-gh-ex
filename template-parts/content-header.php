@@ -2,10 +2,10 @@
 /**
  * The template for displaying article headers
  *
- * @package WordPress
- * @subpackage Abacus
+ * @package Abacus
  * @since Abacus 1.0
  */
+ 
 ?>
 
 	<header>

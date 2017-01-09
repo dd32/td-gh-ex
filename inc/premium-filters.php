@@ -8,10 +8,10 @@
  * For more information on hooks, actions, and filters,
  * {@link https://codex.wordpress.org/Plugin_API}
  *
- * @package WordPress
- * @subpackage Abacus
+ * @package Abacus
  * @since Abacus 1.0
  */
+ 
 add_filter( 'abc_custom_color_defaults', 'abacus_custom_color_defaults' );
 if ( ! function_exists( 'abacus_custom_color_defaults' ) ) {
 	function abacus_custom_color_defaults() {
