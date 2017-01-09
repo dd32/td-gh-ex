@@ -13,7 +13,7 @@
 </main><!-- #main -->
 
 <footer id="page-footer" role="contentinfo">
-    <div class="inner">
+    <div id="dddddoo" class="inner">
         <div id="site-info">
         <span class="footer-site-title"> &copy <?php echo date('Y') ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></span>
         

@@ -1,6 +1,6 @@
 <?php
 /**
- * The default template for displaying content
+ * The template for displaying  posts with post format video.
  *
  * Used for index/archive/search.
  *

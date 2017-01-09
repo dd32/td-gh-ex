@@ -48,7 +48,7 @@
 			<?php
 				if ( 'post' == get_post_type() ) {
 				// Translators: there is a space after "By".
-				print(__('By ', 'bassist'));
+				print( __('By ', 'bassist') );
 				printf( '<a href="%1$s" rel="author"><i class="fa fa-user" aria-hidden="true"></i>%2$s</a>',
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 				get_the_author() );
@@ -63,7 +63,7 @@
 	<?php if ( has_post_thumbnail() && ! (has_post_format('video') ) ) : ?>
 	<div class="post-thumbnail">
 		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-    	<?php the_post_thumbnail(); ?>
+		<?php the_post_thumbnail(); ?>
 		</a>
 	</div><!-- post-thumbnail -->
 	<?php endif; ?>
@@ -80,8 +80,8 @@
 		} 
 
 		else {
-		the_content( sprintf( __( 'Continue reading', 'bassist' ).' %s',
-			the_title( '<span class="screen-reader-text">', '</span>', false )
+			the_content( sprintf( __( 'Continue reading', 'bassist' ).' %s',
+				the_title( '<span class="screen-reader-text">', '</span>', false )
 		) );
 		}	
 

@@ -16,7 +16,7 @@ if ( 'page' == get_option( 'show_on_front' ) ):
 	<div id="main-content"> 
 		<?php
 			bassist_parallax('1');
-			get_template_part('template-parts/section', 'biography');
+			get_template_part('template-parts/section', 'about');
 			bassist_parallax('2');
 			get_template_part('template-parts/section', 'audio');
 			bassist_parallax('3');

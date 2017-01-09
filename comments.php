@@ -23,19 +23,15 @@ if ( post_password_required() ) {
 
 	<h2 class="comments-title">
 		<?php
-			printf(_n('One thought on', '%1$s thoughts on', get_comments_number(), 'bassist'), number_format_i18n( get_comments_number()) );
-			printf(' &ldquo;%1$s&rdquo;', get_the_title());
+			printf( _n( 'One thought on', '%1$s thoughts on', get_comments_number(), 'bassist' ), number_format_i18n( get_comments_number()) );
+			printf( ' &ldquo;%1$s&rdquo;', get_the_title() );
 
 		?>
 	</h2>
 
-	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-	<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'bassist' ); ?></h1>
-		<div class="nav-previous"><?php previous_comments_link('&larr; '. __( 'Older Comments', 'bassist' ) ); ?></div>
-		<div class="nav-next"><?php next_comments_link( __('Newer Comments', 'bassist' ).' &rarr;' ); ?></div>
-	</nav><!-- #comment-nav-above -->
-	<?php endif; // Check for comment navigation. ?>
+	<?php 	if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
+				bassist_comments_navigation();
+			endif; // Check for comment navigation. ?>
 
 	<ol class="comment-list">
 		<?php
@@ -48,13 +44,9 @@ if ( post_password_required() ) {
 		?>
 	</ol><!-- .comment-list -->
 
-	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-	<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Comment navigation', 'bassist' ); ?></h1>
-		<div class="nav-previous"><?php previous_comments_link('&larr; '. __( 'Older Comments', 'bassist' ) ); ?></div>
-		<div class="nav-next"><?php next_comments_link( __('Newer Comments', 'bassist' ).' &rarr;' ); ?></div>
-	</nav><!-- #comment-nav-below -->
-	<?php endif; // Check for comment navigation. ?>
+	<?php 	if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
+				bassist_comments_navigation();
+			endif; // Check for comment navigation. ?>
 
 	<?php if ( ! comments_open() ) : ?>
 	<p class="no-comments"><?php _e( 'Comments are closed.', 'bassist' ); ?></p>
@@ -62,6 +54,6 @@ if ( post_password_required() ) {
 
 	<?php endif; // have_comments() ?>
 
-	<?php comment_form(); ?>
+	<?php comment_form( array( 'cancel_reply_link' => '<i class="fa fa-times" aria-hidden="true"></i><span class="screen-reader-text">'. __('Cancel Reply', 'bassist').'</span>')); ?>
 
 </div><!-- #comments -->

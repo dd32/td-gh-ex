@@ -108,11 +108,6 @@ if( $bassist_theme_options['site_description_color'] ) : ?>
 <?php endif; ?>
 
 
-
-
-
-
-
 	</style>
 <?php
 }

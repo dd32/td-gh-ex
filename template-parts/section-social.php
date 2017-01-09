@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying the posts with small formats (aside, link, quote and status).
+ * The template for displaying the social links banner in the front page.
  *
  * @package Bassist
  * @since Bassist 1.0

@@ -28,7 +28,11 @@ get_header(); ?>
 				* use this in a child theme, then include a file called called content-___.php
 				* (where ___ is the post format) and that will be used instead.
 				*/
-				get_template_part( 'template-parts/content', get_post_format() );
+				if ( 'posts' == get_option( 'show_on_front' ) ):
+					get_template_part( 'template-parts/content', get_post_format() );
+				elseif ( 'page' == get_option( 'show_on_front' ) && ! has_post_format( array('audio', 'video') ) ):
+					get_template_part( 'template-parts/content', get_post_format() );
+				endif;
 			// End the Loop.
 			endwhile;
 

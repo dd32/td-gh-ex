@@ -25,11 +25,7 @@ get_header(); ?>
 		if ( $query->have_posts()) :
 			while ( $query->have_posts() ):
 				$query->the_post();
-				if (get_post_format()):
-					get_template_part( 'template-parts/content', get_post_format() );
-				else:
-					get_template_part ('template-parts/content', 'featured-article-tag');
-				endif;
+				get_template_part( 'template-parts/content', get_post_format() );				
 			endwhile;
 			wp_reset_postdata();
 		endif;

@@ -1,6 +1,6 @@
 <?php
 /**
- * The default template for displaying content
+ * The template for displaying  posts with post format link.
  *
  * Used for index/archive/search.
  *
@@ -45,14 +45,6 @@
 		<?php edit_post_link('<i class="fa fa-pencil" aria-hidden="true"></i>'. __('Edit', 'bassist') ) ?>
 	</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
-
-	<?php if ( has_post_thumbnail() ) : ?>
-	<div class="post-thumbnail">
-		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-    	<?php the_post_thumbnail(); ?>
-		</a>
-	</div><!-- post-thumbnail -->
-	<?php endif; ?>
 
 	<div class="entry-content">
 		<h2> <?php the_content();?> </h2>

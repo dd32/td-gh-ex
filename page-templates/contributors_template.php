@@ -10,9 +10,9 @@
 
 get_header(); ?>
 
-<div class="inner no-sidebar">
-    <div id="main-content">
-    	<div class="contributors flex-container">
+<div class="inner no-sidebar flex-container">
+	<div id="main-content">
+		<div class="contributors flex-container">
 
 			<?php 
 				$authors = get_users();
@@ -20,6 +20,7 @@ get_header(); ?>
 				foreach ($authors as $key => $value): ?>
 
 				<div class="contributor">
+				<div class="avatar-container">
 
 				<?php 
 					$author_ID = $authors[$key]->ID;
@@ -31,14 +32,17 @@ get_header(); ?>
 					endif;
 				?>
 
-				<h1> <?php echo $authors[$key]->data->display_name;?> </h1>				
+				</div>
 
-				<p> <?php echo $author_data->description; ?> </p>
+				<div class="author-info">
+					<h1> <?php echo $authors[$key]->data->display_name;?> </h1>
+					<p> <?php echo $author_data->description; ?> </p>
+				</div>
 
 				<?php
 					printf( '<div class="author-link"><a href="%1$s" rel="author">%2$s</a></div>',
 						esc_url( get_author_posts_url($author_ID)  ),
-						sprintf('<i class="fa fa-standard" aria-hidden="true"></i>'. _n('%s Article', '%s Articles', $author_post_count, 'bassist'), $author_post_count));
+						sprintf('<i class="fa fa-list" aria-hidden="true"></i>'. _n('%s Article', '%s Articles', $author_post_count, 'bassist'), $author_post_count));
 				?>
 
 				</div><!--/contributor-->

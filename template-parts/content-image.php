@@ -1,6 +1,6 @@
 <?php
 /**
- * The Template for displaying all posts with format image.
+ * The template for displaying  posts with post format image.
  *
  * @package Bassist
  * @since Bassist 1.0.0

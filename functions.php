@@ -7,6 +7,13 @@
  * @package Bassist
  */
 
+/**
+ * Bassist only works in WordPress 4.5 or later.
+ */
+if ( version_compare( $GLOBALS['wp_version'], '4.5', '<' ) ) {
+	require get_template_directory() . '/inc/back-compat.php';
+}
+
 if ( ! function_exists( 'bassist_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -134,7 +141,7 @@ function bassist_widgets_init() {
 	register_sidebar(array(
 		'name'			=> esc_html__( 'Contact Area', 'bassist' ),
 		'id' 			=> 'contact-area',
-		'description'	=> esc_html__( 'Add the contact form here.', 'bassist' ),
+		'description'	=> esc_html__( 'Add a text widget with the contact form shortcode here.', 'bassist' ),
 		'before_widget'	=> '<div id="%1$s" class="widget %2$s">',
 		'after_widget'	=> '</div>',
 		'before_title'	=> '<h2 class="widget-title">',
@@ -192,15 +199,45 @@ function bassist_scripts() {
 	wp_enqueue_style( 'bassist-fonts', bassist_fonts_url(), array(), null );
 	wp_enqueue_style( 'bassist-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'bassist-font-awesome', get_template_directory_uri() . '/css/font-awesome.css');
-	//wp_enqueue_script( 'bassist-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'bassist-scripts', get_template_directory_uri() . '/js/functions.js', array('jquery'), '20151215', true );
-	//wp_enqueue_script( 'bassist-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-
+	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'bassist_scripts' );
+
+/**
+ * Adds custom classes to the array of body classes.
+ *
+ * @since Bassist 1.0
+ * @param array $classes Classes for the body element.
+ * @return array
+ */
+function bassist_body_classes( $classes ) {
+	// Adds a class of group-blog to blogs with more than 1 published author.
+	if ( is_multi_author() ) {
+		$classes[] = 'group-blog';
+	}
+
+	// Adds a class of hfeed to non-singular pages.
+	if ( ! is_singular() ) {
+		$classes[] = 'hfeed';
+	}
+
+	// Adds a class of no-sidebar to sites without active sidebar.
+	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+		$classes[] = 'no-sidebar';
+	}
+
+	// Adds a class of front-page if a static front page is selected.
+	if ( 'page' === get_option( 'show_on_front' ) && is_front_page() ) {
+		$classes[] = 'front-page';
+	}
+
+	return $classes;
+}
+add_filter( 'body_class', 'bassist_body_classes' );
 
 /**
  * Implement the Custom Header feature.
@@ -213,14 +250,14 @@ require get_template_directory() . '/inc/custom-header.php';
 require get_template_directory() . '/inc/template-tags.php';
 
 /**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/inc/extras.php';
-
-/**
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Color calculations.
+ */
+require get_template_directory() . '/inc/color-calculations.php';
 
 /**
  * Load Jetpack compatibility file.

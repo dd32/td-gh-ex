@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying the posts with small formats (aside, link, quote and status).
+ * The template for displaying the contact section at the end of the front page.
  *
  * @package Bassist
  * @since Bassist 1.0
@@ -25,10 +25,8 @@ $contact_page = $bassist_theme_options['contact_page_slug'];
         endwhile;
         wp_reset_postdata();
     endif;
-?>
-
-    
+?>   
     </div>
 
-</section><!--/video-format-section-->
+</section><!--/contact-section-->
 

@@ -100,32 +100,41 @@ function bassist_post_navigation() {
 }
 endif;
 
+if ( ! function_exists( 'bassist_comments_navigation' ) ) :
+/**
+ * Prints custom html markup for the_comments_navigation()
+ *
+ * @since Bassist 1.0.0
+ */
+function bassist_comments_navigation() {
+	the_comments_navigation( array(
+		'prev_text' => '<i class="fa fa-long-arrow-left"></i> '. __( 'Older', 'bassist' ),
+		'next_text' => __( 'Newer', 'bassist' ) . ' <i class="fa fa-long-arrow-right"></i>',
+		));
+}
+endif;
+
 if ( ! function_exists( 'bassist_parallax' ) ) :
 /**
- * Creates a parallax section.
- *
+ * Creates the markup of a parallax section if an image is loaded.
+ * @param int $number The number of the image and the parallax section.
  * @since Bassist 1.0
  */
+function bassist_parallax($number) {
+	$bassist_theme_options = bassist_get_options( 'bassist_theme_options' );
+	$image = $bassist_theme_options['parallax_background_image_'.$number];
 
-function bassist_parallax($order) {
-$bassist_theme_options = bassist_get_options( 'bassist_theme_options' );
-$image = $bassist_theme_options['parallax_background_image_'.$order];
-//echo $image; echo '<br>';
-//echo $order; echo '<br>';
-
-
-if ( $image !== ''): ?>
-	<section id="parallax-front-page" class="parallax" >
-		<div class="bg__<?php echo esc_attr($order) ?>">first</div>
-	</section>
-<?php endif;
-
+		if ( $image !== ''): ?>
+			<section id="parallax-front-page" class="parallax" >
+				<div class="bg__<?php echo esc_attr($number) ?>">first</div>
+			</section>
+<?php 	endif;
 }
 endif;
 
 if ( ! function_exists('bassist_post_format_info')) :
 /**
- * Print HTML with post format information.
+ * Prints HTML with post format information.
  *
  * @since Bassist 1.0
  */
@@ -134,34 +143,34 @@ function bassist_post_format_info() {
 	$format_link = get_post_format_link($format);
 	switch ($format) {
 		case 'aside':
-			printf('<a href="%1$s"><i class="fa fa-file-text"></i>%2$s</a>', esc_url( $format_link ), ucfirst($format));
+			printf('<a href="%1$s"><i class="fa fa-dot-circle-o" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), ucfirst($format));
 			break;
 		case 'image':
-			printf('<a href="%1$s"><i class="fa fa-camera"></i>%2$s</a>', esc_url( $format_link ), ucfirst($format));
+			printf('<a href="%1$s"><i class="fa fa-camera" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), ucfirst($format));
 			break;
 		case 'video':
-			printf('<a href="%1$s"><i class="fa fa-film"></i>%2$s</a>', esc_url( $format_link ), ucfirst($format));
+			printf('<a href="%1$s"><i class="fa fa-film" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), ucfirst($format));
 			break;
 		case 'quote':
-			printf('<a href="%1$s"><i class="fa fa-quote-right"></i>%2$s</a>', esc_url( $format_link ), ucfirst($format));
+			printf('<a href="%1$s"><i class="fa fa-quote-right" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), ucfirst($format));
 			break;
 		case 'link':
-			printf('<a href="%1$s"><i class="fa fa-link"></i>%2$s</a>', esc_url( $format_link ), ucfirst($format));
+			printf('<a href="%1$s"><i class="fa fa-link" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), ucfirst($format));
 			break;
 		case 'gallery':
-			printf('<a href="%1$s"><i class="fa fa-picture-o"></i>%2$s</a>', esc_url( $format_link ), ucfirst($format));
+			printf('<a href="%1$s"><i class="fa fa-picture-o" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), ucfirst($format));
 			break;
 		case 'status':
-			printf('<a href="%1$s"><i class="fa fa-commenting-o"></i>%2$s</a>', esc_url( $format_link ), ucfirst($format));
+			printf('<a href="%1$s"><i class="fa fa-commenting-o" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), ucfirst($format));
 			break;
 		case 'audio':
-			printf('<a href="%1$s"><i class="fa fa-music"></i>%2$s</a>', esc_url( $format_link ), ucfirst($format));
+			printf('<a href="%1$s"><i class="fa fa-music" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), ucfirst($format));
 			break;
 		case 'chat':
-			printf('<a href="%1$s"><i class="fa fa-comments-o"></i>%2$s</a>', esc_url( $format_link ), ucfirst($format));
+			printf('<a href="%1$s"><i class="fa fa-comments-o" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), ucfirst($format));
 			break;		
 		default:
-			printf('<a href="%1$s"><i class="fa fa-thumb-tack"></i>%2$s</a>', esc_url( $format_link ), __('Standard', 'bassist'));
+			printf('<a href="%1$s"><i class="fa fa-thumb-tack" aria-hidden="true"></i>%2$s</a>', esc_url( $format_link ), __('Standard', 'bassist'));
 			break;
 		}
 	}

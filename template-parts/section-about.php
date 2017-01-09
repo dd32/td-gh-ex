@@ -1,21 +1,21 @@
 <?php
 /**
- * The template for displaying the featured posts.
+ * The template for displaying the about section at the beginning of the front page.
  *
  * @package Bassist
  * @since Bassist 1.0.0
  */
 $bassist_theme_options = bassist_get_options( 'bassist_theme_options' );
-$biography_page = $bassist_theme_options['biography_slug'];
+$about_page = $bassist_theme_options['about_slug'];
 ?>
 
-<section id="biography" class="biography-section">
+<section id="about" class="about-section">
     <div class="inner">
 <?php
-   $biography = new WP_Query( array( 'pagename' => $biography_page ) );   
+   $about = new WP_Query( array( 'pagename' => $about_page ) );   
 
-    if ($biography->have_posts()) :
-        while ( $biography->have_posts() ): $biography->the_post(); ?>
+    if ($about->have_posts()) :
+        while ( $about->have_posts() ): $about->the_post(); ?>
         <h2 class="section-title"><?php the_title(); ?></h2>
         <div class="entry-content">
            <?php the_content();
@@ -26,5 +26,5 @@ $biography_page = $bassist_theme_options['biography_slug'];
 
     </div><!--/inner-->
 
-</section><!--/biography-section-->
+</section><!--/about-section-->
 

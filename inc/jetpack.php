@@ -16,9 +16,10 @@
 function bassist_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support( 'infinite-scroll', array(
-		'container' => 'main',
-		'render'    => 'bassist_infinite_scroll_render',
-		'footer'    => 'page',
+		'type'		=> 'scroll',
+		'container'	=> 'main-content',
+		'render'	=> 'bassist_infinite_scroll_render',
+		'footer'	=> 'container',
 	) );
 
 	// Add theme support for Responsive Videos.
@@ -33,7 +34,7 @@ function bassist_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
 		if ( is_search() ) :
-			get_template_part( 'template-parts/content', 'search' );
+			get_template_part( 'template-parts/content' );
 		else :
 			get_template_part( 'template-parts/content', get_post_format() );
 		endif;
