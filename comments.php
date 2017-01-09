@@ -3,7 +3,7 @@
  *
  * Wortex Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
  *
- * Copyright 2014-2016 Mathieu Sarrasin - Iceable Media
+ * Copyright 2014-2017 Mathieu Sarrasin - Iceable Media
  *
  * Comments template
  *
@@ -19,9 +19,9 @@
 		?><h3 id="comments"><?php	printf( _n( 'One Response to %2$s', '%1$s Responses to %2$s', get_comments_number(), 'wortex-lite' ),
 										number_format_i18n( get_comments_number() ),  get_the_title() );
 		?></h3><?php
-	
+
 		?><ol class="commentlist"><?php wp_list_comments( array('avatar_size' => 64 ) ); ?></ol><?php
-	
+
 		if (wortex_page_has_comments_nav() ):
 		?><div class="comments_nav"><?php
 			if ( wortex_page_has_previous_comments_link() ) :
@@ -44,7 +44,7 @@
 		else : // If comments are closed
 			?><p class="nocomments"><?php _e('Comments are closed.', 'wortex-lite'); ?></p><?php
 		endif;
-	
+
 	endif;
 
 if ( comments_open() ) comment_form();

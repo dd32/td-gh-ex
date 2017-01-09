@@ -40,7 +40,7 @@ This theme bundles some third party javascript/jQuery plugins and font, all open
 * superfish: Copyright 2013 Joel Birch. Dual licensed under the MIT and GPL licenses. http://users.tpg.com.au/j_birch/plugins/superfish/
 * Font Awesome: Copyright Dave Gandy. Font licensed under SIL OFL 1.1. CSS code licensed under MIT License. http://fortawesome.github.io/Font-Awesome/
 
-All other files are Copyright 2014-2016 Iceable Media.
+All other files are Copyright 2014-2017 Iceable Media.
 
 == TRANSLATIONS ==
 
@@ -55,6 +55,10 @@ If you have translated this theme into your own language and are willing to shar
 Your translation files will be added to the next update. Don't forget to leave your name, email address and/or website link so credits can be given to you!
 
 == CHANGELOG ==
+
+= 1.2.9 =
+January 9th, 2017
+* Updated copyright to 2017
 
 = 1.2.8 =
 December 12th, 2016

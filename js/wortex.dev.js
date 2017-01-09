@@ -1,6 +1,6 @@
 /**
  * Wortex Lite WordPress Theme by Iceable Themes | https://www.iceablethemes.com
- * Copyright 2014-2016 Mathieu Sarrasin - Iceable Media
+ * Copyright 2014-2017 Mathieu Sarrasin - Iceable Media
  * Javascripts
  */
 
@@ -50,7 +50,7 @@ $(document).ready(function($){
 		$("i", this).toggleClass("fa-search").toggleClass("fa-close");
 		$("#navbar .search-field").focus();
 		var $placeholder = $('#navbar .search-field').attr('data-placeholder');
-		if($('#navbar .search-field').attr('value') == $placeholder) $('#navbar .search-field').setCursorPosition(0);	
+		if($('#navbar .search-field').attr('value') == $placeholder) $('#navbar .search-field').setCursorPosition(0);
 		e.preventDefault();
 	});
 
