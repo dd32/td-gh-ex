@@ -7,13 +7,13 @@
 				<div class="page-header-title">
 					<h1>
 						<?php if ( is_day() ) : ?>
-						<?php  _e( "Daily Archives:", 'wallstreet' ); echo (get_the_date()); ?>
+						<?php  _e( "Daily Archive","wallstreet"); echo (get_the_date()); ?>
 						<?php elseif ( is_month() ) : ?>
-						<?php  _e( "Monthly Archives:", 'wallstreet' ); echo (get_the_date( 'F Y' )); ?>
+						<?php  _e( "Monthly Archive","wallstreet"); echo (get_the_date( 'F Y' )); ?>
 						<?php elseif ( is_year() ) : ?>
-						<?php  _e( "Yearly Archives:", 'wallstreet' );  echo (get_the_date( 'Y' )); ?>
+						<?php  _e( "Yearly Archive","wallstreet");  echo (get_the_date( 'Y' )); ?>
 						<?php else : ?>
-						<?php _e( "Blog Archives", 'wallstreet' ); ?>
+						<?php _e( "Blog Archive","wallstreet"); ?>
 						<?php endif; ?>
 					</h1>		
 				</div>
@@ -45,8 +45,8 @@
 					</div>
 					<div class="blog-post-title-wrapper">
 						<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-						<?php the_content( __( 'Read More' , 'wallstreet' ) ); ?>
-						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'wallstreet' ), 'after' => '</div>' ) ); ?>
+						<?php the_content( __('Read More', 'wallstreet' ) ); ?>
+						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __('Page', 'wallstreet' ), 'after' => '</div>' ) ); ?>
 						<div class="blog-post-meta">
 							<a id="blog-author" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><i class="fa fa-user"></i> <?php the_author(); ?></a>
 							<?php 	$tag_list = get_the_tag_list();

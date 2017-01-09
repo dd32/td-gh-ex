@@ -5,13 +5,13 @@ function wallstreet_project_customizer( $wp_customize ) {
 	$wp_customize->add_panel( 'wallstreet_project_setting', array(
 		'priority'       => 700,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Project Settings', 'wallstreet'),
+		'title'      => __('Project settings', 'wallstreet'),
 	) );
 	
 	$wp_customize->add_section(
         'project_section_settings',
         array(
-            'title' => __('Home Project Settings','wallstreet'),
+            'title' => __('Project settings','wallstreet'),
             'description' => '',
 			'panel'  => 'wallstreet_project_setting',)
     );
@@ -41,13 +41,13 @@ function wallstreet_project_customizer( $wp_customize ) {
 	//Project one Title
 	$wp_customize->add_setting(
 	'wallstreet_pro_options[portfolio_title_one]', array(
-        'default'        => 'Wall Street Style',
+        'default'        => __('WallStreet style','wallstreet'),
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
     $wp_customize->add_control('wallstreet_pro_options[portfolio_title_one]', array(
-        'label'   => __('Portfolio Title One', 'wallstreet'),
+        'label'   => __('Title', 'wallstreet'),
         'section' => 'project_one_section_settings',
 		'type' => 'text',
     ));
@@ -57,7 +57,7 @@ function wallstreet_project_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
     'wallstreet_pro_options[portfolio_description_one]',
     array(
-        'default' => __('A wonderful serenity has taken possession of my entire soul, like these sweet mornings','wallstreet'),
+        'default' => __('A wonderful serenity has taken possession of my entire soul, like these sweet mornings.','wallstreet'),
 		 'capability'     => 'edit_theme_options',
 		 'sanitize_callback' => 'sanitize_text_field',
 		 'type' => 'option'
@@ -66,7 +66,7 @@ function wallstreet_project_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     'wallstreet_pro_options[portfolio_description_one]',
     array(
-        'label' => __('Portfolio Description One','wallstreet'),
+        'label' => __('Description','wallstreet'),
         'section' => 'project_one_section_settings',
         'type' => 'textarea',	
     )
@@ -77,7 +77,7 @@ function wallstreet_project_customizer( $wp_customize ) {
 	$wp_customize->add_section(
         'project_one_section_settings',
         array(
-            'title' => __('Home Portfolio one','wallstreet'),
+            'title' => __('Home portfolio one','wallstreet'),
             'description' => '',
 			'panel'  => 'wallstreet_project_setting',)
     );
@@ -91,7 +91,7 @@ function wallstreet_project_customizer( $wp_customize ) {
 			$wp_customize,
 			'wallstreet_pro_options[portfolio_image_one]',
 			array(
-				'label' => __('Project One Thumbnail','wallstreet'),
+				'label' => __('Image','wallstreet'),
 				'section' => 'example_section_one',
 				'settings' =>'wallstreet_pro_options[portfolio_image_one]',
 				'section' => 'project_one_section_settings',
@@ -103,7 +103,7 @@ function wallstreet_project_customizer( $wp_customize ) {
 	$wp_customize->add_section(
         'project_two_section_settings',
         array(
-            'title' => __('Home Portfolio two','wallstreet'),
+            'title' => __('Home portfolio two','wallstreet'),
             'description' => '',
 			'panel'  => 'wallstreet_project_setting',)
     );
@@ -111,13 +111,13 @@ function wallstreet_project_customizer( $wp_customize ) {
 	//Project Two Title
 	$wp_customize->add_setting(
 	'wallstreet_pro_options[portfolio_title_two]', array(
-        'default'        => 'Wall Street Style',
+        'default'        => __('WallStreet style','wallstreet'),
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
     $wp_customize->add_control('wallstreet_pro_options[portfolio_title_two]', array(
-        'label'   => __('Portfolio Title Two', 'wallstreet'),
+        'label'   => __('Title', 'wallstreet'),
         'section' => 'project_two_section_settings',
 		'type' => 'text',
     ));
@@ -126,7 +126,7 @@ function wallstreet_project_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
     'wallstreet_pro_options[portfolio_description_two]',
     array(
-        'default' => __('A wonderful serenity has taken possession of my entire soul, like these sweet mornings','wallstreet'),
+        'default' => __('A wonderful serenity has taken possession of my entire soul, like these sweet mornings.','wallstreet'),
 		 'capability'     => 'edit_theme_options',
 		 'sanitize_callback' => 'sanitize_text_field',
 		 'type' => 'option'
@@ -135,7 +135,7 @@ function wallstreet_project_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     'wallstreet_pro_options[portfolio_description_two]',
     array(
-        'label' => __('Portfolio Description Two','wallstreet'),
+        'label' => __('Description','wallstreet'),
         'section' => 'project_two_section_settings',
         'type' => 'textarea',	
     )
@@ -148,7 +148,7 @@ function wallstreet_project_customizer( $wp_customize ) {
 			$wp_customize,
 			'wallstreet_pro_options[portfolio_image_two]',
 			array(
-				'label' => __('Project two Thumbnail','wallstreet'),
+				'label' => __('Image','wallstreet'),
 				'section' => 'example_section_one',
 				'settings' =>'wallstreet_pro_options[portfolio_image_two]',
 				'section' => 'project_two_section_settings',
@@ -161,7 +161,7 @@ function wallstreet_project_customizer( $wp_customize ) {
 	$wp_customize->add_section(
         'project_three_section_settings',
         array(
-            'title' => __('Home Portfolio three','wallstreet'),
+            'title' => __('Home portfolio three','wallstreet'),
             'description' => '',
 			'panel'  => 'wallstreet_project_setting',)
     );
@@ -171,13 +171,13 @@ function wallstreet_project_customizer( $wp_customize ) {
 	//Project Three Title
 	$wp_customize->add_setting(
 	'wallstreet_pro_options[portfolio_title_three]', array(
-        'default'        => 'Wall Street Style',
+       'default'        => __('WallStreet style','wallstreet'),
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
     $wp_customize->add_control('wallstreet_pro_options[portfolio_title_three]', array(
-        'label'   => __('Portfolio Title Three', 'wallstreet'),
+        'label'   => __('Title', 'wallstreet'),
         'section' => 'project_three_section_settings',
 		'type' => 'text',
     ));
@@ -186,7 +186,7 @@ function wallstreet_project_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
     'wallstreet_pro_options[portfolio_description_three]',
     array(
-        'default' => __('A wonderful serenity has taken possession of my entire soul, like these sweet mornings','wallstreet'),
+        'default' => __('A wonderful serenity has taken possession of my entire soul, like these sweet mornings.','wallstreet'),
 		 'capability'     => 'edit_theme_options',
 		 'sanitize_callback' => 'sanitize_text_field',
 		 'type' => 'option'
@@ -195,7 +195,7 @@ function wallstreet_project_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     'wallstreet_pro_options[portfolio_description_three]',
     array(
-        'label' => __('Portfolio Description Three','wallstreet'),
+        'label' => __('Description','wallstreet'),
         'section' => 'project_three_section_settings',
         'type' => 'textarea',	
     )
@@ -209,7 +209,7 @@ function wallstreet_project_customizer( $wp_customize ) {
 			$wp_customize,
 			'wallstreet_pro_options[portfolio_image_three]',
 			array(
-				'label' => __('Project three Thumbnail','wallstreet'),
+				'label' => __('Image','wallstreet'),
 				'section' => 'example_section_one',
 				'settings' =>'wallstreet_pro_options[portfolio_image_three]',
 				'section' => 'project_three_section_settings',
@@ -223,7 +223,7 @@ function wallstreet_project_customizer( $wp_customize ) {
 	$wp_customize->add_section(
         'project_four_section_settings',
         array(
-            'title' => __('Home Portfolio Four','wallstreet'),
+            'title' => __('Home portfolio Four','wallstreet'),
             'description' => '',
 			'panel'  => 'wallstreet_project_setting',)
     );
@@ -231,13 +231,13 @@ function wallstreet_project_customizer( $wp_customize ) {
 	//Project Four Title
 	$wp_customize->add_setting(
 	'wallstreet_pro_options[portfolio_title_four]', array(
-        'default'        => 'Wall Street Style',
+       'default'        => __('WallStreet style','wallstreet'),
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
     $wp_customize->add_control('wallstreet_pro_options[portfolio_title_four]', array(
-        'label'   => __('Portfolio Title Four', 'wallstreet'),
+        'label'   => __('Title', 'wallstreet'),
         'section' => 'project_four_section_settings',
 		'type' => 'text',
     ));
@@ -246,7 +246,7 @@ function wallstreet_project_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
     'wallstreet_pro_options[portfolio_description_four]',
     array(
-        'default' => __('A wonderful serenity has taken possession of my entire soul, like these sweet mornings','wallstreet'),
+        'default' => __('A wonderful serenity has taken possession of my entire soul, like these sweet mornings.','wallstreet'),
 		 'capability'     => 'edit_theme_options',
 		 'sanitize_callback' => 'sanitize_text_field',
 		 'type' => 'option'
@@ -255,7 +255,7 @@ function wallstreet_project_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     'wallstreet_pro_options[portfolio_description_four]',
     array(
-        'label' => __('Portfolio Description Four','wallstreet'),
+        'label' => __('Description','wallstreet'),
         'section' => 'project_four_section_settings',
         'type' => 'textarea',	
     )
@@ -269,7 +269,7 @@ function wallstreet_project_customizer( $wp_customize ) {
 			$wp_customize,
 			'wallstreet_pro_options[portfolio_image_four]',
 			array(
-				'label' => __('Project four Thumbnail','wallstreet'),
+				'label' => __('Image','wallstreet'),
 				'section' => 'example_section_one',
 				'settings' =>'wallstreet_pro_options[portfolio_image_four]',
 				'section' => 'project_four_section_settings',
@@ -296,7 +296,7 @@ function wallstreet_project_customizer( $wp_customize ) {
 	 <P><?php _e('Want to add more projects and categorization than upgrade to pro','wallstreet');?></P>
 	 </div>
 	  <div class="pro-box">
-	 <a href="<?php echo esc_url( __('http://webriti.com/wallstreet/', 'wallstreet'));?>" target="_blank" class="service" id="review_pro"><?php _e( 'UPGRADE TO PRO','wallstreet' ); ?></a>
+	 <a href="<?php echo 'http://webriti.com/wallstreet/';?>" target="_blank" class="service" id="review_pro"><?php _e('Upgrade to pro','wallstreet' ); ?></a>
 	 <div>
     <?php
     }
@@ -305,14 +305,13 @@ function wallstreet_project_customizer( $wp_customize ) {
 $wp_customize->add_setting(
     'project_pro',
     array(
-        'default' => __('','wallstreet'),
+        'default' => '',
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
     )	
 );
 $wp_customize->add_control( new WP_project_Customize_Control( $wp_customize, 'project_pro', array(	
-		'label' => __('Discover wallstreet Pro','wallstreet'),
-        'section' => 'more_project',
+		'section' => 'more_project',
 		'setting' => 'project_pro',
     ))
 );

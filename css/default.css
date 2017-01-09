@@ -143,9 +143,11 @@ a.readmore{ color: #fa7073; }
 .footer_widget_column > ul > li > ul > li > ul > li > a, .sidebar-widget ul.sidebar-tab.sidebar-widget-tab > li, .sidebar-widget > ul > li, .sidebar-widget-tags a, .sidebar-comment-box span, .sidebar-widget-tab li a, .sidebar-tweet-area p, 
 .post-content li, .post-content li a, 
 .blog-blockquote blockquote > span, .blog-post-title-wrapper blockquote > p > small, .blog-post-title-wrapper-full blockquote > p > small, 
-.blog-author p, .comment-detail p, .blog-form-control-textarea, input::-webkit-input-placeholder, textarea::-webkit-input-placeholder, 
+.blog-author p, .comment-detail p, .blog-form-control-textarea, 
 .blog-form-control-textarea, .image-para-content, .blog-post-title-wrapper > dl > dt, .blog-post-title-wrapper-full > dl > dt, .blog-post-title-wrapper > dl > dd, .blog-post-title-wrapper-full > dl > dd, .blog-post-title-wrapper > ul, .blog-post-title-wrapper > ul > li, .blog-post-title-wrapper-full > ul, .blog-post-title-wrapper-full > ul > li, .blog-post-title-wrapper > ul > li > ul > li, .blog-post-title-wrapper-full > ul > li > ul > li, .blog-post-title-wrapper > ul > li > ul > li > ul > li, .blog-post-title-wrapper-full > ul > li > ul > li > ul > li, .blog-post-title-wrapper > ol, .blog-post-title-wrapper > ol > li, .blog-post-title-wrapper-full > ol, .blog-post-title-wrapper-full > ol > li, .blog-post-title-wrapper > ol > li > ol > li, .blog-post-title-wrapper-full > ol > li > ol > li, .blog-post-title-wrapper > ol > li > ol > li > ol > li, .blog-post-title-wrapper-full > ol > li > ol > li > ol > li , .blog-post-title-wrapper > ol > li, .blog-post-title-wrapper-full > ol > li, .blog-post-title-wrapper > ol > li > ul > li, .blog-post-title-wrapper-full > ol > li > ul > li, .blog-post-title-wrapper  > ol > li > ul > li > ol > li, .blog-post-title-wrapper-full  > ol > li > ul > li > ol > li , .blog-post-title-wrapper address, .blog-post-title-wrapper-full address, .attachment-post-thumbnail, .page-links, .comment-detail > ol, .comment-detail > ol > li, .comment-detail > ol > li > ol > li, .comment-detail > ol > li > ol > li > ol > li, .comment-detail address, .comment-detail > ul, .comment-detail > ul > li, .comment-detail > ul > li > ul > li, .comment-detail > ul > li > ul > li > ul > li, .sidebar-widget > .tagcloud a, .service-area h2 > a
 { color: #e5e5e5; }
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #e5e5e5; }
 
 
 

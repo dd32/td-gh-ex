@@ -5,7 +5,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="page-header-title">
-					<h1><?php printf( __( 'Tag Archives: %s', 'wallstreet' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?></h1>		
+					<h1><?php printf( __('Tag Archive %s', 'wallstreet' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?></h1>		
 				</div>
 			</div>	
 		</div>
@@ -35,8 +35,8 @@
 					</div>
 					<div class="blog-post-title-wrapper">
 						<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-						<?php the_content( __( 'Read More' , 'wallstreet' ) ); ?>
-						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'wallstreet' ), 'after' => '</div>' ) ); ?>
+						<?php the_content( __('Read More' , 'wallstreet' ) ); ?>
+						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __('Page', 'wallstreet' ), 'after' => '</div>' ) ); ?>
 						<div class="blog-post-meta">
 							<a id="blog-author" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><i class="fa fa-user"></i> <?php the_author(); ?></a>
 							<?php 	$tag_list = get_the_tag_list();

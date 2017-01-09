@@ -160,7 +160,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
             $this->strings = array(
                 'page_title'                     => __( 'Install Required Plugins', 'wallstreet' ),
                 'menu_title'                     => __( 'Install Plugins', 'wallstreet' ),
-                'installing'                     => __( 'Installing Plugin: %s', 'wallstreet' ),
+                'installing'                     => __( 'Installing Plugin %s', 'wallstreet' ),
                 'oops'                           => __( 'Something went wrong.', 'wallstreet' ),
                 'notice_can_install_required'    => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.','wallstreet' ),
                 'notice_can_install_recommended' => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.','wallstreet' ),
@@ -528,7 +528,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
                 // All plugins are active, so we display the complete string and hide the plugin menu.
                 if ( empty( $complete ) ) {
-                    echo '<p>' .  sprintf( $this->strings['complete'], '<a href="' . network_admin_url() . '" title="' . __( 'Return to the Dashboard', 'wallstreet' ) . '">' . __( 'Return to the Dashboard', 'wallstreet' ) . '</a>' ) . '</p>';
+                    echo '<p>' .  sprintf( $this->strings['complete'], '<a href="' . network_admin_url() . '" title="' . __( 'Return to the dashboard', 'wallstreet' ) . '">' . __( 'Return to the dashboard', 'wallstreet' ) . '</a>' ) . '</p>';
                     echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
                 }
 
@@ -2153,7 +2153,7 @@ if ( ! class_exists( 'WP_Upgrader' ) && ( isset( $_GET['page'] ) && TGM_Plugin_A
 
                 // All plugins are active, so we display the complete string and hide the menu to protect users.
                 if ( empty( $complete ) ) {
-                    echo '<p>' .  sprintf( TGM_Plugin_Activation::$instance->strings['complete'], '<a href="' . network_admin_url() . '" title="' . __( 'Return to the Dashboard', 'wallstreet' ) . '">' . __( 'Return to the Dashboard', 'wallstreet' ) . '</a>' ) . '</p>';
+                    echo '<p>' .  sprintf( TGM_Plugin_Activation::$instance->strings['complete'], '<a href="' . network_admin_url() . '" title="' . __( 'Return to the dashboard', 'wallstreet' ) . '">' . __( 'Return to the dashboard', 'wallstreet' ) . '</a>' ) . '</p>';
                     echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
                 }
 

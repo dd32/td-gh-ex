@@ -4,7 +4,7 @@ function wallstreet_blog_customizer( $wp_customize ) {
 	$wp_customize->add_section(
         'blog_setting',
         array(
-            'title' => __('Blog Settings','wallstreet'),
+            'title' => __('Home blog settings','wallstreet'),
 			'priority'   => 700,
 			
 			)

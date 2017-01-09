@@ -3,7 +3,7 @@ function wallstreet_features_customizer( $wp_customize ) {
 
 class wallstreet_Customize_feature_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php _e('Want to add Theme Feature Section Then Upgrade to Pro/','wallstreet'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/wallstreet' ); ?>" target="_blank"><?php _e(' Upgrade To Pro','wallstreet'); ?> </a>  
+        <h3><?php _e('Want to add theme feature section then upgrade to pro','wallstreet'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/wallstreet' ); ?>" target="_blank"><?php _e('Upgrade to pro','wallstreet'); ?> </a>  
 		<?php
 		}
 	}
@@ -12,12 +12,12 @@ class wallstreet_Customize_feature_upgrade extends WP_Customize_Control {
 $wp_customize->add_panel( 'wallstreet_features_options', array(
 		'priority'       => 850,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Theme Feature Setting', 'wallstreet'),
+		'title'      => __('Theme feature settings', 'wallstreet'),
 	) );
 
 	
 	$wp_customize->add_section( 'features_section' , array(
-		'title'      => __('Theme Feature Setting', 'wallstreet'),
+		'title'      => __('Theme feature settings', 'wallstreet'),
 		'panel'  => 'wallstreet_features_options',
 		'priority'   => 50,
    	) );
@@ -33,7 +33,7 @@ $wp_customize->add_panel( 'wallstreet_features_options', array(
 		$wp_customize,
 		'wallstreet_pro_options[theme_upgrade]',
 			array(
-				'label'					=> __('Wallstreet Upgrade','wallstreet'),
+				'label'					=> __('Wallstreet upgrade','wallstreet'),
 				'section'				=> 'features_section',
 				'settings'				=> 'wallstreet_pro_options[theme_upgrade]',
 			)
@@ -57,7 +57,7 @@ $wp_customize->add_panel( 'wallstreet_features_options', array(
     'wallstreet_pro_options[theme_feature_enabled]',
     array(
         'type' => 'checkbox',
-        'label' => __('Enable Theme Featured Section From Front Page:','wallstreet'),
+        'label' => __('Check to enable theme featured section on homepage','wallstreet'),
         'section' => 'features_section',
 		
 		));
@@ -71,7 +71,7 @@ $wp_customize->add_panel( 'wallstreet_features_options', array(
     ) );
     
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'wallstreet_pro_options[theme_feature_image]', array(
-      'label'    => __( 'Choose Background Image', 'wallstreet' ),
+      'label'    => __( 'Image', 'wallstreet' ),
       'section'  => 'features_section',
       'settings' => 'wallstreet_pro_options[theme_feature_image]',
     ) ) );	
@@ -82,7 +82,7 @@ $wp_customize->add_panel( 'wallstreet_features_options', array(
 	$wp_customize->add_setting(
     'wallstreet_pro_options[theme_feature_title]',
     array(
-        'default' => 'Core Features of Theme',
+        'default' => __('Core features of theme','wallstreet'),
 		'type' => 'option',
 		'sanitize_callback' => 'sanitize_text_field',
 		
@@ -93,7 +93,7 @@ $wp_customize->add_panel( 'wallstreet_features_options', array(
     'wallstreet_pro_options[theme_feature_title]',
     array(
         'type' => 'text',
-        'label' => __('Theme Feature Title:','wallstreet'),
+        'label' => __('Title','wallstreet'),
         'section' => 'features_section',
 		'input_attrs' => array('disabled' => 'disabled')
 		
@@ -113,7 +113,7 @@ $wp_customize->add_panel( 'wallstreet_features_options', array(
 	$wp_customize->add_control(
     'wallstreet_pro_options[theme_first_feature_icon]',
     array(
-        'label' => __('First Feature Icon:','wallstreet'),
+        'label' => __('Icon','wallstreet'),
         'section' => 'features_section',
         'type' => 'text',
 		'input_attrs' => array('disabled' => 'disabled')
@@ -125,7 +125,7 @@ $wp_customize->add_panel( 'wallstreet_features_options', array(
 	$wp_customize->add_setting(
     'wallstreet_pro_options[theme_first_title]',
     array(
-        'default' => __('Incredibly Flexible','wallstreet'),
+        'default' => __('Incredibly flexible','wallstreet'),
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option'
     )	
@@ -133,7 +133,7 @@ $wp_customize->add_panel( 'wallstreet_features_options', array(
 	$wp_customize->add_control(
     'wallstreet_pro_options[theme_first_title]',
     array(
-        'label' => __('First Feature Title:','wallstreet'),
+        'label' => __('Title','wallstreet'),
         'section' => 'features_section',
         'type' => 'text',
 		'sanitize_callback' => 'sanitize_text_field',
@@ -146,7 +146,7 @@ $wp_customize->add_panel( 'wallstreet_features_options', array(
 	$wp_customize->add_setting(
     'wallstreet_pro_options[theme_first_description]',
     array(
-        'default' => __('Perspiciatis unde omnis iste natus error sit voluptaem omnis iste.','wallstreet'),
+        'default' => 'Perspiciatis unde omnis iste natus error sit voluptaem omnis iste.',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option'
     )	
@@ -154,7 +154,7 @@ $wp_customize->add_panel( 'wallstreet_features_options', array(
 	$wp_customize->add_control(
     'wallstreet_pro_options[theme_first_description]',
     array(
-        'label' => __('First Feature Description:','wallstreet'),
+        'label' => __('Description','wallstreet'),
         'section' => 'features_section',
         'type' => 'text',
 		'sanitize_callback' => 'sanitize_text_field',
@@ -176,7 +176,7 @@ $wp_customize->add_panel( 'wallstreet_features_options', array(
 	$wp_customize->add_control(
     'wallstreet_pro_options[theme_second_feature_icon]',
     array(
-        'label' => __('Second Feature Icon:','wallstreet'),
+        'label' => __('Icon','wallstreet'),
         'section' => 'features_section',
         'type' => 'text',
 		'input_attrs' => array('disabled' => 'disabled')
@@ -188,7 +188,7 @@ $wp_customize->add_panel( 'wallstreet_features_options', array(
 	$wp_customize->add_setting(
     'wallstreet_pro_options[theme_second_title]',
     array(
-        'default' => __('Incredibly Flexible','wallstreet'),
+        'default' => __('Incredibly flexible','wallstreet'),
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option'
     )	
@@ -196,7 +196,7 @@ $wp_customize->add_panel( 'wallstreet_features_options', array(
 	$wp_customize->add_control(
     'wallstreet_pro_options[theme_second_title]',
     array(
-        'label' => __('Second Feature Title:','wallstreet'),
+        'label' => __('Title','wallstreet'),
         'section' => 'features_section',
         'type' => 'text',
 		'sanitize_callback' => 'sanitize_text_field',
@@ -209,7 +209,7 @@ $wp_customize->add_panel( 'wallstreet_features_options', array(
 	$wp_customize->add_setting(
     'wallstreet_pro_options[theme_second_description]',
     array(
-        'default' => __('Perspiciatis unde omnis iste natus error sit voluptaem omnis iste.','wallstreet'),
+        'default' => 'Perspiciatis unde omnis iste natus error sit voluptaem omnis iste.',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option'
     )	
@@ -217,7 +217,7 @@ $wp_customize->add_panel( 'wallstreet_features_options', array(
 	$wp_customize->add_control(
     'wallstreet_pro_options[theme_second_description]',
     array(
-        'label' => __('Second Feature Description:','wallstreet'),
+        'label' => __('Description','wallstreet'),
         'section' => 'features_section',
         'type' => 'text',
 		'sanitize_callback' => 'sanitize_text_field',
@@ -239,7 +239,7 @@ $wp_customize->add_panel( 'wallstreet_features_options', array(
 	$wp_customize->add_control(
     'wallstreet_pro_options[theme_third_feature_icon]',
     array(
-        'label' => __('Third Feature Icon:','wallstreet'),
+        'label' => __('Icon','wallstreet'),
         'section' => 'features_section',
         'type' => 'text',
 		'input_attrs' => array('disabled' => 'disabled')
@@ -251,7 +251,7 @@ $wp_customize->add_panel( 'wallstreet_features_options', array(
 	$wp_customize->add_setting(
     'wallstreet_pro_options[theme_third_title]',
     array(
-        'default' => __('Ultimate Shortcodes','wallstreet'),
+        'default' => __('Shortcodes','wallstreet'),
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option'
     )	
@@ -259,7 +259,7 @@ $wp_customize->add_panel( 'wallstreet_features_options', array(
 	$wp_customize->add_control(
     'wallstreet_pro_options[theme_third_title]',
     array(
-        'label' => __('Third Feature Title:','wallstreet'),
+        'label' => __('Title','wallstreet'),
         'section' => 'features_section',
         'type' => 'text',
 		'sanitize_callback' => 'sanitize_text_field',
@@ -272,7 +272,7 @@ $wp_customize->add_panel( 'wallstreet_features_options', array(
 	$wp_customize->add_setting(
     'wallstreet_pro_options[theme_third_description]',
     array(
-        'default' => __('Perspiciatis unde omnis iste natus error sit voluptaem omnis iste..','wallstreet'),
+        'default' => 'Perspiciatis unde omnis iste natus error sit voluptaem omnis iste',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option'
     )	
@@ -280,7 +280,7 @@ $wp_customize->add_panel( 'wallstreet_features_options', array(
 	$wp_customize->add_control(
     'wallstreet_pro_options[theme_third_description]',
     array(
-        'label' => __('Third Feature Description:','wallstreet'),
+        'label' => __('Description','wallstreet'),
         'section' => 'features_section',
         'type' => 'text',
 		'sanitize_callback' => 'sanitize_text_field',

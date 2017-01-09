@@ -25,7 +25,7 @@ function wallstreet_template_customizer( $wp_customize ) {
 		'wallstreet_pro_options[contact_header_settings]',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Enable Contact Information On Front Page.','wallstreet'),
+			'label' => __('Enable contact information','wallstreet'),
 			'section' => 'section_heading',
 		)
 	);
@@ -35,7 +35,7 @@ function wallstreet_template_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'wallstreet_pro_options[contact_phone_number]',
 		array('capability'  => 'edit_theme_options',
-		'default' => __('1-800-123-789','wallstreet'), 
+		'default' => '1-800-123-789', 
 		'type' => 'option',
 		'sanitize_callback' => 'sanitize_text_field',
 		));
@@ -44,7 +44,7 @@ function wallstreet_template_customizer( $wp_customize ) {
 		'wallstreet_pro_options[contact_phone_number]',
 		array(
 			'type' => 'text',
-			'label' => __('Contact Phone Number on Front Page:','wallstreet'),
+			'label' => __('Contact phone number','wallstreet'),
 			'section' => 'section_heading',
 		)
 	);
@@ -53,7 +53,7 @@ function wallstreet_template_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'wallstreet_pro_options[contact_email]',
 		array('capability'  => 'edit_theme_options',
-		'default' => __('info@webriti.com','wallstreet'), 
+		'default' => 'info@webriti.com', 
 		'type' => 'option',
 		'sanitize_callback' => 'sanitize_text_field',
 		));
@@ -62,7 +62,7 @@ function wallstreet_template_customizer( $wp_customize ) {
 		'wallstreet_pro_options[contact_email]',
 		array(
 			'type' => 'text',
-			'label' => __('Contact Email on Front Page:','wallstreet'),
+			'label' => __('Contact email','wallstreet'),
 			'section' => 'section_heading',
 		)
 	);
@@ -73,7 +73,7 @@ function wallstreet_template_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'wallstreet_pro_options[service_title]',
 		array('capability'  => 'edit_theme_options',
-		'default' => __('Our Services','wallstreet'), 
+		'default' => __('Our services','wallstreet'), 
 		'type' => 'option',
 		'sanitize_callback' => 'sanitize_text_field',
 		));
@@ -92,7 +92,7 @@ function wallstreet_template_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'wallstreet_pro_options[service_description]',
 		array('capability'  => 'edit_theme_options',
-		'default' => __('We Offer Great Services to our Clients','wallstreet'), 
+		'default' => __('We offer great services to our clients','wallstreet'), 
 		'type' => 'option',
 		'sanitize_callback' => 'sanitize_text_field',
 		));
@@ -110,7 +110,7 @@ function wallstreet_template_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'wallstreet_pro_options[portfolio_title]',
 		array('capability'  => 'edit_theme_options',
-		'default' => __('Featured Portfolio Project','wallstreet'), 
+		'default' => __('Featured portfolio project','wallstreet'), 
 		'type' => 'option',
 		'sanitize_callback' => 'sanitize_text_field',
 		));
@@ -129,7 +129,7 @@ function wallstreet_template_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'wallstreet_pro_options[portfolio_description]',
 		array('capability'  => 'edit_theme_options',
-		'default' => __('Most Popular of Our Works.','wallstreet'), 
+		'default' => __('Most popular of our works.','wallstreet'), 
 		'type' => 'option',
 		'sanitize_callback' => 'sanitize_text_field',
 		));
@@ -148,7 +148,7 @@ function wallstreet_template_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'wallstreet_pro_options[home_blog_heading]',
 		array('capability'  => 'edit_theme_options',
-		'default' => __('Our Latest Blog Post','wallstreet'), 
+		'default' => __('Our latest blog post','wallstreet'), 
 		'type' => 'option',
 		'sanitize_callback' => 'sanitize_text_field',
 		));
@@ -157,7 +157,7 @@ function wallstreet_template_customizer( $wp_customize ) {
 		'wallstreet_pro_options[home_blog_heading]',
 		array(
 			'type' => 'text',
-			'label' => __('Home Page Blog Section Heading','wallstreet'),
+			'label' => __('Homepage blog section heading','wallstreet'),
 			'section' => 'section_heading',
 		)
 	);
@@ -167,7 +167,7 @@ function wallstreet_template_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'wallstreet_pro_options[home_blog_description]',
 		array('capability'  => 'edit_theme_options',
-		'default' => __('We Work With New Customers And Grow Their Businesses','wallstreet'), 
+		'default' => __('We work with new customers and grow their businesses','wallstreet'), 
 		'type' => 'option',
 		'sanitize_callback' => 'sanitize_text_field',
 		));
@@ -176,7 +176,7 @@ function wallstreet_template_customizer( $wp_customize ) {
 		'wallstreet_pro_options[home_blog_description]',
 		array(
 			'type' => 'text',
-			'label' => __('Home Page Blog Section Description','wallstreet'),
+			'label' => __('Homepage blog section description','wallstreet'),
 			'section' => 'section_heading',
 		)
 	);

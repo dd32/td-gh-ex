@@ -49,7 +49,7 @@
 			</div>
 			<?php if($j%3==0){ echo "<div class='clearfix'></div>"; } $j++; endwhile; 
 			} else  {
-			echo "<div class='post_message'>No Posts to show...</div>";
+			echo "<div class='post_message'>No Posts to show.</div>";
 			} ?>
 	</div>
 </div><!-- /wallstreet Blog Section ---->

@@ -1,6 +1,6 @@
 Wallstreet.
 
-WallStreet is a Business WordPress Theme that contains a lot of features for customizing your website as you need. Already thousands of users loving this theme because it is designed for multiple businesses like corporates, firms, law firms, digital media agency, architecture firm, personal, portfolio and freelancer's website. The theme is developed using Bootstrap 3 CSS framework that makes it friendly for all the devices like mobiles, tablets, laptops etc. In WallStreet Lite, you can easily set Featured Banner / Slide, Social Icons in Header, Contact Information, Services, Portfolio, 4 column widgetized footer. Couple of page templates are added one is Homepage and the second one is full width page template. In the premium version, you will get 2 color skins Lite and Dark, 10 predefined color schemes, feature for creating your custom color scheme, an eye-catching slider, Services, Testimonial’s, Portfolio, Clients/ Sponsors, Blog Layouts, Layout Manager and Latest News. You will get Various page templates  like About, Service, Portfolio, Blog and Contact Us. The theme has supports for popular  plugins like WPML, Polylang and JetPack Gallery Extensions. Just navigate to Appearance / Customize to start customizing. Both the lite and premium version of WallStreet themes are completely translated in Spanish Language. Other translations / locals yet to come. Check premium version theme demo at http://webriti.com/demo/wp/wallstreet
+WallStreet is a Business WordPress Theme that contains a lot of features for customizing your website as you need. Already thousands of users loving this theme because it is designed for multiple businesses like corporates, firms, law firms, digital media agency, architecture firm, personal, portfolio and freelancer's website. The theme is developed using Bootstrap 3 CSS framework that makes it friendly for all the devices like mobiles, tablets, laptops etc. In WallStreet Lite, you can easily set Featured Banner / Slide, Social Icons in Header, Contact Information, Services, Portfolio, 4 column widgetized footer. Couple of page templates are added one is Homepage and the second one is full width page template. In the premium version, you will get 2 color skins Lite and Dark, 10 predefined color schemes, feature for creating your custom color scheme, an eye-catching slider, Services, Testimonial’s, Portfolio, Clients/ Sponsors, Blog Layouts, Layout Manager and Latest News. You will get Various page templates  like About, Service, Portfolio, Blog and Contact Us. The theme has supports for popular  plugins like WPML, Polylang and JetPack Gallery Extensions. Just navigate to Appearance / Customize to start customizing. Both the lite and premium version of WallStreet theme comes with various locales. Other translations / locals yet to come. Check premium version theme demo at http://webriti.com/demo/wp/wallstreet
 
 
 Author: Priyanshu Mittal,Shahid Mansuri and Harish Lodha.
@@ -51,6 +51,11 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version 1.7.3
+1. Update theme description.
+2. Fixed styling issue.
+@Version 1.7.2
+1. String update.
 @Version 1.7.1
 1. Update Theme Description
 @Version 1.7

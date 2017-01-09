@@ -50,7 +50,7 @@
 
 	// Add a page number if necessary.
 	if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() )
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'wallstreet' ), max( $paged, $page ) );
+		$title = "$title $sep " . sprintf( __( 'Page', 'wallstreet' ), max( $paged, $page ) );
 
 	return $title;
 }
@@ -84,7 +84,7 @@
 	// Read more tag to formatting in blog page 	
 	function new_content_more($more)
 	{  global $post;
-		return '<div class=\"blog-btn-col\"><a href="' . get_permalink() . "#more-{$post->ID}\" class=\"blog-btn\">Read More</a></div>";
+		return '<div class=\"blog-btn-col\"><a href="' . get_permalink() . "#more-{$post->ID}\" class=\"blog-btn\">".__('Read More','wallstreet').'</a></div>';
 	}   
 	add_filter( 'the_content_more_link', 'new_content_more' );
 
@@ -92,9 +92,9 @@
 add_action( 'widgets_init', 'webriti_widgets_init');
 function webriti_widgets_init() {
 register_sidebar( array(
-		'name' => __( 'Sidebar', 'wallstreet' ),
+		'name' => __( 'Sidebar widget area', 'wallstreet' ),
 		'id' => 'sidebar_primary',
-		'description' => __( 'The left sidebar widget area', 'wallstreet' ),
+		'description' => __( 'Sidebar widget area', 'wallstreet' ),
 		'before_widget' => '<div class="sidebar-widget" >',
 		'after_widget' => '</div>',
 		'before_title' => '<div class="sidebar-widget-title"><h2>',
@@ -102,9 +102,9 @@ register_sidebar( array(
 	) );
 
 register_sidebar( array(
-		'name' => __( 'Footer Widget Area', 'wallstreet' ),
+		'name' => __( 'Footer widget area', 'wallstreet' ),
 		'id' => 'footer-widget-area',
-		'description' => __( 'footer widget area', 'wallstreet' ),
+		'description' => __( 'Footer widget area', 'wallstreet' ),
 		'before_widget' => '<div class="col-md-3 col-sm-6 footer_widget_column">',
 		'after_widget' => '</div>',
 		'before_title' => '<h2 class="footer_widget_title">',
@@ -156,7 +156,7 @@ function webriti_scripts()
 						<?php comment_reply_link(array_merge( $args, array('reply_text' => $leave_reply,'depth' => $depth, 'max_depth' => $args['max_depth'], 'per_page' => $args['per_page']))) ?>
 					</div>					
 					<?php if ( $comment->comment_approved == '0' ) : ?>
-					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'wallstreet' ); ?></em>
+					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.','wallstreet' ); ?></em>
 					<br/>
 					<?php endif; ?>				
 				</div>
@@ -237,7 +237,7 @@ function wallstreet_register_required_plugins() {
         'strings'      => array(
             'page_title'                      => __( 'Install Recommended Plugins', 'wallstreet' ),
             'menu_title'                      => __( 'Install Plugins', 'wallstreet' ),
-            'installing'                      => __( 'Installing Plugin: %s', 'wallstreet' ), // %s = plugin name.
+            'installing'                      => __( 'Installing Plugin %s', 'wallstreet' ), // %s = plugin name.
             'oops'                            => __( 'Something went wrong with the plugin API.', 'wallstreet' ),
             'notice_can_install_required'     => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.','wallstreet' ), // %1$s = plugin name(s).
             'notice_can_install_recommended'  => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.','wallstreet' ), // %1$s = plugin name(s).

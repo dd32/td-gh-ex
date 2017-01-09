@@ -5,7 +5,7 @@
 	$wp_customize->add_section(
         'copyright_section_one',
         array(
-            'title' => __('Footer Copyright Settings','wallstreet'),
+            'title' => __('Footer copyright settings','wallstreet'),
             'priority' => 800,
         )
     );

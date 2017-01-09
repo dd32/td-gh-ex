@@ -20,7 +20,7 @@
 		<div class="col-md-8">
 			<?php if ( have_posts() ) { ?>
 				<h1 class="search_heading">
-				<?php printf( __( "Search Results For: %s", 'wallstreet' ), '<span>' . get_search_query() . '</span>' ); ?>
+				<?php printf( __("Search results for", 'wallstreet' ), '<span>' . get_search_query() . '</span>' ); ?>
 				</h1>
 			<?php while ( have_posts() ) { the_post();  ?>
 			<div id="post-<?php the_ID(); ?>" <?php post_class('blog-section-right'); ?>>
@@ -38,7 +38,7 @@
 					<div class="blog-post-title-wrapper">
 						<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 						<?php the_content(); ?>		
-						<div class="blog-btn-col"><a href="<?php the_permalink(); ?>" class="blog-btn"><?php _e('Read more', 'wallstreet'); ?></a></div>
+						<div class="blog-btn-col"><a href="<?php the_permalink(); ?>" class="blog-btn"><?php _e('Read More','wallstreet'); ?></a></div>
 						<div class="blog-post-meta">
 							<a id="blog-author" href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><i class="fa fa-user"></i> <?php the_author(); ?></a>
 							<?php 	$tag_list = get_the_tag_list();
@@ -58,9 +58,9 @@
 			</div>
 			<?php } else { ?>
 				<div class="search_error">
-				<div class="search_err_heading"><h2><?php _e( "Nothing Found", 'wallstreet' ); ?></h2> </div>
+				<div class="search_err_heading"><h2><?php _e( "Nothing Found","wallstreet"); ?></h2> </div>
 				<div class="wallstreet_searching">
-				<p><?php _e( "Sorry, but nothing matched your search criteria. Please try again with some different keywords.", 'wallstreet' ); ?></p>
+				<p><?php _e( "Sorry, but nothing matched your search criteria. Please try again with some different keywords.","wallstreet"); ?></p>
 				</div>	
 					
 				</div>

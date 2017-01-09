@@ -4,7 +4,7 @@ function wallstreet_slider_customizer( $wp_customize ) {
 	$wp_customize->add_section(
         'slider_section_settings',
         array(
-            'title' => __('Banner Image Settings','wallstreet')));
+            'title' => __('Banner image settings','wallstreet')));
 	
 	
 	$wp_customize->add_setting( 'wallstreet_pro_options[slider_image]',array('default' => get_template_directory_uri().'/images/slider.jpg',
@@ -17,7 +17,7 @@ function wallstreet_slider_customizer( $wp_customize ) {
 			'wallstreet_pro_options[slider_image]',
 			array(
 				'type'        => 'upload',
-				'label' => __('Image Upload','wallstreet'),
+				'label' => __('Image','wallstreet'),
 				'section' => 'example_section_one',
 				'settings' =>'wallstreet_pro_options[slider_image]',
 				'section' => 'slider_section_settings',
@@ -29,13 +29,13 @@ function wallstreet_slider_customizer( $wp_customize ) {
 	//Slider Title
 	$wp_customize->add_setting(
 	'wallstreet_pro_options[slider_title_one]', array(
-        'default'        => 'Clean & Fresh Theme',
+        'default'        => __('Clean & fresh theme','wallstreet'),
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
     $wp_customize->add_control('wallstreet_pro_options[slider_title_one]', array(
-        'label'   => __('Banner Title', 'wallstreet'),
+        'label'   => __('Title', 'wallstreet'),
         'section' => 'slider_section_settings',
 		'priority'   => 150,
 		'type' => 'text',
@@ -44,13 +44,13 @@ function wallstreet_slider_customizer( $wp_customize ) {
 	//Slider sub title
 	$wp_customize->add_setting(
 	'wallstreet_pro_options[slider_title_two]', array(
-        'default'        => 'Welcome To Wallstreet',
+        'default'        => __('Welcome to wallstreet','wallstreet'),
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
     $wp_customize->add_control('wallstreet_pro_options[slider_title_two]', array(
-        'label'   => __('Banner Sub Title', 'wallstreet'),
+        'label'   => __('Sub title', 'wallstreet'),
         'section' => 'slider_section_settings',
 		'priority'   => 150,
 		'type' => 'text',
@@ -59,13 +59,13 @@ function wallstreet_slider_customizer( $wp_customize ) {
 	//Slider Banner discription
 	$wp_customize->add_setting(
 	'wallstreet_pro_options[slider_description]', array(
-        'default'        => 'The state-of-the-art HTML5 powered flexible layout with lightspeed fast CSS3 transition effects. Works perfect in any modern mobile...',
+        'default'        => __('The state-of-the-art HTML5 powered flexible layout with lightspeed fast CSS3 transition effects. Works perfect in any modern mobile.','wallstreet'),
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
     $wp_customize->add_control('wallstreet_pro_options[slider_description]', array(
-        'label'   => __('Banner Description', 'wallstreet'),
+        'label'   => __('Description', 'wallstreet'),
         'section' => 'slider_section_settings',
 		'priority'   => 150,
 		'type' => 'text',

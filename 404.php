@@ -5,7 +5,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="page-header-title">
-					<h1><?php _e('Error -404', 'wallstreet'); ?></h1>		
+					<h1><?php _e('Error 404', 'wallstreet'); ?></h1>		
 				</div>
 			</div>	
 		</div>
@@ -19,8 +19,8 @@
 			<div class="error_404">
 				<h2><?php _e('Error 404','wallstreet'); ?></h2>
 				<h4><?php _e('Oops! Page not found','wallstreet'); ?></h4>
-				<p><?php _e('We`re sorry, but the page you are looking for doesn`t exist.','wallstreet'); ?></p>
-				<p><a href="<?php echo esc_url(site_url());?>" id="blogdetail_btn"><?php _e('Go to Homepage','wallstreet'); ?></a></p>
+				<p><?php _e('We are sorry, but the page you are looking for does not exist.','wallstreet'); ?></p>
+				<p><a href="<?php echo esc_url(site_url());?>" id="blogdetail_btn"><?php _e('Go Back','wallstreet'); ?></a></p>
 			</div>
 		</div>
 	</div>

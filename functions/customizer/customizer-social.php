@@ -4,7 +4,7 @@ function wallstreet_social_customizer( $wp_customize ) {
 	$wp_customize->add_panel( 'social_link_options', array(
 		'priority'       => 450,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Social Link Setting', 'wallstreet'),
+		'title'      => __('Social link settings','wallstreet'),
 	) );
 	
 	//Header social Icon
@@ -12,7 +12,7 @@ function wallstreet_social_customizer( $wp_customize ) {
 	$wp_customize->add_section(
         'social_icon',
         array(
-            'title' => __('Social Link ','wallstreet'),
+            'title' => __('Social link settings','wallstreet'),
            'priority'    => 400,
 			'panel' => 'social_link_options',
         )
@@ -51,7 +51,7 @@ function wallstreet_social_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     'wallstreet_pro_options[footer_social_media_enabled]',
     array(
-        'label' => __('Enable social media links on Footer section','wallstreet'),
+        'label' => __('Enable social media links on footer section','wallstreet'),
         'section' => 'social_icon',
         'type' => 'checkbox',
     )
@@ -73,7 +73,7 @@ function wallstreet_social_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     'wallstreet_pro_options[social_media_twitter_link]',
     array(
-        'label' => __('Twitter Profile Link:','wallstreet'),
+        'label' => __('Twitter URL','wallstreet'),
         'section' => 'social_icon',
         'type' => 'text',
     )
@@ -92,7 +92,7 @@ function wallstreet_social_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     'wallstreet_pro_options[social_media_facebook_link]',
     array(
-        'label' => __('Facebook Profile Link:','wallstreet'),
+        'label' => __('Facebook URL','wallstreet'),
         'section' => 'social_icon',
         'type' => 'text',
     )
@@ -112,7 +112,7 @@ function wallstreet_social_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     'wallstreet_pro_options[social_media_googleplus_link]',
     array(
-        'label' => __('Google Plus Profile Link:','wallstreet'),
+        'label' => __('GooglePlus URL','wallstreet'),
         'section' => 'social_icon',
         'type' => 'text',
     )
@@ -133,7 +133,7 @@ function wallstreet_social_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     'wallstreet_pro_options[social_media_linkedin_link]',
     array(
-        'label' => __('Linkedin Profile Link:','wallstreet'),
+        'label' => __('LinkedIn URL','wallstreet'),
         'section' => 'social_icon',
         'type' => 'text',
     )
@@ -153,7 +153,7 @@ function wallstreet_social_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     'wallstreet_pro_options[social_media_youtube_link]',
     array(
-        'label' => __('Youtube Profile Link:','wallstreet'),
+        'label' => __('YouTube URL','wallstreet'),
         'section' => 'social_icon',
         'type' => 'text',
     )

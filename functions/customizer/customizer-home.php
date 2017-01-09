@@ -24,7 +24,7 @@ function wallstreet_header_customizer( $wp_customize ) {
     ) );
     
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'wallstreet_pro_options[upload_image_favicon]', array(
-      'label'    => __( 'Choose your favicon (ideal width and height is 16x16 or 32x32)', 'wallstreet' ),
+      'label'    => __('Choose your favicon (ideal width and height is 16x16 or 32x32)', 'wallstreet' ),
       'section'  => 'quality_favicon',
     ) ) );
 	
@@ -43,7 +43,7 @@ function wallstreet_header_customizer( $wp_customize ) {
 	
 	//Header logo setting
 	$wp_customize->add_section( 'header_logo' , array(
-		'title'      => __('Header Logo setting', 'wallstreet'),
+		'title'      => __('Header logo setting', 'wallstreet'),
 		'panel'  => 'header_options',
 		'priority'   => 400,
    	) );
@@ -61,7 +61,7 @@ function wallstreet_header_customizer( $wp_customize ) {
 			   $wp_customize,
 			   'wallstreet_pro_options[upload_image_logo]',
 			   array(
-				   'label'          => __( 'Upload a 150x150 for Logo Image', 'wallstreet' ),
+				   'label'          => __('Upload a 150x150 for Logo Image', 'wallstreet' ),
 				   'section'        => 'header_logo',
 				   'priority'   => 50,
 			   )
@@ -150,7 +150,7 @@ function wallstreet_header_customizer( $wp_customize ) {
 	
 	//Custom css
 	$wp_customize->add_section( 'custom_css' , array(
-		'title'      => __('Custom css', 'wallstreet'),
+		'title'      => __('Custom CSS', 'wallstreet'),
 		'panel'  => 'header_options',
 		'priority'   => 100,
    	) );
@@ -163,7 +163,7 @@ function wallstreet_header_customizer( $wp_customize ) {
 		'type'=> 'option',
     ));
     $wp_customize->add_control( 'wallstreet_pro_options[webrit_custom_css]', array(
-        'label'   => __('Custom css snippet:', 'wallstreet'),
+        'label'   => __('Custom CSS', 'wallstreet'),
         'section' => 'custom_css',
         'type' => 'textarea',
 		'priority'   => 100,
