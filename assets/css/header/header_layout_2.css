@@ -205,6 +205,10 @@ body.menubar .suevafree-menu:after {
 	display:none;
 }
 
+.suevafree-menu ul ul ul { 
+	top:0px !important; 
+}
+
 .tinynav,
 .select-menu {
 	display:none;

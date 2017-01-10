@@ -1997,6 +1997,11 @@ tr:nth-child(2n+2) {
 	margin-bottom:50px;
 }
 
+.suevafree-pagination { 
+	margin-top:50px;
+	margin-bottom:0;
+}
+
 .wp-pagenavi a, 
 .wp-pagenavi a:link,
 .wp-pagenavi span.current, 
