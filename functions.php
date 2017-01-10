@@ -51,7 +51,7 @@ function semplicemente_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'semplicemente' ),
+		'primary' => esc_html__( 'Primary Menu', 'semplicemente' ),
 	) );
 	
 	/*
@@ -78,7 +78,7 @@ add_action( 'after_setup_theme', 'semplicemente_setup' );
  */
 function semplicemente_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'semplicemente' ),
+		'name'          => esc_html__( 'Sidebar', 'semplicemente' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',

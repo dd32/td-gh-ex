@@ -1,5 +1,5 @@
 = Semplicemente =
-* by the CrestaProject team, http://crestaproject.com/
+* by the CrestaProject team, https://crestaproject.com/
 
 == ABOUT Semplicemente ==
 Semplicemente is a simple and minimal WordPress Theme useful for blog or personal page.
@@ -141,4 +141,7 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, cust
 
 = Version 1.7.0 =
 * Fixed some strings with escaping
+* Minor bug fixes
+
+= Version 1.7.1 =
 * Minor bug fixes
