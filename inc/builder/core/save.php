@@ -344,13 +344,11 @@ class TTFMAKE_Builder_Save {
 			// Get the registered sections
 			$registered_sections = ttfmake_get_sections();
 
-			if ( !isset( $ttfmake_section_data['draft'] ) || $ttfmake_section_data['draft'] != 1 ) {
-				// Get the template for the section
-				ttfmake_load_section_template(
-					$registered_sections[ $section['section-type'] ]['display_template'],
-					$registered_sections[ $section['section-type'] ]['path']
-				);
-			}
+			// Get the template for the section
+			ttfmake_load_section_template(
+				$registered_sections[ $section['section-type'] ]['display_template'],
+				$registered_sections[ $section['section-type'] ]['path']
+			);
 
 			// Cleanup the global
 			unset( $GLOBALS['ttfmake_section_data'] );
@@ -491,7 +489,7 @@ class TTFMAKE_Builder_Save {
 				break;
 			}
 
-			if ( $current_section['id'] == $id ) {
+			if ( $current_section['id'] === $id ) {
 				$next_is_the_one = true;
 			}
 		}
@@ -519,7 +517,7 @@ class TTFMAKE_Builder_Save {
 	 */
 	public function get_prev_section_data( $current_section, $sections ) {
 		foreach ( $sections as $id => $data ) {
-			if ( $current_section['id'] == $id ) {
+			if ( $current_section['id'] === $id ) {
 				break;
 			} else {
 				$prev_key = $id;
@@ -589,7 +587,7 @@ class TTFMAKE_Builder_Save {
 		// Get the previous section's type
 		$prev_data = $this->get_prev_section_data( $current_section, $sections );
 		$prev      = ( ! empty( $prev_data ) && isset( $prev_data['section-type'] ) ) ? $prefix . 'prev-' . $prev_data['section-type'] : $prefix . 'first';
-		
+
 		/**
 		 * Filter the section classes.
 		 *

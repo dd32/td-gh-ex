@@ -113,13 +113,6 @@ function ttfmake_builder_get_gallery_class( $ttfmake_section_data, $sections ) {
 		$gallery_class .= ' has-background';
 	}
 
-	// Full width
-	$full_width = isset( $ttfmake_section_data['full-width'] ) && 0 !== absint( $ttfmake_section_data['full-width'] );
-
-	if ( true === $full_width ) {
-		$gallery_class .= ' builder-section-full-width';
-	}
-
 	/**
 	 * Filter the class applied to a gallery.
 	 *
@@ -162,15 +155,9 @@ function ttfmake_builder_get_gallery_style( $ttfmake_section_data ) {
 
 	// Background style
 	if ( isset( $ttfmake_section_data['background-style'] ) && ! empty( $ttfmake_section_data['background-style'] ) ) {
-		if ( in_array( $ttfmake_section_data['background-style'], array( 'cover', 'contain' ) ) ) {
-			$gallery_style .= 'background-size: ' . $ttfmake_section_data['background-style'] . ';';
+		if ( 'cover' === $ttfmake_section_data['background-style'] ) {
+			$gallery_style .= 'background-size: cover;';
 		}
-	}
-
-	// Background position
-	if ( isset( $ttfmake_section_data['background-position'] ) && ! empty( $ttfmake_section_data['background-position'] ) ) {
-		$rule = explode( '-', $ttfmake_section_data['background-position'] );
-		$gallery_style .= 'background-position: ' . implode( ' ', $rule ) . ';';
 	}
 
 	/**
@@ -246,15 +233,10 @@ function ttfmake_builder_get_gallery_item_onclick( $link, $ttfmake_section_data,
 		return '';
 	}
 
-	if ( '' === $link ) {
-		return '';
+	$onclick = ' onclick="return false;"';
+	if ( '' !== $link ) {
+		$onclick = ' onclick="window.location.href = \'' . esc_js( esc_url( $link ) ) . '\';"';
 	}
-
-	$item = $ttfmake_section_data['gallery-items'][$i - 1];
-	$external = isset( $item['open-new-tab'] ) && $item['open-new-tab'] === 1;
-	$url = esc_js( esc_url( $link ) );
-	$open_function = $external ? 'window.open(\'' . $url . '\')': 'window.location.href = \'' . $url . '\'';
-	$onclick = ' onclick="event.preventDefault(); '. $open_function . ';"';
 
 	/**
 	 * Filter the class used for a gallery item.
@@ -282,10 +264,10 @@ function ttfmake_builder_get_gallery_item_image( $item, $aspect ) {
 	global $ttfmake_section_data;
 	$image = '';
 
-	if ( ttfmake_builder_is_section_type( 'gallery', $ttfmake_section_data ) && 0 !== ttfmake_sanitize_image_id( $item[ 'background-image' ] ) ) {
+	if ( ttfmake_builder_is_section_type( 'gallery', $ttfmake_section_data ) && 0 !== ttfmake_sanitize_image_id( $item[ 'image-id' ] ) ) {
 		$image_style = '';
 
-		$image_src = ttfmake_get_image_src( $item[ 'background-image' ], 'large' );
+		$image_src = ttfmake_get_image_src( $item[ 'image-id' ], 'large' );
 		if ( isset( $image_src[0] ) ) {
 			$image_style .= 'background-image: url(\'' . addcslashes( esc_url_raw( $image_src[0] ), '"' ) . '\');';
 		}
@@ -338,18 +320,13 @@ function ttfmake_builder_get_text_array( $ttfmake_section_data ) {
 	}
 
 	$columns_array = array();
-	if( ! empty( $columns_data ) ) {
-		if ( ! empty( $columns_order ) ) {
-			$count = 0;
-			foreach ( $columns_order as $order => $key ) {
-				$columns_array[$order] = $columns_data[$key];
-				$count++;
-			}
-		} else {
-			$count = 0;
-			foreach ( $columns_data as $column ) {
-				array_push($columns_array, $column);
-				$count++;
+	if ( ! empty( $columns_order ) && ! empty( $columns_data ) ) {
+		$count = 0;
+		foreach ( $columns_order as $order => $key ) {
+			$columns_array[$order] = $columns_data[$key];
+			$count++;
+			if ( $count >= $columns_number ) {
+				break;
 			}
 		}
 	}
@@ -395,13 +372,6 @@ function ttfmake_builder_get_text_class( $ttfmake_section_data, $sections ) {
 		$text_class .= ' has-background';
 	}
 
-	// Full width
-	$full_width = isset( $ttfmake_section_data['full-width'] ) && 0 !== absint( $ttfmake_section_data['full-width'] );
-
-	if ( true === $full_width ) {
-		$text_class .= ' builder-section-full-width';
-	}
-
 	/**
 	 * Filter the text section class.
 	 *
@@ -444,15 +414,9 @@ function ttfmake_builder_get_text_style( $ttfmake_section_data ) {
 
 	// Background style
 	if ( isset( $ttfmake_section_data['background-style'] ) && ! empty( $ttfmake_section_data['background-style'] ) ) {
-		if ( in_array( $ttfmake_section_data['background-style'], array( 'cover', 'contain' ) ) ) {
-			$text_style .= 'background-size: ' . $ttfmake_section_data['background-style'] . '; background-repeat: no-repeat;';
+		if ( 'cover' === $ttfmake_section_data['background-style'] ) {
+			$text_style .= 'background-size: cover;';
 		}
-	}
-
-	// Background position
-	if ( isset( $ttfmake_section_data['background-position'] ) && ! empty( $ttfmake_section_data['background-position'] ) ) {
-		$rule = explode( '-', $ttfmake_section_data['background-position'] );
-		$text_style .= 'background-position: ' . implode( ' ', $rule ) . ';';
 	}
 
 	return $text_style;
@@ -562,15 +526,9 @@ function ttfmake_builder_get_banner_style( $ttfmake_section_data ) {
 
 	// Background style
 	if ( isset( $ttfmake_section_data['background-style'] ) && ! empty( $ttfmake_section_data['background-style'] ) ) {
-		if ( in_array( $ttfmake_section_data['background-style'], array( 'cover', 'contain' ) ) ) {
-			$banner_style .= 'background-size: ' . $ttfmake_section_data['background-style'] . ';';
+		if ( 'cover' === $ttfmake_section_data['background-style'] ) {
+			$banner_style .= 'background-size: cover;';
 		}
-	}
-
-	// Background position
-	if ( isset( $ttfmake_section_data['background-position'] ) && ! empty( $ttfmake_section_data['background-position'] ) ) {
-		$rule = explode( '-', $ttfmake_section_data['background-position'] );
-		$banner_style .= 'background-position: ' . implode( ' ', $rule ) . ';';
 	}
 
 	return $banner_style;
@@ -681,8 +639,8 @@ function ttfmake_builder_banner_slide_style( $slide, $ttfmake_section_data ) {
 	}
 
 	// Background image
-	if ( isset( $slide['background-image'] ) && 0 !== ttfmake_sanitize_image_id( $slide['background-image'] ) ) {
-		$image_src = ttfmake_get_image_src( $slide['background-image'], 'full' );
+	if ( isset( $slide['image-id'] ) && 0 !== ttfmake_sanitize_image_id( $slide['image-id'] ) ) {
+		$image_src = ttfmake_get_image_src( $slide['image-id'], 'full' );
 		if ( isset( $image_src[0] ) ) {
 			$slide_style .= 'background-image: url(\'' . addcslashes( esc_url_raw( $image_src[0] ), '"' ) . '\');';
 		}

@@ -284,25 +284,6 @@ foreach ( $views as $view => $label ) {
 		) );
 	}
 
-	// Page & Post title
-	if ( in_array( $view, array( 'page', 'post' ) ) ) {
-		$controls = array_merge( $controls, array(
-			$prefix . 'pagetitle-heading' => array(
-				'control' => array(
-					'control_type' => 'MAKE_Customizer_Control_Html',
-					'html'  => '<h4 class="make-group-title">' . esc_html__( ucfirst( $view ) . ' Title', 'make' ) . '</h4>',
-				),
-			),
-			$prefix . 'hide-title'        => array(
-				'setting' => true,
-				'control' => array(
-					'label' => __( 'Hide title', 'make' ),
-					'type'  => 'checkbox',
-				),
-			),
-		) );
-	}
-
 	// Featured images, post date, post author
 	$controls = array_merge( $controls, array(
 		'featured-images-group-' . $view      => array(
@@ -331,7 +312,7 @@ foreach ( $views as $view => $label ) {
 		'post-date-group-' . $view            => array(
 			'control' => array(
 				'control_type' => 'MAKE_Customizer_Control_Html',
-				'html'  => '<h4 class="make-group-title">' . esc_html__( ucfirst( $view ) . ' Date', 'make' ) . '</h4>',
+				'html'  => '<h4 class="make-group-title">' . esc_html__( 'Post Date', 'make' ) . '</h4>',
 			),
 		),
 		$prefix . 'post-date'                 => array(
@@ -354,7 +335,7 @@ foreach ( $views as $view => $label ) {
 		'post-author-group-' . $view          => array(
 			'control' => array(
 				'control_type' => 'MAKE_Customizer_Control_Html',
-				'html'  => '<h4 class="make-group-title">' . esc_html__( ucfirst( $view ) . ' Author', 'make' ) . '</h4>',
+				'html'  => '<h4 class="make-group-title">' . esc_html__( 'Post Author', 'make' ) . '</h4>',
 			),
 		),
 		$prefix . 'post-author'               => array(
@@ -448,46 +429,19 @@ foreach ( $views as $view => $label ) {
 		),
 	) );
 
-	if ( 'post' === $view ) {
+	// Page title
+	if ( 'page' === $view ) {
 		$controls = array_merge( $controls, array(
-			$prefix . 'postnavigation-heading' => array(
+			$prefix . 'pagetitle-heading' => array(
 				'control' => array(
 					'control_type' => 'MAKE_Customizer_Control_Html',
-					'html'  => '<h4 class="make-group-title">' . esc_html__( 'Post Navigation', 'make' ) . '</h4>',
+					'html'  => '<h4 class="make-group-title">' . esc_html__( 'Page Title', 'make' ) . '</h4>',
 				),
 			),
-			$prefix . 'hide-navigation' => array(
+			$prefix . 'hide-title'        => array(
 				'setting' => true,
 				'control' => array(
-					'label' => __( 'Hide navigation', 'make' ),
-					'type'  => 'checkbox',
-				),
-			),
-		) );
-	}
-
-	// Breadcrumbs
-	/**
-	 * Filter: Allow override of breadcrumb settings, controls and output
-	 *
-	 * @since 1.7.4.
-	 *
-	 * @param boolean $override         Wether third party breadcrumbs should be overriden.
-	 */
-	$breadcrumb_override = apply_filters( 'make_breadcrumb_override', false );
-	if ( ( true === $breadcrumb_override ) && in_array( $view, array( 'blog', 'archive', 'search', 'post', 'page' ) ) ) {
-		$controls = array_merge( $controls, array(
-			$prefix . 'breadcrumb-heading' => array(
-				'control' => array(
-					'control_type' => 'MAKE_Customizer_Control_Html',
-					'html'  => '<h4 class="make-group-title">' . esc_html__( 'Breadcrumbs', 'make' ) . '</h4>',
-				),
-			),
-
-			$prefix . 'breadcrumb'       => array(
-				'setting' => true,
-				'control' => array(
-					'label' => __( 'Show breadcumbs', 'make' ),
+					'label' => __( 'Hide title', 'make' ),
 					'type'  => 'checkbox',
 				),
 			),

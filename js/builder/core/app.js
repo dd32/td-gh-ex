@@ -1,4 +1,4 @@
-/*global jQuery, tinyMCE, switchEditors, ttfmakeBuilderData */
+/*global jQuery, tinyMCE, switchEditors */
 var oneApp = oneApp || {}, ttfMakeFrames = ttfMakeFrames || [];
 
 (function ($, Backbone, oneApp, ttfMakeFrames) {
@@ -9,7 +9,6 @@ var oneApp = oneApp || {}, ttfMakeFrames = ttfMakeFrames || [];
 		activeTextAreaID: '',
 		activeiframeID: '',
 		tinymceOverlay: false,
-		settingsOverlay: false,
 
 		$stage: false,
 		$makeTextArea: false,
@@ -65,11 +64,6 @@ var oneApp = oneApp || {}, ttfMakeFrames = ttfMakeFrames || [];
 				self.$stage.trigger('uploader-image-removed')
 			});
 
-			$('body').on('click', function(e) {
-				self.$stage.find('.ttfmake-configure-item-button').removeClass('active');
-				self.$stage.find('.configure-item-dropdown').hide();
-			});
-
 			return this;
 		},
 
@@ -113,21 +107,6 @@ var oneApp = oneApp || {}, ttfMakeFrames = ttfMakeFrames || [];
 			} else {
 				this.$stage.append(html);
 			}
-
-			view.$el.trigger('view-ready', view);
-
-			return view;
-		},
-
-		addItemView: function (item, originalItem) {
-			var viewClass = oneApp.views[item.get('section-type')];
-			var view = new viewClass({
-				model: item
-			});
-
-			var html = view.render().el;
-
-			originalItem.$el.parent().append(html);
 
 			view.$el.trigger('view-ready', view);
 
@@ -312,64 +291,33 @@ var oneApp = oneApp || {}, ttfMakeFrames = ttfMakeFrames || [];
 		},
 
 		wrapShortcodes: function(content) {
-			// Render captions
-			content = content.replace(
-				/\[caption.*?\](\<img.*?\/\>)[ ]*(.*?)\[\/caption\]/g,
-				'<div><dl class="wp-caption alignnone">'
-				+ '<dt class="wp-caption-dt">$1</dt>'
-				+ '<dd class="wp-caption-dd">$2</dd></dl></div>'
-			);
-
 			return content.replace(/^(<p>)?(\[.*\])(<\/p>)?$/gm, '<div class="shortcode-wrapper">$2</div>');
 		},
 
 		initOverlayViews: function () {
-			this.tinymceOverlay = new oneApp.views['tinymce-overlay']({
+			this.tinymceOverlay = new oneApp.views.overlay({
 				el: $('#ttfmake-tinymce-overlay')
 			});
-
-			this.settingsOverlay = new oneApp.views.settings();
 		},
 
-		initUploader: function ( overlayView, placeholder ) {
-			wp.media.view.Sidebar = oneApp.ImageSidebar;
-
+		initUploader: function (view, placeholder) {
 			this.$currentPlaceholder = $(placeholder);
-
-			if (window.frame) {
-				window.frame.detach();
-			}
 
 			// Create the media frame.
 			window.frame = wp.media.frames.frame = wp.media({
 				title: this.$currentPlaceholder.data('title'),
 				className: 'media-frame ttfmake-builder-uploader',
-				multiple: false,
-				library: {type: 'image'},
+				multiple: false
 			});
 
-			frame.on('open', this.onUploaderFrameOpen.bind(this, overlayView));
+			frame.on('open', this.onUploaderFrameOpen, this);
 			frame.on('select', this.onUploaderFrameSelect, this, 2);
-			frame.on('close', function() {
-				wp.media.view.Sidebar = oneApp.OriginalSidebar;
-			});
 
 			// Finally, open the modal
 			frame.open();
 		},
 
-		onUploaderFrameOpen: function( view ) {
-			var savedAttachmentID = view.caller ? view.caller.model.get( 'background-image' ): undefined;
-			var currentAttachmentID = view.model.get( 'background-image' );
-			var attachmentID = 'undefined' !== typeof currentAttachmentID ? currentAttachmentID: savedAttachmentID;
-
-			if ( attachmentID ) {
-				var selection = frame.state().get('selection');
-				var attachment = wp.media.attachment( attachmentID );
-				selection.add( [ attachment ] );
-				window.frame.$el.addClass('ttfmake-media-selected');
-			}
-		},
+		onUploaderFrameOpen: function() {},
 
 		onUploaderFrameRemoveImage: function() {
 			// Remove the image
@@ -379,7 +327,7 @@ var oneApp = oneApp || {}, ttfMakeFrames = ttfMakeFrames || [];
 			// Trigger event on the uploader to propagate it to calling view
 			this.$currentPlaceholder.trigger('mediaRemoved')
 
-			window.frame.detach();
+			wp.media.frames.frame.close();
 		},
 
 		onUploaderFrameSelect: function() {
@@ -402,13 +350,7 @@ var oneApp = oneApp || {}, ttfMakeFrames = ttfMakeFrames || [];
 			}
 
 			var $colorPickerInput = $('.ttfmake-configuration-color-picker', view.$el);
-			var palettes = _(ttfmakeBuilderData.palettes);
-			palettes = palettes.isArray() ? palettes.toArray(): palettes.values();
-
 			var colorPickerOptions = {
-				hide: false,
-				palettes: palettes,
-
 				change: function(event, ui) {
 					var $input = $(event.target);
 
@@ -431,60 +373,6 @@ var oneApp = oneApp || {}, ttfMakeFrames = ttfMakeFrames || [];
 
 			// init color picker
 			$colorPickerInput.wpColorPicker(colorPickerOptions);
-
-			$('.wp-picker-container').css({
-				position: 'relative'
-			});
-
-			$('.iris-picker.iris-border').css({
-				width: '100%'
-			});
-
-			$('.iris-picker.iris-border .iris-picker-inner').css({
-				top: 0,
-				right: 0,
-				bottom: 0,
-				left: 0,
-			});
-
-			$('.iris-picker.iris-border .iris-picker-inner .iris-slider.iris-strip').css({
-				right: 0,
-				position: 'absolute',
-			});
-
-			$('.iris-picker.iris-border .iris-picker-inner .iris-square').css({
-				'margin-right': 0,
-				width: 'auto',
-				position: 'absolute',
-				left: 0,
-				right: '40px'
-			});
-
-			$('.iris-picker.iris-border .iris-palette-container').css({
-				left: 0,
-				bottom: 0,
-				width: 'auto'
-			});
-
-			$('.iris-picker.iris-border .iris-palette-container .iris-palette').css({
-				width: '31px',
-				height: '31px',
-				'margin-left': '8px'
-			});
-
-			$('.wp-picker-input-wrap').css({
-				position: 'absolute',
-				left: '38px',
-				right: 0
-			});
-
-			$('.iris-picker.iris-border .iris-palette-container .iris-palette:first-child').css({
-				'margin-left': 0
-			});
-
-			$('.iris-picker', view.$el).show();
-
-			return $colorPickerInput;
 		},
 
 		setClearClasses: function ($el) {
@@ -531,9 +419,7 @@ var oneApp = oneApp || {}, ttfMakeFrames = ttfMakeFrames || [];
 		}
 	});
 
-	oneApp.OriginalSidebar = wp.media.view.Sidebar;
-
-	oneApp.ImageSidebar = wp.media.view.Sidebar.extend({
+	wp.media.view.Sidebar = wp.media.view.Sidebar.extend({
 		render: function() {
 			this.$el.html( wp.media.template( 'ttfmake-remove-image' ) );
 			return this;

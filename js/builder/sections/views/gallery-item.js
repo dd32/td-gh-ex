@@ -10,7 +10,7 @@ var oneApp = oneApp || {};
 		events: function() {
 			return _.extend({}, oneApp.views.item.prototype.events, {
 				'click .ttfmake-gallery-item-remove': 'onItemRemove',
-				'overlay-open': 'onOverlayOpen',
+				'overlayClose': 'onOverlayClose',
 			});
 		},
 
@@ -25,12 +25,15 @@ var oneApp = oneApp || {};
 			return this;
 		},
 
+		onOverlayClose: function(e, textarea) {
+			e.stopPropagation();
+
+			this.model.set('description', $(textarea).val());
+			this.$el.trigger('model-item-change');
+		},
+
 		onItemRemove: function (evt) {
 			evt.preventDefault();
-
-			if (!confirm('Are you sure you want to trash this item permanently?')) {
-				return;
-			}
 
 			var $stage = this.$el.parents('.ttfmake-gallery-items'),
 				$orderInput = $('.ttfmake-gallery-item-order', $stage);
@@ -43,13 +46,6 @@ var oneApp = oneApp || {};
 				this.$el.trigger('item-remove', this);
 				this.remove();
 			}.bind(this));
-		},
-
-		onOverlayOpen: function (e, $overlay) {
-			e.stopPropagation();
-
-			var $button = $('.ttfmake-overlay-close-update', $overlay);
-			$button.text('Update item');
-		},
+		}
 	});
 })(window, Backbone, jQuery, _, oneApp);
