@@ -99,48 +99,52 @@ add_action( 'after_setup_theme', 'greenr_customizer_setup',11 );
 if( ! function_exists( 'greenr_customizer_setup' ) ) {
 		//echo '<pre>', print_r($greenr), '</pre>';
 	function greenr_customizer_setup() {
-		if(  count( get_theme_mods() ) <= 1 ) {
-			global $options;
-			$greenr = get_option('greenr');
-			foreach($options['panels']['theme_options']['sections'] as $section) {
-				foreach( $section['fields'] as $name => $settings ) {
-					//echo 'Name: ' . $name . '<br>' . 'Value: ' . $greenr[$name] . '<br>';
-					if( ! get_theme_mod( $name ) && isset( $greenr[$name] ) ) {
-						if( is_array( $greenr[$name] ) ) {
-							set_theme_mod( $name, $greenr[$name]['url'] );
-						} else {
-							set_theme_mod( $name, $greenr[$name] );
-						}
-					}
-				}		
-			}
-
-		 	foreach($options['panels']['home']['sections'] as $section) {
-				foreach( $section['fields'] as $name => $settings ) {
-					if( ! get_theme_mod( $name ) && isset( $greenr[$name] ) ) {
-								if( is_array($greenr[$name]) ) {
-									set_theme_mod( $name, $greenr[$name]['url'] );
-								} 
-								else {
-									set_theme_mod( $name, $greenr[$name] );
-								}
-					}
-			
-					if ( isset ( $greenr['slides'] ) ) {		
-						$slide_count = 1;
-						foreach($greenr['slides'] as $slide) {
-							if( ! get_theme_mod( 'image_upload-' . $slide_count ) && isset( $slide['image'] ) ) {
-								set_theme_mod( 'image_upload-' . $slide_count, $slide['image']);
+		$ver = get_theme_mod( 'version', false );
+		if ( version_compare( $ver, '1.1.0' , '<=' ) && !empty($ver) ) {   
+			if(  count( get_theme_mods() ) <= 1 ) {
+				global $options;
+				$greenr = get_option('greenr');
+				foreach($options['panels']['theme_options']['sections'] as $section) {
+					foreach( $section['fields'] as $name => $settings ) {
+						//echo 'Name: ' . $name . '<br>' . 'Value: ' . $greenr[$name] . '<br>';
+						if( ! get_theme_mod( $name ) && isset( $greenr[$name] ) ) {
+							if( is_array( $greenr[$name] ) ) {
+								set_theme_mod( $name, $greenr[$name]['url'] );
+							} else {
+								set_theme_mod( $name, $greenr[$name] );
 							}
-							if( ! get_theme_mod( 'flexcaption-' . $slide_count ) && isset( $slide['description'] ) ) {
-								set_theme_mod( 'flexcaption-' . $slide_count, $slide['description']);
-							}
-							$slide_count++;
 						}
-					}
+					}		
 				}
-			}	
-		}
+
+			 	foreach($options['panels']['home']['sections'] as $section) {
+					foreach( $section['fields'] as $name => $settings ) {
+						if( ! get_theme_mod( $name ) && isset( $greenr[$name] ) ) {
+									if( is_array($greenr[$name]) ) {
+										set_theme_mod( $name, $greenr[$name]['url'] );
+									} 
+									else {
+										set_theme_mod( $name, $greenr[$name] );
+									}
+						}
+				
+						if ( isset ( $greenr['slides'] ) ) {		
+							$slide_count = 1;
+							foreach($greenr['slides'] as $slide) {
+								if( ! get_theme_mod( 'image_upload-' . $slide_count ) && isset( $slide['image'] ) ) {
+									set_theme_mod( 'image_upload-' . $slide_count, $slide['image']);
+								}
+								if( ! get_theme_mod( 'flexcaption-' . $slide_count ) && isset( $slide['description'] ) ) {
+									set_theme_mod( 'flexcaption-' . $slide_count, $slide['description']);
+								}
+								$slide_count++;
+							}
+							
+						}
+					}
+				}	
+			}
+	    }
 	}
 }
 

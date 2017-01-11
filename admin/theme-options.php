@@ -1336,8 +1336,8 @@ Greenr_Kirki::add_field( 'greenr', array(
 ) );*/
 
 Greenr_Kirki::add_section( 'header_image', array(
-	'title'          => __( 'Header Background Image','greenr' ),
-	'description'    => __( 'Custom Header Image options', 'greenr'),
+	'title'          => __( 'Header Background Image & Video','greenr' ),
+	'description'    => __( 'Custom Header Image & Video options', 'greenr'),
 	'panel'          => 'header_panel', // Not typically needed.  
 ) );
 

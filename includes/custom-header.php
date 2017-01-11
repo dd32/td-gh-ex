@@ -10,7 +10,7 @@
 		<img src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
 	</a>
 	<?php endif; // End header image check. ?>
-
+ 
  *
  * @package Greenr
  */
@@ -29,6 +29,7 @@ function greenr_custom_header_setup() {
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
+		'video'                  => true,
 		'wp-head-callback'       => 'greenr_header_style',
 		'admin-head-callback'    => 'greenr_admin_header_style',
 		'admin-preview-callback' => 'greenr_admin_header_image',
@@ -53,9 +54,37 @@ function greenr_header_style() {
         .header-inner {
         	
         }
+        .custom-header-media img {
+				display: none;
+		}
 	</style>
 	<?php
 	}
+	 /* Header Video Settings */
+    if(function_exists('is_header_video_active') ) {
+		if ( is_header_video_active() ) { ?>
+			<style type="text/css">    
+				#wp-custom-header-video-button {
+				    position: absolute;
+				    z-index:1;
+				    top:20px;
+				    right: 20px;
+				    background:rgba(34, 34, 34, 0.5);
+				    border: 1px solid rgba(255,255,255,0.5);
+				}
+				.wp-custom-header iframe,
+				.wp-custom-header video {
+				      display: block;
+				      //height: auto;
+				      max-width: 100%;
+				      height: 100vh;
+				      width: 100vw;
+				      overflow: hidden;
+				}
+
+		    </style><?php
+		}
+    }
 }
 endif; // greenr_header_style
 	/*$header_text_color = get_header_textcolor();
@@ -138,3 +167,16 @@ function greenr_admin_header_image() {
 <?php
 }
 endif; // greenr_admin_header_image
+
+
+/**
+ * Customize video play/pause button in the custom header.
+ */
+if(!function_exists('greenr_video_controls') ) {
+	function greenr_video_controls( $settings ) {
+		$settings['l10n']['play'] = '<span class="screen-reader-text">' . __( 'Play background video', 'greenr' ) . '</span><i class="fa fa-play"></i>';
+		$settings['l10n']['pause'] = '<span class="screen-reader-text">' . __( 'Pause background video', 'greenr' ) . '</span><i class="fa fa-pause"></i>';
+		return $settings;
+	}
+}
+add_filter( 'header_video_settings', 'greenr_video_controls' );

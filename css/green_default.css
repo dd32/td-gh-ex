@@ -22,6 +22,23 @@
 	12.1 Captions
 	12.2 Galleries
 --------------------------------------------------------------*/
+.sticky-header #header-bottom .site-description {
+  display: none; }
+.sticky-header #header-bottom .main-navigation a {
+  font-size: 1.4; }
+.sticky-header #header-bottom .main-navigation ul {
+  margin-top: 20px; }
+  .sticky-header #header-bottom .main-navigation ul a {
+    height: 40px; }
+.sticky-header #header-bottom .main-navigation li {
+  height: 40px; }
+.sticky-header #header-bottom .main-navigation .sub-menu {
+  margin-top: 0; }
+.sticky-header #header-bottom .site-branding {
+  margin-top: 0; }
+.sticky-header #header-bottom .main-navigation ul ul {
+  top: 40px; }
+
 /*--------------------------------------------------------------
 0.0 Reset
 --------------------------------------------------------------*/
@@ -1339,17 +1356,19 @@ ol.comment-list .reply {
   display: inline;
   left: 0;
   position: absolute;
-  top: 40px;
-  font-size: 12px;
-  font-size: 1.2rem; }
+  top: 100px;
+  font-size: 14px;
+  font-size: 1.4rem; }
 
-.comment-content,
-.comment-meta {
-  margin-left: 50px; }
+.comment-content {
+  margin-top: 20px; }
 
 .comment-author img {
   position: absolute;
-  left: 0; }
+  left: 0;
+  top: 5px;
+  width: 40px;
+  height: 40px; }
 
 ol.comment-list .parent article {
   border: 1px solid #d7d7d7;
@@ -1382,7 +1401,11 @@ ol.comment-list li.byuser {
 
 .comment-metadata {
   font-size: 13px;
-  font-size: 1.3rem; }
+  font-size: 1.3rem;
+  padding-left: 50px; }
+
+.comment-author {
+  padding-left: 50px; }
 
 .woocommerce button.button,
 .woocommerce-page button.button,
@@ -1947,23 +1970,6 @@ ol.comment-list li.byuser {
   z-index: 1000; }
   .sticky-header #header-bottom .search-form {
     top: 5px; }
-  .sticky-header #header-bottom .site-description {
-    display: none; }
-  .sticky-header #header-bottom .main-navigation a {
-    font-size: 14px;
-    font-size: 1.4rem; }
-  .sticky-header #header-bottom .main-navigation ul {
-    margin-top: 20px; }
-    .sticky-header #header-bottom .main-navigation ul a {
-      height: 40px; }
-  .sticky-header #header-bottom .main-navigation li {
-    height: 40px; }
-  .sticky-header #header-bottom .main-navigation .sub-menu {
-    margin-top: 0; }
-  .sticky-header #header-bottom .site-branding {
-    margin-top: 0; }
-  .sticky-header #header-bottom .main-navigation ul ul {
-    top: 40px; }
 
 .boxed-container .sticky-header #header-bottom {
   width: auto;
@@ -2159,12 +2165,11 @@ dl.wp-caption {
 .social {
   list-style: none;
   margin: 0;
-  color: #fff;
-  list-style: none;
-  float: right; }
+  float: right;
+  color: #ffffff;
+  list-style: none; }
   .social ul {
-  list-style: none;
-}
+    list-style: none; }
   .social li {
     float: left; }
     .social li a {

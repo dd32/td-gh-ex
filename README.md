@@ -45,6 +45,11 @@ https://unsplash.imgix.net/46/3YNGIU4yRTO4DDifrEfA__MG_2885.jpg?q=75&fm=jpg&s=b7
 16. Other theme options are self explanatory.
 
 == Change Log ==
+
+Version 1.2.1
+  * Added Header Background Video Option.
+  * Fix old version function bug
+
 Version 1.2.0
   * Customizer Changed to kirki
   * Added More Options

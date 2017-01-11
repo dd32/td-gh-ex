@@ -114,3 +114,14 @@ if(! function_exists('greenr_masonry_custom_js') ) {
 <?php }
 	}
 }
+
+add_action('greenr_before_header','greenr_before_header_video');
+if(!function_exists('greenr_before_header_video')){
+	function greenr_before_header_video() {
+		if(function_exists('the_custom_header_markup') ) { ?>
+		    <div class="custom-header-media">
+				<?php the_custom_header_markup(); ?>
+			</div>
+	    <?php } 
+	}
+}

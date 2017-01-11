@@ -10,7 +10,6 @@
 get_header(); 
 ?>
 	<div id="content" class="site-content container">
-<div class="row">
 <?php do_action('greenr_two_sidebar_left'); ?>	
 		
 		<section id="primary" class="content-area <?php greenr_layout_class(); ?> columns">

@@ -30,8 +30,9 @@ endif;
 <body <?php body_class(); ?>>  
 <div id="page" class="hfeed site <?php echo greenr_site_style_class(); ?>">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'greenr' ); ?></a>
-    <?php do_action('greenr_before_header'); ?>
-	<header id="masthead" class="site-header header-wrap header-image <?php echo greenr_site_style_header_class(); ?>" role="banner"><?php
+    <?php do_action('greenr_before_header'); ?> 
+	<header id="masthead" class="site-header header-wrap header-image <?php echo greenr_site_style_header_class(); ?>" role="banner">
+		<?php
 	    if ( get_theme_mod ('header_overlay',false ) ) { 
 		    echo '<div class="overlay overlay-header"></div>';     
 	    } ?>
