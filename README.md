@@ -40,6 +40,10 @@ https://pixabay.com/en/man-handsome-male-model-guy-885223/
 16. Other theme options are self explanatory.
 
 == Change Log ==
+
+v. 1.2.9
+ * Added Header Background Video
+ 
 v. 1.2.8
  * Fix typography bug
 

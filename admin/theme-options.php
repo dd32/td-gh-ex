@@ -1390,8 +1390,8 @@ Boxy_Kirki::add_field( 'boxy', array(
 ) );*/
 
 Boxy_Kirki::add_section( 'header_image', array(
-	'title'          => __( 'Header Background Image','boxy' ),
-	'description'    => __( 'Custom Header Image options', 'boxy'),
+	'title'          => __( 'Header Background Image & Video','boxy' ),
+	'description'    => __( 'Custom Header Image & Video options', 'boxy'),
 	'panel'          => 'header_panel', // Not typically needed.  
 ) );
 

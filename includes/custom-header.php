@@ -29,6 +29,7 @@ function boxy_custom_header_setup() {
 				'width'                  => 1600,
 				'height'                 => 100,
 				'flex-height'            => true,
+				'video'                  => true,
 				'wp-head-callback'       => 'boxy_header_style',
 				'admin-head-callback'    => 'boxy_admin_header_style',
 				'admin-preview-callback' => 'boxy_admin_header_image',
@@ -55,8 +56,35 @@ if ( ! function_exists( 'boxy_header_style' ) ) :
 		        .header-inner {
 		        	
 		        }
+		        .custom-header-media img {
+					display: none;
+				}
 			</style><?php
 		}
+		if(function_exists('is_header_video_active') ) {
+		if ( is_header_video_active() ) { ?>
+			<style type="text/css">    
+				#wp-custom-header-video-button {
+				    position: absolute;
+				    z-index:1;
+				    top:20px;
+				    right: 20px;
+				    background:rgba(34, 34, 34, 0.5);
+				    border: 1px solid rgba(255,255,255,0.5);
+				}
+				.wp-custom-header iframe,
+				.wp-custom-header video {
+				      display: block;
+				      //height: auto;
+				      max-width: 100%;
+				      height: 100vh;
+				      width: 100vw;
+				      overflow: hidden;
+				}
+
+		    </style><?php
+		}
+    }
 
 		// If no custom options for text are set, let's bail
 		// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
@@ -91,7 +119,11 @@ if ( ! function_exists( 'boxy_admin_header_style' ) ) :
 		}
 	</style>
 <?php
-	}
+	
+		 /* Header Video Settings */
+
+	
+}
 endif; // boxy_admin_header_style
 
 if ( ! function_exists( 'boxy_admin_header_image' ) ) :
@@ -113,3 +145,16 @@ if ( ! function_exists( 'boxy_admin_header_image' ) ) :
 <?php
 	}
 endif; // boxy_admin_header_image
+
+
+/**
+ * Customize video play/pause button in the custom header.
+ */
+if(!function_exists('boxy_video_controls') ) {
+	function boxy_video_controls( $settings ) {
+		$settings['l10n']['play'] = '<span class="screen-reader-text">' . __( 'Play background video', 'boxy' ) . '</span><i class="fa fa-play"></i>';
+		$settings['l10n']['pause'] = '<span class="screen-reader-text">' . __( 'Pause background video', 'boxy' ) . '</span><i class="fa fa-pause"></i>';
+		return $settings;
+	}
+}
+add_filter( 'header_video_settings', 'boxy_video_controls' );

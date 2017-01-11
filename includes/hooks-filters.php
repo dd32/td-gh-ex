@@ -114,3 +114,14 @@ if(! function_exists('boxy_masonry_custom_js') ) {
 <?php }
 	}
 }
+
+add_action('boxy_before_header','boxy_before_header_video');
+if(!function_exists('boxy_before_header_video')){
+	function boxy_before_header_video() {
+		if(function_exists('the_custom_header_markup') ) { ?>
+		    <div class="custom-header-media">
+				<?php the_custom_header_markup(); ?>
+			</div>
+	    <?php } 
+	}
+}
