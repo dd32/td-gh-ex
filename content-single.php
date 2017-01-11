@@ -18,7 +18,7 @@
 		<div class="entry-meta smallPart">
 			<?php storto_posted_on(); ?>
 			<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-				<span class="comments-link"><i class="fa fa-comments-o spaceRight"></i><?php comments_popup_link( __( 'Leave a comment', 'storto' ), __( '1 Comment', 'storto' ), __( '% Comments', 'storto' ) ); ?></span>
+				<span class="comments-link"><i class="fa fa-comments-o spaceRight"></i><?php comments_popup_link( esc_html__( 'Leave a comment', 'storto' ), esc_html__( '1 Comment', 'storto' ), esc_html__( '% Comments', 'storto' ) ); ?></span>
 			<?php endif; ?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->

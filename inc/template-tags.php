@@ -22,11 +22,11 @@ function storto_paging_nav() {
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav"><i class="fa spaceRight fa-angle-double-left"></i></span>Older posts', 'storto' ) ); ?></div>
+			<div class="nav-previous"><span class="meta-nav"><i class="fa spaceRight fa-angle-double-left"></i></span><?php next_posts_link( esc_html__( 'Older posts', 'storto' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts<span class="meta-nav"><i class="fa spaceLeft fa-angle-double-right"></i></span>', 'storto' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( esc_html__( 'Newer posts', 'storto' ) ); ?><span class="meta-nav"><i class="fa spaceLeft fa-angle-double-right"></i></span></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -52,8 +52,8 @@ function storto_post_nav() {
 		<h2 class="screen-reader-text"><?php esc_html_e( 'Post navigation', 'storto' ); ?></h2>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav" aria-hidden="true"><i class="fa spaceRight fa-angle-double-left"></i></span>&nbsp;%title' . '<span class="screen-reader-text">' . __( 'Previous post:', 'storto' ) . '</span> ' );
-				next_post_link( '<div class="nav-next">%link</div>', '%title&nbsp;<span class="meta-nav" aria-hidden="true"><i class="fa spaceLeft fa-angle-double-right"></i></span> ' . '<span class="screen-reader-text">' . __( 'Next Post:', 'storto' ) . '</span> ' );
+				previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav" aria-hidden="true"><i class="fa spaceRight fa-angle-double-left"></i></span>&nbsp;%title' . '<span class="screen-reader-text">' . esc_html__( 'Previous post:', 'storto' ) . '</span> ' );
+				next_post_link( '<div class="nav-next">%link</div>', '%title&nbsp;<span class="meta-nav" aria-hidden="true"><i class="fa spaceLeft fa-angle-double-right"></i></span> ' . '<span class="screen-reader-text">' . esc_html__( 'Next Post:', 'storto' ) . '</span> ' );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->

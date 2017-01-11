@@ -49,31 +49,31 @@
 
 			<div class="socialLine smallPart">
 				<?php if (!empty($facebookURL)) : ?>
-					<a href="<?php echo esc_url($facebookURL); ?>" title="<?php esc_attr_e( 'Facebook', 'storto' ); ?>"><i class="fa spaceRightDouble fa-facebook"><span class="screen-reader-text"><?php esc_attr_e( 'Facebook', 'storto' ); ?></span></i></a>
+					<a href="<?php echo esc_url($facebookURL); ?>" title="<?php esc_attr_e( 'Facebook', 'storto' ); ?>"><i class="fa spaceRightDouble fa-facebook"><span class="screen-reader-text"><?php esc_html_e( 'Facebook', 'storto' ); ?></span></i></a>
 				<?php endif; ?>
 				<?php if (!empty($twitterURL)) : ?>
-					<a href="<?php echo esc_url($twitterURL); ?>" title="<?php esc_attr_e( 'Twitter', 'storto' ); ?>"><i class="fa spaceRightDouble fa-twitter"><span class="screen-reader-text"><?php esc_attr_e( 'Twitter', 'storto' ); ?></span></i></a>
+					<a href="<?php echo esc_url($twitterURL); ?>" title="<?php esc_attr_e( 'Twitter', 'storto' ); ?>"><i class="fa spaceRightDouble fa-twitter"><span class="screen-reader-text"><?php esc_html_e( 'Twitter', 'storto' ); ?></span></i></a>
 				<?php endif; ?>
 				<?php if (!empty($googleplusURL)) : ?>
-					<a href="<?php echo esc_url($googleplusURL); ?>" title="<?php esc_attr_e( 'Google Plus', 'storto' ); ?>"><i class="fa spaceRightDouble fa-google-plus"><span class="screen-reader-text"><?php esc_attr_e( 'Google Plus', 'storto' ); ?></span></i></a>
+					<a href="<?php echo esc_url($googleplusURL); ?>" title="<?php esc_attr_e( 'Google Plus', 'storto' ); ?>"><i class="fa spaceRightDouble fa-google-plus"><span class="screen-reader-text"><?php esc_html_e( 'Google Plus', 'storto' ); ?></span></i></a>
 				<?php endif; ?>
 				<?php if (!empty($linkedinURL)) : ?>
-					<a href="<?php echo esc_url($linkedinURL); ?>" title="<?php esc_attr_e( 'Linkedin', 'storto' ); ?>"><i class="fa spaceRightDouble fa-linkedin"><span class="screen-reader-text"><?php esc_attr_e( 'Linkedin', 'storto' ); ?></span></i></a>
+					<a href="<?php echo esc_url($linkedinURL); ?>" title="<?php esc_attr_e( 'Linkedin', 'storto' ); ?>"><i class="fa spaceRightDouble fa-linkedin"><span class="screen-reader-text"><?php esc_html_e( 'Linkedin', 'storto' ); ?></span></i></a>
 				<?php endif; ?>
 				<?php if (!empty($instagramURL)) : ?>
-					<a href="<?php echo esc_url($instagramURL); ?>" title="<?php esc_attr_e( 'Instagram', 'storto' ); ?>"><i class="fa spaceRightDouble fa-instagram"><span class="screen-reader-text"><?php esc_attr_e( 'Instagram', 'storto' ); ?></span></i></a>
+					<a href="<?php echo esc_url($instagramURL); ?>" title="<?php esc_attr_e( 'Instagram', 'storto' ); ?>"><i class="fa spaceRightDouble fa-instagram"><span class="screen-reader-text"><?php esc_html_e( 'Instagram', 'storto' ); ?></span></i></a>
 				<?php endif; ?>
 				<?php if (!empty($youtubeURL)) : ?>
-					<a href="<?php echo esc_url($youtubeURL); ?>" title="<?php esc_attr_e( 'YouTube', 'storto' ); ?>"><i class="fa spaceRightDouble fa-youtube"><span class="screen-reader-text"><?php esc_attr_e( 'YouTube', 'storto' ); ?></span></i></a>
+					<a href="<?php echo esc_url($youtubeURL); ?>" title="<?php esc_attr_e( 'YouTube', 'storto' ); ?>"><i class="fa spaceRightDouble fa-youtube"><span class="screen-reader-text"><?php esc_html_e( 'YouTube', 'storto' ); ?></span></i></a>
 				<?php endif; ?>
 				<?php if (!empty($pinterestURL)) : ?>
-					<a href="<?php echo esc_url($pinterestURL); ?>" title="<?php esc_attr_e( 'Pinterest', 'storto' ); ?>"><i class="fa spaceRightDouble fa-pinterest"><span class="screen-reader-text"><?php esc_attr_e( 'Pinterest', 'storto' ); ?></span></i></a>
+					<a href="<?php echo esc_url($pinterestURL); ?>" title="<?php esc_attr_e( 'Pinterest', 'storto' ); ?>"><i class="fa spaceRightDouble fa-pinterest"><span class="screen-reader-text"><?php esc_html_e( 'Pinterest', 'storto' ); ?></span></i></a>
 				<?php endif; ?>
 				<?php if (!empty($tumblrURL)) : ?>
-					<a href="<?php echo esc_url($tumblrURL); ?>" title="<?php esc_attr_e( 'Tumblr', 'storto' ); ?>"><i class="fa spaceRightDouble fa-tumblr"><span class="screen-reader-text"><?php esc_attr_e( 'Tumblr', 'storto' ); ?></span></i></a>
+					<a href="<?php echo esc_url($tumblrURL); ?>" title="<?php esc_attr_e( 'Tumblr', 'storto' ); ?>"><i class="fa spaceRightDouble fa-tumblr"><span class="screen-reader-text"><?php esc_html_e( 'Tumblr', 'storto' ); ?></span></i></a>
 				<?php endif; ?>
 				<?php if (!empty($vkURL)) : ?>
-					<a href="<?php echo esc_url($vkURL); ?>" title="<?php esc_attr_e( 'VK', 'storto' ); ?>"><i class="fa spaceRightDouble fa-vk"><span class="screen-reader-text"><?php esc_attr_e( 'VK', 'storto' ); ?></span></i></a>
+					<a href="<?php echo esc_url($vkURL); ?>" title="<?php esc_attr_e( 'VK', 'storto' ); ?>"><i class="fa spaceRightDouble fa-vk"><span class="screen-reader-text"><?php esc_html_e( 'VK', 'storto' ); ?></span></i></a>
 				<?php endif; ?>
 				<?php if ($hideSearch == 1 ) : ?>
 					<a href="#" class="top-search"><i class="fa spaceRightDouble fa-search"></i></a>
@@ -82,12 +82,12 @@
 			</div>
 				<?php if ($hideSearch == 1 ) : ?>
 				<div class="topSearchForm">
-						<form role="search" method="get" id="searchform" action="<?php echo esc_url(home_url( '/' )); ?>"><input type="search" name="s" class="search" placeholder="<?php _e('Type and hit enter...', 'storto'); ?>"></form>
+						<form role="search" method="get" id="searchform" action="<?php echo esc_url(home_url( '/' )); ?>"><input type="search" name="s" class="search" placeholder="<?php esc_attr_e('Type and hit enter...', 'storto'); ?>"></form>
 				</div>
 				<?php endif; ?>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle"><?php _e( 'Select a page...', 'storto' ); ?><i class="fa fa-align-justify"></i></button>
+			<button class="menu-toggle"><?php esc_html_e( 'Select a page...', 'storto' ); ?><i class="fa fa-align-justify"></i></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- #site-navigation -->
 		

@@ -127,3 +127,7 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, cust
 * Updated Sticky Sidebar script to 1.6.0v
 * Fixed some strings with escaping
 * Minor bug fixes
+
+= Version 1.4.5 =
+* Fixed some strings with escaping
+* Minor bug fixes
