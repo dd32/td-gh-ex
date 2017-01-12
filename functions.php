@@ -10,6 +10,7 @@ require_once( trailingslashit( get_template_directory() ) . '/inc/custom-header.
 require_once( trailingslashit( get_template_directory() ) . '/inc/customizer.php');
 require_once( trailingslashit( get_template_directory() ) . '/inc/integration/jetpack.php');
 require_once( trailingslashit( get_template_directory() ) . '/inc/comments.php');
+require_once( trailingslashit( get_template_directory() ) . '/inc/dashboard/bellini-info-dashboard.php');
 require_once( trailingslashit( get_template_directory() ) . '/inc/structure/hooks.php');
 require_once( trailingslashit( get_template_directory() ) . '/inc/structure/bellini-front.php');
 require_once( trailingslashit( get_template_directory() ) . '/inc/structure/bellini-header.php');

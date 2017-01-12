@@ -102,6 +102,13 @@ endif;
 ## Bellini WooCommerce Product Sorting
 --------------------------------------------------------------*/
 
+function bellini_woo_pagination(){
+		global $wp_query;
+		if ( woocommerce_products_will_display() ) {
+			bellini_pagination();
+		}
+}
+
 /* Layout 1 */
 
 if ( ! function_exists( 'bellini_shop_archive_sorting_info' ) ):
@@ -115,7 +122,7 @@ if ( ! function_exists( 'bellini_shop_archive_sorting_info' ) ):
 				<?php woocommerce_result_count();?>
 			</div>
 			<div class="col-md-3 text-right">
-				<?php bellini_pagination();?>
+				<?php bellini_woo_pagination();?>
 			</div>
 		</div>
 		</div>

@@ -4,7 +4,7 @@ Theme URI: https://atlantisthemes.com/
 Author: Pangolin
 Author URI: https://twitter.com/ti_asif
 Description: Bellini is the perfect theme for creating a eCommerce store or shop. Responsive & flexible layout built with Bootstrap. Customize anything like Google Fonts, Color, Layout, logo upload, full-screen slider, header image and much more.Built with SEO in mind and has Structured Data (Schema) implemented. If you are looking for a beautiful theme with out of the box SEO compatibility & responsiveness, look no further! Check out the live demo at http://demo.atlantisthemes.com/front-page/
-Version: 1.38.7
+Version: 1.38.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bellini
@@ -863,13 +863,12 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .element-title--main {
-    margin-bottom: 1rem;
+    margin-bottom: 1em;
     text-align: center;
 }
 
 .element-title--sub {
     margin-top:.5em;
-    margin-bottom: 1.5%;
     text-align: center;
     line-height: 1.618;
 }
@@ -1464,10 +1463,8 @@ h1,h2,h3,h4,h5,h6 {
     padding: 0 1.2em;
 }
 
-.block-title {
-    margin-bottom: 0;
-    margin-top: 0;
-}
+.block-title {margin: 1em 0;}
+
 /* Layout 2 */
 
 
@@ -2377,7 +2374,7 @@ Hamburger Menu
 }
 
 .bellini-social__link {
-    font-size: 1.8em;
+    font-size: 1.6em;
     padding-top: .5em;
 }
 
@@ -2387,6 +2384,7 @@ Hamburger Menu
 
 .bellini-social__link a span {
     transition:.2s ease-in-out;
+    padding:.1em;
 }
 
 .bellini-social__link a span:hover{
@@ -2992,4 +2990,8 @@ a.page-numbers .fa-angle-right {font-size:2.6em; float:right; margin-top:-.4em;}
 .contact__phone__icon a,
 #footer-nav li a{
     color: inherit;
+}
+
+.front-section__title {
+    margin-bottom: 1.8em;
 }
