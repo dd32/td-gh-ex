@@ -355,6 +355,10 @@ Use <em>&amp;nbsp;</em> to hide the copyright notice. &diams;', 'weaver-xtreme' 
 		__('This code will be inserted inside the #container &lt;div&gt; that wraps content, including before the top widget areas. It will have the same width as the container area. (Area ID: #inject_container_top) (&star;Plus)', 'weaver-xtreme'));
 	$content_sections['content-injection']['options'] = array_merge( $content_sections['content-injection']['options'],  $new_opts);
 
+	$new_opts = weaverx_cz_add_injection('postinfobar', __('Pre Content', 'weaver-xtreme'),
+		__('This code will be inserted inside the #content div that wraps content. It will have the same width as the container area. (Area ID: #inject_postinfobar) (&star;Plus)', 'weaver-xtreme'));
+	$content_sections['content-injection']['options'] = array_merge( $content_sections['content-injection']['options'],  $new_opts);
+
 	$new_opts = weaverx_cz_add_injection('precontent', __('Content Top', 'weaver-xtreme'),
 		__('This code will be inserted inside the #content div that wraps content. It will have the same width as the container area. (Area ID: #inject_precontent) (&star;Plus)', 'weaver-xtreme'));
 	$content_sections['content-injection']['options'] = array_merge( $content_sections['content-injection']['options'],  $new_opts);

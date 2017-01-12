@@ -9,7 +9,7 @@ translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1016 Bruce E Wampler
 Requires at least: 4.5
 Tested up to: 4.7
-Stable tag: 3.0.4
+Stable tag: 3.1
 
 == Description ==
 
@@ -359,3 +359,16 @@ with testing and feature suggestions.
 
 = Version 3.0.4 =
 * Fix: Menus z-index
+
+= Version 3.1 =
+New: Added support for WP 4.7 Header Video Images - in header area, or as full screen BG image.
+New: change max srcset size from WP's default 1600 to 1920
+New: https://guide.weavertheme.com online theme guide
+Change: Featured Images as a header image replacement now include srcset
+Tweak: Changed overflow for Widget Area and Widget to visible. This may change the look of existing sites that use badly behaving widgets that overflow content.
+Tweak: Changed how header images are generated. The srcset is included with more images now.
+Tweak: Don't generate single page navigation HTML if hide.
+Fix: More z-index tweaks
+Fix: Bug with incorrectly hiding widget areas on archive-like pages and default blog page due to per-post settings in first post on the page
+Fix: rounded corners z-index on menus
+Fix: BG color for Visual Editor, including Transparent subthemes.

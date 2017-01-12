@@ -469,37 +469,9 @@ function weaverx_echo_css( $css ) {
 }
 
 // # MISC ==============================================================
+function weaverx_show_header_image() {
 
-function weaverx_get_header_image(&$hdr, &$hdr_bg, &$hdr_html ) {
-	// get the header image or html and the type: std, fi, html
-	// return image/html in $hdr, the bg header in $hdr_bg
-	// priority: per page/post, html replacement, standard image
-
-	$page_type = ( is_single() ) ? 'post' : 'page';
-	$hdr_bg = '';
-	$hdr_html = '';
-	$hdr_type = 'fi';			// only relevant for what kind of extra header info it is possible to get
-
-	$hdr = weaverx_fi( $page_type, 'header-image' );
-
-	if ( !$hdr ) {
-		$hdr = get_header_image();		// get the url of the standard header image
-		$hdr_type = 'std';
-	}
-
-	$hdr_html = weaverx_get_per_page_value('_pp_header_image_html_text');
-	if (!$hdr_html) {
-		$hdr_html = weaverx_getopt('header_image_html_text');
-		if ( $hdr_html && weaverx_getopt('header_image_html_home_only') && !is_front_page())	// only on global, not per page/post
-				$hdr_html = '';		// make empty so will pickup the standard header
-	}
-
-	if ( weaverx_getopt_default('header_image_render','header-as-img') != 'header-as-img' ) {
-		$hdr_bg = $hdr;		// must be the image
-		if ($hdr_html && !weaverx_getopt('header_image_html_plus_bg'))	// have BOTH slider and bg image?
-				$hdr_bg = '';
-	}
-	return $hdr_type;
+	
 }
 
 function weaverx_header_widget_area( $where_now ) {	// header.php support
@@ -509,8 +481,8 @@ function weaverx_header_widget_area( $where_now ) {	// header.php support
 	// 'after_menu' => 'After Main Menu'
 
 	$sb_position = weaverx_getopt_default('header_sb_position', 'top');
-	if ( $sb_position == $where_now  && weaverx_has_widgetarea('header-widget-area') ) {
 
+	if ( $sb_position == $where_now  && weaverx_has_widgetarea('header-widget-area') ) {
 		$p_class = weaverx_area_class('header_sb', 'notpad', '-none', 'margin-none');
 
 		if ( weaverx_getopt('expand_header-widget-area') && !weaverx_getopt('expand_header') ) $p_class .= ' wvrx-expand-full';

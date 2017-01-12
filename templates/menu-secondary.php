@@ -4,7 +4,9 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
 $menu = apply_filters('weaverx_menu_name','secondary');
 
-if (weaverx_getopt( 'm_secondary_hide') != 'hide' && has_nav_menu( $menu )  && !weaverx_is_checked_page_opt('_pp_hide_menus') ) {
+$alt_menu = weaverx_get_per_page_value('_pp_alt_secondary_menu');
+
+if (weaverx_getopt( 'm_secondary_hide') != 'hide' && (has_nav_menu( $menu ) || $alt_menu != '')  && !weaverx_is_checked_page_opt('_pp_hide_menus') ) {
 
 	$class = weaverx_menu_class( 'm_secondary' );
 
@@ -70,7 +72,7 @@ if (weaverx_getopt( 'm_secondary_hide') != 'hide' && has_nav_menu( $menu )  && !
 	else
 		echo "\n\n<div id=\"nav-secondary\" class=\"menu-secondary menu-secondary-standard menu-type-standard\">\n";
 
-	wp_nav_menu( array(
+	$args = array(
 		'fallback_cb'     => '',
 		'theme_location'  => $menu,
 		'menu_class'      => $menu_class,
@@ -78,7 +80,15 @@ if (weaverx_getopt( 'm_secondary_hide') != 'hide' && has_nav_menu( $menu )  && !
 		'container_class' => 'wvrx-menu-container ' . $class,
 		'items_wrap'      => $left . $right . '<div class="wvrx-menu-clear"></div><ul id="%1$s" class="%2$s">%3$s</ul><div style="clear:both;"></div>',
 		'walker'		  => new weaverx_Walker_Nav_Menu()
-	));
+	);
+
+
+	if ( $alt_menu != '' ) {
+		$args['theme_location'] = '';
+		$args['menu'] = wp_get_nav_menu_object($alt_menu);
+	}
+
+	wp_nav_menu( $args );
 
 	echo "\n</div><div class='clear-menu-secondary-end' style='clear:both;'></div><!-- /.menu-secondary -->\n\n";
 

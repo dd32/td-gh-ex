@@ -39,6 +39,7 @@
             var selectors = [
                 'iframe[src*="player.vimeo.com"]',
                 'iframe[src*="youtube.com"]',
+				'iframe[src*="youtu.be"]',
                 'iframe[src*="youtube-nocookie.com"]',
                 'iframe[src*="kickstarter.com"][src*="video.html"]',
                 'object',
@@ -106,30 +107,6 @@ function weaverx_ToggleDIV(his, me, show, hide, text) {
     }
 }
 
-(function($) {
-
-    "use strict";
-
-    $.fn.wvrx_fixbranding = function() {
-
-        if ($('#site-title').css('display') == 'none' && $('#site-tagline').css('display') == 'none') // if both hidden, don't bother
-            return;
-
-        var h_title = $('#title-tagline').outerHeight();
-        var h_image = $('#header-image img').outerHeight();
-
-        if (document.getElementById('title-over-image') !== null && h_title !== null) {
-            if (h_title > h_image) {
-                // don't need to touch image because it is not absolute
-                // so we will just touch the parent div
-                $('#title-over-image').css('height', h_title + "px");
-            } else {
-                $('#title-over-image').css('height', h_image + "px");
-            }
-        }
-        // $('#monitor-branding').html('Monitor #branding: h_title: ' + h_title + ' h_image: '  + h_image);
-    };
-})(window.jQuery);
 
 function wvrxFlowColor() {
     //version 1.1 - 20 oct 2014
@@ -506,7 +483,6 @@ function weaverxBottomFooter() {
 // called when window resizes
 
 function weaverxResizeEnd() {
-    jQuery("#branding").wvrx_fixbranding(); // fix up the #branding area title/description/image'
 	jQuery(".fixedtop").wvrx_fixWvrxFixedTop(); // fix up the fixedtop areas
 
     var Wa2Eq = jQuery(".widget-eq"); // getting all the containers with the widget-eq class
@@ -579,6 +555,7 @@ function weaverx_js_update() {
     // Target your #container, #wrapper etc
     // if ( ! weaver_disable_fitvids )  // one possible solution to disabling FitVids via localize_script in functions.php
     jQuery("#wrapper").fitVids();
+	jQuery("#branding").fitVids();
 
 }
 

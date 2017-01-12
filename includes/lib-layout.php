@@ -655,7 +655,9 @@ function weaverx_put_widgetarea($area_name, $class = '', $area_class_name = '') 
 
 	$area = apply_filters('weaverx_replace_widget_area',$area_name);
 
-	if (weaverx_is_checked_page_opt('_pp_' . $area_name)) return;		// hide area option checked
+	if ( !$GLOBALS['weaverx_page_is_archive'] && weaverx_is_checked_page_opt('_pp_' . $area_name) ) {
+		return;
+	}		// hide area option checked
 
 	unset( $GLOBALS['wvr_widget_number']);     // clear for each widget
 	$GLOBALS['wvr_widget_number'] = false;
@@ -669,8 +671,8 @@ function weaverx_put_widgetarea($area_name, $class = '', $area_class_name = '') 
 		$class .= ' widget-area-' . $area_class_name;
 	$class = ' ' . $class;
 
-	if (is_active_sidebar($area)) { /* add top and bottom widget areas */
 
+	if (is_active_sidebar($area)) { /* add top and bottom widget areas */
 		ob_start();                 /* let's use output buffering to allow use of Dynamic Widgets plugin and not have empty sidebar */
 		$success = dynamic_sidebar($area);
 		$content = ob_get_clean();
@@ -869,14 +871,16 @@ you add at least one widget to one of the Sidebar Widget Areas using the Appeara
 function weaverx_has_widgetarea( $area_name ) {
 	// see if a widget area is available to show...
 
-	$area = apply_filters('weaverx_replace_widget_area',$area_name);
+	$area = apply_filters('weaverx_replace_widget_area', $area_name);
 
-	if (weaverx_is_checked_page_opt('_pp_' . $area_name)) {
+	if ( !$GLOBALS['weaverx_page_is_archive'] && weaverx_is_checked_page_opt('_pp_' . $area_name) ) {
 		return false;		// hide area option checked
 	}
 
-	if (is_active_sidebar($area))
+	if ( is_active_sidebar($area) ) {
 		return true;
+	}
+
 	return false;
 }
 //--

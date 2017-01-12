@@ -31,6 +31,12 @@ function weaverx_install_tgm_plugins() {
 			'required' => false
 		),
 
+		array(
+			'name'     => __('Widget Shortcode (display widgets anywhere)', 'weaver-xtreme' /*adm*/), // The plugin name
+			'slug'     => 'widget-shortcode', // The plugin slug (typically the folder name)
+			'required' => false
+		),
+
 	);
 
 
@@ -55,7 +61,8 @@ function weaverx_install_tgm_plugins() {
 This plugin also includes several shortcodes that help you customize your content for desktop or mobile device appearance.</p>
 <p>The <em><strong>Weaver Show Posts</strong></em> plugin provides [show_posts] shortcode which allows you to display
 any number of posts on pages, selected by filtering conditions, in the header, the footer, or in sidebars.</p>
-<p><em><strong>WP Edit</strong></em> provides enhanced page and post editing, including Manual Excerpts. </p>', 'weaver-xtreme' /*adm*/),
+<p><em><strong>WP Edit</strong></em> provides enhanced page and post editing, including Manual Excerpts. </p>
+<p><em><strong>Widget Shortcode</strong></em> allows you to display a widget anywhere a shortcode is allowed.</p>', 'weaver-xtreme' /*adm*/),
 			// Message to output right before the plugins table
 		'strings'          => array(
 			'page_title'                      => __( 'The <em>Weaver Xtreme</em> Theme Recommended Plugins', 'weaver-xtreme' ),

@@ -82,6 +82,35 @@ function weaverx_cz_choices_render_header_sanitize($val) {
 	return (isset($choices[$val])) ? $val : '';
 }
 
+function weaverx_cz_choices_render_header_video() {		// coordinate these options with generatecss.php!
+	return array(
+		'has-header-video' => __('As video in header only', 'weaver-xtreme') ,
+		'has-header-video-cover' => __('As full cover Parallax BG Video', 'weaver-xtreme'),
+		'has-header-video-none' => __('Disable Header Video', 'weaver-xtreme' /*adm*/)
+	);
+}
+function weaverx_cz_choices_render_header_video_sanitize($val) {
+	$choices = weaverx_cz_choices_render_header_video();
+	return (isset($choices[$val])) ? $val : '';
+}
+
+function weaverx_cz_choices_header_video_aspect() {		// coordinate these options with generatecss.php!
+	return array(
+		'16:9' => __('16:9 HDTV', 'weaver-xtreme') ,
+		'4:3' => __('4:3 Std TV', 'weaver-xtreme'),
+		'3:2' => __('3:2 35mm Photo', 'weaver-xtreme'),
+		'5:3' => __('5:3 Alternate Photo', 'weaver-xtreme'),
+		'64:27' => __('2.37:1 Cinemascope', 'weaver-xtreme'),
+		'37:20' => __('1.85:1 VistaVision', 'weaver-xtreme'),
+		'3:1' => __('3:1 Banner', 'weaver-xtreme'),
+		'4:1' => __('4:1 Banner', 'weaver-xtreme'),
+		'9:16' => __('9:16 Vertical HD (Please avoid!)', 'weaver-xtreme')
+	);
+}
+function weaverx_cz_choices_header_video_aspect_sanitize($val) {
+	$choices = weaverx_cz_choices_header_video_aspect();
+	return (isset($choices[$val])) ? $val : '';
+}
 
 function weaverx_cz_choices_align() {
 	return array(

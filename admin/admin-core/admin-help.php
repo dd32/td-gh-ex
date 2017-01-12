@@ -22,12 +22,21 @@ function weaverx_admin_help() {
 <?php 		weaverx_site('','//forum.weavertheme.com/',__('Weaver Support Forum', 'weaver-xtreme' /*adm*/)); ?>
 <?php _e('Support Forum</a> for online help.', 'weaver-xtreme' /*adm*/); ?>
 </h2>
-<br /><br />
+<br />
 <?php
 	do_action('weaverxplus_admin','help');
 ?>
 <div style="float:left;width:50%;padding-right:2%">
 	<div class="atw-help">
+
+<h2>
+<?php _e('Please see the ', 'weaver-xtreme' /*adm*/); ?>
+<?php 		weaverx_site('','//guide.weavertheme.com/',__('Weaver Xtreme Guide', 'weaver-xtreme')); ?>
+<?php _e('Online Guide</a> for complete online theme reference.', 'weaver-xtreme' /*adm*/); ?>
+</h2>
+<p>
+	<?php _e('Extensive and searchable online guide for <em>Weaver Xtreme</em>. The best reference for Weaver Xtreme.', 'weaver-xtreme'); ?>
+</p>
 <h2 style="text-decoration:underline;font-weight:bold;")>
 	<?php weaverx_help_link('help.html', __('Weaver Xtreme Help', 'weaver-xtreme' /*adm*/), __('Theme Documentation (Customizer)', 'weaver-xtreme' /*adm*/)) ?>
 </h2>
@@ -101,6 +110,9 @@ This formerly was integrated with Weaver, and was considered an important part o
 <?php _e('WP Edit adds additional editing functionality to the default WordPress editor.
 Allows content formatting without the need for extra HTML or CSS.
 Also includes advanced features to manage your content such as post and page revision control.', 'weaver-xtreme' /*adm*/); ?>
+</li>
+<li><a href="https://wordpress.org/plugins/widget-shortcode/" target="_blank">Widget Shortcode</a> -
+<?php _e('Adds [widget] shortcode which enables you to output widgets anywhere you like. This is a great enhancement to Weaver Xtreme.', 'weaver-xtreme' /*adm*/); ?>
 </li>
 </ul>
 

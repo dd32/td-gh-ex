@@ -25,7 +25,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 	<?php if (weaverx_getopt('single_nav_style')=='prev_next') { ?>
 		<div class="nav-previous"><?php previous_post_link( '%link', __( '<span class="meta-nav">&larr;</span> Previous','weaver-xtreme'), $cats ); ?></div>
 		<div class="nav-next"><?php next_post_link( '%link', __( 'Next <span class="meta-nav">&rarr;</span>','weaver-xtreme'), $cats); ?></div>
-	<?php } else { ?>
+	<?php } else if (weaverx_getopt('single_nav_style') == 'title' ) { ?>
 		<div class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link','weaver-xtreme') . '</span> %title', $cats ); ?>
 		</div>
 		<div class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link','weaver-xtreme') . '</span>' , $cats); ?></div>                 <?php } ?>
@@ -38,7 +38,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 	<?php if (weaverx_getopt('single_nav_style')=='prev_next') { ?>
 		<div class="nav-previous"><?php previous_post_link( '%link', __( '<span class="meta-nav">&larr;</span> Previous','weaver-xtreme'), $cats ); ?></div>
 		<div class="nav-next"><?php next_post_link( '%link', __( 'Next <span class="meta-nav">&rarr;</span>','weaver-xtreme'), $cats ); ?></div>
-	<?php } else { ?>
+	<?php } else if (weaverx_getopt('single_nav_style') == 'title' ) { ?>
 		<div class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link','weaver-xtreme') . '</span> %title', weaverx_getopt_checked('single_nav_link_cats') ); ?></div>
 		<div class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link','weaver-xtreme') . '</span>', $cats ); ?></div>
 	<?php } ?>

@@ -122,12 +122,14 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 
 	$title =  apply_filters('weaverx_site_title', esc_html(get_bloginfo( 'name', 'display' ) ) );
 
-
 	echo '<header id="branding" role="banner">' . "\n";
 
 	/* ======== SITE LOGO and TITLE ======== */
-	if (weaverx_getopt('title_over_image')
-		&& (weaverx_getopt_default('header_image_render','header-as-img') == 'header-as-img' || weaverx_getopt('header_image_html_plus_bg')) )
+	$title_over_image = ( weaverx_getopt('title_over_image')
+		&& (weaverx_getopt_default('header_image_render','header-as-img') == 'header-as-img' || weaverx_getopt('header_image_html_plus_bg')
+			|| weaverx_has_header_video()) );
+
+	if ($title_over_image)
 		echo '<div id="title-over-image">' . "\n";
 
 	$h_class = '';
@@ -202,100 +204,9 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 
 	/* ======== HEADER IMAGE ======== */
 
-	if ( !( weaverx_is_checked_page_opt('_pp_hide_header_image') && !is_search() ) ) { // don't bother if hide per page
+	weaverx_header_image();				// header image or video
 
-		$h_hide = weaverx_getopt_default('hide_header_image', 'hide-none');
-
-		// really hide - don't need to have device download the image
-		$really_hide = ( $h_hide == 'hide' || ( weaverx_getopt('hide_header_image_front') && is_front_page() ) ) ;
-
-		$img_class = 'header-image ';
-		if ( $h_hide != 'hide-none' && $h_hide != 'hide')
-			$img_class .= $h_hide . ' ';
-
-		if ( weaverx_getopt_expand('expand_header-image'))
-			$img_class .= 'wvrx-expand-full ';
-
-		if (weaverx_getopt('header_image_add_class') != '') {
-			$img_class .= weaverx_getopt('header_image_add_class') . ' ';
-		}
-
-		// Weaver Xtreme supports 4 kinds of header "images". -- added for Version 3.0
-		//   First is the standard image set by the WP Header option
-		//   Second is a replacement from a Featured Image - pages or post single page
-		//   Third is as a BG image for either of the above images
-		//   Fourth is replacing the image by arbitrary HTML - like a shortcode for a slider. This one does not do BG.
-
-		$hdr_type = weaverx_get_header_image($hdr, $hdr_bg, $hdr_html);		// get the header image/content: img, bg-img, html replacement
-
-
-		if (  ! $really_hide  ) {
-
-			//$h_hide = str_replace('"header-image', '"header-image header-image-type-' . $hdr_type, $h_hide_class);
-			$img_class .= 'header-image-type-' . $hdr_type;
-
-			echo '<div id="header-image" class="' . $img_class . '">';
-
-			if ($hdr_html) {
-				echo do_shortcode($hdr_html);	// output the html
-			} elseif ($hdr && !$hdr_bg) {	// fi or std
-
-				$hdr = str_replace(array('http://', 'https://'),'//', $hdr);
-
-				if ( weaverx_getopt('link_site_image') ) {
-					?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-<?php 				}
-
-				$width = weaverx_getopt_default('theme_width_int',WEAVERX_THEME_WIDTH);
-				$custom_header_sizes = apply_filters( 'weaverx_custom_header_sizes', "(max-width: {$width}px) 100vw, 1920px" );
-
-				if ($hdr_type == 'std')
-					$hdr_id = get_custom_header();
-
-				if ($hdr_type == 'fi' || !isset($hdr_id->attachment_id) || !$hdr_id->attachment_id ) {		// must be a standard Weaver header or FI header so get_custom_header doesn't have sizes info
-						?><img src="<?php echo $hdr; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
-<?php
-				}  elseif ( weaverx_getopt('header_actual_size') || stripos($hdr, '.gif') !== false ) {
-
-					?><img src="<?php echo $hdr ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
-<?php
-				} else {		// have a header from the media library
-
-						?><img src="<?php echo $hdr; ?>" srcset="<?php echo esc_attr( wp_get_attachment_image_srcset( get_custom_header()->attachment_id ) ); ?>" sizes="<?php echo esc_attr( $custom_header_sizes ); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
-<?php				}
-
-				weaverx_e_opt('link_site_image',"</a>");	/* need to close link */
-
-			} else {			// there is no header image
-				echo '<div class="clear-header-image" style="clear:both"></div>'; // needs a clear if not an img
-			}
-
-			echo("\n</div><!-- #header-image -->\n");
-		}  // ! $really_hide
-
-		if ( $hdr_bg ) { // have to emit background-image url... this will be Plus only.
-
-			$style = "<style type='text/css'>";
-
-			if ($h_hide != 'hide')
-				$style .= "#header{background-image:url({$hdr_bg});}";
-
-			// handle hide on devices
-
-			if (strpos($h_hide, 's-hide')!==false)
-				$style .= '.is-phone #header{background-image:none;}';
-			if (strpos($h_hide, 'm-hide')!==false)
-				$style .= '.is-tablet #header{background-image:none;}';
-			if (strpos($h_hide, 'l-hide')!==false)
-				$style .= '.is-desktop #header{background-image:none;}';
-			echo $style . "</style>\n";
-
-		}
-
-	} /* end hide-header-image - but account for header-as-bg image to make it render better - unless showing both the html and bg */
-
-	if (weaverx_getopt('title_over_image')
-		&& (weaverx_getopt_default('header_image_render','header-as-img') == 'header-as-img' || weaverx_getopt('header_image_html_plus_bg')) )
+	if ($title_over_image)
 		echo '</div><!--/#title-over-image -->' . "\n";
 
 	weaverx_header_widget_area( 'after_header' );           // show header widget area if set to this position
@@ -335,4 +246,163 @@ if (function_exists('weaverx_ts_pp_switch'))	// switching to alternate theme?
 	echo "\n</div><div class='clear-header-end' style='clear:both;'></div><!-- #header -->\n";
 	weaverx_header_widget_area( 'post_header' );
 	do_action('weaverx_post_header');
+
+// ------------------------------------------------------------------------------------
+function weaverx_header_image() {
+
+	// this is a function party because it is complicated, and partly to be able to use return to end logic.
+
+	$h_hide = weaverx_getopt_default('hide_header_image', 'hide-none');	// stuff depends on hide attribute
+
+	// really hide - don't need to have device download the image
+	$really_hide = ( $h_hide == 'hide' || ( weaverx_getopt('hide_header_image_front') && is_front_page() ) ) ;
+
+	if (  $really_hide || ( !is_search() && weaverx_is_checked_page_opt('_pp_hide_header_image') ) ) { // don't bother if hide header image
+		echo '<div id="header-image" class="hide"></div>'; 	// place holder
+		return;
+	}
+
+	// build #header classes
+
+	$img_class = 'header-image ';
+	if ( $h_hide != 'hide-none' && $h_hide != 'hide')
+		$img_class .= $h_hide . ' ';
+
+	if ( weaverx_getopt_expand('expand_header-image'))
+		$img_class .= 'wvrx-expand-full ';
+
+	if (weaverx_getopt('header_image_add_class') != '') {
+		$img_class .= weaverx_getopt('header_image_add_class') . ' ';
+	}
+
+	$page_type = ( is_single() ) ? 'post' : 'page';
+	$hdr_bg = weaverx_fi( $page_type, 'header-image' );
+
+	$hdr_type = ($hdr_bg) ? 'fi' : 'std';
+
+	$img_class .= 'header-image-type-' . $hdr_type;
+
+	echo '<div id="header-image" class="' . $img_class . '">';
+
+	// Check different ways to display a header:
+	// 1. As HTML replacement, possibly with regular image as BG header image
+	// 2. As Video Header
+	// 3. As Standard or FI BG replacement (no video supported)
+	// 4. As FI Replacement
+	// 5. As standard Image
+
+	// 1. HTML replacement
+
+	$hdr_html = weaverx_get_per_page_value('_pp_header_image_html_text');	// per page has priority
+
+	if ( !$hdr_html )
+		$hdr_html = weaverx_getopt('header_image_html_text');
+	if ( $hdr_html && weaverx_getopt('header_image_html_home_only') && !is_front_page())	// only on global, not per page/post
+		$hdr_html = '';		// make empty so will pickup the standard header
+
+	if ($hdr_html) {					// custom header html replacement overrides all other header image options
+		echo do_shortcode($hdr_html);	// output the html
+	}
+
+	// 2. As Header Video
+
+	if (!$hdr_html && weaverx_has_header_video() ) {
+		echo '<!-- has header video -->';
+		// Handle Video - don't show if HTML supplied
+
+		// Note: @todo: WP 4.7 doesn't filter has_header_video, but uses it internally, so video won't show unless defined in WP options
+		// Now just have to emit standard WP Header image code. BG handled in header_video_settings filter.
+
+		if ( $hdr_bg ) {	// have alternate header image to match video
+			$before = '';
+			$after = '';
+
+			if ( weaverx_has_header_video() ) { // handle header video
+				wp_enqueue_script( 'wp-custom-header' );
+				wp_localize_script( 'wp-custom-header', '_wpCustomHeaderSettings', get_header_video_settings() );
+				$before =  '<div id="wp-custom-header" class="wp-custom-header">';
+				$after = '</div>';
+			}
+
+			$alt = esc_attr( get_bloginfo( 'name', 'display' ));
+			$fi_hdr = get_the_post_thumbnail( null, 'full', array('alt' => $alt, 'class' => 'wvrx-header-image' ) );
+			echo $before . $fi_hdr . $after;
+
+		} else if ( function_exists('the_custom_header_markup') && (weaverx_get_video_render() != 'has-header-video-none') ) {
+			the_custom_header_markup();			// default WP Header Image markup - works for most everything, works with customimzer
+		}
+		else
+			the_header_image_tag();
+
+		echo("\n</div><!-- #header-image -->\n");
+		return;
+	}
+
+	// 3. As Standard or FI BG replacement (no video supported)
+
+
+	if ( weaverx_getopt_default('header_image_render','header-as-img') != 'header-as-img'	// use as BG image?
+		&& ( !$hdr_html || weaverx_getopt('header_image_html_plus_bg') ) ) { // have bg, or have BOTH HTML and bg image?
+
+
+		if ( !$hdr_bg ) {
+			$hdr_bg = get_header_image();		// get the url of the standard header image
+		}
+
+		$hdr_bg = str_replace(array('http://', 'https://'),'//', $hdr_bg);
+
+		// have to emit background-image url... this will be Plus only.
+		if ( strlen($hdr_bg) > 1 ) {
+			echo '<div class="clear-header-image" style="clear:both"></div></div><!-- #header-image -->';
+
+			$style = "<style type='text/css'>";
+
+			if ($h_hide != 'hide')
+				$style .= "#header{background-image:url({$hdr_bg});}";
+
+			// handle hide on devices
+
+			if (strpos($h_hide, 's-hide') !== false)
+				$style .= '.is-phone #header{background-image:none;}';
+			if (strpos($h_hide, 'm-hide') !== false)
+				$style .= '.is-tablet #header{background-image:none;}';
+			if (strpos($h_hide, 'l-hide') !== false)
+				$style .= '.is-desktop #header{background-image:none;}';
+			echo $style . "</style>\n";
+
+			return;
+		}
+
+	} // end of bg image handling
+
+	// Most common case now - either FI replacement, or standard header image
+	// to here, then want to get an image. Where does it come from?
+
+	if ( weaverx_getopt('link_site_image') ) {
+		?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php
+	}
+
+	if ( weaverx_fi( $page_type, 'header-image' ) ) {			// Use FI as header image
+
+		$alt = esc_attr( get_bloginfo( 'name', 'display' ));
+		echo the_post_thumbnail('full', array('alt' => $alt, 'class' => 'wvrx-header-image' ) );
+
+	} else if ( weaverx_getopt('header_actual_size') ) {
+?>
+		<img src="<?php echo get_header_image() ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" class="wvrx-header-image" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" />
+<?php
+	} else {		// WP custom header image or header video
+		if ( function_exists('the_custom_header_markup') && (weaverx_get_video_render() != 'has-header-video-none') ) {
+			the_custom_header_markup();			// default WP Header Image markup - works for most everything, works with customimzer
+		}
+		else
+			the_header_image_tag();
+	}
+
+	weaverx_e_opt('link_site_image',"</a>");	/* need to close link */
+
+	echo("\n</div><!-- #header-image -->\n");
+
+	// end of header image code
+}
 ?>

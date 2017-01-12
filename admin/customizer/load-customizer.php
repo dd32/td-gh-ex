@@ -86,47 +86,6 @@ function weaverx_customize_preview_js() {
 	WeaverX_Restore_WX_Settings::controls_print_scripts();
 
 
-	/* now in XPlus menu item
-	 $cur_vers = weaverx_wp_version();
-	$msgpost = '';
-
-	if (version_compare($cur_vers, '4.5', '<')) {
-		$msgpost = __('The Site Preview window will refresh <em>much</em> faster after you update to the latest WP version.','weaver-xtreme');
-
-		$content = "<script>jQuery('#customize-info').append('<div style=\"text-align: center;border-bottom: solid 1px #eee;display: block; font-size: 100%;padding: 9px 0;color: white;background: #298cba;\"> {$msgpost}</div>');</script>";
-		echo $content;
-	} else {
-		$level = weaverx_options_level();
-
-		if ($level == 0) {	// not set yet...
-			$content = "<script>jQuery('#customize-info').append('<div style=\"text-align:center;border-bottom: solid 1px #eee;display: block; font-size: 100%;padding: 10px 8px;color:yellow;background:red;\"><strong>Please set the <em style=\"text-decoration:underline;cursor:pointer;\" onclick=\"wvrxSelectOptions(\'weaverx_general_options_level\');\">Options Interface Level</em></div>');</script>";
-		} else {
-			switch ($level) {
-				case WEAVERX_LEVEL_ADVANCED:
-					$msgpost .= '<em style="background-color:black;color:white;padding:3px;">' . __('Advanced','weaver-xtreme') . '</em>';
-					break;
-				case WEAVERX_LEVEL_INTERMEDIATE:
-					$msgpost .= '<em style="background-color:blue;color:white;padding:3px;">' . __('Intermediate', 'weaver-xtreme') . '</em>';
-					break;
-				case WEAVERX_LEVEL_BEGINNER:
-				default:
-					$msgpost .= '<em style="background-color:green;color:white;padding:3px;">' . __('Beginner', 'weaver-xtreme') . '</em>';
-					break;
-
-			}
-
-			//$link .= '<span style="float:right;"><a style="color:white;font-weight:bold;text-decoration:underline;" href="//shop.weavertheme.com" target="_blank" title="' . __('Add over 100 new features to Weaver Xtreme with the Xtreme Plus plugin!', 'weaver-xtreme') . '">' . __('Get Xtreme Plus', 'weaver-xtreme') . '</a></span>';
-
-			$content = "<script>jQuery('#customize-info').append('<div style=\"text-align:center;border-bottom: solid 1px #eee;display: block; font-size: 80%;padding: 2px 4px;color:white;background:#298cba;margin-bottom:-18px;\"><strong><span style=\"cursor:pointer;\" onclick=\"wvrxSelectOptions(\'weaverx_general_options_level\');\">Interface Level: {$msgpost}</span></div>');</script>";
-
-		}
-
-
-		echo $content;
-
-	}
-	*/
-
 	weaverx_check_customizer_memory();
 	weaverx_check_support_plugin_version();
 
@@ -251,7 +210,7 @@ define('CUSTOMIZER_MENU','customizer-menu');
 
 		'images' => __('Images', 'weaver-xtreme'),
 		'background' => __('Background', 'weaver-xtreme'),
-		'header_image' => __('WP Header Image', 'weaver-xtreme'),
+		'header_image' => __('Header Media (Content)', 'weaver-xtreme'),
 		'background_image' => __('WP Background', 'weaver-xtreme'),
 
 		'added_content' => __('Added Content', 'weaver-xtreme'),

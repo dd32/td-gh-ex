@@ -162,6 +162,8 @@ function weaverx_body_classes( $classes ) {
 	if (!is_user_logged_in())
 		$classes[] = 'not-logged-in';
 
+		// Add a class if there is a custom header.
+
 	$classes[] = 'weaverx-theme-body is-menu-desktop is-menu-default';
 
 	if (weaverx_get_per_page_value('_pp_bodyclass') != '')	// add body class per page
@@ -336,7 +338,65 @@ function weaverx_nav_action($where) {
 }
 //--
 
+/**
+ * Customize video play/pause button in the custom header.
+ */
+if (!function_exists('weaverx_video_controls')) :
+function weaverx_video_controls( $settings ) {
 
+	// modify the video parameters
+
+	$settings['l10n']['play'] = '<span class="screen-reader-text">' . __( 'Play background video', 'weaver-xtreme' ) . '</span>'  ;
+	$settings['l10n']['pause'] = '<span class="screen-reader-text">' . __( 'Pause background video', 'weaver-xtreme' ) . '</span>' ;
+
+	$ratio = weaverx_get_per_page_value( '_pp_video_aspect' );
+	if ( !$ratio )
+		$ratio = weaverx_getopt_default('header_video_aspect', '16:9');
+	$ratio = explode( ':', $ratio);
+	$settings['width'] = $ratio[0]; $settings['height'] = $ratio[1];
+
+	$settings['minWidth'] = 800;
+
+	$hdr_bg = weaverx_fi( 'page', 'header-image' );
+
+	if ( $hdr_bg ) {
+		$settings['posterUrl'] = esc_url($hdr_bg);	// supply the FI image url
+	}
+
+	if ( weaverx_get_per_page_value( '_pp_video_url' ) != '' ) {
+			$settings['videoUrl'] = esc_url(weaverx_get_per_page_value( '_pp_video_url' ));	// supply the FI image url
+	}
+
+	return $settings;
+}
+add_filter( 'header_video_settings', 'weaverx_video_controls' );
+endif;
+
+if ( !function_exists('weaverx_is_header_video_active') ) :
+function weaverx_is_header_video_active( $active ) {
+	// allow per page active video
+	$pp = weaverx_get_per_page_value( '_pp_video_active' );	// $pp can be '', 'yes', 'no'
+	if ( !$pp )
+		return $active;
+	else
+		return $pp == 'yes';
+}
+
+add_filter('is_header_video_active', 'weaverx_is_header_video_active');
+endif;
+
+function weaverx_get_video_render() {
+	$render = weaverx_get_per_page_value( '_pp_video_render' );
+	if (!$render)
+		$render = weaverx_getopt_default('header_video_render','has-header-video');
+
+	return $render;
+}
+
+function weaverx_has_header_video() {
+	return function_exists('is_header_video_active') && is_header_video_active()  // This checks for either front page active or per page setting
+		&& (has_header_video() || weaverx_get_per_page_value( '_pp_video_url' ) != '' ) ;
+}
 
 // =============================== >>> FILTER: weaverx_mce_css <<< ================================
 add_filter('mce_css','weaverx_mce_css');
@@ -512,17 +572,19 @@ function weaverx_mce_css($default_style) {
 
 	/* need to handle bg color of content area - need to do the cascade yourself */
 
-	if ( ($val = weaverx_getopt('editor_bgcolor')) && strcasecmp($val,'transparent') != 0) {	        /* alt bg color */
+	if ( ($val = weaverx_getopt_default('editor_bgcolor','transparent')) && strcasecmp($val,'transparent') != 0) {	        /* alt bg color */
 		$put .= '&bg=' . urlencode($val);
-	} else if ( ($val = weaverx_getopt('content_bgcolor')) && strcasecmp($val,'transparent') != 0) {	/* #content */
+	} else if ( ($val = weaverx_getopt_default('content_bgcolor','transparent')) && strcasecmp($val,'transparent') != 0) {	/* #content */
 		$put .= '&bg=' . urlencode($val);
-	} else if ( ($val = weaverx_getopt('container_bgcolor') ) && strcasecmp($val,'transparent') != 0) { /* #container */
+	} else if ( ($val = weaverx_getopt_default('container_bgcolor','transparent') ) && strcasecmp($val,'transparent') != 0) { /* #container */
 		$put .= '&bg=' . urlencode($val);
-	} else if (($val = weaverx_getopt('wrapper_bgcolor')) && strcasecmp($val,'transparent') != 0) {    /* #wrapper */
+	} else if (($val = weaverx_getopt_default('wrapper_bgcolor','transparent')) && strcasecmp($val,'transparent') != 0) {    /* #wrapper */
 		$put .= '&bg=' . urlencode($val);
-	} else if (($name = weaverx_getopt('themename')) && strcasecmp($name,'Transparent Dark') === 0) {
+	} else if (($val = weaverx_getopt_default('body_bgcolor','transparent')) && strcasecmp($val,'transparent') != 0) {    /* Outside BG */
+		$put .= '&bg=' . urlencode($val);
+	} else if (($name = weaverx_getopt('themename')) && strpos($name,'Transparent Dark') !== false) {	// fix in V3.0.5
 		$put .= '&bg=' . urlencode('#222');
-	} else if (($name = weaverx_getopt('themename')) && strcasecmp($name,'Transparent Light') === 0) {
+	} else if (($name = weaverx_getopt('themename')) && strpos($name,'Transparent Light') !== false) {
 		$put .= '&bg=' . urlencode('#ccc');
 	}
 

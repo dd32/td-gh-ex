@@ -65,13 +65,14 @@ function weaverx_setup() {
 	load_theme_textdomain('weaver-xtreme' , get_template_directory() . '/languages' );		// now theme's translations as fallback
 
 	add_editor_style();	// editor-style
-	add_editor_style( WEAVERX_GOOGLE_FONTS_URL );
-
-	//add_editor_style( WEAVERX_GOOGLE_FONTS_URL );	// from settings.php - in %7C format
+	add_editor_style( WEAVERX_GOOGLE_FONTS_URL ); // from settings.php - in %7C format
 
 
 	// Add default posts and comments RSS feed links to <head>.
 	add_theme_support( 'automatic-feed-links' );
+
+	// Add theme support for selective refresh for widgets.
+	add_theme_support( 'customize-selective-refresh-widgets' );
 
 
 	// html5 for search
@@ -105,7 +106,7 @@ function weaverx_setup() {
 		// Enable support for custom logo.
 
 	add_theme_support( 'custom-logo', array(
-		'height'      => 600,
+		'height'      => $height,
 		'width'       => $width,
 		'flex-height' => true,
 	) );
@@ -120,10 +121,12 @@ function weaverx_setup() {
 		'default-text-color' => '',
 		'header-text' => false,
 		'uploads' => true,
+		'video' => true,
 		'wp-head-callback' => '',
 		'admin-head-callback' => 'weaverx_admin_header_style',
 		'admin-preview-callback' => '',
 	);
+
 
 		global $content_width;
 		$content_width = $width;    // let the WP $content_width be the same as theme width, and let our responsive CSS make it work.
@@ -390,24 +393,24 @@ function weaverx_enqueue_scripts() {	// action definition
 		$altsw = '767';
 	$altLabel = weaverx_getopt('mobile_alt_label');
 
+	global $weaverx_cur_page_ID;
+	global $post;
+
+	if (!$weaverx_cur_page_ID && is_object($post))
+		$weaverx_cur_page_ID = get_the_ID();			// this must go before weaverx_get_video_render() call
+
 	$local = array(
 		'useSmartMenus' => $useSM,
 		'menuAltswitch' => $altsw,
 		'mobileAltLabel' => $altLabel,
 		'primaryScroll' => weaverx_getopt('m_primary_fixedtop'),
-		'secondaryScroll' => weaverx_getopt('m_secondary_fixedtop')
+		'secondaryScroll' => weaverx_getopt('m_secondary_fixedtop'),
+		'headerVideoClass' => weaverx_get_video_render()
 	);
 
 	wp_localize_script('weaverxJSLib', 'wvrxOpts', $local );
 
 	wp_enqueue_script('weaverxJSLibEnd', get_template_directory_uri().'/assets/js/weaverxjslib-end'.WEAVERX_MINIFY.'.js',array('jquery'), WEAVERX_VERSION,true);
-
-
-	global $weaverx_cur_page_ID;
-	global $post;
-
-	if (!$weaverx_cur_page_ID && is_object($post))
-		$weaverx_cur_page_ID = get_the_ID();
 
 	weaverx_masonry('enqueue-script');
 }
@@ -524,6 +527,19 @@ function weaverx_render_infinite_scroll() {
 	weaverx_masonry('end-posts');
 	echo ("</div>\n");
 
+}
+
+/**
+ * Increase the maximum image width to be included in a 'srcset' attribute.
+ *
+ * @param int $max_width The maximum image width to be included in the 'srcset'. Default '1600'.
+ * @return int Filtered maximum image width.
+ */
+if (!function_exists('weaverx_increase_max_srcset_image_width')) {
+function weaverx_increase_max_srcset_image_width( $max_width ) {
+	return ($max_width <= 1920) ? 1920 : $max_width;
+}
+add_filter( 'max_srcset_image_width', 'weaverx_increase_max_srcset_image_width' );
 }
 
  /*	Support for Woo Commerece

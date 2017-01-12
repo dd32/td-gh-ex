@@ -552,6 +552,10 @@ ul {
 	margin-left:			1.0em;
 }
 
+.widget .wvrx-menu ul {			/* fix the above rule for menus in a widget */
+	margin-left:			0;
+}
+
 .atwk-slide .post ol,
 .atw-post ol,
 ol {
@@ -1180,11 +1184,108 @@ img.fi-aligncenter-pb {
 }
 /* -- WP Core */
 
+/* =Z Index ======================================================================================= */
+
+.widget-area,
+#branding {
+	z-index:		998;
+}
+
+#header-widget-area {			/* needs z-index for bg video header */
+	position:		relative;
+	z-index:		2000;
+}
+
+.wvrx-menu-left,
+.wvrx-menu-right,
+.menu-primary .custom-logo-on-menu {
+	z-index:		30;
+}
+#title-over-image #title-tagline {
+	z-index:			19;
+}
+
+#wvrx-page-width {
+	z-index:		-1;
+}
+
+.wvrx-menu-container.shadow-1,
+.wvrx-menu-container.shadow-2,
+.wvrx-menu-container.shadow-3,
+.wvrx-menu-container.shadow-4,
+.wvrx-menu-container.shadow-rb,
+.wvrx-menu-container.shadow-lb,
+.wvrx-menu-container.shadow-tr,
+.wvrx-menu-container.shadow-tl {    /* make shadows on top for menus */
+	position:			relative;
+	z-index:			11000;
+}
+
+#nav-secondary .wvrx-menu-container.shadow-1,
+#nav-secondary .wvrx-menu-container.shadow-2,
+#nav-secondary .wvrx-menu-container.shadow-3,
+#nav-secondary .wvrx-menu-container.shadow-4,
+#nav-secondary .wvrx-menu-container.shadow-rb,
+#nav-secondary .wvrx-menu-container.shadow-lb,
+#nav-secondary .wvrx-menu-container.shadow-tr,
+#nav-secondary .wvrx-menu-container.shadow-tl {    /* make shadows on top for menus */
+	z-index:			11001;
+}
+
+.edit-link a {
+	z-index:			1950;
+	position:			relative;
+}
+
+
+#header-search .search-field,
+.header-search .search-field,
+.menu-search .search-field {
+	z-index:			1900;
+	position:		relative;
+}
+
+#inject_fixedbottom,
+.wvrx-fixedtop,
+.wvrx-fixonscroll {
+	z-index:		9999 !important;
+}
+
+#inject_fixedtop.wvrx-fixedtop { z-index: 10009 !important; }
+#nav-secondary .wvrx-fixedtop { z-index: 10007 !important; }
+#nav-primary .wvrx-fixedtop { z-index: 10006 !important; }
+#header-widget-area.wvrx-fixedtop { z-index: 10005 !important; }
+
+.menu-primary {
+	z-index:		2000;
+	position:		relative;
+}
+
+.menu-secondary {
+	z-index:		2001;
+	position:		relative;
+}
+
+.menu-extra {
+	z-index:		2002;
+	position:		relative;
+}
+
+.wvrx-menu ul {
+	z-index:		2005;
+	position:		relative;
+}
+
+#nav-above,
+#nav-below {
+	z-index:			1;
+}
+
 /* =Widgets and Widget Areas ======================================================================================= */
 .widget-area {
 	line-height:	1.275;
 	position:		relative;		/* so fullwidth works */
-	z-index:		998;
+	/* z-index:		998; */
 }
 
 .widget-area,
@@ -1192,7 +1293,6 @@ img.fi-aligncenter-pb {
 	-moz-box-sizing:    border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing:			border-box;
-	overflow:			hidden;
 	max-width:			100%;
 }
 
@@ -1346,7 +1446,6 @@ ul.wvrx-menu {
 	display:		none;
 	top:			100%;
 	left:			0;
-	z-index:		2001;
 	text-align:		left;
 }
 
@@ -1390,7 +1489,7 @@ ul.wvrx-menu {
 	margin-left:	1em;
 	margin-right:	.5em;
 	position:		relative;
-	z-index:		30;
+	/* z-index:		30; */
 }
 
 .wvrx-menu-right {
@@ -1398,7 +1497,7 @@ ul.wvrx-menu {
 	margin-right:	1em;
 	margin-left:	.5em;
 	position:		relative;
-	z-index:		30;
+	/* z-index:		30; */
 }
 
 /* logo on menu a lot like the menu-html */
@@ -1409,7 +1508,7 @@ ul.wvrx-menu {
 	margin:			0 .5em 0 .5em;
 	padding:		0;
 	position:		relative;
-	z-index:		30;
+	/* z-index:		30; */
 }
 
 .menu-primary .custom-logo-on-menu img {
@@ -2180,6 +2279,93 @@ li.mega-normal ul.mega-menu li a:hover {
 
 /* =Header (img under =Image section)
 ----------------------------------------------- */
+/* video header image */
+.has-header-video .header-image .wp-custom-header {
+	position: relative;
+	height: 0;
+	padding-bottom: 56.25%; /* Video Ratio height / width - 16:9 = 56.25%  Set in generatecss */
+}
+
+
+.has-header-video .header-image .wp-custom-header video,
+.has-header-video .header-image .wp-custom-header iframe {
+	position: 	absolute;
+    top:		0;
+    left: 		0;
+    width: 		100%;
+    height: 	100%;
+}
+
+.has-header-video .header-image .wp-custom-header video,
+.has-header-video .header-image .wp-custom-header iframe {
+	position: 	absolute;
+    top:		0;
+    left: 		0;
+    width: 		100%;
+    height: 	100%;
+}
+
+.has-header-video-cover #container,
+.has-header-video-cover #colophon,
+.has-header-video-cover #header {
+	position:	relative;
+	z-index:	0;
+}
+
+.has-header-video-cover .header-image video,
+.has-header-video-cover .header-image iframe {
+	position:		relative;
+	z-index: -1;
+}
+
+.has-header-video-cover .header-image {
+	display: table;
+	height: 300px;
+	height: 75vh;
+	width: 100%;
+}
+
+.has-header-video-cover .header-image video,
+.has-header-video-cover .header-image iframe {
+	position: fixed;
+	height: auto;
+	left: 50%;
+	max-width: 100%;
+	min-height: 100%;
+	min-width: 100%;
+	min-width: 100vw; /* vw prevents 1px gap on left that 100% has */
+	width: auto;
+	top: 50%;
+	padding-bottom: 1px; /* Prevent header from extending beyond the footer */
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-moz-transform: translateX(-50%) translateY(-50%);
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+	/* z-index: -1; */
+}
+
+
+/* For browsers that support 'object-fit' */
+@supports ( object-fit: cover ) {
+	.has-header-video-cover .header-image video,
+	.has-header-video-cover .header-image iframe {
+		height: 100%;
+		left: 0;
+		-o-object-fit: cover;
+		object-fit: cover;
+		top: 0;
+		-ms-transform: none;
+		-moz-transform: none;
+		-webkit-transform: none;
+		transform: none;
+		width: 100%;
+	}
+}
+
+
+.wp-custom-header .wp-custom-header-video-button { /* Play/Pause button */
+	display: none;
+}
 
 
 
@@ -2229,17 +2415,18 @@ li.mega-normal ul.mega-menu li a:hover {
 
 #branding {
 	position:			relative;
-	z-index:			998;
+	/* z-index:			998; */
 }
 
-#title-over-image #title-tagline
-{
+#title-over-image #title-tagline {
 	position:			absolute;
 	top:				0;
 	left:				0;
 	width:				100%;
-	z-index:			19;
+	/* z-index:			19; */
 }
+
+
 /* /=Header */
 
 /* =Comments ======================================================================================= */
@@ -2557,7 +2744,7 @@ ol.trackbacklist {
 	direction:		ltr;
 	display:		block;
 	position:		absolute;
-	z-index:		-1;
+	/* z-index:		-1; */
 }
 
 .content-box {
@@ -2612,29 +2799,6 @@ ol.trackbacklist {
 	-webkit-box-shadow: -2px -2px 4px 3px rgba(0,0,0,0.25);
 	-moz-box-shadow:    -2px -2px 4px 3px rgba(0,0,0,0.25);
 	box-shadow:			-2px -2px 4px 3px rgba(0,0,0,0.25);
-}
-
-.wvrx-menu-container.shadow-1,
-.wvrx-menu-container.shadow-2,
-.wvrx-menu-container.shadow-3,
-.wvrx-menu-container.shadow-4,
-.wvrx-menu-container.shadow-rb,
-.wvrx-menu-container.shadow-lb,
-.wvrx-menu-container.shadow-tr,
-.wvrx-menu-container.shadow-tl {    /* make shadows on top for menus */
-	position:			relative;
-	z-index:			11000;
-}
-
-#nav-secondary .wvrx-menu-container.shadow-1,
-#nav-secondary .wvrx-menu-container.shadow-2,
-#nav-secondary .wvrx-menu-container.shadow-3,
-#nav-secondary .wvrx-menu-container.shadow-4,
-#nav-secondary .wvrx-menu-container.shadow-rb,
-#nav-secondary .wvrx-menu-container.shadow-lb,
-#nav-secondary .wvrx-menu-container.shadow-tr,
-#nav-secondary .wvrx-menu-container.shadow-tl {    /* make shadows on top for menus */
-	z-index:			11001;
 }
 
 
@@ -2721,7 +2885,7 @@ ol.trackbacklist {
 	text-decoration:		none;
 	padding:				0 5px;
 	margin-left:			8px;
-	z-index:				11000;
+	/* z-index:				11000; */
 }
 
 .edit-link a:before {
@@ -2785,7 +2949,7 @@ ol.trackbacklist {
 	padding:			0 0 0 32px;
 	position:			relative;
 	width:				0;
-	z-index:			21;
+	/* z-index:			1900; */
 }
 
 #header-search .search-form,
@@ -3103,23 +3267,8 @@ ins {
 	max-width:		1100px;
 	position:		fixed !important;
 	width:			100%;
-	z-index:		9999 !important;
+	/* z-index:		9999 !important; */
 }
-
-#inject_fixedtop.wvrx-fixedtop { z-index: 10009 !important; }
-#nav-secondary .wvrx-fixedtop { z-index: 10007 !important; }
-#nav-primary .wvrx-fixedtop { z-index: 10006 !important; }
-#header-widget-area.wvrx-fixedtop { z-index: 10005 !important; }
-
-.menu-primary,
-.menu-extra {
-	z-index:		2000;
-}
-.menu-secondary {
-	z-index:		2001;
-	position:		relative;
-}
-
 
 #inject_fixedtop,
 .wvrx-fixedtop,
@@ -3472,7 +3621,7 @@ a.more-link {
 
 #nav-above {
 	padding:			0 0 0.5em;
-	z-index:			1;
+	/* z-index:			1; */
 }
 
 #nav-above {
@@ -3482,7 +3631,7 @@ a.more-link {
 #nav-below {
 	margin:				0;
 	padding:			0;
-	z-index:			1;
+	/* z-index:			1; */
 }
 
 #nav-above, #nav-below {
@@ -4616,12 +4765,12 @@ page-break-inside:  avoid;
     border-top-left-radius:6px;
     border-top-right-radius:6px;
 	position:relative;
-	z-index:1;
+	z-index:		1;
 }
 
 .wvr-tabs-style .wvr-tabs-nav span.wvr-tabs-current {
 	position:relative;
-	z-index:3;
+	z-index:		3;
 }
 
 .wvr-tabs-style .wvr-tabs-nav span.wvr-tabs-current,

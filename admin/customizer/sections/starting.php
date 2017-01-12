@@ -115,16 +115,15 @@ offers many additional subthemes to choose from.', 'weaver-xtreme'),
 					'control_type' => 'WeaverX_Misc_Control',
 					'label'   => __( 'Get Help', 'weaver-xtreme' ),
 					'description'   => sprintf(__(
-'<h3>Support Forum</h3><p>Please see our active %s <strong>Support Forum</strong></a> for online help.</p>
-<h3>Theme Documentation</h3><p><strong>%s</strong><br />Complete documentation for using the Weaver Xtreme Theme.</p>
+'<h3>Support Forum</h3><p>Please see our active %s <strong>Weaver Xtreme Support Forum</strong></a> for online help.</p>
+<h3>Theme Documentation and Guide</h3><p>See the %s</strong> Weaver Xtreme Online Guide</strong></a> for using the Weaver Xtreme Theme.</p>
 <h3>Theme Demo</h3><p>%s<strong>Weaver Xtreme Demo Site</a></strong><br />Live demo of Weaver Xtreme and Weaver Xtreme Plus features.</p>
 <h3>CSS Tutorial</h3><p>Click for a short %s.</p>
 <h3>Supported Fonts</h3><p>Click for demo of %s.</p>
 ', 'weaver-xtreme' ),
-		weaverx_site('','//forum.weavertheme.com/',__('Weaver Support Forum', 'weaver-xtreme'),false),
-		weaverx_help_link('help.html', __('Weaver Xtreme Help', 'weaver-xtreme' /*adm*/), __('Weaver Xtreme Theme Documentation', 'weaver-xtreme' /*adm*/), false),
+		weaverx_site('','//forum.weavertheme.com/',__('Weaver Xtreme Support Forum', 'weaver-xtreme'),false),
+		weaverx_site('','//guide.weavertheme.com/',__('Weaver Xtreme Guide', 'weaver-xtreme'),false),
 		weaverx_site('','//demo.weavertheme.com/',__('Weaver Xtreme Demo Site', 'weaver-xtreme'),false),
-
 		weaverx_help_link('css-help.html', __('Weaver CSS Help', 'weaver-xtreme'), __('CSS Tutorial', 'weaver-xtreme'), false),
 		weaverx_help_link('font-demo.html', __('Examples of supported fonts', 'weaver-xtreme'), __('Font Examples', 'weaver-xtreme'), false)
 		),

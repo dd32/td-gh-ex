@@ -662,7 +662,6 @@ function weaverx_fi( $who, $where ) {
 	// Emit Featured Image depending on settings and who and where called from
 	// $who includes: post, page, post_excerpt,post_ful
 
-//echo "\n<!-- ***************************** weaverx_fi: who: {$who} where: {$where} *************************** -->\n"; // @@@@@@@@@@@@@
 	$hide = weaverx_getopt( $who . '_fi_hide');
 
 	if (  $hide == 'hide' || weaverx_t_get( 'hide_featured_image' ) || ! has_post_thumbnail() ) // hide all or no FI
@@ -771,14 +770,12 @@ background-attachment:fixed;-moz-background-size:cover;-o-background-size:cover;
 
 	if ( $show == $where || ($show == 'post-before' && $where == 'post-pre') || ($show == 'title-banner' && $where == 'title-before') ) {
 
-		if ( $show == 'header-image' ) {			// special case : header replacement area
-
+		if ( $show == 'header-image') {			// special case : header replacement area
 			$image = wp_get_attachment_image_src( get_post_thumbnail_id( ), 'full' );        // (url, width, height)
 			if (!$image)
 				return false;
 			return $image[0];				// let the header code handle the details...
 		}
-
 
 		$size = weaverx_getopt_default( $who . '_fi_size', 'thumbnail' );
 		// weaverx_debug_comment('FI who:' . $who . ' FI size:' . $size);

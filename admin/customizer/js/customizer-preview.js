@@ -170,6 +170,9 @@ var wvrxCustFontMsg = 0;
 	api('weaverx_settings[inject_container_top_bgcolor]', function(value) {
 		value.bind(function(to) { $('#inject_container_top').css('background-color', weaverxFixTo(to)); });
 	});
+	api('weaverx_settings[inject_postinfobar_bgcolor]', function(value) {
+		value.bind(function(to) { $('#inject_postinfobar').css('background-color', weaverxFixTo(to)); });
+	});
 	api('weaverx_settings[inject_precontent_bgcolor]', function(value) {
 		value.bind(function(to) { $('#inject_precontent').css('background-color', weaverxFixTo(to)); });
 	});
@@ -2758,6 +2761,9 @@ var wvrxCustFontMsg = 0;
 	api('weaverx_settings[postheader_insert]', function(value) {
 		value.bind(function(to) { weaverxSetHTMLContent("#inject_postheader", to); });
 	});
+	api('weaverx_settings[postinfobar_insert]', function(value) {
+		value.bind(function(to) { weaverxSetHTMLContent("#inject_postinfobar", to); });
+	});
 	api('weaverx_settings[precontent_insert]', function(value) {
 		value.bind(function(to) { weaverxSetHTMLContent("#inject_precontent", to); });
 	});
@@ -3114,6 +3120,10 @@ var wvrxCustFontMsg = 0;
 
 	api('weaverx_settings[inject_container_top_bgcolor_css]', function(value) {
 		value.bind(function(to) { weaverxStyle('#inject_container_top', to, "content_bgcolor_css"); });
+	});
+
+	api('weaverx_settings[inject_postinfobar_bgcolor_css]', function(value) {
+		value.bind(function(to) { weaverxStyle('#inject_postinfobar', to, "content_bgcolor_css"); });
 	});
 
 	api('weaverx_settings[inject_precontent_bgcolor_css]', function(value) {

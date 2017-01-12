@@ -11,13 +11,17 @@ function weaverx_customizer_define_image_sections( $sections ) {
 	$image_sections = array();
 
 
-	$wp_customize->get_section('header_image')->priority   		= 20000;
-	$wp_customize->get_section('header_image')->title    		= __('Header Banner Images (WP Settings)', 'weaver-xtreme');
+	$wp_customize->get_section('header_image')->priority   		= 10515;
+	$wp_customize->get_section('header_image')->title    		= __('Header Media (Content)', 'weaver-xtreme');
 	$wp_customize->get_section('header_image')->panel   		= $panel;
 
-	$wp_customize->get_section('background_image')->priority   	= 20100;
+	$wp_customize->get_section('background_image')->priority   	= 10590;
 	$wp_customize->get_section('background_image')->title    	= __('Site BG Image (WP Settings)', 'weaver-xtreme');
 	$wp_customize->get_section('background_image')->panel   	= $panel;
+
+
+	//$wp_customize->get_setting( 'header_image' )->transport = 'refresh';
+	//$wp_customize->get_setting( 'header_image_data' )->transport = 'refresh';
 	/**
 	 * General
 	 */
@@ -101,10 +105,13 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 
 	$image_sections['images-header'] = array(
 		'panel'   => $panel,
-		'title'   => __( 'Header Area', 'weaver-xtreme' ),
+		'title'   => __( 'Header Media (Layout)', 'weaver-xtreme' ),
 		'options' => array(
-		'images-heading-header' => weaverx_cz_group_title( __( 'Site Header Image', 'weaver-xtreme' ),
-				__('You can set the header image on the <em>Header Banner Images (WP Settings)</em> menu, one level up from here, on the <em>Images</em> sub-menu.', 'weaver-xtreme') ),
+		'images-heading-header' => weaverx_cz_group_title( __( 'Site Header Media', 'weaver-xtreme' ),
+				__('You can set the header image or video on the <em>Images : Header Media (Content)</em> menu, one level up from here. The Site Logo is set on the <em>General Options & Admin : Site Identity</em> menu.', 'weaver-xtreme') ),
+
+		'images-header-image-title' => weaverx_cz_group_title( __( 'Header Image', 'weaver-xtreme' ),
+				__('Settings for Site Header Image. <em style="color:red;">These Image settings DO NOT apply to the Header Video.</em>', 'weaver-xtreme')),
 
 		'header_image_max_width_dec'     => array(
 				'setting' => array(	'sanitize_callback' => 'weaverx_cz_sanitize_int', 'transport' => 'postMessage', 'default' => 100.0	),
@@ -127,7 +134,7 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 		'header_image_align' => weaverx_cz_select_plus(
 				__( 'Align Header Image', 'weaver-xtreme' ),
 				__( 'How to align header image - meaningful only when Max Width or Actual Size set.', 'weaver-xtreme' ),
-				'weaverx_cz_choices_align',	'float-left', 'postMessage'
+				'weaverx_cz_choices_align',	'float-left', 'refresh'
 			),
 
 
@@ -143,8 +150,8 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 					'type'  => 'range',
 					'input_attrs' => array(
 						'min'  => 10,
-						'max'  => 600,
-						'step' => 1,
+						'max'  => 2400,
+						'step' => 5,
 					),
 				),
 			),
@@ -172,10 +179,25 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 			: weaverx_cz_checkbox( __( 'Also show BG Header Image', 'weaver-xtreme' ),
 			__( 'If you have Image HTML Replacement defined - including Per Page/Post - and also have have set the standard Header Image to display as a BG image, then show <em>both</em> the BG image and the replacement HTML.', 'weaver-xtreme' ), 'plus','refresh'),
 
+
+		'images-heading-header-video' => weaverx_cz_group_title( __( 'Header Video', 'weaver-xtreme' ),
+				__('You can set the Header Video on the <em>Customize : Images : Header Media</em> menu.', 'weaver-xtreme')),
+
+		'header_video_render' =>  weaverx_cz_select(
+				__( 'Header Video Rendering', 'weaver-xtreme' ),
+				__('How to render Header Video: as image substitute in header or as full browser background cover image will parallax effect. <em style="color:red;">Note that the Header Image options above do not apply to the Header Video media.</em>', 'weaver-xtreme' /*adm*/),
+				'weaverx_cz_choices_render_header_video',	'has-header-video', 'refresh'
+			),
+
+		'header_video_aspect' =>  weaverx_cz_select(
+				__( 'Header Video Aspect Ratio', 'weaver-xtreme' ),
+				__('<strong style="color:red;">CRITICAL SETTING!</strong> It is critical to select aspect ratio of your video. HD 16:9 is the default. This setting should correspond to the native aspect ratio of your video. YouTube allows you to upload any aspect ratio. Most aspect ratios work will for the full cover BG display, or a Banner ratio may work better for the header only view. Ideally, the matching header image will have the same aspect ratio, but it is not critical. If you see letterboxing black bars, you have the wrong aspect ratio selected.', 'weaver-xtreme' /*adm*/),
+				'weaverx_cz_choices_header_video_aspect',	'16:9', 'refresh'
+			),
+
 		'images-heading-header-logo' => weaverx_cz_group_title( __( 'Site Logo', 'weaver-xtreme' ),
 				__('You can set the Site Logo on the <em>Customize : General Options : Site Identity</em> menu.', 'weaver-xtreme')
 				. $logo_html),
-
 
 		'hide_wp_site_logo' => weaverx_cz_select(
 				__( 'Hide Site Logo', 'weaver-xtreme' ),
@@ -235,7 +257,7 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 				__( 'General image settings found on the <em>Global Image Settings</em> panel.', 'weaver-xtreme' )),
 
 			'images-pgextendbg-heading' => weaverx_cz_heading( __( 'Full Width Featured Image BG', 'weaver-xtreme' ),
-				__( 'Check the <em>Content Full Width BG Attributes</em> option on the <em>Spacing, Width, Alignment -> Full Width Site</em> menu to get full width Featured Image BG.', 'weaver-xtreme' )),
+				__( 'Check the <em>Content Full Width BG Attributes</em> option on the <em>Spacing, Width, Alignment : Full Width Site</em> menu to get full width Featured Image BG.', 'weaver-xtreme' )),
 
 			'images-content-FI' => weaverx_cz_group_title( __( 'Featured Image - Pages', 'weaver-xtreme' ),
 					__( 'Display of Page Featured Images', 'weaver-xtreme' )),
@@ -310,7 +332,7 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 			),
 
 			'images-extendbg-heading' => weaverx_cz_heading( __( 'Full Width Featured Image BG', 'weaver-xtreme' ),
-				__( 'Check the <em>Extend Width BG Attributes for all Posts</em> option on the <em>Spacing, Width, Alignment -> Full Width Site</em> menu to get full width Featured Image BG.', 'weaver-xtreme' )),
+				__( 'Check the <em>Extend Width BG Attributes for all Posts</em> option on the <em>Spacing, Width, Alignment : Full Width Site</em> menu to get full width Featured Image BG.', 'weaver-xtreme' )),
 
 			'images-content-FI-full' => weaverx_cz_group_title( __( 'Featured Image - Full Blog Posts', 'weaver-xtreme' ),
 				__( 'Display of Post Featured Images when Post is displayed as a Full Post.', 'weaver-xtreme' )),

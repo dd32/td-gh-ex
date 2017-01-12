@@ -101,12 +101,18 @@ if (weaverx_getopt( 'm_primary_hide') != 'hide'
 				'<div class="wvrx-menu-clear"></div><ul id="%1$s" class="%2$s">%3$s</ul><div style="clear:both;"></div>'
 	);
 
-	$locations = get_nav_menu_locations();							// note - the default menu is handled in weaverx_page_menu() in filters.php
-	if ( isset( $locations[ $menu ] ) ) {
-		$the_menu = wp_get_nav_menu_object( $locations[ $menu ] );
-		if ( ! empty( $the_menu )) {
-			$args['fallback_cb'] = '';
-			$args['walker'] = new weaverx_Walker_Nav_Menu();
+	$alt_menu = weaverx_get_per_page_value('_pp_alt_primary_menu');
+	if ( $alt_menu != '' ) {
+		$args['theme_location'] = '';
+		$args['menu'] = wp_get_nav_menu_object($alt_menu);
+	} else {
+		$locations = get_nav_menu_locations();							// note - the default menu is handled in weaverx_page_menu() in filters.php
+		if ( isset( $locations[ $menu ] ) ) {
+			$the_menu = wp_get_nav_menu_object( $locations[ $menu ] );
+			if ( ! empty( $the_menu )) {
+				$args['fallback_cb'] = '';
+				$args['walker'] = new weaverx_Walker_Nav_Menu();
+			}
 		}
 	}
 

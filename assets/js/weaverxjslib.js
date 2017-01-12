@@ -550,24 +550,7 @@ http://snippets.webaware.com.au/snippets/make-css-drop-down-menus-work-on-touch-
 
     // *********************************** >>>  wvrx_fixbranding <<< *******************************************
 
-    $.fn.wvrx_fixbranding = function() {
 
-        if ($('#site-title').css('display') == 'none' && $('#site-tagline').css('display') == 'none') // if both hidden, don't bother
-            return;
-
-        var h_title = $('#title-tagline').outerHeight();
-        var h_image = $('#header-image').outerHeight();
-
-        if (document.getElementById('title-over-image') !== null && h_title !== null) {
-            if (h_title > h_image) {
-                // don't need to touch image because it is not absolute
-                // so we will just touch the parent div
-                $('#title-over-image').css('height', h_title + "px");
-            } else {
-                $('#title-over-image').css('height', h_image + "px");
-            }
-        }
-    };
 
 	// Change overflow to visible on widget area with widget that contain an extra menu shortcode
 
@@ -579,7 +562,6 @@ http://snippets.webaware.com.au/snippets/make-css-drop-down-menus-work-on-touch-
 	}
 
 })(window.jQuery);
-
 
 
 // *********************************** >>>  weaverxOnResize <<< *******************************************
@@ -667,4 +649,11 @@ jQuery(function($) {
             toggleButtonID: 'secondary-toggle-button'
         });
     }
+
+
 });
+
+// Add header video class after the video is loaded.
+	jQuery( document ).on( 'wp-custom-header-video-loaded', function() {
+		jQuery('body').addClass( wvrxOpts.headerVideoClass );
+	});

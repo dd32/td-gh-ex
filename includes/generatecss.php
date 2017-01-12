@@ -145,7 +145,7 @@ function weaverx_output_style( $sout ) {
 		if ( weaverx_getopt("{$id}_sub_rounded") ) {
 			weaverx_f_write($sout, '@media (min-width:768px) { ' );
 			// 3 kinds of rounding: whole box + hover, top sub-item, bottom sub-item
-			$round_sub = str_replace('8', $r, "{-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px;z-index:90;");
+			$round_sub = str_replace('8', $r, "{-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px;z-index:2001;");
 			$menu = "{$tag} ul.sub-menu, {$tag} ul.children";
 			$mega = "{$tag} ul.mega-menu li";
 
@@ -284,7 +284,16 @@ function weaverx_output_style( $sout ) {
 	if ( weaverx_getopt_default( 'footer_html_center_content' ))
 		weaverx_f_write($sout, "#footer-html {text-align:center;}\n");
 
+	$ratio = weaverx_getopt_default('header_video_aspect', '16:9');
 
+	 if ( $ratio != '16:9') {
+		$ratio = explode(':',$ratio);
+		if ($ratio[0])
+			$r_pc = ($ratio[1] / $ratio[0]) * 100.0;
+		else
+			$r_pc = 56.25;
+		weaverx_f_write($sout, sprintf(".has-header-video .header-image .wp-custom-header{padding-bottom:%.5f%%;}\n",$r_pc));
+	 }
 
 
 // =========================== MENU OPTIONS ===============================
@@ -1265,7 +1274,7 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 
 	// injection area bg colors
 
-	$htmls = array ('preheader', 'header', 'prewrapper', 'container_top',
+	$htmls = array ('preheader', 'header', 'prewrapper', 'container_top', 'postinfobar',
 					'precontent', 'postpostcontent', 'precomments', 'pagecontentbottom',
 					'postcomments', 'prefooter', 'postfooter', 'presidebar',
 					'fixedtop', 'fixedbottom', 'postheader'
@@ -1307,10 +1316,10 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 
 	//limited header calculations
 	//These are only for when browser is wider than sitewidth. Below that, they are left:0 positionned with existing rules
-	$align = weaverx_getopt('header_align');
-	$width = weaverx_getopt('header_width_int');
-	$max_width = weaverx_getopt('header_max_width_int');
-	$reduct = $themew - ($width / 100) * ($themew - $wrpadl - $wrpadr) . 'px' ;  // This is the width reduction when browser is larger than sitewidth
+	$align = weaverx_getopt_default('header_align','left');
+	$width = weaverx_getopt_default('header_width_int',100);
+	$max_width = weaverx_getopt_default('header_max_width_int',0);
+	$reduct = ($themew - ($width / 100) * ($themew - $wrpadl - $wrpadr)) . 'px' ;  // This is the width reduction when browser is larger than sitewidth
 
 	//!! We cant support both a width% and max-width at the same time, it would be way too complicated.
 	// Depending which one of if($width) or if($max_width) is last below, it will be the winning one (revert order between if($width) and if($max_width))
