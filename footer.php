@@ -23,8 +23,8 @@
 
 						<p>
 						 <?php ayaspirit_show_copyright_text(); ?> <a href="<?php echo esc_url( 'https://ayatemplates.com/product/ayaspirit' ); ?>" title="<?php esc_attr_e( 'ayaspirit Theme', 'ayaspirit' ); ?>">
-							<?php _e('AyaSpirit Theme', 'ayaspirit'); ?></a> <?php esc_attr_e( 'powered by', 'ayaspirit' ); ?> <a href="<?php echo esc_url( 'http://wordpress.org/' ); ?>" title="<?php esc_attr_e( 'WordPress', 'ayaspirit' ); ?>">
-							<?php _e('WordPress', 'ayaspirit'); ?></a>
+							<?php esc_html_e('AyaSpirit Theme', 'ayaspirit'); ?></a> <?php esc_attr_e( 'powered by', 'ayaspirit' ); ?> <a href="<?php echo esc_url( 'http://wordpress.org/' ); ?>" title="<?php esc_attr_e( 'WordPress', 'ayaspirit' ); ?>">
+							<?php esc_html_e('WordPress', 'ayaspirit'); ?></a>
 						</p>
 						
 					</div><!-- #copyright -->

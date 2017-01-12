@@ -21,7 +21,7 @@
 
 			endif;
 			
-			the_content( __( 'Read More...', 'ayaspirit') );
+			the_content( esc_html__( 'Read More...', 'ayaspirit') );
 		?>
 	</div><!-- .page-content -->
 
@@ -32,12 +32,12 @@
 			<?php if ('open' == $post->comment_status) : ?>
 
 				<span class="comments-icon">
-					<?php comments_popup_link(__( 'No Comments', 'ayaspirit' ), __( '1 Comment', 'ayaspirit' ), __( '% Comments', 'ayaspirit' ), '', __( 'Comments are closed.', 'ayaspirit' )); ?>
+					<?php comments_popup_link( esc_html__( 'No Comments', 'ayaspirit' ), esc_html__( '1 Comment', 'ayaspirit' ), esc_html__( '% Comments', 'ayaspirit' ), '', esc_html__( 'Comments are closed.', 'ayaspirit' )); ?>
 				</span>
 
 			<?php endif; ?>
 
-			<?php edit_post_link( __( 'Edit', 'ayaspirit' ), '<span class="edit-icon">', '</span>' ); ?>
+			<?php edit_post_link( esc_html__( 'Edit', 'ayaspirit' ), '<span class="edit-icon">', '</span>' ); ?>
 		<?php endif; ?>
 
 	</div><!-- .page-after-content -->

@@ -64,7 +64,7 @@ function ayaspirit_setup() {
 
 	// This theme uses wp_nav_menu() in header menu
 	register_nav_menus( array(
-		'primary'   => __( 'Primary Menu', 'ayaspirit' ),
+		'primary'   => esc_html__( 'Primary Menu', 'ayaspirit' ),
 	) );
 
 	/*
@@ -141,7 +141,7 @@ function ayaspirit_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'ayaspirit_slider_section',
 		array(
-			'title'       => __( 'Slider', 'ayaspirit' ),
+			'title'       => esc_html__( 'Slider', 'ayaspirit' ),
 			'capability'  => 'edit_theme_options',
 		)
 	);
@@ -157,7 +157,7 @@ function ayaspirit_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ayaspirit_slider_display',
 							array(
-								'label'          => __( 'Display Slider', 'ayaspirit' ),
+								'label'          => esc_html__( 'Display Slider', 'ayaspirit' ),
 								'section'        => 'ayaspirit_slider_section',
 								'settings'       => 'ayaspirit_slider_display',
 								'type'           => 'checkbox',
@@ -171,7 +171,7 @@ function ayaspirit_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'ayaspirit_footer_section',
 		array(
-			'title'       => __( 'Footer', 'ayaspirit' ),
+			'title'       => esc_html__( 'Footer', 'ayaspirit' ),
 			'capability'  => 'edit_theme_options',
 		)
 	);
@@ -187,7 +187,7 @@ function ayaspirit_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ayaspirit_footer_copyright',
         array(
-            'label'          => __( 'Copyright Text', 'ayaspirit' ),
+            'label'          => esc_html__( 'Copyright Text', 'ayaspirit' ),
             'section'        => 'ayaspirit_footer_section',
             'settings'       => 'ayaspirit_footer_copyright',
             'type'           => 'text',
@@ -303,9 +303,9 @@ function ayaspirit_widgets_init() {
 	
 	// Register Sidebar Widget.
 	register_sidebar( array (
-						'name'	 		 =>	 __( 'Sidebar Widget Area', 'ayaspirit'),
+						'name'	 		 =>	 esc_html__( 'Sidebar Widget Area', 'ayaspirit'),
 						'id'		 	 =>	 'sidebar-widget-area',
-						'description'	 =>  __( 'The sidebar widget area', 'ayaspirit'),
+						'description'	 =>  esc_html__( 'The sidebar widget area', 'ayaspirit'),
 						'before_widget'	 =>  '',
 						'after_widget'	 =>  '',
 						'before_title'	 =>  '<div class="sidebar-before-title"></div><h3 class="sidebar-title">',

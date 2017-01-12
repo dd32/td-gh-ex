@@ -17,11 +17,11 @@
 
 	<div id="main-content">
 
-		<h1><?php _e( 'Oops! That page can&rsquo;t be found.', 'ayaspirit' ); ?></h1>
+		<h1><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'ayaspirit' ); ?></h1>
 
 		<div class="content">
 			<p>
-				<?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'ayaspirit' ); ?>
+				<?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'ayaspirit' ); ?>
 			</p>
 
 			<?php get_search_form(); ?>
