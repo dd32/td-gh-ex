@@ -23,7 +23,7 @@ function aza_customize_register($wp_customize) {
 if ( !function_exists( 'the_custom_logo' ) ) {
 
     $wp_customize->add_setting('aza_logo', array(
-        'sanitize_callback' => 'aza_sanitize_url'
+        'sanitize_callback' => 'esc_url_raw'
     ));
 
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'aza_logo', array(
@@ -201,7 +201,7 @@ if ( !function_exists( 'the_custom_logo' ) ) {
     =============================================================================*/
     $wp_customize->add_setting('aza_appstore_link', array(
         'default'           => esc_url('#'),
-        'sanitize_callback' => 'aza_sanitize_url'
+        'sanitize_callback' => 'esc_url_raw'
     ));
     $wp_customize->add_control('aza_appstore_link', array(
         'label'       => __('Store links', 'aza-lite'),
@@ -212,7 +212,7 @@ if ( !function_exists( 'the_custom_logo' ) ) {
 
     $wp_customize->add_setting('aza_playstore_link', array(
         'default'           => esc_url('#'),
-        'sanitize_callback' => 'aza_sanitize_url'
+        'sanitize_callback' => 'esc_url_raw'
     ));
     $wp_customize->add_control('aza_playstore_link', array(
         'section'     => 'aza_appearance_cover',
@@ -238,7 +238,7 @@ if ( !function_exists( 'the_custom_logo' ) ) {
 
     $wp_customize->add_setting('aza_button_link_1', array(
 	    'default'           => esc_url('#'),
-	    'sanitize_callback' => 'aza_sanitize_url'
+	    'sanitize_callback' => 'esc_url_raw'
     ));
     $wp_customize->add_control('aza_button_link_1', array(
         'section'     => 'aza_appearance_cover',
@@ -286,7 +286,7 @@ if ( !function_exists( 'the_custom_logo' ) ) {
 
     $wp_customize->add_setting('aza_button_link_2', array(
 	    'default'           => esc_url('#'),
-	    'sanitize_callback' => 'aza_sanitize_url'
+	    'sanitize_callback' => 'esc_url_raw'
     ));
     $wp_customize->add_control('aza_button_link_2', array(
         'section'     => 'aza_appearance_cover',
@@ -353,7 +353,7 @@ if ( !function_exists( 'the_custom_logo' ) ) {
 
     $wp_customize->add_setting('aza_parallax_image', array(
         'default'           => get_template_directory_uri() . '/images/parallax-image.png',
-        'sanitize_callback' => 'aza_sanitize_url'
+        'sanitize_callback' => 'esc_url_raw'
     ));
 
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'aza_parallax_image', array(
@@ -380,7 +380,7 @@ if ( !function_exists( 'the_custom_logo' ) ) {
 
     $wp_customize->add_setting('aza_parallax_background', array(
         'default'           => esc_url( get_template_directory_uri() . '/images/parallax-background.jpg' ),
-        'sanitize_callback' => 'aza_sanitize_url'
+        'sanitize_callback' => 'esc_url_raw'
     ));
 
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'aza_parallax_background', array(
@@ -392,7 +392,7 @@ if ( !function_exists( 'the_custom_logo' ) ) {
 
     $wp_customize->add_setting('aza_parallax_layer_1', array(
         'default'           => esc_url( get_template_directory_uri() . '/images/parallax-layer1.png' ),
-        'sanitize_callback' => 'aza_sanitize_url'
+        'sanitize_callback' => 'esc_url_raw'
     ));
 
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'aza_parallax_layer_1', array(
@@ -403,7 +403,7 @@ if ( !function_exists( 'the_custom_logo' ) ) {
 
     $wp_customize->add_setting('aza_parallax_layer_2', array(
         'default'           => esc_url( get_template_directory_uri() . '/images/parallax-layer2.png' ),
-        'sanitize_callback' => 'aza_sanitize_url'
+        'sanitize_callback' => 'esc_url_raw'
     ));
 
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'aza_parallax_layer_2', array(
@@ -502,7 +502,7 @@ if ( !function_exists( 'the_custom_logo' ) ) {
 
     $wp_customize->add_setting('aza_ribbon_button_link', array(
         'default'           => esc_url('#'),
-        'sanitize_callback' => 'aza_sanitize_url'
+        'sanitize_callback' => 'esc_url_raw'
     ));
 
     $wp_customize->add_control('aza_ribbon_button_link', array(
@@ -914,17 +914,6 @@ function aza_sanitize_select( $input, $setting ) {
 	$input = sanitize_key( $input );
 	$choices = $setting->manager->get_control( $setting->id )->choices;
 	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
-}
-
-/**
- * Sanitize url
- *
- * @param $url
- *
- * @return mixed
- */
-function aza_sanitize_url( $url ) {
-	return esc_url_raw( $url );
 }
 
 /**

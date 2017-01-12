@@ -16,7 +16,7 @@ $separator_top = get_theme_mod('aza_separator_contact_top', '1');
                 <div class="col-lg-12 col-centered text-center">
                     <?php
                     if(!empty($heading)) {
-                        echo '<h2>'.$heading.'</h2>';
+                        echo '<h2>'. esc_html( $heading ).'</h2>';
                     }
 
                     if ($separator_top) {
@@ -24,7 +24,7 @@ $separator_top = get_theme_mod('aza_separator_contact_top', '1');
                     }
 
                     if(!empty($subheading)) {
-                        echo '<p class = "team-p">'.$subheading.'</p>';
+                        echo '<p class = "team-p">'.esc_html( $subheading ).'</p>';
                     }?>
                 </div>
             </div>

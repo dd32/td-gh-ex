@@ -8,7 +8,7 @@
  */
 
 ?>
-<article itemscope itemprop="blogPosts" itemtype="http://schema.org/BlogPosting" itemtype="http://schema.org/BlogPosting" <?php post_class('border-top-hover'); ?> title="<?php esc_html( printf( esc_html__( 'Blog post: %s', 'aza-lite' ), get_the_title() ) )?>">
+<article itemscope itemprop="blogPosts" itemtype="http://schema.org/BlogPosting" itemtype="http://schema.org/BlogPosting" <?php post_class('border-top-hover'); ?> title="<?php printf( esc_html__( 'Blog post: %s', 'aza-lite' ), get_the_title() )?>">
 	<header class="entry-header">
 
 		<?php the_title( sprintf( '<h1 class="entry-title" itemprop="headline"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
