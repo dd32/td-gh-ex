@@ -703,7 +703,7 @@ add_action( 'catcheverest_before_main', 'catcheverest_homepage_headline', 10 );
  * @uses catcheverest_before_main action to add it in the header
  */
 function catcheverest_default_featured_content() {
-	delete_transient( 'catcheverest_default_featured_content' );
+	//delete_transient( 'catcheverest_default_featured_content' );
 
 	// Getting data from Theme Options
 	global $catcheverest_options_settings;
@@ -784,7 +784,7 @@ if ( ! function_exists( 'catcheverest_homepage_featured_content' ) ) :
  * @uses catcheverest_before_main action to add it in the header
  */
 function catcheverest_homepage_featured_content() {
-	delete_transient( 'catcheverest_homepage_featured_content' );
+	//delete_transient( 'catcheverest_homepage_featured_content' );
 
 	// Getting data from Theme Options
 	global $catcheverest_options_settings;

@@ -1,5 +1,9 @@
 == Change Log ==
 
+Version 3.0.1
+* Bug Fixed: Background color issue in WordPress 4.7 
+* Updated: Screenshot size to 1200x900, to account for HiDPI display
+
 Version 3.0
 * Replaced assistive-text to screen-reader-text
 * Reformatted HTML structure to have only one H1

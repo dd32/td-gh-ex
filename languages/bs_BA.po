@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Everest\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2016-12-12 15:01-0500\n"
-"PO-Revision-Date: 2016-12-12 15:01-0500\n"
+"POT-Creation-Date: 2017-01-13 14:12+0545\n"
+"PO-Revision-Date: 2017-01-13 14:12+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes Team <info@catchthemes.com>\n"
 "Language: bs\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
 "X-Textdomain-Support: yes\n"
-"X-Generator: Poedit 1.7.1\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:18
@@ -38,7 +38,6 @@ msgstr ""
 msgid "Most Used Categories"
 msgstr "Najkorištenije kategorije"
 
-#. translators: %1$s: smilie
 #: ../404.php:37
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
@@ -196,7 +195,7 @@ msgstr "O %s"
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Pregledaj sve članke od %s <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../functions.php:125 ../inc/catcheverest-functions.php:436
+#: ../functions.php:122 ../inc/catcheverest-functions.php:436
 msgid "Primary Menu"
 msgstr "Primary Menu"
 
@@ -624,13 +623,11 @@ msgstr "Opcije teme"
 msgid "Basic theme Options"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:38
-#: ../inc/panel/theme-options.php:135
+#: ../inc/panel/customizer/customizer.php:38 ../inc/panel/theme-options.php:135
 msgid "Responsive Design"
 msgstr "Responsive Design"
 
-#: ../inc/panel/customizer/customizer.php:43
-#: ../inc/panel/theme-options.php:169
+#: ../inc/panel/customizer/customizer.php:43 ../inc/panel/theme-options.php:169
 msgid "Favicon"
 msgstr "Favicon"
 
@@ -644,28 +641,23 @@ msgid ""
 "144px height, which will support High Resolution Devices like iPad Retina"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:53
-#: ../inc/panel/theme-options.php:251
+#: ../inc/panel/customizer/customizer.php:53 ../inc/panel/theme-options.php:251
 msgid "Header Right Section"
 msgstr "Header Right Section"
 
-#: ../inc/panel/customizer/customizer.php:58
-#: ../inc/panel/theme-options.php:274
+#: ../inc/panel/customizer/customizer.php:58 ../inc/panel/theme-options.php:274
 msgid "Search Text Settings"
 msgstr "Search Text Settings"
 
-#: ../inc/panel/customizer/customizer.php:63
-#: ../inc/panel/theme-options.php:290
+#: ../inc/panel/customizer/customizer.php:63 ../inc/panel/theme-options.php:290
 msgid "Excerpt / More Tag Settings"
 msgstr "Excerpt / More Tag Settings"
 
-#: ../inc/panel/customizer/customizer.php:68
-#: ../inc/panel/theme-options.php:310
+#: ../inc/panel/customizer/customizer.php:68 ../inc/panel/theme-options.php:310
 msgid "Feed Redirect"
 msgstr "Feed Redirect"
 
-#: ../inc/panel/customizer/customizer.php:73
-#: ../inc/panel/theme-options.php:326
+#: ../inc/panel/customizer/customizer.php:73 ../inc/panel/theme-options.php:326
 msgid "Layout Options"
 msgstr "Layout Options"
 
@@ -685,8 +677,7 @@ msgstr ""
 msgid "Homepage/Frontpage Settings"
 msgstr ""
 
-#: ../inc/panel/customizer/customizer.php:98
-#: ../inc/panel/theme-options.php:385
+#: ../inc/panel/customizer/customizer.php:98 ../inc/panel/theme-options.php:385
 msgid "Custom CSS"
 msgstr "Custom CSS"
 
@@ -1474,7 +1465,6 @@ msgstr "(Uredi)"
 msgid "Post author"
 msgstr "Autor"
 
-#. translators: 1: date, 2: time
 #: ../inc/template-tags.php:184
 #, php-format
 msgid "%1$s at %2$s"
