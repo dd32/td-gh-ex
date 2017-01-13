@@ -831,16 +831,21 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 ###################################################################################
 # BLOG
 ###################################################################################
-	Kirki::add_section( 'agama_blog_section', array(
+	Kirki::add_panel( 'agama_blog_panel', array(
 		'title'			=> __( 'Blog', 'agama' ),
-		'description'	=> __( 'Blog settings section.', 'agama' ),
+		'description'	=> __( 'Blog panel.', 'agama' ),
+		'priority'		=> 70
+	) ); // Blog General Section ->
+	Kirki::add_section( 'agama_blog_general_section', array(
+		'title'			=> __( 'Blog General', 'agama' ),
+		'description'	=> __( 'Blog general section.', 'agama' ),
 		'capability'	=> 'edit_theme_options',
-		'priority'		=> 70,
+		'panel'			=> 'agama_blog_panel'
 	) );
 	Kirki::add_field( 'agama_blog_layout', array(
 		'label'			=> __( 'Layout', 'agama' ),
 		'description'	=> __( 'Select blog layout.', 'agama' ),
-		'section'		=> 'agama_blog_section',
+		'section'		=> 'agama_blog_general_section',
 		'settings'		=> 'agama_blog_layout',
 		'type'			=> 'select',
 		'choices'		=> array(
@@ -850,45 +855,19 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		),
 		'default'		=> 'list'
 	) );
-	Kirki::add_field( 'agama_blog_single_post_thumbnail', array(
-		'label'			=> __( 'Single Post Thumbnails', 'agama' ),
-		'description'	=> __( 'Enable thumbnails on single post / page ?', 'agama' ),
-		'section'		=> 'agama_blog_section',
-		'settings'		=> 'agama_blog_single_post_thumbnail',
-		'type'			=> 'switch',
-		'default'		=> true
-	) );
 	Kirki::add_field( 'agama_blog_thumbnails_permalink', array(
-		'label'			=> __( 'Thumbnails Permalink', 'agama' ),
-		'description'	=> __( 'Enable blog thumbnails permalinks ?', 'agama' ),
-		'help'			=> __( 'If enabled, blog thumbnails will become clickable links.', 'agama' ),
-		'section'		=> 'agama_blog_section',
+		'label'			=> __( 'Featured Image Permalink', 'agama' ),
+		'description'	=> __( 'Enable post featured image permalink ?', 'agama' ),
+		'help'			=> __( 'If enabled the post featured images will become clickable links.', 'agama' ),
+		'section'		=> 'agama_blog_general_section',
 		'settings'		=> 'agama_blog_thumbnails_permalink',
-		'type'			=> 'switch',
-		'default'		=> true
-	) );
-	Kirki::add_field( 'agama_blog_post_meta', array(
-		'label'			=> __( 'Post Meta', 'agama' ),
-		'description'	=> __( 'Enable blog post meta ?', 'agama' ),
-		'help'			=> __('If enabled, post details like: date, category, author & comments count will be shown below post title.', 'agama'),
-		'section'		=> 'agama_blog_section',
-		'settings'		=> 'agama_blog_post_meta',
-		'type'			=> 'switch',
-		'default'		=> true
-	) );
-	Kirki::add_field( 'agama_blog_post_author', array(
-		'label'			=> __( 'Post Author', 'agama' ),
-		'description'	=> __( 'Enable post author ?', 'agama' ),
-		'help'			=> __( 'If enabled, article author will be shown on every post.', 'agama' ),
-		'section'		=> 'agama_blog_section',
-		'settings'		=> 'agama_blog_post_author',
 		'type'			=> 'switch',
 		'default'		=> true
 	) );
 	Kirki::add_field( 'agama_blog_excerpt', array(
 		'label'			=> __( 'Excerpt', 'agama' ),
 		'description'	=> __( 'Set posts lenght on blog loop page.', 'agama' ),
-		'section'		=> 'agama_blog_section',
+		'section'		=> 'agama_blog_general_section',
 		'settings'		=> 'agama_blog_excerpt',
 		'type'			=> 'slider',
 		'choices'		=> array(
@@ -901,7 +880,7 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 	Kirki::add_field( 'agama_blog_readmore_url', array(
 		'label'			=> __( 'Read More', 'agama' ),
 		'description'	=> __( 'Enable read more url on blog excerpt ?', 'agama' ),
-		'section'		=> 'agama_blog_section',
+		'section'		=> 'agama_blog_general_section',
 		'settings'		=> 'agama_blog_readmore_url',
 		'type'			=> 'switch',
 		'default'		=> true
@@ -909,7 +888,7 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 	Kirki::add_field( 'agama_blog_about_author', array(
 		'label'			=> __( 'About Author', 'agama' ),
 		'description'	=> __( 'Enable about author section below single post content ?', 'agama' ),
-		'section'		=> 'agama_blog_section',
+		'section'		=> 'agama_blog_general_section',
 		'settings'		=> 'agama_blog_about_author',
 		'type'			=> 'switch',
 		'default'		=> true
@@ -917,7 +896,7 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 	Kirki::add_field( 'agama_blog_infinite_scroll', array(
 		'label'			=> __( 'Infinite Scroll', 'agama' ),
 		'description'	=> __( 'Enable infinite scroll ?', 'agama' ),
-		'section'		=> 'agama_blog_section',
+		'section'		=> 'agama_blog_general_section',
 		'settings'		=> 'agama_blog_infinite_scroll',
 		'type'			=> 'switch',
 		'default'		=> false
@@ -926,7 +905,7 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'label'			=> __( 'Infinite Trigger', 'agama' ),
 		'description'	=> __( 'Select infinite scroll trigger.', 'agama' ),
 		'help'			=> __( 'Select how blog posts will be loading. Automaticaly or on Button click. NOTICE: Infinite scroll must be enabled first.', 'agama' ),
-		'section'		=> 'agama_blog_section',
+		'section'		=> 'agama_blog_general_section',
 		'settings'		=> 'agama_blog_infinite_trigger',
 		'type'			=> 'select',
 		'choices'		=> array(
@@ -934,6 +913,71 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 			'button'	=> __( 'Button', 'agama' )
 		),
 		'default'		=> 'button'
+	) ); // Blog Single Post Section ->
+	Kirki::add_section( 'agama_blog_single_post_section', array(
+		'title'			=> __( 'Blog Single Post', 'agama' ),
+		'description'	=> __( 'Blog single post section.', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+		'panel'			=> 'agama_blog_panel'
+	) );
+	Kirki::add_field( 'agama_blog_single_post_thumbnail', array(
+		'label'			=> __( 'Featured Image on Single Post', 'agama' ),
+		'description'	=> __( 'Turn on to display featured images on single blog posts.', 'agama' ),
+		'section'		=> 'agama_blog_single_post_section',
+		'settings'		=> 'agama_blog_single_post_thumbnail',
+		'type'			=> 'switch',
+		'default'		=> true
+	) ); // Blog Post Meta Section ->
+	Kirki::add_section( 'agama_blog_post_meta_section', array(
+		'title'			=> __( 'Blog Post Meta', 'agama' ),
+		'description'	=> __( 'Blog post meta section.', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+		'panel'			=> 'agama_blog_panel'
+	) );
+	Kirki::add_field( 'agama_blog_post_meta', array(
+		'label'			=> __( 'Post Meta', 'agama' ),
+		'description'	=> __( 'Enable blog post meta ?', 'agama' ),
+		'help'			=> __('Turn on to display post meta on blog posts. If set to "On", you can also control individual meta items below. If set to "Off" all meta items will be disabled.', 'agama'),
+		'section'		=> 'agama_blog_post_meta_section',
+		'settings'		=> 'agama_blog_post_meta',
+		'type'			=> 'switch',
+		'default'		=> true
+	) );
+	Kirki::add_field( 'agama_blog_post_author', array(
+		'label'			=> __( 'Post Meta Author', 'agama' ),
+		'description'	=> __( 'Enable post author ?', 'agama' ),
+		'help'			=> __( 'If enabled the post author will be displayed in post meta.', 'agama' ),
+		'section'		=> 'agama_blog_post_meta_section',
+		'settings'		=> 'agama_blog_post_author',
+		'type'			=> 'switch',
+		'default'		=> true
+	) );
+	Kirki::add_field( 'agama_blog_post_date', array(
+		'label'			=> __( 'Post Meta Date', 'agama' ),
+		'description'	=> __( 'Enable post publish date ?', 'agama' ),
+		'help'			=> __( 'If enabled the post publish date will be displayed in post meta.', 'agama' ),
+		'section'		=> 'agama_blog_post_meta_section',
+		'settings'		=> 'agama_blog_post_date',
+		'type'			=> 'switch',
+		'default'		=> true
+	) );
+	Kirki::add_field( 'agama_blog_post_category', array(
+		'label'			=> __( 'Post Meta Category', 'agama' ),
+		'description'	=> __( 'Enable post category ?', 'agama' ),
+		'help'			=> __( 'If enabled the post category will be displayed in post meta.', 'agama' ),
+		'section'		=> 'agama_blog_post_meta_section',
+		'settings'		=> 'agama_blog_post_category',
+		'type'			=> 'switch',
+		'default'		=> true
+	) );
+	Kirki::add_field( 'agama_blog_post_comments', array(
+		'label'			=> __( 'Post Meta Comments', 'agama' ),
+		'description'	=> __( 'Enable post meta comments counter ?', 'agama' ),
+		'help'			=> __( 'If enabled the post comments count will be displayed in post meta.', 'agama' ),
+		'section'		=> 'agama_blog_post_meta_section',
+		'settings'		=> 'agama_blog_post_comments',
+		'type'			=> 'switch',
+		'default'		=> true
 	) );
 ###################################################################################
 # STYLING
@@ -2006,7 +2050,11 @@ function agama_customize_css() { ?>
 	}
 	<?php endif; ?>
 	
-	<?php if( ! get_theme_mod('agama_blog_post_meta', true) && get_theme_mod('agama_blog_layout', 'list') == 'list' ): ?>
+	<?php 
+	if( 
+		! get_theme_mod( 'agama_blog_post_meta', true ) && get_theme_mod( 'agama_blog_layout', 'list' ) == 'list' || 
+		! get_theme_mod( 'agama_blog_post_date', true ) && get_theme_mod( 'agama_blog_layout', 'list' ) == 'list'
+	): ?>
 	.list-style .entry-content { margin-left: 0 !important; }
 	<?php endif; ?>
 	
@@ -2056,6 +2104,7 @@ function agama_customize_css() { ?>
 	/* HEADER V1
 	 *********************************************************************************/
 	.header_v1 .sticky-header { position: fixed; box-shadow: none; -webkit-box-shadow: none; border-bottom: 2px solid rgba(255,255,255, .1); }
+	.header_v1.shrinked .sticky-header { background-color: <?php echo esc_attr( get_theme_mod( 'agama_header_shrink_bg_color', 'rgba(255, 255, 255, .9)' ) ); ?>;}
 	.header_v1.shrinked .sticky-header { border-bottom: 0 none; }
 	<?php endif; ?>
 	
@@ -2155,6 +2204,9 @@ add_action( 'wp_head', 'agama_customize_css' );
  */
 function customize_styles_agama_support( $input ) { ?>
 	<style type="text/css">
+		a:-webkit-any-link {
+			text-decoration: none;
+		}
 		#customize-theme-controls #accordion-section-agama_support_section .accordion-section-title:after, 
 		#customize-theme-controls #accordion-panel-agama_pro_panel .accordion-section-title:after {
 			color: #fff;

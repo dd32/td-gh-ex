@@ -74,8 +74,15 @@ if( ! class_exists( 'Agama_About' ) ) {
 				
 				echo '<div class="changelog point-releases">';
 					echo sprintf( '<h3>Changelog Agama v%s</h3>', Agama_Core::version() );
-						echo '<p>* Updated kirki framework to latest stable version.</p>';
-						echo '<p>* Updated FontAwesome to latest stable version.</p>';
+						echo '<p>* Added blog post meta date (on | off) feature.</p>';
+						echo '<p>* Added blog post meta category (on | off) feature.</p>';
+						echo '<p>* Added blog post meta comments counter (on | off) feature.</p>';
+						echo '<p>* Updated theme translation files.</p>';
+						echo '<p>* Updated customizer blog sections.</p>';
+						echo '<p>* Updated small thumbs blog layout post meta.</p>';
+						echo '<p>* Fixed Header V1 header shrinked background color bug.</p>';
+						echo '<p>* Fixed minor post meta bugs.</p>';
+						echo '<p>* Fixed (jQuery [undefined?32123123] 404 not found) bug.</p>';
 				echo '</div>';
 				
 			echo '</div>';

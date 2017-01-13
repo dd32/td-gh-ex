@@ -2,7 +2,18 @@ Agama WordPress Theme, Copyright 2015 Theme-Vision.com
 Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
-= 1.2.5 Januar 07 2016 =
+= 1.2.6 Januar 12 2017 =
+* Added blog post meta date (on | off) feature.
+* Added blog post meta category (on | off) feature.
+* Added blog post meta comments counter (on | off) feature.
+* Updated theme translation files.
+* Updated customizer blog sections.
+* Updated small thumbs blog layout post meta.
+* Fixed Header V1 header shrinked background color bug.
+* Fixed minor post meta bugs.
+* Fixed (jQuery [undefined?32123123] 404 not found) bug.
+
+= 1.2.5 Januar 07 2017 =
 * Updated kirki framework to latest stable version.
 * Updated FontAwesome to latest stable version.
 

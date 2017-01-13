@@ -88,20 +88,22 @@ var THEMEVISION = THEMEVISION || {};
 					var $height = agama.slider_height;
 				}
 				
-				$slider.camera({
-					height: $height + 'px',
-					loader: 'bar',
-					loaderColor: agama.primaryColor,
-					overlay: false,
-					fx: 'simpleFade',
-					time: agama.slider_time,
-					pagination: false,
-					thumbnails: false,
-					transPeriod: 1000,
-					overlayer: false,
-					playPause: false,
-					hover: false,
-				});
+				if( $('#agama_slider').hasClass('camera_wrap') ) {
+					$slider.camera({
+						height: $height + 'px',
+						loader: 'bar',
+						loaderColor: agama.primaryColor,
+						overlay: false,
+						fx: 'simpleFade',
+						time: agama.slider_time,
+						pagination: false,
+						thumbnails: false,
+						transPeriod: 1000,
+						overlayer: false,
+						playPause: false,
+						hover: false,
+					});
+				}
 			}
 		},
 		
