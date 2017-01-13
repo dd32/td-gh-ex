@@ -1,8 +1,8 @@
 === fKidd ===
 Contributors: tishonator
-Tags: education, blog, two-columns, right-sidebar, custom-background,
-custom-header, custom-menu, featured-images, post-formats,
-threaded-comments, translation-ready
+Tags: education, blog, two-columns, right-sidebar, custom-logo, custom-background,
+custom-header, custom-menu, featured-images, post-formats, threaded-comments,
+sticky-post, theme-options, footer-widgets, translation-ready, full-width-template, front-page-post-form
 Requires at least: 4.4.0
 Tested up to: 4.6.1
 
@@ -13,7 +13,8 @@ Built-in Responsive Slider, Multi-Level Drop-Down Menu, W3C Markup Validated,
 Customizer Options: Social Sites, Header Phone and Email, Slider, Header Logo, Footer,
 Search Engine Optimized, Social Sites: Facebook, Google+, Twitter, LinkedIn, Instagram,
 RSS Feeds, Tumblr, YouTube, Pinterest, VK, Flickr, Vine, Multiple browsers support (IE 9,
-IE 10, IE 11, Chrome, Firefox, Opera, and Safari), Header and Footer Menu, Translation ready and much more.
+IE 10, IE 11, Chrome, Firefox, Opera, and Safari), Full-Width Page Template,
+Header and Footer Menu, Translation ready and much more.
 
 == Installation ==
 

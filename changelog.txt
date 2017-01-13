@@ -1,3 +1,7 @@
+fKidd 1.8.1, 2017-01-13
+------------------------
+- add full-width page template
+
 fKidd 1.7.0, 2016-11-14
 ------------------------
 - add custom logo

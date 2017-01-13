@@ -1,12 +1,12 @@
 /*!
 Theme Name: fKidd
-Description: fKidd is a Free Multi-Purpose WordPress Theme. Features: Fully Responsive, Customizable, Built-in Responsive Slider, Multi-Level Drop-Down Menu, W3C Markup Validated, Customizer Options: Social Sites, Header Phone and Email, Slider, Header Logo, Footer, Search Engine Optimized, Social Sites: Facebook, Google+, Twitter, LinkedIn, Instagram, RSS Feeds, Tumblr, YouTube, Pinterest, VK, Flickr, Vine, Multiple browsers support (IE 9, IE 10, IE 11, Chrome, Firefox, Opera, and Safari), Header and Footer Menu, Translation ready and much more.
+Description: fKidd is a Free Multi-Purpose WordPress Theme. Features: Fully Responsive, Customizable, Built-in Responsive Slider, Multi-Level Drop-Down Menu, W3C Markup Validated, Customizer Options: Social Sites, Header Phone and Email, Slider, Header Logo, Footer, Search Engine Optimized, Social Sites: Facebook, Google+, Twitter, LinkedIn, Instagram, RSS Feeds, Tumblr, YouTube, Pinterest, VK, Flickr, Vine, Multiple browsers support (IE 9, IE 10, IE 11, Chrome, Firefox, Opera, and Safari), Full-Width Page Template, Header and Footer Menu, Translation ready and much more.
 Theme URI: https://tishonator.com/product/fkidd
 Author: tishonator
 Author URI: https://tishonator.com
-Version: 1.8.0
+Version: 1.8.1
 Text Domain: fkidd
-Tags: education, blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, post-formats, threaded-comments, sticky-post, theme-options, footer-widgets, translation-ready
+Tags: education, blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, post-formats, threaded-comments, sticky-post, theme-options, footer-widgets, translation-ready, full-width-template, front-page-post-form
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -1097,6 +1097,7 @@ blockquote, figure {
 .custom-after-content,
 .page-after-content {
 	margin-top:10px;
+	clear:both;
 }
 
 .aside-icon:before,
@@ -2224,7 +2225,6 @@ img.wp-post-image {
 	position: relative;
 	z-index: 0;
 	border-top:2px solid #222222;
-	opacity:0.8;
 }
 .camera_wrap img {
 	max-width: none!important;

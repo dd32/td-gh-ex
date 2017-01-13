@@ -593,7 +593,7 @@ function fkidd_header_style() {
     <style type="text/css">
         <?php if ( has_header_image() ) : ?>
 
-                #header-main {background-image: url("<?php echo esc_attr( $headerImage ); ?>");}
+                #header-main {background-image: url("<?php echo esc_url( $headerImage ); ?>");}
 
         <?php endif; ?>
 
