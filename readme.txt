@@ -2,13 +2,19 @@
 
 Contributors: tishonator
 Tags: blog, news, two-columns, right-sidebar, custom-background, custom-colors,
-custom-header, custom-menu, featured-images, post-formats, threaded-comments, translation-ready
+custom-header, custom-menu, custom-logo, featured-images, post-formats, threaded-comments,
+translation-ready, sticky-post, theme-options, footer-widgets, full-width-template,
+front-page-post-form
+
 Requires at least: 4.4.1
 Tested up to: 4.6.1
 
 == Description ==
 
-fCorpo a perfect choice for your Corporate, Business, Company, Portfolio website or blog. The theme is Fully Responsive, Responsive Slider, Multi-Level Drop-Down Custom Menu, Admin Panel Options, W3C Markup Validated, Search Engine Optimized, Multiple Browsers, Page navigation, Threaded Comments, FontAwesome Icons, Custom Post Formats, and Translation Ready.
+fCorpo a perfect choice for your Corporate, Business, Company, Portfolio website or blog. The theme is
+Fully Responsive, Responsive Slider, Multi-Level Drop-Down Custom Menu, Admin Panel Options, W3C Markup
+Validated, Full-Width Page Template, Search Engine Optimized, Multiple Browsers, Page navigation, Threaded
+Comments, FontAwesome Icons, Custom Post Formats, and Translation Ready.
 
 == Installation ==
 

@@ -20,15 +20,16 @@
 
  	fcorpo_display_slider();
 
+ 	get_sidebar('home');
+
  endif;
  
 ?>
 
- <div class="clear">
+<div class="clear">
 </div><!-- .clear -->
 
 <div id="main-content-wrapper">
-
 	<div id="main-content">
 
 	<?php if ( have_posts() ) : 

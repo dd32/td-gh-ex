@@ -18,12 +18,13 @@
 
  	fcorpo_display_slider();
 
+ 	get_sidebar('home');
+
  endif;
 
  ?>
 
 <div id="main-content-wrapper">
-
 	<div id="main-content">
 
 	<?php if ( have_posts() ) :

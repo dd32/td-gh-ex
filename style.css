@@ -1,12 +1,12 @@
 /*!
 Theme Name: fCorpo
-Description: fCorpo a perfect choice for your Corporate, Business, Company, Portfolio website or blog. The theme is Fully Responsive, Responsive Slider, Multi-Level Drop-Down Custom Menu, Admin Panel Options, W3C Markup Validated, Search Engine Optimized, Multiple Browsers, Page navigation, Threaded Comments, FontAwesome Icons, Custom Post Formats, and Translation Ready.
+Description: fCorpo a perfect choice for your Corporate, Business, Company, Portfolio website or blog. The theme is Fully Responsive, Responsive Slider, Multi-Level Drop-Down Custom Menu, Admin Panel Options, W3C Markup Validated, Full-Width Page Template, Search Engine Optimized, Multiple Browsers, Page navigation, Threaded Comments, FontAwesome Icons, Custom Post Formats, and Translation Ready.
 Theme URI: https://tishonator.com/product/fcorpo
 Author: tishonator
 Author URI: https://tishonator.com
-Version: 1.0.9
+Version: 1.1.0
 Text Domain: fcorpo
-Tags: blog, news, two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, post-formats, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
+Tags: blog, news, two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, post-formats, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, front-page-post-form
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -62,6 +62,7 @@ img {
 	outline:0;
 }
 
+#home-cols img,
 #main-content-wrapper img,
 #footer-main img {
 	max-width:100%;
@@ -71,6 +72,7 @@ img {
 	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
 }
 
+#home-cols a:hover img,
 #main-content-wrapper a:hover img,
 #footer-main a:hover img {
 	-webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.7);
@@ -1502,6 +1504,11 @@ img.wp-post-image {
 	display: none;
 }
 
+#home-cols {
+	clear:both;
+	padding:20px 2%;
+}
+
 /* Large Resolution */
 @media screen and (min-width: 800px) {
 
@@ -2182,6 +2189,7 @@ img.wp-post-image {
 		width:1160px;
 	}
 
+	#home-cols-inner,
 	#main-content-wrapper,
 	#footer-content-wrapper	{
 		margin:0 auto;
