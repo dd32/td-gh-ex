@@ -114,7 +114,7 @@ class Blogghiamo_Admin {
 			<div class="welcome-description-wrap">
 				<div class="about-text"><?php echo $theme->display( 'Description' ); ?>
 				<p class="cresta-actions">
-					<a href="<?php echo esc_url( 'http://crestaproject.com/downloads/blogghiamo/' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Theme Info', 'blogghiamo' ); ?></a>
+					<a href="<?php echo esc_url( apply_filters( 'blogghiamo_pro_theme_url', 'https://crestaproject.com/downloads/blogghiamo/' ) ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Theme Info', 'blogghiamo' ); ?></a>
 
 					<a href="<?php echo esc_url( apply_filters( 'blogghiamo_pro_theme_url', 'http://crestaproject.com/demo/blogghiamo/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Demo', 'blogghiamo' ); ?></a>
 
@@ -186,7 +186,7 @@ class Blogghiamo_Admin {
 					<div class="col">
 						<h3><?php esc_html_e( 'Need more features?', 'blogghiamo' ); ?></h3>
 						<p><?php esc_html_e( 'Upgrade to PRO version for more exciting features.', 'blogghiamo' ) ?></p>
-						<p><a target="_blank" href="<?php echo esc_url( 'http://crestaproject.com/downloads/blogghiamo/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Info about PRO version', 'blogghiamo' ); ?></a></p>
+						<p><a target="_blank" href="<?php echo esc_url( 'https://crestaproject.com/downloads/blogghiamo/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Info about PRO version', 'blogghiamo' ); ?></a></p>
 					</div>
 
 					<div class="col">
@@ -395,7 +395,7 @@ class Blogghiamo_Admin {
 						<td></td>
 						<td class="btn-wrapper">
 							<a href="<?php echo esc_url( apply_filters( 'blogghiamo_pro_theme_url', 'http://crestaproject.com/demo/blogghiamo-pro/' ) ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'View PRO version demo', 'blogghiamo' ); ?></a>
-							<a href="<?php echo esc_url( apply_filters( 'blogghiamo_pro_theme_url', 'http://crestaproject.com/downloads/blogghiamo/' ) ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'More Information', 'blogghiamo' ); ?></a>
+							<a href="<?php echo esc_url( apply_filters( 'blogghiamo_pro_theme_url', 'https://crestaproject.com/downloads/blogghiamo/' ) ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'More Information', 'blogghiamo' ); ?></a>
 						</td>
 					</tr>
 				</tbody>

@@ -1,13 +1,16 @@
 (function($) {
 	"use strict";
-	
 	$(document).ready(function() {
-	
 		/*-----------------------------------------------------------------------------------*/
 		/*  Home icon in main menu
 		/*-----------------------------------------------------------------------------------*/ 
 			$('.main-navigation .menu-item-home:first-child > a').prepend('<i class="fa fa-lg fa-home spaceRight"></i>');
-			
+		/*-----------------------------------------------------------------------------------*/
+		/*  Detect touch screen device
+		/*-----------------------------------------------------------------------------------*/ 
+			function isTouchDevice() {
+				return 'ontouchstart' in document.documentElement;
+			}
 		/*-----------------------------------------------------------------------------------*/
 		/*  If the Tagcloud widget exist or Edit Comments Link exist
 		/*-----------------------------------------------------------------------------------*/ 
@@ -17,14 +20,12 @@
 			if ( $( '.comment-list .edit-link' ).length ) {
 				$('.comment-list .edit-link').addClass('smallPart');
 			}
-			
 		/*-----------------------------------------------------------------------------------*/
 		/*  Make dropdowns functional on focus
 		/*-----------------------------------------------------------------------------------*/ 
-		$( '.main-navigation' ).find( 'a' ).on( 'focus blur', function() {
-			$( this ).parents().toggleClass( 'focus' );
-		});
-			
+			$( '.main-navigation' ).find( 'a' ).on( 'focus blur', function() {
+				$( this ).parents().toggleClass( 'focus' );
+			});
 		/*-----------------------------------------------------------------------------------*/
 		/*  Top Search Button
 		/*-----------------------------------------------------------------------------------*/ 
@@ -33,7 +34,6 @@
 			$(this).toggleClass("active");
 			return false;
 		});
-		
 		/*-----------------------------------------------------------------------------------*/
 		/*  Menu Widget
 		/*-----------------------------------------------------------------------------------*/
@@ -54,7 +54,6 @@
 					}
 				});
 			}
-			
 		/*-----------------------------------------------------------------------------------*/
 		/*  Mobile Menu
 		/*-----------------------------------------------------------------------------------*/ 
@@ -75,19 +74,15 @@
 					}
 				});
 			}
-			
 			$(window).resize(function() {
 				if ($( window ).width() > 1024) {
 					$('.main-navigation ul > li.menu-item-has-children, .main-navigation ul > li.page_item_has_children').find('> ul.sub-menu, > ul.children').slideDown(300);
 				}
 			});
-			
 		/*-----------------------------------------------------------------------------------*/
 		/*  Detect Mobile Browser
 		/*-----------------------------------------------------------------------------------*/ 
-		if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-		} else {
-			
+		if (!isTouchDevice()) {
 			/*-----------------------------------------------------------------------------------*/
 			/*  Scroll To Top
 			/*-----------------------------------------------------------------------------------*/ 
@@ -103,9 +98,6 @@
 					$("html, body").animate({ scrollTop: 0 }, 1000);
 					return false;
 				});
-
 		}
-			
 	});
-	
 })(jQuery);

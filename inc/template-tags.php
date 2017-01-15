@@ -99,7 +99,7 @@ function blogghiamo_posted_on() {
 	
 	if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) {
 		echo '<span class="comments-link"><i class="fa fa-comments-o spaceRight" aria-hidden="true"></i>';
-		comments_popup_link( __( 'Leave a comment', 'blogghiamo' ), __( '1 Comment', 'blogghiamo' ), __( '% Comments', 'blogghiamo' ) );
+		comments_popup_link( esc_html__( 'Leave a comment', 'blogghiamo' ), esc_html__( '1 Comment', 'blogghiamo' ), esc_html__( '% Comments', 'blogghiamo' ) );
 		echo '</span>';
 	}
 

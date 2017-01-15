@@ -1,5 +1,5 @@
 = Blogghiamo Free =
-* by the CrestaProject team, http://crestaproject.com/
+* by the CrestaProject team, https://crestaproject.com/
 
 == ABOUT Blogghiamo Free ==
 Blogghiamo Free is a simple, modern and minimal WordPress Theme useful for blog or personal page.
@@ -173,4 +173,9 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-background, 
 
 = Version 1.5.0 =
 * Fixed a lot of bugs related to the strings escaping
+* Minor bug fixes
+
+= Version 1.5.1 =
+* Updated skip-link-focus and navigation scripts
+* Updated some scripts in the way to detect a mobile device
 * Minor bug fixes

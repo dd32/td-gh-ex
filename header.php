@@ -113,7 +113,7 @@
 						<form role="search" method="get" id="searchform" action="<?php echo esc_url(home_url( '/' ) ); ?>">
 							<label>
 								<span class="screen-reader-text"><?php esc_html_e( 'Search for:', 'blogghiamo' ); ?></span>
-								<input type="search" name="s" class="search" placeholder="<?php esc_html_e('Type here and hit enter...', 'blogghiamo'); ?>">
+								<input type="search" name="s" class="search" placeholder="<?php esc_attr_e('Type here and hit enter...', 'blogghiamo'); ?>">
 							</label>
 						</form>
 				</div>
