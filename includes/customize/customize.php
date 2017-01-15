@@ -137,7 +137,7 @@ function acool_customize_register( $wp_customize ) {
 
 	//Fixed Header
 	$wp_customize->add_setting( 'ct_acool[fixed_header]', array(
-		'default'       => 1,
+		'default'       => 0,
 		'type'			=> 'option',
 		'capability'	=> 'edit_theme_options',
 		'sanitize_callback' => 'acool_sanitize_num',

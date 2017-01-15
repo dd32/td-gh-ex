@@ -61,7 +61,7 @@ function acool_custom_scripts()
 		wp_enqueue_script( 'queryloader2', get_template_directory_uri().'/js/queryloader2.min.js', array( 'jquery' ), '', false );
 		wp_enqueue_script( 'acool-loader', get_template_directory_uri().'/js/loader.js', array( 'jquery' ), '', false );		
 	}
-	$fixed_header  =  acool_get_option( 'ct_acool','fixed_header',1);	
+	$fixed_header  =  acool_get_option( 'ct_acool','fixed_header',0);	
 
 	//if($fixed_header && !is_front_page() || ($fixed_header && is_home()) ){
 		//wp_enqueue_script( 'acool-fixed-header', get_template_directory_uri().'/js/fixed-header.js', array( 'jquery' ), '', false );
@@ -135,7 +135,7 @@ function acool_customize_css()
 			$rbg = acool_hex2rgb($header_bgcolor);
 			
 			$header_opacity       =  acool_get_option( 'ct_acool','header_opacity',0.4);
-			$fixed_header         =  acool_get_option( 'ct_acool','fixed_header',1);			
+			$fixed_header         =  acool_get_option( 'ct_acool','fixed_header',0);			
 			
 
 
