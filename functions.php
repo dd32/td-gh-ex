@@ -105,6 +105,32 @@ function ajaira_widgets_init() {
 }
 add_action( 'widgets_init', 'ajaira_widgets_init' );
 
+function ajaira_fonts_url() {
+	$fonts_url = '';
+
+	/**
+	 * Translators: If there are characters in your language that are not
+	 * supported by Merriweather, translate this to 'off'. Do not translate
+	 * into your own language.
+	 */
+	$merriweather = _x( 'on', 'Merriweather font: on or off', 'twentyseventeen' );
+
+	if ( 'off' !== $merriweather ) {
+		$font_families = array();
+
+		$font_families[] = 'Lato:300,400,700|Merriweather';
+
+		$query_args = array(
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin,latin-ext' ),
+		);
+
+		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+	}
+
+	return esc_url_raw( $fonts_url );
+}
+
 /**
  * Enqueue scripts and styles.
  */
@@ -114,7 +140,7 @@ function ajaira_scripts() {
 
 	wp_enqueue_style( 'ajaira-font-icon', get_template_directory_uri() . '/css/font-awesome.min.css' );
 
-	wp_enqueue_style( 'ajaira-google-fonts', 'https://fonts.googleapis.com/css?family=Lato:300,400,700|Merriweather' );
+	wp_enqueue_style( 'ajaira-google-fonts', ajaira_fonts_url(), array(), null );
 
 	wp_enqueue_style( 'ajaira-slilcknav', get_template_directory_uri() . '/css/slicknav.css' );
 

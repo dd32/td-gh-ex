@@ -62,39 +62,39 @@
 		<?php if( $hideSocialMenu == 1 ) : ?>
 			<div class="header-social-menu" role="navigation">
 				<?php if (!empty($facebookURL)) : ?>
-					<a href="<?php echo esc_url($facebookURL); ?>" title="<?php esc_attr_e( 'Facebook', 'ajaira' ); ?>" target="_blank"><i class="fa fa-facebook "><span class="screen-reader-text"><?php esc_attr_e( 'Facebook', 'ajaira' ); ?></span></i></a>
+					<a href="<?php echo esc_url($facebookURL); ?>" title="<?php esc_attr_e( 'Facebook', 'ajaira' ); ?>" target="_blank"><i class="fa fa-facebook "><span class="screen-reader-text"><?php esc_html_e( 'Facebook', 'ajaira' ); ?></span></i></a>
 				<?php endif; ?>
 						
 				<?php if (!empty($twitterURL)) : ?>
-					<a href="<?php echo esc_url($twitterURL); ?>" title="<?php esc_attr_e( 'Twitter', 'ajaira' ); ?>" target="_blank"><i class="fa fa-twitter "><span class="screen-reader-text"><?php esc_attr_e( 'Twitter', 'ajaira' ); ?></span></i></a>
+					<a href="<?php echo esc_url($twitterURL); ?>" title="<?php esc_attr_e( 'Twitter', 'ajaira' ); ?>" target="_blank"><i class="fa fa-twitter "><span class="screen-reader-text"><?php esc_html_e( 'Twitter', 'ajaira' ); ?></span></i></a>
 				<?php endif; ?>
 						
 				<?php if (!empty($googleplusURL)) : ?>
-					<a href="<?php echo esc_url($googleplusURL); ?>" title="<?php esc_attr_e( 'Google Plus', 'ajaira' ); ?>" target="_blank"><i class="fa fa-google-plus "><span class="screen-reader-text"><?php esc_attr_e( 'Google Plus', 'ajaira' ); ?></span></i></a>
+					<a href="<?php echo esc_url($googleplusURL); ?>" title="<?php esc_attr_e( 'Google Plus', 'ajaira' ); ?>" target="_blank"><i class="fa fa-google-plus "><span class="screen-reader-text"><?php esc_html_e( 'Google Plus', 'ajaira' ); ?></span></i></a>
 				<?php endif; ?>
 						
 				<?php if (!empty($linkedinURL)) : ?>
-					<a href="<?php echo esc_url($linkedinURL); ?>" title="<?php esc_attr_e( 'Linkedin', 'ajaira' ); ?>" target="_blank"><i class="fa fa-linkedin "><span class="screen-reader-text"><?php esc_attr_e( 'Linkedin', 'ajaira' ); ?></span></i></a>
+					<a href="<?php echo esc_url($linkedinURL); ?>" title="<?php esc_attr_e( 'Linkedin', 'ajaira' ); ?>" target="_blank"><i class="fa fa-linkedin "><span class="screen-reader-text"><?php esc_html_e( 'Linkedin', 'ajaira' ); ?></span></i></a>
 				<?php endif; ?>
 						
 				<?php if (!empty($instagramURL)) : ?>
-					<a href="<?php echo esc_url($instagramURL); ?>" title="<?php esc_attr_e( 'Instagram', 'ajaira' ); ?>" target="_blank"><i class="fa fa-instagram "><span class="screen-reader-text"><?php esc_attr_e( 'Instagram', 'ajaira' ); ?></span></i></a>
+					<a href="<?php echo esc_url($instagramURL); ?>" title="<?php esc_attr_e( 'Instagram', 'ajaira' ); ?>" target="_blank"><i class="fa fa-instagram "><span class="screen-reader-text"><?php esc_html_e( 'Instagram', 'ajaira' ); ?></span></i></a>
 				<?php endif; ?>
 						
 				<?php if (!empty($youtubeURL)) : ?>
-					<a href="<?php echo esc_url($youtubeURL); ?>" title="<?php esc_attr_e( 'YouTube', 'ajaira' ); ?>" target="_blank"><i class="fa fa-youtube "><span class="screen-reader-text"><?php esc_attr_e( 'YouTube', 'ajaira' ); ?></span></i></a>
+					<a href="<?php echo esc_url($youtubeURL); ?>" title="<?php esc_attr_e( 'YouTube', 'ajaira' ); ?>" target="_blank"><i class="fa fa-youtube "><span class="screen-reader-text"><?php esc_html_e( 'YouTube', 'ajaira' ); ?></span></i></a>
 				<?php endif; ?>
 						
 				<?php if (!empty($pinterestURL)) : ?>
-					<a href="<?php echo esc_url($pinterestURL); ?>" title="<?php esc_attr_e( 'Pinterest', 'ajaira' ); ?>" target="_blank"><i class="fa fa-pinterest "><span class="screen-reader-text"><?php esc_attr_e( 'Pinterest', 'ajaira' ); ?></span></i></a>
+					<a href="<?php echo esc_url($pinterestURL); ?>" title="<?php esc_attr_e( 'Pinterest', 'ajaira' ); ?>" target="_blank"><i class="fa fa-pinterest "><span class="screen-reader-text"><?php esc_html_e( 'Pinterest', 'ajaira' ); ?></span></i></a>
 				<?php endif; ?>
 				
 				<?php if (!empty($tumblrURL)) : ?>
-					<a href="<?php echo esc_url($tumblrURL); ?>" title="<?php esc_attr_e( 'Tumblr', 'ajaira' ); ?>" target="_blank"><i class="fa fa-tumblr "><span class="screen-reader-text"><?php esc_attr_e( 'Tumblr', 'ajaira' ); ?></span></i></a>
+					<a href="<?php echo esc_url($tumblrURL); ?>" title="<?php esc_attr_e( 'Tumblr', 'ajaira' ); ?>" target="_blank"><i class="fa fa-tumblr "><span class="screen-reader-text"><?php esc_html_e( 'Tumblr', 'ajaira' ); ?></span></i></a>
 				<?php endif; ?>
 				
 				<?php if (!empty($githubURL)) : ?>
-					<a href="<?php echo esc_url($githubURL); ?>" title="<?php esc_attr_e( 'GitHub', 'ajaira' ); ?>" target="_blank"><i class="fa fa-github "><span class="screen-reader-text"><?php esc_attr_e( 'GitHub', 'ajaira' ); ?></span></i></a>
+					<a href="<?php echo esc_url($githubURL); ?>" title="<?php esc_attr_e( 'GitHub', 'ajaira' ); ?>" target="_blank"><i class="fa fa-github "><span class="screen-reader-text"><?php esc_html_e( 'GitHub', 'ajaira' ); ?></span></i></a>
 				<?php endif; ?>
 
 			</div> <!--  .header-social-menu -->

@@ -82,20 +82,20 @@ if ( post_password_required() ) {
 	endif;
 
 	$custom_comment_field = '<div class="form-group">
-            <label for="comment">Comment</label>
+            <label for="comment">' . __( 'Comment', 'ajaira' ) . '</label>
             <textarea  required="required" aria-required="true"  class="form-control" rows="5" id="comment" name="comment"></textarea>
           </div>';
      $fields = array(
      		'author'  => '<div class="form-group">
-		            <label for="author">Name: <span class="required">*</span></label>
+		            <label for="author">' . __('Name: ', 'ajaira') . '<span class="required">*</span></label>
 		            <input type="text"  required="required" aria-required="true"  class="form-control" id="usr" name="author">
 		          </div>',
 		     'email'   => '<div class="form-group">
-		            <label for="email">Email <span class="required">*</span></label>
+		            <label for="email">'. __('Email ','ajaira') .'<span class="required">*</span></label>
 		            <input type="email" required="required" aria-required="true" class="form-control" maxlength="100"  name="email">
 		          </div>',
 		     'url'     =>  '<div class="form-group">
-		            <label for="url">Website</label>
+		            <label for="url">'. __('Website','ajaira') .'</label>
 		            <input type="url" name="url" class="form-control">
 		          </div> '
      );

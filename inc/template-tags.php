@@ -95,12 +95,12 @@ endif;
 function ajaira_read_more_link() {
 	$read_more_link = sprintf(
 		/* translators: %s: Name of current post. */
-		wp_kses( __( '<span class="continue-reading"> Continue reading%s </span> ', 'ajaira' ), array( 'span' => array( 'class' => array() ) ) ),
+		wp_kses( __( '<span class="continue-reading"> Continue  reading%s </span> ', 'ajaira' ), array( 'span' => array( 'class' => array() ) ) ),
 		the_title( ' <span class="screen-reader-text">"', '"</span>', false )
 	);
 	$read_more_string =
 	'<div class="continue-reading">
-		<a class="more-link" href="' . get_permalink() . '" rel="bookmark">' . $read_more_link . '</a>
+		<a class="more-link" href="' . esc_url(get_permalink()) . '" rel="bookmark">' . $read_more_link . '</a>
 	</div>';
 
 	return $read_more_string;
