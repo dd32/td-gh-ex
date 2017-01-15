@@ -18,7 +18,7 @@ if (!function_exists('suevafree_after_content_function')) {
 	
 			if ( !suevafree_setting('suevafree_view_readmore') || suevafree_setting('suevafree_view_readmore') == "on" ) {
 				
-				do_action('suevafree_excerpt'); 
+				the_excerpt(); 
 			
 			} else if (suevafree_setting('suevafree_view_readmore') == "off" ) {
 				

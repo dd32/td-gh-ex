@@ -89,7 +89,7 @@ if ( have_comments() && post_password_required() == false ) :
 		comment_form(
 			array(
 				'label_submit' =>  esc_html__('Comment','suevafree'),
-				'class_submit' =>  suevafree_setting('suevafree_readmore_layout'),
+				'class_submit' =>  'default',
 				'comment_field' => '<p class="comment-form-comment"><label for="comment">' . esc_html_x( 'Comment', 'Comment field textarea.', 'suevafree' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>'
 			) 
 		); 

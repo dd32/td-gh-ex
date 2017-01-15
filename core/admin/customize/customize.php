@@ -549,6 +549,22 @@ if (!function_exists('suevafree_customize_panel_function')) {
 
 			array(
 				
+				"label" => esc_html__("Read More Layout","suevafree"),
+				"description" => esc_html__("Select a layout for the read more button.","suevafree"),
+				"id" => "suevafree_readmore_layout",
+				"type" => "select",
+				"section" => "layouts_section",
+				"options" => array (
+					'default' => esc_html__( 'Default Button','suevafree'),
+					'nobutton' => esc_html__( 'Replace with => [...]','suevafree'),
+				),
+				
+				"std" => "default",
+			
+			),
+
+			array(
+				
 				"label" => esc_html__("Page Layout","suevafree"),
 				"description" => esc_html__("Select a layout for the details of each page.","suevafree"),
 				"id" => "suevafree_page_details_layout",

@@ -35,7 +35,7 @@ if (!function_exists('suevafree_service_format_function')) {
 
 					if ( !suevafree_setting('suevafree_view_readmore') || suevafree_setting('suevafree_view_readmore') == "on" ) {
 						
-						do_action('suevafree_excerpt'); 
+						the_excerpt(); 
 					
 					} else if (suevafree_setting('suevafree_view_readmore') == "off" ) {
 						
