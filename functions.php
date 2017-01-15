@@ -113,7 +113,7 @@ function ajaira_fonts_url() {
 	 * supported by Merriweather, translate this to 'off'. Do not translate
 	 * into your own language.
 	 */
-	$merriweather = _x( 'on', 'Merriweather font: on or off', 'twentyseventeen' );
+	$merriweather = _x( 'on', 'Merriweather font: on or off', 'ajaira' );
 
 	if ( 'off' !== $merriweather ) {
 		$font_families = array();

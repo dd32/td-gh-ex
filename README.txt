@@ -19,6 +19,9 @@ Ajaira is a clean responsive blogging theme, Focused on content.
 = 1.0.1 = 
 - Fixed some issues
 
+= 1.0.2 = 
+- Text Domain issue fixed
+
 === Customizer Options ===
 1. Header background color
 2. Header Settings can be enable or disable Social Menu and Search bar
