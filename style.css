@@ -9,7 +9,7 @@ Tags: two-columns, right-sidebar, custom-background,Theme-Options, custom-colors
 
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Version:      1.2.4
+Version:      1.2.5
 Update date: 2017.1.15
 */
 @charset "utf-8";
@@ -937,3 +937,125 @@ ul{
 #crumbs{margin-bottom:20px;}
 
 .footer-bottom{ padding-top:20px; height:auto; padding-bottom:10px;}
+
+.ascreen_video_background{background-image:url(images/banner.jpg);background-repeat: repeat;background-position: top left;background-attachment: scroll; background-size: 100% auto;}
+section.ascreen_section_0 .section_title{text-align:center ;}
+section.ascreen_section_0 .section_title{font-family: "Microsoft YaHei", "Open Sans", "PingFangSC-Light", Arial, "Hiragino Sans GB","STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;font-size:64px;font-weight:normal;color:#ffffff;}
+
+	section.ascreen_section_0 .section_content,section.ascreen_section_0 p.section_text,
+
+	section.ascreen_section_0 p{font-family: "Microsoft YaHei", "Open Sans", "PingFangSC-Light", Arial, "Hiragino Sans GB","STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;font-size:18px;font-weight:normal;color:#ffffff;}
+section.ascreen_section_0 .section_content{text-align:center}
+section.ascreen_section_0 {background-attachment:fixed;background-position:50% 0;background-repeat:repeat;
+padding:30px 0;
+}
+#video_button_wrapper{display:none;}
+/*css for this section*/
+section.ascreen_video .section_title{ margin-bottom:30px;}
+#video_button_wrapper{position:fixed; top:10px; right:10px; z-index:10;}
+
+/*css for video*/
+.ascreen_video a.btn{
+	-webkit-border-radius: 6;
+	-moz-border-radius: 6;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 24px;
+	padding: 10px 20px;
+	margin: 1% 0 0 0;
+	border: 1px solid #badddd;
+	background-color: #00c8f2;
+	text-transform: uppercase;
+	background: rgba(0,200,242,0.3);
+	height:auto;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99ffffff, endColorstr=#99ffffff);	
+	font-family: "Microsoft YaHei", "Open Sans", "PingFangSC-Light", Arial, "Hiragino Sans GB","STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;font-size:24px;font-weight:normal;color:#ffffff;}
+.ascreen_video  a.btn:hover{	background-color: #00c8f2;/*#00c8f2*/text-decoration: none;color: #fff;border: 1px solid #00c8f2;}
+
+.ascreen_video a.color1{background-color:rgba(0,200,242,0.7);border: 1px solid #badddd;}
+
+section.ascreen_video p{font-size:2em;}
+
+*:focus{
+    outline: none;
+}
+
+button, .button {
+    transition: all .4s;
+    display: inline-block;
+    padding: 0px 10px;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: rgba(248, 248, 248, 0.4);
+    box-shadow: 0 0 4px rgba(0,0,0,0.4);
+    color:#000;
+
+    border: 1px solid transparent;
+
+    text-decoration: none;
+    line-height: 30px;
+    margin: 3px;
+    border-radius: 10px;
+}
+
+button:hover, .button:hover {
+    background-color: rgb(0, 0, 0);
+    color: #FFF;
+}
+
+#togglePlay{
+    margin: 80px 22px 0 0;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    line-height: 1em;
+	font-weight:normal;
+    border-radius: 100%;
+}
+
+#togglePlay.pause{
+    background-color: rgba(0,179,223,0.4);
+    color: #fff;
+}
+
+#togglePlay.pause:hover{
+    background-color: #fff;
+    color: #333;
+}
+
+#togglePlay.play{
+    background-color: rgba(0,179,223,0.4);
+    color: #fff;
+}
+
+#togglePlay.play:hover{
+    background-color: #fff;
+    color: #111;
+}
+
+/*css for response*/
+@media screen and (max-width:1136px){
+section.ascreen_section_0 .section_title,.section_title{font-size:5em;}
+}
+
+@media screen and (max-width:800px){
+	
+section#ascreen_video .section_title{ font-size:3em;}
+
+}
+
+@media screen and (max-width:640px){
+section#ascreen_video .section_text{ display:none;}
+}
+
+@media screen and (max-width:500px){
+section#ascreen_video .section_title{ font-size:2em;}
+}
+
+
+@media screen and (max-width:320px){
+section#ascreen_video .section_title{ font-size:1.5em;}
+	
+}

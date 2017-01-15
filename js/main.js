@@ -31,71 +31,7 @@ jQuery(document).ready(function($){
     });
 
 	//check header
-	
-	// contact form
-	jQuery("form.contact-form #submit").click(function(){
-		//alert('ok');
-		var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-		
-		var obj = jQuery(this).parents(".contact-form");
-		var Name    = obj.find("input#name").val();
-		var Email   = obj.find("input#email").val();
-		var Message = obj.find("textarea#message").val();
-		var sendto  = obj.find("input#sendto").val();
-		Name    = Name.replace('Name','');
-		Email   = Email.replace('Email','');
-		Message = Message.replace('Message','');
-		
-		//alert('Email:'+Email);
-		if( !obj.find(".noticefailed").length ){
-			obj.append('<div class="noticefailed"></div>');
-			}
-		obj.find(".noticefailed").text("");
-		
-		//alert('Email:'+Email);
-		if(Name ===""){
-			obj.find(".noticefailed").text("Please enter your name.");
-			return false;
-		}	
-	
-		if( !(emailReg.test( Email )) || Email ==='' ) {		
-			obj.find(".noticefailed").text("Please enter valid email.");
-			return false;
-		}
-	
-		if(Message === ""){
-			obj.find(".noticefailed").text("Message is required.");
-			return false;
-		}
-		
-		//alert(ascreen_params.themeurl+'/custom/images/loading.gif');
-	
-		obj.find(".noticefailed").html("");
-		obj.find(".noticefailed").append("<img alt='loading' class='loading' src='"+ascreen_params.themeurl+"/images/loading.gif' />");
-		
-		//alert(Message);
-		
-		 jQuery.ajax({
-					 type:"POST",
-					 dataType:"json",
-					 url:ascreen_params.ajaxurl,
-					 data:"Name="+Name+"&Email="+Email+"&Message="+Message+"&sendto="+sendto+"&action=ascreen_contact",
-					 success:function(data){ 
-						 if(data.error==0){
-							 obj.find(".noticefailed").addClass("noticesuccess").removeClass("noticefailed");
-							 obj.find(".noticesuccess").html(data.msg);
-							 }else{
-								 obj.find(".noticefailed").html(data.msg);	
-								 }
-								 jQuery('.loading').remove();obj[0].reset();
-						},
-						error:function(){
-							obj.find(".noticefailed").html("Error.");
-							obj.find('.loading').remove();
-							}
-			});
-	});
-	// contact form end	
+
 	
 	
 	// video resize
