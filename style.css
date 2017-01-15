@@ -9,7 +9,7 @@ Tags: two-columns, left-sidebar, custom-background, custom-colors, custom-header
 
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Version:      2.1.5
+Version:      2.1.6
 Update date: 2017.1.15
 */
 
@@ -1469,3 +1469,13 @@ th, td {
     padding: 6px;
 }
 
+section#section-id-580caf4c1638f h2{color:#3b3b3b; text-transform:uppercase;}section#section-id-580caf4c1638f,section#section-id-580caf4c1638f h3,section#section-id-580caf4c1638f,section#section-id-580caf4c1638f .casems{color:#333333;}			
+			
+.ct_section_post_list_2{ padding:50px 0;} 	
+	
+.ct_section_post_list_2 .ct_vertical_column{ margin:0 2%;} 			
+.ct_section_post_list_2 .ct_post_img a:hover .meta{ width:96%; margin-left:2%;}	
+
+.ct_section_post_list_2 .ct_post_more .casems {    color: inherit;}	
+.ct_section_post_list_2 .ct_post_more a.casems:hover{ color: inherit;}
+.ct_section_post_list_2 .post-meta-2{ font-size:0.9em; margin-bottom:10px;}

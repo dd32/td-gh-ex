@@ -1,76 +1,4 @@
 jQuery(document).ready(function($){
-
-	// contact form
-	jQuery(".acool_contact_form form.contact-form #submit").click(function(){
-		//alert('ok');
-		var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-		
-		var obj = jQuery(this).parents(".contact-form");
-		var Name    = obj.find("input#name").val();
-		var Email   = obj.find("input#email").val();
-		var Message = obj.find("textarea#message").val();
-		var sendto  = obj.find("input#sendto").val();
-		Name    = Name.replace('Name','');
-		Email   = Email.replace('Email','');
-		Message = Message.replace('Message','');
-		
-		//alert('Email:'+Email);
-		if( !obj.find(".noticefailed").length ){
-			obj.append('<div class="noticefailed"></div>');
-			}
-		obj.find(".noticefailed").text("");
-		
-		//alert('Email:'+Email);
-		if(Name ===""){
-			obj.find(".noticefailed").text("Please enter your name.");
-			return false;
-		}	
-	
-		if( !(emailReg.test( Email )) || Email ==='' ) {		
-			obj.find(".noticefailed").text("Please enter valid email.");
-			return false;
-		}
-	
-		if(Message === ""){
-			obj.find(".noticefailed").text("Message is required.");
-			return false;
-		}
-		
-	
-		obj.find(".noticefailed").html("");
-		obj.find(".noticefailed").append("<img alt='loading' class='loading' src='"+acool_params.themeurl+"/images/loading.gif' />");
-		
-		//alert(Message);
-		
-		 jQuery.ajax({
-					 type:"POST",
-					 dataType:"json",
-					 url:acool_params.ajaxurl,
-					 data:"Name="+Name+"&Email="+Email+"&Message="+Message+"&sendto="+sendto+"&action=acool_contact",
-					 success:function(data){ 
-						 if(data.error==0){
-							 obj.find(".noticefailed").addClass("noticesuccess").removeClass("noticefailed");
-							 obj.find(".noticesuccess").html(data.msg);
-							 }else{
-								 obj.find(".noticefailed").html(data.msg);	
-								 }
-								 jQuery('.loading').remove();obj[0].reset();
-						},
-						error:function(){
-							obj.find(".noticefailed").html("Error.");
-							obj.find('.loading').remove();
-							}
-			});
-	});
-	// contact form end
-
-
-
-
-
-
-
-
 	
 	//tooltip
 	$(function () { $("[data-toggle='tooltip']").tooltip(); });
@@ -178,12 +106,8 @@ jQuery(document).ready(function($){
 			triggerOnce: true
 		}
 	);//$('.fact').animateNumber(
-			
 
 
-
-	// adjust hight
-	//alert('---222---');
 	$('.ct_post_img a img').each(function() {
 		var width = $(this).width();   
 		var height = $(this).height();  
@@ -192,17 +116,6 @@ jQuery(document).ready(function($){
 		$(this).css("width", width); 
 	});
 	
-	
-	
-
-	
-	
-	
-	
-	
-	
-	
-
 });	
 
 //return top
