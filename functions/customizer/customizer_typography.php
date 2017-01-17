@@ -8,7 +8,7 @@ function corpbiz_typography_customizer( $wp_customize ){
 	$wp_customize->add_panel( 'typography', array(
 		'priority'       => 500,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Typography', 'corpbiz'),
+		'title'      => __('Typography settings', 'corpbiz'),
 	) );
 	
 	/* Enble / Disable typography section */
@@ -26,10 +26,11 @@ function corpbiz_typography_customizer( $wp_customize ){
     public function render_content() {
     ?>
      <div class="pro-vesrion">
-	 <P><?php _e('Use Typography to chnage Font size,Font family etc. than upgrade to pro','corpbiz');?></P>
+	 <P><?php _e('Use typography to chnage font size, font family etc. than upgrade to pro','corpbiz');?></P>
 	 </div>
 	  <div class="pro-box">
-	 <a href="<?php echo esc_url( __('http://webriti.com/corpbiz/', 'corpbiz'));?>" class="service" id="review_pro"><?php _e( 'UPGRADE TO PRO','corpbiz' ); ?></a>
+	 <a href="<?php echo esc_url('http://webriti.com/corpbiz/');?>" class="service" id="review_pro">
+	 <?php _e( 'Upgrade to pro','corpbiz' ); ?></a>
 	 <div>
     <?php
     }
@@ -38,13 +39,11 @@ function corpbiz_typography_customizer( $wp_customize ){
 	$wp_customize->add_setting(
 		'typography_pro',
 		array(
-			'default' => __('','corpbiz'),
 			'capability'     => 'edit_theme_options',
 			'sanitize_callback' => 'sanitize_text_field',
 		)	
 	);
 	$wp_customize->add_control( new WP_typography_pro_Customize_Control( $wp_customize, 'typography_pro', array(	
-			'label' => __('Discover corpbiz Pro','corpbiz'),
 			'section' => 'typography_section',
 			'setting' => 'typography_pro',
 		))
@@ -61,7 +60,7 @@ function corpbiz_typography_customizer( $wp_customize ){
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[enable_custom_typography]', array(
-			'label' => __('Enable Custom Typography','corpbiz'),
+			'label' => __('Enable custom typography','corpbiz'),
 			'section' => 'typography_section',
 			'type'    =>  'checkbox'
 	));	 // enable / disable typography
@@ -80,7 +79,7 @@ $font_style = array('normal'=>'Normal','italic'=>'Italic');
 
 	// General typography section
 	$wp_customize->add_section( 'corpbiz_general_typography' , array(
-			'title'      => __('General Typography', 'corpbiz'),
+			'title'      => __('General paragraph', 'corpbiz'),
 			'panel' => 'typography',
 			'priority'       => 1,
 		) );	
@@ -94,12 +93,12 @@ $font_style = array('normal'=>'Normal','italic'=>'Italic');
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[general_typography_fontsize]', array(
-			'label' => __('Font Size','corpbiz'),
+			'label' => __('Font size','corpbiz'),
 			'section' => 'corpbiz_general_typography',
 			'setting' => 'corpbiz_options[general_typography_fontsize]',
 			'type'    =>  'select',
 			'choices'=>$font_size,
-			'description'=>'(Pixels)'
+			'description'=>'Pixels'
 		));
 	$wp_customize->add_setting(
 		'corpbiz_options[general_typography_fontfamily]',
@@ -111,7 +110,7 @@ $font_style = array('normal'=>'Normal','italic'=>'Italic');
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[general_typography_fontfamily]', array(
-			'label' => __('Font Family','corpbiz'),
+			'label' => __('Font family','corpbiz'),
 			'section' => 'corpbiz_general_typography',
 			'setting' => 'corpbiz_options[general_typography_fontfamily]',
 			'type'    =>  'select',
@@ -127,7 +126,7 @@ $font_style = array('normal'=>'Normal','italic'=>'Italic');
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[post_title_fontstyle]', array(
-			'label' => __('Font Style','corpbiz'),
+			'label' => __('Font style','corpbiz'),
 			'section' => 'corpbiz_general_typography',
 			'setting' => 'corpbiz_options[post_title_fontstyle]',
 			'type'    =>  'select',
@@ -136,7 +135,7 @@ $font_style = array('normal'=>'Normal','italic'=>'Italic');
 	
 	// menu typography section
 	$wp_customize->add_section( 'corpbiz_menu_typography' , array(
-			'title'      => __('Menu Typography', 'corpbiz'),
+			'title'      => __('Menu', 'corpbiz'),
 			'panel' => 'typography',
 			'priority'       => 2,
 		) );	
@@ -150,12 +149,12 @@ $font_style = array('normal'=>'Normal','italic'=>'Italic');
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[menu_title_fontsize]', array(
-			'label' => __('Font Size','corpbiz'),
+			'label' => __('Font size','corpbiz'),
 			'section' => 'corpbiz_menu_typography',
 			'setting' => 'corpbiz_options[menu_title_fontsize]',
 			'type'    =>  'select',
 			'choices'=>$font_size,
-			'description'=>'(Pixels)'
+			'description'=>'Pixels'
 		));
 	$wp_customize->add_setting(
 		'corpbiz_options[menu_title_fontfamily]',
@@ -167,7 +166,7 @@ $font_style = array('normal'=>'Normal','italic'=>'Italic');
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[menu_title_fontfamily]', array(
-			'label' => __('Font Family','corpbiz'),
+			'label' => __('Font family','corpbiz'),
 			'section' => 'corpbiz_menu_typography',
 			'setting' => 'corpbiz_options[menu_title_fontfamily]',
 			'type'    =>  'select',
@@ -183,7 +182,7 @@ $font_style = array('normal'=>'Normal','italic'=>'Italic');
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[menu_title_fontstyle]', array(
-			'label' => __('Font Style','corpbiz'),
+			'label' => __('Font style','corpbiz'),
 			'section' => 'corpbiz_menu_typography',
 			'setting' => 'corpbiz_options[menu_title_fontstyle]',
 			'type'    =>  'select',
@@ -193,7 +192,7 @@ $font_style = array('normal'=>'Normal','italic'=>'Italic');
 	
 	// post typography section
 	$wp_customize->add_section( 'corpbiz_post_typography' , array(
-			'title'      => __('Post Typography', 'corpbiz'),
+			'title'      => __('Post Title', 'corpbiz'),
 			'panel' => 'typography',
 			'priority'       => 3,
 		) );	
@@ -207,12 +206,12 @@ $font_style = array('normal'=>'Normal','italic'=>'Italic');
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[post_title_fontsize]', array(
-			'label' => __('Font Size','corpbiz'),
+			'label' => __('Font size','corpbiz'),
 			'section' => 'corpbiz_post_typography',
 			'setting' => 'corpbiz_options[post_title_fontsize]',
 			'type'    =>  'select',
 			'choices'=>$font_size,
-			'description'=>'(Pixels)'
+			'description'=>'Pixels'
 		));
 	$wp_customize->add_setting(
 		'corpbiz_options[post_title_fontfamily]',
@@ -224,7 +223,7 @@ $font_style = array('normal'=>'Normal','italic'=>'Italic');
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[post_title_fontfamily]', array(
-			'label' => __('Font Family','corpbiz'),
+			'label' => __('Font family','corpbiz'),
 			'section' => 'corpbiz_post_typography',
 			'setting' => 'corpbiz_options[post_title_fontfamily]',
 			'type'    =>  'select',
@@ -233,14 +232,13 @@ $font_style = array('normal'=>'Normal','italic'=>'Italic');
 	$wp_customize->add_setting(
 		'corpbiz_options[post_title_fontstyle]',
 		array(
-			'default'           =>  '',
 			'capability'        =>  'edit_theme_options',
 			'sanitize_callback' =>  'sanitize_text_field',
 			'type'              =>  'option'
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[post_title_fontstyle]', array(
-			'label' => __('Font Style','corpbiz'),
+			'label' => __('Font style','corpbiz'),
 			'section' => 'corpbiz_post_typography',
 			'setting' => 'corpbiz_options[post_title_fontstyle]',
 			'type'    =>  'select',
@@ -249,7 +247,7 @@ $font_style = array('normal'=>'Normal','italic'=>'Italic');
 	
 	// service typography section
 	$wp_customize->add_section( 'corpbiz_service_typography' , array(
-			'title'      => __('Service Typography', 'corpbiz'),
+			'title'      => __('Service Title', 'corpbiz'),
 			'panel' => 'typography',
 			'priority'       => 4,
 		) );	
@@ -263,12 +261,12 @@ $font_style = array('normal'=>'Normal','italic'=>'Italic');
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[service_title_fontsize]', array(
-			'label' => __('Font Size','corpbiz'),
+			'label' => __('Font size','corpbiz'),
 			'section' => 'corpbiz_service_typography',
 			'setting' => 'corpbiz_options[service_title_fontsize]',
 			'type'    =>  'select',
 			'choices'=>$font_size,
-			'description'=>'(Pixels)'
+			'description'=>'Pixels'
 		));
 	$wp_customize->add_setting(
 		'corpbiz_options[service_title_fontfamily]',
@@ -280,7 +278,7 @@ $font_style = array('normal'=>'Normal','italic'=>'Italic');
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[service_title_fontfamily]', array(
-			'label' => __('Font Family','corpbiz'),
+			'label' => __('Font family','corpbiz'),
 			'section' => 'corpbiz_service_typography',
 			'setting' => 'corpbiz_options[service_title_fontfamily]',
 			'type'    =>  'select',
@@ -289,14 +287,13 @@ $font_style = array('normal'=>'Normal','italic'=>'Italic');
 	$wp_customize->add_setting(
 		'corpbiz_options[service_title_fontstyle]',
 		array(
-			'default'           =>  '',
 			'capability'        =>  'edit_theme_options',
 			'sanitize_callback' =>  'sanitize_text_field',
 			'type'              =>  'option'
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[service_title_fontstyle]', array(
-			'label' => __('Font Style','corpbiz'),
+			'label' => __('Font style','corpbiz'),
 			'section' => 'corpbiz_service_typography',
 			'setting' => 'corpbiz_options[service_title_fontstyle]',
 			'type'    =>  'select',
@@ -305,7 +302,7 @@ $font_style = array('normal'=>'Normal','italic'=>'Italic');
 	
 	// widget typography section
 	$wp_customize->add_section( 'corpbiz_widget_typography' , array(
-			'title'      => __('Widget Typography', 'corpbiz'),
+			'title'      => __('Widget Title', 'corpbiz'),
 			'panel' => 'typography',
 			'priority'       => 5,
 		) );	
@@ -319,12 +316,12 @@ $font_style = array('normal'=>'Normal','italic'=>'Italic');
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[widget_title_fontsize]', array(
-			'label' => __('Font Size','corpbiz'),
+			'label' => __('Font size','corpbiz'),
 			'section' => 'corpbiz_widget_typography',
 			'setting' => 'corpbiz_options[widget_title_fontsize]',
 			'type'    =>  'select',
 			'choices'=>$font_size,
-			'description'=>'(Pixels)'
+			'description'=>'Pixels'
 		));
 	$wp_customize->add_setting(
 		'corpbiz_options[widget_title_fontfamily]',
@@ -336,7 +333,7 @@ $font_style = array('normal'=>'Normal','italic'=>'Italic');
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[widget_title_fontfamily]', array(
-			'label' => __('Font Family','corpbiz'),
+			'label' => __('Font family','corpbiz'),
 			'section' => 'corpbiz_widget_typography',
 			'setting' => 'corpbiz_options[widget_title_fontfamily]',
 			'type'    =>  'select',
@@ -352,7 +349,7 @@ $font_style = array('normal'=>'Normal','italic'=>'Italic');
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[widget_title_fontstyle]', array(
-			'label' => __('Font Style','corpbiz'),
+			'label' => __('Font style','corpbiz'),
 			'section' => 'corpbiz_widget_typography',
 			'setting' => 'corpbiz_options[widget_title_fontstyle]',
 			'type'    =>  'select',
@@ -361,7 +358,7 @@ $font_style = array('normal'=>'Normal','italic'=>'Italic');
 	
 	// callout title typography section
 	$wp_customize->add_section( 'corpbiz_callout_title_typography' , array(
-			'title'      => __('Callout Title Typography', 'corpbiz'),
+			'title'      => __('Callout Title', 'corpbiz'),
 			'panel' => 'typography',
 			'priority'       => 6,
 		) );	
@@ -375,12 +372,12 @@ $font_style = array('normal'=>'Normal','italic'=>'Italic');
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[calloutarea_title_fontsize]', array(
-			'label' => __('Font Size','corpbiz'),
+			'label' => __('Font size','corpbiz'),
 			'section' => 'corpbiz_callout_title_typography',
 			'setting' => 'corpbiz_options[calloutarea_title_fontsize]',
 			'type'    =>  'select',
 			'choices'=>$font_size,
-			'description'=>'(Pixels)'
+			'description'=>'Pixels'
 		));
 	$wp_customize->add_setting(
 		'corpbiz_options[calloutarea_title_fontfamily]',
@@ -392,7 +389,7 @@ $font_style = array('normal'=>'Normal','italic'=>'Italic');
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[calloutarea_title_fontfamily]', array(
-			'label' => __('Font Family','corpbiz'),
+			'label' => __('Font family','corpbiz'),
 			'section' => 'corpbiz_callout_title_typography',
 			'setting' => 'corpbiz_options[calloutarea_title_fontfamily]',
 			'type'    =>  'select',
@@ -408,7 +405,7 @@ $font_style = array('normal'=>'Normal','italic'=>'Italic');
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[calloutarea_title_fontstyle]', array(
-			'label' => __('Font Style','corpbiz'),
+			'label' => __('Font style','corpbiz'),
 			'section' => 'corpbiz_callout_title_typography',
 			'setting' => 'corpbiz_options[calloutarea_title_fontstyle]',
 			'type'    =>  'select',
@@ -417,7 +414,7 @@ $font_style = array('normal'=>'Normal','italic'=>'Italic');
 	
 	// callout description typography section
 	$wp_customize->add_section( 'corpbiz_callout_description_typography' , array(
-			'title'      => __('Callout Description Typography', 'corpbiz'),
+			'title'      => __('Callout Description', 'corpbiz'),
 			'panel' => 'typography',
 			'priority'       => 7,
 		) );	
@@ -431,12 +428,12 @@ $font_style = array('normal'=>'Normal','italic'=>'Italic');
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[calloutarea_description_fontsize]', array(
-			'label' => __('Font Size','corpbiz'),
+			'label' => __('Font size','corpbiz'),
 			'section' => 'corpbiz_callout_description_typography',
 			'setting' => 'corpbiz_options[calloutarea_description_fontsize]',
 			'type'    =>  'select',
 			'choices'=>$font_size,
-			'description'=>'(Pixels)'
+			'description'=>'Pixels'
 		));
 	$wp_customize->add_setting(
 		'corpbiz_options[calloutarea_description_fontfamily]',
@@ -448,7 +445,7 @@ $font_style = array('normal'=>'Normal','italic'=>'Italic');
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[calloutarea_description_fontfamily]', array(
-			'label' => __('Font Family','corpbiz'),
+			'label' => __('Font family','corpbiz'),
 			'section' => 'corpbiz_callout_description_typography',
 			'setting' => 'corpbiz_options[calloutarea_description_fontfamily]',
 			'type'    =>  'select',
@@ -464,7 +461,7 @@ $font_style = array('normal'=>'Normal','italic'=>'Italic');
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[calloutarea_description_fontstyle]', array(
-			'label' => __('Font Style','corpbiz'),
+			'label' => __('Font style','corpbiz'),
 			'section' => 'corpbiz_callout_description_typography',
 			'setting' => 'corpbiz_options[calloutarea_description_fontstyle]',
 			'type'    =>  'select',

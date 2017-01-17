@@ -45,12 +45,12 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 	$wp_customize->add_panel( 'home_page', array(
 		'priority'       => 450,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Home Page', 'corpbiz'),
+		'title'      => __('Homepage section setting', 'corpbiz'),
 	) );
 	
 	/* Quick Start */
 	$wp_customize->add_section( 'quick_start' , array(
-		'title'      => __('Quick Start', 'corpbiz'),
+		'title'      => __('Quick start', 'corpbiz'),
 		'panel'  => 'home_page',
 		'priority'   => 0,
    	) );
@@ -91,7 +91,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 		'type' => 'option',
     ));
 	$wp_customize->add_control('corpbiz_options[width]', array(
-        'label'   => __('Logo Width', 'corpbiz'),
+        'label'   => __('Enter Logo Width', 'corpbiz'),
         'section' => 'quick_start',
         'type'    => 'text',
 		'priority'   => 4,
@@ -105,7 +105,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 		'type' => 'option',
     ));
 	$wp_customize->add_control('corpbiz_options[height]', array(
-        'label'   => __('Logo Height', 'corpbiz'),
+        'label'   => __('Enter Logo Height', 'corpbiz'),
         'section' => 'quick_start',
         'type'    => 'text',
 		'priority'   => 5,
@@ -114,13 +114,12 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 	
 	$wp_customize->add_setting(
 	'corpbiz_options[upload_image_favicon]', array(
-        'default'        => '',
-        'capability'     => 'edit_theme_options',
+		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
 	$wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'corpbiz_options[upload_image_favicon]', array(
-      'label'    => __( 'Custom Favicon', 'corpbiz' ),
+      'label'    => __('Site favicon', 'corpbiz' ),
       'section'  => 'quick_start',
 	  'priority'   => 6,
      ))
@@ -128,13 +127,12 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 	 
 	 $wp_customize->add_setting(
 	'corpbiz_options[google_analytics]', array(
-        'default'        => '',
-        'capability'     => 'edit_theme_options',
+		'capability'     => 'edit_theme_options',
 		'type' => 'option',
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[google_analytics]', array(
-        'label'   => __('Google Tracking code', 'corpbiz'),
+        'label'   => __('Google tracking code', 'corpbiz'),
         'section' => 'quick_start',
         'type'    => 'textarea',
 		'priority'   => 7,
@@ -160,8 +158,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
         'image_slider_one',
         array(
             'title' => __('Slider Image one','corpbiz'),
-            'description' => '',
-			'panel'  => 'home_page',
+            'panel'  => 'home_page',
 			'priority'   => 1,
 			)
     );
@@ -177,7 +174,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 			'corpbiz_options[slider_image_one]',
 			array(
 				'type'        => 'upload',
-				'label' => 'Slider Image',
+				'label' => 'Image',
 				'section' => 'example_section_one',
 				'settings' =>'corpbiz_options[slider_image_one]',
 				'section' => 'image_slider_one',
@@ -189,13 +186,13 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 	//Slider Title
 	$wp_customize->add_setting(
 	'corpbiz_options[slider_image_one_title]', array(
-        'default'        => 'Built Your Website',
+        'default'        => __('Built your website','corpbiz'),
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'corpbiz_input_field_sanitize_text',
 		'type' => 'option',
     ));
     $wp_customize->add_control('corpbiz_options[slider_image_one_title]', array(
-        'label'   => __('Slider Image Title', 'corpbiz'),
+        'label'   => __('Title', 'corpbiz'),
         'section' => 'image_slider_one',
 		'type' => 'text',
     ));
@@ -209,7 +206,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 		'type' => 'option',
     ));
     $wp_customize->add_control('corpbiz_options[slider_image_one_description]', array(
-        'label'   => __('Slider Image Desription', 'corpbiz'),
+        'label'   => __('Description', 'corpbiz'),
         'section' => 'image_slider_one',
 		'type' => 'textarea',
     ));
@@ -217,7 +214,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 	$wp_customize ->add_setting (
 	'corpbiz_options[slider_one_readmore_text]',
 	array( 
-	'default' => __('Learn More','corpbiz'),
+	'default' => __('Read More','corpbiz'),
 	'capability'     => 'edit_theme_options',
 	'sanitize_callback' => 'sanitize_text_field',
 	'type' => 'option',
@@ -227,7 +224,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 	$wp_customize->add_control (
 	'corpbiz_options[slider_one_readmore_text]',
 	array (  
-	'label' => __('Read More Button Label Text','corpbiz'),
+	'label' => __('Button Text','corpbiz'),
 	'section' => 'image_slider_one',
 	'type' => 'text',
 	) );
@@ -235,7 +232,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 	$wp_customize ->add_setting (
 	'corpbiz_options[slider_one_readmore_link]',
 	array( 
-	'default' => __('#','corpbiz'),
+	'default' => '#',
 	'capability'     => 'edit_theme_options',
 	'sanitize_callback' => 'sanitize_text_field',
 	'type' => 'option',
@@ -244,7 +241,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 	$wp_customize->add_control (
 	'corpbiz_options[slider_one_readmore_link]',
 	array (  
-	'label' => __('Read More Button Link','corpbiz'),
+	'label' => __('Button Link','corpbiz'),
 	'section' => 'image_slider_one',
 	'type' => 'text',
 	) );
@@ -261,7 +258,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 		'corpbiz_options[slider_one_readmore_ink_target]',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Open link new tab/window','corpbiz'),
+			'label' => __('Open link in new tab','corpbiz'),
 			'section' => 'image_slider_one',
 		)
 	);
@@ -275,10 +272,10 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
     public function render_content() {
     ?>
      <div class="pro-vesrion">
-	 <P><?php _e('Add More slider than upgrade to pro','corpbiz');?></P>
+	 <P><?php _e('Add more slider than upgrade to pro','corpbiz');?></P>
 	 </div>
 	  <div class="pro-box">
-	 <a href="<?php echo esc_url( __('http://webriti.com/corpbiz/', 'corpbiz'));?>" class="service" id="review_pro"><?php _e( 'UPGRADE TO PRO','corpbiz' ); ?></a>
+	 <a href="<?php echo esc_url( 'http://webriti.com/corpbiz/');?>" class="service" id="review_pro"><?php _e( 'Upgrade to pro','corpbiz' ); ?></a>
 	 <div>
     <?php
     }
@@ -287,13 +284,11 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 	$wp_customize->add_setting(
 		'add_more_slider',
 		array(
-			'default' => __('','corpbiz'),
 			'capability'     => 'edit_theme_options',
 			'sanitize_callback' => 'sanitize_text_field',
 		)	
 	);
 	$wp_customize->add_control( new WP_slider_pro_Customize_Control( $wp_customize, 'add_more_slider', array(	
-			'label' => __('Discover corpbiz Pro','corpbiz'),
 			'section' => 'image_slider_one',
 			'setting' => 'add_more_slider',
 		))
@@ -301,7 +296,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 	
 	/* Site Info Settings */
 	$wp_customize->add_section( 'site_info_settings' , array(
-		'title'      => __('Site Info', 'corpbiz'),
+		'title'      => __('Siteinfo setting', 'corpbiz'),
 		'panel'  => 'home_page',
 		'priority'   => 2,
    	) );
@@ -314,7 +309,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[site_title_one]', array(
-        'label'   => __('Site Info Title One', 'corpbiz'),
+        'label'   => __('Title One', 'corpbiz'),
         'section' => 'site_info_settings',
         'type'    => 'text',
 		'priority'   => 1,
@@ -322,13 +317,13 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 	
 	$wp_customize->add_setting(
 	'corpbiz_options[site_title_two]', array(
-        'default'        => 'Sample Pages',
+        'default'        => __('Sample pages','corpbiz'),
         'capability'     => 'edit_theme_options',
 		'type' => 'option',
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[site_title_two]', array(
-        'label'   => __('Site Info Title Two', 'corpbiz'),
+        'label'   => __('Title Two', 'corpbiz'),
         'section' => 'site_info_settings',
         'type'    => 'text',
 		'priority'   => 2,
@@ -342,7 +337,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[site_description]', array(
-        'label'   => __('Site Info Description', 'corpbiz'),
+        'label'   => __('Description', 'corpbiz'),
         'section' => 'site_info_settings',
         'type'    => 'textarea',
 		'priority'   => 2,
@@ -350,13 +345,13 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 	
 	$wp_customize->add_setting(
 	'corpbiz_options[siteinfo_button_one_text]', array(
-        'default'        => 'Buy it now',
+        'default'        => __('Read More','corpbiz'),
         'capability'     => 'edit_theme_options',
 		'type' => 'option',
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[siteinfo_button_one_text]', array(
-        'label'   => __('Button one Text', 'corpbiz'),
+        'label'   => __('Button Text', 'corpbiz'),
         'section' => 'site_info_settings',
         'type'    => 'text',
 		'priority'   => 3,
@@ -370,7 +365,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[siteinfo_button_one_target]', array(
-        'label'   => __('Open window in new tab', 'corpbiz'),
+        'label'   => __('Open link in new tab', 'corpbiz'),
         'section' => 'site_info_settings',
         'type'    => 'checkbox',
 		'priority'   => 4,
@@ -384,7 +379,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[siteinfo_button_one_link]', array(
-        'label'   => __('Button one url', 'corpbiz'),
+        'label'   => __('Button Link', 'corpbiz'),
         'section' => 'site_info_settings',
         'type'    => 'text',
 		'priority'   => 5,
@@ -392,13 +387,13 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 	
 	$wp_customize->add_setting(
 	'corpbiz_options[siteinfo_button_two_text]', array(
-        'default'        => 'View Portfolio',
+        'default'        => __('View portfolio','corpbiz'),
         'capability'     => 'edit_theme_options',
 		'type' => 'option',
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[siteinfo_button_two_text]', array(
-        'label'   => __('Button Two Text', 'corpbiz'),
+        'label'   => __('Button Text', 'corpbiz'),
         'section' => 'site_info_settings',
         'type'    => 'text',
 		'priority'   => 6,
@@ -412,7 +407,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[siteinfo_button_two_target]', array(
-        'label'   => __('Open window in new tab', 'corpbiz'),
+        'label'   => __('Open link in new tab', 'corpbiz'),
         'section' => 'site_info_settings',
         'type'    => 'checkbox',
 		'priority'   => 7,
@@ -426,7 +421,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[siteinfo_button_two_link]', array(
-        'label'   => __('Button two url', 'corpbiz'),
+        'label'   => __('Button Link', 'corpbiz'),
         'section' => 'site_info_settings',
         'type'    => 'text',
 		'priority'   => 8,
@@ -435,7 +430,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 	
 	/* Service Settings */
 	$wp_customize->add_section( 'service_settings' , array(
-		'title'      => __('Service Settings', 'corpbiz'),
+		'title'      => __('Service settings', 'corpbiz'),
 		'panel'  => 'home_page',
 		'priority'   => 3,
    	) );
@@ -455,7 +450,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 	$wp_customize->add_control(
     'corpbiz_options[service_section_enabled]',
     array(
-        'label' => __(' Enable Service Section on front page.','corpbiz'),
+        'label' => __('Enable service section on homepage.','corpbiz'),
         'section' => 'service_settings',
         'type' => 'checkbox',
     )
@@ -464,7 +459,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 	$wp_customize->add_setting(
     'corpbiz_options[home_service_title]',
     array(
-        'default' => __('Our Services','corpbiz'),
+        'default' => __('Our nice services','corpbiz'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
@@ -473,7 +468,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 	$wp_customize->add_control(
     'corpbiz_options[home_service_title]',
     array(
-        'label' => __('Service Title','corpbiz'),
+        'label' => __('Title','corpbiz'),
         'section' => 'service_settings',
         'type' => 'text',
     )
@@ -482,7 +477,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 	$wp_customize->add_setting(
     'corpbiz_options[home_service_description]',
     array(
-        'default' => __('Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupid non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','corpbiz'),
+        'default' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam scelerisque faucibus risus non iaculis.',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     )	
@@ -490,7 +485,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 	$wp_customize->add_control(
     'corpbiz_options[home_service_description]',
     array(
-        'label' => __('Service Description','corpbiz'),
+        'label' => __('Description','corpbiz'),
         'section' => 'service_settings',
         'type' => 'text',
 		'sanitize_callback' => 'sanitize_text_field',
@@ -508,7 +503,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
     ));
 	
 	$wp_customize->add_control( 'corpbiz_options[service_icon_one]', array(
-        'label'   => __('Service One icon', 'corpbiz'),
+        'label'   => __('Icon', 'corpbiz'),
 		'style' => 'background-color: red',
         'section' => 'service_settings',
         'type'    => 'text',
@@ -527,7 +522,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 	$wp_customize->add_control(
     'corpbiz_options[home_service_one_link]',
     array(
-        'label' => __('Home service one page and icon Link','corpbiz'),
+        'label' => __('Link','corpbiz'),
         'section' => 'service_settings',
         'type' => 'text',
     )
@@ -544,7 +539,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
     'corpbiz_options[home_service_one_link_target]',
     array(
         'type' => 'checkbox',
-        'label' => __('Open Link New tab/window','corpbiz'),
+        'label' => __('Open link in new tab','corpbiz'),
         'section' => 'service_settings',
     )
 );
@@ -552,7 +547,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 	$wp_customize->add_setting(
     'corpbiz_options[service_title_one]',
     array(
-        'default' => __('Easy to Use','corpbiz'),
+        'default' => __('Responsive design','corpbiz'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
@@ -561,7 +556,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 	$wp_customize->add_control(
     'corpbiz_options[service_title_one]',
     array(
-        'label' => __('Service Title','corpbiz'),
+        'label' => __('Title','corpbiz'),
         'section' => 'service_settings',
         'type' => 'text',
     )
@@ -570,7 +565,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 	$wp_customize->add_setting(
     'corpbiz_options[service_description_one]',
     array(
-        'default' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consec tetur adipisicing elit dignissim dapib tumst.','corpbiz'),
+        'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consec tetur adipisicing elit dignissim dapib tumst',
 		 'capability'     => 'edit_theme_options',
 		 'sanitize_callback' => 'sanitize_text_field',
 		 'type' => 'option',
@@ -579,7 +574,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 	$wp_customize->add_control(
     'corpbiz_options[service_description_one]',
     array(
-        'label' => __('Service Description','corpbiz'),
+        'label' => __('Description','corpbiz'),
         'section' => 'service_settings',
         'type' => 'text',	
     )
@@ -598,7 +593,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     'corpbiz_options[service_icon_two]',
     array(
-        'label' => __('Service Icon','corpbiz'),
+        'label' => __('Icon','corpbiz'),
         'section' => 'service_settings',
         'type' => 'text',
     )
@@ -617,7 +612,7 @@ $wp_customize->add_setting(
 	$wp_customize->add_control(
     'corpbiz_options[home_service_two_link]',
     array(
-        'label' => __('Home service two page and icon Link','corpbiz'),
+        'label' => __('Link','corpbiz'),
         'section' => 'service_settings',
         'type' => 'text',
     )
@@ -634,7 +629,7 @@ $wp_customize->add_setting(
     'corpbiz_options[home_service_two_link_target]',
     array(
         'type' => 'checkbox',
-        'label' => __('Open Link New tab/window','corpbiz'),
+        'label' => __('Open link in new tab','corpbiz'),
         'section' => 'service_settings',
     )
 );
@@ -642,7 +637,7 @@ $wp_customize->add_setting(
 $wp_customize->add_setting(
     'corpbiz_options[service_title_two]',
     array(
-        'default' => __('Easy to Use','corpbiz'),
+        'default' => __('Power full admin','corpbiz'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
@@ -651,7 +646,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     'corpbiz_options[service_title_two]',
     array(
-        'label' => __('Service Title' ,'corpbiz'),
+        'label' => __('Title' ,'corpbiz'),
         'section' => 'service_settings',
         'type' => 'text',
     )
@@ -660,7 +655,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
     'corpbiz_options[service_description_two]',
     array(
-        'default' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consec tetur adipisicing elit dignissim dapib tumst.','corpbiz'),
+        'default' => 'Lorem ipsum dolor sit amet, consect adipiscing elit.ivamus eget cvdn fdjnv',
 		 'capability'     => 'edit_theme_options',
 		 'sanitize_callback' => 'sanitize_text_field',
 		 'type' => 'option',
@@ -669,7 +664,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 		'corpbiz_options[service_description_two]',
 		array(
-        'label' => __('Service Description','corpbiz'),
+        'label' => __('Description','corpbiz'),
         'section' => 'service_settings',
         'type' => 'text',
     )
@@ -688,7 +683,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 'corpbiz_options[service_icon_three]',
     array(
-        'label' => __('Service Icon','corpbiz'),
+        'label' => __('Icon','corpbiz'),
         'section' => 'service_settings',
         'type' => 'text',
 		
@@ -708,7 +703,7 @@ $wp_customize->add_setting(
 	$wp_customize->add_control(
     'corpbiz_options[home_service_third_link]',
     array(
-        'label' => __('Home service three page and icon Link','corpbiz'),
+        'label' => __('Link','corpbiz'),
         'section' => 'service_settings',
         'type' => 'text',
 		'sanitize_callback' => 'sanitize_text_field',
@@ -726,7 +721,7 @@ $wp_customize->add_setting(
     'corpbiz_options[home_service_third_link_target]',
     array(
         'type' => 'checkbox',
-        'label' => __('Open Link New tab/window','corpbiz'),
+        'label' => __('Open link in new tab','corpbiz'),
         'section' => 'service_settings',
     )
 );
@@ -735,7 +730,7 @@ $wp_customize->add_setting(
 $wp_customize->add_setting(
     'corpbiz_options[service_title_three]',
     array(
-        'default' => __('Easy to Use','corpbiz'),
+        'default' => __('Great support','corpbiz'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' =>'option',
@@ -744,7 +739,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     'corpbiz_options[service_title_three]',
     array(
-        'label' => __('Service Title','corpbiz'),
+        'label' => __('Title','corpbiz'),
         'section' => 'service_settings',
         'type' => 'text',
     )
@@ -753,7 +748,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
     'corpbiz_options[service_description_three]',
     array(
-        'default' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consec tetur adipisicing elit dignissim dapib tumst.','corpbiz'),
+        'default' => 'Lorem ipsum dolor sit amet, consect adipiscing elit.ivamus eget cvdn fdjnv',
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' =>'option',
@@ -762,7 +757,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     'corpbiz_options[service_description_three]',
     array(
-        'label' => __('Description three','corpbiz'),
+        'label' => __('Description','corpbiz'),
         'section' => 'service_settings',
         'type' => 'text',
     )
@@ -780,7 +775,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     'corpbiz_options[service_icon_four]',
     array(
-        'label' => __('Service Icon','corpbiz'),
+        'label' => __('Icon','corpbiz'),
         'section' => 'service_settings',
         'type' => 'text',
     )
@@ -799,7 +794,7 @@ $wp_customize->add_setting(
 	$wp_customize->add_control(
     'corpbiz_options[home_service_fourth_link]',
     array(
-        'label' => __('Home service four page and icon Link','corpbiz'),
+        'label' => __('Link','corpbiz'),
         'section' => 'service_settings',
         'type' => 'text',
     )
@@ -816,7 +811,7 @@ $wp_customize->add_setting(
     'corpbiz_options[home_service_fourth_link_target]',
     array(
         'type' => 'checkbox',
-        'label' => __('Open Link New tab/window','corpbiz'),
+        'label' => __('Open link in new tab','corpbiz'),
         'section' => 'service_settings',
     )
 );
@@ -825,7 +820,7 @@ $wp_customize->add_setting(
 $wp_customize->add_setting(
     'corpbiz_options[service_title_four]',
     array(
-        'default' => __('Easy to Use','corpbiz'),
+        'default' => __('Clean minimal design','corpbiz'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option'
@@ -834,7 +829,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     'corpbiz_options[service_title_four]',
     array(
-        'label' => __('Service Title','corpbiz'),
+        'label' => __('Title','corpbiz'),
         'section' => 'service_settings',
         'type' => 'text',
     )
@@ -843,7 +838,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
    'corpbiz_options[service_description_four]',
     array(
-        'default' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consec tetur adipisicing elit dignissim dapib tumst.','corpbiz'),
+        'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consec tetur adipisicing elit dignissim dapib tumst.',
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option'
@@ -852,7 +847,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     'corpbiz_options[service_description_four]',
     array(
-        'label' => __('Service Description','corpbiz'),
+        'label' => __('Description','corpbiz'),
         'section' => 'service_settings',
         'type' => 'text',
 		'sanitize_callback' => 'sanitize_text_field',
@@ -869,7 +864,7 @@ class WP_service_Customize_Control extends WP_Customize_Control {
 	 <P><?php _e('Want to add more service than upgrade to pro','corpbiz');?></P>
 	 </div>
 	  <div class="pro-box">
-	 <a href="<?php echo esc_url( __('http://webriti.com/corpbiz/', 'corpbiz'));?>" target="_blank" class="service" id="review_pro"><?php _e( 'UPGRADE TO PRO','corpbiz' ); ?></a>
+	 <a href="<?php echo esc_url('http://webriti.com/corpbiz/');?>" target="_blank" class="service" id="review_pro"><?php _e( 'Upgrade to pro','corpbiz' ); ?></a>
 	 <div>
     <?php
     }
@@ -878,15 +873,13 @@ class WP_service_Customize_Control extends WP_Customize_Control {
 $wp_customize->add_setting(
      'corpbiz_options[service_pro]',
     array(
-        'default' => __('','corpbiz'),
-		'capability'     => 'edit_theme_options',
+        'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     )	
 );
 $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'corpbiz_options[service_pro]', array(	
-		'label' => __('Discover corpbiz Pro','corpbiz'),
-        'section' => 'service_settings',
+		'section' => 'service_settings',
 		'setting' => 'corpbiz_options[service_pro]',
     ))
 );
@@ -896,7 +889,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	/* Project Slider */ 
 	
 	$wp_customize->add_section( 'project_slider_settings' , array(
-		'title'      => __('Project Slider Settings', 'corpbiz'),
+		'title'      => __('Project slider settings', 'corpbiz'),
 		'panel'  => 'home_page',
 		'priority'   => 4,
    	) );
@@ -910,10 +903,10 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
     public function render_content() {
     ?>
       <div class="pro-vesrion">
-	 <P><?php _e('Want to add Project Slider than upgrade to pro','corpbiz');?></P>
+	 <P><?php _e('Want to add project slider than upgrade to pro','corpbiz');?></P>
 	 </div>
 	  <div class="pro-box">
-	 <a href="<?php echo esc_url( __('http://webriti.com/corpbiz/', 'corpbiz'));?>" target="_blank" class="project" id="review_pro"><?php _e( 'UPGRADE TO PRO','corpbiz' ); ?></a>
+	 <a href="<?php echo esc_url('http://webriti.com/corpbiz/');?>" target="_blank" class="project" id="review_pro"><?php _e('Upgrade to pro','corpbiz' ); ?></a>
 	 <div>
     <?php
     }
@@ -922,14 +915,12 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	$wp_customize->add_setting(
 		 'corpbiz_options[project_slider_pro]',
 		array(
-			'default' => __('','corpbiz'),
 			'capability'     => 'edit_theme_options',
 			'sanitize_callback' => 'sanitize_text_field',
 			'type' => 'option',
 		)	
 	);
 	$wp_customize->add_control( new WP_project_slider_Customize_Control( $wp_customize, 'corpbiz_options[project_slider_pro]', array(	
-			'label' => __('Discover corpbiz Pro','corpbiz'),
 			'section' => 'project_slider_settings',
 			'setting' => 'corpbiz_options[project_slider_pro]',
 		))
@@ -938,7 +929,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	//Show and hide portfolio section
 	
 	$wp_customize->add_section( 'portfolio_settings' , array(
-		'title'      => __('Portfolio Settings', 'corpbiz'),
+		'title'      => __('Portfolio settings', 'corpbiz'),
 		'panel'  => 'home_page',
 		'priority'   => 5,
    	) );
@@ -957,7 +948,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	$wp_customize->add_control(
     'corpbiz_options[portfolio_section_enabled]',
     array(
-        'label' => __('Enable portfolio section on home Page','corpbiz'),
+        'label' => __('Enable portfolio section on homepage','corpbiz'),
         'section' => 'portfolio_settings',
         'type' => 'checkbox',
     )
@@ -965,13 +956,13 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	//portfolio one Title
 	$wp_customize->add_setting(
 	'corpbiz_options[portfolio_title]', array(
-        'default'        => __('Our Work Speaks Thousand Words','corpbiz'),
+        'default'        => __('Our work speaks thousand words','corpbiz'),
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
     $wp_customize->add_control('corpbiz_options[portfolio_title]', array(
-        'label'   => __('portfolio Title', 'corpbiz'),
+        'label'   => __('Title', 'corpbiz'),
         'section' => 'portfolio_settings',
 		'type' => 'text',
     ));
@@ -979,13 +970,13 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	//portfolio Description
 	$wp_customize->add_setting(
 	'corpbiz_options[portfolio_description]', array(
-        'default'        => __('We have successfully completed over 2500 portfolios in mobile and web. Here are few of them..','corpbiz'),
-        'capability'     => 'edit_theme_options',
+        'default' => __('We have successfully completed over 2500 projects in mobile and web. Here are few of them.','corpbiz'),
+        'capability' => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
     $wp_customize->add_control('corpbiz_options[portfolio_description]', array(
-        'label'   => __('portfolio Description', 'corpbiz'),
+        'label'   => __('Description', 'corpbiz'),
         'section' => 'portfolio_settings',
 		'type' => 'text',
     ));
@@ -993,13 +984,13 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	//portfolio one Title
 	$wp_customize->add_setting(
 	'corpbiz_options[portfolio_title_one]', array(
-        'default'        => 'Wall Street Style',
+        'default'        => __('Portfolio one','corpbiz'),
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
     $wp_customize->add_control('corpbiz_options[portfolio_title_one]', array(
-        'label'   => __('portfolio Title One', 'corpbiz'),
+        'label'   => __('Portfolio one','corpbiz'),
         'section' => 'portfolio_settings',
 		'type' => 'text',
     ));
@@ -1012,7 +1003,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 			$wp_customize,
 			'corpbiz_options[portfolio_image_one]',
 			array(
-				'label' => 'portfolio One Thumbnail',
+				'label' => __('Image','corpbiz'),
 				'section' => 'example_section_one',
 				'settings' =>'corpbiz_options[portfolio_image_one]',
 				'section' => 'portfolio_settings',
@@ -1034,7 +1025,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	$wp_customize->add_control(
     'corpbiz_options[home_image_one_link]',
     array(
-        'label' => __('Home portfolio one page and icon Link','corpbiz'),
+        'label' => __('Icon Link','corpbiz'),
         'section' => 'portfolio_settings',
         'type' => 'text',
     )
@@ -1051,7 +1042,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
     'corpbiz_options[home_image_one_link_target]',
     array(
         'type' => 'checkbox',
-        'label' => __('Open Link New tab/window','corpbiz'),
+        'label' => __('Open link in new tab','corpbiz'),
         'section' => 'portfolio_settings',
     )
 );
@@ -1060,13 +1051,13 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	//portfolio Two Title
 	$wp_customize->add_setting(
 	'corpbiz_options[portfolio_title_two]', array(
-        'default'        => 'Wall Street Style',
+        'default'        => __('Portfolio two','corpbiz'),
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
     $wp_customize->add_control('corpbiz_options[portfolio_title_two]', array(
-        'label'   => __('portfolio Title Two', 'corpbiz'),
+        'label'   => __('Portfolio two', 'corpbiz'),
         'section' => 'portfolio_settings',
 		'type' => 'text',
     ));
@@ -1078,7 +1069,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 			$wp_customize,
 			'corpbiz_options[portfolio_image_two]',
 			array(
-				'label' => 'portfolio two Thumbnail',
+				'label' => __('Image','corpbiz'),
 				'section' => 'example_section_one',
 				'settings' =>'corpbiz_options[portfolio_image_two]',
 				'section' => 'portfolio_settings',
@@ -1100,7 +1091,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	$wp_customize->add_control(
     'corpbiz_options[home_image_two_link]',
     array(
-        'label' => __('Home portfolio one page and icon Link','corpbiz'),
+        'label' => __('Icon Link','corpbiz'),
         'section' => 'portfolio_settings',
         'type' => 'text',
     )
@@ -1117,7 +1108,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
     'corpbiz_options[home_image_two_link_target]',
     array(
         'type' => 'checkbox',
-        'label' => __('Open Link New tab/window','corpbiz'),
+        'label' => __('Open link in new tab','corpbiz'),
         'section' => 'portfolio_settings',
     )
 );
@@ -1125,13 +1116,13 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	//portfolio Title Title
 	$wp_customize->add_setting(
 	'corpbiz_options[portfolio_title_three]', array(
-        'default'        => 'Wall Street Style',
+        'default'        => __('Portfolio three','corpbiz'),
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
     $wp_customize->add_control('corpbiz_options[portfolio_title_three]', array(
-        'label'   => __('portfolio Title Three', 'corpbiz'),
+        'label'   => __('Portfolio three', 'corpbiz'),
         'section' => 'portfolio_settings',
 		'type' => 'text',
     ));
@@ -1146,7 +1137,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 			$wp_customize,
 			'corpbiz_options[portfolio_image_three]',
 			array(
-				'label' => 'portfolio Three Thumbnail',
+				'label' => __('Image','corpbiz'),
 				'section' => 'example_section_one',
 				'settings' =>'corpbiz_options[portfolio_image_three]',
 				'section' => 'portfolio_settings',
@@ -1168,7 +1159,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	$wp_customize->add_control(
     'corpbiz_options[home_image_three_link]',
     array(
-        'label' => __('Home portfolio one page and icon Link','corpbiz'),
+        'label' => __('Icon Link','corpbiz'),
         'section' => 'portfolio_settings',
         'type' => 'text',
     )
@@ -1185,7 +1176,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
     'corpbiz_options[home_image_three_link_target]',
     array(
         'type' => 'checkbox',
-        'label' => __('Open Link New tab/window','corpbiz'),
+        'label' => __('Open link in new tab','corpbiz'),
         'section' => 'portfolio_settings',
     )
 );
@@ -1194,13 +1185,13 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	//portfolio Four Title
 	$wp_customize->add_setting(
 	'corpbiz_options[portfolio_title_four]', array(
-        'default'        => 'Wall Street Style',
+        'default'        => __('Portfolio four','corpbiz'),
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
     $wp_customize->add_control('corpbiz_options[portfolio_title_four]', array(
-        'label'   => __('portfolio Title Four', 'corpbiz'),
+        'label'   => __('Portfolio four', 'corpbiz'),
         'section' => 'portfolio_settings',
 		'type' => 'text',
     ));
@@ -1215,7 +1206,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 			$wp_customize,
 			'corpbiz_options[portfolio_image_four]',
 			array(
-				'label' => 'portfolio four Thumbnail',
+				'label' => __('Image','corpbiz'),
 				'section' => 'example_section_one',
 				'settings' =>'corpbiz_options[portfolio_image_four]',
 				'section' => 'portfolio_settings',
@@ -1237,7 +1228,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	$wp_customize->add_control(
     'corpbiz_options[home_image_four_link]',
     array(
-        'label' => __('Home portfolio one page and icon Link','corpbiz'),
+        'label' => __('Icon Link','corpbiz'),
         'section' => 'portfolio_settings',
         'type' => 'text',
     )
@@ -1254,7 +1245,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
     'corpbiz_options[home_image_four_link_target]',
     array(
         'type' => 'checkbox',
-        'label' => __('Open Link New tab/window','corpbiz'),
+        'label' => __('Open link in new tab','corpbiz'),
         'section' => 'portfolio_settings',
     )
 );
@@ -1270,7 +1261,8 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	 <P><?php _e('Want to add more portfolios and categorization than upgrade to pro','corpbiz');?></P>
 	 </div>
 	  <div class="pro-box">
-	 <a href="<?php echo esc_url( __('http://webriti.com/corpbiz/', 'corpbiz'));?>" class="service" id="review_pro"><?php _e( 'UPGRADE TO PRO','corpbiz' ); ?></a>
+	 <a href="<?php echo esc_url('http://webriti.com/corpbiz/');?>" class="service" id="review_pro">
+	 <?php _e( 'Upgrade to pro','corpbiz' ); ?></a>
 	 <div>
     <?php
     }
@@ -1279,13 +1271,11 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	$wp_customize->add_setting(
 		'portfolio_pro',
 		array(
-			'default' => __('','corpbiz'),
 			'capability'     => 'edit_theme_options',
 			'sanitize_callback' => 'sanitize_text_field',
 		)	
 	);
 	$wp_customize->add_control( new WP_portfolio_Customize_Control( $wp_customize, 'portfolio_pro', array(	
-			'label' => __('Discover corpbiz Pro','corpbiz'),
 			'section' => 'portfolio_settings',
 			'setting' => 'portfolio_pro',
 		))
@@ -1296,7 +1286,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	
 	/* Client Settings */
 	$wp_customize->add_section( 'client_settings' , array(
-		'title'      => __('Client Settings', 'corpbiz'),
+		'title'      => __('Client settings', 'corpbiz'),
 		'panel'  => 'home_page',
 		'priority'   => 6,
    	) );
@@ -1310,10 +1300,10 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
     public function render_content() {
     ?>
      <div class="pro-vesrion">
-	 <P><?php _e('Want to add Client than upgrade to pro','corpbiz');?></P>
+	 <P><?php _e('Want to add client than upgrade to pro','corpbiz');?></P>
 	 </div>
 	  <div class="pro-box">
-	 <a href="<?php echo esc_url( __('http://webriti.com/corpbiz/', 'corpbiz'));?>" target="_blank" class="service" id="review_pro"><?php _e( 'UPGRADE TO PRO','corpbiz' ); ?></a>
+	 <a href="<?php echo esc_url('http://webriti.com/corpbiz/');?>" target="_blank" class="service" id="review_pro"><?php _e('Upgrade to pro','corpbiz' ); ?></a>
 	 <div>
     <?php
     }
@@ -1322,13 +1312,11 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	$wp_customize->add_setting(
 		'client_pro',
 		array(
-			'default' => __('','corpbiz'),
 			'capability'     => 'edit_theme_options',
 			'sanitize_callback' => 'sanitize_text_field',
 		)	
 	);
 	$wp_customize->add_control( new WP_client_Customize_Control( $wp_customize, 'client_pro', array(	
-			'label' => __('Discover corpbiz Pro','corpbiz'),
 			'section' => 'client_settings',
 			'setting' => 'client_pro',
 			'priority'   => 0,
@@ -1340,13 +1328,13 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	
 	$wp_customize->add_setting(
 	'corpbiz_options[home_client_title]', array(
-        'default'        => 'What Our Clients Say',
+        'default'        => __('What our clients says','corpbiz'),
         'capability'     => 'edit_theme_options',
 		'type' => 'option',
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[home_client_title]', array(
-        'label'   => __('Home Page client Heading', 'corpbiz'),
+        'label'   => __('Title', 'corpbiz'),
         'section' => 'client_settings',
         'type'    => 'text',
 		'priority'   => 1,
@@ -1361,7 +1349,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[home_client_desciption]', array(
-        'label'   => __('Home Page Client section description', 'corpbiz'),
+        'label'   => __('Description', 'corpbiz'),
         'section' => 'client_settings',
         'type'    => 'text',
 		'priority'   => 2,
@@ -1376,7 +1364,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[client_list]', array(
-        'label'   => __('Number of Client on Client Section', 'corpbiz'),
+        'label'   => __('Number of client on client section', 'corpbiz'),
         'section' => 'client_settings',
         'type'    => 'select',
 		'priority'   => 3,
@@ -1392,7 +1380,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
     */
     public function render_content() {
     ?>
-    <a href="#" class="button"><?php _e( 'Click Here To add Client', 'corpbiz' ); ?></a>
+    <a href="#" class="button"><?php _e( 'Click here to add client', 'corpbiz' ); ?></a>
     <?php
     }
 	}
@@ -1400,13 +1388,11 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	$wp_customize->add_setting(
 		'client',
 		array(
-			'default' => '',
 			'capability'     => 'edit_theme_options',
 			'sanitize_callback' => 'sanitize_text_field',
 		)	
 	);
 	$wp_customize->add_control( new WP_client_add_Customize_Control( $wp_customize, 'client', array(	
-			'label' => __('Discover corpbiz Pro','corpbiz'),
 			'section' => 'client_settings',
 			'priority'   => 500,
 		))
@@ -1421,7 +1407,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	
 	
 	$wp_customize->add_section( 'theme_support' , array(
-		'title'      => __('Theme Support Settings', 'corpbiz'),
+		'title'      => __('Theme support settings', 'corpbiz'),
 		'panel'  => 'home_page',
 		'priority'   => 7,
    	) );
@@ -1436,10 +1422,10 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
     public function render_content() {
     ?>
      <div class="pro-vesrion">
-	 <P><?php _e('Want to add Theme Support Setting Section than upgrade to pro','corpbiz');?></P>
+	 <P><?php _e('Want to add theme support setting section than upgrade to pro','corpbiz');?></P>
 	 </div>
 	  <div class="pro-box">
-	 <a href="<?php echo esc_url( __('http://webriti.com/corpbiz/', 'corpbiz'));?>" target="_blank" class="service" id="review_pro"><?php _e( 'UPGRADE TO PRO','corpbiz' ); ?></a>
+	 <a href="<?php echo esc_url('http://webriti.com/corpbiz/');?>" target="_blank" class="service" id="review_pro"><?php _e('Upgrade to pro','corpbiz' ); ?></a>
 	 <div>
     <?php
     }
@@ -1448,13 +1434,11 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	$wp_customize->add_setting(
 		'theme_support_settting',
 		array(
-			'default' => __('','corpbiz'),
 			'capability'     => 'edit_theme_options',
 			'sanitize_callback' => 'sanitize_text_field',
 		)	
 	);
 	$wp_customize->add_control( new WP_theme_support_Customize_Control( $wp_customize, 'theme_support_settting', array(	
-			'label' => __('Discover corpbiz Pro','corpbiz'),
 			'section' => 'theme_support',
 			'setting' => 'theme_support_settting',
 			'priority'   => 0,
@@ -1462,20 +1446,14 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	);
 	
 	
-	
-	
-	
-	
-	
 	$wp_customize->add_setting(
 	'corpbiz_options[home_theme_support_bg]', array(
-        'default'        => '',
-        'capability'     => 'edit_theme_options',
+		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
 	$wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'corpbiz_options[home_theme_support_bg]', array(
-      'label'    => __( 'Theme Support Background', 'corpbiz' ),
+      'label'    => __('Background Image', 'corpbiz' ),
       'section'  => 'theme_support',
 	  'priority'   => 1,
      ))
@@ -1483,13 +1461,13 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	 
 	 $wp_customize->add_setting(
 	'corpbiz_options[home_theme_support_title]', array(
-        'default'        => 'We are here to help you',
+        'default'        => __('We are here to help you','corpbiz'),
         'capability'     => 'edit_theme_options',
 		'type' => 'option',
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[home_theme_support_title]', array(
-        'label'   => __('Section Title', 'corpbiz'),
+        'label'   => __('Title', 'corpbiz'),
         'section' => 'theme_support',
         'type'    => 'text',
 		'priority'   => 2,
@@ -1498,13 +1476,13 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	
 	$wp_customize->add_setting(
 	'corpbiz_options[home_theme_support_description]', array(
-        'default'        => '24+7 hours support by us',
+        'default'        => __('24+7 hours support by us','corpbiz'),
         'capability'     => 'edit_theme_options',
 		'type' => 'option',
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[home_theme_support_description]', array(
-        'label'   => __('Section Description', 'corpbiz'),
+        'label'   => __('Description', 'corpbiz'),
         'section' => 'theme_support',
         'type'    => 'text',
 		'priority'   => 3,
@@ -1519,7 +1497,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[home_support_icon_one]', array(
-        'label'   => __('Icon 1', 'corpbiz'),
+        'label'   => __('Icon', 'corpbiz'),
         'section' => 'theme_support',
         'type'    => 'text',
 		'priority'   => 4,
@@ -1528,13 +1506,13 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	
 	$wp_customize->add_setting(
 	'corpbiz_options[home_support_title_one]', array(
-        'default'        => 'Need Support?',
+        'default'        => __('Need Support','corpbiz'),
         'capability'     => 'edit_theme_options',
 		'type' => 'option',
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[home_support_title_one]', array(
-        'label'   => __('Title 1', 'corpbiz'),
+        'label'   => __('Title', 'corpbiz'),
         'section' => 'theme_support',
         'type'    => 'text',
 		'priority'   => 5,
@@ -1549,7 +1527,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[home_support_desciption_one]', array(
-        'label'   => __('Description 1', 'corpbiz'),
+        'label'   => __('Description', 'corpbiz'),
         'section' => 'theme_support',
         'type'    => 'text',
 		'priority'   => 6,
@@ -1558,13 +1536,13 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	
 	$wp_customize->add_setting(
 	'corpbiz_options[home_support_learn_more_text_one]', array(
-        'default'        => 'learn more',
+        'default'        => __('Read More','corpbiz'),
         'capability'     => 'edit_theme_options',
 		'type' => 'option',
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[home_support_learn_more_text_one]', array(
-        'label'   => __('Learn More Text 1', 'corpbiz'),
+        'label'   => __('Button Text', 'corpbiz'),
         'section' => 'theme_support',
         'type'    => 'text',
 		'priority'   => 7,
@@ -1579,7 +1557,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[home_support_learn_more_target_one]', array(
-        'label'   => __('Open window in new tab', 'corpbiz'),
+        'label'   => __('Open link in new tab', 'corpbiz'),
         'section' => 'theme_support',
         'type'    => 'checkbox',
 		'priority'   => 8,
@@ -1593,7 +1571,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[home_support_learn_more_link_one]', array(
-        'label'   => __('Learn More Button link 1', 'corpbiz'),
+        'label'   => __('Button Link', 'corpbiz'),
         'section' => 'theme_support',
         'type'    => 'text',
 		'priority'   => 9,
@@ -1608,7 +1586,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[home_support_icon_two]', array(
-        'label'   => __('Icon 2', 'corpbiz'),
+        'label'   => __('Icon', 'corpbiz'),
         'section' => 'theme_support',
         'type'    => 'text',
 		'priority'   => 10,
@@ -1617,13 +1595,13 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	
 	$wp_customize->add_setting(
 	'corpbiz_options[home_support_title_two]', array(
-        'default'        => 'Check Our Forum',
+        'default'        => __('Check our forum','corpbiz'),
         'capability'     => 'edit_theme_options',
 		'type' => 'option',
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[home_support_title_two]', array(
-        'label'   => __('Title 2', 'corpbiz'),
+        'label'   => __('Title', 'corpbiz'),
         'section' => 'theme_support',
         'type'    => 'text',
 		'priority'   => 11,
@@ -1638,7 +1616,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[home_support_desciption_two]', array(
-        'label'   => __('Description 2', 'corpbiz'),
+        'label'   => __('Description', 'corpbiz'),
         'section' => 'theme_support',
         'type'    => 'text',
 		'priority'   => 12,
@@ -1647,13 +1625,13 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	
 	$wp_customize->add_setting(
 	'corpbiz_options[home_support_learn_more_text_two]', array(
-        'default'        => 'learn more',
+        'default'        => __('Read More','corpbiz'),
         'capability'     => 'edit_theme_options',
 		'type' => 'option',
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[home_support_learn_more_text_two]', array(
-        'label'   => __('Learn More Text 2', 'corpbiz'),
+        'label'   => __('Button Text', 'corpbiz'),
         'section' => 'theme_support',
         'type'    => 'text',
 		'priority'   => 13,
@@ -1668,7 +1646,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[home_support_learn_more_target_two]', array(
-        'label'   => __('Open window in new tab', 'corpbiz'),
+        'label'   => __('Open link in new tab', 'corpbiz'),
         'section' => 'theme_support',
         'type'    => 'checkbox',
 		'priority'   => 14,
@@ -1683,7 +1661,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[home_support_learn_more_link_two]', array(
-        'label'   => __('Learn More Button link 2', 'corpbiz'),
+        'label'   => __('Button Link', 'corpbiz'),
         'section' => 'theme_support',
         'type'    => 'text',
 		'priority'   => 15,
@@ -1698,7 +1676,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[home_support_icon_three]', array(
-        'label'   => __('Icon 3', 'corpbiz'),
+        'label'   => __('Icon', 'corpbiz'),
         'section' => 'theme_support',
         'type'    => 'text',
 		'priority'   => 16,
@@ -1707,13 +1685,13 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	
 	$wp_customize->add_setting(
 	'corpbiz_options[home_support_title_three]', array(
-        'default'        => 'Get Updated',
+        'default'        => __('Get updated','corpbiz'),
         'capability'     => 'edit_theme_options',
 		'type' => 'option',
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[home_support_title_three]', array(
-        'label'   => __('Title 3', 'corpbiz'),
+        'label'   => __('Title', 'corpbiz'),
         'section' => 'theme_support',
         'type'    => 'text',
 		'priority'   => 17,
@@ -1728,7 +1706,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[home_support_desciption_three]', array(
-        'label'   => __('Description 3', 'corpbiz'),
+        'label'   => __('Description', 'corpbiz'),
         'section' => 'theme_support',
         'type'    => 'text',
 		'priority'   => 18,
@@ -1737,13 +1715,13 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	
 	$wp_customize->add_setting(
 	'corpbiz_options[home_support_learn_more_text_three]', array(
-        'default'        => 'learn more',
+        'default'        => __('Read More','corpbiz'),
         'capability'     => 'edit_theme_options',
 		'type' => 'option',
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[home_support_learn_more_text_three]', array(
-        'label'   => __('Learn More Text 3', 'corpbiz'),
+        'label'   => __('Button Text', 'corpbiz'),
         'section' => 'theme_support',
         'type'    => 'text',
 		'priority'   => 19,
@@ -1758,7 +1736,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[home_support_learn_more_target_three]', array(
-        'label'   => __('Open window in new tab', 'corpbiz'),
+        'label'   => __('Open link in new tab', 'corpbiz'),
         'section' => 'theme_support',
         'type'    => 'checkbox',
 		'priority'   => 20,
@@ -1773,7 +1751,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[home_support_learn_more_link_three]', array(
-        'label'   => __('Learn More Button link 3', 'corpbiz'),
+        'label'   => __('Button Link', 'corpbiz'),
         'section' => 'theme_support',
         'type'    => 'text',
 		'priority'   => 21,
@@ -1783,7 +1761,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	
 	/* Footer Callout Settings */
 	$wp_customize->add_section( 'footer_callout' , array(
-		'title'      => __('Footer Callout', 'corpbiz'),
+		'title'      => __('Footer callout', 'corpbiz'),
 		'panel'  => 'home_page',
 		'priority'   => 9,
    	) );
@@ -1798,10 +1776,10 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
     public function render_content() {
     ?>
      <div class="pro-vesrion">
-	 <P><?php _e('Want to add Footer callout than upgrade to pro','corpbiz');?></P>
+	 <P><?php _e('Want to add footer callout than upgrade to pro','corpbiz');?></P>
 	 </div>
 	  <div class="pro-box">
-	 <a href="<?php echo esc_url( __('http://webriti.com/corpbiz/', 'corpbiz'));?>" target="_blank" class="service" id="review_pro"><?php _e( 'UPGRADE TO PRO','corpbiz' ); ?></a>
+	 <a href="<?php echo esc_url('http://webriti.com/corpbiz/');?>" target="_blank" class="service" id="review_pro"><?php _e('Upgrade to pro','corpbiz' ); ?></a>
 	 <div>
     <?php
     }
@@ -1810,13 +1788,11 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	$wp_customize->add_setting(
 		'footer_callout_settting',
 		array(
-			'default' => __('','corpbiz'),
 			'capability'     => 'edit_theme_options',
 			'sanitize_callback' => 'sanitize_text_field',
 		)	
 	);
 	$wp_customize->add_control( new WP_footer_callout_Customize_Control( $wp_customize, 'footer_callout_settting', array(	
-			'label' => __('Discover corpbiz Pro','corpbiz'),
 			'section' => 'footer_callout',
 			'setting' => 'footer_callout_settting',
 			'priority'   => 0,
@@ -1828,13 +1804,13 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	
 	$wp_customize->add_setting(
 	'corpbiz_options[call_out_title]', array(
-        'default'        => 'Get your app ideas transformed into reality',
+        'default'        => __('Get your app ideas transformed into reality','corpbiz'),
         'capability'     => 'edit_theme_options',
 		'type' => 'option',
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[call_out_title]', array(
-        'label'   => __('Call Out Title', 'corpbiz'),
+        'label'   => __('Title', 'corpbiz'),
         'section' => 'footer_callout',
         'type'    => 'text',
 		'priority'   => 1,
@@ -1849,7 +1825,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[call_out_text]', array(
-        'label'   => __('Call Out Text', 'corpbiz'),
+        'label'   => __('Description', 'corpbiz'),
         'section' => 'footer_callout',
         'type'    => 'text',
 		'priority'   => 2,
@@ -1858,13 +1834,13 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	
 	$wp_customize->add_setting(
 	'corpbiz_options[call_out_button_text]', array(
-        'default'        => 'Buy it Now',
+        'default'        => __('Read More','corpbiz'),
         'capability'     => 'edit_theme_options',
 		'type' => 'option',
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[call_out_button_text]', array(
-        'label'   => __('Call Out Button Text', 'corpbiz'),
+        'label'   => __('Button Text', 'corpbiz'),
         'section' => 'footer_callout',
         'type'    => 'text',
 		'priority'   => 3,
@@ -1879,7 +1855,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[call_out_button_link_target]', array(
-        'label'   => __('Open window in new tab', 'corpbiz'),
+        'label'   => __('Open link in new tab', 'corpbiz'),
         'section' => 'footer_callout',
         'type'    => 'checkbox',
 		'priority'   => 4,
@@ -1893,7 +1869,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 	$wp_customize->add_control('corpbiz_options[call_out_button_link]', array(
-        'label'   => __('Call Out Button URL', 'corpbiz'),
+        'label'   => __('Button Link', 'corpbiz'),
         'section' => 'footer_callout',
         'type'    => 'text',
 		'priority'   => 5,
@@ -1905,7 +1881,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	$wp_customize->add_section(
         'blog_setting',
         array(
-            'title' => __('Home Blog Settings','corpbiz'),
+            'title' => __('Blog settings','corpbiz'),
 			'priority'   => 8,
 			'panel'=>'home_page'
 			)
@@ -1914,26 +1890,26 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
 	$wp_customize->add_setting(
     'corpbiz_options[blog_title]',
     array(
-        'default' => __('From Blog','corpbiz'),
+        'default' => __('From blog','corpbiz'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
 		));	
 	$wp_customize->add_control( 'corpbiz_options[blog_title]',array(
-    'label'   => __('Latest blog Description','corpbiz'),
+    'label'   => __('Title','corpbiz'),
     'section' => 'blog_setting',
 	 'type' => 'text',));
 	
 	$wp_customize->add_setting(
     'corpbiz_options[blog_description]',
     array(
-        'default' => __('Lorem ipsum dolor sit ametconsectetuer adipiscing elit.','corpbiz'),
+        'default' => 'Lorem ipsum dolor sit ametconsectetuer adipiscing elit.',
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
 		));	
 	$wp_customize->add_control( 'corpbiz_options[blog_description]',array(
-    'label'   => __('Latest blog Description','corpbiz'),
+    'label'   => __('Description','corpbiz'),
     'section' => 'blog_setting',
 	 'type' => 'text',));	
 	 
@@ -1949,7 +1925,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
     ));
 	
 	$wp_customize->add_control( new Category_Dropdown_Custom_Control1( $wp_customize,'corpbiz_options[blog_selected_category_id]', array(
-    'label'   => __('Select Category for Latest blog','corpbiz'),
+    'label'   => __('Select category for latest blog','corpbiz'),
     'section' => 'blog_setting',
     'settings'   =>  'corpbiz_options[blog_selected_category_id]',
 	) ) ); // blog category
@@ -1958,7 +1934,7 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
     'corpbiz_options[post_display_count]',
     array(
 		'type' => 'option',
-        'default' => __('3','corpbiz'),
+        'default' => 3,
 		'sanitize_callback' => 'sanitize_text_field',
     ));
 
@@ -1966,9 +1942,9 @@ $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'co
     'corpbiz_options[post_display_count]',
     array(
         'type' => 'select',
-        'label' => __('Select Number of Post','corpbiz'),
+        'label' => __('Select number of post','corpbiz'),
         'section' => 'blog_setting',
-		 'choices' => array('3'=>__('3', 'corpbiz'), '6'=>__('6', 'corpbiz'), '9' => __('9','corpbiz'), '12' => __('12','corpbiz'),'15'=> __('15','corpbiz')),
+		 'choices' => array(3=>3, 6=>6,9 =>9,12 =>12,15=> 15),
 		));
 		
 	function corpbiz_input_field_sanitize_text( $input ) 

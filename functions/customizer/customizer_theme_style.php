@@ -8,7 +8,7 @@ public $type = 'new_menu';
        function render_content()
        
 	   {
-	   echo '<h3>Predefined Colors</h3>';
+	   echo '<h3>Predefined colors</h3>';
 		  $name = '_customize-color-radio-' . $this->id; 
 		  foreach($this->choices as $key => $value ) {
             ?>
@@ -24,7 +24,7 @@ public $type = 'new_menu';
 }
 	/* Theme Style settings */
 	$wp_customize->add_section( 'theme_style' , array(
-		'title'      => __('Theme Style Setting', 'corpbiz'),
+		'title'      => __('Theme style setting', 'corpbiz'),
 		'priority'   => 200,
    	) );
 	
@@ -37,10 +37,10 @@ public $type = 'new_menu';
     public function render_content() {
     ?>
      <div class="pro-vesrion">
-	 <P><?php _e('Use Below Default Color Skin & Custom Color skin than upgrade to pro','corpbiz');?></P>
+	 <P><?php _e('Use below default color skin & custom color skin than upgrade to pro','corpbiz');?></P>
 	 </div>
 	  <div class="pro-box">
-	 <a href="<?php echo esc_url( __('http://webriti.com/corpbiz/', 'corpbiz'));?>" class="service" target = "_blank" id="review_pro"><?php _e( 'UPGRADE TO PRO','corpbiz' ); ?></a>
+	 <a href="<?php echo esc_url('http://webriti.com/corpbiz/');?>" class="service" target = "_blank" id="review_pro"><?php _e('Upgrade to pro','corpbiz' ); ?></a>
 	 <div>
     <?php
     }
@@ -49,13 +49,11 @@ public $type = 'new_menu';
 	$wp_customize->add_setting(
 		'color_pro',
 		array(
-			'default' => __('','corpbiz'),
 			'capability'     => 'edit_theme_options',
 			'sanitize_callback' => 'sanitize_text_field',
 		)	
 	);
 	$wp_customize->add_control( new WP_color_pro_Customize_Control( $wp_customize, 'color_pro', array(	
-			'label' => __('Discover corpbiz Pro','corpbiz'),
 			'section' => 'theme_style',
 			'setting' => 'color_pro',
 		))
@@ -73,7 +71,7 @@ public $type = 'new_menu';
     ));
 	$wp_customize->add_control(new WP_color_Customize_Control($wp_customize,'corpbiz_options[theme_color]',
 	array(
-        'label'   => __('Predefined Colors', 'corpbiz'),
+        'label'   => __('Predefined colors', 'corpbiz'),
         'section' => 'theme_style',
 		'type' => 'radio',
 		'settings' => 'corpbiz_options[theme_color]',	
@@ -103,7 +101,7 @@ public $type = 'new_menu';
 	$wp_customize->add_control(
     'corpbiz_options[link_color_enable]',
     array(
-        'label' => __('Skin Color Enable','corpbiz'),
+        'label' => __('Skin color enable','corpbiz'),
         'section' => 'theme_style',
         'type' => 'checkbox',
     )
@@ -122,7 +120,7 @@ public $type = 'new_menu';
 	$wp_customize, 
 	'corpbiz_options[link_color]', 
 	array(
-		'label'      => __( 'Skin Color', 'corpbiz' ),
+		'label'      => __( 'Skin color', 'corpbiz' ),
 		'section'    => 'theme_style',
 		'settings'   => 'corpbiz_options[link_color]',
 	) ) );

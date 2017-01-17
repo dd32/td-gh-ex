@@ -60,11 +60,10 @@
 	} ?>
 	<?php if ('open' == $post->comment_status) { ?>
 	<?php if ( get_option('comment_registration') && !$user_ID ) { ?>
-<p><?php _e("You must be",'corpbiz'); ?> <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>"><?php _e("logged in",'corpbiz')?></a> <?php _e("to post a comment",'corpbiz'); ?>
-</p>
-<?php } else { 
+	<p><?php echo sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment','corpbiz' ), site_url( 'wp-login.php' ) . '?redirect_to=' .  urlencode(get_permalink())); ?></p>
+	<?php } else { 
 	//echo "fdfdf";
-?>
+	?>
 
 <div class="comment_form_section">
 	<?php  
@@ -81,12 +80,12 @@
 			'fields'=> apply_filters( 'comment_form_default_fields', $fields ),
 			'comment_field'=> '<div class="form_group"><label>Comment</label>
 			<textarea id="comments" rows="5" class="comment_textarea_control" name="comment" type="text"></textarea></div>',		
-			'logged_in_as' => '<p class="logged-in-as">' . __( "Logged in as ",'corpbiz' ).'<a href="'. admin_url( 'profile.php' ).'">'.$user_identity.'</a>'. '<a href="'. wp_logout_url( get_permalink() ).'" title="Log out of this account">'.__(" Log out?",'corpbiz').'</a>' . '</p>',
+			'logged_in_as' => '<p class="logged-in-as">' . __("Logged in as",'corpbiz').'<a href="'. admin_url( 'profile.php' ).'">'.$user_identity.'</a>'. '<a href="'. wp_logout_url( get_permalink() ).'" title="Logout of this account">'.__("Logout",'corpbiz').'</a>' . '</p>',
 			'id_submit'=> 'comment_btn1',
-			'label_submit'=>__( 'Submit Comment','corpbiz'),
+			'label_submit'=>__('Send Message','corpbiz'),
 			'comment_notes_after'=> '',
 			'comment_notes_before' => '',
-			'title_reply'=> '<h2>'.__( 'Leave a Reply','corpbiz').'</h2>',
+			'title_reply'=> '<h2>'.__('Leave a Reply','corpbiz').'</h2>',
 			'id_form'=> 'commentform'
 			);
 		comment_form($defaults);

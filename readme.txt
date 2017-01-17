@@ -74,7 +74,7 @@ URL: https://pixabay.com/en/woman-girl-headphones-music-977020/
 Source:http://pixabay.com
 License: CC0 Public Domain
 
-Font Awesome 4.6.3 by @davegandy - http://fontawesome.io - @fontawesome
+Font Awesome 4.7 by @davegandy - http://fontawesome.io - @fontawesome
 License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
 Source: http://fontawesome.io
 # --- EOF --- #
@@ -83,6 +83,11 @@ Source: http://fontawesome.io
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version 1.6.7
+1. Changed duplicate string.
+@Version 1.6.6
+1. Updated Strings.
+2. Update Font Awesome library 4.6.3 to 4.7.0
 @Version 1.6.5
 1. Update Theme Description.
 @Version 1.6.4

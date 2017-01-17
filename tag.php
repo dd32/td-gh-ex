@@ -4,7 +4,7 @@
 	<div class="row">
 		<?php have_posts();  ?>
 			<div class="hc_page_header_area">						
-				<h1><?php printf( __( 'Tag Archives: %s', 'corpbiz' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?></h1>
+				<h1><?php printf( __( 'Tag Archive %s', 'corpbiz' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?></h1>
 			</div>
 		
 	</div>

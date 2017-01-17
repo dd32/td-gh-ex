@@ -8,12 +8,12 @@ function corpbiz_footer_customization_customizer( $wp_customize ){
 	$wp_customize->add_panel( 'footer_customization', array(
 		'priority'       => 600,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Footer Customization', 'corpbiz'),
+		'title'      => __('Footer copyright settings', 'corpbiz'),
 	) );
 	
 	/* footer copyright section */
 	$wp_customize->add_section( 'footer_copyright' , array(
-		'title'      => __('Footer Copyright', 'corpbiz'),
+		'title'      => __('Footer copyright settings', 'corpbiz'),
 		'panel'  => 'footer_customization',
 		'priority'   => 1,
    	) );
@@ -28,7 +28,7 @@ function corpbiz_footer_customization_customizer( $wp_customize ){
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[footer_copyright_text]', array(
-			'label' => __('Footer Customization text','corpbiz'),
+			'label' => __('Copyright text','corpbiz'),
 			'section' => 'footer_copyright',
 			'type'    =>  'textarea'
 	));	 // footer copyright

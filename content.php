@@ -17,7 +17,8 @@ $current_options = wp_parse_args(  get_option( 'corpbiz_options', array() ), $co
 			<a href="<?php echo get_month_link(get_post_time('Y'),get_post_time('m')); ?>"><?php echo get_the_date('M j, Y'); ?> </a>
 			</span>
 			<span class="author">
-			<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php _e('Posted by : &nbsp;', 'corpbiz'); ?> <?php the_author(); ?> </a>
+			<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
+			<?php _e('Posted by', 'corpbiz'); ?> <?php the_author(); ?> </a>
 			</span>
 			<span class="comments-link">
 			<a href="<?php comments_link(); ?>"><?php comments_number('No Comments', '1 Comment','% Comments'); ?></a>

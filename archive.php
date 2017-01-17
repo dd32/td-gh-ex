@@ -4,13 +4,13 @@
 	<div class="row">
 		<div class="hc_page_header_area">						
 			<h1><?php if ( is_day() ) : ?>
-				<?php  _e( "Daily Archives:", 'corpbiz' ); echo (get_the_date()); ?>
+				<?php  _e( "Daily Archive", 'corpbiz' ); echo (get_the_date()); ?>
 				<?php elseif ( is_month() ) : ?>
-				<?php  _e( "Monthly Archives:", 'corpbiz' ); echo (get_the_date( 'F Y' )); ?>
+				<?php  _e( "Monthly Archive", 'corpbiz' ); echo (get_the_date( 'F Y' )); ?>
 				<?php elseif ( is_year() ) : ?>
-				<?php  _e( "Yearly Archives:", 'corpbiz' );  echo (get_the_date( 'Y' )); ?>
+				<?php  _e( "Yearly Archive", 'corpbiz' );  echo (get_the_date( 'Y' )); ?>
 				<?php else : ?>
-				<?php _e( "Blog Archives", 'corpbiz' ); ?>
+				<?php _e( "Blog Archive", 'corpbiz' ); ?>
 				<?php endif; ?>
 			</h1>
 		</div>

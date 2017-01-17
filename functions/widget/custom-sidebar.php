@@ -4,9 +4,9 @@ function webriti_widgets_init() {
 	
 /*======================= [sidebar] =======================*/
 	register_sidebar( array(
-			'name' => __( 'Sidebar', 'corpbiz' ),
+			'name' => __('Sidebar widget area', 'corpbiz' ),
 			'id' => 'sidebar-primary',
-			'description' => __( 'The primary widget area', 'corpbiz' ),
+			'description' => __('Sidebar widget area', 'corpbiz' ),
 			'before_widget' => '<div class="widget">',
 			'after_widget' => '</div>',
 			'before_title' => '<h2 class="widget-title">',
@@ -14,9 +14,9 @@ function webriti_widgets_init() {
 	) );
 
 	register_sidebar( array(
-			'name' => __( 'Footer Widget Area Left', 'corpbiz' ),
+			'name' => __('Footer sidebar one', 'corpbiz' ),
 			'id' => 'footer_widget_area_left',
-			'description' => __( 'footer widget left area', 'corpbiz' ),
+			'description' => __( 'Footer sidebar one', 'corpbiz' ),
 			'before_widget' => '<div class="widget">',
 			'after_widget' => '</div>',
 			'before_title' => '<h3 class="widget-title">',
@@ -24,9 +24,9 @@ function webriti_widgets_init() {
 	) );
 	
 	register_sidebar( array(
-		'name' => __( 'Footer Widget Area Center', 'corpbiz' ),
+		'name' => __('Footer sidebar two', 'corpbiz' ),
 		'id' => 'footer_widget_area_center',
-		'description' => __( 'footer widget center area', 'corpbiz' ),
+		'description' => __('Footer sidebar two', 'corpbiz' ),
 		'before_widget' => '<div class="widget">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3 class="widget-title">',
@@ -34,9 +34,9 @@ function webriti_widgets_init() {
 	) );
 	
 	register_sidebar( array(
-		'name' => __( 'Footer Widget Area Right', 'corpbiz' ),
+		'name' => __( 'Footer sidebar three', 'corpbiz' ),
 		'id' => 'footer_widget_area_right',
-		'description' => __( 'footer widget right area', 'corpbiz' ),
+		'description' => __('Footer sidebar three', 'corpbiz' ),
 		'before_widget' => '<div class="widget">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3 class="widget-title">',

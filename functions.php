@@ -64,7 +64,7 @@
 		add_theme_support( 'post-thumbnails' ); //supports featured image
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menu( 'primary', __( 'Primary Menu', 'corpbiz' ) ); //Navigation
-		register_nav_menu( 'secondary', __( 'Secondary Menu', 'corpbiz' ) ); //Navigation
+		register_nav_menu( 'secondary', __( 'Footer Menu', 'corpbiz' ) ); //Navigation
 		// theme support 	
 		//$args = array('default-color' => '#ffffff');
 		//add_theme_support( 'custom-background', $args ); 

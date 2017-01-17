@@ -5,16 +5,15 @@ function corpbiz_about_template_customizer( $wp_customize ) {
 	$wp_customize->add_panel( 'about_setting', array(
 		'priority'       => 700,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Template Settings', 'corpbiz'),
+		'title'      => __('Template settings', 'corpbiz'),
 	) );
 	
 	// add section to manage About
 	$wp_customize->add_section(
         'about_section_settings',
         array(
-            'title' => __('About Us Template','corpbiz'),
-            'description' => '',
-			'panel'  => 'about_setting',
+            'title' => __('About us page setting','corpbiz'),
+            'panel'  => 'about_setting',
 			'priority'   => 100,
 			
 			)
@@ -28,10 +27,10 @@ function corpbiz_about_template_customizer( $wp_customize ) {
     public function render_content() {
     ?>
      <div class="pro-vesrion">
-	 <P><?php _e('Want to add About Page Template than upgrade to pro','corpbiz');?></P>
+	 <P><?php _e('Want to add about page template than upgrade to pro','corpbiz');?></P>
 	 </div>
 	  <div class="pro-box">
-	 <a href="<?php echo esc_url( __('http://webriti.com/corpbiz/', 'corpbiz'));?>" class="service" id="review_pro"><?php _e( 'UPGRADE TO PRO','corpbiz' ); ?></a>
+	 <a href="<?php echo esc_url('http://webriti.com/corpbiz/');?>" class="service" id="review_pro"><?php _e( 'Upgrade to pro','corpbiz' ); ?></a>
 	 <div>
     <?php
     }
@@ -40,13 +39,11 @@ function corpbiz_about_template_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'about_pro',
 		array(
-			'default' => __('','corpbiz'),
 			'capability'     => 'edit_theme_options',
 			'sanitize_callback' => 'sanitize_text_field',
 		)	
 	);
 	$wp_customize->add_control( new WP_about_Customize_Control( $wp_customize, 'about_pro', array(	
-			'label' => __('Discover corpbiz Pro','corpbiz'),
 			'section' => 'about_section_settings',
 			'setting' => 'about_pro',
 		))
@@ -66,7 +63,7 @@ function corpbiz_about_template_customizer( $wp_customize ) {
 		'corpbiz_options[service_section_about_enable]',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Hide Service Section','corpbiz'),
+			'label' => __('Hide service section','corpbiz'),
 			'section' => 'about_section_settings',
 		)
 	);
@@ -85,7 +82,7 @@ function corpbiz_about_template_customizer( $wp_customize ) {
 		'corpbiz_options[team_section_enable]',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Hide Team Section','corpbiz'),
+			'label' => __('Hide team section','corpbiz'),
 			'section' => 'about_section_settings',
 		)
 	);
@@ -94,14 +91,14 @@ function corpbiz_about_template_customizer( $wp_customize ) {
 	 $wp_customize->add_setting(
     'corpbiz_options[team_title]',
     array(
-        'default' => __('Our Staff','corpbiz'),
+        'default' => __('Our staff','corpbiz'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
 		)
 	);	
 	$wp_customize->add_control( 'corpbiz_options[team_title]',array(
-    'label'   => __('Team Section Title','corpbiz'),
+    'label'   => __('Team section title','corpbiz'),
     'section' => 'about_section_settings',
 	 'type' => 'text',)  );	
 	 
@@ -114,22 +111,20 @@ function corpbiz_about_template_customizer( $wp_customize ) {
     */
     public function render_content() {
     ?>
-    <a href="#" class="button"><?php _e( 'Click Here to add Team Member', 'corpbiz' ); ?></a>
+    <a href="#" class="button"><?php _e('Click here to add team member','corpbiz' ); ?></a>
     <?php
     }
 }
 $wp_customize->add_setting(
     'team',
     array(
-        'default' => '',
-		'capability'     => 'edit_theme_options',
+       'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     )	
 );
 $wp_customize->add_control( new WP_team_Customize_Control( $wp_customize, 'team', array(	
-		'label' => __('Discover corpbiz Pro','corpbiz'),
-        'section' => 'about_section_settings',
+		'section' => 'about_section_settings',
     ))
 );
 	 
@@ -148,7 +143,7 @@ $wp_customize->add_control( new WP_team_Customize_Control( $wp_customize, 'team'
 		'corpbiz_options[client_section_enable]',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Hide Client Section','corpbiz'),
+			'label' => __('Hide client section','corpbiz'),
 			'section' => 'about_section_settings',
 		)
 	);
@@ -159,8 +154,7 @@ $wp_customize->add_control( new WP_team_Customize_Control( $wp_customize, 'team'
 	$wp_customize->add_section(
         'service_section_settings',
         array(
-            'title' => __('Service Template','corpbiz'),
-            'description' => '',
+            'title' => __('Service page setting','corpbiz'),
 			'panel'  => 'about_setting',
 			'priority'   => 200,
 			
@@ -175,10 +169,11 @@ $wp_customize->add_control( new WP_team_Customize_Control( $wp_customize, 'team'
     public function render_content() {
     ?>
      <div class="pro-vesrion">
-	 <P><?php _e('Want to add Service Page Template than upgrade to pro','corpbiz');?></P>
+	 <P><?php _e('Want to add service page template than upgrade to pro','corpbiz');?></P>
 	 </div>
 	  <div class="pro-box">
-	 <a href="<?php echo esc_url( __('http://webriti.com/corpbiz/', 'corpbiz'));?>" class="service" id="review_pro"><?php _e( 'UPGRADE TO PRO','corpbiz' ); ?></a>
+	 <a href="<?php echo esc_url('http://webriti.com/corpbiz/');?>" class="service" id="review_pro">
+	 <?php _e( 'Upgrade to pro','corpbiz' ); ?></a>
 	 <div>
     <?php
     }
@@ -187,13 +182,11 @@ $wp_customize->add_control( new WP_team_Customize_Control( $wp_customize, 'team'
 	$wp_customize->add_setting(
 		'service_pro',
 		array(
-			'default' => __('','corpbiz'),
 			'capability'     => 'edit_theme_options',
 			'sanitize_callback' => 'sanitize_text_field',
 		)	
 	);
 	$wp_customize->add_control( new WP_service_pro_Customize_Control( $wp_customize, 'service_pro', array(	
-			'label' => __('Discover corpbiz Pro','corpbiz'),
 			'section' => 'service_section_settings',
 			'setting' => 'service_pro',
 		))
@@ -214,7 +207,7 @@ $wp_customize->add_control( new WP_team_Customize_Control( $wp_customize, 'team'
 		'corpbiz_options[service_section_enable]',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Hide Service Section','corpbiz'),
+			'label' => __('Hide service section','corpbiz'),
 			'section' => 'service_section_settings',
 		)
 	);
@@ -232,7 +225,7 @@ $wp_customize->add_control( new WP_team_Customize_Control( $wp_customize, 'team'
 		'corpbiz_options[service_section_project_enable]',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Hide Project Slider Section','corpbiz'),
+			'label' => __('Hide project slider section','corpbiz'),
 			'section' => 'service_section_settings',
 		)
 	);
@@ -249,7 +242,7 @@ $wp_customize->add_control( new WP_team_Customize_Control( $wp_customize, 'team'
 		'corpbiz_options[service_section_client_enable]',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Hide Client Section','corpbiz'),
+			'label' => __('Hide client section','corpbiz'),
 			'section' => 'service_section_settings',
 		)
 	);
@@ -267,7 +260,7 @@ $wp_customize->add_control( new WP_team_Customize_Control( $wp_customize, 'team'
 		'corpbiz_options[service_section_footer_enable]',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Hide Footer callout Section','corpbiz'),
+			'label' => __('Hide footer callout section','corpbiz'),
 			'section' => 'service_section_settings',
 		)
 	);
@@ -276,7 +269,7 @@ $wp_customize->add_control( new WP_team_Customize_Control( $wp_customize, 'team'
 	
 	/* Quick Start */
 	$wp_customize->add_section( 'blog_page_setting' , array(
-		'title'      => __('Blog Page Setting', 'corpbiz'),
+		'title'      => __('Blog page setting', 'corpbiz'),
 		'panel'  => 'about_setting',
 		'priority'   => 300,
    	) );
@@ -289,10 +282,10 @@ $wp_customize->add_control( new WP_team_Customize_Control( $wp_customize, 'team'
     public function render_content() {
     ?>
      <div class="pro-vesrion">
-	 <P><?php _e('Want to add Blog Page Template than upgrade to pro','corpbiz');?></P>
+	 <P><?php _e('Want to add blog page template than upgrade to pro','corpbiz');?></P>
 	 </div>
 	  <div class="pro-box">
-	 <a href="<?php echo esc_url( __('http://webriti.com/corpbiz/', 'corpbiz'));?>" class="service" id="review_pro"><?php _e( 'UPGRADE TO PRO','corpbiz' ); ?></a>
+	 <a href="<?php echo esc_url('http://webriti.com/corpbiz/');?>" class="service" id="review_pro"><?php _e( 'Upgrade to pro','corpbiz' ); ?></a>
 	 <div>
     <?php
     }
@@ -301,13 +294,11 @@ $wp_customize->add_control( new WP_team_Customize_Control( $wp_customize, 'team'
 	$wp_customize->add_setting(
 		'blog_pro',
 		array(
-			'default' => '',
 			'capability'     => 'edit_theme_options',
 			'sanitize_callback' => 'sanitize_text_field',
 		)	
 	);
 	$wp_customize->add_control( new WP_blog_Customize_Control( $wp_customize, 'blog_pro', array(	
-			'label' => __('Discover corpbiz Pro','corpbiz'),
 			'section' => 'blog_page_setting',
 			'setting' => 'blog_pro',
 		))
@@ -328,7 +319,7 @@ $wp_customize->add_control( new WP_team_Customize_Control( $wp_customize, 'team'
 	$wp_customize->add_control(
     'corpbiz_options[blog_meta_section_settings]',
     array(
-        'label' => __('Enable Blog Meta Section','corpbiz'),
+        'label' => __('Enable blog meta','corpbiz'),
         'section' => 'blog_page_setting',
         'type' => 'checkbox',
     ));
@@ -337,7 +328,7 @@ $wp_customize->add_control( new WP_team_Customize_Control( $wp_customize, 'team'
 	
 	/* contact information section */
 	$wp_customize->add_section( 'contact_information' , array(
-		'title'      => __('Contact Information', 'corpbiz'),
+		'title'      => __('Contact page setting', 'corpbiz'),
 		'panel'  => 'about_setting',
 		'priority'   => 400,
    	) );
@@ -350,10 +341,11 @@ $wp_customize->add_control( new WP_team_Customize_Control( $wp_customize, 'team'
     public function render_content() {
     ?>
      <div class="pro-vesrion">
-	 <P><?php _e('Want to add Contact Page Template than upgrade to pro','corpbiz');?></P>
+	 <P><?php _e('Want to add contact page template than upgrade to pro','corpbiz');?></P>
 	 </div>
 	  <div class="pro-box">
-	 <a href="<?php echo esc_url( __('http://webriti.com/corpbiz/', 'corpbiz'));?>" class="service" id="review_pro"><?php _e( 'UPGRADE TO PRO','corpbiz' ); ?></a>
+	 <a href="<?php echo esc_url('http://webriti.com/corpbiz/');?>" class="service" id="review_pro">
+	 <?php _e( 'Upgrade to pro','corpbiz' ); ?></a>
 	 <div>
     <?php
     }
@@ -362,13 +354,11 @@ $wp_customize->add_control( new WP_team_Customize_Control( $wp_customize, 'team'
 	$wp_customize->add_setting(
 		'contact_pro',
 		array(
-			'default' => __('','corpbiz'),
 			'capability'     => 'edit_theme_options',
 			'sanitize_callback' => 'sanitize_text_field',
 		)	
 	);
 	$wp_customize->add_control( new WP_contact_Customize_Control( $wp_customize, 'contact_pro', array(	
-			'label' => __('Discover corpbiz Pro','corpbiz'),
 			'section' => 'contact_information',
 			'setting' => 'contact_pro',
 		))
@@ -378,14 +368,14 @@ $wp_customize->add_control( new WP_team_Customize_Control( $wp_customize, 'team'
 	$wp_customize->add_setting(
 		'corpbiz_options[send_usmessage]',
 		array(
-			'default'           =>  'Contat Us',
+			'default'           =>  __('Contact us','corpbiz'),
 			'capability'        =>  'edit_theme_options',
 			'sanitize_callback' =>  'sanitize_text_field',
 			'type'              =>  'option'
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[send_usmessage]', array(
-			'label' => __('Contact Us Text:','corpbiz'),
+			'label' => __('Contact us text','corpbiz'),
 			'section' => 'contact_information',
 			'type'    =>  'text',
 			'input_attrs' => array('disabled' => 'disabled'),
@@ -402,7 +392,7 @@ $wp_customize->add_control( new WP_team_Customize_Control( $wp_customize, 'team'
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[contact_info_enabled]', array(
-			'label' => __('Enable Contact Info in contact page','corpbiz'),
+			'label' => __('Enable contact info in contact page','corpbiz'),
 			'section' => 'contact_information',
 			'type'    =>  'checkbox'
 	));
@@ -410,14 +400,14 @@ $wp_customize->add_control( new WP_team_Customize_Control( $wp_customize, 'team'
 	$wp_customize->add_setting(
 		'corpbiz_options[contact_info_title]',
 		array(
-			'default'           =>  'Contact Info',
+			'default'           =>  __('Contact info','corpbiz'),
 			'capability'        =>  'edit_theme_options',
 			'sanitize_callback' =>  'sanitize_text_field',
 			'type'              =>  'option'
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[contact_info_title]', array(
-			'label' => __('Contact Info Title:','corpbiz'),
+			'label' => __('Title','corpbiz'),
 			'section' => 'contact_information',
 			'type'    =>  'text',
 			'input_attrs' => array('disabled' => 'disabled'),
@@ -426,14 +416,14 @@ $wp_customize->add_control( new WP_team_Customize_Control( $wp_customize, 'team'
 	$wp_customize->add_setting(
 		'corpbiz_options[contect_info_description]',
 		array(
-			'default'           =>  __('Aliquam suscipit quis odio a volutpat. Aenean sed sagittis dolor. Pellentesque vitae fermentum diam, vitae gravida eros. Proin interdum imperdiet elit, in auctor sem consequat sed.','corpbiz'),
+			'default'           =>  'Aliquam suscipit quis odio a volutpat. Aenean sed sagittis dolor. Pellentesque vitae fermentum diam, vitae gravida eros. Proin interdum imperdiet elit, in auctor sem consequat sed.',
 			'capability'        =>  'edit_theme_options',
 			'sanitize_callback' =>  'sanitize_text_field',
 			'type'              =>  'option'
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[contect_info_description]', array(
-			'label' => __('Contact Info Description:','corpbiz'),
+			'label' => __('Description','corpbiz'),
 			'section' => 'contact_information',
 			'type'    =>  'text',
 			'input_attrs' => array('disabled' => 'disabled'),
@@ -452,7 +442,7 @@ $wp_customize->add_control( new WP_team_Customize_Control( $wp_customize, 'team'
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[contact_address]', array(
-			'label' => __('Contact Address Line One:','corpbiz'),
+			'label' => __('Address one','corpbiz'),
 			'section' => 'contact_information',
 			'type'    =>  'text',
 			'input_attrs' => array('disabled' => 'disabled'),
@@ -468,7 +458,7 @@ $wp_customize->add_control( new WP_team_Customize_Control( $wp_customize, 'team'
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[contact_address_two]', array(
-			'label' => __('Contact Address Line Two:','corpbiz'),
+			'label' => __('Address two','corpbiz'),
 			'section' => 'contact_information',
 			'type'    =>  'text',
 			'input_attrs' => array('disabled' => 'disabled'),
@@ -484,7 +474,7 @@ $wp_customize->add_control( new WP_team_Customize_Control( $wp_customize, 'team'
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[contact_phone_number]', array(
-			'label' => __('Contact Phone Number:','corpbiz'),
+			'label' => __('Phone','corpbiz'),
 			'section' => 'contact_information',
 			'type'    =>  'text',
 			'input_attrs' => array('disabled' => 'disabled'),
@@ -500,7 +490,7 @@ $wp_customize->add_control( new WP_team_Customize_Control( $wp_customize, 'team'
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[contact_email]', array(
-			'label' => __('Contact Email:','corpbiz'),
+			'label' => __('Email','corpbiz'),
 			'section' => 'contact_information',
 			'type'    =>  'text',
 			'input_attrs' => array('disabled' => 'disabled'),
@@ -519,7 +509,7 @@ $wp_customize->add_control( new WP_team_Customize_Control( $wp_customize, 'team'
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[contact_google_map_enabled]', array(
-			'label' => __('Enable Google Map in contact page','corpbiz'),
+			'label' => __('Enable Google map in contact page','corpbiz'),
 			'section' => 'contact_information',
 			'type'    =>  'checkbox'
 	));	 // google map enable / disable
@@ -534,7 +524,7 @@ $wp_customize->add_control( new WP_team_Customize_Control( $wp_customize, 'team'
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[contact_google_map_url]', array(
-			'label' => __('Google Map URL:','corpbiz'),
+			'label' => __('Google map URL','corpbiz'),
 			'section' => 'contact_information',
 			'type'    =>  'text',
 			'input_attrs' => array('disabled' => 'disabled'),
@@ -554,7 +544,7 @@ $wp_customize->add_control( new WP_team_Customize_Control( $wp_customize, 'team'
 		)	
 	);
 	$wp_customize->add_control('corpbiz_options[contact_callout_disable]', array(
-			'label' => __('Hide Footer contact callout section','corpbiz'),
+			'label' => __('Hide footer contact callout section','corpbiz'),
 			'section' => 'contact_information',
 			'type'    =>  'checkbox'
 	));	 // callout enable / disable
