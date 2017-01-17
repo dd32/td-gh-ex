@@ -26,7 +26,7 @@
 									echo '<span class="footer_info">'.esc_html($footer_info).'</span>'; 
 								}
                             ?>
-                           <?php printf(__('Powered by <a href="%s">WordPress</a>. Designed by <a href="%s">CooThemes.com</a>.','acool'),esc_url('http://wordpress.org/'),esc_url('http://www.coothemes.com/'));?>                  
+                           <?php printf(__('Powered by <a href="%s">WordPress</a>. Acool theme by <a href="%s">CooThemes.com</a>.','acool'),esc_url('http://wordpress.org/'),esc_url('http://www.coothemes.com/'));?>                  
                             </p>
                       	</div>
                   	</div>
