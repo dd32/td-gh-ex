@@ -94,6 +94,8 @@ Source: http://fontawesome.io
 
 # --- EOF --- #
 ============================Change Log================================
+@Version 2.5.8
+1. Changed duplicate strings.
 @Version 2.5.7
 1. Fixed String updated issue.
 2. Update theme description.

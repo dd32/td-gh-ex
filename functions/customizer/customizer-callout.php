@@ -77,7 +77,7 @@ function appointment_callout_customizer( $wp_customize ) {
     ) );
     
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'appointment_options[callout_background]', array(
-      'label'    => __( 'Choose background image', 'appointment' ),
+      'label'    => __('Background Image', 'appointment' ),
       'section'  => 'callout_section_settings',
       'settings' => 'appointment_options[callout_background]',
     ) ) );

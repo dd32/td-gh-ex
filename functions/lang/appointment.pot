@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: appointment\n"
-"POT-Creation-Date: 2016-12-29 12:45+0530\n"
-"PO-Revision-Date: 2016-12-29 12:46+0530\n"
+"POT-Creation-Date: 2017-01-16 17:43+0530\n"
+"PO-Revision-Date: 2017-01-16 17:43+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -311,6 +311,13 @@ msgstr ""
 msgid "Appointment Pro"
 msgstr ""
 
+#: D:\xampp\htdocs\wordpress\wp-content\themes\appointment/functions/appointment-info/sections/free_pro.php:124
+msgid ""
+"Top Header, Slider [Unlimited Slides], Service [Unlimited Services], "
+"Callout, Portfolio [Unlimited Projects], Latest News,  Client, Testimonial "
+"and Custom Widget"
+msgstr ""
+
 #: D:\xampp\htdocs\wordpress\wp-content\themes\appointment/functions/appointment-info/sections/free_pro.php:126
 msgid ""
 "About, Service, Portfolio, Blog Left & Right Sidebar, Blog Full Width, Page "
@@ -408,7 +415,7 @@ msgid "Description"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\appointment/functions/customizer/customizer-callout.php:80
-msgid "Choose background image"
+msgid "Background Image"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\appointment/functions/customizer/customizer-callout.php:91
@@ -493,7 +500,7 @@ msgid "Hide copyright text"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\appointment/functions/customizer/customizer-copyright.php:56
-msgid "Social Link"
+msgid "Social Links"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\appointment/functions/customizer/customizer-copyright.php:77
@@ -717,7 +724,7 @@ msgid "Click here to add project"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\appointment/functions/customizer/customizer-project.php:135
-msgid "Select product category archive column layout"
+msgid "Select project category archive column layout"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\appointment/functions/customizer/customizer-service.php:8
@@ -788,10 +795,6 @@ msgstr ""
 msgid "Category slider"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress\wp-content\themes\appointment/functions/customizer/customizer-slider.php:75
-msgid "Uncategorized"
-msgstr ""
-
 #: D:\xampp\htdocs\wordpress\wp-content\themes\appointment/functions/customizer/customizer-slider.php:82
 msgid "Select category for slider"
 msgstr ""
@@ -813,7 +816,8 @@ msgid "fade"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\appointment/functions/customizer/customizer-slider.php:124
-msgid "Input slide duration"
+#: D:\xampp\htdocs\wordpress\wp-content\themes\appointment/functions/customizer/customizer-testimonial.php:115
+msgid "Duration"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\appointment/functions/customizer/customizer-slider.php:143
@@ -864,11 +868,11 @@ msgid "Template settings"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\appointment/functions/customizer/customizer-template.php:66
-msgid "About us template"
+msgid "About us page setting"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\appointment/functions/customizer/customizer-template.php:92
-msgid "Blog settings"
+msgid "Blog page setting"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\appointment/functions/customizer/customizer-template.php:127
@@ -876,7 +880,7 @@ msgid "Hide post meta from blog pages, archive pages, categories, author etc."
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\appointment/functions/customizer/customizer-template.php:139
-msgid "Service template setting"
+msgid "Service page setting"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\appointment/functions/customizer/customizer-template.php:169
@@ -975,10 +979,6 @@ msgstr ""
 msgid "If the transition-delay value is 2000 that means 2 seconds."
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress\wp-content\themes\appointment/functions/customizer/customizer-testimonial.php:115
-msgid "Duration"
-msgstr ""
-
 #: D:\xampp\htdocs\wordpress\wp-content\themes\appointment/functions/customizer/customizer-testimonial.php:129
 msgid "Click here to add testimonial"
 msgstr ""
@@ -993,7 +993,7 @@ msgid "Predefined colors"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\appointment/functions/customizer/customizer_theme_style.php:40
-msgid "Theme style settings"
+msgid "Theme style setting"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\appointment/functions/customizer/customizer_theme_style.php:89

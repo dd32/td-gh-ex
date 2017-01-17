@@ -53,7 +53,7 @@ $wp_customize->add_control(
 	$wp_customize->add_section(
         'copyright_social_icon',
         array(
-            'title' => __('Social Link','appointment'),
+            'title' => __('Social Links','appointment'),
            'priority' => 45,
 			'panel' => 'appointment_copyright_setting',
         )

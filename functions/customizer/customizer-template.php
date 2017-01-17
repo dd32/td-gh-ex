@@ -63,7 +63,7 @@ class appointment_Customize_contact_callout_upgrade extends WP_Customize_Control
 	$wp_customize->add_section(
         'about_section_settings',
         array(
-            'title' => __('About us template','appointment'),
+            'title' => __('About us page setting','appointment'),
 			'panel'  => 'appointment_template',
 			'priority'   => 100,
 			
@@ -89,7 +89,7 @@ class appointment_Customize_contact_callout_upgrade extends WP_Customize_Control
 	
 	  //enable/disable blog post meta content
 	$wp_customize->add_section( 'blog_template' , array(
-		'title'      => __('Blog settings', 'appointment'),
+		'title'      => __('Blog page setting', 'appointment'),
 		'panel'  => 'appointment_template',
 		'priority'   => 150,
    	) );
@@ -136,7 +136,7 @@ class appointment_Customize_contact_callout_upgrade extends WP_Customize_Control
 	$wp_customize->add_section(
         'setting_section_settings',
         array(
-            'title' => __('Service template setting','appointment'),
+            'title' => __('Service page setting','appointment'),
 			'panel'  => 'appointment_template',
 			'priority'   => 100,
 			

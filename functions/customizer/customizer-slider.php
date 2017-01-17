@@ -72,7 +72,7 @@ $wp_customize->add_control(
 	$wp_customize->add_setting(
     'appointment_options[slider_select_category]',
     array(
-        'default' => __('Uncategorized','appointment'),
+        'default' => 'Uncategorized',
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'appointment_slider_sanitize_layout',
 		'type'=>'option',
@@ -121,7 +121,7 @@ $wp_customize->add_control(
     'appointment_options[slider_transition_delay]',
     array(
         'type' => 'text',
-        'label' => __('Input slide duration','appointment'),
+        'label' => __('Duration','appointment'),
         'section' => 'slider_section_settings',
 		
 		));

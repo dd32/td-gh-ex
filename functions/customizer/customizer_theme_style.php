@@ -37,7 +37,7 @@ public $type = 'new_menu';
 }
 	/* Theme Style settings */
 	$wp_customize->add_section( 'theme_style' , array(
-		'title'      => __('Theme style settings', 'appointment'),
+		'title'      => __('Theme style setting', 'appointment'),
 		'priority'   => 900,
    	) );
 	

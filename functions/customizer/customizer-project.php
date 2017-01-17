@@ -132,7 +132,7 @@ $wp_customize->add_control( new WP_project_Customize_Control( $wp_customize, 'pr
 	);	
 	$wp_customize->add_control( 'appointment_options[taxonomy_portfolio_list]',array(
 	 'type' => 'select',
-	 'label'   => __('Select product category archive column layout','appointment'),
+	 'label'   => __('Select project category archive column layout','appointment'),
     'section' => 'project_section_settings',
 	 'choices' => array(2=>2,3=>3,4=>4),
 		)
