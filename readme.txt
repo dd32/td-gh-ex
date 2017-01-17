@@ -10,6 +10,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Ascreen WordPress Theme, Copyright 2016 Coothemes.com
 Ascreen is distributed under the terms of the GNU General Public License v2 
 
+Images used are released under the CC0 license
+
+1. https://www.pexels.com/photo/sea-landscape-beach-landmark-21787/
+
 iconfont
     iconfont by CooThemes
     iconfont is Licensed under the GPL, version 2 or later

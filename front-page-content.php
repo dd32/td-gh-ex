@@ -6,7 +6,7 @@ get_header(); ?>
 <?php
 	$mods = get_theme_mods();
 	// print_r($mods['ascreen_option']);
-	$enable_home_section = !empty($mods['ascreen_option']['enable_home_section']) ? $mods['ascreen_option']['enable_home_section']:'0';
+	$enable_home_section = $mods['ascreen_option']['enable_home_section'];
 	$video_youtube_id = !empty($mods['ascreen_option']['video_youtube_id']) ? $mods['ascreen_option']['video_youtube_id']:'e1c-n1dRxwc';	
 	
 	$video_title = !empty($mods['ascreen_option']['video_title']) ? $mods['ascreen_option']['video_title']: __('Ascreen One Page Full Screen', 'ascreen');	
@@ -23,7 +23,7 @@ get_header(); ?>
 	$contact_decription = !empty($mods['ascreen_option']['contact_decription']) ? $mods['ascreen_option']['contact_decription']: __('Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere c.Etiam ut dui eVestibulum ante ipsum primi', 'ascreen');		
 	$contact_email = !empty($mods['ascreen_option']['contact_email']) ? $mods['ascreen_option']['contact_email']: get_bloginfo( 'admin_email');	
 
-	if($enable_home_section == '1'){
+	if($enable_home_section != '1'){
 ?>
 
 

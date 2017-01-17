@@ -9,6 +9,7 @@ function ascreen_setup(){
 	$template_directory = get_template_directory();
 	require_once( $template_directory . '/includes/customize/customize.php' );
 	require_once( $template_directory . '/includes/tgm-plugin.php' );	
+	require_once get_template_directory() . '/includes/trt-customizer-pro/example-1/class-customize.php';
 
 	add_theme_support('post-thumbnails');
 	set_post_thumbnail_size( 185, 135 );
@@ -347,12 +348,12 @@ function ascreen_customize_css()
 			$box_header_center = $mods['ascreen_option']['box_header_center'];		
 			$enable_home_section =  $mods['ascreen_option']['enable_home_section'];				
 			
-			if( $fixed_header !=1)
+			if( $fixed_header == 1 )
 			{
 				$ascreen_custom_css .= "#header{position: inherit;}.blog-content{padding-top:30px;}.admin_bar_fix {margin-top:0;}";
 			}
-			if($enable_home_section == '1'){
-				$ascreen_custom_css .= ".blog-content{padding-top:50px;}";
+			if($enable_home_section != 1){
+				$ascreen_custom_css .= ".blog-content{padding-top:100px;}";
 			}
 			if( $box_header_center == 0)
 			{
@@ -387,9 +388,9 @@ function ascreen_customize_css()
 				
  
 			}
-			if(!is_home() ){
+			if(!is_front_page() ){
 				
-				$ascreen_custom_css .=  '#header {  position: inherit;}.blog-content {  padding-top: 20px;}.admin_bar_fix {margin-top:0;}';	
+					$ascreen_custom_css .=  '#header {  position: inherit;}.blog-content {  padding-top: 20px;}.admin_bar_fix {margin-top:0;}';	
 				
 				}	
 				
@@ -411,26 +412,6 @@ function ascreen_customize_css()
 
 add_action( 'wp_head', 'ascreen_customize_css');
 add_action( 'customize_controls_print_styles', 'ascreen_customize_css' );
-
-
-function ascreen_customize_scripts() {
-	wp_enqueue_script( 'ascreen_customizer_custom', get_template_directory_uri() . '/js/customizer-custom-scripts.js', array( 'customize-controls', 'iris', 'underscore', 'wp-util' ), '20150630', true );
-
-	$clean_box_misc_links = array(
-							'upgrade_link' 				=> esc_url( 'https://www.coothemes.com/themes/ascreen.php' ),
-							'upgrade_text'	 			=> __( 'Upgrade To Pro &raquo;', 'ascreen' ),
-							'WP_version'				=> get_bloginfo( 'version' ),
-							'old_version_message'		=> __( 'Some settings might be missing or disorganized in this version of WordPress. So we suggest you to upgrade to version 4.0 or better.', 'ascreen' )
-		);
-	if ( !(defined( 'ASCREEN_THEME_PRO_USED' ) && ASCREEN_THEME_PRO_USED ))
-	{
-		wp_localize_script( 'ascreen_customizer_custom', 'clean_box_misc_links', $clean_box_misc_links );
-	}
-	
-
-	wp_enqueue_style( 'ascreen_customizer_custom_css', get_template_directory_uri() . '/css/customizer.css');
-}
-add_action( 'customize_controls_enqueue_scripts', 'ascreen_customize_scripts');
 
 
 

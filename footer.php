@@ -21,7 +21,7 @@
         </div>
                
         <div class="footer-bottom">
-            <p class="copyright"><?php printf(__('Powered by <a href="%s">WordPress</a>. Ascreen @ 2016 Design by <a href="%s">CooThemes.com</a>.','ascreen'),esc_url('http://wordpress.org/'),esc_url('http://www.coothemes.com/'));?></p>
+            <p class="copyright"><?php printf(__('Powered by <a href="%s">WordPress</a>. Ascreen theme by <a href="%s">CooThemes.com</a>.','ascreen'),esc_url('http://wordpress.org/'),esc_url('http://www.coothemes.com/'));?></p>
             
         </div>
     </footer>

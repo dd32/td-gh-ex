@@ -101,13 +101,13 @@ function ascreen_customize_register( $wp_customize ) {
 
 	//Fixed Header
 	$wp_customize->add_setting( 'ascreen_option[fixed_header]', array(
-		'default'       => 1,
+		'default'       => 0,
 		'capability'	=> 'edit_theme_options',
 		'sanitize_callback' => 'ascreen_sanitize_num',
 		'transport'		=> 'postMessage',
 	) );
 	$wp_customize->add_control( 'ascreen_option[fixed_header]', array(
-		'label'		=> __( 'Fixed Header', 'ascreen' ),
+		'label'		=> __( 'Not Fixed Header', 'ascreen' ),
 		'section'	=> 'ascreen_settings',
 		'type'      => 'checkbox',
 		'priority'  => 50,
@@ -123,14 +123,14 @@ function ascreen_customize_register( $wp_customize ) {
 
 	//enable 		
 	$wp_customize->add_setting( 'ascreen_option[enable_home_section]', array(
-		'default'       => 1,
+		'default'       => 0,
 		//'type'			=> 'option',
 		'capability'	=> 'edit_theme_options',
 		'sanitize_callback' => 'ascreen_sanitize_num2',
 		'transport'		=> 'postMessage',
 	) );
 	$wp_customize->add_control( 'ascreen_option[enable_home_section]', array(
-		'label'		=> __( 'Enable Home Section', 'ascreen' ),
+		'label'		=> __( 'Disable Home Section', 'ascreen' ),
 		'section'	=> 'ascreen_home_section',
 		'type'      => 'checkbox',
 		'priority'  => 50,
@@ -253,55 +253,7 @@ function ascreen_customize_register( $wp_customize ) {
 	) );	
 	
 	
-	//contact us
-	$wp_customize->add_setting( 'ascreen_option[contact_title]', array(
-		'default' => __('CONTACT US', 'ascreen'),
-		'sanitize_callback' => 'ascreen_sanitize_textarea',
-		'capability'	=> 'edit_theme_options',
-		'transport'		=> 'postMessage',
-	) );
-
-	$wp_customize->add_control( 'ascreen_option[contact_title]', array(
-		'label'		=> __( 'Contact Us Title', 'ascreen' ),
-		'section'	=> 'ascreen_home_section',
-		'settings'	=> 'ascreen_option[contact_title]',
-		'type'		=> 'textarea',
-		'priority'  => 50,
-	) );
-
-
-	$wp_customize->add_setting( 'ascreen_option[contact_decription]', array(
-		'default' => __('Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere c.Etiam ut dui eVestibulum ante ipsum primi', 'ascreen'),
-		'sanitize_callback' => 'ascreen_sanitize_textarea',
-		'capability'	=> 'edit_theme_options',
-		'transport'		=> 'postMessage',
-	) );
-
-	$wp_customize->add_control( 'ascreen_option[contact_decription]', array(
-		'label'		=> __( 'Contact Us Decription', 'ascreen' ),
-		'section'	=> 'ascreen_home_section',
-		'settings'	=> 'ascreen_option[contact_decription]',
-		'type'		=> 'textarea',
-		'priority'  => 50,
-		
-	) );	
 	
-
-	$wp_customize->add_setting( 'ascreen_option[contact_email]', array(
-		'default' => get_bloginfo( 'admin_email'),
-		'sanitize_callback' => 'ascreen_sanitize_textarea',
-		'capability'	=> 'edit_theme_options',
-		'transport'		=> 'postMessage',
-	) );
-
-	$wp_customize->add_control( 'ascreen_option[contact_email]', array(
-		'label'		=> __( 'Contact Email', 'ascreen' ),
-		'section'	=> 'ascreen_home_section',
-		'settings'	=> 'ascreen_option[contact_email]',
-		'type'		=> 'textarea',
-		'priority'  => 50,
-		
-	) );	
 		
 }
 add_action( 'customize_register', 'ascreen_customize_register' );
