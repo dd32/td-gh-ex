@@ -55,6 +55,10 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.7.7
+1. Changes dupilcate string.
+@version 1.7.6
+1. Update strings.
 @version 1.7.5
 1. Update Font-awesome Library 4.7.0
 @version 1.7.4

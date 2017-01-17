@@ -11,10 +11,10 @@ get_template_part('index', 'bannerstrip');
 		<div class="row">
 			<div class="col-md-12">			
 				<div class="error-404">
-					<h1>404</h1>
-					<h3><span class="txt-color"><?php echo __('Opps!','busiprof'); ?></span> <?php echo __('Sorry the page not found','busiprof'); ?></h3>
-					<p><?php echo __('We`re sorry, but the page you are looking for doesn`t exist.','busiprof'); ?></p>
-					<div class="btn-wrap"><a href="<?php echo home_url();?>" class="btn-error btn-large"><?php echo __('Homepage','busiprof'); ?></a></div>	
+					<h1><?php _e('Error 404','busiprof'); ?></h1>
+					<h3><span class="txt-color"><?php echo __('Oops! Page not found','busiprof'); ?></span></h3>
+					<p><?php echo _e('We are sorry, but the page you are looking for does not exist.','busiprof'); ?></p>
+					<div class="btn-wrap"><a href="<?php echo home_url();?>" class="btn-error btn-large"><?php echo __('Go Back','busiprof'); ?></a></div>	
 				</div>
 			</div>
 		</div>

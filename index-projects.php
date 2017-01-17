@@ -10,11 +10,11 @@ if( $current_options['home_project_section_enabled'] == 'on' ) {
 		<div class="row">
 			<div class="col-md-12">
 				<div class="section-title">
-					<?php if($current_options['home_project_heading_one']!='') {?>
-					<h1 class="section-heading"><?php echo $current_options['home_project_heading_one']; ?>
+					<?php if($current_options['protfolio_tag_line']!='') {?>
+					<h1 class="section-heading"><?php echo $current_options['protfolio_tag_line']; ?>
 					</h1><?php } ?>
-					<?php if($current_options['project_tagline']!='') {?>
-					<p><?php echo esc_html($current_options['project_tagline']); ?></p>
+					<?php if($current_options['protfolio_description_tag']!='') {?>
+					<p><?php echo esc_html($current_options['protfolio_description_tag']); ?></p>
 					<?php } ?>
 				</div>
 			</div>

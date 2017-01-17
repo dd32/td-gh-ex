@@ -23,7 +23,8 @@
 		
 			<span class="entry-date"><a href="<?php the_permalink(); ?>"><time datetime=""><?php the_time('M j,Y');?></time></a></span>
 			
-			<span class="comments-link"><a href="<?php the_permalink(); ?>"><?php  comments_popup_link( __( 'Leave a comment', 'busiprof' ) ); ?></a></span>
+			<span class="comments-link"><a href="<?php the_permalink(); ?>">
+			<?php  comments_popup_link( __('Leave a comment', 'busiprof' ) ); ?></a></span>
 			
 			<?php if( get_the_tags() ) { ?>
 			<span class="tag-links"><a href="<?php the_permalink(); ?>"><?php the_tags('', ', ', ''); ?></a></span>

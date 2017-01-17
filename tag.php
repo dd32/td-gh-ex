@@ -11,7 +11,7 @@ get_header();
 		<div class="row">
 			<div class="col-md-6">
 				<div class="page-title">
-					<h2><?php  _e( "Tag  Archives:", 'busiprof'); echo single_cat_title( '', false ); ?></h2>
+					<h2><?php  _e( "Tag  Archive", 'busiprof'); echo single_cat_title( '', false ); ?></h2>
 					<p><?php bloginfo('description');?></p>
 				</div>
 			</div>

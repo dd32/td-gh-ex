@@ -35,14 +35,14 @@
 	<?php endif; ?>   
 <?php if ('open' == $post->comment_status) : ?> 
 <?php if ( get_option('comment_registration') && !$user_ID ) : ?>
-<p><?php _e("You must be",'busiprof')?> <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>"><?php _e("logged in",'busiprof')?></a> <?php _e("to post a comment",'busiprof')?></p>
+<p><?php echo sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment','busiprof' ), site_url( 'wp-login.php' ) . '?redirect_to=' .  urlencode(get_permalink())); ?></p>
 <?php else : ?>
 <div class="comment-form">
 	<div class="row">
 	<?php 
  $fields=array(
-    'author' => '<div class="form-group col-xs-6"><input name="author" id="author" value="" type="text"  placeholder="Your name"  /></div>',
-    'email'  => '<div class="form-group col-xs-6"><input name="email" id="email" value=""   type="text" placeholder="Your Email Id"></div>',    
+    'author' => '<div class="form-group col-xs-6"><input name="author" id="author" value="" type="text"  placeholder="'. __( "Name",'busiprof' ).'"  /></div>',
+    'email'  => '<div class="form-group col-xs-6"><input name="email" id="email" value=""   type="text" placeholder="'. __( "Email",'busiprof' ).'"></div>',    
 ); 
  function my_fields($fields) { 
 return $fields;
@@ -51,11 +51,11 @@ add_filter('comment_form_default_fields','my_fields');
 	$defaults = array(
      'fields'               => apply_filters( 'comment_form_default_fields', $fields ),
 	'comment_field'        => '<div class="form-group col-xs-12"><textarea rows="5" id="comment" name="comment" type="text" placeholder="Message" rows="3"></textarea></div>',		
-	 'logged_in_as' => '<div class="col-xs-12"><p class="logged-in-as">' . __( "Logged in as ",'busiprof' ).'<a href="'. admin_url( 'profile.php' ).'">'.$user_identity.'</a>'. '<a href="'. wp_logout_url( get_permalink() ).'" title="Log out of this account">'.__(" Log out?",'busiprof').'</a>' . '</p></div>',
+	 'logged_in_as' => '<div class="col-xs-12"><p class="logged-in-as">' . __("Logged in as",'busiprof' ).'<a href="'. admin_url( 'profile.php' ).'">'.$user_identity.'</a>'. '<a href="'. wp_logout_url( get_permalink() ).'" title="Logout of this account">'.__("Logout",'busiprof').'</a>' . '</p></div>',
 	 'id_submit'            => 'submit_btn',
-	'label_submit'         =>__( 'Submit Now','busiprof'),
+	'label_submit'         =>__('Send Message','busiprof'),
 	'comment_notes_after'  => '',
-	 'title_reply'       => '<div class="col-xs-12"><h3 class="comment-title">' . __( 'Leave a Comment','busiprof') .'</h3></div>',
+	 'title_reply'       => '<div class="col-xs-12"><h3 class="comment-title">' . __('Leave a Reply','busiprof') .'</h3></div>',
 	 'id_form'      => 'action'	
 	);
 comment_form($defaults);

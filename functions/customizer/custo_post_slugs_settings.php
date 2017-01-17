@@ -3,14 +3,14 @@ function busiprof_post_slugs_settings( $wp_customize ){
 
 	/* Post slug section */
 	$wp_customize->add_section( 'custom_post_slug_section' , array(
-		'title'      => __('Custom Post Slug Settings', 'busiprof'),
+		'title'      => __("SEO Friendly Url's","busiprof"),
 		'priority'       => 128,
    	) );
 	
 		//Portfolio Pro
 		class busiprof_Customize_slug_upgrade extends WP_Customize_Control {
 			public function render_content() { ?>
-			<h3><?php _e('Want to add Custom Post Type Slug than','busiprof'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/busiprof' ); ?>" target="_blank"><?php _e(' Upgrade To Pro','busiprof'); ?> </a>  
+			<h3><?php _e('Want to add custom post type slug than','busiprof'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/busiprof' ); ?>" target="_blank"><?php _e('Upgrade to pro','busiprof'); ?> </a>  
 			<?php
 			}
 		}
@@ -25,7 +25,6 @@ function busiprof_post_slugs_settings( $wp_customize ){
 			$wp_customize,
 			'slug_upgrade',
 				array(
-					'label'					=> __('Busiprof Upgrade','busiprof'),
 					'section'				=> 'custom_post_slug_section',
 					'settings'				=> 'slug_upgrade',
 				)
@@ -36,7 +35,7 @@ function busiprof_post_slugs_settings( $wp_customize ){
 		$wp_customize->add_setting( 'busiprof_pro_theme_options[busiprof_slider_slug]', array( 'default' => 'busiprof-slider' , 'type'=>'option', 'sanitize_callback' => 'sanitize_text_field' ) );
 		$wp_customize->add_control(	'busiprof_pro_theme_options[busiprof_slider_slug]', 
 			array(
-				'label'    => __( 'Slider Slug', 'busiprof' ),
+				'label'    => __( 'Slider slug', 'busiprof' ),
 				'section'  => 'custom_post_slug_section',
 				'type'     => 'text',
 				'input_attrs' => array('disabled' => 'disabled'),
@@ -46,7 +45,7 @@ function busiprof_post_slugs_settings( $wp_customize ){
 		$wp_customize->add_setting( 'busiprof_pro_theme_options[busiprof_service_slug]', array( 'default' => 'busiprof-service' , 'type'=>'option', 'sanitize_callback' => 'sanitize_text_field' ) );
 		$wp_customize->add_control(	'busiprof_pro_theme_options[busiprof_service_slug]', 
 			array(
-				'label'    => __( 'Services Slug', 'busiprof' ),
+				'label'    => __( 'Services slug', 'busiprof' ),
 				'section'  => 'custom_post_slug_section',
 				'type'     => 'text',
 				'input_attrs' => array('disabled' => 'disabled'),
@@ -56,17 +55,17 @@ function busiprof_post_slugs_settings( $wp_customize ){
 		$wp_customize->add_setting( 'busiprof_pro_theme_options[busiprof_project_slug]', array( 'default' => 'busiprof-project' , 'type'=>'option', 'sanitize_callback' => 'sanitize_text_field' ) );
 		$wp_customize->add_control(	'busiprof_pro_theme_options[busiprof_project_slug]', 
 			array(
-				'label'    => __( 'Projects Slug', 'busiprof' ),
+				'label'    => __( 'Projects slug', 'busiprof' ),
 				'section'  => 'custom_post_slug_section',
 				'type'     => 'text',
 				'input_attrs' => array('disabled' => 'disabled'),
 		));
 		
 		// Portfolio Slug
-		$wp_customize->add_setting( 'busiprof_pro_theme_options[busiprof_portfolio_slug]', array( 'default' => 'busiprof-portfolio' , 'type'=>'option', 'sanitize_callback' => 'sanitize_text_field' ) );
+		$wp_customize->add_setting( 'busiprof_pro_theme_options[busiprof_portfolio_slug]', array( 'default' => 'project-category' , 'type'=>'option', 'sanitize_callback' => 'sanitize_text_field' ) );
 		$wp_customize->add_control(	'busiprof_pro_theme_options[busiprof_portfolio_slug]', 
 			array(
-				'label'    => __( 'Portfolio Slug', 'busiprof' ),
+				'label'    => __( 'Projects category slug', 'busiprof' ),
 				'section'  => 'custom_post_slug_section',
 				'type'     => 'text',
 				'input_attrs' => array('disabled' => 'disabled'),
@@ -76,7 +75,7 @@ function busiprof_post_slugs_settings( $wp_customize ){
 		$wp_customize->add_setting( 'busiprof_pro_theme_options[busiprof_testimonial_slug]', array( 'default' => 'busiprof-testimonial' , 'type'=>'option', 'sanitize_callback' => 'sanitize_text_field' ) );
 		$wp_customize->add_control(	'busiprof_pro_theme_options[busiprof_testimonial_slug]', 
 			array(
-				'label'    => __( 'Testimonial Slug', 'busiprof' ),
+				'label'    => __( 'Testimonial slug', 'busiprof' ),
 				'section'  => 'custom_post_slug_section',
 				'type'     => 'text',
 				'input_attrs' => array('disabled' => 'disabled'),
@@ -86,7 +85,7 @@ function busiprof_post_slugs_settings( $wp_customize ){
 		$wp_customize->add_setting( 'busiprof_pro_theme_options[busiprof_team_slug]', array( 'default' => 'busiprof-team' , 'type'=>'option', 'sanitize_callback' => 'sanitize_text_field' ) );
 		$wp_customize->add_control(	'busiprof_pro_theme_options[busiprof_team_slug]', 
 			array(
-				'label'    => __( 'Team Slug', 'busiprof' ),
+				'label'    => __( 'Team slug', 'busiprof' ),
 				'section'  => 'custom_post_slug_section',
 				'type'     => 'text',
 				'input_attrs' => array('disabled' => 'disabled'),
@@ -99,20 +98,18 @@ class WP_amenities_Customize_Control extends WP_Customize_Control {
     */
     public function render_content() {
     ?>
-    <p><?php _e( 'After change slug settings you change permalink settings', 'busiprof' ); ?></p>
+    <p><?php _e('After Changing the slug, please do not forget to save permalinks. Without saving, the old permalinks will not revise.', 'busiprof' ); ?></p>
     <?php
     }
 }
 		$wp_customize->add_setting( 'custom_label_slug' ,
 			array(
-				'default' => '',
 				'capability'     => 'edit_theme_options',
 				'type' => 'option',
 				'sanitize_callback' => 'sanitize_text_field'
 			)	
 		);
 		$wp_customize->add_control( new WP_amenities_Customize_Control( $wp_customize, 'custom_label_slug', array(	
-				'label' => __('Discover Busi Prof Pro','busiprof'),
 				'section' => 'custom_post_slug_section',
 			))
 		);

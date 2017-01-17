@@ -7,7 +7,7 @@ function busiprof_home_page_manager_settings( $wp_customize ){
 	
 	array(
 	
-		'title'      => __('Manage Sections', 'busiprof'),
+		'title'      => __('Theme layout manager', 'busiprof'),
 		
 		'priority'   => 130,
 		
@@ -17,7 +17,7 @@ function busiprof_home_page_manager_settings( $wp_customize ){
 		//Layout Pro
 		class busiprof_Customize_section_upgrade extends WP_Customize_Control {
 			public function render_content() { ?>
-			<h3><?php _e('Want To Change Home page Layout section Than','busiprof'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/busiprof' ); ?>" target="_blank"><?php _e(' Upgrade To Pro','busiprof'); ?> </a>  
+			<h3><?php _e('Want to change homepage layout section than','busiprof'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/busiprof' ); ?>" target="_blank"><?php _e('Upgrade to pro','busiprof'); ?> </a>  
 			<?php
 			}
 		}
@@ -32,7 +32,6 @@ function busiprof_home_page_manager_settings( $wp_customize ){
 			$wp_customize,
 			'layout_upgrade',
 				array(
-					'label'					=> __('Busiprof Upgrade','busiprof'),
 					'section'				=> 'homepage_layout_manager_section',
 					'settings'				=> 'layout_upgrade',
 				)
