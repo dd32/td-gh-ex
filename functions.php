@@ -5,7 +5,7 @@
  * @package Conica
  */
 
-define( 'CONICA_THEME_VERSION' , '1.2.7' );
+define( 'CONICA_THEME_VERSION' , '1.2.8' );
 
 // Get help / Premium Page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -185,6 +185,14 @@ function conica_the_custom_logo() {
 }
 
 /**
+ * Enqueue admin styling.
+ */
+function conica_load_admin_script() {
+    wp_enqueue_style( 'conica-admin-css', get_template_directory_uri() . '/upgrade/css/admin-css.css' );
+}
+add_action( 'admin_enqueue_scripts', 'conica_load_admin_script' );
+
+/**
  * Check if WooCommerce exists.
  */
 if ( ! function_exists( 'conica_is_woocommerce_activated' ) ) :
@@ -313,3 +321,38 @@ function conica_register_required_plugins() {
 	tgmpa( $plugins, $config );
 }
 add_action( 'tgmpa_register', 'conica_register_required_plugins' );
+
+/**
+ * Register a custom Post Categories ID column
+ */
+function conica_edit_cat_columns( $conica_cat_columns ) {
+    $conica_cat_in = array( 'cat_id' => 'Category ID <span class="cat_id_note">For the Default Slider</span>' );
+    $conica_cat_columns = conica_cat_columns_array_push_after( $conica_cat_columns, $conica_cat_in, 0 );
+    return $conica_cat_columns;
+}
+add_filter( 'manage_edit-category_columns', 'conica_edit_cat_columns' );
+
+/**
+ * Print the ID column
+ */
+function conica_cat_custom_columns( $value, $name, $cat_id ) {
+    if( 'cat_id' == $name ) 
+        echo $cat_id;
+}
+add_filter( 'manage_category_custom_column', 'conica_cat_custom_columns', 10, 3 );
+
+/**
+ * Insert an element at the beggining of the array
+ */
+function conica_cat_columns_array_push_after( $src, $conica_cat_in, $pos ) {
+    if ( is_int( $pos ) ) {
+        $R = array_merge( array_slice( $src, 0, $pos + 1 ), $conica_cat_in, array_slice( $src, $pos + 1 ) );
+    } else {
+        foreach ( $src as $k => $v ) {
+            $R[$k] = $v;
+            if ( $k == $pos )
+                $R = array_merge( $R, $conica_cat_in );
+        }
+    }
+    return $R;
+}

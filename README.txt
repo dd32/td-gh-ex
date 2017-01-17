@@ -80,5 +80,15 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.2.8
+* WooCommerce styling fixes/tweaks
+* Customizer javascript fix
+* Added help for setting up Default Slider
+* Updated the language.pot file
+Premium: Added extra settings for blog list excerpt/shortened content
+Premium: Added setting for uploaded logo max-width
+Premium: Added social link for GitHub
+Premium: Added social link for Etsy
+
 #### 1.2.7
-* Initial release.
+* Initial release

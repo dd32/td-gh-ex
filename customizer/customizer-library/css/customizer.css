@@ -27,4 +27,25 @@
     margin-bottom: 20px;
 }
 
+#accordion-section-conica_premium a.button {
+	background-color: #006CC9;
+    color: #FFF;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow: none;
+    position: relative;
+    top: -3px;
+    font-weight: 400;
+}
+#accordion-section-conica_premium a.button:hover {
+	background-color: #055ba5;
+}
 
+.kaira-upsell {
+    margin-top: 30px;
+    font-size: 11px;
+    color: rgb(142, 142, 142);
+}
+.kaira-upsell b {
+    font-weight: 500;
+    color: #006cc9;
+}
