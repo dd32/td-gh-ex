@@ -9,7 +9,7 @@ class WP_Pro_Customize_Control extends WP_Customize_Control {
     public function render_content() {
     ?>
      <div class="pro-box">
-       <a href="<?php echo 'http://webriti.com/wallstreet/';?>" target="_blank" class="upgrade" id="review_pro"><?php _e( 'Upgrade to pro','wallstreet' ); ?></a>
+       <a href="<?php echo 'http://webriti.com/wallstreet/';?>" target="_blank" class="upgrade" id="review_pro"><?php _e('Upgrade to pro','wallstreet' ); ?></a>
 		
 	</div>
     <?php

@@ -119,7 +119,7 @@ function wallstreet_template_customizer( $wp_customize ) {
 		'wallstreet_pro_options[portfolio_title]',
 		array(
 			'type' => 'text',
-			'label' => __('Portfolio Title','wallstreet'),
+			'label' => __('Portfolio title','wallstreet'),
 			'section' => 'section_heading',
 		)
 	);

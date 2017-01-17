@@ -93,9 +93,9 @@ $font_family = array('400'=>'Roboto Regular','300'=>'Roboto Light','600'=>'Robot
 $font_style = array('normal'=>'Normal','italic'=>'Italic');
 	
 	
-// General typography section
+// General Paragraph typography section
 $wp_customize->add_section( 'wallstreet_general_typography' , array(
-		'title'      => __('General', 'wallstreet'),
+		'title'      => __('General Paragraph', 'wallstreet'),
 		'panel' => 'wallstreet_typography_setting',
 		'priority'       => 1,
    	) );
@@ -245,7 +245,7 @@ $wp_customize->add_control('wallstreet_pro_options[menu_title_fontstyle]', array
 
 // Post and page title typography section
 $wp_customize->add_section( 'wallstreet_post_page_title_typography' , array(
-		'title'      => __('Post / Page', 'wallstreet'),
+		'title'      => __('Post / Page title', 'wallstreet'),
 		'panel' => 'wallstreet_typography_setting',
 		'priority'       => 3,
    	) );
@@ -393,7 +393,7 @@ $wp_customize->add_control('wallstreet_pro_options[service_title_fontstyle]', ar
 
 // Portfolio title typography section
 $wp_customize->add_section( 'wallstreet_portfolio_typography' , array(
-		'title'      => __('Portfolio Title', 'wallstreet'),
+		'title'      => __('Portfolio title', 'wallstreet'),
 		'panel' => 'wallstreet_typography_setting',
 		'priority'       => 5,
    	) );	

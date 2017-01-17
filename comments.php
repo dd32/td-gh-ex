@@ -45,7 +45,7 @@
 			'fields'=> apply_filters( 'comment_form_default_fields', $fields ),
 			'comment_field'=> '<div class="blog-form-group-textarea" >
 			<textarea id="comments" rows="5" class="blog-form-control-textarea" name="comment" type="text" placeholder="'.__('Leave your message','wallstreet').'"></textarea></div>',		
-			'logged_in_as' => '<p class="logged-in-as">' . __("Logged in as",'wallstreet' ).'<a href="'. admin_url( 'profile.php' ).'">'.$user_identity.'</a>'. '<a href="'. wp_logout_url( get_permalink() ).'" title="'.__(' Logout from this Account','wallstreet').'">'.__("Logout",'wallstreet').'</a>' . '</p>',
+			'logged_in_as' => '<p class="logged-in-as">' . __("Logged in as",'wallstreet' ).'<a href="'. admin_url( 'profile.php' ).'">'.$user_identity.'</a>'. '<a href="'. wp_logout_url( get_permalink() ).'" title="'.__('Logout from this Account','wallstreet').'">'.__("Logout",'wallstreet').'</a>' . '</p>',
 			'id_submit'=> 'blogdetail_btn',
 			'label_submit'=>__('Send Message','wallstreet'),
 			'comment_notes_after'=> '',

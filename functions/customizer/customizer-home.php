@@ -5,7 +5,7 @@ function wallstreet_header_customizer( $wp_customize ) {
 	$wp_customize->add_panel( 'header_options', array(
 		'priority'       => 450,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Header Settings', 'wallstreet'),
+		'title'      => __('Header settings', 'wallstreet'),
 	) );
 	
 	
@@ -80,7 +80,7 @@ function wallstreet_header_customizer( $wp_customize ) {
     'wallstreet_pro_options[text_title]',
     array(
         'type' => 'checkbox',
-        'label' => __('Enable/Disabe Logo','wallstreet'),
+        'label' => __('Enable/Disable Logo','wallstreet'),
         'section' => 'header_logo',
 		'priority'   => 100,
     )

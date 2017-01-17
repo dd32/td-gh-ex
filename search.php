@@ -20,7 +20,7 @@
 		<div class="col-md-8">
 			<?php if ( have_posts() ) { ?>
 				<h1 class="search_heading">
-				<?php printf( __("Search results for", 'wallstreet' ), '<span>' . get_search_query() . '</span>' ); ?>
+				<?php printf( __("Search results for: %s", 'wallstreet' ), '<span>' . get_search_query() . '</span>' ); ?>
 				</h1>
 			<?php while ( have_posts() ) { the_post();  ?>
 			<div id="post-<?php the_ID(); ?>" <?php post_class('blog-section-right'); ?>>

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: wallstreet-lite\n"
-"POT-Creation-Date: 2016-12-30 17:54+0530\n"
-"PO-Revision-Date: 2016-12-30 17:55+0530\n"
+"Project-Id-Version: wallstreet\n"
+"POT-Creation-Date: 2017-01-16 18:32+0530\n"
+"PO-Revision-Date: 2017-01-16 18:33+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -80,12 +80,12 @@ msgid "Install Required Plugins"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/class-tgm-plugin-activation.php:162
-#: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions.php:239
+#: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions.php:240
 msgid "Install Plugins"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/class-tgm-plugin-activation.php:163
-#: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions.php:240
+#: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions.php:241
 #, php-format
 msgid "Installing Plugin %s"
 msgstr ""
@@ -95,7 +95,7 @@ msgid "Something went wrong."
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/class-tgm-plugin-activation.php:175
-#: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions.php:252
+#: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions.php:253
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
@@ -107,7 +107,7 @@ msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/class-tgm-plugin-activation.php:177
 #: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/class-tgm-plugin-activation.php:1939
-#: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions.php:253
+#: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions.php:254
 msgid "Plugin activated successfully."
 msgstr ""
 
@@ -319,7 +319,7 @@ msgid "Logged in as"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/comments.php:48
-msgid " Logout from this Account"
+msgid "Logout from this Account"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/comments.php:48
@@ -344,38 +344,38 @@ msgstr ""
 msgid "Footer widget area"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions.php:145
+#: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions.php:146
 msgid "Reply"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions.php:152
+#: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions.php:153
 msgid "Posted on &nbsp;"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions.php:154
+#: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions.php:155
 msgid "Edit"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions.php:159
+#: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions.php:160
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions.php:238
+#: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions.php:239
 msgid "Install Recommended Plugins"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions.php:241
+#: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions.php:242
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions.php:254
+#: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions.php:255
 #, php-format
 msgid "All plugins installed and activated successfully. %s"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/search.php:23
-#: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions/breadcrumbs/breadcrumbs.php:27
-msgid "Search results for"
+#, php-format
+msgid "Search results for: %s"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/search.php:56
@@ -502,6 +502,10 @@ msgstr ""
 msgid "Archive by category"
 msgstr ""
 
+#: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions/breadcrumbs/breadcrumbs.php:27
+msgid "Search results for"
+msgstr ""
+
 #: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions/breadcrumbs/breadcrumbs.php:85
 msgid "Posts tagged"
 msgstr ""
@@ -532,6 +536,7 @@ msgstr ""
 #: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions/customizer/customizer-template.php:15
 #: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions/customizer/customizer-template.php:24
 #: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions/customizer/customizer-template.php:32
+#: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions/customizer/customizer-template.php:41
 #: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions/customizer/customizer-template.php:51
 #: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions/customizer/customizer-testimonial.php:5
 #: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions/customizer/customizer-typography.php:8
@@ -705,7 +710,7 @@ msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions/customizer/customizer-heading.php:122
 #: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions/customizer/customizer-typography.php:396
-msgid "Portfolio Title"
+msgid "Portfolio title"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions/customizer/customizer-heading.php:141
@@ -721,7 +726,7 @@ msgid "Homepage blog section description"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions/customizer/customizer-home.php:8
-msgid "Header Settings"
+msgid "Header settings"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions/customizer/customizer-home.php:14
@@ -745,7 +750,7 @@ msgid "Upload a 150x150 for Logo Image"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions/customizer/customizer-home.php:83
-msgid "Enable/Disabe Logo"
+msgid "Enable/Disable Logo"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions/customizer/customizer-home.php:104
@@ -858,8 +863,11 @@ msgid "Sub title"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions/customizer/customizer-social.php:7
-#: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions/customizer/customizer-social.php:15
 msgid "Social link settings"
+msgstr ""
+
+#: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions/customizer/customizer-social.php:15
+msgid "Social Links"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions/customizer/customizer-social.php:35
@@ -915,10 +923,6 @@ msgid ""
 "upgrade to pro"
 msgstr ""
 
-#: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions/customizer/customizer-template.php:41
-msgid " Upgrade to pro"
-msgstr ""
-
 #: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions/customizer/customizer-template.php:50
 msgid "Want to add map in contact template then upgrade to pro"
 msgstr ""
@@ -928,7 +932,7 @@ msgid "Template settings"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions/customizer/customizer-template.php:69
-msgid "About section heading"
+msgid "About page setting"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions/customizer/customizer-template.php:96
@@ -1107,7 +1111,7 @@ msgid "Typography settings"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions/customizer/customizer-typography.php:98
-msgid "General"
+msgid "General Paragraph"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions/customizer/customizer-typography.php:130
@@ -1151,7 +1155,7 @@ msgid "Menus"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions/customizer/customizer-typography.php:248
-msgid "Post / Page"
+msgid "Post / Page title"
 msgstr ""
 
 #: D:\xampp\htdocs\wordpress\wp-content\themes\wallstreet/functions/customizer/customizer-typography.php:322

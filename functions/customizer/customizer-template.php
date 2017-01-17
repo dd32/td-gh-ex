@@ -38,7 +38,7 @@ class wallstreet_Customize_contact_mail_section_upgrade extends WP_Customize_Con
 class wallstreet_Customize_contact_form_section_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
         <h3><?php _e('Want to add contact form title & description in contact template then upgrade to pro','wallstreet'); ?>
-		<a href="<?php echo 'http://www.webriti.com/wallstreet'; ?>" target="_blank"><?php _e(' Upgrade to pro','wallstreet'); ?> </a>  
+		<a href="<?php echo 'http://www.webriti.com/wallstreet'; ?>" target="_blank"><?php _e('Upgrade to pro','wallstreet'); ?> </a>  
 		<?php
 		}
 	}	
@@ -66,7 +66,7 @@ class wallstreet_Customize_contact_map_section_upgrade extends WP_Customize_Cont
 	$wp_customize->add_section(
         'pro_template_section_heading',
         array(
-            'title' => __('About section heading','wallstreet'),
+            'title' => __('About page setting','wallstreet'),
 			'panel'  => 'wallstreet_pro_template',
 			'priority'   => 100,
 			)

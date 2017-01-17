@@ -12,7 +12,7 @@ function wallstreet_social_customizer( $wp_customize ) {
 	$wp_customize->add_section(
         'social_icon',
         array(
-            'title' => __('Social link settings','wallstreet'),
+            'title' => __('Social Links','wallstreet'),
            'priority'    => 400,
 			'panel' => 'social_link_options',
         )
