@@ -126,7 +126,7 @@ JavaScripts
 		images are licensed under GPL.
 		
 Font Awesome...
-Font Awesome 4.6.3 by @davegandy - http://fontawesome.io - @fontawesome
+Font Awesome 4.7 by @davegandy - http://fontawesome.io - @fontawesome
 License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
 Source: http://fontawesome.io
 		   
@@ -139,9 +139,11 @@ Licensed under â˜º License.
 Support
 -------
 
-Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+Do you enjoy this theme? Send your ideas - issues - on the theme forum . Thank you!
 
 ChangLog:
+@Version 1.7.4
+1. Updated Strings.
 @Version 1.7.3
 1. Update Font Awesome Icon 4.6.1 to 4.6.3
 2. Add blog, portfolio, footer-widgets, right-sidebar Tag.

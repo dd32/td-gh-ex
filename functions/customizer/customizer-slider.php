@@ -5,14 +5,13 @@ function quality_slider_customizer( $wp_customize ) {
 	$wp_customize->add_panel( 'quality_slider_setting', array(
 		'priority'       => 500,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Banner Image Settings', 'quality'),
+		'title'      => __('Banner image settings', 'quality'),
 	) );
 	
 	$wp_customize->add_section(
         'slider_section_settings',
         array(
-            'title' => __('Banner Image Settings','quality'),
-            'description' => '',
+            'title' => __('Banner image settings','quality'),
 			'panel'  => 'quality_slider_setting',)
     );
 	
@@ -27,7 +26,7 @@ function quality_slider_customizer( $wp_customize ) {
 			'quality_pro_options[home_feature]',
 			array(
 				'type'        => 'upload',
-				'label' => 'Image Upload',
+				'label' => __('Image','quality'),
 				'section' => 'example_section_one',
 				'settings' =>'quality_pro_options[home_feature]',
 				'section' => 'slider_section_settings',
@@ -39,13 +38,13 @@ function quality_slider_customizer( $wp_customize ) {
 	//Slider Title
 	$wp_customize->add_setting(
 	'quality_pro_options[home_image_title]', array(
-        'default'        => 'Theme Feature Goes Here!',
+        'default'        => __('Fully responsive','quality'),
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
     $wp_customize->add_control('quality_pro_options[home_image_title]', array(
-        'label'   => __('Banner Title', 'quality'),
+        'label'   => __('Title', 'quality'),
         'section' => 'slider_section_settings',
 		'priority'   => 150,
 		'type' => 'text',
@@ -54,13 +53,13 @@ function quality_slider_customizer( $wp_customize ) {
 	//Slider sub title
 	$wp_customize->add_setting(
 	'quality_pro_options[home_image_sub_title]', array(
-        'default'        => 'WordPress Premium Theme!',
+        'default'        => __('Easy customization','quality'),
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
     $wp_customize->add_control('quality_pro_options[home_image_sub_title]', array(
-        'label'   => __('Banner Sub Title', 'quality'),
+        'label'   => __('Subtitle', 'quality'),
         'section' => 'slider_section_settings',
 		'priority'   => 150,
 		'type' => 'text',
@@ -69,13 +68,13 @@ function quality_slider_customizer( $wp_customize ) {
 	//Slider Banner discription
 	$wp_customize->add_setting(
 	'quality_pro_options[home_image_description]', array(
-        'default'        => 'WordPress Premium Theme!',
+        'default'        => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nisl orci, condim entum ultrices',
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
     $wp_customize->add_control('quality_pro_options[home_image_description]', array(
-        'label'   => __('Banner Description', 'quality'),
+        'label'   => __('Description', 'quality'),
         'section' => 'slider_section_settings',
 		'priority'   => 150,
 		'type' => 'text',
@@ -85,14 +84,14 @@ function quality_slider_customizer( $wp_customize ) {
 	// Slider banner button text
 	$wp_customize->add_setting(
 	'quality_pro_options[home_image_button_text]', array(
-	'dafault'	=> 'Get this theme',
+	'dafault'	=> __('Purchase Now','quality'),
 	'capability' => 'edit_theme_options',
 	'sanitize_callback' => 'sanitize_text_field',
 	'type'	=> 'option',
 	));
 	
 	$wp_customize->add_control('quality_pro_options[home_image_button_text]', array(
-	'label' => __('Banner image button text', 'quality'),
+	'label' => __('Button Text', 'quality'),
 	'section' => 'slider_section_settings',
 	'priority'	=> 150,
 	'type' => 'text',
@@ -108,7 +107,7 @@ function quality_slider_customizer( $wp_customize ) {
 	));
 	
 	$wp_customize->add_control('quality_pro_options[home_image_button_link]', array(
-	'label' => __('Banner image button link', 'quality'),
+	'label' => __('Button Link', 'quality'),
 	'section' => 'slider_section_settings',
 	'priority'	=> 150,
 	'type' => 'text',

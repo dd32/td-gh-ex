@@ -23,7 +23,7 @@ $current_options = wp_parse_args(  get_option( 'quality_pro_options', array() ),
 				<div class="qua-blog-info">
 						<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 						<div class="qua-blog-post-detail">
-							<span><?php _e('Posted By Admin','quality');?>
+							<span><?php _e('Posted By','quality');?>
 							<?php if(get_the_tag_list() != '') { ?>
 							</span><i class="post-seperator"></i>
 							<div class="qua-tags">

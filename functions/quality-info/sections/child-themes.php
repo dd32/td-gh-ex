@@ -13,9 +13,9 @@
 
 	<div class="quality-pane-center">
 
-		<h1><?php esc_html_e( 'Install & Use Quality Child Themes', 'quality' ); ?></h1>
+		<h1><?php esc_html_e('Install & Use Quality Child Themes','quality' ); ?></h1>
 
-		<p><?php esc_html_e( 'Below you will find a selection of Quality child themes that will totally transform the look of your site.', 'quality' ); ?></p>
+		<p><?php esc_html_e('Below you will find a selection of Quality child themes that will totally transform the look of your site.','quality' ); ?></p>
 
 	</div>
 
@@ -32,7 +32,7 @@
 			<div class="quality-child-theme-details">
 				<?php if ( 'quality-blue' != $current_theme['Name'] ) { ?>
 					<div class="theme-details">
-						<span class="theme-name">Quality Blue</span>
+						<span class="theme-name"><?php echo 'Quality Blue'; ?></span>
 						<a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-theme&theme=quality-blue' ), 'install-theme_quality-blue' ) ); ?>" class="button button-primary install right"><?php printf( __( 'Install %s now', 'quality' ), '<span class="screen-reader-text">quality-blue</span>' ); ?></a>
 						<a class="button button-secondary preview right" target="_blank" href="https://wp-themes.com/quality-blue"><?php esc_html_e( 'Live Preview','quality'); ?></a>
 						<div class="quality-clear"></div>
@@ -55,7 +55,7 @@
 			<div class="quality-child-theme-image-container">
 				<img src="<?php echo esc_url( get_template_directory_uri() ) . '/functions/quality-info/img/quality-green.png'; ?>" alt="<?php esc_html_e( 'Quality Green Child Theme', 'quality' ); ?>" />
 				<div class="quality-child-theme-description">
-					<h2><?php esc_html_e( 'Quality Green', 'quality' ); ?></h2>
+					<h2><?php esc_html_e('Quality Green', 'quality' ); ?></h2>
 				</div>
 			</div>
 			<div class="quality-child-theme-details">

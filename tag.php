@@ -5,7 +5,7 @@
   <div class="row">
     <?php if ( have_posts() ) : ?>
     <div class="qua_page_heading">
-      <h1><?php printf( __( 'Tag Archives: %s', 'quality' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?>
+      <h1><?php printf( __('Tag Archive %s', 'quality' ), '<span>' . single_tag_title( '', false ) . '</span>' ); ?>
       </h1>
       <?php if ( tag_description() ) : // Show an optional tag description ?>
       <div class="archive-meta"><?php echo tag_description(); ?></div>

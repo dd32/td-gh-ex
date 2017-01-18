@@ -5,13 +5,13 @@ function appointment_header_customizer( $wp_customize ) {
 	$wp_customize->add_panel( 'header_options', array(
 		'priority'       => 450,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Header Settings', 'quality'),
+		'title'      => __('Header settings', 'quality'),
 	) );
 	
 	
 	/* favicon option */
     $wp_customize->add_section( 'quality_favicon' , array(
-      'title'       => __( 'Site favicon', 'quality' ),
+      'title'       => __('Site favicon', 'quality' ),
       'priority'    => 300,
       'description' => __( 'Upload a favicon', 'quality' ),
 	  'panel'  => 'header_options',
@@ -31,14 +31,13 @@ function appointment_header_customizer( $wp_customize ) {
 	
 	//Header logo setting
 	$wp_customize->add_section( 'header_logo' , array(
-		'title'      => __('Header Logo setting', 'quality'),
+		'title'      => __('Header logo setting', 'quality'),
 		'panel'  => 'header_options',
 		'priority'   => 400,
    	) );
 	$wp_customize->add_setting(
 		'quality_pro_options[upload_image_logo]'
 		, array(
-        'default'        => '',
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'esc_url_raw',
 		'type' => 'option',
@@ -49,7 +48,7 @@ function appointment_header_customizer( $wp_customize ) {
 			   $wp_customize,
 			   'quality_pro_options[upload_image_logo]',
 			   array(
-				   'label'          => __( 'Upload a 150x150 for Logo Image', 'quality' ),
+				   'label'          => __('Upload a 150x150 for Logo Image','quality' ),
 				   'section'        => 'header_logo',
 				   'priority'   => 50,
 			   )
@@ -68,7 +67,7 @@ function appointment_header_customizer( $wp_customize ) {
     'quality_pro_options[text_title]',
     array(
         'type' => 'checkbox',
-        'label' => __('Enable/Disabe Logo','quality'),
+        'label' => __('Enable/Disable Logo','quality'),
         'section' => 'header_logo',
 		'priority'   => 100,
     )
@@ -138,7 +137,7 @@ function appointment_header_customizer( $wp_customize ) {
 	
 	//Custom css
 	$wp_customize->add_section( 'custom_css' , array(
-		'title'      => __('Custom css', 'quality'),
+		'title'      => __('Custom CSS', 'quality'),
 		'panel'  => 'header_options',
 		'priority'   => 100,
    	) );
@@ -151,7 +150,7 @@ function appointment_header_customizer( $wp_customize ) {
 		'type'=> 'option',
     ));
     $wp_customize->add_control( 'quality_pro_options[webrit_custom_css]', array(
-        'label'   => __('Custom css snippet:', 'quality'),
+        'label'   => __('Custom CSS', 'quality'),
         'section' => 'custom_css',
         'type' => 'textarea',
 		'priority'   => 100,

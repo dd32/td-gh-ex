@@ -5,14 +5,13 @@ function quality_project_customizer( $wp_customize ) {
 	$wp_customize->add_panel( 'quality_project_setting', array(
 		'priority'       => 700,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Project Settings', 'quality'),
+		'title'      => __('Project settings', 'quality'),
 	) );
 	
 	$wp_customize->add_section(
         'project_section_settings',
         array(
-            'title' => __('Home Project Settings','quality'),
-            'description' => '',
+            'title' => __('Project settings','quality'),
 			'panel'  => 'quality_project_setting',)
     );
 	
@@ -31,7 +30,7 @@ function quality_project_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     'quality_pro_options[home_projects_enabled]',
     array(
-        'label' => __('Enable Home Project Section','quality'),
+        'label' => __('Enable home project section','quality'),
         'section' => 'project_section_settings',
         'type' => 'checkbox',
     )
@@ -41,14 +40,14 @@ function quality_project_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
     'quality_pro_options[project_heading_one]',
     array(
-        'default' => __('Featured Portfolio Project','quality'),
+        'default' => __('Featured portfolio project','quality'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
 		)
 	);	
 	$wp_customize->add_control('quality_pro_options[project_heading_one]',array(
-    'label'   => __('Project Section Heading','quality'),
+    'label'   => __('Section Heading','quality'),
     'section' => 'project_section_settings',
 	 'type' => 'text',)  );	
 	 
@@ -56,14 +55,14 @@ function quality_project_customizer( $wp_customize ) {
 	 $wp_customize->add_setting(
     'quality_pro_options[project_tagline]',
     array(
-        'default' => __('aecenas sit amet tincidunt elit. Pellentesque habitant morbi tristique senectus et netus et Nulla facilisi.','quality'),
+        'default' => 'aecenas sit amet tincidunt elit. Pellentesque habitant morbi tristique senectus et netus et Nulla facilisi.',
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
 		)
 	);	
 	$wp_customize->add_control( 'quality_pro_options[project_tagline]',array(
-    'label'   => __('Project Section Tagline','quality'),
+    'label'   => __('Section Tagline','quality'),
     'section' => 'project_section_settings',
 	 'type' => 'text',)  );
 	 
@@ -72,8 +71,7 @@ function quality_project_customizer( $wp_customize ) {
 	 $wp_customize->add_section(
         'project_one_section_settings',
         array(
-            'title' => __('Home Project One','quality'),
-            'description' => '',
+            'title' => __('Project one','quality'),
 			'panel'  => 'quality_project_setting',)
     );
 	
@@ -89,7 +87,7 @@ function quality_project_customizer( $wp_customize ) {
 		'type' => 'option',
     ));
     $wp_customize->add_control('quality_pro_options[project_one_title]', array(
-        'label'   => __('Project One Title', 'quality'),
+        'label'   => __('Title', 'quality'),
         'section' => 'project_one_section_settings',
 		'priority'   => 150,
 		'type' => 'text',
@@ -104,7 +102,7 @@ function quality_project_customizer( $wp_customize ) {
 			$wp_customize,
 			'quality_pro_options[project_one_thumb]',
 			array(
-				'label' => 'Project One Thumbnail',
+				'label' => __('Image','quality'),
 				'section' => 'example_section_one',
 				'settings' =>'quality_pro_options[project_one_thumb]',
 				'section' => 'project_one_section_settings',
@@ -117,8 +115,7 @@ function quality_project_customizer( $wp_customize ) {
 	$wp_customize->add_section(
         'project_two_section_settings',
         array(
-            'title' => __('Home Project two','quality'),
-            'description' => '',
+            'title' => __('Project two','quality'),
 			'panel'  => 'quality_project_setting',)
     );
 	
@@ -131,7 +128,7 @@ function quality_project_customizer( $wp_customize ) {
 		'type' => 'option',
     ));
     $wp_customize->add_control('quality_pro_options[project_two_title]', array(
-        'label'   => __('Project Two Title', 'quality'),
+        'label'   => __('Title', 'quality'),
         'section' => 'project_two_section_settings',
 		'priority'   => 150,
 		'type' => 'text',
@@ -144,7 +141,7 @@ function quality_project_customizer( $wp_customize ) {
 			$wp_customize,
 			'quality_pro_options[project_two_thumb]',
 			array(
-				'label' => 'Project two Thumbnail',
+				'label' => __('Image','quality'),
 				'section' => 'example_section_one',
 				'settings' =>'quality_pro_options[project_two_thumb]',
 				'section' => 'project_two_section_settings',
@@ -157,8 +154,7 @@ function quality_project_customizer( $wp_customize ) {
 	$wp_customize->add_section(
         'project_three_section_settings',
         array(
-            'title' => __('Home Project three','quality'),
-            'description' => '',
+            'title' => __('Project three','quality'),
 			'panel'  => 'quality_project_setting',)
     );
 	
@@ -171,7 +167,7 @@ function quality_project_customizer( $wp_customize ) {
 		'type' => 'option',
     ));
     $wp_customize->add_control('quality_pro_options[project_three_title]', array(
-        'label'   => __('Project three Title', 'quality'),
+        'label'   => __('Title','quality'),
         'section' => 'project_three_section_settings',
 		'priority'   => 150,
 		'type' => 'text',
@@ -185,7 +181,7 @@ function quality_project_customizer( $wp_customize ) {
 			$wp_customize,
 			'quality_pro_options[project_three_thumb]',
 			array(
-				'label' => 'Project three Thumbnail',
+				'label' => __('Image','quality'),
 				'section' => 'example_section_one',
 				'settings' =>'quality_pro_options[project_three_thumb]',
 				'section' => 'project_three_section_settings',
@@ -199,8 +195,7 @@ function quality_project_customizer( $wp_customize ) {
 	$wp_customize->add_section(
         'project_four_section_settings',
         array(
-            'title' => __('Home Project Four','quality'),
-            'description' => '',
+            'title' => __('Project four','quality'),
 			'panel'  => 'quality_project_setting',)
     );
 	
@@ -213,7 +208,7 @@ function quality_project_customizer( $wp_customize ) {
 		'type' => 'option',
     ));
     $wp_customize->add_control('quality_pro_options[project_four_title]', array(
-        'label'   => __('Project four Title', 'quality'),
+        'label'   => __('Title', 'quality'),
         'section' => 'project_four_section_settings',
 		'priority'   => 150,
 		'type' => 'text',
@@ -227,7 +222,7 @@ function quality_project_customizer( $wp_customize ) {
 			$wp_customize,
 			'quality_pro_options[project_four_thumb]',
 			array(
-				'label' => 'Project four Thumbnail',
+				'label' => __('Image','quality'),
 				'section' => 'example_section_one',
 				'settings' =>'quality_pro_options[project_four_thumb]',
 				'section' => 'project_four_section_settings',

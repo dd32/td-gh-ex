@@ -8,13 +8,13 @@
     <div class="qua_page_heading">
       <h1>
         <?php if ( is_day() ) : ?>
-        <?php  _e( "Daily Archives:", 'quality' ); echo (get_the_date()); ?>
+        <?php  _e( "Daily Archive", 'quality' ); echo (get_the_date()); ?>
         <?php elseif ( is_month() ) : ?>
-        <?php  _e( "Monthly Archives:", 'quality' ); echo (get_the_date( 'F Y' )); ?>
+        <?php  _e( "Monthly Archive", 'quality' ); echo (get_the_date( 'F Y' )); ?>
         <?php elseif ( is_year() ) : ?>
-        <?php  _e( "Yearly Archives:", 'quality' );  echo (get_the_date( 'Y' )); ?>
+        <?php  _e( "Yearly Archive", 'quality' );  echo (get_the_date( 'Y' )); ?>
         <?php else : ?>
-        <?php _e( "Blog Archives", 'quality' ); ?>
+        <?php _e( "Blog Archive", 'quality' ); ?>
         <?php endif; ?>	
         <?php if(get_post_meta( get_the_ID(), 'post_description', true ) != '' ) { ?>
         <p><?php echo get_post_meta( get_the_ID(), 'post_description', true ) ; ?></p>

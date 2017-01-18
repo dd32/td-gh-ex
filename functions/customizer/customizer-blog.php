@@ -4,7 +4,7 @@ function quality_blog_customizer( $wp_customize ) {
 	$wp_customize->add_section(
         'blog_setting',
         array(
-            'title' => __('Blog Settings','quality'),
+            'title' => __('Home blog settings','quality'),
 			'priority'   => 700,
 			
 			)
@@ -24,7 +24,7 @@ function quality_blog_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     'quality_pro_options[home_blog_enabled]',
     array(
-        'label' => __('Enable Blog on HOME Section','quality'),
+        'label' => __('Enable home blog section','quality'),
         'section' => 'blog_setting',
         'type' => 'checkbox',
     )
@@ -35,7 +35,7 @@ function quality_blog_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'quality_pro_options[blog_heading]',
 		array('capability'  => 'edit_theme_options',
-		'default' => __('Latest <span>From</span> Blog','quality'), 
+		'default' => __('Our latest blog post','quality'), 
 		'type' => 'option',
 		'sanitize_callback' => 'quality_blog_sanitize_text',
 		));
@@ -44,7 +44,7 @@ function quality_blog_customizer( $wp_customize ) {
 		'quality_pro_options[blog_heading]',
 		array(
 			'type' => 'text',
-			'label' => __('Blog Heading','quality'),
+			'label' => __('Section Heading','quality'),
 			'section' => 'blog_setting',
 		)
 	);

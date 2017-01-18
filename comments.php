@@ -25,7 +25,7 @@
 <?php endif; ?>
 <?php if ('open' == $post->comment_status) : ?>
 <?php if ( get_option('comment_registration') && !$user_ID ) : ?>
-<p><?php _e("You must be",'quality'); ?> <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>"><?php _e("logged in",'quality')?></a> <?php _e("to post a comment",'quality'); ?></p>
+<p><?php echo sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment','quality' ), site_url( 'wp-login.php' ) . '?redirect_to=' .  urlencode(get_permalink())); ?></p>
 <?php else : ?>
 <div class="qua_comment_form_section">
   <?php  
@@ -41,12 +41,12 @@
     'fields'=> apply_filters( 'comment_form_default_fields', $fields ),
     'comment_field'=> '<div class="qua_form_group"><label>'.__('Comment','quality').'</label>
     <textarea id="comments" rows="5" class="qua_con_textarea_control" name="comment"></textarea></div>',		
-    'logged_in_as' => '<p class="logged-in-as">' . __( "Logged in as ",'quality' ).'<a href="'. admin_url( 'profile.php' ).'">'.$user_identity.'</a>'. '<a href="'. wp_logout_url( get_permalink() ).'" title="Log out of this account">'.__(" Log out?",'quality').'</a>' . '</p>',
+    'logged_in_as' => '<p class="logged-in-as">' . __( "Logged in as",'quality' ).'<a href="'. admin_url( 'profile.php' ).'">'.$user_identity.'</a>'. '<a href="'. wp_logout_url( get_permalink() ).'" title="Logout of this account">'.__("Logout",'quality').'</a>' . '</p>',
     'id_submit'=> 'qua_send_button',
-    'label_submit'=>__( 'Post Comment','quality'),
+    'label_submit'=>__('Send Message','quality'),
     'comment_notes_after'=> '',
 	'comment_notes_before'=>'',
-    'title_reply'=> '<h2>'.__( 'Leave a Reply','quality').'</h2>',
+    'title_reply'=> '<h2>'.__('Leave a Reply','quality').'</h2>',
     'id_form'=> 'action'
     );
     comment_form($defaults);?>						
