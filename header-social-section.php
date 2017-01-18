@@ -45,7 +45,7 @@
 					<li><a href="mailto:<?php echo $current_options['contact_email'];?>"><?php echo $current_options['contact_email'];?><i class="fa fa-envelope"></i></a></li>
 					<?php } ?>
 					<?php if(($current_options['contact_email']) && ($current_options['contact_phone_number'])){ ?>
-					<li><span class="line"><?php _e('&#124;', 'elitepress'); ?></span></li>
+					<li><span class="line"><?php echo '&#124'; ?></span></li>
 					<?php } ?>
 					<?php if($current_options['contact_phone_number']){ ?>
 					<li><i class="fa fa-phone"></i><?php echo $current_options['contact_phone_number']; ?></li>

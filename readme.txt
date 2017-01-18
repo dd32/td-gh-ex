@@ -56,6 +56,8 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.6.1
+1. Updated Strings.
 @version 1.6
 1. Update Theme Description.
 2. Change Screenshot Image.

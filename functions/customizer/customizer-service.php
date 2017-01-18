@@ -5,12 +5,12 @@ function elitepress_service_customizer( $wp_customize ) {
 $wp_customize->add_panel( 'elitepress_service_options', array(
 		'priority'       => 500,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Service Settings', 'elitepress'),
+		'title'      => __('Service settings', 'elitepress'),
 	) );
 
 	
 	$wp_customize->add_section( 'service_section_head' , array(
-		'title'      => __('Service Heading ', 'elitepress'),
+		'title'      => __('Section Heading', 'elitepress'),
 		'panel'  => 'elitepress_service_options',
 		'priority'   => 50,
    	) );
@@ -30,7 +30,7 @@ $wp_customize->add_panel( 'elitepress_service_options', array(
 	$wp_customize->add_control(
     'elitepress_lite_options[service_section_enabled]',
     array(
-        'label' => __(' Enable Service Section on front page.','elitepress'),
+        'label' => __('Enable service section on front page','elitepress'),
         'section' => 'service_section_head',
         'type' => 'checkbox',
     )
@@ -39,7 +39,7 @@ $wp_customize->add_panel( 'elitepress_service_options', array(
 	$wp_customize->add_setting(
     'elitepress_lite_options[service_title]',
     array(
-        'default' =>__('Our Services','elitepress'),
+        'default' =>__('Our services','elitepress'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option'
@@ -48,7 +48,7 @@ $wp_customize->add_panel( 'elitepress_service_options', array(
 	$wp_customize->add_control(
     'elitepress_lite_options[service_title]',
     array(
-        'label' => __('Service Title','elitepress'),
+        'label' => __('Title','elitepress'),
         'section' => 'service_section_head',
         'type' => 'text',
     )
@@ -57,7 +57,7 @@ $wp_customize->add_panel( 'elitepress_service_options', array(
 	$wp_customize->add_setting(
     'elitepress_lite_options[service_description]',
     array(
-        'default' => __('Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupid non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.','elitepress'),
+        'default' => 'Duis aute irure dolor in reprehenderit in voluptate velit cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupid non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option'
     )	
@@ -65,7 +65,7 @@ $wp_customize->add_panel( 'elitepress_service_options', array(
 	$wp_customize->add_control(
     'elitepress_lite_options[service_description]',
     array(
-        'label' => __('Service Description','elitepress'),
+        'label' => __('Description','elitepress'),
         'section' => 'service_section_head',
         'type' => 'text',
 		'sanitize_callback' => 'sanitize_text_field',
@@ -74,7 +74,7 @@ $wp_customize->add_panel( 'elitepress_service_options', array(
 	
 //service section one
 	$wp_customize->add_section( 'service_section_one' , array(
-		'title'      => __('Service Section one', 'elitepress'),
+		'title'      => __('Service one', 'elitepress'),
 		'panel'  => 'elitepress_service_options',
 		'priority'   => 100,
 		'sanitize_callback' => 'sanitize_text_field',
@@ -88,7 +88,7 @@ $wp_customize->add_panel( 'elitepress_service_options', array(
     ));
 	
 	$wp_customize->add_control( 'elitepress_lite_options[service_one_icon]', array(
-        'label'   => __('Service icon', 'elitepress'),
+        'label'   => __('Icon', 'elitepress'),
 		'section' => 'service_section_one',
         'type'    => 'text',
     ));	
@@ -96,7 +96,7 @@ $wp_customize->add_panel( 'elitepress_service_options', array(
 	$wp_customize->add_setting(
     'elitepress_lite_options[service_one_title]',
     array(
-        'default' => __('Easy to Use','elitepress'),
+        'default' => __('Responsive design','elitepress'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option'
@@ -105,7 +105,7 @@ $wp_customize->add_panel( 'elitepress_service_options', array(
 	$wp_customize->add_control(
     'elitepress_lite_options[service_one_title]',
     array(
-        'label' => __('Service Title','elitepress'),
+        'label' => __('Title','elitepress'),
         'section' => 'service_section_one',
         'type' => 'text',
     )
@@ -114,7 +114,7 @@ $wp_customize->add_panel( 'elitepress_service_options', array(
 	$wp_customize->add_setting(
     'elitepress_lite_options[service_one_description]',
     array(
-        'default' => __('Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet ferment etiam porta sem malesuada magna mollis.','elitepress'),
+        'default' => 'Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet ferment etiam porta sem malesuada magna mollis.',
 		 'capability'     => 'edit_theme_options',
 		 'sanitize_callback' => 'sanitize_text_field',
 		 'type' => 'option'
@@ -123,7 +123,7 @@ $wp_customize->add_panel( 'elitepress_service_options', array(
 	$wp_customize->add_control(
     'elitepress_lite_options[service_one_description]',
     array(
-        'label' => __('Service Description','elitepress'),
+        'label' => __('Description','elitepress'),
         'section' => 'service_section_one',
         'type' => 'text',	
     )
@@ -131,7 +131,7 @@ $wp_customize->add_panel( 'elitepress_service_options', array(
 //Second service
 
 $wp_customize->add_section( 'service_section_two' , array(
-		'title'      => __('Service Section Two', 'elitepress'),
+		'title'      => __('Service two', 'elitepress'),
 		'panel'  => 'elitepress_service_options',
 		'priority'   => 200,
    	) );
@@ -150,7 +150,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     'elitepress_lite_options[service_two_icon]',
     array(
-        'label' => __('Service Icon','elitepress'),
+        'label' => __('Icon','elitepress'),
         'section' => 'service_section_two',
         'type' => 'text',
     )
@@ -168,7 +168,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     'elitepress_lite_options[service_two_title]',
     array(
-        'label' => __('Service Title','elitepress'),
+        'label' => __('Title','elitepress'),
         'section' => 'service_section_two',
         'type' => 'text',
     )
@@ -177,7 +177,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
     'elitepress_lite_options[service_two_description]',
     array(
-        'default' => __('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consec tetur adipisicing elit dignissim dapib tumst.','elitepress'),
+        'default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consec tetur adipisicing elit dignissim dapib tumst.',
 		 'capability'     => 'edit_theme_options',
 		 'sanitize_callback' => 'sanitize_text_field',
 		 'type' => 'option',
@@ -186,14 +186,14 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 		'elitepress_lite_options[service_two_description]',
 		array(
-        'label' => __('Service Description','elitepress'),
+        'label' => __('Description','elitepress'),
         'section' => 'service_section_two',
         'type' => 'text',
     )
 );
 //Third Service section
 $wp_customize->add_section( 'service_section_three' , array(
-		'title'      => __('Service Section Three', 'elitepress'),
+		'title'      => __('Service three', 'elitepress'),
 		'panel'  => 'elitepress_service_options',
 		'priority'   => 300,
    	) );
@@ -212,7 +212,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
 'elitepress_lite_options[service_three_icon]',
     array(
-        'label' => __('Service Icon','elitepress'),
+        'label' => __('Icon','elitepress'),
         'section' => 'service_section_three',
         'type' => 'text',
 		
@@ -222,7 +222,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
     'elitepress_lite_options[service_three_title]',
     array(
-        'default' => __('Exclusive Support','elitepress'),
+        'default' => __('Exclusive support','elitepress'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' =>'option',
@@ -231,7 +231,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     'elitepress_lite_options[service_three_title]',
     array(
-        'label' => __('Service Title','elitepress'),
+        'label' => __('Title','elitepress'),
         'section' => 'service_section_three',
         'type' => 'text',
     )
@@ -240,7 +240,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
     'elitepress_lite_options[service_three_description]',
     array(
-        'default' => __('Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet ferment etiam porta sem malesuada magna mollis.','elitepress'),
+        'default' => 'Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet ferment etiam porta sem malesuada magna mollis.',
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' =>'option',
@@ -257,7 +257,7 @@ $wp_customize->add_control(
 //Four Service section
 
 $wp_customize->add_section( 'service_section_four' , array(
-		'title'      => __('Service Section Four', 'elitepress'),
+		'title'      => __('Service four', 'elitepress'),
 		'panel'  => 'elitepress_service_options',
 		'priority'   => 400,
    	) );
@@ -275,7 +275,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     'elitepress_lite_options[service_four_icon]',
     array(
-        'label' => __('Service Icon','elitepress'),
+        'label' => __('Icon','elitepress'),
         'section' => 'service_section_four',
         'type' => 'text',
     )
@@ -284,7 +284,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
     'elitepress_lite_options[service_four_title]',
     array(
-        'default' => __('Incredibly Flexible','elitepress'),
+        'default' => __('Incredibly flexible','elitepress'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option'
@@ -293,7 +293,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     'elitepress_lite_options[service_four_title]',
     array(
-        'label' => __('Service Title','elitepress'),
+        'label' => __('Title','elitepress'),
         'section' => 'service_section_four',
         'type' => 'text',
     )
@@ -302,7 +302,7 @@ $wp_customize->add_control(
 $wp_customize->add_setting(
    'elitepress_lite_options[service_four_description]',
     array(
-        'default' => __('Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet ferment etiam porta sem malesuada magna mollis.','elitepress'),
+        'default' => 'Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet ferment etiam porta sem malesuada magna mollis.',
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option'
@@ -311,7 +311,7 @@ $wp_customize->add_setting(
 $wp_customize->add_control(
     'elitepress_lite_options[service_four_description]',
     array(
-        'label' => __('Service Description','elitepress'),
+        'label' => __('Description','elitepress'),
         'section' => 'service_section_four',
         'type' => 'text',
 		'sanitize_callback' => 'sanitize_text_field',
@@ -328,14 +328,14 @@ class WP_service_Customize_Control extends WP_Customize_Control {
 	 <P><?php _e('Want to add more service than upgrade to pro','elitepress');?></P>
 	 </div>
 	  <div class="pro-box">
-	 <a href="<?php echo esc_url( __('http://webriti.com/elitepress/', 'elitepress'));?>" target="_blank" class="service" id="review_pro"><?php _e( 'UPGRADE TO PRO','elitepress' ); ?></a>
+	 <a href="<?php echo 'http://webriti.com/elitepress/';?>" target="_blank" class="service" id="review_pro"><?php _e( 'Upgrade to pro','elitepress' ); ?></a>
 	 <div>
     <?php
     }
 }
 //Pro service section
 $wp_customize->add_section( 'service_section_pro' , array(
-		'title'      => __('Add More service', 'elitepress'),
+		'title'      => __('Add more service', 'elitepress'),
 		'panel'  => 'elitepress_service_options',
 		'priority'   => 700,
    	) );
@@ -344,15 +344,13 @@ $wp_customize->add_section( 'service_section_pro' , array(
 $wp_customize->add_setting(
      'elitepress_lite_options[service_pro]',
     array(
-        'default' => __('','elitepress'),
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     )	
 );
 $wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'elitepress_lite_options[service_pro]', array(	
-		'label' => __('Discover elitepress Pro','elitepress'),
-        'section' => 'service_section_pro',
+		'section' => 'service_section_pro',
 		'setting' => 'elitepress_lite_options[service_pro]',
     ))
 );

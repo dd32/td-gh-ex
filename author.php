@@ -12,7 +12,7 @@
 			<!--Blog Area-->
 				<div class="<?php elitepress_post_layout_class(); ?>" >
 				<h1 class="blog_detail_head">
-				<?php  _e( "Author  Archives:", 'elitepress' ); echo get_the_author(); ?>
+				<?php  _e( "Author  Archive", 'elitepress' ); echo get_the_author(); ?>
 				</h1>
 				<?php
 				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;

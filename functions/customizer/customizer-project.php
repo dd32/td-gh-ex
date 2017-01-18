@@ -5,14 +5,13 @@ function elitepress_portfolio_customizer( $wp_customize ) {
 	$wp_customize->add_panel( 'elitepress_portfolio_setting', array(
 		'priority'       => 700,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('portfolio Settings', 'elitepress'),
+		'title'      => __('Portfolio settings', 'elitepress'),
 	) );
 	
 	$wp_customize->add_section(
         'portfolio_section_settings',
         array(
-            'title' => __('Home portfolio Settings','elitepress'),
-            'description' => '',
+            'title' => __('Portfolio settings','elitepress'),
 			'panel'  => 'elitepress_portfolio_setting',)
     );
 	
@@ -39,13 +38,13 @@ function elitepress_portfolio_customizer( $wp_customize ) {
 	//portfolio one Title
 	$wp_customize->add_setting(
 	'elitepress_lite_options[front_portfolio_title]', array(
-        'default'        => __('Latest Projects','elitepress'),
+        'default'        => __('Latest projects','elitepress'),
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
     $wp_customize->add_control('elitepress_lite_options[front_portfolio_title]', array(
-        'label'   => __('portfolio Title', 'elitepress'),
+        'label'   => __('Title', 'elitepress'),
         'section' => 'portfolio_section_settings',
 		'type' => 'text',
     ));
@@ -53,13 +52,13 @@ function elitepress_portfolio_customizer( $wp_customize ) {
 	//portfolio Description
 	$wp_customize->add_setting(
 	'elitepress_lite_options[front_portfolio_description]', array(
-        'default'        => __ ('Morbi leo risus, porta ac consectetur vestibulum eros cras mattis consectetur purus sit...','elitepress'),
+        'default'        => 'Morbi leo risus, porta ac consectetur vestibulum eros cras mattis consectetur purus sit...',
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
     $wp_customize->add_control('elitepress_lite_options[front_portfolio_description]', array(
-        'label'   => __('portfolio Description', 'elitepress'),
+        'label'   => __('Description', 'elitepress'),
         'section' => 'portfolio_section_settings',
 		'type' => 'textarea',
     ));
@@ -67,7 +66,7 @@ function elitepress_portfolio_customizer( $wp_customize ) {
 	$wp_customize->add_section(
         'portfolio_one_section_settings',
         array(
-            'title' => __('Home portfolio one','elitepress'),
+            'title' => __('Portfolio one','elitepress'),
             'description' => '',
 			'panel'  => 'elitepress_portfolio_setting',)
     );
@@ -75,13 +74,13 @@ function elitepress_portfolio_customizer( $wp_customize ) {
 	//portfolio one Title
 	$wp_customize->add_setting(
 	'elitepress_lite_options[portfolio_one_title]', array(
-        'default'        => __('Business Growth','elitepress'),
+        'default'        => __('Business growth','elitepress'),
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
     $wp_customize->add_control('elitepress_lite_options[portfolio_one_title]', array(
-        'label'   => __('portfolio Title One', 'elitepress'),
+        'label'   => __('Title', 'elitepress'),
         'section' => 'portfolio_one_section_settings',
 		'type' => 'text',
     ));
@@ -94,7 +93,7 @@ function elitepress_portfolio_customizer( $wp_customize ) {
 			$wp_customize,
 			'elitepress_lite_options[portfolio_one_image]',
 			array(
-				'label' => 'portfolio One Thumbnail',
+				'label' => __('Image','elitepress'),
 				'section' => 'example_section_one',
 				'settings' =>'elitepress_lite_options[portfolio_one_image]',
 				'section' => 'portfolio_one_section_settings',
@@ -106,13 +105,13 @@ function elitepress_portfolio_customizer( $wp_customize ) {
 	//portfolio one Description
 	$wp_customize->add_setting(
 	'elitepress_lite_options[portfolio_one_description]', array(
-        'default'=> __('Morbi leo risus, porta ac consectetur vestibulum eros cras 	mattis consectetur purus sit...','elitepress'),
+        'default'=> 'Morbi leo risus, porta ac consectetur vestibulum eros cras 	mattis consectetur purus sit...',
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
     $wp_customize->add_control('elitepress_lite_options[portfolio_one_description]', array(
-        'label'   => __('portfolio Description One', 'elitepress'),
+        'label'   => __('Description', 'elitepress'),
         'section' => 'portfolio_one_section_settings',
 		'type' => 'textarea',
     ));
@@ -123,21 +122,20 @@ function elitepress_portfolio_customizer( $wp_customize ) {
 	$wp_customize->add_section(
         'portfolio_two_section_settings',
         array(
-            'title' => __('Home portfolio two','elitepress'),
-            'description' => '',
-			'panel'  => 'elitepress_portfolio_setting',)
+            'title' => __('Portfolio two','elitepress'),
+            'panel'  => 'elitepress_portfolio_setting',)
     );
 	
 	//portfolio Two Title
 	$wp_customize->add_setting(
 	'elitepress_lite_options[portfolio_two_title]', array(
-        'default'        => __('Functional Beauty','elitepress'),
+        'default'        => __('Functional beauty','elitepress'),
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
     $wp_customize->add_control('elitepress_lite_options[portfolio_two_title]', array(
-        'label'   => __('portfolio Title Two', 'elitepress'),
+        'label'   => __('Title', 'elitepress'),
         'section' => 'portfolio_two_section_settings',
 		'type' => 'text',
     ));
@@ -149,7 +147,7 @@ function elitepress_portfolio_customizer( $wp_customize ) {
 			$wp_customize,
 			'elitepress_lite_options[portfolio_two_image]',
 			array(
-				'label' => 'portfolio two Thumbnail',
+				'label' => __('Image','elitepress'),
 				'section' => 'example_section_one',
 				'settings' =>'elitepress_lite_options[portfolio_two_image]',
 				'section' => 'portfolio_two_section_settings',
@@ -161,13 +159,13 @@ function elitepress_portfolio_customizer( $wp_customize ) {
 	//portfolio Two Description
 	$wp_customize->add_setting(
 	'elitepress_lite_options[portfolio_two_description]', array(
-        'default'        => __('Morbi leo risus, porta ac consectetur vestibulum eros cras mattis consectetur purus sit...','elitepress'),
+        'default'        => 'Morbi leo risus, porta ac consectetur vestibulum eros cras mattis consectetur purus sit...',
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
     $wp_customize->add_control('elitepress_lite_options[portfolio_two_description]', array(
-        'label'   => __('portfolio Title Two', 'elitepress'),
+        'label'   => __('Title', 'elitepress'),
         'section' => 'portfolio_two_section_settings',
 		'type' => 'textarea',
     ));
@@ -177,9 +175,8 @@ function elitepress_portfolio_customizer( $wp_customize ) {
 	$wp_customize->add_section(
         'portfolio_three_section_settings',
         array(
-            'title' => __('Home portfolio Three','elitepress'),
-            'description' => '',
-			'panel'  => 'elitepress_portfolio_setting',)
+            'title' => __('Portfolio three','elitepress'),
+            'panel'  => 'elitepress_portfolio_setting',)
     );
 	
 	
@@ -187,13 +184,13 @@ function elitepress_portfolio_customizer( $wp_customize ) {
 	//portfolio Title Title
 	$wp_customize->add_setting(
 	'elitepress_lite_options[portfolio_three_title]', array(
-        'default'        => __('Planning Around','elitepress'),
+        'default'        => __('Planning around','elitepress'),
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
     $wp_customize->add_control('elitepress_lite_options[portfolio_three_title]', array(
-        'label'   => __('portfolio Title Three', 'elitepress'),
+        'label'   => __('Title', 'elitepress'),
         'section' => 'portfolio_three_section_settings',
 		'type' => 'text',
     ));
@@ -208,7 +205,7 @@ function elitepress_portfolio_customizer( $wp_customize ) {
 			$wp_customize,
 			'elitepress_lite_options[portfolio_three_image]',
 			array(
-				'label' => 'portfolio Three Thumbnail',
+				'label' => __('Image','elitepress'),
 				'section' => 'example_section_one',
 				'settings' =>'elitepress_lite_options[portfolio_three_image]',
 				'section' => 'portfolio_three_section_settings',
@@ -220,13 +217,13 @@ function elitepress_portfolio_customizer( $wp_customize ) {
 	//portfolio Three Description
 	$wp_customize->add_setting(
 	'elitepress_lite_options[portfolio_three_description]', array(
-        'default'        => __('Morbi leo risus, porta ac consectetur vestibulum eros cras mattis consectetur purus sit...','elitepress'),
+        'default'        => 'Morbi leo risus, porta ac consectetur vestibulum eros cras mattis consectetur purus sit...',
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
     $wp_customize->add_control('elitepress_lite_options[portfolio_three_description]', array(
-        'label'   => __('portfolio Description Three', 'elitepress'),
+        'label'   => __('Description', 'elitepress'),
         'section' => 'portfolio_three_section_settings',
 		'type' => 'textarea',
     ));
@@ -235,7 +232,7 @@ function elitepress_portfolio_customizer( $wp_customize ) {
 	
 	
 	$wp_customize->add_section( 'more_portfolio' , array(
-		'title'      => __('Add More portfolio', 'elitepress'),
+		'title'      => __('Add more portfolio', 'elitepress'),
 		'panel'  => 'elitepress_portfolio_setting',
 		'priority'   => 400,
    	) );
@@ -253,7 +250,7 @@ function elitepress_portfolio_customizer( $wp_customize ) {
 	 <P><?php _e('Want to add more portfolios and categorization than upgrade to pro','elitepress');?></P>
 	 </div>
 	  <div class="pro-box">
-	 <a href="<?php echo esc_url( __('http://webriti.com/elitepress/', 'elitepress'));?>" target="_blank" class="service" id="review_pro"><?php _e( 'UPGRADE TO PRO','elitepress' ); ?></a>
+	 <a href="<?php echo esc_url('http://webriti.com/elitepress/');?>" target="_blank" class="service" id="review_pro"><?php _e( 'Upgrade to pro','elitepress' ); ?></a>
 	 <div>
     <?php
     }
@@ -262,14 +259,12 @@ function elitepress_portfolio_customizer( $wp_customize ) {
 $wp_customize->add_setting(
     'portfolio_pro',
     array(
-        'default' => __('','elitepress'),
-		'capability'     => 'edit_theme_options',
+       'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
     )	
 );
 $wp_customize->add_control( new WP_portfolio_Customize_Control( $wp_customize, 'portfolio_pro', array(	
-		'label' => __('Discover elitepress Pro','elitepress'),
-        'section' => 'more_portfolio',
+		'section' => 'more_portfolio',
 		'setting' => 'portfolio_pro',
     ))
 );

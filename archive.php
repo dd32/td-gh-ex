@@ -15,13 +15,13 @@
 					<?php if ( have_posts() ) : ?>
 					<h1 class="blog_detail_head">
 					<?php if ( is_day() ) : ?>
-					<?php  _e( "Daily Archives: ", 'elitepress' ); echo (get_the_date()); ?>
+					<?php  _e( "Daily Archive", 'elitepress' ); echo (get_the_date()); ?>
 					<?php elseif ( is_month() ) : ?>
-					<?php  _e( "Monthly Archives: ", 'elitepress' ); echo (get_the_date( 'F Y' )); ?>
+					<?php  _e( "Monthly Archive", 'elitepress' ); echo (get_the_date( 'F Y' )); ?>
 					<?php elseif ( is_year() ) : ?>
-					<?php  _e( "Yearly Archives: ", 'elitepress' );  echo (get_the_date( 'Y' )); ?>
+					<?php  _e( "Yearly Archive", 'elitepress' );  echo (get_the_date( 'Y' )); ?>
 					<?php else : ?>
-					<?php _e( "Blog Archives: ", 'elitepress' ); ?>
+					<?php _e( "Blog Archive", 'elitepress' ); ?>
 					<?php endif; ?>
 					</h1>
 				<?php

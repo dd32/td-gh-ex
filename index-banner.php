@@ -15,7 +15,7 @@
 					<?php if (get_post_meta( get_the_ID(), 'banner_description', true )) { ?>
 						<p><?php echo (get_post_meta( get_the_ID(), 'banner_description', true )); ?></p>
 						<?php } else { ?>
-						<p><?php _e('Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.', 'elitepress'); ?></p>
+						<p><?php echo 'Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.'; ?></p>
 						<?php }  ?>
 					</div>
 				</div>

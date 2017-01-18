@@ -10,7 +10,7 @@ get_template_part('banner','header'); ?>
 			<div class="<?php elitepress_post_layout_class(); ?>" >
 				<?php if ( have_posts() ) { ?>
 				<h1 class="search_heading">
-				<?php printf( __( "Search Results For: %s", 'elitepress' ), '<span>' . get_search_query() . '</span>' ); ?>
+				<?php printf( __( "Search results for %s", 'elitepress' ), '<span>' . get_search_query() . '</span>' ); ?>
 				</h1>
 				<?php while ( have_posts() ) { the_post();
 				global $more;
@@ -31,12 +31,12 @@ get_template_part('banner','header'); ?>
 							<?php _e('By', 'elitepress'); ?><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>"><?php the_author(); ?></a>
 							<?php 	$tag_list = get_the_tag_list();
 							if(!empty($tag_list)) { ?>
-							<div class="blog-tags"><?php _e('IN', 'elitepress')?> <a href="<?php the_permalink(); ?>"><?php the_tags('', ', ', ''); ?></a>
+							<div class="blog-tags"><?php _e('In', 'elitepress')?> <a href="<?php the_permalink(); ?>"><?php the_tags('', ', ', ''); ?></a>
 							</div>
 							<?php } ?>
 						</div>
 						<div class="blog-description"><?php the_content( __( 'Read More' , 'elitepress' ) ); ?></div>
-						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'elitepress' ), 'after' => '</div>' ) ); ?>
+						<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Page', 'elitepress' ), 'after' => '</div>' ) ); ?>
 					</div>
 				</div>
 				<?php }	?>

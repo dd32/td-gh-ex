@@ -43,8 +43,9 @@ $current_options = get_option('elitepress_lite_options',theme_data_setup());
 					<h1><?php if($h1!=''){ echo esc_attr($h1); } else{ 
 					_e("Title",'elitepress');} ?></h1>
 					<div class="page-title-seprator"></div>
-					 <p><?php if($bd!=''){ echo esc_attr($bd);}  else { 
-					_e('Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait','elitepress');}?></p>
+					 <p><?php if($bd!=''){ echo esc_attr($bd);}  
+					 else { 
+					 echo 'Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait'; }?></p>
 					</div>
 				</div>
 			</div>

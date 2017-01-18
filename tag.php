@@ -9,7 +9,7 @@ get_header(); ?>
 			<!--Blog Area-->
 				<div class="<?php elitepress_post_layout_class(); ?>" >
 				<h1 class="blog_detail_head">
-				<?php  _e( "Tag Archives:", 'elitepress' ); echo single_tag_title( '', false ); ?>
+				<?php  _e( "Tag Archive", 'elitepress' ); echo single_tag_title( '', false ); ?>
 				</h1>
 				<?php
 				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;

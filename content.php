@@ -39,7 +39,7 @@
 				the_content();
 				echo "</div>"; 	
 				// allow support for <!--nextpage-->
-				wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'elitepress' ), 'after' => '</div>' ) ); 
+				wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Page', 'elitepress' ), 'after' => '</div>' ) ); 
 				echo "</div>";
 				// close div if page is not call
 				if(!is_page())  echo "</div>";

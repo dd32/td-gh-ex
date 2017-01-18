@@ -45,7 +45,7 @@
 		<nav id="comment-nav-below">
 			<h1 class="assistive-text"><?php _e( 'Comment navigation', 'elitepress' ); ?></h1>
 			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'elitepress' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'elitepress' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __('Newer Comments &rarr;', 'elitepress' ) ); ?></div>
 		</nav>
 		<?php }  
 		if ( ! comments_open() && get_comments_number() ) : ?>
@@ -53,15 +53,14 @@
 		<?php endif; } ?>
 	<?php if ('open' == $post->comment_status) { ?>
 	<?php if ( get_option('comment_registration') && !$user_ID ) { ?>
-<p><?php _e("You must be",'elitepress'); ?> <a href="<?php echo get_option('siteurl'); ?>/wp-login.php?redirect_to=<?php echo urlencode(get_permalink()); ?>"><?php _e("logged in",'elitepress')?></a> <?php _e("to post a comment",'elitepress'); ?>
-</p>
+	<p><?php echo sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment','elitepress' ), site_url( 'wp-login.php' ) . '?redirect_to=' .  urlencode(get_permalink())); ?></p>
 <?php } else { 
 ?>
 <div class="comment-form-section">
 	<?php  
 	 $fields=array(
-		'author' => '<div class="blog-form-group"><input class="blog-form-control" name="author" id="author" value="" type="name" placeholder="'.__('Name:','elitepress').'" /></div>',
-		'email' => '<div class="blog-form-group"><input class="blog-form-control" name="email" id="email" value=""   type="email" placeholder="'.__('Email:','elitepress').'" /></div>',
+		'author' => '<div class="blog-form-group"><input class="blog-form-control" name="author" id="author" value="" type="name" placeholder="'.__('Name','elitepress').'" /></div>',
+		'email' => '<div class="blog-form-group"><input class="blog-form-control" name="email" id="email" value=""   type="email" placeholder="'.__('Email','elitepress').'" /></div>',
 		);
 		function elitepress_fields($fields) { 
 			return $fields;
@@ -70,8 +69,8 @@
 			$defaults = array(
 			'fields'=> apply_filters( 'comment_form_default_fields', $fields ),
 			'comment_field'=> '<div class="blog-form-group-textarea" >
-			<textarea id="comments" rows="5" class="blog-form-control-textarea" name="comment" type="text" placeholder="'.__('Message:','elitepress').'"></textarea></div>',		
-			'logged_in_as' => '<p class="blog-post-info-detail">' . __( "Logged in as ",'elitepress' ).'<a href="'. admin_url( 'profile.php' ).'">'.$user_identity.'</a>'. '<a href="'. wp_logout_url( get_permalink() ).'" title="'.__('Log out of this Account','elitepress').'">'.__(" Log out?",'elitepress').'</a>' . '</p>',
+			<textarea id="comments" rows="5" class="blog-form-control-textarea" name="comment" type="text" placeholder="'.__('Message','elitepress').'"></textarea></div>',		
+			'logged_in_as' => '<p class="blog-post-info-detail">' . __("Logged in as",'elitepress' ).'<a href="'. admin_url( 'profile.php' ).'">'.$user_identity.'</a>'. '<a href="'. wp_logout_url( get_permalink() ).'" title="'.__('Logout of this account','elitepress').'">'.__("Logout",'elitepress').'</a>' . '</p>',
 			'id_submit'=> 'blogdetail-btn',
 			'label_submit'=>__( 'Send Message','elitepress'),
 			'comment_notes_after'=> '',

@@ -28,8 +28,8 @@ wp_enqueue_script('elitepress-slider');
 					<img class="img-responsive" src="<?php echo WEBRITI_TEMPLATE_DIR_URI; ?>/images/slide/slide<?php echo $i; ?>.jpg">
 					<div class="flex-slider-center">
 						<div class="slide-text-bg1"><h1><?php echo $slider_default_title[$i-1]; ?></h1></div>
-						<div class="slide-text-bg2"><h3><?php _e('Create Fresh Website fast with us!!', 'elitepress'); ?></h3></div>
-						<div class="flex-btn-div"><a class="btn1 flex-btn" href="#"><?php _e('Know More', 'elitepress'); ?></a></div>
+						<div class="slide-text-bg2"><h3><?php _e('Create fresh website fast with us', 'elitepress'); ?></h3></div>
+						<div class="flex-btn-div"><a class="btn1 flex-btn" href="#"><?php _e('Read More', 'elitepress'); ?></a></div>
                     </div>
 				</li>
 				<?php } ?>

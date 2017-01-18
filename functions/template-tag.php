@@ -11,7 +11,7 @@ function elitepress_post_meta_content()
 				<span class="blog_tags">
 						<?php _e('By','elitepress');?><a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) );?>"><?php the_author_link();?></a>
 								
-						<?php _e('On','elitepress');?><a href="<?php the_permalink();?>"><?php echo get_the_date(); ?></a>
+						<?php _e('on','elitepress');?><a href="<?php the_permalink();?>"><?php echo get_the_date(); ?></a>
 								
 						<?php 	$tag_list = get_the_tag_list();
 						if(!empty($tag_list)) { ?>

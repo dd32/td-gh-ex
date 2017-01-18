@@ -5,15 +5,14 @@ function elitepress_header_customizer( $wp_customize ) {
 	$wp_customize->add_panel( 'header_options', array(
 		'priority'       => 300,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Header Settings', 'elitepress'),
+		'title'      => __('Header settings', 'elitepress'),
 	) );
 	
 	
 	/* favicon option */
     $wp_customize->add_section( 'elitepress_favicon' , array(
-      'title'       => __( 'Site favicon', 'elitepress' ),
+      'title'       => __('Site favicon', 'elitepress' ),
       'priority'    => 300,
-      'description' => __( 'Upload a favicon', 'elitepress' ),
 	  'panel'  => 'header_options',
     ) );
     
@@ -24,7 +23,7 @@ function elitepress_header_customizer( $wp_customize ) {
     ) );
     
     $wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'elitepress_lite_options[upload_image_favicon]', array(
-      'label'    => __( 'Choose your favicon (ideal width and height is 16x16 or 32x32)', 'elitepress' ),
+      'label'    => __('Site favicon', 'elitepress' ),
       'section'  => 'elitepress_favicon',
     ) ) );
 	
@@ -38,7 +37,6 @@ function elitepress_header_customizer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'elitepress_lite_options[upload_image_logo]'
 		, array(
-        'default'        => '',
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'esc_url_raw',
 		'type' => 'option',
@@ -49,7 +47,7 @@ function elitepress_header_customizer( $wp_customize ) {
 			   $wp_customize,
 			   'elitepress_lite_options[upload_image_logo]',
 			   array(
-				   'label'          => __( 'Upload a 150x150 for Logo Image', 'elitepress' ),
+				   'label'          => __('Custom logo','elitepress' ),
 				   'section'        => 'header_logo',
 				   'priority'   => 50,
 			   )
@@ -68,7 +66,7 @@ function elitepress_header_customizer( $wp_customize ) {
     'elitepress_lite_options[text_title]',
     array(
         'type' => 'checkbox',
-        'label' => __('Enable/Disabe Logo','elitepress'),
+        'label' => __('Enable logo text','elitepress'),
         'section' => 'header_logo',
 		'priority'   => 100,
     )
@@ -130,7 +128,7 @@ function elitepress_header_customizer( $wp_customize ) {
     'elitepress_lite_options[text_title]',
     array(
         'type' => 'checkbox',
-        'label' => __('Show Logo text','elitepress'),
+        'label' => __('Enable Logo Text','elitepress'),
         'section' => 'header_logo',
 		'priority'   => 200,
     )
@@ -138,20 +136,19 @@ function elitepress_header_customizer( $wp_customize ) {
 	
 	//Custom css
 	$wp_customize->add_section( 'custom_css' , array(
-		'title'      => __('Custom css', 'elitepress'),
+		'title'      => __('Custom CSS', 'elitepress'),
 		'panel'  => 'header_options',
 		'priority'   => 100,
    	) );
 	$wp_customize->add_setting(
 	'elitepress_lite_options[webrit_custom_css]'
 		, array(
-        'default'        => '',
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type'=> 'option',
     ));
     $wp_customize->add_control( 'elitepress_lite_options[webrit_custom_css]', array(
-        'label'   => __('Custom css snippet:', 'elitepress'),
+        'label'   => __('Custom CSS', 'elitepress'),
         'section' => 'custom_css',
         'type' => 'textarea',
 		'priority'   => 100,
@@ -217,7 +214,7 @@ function elitepress_header_customizer( $wp_customize ) {
     'elitepress_lite_options[facebook_media_link_target]',
     array(
         'type' => 'checkbox',
-        'label' => __('Open Link New tab/window','elitepress'),
+        'label' => __('Open link in new tab','elitepress'),
         'section' => 'header_social_icon',
     )
 );
@@ -255,7 +252,7 @@ function elitepress_header_customizer( $wp_customize ) {
     'elitepress_lite_options[twitter_media_link_target]',
     array(
         'type' => 'checkbox',
-        'label' => __('Open Link New tab/window','elitepress'),
+        'label' => __('Open link in new tab','elitepress'),
         'section' => 'header_social_icon',
     )
 );
@@ -273,7 +270,7 @@ function elitepress_header_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     'elitepress_lite_options[social_media_linkedin_link]',
     array(
-        'label' => __('Linkdin URL','elitepress'),
+        'label' => __('LinkdIn URL','elitepress'),
         'section' => 'header_social_icon',
         'type' => 'text',
     )
@@ -291,7 +288,7 @@ function elitepress_header_customizer( $wp_customize ) {
     	'elitepress_lite_options[linkedin_media_link_target]',
     array(
         'type' => 'checkbox',
-        'label' => __('Open Link New tab/window','elitepress'),
+        'label' => __('Open link in new tab','elitepress'),
         'section' => 'header_social_icon',
     )
 );
@@ -309,7 +306,7 @@ function elitepress_header_customizer( $wp_customize ) {
 	$wp_customize->add_control(
     'elitepress_lite_options[social_media_googleplus_link]',
     array(
-        'label' => __('Google-Plus URL','elitepress'),
+        'label' => __('GooglePlus URL','elitepress'),
         'section' => 'header_social_icon',
         'type' => 'text',
     )
@@ -326,7 +323,7 @@ function elitepress_header_customizer( $wp_customize ) {
     'elitepress_lite_options[google_media_link_target]',
     array(
         'type' => 'checkbox',
-        'label' => __('Open Link New tab/window','elitepress'),
+        'label' => __('Open link in new tab','elitepress'),
         'section' => 'header_social_icon',
     )
 );
@@ -361,7 +358,7 @@ function elitepress_header_customizer( $wp_customize ) {
     'elitepress_lite_options[skype_media_link_target]',
     array(
         'type' => 'checkbox',
-        'label' => __('Open Link New tab/window','elitepress'),
+        'label' => __('Open link in new tab','elitepress'),
         'section' => 'header_social_icon',
     )
 );
@@ -396,7 +393,7 @@ function elitepress_header_customizer( $wp_customize ) {
     'elitepress_lite_options[dribble_media_link_target]',
     array(
         'type' => 'checkbox',
-        'label' => __('Open Link New tab/window','elitepress'),
+        'label' => __('Open link in new tab','elitepress'),
         'section' => 'header_social_icon',
     )
 );
@@ -431,12 +428,12 @@ $wp_customize->add_setting(
     'elitepress_lite_options[youtube_media_link_target]',
     array(
         'type' => 'checkbox',
-        'label' => __('Open Link New tab/window','elitepress'),
+        'label' => __('Open link in new tab','elitepress'),
         'section' => 'header_social_icon',
     )
 );
 
-//Viemo
+//vimeo
 
 $wp_customize->add_setting(
     'elitepress_lite_options[social_media_vimeo_link]',
@@ -467,7 +464,7 @@ $wp_customize->add_setting(
     'elitepress_lite_options[viemo_media_link_target]',
     array(
 		'type' => 'checkbox',
-        'label' => __('Open Link New tab/window','elitepress'),
+        'label' => __('Open link in new tab','elitepress'),
         'section' => 'header_social_icon',
     )
 );
@@ -503,7 +500,7 @@ $wp_customize->add_setting(
     'elitepress_lite_options[pagelines_media_link_target]',
     array(
         'type' => 'checkbox',
-        'label' => __('Open Link New tab/window','elitepress'),
+        'label' => __('Open link in new tab','elitepress'),
         'section' => 'header_social_icon',
     )
 );
@@ -512,7 +509,7 @@ $wp_customize->add_setting(
 $wp_customize->add_section(
         'header_contact',
         array(
-            'title' => 'Header Contact Setting',
+            'title' => __('Header contact setting','elitepress'),
            'priority'    => 350,
 			'panel' => 'header_options',
         )
@@ -537,13 +534,13 @@ $wp_customize->add_setting(
 	//Contact email id
 	$wp_customize->add_setting(
 	'elitepress_lite_options[contact_email]', array(
-        'default'        => __('info@elitepresstheme.com','elitepress'),
+        'default'        => 'info@elitepresstheme.com',
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
 	$wp_customize->add_control('elitepress_lite_options[contact_email]', array(
-        'label'   => __('Input Email id:', 'elitepress'),
+        'label'   => __('Email', 'elitepress'),
         'section' => 'header_contact',
         'type'    => 'text',
     ));
@@ -552,13 +549,13 @@ $wp_customize->add_setting(
 	//Contact phone number
 	$wp_customize->add_setting(
 	'elitepress_lite_options[contact_phone_number]', array(
-        'default'        => __('+48-0987-654-321','elitepress'),
+        'default'        => '+48-0987-654-321',
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
 	$wp_customize->add_control('elitepress_lite_options[contact_phone_number]', array(
-        'label'   => __('Input Contact Phone Number:', 'elitepress'),
+        'label'   => __('Phone', 'elitepress'),
         'section' => 'header_contact',
         'type'    => 'text',
     ));
@@ -589,7 +586,7 @@ $wp_customize->add_setting(
 	$wp_customize->add_control(
     'elitepress_lite_options[header_search_bar_enabled]',
     array(
-        'label' => __('Enable Search bar on Header','elitepress'),
+        'label' => __('Enable search bar on header','elitepress'),
         'section' => 'header_search_bar',
         'type' => 'checkbox',
     )

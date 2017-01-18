@@ -40,15 +40,14 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 	$wp_customize->add_panel( 'elitepress_slider_setting', array(
 		'priority'       => 400,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Slider  Settings', 'elitepress'),
+		'title'      => __('Slider setting', 'elitepress'),
 	) );
 	
 	$wp_customize->add_section(
         'slider_section_settings',
         array(
-            'title' => __('Featured Slider Settings','elitepress'),
-            'description' => '',
-			'panel'  => 'elitepress_slider_setting',)
+            'title' => __('Slider setting','elitepress'),
+            'panel'  => 'elitepress_slider_setting',)
     );
 	
 	//Hide slider
@@ -65,7 +64,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
 	$wp_customize->add_control(
     'elitepress_lite_options[home_banner_enabled]',
     array(
-        'label' => __('Enable Home Slider on front page.','elitepress'),
+        'label' => __('Enable home banner','elitepress'),
         'section' => 'slider_section_settings',
         'type' => 'checkbox',
     )
@@ -86,11 +85,11 @@ $wp_customize->add_control(
     'elitepress_lite_options[slider_radio]',
     array(
         'type' => 'radio',
-        'label' => __('Select Slider type','elitepress'),
+        'label' => __('Select slider type','elitepress'),
         'section' => 'slider_section_settings',
         'choices' => array(
-            'demo' => __('Demo Slider','elitepress'),
-            'category' => __('Category Slider','elitepress'),
+            'demo' => __('Demo slider','elitepress'),
+            'category' => __('Category slider','elitepress'),
         ),
     )
 );	
@@ -101,14 +100,14 @@ $wp_customize->add_control(
 	$wp_customize->add_setting(
     'elitepress_lite_options[slider_select_category]',
     array(
-        'default' => __('Uncategorized','elitepress'),
+        'default' => 'Uncategorized',
 		'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'elitepress_slider_sanitize_layout',
 		'type'=>'option',
 		)
 	);	
 	$wp_customize->add_control( new Category_Dropdown_Custom_Control( $wp_customize, 'elitepress_lite_options[slider_select_category]', array(
-    'label'   => __('Select Category for Slider','elitepress'),
+    'label'   => __('Select category for slider','elitepress'),
     'section' => 'slider_section_settings',
     'settings'   =>  'elitepress_lite_options[slider_select_category]',
 	) ) );	
@@ -118,7 +117,7 @@ $wp_customize->add_control(
 	$wp_customize->add_setting(
     'elitepress_lite_options[animationSpeed]',
     array(
-        'default' => __('1500','elitepress'),
+        'default' => '1500',
 		'type' => 'option',
 		'sanitize_callback' => 'sanitize_text_field',
     ));
@@ -137,7 +136,7 @@ $wp_customize->add_control(
 	$wp_customize->add_setting(
     'elitepress_lite_options[slideshowSpeed]',
     array(
-        'default' => __('2500','elitepress'),
+        'default' => '2500',
 		'type' => 'option',
 		'sanitize_callback' => 'sanitize_text_field',
     ));

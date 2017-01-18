@@ -11,7 +11,7 @@
 					<div class="text-center"><i class="fa fa-bug"></i></div>
 				<h1><?php _e('404','elitepress'); ?></h1>
 				<h4><?php _e('Oops! Page not found','elitepress'); ?></h4>
-				<p><?php _e('We`re sorry, but the page you are looking for doesn`t exist.','elitepress'); ?></p>
+				<p><?php _e('We are sorry, but the page you are looking for does not exist.','elitepress'); ?></p>
 				<div class="project-btn-div"><a href="<?php echo esc_html(site_url());?>" class="project-btn"><?php _e('Go Back','elitepress'); ?></a></div>
 				</div>
 		</div>

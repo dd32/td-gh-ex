@@ -4,14 +4,13 @@
 	$wp_customize->add_panel( 'elitepress_copyright_setting', array(
 		'priority'       => 900,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Footer Copyright Settings', 'elitepress'),
+		'title'      => __('Footer copyright settings', 'elitepress'),
 	) );
 	
 	$wp_customize->add_section(
         'copyright_section_one',
         array(
-            'title' => __('Footer Copyright Settings','elitepress'),
-            'description' => __('This is a Footer section.','elitepress'),
+            'title' => __('Footer copyright settings','elitepress'),
             'priority' => 35,
 			'panel' => 'elitepress_copyright_setting',
         )
@@ -49,7 +48,7 @@ $wp_customize->add_control(
 $wp_customize->add_control(
     'elitepress_lite_options[footer_menu_bar_enabled]',
     array(
-        'label' => __('Enable footer menu bar','elitepress'),
+        'label' => __('Enable Footer Menu Bar','elitepress'),
         'section' => 'copyright_section_one',
         'type' => 'checkbox',
     ));

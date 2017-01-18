@@ -3,13 +3,13 @@ function elitepress_home_callout_customizer( $wp_customize ){
 $wp_customize->add_panel( 'home_callout_setting', array(
 		'priority'       => 400,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Home callout Settings', 'elitepress'),
+		'title'      => __('Header home callout setting', 'elitepress'),
 	) );
 //Home top callout
 $wp_customize->add_section(
         'header_home_callout',
         array(
-            'title' => 'Header Home callout setting',
+            'title' => __('Header home callout setting','elitepress'),
            'priority'    => 4,
 			'panel' => 'home_callout_setting',
         )
@@ -24,7 +24,7 @@ $wp_customize->add_setting(
 		'type' => 'option',
     ));
 	$wp_customize->add_control('elitepress_lite_options[header_call_out_area_enabled]', array(
-        'label'   => __('Enable Header top call out area on front page.', 'elitepress'),
+        'label'   => __('Enable header top call out area on front page.', 'elitepress'),
         'section' => 'header_home_callout',
         'type'    => 'checkbox',
 		'priority'   => 2,
@@ -33,13 +33,13 @@ $wp_customize->add_setting(
 	//Header Top Call Out Title
 	$wp_customize->add_setting(
 	'elitepress_lite_options[header_call_out_title]', array(
-        'default'        => __('Want to say Hey or find out more?','elitepress'),
+        'default'        => __('Want to say hey or find out more?','elitepress'),
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
 	$wp_customize->add_control('elitepress_lite_options[header_call_out_title]', array(
-        'label'   => __('Header Top Call Out Title', 'elitepress'),
+        'label'   => __('Title', 'elitepress'),
         'section' => 'header_home_callout',
         'type'    => 'text',
     ));
@@ -48,13 +48,13 @@ $wp_customize->add_setting(
 	//Header Top Call Out Description
 	$wp_customize->add_setting(
 	'elitepress_lite_options[header_call_out_description]', array(
-        'default'        => __('Reprehen derit in voluptate velit cillum dolore eu fugiat nulla pariaturs  sint occaecat proidentse.','elitepress'),
+        'default'        => 'Reprehen derit in voluptate velit cillum dolore eu fugiat nulla pariaturs  sint occaecat proidentse.',
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
 	$wp_customize->add_control('elitepress_lite_options[header_call_out_description]', array(
-        'label'   => __('Header Top Call Out Description', 'elitepress'),
+        'label'   => __('Description', 'elitepress'),
         'section' => 'header_home_callout',
         'type'    => 'textarea',
     ));
@@ -62,13 +62,13 @@ $wp_customize->add_setting(
 	//Home callout read more button
 	$wp_customize->add_setting(
 	'elitepress_lite_options[header_call_out_btn_text]', array(
-        'default'        => __('Buy It Now!','elitepress'),
+        'default'        => __('Read More','elitepress'),
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
 	$wp_customize->add_control('elitepress_lite_options[header_call_out_btn_text]', array(
-        'label'   => __('Header Top Call Out Button Text', 'elitepress'),
+        'label'   => __('Button Text', 'elitepress'),
         'section' => 'header_home_callout',
         'type'    => 'text',
     ));
@@ -76,13 +76,13 @@ $wp_customize->add_setting(
 	//Home callout read more button link
 	$wp_customize->add_setting(
 	'elitepress_lite_options[header_call_out_btn_link]', array(
-        'default'        => __('#','elitepress'),
+        'default'        => '#',
         'capability'     => 'edit_theme_options',
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
 	$wp_customize->add_control('elitepress_lite_options[header_call_out_btn_link]', array(
-        'label'   => __('Header Top Call Out Button Link', 'elitepress'),
+        'label'   => __('Button Link', 'elitepress'),
         'section' => 'header_home_callout',
         'type'    => 'text',
     ));
@@ -96,7 +96,7 @@ $wp_customize->add_setting(
 		'type' => 'option',
     ));
 	$wp_customize->add_control('elitepress_lite_options[header_call_out_btn_link_target]', array(
-        'label'   => __('Open link in a new window/tab', 'elitepress'),
+        'label'   => __('Open link in new tab', 'elitepress'),
         'section' => 'header_home_callout',
         'type'    => 'checkbox',
     ));
