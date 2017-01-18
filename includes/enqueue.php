@@ -52,7 +52,6 @@ function abaya_additional_fonts( $fonts ) {
 	return $fonts;
 }
 add_filter('pre_google_web_fonts', 'abaya_additional_fonts');
-
 /**
 * Enqueue scripts and styles.  
 */

@@ -8,12 +8,6 @@ add_action( 'tgmpa_register', 'abaya_register_required_plugins' );
 function abaya_register_required_plugins() {
 	$plugins = array(
 	    array(
-            'name'      => 'Redux Framework',
-            'slug'      => 'redux-framework',
-            'required'  => false,
-			'force_activation' => false,
-        ),
-		array(
 			'name'     				=> 'WooCommerce', // The plugin name
 			'slug'     				=> 'woocommerce', // The plugin slug (typically the folder name)
 			'required' 				=> false, // If false, the plugin is only 'recommended' instead of required

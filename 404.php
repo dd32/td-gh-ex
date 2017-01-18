@@ -13,9 +13,7 @@
         <div class="inner-page-title">
           <h1 class="title"><?php the_title(); ?></h1>
         </div><!--header-->
-        <div class="breadcrumbs">
-          <?php abaya_breadcrumbs(); ?><!--crumbs-->
-        </div><!--breadcrumbs-->
+        <!--breadcrumbs-->
       </div><!--col-->
     </div><!--row-->
   </div><!--container-->

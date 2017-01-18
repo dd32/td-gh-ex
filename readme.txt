@@ -13,23 +13,22 @@ Description
 
 Abaya is a very simple to use and quick to setup responsive multipurpose WordPress theme. Abaya is the perfect theme for your next WordPress / WooCommerce project.
 
-Comley also supports WP Customizer, Custom Menu, Custom Background and Custom Header, enabling flexible configuration.
+Abaya also supports WP Customizer, Custom Menu, Custom Background and Custom Header, enabling flexible configuration.
 
 one-column, two-columns, featured-images, translation-ready, right-sidebar, editor-style, threaded-comments
 
-Theme URI: http://www.ydesignservices.com/product/premium-wordpress-themes/abaya
+Theme URI: http://www.ydesignservices.com/product/free-wordpress-themes/abaya/
 
 
 License
 --------------------
-
 Abaya WordPress Theme, Copyright 2016-2017 Y Design Services
 Abaya is distributed under the terms of the GNU GPL V2
 
 * Bootstrap v3.3.5 (C) 2011-2015 Twitter, Inc are licensed under MIT (http://getbootstrap.com/)
-* jQuery * FlexSlider by WooThemes under the GPLv2 license (http://www.gnu.org/licenses/gpl-2.0.html)
+* jQuery FlexSlider by WooThemes under the GPLv2 license (http://www.gnu.org/licenses/gpl-2.0.html)
 * HTML5 Shiv 3.7.2, (C) @afarkas @jdalton @jon_neal @rem licensed under the MIT & GPL2 (https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js)
-* Animate Slider , v 0.1.0 (C) 2014 - Vasileios Chouliaras @license MIT (https://github.com/vchouliaras/jquery.animateSlider.js/blob/master/LICENSE-MIT)
+* Animate Slider, v 0.1.0 (C) 2014 - Vasileios Chouliaras @license MIT (https://github.com/vchouliaras/jquery.animateSlider.js/blob/master/LICENSE-MIT)
 * Modernizr v2.8.1 (c) Faruk Ates, Paul Irish, Alex Sexton, available under the BSD and MIT licenses (www.modernizr.com/license/)
 * Respond.js v1.4.2: min/max-width media query polyfill * Copyright 2013 Scott Jehl licensed under MIT (https://oss.maxcdn.com/respond/1.4.2/respond.min.js)
 * Redux Options Framework (http://reduxframework.com/) licensed under GNU General Public License v3.0

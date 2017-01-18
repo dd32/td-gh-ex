@@ -282,19 +282,19 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: single.php:33
-msgid "Next"
+#: single.php:61
+msgid "Next post"
 msgstr ""
 
-#: single.php:34
-msgid "Next post:"
+#: single.php:62
+msgid "Next:"
 msgstr ""
 
-#: single.php:36
+#: single.php:69
 msgid "Previous"
 msgstr ""
 
-#: single.php:37
+#: single.php:67
 msgid "Previous post:"
 msgstr ""
 

@@ -6,9 +6,6 @@
         <div class="inner-page-title">
           <h1 class="title"><?php the_title(); ?></h1>
         </div><!--header-->
-        <div class="breadcrumbs">
-          <?php woocommerce_breadcrumb(); ?>
-        </div><!--breadcrumbs-->
       </div><!--col-->
     </div><!--row-->
   </div><!--container-->
@@ -26,12 +23,12 @@
       </div><!--col-->
       <?php } else {
 		  /*Product Page Layout */
-		  global $abaya_option;
-		   if(isset($abaya_option['shop_sidebar']) && $abaya_option['shop_sidebar']==1)
+		  $woocommercesidebar=esc_html(get_theme_mod('shoppagesettings' ));
+		   if(isset($woocommercesidebar) && $woocommercesidebar==1)
 		   {
 			   get_template_part('includes/productpageoption/product_page', 'with_rightsidebar');
 			   
-		   }else if(isset($abaya_option['shop_sidebar']) && $abaya_option['shop_sidebar']==2)
+		   }else if(isset($woocommercesidebar) && $woocommercesidebar==2)
 		   {
 			   get_template_part('includes/productpageoption/product_page', 'with_leftsidebar');
 			   

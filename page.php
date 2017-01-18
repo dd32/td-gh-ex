@@ -1,35 +1,32 @@
 <?php
 /**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages and that other
- * 'pages' on your WordPress site will use a different template.
- *
- * @package abaya
- * @since abaya 1.0
- */
- 
- get_header(); ?>
+* The template for displaying all pages
+*
+* This is the template that displays all pages by default.
+* Please note that this is the WordPress construct of pages and that other
+* 'pages' on your WordPress site will use a different template.
+*
+* @package abaya
+* @since abaya 1.0
+*/
+
+get_header(); ?>
 <section class="inner-page-bg">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="inner-page-title">
-          <h1 class="title"><?php the_title(); ?></h1>
-        </div><!--header-->
-        <div class="breadcrumbs">
-          <?php abaya_breadcrumbs(); ?><!--crumbs-->
-        </div><!--breadcrumbs-->
-      </div><!--col-->
-    </div><!--row-->
-  </div><!--container-->
+ <div class="container">
+   <div class="row">
+     <div class="col-lg-12">
+       <div class="inner-page-title">
+         <h1 class="title"><?php the_title(); ?></h1>
+       </div><!--header-->
+     </div><!--col-->
+   </div><!--row-->
+ </div><!--container-->
 </section><!--inner-page-bg-->
 
 <section id="content">
-  <section class="container">
- <?php
-       if (have_posts()):
+ <section class="container">
+<?php
+      if (have_posts()):
 		// Start the loop.
 		while ( have_posts() ) : the_post();
 			// Include the page content template.
@@ -40,14 +37,14 @@
 			endif;
 		// End the loop.
 		endwhile;
-     wp_link_pages( array(
-	'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'abaya' ) . '</span>',
+    wp_link_pages( array(
+	'before'      => '<div class="page-links"><span class="page-links-title">'.__( 'Pages:', 'abaya').'</span>',
 	'after'       => '</div>',
 	'link_before' => '<span>',
 	'link_after'  => '</span>',
 	) );
 else:  get_template_part('template-parts/content', 'none'); endif; ?>
-  </section><!--container-->
+ </section><!--container-->
 </section><!--content-->
- 
+
 <?php get_footer(); ?>

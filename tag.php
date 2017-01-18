@@ -9,7 +9,6 @@
  * @package abaya
  * @since abaya 1.0
  */
- 
  get_header(); ?>
 <section class="inner-page-bg">
   <div class="container">
@@ -18,9 +17,6 @@
         <div class="inner-page-title">
           <h1 class="title"><?php the_tags(); ?></h1>
         </div><!--header-->
-        <div class="breadcrumbs">
-          <?php abaya_breadcrumbs(); ?><!--crumbs-->
-        </div><!--breadcrumbs-->
       </div><!--col-->
     </div><!--row-->
   </div><!--container-->
@@ -34,7 +30,6 @@
             <div id="main" class="site-main">
              <?php if (have_posts()): ?>
               <?php while(have_posts()): the_post(); get_template_part('template-parts/content', get_post_format()); endwhile; ?>    
-
             <nav>
             <ul class="pagination wow fadeInUp">
             <li class="prev"><?php previous_posts_link(__('&laquo;', 'abaya')); ?></li>

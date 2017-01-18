@@ -3,11 +3,9 @@
 Template Name: Home Page
 */
 get_header();
-global $abaya_option;
  ?>
-
 <section id="main-slider">
-<?php if(isset($abaya_option['switch-slider']) && $abaya_option['switch-slider']==1){get_template_part('includes/home/flexslider'); }else if(isset($abaya_option['switch-slider']) && $abaya_option['switch-slider']==2){get_template_part('includes/home/video');}else {get_template_part('includes/home/flexslider');} ?>
+<?php get_template_part('includes/home/flexslider'); ?>
 </section>
 <section id="content">
   <section class="container">

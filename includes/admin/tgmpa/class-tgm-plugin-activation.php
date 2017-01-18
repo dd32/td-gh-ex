@@ -1,30 +1,30 @@
 <?php
 /**
- * Plugin installation and activation for WordPress themes.
- *
- * Please note that this is a drop-in library for a theme or plugin.
- * The authors of this library (Thomas and Gary) are NOT responsible
- * for the support of your plugin or theme. Please contact the plugin
- * or theme author for support.
- *
- * @package   TGM-Plugin-Activation
- * @version   2.5.0-alpha
- * @link      http://tgmpluginactivation.com/
- * @author    Thomas Griffin, Gary Jones
- * @copyright Copyright (c) 2011, Thomas Griffin
- * @license   GPL-2.0+
- *
- * @wordpress-plugin
- * Plugin Name: TGM Plugin Activation
- * Plugin URI:
- * Description: Plugin installation and activation for WordPress themes.
- * Version:     2.5.0-dev
- * Author:      griffinjt, garyj, jrf
- * Author URI:  http://tgmpluginactivation.com/
- * Text Domain: tgmpa
- * Domain Path: /languages/
- * Copyright:   2011, Thomas Griffin
- */
+* Plugin installation and activation for WordPress themes.
+*
+* Please note that this is a drop-in library for a theme or plugin.
+* The authors of this library (Thomas and Gary) are NOT responsible
+* for the support of your plugin or theme. Please contact the plugin
+* or theme author for support.
+*
+* @package   TGM-Plugin-Activation
+* @version   2.5.0-alpha
+* @link      http://tgmpluginactivation.com/
+* @author    Thomas Griffin, Gary Jones
+* @copyright Copyright (c) 2011, Thomas Griffin
+* @license   GPL-2.0+
+*
+* @wordpress-plugin
+* Plugin Name: TGM Plugin Activation
+* Plugin URI:
+* Description: Plugin installation and activation for WordPress themes.
+* Version:     2.5.0-dev
+* Author:      griffinjt, garyj, jrf
+* Author URI:  http://tgmpluginactivation.com/
+* Text Domain: tgmpa
+* Domain Path: /languages/
+* Copyright:   2011, Thomas Griffin
+*/
 
 /*
 	Copyright 2011 Thomas Griffin (thomasgriffinmedia.com)
@@ -781,6 +781,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
 				if ( 'update' === $install_type ) {
 					// Inject our info into the update transient.
+
 					$to_inject                    = array( $slug => $this->plugins[ $slug ] );
 					$to_inject[ $slug ]['source'] = $source;
 					$this->inject_update_info( $to_inject );
@@ -1998,11 +1999,11 @@ if ( ! function_exists( 'abaya' ) ) {
 }
 
 /**
- * WP_List_Table isn't always available. If it isn't available,
- * we load it here.
- *
- * @since 2.2.0
- */
+* WP_List_Table isn't always available. If it isn't available,
+* we load it here.
+*
+* @since 2.2.0
+*/
 if ( ! class_exists( 'WP_List_Table' ) ) {
 	require_once ABSPATH . 'wp-admin/includes/class-wp-list-table.php';
 }
@@ -2344,6 +2345,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 					case 'install':
 						$text = _n( 'To Install <span class="count">(%s)</span>', 'To Install <span class="count">(%s)</span>', $count, 'abaya');
 						break;
+
 
 					case 'update':
 						$text = _n( 'Update Available <span class="count">(%s)</span>', 'Update Available <span class="count">(%s)</span>', $count, 'abaya');
@@ -2940,15 +2942,15 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 }
 
 /**
- * The WP_Upgrader file isn't always available. If it isn't available,
- * we load it here.
- *
- * We check to make sure no action or activation keys are set so that WordPress
- * does not try to re-include the class when processing upgrades or installs outside
- * of the class.
- *
- * @since 2.2.0
- */
+* The WP_Upgrader file isn't always available. If it isn't available,
+* we load it here.
+*
+* We check to make sure no action or activation keys are set so that WordPress
+* does not try to re-include the class when processing upgrades or installs outside
+* of the class.
+*
+* @since 2.2.0
+*/
 add_action( 'admin_init', 'tgmpa_load_bulk_installer' );
 if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 	/**

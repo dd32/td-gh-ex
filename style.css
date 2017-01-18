@@ -1,10 +1,10 @@
 /*
 Theme Name: Abaya
-Theme URI: http://www.ydesignservices.com/product-category/free-wordpress-themes/abaya
-Author: Y Design Services
+Theme URI: http://www.ydesignservices.com/product/free-wordpress-themes/abaya/
+Author: Ydesignservices
 Author URI: http://www.ydesignservices.com/
 Description: Abaya is a very simple to use and quick to setup responsive multipurpose WordPress theme. Abaya is the perfect theme for your next WordPress / WooCommerce project. 
-Version: 1.4
+Version: 1.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, featured-images, translation-ready, right-sidebar, editor-style, custom-header, custom-background, custom-menu, threaded-comments
@@ -13,9 +13,6 @@ This theme, like WordPress, is licensed under the GPL.
 */
 /* =WordPress Core
 -------------------------------------------------------------- */
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
-@import url(https://fonts.googleapis.com/css?family=Raleway:100italic,200italic,300italic,400italic,500italic,600italic,700italic,800italic,900italic,100,200,300,400,500,600,700,800,900);
-@import url(https://fonts.googleapis.com/css?family=Lato:100italic,300italic,400italic,700italic,900italic,100,300,400,700,,900);
 .alignnone{margin:5px 20px 20px 0}
 .aligncenter,div.aligncenter{margin:5px auto}
 .alignright{float:right;margin:5px 0 20px 20px}
@@ -170,7 +167,6 @@ ul.menu{margin:0px; position:relative; padding:0;}
 .flex-active-slide .banner-btn {position: relative;top:0;-moz-animation: fadeInUp 0.3s ease-in 1s backwards;-webkit-animation: fadeInUp 0.3s ease-in 1s backwards;animation: fadeInUp 0.3s ease-in 1s backwards;}
 /* home products
 ============================================= */
-
 .home #content{padding:0;}
 .home .home-products{padding-bottom:90px;}
 .home .featured{padding-top:65px;}
@@ -254,12 +250,12 @@ header.woocommerce-Address-title.title {height:auto; float:none; background:none
 .woocommerce-cart table.cart img{width:50px;}
 /* footer
 ============================================= */
-.footer{background:#f2f2f2; display:block; padding:35px 0 0 0px; width:100%; float:left;}
+.footer{background:#f2f2f2; display:block; width:100%; float:left;}
 .footer .widget .form-group{ margin-bottom:15px;}
 .footer .widget_recent_post ul li{margin-bottom:15px;}
 .footer .widget_recent_post ul li:last-child{margin-bottom:0;}
 .footer .widget p{margin:0 0 15px 0;}
-.footer .copyright{ background:#272727; height:45px; margin:30px 0 0px; display:block; width:100%; float:left;  }
+.footer .copyright{ background:#272727; height:45px; margin:0 0 0px; display:block; width:100%; float:left;  }
 .footer .copyright .ftr_nav{ float:left; margin:0; padding:0; }
 .footer .copyright .ftr_nav li{ list-style:none; float:left; line-height:45px; margin:0 15px 0 0px; font-size:11px; }
 .footer .copyright .ftr_nav li:last-child {margin-right: 0;}
@@ -366,7 +362,6 @@ form.qt_cart{display:inline-block;}
 .review-text p{margin:0; vertical-align:middle;}
 .single-product .page-header{display:none;}
 .woocommerce .quantity input[type=number]::-webkit-inner-spin-button{background:url(images/incresendicrese.jpg) no-repeat; width:18px; height:33px; position: relative; right:0px;}
- 
 /* Contact
 ============================================= */
 .contact_wrap{padding:0;}
@@ -447,8 +442,6 @@ input#max_price {float: right;}
 .audio_text h6{font-weight:bold; margin-bottom:15px;}
 .audio_text p{margin-bottom:0;}
 .commentsection{}
-
-
 .commentsection .comment-reply-title{padding-bottom:12px;margin-bottom:30px;border-bottom:1px solid #d7d7d7;position:relative; font-weight:600;}
 .commentsection .comment-reply-title:before{background:#c05500 none repeat scroll 0 0; bottom:-1px; content:" "; display:block;height:2px;min-width:50px;position:absolute;}
 .commentsection .navigation{display:none;}
@@ -529,20 +522,11 @@ textarea#comment{height:180px !important;padding:10px !important;}
     margin-bottom: 0px;
     font-family: 'Lato';
 }
-
 .woocommerce-product-search{position:relative;}
 .woocommerce-product-search input[type="submit"]{position: absolute; right:0; top:0;padding: 8px 20px; background-color: #c05500; border-color: #c05500; color:#fff;}
-
 .sidebar .product_list_widget li{line-height:normal;clear:both; margin-bottom:20px; overflow:hidden;}
 .sidebar .product_list_widget li:last-child{margin-bottom:0;}
 .sidebar .product_list_widget li img{float:left; margin-right:15px; width:75px; height:75px; }
 .sidebar .product_list_widget li .product-title{display:block;}
 .sidebar .product_list_widget li .woocommerce-Price-amount{margin:8px 0; display:inline-block;}
-
-
-
-
-
-
-
-
+.padding{padding:35px 0px; }

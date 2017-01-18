@@ -23,7 +23,7 @@ if (post_password_required() ) {
 	<?php if ( have_comments() ) : ?>
 		<h3 class="comment-reply-title">
 			 <?php comment_form_title(__('Page with Comments', 'abaya'), __('COMMENTS to %s', 'abaya')); ?>
- 		</h3>
+		</h3>
 		<?php abaya_comment_nav(); ?>
 		<ol class="commentlist">
 			<?php
@@ -34,11 +34,8 @@ if (post_password_required() ) {
 				) );
 			?>
 		</ol><!-- .comment-list -->
-
 		<?php abaya_comment_nav(); ?>
-
 	<?php endif; // have_comments() ?>
-
 	<?php
 		// If comments are closed and there are comments, let's leave a little note, shall we?
 		if (!comments_open() && get_comments_number() && post_type_supports(get_post_type(), 'comments')):
